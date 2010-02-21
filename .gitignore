@@ -1,0 +1,9 @@
+.DS_Store
+log/*.log
+log/*.pid
+tmp/**/*
+config/database.yml
+db/schema.rb
+config/*sphinx.conf
+db/sphinx
+db/*.sqlite3

@@ -1,0 +1,34 @@
+en:
+  header:
+    title: wheelmap
+    tagline: wheelmap
+    navigation:
+      home: Start
+  global:
+    form_validation_error: Please note the errors listed below.
+  user_sessions:
+    new:
+      email: E-mail addresse
+      password: Password
+      remember_me: Remember me
+      login: Login
+      login_with_twitter: Login with Twitter
+    create:
+      notice: "You’re logged in now!"
+      activation:
+        notice: "You’re activated now!"
+      error:
+        notice: "E-mail address and password doesn’t fit."
+    destroy: 
+      notice: "Bye!"
+  application: 
+    require_no_user:
+      notice: "You’re already logged in …"
+    require_user: 
+      notice: "You have to log out to see this page."
+  layouts:
+    application:
+      links:
+        logout: Logout
+        login: Login
+      logged_in_as: "Logged in as:"
