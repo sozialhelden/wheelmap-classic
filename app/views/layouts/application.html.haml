@@ -3,7 +3,7 @@
   %head
     %meta(charset="utf-8")
     %title= t('header.title')
-    = stylesheet_link_tag 'screen'
+    = stylesheet_link_tag 'map', 'screen', :cache => true
     - if head = yield(:head)
       = head
     /[if IE]
@@ -12,24 +12,16 @@
   %body(class=browser_class)
     #page
       %header
-        = link_to image_tag('logo', :alt => t('header.tagline')), root_path, :id => 'logo'
-        %nav
-          %ul
-            %li
-              = link_to t('header.navigation.home'), root_path
-            %li.login
-              - if logged_in?
-                = t('layouts.application.logged_in_as') + " #{current_user.email} "
-                = link_to t('layouts.application.links.logout'), logout_path , :method => 'delete'
-              - else
-                = link_to t('layouts.application.links.login'), login_path
+        = link_to image_tag('wheelmap.png', :alt => t('header.tagline')), root_path, :id => 'logo'
       - [:notice, :error, :warning].each do |type|
         - if flash[type]
           .flash(id="flash-Rails::TemplateRunner")= flash[type]
       = yield
       %footer
-        © 2010 Nico Hagenburger/Hagenburger GmbH, Berlin
-    = javascript_include_tag 'jquery', 'application', :cache => true
+        © 2010 Sozialhelden e. V.
+    = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
+    = javascript_include_tag 'http://www.openstreetmap.org/openlayers/OpenStreetMap.js'
+    = javascript_include_tag 'jquery', 'util', 'application', :cache => true
     - if jquery = yield(:jquery)
       :javascript
         $(function(){#{jquery}})

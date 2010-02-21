@@ -1,0 +1,109 @@
+/* line 1, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+a, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, p, pre, span, th, td {
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0; }
+
+/* line 6, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 10, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+fieldset, img {
+  border: 0; }
+
+/* line 13, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+address, em, th {
+  font-style: normal;
+  font-weight: normal; }
+
+/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+li {
+  list-style: none; }
+
+/* line 20, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+th {
+  font-style: normal;
+  text-align: left; }
+
+/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+h1, h2, h3, h4, h5, h6, small {
+  font-size: 100%; }
+
+/* line 27, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit; }
+
+/* line 33, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+.msie input, .msie textarea, .msie select {
+  font-size: 100%; }
+
+/* line 36, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+header, section, article, aside, footer, time {
+  display: block; }
+
+/* line 4, ../../app/stylesheets/basics/_typography.sass */
+p,
+article li,
+dt, dd,
+h4, h5, h6,
+address,
+footer {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 13px;
+  line-height: 20px; }
+
+/* line 12, ../../app/stylesheets/basics/_typography.sass */
+h2 {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  bottom: 2px; }
+
+/* line 15, ../../app/stylesheets/basics/_typography.sass */
+h1 {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 37px;
+  line-height: 40px;
+  position: relative; }
+  /* line 3, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_browser_support.sass */
+  .presto h1 {
+    bottom: 1px; }
+
+/* line 44, ../../app/stylesheets/basics/_grid_and_layout.sass */
+body {
+  background: white; }
+
+/* line 1, ../../app/stylesheets/partials/_page.sass */
+body,
+html {
+  background: white; }
+
+/* line 1, ../../app/stylesheets/partials/_header.sass */
+header {
+  padding: 10px; }
+
+/* line 1, ../../app/stylesheets/partials/_footer.sass */
+footer {
+  padding: 10px; }
+
+/* line 1, ../../app/stylesheets/partials/_aside.sass */
+aside {
+  background: #7cb741;
+  float: left;
+  height: 500px;
+  width: 200px; }
+
+/* line 1, ../../app/stylesheets/partials/_map.sass */
+#map {
+  height: 500px;
+  width: auto !important; }
+
+/* line 6, ../../app/stylesheets/partials/_map.sass */
+#map_OpenLayers_ViewPort {
+  height: 500px;
+  width: auto !important; }
