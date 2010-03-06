@@ -1,49 +1,59 @@
-/* line 1, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+/* line 1, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
 a, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, p, pre, span, th, td {
   background-repeat: no-repeat;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
-/* line 6, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+/* line 6, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
-/* line 10, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+/* line 10, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
 fieldset, img {
-  border: 0; }
+  border: 0;
+}
 
-/* line 13, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+/* line 13, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
 address, em, th {
   font-style: normal;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
-/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+/* line 17, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
 li {
-  list-style: none; }
+  list-style: none;
+}
 
-/* line 20, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+/* line 20, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
 th {
   font-style: normal;
-  text-align: left; }
+  text-align: left;
+}
 
-/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+/* line 24, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
 h1, h2, h3, h4, h5, h6, small {
-  font-size: 100%; }
+  font-size: 100%;
+}
 
-/* line 27, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+/* line 27, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
 input, textarea, select {
   font-family: inherit;
   font-size: inherit;
-  font-weight: inherit; }
+  font-weight: inherit;
+}
 
-/* line 33, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+/* line 33, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
 .msie input, .msie textarea, .msie select {
-  font-size: 100%; }
+  font-size: 100%;
+}
 
-/* line 36, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_reset.sass */
+/* line 36, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
 header, section, article, aside, footer, time {
-  display: block; }
+  display: block;
+}
 
 /* line 4, ../../app/stylesheets/basics/_typography.sass */
 p,
@@ -54,7 +64,8 @@ address,
 footer {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 13px;
-  line-height: 20px; }
+  line-height: 20px;
+}
 
 /* line 12, ../../app/stylesheets/basics/_typography.sass */
 h2 {
@@ -62,34 +73,51 @@ h2 {
   font-size: 16px;
   line-height: 20px;
   position: relative;
-  bottom: 2px; }
+  bottom: 2px;
+}
 
 /* line 15, ../../app/stylesheets/basics/_typography.sass */
 h1 {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 37px;
   line-height: 40px;
-  position: relative; }
-  /* line 3, ../../../../../../Library/Ruby/Gems/1.8/gems/redgreengrid-0.3.0/sass/redgreengrid/_browser_support.sass */
-  .presto h1 {
-    bottom: 1px; }
+  position: relative;
+}
+/* line 3, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_browser_support.sass */
+.presto h1 {
+  bottom: 1px;
+}
 
 /* line 44, ../../app/stylesheets/basics/_grid_and_layout.sass */
 body {
-  background: white; }
+  background: white;
+}
 
 /* line 1, ../../app/stylesheets/partials/_page.sass */
 body,
 html {
-  background: white; }
+  background: white;
+}
 
 /* line 1, ../../app/stylesheets/partials/_header.sass */
 header {
-  padding: 10px; }
+  padding: 13px;
+  overflow: hidden;
+  display: inline-block;
+}
+/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.0.pre8/frameworks/compass/stylesheets/compass/utilities/general/_hacks.sass */
+header {
+  display: block;
+}
+/* line 5, ../../app/stylesheets/partials/_header.sass */
+header #logo {
+  float: left;
+}
 
 /* line 1, ../../app/stylesheets/partials/_footer.sass */
 footer {
-  padding: 10px; }
+  padding: 10px;
+}
 
 /* line 1, ../../app/stylesheets/partials/_aside.sass */
 aside {
@@ -97,44 +125,174 @@ aside {
   float: left;
   height: 500px;
   padding: 5px;
-  width: 200px; }
+  width: 200px;
+}
 
 /* line 1, ../../app/stylesheets/partials/_map.sass */
 #map {
   height: 500px;
-  width: auto !important; }
+  width: auto !important;
+}
 
 /* line 6, ../../app/stylesheets/partials/_map.sass */
 #map_OpenLayers_ViewPort {
   height: 500px;
-  width: auto !important; }
+  width: auto !important;
+}
 
 /* line 1, ../../app/stylesheets/partials/_bar.sass */
 #bar {
-  background: #d7e9c6;
+  background: #d9e0d1;
   height: 20px;
   padding: 5px;
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 13px;
-  line-height: 20px; }
+  line-height: 20px;
+}
 
 /* line 7, ../../app/stylesheets/partials/_bar.sass */
 #options {
-  float: left; }
-
+  float: left;
+}
 /* line 10, ../../app/stylesheets/partials/_bar.sass */
+#options label {
+  margin-right: 5px;
+}
+
+/* line 13, ../../app/stylesheets/partials/_bar.sass */
 #links {
-  float: right; }
+  float: right;
+}
+/* line 16, ../../app/stylesheets/partials/_bar.sass */
+#links a {
+  margin-left: 10px;
+}
 
 /* line 3, ../../app/stylesheets/partials/_links.sass */
 a {
-  color: #434bb9; }
-  /* line 6, ../../app/stylesheets/partials/_links.sass */
-  a:hover {
-    color: #353c94; }
-  /* line 9, ../../app/stylesheets/partials/_links.sass */
-  a:visited {
-    color: #6c43b9; }
-    /* line 12, ../../app/stylesheets/partials/_links.sass */
-    a:visited:hover {
-      color: #563594; }
+  color: #434bb9;
+}
+/* line 6, ../../app/stylesheets/partials/_links.sass */
+a:hover {
+  color: #353c94;
+}
+/* line 9, ../../app/stylesheets/partials/_links.sass */
+a:visited {
+  color: #6c43b9;
+}
+/* line 12, ../../app/stylesheets/partials/_links.sass */
+a:visited:hover {
+  color: #563594;
+}
+
+/* line 9, ../../app/stylesheets/partials/_icons.sass */
+.barrier-free {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 0px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  #display: inline;
+  #vertical-align: auto;
+  vertical-align: baseline;
+}
+
+/* line 12, ../../app/stylesheets/partials/_icons.sass */
+.partially-barrier-free {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 -20px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  #display: inline;
+  #vertical-align: auto;
+  vertical-align: baseline;
+}
+
+/* line 15, ../../app/stylesheets/partials/_icons.sass */
+.not-barrier-free {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 -40px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  #display: inline;
+  #vertical-align: auto;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../app/stylesheets/partials/_icons.sass */
+.unknown {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 -60px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  #display: inline;
+  #vertical-align: auto;
+  vertical-align: baseline;
+}
+
+/* line 21, ../../app/stylesheets/partials/_icons.sass */
+.print {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 -80px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  #display: inline;
+  #vertical-align: auto;
+  vertical-align: baseline;
+}
+
+/* line 24, ../../app/stylesheets/partials/_icons.sass */
+.mail {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 -100px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  #display: inline;
+  #vertical-align: auto;
+  vertical-align: baseline;
+}
+
+/* line 27, ../../app/stylesheets/partials/_icons.sass */
+.link {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 -120px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  #display: inline;
+  #vertical-align: auto;
+  vertical-align: baseline;
+}

@@ -1,0 +1,6 @@
+!images_url = "/images/"
+
+=image(!url, !x = nil, !y = nil)
+  :background-image   = "url(#{!images_url + !url})"
+  @if !x != nil
+    :background-position  = !x !y

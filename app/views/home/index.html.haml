@@ -1,14 +1,18 @@
 #bar
-  #options
-    Anzeigen:
-    = check_box_tag('b') + 'barrierefrei'
-    = check_box_tag('b') + 'nicht barrierefrei'
-    = check_box_tag('b') + 'unbekannt'
+  #options<
+    = check_box_tag(:barrier_free, 1, true)
+    = label_tag :barrier_free, 'barrierefrei', :class => 'barrier-free'
+    = check_box_tag(:partially_barrier_free, 1, true)
+    = label_tag :partially_barrier_free, 'teilweise barrierefrei', :class => 'partially-barrier-free'
+    = check_box_tag(:not_barrier_free, 1, false)
+    = label_tag :not_barrier_free, 'nicht barrierefrei', :class => 'not-barrier-free'
+    = check_box_tag(:unknown, 1, false)
+    = label_tag :unknown, 'unbekannt', :class => 'unknown'
   #links
-    = link_to "Drucken", '#'
-    = link_to "Senden"
-    = link_to "Link", "dfsdfs"
-%aside
+    = link_to "Drucken", '#', :class => 'print'
+    = link_to "Senden", '#', :class => 'mail'
+    = link_to "Link", '#', :class => 'link'
+-#%aside
   - %w(Bars Cafés Fast-Food Pubs Restaurants Kinos Theater).each do |what|
     %p= check_box_tag('a') + label_tag(what)
 #map

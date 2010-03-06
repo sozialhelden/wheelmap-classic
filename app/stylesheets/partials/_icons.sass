@@ -1,0 +1,28 @@
+=icon(!number)
+  :background-repeat  no-repeat
+  :height             16px
+  :padding-left       20px
+  +image("icons.png", 0, -20px * !number)
+  +inline-block
+  :vertical-align     baseline
+  
+.barrier-free
+  +icon(0)
+  
+.partially-barrier-free
+  +icon(1)
+  
+.not-barrier-free
+  +icon(2)
+  
+.unknown
+  +icon(3)
+  
+.print
+  +icon(4)
+  
+.mail
+  +icon(5)
+  
+.link
+  +icon(6)

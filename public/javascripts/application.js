@@ -19,7 +19,7 @@ function drawmap() {
         maxResolution: 156543,
         units: 'meters'
     });
-
+  
 
 
 // Noch mehr Kontrollelemente hinzufügen..
@@ -48,6 +48,29 @@ layers.push(new Array(layer_layerMapnik,'layer_layerMapnik'));
 setLayer(0);
 
 
+
+window.mapLayers = {}
+window.mapLayers['barrier-free'] = new OpenLayers.Layer.Text( "Barrierefrei",
+        { location:"/data/barrier-free",
+          projection: new OpenLayers.Projection("EPSG:4326")
+        });
+map.addLayer(window.mapLayers['barrier-free']);
+
+window.mapLayers['partially-barrier-free'] = new OpenLayers.Layer.Text( "Barrierefrei",
+        { location:"/data/partially-barrier-free",
+          projection: new OpenLayers.Projection("EPSG:4326")
+        });
+map.addLayer(window.mapLayers['partially-barrier-free']);
+
+window.mapLayers['not-barrier-free'] = new OpenLayers.Layer.Text( "Barrierefrei",
+        { location:"/data/not-barrier-free",
+          projection: new OpenLayers.Projection("EPSG:4326"),
+          visibility: false
+        });
+map.addLayer(window.mapLayers['not-barrier-free']);
+
+
+
 // An die richtige Stelle springen..
 jumpTo(lon,lat,zoom);
 
@@ -68,3 +91,15 @@ checkUtilVersion(4);
 }
 
 drawmap();
+
+$(function() {
+  $('#barrier-free').click(function() {
+    mapLayers['barrier-free'].setVisibility(this.checked);
+  });
+  $('#partially-barrier-free').click(function() {
+    mapLayers['partially-barrier-free'].setVisibility(this.checked);
+  });
+  $('#not-barrier-free').click(function() {
+    mapLayers['not-barrier-free'].setVisibility(this.checked);
+  });
+});
