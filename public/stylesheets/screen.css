@@ -93,9 +93,10 @@ footer {
 
 /* line 1, ../../app/stylesheets/partials/_aside.sass */
 aside {
-  background: #7cb741;
+  background: #bfd6a8;
   float: left;
   height: 500px;
+  padding: 5px;
   width: 200px; }
 
 /* line 1, ../../app/stylesheets/partials/_map.sass */
@@ -107,3 +108,33 @@ aside {
 #map_OpenLayers_ViewPort {
   height: 500px;
   width: auto !important; }
+
+/* line 1, ../../app/stylesheets/partials/_bar.sass */
+#bar {
+  background: #d7e9c6;
+  height: 20px;
+  padding: 5px;
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 13px;
+  line-height: 20px; }
+
+/* line 7, ../../app/stylesheets/partials/_bar.sass */
+#options {
+  float: left; }
+
+/* line 10, ../../app/stylesheets/partials/_bar.sass */
+#links {
+  float: right; }
+
+/* line 3, ../../app/stylesheets/partials/_links.sass */
+a {
+  color: #434bb9; }
+  /* line 6, ../../app/stylesheets/partials/_links.sass */
+  a:hover {
+    color: #353c94; }
+  /* line 9, ../../app/stylesheets/partials/_links.sass */
+  a:visited {
+    color: #6c43b9; }
+    /* line 12, ../../app/stylesheets/partials/_links.sass */
+    a:visited:hover {
+      color: #563594; }

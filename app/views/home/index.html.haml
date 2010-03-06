@@ -1,2 +1,14 @@
+#bar
+  #options
+    Anzeigen:
+    = check_box_tag('b') + 'barrierefrei'
+    = check_box_tag('b') + 'nicht barrierefrei'
+    = check_box_tag('b') + 'unbekannt'
+  #links
+    = link_to "Drucken", '#'
+    = link_to "Senden"
+    = link_to "Link", "dfsdfs"
 %aside
+  - %w(Bars Cafés Fast-Food Pubs Restaurants Kinos Theater).each do |what|
+    %p= check_box_tag('a') + label_tag(what)
 #map
