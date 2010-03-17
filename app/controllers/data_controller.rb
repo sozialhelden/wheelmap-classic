@@ -1,3 +1,6 @@
+require 'OSM/API'
+require 'OSM/Database'
+
 class DataController < ApplicationController
 
   caches_page :data
