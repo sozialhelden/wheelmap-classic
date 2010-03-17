@@ -61,6 +61,7 @@ function drawmap() {
         if (layer) {
           addMarker(layer, point.lon * 1.0, point.lat * 1.0, point.name, icons[point.wheelchair]);
         }
+        $('#spinner').hide();
       });
     });
   }, 1000);

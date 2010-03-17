@@ -113,6 +113,10 @@ header {
 header #logo {
   float: left;
 }
+/* line 8, ../../app/stylesheets/partials/_header.sass */
+header #spinner {
+  margin-top: 25px;
+}
 
 /* line 1, ../../app/stylesheets/partials/_footer.sass */
 footer {

@@ -3,7 +3,7 @@
   %head
     %meta(charset="utf-8")
     %title= t('header.title')
-    = stylesheet_link_tag 'map', 'screen', :cache => false
+    = stylesheet_link_tag 'map', 'screen', :cache => RAILS_ENV == 'production'
     - if head = yield(:head)
       = head
     /[if IE]
@@ -13,6 +13,7 @@
     #page
       %header
         = link_to image_tag('wheelmap.png', :alt => t('header.tagline')), root_path, :id => 'logo'
+        = image_tag('spinner.gif', :id => 'spinner')
         
       - [:notice, :error, :warning].each do |type|
         - if flash[type]
@@ -20,7 +21,7 @@
       = yield
     = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
     = javascript_include_tag 'http://www.openstreetmap.org/openlayers/OpenStreetMap.js'
-    = javascript_include_tag 'jquery', 'util', 'application', :cache => false
+    = javascript_include_tag 'jquery', 'util', 'application', :cache => RAILS_ENV == 'production'
     - if jquery = yield(:jquery)
       :javascript
         $(function(){#{jquery}})
