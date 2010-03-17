@@ -3,7 +3,7 @@
   %head
     %meta(charset="utf-8")
     %title= t('header.title')
-    = stylesheet_link_tag 'map', 'screen', :cache => RAILS_ENV == 'production'
+    = stylesheet_link_tag 'screen', :cache => false
     - if head = yield(:head)
       = head
     /[if IE]
