@@ -3,6 +3,8 @@ var epsg4326, epsg900913;
 //var amenities = 'arts-centre atm audiologist baby-hatch bank bar bench bicycle-parking bicycle-rental biergarten brothel bureau-de-change bus-station cafe car-rental car-sharing cinema clock coast-guard college community-centre courthouse crematorium drinking-water embassy emergency-phone fast-food ferry-terminal fire-hydrant fire-station fountain fuel grave-yard grit-bin hospital hunting-stand kindergarten library marketplace milk-dispenser nightclub parking pharmacy place-of-worship police post-box post-office prison pub public-building recycling register-office restaurant sauna school stripclub studio taxi telephone theatre toilets townhall university vending-machine veterinary waste-basket waste-disposal subway'.split(' ');
 var amenities = 'arts-centre baby-hatch bank bar bench bicycle-parking bicycle-rental biergarten brothel bureau-de-change bus-station cafe car-rental car-sharing cinema college community-centre courthouse crematorium embassy emergency-phone fast-food ferry-terminal fountain fuel grave-yard hospital hunting-stand kindergarten library marketplace nightclub parking pharmacy place-of-worship police post-box post-office pub public-building register-office restaurant sauna school telephone theatre toilets townhall university vending-machine waste-basket waste-disposal subway'.split(' ');
 
+var states = { yes: true, no: false, limited: true, unknown: true };
+
 function drawmap() {
   OpenLayers.Lang.setCode('de');
   
@@ -36,7 +38,7 @@ function drawmap() {
             amenity + '-' + state,
             {
               projection: new OpenLayers.Projection("EPSG:4326"), 
-              visibility: amenity == 'cafe',
+              visibility: amenity == 'cafe' && states[state],
               displayInLayerSwitcher: false
             }
           );
@@ -81,11 +83,11 @@ function drawmap() {
 
 function toggleLayers(amenity) {
   var visibility = false;
+  visibility = !$('.' + amenity).parent().hasClass('visible');
   eachState(function(state) {
     console.log(amenity + '-' + state);
     var layer = mapLayers[amenity + '-' + state];
-    layer.setVisibility(!layer.getVisibility());    
-    visibility = layer.getVisibility();
+    layer.setVisibility(visibility && states[state]);    
   });
   $('.' + amenity).parent().removeClass(visibility ? 'hidden' : 'visible').addClass(visibility ? 'visible' : 'hidden');
   return false;
@@ -131,18 +133,39 @@ function eachState(f) {
 }
 
 
+function switchState() {
+  $.each(amenities, function(i, amenity) {
+    eachState(function(state) {
+      console.log(amenity + '-' + state, $('.' + amenity).parent().hasClass('visible') && states[state]);
+      mapLayers[amenity + '-' + state].setVisibility($('.' + amenity).parent().hasClass('visible') && states[state]);
+    });
+  });
+  //eachState(function(state) {
+  //  $('#wheelchair-' + state).attr('checked', state);
+  //});
+}
+
+
 $(function() {
-  $('#barrier-free').click(function() {
-    mapLayers['barrier-free'].setVisibility(this.checked);
+  $('#wheelchair-yes').click(function() {
+    //mapLayers['barrier-free'].setVisibility(this.checked);
+    states.yes = !states.yes;
+    switchState();
   });
-  $('#limited-barrier-free').click(function() {
-    mapLayers['limited-barrier-free'].setVisibility(this.checked);
+  $('#wheelchair-limited').click(function() {
+    //mapLayers['limited-barrier-free'].setVisibility(this.checked);
+    states.limited = !states.limited;
+    switchState();
   });
-  $('#not-barrier-free').click(function() {
-    mapLayers['not-barrier-free'].setVisibility(this.checked);
+  $('#wheelchair-no').click(function() {
+    //mapLayers['not-barrier-free'].setVisibility(this.checked);
+    states.no = !states.no;
+    switchState();
   });
-  $('#unknown').click(function() {
-    mapLayers['unknown'].setVisibility(this.checked);
+  $('#wheelchair-unknown').click(function() {
+    //mapLayers['unknown'].setVisibility(this.checked);
+    states.unknown = !states.unknown;
+    switchState();
   });
 });
 

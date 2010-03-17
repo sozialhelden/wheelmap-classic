@@ -1,13 +1,13 @@
 #bar
   #options<
-    = check_box_tag(:barrier_free, 1, true)
-    = label_tag :barrier_free, 'barrierefrei', :class => 'barrier-free'
-    = check_box_tag(:limited_barrier_free, 1, true)
-    = label_tag :limited_barrier_free, 'teilweise barrierefrei', :class => 'limited-barrier-free'
-    = check_box_tag(:not_barrier_free, 1, false)
-    = label_tag :not_barrier_free, 'nicht barrierefrei', :class => 'not-barrier-free'
-    = check_box_tag(:unknown, 1, false)
-    = label_tag :unknown, 'unbekannt', :class => 'unknown'
+    = check_box_tag(:wheelchair_yes, 1, true)
+    = label_tag :wheelchair_yes, 'barrierefrei', :class => 'barrier-free'
+    = check_box_tag(:wheelchair_limited, 1, true)
+    = label_tag :wheelchair_limited, 'teilweise barrierefrei', :class => 'limited-barrier-free'
+    = check_box_tag(:wheelchair_no, 1, false)
+    = label_tag :wheelchair_no, 'nicht barrierefrei', :class => 'not-barrier-free'
+    = check_box_tag(:wheelchair_unknown, 1, true)
+    = label_tag :wheelchair_unknown, 'unbekannt', :class => 'unknown'
   #links
     = link_to "Drucken", '#', :class => 'print'
     = link_to "Senden", '#', :class => 'mail'
