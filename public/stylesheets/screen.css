@@ -792,13 +792,13 @@ a:visited:hover {
 }
 /* line 17, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a.visible {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
   background-color: #697060;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #768168), color-stop(0.5, #697060), color-stop(1, #5c6552));
   background-image: -moz-linear-gradient(center bottom, #5c6552 0%, #697060 50%, #768168 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#5c6552', startColorstr='#768168', gradientType='0');
-  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
-  box-shadow: rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
 }
 /* line 23, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a.hidden {
@@ -814,28 +814,35 @@ a:visited:hover {
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#9eab8b', startColorstr='#e8ebe3', gradientType='0');
 }
 /* line 27, ../../app/stylesheets/partials/_amenities.sass */
+#amenities a.hidden:hover {
+  background-color: #a9afa1;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #cfd6c6), color-stop(0.5, #a9afa1), color-stop(1, #85966e));
+  background-image: -moz-linear-gradient(center bottom, #85966e 0%, #a9afa1 50%, #cfd6c6 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#85966e', startColorstr='#cfd6c6', gradientType='0');
+}
+/* line 30, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a:first-child {
   -moz-border-radius-bottomleft: 4px;
   -webkit-border-bottom-left-radius: 4px;
   -khtml-border-bottom-left-radius: 4px;
-  border-radius-bottom-left: 4px;
+  border-bottom-left-radius: 4px;
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
   -khtml-border-top-left-radius: 4px;
-  border-radius-top-left: 4px;
+  border-top-left-radius: 4px;
 }
-/* line 30, ../../app/stylesheets/partials/_amenities.sass */
+/* line 33, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a:last-child {
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
   -khtml-border-top-right-radius: 4px;
-  border-radius-top-right: 4px;
+  border-top-right-radius: 4px;
   -moz-border-radius-bottomright: 4px;
   -webkit-border-bottom-right-radius: 4px;
   -khtml-border-bottom-right-radius: 4px;
-  border-radius-bottom-right: 4px;
+  border-bottom-right-radius: 4px;
 }
-/* line 33, ../../app/stylesheets/partials/_amenities.sass */
+/* line 36, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a span {
   float: left;
   height: 16px;
