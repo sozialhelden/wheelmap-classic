@@ -4657,103 +4657,95 @@ function checkUtilVersion(version) {
 
 var map;
 var epsg4326, epsg900913;
-
-//var showPopupOnHover = false;
-//text = new Array("Informationen zur Karte anzeigen","Informationen zur Karte verstecken");
+//var amenities = 'arts-centre atm audiologist baby-hatch bank bar bench bicycle-parking bicycle-rental biergarten brothel bureau-de-change bus-station cafe car-rental car-sharing cinema clock coast-guard college community-centre courthouse crematorium drinking-water embassy emergency-phone fast-food ferry-terminal fire-hydrant fire-station fountain fuel grave-yard grit-bin hospital hunting-stand kindergarten library marketplace milk-dispenser nightclub parking pharmacy place-of-worship police post-box post-office prison pub public-building recycling register-office restaurant sauna school stripclub studio taxi telephone theatre toilets townhall university vending-machine veterinary waste-basket waste-disposal subway'.split(' ');
+var amenities = 'arts-centre baby-hatch bank bar bench bicycle-parking bicycle-rental biergarten brothel bureau-de-change bus-station cafe car-rental car-sharing cinema college community-centre courthouse crematorium embassy emergency-phone fast-food ferry-terminal fountain fuel grave-yard hospital hunting-stand kindergarten library marketplace nightclub parking pharmacy place-of-worship police post-box post-office pub public-building register-office restaurant sauna school telephone theatre toilets townhall university vending-machine waste-basket waste-disposal subway'.split(' ');
 
 function drawmap() {
-    //OpenLayers.Lang.setCode('de');
-    
-    epsg900913 = new OpenLayers.Projection("EPSG:900913");
-    epsg4326 = new OpenLayers.Projection("EPSG:4326");
-    map = new OpenLayers.Map('map', {
-        projection: epsg900913,
-        displayProjection: epsg4326,
-        //controls: [
-		//new OpenLayers.Control.MouseDefaults(),
-		//new OpenLayers.Control.Attribution()],
-    //    //maxExtent:
-    //    //    new OpenLayers.Bounds(-20037508.34,-20037508.34,
-    //    //                            20037508.34, 20037508.34),
-    //    numZoomLevels: 18,
-    //    maxResolution: 156543//,
-    //    units: 'meters'
-    });
+  OpenLayers.Lang.setCode('de');
   
+  epsg900913 = new OpenLayers.Projection("EPSG:900913");
+  epsg4326 = new OpenLayers.Projection("EPSG:4326");
+  map = new OpenLayers.Map('map', {
+      projection: epsg900913,
+      displayProjection: epsg4326,
+      controls: [
+        new OpenLayers.Control.MouseDefaults(),
+        new OpenLayers.Control.Attribution()
+      ],
+      maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34, 20037508.34, 20037508.34),
+     numZoomLevels: 18,
+     maxResolution: 156543,
+     units: 'meters'
+  });
+
+  checkForPermalink();
+  
+  var mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik");
+  map.addLayer(mapnik);
+  
+  setTimeout(function() {
+    var bbox = mapBBOX().toBBOX();
+    var layer;
+    window.mapLayers = {};
+    $.each(amenities, function(i, amenity) {
+      eachState(function(state) {
+        var layer = window.mapLayers[amenity + '-' + state] = new OpenLayers.Layer.Markers(
+            amenity + '-' + state,
+            {
+              projection: new OpenLayers.Projection("EPSG:4326"), 
+              visibility: amenity == 'cafe',
+              displayInLayerSwitcher: false
+            }
+          );
+        map.addLayer(layer);
+      });
+    });
+    
+    var size = new OpenLayers.Size(28, 34);
+    var offset = new OpenLayers.Pixel(-15, -34);
+    var icons = {
+        yes: new OpenLayers.Icon('/images/barrier-free.png', size, offset),
+        no: new OpenLayers.Icon('/images/not-barrier-free.png', size, offset),
+        limited: new OpenLayers.Icon('/images/limited-barrier-free.png', size, offset),
+        unknown: new OpenLayers.Icon('/images/unknown.png', size, offset)
+      };
     
     
-    // Noch mehr Kontrollelemente hinzufügen..
-    //map.addControl(new OpenLayers.Control.PanZoomBar());
-    
-    
-    
-    // Position und Zoomstufe der Karte
-    lon = 13.393833875481;
-    lat = 52.514131754649;
-    zoom = 17; 
-    
-    checkForPermalink();
-    //>>>>>>>>>>>.clone().transform(map.getProjectionObject(), epsg4326);
-    
-    
-    
-    // Layer hinzufügen
-    
-    //layer_markers = new OpenLayers.Layer.Markers("Marker", { projection: new OpenLayers.Projection("EPSG:4326"),visibility: true, displayInLayerSwitcher: false });
-    //layer_vectors = new OpenLayers.Layer.Vector("Zeichnungen", { displayInLayerSwitcher: false } );
-    //map.addLayer(layer_vectors);
-    //map.addLayer(layer_markers);
-    //////layers = new Array();
-    var layer_layerMapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik");
-    map.addLayer(layer_layerMapnik)
-    //////layers.push(new Array(layer_layerMapnik,'layer_layerMapnik'));
-    //////setLayer(0);
-    
-    //var ol_wms = new OpenLayers.Layer.WMS( "OpenLayers WMS", "http://labs.metacarta.com/wms/vmap0?", {layers: 'basic'} );
-    //map.addLayers([ol_wms]);
-    
-    setTimeout(function() {
-      var bbox = mapBBOX().toBBOX();
-      window.mapLayers = {};
-      window.mapLayers['barrier-free'] = new OpenLayers.Layer.Text( "Barrierefrei",
-              { location:"/data/barrier-free/" + bbox,
-                projection: new OpenLayers.Projection("EPSG:4326")
-              });
-      map.addLayer(window.mapLayers['barrier-free']);
-    
-      window.mapLayers['limited-barrier-free'] = new OpenLayers.Layer.Text( "Teilweise Barrierefrei",
-              { location:"/data/partially-barrier-free/" + bbox,
-                projection: new OpenLayers.Projection("EPSG:4326")
-              });
-      map.addLayer(window.mapLayers['limited-barrier-free']);
-    
-      window.mapLayers['not-barrier-free'] = new OpenLayers.Layer.Text( "Nicht Barrierefrei",
-              { location:"/data/not-barrier-free/" + bbox,
-                projection: new OpenLayers.Projection("EPSG:4326"),
-                visibility: false
-              });
-      map.addLayer(window.mapLayers['not-barrier-free']);
-    }, 1000);
-    
-    
-    
-    // An die richtige Stelle springen..
-    //jumpTo(lon,lat,zoom);
-    
-    // Benutzte Marker Icons hinzufügen..
-    /////icons = new Array();
-    
-    
-    // Marker hinzufügen
-    
-    
-    ///geometries = new Array();
-    
-    
-    // Nochmal was..
-    jumpTo(lon, lat, zoom);
-    //toggleInfo();
-    //checkUtilVersion(4);
+    $.getJSON('/data/' + bbox, function(data) {
+      $.each(data, function(i, point) {
+        var layer = window.mapLayers[point.amenity + '-' + point.wheelchair];
+          console.log("MARKER:"+point.amenity + '-' + point.wheelchair);
+        if (layer) {
+          addMarker(layer, point.lon * 1.0, point.lat * 1.0, point.name, icons[point.wheelchair]);
+        }
+        $('#spinner').hide();
+      });
+    });
+  }, 1000);
+  
+  var lon = 13.393833875481;
+  var lat = 52.514131754649;
+  var zoom = 16; 
+  
+  jumpTo(lon, lat, zoom);
+  
+  var amenitiesElement = $('#amenities');
+  $.each(amenities, function(i, amenity) {
+    amenitiesElement.append('<a href="#" onclick="return toggleLayers(\'' + amenity + '\')" class="' + (amenity == 'cafe' ? 'visible' : 'hidden') + '" title="' + amenity + '"><span class="' + amenity + '"></span></a>');
+  });
+  
+}
+
+function toggleLayers(amenity) {
+  var visibility = false;
+  eachState(function(state) {
+    console.log(amenity + '-' + state);
+    var layer = mapLayers[amenity + '-' + state];
+    layer.setVisibility(!layer.getVisibility());    
+    visibility = layer.getVisibility();
+  });
+  $('.' + amenity).parent().removeClass(visibility ? 'hidden' : 'visible').addClass(visibility ? 'visible' : 'hidden');
+  return false;
 }
 
 function mapBBOX() {
@@ -4763,46 +4755,51 @@ function mapBBOX() {
 
 drawmap();
 
+
+function addMarker(layer, lon, lat, popupContentHTML, icon) {
+  var ll = new OpenLayers.LonLat(Lon2Merc(lon), Lat2Merc(lat));
+  var feature = new OpenLayers.Feature(layer, ll); 
+  feature.closeBox = true;
+  feature.popupClass = OpenLayers.Class(OpenLayers.Popup.FramedCloud, {minSize: new OpenLayers.Size(300, 180) } );
+  feature.data.popupContentHTML = popupContentHTML;
+  feature.data.overflow = "hidden";
+
+  var marker = new OpenLayers.Marker(ll, icon.clone());
+  marker.feature = feature;
+
+  var markerClick = function(evt) {
+      if (this.popup == null) {
+          this.popup = this.createPopup(this.closeBox);
+          map.addPopup(this.popup);
+          this.popup.show();
+      } else {
+          this.popup.toggle();
+      }
+      OpenLayers.Event.stop(evt);
+  };
+  marker.events.register("mousedown", feature, markerClick);
+
+  layer.addMarker(marker);
+}
+
+
+function eachState(f) {
+  $.each(['yes', 'no', 'limited', 'unknown'], function(i, state) { f(state); });
+}
+
+
 $(function() {
- $('#barrier-free').click(function() {
-   mapLayers['barrier-free'].setVisibility(this.checked);
- });
- $('#partially-barrier-free').click(function() {
-   mapLayers['partially-barrier-free'].setVisibility(this.checked);
- });
- $('#not-barrier-free').click(function() {
-   mapLayers['not-barrier-free'].setVisibility(this.checked);
- });
+  $('#barrier-free').click(function() {
+    mapLayers['barrier-free'].setVisibility(this.checked);
+  });
+  $('#limited-barrier-free').click(function() {
+    mapLayers['limited-barrier-free'].setVisibility(this.checked);
+  });
+  $('#not-barrier-free').click(function() {
+    mapLayers['not-barrier-free'].setVisibility(this.checked);
+  });
+  $('#unknown').click(function() {
+    mapLayers['unknown'].setVisibility(this.checked);
+  });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-//    map = new OpenLayers.Map('map');
-//
-//    var ol_wms = new OpenLayers.Layer.WMS( "OpenLayers WMS",
-//        "http://labs.metacarta.com/wms/vmap0?", {layers: 'basic'} );
-//
-//var jpl_wms = new OpenLayers.Layer.WMS( "NASA Global Mosaic",
-//    "http://t1.hypercube.telascience.org/cgi-bin/landsat7", 
-//    {layers: "landsat7"});
-//
-//    jpl_wms.setVisibility(false);
-//
-//    map.addLayers([ol_wms, jpl_wms]);
-//    map.addControl(new OpenLayers.Control.LayerSwitcher());
-//    // map.setCenter(new OpenLayers.LonLat(0, 0), 0);
-//    map.zoomToMaxExtent();
-//    
-//    var click = new OpenLayers.Control.Click();
-//    map.addControl(click);
-//    click.activate();
