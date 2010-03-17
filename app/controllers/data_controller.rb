@@ -6,10 +6,10 @@ class DataController < ApplicationController
   caches_page :data
 
   def data
-    if RAILS_ENV == 'production'
+    #if RAILS_ENV == 'production'
       render :file => File.join(RAILS_ROOT, 'db', 'tmp-osm-request.js')
       return
-    end
+    #end
     data = []
     db = osm.get_bbox(*params[:bbox].first.split(',').map{ |val| val.to_f })
     db.nodes.values.each do |node|
