@@ -1,22 +1,22 @@
-=icon(!number)
+=icon(!number, !y_add = 0)
   :background-repeat  no-repeat
   :height             16px
   :padding-left       20px
-  +image("icons.png", 0, -20px * !number)
+  +image("icons.png", 0, -20px * !number + !y_add)
   +inline-block
   :vertical-align     baseline
   
 .barrier-free
-  +icon(0)
+  +icon(0, 1px)
   
-.partially-barrier-free
-  +icon(1)
+.limited-barrier-free
+  +icon(1, 1px)
   
 .not-barrier-free
-  +icon(2)
+  +icon(2, 1px)
   
 .unknown
-  +icon(3)
+  +icon(3, 1px)
   
 .print
   +icon(4)
@@ -26,3 +26,214 @@
   
 .link
   +icon(6)
+
+=amenity-icon(!name)
+  +image("icons/#{!name}.png")
+  
+.arts-centre
+  +amenity-icon("palette")
+
+.atm
+  +amenity-icon("")
+  
+.audiologist
+  +amenity-icon("")
+  
+.baby-hatch
+  +amenity-icon("")
+  
+.bank
+  +amenity-icon("money-coin")
+  
+.bar
+  +amenity-icon("glass")
+  
+.bench
+  +amenity-icon("")
+  
+.bicycle-parking
+  +amenity-icon("")
+  
+.bicycle-rental
+  +amenity-icon("")
+  
+.biergarten
+  +amenity-icon("")
+  
+.brothel
+  +amenity-icon("")
+  
+.bureau-de-change
+  +amenity-icon("")
+  
+.bus-station
+  +amenity-icon("")
+  
+.cafe
+  +amenity-icon("cup")
+  
+.car-rental
+  +amenity-icon("car-red")
+  
+.car-sharing
+  +amenity-icon("car")
+  
+.cinema
+  +amenity-icon("film")
+  
+.clock
+  +amenity-icon("clock-frame")
+  
+.coast-guard
+  +amenity-icon("lifebuoy")
+  
+.college
+  +amenity-icon("")
+  
+.community-centre
+  +amenity-icon("")
+  
+.courthouse
+  +amenity-icon("")
+  
+.crematorium
+  +amenity-icon("")
+  
+.drinking-water
+  +amenity-icon("")
+  
+.embassy
+  +amenity-icon("")
+  
+.emergency-phone
+  +amenity-icon("")
+  
+.fast-food
+  +amenity-icon("")
+  
+.ferry-terminal
+  +amenity-icon("")
+  
+.fire-hydrant
+  +amenity-icon("fire")
+  
+.fire-station
+  +amenity-icon("fire-big")
+  
+.fountain
+  +amenity-icon("")
+  
+.fuel
+  +amenity-icon("")
+  
+.grave-yard
+  +amenity-icon("")
+  
+.grit-bin
+  +amenity-icon("")
+  
+.hospital
+  +amenity-icon("bandaid")
+  
+.hunting-stand
+  +amenity-icon("")
+  
+.kindergarten
+  +amenity-icon("smiley")
+  
+.library
+  +amenity-icon("book-open")
+  
+.marketplace
+  +amenity-icon("store")
+  
+.milk-dispenser
+  +amenity-icon("")
+  
+.nightclub
+  +amenity-icon("")
+  
+.parking
+  +amenity-icon("")
+  
+.pharmacy
+  +amenity-icon("pill")
+  
+.place-of-worship
+  +amenity-icon("")
+  
+.police
+  +amenity-icon("shield")
+  
+.post-box
+  +amenity-icon("envelope")
+  
+.post-office
+  +amenity-icon("postage-stamp")
+  
+.prison
+  +amenity-icon("user-thief-baldie")
+  
+.pub
+  +amenity-icon("")
+  
+.public-building
+  +amenity-icon("")
+  
+.recycling
+  +amenity-icon("bin-full")
+  
+.register-office
+  +amenity-icon("")
+  
+.restaurant
+  +amenity-icon("cutlery")
+  
+.sauna
+  +amenity-icon("")
+  
+.school
+  +amenity-icon("")
+  
+.stripclub
+  +amenity-icon("")
+  
+.studio
+  +amenity-icon("")
+  
+.taxi
+  +amenity-icon("")
+  
+.telephone
+  +amenity-icon("telephone")
+  
+.theatre
+  +amenity-icon("")
+  
+.toilets
+  +amenity-icon("")
+  
+.townhall
+  +amenity-icon("")
+  
+.university
+  +amenity-icon("")
+  
+.vending-machine
+  +amenity-icon("")
+  
+.veterinary
+  +amenity-icon("")
+  
+.waste-basket
+  +amenity-icon("")
+  
+.waste-disposal
+  +amenity-icon("")
+
+
+
+  
+.subway
+  +amenity-icon("")
+  

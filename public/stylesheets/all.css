@@ -1,0 +1,398 @@
+@charset "utf-8";
+
+html,body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+ 
+a {
+  color: #0000FF;
+  text-decoration: none;
+}
+ 
+a:hover {
+  color: #000011;
+  text-decoration: underline;
+}
+ 
+#map {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  color: #000;
+}
+.olFramedCloudPopupContent {
+	font-size: 0.8em;
+	font-family: Verdana, sans-serif;
+}
+#descriptionToggle {
+	position: absolute;
+  	font-size: 1em;
+	z-index: 10000;
+	left: 80px;
+	height: 14px;
+	border-left: 1px solid #000040;
+	border-bottom: 1px solid #000040;
+	border-right: 1px solid #000040;
+	padding: 2px 10px;
+	margin-right: 200px;
+	background-color: #EEE;
+	font-size: 12px;
+	cursor: default;
+	opacity: 0.7;
+} 
+#descriptionToggle:hover {
+	background-color: #FFF;
+	opacity: 1;
+}
+#description {
+	position: absolute;
+	z-index: 10000;
+	left: 80px;
+	top: 18px;
+	border: 1px solid #000040;
+	padding: 10px 10px;
+	margin-right: 200px;
+	background-color: #FFF;
+	font-size: 12px;
+}
+ 
+#attribution {
+	bottom: 0;
+	left: 0;
+	padding: 5px 8px 1px 8px;
+	position: absolute;
+	font-size: 11px;
+	font-style: italic;
+	z-index: 1000;
+}
+
+#layer {
+	position: absolute;
+	top: 60px;
+	right: 10px;	
+	z-index: 10002;
+}
+
+#layer > div {
+	border: 1px solid #000;
+	background-color: #FFF;
+	padding: 4px 5px;
+	font-size: 0.7em;
+	cursor: default;
+	margin-bottom: 4px;
+
+}
+#layer div:hover {
+}
+#layer .active {
+	background-color: #EEF;
+}
+
+.hide { display: none; }
+
+
+/* line 1, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+a, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, p, pre, span, th, td {
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 6, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 10, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+fieldset, img {
+  border: 0;
+}
+
+/* line 13, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+address, em, th {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 17, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+li {
+  list-style: none;
+}
+
+/* line 20, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+th {
+  font-style: normal;
+  text-align: left;
+}
+
+/* line 24, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+h1, h2, h3, h4, h5, h6, small {
+  font-size: 100%;
+}
+
+/* line 27, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* line 33, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+.msie input, .msie textarea, .msie select {
+  font-size: 100%;
+}
+
+/* line 36, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+header, section, article, aside, footer, time {
+  display: block;
+}
+
+/* line 4, ../../app/stylesheets/basics/_typography.sass */
+p,
+article li,
+dt, dd,
+h4, h5, h6,
+address,
+footer {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 13px;
+  line-height: 20px;
+}
+
+/* line 12, ../../app/stylesheets/basics/_typography.sass */
+h2 {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  bottom: 2px;
+}
+
+/* line 15, ../../app/stylesheets/basics/_typography.sass */
+h1 {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 37px;
+  line-height: 40px;
+  position: relative;
+}
+/* line 3, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_browser_support.sass */
+.presto h1 {
+  bottom: 1px;
+}
+
+/* line 44, ../../app/stylesheets/basics/_grid_and_layout.sass */
+body {
+  background: white;
+}
+
+/* line 1, ../../app/stylesheets/partials/_page.sass */
+body,
+html {
+  background: white;
+}
+
+/* line 1, ../../app/stylesheets/partials/_header.sass */
+header {
+  padding: 13px;
+  overflow: hidden;
+  display: inline-block;
+}
+/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.0.pre8/frameworks/compass/stylesheets/compass/utilities/general/_hacks.sass */
+header {
+  display: block;
+}
+/* line 5, ../../app/stylesheets/partials/_header.sass */
+header #logo {
+  float: left;
+}
+
+/* line 1, ../../app/stylesheets/partials/_footer.sass */
+footer {
+  padding: 10px;
+}
+
+/* line 1, ../../app/stylesheets/partials/_aside.sass */
+aside {
+  background: #bfd6a8;
+  float: left;
+  height: 500px;
+  padding: 5px;
+  width: 200px;
+}
+
+/* line 1, ../../app/stylesheets/partials/_map.sass */
+#map {
+  height: 500px;
+  width: auto !important;
+}
+
+/* line 6, ../../app/stylesheets/partials/_map.sass */
+#map_OpenLayers_ViewPort {
+  height: 500px;
+  width: auto !important;
+}
+
+/* line 1, ../../app/stylesheets/partials/_bar.sass */
+#bar {
+  background: #d9e0d1;
+  height: 20px;
+  padding: 5px;
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 13px;
+  line-height: 20px;
+}
+
+/* line 7, ../../app/stylesheets/partials/_bar.sass */
+#options {
+  float: left;
+}
+/* line 10, ../../app/stylesheets/partials/_bar.sass */
+#options label {
+  margin-right: 5px;
+}
+
+/* line 13, ../../app/stylesheets/partials/_bar.sass */
+#links {
+  float: right;
+}
+/* line 16, ../../app/stylesheets/partials/_bar.sass */
+#links a {
+  margin-left: 10px;
+}
+
+/* line 3, ../../app/stylesheets/partials/_links.sass */
+a {
+  color: #434bb9;
+}
+/* line 6, ../../app/stylesheets/partials/_links.sass */
+a:hover {
+  color: #353c94;
+}
+/* line 9, ../../app/stylesheets/partials/_links.sass */
+a:visited {
+  color: #6c43b9;
+}
+/* line 12, ../../app/stylesheets/partials/_links.sass */
+a:visited:hover {
+  color: #563594;
+}
+
+/* line 9, ../../app/stylesheets/partials/_icons.sass */
+.barrier-free {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 0px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  #display: inline;
+  #vertical-align: auto;
+  vertical-align: baseline;
+}
+
+/* line 12, ../../app/stylesheets/partials/_icons.sass */
+.partially-barrier-free {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 -20px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  #display: inline;
+  #vertical-align: auto;
+  vertical-align: baseline;
+}
+
+/* line 15, ../../app/stylesheets/partials/_icons.sass */
+.not-barrier-free {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 -40px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  #display: inline;
+  #vertical-align: auto;
+  vertical-align: baseline;
+}
+
+/* line 18, ../../app/stylesheets/partials/_icons.sass */
+.unknown {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 -60px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  #display: inline;
+  #vertical-align: auto;
+  vertical-align: baseline;
+}
+
+/* line 21, ../../app/stylesheets/partials/_icons.sass */
+.print {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 -80px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  #display: inline;
+  #vertical-align: auto;
+  vertical-align: baseline;
+}
+
+/* line 24, ../../app/stylesheets/partials/_icons.sass */
+.mail {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 -100px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  #display: inline;
+  #vertical-align: auto;
+  vertical-align: baseline;
+}
+
+/* line 27, ../../app/stylesheets/partials/_icons.sass */
+.link {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 -120px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  #display: inline;
+  #vertical-align: auto;
+  vertical-align: baseline;
+}

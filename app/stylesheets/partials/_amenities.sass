@@ -1,0 +1,36 @@
+#amenities
+  !amenities_green = desaturate(!green, 30%)
+  border-bottom= 1px darken(!amenities_green, 15%) solid
+  border-top= 1px lighten(!amenities_green, 15%) solid
+  height: 24px
+  padding: 4px 10px
+  +vertical-gradient(!amenities_green)
+
+  a
+    border= 1px desaturate(darken(!amenities_green, 30%), 10%) solid
+    float: left
+    height: 16px
+    margin-right: -1px
+    padding: 3px
+    width: 16px
+    
+    &.visible
+      +vertical-gradient(darken(!amenities_green, 20%), 5%)
+      -webkit-box-shadow= rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px
+      -moz-box-shadow= rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px
+      box-shadow= rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px
+
+    &.hidden
+      +box-shadow(rgba(255, 255, 255, 0.2), 0, 1px, 1px)
+      +vertical-gradient(lighten(!amenities_green, 15%), 15%)
+
+    &:first-child
+      +border-left-radius(4px)
+
+    &:last-child
+      +border-right-radius(4px)
+
+    span
+      float: left
+      height: 16px
+      width: 16px

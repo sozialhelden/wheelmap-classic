@@ -1,11 +1,23 @@
 #bar
-  :background = !light_green
+  !bar_green = desaturate(!light_green, 20%)
+  :background = !bar_green
   :height       20px
   :padding      5px
   +helvetica-13
+  border-bottom= 1px darken(!bar_green, 15%) solid
+  border-top= 1px lighten(!bar_green, 5%) solid
+  padding: 4px 10px
+  +vertical-gradient(!bar_green)
+  
+  a,
+  label
+    +text-shadow(rgba(255, 255, 255, 0.5  ), 0, 1px, 1px)
 
 #options
   :float left
+  
+  input
+    +up(1px)
   
   label
     :margin-right 5px

@@ -130,11 +130,12 @@ aside {
 
 /* line 1, ../../app/stylesheets/partials/_map.sass */
 #map {
+  clear: both;
   height: 500px;
   width: auto !important;
 }
 
-/* line 6, ../../app/stylesheets/partials/_map.sass */
+/* line 7, ../../app/stylesheets/partials/_map.sass */
 #map_OpenLayers_ViewPort {
   height: 500px;
   width: auto !important;
@@ -142,28 +143,45 @@ aside {
 
 /* line 1, ../../app/stylesheets/partials/_bar.sass */
 #bar {
-  background: #d9e0d1;
+  background: #b7c2a7;
   height: 20px;
   padding: 5px;
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 13px;
   line-height: 20px;
+  border-bottom: 1px #92a37a solid;
+  border-top: 1px #c3ccb6 solid;
+  padding: 4px 10px;
+  background-color: #b7c2a7;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #d0dac2), color-stop(0.5, #b7c2a7), color-stop(1, #a0b284));
+  background-image: -moz-linear-gradient(center bottom, #a0b284 0%, #b7c2a7 50%, #d0dac2 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#a0b284', startColorstr='#d0dac2', gradientType='0');
+}
+/* line 12, ../../app/stylesheets/partials/_bar.sass */
+#bar a,
+#bar label {
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
 }
 
-/* line 7, ../../app/stylesheets/partials/_bar.sass */
+/* line 16, ../../app/stylesheets/partials/_bar.sass */
 #options {
   float: left;
 }
-/* line 10, ../../app/stylesheets/partials/_bar.sass */
+/* line 19, ../../app/stylesheets/partials/_bar.sass */
+#options input {
+  position: relative;
+  bottom: 1px;
+}
+/* line 22, ../../app/stylesheets/partials/_bar.sass */
 #options label {
   margin-right: 5px;
 }
 
-/* line 13, ../../app/stylesheets/partials/_bar.sass */
+/* line 25, ../../app/stylesheets/partials/_bar.sass */
 #links {
   float: right;
 }
-/* line 16, ../../app/stylesheets/partials/_bar.sass */
+/* line 28, ../../app/stylesheets/partials/_bar.sass */
 #links a {
   margin-left: 10px;
 }
@@ -191,7 +209,7 @@ a:visited:hover {
   height: 16px;
   padding-left: 20px;
   background-image: url(/images/icons.png);
-  background-position: 0 0px;
+  background-position: 0 1px;
   display: -moz-inline-box;
   -moz-box-orient: vertical;
   display: inline-block;
@@ -202,12 +220,12 @@ a:visited:hover {
 }
 
 /* line 12, ../../app/stylesheets/partials/_icons.sass */
-.partially-barrier-free {
+.limited-barrier-free {
   background-repeat: no-repeat;
   height: 16px;
   padding-left: 20px;
   background-image: url(/images/icons.png);
-  background-position: 0 -20px;
+  background-position: 0 -19px;
   display: -moz-inline-box;
   -moz-box-orient: vertical;
   display: inline-block;
@@ -223,7 +241,7 @@ a:visited:hover {
   height: 16px;
   padding-left: 20px;
   background-image: url(/images/icons.png);
-  background-position: 0 -40px;
+  background-position: 0 -39px;
   display: -moz-inline-box;
   -moz-box-orient: vertical;
   display: inline-block;
@@ -239,7 +257,7 @@ a:visited:hover {
   height: 16px;
   padding-left: 20px;
   background-image: url(/images/icons.png);
-  background-position: 0 -60px;
+  background-position: 0 -59px;
   display: -moz-inline-box;
   -moz-box-orient: vertical;
   display: inline-block;
@@ -295,4 +313,416 @@ a:visited:hover {
   #display: inline;
   #vertical-align: auto;
   vertical-align: baseline;
+}
+
+/* line 33, ../../app/stylesheets/partials/_icons.sass */
+.arts-centre {
+  background-image: url(/images/icons/palette.png);
+}
+
+/* line 36, ../../app/stylesheets/partials/_icons.sass */
+.atm {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 39, ../../app/stylesheets/partials/_icons.sass */
+.audiologist {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 42, ../../app/stylesheets/partials/_icons.sass */
+.baby-hatch {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 45, ../../app/stylesheets/partials/_icons.sass */
+.bank {
+  background-image: url(/images/icons/money-coin.png);
+}
+
+/* line 48, ../../app/stylesheets/partials/_icons.sass */
+.bar {
+  background-image: url(/images/icons/glass.png);
+}
+
+/* line 51, ../../app/stylesheets/partials/_icons.sass */
+.bench {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 54, ../../app/stylesheets/partials/_icons.sass */
+.bicycle-parking {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 57, ../../app/stylesheets/partials/_icons.sass */
+.bicycle-rental {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 60, ../../app/stylesheets/partials/_icons.sass */
+.biergarten {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 63, ../../app/stylesheets/partials/_icons.sass */
+.brothel {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 66, ../../app/stylesheets/partials/_icons.sass */
+.bureau-de-change {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 69, ../../app/stylesheets/partials/_icons.sass */
+.bus-station {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 72, ../../app/stylesheets/partials/_icons.sass */
+.cafe {
+  background-image: url(/images/icons/cup.png);
+}
+
+/* line 75, ../../app/stylesheets/partials/_icons.sass */
+.car-rental {
+  background-image: url(/images/icons/car-red.png);
+}
+
+/* line 78, ../../app/stylesheets/partials/_icons.sass */
+.car-sharing {
+  background-image: url(/images/icons/car.png);
+}
+
+/* line 81, ../../app/stylesheets/partials/_icons.sass */
+.cinema {
+  background-image: url(/images/icons/film.png);
+}
+
+/* line 84, ../../app/stylesheets/partials/_icons.sass */
+.clock {
+  background-image: url(/images/icons/clock-frame.png);
+}
+
+/* line 87, ../../app/stylesheets/partials/_icons.sass */
+.coast-guard {
+  background-image: url(/images/icons/lifebuoy.png);
+}
+
+/* line 90, ../../app/stylesheets/partials/_icons.sass */
+.college {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 93, ../../app/stylesheets/partials/_icons.sass */
+.community-centre {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 96, ../../app/stylesheets/partials/_icons.sass */
+.courthouse {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 99, ../../app/stylesheets/partials/_icons.sass */
+.crematorium {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 102, ../../app/stylesheets/partials/_icons.sass */
+.drinking-water {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 105, ../../app/stylesheets/partials/_icons.sass */
+.embassy {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 108, ../../app/stylesheets/partials/_icons.sass */
+.emergency-phone {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 111, ../../app/stylesheets/partials/_icons.sass */
+.fast-food {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 114, ../../app/stylesheets/partials/_icons.sass */
+.ferry-terminal {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 117, ../../app/stylesheets/partials/_icons.sass */
+.fire-hydrant {
+  background-image: url(/images/icons/fire.png);
+}
+
+/* line 120, ../../app/stylesheets/partials/_icons.sass */
+.fire-station {
+  background-image: url(/images/icons/fire-big.png);
+}
+
+/* line 123, ../../app/stylesheets/partials/_icons.sass */
+.fountain {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 126, ../../app/stylesheets/partials/_icons.sass */
+.fuel {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 129, ../../app/stylesheets/partials/_icons.sass */
+.grave-yard {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 132, ../../app/stylesheets/partials/_icons.sass */
+.grit-bin {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 135, ../../app/stylesheets/partials/_icons.sass */
+.hospital {
+  background-image: url(/images/icons/bandaid.png);
+}
+
+/* line 138, ../../app/stylesheets/partials/_icons.sass */
+.hunting-stand {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 141, ../../app/stylesheets/partials/_icons.sass */
+.kindergarten {
+  background-image: url(/images/icons/smiley.png);
+}
+
+/* line 144, ../../app/stylesheets/partials/_icons.sass */
+.library {
+  background-image: url(/images/icons/book-open.png);
+}
+
+/* line 147, ../../app/stylesheets/partials/_icons.sass */
+.marketplace {
+  background-image: url(/images/icons/store.png);
+}
+
+/* line 150, ../../app/stylesheets/partials/_icons.sass */
+.milk-dispenser {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 153, ../../app/stylesheets/partials/_icons.sass */
+.nightclub {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 156, ../../app/stylesheets/partials/_icons.sass */
+.parking {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 159, ../../app/stylesheets/partials/_icons.sass */
+.pharmacy {
+  background-image: url(/images/icons/pill.png);
+}
+
+/* line 162, ../../app/stylesheets/partials/_icons.sass */
+.place-of-worship {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 165, ../../app/stylesheets/partials/_icons.sass */
+.police {
+  background-image: url(/images/icons/shield.png);
+}
+
+/* line 168, ../../app/stylesheets/partials/_icons.sass */
+.post-box {
+  background-image: url(/images/icons/envelope.png);
+}
+
+/* line 171, ../../app/stylesheets/partials/_icons.sass */
+.post-office {
+  background-image: url(/images/icons/postage-stamp.png);
+}
+
+/* line 174, ../../app/stylesheets/partials/_icons.sass */
+.prison {
+  background-image: url(/images/icons/user-thief-baldie.png);
+}
+
+/* line 177, ../../app/stylesheets/partials/_icons.sass */
+.pub {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 180, ../../app/stylesheets/partials/_icons.sass */
+.public-building {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 183, ../../app/stylesheets/partials/_icons.sass */
+.recycling {
+  background-image: url(/images/icons/bin-full.png);
+}
+
+/* line 186, ../../app/stylesheets/partials/_icons.sass */
+.register-office {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 189, ../../app/stylesheets/partials/_icons.sass */
+.restaurant {
+  background-image: url(/images/icons/cutlery.png);
+}
+
+/* line 192, ../../app/stylesheets/partials/_icons.sass */
+.sauna {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 195, ../../app/stylesheets/partials/_icons.sass */
+.school {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 198, ../../app/stylesheets/partials/_icons.sass */
+.stripclub {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 201, ../../app/stylesheets/partials/_icons.sass */
+.studio {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 204, ../../app/stylesheets/partials/_icons.sass */
+.taxi {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 207, ../../app/stylesheets/partials/_icons.sass */
+.telephone {
+  background-image: url(/images/icons/telephone.png);
+}
+
+/* line 210, ../../app/stylesheets/partials/_icons.sass */
+.theatre {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 213, ../../app/stylesheets/partials/_icons.sass */
+.toilets {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 216, ../../app/stylesheets/partials/_icons.sass */
+.townhall {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 219, ../../app/stylesheets/partials/_icons.sass */
+.university {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 222, ../../app/stylesheets/partials/_icons.sass */
+.vending-machine {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 225, ../../app/stylesheets/partials/_icons.sass */
+.veterinary {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 228, ../../app/stylesheets/partials/_icons.sass */
+.waste-basket {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 231, ../../app/stylesheets/partials/_icons.sass */
+.waste-disposal {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 237, ../../app/stylesheets/partials/_icons.sass */
+.subway {
+  background-image: url(/images/icons/.png);
+}
+
+/* line 1, ../../app/stylesheets/partials/_amenities.sass */
+#amenities {
+  border-bottom: 1px #767e6b solid;
+  border-top: 1px #c2c6bc solid;
+  height: 24px;
+  padding: 4px 10px;
+  background-color: #9ca393;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #b6beab), color-stop(0.5, #9ca393), color-stop(1, #849271));
+  background-image: -moz-linear-gradient(center bottom, #849271 0%, #9ca393 50%, #b6beab 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#849271', startColorstr='#b6beab', gradientType='0');
+}
+/* line 9, ../../app/stylesheets/partials/_amenities.sass */
+#amenities a {
+  border: 1px #4f4f4f solid;
+  float: left;
+  height: 16px;
+  margin-right: -1px;
+  padding: 3px;
+  width: 16px;
+}
+/* line 17, ../../app/stylesheets/partials/_amenities.sass */
+#amenities a.visible {
+  background-color: #697060;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #768168), color-stop(0.5, #697060), color-stop(1, #5c6552));
+  background-image: -moz-linear-gradient(center bottom, #5c6552 0%, #697060 50%, #768168 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#5c6552', startColorstr='#768168', gradientType='0');
+  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
+}
+/* line 23, ../../app/stylesheets/partials/_amenities.sass */
+#amenities a.hidden {
+  /* Webkit (Safari, Chrome) */
+  -webkit-box-shadow: rgba(255, 255, 255, 0.2) 0 1px 1px;
+  /* Gecko (Firefox, Camino) */
+  -moz-box-shadow: rgba(255, 255, 255, 0.2) 0 1px 1px;
+  /* CSS3 */
+  box-shadow: rgba(255, 255, 255, 0.2) 0 1px 1px;
+  background-color: #c2c6bc;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e8ebe3), color-stop(0.5, #c2c6bc), color-stop(1, #9eab8b));
+  background-image: -moz-linear-gradient(center bottom, #9eab8b 0%, #c2c6bc 50%, #e8ebe3 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#9eab8b', startColorstr='#e8ebe3', gradientType='0');
+}
+/* line 27, ../../app/stylesheets/partials/_amenities.sass */
+#amenities a:first-child {
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -khtml-border-bottom-left-radius: 4px;
+  border-radius-bottom-left: 4px;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -khtml-border-top-left-radius: 4px;
+  border-radius-top-left: 4px;
+}
+/* line 30, ../../app/stylesheets/partials/_amenities.sass */
+#amenities a:last-child {
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -khtml-border-top-right-radius: 4px;
+  border-radius-top-right: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -khtml-border-bottom-right-radius: 4px;
+  border-radius-bottom-right: 4px;
+}
+/* line 33, ../../app/stylesheets/partials/_amenities.sass */
+#amenities a span {
+  float: left;
+  height: 16px;
+  width: 16px;
 }

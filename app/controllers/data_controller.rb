@@ -1,28 +1,32 @@
-require 'csv'
- 
 class DataController < ApplicationController
-  
+
+  caches_page :data
+
   def data
-    file = "#{Rails.root}/db/VBB_Berlin_Koordinaten.csv"
-    data = "lat	lon	title	description	icon	iconSize	iconOffset"
-    # Ccsv.foreach(file) do |rows|
-    #   
-    #   data << "\n\n\n>>>>#{rows.join(';;;')}<<<<<\n\n\n"
-    #   #rows.each do |r|
-    #   #  #if r[6] == params[:type]
-    #   #    data << "\n\n\n"
-    #   #    data << r#[r[1], r[2], r[0], "#{r[3]} #{r[4]}", "/images/#{params[:type]}.png", "28,34", "-8,-8"].join(" ")
-    #   #  #end
-    #   #end
-    # end
-    
-    CSV.open(file, 'r', ',') do |r|
-      if r[6] == params[:type]
-        data << "\n"
-        data << [r[2], r[1], r[0], "#{r[3]} #{r[4]}", "/images/#{params[:type]}.png", "28,34", "-15,-34"].join("	")
+    data = []
+    db = osm.get_bbox(*params[:bbox].first.split(',').map{ |val| val.to_f })
+    db.nodes.values.each do |node|
+      tags = node.tags.symbolize_keys
+      if tags[:name] and (tags[:amenity] or tags[:railway] == 'station')
+        #info = node.tags.map{ |key, value| "#{key}: #{value}" }.join("; ")
+        data << {
+          :lat => node.lat,
+          :lon => node.lon,
+          :name => tags[:name],
+          :wheelchair => tags[:wheelchair] || 'unknown',
+          :type => tags[:station],
+          :tags => tags,
+          :amenity => (tags[:amenity] || tags[:station] || '').gsub(' ', '-')
+        }
       end
     end
-    render :text => data
+    render :json => data
   end
-  
+
+private
+
+  def osm
+    @osm || OSM::API.new
+  end
+
 end
