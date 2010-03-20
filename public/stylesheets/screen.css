@@ -270,10 +270,10 @@ aside {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #e7ebe2), color-stop(1, #cfd7c5));
   background-image: -moz-linear-gradient(center bottom, #cfd7c5 0%, #e7ebe2 50%, white 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#cfd7c5', startColorstr='white', gradientType='0');
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  border-radius: 5px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -khtml-border-radius: 12px;
+  border-radius: 12px;
   /* Webkit (Safari, Chrome) */
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
   /* Gecko (Firefox, Camino) */
