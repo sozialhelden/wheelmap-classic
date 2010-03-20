@@ -1,10 +1,23 @@
 #amenities
   !amenities_green = desaturate(!green, 30%)
-  border-bottom= 1px darken(!amenities_green, 15%) solid
-  border-top= 1px lighten(!amenities_green, 15%) solid
-  height: 24px
-  padding: 4px 10px
-  +vertical-gradient(!amenities_green)
+  //border-bottom= 1px darken(!amenities_green, 15%) solid
+  //border-top= 1px lighten(!amenities_green, 15%) solid
+  padding: 5px 10px 9px
+  //+vertical-gradient(!amenities_green)
+  +clearfix
+  //+border-bottom-radius(4px)
+  
+  li
+    float: left
+    margin-right: 8px
+  
+  h4
+    color= darken(!amenities_green, 40%)
+    font-size: 11px
+    font-weight: normal
+    line-height: 18px
+    margin-left: 2px
+    +text-shadow(rgba(255, 255, 255, 0.5), 0, 1px, 1px)
 
   a
     border= 1px desaturate(darken(!amenities_green, 30%), 10%) solid
@@ -13,14 +26,6 @@
     margin-right: -1px
     padding: 3px
     width: 16px
-    
-    &.visible
-      -webkit-box-shadow= rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px
-      -moz-box-shadow= rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px
-      box-shadow= rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px
-      +vertical-gradient(darken(!amenities_green, 20%), 5%)
-      &:hover
-        +vertical-gradient(darken(!amenities_green, 30%), 5%)
       
     &.hidden
       +box-shadow(rgba(255, 255, 255, 0.2), 0, 1px, 1px)
@@ -28,6 +33,16 @@
 
       &:hover
         +vertical-gradient(lighten(!amenities_green, 5%), 15%)
+    
+    &.visible,
+    &:active
+      -webkit-box-shadow= rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px
+      -moz-box-shadow= rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px
+      box-shadow= rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px
+      +vertical-gradient(darken(!amenities_green, 20%), 5%)
+
+      &:hover
+        +vertical-gradient(darken(!amenities_green, 30%), 5%)
 
     &:first-child
       +border-left-radius(4px)

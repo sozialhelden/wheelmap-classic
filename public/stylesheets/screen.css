@@ -1,5 +1,4 @@
-@charset "utf-8";
-/* line 4, ../../app/stylesheets/vendor/_map.sass */
+/* line 1, ../../app/stylesheets/vendor/_map.sass */
 html, body {
   height: 100%;
   width: 100%;
@@ -8,18 +7,18 @@ html, body {
   overflow: hidden;
 }
 
-/* line 12, ../../app/stylesheets/vendor/_map.sass */
+/* line 9, ../../app/stylesheets/vendor/_map.sass */
 a {
   color: #0000FF;
   text-decoration: none;
 }
-/* line 16, ../../app/stylesheets/vendor/_map.sass */
+/* line 13, ../../app/stylesheets/vendor/_map.sass */
 a:hover {
   color: #000011;
   text-decoration: underline;
 }
 
-/* line 21, ../../app/stylesheets/vendor/_map.sass */
+/* line 18, ../../app/stylesheets/vendor/_map.sass */
 #map {
   height: 100%;
   width: 100%;
@@ -30,13 +29,13 @@ a:hover {
   color: #000;
 }
 
-/* line 31, ../../app/stylesheets/vendor/_map.sass */
+/* line 28, ../../app/stylesheets/vendor/_map.sass */
 .olFramedCloudPopupContent {
   font-size: 0.8em;
   font-family: Verdana, sans-serif;
 }
 
-/* line 36, ../../app/stylesheets/vendor/_map.sass */
+/* line 33, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle {
   position: absolute;
   font-size: 1em;
@@ -53,13 +52,13 @@ a:hover {
   cursor: default;
   opacity: 0.7;
 }
-/* line 52, ../../app/stylesheets/vendor/_map.sass */
+/* line 49, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle:hover {
   background-color: #FFF;
   opacity: 1;
 }
 
-/* line 57, ../../app/stylesheets/vendor/_map.sass */
+/* line 54, ../../app/stylesheets/vendor/_map.sass */
 #description {
   position: absolute;
   z-index: 10000;
@@ -72,7 +71,7 @@ a:hover {
   font-size: 12px;
 }
 
-/* line 69, ../../app/stylesheets/vendor/_map.sass */
+/* line 66, ../../app/stylesheets/vendor/_map.sass */
 #attribution {
   bottom: 0;
   left: 0;
@@ -83,14 +82,14 @@ a:hover {
   z-index: 1000;
 }
 
-/* line 79, ../../app/stylesheets/vendor/_map.sass */
+/* line 76, ../../app/stylesheets/vendor/_map.sass */
 #layer {
   position: absolute;
   top: 60px;
   right: 10px;
   z-index: 10002;
 }
-/* line 85, ../../app/stylesheets/vendor/_map.sass */
+/* line 82, ../../app/stylesheets/vendor/_map.sass */
 #layer > div {
   border: 1px solid #000;
   background-color: #FFF;
@@ -99,12 +98,12 @@ a:hover {
   cursor: default;
   margin-bottom: 4px;
 }
-/* line 94, ../../app/stylesheets/vendor/_map.sass */
+/* line 91, ../../app/stylesheets/vendor/_map.sass */
 #layer .active {
   background-color: #EEF;
 }
 
-/* line 98, ../../app/stylesheets/vendor/_map.sass */
+/* line 95, ../../app/stylesheets/vendor/_map.sass */
 .hide {
   display: none;
 }
@@ -207,12 +206,13 @@ body {
 /* line 1, ../../app/stylesheets/partials/_page.sass */
 body,
 html {
-  background: white;
+  background: #9ca393;
 }
 
 /* line 1, ../../app/stylesheets/partials/_header.sass */
 header {
-  padding: 13px;
+  padding: 10px;
+  position: relative;
   overflow: hidden;
   display: inline-block;
 }
@@ -220,13 +220,15 @@ header {
 header {
   display: block;
 }
-/* line 5, ../../app/stylesheets/partials/_header.sass */
+/* line 6, ../../app/stylesheets/partials/_header.sass */
 header #logo {
   float: left;
 }
-/* line 8, ../../app/stylesheets/partials/_header.sass */
+/* line 9, ../../app/stylesheets/partials/_header.sass */
 header #spinner {
-  margin-top: 25px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
 }
 
 /* line 1, ../../app/stylesheets/partials/_footer.sass */
@@ -245,28 +247,51 @@ aside {
 
 /* line 1, ../../app/stylesheets/partials/_map.sass */
 #map {
-  clear: both;
-  height: 500px;
-  width: auto !important;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
-/* line 7, ../../app/stylesheets/partials/_map.sass */
+/* line 8, ../../app/stylesheets/partials/_map.sass */
 #map_OpenLayers_ViewPort {
   height: 500px;
   width: auto !important;
 }
 
+/* line 1, ../../app/stylesheets/partials/_info.sass */
+#info {
+  left: 20px;
+  position: absolute;
+  top: 20px;
+  width: 300px;
+  background-color: #e7ebe2;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #e7ebe2), color-stop(1, #cfd7c5));
+  background-image: -moz-linear-gradient(center bottom, #cfd7c5 0%, #e7ebe2 50%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#cfd7c5', startColorstr='white', gradientType='0');
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  /* Webkit (Safari, Chrome) */
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  /* Gecko (Firefox, Camino) */
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  /* CSS3 */
+  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+}
+
 /* line 1, ../../app/stylesheets/partials/_bar.sass */
 #bar {
   background: #b7c2a7;
-  height: 20px;
   padding: 5px;
-  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
-  font-size: 13px;
-  line-height: 20px;
   border-bottom: 1px #92a37a solid;
   border-top: 1px #c3ccb6 solid;
   padding: 4px 10px;
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 13px;
+  line-height: 20px;
   background-color: #b7c2a7;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #d0dac2), color-stop(0.5, #b7c2a7), color-stop(1, #a0b284));
   background-image: -moz-linear-gradient(center bottom, #a0b284 0%, #b7c2a7 50%, #d0dac2 100%);
@@ -289,16 +314,33 @@ aside {
 }
 /* line 22, ../../app/stylesheets/partials/_bar.sass */
 #options label {
-  margin-right: 5px;
+  margin-right: 10px;
+  font-weight: bold;
 }
 
-/* line 25, ../../app/stylesheets/partials/_bar.sass */
+/* line 26, ../../app/stylesheets/partials/_bar.sass */
 #links {
-  float: right;
+  clear: both;
+  background: #b7c2a7;
+  padding: 4px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  overflow: hidden;
+  display: inline-block;
 }
-/* line 28, ../../app/stylesheets/partials/_bar.sass */
+/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.0.pre8/frameworks/compass/stylesheets/compass/utilities/general/_hacks.sass */
+#links {
+  display: block;
+}
+/* line 34, ../../app/stylesheets/partials/_bar.sass */
 #links a {
-  margin-left: 10px;
+  display: none;
+}
+/* line 38, ../../app/stylesheets/partials/_bar.sass */
+#links a.refresh {
+  display: inline;
 }
 
 /* line 3, ../../app/stylesheets/partials/_links.sass */
@@ -430,358 +472,398 @@ a:visited:hover {
   vertical-align: baseline;
 }
 
-/* line 33, ../../app/stylesheets/partials/_icons.sass */
+/* line 31, ../../app/stylesheets/partials/_icons.sass */
+.refresh {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 0px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  #display: inline;
+  #vertical-align: auto;
+  vertical-align: baseline;
+  background-image: url(/images/icons/arrow-circle-double.png);
+}
+
+/* line 38, ../../app/stylesheets/partials/_icons.sass */
 .arts-centre {
   background-image: url(/images/icons/palette.png);
 }
 
-/* line 36, ../../app/stylesheets/partials/_icons.sass */
+/* line 41, ../../app/stylesheets/partials/_icons.sass */
 .atm {
-  background-image: url(/images/icons/.png);
+  background-image: url(/images/icons/credit-cards.png);
 }
 
-/* line 39, ../../app/stylesheets/partials/_icons.sass */
+/* line 44, ../../app/stylesheets/partials/_icons.sass */
 .audiologist {
   background-image: url(/images/icons/.png);
 }
 
-/* line 42, ../../app/stylesheets/partials/_icons.sass */
+/* line 47, ../../app/stylesheets/partials/_icons.sass */
 .baby-hatch {
   background-image: url(/images/icons/.png);
 }
 
-/* line 45, ../../app/stylesheets/partials/_icons.sass */
+/* line 50, ../../app/stylesheets/partials/_icons.sass */
 .bank {
   background-image: url(/images/icons/money-coin.png);
 }
 
-/* line 48, ../../app/stylesheets/partials/_icons.sass */
+/* line 53, ../../app/stylesheets/partials/_icons.sass */
 .bar {
   background-image: url(/images/icons/glass.png);
 }
 
-/* line 51, ../../app/stylesheets/partials/_icons.sass */
+/* line 56, ../../app/stylesheets/partials/_icons.sass */
 .bench {
   background-image: url(/images/icons/.png);
 }
 
-/* line 54, ../../app/stylesheets/partials/_icons.sass */
+/* line 59, ../../app/stylesheets/partials/_icons.sass */
 .bicycle-parking {
   background-image: url(/images/icons/.png);
 }
 
-/* line 57, ../../app/stylesheets/partials/_icons.sass */
+/* line 62, ../../app/stylesheets/partials/_icons.sass */
 .bicycle-rental {
   background-image: url(/images/icons/.png);
 }
 
-/* line 60, ../../app/stylesheets/partials/_icons.sass */
+/* line 65, ../../app/stylesheets/partials/_icons.sass */
 .biergarten {
-  background-image: url(/images/icons/.png);
+  background-image: url(/images/icons/weather.png);
 }
 
-/* line 63, ../../app/stylesheets/partials/_icons.sass */
+/* line 68, ../../app/stylesheets/partials/_icons.sass */
 .brothel {
   background-image: url(/images/icons/.png);
 }
 
-/* line 66, ../../app/stylesheets/partials/_icons.sass */
+/* line 71, ../../app/stylesheets/partials/_icons.sass */
 .bureau-de-change {
-  background-image: url(/images/icons/.png);
+  background-image: url(/images/icons/bureau-de-change.png);
 }
 
-/* line 69, ../../app/stylesheets/partials/_icons.sass */
-.bus-station {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 72, ../../app/stylesheets/partials/_icons.sass */
+/* line 74, ../../app/stylesheets/partials/_icons.sass */
 .cafe {
-  background-image: url(/images/icons/cup.png);
+  background-image: url(/images/icons/cake.png);
 }
 
-/* line 75, ../../app/stylesheets/partials/_icons.sass */
+/* line 77, ../../app/stylesheets/partials/_icons.sass */
 .car-rental {
-  background-image: url(/images/icons/car-red.png);
+  background-image: url(/images/icons/car-rental.png);
 }
 
-/* line 78, ../../app/stylesheets/partials/_icons.sass */
+/* line 80, ../../app/stylesheets/partials/_icons.sass */
 .car-sharing {
-  background-image: url(/images/icons/car.png);
+  background-image: url(/images/icons/car-sharing.png);
 }
 
-/* line 81, ../../app/stylesheets/partials/_icons.sass */
+/* line 83, ../../app/stylesheets/partials/_icons.sass */
 .cinema {
   background-image: url(/images/icons/film.png);
 }
 
-/* line 84, ../../app/stylesheets/partials/_icons.sass */
+/* line 86, ../../app/stylesheets/partials/_icons.sass */
 .clock {
   background-image: url(/images/icons/clock-frame.png);
 }
 
-/* line 87, ../../app/stylesheets/partials/_icons.sass */
+/* line 89, ../../app/stylesheets/partials/_icons.sass */
 .coast-guard {
   background-image: url(/images/icons/lifebuoy.png);
 }
 
-/* line 90, ../../app/stylesheets/partials/_icons.sass */
+/* line 92, ../../app/stylesheets/partials/_icons.sass */
 .college {
   background-image: url(/images/icons/.png);
 }
 
-/* line 93, ../../app/stylesheets/partials/_icons.sass */
+/* line 95, ../../app/stylesheets/partials/_icons.sass */
 .community-centre {
   background-image: url(/images/icons/.png);
 }
 
-/* line 96, ../../app/stylesheets/partials/_icons.sass */
+/* line 98, ../../app/stylesheets/partials/_icons.sass */
 .courthouse {
-  background-image: url(/images/icons/.png);
+  background-image: url(/images/icons/auction-hammer-gavel.png);
 }
 
-/* line 99, ../../app/stylesheets/partials/_icons.sass */
+/* line 101, ../../app/stylesheets/partials/_icons.sass */
 .crematorium {
   background-image: url(/images/icons/.png);
 }
 
-/* line 102, ../../app/stylesheets/partials/_icons.sass */
+/* line 104, ../../app/stylesheets/partials/_icons.sass */
 .drinking-water {
   background-image: url(/images/icons/.png);
 }
 
-/* line 105, ../../app/stylesheets/partials/_icons.sass */
+/* line 107, ../../app/stylesheets/partials/_icons.sass */
 .embassy {
-  background-image: url(/images/icons/.png);
+  background-image: url(/images/icons/locale.png);
 }
 
-/* line 108, ../../app/stylesheets/partials/_icons.sass */
+/* line 110, ../../app/stylesheets/partials/_icons.sass */
 .emergency-phone {
   background-image: url(/images/icons/.png);
 }
 
-/* line 111, ../../app/stylesheets/partials/_icons.sass */
+/* line 113, ../../app/stylesheets/partials/_icons.sass */
 .fast-food {
-  background-image: url(/images/icons/.png);
+  background-image: url(/images/icons/fast-food.png);
 }
 
-/* line 114, ../../app/stylesheets/partials/_icons.sass */
-.ferry-terminal {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 117, ../../app/stylesheets/partials/_icons.sass */
+/* line 116, ../../app/stylesheets/partials/_icons.sass */
 .fire-hydrant {
   background-image: url(/images/icons/fire.png);
 }
 
-/* line 120, ../../app/stylesheets/partials/_icons.sass */
+/* line 119, ../../app/stylesheets/partials/_icons.sass */
 .fire-station {
-  background-image: url(/images/icons/fire-big.png);
+  background-image: url(/images/icons/fire-station.png);
 }
 
-/* line 123, ../../app/stylesheets/partials/_icons.sass */
+/* line 122, ../../app/stylesheets/partials/_icons.sass */
 .fountain {
   background-image: url(/images/icons/.png);
 }
 
-/* line 126, ../../app/stylesheets/partials/_icons.sass */
+/* line 125, ../../app/stylesheets/partials/_icons.sass */
 .fuel {
   background-image: url(/images/icons/.png);
 }
 
-/* line 129, ../../app/stylesheets/partials/_icons.sass */
+/* line 128, ../../app/stylesheets/partials/_icons.sass */
 .grave-yard {
   background-image: url(/images/icons/.png);
 }
 
-/* line 132, ../../app/stylesheets/partials/_icons.sass */
+/* line 131, ../../app/stylesheets/partials/_icons.sass */
 .grit-bin {
   background-image: url(/images/icons/.png);
 }
 
-/* line 135, ../../app/stylesheets/partials/_icons.sass */
+/* line 134, ../../app/stylesheets/partials/_icons.sass */
 .hospital {
-  background-image: url(/images/icons/bandaid.png);
+  background-image: url(/images/icons/hospital.png);
 }
 
-/* line 138, ../../app/stylesheets/partials/_icons.sass */
+/* line 137, ../../app/stylesheets/partials/_icons.sass */
 .hunting-stand {
-  background-image: url(/images/icons/.png);
+  background-image: url(/images/icons/target.png);
 }
 
-/* line 141, ../../app/stylesheets/partials/_icons.sass */
+/* line 140, ../../app/stylesheets/partials/_icons.sass */
 .kindergarten {
   background-image: url(/images/icons/smiley.png);
 }
 
-/* line 144, ../../app/stylesheets/partials/_icons.sass */
+/* line 143, ../../app/stylesheets/partials/_icons.sass */
 .library {
   background-image: url(/images/icons/book-open.png);
 }
 
-/* line 147, ../../app/stylesheets/partials/_icons.sass */
+/* line 146, ../../app/stylesheets/partials/_icons.sass */
 .marketplace {
-  background-image: url(/images/icons/store.png);
+  background-image: url(/images/icons/shopping-basket.png);
 }
 
-/* line 150, ../../app/stylesheets/partials/_icons.sass */
+/* line 149, ../../app/stylesheets/partials/_icons.sass */
 .milk-dispenser {
   background-image: url(/images/icons/.png);
 }
 
-/* line 153, ../../app/stylesheets/partials/_icons.sass */
+/* line 152, ../../app/stylesheets/partials/_icons.sass */
 .nightclub {
-  background-image: url(/images/icons/.png);
+  background-image: url(/images/icons/speaker.png);
 }
 
-/* line 156, ../../app/stylesheets/partials/_icons.sass */
+/* line 155, ../../app/stylesheets/partials/_icons.sass */
 .parking {
-  background-image: url(/images/icons/.png);
+  background-image: url(/images/icons/parking.png);
 }
 
-/* line 159, ../../app/stylesheets/partials/_icons.sass */
+/* line 158, ../../app/stylesheets/partials/_icons.sass */
 .pharmacy {
-  background-image: url(/images/icons/pill.png);
+  background-image: url(/images/icons/pharmacie-germany.png);
 }
 
-/* line 162, ../../app/stylesheets/partials/_icons.sass */
+/* line 161, ../../app/stylesheets/partials/_icons.sass */
 .place-of-worship {
   background-image: url(/images/icons/.png);
 }
 
-/* line 165, ../../app/stylesheets/partials/_icons.sass */
+/* line 164, ../../app/stylesheets/partials/_icons.sass */
 .police {
-  background-image: url(/images/icons/shield.png);
+  background-image: url(/images/icons/police.png);
 }
 
-/* line 168, ../../app/stylesheets/partials/_icons.sass */
+/* line 167, ../../app/stylesheets/partials/_icons.sass */
 .post-box {
-  background-image: url(/images/icons/envelope.png);
+  background-image: url(/images/icons/mail.png);
 }
 
-/* line 171, ../../app/stylesheets/partials/_icons.sass */
+/* line 170, ../../app/stylesheets/partials/_icons.sass */
 .post-office {
-  background-image: url(/images/icons/postage-stamp.png);
+  background-image: url(/images/icons/post-office.png);
 }
 
-/* line 174, ../../app/stylesheets/partials/_icons.sass */
+/* line 173, ../../app/stylesheets/partials/_icons.sass */
 .prison {
   background-image: url(/images/icons/user-thief-baldie.png);
 }
 
-/* line 177, ../../app/stylesheets/partials/_icons.sass */
+/* line 176, ../../app/stylesheets/partials/_icons.sass */
 .pub {
   background-image: url(/images/icons/.png);
 }
 
-/* line 180, ../../app/stylesheets/partials/_icons.sass */
+/* line 179, ../../app/stylesheets/partials/_icons.sass */
 .public-building {
   background-image: url(/images/icons/.png);
 }
 
-/* line 183, ../../app/stylesheets/partials/_icons.sass */
+/* line 182, ../../app/stylesheets/partials/_icons.sass */
 .recycling {
   background-image: url(/images/icons/bin-full.png);
 }
 
-/* line 186, ../../app/stylesheets/partials/_icons.sass */
+/* line 185, ../../app/stylesheets/partials/_icons.sass */
 .register-office {
   background-image: url(/images/icons/.png);
 }
 
-/* line 189, ../../app/stylesheets/partials/_icons.sass */
+/* line 188, ../../app/stylesheets/partials/_icons.sass */
 .restaurant {
   background-image: url(/images/icons/cutlery.png);
 }
 
-/* line 192, ../../app/stylesheets/partials/_icons.sass */
+/* line 191, ../../app/stylesheets/partials/_icons.sass */
 .sauna {
   background-image: url(/images/icons/.png);
 }
 
-/* line 195, ../../app/stylesheets/partials/_icons.sass */
+/* line 194, ../../app/stylesheets/partials/_icons.sass */
 .school {
   background-image: url(/images/icons/.png);
 }
 
-/* line 198, ../../app/stylesheets/partials/_icons.sass */
+/* line 197, ../../app/stylesheets/partials/_icons.sass */
 .stripclub {
   background-image: url(/images/icons/.png);
 }
 
-/* line 201, ../../app/stylesheets/partials/_icons.sass */
+/* line 200, ../../app/stylesheets/partials/_icons.sass */
 .studio {
   background-image: url(/images/icons/.png);
 }
 
-/* line 204, ../../app/stylesheets/partials/_icons.sass */
-.taxi {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 207, ../../app/stylesheets/partials/_icons.sass */
+/* line 203, ../../app/stylesheets/partials/_icons.sass */
 .telephone {
   background-image: url(/images/icons/telephone.png);
 }
 
-/* line 210, ../../app/stylesheets/partials/_icons.sass */
+/* line 206, ../../app/stylesheets/partials/_icons.sass */
 .theatre {
-  background-image: url(/images/icons/.png);
+  background-image: url(/images/icons/mask.png);
 }
 
-/* line 213, ../../app/stylesheets/partials/_icons.sass */
+/* line 209, ../../app/stylesheets/partials/_icons.sass */
 .toilets {
-  background-image: url(/images/icons/.png);
+  background-image: url(/images/icons/toilet.png);
 }
 
-/* line 216, ../../app/stylesheets/partials/_icons.sass */
+/* line 212, ../../app/stylesheets/partials/_icons.sass */
 .townhall {
   background-image: url(/images/icons/.png);
 }
 
-/* line 219, ../../app/stylesheets/partials/_icons.sass */
+/* line 215, ../../app/stylesheets/partials/_icons.sass */
 .university {
   background-image: url(/images/icons/.png);
 }
 
-/* line 222, ../../app/stylesheets/partials/_icons.sass */
+/* line 218, ../../app/stylesheets/partials/_icons.sass */
 .vending-machine {
   background-image: url(/images/icons/.png);
 }
 
-/* line 225, ../../app/stylesheets/partials/_icons.sass */
+/* line 221, ../../app/stylesheets/partials/_icons.sass */
 .veterinary {
   background-image: url(/images/icons/.png);
 }
 
-/* line 228, ../../app/stylesheets/partials/_icons.sass */
+/* line 224, ../../app/stylesheets/partials/_icons.sass */
 .waste-basket {
   background-image: url(/images/icons/.png);
 }
 
-/* line 231, ../../app/stylesheets/partials/_icons.sass */
+/* line 227, ../../app/stylesheets/partials/_icons.sass */
 .waste-disposal {
   background-image: url(/images/icons/.png);
 }
 
-/* line 237, ../../app/stylesheets/partials/_icons.sass */
+/* line 233, ../../app/stylesheets/partials/_icons.sass */
 .subway {
   background-image: url(/images/icons/public-transport-subway-germany.png);
 }
 
+/* line 236, ../../app/stylesheets/partials/_icons.sass */
+.light-rail {
+  background-image: url(/images/icons/public-transport-light-rail-germany.png);
+}
+
+/* line 239, ../../app/stylesheets/partials/_icons.sass */
+.tram-stop {
+  background-image: url(/images/icons/public-transport-tram-germany.png);
+}
+
+/* line 242, ../../app/stylesheets/partials/_icons.sass */
+.bus-stop {
+  background-image: url(/images/icons/public-transport-bus-germany.png);
+}
+
+/* line 245, ../../app/stylesheets/partials/_icons.sass */
+.ferry-terminal {
+  background-image: url(/images/icons/public-transport-ferry-germany.png);
+}
+
+/* line 248, ../../app/stylesheets/partials/_icons.sass */
+.taxi {
+  background-image: url(/images/icons/public-transport-taxi-germany.png);
+}
+
 /* line 1, ../../app/stylesheets/partials/_amenities.sass */
 #amenities {
-  border-bottom: 1px #767e6b solid;
-  border-top: 1px #c2c6bc solid;
-  height: 24px;
-  padding: 4px 10px;
-  background-color: #9ca393;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #b6beab), color-stop(0.5, #9ca393), color-stop(1, #849271));
-  background-image: -moz-linear-gradient(center bottom, #849271 0%, #9ca393 50%, #b6beab 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#849271', startColorstr='#b6beab', gradientType='0');
+  padding: 5px 10px 9px;
+  overflow: hidden;
+  display: inline-block;
 }
-/* line 9, ../../app/stylesheets/partials/_amenities.sass */
+/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.0.pre8/frameworks/compass/stylesheets/compass/utilities/general/_hacks.sass */
+#amenities {
+  display: block;
+}
+/* line 10, ../../app/stylesheets/partials/_amenities.sass */
+#amenities li {
+  float: left;
+  margin-right: 8px;
+}
+/* line 14, ../../app/stylesheets/partials/_amenities.sass */
+#amenities h4 {
+  color: #363931;
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 18px;
+  margin-left: 2px;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+}
+/* line 22, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a {
   border: 1px #4f4f4f solid;
   float: left;
@@ -790,24 +872,7 @@ a:visited:hover {
   padding: 3px;
   width: 16px;
 }
-/* line 17, ../../app/stylesheets/partials/_amenities.sass */
-#amenities a.visible {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
-  box-shadow: rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
-  background-color: #697060;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #768168), color-stop(0.5, #697060), color-stop(1, #5c6552));
-  background-image: -moz-linear-gradient(center bottom, #5c6552 0%, #697060 50%, #768168 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#5c6552', startColorstr='#768168', gradientType='0');
-}
-/* line 22, ../../app/stylesheets/partials/_amenities.sass */
-#amenities a.visible:hover {
-  background-color: #4f5548;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #5c6551), color-stop(0.5, #4f5548), color-stop(1, #42493b));
-  background-image: -moz-linear-gradient(center bottom, #42493b 0%, #4f5548 50%, #5c6551 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#42493b', startColorstr='#5c6551', gradientType='0');
-}
-/* line 25, ../../app/stylesheets/partials/_amenities.sass */
+/* line 30, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a.hidden {
   /* Webkit (Safari, Chrome) */
   -webkit-box-shadow: rgba(255, 255, 255, 0.2) 0 1px 1px;
@@ -820,14 +885,33 @@ a:visited:hover {
   background-image: -moz-linear-gradient(center bottom, #9eab8b 0%, #c2c6bc 50%, #e8ebe3 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#9eab8b', startColorstr='#e8ebe3', gradientType='0');
 }
-/* line 29, ../../app/stylesheets/partials/_amenities.sass */
+/* line 34, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a.hidden:hover {
   background-color: #a9afa1;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #cfd6c6), color-stop(0.5, #a9afa1), color-stop(1, #85966e));
   background-image: -moz-linear-gradient(center bottom, #85966e 0%, #a9afa1 50%, #cfd6c6 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#85966e', startColorstr='#cfd6c6', gradientType='0');
 }
-/* line 32, ../../app/stylesheets/partials/_amenities.sass */
+/* line 37, ../../app/stylesheets/partials/_amenities.sass */
+#amenities a.visible,
+#amenities a:active {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.7) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
+  background-color: #697060;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #768168), color-stop(0.5, #697060), color-stop(1, #5c6552));
+  background-image: -moz-linear-gradient(center bottom, #5c6552 0%, #697060 50%, #768168 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#5c6552', startColorstr='#768168', gradientType='0');
+}
+/* line 44, ../../app/stylesheets/partials/_amenities.sass */
+#amenities a.visible:hover,
+#amenities a:active:hover {
+  background-color: #4f5548;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #5c6551), color-stop(0.5, #4f5548), color-stop(1, #42493b));
+  background-image: -moz-linear-gradient(center bottom, #42493b 0%, #4f5548 50%, #5c6551 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#42493b', startColorstr='#5c6551', gradientType='0');
+}
+/* line 47, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a:first-child {
   -moz-border-radius-bottomleft: 4px;
   -webkit-border-bottom-left-radius: 4px;
@@ -838,7 +922,7 @@ a:visited:hover {
   -khtml-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
 }
-/* line 35, ../../app/stylesheets/partials/_amenities.sass */
+/* line 50, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a:last-child {
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
@@ -849,7 +933,7 @@ a:visited:hover {
   -khtml-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-/* line 38, ../../app/stylesheets/partials/_amenities.sass */
+/* line 53, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a span {
   float: left;
   height: 16px;

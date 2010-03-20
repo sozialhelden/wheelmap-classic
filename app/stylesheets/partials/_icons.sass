@@ -1,10 +1,10 @@
 =icon(!number, !y_add = 0)
-  :background-repeat  no-repeat
-  :height             16px
-  :padding-left       20px
+  background-repeat: no-repeat
+  height: 16px
+  padding-left: 20px
   +image("icons.png", 0, -20px * !number + !y_add)
   +inline-block
-  :vertical-align     baseline
+  vertical-align: baseline
   
 .barrier-free
   +icon(0, 1px)
@@ -26,6 +26,11 @@
   
 .link
   +icon(6)
+  
+// TMP:
+.refresh
+  +icon(0)
+  +image("icons/arrow-circle-double.png")
 
 =amenity-icon(!name)
   +image("icons/#{!name}.png")
@@ -34,7 +39,7 @@
   +amenity-icon("palette")
 
 .atm
-  +amenity-icon("")
+  +amenity-icon("credit-cards")
   
 .audiologist
   +amenity-icon("")
@@ -58,25 +63,22 @@
   +amenity-icon("")
   
 .biergarten
-  +amenity-icon("")
+  +amenity-icon("weather")
   
 .brothel
   +amenity-icon("")
   
 .bureau-de-change
-  +amenity-icon("")
-  
-.bus-station
-  +amenity-icon("")
+  +amenity-icon("bureau-de-change")
   
 .cafe
-  +amenity-icon("cup")
+  +amenity-icon("cake")
   
 .car-rental
-  +amenity-icon("car-red")
+  +amenity-icon("car-rental")
   
 .car-sharing
-  +amenity-icon("car")
+  +amenity-icon("car-sharing")
   
 .cinema
   +amenity-icon("film")
@@ -94,7 +96,7 @@
   +amenity-icon("")
   
 .courthouse
-  +amenity-icon("")
+  +amenity-icon("auction-hammer-gavel")
   
 .crematorium
   +amenity-icon("")
@@ -103,22 +105,19 @@
   +amenity-icon("")
   
 .embassy
-  +amenity-icon("")
+  +amenity-icon("locale")
   
 .emergency-phone
   +amenity-icon("")
   
 .fast-food
-  +amenity-icon("")
-  
-.ferry-terminal
-  +amenity-icon("")
+  +amenity-icon("fast-food")
   
 .fire-hydrant
   +amenity-icon("fire")
   
 .fire-station
-  +amenity-icon("fire-big")
+  +amenity-icon("fire-station")
   
 .fountain
   +amenity-icon("")
@@ -133,10 +132,10 @@
   +amenity-icon("")
   
 .hospital
-  +amenity-icon("bandaid")
+  +amenity-icon("hospital")
   
 .hunting-stand
-  +amenity-icon("")
+  +amenity-icon("target")
   
 .kindergarten
   +amenity-icon("smiley")
@@ -145,31 +144,31 @@
   +amenity-icon("book-open")
   
 .marketplace
-  +amenity-icon("store")
+  +amenity-icon("shopping-basket")
   
 .milk-dispenser
   +amenity-icon("")
   
 .nightclub
-  +amenity-icon("")
+  +amenity-icon("speaker")
   
 .parking
-  +amenity-icon("")
+  +amenity-icon("parking")
   
 .pharmacy
-  +amenity-icon("pill")
+  +amenity-icon("pharmacie-germany")
   
 .place-of-worship
   +amenity-icon("")
   
 .police
-  +amenity-icon("shield")
+  +amenity-icon("police")
   
 .post-box
-  +amenity-icon("envelope")
+  +amenity-icon("mail")
   
 .post-office
-  +amenity-icon("postage-stamp")
+  +amenity-icon("post-office")
   
 .prison
   +amenity-icon("user-thief-baldie")
@@ -201,17 +200,14 @@
 .studio
   +amenity-icon("")
   
-.taxi
-  +amenity-icon("")
-  
 .telephone
   +amenity-icon("telephone")
   
 .theatre
-  +amenity-icon("")
+  +amenity-icon("mask")
   
 .toilets
-  +amenity-icon("")
+  +amenity-icon("toilet")
   
 .townhall
   +amenity-icon("")
@@ -237,3 +233,18 @@
 .subway
   +amenity-icon("public-transport-subway-germany")
   
+.light-rail
+  +amenity-icon("public-transport-light-rail-germany")
+
+.tram-stop
+  +amenity-icon("public-transport-tram-germany")
+
+.bus-stop
+  +amenity-icon("public-transport-bus-germany")
+
+.ferry-terminal
+  +amenity-icon("public-transport-ferry-germany")
+
+.taxi
+  +amenity-icon("public-transport-taxi-germany")
+

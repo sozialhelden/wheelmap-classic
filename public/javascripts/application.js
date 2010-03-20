@@ -1,9 +1,28 @@
 var map;
 var epsg4326, epsg900913;
-//var amenities = 'arts-centre atm audiologist baby-hatch bank bar bench bicycle-parking bicycle-rental biergarten brothel bureau-de-change bus-station cafe car-rental car-sharing cinema clock coast-guard college community-centre courthouse crematorium drinking-water embassy emergency-phone fast-food ferry-terminal fire-hydrant fire-station fountain fuel grave-yard grit-bin hospital hunting-stand kindergarten library marketplace milk-dispenser nightclub parking pharmacy place-of-worship police post-box post-office prison pub public-building recycling register-office restaurant sauna school stripclub studio taxi telephone theatre toilets townhall university vending-machine veterinary waste-basket waste-disposal subway'.split(' ');
-var amenities = 'arts-centre baby-hatch bank bar bench bicycle-parking bicycle-rental biergarten brothel bureau-de-change bus-station cafe car-rental car-sharing cinema college community-centre courthouse crematorium embassy emergency-phone fast-food ferry-terminal fountain fuel grave-yard hospital hunting-stand kindergarten library marketplace nightclub parking pharmacy place-of-worship police post-box post-office pub public-building register-office restaurant sauna school telephone theatre toilets townhall university vending-machine waste-basket waste-disposal subway'.split(' ');
+var lon = 13.393833875481;
+var lat = 52.514131754649;
+var zoom = 16;
 
-var states = { yes: true, no: false, limited: true, unknown: true };
+//var allAmenities = 'arts-centre atm audiologist baby-hatch bank bar bench bicycle-parking bicycle-rental biergarten brothel bureau-de-change bus-station cafe car-rental car-sharing cinema clock coast-guard college community-centre courthouse crematorium drinking-water embassy emergency-phone fast-food ferry-terminal fire-hydrant fire-station fountain fuel grave-yard grit-bin hospital hunting-stand kindergarten library marketplace milk-dispenser nightclub parking pharmacy place-of-worship police post-box post-office prison pub public-building recycling register-office restaurant sauna school stripclub studio taxi telephone theatre toilets townhall university vending-machine veterinary waste-basket waste-disposal subway'.split(' ');
+var amenitiesGrouped = {
+  'Nahverkehr': ['subway', 'light-rail', 'tram-stop', 'bus-stop', 'ferry-terminal'],
+  'Essen & Trinken': ['fast-food', 'restaurant', 'biergarten', 'cafe', 'bar', 'pub'],
+  'Freizeit': ['cinema', 'arts-centre', 'nightclub', 'sauna', 'theatre'],
+  'Geld': ['bank', 'atm', 'bureau-de-change'],
+  'Post': ['post-box', 'post-office'],
+  'Botschaften & Behörden': ['embassy', 'courthouse', 'police', 'fire-station', 'public-building', 'register-office', 'townhall', 'community-centre'],
+  'Medizin': ['hospital', 'pharmacy'],
+  'Auto & Fahrrad': ['fuel', 'car-rental', 'car-sharing', 'parking', 'bicycle-parking', 'bicycle-rental'],
+  'Kinder & Bildung': ['kindergarten', 'school', 'college', 'university', 'library'],
+  'Sonstiges': ['hunting-stand', 'marketplace', 'telephone', 'toilets', 'grave-yard']
+}
+var amenities = [];
+$.each(amenitiesGrouped, function(i, group) {
+  amenities = $.merge(amenities, group);
+});
+
+var states = { yes: true, no: true, limited: true, unknown: true };
 
 function drawmap() {
   OpenLayers.Lang.setCode('de');
@@ -23,62 +42,21 @@ function drawmap() {
      units: 'meters'
   });
 
-  checkForPermalink();
-  
   var mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik");
   map.addLayer(mapnik);
   
-  setTimeout(function() {
-    var bbox = mapBBOX().toBBOX();
-    var layer;
-    window.mapLayers = {};
-    $.each(amenities, function(i, amenity) {
-      eachState(function(state) {
-        var layer = window.mapLayers[amenity + '-' + state] = new OpenLayers.Layer.Markers(
-            amenity + '-' + state,
-            {
-              projection: new OpenLayers.Projection("EPSG:4326"), 
-              visibility: amenity == 'cafe' && states[state],
-              displayInLayerSwitcher: false
-            }
-          );
-        map.addLayer(layer);
-      });
-    });
-    
-    var size = new OpenLayers.Size(28, 34);
-    var offset = new OpenLayers.Pixel(-15, -34);
-    var icons = {
-        yes: new OpenLayers.Icon('/images/barrier-free.png', size, offset),
-        no: new OpenLayers.Icon('/images/not-barrier-free.png', size, offset),
-        limited: new OpenLayers.Icon('/images/limited-barrier-free.png', size, offset),
-        unknown: new OpenLayers.Icon('/images/unknown.png', size, offset)
-      };
-    
-    
-    $.getJSON('/data/' + bbox, function(data) {
-      $.each(data, function(i, point) {
-        var layer = window.mapLayers[point.amenity + '-' + point.wheelchair];
-          console.log("MARKER:"+point.amenity + '-' + point.wheelchair);
-        if (layer) {
-          addMarker(layer, point.lon * 1.0, point.lat * 1.0, point.name, icons[point.wheelchair]);
-        }
-        $('#spinner').hide();
-      });
-    });
-  }, 1000);
-  
-  var lon = 13.393833875481;
-  var lat = 52.514131754649;
-  var zoom = 16; 
-  
+  checkForPermalink();
   jumpTo(lon, lat, zoom);
+  setTimeout(loadPlaces, 1000);
   
   var amenitiesElement = $('#amenities');
-  $.each(amenities, function(i, amenity) {
-    amenitiesElement.append('<a href="#" onclick="return toggleLayers(\'' + amenity + '\')" class="' + (amenity == 'cafe' ? 'visible' : 'hidden') + '" title="' + amenity + '"><span class="' + amenity + '"></span></a>');
+  $.each(amenitiesGrouped, function(title, group) {
+    var html = '';
+    $.each(group, function(i, amenity) {
+      html += '<a href="#" onclick="return toggleLayers(\'' + amenity + '\')" class="' + ((amenity == 'subway' || amenity == 'light-rail') ? 'visible' : 'hidden') + '" title="' + amenity + '"><span class="' + amenity + '"></span></a>';
+    });
+    amenitiesElement.append('<li><h4>' + title + '</h4><div>' + html + '</div></li>');
   });
-  
 }
 
 function toggleLayers(amenity) {
@@ -136,7 +114,6 @@ function eachState(f) {
 function switchState() {
   $.each(amenities, function(i, amenity) {
     eachState(function(state) {
-      console.log(amenity + '-' + state, $('.' + amenity).parent().hasClass('visible') && states[state]);
       mapLayers[amenity + '-' + state].setVisibility($('.' + amenity).parent().hasClass('visible') && states[state]);
     });
   });
@@ -148,24 +125,71 @@ function switchState() {
 
 $(function() {
   $('#wheelchair-yes').click(function() {
-    //mapLayers['barrier-free'].setVisibility(this.checked);
     states.yes = !states.yes;
     switchState();
   });
   $('#wheelchair-limited').click(function() {
-    //mapLayers['limited-barrier-free'].setVisibility(this.checked);
     states.limited = !states.limited;
     switchState();
   });
   $('#wheelchair-no').click(function() {
-    //mapLayers['not-barrier-free'].setVisibility(this.checked);
     states.no = !states.no;
     switchState();
   });
   $('#wheelchair-unknown').click(function() {
-    //mapLayers['unknown'].setVisibility(this.checked);
     states.unknown = !states.unknown;
     switchState();
   });
+  
+  $('#links .refresh').click(function() {
+    loadPlaces();
+    return false;
+  });
 });
 
+ 
+function loadPlaces() {
+  var bbox = mapBBOX().toBBOX();
+  
+  $('#spinner').show();
+  
+  if (typeof(window.mapLayers) == 'undefined') {
+    var layer;
+    window.mapLayers = {};
+    $.each(amenities, function(i, type) {
+      eachState(function(state) {
+        var layer = window.mapLayers[type + '-' + state] = new OpenLayers.Layer.Markers(
+            type + '-' + state,
+            {
+              projection: new OpenLayers.Projection("EPSG:4326"), 
+              visibility: (type == 'subway' || type == 'light-rail') && states[state],
+              displayInLayerSwitcher: false
+            }
+          );
+        map.addLayer(layer);
+      });
+    });
+  }
+  
+  var size = new OpenLayers.Size(28, 34);
+  var offset = new OpenLayers.Pixel(-15, -34);
+  var icons = {
+      yes: new OpenLayers.Icon('/images/barrier-free.png', size, offset),
+      no: new OpenLayers.Icon('/images/not-barrier-free.png', size, offset),
+      limited: new OpenLayers.Icon('/images/limited-barrier-free.png', size, offset),
+      unknown: new OpenLayers.Icon('/images/unknown.png', size, offset)
+    };
+  
+  
+  $.getJSON('/data/' + bbox, function(data) {
+    $.each(data, function(i, point) {
+      var layer = window.mapLayers[point.type + '-' + point.wheelchair];
+      if (point.type=='subway')console.log(point.type + '-' + point.wheelchair + '-' + point.name);
+      if (layer) {
+        addMarker(layer, point.lon * 1.0, point.lat * 1.0, point.name, icons[point.wheelchair]);
+      }
+      $('#spinner').hide();
+    });
+  });
+  
+}

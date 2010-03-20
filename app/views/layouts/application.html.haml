@@ -10,15 +10,7 @@
       :javascript
         var ce=document.createElement;ce('header');ce('nav');ce('article');ce('section');ce('footer');ce('aside');ce('time')
   %body(class=browser_class)
-    #page
-      %header
-        = link_to image_tag('wheelmap.png', :alt => t('header.tagline')), root_path, :id => 'logo'
-        = image_tag('spinner.gif', :id => 'spinner')
-        
-      - [:notice, :error, :warning].each do |type|
-        - if flash[type]
-          .flash(id="flash-Rails::TemplateRunner")= flash[type]
-      = yield
+    = yield
     = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
     = javascript_include_tag 'http://www.openstreetmap.org/openlayers/OpenStreetMap.js'
     = javascript_include_tag 'jquery', 'util', 'application', :cache => false#RAILS_ENV == 'production'
