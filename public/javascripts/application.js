@@ -15,8 +15,9 @@ var amenitiesGrouped = {
   'Medizin': ['hospital', 'pharmacy'],
   'Auto & Fahrrad': ['fuel', 'car-rental', 'car-sharing', 'parking', 'bicycle-parking', 'bicycle-rental'],
   'Kinder & Bildung': ['kindergarten', 'school', 'college', 'university', 'library'],
-  'Sonstiges': ['hunting-stand', 'marketplace', 'telephone', 'toilets', 'grave-yard']
+  'Sonstiges': ['marketplace', 'telephone', 'toilets', 'grave-yard']
 }
+
 var amenities = [];
 $.each(amenitiesGrouped, function(i, group) {
   amenities = $.merge(amenities, group);
@@ -24,22 +25,23 @@ $.each(amenitiesGrouped, function(i, group) {
 
 var states = { yes: true, no: true, limited: true, unknown: true };
 
+
 function drawmap() {
   OpenLayers.Lang.setCode('de');
   
   epsg900913 = new OpenLayers.Projection("EPSG:900913");
   epsg4326 = new OpenLayers.Projection("EPSG:4326");
   map = new OpenLayers.Map('map', {
-      projection: epsg900913,
-      displayProjection: epsg4326,
-      controls: [
-        new OpenLayers.Control.MouseDefaults(),
-        new OpenLayers.Control.Attribution()
-      ],
-      maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34, 20037508.34, 20037508.34),
-     numZoomLevels: 18,
-     maxResolution: 156543,
-     units: 'meters'
+    projection: epsg900913,
+    displayProjection: epsg4326,
+    controls: [
+      new OpenLayers.Control.MouseDefaults(),
+      new OpenLayers.Control.Attribution()
+    ],
+    maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34, 20037508.34, 20037508.34),
+    numZoomLevels: 18,
+    maxResolution: 156543,
+    units: 'meters'
   });
 
   var mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik");
@@ -63,7 +65,6 @@ function toggleLayers(amenity) {
   var visibility = false;
   visibility = !$('.' + amenity).parent().hasClass('visible');
   eachState(function(state) {
-    console.log(amenity + '-' + state);
     var layer = mapLayers[amenity + '-' + state];
     layer.setVisibility(visibility && states[state]);    
   });
@@ -171,6 +172,7 @@ function loadPlaces() {
     });
   }
   
+  
   var size = new OpenLayers.Size(28, 34);
   var offset = new OpenLayers.Pixel(-15, -34);
   var icons = {
@@ -184,9 +186,9 @@ function loadPlaces() {
   $.getJSON('/data/' + bbox, function(data) {
     $.each(data, function(i, point) {
       var layer = window.mapLayers[point.type + '-' + point.wheelchair];
-      if (point.type=='subway')console.log(point.type + '-' + point.wheelchair + '-' + point.name);
       if (layer) {
         addMarker(layer, point.lon * 1.0, point.lat * 1.0, point.name, icons[point.wheelchair]);
+        //addMarker(layer, point.lon * 1.0, point.lat * 1.0, point.name, iconForType(point.type));
       }
       $('#spinner').hide();
     });
