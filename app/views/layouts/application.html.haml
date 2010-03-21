@@ -13,7 +13,7 @@
     = yield
     = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
     = javascript_include_tag 'http://www.openstreetmap.org/openlayers/OpenStreetMap.js'
-    = javascript_include_tag 'jquery', 'util', 'icons', 'application', :cache => true
+    = javascript_include_tag 'jquery', 'util', 'icons', 'application', :cache => false
     - if jquery = yield(:jquery)
       :javascript
         $(function(){#{jquery}})
