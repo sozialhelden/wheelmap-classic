@@ -45,6 +45,9 @@ var states = {
 };
 
 
+var counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
+
+
 function drawmap() {
   OpenLayers.Lang.setCode('de');
 
@@ -135,6 +138,7 @@ function loadPlaces() {
   $.each(layers, function(state, layer) {
     layer.removeFeatures(layer.features);
   });
+  counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
 
   var bbox = mapBBOX().toBBOX();
   $.getJSON('/data/' + bbox, function(data) {
@@ -149,11 +153,13 @@ function loadPlaces() {
         feature.attributes.icon = iconForType[place.type];
         feature.attributes.wheelchair = place.wheelchair;
         features[place.wheelchair].push(feature);
+        counts[place.wheelchair]++;
       }
     });
     $.each(layers, function(state, layer) {
       layer.addFeatures(features[state]);
       layer.redraw();
+      $('.wheelchair .' + state + ' span').html(counts[state]);
     });
     showStates();
     $('#spinner').hide();
@@ -196,4 +202,11 @@ function lonLatToMercator(ll) {
   var lat = Math.log(Math.tan((90 + ll.lat) * Math.PI / 360)) / (Math.PI / 180);
   lat = lat * 20037508.34 / 180;
   return new OpenLayers.LonLat(lon, lat);
+}
+
+
+function permalink() {
+  var ll = map.getCenter().clone().transform(map.getProjectionObject(), epsg4326);
+  var query = '?lat=' + ll.lat + '&lon=' + ll.lon;
+  return location.protocol + '//' + location.host + '/' + query;
 }

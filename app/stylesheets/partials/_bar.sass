@@ -10,7 +10,8 @@
   //+vertical-gradient(!bar_green)
   
   a,
-  label
+  label,
+  span
     +text-shadow(rgba(255, 255, 255, 0.5  ), 0, 1px, 1px)
     
 //#options
@@ -34,6 +35,12 @@
   +box-shadow(rgba(0, 0, 0, 0.2), 0, 1px, 3px)
   +border-radius(4px)
   
+  span
+    float: right
+    font-size: 11px
+    opacity: 0.6
+    padding: 1px 5px 0
+  
   label
     font-weight: bold
     height: 18px !important
@@ -54,7 +61,8 @@
   .no
     +wheelchair-option(!no)
     border-color= desaturate(darken(!no, 7%), 10%)
-    border-top-color= lighten(!no, 10%)
+    border-top-color= lighten(!no, 8%)
+    border-bottom-color= darken(!no, 10%)
     color= desaturate(darken(!no, 50%), 10%)
   
   .unknown
