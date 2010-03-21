@@ -1,8 +1,11 @@
 var map;
 var epsg4326, epsg900913;
-var lon = 13.393833875481;
-var lat = 52.514131754649;
+var lat = 52.523141129638;
+var lon = 13.402481317347;
 var zoom = 16;
+var layer;
+var layers = {};
+var places = [];
 
 //var allAmenities = 'arts-centre atm audiologist baby-hatch bank bar bench bicycle-parking bicycle-rental biergarten brothel bureau-de-change bus-station cafe car-rental car-sharing cinema clock coast-guard college community-centre courthouse crematorium drinking-water embassy emergency-phone fast-food ferry-terminal fire-hydrant fire-station fountain fuel grave-yard grit-bin hospital hunting-stand kindergarten library marketplace milk-dispenser nightclub parking pharmacy place-of-worship police post-box post-office prison pub public-building recycling register-office restaurant sauna school stripclub studio taxi telephone theatre toilets townhall university vending-machine veterinary waste-basket waste-disposal subway'.split(' ');
 var amenitiesGrouped = {
@@ -18,17 +21,33 @@ var amenitiesGrouped = {
   'Sonstiges': ['marketplace', 'telephone', 'toilets', 'grave-yard']
 }
 
+
 var amenities = [];
 $.each(amenitiesGrouped, function(i, group) {
   amenities = $.merge(amenities, group);
 });
 
-var states = { yes: true, no: true, limited: true, unknown: true };
+
+var typeVisibilities = {};
+$.each(amenities, function(i, type) {
+  typeVisibilities[type] = { display: 'none' };
+});
+$.each(['subway', 'light-rail', 'fast-food', 'restaurant', 'bar'], function(type) {
+  typeVisibilities[type].display = 'block';
+});
+
+
+var states = {
+  yes: true,
+  no: true,
+  limited: true,
+  unknown: true
+};
 
 
 function drawmap() {
   OpenLayers.Lang.setCode('de');
-  
+
   epsg900913 = new OpenLayers.Projection("EPSG:900913");
   epsg4326 = new OpenLayers.Projection("EPSG:4326");
   map = new OpenLayers.Map('map', {
@@ -46,31 +65,34 @@ function drawmap() {
 
   var mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik");
   map.addLayer(mapnik);
-  
+
   checkForPermalink();
   jumpTo(lon, lat, zoom);
+
+  createLayer();
   setTimeout(loadPlaces, 1000);
-  
+
   var amenitiesElement = $('#amenities');
   $.each(amenitiesGrouped, function(title, group) {
     var html = '';
-    $.each(group, function(i, amenity) {
-      html += '<a href="#" onclick="return toggleLayers(\'' + amenity + '\')" class="' + ((amenity == 'subway' || amenity == 'light-rail') ? 'visible' : 'hidden') + '" title="' + amenity + '"><span class="' + amenity + '"></span></a>';
+    $.each(group, function(i, type) {
+      var className = typeVisibilities[type].display == 'block' ? 'visible' : 'hidden';
+      html += '<a href="#" onclick="return toggleLayers(\'' + type + '\')" class="' + className + '" title="' + type + '"><span class="' + type + '"></span></a>';
     });
     amenitiesElement.append('<li><h4>' + title + '</h4><div>' + html + '</div></li>');
   });
 }
 
-function toggleLayers(amenity) {
+
+function toggleLayers(type) {
   var visibility = false;
-  visibility = !$('.' + amenity).parent().hasClass('visible');
-  eachState(function(state) {
-    var layer = mapLayers[amenity + '-' + state];
-    layer.setVisibility(visibility && states[state]);    
-  });
-  $('.' + amenity).parent().removeClass(visibility ? 'hidden' : 'visible').addClass(visibility ? 'visible' : 'hidden');
+  visibility = !$('.' + type).parent().hasClass('visible');
+  $('.' + type).parent().removeClass(visibility ? 'hidden' : 'visible').addClass(visibility ? 'visible' : 'hidden');
+  typeVisibilities[type].display = visibility ? 'block' : 'none';
+  showStates();
   return false;
 }
+
 
 function mapBBOX() {
   return map.getExtent().clone().transform(map.getProjectionObject(), epsg4326);
@@ -80,118 +102,98 @@ function mapBBOX() {
 drawmap();
 
 
-function addMarker(layer, lon, lat, popupContentHTML, icon) {
-  var ll = new OpenLayers.LonLat(Lon2Merc(lon), Lat2Merc(lat));
-  var feature = new OpenLayers.Feature(layer, ll); 
-  feature.closeBox = true;
-  feature.popupClass = OpenLayers.Class(OpenLayers.Popup.FramedCloud, {minSize: new OpenLayers.Size(300, 180) } );
-  feature.data.popupContentHTML = popupContentHTML;
-  feature.data.overflow = "hidden";
-
-  var marker = new OpenLayers.Marker(ll, icon.clone());
-  marker.feature = feature;
-
-  var markerClick = function(evt) {
-      if (this.popup == null) {
-          this.popup = this.createPopup(this.closeBox);
-          map.addPopup(this.popup);
-          this.popup.show();
-      } else {
-          this.popup.toggle();
-      }
-      OpenLayers.Event.stop(evt);
-  };
-  marker.events.register("mousedown", feature, markerClick);
-
-  layer.addMarker(marker);
-}
-
-
 function eachState(f) {
   $.each(['yes', 'no', 'limited', 'unknown'], function(i, state) { f(state); });
 }
 
 
-function switchState() {
-  $.each(amenities, function(i, amenity) {
-    eachState(function(state) {
-      mapLayers[amenity + '-' + state].setVisibility($('.' + amenity).parent().hasClass('visible') && states[state]);
-    });
+function showStates() {
+  $.each(layers, function(state, layer) {
+    layer.styleMap.addUniqueValueRules("default", "type", typeVisibilities);
+    layer.redraw();
+    layer.setVisibility(states[state]);
   });
-  //eachState(function(state) {
-  //  $('#wheelchair-' + state).attr('checked', state);
-  //});
 }
 
 
 $(function() {
-  $('#wheelchair-yes').click(function() {
-    states.yes = !states.yes;
-    switchState();
+  $('.wheelchair input').click(function() {
+    var state = this.id.replace(/wheelchair-/, '');
+    states[state] = this.checked;
+    showStates();
   });
-  $('#wheelchair-limited').click(function() {
-    states.limited = !states.limited;
-    switchState();
-  });
-  $('#wheelchair-no').click(function() {
-    states.no = !states.no;
-    switchState();
-  });
-  $('#wheelchair-unknown').click(function() {
-    states.unknown = !states.unknown;
-    switchState();
-  });
-  
+
   $('#links .refresh').click(function() {
     loadPlaces();
     return false;
   });
 });
 
- 
+
 function loadPlaces() {
-  var bbox = mapBBOX().toBBOX();
-  
   $('#spinner').show();
-  
-  if (typeof(window.mapLayers) == 'undefined') {
-    var layer;
-    window.mapLayers = {};
-    $.each(amenities, function(i, type) {
-      eachState(function(state) {
-        var layer = window.mapLayers[type + '-' + state] = new OpenLayers.Layer.Markers(
-            type + '-' + state,
-            {
-              projection: new OpenLayers.Projection("EPSG:4326"), 
-              visibility: (type == 'subway' || type == 'light-rail') && states[state],
-              displayInLayerSwitcher: false
-            }
-          );
-        map.addLayer(layer);
-      });
-    });
-  }
-  
-  
-  var size = new OpenLayers.Size(28, 34);
-  var offset = new OpenLayers.Pixel(-15, -34);
-  var icons = {
-      yes: new OpenLayers.Icon('/images/barrier-free.png', size, offset),
-      no: new OpenLayers.Icon('/images/not-barrier-free.png', size, offset),
-      limited: new OpenLayers.Icon('/images/limited-barrier-free.png', size, offset),
-      unknown: new OpenLayers.Icon('/images/unknown.png', size, offset)
-    };
-  
-  
-  $.getJSON('/data/' + bbox, function(data) {
-    $.each(data, function(i, point) {
-      var layer = window.mapLayers[point.type + '-' + point.wheelchair];
-      if (layer) {
-        addMarker(layer, point.lon * 1.0, point.lat * 1.0, point.name, icons[point.wheelchair]);
-        //addMarker(layer, point.lon * 1.0, point.lat * 1.0, point.name, iconForType(point.type));
-      }
-      $('#spinner').hide();
-    });
+  $.each(layers, function(state, layer) {
+    layer.removeFeatures(layer.features);
   });
-  
+
+  var bbox = mapBBOX().toBBOX();
+  $.getJSON('/data/' + bbox, function(data) {
+    var features = [];
+    var features = { yes: [], no: [], limited: [], unknown: [] };
+    $.each(data, function(i, place) {
+      if (place.type) {
+        var lonLat = lonLatToMercator({ lon:place.lon * 1.0, lat:place.lat * 1.0 });
+        var point = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
+        var feature = new OpenLayers.Feature.Vector(point);
+        feature.attributes.type = place.type;
+        feature.attributes.icon = iconForType[place.type];
+        feature.attributes.wheelchair = place.wheelchair;
+        features[place.wheelchair].push(feature);
+      }
+    });
+    $.each(layers, function(state, layer) {
+      layer.addFeatures(features[state]);
+      layer.redraw();
+    });
+    showStates();
+    $('#spinner').hide();
+  });
+}
+
+
+function createLayer() {
+  var styleMap = new OpenLayers.StyleMap({
+    externalGraphic: "/images/icons/${icon}.png",
+    graphicWidth: 16,
+    graphicHeight: 16,
+    backgroundGraphic: "/images/marker-${wheelchair}.png",
+    backgroundWidth: 36,
+    backgroundHeight: 28,
+    backgroundXOffset: -12,
+    backgroundYOffset: -26,
+    graphicXOffset: -8,
+    graphicYOffset: -22,
+    graphicZIndex: 10,
+    backgroundGraphicZIndex: 10
+  });
+
+  $.each(states, function(state, visibility) {
+    layers[state] = new OpenLayers.Layer.Vector(
+      "Places",
+      {
+        styleMap: styleMap,
+        rendererOptions: { yOrdering: true },
+        visibility: visibility
+      }
+    );
+    map.addLayer(layers[state]);
+  });
+}
+
+
+function lonLatToMercator(ll) {
+  var lon = ll.lon * 20037508.34 / 180;
+  var lat = Math.log(Math.tan((90 + ll.lat) * Math.PI / 360)) / (Math.PI / 180);
+  lat = lat * 20037508.34 / 180;
+  return new OpenLayers.LonLat(lon, lat);
 }

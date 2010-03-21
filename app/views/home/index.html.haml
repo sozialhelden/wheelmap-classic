@@ -4,25 +4,22 @@
     = link_to image_tag('wheelmap.png', :alt => t('header.tagline')), root_path, :id => 'logo'
     = image_tag('spinner.gif', :id => 'spinner')
   #bar
-    %ul#options
-      %li
-        = check_box_tag(:wheelchair_yes, 1, true)
-        = label_tag :wheelchair_yes, 'barrierefreie Orte anzeigen', :class => 'barrier-free'
-      %li
-        = check_box_tag(:wheelchair_no, 1, true)
-        = label_tag :wheelchair_no, 'nicht barrierefreie Orte anzeigen', :class => 'not-barrier-free'
-      %li
-        = check_box_tag(:wheelchair_limited, 1, true)
-        = label_tag :wheelchair_limited, 'teils barrierefreie Orte anzeigen', :class => 'limited-barrier-free'
-      %li
-        = check_box_tag(:wheelchair_unknown, 1, true)
-        = label_tag :wheelchair_unknown, 'Orte ohne Status anzeigen', :class => 'unknown'
     #links
       = link_to "Plätze neu laden", '#', :class => 'refresh'
       = link_to "Drucken", '#', :class => 'print'
       = link_to "Senden", '#', :class => 'mail'
       = link_to "Link", '#', :class => 'link'
-  -#%aside
-    - %w(Bars Cafés Fast-Food Pubs Restaurants Kinos Theater).each do |what|
-      %p= check_box_tag('a') + label_tag(what)
+    %ul#options.wheelchair
+      %li.yes
+        = check_box_tag(:wheelchair_yes, 1, true)
+        = label_tag :wheelchair_yes, 'barrierefreie Orte anzeigen'#, :class => 'barrier-free'
+      %li.limited
+        = check_box_tag(:wheelchair_limited, 1, true)
+        = label_tag :wheelchair_limited, 'teils barrierefreie Orte anzeigen'#, :class => 'limited-barrier-free'
+      %li.no
+        = check_box_tag(:wheelchair_no, 1, true)
+        = label_tag :wheelchair_no, 'nicht barrierefreie Orte anzeigen'#, :class => 'not-barrier-free'
+      %li.unknown
+        = check_box_tag(:wheelchair_unknown, 1, true)
+        = label_tag :wheelchair_unknown, 'Orte ohne Status anzeigen'#, :class => 'unknown'
   %ul#amenities

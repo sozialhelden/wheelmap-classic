@@ -1,34 +1,77 @@
 #bar
   !bar_green = desaturate(!light_green, 20%)
-  background= !bar_green
+  //background= !bar_green
   //height: 20px
   padding: 5px
-  border-bottom= 1px darken(!bar_green, 15%) solid
-  border-top= 1px lighten(!bar_green, 5%) solid
+  //border-bottom= 1px darken(!bar_green, 15%) solid
+  //border-top= 1px lighten(!bar_green, 5%) solid
   padding: 4px 10px
   +helvetica-13
-  +vertical-gradient(!bar_green)
+  //+vertical-gradient(!bar_green)
   
   a,
   label
     +text-shadow(rgba(255, 255, 255, 0.5  ), 0, 1px, 1px)
     
-#options
-  :float left
-  
-  input
-    +up(1px)
+//#options
+//  :float left
+//  
+//  input
+//    +up(1px)
+//  
+//  label
+//    margin-right: 10px
+//    font-weight: bold
+
+=wheelchair-option(!color)
+  border= 1px darken(!color, 10%) solid
+  //border-top-width: 0
+  //border-bottom-color= darken(!color, 15%)
+  padding: 1px 2px
+  +vertical-gradient(!color, 5%)
+
+.wheelchair
+  +box-shadow(rgba(0, 0, 0, 0.2), 0, 1px, 3px)
+  +border-radius(4px)
   
   label
-    margin-right: 10px
     font-weight: bold
+    height: 18px !important
+
+  .yes
+    +wheelchair-option(!yes)
+    +border-top-radius(4px)
+    border-top-width: 1px
+    border-bottom-color= darken(!yes, 10%)
+    color= desaturate(darken(!yes, 38%), 20%)
   
+  .limited
+    +wheelchair-option(!limited)
+    border-color= desaturate(darken(!limited, 22%), 10%)
+    border-top-color= lighten(!limited, 10%)
+    color= desaturate(darken(!limited, 55%), 10%)
+  
+  .no
+    +wheelchair-option(!no)
+    border-color= desaturate(darken(!no, 7%), 10%)
+    border-top-color= lighten(!no, 10%)
+    color= desaturate(darken(!no, 50%), 10%)
+  
+  .unknown
+    +wheelchair-option(!unknown)
+    +border-bottom-radius(4px)
+    border-bottom-color= darken(!unknown, 13%)
+    border-top-color= lighten(!unknown, 10%)
+    color= desaturate(darken(!unknown, 50%), 10%)
+
+
 #links
   clear: both
   //float: right
-  background= desaturate(!light_green, 20%)
-  padding: 4px
-  +border-radius(3px)
+  //background= desaturate(!light_green, 20%)
+  padding: 4px 0
+  margin-bottom: 10px
+  //+border-radius(3px)
   +clearfix
       
   a
