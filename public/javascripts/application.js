@@ -135,9 +135,6 @@ $(function() {
 
 function loadPlaces() {
   $('#spinner').show();
-  $.each(layers, function(state, layer) {
-    layer.removeFeatures(layer.features);
-  });
   counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
 
   var bbox = mapBBOX().toBBOX();
@@ -157,6 +154,7 @@ function loadPlaces() {
       }
     });
     $.each(layers, function(state, layer) {
+      layer.removeFeatures(layer.features);
       layer.addFeatures(features[state]);
       layer.redraw();
       $('.wheelchair .' + state + ' span').html(counts[state]);
