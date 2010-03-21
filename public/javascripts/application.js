@@ -32,7 +32,7 @@ var typeVisibilities = {};
 $.each(amenities, function(i, type) {
   typeVisibilities[type] = { display: 'none' };
 });
-$.each(['subway', 'light-rail', 'fast-food', 'restaurant', 'bar'], function(type) {
+$.each(['subway', 'light-rail', 'fast-food', 'restaurant', 'bar'], function(i, type) {
   typeVisibilities[type].display = 'block';
 });
 
