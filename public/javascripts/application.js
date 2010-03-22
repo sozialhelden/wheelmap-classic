@@ -106,7 +106,7 @@ drawmap();
 
 
 function eachState(f) {
-  $.each(['yes', 'no', 'limited', 'unknown'], function(i, state) { f(state); });
+  $.each(['unknown', 'no', 'limited', 'yes'], function(i, state) { f(state); });
 }
 
 
@@ -149,7 +149,10 @@ function loadPlaces() {
         feature.attributes.type = place.type;
         feature.attributes.icon = iconForType[place.type];
         feature.attributes.wheelchair = place.wheelchair;
-        features[place.wheelchair].push(feature);
+        try {
+          features[place.wheelchair].push(feature);
+        }
+        catch (e) {}
         counts[place.wheelchair]++;
       }
     });
@@ -181,13 +184,13 @@ function createLayer() {
     backgroundGraphicZIndex: 10
   });
 
-  $.each(states, function(state, visibility) {
+  eachState(function(state) {
     layers[state] = new OpenLayers.Layer.Vector(
       "Places",
       {
         styleMap: styleMap,
         rendererOptions: { yOrdering: true },
-        visibility: visibility
+        visibility: states[state]
       }
     );
     map.addLayer(layers[state]);
