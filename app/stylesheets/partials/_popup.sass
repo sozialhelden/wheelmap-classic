@@ -1,0 +1,47 @@
+.popup
+  h2
+    background-position: 0 2px
+    padding-left: 20px
+  
+  address
+    padding-left: 20px
+    
+  
+  !dt_width = 90px
+  !gap = 10px
+  !dd_width = 210px
+
+  dl
+    border-top= 1px desaturate(lighten(!green, 20%), 20%) solid
+    margin-top: 7px
+    padding-top: 7px
+    width= !dt_width + !gap + !dd_width
+    +clearfix
+  
+  dt,
+  dd
+    float: left
+    font-size: 11px
+    line-height: 15px
+    padding-bottom: 7px
+
+  dt
+    clear: left
+    font-family= !helvetica
+    font-weight: bold
+    padding-right= !gap
+    text-align: right
+    width= !dt_width
+    
+    &:after
+      content: ':'
+    
+  dd
+    font-family= !helvetica_light
+    font-size: 11px
+    font-weight: 100
+    width= !dd_width
+    
+    strong
+      font-family= !helvetica
+      font-weight: bold

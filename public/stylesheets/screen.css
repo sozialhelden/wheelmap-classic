@@ -808,116 +808,121 @@ a:visited:hover {
 }
 
 /* line 179, ../../app/stylesheets/partials/_icons.sass */
+.place-of-worship {
+  background-image: url(/images/icons/bell.png);
+}
+
+/* line 182, ../../app/stylesheets/partials/_icons.sass */
 .public-building {
   background-image: url(/images/icons/.png);
 }
 
-/* line 182, ../../app/stylesheets/partials/_icons.sass */
+/* line 185, ../../app/stylesheets/partials/_icons.sass */
 .recycling {
   background-image: url(/images/icons/bin-full.png);
 }
 
-/* line 185, ../../app/stylesheets/partials/_icons.sass */
+/* line 188, ../../app/stylesheets/partials/_icons.sass */
 .register-office {
   background-image: url(/images/icons/.png);
 }
 
-/* line 188, ../../app/stylesheets/partials/_icons.sass */
+/* line 191, ../../app/stylesheets/partials/_icons.sass */
 .restaurant {
   background-image: url(/images/icons/cutlery.png);
 }
 
-/* line 191, ../../app/stylesheets/partials/_icons.sass */
+/* line 194, ../../app/stylesheets/partials/_icons.sass */
 .sauna {
   background-image: url(/images/icons/.png);
 }
 
-/* line 194, ../../app/stylesheets/partials/_icons.sass */
+/* line 197, ../../app/stylesheets/partials/_icons.sass */
 .school {
   background-image: url(/images/icons/.png);
 }
 
-/* line 197, ../../app/stylesheets/partials/_icons.sass */
+/* line 200, ../../app/stylesheets/partials/_icons.sass */
 .stripclub {
   background-image: url(/images/icons/.png);
 }
 
-/* line 200, ../../app/stylesheets/partials/_icons.sass */
+/* line 203, ../../app/stylesheets/partials/_icons.sass */
 .studio {
   background-image: url(/images/icons/.png);
 }
 
-/* line 203, ../../app/stylesheets/partials/_icons.sass */
+/* line 206, ../../app/stylesheets/partials/_icons.sass */
 .telephone {
   background-image: url(/images/icons/telephone.png);
 }
 
-/* line 206, ../../app/stylesheets/partials/_icons.sass */
+/* line 209, ../../app/stylesheets/partials/_icons.sass */
 .theatre {
   background-image: url(/images/icons/mask.png);
 }
 
-/* line 209, ../../app/stylesheets/partials/_icons.sass */
+/* line 212, ../../app/stylesheets/partials/_icons.sass */
 .toilets {
   background-image: url(/images/icons/toilet.png);
 }
 
-/* line 212, ../../app/stylesheets/partials/_icons.sass */
+/* line 215, ../../app/stylesheets/partials/_icons.sass */
 .townhall {
   background-image: url(/images/icons/.png);
 }
 
-/* line 215, ../../app/stylesheets/partials/_icons.sass */
+/* line 218, ../../app/stylesheets/partials/_icons.sass */
 .university {
   background-image: url(/images/icons/.png);
 }
 
-/* line 218, ../../app/stylesheets/partials/_icons.sass */
+/* line 221, ../../app/stylesheets/partials/_icons.sass */
 .vending-machine {
   background-image: url(/images/icons/.png);
 }
 
-/* line 221, ../../app/stylesheets/partials/_icons.sass */
+/* line 224, ../../app/stylesheets/partials/_icons.sass */
 .veterinary {
   background-image: url(/images/icons/.png);
 }
 
-/* line 224, ../../app/stylesheets/partials/_icons.sass */
+/* line 227, ../../app/stylesheets/partials/_icons.sass */
 .waste-basket {
   background-image: url(/images/icons/.png);
 }
 
-/* line 227, ../../app/stylesheets/partials/_icons.sass */
+/* line 230, ../../app/stylesheets/partials/_icons.sass */
 .waste-disposal {
   background-image: url(/images/icons/.png);
 }
 
-/* line 233, ../../app/stylesheets/partials/_icons.sass */
+/* line 236, ../../app/stylesheets/partials/_icons.sass */
 .subway {
   background-image: url(/images/icons/public-transport-subway-germany.png);
 }
 
-/* line 236, ../../app/stylesheets/partials/_icons.sass */
+/* line 239, ../../app/stylesheets/partials/_icons.sass */
 .light-rail {
   background-image: url(/images/icons/public-transport-light-rail-germany.png);
 }
 
-/* line 239, ../../app/stylesheets/partials/_icons.sass */
+/* line 242, ../../app/stylesheets/partials/_icons.sass */
 .tram-stop {
   background-image: url(/images/icons/public-transport-tram-germany.png);
 }
 
-/* line 242, ../../app/stylesheets/partials/_icons.sass */
+/* line 245, ../../app/stylesheets/partials/_icons.sass */
 .bus-stop {
   background-image: url(/images/icons/public-transport-bus-germany.png);
 }
 
-/* line 245, ../../app/stylesheets/partials/_icons.sass */
+/* line 248, ../../app/stylesheets/partials/_icons.sass */
 .ferry-terminal {
   background-image: url(/images/icons/public-transport-ferry-germany.png);
 }
 
-/* line 248, ../../app/stylesheets/partials/_icons.sass */
+/* line 251, ../../app/stylesheets/partials/_icons.sass */
 .taxi {
   background-image: url(/images/icons/public-transport-taxi-germany.png);
 }
@@ -970,31 +975,32 @@ a:visited:hover {
   /* CSS3 */
   box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px;
   -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px;
+  -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px;
+  box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px;
   background-color: #c2c6bc;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e8ebe3), color-stop(0.5, #c2c6bc), color-stop(1, #9eab8b));
   background-image: -moz-linear-gradient(center bottom, #9eab8b 0%, #c2c6bc 50%, #e8ebe3 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#9eab8b', startColorstr='#e8ebe3', gradientType='0');
 }
-/* line 36, ../../app/stylesheets/partials/_amenities.sass */
+/* line 38, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a.hidden:hover {
   background-color: #9fa596;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c5cdbb), color-stop(0.5, #9fa596), color-stop(1, #7a8966));
   background-image: -moz-linear-gradient(center bottom, #7a8966 0%, #9fa596 50%, #c5cdbb 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#7a8966', startColorstr='#c5cdbb', gradientType='0');
 }
-/* line 39, ../../app/stylesheets/partials/_amenities.sass */
+/* line 41, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a.visible,
 #amenities a:active {
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px inset, rgba(0, 0, 0, 0.2) 0 1px 2px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px;
   background-color: #99a190;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a6af9b), color-stop(0.5, #99a190), color-stop(1, #8c997f));
   background-image: -moz-linear-gradient(center bottom, #8c997f 0%, #99a190 50%, #a6af9b 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#8c997f', startColorstr='#a6af9b', gradientType='0');
 }
-/* line 47, ../../app/stylesheets/partials/_amenities.sass */
+/* line 48, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a.visible:hover,
 #amenities a:active:hover {
   background-color: #5c6354;
@@ -1002,7 +1008,12 @@ a:visited:hover {
   background-image: -moz-linear-gradient(center bottom, #4f5747 0%, #5c6354 50%, #69735d 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#4f5747', startColorstr='#69735d', gradientType='0');
 }
-/* line 50, ../../app/stylesheets/partials/_amenities.sass */
+/* line 51, ../../app/stylesheets/partials/_amenities.sass */
+#amenities a.visible:hover span,
+#amenities a:active:hover span {
+  opacity: 0.8;
+}
+/* line 54, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a:first-child {
   -moz-border-radius-bottomleft: 4px;
   -webkit-border-bottom-left-radius: 4px;
@@ -1013,7 +1024,7 @@ a:visited:hover {
   -khtml-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
 }
-/* line 53, ../../app/stylesheets/partials/_amenities.sass */
+/* line 57, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a:last-child {
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
@@ -1024,9 +1035,70 @@ a:visited:hover {
   -khtml-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-/* line 56, ../../app/stylesheets/partials/_amenities.sass */
+/* line 60, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a span {
   float: left;
   height: 16px;
+  opacity: 0.9;
   width: 16px;
+}
+/* line 66, ../../app/stylesheets/partials/_amenities.sass */
+#amenities a:hover span {
+  opacity: 1;
+}
+
+/* line 2, ../../app/stylesheets/partials/_popup.sass */
+.popup h2 {
+  background-position: 0 2px;
+  padding-left: 20px;
+}
+/* line 6, ../../app/stylesheets/partials/_popup.sass */
+.popup address {
+  padding-left: 20px;
+}
+/* line 14, ../../app/stylesheets/partials/_popup.sass */
+.popup dl {
+  border-top: 1px #cfd7c5 solid;
+  margin-top: 7px;
+  padding-top: 7px;
+  width: 310px;
+  overflow: hidden;
+  display: inline-block;
+}
+/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.0.pre8/frameworks/compass/stylesheets/compass/utilities/general/_hacks.sass */
+.popup dl {
+  display: block;
+}
+/* line 21, ../../app/stylesheets/partials/_popup.sass */
+.popup dt,
+.popup dd {
+  float: left;
+  font-size: 11px;
+  line-height: 15px;
+  padding-bottom: 7px;
+}
+/* line 28, ../../app/stylesheets/partials/_popup.sass */
+.popup dt {
+  clear: left;
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+  width: 90px;
+}
+/* line 36, ../../app/stylesheets/partials/_popup.sass */
+.popup dt:after {
+  content: ':';
+}
+/* line 39, ../../app/stylesheets/partials/_popup.sass */
+.popup dd {
+  font-family: 'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue','Swiss 721 Light','Helvetica','Arial','sans-serif';
+  font-size: 11px;
+  font-weight: 100;
+  width: 210px;
+}
+/* line 45, ../../app/stylesheets/partials/_popup.sass */
+.popup dd strong {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-weight: bold;
 }

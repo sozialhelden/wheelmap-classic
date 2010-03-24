@@ -31,6 +31,8 @@
       +box-shadow(rgba(255, 255, 255, 0.2), 0, 1px, 1px)
       +box-shadow(rgba(0, 0, 0, 0.2), 0, 1px, 2px)
       -webkit-box-shadow= rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px
+      -moz-box-shadow= rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px
+      box-shadow= rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px
       +vertical-gradient(lighten(!amenities_green, 15%), 15%)
 
       &:hover
@@ -38,14 +40,16 @@
     
     &.visible,
     &:active
-      -webkit-box-shadow= rgba(0, 0, 0, 0.5) 0 1px 5px inset, rgba(0, 0, 0, 0.2) 0 1px 2px
-      -webkit-box-shadow= rgba(0, 0, 0, 0.5) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px
-      -moz-box-shadow= rgba(0, 0, 0, 0.5) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px
-      box-shadow= rgba(0, 0, 0, 0.5) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px
+      -webkit-box-shadow= rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px
+      -moz-box-shadow= rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px
+      box-shadow= rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.3) 0 1px 1px
       +vertical-gradient(darken(!amenities_green, 1%), 5%)
 
       &:hover
         +vertical-gradient(darken(!amenities_green, 25%), 5%)
+        
+        span
+          opacity: 0.8
 
     &:first-child
       +border-left-radius(4px)
@@ -56,4 +60,8 @@
     span
       float: left
       height: 16px
+      opacity: 0.9  
       width: 16px
+    
+    &:hover span
+      opacity: 1
