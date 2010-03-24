@@ -68,5 +68,6 @@ var iconForType = {
   'tram-stop': 'public-transport-tram-germany',
   'bus-stop': 'public-transport-bus-germany',
   'ferry-terminal': 'public-transport-ferry-germany',
-  'taxi': 'cross-small-white'
+  'taxi': 'cross-small-white',
+  'place-of-worship': 'bell'
 };

@@ -18,7 +18,7 @@ var amenitiesGrouped = {
   'Medizin': ['hospital', 'pharmacy'],
   'Auto & Fahrrad': ['fuel', 'car-rental', 'car-sharing', 'parking', 'bicycle-parking', 'bicycle-rental'],
   'Kinder & Bildung': ['kindergarten', 'school', 'college', 'university', 'library'],
-  'Sonstiges': ['marketplace', 'telephone', 'toilets', 'grave-yard']
+  'Sonstiges': ['marketplace', 'telephone', 'toilets', 'grave-yard', 'place-of-worship']
 }
 
 
@@ -87,6 +87,9 @@ function drawmap() {
 }
 
 
+
+
+
 function toggleLayers(type) {
   var visibility = false;
   visibility = !$('.' + type).parent().hasClass('visible');
@@ -149,6 +152,8 @@ function loadPlaces() {
         feature.attributes.type = place.type;
         feature.attributes.icon = iconForType[place.type];
         feature.attributes.wheelchair = place.wheelchair;
+        feature.attributes.name = place.name;
+        feature.attributes.tags = place.tags;
         try {
           features[place.wheelchair].push(feature);
         }
@@ -194,7 +199,13 @@ function createLayer() {
       }
     );
     map.addLayer(layers[state]);
+    selectControl = new OpenLayers.Control.SelectFeature(layers[state],
+      { onSelect: openPopup, onUnselect: closePopup });
+    map.addControl(selectControl);
+    selectControl.activate();  
+
   });
+  
 }
 
 
