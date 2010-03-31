@@ -1,4 +1,3 @@
-haml                  --version 2.2.20      --source rubygems.org
-compass               --version 0.10.0.pre8 --source rubygems.org
-compass-colors        --version 0.3.1       --source rubygems.org
-redgreengrid          --version 0.3.1       --source rubygems.org
+haml                  --version 3.0.0.beta.1  --source rubygems.org
+compass               --version 0.10.0.rc1    --source rubygems.org
+redgreengrid          --version 0.3.2         --source rubygems.org

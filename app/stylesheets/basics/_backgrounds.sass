@@ -1,23 +1,23 @@
-!images_url = "/images/"
+$images-url: unquote("/images/")
 
-=image(!url, !x = nil, !y = nil)
-  :background-image   = "url(#{!images_url + !url})"
-  @if !x != nil
-    :background-position  = !x !y
+=image($url, $x: nil, $y: nil)
+  background-image: unquote("url(") + $images-url + $url + unquote(")")
+  @if $x != nil
+    background-position: $x $y
 
-=vertical-gradient(!color, !color_or_percentage = 10%, !ie = true, !start_pos = 0, !end_pos = 1)
-  !middle_pos    = (!start_pos + !end_pos) / 2
-  !start_color   = #000
-  !end_color     = #fff
-  @if !color_or_percentage * 0 == #000
-    !end_color   = !color_or_percentage
-    !start_color = !color
-    !color       = mix(!start_color, !end_color, 50%)
+=vertical-gradient($color, $color-or-percentage: 10%, $ie: true, $start-pos: 0, $end-pos: 1)
+  $middle-pos: ($start-pos + $end-pos) / 2
+  $start-color: black
+  $end-color: white
+  @if $color-or-percentage * 0 == black
+    $end-color: $color-or-percentage
+    $start-color: $color
+    $color: mix($start-color, $end-color, 50%)
   @else
-    !end_color   = darken(saturate(!color, !color_or_percentage / 2), !color_or_percentage)
-    !start_color = lighten(saturate(!color, !color_or_percentage / 2), !color_or_percentage)
-  :background-color = !color
-  :background-image = -webkit-gradient(linear, left top, left bottom, color-stop(!start_pos, !start_color), color-stop(!middle_pos, !color), color-stop(!end_pos, !end_color))
-  :background-image = -moz-linear-gradient(center bottom, !end_color percentage(!start_pos), !color percentage(!middle_pos), !start_color percentage(!end_pos))
-  @if !ie
-    :filter         = "progid:DXImageTransform.Microsoft.Gradient(endColorstr='#{!end_color}', startColorstr='#{!start_color}', gradientType='0')"
+    $end-color: darken(saturate($color, $color-or-percentage / 2), $color-or-percentage)
+    $start-color: lighten(saturate($color, $color-or-percentage / 2), $color-or-percentage)
+  background-color: $color
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop($start-pos, $start-color), color-stop($middle-pos, $color), color-stop($end-pos, $end-color))
+  background-image: -moz-linear-gradient(center bottom, $end-color percentage($start-pos), $color percentage($middle-pos), $start-color percentage($end-pos))
+  @if $ie
+    filter: unquote("progid:DXImageTransform.Microsoft.Gradient(endColorstr='") + $end-color + unquote("', startColorstr='") + $start-color + unquote("', gradientType='0')")

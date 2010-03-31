@@ -1,15 +1,13 @@
-!link_color = #434bb9
+$link-color: #434bb9
 
 a
-  color= !link_color
+  color: $link-color
   
   &:hover
-    color= darken(!link_color, 10%)
-  
+    color: darken($link-color, 10%)
+    
   &:visited
-    color= adjust_hue(!link_color, 25)
+    color: adjust_hue($link-color, 25)
     
     &:hover
-      color= darken(adjust_hue(!link_color, 25), 10%)
-    
-    
+      color: darken(adjust_hue($link-color, 25), 10%)

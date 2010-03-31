@@ -152,7 +152,7 @@ function get_parameters() {
  // variable vorname mit wert Alex
  // variable bildfile mit wert wasserfall.jpg
  var hier = document.URL;
- var parameterzeile = hier.substr((hier.indexOf("?")+1));
+ var parameterzeile = hier.substr((hier.indexOf("#")+1));
  var trennpos;
  var endpos;
  var paramname;

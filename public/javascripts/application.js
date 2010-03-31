@@ -219,6 +219,8 @@ function lonLatToMercator(ll) {
 
 function permalink() {
   var ll = map.getCenter().clone().transform(map.getProjectionObject(), epsg4326);
-  var query = '?lat=' + ll.lat + '&lon=' + ll.lon;
+  var query = '#lat=' + ll.lat + '&lon=' + ll.lon + '&zoom=' + map.zoom;
   return location.protocol + '//' + location.host + '/' + query;
 }
+
+

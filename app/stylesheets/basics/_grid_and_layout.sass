@@ -1,45 +1,17 @@
-!blueprint_grid_columns   = 24
-!blueprint_container_size = 950px
-!blueprint_grid_margin    = 10px
-
-!page_margin              = 25px
-!page_width               = !blueprint_container_size + 2 * 25px
-
-@import blueprint/modules/grid
-
-
 // MIXINS
 
 =centered-box
-  :margin   0 auto
+  margin: 0 auto
 
-
-=page-width(!add = 0)
-  :width    = !page_width + !add
-
-
-=margin-left(!columns = 1, !add = 0)
-  :margin-left  = !columns * (!blueprint_grid_width + !blueprint_grid_margin) + !add !important
-
-
-=margin-right(!columns = 1, !add = 0)
-  :margin-right = !columns * (!blueprint_grid_width + !blueprint_grid_margin) + !add !important
-
-
-=column-width(!columns = 1, !add = 0)
-  :width  = !blueprint_grid_width * !columns + (!blueprint_grid_margin * (!columns - 1)) + !add
-
-
-=ellipsis(!no_wrap = true)
-  @if !no_wrap
-    :white-space        nowrap
-  :overflow             hidden
-  :text-overflow        ellipsis
-  :-o-text-overflow     ellipsis
-  :-ms-text-overflow    ellipsis
-
+=ellipsis($no-wrap: true)
+  @if $no-wrap
+    white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  -o-text-overflow: ellipsis
+  -ms-text-overflow: ellipsis
 
 // STYLES
 
 body
-  :background = !background_color
+  background: $background-color

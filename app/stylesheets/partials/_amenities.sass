@@ -1,54 +1,50 @@
 #amenities
-  !amenities_green = desaturate(!green, 30%)
-  //border-bottom= 1px darken(!amenities_green, 15%) solid
-  //border-top= 1px lighten(!amenities_green, 15%) solid
+  $amenities_green: desaturate($green, 30%)
   padding: 5px 10px 9px
-  //+vertical-gradient(!amenities_green)
   +clearfix
-  //+border-bottom-radius(4px)
-  
+
   li
     float: left
     margin-right: 8px
-  
+
   h4
-    color= darken(!amenities_green, 40%)
+    color: darken($amenities-green, 40%)
     font-size: 11px
     font-weight: normal
     line-height: 18px
     margin-left: 2px
-    +text-shadow(rgba(255, 255, 255, 0.5), 0, 1px, 1px)
+    +text-shadow(rgba(#fff, 0.5), 0, 1px, 1px)
 
   a
-    border= 1px desaturate(darken(!amenities_green, 15%), 10%) solid
+    border: 1px desaturate(darken($amenities_green, 15%), 10%) solid
     float: left
     height: 16px
     margin-right: -1px
     outline: 0
     padding: 3px
     width: 16px
-      
+
     &.hidden
       +box-shadow(rgba(0, 0, 0, 0.2), 0, 1px, 2px)
-      -webkit-box-shadow= rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px
-      -moz-box-shadow= rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px
-      box-shadow= rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px
-      +vertical-gradient(lighten(!amenities_green, 15%), 15%)
+      -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px
+      -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px
+      box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px
+      +vertical-gradient(lighten($amenities_green, 15%), 15%)
 
       &:hover
-        +vertical-gradient(lighten(!amenities_green, 1%), 15%)
-    
+        +vertical-gradient(lighten($amenities_green, 1%), 15%)
+
     &.visible,
     &:active
       +box-shadow(rgba(255, 255, 255, 0.15), 0, 1px, 1px)
-      -webkit-box-shadow= rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px
-      -moz-box-shadow= rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px
-      box-shadow= rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px
-      +vertical-gradient(darken(!amenities_green, 1%), 5%)
+      -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px
+      -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px
+      box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px
+      +vertical-gradient(darken($amenities_green, 1%), 5%)
 
       &:hover
-        +vertical-gradient(darken(!amenities_green, 25%), 5%)
-        
+        +vertical-gradient(darken($amenities_green, 25%), 5%)
+
         span
           opacity: 0.8
 
@@ -61,8 +57,8 @@
     span
       float: left
       height: 16px
-      opacity: 0.9  
+      opacity: 0.9
       width: 16px
-    
+
     &:hover span
       opacity: 1

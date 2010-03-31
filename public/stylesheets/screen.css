@@ -9,7 +9,7 @@ html, body {
 
 /* line 9, ../../app/stylesheets/vendor/_map.sass */
 a {
-  color: #0000FF;
+  color: blue;
   text-decoration: none;
 }
 /* line 13, ../../app/stylesheets/vendor/_map.sass */
@@ -26,7 +26,7 @@ a:hover {
   margin: 0;
   font-family: Arial, sans-serif;
   font-size: 1em;
-  color: #000;
+  color: black;
 }
 
 /* line 28, ../../app/stylesheets/vendor/_map.sass */
@@ -47,14 +47,14 @@ a:hover {
   border-right: 1px solid #000040;
   padding: 2px 10px;
   margin-right: 200px;
-  background-color: #EEE;
+  background-color: #eeeeee;
   font-size: 12px;
   cursor: default;
   opacity: 0.7;
 }
 /* line 49, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle:hover {
-  background-color: #FFF;
+  background-color: white;
   opacity: 1;
 }
 
@@ -67,7 +67,7 @@ a:hover {
   border: 1px solid #000040;
   padding: 10px 10px;
   margin-right: 200px;
-  background-color: #FFF;
+  background-color: white;
   font-size: 12px;
 }
 
@@ -91,8 +91,8 @@ a:hover {
 }
 /* line 82, ../../app/stylesheets/vendor/_map.sass */
 #layer > div {
-  border: 1px solid #000;
-  background-color: #FFF;
+  border: 1px solid black;
+  background-color: white;
   padding: 4px 5px;
   font-size: 0.7em;
   cursor: default;
@@ -100,7 +100,7 @@ a:hover {
 }
 /* line 91, ../../app/stylesheets/vendor/_map.sass */
 #layer .active {
-  background-color: #EEF;
+  background-color: #eeeeff;
 }
 
 /* line 95, ../../app/stylesheets/vendor/_map.sass */
@@ -108,59 +108,59 @@ a:hover {
   display: none;
 }
 
-/* line 1, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+/* line 1, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 a, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, p, pre, span, th, td {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
 }
 
-/* line 6, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+/* line 6, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 10, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+/* line 10, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 fieldset, img {
   border: 0;
 }
 
-/* line 13, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+/* line 13, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 address, em, th {
   font-style: normal;
   font-weight: normal;
 }
 
-/* line 17, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+/* line 17, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 li {
   list-style: none;
 }
 
-/* line 20, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+/* line 20, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 th {
   font-style: normal;
   text-align: left;
 }
 
-/* line 24, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+/* line 24, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 h1, h2, h3, h4, h5, h6, small {
   font-size: 100%;
 }
 
-/* line 27, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+/* line 27, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 input, textarea, select {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
 }
 
-/* line 33, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+/* line 33, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 .msie input, .msie textarea, .msie select {
   font-size: 100%;
 }
 
-/* line 36, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_reset.sass */
+/* line 36, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 header, section, article, aside, footer, time {
   display: block;
 }
@@ -193,12 +193,12 @@ h1 {
   line-height: 40px;
   position: relative;
 }
-/* line 3, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.1/sass/redgreengrid/_browser_support.sass */
+/* line 3, ../../../../.gem/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_browser_support.sass */
 .presto h1 {
   bottom: 1px;
 }
 
-/* line 44, ../../app/stylesheets/basics/_grid_and_layout.sass */
+/* line 16, ../../app/stylesheets/basics/_grid_and_layout.sass */
 body {
   background: white;
 }
@@ -206,7 +206,7 @@ body {
 /* line 1, ../../app/stylesheets/partials/_page.sass */
 body,
 html {
-  background: #FFEE5B;
+  background: #ffee5b;
 }
 
 /* line 1, ../../app/stylesheets/partials/_header.sass */
@@ -216,7 +216,7 @@ header {
   overflow: hidden;
   display: inline-block;
 }
-/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.0.pre8/frameworks/compass/stylesheets/compass/utilities/general/_hacks.sass */
+/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.0.rc1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.sass */
 header {
   display: block;
 }
@@ -274,6 +274,11 @@ aside {
   opacity: 0.5;
 }
 
+/* line 22, ../../app/stylesheets/partials/_map.sass */
+image[width=16] {
+  cursor: pointer;
+}
+
 /* line 1, ../../app/stylesheets/partials/_info.sass */
 #info {
   left: 20px;
@@ -284,7 +289,7 @@ aside {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #e7ebe2), color-stop(1, #cfd7c5));
   background-image: -moz-linear-gradient(center bottom, #cfd7c5 0%, #e7ebe2 50%, white 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#cfd7c5', startColorstr='white', gradientType='0');
-  background-color: #fff;
+  background-color: white;
   -moz-border-radius: 12px;
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
@@ -305,14 +310,14 @@ aside {
   font-size: 13px;
   line-height: 20px;
 }
-/* line 12, ../../app/stylesheets/partials/_bar.sass */
+/* line 7, ../../app/stylesheets/partials/_bar.sass */
 #bar a,
 #bar label,
 #bar span {
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
 }
 
-/* line 34, ../../app/stylesheets/partials/_bar.sass */
+/* line 19, ../../app/stylesheets/partials/_bar.sass */
 .wheelchair {
   /* Webkit (Safari, Chrome) */
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 3px;
@@ -325,26 +330,26 @@ aside {
   -khtml-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 38, ../../app/stylesheets/partials/_bar.sass */
+/* line 23, ../../app/stylesheets/partials/_bar.sass */
 .wheelchair span {
   float: right;
   font-size: 11px;
   opacity: 0.6;
   padding: 1px 5px 0;
 }
-/* line 44, ../../app/stylesheets/partials/_bar.sass */
+/* line 29, ../../app/stylesheets/partials/_bar.sass */
 .wheelchair label {
   font-weight: bold;
   height: 18px !important;
 }
-/* line 48, ../../app/stylesheets/partials/_bar.sass */
+/* line 33, ../../app/stylesheets/partials/_bar.sass */
 .wheelchair .yes {
   border: 1px #92b346 solid;
   padding: 1px 2px;
   background-color: #a8c468;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #b3ce78), color-stop(0.5, #a8c468), color-stop(1, #9fc052));
-  background-image: -moz-linear-gradient(center bottom, #9fc052 0%, #a8c468 50%, #b3ce78 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#9fc052', startColorstr='#b3ce78', gradientType='0');
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #b3cd78), color-stop(0.5, #a8c468), color-stop(1, #9fc053));
+  background-image: -moz-linear-gradient(center bottom, #9fc053 0%, #a8c468 50%, #b3cd78 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#9fc053', startColorstr='#b3cd78', gradientType='0');
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
   -khtml-border-top-left-radius: 4px;
@@ -356,9 +361,9 @@ aside {
   border-top-width: 1px;
   border-color: #97b94b;
   border-bottom-color: #8faf45;
-  color: #3a4129;
+  color: #3a4228;
 }
-/* line 56, ../../app/stylesheets/partials/_bar.sass */
+/* line 41, ../../app/stylesheets/partials/_bar.sass */
 .wheelchair .limited {
   border: 1px #e0c95c solid;
   padding: 1px 2px;
@@ -369,29 +374,29 @@ aside {
   border-color: #d9be3f;
   border-bottom-color: #d5b72a;
   border-top-color: #f0e5b2;
-  color: #453b12;
+  color: #443b12;
 }
-/* line 63, ../../app/stylesheets/partials/_bar.sass */
+/* line 48, ../../app/stylesheets/partials/_bar.sass */
 .wheelchair .no {
   border: 1px #e15e5e solid;
   padding: 1px 2px;
   background-color: #e98989;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ef9d9d), color-stop(0.5, #e98989), color-stop(1, #e77171));
-  background-image: -moz-linear-gradient(center bottom, #e77171 0%, #e98989 50%, #ef9d9d 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#e77171', startColorstr='#ef9d9d', gradientType='0');
-  border-color: #da7474;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ee9d9d), color-stop(0.5, #e98989), color-stop(1, #e77171));
+  background-image: -moz-linear-gradient(center bottom, #e77171 0%, #e98989 50%, #ee9d9d 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#e77171', startColorstr='#ee9d9d', gradientType='0');
+  border-color: #db7474;
   border-top-color: #f0b0b0;
-  border-bottom-color: #da5656;
+  border-bottom-color: #d95656;
   color: #5b1818;
 }
-/* line 70, ../../app/stylesheets/partials/_bar.sass */
+/* line 55, ../../app/stylesheets/partials/_bar.sass */
 .wheelchair .unknown {
   border: 1px #9e9e9e solid;
   padding: 1px 2px;
   background-color: #b7b7b7;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c5c2c2), color-stop(0.5, #b7b7b7), color-stop(1, #ada8a8));
-  background-image: -moz-linear-gradient(center bottom, #ada8a8 0%, #b7b7b7 50%, #c5c2c2 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#ada8a8', startColorstr='#c5c2c2', gradientType='0');
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c5c2c2), color-stop(0.5, #b7b7b7), color-stop(1, #aca8a8));
+  background-image: -moz-linear-gradient(center bottom, #aca8a8 0%, #b7b7b7 50%, #c5c2c2 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#aca8a8', startColorstr='#c5c2c2', gradientType='0');
   -moz-border-radius-bottomleft: 4px;
   -webkit-border-bottom-left-radius: 4px;
   -khtml-border-bottom-left-radius: 4px;
@@ -405,7 +410,7 @@ aside {
   color: #383838;
 }
 
-/* line 78, ../../app/stylesheets/partials/_bar.sass */
+/* line 63, ../../app/stylesheets/partials/_bar.sass */
 #links {
   clear: both;
   padding: 4px 0;
@@ -413,15 +418,15 @@ aside {
   overflow: hidden;
   display: inline-block;
 }
-/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.0.pre8/frameworks/compass/stylesheets/compass/utilities/general/_hacks.sass */
+/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.0.rc1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.sass */
 #links {
   display: block;
 }
-/* line 87, ../../app/stylesheets/partials/_bar.sass */
+/* line 69, ../../app/stylesheets/partials/_bar.sass */
 #links a {
   display: none;
 }
-/* line 91, ../../app/stylesheets/partials/_bar.sass */
+/* line 72, ../../app/stylesheets/partials/_bar.sass */
 #links a.refresh {
   display: inline;
 }
@@ -443,7 +448,7 @@ a:visited:hover {
   color: #563594;
 }
 
-/* line 9, ../../app/stylesheets/partials/_icons.sass */
+/* line 10, ../../app/stylesheets/partials/_icons.sass */
 .yes label {
   background-repeat: no-repeat;
   height: 16px;
@@ -459,7 +464,7 @@ a:visited:hover {
   vertical-align: baseline;
 }
 
-/* line 12, ../../app/stylesheets/partials/_icons.sass */
+/* line 13, ../../app/stylesheets/partials/_icons.sass */
 .limited label {
   background-repeat: no-repeat;
   height: 16px;
@@ -475,7 +480,7 @@ a:visited:hover {
   vertical-align: baseline;
 }
 
-/* line 15, ../../app/stylesheets/partials/_icons.sass */
+/* line 16, ../../app/stylesheets/partials/_icons.sass */
 .no label {
   background-repeat: no-repeat;
   height: 16px;
@@ -491,7 +496,7 @@ a:visited:hover {
   vertical-align: baseline;
 }
 
-/* line 18, ../../app/stylesheets/partials/_icons.sass */
+/* line 19, ../../app/stylesheets/partials/_icons.sass */
 .unknown label {
   background-repeat: no-repeat;
   height: 16px;
@@ -507,7 +512,7 @@ a:visited:hover {
   vertical-align: baseline;
 }
 
-/* line 21, ../../app/stylesheets/partials/_icons.sass */
+/* line 22, ../../app/stylesheets/partials/_icons.sass */
 .print {
   background-repeat: no-repeat;
   height: 16px;
@@ -523,7 +528,7 @@ a:visited:hover {
   vertical-align: baseline;
 }
 
-/* line 24, ../../app/stylesheets/partials/_icons.sass */
+/* line 25, ../../app/stylesheets/partials/_icons.sass */
 .mail {
   background-repeat: no-repeat;
   height: 16px;
@@ -539,7 +544,7 @@ a:visited:hover {
   vertical-align: baseline;
 }
 
-/* line 27, ../../app/stylesheets/partials/_icons.sass */
+/* line 28, ../../app/stylesheets/partials/_icons.sass */
 .link {
   background-repeat: no-repeat;
   height: 16px;
@@ -555,7 +560,7 @@ a:visited:hover {
   vertical-align: baseline;
 }
 
-/* line 31, ../../app/stylesheets/partials/_icons.sass */
+/* line 32, ../../app/stylesheets/partials/_icons.sass */
 .refresh {
   background-repeat: no-repeat;
   height: 16px;
@@ -572,357 +577,207 @@ a:visited:hover {
   background-image: url(/images/icons/arrow-circle-double.png);
 }
 
-/* line 38, ../../app/stylesheets/partials/_icons.sass */
+/* line 42, ../../app/stylesheets/partials/_icons.sass */
 .arts-centre {
   background-image: url(/images/icons/palette.png);
 }
 
-/* line 41, ../../app/stylesheets/partials/_icons.sass */
+/* line 45, ../../app/stylesheets/partials/_icons.sass */
 .atm {
   background-image: url(/images/icons/credit-cards.png);
 }
 
-/* line 44, ../../app/stylesheets/partials/_icons.sass */
-.audiologist {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 47, ../../app/stylesheets/partials/_icons.sass */
-.baby-hatch {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 50, ../../app/stylesheets/partials/_icons.sass */
+/* line 54, ../../app/stylesheets/partials/_icons.sass */
 .bank {
   background-image: url(/images/icons/money-coin.png);
 }
 
-/* line 53, ../../app/stylesheets/partials/_icons.sass */
+/* line 57, ../../app/stylesheets/partials/_icons.sass */
 .bar {
   background-image: url(/images/icons/glass.png);
 }
 
-/* line 56, ../../app/stylesheets/partials/_icons.sass */
-.bench {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 59, ../../app/stylesheets/partials/_icons.sass */
-.bicycle-parking {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 62, ../../app/stylesheets/partials/_icons.sass */
-.bicycle-rental {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 65, ../../app/stylesheets/partials/_icons.sass */
+/* line 69, ../../app/stylesheets/partials/_icons.sass */
 .biergarten {
   background-image: url(/images/icons/weather.png);
 }
 
-/* line 68, ../../app/stylesheets/partials/_icons.sass */
-.brothel {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 71, ../../app/stylesheets/partials/_icons.sass */
+/* line 75, ../../app/stylesheets/partials/_icons.sass */
 .bureau-de-change {
   background-image: url(/images/icons/bureau-de-change.png);
 }
 
-/* line 74, ../../app/stylesheets/partials/_icons.sass */
+/* line 78, ../../app/stylesheets/partials/_icons.sass */
 .cafe {
   background-image: url(/images/icons/cake.png);
 }
 
-/* line 77, ../../app/stylesheets/partials/_icons.sass */
+/* line 81, ../../app/stylesheets/partials/_icons.sass */
 .car-rental {
   background-image: url(/images/icons/car-rental.png);
 }
 
-/* line 80, ../../app/stylesheets/partials/_icons.sass */
+/* line 84, ../../app/stylesheets/partials/_icons.sass */
 .car-sharing {
   background-image: url(/images/icons/car-sharing.png);
 }
 
-/* line 83, ../../app/stylesheets/partials/_icons.sass */
+/* line 87, ../../app/stylesheets/partials/_icons.sass */
 .cinema {
   background-image: url(/images/icons/film.png);
 }
 
-/* line 86, ../../app/stylesheets/partials/_icons.sass */
+/* line 90, ../../app/stylesheets/partials/_icons.sass */
 .clock {
   background-image: url(/images/icons/clock-frame.png);
 }
 
-/* line 89, ../../app/stylesheets/partials/_icons.sass */
+/* line 93, ../../app/stylesheets/partials/_icons.sass */
 .coast-guard {
   background-image: url(/images/icons/lifebuoy.png);
 }
 
-/* line 92, ../../app/stylesheets/partials/_icons.sass */
-.college {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 95, ../../app/stylesheets/partials/_icons.sass */
-.community-centre {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 98, ../../app/stylesheets/partials/_icons.sass */
+/* line 102, ../../app/stylesheets/partials/_icons.sass */
 .courthouse {
   background-image: url(/images/icons/auction-hammer-gavel.png);
 }
 
-/* line 101, ../../app/stylesheets/partials/_icons.sass */
-.crematorium {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 104, ../../app/stylesheets/partials/_icons.sass */
-.drinking-water {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 107, ../../app/stylesheets/partials/_icons.sass */
+/* line 111, ../../app/stylesheets/partials/_icons.sass */
 .embassy {
   background-image: url(/images/icons/locale.png);
 }
 
-/* line 110, ../../app/stylesheets/partials/_icons.sass */
-.emergency-phone {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 113, ../../app/stylesheets/partials/_icons.sass */
+/* line 117, ../../app/stylesheets/partials/_icons.sass */
 .fast-food {
   background-image: url(/images/icons/fast-food.png);
 }
 
-/* line 116, ../../app/stylesheets/partials/_icons.sass */
+/* line 120, ../../app/stylesheets/partials/_icons.sass */
 .fire-hydrant {
   background-image: url(/images/icons/fire.png);
 }
 
-/* line 119, ../../app/stylesheets/partials/_icons.sass */
+/* line 123, ../../app/stylesheets/partials/_icons.sass */
 .fire-station {
   background-image: url(/images/icons/fire-station.png);
 }
 
-/* line 122, ../../app/stylesheets/partials/_icons.sass */
-.fountain {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 125, ../../app/stylesheets/partials/_icons.sass */
-.fuel {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 128, ../../app/stylesheets/partials/_icons.sass */
-.grave-yard {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 131, ../../app/stylesheets/partials/_icons.sass */
-.grit-bin {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 134, ../../app/stylesheets/partials/_icons.sass */
+/* line 138, ../../app/stylesheets/partials/_icons.sass */
 .hospital {
   background-image: url(/images/icons/hospital.png);
 }
 
-/* line 137, ../../app/stylesheets/partials/_icons.sass */
+/* line 141, ../../app/stylesheets/partials/_icons.sass */
 .hunting-stand {
   background-image: url(/images/icons/target.png);
 }
 
-/* line 140, ../../app/stylesheets/partials/_icons.sass */
+/* line 144, ../../app/stylesheets/partials/_icons.sass */
 .kindergarten {
   background-image: url(/images/icons/smiley.png);
 }
 
-/* line 143, ../../app/stylesheets/partials/_icons.sass */
+/* line 147, ../../app/stylesheets/partials/_icons.sass */
 .library {
   background-image: url(/images/icons/book-open.png);
 }
 
-/* line 146, ../../app/stylesheets/partials/_icons.sass */
+/* line 150, ../../app/stylesheets/partials/_icons.sass */
 .marketplace {
   background-image: url(/images/icons/shopping-basket.png);
 }
 
-/* line 149, ../../app/stylesheets/partials/_icons.sass */
-.milk-dispenser {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 152, ../../app/stylesheets/partials/_icons.sass */
+/* line 156, ../../app/stylesheets/partials/_icons.sass */
 .nightclub {
   background-image: url(/images/icons/speaker.png);
 }
 
-/* line 155, ../../app/stylesheets/partials/_icons.sass */
+/* line 159, ../../app/stylesheets/partials/_icons.sass */
 .parking {
   background-image: url(/images/icons/parking.png);
 }
 
-/* line 158, ../../app/stylesheets/partials/_icons.sass */
+/* line 162, ../../app/stylesheets/partials/_icons.sass */
 .pharmacy {
   background-image: url(/images/icons/pharmacie-germany.png);
 }
 
-/* line 161, ../../app/stylesheets/partials/_icons.sass */
-.place-of-worship {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 164, ../../app/stylesheets/partials/_icons.sass */
+/* line 168, ../../app/stylesheets/partials/_icons.sass */
 .police {
   background-image: url(/images/icons/police.png);
 }
 
-/* line 167, ../../app/stylesheets/partials/_icons.sass */
+/* line 171, ../../app/stylesheets/partials/_icons.sass */
 .post-box {
   background-image: url(/images/icons/mail.png);
 }
 
-/* line 170, ../../app/stylesheets/partials/_icons.sass */
+/* line 174, ../../app/stylesheets/partials/_icons.sass */
 .post-office {
   background-image: url(/images/icons/post-office.png);
 }
 
-/* line 173, ../../app/stylesheets/partials/_icons.sass */
+/* line 177, ../../app/stylesheets/partials/_icons.sass */
 .prison {
   background-image: url(/images/icons/user-thief-baldie.png);
 }
 
-/* line 176, ../../app/stylesheets/partials/_icons.sass */
-.pub {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 179, ../../app/stylesheets/partials/_icons.sass */
+/* line 183, ../../app/stylesheets/partials/_icons.sass */
 .place-of-worship {
   background-image: url(/images/icons/bell.png);
 }
 
-/* line 182, ../../app/stylesheets/partials/_icons.sass */
-.public-building {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 185, ../../app/stylesheets/partials/_icons.sass */
+/* line 189, ../../app/stylesheets/partials/_icons.sass */
 .recycling {
   background-image: url(/images/icons/bin-full.png);
 }
 
-/* line 188, ../../app/stylesheets/partials/_icons.sass */
-.register-office {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 191, ../../app/stylesheets/partials/_icons.sass */
+/* line 195, ../../app/stylesheets/partials/_icons.sass */
 .restaurant {
   background-image: url(/images/icons/cutlery.png);
 }
 
-/* line 194, ../../app/stylesheets/partials/_icons.sass */
-.sauna {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 197, ../../app/stylesheets/partials/_icons.sass */
-.school {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 200, ../../app/stylesheets/partials/_icons.sass */
-.stripclub {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 203, ../../app/stylesheets/partials/_icons.sass */
-.studio {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 206, ../../app/stylesheets/partials/_icons.sass */
+/* line 210, ../../app/stylesheets/partials/_icons.sass */
 .telephone {
   background-image: url(/images/icons/telephone.png);
 }
 
-/* line 209, ../../app/stylesheets/partials/_icons.sass */
+/* line 213, ../../app/stylesheets/partials/_icons.sass */
 .theatre {
   background-image: url(/images/icons/mask.png);
 }
 
-/* line 212, ../../app/stylesheets/partials/_icons.sass */
+/* line 216, ../../app/stylesheets/partials/_icons.sass */
 .toilets {
   background-image: url(/images/icons/toilet.png);
 }
 
-/* line 215, ../../app/stylesheets/partials/_icons.sass */
-.townhall {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 218, ../../app/stylesheets/partials/_icons.sass */
-.university {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 221, ../../app/stylesheets/partials/_icons.sass */
-.vending-machine {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 224, ../../app/stylesheets/partials/_icons.sass */
-.veterinary {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 227, ../../app/stylesheets/partials/_icons.sass */
-.waste-basket {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 230, ../../app/stylesheets/partials/_icons.sass */
-.waste-disposal {
-  background-image: url(/images/icons/.png);
-}
-
-/* line 236, ../../app/stylesheets/partials/_icons.sass */
+/* line 237, ../../app/stylesheets/partials/_icons.sass */
 .subway {
   background-image: url(/images/icons/public-transport-subway-germany.png);
 }
 
-/* line 239, ../../app/stylesheets/partials/_icons.sass */
+/* line 240, ../../app/stylesheets/partials/_icons.sass */
 .light-rail {
   background-image: url(/images/icons/public-transport-light-rail-germany.png);
 }
 
-/* line 242, ../../app/stylesheets/partials/_icons.sass */
+/* line 243, ../../app/stylesheets/partials/_icons.sass */
 .tram-stop {
   background-image: url(/images/icons/public-transport-tram-germany.png);
 }
 
-/* line 245, ../../app/stylesheets/partials/_icons.sass */
+/* line 246, ../../app/stylesheets/partials/_icons.sass */
 .bus-stop {
   background-image: url(/images/icons/public-transport-bus-germany.png);
 }
 
-/* line 248, ../../app/stylesheets/partials/_icons.sass */
+/* line 249, ../../app/stylesheets/partials/_icons.sass */
 .ferry-terminal {
   background-image: url(/images/icons/public-transport-ferry-germany.png);
 }
 
-/* line 251, ../../app/stylesheets/partials/_icons.sass */
+/* line 252, ../../app/stylesheets/partials/_icons.sass */
 .taxi {
   background-image: url(/images/icons/public-transport-taxi-germany.png);
 }
@@ -933,16 +788,16 @@ a:visited:hover {
   overflow: hidden;
   display: inline-block;
 }
-/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.0.pre8/frameworks/compass/stylesheets/compass/utilities/general/_hacks.sass */
+/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.0.rc1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.sass */
 #amenities {
   display: block;
 }
-/* line 10, ../../app/stylesheets/partials/_amenities.sass */
+/* line 6, ../../app/stylesheets/partials/_amenities.sass */
 #amenities li {
   float: left;
   margin-right: 8px;
 }
-/* line 14, ../../app/stylesheets/partials/_amenities.sass */
+/* line 10, ../../app/stylesheets/partials/_amenities.sass */
 #amenities h4 {
   color: #363931;
   font-size: 11px;
@@ -951,7 +806,7 @@ a:visited:hover {
   margin-left: 2px;
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
 }
-/* line 22, ../../app/stylesheets/partials/_amenities.sass */
+/* line 18, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a {
   border: 1px #757575 solid;
   float: left;
@@ -961,7 +816,7 @@ a:visited:hover {
   padding: 3px;
   width: 16px;
 }
-/* line 31, ../../app/stylesheets/partials/_amenities.sass */
+/* line 27, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a.hidden {
   /* Webkit (Safari, Chrome) */
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px;
@@ -973,20 +828,19 @@ a:visited:hover {
   -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px;
   box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px;
   background-color: #c2c6bc;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e8ebe3), color-stop(0.5, #c2c6bc), color-stop(1, #9eab8b));
-  background-image: -moz-linear-gradient(center bottom, #9eab8b 0%, #c2c6bc 50%, #e8ebe3 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#9eab8b', startColorstr='#e8ebe3', gradientType='0');
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e8ebe4), color-stop(0.5, #c2c6bc), color-stop(1, #9dab8b));
+  background-image: -moz-linear-gradient(center bottom, #9dab8b 0%, #c2c6bc 50%, #e8ebe4 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#9dab8b', startColorstr='#e8ebe4', gradientType='0');
 }
-/* line 38, ../../app/stylesheets/partials/_amenities.sass */
+/* line 34, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a.hidden:hover {
   background-color: #9fa596;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c5cdbb), color-stop(0.5, #9fa596), color-stop(1, #7a8966));
-  background-image: -moz-linear-gradient(center bottom, #7a8966 0%, #9fa596 50%, #c5cdbb 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#7a8966', startColorstr='#c5cdbb', gradientType='0');
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c5cdbb), color-stop(0.5, #9fa596), color-stop(1, #7a8a65));
+  background-image: -moz-linear-gradient(center bottom, #7a8a65 0%, #9fa596 50%, #c5cdbb 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#7a8a65', startColorstr='#c5cdbb', gradientType='0');
 }
-/* line 41, ../../app/stylesheets/partials/_amenities.sass */
-#amenities a.visible,
-#amenities a:active {
+/* line 37, ../../app/stylesheets/partials/_amenities.sass */
+#amenities a.visible, #amenities a:active {
   /* Webkit (Safari, Chrome) */
   -webkit-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px;
   /* Gecko (Firefox, Camino) */
@@ -996,25 +850,23 @@ a:visited:hover {
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px;
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px;
-  background-color: #99a190;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a6af9b), color-stop(0.5, #99a190), color-stop(1, #8c997f));
-  background-image: -moz-linear-gradient(center bottom, #8c997f 0%, #99a190 50%, #a6af9b 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#8c997f', startColorstr='#a6af9b', gradientType='0');
+  background-color: #9aa190;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a7af9c), color-stop(0.5, #9aa190), color-stop(1, #8e9880));
+  background-image: -moz-linear-gradient(center bottom, #8e9880 0%, #9aa190 50%, #a7af9c 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#8e9880', startColorstr='#a7af9c', gradientType='0');
 }
-/* line 49, ../../app/stylesheets/partials/_amenities.sass */
-#amenities a.visible:hover,
-#amenities a:active:hover {
+/* line 45, ../../app/stylesheets/partials/_amenities.sass */
+#amenities a.visible:hover, #amenities a:active:hover {
   background-color: #5c6354;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #69735d), color-stop(0.5, #5c6354), color-stop(1, #4f5747));
-  background-image: -moz-linear-gradient(center bottom, #4f5747 0%, #5c6354 50%, #69735d 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#4f5747', startColorstr='#69735d', gradientType='0');
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #6a735d), color-stop(0.5, #5c6354), color-stop(1, #505746));
+  background-image: -moz-linear-gradient(center bottom, #505746 0%, #5c6354 50%, #6a735d 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#505746', startColorstr='#6a735d', gradientType='0');
 }
-/* line 52, ../../app/stylesheets/partials/_amenities.sass */
-#amenities a.visible:hover span,
-#amenities a:active:hover span {
+/* line 48, ../../app/stylesheets/partials/_amenities.sass */
+#amenities a.visible:hover span, #amenities a:active:hover span {
   opacity: 0.8;
 }
-/* line 55, ../../app/stylesheets/partials/_amenities.sass */
+/* line 51, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a:first-child {
   -moz-border-radius-bottomleft: 4px;
   -webkit-border-bottom-left-radius: 4px;
@@ -1025,7 +877,7 @@ a:visited:hover {
   -khtml-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
 }
-/* line 58, ../../app/stylesheets/partials/_amenities.sass */
+/* line 54, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a:last-child {
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
@@ -1036,14 +888,14 @@ a:visited:hover {
   -khtml-border-bottom-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
-/* line 61, ../../app/stylesheets/partials/_amenities.sass */
+/* line 57, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a span {
   float: left;
   height: 16px;
   opacity: 0.9;
   width: 16px;
 }
-/* line 67, ../../app/stylesheets/partials/_amenities.sass */
+/* line 63, ../../app/stylesheets/partials/_amenities.sass */
 #amenities a:hover span {
   opacity: 1;
 }
@@ -1057,7 +909,7 @@ a:visited:hover {
 .popup address {
   padding-left: 20px;
 }
-/* line 14, ../../app/stylesheets/partials/_popup.sass */
+/* line 13, ../../app/stylesheets/partials/_popup.sass */
 .popup dl {
   border-top: 1px #cfd7c5 solid;
   margin-top: 7px;
@@ -1066,11 +918,11 @@ a:visited:hover {
   overflow: hidden;
   display: inline-block;
 }
-/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.0.pre8/frameworks/compass/stylesheets/compass/utilities/general/_hacks.sass */
+/* line 5, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.0.rc1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.sass */
 .popup dl {
   display: block;
 }
-/* line 21, ../../app/stylesheets/partials/_popup.sass */
+/* line 20, ../../app/stylesheets/partials/_popup.sass */
 .popup dt,
 .popup dd {
   float: left;
@@ -1078,7 +930,7 @@ a:visited:hover {
   line-height: 15px;
   padding-bottom: 7px;
 }
-/* line 28, ../../app/stylesheets/partials/_popup.sass */
+/* line 27, ../../app/stylesheets/partials/_popup.sass */
 .popup dt {
   clear: left;
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
@@ -1087,18 +939,18 @@ a:visited:hover {
   text-align: right;
   width: 90px;
 }
-/* line 36, ../../app/stylesheets/partials/_popup.sass */
+/* line 34, ../../app/stylesheets/partials/_popup.sass */
 .popup dt:after {
-  content: ':';
+  content: ":";
 }
-/* line 39, ../../app/stylesheets/partials/_popup.sass */
+/* line 37, ../../app/stylesheets/partials/_popup.sass */
 .popup dd {
   font-family: 'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue','Swiss 721 Light','Helvetica','Arial','sans-serif';
   font-size: 11px;
   font-weight: 100;
   width: 210px;
 }
-/* line 45, ../../app/stylesheets/partials/_popup.sass */
+/* line 43, ../../app/stylesheets/partials/_popup.sass */
 .popup dd strong {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-weight: bold;
