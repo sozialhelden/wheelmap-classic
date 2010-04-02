@@ -254,15 +254,6 @@ footer a {
   margin-left: 10px;
   white-space: nowrap;
 }
-/* line 23, ../../app/stylesheets/partials/_footer.sass */
-footer .osm {
-  opacity: 0.7;
-  display: none;
-}
-/* line 27, ../../app/stylesheets/partials/_footer.sass */
-footer .osm a {
-  color: inherit;
-}
 
 /* line 1, ../../app/stylesheets/partials/_aside.sass */
 aside {

@@ -99,10 +99,10 @@ function toggleLayers(type) {
 
 function mapBBOX() {
   var box = map.getExtent().clone();
-  var latlon = map.getLonLatFromViewPortPx({ x: 350, y: 50 });
+  var latlon = map.getLonLatFromViewPortPx({ x: 380, y: 80 });
   box.left = latlon.lon;
   box.top = latlon.lat;
-  latlon = map.getLonLatFromViewPortPx({ x: $(document).width() - 30, y: $(document).height() - 30 });
+  latlon = map.getLonLatFromViewPortPx({ x: $(document).width() - 80, y: $(document).height() - 80 });
   box.right = latlon.lon;
   box.bottom = latlon.lat;
   return box.transform(map.getProjectionObject(), epsg4326);
