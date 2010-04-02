@@ -245,15 +245,15 @@ footer {
   z-index: 10;
   -webkit-transition: all 500ms;
   text-shadow: #f0ecd1 0 0 2px;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(55.0%, rgba(214, 206, 132, 0.65)), color-stop(75%, rgba(214, 206, 132, 0.4)), color-stop(100%, rgba(214, 206, 132, 0)));
-  background-image: -moz-linear-gradient(top, rgba(214, 206, 132, 0.65) 55%, rgba(214, 206, 132, 0.4) 75%, rgba(214, 206, 132, 0) 100%);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(55.0%, rgba(214, 206, 132, 0.65)), color-stop(75%, rgba(214, 206, 132, 0.3)), color-stop(100%, rgba(214, 206, 132, 0)));
+  background-image: -moz-linear-gradient(top, rgba(214, 206, 132, 0.65) 55%, rgba(214, 206, 132, 0.3) 75%, rgba(214, 206, 132, 0) 100%);
 }
-/* line 24, ../../app/stylesheets/partials/_footer.sass */
+/* line 18, ../../app/stylesheets/partials/_footer.sass */
 footer a {
   font-weight: bold;
   margin-right: 10px;
 }
-/* line 31, ../../app/stylesheets/partials/_footer.sass */
+/* line 22, ../../app/stylesheets/partials/_footer.sass */
 footer a:last-child {
   font-weight: normal;
 }
