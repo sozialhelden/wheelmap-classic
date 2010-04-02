@@ -65,14 +65,17 @@ function drawmap() {
     maxResolution: 156543,
     units: 'meters'
   });
+  
 
   var mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik");
   map.addLayer(mapnik);
+
 
   checkForPermalink();
   jumpTo(lon, lat, zoom);
 
   createLayer();
+  map.events.register('moveend', null, loadPlaces);
   setTimeout(loadPlaces, 1000);
 
   var amenitiesElement = $('#amenities');
