@@ -981,3 +981,20 @@ a:visited:hover {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-weight: bold;
 }
+
+/* line 1, ../../app/stylesheets/partials/_spinner.sass */
+#spinner {
+  background: url('/images/spinner-large.gif?1270210070') no-repeat center;
+  background-color: #6b7b55;
+  background-color: rgba(107, 123, 85, 0.8);
+  left: 50%;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  z-index: 1000;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+}
