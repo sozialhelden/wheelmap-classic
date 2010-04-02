@@ -1,2 +1,39 @@
 footer
-  padding: 10px
+  background: rgba(black, 0)
+  //bottom: 0
+  top: 0
+  color: rgba(black, 0.8)
+  left: 0
+  font-size: 11px
+  //padding: 15px 32px 3px
+  padding: 3px 32px 15px
+  position: absolute
+  right: 0
+  text-align: right
+  z-index: 10
+  -webkit-transition: all 500ms
+  
+  $c: desaturate($background-color, 50%)
+  +text-shadow(lighten($c, 20%), 0, 0, 2px)
+  //+linear-gradient(color_stops(rgba($c, 0), rgba($c, 0.4) 15%, rgba($c, 0.65) 35%))
+  +linear-gradient(color_stops(rgba($c, 0.65) 55%, rgba($c, 0.4) 75%, rgba($c, 0) 100%))
+  
+  //&:hover
+  //  +linear-gradient(color_stops(rgba($c, 0), rgba($c, 0.6) 15%, rgba($c, 0.85) 35%))
+  
+  a
+    //color: black !important
+    font-weight: bold
+    margin-right: 10px
+    //+text-shadow(rgba(black, 0.7), 0, 0, 4px)
+    //text-decoration: underline
+    
+    &:last-child
+      font-weight: normal
+    
+    &:hover
+      //color: inherit
+      //+text-shadow(rgba(white, 0.3), 0, 0, 2px)
+      
+    //&:before
+    //  content: "·"

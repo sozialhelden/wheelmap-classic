@@ -2,28 +2,28 @@
   h2
     background-position: 0 2px
     padding-left: 20px
-    
+
   address
     padding-left: 20px
-    
+
   $dt-width: 90px
   $gap: 10px
   $dd-width: 210px
-  
+
   dl
     border-top: 1px desaturate(lighten($green, 20%), 20%) solid
     margin-top: 7px
     padding-top: 7px
     width: $dt-width + $gap + $dd-width
     +clearfix
-    
+
   dt,
   dd
     float: left
     font-size: 11px
     line-height: 15px
     padding-bottom: 7px
-    
+
   dt
     clear: left
     font-family: $helvetica
@@ -31,15 +31,16 @@
     padding-right: $gap
     text-align: right
     width: $dt-width
+
     &:after
       content: ":"
-      
+
   dd
     font-family: $helvetica-light
     font-size: 11px
     font-weight: 100
     width: $dd-width
-    
+
     strong
       font-family: $helvetica
       font-weight: bold

@@ -73,7 +73,7 @@ function drawmap() {
   jumpTo(lon, lat, zoom);
 
   createLayer();
-  setTimeout(loadPlaces, 1000);
+  //setTimeout(loadPlaces, 1000);
 
   var amenitiesElement = $('#amenities');
   $.each(amenitiesGrouped, function(title, group) {

@@ -200,7 +200,7 @@ h1 {
 
 /* line 16, ../../app/stylesheets/basics/_grid_and_layout.sass */
 body {
-  background: white;
+  background: #ffee5b;
 }
 
 /* line 1, ../../app/stylesheets/partials/_page.sass */
@@ -233,7 +233,29 @@ header #spinner {
 
 /* line 1, ../../app/stylesheets/partials/_footer.sass */
 footer {
-  padding: 10px;
+  background: rgba(0, 0, 0, 0);
+  top: 0;
+  color: rgba(0, 0, 0, 0.8);
+  left: 0;
+  font-size: 11px;
+  padding: 3px 32px 15px;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  z-index: 10;
+  -webkit-transition: all 500ms;
+  text-shadow: #f0ecd1 0 0 2px;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(55.0%, rgba(214, 206, 132, 0.65)), color-stop(75%, rgba(214, 206, 132, 0.4)), color-stop(100%, rgba(214, 206, 132, 0)));
+  background-image: -moz-linear-gradient(top, rgba(214, 206, 132, 0.65) 55%, rgba(214, 206, 132, 0.4) 75%, rgba(214, 206, 132, 0) 100%);
+}
+/* line 24, ../../app/stylesheets/partials/_footer.sass */
+footer a {
+  font-weight: bold;
+  margin-right: 10px;
+}
+/* line 31, ../../app/stylesheets/partials/_footer.sass */
+footer a:last-child {
+  font-weight: normal;
 }
 
 /* line 1, ../../app/stylesheets/partials/_aside.sass */
@@ -262,29 +284,26 @@ aside {
 
 /* line 12, ../../app/stylesheets/partials/_map.sass */
 #OpenLayers\.Control\.Attribution_3 {
-  bottom: 10px;
-  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
-  font-size: 11px;
-  right: 10px;
-  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+  display: none;
 }
 
-/* line 19, ../../app/stylesheets/partials/_map.sass */
+/* line 20, ../../app/stylesheets/partials/_map.sass */
 #OpenLayers\.Layer\.OSM\.Mapnik_7 {
   opacity: 0.5;
 }
 
-/* line 22, ../../app/stylesheets/partials/_map.sass */
+/* line 23, ../../app/stylesheets/partials/_map.sass */
 image[width=16] {
   cursor: pointer;
 }
 
 /* line 1, ../../app/stylesheets/partials/_info.sass */
 #info {
-  left: 20px;
+  left: 15px;
   position: absolute;
-  top: 20px;
+  top: 25px;
   width: 300px;
+  z-index: 20;
   background-color: #e7ebe2;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #e7ebe2), color-stop(1, #cfd7c5));
   background-image: -moz-linear-gradient(center bottom, #cfd7c5 0%, #e7ebe2 50%, white 100%);
@@ -939,18 +958,18 @@ a:visited:hover {
   text-align: right;
   width: 90px;
 }
-/* line 34, ../../app/stylesheets/partials/_popup.sass */
+/* line 35, ../../app/stylesheets/partials/_popup.sass */
 .popup dt:after {
   content: ":";
 }
-/* line 37, ../../app/stylesheets/partials/_popup.sass */
+/* line 38, ../../app/stylesheets/partials/_popup.sass */
 .popup dd {
   font-family: 'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue','Swiss 721 Light','Helvetica','Arial','sans-serif';
   font-size: 11px;
   font-weight: 100;
   width: 210px;
 }
-/* line 43, ../../app/stylesheets/partials/_popup.sass */
+/* line 44, ../../app/stylesheets/partials/_popup.sass */
 .popup dd strong {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-weight: bold;
