@@ -87,9 +87,6 @@ function drawmap() {
 }
 
 
-
-
-
 function toggleLayers(type) {
   var visibility = false;
   visibility = !$('.' + type).parent().hasClass('visible');
@@ -101,7 +98,14 @@ function toggleLayers(type) {
 
 
 function mapBBOX() {
-  return map.getExtent().clone().transform(map.getProjectionObject(), epsg4326);
+  var box = map.getExtent().clone();
+  var latlon = map.getLonLatFromViewPortPx({ x: 350, y: 50 });
+  box.left = latlon.lon;
+  box.top = latlon.lat;
+  latlon = map.getLonLatFromViewPortPx({ x: $(document).width() - 30, y: $(document).height() - 30 });
+  box.right = latlon.lon;
+  box.bottom = latlon.lat;
+  return box.transform(map.getProjectionObject(), epsg4326);
 }
 
 

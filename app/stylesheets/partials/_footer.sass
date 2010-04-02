@@ -4,7 +4,7 @@ footer
   color: rgba(black, 0.8)
   left: 0
   font-size: 11px
-  padding: 3px 32px 15px
+  padding: 3px 17px 15px 350px
   position: absolute
   right: 0
   text-align: right
@@ -12,12 +12,10 @@ footer
   -webkit-transition: all 500ms
 
   $c: desaturate($background-color, 50%)
-  +text-shadow(lighten($c, 20%), 0, 0, 2px)
-  +linear-gradient(color_stops(rgba($c, 0.65) 55%, rgba($c, 0.3) 75%, rgba($c, 0) 100%))
+  +text-shadow(lighten($c, 20%), 0, 1px, 1px)
+  +linear-gradient(color_stops(rgba($c, 0.55) 35%, rgba($c, 0.2) 75%, rgba($c, 0) 100%))
 
   a
     font-weight: bold
-    margin-right: 10px
-
-    &:last-child
-      font-weight: normal
+    margin-left: 10px
+    white-space: nowrap

@@ -238,24 +238,30 @@ footer {
   color: rgba(0, 0, 0, 0.8);
   left: 0;
   font-size: 11px;
-  padding: 3px 32px 15px;
+  padding: 3px 17px 15px 350px;
   position: absolute;
   right: 0;
   text-align: right;
   z-index: 10;
   -webkit-transition: all 500ms;
-  text-shadow: #f0ecd1 0 0 2px;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(55.0%, rgba(214, 206, 132, 0.65)), color-stop(75%, rgba(214, 206, 132, 0.3)), color-stop(100%, rgba(214, 206, 132, 0)));
-  background-image: -moz-linear-gradient(top, rgba(214, 206, 132, 0.65) 55%, rgba(214, 206, 132, 0.3) 75%, rgba(214, 206, 132, 0) 100%);
+  text-shadow: #f0ecd1 0 1px 1px;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(35%, rgba(214, 206, 132, 0.55)), color-stop(75%, rgba(214, 206, 132, 0.2)), color-stop(100%, rgba(214, 206, 132, 0)));
+  background-image: -moz-linear-gradient(top, rgba(214, 206, 132, 0.55) 35%, rgba(214, 206, 132, 0.2) 75%, rgba(214, 206, 132, 0) 100%);
 }
 /* line 18, ../../app/stylesheets/partials/_footer.sass */
 footer a {
   font-weight: bold;
-  margin-right: 10px;
+  margin-left: 10px;
+  white-space: nowrap;
 }
-/* line 22, ../../app/stylesheets/partials/_footer.sass */
-footer a:last-child {
-  font-weight: normal;
+/* line 23, ../../app/stylesheets/partials/_footer.sass */
+footer .osm {
+  opacity: 0.7;
+  display: none;
+}
+/* line 27, ../../app/stylesheets/partials/_footer.sass */
+footer .osm a {
+  color: inherit;
 }
 
 /* line 1, ../../app/stylesheets/partials/_aside.sass */
@@ -284,15 +290,25 @@ aside {
 
 /* line 12, ../../app/stylesheets/partials/_map.sass */
 #OpenLayers\.Control\.Attribution_3 {
-  display: none;
+  bottom: 10px;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 11px;
+  right: 17px;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+}
+/* line 21, ../../app/stylesheets/partials/_map.sass */
+#OpenLayers\.Control\.Attribution_3 a {
+  color: inherit;
+  font-weight: bold;
 }
 
-/* line 20, ../../app/stylesheets/partials/_map.sass */
+/* line 25, ../../app/stylesheets/partials/_map.sass */
 #OpenLayers\.Layer\.OSM\.Mapnik_7 {
   opacity: 0.5;
 }
 
-/* line 23, ../../app/stylesheets/partials/_map.sass */
+/* line 28, ../../app/stylesheets/partials/_map.sass */
 image[width=16] {
   cursor: pointer;
 }
@@ -301,7 +317,7 @@ image[width=16] {
 #info {
   left: 15px;
   position: absolute;
-  top: 25px;
+  top: 15px;
   width: 300px;
   z-index: 20;
   background-color: #e7ebe2;
