@@ -18,6 +18,8 @@
         = link_to 'Was bedeutet „barrierefrei“?', 'http://blog.wheelmap.org/was-bedeutet-barrierefrei/'
         = link_to 'Wie trage ich Orte ein?', 'http://blog.wheelmap.org/wie-kann-ich-orte-eintragen/'
         = link_to 'Impressum', 'http://blog.wheelmap.org/impressum/'
+    - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
+      = image_tag('sozialhelden.png', :alt => 'Ein Projekt der Sozialhelden')
     = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
     = javascript_include_tag 'http://www.openstreetmap.org/openlayers/OpenStreetMap.js'
     = javascript_include_tag 'jquery', 'util', 'icons', 'string', 'popup', 'application', :cache => false

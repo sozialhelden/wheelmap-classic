@@ -57,8 +57,8 @@ function drawmap() {
     projection: epsg900913,
     displayProjection: epsg4326,
     controls: [
-      new OpenLayers.Control.MouseDefaults(),
-      new OpenLayers.Control.Attribution()
+      new OpenLayers.Control.MouseDefaults()//,
+      //new OpenLayers.Control.Attribution()
     ],
     maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34, 20037508.34, 20037508.34),
     numZoomLevels: 18,

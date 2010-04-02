@@ -285,7 +285,7 @@ aside {
   color: rgba(0, 0, 0, 0.8);
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 11px;
-  right: 17px;
+  left: 32px;
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
 }
 /* line 21, ../../app/stylesheets/partials/_map.sass */
@@ -295,11 +295,12 @@ aside {
 }
 
 /* line 25, ../../app/stylesheets/partials/_map.sass */
+#OpenLayers\.Layer\.OSM\.Mapnik_6,
 #OpenLayers\.Layer\.OSM\.Mapnik_7 {
   opacity: 0.5;
 }
 
-/* line 28, ../../app/stylesheets/partials/_map.sass */
+/* line 29, ../../app/stylesheets/partials/_map.sass */
 image[width=16] {
   cursor: pointer;
 }
@@ -984,7 +985,7 @@ a:visited:hover {
 
 /* line 1, ../../app/stylesheets/partials/_spinner.sass */
 #spinner {
-  background: url('/images/spinner-large.gif?1270210070') no-repeat center;
+  background: url('/images/spinner.gif?1270210331') no-repeat center;
   background-color: #6b7b55;
   background-color: rgba(107, 123, 85, 0.8);
   left: 50%;
@@ -997,4 +998,15 @@ a:visited:hover {
   -webkit-border-radius: 10px;
   -khtml-border-radius: 10px;
   border-radius: 10px;
+}
+
+/* line 1, ../../app/stylesheets/partials/_sozialhelden.sass */
+#sozialhelden {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}
+/* line 6, ../../app/stylesheets/partials/_sozialhelden.sass */
+#sozialhelden img {
+  vertical-align: bottom;
 }
