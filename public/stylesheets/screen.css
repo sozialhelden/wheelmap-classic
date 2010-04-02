@@ -242,7 +242,7 @@ footer {
   position: absolute;
   right: 0;
   text-align: right;
-  z-index: 10;
+  z-index: 900;
   -webkit-transition: all 500ms;
   text-shadow: #f0ecd1 0 1px 1px;
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(35%, rgba(214, 206, 132, 0.55)), color-stop(75%, rgba(214, 206, 132, 0.2)), color-stop(100%, rgba(214, 206, 132, 0)));
@@ -311,7 +311,7 @@ image[width=16] {
   position: absolute;
   top: 15px;
   width: 300px;
-  z-index: 20;
+  z-index: 5000;
   background-color: #e7ebe2;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #e7ebe2), color-stop(1, #cfd7c5));
   background-image: -moz-linear-gradient(center bottom, #cfd7c5 0%, #e7ebe2 50%, white 100%);
@@ -1005,8 +1005,60 @@ a:visited:hover {
   bottom: 0;
   position: absolute;
   right: 0;
+  z-index: 4000;
 }
-/* line 6, ../../app/stylesheets/partials/_sozialhelden.sass */
+/* line 7, ../../app/stylesheets/partials/_sozialhelden.sass */
 #sozialhelden img {
   vertical-align: bottom;
+}
+
+/* line 1, ../../app/stylesheets/partials/_imprint.sass */
+#imprint {
+  background: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  color: white;
+  display: none;
+  left: 0;
+  padding: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 4500;
+  text-shadow: rgba(0, 0, 0, 0.7) 0 0 2px;
+}
+/* line 14, ../../app/stylesheets/partials/_imprint.sass */
+#imprint dl {
+  clear: both;
+  float: right;
+}
+/* line 18, ../../app/stylesheets/partials/_imprint.sass */
+#imprint dt {
+  clear: left;
+  color: #e6e6e6;
+  float: left;
+  padding-right: 10px;
+  text-align: right;
+  width: 150px;
+}
+/* line 27, ../../app/stylesheets/partials/_imprint.sass */
+#imprint dd {
+  float: left;
+  width: 300px;
+}
+/* line 31, ../../app/stylesheets/partials/_imprint.sass */
+#imprint a {
+  color: #a1c175;
+}
+/* line 34, ../../app/stylesheets/partials/_imprint.sass */
+#imprint h2,
+#imprint p {
+  clear: both;
+  float: right;
+  width: 400px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* line 42, ../../app/stylesheets/partials/_imprint.sass */
+#imprint p:first-child {
+  text-align: right;
 }

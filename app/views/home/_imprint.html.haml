@@ -1,0 +1,39 @@
+#imprint
+  %p= link_to 'schließen', '#', :'data-hide' => '#imprint'
+  %h2 Impressum
+  %dl
+    %dt Anbieter:
+    %dd
+      SOZIALHELDEN e.V.
+      %br
+      c/o Krauthausen
+      %br
+      Belziger Straße 31
+      %br
+      10823 Berlin
+    %dt Telefon:
+    %dd 0170 770 23 88
+    %dt E-Mail:
+    %dd= link_to 'Hier klicken', 'http://mailhide.recaptcha.net/d?k=018AE3jmHiC10N_60OQ1GNuA==&c=r1mLG_VQKwz0nC3dM5UwKJXLH4iRUf5BWzLHRKicH20='
+    %dt Design, Development:
+    %dd= link_to 'Nico Hagenburger', 'http://www.hagenburger.net', :title => 'Sass, Compass, Haml, Ruby on Rails'
+    %dt Kartenmaterial:
+    %dd= link_to 'OpenStreetMap', 'http://openstreetmap.org'
+    %dt Icons:
+    %dd
+      = link_to 'Yusuke Kamiyamane', 'http://p.yusukekamiyamane.com/'
+      %br
+      = link_to 'Nico Hagenburger', 'http://www.hagenburger.net', :title => 'Sass, Compass, Haml, Ruby on Rails'
+    %dt Lizenz:
+    %dd
+      Karten:
+      %br
+      = link_to 'Creative Commons Attribution 3.0 license', 'http://creativecommons.org/licenses/by-sa/2.0/', :class => 'cc-by-sa'
+      %br
+      Icons, Applikation:
+      %br
+      = link_to 'Creative Commons Attribution 3.0 license', 'http://creativecommons.org/licenses/by/3.0/', :class => 'cc-by'
+  %p
+    Diese Website ist mit Ruby on Rails und JavaScript entwickelt und Open-Source.
+    Die Quellen stehen auf Github:
+    = link_to 'http://github.com/sozialhelden/wheelmap', 'http://github.com/sozialhelden/wheelmap'

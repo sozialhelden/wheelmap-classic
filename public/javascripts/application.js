@@ -231,3 +231,14 @@ function permalink() {
 }
 
 
+$(function() {
+  $('a[data-show]').click(function() {
+    $($(this).attr('data-show')).fadeIn();
+    return false;
+  });
+  $('a[data-hide]').click(function() {
+    $($(this).attr('data-hide')).fadeOut();
+    return false;
+  });
+});
+
