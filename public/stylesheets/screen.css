@@ -604,209 +604,204 @@ a:visited:hover {
   background-image: url(/images/icons/arrow-circle-double.png);
 }
 
-/* line 42, ../../app/stylesheets/partials/_icons.sass */
+/* line 43, ../../app/stylesheets/partials/_icons.sass */
 .arts-centre {
   background-image: url(/images/icons/palette.png);
 }
 
-/* line 45, ../../app/stylesheets/partials/_icons.sass */
+/* line 46, ../../app/stylesheets/partials/_icons.sass */
 .atm {
   background-image: url(/images/icons/credit-cards.png);
 }
 
-/* line 54, ../../app/stylesheets/partials/_icons.sass */
+/* line 55, ../../app/stylesheets/partials/_icons.sass */
 .bank {
   background-image: url(/images/icons/money-coin.png);
 }
 
-/* line 57, ../../app/stylesheets/partials/_icons.sass */
+/* line 58, ../../app/stylesheets/partials/_icons.sass */
 .bar {
   background-image: url(/images/icons/glass.png);
 }
 
-/* line 69, ../../app/stylesheets/partials/_icons.sass */
+/* line 70, ../../app/stylesheets/partials/_icons.sass */
 .biergarten {
   background-image: url(/images/icons/weather.png);
 }
 
-/* line 75, ../../app/stylesheets/partials/_icons.sass */
+/* line 76, ../../app/stylesheets/partials/_icons.sass */
 .bureau-de-change {
   background-image: url(/images/icons/bureau-de-change.png);
 }
 
-/* line 78, ../../app/stylesheets/partials/_icons.sass */
+/* line 79, ../../app/stylesheets/partials/_icons.sass */
 .cafe {
   background-image: url(/images/icons/cake.png);
 }
 
-/* line 81, ../../app/stylesheets/partials/_icons.sass */
+/* line 82, ../../app/stylesheets/partials/_icons.sass */
 .car-rental {
   background-image: url(/images/icons/car-rental.png);
 }
 
-/* line 84, ../../app/stylesheets/partials/_icons.sass */
+/* line 85, ../../app/stylesheets/partials/_icons.sass */
 .car-sharing {
   background-image: url(/images/icons/car-sharing.png);
 }
 
-/* line 87, ../../app/stylesheets/partials/_icons.sass */
+/* line 88, ../../app/stylesheets/partials/_icons.sass */
 .cinema {
   background-image: url(/images/icons/film.png);
 }
 
-/* line 90, ../../app/stylesheets/partials/_icons.sass */
+/* line 91, ../../app/stylesheets/partials/_icons.sass */
 .clock {
   background-image: url(/images/icons/clock-frame.png);
 }
 
-/* line 93, ../../app/stylesheets/partials/_icons.sass */
+/* line 94, ../../app/stylesheets/partials/_icons.sass */
 .coast-guard {
   background-image: url(/images/icons/lifebuoy.png);
 }
 
-/* line 102, ../../app/stylesheets/partials/_icons.sass */
+/* line 103, ../../app/stylesheets/partials/_icons.sass */
 .courthouse {
   background-image: url(/images/icons/auction-hammer-gavel.png);
 }
 
-/* line 111, ../../app/stylesheets/partials/_icons.sass */
+/* line 112, ../../app/stylesheets/partials/_icons.sass */
 .embassy {
   background-image: url(/images/icons/locale.png);
 }
 
-/* line 117, ../../app/stylesheets/partials/_icons.sass */
+/* line 118, ../../app/stylesheets/partials/_icons.sass */
 .fast-food {
   background-image: url(/images/icons/fast-food.png);
 }
 
-/* line 120, ../../app/stylesheets/partials/_icons.sass */
+/* line 121, ../../app/stylesheets/partials/_icons.sass */
 .fire-hydrant {
   background-image: url(/images/icons/fire.png);
 }
 
-/* line 123, ../../app/stylesheets/partials/_icons.sass */
+/* line 124, ../../app/stylesheets/partials/_icons.sass */
 .fire-station {
   background-image: url(/images/icons/fire-station.png);
 }
 
-/* line 138, ../../app/stylesheets/partials/_icons.sass */
+/* line 139, ../../app/stylesheets/partials/_icons.sass */
 .hospital {
   background-image: url(/images/icons/hospital.png);
 }
 
-/* line 141, ../../app/stylesheets/partials/_icons.sass */
+/* line 142, ../../app/stylesheets/partials/_icons.sass */
 .hunting-stand {
   background-image: url(/images/icons/target.png);
 }
 
-/* line 144, ../../app/stylesheets/partials/_icons.sass */
+/* line 145, ../../app/stylesheets/partials/_icons.sass */
 .kindergarten {
   background-image: url(/images/icons/smiley.png);
 }
 
-/* line 147, ../../app/stylesheets/partials/_icons.sass */
+/* line 148, ../../app/stylesheets/partials/_icons.sass */
 .library {
   background-image: url(/images/icons/book-open.png);
 }
 
-/* line 150, ../../app/stylesheets/partials/_icons.sass */
+/* line 151, ../../app/stylesheets/partials/_icons.sass */
 .marketplace {
   background-image: url(/images/icons/shopping-basket.png);
 }
 
-/* line 156, ../../app/stylesheets/partials/_icons.sass */
+/* line 157, ../../app/stylesheets/partials/_icons.sass */
 .nightclub {
   background-image: url(/images/icons/speaker.png);
 }
 
-/* line 159, ../../app/stylesheets/partials/_icons.sass */
+/* line 160, ../../app/stylesheets/partials/_icons.sass */
 .parking {
   background-image: url(/images/icons/parking.png);
 }
 
-/* line 162, ../../app/stylesheets/partials/_icons.sass */
+/* line 163, ../../app/stylesheets/partials/_icons.sass */
 .pharmacy {
   background-image: url(/images/icons/pharmacie-germany.png);
 }
 
-/* line 168, ../../app/stylesheets/partials/_icons.sass */
+/* line 169, ../../app/stylesheets/partials/_icons.sass */
 .police {
   background-image: url(/images/icons/police.png);
 }
 
-/* line 171, ../../app/stylesheets/partials/_icons.sass */
+/* line 172, ../../app/stylesheets/partials/_icons.sass */
 .post-box {
   background-image: url(/images/icons/mail.png);
 }
 
-/* line 174, ../../app/stylesheets/partials/_icons.sass */
+/* line 175, ../../app/stylesheets/partials/_icons.sass */
 .post-office {
   background-image: url(/images/icons/post-office.png);
 }
 
-/* line 177, ../../app/stylesheets/partials/_icons.sass */
+/* line 178, ../../app/stylesheets/partials/_icons.sass */
 .prison {
   background-image: url(/images/icons/user-thief-baldie.png);
 }
 
-/* line 183, ../../app/stylesheets/partials/_icons.sass */
+/* line 184, ../../app/stylesheets/partials/_icons.sass */
 .place-of-worship {
   background-image: url(/images/icons/bell.png);
 }
 
-/* line 189, ../../app/stylesheets/partials/_icons.sass */
+/* line 190, ../../app/stylesheets/partials/_icons.sass */
 .recycling {
   background-image: url(/images/icons/bin-full.png);
 }
 
-/* line 195, ../../app/stylesheets/partials/_icons.sass */
+/* line 196, ../../app/stylesheets/partials/_icons.sass */
 .restaurant {
   background-image: url(/images/icons/cutlery.png);
 }
 
-/* line 210, ../../app/stylesheets/partials/_icons.sass */
+/* line 211, ../../app/stylesheets/partials/_icons.sass */
 .telephone {
   background-image: url(/images/icons/telephone.png);
 }
 
-/* line 213, ../../app/stylesheets/partials/_icons.sass */
+/* line 214, ../../app/stylesheets/partials/_icons.sass */
 .theatre {
   background-image: url(/images/icons/mask.png);
 }
 
-/* line 216, ../../app/stylesheets/partials/_icons.sass */
+/* line 217, ../../app/stylesheets/partials/_icons.sass */
 .toilets {
   background-image: url(/images/icons/toilet.png);
 }
 
-/* line 237, ../../app/stylesheets/partials/_icons.sass */
+/* line 238, ../../app/stylesheets/partials/_icons.sass */
 .subway {
   background-image: url(/images/icons/public-transport-subway-germany.png);
 }
 
-/* line 240, ../../app/stylesheets/partials/_icons.sass */
+/* line 241, ../../app/stylesheets/partials/_icons.sass */
 .light-rail {
   background-image: url(/images/icons/public-transport-light-rail-germany.png);
 }
 
-/* line 243, ../../app/stylesheets/partials/_icons.sass */
+/* line 244, ../../app/stylesheets/partials/_icons.sass */
 .tram-stop {
   background-image: url(/images/icons/public-transport-tram-germany.png);
 }
 
-/* line 246, ../../app/stylesheets/partials/_icons.sass */
+/* line 247, ../../app/stylesheets/partials/_icons.sass */
 .bus-stop {
   background-image: url(/images/icons/public-transport-bus-germany.png);
 }
 
-/* line 249, ../../app/stylesheets/partials/_icons.sass */
+/* line 250, ../../app/stylesheets/partials/_icons.sass */
 .ferry-terminal {
   background-image: url(/images/icons/public-transport-ferry-germany.png);
-}
-
-/* line 252, ../../app/stylesheets/partials/_icons.sass */
-.taxi {
-  background-image: url(/images/icons/public-transport-taxi-germany.png);
 }
 
 /* line 1, ../../app/stylesheets/partials/_amenities.sass */
@@ -1023,7 +1018,7 @@ a:visited:hover {
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 4500;
+  z-index: 9999;
   text-shadow: rgba(0, 0, 0, 0.7) 0 0 2px;
 }
 /* line 14, ../../app/stylesheets/partials/_imprint.sass */
