@@ -40,7 +40,7 @@ $(function() {
   };
   
   var search = function() {
-    list.html('').addClass('loading').animate({ height: '24px', marginTop: '10px' });
+    list.html('').animate({ height: '20px' }).addClass('loading');
     var q = input.val();
     $.ajax({ url: '/search?q=' + q + '&format=xml', complete: showSearchResults });
   };
