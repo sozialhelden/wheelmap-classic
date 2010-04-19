@@ -8,7 +8,7 @@ private
   
   def osm_url
     q = URI.escape(params[:q])
-    "http://nominatim.openstreetmap.org/search?q=#{ q }&format=xml"
+    "http://nominatim.openstreetmap.org/search?q=#{ q }&format=xml&accept-language=de&osm_type=N"
   end
   
 end

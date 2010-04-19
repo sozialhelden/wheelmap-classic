@@ -7,7 +7,7 @@ $(function() {
     var xml = $(data.responseXML),
         places = xml.find('place');
     
-    list.html('').animate({ height: 21 * (places.length || 1) + 'px' }, function() { list.removeClass('loading'); });
+    list.html('').animate({ height: 20 * (places.length || 1) + 'px' }, function() { list.removeClass('loading'); });
     
     if (places.length == 0) {
       list.append('<li>Leider nichts gefunden</li>');
@@ -16,12 +16,22 @@ $(function() {
         
     places.each(function(i, place) {
       place = $(place);
+      var type = place.attr('type').replace(/_/g, '-'),
+          name = place.attr('display_name');
+      if (type == 'station') {
+        if (name.match(/^S /)) {
+          type = 'light-rail';
+        }
+        else if (name.match(/^U /)) {
+          type = 'subway';
+        }
+      }
       var html = '<li><a href="#"' +
         ' data-osm-id="' + place.attr('osm_id') + '"' +
         ' data-lon="' + place.attr('lon') + '"' +
         ' data-lat="' + place.attr('lat') + '"' +
-        ' data-display-name="' + place.attr('display_name') + '"' +
-        ' class="' + place.attr('type').replace(/_/g, '-') + '"' +
+        ' data-display-name="' + name + '"' +
+        ' class="' + type + '"' +
         '>' + place.attr('display_name') + '</a></li>';
       list.append(html);
     });
@@ -44,9 +54,11 @@ $(function() {
   
   list.delegate('a', 'click', function() {
     var element = $(this);
-    jumpTo(element.attr('data-lon') * 1.0, element.attr('data-lat') * 1.0, zoom);
-    loadPlaces();
-    toggleLayers(element.attr('class'), true);
+    if (element.attr('class')) {
+      jumpTo(element.attr('data-lon') * 1.0, element.attr('data-lat') * 1.0, zoom);
+      loadPlaces();
+      toggleLayers(element.attr('class'), true);
+    }
     return false;
   });
 });

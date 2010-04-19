@@ -148,7 +148,7 @@ function loadPlaces() {
     var features = { yes: [], no: [], limited: [], unknown: [] };
     $.each(data, function(i, place) {
       if (place.type) {
-        var lonLat = lonLatToMercator({ lon:place.lon * 1.0, lat:place.lat * 1.0 });
+        var lonLat = lonLatToMercator({ lon: place.lon * 1.0, lat: place.lat * 1.0 });
         var point = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
         var feature = new OpenLayers.Feature.Vector(point);
         feature.attributes.type = place.type;
@@ -161,6 +161,8 @@ function loadPlaces() {
         }
         catch (e) {}
         counts[place.wheelchair]++;
+        places[place.id] = place;
+        $('*[data-osm-id=' + place.id + ']').addClass(place.type);
       }
     });
     $.each(layers, function(state, layer) {

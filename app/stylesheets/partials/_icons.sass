@@ -36,8 +36,8 @@
 
 =amenity-icon($name: null)
   @if $name != null
-    +image(unquote("icons/") + $name + unquote(".png"))
-    //background: inline_image(unquote("icons/") + $name + unquote(".png")) 
+    //+image(unquote("icons/") + $name + unquote(".png"))
+    background-image: image-url("icons/#{ $name }.png") !important
 
 
 .arts-centre
