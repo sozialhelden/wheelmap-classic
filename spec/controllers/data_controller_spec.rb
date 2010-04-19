@@ -4,8 +4,6 @@ describe DataController do
   
   def run_data(xml, bbox = '1,1,1,1')
     xml = %Q(<osm version="0.6" generator="CGImap 0.0.2">#{xml}</osm>)
-    #url = "http://osmxapi.hypercube.telascience.org/api/0.6/node" +
-    #      "%5Bbbox=#{bbox}%5D%5Bamenity%7Crailway%7Chighway%7Cferry%5D"
     Net::HTTP.expects(:get_response).returns(mock(:body => xml))
     get :data, :bbox => bbox
     @json = JSON.parse(response.body)

@@ -1,5 +1,4 @@
 #bar
-  $bar_green: desaturate($light_green, 20%)
   padding: 5px
   padding: 4px 10px
   +helvetica-13
@@ -7,13 +6,13 @@
   a,
   label,
   span
-    +text-shadow(rgba(255, 255, 255, 0.5), 0, 1px, 1px)
+    +text-shadow(rgba(white, 0.3), 0, 1px, 1px)
 
 
 =wheelchair-option($color)
-  border: 1px darken($color, 10%) solid
+  //border: 1px darken($color, 10%) solid
   padding: 1px 2px
-  +vertical-gradient($color, 5%)
+  +vertical-gradient($color, 3%)
 
 
 .wheelchair
@@ -33,30 +32,30 @@
   .yes
     +wheelchair-option($yes)
     +border-top-radius(4px)
-    border-top-width: 1px
-    border-color: darken($yes, 8%)
-    border-bottom-color: darken($yes, 11%)
+    //border-top-width: 1px
+    //border-color: darken($yes, 8%)
+    //border-bottom-color: darken($yes, 11%)
     color: desaturate(darken($yes, 38%), 20%)
     
   .limited
     +wheelchair-option($limited)
-    border-color: desaturate(darken($limited, 17%), 1%)
-    border-bottom-color: desaturate(darken($limited, 22%), 1%)
-    border-top-color: lighten($limited, 10%)
+    //border-color: desaturate(darken($limited, 17%), 1%)
+    //border-bottom-color: desaturate(darken($limited, 22%), 1%)
+    //border-top-color: lighten($limited, 10%)
     color: desaturate(darken($limited, 55%), 10%)
     
   .no
     +wheelchair-option($no)
-    border-color: desaturate(darken($no, 7%), 10%)
-    border-top-color: lighten($no, 9%)
-    border-bottom-color: desaturate(darken($no, 13%), 5%)
+    //border-color: desaturate(darken($no, 7%), 10%)
+    //border-top-color: lighten($no, 9%)
+    //border-bottom-color: desaturate(darken($no, 13%), 5%)
     color: desaturate(darken($no, 50%), 10%)
     
   .unknown
     +wheelchair-option($unknown)
     +border-bottom-radius(4px)
-    border-bottom-color: darken($unknown, 13%)
-    border-top-color: lighten($unknown, 9%)
+    //border-bottom-color: darken($unknown, 13%)
+    //border-top-color: lighten($unknown, 9%)
     color: desaturate(darken($unknown, 50%), 10%)
 
 

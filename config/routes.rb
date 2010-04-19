@@ -8,6 +8,8 @@ ActionController::Routing::Routes.draw do |map|
   map.login 'login', :controller => 'user_sessions', :action => 'new'
   
   map.data 'data/*bbox', :controller => 'data', :action => 'data'
+  
+  map.search 'search', :controller => 'search', :action => 'search'
 
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'

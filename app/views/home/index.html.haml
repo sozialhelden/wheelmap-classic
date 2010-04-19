@@ -7,6 +7,9 @@
       = link_to "Drucken", '#', :class => 'print'
       = link_to "Senden", '#', :class => 'mail'
       = link_to "Link", '#', :class => 'link'
+    %form
+      = text_field_tag :search, '', :type => 'search'
+      %ol
     %ul#options.wheelchair
       %li.yes
         = check_box_tag(:wheelchair_yes, 1, true)

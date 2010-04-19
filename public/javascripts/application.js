@@ -90,9 +90,9 @@ function drawmap() {
 }
 
 
-function toggleLayers(type) {
+function toggleLayers(type, show) {
   var visibility = false;
-  visibility = !$('.' + type).parent().hasClass('visible');
+  visibility = typeof(show) == 'undefined' ? !$('.' + type).parent().hasClass('visible') : show;
   $('.' + type).parent().removeClass(visibility ? 'hidden' : 'visible').addClass(visibility ? 'visible' : 'hidden');
   typeVisibilities[type].display = visibility ? 'block' : 'none';
   showStates();
@@ -134,11 +134,6 @@ $(function() {
     var state = this.id.replace(/wheelchair-/, '');
     states[state] = this.checked;
     showStates();
-  });
-
-  $('#links .refresh').click(function() {
-    loadPlaces();
-    return false;
   });
 });
 
@@ -241,4 +236,3 @@ $(function() {
     return false;
   });
 });
-

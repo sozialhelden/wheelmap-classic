@@ -1,0 +1,31 @@
+#bar
+  form
+    padding-bottom: 10px
+  
+    input
+      border: 1px darken(desaturate($green, 30%), 30%) solid
+      height: 14px
+      line-height: 14px
+      padding: 2px 8px
+      width: 100%
+      +border-radius(10px)
+      
+    ol
+      display: none
+      
+      &.loading
+        background: inline-image("spinner-small.gif") no-repeat center
+        height: 24px
+    
+    li
+      a
+        background-position: 0 50%
+        border-top: 1px desaturate(lighten($green, 20%), 20%) solid
+        display: block
+        padding-left: 20px
+        white-space: nowrap
+        +ellipsis
+        
+      &:first-child
+        a
+          border-top: 0

@@ -23,7 +23,7 @@
       = image_tag('sozialhelden.png', :alt => 'Ein Projekt der Sozialhelden')
     = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
     = javascript_include_tag 'http://www.openstreetmap.org/openlayers/OpenStreetMap.js'
-    = javascript_include_tag 'jquery', 'util', 'icons', 'string', 'popup', 'application', :cache => false
+    = javascript_include_tag 'jquery', 'util', 'icons', 'string', 'popup', 'search', 'application', :cache => false
     - if jquery = yield(:jquery)
       :javascript
         $(function(){#{jquery}})
