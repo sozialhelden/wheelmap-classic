@@ -26,8 +26,7 @@ $(function() {
       list.append(html);
     });
     
-    var place = $(places[0]);
-    jumpTo(place.attr('lon') * 1.0, place.attr('lat') * 1.0, zoom);
+    list.find('a').first().click();
   };
   
   var search = function() {
