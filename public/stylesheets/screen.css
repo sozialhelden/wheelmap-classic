@@ -200,13 +200,13 @@ h1 {
 
 /* line 16, ../../app/stylesheets/basics/_grid_and_layout.sass */
 body {
-  background: #ffee5b;
+  background: #fff7d9;
 }
 
 /* line 1, ../../app/stylesheets/partials/_page.sass */
 body,
 html {
-  background: #ffee5b;
+  background: #fff7d9;
 }
 
 /* line 1, ../../app/stylesheets/partials/_header.sass */
@@ -244,9 +244,9 @@ footer {
   text-align: right;
   z-index: 900;
   -webkit-transition: all 500ms;
-  text-shadow: #f0ecd1 0 1px 1px;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(35%, rgba(214, 206, 132, 0.55)), color-stop(75%, rgba(214, 206, 132, 0.2)), color-stop(100%, rgba(214, 206, 132, 0)));
-  background-image: -moz-linear-gradient(top, rgba(214, 206, 132, 0.55) 35%, rgba(214, 206, 132, 0.2) 75%, rgba(214, 206, 132, 0) 100%);
+  text-shadow: white 0 1px 1px;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(35%, rgba(246, 242, 226, 0.55)), color-stop(75%, rgba(246, 242, 226, 0.2)), color-stop(100%, rgba(246, 242, 226, 0)));
+  background-image: -moz-linear-gradient(top, rgba(246, 242, 226, 0.55) 35%, rgba(246, 242, 226, 0.2) 75%, rgba(246, 242, 226, 0) 100%);
 }
 /* line 18, ../../app/stylesheets/partials/_footer.sass */
 footer a {
