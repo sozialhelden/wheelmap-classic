@@ -37,9 +37,10 @@
 =amenity-icon($name: null)
   @if $name != null
     //+image(unquote("icons/") + $name + unquote(".png"))
-    background-image: image-url("icons/#{ $name }.png") !important
-
-
+    //background-image: image-url("icons/#{ $name }.png") !important
+    background: sprite-image("icons/#{ $name }.png") !important
+    border: 0
+    
 .arts-centre
   +amenity-icon(palette)
 
