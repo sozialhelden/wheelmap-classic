@@ -13,6 +13,8 @@
     = yield
     %footer
       %nav
+        - if user_signed_in?
+          =current_user.email
         = link_to 'Blog', 'http://blog.wheelmap.org/'
         = link_to 'Was ist Wheelmap?', 'http://blog.wheelmap.org/was-ist-wheelmap/'
         = link_to 'Was bedeutet „barrierefrei“?', 'http://blog.wheelmap.org/was-bedeutet-barrierefrei/'
