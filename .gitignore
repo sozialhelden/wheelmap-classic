@@ -1,7 +1,7 @@
 .DS_Store
 log/*.log
 log/*.pid
-tmp/**/*
+tmp/*
 config/database.yml
 db/schema.rb
 config/*sphinx.conf
