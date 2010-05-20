@@ -15,6 +15,10 @@
       %nav
         - if user_signed_in?
           =current_user.email
+          = link_to t('.links.logout'), destroy_user_session_path
+        - else
+          = link_to t('.links.login'), new_user_session_path
+          = link_to t('devise.registrations.link'), new_registration_path(:user)
         = link_to 'Blog', 'http://blog.wheelmap.org/'
         = link_to 'Was ist Wheelmap?', 'http://blog.wheelmap.org/was-ist-wheelmap/'
         = link_to 'Was bedeutet „barrierefrei“?', 'http://blog.wheelmap.org/was-bedeutet-barrierefrei/'
