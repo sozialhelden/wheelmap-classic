@@ -102,8 +102,8 @@ function openPopup(feature) {
   selectedFeature = feature;
   
   var node = feature.attributes;
-  if (location.hostname == 'localhost') {
-    console.log(node.tags);
+  if (location.hostname == 'wheelmap.local') {
+    console.log(node);
   }
   
   popup = new OpenLayers.Popup.FramedCloud("Popup", 
@@ -113,6 +113,33 @@ function openPopup(feature) {
                            null, true, onPopupClose);
   feature.popup = popup;
   map.addPopup(popup);
+  $('#' + node.wheelchair + '-' + node.osmid).attr('checked', true);
+  //$('[name=state-' + node.osmid + ']').change(function() {
+  //  console.log(this.value);
+  //  $.ajax({ type: 'PUT', url: '/places/' + node.osmid, data: { wheelchair: this.value },
+  //    error: function(response) {
+  //      if (response.status == 403) {
+  //        alert('Du wirst nun zum Anmelden auf OpenStreetMap umgeleitet.');
+  //        location.href = '/oauth/new';
+  //      }
+  //    },
+  //    success: function(a,b,c) {
+  //      console.log('Platz aktualisiert');
+  //    }
+  //  })
+  //})
+  $('#button-' + node.osmid).click(function() {
+    data = {
+      wheelchair: $('[name=state-' + node.osmid + ']').val(),
+      email: $('#email-' + node.osmid).val(),
+      password: $('#password-' + node.osmid).val()
+    }
+    $.ajax({ type: 'PUT', url: '/data/' + node.osmid + '/update', data: data,
+      success: function(a,b,c) {
+        alert('Platz aktualisiert');
+      }
+    })
+  });
 }
 
 
@@ -125,9 +152,27 @@ function closePopup(feature) {
 
 
 function popupHTML(node) {
+  var stateHTML = function(state, label) {
+    var id = state + '-' + node.osmid,
+        name = 'state-' + node.osmid,
+        checked = (state == node.wheelchair ? ' checked="checked"' : ''),
+        disabled = (state == 'unknown' ? ' disabled="disabled"' : '')
+        input = '<input id="' + id + '" type="radio" name="' + name + '"' + checked + disabled + ' value="' + state + '">',
+        label = '<label for="' + id + '">' + label + '</label>';
+    return '<li class="' + state + '">' + input + label + '</li>';
+  }
   var result = '<h2 class="' + node.type + '">' + (node.name || node.type) + '</h2>';
   result += addressOfNode(node);
   result += tagList(node.tags);
+  result += '<ol class="wheelchair">';
+  result += stateHTML('yes', 'barrierefrei');
+  result += stateHTML('limited', 'teilweise barrierefrei');
+  result += stateHTML('no', 'nicht barrierefrei');
+  result += stateHTML('unknown', 'unbekannt');
+  result += '</ol>';
+  result += 'E-Mail/Username: <input type="text" id="email-' + node.osmid + '"><br>';
+  result += 'Passwort: <input type="password" id="password-' + node.osmid + '"><br>';
+  result += '<button id="button-' + node.osmid + '">Update</button>';
   result = '<div class="popup">' + result + '</div>';
   return result;
 }

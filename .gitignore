@@ -8,3 +8,4 @@ config/*sphinx.conf
 db/sphinx
 db/*.sqlite3
 public/data/*
+tmp/*

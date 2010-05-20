@@ -156,6 +156,7 @@ function loadPlaces() {
         feature.attributes.wheelchair = place.wheelchair;
         feature.attributes.name = place.name;
         feature.attributes.tags = place.tags;
+        feature.attributes.osmid = place.id;
         try {
           features[place.wheelchair].push(feature);
         }
@@ -238,3 +239,7 @@ $(function() {
     return false;
   });
 });
+
+function $w(string) {
+  return string.split(' ');
+}

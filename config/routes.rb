@@ -1,15 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'home', :action => 'index'
 
-  map.resource :user_session
-
-  map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
-
-  map.login 'login', :controller => 'user_sessions', :action => 'new'
-  
+  map.update 'data/update/:osmid', :controller => 'data', :action => 'update'
   map.data 'data/*bbox', :controller => 'data', :action => 'data'
   
   map.search 'search', :controller => 'search', :action => 'search'
+  
+  map.resources :oauth, :collection => { :callback => :get }
+  
+  map.resources :places
 
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'

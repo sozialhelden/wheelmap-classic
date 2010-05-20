@@ -350,18 +350,23 @@ image[width='16'] {
   border-radius: 4px;
 }
 /* line 21, ../../app/stylesheets/partials/_bar.sass */
+.wheelchair li {
+  min-width: 150px;
+  white-space: nowrap;
+}
+/* line 25, ../../app/stylesheets/partials/_bar.sass */
 .wheelchair span {
   float: right;
   font-size: 11px;
   opacity: 0.6;
   padding: 1px 5px 0;
 }
-/* line 27, ../../app/stylesheets/partials/_bar.sass */
+/* line 31, ../../app/stylesheets/partials/_bar.sass */
 .wheelchair label {
   font-weight: bold;
   height: 18px !important;
 }
-/* line 31, ../../app/stylesheets/partials/_bar.sass */
+/* line 35, ../../app/stylesheets/partials/_bar.sass */
 .wheelchair .yes {
   padding: 1px 2px;
   background-color: #a8c468;
@@ -378,7 +383,7 @@ image[width='16'] {
   border-top-right-radius: 4px;
   color: #3a4228;
 }
-/* line 39, ../../app/stylesheets/partials/_bar.sass */
+/* line 43, ../../app/stylesheets/partials/_bar.sass */
 .wheelchair .limited {
   padding: 1px 2px;
   background-color: #e8d787;
@@ -387,7 +392,7 @@ image[width='16'] {
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#e7d379', startColorstr='#ebdc93', gradientType='0');
   color: #443b12;
 }
-/* line 46, ../../app/stylesheets/partials/_bar.sass */
+/* line 50, ../../app/stylesheets/partials/_bar.sass */
 .wheelchair .no {
   padding: 1px 2px;
   background-color: #e98989;
@@ -396,7 +401,7 @@ image[width='16'] {
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#e87b7b', startColorstr='#ec9595', gradientType='0');
   color: #5b1818;
 }
-/* line 53, ../../app/stylesheets/partials/_bar.sass */
+/* line 57, ../../app/stylesheets/partials/_bar.sass */
 .wheelchair .unknown {
   padding: 1px 2px;
   background-color: #b7b7b7;
@@ -414,7 +419,7 @@ image[width='16'] {
   color: #383838;
 }
 
-/* line 61, ../../app/stylesheets/partials/_bar.sass */
+/* line 65, ../../app/stylesheets/partials/_bar.sass */
 #links {
   clear: both;
   padding: 4px 0;
@@ -426,11 +431,11 @@ image[width='16'] {
 #links {
   display: block;
 }
-/* line 67, ../../app/stylesheets/partials/_bar.sass */
+/* line 71, ../../app/stylesheets/partials/_bar.sass */
 #links a {
   display: none;
 }
-/* line 70, ../../app/stylesheets/partials/_bar.sass */
+/* line 74, ../../app/stylesheets/partials/_bar.sass */
 #links a.refresh {
   display: inline;
 }

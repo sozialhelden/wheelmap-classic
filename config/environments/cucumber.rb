@@ -30,3 +30,7 @@ config.gem 'rspec-rails',      :lib => false, :version => '>=1.3.2' unless File.
 config.gem 'cucumber'
 config.gem 'rspec-rails', :lib => 'spec/rails'
 config.gem 'rspec', :lib => 'spec'
+
+OSM_HOST      = 'api06.dev.openstreetmap.org'
+OAUTH_KEY     = 'PdVEU2YnFTwLR9vFzho0xQ'
+OAUTH_SECRET  = 'B8VSkI1FieQLaFAj4uY2Kr2KPYecgdR88q2WGc'

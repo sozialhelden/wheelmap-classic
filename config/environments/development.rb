@@ -15,3 +15,7 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+OSM_HOST      = 'api06.dev.openstreetmap.org'
+OAUTH_KEY     = 'PdVEU2YnFTwLR9vFzho0xQ'
+OAUTH_SECRET  = 'B8VSkI1FieQLaFAj4uY2Kr2KPYecgdR88q2WGc'

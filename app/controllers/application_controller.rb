@@ -6,30 +6,24 @@ class ApplicationController < ActionController::Base
 
   helper :all
   helper_method :current_user_session, :current_user, :logged_in?
-
-  def current_user_session
-    return @current_user_session if defined?(@current_user_session)
-    @current_user_session = UserSession.find
-  end
-
-  def current_user
-    return @current_user if defined?(@current_user)
-    @current_user = current_user_session && current_user_session.user
-  end
   
   def logged_in?
-    not current_user.nil?
+    not session[:oauth_token].nil?
   end
   
   def require_user
-    unless current_user
-      store_location
-      flash[:notice] = t('application.require_user.notice')
-      redirect_to new_user_session_url
+    unless logged_in?
+      if request.xhr?
+        render :nothing => true, :status => :forbidden
+      else
+        store_location
+        flash[:notice] = t('application.require_user.notice')
+        redirect_to new_oauth_path
+      end
       return false
     end
   end
-
+  
   def store_location
     session[:return_to] = request.request_uri
   end
@@ -40,7 +34,7 @@ class ApplicationController < ActionController::Base
   end
   
   def require_no_user
-    if current_user
+    if logged_in?
       store_location
       flash[:notice] = t('application.require_no_user.notice')
       redirect_to root_url
@@ -51,5 +45,22 @@ class ApplicationController < ActionController::Base
   def form_validation_error
     flash[:error] = t('application.form_validation_error.error')
     render :action => 'edit'
+  end
+  
+  def consumer
+    @consumer ||= OAuth::Consumer.new(
+        OAUTH_KEY,
+        OAUTH_SECRET,
+        {
+          :site => 'http://' + OSM_HOST,
+          :request_token_path => '/oauth/request_token', 
+          :access_token_path => '/oauth/access_token', 
+          :authorize_path=> '/oauth/authorize'
+        }
+      )
+  end
+  
+  def access_token
+    @access_token || OAuth::AccessToken.new(consumer, session[:token], session[:secret])
   end
 end

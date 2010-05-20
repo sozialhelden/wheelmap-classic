@@ -1,11 +1,12 @@
 require 'net/http'
 require 'xmlsimple'
+require 'rexml/document'
 
 class DataController < ApplicationController
 
   def data
     places = []
-    xml_data = Net::HTTP.get_response(URI.parse(osm_url)).body
+    xml_data = Net::HTTP.get_response(URI.parse(osm_bbox_url(params[:bbox]))).body
     osm_data = XmlSimple.xml_in(xml_data)
 
     if nodes = osm_data['node']
@@ -29,6 +30,18 @@ class DataController < ApplicationController
     render :json => places
   end
 
+  def update
+    node = Node.find(params[:osmid])
+    node.wheelchair = params[:wheelchair]
+    if node.save_by!(:email => params[:email], :password => params[:password])
+      # redirect
+    else
+      # redirect & flash
+    end
+  rescue
+    # redirect & flash
+  end
+
 private
 
   def valid_type?(tags)
@@ -38,9 +51,9 @@ private
     tags['highway'] == 'bus_stop'
   end
 
-  def osm_url
+  def osm_bbox_url(bbox)
     "http://osmxapi.hypercube.telascience.org/api/0.6/node" +
-    escape_osm_option(:bbox => params[:bbox]) +
+    escape_osm_option(:bbox => bbox) +
     escape_osm_option(%w(amenity railway highway ferry))
   end
 
@@ -66,11 +79,13 @@ private
     if option.is_a?(Array)
       # [value1|value2|value3]
       '%5B' + option.join('%7C') + '%5D'
-    else
+    elsif option.is_a?(Hash)
       option.map do |key, value|
         # [key=value]
         '%5B' + key.to_s + '%3D' + value.to_s + '%5D'
       end.join
+    else
+      option
     end
   end
 

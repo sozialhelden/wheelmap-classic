@@ -1,32 +1,23 @@
-=icon($number, $y_add: 0)
+=icon($number, $y-add: 0)
   background-repeat: no-repeat
   height: 16px
   padding-left: 20px
-  +image(unquote("icons.png"), 0, -20px * $number + $y_add)
+  +image(unquote("icons.png"), 0, -20px * $number + $y-add)
   +inline-block
   vertical-align: baseline
 
 
-//.yes label
-//  +icon(0, 2px)
-//
-//.limited label
-//  +icon(1, 2px)
-//
-//.no label
-//  +icon(2, 2px)
-//
-//.unknown label
-//  +icon(3, 2px)
-
 .print
   +icon(4)
+
 
 .mail
   +icon(5)
 
+
 .link
   +icon(6)
+
 
 // TMP:
 .refresh
@@ -36,9 +27,7 @@
 
 =amenity-icon($name: null)
   @if $name != null
-    //+image(unquote("icons/") + $name + unquote(".png"))
-    //background-image: image-url("icons/#{ $name }.png") !important
-    background: sprite-image("icons/#{ $name }.png") !important
+    background-image: image-url("icons/#{ $name }.png") !important
     border: 0
     
 .arts-centre

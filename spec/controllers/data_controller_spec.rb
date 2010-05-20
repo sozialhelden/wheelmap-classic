@@ -2,12 +2,15 @@ require 'spec_helper'
 
 describe DataController do
   
-  def run_data(xml, bbox = '1,1,1,1')
+  def setup_expections(xml)
     xml = %Q(<osm version="0.6" generator="CGImap 0.0.2">#{xml}</osm>)
     Net::HTTP.expects(:get_response).returns(mock(:body => xml))
+  end
+  
+  def run_data(xml, bbox = '1,1,1,1')
+    setup_expections xml
     get :data, :bbox => bbox
     @json = JSON.parse(response.body)
-    #puts response.body
   end
   
   
@@ -169,5 +172,5 @@ describe DataController do
     @json.last['type'].should == 'light-rail'
     @json.last['wheelchair'].should == 'no'
   end
-  
+
 end

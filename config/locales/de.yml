@@ -1,34 +1,38 @@
-de:
-  header:
-    title: wheelmap
-    tagline: wheelmap
-    navigation:
-      home: Start
-  global:
-    form_validation_error: Bitte beachten Sie die unten angezeigten Fehlermeldungen.
-  user_sessions:
-    new:
-      email: E-Mail-Adresse
-      password: Passwort
-      remember_me: Angemeldet bleiben
-      login: Anmelden
-      login_with_twitter: Mit Twitter anmelden
-    create:
-      notice: "Du bist jetzt drin!"
-      activation:
-        notice: "Dein Konto ist nun freigeschaltet!"
-      error:
-        notice: "E-Mail-Adresse und Password passen nicht zueinander."
-    destroy: 
-      notice: "Tschüss und bis zum nächsten Mal!"
+--- 
+de: 
   application: 
-    require_no_user:
+    require_no_user: 
       notice: "Du bist doch schon angemeldet …"
     require_user: 
       notice: "Du musst dich anmelden, um diese Seite zu sehen."
-  layouts:
-    application:
-      links:
-        logout: Abmelden
+  global: 
+    form_validation_error: "Bitte beachten Sie die unten angezeigten Fehlermeldungen."
+  header: 
+    navigation: 
+      home: Start
+    tagline: wheelmap
+    title: wheelmap
+  layouts: 
+    application: 
+      links: 
         login: Anmelden
+        logout: Abmelden
       logged_in_as: "Angemeldet als:"
+  oauth: 
+    callback: 
+      notice: "Du bist jetzt als OpenStreetMap-Benutzer {{user}} angemeldet."
+  user_sessions: 
+    create: 
+      activation: 
+        notice: "Dein Konto ist nun freigeschaltet!"
+      error: 
+        notice: "E-Mail-Adresse und Password passen nicht zueinander."
+      notice: "Du bist jetzt drin!"
+    destroy: 
+      notice: "Tschüss und bis zum nächsten Mal!"
+    new: 
+      email: E-Mail-Adresse
+      login: Anmelden
+      login_with_twitter: "Mit Twitter anmelden"
+      password: Passwort
+      remember_me: "Angemeldet bleiben"

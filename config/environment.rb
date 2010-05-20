@@ -3,9 +3,10 @@ RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-  config.gem 'compass',         :version => '0.10.0.rc1',   :source => 'rubygems.org'
-  config.gem 'redgreengrid',    :version => '0.3.2',        :source => 'rubygems.org'
+  config.gem 'compass',         :version => '0.10.0',   :source => 'rubygems.org'
+  config.gem 'redgreengrid',    :version => '0.3.2',    :source => 'rubygems.org'
   config.gem 'lemonade'
+  config.gem 'oauth',           :version => '0.4.0'
   config.i18n.default_locale = :de
 end
 
