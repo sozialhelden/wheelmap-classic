@@ -1,0 +1,35 @@
+de:
+  devise:
+    sessions:
+      link: 'Anmelden'
+      signed_in: 'Anmeldung erfolgreich.'
+      signed_out: 'Abmeldung erfolgreich.'
+      unauthenticated: 'Du musst dich erst anmelden oder registrieren, um fortzufahren.'
+      unconfirmed: 'Du musst erst dein Benutzerkonto bestätigen, um fortzufahren.'
+      locked: 'Dein Benutzerkonto ist gesperrt.'
+      invalid: 'Ungültige Email oder Passwort.'
+      invalid_token: 'Ungültiger Authentizitätstoken.'
+      timeout: 'Deine Sitzung ist abgelaufen, bitte melde dich erneut an.'
+      inactive: 'Dein Benutzerkonto wurde nich nicht aktiviert.'
+    passwords:
+      link: 'Passwort vergessen?'
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      updated: 'Dein Passwort wurde erfolgreich geändert. Du bist nun angemeldet.'
+    confirmations:
+      link: "Didn't receive confirmation instructions?"
+      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      confirmed: 'Dein Benutzerkonto wurde erfolgreich bestätigt. Du bist nun angemeldet.'
+    registrations:
+      link: 'Registrieren'
+      signed_up: 'You have signed up successfully. If enabled, a confirmation was sent to your e-mail.'
+      updated: 'You updated your account successfully.'
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+    unlocks:
+      link: "Didn't receive unlock instructions?"
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now signed in.'
+    mailer:
+      confirmation_instructions: 'Bestätigungsanleitung'
+      reset_password_instructions: 'Reset password instructions'
+      unlock_instructions: 'Unlock Instructions'
+

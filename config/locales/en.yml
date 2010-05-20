@@ -36,3 +36,4 @@ en:
       login_with_twitter: "Login with Twitter"
       password: Password
       remember_me: "Remember me"
+      logged_in_as: "Logged in as:"
