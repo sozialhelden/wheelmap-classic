@@ -1,7 +1,10 @@
 class DataController < ApplicationController
 
   def data
-    @places = OpenStreetMap.nodes(params[:bbox].first)
+    # @places = OpenStreetMap.nodes(params[:bbox].first)
+    Cloudmade.api_key = 'ff94b6ad4b174d648b9c491706f13579'
+    @places = Cloudmade.nodes(params[:bbox].first)
+    logger.warn("Found #{@places.size} places")
     render :json => @places
   end
 
