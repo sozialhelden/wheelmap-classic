@@ -20,6 +20,10 @@ class Cloudmade
       def id
         tags['osm_id']
       end
+      
+      def osmid
+        tags['osm_id']
+      end
 
       def normalize_tags(tags)
         returning tags do |tags|

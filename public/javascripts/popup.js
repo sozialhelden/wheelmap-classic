@@ -130,11 +130,9 @@ function openPopup(feature) {
   //})
   $('#button-' + node.osmid).click(function() {
     data = {
-      wheelchair: $('[name=state-' + node.osmid + ']').val(),
-      email: $('#email-' + node.osmid).val(),
-      password: $('#password-' + node.osmid).val()
+      wheelchair: $('[name=state-' + node.osmid + ']').val()
     }
-    $.ajax({ type: 'PUT', url: '/data/' + node.osmid + '/update', data: data,
+    $.ajax({ type: 'PUT', url: '/data/' + node.osmid , data: data,
       success: function(a,b,c) {
         alert('Platz aktualisiert');
       }
@@ -170,8 +168,6 @@ function popupHTML(node) {
   result += stateHTML('no', 'nicht barrierefrei');
   result += stateHTML('unknown', 'unbekannt');
   result += '</ol>';
-  result += 'E-Mail/Username: <input type="text" id="email-' + node.osmid + '"><br>';
-  result += 'Passwort: <input type="password" id="password-' + node.osmid + '"><br>';
   result += '<button id="button-' + node.osmid + '">Update</button>';
   result = '<div class="popup">' + result + '</div>';
   return result;

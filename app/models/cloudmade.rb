@@ -20,12 +20,12 @@ class Cloudmade
       raise e
       # logger.error(e.message)
       return []
-    end
-    
+    end    
   end
   
+  
   def self.poi
-    %w{restaurant,fast_food,pub,bar,parking,cafe,subway,monorail,platform,station,courthouse,railway,railemergency_access_point,ferry_terminal,fire_station,halt,health,library,hospital,pharamcy,motorway,police,post_box,post_office}.join(',')
+    %w{place_of_worship,theatre,arts_centre,cinema,nightclub,pharmacy,restaurant,fast_food,pub,bar,parking,cafe,subway,monorail,platform,station,courthouse,railway,railemergency_access_point,ferry_terminal,fire_station,halt,health,library,hospital,pharamcy,motorway,police,post_box,post_office}.join(',')
   end
   
   # in param is: Left,Bottom,right,Top
