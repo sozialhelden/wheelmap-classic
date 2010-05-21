@@ -1,16 +1,16 @@
 %h2=t('devise.sign_in.headline')
 
 - form_for resource_name, resource, :url => session_path(resource_name) do |f|
-  %p= f.label :email, t('devise.sign_in.form.label.email')
+  %p= f.label :email, t('devise.sign_in.form.labels.email')
   %p= f.text_field :email
 
-  %p= f.label :passwordt, t('devise.sign_in.form.label.password')
+  %p= f.label :passwordt, t('devise.sign_in.form.labels.password')
   %p= f.password_field :password
 
   - if devise_mapping.rememberable?
     %p
       = f.check_box :remember_me
-      = f.label :remember_me
+      = f.label :remember_me, t('devise.sign_in.form.labels.remember_me')
 
   %p= f.submit t('devise.sign_in.form.submit')
 

@@ -12,12 +12,15 @@ de:
       timeout: 'Deine Sitzung ist abgelaufen, bitte melde dich erneut an.'
       inactive: 'Dein Benutzerkonto wurde nich nicht aktiviert.'
     sign_in:
+      headline: Anmelden
       form:
         submit: Anmelden
         labels:
           email: E-Mail
           password: Passwort
+          remember_me: "Angemeldet bleiben?"
     sign_up:
+      headline: Registieren
       form:
         submit: Registrieren
         labels:
