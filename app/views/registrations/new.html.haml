@@ -1,0 +1,18 @@
+%h2=t('devise.sign_up.headline')
+
+- form_for resource_name, resource, :url => registration_path(resource_name) do |f|
+  = f.error_messages 
+
+  %p= f.label :email, t('devise.sign_up.form.labels.email')
+  %p= f.text_field :email
+
+  %p= f.label :password, t('devise.sign_up.form.labels.password')
+  %p= f.password_field :password
+
+  %p= f.label :password_confirmation, t('devise.sign_up.form.labels.password_confirmation')
+  %p= f.password_field :password_confirmation
+
+  %p= f.submit t('devise.sign_up.form.submit')
+
+
+= render :partial => "shared/devise_links" 

@@ -1,8 +1,9 @@
 #imprint
-  %p= link_to 'schließen', '#', :'data-hide' => '#imprint'
-  %h2 Impressum
+  %p= link_to t('common.close'), '#', :'data-hide' => '#imprint'
+  %h2= t('.headline')
   %dl
-    %dt Anbieter:
+    %dt
+      =t('.fields.provider')
     %dd
       SOZIALHELDEN e.V.
       %br
@@ -11,33 +12,35 @@
       Belziger Straße 31
       %br
       10823 Berlin
-    %dt Telefon:
-    %dd 0170 770 23 88
-    %dt E-Mail:
+    %dt=t('.fields.phone')
+    %dd +49 170 770 23 88
+    %dt=t('.fields.email')
     %dd= link_to 'Hier klicken', 'http://mailhide.recaptcha.net/d?k=018AE3jmHiC10N_60OQ1GNuA==&c=r1mLG_VQKwz0nC3dM5UwKJXLH4iRUf5BWzLHRKicH20='
-    %dt Design, Development:
-    %dd= link_to 'Nico Hagenburger', 'http://www.hagenburger.net', :title => 'Sass, Compass, Haml, Ruby on Rails'
-    %dt Kartenmaterial:
+    %dt=t('.fields.design')
+    %dd
+      = link_to 'Nico Hagenburger', 'http://www.hagenburger.net', :title => 'Sass, Compass, Haml, Ruby on Rails'
+      %br
+      = link_to 'Christoph Bünte', 'http://www.christophbuente.de', :title => 'Software Entwicklung Berlin mit Ruby, Ruby on Rails, Haml und Sass'
+    %dt=t('.fields.maps')
     %dd= link_to 'OpenStreetMap', 'http://openstreetmap.org'
-    %dt Icons:
+    %dt=t('.fields.icons')
     %dd
       = link_to 'Yusuke Kamiyamane', 'http://p.yusukekamiyamane.com/'
       %br
       = link_to 'Nico Hagenburger', 'http://www.hagenburger.net', :title => 'Sass, Compass, Haml, Ruby on Rails'
-    %dt Lizenz:
+    %dt=t('.fields.license')
     %dd
-      Karten, Daten:
+      =t('.fields.maps_and_data')
       %br
       = link_to 'Namensnennung-Weitergabe unter gleichen Bedingungen 2.0 US-amerikanisch (nicht portiert)', 'http://creativecommons.org/licenses/by-sa/2.0/deed.de', :class => 'cc-by-sa'
       %br
-      Icons:
+      =t('.fields.icons')
       %br
       = link_to 'Creative Commons Namensnennung 3.0 Unported', 'http://creativecommons.org/licenses/by/3.0/deed.de', :class => 'cc-by'
       %br
-      Application:
+      =t('.fields.application')
       %br
       = link_to 'MIT-Licence', 'http://github.com/sozialhelden/wheelmap/blob/master/MIT-LICENCE'
   %p
-    Diese Website ist mit Ruby on Rails und JavaScript entwickelt und Open-Source.
-    Die Quellen stehen auf Github:
+    =t('.comment')
     = link_to 'http://github.com/sozialhelden/wheelmap', 'http://github.com/sozialhelden/wheelmap'

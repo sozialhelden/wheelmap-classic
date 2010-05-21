@@ -11,6 +11,51 @@ de:
       invalid_token: 'Ungültiger Authentizitätstoken.'
       timeout: 'Deine Sitzung ist abgelaufen, bitte melde dich erneut an.'
       inactive: 'Dein Benutzerkonto wurde nich nicht aktiviert.'
+    sign_in:
+      form:
+        submit: Anmelden
+        labels:
+          email: E-Mail
+          password: Passwort
+    sign_up:
+      form:
+        submit: Registrieren
+        labels:
+          email: E-Mail
+          password: Passwort
+          password_confirmation: Passwort wiederholen
+    password_reset:
+      headline: Passwort zurücksetzen
+      form:
+        submit: Passwort neu setzen
+        labels:
+          password: Neues Passwort
+          password_confirmation: Passwort wiederholen
+      email:
+        headline: Willkommen {{email}}
+        text: "Jemand hat angefragt Ihr Passwort zu ändern. Sie können das tun, indem Sie folgendend Link anklicken:"
+        link: "Mein Passwort ändern"
+        comment: "Sollten Sie diese Anfrage nicht gestellt haben, ignorieren Sie diese Mail einfach.<br/>Ihr Passwort wird nicht geändert, bis Sie auf den oben angegebenen Link folgen und ein neues Passwort setzen."
+        
+    password_recovery:
+      headline: Passwort vergessen?
+      form:
+        submit: Passwort Reset zuschicken
+        labels:
+          email: E-Mail
+    destroy:
+      headline: Benutzerkonto löschen
+      link: Jetzt löschen
+      confirm: Sind Sie sich sicher?
+    edit:
+      headline: Benutzerkonto verwalten
+      form:
+        submit: Änderungen speichern
+        labels:
+          email: E-Mail
+          password: "Passwort <i>( leer lassen, wenn Sie es nicht ändern möchten)</i>"
+          password_confirmation: Passwort wiederholen
+          current_password: "Aktuelles Passwort <i>(wir brauchen es, um Ihre Änderungen zu bestätigen)</i>"
     passwords:
       link: 'Passwort vergessen?'
       send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'

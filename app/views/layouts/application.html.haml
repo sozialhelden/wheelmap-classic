@@ -21,14 +21,14 @@
         - else
           = link_to t('.links.login'), new_user_session_path
           = link_to t('devise.registrations.link'), new_registration_path(:user)
-        = link_to 'Blog', 'http://blog.wheelmap.org/'
-        = link_to 'Was ist Wheelmap?', 'http://blog.wheelmap.org/was-ist-wheelmap/'
-        = link_to 'Was bedeutet „barrierefrei“?', 'http://blog.wheelmap.org/was-bedeutet-barrierefrei/'
-        = link_to 'Wie trage ich Orte ein?', 'http://blog.wheelmap.org/wie-kann-ich-orte-eintragen/'
-        = link_to 'Anregungen', 'http://blog.wheelmap.org/ihre-meinung-ist-uns-wichtig/'
-        = link_to 'Impressum', '#', :'data-show' => '#imprint'
+        = link_to t('.links.blog'), 'http://blog.wheelmap.org/'
+        = link_to t('.links.what_is_wheelmap'), 'http://blog.wheelmap.org/was-ist-wheelmap/'
+        = link_to t('.links.what_is_barrier_free'), 'http://blog.wheelmap.org/was-bedeutet-barrierefrei/'
+        = link_to t('.links.how_to_add_a_place'), 'http://blog.wheelmap.org/wie-kann-ich-orte-eintragen/'
+        = link_to t('.links.suggestions'), 'http://blog.wheelmap.org/ihre-meinung-ist-uns-wichtig/'
+        = link_to t('.links.imprint'), '#', :'data-show' => '#imprint'
     - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
-      = image_tag('sozialhelden.png', :alt => 'Ein Projekt der Sozialhelden')
+      = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
     = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
     = javascript_include_tag 'http://www.openstreetmap.org/openlayers/OpenStreetMap.js'
     = javascript_include_tag 'jquery', 'util', 'icons', 'string', 'popup', 'search', 'application', :cache => false

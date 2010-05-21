@@ -1,0 +1,30 @@
+<h2>Edit = resource_name.to_s.humanize</h2>
+%h2=t('devise.edit.headline')
+
+- form_for resource_name, resource, :url => registration_path(resource_name), :html => { :method => :put } do |f|
+  = f.error_messages
+
+  %p= f.label :email, t('devise.edit.form.labels.email')
+  %p= f.text_field :email
+
+  %p= f.label :password, t('devise.edit.form.labels.password')
+  %p= f.password_field :password
+
+  %p= f.label :password_confirmationd, t('devise.edit.form.labels.password_confirmation')
+  %p= f.password_field :password_confirmation
+
+  %p= f.label :current_password, t('devise.edit.form.labels.current_password')
+  %p= f.password_field :current_password
+
+  %p= f.submit t('devise.edit.form.submit')
+
+
+%h3=t('devise.destroy.headline')
+
+  
+
+%p
+  Unhappy?
+  = link_to t('devise.destroy.link'), registration_path(resource_name), :confirm => t('devise.destroy.confirm'), :method => :delete
+
+= render :partial => "shared/devise_links"

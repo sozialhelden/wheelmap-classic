@@ -10,14 +10,27 @@ de:
   header: 
     navigation: 
       home: Start
-    tagline: wheelmap
+    tagline: Wheelmap logo
     title: wheelmap
+  form:
+    show_fully_accessible_places: barrierefreie Orte anzeigen
+    show_limited_accessible_places: teils barrierefreie Orte anzeigen
+    show_unaccessible_places: nicht barrierefreie Orte anzeigen
+    show_places_without_status: Orte ohne Status anzeigen
   layouts: 
     application: 
       links: 
         login: Anmelden
         logout: Abmelden
+        imprint: Impressum
+        blog: Blog
+        what_is_wheelmap: 'Was ist Wheelmap?'
+        what_is_barrier_free: 'Was bedeutet „barrierefrei“?'
+        how_to_add_a_place: 'Wie trage ich Orte ein?'
+        suggestions: 'Anregungen'
       logged_in_as: "Angemeldet als:"
+      banner:
+        alt: 'Ein Projekt der Sozialhelden'
   oauth: 
     callback: 
       notice: "Du bist jetzt als OpenStreetMap-Benutzer {{user}} angemeldet."
@@ -36,3 +49,19 @@ de:
       login_with_twitter: "Mit Twitter anmelden"
       password: Passwort
       remember_me: "Angemeldet bleiben"
+  common:
+    close: schließen
+  home:
+    imprint:
+      headline: Impressum
+      fields:
+        provider: "Anbieter:"
+        phone: "Telefon:"
+        email: "E-Mail:"
+        design: "Design, Entwicklung:"
+        maps: "Kartenmaterial:"
+        maps_and_data: "Karten, Daten:"
+        application: "Anwendung:"
+        icons: "Icons:"
+        license: "Lizenz:"
+      comment: Diese Website ist mit Ruby on Rails und JavaScript entwickelt und Open-Source. Die Quellen stehen auf Github:
