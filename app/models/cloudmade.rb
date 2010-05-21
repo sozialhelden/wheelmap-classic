@@ -14,7 +14,7 @@ class Cloudmade
     normalized_bbox = normalize_bbox(bbox)
     puts normalized_bbox
     begin
-      result = get("/#{self.api_key.upcase}/geocoding/v2/find.js", :query => {:bbox => normalized_bbox, :object_type => poi, :results => 200})
+      result = get("/#{self.api_key.upcase}/geocoding/v2/find.js", :query => {:bbox => normalized_bbox, :object_type => poi, :results => 300})
       result['features'].map{|node_data| Node.new(node_data)}
     rescue Exception => e
       raise e
@@ -25,7 +25,7 @@ class Cloudmade
   
   
   def self.poi
-    %w{place_of_worship,theatre,arts_centre,cinema,nightclub,pharmacy,restaurant,fast_food,pub,bar,parking,cafe,subway,monorail,platform,station,courthouse,railway,railemergency_access_point,ferry_terminal,fire_station,halt,health,library,hospital,pharamcy,motorway,police,post_box,post_office}.join(',')
+    %w{tram_stop,bus_station,bus_stop,telephone,marketplace,car_rental,car_sharing,kindergarten,toilets,atm,bank,bureau_de_change,place_of_worship,theatre,arts_centre,cinema,nightclub,pharmacy,restaurant,fast_food,pub,bar,parking,cafe,subway,monorail,platform,station,courthouse,railway,railemergency_access_point,ferry_terminal,fire_station,halt,health,library,hospital,pharamcy,motorway,police,post_box,post_office}.join(',')
   end
   
   # in param is: Left,Bottom,right,Top
