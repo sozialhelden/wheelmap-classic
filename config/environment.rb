@@ -7,6 +7,7 @@ Rails::Initializer.run do |config|
   config.gem 'redgreengrid',    :version => '0.3.2',  :source => 'rubygems.org'
   config.gem 'oauth',           :version => '0.4.0',  :source => 'rubygems.org'
   config.gem 'devise',          :version => '1.0.7',  :source => 'rubygems.org'
+  config.gem 'httparty',                              :source => 'rubygems.org'
 
   config.i18n.default_locale = :de
 end

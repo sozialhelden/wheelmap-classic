@@ -9,6 +9,8 @@
     /[if IE]
       :javascript
         var ce=document.createElement;ce('header');ce('nav');ce('article');ce('section');ce('footer');ce('aside');ce('time')
+        
+    %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}        
   %body(class=browser_class)
     = yield
     %footer

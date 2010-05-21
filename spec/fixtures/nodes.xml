@@ -1,0 +1,397 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='xapi: OSM Extended API 2.0' xmlns:xapi='http://www.informationfreeway.org/xapi/0.6' xapi:uri='/api/0.6/node[bbox=13.396935,52.521059,13.414465,52.524923][amenity' xapi:planetDate='20100520' xapi:copyright='2010 OpenStreetMap contributors' xapi:license='Creative commons CC-BY-SA 2.0' xapi:bugs='For assistance or to report bugs contact 80n80n@gmail.com' xapi:instance='zappyHyper'>
+  <node id='78252154' lat='52.5237984' lon='13.3986266' version='2' changeset='415641' user='bahnpirat' uid='13203' visible='true' timestamp='2007-11-05T14:56:47Z'>
+    <tag k='amenity' v='atm'/>
+    <tag k='created_by' v='Potlatch 0.4c'/>
+    <tag k='name' v='Bank für Sozialwirtschaft'/>
+  </node>
+  <node id='78252160' lat='52.5234903' lon='13.3989146' version='3' changeset='3631969' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-16T14:27:23Z'>
+    <tag k='amenity' v='cafe'/>
+    <tag k='name' v='Lavazza'/>
+  </node>
+  <node id='78252168' lat='52.5235634' lon='13.3988069' version='2' changeset='415641' user='bahnpirat' uid='13203' visible='true' timestamp='2007-11-05T14:56:37Z'>
+    <tag k='amenity' v='telephone'/>
+    <tag k='created_by' v='Potlatch 0.4c'/>
+  </node>
+  <node id='78252182' lat='52.5220063' lon='13.4006779' version='4' changeset='2883406' user='gkai' uid='74224' visible='true' timestamp='2009-10-18T14:16:48Z'>
+    <tag k='amenity' v='post_box'/>
+    <tag k='collection_times' v='Mo-Fr 15:00,17:00,21:15; Sa 16:00; Su 10:45,21:15'/>
+    <tag k='name' v='Burgstraße 29'/>
+    <tag k='operator' v='Deutsche Post AG'/>
+    <tag k='postal_code' v='10178'/>
+    <tag k='source' v='survey'/>
+    <tag k='wheelchair' v='limited'/>
+  </node>
+  <node id='78252191' lat='52.5220502' lon='13.40043' version='3' changeset='3629622' user='geozeisig' uid='66391' visible='true' timestamp='2010-01-16T08:44:26Z'>
+    <tag k='amenity' v='toilets'/>
+    <tag k='fee' v='yes'/>
+    <tag k='operator' v='Wall AG'/>
+    <tag k='wheelchair' v='no'/>
+  </node>
+  <node id='213112439' lat='52.5234337' lon='13.4019072' version='9' changeset='3631969' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-16T14:29:37Z'>
+    <tag k='amenity' v='bank'/>
+    <tag k='atm' v='yes'/>
+    <tag k='name' v='Sparkasse'/>
+    <tag k='operator' v='Landesbank Berlin'/>
+    <tag k='surveillance' v='indoor'/>
+    <tag k='wheelchair' v='yes'/>
+  </node>
+  <node id='258050857' lat='52.5236762' lon='13.4010974' version='2' changeset='3631969' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-16T14:29:07Z'>
+    <tag k='amenity' v='bank'/>
+    <tag k='name' v='Berliner Volksbank'/>
+    <tag k='opening_hours' v='Mo,Tu,Th 10:00-18:00;We,Fr 10:00-16:00'/>
+    <tag k='website' v='http://www.berliner-volksbank.de/die_bank0/standorte_berlin0/mitte/filiale_oranienburger.html'/>
+    <tag k='wheelchair' v='no'/>
+  </node>
+  <node id='307418244' lat='52.5213858' lon='13.4026988' version='1' changeset='565067' user='skohlmann' uid='69742' visible='true' timestamp='2008-10-25T14:32:54Z'>
+    <tag k='amenity' v='telephone'/>
+  </node>
+  <node id='343650200' lat='52.5240119' lon='13.4019598' version='2' changeset='3638724' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-17T09:18:12Z'>
+    <tag k='amenity' v='cinema'/>
+    <tag k='name' v='Hackesche Höfe Kino'/>
+    <tag k='operator' v='Timebandits'/>
+    <tag k='website' v='http://www.hoefekino.de'/>
+  </node>
+  <node id='343650283' lat='52.5245664' lon='13.4018422' version='7' changeset='4434234' user='PatrickK' uid='61646' visible='true' timestamp='2010-04-15T20:34:56Z'>
+    <tag k='addr:housenumber' v='39'/>
+    <tag k='addr:street' v='Rosenthaler Straße'/>
+    <tag k='amenity' v='cinema'/>
+    <tag k='drink:club-mate' v='yes'/>
+    <tag k='name' v='Central'/>
+    <tag k='url' v='kino-central.de'/>
+  </node>
+  <node id='442998328' lat='52.5242640' lon='13.4030487' version='2' changeset='2599854' user='bahnpirat' uid='13203' visible='true' timestamp='2009-09-23T21:12:48Z'>
+    <tag k='amenity' v='taxi'/>
+  </node>
+  <node id='490740360' lat='52.5223752' lon='13.4018689' version='1' changeset='2423460' user='rye212' uid='153833' visible='true' timestamp='2009-09-09T11:00:28Z'>
+    <tag k='amenity' v='pub'/>
+    <tag k='name' v='The Kilkenny'/>
+  </node>
+  <node id='544277194' lat='52.5221959' lon='13.3982493' version='1' changeset='2977763' user='wrifka' uid='178444' visible='true' timestamp='2009-10-28T22:48:16Z'>
+    <tag k='addr:city' v='Berlin'/>
+    <tag k='addr:country' v='DE'/>
+    <tag k='addr:housenumber' v='SBB 159'/>
+    <tag k='addr:postcode' v='10178'/>
+    <tag k='addr:street' v='James-Simon-Park'/>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='name' v='Ampelmann Restaurant'/>
+  </node>
+  <node id='565531790' lat='52.5223672' lon='13.4007096' version='3' changeset='3236785' user='Kivi' uid='120279' visible='true' timestamp='2009-11-28T14:54:33Z'>
+    <tag k='addr:city' v='Berlin'/>
+    <tag k='addr:country' v='DE'/>
+    <tag k='addr:housenumber' v='10'/>
+    <tag k='addr:postcode' v='10178'/>
+    <tag k='addr:street' v='Neue Promenade'/>
+    <tag k='amenity' v='nightclub'/>
+    <tag k='name' v='Bang Bang Club'/>
+    <tag k='url' v='www.bangbangclub.net'/>
+  </node>
+  <node id='602315660' lat='52.52383' lon='13.3993466' version='1' changeset='3504007' user='ffloyd' uid='76874' visible='true' timestamp='2009-12-31T20:50:10Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='cuisine' v='American'/>
+    <tag k='name' v='Sixties'/>
+  </node>
+  <node id='615147093' lat='52.5241261' lon='13.4023943' version='1' changeset='3638724' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-17T09:14:34Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='name' v='Anatre'/>
+    <tag k='website' v='http://www.hackesche-hoefe.com/index.php?id=128'/>
+  </node>
+  <node id='615148215' lat='52.5239727' lon='13.4021851' version='2' changeset='3638724' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-17T09:23:05Z'>
+    <tag k='amenity' v='theatre'/>
+    <tag k='name' v='Chamäleon'/>
+    <tag k='website' v='http://www.chamaeleonberlin.com'/>
+  </node>
+  <node id='615149024' lat='52.5239205' lon='13.4024909' version='2' changeset='3638724' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-17T09:22:58Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='name' v='Hackescher Hof'/>
+    <tag k='website' v='http://www.hackescher-hof.de'/>
+    <tag k='wheelchair' v='no'/>
+  </node>
+  <node id='615149995' lat='52.5241066' lon='13.4018257' version='1' changeset='3638724' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-17T09:21:12Z'>
+    <tag k='amenity' v='nightclub'/>
+    <tag k='name' v='Oxymoron'/>
+    <tag k='operator' v='Schliestedt &amp; Partner'/>
+    <tag k='website' v='http://www.oxymoron-berlin.de'/>
+  </node>
+  <node id='615152643' lat='52.5240251' lon='13.4025766' version='2' changeset='4617779' user='Aleks-Berlin' uid='85218' visible='true' timestamp='2010-05-05T22:39:02Z'>
+    <tag k='addr:housenumber' v='40-41'/>
+    <tag k='amenity' v='cafe'/>
+    <tag k='name' v='Starbucks'/>
+  </node>
+  <node id='615155626' lat='52.524335' lon='13.4016755' version='1' changeset='3638724' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-17T09:25:25Z'>
+    <tag k='amenity' v='cafe'/>
+    <tag k='name' v='Café Aedes'/>
+    <tag k='website' v='http://www.cafe-aedes.de'/>
+  </node>
+  <node id='615158851' lat='52.5244003' lon='13.401418' version='1' changeset='3638724' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-17T09:29:24Z'>
+    <tag k='amenity' v='arts_centre'/>
+    <tag k='name' v='Lumas'/>
+    <tag k='website' v='http://www.lumas.de'/>
+  </node>
+  <node id='615159347' lat='52.524322' lon='13.401021' version='1' changeset='3638724' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-17T09:31:04Z'>
+    <tag k='amenity' v='arts_centre'/>
+    <tag k='name' v='A trans Pavilion'/>
+    <tag k='website' v='http://www.atrans.org'/>
+  </node>
+  <node id='667366375' lat='52.5227643' lon='13.4003415' version='1' changeset='4144239' user='T4D' uid='33181' visible='true' timestamp='2010-03-16T15:44:37Z'>
+    <tag k='amenity' v='bar'/>
+    <tag k='name' v='1a Lauschgift'/>
+  </node>
+  <node id='676813585' lat='52.5246925' lon='13.4014133' version='2' changeset='4707281' user='michael246' uid='236935' visible='true' timestamp='2010-05-15T15:20:47Z'>
+    <tag k='amenity' v='fountain'/>
+  </node>
+  <node id='78252235' lat='52.5240558' lon='13.4088372' version='4' changeset='4721708' user='eike' uid='8472' visible='true' timestamp='2010-05-16T19:47:45Z'>
+    <tag k='amenity' v='pharmacy'/>
+    <tag k='dispensing' v='yes'/>
+    <tag k='name' v='Münz-Apotheke'/>
+  </node>
+  <node id='89274641' lat='52.5242899' lon='13.4118535' version='3' changeset='114261' user='Pholker' uid='13673' visible='true' timestamp='2008-04-11T16:57:32Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='created_by' v='Potlatch 0.8a'/>
+    <tag k='name' v='Escados'/>
+  </node>
+  <node id='89274695' lat='52.5242638' lon='13.4120423' version='3' changeset='114261' user='Pholker' uid='13673' visible='true' timestamp='2008-04-11T16:57:29Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='created_by' v='Potlatch 0.8a'/>
+    <tag k='name' v='Las Olas'/>
+  </node>
+  <node id='89274696' lat='52.5236492' lon='13.4111062' version='3' changeset='129587' user='Pholker' uid='13673' visible='true' timestamp='2008-04-13T09:16:48Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='created_by' v='Potlatch 0.8a'/>
+    <tag k='name' v='Ristorante Romantica'/>
+  </node>
+  <node id='89274697' lat='52.5218379' lon='13.4096557' version='1' changeset='331370' user='Pholker' uid='13673' visible='true' timestamp='2007-10-27T20:30:12Z'>
+    <tag k='amenity' v='pharmacy'/>
+    <tag k='created_by' v='JOSM'/>
+    <tag k='name' v='Panorama Apotheke'/>
+  </node>
+  <node id='89274703' lat='52.5217736' lon='13.4098486' version='1' changeset='331370' user='Pholker' uid='13673' visible='true' timestamp='2007-10-27T20:30:15Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='created_by' v='JOSM'/>
+  </node>
+  <node id='89274704' lat='52.5216452' lon='13.4099712' version='2' changeset='3083353' user='shony' uid='117007' visible='true' timestamp='2009-11-10T16:53:01Z'>
+    <tag k='amenity' v='bank'/>
+    <tag k='name' v='Commerzbank'/>
+    <tag k='operator' v='Commerzbank AG'/>
+  </node>
+  <node id='89312686' lat='52.5219315' lon='13.4078134' version='2' changeset='1777246' user='Konrad Aust' uid='115651' visible='true' timestamp='2009-07-09T01:24:19Z'>
+    <tag k='amenity' v='fast_food'/>
+    <tag k='created_by' v='JOSM'/>
+    <tag k='name' v='McDonald&apos;s'/>
+  </node>
+  <node id='89312691' lat='52.5226551' lon='13.4127201' version='3' changeset='923184' user='cebelink' uid='51219' visible='true' timestamp='2009-04-24T06:43:50Z'>
+    <tag k='amenity' v='fast_food'/>
+    <tag k='created_by' v='Potlatch 0.4c'/>
+    <tag k='name' v='Burger King'/>
+    <tag k='surveillance' v='indoor'/>
+  </node>
+  <node id='258497093' lat='52.5219226' lon='13.4047976' version='4' changeset='758446' user='miwie' uid='57526' visible='true' timestamp='2009-01-08T10:23:25Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='cuisine' v='spanish'/>
+    <tag k='name' v='Pata Negra'/>
+  </node>
+  <node id='260764945' lat='52.5221904' lon='13.4083471' version='2' changeset='296836' user='Randbewohner' uid='35787' visible='true' timestamp='2008-04-30T15:38:35Z'>
+    <tag k='amenity' v='theatre'/>
+    <tag k='created_by' v='Potlatch 0.8b'/>
+    <tag k='name' v='Sündikat Kabarett-Theater'/>
+    <tag k='wheelchair' v='yes'/>
+  </node>
+  <node id='262818009' lat='52.5211092' lon='13.4134410' version='4' changeset='661672' user='Hartmut Holzgraefe' uid='12448' visible='true' timestamp='2008-12-28T23:49:31Z'>
+    <tag k='amenity' v='clock'/>
+    <tag k='artwork_type' v='sculpture'/>
+    <tag k='created_by' v='Potlatch 0.10f'/>
+    <tag k='name' v='Weltzeituhr'/>
+    <tag k='tourism' v='artwork'/>
+  </node>
+  <node id='262821045' lat='52.5241951' lon='13.4136888' version='1' changeset='369588' user='Randbewohner' uid='35787' visible='true' timestamp='2008-05-08T16:05:01Z'>
+    <tag k='amenity' v='public_building'/>
+    <tag k='created_by' v='Potlatch 0.9'/>
+    <tag k='name' v='Bundesministerium für Familie, Senioren, Frauen und Jugend'/>
+  </node>
+  <node id='268916088' lat='52.5229900' lon='13.4069200' version='2' changeset='695937' user='u14183' uid='67441' visible='true' timestamp='2009-01-01T09:44:26Z'>
+    <tag k='amenity' v='kindergarten'/>
+    <tag k='name' v='Hort der Ev. Schule Berlin-Mitte e.V.'/>
+    <tag k='note' v='Hort der Ev. Schule Berlin-Mitte e.V.'/>
+    <tag k='wheelchair' v='unknown'/>
+  </node>
+  <node id='308410291' lat='52.5213767' lon='13.4096609' version='1' changeset='622159' user='Cyclop' uid='41098' visible='true' timestamp='2008-10-28T23:12:43Z'>
+    <tag k='amenity' v='fast_food'/>
+    <tag k='created_by' v='Potlatch 0.10e'/>
+    <tag k='name' v='Subway'/>
+  </node>
+  <node id='315140151' lat='52.5216777' lon='13.4129333' version='3' changeset='115289' user='skohlmann' uid='69742' visible='true' timestamp='2008-12-04T10:10:07Z'>
+    <tag k='amenity' v='telephone'/>
+    <tag k='operator' v='Telekom'/>
+    <tag k='payment:coins' v='yes'/>
+    <tag k='payment:telephone_cards' v='yes'/>
+  </node>
+  <node id='315238505' lat='52.5212593' lon='13.4136604' version='2' changeset='2775964' user='anbr' uid='43566' visible='true' timestamp='2009-10-07T20:47:47Z'>
+    <tag k='amenity' v='bicycle_parking'/>
+    <tag k='note' v='Fahrradanschlussmöglichkeit'/>
+  </node>
+  <node id='318149465' lat='52.5211556' lon='13.4119547' version='1' changeset='334534' user='dnaber' uid='21904' visible='true' timestamp='2008-12-12T17:33:30Z'>
+    <tag k='amenity' v='fast_food'/>
+    <tag k='name' v='McDonald&apos;s'/>
+  </node>
+  <node id='318149466' lat='52.5212151' lon='13.4118481' version='1' changeset='334534' user='dnaber' uid='21904' visible='true' timestamp='2008-12-12T17:33:31Z'>
+    <tag k='amenity' v='fast_food'/>
+    <tag k='name' v='Flammengrill'/>
+  </node>
+  <node id='322565363' lat='52.5218027' lon='13.4108562' version='1' changeset='652473' user='skohlmann' uid='69742' visible='true' timestamp='2008-12-28T16:03:23Z'>
+    <tag k='amenity' v='pharmacy'/>
+    <tag k='dispensing' v='no'/>
+    <tag k='name' v='Neptun Apotheke'/>
+    <tag k='wheelchair' v='unknown'/>
+  </node>
+  <node id='322565365' lat='52.5217131' lon='13.4109947' version='1' changeset='652473' user='skohlmann' uid='69742' visible='true' timestamp='2008-12-28T16:03:23Z'>
+    <tag k='amenity' v='bank'/>
+    <tag k='atm' v='yes'/>
+    <tag k='name' v='Volksbank'/>
+    <tag k='wheelchair' v='whocares'/>
+  </node>
+  <node id='330160536' lat='52.5235740' lon='13.4067960' version='3' changeset='2064070' user='jmdg' uid='52498' visible='true' timestamp='2009-08-07T10:58:00Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='created_by' v='Potlatch 0.10f'/>
+    <tag k='cuisine' v='spanish'/>
+    <tag k='name' v='Atame'/>
+    <tag k='wheelchair' v='ask someone else'/>
+  </node>
+  <node id='408997723' lat='52.5224659' lon='13.4089270' version='4' changeset='1276521' user='Daniel Bovensiepen' uid='92423' visible='true' timestamp='2009-05-21T14:38:21Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='name' v='Marktschenke'/>
+  </node>
+  <node id='437290305' lat='52.5216127' lon='13.4130790' version='2' changeset='1801386' user='Fabi2' uid='125718' visible='true' timestamp='2009-07-11T21:27:35Z'>
+    <tag k='amenity' v='toilets'/>
+    <tag k='centralkey' v='eurokey'/>
+    <tag k='fee' v='yes'/>
+    <tag k='name' v='City Toilette'/>
+    <tag k='operator' v='Wall AG'/>
+    <tag k='wheelchair' v='yes'/>
+  </node>
+  <node id='437610120' lat='52.5226206' lon='13.4075995' version='6' changeset='3625721' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-15T17:05:30Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='cuisine' v='italian'/>
+    <tag k='name' v='Pizzaria Palermo'/>
+  </node>
+  <node id='437610145' lat='52.5224405' lon='13.4079589' version='4' changeset='1780673' user='Konrad Aust' uid='115651' visible='true' timestamp='2009-07-09T13:38:11Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='cuisine' v='Vietnamese/Thai'/>
+    <tag k='name' v='Phuong Dong'/>
+  </node>
+  <node id='437610161' lat='52.5225227' lon='13.4073635' version='4' changeset='3625721' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-15T17:05:34Z'>
+    <tag k='amenity' v='bar'/>
+    <tag k='name' v='Bierbrunnen'/>
+  </node>
+  <node id='437610199' lat='52.5222630' lon='13.4080190' version='2' changeset='1780673' user='Konrad Aust' uid='115651' visible='true' timestamp='2009-07-09T13:39:37Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='cuisine' v='Far East'/>
+    <tag k='name' v='Phoenix'/>
+  </node>
+  <node id='437610210' lat='52.5225763' lon='13.4078903' version='5' changeset='2119693' user='Andre68' uid='31231' visible='true' timestamp='2009-08-12T15:58:38Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='cuisine' v='german'/>
+    <tag k='name' v='Brauhaus Mitte'/>
+    <tag k='website' v='http://www.brauhaus-mitte.de'/>
+  </node>
+  <node id='437610211' lat='52.5222995' lon='13.4076671' version='2' changeset='1780673' user='Konrad Aust' uid='115651' visible='true' timestamp='2009-07-09T13:39:07Z'>
+    <tag k='amenity' v='bar'/>
+    <tag k='name' v='Tropicana'/>
+  </node>
+  <node id='437613252' lat='52.5210775' lon='13.4060964' version='2' changeset='1780673' user='Konrad Aust' uid='115651' visible='true' timestamp='2009-07-09T13:40:31Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='name' v='Kartoffelhaus'/>
+  </node>
+  <node id='437613801' lat='52.5211871' lon='13.4063196' version='3' changeset='1780673' user='Konrad Aust' uid='115651' visible='true' timestamp='2009-07-09T13:41:06Z'>
+    <tag k='amenity' v='fast_food'/>
+    <tag k='name' v='Keb&apos;up'/>
+  </node>
+  <node id='437614448' lat='52.5212916' lon='13.4065256' version='3' changeset='1780673' user='Konrad Aust' uid='115651' visible='true' timestamp='2009-07-09T13:41:03Z'>
+    <tag k='amenity' v='biergarten'/>
+    <tag k='name' v='Schlögl&apos;s'/>
+  </node>
+  <node id='437615122' lat='52.5216154' lon='13.4071865' version='2' changeset='1780673' user='Konrad Aust' uid='115651' visible='true' timestamp='2009-07-09T13:40:12Z'>
+    <tag k='amenity' v='bar'/>
+    <tag k='name' v='Café Oase'/>
+  </node>
+  <node id='440661271' lat='52.5215520' lon='13.4034891' version='1' changeset='1805315' user='gkai' uid='74224' visible='true' timestamp='2009-07-12T11:16:54Z'>
+    <tag k='amenity' v='recycling'/>
+    <tag k='recycling:glass' v='yes'/>
+  </node>
+  <node id='440661272' lat='52.5219939' lon='13.4051533' version='2' changeset='3625721' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-15T17:06:29Z'>
+    <tag k='amenity' v='recycling'/>
+    <tag k='recycling:glass' v='yes'/>
+  </node>
+  <node id='440937810' lat='52.5224636' lon='13.4082173' version='1' changeset='1811583' user='gkai' uid='74224' visible='true' timestamp='2009-07-12T21:23:23Z'>
+    <tag k='amenity' v='fountain'/>
+  </node>
+  <node id='457895060' lat='52.5248274' lon='13.4035688' version='2' changeset='2082790' user='xybot' uid='70696' visible='true' timestamp='2009-08-09T11:07:07Z'>
+    <tag k='amenity' v='cafe'/>
+    <tag k='name' v='Caras Gourmet'/>
+  </node>
+  <node id='506357652' lat='52.5232144' lon='13.4034607' version='3' changeset='3179859' user='uboot' uid='26299' visible='true' timestamp='2009-11-21T20:28:54Z'>
+    <tag k='amenity' v='post_box'/>
+    <tag k='collection_times' v='Mo-Fr 13:00,15:00,16:00,17:00,21:15; Sa 14:00; Su 10:45,21:15'/>
+    <tag k='name' v='An der Spandauer Brücke 7'/>
+    <tag k='operator' v='Deutsche Post AG'/>
+    <tag k='postal_code' v='10178'/>
+    <tag k='source' v='survey'/>
+  </node>
+  <node id='595536654' lat='52.524524' lon='13.4033315' version='3' changeset='4722065' user='eike' uid='8472' visible='true' timestamp='2010-05-16T20:11:58Z'>
+    <tag k='amenity' v='pharmacy'/>
+  </node>
+  <node id='595682004' lat='52.523176' lon='13.4043923' version='2' changeset='4239313' user='giggls' uid='7009' visible='true' timestamp='2010-03-26T16:18:50Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='microbrewery' v='yes'/>
+    <tag k='name' v='Brauhaus Lemke'/>
+    <tag k='url' v='http://www.brauhaus-lemke.com/'/>
+  </node>
+  <node id='599578425' lat='52.524622' lon='13.403385' version='1' changeset='3454970' user='akraft' uid='142489' visible='true' timestamp='2009-12-26T14:02:54Z'>
+    <tag k='amenity' v='telephone'/>
+  </node>
+  <node id='614664818' lat='52.5226854' lon='13.4059544' version='1' changeset='3632006' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-16T14:35:06Z'>
+    <tag k='amenity' v='school'/>
+    <tag k='name' v='Evangelische Schule Berlin-Mitte (Grundschule)'/>
+    <tag k='website' v='http://www.esbm.de'/>
+  </node>
+  <node id='618984847' lat='52.5217748' lon='13.4078883' version='1' changeset='3697024' user='gkai' uid='74224' visible='true' timestamp='2010-01-23T23:45:18Z'>
+    <tag k='amenity' v='post_box'/>
+    <tag k='collection_times' v='Mo-Fr 15:00,17:15; Sa 16:15'/>
+    <tag k='operator' v='Deutsche Post AG'/>
+    <tag k='postal_code' v='10178'/>
+  </node>
+  <node id='622600440' lat='52.5237388' lon='13.4114759' version='1' changeset='3746844' user='Daniel Bovensiepen' uid='92423' visible='true' timestamp='2010-01-29T21:43:51Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='name' v='Marktschenke'/>
+  </node>
+  <node id='663346172' lat='52.5211479' lon='13.4085983' version='1' changeset='4083026' user='anst' uid='243889' visible='true' timestamp='2010-03-09T18:10:11Z'>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='name' v='ALEX'/>
+  </node>
+  <node id='667815238' lat='52.523572' lon='13.4051556' version='2' changeset='4157403' user='FvGordon' uid='161619' visible='true' timestamp='2010-03-17T21:57:49Z'>
+    <tag k='addr:city' v='Berlin'/>
+    <tag k='addr:country' v='DE'/>
+    <tag k='addr:housenumber' v='47'/>
+    <tag k='addr:postcode' v='10179'/>
+    <tag k='addr:street' v='Dircksenstraße'/>
+    <tag k='amenity' v='restaurant'/>
+    <tag k='name' v='basi&apos;l Berlin'/>
+    <tag k='phone' v='+49 30 28097381'/>
+  </node>
+  <node id='700843686' lat='52.5232009' lon='13.4036208' version='1' changeset='4456564' user='bmk' uid='259782' visible='true' timestamp='2010-04-18T11:04:53Z'>
+    <tag k='amenity' v='cafe'/>
+    <tag k='name' v='Steinecke'/>
+    <tag k='shop' v='bakery'/>
+  </node>
+  <node id='712664283' lat='52.5248189' lon='13.4080686' version='1' changeset='4561315' user='bmk' uid='259782' visible='true' timestamp='2010-04-29T20:33:00Z'>
+    <tag k='amenity' v='post_box'/>
+    <tag k='brand' v='Deutsche Post'/>
+    <tag k='collection_times' v='Mo-Fr 15:45,17:00,21:15; Sa 14:00; Su 10:45,21:30,21:15'/>
+    <tag k='name' v='Max-Beer-Straße 2-4, 10119 Berlin'/>
+    <tag k='operator' v='Deutsche Post AG'/>
+    <tag k='postal_code' v='10119'/>
+    <tag k='ref' v='Max-Beer-Str. 2-4, 10119 Berlin'/>
+  </node>
+  <node id='738912580' lat='52.5231922' lon='13.4140029' version='1' changeset='4742484' user='Aleks-Berlin' uid='85218' visible='true' timestamp='2010-05-18T20:16:32Z'>
+    <tag k='amenity' v='parking'/>
+  </node>
+</osm>
