@@ -1,5 +1,5 @@
 haml            --version 3.0.4  --source rubygems.org
-compass         --version 0.10.0 --source rubygems.org
+compass         --version 0.10.1 --source rubygems.org
 redgreengrid    --version 0.3.2  --source rubygems.org
 oauth           --version 0.4.0  --source rubygems.org
 devise          --version 1.0.7  --source rubygems.org
