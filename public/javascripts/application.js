@@ -195,12 +195,14 @@ function createLayer() {
   });
 
   eachState(function(state) {
+    var strategy = new OpenLayers.Strategy.Cluster({distance: 10, threshold: 2});
     layers[state] = new OpenLayers.Layer.Vector(
       "Places",
       {
         styleMap: styleMap,
         rendererOptions: { yOrdering: true },
-        visibility: states[state]
+        visibility: states[state],
+        strategies: [strategy]
       }
     );
     map.addLayer(layers[state]);

@@ -3,8 +3,10 @@ log/*.log
 log/*.pid
 tmp/*
 config/database.yml
+config/deploy.rb
 db/schema.rb
 config/*sphinx.conf
 db/sphinx
 db/*.sqlite3
 public/data/*
+mkmf.log
