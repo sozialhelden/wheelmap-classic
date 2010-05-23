@@ -3,7 +3,7 @@ class DataController < ApplicationController
   def index
     # @places = OpenStreetMap.nodes(params[:bbox].first)
     Cloudmade.api_key = 'ff94b6ad4b174d648b9c491706f13579'
-    @places = Cloudmade.nodes(params[:bbox])
+    @places = Cloudmade.nodes(params[:bbox],[params[:object_types]])
     render :json => @places
   end
 

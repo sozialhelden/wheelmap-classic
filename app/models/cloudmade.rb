@@ -11,11 +11,11 @@ class Cloudmade
   base_uri 'http://geocoding.cloudmade.com/'
   
   
-  def self.nodes(bbox="13.397643,52.523102,13.406419,52.526392", object_type=[])
+  def self.nodes(bbox="13.397643,52.523102,13.406419,52.526392", object_types=[])
     normalized_bbox = normalize_bbox(bbox)
-    puts normalized_bbox
+    types = object_types.compact.empty? ? all_points_of_interest : object_types
     begin
-      result = get("/#{self.api_key.upcase}/geocoding/v2/find.js", :query => {:bbox => normalized_bbox, :object_type => poi, :results => 2000})
+      result = get("/#{self.api_key.upcase}/geocoding/v2/find.js", :query => {:bbox => normalized_bbox, :object_type => types, :results => 1000})
       result['features'].map{|node_data| Node.new(node_data)}
     rescue Exception => e
       raise e
@@ -24,9 +24,21 @@ class Cloudmade
     end    
   end
   
-  
-  def self.poi
-    %w{tram_stop,bus_station,bus_stop,telephone,marketplace,car_rental,car_sharing,kindergarten,toilets,atm,bank,bureau_de_change,place_of_worship,theatre,arts_centre,cinema,nightclub,pharmacy,restaurant,fast_food,pub,bar,parking,cafe,subway,monorail,platform,station,courthouse,railway,railemergency_access_point,ferry_terminal,fire_station,halt,health,library,hospital,pharamcy,motorway,police,post_box,post_office}.join(',')
+  private
+
+  def self.all_points_of_interest
+    [
+      ['halt', 'railway', 'station', 'platform', 'monorail', 'subway', 'light_rail', 'tram_stop', 'bus_stop', 'bus_station', 'ferry_terminal'], # public transport
+      ['fast_food', 'restaurant', 'biergarten', 'cafe', 'bar', 'pub'], #food
+      ['cinema', 'arts_centre', 'nightclub', 'sauna', 'theatre'], # leisure
+      ['bank', 'atm', 'bureau_de_change'], #money
+      ['post_box', 'post_office'], #post
+      ['embassy', 'courthouse', 'police', 'fire_station', 'public_building', 'register_office', 'townhall', 'community_centre'], # embassy & governement
+      ['hospital', 'pharmacy','health'], # medicine
+      ['fuel', 'car_rental', 'car_sharing', 'parking', 'bicycle_parking', 'bicycle_rental'], # car & bike
+      ['kindergarten', 'school', 'college', 'university', 'library'], # children & education
+      ['marketplace', 'telephone', 'toilets', 'grave_yard', 'place_of_worship'] # misc
+    ].flatten.compact.sort.join(',')
   end
   
   # in param is: Left,Bottom,right,Top

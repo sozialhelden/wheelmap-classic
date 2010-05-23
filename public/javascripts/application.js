@@ -57,8 +57,9 @@ function drawmap() {
     projection: epsg900913,
     displayProjection: epsg4326,
     controls: [
-      new OpenLayers.Control.MouseDefaults()//,
-      //new OpenLayers.Control.Attribution()
+      new OpenLayers.Control.MouseDefaults(),
+      new OpenLayers.Control.KeyboardDefaults(),
+      new OpenLayers.Control.PanZoomBar()
     ],
     maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34, 20037508.34, 20037508.34),
     numZoomLevels: 18,
@@ -195,7 +196,7 @@ function createLayer() {
   });
 
   eachState(function(state) {
-    var strategy = new OpenLayers.Strategy.Cluster({distance: 10, threshold: 2});
+    var strategy = new OpenLayers.Strategy.Cluster({distance: 15, threshold: 2});
     layers[state] = new OpenLayers.Layer.Vector(
       "Places",
       {
@@ -207,7 +208,8 @@ function createLayer() {
     );
     map.addLayer(layers[state]);
     selectControl = new OpenLayers.Control.SelectFeature(layers[state],
-      { onSelect: openPopup, onUnselect: closePopup });
+      { onSelect: openPopup,
+        onUnselect: closePopup });
     map.addControl(selectControl);
     selectControl.activate();  
 
@@ -217,9 +219,20 @@ function createLayer() {
 
 
 function lonLatToMercator(ll) {
-  var lon = ll.lon * 20037508.34 / 180;
-  var lat = Math.log(Math.tan((90 + ll.lat) * Math.PI / 360)) / (Math.PI / 180);
-  lat = lat * 20037508.34 / 180;
+  // Originall formula
+  // var lon = ll.lon * 20037508.34 / 180;
+  // Precalculated values:
+  // 20037508.34 / 180 = 
+  var lon = ll.lon * 111319.49077777777;
+  // Originall formula
+  // var lat = Math.log(Math.tan((90 + ll.lat) * Math.PI / 360)) / (Math.PI / 180);
+  // Precalculated values:
+  // Math.PI / 360 = 0.008726646259971648
+  // Math.PI / 180 = 0.017453292519943295
+  var lat = Math.log(Math.tan((90 + ll.lat) * 0.008726646259971648)) / (0.017453292519943295);
+  // Originall formula
+  // lat = lat * 20037508.34 / 180;
+  lat = lat * 111319.49077777777;
   return new OpenLayers.LonLat(lon, lat);
 }
 
