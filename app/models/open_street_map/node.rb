@@ -1,5 +1,5 @@
 require 'builder'
-class OpenStreetMap
+module OpenStreetMap
   class Node
     attr_accessor :lat, :lon, :user, :uid, :changeset, :uid, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair
     attr_accessor_with_default :changed, false

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="OpenStreetMap server">
+  <node id="84644746" lat="52.5073116" lon="13.3901918" version="5" changeset="3354104" user="Elwood" uid="6669" visible="true" timestamp="2009-12-12T08:36:27Z">
+    <tag k="name" v="Subway"/>
+    <tag k="addr:housenumber" v="207"/>
+    <tag k="addr:street" v="Friedrichstraße"/>
+    <tag k="addr:city" v="Berlin"/>
+    <tag k="surveillance" v="indoor"/>
+    <tag k="addr:postcode" v="10969"/>
+    <tag k="addr:country" v="DE"/>
+    <tag k="amenity" v="fast_food"/>
+  </node>
+</osm>

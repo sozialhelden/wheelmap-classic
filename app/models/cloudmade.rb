@@ -8,7 +8,8 @@ class Cloudmade
   
   #http://geocoding.cloudmade.com/<API-KEY>/geocoding/v2/find.geojs?bbox=52.46882,13.38046,52.50518,13.46914&object_type=cafe
   base_uri 'http://geocoding.cloudmade.com/'
-  
+
+  @@api_key = CloudMadeConfig.api_key if defined?(CloudMadeConfig)
   
   
   def self.nodes(bbox="13.397643,52.523102,13.406419,52.526392", object_types="")
