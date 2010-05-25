@@ -14,7 +14,7 @@ class DataController < ApplicationController
   
   def set_session_amenities
     object_types = params[:object_types].split(',') if params[:object_types]
-    session['amenities'] = object_types.flatten.compress.uniq unless object_types.compress.blank?
+    session['amenities'] = object_types.flatten.compact.uniq unless object_types.compact.blank?
     RAILS_DEFAULT_LOGGER.warn(session['amenities'])
   end
 end
