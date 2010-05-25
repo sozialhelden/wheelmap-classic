@@ -7,7 +7,8 @@ module OpenStreetMap
   #http://api.openstreetmap.org/api/0.6/changeset/create
   base_uri "http://api.openstreetmap.org/api/#{API_VERSION}" #live
   # base_uri "http://api06.dev.openstreetmap.org/" #test
-
+  basic_auth(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
+  
   # This required a multistep 
   def self.update(osmid, wheelchair)
     RAILS_DEFAULT_LOGGER.debug "Fetching node: #{osmid} ..."

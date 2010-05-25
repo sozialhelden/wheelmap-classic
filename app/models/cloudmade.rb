@@ -1,13 +1,15 @@
 #= Description
 #
 # This is a wrapper class for easy Cloudemade API access
-class Cloudmade
+module Cloudmade
   include HTTParty
   
-  cattr_accessor :api_key
+  mattr_accessor :api_key
   
   #http://geocoding.cloudmade.com/<API-KEY>/geocoding/v2/find.geojs?bbox=52.46882,13.38046,52.50518,13.46914&object_type=cafe
   base_uri 'http://geocoding.cloudmade.com/'
+
+  self.api_key = CloudmadeConfig.api_key
 
   def self.nodes(bbox="13.397643,52.523102,13.406419,52.526392", object_types="")
     normalized_bbox = normalize_bbox(bbox)
