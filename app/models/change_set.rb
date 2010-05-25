@@ -10,19 +10,19 @@ class ChangeSet
 
   # This required a multistep 
   def self.update(osmid, wheelchair)
-    puts "Fetching node: #{osmid} ..."
+    RAILS_DEFAULT_LOGGER.debug "Fetching node: #{osmid} ..."
     if (node = fetch_node(osmid))
-      puts "Old version: #{node.version}"
-      puts "Old changeset: #{node.changeset}"
-      puts "Creating new changeset ..."
+      RAILS_DEFAULT_LOGGER.debug "Old version: #{node.version}"
+      RAILS_DEFAULT_LOGGER.debug "Old changeset: #{node.changeset}"
+      RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
       changeset_id = new_changeset
-      puts "New changeset: #{changeset_id}"
+      RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
       node.set_wheelchair(wheelchair,changeset_id)
-      puts "Nodes changeset: #{node.changeset}"
-      puts node.inspect
-      puts node.to_xml
+      RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
+      RAILS_DEFAULT_LOGGER.debug node.inspect
+      RAILS_DEFAULT_LOGGER.debug node.to_xml
       new_version = put("/node/#{osmid}", :body => node.to_xml)
-      puts "New version: #{new_version}"
+      RAILS_DEFAULT_LOGGER.debug "New version: #{new_version}"
       save_changeset(changeset_id)
     end
   end

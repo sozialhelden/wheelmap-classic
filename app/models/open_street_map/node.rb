@@ -1,7 +1,7 @@
 require 'builder'
 class OpenStreetMap
   class Node
-    attr_accessor :lat, :lon, :user, :uid, :changeset, :uid, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair, :wheelchair_source
+    attr_accessor :lat, :lon, :user, :uid, :changeset, :uid, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair
     attr_accessor_with_default :changed, false
     def initialize(data)
       @lat = data['lat'].to_f
@@ -52,7 +52,8 @@ class OpenStreetMap
     def set_wheelchair(status, changeset_id)
       if valid_states.include?(status)
         self.wheelchair = status
-        self.wheelchair_source = "http://wheelmap.org"
+        @tags['wheelchair'] = status
+        @tags['wheelchair:source'] = "http://wheelmap.org"
         self.changeset = changeset_id
         self.timestamp = Time.now
         self.user = 'wheelmap_visitor'

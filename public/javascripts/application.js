@@ -32,7 +32,7 @@ var typeVisibilities = {};
 $.each(amenities, function(i, type) {
   typeVisibilities[type] = { display: 'none' };
 });
-$.each(['subway', 'light-rail', 'fast-food', 'restaurant', 'bar'], function(i, type) {
+$.each(object_types, function(i, type) {
   typeVisibilities[type].display = 'block';
 });
 
@@ -93,11 +93,21 @@ function drawmap() {
 
 function toggleLayers(type, show) {
   var visibility = false;
+  add_or_remove_type_from_object_types(type);
   visibility = typeof(show) == 'undefined' ? !$('.' + type).parent().hasClass('visible') : show;
   $('.' + type).parent().removeClass(visibility ? 'hidden' : 'visible').addClass(visibility ? 'visible' : 'hidden');
   typeVisibilities[type].display = visibility ? 'block' : 'none';
   showStates();
   return false;
+}
+
+function add_or_remove_type_from_object_types(type){
+  if ((index = object_types.indexOf(type)) == -1){
+    object_types.push(type);
+  }
+  else{
+    object_types.splice(index);
+  }
 }
 
 
@@ -144,7 +154,7 @@ function loadPlaces() {
   counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
 
   var bbox = mapBBOX().toBBOX();
-  $.getJSON('/data?bbox=' + bbox, function(data) {
+  $.getJSON('/data?bbox=' + bbox + '&object_types=' + object_types.join(','), function(data) {
     var features = [];
     var features = { yes: [], no: [], limited: [], unknown: [] };
     $.each(data, function(i, place) {

@@ -11,12 +11,14 @@ class Cloudmade
   
   
   
-  def self.nodes(bbox="13.397643,52.523102,13.406419,52.526392", object_types=[])
+  def self.nodes(bbox="13.397643,52.523102,13.406419,52.526392", object_types="")
     normalized_bbox = normalize_bbox(bbox)
-    types = object_types.compact.empty? ? all_points_of_interest : object_types
+
+    types = object_types.blank? ? all_points_of_interest : object_types.split.map(&:underscore).join(',')
+    # raise types.inspect
     begin
       # RAILS_DEFAULT_LOGGER.warn("#{self.base_uri}/#{self.api_key.upcase}/geocoding/v2/find.js?bbox=#{normalized_bbox}&object_type=#{types}&results=100")
-      result = get("/#{self.api_key.upcase}/geocoding/v2/find.js", :query => {:bbox => normalized_bbox, :object_type => types, :results => 1000})
+      result = get("/#{self.api_key.upcase}/geocoding/v2/find.js", :query => {:bbox => normalized_bbox, :object_type => types, :results => 500})
       result['features'].map{|node_data| Node.new(node_data)}
     rescue Exception => e
       raise e
