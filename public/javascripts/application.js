@@ -9,16 +9,16 @@ var places = [];
 
 //var allAmenities = 'arts-centre atm audiologist baby-hatch bank bar bench bicycle-parking bicycle-rental biergarten brothel bureau-de-change bus-station cafe car-rental car-sharing cinema clock coast-guard college community-centre courthouse crematorium drinking-water embassy emergency-phone fast-food ferry-terminal fire-hydrant fire-station fountain fuel grave-yard grit-bin hospital hunting-stand kindergarten library marketplace milk-dispenser nightclub parking pharmacy place-of-worship police post-box post-office prison pub public-building recycling register-office restaurant sauna school stripclub studio taxi telephone theatre toilets townhall university vending-machine veterinary waste-basket waste-disposal subway'.split(' ');
 var amenitiesGrouped = {
-  'Nahverkehr': ['subway', 'light-rail', 'tram-stop', 'bus-stop', 'ferry-terminal'],
-  'Essen & Trinken': ['fast-food', 'restaurant', 'biergarten', 'cafe', 'bar', 'pub'],
-  'Freizeit': ['cinema', 'arts-centre', 'nightclub', 'sauna', 'theatre'],
-  'Geld': ['bank', 'atm', 'bureau-de-change'],
-  'Post': ['post-box', 'post-office'],
-  'Botschaften & Behörden': ['embassy', 'courthouse', 'police', 'fire-station', 'public-building', 'register-office', 'townhall', 'community-centre'],
+  'Nahverkehr': ['subway', 'light_rail', 'tram_stop', 'bus_stop', 'ferry_terminal'],
+  'Essen & Trinken': ['fast_food', 'restaurant', 'biergarten', 'cafe', 'bar', 'pub'],
+  'Freizeit': ['cinema', 'arts_centre', 'nightclub', 'sauna', 'theatre'],
+  'Geld': ['bank', 'atm', 'bureau_de_change'],
+  'Post': ['post_box', 'post_office'],
+  'Botschaften & Behörden': ['embassy', 'courthouse', 'police', 'fire_station', 'public_building', 'register_office', 'townhall', 'community_centre'],
   'Medizin': ['hospital', 'pharmacy'],
-  'Auto & Fahrrad': ['fuel', 'car-rental', 'car-sharing', 'parking', 'bicycle-parking', 'bicycle-rental'],
+  'Auto & Fahrrad': ['fuel', 'car_rental', 'car_sharing', 'parking', 'bicycle_parking', 'bicycle_rental'],
   'Kinder & Bildung': ['kindergarten', 'school', 'college', 'university', 'library'],
-  'Sonstiges': ['marketplace', 'telephone', 'toilets', 'grave-yard', 'place-of-worship']
+  'Sonstiges': ['marketplace', 'telephone', 'toilets', 'grave_yard', 'place_of_worship']
 }
 
 
@@ -33,6 +33,7 @@ $.each(amenities, function(i, type) {
   typeVisibilities[type] = { display: 'none' };
 });
 $.each(object_types, function(i, type) {
+  // alert(type);
   typeVisibilities[type].display = 'block';
 });
 
@@ -62,7 +63,7 @@ function drawmap() {
       new OpenLayers.Control.PanZoomBar()
     ],
     maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34, 20037508.34, 20037508.34),
-    numZoomLevels: 18,
+    numZoomLevels: 10,
     maxResolution: 156543,
     units: 'meters'
   });
@@ -79,36 +80,46 @@ function drawmap() {
   map.events.register('moveend', null, loadPlaces);
   setTimeout(loadPlaces, 1000);
 
-  var amenitiesElement = $('#amenities');
-  $.each(amenitiesGrouped, function(title, group) {
-    var html = '';
-    $.each(group, function(i, type) {
-      var className = typeVisibilities[type].display == 'block' ? 'visible' : 'hidden';
-      html += '<a href="#" onclick="return toggleLayers(\'' + type + '\')" class="' + className + '" title="' + type + '"><span class="' + type + '"></span></a>';
-    });
-    amenitiesElement.append('<li><h4>' + title + '</h4><div>' + html + '</div></li>');
-  });
+  // var amenitiesElement = $('#amenities');
+  // $.each(amenitiesGrouped, function(title, group) {
+  //   var html = '';
+  //   $.each(group, function(i, type) {
+  //     var className = typeVisibilities[type].display == 'block' ? 'visible' : 'hidden';
+  //     html += '<a href="#" onclick="return toggleLayers(\'' + type + '\')" class="' + className + '" title="' + type + '"><span class="' + type + '"></span></a>';
+  //   });
+  //   amenitiesElement.append('<li><h4>' + title + '</h4><div>' + html + '</div></li>');
+  // });
 }
 
 
 function toggleLayers(type, show) {
   var visibility = false;
-  add_or_remove_type_from_object_types(type);
   visibility = typeof(show) == 'undefined' ? !$('.' + type).parent().hasClass('visible') : show;
   $('.' + type).parent().removeClass(visibility ? 'hidden' : 'visible').addClass(visibility ? 'visible' : 'hidden');
   typeVisibilities[type].display = visibility ? 'block' : 'none';
+  add_or_remove_type_from_object_types(type, visibility);
   showStates();
   return false;
 }
 
-function add_or_remove_type_from_object_types(type){
-  if ((index = object_types.indexOf(type)) == -1){
-    object_types.push(type);
-  }
-  else{
-    object_types.splice(index);
+function add_or_remove_type_from_object_types(type, add){
+  
+  if(add == true){
+    if(!object_types_contains(type)){
+      object_types.push(type);
+    }
+  }else{
+    if(object_types_contains(type) == true){      
+      index = object_types.indexOf(type);
+      object_types.splice(index,1);
+    }
   }
 }
+
+function object_types_contains(type){
+  return (object_types.indexOf(type) != -1)
+}
+
 
 
 function mapBBOX() {

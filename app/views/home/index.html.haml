@@ -24,5 +24,13 @@
         = label_tag :wheelchair_unknown, t('form.show_places_without_status')
         %span
   %ul#amenities
+    - [:public_transfer, :food, :leisure, :money, :post, :government, :health, :car, :education, :misc].each do |amenity_group|
+      %li
+        %h4=t(".amenities.headline.#{amenity_group}")
+        %div
+          - Amenities[amenity_group].each do |elements|
+            -elements.each do |key,values|
+              %a{:class => session['amenities'].include?(values.first) ? 'visible' : 'hidden', :href => '#', :onclick => "toggleLayers('#{values.first}')", :title => t(".amenities.title.#{values.first}")}
+                %span{:class => values.first}
 #spinner
 = render :partial => 'imprint'

@@ -530,7 +530,7 @@ a:visited:hover {
 }
 
 /* line 33, ../../app/stylesheets/partials/_icons.sass */
-.arts-centre {
+.arts_centre {
   background-image: url('/images/icons/palette.png?1273651346') !important;
   border: 0;
 }
@@ -560,7 +560,7 @@ a:visited:hover {
 }
 
 /* line 66, ../../app/stylesheets/partials/_icons.sass */
-.bureau-de-change {
+.bureau_de_change {
   background-image: url('/images/icons/bureau-de-change.png?1273651346') !important;
   border: 0;
 }
@@ -572,13 +572,13 @@ a:visited:hover {
 }
 
 /* line 72, ../../app/stylesheets/partials/_icons.sass */
-.car-rental {
+.car_rental {
   background-image: url('/images/icons/car-rental.png?1273651346') !important;
   border: 0;
 }
 
 /* line 75, ../../app/stylesheets/partials/_icons.sass */
-.car-sharing {
+.car_sharing {
   background-image: url('/images/icons/car-sharing.png?1273651346') !important;
   border: 0;
 }
@@ -596,7 +596,7 @@ a:visited:hover {
 }
 
 /* line 84, ../../app/stylesheets/partials/_icons.sass */
-.coast-guard {
+.coast_guard {
   background-image: url('/images/icons/lifebuoy.png?1273651346') !important;
   border: 0;
 }
@@ -614,19 +614,19 @@ a:visited:hover {
 }
 
 /* line 108, ../../app/stylesheets/partials/_icons.sass */
-.fast-food {
+.fast_food {
   background-image: url('/images/icons/fast-food.png?1273651346') !important;
   border: 0;
 }
 
 /* line 111, ../../app/stylesheets/partials/_icons.sass */
-.fire-hydrant {
+.fire_hydrant {
   background-image: url('/images/icons/fire.png?1273651346') !important;
   border: 0;
 }
 
 /* line 114, ../../app/stylesheets/partials/_icons.sass */
-.fire-station {
+.fire_station {
   background-image: url('/images/icons/fire-station.png?1273651346') !important;
   border: 0;
 }
@@ -638,7 +638,7 @@ a:visited:hover {
 }
 
 /* line 132, ../../app/stylesheets/partials/_icons.sass */
-.hunting-stand {
+.hunting_stand {
   background-image: url('/images/icons/target.png?1273651346') !important;
   border: 0;
 }
@@ -686,13 +686,13 @@ a:visited:hover {
 }
 
 /* line 162, ../../app/stylesheets/partials/_icons.sass */
-.post-box {
+.post_box {
   background-image: url('/images/icons/mail.png?1273651346') !important;
   border: 0;
 }
 
 /* line 165, ../../app/stylesheets/partials/_icons.sass */
-.post-office {
+.post_office {
   background-image: url('/images/icons/post-office.png?1273651346') !important;
   border: 0;
 }
@@ -704,7 +704,7 @@ a:visited:hover {
 }
 
 /* line 174, ../../app/stylesheets/partials/_icons.sass */
-.place-of-worship {
+.place_of_worship {
   background-image: url('/images/icons/bell.png?1273651346') !important;
   border: 0;
 }
@@ -746,25 +746,25 @@ a:visited:hover {
 }
 
 /* line 231, ../../app/stylesheets/partials/_icons.sass */
-.light-rail {
+.light_rail {
   background-image: url('/images/icons/public-transport-light-rail-germany.png?1273651346') !important;
   border: 0;
 }
 
 /* line 234, ../../app/stylesheets/partials/_icons.sass */
-.tram-stop {
+.tram_stop {
   background-image: url('/images/icons/public-transport-tram-germany.png?1273651346') !important;
   border: 0;
 }
 
 /* line 237, ../../app/stylesheets/partials/_icons.sass */
-.bus-stop {
+.bus_stop {
   background-image: url('/images/icons/public-transport-bus-germany.png?1273651346') !important;
   border: 0;
 }
 
 /* line 240, ../../app/stylesheets/partials/_icons.sass */
-.ferry-terminal {
+.ferry_terminal {
   background-image: url('/images/icons/public-transport-ferry-germany.png?1273651346') !important;
   border: 0;
 }

@@ -49,7 +49,7 @@ module Cloudmade
     end
 
     def type
-      (tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || '').gsub(/ |_/, '-')
+      (tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || '')
     end
 
     def wheelchair
