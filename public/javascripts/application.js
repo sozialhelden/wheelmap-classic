@@ -1,7 +1,7 @@
 var map;
 var epsg4326, epsg900913;
-var lat = 52.523141129638;
-var lon = 13.402481317347;
+var lat = geoip_latitude(); //52.523141129638;
+var lon = geoip_longitude(); //13.402481317347;
 var zoom = 16;
 var layer;
 var layers = {};
@@ -107,6 +107,7 @@ function add_or_remove_type_from_object_types(type, add){
   if(add == true){
     if(!object_types_contains(type)){
       object_types.push(type);
+      loadPlaces();
     }
   }else{
     if(object_types_contains(type) == true){      

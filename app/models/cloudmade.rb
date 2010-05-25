@@ -19,10 +19,10 @@ module Cloudmade
     begin
       # RAILS_DEFAULT_LOGGER.warn("#{self.base_uri}/#{self.api_key.upcase}/geocoding/v2/find.js?bbox=#{normalized_bbox}&object_type=#{types}&results=100")
       result = get("/#{self.api_key.upcase}/geocoding/v2/find.js", :query => {:bbox => normalized_bbox, :object_type => types, :results => 500})
-      result['features'].map{|node_data| Node.new(node_data)}
+      result['features'].blank? ? [] : result['features'].map{|node_data| Node.new(node_data)}
     rescue Exception => e
       raise e
-      # logger.error(e.message)
+      RAILS_DEFAULT_LOGGER.error(e.message)
       return []
     end    
   end
