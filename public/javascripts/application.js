@@ -1,7 +1,7 @@
 var map;
 var epsg4326, epsg900913;
-var lat = geoip_latitude(); //52.523141129638;
-var lon = geoip_longitude(); //13.402481317347;
+var lat = parseFloat(geoip_latitude());
+var lon = parseFloat(geoip_longitude());
 var zoom = 16;
 var layer;
 var layers = {};
