@@ -16,5 +16,4 @@ end
 Haml::Template.options[:format] = :html5
 Haml::Template.options[:attr_wrapper] = '"'
 
-OpenStreetMapConfig = OpenStruct.new(YAML.load_file("#{RAILS_ROOT}/config/open_street_map.yml"))
-CloudMadeConfig = OpenStruct.new(YAML.load_file("#{RAILS_ROOT}/config/cloudmade.yml"))
+
