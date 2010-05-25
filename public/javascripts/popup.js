@@ -142,7 +142,8 @@ function popupHTML(node) {
         label = '<label for="' + id + '">' + label + '</label>';
     return '<li class="' + state + '">' + input + label + '</li>';
   }
-  var result = '<h2 class="' + node.type + '">' + (node.name || node.type) + '</h2>';
+  var result = '<h2 class="' + node.type + '">'
+  result += '<a href="/nodes/' + node.osmid + '">' + (node.name || node.type) + '</a></h2>';
   result += addressOfNode(node);
   result += tagList(node.tags);
   result += '<form action="/data/' + node.osmid + '" id="update_form_' + node.osmid + '" method="put"';

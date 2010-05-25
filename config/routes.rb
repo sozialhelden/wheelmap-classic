@@ -15,6 +15,8 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :data, :only => [:index, :update]
   
+  map.resources :nodes, :only => :show
+  
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'
 end

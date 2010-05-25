@@ -1,0 +1,29 @@
+%h1=@node.name
+%table{:id => dom_id(@node)}
+  %tbody
+    %tr
+      %th
+        Version:
+      %td
+        =@node.version
+    %tr
+      %th
+        Changeset:
+      %td
+        =@node.changeset
+        
+    %tr{:valign => :top}
+      %th
+        Tags:
+      %td
+        %dl
+          - @node.tags.each do |key,value|
+            %dt="#{key}:"
+            %dd=value
+    %tr
+      %th
+        Coordinates:
+      %td
+        %span.latitude=@node.lat
+        ,&nbsp;
+        %span.longitude=@node.lon
