@@ -1,8 +1,3 @@
-Before do
-  include Authlogic::TestCase
-  activate_authlogic
-end
-
 Given /I am not logged in/ do
   @user_session = UserSession.find
   @user_session.destroy if @user_session
@@ -21,4 +16,13 @@ end
 Given /^a(n| non activated) user with email "([^"]*)" and password "([^"]*)"$/ do |activated, email, password|
   @user = User.create!(:email => email, :password => password, :password_confirmation => password)
   @user.activate! unless activated == ' non activated'
+end
+
+Then /^I should see an "([^\"]*)" div$/ do |div|
+  if response.respond_to? :should
+    response.should have_selector 'div#info'
+  else
+    assert_have_selector 'div#info'
+  end
+
 end
