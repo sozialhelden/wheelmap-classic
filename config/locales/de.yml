@@ -128,4 +128,11 @@ de:
         icons: "Icons:"
         license: "Lizenz:"
         geoip: GeoIP
-      comment: Diese Website ist mit Ruby on Rails und JavaScript entwickelt und Open-Source. Die Quellen stehen auf Github:
+      comment: 'Diese Website ist mit Ruby on Rails und JavaScript entwickelt und Open-Source. Die Quellen stehen auf Github:'
+      links:
+        email_me: 'Hier klicken'
+        license:
+          mit: 'MIT-Lizenz'
+          cc:
+            by_sa_20: 'Namensnennung-Weitergabe unter gleichen Bedingungen 2.0 US-amerikanisch (nicht portiert)'
+            by_30: 'Creative Commons Namensnennung 3.0 Unported'
