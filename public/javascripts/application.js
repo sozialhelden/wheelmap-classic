@@ -72,7 +72,6 @@ function drawmap() {
   var mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik");
   map.addLayer(mapnik);
 
-
   checkForPermalink();
   jumpTo(lon, lat, zoom);
 
@@ -230,29 +229,18 @@ function createLayer() {
     );
     map.addLayer(layers[state]);
     selectControl = new OpenLayers.Control.SelectFeature(layers[state],
-      { onSelect: openPopup,
-        onUnselect: closePopup });
+      { onSelect:openPopup, onUnselect:closePopup });
     map.addControl(selectControl);
     selectControl.activate();  
 
-  });
-  
+  }); 
 }
 
-
 function lonLatToMercator(ll) {
-  // Originall formula
   // var lon = ll.lon * 20037508.34 / 180;
-  // Precalculated values:
-  // 20037508.34 / 180 = 
   var lon = ll.lon * 111319.49077777777;
-  // Originall formula
   // var lat = Math.log(Math.tan((90 + ll.lat) * Math.PI / 360)) / (Math.PI / 180);
-  // Precalculated values:
-  // Math.PI / 360 = 0.008726646259971648
-  // Math.PI / 180 = 0.017453292519943295
   var lat = Math.log(Math.tan((90 + ll.lat) * 0.008726646259971648)) / (0.017453292519943295);
-  // Originall formula
   // lat = lat * 20037508.34 / 180;
   lat = lat * 111319.49077777777;
   return new OpenLayers.LonLat(lon, lat);

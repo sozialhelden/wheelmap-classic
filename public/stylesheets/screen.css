@@ -7,18 +7,18 @@ html, body {
   overflow: hidden;
 }
 
-/* line 9, ../../app/stylesheets/vendor/_map.sass */
+/* line 8, ../../app/stylesheets/vendor/_map.sass */
 a {
   color: blue;
   text-decoration: none;
 }
-/* line 13, ../../app/stylesheets/vendor/_map.sass */
+/* line 12, ../../app/stylesheets/vendor/_map.sass */
 a:hover {
   color: #000011;
   text-decoration: underline;
 }
 
-/* line 18, ../../app/stylesheets/vendor/_map.sass */
+/* line 16, ../../app/stylesheets/vendor/_map.sass */
 #map {
   height: 100%;
   width: 100%;
@@ -29,20 +29,20 @@ a:hover {
   color: black;
 }
 
-/* line 28, ../../app/stylesheets/vendor/_map.sass */
+/* line 26, ../../app/stylesheets/vendor/_map.sass */
 .olFramedCloudPopupContent {
   font-size: 0.8em;
   font-family: Verdana, sans-serif;
 }
 
-/* line 32, ../../app/stylesheets/vendor/_map.sass */
+/* line 30, ../../app/stylesheets/vendor/_map.sass */
 .olControlPanZoomBar {
   left: inherit !important;
   right: 45px !important;
   top: 45px !important;
 }
 
-/* line 38, ../../app/stylesheets/vendor/_map.sass */
+/* line 36, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle {
   position: absolute;
   font-size: 1em;
@@ -59,13 +59,13 @@ a:hover {
   cursor: default;
   opacity: 0.7;
 }
-/* line 54, ../../app/stylesheets/vendor/_map.sass */
+/* line 52, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle:hover {
   background-color: white;
   opacity: 1;
 }
 
-/* line 59, ../../app/stylesheets/vendor/_map.sass */
+/* line 57, ../../app/stylesheets/vendor/_map.sass */
 #description {
   position: absolute;
   z-index: 10000;
@@ -78,7 +78,7 @@ a:hover {
   font-size: 12px;
 }
 
-/* line 71, ../../app/stylesheets/vendor/_map.sass */
+/* line 69, ../../app/stylesheets/vendor/_map.sass */
 #attribution {
   bottom: 0;
   left: 0;
@@ -89,14 +89,14 @@ a:hover {
   z-index: 1000;
 }
 
-/* line 81, ../../app/stylesheets/vendor/_map.sass */
+/* line 79, ../../app/stylesheets/vendor/_map.sass */
 #layer {
   position: absolute;
   top: 60px;
   right: 10px;
   z-index: 10002;
 }
-/* line 87, ../../app/stylesheets/vendor/_map.sass */
+/* line 85, ../../app/stylesheets/vendor/_map.sass */
 #layer > div {
   border: 1px solid black;
   background-color: white;
@@ -105,12 +105,12 @@ a:hover {
   cursor: default;
   margin-bottom: 4px;
 }
-/* line 96, ../../app/stylesheets/vendor/_map.sass */
+/* line 94, ../../app/stylesheets/vendor/_map.sass */
 #layer .active {
   background-color: #eeeeff;
 }
 
-/* line 100, ../../app/stylesheets/vendor/_map.sass */
+/* line 98, ../../app/stylesheets/vendor/_map.sass */
 .hide {
   display: none;
 }
@@ -302,12 +302,11 @@ aside {
 }
 
 /* line 25, ../../app/stylesheets/partials/_map.sass */
-#OpenLayers\.Layer\.OSM\.Mapnik_6,
-#OpenLayers\.Layer\.OSM\.Mapnik_7 {
+div[id^='OpenLayers\.Layer\.OSM\.Mapnik'] {
   opacity: 0.5;
 }
 
-/* line 29, ../../app/stylesheets/partials/_map.sass */
+/* line 28, ../../app/stylesheets/partials/_map.sass */
 image[width='16'] {
   cursor: pointer;
 }
