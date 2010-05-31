@@ -128,7 +128,7 @@ de:
         icons: "Icons:"
         license: "Lizenz:"
         geoip: GeoIP
-      comment: 'Diese Website ist mit Ruby on Rails und JavaScript entwickelt und Open-Source. Die Quellen stehen auf Github:'
+      comment: 'Diese Website ist mit Ruby on Rails und JavaScript entwickelt.'
       links:
         email_me: 'Hier klicken'
         license:

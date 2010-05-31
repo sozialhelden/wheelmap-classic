@@ -1,6 +1,6 @@
 class DataController < ApplicationController
 
-  before_filter :set_session_amenities
+  before_filter :set_session_amenities, :only => :index
 
   def index
     @places = Cloudmade.nodes(params[:bbox],params[:object_types])
@@ -8,7 +8,7 @@ class DataController < ApplicationController
   end
 
   def update
-    Delayed::Job.enqueue(UpdatingJob.new(params[:id], params[:wheelchair]))
+    Delayed::Job.enqueue(UpdatingJob.new(params[:id], params[:wheelchair], default_user.id))
     render :text => 'OK'
   end
   

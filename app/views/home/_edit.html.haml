@@ -1,0 +1,27 @@
+#edit
+  %h3
+    Neuen Platz anlegen
+  %p
+    Ziehe die Stecknadel an die Stelle, wo der Platz ist.
+    
+  - form_tag '/nodes', :style => 'padding:5px 10px;' do
+    %ol
+      %li
+        = label_tag :name
+        = text_field_tag :name
+      %li
+        = label_tag :type
+        %select#type{:name => 'node[type]'}
+          - Amenities.keys.sort_by().each do |group|
+            %optgroup{:label => group}
+              - Amenities[group].each do |attributes|
+                %option{:value => attributes.keys.first}
+                  = attributes.keys.first
+      %li
+        = label_tag :wheelchair
+        %select#wheelchair{:name => 'node[wheelchair]'}
+          %option{:value => '', :selected => 'selected'}= 'unknown'
+          - %w{yes no limited}.each do |status|
+            %option{:value => status}= status
+        
+    = submit_tag 'Speichern', :disable_with => "Please wait..."

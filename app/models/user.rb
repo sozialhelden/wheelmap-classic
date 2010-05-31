@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   validates_uniqueness_of :email, :case_sensitive => false
   validates_presence_of :email
+  
+  def application_authorized?
+    (oauth_token && oauth_secret)
+  end
 end

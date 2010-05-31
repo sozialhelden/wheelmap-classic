@@ -1,0 +1,24 @@
+Feature: Oauth feature
+  In order to make changes to the OSM db, we want to use oauth for authentication
+  As a registered user
+  I want change the wheelchair status of a node
+
+  Scenario: I want to see authorization page as anonymous user
+    Given I am not logged in
+    And I am on the home page
+    When I go to the oauth page
+    Then I should be redirected to the sign_in page
+    Then I should be on the sign_in page
+    
+  Scenario: I want to see authorization page as registered user
+  Given I am logged in
+  And I am on the home page
+  When I go to the oauth page
+  Then I should see "Link to your OpenStreetMap Account"
+  
+
+  Scenario: I want to authorize wheelmap on open street map
+  Given I am logged in
+  And I am on the oauth page
+  When I follow "Proceed"
+  Then I should be redirected to the authorization page

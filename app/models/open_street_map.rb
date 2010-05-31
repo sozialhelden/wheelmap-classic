@@ -5,43 +5,51 @@ module OpenStreetMap
   include HTTParty
   API_VERSION = "0.6".freeze
   #http://api.openstreetmap.org/api/0.6/changeset/create
-  base_uri "http://api.openstreetmap.org/api/#{API_VERSION}" #live
-  # base_uri "http://api06.dev.openstreetmap.org/" #test
-  basic_auth(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
+  # base_uri "http://api.openstreetmap.org/api/#{API_VERSION}" #live
+  base_uri "http://api06.dev.openstreetmap.org/api/#{API_VERSION}" #test
+  # basic_auth(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
   
   # This required a multistep 
-  def self.update(osmid, wheelchair)
+  def self.update(osmid, oauth, wheelchair)
     RAILS_DEFAULT_LOGGER.debug "Fetching node: #{osmid} ..."
     if (node = get_node(osmid))
       RAILS_DEFAULT_LOGGER.debug "Old version: #{node.version}"
       RAILS_DEFAULT_LOGGER.debug "Old changeset: #{node.changeset}"
       RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
-      changeset_id = create_changeset
+      changeset_id = create_changeset(oauth)
       RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
       node.set_wheelchair(wheelchair,changeset_id)
       RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
       RAILS_DEFAULT_LOGGER.debug node.inspect
       RAILS_DEFAULT_LOGGER.debug node.to_xml
-      new_version = put("/node/#{osmid}", :body => node.to_xml)
+      new_version = update_node(node,oauth)
       RAILS_DEFAULT_LOGGER.debug "New version: #{new_version}"
-      save_changeset(changeset_id)
+      save_changeset(changeset_id, oauth)
     end
   end
   
   def self.get_node(osmid)
     response = get("/node/#{osmid}")
     raise_errors(response)
+    RAILS_DEFAULT_LOGGER.debug(response.inspect)
     node = OpenStreetMap::Node.new(response['osm']['node'])
   end
   
-  def self.create_changeset
-    response = put("/changeset/create", :body => '<osm><changeset><tag k="created_by" v="wheelmap.org"/><tag k="comment" v="Modify accessibility status for node"/></changeset></osm>')
+  def self.update_node(node, oauth)
+    response = oauth.put("#{self.base_uri}/node/#{node.id}", node.to_xml)
     raise_errors(response)
-    response
+    response.body
   end
   
-  def self.save_changeset(id)
-    new_version = put("/changeset/#{id}/close")
+  def self.create_changeset(oauth)
+    response = oauth.put("#{self.base_uri}/changeset/create", '<osm><changeset><tag k="created_by" v="wheelmap.org"/><tag k="comment" v="Modify accessibility status for node"/></changeset></osm>')
+    raise_errors(response)
+    response.body
+  end
+  
+  def self.save_changeset(id, oauth)
+    response = oauth.put("#{self.base_uri}/changeset/#{id}/close")
+    raise_errors(response)
   end
   
   def self.raise_errors(response)

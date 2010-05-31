@@ -2,7 +2,7 @@
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
   # Configure the e-mail address which will be shown in DeviseMailer.
-  config.mailer_sender = "please-change-me@config-initializers-devise.com"
+  config.mailer_sender = "noreply@wheelmap.org"
   
   # Configure the content type of DeviseMailer mails (defaults to text/html")
   # config.mailer_content_type = "text/plain"
@@ -89,12 +89,12 @@ Devise.setup do |config|
   # allows you to setup OAuth, using http://github.com/roman/warden_oauth
   #
   # config.warden do |manager|
-  #   manager.oauth(:twitter) do |twitter|
-  #     twitter.consumer_secret = <YOUR CONSUMER SECRET>
-  #     twitter.consumer_key  = <YOUR CONSUMER KEY>
-  #     twitter.options :site => 'http://twitter.com'
+  #   manager.oauth(:osm) do |osm|
+  #     osm.consumer_secret = 'xnPLyMHp8azCcpHM4DrVe4TMNRb3wLdD14FabeTBbMI'
+  #     osm.consumer_key  = 'ZAnew1puEiw1NHvdI4EAyA'
+  #     osm.options :site => 'http://www.openstreetmap.org'
   #   end
-  #   manager.default_strategies.unshift :twitter_oauth
+  #   manager.default_strategies.unshift :osm_oauth
   # end
 
   # Configure default_url_options if you are using dynamic segments in :path_prefix

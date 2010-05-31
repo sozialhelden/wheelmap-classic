@@ -10,6 +10,18 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+      
+    when /the oauth page/
+      '/oauth'
+      
+    when /the new oauth page/
+      '/oauth/new'
+      
+    when /the sign_in page/
+      '/users/sign_in'
+    
+    when /the authorization page/
+      "http://api06.dev.openstreetmap.org/oauth/authorize?oauth_token="
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
