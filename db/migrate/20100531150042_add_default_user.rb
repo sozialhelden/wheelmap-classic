@@ -1,10 +1,9 @@
 class AddDefaultUser < ActiveRecord::Migration
-  class User <ActiveRecord::Base;end
   def self.up
-    User.create(:email => 'visitor@wheelmap.org', :password => 'NZ12noxUOR!')
+     User.create!(:email => 'visitor@wheelmap.org', :password => 'e5AGwTANzqKW', :password_confirmation => 'e5AGwTANzqKW')
   end
 
   def self.down
-    User.find_by_email(:email => 'visitor@wheelmap.org').destroy
+    User.find_by_email('visitor@wheelmap.org').destroy rescue nil
   end
 end
