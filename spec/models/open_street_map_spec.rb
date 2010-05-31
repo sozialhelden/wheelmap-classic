@@ -1,11 +1,17 @@
 require 'spec_helper'
 describe OpenStreetMap do
   
+  before(:each) do
+    @base_url = OpenStreetMapConfig.oauth_site
+    FakeWeb.allow_net_connect = false
+    @consumer = ::OAuth::Consumer.new(OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret, :site => @base_url)
+    @oauth = ::OAuth::AccessToken.new(@consumer, 'foo', 'bar')
+  end
+  
   describe 'method: get_node' do
   
     before(:each) do
-      @full_url = "http://wheelmap_visitor:B1lderbuch@api.openstreetmap.org/api/0.6/node/16581933"
-      FakeWeb.allow_net_connect = false
+      @full_url = "#{@base_url}/api/0.6/node/16581933"
     end
 
     it "should fetch node as xml data from API" do
@@ -31,27 +37,26 @@ describe OpenStreetMap do
   
   describe "method: create_changeset" do
     before(:each) do
-      @full_url = "http://wheelmap_visitor:B1lderbuch@api.openstreetmap.org/api/0.6/changeset/create"
-      FakeWeb.allow_net_connect = false
+      @full_url = "#{@base_url}/api/0.6/changeset/create"
     end
 
     it "should create a new changeset" do
       FakeWeb.register_uri(:put, @full_url, :body => "12345", :content_type => 'text/plain')
-      changeset_id = OpenStreetMap.create_changeset
+      changeset_id = OpenStreetMap.create_changeset(@oauth)
       changeset_id.should == '12345'
     end
     
     it "should raise bad request when submitting malformed xml" do
       FakeWeb.register_uri(:put, @full_url, :status => 400, :body => "Could not parse xml", :content_type => 'text/plain')
       lambda{
-        OpenStreetMap.create_changeset
+        OpenStreetMap.create_changeset(@oauth)
       }.should raise_error(OpenStreetMap::BadRequest)
     end
     
     it "should raise method not allowed exception when not using put request" do
       FakeWeb.register_uri(:put, @full_url, :status => 405, :body => "Just method put is supported", :content_type => 'text/plain')
       lambda{
-        OpenStreetMap.create_changeset
+        OpenStreetMap.create_changeset(@oauth)
       }.should raise_error(OpenStreetMap::MethodNotAllowed)
     end
   end

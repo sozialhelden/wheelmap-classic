@@ -30,9 +30,9 @@ config.action_mailer.delivery_method = :test
 config.gem 'rspec-rails', :version => '>= 1.3.2', :lib => false unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
 
 config.gem 'cucumber'
-config.gem 'rspec-rails', :lib => 'spec/rails'
-config.gem 'rspec', :lib => 'spec'
-config.gem 'fakeweb',                               :source => 'rubygems.org'
+config.gem 'rspec-rails', :version => '>= 1.3.2', :lib => 'spec/rails'
+config.gem 'rspec',       :version => '>= 1.3.0', :lib => 'spec'
+config.gem 'fakeweb'
 
 
 OSM_HOST      = 'api06.dev.openstreetmap.org'

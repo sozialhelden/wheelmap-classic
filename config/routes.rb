@@ -1,21 +1,19 @@
 ActionController::Routing::Routes.draw do |map|
-  map.devise_for :admins
-
-  map.devise_for :users
 
   map.root :controller => 'home', :action => 'index'
 
-  # map.update 'data/update/:osmid', :controller => 'data', :action => 'update'
+  map.devise_for :admins
 
-  # map.data 'data/*bbox', :controller => 'data', :action => 'data'
+  map.devise_for :users
+  map.resources :user, :only => :new # Fake route for redirection to OSM register page
   
   map.search 'search', :controller => 'search', :action => 'search'
   
-  map.resources :oauth, :collection => { :callback => :get }
+  map.resources :oauth, :only => [:new, :index], :collection => { :callback => :get, :osm_register => :get }
   
   map.resources :data, :only => [:index, :update]
   
-  map.resources :nodes, :only => :show
+  map.resources :nodes, :except => :index
   
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'

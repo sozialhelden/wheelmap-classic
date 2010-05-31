@@ -3,6 +3,8 @@ module OpenStreetMap
   class Node
     attr_accessor :lat, :lon, :user, :uid, :changeset, :uid, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair
     attr_accessor_with_default :changed, false
+
+
     def initialize(data)
       @lat = data['lat'].to_f
       @lon = data['lon'].to_f
@@ -26,7 +28,7 @@ module OpenStreetMap
     def extract_tags(data)
       tees = {}
       # this just happens, because a single k=>v pair is not wrapped in an array by default
-      [data['tag']].flatten.each do |tag_hash|
+      [data['tag']].flatten.compact.each do |tag_hash|
         key = tag_hash['k']
         value = tag_hash['v']
         tees[key] = value
