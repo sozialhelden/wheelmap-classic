@@ -5,12 +5,12 @@ require 'ostruct'
 
 Rails::Initializer.run do |config|
   
-  # config.gem 'compass',         :version => '0.10.1', :source => 'rubygems.org'
-  # config.gem 'redgreengrid',    :version => '0.3.2',  :source => 'rubygems.org'
-  # config.gem 'oauth',           :version => '0.4.0',  :source => 'rubygems.org'
-  # config.gem 'warden',          :version => '0.10.5',  :source => 'rubygems.org'
-  # config.gem 'devise',          :version => '1.0.7',  :source => 'rubygems.org'
-  # config.gem 'httparty',        :version => '0.5.2',  :source => 'rubygems.org'
+  config.gem 'compass',         :version => '0.10.1', :source => 'rubygems.org'
+  config.gem 'redgreengrid',    :version => '0.3.2',  :source => 'rubygems.org'
+  config.gem 'oauth',           :version => '0.4.0',  :source => 'rubygems.org'
+  config.gem 'warden',          :version => '0.10.5',  :source => 'rubygems.org'
+  config.gem 'devise',          :version => '1.0.7',  :source => 'rubygems.org'
+  config.gem 'httparty',        :version => '0.5.2',  :source => 'rubygems.org'
   config.i18n.default_locale = :de
 end
 
