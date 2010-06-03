@@ -11,7 +11,7 @@ dependencies:
   rails: 
     group: 
     - :default
-    version: = 2.3.8
+    version: = 2.3.5
   httparty: 
     group: 
     - :default
@@ -54,17 +54,17 @@ specs:
 - rake: 
     version: 0.8.7
 - activesupport: 
-    version: 2.3.8
+    version: 2.3.5
 - rack: 
     version: 1.1.0
 - actionpack: 
-    version: 2.3.8
+    version: 2.3.5
 - actionmailer: 
-    version: 2.3.8
+    version: 2.3.5
 - activerecord: 
-    version: 2.3.8
+    version: 2.3.5
 - activeresource: 
-    version: 2.3.8
+    version: 2.3.5
 - builder: 
     version: 2.1.2
 - haml: 
@@ -98,7 +98,7 @@ specs:
 - oauth: 
     version: 0.4.0
 - rails: 
-    version: 2.3.8
+    version: 2.3.5
 - redgreengrid: 
     version: 0.3.2
 - rspec: 
