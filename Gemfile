@@ -1,5 +1,5 @@
 source "http://rubygems.org"
-gem "rails", "2.3.8"
+gem "rails", "2.3.5"
 gem 'compass',      '~>0.10.1'
 gem 'redgreengrid', '0.3.2'
 gem 'oauth',        '~>0.4.0'
