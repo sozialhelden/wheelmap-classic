@@ -273,7 +273,7 @@ namespace :deploy do
       cd #{latest_release} && ln -s ../../#{File.join(relative_path(shared_path), 'config', 'cloudmade.yml')} config/cloudmade.yml
       cd #{latest_release} && ln -s ../../#{File.join(relative_path(shared_path), 'config', 'open_street_map.yml')} config/open_street_map.yml
     CMD
-
+  end
   # redefine deploy:finalize_update to create relative instead of absolute links
   # this is necessary in chrooted deployments  
   task :finalize_update, :except => { :no_release => true } do
