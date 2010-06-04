@@ -69,6 +69,7 @@
 ##      Just replace << USER NAME >> in the following line.                   ##
 ##                                                                            ##
         set :user, 'hagenburgercap'
+        set :ssh_options, :keys => [ File.expand_path("~/.ssh/wheelmap_rsa") ]
 ##                                                                            ##
 ##      Next, replace << PASSWORD >> in the following line by the one you     ##
 ##      just chose for your Shell-User.                                       ##
@@ -143,7 +144,7 @@
 ##      Please uncomment any of the following options if needed.              ##
 ##                                                                            ##
 #       set :git_enable_submodules, 1 
-#       set :git_shallow_clone, 1
+      set :git_shallow_clone, 1
 #       set :branch, 'master'
 ##                                                                            ##
 ##  D.  Redirect to your application                                          ##
@@ -241,6 +242,8 @@ role :app, domain
 role :web, domain
 role :db,  domain, :primary => true
 
+after 'deploy:update_code', 'deploy:symlinking'
+
 namespace :deploy do
 
   task( :start ) {}
@@ -263,6 +266,12 @@ namespace :deploy do
     end
     run "rm -f #{current_path} && cd #{deploy_to} && ln -s #{relative_path latest_release} #{relative_path current_path}"
   end
+  
+  # Link in some additional resources
+  task :symlinking do
+     run "ln -nfs #{shared_path}/config/cloudmade.yml #{release_path}/config/cloudmade.yml"
+     run "ln -nfs #{shared_path}/config/open_street_map.yml #{release_path}/config/open_street_map.yml"
+   end
 
   # redefine deploy:finalize_update to create relative instead of absolute links
   # this is necessary in chrooted deployments  
