@@ -270,8 +270,11 @@ namespace :deploy do
   # Link in some additional resources
   task :symlinking do
     run <<-CMD
-      cd #{latest_release} && ln -nfs ../../#{File.join(relative_path(shared_path), 'config', 'cloudmade.yml')} config/cloudmade.yml
-      cd #{latest_release} && ln -nfs ../../#{File.join(relative_path(shared_path), 'config', 'open_street_map.yml')} config/open_street_map.yml
+      cd #{latest_release}/config && ln -nfs ../../../#{File.join(relative_path(shared_path), 'config', 'cloudmade.yml')} cloudmade.yml &&
+    CMD
+    
+    run <<-CMD
+      cd #{latest_release}/config && ln -nfs ../../../#{File.join(relative_path(shared_path), 'config', 'open_street_map.yml')} open_street_map.yml
     CMD
   end
   # redefine deploy:finalize_update to create relative instead of absolute links
