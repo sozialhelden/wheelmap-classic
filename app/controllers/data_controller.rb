@@ -1,26 +1,19 @@
 class DataController < ApplicationController
 
+  before_filter :set_session_amenities, :only => :index
+
   def index
-    # @places = OpenStreetMap.nodes(params[:bbox].first)
-    Cloudmade.api_key = 'ff94b6ad4b174d648b9c491706f13579'
-    @places = Cloudmade.nodes(params[:bbox])
+    @places = Cloudmade.nodes(params[:bbox],params[:object_types])
     render :json => @places
   end
 
   def update
-    logger.warn "UPDATE driggered"
-    Cloudmade.api_key = 'ff94b6ad4b174d648b9c491706f13579'
-    Cloudmade.update(params[:osmid], params[:wheelchair])
-  #   
-  #   node = Node.find(params[:osmid])
-  #   node.wheelchair = params[:wheelchair]
-  #   if node.save_by!(:email => params[:email], :password => params[:password])
-  #     # redirect
-  #   else
-  #     # redirect & flash
-  #   end
-  # rescue
-  #   # redirect & flash
+    Delayed::Job.enqueue(UpdatingJob.new(params[:id], params[:wheelchair], default_user.id))
+    render :text => 'OK'
   end
-
+  
+  def set_session_amenities
+    object_types = params[:object_types].split(',') if params[:object_types]
+    session['amenities'] = object_types.flatten.compact.uniq unless object_types.blank?
+  end
 end

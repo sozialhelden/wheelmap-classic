@@ -1,10 +1,15 @@
 .DS_Store
+.bundle
 log/*.log
 log/*.pid
 tmp/*
 config/database.yml
+config/deploy.rb
+config/cloudmade.yml
+config/open_street_map.yml
 db/schema.rb
 config/*sphinx.conf
 db/sphinx
 db/*.sqlite3
 public/data/*
+mkmf.log

@@ -1,0 +1,3381 @@
+
+{
+    "features": 
+    [
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.51871,
+                     13.41507
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.51739,
+                     13.414
+                ],
+                 
+                [
+                    52.51971,
+                     13.41571
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "bridge": "viaduct",
+                 "railway": "light_rail",
+                 "electrified": "rail",
+                 "synthesized_name": "Light rail",
+                 "osm_id": "32590435"
+            },
+             "id": 27697808
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.51873,
+                     13.41511
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.5174,
+                     13.41403
+                ],
+                 
+                [
+                    52.51974,
+                     13.41575
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "bridge": "viaduct",
+                 "railway": "light_rail",
+                 "synthesized_name": "Light rail",
+                 "osm_id": "32590429"
+            },
+             "id": 27697796
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52097,
+                     13.41934
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52027,
+                     13.41697
+                ],
+                 
+                [
+                    52.52193,
+                     13.42177
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "access": "yes",
+                 "amenity": "parking",
+                 "fee": "yes",
+                 "synthesized_name": "Parking",
+                 "osm_id": "24241094",
+                 "wheelchair": "limited"
+            },
+             "id": 25094356
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.51397,
+                     13.47247
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.49501,
+                     13.41288
+                ],
+                 
+                [
+                    52.52228,
+                     13.52845
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "tunnel": "yes",
+                 "electrified": "rail",
+                 "railway": "subway",
+                 "name": "U5",
+                 "osm_id": "29030957"
+            },
+             "id": 26475120
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52055,
+                     13.40294
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52044,
+                     13.40205
+                ],
+                 
+                [
+                    52.52136,
+                     13.40362
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "university",
+                 "synthesized_name": "University",
+                 "osm_id": "43014724"
+            },
+             "id": 34076159
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.51238,
+                     13.3992
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.50558,
+                     13.37592
+                ],
+                 
+                [
+                    52.5381,
+                     13.41468
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "tunnel": "yes",
+                 "electrified": "rail",
+                 "railway": "subway",
+                 "name": "U2",
+                 "osm_id": "11685868"
+            },
+             "id": 23787262
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.51959,
+                     13.39643
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.51958,
+                     13.39642
+                ],
+                 
+                [
+                    52.51959,
+                     13.39643
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "post_box",
+                 "addr:postcode": "10117",
+                 "collection_times": "Mo Fr 17:15; Sa 16:15",
+                 "osm_id": "440655800",
+                 "operator": "Deutsche Post AG",
+                 "synthesized_name": "Post box"
+            },
+             "id": 15950965
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52712,
+                     13.39708
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52712,
+                     13.39708
+                ],
+                 
+                [
+                    52.52712,
+                     13.39708
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "cuisine": "spanish",
+                 "amenity": "restaurant",
+                 "name": "ruz",
+                 "osm_id": "521317627"
+            },
+             "id": 18091623
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52668,
+                     13.39677
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52668,
+                     13.39677
+                ],
+                 
+                [
+                    52.52668,
+                     13.39677
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "addr:housenumber": "24",
+                 "amenity": "bar",
+                 "addr:city": "Berlin",
+                 "url": "http://www.ballhaus.de",
+                 "addr:postcode": "10117",
+                 "name": "Clärchens Ballhaus",
+                 "osm_id": "429735547",
+                 "addr:country": "DE",
+                 "addr:street": "Auguststraße"
+            },
+             "id": 15694046
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.5169,
+                     13.38481
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.5052,
+                     13.37665
+                ],
+                 
+                [
+                    52.53029,
+                     13.39357
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "name": "S1 S2 S25",
+                 "tunnel": "yes",
+                 "oneway": "yes",
+                 "electrified": "rail",
+                 "osm_id": "29326643",
+                 "railway": "light_rail"
+            },
+             "id": 26557364
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52635,
+                     13.39868
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52635,
+                     13.39868
+                ],
+                 
+                [
+                    52.52636,
+                     13.39868
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "cuisine": "German",
+                 "amenity": "restaurant",
+                 "name": "Sophieneck",
+                 "osm_id": "322178039"
+            },
+             "id": 4327652
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52559,
+                     13.4002
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52541,
+                     13.39982
+                ],
+                 
+                [
+                    52.52564,
+                     13.40061
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "building": "yes",
+                 "amenity": "place_of_worship",
+                 "name": "Sophienkirche",
+                 "denomination": "evangelical",
+                 "religion": "christian",
+                 "osm_id": "23816415"
+            },
+             "id": 24998381
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.51675,
+                     13.38435
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.50387,
+                     13.3766
+                ],
+                 
+                [
+                    52.53028,
+                     13.39352
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "name": "S1 S2 S25",
+                 "tunnel": "yes",
+                 "oneway": "yes",
+                 "electrified": "rail",
+                 "osm_id": "4756292",
+                 "railway": "light_rail"
+            },
+             "id": 23438450
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.5238,
+                     13.39863
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.5238,
+                     13.39863
+                ],
+                 
+                [
+                    52.5238,
+                     13.39863
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "atm",
+                 "name": "Bank für Sozialwirtschaft",
+                 "osm_id": "78252154"
+            },
+             "id": 478133
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52373,
+                     13.39765
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52373,
+                     13.39765
+                ],
+                 
+                [
+                    52.52373,
+                     13.39765
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "railway": "tram_stop",
+                 "name": "Monbijouplatz",
+                 "osm_id": "244487237"
+            },
+             "id": 1697557
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.5229,
+                     13.39491
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52282,
+                     13.3944
+                ],
+                 
+                [
+                    52.52344,
+                     13.39551
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "university",
+                 "synthesized_name": "University",
+                 "osm_id": "43015803"
+            },
+             "id": 34076373
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52342,
+                     13.39461
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52342,
+                     13.39461
+                ],
+                 
+                [
+                    52.52342,
+                     13.39461
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "kindergarten",
+                 "name": "Kita der Humboldt Universität zu Berlin",
+                 "osm_id": "268916295"
+            },
+             "id": 2167954
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52497,
+                     13.39439
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52496,
+                     13.39439
+                ],
+                 
+                [
+                    52.52497,
+                     13.39439
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "religion": "jewish",
+                 "amenity": "place_of_worship",
+                 "synthesized_name": "Place of worship",
+                 "osm_id": "540342271"
+            },
+             "id": 18551498
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.5451,
+                     13.39023
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.46773,
+                     13.32554
+                ],
+                 
+                [
+                    52.59567,
+                     13.4312
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "tunnel": "yes",
+                 "electrified": "rail",
+                 "railway": "subway",
+                 "name": "U8",
+                 "osm_id": "4674972"
+            },
+             "id": 23427421
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52358,
+                     13.4068
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52357,
+                     13.4068
+                ],
+                 
+                [
+                    52.52358,
+                     13.4068
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "cuisine": "spanish",
+                 "amenity": "restaurant",
+                 "name": "Atame",
+                 "osm_id": "330160536"
+            },
+             "id": 4425925
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52392,
+                     13.40249
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52392,
+                     13.40249
+                ],
+                 
+                [
+                    52.52393,
+                     13.40249
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "website": "http://www.hackescher hof.de",
+                 "amenity": "restaurant",
+                 "name": "Hackescher Hof",
+                 "osm_id": "615149024"
+            },
+             "id": 22210282
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52401,
+                     13.40196
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52401,
+                     13.40196
+                ],
+                 
+                [
+                    52.52402,
+                     13.40196
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "website": "http://www.hoefekino.de",
+                 "operator": "Timebandits",
+                 "amenity": "cinema",
+                 "name": "Hackesche Höfe Kino",
+                 "osm_id": "343650200"
+            },
+             "id": 10858823
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52381,
+                     13.40268
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52381,
+                     13.40268
+                ],
+                 
+                [
+                    52.52381,
+                     13.40268
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "railway": "tram_stop",
+                 "synthesized_name": "Tram stop",
+                 "osm_id": "615142721"
+            },
+             "id": 22210079
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52403,
+                     13.40258
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52402,
+                     13.40258
+                ],
+                 
+                [
+                    52.52403,
+                     13.40258
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "cafe",
+                 "name": "Starbucks",
+                 "osm_id": "615152643"
+            },
+             "id": 22210327
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52411,
+                     13.40183
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.5241,
+                     13.40183
+                ],
+                 
+                [
+                    52.52411,
+                     13.40183
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "website": "http://www.oxymoron berlin.de",
+                 "operator": "Schliestedt & Partner",
+                 "amenity": "nightclub",
+                 "name": "Oxymoron",
+                 "osm_id": "615149995"
+            },
+             "id": 22210310
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52413,
+                     13.40239
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52413,
+                     13.40239
+                ],
+                 
+                [
+                    52.52413,
+                     13.40239
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "website": "http://www.hackesche hoefe.com/index.php?id=128",
+                 "amenity": "restaurant",
+                 "name": "Anatre",
+                 "osm_id": "615147093"
+            },
+             "id": 22210254
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52432,
+                     13.40102
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52432,
+                     13.40102
+                ],
+                 
+                [
+                    52.52433,
+                     13.40102
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "website": "http://www.atrans.org",
+                 "amenity": "arts_centre",
+                 "name": "A trans Pavilion",
+                 "osm_id": "615159347"
+            },
+             "id": 22210386
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52368,
+                     13.4011
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52368,
+                     13.4011
+                ],
+                 
+                [
+                    52.52368,
+                     13.4011
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "website": "http://www.berliner volksbank.de/die_bank0/standorte_berlin0/mitte/filiale_oranienburger.html",
+                 "opening_hours": "Mo,
+                Tu,
+                Th 10:00 18:00;We,
+                Fr 10:00 16:00",
+                 "amenity": "bank",
+                 "name": "Berliner Volksbank",
+                 "osm_id": "258050857"
+            },
+             "id": 1963450
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52383,
+                     13.39935
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52383,
+                     13.39935
+                ],
+                 
+                [
+                    52.52383,
+                     13.39935
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "cuisine": "American",
+                 "amenity": "restaurant",
+                 "name": "Sixties",
+                 "osm_id": "602315660"
+            },
+             "id": 21948170
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52356,
+                     13.39881
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52356,
+                     13.39881
+                ],
+                 
+                [
+                    52.52356,
+                     13.39881
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "telephone",
+                 "synthesized_name": "Telephone",
+                 "osm_id": "78252168"
+            },
+             "id": 478137
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52557,
+                     13.39743
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52503,
+                     13.39629
+                ],
+                 
+                [
+                    52.52648,
+                     13.3989
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "hospital",
+                 "name": "Sankt Hedwig Krankenhaus",
+                 "osm_id": "24054786"
+            },
+             "id": 25075852
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52456,
+                     13.40327
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52455,
+                     13.40327
+                ],
+                 
+                [
+                    52.52456,
+                     13.40327
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "pharmacy",
+                 "synthesized_name": "Pharmacy",
+                 "osm_id": "595536654"
+            },
+             "id": 19610526
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52483,
+                     13.40357
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52482,
+                     13.40357
+                ],
+                 
+                [
+                    52.52483,
+                     13.40357
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "cafe",
+                 "name": "Caras Gourmet",
+                 "osm_id": "457895060"
+            },
+             "id": 16524319
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.5259,
+                     13.41146
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.5259,
+                     13.41146
+                ],
+                 
+                [
+                    52.5259,
+                     13.41146
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "addr:housenumber": "6",
+                 "amenity": "cinema",
+                 "addr:city": "Berlin",
+                 "addr:postcode": "10178",
+                 "addr:street": "Hirtenstraße",
+                 "osm_id": "256754256",
+                 "club-mate": "yes",
+                 "addr:country": "DE",
+                 "name": "Babylon"
+            },
+             "id": 1932663
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52593,
+                     13.40396
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52593,
+                     13.40396
+                ],
+                 
+                [
+                    52.52593,
+                     13.40396
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "railway": "station",
+                 "station": "subway",
+                 "postal_code": "10119",
+                 "name": "U Weinmeisterstraße",
+                 "osm_id": "29494294"
+            },
+             "id": 156739
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.5262,
+                     13.40365
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.5262,
+                     13.40365
+                ],
+                 
+                [
+                    52.5262,
+                     13.40365
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "ref": "106983",
+                 "name": "U Weinmeisterstraße/Gipsstraße",
+                 "highway": "bus_stop",
+                 "osm_id": "616512991"
+            },
+             "id": 22240668
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52617,
+                     13.40443
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52616,
+                     13.40443
+                ],
+                 
+                [
+                    52.52617,
+                     13.40443
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "school",
+                 "synthesized_name": "School",
+                 "osm_id": "595536796"
+            },
+             "id": 19610530
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52719,
+                     13.41615
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52719,
+                     13.41615
+                ],
+                 
+                [
+                    52.52719,
+                     13.41615
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "name": "Mollstraße/ Prenzlauer Allee",
+                 "highway": "bus_stop",
+                 "osm_id": "196752275"
+            },
+             "id": 965034
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52496,
+                     13.4128
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52496,
+                     13.4128
+                ],
+                 
+                [
+                    52.52496,
+                     13.4128
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "restaurant",
+                 "name": "Der Alte Fritz",
+                 "osm_id": "89274639"
+            },
+             "id": 505705
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52512,
+                     13.413
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52512,
+                     13.413
+                ],
+                 
+                [
+                    52.52512,
+                     13.413
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "post_box",
+                 "name": "Karl Liebknecht Straße 29",
+                 "collection_times": "Mo Fr 13:00,
+                15:15,
+                17:00,
+                21:45; Sa 16:00; Su 10:45,
+                21:15",
+                 "postal_code": "10178",
+                 "osm_id": "319092510",
+                 "operator": "Deutsche Post AG"
+            },
+             "id": 4244808
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.5268,
+                     13.41415
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.5268,
+                     13.41415
+                ],
+                 
+                [
+                    52.5268,
+                     13.41415
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "pharmacy",
+                 "synthesized_name": "Pharmacy",
+                 "dispensing": "yes",
+                 "osm_id": "315465473"
+            },
+             "id": 4143380
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52546,
+                     13.41417
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52546,
+                     13.41417
+                ],
+                 
+                [
+                    52.52546,
+                     13.41417
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "parking",
+                 "synthesized_name": "Parking",
+                 "osm_id": "266540896"
+            },
+             "id": 2113428
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52549,
+                     13.40368
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52549,
+                     13.40368
+                ],
+                 
+                [
+                    52.52549,
+                     13.40368
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "post_box",
+                 "name": "Rosenthaler Straße 50 51",
+                 "collection_times": "Mo Fr 13:00,
+                15:00,
+                16:00,
+                17:00,
+                18:15,
+                21:15; Sa 14:00; Su 10:45,
+                21:15",
+                 "postal_code": "10178",
+                 "osm_id": "506357650",
+                 "operator": "Deutsche Post AG"
+            },
+             "id": 17820403
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52103,
+                     13.4114
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52103,
+                     13.4114
+                ],
+                 
+                [
+                    52.52103,
+                     13.4114
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "railway": "tram_stop",
+                 "ref": "308807;308802",
+                 "name": "S+U Alexanderplatz/Gontardstraße",
+                 "osm_id": "30731508"
+            },
+             "id": 185700
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52105,
+                     13.41164
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52105,
+                     13.41164
+                ],
+                 
+                [
+                    52.52105,
+                     13.41164
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "fast_food",
+                 "name": "Burger King",
+                 "osm_id": "318149468"
+            },
+             "id": 4224242
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52121,
+                     13.41185
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52121,
+                     13.41185
+                ],
+                 
+                [
+                    52.52122,
+                     13.41185
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "fast_food",
+                 "name": "Flammengrill",
+                 "osm_id": "318149466"
+            },
+             "id": 4224238
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52126,
+                     13.41248
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52085,
+                     13.41191
+                ],
+                 
+                [
+                    52.52166,
+                     13.41303
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "tunnel": "yes",
+                 "railway": "platform",
+                 "synthesized_name": "Platform",
+                 "osm_id": "48012113"
+            },
+             "id": 36518247
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52184,
+                     13.40966
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52184,
+                     13.40966
+                ],
+                 
+                [
+                    52.52184,
+                     13.40966
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "pharmacy",
+                 "name": "Panorama Apotheke",
+                 "osm_id": "89274697"
+            },
+             "id": 505713
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52143,
+                     13.41385
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52098,
+                     13.41288
+                ],
+                 
+                [
+                    52.52201,
+                     13.41475
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "tunnel": "yes",
+                 "railway": "platform",
+                 "synthesized_name": "Platform",
+                 "osm_id": "48012077"
+            },
+             "id": 36518235
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52101,
+                     13.41404
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52101,
+                     13.41404
+                ],
+                 
+                [
+                    52.52101,
+                     13.41404
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "bicycle_parking",
+                 "synthesized_name": "Bicycle parking",
+                 "osm_id": "315238504"
+            },
+             "id": 4131549
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52098,
+                     13.41389
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52097,
+                     13.41389
+                ],
+                 
+                [
+                    52.52098,
+                     13.41389
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "operator": "Telekom",
+                 "amenity": "telephone",
+                 "synthesized_name": "Telephone",
+                 "osm_id": "315140133"
+            },
+             "id": 4095272
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52158,
+                     13.4114
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52158,
+                     13.4114
+                ],
+                 
+                [
+                    52.52159,
+                     13.4114
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "wheelchair": "yes",
+                 "railway": "station",
+                 "station": "light_rail",
+                 "name": "S Alexanderplatz",
+                 "osm_id": "574265352"
+            },
+             "id": 19308399
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.5206,
+                     13.41268
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.5206,
+                     13.41268
+                ],
+                 
+                [
+                    52.5206,
+                     13.41268
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "cuisine": "chicken",
+                 "amenity": "fast_food",
+                 "name": "KFC",
+                 "osm_id": "602315662"
+            },
+             "id": 21948174
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.5205,
+                     13.41283
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.5205,
+                     13.41283
+                ],
+                 
+                [
+                    52.52051,
+                     13.41283
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "cuisine": "italian",
+                 "amenity": "fast_food",
+                 "name": "dapipo",
+                 "osm_id": "602315665"
+            },
+             "id": 21948176
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52035,
+                     13.41308
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52006,
+                     13.41265
+                ],
+                 
+                [
+                    52.52065,
+                     13.41351
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "bridge": "viaduct",
+                 "railway": "light_rail",
+                 "synthesized_name": "Light rail",
+                 "osm_id": "32590433"
+            },
+             "id": 27697804
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52168,
+                     13.41293
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52168,
+                     13.41293
+                ],
+                 
+                [
+                    52.52168,
+                     13.41293
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "operator": "Telekom",
+                 "amenity": "telephone",
+                 "synthesized_name": "Telephone",
+                 "osm_id": "315140151"
+            },
+             "id": 4095288
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52161,
+                     13.41308
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52161,
+                     13.41308
+                ],
+                 
+                [
+                    52.52161,
+                     13.41308
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "toilets",
+                 "fee": "yes",
+                 "name": "City Toilette",
+                 "wheelchair": "yes",
+                 "osm_id": "437290305",
+                 "operator": "Wall AG",
+                 "centralkey": "eurokey"
+            },
+             "id": 15892957
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52036,
+                     13.41163
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.51985,
+                     13.41033
+                ],
+                 
+                [
+                    52.52099,
+                     13.41288
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "tunnel": "yes",
+                 "electrified": "rail",
+                 "railway": "subway",
+                 "name": "U5",
+                 "osm_id": "4699210"
+            },
+             "id": 23430641
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52126,
+                     13.41366
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52126,
+                     13.41366
+                ],
+                 
+                [
+                    52.52126,
+                     13.41366
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "bicycle_parking",
+                 "synthesized_name": "Bicycle parking",
+                 "osm_id": "315238505"
+            },
+             "id": 4131551
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52018,
+                     13.41185
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52018,
+                     13.41185
+                ],
+                 
+                [
+                    52.52019,
+                     13.41185
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "restaurant",
+                 "name": "Linosa",
+                 "osm_id": "89274854",
+                 "wheelchair": "limited"
+            },
+             "id": 505724
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52427,
+                     13.41204
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52426,
+                     13.41204
+                ],
+                 
+                [
+                    52.52427,
+                     13.41204
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "restaurant",
+                 "name": "Las Olas",
+                 "osm_id": "89274695"
+            },
+             "id": 505709
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52374,
+                     13.41148
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52374,
+                     13.41148
+                ],
+                 
+                [
+                    52.52374,
+                     13.41148
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "restaurant",
+                 "name": "Marktschenke",
+                 "osm_id": "622600440"
+            },
+             "id": 22531187
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52351,
+                     13.4115
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52351,
+                     13.4115
+                ],
+                 
+                [
+                    52.52351,
+                     13.4115
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "railway": "tram_stop",
+                 "ref": "308818;308815",
+                 "name": "Memhardstraße",
+                 "osm_id": "30732068",
+                 "wheelchair": "unknown"
+            },
+             "id": 185773
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52365,
+                     13.41111
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52364,
+                     13.41111
+                ],
+                 
+                [
+                    52.52365,
+                     13.41111
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "restaurant",
+                 "name": "Ristorante Romantica",
+                 "osm_id": "89274696"
+            },
+             "id": 505711
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.5242,
+                     13.41369
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.5242,
+                     13.41369
+                ],
+                 
+                [
+                    52.5242,
+                     13.41369
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "public_building",
+                 "name": "Bundesministerium für Familie,
+                 Senioren,
+                 Frauen und Jugend",
+                 "osm_id": "262821045"
+            },
+             "id": 2046559
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52429,
+                     13.41185
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52429,
+                     13.41185
+                ],
+                 
+                [
+                    52.52429,
+                     13.41185
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "restaurant",
+                 "name": "Escados",
+                 "osm_id": "89274641"
+            },
+             "id": 505707
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52215,
+                     13.41473
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52215,
+                     13.41473
+                ],
+                 
+                [
+                    52.52216,
+                     13.41473
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "railway": "tram_stop",
+                 "ref": "308801;308808",
+                 "name": "U Alexanderplatz",
+                 "osm_id": "30731497"
+            },
+             "id": 185694
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52596,
+                     13.39366
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52595,
+                     13.39366
+                ],
+                 
+                [
+                    52.52596,
+                     13.39366
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "pub",
+                 "name": "Zosch",
+                 "osm_id": "614870344",
+                 "wheelchair": "unknown"
+            },
+             "id": 22200022
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52615,
+                     13.39376
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52615,
+                     13.39376
+                ],
+                 
+                [
+                    52.52615,
+                     13.39376
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "bar",
+                 "name": "Buchhandlung",
+                 "osm_id": "531795198"
+            },
+             "id": 18267230
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52506,
+                     13.39317
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52506,
+                     13.39317
+                ],
+                 
+                [
+                    52.52506,
+                     13.39317
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "public_building",
+                 "name": "Postfuhramt",
+                 "osm_id": "400905283"
+            },
+             "id": 14638894
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52462,
+                     13.40339
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52462,
+                     13.40338
+                ],
+                 
+                [
+                    52.52463,
+                     13.40339
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "telephone",
+                 "synthesized_name": "Telephone",
+                 "osm_id": "599578425"
+            },
+             "id": 21871626
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52547,
+                     13.40357
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52547,
+                     13.40356
+                ],
+                 
+                [
+                    52.52547,
+                     13.40357
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "name": "Gipsstraße",
+                 "shelter": "no",
+                 "wheelchair": "no",
+                 "tactile_paving": "no",
+                 "osm_id": "244487094",
+                 "railway": "tram_stop"
+            },
+             "id": 1697551
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52456,
+                     13.40324
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52456,
+                     13.40324
+                ],
+                 
+                [
+                    52.52457,
+                     13.40324
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "pharmacy",
+                 "synthesized_name": "Pharmacy",
+                 "osm_id": "257237176"
+            },
+             "id": 1938754
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52588,
+                     13.39866
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52587,
+                     13.39866
+                ],
+                 
+                [
+                    52.52588,
+                     13.39866
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "post_box",
+                 "synthesized_name": "Post box",
+                 "osm_id": "260919529"
+            },
+             "id": 2009991
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52437,
+                     13.4124
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52437,
+                     13.4124
+                ],
+                 
+                [
+                    52.52437,
+                     13.4124
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "synthesized_name": "Bus stop",
+                 "highway": "bus_stop",
+                 "osm_id": "270721876"
+            },
+             "id": 2211379
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52433,
+                     13.40168
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52433,
+                     13.40167
+                ],
+                 
+                [
+                    52.52434,
+                     13.40168
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "website": "http://www.cafe aedes.de",
+                 "amenity": "cafe",
+                 "name": "Café Aedes",
+                 "osm_id": "615155626"
+            },
+             "id": 22210329
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.5244,
+                     13.40142
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.5244,
+                     13.40142
+                ],
+                 
+                [
+                    52.5244,
+                     13.40142
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "website": "http://www.lumas.de",
+                 "amenity": "arts_centre",
+                 "name": "Lumas",
+                 "osm_id": "615158851"
+            },
+             "id": 22210374
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52457,
+                     13.40184
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52457,
+                     13.40184
+                ],
+                 
+                [
+                    52.52457,
+                     13.40184
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "addr:housenumber": "39",
+                 "amenity": "cinema",
+                 "name": "Central",
+                 "url": "kino central.de",
+                 "osm_id": "343650283",
+                 "club-mate": "yes",
+                 "addr:street": "Rosenthaler Straße"
+            },
+             "id": 10858826
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52322,
+                     13.40346
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52321,
+                     13.40346
+                ],
+                 
+                [
+                    52.52322,
+                     13.40346
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "post_box",
+                 "name": "An der Spandauer Brücke 7",
+                 "collection_times": "Mo Fr 13:00,
+                15:00,
+                16:00,
+                17:00,
+                21:15; Sa 14:00; Su 10:45,
+                21:15",
+                 "postal_code": "10178",
+                 "osm_id": "506357652",
+                 "operator": "Deutsche Post AG"
+            },
+             "id": 17820408
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52297,
+                     13.40375
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52291,
+                     13.40356
+                ],
+                 
+                [
+                    52.52303,
+                     13.40395
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "bridge": "yes",
+                 "railway": "light_rail",
+                 "electrified": "rail",
+                 "synthesized_name": "Light rail",
+                 "osm_id": "25086879"
+            },
+             "id": 25291342
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.51946,
+                     13.40014
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.51945,
+                     13.40014
+                ],
+                 
+                [
+                    52.51946,
+                     13.40014
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "toilets",
+                 "fee": "yes",
+                 "wheelchair": "yes",
+                 "synthesized_name": "Toilets",
+                 "osm_id": "288317535"
+            },
+             "id": 2572655
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.5208,
+                     13.40127
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52071,
+                     13.40072
+                ],
+                 
+                [
+                    52.52138,
+                     13.40169
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "university",
+                 "synthesized_name": "University",
+                 "osm_id": "43015507"
+            },
+             "id": 34076236
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.51944,
+                     13.40096
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.51858,
+                     13.40033
+                ],
+                 
+                [
+                    52.51955,
+                     13.40186
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "building": "yes",
+                 "amenity": "place_of_worship",
+                 "synthesized_name": "Place of worship",
+                 "osm_id": "23812372"
+            },
+             "id": 24997283
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.51924,
+                     13.40115
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.51889,
+                     13.40088
+                ],
+                 
+                [
+                    52.51924,
+                     13.40145
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "building": "yes",
+                 "amenity": "place_of_worship",
+                 "synthesized_name": "Place of worship",
+                 "osm_id": "24044997"
+            },
+             "id": 25072693
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52062,
+                     13.4013
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52062,
+                     13.4013
+                ],
+                 
+                [
+                    52.52062,
+                     13.4013
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "cafe",
+                 "name": "Allegretto",
+                 "osm_id": "534694571"
+            },
+             "id": 18379753
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52237,
+                     13.40071
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52237,
+                     13.40071
+                ],
+                 
+                [
+                    52.52237,
+                     13.40071
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "addr:housenumber": "10",
+                 "amenity": "nightclub",
+                 "addr:city": "Berlin",
+                 "url": "www.bangbangclub.net",
+                 "addr:postcode": "10178",
+                 "name": "Bang Bang Club",
+                 "osm_id": "565531790",
+                 "addr:country": "DE",
+                 "addr:street": "Neue Promenade"
+            },
+             "id": 19019500
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52343,
+                     13.40191
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52343,
+                     13.40191
+                ],
+                 
+                [
+                    52.52344,
+                     13.40191
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "bank",
+                 "name": "Sparkasse",
+                 "atm": "yes",
+                 "surveillance": "indoor",
+                 "osm_id": "213112439",
+                 "operator": "Landesbank Berlin"
+            },
+             "id": 1505220
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52397,
+                     13.40219
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52397,
+                     13.40218
+                ],
+                 
+                [
+                    52.52397,
+                     13.40219
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "website": "http://www.chamaeleonberlin.com",
+                 "amenity": "theatre",
+                 "name": "Chamäleon",
+                 "osm_id": "615148215"
+            },
+             "id": 22210268
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.51941,
+                     13.39667
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.51941,
+                     13.39667
+                ],
+                 
+                [
+                    52.51941,
+                     13.39667
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "library",
+                 "name": "Universitätsbibliothek",
+                 "osm_id": "538718199"
+            },
+             "id": 18508042
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52045,
+                     13.3934
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52025,
+                     13.39218
+                ],
+                 
+                [
+                    52.52089,
+                     13.39456
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "bridge": "viaduct",
+                 "railway": "light_rail",
+                 "electrified": "rail",
+                 "synthesized_name": "Light rail",
+                 "osm_id": "32590904"
+            },
+             "id": 27697957
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52042,
+                     13.39343
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52023,
+                     13.39219
+                ],
+                 
+                [
+                    52.52086,
+                     13.3946
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "bridge": "viaduct",
+                 "railway": "light_rail",
+                 "electrified": "rail",
+                 "synthesized_name": "Light rail",
+                 "osm_id": "25946682"
+            },
+             "id": 25555543
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52091,
+                     13.39404
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52091,
+                     13.39404
+                ],
+                 
+                [
+                    52.52091,
+                     13.39404
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "website": "http://www.12 apostel.de",
+                 "cuisine": "italian",
+                 "amenity": "restaurant",
+                 "name": "Die Zwölf Apostel Georgenstraße",
+                 "osm_id": "271892112"
+            },
+             "id": 2233284
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52103,
+                     13.39483
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52089,
+                     13.39456
+                ],
+                 
+                [
+                    52.52118,
+                     13.39511
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "bridge": "yes",
+                 "railway": "light_rail",
+                 "electrified": "rail",
+                 "synthesized_name": "Light rail",
+                 "osm_id": "32590903"
+            },
+             "id": 27697955
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.521,
+                     13.39488
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52086,
+                     13.39459
+                ],
+                 
+                [
+                    52.52114,
+                     13.39516
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "bridge": "yes",
+                 "railway": "light_rail",
+                 "electrified": "rail",
+                 "synthesized_name": "Light rail",
+                 "osm_id": "32590901"
+            },
+             "id": 27697951
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52147,
+                     13.39573
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52117,
+                     13.39511
+                ],
+                 
+                [
+                    52.52178,
+                     13.39636
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "bridge": "viaduct",
+                 "railway": "light_rail",
+                 "electrified": "rail",
+                 "synthesized_name": "Light rail",
+                 "osm_id": "32590896"
+            },
+             "id": 27697949
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52145,
+                     13.39579
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52114,
+                     13.39516
+                ],
+                 
+                [
+                    52.52176,
+                     13.39641
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "bridge": "viaduct",
+                 "railway": "light_rail",
+                 "electrified": "rail",
+                 "synthesized_name": "Light rail",
+                 "osm_id": "32590902"
+            },
+             "id": 27697953
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.51912,
+                     13.39853
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.51911,
+                     13.39853
+                ],
+                 
+                [
+                    52.51912,
+                     13.39853
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "amenity": "cafe",
+                 "name": "Café im Alten Museum",
+                 "osm_id": "305260598"
+            },
+             "id": 3812729
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52231,
+                     13.39869
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52206,
+                     13.39721
+                ],
+                 
+                [
+                    52.52235,
+                     13.4002
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "bridge": "viaduct",
+                 "railway": "light_rail",
+                 "electrified": "rail",
+                 "synthesized_name": "Light rail",
+                 "osm_id": "32590894"
+            },
+             "id": 27697945
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52234,
+                     13.39864
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52208,
+                     13.39714
+                ],
+                 
+                [
+                    52.52239,
+                     13.40017
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "bridge": "viaduct",
+                 "railway": "light_rail",
+                 "electrified": "rail",
+                 "synthesized_name": "Light rail",
+                 "osm_id": "32590653"
+            },
+             "id": 27697866
+        },
+         
+        {
+            "centroid": 
+            {
+                "type": "POINT",
+                 "coordinates": 
+                [
+                    52.52236,
+                     13.40035
+                ]
+            },
+             "bounds": 
+            [
+                [
+                    52.52235,
+                     13.4002
+                ],
+                 
+                [
+                    52.52236,
+                     13.40051
+                ]
+            ],
+             "type": "Feature",
+             "properties": 
+            {
+                "bridge": "yes",
+                 "railway": "light_rail",
+                 "electrified": "rail",
+                 "synthesized_name": "Light rail",
+                 "osm_id": "23809673"
+            },
+             "id": 24996646
+        }
+    ],
+     "found": 100,
+     "type": "FeatureCollection",
+     "bounds": 
+    [
+        [
+            52.46773,
+             13.32554
+        ],
+         
+        [
+            52.59567,
+             13.52845
+        ]
+    ],
+     "crs": 
+    {
+        "type": "EPSG",
+         "properties": 
+        {
+            "code": 4326,
+             "coordinate_order": 
+            [
+                0,
+                 1
+            ]
+        }
+    }
+}
