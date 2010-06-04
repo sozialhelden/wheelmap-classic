@@ -16,12 +16,20 @@ module NavigationHelpers
       
     when /the new oauth page/
       '/oauth/new'
+    
+    when /the callback page/
+      '/oauth/callback'
       
     when /the sign_in page/
       '/users/sign_in'
     
     when /the authorization page/
-      "http://api06.dev.openstreetmap.org/oauth/authorize?oauth_token="
+      "http://api06.dev.openstreetmap.org/oauth/authorize?oauth_token=#{session[:request_token].token}"
+
+    when /the registration page/
+      arguments = CGI.escape("/oauth/authorize?oauth_token=#{session[:request_token].token}")
+      "http://api06.dev.openstreetmap.org/user/new?referer=#{arguments}"
+    
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
