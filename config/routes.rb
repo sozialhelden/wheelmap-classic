@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :oauth, :only => [:new, :index], :collection => { :callback => :get, :osm_register => :get }
   
-  map.resources :data, :only => [:index, :update]
+  map.resources :data, :only => [:index]
   
   map.resources :nodes, :except => :index
   

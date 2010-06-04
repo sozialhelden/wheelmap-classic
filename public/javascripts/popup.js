@@ -114,7 +114,8 @@ function openPopup(feature) {
   feature.popup = popup;
   map.addPopup(popup);
   $('#button-' + node.osmid).click(function() {
-    $.ajax({ type: 'PUT', url: '/data/' + node.osmid , data: $('#update_form_'+node.osmid).serialize(),
+    var form = $('#update_form_'+node.osmid)
+    $.ajax({ type: form.attr('method'), url: form.attr('action') , data: form.serialize(),
       success: function(a,b,c) {
         alert('Platz aktualisiert');
         return false;
@@ -146,7 +147,7 @@ function popupHTML(node) {
   result += '<a href="/nodes/' + node.osmid + '">' + (node.name || node.type) + '</a></h2>';
   result += addressOfNode(node);
   result += tagList(node.tags);
-  result += '<form action="/data/' + node.osmid + '" id="update_form_' + node.osmid + '" method="put"';
+  result += '<form action="/nodes/' + node.osmid + '" id="update_form_' + node.osmid + '" method="put"';
   result += '<ol class="wheelchair">';
   result += stateHTML('yes', 'barrierefrei');
   result += stateHTML('limited', 'teilweise barrierefrei');
