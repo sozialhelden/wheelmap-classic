@@ -237,6 +237,7 @@
 set :gem_home, "/var/www/#{domain}/.gem"
 set :deploy_via, :copy
 set :use_sudo, false
+set :default_environment, {'GEM_HOME' => '/.gem', 'GEM_PATH' => '/.gem:/opt/ruby-enterprise/lib/ruby/gems/1.8'}
 
 role :app, domain
 role :web, domain
@@ -338,7 +339,7 @@ EOF
   
   desc "Create .htaccess file"
   task :configure_app_root do
-    run "echo 'PassengerAppRoot #{File.join '/var/www', domain, 'u/apps', application, relative_path(latest_release)}' >> #{File.join latest_release, 'public', '.htaccess'}"
+    run "echo $'\\nPassengerAppRoot #{File.join '/var/www', domain, 'u/apps', application, relative_path(latest_release)}' >> #{File.join latest_release, 'public', '.htaccess'}"
   end
   
   desc "Create application symlink"
