@@ -7,18 +7,18 @@ html, body {
   overflow: hidden;
 }
 
-/* line 9, ../../app/stylesheets/vendor/_map.sass */
+/* line 8, ../../app/stylesheets/vendor/_map.sass */
 a {
   color: blue;
   text-decoration: none;
 }
-/* line 13, ../../app/stylesheets/vendor/_map.sass */
+/* line 12, ../../app/stylesheets/vendor/_map.sass */
 a:hover {
   color: #000011;
   text-decoration: underline;
 }
 
-/* line 18, ../../app/stylesheets/vendor/_map.sass */
+/* line 16, ../../app/stylesheets/vendor/_map.sass */
 #map {
   height: 100%;
   width: 100%;
@@ -29,13 +29,20 @@ a:hover {
   color: black;
 }
 
-/* line 28, ../../app/stylesheets/vendor/_map.sass */
+/* line 26, ../../app/stylesheets/vendor/_map.sass */
 .olFramedCloudPopupContent {
   font-size: 0.8em;
   font-family: Verdana, sans-serif;
 }
 
-/* line 33, ../../app/stylesheets/vendor/_map.sass */
+/* line 30, ../../app/stylesheets/vendor/_map.sass */
+.olControlPanZoomBar {
+  left: inherit !important;
+  right: 45px !important;
+  top: 45px !important;
+}
+
+/* line 36, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle {
   position: absolute;
   font-size: 1em;
@@ -52,13 +59,13 @@ a:hover {
   cursor: default;
   opacity: 0.7;
 }
-/* line 49, ../../app/stylesheets/vendor/_map.sass */
+/* line 52, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle:hover {
   background-color: white;
   opacity: 1;
 }
 
-/* line 54, ../../app/stylesheets/vendor/_map.sass */
+/* line 57, ../../app/stylesheets/vendor/_map.sass */
 #description {
   position: absolute;
   z-index: 10000;
@@ -71,7 +78,7 @@ a:hover {
   font-size: 12px;
 }
 
-/* line 66, ../../app/stylesheets/vendor/_map.sass */
+/* line 69, ../../app/stylesheets/vendor/_map.sass */
 #attribution {
   bottom: 0;
   left: 0;
@@ -82,14 +89,14 @@ a:hover {
   z-index: 1000;
 }
 
-/* line 76, ../../app/stylesheets/vendor/_map.sass */
+/* line 79, ../../app/stylesheets/vendor/_map.sass */
 #layer {
   position: absolute;
   top: 60px;
   right: 10px;
   z-index: 10002;
 }
-/* line 82, ../../app/stylesheets/vendor/_map.sass */
+/* line 85, ../../app/stylesheets/vendor/_map.sass */
 #layer > div {
   border: 1px solid black;
   background-color: white;
@@ -98,69 +105,69 @@ a:hover {
   cursor: default;
   margin-bottom: 4px;
 }
-/* line 91, ../../app/stylesheets/vendor/_map.sass */
+/* line 94, ../../app/stylesheets/vendor/_map.sass */
 #layer .active {
   background-color: #eeeeff;
 }
 
-/* line 95, ../../app/stylesheets/vendor/_map.sass */
+/* line 98, ../../app/stylesheets/vendor/_map.sass */
 .hide {
   display: none;
 }
 
-/* line 1, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 1, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 a, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, p, pre, span, th, td {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
 }
 
-/* line 6, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 6, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 10, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 10, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 fieldset, img {
   border: 0;
 }
 
-/* line 13, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 13, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 address, em, th {
   font-style: normal;
   font-weight: normal;
 }
 
-/* line 17, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 17, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 li {
   list-style: none;
 }
 
-/* line 20, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 20, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 th {
   font-style: normal;
   text-align: left;
 }
 
-/* line 24, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 24, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 h1, h2, h3, h4, h5, h6, small {
   font-size: 100%;
 }
 
-/* line 27, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 27, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 input, textarea, select {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
 }
 
-/* line 33, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 33, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 .msie input, .msie textarea, .msie select {
   font-size: 100%;
 }
 
-/* line 36, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 36, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 header, section, article, aside, footer, time {
   display: block;
 }
@@ -193,7 +200,7 @@ h1 {
   line-height: 40px;
   position: relative;
 }
-/* line 3, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_browser_support.sass */
+/* line 3, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_browser_support.sass */
 .presto h1 {
   bottom: 1px;
 }
@@ -216,7 +223,7 @@ header {
   overflow: hidden;
   display: inline-block;
 }
-/* line 8, ../../vendor/gems/compass-0.10.0/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
 header {
   display: block;
 }
@@ -295,12 +302,11 @@ aside {
 }
 
 /* line 25, ../../app/stylesheets/partials/_map.sass */
-#OpenLayers\.Layer\.OSM\.Mapnik_6,
-#OpenLayers\.Layer\.OSM\.Mapnik_7 {
+div[id^='OpenLayers\.Layer\.OSM\.Mapnik'] {
   opacity: 0.5;
 }
 
-/* line 29, ../../app/stylesheets/partials/_map.sass */
+/* line 28, ../../app/stylesheets/partials/_map.sass */
 image[width='16'] {
   cursor: pointer;
 }
@@ -325,6 +331,50 @@ image[width='16'] {
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
   -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
   box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+}
+
+/* line 1, ../../app/stylesheets/partials/_edit.sass */
+#edit {
+  right: 60px;
+  position: absolute;
+  top: 50px;
+  width: 300px;
+  z-index: 5000;
+  background-color: #e7ebe2;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #e7ebe2), color-stop(1, #cfd7c5));
+  background-image: -moz-linear-gradient(center bottom, #cfd7c5 0%, #e7ebe2 50%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#cfd7c5', startColorstr='white', gradientType='0');
+  background-color: white;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -khtml-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+}
+
+/* line 1, ../../app/stylesheets/partials/_oauth.sass */
+#oauth {
+  width: 960px;
+  vertical-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 7, ../../app/stylesheets/partials/_oauth.sass */
+#oauth h1 {
+  padding-top: 30px;
+}
+/* line 11, ../../app/stylesheets/partials/_oauth.sass */
+#oauth ol li {
+  display: block;
+  width: 310px;
+  float: left;
+}
+/* line 16, ../../app/stylesheets/partials/_oauth.sass */
+#oauth .clear {
+  clear: both;
 }
 
 /* line 1, ../../app/stylesheets/partials/_bar.sass */
@@ -427,7 +477,7 @@ image[width='16'] {
   overflow: hidden;
   display: inline-block;
 }
-/* line 8, ../../vendor/gems/compass-0.10.0/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
 #links {
   display: block;
 }
@@ -523,7 +573,7 @@ a:visited:hover {
 }
 
 /* line 33, ../../app/stylesheets/partials/_icons.sass */
-.arts-centre {
+.arts_centre {
   background-image: url('/images/icons/palette.png?1273651346') !important;
   border: 0;
 }
@@ -553,7 +603,7 @@ a:visited:hover {
 }
 
 /* line 66, ../../app/stylesheets/partials/_icons.sass */
-.bureau-de-change {
+.bureau_de_change {
   background-image: url('/images/icons/bureau-de-change.png?1273651346') !important;
   border: 0;
 }
@@ -565,13 +615,13 @@ a:visited:hover {
 }
 
 /* line 72, ../../app/stylesheets/partials/_icons.sass */
-.car-rental {
+.car_rental {
   background-image: url('/images/icons/car-rental.png?1273651346') !important;
   border: 0;
 }
 
 /* line 75, ../../app/stylesheets/partials/_icons.sass */
-.car-sharing {
+.car_sharing {
   background-image: url('/images/icons/car-sharing.png?1273651346') !important;
   border: 0;
 }
@@ -589,7 +639,7 @@ a:visited:hover {
 }
 
 /* line 84, ../../app/stylesheets/partials/_icons.sass */
-.coast-guard {
+.coast_guard {
   background-image: url('/images/icons/lifebuoy.png?1273651346') !important;
   border: 0;
 }
@@ -607,19 +657,19 @@ a:visited:hover {
 }
 
 /* line 108, ../../app/stylesheets/partials/_icons.sass */
-.fast-food {
+.fast_food {
   background-image: url('/images/icons/fast-food.png?1273651346') !important;
   border: 0;
 }
 
 /* line 111, ../../app/stylesheets/partials/_icons.sass */
-.fire-hydrant {
+.fire_hydrant {
   background-image: url('/images/icons/fire.png?1273651346') !important;
   border: 0;
 }
 
 /* line 114, ../../app/stylesheets/partials/_icons.sass */
-.fire-station {
+.fire_station {
   background-image: url('/images/icons/fire-station.png?1273651346') !important;
   border: 0;
 }
@@ -631,7 +681,7 @@ a:visited:hover {
 }
 
 /* line 132, ../../app/stylesheets/partials/_icons.sass */
-.hunting-stand {
+.hunting_stand {
   background-image: url('/images/icons/target.png?1273651346') !important;
   border: 0;
 }
@@ -679,13 +729,13 @@ a:visited:hover {
 }
 
 /* line 162, ../../app/stylesheets/partials/_icons.sass */
-.post-box {
+.post_box {
   background-image: url('/images/icons/mail.png?1273651346') !important;
   border: 0;
 }
 
 /* line 165, ../../app/stylesheets/partials/_icons.sass */
-.post-office {
+.post_office {
   background-image: url('/images/icons/post-office.png?1273651346') !important;
   border: 0;
 }
@@ -697,7 +747,7 @@ a:visited:hover {
 }
 
 /* line 174, ../../app/stylesheets/partials/_icons.sass */
-.place-of-worship {
+.place_of_worship {
   background-image: url('/images/icons/bell.png?1273651346') !important;
   border: 0;
 }
@@ -739,25 +789,25 @@ a:visited:hover {
 }
 
 /* line 231, ../../app/stylesheets/partials/_icons.sass */
-.light-rail {
+.light_rail {
   background-image: url('/images/icons/public-transport-light-rail-germany.png?1273651346') !important;
   border: 0;
 }
 
 /* line 234, ../../app/stylesheets/partials/_icons.sass */
-.tram-stop {
+.tram_stop {
   background-image: url('/images/icons/public-transport-tram-germany.png?1273651346') !important;
   border: 0;
 }
 
 /* line 237, ../../app/stylesheets/partials/_icons.sass */
-.bus-stop {
+.bus_stop {
   background-image: url('/images/icons/public-transport-bus-germany.png?1273651346') !important;
   border: 0;
 }
 
 /* line 240, ../../app/stylesheets/partials/_icons.sass */
-.ferry-terminal {
+.ferry_terminal {
   background-image: url('/images/icons/public-transport-ferry-germany.png?1273651346') !important;
   border: 0;
 }
@@ -774,7 +824,7 @@ a:visited:hover {
   overflow: hidden;
   display: inline-block;
 }
-/* line 8, ../../vendor/gems/compass-0.10.0/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
 #amenities {
   display: block;
 }
@@ -900,7 +950,7 @@ a:visited:hover {
   overflow: hidden;
   display: inline-block;
 }
-/* line 8, ../../vendor/gems/compass-0.10.0/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
 .popup dl {
   display: block;
 }

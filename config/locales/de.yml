@@ -52,6 +52,69 @@ de:
   common:
     close: schließen
   home:
+    index:
+      amenities:
+        headline:
+          public_transfer: Nahverkehr
+          food: 'Essen & Trinken'
+          money: Geld
+          leisure: Freizeit
+          government: 'Botschaften & Behörden'
+          post: Post
+          health: Medizin
+          car: 'Auto & Fahrrad'
+          misc: Sonstiges
+          education: 'Kinder & Bildung'
+        title:
+          subway: U-Bahn
+          ferry_terminal: Fähre
+          bus_stop: Bus
+          tram_stop: Straßenbahn
+          light_rail: S-Bahn
+          cafe: Café
+          pub: Pub
+          bar: Bar
+          fast_food: Fast Food
+          restaurant: Restaurant
+          biergarten: Biergarten
+          nightclub: Nachtclub
+          theatre: Theater
+          sauna: Sauna
+          arts_centre: Kunstzentrum
+          atm: Geldautomat
+          bank: Bank
+          bureau_de_change: Geldwechselbüro
+          embassy: Botschaft
+          courthouse: Gericht
+          police: Polizeiwache
+          fire_station: Feuerwache
+          cinema: Kino
+          shop: Geschäft
+          post_box: Briefkasten
+          post_office: Postfiliale
+          public_building: Öffentliches Gebäude
+          register_office: Meldestelle
+          townhall: Stadthalle
+          community_centre: Gemeindezentrum
+          hospital: Krankenhaus
+          pharmacy: Apotheke
+          fuel: Tankstelle
+          car_rental: Autovermietung
+          car_sharing: Car sharing
+          parking: Parkplatz/Parkhaus
+          bicycle_parking: Fahradparkplatz
+          bicycle_rental: Fahradvermietung
+          kindergarten: Kindergarten
+          school: Schule
+          college: Hochschule
+          university: Universität
+          library: Bibliothek
+          market_place: Markplatz
+          telephone: Öffentliches Telefon
+          toilets: Öffentliche Toilette
+          grave_yard: Friedhof
+          place_of_worship: Kirche
+          
     imprint:
       headline: Impressum
       fields:
@@ -64,4 +127,12 @@ de:
         application: "Anwendung:"
         icons: "Icons:"
         license: "Lizenz:"
-      comment: Diese Website ist mit Ruby on Rails und JavaScript entwickelt und Open-Source. Die Quellen stehen auf Github:
+        geoip: GeoIP
+      comment: 'Diese Website ist mit Ruby on Rails und JavaScript entwickelt.'
+      links:
+        email_me: 'Hier klicken'
+        license:
+          mit: 'MIT-Lizenz'
+          cc:
+            by_sa_20: 'Namensnennung-Weitergabe unter gleichen Bedingungen 2.0 US-amerikanisch (nicht portiert)'
+            by_30: 'Creative Commons Namensnennung 3.0 Unported'

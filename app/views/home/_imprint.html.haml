@@ -15,7 +15,7 @@
     %dt=t('.fields.phone')
     %dd +49 170 770 23 88
     %dt=t('.fields.email')
-    %dd= link_to 'Hier klicken', 'http://mailhide.recaptcha.net/d?k=018AE3jmHiC10N_60OQ1GNuA==&c=r1mLG_VQKwz0nC3dM5UwKJXLH4iRUf5BWzLHRKicH20='
+    %dd= link_to t('.links.email_me'), 'http://mailhide.recaptcha.net/d?k=018AE3jmHiC10N_60OQ1GNuA==&c=r1mLG_VQKwz0nC3dM5UwKJXLH4iRUf5BWzLHRKicH20='
     %dt=t('.fields.design')
     %dd
       = link_to 'Nico Hagenburger', 'http://www.hagenburger.net', :title => 'Sass, Compass, Haml, Ruby on Rails'
@@ -28,19 +28,18 @@
       = link_to 'Yusuke Kamiyamane', 'http://p.yusukekamiyamane.com/'
       %br
       = link_to 'Nico Hagenburger', 'http://www.hagenburger.net', :title => 'Sass, Compass, Haml, Ruby on Rails'
+    %dt=t('.fields.geoip')
+    %dd
+      = link_to 'MaxMind', 'http://www.maxmind.com/', :title => 'Geolocation and Online Fraud Prevention'
     %dt=t('.fields.license')
     %dd
       =t('.fields.maps_and_data')
       %br
-      = link_to 'Namensnennung-Weitergabe unter gleichen Bedingungen 2.0 US-amerikanisch (nicht portiert)', 'http://creativecommons.org/licenses/by-sa/2.0/deed.de', :class => 'cc-by-sa'
+      = link_to t('.links.license.cc.by_sa_20'), 'http://creativecommons.org/licenses/by-sa/2.0/deed.de', :class => 'cc-by-sa'
       %br
       =t('.fields.icons')
       %br
-      = link_to 'Creative Commons Namensnennung 3.0 Unported', 'http://creativecommons.org/licenses/by/3.0/deed.de', :class => 'cc-by'
-      %br
-      =t('.fields.application')
-      %br
-      = link_to 'MIT-Licence', 'http://github.com/sozialhelden/wheelmap/blob/master/MIT-LICENCE'
+      = link_to t('.links.license.cc.by_30'), 'http://creativecommons.org/licenses/by/3.0/deed.de', :class => 'cc-by'
+
   %p
     =t('.comment')
-    = link_to 'http://github.com/sozialhelden/wheelmap', 'http://github.com/sozialhelden/wheelmap'
