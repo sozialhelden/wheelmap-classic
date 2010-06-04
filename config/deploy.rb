@@ -270,7 +270,7 @@ namespace :deploy do
   # Link in some additional resources
   task :symlinking do
     run <<-CMD
-      cd #{latest_release}/config && ln -nfs ../../../#{File.join(relative_path(shared_path), 'config', 'cloudmade.yml')} cloudmade.yml &&
+      cd #{latest_release}/config && ln -nfs ../../../#{File.join(relative_path(shared_path), 'config', 'cloudmade.yml')} cloudmade.yml
     CMD
     
     run <<-CMD
