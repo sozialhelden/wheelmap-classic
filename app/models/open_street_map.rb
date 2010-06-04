@@ -34,7 +34,7 @@ module OpenStreetMap
     RAILS_DEFAULT_LOGGER.debug(response.inspect)
     node = OpenStreetMap::Node.new(response['osm']['node'])
   end
-  
+    
   def self.update_node(node, oauth)
     response = oauth.put("#{self.base_uri}/node/#{node.id}", node.to_xml)
     raise_errors(response)

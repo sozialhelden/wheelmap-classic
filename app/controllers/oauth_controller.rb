@@ -17,7 +17,8 @@ class OauthController < ApplicationController
     @consumer = OAuth::Consumer.new(OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret, :site => OpenStreetMapConfig.oauth_site)
     request_token = @consumer.get_request_token
     session[:request_token] = request_token
-    redirect_url = url_for(:host => 'www.openstreetmap.org', :controller => 'user', :action => 'new', :referer => "/oauth/authorize?oauth_token=#{request_token.token}")
+    host = URI.parse(OpenStreetMapConfig.oauth_site).host
+    redirect_url = url_for(:host => host, :controller => 'user', :action => 'new', :referer => "/oauth/authorize?oauth_token=#{request_token.token}")
     redirect_to redirect_url
   end
 
