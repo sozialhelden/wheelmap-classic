@@ -81,16 +81,16 @@ describe NodesController do
     
       it "should create CreateJob for given node attributes" do
         lambda{
-            post(:create, :node => {:name => 'test node', :wheelchair => 'yes', :lat => '52.4', :lon => '13.9'})
+            post(:create, :node => {:lat => '52.4', :lon => '13.9', :tags => {:name => 'test name', :wheelchair => 'yes'}})
           }.should change(CreateJob, :count).by(1)
       end
       
       it "should have correct values for UpdateJob" do
-        post(:create, :node => {:name => 'test node', :wheelchair => 'yes', :lat => '52.4', :lon => '13.9'})
+        post(:create, :node => {:lat => '52.4', :lon => '13.9', :tags => {:name => 'test node', :wheelchair => 'yes'}})
         job = YAML.load(CreateJob.last.handler)
         job.user_id.should == @another_user.id
-        job.node['name'].should == 'test node'
-        job.node['wheelchair'].should == 'yes'
+        job.node['tags']['name'].should == 'test node'
+        job.node['tags']['wheelchair'].should == 'yes'
         job.node['lat'].should == '52.4'
         job.node['lon'].should == '13.9'
       end
