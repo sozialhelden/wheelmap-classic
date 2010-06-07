@@ -1,0 +1,114 @@
+require 'spec_helper'
+
+class UpdateJob < ActiveRecord::Base
+  set_table_name 'delayed_jobs'
+end
+
+class CreateJob < ActiveRecord::Base
+  set_table_name 'delayed_jobs'
+end
+
+describe NodesController do
+  include Devise::TestHelpers
+
+  before(:each) do
+    # default visitor user
+    @default_user = Factory.create(:user)
+    @another_user = Factory.create(:user, :email => 'test@rspec.org')
+  end
+  
+  describe "action: UPDATE" do
+    
+    describe "signed_in" do
+      
+      before(:each) do
+        sign_in @another_user
+      end
+      
+      it "should create UpdateJob for given node" do
+         lambda{
+            put(:update, :id => 1234, :wheelchair => 'yes')
+          }.should change(UpdateJob, :count).by(1)
+      end
+      
+      it "should have correct values for UpdateJob" do
+        put(:update, :id => 1234, :wheelchair => 'yes')
+        job = YAML.load(UpdateJob.last.handler)
+        job.user_id.should == @another_user.id
+        job.osmid.should == '1234'
+        job.wheelchair.should == 'yes'
+      end
+  
+      it "should not update node if wheelchair is missing" do
+        response = put(:update, :id => 1234)
+        response.code.should == '400'
+        response.body.should == "Params missing"
+      end
+      
+    end
+    
+    describe "anonymous" do
+  
+      it "should create UpdateJob for given node" do
+         lambda{
+            put(:update, :id => 1234, :wheelchair => 'yes')
+          }.should change(UpdateJob, :count).by(1)
+      end
+      
+      it "should have correct values for UpdateJob" do
+        put(:update, :id => 1234, :wheelchair => 'yes')
+        job = YAML.load(UpdateJob.last.handler)
+        job.user_id.should == @default_user.id
+        job.osmid.should == '1234'
+        job.wheelchair.should == 'yes'
+      end
+  
+      it "should not update node if wheelchair is missing" do
+        response = put(:update, :id => 1234)
+        response.code.should == '400'
+        response.body.should == "Params missing"
+      end
+    end
+  end
+  
+  describe "action: CREATE" do
+    
+    describe "signed_in" do
+    
+      before(:each) do
+        sign_in @another_user
+      end
+    
+      it "should create CreateJob for given node attributes" do
+        lambda{
+            post(:create, :node => {:name => 'test node', :wheelchair => 'yes', :lat => '52.4', :lon => '13.9'})
+          }.should change(CreateJob, :count).by(1)
+      end
+      
+      it "should have correct values for UpdateJob" do
+        post(:create, :node => {:name => 'test node', :wheelchair => 'yes', :lat => '52.4', :lon => '13.9'})
+        job = YAML.load(CreateJob.last.handler)
+        job.user_id.should == @another_user.id
+        job.node['name'].should == 'test node'
+        job.node['wheelchair'].should == 'yes'
+        job.node['lat'].should == '52.4'
+        job.node['lon'].should == '13.9'
+      end
+    
+      it "should not create node if node is missing" do
+        response = post(:create, :id => 1234)
+        response.code.should == '400'
+        response.body.should == "Params missing"
+      end
+    end
+    
+    describe "anonymous" do
+      
+      it "should redirect to sign_in page" do
+        post(:create, :node => {:name => 'test node', :wheelchair => 'yes', :lat => '52.4', :lon => '13.9'})
+        response.should redirect_to 'http://test.host/users/sign_in?unauthenticated=true'
+      end
+    end
+    
+  end
+end

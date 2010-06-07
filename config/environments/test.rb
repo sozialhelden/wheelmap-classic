@@ -27,12 +27,13 @@ config.action_mailer.delivery_method = :test
 # like if you have constraints or database-specific column types
 # config.active_record.schema_format = :sql
 
-config.gem 'rspec-rails', :version => '>= 1.3.2', :lib => false unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
+config.gem 'rspec-rails',   :version => '>= 1.3.2', :lib => false unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
 
 config.gem 'cucumber'
-config.gem 'rspec-rails', :version => '>= 1.3.2', :lib => 'spec/rails'
-config.gem 'rspec',       :version => '>= 1.3.0', :lib => 'spec'
+config.gem 'rspec-rails',   :version => '>= 1.3.2', :lib => 'spec/rails'
+config.gem 'rspec',         :version => '>= 1.3.0', :lib => 'spec'
 config.gem 'fakeweb'
+config.gem 'factory_girl',  :version => '>= 1.2.4'
 
 
 OSM_HOST      = 'api06.dev.openstreetmap.org'

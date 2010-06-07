@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :data, :only => [:index]
   
-  map.resources :nodes, :except => :index
+  map.resources :nodes, :only => [:show, :update, :create]
   
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'
