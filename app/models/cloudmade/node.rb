@@ -62,6 +62,7 @@ module Cloudmade
 
     def to_json(options={})
       {'id' => id,
+       'osmid' => id,
        'lat' => lat,
        'lon' => lon,
        'name' => name,

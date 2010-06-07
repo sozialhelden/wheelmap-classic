@@ -1,9 +1,9 @@
-class UpdatingJob < Struct.new(:osmid, :wheelchair, :user_id)
+class CreatingJob < Struct.new(:node, :user_id)
   
   def perform
     user = User.find(user_id)
     oauth = OpenStreetMap::Oauth.new(user.access_token)
-    OpenStreetMap.update(osmid, oauth, wheelchair)
+    OpenStreetMap.create(oauth, node)
   end
   
   def on_permanent_failure
