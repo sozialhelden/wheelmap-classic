@@ -6,6 +6,7 @@ var zoom = 16;
 var layer;
 var layers = {};
 var places = [];
+var mapnik;
 
 //var allAmenities = 'arts-centre atm audiologist baby-hatch bank bar bench bicycle-parking bicycle-rental biergarten brothel bureau-de-change bus-station cafe car-rental car-sharing cinema clock coast-guard college community-centre courthouse crematorium drinking-water embassy emergency-phone fast-food ferry-terminal fire-hydrant fire-station fountain fuel grave-yard grit-bin hospital hunting-stand kindergarten library marketplace milk-dispenser nightclub parking pharmacy place-of-worship police post-box post-office prison pub public-building recycling register-office restaurant sauna school stripclub studio taxi telephone theatre toilets townhall university vending-machine veterinary waste-basket waste-disposal subway'.split(' ');
 var amenitiesGrouped = {
@@ -60,7 +61,9 @@ function drawmap() {
     controls: [
       new OpenLayers.Control.MouseDefaults(),
       new OpenLayers.Control.KeyboardDefaults(),
-      new OpenLayers.Control.PanZoomBar()
+      new OpenLayers.Control.PanZoomBar(),
+      new OpenLayers.Control.MouseToolbar(),
+      // new OpenLayers.Control.LayerSwitcher()
     ],
     maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34, 20037508.34, 20037508.34),
     numZoomLevels: 10,
@@ -69,26 +72,30 @@ function drawmap() {
   });
   
 
-  var mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik");
+  mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik");
   map.addLayer(mapnik);
+  
 
   checkForPermalink();
   jumpTo(lon, lat, zoom);
 
   createLayer();
+  createDraggableLayer();
+  
   map.events.register('moveend', null, loadPlaces);
   setTimeout(loadPlaces, 1000);
-
-  // var amenitiesElement = $('#amenities');
-  // $.each(amenitiesGrouped, function(title, group) {
-  //   var html = '';
-  //   $.each(group, function(i, type) {
-  //     var className = typeVisibilities[type].display == 'block' ? 'visible' : 'hidden';
-  //     html += '<a href="#" onclick="return toggleLayers(\'' + type + '\')" class="' + className + '" title="' + type + '"><span class="' + type + '"></span></a>';
-  //   });
-  //   amenitiesElement.append('<li><h4>' + title + '</h4><div>' + html + '</div></li>');
-  // });
 }
+
+function onCompleteDrag(feature) 
+{ 
+  if(feature) 
+  {	
+    // replace coordinate values in feature attributes 
+    var pointX = feature.geometry.x; 
+    var pointY = feature.geometry.y;
+    alert(pointY);
+  }
+};
 
 
 function toggleLayers(type, show) {
@@ -119,8 +126,6 @@ function add_or_remove_type_from_object_types(type, add){
 function object_types_contains(type){
   return (object_types.indexOf(type) != -1)
 }
-
-
 
 function mapBBOX() {
   var box = map.getExtent().clone();
@@ -165,20 +170,14 @@ function loadPlaces() {
   counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
 
   var bbox = mapBBOX().toBBOX();
-  $.getJSON('/data?bbox=' + bbox + '&object_types=' + object_types.join(','), function(data) {
-    var features = [];
+  $.getJSON('/nodes?bbox=' + bbox + '&object_types=' + object_types.join(','), function(data) {
     var features = { yes: [], no: [], limited: [], unknown: [] };
     $.each(data, function(i, place) {
       if (place.type) {
         var lonLat = lonLatToMercator({ lon: place.lon * 1.0, lat: place.lat * 1.0 });
         var point = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
-        var feature = new OpenLayers.Feature.Vector(point);
-        feature.attributes.type = place.type;
+        var feature = new OpenLayers.Feature.Vector(point,place);
         feature.attributes.icon = iconForType[place.type];
-        feature.attributes.wheelchair = place.wheelchair;
-        feature.attributes.name = place.name;
-        feature.attributes.tags = place.tags;
-        feature.attributes.osmid = place.id;
         try {
           features[place.wheelchair].push(feature);
         }
@@ -199,9 +198,8 @@ function loadPlaces() {
   });
 }
 
-
-function createLayer() {
-  var styleMap = new OpenLayers.StyleMap({
+function markerStyle(){
+  return new OpenLayers.StyleMap({
     externalGraphic: "/images/icons/${icon}.png",
     graphicWidth: 16,
     graphicHeight: 16,
@@ -215,25 +213,90 @@ function createLayer() {
     graphicZIndex: 10,
     backgroundGraphicZIndex: 10
   });
+}
+
+function needleStyle(){
+  return new OpenLayers.StyleMap({
+    externalGraphic: "/images/icons/${icon}.png",
+    graphicWidth: 16,
+    graphicHeight: 16,
+    backgroundGraphic: "/images/marker-${wheelchair}.png",
+    backgroundWidth: 36,
+    backgroundHeight: 28,
+    backgroundXOffset: -12,
+    backgroundYOffset: -26,
+    graphicXOffset: -8,
+    graphicYOffset: -22,
+    graphicZIndex: 10,
+    backgroundGraphicZIndex: 10,
+    cursor: 'move'
+  });
+}
+
+function createLayer() {
+  var style = markerStyle();
 
   eachState(function(state) {
     var strategy = new OpenLayers.Strategy.Cluster({distance: 15, threshold: 2});
     layers[state] = new OpenLayers.Layer.Vector(
-      "Places",
+      "Places " + state,
       {
-        styleMap: styleMap,
+        styleMap: style,
         rendererOptions: { yOrdering: true },
         visibility: states[state],
         strategies: [strategy]
       }
     );
+    
     map.addLayer(layers[state]);
     selectControl = new OpenLayers.Control.SelectFeature(layers[state],
       { onSelect:openPopup, onUnselect:closePopup });
     map.addControl(selectControl);
     selectControl.activate();  
+  
+  });
+}
 
-  }); 
+function createDraggableLayer() {  
+  var style = needleStyle();
+  var draggable_layer = new OpenLayers.Layer.Vector(
+    "Draggable",
+    {
+      styleMap: style,
+      rendererOptions: { yOrdering: true },
+      visibility: true,
+    });    
+    map.addLayer(draggable_layer);
+    createDragControl(draggable_layer);
+    // addPin(draggable_layer);
+}
+
+function createDragControl(layer){
+   var dragControl = new OpenLayers.Control.DragFeature(
+    layer, 
+    {'onComplete': onCompleteDrag}
+    );
+    map.addControl(dragControl); 
+    dragControl.activate();
+}
+
+function addPin(layer){
+  var features = [];
+  layer.removeFeatures(layer.features);
+  var center = centerCoordinates();
+  var lonLat = lonLatToMercator({ lon: center.lon * 1.0, lat: center.lat * 1.0 });
+  var point = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
+  
+  var feature = new OpenLayers.Feature.Vector(point);
+  feature.attributes.icon = iconForType['sfsdf'];
+  feature.attributes.type = 'Subway';
+  feature.attributes.wheelchair = 'no';
+  feature.attributes.name = 'Neuer Ort';
+  feature.attributes.tags = {"railway":"subway","osm_id":"46095762","ref":"U5","construction":"yes","synthesized_name":"Subway"};
+  feature.attributes.osmid = 1234;
+  features.push(feature);
+  layer.addFeatures(features);
+  layer.redraw();
 }
 
 function lonLatToMercator(ll) {
@@ -246,9 +309,12 @@ function lonLatToMercator(ll) {
   return new OpenLayers.LonLat(lon, lat);
 }
 
+function centerCoordinates() {
+  return map.getCenter().clone().transform(map.getProjectionObject(), epsg4326);
+}
 
 function permalink() {
-  var ll = map.getCenter().clone().transform(map.getProjectionObject(), epsg4326);
+  var ll = centerCoordinates();
   var query = '#lat=' + ll.lat + '&lon=' + ll.lon + '&zoom=' + map.zoom;
   return location.protocol + '//' + location.host + '/' + query;
 }
