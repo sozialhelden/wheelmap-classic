@@ -43,7 +43,7 @@
     = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
     = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
     = javascript_include_tag 'http://www.openstreetmap.org/openlayers/OpenStreetMap.js'
-    = javascript_include_tag 'jquery', 'util', 'icons', 'string', 'popup', 'search', 'application', 'map', :cache => false
+    = javascript_include_tag 'jquery', 'util', 'icons', 'string', 'popup', 'search', 'application', 'minimap', :cache => false
     - if jquery = yield(:jquery)
       :javascript
         $(function(){#{jquery}})
