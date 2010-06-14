@@ -37,3 +37,7 @@ en:
       password: Password
       remember_me: "Remember me"
       logged_in_as: "Logged in as:"
+
+  nodes:
+    missing:
+      not_found: This page could not been found!

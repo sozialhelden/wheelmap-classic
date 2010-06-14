@@ -5,6 +5,8 @@ class NodesController < ApplicationController
   before_filter :check_create_params,   :only => :create
   before_filter :set_session_amenities, :only => :index
   
+  rescue_from OpenStreetMap::NotFound, :with => :not_found
+  
   def index
     @places = Cloudmade.nodes(params[:bbox],params[:object_types])
     render :json => @places
@@ -25,6 +27,11 @@ class NodesController < ApplicationController
   end
   
   # Before filter
+  protected
+  
+  def not_found(exception)
+    render :action => 'missing', :status => 404
+  end
   
   def set_session_amenities
     object_types = params[:object_types].split(',') if params[:object_types]

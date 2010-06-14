@@ -137,3 +137,8 @@ de:
           cc:
             by_sa_20: 'Namensnennung-Weitergabe unter gleichen Bedingungen 2.0 US-amerikanisch (nicht portiert)'
             by_30: 'Creative Commons Namensnennung 3.0 Unported'
+            
+
+  nodes:
+    missing:
+      not_found: Leider konnte die Seite nicht gefunden werden

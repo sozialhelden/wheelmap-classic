@@ -16,6 +16,29 @@ describe NodesController do
     @default_user = Factory.create(:user)
     @another_user = Factory.create(:user, :email => 'test@rspec.org')
   end
+
+  describe "action SHOW" do
+    
+    before(:each) do
+     FakeWeb.allow_net_connect = false
+     @base_url = OpenStreetMapConfig.oauth_site
+     @full_url = "#{@base_url}/node/16581933"
+    end
+    
+    it "should show node view" do
+      FakeWeb.register_uri(:get, @full_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
+      get(:show, :id => 16581933)
+      response.code.should == '200'
+    end
+    
+    it "should render not found page" do
+      FakeWeb.register_uri(:get, @full_url, :status => 404, :body => "NOT FOUND", :content_type => 'text/plain')
+      get(:show, :id => 16581933)
+      response.code.should == '404'
+    end
+    
+  end
+
   
   describe "action: UPDATE" do
     
@@ -111,4 +134,5 @@ describe NodesController do
     end
     
   end
+
 end
