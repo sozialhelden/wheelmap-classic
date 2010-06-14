@@ -12,6 +12,14 @@ var mapnik;
 var places;
 var draggable;
 
+
+var states = {
+  yes: true,
+  no: true,
+  limited: true,
+  unknown: true
+};
+
 function markerLayer(name){
   $.each(map.layers, function(i, layer){
     if(layer.name == name) {
