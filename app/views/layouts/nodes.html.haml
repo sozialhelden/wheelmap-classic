@@ -1,0 +1,50 @@
+!!!
+%html(lang="#{I18n.locale}")
+  %head
+    %meta(charset="utf-8")
+    %title= t('header.title')
+    = stylesheet_link_tag 'nodes', :cache => false
+    - if head = yield(:head)
+      = head
+    /[if IE]
+      :javascript
+        var ce=document.createElement;ce('header');ce('nav');ce('article');ce('section');ce('footer');ce('aside');ce('time');
+    :javascript
+      var object_types = ["#{ (session['amenities']).join('","')}"];
+    
+    %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}        
+  %body(class=browser_class)
+    %header
+      .links
+        - if user_signed_in?
+          =current_user.email
+          = link_to t('.links.logout'), destroy_user_session_path
+          |
+        - else
+          = link_to t('.links.login'), new_user_session_path
+          |
+          = link_to t('devise.registrations.link'), new_registration_path(:user)
+          |
+        = link_to t('.links.blog'), 'http://blog.wheelmap.org/'
+        |
+        = link_to t('.links.what_is_wheelmap'), 'http://blog.wheelmap.org/was-ist-wheelmap/'
+      .logo
+        = image_tag 'wheelmap_logo.png'
+      
+    #main
+      .breadcrumbs
+        wheelmap-Karte >> Deutschland >> Berlin
+      = yield
+    %footer
+      %nav
+      
+    - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
+      = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
+    = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
+    = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
+    = javascript_include_tag 'http://www.openstreetmap.org/openlayers/OpenStreetMap.js'
+    = javascript_include_tag 'jquery', 'util', 'icons', 'string', 'popup', 'search', 'application', :cache => false
+    - if jquery = yield(:jquery)
+      :javascript
+        $(function(){#{jquery}})
+

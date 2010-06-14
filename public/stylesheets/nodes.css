@@ -1,0 +1,227 @@
+/* line 1, ../../app/stylesheets/vendor/_map.sass */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* line 8, ../../app/stylesheets/vendor/_map.sass */
+a {
+  color: blue;
+  text-decoration: none;
+}
+/* line 12, ../../app/stylesheets/vendor/_map.sass */
+a:hover {
+  color: #000011;
+  text-decoration: underline;
+}
+
+/* line 16, ../../app/stylesheets/vendor/_map.sass */
+#map {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  color: black;
+}
+
+/* line 26, ../../app/stylesheets/vendor/_map.sass */
+.olFramedCloudPopupContent {
+  font-size: 0.8em;
+  font-family: Verdana, sans-serif;
+}
+
+/* line 30, ../../app/stylesheets/vendor/_map.sass */
+.olControlPanZoomBar {
+  left: inherit !important;
+  right: 45px !important;
+  top: 45px !important;
+}
+
+/* line 36, ../../app/stylesheets/vendor/_map.sass */
+#descriptionToggle {
+  position: absolute;
+  font-size: 1em;
+  z-index: 10000;
+  left: 80px;
+  height: 14px;
+  border-left: 1px solid #000040;
+  border-bottom: 1px solid #000040;
+  border-right: 1px solid #000040;
+  padding: 2px 10px;
+  margin-right: 200px;
+  background-color: #eeeeee;
+  font-size: 12px;
+  cursor: default;
+  opacity: 0.7;
+}
+/* line 52, ../../app/stylesheets/vendor/_map.sass */
+#descriptionToggle:hover {
+  background-color: white;
+  opacity: 1;
+}
+
+/* line 57, ../../app/stylesheets/vendor/_map.sass */
+#description {
+  position: absolute;
+  z-index: 10000;
+  left: 80px;
+  top: 18px;
+  border: 1px solid #000040;
+  padding: 10px 10px;
+  margin-right: 200px;
+  background-color: white;
+  font-size: 12px;
+}
+
+/* line 69, ../../app/stylesheets/vendor/_map.sass */
+#attribution {
+  bottom: 0;
+  left: 0;
+  padding: 5px 8px 1px 8px;
+  position: absolute;
+  font-size: 11px;
+  font-style: italic;
+  z-index: 1000;
+}
+
+/* line 79, ../../app/stylesheets/vendor/_map.sass */
+#layer {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  z-index: 10002;
+}
+/* line 85, ../../app/stylesheets/vendor/_map.sass */
+#layer > div {
+  border: 1px solid black;
+  background-color: white;
+  padding: 4px 5px;
+  font-size: 0.7em;
+  cursor: default;
+  margin-bottom: 4px;
+}
+/* line 94, ../../app/stylesheets/vendor/_map.sass */
+#layer .active {
+  background-color: #eeeeff;
+}
+
+/* line 98, ../../app/stylesheets/vendor/_map.sass */
+.hide {
+  display: none;
+}
+
+/* line 1, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+a, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, p, pre, span, th, td {
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 6, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 10, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+fieldset, img {
+  border: 0;
+}
+
+/* line 13, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+address, em, th {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 17, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+li {
+  list-style: none;
+}
+
+/* line 20, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+th {
+  font-style: normal;
+  text-align: left;
+}
+
+/* line 24, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+h1, h2, h3, h4, h5, h6, small {
+  font-size: 100%;
+}
+
+/* line 27, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* line 33, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+.msie input, .msie textarea, .msie select {
+  font-size: 100%;
+}
+
+/* line 36, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+header, section, article, aside, footer, time {
+  display: block;
+}
+
+/* line 4, ../../app/stylesheets/basics/_typography.sass */
+p,
+article li,
+dt, dd,
+h4, h5, h6,
+address,
+footer {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 13px;
+  line-height: 20px;
+}
+
+/* line 12, ../../app/stylesheets/basics/_typography.sass */
+h2 {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  bottom: 2px;
+}
+
+/* line 15, ../../app/stylesheets/basics/_typography.sass */
+h1 {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 37px;
+  line-height: 40px;
+  position: relative;
+}
+/* line 3, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_browser_support.sass */
+.presto h1 {
+  bottom: 1px;
+}
+
+/* line 16, ../../app/stylesheets/basics/_grid_and_layout.sass */
+body {
+  background: #fff7d9;
+}
+
+@import url(partials/page.css);
+@import url(partials/header.css);
+@import url(partials/footer.css);
+@import url(partials/aside.css);
+@import url(partials/lists.css);
+@import url(partials/boxes.css);
+@import url(partials/notifications.css);
+@import url(partials/edit.css);
+@import url(partials/oauth.css);
+@import url(partials/nodes.css);
+@import url(partials/bar.css);
+@import url(partials/links.css);
+@import url(partials/sozialhelden.css);
+@import url(partials/imprint.css);
+@import url(partials/search.css);
