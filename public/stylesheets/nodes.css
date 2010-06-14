@@ -229,17 +229,25 @@ dd {
   width: 250px;
 }
 
-/* line 16, ../../app/stylesheets/nodes.sass */
+/* line 1, ../../app/stylesheets/partials/nodes/_map.sass */
+#map {
+  height: 430px;
+  width: 500px;
+  background-color: black;
+  float: right;
+}
+
+/* line 17, ../../app/stylesheets/nodes.sass */
 body, html {
   background-color: white;
 }
 
-/* line 19, ../../app/stylesheets/nodes.sass */
+/* line 20, ../../app/stylesheets/nodes.sass */
 #main {
   margin: 20px;
 }
 
-/* line 22, ../../app/stylesheets/nodes.sass */
+/* line 23, ../../app/stylesheets/nodes.sass */
 .clear {
   clear: both;
   display: block;
