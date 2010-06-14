@@ -1050,11 +1050,16 @@ a:visited:hover {
   float: left;
   width: 300px;
 }
-/* line 30, ../../app/stylesheets/partials/_imprint.sass */
+/* line 31, ../../app/stylesheets/partials/_imprint.sass */
+#imprint dd.logo img {
+  background-color: white;
+  padding: 5px;
+}
+/* line 35, ../../app/stylesheets/partials/_imprint.sass */
 #imprint a {
   color: #a1c175;
 }
-/* line 33, ../../app/stylesheets/partials/_imprint.sass */
+/* line 38, ../../app/stylesheets/partials/_imprint.sass */
 #imprint h2,
 #imprint p {
   clear: both;
@@ -1063,7 +1068,7 @@ a:visited:hover {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 41, ../../app/stylesheets/partials/_imprint.sass */
+/* line 46, ../../app/stylesheets/partials/_imprint.sass */
 #imprint p:first-child {
   text-align: right;
 }

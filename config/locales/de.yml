@@ -128,6 +128,7 @@ de:
         icons: "Icons:"
         license: "Lizenz:"
         geoip: GeoIP
+        hosting: Hosting
       comment: 'Diese Website ist mit Ruby on Rails und JavaScript entwickelt.'
       links:
         email_me: 'Hier klicken'
