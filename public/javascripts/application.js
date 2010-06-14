@@ -3,10 +3,10 @@ var epsg4326, epsg900913;
 var lat = parseFloat(geoip_latitude());
 var lon = parseFloat(geoip_longitude());
 var zoom = 16;
-var layer;
-var layers = {};
 var places = [];
 var mapnik;
+var places;
+var draggable;
 
 //var allAmenities = 'arts-centre atm audiologist baby-hatch bank bar bench bicycle-parking bicycle-rental biergarten brothel bureau-de-change bus-station cafe car-rental car-sharing cinema clock coast-guard college community-centre courthouse crematorium drinking-water embassy emergency-phone fast-food ferry-terminal fire-hydrant fire-station fountain fuel grave-yard grit-bin hospital hunting-stand kindergarten library marketplace milk-dispenser nightclub parking pharmacy place-of-worship police post-box post-office prison pub public-building recycling register-office restaurant sauna school stripclub studio taxi telephone theatre toilets townhall university vending-machine veterinary waste-basket waste-disposal subway'.split(' ');
 var amenitiesGrouped = {
@@ -49,6 +49,14 @@ var states = {
 
 var counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
 
+function markerLayer(name){
+  $.each(map.layers, function(i, layer){
+    if(layer.name == name) {
+      alert('Match: ' + layer.name);
+      return i;
+    }
+  });
+}
 
 function drawmap() {
   OpenLayers.Lang.setCode('de');
@@ -64,6 +72,7 @@ function drawmap() {
       new OpenLayers.Control.PanZoomBar(),
       new OpenLayers.Control.MouseToolbar(),
       // new OpenLayers.Control.LayerSwitcher()
+      
     ],
     maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34, 20037508.34, 20037508.34),
     numZoomLevels: 10,
@@ -80,7 +89,7 @@ function drawmap() {
   jumpTo(lon, lat, zoom);
 
   createLayer();
-  createDraggableLayer();
+  // createDraggableLayer();
   
   map.events.register('moveend', null, loadPlaces);
   setTimeout(loadPlaces, 1000);
@@ -148,11 +157,9 @@ function eachState(f) {
 
 
 function showStates() {
-  $.each(layers, function(state, layer) {
-    layer.styleMap.addUniqueValueRules("default", "type", typeVisibilities);
-    layer.redraw();
-    layer.setVisibility(states[state]);
-  });
+  places.styleMap.addUniqueValueRules("default", "type", typeVisibilities);
+  places.redraw();
+  places.setVisibility(true);
 }
 
 
@@ -171,7 +178,7 @@ function loadPlaces() {
 
   var bbox = mapBBOX().toBBOX();
   $.getJSON('/nodes?bbox=' + bbox + '&object_types=' + object_types.join(','), function(data) {
-    var features = { yes: [], no: [], limited: [], unknown: [] };
+    var features = [];
     $.each(data, function(i, place) {
       if (place.type) {
         var lonLat = lonLatToMercator({ lon: place.lon * 1.0, lat: place.lat * 1.0 });
@@ -179,7 +186,7 @@ function loadPlaces() {
         var feature = new OpenLayers.Feature.Vector(point,place);
         feature.attributes.icon = iconForType[place.type];
         try {
-          features[place.wheelchair].push(feature);
+          features.push(feature);
         }
         catch (e) {}
         counts[place.wheelchair]++;
@@ -187,10 +194,10 @@ function loadPlaces() {
         $('*[data-osm-id=' + place.id + ']').addClass(place.type);
       }
     });
-    $.each(layers, function(state, layer) {
-      layer.removeFeatures(layer.features);
-      layer.addFeatures(features[state]);
-      layer.redraw();
+    places.removeFeatures(places.features);
+    places.addFeatures(features);
+    places.redraw();
+    $.each(states, function(i,state){
       $('.wheelchair .' + state + ' span').html(counts[state]);
     });
     showStates();
@@ -236,25 +243,21 @@ function needleStyle(){
 function createLayer() {
   var style = markerStyle();
 
-  eachState(function(state) {
-    var strategy = new OpenLayers.Strategy.Cluster({distance: 15, threshold: 2});
-    layers[state] = new OpenLayers.Layer.Vector(
-      "Places " + state,
-      {
-        styleMap: style,
-        rendererOptions: { yOrdering: true },
-        visibility: states[state],
-        strategies: [strategy]
-      }
-    );
+  var strategy = new OpenLayers.Strategy.Cluster({distance: 15, threshold: 2});
+  places = new OpenLayers.Layer.Vector(
+    "Places ",
+    {
+      styleMap: style,
+      rendererOptions: { yOrdering: true },
+      visibility: true,
+      strategies: [strategy]
+    });
     
-    map.addLayer(layers[state]);
-    selectControl = new OpenLayers.Control.SelectFeature(layers[state],
-      { onSelect:openPopup, onUnselect:closePopup });
-    map.addControl(selectControl);
-    selectControl.activate();  
-  
-  });
+  map.addLayer(places);
+  selectControl = new OpenLayers.Control.SelectFeature(places,
+    { onSelect:openPopup, onUnselect:closePopup });
+  map.addControl(selectControl);
+  selectControl.activate();  
 }
 
 function createDraggableLayer() {  
