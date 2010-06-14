@@ -377,6 +377,14 @@ image[width='16'] {
   clear: both;
 }
 
+/* line 1, ../../app/stylesheets/partials/_nodes.sass */
+.center {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 /* line 1, ../../app/stylesheets/partials/_bar.sass */
 #bar {
   padding: 5px;

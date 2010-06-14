@@ -11,7 +11,7 @@ describe OpenStreetMap do
   describe 'method: get_node' do
   
     before(:each) do
-      @full_url = "#{@base_url}/api/0.6/node/16581933"
+      @full_url = "#{@base_url}/node/16581933"
     end
 
     it "should fetch node as xml data from API" do
@@ -37,7 +37,7 @@ describe OpenStreetMap do
   
   describe "method: create_changeset" do
     before(:each) do
-      @full_url = "#{@base_url}/api/0.6/changeset/create"
+      @full_url = "#{@base_url}/changeset/create"
     end
 
     it "should create a new changeset" do

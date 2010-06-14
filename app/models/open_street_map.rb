@@ -6,7 +6,7 @@ module OpenStreetMap
   API_VERSION = "0.6".freeze
   #http://api.openstreetmap.org/api/0.6/changeset/create
   # base_uri "http://api.openstreetmap.org/api/#{API_VERSION}" #live
-  base_uri "http://api06.dev.openstreetmap.org/api/#{API_VERSION}" #test
+  base_uri OpenStreetMapConfig.oauth_site
   # basic_auth(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
   
   # This required a multistep 
