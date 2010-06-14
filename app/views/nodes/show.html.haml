@@ -3,40 +3,48 @@
   %span.addition
     = link_to 'Platz bearbeiten', edit_node_path(@node)
     
-.status
-  %dl{:id => dom_id(@node)}
-    %dt
-      Barrierefrei:
-    %dd
-      - %w{yes limited no unknown}.each do |status|
-        %input{:type => 'radio', :name => "wheelchair_#{@node.id}", :value => status, :class => status, :id => "wheelchair_#{@node.id}_#{status}"}
-        %label{:for => "wheelchair_#{@node.id}_#{status}"}
-          = status
-        
-    %dt
-      Infos zur Barrierefreiheit:
-    %dd
-      Toiletten sind zu eng
 
-.properties
-  %dl
+.map
+
+.box#accessibility
+  %dl{:id => "accessibility_#{dom_id(@node)}"}
+    %dt Barrierefrei:
+    %dd
+      %ul
+        - %w{yes limited no unknown}.each_with_index do |status, index|
+          %li
+            .status{:class => @node.wheelchair == status ? "checked #{status}" : "#{status}"}
+              - if @node.wheelchair == status
+                %input{:type => 'radio', :name => "wheelchair_#{@node.id}", :value => status, :class => status, :id => "wheelchair_#{@node.id}_#{status}", :checked =>  'checked'}
+              - else
+                %input{:type => 'radio', :name => "wheelchair_#{@node.id}", :value => status, :class => status, :id => "wheelchair_#{@node.id}_#{status}"}
+            %label{:for => "wheelchair_#{@node.id}_#{status}", :class => @node.wheelchair == status ? "checked #{status}" : "#{status}"}= status
+            .clear
+        
+    %dt Infos zur Barrierefreiheit:
+    %dd Toiletten sind zu eng
+  .clear
+
+
+.box#properties
+  %dl{:id => "properties_#{dom_id(@node)}"}
     %dt Typ:
-    %dd=@node.type
+    %dd=@node.type || '&nbsp;'
 
     %dt Strasse:
-    %dd=@node.tags['address:street']
+    %dd=@node.tags['address:street'] || '&nbsp;'
 
     %dt PLZ:
-    %dd=@node.tags['address:zip']
+    %dd=@node.tags['address:zip'] || '&nbsp;'
 
     %dt Ort:
-    %dd=@node.tags['address:city']
+    %dd=@node.tags['address:city'] || '&nbsp;'
 
     %dt Webseite:
-    %dd=@node.tags['website']
+    %dd=@node.tags['website'] || '&nbsp;'
 
     %dt Telefon:
-    %dd=@node.type
-
+    %dd=@node.tags['contact:telephone'] || '&nbsp;'
+  .clear
 .map
   

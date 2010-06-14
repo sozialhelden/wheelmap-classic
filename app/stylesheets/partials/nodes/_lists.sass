@@ -1,0 +1,37 @@
+.status
+  width: 20px
+  height: 20px
+  line-height: 20px
+  text-align: center
+  padding: 4px
+  background-color: $unknown
+  margin: 3px
+  float: left
+  
+
+  &.checked
+    &.yes
+      background: $yes
+  
+    &.limited
+      background: $limited
+  
+    &.no
+      background: $no
+  
+    &.unknown
+      background: $unknown
+
+dl
+  +vertical-gradient(white, desaturate(lighten($green, 35%), 35%))
+
+dt
+  display: block
+  float: left
+  width: 250px
+  font-weight: bold
+dd
+  display: block
+  float: left
+  width: 250px
+

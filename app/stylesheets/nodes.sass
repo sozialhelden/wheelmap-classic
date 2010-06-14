@@ -1,25 +1,28 @@
 @import compass
 
-@import vendor/map
-
 @import basics/backgrounds
 @import basics/colors
 @import basics/typography
-@import basics/grid_and_layout
 @import basics/borders
+@import basics/links
+@import basics/sozialhelden
 
-@import partials/page
-@import partials/header
-@import partials/footer
-@import partials/aside
-@import partials/lists
-@import partials/boxes
-@import partials/notifications
-@import partials/edit
-@import partials/oauth
-@import partials/nodes
-@import partials/bar
-@import partials/links
-@import partials/sozialhelden
-@import partials/imprint
-@import partials/search
+@import partials/nodes/header
+@import partials/nodes/links
+@import partials/nodes/headlines
+@import partials/nodes/boxes
+@import partials/nodes/lists
+
+body, html
+  background-color: #FFF
+  
+#main
+  margin: 20px
+  
+.clear
+  :clear both
+  :display block
+  :overflow hidden
+  :visibility hidden
+  :width 0
+  :height 0
