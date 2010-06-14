@@ -29,30 +29,8 @@ $.each(object_types, function(i, type) {
 });
 
 
-var states = {
-  yes: true,
-  no: true,
-  limited: true,
-  unknown: true
-};
-
-
-var counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
-
-
-
 drawmap();
 
-
-
-
-
-$(function() {
-  $('.wheelchair input').click(function() {
-    var state = this.id.replace(/wheelchair-/, '');
-    states[state] = this.checked;
-    showStates();
-  });
-});
+jumpTo(lon, lat, 16);
 
 
