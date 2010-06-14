@@ -6,7 +6,10 @@ class NodesController < ApplicationController
   before_filter :set_session_amenities, :only => :index
   
   rescue_from OpenStreetMap::NotFound, :with => :not_found
+  rescue_from OpenStreetMap::Gone, :with => :gone
+  rescue_from Timeout::Error, :with => :timeout
   
+  layout 'nodes'  
   def index
     @places = Cloudmade.nodes(params[:bbox],params[:object_types])
     render :json => @places
@@ -29,8 +32,19 @@ class NodesController < ApplicationController
   # Before filter
   protected
   
+  
+  def gone(exception)
+    @message = I18n.t('nodes.errors.not_existent')
+    render :action => 'error', :status => 410
+  end
+  def timeout(exception)
+    @message = I18n.t('nodes.errors.not_available')
+    render :action => 'error', :status => 503
+  end
+  
   def not_found(exception)
-    render :action => 'missing', :status => 404
+    @message = I18n.t('nodes.errors.not_found')
+    render :action => 'error', :status => 404
   end
   
   def set_session_amenities

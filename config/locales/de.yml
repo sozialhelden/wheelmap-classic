@@ -140,5 +140,7 @@ de:
             
 
   nodes:
-    missing:
+    errors:
       not_found: Leider konnte die Seite nicht gefunden werden
+      not_available: Leider steht diese Seite zur Zeit nicht zur Verfügung
+      not_existent: Leider gibt es diesen Ort nicht mehr
