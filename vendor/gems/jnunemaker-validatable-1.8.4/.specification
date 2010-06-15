@@ -1,0 +1,204 @@
+--- !ruby/object:Gem::Specification 
+name: jnunemaker-validatable
+version: !ruby/object:Gem::Version 
+  hash: 63
+  prerelease: false
+  segments: 
+  - 1
+  - 8
+  - 4
+  version: 1.8.4
+platform: ruby
+authors: 
+- Jay Fields
+- John Nunemaker
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2010-04-18 00:00:00 +02:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: activesupport
+  prerelease: false
+  requirement: &id001 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 11
+        segments: 
+        - 2
+        - 3
+        - 4
+        version: 2.3.4
+  type: :runtime
+  version_requirements: *id001
+- !ruby/object:Gem::Dependency 
+  name: mocha
+  prerelease: false
+  requirement: &id002 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 43
+        segments: 
+        - 0
+        - 9
+        - 8
+        version: 0.9.8
+  type: :development
+  version_requirements: *id002
+- !ruby/object:Gem::Dependency 
+  name: dust
+  prerelease: false
+  requirement: &id003 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        version: "0"
+  type: :development
+  version_requirements: *id003
+- !ruby/object:Gem::Dependency 
+  name: expectations
+  prerelease: false
+  requirement: &id004 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        version: "0"
+  type: :development
+  version_requirements: *id004
+description: Validatable is a library for adding validations.
+email: nunemaker@gmail.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- README.rdoc
+files: 
+- README.rdoc
+- Rakefile
+- VERSION.yml
+- lib/validatable.rb
+- lib/validatable/child_validation.rb
+- lib/validatable/errors.rb
+- lib/validatable/included_validation.rb
+- lib/validatable/macros.rb
+- lib/validatable/object_extension.rb
+- lib/validatable/requireable.rb
+- lib/validatable/understandable.rb
+- lib/validatable/validatable_class_methods.rb
+- lib/validatable/validatable_instance_methods.rb
+- lib/validatable/validations/validates_acceptance_of.rb
+- lib/validatable/validations/validates_associated.rb
+- lib/validatable/validations/validates_confirmation_of.rb
+- lib/validatable/validations/validates_each.rb
+- lib/validatable/validations/validates_exclusion_of.rb
+- lib/validatable/validations/validates_format_of.rb
+- lib/validatable/validations/validates_inclusion_of.rb
+- lib/validatable/validations/validates_length_of.rb
+- lib/validatable/validations/validates_numericality_of.rb
+- lib/validatable/validations/validates_presence_of.rb
+- lib/validatable/validations/validates_true_for.rb
+- lib/validatable/validations/validation_base.rb
+- test/functional/test_validatable.rb
+- test/functional/test_validates_acceptance_of.rb
+- test/functional/test_validates_associated.rb
+- test/functional/test_validates_confirmation_of.rb
+- test/functional/test_validates_each.rb
+- test/functional/test_validates_exclusion_of.rb
+- test/functional/test_validates_format_of.rb
+- test/functional/test_validates_inclusion_of.rb
+- test/functional/test_validates_length_of.rb
+- test/functional/test_validates_numericality_of.rb
+- test/functional/test_validates_presence_of.rb
+- test/functional/test_validates_true_for.rb
+- test/test_helper.rb
+- test/unit/test_errors.rb
+- test/unit/test_understandable.rb
+- test/unit/test_validatable.rb
+- test/unit/test_validates_acceptance_of.rb
+- test/unit/test_validates_associated.rb
+- test/unit/test_validates_confirmation_of.rb
+- test/unit/test_validates_exclusion_of.rb
+- test/unit/test_validates_format_of.rb
+- test/unit/test_validates_inclusion_of.rb
+- test/unit/test_validates_length_of.rb
+- test/unit/test_validates_numericality_of.rb
+- test/unit/test_validates_presence_of.rb
+- test/unit/test_validates_true_for.rb
+- test/unit/test_validation_base.rb
+has_rdoc: true
+homepage: http://github.com/jnunemaker/validatable
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --charset=UTF-8
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.7
+signing_key: 
+specification_version: 3
+summary: Validatable is a library for adding validations.
+test_files: 
+- test/functional/test_validatable.rb
+- test/functional/test_validates_acceptance_of.rb
+- test/functional/test_validates_associated.rb
+- test/functional/test_validates_confirmation_of.rb
+- test/functional/test_validates_each.rb
+- test/functional/test_validates_exclusion_of.rb
+- test/functional/test_validates_format_of.rb
+- test/functional/test_validates_inclusion_of.rb
+- test/functional/test_validates_length_of.rb
+- test/functional/test_validates_numericality_of.rb
+- test/functional/test_validates_presence_of.rb
+- test/functional/test_validates_true_for.rb
+- test/test_helper.rb
+- test/unit/test_errors.rb
+- test/unit/test_understandable.rb
+- test/unit/test_validatable.rb
+- test/unit/test_validates_acceptance_of.rb
+- test/unit/test_validates_associated.rb
+- test/unit/test_validates_confirmation_of.rb
+- test/unit/test_validates_exclusion_of.rb
+- test/unit/test_validates_format_of.rb
+- test/unit/test_validates_inclusion_of.rb
+- test/unit/test_validates_length_of.rb
+- test/unit/test_validates_numericality_of.rb
+- test/unit/test_validates_presence_of.rb
+- test/unit/test_validates_true_for.rb
+- test/unit/test_validation_base.rb
