@@ -1,7 +1,6 @@
 form
   +helvetica-13
 
-
   li
     display: block
     float: left
@@ -15,7 +14,6 @@ form
     padding: 5px
     width: 310px
     
-    
   select
     width: 322px
     -webkit-appearance: none
@@ -24,9 +22,6 @@ form
     
   option
     -webkit-appearance: none
-    
-    
-    
     
   input[type='submit']
     position: relative
@@ -53,3 +48,13 @@ form
     
   fieldset
     margin-bottom: 20px
+
+  li[class*='error']
+    label
+      color: $orange
+      
+    input[type='text'], textarea, select
+      border: 1px solid $orange
+
+    p.inline-errors
+      color: $orange
