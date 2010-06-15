@@ -7,8 +7,8 @@ module OpenStreetMap
 
 
     validates_presence_of :name, :wheelchair, :wheelchair_description, :type
-    # validates_numericality_of :lat, :lon
-    # validates_format_of :url, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true
+    validates_numericality_of :lat, :lon
+    validates_format_of :url, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true
     
 
     def initialize(data)

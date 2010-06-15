@@ -36,7 +36,6 @@ class NodesController < ApplicationController
       flash[:notice] = I18n.t('node.create.success')
       redirect_to root_path
     else
-      raise @node.errors.inspect
       render :action => :new
     end
   end
