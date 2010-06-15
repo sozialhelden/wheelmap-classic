@@ -1,0 +1,30 @@
+
+
+#accessibility.box
+  - semantic_form_for :node, @node do |form|
+    - form.inputs :name => 'Basic' do
+      = form.input :name
+      = form.input :wheelchair, :collection => ['yes', 'limited', 'no', 'unknown']
+      = form.input :wheelchair_description
+      = form.input :type
+
+    - form.buttons do
+      = form.submit
+      
+    - form.inputs :name => 'Optional' do
+      = form.input :street, :required => false
+      = form.input :number, :required => false
+      = form.input :zip_code, :required => false
+      = form.input :city, :required => false
+      = form.input :url, :required => false
+      = form.input :phone, :required => false
+    
+    - form.buttons do
+      = form.submit
+
+#map
+
+- content_for :breadcrumbs do
+  = link_to t('breadcrumbs.root'), root_path
+  %span
+    = t('breadcrumbs.node.create')

@@ -72,6 +72,8 @@ module OpenStreetMap
       when 412
         data = response.body
         raise Precondition.new(data), "(#{response.code}): #{response.message} - #{data['error'] if data}"
+      when 500
+        raise Unavailable, "(#{response.code}): #{response.message}"
       when 502..503
         raise Unavailable, "(#{response.code}): #{response.message}"
     end

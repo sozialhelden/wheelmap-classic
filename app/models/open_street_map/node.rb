@@ -1,7 +1,7 @@
 require 'builder'
 module OpenStreetMap
   class Node
-    attr_accessor :lat, :lon, :user, :uid, :changeset, :uid, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair
+    attr_accessor :lat, :lon, :user, :uid, :changeset, :uid, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair, :wheelchair_description, :street, :zip_code, :country, :number, :city, :url, :phone
     attr_accessor_with_default :changed, false
 
 
@@ -15,7 +15,7 @@ module OpenStreetMap
       @name = data['name']
       @changeset = data['changeset']
       @version = data['version'].to_i
-      @timestamp = Time.parse(data['timestamp'])
+      @timestamp = Time.parse(data['timestamp']) rescue Time.now
       @type = (tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || '').gsub(/ |_/, '-')
       @wheelchair = (tags['wheelchair'] || tags['hvv:barrier_free'] || 'unknown')
       @name = tags['name']

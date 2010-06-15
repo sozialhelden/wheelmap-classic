@@ -1,0 +1,26 @@
+#breadcrumbs
+
+  $breadcrumbs-organge: saturate($orange, 20%)
+  $breadcrumbs-green: saturate($green, 20%)
+  margin: 20px 20px 0px
+  width: 100%
+
+  a,span
+    color: white
+    padding: 10px
+    +helvetica-13
+    display: block
+    float: left
+    
+  a
+    background-color: $green
+    +vertical-gradient($breadcrumbs-green, desaturate(darken($breadcrumbs-green, 10%), 10%))
+    +border-left-radius(5px)
+    
+  span
+    +border-right-radius(5px)
+    +vertical-gradient($breadcrumbs-organge, desaturate(darken($breadcrumbs-organge, 10%), 10%))
+
+
+    background-color: $orange
+    border-left: 1px solid white

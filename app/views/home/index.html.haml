@@ -34,7 +34,7 @@
                 %span{:class => values.first}
   .edit{:style => 'padding:5px 10px;'}
     - if (user_signed_in? && current_user.application_authorized?)
-      Neuen Ort hinzufügen
+      = link_to t('.link.node.create'), new_node_path
     - else
       = link_to 'Edit', oauth_index_path
       

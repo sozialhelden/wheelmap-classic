@@ -12,7 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :oauth, :only => [:new, :index], :collection => { :callback => :get, :osm_register => :get }
   
-  map.resources :nodes, :only => [:index, :show, :edit, :update, :create]
+  map.resources :nodes, :except => :destroy
   
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'

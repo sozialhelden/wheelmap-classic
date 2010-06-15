@@ -21,14 +21,14 @@
           =current_user.email
           = link_to t('.links.logout'), destroy_user_session_path
         - else
-          = link_to t('.links.login'), new_user_session_path
+          = link_to t('header.navigation.login'), new_user_session_path
           = link_to t('devise.registrations.link'), new_registration_path(:user)
-        = link_to t('.links.blog'), 'http://blog.wheelmap.org/'
-        = link_to t('.links.what_is_wheelmap'), 'http://blog.wheelmap.org/was-ist-wheelmap/'
-        = link_to t('.links.what_is_barrier_free'), 'http://blog.wheelmap.org/was-bedeutet-barrierefrei/'
-        = link_to t('.links.how_to_add_a_place'), 'http://blog.wheelmap.org/wie-kann-ich-orte-eintragen/'
-        = link_to t('.links.suggestions'), 'http://blog.wheelmap.org/ihre-meinung-ist-uns-wichtig/'
-        = link_to t('.links.imprint'), '#', :'data-show' => '#imprint'
+        = link_to t('header.navigation.blog'), 'http://blog.wheelmap.org/'
+        = link_to t('header.navigation.what_is_wheelmap'), 'http://blog.wheelmap.org/was-ist-wheelmap/'
+        = link_to t('header.navigation.what_is_barrier_free'), 'http://blog.wheelmap.org/was-bedeutet-barrierefrei/'
+        = link_to t('header.navigation.how_to_add_a_place'), 'http://blog.wheelmap.org/wie-kann-ich-orte-eintragen/'
+        = link_to t('header.navigation.suggestions'), 'http://blog.wheelmap.org/ihre-meinung-ist-uns-wichtig/'
+        = link_to t('header.navigation.imprint'), '#', :'data-show' => '#imprint'
     - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
       = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
     = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
