@@ -10,8 +10,9 @@ Rails::Initializer.run do |config|
   config.gem 'oauth',           :version => '0.4.0',  :source => 'rubygems.org'
   config.gem 'devise',          :version => '1.0.7',  :source => 'rubygems.org'
   config.gem 'httparty',        :version => '0.5.2',  :source => 'rubygems.org'
-  config.gem 'formtastic'
+  config.gem 'formtastic',      :version => '0.9.10', :source => 'rubygems.org'
   config.gem 'newrelic_rpm'
+  config.gem 'jnunemaker-validatable', :lib => 'validatable'
   config.i18n.default_locale = :de
 end
 

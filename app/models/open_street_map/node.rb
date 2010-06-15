@@ -1,9 +1,15 @@
 require 'builder'
 module OpenStreetMap
   class Node
-    attr_accessor :lat, :lon, :user, :uid, :changeset, :uid, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair, :wheelchair_description, :street, :zip_code, :country, :number, :city, :url, :phone
+    include Validatable
+    attr_accessor :lat, :lon, :user, :uid, :changeset, :uid, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair, :wheelchair_description, :street, :postcode, :country, :housenumber, :city, :url, :phone
     attr_accessor_with_default :changed, false
 
+
+    validates_presence_of :name, :wheelchair, :wheelchair_description, :type
+    # validates_numericality_of :lat, :lon
+    # validates_format_of :url, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true
+    
 
     def initialize(data)
       @lat = data['lat'].to_f
@@ -16,9 +22,17 @@ module OpenStreetMap
       @changeset = data['changeset']
       @version = data['version'].to_i
       @timestamp = Time.parse(data['timestamp']) rescue Time.now
-      @type = (tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || '').gsub(/ |_/, '-')
-      @wheelchair = (tags['wheelchair'] || tags['hvv:barrier_free'] || 'unknown')
-      @name = tags['name']
+      @type = (data['type'] || tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || '').gsub(/ |_/, '-')
+      @wheelchair = (data['wheelchair'] || tags['wheelchair'] || tags['hvv:barrier_free'] || 'unknown')
+      @wheelchair_description = (data['wheelchair_description'] || tags['wheelchair_description'])
+      @name = data['name'] || tags['name']
+      @street       = tags['addr:street'] = data['street'] if data['street']
+      @housenumber  = tags['addr:housenumber'] = data['housenumber'] if data['housenumber']
+      @zip_code     = tags['addr:postcode'] = data['postcode'] if data['postcode']
+      @city         = tags['addr:city'] = data['city'] if data['city']
+      @phone        = tags['contact:phone'] = data['phone'] if data['phone']
+      @url          = tags['contact:website'] = data['url'] if data['url']
+      
     end
     
     def valid_states

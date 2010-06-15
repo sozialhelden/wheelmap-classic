@@ -1,6 +1,6 @@
 class NodesController < ApplicationController
   
-  before_filter :authenticate_user!,    :only => :create
+  before_filter :authenticate_user!,    :only => [:create, :new]
   before_filter :check_update_params,   :only => :update
   before_filter :check_create_params,   :only => :create
   before_filter :set_session_amenities, :only => :index
@@ -14,7 +14,10 @@ class NodesController < ApplicationController
   
   def index
     @places = Cloudmade.nodes(params[:bbox],params[:object_types])
-    render :json => @places
+    respond_to do |wants|
+      wants.json{ render :json => @places }
+      wants.html{ redirect_to root_path }
+    end
   end
   
   def show
@@ -27,8 +30,15 @@ class NodesController < ApplicationController
   end
   
   def create
-    Delayed::Job.enqueue(CreatingJob.new(params[:node], default_user.id))
-    render :text => 'OK', :status => 201
+    @node = OpenStreetMap::Node.new(params[:node])
+    if @node.valid?
+      Delayed::Job.enqueue(CreatingJob.new(params[:node], default_user.id))
+      flash[:notice] = I18n.t('node.create.success')
+      redirect_to root_path
+    else
+      raise @node.errors.inspect
+      render :action => :new
+    end
   end
   
   def new

@@ -1,27 +1,25 @@
-
-
 #accessibility.box
-  - semantic_form_for :node, @node do |form|
+  - semantic_form_for :node, @node,  :url => {:controller => 'nodes', :action => 'create'} do |form|
     - form.inputs :name => 'Basic' do
       = form.input :name
-      = form.input :wheelchair, :collection => ['yes', 'limited', 'no', 'unknown']
-      = form.input :wheelchair_description
+      = form.input :wheelchair, :collection => ['yes', 'limited', 'no', 'unknown'], :include_blank => false, :input_html => {:value => @node.wheelchair}
+      = form.input :wheelchair_description, :input_html => {:value => @node.wheelchair_description}
       = form.input :type
 
     - form.buttons do
       = form.submit
       
     - form.inputs :name => 'Optional' do
-      = form.input :street, :required => false
-      = form.input :number, :required => false
-      = form.input :zip_code, :required => false
-      = form.input :city, :required => false
-      = form.input :url, :required => false
-      = form.input :phone, :required => false
+      = form.input :street,       :required => false
+      = form.input :housenumber,  :required => false
+      = form.input :postcode,     :required => false
+      = form.input :city,         :required => false
+      = form.input :url,          :required => false
+      = form.input :phone,        :required => false
     
     - form.buttons do
       = form.submit
-
+  
 #map
 
 - content_for :breadcrumbs do
