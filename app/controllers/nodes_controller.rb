@@ -5,11 +5,13 @@ class NodesController < ApplicationController
   before_filter :check_create_params,   :only => :create
   before_filter :set_session_amenities, :only => :index
   
-  rescue_from OpenStreetMap::NotFound, :with => :not_found
-  rescue_from OpenStreetMap::Gone, :with => :gone
-  rescue_from Timeout::Error, :with => :timeout
+  rescue_from OpenStreetMap::NotFound,    :with => :not_found
+  rescue_from OpenStreetMap::Gone,        :with => :gone
+  rescue_from OpenStreetMap::Unavailable, :with => :timeout
+  rescue_from Timeout::Error,             :with => :timeout
+
+  layout 'nodes'
   
-  layout 'nodes'  
   def index
     @places = Cloudmade.nodes(params[:bbox],params[:object_types])
     render :json => @places
@@ -18,7 +20,7 @@ class NodesController < ApplicationController
   def show
     @node = OpenStreetMap.get_node(params[:id])
   end
-  
+
   def update
     Delayed::Job.enqueue(UpdatingJob.new(params[:id], params[:wheelchair], default_user.id))
     render :text => 'OK'
@@ -29,9 +31,12 @@ class NodesController < ApplicationController
     render :text => 'OK', :status => 201
   end
   
+  def new
+    @node = OpenStreetMap::Node.new({})
+  end
+
   # Before filter
   protected
-  
   
   def gone(exception)
     @message = I18n.t('nodes.errors.not_existent')

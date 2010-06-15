@@ -108,7 +108,7 @@ a:visited:hover {
 /* line 1, ../../app/stylesheets/basics/_sozialhelden.sass */
 #sozialhelden {
   bottom: 0;
-  position: absolute;
+  position: fixed;
   right: 0;
   z-index: 4000;
 }
@@ -151,29 +151,34 @@ h1 span.addition {
 
 /* line 1, ../../app/stylesheets/partials/nodes/_boxes.sass */
 .box {
-  width: 500px;
+  width: 550px;
   margin-bottom: 20px;
+  padding: 30px;
   color: #333333;
-  clear: left;
+  float: left;
+  background-color: #f9faf9;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #f9faf9), color-stop(1, #f4f5f4));
+  background-image: -moz-linear-gradient(center bottom, #f4f5f4 0%, #f9faf9 50%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#f4f5f4', startColorstr='white', gradientType='0');
 }
-/* line 8, ../../app/stylesheets/partials/nodes/_boxes.sass */
+/* line 9, ../../app/stylesheets/partials/nodes/_boxes.sass */
 .box label {
   vertical-align: middle;
   line-height: 34px;
 }
-/* line 13, ../../app/stylesheets/partials/nodes/_boxes.sass */
+/* line 14, ../../app/stylesheets/partials/nodes/_boxes.sass */
 .box label.checked.yes {
   color: #a8c468;
 }
-/* line 16, ../../app/stylesheets/partials/nodes/_boxes.sass */
+/* line 17, ../../app/stylesheets/partials/nodes/_boxes.sass */
 .box label.checked.limited {
   color: #e8d787;
 }
-/* line 19, ../../app/stylesheets/partials/nodes/_boxes.sass */
+/* line 20, ../../app/stylesheets/partials/nodes/_boxes.sass */
 .box label.checked.no {
   color: #e98989;
 }
-/* line 22, ../../app/stylesheets/partials/nodes/_boxes.sass */
+/* line 23, ../../app/stylesheets/partials/nodes/_boxes.sass */
 .box label.checked.unknown {
   color: #b7b7b7;
 }
@@ -233,21 +238,148 @@ dd {
 #map {
   height: 430px;
   width: 500px;
-  background-color: black;
-  float: right;
+  background-color: white;
+  float: left;
+  border: 1px solid #cccccc;
 }
 
-/* line 17, ../../app/stylesheets/nodes.sass */
+/* line 1, ../../app/stylesheets/partials/nodes/_nav.sass */
+nav {
+  float: right;
+  padding: 3px 17px 15px 350px;
+}
+
+/* line 1, ../../app/stylesheets/partials/nodes/_forms.sass */
+form {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 13px;
+  line-height: 20px;
+}
+/* line 5, ../../app/stylesheets/partials/nodes/_forms.sass */
+form li {
+  display: block;
+  float: left;
+  width: 100%;
+}
+/* line 10, ../../app/stylesheets/partials/nodes/_forms.sass */
+form input[type='text'], form textarea, form select {
+  border: 1px solid #a1c175;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  color: #a1c175;
+  background-color: white;
+  padding: 5px;
+  width: 310px;
+}
+/* line 19, ../../app/stylesheets/partials/nodes/_forms.sass */
+form select {
+  width: 322px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: white url("/images/select-marker.png") no-repeat 98% center;
+}
+/* line 25, ../../app/stylesheets/partials/nodes/_forms.sass */
+form option {
+  -webkit-appearance: none;
+}
+/* line 31, ../../app/stylesheets/partials/nodes/_forms.sass */
+form input[type='submit'] {
+  position: relative;
+  left: 30%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #d3e4c1;
+  background-color: #94b369;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a1c175), color-stop(0.5, #94b369), color-stop(1, #87a55e));
+  background-image: -moz-linear-gradient(center bottom, #87a55e 0%, #94b369 50%, #a1c175 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#87a55e', startColorstr='#a1c175', gradientType='0');
+  color: white;
+  padding: 10px;
+}
+/* line 42, ../../app/stylesheets/partials/nodes/_forms.sass */
+form label {
+  font-weight: bold;
+  color: #333333;
+  display: block;
+  float: left;
+  width: 30%;
+}
+/* line 49, ../../app/stylesheets/partials/nodes/_forms.sass */
+form legend {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  bottom: 2px;
+  font-weight: bold;
+  color: #333333;
+}
+/* line 54, ../../app/stylesheets/partials/nodes/_forms.sass */
+form fieldset {
+  margin-bottom: 20px;
+}
+
+/* line 1, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
+#breadcrumbs {
+  margin: 20px 20px 0px;
+  width: 100%;
+}
+/* line 8, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
+#breadcrumbs a, #breadcrumbs span {
+  color: white;
+  padding: 10px;
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 13px;
+  line-height: 20px;
+  display: block;
+  float: left;
+}
+/* line 15, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
+#breadcrumbs a {
+  background-color: #a1c175;
+  background-color: #97c953;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a4d561), color-stop(0.5, #97c953), color-stop(1, #8bbe45));
+  background-image: -moz-linear-gradient(center bottom, #8bbe45 0%, #97c953 50%, #a4d561 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#8bbe45', startColorstr='#a4d561', gradientType='0');
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -khtml-border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -khtml-border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+/* line 20, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
+#breadcrumbs span {
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -khtml-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -khtml-border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #f5821c;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ff8f2c), color-stop(0.5, #f5821c), color-stop(1, #ec750c));
+  background-image: -moz-linear-gradient(center bottom, #ec750c 0%, #f5821c 50%, #ff8f2c 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#ec750c', startColorstr='#ff8f2c', gradientType='0');
+  background-color: #f29039;
+  border-left: 1px solid white;
+}
+
+/* line 20, ../../app/stylesheets/nodes.sass */
 body, html {
   background-color: white;
 }
 
-/* line 20, ../../app/stylesheets/nodes.sass */
-#main {
-  margin: 20px;
-}
-
-/* line 23, ../../app/stylesheets/nodes.sass */
+/* line 25, ../../app/stylesheets/nodes.sass */
 .clear {
   clear: both;
   display: block;

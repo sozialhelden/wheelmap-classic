@@ -10,6 +10,16 @@ de:
   header: 
     navigation: 
       home: Start
+      login: Anmelden
+      logout: Abmelden
+      imprint: Impressum
+      blog: Blog
+      what_is_wheelmap: 'Was ist Wheelmap?'
+      what_is_barrier_free: 'Was bedeutet „barrierefrei“?'
+      how_to_add_a_place: 'Wie trage ich Orte ein?'
+      suggestions: 'Anregungen'
+      logged_in_as: "Angemeldet als:"
+      
     tagline: Wheelmap logo
     title: wheelmap
   form:
@@ -19,16 +29,6 @@ de:
     show_places_without_status: Orte ohne Status anzeigen
   layouts: 
     application: 
-      links: 
-        login: Anmelden
-        logout: Abmelden
-        imprint: Impressum
-        blog: Blog
-        what_is_wheelmap: 'Was ist Wheelmap?'
-        what_is_barrier_free: 'Was bedeutet „barrierefrei“?'
-        how_to_add_a_place: 'Wie trage ich Orte ein?'
-        suggestions: 'Anregungen'
-      logged_in_as: "Angemeldet als:"
       banner:
         alt: 'Ein Projekt der Sozialhelden'
   oauth: 
@@ -53,6 +53,9 @@ de:
     close: schließen
   home:
     index:
+      link:
+        node:
+          create: Neuen Ort anlegen
       amenities:
         headline:
           public_transfer: Nahverkehr
@@ -138,7 +141,10 @@ de:
             by_sa_20: 'Namensnennung-Weitergabe unter gleichen Bedingungen 2.0 US-amerikanisch (nicht portiert)'
             by_30: 'Creative Commons Namensnennung 3.0 Unported'
             
-
+  breadcrumbs:
+    root: wheelmap-Karte
+    node:
+      create: Neuen Platz anlegen
   nodes:
     errors:
       not_found: Leider konnte die Seite nicht gefunden werden
