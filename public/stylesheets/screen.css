@@ -115,59 +115,59 @@ a:hover {
   display: none;
 }
 
-/* line 1, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 1, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 a, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, p, pre, span, th, td {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
 }
 
-/* line 6, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 6, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 10, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 10, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 fieldset, img {
   border: 0;
 }
 
-/* line 13, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 13, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 address, em, th {
   font-style: normal;
   font-weight: normal;
 }
 
-/* line 17, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 17, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 li {
   list-style: none;
 }
 
-/* line 20, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 20, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 th {
   font-style: normal;
   text-align: left;
 }
 
-/* line 24, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 24, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 h1, h2, h3, h4, h5, h6, small {
   font-size: 100%;
 }
 
-/* line 27, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 27, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 input, textarea, select {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
 }
 
-/* line 33, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 33, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 .msie input, .msie textarea, .msie select {
   font-size: 100%;
 }
 
-/* line 36, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 36, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 header, section, article, aside, footer, time {
   display: block;
 }
@@ -200,7 +200,7 @@ h1 {
   line-height: 40px;
   position: relative;
 }
-/* line 3, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_browser_support.sass */
+/* line 3, ../../vendor/gems/redgreengrid-0.3.2/sass/redgreengrid/_browser_support.sass */
 .presto h1 {
   bottom: 1px;
 }
@@ -252,7 +252,7 @@ header {
   overflow: hidden;
   display: inline-block;
 }
-/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+/* line 8, ../../vendor/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
 header {
   display: block;
 }
@@ -514,7 +514,7 @@ image[width='16'] {
   overflow: hidden;
   display: inline-block;
 }
-/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+/* line 8, ../../vendor/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
 #links {
   display: block;
 }
@@ -844,7 +844,7 @@ image[width='16'] {
   overflow: hidden;
   display: inline-block;
 }
-/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+/* line 8, ../../vendor/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
 #amenities {
   display: block;
 }
@@ -970,7 +970,7 @@ image[width='16'] {
   overflow: hidden;
   display: inline-block;
 }
-/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+/* line 8, ../../vendor/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
 .popup dl {
   display: block;
 }
