@@ -1,0 +1,225 @@
+--- !ruby/object:Gem::Specification 
+name: httparty
+version: !ruby/object:Gem::Version 
+  hash: 15
+  prerelease: false
+  segments: 
+  - 0
+  - 5
+  - 2
+  version: 0.5.2
+platform: ruby
+authors: 
+- John Nunemaker
+- Sandro Turriate
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2010-01-31 00:00:00 +01:00
+default_executable: httparty
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: crack
+  prerelease: false
+  requirement: &id001 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - "="
+      - !ruby/object:Gem::Version 
+        hash: 23
+        segments: 
+        - 0
+        - 1
+        - 6
+        version: 0.1.6
+  type: :runtime
+  version_requirements: *id001
+- !ruby/object:Gem::Dependency 
+  name: activesupport
+  prerelease: false
+  requirement: &id002 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ~>
+      - !ruby/object:Gem::Version 
+        hash: 5
+        segments: 
+        - 2
+        - 3
+        version: "2.3"
+  type: :development
+  version_requirements: *id002
+- !ruby/object:Gem::Dependency 
+  name: cucumber
+  prerelease: false
+  requirement: &id003 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ~>
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        - 4
+        version: "0.4"
+  type: :development
+  version_requirements: *id003
+- !ruby/object:Gem::Dependency 
+  name: fakeweb
+  prerelease: false
+  requirement: &id004 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ~>
+      - !ruby/object:Gem::Version 
+        hash: 11
+        segments: 
+        - 1
+        - 2
+        version: "1.2"
+  type: :development
+  version_requirements: *id004
+- !ruby/object:Gem::Dependency 
+  name: mongrel
+  prerelease: false
+  requirement: &id005 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ~>
+      - !ruby/object:Gem::Version 
+        hash: 13
+        segments: 
+        - 1
+        - 1
+        version: "1.1"
+  type: :development
+  version_requirements: *id005
+- !ruby/object:Gem::Dependency 
+  name: rspec
+  prerelease: false
+  requirement: &id006 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - "="
+      - !ruby/object:Gem::Version 
+        hash: 13
+        segments: 
+        - 1
+        - 2
+        - 9
+        version: 1.2.9
+  type: :development
+  version_requirements: *id006
+description: Makes http fun! Also, makes consuming restful web services dead easy.
+email: nunemaker@gmail.com
+executables: 
+- httparty
+extensions: []
+
+extra_rdoc_files: 
+- README.rdoc
+files: 
+- .gitignore
+- History
+- MIT-LICENSE
+- Manifest
+- README.rdoc
+- Rakefile
+- VERSION
+- bin/httparty
+- cucumber.yml
+- examples/aaws.rb
+- examples/basic.rb
+- examples/custom_parsers.rb
+- examples/delicious.rb
+- examples/google.rb
+- examples/rubyurl.rb
+- examples/twitter.rb
+- examples/whoismyrep.rb
+- features/basic_authentication.feature
+- features/command_line.feature
+- features/deals_with_http_error_codes.feature
+- features/handles_multiple_formats.feature
+- features/steps/env.rb
+- features/steps/httparty_response_steps.rb
+- features/steps/httparty_steps.rb
+- features/steps/mongrel_helper.rb
+- features/steps/remote_service_steps.rb
+- features/supports_redirection.feature
+- features/supports_timeout_option.feature
+- httparty.gemspec
+- lib/httparty.rb
+- lib/httparty/cookie_hash.rb
+- lib/httparty/core_extensions.rb
+- lib/httparty/exceptions.rb
+- lib/httparty/module_inheritable_attributes.rb
+- lib/httparty/parser.rb
+- lib/httparty/request.rb
+- lib/httparty/response.rb
+- spec/fixtures/delicious.xml
+- spec/fixtures/empty.xml
+- spec/fixtures/google.html
+- spec/fixtures/twitter.json
+- spec/fixtures/twitter.xml
+- spec/fixtures/undefined_method_add_node_for_nil.xml
+- spec/httparty/cookie_hash_spec.rb
+- spec/httparty/parser_spec.rb
+- spec/httparty/request_spec.rb
+- spec/httparty/response_spec.rb
+- spec/httparty_spec.rb
+- spec/spec.opts
+- spec/spec_helper.rb
+- spec/support/stub_response.rb
+- website/css/common.css
+- website/index.html
+has_rdoc: true
+homepage: http://httparty.rubyforge.org
+licenses: []
+
+post_install_message: When you HTTParty, you must party hard!
+rdoc_options: 
+- --charset=UTF-8
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: httparty
+rubygems_version: 1.3.7
+signing_key: 
+specification_version: 3
+summary: Makes http fun! Also, makes consuming restful web services dead easy.
+test_files: 
+- spec/httparty/cookie_hash_spec.rb
+- spec/httparty/parser_spec.rb
+- spec/httparty/request_spec.rb
+- spec/httparty/response_spec.rb
+- spec/httparty_spec.rb
+- spec/spec_helper.rb
+- spec/support/stub_response.rb
+- examples/aaws.rb
+- examples/basic.rb
+- examples/custom_parsers.rb
+- examples/delicious.rb
+- examples/google.rb
+- examples/rubyurl.rb
+- examples/twitter.rb
+- examples/whoismyrep.rb
