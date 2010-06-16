@@ -29,7 +29,7 @@ function markerLayer(name){
   });
 }
 
-function drawmap() {
+function drawmap(controls) {
   OpenLayers.Lang.setCode('de');
 
   epsg900913 = new OpenLayers.Projection("EPSG:900913");
@@ -37,14 +37,7 @@ function drawmap() {
   map = new OpenLayers.Map('map', {
     projection: epsg900913,
     displayProjection: epsg4326,
-    controls: [
-      new OpenLayers.Control.MouseDefaults(),
-      new OpenLayers.Control.KeyboardDefaults(),
-      new OpenLayers.Control.PanZoomBar(),
-      new OpenLayers.Control.MouseToolbar(),
-      // new OpenLayers.Control.LayerSwitcher()
-      
-    ],
+    controls: controls,
     maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34, 20037508.34, 20037508.34),
     numZoomLevels: 18,
     maxResolution: 156543,
@@ -54,28 +47,15 @@ function drawmap() {
 
   mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik");
   map.addLayer(mapnik);
-  
-
-  checkForPermalink();
-  jumpTo(lon, lat, zoom);
-
-  createLayer();
-  // createDraggableLayer();
-  
-  map.events.register('moveend', null, loadPlaces);
-  setTimeout(loadPlaces, 1000);
 }
 
-function onCompleteDrag(feature) 
-{ 
-  if(feature) 
-  {	
-    // replace coordinate values in feature attributes 
-    var pointX = feature.geometry.x; 
-    var pointY = feature.geometry.y;
-    alert(pointY);
-  }
-};
+function defaultControls(){
+  return [
+    new OpenLayers.Control.KeyboardDefaults(),
+    new OpenLayers.Control.Navigation({zoomWheelEnabled:true, autoActivate:true}),
+    new OpenLayers.Control.PanZoomBar()
+  ]
+}
 
 
 function toggleLayers(type, show) {
@@ -162,7 +142,7 @@ function loadPlaces() {
   });
 }
 
-function markerStyle(){
+function placesStyle(){
   return new OpenLayers.StyleMap({
     externalGraphic: "/images/icons/${icon}.png",
     graphicWidth: 16,
@@ -197,28 +177,26 @@ function needleStyle(){
   });
 }
 
-function createLayer() {
-  var style = markerStyle();
+function clusterStrategy(){
+  return new OpenLayers.Strategy.Cluster({distance: 15, threshold: 3});
+}
 
-  var strategy = new OpenLayers.Strategy.Cluster({distance: 5, threshold: 32});
+function createPlacesLayer(style) { 
   places = new OpenLayers.Layer.Vector(
     "Places ",
     {
       styleMap: style,
       rendererOptions: { yOrdering: true },
       visibility: true,
-      strategies: [strategy]
+      strategies: [clusterStrategy()]
     });
     
   map.addLayer(places);
-  selectControl = new OpenLayers.Control.SelectFeature(places,
-    { onSelect:openPopup, onUnselect:closePopup });
-  map.addControl(selectControl);
-  selectControl.activate();  
+  activateSelectControl(places);
 }
 
-function createDraggableLayer() {  
-  var style = needleStyle();
+function createDraggableLayer(style) {  
+
   var draggable_layer = new OpenLayers.Layer.Vector(
     "Draggable",
     {
@@ -227,18 +205,22 @@ function createDraggableLayer() {
       visibility: true,
     });    
     map.addLayer(draggable_layer);
-    createDragControl(draggable_layer);
-    // addPin(draggable_layer);
+    activateDragControl(draggable_layer);
+    addPin(draggable_layer);
 }
 
-function createDragControl(layer){
-   var dragControl = new OpenLayers.Control.DragFeature(
-    layer, 
-    {'onComplete': onCompleteDrag}
-    );
-    map.addControl(dragControl); 
-    dragControl.activate();
+function activateDragControl(layer){
+  var dg = new OpenLayers.Control.DragFeature(layer, { onComplete:onCompleteDrag });
+  map.addControl(dg); 
+  dg.activate();
 }
+
+function activateSelectControl(layer){
+  var sc = new OpenLayers.Control.SelectFeature(layer, { onSelect:openPopup});
+  map.addControl(sc);
+  sc.activate();  
+}
+
 
 function addPin(layer){
   var features = [];
@@ -272,6 +254,19 @@ function lonLatToMercator(ll) {
 function centerCoordinates() {
   return map.getCenter().clone().transform(map.getProjectionObject(), epsg4326);
 }
+
+function onCompleteDrag(feature) 
+{ 
+  if(feature) 
+  {	
+    // replace coordinate values in feature attributes 
+    var pointX = feature.geometry.x; 
+    var pointY = feature.geometry.y;
+    var lonlat = new OpenLayers.LonLat(feature.geometry.x, feature.geometry.y);
+    var coordinates = lonlat.clone().transform(map.getProjectionObject(), epsg4326);
+  }
+};
+
 
 function permalink() {
   var ll = centerCoordinates();

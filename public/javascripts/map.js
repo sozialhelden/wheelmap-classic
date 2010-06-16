@@ -41,9 +41,15 @@ var counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
 
 
 
-drawmap();
+drawmap(defaultControls());
 
+checkForPermalink();
+jumpTo(lon, lat, zoom);
 
+createPlacesLayer(placesStyle());
+
+map.events.register('moveend', null, loadPlaces);
+setTimeout(loadPlaces, 1000);
 
 
 
