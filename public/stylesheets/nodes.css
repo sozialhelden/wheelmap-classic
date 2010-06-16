@@ -428,6 +428,21 @@ a:visited:hover {
   border: 0;
 }
 
+/* line 1, ../../app/stylesheets/basics/_open_layers.sass */
+div[id^='OpenLayers\.Layer\.OSM\.Mapnik'] {
+  opacity: 0.5;
+}
+
+/* line 4, ../../app/stylesheets/basics/_open_layers.sass */
+div[id^='OpenLayers\.Layer\.OSM\.Attribution'] {
+  bottom: 10px;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 11px;
+  left: 32px;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+}
+
 /* line 1, ../../app/stylesheets/partials/nodes/_header.sass */
 header {
   background-color: #f9faf9;
@@ -544,7 +559,7 @@ dd {
 #map {
   height: 430px;
   width: 500px;
-  background-color: white;
+  background-color: #fff7d9;
   float: left;
   border: 1px solid #cccccc;
 }
@@ -775,12 +790,12 @@ form p.inline-errors {
   border-left: 1px solid white;
 }
 
-/* line 21, ../../app/stylesheets/nodes.sass */
+/* line 22, ../../app/stylesheets/nodes.sass */
 body, html {
   background-color: white;
 }
 
-/* line 26, ../../app/stylesheets/nodes.sass */
+/* line 27, ../../app/stylesheets/nodes.sass */
 .clear {
   clear: both;
   display: block;
