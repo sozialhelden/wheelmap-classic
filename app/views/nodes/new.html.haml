@@ -2,19 +2,16 @@
   - semantic_form_for :node, @node,  :url => {:controller => 'nodes', :action => 'create'} do |form|
     - form.inputs :name => t('formtastic.titles.basic'), :id => 'basic' do
       = form.input :name
-      = form.input :wheelchair, :collection => WheelchairStatus.map{|status| t("wheelchairstatus.#{status}")}, :include_blank => false, :input_html => {:value => @node.wheelchair}
+      %li.select-required#node-wheelchair-input
+        = form.label :wheelchair, :required => true
+        %select#node-type{:name => 'node[wheelchair]'}
+          = options_for_wheelchair_status(@node.wheelchair)
+
       = form.input :wheelchair_description, :input_html => {:value => @node.wheelchair_description}
       %li.select-required#node-type-input
         = form.label :type, :required => true
         %select#node-type{:name => 'node[type]'}
-          - [:public_transfer, :food, :leisure, :money, :post, :government, :health, :car, :education, :misc].each do |amenity_group|
-            %optgroup{:label => t("poi.category.#{amenity_group}"), :class => "category #{amenity_group}"}
-              - Amenities[amenity_group].each do |elements|
-                -elements.each do |key,values|
-                  - if @node.type.to_s == key.to_s
-                    %option{:label => t("poi.name.#{key}"), :value => key, :selected => 'selected'}>=t("poi.name.#{key}")
-                  - else
-                    %option{:label => t("poi.name.#{key}"), :value => key}>=t("poi.name.#{key}")
+          = render :partial => 'options_for_type', :object => @node.type
 
 
     - form.inputs :name => t('formtastic.titles.optional'), :id => 'optional' do

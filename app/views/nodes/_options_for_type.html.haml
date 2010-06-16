@@ -1,0 +1,8 @@
+- [:public_transfer, :food, :leisure, :money, :post, :government, :health, :car, :education, :misc].each do |amenity_group|
+  %optgroup{:label => t("poi.category.#{amenity_group}"), :class => "category #{amenity_group}"}
+    - Amenities[amenity_group].each do |elements|
+      -elements.each do |key,values|
+        - if options_for_type.to_s == key.to_s
+          %option{:label => t("poi.name.#{key}"), :value => key, :selected => 'selected'}>=t("poi.name.#{key}")
+        - else
+          %option{:label => t("poi.name.#{key}"), :value => key}>=t("poi.name.#{key}")
