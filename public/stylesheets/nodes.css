@@ -727,9 +727,8 @@ form p.inline-errors {
 /* line 1, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
 #breadcrumbs {
   margin: 20px 20px 0px;
-  width: 100%;
 }
-/* line 8, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
+/* line 7, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
 #breadcrumbs a, #breadcrumbs span {
   color: white;
   padding: 10px;
@@ -740,7 +739,7 @@ form p.inline-errors {
   float: left;
   letter-spacing: 0.1em;
 }
-/* line 16, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
+/* line 15, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
 #breadcrumbs a {
   background-color: #a1c175;
   background-color: #6ba534;
@@ -757,7 +756,7 @@ form p.inline-errors {
   -khtml-border-top-left-radius: 5px;
   border-top-left-radius: 5px;
 }
-/* line 21, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
+/* line 20, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
 #breadcrumbs span {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
