@@ -550,6 +550,21 @@ a:visited:hover {
   border: 0;
 }
 
+/* line 1, ../../app/stylesheets/basics/_open_layers.sass */
+div[id^='OpenLayers\.Layer\.OSM\.Mapnik'] {
+  opacity: 0.5;
+}
+
+/* line 4, ../../app/stylesheets/basics/_open_layers.sass */
+div[id^='OpenLayers\.Layer\.OSM\.Attribution'] {
+  bottom: 10px;
+  color: rgba(0, 0, 0, 0.8);
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 11px;
+  left: 32px;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+}
+
 /* line 1, ../../app/stylesheets/partials/map/_page.sass */
 body,
 html {
@@ -625,28 +640,13 @@ aside {
   height: 500px;
   width: auto !important;
 }
-
 /* line 12, ../../app/stylesheets/partials/map/_map.sass */
-div[id^='OpenLayers\.Layer\.OSM\.Attribution'] {
-  bottom: 10px;
-  color: rgba(0, 0, 0, 0.8);
-  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
-  font-size: 11px;
-  left: 32px;
-  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
-}
-/* line 21, ../../app/stylesheets/partials/map/_map.sass */
-div[id^='OpenLayers\.Layer\.OSM\.Attribution'] a {
+#map_OpenLayers_ViewPort a {
   color: inherit;
   font-weight: bold;
 }
 
-/* line 25, ../../app/stylesheets/partials/map/_map.sass */
-div[id^='OpenLayers\.Layer\.OSM\.Mapnik'] {
-  opacity: 0.5;
-}
-
-/* line 28, ../../app/stylesheets/partials/map/_map.sass */
+/* line 16, ../../app/stylesheets/partials/map/_map.sass */
 image[width='16'] {
   cursor: pointer;
 }
