@@ -1,0 +1,18 @@
+de:
+  formtastic:
+    titles:
+      basic: Basisdaten
+      optional: 'Mehr Infos <span class="addition">(alle Felder sind optional)</span>'
+    labels:
+      name: 'Name des Platzes:'
+      type: 'Typ:'
+      wheelchair: Barrierefrei?
+      wheelchair_description: 'Info zu Barrierefreiheit:'
+      street: 'Straße:'
+      housenumber: 'Nr:'
+      postcode: 'PLZ:'
+      city: 'Ort:'
+      url: 'Website:'
+      phone: 'Telefon:'
+    hints:
+    actions:

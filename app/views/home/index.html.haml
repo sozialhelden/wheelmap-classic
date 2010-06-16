@@ -26,11 +26,11 @@
   %ul#amenities
     - [:public_transfer, :food, :leisure, :money, :post, :government, :health, :car, :education, :misc].each do |amenity_group|
       %li
-        %h4=t("amenities.category.#{amenity_group}")
+        %h4=t("poi.category.#{amenity_group}")
         %div
           - Amenities[amenity_group].each do |elements|
             -elements.each do |key,values|
-              %a{:class => session['amenities'].include?(values.first) ? 'visible' : 'hidden', :href => '#', :onclick => "toggleLayers('#{values.first}')", :title => t("amenities.name.#{values.first}")}
+              %a{:class => session['amenities'].include?(values.first) ? 'visible' : 'hidden', :href => '#', :onclick => "toggleLayers('#{values.first}')", :title => t("poi.name.#{values.first}")}
                 %span{:class => values.first}
   .edit{:style => 'padding:5px 10px;'}
     - if (user_signed_in? && current_user.application_authorized?)

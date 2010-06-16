@@ -1,0 +1,62 @@
+de:
+  poi:
+    category:
+      public_transfer: Nahverkehr
+      food: 'Essen & Trinken'
+      money: Geld
+      leisure: Freizeit
+      government: 'Botschaften & Behörden'
+      post: Post
+      health: Medizin
+      car: 'Auto & Fahrrad'
+      misc: Sonstiges
+      education: 'Kinder & Bildung'
+    name:
+      subway: U-Bahn
+      ferry_terminal: Fähre
+      bus_stop: Bus
+      tram_stop: Straßenbahn
+      light_rail: S-Bahn
+      cafe: Café
+      pub: Pub
+      bar: Bar
+      fast_food: Fast Food
+      restaurant: Restaurant
+      biergarten: Biergarten
+      nightclub: Nachtclub
+      theatre: Theater
+      sauna: Sauna
+      arts_centre: Kunstzentrum
+      atm: Geldautomat
+      bank: Bank
+      bureau_de_change: Geldwechselbüro
+      embassy: Botschaft
+      courthouse: Gericht
+      police: Polizeiwache
+      fire_station: Feuerwache
+      cinema: Kino
+      shop: Geschäft
+      post_box: Briefkasten
+      post_office: Postfiliale
+      public_building: Öffentliches Gebäude
+      register_office: Meldestelle
+      townhall: Stadthalle
+      community_centre: Gemeindezentrum
+      hospital: Krankenhaus
+      pharmacy: Apotheke
+      fuel: Tankstelle
+      car_rental: Autovermietung
+      car_sharing: Car sharing
+      parking: Parkplatz/Parkhaus
+      bicycle_parking: Fahradparkplatz
+      bicycle_rental: Fahradvermietung
+      kindergarten: Kindergarten
+      school: Schule
+      college: Hochschule
+      university: Universität
+      library: Bibliothek
+      marketplace: Markplatz
+      telephone: Öffentliches Telefon
+      toilets: Öffentliche Toilette
+      grave_yard: Friedhof
+      place_of_worship: Kirche

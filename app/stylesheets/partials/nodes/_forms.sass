@@ -5,6 +5,8 @@
 
 form
   +helvetica-13
+  
+  
 
   li
     display: block
@@ -86,9 +88,18 @@ form
     +helvetica-16
     font-weight: bold
     color: #333
+    margin-top: 20px
+    top: 15px
+    bottom: none
+    
+    span.addition
+      color: #AAA
     
   fieldset
-    margin-bottom: 20px
+    padding: 30px 20px
+    
+    &#basic, &#optional
+      +vertical-gradient(white, desaturate(lighten($green, 35%), 35%))
 
   li[class*='error']
     label
