@@ -12,6 +12,8 @@
         = form.label :type, :required => true
         %select#node-type{:name => 'node[type]'}
           = render :partial => 'options_for_type', :object => @node.type
+      =form.input :lon, :input_html =>{:readonly => 'readonly'}
+      =form.input :lat, :input_html =>{:readonly => 'readonly'}
 
 
     - form.inputs :name => t('formtastic.titles.optional'), :id => 'optional' do

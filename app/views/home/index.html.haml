@@ -33,10 +33,10 @@
               %a{:class => session['amenities'].include?(values.first) ? 'visible' : 'hidden', :href => '#', :onclick => "toggleLayers('#{values.first}')", :title => t("poi.name.#{values.first}")}
                 %span{:class => values.first}
   .edit{:style => 'padding:5px 10px;'}
-    - if (user_signed_in? && current_user.application_authorized?)
-      = link_to t('.link.node.create'), new_node_path
-    - else
-      = link_to 'Edit', oauth_index_path
+    -# if (user_signed_in? && current_user.application_authorized?)
+    = link_to t('.link.node.create'), new_node_path, :onclick => "location=permalink('#{new_node_path}');return false;"
+    -# else
+      -#= link_to 'Edit', oauth_index_path
       
 -#= render :partial => 'edit'
     
