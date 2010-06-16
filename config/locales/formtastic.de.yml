@@ -15,4 +15,28 @@ de:
       url: 'Website:'
       phone: 'Telefon:'
     hints:
-    actions:
+      url: 'Beispiel: http://www.example.com'
+      phone: 'Beispiel: +49 30 123456-78'
+
+
+  errors:
+    messages:
+      inclusion: "ist kein gültiger Wert"
+      exclusion: "ist nicht verfügbar"
+      invalid: "ist nicht gültig"
+      confirmation: "stimmt nicht mit der Bestätigung überein"
+      accepted: "muss akzeptiert werden"
+      empty: "muss ausgefüllt werden"
+      blank: "muss ausgefüllt werden"
+      too_long: "ist zu lang (nicht mehr als {{count}} Zeichen)"
+      too_short: "ist zu kurz (nicht weniger als {{count}} Zeichen)"
+      wrong_length: "hat die falsche Länge (muss genau {{count}} Zeichen haben)"
+      taken: "ist bereits vergeben"
+      not_a_number: "ist keine Zahl"
+      greater_than: "muss größer als {{count}} sein"
+      greater_than_or_equal_to: "muss größer oder gleich {{count}} sein"
+      equal_to: "muss genau {{count}} sein"
+      less_than: "muss kleiner als {{count}} sein"
+      less_than_or_equal_to: "muss kleiner oder gleich {{count}} sein"
+      odd: "muss ungerade sein"
+      even: "muss gerade sein"

@@ -1,5 +1,10 @@
 --- 
-de: 
+de:
+  wheelchairstatus:
+    'yes': 'Vollständing barrierefrei'
+    limited: 'Teilweise barrierefrei'
+    'no': 'Nicht barrierefrei'
+    unknown: 'Barrierefreiheit unbekannt'
   application: 
     require_no_user: 
       notice: "Du bist doch schon angemeldet …"

@@ -12,6 +12,7 @@ form
     display: block
     float: left
     width: 100%
+    margin-bottom: 6px
     
   input[type='text'], textarea, select
     border: 1px solid $green
@@ -83,6 +84,7 @@ form
     display: block
     float: left
     width: 30%
+    line-height: 20px
     
   legend
     +helvetica-16
@@ -108,5 +110,11 @@ form
     input[type='text'], textarea, select
       border: 1px solid $orange
 
-    p.inline-errors
-      color: $orange
+  p.inline-errors, p.inline-hints
+    position: relative
+    left: 30%
+    color: #AAA
+    
+  p.inline-errors
+    color: $orange
+      
