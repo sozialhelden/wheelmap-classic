@@ -1,6 +1,6 @@
 class NodesController < ApplicationController
   
-  before_filter :authenticate_user!,    :only => [:create, :new]
+  before_filter :authenticate_user!,    :only => [:create, :new, :update]
   before_filter :check_update_params,   :only => :update
   before_filter :check_create_params,   :only => :create
   before_filter :set_session_amenities, :only => :index
@@ -25,8 +25,21 @@ class NodesController < ApplicationController
   end
 
   def update
-    Delayed::Job.enqueue(UpdatingJob.new(params[:id], params[:wheelchair], default_user.id))
-    render :text => 'OK'
+    @node = OpenStreetMap::Node.new(params[:node])
+    if @node.valid?
+      Delayed::Job.enqueue(UpdatingJob.new(params[:id], params[:node][:wheelchair], default_user.id))
+      respond_to do |wants|
+        wants.js{ render :text => 'OK' }
+        wants.html{ redirect_to node_path(@node) }
+      end
+    else
+      respond_to do |wants|
+        wants.js{ render :text => 'OK', :status => 406 }
+        wants.html{ render :action => :edit }
+      end
+      
+      
+    end
   end
   
   def create
@@ -42,6 +55,10 @@ class NodesController < ApplicationController
   
   def new
     @node = OpenStreetMap::Node.new({'lat' => params[:lat], 'lon' => params[:lon]})
+  end
+  
+  def edit
+    @node = OpenStreetMap.get_node(params[:id])
   end
 
   # Before filter
@@ -71,7 +88,7 @@ class NodesController < ApplicationController
   end
   
   def check_update_params
-    render( :text => 'Params missing', :status => 400 ) if params[:wheelchair].blank?
+    render( :text => 'Params missing', :status => 400 ) if params[:node].blank?
   end
   
   def check_create_params

@@ -1,3 +1,8 @@
+=category-icon($name: null)
+  @if $name != null
+    background: #FFF url("/images/icons/#{ $name }.png") no-repeat left top
+    border: 0
+
 .status
   width: 20px
   height: 20px
@@ -9,29 +14,64 @@
   float: left
   
 
-  &.checked
-    &.yes
-      background: $yes
-  
-    &.limited
-      background: $limited
-  
-    &.no
-      background: $no
-  
-    &.unknown
-      background: $unknown
+  &.yes
+    background: $yes
+
+  &.limited
+    background: $limited
+
+  &.no
+    background: $no
+
+  &.unknown
+    background: $unknown
 
 dl
   +vertical-gradient(white, desaturate(lighten($green, 35%), 35%))
+  display: block
+  padding: 30px 20px
 
 dt
   display: block
   float: left
   width: 250px
   font-weight: bold
+  margin-bottom: 10px
 dd
   display: block
   float: left
-  width: 250px
+  width: 230px
+  margin-bottom: 10px
+  padding-left: 20px
 
+
+  &.public_transfer
+    +category-icon(public-transport-subway-germany)
+
+  &.food
+    +category-icon(cutlery)
+
+  &.post
+    +category-icon(mail)
+
+  &.money
+    +category-icon(money-coin)
+
+  &.health
+    +category-icon(hospital)
+
+  &.government
+    +category-icon(bank)
+
+  &.education
+    +category-icon(book-open)
+
+  &.car
+    +category-icon(car-red)
+
+  &.misc
+    +category-icon(store)
+
+  &.leisure
+    +category-icon(smiley)
+    

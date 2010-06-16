@@ -1,0 +1,24 @@
+- form.inputs :name => t('formtastic.titles.basic'), :id => 'basic' do
+  = form.input :name
+  %li.select-required#node-wheelchair-input
+    = form.label :wheelchair, :required => true
+    %select#node-type{:name => 'node[wheelchair]'}
+      = options_for_wheelchair_status(@node.wheelchair)
+
+  = form.input :wheelchair_description, :required => false
+  %li.select-required#node-type-input
+    = form.label :type, :required => true
+    %select#node-type{:name => 'node[type]'}
+      = render :partial => 'options_for_type', :object => inputs.type
+  =form.input :lon, :input_html =>{:readonly => 'readonly'}
+  =form.input :lat, :input_html =>{:readonly => 'readonly'}
+  =form.input :id, :as => :hidden
+
+
+- form.inputs :name => t('formtastic.titles.optional'), :id => 'optional' do
+  = form.input :street,       :required => false
+  = form.input :housenumber,  :required => false
+  = form.input :postcode,     :required => false
+  = form.input :city,         :required => false
+  = form.input :url,          :required => false
+  = form.input :phone,        :required => false

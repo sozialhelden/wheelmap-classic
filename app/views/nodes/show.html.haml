@@ -10,8 +10,6 @@
   var lat = parseFloat("#{@node.lat}");
   object_types.push("#{@node.type}");
 
-#map
-
 #accessibility.box
   %dl{:id => "accessibility_#{dom_id(@node)}"}
     %dt Barrierefrei:
@@ -21,7 +19,7 @@
           %li
             .status{:class => @node.wheelchair == status ? "checked #{status}" : "#{status}"}
               - if @node.wheelchair == status
-                %input{:type => 'radio', :name => "wheelchair_#{@node.id}", :value => status, :class => status, :id => "wheelchair_#{@node.id}_#{status}", :checked =>  'checked'}
+                %input{:type => 'radio', :readonly => 'readonly', :name => "wheelchair_#{@node.id}", :value => status, :class => status, :id => "wheelchair_#{@node.id}_#{status}", :checked =>  'checked'}
               - else
                 %input{:type => 'radio', :name => "wheelchair_#{@node.id}", :value => status, :class => status, :id => "wheelchair_#{@node.id}_#{status}"}
             %label{:for => "wheelchair_#{@node.id}_#{status}", :class => @node.wheelchair == status ? "checked #{status}" : "#{status}"}= status
@@ -29,12 +27,26 @@
         
     %dt Infos zur Barrierefreiheit:
     %dd Toiletten sind zu eng
-  .clear
+    .clear
 
-#properties.box
   %dl{:id => "properties_#{dom_id(@node)}"}
+
+    %dt Kategorie:
+      
+    - category = category_for_node(@node.type)
+    %dd{:class => category}
+      - if category
+        = t("poi.category.#{category}")
+      - else
+        &nbsp;
+
+    
     %dt Typ:
-    %dd=@node.type || '&nbsp;'
+    %dd
+      - if @node.type
+        = t("poi.name.#{@node.type}")
+      -else
+        &nbsp;
 
     %dt Strasse:
     %dd=@node.tags['address:street'] || '&nbsp;'
@@ -49,8 +61,13 @@
     %dd=@node.tags['website'] || '&nbsp;'
 
     %dt Telefon:
-    %dd=@node.tags['contact:telephone'] || '&nbsp;'
-  .clear
+    %dd
+      =@node.tags['contact:telephone'] || '&nbsp;'
+    .clear
+
+#map
+
+  
 
 - content_for :breadcrumbs do
   = link_to t('breadcrumbs.root'), root_path
