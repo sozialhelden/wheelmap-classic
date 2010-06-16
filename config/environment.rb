@@ -13,6 +13,7 @@ Rails::Initializer.run do |config|
   config.gem 'formtastic',      :version => '0.9.10', :source => 'rubygems.org'
   config.gem 'newrelic_rpm'
   config.gem 'jnunemaker-validatable', :lib => 'validatable'
+  config.gem 'smurf'
   config.i18n.default_locale = :de
 end
 

@@ -2,25 +2,33 @@
 
   $breadcrumbs-organge: saturate($orange, 20%)
   $breadcrumbs-green: saturate($green, 20%)
+  
   margin: 20px 20px 0px
+  height: 34px
+  
+  border: 0px solid white
 
   a,span
     color: white
-    padding: 10px
     +helvetica-13
     display: block
     float: left
     letter-spacing: 0.1em
-    
-  a
-    background-color: $green
-    +vertical-gradient(#82B64F, #549419)
+    background: url('/images/background-breadcrumbs.png') scroll left top
+    padding-left: 30px
+    line-height: 34px
+    height: 34px
+    vertical-align: center
+  
+  a:first-child
     +border-left-radius(5px)
     
-  span
+  a
+    background-position: 0 0
+
+  a.last, span
     +border-right-radius(5px)
-    +vertical-gradient(#EF933E, #D97E23)
-
-
-    background-color: $orange
-    border-left: 1px solid white
+    padding-right: 10px
+    
+  span
+    background-position: 0 -34px
