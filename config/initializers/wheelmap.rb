@@ -7,7 +7,9 @@
 # 'Auto & Fahrrad': ['fuel', 'car-rental', 'car-sharing', 'parking', 'bicycle-parking', 'bicycle-rental'],
 # 'Kinder & Bildung': ['kindergarten', 'school', 'college', 'university', 'library'],
 # 'Sonstiges': ['marketplace', 'telephone', 'toilets', 'grave-yard', 'place-of-worship']
-# 
+
+WheelchairStatus = ['yes', 'limited', 'no', 'unknown']
+
 Amenities = {
   :public_transfer => [
     {:subway => ['subway']},

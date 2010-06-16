@@ -2,7 +2,7 @@
   - semantic_form_for :node, @node,  :url => {:controller => 'nodes', :action => 'create'} do |form|
     - form.inputs :name => t('formtastic.titles.basic'), :id => 'basic' do
       = form.input :name
-      = form.input :wheelchair, :collection => ['yes', 'limited', 'no', 'unknown'], :include_blank => false, :input_html => {:value => @node.wheelchair}
+      = form.input :wheelchair, :collection => WheelchairStatus.map{|status| t("wheelchairstatus.#{status}")}, :include_blank => false, :input_html => {:value => @node.wheelchair}
       = form.input :wheelchair_description, :input_html => {:value => @node.wheelchair_description}
       %li.select-required#node-type-input
         = form.label :type, :required => true
