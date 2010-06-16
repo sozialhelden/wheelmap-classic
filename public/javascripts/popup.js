@@ -111,10 +111,15 @@ function openPopup(feature) {
   $('#button-' + node.osmid).click(function() {
     var form = $('#update_form_'+node.osmid)
     $.ajax({ type: form.attr('method'), url: form.attr('action') , data: form.serialize(),
-      success: function(a,b,c) {
+      success: function(data, textStatus, XMLHttpRequest) {
         alert('Platz aktualisiert');
         return false;
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown){
+        alert('Sorry, Fehler!');
+        return false;
       }
+      
     })
     return false;
   });
@@ -134,7 +139,7 @@ function popupHTML(node) {
     var id = state + '-' + node.osmid,
         checked = (state == node.wheelchair ? ' checked="checked"' : ''),
         disabled = (state == 'unknown' ? ' disabled="disabled"' : '')
-        input = '<input id="' + id + '" type="radio" name="wheelchair"' + checked + disabled + ' value="' + state + '">',
+        input = '<input id="' + id + '" type="radio" name="node[wheelchair]"' + checked + disabled + ' value="' + state + '">',
         label = '<label for="' + id + '">' + label + '</label>';
     return '<li class="' + state + '">' + input + label + '</li>';
   }
@@ -142,7 +147,7 @@ function popupHTML(node) {
   result += '<a href="/nodes/' + node.osmid + '">' + (node.name || node.type) + '</a></h2>';
   result += addressOfNode(node);
   result += tagList(node.tags);
-  result += '<form action="/nodes/' + node.osmid + '" id="update_form_' + node.osmid + '" method="put"';
+  result += '<form action="/nodes/' + node.osmid + '.js" id="update_form_' + node.osmid + '" method="put">';
   result += '<ol class="wheelchair">';
   result += stateHTML('yes', 'barrierefrei');
   result += stateHTML('limited', 'teilweise barrierefrei');

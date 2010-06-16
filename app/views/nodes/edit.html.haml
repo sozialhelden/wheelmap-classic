@@ -1,5 +1,5 @@
 #accessibility.box
-  - semantic_form_for :node, @node,  :url => {:controller => 'nodes', :action => 'create'} do |form|
+  - semantic_form_for :node, @node, :url => {:controller => 'nodes', :action => 'update', :id => @node}, :html => { :method => :put} do |form|
     = render :partial => 'inputs', :object => @node, :locals => {:form => form}
     
     - form.buttons do
@@ -10,4 +10,4 @@
 - content_for :breadcrumbs do
   = link_to t('breadcrumbs.root'), root_path
   %span
-    = t('breadcrumbs.node.create')
+    = t('breadcrumbs.node.edit')

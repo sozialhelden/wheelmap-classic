@@ -89,6 +89,7 @@ de:
     root: wheelmap-Karte
     node:
       create: Neuen Platz anlegen
+      edit: Platz bearbeiten
   nodes:
     errors:
       not_found: Leider konnte die Seite nicht gefunden werden

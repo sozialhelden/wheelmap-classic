@@ -6,7 +6,7 @@ module OpenStreetMap
     attr_accessor :lat, :lon, :user, :uid, :changeset, :uid, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair, :wheelchair_description, :street, :postcode, :country, :housenumber, :city, :url, :phone
     attr_accessor_with_default :changed, false
 
-    validates_presence_of :name, :wheelchair, :wheelchair_description, :type, :message => I18n.t('errors.messages.empty')
+    validates_presence_of :name, :wheelchair, :type, :message => I18n.t('errors.messages.empty')
     validates_numericality_of :lat, :lon, :message => I18n.t('errors.message.not_a_number')
     validates_format_of :url, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true, :message => I18n.t('errors.messages.invalid')
 
@@ -74,6 +74,10 @@ module OpenStreetMap
         self.timestamp = Time.now
         self.user = 'wheelmap_visitor'
       end
+    end
+    
+    def to_param
+      id
     end
     
     def to_json(options={})

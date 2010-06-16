@@ -29,7 +29,7 @@ module OpenStreetMap
   end
   
   def self.get_node(osmid)
-    response = get("/node/#{osmid}")
+    response = get("/node/#{osmid}", :timeout => 5)
     raise_errors(response)
     RAILS_DEFAULT_LOGGER.debug(response.inspect)
     node = OpenStreetMap::Node.new(response['osm']['node'])
