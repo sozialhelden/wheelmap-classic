@@ -627,7 +627,7 @@ aside {
 }
 
 /* line 12, ../../app/stylesheets/partials/map/_map.sass */
-#OpenLayers\.Control\.Attribution_3 {
+div[id^='OpenLayers\.Layer\.OSM\.Attribution'] {
   bottom: 10px;
   color: rgba(0, 0, 0, 0.8);
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
@@ -636,7 +636,7 @@ aside {
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
 }
 /* line 21, ../../app/stylesheets/partials/map/_map.sass */
-#OpenLayers\.Control\.Attribution_3 a {
+div[id^='OpenLayers\.Layer\.OSM\.Attribution'] a {
   color: inherit;
   font-weight: bold;
 }
