@@ -90,11 +90,6 @@ function tagList(tags) {
 }
 
 
-function onPopupClose(evt) {
-    selectControl.unselect(selectedFeature);
-}
-
-
 function openPopup(feature) {
   if (popup) {
     closePopup(selectedFeature);
@@ -110,7 +105,7 @@ function openPopup(feature) {
                            feature.geometry.getBounds().getCenterLonLat(),
                            null,
                            popupHTML(node),
-                           null, true, onPopupClose);
+                           null, true);
   feature.popup = popup;
   map.addPopup(popup);
   $('#button-' + node.osmid).click(function() {

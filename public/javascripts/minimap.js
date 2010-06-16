@@ -29,8 +29,11 @@ $.each(object_types, function(i, type) {
 });
 
 
-drawmap();
+drawmap(defaultControls());
 
-jumpTo(lon, lat, 16);
+checkForPermalink();
+jumpTo(lon, lat, zoom);
 
+createPlacesLayer(placesStyle());
 
+createDraggableLayer(needleStyle());
