@@ -5,11 +5,9 @@ module OpenStreetMap
     attr_accessor :lat, :lon, :user, :uid, :changeset, :uid, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair, :wheelchair_description, :street, :postcode, :country, :housenumber, :city, :url, :phone
     attr_accessor_with_default :changed, false
 
-
     validates_presence_of :name, :wheelchair, :wheelchair_description, :type
     validates_numericality_of :lat, :lon
     validates_format_of :url, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true
-    
 
     def initialize(data)
       @lat = data['lat'].to_f
@@ -22,7 +20,7 @@ module OpenStreetMap
       @changeset = data['changeset']
       @version = data['version'].to_i
       @timestamp = Time.parse(data['timestamp']) rescue Time.now
-      @type = (data['type'] || tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || '').gsub(/ |_/, '-')
+      @type = (data['type'] || tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || '')
       @wheelchair = (data['wheelchair'] || tags['wheelchair'] || tags['hvv:barrier_free'] || 'unknown')
       @wheelchair_description = (data['wheelchair_description'] || tags['wheelchair_description'])
       @name = data['name'] || tags['name']

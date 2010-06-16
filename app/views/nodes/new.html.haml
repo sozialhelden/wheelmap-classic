@@ -4,7 +4,20 @@
       = form.input :name
       = form.input :wheelchair, :collection => ['yes', 'limited', 'no', 'unknown'], :include_blank => false, :input_html => {:value => @node.wheelchair}
       = form.input :wheelchair_description, :input_html => {:value => @node.wheelchair_description}
-      = form.input :type
+      %li.select-required#node-type-input
+        %label{:for => 'node-type'}>
+          = "Type"
+          %abbr{:title => 'required'}*
+        %select#node-type{:name => 'node[type]'}
+          - [:public_transfer, :food, :leisure, :money, :post, :government, :health, :car, :education, :misc].each do |amenity_group|
+            %optgroup{:label => t("amenities.category.#{amenity_group}"), :class => "category #{amenity_group}"}
+              - Amenities[amenity_group].each do |elements|
+                -elements.each do |key,values|
+                  - if @node.type.to_s == key.to_s
+                    %option{:label => key, :value => key, :selected => 'selected'}=t("amenities.name.#{key}")
+                  - else
+                    %option{:label => key, :value => key}=t("amenities.name.#{key}")
+
 
     - form.buttons do
       = form.submit

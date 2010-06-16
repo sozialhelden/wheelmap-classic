@@ -1,3 +1,8 @@
+=optgroup-icon($name: null)
+  @if $name != null
+    background: #FFF url("/images/icons/#{ $name }.png") no-repeat 2px top
+    border: 0
+
 form
   +helvetica-13
 
@@ -20,9 +25,45 @@ form
     -moz-appearance: none
     background: #FFF url('/images/select-marker.png') no-repeat 98% center
     
+  optgroup
+    padding-left: 20px
+    -webkit-appearance: none
+    -moz-appearance: none
+
+    &.public_transfer
+      +optgroup-icon(public-transport-subway-germany)
+
+    &.food
+      +optgroup-icon(cutlery)
+
+    &.post
+      +optgroup-icon(mail)
+
+    &.money
+      +optgroup-icon(money-coin)
+
+    &.health
+      +optgroup-icon(hospital)
+
+    &.government
+      +optgroup-icon(bank)
+
+    &.education
+      +optgroup-icon(book-open)
+
+    &.car
+      +optgroup-icon(car-red)
+
+    &.misc
+      +optgroup-icon(store)
+
+    &.leisure
+      +optgroup-icon(smiley)
+
   option
     -webkit-appearance: none
-    
+    -moz-appearance: none
+
   input[type='submit']
     position: relative
     left: 30%
