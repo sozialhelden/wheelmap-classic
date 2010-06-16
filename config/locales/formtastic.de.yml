@@ -14,6 +14,8 @@ de:
       city: 'Ort:'
       url: 'Website:'
       phone: 'Telefon:'
+      lat: Latitude
+      lon: Longitude
     hints:
       url: 'Beispiel: http://www.example.com'
       phone: 'Beispiel: +49 30 123456-78'

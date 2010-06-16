@@ -260,18 +260,18 @@ function onCompleteDrag(feature)
   if(feature) 
   {	
     // replace coordinate values in feature attributes 
-    var pointX = feature.geometry.x; 
-    var pointY = feature.geometry.y;
     var lonlat = new OpenLayers.LonLat(feature.geometry.x, feature.geometry.y);
     var coordinates = lonlat.clone().transform(map.getProjectionObject(), epsg4326);
+    $('#node-lat').attr('value', coordinates.lat);
+    $('#node-lon').attr('value', coordinates.lon);
   }
 };
 
 
-function permalink() {
+function permalink(path) {
   var ll = centerCoordinates();
-  var query = '#lat=' + ll.lat + '&lon=' + ll.lon + '&zoom=' + map.zoom;
-  return location.protocol + '//' + location.host + '/' + query;
+  var query = '?lat=' + ll.lat + '&lon=' + ll.lon + '&zoom=' + map.zoom;
+  return path + query;
 }
 
 

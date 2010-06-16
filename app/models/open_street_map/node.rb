@@ -2,6 +2,7 @@ require 'builder'
 module OpenStreetMap
   class Node
     include Validatable
+    include ActiveSupport::CoreExtensions::Hash::Keys
     attr_accessor :lat, :lon, :user, :uid, :changeset, :uid, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair, :wheelchair_description, :street, :postcode, :country, :housenumber, :city, :url, :phone
     attr_accessor_with_default :changed, false
 
@@ -9,7 +10,8 @@ module OpenStreetMap
     validates_numericality_of :lat, :lon, :message => I18n.t('errors.message.not_a_number')
     validates_format_of :url, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true, :message => I18n.t('errors.messages.invalid')
 
-    def initialize(data)
+    def initialize(input)
+      data = input.stringify_keys
       @lat = data['lat'].to_f
       @lon = data['lon'].to_f
       @tags = extract_tags(data)

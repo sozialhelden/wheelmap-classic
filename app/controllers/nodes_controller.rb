@@ -36,12 +36,12 @@ class NodesController < ApplicationController
       flash[:notice] = I18n.t('node.create.success')
       redirect_to root_path
     else
-      render :action => :new
+      render :action => :new, :lat => @node.lat, :lon => @node.lon
     end
   end
   
   def new
-    @node = OpenStreetMap::Node.new({})
+    @node = OpenStreetMap::Node.new({'lat' => params[:lat], 'lon' => params[:lon]})
   end
 
   # Before filter
