@@ -1,0 +1,102 @@
+--- !ruby/object:Gem::Specification 
+name: smurf
+version: !ruby/object:Gem::Version 
+  hash: 17
+  prerelease: false
+  segments: 
+  - 1
+  - 0
+  - 3
+  version: 1.0.3
+platform: ruby
+authors: 
+- Justin Knowlden
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2009-10-13 00:00:00 +02:00
+default_executable: 
+dependencies: []
+
+description: Rails plugin to automatically minify JS and CSS when their bundles get cached. Send in those patches!
+email: 
+- gus@thumblemonks.com
+executables: []
+
+extensions: []
+
+extra_rdoc_files: []
+
+files: 
+- MIT-LICENSE
+- README.markdown
+- Rakefile
+- init.rb
+- install.rb
+- lib/smurf.rb
+- lib/smurf/javascript.rb
+- lib/smurf/stylesheet.rb
+- rails/init.rb
+- smurf.gemspec
+- uninstall.rb
+- test/rails/app/controllers/application.rb
+- test/rails/config/boot.rb
+- test/rails/config/environment.rb
+- test/rails/config/environments/test.rb
+- test/rails/config/routes.rb
+- test/rails/public/javascripts/cache/expected.js
+- test/rails/public/javascripts/testing.js
+- test/rails/public/stylesheets/bar.css
+- test/rails/public/stylesheets/cache/expected.css
+- test/rails/public/stylesheets/foo.css
+- test/smurf_test.rb
+- test/test_helper.rb
+has_rdoc: true
+homepage: http://github.com/thumblemonks/smurf
+licenses: []
+
+post_install_message: Choosy Gargamels choose Thumble Monks.
+rdoc_options: 
+- --inline-source
+- --charset=UTF-8
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.7
+signing_key: 
+specification_version: 3
+summary: Rails plugin to automatically minify JS and CSS when their bundles get cached
+test_files: 
+- test/rails/app/controllers/application.rb
+- test/rails/config/boot.rb
+- test/rails/config/environment.rb
+- test/rails/config/environments/test.rb
+- test/rails/config/routes.rb
+- test/rails/public/javascripts/cache/expected.js
+- test/rails/public/javascripts/testing.js
+- test/rails/public/stylesheets/bar.css
+- test/rails/public/stylesheets/cache/expected.css
+- test/rails/public/stylesheets/foo.css
+- test/smurf_test.rb
+- test/test_helper.rb

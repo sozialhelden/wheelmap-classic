@@ -561,52 +561,52 @@ dd {
 }
 /* line 48, ../../app/stylesheets/partials/nodes/_lists.sass */
 dd.public_transfer {
-  background: white url("/images/icons/public-transport-subway-germany.png") no-repeat left top;
+  background: url("/images/icons/public-transport-subway-germany.png") no-repeat left top;
   border: 0;
 }
 /* line 51, ../../app/stylesheets/partials/nodes/_lists.sass */
 dd.food {
-  background: white url("/images/icons/cutlery.png") no-repeat left top;
+  background: url("/images/icons/cutlery.png") no-repeat left top;
   border: 0;
 }
 /* line 54, ../../app/stylesheets/partials/nodes/_lists.sass */
 dd.post {
-  background: white url("/images/icons/mail.png") no-repeat left top;
+  background: url("/images/icons/mail.png") no-repeat left top;
   border: 0;
 }
 /* line 57, ../../app/stylesheets/partials/nodes/_lists.sass */
 dd.money {
-  background: white url("/images/icons/money-coin.png") no-repeat left top;
+  background: url("/images/icons/money-coin.png") no-repeat left top;
   border: 0;
 }
 /* line 60, ../../app/stylesheets/partials/nodes/_lists.sass */
 dd.health {
-  background: white url("/images/icons/hospital.png") no-repeat left top;
+  background: url("/images/icons/hospital.png") no-repeat left top;
   border: 0;
 }
 /* line 63, ../../app/stylesheets/partials/nodes/_lists.sass */
 dd.government {
-  background: white url("/images/icons/bank.png") no-repeat left top;
+  background: url("/images/icons/bank.png") no-repeat left top;
   border: 0;
 }
 /* line 66, ../../app/stylesheets/partials/nodes/_lists.sass */
 dd.education {
-  background: white url("/images/icons/book-open.png") no-repeat left top;
+  background: url("/images/icons/book-open.png") no-repeat left top;
   border: 0;
 }
 /* line 69, ../../app/stylesheets/partials/nodes/_lists.sass */
 dd.car {
-  background: white url("/images/icons/car-red.png") no-repeat left top;
+  background: url("/images/icons/car-red.png") no-repeat left top;
   border: 0;
 }
 /* line 72, ../../app/stylesheets/partials/nodes/_lists.sass */
 dd.misc {
-  background: white url("/images/icons/store.png") no-repeat left top;
+  background: url("/images/icons/store.png") no-repeat left top;
   border: 0;
 }
 /* line 75, ../../app/stylesheets/partials/nodes/_lists.sass */
 dd.leisure {
-  background: white url("/images/icons/smiley.png") no-repeat left top;
+  background: url("/images/icons/smiley.png") no-repeat left top;
   border: 0;
 }
 
@@ -802,26 +802,26 @@ form p.inline-errors {
 /* line 1, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
 #breadcrumbs {
   margin: 20px 20px 0px;
+  height: 34px;
+  border: 0px solid white;
 }
-/* line 7, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
+/* line 11, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
 #breadcrumbs a, #breadcrumbs span {
   color: white;
-  padding: 10px;
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 13px;
   line-height: 20px;
   display: block;
   float: left;
   letter-spacing: 0.1em;
+  background: url("/images/background-breadcrumbs.png") scroll left top;
+  padding-left: 30px;
+  line-height: 34px;
+  height: 34px;
+  vertical-align: center;
 }
-/* line 15, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
-#breadcrumbs a {
-  background-color: #a1c175;
-  background-color: #6ba534;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #82b64f), color-stop(0.5, #6ba534), color-stop(1, #549419));
-  background-image: -moz-linear-gradient(center bottom, #549419 0%, #6ba534 50%, #82b64f 100%);
-  background-image: linear-gradient(center bottom, #549419 0%, #6ba534 50%, #82b64f 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#549419', startColorstr='#82b64f', gradientType='0');
+/* line 23, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
+#breadcrumbs a:first-child {
   -moz-border-radius-bottomleft: 5px;
   -webkit-border-bottom-left-radius: 5px;
   -khtml-border-bottom-left-radius: 5px;
@@ -831,8 +831,12 @@ form p.inline-errors {
   -khtml-border-top-left-radius: 5px;
   border-top-left-radius: 5px;
 }
-/* line 20, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
-#breadcrumbs span {
+/* line 26, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
+#breadcrumbs a {
+  background-position: 0 0;
+}
+/* line 29, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
+#breadcrumbs a.last, #breadcrumbs span {
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
   -khtml-border-top-right-radius: 5px;
@@ -841,13 +845,11 @@ form p.inline-errors {
   -webkit-border-bottom-right-radius: 5px;
   -khtml-border-bottom-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  background-color: #e48830;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ef933e), color-stop(0.5, #e48830), color-stop(1, #d97e23));
-  background-image: -moz-linear-gradient(center bottom, #d97e23 0%, #e48830 50%, #ef933e 100%);
-  background-image: linear-gradient(center bottom, #d97e23 0%, #e48830 50%, #ef933e 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#d97e23', startColorstr='#ef933e', gradientType='0');
-  background-color: #f29039;
-  border-left: 1px solid white;
+  padding-right: 10px;
+}
+/* line 33, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */
+#breadcrumbs span {
+  background-position: 0 -34px;
 }
 
 /* line 22, ../../app/stylesheets/nodes.sass */
