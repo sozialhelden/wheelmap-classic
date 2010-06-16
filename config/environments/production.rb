@@ -27,6 +27,8 @@ config.action_view.cache_template_loading            = true
 # Enable threaded mode
 # config.threadsafe!
 
+Sass::Plugin.options[:style] = :compressed
+
 OSM_HOST      = 'osmxapi.hypercube.telascience.org'
 OAUTH_KEY     = 'l4I6j034qeqlJ4Tqybo10w'
 OAUTH_SECRET  = 'JzCv4u2TkgrsaJqaslWvNgZtH8YM105SXlhI807G1FI'
