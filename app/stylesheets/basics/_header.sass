@@ -1,0 +1,39 @@
+header
+  display: block
+  height: 120px
+  width: 100%
+  padding-top: 38px
+  background-color: #FFF
+  background-image: url('/images/background-header.png') repeat-x
+  +vertical-gradient(white, desaturate(lighten($green, 35%), 35%))
+  +helvetica-13
+  
+  a
+    text-decoration: underline
+
+  #logo
+    height: 84px
+    width: 300px
+    margin-left: 32px
+    float: left
+    
+  #searchbar
+    height: 84px
+    width: 850px
+    margin-left: 20px
+    margin-top: 20px
+    float: left
+    
+    select, input
+      -webkit-appearance: none
+      -moz-appearance: none
+      height: 34px
+    
+    input[type='submit']
+      left: 0px
+      height: 34px
+      
+    label
+      vertical-align: center
+      line-height: 34px
+      

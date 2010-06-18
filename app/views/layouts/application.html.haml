@@ -14,27 +14,19 @@
     
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}        
   %body(class=browser_class)
-    = yield
+    = render :partial => '/shared/header'
+    #main
+      = yield
     %footer
-      %nav
-        - if user_signed_in?
-          =current_user.email
-          = link_to t('header.navigation.logout'), destroy_user_session_path
-        - else
-          = link_to t('header.navigation.login'), new_user_session_path
-          = link_to t('devise.registrations.link'), new_registration_path(:user)
-        = link_to t('header.navigation.blog'), 'http://blog.wheelmap.org/'
-        = link_to t('header.navigation.what_is_wheelmap'), 'http://blog.wheelmap.org/was-ist-wheelmap/'
-        = link_to t('header.navigation.what_is_barrier_free'), 'http://blog.wheelmap.org/was-bedeutet-barrierefrei/'
-        = link_to t('header.navigation.how_to_add_a_place'), 'http://blog.wheelmap.org/wie-kann-ich-orte-eintragen/'
-        = link_to t('header.navigation.suggestions'), 'http://blog.wheelmap.org/ihre-meinung-ist-uns-wichtig/'
-        = link_to t('header.navigation.imprint'), '#', :'data-show' => '#imprint'
-    - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
-      = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
+      - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
+        = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
     = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
     = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
     = javascript_include_tag 'http://www.openstreetmap.org/openlayers/OpenStreetMap.js'
     = javascript_include_tag 'jquery', 'util', 'icons', 'string', 'popup', 'search', 'application', 'map', :cache => 'maps'
-    - if jquery = yield(:jquery)
+    - if @content_for_jquery
+      = yield :jquery
       :javascript
         $(function(){#{jquery}})
+    - if @content_for_javascript
+      = yield :javascript

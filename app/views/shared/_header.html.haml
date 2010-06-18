@@ -1,0 +1,28 @@
+%header
+  %nav.links
+    - if user_signed_in?
+      =current_user.email
+      = link_to t('header.navigation.logout'), destroy_user_session_path
+      |
+    - else
+      = link_to t('header.navigation.login'), new_user_session_path
+      |
+      = link_to t('devise.registrations.link'), new_registration_path(:user)
+      |
+    = link_to t('header.navigation.what_is_wheelmap'), 'http://blog.wheelmap.org/was-ist-wheelmap/'
+    |
+    = link_to t('header.navigation.blog'), 'http://blog.wheelmap.org/'
+  #logo
+    - link_to root_path, :title => t('wheelmap.logo.title') do
+      = image_tag 'wheelmap_logo_small.png', :width => 300, :height => 84, :alt => t('wheelmap.logo.alt')
+  #searchbar
+    %form
+      %ol
+        %li
+          %label
+            Barrierefreie Plätze in:
+          = text_field_tag :search, '', :class => 'search_field'
+          
+          %input{:type => 'submit', :class => 'search_button', :value => 'Finden'}
+          Oder
+          %input{:type => 'submit', :class => 'add_button', :value => 'Platz himzufügen'}

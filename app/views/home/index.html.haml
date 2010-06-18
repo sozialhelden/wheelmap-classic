@@ -1,28 +1,26 @@
 #map
-#info
-  %header
-    = link_to image_tag('wheelmap.png', :alt => t('header.tagline')), root_path, :id => 'logo'
-  #bar
-    %form
-      = text_field_tag :search, ''
-      %ol
-    %ul#options.wheelchair
-      %li.yes
-        = check_box_tag(:wheelchair_yes, 1, true)
-        = label_tag :wheelchair_yes, t('form.show_fully_accessible_places')
-        %span
-      %li.limited
-        = check_box_tag(:wheelchair_limited, 1, true)
-        = label_tag :wheelchair_limited, t('form.show_limited_accessible_places')
-        %span
-      %li.no
-        = check_box_tag(:wheelchair_no, 1, true)
-        = label_tag :wheelchair_no, t('form.show_unaccessible_places')
-        %span
-      %li.unknown
-        = check_box_tag(:wheelchair_unknown, 1, true)
-        = label_tag :wheelchair_unknown, t('form.show_places_without_status')
-        %span
+#filter
+  %ul#options.wheelchair
+    %li.yes
+      = check_box_tag(:wheelchair_yes, 1, true)
+      = label_tag :wheelchair_yes, t('form.show_fully_accessible_places')
+      %span
+    %li.limited
+      = check_box_tag(:wheelchair_limited, 1, true)
+      = label_tag :wheelchair_limited, t('form.show_limited_accessible_places')
+      %span
+    %li.no
+      = check_box_tag(:wheelchair_no, 1, true)
+      = label_tag :wheelchair_no, t('form.show_unaccessible_places')
+      %span
+    %li.unknown
+      = check_box_tag(:wheelchair_unknown, 1, true)
+      = label_tag :wheelchair_unknown, t('form.show_places_without_status')
+      %span
+
+#categories
+  %h4
+    Kategorie
   %ul#amenities
     - [:public_transfer, :food, :leisure, :money, :post, :government, :health, :car, :education, :misc].each do |amenity_group|
       %li
@@ -32,13 +30,6 @@
             -elements.each do |key,values|
               %a{:class => session['amenities'].include?(values.first) ? 'visible' : 'hidden', :href => '#', :onclick => "toggleLayers('#{values.first}')", :title => t("poi.name.#{values.first}")}
                 %span{:class => values.first}
-  .edit{:style => 'padding:5px 10px;'}
-    -# if (user_signed_in? && current_user.application_authorized?)
-    = link_to t('.link.node.create'), new_node_path, :onclick => "location=permalink('#{new_node_path}');return false;"
-    -# else
-      -#= link_to 'Edit', oauth_index_path
-      
--#= render :partial => 'edit'
     
     
   

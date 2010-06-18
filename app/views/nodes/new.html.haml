@@ -11,3 +11,11 @@
   = link_to t('breadcrumbs.root'), root_path
   %span
     = t('breadcrumbs.node.create')
+
+- content_for :javascript do
+  :javascript
+    checkForPermalink();
+    createDraggableLayer(needleStyle());
+
+
+  

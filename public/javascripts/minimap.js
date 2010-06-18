@@ -31,9 +31,3 @@ $.each(object_types, function(i, type) {
 
 drawmap(defaultControls());
 
-checkForPermalink();
-jumpTo(lon, lat, zoom);
-
-createPlacesLayer(placesStyle());
-
-createDraggableLayer(needleStyle());

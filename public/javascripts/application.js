@@ -195,7 +195,7 @@ function createPlacesLayer(style) {
   activateSelectControl(places);
 }
 
-function createDraggableLayer(style) {  
+function createDraggableLayer(style, lon, lat) {  
 
   var draggable_layer = new OpenLayers.Layer.Vector(
     "Draggable",
@@ -206,7 +206,7 @@ function createDraggableLayer(style) {
     });    
     map.addLayer(draggable_layer);
     activateDragControl(draggable_layer);
-    addPin(draggable_layer);
+    addPin(draggable_layer, lon,lat);
 }
 
 function activateDragControl(layer){
@@ -222,11 +222,11 @@ function activateSelectControl(layer){
 }
 
 
-function addPin(layer){
+function addPin(layer, lon, lat){
   var features = [];
   layer.removeFeatures(layer.features);
-  var center = centerCoordinates();
-  var lonLat = lonLatToMercator({ lon: center.lon * 1.0, lat: center.lat * 1.0 });
+  // var center = centerCoordinates();
+  var lonLat = lonLatToMercator({ lon: lon * 1.0, lat: lat * 1.0 });
   var point = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
   
   var feature = new OpenLayers.Feature.Vector(point);

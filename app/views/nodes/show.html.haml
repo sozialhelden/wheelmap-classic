@@ -80,3 +80,8 @@
   = link_to t('breadcrumbs.root'), root_path
   = link_to 'Deutschland', root_path
   = link_to 'Berlin', root_path, :class => 'last'
+
+- content_for :javascript do
+  :javascript
+    jumpTo(parseFloat("#{@node.lon}"), parseFloat("#{@node.lat}"), 17);
+    createDraggableLayer(placesStyle(),parseFloat("#{@node.lon}"), parseFloat("#{@node.lat}"));
