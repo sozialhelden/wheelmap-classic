@@ -56,6 +56,11 @@ header, section, article, aside, footer, time {
 }
 
 /* line 4, ../../app/stylesheets/basics/_typography.sass */
+html, body {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+}
+
+/* line 7, ../../app/stylesheets/basics/_typography.sass */
 p,
 article li,
 dt, dd,
@@ -67,7 +72,7 @@ footer {
   line-height: 20px;
 }
 
-/* line 12, ../../app/stylesheets/basics/_typography.sass */
+/* line 15, ../../app/stylesheets/basics/_typography.sass */
 h2 {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 16px;
@@ -76,7 +81,7 @@ h2 {
   bottom: 2px;
 }
 
-/* line 15, ../../app/stylesheets/basics/_typography.sass */
+/* line 18, ../../app/stylesheets/basics/_typography.sass */
 h1 {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 37px;
@@ -90,19 +95,19 @@ h1 {
 
 /* line 3, ../../app/stylesheets/basics/_links.sass */
 a {
-  color: #434bb9;
+  color: #8db458;
 }
 /* line 6, ../../app/stylesheets/basics/_links.sass */
 a:hover {
-  color: #353c94;
+  color: #739643;
 }
 /* line 9, ../../app/stylesheets/basics/_links.sass */
 a:visited {
-  color: #6c43b9;
+  color: #67b458;
 }
 /* line 12, ../../app/stylesheets/basics/_links.sass */
 a:visited:hover {
-  color: #563594;
+  color: #509643;
 }
 
 /* line 1, ../../app/stylesheets/basics/_sozialhelden.sass */
@@ -443,41 +448,247 @@ div[id^='OpenLayers\.Layer\.OSM\.Attribution'] {
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
 }
 
-/* line 3, ../../app/stylesheets/partials/nodes/_links.sass */
-a {
-  color: #8db458;
-  text-decoration: underline;
-}
-/* line 7, ../../app/stylesheets/partials/nodes/_links.sass */
-a:hover {
-  color: #739643;
-}
-/* line 10, ../../app/stylesheets/partials/nodes/_links.sass */
-a:visited {
-  color: #67b458;
-}
-/* line 13, ../../app/stylesheets/partials/nodes/_links.sass */
-a:visited:hover {
-  color: #509643;
-}
-
-/* line 1, ../../app/stylesheets/partials/nodes/_header.sass */
+/* line 1, ../../app/stylesheets/basics/_header.sass */
 header {
   display: block;
   height: 120px;
   width: 100%;
-  background: white url("/images/background-header.png") repeat-x;
+  padding-top: 38px;
+  background-color: white;
+  background-image: url("/images/background-header.png") repeat-x;
+  background-color: #f9faf9;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #f9faf9), color-stop(1, #f4f5f4));
+  background-image: -moz-linear-gradient(center bottom, #f4f5f4 0%, #f9faf9 50%, white 100%);
+  background-image: linear-gradient(center bottom, #f4f5f4 0%, #f9faf9 50%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#f4f5f4', startColorstr='white', gradientType='0');
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 13px;
+  line-height: 20px;
+}
+/* line 11, ../../app/stylesheets/basics/_header.sass */
+header a {
+  text-decoration: underline;
+}
+/* line 14, ../../app/stylesheets/basics/_header.sass */
+header #logo {
+  height: 84px;
+  width: 300px;
+  margin-left: 32px;
+  float: left;
+}
+/* line 20, ../../app/stylesheets/basics/_header.sass */
+header #searchbar {
+  height: 84px;
+  width: 850px;
+  margin-left: 20px;
+  margin-top: 20px;
+  float: left;
+}
+/* line 27, ../../app/stylesheets/basics/_header.sass */
+header #searchbar select, header #searchbar input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 34px;
+}
+/* line 32, ../../app/stylesheets/basics/_header.sass */
+header #searchbar input[type='submit'] {
+  left: 0px;
+  height: 34px;
+}
+/* line 36, ../../app/stylesheets/basics/_header.sass */
+header #searchbar label {
+  vertical-align: center;
+  line-height: 34px;
+}
+
+/* line 1, ../../app/stylesheets/basics/_nav.sass */
+nav {
+  position: relative;
+  top: -15px;
+  right: 20px;
+  float: right;
+}
+
+/* line 6, ../../app/stylesheets/basics/_forms.sass */
+form {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 13px;
+  line-height: 20px;
+}
+/* line 9, ../../app/stylesheets/basics/_forms.sass */
+form li {
+  display: block;
+  float: left;
+  width: 100%;
+  margin-bottom: 6px;
+}
+/* line 15, ../../app/stylesheets/basics/_forms.sass */
+form input[type='text'], form input[type='search'], form input[type='password'], form textarea, form select {
+  border: 1px solid #a1c175;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  color: #a1c175;
+  background-color: white;
+  padding: 5px;
+  width: 310px;
+}
+/* line 23, ../../app/stylesheets/basics/_forms.sass */
+form input[readonly] {
+  background-color: #f9f9f9;
+  color: #8d8d8e;
+}
+/* line 27, ../../app/stylesheets/basics/_forms.sass */
+form select {
+  width: 322px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: white url("/images/select-marker.png") no-repeat 98% center;
+}
+/* line 33, ../../app/stylesheets/basics/_forms.sass */
+form optgroup {
+  padding-left: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+/* line 38, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.public_transfer {
+  background: white url("/images/icons/public-transport-subway-germany.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 41, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.food {
+  background: white url("/images/icons/cutlery.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 44, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.post {
+  background: white url("/images/icons/mail.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 47, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.money {
+  background: white url("/images/icons/money-coin.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 50, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.health {
+  background: white url("/images/icons/hospital.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 53, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.government {
+  background: white url("/images/icons/bank.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 56, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.education {
+  background: white url("/images/icons/book-open.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 59, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.car {
+  background: white url("/images/icons/car-red.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 62, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.misc {
+  background: white url("/images/icons/store.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 65, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.leisure {
+  background: white url("/images/icons/smiley.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 68, ../../app/stylesheets/basics/_forms.sass */
+form option {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+/* line 72, ../../app/stylesheets/basics/_forms.sass */
+form input[type='submit'] {
+  position: relative;
+  left: 30%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #d3e4c1;
+  background: #87a55e url("/images/button-green.png") repeat-x;
+  background-color: #94b369;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a1c175), color-stop(0.5, #94b369), color-stop(1, #87a55e));
+  background-image: -moz-linear-gradient(center bottom, #87a55e 0%, #94b369 50%, #a1c175 100%);
+  background-image: linear-gradient(center bottom, #87a55e 0%, #94b369 50%, #a1c175 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#87a55e', startColorstr='#a1c175', gradientType='0');
+  color: white;
+  padding: 10px;
+}
+/* line 85, ../../app/stylesheets/basics/_forms.sass */
+form label {
+  font-weight: bold;
+  color: #333333;
+  display: block;
+  float: left;
+  width: 30%;
+  line-height: 20px;
+}
+/* line 93, ../../app/stylesheets/basics/_forms.sass */
+form legend {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  bottom: 2px;
+  font-weight: bold;
+  color: #333333;
+  margin-top: 20px;
+  top: 15px;
+  bottom: none;
+}
+/* line 101, ../../app/stylesheets/basics/_forms.sass */
+form legend span.addition {
+  color: #aaaaaa;
+}
+/* line 104, ../../app/stylesheets/basics/_forms.sass */
+form fieldset {
+  padding: 30px 20px;
+}
+/* line 107, ../../app/stylesheets/basics/_forms.sass */
+form fieldset#basic, form fieldset#optional {
   background-color: #f9faf9;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #f9faf9), color-stop(1, #f4f5f4));
   background-image: -moz-linear-gradient(center bottom, #f4f5f4 0%, #f9faf9 50%, white 100%);
   background-image: linear-gradient(center bottom, #f4f5f4 0%, #f9faf9 50%, white 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#f4f5f4', startColorstr='white', gradientType='0');
 }
-/* line 9, ../../app/stylesheets/partials/nodes/_header.sass */
-header #logo {
-  height: 84px;
-  width: 300px;
-  margin: 30px;
+/* line 111, ../../app/stylesheets/basics/_forms.sass */
+form li[class*='error'] label {
+  color: #f19d46;
+}
+/* line 114, ../../app/stylesheets/basics/_forms.sass */
+form li[class*='error'] input[type='text'], form li[class*='error'] textarea, form li[class*='error'] select {
+  border: 1px solid #f19d46;
+}
+/* line 117, ../../app/stylesheets/basics/_forms.sass */
+form p.inline-errors, form p.inline-hints {
+  position: relative;
+  left: 30%;
+  color: #aaaaaa;
+}
+/* line 122, ../../app/stylesheets/basics/_forms.sass */
+form p.inline-errors {
+  color: #f19d46;
+}
+
+/* line 1, ../../app/stylesheets/basics/_page.sass */
+body,
+html {
+  background: white;
+  outline: 0px;
 }
 
 /* line 2, ../../app/stylesheets/partials/nodes/_headlines.sass */
@@ -637,186 +848,6 @@ dd.leisure {
 #map_wrapper a.magnify {
   background: url("/images/icons/magnify.png") no-repeat right center;
   padding-right: 20px;
-}
-
-/* line 1, ../../app/stylesheets/partials/nodes/_nav.sass */
-nav {
-  float: right;
-  padding: 3px 17px 15px 350px;
-}
-
-/* line 6, ../../app/stylesheets/partials/nodes/_forms.sass */
-form {
-  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
-  font-size: 13px;
-  line-height: 20px;
-}
-/* line 9, ../../app/stylesheets/partials/nodes/_forms.sass */
-form li {
-  display: block;
-  float: left;
-  width: 100%;
-  margin-bottom: 6px;
-}
-/* line 15, ../../app/stylesheets/partials/nodes/_forms.sass */
-form input[type='text'], form textarea, form select {
-  border: 1px solid #a1c175;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -khtml-border-radius: 3px;
-  border-radius: 3px;
-  color: #a1c175;
-  background-color: white;
-  padding: 5px;
-  width: 310px;
-}
-/* line 23, ../../app/stylesheets/partials/nodes/_forms.sass */
-form input[readonly] {
-  background-color: #f9f9f9;
-  color: #8d8d8e;
-}
-/* line 27, ../../app/stylesheets/partials/nodes/_forms.sass */
-form select {
-  width: 322px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: white url("/images/select-marker.png") no-repeat 98% center;
-}
-/* line 33, ../../app/stylesheets/partials/nodes/_forms.sass */
-form optgroup {
-  padding-left: 20px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-/* line 38, ../../app/stylesheets/partials/nodes/_forms.sass */
-form optgroup.public_transfer {
-  background: white url("/images/icons/public-transport-subway-germany.png") no-repeat 2px top;
-  border: 0;
-}
-/* line 41, ../../app/stylesheets/partials/nodes/_forms.sass */
-form optgroup.food {
-  background: white url("/images/icons/cutlery.png") no-repeat 2px top;
-  border: 0;
-}
-/* line 44, ../../app/stylesheets/partials/nodes/_forms.sass */
-form optgroup.post {
-  background: white url("/images/icons/mail.png") no-repeat 2px top;
-  border: 0;
-}
-/* line 47, ../../app/stylesheets/partials/nodes/_forms.sass */
-form optgroup.money {
-  background: white url("/images/icons/money-coin.png") no-repeat 2px top;
-  border: 0;
-}
-/* line 50, ../../app/stylesheets/partials/nodes/_forms.sass */
-form optgroup.health {
-  background: white url("/images/icons/hospital.png") no-repeat 2px top;
-  border: 0;
-}
-/* line 53, ../../app/stylesheets/partials/nodes/_forms.sass */
-form optgroup.government {
-  background: white url("/images/icons/bank.png") no-repeat 2px top;
-  border: 0;
-}
-/* line 56, ../../app/stylesheets/partials/nodes/_forms.sass */
-form optgroup.education {
-  background: white url("/images/icons/book-open.png") no-repeat 2px top;
-  border: 0;
-}
-/* line 59, ../../app/stylesheets/partials/nodes/_forms.sass */
-form optgroup.car {
-  background: white url("/images/icons/car-red.png") no-repeat 2px top;
-  border: 0;
-}
-/* line 62, ../../app/stylesheets/partials/nodes/_forms.sass */
-form optgroup.misc {
-  background: white url("/images/icons/store.png") no-repeat 2px top;
-  border: 0;
-}
-/* line 65, ../../app/stylesheets/partials/nodes/_forms.sass */
-form optgroup.leisure {
-  background: white url("/images/icons/smiley.png") no-repeat 2px top;
-  border: 0;
-}
-/* line 68, ../../app/stylesheets/partials/nodes/_forms.sass */
-form option {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-/* line 72, ../../app/stylesheets/partials/nodes/_forms.sass */
-form input[type='submit'] {
-  position: relative;
-  left: 30%;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -khtml-border-radius: 5px;
-  border-radius: 5px;
-  border: 1px solid #d3e4c1;
-  background-color: #94b369;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a1c175), color-stop(0.5, #94b369), color-stop(1, #87a55e));
-  background-image: -moz-linear-gradient(center bottom, #87a55e 0%, #94b369 50%, #a1c175 100%);
-  background-image: linear-gradient(center bottom, #87a55e 0%, #94b369 50%, #a1c175 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#87a55e', startColorstr='#a1c175', gradientType='0');
-  color: white;
-  padding: 10px;
-}
-/* line 84, ../../app/stylesheets/partials/nodes/_forms.sass */
-form label {
-  font-weight: bold;
-  color: #333333;
-  display: block;
-  float: left;
-  width: 30%;
-  line-height: 20px;
-}
-/* line 92, ../../app/stylesheets/partials/nodes/_forms.sass */
-form legend {
-  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
-  font-size: 16px;
-  line-height: 20px;
-  position: relative;
-  bottom: 2px;
-  font-weight: bold;
-  color: #333333;
-  margin-top: 20px;
-  top: 15px;
-  bottom: none;
-}
-/* line 100, ../../app/stylesheets/partials/nodes/_forms.sass */
-form legend span.addition {
-  color: #aaaaaa;
-}
-/* line 103, ../../app/stylesheets/partials/nodes/_forms.sass */
-form fieldset {
-  padding: 30px 20px;
-}
-/* line 106, ../../app/stylesheets/partials/nodes/_forms.sass */
-form fieldset#basic, form fieldset#optional {
-  background-color: #f9faf9;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #f9faf9), color-stop(1, #f4f5f4));
-  background-image: -moz-linear-gradient(center bottom, #f4f5f4 0%, #f9faf9 50%, white 100%);
-  background-image: linear-gradient(center bottom, #f4f5f4 0%, #f9faf9 50%, white 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#f4f5f4', startColorstr='white', gradientType='0');
-}
-/* line 110, ../../app/stylesheets/partials/nodes/_forms.sass */
-form li[class*='error'] label {
-  color: #f19d46;
-}
-/* line 113, ../../app/stylesheets/partials/nodes/_forms.sass */
-form li[class*='error'] input[type='text'], form li[class*='error'] textarea, form li[class*='error'] select {
-  border: 1px solid #f19d46;
-}
-/* line 116, ../../app/stylesheets/partials/nodes/_forms.sass */
-form p.inline-errors, form p.inline-hints {
-  position: relative;
-  left: 30%;
-  color: #aaaaaa;
-}
-/* line 121, ../../app/stylesheets/partials/nodes/_forms.sass */
-form p.inline-errors {
-  color: #f19d46;
 }
 
 /* line 1, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */

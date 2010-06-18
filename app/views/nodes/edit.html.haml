@@ -11,3 +11,8 @@
   = link_to t('breadcrumbs.root'), root_path
   %span
     = t('breadcrumbs.node.edit')
+
+- content_for :javascript do
+  :javascript
+    jumpTo(parseFloat("#{@node.lon}"), parseFloat("#{@node.lat}"), 17);
+    createDraggableLayer(placesStyle(),parseFloat("#{@node.lon}"), parseFloat("#{@node.lat}"));

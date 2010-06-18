@@ -14,39 +14,25 @@
     
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}        
   %body(class=browser_class)
-    %header
-      %nav.links
-        - if user_signed_in?
-          =current_user.email
-          = link_to t('header.navigation.logout'), destroy_user_session_path
-          |
-        - else
-          = link_to t('header.navigation.login'), new_user_session_path
-          |
-          = link_to t('devise.registrations.link'), new_registration_path(:user)
-          |
-        = link_to t('header.navigation.what_is_wheelmap'), 'http://blog.wheelmap.org/was-ist-wheelmap/'
-        |
-        = link_to t('header.navigation.blog'), 'http://blog.wheelmap.org/'
-      #logo
-        - link_to root_path, :title => t('wheelmap.logo.title') do
-          = image_tag 'wheelmap_logo_small.png', :width => 300, :height => 84, :alt => t('wheelmap.logo.alt')
-      
+    = render :partial => '/shared/header'      
     #main
       #breadcrumbs
         = yield :breadcrumbs
         .clear
       = yield
     %footer
-      %nav
-      
-    - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
-      = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
+      %nav      
+        - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
+          = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
     = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
     = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
     = javascript_include_tag 'http://www.openstreetmap.org/openlayers/OpenStreetMap.js'
     = javascript_include_tag 'jquery', 'util', 'icons', 'string', 'popup', 'search', 'application', 'minimap', :cache => 'minimaps'
-    - if jquery = yield(:jquery)
+    - if @content_for_jquery
+      = yield :jquery
       :javascript
         $(function(){#{jquery}})
+    - if @content_for_javascript
+      = yield :javascript
+    
 
