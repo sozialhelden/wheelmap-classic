@@ -3,6 +3,11 @@
 #   @user_session.destroy if @user_session
 # end
 
+Given /^I am not logged in$/ do
+  visit '/users/sign_out'
+  session.destroy
+end
+
 Given /I am logged in/ do
   Given 'an user with email "loggedin@fg.hi" and password "123456"'
   When 'I go to the sign_in page'

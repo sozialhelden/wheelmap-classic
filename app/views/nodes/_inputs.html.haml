@@ -2,7 +2,7 @@
   = form.input :name
   %li.select-required#node-wheelchair-input
     = form.label :wheelchair, :required => true
-    %select#node-type{:name => 'node[wheelchair]'}
+    %select#node-wheelchair{:name => 'node[wheelchair]'}
       = options_for_wheelchair_status(@node.wheelchair)
 
   = form.input :wheelchair_description, :required => false

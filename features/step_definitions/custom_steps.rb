@@ -3,6 +3,16 @@ Then /^I should be redirected to (.+)$/ do |page_name|
   # response.should be_redirect
 end
 
-Given /^I am not logged in$/ do
-  visit '/users/sign_out'
+Then /^there should be (\d+) CreateJobs?$/ do |amount|
+  class CreateJob < ActiveRecord::Base
+    set_table_name 'delayed_jobs'
+  end
+  CreateJob.count.should == amount.to_i
+end
+
+Given /^there are no CreateJobs$/ do
+  class CreateJob < ActiveRecord::Base
+    set_table_name 'delayed_jobs'
+  end
+  CreateJob.destroy_all
 end

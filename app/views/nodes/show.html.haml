@@ -10,62 +10,69 @@
   var lat = parseFloat("#{@node.lat}");
   object_types.push("#{@node.type}");
 
-#accessibility.box
-  %dl{:id => "accessibility_#{dom_id(@node)}"}
-    %dt Barrierefrei:
-    %dd
-      %ul
-        - %w{yes limited no unknown}.each_with_index do |status, index|
-          %li
-            .status{:class => @node.wheelchair == status ? "checked #{status}" : "#{status}"}
-              - if @node.wheelchair == status
-                %input{:type => 'radio', :readonly => 'readonly', :name => "wheelchair_#{@node.id}", :value => status, :class => status, :id => "wheelchair_#{@node.id}_#{status}", :checked =>  'checked'}
-              - else
-                %input{:type => 'radio', :name => "wheelchair_#{@node.id}", :value => status, :class => status, :id => "wheelchair_#{@node.id}_#{status}"}
-            %label{:for => "wheelchair_#{@node.id}_#{status}", :class => @node.wheelchair == status ? "checked #{status}" : "#{status}"}= status
-            .clear
-        
-    %dt Infos zur Barrierefreiheit:
-    %dd Toiletten sind zu eng
-    .clear
-
-  %dl{:id => "properties_#{dom_id(@node)}"}
-
-    %dt Kategorie:
+.box
+  %table#accessibility{:class => "#{dom_class(@node)}"}
+    %tr
       
-    - category = category_for_node(@node.type)
-    %dd{:class => category}
-      - if category
-        = t("poi.category.#{category}")
-      - else
-        &nbsp;
+      %th Barrierefrei:
+      %td
+        %ul
+          - %w{yes limited no unknown}.each_with_index do |status, index|
+            %li
+              .status{:class => @node.wheelchair == status ? "checked #{status}" : "#{status}"}
+                - if @node.wheelchair == status
+                  %input{:type => 'radio', :readonly => 'readonly', :name => "wheelchair_#{@node.id}", :value => status, :class => status, :id => "wheelchair_#{@node.id}_#{status}", :checked =>  'checked'}
+                - else
+                  %input{:type => 'radio', :name => "wheelchair_#{@node.id}", :value => status, :class => status, :id => "wheelchair_#{@node.id}_#{status}"}
+              %label{:for => "wheelchair_#{@node.id}_#{status}", :class => @node.wheelchair == status ? "checked #{status}" : "#{status}"}= status
+              .clear
+      %td
+        
+    %tr
+      %th Infos zur Barrierefreiheit:
+      %td{:colspan => 2} Toiletten sind zu eng
 
-    
-    %dt Typ:
-    %dd
-      - if @node.type
-        = t("poi.name.#{@node.type}")
-      -else
-        &nbsp;
+  %table#properties{:class => "#{dom_class(@node)}"}
+    %tr
+      %th Kategorie:
+      
+      - category = category_for_node(@node.type)
+      %td{:class => category}
+        - if category
+          = t("poi.category.#{category}")
+        - else
+          &nbsp;
 
-    %dt Strasse:
-    %dd=@node.tags['address:street'] || '&nbsp;'
+    %tr
+      %th Typ:
+      %td
+        - if @node.type
+          = t("poi.name.#{@node.type}")
+        -else
+          &nbsp;
+    %tr
+      %th Strasse:
+      %td=@node.tags['address:street'] || '&nbsp;'
+    %tr
+      %th PLZ:
+      %td=@node.tags['address:zip'] || '&nbsp;'
+    %tr
+      %th Ort:
+      %td=@node.tags['address:city'] || '&nbsp;'
 
-    %dt PLZ:
-    %dd=@node.tags['address:zip'] || '&nbsp;'
+    %tr
+      %th Webseite:
+      %td=@node.tags['website'] || '&nbsp;'
 
-    %dt Ort:
-    %dd=@node.tags['address:city'] || '&nbsp;'
+    %tr
+      %th Telefon:
+      %td
+        =@node.tags['contact:telephone'] || '&nbsp;'
 
-    %dt Webseite:
-    %dd=@node.tags['website'] || '&nbsp;'
+#map_wrapper
+  #map
+  = link_to t('.link.large_map'), root_path, :onclick => "location=permalink('#{root_path}');return false;", :class => 'magnify'
 
-    %dt Telefon:
-    %dd
-      =@node.tags['contact:telephone'] || '&nbsp;'
-    .clear
-
-#map
 
   
 

@@ -29,8 +29,8 @@
         |
         = link_to t('header.navigation.blog'), 'http://blog.wheelmap.org/'
       #logo
-        - link_to root_path do
-          = image_tag 'wheelmap_logo.png'
+        - link_to root_path, :title => t('wheelmap.logo.title') do
+          = image_tag 'wheelmap_logo_small.png', :width => 300, :height => 84, :alt => t('wheelmap.logo.alt')
       
     #main
       #breadcrumbs
