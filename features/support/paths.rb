@@ -30,6 +30,8 @@ module NavigationHelpers
       arguments = CGI.escape("/oauth/authorize?oauth_token=#{session[:request_token].token}")
       "http://api06.dev.openstreetmap.org/user/new?referer=#{arguments}"
     
+    when /the new node page/
+      new_node_path
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

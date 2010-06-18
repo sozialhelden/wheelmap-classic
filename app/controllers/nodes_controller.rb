@@ -1,6 +1,6 @@
 class NodesController < ApplicationController
   
-  before_filter :authenticate_user!,    :only => [:create, :new, :update]
+  before_filter :authenticate_user!,    :only => [:create, :new]
   before_filter :check_update_params,   :only => :update
   before_filter :check_create_params,   :only => :create
   before_filter :set_session_amenities, :only => :index
@@ -25,7 +25,11 @@ class NodesController < ApplicationController
   end
 
   def update
-    @node = OpenStreetMap::Node.new(params[:node])
+    @node = OpenStreetMap.get_node(params[:id])
+    node_hash = params[:node]
+    node_hash.each do |key,value|
+      @node.send("#{key}=", value)
+    end
     if @node.valid?
       Delayed::Job.enqueue(UpdatingJob.new(params[:id], params[:node][:wheelchair], default_user.id))
       respond_to do |wants|

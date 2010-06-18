@@ -1,5 +1,9 @@
 --- 
 de:
+  wheelmap:
+    logo:
+      title: Wheelmap Startseite
+      alt: Wheelmap Logo
   wheelchairstatus:
     'yes': 'Vollständing barrierefrei'
     limited: 'Teilweise barrierefrei'
@@ -91,6 +95,9 @@ de:
       create: Neuen Platz anlegen
       edit: Platz bearbeiten
   nodes:
+    show:
+      link:
+        large_map: Ansicht vergrößern
     errors:
       not_found: Leider konnte die Seite nicht gefunden werden
       not_available: Leider steht diese Seite zur Zeit nicht zur Verfügung

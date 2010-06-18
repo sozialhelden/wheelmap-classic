@@ -1,0 +1,45 @@
+table#properties, table#accessibility
+  +vertical-gradient(white, desaturate(lighten($green, 35%), 35%))
+  display: block
+  padding: 30px 20px
+  +helvetica-13
+  
+  th
+    width: 250px
+    font-weight: bold
+    vertical-align: top
+  td
+    width: 250px
+    color: $unknown
+    padding-left: 20px
+    
+    &.public_transfer
+      +category-icon(public-transport-subway-germany)
+
+    &.food
+      +category-icon(cutlery)
+
+    &.post
+      +category-icon(mail)
+
+    &.money
+      +category-icon(money-coin)
+
+    &.health
+      +category-icon(hospital)
+
+    &.government
+      +category-icon(bank)
+
+    &.education
+      +category-icon(book-open)
+
+    &.car
+      +category-icon(car-red)
+
+    &.misc
+      +category-icon(store)
+
+    &.leisure
+      +category-icon(smiley)
+    
