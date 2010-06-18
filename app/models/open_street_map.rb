@@ -34,6 +34,15 @@ module OpenStreetMap
     RAILS_DEFAULT_LOGGER.debug(response.inspect)
     node = OpenStreetMap::Node.new(response['osm']['node'])
   end
+
+
+  # Create a new node by calling the OSM API
+  # Returns the id of the newly created node
+  def self.create_node(node, oauth)
+    response = oauth.put("#{self.base_uri}/node/create", node.to_xml)
+    raise_errors(response)
+    response.body.to_i
+  end
     
   def self.update_node(node, oauth)
     response = oauth.put("#{self.base_uri}/node/#{node.id}", node.to_xml)

@@ -78,6 +78,47 @@ describe 'OpenStreetMap::Node' do
     @node.timestamp.should_not == '2007-11-05T14:56:37Z'
   end
   
+  it "should build valid object" do
+    Factory.build(:node).should be_valid
+  end
+  
+  it "should set wheelchair attribute and tag" do
+    @node.wheelchair = 'yes'
+    @node.tags['wheelchair'].should == 'yes'
+  end
+  
+  it "should set wheelchair_description attribute and tag" do
+    @node.wheelchair_description = 'Toilets are too narrow'
+    @node.tags['wheelchair_description'].should == 'Toilets are too narrow'
+  end
+  
+  it "should set city attribute and tag" do
+    @node.city = 'Berlin'
+    @node.tags['addr:city'].should == 'Berlin'
+  end
+  
+  it "should set housenumber attribute and tag" do
+    @node.housenumber = 238
+    @node.tags['addr:housenumber'].should == 238
+  end
+  
+  it "should set postcode attribute and tag" do
+    @node.postcode = 10117
+    @node.tags['addr:postcode'].should == 10117
+  end
+  
+  it "should set phone attribute and tag" do
+    @node.phone = '+49 30 1232345'
+    @node.tags['contact:phone'].should == '+49 30 1232345'
+    @node.phone.should == '+49 30 1232345'
+  end
+  
+  it "should set url attribute and tag" do
+    @node.url = 'http://www.example.com'
+    @node.tags['contact:website'].should == 'http://www.example.com'
+    @node.url.should == 'http://www.example.com'
+  end
+  
   
   #TODO
   #  

@@ -3,14 +3,14 @@ module OpenStreetMap
   class Node
     include Validatable
     include ActiveSupport::CoreExtensions::Hash::Keys
-    attr_accessor :lat, :lon, :user, :uid, :changeset, :uid, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair, :wheelchair_description, :street, :postcode, :country, :housenumber, :city, :url, :phone
+    attr_accessor :lat, :lon, :user, :uid, :changeset, :uid, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair, :wheelchair_description, :street, :postcode, :country, :housenumber, :city, :url, :phone, :tag
     attr_accessor_with_default :changed, false
 
     validates_presence_of :name, :wheelchair, :type, :message => I18n.t('errors.messages.empty')
     validates_numericality_of :lat, :lon, :message => I18n.t('errors.message.not_a_number')
     validates_format_of :url, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true, :message => I18n.t('errors.messages.invalid')
 
-    def initialize(input)
+    def initialize(input={})
       data = input.stringify_keys
       @lat = data['lat'].to_f
       @lon = data['lon'].to_f
@@ -18,14 +18,13 @@ module OpenStreetMap
       @user = data['user']
       @uid = data['uid']
       @id = data['id']
-      @name = data['name']
+      self.name = data['name'] || tags['name']
       @changeset = data['changeset']
       @version = data['version'].to_i
       @timestamp = Time.parse(data['timestamp']) rescue Time.now
-      @type = (data['type'] || tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || '')
+      @type = (data['type'] || tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || 'cafe')
       @wheelchair = (data['wheelchair'] || tags['wheelchair'] || tags['hvv:barrier_free'] || 'unknown')
       @wheelchair_description = (data['wheelchair_description'] || tags['wheelchair_description'])
-      @name = data['name'] || tags['name']
       @street       = tags['addr:street'] = data['street'] if data['street']
       @housenumber  = tags['addr:housenumber'] = data['housenumber'] if data['housenumber']
       @zip_code     = tags['addr:postcode'] = data['postcode'] if data['postcode']
@@ -37,6 +36,42 @@ module OpenStreetMap
     
     def valid_states
       ['yes', 'no', 'limited']
+    end
+    
+    def street=(value)
+      @type = tags['addr:street'] = value
+    end
+    
+    def name=(value)
+      @name = tags['name'] = value
+    end
+    
+    def housenumber=(value)
+      @housenumber = tags['addr:housenumber'] = value
+    end
+    
+    def city=(value)
+      @city = tags['addr:city'] = value
+    end
+    
+    def wheelchair=(value)
+      @wheelchair = tags['wheelchair'] = value
+    end
+    
+    def wheelchair_description=(value)
+      @wheelchair_description = tags['wheelchair_description'] = value
+    end
+    
+    def postcode=(value)
+      @postcode = tags['addr:postcode'] = value
+    end
+    
+    def phone=(value)
+      @phone = tags['contact:phone'] = value
+    end
+    
+    def url=(value)
+      @url = tags['contact:website'] = value
     end
     
     def extract_tags(data)

@@ -8,6 +8,10 @@ describe OpenStreetMap do
     @oauth = ::OAuth::AccessToken.new(@consumer, 'foo', 'bar')
   end
   
+  after(:each) do
+    FakeWeb.clean_registry
+  end
+  
   describe 'method: get_node' do
   
     before(:each) do
@@ -65,5 +69,22 @@ describe OpenStreetMap do
   end
   
   describe"method :update_node" do
+  end
+  
+  describe "method: create_node" do
+    
+    before(:each) do
+      @put_url = "#{@base_url}/node/create"
+      @get_url = "#{@base_url}/node/1234"
+      @node = Factory.build(:node)
+    end
+    
+    it "should create a new node as" do
+      FakeWeb.register_uri(:put, @put_url, :body => '1234', :content_type => 'text/plain')
+      FakeWeb.register_uri(:get, @get_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
+      node_id = OpenStreetMap.create_node(@node, @oauth)
+      node_id.should == 1234
+    end
+    
   end
 end
