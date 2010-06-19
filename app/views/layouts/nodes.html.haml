@@ -3,12 +3,12 @@
   %head
     %meta(charset="utf-8")
     %title= t('header.title')
+    = stylesheet_link_tag 'node', :cache => 'nodes'
     - if @content_for_head
       = yield(:head)
     /[if IE]
       :javascript
         var ce=document.createElement;ce('header');ce('nav');ce('article');ce('section');ce('footer');ce('aside');ce('time');
-    = stylesheet_link_tag 'nodes', :cache => 'nodes'
     :javascript
       var object_types = ["#{ (session['amenities']).join('","')}"];
     
