@@ -45,10 +45,13 @@ drawmap(defaultControls());
 
 checkForPermalink();
 jumpTo(lon, lat, zoom);
+updatePermalink();
 
 createPlacesLayer(placesStyle());
 
 map.events.register('moveend', null, loadPlaces);
+map.events.register('moveend', null, updatePermalink);
+updatePermalink();
 setTimeout(loadPlaces, 1000);
 
 
@@ -61,4 +64,11 @@ $(function() {
   });
 });
 
+
+function updatePermalink() {
+  lat = centerCoordinates().lat;
+  lon = centerCoordinates().lon;
+  zoom = map.getZoom();
+  $('#permalink').attr('href', '/?lon='+ lon + '&lat=' + lat + '&zoom=' + zoom);
+}    
 

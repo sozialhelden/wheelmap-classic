@@ -1,5 +1,8 @@
 #map
+
 #filter
+  %h4
+    =link_to 'permalink', root_path, :id => :permalink
   %ul#options.wheelchair
     %li.yes
       = check_box_tag(:wheelchair_yes, 1, true)
@@ -17,6 +20,7 @@
       = check_box_tag(:wheelchair_unknown, 1, true)
       = label_tag :wheelchair_unknown, t('form.show_places_without_status')
       %span
+
 
 #categories
   %h4

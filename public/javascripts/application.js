@@ -12,7 +12,6 @@ var mapnik;
 var places;
 var draggable;
 
-
 var states = {
   yes: true,
   no: true,
@@ -39,7 +38,7 @@ function drawmap(controls) {
     displayProjection: epsg4326,
     controls: controls,
     maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34, 20037508.34, 20037508.34),
-    numZoomLevels: 18,
+    numZoomLevels: 20,
     maxResolution: 156543,
     units: 'meters'
   });
@@ -252,7 +251,7 @@ function lonLatToMercator(ll) {
 }
 
 function centerCoordinates() {
-  return map.getCenter().clone().transform(map.getProjectionObject(), epsg4326);
+  return map.center.clone().transform(map.getProjectionObject(), epsg4326);
 }
 
 function onCompleteDrag(feature) 

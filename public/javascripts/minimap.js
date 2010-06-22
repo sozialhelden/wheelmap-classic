@@ -30,4 +30,3 @@ $.each(object_types, function(i, type) {
 
 
 drawmap(defaultControls());
-

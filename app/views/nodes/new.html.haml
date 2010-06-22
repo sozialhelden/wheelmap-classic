@@ -15,7 +15,8 @@
 - content_for :javascript do
   :javascript
     checkForPermalink();
-    createDraggableLayer(needleStyle());
+    jumpTo(lon, lat, zoom);
+    createDraggableLayer(placesStyle(),lon, lat);
 
 
   

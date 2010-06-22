@@ -1,5 +1,6 @@
 %header
   %nav.links
+    
     - if user_signed_in?
       =current_user.email
       = link_to t('header.navigation.logout'), destroy_user_session_path
@@ -26,3 +27,4 @@
           %input{:type => 'submit', :class => 'search_button', :value => 'Finden'}
           Oder
           = link_to 'Platz hinzufügen', new_node_path, :class => 'button'
+    
