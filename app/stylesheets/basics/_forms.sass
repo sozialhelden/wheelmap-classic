@@ -102,7 +102,14 @@ form
       color: #AAA
     
   fieldset
-    padding: 30px 20px
+    padding: 30px 20px 10px 20px
+    overflow: hidden
+    
+    &.inputs
+      
+    
+    &.buttons
+      padding: 10px 20px 10px 20px
     
     &#basic, &#optional
       +vertical-gradient(white, desaturate(lighten($green, 35%), 35%))
@@ -111,7 +118,7 @@ form
     label
       color: $orange
       
-    input[type='text'], textarea, select
+    input[type='text'], input[type='password'], input[type='search'], textarea, select
       border: 1px solid $orange
 
   p.inline-errors, p.inline-hints

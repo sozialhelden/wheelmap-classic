@@ -1,4 +1,9 @@
 de:
+  
+  support:
+    array:
+      two_words_connector: ' und '
+  
   devise:
     sessions:
       link: 'Anmelden'

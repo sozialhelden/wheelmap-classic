@@ -46,21 +46,21 @@ describe OpenStreetMap do
 
     it "should create a new changeset" do
       FakeWeb.register_uri(:put, @full_url, :body => "12345", :content_type => 'text/plain')
-      changeset_id = OpenStreetMap.create_changeset(@oauth)
+      changeset_id = OpenStreetMap.create_changeset
       changeset_id.should == '12345'
     end
     
     it "should raise bad request when submitting malformed xml" do
       FakeWeb.register_uri(:put, @full_url, :status => 400, :body => "Could not parse xml", :content_type => 'text/plain')
       lambda{
-        OpenStreetMap.create_changeset(@oauth)
+        OpenStreetMap.create_changeset
       }.should raise_error(OpenStreetMap::BadRequest)
     end
     
     it "should raise method not allowed exception when not using put request" do
       FakeWeb.register_uri(:put, @full_url, :status => 405, :body => "Just method put is supported", :content_type => 'text/plain')
       lambda{
-        OpenStreetMap.create_changeset(@oauth)
+        OpenStreetMap.create_changeset
       }.should raise_error(OpenStreetMap::MethodNotAllowed)
     end
   end
@@ -74,15 +74,17 @@ describe OpenStreetMap do
   describe "method: create_node" do
     
     before(:each) do
+      @changeset_url = "#{@base_url}/changeset/create"
       @put_url = "#{@base_url}/node/create"
       @get_url = "#{@base_url}/node/1234"
       @node = Factory.build(:node)
     end
     
     it "should create a new node as" do
+      FakeWeb.register_uri(:put, @changeset_url, :body => "12345", :content_type => 'text/plain')
       FakeWeb.register_uri(:put, @put_url, :body => '1234', :content_type => 'text/plain')
       FakeWeb.register_uri(:get, @get_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
-      node_id = OpenStreetMap.create_node(@node, @oauth)
+      node_id = OpenStreetMap.create(@node)
       node_id.should == 1234
     end
     
