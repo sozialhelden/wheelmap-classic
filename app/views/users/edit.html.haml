@@ -1,0 +1,14 @@
+.frame#user_form
+  - semantic_form_for @user do |form|
+    - form.inputs :name => 'OSM' do
+      = form.input :osm_username, :required => false
+      = form.input :osm_password, :required => false, :as => :password
+
+    - form.inputs :name => 'OAUTH' do
+      = form.input :oauth_token,  :required => false, :input_html => {:readonly => true}
+      = form.input :oauth_secret, :required => false, :input_html => {:readonly => true}
+  
+    - form.buttons do
+      = form.submit
+      
+      

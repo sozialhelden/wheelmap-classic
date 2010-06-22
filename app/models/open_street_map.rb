@@ -38,26 +38,39 @@ module OpenStreetMap
 
   # Create a new node by calling the OSM API
   # Returns the id of the newly created node
-  def self.create_node(node, oauth)
-    response = oauth.put("#{self.base_uri}/node/create", node.to_xml)
+  def self.create(node)
+    RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
+    changeset_id = create_changeset
+    RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
+    node.changeset = changeset_id
+    RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
+    RAILS_DEFAULT_LOGGER.debug node.inspect
+    RAILS_DEFAULT_LOGGER.debug node.to_xml
+    new_version = create_node(node)
+    RAILS_DEFAULT_LOGGER.debug "New version: #{new_version}"
+    save_changeset(changeset_id)
+  end
+  
+  def self.create_node(node)    
+    response = put("#{self.base_uri}/node/create", node.to_xml)
     raise_errors(response)
     response.body.to_i
   end
     
-  def self.update_node(node, oauth)
-    response = oauth.put("#{self.base_uri}/node/#{node.id}", node.to_xml)
+  def self.update_node(node)
+    response = put("#{self.base_uri}/node/#{node.id}", node.to_xml)
     raise_errors(response)
     response.body
   end
   
-  def self.create_changeset(oauth)
-    response = oauth.put("#{self.base_uri}/changeset/create", '<osm><changeset><tag k="created_by" v="wheelmap.org"/><tag k="comment" v="Modify accessibility status for node"/></changeset></osm>')
+  def self.create_changeset
+    response = put("#{self.base_uri}/changeset/create", :body => '<osm><changeset><tag k="created_by" v="wheelmap.org"/><tag k="comment" v="Modify accessibility status for node"/></changeset></osm>')
     raise_errors(response)
     response.body
   end
   
-  def self.save_changeset(id, oauth)
-    response = oauth.put("#{self.base_uri}/changeset/#{id}/close")
+  def self.save_changeset(id)
+    response = put("#{self.base_uri}/changeset/#{id}/close")
     raise_errors(response)
   end
   

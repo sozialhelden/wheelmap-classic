@@ -1,27 +1,19 @@
-<h2>Edit = resource_name.to_s.humanize</h2>
-%h2=t('devise.edit.headline')
+.frame
+- semantic_form_for resource_name, resource, :url => registration_path(resource_name), :html => { :method => :put } do |form|
+  - form.inputs :name => t('devise.edit.headline') do
+    = form.input :email, :label => t('devise.edit.form.labels.email')
+    
+    = form.input :password, :label => t('devise.edit.form.labels.password')
+    
+    = form.input :password_confirmationd, :label => t('devise.edit.form.labels.password_confirmation')
 
-- form_for resource_name, resource, :url => registration_path(resource_name), :html => { :method => :put } do |f|
-  = f.error_messages
+    = form.input :current_password, :label => t('devise.edit.form.labels.current_password')
 
-  %p= f.label :email, t('devise.edit.form.labels.email')
-  %p= f.text_field :email
-
-  %p= f.label :password, t('devise.edit.form.labels.password')
-  %p= f.password_field :password
-
-  %p= f.label :password_confirmationd, t('devise.edit.form.labels.password_confirmation')
-  %p= f.password_field :password_confirmation
-
-  %p= f.label :current_password, t('devise.edit.form.labels.current_password')
-  %p= f.password_field :current_password
-
-  %p= f.submit t('devise.edit.form.submit')
+  - input.buttons do    
+    = form.submit t('devise.edit.form.submit')
 
 
 %h3=t('devise.destroy.headline')
-
-  
 
 %p
   Unhappy?
