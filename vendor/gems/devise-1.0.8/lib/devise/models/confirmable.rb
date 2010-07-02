@@ -57,6 +57,7 @@ module Devise
 
       # Send confirmation instructions by email
       def send_confirmation_instructions
+        generate_confirmation_token if self.confirmation_token.nil?
         ::DeviseMailer.deliver_confirmation_instructions(self)
       end
 
@@ -70,7 +71,7 @@ module Devise
       # is already confirmed, it should never be blocked. Otherwise we need to
       # calculate if the confirm time has not expired for this user.
       def active?
-        super && (confirmed? || confirmation_period_valid?)
+        super && (!confirmation_required? || confirmed? || confirmation_period_valid?)
       end
 
       # The message to be shown if the account is inactive.
