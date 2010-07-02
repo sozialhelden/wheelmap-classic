@@ -32,7 +32,8 @@ de:
       logged_in_as: "Eingeloggt als:"
     searchbar:
       label: 'Rollstuhlgerechte Plätze in:'
-      
+      find: 'finden'
+      add_place: 'Platz hinzufügen'
     tagline: Wheelmap logo
     title: wheelmap
   form:
@@ -47,6 +48,9 @@ de:
   oauth: 
     callback: 
       notice: "Dein Benutzerkonto wurde erfoglreich mit dem OpenStreetMap-Benutzerkonto {{user}} verbunden."
+    application:
+      connect:
+      		headline: Benutzerkonto mit Openstreetmap verbinden
   user_sessions: 
     create: 
       activation: 
@@ -105,3 +109,13 @@ de:
       not_found: Leider konnte die Seite nicht gefunden werden
       not_available: Leider steht diese Seite zur Zeit nicht zur Verfügung
       not_existent: Leider ist dieser Platz nicht mehr da
+  profile:
+    edit:
+      headline: Dein Profil bearbeiten
+      application:
+        connect:
+          oauth: 'Alternative 1: OAuth (empfohlen)'
+            not_connected: 'Status: Nicht verbunden'
+            grant: 'Jetzt verbinden'
+            revoke: 'Verbindung aufheben'
+          login: 'Alternative 2: Login/Passwort'
