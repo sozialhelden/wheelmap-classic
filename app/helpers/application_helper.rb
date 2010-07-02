@@ -9,4 +9,9 @@ module ApplicationHelper
     end
     nil
   end
+  
+  def url_for_subdomain(url, subdomain)
+    url = URI.parse(url)
+    url_for(:path => url.path, :subdomain => subdomain)
+  end
 end

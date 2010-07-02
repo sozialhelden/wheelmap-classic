@@ -17,7 +17,7 @@
     |
     %select{:onchange => 'location.href=this.options[this.selectedIndex].value'}
       - I18n.available_locales.map(&:to_s).sort.each do |locale|
-        %option{:value => root_url(:subdomain => locale), :selected => (I18n.locale.to_s == locale.to_s)}>
+        %option{:value => url_for_subdomain(request.url, locale), :selected => (I18n.locale.to_s == locale.to_s)}>
           =I18n.t(locale)
   #logo
     - link_to root_path, :title => t('wheelmap.logo.title') do
