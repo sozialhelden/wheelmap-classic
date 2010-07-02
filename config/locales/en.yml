@@ -20,13 +20,13 @@ en:
       logged_in_as: "Logged in as:"
   oauth: 
     callback: 
-      notice: "You’re logged in as OpenStreetMap user {{user}} now."
+      notice: "Your wheelmap account is now connected to the OpenStreetMap account {{user}}."
   user_sessions: 
     create: 
       activation: 
         notice: "You’re activated now!"
       error: 
-        notice: "E-mail address and password doesn’t fit."
+        notice: "E-mail address and password don’t fit."
       notice: "You’re logged in now!"
     destroy: 
       notice: Bye!
