@@ -6,7 +6,7 @@ de:
     labels:
       name: 'Name des Platzes:'
       type: 'Typ:'
-      wheelchair: Barrierefrei?
+      wheelchair: Rollstuhlgerecht?
       wheelchair_description: 'Info zu Barrierefreiheit:'
       street: 'Straße:'
       housenumber: 'Nr:'
@@ -16,11 +16,16 @@ de:
       phone: 'Telefon:'
       lat: Breitengrad
       lon: Längengrad
+      email: E-Mail
+      password: Passwort
+      password_confirmation: Passwort wiederholen
+      osm_username: Dein Openstreetmap-Mitgliedsname
+      osm_password: Dein Openstreetmap-Passwort
     hints:
       url: 'Beispiel: http://www.example.com'
       phone: 'Beispiel: +49 30 123456-78'
-
-
+      password: '(leer lassen, wenn du es nicht ändern möchtest)'
+      osm_username: 'Noch nicht Mitglied? <a href="http://openstreetmap.org/user/new" target="_blank">Openstreetmap Benutzerkonto anlegen</a>'
   errors:
     messages:
       inclusion: "ist kein gültiger Wert"
