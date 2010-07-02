@@ -1,5 +1,7 @@
 --- 
 de:
+  de: Deutsch
+  en: English
   wheelmap:
     logo:
       title: Wheelmap Startseite
@@ -28,6 +30,8 @@ de:
       how_to_add_a_place: 'Wie trage ich Orte ein?'
       suggestions: 'Anregungen'
       logged_in_as: "Eingeloggt als:"
+    searchbar:
+      label: 'Barrierefreie Plätze in:'
       
     tagline: Wheelmap logo
     title: wheelmap

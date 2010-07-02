@@ -1,5 +1,7 @@
 --- 
 en: 
+  de: Deutsch
+  en: English
   application: 
     require_no_user: 
       notice: "You’re already logged in …"
