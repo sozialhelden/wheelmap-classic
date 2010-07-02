@@ -11,23 +11,23 @@ de:
     unknown: 'Barrierefreiheit unbekannt'
   application: 
     require_no_user: 
-      notice: "Du bist doch schon angemeldet …"
+      notice: "Du bist doch schon eingeloggt …"
     require_user: 
-      notice: "Du musst dich anmelden, um diese Seite zu sehen."
+      notice: "Du musst dich einloggen, um diese Seite zu sehen."
   global: 
-    form_validation_error: "Bitte beachten Sie die unten angezeigten Fehlermeldungen."
+    form_validation_error: "Bitte beachte die unten angezeigten Fehlermeldungen."
   header: 
     navigation: 
       home: Start
-      login: Anmelden
-      logout: Abmelden
+      login: Login
+      logout: Logout
       imprint: Impressum
       blog: Blog
       what_is_wheelmap: 'Was ist Wheelmap?'
       what_is_barrier_free: 'Was bedeutet „barrierefrei“?'
       how_to_add_a_place: 'Wie trage ich Orte ein?'
       suggestions: 'Anregungen'
-      logged_in_as: "Angemeldet als:"
+      logged_in_as: "Eingeloggt als:"
       
     tagline: Wheelmap logo
     title: wheelmap
@@ -42,29 +42,29 @@ de:
         alt: 'Ein Projekt der Sozialhelden'
   oauth: 
     callback: 
-      notice: "Du bist jetzt als OpenStreetMap-Benutzer {{user}} angemeldet."
+      notice: "Dein Benutzerkonto wurde erfoglreich mit dem OpenStreetMap-Benutzerkonto {{user}} verbunden."
   user_sessions: 
     create: 
       activation: 
-        notice: "Dein Konto ist nun freigeschaltet!"
+        notice: "Dein Benutzerkonto ist nun freigeschaltet!"
       error: 
-        notice: "E-Mail-Adresse und Password passen nicht zueinander."
+        notice: "E-Mail-Adresse und Passwort passen nicht zueinander."
       notice: "Du bist jetzt drin!"
     destroy: 
       notice: "Tschüss und bis zum nächsten Mal!"
     new: 
-      email: E-Mail-Adresse
-      login: Anmelden
-      login_with_twitter: "Mit Twitter anmelden"
+      email: E-Mail Adresse
+      login: Login
+      login_with_twitter: "Mit Twitter einloggen"
       password: Passwort
-      remember_me: "Angemeldet bleiben"
+      remember_me: "Eingeloggt bleiben"
   common:
     close: schließen
   home:
     index:
       link:
         node:
-          create: Neuen Ort anlegen
+          create: Neuen Platz anlegen
           
     imprint:
       headline: Impressum
@@ -84,10 +84,9 @@ de:
       links:
         email_me: 'Hier klicken'
         license:
-          mit: 'MIT-Lizenz'
           cc:
             by_sa_20: 'Namensnennung-Weitergabe unter gleichen Bedingungen 2.0 US-amerikanisch (nicht portiert)'
-            by_30: 'Creative Commons Namensnennung 3.0 Unported'
+            by_30: 'Creative Commons Namensnennung 3.0 Unportiert'
             
   breadcrumbs:
     root: wheelmap-Karte
@@ -101,4 +100,4 @@ de:
     errors:
       not_found: Leider konnte die Seite nicht gefunden werden
       not_available: Leider steht diese Seite zur Zeit nicht zur Verfügung
-      not_existent: Leider gibt es diesen Ort nicht mehr
+      not_existent: Leider gibt es diesen Platz nicht mehr
