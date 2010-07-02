@@ -9,4 +9,16 @@ module ApplicationHelper
     end
     nil
   end
+  
+  def url_for_subdomain(url, subdomain)
+    url = URI.parse(url)
+    host = url.host
+    case host.split('.').size
+    when 2
+      url.host = "#{subdomain}.#{host}"
+    when 3
+      url.host = host.gsub(/^\w+\./,"#{subdomain}.")
+    end
+    url.to_s
+  end
 end
