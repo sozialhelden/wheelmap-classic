@@ -15,6 +15,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :nodes, :except => :destroy
   
   map.resources :users, :as => 'profile'
+
+  map.resources :users, :collection => {:authenticate => :post}
   
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'
