@@ -7,10 +7,10 @@ de:
       title: Wheelmap Startseite
       alt: Wheelmap Logo
   wheelchairstatus:
-    'yes': 'Vollständing barrierefrei'
-    limited: 'Teilweise barrierefrei'
-    'no': 'Nicht barrierefrei'
-    unknown: 'Barrierefreiheit unbekannt'
+    'yes': 'Vollständing rollstuhlgerecht'
+    limited: 'Teilweise rollstuhlgerecht'
+    'no': 'Nicht rollstuhlgerecht'
+    unknown: 'Status unbekannt'
   application: 
     require_no_user: 
       notice: "Du bist doch schon eingeloggt …"
@@ -26,20 +26,20 @@ de:
       imprint: Impressum
       blog: Blog
       what_is_wheelmap: 'Was ist Wheelmap?'
-      what_is_barrier_free: 'Was bedeutet „barrierefrei“?'
+      what_is_barrier_free: 'Was bedeutet „rollstuhlgerecht“?'
       how_to_add_a_place: 'Wie trage ich Plätze ein?'
       suggestions: 'Anregungen'
       logged_in_as: "Eingeloggt als:"
     searchbar:
-      label: 'Barrierefreie Plätze in:'
+      label: 'Rollstuhlgerechte Plätze in:'
       
     tagline: Wheelmap logo
     title: wheelmap
   form:
-    show_fully_accessible_places: barrierefreie Plätze anzeigen
-    show_limited_accessible_places: teils barrierefreie Plätze anzeigen
-    show_unaccessible_places: nicht barrierefreie Plätze anzeigen
-    show_places_without_status: Plätze ohne Status anzeigen
+    show_fully_accessible_places: rollstuhlgerechte Plätze
+    show_limited_accessible_places: teils rollstuhlgerechte Plätze
+    show_unaccessible_places: nicht rollstuhlgerechte Plätze
+    show_places_without_status: Plätze ohne Status
   layouts: 
     application: 
       banner:
@@ -104,4 +104,4 @@ de:
     errors:
       not_found: Leider konnte die Seite nicht gefunden werden
       not_available: Leider steht diese Seite zur Zeit nicht zur Verfügung
-      not_existent: Leider gibt es diesen Platz nicht mehr
+      not_existent: Leider ist dieser Platz nicht mehr da
