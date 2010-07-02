@@ -1,45 +1,107 @@
 --- 
-en: 
+en:
   de: Deutsch
   en: English
+  wheelmap:
+    logo:
+      title: Wheelmap Homepage
+      alt: Wheelmap Logo
+  wheelchairstatus:
+    'yes': 'completely wheelchair accessible'
+    limited: 'partly wheelchair accessible'
+    'no': 'not wheelchair accessible'
+    unknown: 'wheelchair accessibility unknown'
   application: 
     require_no_user: 
       notice: "You’re already logged in …"
     require_user: 
-      notice: "You have to log out to see this page."
+      notice: "You have to log in to see this page."
   global: 
     form_validation_error: "Please note the errors listed below."
   header: 
     navigation: 
       home: Start
-    tagline: wheelmap
+      login: Log in
+      logout: Log out
+      imprint: Imprint
+      blog: Blog
+      what_is_wheelmap: 'What is wheelmap?'
+      what_is_barrier_free: 'What does "wheelchair accessible" mean?'
+      how_to_add_a_place: 'How do I add places?'
+      suggestions: 'Suggestions'
+      logged_in_as: "Logged in as:"
+    searchbar:
+      label: 'Wheelchair accessible places in:'
+      
+    tagline: Wheelmap logo
     title: wheelmap
+  form:
+    show_fully_accessible_places: wheelchair accessible places
+    show_limited_accessible_places: partly wheelchair accessible places
+    show_unaccessible_places: not wheelchair accessible places
+    show_places_without_status: places with unknown wheelchair accessibility
   layouts: 
     application: 
-      links: 
-        login: Login
-        logout: Logout
-      logged_in_as: "Logged in as:"
+      banner:
+        alt: 'A project by Sozialhelden.de'
   oauth: 
     callback: 
       notice: "Your wheelmap account is now connected to the OpenStreetMap account {{user}}."
   user_sessions: 
     create: 
       activation: 
-        notice: "You’re activated now!"
+        notice: "Your account is activated now!"
       error: 
-        notice: "E-mail address and password don’t fit."
-      notice: "You’re logged in now!"
+        notice: "E-mail and password don't match."
+      notice: "You're in!"
     destroy: 
-      notice: Bye!
+      notice: "Bye, come back soon!"
     new: 
-      email: "E-mail addresse"
-      login: Login
-      login_with_twitter: "Login with Twitter"
+      email: E-mail address
+      login: Log in
+      login_with_twitter: "Log in with Twitter"
       password: Password
-      remember_me: "Remember me"
-      logged_in_as: "Logged in as:"
-
+      remember_me: "Stay logged in"
+  common:
+    close: close
+  home:
+    index:
+      link:
+        node:
+          create: Add new place
+          
+    imprint:
+      headline: Imprint
+      fields:
+        provider: "Provider:"
+        phone: "Telephone:"
+        email: "E-mail:"
+        design: "Design, development:"
+        maps: "Map:"
+        maps_and_data: "Map, Data:"
+        application: "Application:"
+        icons: "Icons:"
+        license: "Licence:"
+        geoip: GeoIP
+        hosting: Hosting
+      comment: 'This website has been developed using Ruby on Rails and JavaScript.'
+      links:
+        email_me: 'Click here'
+        license:
+          cc:
+            by_sa_20: 'Creative Commons Attribution-ShareAlike 2.0 Generic'
+            by_30: 'Creative Commons Attribution 3.0 Unported'
+            
+  breadcrumbs:
+    root: wheelmap
+    node:
+      create: Add new place
+      edit: Edit place
   nodes:
-    missing:
-      not_found: This page could not been found!
+    show:
+      link:
+        large_map: Enlarge
+    errors:
+      not_found: Sorry, page not found.
+      not_available: Sorry, this page is temporarily not available.
+      not_existent: Sorry, this place is not available anymore.
