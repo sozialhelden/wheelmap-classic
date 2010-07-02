@@ -20,6 +20,14 @@ class UsersController < ApplicationController
     redirect_to edit_user_path(@user)
   end
   
+  def authenticate
+    if user = User.authenticate_with_http(params[:email], params[:password])
+      render :text => 'OK', :status => 200
+    else
+      render :text => 'FAIL', :status => 400
+    end
+  end
+  
   protected
   
   def remove_password_from_params_if_blank
