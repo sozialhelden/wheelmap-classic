@@ -6,7 +6,7 @@ de:
   
   devise:
     sessions:
-      link: 'Anmelden'
+      link: 'Login'
       signed_in: 'Anmeldung erfolgreich.'
       signed_out: 'Abmeldung erfolgreich.'
       unauthenticated: 'Du musst dich erst anmelden oder registrieren, um fortzufahren.'
