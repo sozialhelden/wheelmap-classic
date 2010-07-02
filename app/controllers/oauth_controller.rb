@@ -5,6 +5,8 @@ require 'oauth/signature/rsa/sha1'
 require 'oauth/signature/hmac/sha1'
 class OauthController < ApplicationController
   before_filter :authenticate_user!
+  
+    rescue_from OAuth::Unauthorized, :with => :unauthorized
 
   def new
     @consumer = OAuth::Consumer.new(OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret, :site => OpenStreetMapConfig.oauth_site)
@@ -30,5 +32,11 @@ class OauthController < ApplicationController
     current_user.save!
     flash[:notice] = t('oauth.callback.notice')
     redirect_to root_url
+  end
+  
+  protected
+  def unauthorized
+    @message = I18n.t('nodes.errors.not_authorized')
+    render :action => 'error', :status => 400
   end
 end

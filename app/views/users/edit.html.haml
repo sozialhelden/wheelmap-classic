@@ -1,12 +1,29 @@
 .frame#user_form
+  %h1=t('profile.edit.headline')
   - semantic_form_for @user do |form|
-    - form.inputs :name => 'OSM' do
+    - form.inputs do
+      = form.input :email, :required => false
+      = form.input :password, :required => false, :hint => 'Leave empty, if you dont want to change it'
+      = form.input :password_confirmation, :required => false
+    %h2=t('oauth.application.connect.headline')
+  
+    %h3
+      =t('profile.edit.application.connect.oauth')
+    %p.pad
+      - if current_user.application_authorized?
+        =t('profile.edit.application.oauth.connected')
+        = link_to 'Revoke', new_oauth_path
+      - else
+        =t('profile.edit.application.oauth.not_connected')
+        = link_to 'Grant', new_oauth_path
+      
+    
+    %h3
+      =t('profile.edit.application.connect.login')
+    - form.inputs do
       = form.input :osm_username, :required => false
       = form.input :osm_password, :required => false, :as => :password
 
-    - form.inputs :name => 'OAUTH' do
-      = form.input :oauth_token,  :required => false, :input_html => {:readonly => true}
-      = form.input :oauth_secret, :required => false, :input_html => {:readonly => true}
   
     - form.buttons do
       = form.submit
