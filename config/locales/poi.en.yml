@@ -1,0 +1,62 @@
+de:
+  poi:
+    category:
+      public_transfer: Public transfer
+      food: Food
+      money: Money
+      leisure: Leisure
+      government: Government
+      post: Post
+      health: Health
+      car: 'Car & Bike'
+      misc: Misc
+      education: Education
+    name:
+      subway: Subway
+      ferry_terminal: 'Ferry Terminal'
+      bus_stop: 'Bus stop'
+      tram_stop: 'Tram stop'
+      light_rail: 'Light rail'
+      cafe: Cafe
+      pub: Pub
+      bar: Bar
+      fast_food: Fast Food
+      restaurant: Restaurant
+      biergarten: Biergarten
+      nightclub: Night club
+      theatre: Theatre
+      sauna: Sauna
+      arts_centre: 'Arts Centre'
+      atm: ATM
+      bank: Bank
+      bureau_de_change: Money Exchange
+      embassy: Embassy
+      courthouse: Courthouse
+      police: Police
+      fire_station: Fire station
+      cinema: Cinema
+      shop: Shop
+      post_box: Post box
+      post_office: Post office
+      public_building: Public building
+      register_office: Register office
+      townhall: Townhall
+      community_centre: Community Centre
+      hospital: Hospital
+      pharmacy: Pharmacy
+      fuel: Fuel
+      car_rental: Car Rental
+      car_sharing: Car sharing
+      parking: Parking
+      bicycle_parking: Bicycle parking
+      bicycle_rental: Bicycle rental
+      kindergarten: Kindergarten
+      school: School
+      college: College
+      university: University
+      library: Library
+      marketplace: Marketplace
+      telephone: Telephone
+      toilets: Toilet
+      grave_yard: Graveyard
+      place_of_worship: Place of worship
