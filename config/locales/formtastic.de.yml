@@ -19,8 +19,8 @@ de:
       email: E-Mail
       password: Passwort
       password_confirmation: Passwort wiederholen
-      osm_username: Dein Openstreetmap-Mitgliedsname
-      osm_password: Dein Openstreetmap-Passwort
+      osm_username: OSM-Mitgliedsname
+      osm_password: OSM-Passwort
     hints:
       url: 'Beispiel: http://www.example.com'
       phone: 'Beispiel: +49 30 123456-78'

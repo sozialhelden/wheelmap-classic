@@ -50,7 +50,7 @@ de:
       notice: "Dein Benutzerkonto wurde erfoglreich mit dem OpenStreetMap-Benutzerkonto {{user}} verbunden."
     application:
       connect:
-      		headline: Benutzerkonto mit Openstreetmap verbinden
+        headline: Benutzerkonto mit Openstreetmap verbinden
   user_sessions: 
     create: 
       activation: 
@@ -114,8 +114,11 @@ de:
       headline: Dein Profil bearbeiten
       application:
         connect:
-          oauth: 'Alternative 1: OAuth (empfohlen)'
-            not_connected: 'Status: Nicht verbunden'
-            grant: 'Jetzt verbinden'
-            revoke: 'Verbindung aufheben'
-          login: 'Alternative 2: Login/Passwort'
+          login: 'Alternative 2: OpenStreetMap Login/Passwort'
+        oauth:
+          headline: 'Alternative 1: OAuth (empfohlen)'
+          not_connected: 'Status: Nicht verbunden'
+          connected: 'Status: verbunden'
+          grant: 'Jetzt verbinden'
+          revoke: 'Verbindung aufheben'
+          
