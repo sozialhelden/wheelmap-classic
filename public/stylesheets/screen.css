@@ -604,41 +604,43 @@ header {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 13px;
   line-height: 20px;
+  min-width: 1024px;
 }
-/* line 11, ../../app/stylesheets/basics/_header.sass */
+/* line 13, ../../app/stylesheets/basics/_header.sass */
 header a {
   text-decoration: underline;
 }
-/* line 14, ../../app/stylesheets/basics/_header.sass */
+/* line 16, ../../app/stylesheets/basics/_header.sass */
 header #logo {
   height: 84px;
   width: 300px;
-  margin-left: 32px;
+  margin-left: 30px;
   float: left;
 }
-/* line 20, ../../app/stylesheets/basics/_header.sass */
+/* line 22, ../../app/stylesheets/basics/_header.sass */
 header #searchbar {
   height: 84px;
-  width: 850px;
-  margin-left: 20px;
+  margin-left: 15px;
   margin-top: 20px;
   float: left;
 }
-/* line 27, ../../app/stylesheets/basics/_header.sass */
+/* line 28, ../../app/stylesheets/basics/_header.sass */
 header #searchbar select, header #searchbar input {
   -webkit-appearance: none;
   -moz-appearance: none;
   height: 22px;
 }
-/* line 32, ../../app/stylesheets/basics/_header.sass */
+/* line 33, ../../app/stylesheets/basics/_header.sass */
 header #searchbar input[type='submit'] {
   left: 0px;
   height: 34px;
 }
-/* line 36, ../../app/stylesheets/basics/_header.sass */
+/* line 37, ../../app/stylesheets/basics/_header.sass */
 header #searchbar label {
   vertical-align: center;
   line-height: 34px;
+  width: auto;
+  padding-right: 10px;
 }
 
 /* line 1, ../../app/stylesheets/basics/_nav.sass */
@@ -856,6 +858,21 @@ html .frame {
   -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
   -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
   box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+}
+/* line 17, ../../app/stylesheets/basics/_page.sass */
+body .frame h2,
+html .frame h2 {
+  margin-bottom: 10px;
+}
+/* line 20, ../../app/stylesheets/basics/_page.sass */
+body .frame h3,
+html .frame h3 {
+  margin-bottom: 5px;
+}
+/* line 23, ../../app/stylesheets/basics/_page.sass */
+body .frame p.pad,
+html .frame p.pad {
+  margin-bottom: 20px;
 }
 
 /* line 1, ../../app/stylesheets/partials/map/_aside.sass */

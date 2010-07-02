@@ -1,9 +1,10 @@
 %header
   %nav.links
-    
+  
     - if user_signed_in?
       =current_user.email
-      = link_to t('devise.sign_in.headline.logout'), destroy_user_session_path
+      |
+      = link_to t('devise.sign_out.headline'), destroy_user_session_path
       |
     - else
       = link_to t('devise.sign_in.headline'), new_user_session_path
@@ -13,6 +14,10 @@
     = link_to t('header.navigation.what_is_wheelmap'), 'http://blog.wheelmap.org/was-ist-wheelmap/'
     |
     = link_to t('header.navigation.blog'), 'http://blog.wheelmap.org/'
+    |
+    %select{:onchange => 'location.href=this.options[this.selectedIndex].value'}
+      %option{:value => root_url(:subdomain => 'de')}>Deutsch
+      %option{:value => root_url(:subdomain => 'en')}>Englisch
   #logo
     - link_to root_path, :title => t('wheelmap.logo.title') do
       = image_tag 'wheelmap_logo_small.png', :width => 300, :height => 84, :alt => t('wheelmap.logo.alt')
