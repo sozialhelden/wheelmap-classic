@@ -3,7 +3,7 @@
   - semantic_form_for @user do |form|
     - form.inputs do
       = form.input :email, :required => false
-      = form.input :password, :required => false, :hint => 'Leave empty, if you dont want to change it'
+      = form.input :password, :required => false, :hint => t('formtastic.hints.password')
       = form.input :password_confirmation, :required => false
     %h2=t('oauth.application.connect.headline')
   
@@ -12,16 +12,16 @@
     %p.pad
       - if current_user.application_authorized?
         =t('profile.edit.application.oauth.connected')
-        = link_to 'Revoke', new_oauth_path
+        = link_to t('profile.edit.application.oauth.revoke'), new_oauth_path
       - else
         =t('profile.edit.application.oauth.not_connected')
-        = link_to 'Grant', new_oauth_path
+        = link_to t('profile.edit.application.oauth.grant'), new_oauth_path
       
     
     %h3
       =t('profile.edit.application.connect.login')
     - form.inputs do
-      = form.input :osm_username, :required => false
+      = form.input :osm_username, :required => false, :hint => t('formtastic.hints.osm_username')
       = form.input :osm_password, :required => false, :as => :password
 
   

@@ -2,7 +2,7 @@
   %nav.links
   
     - if user_signed_in?
-      =current_user.email
+      = link_to current_user.email, edit_user_path(current_user)
       |
       = link_to t('devise.sign_out.headline'), destroy_user_session_path
       |
@@ -30,7 +30,7 @@
             =t('header.searchbar.label')
           = text_field_tag :search, '', :class => 'search_field'
           
-          %input{:type => 'submit', :class => 'search_button', :value => 'Finden'}
+          %input{:type => 'submit', :class => 'search_button', :value => t('header.searchbar.find')}
           Oder
-          = link_to 'Platz hinzufügen', new_node_path, :class => 'button'
+          = link_to t('header.searchbar.add_place'), new_node_path, :class => 'button'
     
