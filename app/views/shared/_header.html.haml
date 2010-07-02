@@ -16,8 +16,9 @@
     = link_to t('header.navigation.blog'), 'http://blog.wheelmap.org/'
     |
     %select{:onchange => 'location.href=this.options[this.selectedIndex].value'}
-      %option{:value => root_url(:subdomain => 'de')}>Deutsch
-      %option{:value => root_url(:subdomain => 'en')}>Englisch
+      - I18n.available_locales.map(&:to_s).sort.each do |locale|
+        %option{:value => root_url(:subdomain => locale), :selected => (I18n.locale.to_s == locale.to_s)}>
+          =I18n.t(locale)
   #logo
     - link_to root_path, :title => t('wheelmap.logo.title') do
       = image_tag 'wheelmap_logo_small.png', :width => 300, :height => 84, :alt => t('wheelmap.logo.alt')
@@ -26,7 +27,7 @@
       %ol
         %li
           %label
-            Barrierefreie Plätze in:
+            =t('header.searchbar.label')
           = text_field_tag :search, '', :class => 'search_field'
           
           %input{:type => 'submit', :class => 'search_button', :value => 'Finden'}
