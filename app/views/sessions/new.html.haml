@@ -2,7 +2,7 @@
   - semantic_form_for resource_name, resource, :url => session_path(resource_name) do |form|
     - form.inputs :name => t('devise.sign_in.headline') do
       = form.input :email, :label => t('devise.sign_in.form.labels.email')      
-      = form.input :password, :label => t('devise.sign_in.form.labels.password')
+      = form.input :password, :label => t('devise.sign_in.form.labels.password'), :hint => false
 
       - if devise_mapping.rememberable?
         %li.checkbox-optional

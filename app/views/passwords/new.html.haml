@@ -4,5 +4,6 @@
       = form.input :email, :label => t('devise.password_recovery.form.labels.email')
     -form.buttons do
       = form.submit t('devise.password_recovery.form.submit')
+      %p.hint= t('devise.mandatory')
 
 = render :partial => "shared/devise_links"

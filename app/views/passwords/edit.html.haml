@@ -6,5 +6,6 @@
       = form.input :password_confirmation, :label => t('devise.password_reset.form.labels.password_confirmation')
     - form.buttons do
       = form.submit t('devise.password_reset.form.submit')
+      %p.hint= t('devise.mandatory')
 
 = render :partial => "shared/devise_links"
