@@ -3,12 +3,12 @@
     
     - if user_signed_in?
       =current_user.email
-      = link_to t('header.navigation.logout'), destroy_user_session_path
+      = link_to t('devise.sign_in.headline.logout'), destroy_user_session_path
       |
     - else
-      = link_to t('header.navigation.login'), new_user_session_path
+      = link_to t('devise.sign_in.headline'), new_user_session_path
       |
-      = link_to t('devise.registrations.link'), new_registration_path(:user)
+      = link_to t('devise.sign_up.headline'), new_registration_path(:user)
       |
     = link_to t('header.navigation.what_is_wheelmap'), 'http://blog.wheelmap.org/was-ist-wheelmap/'
     |

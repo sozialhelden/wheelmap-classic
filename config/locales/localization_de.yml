@@ -88,6 +88,7 @@ de:
     array:
       sentence_connector: "und"
       skip_last_comma: true
+      two_words_connector: ' und '      
         
   activerecord:
     errors:
