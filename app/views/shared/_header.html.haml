@@ -1,6 +1,5 @@
 %header
   %nav.links
-  
     - if user_signed_in?
       = link_to current_user.email, edit_user_path(current_user)
       |
@@ -14,6 +13,8 @@
     = link_to t('header.navigation.what_is_wheelmap'), 'http://blog.wheelmap.org/was-ist-wheelmap/'
     |
     = link_to t('header.navigation.blog'), 'http://blog.wheelmap.org/'
+    |
+    =link_to t('header.navigation.imprint'), "/", :'data-show' => "#imprint"
     |
     %select{:onchange => 'location.href=this.options[this.selectedIndex].value'}
       - I18n.available_locales.map(&:to_s).sort.each do |locale|

@@ -5,8 +5,13 @@ module OpenStreetMap
   include HTTParty
   API_VERSION = "0.6".freeze
   #http://api.openstreetmap.org/api/0.6/changeset/create
-  # base_uri "http://api.openstreetmap.org/api/#{API_VERSION}" #live
-  base_uri OpenStreetMapConfig.oauth_site
+  if RAILS_ENV == 'production'
+    # base_uri "http://api.openstreetmap.org/api/#{API_VERSION}" #live
+    base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
+  else
+    # base_uri "http://api.openstreetmap.org/api/#{API_VERSION}" #live
+    base_uri "#{OpenStreetMapConfig.oauth_site}"
+  end
   # basic_auth(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
   
   # This required a multistep 

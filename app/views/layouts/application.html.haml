@@ -17,6 +17,7 @@
     = render :partial => '/shared/header'
     #main
       = yield
+      = render :partial => 'shared/imprint'
     %footer
       - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
         = image_tag('sozialhelden.png', :alt => t('.banner.alt'))

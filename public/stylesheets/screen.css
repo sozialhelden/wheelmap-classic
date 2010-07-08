@@ -588,6 +588,32 @@ div[id^='OpenLayers\.Layer\.OSM\.Attribution'] {
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
 }
 
+/* line 13, ../../app/stylesheets/basics/_open_layers.sass */
+div[id^='OpenLayers.Control.Attribution'] {
+  position: relative !important;
+  top: 3px;
+  left: 20px;
+  padding: 5px 8px 1px 8px;
+  position: absolute;
+  font-size: 11px;
+  font-style: italic;
+  z-index: 1000;
+  float: left;
+}
+
+/* line 24, ../../app/stylesheets/basics/_open_layers.sass */
+div[id^='OpenLayers.Control.Permalink'] {
+  position: relative !important;
+  top: 3px;
+  left: 10px;
+  padding: 5px 8px 1px 8px;
+  position: absolute;
+  font-size: 11px;
+  font-style: italic;
+  z-index: 1000;
+  float: left;
+}
+
 /* line 1, ../../app/stylesheets/basics/_header.sass */
 header {
   display: block;

@@ -471,6 +471,32 @@ div[id^='OpenLayers\.Layer\.OSM\.Attribution'] {
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
 }
 
+/* line 13, ../../app/stylesheets/basics/_open_layers.sass */
+div[id^='OpenLayers.Control.Attribution'] {
+  position: relative !important;
+  top: 3px;
+  left: 20px;
+  padding: 5px 8px 1px 8px;
+  position: absolute;
+  font-size: 11px;
+  font-style: italic;
+  z-index: 1000;
+  float: left;
+}
+
+/* line 24, ../../app/stylesheets/basics/_open_layers.sass */
+div[id^='OpenLayers.Control.Permalink'] {
+  position: relative !important;
+  top: 3px;
+  left: 10px;
+  padding: 5px 8px 1px 8px;
+  position: absolute;
+  font-size: 11px;
+  font-style: italic;
+  z-index: 1000;
+  float: left;
+}
+
 /* line 1, ../../app/stylesheets/basics/_header.sass */
 header {
   display: block;
@@ -1046,13 +1072,69 @@ table#properties td.leisure, table#accessibility td.leisure {
   border: 0;
 }
 
-/* line 24, ../../app/stylesheets/node.sass */
+/* line 1, ../../app/stylesheets/partials/map/_imprint.sass */
+#imprint {
+  background: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  color: #fff;
+  display: none;
+  left: 0;
+  padding: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+  text-shadow: rgba(0, 0, 0, 0.7) 0 0 2px;
+}
+/* line 14, ../../app/stylesheets/partials/map/_imprint.sass */
+#imprint dl {
+  clear: both;
+  float: right;
+}
+/* line 18, ../../app/stylesheets/partials/map/_imprint.sass */
+#imprint dt {
+  clear: left;
+  color: #e6e6e6;
+  float: left;
+  padding-right: 10px;
+  text-align: right;
+  width: 150px;
+}
+/* line 26, ../../app/stylesheets/partials/map/_imprint.sass */
+#imprint dd {
+  float: left;
+  width: 300px;
+}
+/* line 31, ../../app/stylesheets/partials/map/_imprint.sass */
+#imprint dd.logo img {
+  background-color: #fff;
+  padding: 5px;
+}
+/* line 35, ../../app/stylesheets/partials/map/_imprint.sass */
+#imprint a {
+  color: #a1c175;
+}
+/* line 38, ../../app/stylesheets/partials/map/_imprint.sass */
+#imprint h2,
+#imprint p {
+  clear: both;
+  float: right;
+  width: 400px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* line 46, ../../app/stylesheets/partials/map/_imprint.sass */
+#imprint p:first-child {
+  text-align: right;
+}
+
+/* line 25, ../../app/stylesheets/node.sass */
 body, html {
   background-color: white;
   font-family: HelveticaNeue, Helvetica, "Swiss 721", Arial, sans-serif;
 }
 
-/* line 29, ../../app/stylesheets/node.sass */
+/* line 30, ../../app/stylesheets/node.sass */
 .clear {
   clear: both;
   display: block;

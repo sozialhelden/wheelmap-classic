@@ -73,7 +73,7 @@ de:
       link:
         node:
           create: Neuen Platz anlegen
-          
+  shared:        
     imprint:
       headline: Impressum
       fields:
