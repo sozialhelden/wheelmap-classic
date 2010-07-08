@@ -43,17 +43,13 @@ var counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
 
 drawmap(defaultControls());
 
-checkForPermalink();
-jumpTo(lon, lat, zoom);
-updatePermalink();
 
 createPlacesLayer(placesStyle());
 
 map.events.register('moveend', null, loadPlaces);
-map.events.register('moveend', null, updatePermalink);
-updatePermalink();
 setTimeout(loadPlaces, 1000);
-
+checkForPermalink();
+jumpTo(lon, lat, zoom);
 
 
 $(function() {

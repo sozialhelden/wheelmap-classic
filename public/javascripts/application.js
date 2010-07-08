@@ -50,9 +50,14 @@ function drawmap(controls) {
 
 function defaultControls(){
   return [
+    new OpenLayers.Control.ArgParser(),
+    new OpenLayers.Control.Permalink(),
+    new OpenLayers.Control.Attribution({  separator : "<br/>",
+                                          displayClass: "olAttribution"
+                                        }),
     new OpenLayers.Control.KeyboardDefaults(),
     new OpenLayers.Control.Navigation({zoomWheelEnabled:true, autoActivate:true}),
-    new OpenLayers.Control.PanZoomBar()
+    new OpenLayers.Control.PanZoomBar(),
   ]
 }
 
