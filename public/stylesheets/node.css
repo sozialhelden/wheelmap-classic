@@ -1075,23 +1075,18 @@ table#properties td.leisure, table#accessibility td.leisure {
 /* line 1, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint {
   background: rgba(0, 0, 0, 0.8);
-  bottom: 0;
-  color: #fff;
-  display: none;
-  left: 0;
-  padding: 50px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 9999;
+  color: white;
+  float: left;
+  width: 100%;
   text-shadow: rgba(0, 0, 0, 0.7) 0 0 2px;
 }
-/* line 14, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 10, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint dl {
+  padding-right: 100px;
   clear: both;
   float: right;
 }
-/* line 18, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 15, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint dt {
   clear: left;
   color: #e6e6e6;
@@ -1100,30 +1095,31 @@ table#properties td.leisure, table#accessibility td.leisure {
   text-align: right;
   width: 150px;
 }
-/* line 26, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 23, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint dd {
   float: left;
   width: 300px;
 }
-/* line 31, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 28, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint dd.logo img {
-  background-color: #fff;
+  background-color: white;
   padding: 5px;
 }
-/* line 35, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 32, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint a {
   color: #a1c175;
 }
-/* line 38, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 35, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint h2,
 #imprint p {
+  padding-right: 100px;
   clear: both;
   float: right;
   width: 400px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 46, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 44, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint p:first-child {
   text-align: right;
 }

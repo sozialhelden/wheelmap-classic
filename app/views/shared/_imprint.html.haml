@@ -1,5 +1,4 @@
-#imprint{:style => 'display: none;'}
-  %p= link_to t('common.close'), '#', :'data-hide' => '#imprint'
+#imprint
   %h2= t('.headline')
   %dl
     %dt
@@ -45,6 +44,6 @@
     %dd.logo
       - link_to 'http://rocket-rentals.de', :title => 'Rocket Rentals: To the web and back' do
         = image_tag('rocket_rentals_logo.png', :alt => 'Rocket Rentals Logo')
-
+  .clear
   %p
     =t('.comment')

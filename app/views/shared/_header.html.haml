@@ -14,7 +14,7 @@
     |
     = link_to t('header.navigation.blog'), 'http://blog.wheelmap.org/'
     |
-    =link_to t('header.navigation.imprint'), "/", :'data-show' => "#imprint"
+    =link_to t('header.navigation.imprint'), imprint_path
     |
     %select{:onchange => 'location.href=this.options[this.selectedIndex].value'}
       - I18n.available_locales.map(&:to_s).sort.each do |locale|
@@ -32,6 +32,6 @@
           = text_field_tag :search, '', :class => 'search_field'
           
           %input{:type => 'submit', :class => 'search_button', :value => t('header.searchbar.find')}
-          Oder
+          = t('or')
           = link_to t('header.searchbar.add_place'), new_node_path, :class => 'button'
     
