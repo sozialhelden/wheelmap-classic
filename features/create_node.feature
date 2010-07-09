@@ -8,7 +8,7 @@ Feature: Create node feature
     And there are no CreateJobs
     And I am on the new node page
     When I fill in "node-name" with "Coyote ugly"
-    And I select "Teilweise barrierefrei" from "node-wheelchair"
+    And I select "Teilweise rollstuhlgerecht" from "node-wheelchair"
     And I select "Bar" from "node-type"
     And I fill in "node-lat" with "52.515890418816"
     And I fill in "node-lon" with "13.400021457672"

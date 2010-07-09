@@ -13,7 +13,7 @@ Given /I am logged in/ do
   When 'I go to the sign_in page'
   And 'I fill in "user-email" with "loggedin@fg.hi"'
   And 'I fill in "user-password" with "123456"'
-  And 'I press "Anmelden"'
+  And 'I press "login"'
   controller.current_user.email.should == 'loggedin@fg.hi'
 end
 
@@ -23,7 +23,7 @@ end
 
 Then /^I should see an "([^\"]*)" div$/ do |div|
   if response.respond_to? :should
-    response.should have_selector 'div#info'
+    response.should have_selector "div##{div}"
   else
     assert_have_selector 'div#info'
   end

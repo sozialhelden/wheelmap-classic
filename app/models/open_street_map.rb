@@ -10,7 +10,7 @@ module OpenStreetMap
     base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
   else
     # base_uri "http://api.openstreetmap.org/api/#{API_VERSION}" #live
-    base_uri "#{OpenStreetMapConfig.oauth_site}"
+    base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
   end
   # basic_auth(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
   
@@ -36,7 +36,6 @@ module OpenStreetMap
   def self.get_node(osmid)
     response = get("/node/#{osmid}", :timeout => 5)
     raise_errors(response)
-    RAILS_DEFAULT_LOGGER.debug(response.inspect)
     node = OpenStreetMap::Node.new(response['osm']['node'])
   end
 
@@ -80,6 +79,7 @@ module OpenStreetMap
   end
   
   def self.raise_errors(response)
+    RAILS_DEFAULT_LOGGER.warn("HTTP REQUEST: #{response.inspect}")
     case response.code.to_i
       when 400
         data = response.body

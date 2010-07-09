@@ -8,7 +8,7 @@ de:
       title: Wheelmap Startseite
       alt: Wheelmap Logo
   wheelchairstatus:
-    'yes': 'Vollständing rollstuhlgerecht'
+    'yes': 'Vollständig rollstuhlgerecht'
     limited: 'Teilweise rollstuhlgerecht'
     'no': 'Nicht rollstuhlgerecht'
     unknown: 'Status unbekannt'

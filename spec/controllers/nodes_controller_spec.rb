@@ -13,6 +13,7 @@ describe NodesController do
 
   before(:each) do
     # default visitor user
+    @base_url = "#{OpenStreetMapConfig.oauth_site}/api/0.6"
     @default_user = Factory.create(:user)
     @another_user = Factory.create(:user, :email => 'test@rspec.org')
   end
@@ -21,7 +22,6 @@ describe NodesController do
     
     before(:each) do
      FakeWeb.allow_net_connect = false
-     @base_url = OpenStreetMapConfig.oauth_site
      @full_url = "#{@base_url}/node/16581933"
     end
     
@@ -43,7 +43,6 @@ describe NodesController do
   describe "action: UPDATE" do
     before(:each) do
       FakeWeb.allow_net_connect = false
-      @base_url = OpenStreetMapConfig.oauth_site
       @full_url = "#{@base_url}/node/16581933"
     end
     
