@@ -61,10 +61,3 @@ $(function() {
 });
 
 
-function updatePermalink() {
-  lat = centerCoordinates().lat;
-  lon = centerCoordinates().lon;
-  zoom = map.getZoom();
-  $('#permalink').attr('href', '/?lon='+ lon + '&lat=' + lat + '&zoom=' + zoom);
-}    
-

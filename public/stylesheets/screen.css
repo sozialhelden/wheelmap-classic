@@ -14,7 +14,7 @@ a {
 }
 /* line 12, ../../app/stylesheets/vendor/_map.sass */
 a:hover {
-  color: #001;
+  color: #000011;
   text-decoration: underline;
 }
 
@@ -26,7 +26,7 @@ a:hover {
   margin: 0;
   font-family: Arial, sans-serif;
   font-size: 1em;
-  color: #000;
+  color: black;
 }
 
 /* line 26, ../../app/stylesheets/vendor/_map.sass */
@@ -36,13 +36,6 @@ a:hover {
 }
 
 /* line 30, ../../app/stylesheets/vendor/_map.sass */
-.olControlPanZoomBar {
-  left: inherit !important;
-  right: 45px !important;
-  top: 45px !important;
-}
-
-/* line 36, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle {
   position: absolute;
   font-size: 1em;
@@ -54,18 +47,18 @@ a:hover {
   border-right: 1px solid #000040;
   padding: 2px 10px;
   margin-right: 200px;
-  background-color: #eee;
+  background-color: #eeeeee;
   font-size: 12px;
   cursor: default;
   opacity: 0.7;
 }
-/* line 52, ../../app/stylesheets/vendor/_map.sass */
+/* line 46, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle:hover {
-  background-color: #fff;
+  background-color: white;
   opacity: 1;
 }
 
-/* line 57, ../../app/stylesheets/vendor/_map.sass */
+/* line 51, ../../app/stylesheets/vendor/_map.sass */
 #description {
   position: absolute;
   z-index: 10000;
@@ -74,11 +67,11 @@ a:hover {
   border: 1px solid #000040;
   padding: 10px 10px;
   margin-right: 200px;
-  background-color: #fff;
+  background-color: white;
   font-size: 12px;
 }
 
-/* line 69, ../../app/stylesheets/vendor/_map.sass */
+/* line 63, ../../app/stylesheets/vendor/_map.sass */
 #attribution {
   bottom: 0;
   left: 0;
@@ -89,28 +82,28 @@ a:hover {
   z-index: 1000;
 }
 
-/* line 79, ../../app/stylesheets/vendor/_map.sass */
+/* line 73, ../../app/stylesheets/vendor/_map.sass */
 #layer {
   position: absolute;
   top: 60px;
   right: 10px;
   z-index: 10002;
 }
-/* line 85, ../../app/stylesheets/vendor/_map.sass */
+/* line 79, ../../app/stylesheets/vendor/_map.sass */
 #layer > div {
-  border: 1px solid #000;
-  background-color: #fff;
+  border: 1px solid black;
+  background-color: white;
   padding: 4px 5px;
   font-size: 0.7em;
   cursor: default;
   margin-bottom: 4px;
 }
-/* line 94, ../../app/stylesheets/vendor/_map.sass */
+/* line 88, ../../app/stylesheets/vendor/_map.sass */
 #layer .active {
-  background-color: #eef;
+  background-color: #eeeeff;
 }
 
-/* line 98, ../../app/stylesheets/vendor/_map.sass */
+/* line 92, ../../app/stylesheets/vendor/_map.sass */
 .hide {
   display: none;
 }
@@ -574,52 +567,49 @@ a.button {
 }
 
 /* line 1, ../../app/stylesheets/basics/_open_layers.sass */
+div.olMapViewport[id^='OpenLayers\.Map'] {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  top: 0px;
+  background: #fff7d9;
+}
+/* line 8, ../../app/stylesheets/basics/_open_layers.sass */
+div.olMapViewport[id^='OpenLayers\.Map'] a {
+  color: inherit;
+  font-weight: bold;
+}
+
+/* line 12, ../../app/stylesheets/basics/_open_layers.sass */
 div[id^='OpenLayers\.Layer\.OSM\.Mapnik'] {
   opacity: 0.5;
 }
 
-/* line 4, ../../app/stylesheets/basics/_open_layers.sass */
-div[id^='OpenLayers\.Layer\.OSM\.Attribution'] {
-  bottom: 10px;
-  color: rgba(0, 0, 0, 0.8);
-  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
-  font-size: 11px;
-  left: 32px;
-  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+/* line 15, ../../app/stylesheets/basics/_open_layers.sass */
+#panzoombar.olControlPanZoomBar {
+  left: inherit !important;
+  right: 45px !important;
+  top: 45px !important;
 }
 
-/* line 13, ../../app/stylesheets/basics/_open_layers.sass */
-div[id^='OpenLayers.Control.Attribution'] {
+/* line 22, ../../app/stylesheets/basics/_open_layers.sass */
+#attribution.olControlAttribution, div[id^='OpenLayers\.Control\.Permalink'] {
   position: relative !important;
-  top: 3px;
+  float: left;
+  display: block;
+  top: 0px;
   left: 20px;
   padding: 5px 8px 1px 8px;
-  position: absolute;
   font-size: 11px;
   font-style: italic;
   z-index: 1000;
-  float: left;
-}
-
-/* line 24, ../../app/stylesheets/basics/_open_layers.sass */
-div[id^='OpenLayers.Control.Permalink'] {
-  position: relative !important;
-  top: 3px;
-  left: 10px;
-  padding: 5px 8px 1px 8px;
-  position: absolute;
-  font-size: 11px;
-  font-style: italic;
-  z-index: 1000;
-  float: left;
 }
 
 /* line 1, ../../app/stylesheets/basics/_header.sass */
 header {
-  display: block;
-  height: 120px;
+  height: 110px;
   width: 100%;
-  padding-top: 38px;
+  padding-top: 30px;
   background-color: white;
   background-image: url("/images/background-header.png") repeat-x;
   background-color: #f9faf9;
@@ -630,38 +620,37 @@ header {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 13px;
   line-height: 20px;
-  min-width: 1024px;
 }
-/* line 13, ../../app/stylesheets/basics/_header.sass */
+/* line 11, ../../app/stylesheets/basics/_header.sass */
 header a {
   text-decoration: underline;
 }
-/* line 16, ../../app/stylesheets/basics/_header.sass */
+/* line 14, ../../app/stylesheets/basics/_header.sass */
 header #logo {
   height: 84px;
   width: 300px;
   margin-left: 30px;
   float: left;
 }
-/* line 22, ../../app/stylesheets/basics/_header.sass */
+/* line 20, ../../app/stylesheets/basics/_header.sass */
 header #searchbar {
   height: 84px;
   margin-left: 15px;
   margin-top: 20px;
   float: left;
 }
-/* line 28, ../../app/stylesheets/basics/_header.sass */
+/* line 26, ../../app/stylesheets/basics/_header.sass */
 header #searchbar select, header #searchbar input {
   -webkit-appearance: none;
   -moz-appearance: none;
   height: 22px;
 }
-/* line 33, ../../app/stylesheets/basics/_header.sass */
+/* line 31, ../../app/stylesheets/basics/_header.sass */
 header #searchbar input[type='submit'] {
   left: 0px;
   height: 34px;
 }
-/* line 37, ../../app/stylesheets/basics/_header.sass */
+/* line 35, ../../app/stylesheets/basics/_header.sass */
 header #searchbar label {
   vertical-align: center;
   line-height: 34px;
@@ -916,7 +905,7 @@ aside {
   left: 0;
   position: absolute;
   right: 0;
-  top: 150px;
+  top: 140px;
   background: #fff7d9;
 }
 
@@ -939,12 +928,10 @@ image[width='16'] {
 /* line 1, ../../app/stylesheets/partials/map/_info.sass */
 #categories, #filter {
   position: relative;
-  float: left;
-  clear: left;
   left: 15px;
-  top: 15px;
+  top: 25px;
   width: 300px;
-  z-index: 5000;
+  z-index: 3000;
   background-color: #e7ebe2;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #e7ebe2), color-stop(1, #cfd7c5));
   background-image: -moz-linear-gradient(center bottom, #cfd7c5 0%, #e7ebe2 50%, white 100%);
