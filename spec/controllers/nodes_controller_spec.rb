@@ -43,7 +43,7 @@ describe NodesController do
   describe "action: UPDATE" do
     before(:each) do
       FakeWeb.allow_net_connect = false
-      @full_url = "#{@base_url}/node/16581933"
+      @full_url = "#{@base_url}/node/84644746"
     end
     
     describe "signed_in" do
@@ -55,17 +55,17 @@ describe NodesController do
       it "should create UpdateJob for given node" do
         FakeWeb.register_uri(:get, @full_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
          lambda{
-            put(:update, :id => 16581933, :node => {:wheelchair => 'yes'})
+            put(:update, :id => 84644746, :node => {:wheelchair => 'yes'})
           }.should change(UpdateJob, :count).by(1)
       end
       
       it "should have correct values for UpdateJob" do
         FakeWeb.register_uri(:get, @full_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
-        put(:update, :id => 16581933, :node => {:wheelchair => 'yes'})
+        put(:update, :id => 84644746, :node => {:wheelchair => 'yes'})
         job = YAML.load(UpdateJob.last.handler)
         job.user_id.should == @another_user.id
-        job.osmid.should == '16581933'
-        job.wheelchair.should == 'yes'
+        job.node.id.should == 84644746
+        job.node.wheelchair.should == 'yes'
       end
   
       it "should not update node if wheelchair is missing" do
@@ -81,17 +81,17 @@ describe NodesController do
       it "should create UpdateJob for given node" do
         FakeWeb.register_uri(:get, @full_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
          lambda{
-            put(:update, :id => 16581933, :node => {:wheelchair => 'yes'})
+            put(:update, :id => 84644746, :node => {:wheelchair => 'yes'})
           }.should change(UpdateJob, :count).by(1)
       end
       
       it "should have correct values for UpdateJob" do
         FakeWeb.register_uri(:get, @full_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
-        put(:update, :id => 16581933, :node => {:wheelchair => 'yes'})
+        put(:update, :id => 84644746, :node => {:wheelchair => 'yes'})
         job = YAML.load(UpdateJob.last.handler)
         job.user_id.should == @default_user.id
-        job.osmid.should == '16581933'
-        job.wheelchair.should == 'yes'
+        job.node.id.should == 84644746
+        job.node.wheelchair.should == 'yes'
       end
   
       it "should not update node if node param is missing" do

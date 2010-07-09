@@ -35,9 +35,9 @@ describe 'OpenStreetMap::Node' do
   end
   
   it "should have latitude, longitude and name" do
-    @node.lat.should == @valid_attributes['lat'].to_f
-    @node.lon.should == @valid_attributes['lon'].to_f
-    @node.id.should == @valid_attributes['id']
+    @node.lat.should == 52.5235634
+    @node.lon.should == 13.3988069
+    @node.id.should == 78252168
     @node.name.should == 'Telefonzelle am neuen Tor'
     @node.type.should == 'telephone'
   end

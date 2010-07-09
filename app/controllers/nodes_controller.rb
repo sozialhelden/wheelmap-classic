@@ -31,7 +31,8 @@ class NodesController < ApplicationController
       @node.send("#{key}=", value)
     end
     if @node.valid?
-      Delayed::Job.enqueue(UpdatingJob.new(params[:id], params[:node][:wheelchair], default_user.id))
+      
+      Delayed::Job.enqueue(UpdatingJob.new(@node, default_user.id))
       respond_to do |wants|
         wants.js{ render :text => 'OK' }
         wants.html{ redirect_to node_path(@node) }
