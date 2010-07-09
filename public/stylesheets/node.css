@@ -456,33 +456,33 @@ a.button {
   border: 0;
 }
 
-/* line 1, ../../app/stylesheets/basics/_open_layers.sass */
-div.olMapViewport[id^='OpenLayers\.Map'] {
+/* line 2, ../../app/stylesheets/basics/_open_layers.sass */
+#map div.olMapViewport[id^='OpenLayers\.Map'] {
   width: 100% !important;
   height: 100% !important;
   position: absolute !important;
   top: 0px;
   background: #fff7d9;
 }
-/* line 8, ../../app/stylesheets/basics/_open_layers.sass */
-div.olMapViewport[id^='OpenLayers\.Map'] a {
+/* line 9, ../../app/stylesheets/basics/_open_layers.sass */
+#map div.olMapViewport[id^='OpenLayers\.Map'] a {
   color: inherit;
   font-weight: bold;
 }
 
-/* line 12, ../../app/stylesheets/basics/_open_layers.sass */
+/* line 13, ../../app/stylesheets/basics/_open_layers.sass */
 div[id^='OpenLayers\.Layer\.OSM\.Mapnik'] {
   opacity: 0.5;
 }
 
-/* line 15, ../../app/stylesheets/basics/_open_layers.sass */
+/* line 16, ../../app/stylesheets/basics/_open_layers.sass */
 #panzoombar.olControlPanZoomBar {
   left: inherit !important;
   right: 45px !important;
   top: 45px !important;
 }
 
-/* line 22, ../../app/stylesheets/basics/_open_layers.sass */
+/* line 23, ../../app/stylesheets/basics/_open_layers.sass */
 #attribution.olControlAttribution, div[id^='OpenLayers\.Control\.Permalink'] {
   position: relative !important;
   float: left;
@@ -923,11 +923,11 @@ dd.leisure {
 /* line 1, ../../app/stylesheets/partials/nodes/_map.sass */
 #map_wrapper {
   width: 510px;
-  height: 470px;
+  height: 430px;
   float: left;
 }
 /* line 5, ../../app/stylesheets/partials/nodes/_map.sass */
-#map_wrapper #map {
+#map_wrapper #minimap {
   height: 430px;
   width: 500px;
   background-color: #fff7d9;

@@ -28,12 +28,12 @@ function markerLayer(name){
   });
 }
 
-function drawmap(controls) {
+function drawmap(controls, element) {
   OpenLayers.Lang.setCode('de');
 
   epsg900913 = new OpenLayers.Projection("EPSG:900913");
   epsg4326 = new OpenLayers.Projection("EPSG:4326");
-  map = new OpenLayers.Map('map', {
+  map = new OpenLayers.Map(element, {
     projection: epsg900913,
     displayProjection: epsg4326,
     controls: controls,
