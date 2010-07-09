@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.root :controller => 'home', :action => 'index'
+  map.imprint '/imprint', :controller => 'pages', :action => 'show', :id => 'imprint'
 
   map.devise_for :admins
 
@@ -17,6 +18,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :as => 'profile'
 
   map.resources :users, :collection => {:authenticate => :post}
+  
   
   #map.connect ':controller/:action/:id'
   #map.connect ':controller/:action/:id.:format'

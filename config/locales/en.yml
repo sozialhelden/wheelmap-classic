@@ -2,6 +2,7 @@
 en:
   de: Deutsch
   en: English
+  or: or
   wheelmap:
     logo:
       title: Wheelmap Homepage
@@ -32,6 +33,9 @@ en:
       logged_in_as: "Logged in as:"
     searchbar:
       label: 'Wheelchair accessible places in:'
+      find: 'find'
+      add_place: 'Add another place'
+      
       
     tagline: Wheelmap logo
     title: wheelmap
@@ -69,7 +73,7 @@ en:
       link:
         node:
           create: Add new place
-          
+  shared:        
     imprint:
       headline: Imprint
       fields:
