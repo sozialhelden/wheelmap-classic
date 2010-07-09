@@ -2,7 +2,7 @@ require 'spec_helper'
 describe OpenStreetMap do
   
   before(:each) do
-    @base_url = OpenStreetMapConfig.oauth_site
+    @base_url = "#{OpenStreetMapConfig.oauth_site}/api/0.6"
     FakeWeb.allow_net_connect = false
     @consumer = ::OAuth::Consumer.new(OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret, :site => @base_url)
     @oauth = ::OAuth::AccessToken.new(@consumer, 'foo', 'bar')

@@ -5,5 +5,6 @@ Feature: Map feature
 
   Scenario: I want to see a map when load the page
     Given I am on the home page
-    Then I should see an "info" div
+    Then I should see an "categories" div
+    And I should see an "filter" div
   

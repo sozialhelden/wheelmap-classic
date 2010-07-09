@@ -16,9 +16,11 @@
 
 
 - form.inputs :name => t('formtastic.titles.optional'), :id => 'optional' do
-  = form.input :street,       :required => false
-  = form.input :housenumber,  :required => false
-  = form.input :postcode,     :required => false
-  = form.input :city,         :required => false
-  = form.input :url,          :required => false
-  = form.input :phone,        :required => false
+  - form.semantic_fields_for :tag do |tag|
+    = tag.input '][addr:street', :label => t('formtastic.labels.street'), :required => false
+    = tag.input '][addr:housenumber', :label => t('formtastic.labels.housenumber'), :required => false
+    = tag.input '][addr:housenumber', :label => t('formtastic.labels.housenumber'), :required => false
+    = tag.input '][addr:postcode', :label => t('formtastic.labels.postcode'), :required => false
+    = tag.input '][addr:city', :label => t('formtastic.labels.city'), :required => false
+    = tag.input '][contact:url', :label => t('formtastic.labels.url'), :required => false
+    = tag.input '][contact:phone', :label => t('formtastic.labels.phone'), :required => false
