@@ -5,7 +5,7 @@
 
 Given /^I am not logged in$/ do
   visit '/users/sign_out'
-  session.destroy
+  current_user.session.destroy
 end
 
 Given /I am logged in/ do

@@ -17,8 +17,8 @@ module OpenStreetMap
       @lon = data['lon'].to_f
       @tags = extract_tags(data)
       @user = data['user']
-      @uid = data['uid']
-      @id = data['id']
+      @uid = data['uid'].to_i
+      @id = data['id'].to_i
       self.name = data['name'] || tags['name']
       @changeset = data['changeset']
       @version = data['version'].to_i

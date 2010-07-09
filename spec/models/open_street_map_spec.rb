@@ -47,7 +47,7 @@ describe OpenStreetMap do
     it "should create a new changeset" do
       FakeWeb.register_uri(:put, @full_url, :body => "12345", :content_type => 'text/plain')
       changeset_id = OpenStreetMap.create_changeset
-      changeset_id.should == '12345'
+      changeset_id.should == 12345
     end
     
     it "should raise bad request when submitting malformed xml" do
@@ -74,18 +74,21 @@ describe OpenStreetMap do
   describe "method: create_node" do
     
     before(:each) do
-      @changeset_url = "#{@base_url}/changeset/create"
+      @changeset_create_url = "#{@base_url}/changeset/create"
       @put_url = "#{@base_url}/node/create"
-      @get_url = "#{@base_url}/node/1234"
+      @get_url = "#{@base_url}/node/84644746"
+      @changeset_close_url = "#{@base_url}/changeset/12345/close"
       @node = Factory.build(:node)
     end
     
     it "should create a new node as" do
-      FakeWeb.register_uri(:put, @changeset_url, :body => "12345", :content_type => 'text/plain')
-      FakeWeb.register_uri(:put, @put_url, :body => '1234', :content_type => 'text/plain')
+      FakeWeb.register_uri(:put, @changeset_create_url, :body => "12345", :content_type => 'text/plain')
+      FakeWeb.register_uri(:put, @put_url, :body => '84644746', :content_type => 'text/plain')
       FakeWeb.register_uri(:get, @get_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
-      node_id = OpenStreetMap.create(@node)
-      node_id.should == 1234
+      FakeWeb.register_uri(:put, @changeset_close_url, :content_type => 'text/plain')
+    
+      node = OpenStreetMap.create_node(@node)
+      node.id.should == 84644746
     end
     
   end
