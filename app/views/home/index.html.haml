@@ -1,38 +1,36 @@
 #map
 
-#filter
-  %ul#options.wheelchair
-    %li.yes
-      = check_box_tag(:wheelchair_yes, 1, true)
-      = label_tag :wheelchair_yes, t('form.show_fully_accessible_places')
-      %span
-    %li.limited
-      = check_box_tag(:wheelchair_limited, 1, true)
-      = label_tag :wheelchair_limited, t('form.show_limited_accessible_places')
-      %span
-    %li.no
-      = check_box_tag(:wheelchair_no, 1, true)
-      = label_tag :wheelchair_no, t('form.show_unaccessible_places')
-      %span
-    %li.unknown
-      = check_box_tag(:wheelchair_unknown, 1, true)
-      = label_tag :wheelchair_unknown, t('form.show_places_without_status')
-      %span
+  #filter
+    %ul#options.wheelchair
+      %li.yes
+        = check_box_tag(:wheelchair_yes, 1, true)
+        = label_tag :wheelchair_yes, t('form.show_fully_accessible_places')
+        %span
+      %li.limited
+        = check_box_tag(:wheelchair_limited, 1, true)
+        = label_tag :wheelchair_limited, t('form.show_limited_accessible_places')
+        %span
+      %li.no
+        = check_box_tag(:wheelchair_no, 1, true)
+        = label_tag :wheelchair_no, t('form.show_unaccessible_places')
+        %span
+      %li.unknown
+        = check_box_tag(:wheelchair_unknown, 1, true)
+        = label_tag :wheelchair_unknown, t('form.show_places_without_status')
+        %span
 
 
-#categories
-  %h4
-    Kategorie
-  %ul#amenities
-    - [:public_transfer, :food, :leisure, :money, :post, :government, :health, :car, :education, :misc].each do |amenity_group|
-      %li
-        %h4=t("poi.category.#{amenity_group}")
-        %div
-          - Amenities[amenity_group].each do |elements|
-            -elements.each do |key,values|
-              %a{:class => session['amenities'].include?(values.first) ? 'visible' : 'hidden', :href => '#', :onclick => "toggleLayers('#{values.first}')", :title => t("poi.name.#{values.first}")}
-                %span{:class => values.first}
-    
-    
-  
+  #categories
+    %h4
+      Kategorie
+    %ul#amenities
+      - [:public_transfer, :food, :leisure, :money, :post, :government, :health, :car, :education, :misc].each do |amenity_group|
+        %li
+          %h4=t("poi.category.#{amenity_group}")
+          %div
+            - Amenities[amenity_group].each do |elements|
+              -elements.each do |key,values|
+                %a{:class => session['amenities'].include?(values.first) ? 'visible' : 'hidden', :href => '#', :onclick => "toggleLayers('#{values.first}')", :title => t("poi.name.#{values.first}")}
+                  %span{:class => values.first}
+      
 #spinner

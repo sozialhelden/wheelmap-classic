@@ -457,52 +457,49 @@ a.button {
 }
 
 /* line 1, ../../app/stylesheets/basics/_open_layers.sass */
+div.olMapViewport[id^='OpenLayers\.Map'] {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  top: 0px;
+  background: #fff7d9;
+}
+/* line 8, ../../app/stylesheets/basics/_open_layers.sass */
+div.olMapViewport[id^='OpenLayers\.Map'] a {
+  color: inherit;
+  font-weight: bold;
+}
+
+/* line 12, ../../app/stylesheets/basics/_open_layers.sass */
 div[id^='OpenLayers\.Layer\.OSM\.Mapnik'] {
   opacity: 0.5;
 }
 
-/* line 4, ../../app/stylesheets/basics/_open_layers.sass */
-div[id^='OpenLayers\.Layer\.OSM\.Attribution'] {
-  bottom: 10px;
-  color: rgba(0, 0, 0, 0.8);
-  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
-  font-size: 11px;
-  left: 32px;
-  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+/* line 15, ../../app/stylesheets/basics/_open_layers.sass */
+#panzoombar.olControlPanZoomBar {
+  left: inherit !important;
+  right: 45px !important;
+  top: 45px !important;
 }
 
-/* line 13, ../../app/stylesheets/basics/_open_layers.sass */
-div[id^='OpenLayers.Control.Attribution'] {
+/* line 22, ../../app/stylesheets/basics/_open_layers.sass */
+#attribution.olControlAttribution, div[id^='OpenLayers\.Control\.Permalink'] {
   position: relative !important;
-  top: 3px;
+  float: left;
+  display: block;
+  top: 0px;
   left: 20px;
   padding: 5px 8px 1px 8px;
-  position: absolute;
   font-size: 11px;
   font-style: italic;
   z-index: 1000;
-  float: left;
-}
-
-/* line 24, ../../app/stylesheets/basics/_open_layers.sass */
-div[id^='OpenLayers.Control.Permalink'] {
-  position: relative !important;
-  top: 3px;
-  left: 10px;
-  padding: 5px 8px 1px 8px;
-  position: absolute;
-  font-size: 11px;
-  font-style: italic;
-  z-index: 1000;
-  float: left;
 }
 
 /* line 1, ../../app/stylesheets/basics/_header.sass */
 header {
-  display: block;
-  height: 120px;
+  height: 110px;
   width: 100%;
-  padding-top: 38px;
+  padding-top: 30px;
   background-color: white;
   background-image: url("/images/background-header.png") repeat-x;
   background-color: #f9faf9;
@@ -513,38 +510,37 @@ header {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 13px;
   line-height: 20px;
-  min-width: 1024px;
 }
-/* line 13, ../../app/stylesheets/basics/_header.sass */
+/* line 11, ../../app/stylesheets/basics/_header.sass */
 header a {
   text-decoration: underline;
 }
-/* line 16, ../../app/stylesheets/basics/_header.sass */
+/* line 14, ../../app/stylesheets/basics/_header.sass */
 header #logo {
   height: 84px;
   width: 300px;
   margin-left: 30px;
   float: left;
 }
-/* line 22, ../../app/stylesheets/basics/_header.sass */
+/* line 20, ../../app/stylesheets/basics/_header.sass */
 header #searchbar {
   height: 84px;
   margin-left: 15px;
   margin-top: 20px;
   float: left;
 }
-/* line 28, ../../app/stylesheets/basics/_header.sass */
+/* line 26, ../../app/stylesheets/basics/_header.sass */
 header #searchbar select, header #searchbar input {
   -webkit-appearance: none;
   -moz-appearance: none;
   height: 22px;
 }
-/* line 33, ../../app/stylesheets/basics/_header.sass */
+/* line 31, ../../app/stylesheets/basics/_header.sass */
 header #searchbar input[type='submit'] {
   left: 0px;
   height: 34px;
 }
-/* line 37, ../../app/stylesheets/basics/_header.sass */
+/* line 35, ../../app/stylesheets/basics/_header.sass */
 header #searchbar label {
   vertical-align: center;
   line-height: 34px;

@@ -44,7 +44,7 @@ function drawmap(controls) {
   });
   
 
-  mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik");
+  mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", {opacity:0.5, transitionEffect:'resize'});
   map.addLayer(mapnik);
 }
 
@@ -52,12 +52,10 @@ function defaultControls(){
   return [
     new OpenLayers.Control.ArgParser(),
     new OpenLayers.Control.Permalink(),
-    new OpenLayers.Control.Attribution({  separator : "<br/>",
-                                          displayClass: "olAttribution"
-                                        }),
-    new OpenLayers.Control.KeyboardDefaults(),
+    new OpenLayers.Control.Attribution({id:'attribution',displayClass:"olControlAttribution"}),
+    new OpenLayers.Control.PanZoomBar({id:'panzoombar',displayClass:'olControlPanZoomBar'}),
     new OpenLayers.Control.Navigation({zoomWheelEnabled:true, autoActivate:true}),
-    new OpenLayers.Control.PanZoomBar(),
+    new OpenLayers.Control.KeyboardDefaults(),
   ]
 }
 
