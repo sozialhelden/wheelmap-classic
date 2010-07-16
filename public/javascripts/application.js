@@ -37,15 +37,17 @@ function drawmap(controls, element) {
     projection: epsg900913,
     displayProjection: epsg4326,
     controls: controls,
-    maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34, 20037508.34, 20037508.34),
-    numZoomLevels: 20,
-    maxResolution: 156543,
-    units: 'meters'
+    maxExtent: new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34),
+    numZoomLevels: 19,
+    maxResolution: 156543.0399,
+    units: 'm'
   });
   
 
   mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", {opacity:0.5, transitionEffect:'resize'});
-  map.addLayer(mapnik);
+  
+  // mapnik = new OpenLayers.Layer.OSM.Osmarender("Mapnik", {opacity:0.5, transitionEffect:'resize'});
+  map.addLayers([mapnik]);
 }
 
 function defaultControls(){
@@ -56,6 +58,7 @@ function defaultControls(){
     new OpenLayers.Control.PanZoomBar({id:'panzoombar',displayClass:'olControlPanZoomBar'}),
     new OpenLayers.Control.Navigation({zoomWheelEnabled:true, autoActivate:true}),
     new OpenLayers.Control.KeyboardDefaults(),
+    new OpenLayers.Control.ScaleLine()
   ]
 }
 

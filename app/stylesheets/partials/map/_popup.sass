@@ -1,4 +1,11 @@
+$dt-width: 90px
+$gap: 10px
+$dd-width: 210px
+
+
 .popup
+  width: $dt-width + $gap + $dd-width
+
   h2
     background-position: 0 2px
     padding-left: 20px
@@ -6,40 +13,42 @@
   address
     padding-left: 20px
 
-  $dt-width: 90px
-  $gap: 10px
-  $dd-width: 210px
 
-  dl
+  ol
     border-top: 1px desaturate(lighten($green, 20%), 20%) solid
+    +border-radius(0px)
     margin-top: 7px
     padding-top: 7px
     width: $dt-width + $gap + $dd-width
     +clearfix
+    
+  input
+    float: right
+    margin-right: 10px
 
-  dt,
-  dd
+  li,
+  label
     float: left
     font-size: 11px
     line-height: 15px
-    padding-bottom: 7px
+    margin: 0px !important
+    +border-radius(0px !important)
 
-  dt
+  label
     clear: left
     font-family: $helvetica
     font-weight: bold
     padding-right: $gap
-    text-align: right
-    width: $dt-width
+    text-align: left
+    width: $dt-width !important
 
     &:after
       content: ":"
 
-  dd
+  li
     font-family: $helvetica-light
     font-size: 11px
     font-weight: 100
-    width: $dd-width
 
     strong
       font-family: $helvetica

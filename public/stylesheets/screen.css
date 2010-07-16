@@ -1237,18 +1237,26 @@ image[width='16'] {
   opacity: 1;
 }
 
-/* line 2, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 6, ../../app/stylesheets/partials/map/_popup.sass */
+.popup {
+  width: 310px;
+}
+/* line 9, ../../app/stylesheets/partials/map/_popup.sass */
 .popup h2 {
   background-position: 0 2px;
   padding-left: 20px;
 }
-/* line 6, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 13, ../../app/stylesheets/partials/map/_popup.sass */
 .popup address {
   padding-left: 20px;
 }
-/* line 13, ../../app/stylesheets/partials/map/_popup.sass */
-.popup dl {
+/* line 17, ../../app/stylesheets/partials/map/_popup.sass */
+.popup ol {
   border-top: 1px #cfd7c5 solid;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -khtml-border-radius: 0px;
+  border-radius: 0px;
   margin-top: 7px;
   padding-top: 7px;
   width: 310px;
@@ -1256,39 +1264,47 @@ image[width='16'] {
   display: inline-block;
 }
 /* line 8, ../../vendor/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
-.popup dl {
+.popup ol {
   display: block;
 }
-/* line 20, ../../app/stylesheets/partials/map/_popup.sass */
-.popup dt,
-.popup dd {
+/* line 25, ../../app/stylesheets/partials/map/_popup.sass */
+.popup input {
+  float: right;
+  margin-right: 10px;
+}
+/* line 29, ../../app/stylesheets/partials/map/_popup.sass */
+.popup li,
+.popup label {
   float: left;
   font-size: 11px;
   line-height: 15px;
-  padding-bottom: 7px;
+  margin: 0px !important;
+  -moz-border-radius: 0px !important;
+  -webkit-border-radius: 0px !important;
+  -khtml-border-radius: 0px !important;
+  border-radius: 0px !important;
 }
-/* line 27, ../../app/stylesheets/partials/map/_popup.sass */
-.popup dt {
+/* line 37, ../../app/stylesheets/partials/map/_popup.sass */
+.popup label {
   clear: left;
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-weight: bold;
   padding-right: 10px;
-  text-align: right;
-  width: 90px;
+  text-align: left;
+  width: 90px !important;
 }
-/* line 35, ../../app/stylesheets/partials/map/_popup.sass */
-.popup dt:after {
+/* line 45, ../../app/stylesheets/partials/map/_popup.sass */
+.popup label:after {
   content: ":";
 }
-/* line 38, ../../app/stylesheets/partials/map/_popup.sass */
-.popup dd {
+/* line 48, ../../app/stylesheets/partials/map/_popup.sass */
+.popup li {
   font-family: 'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue','Swiss 721 Light','Helvetica','Arial','sans-serif';
   font-size: 11px;
   font-weight: 100;
-  width: 210px;
 }
-/* line 44, ../../app/stylesheets/partials/map/_popup.sass */
-.popup dd strong {
+/* line 53, ../../app/stylesheets/partials/map/_popup.sass */
+.popup li strong {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-weight: bold;
 }
