@@ -1,4 +1,3 @@
---- 
 de:
   de: Deutsch
   en: English
@@ -69,11 +68,6 @@ de:
       remember_me: "Eingeloggt bleiben"
   common:
     close: schließen
-  home:
-    index:
-      link:
-        node:
-          create: Neuen Platz anlegen
   shared:        
     imprint:
       headline: Impressum
@@ -102,14 +96,6 @@ de:
     node:
       create: Neuen Platz anlegen
       edit: Platz bearbeiten
-  nodes:
-    show:
-      link:
-        large_map: Ansicht vergrößern
-    errors:
-      not_found: Leider konnte die Seite nicht gefunden werden
-      not_available: Leider steht diese Seite zur Zeit nicht zur Verfügung
-      not_existent: Leider ist dieser Platz nicht mehr da
   profile:
     edit:
       headline: Dein Profil bearbeiten

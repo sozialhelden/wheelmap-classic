@@ -1,0 +1,9 @@
+en:
+  nodes:
+    show:
+      link:
+        large_map: Enlarge
+    errors:
+      not_found: Sorry, page not found.
+      not_available: Sorry, this page is temporarily not available.
+      not_existent: Sorry, this place is not available anymore.
