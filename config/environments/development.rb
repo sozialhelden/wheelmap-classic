@@ -21,3 +21,4 @@ OSM_HOST      = 'api06.dev.openstreetmap.org'
 OAUTH_KEY     = 'PdVEU2YnFTwLR9vFzho0xQ'
 OAUTH_SECRET  = 'B8VSkI1FieQLaFAj4uY2Kr2KPYecgdR88q2WGc'
 
+config.action_controller.asset_host = "http://asset%d.wheelmap.local"
