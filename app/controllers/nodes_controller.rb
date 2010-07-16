@@ -1,5 +1,7 @@
 class NodesController < ApplicationController
   
+  skip_before_filter :verify_authenticity_token
+  
   before_filter :authenticate_user!,    :only => [:create, :new]
   before_filter :check_update_params,   :only => :update
   before_filter :check_create_params,   :only => :create
