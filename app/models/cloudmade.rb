@@ -11,7 +11,8 @@ module Cloudmade
 
   self.api_key = CloudmadeConfig.api_key
 
-  def self.nodes(bbox="13.397643,52.523102,13.406419,52.526392", object_types="")
+  def self.nodes(bbox=nil, object_types="")
+    bbox ||= "13.397643,52.523102,13.406419,52.526392"
     normalized_bbox = normalize_bbox(bbox)
 
     types = object_types.blank? ? all_points_of_interest : object_types.split.map(&:underscore).join(',')
