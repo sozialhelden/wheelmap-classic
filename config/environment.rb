@@ -16,7 +16,6 @@ Rails::Initializer.run do |config|
   config.gem 'newrelic_rpm'
   config.gem 'jnunemaker-validatable', :lib => 'validatable'
   config.gem 'smurf'
-  config.i18n.default_locale = :de
 end
 
 Haml::Template.options[:format] = :html5

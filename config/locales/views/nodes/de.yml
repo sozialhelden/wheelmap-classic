@@ -1,0 +1,10 @@
+de:
+  nodes:
+    show:
+      link:
+        large_map: Ansicht vergrößern
+    errors:
+      not_found: Leider konnte die Seite nicht gefunden werden
+      not_available: Leider steht diese Seite zur Zeit nicht zur Verfügung
+      not_existent: Leider ist dieser Platz nicht mehr da
+  
