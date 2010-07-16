@@ -1,0 +1,64 @@
+<IfModule mod_mime.c>
+  AddEncoding gzip .gz
+  AddType text/html .gz
+  AddType image/x-icon .ico
+</IfModule>
+
+<IfModule mod_expires.c>
+  # Turn on Expires and set default expires to 3 days
+  ExpiresActive On
+
+  # Set up caching on media files for 1 month
+  <FilesMatch "\.(ico|gif|jpg|jpeg|png|flv|pdf|swf|mov|mp3|wmv|ppt)$">
+    ExpiresDefault A2419200
+    Header append Cache-Control "public"
+  </FilesMatch>
+  
+  <FilesMatch "\.(css)$">
+    Header append Cache-Control "private"
+    Header append Vary "Accept-Encoding"
+  </FilesMatch>
+  
+  ExpiresByType text/html "access plus 30 days"
+  ExpiresByType image/x-icon "access plus 1 years"
+  ExpiresByType image/ico "access plus 1 years"
+  ExpiresByType image/gif "access plus 1 years"
+  ExpiresByType image/jpeg "access plus 1 years"
+  ExpiresByType image/png "access plus 1 years"
+  ExpiresByType text/css "access plus 2 years"
+  ExpiresByType text/js "access plus 2 years"
+  ExpiresByType text/javascript "access plus 2 years"
+  ExpiresByType text/css "access plus 2 years"
+  ExpiresByType image/x-icon "access plus 2 years"
+  ExpiresByType application/javascript "access plus 2 years"
+  ExpiresByType application/x-javascript "access plus 2 years"
+
+  ExpiresDefault "access plus 2 month"
+
+  <FilesMatch "\.(pl|php|cgi|spl)$">
+      Header unset Cache-Control
+      Header unset Expires
+      Header unset Last-Modified
+      FileETag None
+      Header unset Pragma
+  </FilesMatch>
+
+</IfModule>
+
+<IfModule mod_deflate.c>
+  # Add compression types for css and javascript
+  AddType text/css css gz
+  AddEncoding gzip gz
+  AddType text/javascript js gz
+  AddEncoding gzip jgz
+  AddType application/x-javascript js gz
+  AddEncoding gzip jgz
+
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/x-javascript application/xml application/xhtml+xml
+  
+  # Netscape 4.x has some problems...
+  BrowserMatch ^Mozilla/4 no-gzip
+
+  # MSIE masquerades as Netscape, but it is fine
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+</IfModule>
