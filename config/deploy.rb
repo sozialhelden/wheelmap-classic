@@ -1,3 +1,6 @@
+set :stages,        %w(staging production)
+set :default_stage, "staging"
+require 'capistrano/ext/multistage'
 ################################################################################
 ##                                                                            ##
 ##  ROCKET RENTALS Hosting Deployment Configuration                           ##
@@ -19,7 +22,7 @@
 ##                                                                            ##
 ##      Just replace << APPLICATION TITLE >> in the following line.           ##
 ##                                                                            ##
-        set :application, 'wheelmap_org'
+## README! Is set in config/deploy/production.rb #set :application, 'wheelmap_org'
 ##                                                                            ##
 ##  B.  Configure your environment                                            ##
 ##                                                                            ##
@@ -98,12 +101,13 @@
 ##      and the Database name you just chose.                                 ##
 ##                                                                            ##
 ##      Just replace << DATABASE NAME >> (2 times) in the following lines.    ##
-##                                                                            ##
-        set :db_names, {
-          :production => 'c15wheelmap', 
-          :development => 'c15wheelmap' #,
-          # :test => '<< DATABASE NAME >>'
-        }
+##            
+##      IS SET IN STAGING CONFIG                                              ##
+##        # set :db_names, {
+##        #   :production => 'c15wheelmap', 
+##        #   :development => 'c15wheelmap' #,
+##        #   # :test => '<< DATABASE NAME >>'
+##        # }
 ##                                                                            ##
 ##      (If you wish, you can create separate databases for your Rails        ##
 ##      environments.)                                                        ##
@@ -112,12 +116,12 @@
 ##      just chose for your Database. Please also prepend your client number  ##
 ##      (e.g. "c8") like you did for the Database name.                       ##
 ##                                                                            ##
-        set :db_user, 'c15wheelmap'
+##        set :db_user, 'c15wheelmap'
 ##                                                                            ##
 ##      Finally, replace << PASSWORD >> in the following line by the one you  ##
 ##      just chose for your Database.                                         ##
 ##                                                                            ##
-        set :db_password, 'gdf97634dLFS'
+##        set :db_password, 'gdf97634dLFS'
 ##                                                                            ##
 ##  C.  Point to your source code                                             ##
 ##                                                                            ##
