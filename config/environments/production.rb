@@ -32,5 +32,3 @@ Sass::Plugin.options[:style] = :compress
 OSM_HOST      = 'osmxapi.hypercube.telascience.org'
 OAUTH_KEY     = 'l4I6j034qeqlJ4Tqybo10w'
 OAUTH_SECRET  = 'JzCv4u2TkgrsaJqaslWvNgZtH8YM105SXlhI807G1FI'
-
-config.action_controller.asset_host = "http://asset%d.wheelmap.org"
