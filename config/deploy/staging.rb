@@ -1,5 +1,5 @@
-puts "Configuring settings for staging environment"
 set :application, 'staging_wheelmap_org'
-set :db_names,    :production => 'c15wm_staging'
+set :db_names,    :staging => 'c15wm_staging'
 set :db_user,     'c15wm_staging'
 set :db_password, '***REMOVED***'
+set :rails_env,   'staging'

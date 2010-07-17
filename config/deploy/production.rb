@@ -1,5 +1,5 @@
-puts "Configuring settings for production environment"
 set :application, 'wheelmap_org'
-set :db_names, :production => 'c15wheelmap'
-set :db_user, 'c15wheelmap'
+set :db_names,    :production => 'c15wheelmap'
+set :db_user,     'c15wheelmap'
 set :db_password, '***REMOVED***'
+set :rails_env,   'production'
