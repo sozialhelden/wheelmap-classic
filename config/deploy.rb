@@ -304,6 +304,16 @@ namespace :deploy do
       run "find #{asset_paths} -exec touch -t #{stamp} {} ';'; true", :env => { "TZ" => "UTC" }
     end
   end
+  
+  desc "set ENV['RAILS_ENV'] for mod_rails (phusion passenger)"
+  task :set_rails_env do
+    tmp = "#{latest_release}/tmp/environment.rb"
+    final = "#{latest_release}/config/environment.rb"
+    run <<-CMD
+      echo 'RAILS_ENV = "#{rails_env}"' > #{tmp};
+      cat #{final} >> #{tmp} && mv #{tmp} #{final};
+    CMD
+  end
     
 end
 
@@ -353,10 +363,11 @@ EOF
 
 end
 
-after 'deploy:setup',       'rocket_rentals:create_app_symlink'
-after 'deploy:update_code', 'rocket_rentals:configure_database'
-after 'deploy:update_code', 'rocket_rentals:configure_gem_path'
-after 'deploy:update_code', 'rocket_rentals:configure_app_root'
+after 'deploy:setup',           'rocket_rentals:create_app_symlink'
+after 'deploy:update_code',     'rocket_rentals:configure_database'
+after 'deploy:update_code',     'rocket_rentals:configure_gem_path'
+after 'deploy:update_code',     'rocket_rentals:configure_app_root'
+after 'deploy:finalize_update', 'deploy:set_rails_env'
 
 # make relative path from absolute and root part
 def relative_path(absolute_path, root=deploy_to)
