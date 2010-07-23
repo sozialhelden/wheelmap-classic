@@ -1,4 +1,4 @@
-module OpenStreetMap
+class OpenStreetMap
   class NotFound < Error
   end
 end

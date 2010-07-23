@@ -136,7 +136,7 @@ function closePopup(feature) {
 
 function popupHTML(node) {
   var stateHTML = function(state, label) {
-    var id = state + '-' + node.osmid,
+    var id = state + '-' + node.id,
         checked = (state == node.wheelchair ? ' checked="checked"' : ''),
         disabled = (state == 'unknown' ? ' disabled="disabled"' : '')
         input = '<input id="' + id + '" type="radio" name="node[wheelchair]"' + checked + disabled + ' value="' + state + '">',
@@ -144,10 +144,10 @@ function popupHTML(node) {
     return '<li class="' + state + '">' + input + label + '</li>';
   }
   var result = '<h2 class="' + node.type + '">'
-  result += '<a href="/nodes/' + node.osmid + '">' + (node.name || node.type) + '</a></h2>';
+  result += '<a href="/nodes/' + node.id + '">' + (node.name || node.type) + '</a></h2>';
   result += addressOfNode(node);
   result += tagList(node.tags);
-  result += '<form action="/nodes/' + node.osmid + '.js" id="update_form_' + node.osmid + '" method="put">';
+  result += '<form action="/nodes/' + node.id + '.js" id="update_form_' + node.id + '" method="put">';
   result += '<ol class="wheelchair">';
   result += stateHTML('yes', 'rollstuhlgerecht');
   result += stateHTML('limited', 'teilweise rollstuhlgerecht');
@@ -155,7 +155,7 @@ function popupHTML(node) {
   result += stateHTML('unknown', 'unbekannt');
   result += '</ol>';
   result += '</form>';
-  result += '<button id="button-' + node.osmid + '">Update</button>';
+  result += '<button id="button-' + node.id + '">Update</button>';
   result = '<div class="popup">' + result + '</div>';
   return result;
 }
