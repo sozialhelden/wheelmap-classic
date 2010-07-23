@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="Type">BBoxLatLon</entry>
+<entry key="OutputLocation">../public/images/tiles</entry>
+<!-- <entry key="TileServer">http://c.tile.openstreetmap.org/</entry> -->
+<entry key="TileServer">http://tah.openstreetmap.org/Tiles/tile/</entry>
+<!-- Roughly covering Berlin's area -->
+<entry key="MaxLat">53.0</entry>
+<entry key="MaxLon">14.0</entry>
+<entry key="MinLat">52.0</entry>
+<entry key="MinLon">13.0</entry>
+<entry key="OutputZoomLevel">15,16</entry>
+</properties>
