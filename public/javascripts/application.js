@@ -44,7 +44,7 @@ function drawmap(controls, element) {
   });
   
 
-  mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", {opacity:0.5, transitionEffect:'resize'});
+  mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", {displayClass:'olMap', opacity:0.5, transitionEffect:'resize'});
   
   // mapnik = new OpenLayers.Layer.OSM.Osmarender("Mapnik", {opacity:0.5, transitionEffect:'resize'});
   map.addLayers([mapnik]);
