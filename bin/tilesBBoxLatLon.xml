@@ -6,9 +6,9 @@
 <!-- <entry key="TileServer">http://c.tile.openstreetmap.org/</entry> -->
 <entry key="TileServer">http://tah.openstreetmap.org/Tiles/tile/</entry>
 <!-- Roughly covering Berlin's area -->
-<entry key="MaxLat">53.0</entry>
-<entry key="MaxLon">14.0</entry>
-<entry key="MinLat">52.0</entry>
-<entry key="MinLon">13.0</entry>
-<entry key="OutputZoomLevel">15,16</entry>
+<entry key="MaxLat">52.6</entry>
+<entry key="MaxLon">13.7</entry>
+<entry key="MinLat">52.3</entry>
+<entry key="MinLon">13.1</entry>
+<entry key="OutputZoomLevel">15,16,17</entry>
 </properties>
