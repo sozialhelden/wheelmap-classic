@@ -149,9 +149,9 @@ function popupHTML(node) {
   result += tagList(node.tags);
   result += '<form action="/nodes/' + node.osmid + '.js" id="update_form_' + node.osmid + '" method="put">';
   result += '<ol class="wheelchair">';
-  result += stateHTML('yes', 'barrierefrei');
-  result += stateHTML('limited', 'teilweise barrierefrei');
-  result += stateHTML('no', 'nicht barrierefrei');
+  result += stateHTML('yes', 'rollstuhlgerecht');
+  result += stateHTML('limited', 'teilweise rollstuhlgerecht');
+  result += stateHTML('no', 'nicht rollstuhlgerecht');
   result += stateHTML('unknown', 'unbekannt');
   result += '</ol>';
   result += '</form>';
