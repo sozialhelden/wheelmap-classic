@@ -1,18 +1,61 @@
 #= Description
 #
 # This is a wrapper class updating Open Street Map Nodes
-module OpenStreetMap
+class OpenStreetMap
   include HTTParty
   API_VERSION = "0.6".freeze
   #http://api.openstreetmap.org/api/0.6/changeset/create
-  if RAILS_ENV == 'production'
-    # base_uri "http://api.openstreetmap.org/api/#{API_VERSION}" #live
-    base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
-  else
-    # base_uri "http://api.openstreetmap.org/api/#{API_VERSION}" #live
-    base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
-  end
+
+  # production "http://api.openstreetmap.org/api/#{API_VERSION}" #live
+  base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
   # basic_auth(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
+  
+  # Initialize with basic auth credentials
+  def initialize(username, password)
+    self.class.basic_auth username, password
+  end
+  
+  
+  # update a singe attribute via basic auth
+  def update_single_attribute(osmid, attribute_hash)
+    if (node = self.class.get_node(osmid))
+      changeset_id = self.class.create_changeset
+      attribute_hash.each do |key,value|
+        node.send(key,value)
+        node.changeset_id = changeset_id
+      end
+      new_version = self.class.update(node)
+      self.class.close_changeset(changeset_id)
+    end
+  end
+
+  # Fetch all nodes with given type within bounding box
+  def self.nodes(bbox=nil, types="")
+    base_uri "#{OpenStreetMapConfig.xapi_site}/api/#{API_VERSION}"
+    bbox ||= "13.397643,52.523102,13.406419,52.526392"
+    types = types.split(',').map(&:underscore).join('|')
+    begin
+      # RAILS_DEFAULT_LOGGER.warn("#{self.base_uri}/#{self.api_key.upcase}/geocoding/v2/find.js?bbox=#{normalized_bbox}&object_type=#{types}&results=100")
+      bounding_box = CGI.escape("[bbox=#{bbox}]")
+      amenity_types = types.blank? ? types : CGI.escape("[amenity|#{types}]")
+      t = Time.now
+      RAILS_DEFAULT_LOGGER.debug "Fetching now"
+      result = get("/node#{bounding_box}#{amenity_types}")
+      RAILS_DEFAULT_LOGGER.debug "Finished: #{Time.now - t}s"
+      if result['osm']['node'].blank? 
+        RAILS_DEFAULT_LOGGER.debug "Found no nodes"
+        return []
+      else
+        osm_nodes = result['osm']['node'].map{|node_data| Node.new(node_data)}
+        RAILS_DEFAULT_LOGGER.debug("Found #{osm_nodes.size} nodes")
+        osm_nodes
+      end
+    rescue Exception => e
+      raise e
+      RAILS_DEFAULT_LOGGER.error(e.message)
+      return []
+    end
+  end
   
   # Fetch the node from OSM API with the given ID
   def self.get_node(osmid)
@@ -20,11 +63,11 @@ module OpenStreetMap
     raise_errors(response)
     node = OpenStreetMap::Node.new(response['osm']['node'])
   end
-
-  # This required a multistep 
+  
+  # This requires a multistep 
   def self.update_node(node, oauth=nil)
     RAILS_DEFAULT_LOGGER.debug "Fetching node: #{osmid} ..."
-    if (node = get_node(osmid))
+    if (node = get_node(node.id))
       RAILS_DEFAULT_LOGGER.debug "Old version: #{node.version}"
       RAILS_DEFAULT_LOGGER.debug "Old changeset: #{node.changeset}"
       RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."

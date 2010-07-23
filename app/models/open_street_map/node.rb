@@ -1,5 +1,5 @@
 require 'builder'
-module OpenStreetMap
+class OpenStreetMap
   class Node
     include Validatable
     include ActiveSupport::CoreExtensions::Hash::Keys

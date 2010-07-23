@@ -15,7 +15,8 @@ class NodesController < ApplicationController
   layout 'nodes'
   
   def index
-    @places = Cloudmade.nodes(params[:bbox],params[:object_types])
+    @places = OpenStreetMap.nodes(params[:bbox],params[:object_types])
+    # @places = Cloudmade.nodes(params[:bbox],params[:object_types])
     respond_to do |wants|
       wants.json{ render :json => @places }
       wants.html{ redirect_to root_path }
@@ -25,6 +26,25 @@ class NodesController < ApplicationController
   def show
     @node = OpenStreetMap.get_node(params[:id])
   end
+  
+  def update_wheelchair
+    @node = OpenStreetMap.get_node(params[:id])
+    @node.wheelchair = params[:wheelchair]
+    if @node.valid?
+      @node.save!
+      Delayed::Job.enqueue(SingeAttributeUpdatingJob.new(@node.id, wheelmap_visitor.id, :wheelchair => params[:wheelchair]))
+      respond_to do |wants|
+        wants.js{ render :text => 'OK' }
+        wants.html{ redirect_to node_path(@node) }
+      end
+    else
+      respond_to do |wants|
+        wants.js{ render :text => 'FAIL', :status => 406 }
+        wants.html{ render :text => 'FAIL', :status => 406 }
+      end
+    end
+    
+  end
 
   def update
     @node = OpenStreetMap.get_node(params[:id])
@@ -33,7 +53,6 @@ class NodesController < ApplicationController
       @node.send("#{key}=", value)
     end
     if @node.valid?
-      
       Delayed::Job.enqueue(UpdatingJob.new(@node, default_user.id))
       respond_to do |wants|
         wants.js{ render :text => 'OK' }
@@ -41,11 +60,9 @@ class NodesController < ApplicationController
       end
     else
       respond_to do |wants|
-        wants.js{ render :text => 'OK', :status => 406 }
+        wants.js{ render :text => 'FAIL', :status => 406 }
         wants.html{ render :action => :edit }
       end
-      
-      
     end
   end
   

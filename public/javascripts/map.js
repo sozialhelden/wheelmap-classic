@@ -46,10 +46,12 @@ drawmap(defaultControls(), 'map');
 
 createPlacesLayer(placesStyle());
 
-map.events.register('moveend', null, loadPlaces);
-setTimeout(loadPlaces, 1000);
+setTimeout(loadPlaces, 3000);
 checkForPermalink();
 jumpTo(lon, lat, zoom);
+
+map.events.register('moveend', null, loadPlaces);
+
 
 
 $(function() {

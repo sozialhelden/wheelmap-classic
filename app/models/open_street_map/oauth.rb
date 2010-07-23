@@ -1,4 +1,4 @@
-module OpenStreetMap
+class OpenStreetMap
   class Oauth
     extend Forwardable
     

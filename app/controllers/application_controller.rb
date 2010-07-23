@@ -17,8 +17,12 @@ class ApplicationController < ActionController::Base
     session['amenities'] ||= ['subway', 'light_rail', 'fast_food', 'restaurant', 'bar']
   end
   
+  def wheelmap_visitor
+    User.find_by_email('visitor@wheelmap.org')
+  end
+  
   def default_user
-    current_user || User.find_by_email('visitor@wheelmap.org')
+    current_user || wheelmap_visitor
   end
   
   def extract_locale_from_subdomain

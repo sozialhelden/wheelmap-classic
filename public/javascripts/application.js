@@ -6,7 +6,7 @@ if (typeof(lat) == 'undefined'){
 if (typeof(lon) == 'undefined'){
   var lon = parseFloat(geoip_longitude());
 }
-var zoom = 16;
+var zoom = 17;
 var places = [];
 var mapnik;
 var places;
@@ -43,10 +43,11 @@ function drawmap(controls, element) {
     units: 'm'
   });
   
+  mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", {displayClass:'olMap', opacity:0.5, transitionEffect:'resize', numZoomLevels: 19});
 
-  mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", {displayClass:'olMap', opacity:0.5, transitionEffect:'resize'});
+  // Use for offline mode
+  // mapnik = new OpenLayers.Layer.OSM("Mapnik", 'http://wheelmap.local/images/tiles/${z}/${x}/${y}.png' ,{displayClass:'olMap', opacity:0.5, transitionEffect:'resize', numZoomLevels: 19});
   
-  // mapnik = new OpenLayers.Layer.OSM.Osmarender("Mapnik", {opacity:0.5, transitionEffect:'resize'});
   map.addLayers([mapnik]);
 }
 
