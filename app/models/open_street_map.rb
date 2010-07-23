@@ -59,7 +59,8 @@ class OpenStreetMap
   
   # Fetch the node from OSM API with the given ID
   def self.get_node(osmid)
-    response = get("/node/#{osmid}", :timeout => 5)
+    base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
+    response = get("#{base_uri}/node/#{osmid}", :timeout => 5)
     raise_errors(response)
     node = OpenStreetMap::Node.new(response['osm']['node'])
   end

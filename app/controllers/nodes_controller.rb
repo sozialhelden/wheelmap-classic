@@ -31,11 +31,10 @@ class NodesController < ApplicationController
     @node = OpenStreetMap.get_node(params[:id])
     @node.wheelchair = params[:wheelchair]
     if @node.valid?
-      @node.save!
-      Delayed::Job.enqueue(SingeAttributeUpdatingJob.new(@node.id, wheelmap_visitor.id, :wheelchair => params[:wheelchair]))
+      # Delayed::Job.enqueue(SingeAttributeUpdatingJob.new(params[:id], :wheelchair => params[:wheelchair]))
       respond_to do |wants|
         wants.js{ render :text => 'OK' }
-        wants.html{ redirect_to node_path(@node) }
+        wants.html{ render :text => 'OK' }
       end
     else
       respond_to do |wants|
