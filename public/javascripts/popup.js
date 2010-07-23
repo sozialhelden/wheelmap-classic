@@ -108,8 +108,8 @@ function openPopup(feature) {
                            null, true);
   feature.popup = popup;
   map.addPopup(popup);
-  $('#button-' + node.osmid).click(function() {
-    var form = $('#update_form_'+node.osmid)
+  $('#button-' + node.id).click(function() {
+    var form = $('#update_form_'+node.id)
     $.ajax({ type: form.attr('method'), url: form.attr('action') , data: form.serialize(),
       success: function(data, textStatus, XMLHttpRequest) {
         alert('Platz aktualisiert');
@@ -139,7 +139,7 @@ function popupHTML(node) {
     var id = state + '-' + node.id,
         checked = (state == node.wheelchair ? ' checked="checked"' : ''),
         disabled = (state == 'unknown' ? ' disabled="disabled"' : '')
-        input = '<input id="' + id + '" type="radio" name="node[wheelchair]"' + checked + disabled + ' value="' + state + '">',
+        input = '<input id="' + id + '" type="radio" name="wheelchair"' + checked + disabled + ' value="' + state + '">',
         label = '<label for="' + id + '">' + label + '</label>';
     return '<li class="' + state + '">' + input + label + '</li>';
   }
@@ -147,7 +147,7 @@ function popupHTML(node) {
   result += '<a href="/nodes/' + node.id + '">' + (node.name || node.type) + '</a></h2>';
   result += addressOfNode(node);
   result += tagList(node.tags);
-  result += '<form action="/nodes/' + node.id + '.js" id="update_form_' + node.id + '" method="put">';
+  result += '<form action="/nodes/' + node.id + '/update_wheelchair.js" id="update_form_' + node.id + '" method="put">';
   result += '<ol class="wheelchair">';
   result += stateHTML('yes', 'rollstuhlgerecht');
   result += stateHTML('limited', 'teilweise rollstuhlgerecht');

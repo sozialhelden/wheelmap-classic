@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :oauth, :only => [:new, :index], :collection => { :callback => :get, :osm_register => :get }
   
-  map.resources :nodes, :except => :destroy, :member => {:update_wheelchair => :post}
+  map.resources :nodes, :except => :destroy, :member => {:update_wheelchair => :put}
   
   map.resources :users, :as => 'profile'
 
