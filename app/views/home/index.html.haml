@@ -27,10 +27,10 @@
       - [:public_transfer, :food, :leisure, :money, :post, :government, :health, :car, :education, :misc].each do |amenity_group|
         %li
           %h4=t("poi.category.#{amenity_group}")
-          %div
-            - Amenities[amenity_group].each do |elements|
-              -elements.each do |key,values|
-                %a{:class => session['amenities'].include?(values.first) ? 'visible' : 'hidden', :href => '#', :onclick => "toggleLayers('#{values.first}')", :title => t("poi.name.#{values.first}")}
-                  %span{:class => values.first}
+          -#%div
+            -#- Amenities[amenity_group].each do |elements|
+              -#-elements.each do |key,values|
+                -#%a{:class => session['amenities'].include?(values.first) ? 'visible' : 'hidden', :href => '#', :onclick => "toggleLayers('#{values.first}')", :title => t("poi.name.#{values.first}")}
+                  -#%span{:class => values.first}
       
 #spinner
