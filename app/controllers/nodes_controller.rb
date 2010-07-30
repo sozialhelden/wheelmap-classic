@@ -2,7 +2,7 @@ class NodesController < ApplicationController
   
   skip_before_filter :verify_authenticity_token
   
-  before_filter :authenticate_user!,              :only => [:create, :new]
+  before_filter :authenticate_user!,              :only => [:create, :new, :edit]
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
   before_filter :check_create_params,             :only => :create
@@ -46,7 +46,10 @@ class NodesController < ApplicationController
       Delayed::Job.enqueue(UpdatingJob.new(@node, default_user.id))
       respond_to do |wants|
         wants.js{ render :text => 'OK' }
-        wants.html{ redirect_to node_path(@node) }
+        wants.html{
+          flash[:notice] = I18n.t('nodes.update.flash.successfull')
+          redirect_to node_path(@node)
+        }
       end
     else
       respond_to do |wants|

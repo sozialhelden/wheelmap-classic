@@ -4,6 +4,7 @@ en:
       basic: Basic data
       optional: 'More information <span class="addition">(all fields are optional)</span>'
     labels:
+      save: Save
       wheelchair: 'Wheelchair accessibility?'
       wheelchair_description: 'Accessibility comment:'
       category: 'Category:'

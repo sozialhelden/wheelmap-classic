@@ -17,9 +17,9 @@
 
 - form.inputs :name => t('formtastic.titles.optional'), :id => 'optional' do
   - form.semantic_fields_for :tag do |tag|
-    = tag.input '][addr:street', :label => t('formtastic.labels.street'), :required => false
-    = tag.input '][addr:housenumber', :label => t('formtastic.labels.housenumber'), :required => false
-    = tag.input '][addr:postcode', :label => t('formtastic.labels.postcode'), :required => false
-    = tag.input '][addr:city', :label => t('formtastic.labels.city'), :required => false
-    = tag.input '][website', :label => t('formtastic.labels.website'), :required => false
-    = tag.input '][phone', :label => t('formtastic.labels.phone'), :required => false
+    = tag.input '][addr:street', :label => t('formtastic.labels.street'), :required => false, :input_html => {:value => @node.tags['addr:street']}
+    = tag.input '][addr:housenumber', :label => t('formtastic.labels.housenumber'), :required => false, :input_html => {:value => @node.tags['addr:housenumber']}
+    = tag.input '][addr:postcode', :label => t('formtastic.labels.postcode'), :required => false, :input_html => {:value => @node.tags['addr:postcode']}
+    = tag.input '][addr:city', :label => t('formtastic.labels.city'), :required => false, :input_html => {:value => @node.tags['addr:city']}
+    = tag.input '][website', :label => t('formtastic.labels.website'), :required => false, :input_html => {:value => @node.tags['website']}
+    = tag.input '][phone', :label => t('formtastic.labels.phone'), :required => false, :input_html => {:value => @node.tags['phone']}
