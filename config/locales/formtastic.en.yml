@@ -1,27 +1,24 @@
-de:
+en:
   formtastic:
     titles:
-      basic: Basisdaten
-      optional: 'Mehr Infos <span class="addition">(alle Felder sind optional)</span>'
+      basic: Basic data
+      optional: 'More information <span class="addition">(all fields are optional)</span>'
     labels:
-      name: 'Name des Platzes:'
-      type: 'Typ:'
-      wheelchair: Rollstuhlgerecht?
-      wheelchair_description: 'Info zu Barrierefreiheit:'
-      category: 'Kategorie:'
-      street: 'Straße:'
-      housenumber: 'Nr:'
-      postcode: 'PLZ:'
-      website: 'Webseite:'
-      phone: 'Telefon:'
-      city: 'Ort:'
-      url: 'Website:'
-      phone: 'Telefon:'
-      lat: Breitengrad
-      lon: Längengrad
+      wheelchair: 'Wheelchair accessibility?'
+      wheelchair_description: 'Accessibility comment:'
+      category: 'Category:'
+      city: 'City:'
+      phone: 'Telephone:'
+      street: 'Street:'
+      type: 'Type:'
+      website: 'Website:'
+      housenumber: 'No:'
+      postcode: 'Post code:'
+      lat: Latitude
+      lon: Longitude
       email: E-Mail
-      password: Passwort
-      password_confirmation: Passwort wiederholen
+      password: Password
+      password_confirmation: Repeat password
       osm_username: OSM-Mitgliedsname
       osm_password: OSM-Passwort
     hints:
