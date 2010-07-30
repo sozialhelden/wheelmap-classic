@@ -3,6 +3,9 @@ de:
     show:
       link:
         large_map: Ansicht vergrößern
+        edit_node: Platz bearbeiten
+      key:
+        wheelchair_description: 'Infos zur Barrierefreiheit:'
     errors:
       not_found: Leider konnte die Seite nicht gefunden werden
       not_available: Leider steht diese Seite zur Zeit nicht zur Verfügung

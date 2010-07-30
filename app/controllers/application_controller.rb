@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   
   
   def set_default_amenities
-    session['amenities'] ||= ['subway', 'light_rail', 'fast_food', 'restaurant', 'bar']
+    session['amenities'] = ['subway', 'light_rail', 'fast_food', 'restaurant', 'bar', 'cafe']
   end
   
   def wheelmap_visitor

@@ -1,7 +1,7 @@
 %h1
   =@node.name
   %span.addition
-    = link_to 'Platz bearbeiten', edit_node_path(@node)
+    = link_to t('.link.edit_node'), edit_node_path(@node)
     
 
 
@@ -14,7 +14,7 @@
   %table#accessibility{:class => "#{dom_class(@node)}"}
     %tr
       
-      %th Barrierefrei:
+      %th=t('formtastic.labels.wheelchair')
       %td
         %ul
           - %w{yes limited no unknown}.each_with_index do |status, index|
@@ -28,13 +28,14 @@
               .clear
       %td
         
-    %tr
-      %th Infos zur Barrierefreiheit:
-      %td{:colspan => 2} Toiletten sind zu eng
+    -if @node.wheelchair_description
+      %tr
+        %th=t('formtastic.labels.wheelchair_description')
+        %td{:colspan => 2}= @node.wheelchair_description
 
   %table#properties{:class => "#{dom_class(@node)}"}
     %tr
-      %th Kategorie:
+      %th=t('formtastic.labels.category')
       
       - category = category_for_node(@node.type)
       %td{:class => category}
@@ -44,30 +45,34 @@
           &nbsp;
 
     %tr
-      %th Typ:
+      %th=t('formtastic.labels.type')
       %td
         - if @node.type
           = t("poi.name.#{@node.type}")
         -else
           &nbsp;
     %tr
-      %th Strasse:
-      %td=@node.tags['address:street'] || '&nbsp;'
-    %tr
-      %th PLZ:
-      %td=@node.tags['address:zip'] || '&nbsp;'
-    %tr
-      %th Ort:
-      %td=@node.tags['address:city'] || '&nbsp;'
-
-    %tr
-      %th Webseite:
-      %td=@node.tags['website'] || '&nbsp;'
-
-    %tr
-      %th Telefon:
+      %th=t('formtastic.labels.street')
       %td
-        =@node.tags['contact:telephone'] || '&nbsp;'
+        =@node.tags['addr:street']
+        =@node.tags['addr:housenumber'] || '&nbsp;'
+    %tr
+      %th=t('formtastic.labels.postcode')
+      %td=@node.tags['addr:postcode'] || '&nbsp;'
+    %tr
+      %th=t('formtastic.labels.city')
+      %td=@node.tags['addr:city'] || '&nbsp;'
+
+    %tr
+      %th=t('formtastic.labels.website')
+      %td
+        -if @node.tags['website']
+          %a{:href => @node.tags['website'], :rel => 'nofollow', :target => '_blank'}>=@node.tags['website']
+
+    %tr
+      %th=t('formtastic.labels.phone')
+      %td
+        =@node.tags['phone'] || '&nbsp;'
 
 #map_wrapper
   #minimap
