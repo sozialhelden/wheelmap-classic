@@ -23,7 +23,7 @@
   #logo
     - link_to root_path, :title => t('wheelmap.logo.title') do
       = image_tag "wheelmap_logo_small_#{I18n.locale}.png", :width => 300, :height => 85, :alt => t('wheelmap.logo.alt')
-  #searchbar
+  #searchbar{:style => 'visibility:hidden'}
     %form
       %ol
         %li
