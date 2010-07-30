@@ -12,7 +12,7 @@
     %p.pad
       - if current_user.application_authorized?
         =t('profile.edit.application.oauth.connected')
-        = link_to t('profile.edit.application.oauth.revoke'), new_oauth_path
+        = link_to t('profile.edit.application.oauth.revoke'), "#{OpenStreetMapConfig.oauth_site}/oauth_clients"
       - else
         =t('profile.edit.application.oauth.not_connected')
         = link_to t('profile.edit.application.oauth.grant'), new_oauth_path
