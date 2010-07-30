@@ -16,8 +16,8 @@ class NodesController < ApplicationController
   layout 'nodes'
   
   def index
-    # @places = OpenStreetMap.nodes(params[:bbox],params[:object_types])
-    @places = Cloudmade.nodes(params[:bbox],params[:object_types])
+    @places = OpenStreetMap.nodes(params[:bbox],params[:object_types])
+    # @places = Cloudmade.nodes(params[:bbox],params[:object_types])
     respond_to do |wants|
       wants.json{ render :json => @places }
       wants.html{ redirect_to root_path }

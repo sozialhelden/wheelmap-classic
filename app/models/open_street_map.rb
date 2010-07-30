@@ -20,9 +20,9 @@ class OpenStreetMap
   def update_single_attribute(osmid, attribute_hash)
     if (node = self.class.get_node(osmid))
       changeset_id = self.class.create_changeset
+      node.changeset = changeset_id
       attribute_hash.each do |key,value|
-        node.send(key,value)
-        node.changeset_id = changeset_id
+        node.send("#{key}=", value)
       end
       new_version = self.class.update(node)
       self.class.close_changeset(changeset_id)
