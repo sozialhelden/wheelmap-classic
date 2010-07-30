@@ -1,5 +1,8 @@
 de:
   nodes:
+    update:
+      flash:
+        successfull: 'Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert.'
     show:
       link:
         large_map: Ansicht vergrößern

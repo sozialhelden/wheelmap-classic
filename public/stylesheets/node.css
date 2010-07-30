@@ -1068,6 +1068,15 @@ table#properties td.leisure, table#accessibility td.leisure {
   border: 0;
 }
 
+/* line 1, ../../app/stylesheets/partials/nodes/flash.sass */
+#flash {
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff7d9;
+  border: 1px dashed #ffd740;
+  text-align: center;
+}
+
 /* line 1, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint {
   background: rgba(0, 0, 0, 0.8);
@@ -1119,13 +1128,13 @@ table#properties td.leisure, table#accessibility td.leisure {
   text-align: right;
 }
 
-/* line 25, ../../app/stylesheets/node.sass */
+/* line 26, ../../app/stylesheets/node.sass */
 body, html {
   background-color: white;
   font-family: HelveticaNeue, Helvetica, "Swiss 721", Arial, sans-serif;
 }
 
-/* line 30, ../../app/stylesheets/node.sass */
+/* line 31, ../../app/stylesheets/node.sass */
 .clear {
   clear: both;
   display: block;

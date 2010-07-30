@@ -4,6 +4,7 @@ de:
       basic: Basisdaten
       optional: 'Mehr Infos <span class="addition">(alle Felder sind optional)</span>'
     labels:
+      save: Speichern
       name: 'Name des Platzes:'
       type: 'Typ:'
       wheelchair: Rollstuhlgerecht?
