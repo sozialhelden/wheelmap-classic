@@ -2,10 +2,11 @@ class NodesController < ApplicationController
   
   skip_before_filter :verify_authenticity_token
   
-  before_filter :authenticate_user!,    :only => [:create, :new]
-  before_filter :check_update_params,   :only => :update
-  before_filter :check_create_params,   :only => :create
-  before_filter :set_session_amenities, :only => :index
+  before_filter :authenticate_user!,              :only => [:create, :new]
+  before_filter :check_update_params,             :only => :update
+  before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
+  before_filter :check_create_params,             :only => :create
+  before_filter :set_session_amenities,           :only => :index
   
   rescue_from OpenStreetMap::NotFound,    :with => :not_found
   rescue_from OpenStreetMap::Gone,        :with => :gone
@@ -15,8 +16,8 @@ class NodesController < ApplicationController
   layout 'nodes'
   
   def index
-    @places = OpenStreetMap.nodes(params[:bbox],params[:object_types])
-    # @places = Cloudmade.nodes(params[:bbox],params[:object_types])
+    # @places = OpenStreetMap.nodes(params[:bbox],params[:object_types])
+    @places = Cloudmade.nodes(params[:bbox],params[:object_types])
     respond_to do |wants|
       wants.json{ render :json => @places }
       wants.html{ redirect_to root_path }
@@ -28,21 +29,11 @@ class NodesController < ApplicationController
   end
   
   def update_wheelchair
-    @node = OpenStreetMap.get_node(params[:id])
-    @node.wheelchair = params[:wheelchair]
-    if @node.valid?
-      # Delayed::Job.enqueue(SingeAttributeUpdatingJob.new(params[:id], :wheelchair => params[:wheelchair]))
-      respond_to do |wants|
-        wants.js{ render :text => 'OK' }
-        wants.html{ render :text => 'OK' }
-      end
-    else
-      respond_to do |wants|
-        wants.js{ render :text => 'FAIL', :status => 406 }
-        wants.html{ render :text => 'FAIL', :status => 406 }
-      end
+    Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], :wheelchair => params[:wheelchair]))
+    respond_to do |wants|
+      wants.js{ render :text => 'OK' }
+      wants.html{ render :text => 'OK' }
     end
-    
   end
 
   def update
@@ -110,11 +101,15 @@ class NodesController < ApplicationController
     current_user ||= User.find_by_email('visitor@wheelmap.org')
   end
   
+  def check_update_wheelchair_params
+    render( :text => 'Params missing', :status => 406 ) if params[:wheelchair].blank?
+  end
+  
   def check_update_params
-    render( :text => 'Params missing', :status => 400 ) if params[:node].blank?
+    render( :text => 'Params missing', :status => 406 ) if params[:node].blank?
   end
   
   def check_create_params
-    render( :text => 'Params missing', :status => 400 ) if params[:node].blank?
+    render( :text => 'Params missing', :status => 406 ) if params[:node].blank?
   end
 end

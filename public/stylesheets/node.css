@@ -1098,14 +1098,13 @@ table#properties td.leisure, table#accessibility td.leisure {
 }
 /* line 28, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint dd.logo img {
-  background-color: white;
   padding: 5px;
 }
-/* line 32, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 31, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint a {
   color: #a1c175;
 }
-/* line 35, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 34, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint h2,
 #imprint p {
   padding-right: 100px;
@@ -1115,7 +1114,7 @@ table#properties td.leisure, table#accessibility td.leisure {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 44, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 43, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint p:first-child {
   text-align: right;
 }

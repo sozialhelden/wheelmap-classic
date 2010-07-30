@@ -5,7 +5,8 @@
 
 Given /^I am not logged in$/ do
   visit '/users/sign_out'
-  current_user.session.destroy
+  controller.current_user.should be_nil
+  session.clear
 end
 
 Given /I am logged in/ do

@@ -8,6 +8,10 @@ class CreateJob < ActiveRecord::Base
   set_table_name 'delayed_jobs'
 end
 
+class UpdateAttributeJob <ActiveRecord::Base
+  set_table_name 'delayed_jobs'
+end
+
 describe NodesController do
   include Devise::TestHelpers
 
@@ -18,7 +22,7 @@ describe NodesController do
     @another_user = Factory.create(:user, :email => 'test@rspec.org')
   end
 
-  describe "action SHOW" do
+  describe "action show" do
     
     before(:each) do
      FakeWeb.allow_net_connect = false
@@ -39,8 +43,29 @@ describe NodesController do
     
   end
 
+
+  describe "action update wheelchair" do
+    describe "as anonymous user" do
+      it "should create am UpdateWheelchairJob " do
+        lambda {
+          put(:update_wheelchair, :id => 1234, :wheelchair => 'yes')
+        }.should change(UpdateAttributeJob, :count).by(1)
+      end
+      
+      it "should not create an UpdateWheelchairJob if params missing" do
+        lambda {
+          put(:update_wheelchair, :id => 1234, :wheelchair => '')
+        }.should change(UpdateAttributeJob, :count).by(0)
+        response.code.should == '406'
+        response.body.should == "Params missing"
+      end
+    end
+    
+    describe "as registered user" do
+    end
+  end
   
-  describe "action: UPDATE" do
+  describe "action: update" do
     before(:each) do
       FakeWeb.allow_net_connect = false
       @full_url = "#{@base_url}/node/84644746"
@@ -70,7 +95,7 @@ describe NodesController do
   
       it "should not update node if wheelchair is missing" do
         response = put(:update, :id => 1234)
-        response.code.should == '400'
+        response.code.should == '406'
         response.body.should == "Params missing"
       end
       
@@ -96,12 +121,12 @@ describe NodesController do
   
       it "should not update node if node param is missing" do
         response = put(:update, :id => 1234)
-        response.code.should == '400'
+        response.code.should == '406'
       end
     end
   end
   
-  describe "action: CREATE" do
+  describe "action: create" do
     
     describe "signed_in" do
     
@@ -128,7 +153,7 @@ describe NodesController do
     
       it "should not create node if node is missing" do
         response = post(:create, :id => 1234)
-        response.code.should == '400'
+        response.code.should == '406'
         response.body.should == "Params missing"
       end
     end

@@ -7,7 +7,8 @@ Feature: Oauth feature
     Given I am not logged in
     And I am on the home page
     When I go to the oauth page
-    Then I should be redirected to the sign_in page
+    And I follow "redirected"
+    # Then I should be redirected to the sign_in page
     Then I should be on the sign_in page
     
   Scenario: I want to see authorization page as registered user
