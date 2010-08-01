@@ -13,18 +13,8 @@
     %tr
       
       %th=t('formtastic.labels.wheelchair')
-      %td
-        %ul
-          - %w{yes limited no unknown}.each_with_index do |status, index|
-            %li
-              .status{:class => @node.wheelchair == status ? "checked #{status}" : "#{status}"}
-                - if @node.wheelchair == status
-                  %input{:type => 'radio', :readonly => 'readonly', :name => "wheelchair_#{@node.id}", :value => status, :class => status, :id => "wheelchair_#{@node.id}_#{status}", :checked =>  'checked'}
-                - else
-                  %input{:type => 'radio', :name => "wheelchair_#{@node.id}", :value => status, :class => status, :id => "wheelchair_#{@node.id}_#{status}"}
-              %label{:for => "wheelchair_#{@node.id}_#{status}", :class => @node.wheelchair == status ? "checked #{status}" : "#{status}"}= status
-              .clear
-      %td
+      %td= @node.wheelchair
+        
         
     -if @node.wheelchair_description
       %tr
