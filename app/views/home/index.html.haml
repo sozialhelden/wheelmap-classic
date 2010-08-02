@@ -1,5 +1,4 @@
-#map
-
+- content_for :map do
   #filter
     %ul#options.wheelchair
       %li.yes
@@ -18,8 +17,6 @@
         = check_box_tag(:wheelchair_unknown, 1, true)
         = label_tag :wheelchair_unknown, t('form.show_places_without_status')
         %span
-
-
   #categories
     %h4
       Kategorie
@@ -32,5 +29,4 @@
               -#-elements.each do |key,values|
                 -#%a{:class => session['amenities'].include?(values.first) ? 'visible' : 'hidden', :href => '#', :onclick => "toggleLayers('#{values.first}')", :title => t("poi.name.#{values.first}")}
                   -#%span{:class => values.first}
-      
-#spinner
+  #spinner
