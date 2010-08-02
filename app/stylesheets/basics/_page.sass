@@ -1,24 +1,36 @@
 body,
 html
-  background: white
-  outline: 0px
-  
+  background: desaturate(lighten($green, 25%), 35%)
+  outline: 0
 
-  .frame
-    width: 500px
-    margin: 10px auto
-    border: 1px solid $green
-    padding: 10px
-    +vertical-gradient(white, desaturate(lighten($green, 20%), 20%))
-    background-color: white
-    +border-radius(12px)
-    +box-shadow(rgba(0, 0, 0, 0.5), 0, 1px, 5px)
+body
+  +vertical-gradient(white, desaturate(lighten($green, 25%), 35%))
+
+.frame
+  width: 500px
+  margin: 10px auto
+  border: 1px solid $green
+  padding: 10px
+  +vertical-gradient(white, desaturate(lighten($green, 20%), 20%))
+  background-color: white
+  +border-radius(12px)
+  +box-shadow(rgba(0, 0, 0, 0.5), 0, 1px, 5px)
+  
+  h2
+    margin-bottom: 10px
     
-    h2
-      margin-bottom: 10px
-      
-    h3
-      margin-bottom: 5px
-      
-    p.pad
-      margin-bottom: 20px
+  h3
+    margin-bottom: 5px
+    
+  p.pad
+    margin-bottom: 20px
+
+#main
+  background: white
+  border: 1px lighten($border-color, 50%) solid
+  margin: 0 auto 50px
+  padding: 19px
+  width: 980px
+  +border-radius(15px)
+  +clearfix
+  +box-shadow(rgba(black, 0.1), 0, 2px, 15px)
