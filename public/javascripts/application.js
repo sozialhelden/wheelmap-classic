@@ -134,7 +134,6 @@ function eachState(f) {
 
 
 function showStates() {
-  console.log(amenities);
   $.each(places.features, function(i,feature){
     console.log(feature);
     if(states[feature.attributes.wheelchair] == true && categories[feature.attributes.category] == true){
@@ -153,7 +152,7 @@ function loadPlaces() {
   counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
 
   var bbox = mapBBOX().toBBOX();
-  $.getJSON('/nodes?bbox=' + bbox + '&object_types=amenity,shop' , function(data) {
+  $.getJSON('/nodes?bbox=' + bbox , function(data) {
     var features = [];
     $.each(data, function(i, place) {
       if (place.type) {

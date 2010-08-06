@@ -34,18 +34,20 @@ class OpenStreetMap
   def self.nodes(bbox=nil, types=nil)
     base_uri "#{OpenStreetMapConfig.xapi_site}/api/#{API_VERSION}"
     bbox ||= "13.397643,52.523102,13.406419,52.526392"
-    types ||= 'amenity,shop'
+    types = 'amenity=*,shop=*'
     
     types = types.split(',')
-    types << 'amenity' unless types.include?('amenity')
-    types << 'shop' unless types.include?('shop')
+    # types << 'amenity=*' unless types.include?('amenity')
+    # types << 'shop=*' unless types.include?('shop')
     type_string = types.map(&:underscore).join('|')
+    RAILS_DEFAULT_LOGGER.debug("TYPES: #{type_string}")
     begin
       # RAILS_DEFAULT_LOGGER.warn("#{self.base_uri}/#{self.api_key.upcase}/geocoding/v2/find.js?bbox=#{normalized_bbox}&object_type=#{types}&results=100")
       bounding_box = CGI.escape("[bbox=#{bbox}]")
-      amenity_types = types.blank? ? types : CGI.escape("[#{type_string}]")
+      amenity_types = CGI.escape("[#{type_string}]")
       t = Time.now
-      RAILS_DEFAULT_LOGGER.debug "Fetching now"
+      RAILS_DEFAULT_LOGGER.debug "Fetching now: /node#{bounding_box}#{amenity_types}"
+      
       result = get("/node#{bounding_box}#{amenity_types}")
       RAILS_DEFAULT_LOGGER.debug "Finished: #{Time.now - t}s"
       if result['osm']['node'].blank? 
