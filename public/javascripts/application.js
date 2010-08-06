@@ -135,7 +135,7 @@ function eachState(f) {
 
 function showStates() {
   $.each(places.features, function(i,feature){
-    console.log(feature);
+    console.log(feature.attributes.category);
     if(states[feature.attributes.wheelchair] == true && categories[feature.attributes.category] == true){
       feature.attributes.state = 'yes';
     }else{
@@ -148,6 +148,9 @@ function showStates() {
 }
 
 function loadPlaces() {
+  if(zoom < 15){
+    return true;
+  }
   $('#spinner').show();
   counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
 

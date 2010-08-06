@@ -29,11 +29,28 @@ class OpenStreetMap
       node
     end
   end
+  
+  def self.round_bounding_box(bbox)
+    west,south,east,north = bbox.split(',').map(&:to_f)
+    RAILS_DEFAULT_LOGGER.debug("BBOX: #{bbox}")
+    x = (east + west) / 2.0
+    RAILS_DEFAULT_LOGGER.debug("X: #{x}")
+    y = (north + south) / 2.0
+    RAILS_DEFAULT_LOGGER.debug("Y: #{y}")
+    west = (x - 0.005)
+    south = (y - 0.005)
+    east = (x + 0.005)
+    north = (y + 0.005)
+    new_bbox = sprintf("%.3f,%.3f,%.3f,%.3f",west,south,east,north)
+    RAILS_DEFAULT_LOGGER.debug("NEW BBOX: #{new_bbox}")
+    new_bbox
+  end
 
   # Fetch all nodes with given type within bounding box
   def self.nodes(bbox=nil, types=nil)
     base_uri "#{OpenStreetMapConfig.xapi_site}/api/#{API_VERSION}"
-    bbox ||= "13.397643,52.523102,13.406419,52.526392"
+    bbox ||= "13.397,52.523,13.406,52.526"
+    bbox = round_bounding_box(bbox)
     types = 'amenity=*,shop=*'
     
     types = types.split(',')
