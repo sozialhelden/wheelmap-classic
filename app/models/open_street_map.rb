@@ -34,7 +34,7 @@ class OpenStreetMap
   def self.nodes(bbox=nil, types="amenity")
     base_uri "#{OpenStreetMapConfig.xapi_site}/api/#{API_VERSION}"
     bbox ||= "13.397643,52.523102,13.406419,52.526392"
-    
+    types = 'amenity' if types.blank?
     types = types.split(',')
     types << 'amenity' unless types.include?('amenity')
     type_string = types.map(&:underscore).join('|')
