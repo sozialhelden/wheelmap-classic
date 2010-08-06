@@ -131,6 +131,7 @@ class OpenStreetMap
       Amenities.each do |cat, amenities|
         return cat.to_s if amenities.include?(self.type)
       end
+      nil
     end
     
     # <node id='78252182' lat='52.5220063' lon='13.4006779' version='4' changeset='2883406' user='gkai' uid='74224' visible='true' timestamp='2009-10-18T14:16:48Z'>
