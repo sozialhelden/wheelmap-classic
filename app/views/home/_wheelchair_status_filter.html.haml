@@ -1,0 +1,17 @@
+%ul#options.wheelchair
+  %li.yes
+    = check_box_tag(:wheelchair_yes, 1, true)
+    = label_tag :wheelchair_yes, t('form.show_fully_accessible_places')
+    %span
+  %li.limited
+    = check_box_tag(:wheelchair_limited, 1, true)
+    = label_tag :wheelchair_limited, t('form.show_limited_accessible_places')
+    %span
+  %li.no
+    = check_box_tag(:wheelchair_no, 1, true)
+    = label_tag :wheelchair_no, t('form.show_unaccessible_places')
+    %span
+  %li.unknown
+    = check_box_tag(:wheelchair_unknown, 1, true)
+    = label_tag :wheelchair_unknown, t('form.show_places_without_status')
+    %span

@@ -26,6 +26,7 @@ class OpenStreetMap
       end
       new_version = self.class.update(node)
       self.class.close_changeset(changeset_id)
+      node
     end
   end
 

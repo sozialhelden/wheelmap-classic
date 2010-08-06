@@ -52,10 +52,8 @@ jumpTo(lon, lat, zoom);
 
 map.events.register('moveend', null, loadPlaces);
 
-
-
 $(function() {
-  $('.wheelchair input').click(function() {
+  $('#options input').click(function() {
     var state = this.id.replace(/wheelchair-/, '');
     states[state] = this.checked;
     showStates();
