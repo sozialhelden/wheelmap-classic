@@ -1,0 +1,7 @@
+%h4
+  = t('home.index.filter.category')
+%ul#amenities
+  - [:public_transfer, :food, :leisure, :money, :post, :government, :health, :car, :education, :misc].each do |amenity_group|
+    %li{:class => amenity_group}
+      = check_box_tag("category-#{amenity_group}", 1, true)
+      = label_tag "category-#{amenity_group}", t("poi.category.#{amenity_group}")

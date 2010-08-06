@@ -30,10 +30,10 @@
   %tr
     %th=t('formtastic.labels.category')
     
-    - category = category_for_node(@node.type)
-    %td{:class => category}
-      - if category
-        = t("poi.category.#{category}")
+    - @node.category
+    %td{:class => @node.category}
+      - if @node.category
+        = t("poi.category.#{@node.category}")
       - else
         &nbsp;
 

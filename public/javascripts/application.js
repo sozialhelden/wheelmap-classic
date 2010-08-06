@@ -19,6 +19,19 @@ var states = {
   unknown: true
 };
 
+var categories = {
+  public_transfer: true,
+  food: true,
+  leisure: true,
+  money: true,
+  post: true,
+  government: true,
+  health: true,
+  car: true,
+  education: true,
+  misc: true
+}
+
 var styleTypeLookup = {
   yes: {
     display: 'block'
@@ -120,8 +133,10 @@ function eachState(f) {
 
 
 function showStates() {
+  console.log(amenities);
   $.each(places.features, function(i,feature){
-    if(states[feature.attributes.wheelchair] == true){
+    console.log(feature);
+    if(states[feature.attributes.wheelchair] == true && categories[feature.attributes.category] == true){
       feature.attributes.state = 'yes';
     }else{
       feature.attributes.state = 'no';

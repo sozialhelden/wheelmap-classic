@@ -31,10 +31,11 @@ class OpenStreetMap
   end
 
   # Fetch all nodes with given type within bounding box
-  def self.nodes(bbox=nil, types="amenity")
+  def self.nodes(bbox=nil, types=nil)
     base_uri "#{OpenStreetMapConfig.xapi_site}/api/#{API_VERSION}"
     bbox ||= "13.397643,52.523102,13.406419,52.526392"
-    types = 'amenity' if types.blank?
+    types ||= 'amenity'
+    
     types = types.split(',')
     types << 'amenity' unless types.include?('amenity')
     type_string = types.map(&:underscore).join('|')
