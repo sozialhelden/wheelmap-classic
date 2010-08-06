@@ -1,12 +1,32 @@
 header
   height: 110px
   width: 100%
-  padding-top: 30px
-  background-color: #FFF
-  background-image: url('/images/background-header.png') repeat-x
-  +vertical-gradient(white, desaturate(lighten($green, 35%), 35%))
+  padding-top: 15px
   +helvetica-13
   
+  .links
+    position: absolute
+    top: 5px
+    right: 30px
+    a
+      border-right: 1px lighten($border-color, 40%) solid
+      float: left
+      line-height: 16px
+      margin: 3px 0
+      padding: 0 7px
+    select
+      background: transparent
+      border: 0
+      margin-left: 7px
+      padding: 0
+      vertical-align: -2px
+      +border-radius(3px)
+      .gecko &
+        margin-left: 3px
+      .webkit &
+        background: transparent url('/images/icons/select-marker.png') 98% 0 no-repeat
+        padding-right: 20px
+        -webkit-appearance: none
   
   a
     text-decoration: underline
@@ -18,23 +38,58 @@ header
     float: left
     
   #searchbar
-    height: 84px
+    $height: 28px
+    height: $height
     margin-left: 15px
-    margin-top: 20px
-    float: left
-    
-    select, input
-      -webkit-appearance: none
-      -moz-appearance: none
-      height: 22px
-    
-    input[type='submit']
-      left: 0px
-      height: 34px
-      
+    margin-top: 58px
+    overflow: hidden
     label
-      vertical-align: center
-      line-height: 34px
+      color: darken($green, 10%)
+      float: left
+      padding: 3px 6px 3px 20px
       width: auto
-      padding-right: 10px
+    input
+      border-right: 0
+      color: darken($green, 10%)
+      float: left
+      height: $height - 2 * (5px + 1px)
+      margin: 0
+      outline: none
+      +border-left-radius(8px)
+      +border-right-radius(0)
+      &:focus
+        background: lighten($green, 35%)
+    button
+      float: left
+      +green-button($height)
+      +border-left-radius(0)
+      +border-right-radius(8px)
+    .or
+      color: darken($orange, 20%)
+      float: left
+      padding: 5px 10px
+    .add-place
+      float: left
+      +orange-button($height)
+      height: $height - 2 * (6px + 1px)
+      line-height: $height - 2 * (6px + 1px)
+      text-decoration: none
+    .or-add-place
+      float: left
+      
+    
+    // select, input
+    //   -webkit-appearance: none
+    //   -moz-appearance: none
+    //   height: 22px
+    // 
+    // input[type='submit']
+    //   left: 0px
+    //   height: 34px
+    //   
+    // label
+    //   vertical-align: center
+    //   line-height: 34px
+    //   width: auto
+    //   padding-right: 10px
       

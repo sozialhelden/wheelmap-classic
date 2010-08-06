@@ -15,8 +15,12 @@
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}        
   %body(class=browser_class)
     = render :partial => '/shared/header'
-    #main
-      = yield
+    - if map = yield(:map)
+      #map
+        = map
+    - if main = yield
+      #main
+        = main
     %footer
       - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
         = image_tag('sozialhelden.png', :alt => t('.banner.alt'))

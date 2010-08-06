@@ -1,3 +1,9 @@
+#map_wrapper
+  #minimap
+  = link_to t('.link.large_map'), root_path, :onclick => "location=permalink('#{root_path}');return false;", :class => 'magnify'
+
+
+  
 %h1
   =@node.name
   %span.addition
@@ -8,66 +14,59 @@
   var lat = parseFloat("#{@node.lat}");
   object_types.push("#{@node.type}");
 
-.box
-  %table#accessibility{:class => "#{dom_class(@node)}"}
-    %tr
+%table#accessibility{:class => "#{dom_class(@node)}"}
+  %tr
+    
+    %th=t('formtastic.labels.wheelchair')
+    %td= @node.wheelchair
       
-      %th=t('formtastic.labels.wheelchair')
-      %td= @node.wheelchair
-        
-        
-    -if @node.wheelchair_description
-      %tr
-        %th=t('formtastic.labels.wheelchair_description')
-        %td{:colspan => 2}= @node.wheelchair_description
-
-  %table#properties{:class => "#{dom_class(@node)}"}
-    %tr
-      %th=t('formtastic.labels.category')
       
-      - category = category_for_node(@node.type)
-      %td{:class => category}
-        - if category
-          = t("poi.category.#{category}")
-        - else
-          &nbsp;
-
+  -if @node.wheelchair_description
     %tr
-      %th=t('formtastic.labels.type')
-      %td
-        - if @node.type
-          = t("poi.name.#{@node.type}")
-        -else
-          &nbsp;
-    %tr
-      %th=t('formtastic.labels.street')
-      %td
-        =@node.tags['addr:street']
-        =@node.tags['addr:housenumber'] || '&nbsp;'
-    %tr
-      %th=t('formtastic.labels.postcode')
-      %td=@node.tags['addr:postcode'] || '&nbsp;'
-    %tr
-      %th=t('formtastic.labels.city')
-      %td=@node.tags['addr:city'] || '&nbsp;'
+      %th=t('formtastic.labels.wheelchair_description')
+      %td{:colspan => 2}= @node.wheelchair_description
 
-    %tr
-      %th=t('formtastic.labels.website')
-      %td
-        -if @node.tags['website']
-          %a{:href => @node.tags['website'], :rel => 'nofollow', :target => '_blank'}>=@node.tags['website']
+%table#properties{:class => "#{dom_class(@node)}"}
+  %tr
+    %th=t('formtastic.labels.category')
+    
+    - category = category_for_node(@node.type)
+    %td{:class => category}
+      - if category
+        = t("poi.category.#{category}")
+      - else
+        &nbsp;
 
-    %tr
-      %th=t('formtastic.labels.phone')
-      %td
-        =@node.tags['phone'] || '&nbsp;'
+  %tr
+    %th=t('formtastic.labels.type')
+    %td
+      - if @node.type
+        = t("poi.name.#{@node.type}")
+      -else
+        &nbsp;
+  %tr
+    %th=t('formtastic.labels.street')
+    %td
+      =@node.tags['addr:street']
+      =@node.tags['addr:housenumber'] || '&nbsp;'
+  %tr
+    %th=t('formtastic.labels.postcode')
+    %td=@node.tags['addr:postcode'] || '&nbsp;'
+  %tr
+    %th=t('formtastic.labels.city')
+    %td=@node.tags['addr:city'] || '&nbsp;'
 
-#map_wrapper
-  #minimap
-  = link_to t('.link.large_map'), root_path, :onclick => "location=permalink('#{root_path}');return false;", :class => 'magnify'
+  %tr
+    %th=t('formtastic.labels.website')
+    %td
+      -if @node.tags['website']
+        %a{:href => @node.tags['website'], :rel => 'nofollow', :target => '_blank'}>=@node.tags['website']
 
+  %tr
+    %th=t('formtastic.labels.phone')
+    %td
+      =@node.tags['phone'] || '&nbsp;'
 
-  
 
 - content_for :breadcrumbs do
   = link_to t('breadcrumbs.root'), root_path

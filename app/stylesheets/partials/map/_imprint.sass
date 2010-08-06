@@ -1,20 +1,11 @@
 #imprint
-  background: rgba(black, 0.8)
-  color: white
-  float: left
-  width: 100%
-  +text-shadow(rgba(black, 0.7), 0, 0, 2px)
-
-
-
   dl
-    padding-right: 100px
+    padding: 20px 100px 20px 0
     clear: both
-    float: right
 
   dt
     clear: left
-    color: darken(white, 10%)
+    color: lighten($text-color, 10%)
     float: left
     padding-right: 10px
     text-align: right
@@ -29,14 +20,13 @@
         padding: 5px
 
   a
-    color: $green
+    color: darken($green, 20%)
+    text-decoration: underline
 
   h2,
   p
     padding-right: 100px
     clear: both
-    float: right
-    width: 400px
     +margin-top
     +margin-bottom
     
