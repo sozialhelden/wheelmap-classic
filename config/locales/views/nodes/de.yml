@@ -5,7 +5,7 @@ de:
         successfull: 'Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert.'
     show:
       link:
-        large_map: Ansicht vergrößern
+        large_map: Ansicht vergrößern #adsd
         edit_node: Platz bearbeiten
       key:
         wheelchair_description: 'Infos zur Barrierefreiheit:'

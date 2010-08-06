@@ -1,7 +1,10 @@
 de:
   home:
     index:
+      filter:
+        wheelchair: 'Rollstuhlstatus'
+        category: 'Kategorie'
       link:
         node:
-          create: Neuen Platz anlegen
+          create: Neuen Platz anlegen #asdsad
   

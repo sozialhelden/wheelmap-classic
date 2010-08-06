@@ -19,16 +19,6 @@ $.each(amenitiesGrouped, function(i, group) {
 });
 
 
-var typeVisibilities = {};
-$.each(amenities, function(i, type) {
-  typeVisibilities[type] = { display: 'none' };
-});
-$.each(object_types, function(i, type) {
-  // alert(type);
-  typeVisibilities[type].display = 'block';
-});
-
-
 var states = {
   yes: true,
   no: true,
@@ -58,6 +48,12 @@ $(function() {
     states[state] = this.checked;
     showStates();
   });
+  $('#categories input').click(function() {
+    var category = this.id.replace(/category-/, '')
+    categories[category] = this.checked;
+    console.log(categories);
+    showStates();
+  })
 });
 
 
