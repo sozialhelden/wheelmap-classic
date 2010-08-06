@@ -124,12 +124,12 @@ class OpenStreetMap
        'wheelchair' => wheelchair,
        'tags' => tags,
        'type' => type,
-       'category' => category}.to_json
+       'category' => self.category}.to_json
     end
     
     def category
       Amenities.each do |cat, amenities|
-        return cat if amenities.include?(self.type)
+        return cat.to_s if amenities.include?(self.type)
       end
     end
     
