@@ -11,72 +11,15 @@
 WheelchairStatus = {'yes' => :yes, 'limited' => :limited, 'no' => :no, 'unknown' => :unknown}
 
 Amenities = {
-  :public_transfer => [
-    {:subway => ['subway']},
-    {:light_rail => ['light_rail', 'monorail', 'platform', 'station', 'halt']},
-    {:tram_stop => ['tram_stop']},
-    {:bus_stop => ['bus_stop', 'bus_station']},
-    {:ferry_terminal => ['ferry_terminal']},
-  ],
-  :food => [
-    {:fast_food => ['fast_food']},
-    {:restaurant => ['restaurant']},
-    {:biergarten => ['biergarten']},
-    {:cafe => ['cafe']},
-    {:bar => ['bar']},
-    {:pub => ['pub']}
-  ],
-  :leisure => [
-    {:cinema =>['cinema']},
-    {:arts_centre  => ['arts_centre']},
-    {:nightclub => ['nightclub']},
-    {:sauna => ['sauna']},
-    {:theatre => ['theatre']},
-    {:shop => ['shop']}
-  ],
-  :money => [
-    {:bank => ['bank']},
-    {:atm => ['atm']},
-    {:bureau_de_change => ['bureau_de_change']}
-  ],
-  :post => [
-    {:post_box => ['post_box']},
-    {:post_office => ['post_office']}
-  ],
-  :government => [
-     {:embassy => ['embassy']},
-     {:courthouse => ['courthouse']},
-     {:police => ['police']},
-     {:fire_station => ['fire_station']},
-     {:public_building => ['public_building']},
-     {:register_office => ['register_office']},
-     {:townhall => ['townhall']},
-     {:community_centre => ['community_centre']}
-  ],
-  :health => [
-    {:hospital => ['hospital']},
-    {:pharmacy => ['pharmacy']}
-  ],
-  :car => [  
-    {:fuel => ['fuel']},
-    {:car_rental => ['car_rental']},
-    {:car_sharing => ['car_sharing']},
-    {:parking => ['parking']},
-    {:bicycle_parking => ['bicycle_parking']},
-    {:bicycle_rental => ['bicycle_rental']}
-  ],
-  :education => [
-    {:kindergarten => ['kindergarten']},
-    {:school => ['school']},
-    {:college => ['college']},
-    {:university => ['university']},
-    {:library =>  ['library']}
-  ],
-  :misc => [
-    {:marketplace => ['marketplace']},
-    {:telephone => ['telephone']},
-    {:toilets => ['toilets']},
-    {:grave_yard => ['grave_yard']},
-    {:place_of_worship => ['place_of_worship']}
-  ]
+  :public_transfer => %w{subway aerodrome bicycle_rental bus_station bus_stop ferry ferry_terminal halt platform subway_entrance terminal tram_stop parking_aisle fuel parking car_rental car_sharing boatyard cable_car chair_lift},
+  :food => %w{cafe pub restaurant fast_food drinking_water},
+  :leisure => %w{cinema threatre zoo nightclub gallery arena},
+  :money_post => %w{post_office atm bank bureau_de_change },
+  :education => %w{college  library school university museum kindergarten},
+  :shopping => %w{supermarket hairdresser clothes mall furniture electronics books beverages alcohol department_store shoes hardware garden_centre optician computer},
+  :sport => %w{stadium sports_centre swimming_pool swimming},
+  :tourism => %w{archaeological_site arts_centre artwork battlefield beacon theme_park attraction beach viewpoint tower memorial information cave_entrance castle},
+  :accommodation => %w{chalet hostel hotel motel camp_site guest_house caravan_site bed_and_breakfast beach_resort},
+  :misc => %w{places_of_worship hospital pharmacy veterinary toilets},
+  :government => %w{courthouse public_building townhall}
 }

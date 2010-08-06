@@ -3,14 +3,15 @@ en:
     category:
       public_transfer: Public transfer
       food: Food
-      money: Money
       leisure: Leisure
       government: Government
-      post: Post
-      health: Health
-      car: 'Car & Bike'
-      misc: Misc
+      money_post: 'Bank & Post'
       education: Education
+      tourism: Tourism
+      sport: Sport
+      shopping: Shopping
+      accomodation: Accomodation
+      misc: Misc
     name:
       subway: Subway
       ferry_terminal: 'Ferry Terminal'

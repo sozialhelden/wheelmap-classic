@@ -34,10 +34,11 @@ class OpenStreetMap
   def self.nodes(bbox=nil, types=nil)
     base_uri "#{OpenStreetMapConfig.xapi_site}/api/#{API_VERSION}"
     bbox ||= "13.397643,52.523102,13.406419,52.526392"
-    types ||= 'amenity'
+    types ||= 'amenity,shop'
     
     types = types.split(',')
     types << 'amenity' unless types.include?('amenity')
+    types << 'shop' unless types.include?('shop')
     type_string = types.map(&:underscore).join('|')
     begin
       # RAILS_DEFAULT_LOGGER.warn("#{self.base_uri}/#{self.api_key.upcase}/geocoding/v2/find.js?bbox=#{normalized_bbox}&object_type=#{types}&results=100")

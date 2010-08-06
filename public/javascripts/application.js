@@ -23,13 +23,14 @@ var categories = {
   public_transfer: true,
   food: true,
   leisure: true,
-  money: true,
-  post: true,
-  government: true,
-  health: true,
-  car: true,
+  money_post: true,
   education: true,
-  misc: true
+  shopping: true,
+  sport: true,
+  tourism: true,
+  accommodation: true,
+  misc: true,
+  government: true
 }
 
 var styleTypeLookup = {
@@ -152,7 +153,7 @@ function loadPlaces() {
   counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
 
   var bbox = mapBBOX().toBBOX();
-  $.getJSON('/nodes?bbox=' + bbox + '&object_types=' + object_types.join(','), function(data) {
+  $.getJSON('/nodes?bbox=' + bbox + '&object_types=amenity,shop' , function(data) {
     var features = [];
     $.each(data, function(i, place) {
       if (place.type) {
