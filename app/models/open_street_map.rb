@@ -34,7 +34,7 @@ class OpenStreetMap
   def self.nodes(bbox=nil, types="")
     base_uri "#{OpenStreetMapConfig.xapi_site}/api/#{API_VERSION}"
     bbox ||= "13.397643,52.523102,13.406419,52.526392"
-    types = types.split(',').map(&:underscore).join('|')
+    types = types.split(',').map(&:underscore).join('|') unless types.blank?
     begin
       # RAILS_DEFAULT_LOGGER.warn("#{self.base_uri}/#{self.api_key.upcase}/geocoding/v2/find.js?bbox=#{normalized_bbox}&object_type=#{types}&results=100")
       bounding_box = CGI.escape("[bbox=#{bbox}]")
