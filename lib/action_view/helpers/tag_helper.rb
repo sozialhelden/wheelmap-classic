@@ -47,7 +47,7 @@ module ActionView
                 next unless value
                 key = key.to_s
                 value = BOOLEAN_ATTRIBUTES.include?(key) ? key : escape_once(value)
-                value = value.downcase.gsub(/(.)[^a-z0-9$]+/, '\1-') if %w(id for class).include?(key)
+                value = value.downcase.gsub(/(.)[^a-z0-9 $]+/, '\1-') if %w(id for class).include?(key)
                 attrs << %(#{key}="#{value}")
               end
             else

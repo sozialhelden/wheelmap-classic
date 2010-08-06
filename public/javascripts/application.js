@@ -307,6 +307,12 @@ $(function() {
     $($(this).attr('data-hide')).fadeOut();
     return false;
   });
+  $(window).resize(function() {
+    var width = $(window).width() - 780;
+    if (width > 100) {
+      $('#search').css('width', width + 'px');
+    }
+  }).resize();
 });
 
 function $w(string) {

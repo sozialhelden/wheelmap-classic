@@ -1,12 +1,13 @@
-#accessibility.box
+#map_wrapper  
+  #minimap
+
+#accessibility
   - semantic_form_for :node, @node,  :url => {:controller => 'nodes', :action => 'create'} do |form|
     = render :partial => 'inputs', :object => @node, :locals => {:form => form}
     
     - form.buttons do
       = form.submit
       %p.hint= t('devise.mandatory')
-#map_wrapper  
-  #minimap
 
 - content_for :breadcrumbs do
   = link_to t('breadcrumbs.root'), root_path

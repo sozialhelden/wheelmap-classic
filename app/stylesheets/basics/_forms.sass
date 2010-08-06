@@ -18,14 +18,14 @@ form
     color: $green
     background-color: white
     padding: 5px
-    width: 310px
+    width: 268px
     
   input[readonly]
     background-color: #F9F9F9
     color: $unknown
     
   select
-    width: 322px
+    width: 280px
     -webkit-appearance: none
     -moz-appearance: none
     background: #FFF url('/images/select-marker.png') no-repeat 98% center
@@ -71,29 +71,32 @@ form
 
   input[type='submit']
     position: relative
-    left: 30%
-    -webkit-appearance: none
-    -moz-appearance: none
-    +border-radius(5px)
-    border: 1px solid #D3E4C1
-    background: #87a55e url('/images/button-green.png') repeat-x
-    +vertical-gradient($green, desaturate(darken($green, 10%), 10%))
-    color: white
-    padding: 10px
+    left: 170px
+    // -webkit-appearance: none
+    // -moz-appearance: none
+    // +border-radius(5px)
+    // border: 1px solid #D3E4C1
+    // background: #87a55e url('/images/button-green.png') repeat-x
+    // +vertical-gradient($green, desaturate(darken($green, 10%), 10%))
+    // color: white
+    // padding: 10px
+    +green-button
     
     
   label
-    font-weight: bold
-    color: #333
+    color: lighten($text-color, 10%)
     display: block
     float: left
-    width: 30%
     line-height: 20px
+    margin-right: 10px
+    padding-top: 5px
+    text-align: right
+    width: 160px
     
   legend
     +helvetica-16
     font-weight: bold
-    color: #333
+    color: $text-color
     margin-top: 20px
     top: 15px
     bottom: none
@@ -111,8 +114,6 @@ form
     &.buttons
       padding: 10px 20px 10px 20px
     
-    &#basic, &#optional
-      +vertical-gradient(white, desaturate(lighten($green, 35%), 35%))
 
   li[class*='error']
     label
@@ -123,7 +124,7 @@ form
 
   p.inline-errors, p.inline-hints
     position: relative
-    left: 30%
+    left: 175px
     color: #AAA
     
   p.inline-errors

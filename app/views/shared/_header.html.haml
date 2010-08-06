@@ -2,20 +2,13 @@
   %nav.links
     - if user_signed_in?
       = link_to current_user.email, edit_user_path(current_user)
-      |
       = link_to t('devise.sign_out.headline'), destroy_user_session_path
-      |
     - else
       = link_to t('devise.sign_in.headline'), new_user_session_path
-      |
       = link_to t('devise.sign_up.headline'), new_registration_path(:user)
-      |
     = link_to t('header.navigation.what_is_wheelmap'), 'http://blog.wheelmap.org/was-ist-wheelmap/'
-    |
     = link_to t('header.navigation.blog'), 'http://blog.wheelmap.org/'
-    |
-    =link_to t('header.navigation.imprint'), imprint_path
-    |
+    = link_to t('header.navigation.imprint'), imprint_path
     %select{:onchange => 'location.href=this.options[this.selectedIndex].value'}
       - I18n.available_locales.map(&:to_s).sort.each do |locale|
         %option{:value => url_for_subdomain(request.url, locale), :selected => (I18n.locale.to_s == locale.to_s)}>
@@ -23,15 +16,13 @@
   #logo
     - link_to root_path, :title => t('wheelmap.logo.title') do
       = image_tag "wheelmap_logo_small_#{I18n.locale}.png", :width => 300, :height => 85, :alt => t('wheelmap.logo.alt')
-  #searchbar{:style => 'visibility:hidden'}
+  #searchbar
+    -#{:style => 'visibility:hidden'}
     %form
-      %ol
-        %li
-          %label
-            =t('header.searchbar.label')
-          = text_field_tag :search, '', :class => 'search_field'
-          
-          %input{:type => 'submit', :class => 'search_button', :value => t('header.searchbar.find')}
-          = t('or')
-          = link_to t('header.searchbar.add_place'), new_node_path, :class => 'button'
-    
+      %label
+        =t('header.searchbar.label')
+      = text_field_tag :search, ''
+      %button(type="submit")= t('header.searchbar.find')
+      .or-add-place
+        .or= t('or')
+        = link_to t('header.searchbar.add_place'), new_node_path, :class => 'button add-place'

@@ -1,8 +1,6 @@
-#map
-
+- content_for :map do
   #filter
     = render :partial => 'wheelchair_status_filter'
-
   #categories
     %h4
       Kategorie
@@ -15,5 +13,4 @@
               -#-elements.each do |key,values|
                 -#%a{:class => session['amenities'].include?(values.first) ? 'visible' : 'hidden', :href => '#', :onclick => "toggleLayers('#{values.first}')", :title => t("poi.name.#{values.first}")}
                   -#%span{:class => values.first}
-      
-#spinner
+  #spinner
