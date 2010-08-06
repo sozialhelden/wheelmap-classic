@@ -31,14 +31,17 @@ class OpenStreetMap
   end
 
   # Fetch all nodes with given type within bounding box
-  def self.nodes(bbox=nil, types="")
+  def self.nodes(bbox=nil, types="amenity")
     base_uri "#{OpenStreetMapConfig.xapi_site}/api/#{API_VERSION}"
     bbox ||= "13.397643,52.523102,13.406419,52.526392"
-    types = types.split(',').map(&:underscore).join('|') unless types.blank?
+    
+    types = types.split(',')
+    types << 'amenity' unless types.include?('amenity')
+    type_string = types.map(&:underscore).join('|')
     begin
       # RAILS_DEFAULT_LOGGER.warn("#{self.base_uri}/#{self.api_key.upcase}/geocoding/v2/find.js?bbox=#{normalized_bbox}&object_type=#{types}&results=100")
       bounding_box = CGI.escape("[bbox=#{bbox}]")
-      amenity_types = types.blank? ? types : CGI.escape("[amenity|#{types}]")
+      amenity_types = types.blank? ? types : CGI.escape("[#{type_string}]")
       t = Time.now
       RAILS_DEFAULT_LOGGER.debug "Fetching now"
       result = get("/node#{bounding_box}#{amenity_types}")
