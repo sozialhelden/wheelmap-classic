@@ -23,7 +23,7 @@ class OpenStreetMap
       @changeset = data['changeset']
       @version = data['version'].to_i
       @timestamp = Time.parse(data['timestamp']) rescue Time.now
-      @type = (data['type'] || tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || 'cafe')
+      @type = (data['type'] || tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || tags['leisure'] || tags['shop'] || tags['tourism'] || tags['historic'])
       @wheelchair = (data['wheelchair'] || tags['wheelchair'] || tags['hvv:barrier_free'] || 'unknown')
       @wheelchair_description = (data['wheelchair_description'] || tags['wheelchair_description'])
       @street       = tags['addr:street'] = data['street'] if data['street']
