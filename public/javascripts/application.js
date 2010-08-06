@@ -19,6 +19,16 @@ var states = {
   unknown: true
 };
 
+var styleTypeLookup = {
+  yes: {
+    display: 'block'
+  },
+  no: {
+    display: 'none'
+  }
+  
+}
+
 function markerLayer(name){
   $.each(map.layers, function(i, layer){
     if(layer.name == name) {
@@ -110,7 +120,14 @@ function eachState(f) {
 
 
 function showStates() {
-  places.styleMap.addUniqueValueRules("default", "type", typeVisibilities);
+  $.each(places.features, function(i,feature){
+    if(states[feature.attributes.wheelchair] == true){
+      feature.attributes.state = 'yes';
+    }else{
+      feature.attributes.state = 'no';
+    }
+  });
+  places.styleMap.addUniqueValueRules("default", "state", styleTypeLookup);
   places.redraw();
   places.setVisibility(true);
 }
