@@ -1,16 +1,19 @@
 de:
   poi:
     category:
-      public_transfer: Nahverkehr
+      public_transfer: Verkehr
       food: 'Essen & Trinken'
-      money: Geld
       leisure: Freizeit
-      government: 'Botschaften & Behörden'
-      post: Post
+      government: 'Behörden & Botschaften'
+      money_post: 'Bank & Post'
       health: Medizin
-      car: 'Auto & Fahrrad'
+      education: 'Bildung'
+      accommodation: Unterkunft
+      shopping: Einkaufen
+      sport: Sport
+      tourism: Tourismus
       misc: Sonstiges
-      education: 'Kinder & Bildung'
+      
     name:
       subway: U-Bahn
       ferry_terminal: Fähre
