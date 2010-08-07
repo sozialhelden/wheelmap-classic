@@ -483,16 +483,19 @@ div[id^='OpenLayers\.Layer\.OSM\.Mapnik'] {
 }
 
 /* line 23, ../../app/stylesheets/basics/_open_layers.sass */
-#attribution.olControlAttribution, div[id^='OpenLayers\.Control\.Permalink'] {
-  position: relative !important;
-  float: left;
+#attribution.olControlAttribution,
+div[id^='OpenLayers\.Control\.Permalink'] {
+  color: #444444;
   display: block;
-  top: 0px;
-  left: 20px;
-  padding: 5px 8px 1px 8px;
+  float: left;
   font-size: 11px;
-  font-style: italic;
+  font-style: normal;
+  left: 40px;
+  padding: 5px 20px 1px 0;
+  position: relative !important;
+  top: 0px;
   z-index: 1000;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
 }
 
 /* line 1, ../../app/stylesheets/basics/_header.sass */

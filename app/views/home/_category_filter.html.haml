@@ -1,5 +1,4 @@
-%h4
-  = t('home.index.filter.category')
+%h4= t('home.index.filter.category')
 %ul#amenities
   - Amenities.keys.sort_by(&:to_s).each do |amenity_group|
     %li{:class => amenity_group}
