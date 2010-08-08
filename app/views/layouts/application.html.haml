@@ -8,17 +8,18 @@
       = yield(:head)
     /[if IE]
       = render :partial => 'shared/add_html5_elements'
-
     :javascript
       var object_types = ["#{ (session['amenities']).join('","')}"];
     
-    %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}        
-  %body(class=browser_class)
+    %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
+  - map  = yield(:map)
+  - main = yield
+  %body{ :class => [browser_class, ('map' if map)] }
     = render :partial => '/shared/header'
-    - if map = yield(:map)
+    - if map
       #map
         = map
-    - if main = yield
+    - if main
       #main
         = main
     %footer
