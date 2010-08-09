@@ -2,9 +2,9 @@ de:
   home:
     index:
       filter:
-        wheelchair: 'Rollstuhlstatus'
-        category: 'Kategorie'
+        wheelchair: 'Rollstuhlgerecht?' # title of accessibility selection box
+        category: 'Kategorie' # title of category selection box
       link:
         node:
-          create: Neuen Platz anlegen #asdsad
+          create: Neuen Ort anlegen # Add new place
   

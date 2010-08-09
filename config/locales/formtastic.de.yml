@@ -5,7 +5,7 @@ de:
       optional: 'Mehr Infos <span class="addition">(alle Felder sind optional)</span>'
     labels:
       save: Speichern
-      name: 'Name des Platzes:'
+      name: 'Name des Ortes:'
       type: 'Typ:'
       wheelchair: Rollstuhlgerecht?
       wheelchair_description: 'Info zu Barrierefreiheit:'
