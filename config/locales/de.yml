@@ -6,11 +6,11 @@ de:
     logo:
       title: Wheelmap Startseite
       alt: Wheelmap Logo
-  wheelchairstatus:
-    'yes': 'Vollständig rollstuhlgerecht'
-    limited: 'Teilweise rollstuhlgerecht'
-    'no': 'Nicht rollstuhlgerecht'
-    unknown: 'Status unbekannt'
+  wheelchairstatus: # checkboxes
+    'yes': 'Ja'
+    limited: 'Teilweise'
+    'no': 'Nein'
+    unknown: 'Unbekannt'
   application: 
     require_no_user: 
       notice: "Du bist doch schon eingeloggt …"
@@ -27,30 +27,30 @@ de:
       blog: Blog
       what_is_wheelmap: 'Was ist Wheelmap?'
       what_is_barrier_free: 'Was bedeutet „rollstuhlgerecht“?'
-      how_to_add_a_place: 'Wie trage ich Plätze ein?'
+      how_to_add_a_place: 'Wie trage ich Orte ein?'
       suggestions: 'Anregungen'
       logged_in_as: "Eingeloggt als:"
     searchbar:
-      label: 'Rollstuhlgerechte Plätze in:'
+      label: '' # text left of search input field, leave empty for now
       find: 'finden'
-      add_place: 'Platz hinzufügen'
+      add_place: 'Ort hinzufügen'
     tagline: Wheelmap logo
     title: wheelmap
   form:
-    show_fully_accessible_places: rollstuhlgerechte Plätze
-    show_limited_accessible_places: teils rollstuhlgerechte Plätze
-    show_unaccessible_places: nicht rollstuhlgerechte Plätze
-    show_places_without_status: Plätze ohne Status
+    show_fully_accessible_places: Ja # Yes
+    show_limited_accessible_places: Teilweise # Limited
+    show_unaccessible_places: Nein # No
+    show_places_without_status: Unbekannt # unknown
   layouts: 
     application: 
       banner:
         alt: 'Ein Projekt der Sozialhelden'
   oauth: 
     callback: 
-      notice: "Dein Benutzerkonto wurde erfoglreich mit dem OpenStreetMap-Benutzerkonto {{user}} verbunden."
+      notice: "Dein Benutzerkonto wurde erfoglreich mit dem OpenStreetMap-Benutzerkonto von '{{user}}' verbunden."
     application:
       connect:
-        headline: Benutzerkonto mit Openstreetmap verbinden
+        headline: "Benutzerkonto mit Openstreetmap verbinden (dann kannst du Orte bearbeiten)"
   user_sessions: 
     create: 
       activation: 
@@ -94,8 +94,8 @@ de:
   breadcrumbs:
     root: wheelmap-Karte
     node:
-      create: Neuen Platz anlegen
-      edit: Platz bearbeiten
+      create: Neuen Ort anlegen # add new place
+      edit: Ort bearbeiten
   profile:
     edit:
       headline: Dein Profil bearbeiten

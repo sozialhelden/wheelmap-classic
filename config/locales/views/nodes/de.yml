@@ -5,12 +5,12 @@ de:
         successfull: 'Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert.'
     show:
       link:
-        large_map: Ansicht vergrößern #adsd
-        edit_node: Platz bearbeiten
+        large_map: Ansicht vergrößern # Zoom in
+        edit_node: Ort bearbeiten # Edit place
       key:
         wheelchair_description: 'Infos zur Barrierefreiheit:'
     errors:
       not_found: Leider konnte die Seite nicht gefunden werden
       not_available: Leider steht diese Seite zur Zeit nicht zur Verfügung
-      not_existent: Leider ist dieser Platz nicht mehr da
+      not_existent: Leider ist dieser Ort nicht mehr da
   
