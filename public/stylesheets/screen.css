@@ -4,21 +4,25 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+/* line 6, ../../app/stylesheets/vendor/_map.sass */
+body.map {
   overflow: hidden;
 }
 
-/* line 8, ../../app/stylesheets/vendor/_map.sass */
+/* line 9, ../../app/stylesheets/vendor/_map.sass */
 a {
   color: blue;
   text-decoration: none;
 }
-/* line 12, ../../app/stylesheets/vendor/_map.sass */
+/* line 13, ../../app/stylesheets/vendor/_map.sass */
 a:hover {
   color: #000011;
   text-decoration: underline;
 }
 
-/* line 16, ../../app/stylesheets/vendor/_map.sass */
+/* line 17, ../../app/stylesheets/vendor/_map.sass */
 #map {
   height: 100%;
   width: 100%;
@@ -29,13 +33,13 @@ a:hover {
   color: black;
 }
 
-/* line 26, ../../app/stylesheets/vendor/_map.sass */
+/* line 27, ../../app/stylesheets/vendor/_map.sass */
 .olFramedCloudPopupContent {
   font-size: 0.8em;
   font-family: Verdana, sans-serif;
 }
 
-/* line 30, ../../app/stylesheets/vendor/_map.sass */
+/* line 31, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle {
   position: absolute;
   font-size: 1em;
@@ -52,13 +56,13 @@ a:hover {
   cursor: default;
   opacity: 0.7;
 }
-/* line 46, ../../app/stylesheets/vendor/_map.sass */
+/* line 47, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle:hover {
   background-color: white;
   opacity: 1;
 }
 
-/* line 51, ../../app/stylesheets/vendor/_map.sass */
+/* line 52, ../../app/stylesheets/vendor/_map.sass */
 #description {
   position: absolute;
   z-index: 10000;
@@ -71,7 +75,7 @@ a:hover {
   font-size: 12px;
 }
 
-/* line 63, ../../app/stylesheets/vendor/_map.sass */
+/* line 64, ../../app/stylesheets/vendor/_map.sass */
 #attribution {
   bottom: 0;
   left: 0;
@@ -82,14 +86,14 @@ a:hover {
   z-index: 1000;
 }
 
-/* line 73, ../../app/stylesheets/vendor/_map.sass */
+/* line 74, ../../app/stylesheets/vendor/_map.sass */
 #layer {
   position: absolute;
   top: 60px;
   right: 10px;
   z-index: 10002;
 }
-/* line 79, ../../app/stylesheets/vendor/_map.sass */
+/* line 80, ../../app/stylesheets/vendor/_map.sass */
 #layer > div {
   border: 1px solid black;
   background-color: white;
@@ -98,12 +102,12 @@ a:hover {
   cursor: default;
   margin-bottom: 4px;
 }
-/* line 88, ../../app/stylesheets/vendor/_map.sass */
+/* line 89, ../../app/stylesheets/vendor/_map.sass */
 #layer .active {
   background-color: #eeeeff;
 }
 
-/* line 92, ../../app/stylesheets/vendor/_map.sass */
+/* line 93, ../../app/stylesheets/vendor/_map.sass */
 .hide {
   display: none;
 }
@@ -1250,7 +1254,7 @@ image[width='16'] {
 
 /* line 17, ../../app/stylesheets/partials/map/_bar.sass */
 .state-yes, .state-limited, .state-no, .state-unknown {
-  background: url('/images/icons.png?1281194669') no-repeat;
+  background: url('/images/icons.png?1281257953') no-repeat;
   color: #86af4d;
   line-height: 20px;
   margin-bottom: 3px;
@@ -1287,7 +1291,7 @@ image[width='16'] {
 
 /* line 41, ../../app/stylesheets/partials/map/_bar.sass */
 .state-limited {
-  background: url('/images/icons.png?1281194669') 0 -26px no-repeat;
+  background: url('/images/icons.png?1281257953') 0 -26px no-repeat;
   color: #f19d46;
 }
 /* line 45, ../../app/stylesheets/partials/map/_bar.sass */
@@ -1298,7 +1302,7 @@ image[width='16'] {
 
 /* line 48, ../../app/stylesheets/partials/map/_bar.sass */
 .state-no {
-  background: url('/images/icons.png?1281194669') 0 -52px no-repeat;
+  background: url('/images/icons.png?1281257953') 0 -52px no-repeat;
   color: #d6382f;
 }
 /* line 52, ../../app/stylesheets/partials/map/_bar.sass */
@@ -1309,7 +1313,7 @@ image[width='16'] {
 
 /* line 55, ../../app/stylesheets/partials/map/_bar.sass */
 .state-unknown {
-  background: url('/images/icons.png?1281194669') 0 -78px no-repeat;
+  background: url('/images/icons.png?1281257953') 0 -78px no-repeat;
   color: #8d8d8e;
 }
 /* line 59, ../../app/stylesheets/partials/map/_bar.sass */
