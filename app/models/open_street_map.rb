@@ -50,7 +50,7 @@ class OpenStreetMap
   def self.nodes(bbox=nil, types=nil)
     base_uri "#{OpenStreetMapConfig.xapi_site}/api/#{API_VERSION}"
     bbox ||= "13.397,52.523,13.406,52.526"
-    bbox = round_bounding_box(bbox)
+    # bbox = round_bounding_box(bbox)
     types = 'amenity,shop,leisure,sport,historic,natural,power,tourism,railway'
     
     types = types.split(',')
