@@ -10,24 +10,50 @@ class OpenStreetMap
   base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
   # basic_auth(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
   
+  attr_reader :client
+  
   # Initialize with basic auth credentials
-  def initialize(username, password)
-    self.class.basic_auth username, password
+  def initialize(client)
+    @client = client
+    if basic_auth_client?
+      RAILS_DEFAULT_LOGGER.debug("Using BasicAuthClient")
+      self.class.basic_auth client.username, client.password
+    elsif oauth_client?
+      RAILS_DEFAULT_LOGGER.debug("Using OauthClient")
+      self.class.delegate :put, :to => :client
+    else
+      raise ArgumentError.new('Unsupported Client')
+    end
   end
   
   
   # update a singe attribute via basic auth
   def update_single_attribute(osmid, attribute_hash)
     if (node = self.class.get_node(osmid))
-      changeset_id = self.class.create_changeset
+      changeset_id = create_changeset
       node.changeset = changeset_id
       attribute_hash.each do |key,value|
         node.send("#{key}=", value)
       end
-      new_version = self.class.update(node)
-      self.class.close_changeset(changeset_id)
+      new_version = update(node)
+      close_changeset(changeset_id)
       node
     end
+  end
+  
+  def update_node(node)
+    RAILS_DEFAULT_LOGGER.debug "Old version: #{node.version}"
+    RAILS_DEFAULT_LOGGER.debug "Old changeset: #{node.changeset}"
+    RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
+    changeset_id = create_changeset
+    RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
+    node.changeset = changeset_id
+    RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
+    RAILS_DEFAULT_LOGGER.debug node.inspect
+    RAILS_DEFAULT_LOGGER.debug node.to_xml
+    new_version = update(node)
+    RAILS_DEFAULT_LOGGER.debug "New version: #{new_version}"
+    close_changeset(changeset_id)
   end
   
   def self.round_bounding_box(bbox)
@@ -89,28 +115,28 @@ class OpenStreetMap
   end
   
   # This requires a multistep 
-  def self.update_node(node, oauth=nil)
-    RAILS_DEFAULT_LOGGER.debug "Fetching node: #{osmid} ..."
-    if (node = get_node(node.id))
-      RAILS_DEFAULT_LOGGER.debug "Old version: #{node.version}"
-      RAILS_DEFAULT_LOGGER.debug "Old changeset: #{node.changeset}"
-      RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
-      changeset_id = create_changeset(oauth)
-      RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
-      node.set_wheelchair(wheelchair,changeset_id)
-      RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
-      RAILS_DEFAULT_LOGGER.debug node.inspect
-      RAILS_DEFAULT_LOGGER.debug node.to_xml
-      new_version = update(node,oauth)
-      RAILS_DEFAULT_LOGGER.debug "New version: #{new_version}"
-      close_changeset(changeset_id, oauth)
-    end
-  end
+  # def self.update_node(node, oauth=nil)
+  #   RAILS_DEFAULT_LOGGER.debug "Fetching node: #{node.id} ..."
+  #   if (node = get_node(node.id))
+  #     RAILS_DEFAULT_LOGGER.debug "Old version: #{node.version}"
+  #     RAILS_DEFAULT_LOGGER.debug "Old changeset: #{node.changeset}"
+  #     RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
+  #     changeset_id = create_changeset
+  #     RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
+  #     node.changeset = changeset_id
+  #     RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
+  #     RAILS_DEFAULT_LOGGER.debug node.inspect
+  #     RAILS_DEFAULT_LOGGER.debug node.to_xml
+  #     new_version = update(node)
+  #     RAILS_DEFAULT_LOGGER.debug "New version: #{new_version}"
+  #     close_changeset(changeset_id)
+  #   end
+  # end
   
 
   # Create a new node by calling the OSM API
   # Returns the id of the newly created node
-  def self.create_node(node)
+  def create_node(node)
     RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
     changeset_id = create_changeset
     RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
@@ -126,32 +152,66 @@ class OpenStreetMap
   
   private
   
-  def self.create(node)
-    response = put("#{self.base_uri}/node/create", :body => node.to_xml)
-    raise_errors(response)
+  def create(node)
+    url = request_uri("/node/create")
+    response = put(url, :body => node.to_xml)
+    self.class.raise_errors(response)
     response.body.to_i
   end
     
-  def self.update(node)
-    response = put("#{self.base_uri}/node/#{node.id}", :body => node.to_xml)
-    raise_errors(response)
+  def update(node)
+    url = request_uri("/node/#{node.id}")
+    response = put(url, :body => node.to_xml)
+    self.class.raise_errors(response)
     response.body
   end
   
-  def self.create_changeset
-    response = put("#{self.base_uri}/changeset/create", :body => '<osm><changeset><tag k="created_by" v="wheelmap.org"/><tag k="comment" v="Modify accessibility status for node"/></changeset></osm>')
-    raise_errors(response)
+  def create_changeset
+    RAILS_DEFAULT_LOGGER.debug("OpenStreetMap#create_changeset")
+    url = request_uri('/changeset/create')
+    response = put(url, :body => '<osm><changeset><tag k="created_by" v="wheelmap.org"/><tag k="comment" v="Modify accessibility status for node"/></changeset></osm>')
+    self.class.raise_errors(response)
     response.body.to_i
   end
   
-  def self.close_changeset(id)
-    response = put("#{self.base_uri}/changeset/#{id}/close")
-    raise_errors(response)
+  def close_changeset(id)
+    url = request_uri("/changeset/#{id}/close")
+    response = put(url)
+    self.class.raise_errors(response)
     response.body
   end
   
+  def request_uri(path)
+    url = ''
+    if oauth_client?
+      url = "/api/#{API_VERSION}#{path}"
+    else
+      url = "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}#{path}"
+    end
+    RAILS_DEFAULT_LOGGER.debug("calculated URI: #{url}")
+    url
+  end
+  
+  def oauth_client?
+    @client.is_a? OauthClient
+  end
+  
+  def basic_auth_client?
+    @client.is_a? BasicAuthClient
+  end
+  
+  # Indirection to HTTParty class method id called as instance method
+  def put(url, options={})
+    self.class.put(url, options)
+  end
+  
+  # Indirection to HTTParty class method id called as instance method
+  def post(url, options={})
+    self.class.post(url, options)
+  end
+  
   def self.raise_errors(response)
-    RAILS_DEFAULT_LOGGER.warn("HTTP REQUEST: #{response.inspect}")
+    # RAILS_DEFAULT_LOGGER.debug("HTTP REQUEST: #{response.inspect}")
     case response.code.to_i
       when 400
         data = response.body
@@ -176,9 +236,5 @@ class OpenStreetMap
       when 502..503
         raise Unavailable, "(#{response.code}): #{response.message}"
     end
-  end
-  
-  def self.parse(response)
-    response.body
   end
 end

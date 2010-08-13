@@ -10,7 +10,7 @@
     %h3
       =t('profile.edit.application.oauth.headline')
     %p.pad
-      - if current_user.application_authorized?
+      - if current_user.oauth_authorized?
         =t('profile.edit.application.oauth.connected')
         = link_to t('profile.edit.application.oauth.revoke'), "#{OpenStreetMapConfig.oauth_site}/oauth_clients"
       - else

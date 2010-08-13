@@ -1,7 +1,7 @@
-class UpdateSingleAttributeJob < Struct.new(:node_id, :attribute_hash)
+class UpdateSingleAttributeJob < Struct.new(:node_id, :client, :attribute_hash)
   
   def perform
-    osm = OpenStreetMap.new(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
+    osm = OpenStreetMap.new(client)
     osm.update_single_attribute(node_id, attribute_hash)
   end
   
