@@ -1,7 +1,7 @@
 
 $(function() {
   var input = $('#search');
-  var list = $('#bar form ol');
+  var list = $('header form ol');
   
   var showSearchResults = function(data) {
     var xml = $(data.responseXML),
@@ -42,7 +42,7 @@ $(function() {
   var search = function() {
     list.html('').animate({ height: '20px' }).addClass('loading');
     var q = input.val();
-    $.ajax({ url: '/search?q=' + q + '&format=xml', complete: showSearchResults });
+    $.ajax({ url: '/search.xml?q=' + q, complete: showSearchResults });
   };
   
   input.keypress(function(event) {

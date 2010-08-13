@@ -2,10 +2,10 @@ de:
   poi:
     category:
       public_transfer: Verkehr
-      food: 'Essen & Trinken'
+      food: 'Essen &amp; Trinken'
       leisure: Freizeit
-      government: 'Behörden & Botschaften'
-      money_post: 'Bank & Post'
+      government: 'Behörden &amp; Botschaften'
+      money_post: 'Bank &amp; Post'
       health: Medizin
       education: 'Bildung'
       accommodation: Unterkunft
