@@ -97,9 +97,6 @@ function openPopup(feature) {
   selectedFeature = feature;
   
   var node = feature.attributes;
-  if (location.hostname == 'wheelmap.local') {
-    console.log(node);
-  }
   
   popup = new OpenLayers.Popup.FramedCloud("Popup", 
                            feature.geometry.getBounds().getCenterLonLat(),
