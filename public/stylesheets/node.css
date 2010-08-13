@@ -472,7 +472,7 @@ a.button {
 
 /* line 13, ../../app/stylesheets/basics/_open_layers.sass */
 div[id^='OpenLayers\.Layer\.OSM\.Mapnik'] {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 /* line 16, ../../app/stylesheets/basics/_open_layers.sass */

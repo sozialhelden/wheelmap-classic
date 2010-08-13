@@ -29,7 +29,8 @@ class NodesController < ApplicationController
   end
   
   def update_wheelchair
-    Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], :wheelchair => params[:wheelchair]))
+    client = OpenStreetMap::BasicAuthClient.new(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
+    Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], client, :wheelchair => params[:wheelchair]))
     respond_to do |wants|
       wants.js{ render :text => 'OK' }
       wants.html{ render :text => 'OK' }
@@ -37,13 +38,11 @@ class NodesController < ApplicationController
   end
 
   def update
-    @node = OpenStreetMap.get_node(params[:id])
-    node_hash = params[:node]
-    node_hash.each do |key,value|
-      @node.send("#{key}=", value)
-    end
+    @node = OpenStreetMap::Node.new(params[:node])
     if @node.valid?
-      Delayed::Job.enqueue(UpdatingJob.new(@node, current_user.id))
+      client = OpenStreetMap::BasicAuthClient.new(current_user.osm_username, current_user.osm_password) if current_user.basic_authorized?
+      client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.oauth_authorized?
+      Delayed::Job.enqueue(UpdatingJob.new(@node, client))
       respond_to do |wants|
         wants.js{ render :text => 'OK' }
         wants.html{
@@ -76,6 +75,7 @@ class NodesController < ApplicationController
   
   def edit
     @node = OpenStreetMap.get_node(params[:id])
+    RAILS_DEFAULT_LOGGER.debug("UID: #{@node.uid}")
   end
 
   # Before filter

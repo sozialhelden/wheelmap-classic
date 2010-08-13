@@ -3,7 +3,7 @@ class OpenStreetMap
   class Node
     include Validatable
     include ActiveSupport::CoreExtensions::Hash::Keys
-    attr_accessor :lat, :lon, :user, :uid, :changeset, :uid, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair, :wheelchair_description, :street, :postcode, :country, :housenumber, :city, :url, :phone, :tag
+    attr_accessor :lat, :lon, :user, :uid, :changeset, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair, :wheelchair_description, :street, :postcode, :country, :housenumber, :city, :url, :phone, :tag
     attr_accessor_with_default :changed, false
 
     validates_presence_of :name, :wheelchair, :type, :message => I18n.t('errors.messages.empty')
@@ -26,12 +26,12 @@ class OpenStreetMap
       @type = (data['type'] || tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || tags['leisure'] || tags['shop'] || tags['tourism'] || tags['historic'])
       @wheelchair = (data['wheelchair'] || tags['wheelchair'] || tags['hvv:barrier_free'] || 'unknown')
       @wheelchair_description = (data['wheelchair_description'] || tags['wheelchair_description'])
-      @street       = tags['addr:street'] = data['street'] if data['street']
-      @housenumber  = tags['addr:housenumber'] = data['housenumber'] if data['housenumber']
-      @zip_code     = tags['addr:postcode'] = data['postcode'] if data['postcode']
-      @city         = tags['addr:city'] = data['city'] if data['city']
-      @phone        = tags['contact:phone'] = data['phone'] if data['phone']
-      @url          = tags['contact:website'] = data['url'] if data['url']
+      @street       = tags['addr:street']
+      @housenumber  = tags['addr:housenumber']
+      @zip_code     = tags['addr:postcode']
+      @city         = tags['addr:city']
+      @phone        = tags['contact:phone']
+      @url          = tags['contact:website']
       
     end
     
