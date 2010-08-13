@@ -2,7 +2,7 @@ class NodesController < ApplicationController
   
   skip_before_filter :verify_authenticity_token
   
-  before_filter :authenticate_user!,              :only => [:create, :new, :edit]
+  before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update]
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
   before_filter :check_create_params,             :only => :create
@@ -43,7 +43,7 @@ class NodesController < ApplicationController
       @node.send("#{key}=", value)
     end
     if @node.valid?
-      Delayed::Job.enqueue(UpdatingJob.new(@node, default_user.id))
+      Delayed::Job.enqueue(UpdatingJob.new(@node, current_user.id))
       respond_to do |wants|
         wants.js{ render :text => 'OK' }
         wants.html{
