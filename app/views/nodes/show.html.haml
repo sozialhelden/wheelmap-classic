@@ -18,7 +18,7 @@
   %tr
     
     %th=t('formtastic.labels.wheelchair')
-    %td= @node.wheelchair
+    %td= t("wheelchairstatus.#{@node.wheelchair}")
       
       
   -if @node.wheelchair_description
@@ -41,7 +41,7 @@
     %th=t('formtastic.labels.type')
     %td
       - if @node.type
-        = t("poi.name.#{@node.type}")
+        = t("poi.name.#{@node.category}.#{@node.type}")
       -else
         &nbsp;
   %tr

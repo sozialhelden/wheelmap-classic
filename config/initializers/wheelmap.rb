@@ -8,7 +8,7 @@
 # 'Kinder & Bildung': ['kindergarten', 'school', 'college', 'university', 'library'],
 # 'Sonstiges': ['marketplace', 'telephone', 'toilets', 'grave-yard', 'place-of-worship']
 
-WheelchairStatus = {'yes' => :yes, 'limited' => :limited, 'no' => :no, 'unknown' => :unknown}
+WheelchairStatus = %w{yes limited no unknown}
 
 Amenities = {
   :public_transfer => %w{subway aerodrome bicycle_rental bus_station bus_stop ferry ferry_terminal halt platform subway_entrance terminal tram_stop parking_aisle fuel parking car_rental car_sharing boatyard cable_car chair_lift},
