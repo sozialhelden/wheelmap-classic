@@ -67,7 +67,9 @@ function drawmap(controls, element) {
     units: 'm'
   });
   
-  mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", {displayClass:'olMap', opacity:0.5, transitionEffect:'resize', numZoomLevels: 19});
+  // mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", { displayClass:'olMap', opacity:1.0, transitionEffect:'resize', numZoomLevels: 19});
+  
+  mapnik = new OpenLayers.Layer.CloudMade("Mapnik", { displayClass:'olMap', opacity:1.0, key: 'ff94b6ad4b174d648b9c491706f13579', styleId: 8204});
 
   // Use for offline mode
   // mapnik = new OpenLayers.Layer.OSM("Mapnik", 'http://wheelmap.local/images/tiles/${z}/${x}/${y}.png' ,{displayClass:'olMap', opacity:0.5, transitionEffect:'resize', numZoomLevels: 19});
@@ -88,34 +90,34 @@ function defaultControls(){
 }
 
 
-function toggleLayers(type, show) {
-  var visibility = false;
-  visibility = typeof(show) == 'undefined' ? !$('.' + type).parent().hasClass('visible') : show;
-  $('.' + type).parent().removeClass(visibility ? 'hidden' : 'visible').addClass(visibility ? 'visible' : 'hidden');
-  typeVisibilities[type].display = visibility ? 'block' : 'none';
-  add_or_remove_type_from_object_types(type, visibility);
-  showStates();
-  return false;
-}
+// function toggleLayers(type, show) {
+//   var visibility = false;
+//   visibility = typeof(show) == 'undefined' ? !$('.' + type).parent().hasClass('visible') : show;
+//   $('.' + type).parent().removeClass(visibility ? 'hidden' : 'visible').addClass(visibility ? 'visible' : 'hidden');
+//   typeVisibilities[type].display = visibility ? 'block' : 'none';
+//   add_or_remove_type_from_object_types(type, visibility);
+//   showStates();
+//   return false;
+// }
 
-function add_or_remove_type_from_object_types(type, add){
-  
-  if(add == true){
-    if(!object_types_contains(type)){
-      object_types.push(type);
-      loadPlaces();
-    }
-  }else{
-    if(object_types_contains(type) == true){      
-      index = object_types.indexOf(type);
-      object_types.splice(index,1);
-    }
-  }
-}
+// function add_or_remove_type_from_object_types(type, add){
+//   
+//   if(add == true){
+//     if(!object_types_contains(type)){
+//       object_types.push(type);
+//       loadPlaces();
+//     }
+//   }else{
+//     if(object_types_contains(type) == true){      
+//       index = object_types.indexOf(type);
+//       object_types.splice(index,1);
+//     }
+//   }
+// }
 
-function object_types_contains(type){
-  return (object_types.indexOf(type) != -1)
-}
+// function object_types_contains(type){
+//   return (object_types.indexOf(type) != -1)
+// }
 
 function mapBBOX() {
   var box = map.getExtent().clone();
