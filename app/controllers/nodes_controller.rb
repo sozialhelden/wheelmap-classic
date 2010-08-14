@@ -53,7 +53,10 @@ class NodesController < ApplicationController
     else
       respond_to do |wants|
         wants.js{ render :text => 'FAIL', :status => 406 }
-        wants.html{ render :action => :edit }
+        wants.html{
+          flash[:error] = I18n.t('nodes.update.flash.not_successfull')
+          render :action => :edit
+        }
       end
     end
   end

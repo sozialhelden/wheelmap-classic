@@ -13,8 +13,11 @@ de:
       sport: Sport
       tourism: Tourismus
       misc: Sonstiges
+      unknown: Unbekannt
       
     name:
+      unknown:
+        unknown: Unbekannt
       accommodation:
         beach_resort: Strandhotel
         bed_and_breakfast: Zimmer mit Frühstück
