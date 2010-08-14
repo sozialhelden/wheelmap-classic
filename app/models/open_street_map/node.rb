@@ -35,12 +35,20 @@ class OpenStreetMap
       
     end
     
+    def attributes
+      attribs = {}
+      [:id, :lat, :lon, :version, :changeset, :user, :uid, :visible, :timestamp].each do |attribute|
+        attribs[attribute] = self.send(attribute)
+      end
+      attribs
+    end
+    
     def valid_states
       ['yes', 'no', 'limited']
     end
     
     def street=(value)
-      @type = tags['addr:street'] = value
+      @street = tags['addr:street'] = value
     end
     
     def name=(value)

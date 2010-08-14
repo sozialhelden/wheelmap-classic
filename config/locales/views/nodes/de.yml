@@ -3,12 +3,12 @@ de:
     update:
       flash:
         successfull: 'Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert.'
+        not_successfull: 'Oops, die Angaben sind noch unvollständig oder inkorrekt.'
     show:
       link:
         large_map: Ansicht vergrößern # Zoom in
         edit_node: Ort bearbeiten # Edit place
-      key:
-        wheelchair_description: 'Infos zur Barrierefreiheit:'
+        
     errors:
       not_found: Leider konnte die Seite nicht gefunden werden
       not_available: Leider steht diese Seite zur Zeit nicht zur Verfügung

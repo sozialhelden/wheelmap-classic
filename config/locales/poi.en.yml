@@ -12,7 +12,11 @@ en:
       shopping: Shopping
       accomodation: Accomodation
       misc: Misc
+      unknown: Unknown
     name:
+      unknown:
+        unknown: Unknown
+    
       subway: Subway
       ferry_terminal: 'Ferry Terminal'
       bus_stop: 'Bus stop'
