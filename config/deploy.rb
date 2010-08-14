@@ -251,12 +251,13 @@ after 'deploy:update_code', 'deploy:symlinking'
 
 namespace :deploy do
 
-  task( :start ) {}
+  task( :start ) { delayed_job.start}
 
-  task( :stop ) {}
+  task( :stop ) { delayed_job.stop}
 
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+    delayed_job.restart
   end
   
   # redefine deploy:symlink to create relative instead of absolute links
@@ -304,6 +305,24 @@ namespace :deploy do
       run "find #{asset_paths} -exec touch -t #{stamp} {} ';'; true", :env => { "TZ" => "UTC" }
     end
   end    
+end
+
+namespace :delayed_job do
+  
+  desc "Stop the delayed_job process"
+  task :stop, :roles => :app do
+    run "cd #{current_path};#{rails_env} script/delayed_job stop"
+  end
+
+  desc "Start the delayed_job process"
+  task :start, :roles => :app do
+    run "cd #{current_path};#{rails_env} script/delayed_job start"
+  end
+
+  desc "Restart the delayed_job process"
+  task :restart, :roles => :app do
+    run "cd #{current_path};#{rails_env} script/delayed_job restart"
+  end
 end
 
 namespace :rocket_rentals do
