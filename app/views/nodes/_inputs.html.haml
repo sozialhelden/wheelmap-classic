@@ -1,6 +1,5 @@
 - form.inputs :name => t('formtastic.titles.basic'), :id => 'basic' do
-  = form.input :k, :as => :hidden, :input_html => {:value => 'name'}, :name => 'node[tag][][k]'
-  = form.input :name, :input_html => {:value => @node.tags['name'], :id => 'node-tag-name', :name => 'node[tag][][v]'}
+  = form.input :name
 
   = form.input :wheelchair, :as => :select, :collection => options_for_wheelchair_status, :include_blank => false
 
@@ -21,20 +20,14 @@
   =form.input :visible, :as => :hidden
 
 - form.inputs :name => t('formtastic.titles.optional'), :id => 'optional' do
-  = form.input :k, :as => :hidden, :input_html => {:value => 'addr:street'}, :name => 'node[tag][][k]'
-  = form.input :street, :required => false, :input_html => {:id => 'node-tag-street', :name => 'node[tag][][v]'}
+  = form.input :street, :required => false
 
-  = form.input :k, :as => :hidden, :input_html => {:value => 'addr:housenumber'}, :name => 'node[tag][][k]'
-  = form.input :housenumber, :required => false, :input_html => {:id => 'node-tag-housenumber', :name => 'node[tag][][v]'}
+  = form.input :housenumber, :required => false
 
-  = form.input :k, :as => :hidden, :input_html => {:value => 'addr:postcode'}, :name => 'node[tag][][k]'
-  = form.input :postcode, :required => false, :input_html => {:id => 'node-tag-postcode', :name => 'node[tag][][v]'}
+  = form.input :postcode, :required => false
 
-  = form.input :k, :as => :hidden, :input_html => {:value => 'addr:city'}, :name => 'node[tag][][k]'
-  = form.input :city, :required => false, :input_html => {:id => 'node-tag-city', :name => 'node[tag][][v]'}
+  = form.input :city, :required => false
     
-  = form.input :k, :as => :hidden, :input_html => {:value => 'website'}, :name => 'node[tag][][k]'
-  = form.input :website, :required => false, :input_html => {:id => 'node-tag-website', :name => 'node[tag][][v]'}
+  = form.input :website, :required => false
     
-  = form.input :k, :as => :hidden, :input_html => {:value => 'phone'}, :name => 'node[tag][][k]'
-  = form.input :phone, :required => false, :input_html => {:id => 'node-tag-phone', :name => 'node[tag][][v]'}
+  = form.input :phone, :required => false
