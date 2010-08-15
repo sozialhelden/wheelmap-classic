@@ -155,8 +155,8 @@ class OpenStreetMap
       xml = Builder::XmlMarkup.new()
       xml.osm do
         xml.node(:id => id, :lat => lat, :lon => lon, :version => version, :changeset => changeset, :user => user, :uid => uid, :visible => visible, :timestamp => timestamp) do
-          tags.each do |t|
-            xml.tag(:k => t.first, :v => t.last)
+          tags.each do |key,value|
+            xml.tag(:k => key, :v => value) unless value.blank?
           end
         end
       end
