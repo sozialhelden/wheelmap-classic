@@ -58,26 +58,7 @@ describe 'OpenStreetMap::Node' do
     @json = JSON.parse(@node.to_json)
     @json['wheelchair'].should == 'yes'
   end
-  
-  it "should set changeset_id after editing wheelchair" do
-    @node.wheelchair.should == 'yes'
-    @node.changeset.should == '415641'
-    @node.set_wheelchair('no', '343434')
-    @node.changeset.should == '343434'
-  end
-  
-  it "should set owner after editing wheelchair" do
-    @node.user.should == 'bahnpirat'
-    @node.set_wheelchair('no', '343434')
-    @node.user.should == 'wheelmap_visitor'
-  end
-  
-  it "should set timestamp after editing wheelchair" do
-    @node.timestamp.should == Time.parse('2007-11-05T14:56:37Z')
-    @node.set_wheelchair('no', '343434')
-    @node.timestamp.should_not == '2007-11-05T14:56:37Z'
-  end
-  
+    
   it "should build valid object" do
     Factory.build(:node).should be_valid
   end

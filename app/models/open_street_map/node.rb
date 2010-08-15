@@ -26,12 +26,12 @@ class OpenStreetMap
       @type = (data['type'] || tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || tags['leisure'] || tags['shop'] || tags['tourism'] || tags['historic'] || tags['shop'])
       @wheelchair = tags['wheelchair'] = (data['wheelchair'] || tags['wheelchair'] || tags['hvv:barrier_free'] || 'unknown')
       @wheelchair_description = (data['wheelchair_description'] || tags['wheelchair_description'])
-      @street       = tags['addr:street']
-      @housenumber  = tags['addr:housenumber']
-      @zip_code     = tags['addr:postcode']
-      @city         = tags['addr:city']
-      @phone        = tags['phone']
-      @website     = tags['website']
+      self.street       = (data['street'] || tags['addr:street'])
+      self.housenumber  = (data['housenumber'] || tags['addr:housenumber'])
+      self.postcode     = (data['postcode'] || tags['addr:postcode'])
+      self.city         = (data['city'] || tags['addr:city'])
+      self.phone        = (data['phone'] || tags['phone'])
+      self.website      = (data['website'] || tags['website'])
       
     end
     
@@ -107,17 +107,6 @@ class OpenStreetMap
       tags['railway'] == 'station' or
       tags['railway'] == 'tram_stop' or
       tags['highway'] == 'bus_stop'
-    end
-    
-    def set_wheelchair(status, changeset_id)
-      if valid_states.include?(status)
-        self.wheelchair = status
-        @tags['wheelchair'] = status
-        @tags['wheelchair:source'] = "http://wheelmap.org"
-        self.changeset = changeset_id
-        self.timestamp = Time.now
-        self.user = 'wheelmap_visitor'
-      end
     end
     
     def to_param
