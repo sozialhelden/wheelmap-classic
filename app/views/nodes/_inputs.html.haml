@@ -1,20 +1,19 @@
 - form.inputs :name => t('formtastic.titles.basic'), :id => 'basic' do
-  - form.semantic_fields_for :tag do |tag|
-    = tag.input '][k', :as => :hidden, :input_html => {:value => 'name'}
-    = tag.input '][v', :label => t('formtastic.labels.name'), :required => false, :input_html => {:value => @node.tags['name'], :id => 'node-tag-name'}
-  %li.select.required#node-wheelchair-input{:class => error_message_on(@node, :wheelchair) ? 'error' : '' }
-    = form.label :wheelchair, :required => true
-    %select#node-wheelchair{:name => 'node[wheelchair]'}
-      = options_for_wheelchair_status(@node.wheelchair)        
+  = form.input :k, :as => :hidden, :input_html => {:value => 'name'}, :name => 'node[tag][][k]'
+  = form.input :name, :input_html => {:value => @node.tags['name'], :id => 'node-tag-name', :name => 'node[tag][][v]'}
+
+  = form.input :wheelchair, :as => :select, :collection => options_for_wheelchair_status, :include_blank => false
 
   = form.input :wheelchair_description, :required => false
-  %li.select.required#node-type-input{:class => error_message_on(@node, :type) ? 'error' : ''}
+  
+  %li.select.required#node-type-input
     = form.label :type, :required => true
     %select#node-type{:name => 'node[type]'}
       = render :partial => 'options_for_type', :object => inputs.type
+
   =form.input :id, :as => :hidden
-  =form.input :lon, :input_html =>{:readonly => 'readonly'}
-  =form.input :lat, :input_html =>{:readonly => 'readonly'}, :hint => true
+  =form.input :lon, :input_html =>{:readonly => 'readonly'}, :as => :numeric
+  =form.input :lat, :input_html =>{:readonly => 'readonly'}, :as => :numeric
   =form.input :version, :as => :hidden
   =form.input :changeset, :as => :hidden
   =form.input :user, :as => :hidden
@@ -22,21 +21,20 @@
   =form.input :visible, :as => :hidden
 
 - form.inputs :name => t('formtastic.titles.optional'), :id => 'optional' do
-  - form.semantic_fields_for :tag do |tag|
-    = tag.input '][k', :as => :hidden, :input_html => {:value => 'addr:street'}
-    = tag.input '][v', :label => t('formtastic.labels.street'), :required => false, :input_html => {:value => @node.tags['addr:street'], :id => 'node-tag-street'}
+  = form.input :k, :as => :hidden, :input_html => {:value => 'addr:street'}, :name => 'node[tag][][k]'
+  = form.input :street, :required => false, :input_html => {:id => 'node-tag-street', :name => 'node[tag][][v]'}
+
+  = form.input :k, :as => :hidden, :input_html => {:value => 'addr:housenumber'}, :name => 'node[tag][][k]'
+  = form.input :housenumber, :required => false, :input_html => {:id => 'node-tag-housenumber', :name => 'node[tag][][v]'}
+
+  = form.input :k, :as => :hidden, :input_html => {:value => 'addr:postcode'}, :name => 'node[tag][][k]'
+  = form.input :postcode, :required => false, :input_html => {:id => 'node-tag-postcode', :name => 'node[tag][][v]'}
+
+  = form.input :k, :as => :hidden, :input_html => {:value => 'addr:city'}, :name => 'node[tag][][k]'
+  = form.input :city, :required => false, :input_html => {:id => 'node-tag-city', :name => 'node[tag][][v]'}
     
-    = tag.input '][k', :as => :hidden, :input_html => {:value => 'addr:housenumber'}
-    = tag.input '][v', :label => t('formtastic.labels.housenumber'), :required => false, :input_html => {:value => @node.tags['addr:housenumber'], :id => 'node-tag-housenumber'}
+  = form.input :k, :as => :hidden, :input_html => {:value => 'website'}, :name => 'node[tag][][k]'
+  = form.input :website, :required => false, :input_html => {:id => 'node-tag-website', :name => 'node[tag][][v]'}
     
-    = tag.input '][k', :as => :hidden, :input_html => {:value => 'addr:postcode'}
-    = tag.input '][v', :label => t('formtastic.labels.postcode'), :required => false, :input_html => {:value => @node.tags['addr:postcode'], :id => 'node-tag-postcode'}
-    
-    = tag.input '][k', :as => :hidden, :input_html => {:value => 'addr:city'}
-    = tag.input '][v', :label => t('formtastic.labels.city'), :required => false, :input_html => {:value => @node.tags['addr:city'], :id => 'node-tag-city'}
-    
-    = tag.input '][k', :as => :hidden, :input_html => {:value => 'website'}
-    = tag.input '][v', :label => t('formtastic.labels.website'), :required => false, :input_html => {:value => @node.tags['website'], :id => 'node-tag-website'}, :hint => t('formtastic.hints.website')
-    
-    = tag.input '][k', :as => :hidden, :input_html => {:value => 'phone'}
-    = tag.input '][v', :label => t('formtastic.labels.phone'), :required => false, :input_html => {:value => @node.tags['phone'], :id => 'node-tag-phone'}, :hint => t('formtastic.hints.phone')
+  = form.input :k, :as => :hidden, :input_html => {:value => 'phone'}, :name => 'node[tag][][k]'
+  = form.input :phone, :required => false, :input_html => {:id => 'node-tag-phone', :name => 'node[tag][][v]'}
