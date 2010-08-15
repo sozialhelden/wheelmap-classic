@@ -251,13 +251,12 @@ after 'deploy:update_code', 'deploy:symlinking'
 
 namespace :deploy do
 
-  task( :start ) { delayed_job.start}
+  task( :start ) {}
 
-  task( :stop ) { delayed_job.stop}
+  task( :stop ) {}
 
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-    delayed_job.restart
   end
   
   # redefine deploy:symlink to create relative instead of absolute links
