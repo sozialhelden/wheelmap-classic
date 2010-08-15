@@ -1,5 +1,5 @@
 %optgroup{:label => t("poi.category.unknown"), :class => "category unknown"}
-  %option{:label => t("poi.name.unknown.unknown"), :value => nil, :disabled => :disabled }>
+  %option{:label => t("poi.name.unknown.unknown"), :value => nil, :disabled => :disabled}>
     =t("poi.name.unknown.unknown")
 - Amenities.keys.sort_by{|key| I18n.t("poi.category.#{key}")}.each do |category|
   %optgroup{:label => t("poi.category.#{category}"), :class => "category #{category}"}
