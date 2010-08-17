@@ -45,7 +45,7 @@ class OpenStreetMap
     RAILS_DEFAULT_LOGGER.debug "Old version: #{node.version}"
     RAILS_DEFAULT_LOGGER.debug "Old changeset: #{node.changeset}"
     RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
-    changeset_id = create_changeset
+    changeset_id = create_changeset("Modified node on wheelmap.org")
     RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
     node.changeset = changeset_id
     RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
@@ -138,7 +138,7 @@ class OpenStreetMap
   # Returns the id of the newly created node
   def create_node(node)
     RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
-    changeset_id = create_changeset
+    changeset_id = create_changeset("Created new node on wheelmap.org")
     RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
     node.changeset = changeset_id
     RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
@@ -166,10 +166,10 @@ class OpenStreetMap
     response.body
   end
   
-  def create_changeset
+  def create_changeset(comment="Modify accessibility status for node")
     RAILS_DEFAULT_LOGGER.debug("OpenStreetMap#create_changeset")
     url = request_uri('/changeset/create')
-    response = put(url, :body => '<osm><changeset><tag k="created_by" v="wheelmap.org"/><tag k="comment" v="Modify accessibility status for node"/></changeset></osm>')
+    response = put(url, :body => "<osm><changeset><tag k='created_by' v='wheelmap.org'/><tag k='comment' v='#{comment}'/></changeset></osm>")
     self.class.raise_errors(response)
     response.body.to_i
   end
