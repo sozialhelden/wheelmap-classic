@@ -23,7 +23,7 @@ class OpenStreetMap
       @changeset = data['changeset']
       @version = data['version'].to_i
       @timestamp = Time.parse(data['timestamp']) rescue Time.now
-      @type = (data['type'] || tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || tags['leisure'] || tags['shop'] || tags['tourism'] || tags['historic'] || tags['shop'])
+      self.type = (data['type'] || tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || tags['leisure'] || tags['shop'] || tags['tourism'] || tags['historic'] || tags['shop'])
       @wheelchair = tags['wheelchair'] = (data['wheelchair'] || tags['wheelchair'] || tags['hvv:barrier_free'] || 'unknown')
       @wheelchair_description = (data['wheelchair_description'] || tags['wheelchair_description'])
       self.street       = (data['street'] || tags['addr:street'])
@@ -111,6 +111,7 @@ class OpenStreetMap
     
     def type=(value)
       @type = value
+      return if value.blank?
       v = value.to_sym
       if Tags.has_key?(value.to_sym)
         k = Tags[v]
