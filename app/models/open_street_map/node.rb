@@ -109,6 +109,16 @@ class OpenStreetMap
       tags['highway'] == 'bus_stop'
     end
     
+    def type=(value)
+      @type = value
+      v = value.to_sym
+      if Tags.has_key?(value.to_sym)
+        k = Tags[v]
+        tags[k] = v
+      end
+      @type
+    end
+
     def to_param
       id.to_s
     end
@@ -130,7 +140,7 @@ class OpenStreetMap
       end
       nil
     end
-    
+
     # <node id='78252182' lat='52.5220063' lon='13.4006779' version='4' changeset='2883406' user='gkai' uid='74224' visible='true' timestamp='2009-10-18T14:16:48Z'>
     #   <tag k='amenity' v='post_box'/>
     #   <tag k='collection_times' v='Mo-Fr 15:00,17:00,21:15; Sa 16:00; Su 10:45,21:15'/>
