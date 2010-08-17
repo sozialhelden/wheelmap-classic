@@ -57,10 +57,10 @@ de:
         theatre: Theater
         zoo: Zoo
       misc:
-        doctor: Arzt
+        doctors: Arzt
         hospital: Krankenhaus
         pharmacy: Apotheke
-        places_of_worship: Religöser Ort
+        place_of_worship: Religöser Ort
         toilets: Öffentliche Toilette
         veterinary: Tierarzt
       money_post:
