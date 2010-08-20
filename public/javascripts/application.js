@@ -87,36 +87,6 @@ function defaultControls(){
   ]
 }
 
-
-// function toggleLayers(type, show) {
-//   var visibility = false;
-//   visibility = typeof(show) == 'undefined' ? !$('.' + type).parent().hasClass('visible') : show;
-//   $('.' + type).parent().removeClass(visibility ? 'hidden' : 'visible').addClass(visibility ? 'visible' : 'hidden');
-//   typeVisibilities[type].display = visibility ? 'block' : 'none';
-//   add_or_remove_type_from_object_types(type, visibility);
-//   showStates();
-//   return false;
-// }
-
-// function add_or_remove_type_from_object_types(type, add){
-//   
-//   if(add == true){
-//     if(!object_types_contains(type)){
-//       object_types.push(type);
-//       loadPlaces();
-//     }
-//   }else{
-//     if(object_types_contains(type) == true){      
-//       index = object_types.indexOf(type);
-//       object_types.splice(index,1);
-//     }
-//   }
-// }
-
-// function object_types_contains(type){
-//   return (object_types.indexOf(type) != -1)
-// }
-
 function mapBBOX() {
   var box = map.getExtent().clone();
   var latlon = map.getLonLatFromViewPortPx({ x: 380, y: 80 });

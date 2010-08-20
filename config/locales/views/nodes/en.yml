@@ -4,6 +4,11 @@ en:
       flash:
         successfull: 'Thank you, the submission was saved successfully and will be online shortly.'
         not_successfull: 'Oops, your input was either uncorrect or uncomplete.'
+    create:
+      flash:
+        successfull: 'Thank you, the submission was saved successfully and will be online shortly.'
+        not_successfull: 'Oops, your input was either uncorrect or uncomplete.'
+      
     show:
       link:
         large_map: Enlarge

@@ -57,7 +57,6 @@ $(function() {
     if (element.attr('class')) {
       jumpTo(element.attr('data-lon') * 1.0, element.attr('data-lat') * 1.0, zoom);
       loadPlaces();
-      toggleLayers(element.attr('class'), true);
     }
     return false;
   });
