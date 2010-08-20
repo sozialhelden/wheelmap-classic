@@ -39,7 +39,7 @@ class NodesController < ApplicationController
   end
 
   def update
-    @node = OpenStreetMap::Node.new(params[:node])
+    @node = OpenStreetMap::Node.new(params[:node].stringify_keys!)
     if @node.valid?
       client = OpenStreetMap::BasicAuthClient.new(current_user.osm_username, current_user.osm_password) if current_user.basic_authorized?
       client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.oauth_authorized?
