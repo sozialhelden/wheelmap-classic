@@ -40,6 +40,22 @@ class OpenStreetMap
       node
     end
   end
+
+  # Create a new node by calling the OSM API
+  # Returns the id of the newly created node
+  def create_node(node)
+    RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
+    changeset_id = create_changeset("Created new node on wheelmap.org")
+    RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
+    node.changeset = changeset_id
+    RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
+    RAILS_DEFAULT_LOGGER.debug node.inspect
+    RAILS_DEFAULT_LOGGER.debug node.to_xml
+    node_id = create(node)
+    RAILS_DEFAULT_LOGGER.debug "Node id: #{node_id}"
+    close_changeset(changeset_id)
+    get_node(node_id)
+  end
   
   def update_node(node)
     RAILS_DEFAULT_LOGGER.debug "Old version: #{node.version}"
@@ -113,43 +129,7 @@ class OpenStreetMap
     raise_errors(response)
     node = OpenStreetMap::Node.new(response['osm']['node'])
   end
-  
-  # This requires a multistep 
-  # def self.update_node(node, oauth=nil)
-  #   RAILS_DEFAULT_LOGGER.debug "Fetching node: #{node.id} ..."
-  #   if (node = get_node(node.id))
-  #     RAILS_DEFAULT_LOGGER.debug "Old version: #{node.version}"
-  #     RAILS_DEFAULT_LOGGER.debug "Old changeset: #{node.changeset}"
-  #     RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
-  #     changeset_id = create_changeset
-  #     RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
-  #     node.changeset = changeset_id
-  #     RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
-  #     RAILS_DEFAULT_LOGGER.debug node.inspect
-  #     RAILS_DEFAULT_LOGGER.debug node.to_xml
-  #     new_version = update(node)
-  #     RAILS_DEFAULT_LOGGER.debug "New version: #{new_version}"
-  #     close_changeset(changeset_id)
-  #   end
-  # end
-  
 
-  # Create a new node by calling the OSM API
-  # Returns the id of the newly created node
-  def create_node(node)
-    RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
-    changeset_id = create_changeset("Created new node on wheelmap.org")
-    RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
-    node.changeset = changeset_id
-    RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
-    RAILS_DEFAULT_LOGGER.debug node.inspect
-    RAILS_DEFAULT_LOGGER.debug node.to_xml
-    node_id = create(node)
-    RAILS_DEFAULT_LOGGER.debug "Node id: #{node_id}"
-    close_changeset(changeset_id)
-    get_node(node_id)
-  end
-  
   private
   
   def create(node)

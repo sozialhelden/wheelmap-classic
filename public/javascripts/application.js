@@ -228,9 +228,14 @@ function createPlacesLayer(style) {
     "Places ",
     {
       styleMap: style,
+      projection: new OpenLayers.Projection("EPSG:4326"),
       rendererOptions: { yOrdering: true },
-      // strategies: [clusterStrategy()],
-      visibility: true
+      // strategies: [new OpenLayers.Strategy.BBOX()],
+      // protocol: new OpenLayers.Protocol.HTTP({
+      //   url:  "nodes.js",
+      //   format: new OpenLayers.Format.JSON()
+      // }),
+      visibility: true,
     });
     
   map.addLayer(places);
