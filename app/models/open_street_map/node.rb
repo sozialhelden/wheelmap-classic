@@ -87,7 +87,7 @@ class OpenStreetMap
       tees = {}
       # this just happens, because a single k=>v pair is not wrapped in an array by default
       [data['tag']].flatten.compact.each do |tag_hash|
-        key = tag_hash['k']
+        key = tag_hash['k'].to_s
         value = tag_hash['v']
         tees[key] = value
       end
@@ -112,10 +112,10 @@ class OpenStreetMap
     def type=(value)
       @type = value
       return if value.blank?
-      v = value.to_sym
-      if Tags.has_key?(value.to_sym)
+      v = value.to_s
+      if Tags.has_key?(v)
         k = Tags[v]
-        tags[k] = v
+        tags[k.to_s] = v
       end
       @type
     end
