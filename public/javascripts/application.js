@@ -67,10 +67,8 @@ function drawmap(controls, element) {
     units: 'm'
   });
   
-  // mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", { displayClass:'olMap', opacity:1.0, transitionEffect:'resize', numZoomLevels: 19});
+  mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", { displayClass:'olMap', opacity:1.0, transitionEffect:'resize', numZoomLevels: 19});
   
-  mapnik = new OpenLayers.Layer.CloudMade("Mapnik", { displayClass:'olMap', opacity:1.0, key: 'ff94b6ad4b174d648b9c491706f13579', styleId: 8204});
-
   // Use for offline mode
   // mapnik = new OpenLayers.Layer.OSM("Mapnik", 'http://wheelmap.local/images/tiles/${z}/${x}/${y}.png' ,{displayClass:'olMap', opacity:0.5, transitionEffect:'resize', numZoomLevels: 19});
   

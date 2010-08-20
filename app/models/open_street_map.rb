@@ -195,25 +195,33 @@ class OpenStreetMap
     case response.code.to_i
       when 400
         data = response.body
+        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data['error'] if data}")
         raise BadRequest.new(data), "(#{response.code}): #{response.message} - #{data['error'] if data}"
       when 404
         data = response.body
+        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data['error'] if data}")
         raise NotFound.new(data), "(#{response.code}): #{response.message}"
       when 405
         data = response.body
+        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data['error'] if data}")
         raise MethodNotAllowed.new(data), "(#{response.code}): #{response.message}"
       when 409
         data = response.body
+        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data['error'] if data}")
         raise Conflict.new(data), "(#{response.code}): #{response.message} - #{data['error'] if data}"
       when 410
         data = response.body
+        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data['error'] if data}")
         raise Gone.new(data), "(#{response.code}): #{response.message} - #{data['error'] if data}"
       when 412
         data = response.body
+        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data['error'] if data}")
         raise Precondition.new(data), "(#{response.code}): #{response.message} - #{data['error'] if data}"
       when 500
+        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message}")
         raise Unavailable, "(#{response.code}): #{response.message}"
       when 502..503
+        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message}")
         raise Unavailable, "(#{response.code}): #{response.message}"
     end
   end
