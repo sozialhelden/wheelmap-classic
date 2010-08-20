@@ -65,8 +65,10 @@ class NodesController < ApplicationController
   def create
     @node = OpenStreetMap::Node.new(params[:node])
     if @node.valid?
-      Delayed::Job.enqueue(CreatingJob.new(params[:node], default_user.id))
-      flash[:notice] = I18n.t('node.create.success')
+      client = OpenStreetMap::BasicAuthClient.new(current_user.osm_username, current_user.osm_password) if current_user.basic_authorized?
+      client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.oauth_authorized?
+      Delayed::Job.enqueue(CreatingJob.new(@node, client))
+      flash[:notice] = I18n.t('nodes.create.flash.successfull')
       redirect_to root_path
     else
       render :action => :new, :lat => @node.lat, :lon => @node.lon
