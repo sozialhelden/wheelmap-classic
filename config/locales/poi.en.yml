@@ -5,14 +5,18 @@ en:
       food: Food
       leisure: Leisure
       government: Government
-      money_post: 'Bank & Post'
+      money_post: 'Bank &amp; Post'
       education: Education
       tourism: Tourism
       sport: Sport
       shopping: Shopping
       accomodation: Accomodation
       misc: Misc
+      unknown: Unknown
     name:
+      unknown:
+        unknown: Unknown
+    
       subway: Subway
       ferry_terminal: 'Ferry Terminal'
       bus_stop: 'Bus stop'

@@ -51,7 +51,6 @@ $(function() {
   $('#categories input').click(function() {
     var category = this.id.replace(/category-/, '').replace(/-/, '_')
     categories[category] = this.checked;
-    console.log(categories);
     showStates();
   })
 });

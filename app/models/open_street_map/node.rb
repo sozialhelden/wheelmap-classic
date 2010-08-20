@@ -3,13 +3,13 @@ class OpenStreetMap
   class Node
     include Validatable
     include ActiveSupport::CoreExtensions::Hash::Keys
-    attr_accessor :lat, :lon, :user, :uid, :changeset, :uid, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair, :wheelchair_description, :street, :postcode, :country, :housenumber, :city, :url, :phone, :tag
+    attr_accessor :lat, :lon, :user, :uid, :changeset, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair, :wheelchair_description, :street, :postcode, :country, :housenumber, :city, :website, :phone, :tag
     attr_accessor_with_default :changed, false
 
     validates_presence_of :name, :wheelchair, :type, :message => I18n.t('errors.messages.empty')
-    validates_numericality_of :lat, :lon, :message => I18n.t('errors.messages.not_a_number')
-    validates_true_for :lat, :lon, :logic => lambda { !lat.to_f.zero? }, :message => I18n.t('errors.messages.greater_than', :count => 0.0)
-    validates_format_of :url, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true, :message => I18n.t('errors.messages.invalid')
+    #validates_numericality_of :lat, :lon, :only_integer => false, :message => I18n.t('errors.messages.not_a_number')
+    #validates_true_for :lat, :lon, :logic => lambda { !lat.to_f.zero? }, :message => I18n.t('errors.messages.greater_than', :count => 0.0)
+    validates_format_of :website, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true, :message => I18n.t('errors.messages.invalid')
 
     def initialize(input={})
       data = input.stringify_keys
@@ -23,16 +23,24 @@ class OpenStreetMap
       @changeset = data['changeset']
       @version = data['version'].to_i
       @timestamp = Time.parse(data['timestamp']) rescue Time.now
-      @type = (data['type'] || tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || tags['leisure'] || tags['shop'] || tags['tourism'] || tags['historic'])
-      @wheelchair = (data['wheelchair'] || tags['wheelchair'] || tags['hvv:barrier_free'] || 'unknown')
+      self.type = (data['type'] || tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || tags['leisure'] || tags['shop'] || tags['tourism'] || tags['historic'] || tags['shop'])
+      @wheelchair = tags['wheelchair'] = (data['wheelchair'] || tags['wheelchair'] || tags['hvv:barrier_free'] || 'unknown')
       @wheelchair_description = (data['wheelchair_description'] || tags['wheelchair_description'])
-      @street       = tags['addr:street'] = data['street'] if data['street']
-      @housenumber  = tags['addr:housenumber'] = data['housenumber'] if data['housenumber']
-      @zip_code     = tags['addr:postcode'] = data['postcode'] if data['postcode']
-      @city         = tags['addr:city'] = data['city'] if data['city']
-      @phone        = tags['contact:phone'] = data['phone'] if data['phone']
-      @url          = tags['contact:website'] = data['url'] if data['url']
+      self.street       = (data['street'] || tags['addr:street'])
+      self.housenumber  = (data['housenumber'] || tags['addr:housenumber'])
+      self.postcode     = (data['postcode'] || tags['addr:postcode'])
+      self.city         = (data['city'] || tags['addr:city'])
+      self.phone        = (data['phone'] || tags['phone'])
+      self.website      = (data['website'] || tags['website'])
       
+    end
+    
+    def attributes
+      attribs = {}
+      [:id, :lat, :lon, :version, :changeset, :user, :uid, :visible, :timestamp].each do |attribute|
+        attribs[attribute] = self.send(attribute)
+      end
+      attribs
     end
     
     def valid_states
@@ -40,7 +48,7 @@ class OpenStreetMap
     end
     
     def street=(value)
-      @type = tags['addr:street'] = value
+      @street = tags['addr:street'] = value
     end
     
     def name=(value)
@@ -68,18 +76,18 @@ class OpenStreetMap
     end
     
     def phone=(value)
-      @phone = tags['contact:phone'] = value
+      @phone = tags['phone'] = value
     end
     
-    def url=(value)
-      @url = tags['contact:website'] = value
+    def website=(value)
+      @website = tags['website'] = value
     end
     
     def extract_tags(data)
       tees = {}
       # this just happens, because a single k=>v pair is not wrapped in an array by default
       [data['tag']].flatten.compact.each do |tag_hash|
-        key = tag_hash['k']
+        key = tag_hash['k'].to_s
         value = tag_hash['v']
         tees[key] = value
       end
@@ -101,17 +109,17 @@ class OpenStreetMap
       tags['highway'] == 'bus_stop'
     end
     
-    def set_wheelchair(status, changeset_id)
-      if valid_states.include?(status)
-        self.wheelchair = status
-        @tags['wheelchair'] = status
-        @tags['wheelchair:source'] = "http://wheelmap.org"
-        self.changeset = changeset_id
-        self.timestamp = Time.now
-        self.user = 'wheelmap_visitor'
+    def type=(value)
+      @type = value
+      return if value.blank?
+      v = value.to_s
+      if Tags.has_key?(v)
+        k = Tags[v]
+        tags[k.to_s] = v
       end
+      @type
     end
-    
+
     def to_param
       id.to_s
     end
@@ -133,7 +141,7 @@ class OpenStreetMap
       end
       nil
     end
-    
+
     # <node id='78252182' lat='52.5220063' lon='13.4006779' version='4' changeset='2883406' user='gkai' uid='74224' visible='true' timestamp='2009-10-18T14:16:48Z'>
     #   <tag k='amenity' v='post_box'/>
     #   <tag k='collection_times' v='Mo-Fr 15:00,17:00,21:15; Sa 16:00; Su 10:45,21:15'/>
@@ -147,8 +155,8 @@ class OpenStreetMap
       xml = Builder::XmlMarkup.new()
       xml.osm do
         xml.node(:id => id, :lat => lat, :lon => lon, :version => version, :changeset => changeset, :user => user, :uid => uid, :visible => visible, :timestamp => timestamp) do
-          tags.each do |t|
-            xml.tag(:k => t.first, :v => t.last)
+          tags.each do |key,value|
+            xml.tag(:k => key, :v => value) unless value.blank?
           end
         end
       end

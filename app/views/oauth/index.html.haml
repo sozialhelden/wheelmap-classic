@@ -1,5 +1,5 @@
 #oauth
-  - if current_user.application_authorized?
+  - if current_user.oauth_authorized?
     = render :partial => 'revoke_access'
   - else
     = render :partial => 'grant_access'

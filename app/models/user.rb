@@ -8,12 +8,16 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :case_sensitive => false
   validates_presence_of :email
   
-  def application_authorized?
+  def oauth_authorized?
     (oauth_token && oauth_secret)
   end
   
+  def basic_authorized?
+    (osm_username && osm_password)
+  end
+  
   def access_token
-    if application_authorized?
+    if oauth_authorized?
       consumer = OAuth::Consumer.new(OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret, :site => OpenStreetMapConfig.oauth_site)
       access_token = OAuth::AccessToken.new(consumer, oauth_token, oauth_secret)
     end
