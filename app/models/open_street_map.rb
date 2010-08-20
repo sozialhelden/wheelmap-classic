@@ -54,7 +54,7 @@ class OpenStreetMap
     node_id = create(node)
     RAILS_DEFAULT_LOGGER.debug "Node id: #{node_id}"
     close_changeset(changeset_id)
-    get_node(node_id)
+    self.class.get_node(node_id)
   end
   
   def update_node(node)
