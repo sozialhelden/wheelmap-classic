@@ -713,17 +713,31 @@ header #searchbar .or-add-place {
 }
 
 /* line 95, ../../app/stylesheets/basics/_header.sass */
-#search-result {
+#searchresult {
   background: white;
   border: 1px solid #cccccc;
-  display: block;
-  height: 180px;
-  left: 373px;
+  display: none;
+  height: 0px;
+  left: 367px;
+  padding: 10px;
   overflow-y: auto;
   position: absolute;
   top: 105px;
-  width: 500px;
+  width: 40%;
   z-index: 99999;
+  background-color: rgba(255, 255, 255, 0.9);
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -khtml-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+}
+/* line 112, ../../app/stylesheets/basics/_header.sass */
+#searchresult li {
+  overflow: hidden;
 }
 
 /* line 1, ../../app/stylesheets/basics/_nav.sass */

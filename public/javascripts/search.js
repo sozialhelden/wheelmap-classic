@@ -7,7 +7,7 @@ $(function() {
     var xml = $(data.responseXML),
         places = xml.find('place');
     
-    list.html('').animate({ height: 20 * (places.length || 1) + 'px' }, function() { list.removeClass('loading'); });
+    list.html('').animate({ height: 26 * (places.length || 1) + 'px' }, function() { list.removeClass('loading'); });
     
     if (places.length == 0) {
       list.append('<li>Leider nichts gefunden</li>');
