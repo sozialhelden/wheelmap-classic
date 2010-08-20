@@ -1,13 +1,10 @@
-class UpdatingJob < Struct.new(:node, :user_id)
+class UpdatingJob < Struct.new(:node, :client)
   
   def perform
-    user = User.find(user_id)
-    if user.application_authorized?
-      oauth = OpenStreetMap::Oauth.new(user.access_token)
-      OpenStreetMap.update_node(node, oauth)
-    else
-      OpenStreetMap.update_node(node)
-    end
+    old_node = OpenStreetMap.get_node(node.id)
+    node.tags.reverse_merge!(old_node.tags)
+    osm = OpenStreetMap.new(client)
+    osm.update_node(node)
   end
   
   def on_permanent_failure

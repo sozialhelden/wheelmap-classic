@@ -1,21 +1,16 @@
 en:
   nodes:
+    update:
+      flash:
+        successfull: 'Thank you, the submission was saved successfully and will be online shortly.'
+        not_successfull: 'Oops, your input was either uncorrect or uncomplete.'
     show:
       link:
         large_map: Enlarge
         edit_node: Edit place
-      key:
-        wheelchair: 'Wheelchair accessibility:'
-        wheelchair_description: 'Accessibility comment:'
-        category: 'Category:'
-        city: 'City:'
-        telephone: 'Telephone:'
-        street: 'Street:'
-        zip_code: 'Zip code:'
-        type: 'Type:'
-        website: 'Website:'
-      
+             
     errors:
-      not_found: Sorry, page not found.
-      not_available: Sorry, this page is temporarily not available.
-      not_existent: Sorry, this place is not available anymore.
+      not_found: "Sorry, page not found."
+      not_available: "Sorry, this page is temporarily not available."
+      not_existent: "Sorry, this place is not available anymore."
+      not_authorized: "Sorry, authentication failed"

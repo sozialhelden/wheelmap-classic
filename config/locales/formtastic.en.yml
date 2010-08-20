@@ -23,10 +23,11 @@ en:
       osm_username: OSM-Mitgliedsname
       osm_password: OSM-Passwort
     hints:
-      url: 'Beispiel: http://www.example.com'
+      lon: 'Bewegen Sie den Marker auf der Karte an den richtigen Ort'
+      osm_username: 'Noch nicht Mitglied? <a href="http://openstreetmap.org/user/new" target="_blank">Openstreetmap Benutzerkonto anlegen</a>'
       phone: 'Beispiel: +49 30 123456-78'
       password: '(leer lassen, wenn du es nicht ändern möchtest)'
-      osm_username: 'Noch nicht Mitglied? <a href="http://openstreetmap.org/user/new" target="_blank">Openstreetmap Benutzerkonto anlegen</a>'
+      website: 'Beispiel: http://www.example.com'
   errors:
     messages:
       inclusion: "ist kein gültiger Wert"

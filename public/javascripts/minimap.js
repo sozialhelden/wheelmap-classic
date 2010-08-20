@@ -18,15 +18,14 @@ $.each(amenitiesGrouped, function(i, group) {
   amenities = $.merge(amenities, group);
 });
 
+var states = {
+  yes: true,
+  no: true,
+  limited: true,
+  unknown: true
+};
 
-var typeVisibilities = {};
-$.each(amenities, function(i, type) {
-  typeVisibilities[type] = { display: 'none' };
-});
-$.each(object_types, function(i, type) {
-  // alert(type);
-  typeVisibilities[type].display = 'block';
-});
+var counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
 
 
 drawmap(defaultControls(), 'minimap');

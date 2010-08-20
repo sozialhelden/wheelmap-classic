@@ -1,7 +1,7 @@
 %h1
   = "Hello #{@user.email}"
   
-- if @user.application_authorized?
+- if @user.oauth_authorized?
   %p
     You have successfully authorized wheelmap to use your osm account
     %br

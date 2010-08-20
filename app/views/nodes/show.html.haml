@@ -18,7 +18,7 @@
   %tr
     
     %th=t('formtastic.labels.wheelchair')
-    %td= @node.wheelchair
+    %td= t("wheelchairstatus.#{@node.wheelchair}")
       
       
   -if @node.wheelchair_description
@@ -41,7 +41,7 @@
     %th=t('formtastic.labels.type')
     %td
       - if @node.type
-        = t("poi.name.#{@node.type}")
+        = t("poi.name.#{@node.category}.#{@node.type}")
       -else
         &nbsp;
   %tr
@@ -69,9 +69,9 @@
 
 
 - content_for :breadcrumbs do
-  = link_to t('breadcrumbs.root'), root_path
-  = link_to 'Deutschland', root_path
-  = link_to 'Berlin', root_path, :class => 'last'
+  -#= link_to t('breadcrumbs.root'), root_path
+  -#= link_to 'Deutschland', root_path
+  -#= link_to 'Berlin', root_path, :class => 'last'
 
 - content_for :javascript do
   :javascript

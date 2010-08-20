@@ -5,7 +5,7 @@ de:
       optional: 'Mehr Infos <span class="addition">(alle Felder sind optional)</span>'
     labels:
       save: Speichern
-      name: 'Name des Platzes:'
+      name: 'Name des Ortes:'
       type: 'Typ:'
       wheelchair: Rollstuhlgerecht?
       wheelchair_description: 'Info zu Barrierefreiheit:'
@@ -26,10 +26,11 @@ de:
       osm_username: OSM-Mitgliedsname
       osm_password: OSM-Passwort
     hints:
-      url: 'Beispiel: http://www.example.com'
+      lat: 'Bewegen Sie den Marker auf der Karte'
+      osm_username: 'Noch nicht Mitglied? <a href="http://openstreetmap.org/user/new" target="_blank">Openstreetmap Benutzerkonto anlegen</a>'
       phone: 'Beispiel: +49 30 123456-78'
       password: '(leer lassen, wenn du es nicht ändern möchtest)'
-      osm_username: 'Noch nicht Mitglied? <a href="http://openstreetmap.org/user/new" target="_blank">Openstreetmap Benutzerkonto anlegen</a>'
+      website: 'Beispiel: http://www.example.com'
   errors:
     messages:
       inclusion: "ist kein gültiger Wert"

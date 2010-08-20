@@ -2,7 +2,7 @@ class NodesController < ApplicationController
   
   skip_before_filter :verify_authenticity_token
   
-  before_filter :authenticate_user!,              :only => [:create, :new, :edit]
+  before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update]
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
   before_filter :check_create_params,             :only => :create
@@ -19,6 +19,7 @@ class NodesController < ApplicationController
     @places = OpenStreetMap.nodes(params[:bbox],params[:object_types])
     # @places = Cloudmade.nodes(params[:bbox],params[:object_types])
     respond_to do |wants|
+      wants.js{ render :json => @places }
       wants.json{ render :json => @places }
       wants.html{ redirect_to root_path }
     end
@@ -29,7 +30,8 @@ class NodesController < ApplicationController
   end
   
   def update_wheelchair
-    Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], :wheelchair => params[:wheelchair]))
+    client = OpenStreetMap::BasicAuthClient.new(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
+    Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], client, :wheelchair => params[:wheelchair]))
     respond_to do |wants|
       wants.js{ render :text => 'OK' }
       wants.html{ render :text => 'OK' }
@@ -37,13 +39,11 @@ class NodesController < ApplicationController
   end
 
   def update
-    @node = OpenStreetMap.get_node(params[:id])
-    node_hash = params[:node]
-    node_hash.each do |key,value|
-      @node.send("#{key}=", value)
-    end
+    @node = OpenStreetMap::Node.new(params[:node].stringify_keys!)
     if @node.valid?
-      Delayed::Job.enqueue(UpdatingJob.new(@node, default_user.id))
+      client = OpenStreetMap::BasicAuthClient.new(current_user.osm_username, current_user.osm_password) if current_user.basic_authorized?
+      client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.oauth_authorized?
+      Delayed::Job.enqueue(UpdatingJob.new(@node, client))
       respond_to do |wants|
         wants.js{ render :text => 'OK' }
         wants.html{
@@ -54,16 +54,21 @@ class NodesController < ApplicationController
     else
       respond_to do |wants|
         wants.js{ render :text => 'FAIL', :status => 406 }
-        wants.html{ render :action => :edit }
+        wants.html{
+          flash[:error] = I18n.t('nodes.update.flash.not_successfull')
+          render :action => :edit
+        }
       end
     end
   end
   
   def create
-    @node = OpenStreetMap::Node.new(params[:node])
+    @node = OpenStreetMap::Node.new(params[:node].stringify_keys!)
     if @node.valid?
-      Delayed::Job.enqueue(CreatingJob.new(params[:node], default_user.id))
-      flash[:notice] = I18n.t('node.create.success')
+      client = OpenStreetMap::BasicAuthClient.new(current_user.osm_username, current_user.osm_password) if current_user.basic_authorized?
+      client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.oauth_authorized?
+      Delayed::Job.enqueue(CreatingJob.new(@node, client))
+      flash[:notice] = I18n.t('nodes.create.flash.successfull')
       redirect_to root_path
     else
       render :action => :new, :lat => @node.lat, :lon => @node.lon
@@ -76,6 +81,7 @@ class NodesController < ApplicationController
   
   def edit
     @node = OpenStreetMap.get_node(params[:id])
+    RAILS_DEFAULT_LOGGER.debug("UID: #{@node.uid}")
   end
 
   # Before filter
