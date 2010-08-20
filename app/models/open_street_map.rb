@@ -44,17 +44,21 @@ class OpenStreetMap
   # Create a new node by calling the OSM API
   # Returns the id of the newly created node
   def create_node(node)
+    node_id = nil
     RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
     changeset_id = create_changeset("Created new node on wheelmap.org")
     RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
-    node.changeset = changeset_id
-    RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
-    RAILS_DEFAULT_LOGGER.debug node.inspect
-    RAILS_DEFAULT_LOGGER.debug node.to_xml
-    node_id = create(node)
-    RAILS_DEFAULT_LOGGER.debug "Node id: #{node_id}"
-    close_changeset(changeset_id)
-    self.class.get_node(node_id)
+    begin
+      node.changeset = changeset_id
+      RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
+      RAILS_DEFAULT_LOGGER.debug node.inspect
+      RAILS_DEFAULT_LOGGER.debug node.to_xml
+      node_id = create(node)
+      RAILS_DEFAULT_LOGGER.debug "Node id: #{node_id}"
+    ensure
+      close_changeset(changeset_id) if changeset_id
+    end
+    self.class.get_node(node_id) if node_id
   end
   
   def update_node(node)
@@ -63,13 +67,16 @@ class OpenStreetMap
     RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
     changeset_id = create_changeset("Modified node on wheelmap.org")
     RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
-    node.changeset = changeset_id
-    RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
-    RAILS_DEFAULT_LOGGER.debug node.inspect
-    RAILS_DEFAULT_LOGGER.debug node.to_xml
-    new_version = update(node)
-    RAILS_DEFAULT_LOGGER.debug "New version: #{new_version}"
-    close_changeset(changeset_id)
+    begin
+      node.changeset = changeset_id
+      RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
+      RAILS_DEFAULT_LOGGER.debug node.inspect
+      RAILS_DEFAULT_LOGGER.debug node.to_xml
+      new_version = update(node)
+      RAILS_DEFAULT_LOGGER.debug "New version: #{new_version}"
+    ensure
+      close_changeset(changeset_id) if changeset_id
+    end
   end
   
   def self.round_bounding_box(bbox)
