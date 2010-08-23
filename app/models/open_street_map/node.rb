@@ -110,16 +110,16 @@ class OpenStreetMap
     end
     
     def type=(value)
-      @type = value
-      return if value.blank?
-      v = value.to_s
-      if Tags.has_key?(v)
-        k = Tags[v]
-        tags[k.to_s] = v
+      if !value.blank? && Tags.has_key?(value.to_sym)
+        @type = value
+        key = Tags[value.to_sym].to_s # reverse lookup for example supermarket to key :shop
+        tags[key] = value
+      else
+        @type = nil
       end
       @type
     end
-
+    
     def to_param
       id.to_s
     end
