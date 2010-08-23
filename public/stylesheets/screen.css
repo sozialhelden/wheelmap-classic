@@ -921,51 +921,61 @@ form optgroup.food {
   border: 0;
 }
 /* line 47, ../../app/stylesheets/basics/_forms.sass */
-form optgroup.post {
+form optgroup.money_post {
   background: white url("/images/icons/mail.png") no-repeat 2px top;
   border: 0;
 }
 /* line 50, ../../app/stylesheets/basics/_forms.sass */
-form optgroup.money {
-  background: white url("/images/icons/money-coin.png") no-repeat 2px top;
-  border: 0;
-}
-/* line 53, ../../app/stylesheets/basics/_forms.sass */
-form optgroup.health {
-  background: white url("/images/icons/hospital.png") no-repeat 2px top;
-  border: 0;
-}
-/* line 56, ../../app/stylesheets/basics/_forms.sass */
 form optgroup.government {
   background: white url("/images/icons/bank.png") no-repeat 2px top;
   border: 0;
 }
-/* line 59, ../../app/stylesheets/basics/_forms.sass */
+/* line 53, ../../app/stylesheets/basics/_forms.sass */
 form optgroup.education {
   background: white url("/images/icons/book-open.png") no-repeat 2px top;
   border: 0;
 }
-/* line 62, ../../app/stylesheets/basics/_forms.sass */
+/* line 56, ../../app/stylesheets/basics/_forms.sass */
 form optgroup.car {
   background: white url("/images/icons/car-red.png") no-repeat 2px top;
   border: 0;
 }
-/* line 65, ../../app/stylesheets/basics/_forms.sass */
+/* line 59, ../../app/stylesheets/basics/_forms.sass */
 form optgroup.misc {
   background: white url("/images/icons/store.png") no-repeat 2px top;
   border: 0;
 }
-/* line 68, ../../app/stylesheets/basics/_forms.sass */
+/* line 62, ../../app/stylesheets/basics/_forms.sass */
 form optgroup.leisure {
   background: white url("/images/icons/smiley.png") no-repeat 2px top;
   border: 0;
 }
+/* line 65, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.accommodation {
+  background: white url("/images/icons/building.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 68, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.shopping {
+  background: white url("/images/icons/shopping-basket.png") no-repeat 2px top;
+  border: 0;
+}
 /* line 71, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.tourism {
+  background: white url("/images/icons/information.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 74, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.sport {
+  background: white url("/images/icons/sport.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 77, ../../app/stylesheets/basics/_forms.sass */
 form option {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-/* line 75, ../../app/stylesheets/basics/_forms.sass */
+/* line 81, ../../app/stylesheets/basics/_forms.sass */
 form input[type='submit'] {
   position: relative;
   left: 170px;
@@ -1009,7 +1019,7 @@ form input[type='submit']:active {
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#618234', startColorstr='#96bf5e', gradientType='0');
   border-color: #89b152 #617e39 #465b29;
 }
-/* line 80, ../../app/stylesheets/basics/_forms.sass */
+/* line 86, ../../app/stylesheets/basics/_forms.sass */
 form label {
   color: #4d4d4d;
   display: block;
@@ -1020,7 +1030,7 @@ form label {
   text-align: right;
   width: 160px;
 }
-/* line 90, ../../app/stylesheets/basics/_forms.sass */
+/* line 96, ../../app/stylesheets/basics/_forms.sass */
 form legend {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 16px;
@@ -1033,34 +1043,34 @@ form legend {
   top: 15px;
   bottom: none;
 }
-/* line 98, ../../app/stylesheets/basics/_forms.sass */
+/* line 104, ../../app/stylesheets/basics/_forms.sass */
 form legend span.addition {
   color: #aaaaaa;
 }
-/* line 101, ../../app/stylesheets/basics/_forms.sass */
+/* line 107, ../../app/stylesheets/basics/_forms.sass */
 form fieldset {
   padding: 30px 20px 10px 20px;
   overflow: hidden;
 }
-/* line 108, ../../app/stylesheets/basics/_forms.sass */
+/* line 114, ../../app/stylesheets/basics/_forms.sass */
 form fieldset.buttons {
   padding: 10px 20px 10px 20px;
 }
-/* line 113, ../../app/stylesheets/basics/_forms.sass */
+/* line 119, ../../app/stylesheets/basics/_forms.sass */
 form li[class*='error'] label {
   color: #f19d46;
 }
-/* line 116, ../../app/stylesheets/basics/_forms.sass */
+/* line 122, ../../app/stylesheets/basics/_forms.sass */
 form li[class*='error'] input[type='text'], form li[class*='error'] input[type='password'], form li[class*='error'] input[type='search'], form li[class*='error'] textarea, form li[class*='error'] select {
   border: 1px solid #f19d46;
 }
-/* line 119, ../../app/stylesheets/basics/_forms.sass */
+/* line 125, ../../app/stylesheets/basics/_forms.sass */
 form p.inline-errors, form p.inline-hints {
   position: relative;
   left: 175px;
   color: #aaaaaa;
 }
-/* line 124, ../../app/stylesheets/basics/_forms.sass */
+/* line 130, ../../app/stylesheets/basics/_forms.sass */
 form p.inline-errors {
   color: #f19d46;
 }
