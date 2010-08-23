@@ -7,7 +7,7 @@ class UpdatingJob < Struct.new(:node, :client)
       osm = OpenStreetMap.new(client)
       osm.update_node(node)
     rescue Exception => e
-      HoptoadNotifier.notify(e, :component => 'UpdatingJob#perform', :parameters => {:node => node, :client => client})
+      HoptoadNotifier.notify(e, :component => 'UpdatingJob#perform', :action => 'perform', :parameters => {:node => node.inspect, :client => client.inspect})
       raise e
     end
     
