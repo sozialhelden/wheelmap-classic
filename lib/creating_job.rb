@@ -1,8 +1,13 @@
 class CreatingJob < Struct.new(:node, :client)
   
   def perform
-    osm = OpenStreetMap.new(client)
-    osm.create_node(node)
+    begin
+      osm = OpenStreetMap.new(client)
+      osm.create_node(node)
+    rescue Exception => e
+      HoptoadNotifier.notify(e, :component => 'CreatingJob#perform', :parameters => {:node => node, :client => client})
+      raise e
+    end
   end
   
   def on_permanent_failure

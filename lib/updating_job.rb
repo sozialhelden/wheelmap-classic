@@ -1,10 +1,16 @@
 class UpdatingJob < Struct.new(:node, :client)
   
   def perform
-    old_node = OpenStreetMap.get_node(node.id)
-    node.tags.reverse_merge!(old_node.tags)
-    osm = OpenStreetMap.new(client)
-    osm.update_node(node)
+    begin
+      old_node = OpenStreetMap.get_node(node.id)
+      node.tags.reverse_merge!(old_node.tags)
+      osm = OpenStreetMap.new(client)
+      osm.update_node(node)
+    rescue Exception => e
+      HoptoadNotifier.notify(e, :component => 'UpdatingJob#perform', :parameters => {:node => node, :client => client})
+      raise e
+    end
+    
   end
   
   def on_permanent_failure
