@@ -69,9 +69,9 @@ class NodesController < ApplicationController
       client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.oauth_authorized?
       Delayed::Job.enqueue(CreatingJob.new(@node, client))
       flash[:notice] = I18n.t('nodes.create.flash.successfull')
-      redirect_to root_path
+      redirect_to root_path(:layers => 'BT', :lat => @node.lat, :lon => @node.lon, :zoom => 18)
     else
-      render :action => :new, :lat => @node.lat, :lon => @node.lon
+      render :action => :new, :layers => 'BT', :lat => @node.lat, :lon => @node.lon
     end
   end
   
