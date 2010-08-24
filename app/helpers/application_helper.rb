@@ -21,4 +21,12 @@ module ApplicationHelper
     end
     url.to_s
   end
+  
+  def show_flash
+    html = ''
+    [:notice,:error].each do |type|
+      html << content_tag(:div, flash[type], :class => type, :id => 'flash') unless flash[type].blank?
+    end
+    html
+  end
 end

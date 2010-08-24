@@ -1,5 +1,8 @@
 en:
   nodes:
+    
+    flash:
+      authorize_wheelmap: "You need an OpenStreetMap account to modify data."    
     update:
       flash:
         successfull: 'Thank you, the submission was saved successfully and will be online shortly.'

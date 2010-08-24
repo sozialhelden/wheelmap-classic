@@ -16,12 +16,7 @@
   %body(class=browser_class)
     = render :partial => '/shared/header'      
     #main
-      #breadcrumbs
-        = yield :breadcrumbs
-        .clear
-      - if flash[:notice]
-        #flash
-          = flash[:notice]
+      = show_flash
         
       = yield
     %footer

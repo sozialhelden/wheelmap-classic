@@ -1687,3 +1687,12 @@ image[width='16'] {
 #bar form li:first-child a {
   border-top: 0;
 }
+
+/* line 1, ../../app/stylesheets/partials/nodes/flash.sass */
+#flash {
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff7d9;
+  border: 1px dashed #ffd740;
+  text-align: center;
+}

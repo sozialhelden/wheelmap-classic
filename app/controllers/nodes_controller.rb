@@ -3,6 +3,7 @@ class NodesController < ApplicationController
   skip_before_filter :verify_authenticity_token
   
   before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update]
+  before_filter :authenticate_application!,       :only => [:new, :create, :edit]
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
   before_filter :check_create_params,             :only => :create
@@ -86,6 +87,13 @@ class NodesController < ApplicationController
 
   # Before filter
   protected
+  
+  def authenticate_application!
+    unless current_user.app_authorized?
+      flash[:error] = I18n.t('nodes.flash.authorize_wheelmap')
+      redirect_to edit_user_path(current_user)
+    end
+  end
   
   def gone(exception)
     @message = I18n.t('nodes.errors.not_existent')
