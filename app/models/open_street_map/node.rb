@@ -140,7 +140,7 @@ class OpenStreetMap
        'lon' => lon,
        'name' => name,
        'wheelchair' => wheelchair,
-       'tags' => tags,
+       'tags' => tags.reject{|k,v| v.blank?},
        'type' => type,
        'category' => self.category}.to_json
     end
