@@ -5,11 +5,11 @@ class UpdatingJob < Struct.new(:node, :client)
       old_node = OpenStreetMap.get_node(node.id)
       node.tags.reverse_merge!(old_node.tags)
 
-      if old_node == node
-        # Quit here, if there are no changes to be made
-        HoptoadNotifier.notify(Exception.new('No update needed'), :component => 'UpdatingJob#perform', :parameters => {:old_node => old_node.inspect, :node => node.inspect, :client => client})
-        return true 
-      end
+      # if old_node == node
+      #   # Quit here, if there are no changes to be made
+      #   HoptoadNotifier.notify(Exception.new('No update needed'), :component => 'UpdatingJob#perform', :parameters => {:old_node => old_node.inspect, :node => node.inspect, :client => client})
+      #   return true 
+      # end
 
       raise ArgumentError.new("Client cannot be nil") if client.nil?
       osm = OpenStreetMap.new(client)
