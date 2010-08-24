@@ -9,11 +9,11 @@ class UpdateSingleAttributeJob < Struct.new(:node_id, :client, :attribute_hash)
         new_node.send("#{key}=", value)
       end
       
-      if old_node == new_node
-        # Quit here, if there are no changes to be made
-        HoptoadNotifier.notify(Exception.new('No update needed'), :component => 'UpdateSingleAttributeJob#perform', :parameters => {:old_node => old_node.inspect, :new_node => new_node.inspect, :client => client, :attributes => attribute_hash})
-        return true
-      end
+      # if old_node == new_node
+      #   # Quit here, if there are no changes to be made
+      #   HoptoadNotifier.notify(Exception.new('No update needed'), :component => 'UpdateSingleAttributeJob#perform', :parameters => {:old_node => old_node.inspect, :new_node => new_node.inspect, :client => client, :attributes => attribute_hash})
+      #   return true
+      # end
       
       raise ArgumentError.new("Client cannot be nil") if client.nil?
       osm = OpenStreetMap.new(client)
