@@ -12,16 +12,14 @@
       var object_types = ["#{ (session['amenities']).join('","')}"];
     
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
-  - map  = yield(:map)
-  - main = yield
-  %body{ :class => [browser_class, ('map' if map)] }
+  %body{ :class => [browser_class, ('map' if @content_for_map)] }
     = render :partial => '/shared/header'
-    - if map
+    - if @content_for_map
       #map
-        = map
-    - if main
-      #main
-        = main
+        = yield :map
+    #main
+      = show_flash
+      = yield
     %footer
       - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
         = image_tag('sozialhelden.png', :alt => t('.banner.alt'))

@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :case_sensitive => false
   validates_presence_of :email
   
+  def app_authorized?
+    oauth_authorized? || basic_authorized?
+  end
+  
   def oauth_authorized?
     (oauth_token && oauth_secret)
   end

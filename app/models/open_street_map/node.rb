@@ -3,6 +3,7 @@ class OpenStreetMap
   class Node
     include Validatable
     include ActiveSupport::CoreExtensions::Hash::Keys
+    
     attr_accessor :lat, :lon, :user, :uid, :changeset, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair, :wheelchair_description, :street, :postcode, :country, :housenumber, :city, :website, :phone, :tag
     attr_accessor_with_default :changed, false
 
@@ -33,6 +34,15 @@ class OpenStreetMap
       self.phone        = (data['phone'] || tags['phone'])
       self.website      = (data['website'] || tags['website'])
       
+    end
+    
+    def ==(anOther)
+      [:id, :lat, :lon, :version].each do |attrib|
+        puts "#{self.send(attrib)} <=> #{anOther.send(attrib)}"
+        return false unless self.send(attrib) == anOther.send(attrib)
+      end
+      puts "#{self.tags.inspect} versus #{anOther.tags.inspect}"
+      self.tags == anOther.tags
     end
     
     def attributes
