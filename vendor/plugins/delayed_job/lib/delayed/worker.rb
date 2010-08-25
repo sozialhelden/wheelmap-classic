@@ -5,10 +5,11 @@ require 'active_support/core_ext/kernel'
 
 module Delayed
   class Worker
-    cattr_accessor :min_priority, :max_priority, :max_attempts, :max_run_time, :sleep_delay, :logger
+    cattr_accessor :min_priority, :max_priority, :max_attempts, :max_run_time, :default_priority, :sleep_delay, :logger
     self.sleep_delay = 5
     self.max_attempts = 25
     self.max_run_time = 4.hours
+    self.default_priority = 0
     
     # By default failed jobs are destroyed after too many attempts. If you want to keep them around
     # (perhaps to inspect the reason for the failure), set this to false.
@@ -142,7 +143,12 @@ module Delayed
 
         if job.payload_object.respond_to? :on_permanent_failure
           say "Running on_permanent_failure hook"
-          job.payload_object.on_permanent_failure
+          failure_method = job.payload_object.method(:on_permanent_failure)
+          if failure_method.arity == 1
+            failure_method.call(job)
+          else
+            failure_method.call
+          end
         end
 
         self.class.destroy_failed_jobs ? job.destroy : job.update_attributes(:failed_at => Delayed::Job.db_time_now)
