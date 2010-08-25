@@ -7,5 +7,9 @@ class OpenStreetMap
       @username = username
       @password = password
     end
+    
+    def credentials
+      {:username => username, :password => password}
+    end
   end
 end
