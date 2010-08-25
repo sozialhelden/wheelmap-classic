@@ -175,9 +175,7 @@ class OpenStreetMap
     else # basic_auth_client?
       options.reverse_merge!(:basic_auth => client.credentials)
       self.class.put(url, options)
-    else 
     end
-      
   end
   
   # Indirection to HTTParty class method id called as instance method
