@@ -20,9 +20,9 @@ class UpdateSingleAttributeJob < Struct.new(:node_id, :client, :attribute_hash)
       osm.update_node(new_node)
     rescue OpenStreetMap::Conflict => conflict
       # These changes have already been made, so dismiss this update!
-      HoptoadNotifier.notify(conflict, :component => 'UpdateSingleAttributeJob#perform', :parameters => {:old_node => old_node.inspect, :new_node => new_node.inspect, :client => client, :attributes => attribute_hash})
+      HoptoadNotifier.notify(conflict, :action => 'perform', :component => 'UpdateSingleAttributeJob', :parameters => {:old_node => old_node.inspect, :new_node => new_node.inspect, :client => client.inspect, :attributes => attribute_hash})
     rescue Exception => e
-      HoptoadNotifier.notify(e, :component => 'UpdateSingleAttributeJob#perform', :parameters => {:node_id => node_id, :client => client, :attributes => attribute_hash})
+      HoptoadNotifier.notify(e, :action => 'perform', :component => 'UpdateSingleAttributeJob', :parameters => {:node_id => node_id, :client => client.inspect, :attributes => attribute_hash})
       raise e
     end
     
