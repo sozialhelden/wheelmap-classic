@@ -15,32 +15,12 @@ class OpenStreetMap
   # Initialize with basic auth credentials
   def initialize(client)
     @client = client
-    if basic_auth_client?
-      RAILS_DEFAULT_LOGGER.debug("Using BasicAuthClient")
-      self.class.basic_auth client.username, client.password
-    elsif oauth_client?
-      RAILS_DEFAULT_LOGGER.debug("Using OauthClient")
-      self.class.delegate :put, :to => :client
-    else
+    unless basic_auth_client? || oauth_client?
       raise ArgumentError.new('Unsupported Client')
     end
   end
   
   
-  # update a singe attribute via basic auth
-  def update_single_attribute(osmid, attribute_hash)
-    if (node = self.class.get_node(osmid))
-      changeset_id = create_changeset
-      node.changeset = changeset_id
-      attribute_hash.each do |key,value|
-        node.send("#{key}=", value)
-      end
-      new_version = update(node)
-      close_changeset(changeset_id)
-      node
-    end
-  end
-
   # Create a new node by calling the OSM API
   # Returns the id of the newly created node
   def create_node(node)
@@ -117,7 +97,10 @@ class OpenStreetMap
       if result['osm']['node'].blank? 
         RAILS_DEFAULT_LOGGER.debug "Found no nodes"
         return []
+      elsif result['osm']['node'].is_a? Hash
+        return [Node.new(result['osm']['node'])]
       else
+        RAILS_DEFAULT_LOGGER.debug(result['osm']['node'].inspect)
         osm_nodes = result['osm']['node'].map{|node_data| Node.new(node_data)}
         RAILS_DEFAULT_LOGGER.debug("Found #{osm_nodes.size} nodes")
         osm_nodes
@@ -137,8 +120,6 @@ class OpenStreetMap
     node = OpenStreetMap::Node.new(response['osm']['node'])
   end
 
-  private
-  
   def create(node)
     url = request_uri("/node/create")
     response = put(url, :body => node.to_xml)
@@ -189,12 +170,24 @@ class OpenStreetMap
   
   # Indirection to HTTParty class method id called as instance method
   def put(url, options={})
-    self.class.put(url, options)
+    if client.respond_to?(:put) # oauth_client?
+      client.put(url, options)
+    else # basic_auth_client?
+      options.reverse_merge!(:basic_auth => client.credentials)
+      self.class.put(url, options)
+    else 
+    end
+      
   end
   
   # Indirection to HTTParty class method id called as instance method
   def post(url, options={})
-    self.class.post(url, options)
+    if client.respond_to?(:put) # oauth_client?
+      client.post(url, options)
+    else # basic_auth_client?
+      options.reverse_merge!(:basic_auth => client.credentials)
+      self.class.post(url, options)
+    end
   end
   
   def self.raise_errors(response)
