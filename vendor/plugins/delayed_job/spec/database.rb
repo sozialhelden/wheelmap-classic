@@ -1,28 +1,40 @@
-require 'active_record'
+$:.unshift(File.dirname(__FILE__) + '/../lib')
+$:.unshift(File.dirname(__FILE__) + '/../../rspec/lib')
 
-ActiveRecord::Base.establish_connection(:adapter => 'sqlite3', :database => ':memory:')
-ActiveRecord::Base.logger = Delayed::Worker.logger
+require 'rubygems'
+require 'active_record'
+gem 'sqlite3-ruby'
+
+require File.dirname(__FILE__) + '/../init'
+require 'spec'
+  
+ActiveRecord::Base.logger = Logger.new('/tmp/dj.log')
+ActiveRecord::Base.establish_connection(:adapter => 'sqlite3', :database => '/tmp/jobs.sqlite')
 ActiveRecord::Migration.verbose = false
 
 ActiveRecord::Schema.define do
+
   create_table :delayed_jobs, :force => true do |table|
     table.integer  :priority, :default => 0
     table.integer  :attempts, :default => 0
     table.text     :handler
-    table.text     :last_error
+    table.string   :last_error
     table.datetime :run_at
     table.datetime :locked_at
-    table.datetime :failed_at
     table.string   :locked_by
+    table.datetime :failed_at
+    table.datetime :first_started_at
+    table.datetime :last_started_at
+    table.datetime :finished_at
     table.timestamps
   end
-
-  add_index :delayed_jobs, [:priority, :run_at], :name => 'delayed_jobs_priority'
 
   create_table :stories, :force => true do |table|
     table.string :text
   end
+
 end
+
 
 # Purely useful for test cases...
 class Story < ActiveRecord::Base
