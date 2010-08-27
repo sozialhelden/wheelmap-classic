@@ -17,6 +17,8 @@ Rails::Initializer.run do |config|
   config.gem 'newrelic_rpm'
   config.gem 'jnunemaker-validatable', :lib => 'validatable'
   config.gem 'smurf'
+  config.gem 'nokogiri'
+  config.gem 'spatial_adapter'
 end
 
 Haml::Template.options[:format] = :html5
