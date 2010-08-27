@@ -3,6 +3,10 @@ describe OpenStreetMap do
   
   before(:each) do
     @base_url = "#{OpenStreetMapConfig.oauth_site}/api/0.6"
+    @client = OpenStreetMap::BasicAuthClient.new('foo', 'bar')
+    uri = URI.parse("#{OpenStreetMapConfig.oauth_site}/api/0.6")
+    @basic_auth_url = "#{uri.scheme}://foo:bar@#{uri.host}#{uri.path}"
+    
     FakeWeb.allow_net_connect = false
     @consumer = ::OAuth::Consumer.new(OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret, :site => @base_url)
     @oauth = ::OAuth::AccessToken.new(@consumer, 'foo', 'bar')
@@ -41,12 +45,13 @@ describe OpenStreetMap do
   
   describe "method: create_changeset" do
     before(:each) do
-      @full_url = "#{@base_url}/changeset/create"
+      @full_url = "#{@basic_auth_url}/changeset/create"
+      @osm = OpenStreetMap.new(@client)
     end
 
     it "should create a new changeset" do
-      FakeWeb.register_uri(:put, @full_url, :body => "12345", :content_type => 'text/plain')
-      changeset_id = OpenStreetMap.create_changeset
+      FakeWeb.register_uri(:put, @full_url, :body => "12345", :content_type => 'text/plain', :basic_auth => @client.credentials)
+      changeset_id = @osm.create_changeset
       changeset_id.should == 12345
     end
     
