@@ -97,7 +97,12 @@ describe 'OpenStreetMap::Node' do
   it "should set url attribute and tag" do
     @node.url = 'http://www.example.com'
     @node.tags['contact:website'].should == 'http://www.example.com'
-    @node.url.should == 'http://www.example.com'
+    @node.website.should == 'http://www.example.com'
+  end
+  
+  it "should not render empty tags" do
+    @node.tags['empty_tag'] = nil
+    @node.to_json.should_not =~ /empty_tag/
   end
   
   
