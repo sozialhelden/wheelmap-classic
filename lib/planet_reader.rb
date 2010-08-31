@@ -1,148 +1,142 @@
 # PlanetReader liest OSM-Planet-Files ein und aktualisiert die Datenbank.
 
-# Benutzt Nokogiri statt Rubys eingebautem ReXML, weil Nokogiri viel 
-# schneller ist. Haette gern libxml benutzt, aber die hat einen Bug, 
-# der zu zu grossem Speicherverbrauch beim Einlesen des Planet fuehrt.
-
 require 'rubygems' 
-require 'nokogiri' 
+require 'libxml'
 
-class PlanetReader < Nokogiri::XML::SAX::Document
+class PlanetReader
+  
+  include LibXML::XML::SaxParser::Callbacks
 
-    # Konstruktor.
-    #
-    def initialize(file)
+  # Konstruktor.
+  #
+  def initialize(stream=STDIN)
+    @start_time = Time.now
+    @processed = 0
+    @parser = LibXML::XML::SaxParser.io(stream)
+    @parser.callbacks = self
+    @ignore = false
+    Crewait.start_waiting
+  end
 
-        @file = file
-        @processed = 0
-        @parser = Nokogiri::XML::SAX::Parser.new(self)
-        @delete_ids = Array.new
+  # Hauptmethode. Liest die Datei und verarbeitet sie.
+  #
+  def load
+    begin
+      @parser.parse
+    rescue Exception => e
+      puts e.message
+    ensure
+      Crewait.go!
+      @duration = (Time.now - @start_time).to_i
+      puts "\nProcessed #{@processed} nodes in #{@duration}s ~= #{@processed/@duration}/s"
+    end
+  end
 
+  # Callback-Methode des XML-Parsers.
+  #
+  def on_start_element(element, attributes)
+    return if @ignore
+    case element
+    when 'way'
+      @ignore = true
+    when 'relation'
+      @ignore = true
+    when 'tag'
+      @poi[:tags][attributes['k']] = attributes['v']
+    when 'node'
+      @poi = {:osm_id => attributes['id'],
+              :geom => Point.from_x_y(attributes['lon'], attributes['lat']),
+              :version => attributes['version'],
+              :tags => {}}
+    when 'modify'
+      @changemode = element if @osmchange
+    when 'delete'
+      @changemode = element if @osmchange
+    when 'create'
+      @changemode = element if @osmchange
+    when 'osm'
+      @osmchange = false
+    when 'osmChange'
+      @osmchange = true
+    else
+      # ignore all other nodes
+    end
+  end
+
+  # Callback-Methode des XML-Parsers.
+  #
+  def on_end_element(element)
+    case element
+    when 'way'
+      @ignore = false
+    when 'relation'
+      @ignore = false
+    when 'node'
+      process_poi 
+      @processed += 1
+      if (@processed % 10000 == 0)
+        Crewait.go!
+        print("\r#{@processed/10000}0k nodes")
+        STDOUT.flush
+      end
+      @poi = nil
+      
     end
 
-    # Hauptmethode. Liest die Datei und verarbeitet sie.
-    #
-    def load
+  end
+  
+  def valid?
+    @poi && !@poi[:tags].blank? &&
+      ( @poi[:tags].has_key?('amenity') ||
+        @poi[:tags].has_key?('shop') ||
+        @poi[:tags].has_key?('tourism') ||
+        @poi[:tags].has_key?('natural') ||
+        @poi[:tags].has_key?('sport') ||
+        @poi[:tags].has_key?('leisure') ||
+        @poi[:tags].has_key?('historic')
+      )
+  end
 
+  # Verarbeitet einen POI.
+  #
+  def process_poi
+    if !@osmchange || @changemode == 'create'
+      # Neue POIs (aus <create> in .osc oder aus .osm) werden
+      # importiert, wenn sie interessant sind.
+      # @poi.save
+      Poi.crewait(@poi) if valid?
+
+    elsif @changemode == 'modify'
+      # Bei geaenderten POIs kommt es darauf an:
+
+      if (valid?)
+        # falls die neue Version des Nodes interessant ist, muessen
+        # wir schauen: entweder ist der schon in der Datenbank,
+        # dann brauchts einen Update, sonst einen Save. Es ist uns
+        # aber zu zeitaufwendig, erst einen "find" zu machen - wir
+        # probieren den Save, und wenn der nicht geht, probieren wir
+        # den Update.
         begin
-            @parser.parse_file(@file)
-
-            if (@delete_ids.length > 0) 
-                Poi.delete(@delete_ids) 
-            end
+          @poi.save!
+        rescue 
+          @poi.existing_record
+          @poi.save!
         end
+      else
 
+        # falls die neue Version des Nodes nicht interessant ist,
+        # muss eine eventuell existierende alte Version geloescht
+        # werden. wir pruefen hier nicht extra mit 
+        # "find_by_osm_id", ob eine alte Version ueberhaupt 
+        # existiert, denn das waere Zeitverschwendung; der
+        # delete-Aufruf macht das schneller.
+        Poi.delete(@poi.osm_id)
+
+      end
+
+    elsif @changemode == 'delete'
+      Poi.delete(@poi.osm_id)
     end
-
-    # Callback-Methode des XML-Parsers.
-    #
-    def start_element(element, attributes)
-
-        if element == 'osm'
-            @osmchange = false
-        elsif element == 'osmChange'
-            @osmchange = true
-        elsif @osmchange && element == 'modify'
-            @changemode = element
-        elsif @osmchange && element == 'delete'
-            @changemode = element
-        elsif @osmchange && element == 'create'
-            @changemode = element
-        elsif element == 'node'
-            a = Hash[*attributes]
-            @poi = Poi.new(
-                :geom => Point.from_x_y(a['lon'], a['lat']),
-                :version => a['version']
-            )
-            @poi.osm_id = a['id']
-        elsif @poi && element == 'tag'
-            @poi.tags = Hash.new() unless @poi.tags
-            # strenggenommen muesste man hier wieder erst ein Hash bauen,
-            # aber die Form ist immer <tag k="key" v="value" />
-            @poi.tags[attributes[1]]=attributes[3]
-        elsif !@changemode && element == 'way'
-            Process.exit
-        end
-
-    end
-
-    # Callback-Methode des XML-Parsers.
-    #
-    def end_element(element)
-
-        if element == 'node'
-            process_poi 
-            @processed += 1
-            if (@processed.modulo(1000) == 0)
-                print("\r#{@processed/1000}k nodes")
-                STDOUT.flush
-            end
-            @poi = nil
-        end
-
-    end
-
-    # Verarbeitet einen POI.
-    #
-    def process_poi
-
-        if !@osmchange || @changemode == 'create'
-
-            # Neue POIs (aus <create> in .osc oder aus .osm) werden
-            # importiert, wenn sie interessant sind.
-
-            @poi.save! if @poi.interesting?
-
-        elsif @changemode == 'modify'
-
-            # Bei geaenderten POIs kommt es darauf an:
-
-            if (@poi.interesting?)
-
-                # falls die neue Version des Nodes interessant ist, muessen
-                # wir schauen: entweder ist der schon in der Datenbank,
-                # dann brauchts einen Update, sonst einen Save. Es ist uns
-                # aber zu zeitaufwendig, erst einen "find" zu machen - wir
-                # probieren den Save, und wenn der nicht geht, probieren wir
-                # den Update.
-
-                begin
-                    @poi.save!
-                rescue 
-                    @poi.clear_new_flag()
-                    @poi.save!
-                end
-
-            else
-
-                # falls die neue Version des Nodes nicht interessant ist,
-                # muss eine eventuell existierende alte Version geloescht
-                # werden. wir pruefen hier nicht extra mit 
-                # "find_by_osm_id", ob eine alte Version ueberhaupt 
-                # existiert, denn das waere Zeitverschwendung; der
-                # delete-Aufruf macht das schneller.
-                @delete_ids << @poi.osm_id
-
-            end
-
-        elsif @changemode == 'delete'
-
-            # Loeschen ist einfach. Wir sammeln allerdings immer ein paar 
-            # IDs und machen dann einen gruppierten Loesch-Aufruf.
-
-            @delete_ids << @poi.osm_id
-
-        end
-
-        if (@delete_ids.length > 200) 
-            Poi.delete(@delete_ids) 
-            delete_ids = Array.new
-        end
-    end
+  end
 end
-
-raise "Dateinamen auf der Befehlszeile angeben" unless ARGV.length() == 1
-raise "Datei #{ARGV[0]} kann nicht geoeffnet werden" unless File.exists?(ARGV[0])
-p = PlanetReader.new(ARGV[0])
-p.load()
 

@@ -12,7 +12,7 @@ class CreatePois < ActiveRecord::Migration
         t.integer :version, :null => false
 
         # Tags (serialisiert)
-        t.string :tags, :null => false
+        t.text :tags, :null => false
 
         # Laenge und Breite
         # (Laengengrad kann mit poi.geom.x, Breitengrad mit poi.geom.y
