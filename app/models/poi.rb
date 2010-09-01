@@ -87,9 +87,9 @@ class Poi < ActiveRecord::Base
        'lat' => lat,
        'lon' => lon,
        'name' => name,
+       'wheelchair' => wheelchair,
        'tags' => tags.reject{|k,v| v.blank?},
        'type' => type,
-       'wheelchair' => wheelchair,
        'category' => self.category}.to_json
     end    
 
