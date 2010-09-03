@@ -196,16 +196,20 @@ function createPlacesLayer(style) {
     "Places ",
     {
       styleMap: style,
-      projection: new OpenLayers.Projection("EPSG:4326"),
+      projection: epsg4326,
+      displayProjection: epsg4326,
       rendererOptions: { yOrdering: true },
-      // strategies: [new OpenLayers.Strategy.BBOX()],
+      // strategies: [new OpenLayers.Strategy.BBOX({ratio : 1})],
       // protocol: new OpenLayers.Protocol.HTTP({
-      //   url:  "nodes.js",
-      //   format: new OpenLayers.Format.JSON()
+      //   url:  "nodes.geojson",
+      //   format: new OpenLayers.Format.GeoJSON({
+      //     internalProjection: map.baseLayer.projection,
+      //     externalProjection: epsg4326,
+      //     ignoreExtraDims: true
+      //   })
       // }),
       visibility: true,
     });
-    
   map.addLayer(places);
   activateSelectControl(places);
 }
