@@ -13,7 +13,7 @@ config.action_view.cache_template_loading            = true
 config.log_level = :debug
 
 config.gem 'libxml-ruby', :lib => 'xml/libxml'
-config.gem 'crewait'
+config.gem 'crewait', :version => '0.1.6'
 
 # Use a different logger for distributed setups
 # config.logger = SyslogLogger.new

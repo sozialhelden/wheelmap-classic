@@ -19,12 +19,11 @@ class NodesController < ApplicationController
   def index
     left, bottom, right, top = params[:bbox].split(',')
     @places = Poi.within_bbox(left, bottom, right, top).limit(300)
-    # logger.debug("Found #{pois.size} in bouding box")
-    # @places = @places.map{|p| OpenStreetMap::Node.new(p.attributes)}
-    # @places = OpenStreetMap.nodes(params[:bbox],params[:object_types])
+    # @places = OpenStreetMap.nodes(params[:bbox])
     # @places = Cloudmade.nodes(params[:bbox],params[:object_types])
-    respond_to do |wants|
-      wants.js{ render :json => @places }
+    
+    respond_to do |wants|  
+      wants.js{render :json => @places }
       wants.json{ render :json => @places }
       wants.html{ redirect_to root_path }
     end

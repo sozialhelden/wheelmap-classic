@@ -79,7 +79,7 @@ class Poi < ActiveRecord::Base
     end
     
     def wheelchair
-      tags['wheelchair'] || 'unknown'
+      tags['wheelchair'] ||= 'unknown'
     end
         
     def to_json(options={})
@@ -88,10 +88,18 @@ class Poi < ActiveRecord::Base
        'lon' => lon,
        'name' => name,
        'wheelchair' => wheelchair,
-       'tags' => tags.reject{|k,v| v.blank?},
+       'tags' => tags.reverse_merge!('wheelchair' => wheelchair).reject{|k,v| v.blank?},
        'type' => type,
        'category' => self.category}.to_json
-    end    
+    end
+
+    def to_geojson(options={})
+      { :type => 'Feature',
+        :geometry => { :type => 'Point', :coordinates  => [self.lon, self.lat]
+        },
+        :properties => tags.reverse_merge!('wheelchair' => wheelchair, 'type' => type, 'category' => category).reject{|k,v| v.blank?}
+      }
+    end
 
     def relevant?
       if !tags.blank? &&

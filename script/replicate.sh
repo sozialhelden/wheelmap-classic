@@ -116,7 +116,7 @@ fi
 
 mv $BASE/var/rake.stderr $BASE/var/rake.stderr.old 2>/dev/null
 cd $RAILSAPP
-if rake osm:import_planet file=$MERGEDFILE > $BASE/var/rake.stdout 2> $BASE/var/rake.stderr
+if cat $MERGEDFILE | rake osm:import > $BASE/var/rake.stdout 2> $BASE/var/rake.stderr
 then
    rm $MERGEDFILE
 else

@@ -1,0 +1,78 @@
+--- !ruby/object:Gem::Specification 
+name: crewait
+version: !ruby/object:Gem::Version 
+  hash: 23
+  prerelease: false
+  segments: 
+  - 0
+  - 1
+  - 6
+  version: 0.1.6
+platform: ruby
+authors: 
+- Jonah Bloch-Johnson
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2010-08-19 00:00:00 +02:00
+default_executable: 
+dependencies: []
+
+description: Intuitive and fast bulk insertion in ActiveRecord
+email: me@jonah.org
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- README.rdoc
+- lib/crewait.rb
+files: 
+- Manifest
+- README.rdoc
+- Rakefile
+- lib/crewait.rb
+- crewait.gemspec
+has_rdoc: true
+homepage: http://github.com/theAlmanac/crewait
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --line-numbers
+- --inline-source
+- --title
+- Crewait
+- --main
+- README.rdoc
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 11
+      segments: 
+      - 1
+      - 2
+      version: "1.2"
+requirements: []
+
+rubyforge_project: crewait
+rubygems_version: 1.3.7
+signing_key: 
+specification_version: 3
+summary: Intuitive and fast bulk insertion in ActiveRecord
+test_files: []
+

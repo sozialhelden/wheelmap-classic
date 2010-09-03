@@ -16,6 +16,7 @@ class PlanetReader
     @parser.callbacks = self
     @ignore = false
     Crewait.start_waiting
+    @to_be_deleted = []
   end
 
   # Hauptmethode. Liest die Datei und verarbeitet sie.
@@ -27,9 +28,19 @@ class PlanetReader
       puts e.message
     ensure
       Crewait.go!
+      flush_pois(0)
+      sleep 1
       @duration = (Time.now - @start_time).to_i
       puts "\nProcessed #{@processed} nodes in #{@duration}s ~= #{@processed/@duration}/s"
     end
+  end
+  
+  def flush_pois(min_amount=200)
+    if @to_be_deleted.size >= min_amount
+      Poi.delete(@to_be_deleted)
+      @to_be_deleted = []
+    end
+    
   end
 
   # Callback-Methode des XML-Parsers.
@@ -71,9 +82,17 @@ class PlanetReader
       @ignore = false
     when 'relation'
       @ignore = false
+    when 'delete'
+      flush_pois
+    when 'create'
+      Crewait.go!
+    when 'modify'
+      Crewait.go!
+      flush_pois
     when 'node'
       process_poi 
       @processed += 1
+      
       if (@processed % 10000 == 0)
         Crewait.go!
         print("\r#{@processed/10000}0k nodes")
@@ -100,10 +119,15 @@ class PlanetReader
   # Verarbeitet einen POI.
   #
   def process_poi
-    if !@osmchange || @changemode == 'create'
-      # Neue POIs (aus <create> in .osc oder aus .osm) werden
+    if !@osmchange
+      # Neue POIs aus *.osm
+      # Purer input aus einem Planet Dump.
+      # Stumpf einfach alles in die DB hauen!
+      Poi.crewait(@poi) if valid?
+      
+    elsif @changemode == 'create'
+      # Neue POIs (aus <create> in .osc) werden
       # importiert, wenn sie interessant sind.
-      # @poi.save
       Poi.crewait(@poi) if valid?
 
     elsif @changemode == 'modify'
@@ -116,12 +140,7 @@ class PlanetReader
         # aber zu zeitaufwendig, erst einen "find" zu machen - wir
         # probieren den Save, und wenn der nicht geht, probieren wir
         # den Update.
-        begin
-          @poi.save!
-        rescue 
-          @poi.existing_record
-          @poi.save!
-        end
+        Poi.crewait(@poi)
       else
 
         # falls die neue Version des Nodes nicht interessant ist,
@@ -130,12 +149,14 @@ class PlanetReader
         # "find_by_osm_id", ob eine alte Version ueberhaupt 
         # existiert, denn das waere Zeitverschwendung; der
         # delete-Aufruf macht das schneller.
-        Poi.delete(@poi.osm_id)
+        @to_be_deleted << @poi[:osm_id]
+        flush_pois
 
       end
 
     elsif @changemode == 'delete'
-      Poi.delete(@poi.osm_id)
+      @to_be_deleted << @poi[:osm_id]
+      flush_pois
     end
   end
 end
