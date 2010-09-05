@@ -8,6 +8,8 @@
       = yield(:head)
     /[if IE]
       = render :partial => 'shared/add_html5_elements'
+
+    = javascript_include_tag 'uservoice'
     :javascript
       var object_types = ["#{ (session['amenities']).join('","')}"];
     
