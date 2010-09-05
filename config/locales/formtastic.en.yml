@@ -20,32 +20,32 @@ en:
       email: E-Mail
       password: Password
       password_confirmation: Repeat password
-      osm_username: OSM-Mitgliedsname
-      osm_password: OSM-Passwort
+      osm_username: OSM account name
+      osm_password: OSM password
     hints:
-      lon: 'Bewegen Sie den Marker auf der Karte an den richtigen Ort'
-      osm_username: 'Noch nicht Mitglied? <a href="http://openstreetmap.org/user/new" target="_blank">Openstreetmap Benutzerkonto anlegen</a>'
-      phone: 'Beispiel: +49 30 123456-78'
-      password: '(leer lassen, wenn du es nicht ändern möchtest)'
-      website: 'Beispiel: http://www.example.com'
+      lon: 'Move the marker on the map to the correct position'
+      osm_username: 'Not a member yet? <a href="http://openstreetmap.org/user/new" target="_blank">Create an Openstreetmap account now</a>'
+      phone: 'For example: +49 30 123456-78'
+      password: "(leave empty, if you don't want to change it)"
+      website: 'For example: http://www.example.com'
   errors:
     messages:
-      inclusion: "ist kein gültiger Wert"
+      inclusion: "not a valid value"
       exclusion: "ist nicht verfügbar"
-      invalid: "ist nicht gültig"
+      invalid: "not valid"
       confirmation: "stimmt nicht mit der Bestätigung überein"
-      accepted: "muss akzeptiert werden"
-      empty: "muss ausgefüllt werden"
-      blank: "muss ausgefüllt werden"
-      too_long: "ist zu lang (nicht mehr als {{count}} Zeichen)"
-      too_short: "ist zu kurz (nicht weniger als {{count}} Zeichen)"
+      accepted: "has to be accepted"
+      empty: "has to be filled"
+      blank: "has to be filled"
+      too_long: "is too long (not more than {{count}} characters)"
+      too_short: "is too short (not less than {{count}} characters)"
       wrong_length: "hat die falsche Länge (muss genau {{count}} Zeichen haben)"
-      taken: "ist bereits vergeben"
-      not_a_number: "ist keine Zahl"
-      greater_than: "muss größer als {{count}} sein"
-      greater_than_or_equal_to: "muss größer oder gleich {{count}} sein"
-      equal_to: "muss genau {{count}} sein"
-      less_than: "muss kleiner als {{count}} sein"
-      less_than_or_equal_to: "muss kleiner oder gleich {{count}} sein"
-      odd: "muss ungerade sein"
-      even: "muss gerade sein"
+      taken: "has already been taken"
+      not_a_number: "is not a number"
+      greater_than: "must be greater than {{count}}"
+      greater_than_or_equal_to: "must be greater or equal than {{count}}"
+      equal_to: "must be exactly {{count}}"
+      less_than: "must be less than {{count}}"
+      less_than_or_equal_to: "must be lower or equal than {{count}}"
+      odd: "must be odd"
+      even: "must be even"
