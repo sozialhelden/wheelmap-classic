@@ -1,18 +1,17 @@
 de:
   poi:
     category:
-      public_transfer: Verkehr
-      food: 'Essen &amp; Trinken'
-      leisure: Freizeit
-      government: 'Behörden &amp; Botschaften'
-      money_post: 'Bank &amp; Post'
-      health: Medizin
-      education: 'Bildung'
       accommodation: Unterkunft
+      education: 'Bildung'
+      food: 'Essen &amp; Trinken'
+      government: 'Behörden &amp; Botschaften'
+      leisure: Freizeit
+      misc: Sonstiges
+      money_post: 'Bank &amp; Post'
+      public_transfer: Verkehr
       shopping: Einkaufen
       sport: Sport
       tourism: Tourismus
-      misc: Sonstiges
       unknown: Unbekannt
       
     name:
@@ -105,6 +104,7 @@ de:
         garden_centre: Garten-Center
         hairdresser: Friseur
         hardware: Eisenwarenladen
+        laundry: Wäscherei
         mall: Shoppingcenter
         optician: Optiker
         shoes: Schuhe

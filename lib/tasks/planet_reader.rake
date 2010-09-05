@@ -7,6 +7,7 @@ MERGED_FILE="#{VAR_DIR}/merged.osc"
 STATE_FILE="#{WORKING_DIR}/state.txt"
 BACKUP_FILE="#{WORKING_DIR}/state.old"
 LOCKFILE="tmp/replicate.lock"
+DOWNLOAD_LOCK="#{WORKING_DIR}/download.lock"
 
 require 'rake'
 
