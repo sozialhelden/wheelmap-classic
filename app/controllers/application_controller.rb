@@ -5,12 +5,12 @@ class ApplicationController < ActionController::Base
   helper :all
 
   before_filter :set_locale
+  before_filter :set_default_amenities
 
   def set_locale
     I18n.locale = extract_locale_from_subdomain
   end
   
-  before_filter :set_default_amenities
   
   
   def set_default_amenities
@@ -27,6 +27,11 @@ class ApplicationController < ActionController::Base
   
   def extract_locale_from_subdomain
     parsed_locale = request.subdomains.first.try(:to_sym)
+    (I18n.available_locales.include? parsed_locale) ? parsed_locale  : extract_locale_from_params
+  end
+
+  def extract_locale_from_params
+    parsed_locale = params[:locale].try(:to_sym)
     (I18n.available_locales.include? parsed_locale) ? parsed_locale  : I18n.default_locale
   end
   
