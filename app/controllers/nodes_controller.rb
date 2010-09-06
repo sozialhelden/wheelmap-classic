@@ -23,14 +23,14 @@ class NodesController < ApplicationController
     # @places = Cloudmade.nodes(params[:bbox],params[:object_types])
     
     respond_to do |wants|  
+      wants.js{render :json => @places }
+      wants.json{ render :json => @places }
       wants.geojson do
         render :json => {
           :type => 'FeatureCollection',
           :features => @places.map(&:to_geojson)
         }.to_json
       end
-      wants.js{render :json => @places }
-      wants.json{ render :json => @places }
       wants.html{ redirect_to root_path }
     end
   end
