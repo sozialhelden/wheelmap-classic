@@ -79,6 +79,7 @@ function defaultControls(){
   return [
     new OpenLayers.Control.ArgParser(),
     new OpenLayers.Control.Permalink(),
+    new OpenLayers.Control.Permalink('createlink', '/nodes/new'),
     new OpenLayers.Control.Attribution({id:'attribution',displayClass:"olControlAttribution"}),
     new OpenLayers.Control.PanZoomBar({id:'panzoombar',displayClass:'olControlPanZoomBar'}),
     new OpenLayers.Control.Navigation({zoomWheelEnabled:true, autoActivate:true}),
