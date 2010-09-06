@@ -26,5 +26,5 @@
       %button(type="submit")= t('header.searchbar.find')
       .or-add-place
         .or= t('or')
-        = link_to t('header.searchbar.add_place'), new_node_path, :class => 'button add-place'
+        = link_to t('header.searchbar.add_place'), new_node_path, :class => 'button add-place', :id => 'createlink'
       %ol#searchresult
