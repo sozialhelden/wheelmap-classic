@@ -12,6 +12,8 @@ var mapnik;
 var places;
 var draggable;
 
+OpenLayers.IMAGE_RELOAD_ATTEMPTS = 3;
+
 var states = {
   yes: true,
   no: true,
@@ -78,13 +80,13 @@ function drawmap(controls, element) {
 function defaultControls(){
   return [
     new OpenLayers.Control.ArgParser(),
-    new OpenLayers.Control.Permalink(),
-    new OpenLayers.Control.Permalink('createlink', '/nodes/new'),
     new OpenLayers.Control.Attribution({id:'attribution',displayClass:"olControlAttribution"}),
     new OpenLayers.Control.PanZoomBar({id:'panzoombar',displayClass:'olControlPanZoomBar'}),
     new OpenLayers.Control.Navigation({zoomWheelEnabled:true, autoActivate:true}),
     new OpenLayers.Control.KeyboardDefaults(),
-    new OpenLayers.Control.ScaleLine()
+    new OpenLayers.Control.ScaleLine(),
+    new OpenLayers.Control.Permalink(),
+    new OpenLayers.Control.Permalink('createlink', '/nodes/new')
   ]
 }
 
@@ -278,7 +280,7 @@ function centerCoordinates() {
 function onCompleteDrag(feature) 
 { 
   if(feature) 
-  {	
+  {  
     // replace coordinate values in feature attributes 
     var lonlat = new OpenLayers.LonLat(feature.geometry.x, feature.geometry.y);
     var coordinates = lonlat.clone().transform(map.getProjectionObject(), epsg4326);
@@ -286,14 +288,6 @@ function onCompleteDrag(feature)
     $('#node-lon').attr('value', coordinates.lon);
   }
 };
-
-
-function permalink(path) {
-  var ll = centerCoordinates();
-  var query = '?lat=' + ll.lat + '&lon=' + ll.lon + '&zoom=' + map.zoom;
-  return path + query;
-}
-
 
 $(function() {
   $('a[data-show]').click(function() {
@@ -304,6 +298,28 @@ $(function() {
     $($(this).attr('data-hide')).fadeOut();
     return false;
   });
+  $("#search").autocomplete('/search.js', {
+    max: 10,
+    highlight: false,
+    scroll: true,
+    scrollHeight: 300,
+    minChars: 3,
+    autofill: true,
+    // delimiter: /(,|;)\s*/,
+    formatItem: function(data, i, n, value) {
+      return value.split(':')[0];
+    },
+    formatResult: function(data, value) {
+      return value.split(':')[0];
+    }
+  }).result(function(event, data, formatted) {
+      var parts = data[0].split(':')
+      var lon = parseFloat(parts[1]);
+      var lat = parseFloat(parts[2]);
+      jumpTo(lon,lat, 17);
+      map.refresh();
+  });
+  
   $(window).resize(function() {
     var width = $(window).width() - 780;
     if (width > 100) {

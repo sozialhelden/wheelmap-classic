@@ -27,7 +27,7 @@
         = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
     = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
     = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
-    = javascript_include_tag 'jquery', 'util', 'icons', 'string', 'popup', 'search', 'osm', 'application', 'map', :cache => 'maps'
+    = javascript_include_tag 'jquery', 'util', 'autocomplete', 'icons', 'string', 'popup', 'osm', 'application', 'map', :cache => 'maps'
     - if @content_for_jquery
       = yield :jquery
       :javascript

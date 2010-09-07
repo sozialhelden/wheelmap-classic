@@ -92,22 +92,17 @@ header
     //   width: auto
     //   padding-right: 10px
 
-#searchresult
-  background: white
-  border: 1px solid lighten($border-color, 40%)
-  display: none
-  height: 0px
-  left: 367px
-  padding: 10px
-  overflow-y: auto
-  position: absolute
-  top: 105px
-  width: 40%
-  z-index: 99999
-  background-color: rgba(white, 0.9)
-  +border-radius(12px)
-  +box-shadow(rgba(0, 0, 0, 0.2), 0, 1px, 8px)
+.ac_results
+  ul
+    background: white
+    border: 1px solid lighten($border-color, 40%)
+    padding: 10px
+    z-index: 99999
+    background-color: rgba(white, 0.9)
+    +border-radius(12px)
+    +box-shadow(rgba(0, 0, 0, 0.2), 0, 1px, 8px)
   
   
-  li
-    overflow: hidden
+    li
+      &.ac_over
+        background-color: rgba(192,192,192, 0.9)

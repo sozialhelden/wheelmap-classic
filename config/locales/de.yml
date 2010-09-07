@@ -35,6 +35,7 @@ de:
       label: '' # text left of search input field, leave empty for now
       find: 'finden'
       add_place: 'Ort hinzufügen'
+      placeholder: 'z.B. Sunset Boulevard San Francisco oder Brandenburger Tor Berlin'
     tagline: Wheelmap logo
     title: wheelmap
   form:
