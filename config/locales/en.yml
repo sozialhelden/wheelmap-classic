@@ -32,10 +32,10 @@ en:
       suggestions: 'Suggestions'
       logged_in_as: "Logged in as:"
     searchbar:
-      label: 'Wheelchair accessible places in:'
+      label: '' # text left of search input field, leave empty for now
       find: 'find'
       add_place: 'Add another place'
-      
+      placeholder: 'i.e. Sunset Boulevard San Francisco or Brandenburg Gate Berlin'
       
     tagline: Wheelmap logo
     title: wheelmap

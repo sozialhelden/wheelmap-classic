@@ -22,9 +22,9 @@
     %form
       %label
         =t('header.searchbar.label')
-      = text_field_tag :search, ''
+      = text_field_tag :search, '', :placeholder => t('header.searchbar.placeholder'), :autocomplete => 'off', :class => 'ac_input'
       %button(type="submit")= t('header.searchbar.find')
       .or-add-place
         .or= t('or')
         = link_to t('header.searchbar.add_place'), new_node_path, :class => 'button add-place', :id => 'createlink'
-      %ol#searchresult
+

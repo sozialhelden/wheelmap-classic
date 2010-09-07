@@ -1,13 +1,12 @@
 class SearchController < ApplicationController
   
-  def search
-    
-    
-    
+  def index
     respond_to do |wants|
-      wants.js  {render :json  => Net::HTTP.get_response(URI.parse(osm_url('json'))).body}
+      wants.js  {
+        @result = JSON.parse(Net::HTTP.get_response(URI.parse(osm_url('json'))).body)
+        render :format => 'js'}
       wants.xml {render :xml   => Net::HTTP.get_response(URI.parse(osm_url('xml'))).body }
-      wants.html{render :json   => Net::HTTP.get_response(URI.parse(osm_url('json'))).body }
+      wants.json{render :json => Net::HTTP.get_response(URI.parse(osm_url('json'))).body }
     end
   end
   
