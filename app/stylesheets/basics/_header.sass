@@ -58,6 +58,9 @@ header
       +border-right-radius(0)
       &:focus
         background: lighten($green, 35%)
+      &.ac_loading
+        background: lighten($green, 35%) url('/images/spinner-small.gif') no-repeat right center
+
     button
       float: left
       +green-button($height)
@@ -76,22 +79,6 @@ header
     .or-add-place
       float: left
       
-    
-    // select, input
-    //   -webkit-appearance: none
-    //   -moz-appearance: none
-    //   height: 22px
-    // 
-    // input[type='submit']
-    //   left: 0px
-    //   height: 34px
-    //   
-    // label
-    //   vertical-align: center
-    //   line-height: 34px
-    //   width: auto
-    //   padding-right: 10px
-
 .ac_results
   ul
     background: white
@@ -103,7 +90,5 @@ header
     +box-shadow(rgba(0, 0, 0, 0.2), 0, 1px, 8px)
     cursor: pointer
   
-    li
-      
-      &.ac_over
-        background-color: rgba(192,192,192, 0.9)
+    li.ac_over
+      background-color: rgba(204,204,204, 0.9)
