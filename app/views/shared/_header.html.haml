@@ -19,10 +19,10 @@
       = image_tag "wheelmap_logo_small_#{I18n.locale}.png", :width => 300, :height => 85, :alt => t('wheelmap.logo.alt')
   #searchbar
     -#{:style => 'visibility:hidden'}
-    %form
+    %form{:action => '/search'}
       %label
         =t('header.searchbar.label')
-      = text_field_tag :search, '', :placeholder => t('header.searchbar.placeholder'), :autocomplete => 'off', :class => 'ac_input'
+      = text_field_tag :search, '', :placeholder => t('header.searchbar.placeholder'), :autocomplete => 'off', :value => params[:q] ? params[:q] : nil, :name => 'q'
       %button(type="submit")= t('header.searchbar.find')
       .or-add-place
         .or= t('or')

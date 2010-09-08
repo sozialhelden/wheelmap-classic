@@ -1,2 +1,6 @@
-- @result.each do |entry|
-  = link_to root_path(:lat => entry.lat, :lon => entry.lon, :zoom => 17)
+%h2
+  ="Suche nach \"#{params[:q]}\""
+%ul#searchresult
+  - @result.each do |entry|
+    %li
+      = link_to entry['display_name'], root_path(:a => :b, :lat => entry['lat'], :lon => entry['lon'], :zoom => 17)

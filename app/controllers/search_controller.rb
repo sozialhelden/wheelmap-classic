@@ -7,6 +7,9 @@ class SearchController < ApplicationController
         render :format => 'js'}
       wants.xml {render :xml   => Net::HTTP.get_response(URI.parse(osm_url('xml'))).body }
       wants.json{render :json => Net::HTTP.get_response(URI.parse(osm_url('json'))).body }
+      wants.html{
+        @result = JSON.parse(Net::HTTP.get_response(URI.parse(osm_url('json'))).body)
+      }
     end
   end
   
