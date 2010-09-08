@@ -317,7 +317,6 @@ $(function() {
       var lon = parseFloat(parts[1]);
       var lat = parseFloat(parts[2]);
       jumpTo(lon,lat, 17);
-      map.refresh();
   });
   
   $(window).resize(function() {
