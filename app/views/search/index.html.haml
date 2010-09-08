@@ -3,4 +3,4 @@
 %ul#searchresult
   - @result.each do |entry|
     %li
-      = link_to entry['display_name'], root_path(:a => :b, :lat => entry['lat'], :lon => entry['lon'], :zoom => 17)
+      = link_to entry['display_name'], root_path(:a => :b, :lat => entry['lat'], :lon => entry['lon'], :zoom => 17, :q => entry['display_name'])
