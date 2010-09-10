@@ -3,7 +3,7 @@ en:
     index:
       filter:
         wheelchair: 'Wheelchair accessible?' # title of accessibility selection box
-        category: 'Category' # title of category selection box
+        category: 'Category:' # title of category selection box
       link:
         node:
           create: Add new place
