@@ -206,7 +206,7 @@ function createPlacesLayer(style) {
       // protocol: new OpenLayers.Protocol.HTTP({
       //   url:  "nodes.geojson",
       //   format: new OpenLayers.Format.GeoJSON({
-      //     internalProjection: map.baseLayer.projection,
+      //     internalProjection: epsg4326,
       //     externalProjection: epsg4326,
       //     ignoreExtraDims: true
       //   })
