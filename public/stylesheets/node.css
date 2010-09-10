@@ -845,6 +845,11 @@ form option {
   -moz-appearance: none;
 }
 /* line 81, ../../app/stylesheets/basics/_forms.sass */
+form option.yes {
+  padding-left: 20px;
+  background: url('/images/icons.png?1281208078') no-repeat;
+}
+/* line 86, ../../app/stylesheets/basics/_forms.sass */
 form input[type='submit'] {
   position: relative;
   left: 140px;
@@ -889,7 +894,7 @@ form input[type='submit']:active {
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#618234', startColorstr='#96bf5e', gradientType='0');
   border-color: #89b152 #617e39 #465b29;
 }
-/* line 86, ../../app/stylesheets/basics/_forms.sass */
+/* line 91, ../../app/stylesheets/basics/_forms.sass */
 form label {
   color: #4d4d4d;
   display: block;
@@ -900,7 +905,7 @@ form label {
   text-align: right;
   width: 150px;
 }
-/* line 96, ../../app/stylesheets/basics/_forms.sass */
+/* line 101, ../../app/stylesheets/basics/_forms.sass */
 form legend {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 16px;
@@ -913,34 +918,34 @@ form legend {
   top: 15px;
   bottom: none;
 }
-/* line 104, ../../app/stylesheets/basics/_forms.sass */
+/* line 109, ../../app/stylesheets/basics/_forms.sass */
 form legend span.addition {
   color: #aaaaaa;
 }
-/* line 107, ../../app/stylesheets/basics/_forms.sass */
+/* line 112, ../../app/stylesheets/basics/_forms.sass */
 form fieldset {
   padding: 30px 0px 10px;
   overflow: hidden;
 }
-/* line 114, ../../app/stylesheets/basics/_forms.sass */
+/* line 119, ../../app/stylesheets/basics/_forms.sass */
 form fieldset.buttons {
   padding: 10px 20px 10px 20px;
 }
-/* line 119, ../../app/stylesheets/basics/_forms.sass */
+/* line 124, ../../app/stylesheets/basics/_forms.sass */
 form li[class*='error'] label {
   color: #f19d46;
 }
-/* line 122, ../../app/stylesheets/basics/_forms.sass */
+/* line 127, ../../app/stylesheets/basics/_forms.sass */
 form li[class*='error'] input[type='text'], form li[class*='error'] input[type='password'], form li[class*='error'] input[type='search'], form li[class*='error'] textarea, form li[class*='error'] select {
   border: 1px solid #f19d46;
 }
-/* line 125, ../../app/stylesheets/basics/_forms.sass */
+/* line 130, ../../app/stylesheets/basics/_forms.sass */
 form p.inline-errors, form p.inline-hints {
   position: relative;
   left: 160px;
   color: #aaaaaa;
 }
-/* line 130, ../../app/stylesheets/basics/_forms.sass */
+/* line 135, ../../app/stylesheets/basics/_forms.sass */
 form p.inline-errors {
   color: #f19d46;
 }
@@ -962,6 +967,11 @@ body {
 }
 
 /* line 9, ../../app/stylesheets/basics/_page.sass */
+.help {
+  cursor: help;
+}
+
+/* line 12, ../../app/stylesheets/basics/_page.sass */
 .frame {
   width: 500px;
   margin: 10px auto;
@@ -982,20 +992,20 @@ body {
   -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
   box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
 }
-/* line 19, ../../app/stylesheets/basics/_page.sass */
+/* line 22, ../../app/stylesheets/basics/_page.sass */
 .frame h2 {
   margin-bottom: 10px;
 }
-/* line 22, ../../app/stylesheets/basics/_page.sass */
+/* line 25, ../../app/stylesheets/basics/_page.sass */
 .frame h3 {
   margin-bottom: 5px;
 }
-/* line 25, ../../app/stylesheets/basics/_page.sass */
+/* line 28, ../../app/stylesheets/basics/_page.sass */
 .frame p.pad {
   margin-bottom: 20px;
 }
 
-/* line 28, ../../app/stylesheets/basics/_page.sass */
+/* line 31, ../../app/stylesheets/basics/_page.sass */
 #main {
   background: white;
   border: 1px #e6e6e6 solid;

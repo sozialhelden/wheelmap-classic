@@ -6,6 +6,13 @@ en:
     logo:
       title: Wheelmap Homepage
       alt: Wheelmap Logo
+      
+    what_is:
+      fully_accessible: "The entrance step is not higher than 7 cm; all localities accessible for wheelchair users (without exception); disabled toilet available"
+      limited_accessible: "The entrance step is not higher than 7 cm; most important localitites accessible for wheelchair users"
+      not_accessible: "The entrance step is higher than 7 cm; or a stair at the entrance; or most important localities are not accessible for wheelchair users"
+      unknown_accessible: "The wheelchair status is unknown"
+      
   wheelchairstatus:
     'yes': 'completely wheelchair accessible'
     limited: 'partly wheelchair accessible'
@@ -36,7 +43,6 @@ en:
       find: 'find'
       add_place: 'Add another place'
       placeholder: 'i.e. Sunset Boulevard San Francisco or Brandenburg Gate Berlin'
-      
     tagline: Wheelmap logo
     title: wheelmap
   form:
@@ -51,6 +57,9 @@ en:
   oauth: 
     callback: 
       notice: "Your wheelmap account is now connected to the OpenStreetMap account {{user}}."
+    application:
+      connect:
+        headline: "You have to connect your account with your open street map account before you can create or modify places on wheelmap.org."
   user_sessions: 
     create: 
       activation: 
@@ -96,3 +105,12 @@ en:
     node:
       create: Add new place
       edit: Edit place
+  profile:
+    edit:
+      headline: Edit your Profil
+      application:
+        oauth:
+          not_connected: 'Status: Not connected'
+          connected: 'Status: connected'
+          grant: 'Connect now'
+          revoke: 'Disconnect'

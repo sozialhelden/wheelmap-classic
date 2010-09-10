@@ -6,6 +6,12 @@ de:
     logo:
       title: Wheelmap Startseite
       alt: Wheelmap Logo
+      
+    what_is:
+      fully_accessible: "Eine Eingangsstufe nicht höher als 7 cm ist (etwa eine Handbreite), alle Räumlichkeiten (z.B. alle Kinosäle etc.) für Rollstuhlfahrer grundsätzlich (ohne Ausnahme) befahrbar sind, und eine Rollstuhltoilette vorhanden ist."
+      limited_accessible: "Eine Eingangsstufe nicht höher als 7 cm ist (etwa eine Handbreite), die wichtigsten Räumlichkeiten (z.B. ausgewählte Kinosäle etc.) für Rollstuhlfahrer grundsätzlich befahrbar sind."
+      not_accessible: "Eine Eingangsstufe höher als 7 cm ist (etwa eine Handbreite), eine Treppe am Eingang überwunden werden muss oder die wichtigsten Räumlichkeiten von Rollstuhlfahrern nicht befahren werden können."
+      unknown_accessible: "Der Rollstuhlstatus ist unbekannt"
   wheelchairstatus: # checkboxes
     'yes': 'Ja'
     limited: 'Teilweise'
@@ -52,7 +58,7 @@ de:
       notice: "Dein Benutzerkonto wurde erfoglreich mit dem OpenStreetMap-Benutzerkonto von '{{user}}' verbunden."
     application:
       connect:
-        headline: "Benutzerkonto mit Openstreetmap verbinden (dann kannst du Orte bearbeiten)"
+        headline: "Bevor du auf wheelmap.org Orte bearbeiten bzw. anlegen kannst, musst du dein Benutzerkonto mit Openstreetmap verbinden."
   user_sessions: 
     create: 
       activation: 
@@ -102,10 +108,7 @@ de:
     edit:
       headline: Dein Profil bearbeiten
       application:
-        connect:
-          login: 'Alternative 2: OpenStreetMap Login/Passwort'
         oauth:
-          headline: 'Alternative 1: OAuth (empfohlen)'
           not_connected: 'Status: Nicht verbunden'
           connected: 'Status: verbunden'
           grant: 'Jetzt verbinden'

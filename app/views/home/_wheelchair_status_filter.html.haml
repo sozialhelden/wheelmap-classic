@@ -1,18 +1,18 @@
-%h4= t('home.index.filter.wheelchair')
+%h4= link_to t('home.index.filter.wheelchair'), 'http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei', :target => '_blank'
 %ul#options.wheelchair
   %li.state-yes
     = check_box_tag(:wheelchair_yes, 1, true)
-    = label_tag :wheelchair_yes, t('form.show_fully_accessible_places')
+    = label_tag :wheelchair_yes, t('form.show_fully_accessible_places'), :title => t('wheelmap.what_is.fully_accessible'), :class => :help
     %span
   %li.state-limited
     = check_box_tag(:wheelchair_limited, 1, true)
-    = label_tag :wheelchair_limited, t('form.show_limited_accessible_places')
+    = label_tag :wheelchair_limited, t('form.show_limited_accessible_places'), :title => t('wheelmap.what_is.limited_accessible'), :class => :help
     %span
   %li.state-no
     = check_box_tag(:wheelchair_no, 1, true)
-    = label_tag :wheelchair_no, t('form.show_unaccessible_places')
+    = label_tag :wheelchair_no, t('form.show_unaccessible_places'), :title => t('wheelmap.what_is.not_accessible'), :class => :help
     %span
   %li.state-unknown
     = check_box_tag(:wheelchair_unknown, 1, true)
-    = label_tag :wheelchair_unknown, t('form.show_places_without_status')
+    = label_tag :wheelchair_unknown, t('form.show_places_without_status'), :title => t('wheelmap.what_is.unknown_accessible'), :class => :help
     %span

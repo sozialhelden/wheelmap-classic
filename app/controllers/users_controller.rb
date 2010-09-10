@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, :only => :show
+  before_filter :authenticate_user!
   
   filter_parameter_logging :oauth_token, :oauth_secret, :osm_username, :osm_password
   
