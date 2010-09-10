@@ -144,6 +144,7 @@ function popupHTML(node) {
   result += '<a href="/nodes/' + node.id + '">' + (node.name || node.type) + '</a></h2>';
   result += addressOfNode(node);
   result += tagList(node.tags);
+  result += '<a href="/nodes/' + node.id + '">mehr Infos</a>'
   result += '<form action="/nodes/' + node.id + '/update_wheelchair.js" id="update_form_' + node.id + '" method="put">';
   result += '<ol class="wheelchair">';
   result += stateHTML('yes', 'rollstuhlgerecht');
