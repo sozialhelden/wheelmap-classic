@@ -1674,9 +1674,17 @@ image[width='16'] {
 
 /* line 1, ../../app/stylesheets/partials/nodes/flash.sass */
 #flash {
-  margin: 10px;
+  margin-bottom: 20px;
   padding: 10px;
-  background-color: #fff7d9;
-  border: 1px dashed #ffd740;
+  color: #536c31;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+  background-color: #d1e1bb;
+  border: 1px dashed #c5d9aa;
+  border-top-color: #adc987;
+  border-bottom-color: #f5f8f0;
   text-align: center;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
 }
