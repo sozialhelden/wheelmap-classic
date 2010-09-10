@@ -66,6 +66,8 @@ header
       +green-button($height)
       +border-left-radius(0)
       +border-right-radius(8px)
+      height: $height
+      
     .or
       color: darken($orange, 20%)
       float: left
@@ -73,8 +75,8 @@ header
     .add-place
       float: left
       +orange-button($height)
-      height: $height - 2 * (6px + 1px)
-      line-height: $height - 2 * (6px + 1px)
+      height: $height - 2 * (6px)
+      line-height: $height - 2 * (6px)
       text-decoration: none
     .or-add-place
       float: left

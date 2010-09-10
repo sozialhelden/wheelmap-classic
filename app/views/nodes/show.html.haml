@@ -44,34 +44,37 @@
         = t("poi.name.#{@node.category}.#{@node.type}")
       -else
         &nbsp;
-  %tr
-    %th=t('formtastic.labels.street')
-    %td
-      =@node.tags['addr:street']
-      =@node.tags['addr:housenumber'] || '&nbsp;'
-  %tr
-    %th=t('formtastic.labels.postcode')
-    %td=@node.tags['addr:postcode'] || '&nbsp;'
-  %tr
-    %th=t('formtastic.labels.city')
-    %td=@node.tags['addr:city'] || '&nbsp;'
+        
+  - if @node.tags['addr:street'] || @node.tags['addr:housenumber']
+    %tr
+      %th=t('formtastic.labels.street')
+      %td
+        =@node.tags['addr:street']
+        =@node.tags['addr:housenumber'] || '&nbsp;'
+      
+      
+  - if @node.tags['addr:postcode']
+    %tr
+      %th=t('formtastic.labels.postcode')
+      %td=@node.tags['addr:postcode'] || '&nbsp;'
 
-  %tr
-    %th=t('formtastic.labels.website')
-    %td
-      -if @node.tags['website']
-        %a{:href => @node.tags['website'], :rel => 'nofollow', :target => '_blank'}>=@node.tags['website']
+  - if @node.tags['addr:city']
+    %tr
+      %th=t('formtastic.labels.city')
+      %td=@node.tags['addr:city'] || '&nbsp;'
 
-  %tr
-    %th=t('formtastic.labels.phone')
-    %td
-      =@node.tags['phone'] || '&nbsp;'
+  - if @node.tags['website']
+    %tr
+      %th=t('formtastic.labels.website')
+      %td
+        -if @node.tags['website']
+          %a{:href => @node.tags['website'], :rel => 'nofollow', :target => '_blank'}>=@node.tags['website']
 
-
-- content_for :breadcrumbs do
-  -#= link_to t('breadcrumbs.root'), root_path
-  -#= link_to 'Deutschland', root_path
-  -#= link_to 'Berlin', root_path, :class => 'last'
+  - if @node.tags['phone']
+    %tr
+      %th=t('formtastic.labels.phone')
+      %td
+        =@node.tags['phone'] || '&nbsp;'
 
 - content_for :javascript do
   :javascript
