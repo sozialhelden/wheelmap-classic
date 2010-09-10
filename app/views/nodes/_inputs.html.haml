@@ -1,7 +1,7 @@
 - form.inputs :name => t('formtastic.titles.basic'), :id => 'basic' do
   = form.input :name
 
-  = form.input :wheelchair, :as => :select, :collection => options_for_wheelchair_status, :include_blank => false
+  = form.input :wheelchair, :as => :select, :collection => options_for_wheelchair_status, :include_blank => false, :label => link_to(t('formtastic.labels.wheelchair'), 'http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei', :target => '_blank')
 
   = form.input :wheelchair_description, :required => false
   
