@@ -82,7 +82,7 @@ module Crewait
       sql = values.to_crewait_sql
 
   		while !sql.empty? do
-  			query_string = "INSERT INTO #{model_class} (#{keys.join(', ')}) VALUES #{sql.shift}"
+  			query_string = "INSERT LOW_PRIORITY INTO #{model_class} (#{keys.join(', ')}) VALUES #{sql.shift}"
   			while !sql.empty? && (query_string.length + sql.last.length < 999_999)  do
   				query_string << ',' << sql.shift
   			end
