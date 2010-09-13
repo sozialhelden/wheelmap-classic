@@ -22,3 +22,4 @@ en:
       not_available: "Sorry, this page is temporarily not available."
       not_existent: "Sorry, this place is not available anymore."
       not_authorized: "Sorry, authentication failed"
+      param_missing: Please provide a search term.
