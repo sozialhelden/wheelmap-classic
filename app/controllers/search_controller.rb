@@ -23,8 +23,10 @@ private
   end
   
   def check_for_search_term
-    @message = I18n.t('nodes.errors.param_missing', :param => 'q')
-    render :action => 'error', :status => 406
+    if params[:q].blank?
+      @message = I18n.t('nodes.errors.param_missing', :param => 'q')
+      render :action => 'error', :status => 406
+    end
   end
   
 end
