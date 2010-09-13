@@ -23,7 +23,7 @@ en:
       osm_username: OSM account name
       osm_password: OSM password
     hints:
-      lon: 'Move the marker on the map to the correct position'
+      lat: 'Move the marker on the map to the correct position'
       osm_username: 'Not a member yet? <a href="http://openstreetmap.org/user/new" target="_blank">Create an Openstreetmap account now</a>'
       phone: 'For example: +49 30 123456-78'
       password: "(leave empty, if you don't want to change it)"
