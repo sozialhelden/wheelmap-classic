@@ -38,6 +38,11 @@ en:
       how_to_add_a_place: 'How do I add places?'
       suggestions: 'Suggestions'
       logged_in_as: "Logged in as:"
+    meta:
+      description: "Find wheelchair accessible places - wheelmap.org"
+      keywords: "wheelchair accessible places find search mark"
+      search: Search
+      homepage: Home page
     searchbar:
       label: '' # text left of search input field, leave empty for now
       find: 'find'

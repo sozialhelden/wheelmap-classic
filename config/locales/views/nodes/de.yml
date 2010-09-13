@@ -20,5 +20,6 @@ de:
       not_found: Leider konnte die Seite nicht gefunden werden
       not_available: Leider steht diese Seite zur Zeit nicht zur Verfügung
       not_existent: Leider ist dieser Ort nicht mehr da
-      not_authorized: Authentifizierung fehl geschlagen
+      not_authorized: Authentifizierung fehlgeschlagen
+      param_missing: Bitte geben Sie einen Suchbegriff ein.
   

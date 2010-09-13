@@ -1,5 +1,7 @@
 class SearchController < ApplicationController
   
+  before_filter :check_for_search_term
+  
   def index
     respond_to do |wants|
       wants.js  {
@@ -18,6 +20,11 @@ private
   def osm_url(format)
     q = URI.escape(params[:q])
     "http://nominatim.openstreetmap.org/search?q=#{q}&format=#{format}&accept-language=#{I18n.locale}&osm_type=N"
+  end
+  
+  def check_for_search_term
+    @message = I18n.t('nodes.errors.param_missing', :param => 'q')
+    render :action => 'error', :status => 406
   end
   
 end

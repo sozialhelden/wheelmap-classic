@@ -37,6 +37,11 @@ de:
       how_to_add_a_place: 'Wie trage ich Orte ein?'
       suggestions: 'Anregungen'
       logged_in_as: "Eingeloggt als:"
+    meta:
+      description: "Rollstuhlgerechte Orte finden! - wheelmap.org"
+      keywords: "rollstuhl gerechte orte finden suchen markieren"
+      search: Suche
+      homepage: Startseite
     searchbar:
       label: '' # text left of search input field, leave empty for now
       find: 'finden'
