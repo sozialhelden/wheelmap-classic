@@ -24,7 +24,6 @@ a:hover {
 
 /* line 17, ../../app/stylesheets/vendor/_map.sass */
 #map {
-  height: 100%;
   width: 100%;
   padding: 0;
   margin: 0;
@@ -33,13 +32,13 @@ a:hover {
   color: black;
 }
 
-/* line 27, ../../app/stylesheets/vendor/_map.sass */
+/* line 26, ../../app/stylesheets/vendor/_map.sass */
 .olFramedCloudPopupContent {
   font-size: 0.8em;
   font-family: Verdana, sans-serif;
 }
 
-/* line 31, ../../app/stylesheets/vendor/_map.sass */
+/* line 30, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle {
   position: absolute;
   font-size: 1em;
@@ -56,13 +55,13 @@ a:hover {
   cursor: default;
   opacity: 0.7;
 }
-/* line 47, ../../app/stylesheets/vendor/_map.sass */
+/* line 46, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle:hover {
   background-color: white;
   opacity: 1;
 }
 
-/* line 52, ../../app/stylesheets/vendor/_map.sass */
+/* line 51, ../../app/stylesheets/vendor/_map.sass */
 #description {
   position: absolute;
   z-index: 10000;
@@ -75,7 +74,7 @@ a:hover {
   font-size: 12px;
 }
 
-/* line 64, ../../app/stylesheets/vendor/_map.sass */
+/* line 63, ../../app/stylesheets/vendor/_map.sass */
 #attribution {
   bottom: 0;
   left: 0;
@@ -86,14 +85,14 @@ a:hover {
   z-index: 1000;
 }
 
-/* line 74, ../../app/stylesheets/vendor/_map.sass */
+/* line 73, ../../app/stylesheets/vendor/_map.sass */
 #layer {
   position: absolute;
   top: 60px;
   right: 10px;
   z-index: 10002;
 }
-/* line 80, ../../app/stylesheets/vendor/_map.sass */
+/* line 79, ../../app/stylesheets/vendor/_map.sass */
 #layer > div {
   border: 1px solid black;
   background-color: white;
@@ -102,12 +101,12 @@ a:hover {
   cursor: default;
   margin-bottom: 4px;
 }
-/* line 89, ../../app/stylesheets/vendor/_map.sass */
+/* line 88, ../../app/stylesheets/vendor/_map.sass */
 #layer .active {
   background-color: #eeeeff;
 }
 
-/* line 93, ../../app/stylesheets/vendor/_map.sass */
+/* line 92, ../../app/stylesheets/vendor/_map.sass */
 .hide {
   display: none;
 }
@@ -1241,11 +1240,11 @@ image[width='16'] {
   width: 300px;
   z-index: 5000;
   background-color: #e7ebe2;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), color-stop(0.5, #e7ebe2), color-stop(1, #cfd7c5));
-  background-image: -moz-linear-gradient(center bottom, #cfd7c5 0%, #e7ebe2 50%, #fff 100%);
-  background-image: linear-gradient(center bottom, #cfd7c5 0%, #e7ebe2 50%, #fff 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#cfd7c5', startColorstr='#fff', gradientType='0');
-  background-color: #fff;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #e7ebe2), color-stop(1, #cfd7c5));
+  background-image: -moz-linear-gradient(center bottom, #cfd7c5 0%, #e7ebe2 50%, white 100%);
+  background-image: linear-gradient(center bottom, #cfd7c5 0%, #e7ebe2 50%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#cfd7c5', startColorstr='white', gradientType='0');
+  background-color: white;
   -moz-border-radius: 12px;
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
@@ -1663,9 +1662,9 @@ image[width='16'] {
   -webkit-border-radius: 10px;
   -khtml-border-radius: 10px;
   border-radius: 10px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px inset, #fff 0 1px 1px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px inset, #fff 0 1px 1px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px inset, #fff 0 1px 1px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px inset, white 0 1px 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px inset, white 0 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px inset, white 0 1px 1px;
 }
 /* line 19, ../../app/stylesheets/partials/map/_search.sass */
 #bar form input:focus {
