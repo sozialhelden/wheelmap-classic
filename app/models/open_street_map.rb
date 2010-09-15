@@ -248,10 +248,10 @@ class OpenStreetMap
         raise Precondition.new(data), "(#{response.code}): #{response.message} - #{data if data}"
       when 500
         RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data if data}")
-        raise Unavailable, "(#{response.code}): #{response.message} - #{data if data}")
+        raise Unavailable, "(#{response.code}): #{response.message} - #{data if data}"
       when 502..503
         RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data if data}")
-        raise Unavailable, "(#{response.code}): #{response.message} - #{data if data}")
+        raise Unavailable, "(#{response.code}): #{response.message} - #{data if data}"
     end
   end
 end
