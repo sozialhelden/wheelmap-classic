@@ -59,6 +59,24 @@ class OpenStreetMap
     end
   end
   
+  def destroy_node(node, comment="Delete node on wheelmap.org")
+    RAILS_DEFAULT_LOGGER.debug "Old version: #{node.version}"
+    RAILS_DEFAULT_LOGGER.debug "Old changeset: #{node.changeset}"
+    RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
+    changeset_id = create_changeset(comment)
+    RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
+    begin
+      node.changeset = changeset_id
+      RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
+      RAILS_DEFAULT_LOGGER.debug node.inspect
+      RAILS_DEFAULT_LOGGER.debug node.to_xml
+      new_version = destroy(node)
+      RAILS_DEFAULT_LOGGER.debug "New version: #{new_version}"
+    ensure
+      close_changeset(changeset_id) if changeset_id
+    end
+  end
+
   def self.round_bounding_box(bbox)
     west,south,east,north = bbox.split(',').map(&:to_f)
     RAILS_DEFAULT_LOGGER.debug("BBOX: #{bbox}")
@@ -134,6 +152,13 @@ class OpenStreetMap
     response.body
   end
   
+  def destroy(node)
+    url = request_uri("/node/#{node.id}")
+    response = delete(url, :body => node.to_xml)
+    self.class.raise_errors(response)
+    response.body
+  end
+
   def create_changeset(comment="Modify accessibility status for node")
     RAILS_DEFAULT_LOGGER.debug("OpenStreetMap#create_changeset")
     url = request_uri('/changeset/create')
@@ -188,6 +213,17 @@ class OpenStreetMap
     end
   end
   
+  # Indirection to HTTParty class method id called as instance method
+  def delete(url, options={})
+    p url
+    if client.respond_to?(:delete) # oauth_client?
+      client.delete(url, options)
+    else # basic_auth_client?
+      options.reverse_merge!(:basic_auth => client.credentials)
+      self.class.delete(url, options)
+    end
+  end
+
   def self.raise_errors(response)
     # RAILS_DEFAULT_LOGGER.debug("HTTP REQUEST: #{response.inspect}")
     case response.code.to_i
