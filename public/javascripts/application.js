@@ -194,25 +194,6 @@ function clusterStrategy(){
   return new OpenLayers.Strategy.Cluster({distance: 15, threshold: 3});
 }
 
-function bboxStrategy(){
-  return new OpenLayers.Strategy.BBOX({ratio : 1});
-}
-
-function geoJsonParser(){
-  return new OpenLayers.Format.GeoJSON({
-      internalProjection: epsg4326,
-      externalProjection: epsg4326,
-      ignoreExtraDims: true
-    });
-}
-
-function httpProtocol(){
-  return new OpenLayers.Protocol.HTTP({
-    url:  "nodes.geojson",
-    format: geoJsonParser()
-  })
-}
-
 function createPlacesLayer(style) { 
   places = new OpenLayers.Layer.Vector(
     "Places ",
@@ -221,8 +202,15 @@ function createPlacesLayer(style) {
       projection: epsg4326,
       displayProjection: epsg4326,
       rendererOptions: { yOrdering: true },
-      // strategies: [bboxStrategy()],
-      // protocol: httpProtocol(),
+      // strategies: [new OpenLayers.Strategy.BBOX({ratio : 1})],
+      // protocol: new OpenLayers.Protocol.HTTP({
+      //   url:  "nodes.geojson",
+      //   format: new OpenLayers.Format.GeoJSON({
+      //     internalProjection: epsg4326,
+      //     externalProjection: epsg4326,
+      //     ignoreExtraDims: true
+      //   })
+      // }),
       visibility: true,
     });
   map.addLayer(places);
@@ -250,9 +238,9 @@ function activateDragControl(layer){
 }
 
 function activateSelectControl(layer){
-  var control = new OpenLayers.Control.SelectFeature(layer, {onSelect:openPopup});
-  map.addControl(control);
-  control.activate();
+  var sc = new OpenLayers.Control.SelectFeature(layer, { onSelect:openPopup});
+  map.addControl(sc);
+  sc.activate();  
 }
 
 
