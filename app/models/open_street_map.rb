@@ -229,8 +229,8 @@ class OpenStreetMap
     case response.code.to_i
       when 400
         data = response.body
-        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data['error'] if data}")
-        raise BadRequest.new(data), "(#{response.code}): #{response.message} - #{data['error'] if data}"
+        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data if data}")
+        raise BadRequest.new(data), "(#{response.code}): #{response.message} - #{data if data}"
       when 404
         data = response.body
         RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data['error'] if data}")
