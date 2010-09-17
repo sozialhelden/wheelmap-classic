@@ -51,10 +51,10 @@ en:
     tagline: Wheelmap logo
     title: wheelmap
   form:
-    show_fully_accessible_places: wheelchair accessible places
-    show_limited_accessible_places: partly wheelchair accessible places
-    show_unaccessible_places: not wheelchair accessible places
-    show_places_without_status: places with unknown status
+    show_fully_accessible_places: wheelchair accessible
+    show_limited_accessible_places: partly wheelchair accessible
+    show_unaccessible_places: not wheelchair accessible
+    show_places_without_status: unknown status
   layouts: 
     application: 
       banner:
