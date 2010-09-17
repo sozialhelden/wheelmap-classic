@@ -34,6 +34,8 @@ en:
       reset_password_instructions: 'Reset password instructions'
       unlock_instructions: 'Unlock Instructions'
 
+    sign_out:
+      headline: Logout
     sign_in:
       headline: Login
       form:

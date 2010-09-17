@@ -5,6 +5,7 @@ en:
       optional: 'More information <span class="addition">(all fields are optional)</span>'
     labels:
       save: Save
+      create: Create place
       wheelchair: 'Wheelchair accessibility?'
       wheelchair_description: 'Accessibility comment:'
       category: 'Category:'

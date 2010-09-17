@@ -5,6 +5,7 @@ de:
       optional: 'Mehr Infos <span class="addition">(alle Felder sind optional)</span>'
     labels:
       save: Speichern
+      create: Ort anlegen
       name: 'Name des Ortes:'
       type: 'Typ:'
       wheelchair: Rollstuhlgerecht?
