@@ -6,7 +6,7 @@
     = render :partial => 'inputs', :object => @node, :locals => {:form => form}
     
     - form.buttons do
-      = form.submit
+      = form.submit t('formtastic.labels.create')
       %p.hint= t('devise.mandatory')
 
 - content_for :breadcrumbs do
