@@ -76,7 +76,35 @@
       %td
         =@node.tags['phone'] || '&nbsp;'
 
+= javascript_include_tag "http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=#{GoogleConfig.api_key}"
+
+.clear
+%hr
+
+%h2 Informationen zu diesem Ort aus anderen Quellen
+%h3 Google Streetview:
+
+%div#streetview{:name => "pano", :style => "overflow: hidden; margin-bottom: 10px; width: 980px; height: 250px;"}
+  %p#streetview_info
+
+
 - content_for :javascript do
   :javascript
-    jumpTo(parseFloat("#{@node.lon}"), parseFloat("#{@node.lat}"), 17);
-    createDraggableLayer(placesStyle(),parseFloat("#{@node.lon}"), parseFloat("#{@node.lat}"));
+    jumpTo(#{@node.lon}, #{@node.lat}, 17);
+    createDraggableLayer(placesStyle(),#{@node.lon}, #{@node.lat});    
+    
+    var myPano;
+    
+    var point = new GLatLng(#{@node.lat}, #{@node.lon});
+    panoramaOptions = { latlng:point };
+    myPano = new GStreetviewPanorama(document.getElementById("streetview"), panoramaOptions);
+    GEvent.addListener(myPano, "error", handleNoFlash);
+    
+    function handleNoFlash(errorCode) {
+      if (errorCode == 600) {
+        $("#streetview").attr('style', 'height: 30px;');
+        $("#streetview_info").text('Ist für diesen Ort leider nicht verfügbar');
+        return;
+      }
+    }
+    
