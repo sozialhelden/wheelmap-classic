@@ -25,6 +25,17 @@ config.log_level = :debug
 # config.action_mailer.raise_delivery_errors = false
 config.action_mailer.default_url_options = { :host => 'staging.wheelmap.org' }
 
+config.action_mailer.smtp_settings = {
+  # :address        => 'smtp.gmail.com',
+  :enable_starttls_auto => false
+  # :port           => 587,
+  # :domain         => '...',
+  # :authentication => :login,
+  # :user_name      => '...',
+  # :password       => 'secret'
+}
+
+
 
 # Enable threaded mode
 # config.threadsafe!
