@@ -14,7 +14,7 @@ de:
       inactive: 'Dein Benutzerkonto wurde noch nicht bestätigt. Um es zu Bestätigen klicke bitte auf den Link, den wir dir per E-Mail geschickt haben.'
     passwords:
       link: 'Passwort vergessen?'
-      send_instructions: 'Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Passwort neu setzen bekommst.'
+      send_instructions: 'Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Passwort neu setzen kannst.'
       updated: 'Dein Passwort wurde erfolgreich geändert. Du bist nun angemeldet.'
     confirmations:
       link: "Keine Bestätigungsmail bekommen?"
