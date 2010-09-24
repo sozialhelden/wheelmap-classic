@@ -15,7 +15,7 @@ describe 'OpenStreetMap::Node' do
                         'tag' => [
                           {
                             'k' => 'amenity',
-                            'v' => 'telephone'
+                            'v' => 'pub'
                           },
                           {
                             'k' => 'created_by',
@@ -39,11 +39,11 @@ describe 'OpenStreetMap::Node' do
     @node.lon.should == 13.3988069
     @node.id.should == 78252168
     @node.name.should == 'Telefonzelle am neuen Tor'
-    @node.type.should == 'telephone'
+    @node.type.should == 'pub'
   end
   
   it "should have tags" do
-    @node.tags.should == {'amenity' => 'telephone',
+    @node.tags.should == {'amenity' => 'pub',
                           'created_by' => 'Potlatch 0.4c',
                           'wheelchair' => 'yes',
                           'name' => 'Telefonzelle am neuen Tor',
