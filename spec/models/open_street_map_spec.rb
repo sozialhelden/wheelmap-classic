@@ -3,13 +3,17 @@ describe OpenStreetMap do
   
   before(:each) do
     @base_url = "#{OpenStreetMapConfig.oauth_site}/api/0.6"
-    @client = OpenStreetMap::BasicAuthClient.new('foo', 'bar')
+    @basic_auth_client = OpenStreetMap::BasicAuthClient.new('foo', 'bar')
     uri = URI.parse("#{OpenStreetMapConfig.oauth_site}/api/0.6")
     @basic_auth_url = "#{uri.scheme}://foo:bar@#{uri.host}#{uri.path}"
     
     FakeWeb.allow_net_connect = false
     @consumer = ::OAuth::Consumer.new(OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret, :site => @base_url)
-    @oauth = ::OAuth::AccessToken.new(@consumer, 'foo', 'bar')
+    @access_token = ::OAuth::AccessToken.new(@consumer, 'foo', 'bar')
+    @oauth_client = OpenStreetMap::OauthClient.new(@access_token)
+    @oauth_osm = OpenStreetMap.new(@client)
+    @basic_auth_osm = OpenStreetMap.new(@client)
+    
   end
   
   after(:each) do
@@ -46,7 +50,6 @@ describe OpenStreetMap do
   describe "method: create_changeset" do
     before(:each) do
       @full_url = "#{@basic_auth_url}/changeset/create"
-      @osm = OpenStreetMap.new(@client)
     end
 
     it "should create a new changeset" do
@@ -58,14 +61,14 @@ describe OpenStreetMap do
     it "should raise bad request when submitting malformed xml" do
       FakeWeb.register_uri(:put, @full_url, :status => 400, :body => "Could not parse xml", :content_type => 'text/plain')
       lambda{
-        OpenStreetMap.create_changeset
+        @osm.create_changeset
       }.should raise_error(OpenStreetMap::BadRequest)
     end
     
     it "should raise method not allowed exception when not using put request" do
       FakeWeb.register_uri(:put, @full_url, :status => 405, :body => "Just method put is supported", :content_type => 'text/plain')
       lambda{
-        OpenStreetMap.create_changeset
+        @osm.create_changeset
       }.should raise_error(OpenStreetMap::MethodNotAllowed)
     end
   end
@@ -92,7 +95,7 @@ describe OpenStreetMap do
       FakeWeb.register_uri(:get, @get_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
       FakeWeb.register_uri(:put, @changeset_close_url, :content_type => 'text/plain')
     
-      node = OpenStreetMap.create_node(@node)
+      node = @osm.create_node(@node)
       node.id.should == 84644746
     end
     

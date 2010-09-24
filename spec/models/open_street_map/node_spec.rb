@@ -3,14 +3,14 @@ require 'spec_helper'
 describe 'OpenStreetMap::Node' do
   
   before(:each) do
-    @valid_attributes ={ 'id' => '78252168',
-                        'lat' => '52.5235634',
-                        'lon' => '13.3988069',
-                        'version' => '2',
+    @valid_attributes ={'id'        => '78252168',
+                        'lat'       => '52.5235634',
+                        'lon'       => '13.3988069',
+                        'version'   => '2',
                         'changeset' => '415641',
-                        'user' => 'bahnpirat',
-                        'uid' =>'13203',
-                        'visible' => 'true',
+                        'user'      => 'bahnpirat',
+                        'uid'       =>'13203',
+                        'visible'   => 'true',
                         'timestamp' =>'2007-11-05T14:56:37Z',
                         'tag' => [
                           {
@@ -43,7 +43,20 @@ describe 'OpenStreetMap::Node' do
   end
   
   it "should have tags" do
-    @node.tags.should == {'amenity' => 'telephone', 'created_by' => 'Potlatch 0.4c', 'wheelchair' => 'yes', 'name' => 'Telefonzelle am neuen Tor'}
+    @node.tags.should == {'amenity' => 'telephone',
+                          'created_by' => 'Potlatch 0.4c',
+                          'wheelchair' => 'yes',
+                          'name' => 'Telefonzelle am neuen Tor',
+                          'addr:postcode' => nil,
+                          'addr:city' => nil,
+                          'addr:housenumber' => nil,
+                          'addr:street' => nil,
+                          'website' =>nil,
+                          'phone' => nil }
+  end
+
+  it "should build valid object" do
+    Factory.build(:node).should be_valid
   end
 
   it "should be a valid node type" do
@@ -57,10 +70,6 @@ describe 'OpenStreetMap::Node' do
   it "should render proper json" do
     @json = JSON.parse(@node.to_json)
     @json['wheelchair'].should == 'yes'
-  end
-    
-  it "should build valid object" do
-    Factory.build(:node).should be_valid
   end
   
   it "should set wheelchair attribute and tag" do
@@ -90,13 +99,13 @@ describe 'OpenStreetMap::Node' do
   
   it "should set phone attribute and tag" do
     @node.phone = '+49 30 1232345'
-    @node.tags['contact:phone'].should == '+49 30 1232345'
+    @node.tags['phone'].should == '+49 30 1232345'
     @node.phone.should == '+49 30 1232345'
   end
   
   it "should set url attribute and tag" do
-    @node.url = 'http://www.example.com'
-    @node.tags['contact:website'].should == 'http://www.example.com'
+    @node.website = 'http://www.example.com'
+    @node.tags['website'].should == 'http://www.example.com'
     @node.website.should == 'http://www.example.com'
   end
   
