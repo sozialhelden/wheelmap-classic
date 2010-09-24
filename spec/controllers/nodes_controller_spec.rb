@@ -60,9 +60,6 @@ describe NodesController do
         response.body.should == "Params missing"
       end
     end
-    
-    describe "as registered user" do
-    end
   end
   
   describe "action: update" do
@@ -74,21 +71,26 @@ describe NodesController do
     describe "signed_in" do
       
       before(:each) do
+        @another_user.should be_app_authorized
         sign_in @another_user
       end
       
       it "should create UpdateJob for given node" do
         FakeWeb.register_uri(:get, @full_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
          lambda{
-            put(:update, :id => 84644746, :node => {:wheelchair => 'yes'})
+            put(:update, :id => 84644746, :node => {:wheelchair => 'yes', :name => 'A nice place', :type => 'cafe'})
+            response.should be_success
           }.should change(UpdateJob, :count).by(1)
       end
       
       it "should have correct values for UpdateJob" do
         FakeWeb.register_uri(:get, @full_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
-        put(:update, :id => 84644746, :node => {:wheelchair => 'yes'})
+        lambda{
+          put(:update, :id => 84644746, :node => {:id => 84644746, :wheelchair => 'yes', :name => 'A nice place', :type => 'cafe'})
+          response.should be_success
+        }.should change(UpdateJob, :count).by(1)
         job = YAML.load(UpdateJob.last.handler)
-        job.user_id.should == @another_user.id
+        job.client.class.should == OpenStreetMap::OauthClient
         job.node.id.should == 84644746
         job.node.wheelchair.should == 'yes'
       end
@@ -102,26 +104,12 @@ describe NodesController do
     end
     
     describe "anonymous" do
-  
-      it "should create UpdateJob for given node" do
+      it "should not create UpdateJob for given node" do
         FakeWeb.register_uri(:get, @full_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
          lambda{
             put(:update, :id => 84644746, :node => {:wheelchair => 'yes'})
-          }.should change(UpdateJob, :count).by(1)
-      end
-      
-      it "should have correct values for UpdateJob" do
-        FakeWeb.register_uri(:get, @full_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
-        put(:update, :id => 84644746, :node => {:wheelchair => 'yes'})
-        job = YAML.load(UpdateJob.last.handler)
-        job.user_id.should == @default_user.id
-        job.node.id.should == 84644746
-        job.node.wheelchair.should == 'yes'
-      end
-  
-      it "should not update node if node param is missing" do
-        response = put(:update, :id => 1234)
-        response.code.should == '406'
+            response.should be_redirect
+          }.should change(UpdateJob, :count).by(0)
       end
     end
   end
@@ -131,24 +119,24 @@ describe NodesController do
     describe "signed_in" do
     
       before(:each) do
+        @another_user.should be_app_authorized
         sign_in @another_user
       end
     
       it "should create CreateJob for given node attributes" do
         lambda{
             post(:create, :node => {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant'})
-            
           }.should change(CreateJob, :count).by(1)
       end
       
       it "should have correct values for CreateJob" do
         post(:create, :node => {:lat => '52.4', :lon => '13.9', :name => 'test node', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant'})
         job = YAML.load(CreateJob.last.handler)
-        job.user_id.should == @another_user.id
-        job.node['name'].should == 'test node'
-        job.node['wheelchair'].should == 'yes'
-        job.node['lat'].should == '52.4'
-        job.node['lon'].should == '13.9'
+        job.client.class.should == OpenStreetMap::OauthClient
+        job.node.name.should == 'test node'
+        job.node.wheelchair.should == 'yes'
+        job.node.lat.should == 52.4
+        job.node.lon.should == 13.9
       end
     
       it "should not create node if node is missing" do

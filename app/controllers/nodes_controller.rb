@@ -3,7 +3,7 @@ class NodesController < ApplicationController
   skip_before_filter :verify_authenticity_token
   
   before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update]
-  before_filter :authenticate_application!,       :only => [:new, :create, :edit]
+  before_filter :authenticate_application!,       :only => [:new, :create, :edit, :update]
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
   before_filter :check_create_params,             :only => :create

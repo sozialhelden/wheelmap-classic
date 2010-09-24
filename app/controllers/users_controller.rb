@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+  
+  # skip_before_filter :verify_authenticity_token
+  
+  before_filter :authenticate_user!, :except => :authenticate
   
   filter_parameter_logging :oauth_token, :oauth_secret, :osm_username, :osm_password
   
@@ -22,9 +25,13 @@ class UsersController < ApplicationController
   
   def authenticate
     if user = User.authenticate_with_http(params[:email], params[:password])
-      render :text => 'OK', :status => 200
+      if user.app_authorized?
+        render :json => {:id => user.id}.to_json, :status => 200
+      else
+        render :json => {:id => user.id, :message => 'Application needs to be authorized', :url => edit_user_url(user)}.to_json, :status => 403
+      end
     else
-      render :text => 'FAIL', :status => 400
+      render :text => 'Authorization failed', :status => 401
     end
   end
   
