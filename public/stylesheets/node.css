@@ -701,7 +701,11 @@ header #searchbar .or-add-place {
   float: left;
 }
 
-/* line 85, ../../app/stylesheets/basics/_header.sass */
+/* line 84, ../../app/stylesheets/basics/_header.sass */
+.ac_results {
+  z-index: 9000;
+}
+/* line 86, ../../app/stylesheets/basics/_header.sass */
 .ac_results ul {
   background: white;
   border: 1px solid #cccccc;
@@ -712,13 +716,13 @@ header #searchbar .or-add-place {
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
   border-radius: 12px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
   cursor: pointer;
 }
-/* line 95, ../../app/stylesheets/basics/_header.sass */
+/* line 96, ../../app/stylesheets/basics/_header.sass */
 .ac_results ul li.ac_over {
   background-color: rgba(204, 204, 204, 0.9);
 }
@@ -1012,10 +1016,10 @@ body {
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
   border-radius: 12px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
 }
 /* line 22, ../../app/stylesheets/basics/_page.sass */
 .frame h2 {
@@ -1042,15 +1046,11 @@ body {
   -khtml-border-radius: 15px;
   border-radius: 15px;
   overflow: hidden;
-  display: inline-block;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
-  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
-}
-/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
-#main {
-  display: block;
+  *zoom: 1;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
 }
 
 /* line 2, ../../app/stylesheets/partials/nodes/_headlines.sass */
@@ -1061,7 +1061,7 @@ h1 span.addition {
 /* line 1, ../../app/stylesheets/partials/nodes/_boxes.sass */
 .box {
   width: 550px;
-  color: #333;
+  color: #333333;
   float: left;
 }
 /* line 8, ../../app/stylesheets/partials/nodes/_boxes.sass */
