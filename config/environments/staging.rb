@@ -22,17 +22,18 @@ config.log_level = :debug
 # config.action_controller.asset_host = "http://assets.example.com"
 
 # Disable delivery errors, bad email addresses will be ignored
-# config.action_mailer.raise_delivery_errors = false
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :smtp
 config.action_mailer.default_url_options = { :host => 'staging.wheelmap.org' }
 
 config.action_mailer.smtp_settings = {
-  # :address        => 'smtp.gmail.com',
-  :enable_starttls_auto => false
-  # :port           => 587,
-  # :domain         => '...',
-  # :authentication => :login,
-  # :user_name      => '...',
-  # :password       => 'secret'
+  :address        => 'mail.wheelmap.org',
+  :enable_starttls_auto => false,
+  :port           => 25,
+  :domain         => 'wheelmap.org',
+  :authentication => :login,
+  :user_name      => 'noreply@wheelmap.org',
+  :password       => '=N8i=~7P1F.o'
 }
 
 
