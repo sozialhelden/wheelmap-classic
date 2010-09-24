@@ -86,7 +86,8 @@ function defaultControls(){
     new OpenLayers.Control.KeyboardDefaults(),
     new OpenLayers.Control.ScaleLine(),
     new OpenLayers.Control.Permalink(),
-    new OpenLayers.Control.Permalink('createlink', '/nodes/new')
+    new OpenLayers.Control.Permalink('createlink', '/nodes/new'),
+    new OpenLayers.Control.Permalink('show-on-large-map', '/')
   ]
 }
 
