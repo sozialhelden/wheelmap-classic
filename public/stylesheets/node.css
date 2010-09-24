@@ -448,23 +448,22 @@ a:visited:hover {
 }
 /* line 9, ../../app/stylesheets/basics/_open_layers.sass */
 #map div.olMapViewport[id^='OpenLayers\.Map'] a {
-  color: inherit;
   font-weight: bold;
 }
 
-/* line 13, ../../app/stylesheets/basics/_open_layers.sass */
+/* line 12, ../../app/stylesheets/basics/_open_layers.sass */
 div[id^='OpenLayers\.Layer\.OSM\.Mapnik'] {
   opacity: 1;
 }
 
-/* line 16, ../../app/stylesheets/basics/_open_layers.sass */
+/* line 15, ../../app/stylesheets/basics/_open_layers.sass */
 #panzoombar.olControlPanZoomBar {
   left: inherit !important;
   right: 45px !important;
   top: 45px !important;
 }
 
-/* line 23, ../../app/stylesheets/basics/_open_layers.sass */
+/* line 22, ../../app/stylesheets/basics/_open_layers.sass */
 #attribution.olControlAttribution,
 div[id^='OpenLayers\.Control\.Permalink'] {
   color: #444444;

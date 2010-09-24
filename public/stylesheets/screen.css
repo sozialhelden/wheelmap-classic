@@ -561,23 +561,22 @@ a:visited:hover {
 }
 /* line 9, ../../app/stylesheets/basics/_open_layers.sass */
 #map div.olMapViewport[id^='OpenLayers\.Map'] a {
-  color: inherit;
   font-weight: bold;
 }
 
-/* line 13, ../../app/stylesheets/basics/_open_layers.sass */
+/* line 12, ../../app/stylesheets/basics/_open_layers.sass */
 div[id^='OpenLayers\.Layer\.OSM\.Mapnik'] {
   opacity: 1;
 }
 
-/* line 16, ../../app/stylesheets/basics/_open_layers.sass */
+/* line 15, ../../app/stylesheets/basics/_open_layers.sass */
 #panzoombar.olControlPanZoomBar {
   left: inherit !important;
   right: 45px !important;
   top: 45px !important;
 }
 
-/* line 23, ../../app/stylesheets/basics/_open_layers.sass */
+/* line 22, ../../app/stylesheets/basics/_open_layers.sass */
 #attribution.olControlAttribution,
 div[id^='OpenLayers\.Control\.Permalink'] {
   color: #444444;
@@ -1509,7 +1508,7 @@ image[width='16'] {
 
 /* line 6, ../../app/stylesheets/partials/map/_popup.sass */
 .popup {
-  width: 310px;
+  width: 250px;
 }
 /* line 9, ../../app/stylesheets/partials/map/_popup.sass */
 .popup h2 {
@@ -1529,13 +1528,13 @@ image[width='16'] {
   border-radius: 0px;
   margin-top: 7px;
   padding-top: 7px;
-  width: 310px;
+  width: 250px;
   overflow: hidden;
   *zoom: 1;
 }
 /* line 25, ../../app/stylesheets/partials/map/_popup.sass */
 .popup input {
-  float: right;
+  float: left;
   margin-right: 10px;
 }
 /* line 29, ../../app/stylesheets/partials/map/_popup.sass */
@@ -1552,27 +1551,38 @@ image[width='16'] {
 }
 /* line 37, ../../app/stylesheets/partials/map/_popup.sass */
 .popup label {
-  clear: left;
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-weight: bold;
   padding-right: 10px;
   text-align: left;
-  width: 90px !important;
+  line-height: 8px;
 }
-/* line 45, ../../app/stylesheets/partials/map/_popup.sass */
-.popup label:after {
-  content: ":";
-}
-/* line 48, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 44, ../../app/stylesheets/partials/map/_popup.sass */
 .popup li {
   font-family: 'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue','Swiss 721 Light','Helvetica','Arial','sans-serif';
   font-size: 11px;
   font-weight: 100;
 }
-/* line 53, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 49, ../../app/stylesheets/partials/map/_popup.sass */
 .popup li strong {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-weight: bold;
+}
+/* line 54, ../../app/stylesheets/partials/map/_popup.sass */
+.popup li.yes label {
+  color: #86af4d;
+}
+/* line 58, ../../app/stylesheets/partials/map/_popup.sass */
+.popup li.limited label {
+  color: #f19d46;
+}
+/* line 62, ../../app/stylesheets/partials/map/_popup.sass */
+.popup li.no label {
+  color: #d6382f;
+}
+/* line 67, ../../app/stylesheets/partials/map/_popup.sass */
+.popup li.unknown label {
+  color: #8d8d8e;
 }
 
 /* line 1, ../../app/stylesheets/partials/map/_spinner.sass */

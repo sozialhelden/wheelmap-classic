@@ -1,6 +1,6 @@
 $dt-width: 90px
 $gap: 10px
-$dd-width: 210px
+$dd-width: 150px
 
 
 .popup
@@ -23,7 +23,7 @@ $dd-width: 210px
     +clearfix
     
   input
-    float: right
+    float: left
     margin-right: 10px
 
   li,
@@ -35,15 +35,11 @@ $dd-width: 210px
     +border-radius(0px !important)
 
   label
-    clear: left
     font-family: $helvetica
     font-weight: bold
     padding-right: $gap
     text-align: left
-    width: $dt-width !important
-
-    &:after
-      content: ":"
+    line-height: 8px
 
   li
     font-family: $helvetica-light
@@ -53,3 +49,19 @@ $dd-width: 210px
     strong
       font-family: $helvetica
       font-weight: bold
+
+    &.yes
+      label
+        color: $yes
+
+    &.limited
+      label
+        color: $limited
+
+    &.no
+      label
+        color: $no
+
+    &.unknown
+      label
+        color: $unknown
