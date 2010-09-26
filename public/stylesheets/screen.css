@@ -1204,7 +1204,7 @@ image[width='16'] {
 
 /* line 1, ../../app/stylesheets/partials/map/_info.sass */
 #categories,
-#filter {
+#filter, #counter {
   position: relative;
   left: 30px;
   top: 25px;
@@ -1226,9 +1226,20 @@ image[width='16'] {
 }
 /* line 15, ../../app/stylesheets/partials/map/_info.sass */
 #categories h4,
-#filter h4 {
+#filter h4, #counter h4 {
   color: #a1c175;
   margin: -5px 0 5px;
+}
+
+/* line 19, ../../app/stylesheets/partials/map/_info.sass */
+#state-counter {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 21, ../../app/stylesheets/partials/map/_info.sass */
+#state-counter li {
+  width: 40%;
+  float: left;
 }
 
 /* line 1, ../../app/stylesheets/partials/map/_edit.sass */
@@ -1580,7 +1591,7 @@ image[width='16'] {
 .popup li.no label {
   color: #d6382f;
 }
-/* line 67, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 66, ../../app/stylesheets/partials/map/_popup.sass */
 .popup li.unknown label {
   color: #8d8d8e;
 }

@@ -2,6 +2,10 @@ en:
   de: Deutsch
   en: English
   or: or
+  statistics: Statistics
+  place:
+    one: "%{count} place"
+    other: "%{count} places"
   wheelmap:
     logo:
       title: Wheelmap Homepage
