@@ -2,6 +2,7 @@
 
 require 'rubygems' 
 require 'libxml'
+require 'crewait'
 
 class PlanetReader
   
@@ -9,10 +10,11 @@ class PlanetReader
 
   # Konstruktor.
   #
-  def initialize(stream=STDIN)
+  def initialize(stream_or_file=STDIN)
     @start_time = Time.now
     @processed = 0
-    @parser = LibXML::XML::SaxParser.io(stream)
+    @count = 0
+    @parser = stream_or_file.is_a?(String) ? LibXML::XML::SaxParser.file(stream_or_file) : LibXML::XML::SaxParser.io(stream_or_file)
     @parser.callbacks = self
     @ignore = false
     Crewait.start_waiting
@@ -26,6 +28,7 @@ class PlanetReader
       @parser.parse
     rescue Exception => e
       puts e.message
+      puts e.backtrace
     ensure
       Crewait.go!
       flush_pois(0)
@@ -48,12 +51,14 @@ class PlanetReader
   def on_start_element(element, attributes)
     return if @ignore
     case element
+    when 'changeset'
+      @ignore = true
     when 'way'
       @ignore = true
     when 'relation'
       @ignore = true
     when 'tag'
-      @poi[:tags][attributes['k']] = attributes['v']
+      @poi[:tags][attributes['k']] = attributes['v'] if @poi
     when 'node'
       @poi = {:osm_id => attributes['id'],
               :geom => Point.from_x_y(attributes['lon'], attributes['lat']),
@@ -77,10 +82,13 @@ class PlanetReader
   # Callback-Methode des XML-Parsers.
   #
   def on_end_element(element)
+    @count += 1
     case element
     when 'way'
       @ignore = false
     when 'relation'
+      @ignore = false
+    when 'changeset'
       @ignore = false
     when 'delete'
       flush_pois
@@ -95,7 +103,7 @@ class PlanetReader
       
       if (@processed % 10000 == 0)
         Crewait.go!
-        print("\r#{@processed/10000}0k nodes")
+        print("\rprocessed #{@processed/10000}0k of #{@count/10000}0k nodes")
         STDOUT.flush
       end
       @poi = nil
@@ -119,6 +127,8 @@ class PlanetReader
   # Verarbeitet einen POI.
   #
   def process_poi
+    status = @poi[:tags]['wheelchair'] || 'unknown'
+    @poi[:status] = Poi::WHEELCHAIR_STATUS_VALUES[status.to_sym]
     if !@osmchange
       # Neue POIs aus *.osm
       # Purer input aus einem Planet Dump.

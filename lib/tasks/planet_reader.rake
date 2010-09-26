@@ -91,14 +91,15 @@ namespace :osm do
   desc 'Import POI Data from STDIN'
   task :import => :environment do
     puts "Reading vom STDIN. Please pipe some data in: bzcat planet.osm.bz2 | rake osm:import"
-    p = PlanetReader.new(STDIN)
+    file = ENV['file']
+    p = PlanetReader.new(file || STDIN)
     p.load()
   end
   
   namespace :replication do
     
     desc 'Prepare replication requirements'
-    task :prepare do
+    task :prepare => :environment do
       
       ensure_directory_exists OSMOSIS_DIR
       ensure_directory_exists VAR_DIR
@@ -110,7 +111,7 @@ namespace :osm do
     
     
     desc 'Sync current database with osm planet data'
-    task :sync do
+    task :sync => :environment do
       
       ensure_lockfile_doesnt_exist
       ensure_state_file_exists
@@ -133,8 +134,8 @@ namespace :osm do
           # There is nothing left
           FileUtils.cp CHANGE_FILE, MERGED_FILE, :verbose => true, :preserve => true
         end
-        
-        if system "cat #{MERGED_FILE} | RAILS_ENV=#{RAILS_ENV} rake osm:import"
+        ENV['file'] = MERGED_FILE
+        if Rake::Task["osm:import"].invoke
           remove_merged_file
         end
         
