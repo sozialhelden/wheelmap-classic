@@ -30,8 +30,9 @@ config.action_mailer.delivery_method = :test
 config.gem 'rspec-rails',   :version => '>= 1.3.2', :lib => false unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
 
 config.gem 'cucumber'
-config.gem 'rspec-rails',   :version => '>= 1.3.2', :lib => 'spec/rails'
 config.gem 'rspec',         :version => '>= 1.3.0', :lib => 'spec'
+config.gem 'rspec-rails',   :version => '>= 1.3.2', :lib => 'spec/rails'
+config.gem "remarkable_rails",                      :lib => false
 config.gem 'fakeweb'
 config.gem 'factory_girl',  :version => '>= 1.2.4'
 

@@ -1,4 +1,6 @@
 class Poi < ActiveRecord::Base
+  
+  WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
 
     # Tags sollen fuer die Datenbank serialisiert werden
 
@@ -14,6 +16,8 @@ class Poi < ActiveRecord::Base
     
     validate :relevant?
     
+    before_save :set_status
+    
     # Spezielle Find-Methode fuer den Zugriff auf alle POIs in einer 
     # Bounding-Box. Fruehere Versionen von GeoRuby hatten dazu etwas
     # im MySQL-Adapter, aber das wird inzwischen nicht mehr supported,
@@ -21,22 +25,16 @@ class Poi < ActiveRecord::Base
     # benutzt den raeumlichen Index und geht daher schnell (wenn man 
     # nicht gerade eine Bounding-Box fuer die ganze Welt uebergibt).
     
+    named_scope :fully_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:yes]}
+    named_scope :not_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:no]}
+    named_scope :limited_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:limited]}
+    named_scope :unknown_accessibility, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:unknown]}
+    
     named_scope :within_bbox, lambda {|left, bottom, right, top|{
       :conditions => "MBRContains(GeomFromText('POLYGON(( \
                       #{left} #{bottom}, #{right} #{bottom}, \
                       #{right} #{top}, #{left} #{top}, \
                       #{left} #{bottom}))'), pois.geom)" } }
-
-
-    def self.find_by_bbox(left, bottom, right, top)
-
-        Poi.find(:all, 
-            :conditions => "MBRContains(GeomFromText('POLYGON((
-                #{left} #{bottom}, #{right} #{bottom},
-                #{right} #{top}, #{left} #{top},
-                #{left} #{bottom}))'), pois.geom)")
-
-    end
     
     def lat
       self.geom.lat if self.geom
@@ -87,6 +85,8 @@ class Poi < ActiveRecord::Base
        'lat' => lat,
        'lon' => lon,
        'name' => name,
+       'icon' => 'bank',
+       'state' => 'yes',
        'wheelchair' => wheelchair,
        'tags' => tags.reverse_merge!('wheelchair' => wheelchair).reject{|k,v| v.blank?},
        'type' => type,
@@ -94,11 +94,17 @@ class Poi < ActiveRecord::Base
     end
 
     def to_geojson(options={})
-      { :type => 'Feature',
+      result = { :type => 'Feature',
         :geometry => { :type => 'Point', :coordinates  => [self.lon, self.lat]
         },
-        :properties => tags.reverse_merge!('wheelchair' => wheelchair, 'type' => type, 'category' => category).reject{|k,v| v.blank?}
+        :properties => tags.reverse_merge!('wheelchair' => wheelchair, 'type' => type, 'category' => category, 'icon' => icon).reject{|k,v| v.blank?}
       }
+      result[:id] = self.osm_id unless osm_id.blank?
+      result
+    end
+    
+    def icon
+      Icons[type.to_sym] unless type.blank?
     end
 
     def relevant?
@@ -118,5 +124,9 @@ class Poi < ActiveRecord::Base
 
     def existing_record!
         @new_record = false
+    end
+    
+    def set_status
+      self.status = WHEELCHAIR_STATUS_VALUES[wheelchair.to_sym]
     end
 end
