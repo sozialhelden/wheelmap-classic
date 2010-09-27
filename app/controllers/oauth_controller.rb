@@ -27,7 +27,7 @@ class OauthController < ApplicationController
 
   def callback
     request_token = session[:request_token]
-    access_token = request_token.get_access_token
+    access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
     current_user.oauth_token = access_token.token
     current_user.oauth_secret = access_token.secret
     current_user.save!
