@@ -51,7 +51,7 @@ def remove_old_replication_files
 end
 
 def get_new_replication_file
-  system "#{OSMOSIS_BIN} --rri workingDirectory=#{RAILS_ROOT}/#{WORKING_DIR} --simc --wxc #{VAR_DIR}/replicate-#{Time.now.to_i}.osc"
+  system "#{OSMOSIS_BIN} --rri workingDirectory=#{RAILS_ROOT}/#{WORKING_DIR} --simc --wxc #{CHANGE_FILE}"
 end
 
 def merge_replication_files

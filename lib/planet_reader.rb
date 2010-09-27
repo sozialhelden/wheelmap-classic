@@ -13,10 +13,8 @@ class PlanetReader
   def initialize(stream_or_file=STDIN)
     @start_time = Time.now
     @processed = 0
-    @count = 0
     @parser = stream_or_file.is_a?(String) ? LibXML::XML::SaxParser.file(stream_or_file) : LibXML::XML::SaxParser.io(stream_or_file)
     @parser.callbacks = self
-    @ignore = false
     Crewait.start_waiting
     @to_be_deleted = []
   end
@@ -49,14 +47,7 @@ class PlanetReader
   # Callback-Methode des XML-Parsers.
   #
   def on_start_element(element, attributes)
-    return if @ignore
     case element
-    when 'changeset'
-      @ignore = true
-    when 'way'
-      @ignore = true
-    when 'relation'
-      @ignore = true
     when 'tag'
       @poi[:tags][attributes['k']] = attributes['v'] if @poi
     when 'node'
@@ -82,14 +73,7 @@ class PlanetReader
   # Callback-Methode des XML-Parsers.
   #
   def on_end_element(element)
-    @count += 1
     case element
-    when 'way'
-      @ignore = false
-    when 'relation'
-      @ignore = false
-    when 'changeset'
-      @ignore = false
     when 'delete'
       flush_pois
     when 'create'
@@ -103,7 +87,7 @@ class PlanetReader
       
       if (@processed % 10000 == 0)
         Crewait.go!
-        print("\rprocessed #{@processed/10000}0k of #{@count/10000}0k nodes")
+        print("\rprocessed #{@processed/10000}0k nodes")
         STDOUT.flush
       end
       @poi = nil
