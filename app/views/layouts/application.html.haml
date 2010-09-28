@@ -25,6 +25,9 @@
     = javascript_include_tag 'uservoice'
     :javascript
       var object_types = ["#{ (session['amenities']).join('","')}"];
+      var lat = #{GeoCache.latlon(request.remote_addr).first}
+      var lon = #{GeoCache.latlon(request.remote_addr).last}
+      
     
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
   %body{ :class => [browser_class, ('map' if @content_for_map)] }
@@ -38,7 +41,6 @@
     %footer
       - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
         = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
-    = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
     = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
     = javascript_include_tag 'jquery', 'util', 'autocomplete', 'icons', 'string', 'popup', 'osm', 'application', 'map', :cache => 'maps'
     - if @content_for_jquery
