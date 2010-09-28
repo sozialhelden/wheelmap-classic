@@ -285,6 +285,10 @@ namespace :deploy do
     run <<-CMD
       cd #{latest_release}/config && ln -nfs ../../../#{File.join(relative_path(shared_path), 'config', 'open_street_map.yml')} open_street_map.yml
     CMD
+    
+    run <<-CMD
+      cd #{latest_release}/tmp && ln -nfs ../../../#{File.join(relative_path(shared_path), 'config', 'GeoLiteCity.dat')} GeoLiteCity.dat
+    CMD
   end
   # redefine deploy:finalize_update to create relative instead of absolute links
   # this is necessary in chrooted deployments  
