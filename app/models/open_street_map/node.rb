@@ -26,7 +26,7 @@ class OpenStreetMap
       @timestamp = Time.parse(data['timestamp']) rescue Time.now
       self.type = (data['type'] || tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || tags['leisure'] || tags['shop'] || tags['tourism'] || tags['historic'] || tags['shop'])
       @wheelchair = tags['wheelchair'] = (data['wheelchair'] || tags['wheelchair'] || tags['hvv:barrier_free'] || 'unknown')
-      @wheelchair_description = (data['wheelchair_description'] || tags['wheelchair_description'])
+      self.wheelchair_description = (data['wheelchair_description'] || tags['wheelchair:description'])
       self.street       = (data['street'] || tags['addr:street'])
       self.housenumber  = (data['housenumber'] || tags['addr:housenumber'])
       self.postcode     = (data['postcode'] || tags['addr:postcode'])
@@ -78,7 +78,7 @@ class OpenStreetMap
     end
     
     def wheelchair_description=(value)
-      @wheelchair_description = tags['wheelchair_description'] = value
+      @wheelchair_description = tags['wheelchair:description'] = value
     end
     
     def postcode=(value)

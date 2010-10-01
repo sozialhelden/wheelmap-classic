@@ -46,6 +46,7 @@ describe 'OpenStreetMap::Node' do
     @node.tags.should == {'amenity' => 'pub',
                           'created_by' => 'Potlatch 0.4c',
                           'wheelchair' => 'yes',
+                          'wheelchair:description' => nil,
                           'name' => 'Telefonzelle am neuen Tor',
                           'addr:postcode' => nil,
                           'addr:city' => nil,
@@ -79,7 +80,7 @@ describe 'OpenStreetMap::Node' do
   
   it "should set wheelchair_description attribute and tag" do
     @node.wheelchair_description = 'Toilets are too narrow'
-    @node.tags['wheelchair_description'].should == 'Toilets are too narrow'
+    @node.tags['wheelchair:description'].should == 'Toilets are too narrow'
   end
   
   it "should set city attribute and tag" do
