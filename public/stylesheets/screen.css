@@ -1227,16 +1227,15 @@ image[width='16'] {
 /* line 15, ../../app/stylesheets/partials/map/_info.sass */
 #categories h4,
 #filter h4, #counter h4 {
-  color: #a1c175;
   margin: -5px 0 5px;
 }
 
-/* line 19, ../../app/stylesheets/partials/map/_info.sass */
+/* line 18, ../../app/stylesheets/partials/map/_info.sass */
 #state-counter {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 21, ../../app/stylesheets/partials/map/_info.sass */
+/* line 20, ../../app/stylesheets/partials/map/_info.sass */
 #state-counter li {
   width: 40%;
   float: left;
