@@ -332,6 +332,16 @@ namespace :delayed_job do
   end
 end
 
+namespace :geoip do
+  
+  desc 'Download the latest geoip database'
+  task :download do
+    db_file = "#{shared_path}/config/GeoLiteCity.dat.gz"
+    run "wget -q http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz -O #{db_file}"
+    run "gunzip -f #{db_file}"
+  end
+end
+
 namespace :rocket_rentals do
 
   desc "Create database.yml"
