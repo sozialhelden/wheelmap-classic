@@ -51,7 +51,8 @@ class Poi < ActiveRecord::Base
       :name => name,
       :type => type,
       :category => category,
-      :wheelchair => wheelchair
+      :wheelchair => wheelchair,
+      :wheelchair_description => wheelchair_description
       )
     end
     
@@ -70,16 +71,19 @@ class Poi < ActiveRecord::Base
       end
       nil
     end
-    
-    
+
     def name
       tags['name']
     end
-    
+
     def wheelchair
       tags['wheelchair'] ||= 'unknown'
     end
-        
+
+    def wheelchair_description
+      tags['wheelchair_description']
+    end
+
     def to_json(options={})
       {'id' => id,
        'lat' => lat,
