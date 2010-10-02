@@ -109,11 +109,11 @@ function openPopup(feature) {
     var form = $('#update_form_'+node.id)
     $.ajax({ type: form.attr('method'), url: form.attr('action') , data: form.serialize(),
       success: function(data, textStatus, XMLHttpRequest) {
-        alert('Platz aktualisiert');
+        alert(data);
         return false;
       },
       error: function(XMLHttpRequest, textStatus, errorThrown){
-        alert('Sorry, Fehler!');
+        alert(textStatus);
         return false;
       }
       

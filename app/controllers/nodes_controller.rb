@@ -43,8 +43,8 @@ class NodesController < ApplicationController
     client = OpenStreetMap::BasicAuthClient.new(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
     Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], client, :wheelchair => params[:wheelchair]))
     respond_to do |wants|
-      wants.js{ render :text => 'OK' }
-      wants.html{ render :text => 'OK' }
+      wants.js{ render :text => t('nodes.update_wheelchair.successfull') }
+      wants.html{ render :text => t('nodes.update_wheelchair.successfull') }
     end
   end
 

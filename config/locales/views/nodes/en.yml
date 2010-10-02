@@ -11,7 +11,10 @@ en:
       flash:
         successfull: 'Thank you, the submission was saved successfully and will be online shortly.'
         not_successfull: 'Oops, your input was either uncorrect or uncomplete.'
-      
+
+    update_wheelchair:
+      successfull: 'Thank you, the submission was saved successfully and will be online shortly.'
+
     show:
       link:
         large_map: Enlarge

@@ -18,6 +18,7 @@ Rails::Initializer.run do |config|
   config.gem 'jnunemaker-validatable', :lib => 'validatable'
   config.gem 'smurf'
   config.gem 'spatial_adapter'
+  config.gem 'geoip'
 end
 
 Haml::Template.options[:format] = :html5
