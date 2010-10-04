@@ -1,13 +1,3 @@
-# 'Essen & Trinken': ['fast-food', 'restaurant', 'biergarten', 'cafe', 'bar', 'pub'],
-# 'Freizeit': ['cinema', 'arts-centre', 'nightclub', 'sauna', 'theatre'],
-# 'Geld': ['bank', 'atm', 'bureau-de-change'],
-# 'Post': ['post-box', 'post-office'],
-# 'Botschaften & Behörden': ['embassy', 'courthouse', 'police', 'fire-station', 'public-building', 'register-office', 'townhall', 'community-centre'],
-# 'Medizin': ['hospital', 'pharmacy'],
-# 'Auto & Fahrrad': ['fuel', 'car-rental', 'car-sharing', 'parking', 'bicycle-parking', 'bicycle-rental'],
-# 'Kinder & Bildung': ['kindergarten', 'school', 'college', 'university', 'library'],
-# 'Sonstiges': ['marketplace', 'telephone', 'toilets', 'grave-yard', 'place-of-worship']
-
 WheelchairStatus = %w{yes limited no unknown}
 
 Amenities = {
@@ -144,6 +134,7 @@ Icons = {
   :community_centre => 'cross-small-white',
   :courthouse => 'auction-hammer-gavel',
   :crematorium => 'cross-small-white',
+  :doctors => 'hospital',
   :drinking_water => 'cross-small-white',
   :embassy => 'bank',
   :emergency_phone => 'cross-small-white',
@@ -185,7 +176,7 @@ Icons = {
   :townhall => 'bank',
   :university => 'book-open',
   :vending_machine => 'cross-small-white',
-  :veterinary => 'cross-small-white',
+  :veterinary => 'hospital',
   :waste_basket => 'bin-full',
   :waste_disposal => 'bin-full',
   :subway => 'car',
