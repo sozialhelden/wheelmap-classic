@@ -1,11 +1,5 @@
 var map;
 var epsg4326, epsg900913;
-if (typeof(lat) == 'undefined'){
-  var lat = parseFloat(geoip_latitude());
-}
-if (typeof(lon) == 'undefined'){
-  var lon = parseFloat(geoip_longitude());
-}
 var zoom = 17;
 var places = [];
 var mapnik;
@@ -33,7 +27,7 @@ var categories = {
   accommodation: true,
   misc: true,
   government: true
-}
+};
 
 var styleTypeLookup = {
   yes: {
@@ -42,8 +36,7 @@ var styleTypeLookup = {
   no: {
     display: 'none'
   }
-  
-}
+};
 
 function markerLayer(name){
   $.each(map.layers, function(i, layer){
@@ -55,7 +48,7 @@ function markerLayer(name){
 }
 
 function drawmap(controls, element) {
-  OpenLayers.Lang.setCode('de');
+  OpenLayers.Lang.setCode(language);
 
   epsg900913 = new OpenLayers.Projection("EPSG:900913");
   epsg4326 = new OpenLayers.Projection("EPSG:4326");
@@ -74,6 +67,16 @@ function drawmap(controls, element) {
   // Use for offline mode
   // mapnik = new OpenLayers.Layer.OSM("Mapnik", 'http://wheelmap.local/images/tiles/${z}/${x}/${y}.png' ,{displayClass:'olMap', opacity:0.5, transitionEffect:'resize', numZoomLevels: 19});
   
+  // User cloudmade style
+  //  mapnik = new OpenLayers.Layer.CloudMade("CloudMade", {
+  //     key: 'ff94b6ad4b174d648b9c491706f13579',
+  //     styleId: 12708,
+  //     displayClass:'olMap',
+  //     opacity:1.0,
+  //     transitionEffect:'resize',
+  //     numZoomLevels: 19
+  // });
+  
   map.addLayers([mapnik]);
 }
 
@@ -88,7 +91,7 @@ function defaultControls(){
     new OpenLayers.Control.Permalink(),
     new OpenLayers.Control.Permalink('createlink', '/nodes/new'),
     new OpenLayers.Control.Permalink('show-on-large-map', '/')
-  ]
+  ];
 }
 
 function mapBBOX() {
@@ -102,59 +105,90 @@ function mapBBOX() {
   return box.transform(map.getProjectionObject(), epsg4326);
 }
 
-function eachState(f) {
-  $.each(['unknown', 'no', 'limited', 'yes'], function(i, state) { f(state); });
+/* This is called for each feature to be added to the layer */
+function determineDisplayState(evt){
+  var feature = evt.feature;
+  if(states[feature.attributes.wheelchair] === true && categories[feature.attributes.category] === true){
+    feature.attributes.state = 'yes';
+  }else{
+    feature.attributes.state = 'no';
+  }
 }
 
+/* This is called after added all features to the layer */
+function addDisplayStateRule(evt){
+  places.styleMap.addUniqueValueRules("default", "state", styleTypeLookup);
+}
 
 function showStates() {
   $.each(places.features, function(i,feature){
-    if(states[feature.attributes.wheelchair] == true && categories[feature.attributes.category] == true){
+    if(states[feature.attributes.wheelchair] === true && categories[feature.attributes.category] === true){
       feature.attributes.state = 'yes';
     }else{
       feature.attributes.state = 'no';
     }
   });
-  places.styleMap.addUniqueValueRules("default", "state", styleTypeLookup);
   places.redraw();
-  places.setVisibility(true);
 }
 
-function loadPlaces() {
-  if(zoom < 15){
-    return true;
-  }
+
+function showSpinner(){
   $('#spinner').show();
-  counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
-
-  var bbox = mapBBOX().toBBOX();
-  $.getJSON('/nodes?bbox=' + bbox , function(data) {
-    var features = [];
-    $.each(data, function(i, place) {
-      if (place.type) {
-        var lonLat = lonLatToMercator({ lon: place.lon * 1.0, lat: place.lat * 1.0 });
-        var point = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
-        var feature = new OpenLayers.Feature.Vector(point,place);
-        feature.attributes.icon = iconForType[place.type];
-        try {
-          features.push(feature);
-        }
-        catch (e) {}
-        counts[place.wheelchair]++;
-        places[place.id] = place;
-        $('*[data-osm-id=' + place.id + ']').addClass(place.type);
-      }
-    });
-    places.removeFeatures(places.features);
-    places.addFeatures(features);
-    places.redraw();
-    $.each(states, function(i,state){
-      $('.wheelchair .' + state + ' span').html(counts[state]);
-    });
-    showStates();
-    $('#spinner').hide();
-  });
 }
+
+function hideSpinner(){
+  $('#spinner').hide();
+}
+
+function addState(feature){
+  
+}
+
+function lonLatToMercator(ll) {
+  // var lon = ll.lon * 20037508.34 / 180;
+  var lon = ll.lon * 111319.49077777777;
+  // var lat = Math.log(Math.tan((90 + ll.lat) * Math.PI / 360)) / (Math.PI / 180);
+  var lat = Math.log(Math.tan((90 + ll.lat) * 0.008726646259971648)) / (0.017453292519943295);
+  // lat = lat * 20037508.34 / 180;
+  lat = lat * 111319.49077777777;
+  return new OpenLayers.LonLat(lon, lat);
+}
+
+// function loadPlaces() {
+//   if(zoom < 15){
+//     return true;
+//   }
+// 
+//   counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
+// 
+//   var bbox = mapBBOX().toBBOX();
+//   $.getJSON('/nodes?bbox=' + bbox , function(data) {
+//     var features = [];
+//     $.each(data, function(i, place) {
+//       if (place.type) {
+//         var lonLat = lonLatToMercator({ lon: place.lon * 1.0, lat: place.lat * 1.0 });
+//         var point = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
+//         var feature = new OpenLayers.Feature.Vector(point,place);
+//         feature.attributes.icon = iconForType[place.type];
+//         try {
+//           features.push(feature);
+//         }
+//         catch (e) {}
+//         counts[place.wheelchair]++;
+//         places[place.id] = place;
+//         $('*[data-osm-id=' + place.id + ']').addClass(place.type);
+//       }
+//     });
+//     places.removeFeatures(places.features);
+//     places.addFeatures(features);
+//     places.redraw();
+//     $.each(states, function(i,state){
+//       $('.wheelchair .' + state + ' span').html(counts[state]);
+//     });
+//     showStates();
+// 
+//   });
+// }
 
 function placesStyle(){
   return new OpenLayers.StyleMap({
@@ -195,6 +229,88 @@ function clusterStrategy(){
   return new OpenLayers.Strategy.Cluster({distance: 15, threshold: 3});
 }
 
+function activateSelectControl(layer){
+  var sc = new OpenLayers.Control.SelectFeature(layer);
+  map.addControl(sc);
+  sc.activate();
+}
+
+function removeAllPopups(){
+  $.each(map.popups, function(i, popup){
+    popup.feature = null;
+    map.removePopup(popup);
+  });
+}
+
+function onPopupClose(evt) {
+  removeAllPopups();
+   // 'this' is the popup.
+   // selectControl.unselect(this.feature);
+}
+
+function popup_state_radio(feature, state){
+  var id = state + '-' + feature.id;
+  var checked = (state == feature.attributes.wheelchair ? ' checked="checked"' : '');
+  var disabled = (state == 'unknown' ? ' disabled="disabled"' : '');
+  var wheelchair_state = '<li class="' + state + '">';
+  wheelchair_state += '<input id="' + id + '" type="radio" name="wheelchair"' + checked + disabled + ' value="' + state + '">';
+  wheelchair_state += '<label for="' + id + '">' + OpenLayers.Lang.translate('wheelchair_label_' + state) + '</label>';
+  wheelchair_state += '</li>';
+  return wheelchair_state;
+}
+
+function popup_form(feature){
+  var form = '';
+  form += '<form action="/nodes/' + feature.attributes.osm_id + '/update_wheelchair.js" method="put" class="update_form">';
+  form += '<ol class="wheelchair">';
+  form += popup_state_radio(feature, 'yes');
+  form += popup_state_radio(feature, 'limited');
+  form += popup_state_radio(feature, 'no');
+  form += popup_state_radio(feature, 'unknown');
+  form += '<li><input type="hidden" name="method" value="put" /></li>';
+  form += '<li>';
+  form += '<input type="submit" class="update_button left" value="' + OpenLayers.Lang.translate('wheelchair_update_button') +'"/>';
+  form += '</li></ol>';
+  form += '</form>';
+  return form;
+}
+
+function popup_headline(feature){
+ var html = '';
+ html += '<a href="' + feature.attributes.url + '">';
+ html += '<h2 class="' + feature.attributes.type + '">';
+ html += feature.attributes.headline;
+ html += '</h2></a>';
+ return html;
+}
+
+function popup_address(feature){
+  var html = '';
+  if(feature.attributes.address){
+    html += '<address>' + feature.attributes.address + '</address>';
+  }
+  return html;
+}
+
+function onFeatureSelect(evt){
+  removeAllPopups();
+  feature = evt.feature;
+  popup = new OpenLayers.Popup.FramedCloud("featurePopup",
+                           feature.geometry.getBounds().getCenterLonLat(),
+                           null,
+                           popup_headline(feature) +
+                           popup_address(feature) +
+                           popup_form(feature),
+                           null, true, onPopupClose);
+  feature.popup = popup;
+  popup.feature = feature;
+  map.addPopup(popup);
+}
+
+function onFeatureUnselect(evt) {
+  removeAllPopups();
+}
+
 function createPlacesLayer(style) { 
   places = new OpenLayers.Layer.Vector(
     "Places ",
@@ -203,33 +319,41 @@ function createPlacesLayer(style) {
       projection: epsg4326,
       displayProjection: epsg4326,
       rendererOptions: { yOrdering: true },
-      // strategies: [new OpenLayers.Strategy.BBOX({ratio : 1})],
-      // protocol: new OpenLayers.Protocol.HTTP({
-      //   url:  "nodes.geojson",
-      //   format: new OpenLayers.Format.GeoJSON({
-      //     internalProjection: epsg4326,
-      //     externalProjection: epsg4326,
-      //     ignoreExtraDims: true
-      //   })
-      // }),
-      visibility: true,
+      strategies: [new OpenLayers.Strategy.BBOX({ratio : 1.3, resFactor:1.3})],
+      protocol: new OpenLayers.Protocol.HTTP({
+        url:  "nodes.geojson",
+        format: new OpenLayers.Format.GeoJSON({
+          internalProjection: epsg4326,
+          externalProjection: epsg4326,
+          ignoreExtraDims: true
+        })
+      }),
+      visibility: true
     });
   map.addLayer(places);
   activateSelectControl(places);
+  places.redraw();
+  places.events.on({
+    'featureselected': onFeatureSelect,
+    'featureunselected': onFeatureUnselect,
+    'loadstart': showSpinner,
+    'loadend': hideSpinner,
+    'beforefeatureadded': determineDisplayState,
+    'beforefeaturesadded': addDisplayStateRule
+  });
+  
 }
 
-function createDraggableLayer(style, lon, lat) {  
-
-  var draggable_layer = new OpenLayers.Layer.Vector(
-    "Draggable",
-    {
-      styleMap: style,
-      rendererOptions: { yOrdering: true },
-      visibility: true,
-    });    
-    map.addLayer(draggable_layer);
-    activateDragControl(draggable_layer);
-    addPin(draggable_layer, lon,lat);
+function onCompleteDrag(feature) 
+{ 
+  if(feature) 
+  {  
+    // replace coordinate values in feature attributes 
+    var lonlat = new OpenLayers.LonLat(feature.geometry.x, feature.geometry.y);
+    var coordinates = lonlat.clone().transform(map.getProjectionObject(), epsg4326);
+    $('#node-lat').attr('value', coordinates.lat);
+    $('#node-lon').attr('value', coordinates.lon);
+  }
 }
 
 function activateDragControl(layer){
@@ -237,13 +361,6 @@ function activateDragControl(layer){
   map.addControl(dg); 
   dg.activate();
 }
-
-function activateSelectControl(layer){
-  var sc = new OpenLayers.Control.SelectFeature(layer, { onSelect:openPopup});
-  map.addControl(sc);
-  sc.activate();  
-}
-
 
 function addPin(layer, lon, lat){
   var features = [];
@@ -261,34 +378,27 @@ function addPin(layer, lon, lat){
   feature.attributes.osmid = 1234;
   features.push(feature);
   layer.addFeatures(features);
-  layer.redraw();
 }
 
-function lonLatToMercator(ll) {
-  // var lon = ll.lon * 20037508.34 / 180;
-  var lon = ll.lon * 111319.49077777777;
-  // var lat = Math.log(Math.tan((90 + ll.lat) * Math.PI / 360)) / (Math.PI / 180);
-  var lat = Math.log(Math.tan((90 + ll.lat) * 0.008726646259971648)) / (0.017453292519943295);
-  // lat = lat * 20037508.34 / 180;
-  lat = lat * 111319.49077777777;
-  return new OpenLayers.LonLat(lon, lat);
+function createDraggableLayer(style, lon, lat) {  
+
+  var draggable_layer = new OpenLayers.Layer.Vector(
+    "Draggable",
+    {
+      styleMap: style,
+      rendererOptions: { yOrdering: true },
+      visibility: true
+    });    
+    map.addLayer(draggable_layer);
+    activateDragControl(draggable_layer);
+    addPin(draggable_layer, lon,lat);
+    draggable_layer.redraw();
 }
+
 
 function centerCoordinates() {
   return map.center.clone().transform(map.getProjectionObject(), epsg4326);
 }
-
-function onCompleteDrag(feature) 
-{ 
-  if(feature) 
-  {  
-    // replace coordinate values in feature attributes 
-    var lonlat = new OpenLayers.LonLat(feature.geometry.x, feature.geometry.y);
-    var coordinates = lonlat.clone().transform(map.getProjectionObject(), epsg4326);
-    $('#node-lat').attr('value', coordinates.lat);
-    $('#node-lon').attr('value', coordinates.lon);
-  }
-};
 
 $(function() {
   $('a[data-show]').click(function() {
@@ -314,7 +424,7 @@ $(function() {
       return value.split(':')[0];
     }
   }).result(function(event, data, formatted) {
-      var parts = data[0].split(':')
+      var parts = data[0].split(':');
       var lon = parseFloat(parts[1]);
       var lat = parseFloat(parts[2]);
       jumpTo(lon,lat, 17);

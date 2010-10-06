@@ -27,5 +27,4 @@ var states = {
 
 var counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
 
-
 drawmap(defaultControls(), 'minimap');

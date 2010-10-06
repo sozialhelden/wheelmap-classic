@@ -25,12 +25,7 @@ class NodesController < ApplicationController
     respond_to do |wants|  
       wants.js{render :json => @places }
       wants.json{ render :json => @places }
-      wants.geojson do
-        render :json => {
-          :type => 'FeatureCollection',
-          :features => @places.map(&:to_geojson)
-        }.to_json
-      end
+      wants.geojson{ render :content_type => "application/json; subtype=geojson; charset=utf-8" }
       wants.html{ redirect_to root_path }
     end
   end
@@ -43,7 +38,7 @@ class NodesController < ApplicationController
     client = OpenStreetMap::BasicAuthClient.new(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
     Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], client, :wheelchair => params[:wheelchair]))
     respond_to do |wants|
-      wants.js{ render :text => t('nodes.update_wheelchair.successfull') }
+      wants.js{   render :text => t('nodes.update_wheelchair.successfull') }
       wants.html{ render :text => t('nodes.update_wheelchair.successfull') }
     end
   end
@@ -62,6 +57,7 @@ class NodesController < ApplicationController
         }
       end
     else
+      # raise @node.errors.inspect
       respond_to do |wants|
         wants.js{ render :text => 'FAIL', :status => 406 }
         wants.html{

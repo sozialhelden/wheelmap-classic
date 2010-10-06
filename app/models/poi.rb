@@ -1,5 +1,9 @@
 class Poi < ActiveRecord::Base
   
+  include ActionView::Helpers::TagHelper
+  include ActionView::Helpers::UrlHelper
+  include PopupHelper
+  
   WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
 
     # Tags sollen fuer die Datenbank serialisiert werden
@@ -83,13 +87,25 @@ class Poi < ActiveRecord::Base
     def wheelchair_description
       tags['wheelchair_description']
     end
+    
+    def headline
+      self.name || I18n.t("poi.name.#{self.category}.#{self.type}")
+    end
+    
+    def url
+      "/nodes/#{self.osm_id}"
+    end
+    
+    def address
+      [render_street(self),render_city(self)].compact.join(', ')
+    end
 
     def to_json(options={})
       {'id' => id,
        'lat' => lat,
        'lon' => lon,
        'name' => name,
-       'icon' => 'bank',
+       'icon' => icon,
        'state' => 'yes',
        'wheelchair' => wheelchair,
        'tags' => tags.reverse_merge!('wheelchair' => wheelchair).reject{|k,v| v.blank?},
@@ -101,12 +117,17 @@ class Poi < ActiveRecord::Base
       result = { :type => 'Feature',
         :geometry => { :type => 'Point', :coordinates  => [self.lon, self.lat]
         },
-        :properties => tags.reverse_merge!('wheelchair' => wheelchair, 'type' => type, 'category' => category, 'icon' => icon).reject{|k,v| v.blank?}
+        :properties => tags.reverse_merge!( 'url' => url,
+                                            'headline' => headline,
+                                            'address' => address,
+                                            'wheelchair' => wheelchair,
+                                            'type' => type,
+                                            'category' => category,
+                                            'icon' => icon).reject{|k,v| v.blank?}
       }
-      result[:id] = self.osm_id unless osm_id.blank?
       result
     end
-    
+        
     def icon
       Icons[type.to_sym] unless type.blank?
     end

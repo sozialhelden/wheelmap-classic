@@ -10,7 +10,7 @@ var amenitiesGrouped = {
   'Auto & Fahrrad': ['fuel', 'car_rental', 'car_sharing', 'parking', 'bicycle_parking', 'bicycle_rental'],
   'Kinder & Bildung': ['kindergarten', 'school', 'college', 'university', 'library'],
   'Sonstiges': ['marketplace', 'telephone', 'toilets', 'grave_yard', 'place_of_worship']
-}
+};
 
 
 var amenities = [];
@@ -29,18 +29,9 @@ var states = {
 
 var counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
 
-
-
 drawmap(defaultControls(), 'map');
 
-
 createPlacesLayer(placesStyle());
-
-setTimeout(loadPlaces, 3000);
-checkForPermalink();
-jumpTo(lon, lat, zoom);
-
-map.events.register('moveend', null, loadPlaces);
 
 $(function() {
   $('#options input').click(function() {
@@ -49,10 +40,24 @@ $(function() {
     showStates();
   });
   $('#categories input').click(function() {
-    var category = this.id.replace(/category-/, '').replace(/-/, '_')
+    var category = this.id.replace(/category-/, '').replace(/-/, '_');
     categories[category] = this.checked;
     showStates();
-  })
+  });
+  $('.update_form').live('submit', function() {
+    var form = $(this);
+    $.ajax({ dataType: 'text', type: form.attr('method'), url: form.attr('action') , data: form.serialize(),
+      success: function(data, textStatus, XMLHttpRequest) {
+        alert(data);
+        return false;
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown){
+        alert(textStatus);
+        return false;
+      }
+    });
+    return false;
+  });
 });
 
 

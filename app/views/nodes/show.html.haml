@@ -10,11 +10,6 @@
   %span.addition
     = link_to t('.link.edit_node'), edit_node_path(@node)
 
-:javascript
-  var lon = parseFloat("#{@node.lon}");
-  var lat = parseFloat("#{@node.lat}");
-  object_types.push("#{@node.type}");
-
 %table#accessibility{:class => "#{dom_class(@node)}"}
   %tr
     
@@ -87,9 +82,16 @@
 %div#streetview{:name => "pano", :style => "overflow: hidden; margin-bottom: 10px; width: 980px; height: 250px;"}
   %p#streetview_info
 
+- content_for :head do
+  %title= t('.header.title', :node => @node.name)
 
 - content_for :javascript do
   :javascript
+
+    var lon = #{@node.lon};
+    var lat = #{@node.lat};
+    object_types.push("#{@node.type}");
+  
     jumpTo(#{@node.lon}, #{@node.lat}, 17);
     createDraggableLayer(placesStyle(),#{@node.lon}, #{@node.lat});    
     
