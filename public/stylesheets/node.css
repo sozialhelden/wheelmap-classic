@@ -715,10 +715,10 @@ header #searchbar .or-add-place {
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
   border-radius: 12px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
   cursor: pointer;
 }
 /* line 96, ../../app/stylesheets/basics/_header.sass */
@@ -1015,10 +1015,10 @@ body {
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
   border-radius: 12px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
 }
 /* line 22, ../../app/stylesheets/basics/_page.sass */
 .frame h2 {
@@ -1045,11 +1045,15 @@ body {
   -khtml-border-radius: 15px;
   border-radius: 15px;
   overflow: hidden;
-  *zoom: 1;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+  display: inline-block;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
+  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
+}
+/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+#main {
+  display: block;
 }
 
 /* line 2, ../../app/stylesheets/partials/nodes/_headlines.sass */
@@ -1210,6 +1214,10 @@ dd.leisure {
 #map_wrapper a.magnify {
   background: url("/images/icons/magnify.png") no-repeat right center;
   padding-right: 20px;
+}
+/* line 16, ../../app/stylesheets/partials/nodes/_map.sass */
+#map_wrapper a.hide {
+  display: none;
 }
 
 /* line 1, ../../app/stylesheets/partials/nodes/_breadcrumbs.sass */

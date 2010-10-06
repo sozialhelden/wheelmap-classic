@@ -2,22 +2,14 @@
 %html(lang="#{I18n.locale}")
   %head
     %meta(charset="utf-8")
-    %title= t('header.title')
-    %meta{'http-equiv' => 'Content-language', :content => I18n.locale}
-    %meta{'http-equiv' => 'language', :content => I18n.locale}
-    %meta{:name => 'language', :content => I18n.locale}
-    %meta{:name => 'description', :content => t('header.meta.description')}
-    %meta{:name => 'keywords', :content => t('header.meta.keywords')}
-    %meta{:name => 'copyright', :content => 'Sozialhelden e.V'}
-    %meta{:name => 'robots', :content => 'follow index'}
-    
-    %link{:href => search_index_url, :rel => 'search', :title => t('header.meta.search')}
-    %link{:href => root_url, :rel => 'home', :title => t('header.meta.homepage')}
-    %link{:href => imprint_url, :rel => 'author', :title => t('header.navigation.imprint')}
+    = render :partial => 'shared/meta'
 
     = stylesheet_link_tag 'screen', :cache => 'screens'
     - if @content_for_head
       = yield(:head)
+    - else 
+      %title= t('header.title')
+      
     /[if IE]
       = render :partial => 'shared/add_html5_elements'
       -#= javascript_include_tag 'html5'
@@ -27,6 +19,7 @@
       var object_types = ["#{ (session['amenities']).join('","')}"];
       var lat = #{GeoCache.latlon(request.remote_addr).first}
       var lon = #{GeoCache.latlon(request.remote_addr).last}
+      var language = '#{I18n.locale}';
       
     
     %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
@@ -42,7 +35,7 @@
       - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
         = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
     = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
-    = javascript_include_tag 'jquery', 'util', 'autocomplete', 'icons', 'string', 'popup', 'osm', 'application', 'map', :cache => 'maps'
+    = javascript_include_tag 'jquery', 'util', 'autocomplete', 'icons', 'openlayers_de', 'openlayers_en', 'osm', 'application', 'map', :cache => 'maps'
     - if @content_for_jquery
       = yield :jquery
       :javascript

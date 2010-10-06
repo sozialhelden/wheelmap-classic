@@ -8,10 +8,13 @@
       
   = form.input :wheelchair_description, :required => false
   
-  %li.select.required#node-type-input
+  %li.select.required#node-type-input{:class => @node.errors.on(:type) ? 'error' : ''}
     = form.label :type, :required => true
     %select#node-type{:name => 'node[type]'}
       = render :partial => 'options_for_type', :object => inputs.type
+    - if @node.errors.on(:type)
+      %p.inline-errors
+        = @node.errors.on(:type)
 
   =form.input :id, :as => :hidden
   =form.input :lon, :input_html =>{:readonly => 'readonly'}, :as => :numeric

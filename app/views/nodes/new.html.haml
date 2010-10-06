@@ -1,5 +1,6 @@
 #map_wrapper  
   #minimap
+  = link_to t('.link.large_map'), root_path, :onclick => "location=permalink('#{root_path}');return false;", :class => 'hide', :id => 'show-on-large-map'
 
 #accessibility
   - semantic_form_for :node, @node,  :url => {:controller => 'nodes', :action => 'create'} do |form|
@@ -8,16 +9,12 @@
     - form.buttons do
       = form.submit t('formtastic.labels.create')
       %p.hint= t('devise.mandatory')
-
-- content_for :breadcrumbs do
-  = link_to t('breadcrumbs.root'), root_path
-  %span
-    = t('breadcrumbs.node.create')
+      
+- content_for :head do
+  %title= t('.header.title')
 
 - content_for :javascript do
   :javascript
-    checkForPermalink();
-    jumpTo(lon, lat, zoom);
     createDraggableLayer(placesStyle(),lon, lat);
 
 

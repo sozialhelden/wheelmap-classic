@@ -5,24 +5,28 @@ html, body {
   margin: 0;
   padding: 0;
 }
+/* line 7, ../../app/stylesheets/vendor/_map.sass */
+html .hide, body .hide {
+  display: none;
+}
 
-/* line 6, ../../app/stylesheets/vendor/_map.sass */
+/* line 10, ../../app/stylesheets/vendor/_map.sass */
 body.map {
   overflow: hidden;
 }
 
-/* line 9, ../../app/stylesheets/vendor/_map.sass */
+/* line 13, ../../app/stylesheets/vendor/_map.sass */
 a {
   color: blue;
   text-decoration: none;
 }
-/* line 13, ../../app/stylesheets/vendor/_map.sass */
+/* line 17, ../../app/stylesheets/vendor/_map.sass */
 a:hover {
   color: #000011;
   text-decoration: underline;
 }
 
-/* line 17, ../../app/stylesheets/vendor/_map.sass */
+/* line 21, ../../app/stylesheets/vendor/_map.sass */
 #map {
   width: 100%;
   padding: 0;
@@ -32,13 +36,13 @@ a:hover {
   color: black;
 }
 
-/* line 26, ../../app/stylesheets/vendor/_map.sass */
+/* line 30, ../../app/stylesheets/vendor/_map.sass */
 .olFramedCloudPopupContent {
   font-size: 0.8em;
   font-family: Verdana, sans-serif;
 }
 
-/* line 30, ../../app/stylesheets/vendor/_map.sass */
+/* line 34, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle {
   position: absolute;
   font-size: 1em;
@@ -55,13 +59,13 @@ a:hover {
   cursor: default;
   opacity: 0.7;
 }
-/* line 46, ../../app/stylesheets/vendor/_map.sass */
+/* line 50, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle:hover {
   background-color: white;
   opacity: 1;
 }
 
-/* line 51, ../../app/stylesheets/vendor/_map.sass */
+/* line 55, ../../app/stylesheets/vendor/_map.sass */
 #description {
   position: absolute;
   z-index: 10000;
@@ -74,7 +78,7 @@ a:hover {
   font-size: 12px;
 }
 
-/* line 63, ../../app/stylesheets/vendor/_map.sass */
+/* line 67, ../../app/stylesheets/vendor/_map.sass */
 #attribution {
   bottom: 0;
   left: 0;
@@ -85,14 +89,14 @@ a:hover {
   z-index: 1000;
 }
 
-/* line 73, ../../app/stylesheets/vendor/_map.sass */
+/* line 77, ../../app/stylesheets/vendor/_map.sass */
 #layer {
   position: absolute;
   top: 60px;
   right: 10px;
   z-index: 10002;
 }
-/* line 79, ../../app/stylesheets/vendor/_map.sass */
+/* line 83, ../../app/stylesheets/vendor/_map.sass */
 #layer > div {
   border: 1px solid black;
   background-color: white;
@@ -101,14 +105,9 @@ a:hover {
   cursor: default;
   margin-bottom: 4px;
 }
-/* line 88, ../../app/stylesheets/vendor/_map.sass */
+/* line 92, ../../app/stylesheets/vendor/_map.sass */
 #layer .active {
   background-color: #eeeeff;
-}
-
-/* line 92, ../../app/stylesheets/vendor/_map.sass */
-.hide {
-  display: none;
 }
 
 /* line 1, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
@@ -828,10 +827,10 @@ header #searchbar .or-add-place {
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
   border-radius: 12px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
   cursor: pointer;
 }
 /* line 96, ../../app/stylesheets/basics/_header.sass */
@@ -1128,10 +1127,10 @@ body {
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
   border-radius: 12px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
 }
 /* line 22, ../../app/stylesheets/basics/_page.sass */
 .frame h2 {
@@ -1158,11 +1157,15 @@ body {
   -khtml-border-radius: 15px;
   border-radius: 15px;
   overflow: hidden;
-  *zoom: 1;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+  display: inline-block;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
+  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
+}
+/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+#main {
+  display: block;
 }
 
 /* line 1, ../../app/stylesheets/partials/map/_aside.sass */
@@ -1216,10 +1219,10 @@ image[width='16'] {
   -webkit-border-radius: 8px;
   -khtml-border-radius: 8px;
   border-radius: 8px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #cccccc;
@@ -1233,7 +1236,11 @@ image[width='16'] {
 /* line 18, ../../app/stylesheets/partials/map/_info.sass */
 #state-counter {
   overflow: hidden;
-  *zoom: 1;
+  display: inline-block;
+}
+/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+#state-counter {
+  display: block;
 }
 /* line 20, ../../app/stylesheets/partials/map/_info.sass */
 #state-counter li {
@@ -1258,10 +1265,10 @@ image[width='16'] {
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
   border-radius: 12px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
 }
 
 /* line 1, ../../app/stylesheets/partials/map/_oauth.sass */
@@ -1339,10 +1346,10 @@ image[width='16'] {
   -webkit-border-radius: 3px;
   -khtml-border-radius: 3px;
   border-radius: 3px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px 0;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
+  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
 }
 /* line 34, ../../app/stylesheets/partials/map/_bar.sass */
 .webkit .state-yes input:checked:before, .webkit .state-limited input:checked:before, .webkit .state-no input:checked:before, .webkit .state-unknown input:checked:before {
@@ -1392,7 +1399,11 @@ image[width='16'] {
   padding: 4px 0;
   margin-bottom: 10px;
   overflow: hidden;
-  *zoom: 1;
+  display: inline-block;
+}
+/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+#links {
+  display: block;
 }
 /* line 68, ../../app/stylesheets/partials/map/_bar.sass */
 #links a {
@@ -1406,7 +1417,11 @@ image[width='16'] {
 /* line 1, ../../app/stylesheets/partials/map/_amenities.sass */
 #amenities {
   overflow: hidden;
-  *zoom: 1;
+  display: inline-block;
+}
+/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+#amenities {
+  display: block;
 }
 /* line 6, ../../app/stylesheets/partials/map/_amenities.sass */
 #amenities li {
@@ -1434,10 +1449,10 @@ image[width='16'] {
 }
 /* line 27, ../../app/stylesheets/partials/map/_amenities.sass */
 #amenities a.hidden {
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px;
   -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px;
   -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px;
   box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px;
@@ -1457,10 +1472,10 @@ image[width='16'] {
 }
 /* line 37, ../../app/stylesheets/partials/map/_amenities.sass */
 #amenities a.visible, #amenities a:active {
-  -moz-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px 0;
-  -webkit-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px 0;
-  -o-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px 0;
-  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px 0;
+  -moz-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px;
+  -o-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px;
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px;
@@ -1517,20 +1532,20 @@ image[width='16'] {
 }
 
 /* line 6, ../../app/stylesheets/partials/map/_popup.sass */
-.popup {
+.olFramedCloudPopupContent {
   width: 250px;
 }
 /* line 9, ../../app/stylesheets/partials/map/_popup.sass */
-.popup h2 {
+.olFramedCloudPopupContent h2 {
   background-position: 0 2px;
   padding-left: 20px;
 }
 /* line 13, ../../app/stylesheets/partials/map/_popup.sass */
-.popup address {
+.olFramedCloudPopupContent address {
   padding-left: 20px;
 }
 /* line 17, ../../app/stylesheets/partials/map/_popup.sass */
-.popup ol {
+.olFramedCloudPopupContent ol {
   border-top: 1px #cfd7c5 solid;
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px;
@@ -1540,16 +1555,25 @@ image[width='16'] {
   padding-top: 7px;
   width: 250px;
   overflow: hidden;
-  *zoom: 1;
+  display: inline-block;
+}
+/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
+.olFramedCloudPopupContent ol {
+  display: block;
 }
 /* line 25, ../../app/stylesheets/partials/map/_popup.sass */
-.popup input {
+.olFramedCloudPopupContent input {
   float: left;
   margin-right: 10px;
 }
 /* line 29, ../../app/stylesheets/partials/map/_popup.sass */
-.popup li,
-.popup label {
+.olFramedCloudPopupContent input[type='submit'] {
+  position: static;
+  float: right;
+}
+/* line 33, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li,
+.olFramedCloudPopupContent label {
   float: left;
   font-size: 11px;
   line-height: 15px;
@@ -1559,39 +1583,39 @@ image[width='16'] {
   -khtml-border-radius: 0px !important;
   border-radius: 0px !important;
 }
-/* line 37, ../../app/stylesheets/partials/map/_popup.sass */
-.popup label {
+/* line 41, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent label {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-weight: bold;
   padding-right: 10px;
   text-align: left;
   line-height: 8px;
 }
-/* line 44, ../../app/stylesheets/partials/map/_popup.sass */
-.popup li {
+/* line 48, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li {
   font-family: 'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue','Swiss 721 Light','Helvetica','Arial','sans-serif';
   font-size: 11px;
   font-weight: 100;
 }
-/* line 49, ../../app/stylesheets/partials/map/_popup.sass */
-.popup li strong {
+/* line 53, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li strong {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-weight: bold;
 }
-/* line 54, ../../app/stylesheets/partials/map/_popup.sass */
-.popup li.yes label {
+/* line 58, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li.yes label {
   color: #86af4d;
 }
-/* line 58, ../../app/stylesheets/partials/map/_popup.sass */
-.popup li.limited label {
+/* line 62, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li.limited label {
   color: #f19d46;
 }
-/* line 62, ../../app/stylesheets/partials/map/_popup.sass */
-.popup li.no label {
+/* line 66, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li.no label {
   color: #d6382f;
 }
-/* line 66, ../../app/stylesheets/partials/map/_popup.sass */
-.popup li.unknown label {
+/* line 70, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li.unknown label {
   color: #8d8d8e;
 }
 
