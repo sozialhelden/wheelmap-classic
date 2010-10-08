@@ -19,6 +19,7 @@ Rails::Initializer.run do |config|
   config.gem 'smurf'
   config.gem 'spatial_adapter'
   config.gem 'geoip'
+  config.gem 'ya2yaml'
 end
 
 Haml::Template.options[:format] = :html5
