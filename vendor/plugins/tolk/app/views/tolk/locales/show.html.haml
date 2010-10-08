@@ -1,9 +1,6 @@
 - content_for :locale do
   %span.locale= @locale.language_name
 
-- content_for :head do
-  %link{:href => tolk_locale_path(@locale, :format => 'atom'), :rel => "alternate", :title => "RSS", :type => "application/rss+xml"}/
-
 %h3.switch
   Phrases missing translation (#{@locale.count_phrases_without_translation})
   %span
