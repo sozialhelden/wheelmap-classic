@@ -29,7 +29,10 @@ en:
       banner: 
         alt: A project by Sozialhelden.de
   de: Deutsch
+  en: English
   es: Español
+  fr: Française
+  jp: 日本
 
   support:
     array:
@@ -369,7 +372,6 @@ en:
         notice: Your account is activated now!
       error: 
         notice: E-mail and password don't match.
-  en: English
   place: 
     one: "%{count} place"
     other: "%{count} places"
