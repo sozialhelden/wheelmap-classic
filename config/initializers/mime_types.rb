@@ -4,3 +4,5 @@
 # Mime::Type.register "text/richtext", :rtf
 # Mime::Type.register_alias "text/html", :iphone
 Mime::Type.register_alias "application/json; subtype=geojson", :geojson
+Mime::Type.register_alias "application/vnd.google-earth.kml+xml", :kml
+Mime::Type.register_alias "application/rss+xml", :rss

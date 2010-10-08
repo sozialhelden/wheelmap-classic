@@ -8,6 +8,8 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :search, :only => :index
 
+  map.resources :feeds, :only => :index
+
   map.resources :oauth, :only => [:new, :index], :collection => { :callback => :get, :osm_register => :get }
 
   map.resources :nodes, :except => :destroy, :member => {:update_wheelchair => :put}
