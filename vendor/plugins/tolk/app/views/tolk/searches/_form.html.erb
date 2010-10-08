@@ -1,8 +1,0 @@
-<% form_tag "/tolk/search", :method => :get do %>
-  <%= hidden_field_tag :locale, locale.name %>
-  Search for
-  <%= scope_selector_for(@locale) %>
-  phrase:
-  <%= text_field_tag :q, params[:q] %>
-  <%= submit_tag "Search", :name => nil %>
-<% end %>
