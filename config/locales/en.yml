@@ -64,6 +64,12 @@ en:
         header: 
           one: 1 error prohibited this {{model}} from being saved
           other: "{{count}} errors prohibited this {{model}} from being saved"
+
+      models:
+        user_session:
+          email: E-Mail-Address
+          password: Password
+          remember_me: Stay logged in
   wheelmap: 
     logo: 
       title: Wheelmap Homepage
