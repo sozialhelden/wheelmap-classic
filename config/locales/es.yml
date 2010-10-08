@@ -1,0 +1,5 @@
+es: 
+  activerecord: 
+    errors: 
+      messages: 
+        accepted: debe ser aceptada
