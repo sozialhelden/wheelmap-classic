@@ -391,6 +391,14 @@ EOF
     run <<-CMD
       echo "RailsEnv #{rails_env}" >> #{latest_release}/public/.htaccess
     CMD
+    if rails_env != 'production'
+      run <<-CMD
+        echo "AuthType Basic" >> #{latest_release}/public/.htaccess
+        echo "AuthName \"By Invitation Only\"" >> #{latest_release}/public/.htaccess
+        echo "AuthUserFile #{latest_release}/config/.passwd"
+        echo "Require valid-user" >> #{latest_release}/public/.htaccess
+      CMD
+    end
   end
   
 
