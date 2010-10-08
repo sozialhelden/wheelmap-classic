@@ -30,6 +30,13 @@ en:
         alt: A project by Sozialhelden.de
   de: Deutsch
   es: Español
+
+  support:
+    array:
+      sentence_connector: "and"
+      skip_last_comma: true
+      two_words_connector: ' and '
+
   activerecord: 
     errors: 
       messages: 
