@@ -32,7 +32,7 @@
               - if params[:q].present?
                 = highlight(format_i18n_value(phrase.translations.primary.text), params[:q])
               - else
-                = format_i18n_value(phrase.translations.primary.text)
+                = format_i18n_value(phrase.translations.primary.text) rescue nil
               %span.key{:title => phrase.key}= truncate(phrase.key, :length => 100)
       .table_submit
         %p= locale_form.submit "Save changes"

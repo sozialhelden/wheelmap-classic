@@ -1,125 +1,531 @@
-en:
-  de: Deutsch
-  en: English
-  or: or
-  statistics: Statistics
-  place:
-    one: "%{count} place"
-    other: "%{count} places"
-  wheelmap:
-    logo:
-      title: Wheelmap Homepage
-      alt: Wheelmap Logo
-      
-    what_is:
-      fully_accessible: "The entrance step is not higher than 7 cm; all localities accessible for wheelchair users (without exception); disabled toilet available"
-      limited_accessible: "The entrance step is not higher than 7 cm; most important localitites accessible for wheelchair users"
-      not_accessible: "The entrance step is higher than 7 cm; or a stair at the entrance; or most important localities are not accessible for wheelchair users"
-      unknown_accessible: "The wheelchair status is unknown"
-      
-  wheelchairstatus:
-    'yes': 'completely wheelchair accessible'
-    limited: 'partly wheelchair accessible'
-    'no': 'not wheelchair accessible'
-    unknown: 'wheelchair accessibility unknown'
-  application: 
-    require_no_user: 
-      notice: "You’re already logged in …"
-    require_user: 
-      notice: "You have to log in to see this page."
-  global: 
-    form_validation_error: "Please note the errors listed below."
-  header: 
-    navigation: 
-      home: Start
-      login: Log in
-      logout: Log out
-      imprint: Imprint
-      feedback: Feedback
-      blog: Blog
-      what_is_wheelmap: 'What is wheelmap?'
-      what_is_barrier_free: 'What does "wheelchair accessible" mean?'
-      how_to_add_a_place: 'How do I add places?'
-      suggestions: 'Suggestions'
-      logged_in_as: "Logged in as:"
-    meta:
-      description: "Find wheelchair accessible places - wheelmap.org"
-      keywords: "wheelchair accessible places find search mark"
-      search: Search
-      homepage: Home page
-    searchbar:
-      label: '' # text left of search input field, leave empty for now
-      find: 'find'
-      add_place: 'Add another place'
-      placeholder: 'i.e. Sunset Boulevard San Francisco or Brandenburg Gate Berlin'
-    tagline: Wheelmap logo
-    title: wheelmap
-  form:
-    show_fully_accessible_places: wheelchair accessible
-    show_limited_accessible_places: partly wheelchair accessible
-    show_unaccessible_places: not wheelchair accessible
-    show_places_without_status: unknown status
+--- 
+en: 
+  number: 
+    format: 
+      separator: .
+      precision: 3
+      delimiter: ","
+    human: 
+      format: 
+        precision: 1
+        delimiter: ""
+    percentage: 
+      format: 
+        delimiter: ""
+    currency: 
+      format: 
+        format: "%u%n"
+        unit: $
+        separator: .
+        precision: 2
+        delimiter: ","
+    precision: 
+      format: 
+        delimiter: ""
+  common: 
+    close: close
   layouts: 
     application: 
-      banner:
-        alt: 'A project by Sozialhelden.de'
+      banner: 
+        alt: A project by Sozialhelden.de
+  de: Deutsch
+  es: Español
+  activerecord: 
+    errors: 
+      messages: 
+        greater_than_or_equal_to: must be greater than or equal to {{count}}
+        less_than_or_equal_to: must be less than or equal to {{count}}
+        confirmation: doesn't match confirmation
+        blank: can't be blank
+        invalid: is invalid
+        exclusion: is reserved
+        odd: must be odd
+        wrong_length: is the wrong length (should be {{count}} characters)
+        empty: can't be empty
+        too_short: is too short (minimum is {{count}} characters)
+        even: must be even
+        less_than: must be less than {{count}}
+        equal_to: must be equal to {{count}}
+        greater_than: must be greater than {{count}}
+        taken: has already been taken
+        accepted: must be accepted
+        too_long: is too long (maximum is {{count}} characters)
+        not_a_number: is not a number
+        inclusion: is not included in the list
+      template: 
+        body: "There were problems with the following fields:"
+        header: 
+          one: 1 error prohibited this {{model}} from being saved
+          other: "{{count}} errors prohibited this {{model}} from being saved"
+  wheelmap: 
+    logo: 
+      title: Wheelmap Homepage
+      alt: Wheelmap Logo
+    what_is: 
+      unknown_accessible: The wheelchair status is unknown
+      not_accessible: The entrance step is higher than 7 cm; or a stair at the entrance; or most important localities are not accessible for wheelchair users
+      fully_accessible: The entrance step is not higher than 7 cm; all localities accessible for wheelchair users (without exception); disabled toilet available
+      limited_accessible: The entrance step is not higher than 7 cm; most important localitites accessible for wheelchair users
+  node: 
+    address: 
+      city: "{{city}} {{postcode}}"
+      street: "{{housenumber}} {{street}}"
+    tags: 
+      phone: "Phone:"
+      website: "Website:"
+  profile: 
+    edit: 
+      headline: Edit your Profil
+      application: 
+        oauth: 
+          not_connected: "Status: Not connected"
+          connected: "Status: connected"
+          grant: Connect now
+          revoke: Disconnect
+  or: or
+  statistics: Statistics
   oauth: 
     callback: 
-      notice: "Your wheelmap account is now connected to the OpenStreetMap account {{user}}."
-    application:
-      connect:
-        headline: "You have to connect your account with your open street map account before you can create or modify places on wheelmap.org."
-  user_sessions: 
-    create: 
-      activation: 
-        notice: "Your account is activated now!"
-      error: 
-        notice: "E-mail and password don't match."
-      notice: "You're in!"
-    destroy: 
-      notice: "Bye, come back soon!"
-    new: 
-      email: E-mail address
+      notice: Your wheelmap account is now connected to the OpenStreetMap account {{user}}.
+    application: 
+      connect: 
+        headline: You have to connect your account with your open street map account before you can create or modify places on wheelmap.org.
+  header: 
+    searchbar: 
+      label: ""
+      find: find
+      add_place: Add another place
+      placeholder: i.e. Sunset Boulevard San Francisco or Brandenburg Gate Berlin
+    title: wheelmap
+    meta: 
+      homepage: Home page
+      description: Find wheelchair accessible places - wheelmap.org
+      search: Search
+      keywords: wheelchair accessible places find search mark
+    tagline: Wheelmap logo
+    navigation: 
+      logout: Log out
+      blog: Blog
+      how_to_add_a_place: How do I add places?
+      imprint: Imprint
+      suggestions: Suggestions
+      what_is_barrier_free: What does "wheelchair accessible" mean?
+      logged_in_as: "Logged in as:"
+      feedback: Feedback
       login: Log in
-      login_with_twitter: "Log in with Twitter"
+      what_is_wheelmap: What is wheelmap?
+      home: Start
+  errors: 
+    messages: 
+      greater_than_or_equal_to: must be greater or equal than {{count}}
+      confirmation: "stimmt nicht mit der Best\xC3\xA4tigung \xC3\xBCberein"
+      less_than_or_equal_to: must be lower or equal than {{count}}
+      blank: has to be filled
+      invalid: not valid
+      exclusion: "ist nicht verf\xC3\xBCgbar"
+      odd: must be odd
+      wrong_length: "hat die falsche L\xC3\xA4nge (muss genau {{count}} Zeichen haben)"
+      empty: has to be filled
+      even: must be even
+      too_short: is too short (not less than {{count}} characters)
+      less_than: must be less than {{count}}
+      equal_to: must be exactly {{count}}
+      greater_than: must be greater than {{count}}
+      taken: has already been taken
+      accepted: has to be accepted
+      too_long: is too long (not more than {{count}} characters)
+      inclusion: not a valid value
+      not_a_number: is not a number
+  time: 
+    am: am
+    formats: 
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    pm: pm
+  formtastic: 
+    hints: 
+      osm_username: Not a member yet? <a href="http://openstreetmap.org/user/new" target="_blank">Create an Openstreetmap account now</a>
+      website: "For example: http://www.example.com"
+      phone: "For example: +49 30 123456-78"
+      lat: Move the marker on the map to the correct position
+      password: (leave empty, if you don't want to change it)
+    titles: 
+      optional: More information <span class="addition">(all fields are optional)</span>
+      basic: Basic data
+    labels: 
+      housenumber: "No:"
+      city: "City:"
+      lon: Longitude
+      category: "Category:"
+      wheelchair: Wheelchair accessibility?
+      postcode: "Post code:"
+      wheelchair_description: "Accessibility comment:"
+      osm_username: OSM account name
+      password_confirmation: Repeat password
+      street: "Street:"
+      type: "Type:"
+      save: Save
+      phone: "Telephone:"
+      website: "Website:"
+      create: Create place
+      osm_password: OSM password
+      lat: Latitude
       password: Password
-      remember_me: "Stay logged in"
-  common:
-    close: close
-  shared:        
-    imprint:
+      email: E-Mail
+  application: 
+    require_no_user: 
+      notice: "You\xE2\x80\x99re already logged in \xE2\x80\xA6"
+    require_user: 
+      notice: You have to log in to see this page.
+  date: 
+    month_names: 
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    abbr_day_names: 
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    order: 
+    - :year
+    - :month
+    - :day
+    formats: 
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+    day_names: 
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    abbr_month_names: 
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+  devise: 
+    passwords: 
+      send_instructions: You will receive an email with instructions about how to reset your password in a few minutes.
+      link: Forgot password?
+      updated: Your password was changed successfully. You are now signed in.
+    mailer: 
+      unlock_instructions: Unlock Instructions
+      reset_password_instructions: Reset password instructions
+      confirmation_instructions: Confirmation instructions
+    unlocks: 
+      unlocked: Your account was successfully unlocked. You are now signed in.
+      send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
+      link: Didn't receive unlock instructions?
+    registrations: 
+      destroyed: Bye! Your account was successfully cancelled. We hope to see you again soon.
+      link: Sign up
+      updated: You updated your account successfully.
+      signed_up: You have signed up successfully. If enabled, a confirmation was sent to your e-mail.
+    sessions: 
+      signed_out: Signed out successfully.
+      unauthenticated: You need to sign in or sign up before continuing.
+      invalid: Invalid email or password.
+      timeout: Your session expired, please sign in again to continue.
+      inactive: Your account was not activated yet.
+      unconfirmed: You have to confirm your account before continuing.
+      link: Sign in
+      signed_in: Signed in successfully.
+      invalid_token: Invalid authentication token.
+      locked: Your account is locked.
+    confirmations: 
+      confirmed: Your account was successfully confirmed. You are now signed in.
+      link: Didn't receive confirmation instructions?
+      send_instructions: You will receive an email with instructions about how to confirm your account in a few minutes.
+  form: 
+    show_limited_accessible_places: partly wheelchair accessible
+    show_places_without_status: unknown status
+    show_unaccessible_places: not wheelchair accessible
+    show_fully_accessible_places: wheelchair accessible
+  support: 
+    array: 
+      two_words_connector: " and "
+  breadcrumbs: 
+    node: 
+      edit: Edit place
+      create: Add new place
+    root: wheelmap
+  shared: 
+    imprint: 
+      comment: This website has been developed using Ruby on Rails and JavaScript.
       headline: Imprint
-      fields:
-        provider: "Provider:"
-        phone: "Telephone:"
-        email: "E-mail:"
-        design: "Design, development:"
-        maps: "Map:"
-        maps_and_data: "Map, Data:"
-        application: "Application:"
-        icons: "Icons:"
+      fields: 
         license: "Licence:"
+        icons: "Icons:"
+        maps: "Map:"
+        application: "Application:"
         geoip: GeoIP
         hosting: Hosting
-      comment: 'This website has been developed using Ruby on Rails and JavaScript.'
-      links:
-        email_me: 'Click here'
-        license:
-          cc:
-            by_sa_20: 'Creative Commons Attribution-ShareAlike 2.0 Generic'
-            by_30: 'Creative Commons Attribution 3.0 Unported'
-            
-  breadcrumbs:
-    root: wheelmap
-    node:
-      create: Add new place
-      edit: Edit place
-  profile:
-    edit:
-      headline: Edit your Profil
-      application:
-        oauth:
-          not_connected: 'Status: Not connected'
-          connected: 'Status: connected'
-          grant: 'Connect now'
-          revoke: 'Disconnect'
+        phone: "Telephone:"
+        maps_and_data: "Map, Data:"
+        email: "E-mail:"
+        design: "Design, development:"
+        provider: "Provider:"
+      links: 
+        license: 
+          cc: 
+            by_30: Creative Commons Attribution 3.0 Unported
+            by_sa_20: Creative Commons Attribution-ShareAlike 2.0 Generic
+        email_me: Click here
+  global: 
+    form_validation_error: Please note the errors listed below.
+  nodes: 
+    new: 
+      header: 
+        title: New place | wheelmap.org
+      link: 
+        large_map: "&laquo; Cancel"
+    edit: 
+      header: 
+        title: "Edit place: {{node}} | wheelmap.org"
+      link: 
+        large_map: "&laquo; Cancel"
+    errors: 
+      param_missing: Please provide a search term.
+      not_found: Sorry, page not found.
+      not_existent: Sorry, this place is not available anymore.
+      not_authorized: Sorry, authentication failed
+      not_available: Sorry, this page is temporarily not available.
+    update_wheelchair: 
+      successfull: Thank you, the submission was saved successfully and will be online shortly.
+    show: 
+      header: 
+        title: "Place: {{node}} | wheelmap.org"
+      link: 
+        edit_node: Edit place
+        large_map: Enlarge
+    create: 
+      flash: 
+        not_successfull: Oops, your input was either uncorrect or uncomplete.
+        successfull: Thank you, the submission was saved successfully and will be online shortly.
+    flash: 
+      authorize_wheelmap: You need an OpenStreetMap account to modify data.
+    update: 
+      flash: 
+        not_successfull: Oops, your input was either uncorrect or uncomplete.
+        successfull: Thank you, the submission was saved successfully and will be online shortly.
+  wheelchairstatus: 
+    "no": not wheelchair accessible
+    limited: partly wheelchair accessible
+    "yes": completely wheelchair accessible
+    unknown: wheelchair accessibility unknown
+  user_sessions: 
+    new: 
+      remember_me: Stay logged in
+      login_with_twitter: Log in with Twitter
+      login: Log in
+      password: Password
+      email: E-mail address
+    destroy: 
+      notice: Bye, come back soon!
+    create: 
+      notice: You're in!
+      activation: 
+        notice: Your account is activated now!
+      error: 
+        notice: E-mail and password don't match.
+  en: English
+  place: 
+    one: "%{count} place"
+    other: "%{count} places"
+  datetime: 
+    distance_in_words: 
+      x_days: 
+        one: 1 day
+        other: "{{count}} days"
+      x_seconds: 
+        one: 1 second
+        other: "{{count}} seconds"
+      x_minutes: 
+        one: 1 minute
+        other: "{{count}} minutes"
+      x_months: 
+        one: 1 month
+        other: "{{count}} months"
+      about_x_hours: 
+        one: about 1 hour
+        other: about {{count}} hours
+      about_x_months: 
+        one: about 1 month
+        other: about {{count}} months
+      about_x_years: 
+        one: about 1 year
+        other: about {{count}} years
+      over_x_years: 
+        one: over 1 year
+        other: over {{count}} years
+      half_a_minute: half a minute
+  home: 
+    index: 
+      filter: 
+        category: "Category:"
+        wheelchair: Wheelchair accessible?
+      link: 
+        node: 
+          create: Add new place
+  poi: 
+    name: 
+      accommodation: 
+        bed_and_breakfast: Bed and breakfast
+        hotel: Hotel
+        guest_house: Guest house
+        motel: Motel
+        caravan_site: Caravan site
+        hostel: Hostel
+        beach_resort: Beach hotel
+        camp_site: Camp site
+        chalet: Chalet
+      misc: 
+        pharmacy: Pharmacy
+        doctors: Doctors
+        hospital: Hospital
+        toilets: Toiletts
+        veterinary: Veterinary
+        place_of_worship: Place of worship
+      money_post: 
+        bureau_de_change: Bureau de change
+        post_box: Post box
+        atm: ATM
+        post_office: Post office
+        bank: Bank
+      tourism: 
+        artwork: Artwork
+        theme_park: Theme park
+        viewpoint: View point
+        arts_centre: Arts centre
+        beacon: Lighthouse
+        battlefield: Battlefield
+        castle: Castle
+        beach: Beach
+        information: Tourist information
+        attraction: Attraction
+        cave_entrance: Cave entrance
+        memorial: Memorial
+        archaeological_site: Archaeological site
+        tower: Tower
+      public_transfer: 
+        halt: Halt
+        tram_stop: Tram stop
+        bus_stop: Bus stop
+        bus_station: Bus station
+        ferry_terminal: Ferry terminal
+        fuel: Gas station
+        bicycle_parking: Bicyle parking
+        subway: Subway
+        light_rail: Light rail
+        ferry: Ferry
+        bicycle_rental: Bicyle rental
+        boatyard: Boatyard
+        car_rental: Car rental
+        parking: Parking
+        aerodrome: Airport
+        cable_car: Cable car
+        car_sharing: Car sharing
+        subway_entrance: Subway entrance
+        terminal: Airport terminal
+        parking_aisle: Parking aisle
+        chair_lift: Chair lift
+        platform: Platform
+      leisure: 
+        theatre: Theatre
+        zoo: Zoo
+        nightclub: Nightclub
+        sauna: Sauna
+        gallery: Galery
+        cinema: Cinema
+        arena: Arena
+      shopping: 
+        beverages: Beverages
+        laundry: Laundry
+        electronics: Elektronics
+        books: Books
+        clothes: Clothes
+        mall: Shoppingcenter
+        alcohol: Liquor
+        supermarket: Supermarket
+        bakery: Bakery
+        hairdresser: Hairdresser
+        optician: Optiker
+        garden_centre: Garden center
+        computer: Computer
+        department_store: Department store
+        furniture: Furniture
+        shoes: Shoes
+        hardware: Hardware
+      government: 
+        embassy: Embassy
+        townhall: Townhall
+        public_building: Public building
+        courthouse: Couthouse
+      sport: 
+        swimming: Swimming
+        sports_centre: Sports centre
+        swimming_pool: Swimming pool
+        stadium: Stadion
+      food: 
+        restaurant: Restaurant
+        fast_food: Fast Food
+        drinking_water: Drinking water
+        cafe: Cafe
+        biergarten: Biergarten
+        pub: Pub
+        bar: Bar
+      education: 
+        school: School
+        college: College
+        university: University
+        library: Library
+        kindergarten: Kindergarten
+        museum: Museum
+      unknown: 
+        unknown: Unknown
+    category: 
+      accommodation: Accomodation
+      misc: Misc
+      tourism: Tourism
+      money_post: Bank &amp; Post
+      public_transfer: Public transfer
+      leisure: Leisure
+      government: Government
+      shopping: Shopping
+      sport: Sport
+      education: Education
+      unknown: Unknown
+      food: Food
+  search: 
+    index: 
+      search: 
+        not_found: No places could be found!
+        for: Searching for "{{q}}"
