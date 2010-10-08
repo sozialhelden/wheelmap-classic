@@ -154,42 +154,6 @@ function lonLatToMercator(ll) {
   return new OpenLayers.LonLat(lon, lat);
 }
 
-// function loadPlaces() {
-//   if(zoom < 15){
-//     return true;
-//   }
-// 
-//   counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
-// 
-//   var bbox = mapBBOX().toBBOX();
-//   $.getJSON('/nodes?bbox=' + bbox , function(data) {
-//     var features = [];
-//     $.each(data, function(i, place) {
-//       if (place.type) {
-//         var lonLat = lonLatToMercator({ lon: place.lon * 1.0, lat: place.lat * 1.0 });
-//         var point = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
-//         var feature = new OpenLayers.Feature.Vector(point,place);
-//         feature.attributes.icon = iconForType[place.type];
-//         try {
-//           features.push(feature);
-//         }
-//         catch (e) {}
-//         counts[place.wheelchair]++;
-//         places[place.id] = place;
-//         $('*[data-osm-id=' + place.id + ']').addClass(place.type);
-//       }
-//     });
-//     places.removeFeatures(places.features);
-//     places.addFeatures(features);
-//     places.redraw();
-//     $.each(states, function(i,state){
-//       $('.wheelchair .' + state + ' span').html(counts[state]);
-//     });
-//     showStates();
-// 
-//   });
-// }
-
 function placesStyle(){
   return new OpenLayers.StyleMap({
     externalGraphic: "/images/icons/${icon}.png",
