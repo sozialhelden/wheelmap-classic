@@ -1,86 +1,86 @@
-de:  
+en:
   devise:
-    mandatory: "* Pflichtfeld"
+    mandatory: "* mandatory field"
     sessions:
       link: 'Login'
-      signed_in: 'Login erfolgreich.'
-      signed_out: 'Logout erfolgreich.'
-      unauthenticated: 'Bitte logge dich ein oder registriere dich neu, um fortzufahren.'
-      unconfirmed: 'Bitte bestätige zuerst dein Benutzerkonto, um fortzufahren. Um es zu Bestätigen klicke bitte auf den Link, den wir dir per E-Mail geschickt haben.'
-      locked: 'Dein Benutzerkonto ist gesperrt.'
-      invalid: 'Ungültige E-Mail oder Passwort.'
-      invalid_token: 'Ungültiger Authentizitätstoken. Bitte lösche die Cookies in deinem Browser und versuche es noch einmal.'
-      timeout: 'Deine Sitzung ist abgelaufen, bitte melde dich erneut an.'
-      inactive: 'Dein Benutzerkonto wurde noch nicht bestätigt. Um es zu Bestätigen klicke bitte auf den Link, den wir dir per E-Mail geschickt haben.'
+      signed_in: 'Logged in in successfully.'
+      signed_out: 'Signed out successfully.'
+      unauthenticated: 'You need to login or register before continuing.'
+      unconfirmed: 'You have to confirm your account before continuing.'
+      locked: 'Your account is locked.'
+      invalid: 'Invalid email or password.'
+      invalid_token: 'Invalid authentication token.'
+      timeout: 'Your session expired, please sign in again to continue.'
+      inactive: 'Your account was not activated yet.'
     passwords:
-      link: 'Passwort vergessen?'
-      send_instructions: 'Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Passwort neu setzen kannst.'
-      updated: 'Dein Passwort wurde erfolgreich geändert. Du bist nun angemeldet.'
+      link: 'Forgot password?'
+      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
+      updated: 'Your password was changed successfully. You are now signed in.'
     confirmations:
-      link: "Keine Bestätigungsmail bekommen?"
-      send_instructions: 'Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto bestätigen kannst.'
-      confirmed: 'Dein Benutzerkonto wurde erfolgreich bestätigt. Du bist nun angemeldet.'
+      link: "Didn't receive confirmation instructions?"
+      send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
+      confirmed: 'Your account was successfully confirmed. You are now signed in.'
     registrations:
-      link: 'Registrieren'
-      signed_up: 'Deine Registrierung war erfolgreich.'
-      updated: 'Dein Benutzerkonto wurde aktualisiert.'
-      destroyed: 'Dein Benutzerkonto wurde efolgreich gelöscht.'
+      link: 'Sign up'
+      signed_up: 'You have signed up successfully. If enabled, a confirmation was sent to your e-mail.'
+      updated: 'You updated your account successfully.'
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
     unlocks:
-      link: "Keine Anleitung zum Entspreen deines Benutzerkontos bekommen?"
-      send_instructions: 'Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto entsperren kannst.'
-      unlocked: 'Dein Benutzerkonto wirde erfolgreich entsperrt. Du bist jetzt eingeloggt.'
+      link: "Didn't receive unlock instructions?"
+      send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
+      unlocked: 'Your account was successfully unlocked. You are now signed in.'
     mailer:
-      confirmation_instructions: 'Anleitung zur Bestätigung deines Benutzerkontos'
-      reset_password_instructions: 'Anleitung zum Neu setzen deines Passworts'
-      unlock_instructions: 'Anleitung zum Entsperren deines Benutzerkontos'
+      confirmation_instructions: 'Confirmation instructions'
+      reset_password_instructions: 'Reset password instructions'
+      unlock_instructions: 'Unlock Instructions'
 
     sign_out:
       headline: Logout
     sign_in:
       headline: Login
       form:
-        submit: Login
+        submit: login
         labels:
           email: E-Mail
-          password: Passwort
-          remember_me: "Eingeloggt bleiben?"
+          password: Password
+          remember_me: "stay logged in?"
     sign_up:
-      headline: Neu anmelden
+      headline: Register
       form:
-        submit: Neu anmelden
+        submit: Register
         labels:
-          email: E-Mail
-          password: Passwort
-          password_confirmation: Passwort wiederholen
+          email: E-mail
+          password: Password
+          password_confirmation: Repeat password
     password_reset:
-      headline: Passwort zurücksetzen
+      headline: Reset password
       form:
-        submit: Passwort neu setzen
+        submit: Reset password
         labels:
-          password: Neues Passwort
-          password_confirmation: Passwort wiederholen
+          password: New password
+          password_confirmation: Repeat password
       email:
-        headline: "Willkommen {{email}}"
-        text: "Jemand hat angefragt dein Passwort zu ändern.  Das kannst du tun, indem du folgendend Link anklickst:"
-        link: "Mein Passwort ändern"
-        comment: "Solltest du diese Anfrage nicht gestellt haben, ignoriere diese E-Mail einfach.<br/>Dein Passwort wird nicht geändert, bis du auf den oben angegebenen Link klickst und ein neues Passwort setzt."
+        headline: "Welcome {{email}}"
+        text: "Somebody requested to change your password. You can do that by clicking the following link:"
+        link: "Change password"
+        comment: "If you did not request to change your password, please ignore this e-mail<br/>Your password will not be changed unless you click this link."
 
     password_recovery:
-      headline: Passwort vergessen?
+      headline: Forgot password?
       form:
-        submit: Passwort neu setzen
+        submit: Reset password
         labels:
-          email: E-Mail
+          email: E-mail
     destroy:
-      headline: Benutzerkonto löschen
-      link: Jetzt löschen
-      confirm: Bist du dir sicher?
+      headline: Delete account
+      link: Delete now
+      confirm: Are you sure?
     edit:
-      headline: Benutzerkonto verwalten
+      headline: Manage account
       form:
-        submit: Änderungen speichern
+        submit: Save changes
         labels:
-          email: E-Mail
-          password: "Passwort <i>(leer lassen, wenn du es nicht ändern möchtest)</i>"
-          password_confirmation: Passwort wiederholen
-          current_password: "Aktuelles Passwort <i>(wir brauchen es, um deine Änderungen zu bestätigen)</i>"
+          email: E-mail
+          password: "Password <i>(leave blank if you do not want to change it)</i>"
+          password_confirmation: Repeat password
+          current_password: "Current password <i>(we need this to confirm your change)</i>"

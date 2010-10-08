@@ -60,7 +60,7 @@ de:
           password: Neues Passwort
           password_confirmation: Passwort wiederholen
       email:
-        headline: Willkommen {{email}}
+        headline: "Willkommen {{email}}"
         text: "Jemand hat angefragt dein Passwort zu ändern.  Das kannst du tun, indem du folgendend Link anklickst:"
         link: "Mein Passwort ändern"
         comment: "Solltest du diese Anfrage nicht gestellt haben, ignoriere diese E-Mail einfach.<br/>Dein Passwort wird nicht geändert, bis du auf den oben angegebenen Link klickst und ein neues Passwort setzt."
