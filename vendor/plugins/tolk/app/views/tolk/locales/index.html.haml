@@ -1,0 +1,24 @@
+- content_for :locale do
+  %span.locale.empty
+%h2
+  Locales
+  %span
+    Primary locale is #{Tolk::Locale.primary_locale.language_name}
+- if @locales.any?
+  %ul.locales.clearfix
+    - @locales.each do |locale|
+      %li
+        = link_to locale.language_name, locale
+        - missing_count = locale.count_phrases_without_translation
+        - if missing_count > 0
+          %span.missing_translations= locale.count_phrases_without_translation
+- else
+  %p No locales yet.
+- form_for(Tolk::Locale.new) do |f|
+  .submit
+    = f.error_messages
+    %p
+      = f.label "Add a new Locale"
+      %select#select_tolk_locale_name{:name => "tolk_locale[name]"}
+        = options_for_select tolk_locale_selection
+      = f.submit 'Add'

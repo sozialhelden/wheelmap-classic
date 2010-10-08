@@ -1,0 +1,44 @@
+- content_for :locale do
+  %span.locale= @locale.language_name
+%h3.switch
+  Completed translations
+  %span
+    (#{link_to 'See phrases missing translation', @locale})
+- if @locale.has_updated_translations? && action_name != 'updated'
+  %span.notice
+    Some phrases have changed. #{link_to "Update translations", updated_tolk_locale_path(@locale)}.
+.search
+  = render :partial => "tolk/searches/form", :locals => { :locale => @locale }
+.translations
+  - if @phrases.any?
+  - form_for @locale do |locale_form|
+    %table.translations
+      %tr
+        %th.translation= @locale.language_name
+        %th.key= Tolk::Locale.primary_language_name
+      - @phrases.each do |phrase|
+      - if phrase.translations.primary
+        %tr
+          %td.translation
+            = hidden_field_tag :"translations[][id]", phrase.translation.id
+            = hidden_field_tag :"translations[][locale_id]", phrase.translation.locale_id
+            = text_area_tag :"translations[][text]", format_i18n_text_area_value(phrase.translation.text), :class => 'locale', |
+              :onfocus => "$(this).up('tr').addClassName('active');", :onblur => "$(this).up('tr').removeClassName('active');" |
+          %td.phrase
+            - if action_name == 'updated'
+              .updated
+                %span.key Updated
+                = format_i18n_value(phrase.translations.primary.text)
+              .original
+                %span.key Original
+                = format_i18n_value(phrase.translations.primary.previous_text)
+            - else
+            = format_i18n_value(phrase.translations.primary.text)
+    %span.key= phrase.key
+  .table_submit
+    %p= locale_form.submit "Save changes"
+  .paginate
+    = will_paginate @phrases, :renderer => Tolk::LinkRenderer
+  - else
+    %p{:style => "text-align: left"} There aren't any completed translations for this locale.
+    %p &nbsp;
