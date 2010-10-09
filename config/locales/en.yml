@@ -131,6 +131,7 @@ en:
       login: Log in
       what_is_wheelmap: What is wheelmap?
       home: Start
+      tolk: Translations
   errors: 
     messages: 
       greater_than_or_equal_to: must be greater or equal than {{count}}

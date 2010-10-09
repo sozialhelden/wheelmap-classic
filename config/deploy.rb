@@ -289,6 +289,12 @@ namespace :deploy do
     run <<-CMD
       cd #{latest_release}/tmp && ln -nfs ../../../#{File.join(relative_path(shared_path), 'config', 'GeoLiteCity.dat')} GeoLiteCity.dat
     CMD
+    
+    if rails_env != 'production'
+      run <<-CMD
+        cd #{latest_release}/public && ln -nfs noindex.txt robots.txt
+      CMD
+    end
   end
   # redefine deploy:finalize_update to create relative instead of absolute links
   # this is necessary in chrooted deployments  
@@ -391,14 +397,21 @@ EOF
     run <<-CMD
       echo "RailsEnv #{rails_env}" >> #{latest_release}/public/.htaccess
     CMD
-    if rails_env != 'production'
-      run <<-CMD
-        echo "AuthType Basic" >> #{latest_release}/public/.htaccess
-        echo "AuthName \"By Invitation Only\"" >> #{latest_release}/public/.htaccess
-        echo "AuthUserFile #{latest_release}/config/.passwd"
-        echo "Require valid-user" >> #{latest_release}/public/.htaccess
-      CMD
-    end
+    # if rails_env != 'production'
+    #   run <<-CMD
+    #     echo "AuthType Basic" >> #{latest_release}/public/.htaccess
+    #   CMD
+    #   run <<-CMD
+    #     echo "AuthName 'By Invitation Only'" >> #{latest_release}/public/.htaccess
+    #   CMD
+    #   
+    #   run <<-CMD
+    #     echo "AuthUserFile #{latest_release}/config/.passwd" >> #{latest_release}/public/.htaccess
+    #   CMD
+    #   run <<-CMD
+    #     echo "Require valid-user" >> #{latest_release}/public/.htaccess
+    #   CMD
+    # end
   end
   
 
