@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   
-  # skip_before_filter :verify_authenticity_token
+  skip_before_filter :verify_authenticity_token, :only => :authenticate
   
   before_filter :authenticate_user!, :except => :authenticate
   
-  filter_parameter_logging :oauth_token, :oauth_secret, :osm_username, :osm_password
+  filter_parameter_logging :password, :oauth_token, :oauth_secret
   
   before_filter :remove_password_from_params_if_blank, :only => :update
   
