@@ -9,17 +9,13 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   
   def app_authorized?
-    oauth_authorized? || basic_authorized?
+    oauth_authorized?
   end
   
   def oauth_authorized?
     (oauth_token && oauth_secret)
   end
-  
-  def basic_authorized?
-    (osm_username && osm_password)
-  end
-  
+    
   def access_token
     if oauth_authorized?
       consumer = OAuth::Consumer.new(OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret, :site => OpenStreetMapConfig.oauth_site)
