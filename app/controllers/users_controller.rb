@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       if user.app_authorized?
         render :json => {:id => user.id}.to_json, :status => 200
       else
-        render :json => {:id => user.id, :message => 'Application needs to be authorized', :url => edit_user_url(user)}.to_json, :status => 403
+        render :status => 403, :json => {:id => user.id, :message => 'Application needs to be authorized', :url => edit_user_url(user)}.to_json
       end
     else
       render :text => 'Authorization failed', :status => 401
