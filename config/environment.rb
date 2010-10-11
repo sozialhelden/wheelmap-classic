@@ -20,6 +20,7 @@ Rails::Initializer.run do |config|
   config.gem 'spatial_adapter'
   config.gem 'geoip'
   config.gem 'ya2yaml'
+  config.gem 'will_paginate'
 end
 
 Haml::Template.options[:format] = :html5
