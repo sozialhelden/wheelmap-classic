@@ -13,7 +13,7 @@
         %h2.center>
           =t('profile.edit.application.oauth.connected')
           |
-          = link_to t('profile.edit.application.oauth.revoke'), "#{OpenStreetMapConfig.oauth_site}/oauth_clients"
+          = link_to t('profile.edit.application.oauth.revoke'), revoke_oauth_path
       - else
         %h2.center>
           =t('profile.edit.application.oauth.not_connected')

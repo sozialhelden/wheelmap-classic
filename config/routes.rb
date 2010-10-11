@@ -10,7 +10,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :feeds, :only => :index
 
-  map.resources :oauth, :only => [:new, :index], :collection => { :callback => :get, :osm_register => :get }
+  map.resources :oauth, :only => [:new, :index], :collection => { :revoke => :get, :callback => :get, :osm_register => :get }
 
   map.resources :nodes, :except => :destroy, :member => {:update_wheelchair => :put}
 

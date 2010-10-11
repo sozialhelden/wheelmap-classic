@@ -25,6 +25,13 @@ class OauthController < ApplicationController
     redirect_to redirect_url
   end
 
+  def revoke
+    token = current_user.oauth_token
+    current_user.update_attribute(:oauth_token, nil)
+    current_user.update_attribute(:oauth_secret, nil)
+    redirect_to "#{OpenStreetMapConfig.oauth_site}/oauth/revoke?token=#{token}"
+  end
+
   def callback
     request_token = session[:request_token]
     access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
