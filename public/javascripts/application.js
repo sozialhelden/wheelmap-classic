@@ -156,7 +156,7 @@ function lonLatToMercator(ll) {
 
 function placesStyle(){
   return new OpenLayers.StyleMap({
-    externalGraphic: "/images/icons/${icon}.png",
+    externalGraphic: "${icon}.png",
     graphicWidth: 16,
     graphicHeight: 16,
     backgroundGraphic: "/images/marker-${wheelchair}.png",

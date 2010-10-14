@@ -2,6 +2,8 @@ class Poi < ActiveRecord::Base
   
   include ActionView::Helpers::TagHelper
   include ActionView::Helpers::UrlHelper
+  include ActionView::Helpers::AssetTagHelper
+  
   include PopupHelper
   
   WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
@@ -129,7 +131,7 @@ class Poi < ActiveRecord::Base
     end
         
     def icon
-      Icons[type.to_sym] unless type.blank?
+      image_path("#{ActionController::Base.asset_host % rand(3)}/images/icons/#{Icons[type.to_sym]}" || 'undefined') unless type.blank?
     end
 
     def relevant?
