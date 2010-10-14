@@ -34,7 +34,7 @@
     %footer
       - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
         = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
-    = javascript_include_tag 'openlayers', 'jquery', 'util', 'autocomplete', 'uservoice', 'openlayers_de', 'openlayers_en', 'osm', 'application', 'map', :cache => 'maps'
+    = javascript_include_tag 'openlayers', 'jquery', 'util', 'autocomplete', 'uservoice', 'icons', 'openlayers_de', 'openlayers_en', 'osm', 'application', 'map', :cache => 'maps'
     - if @content_for_jquery
       = yield :jquery
       :javascript
