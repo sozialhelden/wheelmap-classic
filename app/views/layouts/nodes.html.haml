@@ -33,7 +33,7 @@
         - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
           = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
     = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
-    = javascript_include_tag 'jquery', 'util', 'autocomplete', 'icons', 'osm', 'application', 'minimap', :cache => 'minimaps'
+    = javascript_include_tag 'jquery', 'util', 'autocomplete', 'uservoice', 'osm', 'application', 'minimap', :cache => 'minimaps'
     - if @content_for_jquery
       = yield :jquery
       :javascript

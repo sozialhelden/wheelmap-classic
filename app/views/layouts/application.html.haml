@@ -14,7 +14,6 @@
       = render :partial => 'shared/add_html5_elements'
       -#= javascript_include_tag 'html5'
 
-    = javascript_include_tag 'uservoice'
     :javascript
       var object_types = ["#{ (session['amenities']).join('","')}"];
       var lat = #{params[:lat] || GeoCache.latlon(request.remote_addr).first};
@@ -36,7 +35,7 @@
       - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
         = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
     = javascript_include_tag 'http://www.openlayers.org/api/OpenLayers.js'
-    = javascript_include_tag 'jquery', 'util', 'autocomplete', 'icons', 'openlayers_de', 'openlayers_en', 'osm', 'application', 'map', :cache => 'maps'
+    = javascript_include_tag 'jquery', 'util', 'autocomplete', 'uservoice', 'openlayers_de', 'openlayers_en', 'osm', 'application', 'map', :cache => 'maps'
     - if @content_for_jquery
       = yield :jquery
       :javascript
