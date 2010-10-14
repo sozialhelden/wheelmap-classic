@@ -334,7 +334,7 @@ function addPin(layer, lon, lat){
   var point = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
   
   var feature = new OpenLayers.Feature.Vector(point);
-  feature.attributes.icon = iconForType['sfsdf'];
+  feature.attributes.icon = '/images/icons/' + iconForType['sfsdf'];
   feature.attributes.type = 'Subway';
   feature.attributes.wheelchair = 'no';
   feature.attributes.name = 'Neuer Ort';
