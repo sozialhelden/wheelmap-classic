@@ -2,7 +2,7 @@ WheelchairStatus = %w{yes limited no unknown}
 
 Amenities = {
   :public_transfer => %w{subway aerodrome bicycle_rental bus_station bus_stop ferry ferry_terminal halt platform subway_entrance terminal tram_stop parking_aisle fuel parking car_rental car_sharing boatyard cable_car chair_lift},
-  :food => %w{cafe pub restaurant fast_food drinking_water},
+  :food => %w{cafe bar pub restaurant fast_food drinking_water},
   :leisure => %w{cinema theatre zoo nightclub gallery arena},
   :money_post => %w{post_office atm bank bureau_de_change},
   :education => %w{college  library school university museum kindergarten},
@@ -25,6 +25,7 @@ Tags = {
   :attraction => :tourism,
   :bakery => :shop,
   :bank => :amenity,
+  :bar => :amenity,
   :battlefield => :historic,
   :beach => :natural,
   :beach_resort => :leisure,
