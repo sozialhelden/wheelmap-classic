@@ -160,7 +160,7 @@ function placesStyle(){
     graphicWidth: 16,
     graphicHeight: 16,
     backgroundGraphic: "/images/marker-${wheelchair}.png",
-    backgroundWidth: 36,
+    backgroundWidth: 33,
     backgroundHeight: 28,
     backgroundXOffset: -12,
     backgroundYOffset: -26,
