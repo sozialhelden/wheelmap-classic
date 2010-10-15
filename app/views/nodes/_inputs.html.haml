@@ -16,7 +16,6 @@
       %p.inline-errors
         = @node.errors.on(:type)
 
-  =form.input :id, :as => :hidden
   =form.input :lon, :input_html =>{:readonly => 'readonly'}, :as => :numeric
   =form.input :lat, :input_html =>{:readonly => 'readonly'}, :as => :numeric
   =form.input :version, :as => :hidden
