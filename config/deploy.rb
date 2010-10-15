@@ -150,7 +150,7 @@ require 'capistrano/ext/multistage'
 #       set :git_enable_submodules, 1 
       set :git_shallow_clone, 1
       set :copy_cache, true
-      set :copy_exclude, %w(.git)
+      set :copy_exclude, %w(.git features spec bin doc test)
       set :copy_compression, :gzip # Also valid are :zip and :bz2
       
 #       set :branch, 'master'

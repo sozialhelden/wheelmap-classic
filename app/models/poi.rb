@@ -131,7 +131,7 @@ class Poi < ActiveRecord::Base
     end
         
     def icon
-      image_path("#{ActionController::Base.asset_host % rand(3)}/images/icons/#{Icons[type.to_sym]}" || 'undefined') unless type.blank?
+      image_path("icons/#{Icons[type.to_sym]}" || 'undefined') unless type.blank?
     end
 
     def relevant?
