@@ -44,7 +44,7 @@ class NodesController < ApplicationController
   end
 
   def update
-    params[:node].merge!(:id => params[:id])
+    params[:node].reverse_merge!(:id => params[:id])
     @node = OpenStreetMap::Node.new(params[:node].stringify_keys!)
     if @node.valid?
       client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.oauth_authorized?
