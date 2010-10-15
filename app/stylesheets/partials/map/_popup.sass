@@ -1,16 +1,21 @@
 $dt-width: 90px
 $gap: 10px
-$dd-width: 200px
-
+$dd-width: 180px
 
 .olFramedCloudPopupContent
   width: $dt-width + $gap + $dd-width
+  overflow: hidden
+  
+  a
+    width: $dt-width + $dd-width - $gap
+    overflow: hidden
+    display: block
+    white-space: nowrap
 
   h2
     background-position: 0 2px
     padding-left: 20px
-    overflow: hidden
-
+    
   address
     padding-left: 20px
 
