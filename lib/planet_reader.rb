@@ -98,13 +98,16 @@ class PlanetReader
   
   def valid?
     @poi && !@poi[:tags].blank? &&
-      ( @poi[:tags].has_key?('amenity') ||
-        @poi[:tags].has_key?('shop') ||
-        @poi[:tags].has_key?('tourism') ||
-        @poi[:tags].has_key?('natural') ||
-        @poi[:tags].has_key?('sport') ||
-        @poi[:tags].has_key?('leisure') ||
-        @poi[:tags].has_key?('historic')
+      ( @poi[:tags].has_key?('amenity')   ||
+        @poi[:tags].has_key?('shop')      ||
+        @poi[:tags].has_key?('tourism')   ||
+        @poi[:tags].has_key?('natural')   ||
+        @poi[:tags].has_key?('sport')     ||
+        @poi[:tags].has_key?('leisure')   ||
+        @poi[:tags].has_key?('historic')  ||
+        @poi[:tags].has_key?('highway')   ||
+        @poi[:tags].has_key?('railway')   ||
+        @poi[:tags].has_key?('station')   ||
       )
   end
 
