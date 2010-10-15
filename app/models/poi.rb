@@ -133,6 +133,7 @@ class Poi < ActiveRecord::Base
                                             'headline' => headline,
                                             'address' => address,
                                             'wheelchair' => wheelchair,
+                                            'osm_id' => osm_id,
                                             'type' => type,
                                             'category' => category,
                                             'icon' => icon).reject{|k,v| v.blank?}
