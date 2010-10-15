@@ -68,7 +68,16 @@ class Poi < ActiveRecord::Base
       
     
     def type
-      tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || tags['leisure'] || tags['shop'] || tags['tourism'] || tags['historic'] || tags['shop']
+      tags['amenity']   ||
+      tags['shop']      ||
+      tags['tourism']   ||
+      tags['natural']   ||
+      tags['sport']     ||
+      tags['leisure']   ||
+      tags['historic']  ||
+      tags['highway']   ||
+      tags['station']   ||
+      tags['railway']
     end
     
     def category
@@ -116,7 +125,7 @@ class Poi < ActiveRecord::Base
     end
 
     def to_geojson(options={})
-      return nil if type.blank?
+      return if type.blank? || category.blank?
       result = { :type => 'Feature',
         :geometry => { :type => 'Point', :coordinates  => [self.lon, self.lat]
         },
@@ -132,7 +141,12 @@ class Poi < ActiveRecord::Base
     end
         
     def icon
-      image_path("icons/#{Icons[type.to_sym]}" || 'undefined') unless type.blank?
+      if type.blank?
+        image_path("icons/cross-small-white")
+      else
+        icon = Icons[type.to_sym] || 'cross-small-white'
+        image_path("icons/#{icon}")
+      end
     end
 
     def relevant?
