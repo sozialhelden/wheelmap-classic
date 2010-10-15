@@ -97,18 +97,38 @@ class PlanetReader
   end
   
   def valid?
-    @poi && !@poi[:tags].blank? &&
-      ( @poi[:tags].has_key?('amenity')   ||
-        @poi[:tags].has_key?('shop')      ||
-        @poi[:tags].has_key?('tourism')   ||
-        @poi[:tags].has_key?('natural')   ||
-        @poi[:tags].has_key?('sport')     ||
-        @poi[:tags].has_key?('leisure')   ||
-        @poi[:tags].has_key?('historic')  ||
-        @poi[:tags].has_key?('highway')   ||
-        @poi[:tags].has_key?('railway')   ||
-        @poi[:tags].has_key?('station')
-      )
+    @poi && has_tags? && has_type? && has_category?
+  end
+  
+  def has_tags?
+    !@poi[:tags].blank?
+  end
+  
+  def has_type?
+    t = type
+    !t.blank?
+  end
+  
+  def has_category?
+    c = category
+    !c.blank?
+  end
+  
+  def category
+    Tags[type.to_sym]
+  end
+  
+  def type
+    @poi[:tags]['amenity']  ||
+    @poi[:tags]['shop']     ||
+    @poi[:tags]['tourism']  ||
+    @poi[:tags]['natural']  ||
+    @poi[:tags]['sport']    ||
+    @poi[:tags]['leisure']  ||
+    @poi[:tags]['historic'] ||
+    @poi[:tags]['highway']  ||
+    @poi[:tags]['station']  ||
+    @poi[:tags]['railway']  
   end
 
   # Verarbeitet einen POI.

@@ -32,7 +32,7 @@
       %nav      
         - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
           = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
-    = javascript_include_tag 'openlayers', 'jquery', 'util', 'autocomplete', 'uservoice', 'icons', 'osm', 'application', 'minimap', :cache => 'minimaps'
+    = javascript_include_tag 'openlayers', 'jquery', 'util', 'autocomplete', 'uservoice', 'icons', 'osm', 'application', 'minimap', :cache => "minimaps_#{I18n.locale}"
     - if @content_for_jquery
       = yield :jquery
       :javascript
