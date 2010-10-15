@@ -18,11 +18,6 @@
 
   =form.input :lon, :input_html =>{:readonly => 'readonly'}, :as => :numeric
   =form.input :lat, :input_html =>{:readonly => 'readonly'}, :as => :numeric
-  =form.input :version, :as => :hidden
-  =form.input :changeset, :as => :hidden
-  =form.input :user, :as => :hidden
-  =form.input :uid, :as => :hidden
-  =form.input :visible, :as => :hidden
 
 - form.inputs :name => t('formtastic.titles.optional'), :id => 'optional' do
   = form.input :street, :required => false
