@@ -116,6 +116,7 @@ class Poi < ActiveRecord::Base
     end
 
     def to_geojson(options={})
+      return nil if type.blank?
       result = { :type => 'Feature',
         :geometry => { :type => 'Point', :coordinates  => [self.lon, self.lat]
         },
