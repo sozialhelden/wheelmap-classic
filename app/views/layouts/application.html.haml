@@ -32,8 +32,8 @@
       = show_flash
       = yield
     %footer
-      - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
-        = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
+      - link_to 'http://sozialhelden.de', :id => 'sozialhelden', :title => 'sozial is\' muss!' do
+        = image_tag('sozialhelden.png', :alt => t('.banner.alt'), :width => 423, :height => 38)
     = javascript_include_tag 'openlayers', 'jquery', 'util', 'autocomplete', 'uservoice', 'icons', 'openlayers_de', 'openlayers_en', 'osm', 'application', 'map', :cache => 'maps'
     - if @content_for_jquery
       = yield :jquery
