@@ -1,34 +1,30 @@
 #map
-  div.olMapViewport[id^='OpenLayers\.Map']
+  .olMapViewport
     width: 100% !important
     height: 100% !important
     position: absolute !important
     top: 0px
     background: $background-color
   
-    a
-      font-weight: bold
+  a
+    font-weight: bold
 
-div[id^='OpenLayers\.Layer\.OSM\.Mapnik']
-  opacity: 1.0
-  
-#panzoombar.olControlPanZoomBar
-  left: inherit !important
-  right: 45px !important
-  top: 45px !important
+  .olControlPanZoomBar
+    left: inherit !important
+    right: 45px !important
+    top: 45px !important
 
   
   
-#attribution.olControlAttribution,
-div[id^='OpenLayers\.Control\.Permalink']
-  color: $text
-  display: block
-  float: left
-  font-size: 11px
-  font-style: normal
-  left: 40px
-  padding: 5px 20px 1px 0
-  position: relative !important
-  top: 0px
-  z-index: 1000
-  +text-shadow(rgba(white, 0.5), 0, 1px, 1px)
+  .olControlAttribution, .olControlPermalink
+    color: $text
+    display: block
+    float: left
+    font-size: 11px
+    font-style: normal
+    left: 40px
+    padding: 5px 20px 1px 0
+    position: relative !important
+    top: 0px
+    z-index: 1000
+    +text-shadow(rgba(white, 0.5), 0, 1px, 1px)

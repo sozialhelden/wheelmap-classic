@@ -439,7 +439,7 @@ a:visited:hover {
 }
 
 /* line 2, ../../app/stylesheets/basics/_open_layers.sass */
-#map div.olMapViewport[id^='OpenLayers\.Map'] {
+#map .olMapViewport {
   width: 100% !important;
   height: 100% !important;
   position: absolute !important;
@@ -447,25 +447,17 @@ a:visited:hover {
   background: #fff7d9;
 }
 /* line 9, ../../app/stylesheets/basics/_open_layers.sass */
-#map div.olMapViewport[id^='OpenLayers\.Map'] a {
+#map a {
   font-weight: bold;
 }
-
 /* line 12, ../../app/stylesheets/basics/_open_layers.sass */
-div[id^='OpenLayers\.Layer\.OSM\.Mapnik'] {
-  opacity: 1;
-}
-
-/* line 15, ../../app/stylesheets/basics/_open_layers.sass */
-#panzoombar.olControlPanZoomBar {
+#map .olControlPanZoomBar {
   left: inherit !important;
   right: 45px !important;
   top: 45px !important;
 }
-
-/* line 22, ../../app/stylesheets/basics/_open_layers.sass */
-#attribution.olControlAttribution,
-div[id^='OpenLayers\.Control\.Permalink'] {
+/* line 19, ../../app/stylesheets/basics/_open_layers.sass */
+#map .olControlAttribution, #map .olControlPermalink {
   color: #444444;
   display: block;
   float: left;
@@ -715,10 +707,10 @@ header #searchbar .or-add-place {
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
   border-radius: 12px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
   cursor: pointer;
 }
 /* line 96, ../../app/stylesheets/basics/_header.sass */
@@ -1015,10 +1007,10 @@ body {
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
   border-radius: 12px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
 }
 /* line 22, ../../app/stylesheets/basics/_page.sass */
 .frame h2 {
@@ -1045,15 +1037,11 @@ body {
   -khtml-border-radius: 15px;
   border-radius: 15px;
   overflow: hidden;
-  display: inline-block;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
-  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
-}
-/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
-#main {
-  display: block;
+  *zoom: 1;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
 }
 
 /* line 2, ../../app/stylesheets/partials/nodes/_headlines.sass */
@@ -1393,16 +1381,16 @@ table#accessibility td.leisure {
   float: left;
   width: 300px;
 }
-/* line 19, ../../app/stylesheets/partials/map/_imprint.sass */
-#imprint dd.logo img {
+/* line 18, ../../app/stylesheets/partials/map/_imprint.sass */
+#imprint img.logo {
   padding: 5px;
 }
-/* line 22, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 21, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint a {
   color: #6e9040;
   text-decoration: underline;
 }
-/* line 26, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 25, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint h2,
 #imprint p {
   padding-right: 100px;
@@ -1410,7 +1398,7 @@ table#accessibility td.leisure {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 33, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 32, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint p:first-child {
   text-align: right;
 }

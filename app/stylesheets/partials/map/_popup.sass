@@ -1,6 +1,6 @@
 $dt-width: 90px
 $gap: 10px
-$dd-width: 150px
+$dd-width: 200px
 
 
 .olFramedCloudPopupContent
@@ -9,33 +9,32 @@ $dd-width: 150px
   h2
     background-position: 0 2px
     padding-left: 20px
+    overflow: hidden
 
   address
     padding-left: 20px
 
+  input
+    float: left
+    margin-right: 10px
+
+    &.update_button
+      position: static
+      float: right
 
   ol
     border-top: 1px desaturate(lighten($green, 20%), 20%) solid
     +border-radius(0px)
     margin-top: 7px
     padding-top: 7px
-    width: $dt-width + $gap + $dd-width
     +clearfix
     
-  input
-    float: left
-    margin-right: 10px
-
-    &[type='submit']
-      position: static
-      float: right
-
   li,
   label
     float: left
     font-size: 11px
     line-height: 15px
-    margin: 0px !important
+    margin: 0px 0px !important
     +border-radius(0px !important)
 
   label
@@ -54,18 +53,18 @@ $dd-width: 150px
       font-family: $helvetica
       font-weight: bold
 
-    &.yes
-      label
-        color: $yes
+  .yes
+    label
+      color: $yes
 
-    &.limited
-      label
-        color: $limited
+  .limited
+    label
+      color: $limited
 
-    &.no
-      label
-        color: $no
+  .no
+    label
+      color: $no
 
-    &.unknown
-      label
-        color: $unknown
+  &.unknown
+    label
+      color: $unknown

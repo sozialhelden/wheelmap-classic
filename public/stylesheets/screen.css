@@ -551,7 +551,7 @@ a:visited:hover {
 }
 
 /* line 2, ../../app/stylesheets/basics/_open_layers.sass */
-#map div.olMapViewport[id^='OpenLayers\.Map'] {
+#map .olMapViewport {
   width: 100% !important;
   height: 100% !important;
   position: absolute !important;
@@ -559,25 +559,17 @@ a:visited:hover {
   background: #fff7d9;
 }
 /* line 9, ../../app/stylesheets/basics/_open_layers.sass */
-#map div.olMapViewport[id^='OpenLayers\.Map'] a {
+#map a {
   font-weight: bold;
 }
-
 /* line 12, ../../app/stylesheets/basics/_open_layers.sass */
-div[id^='OpenLayers\.Layer\.OSM\.Mapnik'] {
-  opacity: 1;
-}
-
-/* line 15, ../../app/stylesheets/basics/_open_layers.sass */
-#panzoombar.olControlPanZoomBar {
+#map .olControlPanZoomBar {
   left: inherit !important;
   right: 45px !important;
   top: 45px !important;
 }
-
-/* line 22, ../../app/stylesheets/basics/_open_layers.sass */
-#attribution.olControlAttribution,
-div[id^='OpenLayers\.Control\.Permalink'] {
+/* line 19, ../../app/stylesheets/basics/_open_layers.sass */
+#map .olControlAttribution, #map .olControlPermalink {
   color: #444444;
   display: block;
   float: left;
@@ -827,10 +819,10 @@ header #searchbar .or-add-place {
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
   border-radius: 12px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
   cursor: pointer;
 }
 /* line 96, ../../app/stylesheets/basics/_header.sass */
@@ -1127,10 +1119,10 @@ body {
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
   border-radius: 12px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
 }
 /* line 22, ../../app/stylesheets/basics/_page.sass */
 .frame h2 {
@@ -1157,15 +1149,11 @@ body {
   -khtml-border-radius: 15px;
   border-radius: 15px;
   overflow: hidden;
-  display: inline-block;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
-  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px;
-}
-/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
-#main {
-  display: block;
+  *zoom: 1;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
 }
 
 /* line 1, ../../app/stylesheets/partials/map/_aside.sass */
@@ -1189,18 +1177,7 @@ aside {
   background: #fff7d9;
 }
 
-/* line 11, ../../app/stylesheets/partials/map/_map.sass */
-#map_OpenLayers_ViewPort {
-  height: 500px;
-  width: auto !important;
-}
-/* line 15, ../../app/stylesheets/partials/map/_map.sass */
-#map_OpenLayers_ViewPort a {
-  color: inherit;
-  font-weight: bold;
-}
-
-/* line 19, ../../app/stylesheets/partials/map/_map.sass */
+/* line 12, ../../app/stylesheets/partials/map/_map.sass */
 image[width='16'] {
   cursor: pointer;
 }
@@ -1219,10 +1196,10 @@ image[width='16'] {
   -webkit-border-radius: 8px;
   -khtml-border-radius: 8px;
   border-radius: 8px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #cccccc;
@@ -1236,11 +1213,7 @@ image[width='16'] {
 /* line 18, ../../app/stylesheets/partials/map/_info.sass */
 #state-counter {
   overflow: hidden;
-  display: inline-block;
-}
-/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
-#state-counter {
-  display: block;
+  *zoom: 1;
 }
 /* line 20, ../../app/stylesheets/partials/map/_info.sass */
 #state-counter li {
@@ -1265,10 +1238,10 @@ image[width='16'] {
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
   border-radius: 12px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
 }
 
 /* line 1, ../../app/stylesheets/partials/map/_oauth.sass */
@@ -1346,10 +1319,10 @@ image[width='16'] {
   -webkit-border-radius: 3px;
   -khtml-border-radius: 3px;
   border-radius: 3px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
-  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px 0;
 }
 /* line 34, ../../app/stylesheets/partials/map/_bar.sass */
 .webkit .state-yes input:checked:before, .webkit .state-limited input:checked:before, .webkit .state-no input:checked:before, .webkit .state-unknown input:checked:before {
@@ -1399,11 +1372,7 @@ image[width='16'] {
   padding: 4px 0;
   margin-bottom: 10px;
   overflow: hidden;
-  display: inline-block;
-}
-/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
-#links {
-  display: block;
+  *zoom: 1;
 }
 /* line 68, ../../app/stylesheets/partials/map/_bar.sass */
 #links a {
@@ -1417,11 +1386,7 @@ image[width='16'] {
 /* line 1, ../../app/stylesheets/partials/map/_amenities.sass */
 #amenities {
   overflow: hidden;
-  display: inline-block;
-}
-/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
-#amenities {
-  display: block;
+  *zoom: 1;
 }
 /* line 6, ../../app/stylesheets/partials/map/_amenities.sass */
 #amenities li {
@@ -1437,114 +1402,32 @@ image[width='16'] {
   margin-left: 2px;
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
 }
-/* line 18, ../../app/stylesheets/partials/map/_amenities.sass */
-#amenities a {
-  border: 1px #757575 solid;
-  float: left;
-  height: 16px;
-  margin-right: -1px;
-  outline: 0;
-  padding: 3px;
-  width: 16px;
-}
-/* line 27, ../../app/stylesheets/partials/map/_amenities.sass */
-#amenities a.hidden {
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px;
-  -webkit-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px;
-  -moz-box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px;
-  box-shadow: rgba(255, 255, 255, 0.2) 1px 1px 1px inset, rgba(0, 0, 0, 0.05) -1px -1px 1px inset, rgba(0, 0, 0, 0.2) 0 1px 2px;
-  background-color: #c2c6bc;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e8ebe4), color-stop(0.5, #c2c6bc), color-stop(1, #9dab8b));
-  background-image: -moz-linear-gradient(center bottom, #9dab8b 0%, #c2c6bc 50%, #e8ebe4 100%);
-  background-image: linear-gradient(center bottom, #9dab8b 0%, #c2c6bc 50%, #e8ebe4 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#9dab8b', startColorstr='#e8ebe4', gradientType='0');
-}
-/* line 34, ../../app/stylesheets/partials/map/_amenities.sass */
-#amenities a.hidden:hover {
-  background-color: #9fa596;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c5cdbb), color-stop(0.5, #9fa596), color-stop(1, #7a8a65));
-  background-image: -moz-linear-gradient(center bottom, #7a8a65 0%, #9fa596 50%, #c5cdbb 100%);
-  background-image: linear-gradient(center bottom, #7a8a65 0%, #9fa596 50%, #c5cdbb 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#7a8a65', startColorstr='#c5cdbb', gradientType='0');
-}
-/* line 37, ../../app/stylesheets/partials/map/_amenities.sass */
-#amenities a.visible, #amenities a:active {
-  -moz-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px;
-  -webkit-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px;
-  -o-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px;
-  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px inset, rgba(255, 255, 255, 0.15) 0 1px 1px;
-  background-color: #9aa190;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a7af9c), color-stop(0.5, #9aa190), color-stop(1, #8e9880));
-  background-image: -moz-linear-gradient(center bottom, #8e9880 0%, #9aa190 50%, #a7af9c 100%);
-  background-image: linear-gradient(center bottom, #8e9880 0%, #9aa190 50%, #a7af9c 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#8e9880', startColorstr='#a7af9c', gradientType='0');
-}
-/* line 45, ../../app/stylesheets/partials/map/_amenities.sass */
-#amenities a.visible:hover, #amenities a:active:hover {
-  background-color: #5c6354;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #6a735d), color-stop(0.5, #5c6354), color-stop(1, #505746));
-  background-image: -moz-linear-gradient(center bottom, #505746 0%, #5c6354 50%, #6a735d 100%);
-  background-image: linear-gradient(center bottom, #505746 0%, #5c6354 50%, #6a735d 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#505746', startColorstr='#6a735d', gradientType='0');
-}
-/* line 48, ../../app/stylesheets/partials/map/_amenities.sass */
-#amenities a.visible:hover span, #amenities a:active:hover span {
-  opacity: 0.8;
-}
-/* line 51, ../../app/stylesheets/partials/map/_amenities.sass */
-#amenities a:first-child {
-  -moz-border-radius-bottomleft: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-  -khtml-border-bottom-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  -moz-border-radius-topleft: 4px;
-  -webkit-border-top-left-radius: 4px;
-  -khtml-border-top-left-radius: 4px;
-  border-top-left-radius: 4px;
-}
-/* line 54, ../../app/stylesheets/partials/map/_amenities.sass */
-#amenities a:last-child {
-  -moz-border-radius-topright: 4px;
-  -webkit-border-top-right-radius: 4px;
-  -khtml-border-top-right-radius: 4px;
-  border-top-right-radius: 4px;
-  -moz-border-radius-bottomright: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-  -khtml-border-bottom-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-/* line 57, ../../app/stylesheets/partials/map/_amenities.sass */
-#amenities a span {
-  float: left;
-  height: 16px;
-  opacity: 0.9;
-  width: 16px;
-}
-/* line 63, ../../app/stylesheets/partials/map/_amenities.sass */
-#amenities a:hover span {
-  opacity: 1;
-}
 
 /* line 6, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent {
-  width: 250px;
+  width: 300px;
 }
 /* line 9, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent h2 {
   background-position: 0 2px;
   padding-left: 20px;
+  overflow: hidden;
 }
-/* line 13, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 14, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent address {
   padding-left: 20px;
 }
 /* line 17, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent input {
+  float: left;
+  margin-right: 10px;
+}
+/* line 21, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent input.update_button {
+  position: static;
+  float: right;
+}
+/* line 25, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent ol {
   border-top: 1px #cfd7c5 solid;
   -moz-border-radius: 0px;
@@ -1553,37 +1436,22 @@ image[width='16'] {
   border-radius: 0px;
   margin-top: 7px;
   padding-top: 7px;
-  width: 250px;
   overflow: hidden;
-  display: inline-block;
+  *zoom: 1;
 }
-/* line 8, ../../../../../../opt/ruby-enterprise-1.8.7-2009.10/lib/ruby/gems/1.8/gems/compass-0.10.1/frameworks/compass/stylesheets/compass/utilities/general/_hacks.scss */
-.olFramedCloudPopupContent ol {
-  display: block;
-}
-/* line 25, ../../app/stylesheets/partials/map/_popup.sass */
-.olFramedCloudPopupContent input {
-  float: left;
-  margin-right: 10px;
-}
-/* line 29, ../../app/stylesheets/partials/map/_popup.sass */
-.olFramedCloudPopupContent input[type='submit'] {
-  position: static;
-  float: right;
-}
-/* line 33, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 32, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent li,
 .olFramedCloudPopupContent label {
   float: left;
   font-size: 11px;
   line-height: 15px;
-  margin: 0px !important;
+  margin: 0px 0px !important;
   -moz-border-radius: 0px !important;
   -webkit-border-radius: 0px !important;
   -khtml-border-radius: 0px !important;
   border-radius: 0px !important;
 }
-/* line 41, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 40, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent label {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-weight: bold;
@@ -1591,31 +1459,31 @@ image[width='16'] {
   text-align: left;
   line-height: 8px;
 }
-/* line 48, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 47, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent li {
   font-family: 'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue','Swiss 721 Light','Helvetica','Arial','sans-serif';
   font-size: 11px;
   font-weight: 100;
 }
-/* line 53, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 52, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent li strong {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-weight: bold;
 }
-/* line 58, ../../app/stylesheets/partials/map/_popup.sass */
-.olFramedCloudPopupContent li.yes label {
+/* line 57, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent .yes label {
   color: #86af4d;
 }
-/* line 62, ../../app/stylesheets/partials/map/_popup.sass */
-.olFramedCloudPopupContent li.limited label {
+/* line 61, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent .limited label {
   color: #f19d46;
 }
-/* line 66, ../../app/stylesheets/partials/map/_popup.sass */
-.olFramedCloudPopupContent li.no label {
+/* line 65, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent .no label {
   color: #d6382f;
 }
-/* line 70, ../../app/stylesheets/partials/map/_popup.sass */
-.olFramedCloudPopupContent li.unknown label {
+/* line 69, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent.unknown label {
   color: #8d8d8e;
 }
 
@@ -1656,16 +1524,16 @@ image[width='16'] {
   float: left;
   width: 300px;
 }
-/* line 19, ../../app/stylesheets/partials/map/_imprint.sass */
-#imprint dd.logo img {
+/* line 18, ../../app/stylesheets/partials/map/_imprint.sass */
+#imprint img.logo {
   padding: 5px;
 }
-/* line 22, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 21, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint a {
   color: #6e9040;
   text-decoration: underline;
 }
-/* line 26, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 25, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint h2,
 #imprint p {
   padding-right: 100px;
@@ -1673,7 +1541,7 @@ image[width='16'] {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-/* line 33, ../../app/stylesheets/partials/map/_imprint.sass */
+/* line 32, ../../app/stylesheets/partials/map/_imprint.sass */
 #imprint p:first-child {
   text-align: right;
 }

@@ -41,9 +41,9 @@
       = link_to t('.links.license.cc.by_30'), 'http://creativecommons.org/licenses/by/3.0/deed.de', :class => 'cc-by'
     %dt
       =t('.fields.hosting')
-    %dd.logo
+    %dd
       - link_to 'http://rocket-rentals.de', :title => 'Rocket Rentals: To the web and back' do
-        = image_tag('rocket_rentals_logo.png', :alt => 'Rocket Rentals Logo')
+        = image_tag('rocket_rentals_logo.png', :alt => 'Rocket Rentals Logo', :class => 'logo')
   .clear
   %p
     =t('.comment')
