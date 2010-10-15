@@ -107,7 +107,7 @@ class PlanetReader
         @poi[:tags].has_key?('historic')  ||
         @poi[:tags].has_key?('highway')   ||
         @poi[:tags].has_key?('railway')   ||
-        @poi[:tags].has_key?('station')   ||
+        @poi[:tags].has_key?('station')
       )
   end
 
