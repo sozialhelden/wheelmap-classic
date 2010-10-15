@@ -44,7 +44,8 @@ class NodesController < ApplicationController
   end
 
   def update
-    @node = OpenStreetMap::Node.new(params[:node].stringify_keys!)
+    # @node = OpenStreetMap::Node.new(params[:node].stringify_keys!)
+    @node = OpenStreetMap::Node.new(params[:id].stringify_keys!)
     if @node.valid?
       client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.oauth_authorized?
       Delayed::Job.enqueue(UpdatingJob.new(@node, client))
