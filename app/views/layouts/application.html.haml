@@ -5,6 +5,7 @@
     = render :partial => 'shared/meta'
 
     = stylesheet_link_tag 'screen', :cache => 'screens'
+    = stylesheet_link_tag "#{root_url}theme/default/style", :cache => true
     - if @content_for_head
       = yield(:head)
     - else 
@@ -34,7 +35,10 @@
     %footer
       - link_to 'http://sozialhelden.de', :id => 'sozialhelden', :title => 'sozial is\' muss!' do
         = image_tag('sozialhelden.png', :alt => t('.banner.alt'), :width => 423, :height => 38)
-    = javascript_include_tag 'openlayers', 'jquery', 'util', 'autocomplete', 'uservoice', 'icons', 'openlayers_de', 'openlayers_en', 'osm', 'application', 'map', :cache => "maps_#{I18n.locale}"
+    = javascript_include_tag 'openlayers'
+    :javascript
+      OpenLayers.ImgPath = '#{root_url}img/'          
+    = javascript_include_tag 'jquery', 'util', 'autocomplete', 'uservoice', 'icons', 'openlayers_de', 'openlayers_en', 'osm', 'application', 'map', :cache => "maps_#{I18n.locale}"
     - if @content_for_jquery
       = yield :jquery
       :javascript
