@@ -5,7 +5,7 @@
     = render :partial => 'shared/meta'
 
     = stylesheet_link_tag 'screen', :cache => 'screens'
-    = stylesheet_link_tag "#{root_path}theme/default/style", :cache => true
+    -#= stylesheet_link_tag "#{root_path}theme/default/style", :cache => true
     - if @content_for_head
       = yield(:head)
     - else 
