@@ -2,6 +2,7 @@ class CreatingJob < Struct.new(:node, :client)
   
   def perform
     begin
+      OpenStreetMap.logger = Delayed::Worker.logger
       osm = OpenStreetMap.new(client)
       osm.create_node(node)
     rescue Exception => e
