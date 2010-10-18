@@ -11,6 +11,7 @@ class OpenStreetMap
   # basic_auth(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
   
   attr_reader :client
+  cattr_accessor :logger
   
   # Initialize with basic auth credentials
   def initialize(client)
@@ -18,6 +19,14 @@ class OpenStreetMap
     unless basic_auth_client? || oauth_client?
       raise ArgumentError.new('Unsupported Client')
     end
+  end
+  
+  def logger
+    self.class.logger
+  end
+  
+  def self.logger
+    @@logger || RAILS_DEFAULT_LOGGER
   end
   
   
@@ -36,8 +45,8 @@ class OpenStreetMap
   end
   
   def update_node(node)
-    RAILS_DEFAULT_LOGGER.info "Old version: #{node.version}"
-    RAILS_DEFAULT_LOGGER.debug "Old changeset: #{node.changeset}"
+    logger.info "Old version: #{node.version}"
+    logger.debug "Old changeset: #{node.changeset}"
     changeset_id = create_changeset("Modified node on wheelmap.org")
     begin
       node.changeset = changeset_id
@@ -48,18 +57,18 @@ class OpenStreetMap
   end
   
   def destroy_node(node, comment="Delete node on wheelmap.org")
-    RAILS_DEFAULT_LOGGER.debug "Old version: #{node.version}"
-    RAILS_DEFAULT_LOGGER.debug "Old changeset: #{node.changeset}"
-    RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
+    logger.debug "Old version: #{node.version}"
+    logger.debug "Old changeset: #{node.changeset}"
+    logger.debug "Creating new changeset ..."
     changeset_id = create_changeset(comment)
-    RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
+    logger.debug "New changeset: #{changeset_id}"
     begin
       node.changeset = changeset_id
-      RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
-      RAILS_DEFAULT_LOGGER.debug node.inspect
-      RAILS_DEFAULT_LOGGER.debug node.to_xml
+      logger.debug "Nodes changeset: #{node.changeset}"
+      logger.debug node.inspect
+      logger.debug node.to_xml
       new_version = destroy(node)
-      RAILS_DEFAULT_LOGGER.debug "New version: #{new_version}"
+      logger.debug "New version: #{new_version}"
     ensure
       close_changeset(changeset_id) if changeset_id
     end
@@ -74,37 +83,37 @@ class OpenStreetMap
     
     types = types.split(',')
     type_string = types.map(&:underscore).join('|')
-    RAILS_DEFAULT_LOGGER.debug("TYPES: #{type_string}")
+    logger.debug("TYPES: #{type_string}")
     begin
-      # RAILS_DEFAULT_LOGGER.warn("#{self.base_uri}/#{self.api_key.upcase}/geocoding/v2/find.js?bbox=#{normalized_bbox}&object_type=#{types}&results=100")
+      # logger.warn("#{self.base_uri}/#{self.api_key.upcase}/geocoding/v2/find.js?bbox=#{normalized_bbox}&object_type=#{types}&results=100")
       bounding_box = CGI.escape("[bbox=#{bbox}]")
       amenity_types = CGI.escape("[#{type_string}]")
       t = Time.now
-      RAILS_DEFAULT_LOGGER.debug "Fetching now: /node#{bounding_box}#{amenity_types}"
+      logger.debug "Fetching now: /node#{bounding_box}#{amenity_types}"
       
       result = get("/node#{bounding_box}#{amenity_types}")
-      RAILS_DEFAULT_LOGGER.debug "Finished: #{Time.now - t}s"
+      logger.debug "Finished: #{Time.now - t}s"
       if result['osm']['node'].blank? 
-        RAILS_DEFAULT_LOGGER.debug "Found no nodes"
+        logger.debug "Found no nodes"
         return []
       elsif result['osm']['node'].is_a? Hash
         return [Node.new(result['osm']['node'])]
       else
-        RAILS_DEFAULT_LOGGER.debug(result['osm']['node'].inspect)
+        logger.debug(result['osm']['node'].inspect)
         osm_nodes = result['osm']['node'].map{|node_data| Node.new(node_data)}
-        RAILS_DEFAULT_LOGGER.debug("Found #{osm_nodes.size} nodes")
+        logger.debug("Found #{osm_nodes.size} nodes")
         osm_nodes
       end
     rescue Exception => e
       raise e
-      RAILS_DEFAULT_LOGGER.error(e.message)
+      logger.error(e.message)
       return []
     end
   end
   
   # Fetch the node from OSM API with the given ID
   def self.get_node(osmid)
-    RAILS_DEFAULT_LOGGER.info("OpenStreetMap#get_node #{osmid}")
+    logger.info("OpenStreetMap#get_node #{osmid}")
     base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
     response = get("#{base_uri}/node/#{osmid}", :timeout => 15)
     raise_errors(response)
@@ -112,24 +121,24 @@ class OpenStreetMap
   end
 
   def create(node)
-    RAILS_DEFAULT_LOGGER.info("OpenStreetMap#create")
-    RAILS_DEFAULT_LOGGER.info(node.inspect)
+    logger.info("OpenStreetMap#create")
+    logger.info(node.inspect)
     url = request_uri("/node/create")
     response = put(url, :body => node.to_xml)
     self.class.raise_errors(response)
     node_id = response.body.to_i
-    RAILS_DEFAULT_LOGGER.info("Node id: #{node_id}")
+    logger.info("Node id: #{node_id}")
     node_id
   end
     
   def update(node)
-    RAILS_DEFAULT_LOGGER.info("OpenStreetMap#update #{node.id}")
-    RAILS_DEFAULT_LOGGER.info node.inspect
+    logger.info("OpenStreetMap#update #{node.id}")
+    logger.info node.inspect
     url = request_uri("/node/#{node.id}")
     response = put(url, :body => node.to_xml)
     self.class.raise_errors(response)
     new_version = response.body
-    RAILS_DEFAULT_LOGGER.info("New version: #{new_version}")
+    logger.info("New version: #{new_version}")
     new_version
   end
   
@@ -141,17 +150,17 @@ class OpenStreetMap
   end
 
   def create_changeset(comment="Modify accessibility status for node")
-    RAILS_DEFAULT_LOGGER.info("OpenStreetMap#create_changeset")
+    logger.info("OpenStreetMap#create_changeset")
     url = request_uri('/changeset/create')
     response = put(url, :body => "<osm><changeset><tag k='created_by' v='wheelmap.org'/><tag k='comment' v='#{comment}'/></changeset></osm>")
     self.class.raise_errors(response)
     changeset_id = response.body.to_i
-    RAILS_DEFAULT_LOGGER.info("New Changeset ID: #{changeset_id}")
+    logger.info("New Changeset ID: #{changeset_id}")
     changeset_id
   end
   
   def close_changeset(id)
-    RAILS_DEFAULT_LOGGER.info("OpenStreetMap#close_changeset #{id}")
+    logger.info("OpenStreetMap#close_changeset #{id}")
     url = request_uri("/changeset/#{id}/close")
     response = put(url)
     self.class.raise_errors(response)
@@ -165,7 +174,7 @@ class OpenStreetMap
     else
       url = "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}#{path}"
     end
-    RAILS_DEFAULT_LOGGER.debug("calculated URI: #{url}")
+    logger.debug("calculated URI: #{url}")
     url
   end
   
@@ -210,31 +219,31 @@ class OpenStreetMap
 
   def self.raise_errors(response)
     data = response.body
-    # RAILS_DEFAULT_LOGGER.debug("HTTP REQUEST: #{response.inspect}")
+    # logger.debug("HTTP REQUEST: #{response.inspect}")
     case response.code.to_i
       when 400
-        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data if data}")
+        logger.error("(#{response.code}): #{response.message} - #{data if data}")
         raise BadRequest.new(data), "(#{response.code}): #{response.message} - #{data if data}"
       when 404
-        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data if data}")
+        logger.error("(#{response.code}): #{response.message} - #{data if data}")
         raise NotFound.new(data), "(#{response.code}): #{response.message}"
       when 405
-        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data if data}")
+        logger.error("(#{response.code}): #{response.message} - #{data if data}")
         raise MethodNotAllowed.new(data), "(#{response.code}): #{response.message}"
       when 409
-        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data if data}")
+        logger.error("(#{response.code}): #{response.message} - #{data if data}")
         raise Conflict.new(data), "(#{response.code}): #{response.message} - #{data if data}"
       when 410
-        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data if data}")
+        logger.error("(#{response.code}): #{response.message} - #{data if data}")
         raise Gone.new(data), "(#{response.code}): #{response.message} - #{data if data}"
       when 412
-        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data if data}")
+        logger.error("(#{response.code}): #{response.message} - #{data if data}")
         raise Precondition.new(data), "(#{response.code}): #{response.message} - #{data if data}"
       when 500
-        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data if data}")
+        logger.error("(#{response.code}): #{response.message} - #{data if data}")
         raise Unavailable, "(#{response.code}): #{response.message} - #{data if data}"
       when 502..503
-        RAILS_DEFAULT_LOGGER.error("(#{response.code}): #{response.message} - #{data if data}")
+        logger.error("(#{response.code}): #{response.message} - #{data if data}")
         raise Unavailable, "(#{response.code}): #{response.message} - #{data if data}"
     end
   end
