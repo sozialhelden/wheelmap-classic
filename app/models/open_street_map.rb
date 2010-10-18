@@ -25,16 +25,10 @@ class OpenStreetMap
   # Returns the id of the newly created node
   def create_node(node)
     node_id = nil
-    RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
     changeset_id = create_changeset("Created new node on wheelmap.org")
-    RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
     begin
       node.changeset = changeset_id
-      RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
-      RAILS_DEFAULT_LOGGER.debug node.inspect
-      RAILS_DEFAULT_LOGGER.debug node.to_xml
       node_id = create(node)
-      RAILS_DEFAULT_LOGGER.debug "Node id: #{node_id}"
     ensure
       close_changeset(changeset_id) if changeset_id
     end
@@ -42,18 +36,12 @@ class OpenStreetMap
   end
   
   def update_node(node)
-    RAILS_DEFAULT_LOGGER.debug "Old version: #{node.version}"
+    RAILS_DEFAULT_LOGGER.info "Old version: #{node.version}"
     RAILS_DEFAULT_LOGGER.debug "Old changeset: #{node.changeset}"
-    RAILS_DEFAULT_LOGGER.debug "Creating new changeset ..."
     changeset_id = create_changeset("Modified node on wheelmap.org")
-    RAILS_DEFAULT_LOGGER.debug "New changeset: #{changeset_id}"
     begin
       node.changeset = changeset_id
-      RAILS_DEFAULT_LOGGER.debug "Nodes changeset: #{node.changeset}"
-      RAILS_DEFAULT_LOGGER.debug node.inspect
-      RAILS_DEFAULT_LOGGER.debug node.to_xml
       new_version = update(node)
-      RAILS_DEFAULT_LOGGER.debug "New version: #{new_version}"
     ensure
       close_changeset(changeset_id) if changeset_id
     end
@@ -75,22 +63,6 @@ class OpenStreetMap
     ensure
       close_changeset(changeset_id) if changeset_id
     end
-  end
-
-  def self.round_bounding_box(bbox)
-    west,south,east,north = bbox.split(',').map(&:to_f)
-    RAILS_DEFAULT_LOGGER.debug("BBOX: #{bbox}")
-    x = (east + west) / 2.0
-    RAILS_DEFAULT_LOGGER.debug("X: #{x}")
-    y = (north + south) / 2.0
-    RAILS_DEFAULT_LOGGER.debug("Y: #{y}")
-    west = (x - 0.005)
-    south = (y - 0.005)
-    east = (x + 0.005)
-    north = (y + 0.005)
-    new_bbox = sprintf("%.3f,%.3f,%.3f,%.3f",west,south,east,north)
-    RAILS_DEFAULT_LOGGER.debug("NEW BBOX: #{new_bbox}")
-    new_bbox
   end
 
   # Fetch all nodes with given type within bounding box
@@ -132,6 +104,7 @@ class OpenStreetMap
   
   # Fetch the node from OSM API with the given ID
   def self.get_node(osmid)
+    RAILS_DEFAULT_LOGGER.info("OpenStreetMap#get_node #{osmid}")
     base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
     response = get("#{base_uri}/node/#{osmid}", :timeout => 15)
     raise_errors(response)
@@ -139,17 +112,25 @@ class OpenStreetMap
   end
 
   def create(node)
+    RAILS_DEFAULT_LOGGER.info("OpenStreetMap#create")
+    RAILS_DEFAULT_LOGGER.info(node.inspect)
     url = request_uri("/node/create")
     response = put(url, :body => node.to_xml)
     self.class.raise_errors(response)
-    response.body.to_i
+    node_id = response.body.to_i
+    RAILS_DEFAULT_LOGGER.info("Node id: #{node_id}")
+    node_id
   end
     
   def update(node)
+    RAILS_DEFAULT_LOGGER.info("OpenStreetMap#update #{node.id}")
+    RAILS_DEFAULT_LOGGER.info node.inspect
     url = request_uri("/node/#{node.id}")
     response = put(url, :body => node.to_xml)
     self.class.raise_errors(response)
-    response.body
+    new_version = response.body
+    RAILS_DEFAULT_LOGGER.info("New version: #{new_version}")
+    new_version
   end
   
   def destroy(node)
@@ -160,14 +141,17 @@ class OpenStreetMap
   end
 
   def create_changeset(comment="Modify accessibility status for node")
-    RAILS_DEFAULT_LOGGER.debug("OpenStreetMap#create_changeset")
+    RAILS_DEFAULT_LOGGER.info("OpenStreetMap#create_changeset")
     url = request_uri('/changeset/create')
     response = put(url, :body => "<osm><changeset><tag k='created_by' v='wheelmap.org'/><tag k='comment' v='#{comment}'/></changeset></osm>")
     self.class.raise_errors(response)
-    response.body.to_i
+    changeset_id = response.body.to_i
+    RAILS_DEFAULT_LOGGER.info("New Changeset ID: #{changeset_id}")
+    changeset_id
   end
   
   def close_changeset(id)
+    RAILS_DEFAULT_LOGGER.info("OpenStreetMap#close_changeset #{id}")
     url = request_uri("/changeset/#{id}/close")
     response = put(url)
     self.class.raise_errors(response)
