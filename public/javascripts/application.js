@@ -1,6 +1,6 @@
 var map;
 var epsg4326, epsg900913;
-var zoom = 17;
+var zoom = 18;
 var places = [];
 var mapnik;
 var places;
