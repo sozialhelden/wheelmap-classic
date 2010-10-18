@@ -13,6 +13,7 @@ db/sphinx
 db/*.sqlite3
 public/data/*
 mkmf.log
+public/*/cache/*
 public/javascripts/maps.js
 public/javascripts/minimaps.js
 public/stylesheets/nodes.css
