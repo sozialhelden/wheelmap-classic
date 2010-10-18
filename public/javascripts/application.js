@@ -62,7 +62,7 @@ function drawmap(controls, element) {
     units: 'm'
   });
   
-  mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", { displayClass:'olMap', opacity:1.0, transitionEffect:'resize', numZoomLevels: 19, buffer: 2});
+  mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", { displayClass:'olMap', opacity:1.0, transitionEffect:'resize', numZoomLevels: 19, buffer: 1});
   
   // Use for offline mode
   // mapnik = new OpenLayers.Layer.OSM("Mapnik", 'http://wheelmap.local/images/tiles/${z}/${x}/${y}.png' ,{displayClass:'olMap', opacity:0.5, transitionEffect:'resize', numZoomLevels: 19});
