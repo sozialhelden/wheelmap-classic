@@ -2,6 +2,7 @@ class UpdateSingleAttributeJob < Struct.new(:node_id, :client, :attribute_hash)
   
   def perform
     begin
+      OpenStreetMap.logger = Delayed::Worker.logger
       new_node = OpenStreetMap.get_node(node_id)
       
       attribute_hash.each do |key,value|
