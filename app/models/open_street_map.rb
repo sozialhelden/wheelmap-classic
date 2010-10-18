@@ -46,7 +46,7 @@ class OpenStreetMap
   
   def update_node(node)
     logger.info "Old version: #{node.version}"
-    logger.debug "Old changeset: #{node.changeset}"
+    logger.info "Old changeset: #{node.changeset}"
     changeset_id = create_changeset("Modified node on wheelmap.org")
     begin
       node.changeset = changeset_id
@@ -57,18 +57,18 @@ class OpenStreetMap
   end
   
   def destroy_node(node, comment="Delete node on wheelmap.org")
-    logger.debug "Old version: #{node.version}"
-    logger.debug "Old changeset: #{node.changeset}"
-    logger.debug "Creating new changeset ..."
+    logger.info "Old version: #{node.version}"
+    logger.info "Old changeset: #{node.changeset}"
+    logger.info "Creating new changeset ..."
     changeset_id = create_changeset(comment)
-    logger.debug "New changeset: #{changeset_id}"
+    logger.info "New changeset: #{changeset_id}"
     begin
       node.changeset = changeset_id
-      logger.debug "Nodes changeset: #{node.changeset}"
-      logger.debug node.inspect
-      logger.debug node.to_xml
+      logger.info "Nodes changeset: #{node.changeset}"
+      logger.info node.inspect
+      logger.info node.to_xml
       new_version = destroy(node)
-      logger.debug "New version: #{new_version}"
+      logger.info "New version: #{new_version}"
     ensure
       close_changeset(changeset_id) if changeset_id
     end
@@ -83,25 +83,25 @@ class OpenStreetMap
     
     types = types.split(',')
     type_string = types.map(&:underscore).join('|')
-    logger.debug("TYPES: #{type_string}")
+    logger.info("TYPES: #{type_string}")
     begin
       # logger.warn("#{self.base_uri}/#{self.api_key.upcase}/geocoding/v2/find.js?bbox=#{normalized_bbox}&object_type=#{types}&results=100")
       bounding_box = CGI.escape("[bbox=#{bbox}]")
       amenity_types = CGI.escape("[#{type_string}]")
       t = Time.now
-      logger.debug "Fetching now: /node#{bounding_box}#{amenity_types}"
+      logger.info "Fetching now: /node#{bounding_box}#{amenity_types}"
       
       result = get("/node#{bounding_box}#{amenity_types}")
-      logger.debug "Finished: #{Time.now - t}s"
+      logger.info "Finished: #{Time.now - t}s"
       if result['osm']['node'].blank? 
-        logger.debug "Found no nodes"
+        logger.info "Found no nodes"
         return []
       elsif result['osm']['node'].is_a? Hash
         return [Node.new(result['osm']['node'])]
       else
-        logger.debug(result['osm']['node'].inspect)
+        logger.info(result['osm']['node'].inspect)
         osm_nodes = result['osm']['node'].map{|node_data| Node.new(node_data)}
-        logger.debug("Found #{osm_nodes.size} nodes")
+        logger.info("Found #{osm_nodes.size} nodes")
         osm_nodes
       end
     rescue Exception => e
@@ -174,7 +174,7 @@ class OpenStreetMap
     else
       url = "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}#{path}"
     end
-    logger.debug("calculated URI: #{url}")
+    logger.info("calculated URI: #{url}")
     url
   end
   
@@ -219,7 +219,7 @@ class OpenStreetMap
 
   def self.raise_errors(response)
     data = response.body
-    # logger.debug("HTTP REQUEST: #{response.inspect}")
+    # logger.info("HTTP REQUEST: #{response.inspect}")
     case response.code.to_i
       when 400
         logger.error("(#{response.code}): #{response.message} - #{data if data}")
