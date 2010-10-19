@@ -46,7 +46,7 @@ class NodesController < ApplicationController
     @node = OpenStreetMap::Node.new(node_params.stringify_keys!)
     if @node.valid?
       client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.oauth_authorized?
-      Delayed::Job.enqueue(UpdatingJob.new(@node, client))
+      Delayed::Job.enqueue(UpdatingJob.new(@node, current_user, client))
       respond_to do |wants|
         wants.js{ render :text => 'OK' }
         wants.html{
