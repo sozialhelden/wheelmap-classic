@@ -92,14 +92,7 @@ class NodesController < ApplicationController
 
   # Before filter
   protected
-  
-  def authenticate_application!
-    unless current_user.app_authorized?
-      flash[:error] = I18n.t('nodes.flash.authorize_wheelmap')
-      redirect_to edit_user_path(current_user)
-    end
-  end
-  
+    
   def gone(exception)
     @message = I18n.t('nodes.errors.not_existent')
     render :action => 'error', :status => 410
