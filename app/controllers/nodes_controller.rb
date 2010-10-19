@@ -7,7 +7,6 @@ class NodesController < ApplicationController
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
   before_filter :check_create_params,             :only => :create
-  before_filter :set_session_amenities,           :only => :index
   
   rescue_from OpenStreetMap::NotFound,    :with => :not_found
   rescue_from OpenStreetMap::Gone,        :with => :gone
@@ -19,8 +18,6 @@ class NodesController < ApplicationController
   def index
     left, bottom, right, top = params[:bbox].split(',')
     @places = Poi.within_bbox(left, bottom, right, top).limit(300)
-    # @places = OpenStreetMap.nodes(params[:bbox])
-    # @places = Cloudmade.nodes(params[:bbox],params[:object_types])
     
     respond_to do |wants|  
       wants.js{render :json => @places }
@@ -105,11 +102,6 @@ class NodesController < ApplicationController
   def not_found(exception)
     @message = I18n.t('nodes.errors.not_found')
     render :action => 'error', :status => 404
-  end
-  
-  def set_session_amenities
-    object_types = params[:object_types].split(',') if params[:object_types]
-    session['amenities'] = object_types.flatten.compact.uniq unless object_types.blank?
   end
   
   def set_default_user
