@@ -15,6 +15,8 @@
 
 - content_for :javascript do
   :javascript
+    drawmap(defaultControls(), 'minimap');
+    jumpTo(#{@node.lon}, #{@node.lat}, 18);
     createDraggableLayer(placesStyle(),lon, lat);
 
 

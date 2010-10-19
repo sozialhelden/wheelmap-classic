@@ -7,6 +7,7 @@ var places;
 var draggable;
 
 OpenLayers.IMAGE_RELOAD_ATTEMPTS = 3;
+OpenLayers.ImgPath = "/img/";
 
 var states = {
   yes: true,
@@ -286,6 +287,10 @@ function createPlacesLayer(style) {
       strategies: [new OpenLayers.Strategy.BBOX({ratio : 1.3, resFactor:1.3})],
       protocol: new OpenLayers.Protocol.HTTP({
         url:  "nodes.geojson",
+        headers:{
+          "Content-Type": "application/javascript"
+        },
+        readWithPOST: false,
         format: new OpenLayers.Format.GeoJSON({
           internalProjection: epsg4326,
           externalProjection: epsg4326,
@@ -353,10 +358,10 @@ function createDraggableLayer(style, lon, lat) {
       rendererOptions: { yOrdering: true },
       visibility: true
     });    
-    map.addLayer(draggable_layer);
-    activateDragControl(draggable_layer);
-    addPin(draggable_layer, lon,lat);
-    draggable_layer.redraw();
+  map.addLayer(draggable_layer);
+  activateDragControl(draggable_layer);
+  addPin(draggable_layer, lon,lat);
+  draggable_layer.redraw();
 }
 
 

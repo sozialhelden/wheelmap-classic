@@ -15,7 +15,6 @@
       :javascript
         var ce=document.createElement;ce('header');ce('nav');ce('article');ce('section');ce('footer');ce('aside');ce('time');
     :javascript
-      var object_types = ["#{ (session['amenities']).join('","')}"];
       var lat  = #{params[:lat]  || GeoCache.latlon(request.remote_addr).first};
       var lon  = #{params[:lon]  || GeoCache.latlon(request.remote_addr).last};
       var zoom = #{params[:zoom] || 17};
@@ -33,9 +32,7 @@
       %nav      
         - link_to 'http://sozialhelden.de', :id => 'sozialhelden' do
           = image_tag('sozialhelden.png', :alt => t('.banner.alt'))
-    = javascript_include_tag 'openlayers', 'jquery', 'util', 'autocomplete', 'uservoice', 'icons', 'osm', 'application', 'minimap', :cache => "minimaps_#{I18n.locale}"
-    :javascript
-      OpenLayers.ImgPath = '#{root_url}img/'          
+    = javascript_include_tag 'openlayers', 'jquery', 'util', 'autocomplete', 'uservoice', 'icons', 'osm', 'application', :cache => "minimaps_#{I18n.locale}"
     - if @content_for_jquery
       = yield :jquery
       :javascript

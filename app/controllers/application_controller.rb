@@ -22,6 +22,16 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  
+  
+  def after_sign_in_path_for(resource)
+    if request.session[:return_to].is_a? String
+      request.session[:return_to]
+    else
+      super
+    end
+  end
+  
   def set_default_amenities
     session['amenities'] = ['subway', 'light_rail', 'fast_food', 'restaurant', 'bar', 'cafe']
   end

@@ -16,7 +16,6 @@
       -#= javascript_include_tag 'html5'
 
     :javascript
-      var object_types = ["#{ (session['amenities']).join('","')}"];
       var lat = #{params[:lat] || GeoCache.latlon(request.remote_addr).first};
       var lon = #{params[:lon] || GeoCache.latlon(request.remote_addr).last};
       var zoom = #{params[:zoom] || 18};
@@ -35,9 +34,8 @@
     %footer
       - link_to 'http://sozialhelden.de', :id => 'sozialhelden', :title => 'sozial is\' muss!' do
         = image_tag('sozialhelden.png', :alt => t('.banner.alt'), :width => 423, :height => 38)
-    = javascript_include_tag 'openlayers', 'jquery', 'util', 'autocomplete', 'uservoice', 'icons', 'openlayers_de', 'openlayers_en', 'osm', 'application', 'map', :cache => "maps_#{I18n.locale}"
-    :javascript
-      OpenLayers.ImgPath = '#{root_url}img/'          
+        
+    = javascript_include_tag 'openlayers_de', 'jquery', 'util', 'autocomplete', 'uservoice', 'icons', 'openlayers_de', 'openlayers_en', 'osm', 'application', 'map', :cache => "maps_#{I18n.locale}"
     - if @content_for_jquery
       = yield :jquery
       :javascript
