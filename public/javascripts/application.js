@@ -48,6 +48,15 @@ function markerLayer(name){
   });
 }
 
+function jumpTo(lon, lat, zoom) {
+  var lonLat = new OpenLayers.LonLat(lon, lat).transform(
+    new OpenLayers.Projection("EPSG:4326"), //transform from WGS 1984
+    map.getProjectionObject()               //to Spherical Mercator Projection
+  );
+    map.setCenter(lonLat, zoom);
+    return false;
+}
+
 function drawmap(controls, element) {
   OpenLayers.Lang.setCode(language);
 
@@ -290,7 +299,6 @@ function createPlacesLayer(style) {
         headers:{
           "Content-Type": "application/javascript"
         },
-        readWithPOST: false,
         format: new OpenLayers.Format.GeoJSON({
           internalProjection: epsg4326,
           externalProjection: epsg4326,
