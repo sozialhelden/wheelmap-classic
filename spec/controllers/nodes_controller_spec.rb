@@ -144,6 +144,19 @@ describe NodesController do
         response.code.should == '406'
         response.body.should == "Params missing"
       end
+      
+      it "should redirect if app is not connected" do
+        controller.current_user.should_receive(:app_authorized?).and_return(false)
+        post(:create, :node => {:lat => '52.4', :lon => '13.9', :name => 'test node', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant'})
+        response.code.should == '302'
+      end
+      
+      it "should not redirect if app is not connected and called from iphone" do
+        controller.current_user.should_receive(:app_authorized?).and_return(false)
+        request.stub!(:user_agent).and_return("Wheelmap")
+        post(:create, :node => {:lat => '52.4', :lon => '13.9', :name => 'test node', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant'})
+        response.code.should == '403'
+      end
     end
     
     describe "anonymous" do

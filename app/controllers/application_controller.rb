@@ -11,7 +11,16 @@ class ApplicationController < ActionController::Base
     I18n.locale = extract_locale_from_subdomain
   end
   
-  
+  def authenticate_application!
+    unless current_user.app_authorized?
+      if mobile_app?
+        render :json => {:id => current_user.id, :message => 'Application needs to be authorized', :url => edit_user_url(current_user)}.to_json, :status => 403
+      else
+        flash[:error] = I18n.t('nodes.flash.authorize_wheelmap')
+        redirect_to edit_user_path(current_user)
+      end
+    end
+  end
   
   def set_default_amenities
     session['amenities'] = ['subway', 'light_rail', 'fast_food', 'restaurant', 'bar', 'cafe']
@@ -19,6 +28,10 @@ class ApplicationController < ActionController::Base
   
   def wheelmap_visitor
     User.find_by_email('visitor@wheelmap.org')
+  end
+  
+  def mobile_app?
+    request.user_agent.start_with?('Wheelmap')
   end
   
   def default_user
