@@ -120,6 +120,14 @@ class OpenStreetMap
     node = OpenStreetMap::Node.new(response['osm']['node'])
   end
 
+  def self.get_changeset(id)
+    logger.info("OpenStreetMap##{id}")
+    base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
+    response = get("#{base_uri}/changeset/#{id}")
+    raise_errors(response)
+    changeset = OpenStreetMapConfig::Changeset.new(response['osm']['changeset'])
+  end
+
   def create(node)
     logger.info("OpenStreetMap#create")
     logger.info(node.inspect)

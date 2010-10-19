@@ -1,4 +1,4 @@
-class UpdatingJob < Struct.new(:node, :client)
+class UpdatingJob < Struct.new(:node, :user, :client)
   
   def perform
     begin
