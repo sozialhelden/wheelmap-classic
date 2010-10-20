@@ -11,6 +11,5 @@ class AddWheelmapVisitorCredentials < ActiveRecord::Migration
     user.osm_username = nil
     user.osm_password = nil
     user.save!
-    
   end
 end
