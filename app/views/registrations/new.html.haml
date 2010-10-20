@@ -4,7 +4,7 @@
     = form.input :password, :label => t('devise.sign_up.form.labels.password'), :hint => false
     = form.input :password_confirmation, :label => t('devise.sign_up.form.labels.password_confirmation')
   - form.buttons do
-    = form.submit t('devise.sign_up.form.submit')
+    = form.commit_button t('devise.sign_up.form.submit')
     %p.hint= t('devise.mandatory')
 
 = render :partial => "shared/devise_links" 

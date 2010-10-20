@@ -6,7 +6,8 @@
     = render :partial => 'inputs', :object => @node, :locals => {:form => form}
     
     - form.buttons do
-      = form.submit t('formtastic.labels.save')
+      = form.commit_button t('formtastic.labels.save')
+      %p.hint= t('devise.mandatory')
 
 - content_for :head do
   %title= t('.header.title', :node => @node.name)
