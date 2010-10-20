@@ -1,0 +1,6 @@
+<osm version="0.6" generator="OpenStreetMap server">
+  <changeset id="12345" user="schmerzbereiter" uid="152" created_at="2010-10-20T05:13:37Z" closed_at="2010-10-20T06:13:37Z" open="false">
+    <tag k="comment" v="Modified node on wheelmap.org"/>
+    <tag k="created_by" v="wheelmap.org"/>
+  </changeset>
+</osm>

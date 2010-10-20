@@ -9,8 +9,13 @@ class OpenStreetMap
       end
     end
     
+    def id=(value)
+      @id = value.to_i
+    end
+    
     def closed?
       @open == "false"
     end
+    
   end
 end
