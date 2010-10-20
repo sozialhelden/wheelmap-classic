@@ -1,4 +1,7 @@
 %h4= link_to t('home.index.filter.wheelchair'), 'http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei', :target => '_blank'
+
+= render :partial => '/shared/paypal_button'
+
 %ul#options.wheelchair
   %li.state-yes
     = check_box_tag(:wheelchair_yes, 1, true)
