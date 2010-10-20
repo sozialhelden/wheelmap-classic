@@ -95,20 +95,28 @@ en:
         alcohol: Liquor
         bakery: Bakery
         beverages: Beverages
+        bicycle: Bikeshop
         books: Books
+        butcher: Butcher
         clothes: Clothes
         computer: Computer
+        convenience: Convenience
         department_store: Department store
+        doityourself: Do it yourself
+        dry_cleaning: Dry cleaning
         electronics: Elektronics
+        florist: Florist
         furniture: Furniture
         garden_centre: Garden center
         hairdresser: Hairdresser
         hardware: Hardware
+        kiosk: Kiosk
         laundry: Laundry
         mall: Shoppingcenter
         optician: Optiker
         shoes: Shoes
         supermarket: Supermarket
+        'yes': ATM
       sport:
         sports_centre: Sports centre
         stadium: Stadion

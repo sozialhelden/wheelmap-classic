@@ -94,21 +94,30 @@ de:
       shopping:
         alcohol: Spirituosen
         bakery: Bäckerei
+        bicycle: Fahrrad
         beverages: Getränkemarkt
         books: Buchhandlung
+        butcher: Fleischer
         clothes: Bekleidung
+        convenience: Shop
         computer: Computer
         department_store: Warenhaus
+        doityourself: Bauhaus
+        dry_cleaning: Chemische Reinigung
         electronics: Elektronik
+        florist: Blumengeschäft
         furniture: Möbelhaus
         garden_centre: Garten-Center
         hairdresser: Friseur
         hardware: Eisenwarenladen
+        kiosk: Kiosk
         laundry: Wäscherei
         mall: Shoppingcenter
         optician: Optiker
+        outdoor: Outdoorladen
         shoes: Schuhe
         supermarket: Supermarkt
+        'yes': Geldautomat
       sport:
         sports_centre: Fitnesstudio
         stadium: Stadion
