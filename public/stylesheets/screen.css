@@ -1103,41 +1103,7 @@ body {
   cursor: help;
 }
 
-/* line 12, ../../app/stylesheets/basics/_page.sass */
-.frame {
-  width: 500px;
-  margin: 10px auto;
-  border: 1px solid #a1c175;
-  padding: 10px;
-  background-color: #e7ebe2;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #e7ebe2), color-stop(1, #cfd7c5));
-  background-image: -moz-linear-gradient(center bottom, #cfd7c5 0%, #e7ebe2 50%, white 100%);
-  background-image: linear-gradient(center bottom, #cfd7c5 0%, #e7ebe2 50%, white 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#cfd7c5', startColorstr='white', gradientType='0');
-  background-color: white;
-  -moz-border-radius: 12px;
-  -webkit-border-radius: 12px;
-  -khtml-border-radius: 12px;
-  border-radius: 12px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
-}
-/* line 22, ../../app/stylesheets/basics/_page.sass */
-.frame h2 {
-  margin-bottom: 10px;
-}
-/* line 25, ../../app/stylesheets/basics/_page.sass */
-.frame h3 {
-  margin-bottom: 5px;
-}
-/* line 28, ../../app/stylesheets/basics/_page.sass */
-.frame p.pad {
-  margin-bottom: 20px;
-}
-
-/* line 31, ../../app/stylesheets/basics/_page.sass */
+/* line 13, ../../app/stylesheets/basics/_page.sass */
 #main {
   background: white;
   border: 1px #e6e6e6 solid;
