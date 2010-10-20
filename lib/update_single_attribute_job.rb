@@ -1,22 +1,32 @@
-class UpdateSingleAttributeJob < Struct.new(:node_id, :client, :attribute_hash)
+class UpdateSingleAttributeJob < Struct.new(:node_id, :user, :client, :attribute_hash)
   
   def perform
+    raise ArgumentError.new("Client cannot be nil") if client.nil?
+    raise ArgumentError.new("User cannot be nil") if user.nil?
     begin
       OpenStreetMap.logger = Delayed::Worker.logger
-      new_node = OpenStreetMap.get_node(node_id)
+      old_node = OpenStreetMap.get_node(node_id)
+      Delayed::Worker.logger.debug("OLD WHEELCHAIR STATUS: #{old_node.wheelchair}")
+      
+      new_node = old_node.clone
       
       attribute_hash.each do |key,value|
         new_node.send("#{key}=", value)
       end
       
-      raise ArgumentError.new("Client cannot be nil") if client.nil?
+      Delayed::Worker.logger.debug("NEW WHEELCHAIR STATUS: #{new_node.wheelchair}")
+      
       osm = OpenStreetMap.new(client)
-      osm.update_node(new_node)
+      
+      changeset = osm.find_or_create_changeset(user.changeset_id, "Modified wheelchair tag on wheelmap.org")
+      user.update_attribute('changeset_id', changeset.id) if user.changeset_id != changeset.id
+      
+      osm.update_node(new_node, user.changeset_id)
     rescue OpenStreetMap::Conflict => conflict
       # These changes have already been made, so dismiss this update!
-      HoptoadNotifier.notify(conflict, :action => 'perform', :component => 'UpdateSingleAttributeJob', :parameters => {:new_node => new_node.inspect, :client => client.inspect, :attributes => attribute_hash})
+      HoptoadNotifier.notify(conflict, :action => 'perform', :component => 'UpdateSingleAttributeJob', :parameters => {:user => user.inspect, :new_node => new_node.inspect, :client => client.inspect, :attributes => attribute_hash})
     rescue Exception => e
-      HoptoadNotifier.notify(e, :action => 'perform', :component => 'UpdateSingleAttributeJob', :parameters => {:node_id => node_id, :client => client.inspect, :attributes => attribute_hash})
+      HoptoadNotifier.notify(e, :action => 'perform', :component => 'UpdateSingleAttributeJob', :parameters => {:user => user.inspect, :node_id => node_id, :client => client.inspect, :attributes => attribute_hash})
       raise e
     end
     

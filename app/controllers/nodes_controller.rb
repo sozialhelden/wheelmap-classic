@@ -32,8 +32,9 @@ class NodesController < ApplicationController
   end
   
   def update_wheelchair
-    client = OpenStreetMap::BasicAuthClient.new(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
-    Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], client, :wheelchair => params[:wheelchair]))
+    user = wheelmap_visitor
+    client = OpenStreetMap::BasicAuthClient.new(user.osm_username, user.osm_password)
+    Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], user, client, :wheelchair => params[:wheelchair]))
     respond_to do |wants|
       wants.js{   render :text => t('nodes.update_wheelchair.successfull') }
       wants.html{ render :text => t('nodes.update_wheelchair.successfull') }
@@ -70,7 +71,7 @@ class NodesController < ApplicationController
     @node = OpenStreetMap::Node.new(params[:node].stringify_keys!)
     if @node.valid?
       client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.oauth_authorized?
-      Delayed::Job.enqueue(CreatingJob.new(@node, client))
+      Delayed::Job.enqueue(CreatingJob.new(@node, current_user, client))
       flash[:notice] = I18n.t('nodes.create.flash.successfull')
       redirect_to root_path(:layers => 'BT', :lat => @node.lat, :lon => @node.lon, :zoom => 18)
     else

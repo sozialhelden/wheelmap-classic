@@ -2,32 +2,35 @@ class UpdatingJob < Struct.new(:node, :user, :client)
   
   def perform
     begin
+      raise ArgumentError.new("Client cannot be nil") if client.nil?
+
+      OpenStreetMap.logger = Delayed::Worker.logger
       lat = node.lat
       lon = node.lon
-      OpenStreetMap.logger = Delayed::Worker.logger
+
       old_node = OpenStreetMap.get_node(node.id)
       old_tags = old_node.tags
       Delayed::Worker.logger.debug("OLD TAGS: #{old_tags.to_yaml}")
+
       new_tags = node.tags.reverse_merge(old_tags)
       Delayed::Worker.logger.debug("NEW TAGS: #{new_tags.to_yaml}")
+
       node = old_node.clone
       node.tags = new_tags
       node.lat = lat
       node.lon = lon
-      # if old_node == node
-      #   # Quit here, if there are no changes to be made
-      #   HoptoadNotifier.notify(Exception.new('No update needed'), :component => 'UpdatingJob#perform', :parameters => {:old_node => old_node.inspect, :node => node.inspect, :client => client})
-      #   return true 
-      # end
 
-      raise ArgumentError.new("Client cannot be nil") if client.nil?
       osm = OpenStreetMap.new(client)
-      osm.update_node(node)
+      
+      changeset = osm.find_or_create_changeset(user.changeset_id, "Modified node on wheelmap.org")
+      user.update_attribute('changeset_id', changeset.id) if user.changeset_id != changeset.id
+      
+      updated_node = osm.update_node(node, user.changeset_id)
     rescue OpenStreetMap::Conflict => conflict
       # These changes have already been made, so dismiss this update!
-      HoptoadNotifier.notify(conflict, :component => 'UpdatingJob#perform', :parameters => {:old_node => old_node.inspect, :node => node.inspect, :client => client})
+      HoptoadNotifier.notify(conflict, :component => 'UpdatingJob#perform', :parameters => {:user => user.inspect, :old_node => old_node.inspect, :node => node.inspect, :client => client})
     rescue Exception => e
-      HoptoadNotifier.notify(e, :component => 'UpdatingJob#perform', :action => 'perform', :parameters => {:node => node.inspect, :client => client.inspect})
+      HoptoadNotifier.notify(e, :component => 'UpdatingJob#perform', :action => 'perform', :parameters => {:user => user.inspect, :node => node.inspect, :client => client.inspect})
       raise e
     end
     

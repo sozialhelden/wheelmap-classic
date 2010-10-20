@@ -32,28 +32,20 @@ class OpenStreetMap
   
   # Create a new node by calling the OSM API
   # Returns the id of the newly created node
-  def create_node(node)
+  def create_node(node, changeset_id)
     node_id = nil
-    changeset_id = create_changeset("Created new node on wheelmap.org")
-    begin
-      node.changeset = changeset_id
-      node_id = create(node)
-    ensure
-      close_changeset(changeset_id) if changeset_id
-    end
+    node.changeset = changeset_id
+    node_id = create(node)
     self.class.get_node(node_id) if node_id
   end
   
-  def update_node(node)
+  def update_node(node, changeset_id)
     logger.info "Old version: #{node.version}"
     logger.info "Old changeset: #{node.changeset}"
-    changeset_id = create_changeset("Modified node on wheelmap.org")
-    begin
-      node.changeset = changeset_id
-      new_version = update(node)
-    ensure
-      close_changeset(changeset_id) if changeset_id
-    end
+    node.changeset = changeset_id
+    new_version = update(node)
+    node.version = new_version
+    node
   end
   
   def destroy_node(node, comment="Delete node on wheelmap.org")
@@ -121,11 +113,12 @@ class OpenStreetMap
   end
 
   def self.get_changeset(id)
-    logger.info("OpenStreetMap##{id}")
+    logger.info("OpenStreetMap#get_changeset #{id}")
     base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
     response = get("#{base_uri}/changeset/#{id}")
+    logger.info "#{base_uri}/changeset/#{id}"
     raise_errors(response)
-    changeset = OpenStreetMapConfig::Changeset.new(response['osm']['changeset'])
+    changeset = OpenStreetMap::Changeset.new(response['osm']['changeset'])
   end
 
   def create(node)
@@ -156,6 +149,13 @@ class OpenStreetMap
     self.class.raise_errors(response)
     response.body
   end
+  
+  def find_or_create_changeset(id, comment="Modify accessibility status for node")
+    changeset = nil
+    changeset = self.class.get_changeset(id) unless id.blank?
+    changeset = create_changeset(comment) if changeset.nil? || changeset.closed?
+    changeset
+  end
 
   def create_changeset(comment="Modify accessibility status for node")
     logger.info("OpenStreetMap#create_changeset")
@@ -164,7 +164,7 @@ class OpenStreetMap
     self.class.raise_errors(response)
     changeset_id = response.body.to_i
     logger.info("New Changeset ID: #{changeset_id}")
-    changeset_id
+    self.class.get_changeset(changeset_id)
   end
   
   def close_changeset(id)
