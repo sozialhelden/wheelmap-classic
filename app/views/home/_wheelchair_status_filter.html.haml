@@ -2,7 +2,7 @@
 
 = render :partial => '/shared/paypal_button'
 
-%ul#options.wheelchair
+%ul#options.wheelchair.clearfix
   %li.state-yes
     = check_box_tag(:wheelchair_yes, 1, true)
     = label_tag :wheelchair_yes, t('form.show_fully_accessible_places'), :title => t('wheelmap.what_is.fully_accessible'), :class => :help

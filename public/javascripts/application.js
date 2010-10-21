@@ -97,7 +97,7 @@ function defaultControls(){
     new OpenLayers.Control.PanZoomBar({id:'panzoombar',displayClass:'olControlPanZoomBar'}),
     new OpenLayers.Control.Navigation({zoomWheelEnabled:true, autoActivate:true}),
     new OpenLayers.Control.KeyboardDefaults(),
-    new OpenLayers.Control.ScaleLine(),
+    new OpenLayers.Control.ScaleLine({geodesic:true}),
     new OpenLayers.Control.Permalink(),
     new OpenLayers.Control.Permalink('createlink', '/nodes/new'),
     new OpenLayers.Control.Permalink('show-on-large-map', '/')
@@ -204,7 +204,7 @@ function clusterStrategy(){
 }
 
 function activateSelectControl(layer){
-  var sc = new OpenLayers.Control.SelectFeature(layer);
+  var sc = new OpenLayers.Control.SelectFeature(layer, {toggle:true, clickout: true});
   map.addControl(sc);
   sc.activate();
 }
@@ -293,7 +293,7 @@ function createPlacesLayer(style) {
       projection: epsg4326,
       displayProjection: epsg4326,
       rendererOptions: { yOrdering: true },
-      strategies: [new OpenLayers.Strategy.BBOX({ratio : 1.3, resFactor:1.3})],
+      strategies: [new OpenLayers.Strategy.BBOX({ratio : 1.1, resFactor:1})],
       protocol: new OpenLayers.Protocol.HTTP({
         url:  "nodes.geojson",
         headers:{
@@ -405,6 +405,26 @@ $(function() {
       var lon = parseFloat(parts[1]);
       var lat = parseFloat(parts[2]);
       jumpTo(lon,lat, 17);
+  });
+  $('.mimimize').live ('click', function() {
+    $(this).parent('div').animate({
+      height:'0.5em',
+      left:'-275px',
+      overflow:'hidden'
+    }, 'slow', 'swing', function() {
+      $(this).children('.mimimize').text('»').addClass('maximize').removeClass('mimimize');
+    });
+  });
+
+  $('.maximize').live('click', function() {
+    $(this).parent('div').animate({
+      height:'auto',
+      overflow:'visbile',
+      left:'30px',
+    }, 'slow', 'swing', function() {
+      $(this).css('height', 'auto');
+      $(this).children('.maximize').text('«').addClass('mimimize').removeClass('maximize');
+    });
   });
   
   $(window).resize(function() {
