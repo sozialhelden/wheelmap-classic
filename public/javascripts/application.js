@@ -243,7 +243,8 @@ function popup_form(feature){
   form += popup_state_radio(feature, 'unknown');
   form += '<li><input type="hidden" name="method" value="put" /></li>';
   form += '<li>';
-  form += '<input type="submit" class="update_button left" value="' + OpenLayers.Lang.translate('wheelchair_update_button') +'"/>';
+  form += '<input type="submit" id="update_button" value="' + OpenLayers.Lang.translate('wheelchair_update_button') +'"/>';
+  form += '<img src="/images/spinner-small.gif" id="update_spinner"/>';
   form += '</li></ol>';
   form += '</form>';
   return form;

@@ -48,13 +48,20 @@ $(function() {
   });
   $('.update_form').live('submit', function() {
     var form = $(this);
+    $('#update_button').attr('disabled', 'disabled');
+    $('#update_spinner').show();
+    
     $.ajax({ dataType: 'text', type: form.attr('method'), url: form.attr('action') , data: form.serialize(),
       success: function(data, textStatus, XMLHttpRequest) {
         alert(data);
+        $('#update_spinner').hide();
+        $('#update_button').removeAttr('disabled');
         return false;
       },
       error: function(XMLHttpRequest, textStatus, errorThrown){
         alert(textStatus);
+        $('#update_spinner').hide();
+        $('#update_button').removeAttr('disabled');
         return false;
       }
     });
