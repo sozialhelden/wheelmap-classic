@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale
   before_filter :set_default_amenities
+  
+  rescue_from Errno::ETIMEDOUT, :with => :timeout
 
   def set_locale
     I18n.locale = extract_locale_from_subdomain
@@ -60,7 +62,7 @@ class ApplicationController < ActionController::Base
   
   def timeout(exception)
     @message = I18n.t('nodes.errors.not_available')
-    render :action => 'error', :status => 503
+    render :action => 'error', :status => 503, :layout => 'sessions'
   end
   
   
