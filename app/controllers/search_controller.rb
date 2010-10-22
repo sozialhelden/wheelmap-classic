@@ -1,7 +1,6 @@
 class SearchController < ApplicationController
   include HTTParty
   
-  base_uri "http://nominatim.openstreetmap.org"
   URL = "http://nominatim.openstreetmap.org"
   TIMEOUT = 1
   
@@ -13,9 +12,8 @@ class SearchController < ApplicationController
     respond_to do |wants|
       wants.js  {
         @result = HTTParty.get("#{URL}/search", :format => :json, :timeout => TIMEOUT, :query => { :q => URI.escape(params[:q]), :format => 'json', :'accept-language' => I18n.locale, :osm_type => 'N'} )
-        render
       }
-      wants.xml {render :xml   => get("#{URL}/search", :format => :xml, :timeout => TIMEOUT, :query => { :q => URI.escape(params[:q]), :format => 'xml', :'accept-language' => I18n.locale, :osm_type => 'N'} ) }
+      wants.xml {render :xml   => HTTParty.get("#{URL}/search", :format => :xml, :timeout => TIMEOUT, :query => { :q => URI.escape(params[:q]), :format => 'xml', :'accept-language' => I18n.locale, :osm_type => 'N'} ) }
       wants.json{render :json => HTTParty.get("#{URL}/search", :format => :json, :timeout => TIMEOUT, :query => { :q => URI.escape(params[:q]), :format => 'json', :'accept-language' => I18n.locale, :osm_type => 'N'} ) }
       wants.html{
         @result = HTTParty.get("#{URL}/search",
