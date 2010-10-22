@@ -13,8 +13,15 @@ class UpdateSingleAttributeJob < Struct.new(:node_id, :user, :client, :attribute
       attribute_hash.each do |key,value|
         new_node.send("#{key}=", value)
       end
-      
+
       Delayed::Worker.logger.debug("NEW WHEELCHAIR STATUS: #{new_node.wheelchair}")
+      
+      # quit if all attributes hash are the same in old and new node
+      if attribute_hash.all?{|key,value| old_node.send(key) == new_node.send(key)}
+        Delayed::Worker.logger.debug("Ignoring, nodes are the same!")
+        return
+      end
+
       
       osm = OpenStreetMap.new(client)
       
