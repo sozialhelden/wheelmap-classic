@@ -20,7 +20,7 @@ class SearchController < ApplicationController
                       :format => :json,
                       :timeout => TIMEOUT,
                       :query => {
-                        :q => URI.escape('Horst'),
+                        :q => URI.escape(params[:q]),
                         :format => 'json',
                         :'accept-language' => I18n.locale,
                         :osm_type => 'N'
