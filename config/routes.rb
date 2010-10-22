@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.devise_for :users
 
-  map.resources :search, :only => :index
+  # map.resources :search, :only => :index
 
   map.resources :feeds, :only => :index
 
