@@ -1,16 +1,33 @@
 class SearchController < ApplicationController
+  include HTTParty
+  
+  URL = "http://nominatim.openstreetmap.org"
+  TIMEOUT = 1
   
   before_filter :check_for_search_term
+  
+  rescue_from Timeout::Error, :with => :timeout
   
   def index
     respond_to do |wants|
       wants.js  {
-        @result = JSON.parse(Net::HTTP.get_response(URI.parse(osm_url('json'))).body)
-        render}
-      wants.xml {render :xml   => Net::HTTP.get_response(URI.parse(osm_url('xml'))).body }
-      wants.json{render :json => Net::HTTP.get_response(URI.parse(osm_url('json'))).body }
+        @response = HTTParty.get("#{URL}/search", :format => :json, :timeout => TIMEOUT, :query => { :q => URI.escape(params[:q]), :format => 'json', :'accept-language' => I18n.locale, :osm_type => 'N'} )
+        @result = JSON.parse(@response)
+        render
+      }
+      wants.xml {render :xml   => HTTParty.get("#{URL}/search", :format => :xml, :timeout => TIMEOUT, :query => { :q => URI.escape(params[:q]), :format => 'xml', :'accept-language' => I18n.locale, :osm_type => 'N'} ) }
+      wants.json{render :json => HTTParty.get("#{URL}/search", :format => :json, :timeout => TIMEOUT, :query => { :q => URI.escape(params[:q]), :format => 'json', :'accept-language' => I18n.locale, :osm_type => 'N'} ) }
       wants.html{
-        @result = JSON.parse(Net::HTTP.get_response(URI.parse(osm_url('json'))).body)
+        @result = JSON.parse(HTTParty.get("#{URL}/search",
+                      :format => :json,
+                      :timeout => TIMEOUT,
+                      :query => {
+                        :q => URI.escape(params[:q]),
+                        :format => 'json',
+                        :'accept-language' => I18n.locale,
+                        :osm_type => 'N'
+                      }
+                    ))
       }
     end
   end

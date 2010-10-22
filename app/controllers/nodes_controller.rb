@@ -96,10 +96,6 @@ class NodesController < ApplicationController
     @message = I18n.t('nodes.errors.not_existent')
     render :action => 'error', :status => 410
   end
-  def timeout(exception)
-    @message = I18n.t('nodes.errors.not_available')
-    render :action => 'error', :status => 503
-  end
   
   def not_found(exception)
     @message = I18n.t('nodes.errors.not_found')
