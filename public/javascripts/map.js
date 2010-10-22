@@ -51,18 +51,19 @@ $(function() {
     $('#update_button').attr('disabled', 'disabled');
     $('#update_spinner').show();
     
-    $.ajax({ dataType: 'text', type: form.attr('method'), url: form.attr('action') , data: form.serialize(),
+    $.ajax({ dataType: 'json', type: form.attr('method'), url: form.attr('action') , data: form.serialize(),
       success: function(data, textStatus, XMLHttpRequest) {
-        alert(data);
-        _gaq.push(['_trackEvent', 'Data', 'Tag']);
+        alert(data.message);
         $('#update_spinner').hide();
         $('#update_button').removeAttr('disabled');
+        _gaq.push(['_trackEvent', 'Data', 'Tag', data.wheelchair]);
         return false;
       },
       error: function(XMLHttpRequest, textStatus, errorThrown){
         alert(textStatus);
         $('#update_spinner').hide();
         $('#update_button').removeAttr('disabled');
+        _gaq.push(['_trackEvent', 'Data', 'Tag', 'failed']);
         return false;
       }
     });
