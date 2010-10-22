@@ -56,14 +56,18 @@ $(function() {
         alert(data.message);
         $('#update_spinner').hide();
         $('#update_button').removeAttr('disabled');
-        _gaq.push(['_trackEvent', 'Data', 'Tag', data.wheelchair]);
+        if(window._gaq){
+          _gaq.push(['_trackEvent', 'Data', 'Tag', data.wheelchair]);
+        }
         return false;
       },
       error: function(XMLHttpRequest, textStatus, errorThrown){
         alert(textStatus);
         $('#update_spinner').hide();
         $('#update_button').removeAttr('disabled');
-        _gaq.push(['_trackEvent', 'Data', 'Tag', 'failed']);
+        if(window._gaq){
+          _gaq.push(['_trackEvent', 'Data', 'Tag', 'failed']);
+        }
         return false;
       }
     });
