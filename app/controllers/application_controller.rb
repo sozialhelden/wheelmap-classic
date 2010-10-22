@@ -58,4 +58,10 @@ class ApplicationController < ActionController::Base
     (I18n.available_locales.include? parsed_locale) ? parsed_locale  : I18n.default_locale
   end
   
+  def timeout(exception)
+    @message = I18n.t('nodes.errors.not_available')
+    render :action => 'error', :status => 503
+  end
+  
+  
 end
