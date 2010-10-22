@@ -54,6 +54,7 @@ $(function() {
     $.ajax({ dataType: 'text', type: form.attr('method'), url: form.attr('action') , data: form.serialize(),
       success: function(data, textStatus, XMLHttpRequest) {
         alert(data);
+        _gaq.push(['_trackEvent', 'Data', 'Tag']);
         $('#update_spinner').hide();
         $('#update_button').removeAttr('disabled');
         return false;
