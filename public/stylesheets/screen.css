@@ -1171,12 +1171,19 @@ image[width='16'] {
   border: 1px solid #cccccc;
   overflow: hidden;
 }
-/* line 16, ../../app/stylesheets/partials/map/_info.sass */
+/* line 17, ../../app/stylesheets/partials/map/_info.sass */
+#categories.minimized,
+#filter.minimized, #counter.minimized {
+  height: 0.5em;
+  left: -275px;
+  overflow: hidden;
+}
+/* line 21, ../../app/stylesheets/partials/map/_info.sass */
 #categories h4,
 #filter h4, #counter h4 {
   margin: -5px 0 5px;
 }
-/* line 19, ../../app/stylesheets/partials/map/_info.sass */
+/* line 24, ../../app/stylesheets/partials/map/_info.sass */
 #categories a, #categories a:visited, #categories a:hover, #categories a:active,
 #filter a,
 #filter a:visited,
@@ -1185,12 +1192,12 @@ image[width='16'] {
   text-decoration: none;
 }
 
-/* line 22, ../../app/stylesheets/partials/map/_info.sass */
+/* line 27, ../../app/stylesheets/partials/map/_info.sass */
 #state-counter {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 24, ../../app/stylesheets/partials/map/_info.sass */
+/* line 29, ../../app/stylesheets/partials/map/_info.sass */
 #state-counter li {
   width: 40%;
   float: left;

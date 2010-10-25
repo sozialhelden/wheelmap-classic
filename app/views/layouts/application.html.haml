@@ -36,7 +36,7 @@
         = image_tag('sozialhelden.png', :alt => t('.banner.alt'), :width => 423, :height => 38)
         
     = render :partial => 'shared/google_tracking'
-    = javascript_include_tag 'openlayers', 'jquery', 'autocomplete', 'uservoice', 'icons', 'openlayers_de', 'openlayers_en', 'osm', 'application', 'map', :cache => "maps_#{I18n.locale}"
+    = javascript_include_tag 'openlayers', 'jquery', 'autocomplete', 'cookie', 'uservoice', 'icons', 'openlayers_de', 'openlayers_en', 'osm', 'application', 'map', :cache => "maps_#{I18n.locale}"
     - if @content_for_jquery
       = yield :jquery
       :javascript

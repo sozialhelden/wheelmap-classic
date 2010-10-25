@@ -75,8 +75,8 @@ en:
           remember_me: Stay logged in
   wheelmap: 
     logo: 
-      title: Wheelmap Homepage
-      alt: Wheelmap Logo
+      title: Wheelmap - find wheelchair accessible places
+      alt: Wheelmap Logo - find wheelchair accessible places
     what_is: 
       unknown_accessible: The wheelchair status is unknown
       not_accessible: The entrance step is higher than 7 cm; or a stair at the entrance; or most important localities are not accessible for wheelchair users
@@ -112,7 +112,7 @@ en:
       find: find
       add_place: Add another place
       placeholder: i.e. Sunset Boulevard San Francisco or Brandenburg Gate Berlin
-    title: wheelmap
+    title: Wheelmap - find wheelchair accessible places
     meta: 
       homepage: Home page
       description: Find wheelchair accessible places - wheelmap.org
