@@ -136,6 +136,7 @@ class PlanetReader
   def process_poi
     status = @poi[:tags]['wheelchair'] || 'unknown'
     @poi[:status] = Poi::WHEELCHAIR_STATUS_VALUES[status.to_sym]
+    return unless @poi[:status] 
     if !@osmchange
       # Neue POIs aus *.osm
       # Purer input aus einem Planet Dump.
