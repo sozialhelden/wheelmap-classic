@@ -415,7 +415,9 @@ $(function() {
     }, 'fast', 'swing', function() {
       $(this).children('.minimize').text('»').addClass('maximize').removeClass('minimize');
       $.cookie('minimized_' + $(this).attr('id'), true);
+      
     });
+    return false;
   });
 
   $('.maximize').live('click', function() {
@@ -427,6 +429,7 @@ $(function() {
       $(this).children('.maximize').text('«').addClass('minimize').removeClass('maximize');
       $.cookie('minimized_' + $(this).attr('id'), false);
     });
+    return false;
   });
   
   $(window).resize(function() {
