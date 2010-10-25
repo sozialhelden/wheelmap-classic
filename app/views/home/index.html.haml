@@ -1,8 +1,8 @@
 - content_for :map do
-  #filter
+  #filter{:class => cookies['minimized_filter'] == 'true' ? 'minimized' : ''}
     = render :partial => 'home/wheelchair_status_filter'
-  #categories
+  #categories{:class => cookies['minimized_categories'] == 'true' ? 'minimized' : ''}
     = render :partial => 'home/category_filter'
-  #counter
+  #counter{:class => cookies['minimized_counter'] == 'true' ? 'minimized' : ''}
     = render :partial => 'home/tag_counter'
   #spinner

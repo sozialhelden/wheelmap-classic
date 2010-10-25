@@ -11,8 +11,8 @@ de:
     other: "%{count} Orte"
   wheelmap:
     logo:
-      title: Wheelmap Startseite
-      alt: Wheelmap Logo
+      title: Wheelmap - find wheelchair accessible places
+      alt: Wheelmap Logo - Rollstuhlgerechte Orte finden
       
     what_is:
       fully_accessible: "Eine Eingangsstufe nicht höher als 7 cm ist (etwa eine Handbreite), alle Räumlichkeiten (z.B. alle Kinosäle etc.) für Rollstuhlfahrer grundsätzlich (ohne Ausnahme) befahrbar sind, und eine Rollstuhltoilette vorhanden ist."
@@ -56,7 +56,7 @@ de:
       add_place: 'Ort hinzufügen'
       placeholder: 'z.B. Sunset Boulevard San Francisco oder Brandenburger Tor Berlin'
     tagline: Wheelmap logo
-    title: wheelmap
+    title: Wheelmap - Rollstuhlgerechte Orte finden
   form:
     show_fully_accessible_places: Ja # Yes
     show_limited_accessible_places: Teilweise # Limited

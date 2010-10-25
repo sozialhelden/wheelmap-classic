@@ -407,24 +407,25 @@ $(function() {
       var lat = parseFloat(parts[2]);
       jumpTo(lon,lat, 17);
   });
-  $('.mimimize').live ('click', function() {
+  $('.minimize').live ('click', function() {
+    $(this).parent('div').css('height', '0.5em');
     $(this).parent('div').animate({
-      height:'0.5em',
       left:'-275px',
       overflow:'hidden'
-    }, 'slow', 'swing', function() {
-      $(this).children('.mimimize').text('»').addClass('maximize').removeClass('mimimize');
+    }, 'fast', 'swing', function() {
+      $(this).children('.minimize').text('»').addClass('maximize').removeClass('minimize');
+      $.cookie('minimized_' + $(this).attr('id'), true);
     });
   });
 
   $('.maximize').live('click', function() {
     $(this).parent('div').animate({
-      height:'auto',
-      overflow:'visbile',
       left:'30px',
-    }, 'slow', 'swing', function() {
+      overflow:'visbile',
+    }, 'fast', 'swing', function() {
       $(this).css('height', 'auto');
-      $(this).children('.maximize').text('«').addClass('mimimize').removeClass('maximize');
+      $(this).children('.maximize').text('«').addClass('minimize').removeClass('maximize');
+      $.cookie('minimized_' + $(this).attr('id'), false);
     });
   });
   

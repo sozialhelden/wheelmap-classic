@@ -12,9 +12,18 @@
   margin-bottom: 20px
   padding: 10px
   border: 1px solid #CCC
+  overflow: hidden
+  
+  &.minimized
+    height: 0.5em
+    left: -275px
+    overflow: hidden
   h4
     margin: -5px 0 5px
-
+    
+  a, a:visited, a:hover, a:active
+    text-decoration: none
+    
 #state-counter
   +clearfix
   li
