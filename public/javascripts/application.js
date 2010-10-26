@@ -106,17 +106,6 @@ function defaultControls(){
   ];
 }
 
-function mapBBOX() {
-  var box = map.getExtent().clone();
-  var latlon = map.getLonLatFromViewPortPx({ x: 380, y: 80 });
-  box.left = latlon.lon;
-  box.top = latlon.lat;
-  latlon = map.getLonLatFromViewPortPx({ x: $(document).width() - 80, y: $(document).height() - 80 });
-  box.right = latlon.lon;
-  box.bottom = latlon.lat;
-  return box.transform(map.getProjectionObject(), epsg4326);
-}
-
 /* This is called for each feature to be added to the layer */
 function determineDisplayState(evt){
   var feature = evt.feature;
@@ -225,6 +214,27 @@ function clusterStrategy(){
   return new OpenLayers.Strategy.Cluster({distance: 15, threshold: 3});
 }
 
+function bboxStategy(){
+  return new OpenLayers.Strategy.BBOX({ratio : 1.3, resFactor:1.3});
+}
+
+function geojsonFormat(){
+  return new OpenLayers.Format.GeoJSON({
+    internalProjection: epsg4326,
+    externalProjection: epsg4326,
+    ignoreExtraDims: true});
+}
+
+function httpProtocol(){
+  return new OpenLayers.Protocol.HTTP({
+    url:  "nodes.geojson",
+    headers:{
+      "Content-Type": "application/javascript"
+    },
+    format: geojsonFormat()
+  });
+}
+
 function activateSelectControl(layer){
   var sc = new OpenLayers.Control.SelectFeature(layer, {toggle:true, clickout: true});
   map.addControl(sc);
@@ -316,18 +326,8 @@ function createPlacesLayer(style) {
       projection: epsg4326,
       displayProjection: epsg4326,
       rendererOptions: { yOrdering: true },
-      strategies: [new OpenLayers.Strategy.BBOX({ratio : 1.3, resFactor:1.3})],
-      protocol: new OpenLayers.Protocol.HTTP({
-        url:  "nodes.geojson",
-        headers:{
-          "Content-Type": "application/javascript"
-        },
-        format: new OpenLayers.Format.GeoJSON({
-          internalProjection: epsg4326,
-          externalProjection: epsg4326,
-          ignoreExtraDims: true
-        })
-      }),
+      strategies: [bboxStategy()],
+      protocol: httpProtocol(),
       visibility: true
     });
   map.addLayer(places);
