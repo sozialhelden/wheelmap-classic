@@ -50,10 +50,12 @@ function markerLayer(name){
 
 function jumpTo(lon, lat, zoom) {
   var lonLat = new OpenLayers.LonLat(lon, lat).transform(
-    new OpenLayers.Projection("EPSG:4326"), //transform from WGS 1984
+    epsg4326, //transform from WGS 1984
     map.getProjectionObject()               //to Spherical Mercator Projection
   );
     map.setCenter(lonLat, zoom);
+    $.cookie('last_lat', lonlat.lat);
+    $.cookie('last_lon', lonlat.lon);
     return false;
 }
 
@@ -141,6 +143,16 @@ function showStates() {
   places.redraw();
 }
 
+function centerCoordinates() {
+  return map.center.clone().transform(map.getProjectionObject(), epsg4326);
+}
+
+/* Callback function when map finished panning. */
+function onMoveEnd(){
+  lonlat = centerCoordinates();
+  $.cookie('last_lat', lonlat.lat);
+  $.cookie('last_lon', lonlat.lon);
+}
 
 function showSpinner(){
   $('#spinner').show();
@@ -148,6 +160,16 @@ function showSpinner(){
 
 function hideSpinner(){
   $('#spinner').hide();
+}
+
+/* Callback function when map data is loaded. */
+function onLoadStart(){
+  showSpinner();
+}
+
+/* Callback function after map data was loaded. */
+function onLoadEnd(){
+  hideSpinner();
 }
 
 function addState(feature){
@@ -294,7 +316,7 @@ function createPlacesLayer(style) {
       projection: epsg4326,
       displayProjection: epsg4326,
       rendererOptions: { yOrdering: true },
-      strategies: [new OpenLayers.Strategy.BBOX({ratio : 1.1, resFactor:1})],
+      strategies: [new OpenLayers.Strategy.BBOX({ratio : 1.3, resFactor:1.3})],
       protocol: new OpenLayers.Protocol.HTTP({
         url:  "nodes.geojson",
         headers:{
@@ -314,8 +336,9 @@ function createPlacesLayer(style) {
   places.events.on({
     'featureselected': onFeatureSelect,
     'featureunselected': onFeatureUnselect,
-    'loadstart': showSpinner,
-    'loadend': hideSpinner,
+    'moveend': onMoveEnd,
+    'loadstart': onLoadStart,
+    'loadend': onLoadEnd,
     'beforefeatureadded': determineDisplayState,
     'beforefeaturesadded': addDisplayStateRule
   });
@@ -374,10 +397,6 @@ function createDraggableLayer(style, lon, lat) {
 }
 
 
-function centerCoordinates() {
-  return map.center.clone().transform(map.getProjectionObject(), epsg4326);
-}
-
 $(function() {
   $('a[data-show]').click(function() {
     $($(this).attr('data-show')).fadeIn();
@@ -407,7 +426,7 @@ $(function() {
       var lat = parseFloat(parts[2]);
       jumpTo(lon,lat, 17);
   });
-  $('.minimize').live ('click', function() {
+  $('.minimize').live('click', function() {
     $(this).parent('div').css('height', '0.5em');
     $(this).parent('div').animate({
       left:'-275px',
@@ -423,7 +442,7 @@ $(function() {
   $('.maximize').live('click', function() {
     $(this).parent('div').animate({
       left:'30px',
-      overflow:'visbile',
+      overflow:'visibile'
     }, 'fast', 'swing', function() {
       $(this).css('height', 'auto');
       $(this).children('.maximize').text('«').addClass('minimize').removeClass('maximize');

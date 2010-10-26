@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper :all
 
   before_filter :set_locale
-  before_filter :set_default_amenities
+  before_filter :set_last_location
   
   rescue_from Errno::ETIMEDOUT, :with => :timeout
 
@@ -32,10 +32,6 @@ class ApplicationController < ActionController::Base
     else
       super
     end
-  end
-  
-  def set_default_amenities
-    session['amenities'] = ['subway', 'light_rail', 'fast_food', 'restaurant', 'bar', 'cafe']
   end
   
   def wheelmap_visitor
@@ -65,5 +61,9 @@ class ApplicationController < ActionController::Base
     render :action => 'error', :status => 503, :layout => 'sessions'
   end
   
+  def set_last_location
+    cookies['last_lat'] = params[:lat] if params[:lat]
+    cookies['last_lon'] = params[:lon] if params[:lon]
+  end
   
 end
