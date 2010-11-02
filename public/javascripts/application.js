@@ -1,6 +1,9 @@
 var map;
 var epsg4326, epsg900913;
-var zoom = 18;
+if (!window.zoom){
+  var zoom = 14;
+}
+
 var places = [];
 var mapnik;
 var places;
@@ -49,14 +52,14 @@ function markerLayer(name){
 }
 
 function jumpTo(lon, lat, zoom) {
-  var lonLat = new OpenLayers.LonLat(lon, lat).transform(
+  var lonlat = new OpenLayers.LonLat(lon, lat).transform(
     epsg4326, //transform from WGS 1984
     map.getProjectionObject()               //to Spherical Mercator Projection
   );
-    map.setCenter(lonLat, zoom);
-    $.cookie('last_lat', lonlat.lat);
-    $.cookie('last_lon', lonlat.lon);
-    return false;
+  map.setCenter(lonlat, zoom);
+  $.cookie('last_lat', lonlat.lat);
+  $.cookie('last_lon', lonlat.lon);
+  return false;
 }
 
 function drawmap(controls, element) {
@@ -134,6 +137,11 @@ function showStates() {
 
 function centerCoordinates() {
   return map.center.clone().transform(map.getProjectionObject(), epsg4326);
+}
+
+/* Callback function when map finished zooming. */
+function onZoomEnd(){
+  $.cookie('last_zoom', map.getZoom());
 }
 
 /* Callback function when map finished panning. */
@@ -336,11 +344,14 @@ function createPlacesLayer(style) {
   places.events.on({
     'featureselected': onFeatureSelect,
     'featureunselected': onFeatureUnselect,
-    'moveend': onMoveEnd,
     'loadstart': onLoadStart,
     'loadend': onLoadEnd,
     'beforefeatureadded': determineDisplayState,
     'beforefeaturesadded': addDisplayStateRule
+  });
+  map.events.on({
+    'zoomend': onZoomEnd,
+    'moveend': onMoveEnd
   });
   
 }
