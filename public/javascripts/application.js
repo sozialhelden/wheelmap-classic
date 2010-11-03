@@ -57,8 +57,8 @@ function jumpTo(lon, lat, zoom) {
     map.getProjectionObject()               //to Spherical Mercator Projection
   );
   map.setCenter(lonlat, zoom);
-  $.cookie('last_lat', lonlat.lat);
-  $.cookie('last_lon', lonlat.lon);
+  $.cookie('last_lat', lat, { expires: 7, path: '/'});
+  $.cookie('last_lon', lon, { expires: 7, path: '/'});
   return false;
 }
 
@@ -141,7 +141,7 @@ function centerCoordinates() {
 
 /* Callback function when map finished zooming. */
 function onZoomEnd(){
-  $.cookie('last_zoom', map.getZoom());
+  $.cookie('last_zoom', map.getZoom(), { expires: 7, path: '/'});
 }
 
 /* Callback function when map finished panning. */
