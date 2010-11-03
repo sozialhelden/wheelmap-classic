@@ -11,8 +11,11 @@ de:
     other: "%{count} Orte"
   wheelmap:
     logo:
-      title: Wheelmap - find wheelchair accessible places
+      title: Wheelmap - Rollstuhlgerechte Orte finden
       alt: Wheelmap Logo - Rollstuhlgerechte Orte finden
+    itunes:
+      title: "Jetzt iPhone App herunterladen!"
+      alt: "AppStore Logo"
       
     what_is:
       fully_accessible: "Eine Eingangsstufe nicht höher als 7 cm ist (etwa eine Handbreite), alle Räumlichkeiten (z.B. alle Kinosäle etc.) für Rollstuhlfahrer grundsätzlich (ohne Ausnahme) befahrbar sind, und eine Rollstuhltoilette vorhanden ist."
@@ -46,7 +49,7 @@ de:
       logged_in_as: "Eingeloggt als:"
       tolk: Übersetzung
     meta:
-      description: "Rollstuhlgerechte Orte finden! - wheelmap.org"
+      description: "Stufen hier, Treppen da oder keine Behindertentoiletten - dank Wheelmap wissen Sie jetzt im Vorhinein, ob ein Museum, eine Kino oder das nächste Restaurant rollstuhlgerecht sind."
       keywords: "rollstuhl gerechte orte finden suchen markieren"
       search: Suche
       homepage: Startseite
@@ -54,6 +57,7 @@ de:
       label: '' # text left of search input field, leave empty for now
       find: 'finden'
       add_place: 'Ort hinzufügen'
+      title_add_place: 'Jetzt einen neuen Ort an dieser Stelle hinzufügen'
       placeholder: 'z.B. Sunset Boulevard San Francisco oder Brandenburger Tor Berlin'
     tagline: Wheelmap logo
     title: Wheelmap - Rollstuhlgerechte Orte finden

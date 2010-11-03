@@ -77,6 +77,9 @@ en:
     logo: 
       title: Wheelmap - find wheelchair accessible places
       alt: Wheelmap Logo - find wheelchair accessible places
+    itunes:
+      title: "Jetzt iPhone App herunterladen!"
+      alt: "AppStore Logo"
     what_is: 
       unknown_accessible: The wheelchair status is unknown
       not_accessible: The entrance step is higher than 7 cm; or a stair at the entrance; or most important localities are not accessible for wheelchair users
