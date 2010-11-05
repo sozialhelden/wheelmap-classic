@@ -65,7 +65,7 @@ $(function() {
         return false;
       },
       error: function(XMLHttpRequest, textStatus, errorThrown){
-        alert(textStatus);
+        $('#map').after('<div class="flash" id="alert">' + textStatus + '<a href="#" data="hide">x</a></div>')
         $('#update_spinner').hide();
         $('#update_button').removeAttr('disabled');
         if(window._gaq){
