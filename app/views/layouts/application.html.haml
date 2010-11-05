@@ -1,44 +1,24 @@
 !!!
 %html(lang="#{I18n.locale}")
   %head
-    %meta(charset="utf-8")
     = render :partial => 'shared/meta'
+    
+    = render :partial => 'shared/content_for_head'
+
+    = render :partial => 'shared/html5_elements'
+    
+    = render :partial => 'shared/content_for_javascript_constants'
 
     = stylesheet_link_tag 'screen', :cache => 'screens'
-    -#= stylesheet_link_tag "#{root_path}theme/default/style", :cache => true
-    - if @content_for_head
-      = yield(:head)
-    - else 
-      %title= t('header.title')
-      
-    /[if IE]
-      = render :partial => 'shared/add_html5_elements'
-      -#= javascript_include_tag 'html5'
-
-    :javascript
-      var lat = #{params[:lat] || cookies['last_lat'] || GeoCache.latlon(request.remote_addr).first};
-      var lon = #{params[:lon] || cookies['last_lon'] || GeoCache.latlon(request.remote_addr).last};
-      var zoom = #{params[:zoom] || cookies['last_zoom'] || 15};
-      var language = '#{I18n.locale}';
-      
     
-    %link{:rel=>"shortcut icon", :href=>"/favicon.ico"}
-  %body{ :class => [browser_class, ('map' if @content_for_map)] }
-    = render :partial => '/shared/header'
-    #map
+  %body(class=browser_class)
+    = render :partial => '/shared/header'      
+    #main
+      = show_flash
       = yield
-     
-    = show_flash
-      
-    %footer
-      - link_to 'http://sozialhelden.de', :id => 'sozialhelden', :title => 'sozial is\' muss!' do
-        = image_tag('sozialhelden.png', :alt => t('.banner.alt'), :width => 423, :height => 38)
         
+    = render :partial => 'shared/footer'
+    
     = render :partial => 'shared/google_tracking'
-    = javascript_include_tag 'openlayers', 'jquery', 'autocomplete', 'cookie', 'uservoice', 'icons', 'openlayers_de', 'openlayers_en', 'osm', 'application', 'map', :cache => "maps_#{I18n.locale}"
-    - if @content_for_jquery
-      = yield :jquery
-      :javascript
-        $(function(){#{jquery}})
-    - if @content_for_javascript
-      = yield :javascript
+
+    = render :partial => 'shared/content_for_javascript'

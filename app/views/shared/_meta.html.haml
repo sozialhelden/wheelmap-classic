@@ -1,5 +1,7 @@
-- if RAILS_ENV != 'production'
+- if Rails.env.production?
   %meta{:name => 'robots', :content => 'noindex, nofollow'}
+
+%meta(charset="utf-8")
 %meta{'http-equiv' => 'Content-language', :content => I18n.locale}
 %meta{'http-equiv' => 'language', :content => I18n.locale}
 %meta{:name => 'language', :content => I18n.locale}
@@ -8,6 +10,7 @@
 %meta{:name => 'copyright', :content => 'Sozialhelden e.V'}
 %meta{:name => 'robots', :content => 'follow index'}
 
--#%link{:href => search_index_url, :rel => 'search', :title => t('header.meta.search')}
+%link{:href => search_index_url, :rel => 'search', :title => t('header.meta.search')}
 %link{:href => root_url, :rel => 'home', :title => t('header.meta.homepage')}
-%link{:href => imprint_url, :rel => 'author', :title => t('header.navigation.imprint')}
+%link{:href => imprint_url, :rel => 'copyright', :title => t('header.navigation.imprint')}
+%link{:href=>"/favicon.ico", :rel=>"shortcut icon"}

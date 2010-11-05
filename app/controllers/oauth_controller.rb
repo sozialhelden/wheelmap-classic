@@ -38,7 +38,7 @@ class OauthController < ApplicationController
     current_user.oauth_token = access_token.token
     current_user.oauth_secret = access_token.secret
     current_user.save!
-    flash[:notice] = t('oauth.callback.notice')
+    flash[:notice] = t('oauth.callback.notice', :user => current_user.email)
     redirect_to root_url
   end
   

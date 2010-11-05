@@ -472,7 +472,7 @@ a:visited:hover {
 }
 
 /* line 1, ../../app/stylesheets/basics/_header.sass */
-header {
+#header {
   height: 110px;
   width: 100%;
   padding-top: 15px;
@@ -482,13 +482,13 @@ header {
   display: block;
 }
 /* line 8, ../../app/stylesheets/basics/_header.sass */
-header .links {
+#header .links {
   position: absolute;
   top: 5px;
   right: 30px;
 }
 /* line 12, ../../app/stylesheets/basics/_header.sass */
-header .links a {
+#header .links a {
   border-right: 1px #cccccc solid;
   float: left;
   line-height: 16px;
@@ -496,7 +496,7 @@ header .links a {
   padding: 0 7px;
 }
 /* line 18, ../../app/stylesheets/basics/_header.sass */
-header .links select {
+#header .links select {
   background: transparent;
   border: 0;
   margin-left: 7px;
@@ -508,21 +508,21 @@ header .links select {
   border-radius: 3px;
 }
 /* line 25, ../../app/stylesheets/basics/_header.sass */
-.gecko header .links select {
+.gecko #header .links select {
   margin-left: 3px;
 }
 /* line 27, ../../app/stylesheets/basics/_header.sass */
-.webkit header .links select {
+.webkit #header .links select {
   background: transparent url("/images/icons/select-marker.png") 98% 0 no-repeat;
   padding-right: 20px;
   -webkit-appearance: none;
 }
 /* line 32, ../../app/stylesheets/basics/_header.sass */
-header a {
+#header a {
   text-decoration: underline;
 }
 /* line 35, ../../app/stylesheets/basics/_header.sass */
-header #appstorebadge {
+#header #appstorebadge {
   margin: 5px;
   margin-left: 25px;
   float: left;
@@ -531,27 +531,27 @@ header #appstorebadge {
   width: 5px;
 }
 /* line 43, ../../app/stylesheets/basics/_header.sass */
-header #logo {
+#header #logo {
   height: 84px;
   width: 300px;
   margin-left: 30px;
   float: left;
 }
 /* line 49, ../../app/stylesheets/basics/_header.sass */
-header #searchbar {
+#header #searchbar {
   height: 28px;
   margin-left: 15px;
   margin-top: 58px;
 }
 /* line 54, ../../app/stylesheets/basics/_header.sass */
-header #searchbar label {
+#header #searchbar label {
   color: #89b152;
   float: left;
   padding: 3px 6px 3px 20px;
   width: auto;
 }
 /* line 59, ../../app/stylesheets/basics/_header.sass */
-header #searchbar input {
+#header #searchbar input {
   border-right: 0;
   color: #89b152;
   float: left;
@@ -576,15 +576,15 @@ header #searchbar input {
   border-bottom-right-radius: 0;
 }
 /* line 68, ../../app/stylesheets/basics/_header.sass */
-header #searchbar input:focus {
+#header #searchbar input:focus {
   background: #f5f8f0;
 }
 /* line 70, ../../app/stylesheets/basics/_header.sass */
-header #searchbar input.ac_loading {
+#header #searchbar input.ac_loading {
   background: #f5f8f0 url("/images/spinner-small.gif") no-repeat right center;
 }
 /* line 73, ../../app/stylesheets/basics/_header.sass */
-header #searchbar button {
+#header #searchbar button {
   float: left;
   background-color: #a1c175;
   border: 1px solid #95b963;
@@ -627,7 +627,7 @@ header #searchbar button {
   height: 28px;
 }
 /* line 23, ../../app/stylesheets/basics/_buttons.sass */
-header #searchbar button:hover {
+#header #searchbar button:hover {
   background-color: #95b963;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aecd82), color-stop(0.5, #95b963), color-stop(1, #7da743));
   background-image: -moz-linear-gradient(center bottom, #7da743 0%, #95b963 50%, #aecd82 100%);
@@ -636,7 +636,7 @@ header #searchbar button:hover {
   border-color: #95b963 #89b152 #6e9040;
 }
 /* line 26, ../../app/stylesheets/basics/_buttons.sass */
-header #searchbar button:active {
+#header #searchbar button:active {
   background-color: #7ca148;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #96bf5e), color-stop(0.5, #7ca148), color-stop(1, #618234));
   background-image: -moz-linear-gradient(center bottom, #618234 0%, #7ca148 50%, #96bf5e 100%);
@@ -645,13 +645,13 @@ header #searchbar button:active {
   border-color: #89b152 #617e39 #465b29;
 }
 /* line 80, ../../app/stylesheets/basics/_header.sass */
-header #searchbar .or {
+#header #searchbar .or {
   color: #c26a0f;
   float: left;
   padding: 5px 10px;
 }
 /* line 84, ../../app/stylesheets/basics/_header.sass */
-header #searchbar .add-place {
+#header #searchbar .add-place {
   float: left;
   background-color: #f19d46;
   border: 1px solid #ef902e;
@@ -680,7 +680,7 @@ header #searchbar .add-place {
   text-decoration: none;
 }
 /* line 23, ../../app/stylesheets/basics/_buttons.sass */
-header #searchbar .add-place:hover {
+#header #searchbar .add-place:hover {
   background-color: #ef902e;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f7aa59), color-stop(0.5, #ef902e), color-stop(1, #e0770b));
   background-image: -moz-linear-gradient(center bottom, #e0770b 0%, #ef902e 50%, #f7aa59 100%);
@@ -689,7 +689,7 @@ header #searchbar .add-place:hover {
   border-color: #ef902e #ed8417 #c26a0f;
 }
 /* line 26, ../../app/stylesheets/basics/_buttons.sass */
-header #searchbar .add-place:active {
+#header #searchbar .add-place:active {
   background-color: #da7710;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f59129), color-stop(0.5, #da7710), color-stop(1, #af5d08));
   background-image: -moz-linear-gradient(center bottom, #af5d08 0%, #da7710 50%, #f59129 100%);
@@ -698,7 +698,7 @@ header #searchbar .add-place:active {
   border-color: #ed8417 #ab5d0d #7b4309;
 }
 /* line 90, ../../app/stylesheets/basics/_header.sass */
-header #searchbar .or-add-place {
+#header #searchbar .or-add-place {
   float: left;
 }
 
@@ -734,7 +734,6 @@ nav {
   top: -15px;
   right: 20px;
   float: right;
-  display: block;
 }
 
 /* line 6, ../../app/stylesheets/basics/_forms.sass */
