@@ -86,6 +86,8 @@
   %title= t('.header.title', :node => @node.name)
 
 - content_for :javascript do
+  = render :partial => 'shared/google_event_tracking'
+
   :javascript
 
     var lon = #{@node.lon};
