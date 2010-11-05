@@ -1326,12 +1326,7 @@ table#accessibility td.leisure {
 .flash {
   margin-bottom: 20px;
   padding: 10px;
-  color: #536c31;
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
-  background-color: #d1e1bb;
-  border: 1px dashed #c5d9aa;
-  border-top-color: #adc987;
-  border-bottom-color: #f5f8f0;
   text-align: center;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1343,11 +1338,28 @@ table#accessibility td.leisure {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 19, ../../app/stylesheets/partials/nodes/flash.sass */
+/* line 14, ../../app/stylesheets/partials/nodes/flash.sass */
+.flash#notice {
+  background-color: #a4d561;
+  color: #536c31;
+  border: 1px solid #95b963;
+  border-top-color: #7ca148;
+  border-bottom-color: #c5d9aa;
+}
+/* line 22, ../../app/stylesheets/partials/nodes/flash.sass */
+.flash#alert {
+  background-color: #ff9d38;
+  color: #93500b;
+  border: 1px solid #ef902e;
+  border-top-color: #da7710;
+  border-bottom-color: #f6c38d;
+}
+/* line 29, ../../app/stylesheets/partials/nodes/flash.sass */
 .flash a {
   position: absolute;
   right: 5px;
   top: 0px;
+  color: black;
 }
 
 /* line 2, ../../app/stylesheets/partials/map/_imprint.sass */
