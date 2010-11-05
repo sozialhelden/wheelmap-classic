@@ -14,8 +14,6 @@ class NodesController < ApplicationController
   rescue_from OpenStreetMap::Unavailable, :with => :timeout
   rescue_from Timeout::Error,             :with => :timeout
 
-  layout 'nodes'
-  
   def index
     @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f)
     @places = Poi.within_bbox(@left, @bottom, @right, @top).limit(300)

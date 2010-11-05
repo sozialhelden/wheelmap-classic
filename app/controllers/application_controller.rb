@@ -28,6 +28,11 @@ class ApplicationController < ActionController::Base
     root_path
   end
   
+  def stored_location_for(resource_or_scope)
+    location = super
+    return location unless location =~ /geojson/
+  end
+
   def wheelmap_visitor
     User.find_by_email('visitor@wheelmap.org')
   end
