@@ -6,3 +6,6 @@
   #counter{:class => cookies['minimized_counter'] == 'true' ? 'minimized' : ''}
     = render :partial => 'home/tag_counter'
   #spinner
+
+-content_for :javascript do
+  = render :partial => 'shared/google_event_tracking'
