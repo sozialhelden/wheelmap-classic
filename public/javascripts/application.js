@@ -407,14 +407,23 @@ function createDraggableLayer(style, lon, lat) {
   draggable_layer.redraw();
 }
 
+function runEffect(){
+  setTimeout(function(){
+      var selectedEffect = 'blind';
+      var options = {};
+      $(".flash").fadeOut();
+   }, 5000);
+};
+
+
 
 $(function() {
-  $('a[data-show]').click(function() {
-    $($(this).attr('data-show')).fadeIn();
+  $('a[data=show]').live('click', function() {
+    $(this).parent().fadeIn();
     return false;
   });
-  $('a[data-hide]').click(function() {
-    $($(this).attr('data-hide')).fadeOut();
+  $('a[data=hide]').live('click', function() {
+    $(this).parent().fadeOut();
     return false;
   });
   $("#search").autocomplete('/search.js', {

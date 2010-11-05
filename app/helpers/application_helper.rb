@@ -25,7 +25,12 @@ module ApplicationHelper
   def show_flash
     html = ''
     [:notice,:error,:alert].each do |type|
-      html << content_tag(:div, flash[type], :class => type, :id => 'flash') unless flash[type].blank?
+      unless flash[type].blank?
+        html << "<div id='#{type}' class='flash'>"
+        html << flash[type]
+        html << "<a data='hide' href='#'>x</a>"
+        html << "</div>"
+      end 
     end
     html
   end
