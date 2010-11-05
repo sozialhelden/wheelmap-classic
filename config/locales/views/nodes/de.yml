@@ -35,7 +35,7 @@ de:
       
         
     update_wheelchair: 
-      successfull: 'Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert'
+      successfull: 'Der Status des Ortes "%{name}" wurde in "rollstuhlgerecht: %{status}" geändert und wird demnächst aktualisiert.'
 
     errors:
       not_found: Leider konnte die Seite nicht gefunden werden

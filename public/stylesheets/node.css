@@ -1323,7 +1323,7 @@ table#accessibility td.leisure {
 }
 
 /* line 1, ../../app/stylesheets/partials/nodes/flash.sass */
-#flash {
+.flash {
   margin-bottom: 20px;
   padding: 10px;
   color: #536c31;
@@ -1337,6 +1337,17 @@ table#accessibility td.leisure {
   -webkit-border-radius: 3px;
   -khtml-border-radius: 3px;
   border-radius: 3px;
+  position: relative;
+  top: 10px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 19, ../../app/stylesheets/partials/nodes/flash.sass */
+.flash a {
+  position: absolute;
+  right: 5px;
+  top: 0px;
 }
 
 /* line 2, ../../app/stylesheets/partials/map/_imprint.sass */

@@ -35,7 +35,7 @@ en:
       
              
     update_wheelchair:
-      successfull: 'Thank you, the submission was saved successfully and will be online shortly.'
+      successfull: 'The status of the place "%{name}" has been changed to "%{status}" and will be online shortly.'
 
     errors:
       not_found: "Sorry, page not found."
