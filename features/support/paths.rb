@@ -30,6 +30,12 @@ module NavigationHelpers
       arguments = CGI.escape("/oauth/authorize?oauth_token=#{session[:request_token].token}")
       "http://api06.dev.openstreetmap.org/user/new?referer=#{arguments}"
     
+    when /the nodes page/
+      nodes_path
+      
+    when /the nodes javascript page/
+      nodes_path()
+    
     when /the new node page/
       new_node_path
 
