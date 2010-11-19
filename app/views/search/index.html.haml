@@ -1,10 +1,10 @@
 %h2
-  =t('.search.for', :q => params[:q])
+  =h t('.search.for', :q => params[:q])
 - unless @result.empty?
   %ul#searchresult
     - @result.each do |entry|
       %li
-        = link_to entry['display_name'], root_path(:a => :b, :lat => entry['lat'], :lon => entry['lon'], :zoom => 17, :q => entry['display_name'])
+        = link_to "#{entry['display_name']}", root_path(:a => :b, :lat => entry['lat'], :lon => entry['lon'], :zoom => 14, :q => entry['display_name'])
 - else
   %p
     =t('.search.not_found')
