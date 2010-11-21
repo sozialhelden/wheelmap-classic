@@ -246,6 +246,7 @@ de:
         less_than_or_equal_to: "muss kleiner oder gleich {{count}} sein"
         odd: "muss ungerade sein"
         even: "muss gerade sein"
+        record_invalid: "ist nicht gültig"
       models:
         user_session: 
           email: E-Mail-Adresse

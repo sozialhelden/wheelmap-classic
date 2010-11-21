@@ -292,10 +292,9 @@ function popup_form(feature){
 
 function popup_headline(feature){
  var html = '';
- html += '<a href="' + feature.attributes.url + '">';
  html += '<h2 class="' + feature.attributes.type + '">';
  html += feature.attributes.headline;
- html += '</h2></a>';
+ html += '</h2>';
  return html;
 }
 
@@ -307,6 +306,14 @@ function popup_address(feature){
   return html;
 }
 
+function popup_more_link(feature){
+  var html = '';
+  html += '<a href="' + feature.attributes.url + '">';
+  html += OpenLayers.Lang.translate('more_information');
+  html += '</a>';
+  return html;
+}
+
 function onFeatureSelect(evt){
   removeAllPopups();
   feature = evt.feature;
@@ -315,6 +322,7 @@ function onFeatureSelect(evt){
                            null,
                            popup_headline(feature) +
                            popup_address(feature) +
+                           popup_more_link(feature) +
                            popup_form(feature),
                            null, true, onPopupClose);
   feature.popup = popup;
@@ -326,7 +334,8 @@ function onFeatureUnselect(evt) {
   removeAllPopups();
 }
 
-function createPlacesLayer(style) { 
+function createPlacesLayer(style) {
+  document.namespaces;
   places = new OpenLayers.Layer.Vector(
     "Places ",
     {

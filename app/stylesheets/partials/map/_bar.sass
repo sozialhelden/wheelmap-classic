@@ -15,46 +15,29 @@
   border-color: $color
 
 .state-yes
-  background: sprite-image("icons/state-yes.png") no-repeat
+  background: url("/images/marker-yes.png") no-repeat
   color: $yes
-  line-height: 20px
-  margin-bottom: 3px
-  padding: 3px 0 3px 22px
-  .webkit & input
-    border: 1px solid
-    height: 14px
-    margin: 0
-    position: relative
-    top: 2px
-    width: 14px
-    -webkit-appearance: none
-    +checkbox-color($yes)
-    +border-radius(3px)
-    +box-shadow(rgba(black, 0.1), 0, 1px, 2px)
-    &:checked:before
-      content: "✔"
-      margin: -4px 1px
-      position: absolute
-      z-index: 2
-      +text-shadow(rgba(white, 0.5), 0, 1px, 1px)
+  line-height: 22px
+  margin-bottom: 0px
+  padding: 0px 0px 8px 28px
 
 .state-limited
   @extend .state-yes
-  background: sprite-image("icons/state-limited.png") no-repeat
+  background: url("/images/marker-limited.png") no-repeat
   color: $limited
   .webkit & input
     +checkbox-color($limited)
 
 .state-no
   @extend .state-yes
-  background: sprite-image("icons/state-no.png") no-repeat
+  background: url("/images/marker-no.png") no-repeat
   color: $no
   .webkit & input
     +checkbox-color($no)
 
 .state-unknown
   @extend .state-yes
-  background: sprite-image("icons/state-unknown.png") no-repeat
+  background: url("/images/marker-unknown.png") no-repeat
   color: $unknown
   .webkit & input
     +checkbox-color($unknown)
