@@ -38,6 +38,7 @@ de:
       successfull: 'Der Status des Ortes "%{name}" wurde in "rollstuhlgerecht: %{status}" geändert und wird demnächst aktualisiert.'
 
     errors:
+      default: "Oops, das ist was schief gegangen. Wir wurden aber darüber informiert!"
       not_found: Leider konnte die Seite nicht gefunden werden
       not_available: Leider steht diese Seite zur Zeit nicht zur Verfügung
       not_existent: Leider ist dieser Ort nicht mehr da

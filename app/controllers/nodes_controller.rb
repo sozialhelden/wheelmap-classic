@@ -16,7 +16,7 @@ class NodesController < ApplicationController
 
   def index
     @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f)
-    @places = Poi.within_bbox(@left, @bottom, @right, @top).limit(300)
+    @places = Poi.within_bbox(@left, @bottom, @right, @top).limit(200)
     
     respond_to do |wants|  
       wants.js{render :json => @places }

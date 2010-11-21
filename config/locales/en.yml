@@ -62,6 +62,7 @@ en:
         too_long: is too long (maximum is {{count}} characters)
         not_a_number: is not a number
         inclusion: is not included in the list
+        record_invalid: "is invalid"
       template: 
         body: "There were problems with the following fields:"
         header: 
