@@ -45,6 +45,6 @@ class OauthController < ApplicationController
   protected
   def unauthorized
     @message = I18n.t('nodes.errors.not_authorized')
-    render :action => 'error', :status => 400
+    render :template => 'shared/error', :status => 400
   end
 end
