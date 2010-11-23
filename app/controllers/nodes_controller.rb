@@ -12,22 +12,22 @@ class NodesController < ApplicationController
   rescue_from OpenStreetMap::NotFound,    :with => :not_found
   rescue_from OpenStreetMap::Gone,        :with => :gone
   rescue_from OpenStreetMap::Unavailable, :with => :timeout
-  rescue_from Timeout::Error,             :with => :timeout
 
   def index
     @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f)
     @places = Poi.within_bbox(@left, @bottom, @right, @top).limit(200)
     
     respond_to do |wants|  
-      wants.js{render :json => @places }
-      wants.json{ render :json => @places }
-      wants.geojson{ render :content_type => "application/json; subtype=geojson; charset=utf-8" }
+      wants.js{       render :json => @places }
+      wants.json{     render :json => @places }
+      wants.geojson{  render :content_type => "application/json; subtype=geojson; charset=utf-8" }
       wants.html{ redirect_to root_path }
     end
   end
   
   def show
-    @node = OpenStreetMap.get_node(params[:id])
+    # @node = OpenStreetMap.get_node(params[:id])
+    @node = Poi.find(params[:id])
   end
   
   def update_wheelchair
@@ -95,12 +95,12 @@ class NodesController < ApplicationController
     
   def gone(exception)
     @message = I18n.t('nodes.errors.not_existent')
-    render :action => 'error', :status => 410
+    render :template => 'shared/error', :status => 410
   end
   
   def not_found(exception)
     @message = I18n.t('nodes.errors.not_found')
-    render :action => 'error', :status => 404
+    render :template => 'shared/error', :status => 404
   end
   
   def set_default_user

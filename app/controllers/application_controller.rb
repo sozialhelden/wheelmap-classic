@@ -8,7 +8,8 @@ class ApplicationController < ActionController::Base
   before_filter :set_last_location
   
   rescue_from Errno::ETIMEDOUT, :with => :timeout
-  rescue_from Exception, :with => :error
+  rescue_from Timeout::Error,   :with => :timeout
+  rescue_from Exception,        :with => :error
 
   def set_locale
     I18n.locale = extract_locale_from_subdomain
@@ -58,12 +59,12 @@ class ApplicationController < ActionController::Base
   
   def timeout(exception)
     @message = I18n.t('nodes.errors.not_available')
-    render :action => 'error', :status => 503
+    render :template => 'shared/error', :status => 503
   end
   
   def error(exception)
     @message = I18n.t('nodes.errors.default')
-    render :action => 'error', :status => 400
+    render :template => 'shared/error', :status => 400
   end
   
   
