@@ -13,15 +13,28 @@ class NodesController < ApplicationController
   rescue_from OpenStreetMap::Gone,        :with => :gone
   rescue_from OpenStreetMap::Unavailable, :with => :timeout
 
+  caches_action :index, :if => lambda {|c| c.request.format.sitemap? },
+                        :expires_in => 1.day,
+                        :cache_path => Proc.new {|c|
+                           params = c.params
+                           params.delete(:bbox)
+                           params
+                        }
+
+  caches_action :sitemap, :expires_in => 1.day
+
   def index
-    @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f)
-    @places = Poi.within_bbox(@left, @bottom, @right, @top).limit(200)
+    @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f) if params[:bbox]
+    @places = Poi.within_bbox(@left, @bottom, @right, @top).limit(200) if @left
     
     respond_to do |wants|  
       wants.js{       render :json => @places }
       wants.json{     render :json => @places }
       wants.geojson{  render :content_type => "application/json; subtype=geojson; charset=utf-8" }
       wants.html{ redirect_to root_path }
+      wants.sitemap{
+        @nodes = Poi.paginate(:page => params[:page], :per_page => 500)
+      }
     end
   end
   
@@ -87,7 +100,13 @@ class NodesController < ApplicationController
   
   def edit
     @node = OpenStreetMap.get_node(params[:id])
-    RAILS_DEFAULT_LOGGER.debug("UID: #{@node.uid}")
+  end
+  
+  def sitemap
+    respond_to do |wants|
+      @count = Poi.count
+      wants.xml{ render }
+    end
   end
 
   # Before filter

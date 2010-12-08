@@ -9,10 +9,12 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :search, :only => :index
 
   map.resources :feeds, :only => :index
+  
+  map.resources :sitemap, :only => :index
 
   map.resources :oauth, :only => [:new, :index], :collection => { :revoke => :get, :callback => :get, :osm_register => :get }
 
-  map.resources :nodes, :except => :destroy, :member => {:update_wheelchair => :put}
+  map.resources :nodes, :except => :destroy, :member => {:update_wheelchair => :put}, :collection => {:sitemap => :get}
 
   map.resources :users, :as => 'profile'
 
