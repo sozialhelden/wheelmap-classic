@@ -1,29 +1,58 @@
-ActionController::Routing::Routes.draw do |map|
+Wheelmap::Application.routes.draw do
+  # The priority is based upon order of creation:
+  # first created -> highest priority.
 
-  map.root :controller => 'home', :action => 'index'
-  
-  map.devise_for :admins
+  # Sample of regular route:
+  #   match 'products/:id' => 'catalog#view'
+  # Keep in mind you can assign values other than :controller and :action
 
-  map.devise_for :users
+  # Sample of named route:
+  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  # This route can be invoked with purchase_url(:id => product.id)
 
-  map.resources :search, :only => :index
+  # Sample resource route (maps HTTP verbs to controller actions automatically):
+  #   resources :products
 
-  map.resources :feeds, :only => :index
-  
-  map.resources :sitemap, :only => :index
+  # Sample resource route with options:
+  #   resources :products do
+  #     member do
+  #       get 'short'
+  #       post 'toggle'
+  #     end
+  #
+  #     collection do
+  #       get 'sold'
+  #     end
+  #   end
 
-  map.resources :oauth, :only => [:new, :index], :collection => { :revoke => :get, :callback => :get, :osm_register => :get }
+  # Sample resource route with sub-resources:
+  #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
+  #   end
 
-  map.resources :nodes, :except => :destroy, :member => {:update_wheelchair => :put}, :collection => {:sitemap => :get}
+  # Sample resource route with more complex sub-resources
+  #   resources :products do
+  #     resources :comments
+  #     resources :sales do
+  #       get 'recent', :on => :collection
+  #     end
+  #   end
 
-  map.resources :users, :as => 'profile'
+  # Sample resource route within a namespace:
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  #     resources :products
+  #   end
 
-  map.resources :users, :collection => {:authenticate => :post}
+  # You can have the root of your site routed with "root"
+  # just remember to delete public/index.html.
+  # root :to => "welcome#index"
 
-  map.resources :user, :only => :new # Fake route for redirection to OSM register page
+  # See how all your routes lay out with "rake routes"
 
-  map.imprint '/imprint', :controller => 'pages', :action => 'show', :id => 'imprint'
-
-  #map.connect ':controller/:action/:id'
-  #map.connect ':controller/:action/:id.:format'
+  # This is a legacy wild controller route that's not recommended for RESTful applications.
+  # Note: This route will make all actions in every controller accessible via GET requests.
+  # match ':controller(/:action(/:id(.:format)))'
 end

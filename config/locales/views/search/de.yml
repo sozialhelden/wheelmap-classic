@@ -1,6 +1,0 @@
-de:
-  search:
-    index:
-      search:
-        for: 'Suche nach "{{q}}"'
-        not_found: "Es wurden keine Orte gefunden!"
