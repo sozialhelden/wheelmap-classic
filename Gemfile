@@ -5,7 +5,8 @@ group :default do
   gem 'mysql2'
   gem 'spatial_adapter', :git => "git://github.com/cwise/spatial_adapter.git" 
   gem 'httparty'
-  gem 'oauth'
+  gem 'oauth', :git => 'git://github.com/Bertg/oauth.git'
+  gem 'devise'
 end
 
 group :test, :development do
