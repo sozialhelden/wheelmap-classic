@@ -1,5 +1,0 @@
-- %w{yes limited no unknown}.each do |wheelchairstatus|
-  - if options_for_wheelchair.to_s == wheelchairstatus.to_s
-    %option{:label => t("wheelchairstatus.#{wheelchairstatus}"), :value => wheelchairstatus, :selected => 'selected', :class => "wheelchairstatus_#{wheelchairstatus}"}=t("wheelchairstatus.#{wheelchairstatus}")
-  - else
-    %option{:label => t("wheelchairstatus.#{wheelchairstatus}"), :value => wheelchairstatus, :class => "wheelchairstatus_#{wheelchairstatus}" }>=t("wheelchairstatus.#{wheelchairstatus}")

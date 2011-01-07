@@ -1,8 +1,0 @@
-= minimize_overlay('categories')
-  
-%h4= t('home.index.filter.category')
-%ul#amenities
-  - Amenities.keys.sort_by(&:to_s).each do |amenity_group|
-    %li{:class => amenity_group}
-      = check_box_tag("category-#{amenity_group}", 1, true)
-      = label_tag "category-#{amenity_group}", t("poi.category.#{amenity_group}")

@@ -1,5 +1,0 @@
-set :application, 'staging_wheelmap_org'
-set :db_names,    :staging => 'c15wm_staging'
-set :db_user,     'c15wm_staging'
-set :db_password, 'gdf97634dLFS'
-set :rails_env,   'staging'
