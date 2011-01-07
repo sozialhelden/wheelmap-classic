@@ -3,6 +3,9 @@ source 'http://rubygems.org'
 group :default do
   gem 'rails', '3.0.3'
   gem 'mysql2'
+  gem 'spatial_adapter', :git => "git://github.com/cwise/spatial_adapter.git" 
+  gem 'httparty'
+  gem 'oauth'
 end
 
 group :test, :development do
@@ -11,6 +14,8 @@ end
 
 group :test do
   gem 'rspec'
+  gem 'fakeweb'
+  gem 'factory_girl_rails'
 end
 
 # gem 'capistrano'

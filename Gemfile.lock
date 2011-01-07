@@ -1,6 +1,15 @@
+GIT
+  remote: git://github.com/cwise/spatial_adapter.git
+  revision: b6a083ca0b1ecc4bed718ec9fc0725c270dbf2ac
+  specs:
+    spatial_adapter (1.1.2)
+      GeoRuby (>= 1.3.0)
+      activerecord (>= 2.2.2)
+
 GEM
   remote: http://rubygems.org/
   specs:
+    GeoRuby (1.3.4)
     abstract (1.0.0)
     actionmailer (3.0.3)
       actionpack (= 3.0.3)
@@ -30,9 +39,17 @@ GEM
     activesupport (3.0.3)
     arel (2.0.6)
     builder (2.1.2)
+    crack (0.1.8)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    factory_girl (1.3.2)
+    factory_girl_rails (1.0.1)
+      factory_girl (~> 1.3)
+      railties (>= 3.0.0)
+    fakeweb (1.3.0)
+    httparty (0.6.1)
+      crack (= 0.1.8)
     i18n (0.5.0)
     mail (2.2.14)
       activesupport (>= 2.3.6)
@@ -41,6 +58,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     mysql2 (0.2.6)
+    oauth (0.4.4)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -83,7 +101,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  factory_girl_rails
+  fakeweb
+  httparty
   mysql2
+  oauth
   rails (= 3.0.3)
   rspec
   rspec-rails (~> 2.1)
+  spatial_adapter!
