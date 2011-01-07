@@ -69,7 +69,7 @@ describe 'OpenStreetMap::Node' do
   end
 
   it "should render proper json" do
-    @json = JSON.parse(@node.to_json)
+    @json = ActiveSupport::JSON.decode(@node.to_json)
     @json['wheelchair'].should == 'yes'
   end
   
