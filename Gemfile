@@ -7,6 +7,9 @@ group :default do
   gem 'httparty'
   gem 'oauth', :git => 'git://github.com/Bertg/oauth.git'
   gem 'devise'
+  gem 'compass', '~>0.10.6'
+  gem 'redgreengrid'
+  gem 'lemonade'
 end
 
 group :test, :development do
