@@ -38,5 +38,11 @@ module Wheelmap
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password, :password_confirmation, :old_password, :key, :secret]
+    
+    # Use rspec for test generation instead of test:unit
+    config.generators do |g|
+      g.test_framework :rspec
+    end
+    
   end
 end

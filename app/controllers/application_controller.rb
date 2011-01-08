@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   
   rescue_from Errno::ETIMEDOUT, :with => :timeout
   rescue_from Timeout::Error,   :with => :timeout
-  rescue_from Exception,        :with => :error
+
 
   def set_locale
     I18n.locale = extract_locale_from_subdomain
