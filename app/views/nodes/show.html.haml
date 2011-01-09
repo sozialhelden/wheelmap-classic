@@ -1,0 +1,117 @@
+#map_wrapper
+  #minimap
+  = link_to t('.link.large_map'), root_path, :onclick => "location=permalink('#{root_path}');return false;", :class => 'magnify', :id => 'show-on-large-map'
+
+
+  
+%h1
+  =@node.name
+  %br
+  %span.addition
+    = link_to t('.link.edit_node'), edit_node_path(@node)
+
+%table#accessibility{:class => "#{dom_class(@node)}"}
+  %tr
+    
+    %th=t('formtastic.labels.wheelchair')
+    %td= t("wheelchairstatus.#{@node.wheelchair}")
+      
+      
+  -if @node.wheelchair_description
+    %tr
+      %th=t('formtastic.labels.wheelchair_description')
+      %td{:colspan => 2}= @node.wheelchair_description
+
+  %tr
+    %th=t('formtastic.labels.category')
+    
+    - @node.category
+    %td{:class => @node.category}
+      - if @node.category
+        = t("poi.category.#{@node.category}")
+      - else
+        &nbsp;
+
+  %tr
+    %th=t('formtastic.labels.type')
+    %td
+      - if @node.type
+        = t("poi.name.#{@node.category}.#{@node.type}")
+      -else
+        &nbsp;
+        
+  - if @node.tags['addr:street'] || @node.tags['addr:housenumber']
+    %tr
+      %th=t('formtastic.labels.street')
+      %td
+        =@node.tags['addr:street']
+        =@node.tags['addr:housenumber'] || '&nbsp;'
+      
+      
+  - if @node.tags['addr:postcode']
+    %tr
+      %th=t('formtastic.labels.postcode')
+      %td=@node.tags['addr:postcode'] || '&nbsp;'
+
+  - if @node.tags['addr:city']
+    %tr
+      %th=t('formtastic.labels.city')
+      %td=@node.tags['addr:city'] || '&nbsp;'
+
+  - if @node.tags['website']
+    %tr
+      %th=t('formtastic.labels.website')
+      %td
+        -if @node.tags['website']
+          %a{:href => @node.tags['website'], :rel => 'nofollow', :target => '_blank'}>=@node.tags['website']
+
+  - if @node.tags['phone']
+    %tr
+      %th=t('formtastic.labels.phone')
+      %td
+        =@node.tags['phone'] || '&nbsp;'
+
+= javascript_include_tag "http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=#{GoogleConfig.api_key}"
+
+.clear
+%hr
+
+%h2 Informationen zu diesem Ort aus anderen Quellen
+%h3 Google Streetview:
+
+%div#streetview{:name => "pano", :style => "overflow: hidden; margin-bottom: 10px; width: 980px; height: 250px;"}
+  %p#streetview_info
+
+- content_for :head do
+  %title= t('.header.title', :node => @node.name)
+  
+- content_for :javascript_constants do
+  :javascript
+    var lon = #{@node.lon};
+    var lat = #{@node.lat};
+    var zoom = #{params[:zoom] || 18};
+    var language = '#{I18n.locale}';
+
+- content_for :javascript do
+  = render :partial => 'shared/google_event_tracking'
+
+  :javascript
+    drawmap(defaultControls(), 'minimap');
+    jumpTo(#{@node.lon}, #{@node.lat}, 18);
+    createDraggableLayer(placesStyle(),#{@node.lon}, #{@node.lat});    
+    
+    var myPano;
+    
+    var point = new GLatLng(#{@node.lat}, #{@node.lon});
+    panoramaOptions = { latlng:point };
+    myPano = new GStreetviewPanorama(document.getElementById("streetview"), panoramaOptions);
+    GEvent.addListener(myPano, "error", handleNoFlash);
+    
+    function handleNoFlash(errorCode) {
+      if (errorCode == 600) {
+        $("#streetview").attr('style', 'height: 30px;');
+        $("#streetview_info").text('Ist für diesen Ort leider nicht verfügbar');
+        return;
+      }
+    }
+    

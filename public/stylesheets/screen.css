@@ -1481,7 +1481,7 @@ image[width='16'] {
 
 /* line 1, ../../app/stylesheets/partials/map/_spinner.sass */
 #spinner {
-  background: url('/images/spinner.gif') no-repeat center;
+  background: url('/images/spinner.gif?1294606377') no-repeat center;
   background-color: #6b7b55;
   background-color: rgba(107, 123, 85, 0.8);
   left: 50%;
