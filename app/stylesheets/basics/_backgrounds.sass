@@ -1,0 +1,24 @@
+$images-url: unquote("/images/")
+
+=image($url, $x: nil, $y: nil)
+  background-image: unquote("url(") + $images-url + $url + unquote(")")
+  @if $x != nil
+    background-position: $x $y
+
+=vertical-gradient($color, $color-or-percentage: 10%, $ie: true, $start-pos: 0, $end-pos: 1)
+  $middle-pos: ($start-pos + $end-pos) / 2
+  $start-color: black
+  $end-color: white
+  @if $color-or-percentage * 0 == black
+    $end-color: $color-or-percentage
+    $start-color: $color
+    $color: mix($start-color, $end-color, 50%)
+  @else
+    $end-color: darken(saturate($color, $color-or-percentage / 2), $color-or-percentage)
+    $start-color: lighten(saturate($color, $color-or-percentage / 2), $color-or-percentage)
+  background-color: $color
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop($start-pos, $start-color), color-stop($middle-pos, $color), color-stop($end-pos, $end-color))
+  background-image: -moz-linear-gradient(center bottom, $end-color percentage($start-pos), $color percentage($middle-pos), $start-color percentage($end-pos))
+  background-image: linear-gradient(center bottom, $end-color percentage($start-pos), $color percentage($middle-pos), $start-color percentage($end-pos))
+  @if $ie
+    filter: unquote("progid:DXImageTransform.Microsoft.Gradient(endColorstr='") + $end-color + unquote("', startColorstr='") + $start-color + unquote("', gradientType='0')")

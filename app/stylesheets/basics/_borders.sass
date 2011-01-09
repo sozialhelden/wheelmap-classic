@@ -1,0 +1,33 @@
+=border-radius($size: 6px, $vertical: both, $horizontal: both)
+  @if $vertical == "both"
+    -moz-border-radius: $size
+    -webkit-border-radius: $size
+    -khtml-border-radius: $size
+    border-radius: $size
+  @else
+    -moz-border-radius-#{$vertical}#{$horizontal}: $size
+    -webkit-border-#{$vertical}-#{$horizontal}-radius: $size
+    -khtml-border-#{$vertical}-#{$horizontal}-radius: $size
+    border-#{$vertical}-#{$horizontal}-radius: $size
+
+=border-top-radius($size: 6px)
+  +border-radius($size, top, left)
+  +border-radius($size, top, right)
+
+=border-bottom-radius($size: 6px)
+  +border-radius($size, bottom, left)
+  +border-radius($size, bottom, right)
+
+=border-left-radius($size: 6px)
+  +border-radius($size, bottom, left)
+  +border-radius($size, top, left)
+
+=border-right-radius($size: 6px)
+  +border-radius($size, top, right)
+  +border-radius($size, bottom, right)
+
+=border($where: all, $color: $border-color)
+  @if $where == "all"
+    border: unquote("1px ") + $color + unquote(" solid")
+  @else
+    border-#{$where}: unquote("1px ") + $color + unquote(" solid")

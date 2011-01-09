@@ -1,0 +1,44 @@
+#bar
+  form
+    text-align: center
+  
+    input
+      $background: desaturate(lighten($green, 40%), 20%)
+      $border: desaturate($green, 30%)
+      background: $background inline-image("search.png") 3px 2px no-repeat
+      border: 1px $border solid
+      height: 14px
+      line-height: 14px
+      padding: 2px 9px 2px 21px
+      width: 246px
+      +border-radius(10px)
+      -moz-box-shadow: rgba(black, 0.2) 0 1px 2px inset, white 0 1px 1px
+      -webkit-box-shadow: rgba(black, 0.2) 0 1px 2px inset, white 0 1px 1px
+      box-shadow: rgba(black, 0.2) 0 1px 2px inset, white 0 1px 1px
+      
+      &:focus
+        background-color: darken($background, 5%)
+        border-color: darken($border, 10%)
+        outline: none
+      
+    ol
+      padding: 10px 0
+      text-align: left
+      
+      &.loading
+        background: inline-image("spinner-small.gif") no-repeat center
+        height: 20px
+    
+    li
+      a
+        background-image: image-url("icons/status-offline.png")
+        background-position: 3px 50%
+        color: $link-color
+        display: block
+        padding: 0 4px 0 24px
+        white-space: nowrap
+        +ellipsis
+        
+      &:first-child
+        a
+          border-top: 0

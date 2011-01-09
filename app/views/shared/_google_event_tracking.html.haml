@@ -1,0 +1,3 @@
+- if Rails.env.production? && flash[:track]
+  :javascript
+    _gaq.push(['_trackEvent', #{flash[:track]}]);

@@ -1,0 +1,21 @@
+body,
+html
+  background: desaturate(lighten($green, 25%), 35%)
+  outline: 0
+
+body
+  +vertical-gradient(white, desaturate(lighten($green, 25%), 35%))
+
+.help
+  cursor: help
+
+
+#main
+  background: white
+  border: 1px lighten($border-color, 50%) solid
+  margin: 0 auto 50px
+  padding: 19px
+  width: 980px
+  +border-radius(15px)
+  +clearfix
+  +box-shadow(rgba(black, 0.1), 0, 2px, 15px)

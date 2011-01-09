@@ -1,0 +1,17 @@
+// MIXINS
+
+=centered-box
+  margin: 0 auto
+
+=ellipsis($no-wrap: true)
+  @if $no-wrap
+    white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  -o-text-overflow: ellipsis
+  -ms-text-overflow: ellipsis
+
+// STYLES
+
+body
+  background: white

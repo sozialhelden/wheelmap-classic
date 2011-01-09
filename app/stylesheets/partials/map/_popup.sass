@@ -1,0 +1,82 @@
+$dt-width: 90px
+$gap: 10px
+$dd-width: 180px
+
+.olFramedCloudPopupContent
+  width: $dt-width + $gap + $dd-width
+  overflow: hidden
+  
+  a
+    overflow: hidden
+    white-space: nowrap
+    font-size: 11px
+    font-weight: normal
+    text-align: right
+    display: block
+
+  h2
+    background-position: 0 2px
+    padding-left: 20px
+    
+  address
+    padding-left: 20px
+
+  input
+    float: left
+    margin-right: 10px
+
+  #update_button
+    position: static
+    float: right
+    
+  #update_spinner
+    display: none
+    float: right
+    margin-right: 5px
+
+  ol
+    border-top: 1px desaturate(lighten($green, 20%), 20%) solid
+    +border-radius(0px)
+    margin-top: 7px
+    padding-top: 7px
+    +clearfix
+    
+  li,
+  label
+    float: left
+    font-size: 11px
+    line-height: 15px
+    margin: 0px 0px !important
+    +border-radius(0px !important)
+
+  label
+    font-family: $helvetica
+    font-weight: bold
+    padding-right: $gap
+    text-align: left
+    line-height: 8px
+
+  li
+    font-family: $helvetica-light
+    font-size: 11px
+    font-weight: 100
+
+    strong
+      font-family: $helvetica
+      font-weight: bold
+
+  .yes
+    label
+      color: $yes
+
+  .limited
+    label
+      color: $limited
+
+  .no
+    label
+      color: $no
+
+  &.unknown
+    label
+      color: $unknown
