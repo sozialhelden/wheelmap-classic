@@ -1,7 +1,7 @@
 class Admin < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :http_authenticatable, :token_authenticatable, :database_authenticatable, :confirmable, :lockable, :timeoutable and :activatable
-  devise :http_authenticatable, :database_authenticatable, :recoverable, :registerable, :rememberable, :trackable, :validatable, :confirmable, :activatable, :lockable
+  devise :database_authenticatable, :recoverable, :registerable, :rememberable, :trackable, :validatable, :confirmable, :lockable
   # devise :registerable, :authenticatable, :recoverable,
   #        :rememberable, :trackable, :validatable
 

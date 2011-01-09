@@ -18,8 +18,6 @@ class Poi < ActiveRecord::Base
 
     set_primary_key :osm_id
     
-    named_scope :limit, lambda {|limit|{ :limit => limit}}
-    
     validate :relevant?
     
     before_save :set_status
@@ -31,12 +29,12 @@ class Poi < ActiveRecord::Base
     # benutzt den raeumlichen Index und geht daher schnell (wenn man 
     # nicht gerade eine Bounding-Box fuer die ganze Welt uebergibt).
     
-    named_scope :fully_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:yes]}
-    named_scope :not_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:no]}
-    named_scope :limited_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:limited]}
-    named_scope :unknown_accessibility, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:unknown]}
+    scope :fully_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:yes]}
+    scope :not_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:no]}
+    scope :limited_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:limited]}
+    scope :unknown_accessibility, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:unknown]}
     
-    named_scope :within_bbox, lambda {|left, bottom, right, top|{
+    scope :within_bbox, lambda {|left, bottom, right, top|{
       :conditions => "MBRContains(GeomFromText('POLYGON(( \
                       #{left} #{bottom}, #{right} #{bottom}, \
                       #{right} #{top}, #{left} #{top}, \
