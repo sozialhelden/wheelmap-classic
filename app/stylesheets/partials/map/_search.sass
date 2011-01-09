@@ -5,7 +5,7 @@
     input
       $background: desaturate(lighten($green, 40%), 20%)
       $border: desaturate($green, 30%)
-      background: $background inline-image("search.png") 3px 2px no-repeat
+      background: $background url("search.png") 3px 2px no-repeat
       border: 1px $border solid
       height: 14px
       line-height: 14px
@@ -26,12 +26,12 @@
       text-align: left
       
       &.loading
-        background: inline-image("spinner-small.gif") no-repeat center
+        background: url("spinner-small.gif") no-repeat center
         height: 20px
     
     li
       a
-        background-image: image-url("icons/status-offline.png")
+        background-image: url("icons/status-offline.png")
         background-position: 3px 50%
         color: $link-color
         display: block
