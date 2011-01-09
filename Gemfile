@@ -10,6 +10,8 @@ group :default do
   gem 'compass', '~>0.10.6'
   gem 'redgreengrid'
   gem 'lemonade'
+  gem 'haml'
+  gem 'geoip'
 end
 
 group :test, :development do

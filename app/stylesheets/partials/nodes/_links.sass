@@ -1,0 +1,14 @@
+$link-color: #8DB458
+
+a
+  color: $link-color
+  text-decoration: underline
+  
+  &:hover
+    color: darken($link-color, 10%)
+    
+  &:visited
+    color: adjust-hue($link-color, 25)
+    
+    &:hover
+      color: darken(adjust_hue($link-color, 25), 10%)

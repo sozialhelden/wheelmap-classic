@@ -1,0 +1,33 @@
+.flash
+  margin-bottom: 20px
+  padding: 10px
+  +text-shadow(rgba(white, 0.5), 0, 1px, 1px)
+  
+  text-align: center
+  +border-radius(3px)
+  position: relative
+  top: 10px
+  width: 60%
+  margin-left: auto
+  margin-right: auto
+  
+  &#notice
+    background-color: saturate($green, 20%)
+    color:  darken($green, 30%)
+    border: 1px solid darken($green, 5%)
+    border-top-color: darken($green, 15%)
+    border-bottom-color: lighten($green, 15%)
+    
+  
+  &#alert
+    background-color: saturate($orange, 20%)
+    color:  darken($orange, 30%)
+    border: 1px solid darken($orange, 5%)
+    border-top-color: darken($orange, 15%)
+    border-bottom-color: lighten($orange, 15%)
+  
+  a
+    position: absolute
+    right: 5px
+    top: 0px
+    color: black
