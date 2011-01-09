@@ -1,0 +1,86 @@
+de:  
+  devise:
+    mandatory: "* Pflichtfeld"
+    sessions:
+      link: 'Login'
+      signed_in: 'Login erfolgreich.'
+      signed_out: 'Logout erfolgreich.'
+      unauthenticated: 'Bitte logge dich ein oder registriere dich neu, um fortzufahren.'
+      unconfirmed: 'Bitte bestätige zuerst dein Benutzerkonto, um fortzufahren. Um es zu Bestätigen klicke bitte auf den Link, den wir dir per E-Mail geschickt haben.'
+      locked: 'Dein Benutzerkonto ist gesperrt.'
+      invalid: 'Ungültige E-Mail oder Passwort.'
+      invalid_token: 'Ungültiger Authentizitätstoken. Bitte lösche die Cookies in deinem Browser und versuche es noch einmal.'
+      timeout: 'Deine Sitzung ist abgelaufen, bitte melde dich erneut an.'
+      inactive: 'Dein Benutzerkonto wurde noch nicht bestätigt. Um es zu Bestätigen klicke bitte auf den Link, den wir dir per E-Mail geschickt haben.'
+    passwords:
+      link: 'Passwort vergessen?'
+      send_instructions: 'Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Passwort neu setzen kannst.'
+      updated: 'Dein Passwort wurde erfolgreich geändert. Du bist nun angemeldet.'
+    confirmations:
+      link: "Keine Bestätigungsmail bekommen?"
+      send_instructions: 'Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto bestätigen kannst.'
+      confirmed: 'Dein Benutzerkonto wurde erfolgreich bestätigt. Du bist nun angemeldet.'
+    registrations:
+      link: 'Registrieren'
+      signed_up: 'Deine Registrierung war erfolgreich.'
+      updated: 'Dein Benutzerkonto wurde aktualisiert.'
+      destroyed: 'Dein Benutzerkonto wurde efolgreich gelöscht.'
+    unlocks:
+      link: "Keine Anleitung zum Entspreen deines Benutzerkontos bekommen?"
+      send_instructions: 'Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto entsperren kannst.'
+      unlocked: 'Dein Benutzerkonto wirde erfolgreich entsperrt. Du bist jetzt eingeloggt.'
+    mailer:
+      confirmation_instructions: 'Anleitung zur Bestätigung deines Benutzerkontos'
+      reset_password_instructions: 'Anleitung zum Neu setzen deines Passworts'
+      unlock_instructions: 'Anleitung zum Entsperren deines Benutzerkontos'
+
+    sign_out:
+      headline: Logout
+    sign_in:
+      headline: Login
+      form:
+        submit: Login
+        labels:
+          email: E-Mail
+          password: Passwort
+          remember_me: "Eingeloggt bleiben?"
+    sign_up:
+      headline: Neu anmelden
+      form:
+        submit: Neu anmelden
+        labels:
+          email: E-Mail
+          password: Passwort
+          password_confirmation: Passwort wiederholen
+    password_reset:
+      headline: Passwort zurücksetzen
+      form:
+        submit: Passwort neu setzen
+        labels:
+          password: Neues Passwort
+          password_confirmation: Passwort wiederholen
+      email:
+        headline: "Willkommen {{email}}"
+        text: "Jemand hat angefragt dein Passwort zu ändern.  Das kannst du tun, indem du folgendend Link anklickst:"
+        link: "Mein Passwort ändern"
+        comment: "Solltest du diese Anfrage nicht gestellt haben, ignoriere diese E-Mail einfach.<br/>Dein Passwort wird nicht geändert, bis du auf den oben angegebenen Link klickst und ein neues Passwort setzt."
+
+    password_recovery:
+      headline: Passwort vergessen?
+      form:
+        submit: Passwort neu setzen
+        labels:
+          email: E-Mail
+    destroy:
+      headline: Benutzerkonto löschen
+      link: Jetzt löschen
+      confirm: Bist du dir sicher?
+    edit:
+      headline: Benutzerkonto verwalten
+      form:
+        submit: Änderungen speichern
+        labels:
+          email: E-Mail
+          password: "Passwort <i>(leer lassen, wenn du es nicht ändern möchtest)</i>"
+          password_confirmation: Passwort wiederholen
+          current_password: "Aktuelles Passwort <i>(wir brauchen es, um deine Änderungen zu bestätigen)</i>"

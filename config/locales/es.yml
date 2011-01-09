@@ -1,0 +1,10 @@
+es:
+  de: Deutsch
+  en: English
+  es: Español
+  fr: Français
+  jp: 日本
+  activerecord: 
+    errors: 
+      messages: 
+        accepted: debe ser aceptada

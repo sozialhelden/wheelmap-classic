@@ -1,0 +1,6 @@
+en:
+  search:
+    index:
+      search:
+        for: 'Searching for "{{q}}"'
+        not_found: "No places could be found!"

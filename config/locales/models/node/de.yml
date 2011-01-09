@@ -1,0 +1,8 @@
+de:
+  node:
+    address:
+      street: "{{street}} {{housenumber}}"
+      city: "{{postcode}} {{city}}"
+    tags:
+      phone: "Telefon:"
+      website: "Webseite:"
