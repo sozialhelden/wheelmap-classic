@@ -1,0 +1,37 @@
+- form.inputs :name => t('formtastic.titles.basic'), :id => 'basic' do
+  = form.input :name
+
+  %li.select.required#node-wheelchair-input
+    = form.label link_to(t('formtastic.labels.wheelchair'), 'http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei', :target => '_blank'), :required => true
+    %select#node-wheelchair{:name => 'node[wheelchair]'}
+      = render :partial => 'options_for_wheelchair', :object => inputs.wheelchair
+      
+  = form.input :wheelchair_description, :required => false
+  
+  %li.select.required#node-type-input{:class => @node.errors.on(:type) ? 'error' : ''}
+    = form.label :type, :required => true
+    %select#node-type{:name => 'node[type]'}
+      = render :partial => 'options_for_type', :object => inputs.type
+    - if @node.errors.on(:type)
+      %p.inline-errors
+        = @node.errors.on(:type)
+
+  =form.input :lon, :input_html =>{:readonly => 'readonly'}, :as => :numeric
+  =form.input :lat, :input_html =>{:readonly => 'readonly'}, :as => :numeric
+
+- form.inputs :name => t('formtastic.titles.optional'), :id => 'optional' do
+  = form.input :street, :required => false
+
+  = form.input :housenumber, :required => false
+
+  = form.input :postcode, :required => false
+
+  = form.input :city, :required => false
+    
+  = form.input :website, :required => false
+    
+  -#= form.input :phone, :required => false
+  %li.string.optional#node-phone-input
+    %label{:for => 'node-phone'}Telefon:
+    %input#node-phone{:type => :tel, :pattern => '/\+49.*/', :size => 43, :name => 'node[phone]', :value => 'sdd', :'x-moz-errormessage' => 'nee so nicht'}
+  

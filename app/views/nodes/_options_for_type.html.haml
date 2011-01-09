@@ -1,0 +1,12 @@
+%optgroup{:label => t("poi.category.unknown"), :class => "category unknown"}
+  %option{:label => t("poi.name.unknown.unknown"), :value => nil, :disabled => :disabled}>
+    =t("poi.name.unknown.unknown")
+- Amenities.keys.sort_by{|key| I18n.t("poi.category.#{key}")}.each do |category|
+  %optgroup{:label => t("poi.category.#{category}"), :class => "category #{category}"}
+    - Amenities[category].sort_by{|key| t("poi.name.#{category}.#{key}")}.each do |element|
+      - if options_for_type.to_s == element.to_s
+        %option{:label => t("poi.name.#{category}.#{element}"), :value => element, :selected => 'selected' }>
+          =t("poi.name.#{category}.#{element}")
+      - else
+        %option{:label => t("poi.name.#{category}.#{element}"), :value => element }>
+          =t("poi.name.#{category}.#{element}")
