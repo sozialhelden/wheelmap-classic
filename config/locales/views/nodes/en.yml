@@ -19,7 +19,7 @@ en:
         large_map: Enlarge
         edit_node: Edit place
       header:
-        title: "Place: {{node}} | wheelmap.org"
+        title: "Place: %{node} | wheelmap.org"
 
     new:
       link:
@@ -31,7 +31,7 @@ en:
       link:
         large_map: "&laquo; Cancel"
       header:
-        title: "Edit place: {{node}} | wheelmap.org"
+        title: "Edit place: %{node} | wheelmap.org"
       
              
     update_wheelchair:

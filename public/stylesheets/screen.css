@@ -880,7 +880,7 @@ form li.hidden {
   padding: 0px;
 }
 /* line 18, ../../app/stylesheets/basics/_forms.sass */
-form input[type='text'], form input[type='search'], form input[type='password'], form textarea, form select {
+form input[type='text'], form input[type='search'], form input[type='password'], form [type='tel'], form textarea, form select {
   border: 1px solid #a1c175;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1091,7 +1091,7 @@ form li[class*='error'] label {
   color: #f19d46;
 }
 /* line 145, ../../app/stylesheets/basics/_forms.sass */
-form li[class*='error'] input[type='text'], form li[class*='error'] input[type='password'], form li[class*='error'] input[type='search'], form li[class*='error'] textarea, form li[class*='error'] select {
+form li[class*='error'] input[type='text'], form li[class*='error'] input[type='password'], form li[class*='error'] input[type='search'], form li[class*='error'] [type='tel'], form li[class*='error'] textarea, form li[class*='error'] select {
   border: 1px solid #f19d46;
 }
 /* line 148, ../../app/stylesheets/basics/_forms.sass */
