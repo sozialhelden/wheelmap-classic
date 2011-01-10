@@ -34,7 +34,7 @@ describe OpenStreetMap do
     end
 
     it "should fetch node as xml data from API" do
-      FakeWeb.register_uri(:get, @full_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
+      FakeWeb.register_uri(:get, @full_url, :body => "#{Rails.root}/spec/fixtures/node.xml", :content_type => 'text/xml')
       node = OpenStreetMap.get_node(16581933)
       node.class.should == OpenStreetMap::Node
     end
@@ -61,7 +61,7 @@ describe OpenStreetMap do
 
     it "should create a new changeset" do
       FakeWeb.register_uri(:put, @full_url, :body => "12345", :content_type => 'text/plain')
-      FakeWeb.register_uri(:get, "#{@oauth_url}/changeset/12345", :body => "#{RAILS_ROOT}/spec/fixtures/open_changeset.xml", :content_type => 'text/xml')
+      FakeWeb.register_uri(:get, "#{@oauth_url}/changeset/12345", :body => "#{Rails.root}/spec/fixtures/open_changeset.xml", :content_type => 'text/xml')
       changeset = @osm.create_changeset("Hello comment")
       changeset.id.should == 12345
     end
@@ -100,7 +100,7 @@ describe OpenStreetMap do
     it "should create a new node as" do
       FakeWeb.register_uri(:put, @changeset_create_url, :body => "12345", :content_type => 'text/plain')
       FakeWeb.register_uri(:put, @put_url, :body => '84644746', :content_type => 'text/plain')
-      FakeWeb.register_uri(:get, @get_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
+      FakeWeb.register_uri(:get, @get_url, :body => "#{Rails.root}/spec/fixtures/node.xml", :content_type => 'text/xml')
       FakeWeb.register_uri(:put, @changeset_close_url, :content_type => 'text/plain')
     
       node = @osm.create_node(@node, 12345)

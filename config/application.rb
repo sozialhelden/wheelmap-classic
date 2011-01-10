@@ -37,7 +37,7 @@ module Wheelmap
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
-    config.filter_parameters += [:password, :password_confirmation, :old_password, :key, :secret]
+    config.filter_parameters += [:password, :password_confirmation, :old_password, :key, :secret, :oauth_token, :oauth_secret]
     
     # Use rspec for test generation instead of test:unit
     config.generators do |g|

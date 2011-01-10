@@ -6,8 +6,6 @@ class UsersController < ApplicationController
   before_filter :authenticate_mobile_user,  :only => :authenticate
   before_filter :authenticate_mobile_app,   :only => :authenticate
   
-  filter_parameter_logging :password, :oauth_token, :oauth_secret
-  
   before_filter :remove_password_from_params_if_blank, :only => :update
   
   def index
