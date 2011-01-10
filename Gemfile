@@ -4,10 +4,10 @@ group :default do
   gem 'rails', '3.0.3'
   gem 'mysql2'
   gem 'spatial_adapter', :git => "git://github.com/cwise/spatial_adapter.git" 
-  gem 'httparty'
   gem 'oauth', :git => 'git://github.com/Bertg/oauth.git'
+  gem 'httparty'
   gem 'devise'
-  gem 'compass', '~>0.10.6'
+  gem 'compass'
   gem 'redgreengrid'
   gem 'lemonade'
   gem 'haml'

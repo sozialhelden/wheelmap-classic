@@ -141,10 +141,9 @@ class Poi < ActiveRecord::Base
         
     def icon
       if type.blank?
-        image_path("icons/cross-small-white")
+        'cross-small-white'
       else
-        i = Icons[type.to_sym] || 'cross-small-white'
-        image_path("icons/#{i}")
+        Icons[type.to_sym] || 'cross-small-white'
       end
     end
 
