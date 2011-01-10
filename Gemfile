@@ -12,6 +12,7 @@ group :default do
   gem 'lemonade'
   gem 'haml'
   gem 'geoip'
+  gem 'formtastic', '~> 1.1.0'
 end
 
 group :test, :development do

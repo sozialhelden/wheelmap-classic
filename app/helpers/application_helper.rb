@@ -32,6 +32,6 @@ module ApplicationHelper
         html << "</div>"
       end 
     end
-    html
+    html.html_safe
   end
 end

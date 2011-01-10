@@ -60,7 +60,7 @@ en:
           password: New password
           password_confirmation: Repeat password
       email:
-        headline: "Welcome {{email}}"
+        headline: "Welcome %{email}"
         text: "Somebody requested to change your password. You can do that by clicking the following link:"
         link: "Change password"
         comment: "If you did not request to change your password, please ignore this e-mail<br/>Your password will not be changed unless you click this link."

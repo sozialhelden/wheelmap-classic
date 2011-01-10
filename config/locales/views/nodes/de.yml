@@ -19,7 +19,7 @@ de:
         large_map: Ansicht vergrößern # Zoom in
         edit_node: Ort bearbeiten # Edit place
       header:
-        title: "Ort: {{node}} | wheelmap.org"
+        title: "Ort: %{node} | wheelmap.org"
         
     new:
       link:
@@ -31,7 +31,7 @@ de:
       link:
         large_map: "&laquo; Abbrechen"
       header:
-        title: "Ort bearbeiten: {{node}} | wheelmap.org"
+        title: "Ort bearbeiten: %{node} | wheelmap.org"
       
         
     update_wheelchair: 

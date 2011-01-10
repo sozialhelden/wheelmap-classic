@@ -8,17 +8,19 @@
     = render :partial => 'shared/html5_elements'
     
     = yield :javascript_constants
+      
+    = stylesheet_link_tag 'node', :cache => 'nodes'
 
-    = stylesheet_link_tag 'screen', :cache => 'screens'
-    
   %body(class=browser_class)
     = render :partial => '/shared/header'      
     #main
       = show_flash
       = yield
-        
-    = render :partial => 'shared/footer'
-    
+
+    = render :partial => 'shared/footer'  
+
     = render :partial => 'shared/google_tracking'
 
+    = javascript_include_tag 'openlayers', 'jquery', 'autocomplete', 'cookie', 'uservoice', 'icons', 'osm', 'application', :cache => "minimaps_#{I18n.locale}"
+    
     = yield :javascript
