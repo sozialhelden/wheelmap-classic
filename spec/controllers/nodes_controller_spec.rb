@@ -30,7 +30,7 @@ describe NodesController do
     end
     
     it "should show node view" do
-      FakeWeb.register_uri(:get, @full_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
+      FakeWeb.register_uri(:get, @full_url, :body => "#{Rails.root}/spec/fixtures/node.xml", :content_type => 'text/xml')
       get(:show, :id => 16581933)
       response.code.should == '200'
     end
@@ -76,7 +76,7 @@ describe NodesController do
       end
       
       it "should create UpdateJob for given node" do
-        FakeWeb.register_uri(:get, @full_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
+        FakeWeb.register_uri(:get, @full_url, :body => "#{Rails.root}/spec/fixtures/node.xml", :content_type => 'text/xml')
          lambda{
             put(:update, :id => 84644746, :node => {:wheelchair => 'yes', :name => 'A nice place', :type => 'cafe'})
             response.should be_success
@@ -84,7 +84,7 @@ describe NodesController do
       end
       
       it "should have correct values for UpdateJob" do
-        FakeWeb.register_uri(:get, @full_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
+        FakeWeb.register_uri(:get, @full_url, :body => "#{Rails.root}/spec/fixtures/node.xml", :content_type => 'text/xml')
         lambda{
           put(:update, :id => 84644746, :node => {:id => 84644746, :wheelchair => 'yes', :name => 'A nice place', :type => 'cafe'})
           response.should be_success
@@ -105,7 +105,7 @@ describe NodesController do
     
     describe "anonymous" do
       it "should not create UpdateJob for given node" do
-        FakeWeb.register_uri(:get, @full_url, :body => "#{RAILS_ROOT}/spec/fixtures/node.xml", :content_type => 'text/xml')
+        FakeWeb.register_uri(:get, @full_url, :body => "#{Rails.root}/spec/fixtures/node.xml", :content_type => 'text/xml')
          lambda{
             put(:update, :id => 84644746, :node => {:wheelchair => 'yes'})
             response.should be_redirect

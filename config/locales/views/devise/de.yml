@@ -5,13 +5,15 @@ de:
       link: 'Login'
       signed_in: 'Login erfolgreich.'
       signed_out: 'Logout erfolgreich.'
-      unauthenticated: 'Bitte logge dich ein oder registriere dich neu, um fortzufahren.'
-      unconfirmed: 'Bitte bestätige zuerst dein Benutzerkonto, um fortzufahren. Um es zu Bestätigen klicke bitte auf den Link, den wir dir per E-Mail geschickt haben.'
+    failure:
       locked: 'Dein Benutzerkonto ist gesperrt.'
-      invalid: 'Ungültige E-Mail oder Passwort.'
-      invalid_token: 'Ungültiger Authentizitätstoken. Bitte lösche die Cookies in deinem Browser und versuche es noch einmal.'
-      timeout: 'Deine Sitzung ist abgelaufen, bitte melde dich erneut an.'
       inactive: 'Dein Benutzerkonto wurde noch nicht bestätigt. Um es zu Bestätigen klicke bitte auf den Link, den wir dir per E-Mail geschickt haben.'
+      timeout: 'Deine Sitzung ist abgelaufen, bitte melde dich erneut an.'
+      invalid_token: 'Ungültiger Authentizitätstoken. Bitte lösche die Cookies in deinem Browser und versuche es noch einmal.'
+      invalid: 'Ungültige E-Mail oder Passwort.'
+      unconfirmed: 'Bitte bestätige zuerst dein Benutzerkonto, um fortzufahren. Um es zu Bestätigen klicke bitte auf den Link, den wir dir per E-Mail geschickt haben.'
+      unauthenticated: 'Bitte logge dich ein oder registriere dich neu, um fortzufahren.'
+
     passwords:
       link: 'Passwort vergessen?'
       send_instructions: 'Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Passwort neu setzen kannst.'
@@ -30,9 +32,12 @@ de:
       send_instructions: 'Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto entsperren kannst.'
       unlocked: 'Dein Benutzerkonto wirde erfolgreich entsperrt. Du bist jetzt eingeloggt.'
     mailer:
-      confirmation_instructions: 'Anleitung zur Bestätigung deines Benutzerkontos'
-      reset_password_instructions: 'Anleitung zum Neu setzen deines Passworts'
-      unlock_instructions: 'Anleitung zum Entsperren deines Benutzerkontos'
+      confirmation_instructions:
+        subject: 'Anleitung zur Bestätigung deines Benutzerkontos'
+      reset_password_instructions:
+        subject: 'Anleitung zum Neu setzen deines Passworts'
+      unlock_instructions:
+        subject: 'Anleitung zum Entsperren deines Benutzerkontos'
 
     sign_out:
       headline: Logout

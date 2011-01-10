@@ -5,13 +5,15 @@ en:
       link: 'Login'
       signed_in: 'Logged in in successfully.'
       signed_out: 'Signed out successfully.'
+    failure:
+      locked: 'Your account is locked.'
+      inactive: 'Your account was not activated yet.'
+      timeout: 'Your session expired, please sign in again to continue.'
+      invalid_token: 'Invalid authentication token.'
+      invalid: 'Invalid email or password.'
       unauthenticated: 'You need to login or register before continuing.'
       unconfirmed: 'You have to confirm your account before continuing.'
-      locked: 'Your account is locked.'
-      invalid: 'Invalid email or password.'
-      invalid_token: 'Invalid authentication token.'
-      timeout: 'Your session expired, please sign in again to continue.'
-      inactive: 'Your account was not activated yet.'
+      
     passwords:
       link: 'Forgot password?'
       send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
@@ -30,9 +32,12 @@ en:
       send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
       unlocked: 'Your account was successfully unlocked. You are now signed in.'
     mailer:
-      confirmation_instructions: 'Confirmation instructions'
-      reset_password_instructions: 'Reset password instructions'
-      unlock_instructions: 'Unlock Instructions'
+      confirmation_instructions:
+        subject: 'Confirmation instructions'
+      reset_password_instructions:
+        subject: 'Reset password instructions'
+      unlock_instructions:
+        subject: 'Unlock Instructions'
 
     sign_out:
       headline: Logout
