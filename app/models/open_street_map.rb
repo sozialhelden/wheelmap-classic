@@ -26,7 +26,7 @@ class OpenStreetMap
   end
   
   def self.logger
-    @@logger || RAILS_DEFAULT_LOGGER
+    @@logger || Rails.logger
   end
   
   

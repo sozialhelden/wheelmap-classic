@@ -8,23 +8,23 @@ class OpenStreetMap
     end
     
     def put(url, options={})
-      RAILS_DEFAULT_LOGGER.debug("DELEGATED PUT!")
-      RAILS_DEFAULT_LOGGER.debug(url.inspect)
-      RAILS_DEFAULT_LOGGER.debug(options[:body].inspect)
+      Rails.logger.debug("DELEGATED PUT!")
+      Rails.logger.debug(url.inspect)
+      Rails.logger.debug(options[:body].inspect)
       body = options[:body]
       access_token.put(url, body)
     end
     
     def delete(url, options={})
-      RAILS_DEFAULT_LOGGER.debug("DELEGATED DELETE!")
-      RAILS_DEFAULT_LOGGER.debug(url.inspect)
-      RAILS_DEFAULT_LOGGER.debug(options[:body].inspect)
+      Rails.logger.debug("DELEGATED DELETE!")
+      Rails.logger.debug(url.inspect)
+      Rails.logger.debug(options[:body].inspect)
       body = options[:body]
       access_token.delete(url, body)
     end
     
     def post(*)
-      RAILS_DEFAULT_LOGGER.debug("DELEGATED POST!")
+      Rails.logger.debug("DELEGATED POST!")
     end
     
   end
