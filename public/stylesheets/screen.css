@@ -915,22 +915,22 @@ form #node-wheelchair option {
 }
 /* line 43, ../../app/stylesheets/basics/_forms.sass */
 form #node-wheelchair option.wheelchairstatus_yes {
-  background: url("icons/state-yes.png") no-repeat 1px 1px;
+  background: url("/images/icons/state-yes.png") no-repeat 1px 1px;
   color: #86af4d;
 }
 /* line 47, ../../app/stylesheets/basics/_forms.sass */
 form #node-wheelchair option.wheelchairstatus_limited {
-  background: url("icons/state-limited.png") no-repeat;
+  background: url("/images/icons/state-limited.png") no-repeat;
   color: #f19d46;
 }
 /* line 51, ../../app/stylesheets/basics/_forms.sass */
 form #node-wheelchair option.wheelchairstatus_no {
-  background: url("icons/state-no.png") no-repeat;
+  background: url("/images/icons/state-no.png") no-repeat;
   color: #d6382f;
 }
 /* line 55, ../../app/stylesheets/basics/_forms.sass */
 form #node-wheelchair option.wheelchairstatus_unknown {
-  background: url("icons/state-unknown.png") no-repeat;
+  background: url("/images/icons/state-unknown.png") no-repeat;
   color: #8d8d8e;
 }
 /* line 59, ../../app/stylesheets/basics/_forms.sass */

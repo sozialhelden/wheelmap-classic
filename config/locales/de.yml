@@ -66,10 +66,6 @@ de:
     show_limited_accessible_places: Teilweise # Limited
     show_unaccessible_places: Nein # No
     show_places_without_status: Unbekannt # unknown
-  layouts: 
-    application: 
-      banner:
-        alt: 'Ein Projekt der Sozialhelden'
   oauth: 
     callback: 
       notice: "Dein Benutzerkonto wurde erfoglreich mit dem OpenStreetMap-Benutzerkonto von '%{user}' verbunden."
@@ -93,7 +89,11 @@ de:
       remember_me: "Eingeloggt bleiben"
   common:
     close: schließen
-  shared:        
+  shared:
+    footer:
+      banner:
+        alt: 'Ein Projekt der Sozialhelden'
+      
     imprint:
       headline: Impressum
       fields:
