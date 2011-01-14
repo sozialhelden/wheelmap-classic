@@ -9,9 +9,10 @@ class NodesController < ApplicationController
   before_filter :check_create_params,             :only => :create
   before_filter :check_bbox_param,                :only => :index
   
-  rescue_from OpenStreetMap::NotFound,    :with => :not_found
-  rescue_from OpenStreetMap::Gone,        :with => :gone
-  rescue_from OpenStreetMap::Unavailable, :with => :timeout
+  rescue_from ActiveRecord::RecordNotFound,     :with => :not_found
+  rescue_from OpenStreetMap::NotFound,          :with => :not_found
+  rescue_from OpenStreetMap::Gone,              :with => :gone
+  rescue_from OpenStreetMap::Unavailable,       :with => :timeout
 
   caches_action :index, :if => lambda {|c| c.request.format.sitemap? },
                         :expires_in => 1.day,

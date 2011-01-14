@@ -13,6 +13,7 @@ group :default do
   gem 'haml'
   gem 'geoip'
   gem 'formtastic', '~> 1.1.0'
+  gem 'delayed_job'
 end
 
 group :test, :development do

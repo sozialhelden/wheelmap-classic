@@ -30,15 +30,16 @@ describe NodesController do
     end
     
     it "should show node view" do
-      FakeWeb.register_uri(:get, @full_url, :body => "#{Rails.root}/spec/fixtures/node.xml", :content_type => 'text/xml')
-      get(:show, :id => 16581933)
-      response.code.should == '200'
+      Poi.should_receive(:find).with(123).and_return(:a_node)
+      get(:show, :id => 123)
+      assigns(:node).should eql(:a_node)
+      response.should be_success
     end
     
     it "should render not found page" do
-      FakeWeb.register_uri(:get, @full_url, :status => 404, :body => "NOT FOUND", :content_type => 'text/plain')
-      get(:show, :id => 16581933)
-      response.code.should == '404'
+      get(:show, :id => 123)
+      response.should_not be_success
+      response.code.should eql('404')
     end
     
   end
@@ -79,16 +80,16 @@ describe NodesController do
         FakeWeb.register_uri(:get, @full_url, :body => "#{Rails.root}/spec/fixtures/node.xml", :content_type => 'text/xml')
          lambda{
             put(:update, :id => 84644746, :node => {:wheelchair => 'yes', :name => 'A nice place', :type => 'cafe'})
-            response.should be_success
           }.should change(UpdateJob, :count).by(1)
+          response.should redirect_to(node_path(84644746))
       end
       
       it "should have correct values for UpdateJob" do
         FakeWeb.register_uri(:get, @full_url, :body => "#{Rails.root}/spec/fixtures/node.xml", :content_type => 'text/xml')
         lambda{
           put(:update, :id => 84644746, :node => {:id => 84644746, :wheelchair => 'yes', :name => 'A nice place', :type => 'cafe'})
-          response.should be_success
         }.should change(UpdateJob, :count).by(1)
+        response.should redirect_to(node_path(84644746))
         job = YAML.load(UpdateJob.last.handler)
         job.client.class.should == OpenStreetMap::OauthClient
         job.node.id.should == 84644746
@@ -163,7 +164,7 @@ describe NodesController do
       
       it "should redirect to sign_in page" do
         post(:create, :node => {:name => 'test node', :wheelchair => 'yes', :lat => '52.4', :lon => '13.9'})
-        response.should redirect_to 'http://test.host/users/sign_in?unauthenticated=true'
+        response.should redirect_to 'http://test.host/users/sign_in'
       end
     end
     
