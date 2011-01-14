@@ -21,9 +21,14 @@ group :test, :development do
 end
 
 group :test do
-  gem 'rspec'
   gem 'fakeweb'
   gem 'factory_girl_rails'
+  gem "capybara"  # on mac, you need sudo port install libffi
+  gem 'cucumber'
+  gem 'cucumber-rails'
+  gem 'rspec'
+  gem 'nokogiri'
+  gem 'pickle'
 end
 
 # gem 'capistrano'
