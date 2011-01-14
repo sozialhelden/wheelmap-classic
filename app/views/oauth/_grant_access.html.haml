@@ -1,0 +1,27 @@
+%h1
+  Link to your OpenStreetMap Account
+
+%p>
+  To start adding nodes with Wheelmap you need to have an OpenStreetMap account. Follow the steps below to authorize Wheelmap to use your OpenStreetMap account and start mapping. If you don't have OpenStreetMap account
+  = link_to 'click here.', osm_register_oauth_index_path
+
+%ol#steps
+  %li.step1
+    %h2
+      1. Login to OpenStreetMap
+    = image_tag 'screenshot_login_osm.jpg', :width => 300
+
+  %li.step2
+    %h2
+      2. Authorize Wheelmap
+    = image_tag 'screenshot_authorize_osm.jpg', :width => 300
+
+  %li.step3
+    %h2
+      3. Return and start using Wheelmap
+    = image_tag 'screenshot_use_wheelmap.jpg', :width => 300
+.clear
+
+= link_to 'Proceed to OpenStreetMap', new_oauth_path
+or
+= link_to 'Register OpenStreetMap account', osm_register_oauth_index_path

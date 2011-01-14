@@ -7,7 +7,13 @@ Wheelmap::Application.routes.draw do
   resources :search, :only => :index
   resources :feeds, :only => :index
   resources :sitemap, :only => :index
-  resources :oauth, :only => [:new, :index], :collection => { :revoke => :get, :callback => :get, :osm_register => :get }
+  resources :oauth, :only => [:new, :index] do
+    collection do 
+      get :revoke
+      get :callback
+      get :osm_register
+    end
+  end
 
   resources :nodes, :except => :destroy do
     member do 
