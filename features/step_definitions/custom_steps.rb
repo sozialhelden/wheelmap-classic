@@ -1,6 +1,5 @@
 Then /^I should be redirected to (.+)$/ do |page_name|
   response.should redirect_to path_to(page_name)
-  # response.should be_redirect
 end
 
 Then /^there should be (\d+) CreateJobs?$/ do |amount|

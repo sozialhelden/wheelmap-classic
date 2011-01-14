@@ -14,6 +14,7 @@ Given /I am logged in/ do
   And 'I fill in "Password" with "123456"'
   And 'I press "Sign in"'
   And 'I should see "loggedin@fg.hi"'
+  @current_user = find_model!('a_user')
 end
 
 Given /^a(n| non activated) user with email "([^"]*)" and password "([^"]*)"$/ do |activated, email, password|

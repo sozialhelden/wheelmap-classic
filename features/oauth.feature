@@ -19,7 +19,7 @@ Feature: Oauth feature
     Given I am logged in
     And I am on the oauth page
     When I follow "Proceed"
-    Then I should be redirected to the authorization page
+    Then I should be handed over to OSM for OAuth
     
   Scenario: I want to be redirected to the registration page for a new osm account
     Given I am logged in
