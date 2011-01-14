@@ -29,6 +29,7 @@ group :test do
   gem 'rspec'
   gem 'nokogiri'
   gem 'pickle'
+  gem 'launchy'
 end
 
 # gem 'capistrano'
