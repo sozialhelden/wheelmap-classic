@@ -105,7 +105,7 @@ class OpenStreetMap
     end
     
     def normalize_tags(tags)
-      returning tags do |tags|
+      tags.tap do |tags|
         tags['station'] = 'subway' if tags['hvv:psv_type'] == 'U'
         tags['station'] = 'light-rail' if tags['hvv:psv_type'] == 'S'
         tags['amenity'] = 'ferry-terminal' if tags['ferry'] == 'halt'
