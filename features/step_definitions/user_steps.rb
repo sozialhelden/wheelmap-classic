@@ -8,7 +8,7 @@ Given /^I am not logged in$/ do
 end
 
 Given /I am logged in/ do
-  Given 'an user with email "loggedin@fg.hi" and password "123456"'
+  Given 'a user: "a_user" exists with email: "loggedin@fg.hi", password: "123456", password_confirmation: "123456"'
   When "I go to the sign_in page"
   And 'I fill in "Email" with "loggedin@fg.hi"'
   And 'I fill in "Password" with "123456"'
