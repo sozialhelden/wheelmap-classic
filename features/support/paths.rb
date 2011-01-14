@@ -17,9 +17,6 @@ module NavigationHelpers
     when /the oauth page/
       '/oauth'
 
-    when /the authorization page/
-      "http://api06.dev.openstreetmap.org/oauth/authorize?oauth_token=#{session[:request_token].token}"
-
     when /the registration page/
       arguments = CGI.escape("/oauth/authorize?oauth_token=#{session[:request_token].token}")
       "http://api06.dev.openstreetmap.org/user/new?referer=#{arguments}"
