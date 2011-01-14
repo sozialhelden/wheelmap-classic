@@ -9,11 +9,10 @@ describe SearchController do
   end
   
   it "should call the OSM search API with xml format" do
-    @search_api_url = "http://nominatim.openstreetmap.org/search?q=Leipziger%20Strasse%2C%20Berlin&format=xml&accept-language=de&osm_type=N"
+    @search_api_url = "http://nominatim.openstreetmap.org/search?q=Leipziger+Strasse%2C+Berlin&format=xml&limit=10&accept-language=de&email=info%40wheelmap.org&osm_type=N"
     FakeWeb.register_uri(:get, @search_api_url, :body => "#{Rails.root}/spec/fixtures/search.xml", :content_type => 'text/xml')
     get( :index, :q => 'Leipziger Strasse, Berlin', :format => 'xml', :'accept-language' => 'de', :osm_type => 'N')
-    response.code.should == "200"
-    puts response.body
+    response.should be_success
     doc = Document.new(response.body)
     root = doc.root
     root.elements.size.should == 5
