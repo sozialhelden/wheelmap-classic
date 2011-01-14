@@ -11,15 +11,14 @@ class OauthController < ApplicationController
 
   def new
     @consumer = OAuth::Consumer.new(OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret, :site => OpenStreetMapConfig.oauth_site)
-    request_token = @consumer.get_request_token
-    session[:request_token] = request_token
+    current_user.update_attribute(:oauth_request_token, @consumer.get_request_token)
     redirect_to request_token.authorize_url
   end
   
   def osm_register
     @consumer = OAuth::Consumer.new(OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret, :site => OpenStreetMapConfig.oauth_site)
     request_token = @consumer.get_request_token
-    session[:request_token] = request_token
+    current_user.update_attribute(:oauth_request_token, request_token)
     host = URI.parse(OpenStreetMapConfig.oauth_site).host
     redirect_url = url_for(:host => host, :controller => 'user', :action => 'new', :referer => "/oauth/authorize?oauth_token=#{request_token.token}")
     redirect_to redirect_url
@@ -27,17 +26,12 @@ class OauthController < ApplicationController
 
   def revoke
     token = current_user.oauth_token
-    current_user.update_attribute(:oauth_token, nil)
-    current_user.update_attribute(:oauth_secret, nil)
+    current_user.revoke_oauth_credentials
     redirect_to "#{OpenStreetMapConfig.oauth_site}/oauth/revoke?token=#{token}"
   end
 
   def callback
-    request_token = session[:request_token]
-    access_token = request_token.get_access_token(:oauth_verifier => params[:oauth_verifier])
-    current_user.oauth_token = access_token.token
-    current_user.oauth_secret = access_token.secret
-    current_user.save!
+    current_user.set_oauth_credentials(params[:oauth_verifier])
     flash[:notice] = t('oauth.callback.notice', :user => current_user.email)
     redirect_to root_url
   end
