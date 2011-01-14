@@ -20,7 +20,10 @@ module NavigationHelpers
     when /the registration page/
       arguments = CGI.escape("/oauth/authorize?oauth_token=#{session[:request_token].token}")
       "http://api06.dev.openstreetmap.org/user/new?referer=#{arguments}"
-    
+
+    when /the search result page/
+      '/search'
+
     # the following are examples using path_to_pickle
 
     when /^#{capture_model}(?:'s)? page$/                           # eg. the forum's page
