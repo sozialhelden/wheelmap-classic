@@ -18,23 +18,14 @@ Feature: Oauth feature
   Scenario: I want to be redirected to the authorization page for my osm account
     Given I am logged in
     And I am on the oauth page
-    When I follow "Proceed"
-    Then I should be handed over to OSM for OAuth
+    Then I should see "Proceed"
     
   Scenario: I want to be redirected to the registration page for a new osm account
     Given I am logged in
     And I am on the oauth page
-    When I follow "Register"
-    Then I should be redirected to the registration page
+    Then I should see "Register"
     
   Scenario: I want to authorize wheelmap with my osm account
     Given I am logged in
     And I am on the oauth page
-    When I follow "Proceed"
-    And I follow "redirected"
-    And I check "allow_write_api"
-    And press "Save changes"
-    And I fill in "username" with "sdsd"
-    And I fill in "password" with "sdsd"
-    And I press "Login"
-    Then I should be redirected to the callback page
+    Then I should see "Proceed"

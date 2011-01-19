@@ -9,6 +9,6 @@ Given /^this user has an osm account assigned$/ do
 end
 
 Then /^I should be handed over to OSM for OAuth$/ do
-  token = @current_user.oauth_request_token.token
-  response.should redirect_to "http://api06.dev.openstreetmap.org/oauth/authorize?oauth_token=#{token}"
+  token = @current_user.reload.oauth_request_token.token
+  response.should redirect_to("http://api06.dev.openstreetmap.org/oauth/authorize?oauth_token=#{token}")
 end
