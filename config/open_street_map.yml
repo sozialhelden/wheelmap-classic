@@ -11,8 +11,8 @@ development:
   password: osm_password
   oauth_secret: 'ZdtKqK3fIOsAYVwGpw9NkCcIju1fLF13kac8rMvjY'
   oauth_key: 'Qdd20eq7Bk28EINIINHFsA'
-  # oauth_site: 'http://api06.dev.openstreetmap.org'
-  oauth_site: 'http://www.openstreetmap.org'
+  oauth_site: 'http://api06.dev.openstreetmap.org'
+  # oauth_site: 'http://www.openstreetmap.org'
   xapi_site: 'http://www.informationfreeway.org'
   
 test:
