@@ -7,11 +7,12 @@ require 'oauth/signature/hmac/sha1'
 class OauthController < ApplicationController
   before_filter :authenticate_user!
   
-  rescue_from OAuth::Unauthorized, :with => :unauthorized
+  # rescue_from OAuth::Unauthorized, :with => :unauthorized
 
   def new
     @consumer = OAuth::Consumer.new(OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret, :site => OpenStreetMapConfig.oauth_site)
-    current_user.update_attribute(:oauth_request_token, @consumer.get_request_token)
+    request_token = @consumer.get_request_token
+    current_user.update_attribute(:oauth_request_token, request_token)
     redirect_to request_token.authorize_url
   end
   
