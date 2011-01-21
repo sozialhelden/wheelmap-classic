@@ -15,7 +15,7 @@ group :default do
   gem 'formtastic', '~> 1.1.0'
   gem 'delayed_job'
   gem 'libxml-ruby'
-  gem 'crewait', :path => "#{File.expand_path(__FILE__)}/../vendor/gems/crewait"
+  gem 'crewait', :path => "#{File.expand_path(__FILE__)}/../vendor/gems/crewait-0.1.6"
 end
 
 group :test, :development do
