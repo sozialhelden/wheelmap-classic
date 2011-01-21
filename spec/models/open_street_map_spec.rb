@@ -1,8 +1,8 @@
 require 'spec_helper'
+
 describe OpenStreetMap do
   
   before(:each) do
-    FakeWeb.allow_net_connect = false
     @base_url = "#{OpenStreetMapConfig.oauth_site}/api/0.6"
     uri = URI.parse("#{OpenStreetMapConfig.oauth_site}/api/0.6")
 
@@ -16,16 +16,12 @@ describe OpenStreetMap do
     @oauth_url = uri
 
     @osm = OpenStreetMap.new(@oauth_client)
-
-    
   end
   
-  after(:each) do
-    FakeWeb.clean_registry
+  def stub_osm_request(method, url, status, body, content_type)
+    stub_request(method, url).
+      to_return(:body => body, :status => status, :headers => {'Content-Type' => content_type})
   end
-  
-  
-  
   
   describe 'method: get_node' do
   
@@ -34,20 +30,20 @@ describe OpenStreetMap do
     end
 
     it "should fetch node as xml data from API" do
-      FakeWeb.register_uri(:get, @full_url, :body => "#{Rails.root}/spec/fixtures/node.xml", :content_type => 'text/xml')
+      stub_osm_request(:get, @full_url, 200, File.read("#{Rails.root}/spec/fixtures/node.xml"), "text/xml")
       node = OpenStreetMap.get_node(16581933)
       node.class.should == OpenStreetMap::Node
     end
     
     it "should raise not found exception if API sends 404" do
-      FakeWeb.register_uri(:get, @full_url, :status => 404, :body => "NOT FOUND", :content_type => 'text/plain')
+      stub_osm_request(:get, @full_url, 404, "NOT FOUND", 'text/plain')
       lambda{
         OpenStreetMap.get_node(16581933)
       }.should raise_error(OpenStreetMap::NotFound)
     end
     
     it "should raise gone exception if API sends 410" do
-      FakeWeb.register_uri(:get, @full_url, :status => 410, :body => "Node has been deleted", :content_type => 'text/plain')
+      stub_osm_request(:get, @full_url, 410, "Node has been deleted", 'text/plain')
       lambda{
         OpenStreetMap.get_node(16581933)
       }.should raise_error(OpenStreetMap::Gone)
@@ -55,26 +51,27 @@ describe OpenStreetMap do
   end
   
   describe "method: create_changeset" do
+
     before(:each) do
       @full_url = "#{@oauth_url}/changeset/create"
     end
 
     it "should create a new changeset" do
-      FakeWeb.register_uri(:put, @full_url, :body => "12345", :content_type => 'text/plain')
-      FakeWeb.register_uri(:get, "#{@oauth_url}/changeset/12345", :body => "#{Rails.root}/spec/fixtures/open_changeset.xml", :content_type => 'text/xml')
+      stub_osm_request(:put, @full_url, 200, "12345", 'text/plain')
+      stub_osm_request(:get, "#{@oauth_url}/changeset/12345", 200, File.read("#{Rails.root}/spec/fixtures/open_changeset.xml"), 'text/xml')
       changeset = @osm.create_changeset("Hello comment")
       changeset.id.should == 12345
     end
     
     it "should raise bad request when submitting malformed xml" do
-      FakeWeb.register_uri(:put, @full_url, :status => 400, :body => "Could not parse xml", :content_type => 'text/plain')
+      stub_osm_request(:put, @full_url, 400, "Could not parse xml", 'text/plain')
       lambda{
         @osm.create_changeset
       }.should raise_error(OpenStreetMap::BadRequest)
     end
     
     it "should raise method not allowed exception when not using put request" do
-      FakeWeb.register_uri(:put, @full_url, :status => 405, :body => "Just method put is supported", :content_type => 'text/plain')
+      stub_osm_request(:put, @full_url, 405, "Just method put is supported",'text/plain')
       lambda{
         @osm.create_changeset
       }.should raise_error(OpenStreetMap::MethodNotAllowed)
@@ -98,14 +95,13 @@ describe OpenStreetMap do
     end
     
     it "should create a new node as" do
-      FakeWeb.register_uri(:put, @changeset_create_url, :body => "12345", :content_type => 'text/plain')
-      FakeWeb.register_uri(:put, @put_url, :body => '84644746', :content_type => 'text/plain')
-      FakeWeb.register_uri(:get, @get_url, :body => "#{Rails.root}/spec/fixtures/node.xml", :content_type => 'text/xml')
-      FakeWeb.register_uri(:put, @changeset_close_url, :content_type => 'text/plain')
+      stub_osm_request(:put, @changeset_create_url, 200, "12345", 'text/plain')
+      stub_osm_request(:put, @put_url, 200, '84644746','text/plain')
+      stub_osm_request(:get, @get_url, 200, File.read("#{Rails.root}/spec/fixtures/node.xml"), 'text/xml')
+      stub_osm_request(:put, @changeset_close_url, 200, nil, 'text/plain')
     
       node = @osm.create_node(@node, 12345)
       node.id.should == 84644746
     end
-    
   end
 end
