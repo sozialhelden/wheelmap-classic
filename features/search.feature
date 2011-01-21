@@ -3,6 +3,9 @@ Feature: Search
   As a web user
   I want to be able to do a search
 
+  Background:
+    Given a search result exists for the query "Herborn"
+
   Scenario: simple search
     Given I am on the home page
     And I search for "Herborn"
