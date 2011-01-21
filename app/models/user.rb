@@ -38,4 +38,9 @@ class User < ActiveRecord::Base
     self.oauth_secret = access_token.secret
     save!
   end
+  
+  def self.authenticate(email, password)
+    user = User.where(:email => email).first
+    user if user && user.valid_password?(password) 
+  end
 end

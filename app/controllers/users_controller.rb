@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   protected
   
   def authenticate_mobile_user
-    unless @user = User.authenticate_with_http(params[:email], params[:password])
+    unless @user = User.authenticate(params[:email], params[:password])
       render :text => 'Authorization failed', :status => 400
     end
   end
