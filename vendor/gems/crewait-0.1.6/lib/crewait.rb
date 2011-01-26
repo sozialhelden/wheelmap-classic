@@ -15,7 +15,7 @@ module Crewait
     @@hash_of_next_inserts[model] ||= model.next_insert_id
     # if this class is new, create a new hash to receive it
     @@hash_of_hashes[model] ||= {}
-    @@hash_of_hashes[model].respectively_insert(hash)
+    @@hash_of_hashes[model].respectively_insert(model, hash)
     hash[:id] = @@hash_of_next_inserts[model] + @@hash_of_hashes[model].inner_length - 1
     # add dummy methods
     unless @@config[:no_methods]
@@ -96,14 +96,18 @@ module Crewait
   		end
     end
     # this was originally called "<<", but changed for namespacing
-    def respectively_insert(other_hash)
+    def respectively_insert(model_class, other_hash)
       new_keys = other_hash.keys - self.keys
       length = new_keys.empty? ? 0 : self.inner_length
       new_keys.each do |key|
         self[key] = Array.new(length)
       end
       self.keys.each do |key|
-        self[key] << other_hash[key]
+        if model_class.serialized_attributes.key?(key.to_s)
+          self[key] << YAML.dump(other_hash[key])
+        else        
+          self[key] << other_hash[key]
+        end
       end
     end
     def inner_length

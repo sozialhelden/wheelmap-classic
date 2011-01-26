@@ -12,8 +12,6 @@ class Poi < ActiveRecord::Base
 
     serialize :tags
     
-    attr_reader :lat, :lon
-
     # osm_id ist der Primaerschluessel
 
     set_primary_key :osm_id
