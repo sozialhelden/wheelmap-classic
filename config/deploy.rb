@@ -2,8 +2,8 @@ set :stages,        %w(staging production)
 set :default_stage, "staging"
 require 'capistrano/ext/multistage'
 
-set :whenever_command, "bundle exec whenever"
-require "whenever/capistrano"
+# set :whenever_command, "bundle exec whenever"
+# require "whenever/capistrano"
 
 set :application, "wheelmap"
 set :repository,  "git@github.com:sozialhelden/wheelmap.git"
