@@ -1,10 +1,3 @@
-set :stages,        %w(staging production)
-set :default_stage, "staging"
-require 'capistrano/ext/multistage'
-
-set :whenever_command, "bundle exec whenever"
-require "whenever/capistrano"
-
 set :application, "wheelmap"
 set :repository,  "git@github.com:sozialhelden/wheelmap.git"
 
@@ -43,11 +36,20 @@ namespace :deploy do
 
   task :symlink_configs do
     run "mkdir -p #{shared_path}/config/"
+    run "mkdir -p #{shared_path}/tmp/var"
+    run "mkdir -p #{shared_path}/tmp/osmosis-working-dir"
+    run "ln -nfs #{shared_path}/tmp/osmosis-working-dir #{release_path}/tmp/osmosis-working-dir"
+    run "ln -nfs #{shared_path}/tmp/var #{release_path}/tmp/var"
+    
     %w(database.yml osm.yml open_street_map.yml).each do |file|
       run "ln -nfs #{shared_path}/config/#{file} #{release_path}/config/#{file}"
     end
   end
 end
+
+set :stages,        %w(staging production)
+set :default_stage, "staging"
+require 'capistrano/ext/multistage'
 
 # have builder check and install gems after each update_code
 require 'bundler/capistrano'
@@ -58,3 +60,6 @@ $:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory
 require "rvm/capistrano"
 set :rvm_ruby_string, 'ruby-1.8.7-p330'
 set :rvm_type, :user
+
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"
