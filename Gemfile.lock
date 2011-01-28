@@ -52,6 +52,14 @@ GEM
     arel (2.0.7)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
+    capistrano (2.5.19)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.0.0)
+    capistrano-ext (1.2.1)
+      capistrano (>= 1.0.0)
     capybara (0.4.1.1)
       celerity (>= 0.7.9)
       culerity (>= 0.2.4)
@@ -103,6 +111,7 @@ GEM
     gherkin (2.3.3)
       json (~> 1.4.6)
     haml (3.0.25)
+    highline (1.6.1)
     hoptoad_notifier (2.4.2)
       activesupport
       builder
@@ -126,6 +135,13 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     mysql2 (0.2.6)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
+    net-ssh (2.1.0)
+    net-ssh-gateway (1.0.1)
+      net-ssh (>= 1.99.1)
     nokogiri (1.4.4)
     pickle (0.4.4)
       cucumber (>= 0.8)
@@ -190,6 +206,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capistrano
+  capistrano-ext
   capybara
   compass
   crewait!
