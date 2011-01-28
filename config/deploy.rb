@@ -12,9 +12,9 @@ set :use_sudo, false
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
+set :deploy_via, :remote_cache
 set :git_shallow_clone, 1
 
-set :deploy_via, :remote_cache
 set :default_run_options, :pty => true # or else you'll get "sorry, you must have a tty to run sudo"
 
 set :ssh_options, :keys => [ File.expand_path("~/.ssh/wheelmap_rsa") ], :forward_agent => true
