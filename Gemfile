@@ -36,5 +36,8 @@ group :test do
   gem 'launchy'
 end
 
-# gem 'capistrano'
 
+group :deployment do
+  gem 'capistrano'
+  gem 'capistrano-ext'
+end
