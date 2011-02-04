@@ -60,6 +60,22 @@ class Poi < ActiveRecord::Base
       )
     end
     
+    def as_json(options={})
+      options.merge!(:methods => [:id, :state, :icon], :except => [:geom, :version])
+      super(options)
+      # super.
+      # {:id => id,
+      #  :lat => lat,
+      #  :lon => lon,
+      #  :name => name,
+      #  :icon => icon,
+      #  :state => 'yes',
+      #  :wheelchair => wheelchair,
+      #  :tags => tags.reverse_merge!('wheelchair' => wheelchair).reject{|k,v| v.blank?},
+      #  :type => type,
+      #  :category => self.category}.to_json(options)
+    end
+
     def id
       osm_id
     end
@@ -108,19 +124,9 @@ class Poi < ActiveRecord::Base
     def address
       [render_street(self),render_city(self)].compact.join(', ')
     end
-
-    def as_json(options={})
-      
-      {'id' => id,
-       'lat' => lat,
-       'lon' => lon,
-       'name' => name,
-       'icon' => icon,
-       'state' => 'yes',
-       'wheelchair' => wheelchair,
-       'tags' => tags.reverse_merge!('wheelchair' => wheelchair).reject{|k,v| v.blank?},
-       'type' => type,
-       'category' => self.category}.to_json
+    
+    def state
+      'yes'
     end
 
     def to_geojson(options={})
@@ -141,11 +147,13 @@ class Poi < ActiveRecord::Base
     end
         
     def icon
+      icon_name = ''
       if type.blank?
-        'cross-small-white'
+        icon_name = 'cross-small-white'
       else
-        Icons[type.to_sym] || 'cross-small-white'
+        icon_name = Icons[type.to_sym] || 'cross-small-white'
       end
+      ['/images', 'icons', icon_name].join '/'
     end
 
     def relevant?
