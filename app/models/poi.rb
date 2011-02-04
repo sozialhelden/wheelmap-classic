@@ -61,19 +61,8 @@ class Poi < ActiveRecord::Base
     end
     
     def as_json(options={})
-      options.merge!(:methods => [:id, :state, :icon], :except => [:geom, :version])
+      options.merge!(:methods => [:id, :state, :icon, :type], :except => [:geom, :version, :osm_id])
       super(options)
-      # super.
-      # {:id => id,
-      #  :lat => lat,
-      #  :lon => lon,
-      #  :name => name,
-      #  :icon => icon,
-      #  :state => 'yes',
-      #  :wheelchair => wheelchair,
-      #  :tags => tags.reverse_merge!('wheelchair' => wheelchair).reject{|k,v| v.blank?},
-      #  :type => type,
-      #  :category => self.category}.to_json(options)
     end
 
     def id
