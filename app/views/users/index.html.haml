@@ -1,0 +1,12 @@
+%h1
+  = "Hello #{@user.email}"
+  
+- if @user.oauth_authorized?
+  %p
+    You have successfully authorized wheelmap to use your osm account
+    %br
+    = "Token: #{@user.oauth_token}"
+    %br
+    = "Secret: #{@user.oauth_secret}"
+  
+= link_to 'Edit', edit_user_path(current_user)
