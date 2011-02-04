@@ -16,7 +16,7 @@ group :default do
   gem 'delayed_job'
   gem 'libxml-ruby'
   gem 'crewait', :path => "#{File.expand_path(__FILE__)}/../vendor/gems/crewait-0.1.6"
-  gem 'hoptoad_notifier'
+  gem 'hoptoad_notifier', "~> 2.3"
   gem 'whenever', :require => false
 end
 
