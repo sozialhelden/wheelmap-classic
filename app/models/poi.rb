@@ -4,6 +4,8 @@ class Poi < ActiveRecord::Base
   include ActionView::Helpers::UrlHelper
   include ActionView::Helpers::AssetTagHelper
   
+  self.include_root_in_json = false
+  
   include PopupHelper
   
   WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
@@ -48,13 +50,13 @@ class Poi < ActiveRecord::Base
     
     def attributes
       super.reverse_merge!(
-      :lat => lat,
-      :lon => lon,
-      :name => name,
-      :type => type,
-      :category => category,
-      :wheelchair => wheelchair,
-      :wheelchair_description => wheelchair_description
+      'lat' => lat,
+      'lon' => lon,
+      'name' => name,
+      'type' => type,
+      'category' => category,
+      'wheelchair' => wheelchair,
+      'wheelchair_description' => wheelchair_description
       )
     end
     
