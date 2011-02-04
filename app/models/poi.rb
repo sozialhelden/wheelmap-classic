@@ -109,7 +109,8 @@ class Poi < ActiveRecord::Base
       [render_street(self),render_city(self)].compact.join(', ')
     end
 
-    def to_json(options={})
+    def as_json(options={})
+      
       {'id' => id,
        'lat' => lat,
        'lon' => lon,
