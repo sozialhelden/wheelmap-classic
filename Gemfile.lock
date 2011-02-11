@@ -219,7 +219,7 @@ DEPENDENCIES
   formtastic (~> 1.1.0)
   geoip
   haml
-  hoptoad_notifier
+  hoptoad_notifier (~> 2.3)
   httparty
   launchy
   lemonade

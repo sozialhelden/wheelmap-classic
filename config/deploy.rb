@@ -63,3 +63,5 @@ set :rvm_type, :user
 
 set :whenever_command, "bundle exec whenever"
 require "whenever/capistrano"
+require 'config/boot'
+require 'hoptoad_notifier/capistrano'

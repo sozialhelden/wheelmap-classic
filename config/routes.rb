@@ -24,7 +24,7 @@ Wheelmap::Application.routes.draw do
     end
   end
 
-  resources :users, :as => 'profile'
+  resources :users, :as => 'profile', :path => '/profile'
   resources :users do
     collection do 
       post :authenticate
