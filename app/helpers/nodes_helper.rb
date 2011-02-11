@@ -12,7 +12,7 @@ module NodesHelper
                                           'osm_id' => node.osm_id,
                                           'type' => node.type,
                                           'category' => node.category,
-                                          'icon' => image_path("icons/#{node.icon}")).reject{|k,v| v.blank?}
+                                          'icon' => node.icon).reject{|k,v| v.blank?}
     }
     result
     
