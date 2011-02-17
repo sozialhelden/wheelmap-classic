@@ -13,7 +13,6 @@
 
   %body(class=browser_class)
     = render :partial => '/shared/header'
-
     #map
       = yield
       
@@ -28,6 +27,6 @@
     - else
       = javascript_include_tag 'jquery'
       
-    = javascript_include_tag 'openlayers', 'autocomplete', 'cookie', 'uservoice', 'icons', 'openlayers_de', 'openlayers_en', 'osm', 'application', 'map', :cache => "maps_#{I18n.locale}"
+    = javascript_include_tag 'openlayers', 'autocomplete', 'cookie', 'uservoice', 'icons', 'openlayers_de', 'openlayers_en', 'osm', 'application', 'map'
 
     = yield :javascript
