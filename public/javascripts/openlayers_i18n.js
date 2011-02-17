@@ -17,8 +17,8 @@ OpenLayers.Lang.en = {
 OpenLayers.Lang.jp = { 
   'wheelchair_label_yes': '車椅子可',
   'wheelchair_label_limited': '車椅子一部可',
-  'wheelchair_label_no': 'not wheelchair accessible',
+  'wheelchair_label_no': '車椅子不可',
   'wheelchair_label_unknown': '車椅子不可',
-  'wheelchair_update_button': '保存',
+  'wheelchair_update_button': '不明',
   'more_information': 'more ...'
 };
