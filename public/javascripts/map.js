@@ -53,7 +53,7 @@ $(function() {
     
     $.ajax({ dataType: 'json', type: form.attr('method'), url: form.attr('action') , data: form.serialize(),
       success: function(data, textStatus, XMLHttpRequest) {
-        $('#map').after('<div class="flash" id="notice">' + data.message + '<a href="#" data="hide">x</a></div>')
+        $('#map').after('<div class="flash" id="notice">' + data.message + '<a href="#" data="hide">x</a></div>');
         
         runEffect();
         removeAllPopups();
@@ -65,7 +65,7 @@ $(function() {
         return false;
       },
       error: function(XMLHttpRequest, textStatus, errorThrown){
-        $('#map').after('<div class="flash" id="alert">' + textStatus + '<a href="#" data="hide">x</a></div>')
+        $('#map').after('<div class="flash" id="alert">' + textStatus + '<a href="#" data="hide">x</a></div>');
         $('#update_spinner').hide();
         $('#update_button').removeAttr('disabled');
         if(window._gaq){

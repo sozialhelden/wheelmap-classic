@@ -6,7 +6,6 @@ if (!window.zoom){
 
 var places = [];
 var mapnik;
-var places;
 var draggable;
 
 OpenLayers.IMAGE_RELOAD_ATTEMPTS = 3;
