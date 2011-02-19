@@ -99,7 +99,7 @@ class Poi < ActiveRecord::Base
     end
 
     def wheelchair_description
-      tags['wheelchair_description']
+      tags['wheelchair:description']
     end
     
     def headline
