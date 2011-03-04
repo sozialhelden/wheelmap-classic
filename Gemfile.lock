@@ -4,6 +4,15 @@ GIT
   specs:
     oauth (0.4.3)
 
+GIT
+  remote: http://github.com/dhh/tolk.git
+  revision: 24f32ede9c55e53f539716fe8266c4a44a000749
+  branch: rails3
+  specs:
+    tolk (1.0)
+      will_paginate (= 3.0.pre)
+      ya2yaml (~> 0.26)
+
 PATH
   remote: vendor/gems/crewait-0.1.6
   specs:
@@ -186,9 +195,6 @@ GEM
       activerecord (>= 2.2.2)
     term-ansicolor (1.0.5)
     thor (0.14.6)
-    tolk (1.0)
-      will_paginate (= 3.0.pre)
-      ya2yaml (~> 0.26)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.24)
@@ -238,6 +244,6 @@ DEPENDENCIES
   rspec
   rspec-rails (~> 2.1)
   spatial_adapter
-  tolk
+  tolk!
   webmock
   whenever
