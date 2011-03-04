@@ -3,28 +3,28 @@ de:
   activerecord: 
     errors: 
       full_messages: 
-        format: "{{attribute}} {{message}}"
+        format: "%{attribute} %{message}"
       messages: 
         accepted: "muss akzeptiert werden"
         blank: "muss ausgefüllt werden"
         confirmation: "stimmt nicht mit der Bestätigung überein"
         empty: "muss ausgefüllt werden"
-        equal_to: "muss genau {{count}} sein"
+        equal_to: "muss genau %{count} sein"
         even: "muss gerade sein"
         exclusion: "ist nicht verfügbar"
-        greater_than: "muss größer als {{count}} sein"
-        greater_than_or_equal_to: "muss größer oder gleich {{count}} sein"
+        greater_than: "muss größer als %{count} sein"
+        greater_than_or_equal_to: "muss größer oder gleich %{count} sein"
         inclusion: "ist kein gültiger Wert"
         invalid: "ist nicht gültig"
-        less_than: "muss kleiner als {{count}} sein"
-        less_than_or_equal_to: "muss kleiner oder gleich {{count}} sein"
+        less_than: "muss kleiner als %{count} sein"
+        less_than_or_equal_to: "muss kleiner oder gleich %{count} sein"
         not_a_number: "ist keine Zahl"
         odd: "muss ungerade sein"
         record_invalid: "Gültigkeitsprüfung ist fehlgeschlagen: %{errors}"
         taken: "ist bereits vergeben"
-        too_long: "ist zu lang (maximal {{count}} Zeichen)"
-        too_short: "ist zu kurz (mindestens {{count}} Zeichen)"
-        wrong_length: "hat die falsche Länge (muss genau {{count}} Zeichen haben)"
+        too_long: "ist zu lang (maximal %{count} Zeichen)"
+        too_short: "ist zu kurz (mindestens %{count} Zeichen)"
+        wrong_length: "hat die falsche Länge (muss genau %{count} Zeichen haben)"
       models: 
         user_session: 
           email: E-Mail-Adresse
@@ -33,8 +33,8 @@ de:
       template: 
         body: "Bitte überprüfen Sie die folgenden Felder:"
         header: 
-          one: "Konnte dieses {{model}}-Objekt nicht speichern, da Fehler auftrat."
-          other: "Konnte dieses {{model}}-Objekt nicht speichern, da {{count}} Fehler auftraten."
+          one: "Konnte dieses %{model}-Objekt nicht speichern, da Fehler auftrat."
+          other: "Konnte dieses %{model}-Objekt nicht speichern, da %{count} Fehler auftraten."
   application: 
     require_no_user: 
       notice: "Du bist doch schon eingeloggt …"
@@ -105,38 +105,38 @@ de:
     distance_in_words: 
       about_x_hours: 
         one: "etwa 1 Stunde"
-        other: "etwa {{count}} Stunden"
+        other: "etwa %{count} Stunden"
       about_x_months: 
         one: "etwa 1 Monat"
-        other: "etwa {{count}} Monate"
+        other: "etwa %{count} Monate"
       about_x_years: 
         one: "etwa 1 Jahr"
-        other: "etwa {{count}} Jahre"
+        other: "etwa %{count} Jahre"
       almost_x_years: 
         one: "fast 1 Jahr"
-        other: "fast {{count}} Jahre"
+        other: "fast %{count} Jahre"
       half_a_minute: "eine halbe Minute"
       less_than_x_minutes: 
         one: "weniger als eine Minute"
-        other: "weniger als {{count}} Minuten"
+        other: "weniger als %{count} Minuten"
       less_than_x_seconds: 
         one: "weniger als eine Sekunde"
-        other: "weniger als {{count}} Sekunden"
+        other: "weniger als %{count} Sekunden"
       over_x_years: 
         one: "mehr als 1 Jahr"
-        other: "mehr als {{count}} Jahre"
+        other: "mehr als %{count} Jahre"
       x_days: 
         one: "1 Tag"
-        other: "{{count}} Tage"
+        other: "%{count} Tage"
       x_minutes: 
         one: "1 Minute"
-        other: "{{count}} Minuten"
+        other: "%{count} Minuten"
       x_months: 
         one: "1 Monat"
-        other: "{{count}} Monate"
+        other: "%{count} Monate"
       x_seconds: 
         one: "1 Sekunde"
-        other: "{{count}} Sekunden"
+        other: "%{count} Sekunden"
     prompts: 
       day: Tag
       hour: Stunde
@@ -235,21 +235,21 @@ de:
       blank: "muss ausgefüllt werden"
       confirmation: "stimmt nicht mit der Bestätigung überein"
       empty: "muss ausgefüllt werden"
-      equal_to: "muss genau {{count}} sein"
+      equal_to: "muss genau %{count} sein"
       even: "muss gerade sein"
       exclusion: "ist nicht verfügbar"
-      greater_than: "muss größer als {{count}} sein"
-      greater_than_or_equal_to: "muss größer oder gleich {{count}} sein"
+      greater_than: "muss größer als %{count} sein"
+      greater_than_or_equal_to: "muss größer oder gleich %{count} sein"
       inclusion: "ist kein gültiger Wert"
       invalid: "ist nicht gültig"
-      less_than: "muss kleiner als {{count}} sein"
-      less_than_or_equal_to: "muss kleiner oder gleich {{count}} sein"
+      less_than: "muss kleiner als %{count} sein"
+      less_than_or_equal_to: "muss kleiner oder gleich %{count} sein"
       not_a_number: "ist keine Zahl"
       odd: "muss ungerade sein"
       taken: "ist bereits vergeben"
-      too_long: "ist zu lang (nicht mehr als {{count}} Zeichen)"
-      too_short: "ist zu kurz (nicht weniger als {{count}} Zeichen)"
-      wrong_length: "hat die falsche Länge (muss genau {{count}} Zeichen haben)"
+      too_long: "ist zu lang (nicht mehr als %{count} Zeichen)"
+      too_short: "ist zu kurz (nicht weniger als %{count} Zeichen)"
+      wrong_length: "hat die falsche Länge (muss genau %{count} Zeichen haben)"
   es: Español
   form: 
     show_fully_accessible_places: Ja
@@ -332,8 +332,8 @@ de:
         alt: "Ein Projekt der Sozialhelden"
   node: 
     address: 
-      city: "{{postcode}} {{city}}"
-      street: "{{street}} {{housenumber}}"
+      city: "%{postcode} %{city}"
+      street: "%{street} %{housenumber}"
     tags: 
       phone: "Telefon:"
       website: "Webseite:"
@@ -344,7 +344,7 @@ de:
         successfull: "Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert"
     edit: 
       header: 
-        title: "Ort bearbeiten: {{node}} | wheelmap.org"
+        title: "Ort bearbeiten: %{node} | wheelmap.org"
       link: 
         large_map: "&laquo; Abbrechen"
     errors: 
@@ -363,7 +363,7 @@ de:
         large_map: "&laquo; Abbrechen"
     show: 
       header: 
-        title: "Ort: {{node}} | wheelmap.org"
+        title: "Ort: %{node} | wheelmap.org"
       link: 
         edit_node: "Ort bearbeiten"
         large_map: "Ansicht vergrößern"
@@ -410,7 +410,7 @@ de:
       connect: 
         headline: "Bevor du auf wheelmap.org Orte bearbeiten bzw. anlegen kannst, musst du dein Benutzerkonto mit Openstreetmap verbinden."
     callback: 
-      notice: "Dein Benutzerkonto wurde erfoglreich mit dem OpenStreetMap-Benutzerkonto von '{{user}}' verbunden."
+      notice: "Dein Benutzerkonto wurde erfoglreich mit dem OpenStreetMap-Benutzerkonto von '%{user}' verbunden."
   or: oder
   place: 
     one: "%{count} Ort"
@@ -564,7 +564,7 @@ de:
   search: 
     index: 
       search: 
-        for: "Suche nach \"{{q}}\""
+        for: "Suche nach \"%{q}\""
         not_found: "Es wurden keine Orte gefunden!"
   shared: 
     imprint: 
