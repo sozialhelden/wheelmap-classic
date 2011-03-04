@@ -469,7 +469,7 @@ $(function() {
   $('.maximize').live('click', function() {
     $(this).parent('div').animate({
       left:'30px',
-      overflow:'visibile'
+      overflow:'visible'
     }, 'fast', 'swing', function() {
       $(this).css('height', 'auto');
       $(this).children('.maximize').text('«').addClass('minimize').removeClass('maximize');
