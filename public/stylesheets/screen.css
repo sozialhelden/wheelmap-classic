@@ -1634,6 +1634,6 @@ image[width='16'] {
 }
 
 /* line 2, ../../app/stylesheets/partials/map/_trident.sass */
-.trident #categories, .trident #filter, .trident #counter {
+.trident .ac_results, .trident #categories, .trident #filter, .trident #counter {
   background-color: white;
 }
