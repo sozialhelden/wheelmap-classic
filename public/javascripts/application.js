@@ -457,7 +457,6 @@ $(function() {
     $(this).parent('div').css('height', '0.5em');
     $(this).parent('div').animate({
       left:'-275px',
-      overflow:'hidden'
     }, 'fast', 'swing', function() {
       $(this).children('.minimize').text('»').addClass('maximize').removeClass('minimize');
       $.cookie('minimized_' + $(this).attr('id'), true);
@@ -469,7 +468,6 @@ $(function() {
   $('.maximize').live('click', function() {
     $(this).parent('div').animate({
       left:'30px',
-      overflow:'visible'
     }, 'fast', 'swing', function() {
       $(this).css('height', 'auto');
       $(this).children('.maximize').text('«').addClass('minimize').removeClass('maximize');
