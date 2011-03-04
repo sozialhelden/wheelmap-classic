@@ -28,11 +28,19 @@ en:
     application: 
       banner: 
         alt: A project by Sozialhelden.de
+  cn: 中文
   de: Deutsch
   en: English
   es: Español
   fr: Français
+  is: Íslenska
+  it: Italiano
   jp: 日本
+  pt: Português
+  tr: Türkçe
+  is: Íslenska
+  el: Ελληνικά
+  
 
   support:
     array:
@@ -62,7 +70,7 @@ en:
         too_long: is too long (maximum is {{count}} characters)
         not_a_number: is not a number
         inclusion: is not included in the list
-        record_invalid: "is invalid"
+        record_invalid: "Validation failed: %{errors}"
       template: 
         body: "There were problems with the following fields:"
         header: 
@@ -115,6 +123,7 @@ en:
       label: ""
       find: find
       add_place: Add another place
+      title_add_place: 'Add a new place at this position now!'
       placeholder: i.e. Sunset Boulevard San Francisco or Brandenburg Gate Berlin
     title: Wheelmap - find wheelchair accessible places
     meta: 
@@ -139,13 +148,13 @@ en:
   errors: 
     messages: 
       greater_than_or_equal_to: must be greater or equal than {{count}}
-      confirmation: "stimmt nicht mit der Best\xC3\xA4tigung \xC3\xBCberein"
+      confirmation: doesn't match confirmation
       less_than_or_equal_to: must be lower or equal than {{count}}
       blank: has to be filled
       invalid: not valid
-      exclusion: "ist nicht verf\xC3\xBCgbar"
+      exclusion: is reserved
       odd: must be odd
-      wrong_length: "hat die falsche L\xC3\xA4nge (muss genau {{count}} Zeichen haben)"
+      wrong_length: is the wrong length (should be {{count}} characters)
       empty: has to be filled
       even: must be even
       too_short: is too short (not less than {{count}} characters)
@@ -535,7 +544,7 @@ en:
       accommodation: Accomodation
       misc: Misc
       tourism: Tourism
-      money_post: "Bank & Post"
+      money_post: Bank &amp; Post
       public_transfer: Public transfer
       leisure: Leisure
       government: Government
