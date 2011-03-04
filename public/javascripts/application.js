@@ -334,7 +334,6 @@ function onFeatureUnselect(evt) {
 }
 
 function createPlacesLayer(style) {
-  document.namespaces;
   places = new OpenLayers.Layer.Vector(
     "Places ",
     {
