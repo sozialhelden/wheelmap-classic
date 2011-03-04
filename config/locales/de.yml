@@ -1,78 +1,610 @@
-de:
-  de: Deutsch
-  en: English
-  es: Español
-  fr: Français
-  jp: 日本
-  or: oder
-  statistics: Statistik
-  place:
-    one: "%{count} Ort"
-    other: "%{count} Orte"
-  wheelmap:
-    logo:
-      title: Wheelmap - Rollstuhlgerechte Orte finden
-      alt: Wheelmap Logo - Rollstuhlgerechte Orte finden
-    itunes:
-      title: "Jetzt iPhone App herunterladen!"
-      alt: "AppStore Logo"
-      
-    what_is:
-      fully_accessible: "Eine Eingangsstufe nicht höher als 7 cm ist (etwa eine Handbreite), alle Räumlichkeiten (z.B. alle Kinosäle etc.) für Rollstuhlfahrer grundsätzlich (ohne Ausnahme) befahrbar sind, und eine Rollstuhltoilette vorhanden ist."
-      limited_accessible: "Eine Eingangsstufe nicht höher als 7 cm ist (etwa eine Handbreite), die wichtigsten Räumlichkeiten (z.B. ausgewählte Kinosäle etc.) für Rollstuhlfahrer grundsätzlich befahrbar sind."
-      not_accessible: "Eine Eingangsstufe höher als 7 cm ist (etwa eine Handbreite), eine Treppe am Eingang überwunden werden muss oder die wichtigsten Räumlichkeiten von Rollstuhlfahrern nicht befahren werden können."
-      unknown_accessible: "Der Rollstuhlstatus ist unbekannt"
-  wheelchairstatus: # checkboxes
-    'yes': 'Ja'
-    limited: 'Teilweise'
-    'no': 'Nein'
-    unknown: 'Unbekannt'
+--- 
+de: 
+  activerecord: 
+    errors: 
+      full_messages: 
+        format: "{{attribute}} {{message}}"
+      messages: 
+        accepted: "muss akzeptiert werden"
+        blank: "muss ausgefüllt werden"
+        confirmation: "stimmt nicht mit der Bestätigung überein"
+        empty: "muss ausgefüllt werden"
+        equal_to: "muss genau {{count}} sein"
+        even: "muss gerade sein"
+        exclusion: "ist nicht verfügbar"
+        greater_than: "muss größer als {{count}} sein"
+        greater_than_or_equal_to: "muss größer oder gleich {{count}} sein"
+        inclusion: "ist kein gültiger Wert"
+        invalid: "ist nicht gültig"
+        less_than: "muss kleiner als {{count}} sein"
+        less_than_or_equal_to: "muss kleiner oder gleich {{count}} sein"
+        not_a_number: "ist keine Zahl"
+        odd: "muss ungerade sein"
+        record_invalid: "Gültigkeitsprüfung ist fehlgeschlagen: %{errors}"
+        taken: "ist bereits vergeben"
+        too_long: "ist zu lang (maximal {{count}} Zeichen)"
+        too_short: "ist zu kurz (mindestens {{count}} Zeichen)"
+        wrong_length: "hat die falsche Länge (muss genau {{count}} Zeichen haben)"
+      models: 
+        user_session: 
+          email: E-Mail-Adresse
+          password: Passwort
+          remember_me: "Angemeldet bleiben"
+      template: 
+        body: "Bitte überprüfen Sie die folgenden Felder:"
+        header: 
+          one: "Konnte dieses {{model}}-Objekt nicht speichern, da Fehler auftrat."
+          other: "Konnte dieses {{model}}-Objekt nicht speichern, da {{count}} Fehler auftraten."
   application: 
     require_no_user: 
       notice: "Du bist doch schon eingeloggt …"
     require_user: 
       notice: "Du musst dich einloggen, um diese Seite zu sehen."
+  breadcrumbs: 
+    node: 
+      create: "Neuen Ort anlegen"
+      edit: "Ort bearbeiten"
+    root: wheelmap-Karte
+  cn: 中文
+  common: 
+    close: schließen
+  date: 
+    abbr_day_names: 
+      - So
+      - Mo
+      - Di
+      - Mi
+      - Do
+      - Fr
+      - Sa
+    abbr_month_names: 
+      - ~
+      - Jan
+      - Feb
+      - Mär
+      - Apr
+      - Mai
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Okt
+      - Nov
+      - Dez
+    day_names: 
+      - Sonntag
+      - Montag
+      - Dienstag
+      - Mittwoch
+      - Donnerstag
+      - Freitag
+      - Samstag
+    formats: 
+      default: "%d.%m.%Y"
+      long: "%e. %B %Y"
+      short: "%e. %b"
+    month_names: 
+      - ~
+      - Januar
+      - Februar
+      - März
+      - April
+      - Mai
+      - Juni
+      - Juli
+      - August
+      - September
+      - Oktober
+      - November
+      - Dezember
+    order: 
+      - !ruby/symbol day
+      - !ruby/symbol month
+      - !ruby/symbol year
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        one: "etwa 1 Stunde"
+        other: "etwa {{count}} Stunden"
+      about_x_months: 
+        one: "etwa 1 Monat"
+        other: "etwa {{count}} Monate"
+      about_x_years: 
+        one: "etwa 1 Jahr"
+        other: "etwa {{count}} Jahre"
+      almost_x_years: 
+        one: "fast 1 Jahr"
+        other: "fast {{count}} Jahre"
+      half_a_minute: "eine halbe Minute"
+      less_than_x_minutes: 
+        one: "weniger als eine Minute"
+        other: "weniger als {{count}} Minuten"
+      less_than_x_seconds: 
+        one: "weniger als eine Sekunde"
+        other: "weniger als {{count}} Sekunden"
+      over_x_years: 
+        one: "mehr als 1 Jahr"
+        other: "mehr als {{count}} Jahre"
+      x_days: 
+        one: "1 Tag"
+        other: "{{count}} Tage"
+      x_minutes: 
+        one: "1 Minute"
+        other: "{{count}} Minuten"
+      x_months: 
+        one: "1 Monat"
+        other: "{{count}} Monate"
+      x_seconds: 
+        one: "1 Sekunde"
+        other: "{{count}} Sekunden"
+    prompts: 
+      day: Tag
+      hour: Stunde
+      minute: Minute
+      month: Monat
+      second: Sekunde
+      year: Jahr
+  de: Deutsch
+  devise: 
+    confirmations: 
+      confirmed: "Dein Benutzerkonto wurde erfolgreich bestätigt. Du bist nun angemeldet."
+      link: "Keine Bestätigungsmail bekommen?"
+      send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto bestätigen kannst."
+    destroy: 
+      confirm: "Bist du dir sicher?"
+      headline: "Benutzerkonto löschen"
+      link: "Jetzt löschen"
+    edit: 
+      form: 
+        labels: 
+          current_password: "Aktuelles Passwort <i>(wir brauchen es, um deine Änderungen zu bestätigen)</i>"
+          email: E-Mail
+          password: "Passwort <i>(leer lassen, wenn du es nicht ändern möchtest)</i>"
+          password_confirmation: "Passwort wiederholen"
+        submit: "Änderungen speichern"
+      headline: "Benutzerkonto verwalten"
+    mailer: 
+      confirmation_instructions: "Anleitung zur Bestätigung deines Benutzerkontos"
+      reset_password_instructions: "Anleitung zum Neu setzen deines Passworts"
+      unlock_instructions: "Anleitung zum Entsperren deines Benutzerkontos"
+    mandatory: "* Pflichtfeld"
+    password_recovery: 
+      form: 
+        labels: 
+          email: E-Mail
+        submit: "Passwort neu setzen"
+      headline: "Passwort vergessen?"
+    password_reset: 
+      email: 
+        comment: "Solltest du diese Anfrage nicht gestellt haben, ignoriere diese E-Mail einfach.<br/>Dein Passwort wird nicht geändert, bis du auf den oben angegebenen Link klickst und ein neues Passwort setzt."
+        headline: "Willkommen %{email}"
+        link: "Mein Passwort ändern"
+        text: "Jemand hat angefragt dein Passwort zu ändern.  Das kannst du tun, indem du folgendend Link anklickst:"
+      form: 
+        labels: 
+          password: "Neues Passwort"
+          password_confirmation: "Passwort wiederholen"
+        submit: "Passwort neu setzen"
+      headline: "Passwort zurücksetzen"
+    passwords: 
+      link: "Passwort vergessen?"
+      send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Passwort neu setzen kannst."
+      updated: "Dein Passwort wurde erfolgreich geändert. Du bist nun angemeldet."
+    registrations: 
+      destroyed: "Dein Benutzerkonto wurde efolgreich gelöscht."
+      link: Registrieren
+      signed_up: "Deine Registrierung war erfolgreich."
+      updated: "Dein Benutzerkonto wurde aktualisiert."
+    sessions: 
+      inactive: "Dein Benutzerkonto wurde noch nicht bestätigt. Um es zu Bestätigen klicke bitte auf den Link, den wir dir per E-Mail geschickt haben."
+      invalid: "Ungültige E-Mail oder Passwort."
+      invalid_token: "Ungültiger Authentizitätstoken. Bitte lösche die Cookies in deinem Browser und versuche es noch einmal."
+      link: Login
+      locked: "Dein Benutzerkonto ist gesperrt."
+      signed_in: "Login erfolgreich."
+      signed_out: "Logout erfolgreich."
+      timeout: "Deine Sitzung ist abgelaufen, bitte melde dich erneut an."
+      unauthenticated: "Bitte logge dich ein oder registriere dich neu, um fortzufahren."
+      unconfirmed: "Bitte bestätige zuerst dein Benutzerkonto, um fortzufahren. Um es zu Bestätigen klicke bitte auf den Link, den wir dir per E-Mail geschickt haben."
+    sign_in: 
+      form: 
+        labels: 
+          email: E-Mail
+          password: Passwort
+          remember_me: "Eingeloggt bleiben?"
+        submit: Login
+      headline: Login
+    sign_out: 
+      headline: Logout
+    sign_up: 
+      form: 
+        labels: 
+          email: E-Mail
+          password: Passwort
+          password_confirmation: "Passwort wiederholen"
+        submit: "Neu anmelden"
+      headline: "Neu anmelden"
+    unlocks: 
+      link: "Keine Anleitung zum Entspreen deines Benutzerkontos bekommen?"
+      send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto entsperren kannst."
+      unlocked: "Dein Benutzerkonto wirde erfolgreich entsperrt. Du bist jetzt eingeloggt."
+  en: English
+  errors: 
+    messages: 
+      accepted: "muss akzeptiert werden"
+      blank: "muss ausgefüllt werden"
+      confirmation: "stimmt nicht mit der Bestätigung überein"
+      empty: "muss ausgefüllt werden"
+      equal_to: "muss genau {{count}} sein"
+      even: "muss gerade sein"
+      exclusion: "ist nicht verfügbar"
+      greater_than: "muss größer als {{count}} sein"
+      greater_than_or_equal_to: "muss größer oder gleich {{count}} sein"
+      inclusion: "ist kein gültiger Wert"
+      invalid: "ist nicht gültig"
+      less_than: "muss kleiner als {{count}} sein"
+      less_than_or_equal_to: "muss kleiner oder gleich {{count}} sein"
+      not_a_number: "ist keine Zahl"
+      odd: "muss ungerade sein"
+      taken: "ist bereits vergeben"
+      too_long: "ist zu lang (nicht mehr als {{count}} Zeichen)"
+      too_short: "ist zu kurz (nicht weniger als {{count}} Zeichen)"
+      wrong_length: "hat die falsche Länge (muss genau {{count}} Zeichen haben)"
+  es: Español
+  form: 
+    show_fully_accessible_places: Ja
+    show_limited_accessible_places: Teilweise
+    show_places_without_status: "unbekannter Status"
+    show_unaccessible_places: "nicht rollstuhlgerecht"
+  formtastic: 
+    hints: 
+      lat: "Bewegen Sie den Marker auf der Karte"
+      osm_username: "Noch nicht Mitglied? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Openstreetmap Benutzerkonto anlegen</a>"
+      password: "(leer lassen, wenn du es nicht ändern möchtest)"
+      phone: "Beispiel: +49 30 123456-78"
+      website: "Beispiel: http://www.example.com"
+    labels: 
+      category: "Kategorie:"
+      city: "Ort:"
+      create: "Ort anlegen"
+      email: E-Mail
+      housenumber: "Nr:"
+      lat: Breitengrad
+      lon: Längengrad
+      osm_password: OSM-Passwort
+      osm_username: OSM-Mitgliedsname
+      password: Passwort
+      password_confirmation: "Passwort wiederholen"
+      phone: "Telefon:"
+      postcode: "PLZ:"
+      save: Speichern
+      street: "Straße:"
+      type: "Typ:"
+      website: "Webseite:"
+      wheelchair: Rollstuhlgerecht?
+      wheelchair_description: "Info zu Barrierefreiheit:"
+    titles: 
+      basic: Basisdaten
+      optional: "Mehr Infos <span class=\"addition\">(alle Felder sind optional)</span>"
+  fr: Français
   global: 
     form_validation_error: "Bitte beachte die unten angezeigten Fehlermeldungen."
   header: 
-    navigation: 
-      home: Start
-      login: Login
-      logout: Logout
-      imprint: Impressum
-      feedback: Feedback
-      blog: Blog
-      what_is_wheelmap: 'Was ist Wheelmap?'
-      what_is_barrier_free: 'Was bedeutet „rollstuhlgerecht“?'
-      how_to_add_a_place: 'Wie trage ich Orte ein?'
-      suggestions: 'Anregungen'
-      logged_in_as: "Eingeloggt als:"
-      tolk: Übersetzung
-    meta:
+    meta: 
       description: "Stufen hier, Treppen da oder keine Behindertentoiletten - dank Wheelmap wissen Sie jetzt im Vorhinein, ob ein Museum, eine Kino oder das nächste Restaurant rollstuhlgerecht sind."
+      homepage: Startseite
       keywords: "rollstuhl gerechte orte finden suchen markieren"
       search: Suche
-      homepage: Startseite
-    searchbar:
-      label: '' # text left of search input field, leave empty for now
-      find: 'finden'
-      add_place: 'Ort hinzufügen'
-      title_add_place: 'Jetzt einen neuen Ort an dieser Stelle hinzufügen'
-      placeholder: 'z.B. Sunset Boulevard San Francisco oder Brandenburger Tor Berlin'
-    tagline: Wheelmap logo
-    title: Wheelmap - Rollstuhlgerechte Orte finden
-  form:
-    show_fully_accessible_places: Ja # Yes
-    show_limited_accessible_places: Teilweise # Limited
-    show_unaccessible_places: Nein # No
-    show_places_without_status: Unbekannt # unknown
+    navigation: 
+      blog: Blog
+      feedback: Feedback
+      home: Start
+      how_to_add_a_place: "Wie trage ich Orte ein?"
+      imprint: Impressum
+      logged_in_as: "Eingeloggt als:"
+      login: Login
+      logout: Logout
+      suggestions: Anregungen
+      tolk: Übersetzung
+      what_is_barrier_free: "Was bedeutet „rollstuhlgerecht“?"
+      what_is_wheelmap: "Was ist Wheelmap?"
+    searchbar: 
+      add_place: "Ort hinzufügen"
+      find: finden
+      placeholder: "z.B. Sunset Boulevard San Francisco oder Brandenburger Tor Berlin"
+      title_add_place: "Jetzt einen neuen Ort an dieser Stelle hinzufügen"
+    tagline: "Wheelmap logo"
+    title: "Wheelmap - Rollstuhlgerechte Orte finden"
+  home: 
+    index: 
+      filter: 
+        category: "Kategorie:"
+        wheelchair: "Rollstuhlgerecht (was heißt das?)"
+      link: 
+        node: 
+          create: "Neuen Ort anlegen"
+  is: Íslenska
+  it: Italiano
+  jp: 日本
+  layouts: 
+    application: 
+      banner: 
+        alt: "Ein Projekt der Sozialhelden"
+  node: 
+    address: 
+      city: "{{postcode}} {{city}}"
+      street: "{{street}} {{housenumber}}"
+    tags: 
+      phone: "Telefon:"
+      website: "Webseite:"
+  nodes: 
+    create: 
+      flash: 
+        not_successfull: "Oops, die Angaben sind noch unvollständig oder inkorrekt."
+        successfull: "Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert"
+    edit: 
+      header: 
+        title: "Ort bearbeiten: {{node}} | wheelmap.org"
+      link: 
+        large_map: "&laquo; Abbrechen"
+    errors: 
+      default: "Oops, das ist was schief gegangen. Wir wurden aber darüber informiert!"
+      not_authorized: "Authentifizierung fehlgeschlagen"
+      not_available: "Leider steht diese Seite zur Zeit nicht zur Verfügung"
+      not_existent: "Leider ist dieser Ort nicht mehr da"
+      not_found: "Leider konnte die Seite nicht gefunden werden"
+      param_missing: "Bitte geben Sie einen Suchbegriff ein."
+    flash: 
+      authorize_wheelmap: "Um Daten zu ändern benötigst Du einen OpenStreetMap Account."
+    new: 
+      header: 
+        title: "Neuer Ort | wheelmap.org"
+      link: 
+        large_map: "&laquo; Abbrechen"
+    show: 
+      header: 
+        title: "Ort: {{node}} | wheelmap.org"
+      link: 
+        edit_node: "Ort bearbeiten"
+        large_map: "Ansicht vergrößern"
+    update: 
+      flash: 
+        not_successfull: "Oops, die Angaben sind noch unvollständig oder inkorrekt."
+        successfull: "Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert."
+    update_wheelchair: 
+      successfull: "Der Status des Ortes \"%{name}\" wurde in \"rollstuhlgerecht: %{status}\" geändert und wird demnächst aktualisiert."
+  number: 
+    currency: 
+      format: 
+        delimiter: ~
+        format: "%n %u"
+        precision: ~
+        separator: ~
+        unit: €
+    format: 
+      delimiter: "."
+      precision: 2
+      separator: ","
+    human: 
+      format: 
+        delimiter: ""
+        precision: 1
+      storage_units: 
+        format: "%n %u"
+        units: 
+          byte: 
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage: 
+      format: 
+        delimiter: ""
+    precision: 
+      format: 
+        delimiter: ""
   oauth: 
-    callback: 
-      notice: "Dein Benutzerkonto wurde erfoglreich mit dem OpenStreetMap-Benutzerkonto von '%{user}' verbunden."
-    application:
-      connect:
+    application: 
+      connect: 
         headline: "Bevor du auf wheelmap.org Orte bearbeiten bzw. anlegen kannst, musst du dein Benutzerkonto mit Openstreetmap verbinden."
-  user_sessions:
+    callback: 
+      notice: "Dein Benutzerkonto wurde erfoglreich mit dem OpenStreetMap-Benutzerkonto von '{{user}}' verbunden."
+  or: oder
+  place: 
+    one: "%{count} Ort"
+    other: "%{count} Orte"
+  poi: 
+    category: 
+      accommodation: Unterkunft
+      education: Bildung
+      food: "Essen &amp; Trinken"
+      government: "Behörden &amp; Botschaften"
+      leisure: Freizeit
+      misc: Sonstiges
+      money_post: "Bank &amp; Post"
+      public_transfer: Verkehr
+      shopping: Einkaufen
+      sport: Sport
+      tourism: Tourismus
+      unknown: Unbekannt
+    name: 
+      accommodation: 
+        beach_resort: Strandhotel
+        bed_and_breakfast: "Zimmer mit Frühstück"
+        camp_site: Zeltplatz
+        caravan_site: Campingplatz
+        chalet: Chalet
+        guest_house: Gasthaus
+        hostel: Hostel
+        hotel: Hotel
+        motel: Motel
+      education: 
+        college: Hochschule
+        kindergarten: Kindergarten
+        library: Bibliothek
+        museum: Museum
+        school: Schule
+        university: Universität
+      food: 
+        bar: Bar
+        biergarten: Biergarten
+        cafe: Café
+        drinking_water: Trinkwasser
+        fast_food: "Fast Food"
+        pub: Pub
+        restaurant: Restaurant
+      government: 
+        courthouse: Gericht
+        embassy: Botschaft
+        public_building: "Öffentliches Gebäude"
+        townhall: Stadthalle
+      leisure: 
+        arena: Stadion
+        cinema: Kino
+        gallery: Galerie
+        nightclub: Nachtclub
+        sauna: Sauna
+        theatre: Theater
+        zoo: Zoo
+      misc: 
+        doctors: Arzt
+        hospital: Krankenhaus
+        pharmacy: Apotheke
+        place_of_worship: "Religöser Ort"
+        toilets: "Öffentliche Toilette"
+        veterinary: Tierarzt
+      money_post: 
+        atm: Geldautomat
+        bank: Bank
+        bureau_de_change: Geldwechselbüro
+        post_box: Briefkasten
+        post_office: Postfiliale
+      public_transfer: 
+        aerodrome: Flughafen
+        bicycle_parking: Fahradparkplatz
+        bicycle_rental: Fahradvermietung
+        boatyard: Hafen
+        bus_station: Bushaltestelle
+        bus_stop: Bus
+        cable_car: Seilbahn
+        car_rental: Autovermietung
+        car_sharing: "Car sharing"
+        chair_lift: Sessellift
+        ferry: Fähre
+        ferry_terminal: Fähranlegestelle
+        fuel: Tankstelle
+        halt: Haltestelle
+        light_rail: S-Bahn
+        parking: Parkplatz/Parkhaus
+        parking_aisle: "Fahrweg auf Parkplätzen"
+        platform: Bahnsteig
+        subway: U-Bahn
+        subway_entrance: "U-Bahn Eingang"
+        terminal: Flughafenterminal
+        tram_stop: Straßenbahn
+      shopping: 
+        alcohol: Spirituosen
+        bakery: Bäckerei
+        beverages: Getränkemarkt
+        bicycle: Fahrrad
+        books: Buchhandlung
+        butcher: Fleischer
+        clothes: Bekleidung
+        computer: Computer
+        convenience: Spätkauf
+        department_store: Warenhaus
+        doityourself: Bauhaus
+        dry_cleaning: "Chemische Reinigung"
+        electronics: Elektronik
+        florist: Blumengeschäft
+        furniture: Möbelhaus
+        garden_centre: Garten-Center
+        hairdresser: Friseur
+        hardware: Eisenwarenladen
+        kiosk: Kiosk
+        laundry: Wäscherei
+        mall: Shoppingcenter
+        optician: Optiker
+        shoes: Schuhe
+        supermarket: Supermarkt
+      sport: 
+        sports_centre: Fitnesstudio
+        stadium: Stadion
+        swimming: Freibad
+        swimming_pool: Schwimmbad
+      tourism: 
+        archaeological_site: "Archäoligischer Ausgrabungstätte"
+        arts_centre: Kunstzentrum
+        artwork: Kunstwerk
+        attraction: Attraktion
+        battlefield: Kampfschauplatz
+        beach: Strand
+        beacon: Leuchtturm
+        castle: Schloss
+        cave_entrance: Höhleneingang
+        information: Touristeninformation
+        memorial: Denkmal
+        theme_park: Vergnügungspark
+        tower: Turm
+        viewpoint: Ausichtspunkt
+      unknown: 
+        unknown: Unbekannt
+  profile: 
+    edit: 
+      application: 
+        oauth: 
+          connected: "Status: verbunden"
+          grant: "Jetzt verbinden"
+          not_connected: "Status: nicht verbunden"
+          revoke: "Verbindung aufheben"
+      headline: "Dein Profil bearbeiten"
+  pt: Português
+  search: 
+    index: 
+      search: 
+        for: "Suche nach \"{{q}}\""
+        not_found: "Es wurden keine Orte gefunden!"
+  shared: 
+    imprint: 
+      comment: "Diese Website ist mit Ruby on Rails und JavaScript entwickelt."
+      fields: 
+        application: "Anwendung:"
+        design: "Design, Entwicklung:"
+        email: "E-Mail:"
+        geoip: GeoIP
+        hosting: Hosting
+        icons: "Icons:"
+        license: "Lizenz:"
+        maps: "Kartenmaterial:"
+        maps_and_data: "Karten, Daten:"
+        phone: "Telefon:"
+        provider: "Anbieter:"
+      headline: Impressum
+      links: 
+        email_me: "Klick hier"
+        license: 
+          cc: 
+            by_30: "Creative Commons Namensnennung 3.0 Unportiert"
+            by_sa_20: "Namensnennung-Weitergabe unter gleichen Bedingungen 2.0 US-amerikanisch (nicht portiert)"
+  statistics: Statistik
+  support: 
+    array: 
+      last_word_connector: ", und"
+      two_words_connector: " und "
+      words_connector: ","
+    select: 
+      prompt: "Bitte auswählen"
+  time: 
+    am: vormittags
+    formats: 
+      default: "%A, %e. %B %Y, %H:%M Uhr"
+      long: "%A, %e. %B %Y, %H:%M Uhr"
+      short: "%e. %B, %H:%M Uhr"
+    pm: nachmittags
+  tr: Türkçe
+  user_sessions: 
     create: 
       activation: 
         notice: "Dein Benutzerkonto ist nun freigeschaltet!"
@@ -80,176 +612,29 @@ de:
         notice: "E-Mail-Adresse und Passwort passen nicht zueinander."
       notice: "Du bist jetzt drin!"
     destroy: 
-      notice: "Tschüss und bis zum nächsten Mal!"
+      notice: "Tschüss, bis bald!"
     new: 
-      email: E-Mail Adresse
-      login: Login
+      email: "E-mail Adresse"
+      login: "Log in"
       login_with_twitter: "Mit Twitter einloggen"
       password: Passwort
       remember_me: "Eingeloggt bleiben"
-  common:
-    close: schließen
-  shared:
-    footer:
-      banner:
-        alt: 'Ein Projekt der Sozialhelden'
-      
-    imprint:
-      headline: Impressum
-      fields:
-        provider: "Anbieter:"
-        phone: "Telefon:"
-        email: "E-Mail:"
-        design: "Design, Entwicklung:"
-        maps: "Kartenmaterial:"
-        maps_and_data: "Karten, Daten:"
-        application: "Anwendung:"
-        icons: "Icons:"
-        license: "Lizenz:"
-        geoip: GeoIP
-        hosting: Hosting
-      comment: 'Diese Website ist mit Ruby on Rails und JavaScript entwickelt.'
-      links:
-        email_me: 'Hier klicken'
-        license:
-          cc:
-            by_sa_20: 'Namensnennung-Weitergabe unter gleichen Bedingungen 2.0 US-amerikanisch (nicht portiert)'
-            by_30: 'Creative Commons Namensnennung 3.0 Unportiert'
-            
-  breadcrumbs:
-    root: wheelmap-Karte
-    node:
-      create: Neuen Ort anlegen # add new place
-      edit: Ort bearbeiten
-  profile:
-    edit:
-      headline: Dein Profil bearbeiten
-      application:
-        oauth:
-          not_connected: 'Status: Nicht verbunden'
-          connected: 'Status: verbunden'
-          grant: 'Jetzt verbinden'
-          revoke: 'Verbindung aufheben'
-          
-  date:
-    formats:
-      default: "%d.%m.%Y"
-      short: "%e. %b"
-      long: "%e. %B %Y"
- 
-    day_names: [Sonntag, Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag]
-    abbr_day_names: [So, Mo, Di, Mi, Do, Fr, Sa]
-    month_names: [~, Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]
-    abbr_month_names: [~, Jan, Feb, Mär, Apr, Mai, Jun, Jul, Aug, Sep, Okt, Nov, Dez]
-    order: [ :day, :month, :year ]
-  
-  time:
-    formats:
-      default: "%A, %e. %B %Y, %H:%M Uhr"
-      short: "%e. %B, %H:%M Uhr"
-      long: "%A, %e. %B %Y, %H:%M Uhr"
-      time: "%H:%M"
- 
-    am: "vormittags"
-    pm: "nachmittags"
-      
-  datetime:
-    distance_in_words:
-      half_a_minute: 'eine halbe Minute'
-      less_than_x_seconds:
-        zero: 'weniger als 1 Sekunde'
-        one: 'weniger als 1 Sekunde'
-        other: 'weniger als %{count} Sekunden'
-      x_seconds:
-        one: '1 Sekunde'
-        other: '%{count} Sekunden'
-      less_than_x_minutes:
-        zero: 'weniger als 1 Minute'
-        one: 'weniger als eine Minute'
-        other: 'weniger als %{count} Minuten'
-      x_minutes:
-        one: '1 Minute'
-        other: '%{count} Minuten'
-      about_x_hours:
-        one: 'etwa 1 Stunde'
-        other: 'etwa %{count} Stunden'
-      x_days:
-        one: '1 Tag'
-        other: '%{count} Tage'
-      about_x_months:
-        one: 'etwa 1 Monat'
-        other: 'etwa %{count} Monate'
-      x_months:
-        one: '1 Monat'
-        other: '%{count} Monate'
-      about_x_years:
-        one: 'etwa 1 Jahr'
-        other: 'etwa %{count} Jahre'
-      over_x_years:
-        one: 'mehr als 1 Jahr'
-        other: 'mehr als %{count} Jahre'
-      
-  number:
-    format:
-      precision: 2
-      separator: ','
-      delimiter: '.'
-    currency:
-      format:
-        unit: '€'
-        format: '%n %u'
-        separator: 
-        delimiter: 
-        precision: 
-    percentage:
-      format:
-        delimiter: ""
-    precision:
-      format:
-        delimiter: ""
-    human:
-      format:
-        delimiter: ""
-        precision: 1
- 
-  support:
-    array:
-      sentence_connector: "und"
-      skip_last_comma: true
-      two_words_connector: ' und '      
-        
-  activerecord:
-    errors:
-      template:
-        header:
-          one:    "Konnte dieses %{model}-Objekt nicht speichern, da Fehler auftrat."
-          other:  "Konnte dieses %{model}}-Objekt nicht speichern, da {{count} Fehler auftraten."
-        body: "Bitte überprüfen Sie die folgenden Felder:"
- 
-      messages:
-        inclusion: "ist kein gültiger Wert"
-        exclusion: "ist nicht verfügbar"
-        invalid: "ist nicht gültig"
-        confirmation: "stimmt nicht mit der Bestätigung überein"
-        accepted: "muss akzeptiert werden"
-        empty: "muss ausgefüllt werden"
-        blank: "muss ausgefüllt werden"
-        too_long: "ist zu lang (maximal %{count} Zeichen)"
-        too_short: "ist zu kurz (mindestens %{count} Zeichen)"
-        wrong_length: "hat die falsche Länge (muss genau %{count} Zeichen haben)"
-        taken: "ist bereits vergeben"
-        not_a_number: "ist keine Zahl"
-        greater_than: "muss größer als %{count} sein"
-        greater_than_or_equal_to: "muss größer oder gleich %{count} sein"
-        equal_to: "muss genau %{count} sein"
-        less_than: "muss kleiner als %{count} sein"
-        less_than_or_equal_to: "muss kleiner oder gleich %{count} sein"
-        odd: "muss ungerade sein"
-        even: "muss gerade sein"
-        record_invalid: "ist nicht gültig"
-      models:
-        user_session: 
-          email: E-Mail-Adresse
-          password: Passwort
-          remember_me: Angemeldet bleiben
-          
+  wheelchairstatus: 
+    limited: "teilweise rollstuhlgerecht"
+    ? "no"
+    : Nein
+    unknown: Unbekannt
+    ? "yes"
+    : Ja
+  wheelmap: 
+    itunes: 
+      alt: "AppStore Logo"
+      title: "Jetzt iPhone App herunterladen!"
+    logo: 
+      alt: "Wheelmap Logo - Rollstuhlgerechte Orte finden"
+      title: "Wheelmap - Rollstuhlgerechte Orte finden"
+    what_is: 
+      fully_accessible: "Eine Eingangsstufe nicht höher als 7 cm ist (etwa eine Handbreite), alle Räumlichkeiten (z.B. alle Kinosäle etc.) für Rollstuhlfahrer grundsätzlich (ohne Ausnahme) befahrbar sind, und eine Rollstuhltoilette vorhanden ist."
+      limited_accessible: "Eine Eingangsstufe nicht höher als 7 cm ist (etwa eine Handbreite), die wichtigsten Räumlichkeiten (z.B. ausgewählte Kinosäle etc.) für Rollstuhlfahrer grundsätzlich befahrbar sind."
+      not_accessible: "Eine Eingangsstufe höher als 7 cm ist (etwa eine Handbreite), eine Treppe am Eingang überwunden werden muss oder die wichtigsten Räumlichkeiten von Rollstuhlfahrern nicht befahren werden können."
+      unknown_accessible: "Der Rollstuhlstatus ist unbekannt"

@@ -1,10 +1,633 @@
-es:
-  de: Deutsch
-  en: English
-  es: Español
-  fr: Français
-  jp: 日本
+--- 
+es: 
   activerecord: 
     errors: 
+      full_messages: 
+        format: "%{attribute} %{message}"
       messages: 
-        accepted: debe ser aceptada
+        accepted: "debe ser aceptada"
+        blank: "no puede estar en blanco"
+        confirmation: "no se encontró coincidencia"
+        empty: "no puede estar vacío"
+        equal_to: "debe ser igual a {{count}}"
+        even: "debe ser par"
+        exclusion: "está reservado"
+        greater_than: "tiene que ser mayor que {{count}}"
+        greater_than_or_equal_to: "tiene que ser mayor o igual que {{count}}"
+        inclusion: "no está en la lista"
+        invalid: "es incorrecto"
+        less_than: "tiene que ser inferior a {{count}}"
+        less_than_or_equal_to: "tiene que ser inferior o igual a {{count}}"
+        not_a_number: "no es un número"
+        odd: "debe ser impar"
+        record_invalid: "La validación falló: %{errors}"
+        taken: "ya ha sido cogido"
+        too_long: "es demasiado largo (máximo {{count}} caracteres)"
+        too_short: "es demasiado corto (mínimo {{count}} caracteres)"
+        wrong_length: "no tiene la longitud correcta (deben ser {{count}} caracteres)"
+      models: 
+        user_session: 
+          email: "Correo electrónico"
+          password: Contraseña
+          remember_me: "Siga conectado"
+      template: 
+        body: "Hubo problemas con los siguientos campos"
+        header: 
+          one: "1 error no deja que {{model}} se guarde"
+          other: "{{count}} errores no dejaron que {{model}} se guarde"
+  application: 
+    require_no_user: 
+      notice: "Ya está conectado como"
+    require_user: 
+      notice: "Tiene que conectarse en esta página"
+  breadcrumbs: 
+    node: 
+      create: "Agregar nuevo sitio"
+      edit: "Editar sitio"
+    root: Mapa
+  cn: 中文
+  common: 
+    close: Cerrar
+  date: 
+    abbr_day_names: 
+      - Dom
+      - Lun
+      - Mar
+      - Mie
+      - Jue
+      - Vie
+      - Sáb
+    abbr_month_names: 
+      - ~
+      - ene
+      - feb
+      - mar
+      - apr
+      - may
+      - jun
+      - jul
+      - ago
+      - set
+      - oct
+      - nov
+      - dic
+    day_names: 
+      - Domingo
+      - Lunes
+      - Martes
+      - Miércoles
+      - Jueves
+      - Viernes
+      - Sábado
+    formats: 
+      default: "%d.%m.%Y"
+      long: "%M %D %A"
+      short: "%M %D"
+    month_names: 
+      - ~
+      - Enero
+      - Febrero
+      - Marzo
+      - Abril
+      - Mayo
+      - Junio
+      - Julio
+      - Agosto
+      - Septiembre
+      - Octubre
+      - Noviembre
+      - Diciembre
+    order: 
+      - ":año"
+      - !ruby/symbol mes
+      - ":día"
+  datetime: 
+    distance_in_words: 
+      about_x_hours: 
+        one: "sobre 1 hora"
+        other: "sobre {{count}} horas"
+      about_x_months: 
+        one: "sobre 1 mes"
+        other: "sobre {{count}} meses"
+      about_x_years: 
+        one: "sobre 1 año"
+        other: "sobre {{count}} años"
+      almost_x_years: 
+        one: "casi 1 año"
+        other: "casi %{count} años"
+      half_a_minute: "medio minuto"
+      less_than_x_minutes: 
+        one: "menos de 1 minuto"
+        other: "menos de {{count}} minutos"
+      less_than_x_seconds: 
+        one: "menos de 1 segundo"
+        other: "menos de {{count}} segundos"
+      over_x_years: 
+        one: "más de 1 año"
+        other: "más de %{count} años"
+      x_days: 
+        one: "1 día"
+        other: "{{count}} días"
+      x_minutes: 
+        one: "1 minuto"
+        other: "{{count}} minutos"
+      x_months: 
+        one: "1 mes"
+        other: "{{count}} meses"
+      x_seconds: 
+        one: "1 segundo"
+        other: "{{count}} segundos"
+    prompts: 
+      day: Día
+      hour: Hora
+      minute: Minuto
+      month: Mes
+      second: Segundos
+      year: Año
+  de: Alemán
+  devise: 
+    confirmations: 
+      confirmed: "Tu cuenta ha sido confirmada. Ya puedes conectarte."
+      link: "¿No has recibido las instrucciones de confirmación?"
+      send_instructions: "Recibirás un email con las instrucciones de cómo confirmar tu cuenta en unos minutos."
+    destroy: 
+      confirm: "¿Está seguro?"
+      headline: "Borrar cuenta"
+      link: "Borrar ahora"
+    edit: 
+      form: 
+        labels: 
+          current_password: "Contraseña actual"
+          email: "Correo electrónico"
+          password: Contraseña
+          password_confirmation: "Repetir contraseña"
+        submit: "Guardar cambios"
+      headline: "Administrar cuenta"
+    mailer: 
+      confirmation_instructions: "instrucciones de confirmación"
+      reset_password_instructions: "vuelva a poner instrucciones de confirmación"
+      unlock_instructions: "abra instrucciones"
+    mandatory: "* casilla obligatoria"
+    password_recovery: 
+      form: 
+        labels: 
+          email: "Correo electrónico"
+        submit: "Restaurar contraseña"
+      headline: "¿Olvidó su contraseña?"
+    password_reset: 
+      email: 
+        comment: "Si no ha solicitado cambiar la contraseña, por favor, ignore este correo<br/>Su contraseña no se cambiará si no hace clic en este link"
+        headline: "Bienvenido {{email}}"
+        link: "Cambiar contraseña"
+        text: "Alguien ha solicitado cambiar su contraseña. Puede hacerlo en el siguiente enlace:"
+      form: 
+        labels: 
+          password: "Nueva contraseña"
+          password_confirmation: "Repetir contraseña"
+        submit: "Restaurar contraseña"
+      headline: "Restaurar contraseña"
+    passwords: 
+      link: "¿Olvidaste tu contraseña?"
+      send_instructions: "Recibirás un email con las instrucciones de cómo cambiar tu password en unos minutos."
+      updated: "Tu contraseña ha sido cambiada. Ya estás conectado."
+    registrations: 
+      destroyed: "¡Adiós! Tu cuenta ha sido cancelada. Esperamos verte pronto."
+      link: Registrarse
+      signed_up: "Te has registrado. Se te mandará un correo de confirmación."
+      updated: "Has actualizado tu cuenta satisfactoriamente."
+    sessions: 
+      inactive: "Tu cuenta todavía no está activada."
+      invalid: "Correo o contraseña incorrectos."
+      invalid_token: "No es correcta la señal de autentificación."
+      link: Registrarse
+      locked: "Tu cuenta está bloqueada."
+      signed_in: "Registrado satisfactoriamente."
+      signed_out: "Se ha desconectado"
+      timeout: "Tu sesión ha expirado, por favor entra otra vez para continuar."
+      unauthenticated: "Necesitar entrar o registrarte antes de continuar."
+      unconfirmed: "Tienes que confirmar tu cuenta para continuar"
+    sign_in: 
+      form: 
+        labels: 
+          email: "Correo electrónico"
+          password: Contraseña
+          remember_me: "¿Seguir conectado?"
+        submit: Conectarse
+      headline: Conectarse
+    sign_out: 
+      headline: Desconectarse
+    sign_up: 
+      form: 
+        labels: 
+          email: "Correo electrónico"
+          password: Contraseña
+          password_confirmation: "Repetir contraseña"
+        submit: Registrarse
+      headline: Registrarse
+    unlocks: 
+      link: "¿No ha recibido los pasos para desbloquear?"
+      send_instructions: "Recibirás un email con las instrucciones de cómo bloquear tu cuenta en unos minutos"
+      unlocked: "Su cuenta ha sido desbloqueada. Ya está conectado."
+  en: Inglés
+  errors: 
+    messages: 
+      accepted: "tiene que ser aceptado"
+      blank: "tiene que ser rellenado"
+      confirmation: "no tiene confirmación"
+      empty: "tiene que ser rellenado"
+      equal_to: "tiene que ser exacto {{count}}"
+      even: "debe ser igual"
+      exclusion: "está reservado"
+      greater_than: "tiene que ser mayor que {{count}}"
+      greater_than_or_equal_to: "tiene que ser mayor o igual a {{count}}"
+      inclusion: "no es un valor correcto"
+      invalid: "no es válido"
+      less_than: "tiene que ser menor que {{count}}"
+      less_than_or_equal_to: "tiene que ser menor o igual que {{count}}"
+      not_a_number: "no es un número"
+      odd: "tiene que ser impar"
+      taken: "ya ha sido cogido"
+      too_long: "es demasiado largo (no más de {{count}} caracteres)"
+      too_short: "es demasiado corto (no más corto de {{count}} caracteres)"
+      wrong_length: "no tiene la longitud correcta (deben ser {{count}} caracteres)"
+  es: Español
+  form: 
+    show_fully_accessible_places: "accesible en silla de ruedas"
+    show_limited_accessible_places: "acceso medio en silla de ruedas"
+    show_places_without_status: "se desconoce el estado"
+    show_unaccessible_places: "sin acceso en silla de ruedas"
+  formtastic: 
+    hints: 
+      lat: "Mueva la marca en el mapa a su correcta posición"
+      osm_username: "¿Todavía no es un miembro?<a href=\"http://openstreetmap.org/user/new\" target=\"_blank\"> Cree una cuenta ahora</a>"
+      password: "(dejar vacío, si no quiere cambiarlo)"
+      phone: "Por ejemñlo: +49 30 123456-78"
+      website: "Por ejemplo: http://www.example.com"
+    labels: 
+      category: "Categoría:"
+      city: "Ciudad:"
+      create: "Crear sitio"
+      email: "Correo electrónico"
+      housenumber: "No:"
+      lat: Latitud
+      lon: Longitud
+      osm_password: "OSM contraseña"
+      osm_username: "OSM nombre de la cuenta"
+      password: Contraseña
+      password_confirmation: "Repetir contraseña"
+      phone: "Teléfono:"
+      postcode: "Código Postal:"
+      save: Guardar
+      street: "Calle:"
+      type: "Tipo:"
+      website: "Página web:"
+      wheelchair: "¿Acceso en silla de ruedas?"
+      wheelchair_description: "Comentario sobre la accesibilidad:"
+    titles: 
+      basic: "Datos básicos"
+      optional: "Más información<span class=\"addition\">(all fields are optional)</span>"
+  fr: Francés
+  global: 
+    form_validation_error: "Por favor, tome nota de los siguientes errores."
+  header: 
+    meta: 
+      description: "Encuentre sitios con acceso en silla de ruedas - wheelmap.org"
+      homepage: "Página principal"
+      keywords: "sitios con acceso en silla de ruedas, encuentra el sitio"
+      search: Buscar
+    navigation: 
+      blog: Blog
+      feedback: Feedback
+      home: Empezar
+      how_to_add_a_place: "¿Cómo puedo añadir sitios?"
+      imprint: Imprimir
+      logged_in_as: "Conectarse como:"
+      login: Conectarse
+      logout: Desconectarse
+      suggestions: Sugerencias
+      tolk: Traducciones
+      what_is_barrier_free: "¿Qué significa \"accesible en silla de ruedas\"?"
+      what_is_wheelmap: "¿Qué es el mapa de silla de ruedas?"
+    searchbar: 
+      add_place: "Añadir otra ciudad"
+      find: buscar
+      placeholder: "p.ej. Sunset Boulevard San Francisco ó Brandenburg Gate Berlin\n"
+      title_add_place: "¡Añada otro nuevo sitio aquí ahora!"
+    tagline: "Logo del mapa de silla de ruedas"
+    title: "Silla de ruedas - buscar sitios con acceso en silla de ruedas"
+  home: 
+    index: 
+      filter: 
+        category: "Categoría:"
+        wheelchair: "¿Acceso en silla de ruedas?"
+      link: 
+        node: 
+          create: "Agregar un nuevo sitio"
+  is: islenska
+  it: Italiano
+  jp: 日本
+  layouts: 
+    application: 
+      banner: 
+        alt: "Un proyecto de Sozialhelden.de"
+  node: 
+    address: 
+      city: "{{city}} {{postcode}}"
+      street: "{{housenumber}} {{street}}"
+    tags: 
+      phone: "Teléfono:"
+      website: "Página web:"
+  nodes: 
+    create: 
+      flash: 
+        not_successfull: "¡Ay!, su entrada ha sido o incorrecta o incompleta."
+        successfull: "Gracias, su sumisión ha sido guardada con éxito y estará en línea en breve. "
+    edit: 
+      header: 
+        title: "Editar sitio: {{node}} | wheelmap.org "
+      link: 
+        large_map: "&laquo; Cancelar"
+    errors: 
+      default: "Oops, algo no acaba de funcionar. Pero sabemos de qué se trata! "
+      not_authorized: "Disculpe, error en la autenticidad."
+      not_available: "Disculpe, esta página no está disponible temporalmente."
+      not_existent: "Disculpe, esta página ya no está disponible."
+      not_found: "Disculpe, página no encontrada."
+      param_missing: "Por favor, ponga algo qué buscar"
+    flash: 
+      authorize_wheelmap: "Necesita una cuenta OpenStreetMap  para modificar la fecha."
+    new: 
+      header: 
+        title: "Nuevo sitio | wheelmap.org"
+      link: 
+        large_map: "&laquo; Cancelar"
+    show: 
+      header: 
+        title: "Sitio: {{node}} | wheelmap.org"
+      link: 
+        edit_node: "Editar sitio"
+        large_map: Ampliar
+    update: 
+      flash: 
+        not_successfull: "¡Ay!, su entrada ha sido o incorrecta o incompleta."
+        successfull: "Gracias, su sumisión ha sido guardada con éxito y estará en línea en breve. "
+    update_wheelchair: 
+      successfull: "Gracias, su sumisión ha sido guardada con éxito y estará en línea en breve. "
+  number: 
+    currency: 
+      format: 
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "-"
+        unit: $
+    format: 
+      delimiter: ","
+      precision: 3
+      separator: "-"
+    human: 
+      format: 
+        precision: 1
+      storage_units: 
+        format: "%n %u"
+        units: 
+          byte: 
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+  oauth: 
+    application: 
+      connect: 
+        headline: "Debe conectar su cuenta de wheelmap con su cuenta de open street map antes de crear o modificar sitios en wheelmap.org."
+    callback: 
+      notice: "Ahora su cuenta de wheelmap está conectada con su cuenta de open street map {{user}}."
+  or: o
+  place: 
+    one: "%{count} sitio"
+    other: "%{count} sitios"
+  poi: 
+    category: 
+      accommodation: Alojamiento
+      education: Educación
+      food: Comida
+      government: Gobierno
+      leisure: Entretenimiento
+      misc: Variado
+      money_post: Banco
+      public_transfer: "Transportes públicos"
+      shopping: Compras
+      sport: Deportes
+      tourism: Turismo
+      unknown: Desconocido
+    name: 
+      accommodation: 
+        beach_resort: "Hotel de playa"
+        bed_and_breakfast: "Dormir y desayuno"
+        camp_site: Campo
+        caravan_site: "Zona de caravanas"
+        chalet: Chalet
+        guest_house: "Casa de huéspedes"
+        hostel: Hostal
+        hotel: Hotel
+        motel: Motel
+      education: 
+        college: Universidad
+        kindergarten: "Jardín de infancia"
+        library: Biblioteca
+        museum: Museo
+        school: Colegio
+        university: Universidad
+      food: 
+        bar: Bar
+        biergarten: Biergarten
+        cafe: Cafe
+        drinking_water: "Beber agua"
+        fast_food: "Comida rápida"
+        pub: Pub
+        restaurant: Restaurante
+      government: 
+        courthouse: Juzgado
+        embassy: Embajada
+        public_building: "Edificio público"
+        townhall: Ayuntamiento
+      leisure: 
+        arena: Estadio
+        cinema: Cine
+        gallery: Galería
+        nightclub: Discoteca
+        sauna: Sauna
+        theatre: Teatro
+        zoo: Zoo
+      misc: 
+        doctors: Médicos
+        hospital: Hospital
+        pharmacy: Farmacia
+        place_of_worship: "Zona religiosa"
+        toilets: Aseos
+        veterinary: Veterinario
+      money_post: 
+        atm: ATM
+        bank: Banco
+        bureau_de_change: "Cambio de moneda"
+        post_box: Buzón
+        post_office: Correos
+      public_transfer: 
+        aerodrome: Aeropuerto
+        bicycle_parking: "Parking de Bicicletas"
+        bicycle_rental: "Alquiler de Bicicletas"
+        boatyard: Astillero
+        bus_station: "Estación de autobús"
+        bus_stop: "Parada de autobús"
+        cable_car: Teleférico
+        car_rental: "Alquiler de coches"
+        car_sharing: "Compartir coches"
+        chair_lift: Telesilla
+        ferry: Ferry
+        ferry_terminal: "Terminal de Ferry"
+        fuel: Gasolinera
+        halt: Apeadero
+        light_rail: "Tren urbano"
+        parking: Parking
+        parking_aisle: "Parking lateral"
+        platform: Plataforma
+        subway: Metro
+        subway_entrance: "Entrada de metro"
+        terminal: "Terminal del aeropuerto"
+        tram_stop: "Parada de tranvía"
+      shopping: 
+        alcohol: Licor
+        bakery: Panadería
+        beverages: Bebidas
+        bicycle: "Tienda de motos"
+        books: Libros
+        butcher: Carnicería
+        clothes: Ropa
+        computer: Ordenadores
+        convenience: Comodidad
+        department_store: Almacén
+        doityourself: "Hazlo tú mismo"
+        dry_cleaning: Tintorería
+        electronics: Electrónica
+        florist: Floristería
+        furniture: Muebles
+        garden_centre: "Centro de jardinería"
+        hairdresser: Peluquería
+        hardware: Hardware
+        kiosk: Kiosko
+        laundry: Lavandería
+        mall: "Centro comercial"
+        optician: Ópica
+        shoes: Zapatos
+        supermarket: Supermercado
+      sport: 
+        sports_centre: "Centro de deportes"
+        stadium: Estadio
+        swimming: Natación
+        swimming_pool: Piscinas
+      tourism: 
+        archaeological_site: "Sitio arqueológico"
+        arts_centre: "Centro de artes"
+        artwork: "Material gráfico"
+        attraction: Atracciones
+        battlefield: "Campo de batalla"
+        beach: Playa
+        beacon: Faro
+        castle: Castillo
+        cave_entrance: "Entrada a la cueva"
+        information: "Información turística"
+        memorial: Monumento
+        theme_park: "Parque temático"
+        tower: Torre
+        viewpoint: "Punto de vista"
+      unknown: 
+        unknown: Desconocido
+  profile: 
+    edit: 
+      application: 
+        oauth: 
+          connected: "Estado: conectado"
+          grant: "Conectarse ahora"
+          not_connected: "Estado: No conectado"
+          revoke: Desconectado
+      headline: "Editar tu perfil"
+  pt: Portugués
+  search: 
+    index: 
+      search: 
+        for: "Buscando \"{{q}}\""
+        not_found: "No se ha encontrado ningún sitio"
+  shared: 
+    imprint: 
+      comment: "Este sitio se ha creado usando Ruby on Rails and JavaScript."
+      fields: 
+        application: "Aplicación:"
+        design: "Diseño, desarrollo:"
+        email: "Correo electrónico:"
+        geoip: GeoIP
+        hosting: Hosting
+        icons: "Iconos:"
+        license: "Licencia:"
+        maps: "Mapa:"
+        maps_and_data: "Mapa, Fecha:"
+        phone: "Teléfono:"
+        provider: "Proveedor:"
+      headline: "Imprimir:"
+      links: 
+        email_me: "Clic aquí:"
+        license: 
+          cc: 
+            by_30: "Creative Commons Attribution 3.0 Unported"
+            by_sa_20: "Creative Commons Attribution-ShareAlike 2.0 Generic"
+  statistics: Estadísticas
+  support: 
+    array: 
+      last_word_connector: ", y"
+      two_words_connector: "y"
+      words_connector: ","
+    select: 
+      prompt: "Por favor elija"
+  time: 
+    am: am
+    formats: 
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+  tr: Turco
+  user_sessions: 
+    create: 
+      activation: 
+        notice: "¡Su cuenta está activada ahroa!"
+      error: 
+        notice: "El correo y la contraseña no coinciden."
+      notice: "Estás conectado"
+    destroy: 
+      notice: "¡Adiós! Vuelve pronto!"
+    new: 
+      email: "Dirección de correo"
+      login: Conectarse
+      login_with_twitter: "Conectarse con Twitter"
+      password: Contraseña
+      remember_me: "Seguir conectado"
+  wheelchairstatus: 
+    limited: "acceso en silla de ruedas medio"
+    ? "no"
+    : "sin acceso en silla de ruedas"
+    unknown: "acceso en silla de ruedas desconocido"
+    ? "yes"
+    : "acceso en silla de ruedas completo"
+  wheelmap: 
+    itunes: 
+      alt: "AppStore Logo"
+      title: "¡Descargar la aplicación de iPhone ahora!"
+    logo: 
+      alt: "Wheelmap Logo - buscar zonas con acceso"
+      title: "Wheelmap - buscar zonas con acceso"
+    what_is: 
+      fully_accessible: "El paso de entrada no es superior a 7 cm; todas las localidades tienen acceso en silla de ruedas (sin excepción); también hay baños para discapacitados"
+      limited_accessible: "El paso de entrada no es más alto de 7 cm; las localidades más importantes para usuarios en silla de ruedas"
+      not_accessible: "El paso de entrada no es más alto de 7 cm; o escalera en la entrada; o las localidades más importantes no tienen acceso para usuarios en silla de ruedas"
+      unknown_accessible: "El estado de silla de ruedas se desconoce"
