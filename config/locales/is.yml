@@ -3,28 +3,28 @@ is:
   activerecord: 
     errors: 
       full_messages: 
-        format: "%{attribute} %{message}"
+        format: "{{attribute}} {{message}}"
       messages: 
         accepted: "þarf að vera tekið gilt"
         blank: "má ekki vera autt"
         confirmation: "passar ekki við staðfestingu"
         empty: "má ekki vera tómt"
-        equal_to: "þarf að vera jafngilt %{count}"
+        equal_to: "þarf að vera jafngilt {{count}}"
         even: "þarf að vera slétt tala"
         exclusion: "er frátekið"
-        greater_than: "þarf að vera stærri en %{count}"
-        greater_than_or_equal_to: "þarf að vera stærri en eða jafngilt %{count}"
+        greater_than: "þarf að vera stærri en {{count}}"
+        greater_than_or_equal_to: "þarf að vera stærri en eða jafngilt {{count}}"
         inclusion: "er ekki í listanum"
         invalid: "er ógilt"
-        less_than: "þarf að vera minna en %{count}"
-        less_than_or_equal_to: "þarf að vera minna en eða jafngilt %{count}"
+        less_than: "þarf að vera minna en {{count}}"
+        less_than_or_equal_to: "þarf að vera minna en eða jafngilt {{count}}"
         not_a_number: "er ekki tala"
         odd: "þarf að vera oddatala"
         record_invalid: "Validation mistókst: %{errors}"
         taken: "er þegar í notkun"
-        too_long: "er of langt (má aðeins vera %{count} stafir)"
-        too_short: "er of stutt (má aðeins vera %{count} stafir)"
-        wrong_length: "er af rangri lengd (má aðeins vera %{count} stafir)"
+        too_long: "er of langt (má aðeins vera {{count}} stafir)"
+        too_short: "er of stutt (má aðeins vera {{count}} stafir)"
+        wrong_length: "er af rangri lengd (má aðeins vera {{count}} stafir)"
       models: 
         user_session: 
           email: Tölvupóstur
@@ -33,8 +33,8 @@ is:
       template: 
         body: "Upp kom vandamál í eftirfarandi dálkum:"
         header: 
-          one: "Ekki var hægt að vista %{model} vegna villu."
-          other: "Ekki var hægt að vista %{model} vegna %{count} villna."
+          one: "Ekki var hægt að vista {{model}} vegna villu."
+          other: "Ekki var hægt að vista {{model}} vegna {{count}} villna."
   application: 
     require_no_user: 
       notice: "Þú ert nú þegar innskráður ..."
@@ -105,38 +105,38 @@ is:
     distance_in_words: 
       about_x_hours: 
         one: "u.þ.b. 1 klukkustund"
-        other: "u.þ.b. %{count} klukkustundir"
+        other: "u.þ.b. {{count}} klukkustundir"
       about_x_months: 
         one: "u.þ.b. 1 mánuður"
-        other: "u.þ.b. %{count} mánuðir"
+        other: "u.þ.b. {{count}} mánuðir"
       about_x_years: 
         one: "u.þ.b. 1 ár"
-        other: "u.þ.b. %{count} ár"
+        other: "u.þ.b. {{count}} ár"
       almost_x_years: 
         one: "næstum 1 ár"
         other: "næstum %{count} ár"
       half_a_minute: "hálf mínúta"
       less_than_x_minutes: 
         one: "minna en 1 mínúta"
-        other: "minna en %{count} mínútur"
+        other: "minna en {{count}} mínútur"
       less_than_x_seconds: 
         one: "minna en 1 sekúnda"
-        other: "minna en %{count} sekúndur"
+        other: "minna en {{count}} sekúndur"
       over_x_years: 
         one: "meira en 1 ár"
-        other: "meira en %{count} ár"
+        other: "meira en {{count}} ár"
       x_days: 
         one: "1 dagur"
-        other: "%{count} dagar"
+        other: "{{count}} dagar"
       x_minutes: 
         one: "1 mínúta"
-        other: "%{count} mínútur"
+        other: "{{count}} mínútur"
       x_months: 
         one: "1 mánuður"
-        other: "%{count} mánuðir"
+        other: "{{count}} mánuðir"
       x_seconds: 
         one: "1 sekúnda"
-        other: "%{count} sekúndur"
+        other: "{{count}} sekúndur"
     prompts: 
       day: Dagur
       hour: Klukkustund
@@ -177,7 +177,7 @@ is:
     password_reset: 
       email: 
         comment: "Ef þú baðst ekki um að breyta lykilorðinu þínu þá vinsamlegast hunsið þennan póst<br/>Lykilorðið þitt mun ekki breytast nema þú smellir á þennan tengil."
-        headline: "Velkominn %{email} "
+        headline: "Velkominn {{email}} "
         link: "Breyta lykilorði"
         text: "Einhver bað um breytingu á lykilorði. Þú getur gert það með því að smella á þennan tengil:"
       form: 
@@ -235,26 +235,26 @@ is:
       blank: "verður að fylla út"
       confirmation: "passar ekki við staðfestingu"
       empty: "verður að fylla út"
-      equal_to: "verður að vera nákvæmlega %{count} "
+      equal_to: "verður að vera nákvæmlega {{count}} "
       even: "verður að vera jafnt"
       exclusion: "er tekið frá"
-      greater_than: "verður að vera stærri en %{count}"
-      greater_than_or_equal_to: "verður að vera stærri en eða jafnt %{count}"
+      greater_than: "verður að vera stærri en {{count}}"
+      greater_than_or_equal_to: "verður að vera stærri en eða jafnt {{count}}"
       inclusion: "er ekki tekið gilt"
       invalid: "ekki gilt"
-      less_than: "verður að vera minna en %{count}"
-      less_than_or_equal_to: "verðurf að vera minna en eða jafnt %{count}"
+      less_than: "verður að vera minna en {{count}}"
+      less_than_or_equal_to: "verðurf að vera minna en eða jafnt {{count}}"
       not_a_number: "er ekki tala"
       odd: "verður að vera stakt"
       taken: "hefur verið tekið"
-      too_long: "er of langt (ekki fleiri en %{count} stafir)"
-      too_short: "er of stutt (ekki minna en %{count} stafir)"
-      wrong_length: "er vitlaus lengd (ætti að vera %{count} stafir)"
+      too_long: "er of langt (ekki fleiri en {{count}} stafir)"
+      too_short: "er of stutt (ekki minna en {{count}} stafir)"
+      wrong_length: "er vitlaus lengd (ætti að vera {{count}} stafir)"
   es: Español
   form: 
     show_fully_accessible_places: hjólastólaaðgengilegt
     show_limited_accessible_places: "að hluta til hjólastólaaðgengilegt"
-    show_places_without_status: "óvituð staða"
+    show_places_without_status: "Staða ekki vituð"
     show_unaccessible_places: "ekki hjólastólaaðgengilegt"
   formtastic: 
     hints: 
@@ -291,7 +291,7 @@ is:
     form_validation_error: "Vinsamlegast skrifaðu villurnar sem eru hér fyrir neðan"
   header: 
     meta: 
-      description: "Finndu staði aðgengilega hjólastólum - wheelmap.org"
+      description: "Leitaðu uppi aðgengilega staði - wheelmap.org"
       homepage: Heim
       keywords: "hjólastóll aðgengi staðir finna leita merkja"
       search: Leita
@@ -300,7 +300,7 @@ is:
       feedback: Athugasemdir
       home: Byrja
       how_to_add_a_place: "Hvernig bæti ég við stöðum?"
-      imprint: Áletrun
+      imprint: Upplýsingar
       logged_in_as: "Innskráður sem:"
       login: Innskráning
       logout: Útskráning
@@ -326,26 +326,26 @@ is:
           create: "Bæta við nýjum stað"
   is: Íslenska
   it: Italiano
-  jp: Japanska
+  jp: 日本
   layouts: 
     application: 
       banner: 
         alt: "Verkefni unnið af Sozialhelden.de"
   node: 
     address: 
-      city: "%{city} %{postcode} "
-      street: "%{housenumber} %{street} "
+      city: "{{city}} {{postcode}} "
+      street: "{{housenumber}} {{street}} "
     tags: 
       phone: "Sími:"
       website: "Vefsíða:"
   nodes: 
     create: 
       flash: 
-        not_successfull: "Úps, innleggið þitt var annaðhvort rangt eða óklárað"
-        successfull: "Takk fyrir, innleggið þitt er vistað og mun birtast innan skams"
+        not_successfull: "Úps, innleggið þitt var annaðhvort rangt eða ekki klárað"
+        successfull: "Takk fyrir, innleggið þitt er vistað og mun birtast innan skamms"
     edit: 
       header: 
-        title: "Breyta stað: %{node} | wheelmap.org "
+        title: "Breyta stað: {{node}} | wheelmap.org "
       link: 
         large_map: "&laquo; Hætta við"
     errors: 
@@ -364,13 +364,13 @@ is:
         large_map: "&laquo; Hætta við"
     show: 
       header: 
-        title: "Staður: %{node} | wheelmap.org"
+        title: "Staður: {{node}} | wheelmap.org"
       link: 
         edit_node: "Breyta stað"
         large_map: Stækka
     update: 
       flash: 
-        not_successfull: "Úps, innleggið þitt var rangt eða óklárað."
+        not_successfull: "Úps, innleggið þitt var rangt eða ekki klárað."
         successfull: "Takk fyrir, innleggið þitt hefur verið vistað og verður birt innan skamms"
     update_wheelchair: 
       successfull: "Takk fyrir, innleggið þitt hefur verið vistað og verður birt innan skamms"
@@ -404,31 +404,31 @@ is:
       connect: 
         headline: "Þú verður að aðganginn þinn við open street map áður en þú getur búið til eða breytt stöðum á wheelmap.org"
     callback: 
-      notice: "Wheelmap aðgangurinn þinn er núna tengdur OpenStreetMap %{user}. "
+      notice: "Wheelmap aðgangurinn þinn er núna tengdur OpenStreetMap {{user}}. "
   or: eða
   place: 
-    aðrir: "%{count} staðir"
-    einn: "%{count} staður"
+    one: "%{count} staður"
+    other: "%{count} staðir"
   poi: 
     category: 
       accommodation: Gisting
       education: Menntun
       food: Matur
-      government: Ríkisstjórn
-      leisure: Frístundun
+      government: "Opinberar stofnanir"
+      leisure: Frístundir
       misc: Annað
-      money_post: "Banka &amp; póstur"
+      money_post: "Banki &amp; póstur"
       public_transfer: Almenningssamgöngur
       shopping: Verslun
       sport: Íþróttir
-      tourism: Ferðamenn
-      unknown: Óvitað
+      tourism: Ferðamennska
+      unknown: "Ekki vitað"
     name: 
       accommodation: 
         beach_resort: Strandarhótel
         bed_and_breakfast: "Hótel með morgunmat"
         camp_site: Tjaldsvæði
-        caravan_site: Hjólhýsi
+        caravan_site: "Tjaldsvæði fyrir hjólhýsi"
         chalet: Kofar
         guest_house: Gistihús
         hostel: Hostel
@@ -450,41 +450,41 @@ is:
         pub: Pöbb
         restaurant: Veitingahús
       government: 
-        courthouse: Hæstiréttur
+        courthouse: Réttarhús
         embassy: Sendiráð
         public_building: "Opinber bygging"
         townhall: Ráðhús
       leisure: 
         arena: Svæði
         cinema: Bíóhús
-        gallery: Listasafn
+        gallery: Listasöfn
         nightclub: Næturklúbbur
         sauna: Gufubað
         theatre: Leikhús
         zoo: Dýragarður
       misc: 
-        doctors: Læknar
+        doctors: Læknir
         hospital: Spítali
         pharmacy: Apótek
-        place_of_worship: "Hús trúar"
+        place_of_worship: Bænahús
         toilets: Klósett
-        veterinary: Dýralæknar
+        veterinary: Dýralæknir
       money_post: 
         atm: Hraðbanki
         bank: Banki
-        bureau_de_change: Skiptimynnt
-        post_box: Póstbox
-        post_office: Pósturinn
+        bureau_de_change: Skiptimynt
+        post_box: Pósthólf
+        post_office: Póstur
       public_transfer: 
         aerodrome: Flugvöllur
-        bicycle_parking: "Geymsla fyrir reiðhjól"
+        bicycle_parking: Reiðhjólastæði
         bicycle_rental: Reiðhjólaleiga
         boatyard: Bryggja
         bus_station: Rútustöð
         bus_stop: Strætó
         cable_car: Dráttarbílar
         car_rental: Bílaleiga
-        car_sharing: Puttalangar
+        car_sharing: "Deila bíl"
         chair_lift: Skíðalyfta
         ferry: Ferja
         ferry_terminal: "Biðstöð fyrir ferju"
@@ -501,16 +501,23 @@ is:
       shopping: 
         alcohol: Áfengi
         bakery: Bakarí
-        beverages: Drykkjaföng
+        beverages: Drykkir
+        bicycle: Hjólreiðaverslun
         books: Bækur
+        butcher: Slátrari
         clothes: Föt
         computer: Tölvur
-        department_store: Byggingavöruverslun
+        convenience: Þægindi
+        department_store: Sérvöruverslun
+        doityourself: Sjálfshjálparverslun
+        dry_cleaning: Efnalaug
         electronics: Raftæki
+        florist: Blómabúð
         furniture: Húsgögn
         garden_centre: Garðar
         hairdresser: Hársnyrting
         hardware: Byggingavörur
+        kiosk: Söluturn
         laundry: Þvottahús
         mall: Verslunarkeðjur
         optician: Gleraugnaverslun
@@ -537,7 +544,7 @@ is:
         tower: Turn
         viewpoint: Útsýnispallur
       unknown: 
-        unknown: Óvitað
+        unknown: "Ekki vitað"
   profile: 
     edit: 
       application: 
@@ -551,7 +558,7 @@ is:
   search: 
     index: 
       search: 
-        for: "Leita að \"%{q}\" "
+        for: "Leita að \"{{q}}\" "
         not_found: "Engir staðir fundust!"
   shared: 
     imprint: 
@@ -567,8 +574,8 @@ is:
         maps: "Kort:"
         maps_and_data: "Kort, gögn:"
         phone: "Sími:"
-        provider: "Framfærsla:"
-      headline: "Áletrun:"
+        provider: "Framleiðandi:"
+      headline: "Upplýsingar:"
       links: 
         email_me: "Smelltu hér"
         license: 
@@ -609,8 +616,8 @@ is:
   wheelchairstatus: 
     limited: "að hluta til hjólastólaaðgengilegt"
     ? "no"
-    : "ekki hjóladstólaaðgengilegt"
-    unknown: "hjólastólaaðgengi óvitað"
+    : "ekki hjólastólaaðgengilegt"
+    unknown: "hjólastólaaðgengi ekki vitað"
     ? "yes"
     : "algjörlega hjólastólaaðgengilegt"
   wheelmap: 
@@ -624,4 +631,4 @@ is:
       fully_accessible: "Þröskuldurinn á innganginum er ekki hærri en 7 cm; allir staðir aðgengilegir fyrir hjólastólanotendur (undantekningarlaust); klósett fyrir fatlaða á svæðinu"
       limited_accessible: "Þröskuldurinn á innganginum er ekki hærri en 7 cm; mikilvægustu staðirnir aðgengilegir fyrir hjólastólanotendur"
       not_accessible: "Þröskuldurinn á innganginum er hærri en 7 cm; eða stigi við inngang; mikilvægustu staðirnir eru ekki aðgengilegir fyrir hjólastólanotendur"
-      unknown_accessible: "Hjólastólaaðgengi óvitað"
+      unknown_accessible: "Hjólastólaaðgengi ekki vitað"
