@@ -3,28 +3,28 @@ fr:
   activerecord: 
     errors: 
       full_messages: 
-        format: "%{attribute} %{message}"
+        format: "{{attribute}} {{message}}"
       messages: 
         accepted: "doit être accepté"
         blank: "ne peut pas rester blanc"
         confirmation: "ne correspond pas à la confirmation"
         empty: "ne peut pas rester vide"
-        equal_to: "doit être égal à %{count}"
+        equal_to: "doit être égal à {{count}}"
         even: "doit être pair"
         exclusion: "est réservé"
-        greater_than: "doit être supérieur à %{count}"
-        greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
+        greater_than: "doit être supérieur à {{count}}"
+        greater_than_or_equal_to: "doit être supérieur ou égal à {{count}}"
         inclusion: "n'est pas dans la liste"
         invalid: "est non valide"
-        less_than: "doit être moins que %{count}"
-        less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
+        less_than: "doit être moins que {{count}}"
+        less_than_or_equal_to: "doit être inférieur ou égal à {{count}}"
         not_a_number: "est pas de nombre"
         odd: "doit être impair"
         record_invalid: "La validation a échoué: %{errors}"
         taken: "est déjà donné"
-        too_long: "est trop long (le maximum est %{count} caractères)"
-        too_short: "est trop court (le minimum est %{count} caractères)"
-        wrong_length: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
+        too_long: "est trop long (le maximum est {{count}} caractères)"
+        too_short: "est trop court (le minimum est {{count}} caractères)"
+        wrong_length: "ne fait pas la bonne longueur (doit comporter {{count}} caractères)"
       models: 
         user_session: 
           email: "Adresse e-mail"
@@ -33,8 +33,8 @@ fr:
       template: 
         body: "Il y a un problème concernant les le champs d’entrée suivants:"
         header: 
-          one: "Impossible d'enregistrer ce %{model} : 1 erreur"
-          other: "Impossible d'enregistrer ce %{model} : %{count} erreurs"
+          one: "Impossible d'enregistrer ce {{model}} : 1 erreur"
+          other: "Impossible d'enregistrer ce {{model}} : {{count}} erreurs"
   application: 
     require_no_user: 
       notice: "Vous êtes déjà connecté."
@@ -105,38 +105,38 @@ fr:
     distance_in_words: 
       about_x_hours: 
         one: "une heure environ"
-        other: "%{count} heures environ"
+        other: "{{count}} heures environ"
       about_x_months: 
         one: "un mois environ"
-        other: "%{count} mois environ"
+        other: "{{count}} mois environ"
       about_x_years: 
         one: "un an environ"
-        other: "%{count} ans environ"
+        other: "{{count}} ans environ"
       almost_x_years: 
         one: "presque 1 an"
-        other: "presque %{count} ans"
+        other: "presque {{count}} ans"
       half_a_minute: "une demi-minute"
       less_than_x_minutes: 
         one: "moins d'une minute"
-        other: "moinds de %{count} minutes"
+        other: "moinds de {{count}} minutes"
       less_than_x_seconds: 
         one: "moins d'une seconde"
-        other: "moins de %{count} secondes"
+        other: "moins de {{count}} secondes"
       over_x_years: 
         one: "plus d'un an"
-        other: "plus de %{count} ans"
+        other: "plus de {{count}} ans"
       x_days: 
         one: "un jour"
-        other: "%{count} jours"
+        other: "{{count}} jours"
       x_minutes: 
         one: "1 minute"
-        other: "%{count} minutes"
+        other: "{{count}} minutes"
       x_months: 
         one: "un mois"
-        other: "%{count} mois"
+        other: "{{count}} mois"
       x_seconds: 
         one: "1 seconde"
-        other: "%{count} secondes"
+        other: "{{count}} secondes"
     prompts: 
       day: Jour
       hour: Heure
@@ -177,7 +177,7 @@ fr:
     password_reset: 
       email: 
         comment: "Si vous n'avez pas demandé de changer votre mot de passe, ignorez cet e-mail s.v.p. <br/>Votre mot de passe ne sera pas changé sauf si vous cliquez sur ce liens."
-        headline: "Bienvenue %{email} "
+        headline: "Bienvenue {{email}} "
         link: "Changer le mot de passe"
         text: "Quelqu'un a demandé de change votre mot passe. Vous pouvez le changer par cliquer sur le liens suivant:"
       form: 
@@ -228,6 +228,7 @@ fr:
       link: "Vous n'avez pas reçu instructions de déverrouiller?"
       send_instructions: "En quelques minutes vous allez recevoir un e-mail d'instructions comment déverrouiller votre compte."
       unlocked: "Votre compte a été déverrouillé avec succès. Maintenant vous êtes connecté."
+  el: Ελληνικά
   en: English
   errors: 
     messages: 
@@ -235,21 +236,21 @@ fr:
       blank: "doit être rempli"
       confirmation: "ne correspond pas à l'affirmation"
       empty: "doit être rempli"
-      equal_to: "doit être exactement %{count}"
+      equal_to: "doit être exactement {{count}}"
       even: "doit être pair"
       exclusion: "n'est pas disponible"
-      greater_than: "doit être plus que %{count} "
-      greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
+      greater_than: "doit être plus que {{count}} "
+      greater_than_or_equal_to: "doit être supérieur ou égal à {{count}}"
       inclusion: "valeur non-valide"
       invalid: non-valide
-      less_than: "doit être moins que %{count} "
-      less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
+      less_than: "doit être moins que {{count}} "
+      less_than_or_equal_to: "doit être inférieur ou égal à {{count}}"
       not_a_number: "n' est pas de nombre"
       odd: "doit être impair"
       taken: "est déjà utilisé"
-      too_long: "est trop long (pas plus de %{count} caractères) "
-      too_short: "est trop court (pas moins de %{count} caractères)"
-      wrong_length: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
+      too_long: "est trop long (pas plus de {{count}} caractères) "
+      too_short: "est trop court (pas moins de {{count}} caractères)"
+      wrong_length: "ne fait pas la bonne longueur (doit comporter {{count}} caractères)"
   es: Español
   form: 
     show_fully_accessible_places: "accès pour fauteuil roulant"
@@ -323,7 +324,7 @@ fr:
       link: 
         node: 
           create: "Ajouter un nouveau lieu"
-  is: Islandais
+  is: Íslenska
   it: Italiano
   jp: 日本
   layouts: 
@@ -332,8 +333,8 @@ fr:
         alt: "Un projet de Sozialhelden.de"
   node: 
     address: 
-      city: "%{postcode} %{city} "
-      street: "%{housenumber} %{street} "
+      city: "{{postcode}} {{city}} "
+      street: "{{housenumber}} {{street}} "
     tags: 
       phone: "Téléphone: "
       website: "Site web:"
@@ -344,7 +345,7 @@ fr:
         successfull: "Merci beaucoup, votre entrée était sauvegardée et sera publiée bientôt."
     edit: 
       header: 
-        title: "Editer lieu: %{node} | wheelmap.org "
+        title: "Editer lieu: {{node}} | wheelmap.org "
       link: 
         large_map: "&laquo; Annuler"
     errors: 
@@ -363,7 +364,7 @@ fr:
         large_map: "&laquo; Annuler"
     show: 
       header: 
-        title: "Lieu: %{node} | wheelmap.org "
+        title: "Lieu: {{node}} | wheelmap.org "
       link: 
         edit_node: "Editer lieu"
         large_map: Elargir
@@ -403,7 +404,7 @@ fr:
       connect: 
         headline: "Vous devez connecter votre compte à votre compte d'OpenStreetMap si vous voulez ajouter ou modifier des lieux sur wheelmap.org."
     callback: 
-      notice: "Votre compte de wheelmap est maintenant connecté à votre compte d'OpenStreetMap %{user}."
+      notice: "Votre compte de wheelmap est maintenant connecté à votre compte d'OpenStreetMap {{user}}."
   or: ou
   place: 
     one: "%{count} lieu"
@@ -557,7 +558,7 @@ fr:
   search: 
     index: 
       search: 
-        for: "Rechercher \"%{q}\" "
+        for: "Rechercher \"{{q}}\" "
         not_found: "Rien trouvé!"
   shared: 
     imprint: 

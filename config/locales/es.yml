@@ -9,22 +9,22 @@ es:
         blank: "no puede estar en blanco"
         confirmation: "no se encontró coincidencia"
         empty: "no puede estar vacío"
-        equal_to: "debe ser igual a %{count}"
+        equal_to: "debe ser igual a {{count}}"
         even: "debe ser par"
         exclusion: "está reservado"
-        greater_than: "tiene que ser mayor que %{count}"
-        greater_than_or_equal_to: "tiene que ser mayor o igual que %{count}"
+        greater_than: "tiene que ser mayor que {{count}}"
+        greater_than_or_equal_to: "tiene que ser mayor o igual que {{count}}"
         inclusion: "no está en la lista"
         invalid: "es incorrecto"
-        less_than: "tiene que ser inferior a %{count}"
-        less_than_or_equal_to: "tiene que ser inferior o igual a %{count}"
+        less_than: "tiene que ser inferior a {{count}}"
+        less_than_or_equal_to: "tiene que ser inferior o igual a {{count}}"
         not_a_number: "no es un número"
         odd: "debe ser impar"
         record_invalid: "La validación falló: %{errors}"
         taken: "ya ha sido cogido"
-        too_long: "es demasiado largo (máximo %{count} caracteres)"
-        too_short: "es demasiado corto (mínimo %{count} caracteres)"
-        wrong_length: "no tiene la longitud correcta (deben ser %{count} caracteres)"
+        too_long: "es demasiado largo (máximo {{count}} caracteres)"
+        too_short: "es demasiado corto (mínimo {{count}} caracteres)"
+        wrong_length: "no tiene la longitud correcta (deben ser {{count}} caracteres)"
       models: 
         user_session: 
           email: "Correo electrónico"
@@ -33,8 +33,8 @@ es:
       template: 
         body: "Hubo problemas con los siguientos campos"
         header: 
-          one: "1 error no deja que %{model} se guarde"
-          other: "%{count} errores no dejaron que %{model} se guarde"
+          one: "1 error no deja que {{model}} se guarde"
+          other: "{{count}} errores no dejaron que {{model}} se guarde"
   application: 
     require_no_user: 
       notice: "Ya está conectado como"
@@ -105,38 +105,38 @@ es:
     distance_in_words: 
       about_x_hours: 
         one: "sobre 1 hora"
-        other: "sobre %{count} horas"
+        other: "sobre {{count}} horas"
       about_x_months: 
         one: "sobre 1 mes"
-        other: "sobre %{count} meses"
+        other: "sobre {{count}} meses"
       about_x_years: 
         one: "sobre 1 año"
-        other: "sobre %{count} años"
+        other: "sobre {{count}} años"
       almost_x_years: 
         one: "casi 1 año"
         other: "casi %{count} años"
       half_a_minute: "medio minuto"
       less_than_x_minutes: 
         one: "menos de 1 minuto"
-        other: "menos de %{count} minutos"
+        other: "menos de {{count}} minutos"
       less_than_x_seconds: 
         one: "menos de 1 segundo"
-        other: "menos de %{count} segundos"
+        other: "menos de {{count}} segundos"
       over_x_years: 
         one: "más de 1 año"
         other: "más de %{count} años"
       x_days: 
         one: "1 día"
-        other: "%{count} días"
+        other: "{{count}} días"
       x_minutes: 
         one: "1 minuto"
-        other: "%{count} minutos"
+        other: "{{count}} minutos"
       x_months: 
         one: "1 mes"
-        other: "%{count} meses"
+        other: "{{count}} meses"
       x_seconds: 
         one: "1 segundo"
-        other: "%{count} segundos"
+        other: "{{count}} segundos"
     prompts: 
       day: Día
       hour: Hora
@@ -144,7 +144,7 @@ es:
       month: Mes
       second: Segundos
       year: Año
-  de: Alemán
+  de: Deutsch
   devise: 
     confirmations: 
       confirmed: "Tu cuenta ha sido confirmada. Ya puedes conectarte."
@@ -177,7 +177,7 @@ es:
     password_reset: 
       email: 
         comment: "Si no ha solicitado cambiar la contraseña, por favor, ignore este correo<br/>Su contraseña no se cambiará si no hace clic en este link"
-        headline: "Bienvenido %{email}"
+        headline: "Bienvenido {{email}}"
         link: "Cambiar contraseña"
         text: "Alguien ha solicitado cambiar su contraseña. Puede hacerlo en el siguiente enlace:"
       form: 
@@ -228,28 +228,29 @@ es:
       link: "¿No ha recibido los pasos para desbloquear?"
       send_instructions: "Recibirás un email con las instrucciones de cómo bloquear tu cuenta en unos minutos"
       unlocked: "Su cuenta ha sido desbloqueada. Ya está conectado."
-  en: Inglés
+  el: Ελληνικά
+  en: English
   errors: 
     messages: 
       accepted: "tiene que ser aceptado"
       blank: "tiene que ser rellenado"
       confirmation: "no tiene confirmación"
       empty: "tiene que ser rellenado"
-      equal_to: "tiene que ser exacto %{count}"
+      equal_to: "tiene que ser exacto {{count}}"
       even: "debe ser igual"
       exclusion: "está reservado"
-      greater_than: "tiene que ser mayor que %{count}"
-      greater_than_or_equal_to: "tiene que ser mayor o igual a %{count}"
+      greater_than: "tiene que ser mayor que {{count}}"
+      greater_than_or_equal_to: "tiene que ser mayor o igual a {{count}}"
       inclusion: "no es un valor correcto"
       invalid: "no es válido"
-      less_than: "tiene que ser menor que %{count}"
-      less_than_or_equal_to: "tiene que ser menor o igual que %{count}"
+      less_than: "tiene que ser menor que {{count}}"
+      less_than_or_equal_to: "tiene que ser menor o igual que {{count}}"
       not_a_number: "no es un número"
       odd: "tiene que ser impar"
       taken: "ya ha sido cogido"
-      too_long: "es demasiado largo (no más de %{count} caracteres)"
-      too_short: "es demasiado corto (no más corto de %{count} caracteres)"
-      wrong_length: "no tiene la longitud correcta (deben ser %{count} caracteres)"
+      too_long: "es demasiado largo (no más de {{count}} caracteres)"
+      too_short: "es demasiado corto (no más corto de {{count}} caracteres)"
+      wrong_length: "no tiene la longitud correcta (deben ser {{count}} caracteres)"
   es: Español
   form: 
     show_fully_accessible_places: "accesible en silla de ruedas"
@@ -286,7 +287,7 @@ es:
     titles: 
       basic: "Datos básicos"
       optional: "Más información<span class=\"addition\">(all fields are optional)</span>"
-  fr: Francés
+  fr: Français
   global: 
     form_validation_error: "Por favor, tome nota de los siguientes errores."
   header: 
@@ -323,7 +324,7 @@ es:
       link: 
         node: 
           create: "Agregar un nuevo sitio"
-  is: islenska
+  is: Íslenska
   it: Italiano
   jp: 日本
   layouts: 
@@ -332,8 +333,8 @@ es:
         alt: "Un proyecto de Sozialhelden.de"
   node: 
     address: 
-      city: "%{city} %{postcode}"
-      street: "%{housenumber} %{street}"
+      city: "{{city}} {{postcode}}"
+      street: "{{housenumber}} {{street}}"
     tags: 
       phone: "Teléfono:"
       website: "Página web:"
@@ -344,7 +345,7 @@ es:
         successfull: "Gracias, su sumisión ha sido guardada con éxito y estará en línea en breve. "
     edit: 
       header: 
-        title: "Editar sitio: %{node} | wheelmap.org "
+        title: "Editar sitio: {{node}} | wheelmap.org "
       link: 
         large_map: "&laquo; Cancelar"
     errors: 
@@ -363,7 +364,7 @@ es:
         large_map: "&laquo; Cancelar"
     show: 
       header: 
-        title: "Sitio: %{node} | wheelmap.org"
+        title: "Sitio: {{node}} | wheelmap.org"
       link: 
         edit_node: "Editar sitio"
         large_map: Ampliar
@@ -403,7 +404,7 @@ es:
       connect: 
         headline: "Debe conectar su cuenta de wheelmap con su cuenta de open street map antes de crear o modificar sitios en wheelmap.org."
     callback: 
-      notice: "Ahora su cuenta de wheelmap está conectada con su cuenta de open street map %{user}."
+      notice: "Ahora su cuenta de wheelmap está conectada con su cuenta de open street map {{user}}."
   or: o
   place: 
     one: "%{count} sitio"
@@ -557,7 +558,7 @@ es:
   search: 
     index: 
       search: 
-        for: "Buscando \"%{q}\""
+        for: "Buscando \"{{q}}\""
         not_found: "No se ha encontrado ningún sitio"
   shared: 
     imprint: 

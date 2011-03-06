@@ -3,28 +3,28 @@ it:
   activerecord: 
     errors: 
       full_messages: 
-        format: "%{attribute}%{message}"
+        format: "{{attribute}}{{message}}"
       messages: 
         accepted: "deve essere accettata"
         blank: "non può essere lasciato in bianco"
         confirmation: "non coincide con la conferma"
         empty: "non può essere vuoto"
-        equal_to: "deve essere uguale a %{count}"
+        equal_to: "deve essere uguale a {{count}}"
         even: "deve essere pari"
         exclusion: "è riservato"
-        greater_than: "deve essere superiore a %{count}"
-        greater_than_or_equal_to: "deve essere superiore o uguale a %{count}"
+        greater_than: "deve essere superiore a {{count}}"
+        greater_than_or_equal_to: "deve essere superiore o uguale a {{count}}"
         inclusion: "non è incluso nella lista"
         invalid: "non è valido"
-        less_than: "deve essere meno di %{count}"
-        less_than_or_equal_to: "deve essere meno o uguale a %{count}"
+        less_than: "deve essere meno di {{count}}"
+        less_than_or_equal_to: "deve essere meno o uguale a {{count}}"
         not_a_number: "non è un numero"
         odd: "deve essere dispari"
         record_invalid: "Validazione fallita: %{errors}"
         taken: "è già in uso"
-        too_long: "è troppo lungo (il massimo è %{count} caratteri)"
-        too_short: "è troppo corto (il minimo è %{count} caratteri)"
-        wrong_length: "è della lunghezza sbagliata (deve essere di %{count} caratteri)"
+        too_long: "è troppo lungo (il massimo è {{count}} caratteri)"
+        too_short: "è troppo corto (il minimo è {{count}} caratteri)"
+        wrong_length: "è della lunghezza sbagliata (deve essere di {{count}} caratteri)"
       models: 
         user_session: 
           email: "Indirizzo Email"
@@ -33,8 +33,8 @@ it:
       template: 
         body: "Per favore ricontrolla i seguenti campi:"
         header: 
-          one: "Non posso salvare questo %{model}: 1 errore"
-          other: "Non posso salvare questo %{model}: %{count} errori."
+          one: "Non posso salvare questo {{model}}: 1 errore"
+          other: "Non posso salvare questo {{model}}: {{count}} errori."
   application: 
     require_no_user: 
       notice: "Sei già collegato ..."
@@ -105,38 +105,38 @@ it:
     distance_in_words: 
       about_x_hours: 
         one: "circa un'ora"
-        other: "circa %{count} ore"
+        other: "circa {{count}} ore"
       about_x_months: 
         one: "circa un mese"
-        other: "circa %{count} mesi"
+        other: "circa {{count}} mesi"
       about_x_years: 
         one: "circa un anno"
-        other: "circa %{count} anni"
+        other: "circa {{count}} anni"
       almost_x_years: 
         one: "circa 1 anno"
-        other: "circa %{count} anni"
+        other: "circa {{count}} anni"
       half_a_minute: "mezzo minuto"
       less_than_x_minutes: 
         one: "meno di un minuto"
-        other: "meno di %{count} minuti"
+        other: "meno di {{count}} minuti"
       less_than_x_seconds: 
         one: "meno di un secondo"
-        other: "meno di %{count} secondi"
+        other: "meno di {{count}} secondi"
       over_x_years: 
         one: "oltre un anno"
-        other: "oltre %{count} anni"
+        other: "oltre {{count}} anni"
       x_days: 
         one: "1 giorno"
-        other: "%{count} giorni"
+        other: "{{count}} giorni"
       x_minutes: 
         one: "1 minuto"
-        other: "%{count} minuti"
+        other: "{{count}} minuti"
       x_months: 
         one: "1 mese"
-        other: "%{count} mesi"
+        other: "{{count}} mesi"
       x_seconds: 
         one: "1 secondo"
-        other: "%{count} secondi"
+        other: "{{count}} secondi"
     prompts: 
       day: Giorno
       hour: Ora
@@ -177,7 +177,7 @@ it:
     password_reset: 
       email: 
         comment: "Se non desidera cambiare la password, ignora questa email<br/>La tua password non cambierà a meno che clicchi questo link."
-        headline: "Benvenuto %{email} "
+        headline: "Benvenuto {{email}} "
         link: "Cambia password"
         text: "Qualcuno ha richiesto di cambiare la tua password. Puoi farlo cliccando questo link:"
       form: 
@@ -228,6 +228,7 @@ it:
       link: "No hai ricevuto le istruzioni per sbloccare?"
       send_instructions: "Fra qualche minuti, riceverai una email con le istruzioni per sbloccare."
       unlocked: "Il tuo account è stato sbloccato con successo. Sei ormai collegato."
+  el: Ελληνικά
   en: English
   errors: 
     messages: 
@@ -235,21 +236,21 @@ it:
       blank: "non può essere lasciato in bianco"
       confirmation: "non coincide con la conferma"
       empty: "non può essere vuoto"
-      equal_to: "deve essere uguale a %{count}"
+      equal_to: "deve essere uguale a {{count}}"
       even: "deve essere pari"
       exclusion: "è riservato"
-      greater_than: "deve essere superiore a %{count}"
-      greater_than_or_equal_to: "deve essere superiore o uguale a %{count}"
+      greater_than: "deve essere superiore a {{count}}"
+      greater_than_or_equal_to: "deve essere superiore o uguale a {{count}}"
       inclusion: "non è incluso nella lista"
       invalid: "non è valido"
-      less_than: "deve essere meno di %{count}"
-      less_than_or_equal_to: "deve essere meno o uguale a %{count}"
+      less_than: "deve essere meno di {{count}}"
+      less_than_or_equal_to: "deve essere meno o uguale a {{count}}"
       not_a_number: "non è un numero"
       odd: "deve essere dispari"
       taken: "è già in uso"
-      too_long: "è troppo lungo (il massimo %{count} caratteri)"
-      too_short: "è troppo corto (il minimo è %{count} caratteri)"
-      wrong_length: "è della lunghezza sbagliata (deve essere di %{count} caratteri)"
+      too_long: "è troppo lungo (il massimo {{count}} caratteri)"
+      too_short: "è troppo corto (il minimo è {{count}} caratteri)"
+      wrong_length: "è della lunghezza sbagliata (deve essere di {{count}} caratteri)"
   es: Español
   form: 
     show_fully_accessible_places: "accessibile in sedia a rotelle"
@@ -332,8 +333,8 @@ it:
         alt: "Un progetto di Sozialhelden.de"
   node: 
     address: 
-      city: "%{city} %{postcode} "
-      street: "%{housenumber} %{street} "
+      city: "{{city}} {{postcode}} "
+      street: "{{housenumber}} {{street}} "
     tags: 
       phone: "Telefono:"
       website: "Sito Web:"
@@ -344,7 +345,7 @@ it:
         successfull: "Grazie, i tuoi dati sono stati salvati con successo e saranno online fra poco."
     edit: 
       header: 
-        title: "Modifica luogo: %{node} | wheelmap.org "
+        title: "Modifica luogo: {{node}} | wheelmap.org "
       link: 
         large_map: "&laquo; Annulla "
     errors: 
@@ -363,7 +364,7 @@ it:
         large_map: "&laquo; Annulla"
     show: 
       header: 
-        title: "Lougo: %{node} | wheelmap.org "
+        title: "Lougo: {{node}} | wheelmap.org "
       link: 
         edit_node: "Modifica luogo"
         large_map: Allarga
@@ -403,7 +404,7 @@ it:
       connect: 
         headline: "Devi collegare il tuo account con il tuo account su open street map prima di creare o modificare  luoghi su wheelmap.org"
     callback: 
-      notice: "Il tuo account è stato collegato al account %{user} su OpenStreetMap."
+      notice: "Il tuo account è stato collegato al account {{user}} su OpenStreetMap."
   or: o
   place: 
     one: "%{count} luogo"
@@ -557,7 +558,7 @@ it:
   search: 
     index: 
       search: 
-        for: "Cerco \"%{q}\" "
+        for: "Cerco \"{{q}}\" "
         not_found: "Nessun luogo trovato!"
   shared: 
     imprint: 

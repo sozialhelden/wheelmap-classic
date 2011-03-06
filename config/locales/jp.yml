@@ -3,28 +3,28 @@ jp:
   activerecord: 
     errors: 
       full_messages: 
-        format: "%{attribute} %{message}"
+        format: "{{attribute}} {{message}}"
       messages: 
         accepted: 承認してください
         blank: 入力必須です
         confirmation: 確認入力が一致しません
         empty: 空白は許されていません
-        equal_to: "%{count} と等しくなければなりません"
+        equal_to: "{{count}} と等しくなければなりません"
         even: 偶数でなければなりません
         exclusion: は予約済みです
-        greater_than: "%{count} より大きくなければなりません"
-        greater_than_or_equal_to: "%{count} 以上でなければなりません"
+        greater_than: "{{count}} より大きくなければなりません"
+        greater_than_or_equal_to: "{{count}} 以上でなければなりません"
         inclusion: はリストにありません
         invalid: 正しくありません
-        less_than: "%{count} より小さくなければなりません"
-        less_than_or_equal_to: "%{count} 以下でなければなりません"
+        less_than: "{{count}} より小さくなければなりません"
+        less_than_or_equal_to: "{{count}} 以下でなければなりません"
         not_a_number: は数字ではありません
         odd: 奇数でなければなりません
         record_invalid: "バリデーションに失敗しました。 %{errors}"
         taken: 既に取得されています
-        too_long: "が長すぎます (最大 %{count}文字)"
-        too_short: "が短かすぎます (最小 %{count}文字)"
-        wrong_length: "の文字数が誤っています (%{count}文字でなければなりません)"
+        too_long: "が長すぎます (最大 {{count}}文字)"
+        too_short: "が短かすぎます (最小 {{count}}文字)"
+        wrong_length: "の文字数が誤っています ({{count}}文字でなければなりません)"
       models: 
         user_session: 
           email: メールアドレス
@@ -33,8 +33,8 @@ jp:
       template: 
         body: 次の項目に問題がありました：
         header: 
-          one: "エラーがひとつありこの %{model} は保存できませんでした"
-          other: "%{count} 件のエラーがあり、この %{model} は保存できませんでした"
+          one: "エラーがひとつありこの {{model}} は保存できませんでした"
+          other: "{{count}} 件のエラーがあり、この {{model}} は保存できませんでした"
   application: 
     require_no_user: 
       notice: "あなたはログイン済です ..."
@@ -105,13 +105,13 @@ jp:
     distance_in_words: 
       about_x_hours: 
         one: 約1時間
-        other: "約 %{count} 時間"
+        other: "約 {{count}} 時間"
       about_x_months: 
         one: 約1か月
-        other: "約 %{count}か月"
+        other: "約 {{count}}か月"
       about_x_years: 
         one: 約1年
-        other: "約 %{count} 年"
+        other: "約 {{count}} 年"
       almost_x_years: 
         one: "約 1 年"
         other: "約 %{count} 年"
@@ -124,19 +124,19 @@ jp:
         other: "%{count} 秒未満"
       over_x_years: 
         one: 1年以上
-        other: "%{count}年以上"
+        other: "{{count}}年以上"
       x_days: 
         one: 1日
-        other: "%{count}日"
+        other: "{{count}}日"
       x_minutes: 
         one: 1分
-        other: "%{count}分"
+        other: "{{count}}分"
       x_months: 
         one: 1か月
-        other: "%{count} か月"
+        other: "{{count}} か月"
       x_seconds: 
         one: 1秒
-        other: "%{count}秒"
+        other: "{{count}}秒"
     prompts: 
       day: 日
       hour: 時
@@ -177,7 +177,7 @@ jp:
     password_reset: 
       email: 
         comment: あなたがパスワード変更を要求した記憶が無い場合は、このメールは無視してください<br/>あなたのパスワードはこのリンクをクリックしなければ変更されません。
-        headline: "ようこそ %{email} さん"
+        headline: "ようこそ {{email}} さん"
         link: パスワードを変更
         text: 誰かがあなたのパスワード変更を要求しました。次のリンクをクリックして変更できます。
       form: 
@@ -228,6 +228,7 @@ jp:
       link: アンロック手順が届きませんでしたか？
       send_instructions: 数分でアンロック手順を書いたメールが届きます。
       unlocked: アカウントはアンロックされました。あなたは現在サイインしています。
+  el: Ελληνικά
   en: English
   errors: 
     messages: 
@@ -235,21 +236,21 @@ jp:
       blank: 値を入力してください
       confirmation: 確認が一致しません
       empty: 値を入力してください
-      equal_to: "正確に%{count} でなければなりません"
+      equal_to: "正確に{{count}} でなければなりません"
       even: 偶数でなければなりません
       exclusion: 使用されていません
-      greater_than: "%{count}より大きくなければなりません"
-      greater_than_or_equal_to: "%{count}以上でなければなりません"
+      greater_than: "{{count}}より大きくなければなりません"
+      greater_than_or_equal_to: "{{count}}以上でなければなりません"
       inclusion: 値が正しくありません
       invalid: 正しくありません
-      less_than: "%{count} より小さくなければなりません"
-      less_than_or_equal_to: "%{count} 以下でなければなりません"
+      less_than: "{{count}} より小さくなければなりません"
+      less_than_or_equal_to: "{{count}} 以下でなければなりません"
       not_a_number: は数字ではありません
       odd: 奇数でなければなりません
       taken: 既に取得されています
-      too_long: "が長すぎます(%{count} 文字より多すぎてはいけません)"
-      too_short: "が短かすぎます(%{count} 文字より少なすぎてはいけません)"
-      wrong_length: "長さが間違っています（正確に%{count}文字にしてください）"
+      too_long: "が長すぎます({{count}} 文字より多すぎてはいけません)"
+      too_short: "が短かすぎます({{count}} 文字より少なすぎてはいけません)"
+      wrong_length: "長さが間違っています（正確に{{count}}文字にしてください）"
   es: Español
   form: 
     show_fully_accessible_places: 車椅子可
@@ -331,8 +332,8 @@ jp:
         alt: Sozialhelden.deによるプロジェクト
   node: 
     address: 
-      city: "%{postcode} %{city}"
-      street: "%{street} %{housenumber}"
+      city: "{{postcode}} {{city}}"
+      street: "{{street}} {{housenumber}}"
     tags: 
       phone: "電話:"
       website: "Website:"
@@ -343,7 +344,7 @@ jp:
         successfull: ありがとうございます、送信内容は保存されました。しばらく経ってからオンラインに反映されます。
     edit: 
       header: 
-        title: "場所を編集: %{node} | wheelmap.org "
+        title: "場所を編集: {{node}} | wheelmap.org "
       link: 
         large_map: "&laquo; キャンセル"
     errors: 
@@ -362,7 +363,7 @@ jp:
         large_map: "&laquo; キャンセル"
     show: 
       header: 
-        title: "場所: %{node} | wheelmap.org "
+        title: "場所: {{node}} | wheelmap.org "
       link: 
         edit_node: 場所を編集
         large_map: 拡大
@@ -402,7 +403,7 @@ jp:
       connect: 
         headline: あなたのアカウントをOpenStreetMapアカウントと連携させるとwheelmap.orgで場所を作成したり変更したりすることができます。
     callback: 
-      notice: "あなたのwheelmapアカウントは現在OpenStreetMapアカウント%{user}と連携しています。"
+      notice: "あなたのwheelmapアカウントは現在OpenStreetMapアカウント{{user}}と連携しています。"
   or: or
   place: 
     one: "%{count} 件の場所"
@@ -556,7 +557,7 @@ jp:
   search: 
     index: 
       search: 
-        for: "\"%{q}\" を検索中"
+        for: "\"{{q}}\" を検索中"
         not_found: 場所が見つかりません！
   shared: 
     imprint: 
