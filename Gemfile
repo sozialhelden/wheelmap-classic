@@ -16,9 +16,10 @@ group :default do
   gem 'delayed_job'
   gem 'libxml-ruby'
   gem 'crewait', :path => "#{File.expand_path(__FILE__)}/../vendor/gems/crewait-0.1.6"
-  gem 'hoptoad_notifier', "~> 2.3"
+  gem 'hoptoad_notifier', "~> 2.4"
   gem 'whenever', :require => false
   gem "tolk", :git => "git://github.com/ZenCocoon/tolk.git", :branch => "rails3"
+  gem "rubberband"
 end
 
 group :test, :development do
