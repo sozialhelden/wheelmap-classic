@@ -19,6 +19,7 @@ group :default do
   gem 'hoptoad_notifier', "~> 2.3"
   gem 'whenever', :require => false
   gem "tolk", :git => "git://github.com/ZenCocoon/tolk.git", :branch => "rails3"
+  gem "routing-filter"
 end
 
 group :test, :development do

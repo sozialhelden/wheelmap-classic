@@ -173,6 +173,8 @@ GEM
       thor (~> 0.14.4)
     rake (0.8.7)
     redgreengrid (0.3.2)
+    routing-filter (0.2.3)
+      actionpack
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
       rspec-expectations (~> 2.5.0)
@@ -243,6 +245,7 @@ DEPENDENCIES
   pickle
   rails (= 3.0.3)
   redgreengrid
+  routing-filter
   rspec
   rspec-rails (~> 2.1)
   spatial_adapter
