@@ -1,0 +1,29 @@
+{
+    "type":"FeatureCollection",
+    "bbox":[<%= @left %>,<%= @bottom %>,<%= @right %>,<%= @top %>],
+    "features":
+    [
+        <%- @places.each do |node| %>
+            {
+                "type":"Feature",
+                "geometry": {
+                    "coordinates": [ <%= node.lon %>, <%= node.lat %> ],
+                    "type":"Point"
+                },
+                "properties": {
+                  <%- node.tags.reverse_merge!('url' => node_path(node, :locale => I18n.locale),
+                                                            'headline' => node.headline,
+                                                            'address' => node.address,
+                                                            'wheelchair' => node.wheelchair,
+                                                            'osm_id' => node.osm_id,
+                                                            'type' => node.type,
+                                                            'category' => node.category,
+                                                            'icon' => image_path("#{node.icon}.png")).reject{|k,v| v.blank?}.each do |k,v| %>
+                    "<%= k %>" : "<%= v %>",
+                  <%- end -%>
+                }
+            },
+        <%- end -%>
+    ],
+}
+
