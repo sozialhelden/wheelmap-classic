@@ -222,8 +222,8 @@ de:
           email: E-Mail
           password: Passwort
           password_confirmation: "Passwort wiederholen"
-        submit: "Neu anmelden"
-      headline: "Neu anmelden"
+        submit: "Registrieren"
+      headline: "Registrieren"
     unlocks: 
       link: "Keine Anleitung zum Entspreen deines Benutzerkontos bekommen?"
       send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto entsperren kannst."
