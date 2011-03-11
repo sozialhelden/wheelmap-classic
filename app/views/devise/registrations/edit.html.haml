@@ -1,0 +1,21 @@
+- semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |form|
+  - form.inputs :name => t('devise.edit.headline') do
+    = form.input :email, :label => t('devise.edit.form.labels.email')
+    
+    = form.input :password, :label => t('devise.edit.form.labels.password')
+    
+    = form.input :password_confirmationd, :label => t('devise.edit.form.labels.password_confirmation')
+
+    = form.input :current_password, :label => t('devise.edit.form.labels.current_password')
+
+  - input.buttons do    
+    = form.submit t('devise.edit.form.submit')
+
+
+%h3=t('devise.destroy.headline')
+
+%p
+  Unhappy?
+  = link_to t('devise.destroy.link'), registration_path(resource_name), :confirm => t('devise.destroy.confirm'), :method => :delete
+
+= render :partial => "devise/shared/links"
