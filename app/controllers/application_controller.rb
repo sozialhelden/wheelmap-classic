@@ -17,7 +17,6 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     parsed_locale = params[:locale].try(:to_sym)
-    puts "PARSED: #{parsed_locale}"
     if parsed_locale.nil?
       I18n.locale = I18n.default_locale
     elsif I18n.available_locales.include?(parsed_locale)
@@ -26,7 +25,6 @@ class ApplicationController < ActionController::Base
       flash[:error] = I18n.t('errors.language.not_supported')
       redirect_to root_url
     end
-    puts "SET TO: #{I18n.locale}"
   end
   
   def authenticate_application!
