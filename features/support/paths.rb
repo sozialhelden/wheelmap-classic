@@ -12,7 +12,7 @@ module NavigationHelpers
       '/'
 
     when /the sign_in page/
-      '/de/users/sign_in'
+      '/users/sign_in'
 
     when /the oauth page/
       '/oauth'

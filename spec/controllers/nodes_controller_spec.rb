@@ -164,7 +164,7 @@ describe NodesController do
       
       it "should redirect to sign_in page" do
         post(:create, :node => {:name => 'test node', :wheelchair => 'yes', :lat => '52.4', :lon => '13.9'})
-        response.should redirect_to 'http://test.host/de/users/sign_in'
+        response.should redirect_to 'http://test.host/users/sign_in'
       end
     end
     

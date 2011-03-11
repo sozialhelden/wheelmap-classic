@@ -1,7 +1,7 @@
 = semantic_form_for( resource, :as => resource_name, :url => password_path(resource_name)) do |form|
-  -form.inputs :name => t('devise.password_recovery.headline') do
+  =form.inputs :name => t('devise.password_recovery.headline') do
     = form.input :email, :label => t('devise.password_recovery.form.labels.email')
-  -form.buttons do
+  =form.buttons do
     = form.commit_button t('devise.password_recovery.form.submit')
     %p.hint= t('devise.mandatory')
 
