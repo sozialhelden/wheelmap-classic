@@ -147,7 +147,6 @@ GEM
     net-ssh-gateway (1.0.1)
       net-ssh (>= 1.99.1)
     nokogiri (1.4.4)
-    patron (0.4.11)
     pickle (0.4.4)
       cucumber (>= 0.8)
       rake
@@ -187,11 +186,6 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
       rspec (~> 2.5.0)
-    rubberband (0.0.9)
-      patron
-      patron
-      yajl-ruby
-      yajl-ruby
     rubyzip (0.9.4)
     selenium-webdriver (0.1.3)
       childprocess (~> 0.1.5)
@@ -218,7 +212,6 @@ GEM
     xpath (0.1.3)
       nokogiri (~> 1.3)
     ya2yaml (0.30)
-    yajl-ruby (0.8.1)
     yard (0.6.4)
 
 PLATFORMS
@@ -239,7 +232,7 @@ DEPENDENCIES
   formtastic (~> 1.1.0)
   geoip
   haml
-  hoptoad_notifier (~> 2.4)
+  hoptoad_notifier (~> 2.3)
   httparty
   launchy
   lemonade
@@ -252,7 +245,6 @@ DEPENDENCIES
   redgreengrid
   rspec
   rspec-rails (~> 2.1)
-  rubberband
   spatial_adapter
   tolk!
   webmock
