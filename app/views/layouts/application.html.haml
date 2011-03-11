@@ -3,6 +3,10 @@
   %head
     = render :partial => 'shared/meta'
     
+    / HOPTOAD START
+    = hoptoad_javascript_notifier
+    / HOPTOAD END
+    
     = yield(:head) || content_tag(:title, t('header.title'))
 
     = render :partial => 'shared/html5_elements'
