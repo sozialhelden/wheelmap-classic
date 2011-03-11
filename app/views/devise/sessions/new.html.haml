@@ -1,5 +1,5 @@
 = semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |form|
-  - form.inputs :name => t('devise.sign_in.headline') do
+  = form.inputs :name => t('devise.sign_in.headline') do
     = form.input :email, :label => t('devise.sign_in.form.labels.email')      
     = form.input :password, :label => t('devise.sign_in.form.labels.password'), :hint => false
 
@@ -7,7 +7,7 @@
       %li.checkbox-optional
         = form.check_box :remember_me
         = form.label :remember_me, t('devise.sign_in.form.labels.remember_me')
-  - form.buttons do
+  = form.buttons do
     = form.commit_button t('devise.sign_in.form.submit')
     %p.hint= t('devise.mandatory')
 
