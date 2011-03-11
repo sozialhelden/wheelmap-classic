@@ -9,6 +9,12 @@ class ApplicationController < ActionController::Base
   rescue_from Errno::ETIMEDOUT, :with => :timeout
   rescue_from Timeout::Error,   :with => :timeout
 
+  protected
+
+  def default_url_options(options = nil)
+    {:trailing_slash => true}
+  end
+
   def set_locale
     parsed_locale = params[:locale].try(:to_sym)
     puts "PARSED: #{parsed_locale}"
