@@ -12,15 +12,15 @@ class ApplicationController < ActionController::Base
   protected
 
   def default_url_options(options = nil)
-    {:trailing_slash => true}
+    {:trailing_slash => true, :locale => I18n.locale}
   end
-
+  
   def set_locale
-    parsed_locale = params[:locale].try(:to_sym)
-    if parsed_locale.nil?
+    locale = params[:locale].try(:to_sym)
+    if locale.nil?
       I18n.locale = I18n.default_locale
-    elsif I18n.available_locales.include?(parsed_locale)
-      I18n.locale = parsed_locale
+    elsif I18n.available_locales.include?(locale)
+      I18n.locale = locale
     else
       flash[:error] = I18n.t('errors.language.not_supported')
       redirect_to root_url

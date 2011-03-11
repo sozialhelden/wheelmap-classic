@@ -2,6 +2,7 @@ Wheelmap::Application.routes.draw do
   root :to => 'home#index'
   
   filter :locale
+  RoutingFilter::Locale.include_default_locale = false
   
   devise_for :admins
   devise_for :users

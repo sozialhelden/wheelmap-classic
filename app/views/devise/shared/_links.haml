@@ -1,0 +1,13 @@
+- links = []
+- if controller_name != 'sessions'
+  - links << link_to( t('devise.sessions.link'), new_session_path(resource_name))
+- if devise_mapping.registerable? && controller_name != 'registrations'
+  - links << link_to( t('devise.registrations.link'), new_registration_path(resource_name))
+- if devise_mapping.recoverable? && controller_name != 'passwords'
+  - links << link_to( t('devise.passwords.link'), new_password_path(resource_name))
+- if devise_mapping.confirmable? && controller_name != 'confirmations'
+  - links << link_to( t('devise.confirmations.link'), new_confirmation_path(resource_name))
+- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'
+  - links << link_to( t('devise.unlocks.link'), new_unlock_path(resource_name))
+
+= links.join(' | ').html_safe
