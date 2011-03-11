@@ -104,7 +104,6 @@ function defaultControls(){
     new OpenLayers.Control.ScaleLine({geodesic:true}),
     new OpenLayers.Control.Permalink(),
     new OpenLayers.Control.Permalink('createlink', '/nodes/new'),
-    new OpenLayers.Control.Permalink('show-on-large-map', '/')
   ];
 }
 

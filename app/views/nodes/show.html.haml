@@ -1,6 +1,6 @@
 #map_wrapper
   #minimap
-  = link_to t('.link.large_map'), root_path, :onclick => "location=permalink('#{root_path}');return false;", :class => 'magnify', :id => 'show-on-large-map'
+  = link_to t('.link.large_map'), root_path(:locale => I18n.locale), :class => 'magnify', :id => 'show-on-large-map'
 
 
   

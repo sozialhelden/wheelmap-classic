@@ -6,7 +6,7 @@ Amenities = {
   :leisure => %w{cinema theatre zoo nightclub gallery arena},
   :money_post => %w{post_office atm bank bureau_de_change},
   :education => %w{college  library school university museum kindergarten},
-  :shopping => %w{supermarket hairdresser clothes mall furniture electronics books beverages alcohol department_store shoes hardware garden_centre optician computer bakery laundry bicycle butcher convenience doityourself dry_cleaning florist kiosk},
+  :shopping => %w{supermarket hairdresser clothes mall furniture electronics books beverages alcohol department_store shoes hardware garden_centre optician computer bakery laundry bicycle butcher convenience doityourself dry_cleaning florist kiosk video},
   :sport => %w{stadium sports_centre swimming_pool swimming},
   :tourism => %w{archaeological_site arts_centre artwork battlefield beacon theme_park attraction beach viewpoint tower memorial information cave_entrance castle},
   :accommodation => %w{chalet hostel hotel motel camp_site guest_house caravan_site bed_and_breakfast beach_resort},
@@ -116,6 +116,7 @@ Tags = {
   :tram_stop => :railway,
   :university => :amenity,
   :veterinary => :amenity,
+  :video => :shop,
   :viewpoint => :tourism,
   :zoo => :tourism
 }
@@ -231,5 +232,6 @@ Icons = {
   :swimming => 'sport',
   :museum => 'bank',
   :information => 'information',
+  :video => 'television',
   :viewpoint => 'camera'
 }

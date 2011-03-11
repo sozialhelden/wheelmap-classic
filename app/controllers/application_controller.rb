@@ -9,9 +9,18 @@ class ApplicationController < ActionController::Base
   rescue_from Errno::ETIMEDOUT, :with => :timeout
   rescue_from Timeout::Error,   :with => :timeout
 
-
   def set_locale
-    I18n.locale = extract_locale_from_subdomain
+    parsed_locale = params[:locale].try(:to_sym)
+    puts "PARSED: #{parsed_locale}"
+    if parsed_locale.nil?
+      I18n.locale = I18n.default_locale
+    elsif I18n.available_locales.include?(parsed_locale)
+      I18n.locale = parsed_locale
+    else
+      flash[:error] = I18n.t('errors.language.not_supported')
+      redirect_to root_url
+    end
+    puts "SET TO: #{I18n.locale}"
   end
   
   def authenticate_application!
@@ -45,17 +54,7 @@ class ApplicationController < ActionController::Base
   def default_user
     current_user || wheelmap_visitor
   end
-  
-  def extract_locale_from_subdomain
-    parsed_locale = request.subdomains.first.try(:to_sym)
-    (I18n.available_locales.include? parsed_locale) ? parsed_locale  : extract_locale_from_params
-  end
-
-  def extract_locale_from_params
-    parsed_locale = params[:locale].try(:to_sym)
-    (I18n.available_locales.include? parsed_locale) ? parsed_locale  : I18n.default_locale
-  end
-  
+    
   def timeout(exception)
     @message = I18n.t('nodes.errors.not_available')
     render :template => 'shared/error', :status => 503

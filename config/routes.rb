@@ -1,6 +1,8 @@
 Wheelmap::Application.routes.draw do
   root :to => 'home#index'
   
+  filter :locale
+  
   devise_for :admins
   devise_for :users
 
