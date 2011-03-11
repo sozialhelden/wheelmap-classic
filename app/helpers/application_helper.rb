@@ -9,17 +9,24 @@ module ApplicationHelper
     end
     nil
   end
-  
-  def url_for_subdomain(url, subdomain)
-    url = URI.parse(url)
-    host = url.host
-    case host.split('.').size
-    when 2
-      url.host = "#{subdomain}.#{host}"
-    when 3
-      url.host = host.gsub(/^\w+\./,"#{subdomain}.")
+
+  def url_for_locale(url, locale)
+    uri = URI.parse(url)
+    case uri.path
+      when '/'
+        if locale.to_sym == I18n.default_locale.to_sym
+          uri.path = '/'
+        else
+          uri.path = "/#{locale}/"
+        end
+      else
+        if locale.to_sym == I18n.default_locale.to_sym
+          uri.path = uri.path.gsub(/^\/\w{2}(-\w{2})?($|\/)/, "/")
+        else
+          uri.path = uri.path.gsub(/^\/\w{2}(-\w{2})?($|\/)/, "/#{locale}/")
+        end
     end
-    url.to_s
+    uri
   end
   
   def show_flash
