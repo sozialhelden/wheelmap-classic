@@ -20,6 +20,7 @@ group :default do
   gem 'whenever', :require => false
   gem "tolk", :git => "git://github.com/ZenCocoon/tolk.git", :branch => "rails3"
   gem "routing-filter"
+  gem "http_accept_language"
 end
 
 group :test, :development do
