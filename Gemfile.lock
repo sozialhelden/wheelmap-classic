@@ -119,6 +119,7 @@ GEM
     hoptoad_notifier (2.4.6)
       activesupport
       builder
+    http_accept_language (1.0.1)
     httparty (0.7.4)
       crack (= 0.1.8)
     i18n (0.5.0)
@@ -235,6 +236,7 @@ DEPENDENCIES
   geoip
   haml
   hoptoad_notifier (~> 2.3)
+  http_accept_language
   httparty
   launchy
   lemonade
