@@ -1,0 +1,49 @@
+#imprint
+  %h1= t('.headline')
+  %dl
+    %dt
+      =t('.fields.provider')
+    %dd
+      SOZIALHELDEN e.V.
+      %br
+      c/o Krauthausen
+      %br
+      Belziger Straße 31
+      %br
+      10823 Berlin
+    %dt=t('.fields.phone')
+    %dd +49 170 770 23 88
+    %dt=t('.fields.email')
+    %dd= link_to t('.links.email_me'), 'http://mailhide.recaptcha.net/d?k=018AE3jmHiC10N_60OQ1GNuA==&c=r1mLG_VQKwz0nC3dM5UwKJXLH4iRUf5BWzLHRKicH20='
+    %dt=t('.fields.design')
+    %dd
+      = link_to 'Nico Hagenburger', 'http://www.hagenburger.net', :title => 'Sass, Compass, Haml, Ruby on Rails'
+      %br
+      = link_to 'Christoph Bünte', 'http://www.christophbuente.de', :title => 'Software Entwicklung Berlin mit Ruby, Ruby on Rails, Haml und Sass'
+    %dt=t('.fields.maps')
+    %dd= link_to 'OpenStreetMap', 'http://openstreetmap.org'
+    %dt=t('.fields.icons')
+    %dd
+      = link_to 'Yusuke Kamiyamane', 'http://p.yusukekamiyamane.com/'
+      %br
+      = link_to 'Nico Hagenburger', 'http://www.hagenburger.net', :title => 'Sass, Compass, Haml, Ruby on Rails'
+    %dt=t('.fields.geoip')
+    %dd
+      = link_to 'MaxMind', 'http://www.maxmind.com/', :title => 'Geolocation and Online Fraud Prevention'
+    %dt=t('.fields.license')
+    %dd
+      =t('.fields.maps_and_data')
+      %br
+      = link_to t('.links.license.cc.by_sa_20'), 'http://creativecommons.org/licenses/by-sa/2.0/deed.de', :class => 'cc-by-sa'
+      %br
+      =t('.fields.icons')
+      %br
+      = link_to t('.links.license.cc.by_30'), 'http://creativecommons.org/licenses/by/3.0/deed.de', :class => 'cc-by'
+    %dt
+      =t('.fields.hosting')
+    %dd
+      - link_to 'http://launchco.com', :title => 'Launch/co' do
+        = image_tag('rocket_rentals_logo.png', :alt => 'Launch/co', :class => 'logo')
+  .clear
+  %p
+    =t('.comment')

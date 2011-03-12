@@ -1,8 +1,8 @@
 Wheelmap::Application.routes.draw do
-  root :to => 'home#index'
-  
   filter :locale
   RoutingFilter::Locale.include_default_locale = false
+  
+  root :to => 'home#index'
   
   devise_for :admins
   devise_for :users
@@ -37,4 +37,8 @@ Wheelmap::Application.routes.draw do
   resources :user, :only => :new # Fake route for redirection to OSM register page
 
   match '/imprint' => 'pages#show'
+
+  # match a single given locale and send it to the root url
+  match '/:locale' => 'home#index'
+
 end
