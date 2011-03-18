@@ -10,6 +10,9 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+      
+    when /the spanish home page/
+      '/es'
 
     when /the sign_in page/
       '/users/sign_in'
