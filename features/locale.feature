@@ -21,7 +21,10 @@ Feature: Locale feature
     When I go to the home page
     Then my locale should be "de"
 
-  Scenario: I want to switch manually to the another language
-    Given my browser supports the following languages "de-DE;de;en"
+  Scenario: I want to switch manually to the spanish hompage
     When I go to the spanish home page
     Then my locale should be "es"
+
+  Scenario: I want to switch manually to the english hompage
+    When I go to the english home page
+    Then my locale should be "en"
