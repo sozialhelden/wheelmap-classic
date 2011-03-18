@@ -84,7 +84,7 @@ function drawmap(controls, element) {
   // User cloudmade style
   //  mapnik = new OpenLayers.Layer.CloudMade("CloudMade", {
   //     key: 'ff94b6ad4b174d648b9c491706f13579',
-  //     styleId: 12708,
+  //     styleId: 1714,
   //     displayClass:'olMap',
   //     opacity:1.0,
   //     transitionEffect:'resize',
