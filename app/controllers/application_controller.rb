@@ -3,12 +3,8 @@ class ApplicationController < ActionController::Base
 
   helper :all
   
-  before_filter :redirect_to_default_locale, :if => :url_includes_default_locale?
+  before_filter :redirect_to_default_locale
 
-  before_filter :set_locale_from_params
-  before_filter :set_locale_from_cookies,             :unless => :locale_already_set?
-  before_filter :redirect_to_best_locale_or_default,  :unless => :locale_already_set?
-  
   before_filter :set_last_location
   
   rescue_from Errno::ETIMEDOUT, :with => :timeout
@@ -17,65 +13,17 @@ class ApplicationController < ActionController::Base
   protected
   
   def redirect_to_default_locale
-    uri = URI.parse(request.url)
-    uri.path = uri.path.gsub(/^\/#{I18n.default_locale}/, "")
-    cookies[:locale] = I18n.default_locale
-    redirect_to uri.to_s
-  end
-  
-  def locale_already_set?
-    !I18n.locale.blank?
+    match = /^\/#{I18n.default_locale}\b/
+    redirect_to request.fullpath.gsub(match, '') if request.fullpath =~ match
   end
   
   def url_includes_default_locale?
-    uri = URI.parse(request.url)
     # /de
-    !(uri.path =~ /^\/#{I18n.default_locale}($|\/)?/).nil?
+    !(request.path =~ /^\/#{I18n.default_locale}($|\/)?/).nil?
   end
 
   def default_url_options(options = nil)
     {:locale => I18n.locale}
-  end
-  
-  def set_locale_from_params
-    locale = params[:locale].try(:to_sym)
-    if locale.nil?
-      I18n.locale = locale
-    else
-      if I18n.available_locales.include?(locale)
-        I18n.locale = locale      
-        cookies[:locale] = locale
-      else
-        flash[:error] = I18n.t('errors.language.not_supported')
-        redirect_to root_url(:locale => I18n.default_locale)
-      end
-    end
-    locale
-  end
-
-  def set_locale_from_cookies
-    locale = cookies[:locale].try(:to_sym)
-    unless locale.nil?
-      if I18n.available_locales.include?(locale)
-        I18n.locale = locale      
-        cookies[:locale] = locale
-      else
-        cookies.delete(:locale)
-        flash[:error] = I18n.t('errors.language.not_supported')
-        redirect_to root_url(:locale => I18n.default_locale)
-      end
-    end
-    locale
-  end
-  
-  def redirect_to_best_locale_or_default
-    locale = request.preferred_language_from(I18n.available_locales) # find preferred
-    locale = request.compatible_language_from(I18n.available_locales) unless locale # find compatible
-    locale = I18n.default_locale unless locale # use default
-    
-    uri = URI.parse(request.url)
-    uri.path = uri.path.gsub(/^(.*)$/, "/#{I18n.locale}"+'\1')
-    
   end
   
   def authenticate_application!
