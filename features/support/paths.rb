@@ -10,18 +10,21 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
-      
+
     when /the spanish home page/
       '/es'
-      
+
     when /the german home page/
       '/'
-      
+
     when /the english home page/
       '/en'
 
     when /the sign_in page/
       '/users/sign_in'
+
+    when /the sign-up page/
+      '/users/sign_up'
 
     when /the oauth page/
       '/oauth'
@@ -46,6 +49,7 @@ module NavigationHelpers
 
     when /^#{capture_model}(?:'s)? (.+?) page$/                     # eg. the forum's posts page
       path_to_pickle $1, :extra => $2                               #  or the forum's edit page
+
 
     else
       begin
