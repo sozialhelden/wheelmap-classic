@@ -13,20 +13,12 @@ module ApplicationHelper
   def url_for_locale(url, locale)
     uri = URI.parse(url)
     # Ommit leading locale for default locale
-    if locale.to_sym == I18n.default_locale.to_sym
-      if uri.path =~ /^\/$/ # /
-        uri.path = '/'
-      elsif uri.path =~ /^\/\w{2}(-\w{2})?($|\/)/ #/pt-TR/
-        uri.path = uri.path.gsub(/^\/\w{2}(-\w{2})?($|\/)/, "/")
-      end
+    if uri.path =~ /^\/$/ # /
+      uri.path = "/#{locale}/"
+    elsif uri.path =~ /^\/\w{2}(-\w{2})?($|\/)/ #/pt-TR/
+      uri.path = uri.path.gsub(/^\/\w{2}(-\w{2})?($|\/)/, "/#{locale}/")
     else
-      if uri.path =~ /^\/$/ # /
-        uri.path = "/#{locale}/"
-      elsif uri.path =~ /^\/\w{2}(-\w{2})?($|\/)/ #/pt-TR/
-        uri.path = uri.path.gsub(/^\/\w{2}(-\w{2})?($|\/)/, "/#{locale}/")
-      else
-        uri.path = uri.path.gsub(/^(.+?)$/, "/#{locale}" + '\1')
-      end
+      uri.path = uri.path.gsub(/^(.+?)$/, "/#{locale}" + '\1')
     end
     uri
   end
