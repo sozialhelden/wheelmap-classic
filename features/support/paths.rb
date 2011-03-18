@@ -13,6 +13,12 @@ module NavigationHelpers
       
     when /the spanish home page/
       '/es'
+      
+    when /the german home page/
+      '/'
+      
+    when /the english home page/
+      '/en'
 
     when /the sign_in page/
       '/users/sign_in'
