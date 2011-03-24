@@ -9,7 +9,9 @@ var mapnik;
 var draggable;
 
 OpenLayers.IMAGE_RELOAD_ATTEMPTS = 3;
-OpenLayers.ImgPath = "/img/";
+// OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
+//OpenLayers.ImgPath = "http://wheelmap.local/img/";
+OpenLayers.ImgPath = "http://staging.wheelmap.org/img/";
 
 var states = {
   yes: true,
