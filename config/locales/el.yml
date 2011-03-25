@@ -3,21 +3,21 @@ el:
   activerecord: 
     errors: 
       full_messages: 
-        format: "{{attribute}} {{message}}"
+        format: "%{attribute} %{message}"
       messages: 
         accepted: "Πρέπει να γίνει δεκτό"
         blank: "Πρέπει να συμπληρωθεί"
         confirmation: "Δεν αντιστοιχεί με την επιβεβαίωση"
         empty: "Πρέπει να συμπληρωθεί"
-        equal_to: "Πρέπει να ισούται με {{count}} "
+        equal_to: "Πρέπει να ισούται με %{count} "
         even: "Πρέπει να είναι μονό"
         exclusion: "Είναι δεσμευμένο"
-        greater_than: "Πρέπει να είναι μεγαλύτερο από {{count}} "
-        greater_than_or_equal_to: "Πρέπει να είναι μεγαλύτερο ή ίσο με {{count}} "
+        greater_than: "Πρέπει να είναι μεγαλύτερο από %{count} "
+        greater_than_or_equal_to: "Πρέπει να είναι μεγαλύτερο ή ίσο με %{count} "
         inclusion: "Δεν περιλαμβάνεται στον κατάλογο"
         invalid: Άκυρο
-        less_than: "Πρέπει να είναι μικρότερο από {{count}} "
-        less_than_or_equal_to: "Πρέπει να είναι κατώτερο ή ίση με {{count}} "
+        less_than: "Πρέπει να είναι μικρότερο από %{count} "
+        less_than_or_equal_to: "Πρέπει να είναι κατώτερο ή ίση με %{count} "
         not_a_number: "Δεν είναι αριθμός"
         odd: "Πρέπει να είναι μονός αριθμός"
         record_invalid: άκυρο
@@ -105,13 +105,13 @@ el:
     distance_in_words: 
       about_x_hours: 
         one: "περίπου 1 ώρα"
-        other: "περίπου {{count}} ώρες"
+        other: "περίπου %{count} ώρες"
       about_x_months: 
         one: "περίπου 1 μήνα"
-        other: "περίπου {{count}} μήνες"
+        other: "περίπου %{count} μήνες"
       about_x_years: 
         one: "περίπου 1 χρόνο"
-        other: "περίπου {{count}} χρόνια"
+        other: "περίπου %{count} χρόνια"
       almost_x_years: 
         one: "σχεδόν 1 χρόνος"
         other: "σχεδόν %{count} χρόνια"
@@ -124,19 +124,19 @@ el:
         other: "λιγότερο από %{count} δευτερόλεπτα"
       over_x_years: 
         one: "πάνω από 1 χρόνο"
-        other: "πάνω από {{count}} χρόνια"
+        other: "πάνω από %{count} χρόνια"
       x_days: 
         one: "1 ημέρα"
-        other: "{{count}} ημέρες"
+        other: "%{count} ημέρες"
       x_minutes: 
         one: "1 λεπτό"
-        other: "{{count}} λεπτά"
+        other: "%{count} λεπτά"
       x_months: 
         one: "1 μήνα"
-        other: "{{count}} μήνες"
+        other: "%{count} μήνες"
       x_seconds: 
         one: "1 δευτερόλεπτο"
-        other: "{{count}} δευτερόλεπτα"
+        other: "%{count} δευτερόλεπτα"
     prompts: 
       day: Ημέρα
       hour: Ώρα
@@ -177,7 +177,7 @@ el:
     password_reset: 
       email: 
         comment: "Eάν δεν ζητήσατε εσείς την αλλαγή κωδικού,σας παρακαλούμε να αγνοήσετε αυτο το μήνυμα.<br/> Ο κωδικός σας δεν θα αλλάξει παρά μόνο εάν κάνετε κλικ στο σύνδεσμο επαλήθευσης."
-        headline: "Καλώς ήρθατε {{email}} "
+        headline: "Καλώς ήρθατε %{email} "
         link: "Αλλαγή κώδικα πρόσβασης"
         text: "Κάποιος ζήτησε την αλλαγή του κωδικού σας. Εάν το επιθυμήτε,πατήστε τον ακόλουθο σύνδεσμο:"
       form: 
@@ -236,15 +236,15 @@ el:
       blank: "Πρέπει να συμπληρωθεί"
       confirmation: "Δεν αντιστοιχεί με την επιβεβαίωση"
       empty: "Πρέπει να συμπληρωθεί"
-      equal_to: "Πρέπει να είναι ακριβώς {{count}}"
+      equal_to: "Πρέπει να είναι ακριβώς %{count}"
       even: "Πρέπει να είναι μονό"
       exclusion: "Είναι δεσμευμένο"
-      greater_than: "Πρέπει να είναι μεγαλύτερο από {{count}} "
-      greater_than_or_equal_to: "Πρέπει να είναι μεγαλύτερο ή ίσο με {{count}} "
+      greater_than: "Πρέπει να είναι μεγαλύτερο από %{count} "
+      greater_than_or_equal_to: "Πρέπει να είναι μεγαλύτερο ή ίσο με %{count} "
       inclusion: "Mη αποδεκτή τιμή"
       invalid: Άκυρο
-      less_than: "Πρέπει να είναι μικρότερο από {{count}} "
-      less_than_or_equal_to: "Πρέπει να είναι κατώτερο ή ίση με {{count}} "
+      less_than: "Πρέπει να είναι μικρότερο από %{count} "
+      less_than_or_equal_to: "Πρέπει να είναι κατώτερο ή ίση με %{count} "
       not_a_number: "Δεν είναι αριθμός"
       odd: "Πρέπει να είναι μονός αριθμός"
       taken: "Τό όνομα χρήστη ,υπάρχει ήδη"
@@ -333,8 +333,8 @@ el:
         alt: "Μια πρωτοβουλία των Sozialhelden.de"
   node: 
     address: 
-      city: "{{city}} {{postcode}}"
-      street: "{{housenumber}} {{street}} "
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street} "
     tags: 
       phone: "Τηλέφωνο:"
       website: "Ιστοσελίδα:"
@@ -345,7 +345,7 @@ el:
         successfull: "Ευχαριστούμε,η υποβολή του αιτήματος σας αποθηκεύτηκε επιτυχώς και θα είναι oline σύντομα."
     edit: 
       header: 
-        title: "Επεξεργαστείτε την τοποθεσία:{{node}} | wheelmap.org "
+        title: "Επεξεργαστείτε την τοποθεσία:%{node} | wheelmap.org "
       link: 
         large_map: "&laquo; Ακύρωση"
     errors: 
@@ -364,7 +364,7 @@ el:
         large_map: "&laquo; Ακύρωση"
     show: 
       header: 
-        title: "Τοποθεσία:{{node}} | wheelmap.org "
+        title: "Τοποθεσία:%{node} | wheelmap.org "
       link: 
         edit_node: "Επεξεργαστείτε τοποθεσία"
         large_map: Μεγέθυνση
@@ -404,7 +404,7 @@ el:
       connect: 
         headline: "Για να επεξεργαστείτε ή να δημιουργήσετε τοποθεσίες στο wheelmap.org, θα πρέπει πρώτα να συνδέσετε τον λογαριασμό σας με τον street map λογαριασμό."
     callback: 
-      notice: "Ο wheelmap λογαριασμός σας είναι πλέον συνδεδεμένος με τον OpenStreetMap λογαριασμό{{user}}. "
+      notice: "Ο wheelmap λογαριασμός σας είναι πλέον συνδεδεμένος με τον OpenStreetMap λογαριασμό%{user}. "
   or: ή
   place: 
     one: "%{count} Σημείο"
@@ -558,7 +558,7 @@ el:
   search: 
     index: 
       search: 
-        for: "Αναζήτηση για \"{{q}}\""
+        for: "Αναζήτηση για \"%{q}\""
         not_found: "Δεν βρέθηκαν τοποθεσίες!"
   shared: 
     imprint: 
