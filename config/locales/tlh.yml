@@ -12,7 +12,7 @@ tlh:
         equal_to: "%{count} rapnIS"
         even: "cha'logh boqHa'eghnISlaH mI'"
         exclusion: ghajlu'
-        greater_than: "tIn law' {{count}} tIn puS 'e' teHnIS."
+        greater_than: "tIn law' %{count} tIn puS 'e' teHnIS."
         greater_than_or_equal_to: "tIn law' %{count} tIn puS 'e' teHnIS pagh %{count} rap."
         inclusion: "tetlhDaq SaHbe'"
         invalid: lughbe'
@@ -32,8 +32,8 @@ tlh:
       template: 
         body: "Qaghmey ngaS permeyvam:"
         header: 
-          one: "qonpu' {{model}}vam 'e' bot wa' Qagh"
-          other: "qonpu' {{model}}vam 'e' bot {{count}} Qaghmey"
+          one: "qonpu' %{model}vam 'e' bot wa' Qagh"
+          other: "qonpu' %{model}vam 'e' bot %{count} Qaghmey"
   application: 
     require_no_user: 
       notice: "bIrarpu'. bIrarnISbe'qa' ..."
@@ -125,13 +125,13 @@ tlh:
         other: "%{count} jajmey"
       x_minutes: 
         one: "wa' tup"
-        other: "{{count}} tupmey"
+        other: "%{count} tupmey"
       x_months: 
         one: "wa' jar"
-        other: "{{count}} jarmey"
+        other: "%{count} jarmey"
       x_seconds: 
         one: "wa' tup"
-        other: "{{count}} tupmey"
+        other: "%{count} tupmey"
     prompts: 
       day: jaj
       hour: rep
@@ -215,14 +215,14 @@ tlh:
       accepted: lajnIS
       blank: chImlaHbe'
       empty: chImlaHbe'
-      equal_to: "rapnIS {{count}}"
+      equal_to: "rapnIS %{count}"
       even: "cha'logh boqHa'eghnISlaH mI'"
-      greater_than: "tIn law' {{count}} tIn puS 'e' teHnIS."
-      greater_than_or_equal_to: "tIn law' {{count}} tIn puS 'e' teHnIS pagh {{count}} rap."
+      greater_than: "tIn law' %{count} tIn puS 'e' teHnIS."
+      greater_than_or_equal_to: "tIn law' %{count} tIn puS 'e' teHnIS pagh %{count} rap."
       inclusion: "muj De'"
       invalid: muj
       less_than: "mach law' %{count} mach puS 'e' teHnIS."
-      less_than_or_equal_to: "mach law' {{count}} mach puS 'e' teHnIS pagh {{count}} rap."
+      less_than_or_equal_to: "mach law' %{count} mach puS 'e' teHnIS pagh %{count} rap."
       not_a_number: "oHbe' mI''e"
       odd: "cha'logh boqHa'eghnISlaHbe' mI'"
       taken: ghajlu'
@@ -280,8 +280,8 @@ tlh:
           create: "Daq chu' chel"
   node: 
     address: 
-      city: "{{city}} {{postcode}}"
-      street: "{{housenumber}} {{street}}"
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
     tags: 
       phone: "QumwI':"
       website: "juHDaq:"
@@ -292,7 +292,7 @@ tlh:
         successfull: "qonta' De' 'ej tugh leghlu'."
     edit: 
       header: 
-        title: "Daq choH: {{node}} | wheelmap.org"
+        title: "Daq choH: %{node} | wheelmap.org"
       link: 
         large_map: "&laquo; qIl"
     errors: 
@@ -309,7 +309,7 @@ tlh:
         large_map: "&laquo; qIl"
     show: 
       header: 
-        title: "Daq: {{node}} | wheelmap.org"
+        title: "Daq: %{node} | wheelmap.org"
       link: 
         edit_node: "Daq choH"
         large_map: tInmoH
@@ -485,7 +485,7 @@ tlh:
   search: 
     index: 
       search: 
-        for: "\"{{q}}\" nejtaH"
+        for: "\"%{q}\" nejtaH"
         not_found: "pagh Daq tu'lu'!"
   shared: 
     imprint: 

@@ -51,31 +51,31 @@ en:
   activerecord: 
     errors: 
       messages: 
-        greater_than_or_equal_to: must be greater than or equal to {{count}}
-        less_than_or_equal_to: must be less than or equal to {{count}}
+        greater_than_or_equal_to: must be greater than or equal to %{count}
+        less_than_or_equal_to: must be less than or equal to %{count}
         confirmation: doesn't match confirmation
         blank: can't be blank
         invalid: is invalid
         exclusion: is reserved
         odd: must be odd
-        wrong_length: is the wrong length (should be {{count}} characters)
+        wrong_length: is the wrong length (should be %{count} characters)
         empty: can't be empty
-        too_short: is too short (minimum is {{count}} characters)
+        too_short: is too short (minimum is %{count} characters)
         even: must be even
-        less_than: must be less than {{count}}
-        equal_to: must be equal to {{count}}
-        greater_than: must be greater than {{count}}
+        less_than: must be less than %{count}
+        equal_to: must be equal to %{count}
+        greater_than: must be greater than %{count}
         taken: has already been taken
         accepted: must be accepted
-        too_long: is too long (maximum is {{count}} characters)
+        too_long: is too long (maximum is %{count} characters)
         not_a_number: is not a number
         inclusion: is not included in the list
         record_invalid: "Validation failed: %{errors}"
       template: 
         body: "There were problems with the following fields:"
         header: 
-          one: 1 error prohibited this {{model}} from being saved
-          other: "{{count}} errors prohibited this {{model}} from being saved"
+          one: 1 error prohibited this %{model} from being saved
+          other: "%{count} errors prohibited this %{model} from being saved"
 
       models:
         user_session:
@@ -96,8 +96,8 @@ en:
       limited_accessible: The entrance step is not higher than 7 cm; most important localitites accessible for wheelchair users
   node: 
     address: 
-      city: "{{city}} {{postcode}}"
-      street: "{{housenumber}} {{street}}"
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
     tags: 
       phone: "Phone:"
       website: "Website:"
@@ -114,7 +114,7 @@ en:
   statistics: Statistics
   oauth: 
     callback: 
-      notice: Your wheelmap account is now connected to the OpenStreetMap account {{user}}.
+      notice: Your wheelmap account is now connected to the OpenStreetMap account %{user}.
     application: 
       connect: 
         headline: You have to connect your account with your open street map account before you can create or modify places on wheelmap.org.
@@ -147,23 +147,23 @@ en:
       tolk: Translations
   errors: 
     messages: 
-      greater_than_or_equal_to: must be greater or equal than {{count}}
+      greater_than_or_equal_to: must be greater or equal than %{count}
       confirmation: doesn't match confirmation
-      less_than_or_equal_to: must be lower or equal than {{count}}
+      less_than_or_equal_to: must be lower or equal than %{count}
       blank: has to be filled
       invalid: not valid
       exclusion: is reserved
       odd: must be odd
-      wrong_length: is the wrong length (should be {{count}} characters)
+      wrong_length: is the wrong length (should be %{count} characters)
       empty: has to be filled
       even: must be even
-      too_short: is too short (not less than {{count}} characters)
-      less_than: must be less than {{count}}
-      equal_to: must be exactly {{count}}
-      greater_than: must be greater than {{count}}
+      too_short: is too short (not less than %{count} characters)
+      less_than: must be less than %{count}
+      equal_to: must be exactly %{count}
+      greater_than: must be greater than %{count}
       taken: has already been taken
       accepted: has to be accepted
-      too_long: is too long (not more than {{count}} characters)
+      too_long: is too long (not more than %{count} characters)
       inclusion: not a valid value
       not_a_number: is not a number
   time: 
@@ -339,7 +339,7 @@ en:
         large_map: "&laquo; Cancel"
     edit: 
       header: 
-        title: "Edit place: {{node}} | wheelmap.org"
+        title: "Edit place: %{node} | wheelmap.org"
       link: 
         large_map: "&laquo; Cancel"
     errors: 
@@ -352,7 +352,7 @@ en:
       successfull: Thank you, the submission was saved successfully and will be online shortly.
     show: 
       header: 
-        title: "Place: {{node}} | wheelmap.org"
+        title: "Place: %{node} | wheelmap.org"
       link: 
         edit_node: Edit place
         large_map: Enlarge
@@ -393,28 +393,28 @@ en:
     distance_in_words: 
       x_days: 
         one: 1 day
-        other: "{{count}} days"
+        other: "%{count} days"
       x_seconds: 
         one: 1 second
-        other: "{{count}} seconds"
+        other: "%{count} seconds"
       x_minutes: 
         one: 1 minute
-        other: "{{count}} minutes"
+        other: "%{count} minutes"
       x_months: 
         one: 1 month
-        other: "{{count}} months"
+        other: "%{count} months"
       about_x_hours: 
         one: about 1 hour
-        other: about {{count}} hours
+        other: about %{count} hours
       about_x_months: 
         one: about 1 month
-        other: about {{count}} months
+        other: about %{count} months
       about_x_years: 
         one: about 1 year
-        other: about {{count}} years
+        other: about %{count} years
       over_x_years: 
         one: over 1 year
-        other: over {{count}} years
+        other: over %{count} years
       half_a_minute: half a minute
   home: 
     index: 
@@ -557,4 +557,4 @@ en:
     index: 
       search: 
         not_found: No places could be found!
-        for: Searching for "{{q}}"
+        for: Searching for "%{q}"

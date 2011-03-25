@@ -7,26 +7,26 @@ tr:
         blank: doldurulmalı
         confirmation: "teyidiyle uyuşmamakta"
         empty: doldurulmalı
-        equal_to: "tam olarak {{count}} olmalı"
+        equal_to: "tam olarak %{count} olmalı"
         even: "çift olmalı"
         exclusion: kullanılamaz
-        greater_than: "{{count}} sayısından büyük olmalı"
-        greater_than_or_equal_to: "{{count}} sayısına eşit veya büyük olmalı"
+        greater_than: "%{count} sayısından büyük olmalı"
+        greater_than_or_equal_to: "%{count} sayısına eşit veya büyük olmalı"
         inclusion: "kabul edilen bir kelime değil"
         invalid: geçersiz
-        less_than: "{{count}} sayısından küçük olmalı"
-        less_than_or_equal_to: "{{count}} sayısına eşit veya küçük olmalı"
+        less_than: "%{count} sayısından küçük olmalı"
+        less_than_or_equal_to: "%{count} sayısına eşit veya küçük olmalı"
         not_a_number: "geçerli bir sayı değil"
         odd: "tek olmalı"
         taken: "hali hazırda kullanılmakta"
-        too_long: "çok uzun (en fazla {{count}} karakter)"
-        too_short: "çok kısa (en az {{count}} karakter)"
-        wrong_length: "yanlış uzunlukta (tam olarak {{count}} karakter olmalı)"
+        too_long: "çok uzun (en fazla %{count} karakter)"
+        too_short: "çok kısa (en az %{count} karakter)"
+        wrong_length: "yanlış uzunlukta (tam olarak %{count} karakter olmalı)"
       template: 
         body: "Lütfen aşağıdaki hataları düzeltiniz:"
         header: 
-          one: "{{model}} girişi kaydedilemedi: 1 hata."
-          other: "{{model}} girişi kadedilemedi: {{count}} hata."
+          one: "%{model} girişi kaydedilemedi: 1 hata."
+          other: "%{model} girişi kadedilemedi: %{count} hata."
   date: 
     abbr_day_names: 
       - Pzr
@@ -84,32 +84,32 @@ tr:
     distance_in_words: 
       about_x_hours: 
         one: "1 saat civarında"
-        other: "{{count}} saat civarında"
+        other: "%{count} saat civarında"
       about_x_months: 
         one: "1 ay civarında"
-        other: "{{count}} ay civarında"
+        other: "%{count} ay civarında"
       about_x_years: 
         one: "1 yıl civarında"
-        other: "{{count}} yıl civarında"
+        other: "%{count} yıl civarında"
       almost_x_years: 
         one: "neredeyse 1 yıl"
-        other: "neredeyse {{count}} yıl"
+        other: "neredeyse %{count} yıl"
       half_a_minute: "yarım dakika"
       over_x_years: 
         one: "1 yıldan fazla"
-        other: "{{count}} yıldan fazla"
+        other: "%{count} yıldan fazla"
       x_days: 
         one: "1 gün"
-        other: "{{count}} gün"
+        other: "%{count} gün"
       x_minutes: 
         one: "1 dakika"
-        other: "{{count}} dakika"
+        other: "%{count} dakika"
       x_months: 
         one: "1 ay"
-        other: "{{count}} ay"
+        other: "%{count} ay"
       x_seconds: 
         one: "1 saniye"
-        other: "{{count}} saniye"
+        other: "%{count} saniye"
   number: 
     currency: 
       format: 

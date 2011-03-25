@@ -3,28 +3,28 @@ is:
   activerecord: 
     errors: 
       full_messages: 
-        format: "{{attribute}} {{message}}"
+        format: "%{attribute} %{message}"
       messages: 
         accepted: "þarf að vera tekið gilt"
         blank: "má ekki vera autt"
         confirmation: "passar ekki við staðfestingu"
         empty: "má ekki vera tómt"
-        equal_to: "þarf að vera jafngilt {{count}}"
+        equal_to: "þarf að vera jafngilt %{count}"
         even: "þarf að vera slétt tala"
         exclusion: "er frátekið"
-        greater_than: "þarf að vera stærri en {{count}}"
-        greater_than_or_equal_to: "þarf að vera stærri en eða jafngilt {{count}}"
+        greater_than: "þarf að vera stærri en %{count}"
+        greater_than_or_equal_to: "þarf að vera stærri en eða jafngilt %{count}"
         inclusion: "er ekki í listanum"
         invalid: "er ógilt"
-        less_than: "þarf að vera minna en {{count}}"
-        less_than_or_equal_to: "þarf að vera minna en eða jafngilt {{count}}"
+        less_than: "þarf að vera minna en %{count}"
+        less_than_or_equal_to: "þarf að vera minna en eða jafngilt %{count}"
         not_a_number: "er ekki tala"
         odd: "þarf að vera oddatala"
         record_invalid: "Validation mistókst: %{errors}"
         taken: "er þegar í notkun"
-        too_long: "er of langt (má aðeins vera {{count}} stafir)"
-        too_short: "er of stutt (má aðeins vera {{count}} stafir)"
-        wrong_length: "er af rangri lengd (má aðeins vera {{count}} stafir)"
+        too_long: "er of langt (má aðeins vera %{count} stafir)"
+        too_short: "er of stutt (má aðeins vera %{count} stafir)"
+        wrong_length: "er af rangri lengd (má aðeins vera %{count} stafir)"
       models: 
         user_session: 
           email: Tölvupóstur
@@ -33,8 +33,8 @@ is:
       template: 
         body: "Upp kom vandamál í eftirfarandi dálkum:"
         header: 
-          one: "Ekki var hægt að vista {{model}} vegna villu."
-          other: "Ekki var hægt að vista {{model}} vegna {{count}} villna."
+          one: "Ekki var hægt að vista %{model} vegna villu."
+          other: "Ekki var hægt að vista %{model} vegna %{count} villna."
   application: 
     require_no_user: 
       notice: "Þú ert nú þegar innskráður ..."
@@ -105,38 +105,38 @@ is:
     distance_in_words: 
       about_x_hours: 
         one: "u.þ.b. 1 klukkustund"
-        other: "u.þ.b. {{count}} klukkustundir"
+        other: "u.þ.b. %{count} klukkustundir"
       about_x_months: 
         one: "u.þ.b. 1 mánuður"
-        other: "u.þ.b. {{count}} mánuðir"
+        other: "u.þ.b. %{count} mánuðir"
       about_x_years: 
         one: "u.þ.b. 1 ár"
-        other: "u.þ.b. {{count}} ár"
+        other: "u.þ.b. %{count} ár"
       almost_x_years: 
         one: "næstum 1 ár"
         other: "næstum %{count} ár"
       half_a_minute: "hálf mínúta"
       less_than_x_minutes: 
         one: "minna en 1 mínúta"
-        other: "minna en {{count}} mínútur"
+        other: "minna en %{count} mínútur"
       less_than_x_seconds: 
         one: "minna en 1 sekúnda"
-        other: "minna en {{count}} sekúndur"
+        other: "minna en %{count} sekúndur"
       over_x_years: 
         one: "meira en 1 ár"
-        other: "meira en {{count}} ár"
+        other: "meira en %{count} ár"
       x_days: 
         one: "1 dagur"
-        other: "{{count}} dagar"
+        other: "%{count} dagar"
       x_minutes: 
         one: "1 mínúta"
-        other: "{{count}} mínútur"
+        other: "%{count} mínútur"
       x_months: 
         one: "1 mánuður"
-        other: "{{count}} mánuðir"
+        other: "%{count} mánuðir"
       x_seconds: 
         one: "1 sekúnda"
-        other: "{{count}} sekúndur"
+        other: "%{count} sekúndur"
     prompts: 
       day: Dagur
       hour: Klukkustund
@@ -177,7 +177,7 @@ is:
     password_reset: 
       email: 
         comment: "Ef þú baðst ekki um að breyta lykilorðinu þínu þá vinsamlegast hunsið þennan póst<br/>Lykilorðið þitt mun ekki breytast nema þú smellir á þennan tengil."
-        headline: "Velkominn {{email}} "
+        headline: "Velkominn %{email} "
         link: "Breyta lykilorði"
         text: "Einhver bað um breytingu á lykilorði. Þú getur gert það með því að smella á þennan tengil:"
       form: 
@@ -235,21 +235,21 @@ is:
       blank: "verður að fylla út"
       confirmation: "passar ekki við staðfestingu"
       empty: "verður að fylla út"
-      equal_to: "verður að vera nákvæmlega {{count}} "
+      equal_to: "verður að vera nákvæmlega %{count} "
       even: "verður að vera jafnt"
       exclusion: "er tekið frá"
-      greater_than: "verður að vera stærri en {{count}}"
-      greater_than_or_equal_to: "verður að vera stærri en eða jafnt {{count}}"
+      greater_than: "verður að vera stærri en %{count}"
+      greater_than_or_equal_to: "verður að vera stærri en eða jafnt %{count}"
       inclusion: "er ekki tekið gilt"
       invalid: "ekki gilt"
-      less_than: "verður að vera minna en {{count}}"
-      less_than_or_equal_to: "verðurf að vera minna en eða jafnt {{count}}"
+      less_than: "verður að vera minna en %{count}"
+      less_than_or_equal_to: "verðurf að vera minna en eða jafnt %{count}"
       not_a_number: "er ekki tala"
       odd: "verður að vera stakt"
       taken: "hefur verið tekið"
-      too_long: "er of langt (ekki fleiri en {{count}} stafir)"
-      too_short: "er of stutt (ekki minna en {{count}} stafir)"
-      wrong_length: "er vitlaus lengd (ætti að vera {{count}} stafir)"
+      too_long: "er of langt (ekki fleiri en %{count} stafir)"
+      too_short: "er of stutt (ekki minna en %{count} stafir)"
+      wrong_length: "er vitlaus lengd (ætti að vera %{count} stafir)"
   es: Español
   form: 
     show_fully_accessible_places: hjólastólaaðgengilegt
@@ -333,8 +333,8 @@ is:
         alt: "Verkefni unnið af Sozialhelden.de"
   node: 
     address: 
-      city: "{{city}} {{postcode}} "
-      street: "{{housenumber}} {{street}} "
+      city: "%{city} %{postcode} "
+      street: "%{housenumber} %{street} "
     tags: 
       phone: "Sími:"
       website: "Vefsíða:"
@@ -345,7 +345,7 @@ is:
         successfull: "Takk fyrir, innleggið þitt er vistað og mun birtast innan skamms"
     edit: 
       header: 
-        title: "Breyta stað: {{node}} | wheelmap.org "
+        title: "Breyta stað: %{node} | wheelmap.org "
       link: 
         large_map: "&laquo; Hætta við"
     errors: 
@@ -364,7 +364,7 @@ is:
         large_map: "&laquo; Hætta við"
     show: 
       header: 
-        title: "Staður: {{node}} | wheelmap.org"
+        title: "Staður: %{node} | wheelmap.org"
       link: 
         edit_node: "Breyta stað"
         large_map: Stækka
@@ -404,7 +404,7 @@ is:
       connect: 
         headline: "Þú verður að aðganginn þinn við open street map áður en þú getur búið til eða breytt stöðum á wheelmap.org"
     callback: 
-      notice: "Wheelmap aðgangurinn þinn er núna tengdur OpenStreetMap {{user}}. "
+      notice: "Wheelmap aðgangurinn þinn er núna tengdur OpenStreetMap %{user}. "
   or: eða
   place: 
     one: "%{count} staður"
@@ -558,7 +558,7 @@ is:
   search: 
     index: 
       search: 
-        for: "Leita að \"{{q}}\" "
+        for: "Leita að \"%{q}\" "
         not_found: "Engir staðir fundust!"
   shared: 
     imprint: 
