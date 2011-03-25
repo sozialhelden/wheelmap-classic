@@ -7,11 +7,11 @@
     = hoptoad_javascript_notifier
     / HOPTOAD END
     
-    = yield(:head) || content_tag(:title, t('header.title'))
+    = content_for?(:head) ? content_for(:head) : content_tag(:title, t('header.title'))
 
     = render :partial => 'shared/html5_elements'
     
-    = yield :javascript_constants
+    = content_for :javascript_constants
       
     = stylesheet_link_tag 'node', :cache => 'nodes'
 
@@ -27,4 +27,4 @@
 
     = javascript_include_tag 'openlayers', 'cloudmade', 'jquery', 'autocomplete', 'cookie', 'uservoice', 'icons', 'osm', 'application', :cache => "minimaps_#{I18n.locale}"
     
-    = yield :javascript
+    = content_for :javascript

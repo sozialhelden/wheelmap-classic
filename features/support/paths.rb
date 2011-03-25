@@ -36,6 +36,8 @@ module NavigationHelpers
     when /the search result page/
       '/search'
 
+    when /the last poi's page/
+      "/nodes/#{Poi.last.to_param}"
     # the following are examples using path_to_pickle
 
     when /^#{capture_model}(?:'s)? page$/                           # eg. the forum's page

@@ -7,11 +7,11 @@
     = hoptoad_javascript_notifier
     / HOPTOAD END
     
-    = yield(:head) || content_tag(:title, t('header.title'))
+    = content_for?(:head) ? content_for(:head) : content_tag(:title, t('header.title'))
 
     = render :partial => 'shared/html5_elements'
     
-    = yield :javascript_constants
+    = content_for :javascript_constants
 
     = stylesheet_link_tag 'screen', :cache => 'screens'
     
@@ -25,4 +25,4 @@
     
     = render :partial => 'shared/google_tracking'
 
-    = yield :javascript
+    = content_for :javascript
