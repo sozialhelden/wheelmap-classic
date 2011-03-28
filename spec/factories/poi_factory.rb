@@ -9,7 +9,7 @@ end
 
 Factory.define :poi do |p|
   p.geom Point.from_x_y(13.4, 52.0)
-  p.tags { {'name' => 'name', 'amenity' => 'bar'} }
+  p.tags { {'name' => 'name', 'amenity' => 'bar', 'addr:city' => 'Berlin'} }
   p.version { Factory.next :version }
   
 end

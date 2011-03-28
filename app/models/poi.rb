@@ -114,6 +114,10 @@ class Poi < ActiveRecord::Base
       [render_street(self),render_city(self)].compact.join(', ')
     end
     
+    def city
+      tags['addr:city']
+    end
+    
     def state
       'yes'
     end

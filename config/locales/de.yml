@@ -293,6 +293,7 @@ de:
   header: 
     meta: 
       description: "Stufen hier, Treppen da oder keine Behindertentoiletten - dank Wheelmap wissen Sie jetzt im Vorhinein, ob ein Museum, eine Kino oder das nächste Restaurant rollstuhlgerecht sind."
+      description: "Ist %{name} rollstuhlgerecht?"
       homepage: Startseite
       keywords: "rollstuhl gerechte orte finden suchen markieren"
       search: Suche
@@ -364,7 +365,7 @@ de:
         large_map: "&laquo; Abbrechen"
     show: 
       header: 
-        title: "Ort: %{node} | wheelmap.org"
+        title: "Ist %{name} rollstuhlgerecht? Barrierefreie Orte in %{city} finden und melden auf wheelmap.org"
       link: 
         edit_node: "Ort bearbeiten"
         large_map: "Ansicht vergrößern"
