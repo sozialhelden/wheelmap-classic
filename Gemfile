@@ -37,8 +37,8 @@ group :test do
   gem 'nokogiri'
   gem 'pickle'
   gem 'launchy'
+  gem 'database_cleaner'
 end
-
 
 group :deployment do
   gem 'capistrano'
