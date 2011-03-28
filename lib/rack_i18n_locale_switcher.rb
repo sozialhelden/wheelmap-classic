@@ -59,14 +59,12 @@ module Rack
     end
     
     def first_http_accept_language(env)
-      puts "Parsing HTTP_ACCEPT_LANGUAGE '#{env["HTTP_ACCEPT_LANGUAGE"]}' and #{env["ACCEPT_LANGUAGE"]}"
       if lang = env["HTTP_ACCEPT_LANGUAGE"]
         lang = lang.split(",").map { |l|
           l += ';q=1.0' unless l =~ /;q=\d+\.\d+$/
           l.split(';q=')
         }.first
         locale = symbolize_locale(lang.first.split("-").first)
-        puts "LOCALE #{locale}"
       else
         locale = nil
       end
