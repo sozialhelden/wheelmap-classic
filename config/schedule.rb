@@ -14,7 +14,7 @@ every '* 3-23 * * *' do
   rake "osm:replication:sync", :environment => :production
 end
 
-Remove cached files older than 3 days
+#Remove cached files older than 3 days
 every 1.minute do
  command "find tmp/cache/ -mmin +4320 -type f -delete", :environment => :production
 end
