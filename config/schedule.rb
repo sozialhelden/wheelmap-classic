@@ -6,7 +6,7 @@ job_type :rake,    "cd :path && RAILS_ENV=:environment /home/rails/.rvm/bin/rake
 job_type :command, "cd :path && :task :output"
 
 # Sync with OSM 
-every '* 0-1,3-23 * * *' do
+every '* 0,1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23 * * *' do
   rake "osm:replication:sync", :environment => :production
 end
 
