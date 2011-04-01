@@ -14,7 +14,7 @@ every '* 3-23 * * *' do
 end
 
 #Remove cached files older than 3 days
-every 1.minute do
- command "find #{:path}/tmp/cache/ -mmin +4320 -type f -delete", :environment => :production
-end
+# every 1.minute do
+#  command "find #{:path}/tmp/cache/ -mmin +4320 -type f -delete", :environment => :production
+# end
 
