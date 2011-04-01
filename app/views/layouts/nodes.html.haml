@@ -7,7 +7,12 @@
     = hoptoad_javascript_notifier
     / HOPTOAD END
     
-    = content_for?(:head) ? content_for(:head) : content_tag(:title, t('header.title'))
+    - if content_for?(:head)
+      = content_for(:head)
+    - else
+      %meta{:name => 'description', :content => t('header.meta.description')}
+      %title=t('header.title')
+    
 
     = render :partial => 'shared/html5_elements'
     

@@ -293,7 +293,6 @@ de:
   header: 
     meta: 
       description: "Stufen hier, Treppen da oder keine Behindertentoiletten - dank Wheelmap wissen Sie jetzt im Vorhinein, ob ein Museum, eine Kino oder das nächste Restaurant rollstuhlgerecht sind."
-      description: "Ist %{name} rollstuhlgerecht?"
       homepage: Startseite
       keywords: "rollstuhl gerechte orte finden suchen markieren"
       search: Suche
@@ -317,6 +316,14 @@ de:
       title_add_place: "Jetzt einen neuen Ort an dieser Stelle hinzufügen"
     tagline: "Wheelmap logo"
     title: "Wheelmap - Rollstuhlgerechte Orte finden"
+    
+  pages:
+    show:
+      header:
+        title: Wheelmap - Impressum
+        meta:
+          description: "Impressum von Wheelmap, einem Projekt des Sozialhelden e.V."
+    
   home: 
     index: 
       filter: 
@@ -365,7 +372,7 @@ de:
         large_map: "&laquo; Abbrechen"
     show: 
       header: 
-        title: "Ist %{name} rollstuhlgerecht? Barrierefreie Orte in %{city} finden und melden auf wheelmap.org"
+        title: "Ort: %{node} | wheelmap.org"
       link: 
         edit_node: "Ort bearbeiten"
         large_map: "Ansicht vergrößern"

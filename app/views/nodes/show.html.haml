@@ -83,7 +83,8 @@
   %p#streetview_info
 
 - content_for :head do
-  %title= t('.header.title', :name => @node.name, :city => @node.city)
+  %title= t('.header.title', :node => @node.headline)
+  %meta{:name => 'description', :content => t('header.meta.description')}
   
 - content_for :javascript_constants do
   :javascript
