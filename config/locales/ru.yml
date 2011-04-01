@@ -20,7 +20,6 @@ ru:
         less_than_or_equal_to: "может иметь значение меньшее или равное %{count}"
         not_a_number: "не является числом"
         odd: "может иметь лишь четное значение"
-        record_invalid: недействительный
         taken: "уже существует"
         too_long: "слишком длинный (максимум %{count} знаков )"
         too_short: "слишком короткий (минимум %{count} знаков )"
@@ -120,9 +119,6 @@ ru:
         many: "около %{count} лет"
         one: "около %{count} года"
         other: "около %{count} лет"
-      almost_x_years: 
-        другие: "почти %{count} лет"
-        один: "почти 1 год"
       half_a_minute: "меньше минуты"
       less_than_x_minutes: 
         few: "меньше %{count} минут"

@@ -372,8 +372,6 @@ fr:
       flash: 
         not_successfull: "Oups, votre entrée était incorrecte ou incomplète."
         successfull: "Merci, votre entrée était sauvegardée avec succès et sera publiée bientôt."
-    update_wheelchair: 
-      successfull: "Merci, votre entrée était sauvegardée avec succès et sera publiée bientôt."
   number: 
     currency: 
       format: 

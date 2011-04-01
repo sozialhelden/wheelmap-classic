@@ -371,8 +371,6 @@ jp:
       flash: 
         not_successfull: おっと、入力内容が正しくないか不完全です。
         successfull: ありがとうございます、送信内容は保存されました。しばらく経ってからオンラインに反映されます。
-    update_wheelchair: 
-      successfull: ありがとうございます、送信内容は保存されました。しばらく経ってからオンラインに反映されます。
   number: 
     currency: 
       format: 

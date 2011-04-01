@@ -372,8 +372,6 @@ it:
       flash: 
         not_successfull: "Scusa, il tuo input era scorretto o incompleto"
         successfull: "Grazie, i tuoi dati sono stati salvati con successo e saranno online fra poco."
-    update_wheelchair: 
-      successfull: "Grazie, i tuoi dati sono stati salvati con successo e saranno online fra poco."
   number: 
     currency: 
       format: 
