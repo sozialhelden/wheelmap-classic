@@ -39,7 +39,4 @@ Wheelmap::Application.routes.draw do
 
   match '/imprint' => 'pages#show'
 
-  # match a single given locale and send it to the root url
-  match '/:locale' => 'home#index'
-
 end
