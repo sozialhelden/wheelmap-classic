@@ -44,9 +44,14 @@ en:
 
   support:
     array:
-      sentence_connector: "and"
+      sentence_connector: 'and'
       skip_last_comma: true
       two_words_connector: ' and '
+      last_word_connector: ' and '
+      words_connector: ','
+    select: 
+      prompt: "Please select"
+      
 
   activerecord: 
     errors:
@@ -301,11 +306,6 @@ en:
     show_places_without_status: unknown status
     show_unaccessible_places: not wheelchair accessible
     show_fully_accessible_places: wheelchair accessible
-  support: 
-    array: 
-      two_words_connector: " and "
-      last_word_connector: " and "
-      words_connector: ","
       
   breadcrumbs: 
     node: 
