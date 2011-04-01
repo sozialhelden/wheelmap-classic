@@ -372,8 +372,6 @@ es:
       flash: 
         not_successfull: "¡Ay!, su entrada ha sido o incorrecta o incompleta."
         successfull: "Gracias, su sumisión ha sido guardada con éxito y estará en línea en breve. "
-    update_wheelchair: 
-      successfull: "Gracias, su sumisión ha sido guardada con éxito y estará en línea en breve. "
   number: 
     currency: 
       format: 

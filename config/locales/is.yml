@@ -372,8 +372,6 @@ is:
       flash: 
         not_successfull: "Úps, innleggið þitt var rangt eða ekki klárað."
         successfull: "Takk fyrir, innleggið þitt hefur verið vistað og verður birt innan skamms"
-    update_wheelchair: 
-      successfull: "Takk fyrir, innleggið þitt hefur verið vistað og verður birt innan skamms"
   number: 
     currency: 
       format: 

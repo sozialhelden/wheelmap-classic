@@ -222,8 +222,8 @@ de:
           email: E-Mail
           password: Passwort
           password_confirmation: "Passwort wiederholen"
-        submit: "Registrieren"
-      headline: "Registrieren"
+        submit: Registrieren
+      headline: Registrieren
     unlocks: 
       link: "Keine Anleitung zum Entspreen deines Benutzerkontos bekommen?"
       send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto entsperren kannst."
@@ -316,14 +316,6 @@ de:
       title_add_place: "Jetzt einen neuen Ort an dieser Stelle hinzufügen"
     tagline: "Wheelmap logo"
     title: "Wheelmap - Rollstuhlgerechte Orte finden"
-    
-  pages:
-    show:
-      header:
-        title: Wheelmap - Impressum
-        meta:
-          description: "Impressum von Wheelmap, einem Projekt des Sozialhelden e.V."
-    
   home: 
     index: 
       filter: 
@@ -385,10 +377,7 @@ de:
   number: 
     currency: 
       format: 
-        delimiter: ~
         format: "%n %u"
-        precision: ~
-        separator: ~
         unit: €
     format: 
       delimiter: "."
@@ -396,7 +385,6 @@ de:
       separator: ","
     human: 
       format: 
-        delimiter: ""
         precision: 1
       storage_units: 
         format: "%n %u"
@@ -408,12 +396,6 @@ de:
           kb: KB
           mb: MB
           tb: TB
-    percentage: 
-      format: 
-        delimiter: ""
-    precision: 
-      format: 
-        delimiter: ""
   oauth: 
     application: 
       connect: 
@@ -421,6 +403,12 @@ de:
     callback: 
       notice: "Dein Benutzerkonto wurde erfoglreich mit dem OpenStreetMap-Benutzerkonto von '%{user}' verbunden."
   or: oder
+  pages: 
+    show: 
+      header: 
+        meta: 
+          description: "Impressum von Wheelmap, einem Projekt des Sozialhelden e.V."
+        title: "Wheelmap - Impressum"
   place: 
     one: "%{count} Ort"
     other: "%{count} Orte"

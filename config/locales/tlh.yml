@@ -317,24 +317,19 @@ tlh:
       flash: 
         not_successfull: "De' muj DaghItlh"
         successfull: "qonta' De' 'ej tugh leghlu'."
-    update_wheelchair: 
-      successfull: "qonta' De' 'ej tugh leghlu'."
   number: 
     currency: 
       format: 
         delimiter: "."
         format: "%u%n"
-        precision: cha'
         separator: "."
         unit: $
     format: 
       delimiter: ","
-      precision: wej
       separator: "."
     human: 
       format: 
         delimiter: "."
-        precision: wa'
       storage_units: 
         format: "%n %u"
         units: 
