@@ -330,7 +330,7 @@ de:
   layouts: 
     application: 
       banner: 
-        alt: "Ein Projekt der Sozialhelden"
+        alt: "Ein Projekt der Sozialhelden.de"
   node: 
     address: 
       city: "%{postcode} %{city}"
