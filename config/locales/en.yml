@@ -16,7 +16,7 @@ en:
       format: 
         format: "%u%n"
         unit: $
-        separator: .
+        separator: "."
         precision: 2
         delimiter: ","
     precision: 
@@ -49,7 +49,9 @@ en:
       two_words_connector: ' and '
 
   activerecord: 
-    errors: 
+    errors:
+      full_messages: 
+        format: "%{attribute} %{message}" 
       messages: 
         greater_than_or_equal_to: must be greater than or equal to %{count}
         less_than_or_equal_to: must be less than or equal to %{count}
@@ -302,6 +304,9 @@ en:
   support: 
     array: 
       two_words_connector: " and "
+      last_word_connector: " and "
+      words_connector: ","
+      
   breadcrumbs: 
     node: 
       edit: Edit place
@@ -349,7 +354,8 @@ en:
       not_authorized: Sorry, authentication failed
       not_available: Sorry, this page is temporarily not available.
     update_wheelchair: 
-      successfull: Thank you, the submission was saved successfully and will be online shortly.
+      successfull: "The status for \"%{name}\" has been changed to \"%{status} wheelchair accessible\" and will be online shortly."
+      
     show: 
       header: 
         title: "Place: %{node} | wheelmap.org"
@@ -416,6 +422,12 @@ en:
         one: over 1 year
         other: over %{count} years
       half_a_minute: half a minute
+  pages:
+    show:
+      header:
+        title: Wheelmap - Imprint
+        meta:
+          description: "Imprint of wheelmap, a projekt of Sozialhelden e.V."
   home: 
     index: 
       filter: 
