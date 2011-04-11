@@ -365,6 +365,7 @@ el:
       header: 
         title: "Τοποθεσία:%{node} | wheelmap.org "
       link: 
+        report_bug: "Report a problem"
         edit_node: "Επεξεργαστείτε τοποθεσία"
         large_map: Μεγέθυνση
     update: 

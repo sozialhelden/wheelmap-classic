@@ -365,7 +365,8 @@ es:
     show: 
       header: 
         title: "Sitio: %{node} | wheelmap.org"
-      link: 
+      link:
+        report_bug: "Report a problem"
         edit_node: "Editar sitio"
         large_map: Ampliar
     update: 
