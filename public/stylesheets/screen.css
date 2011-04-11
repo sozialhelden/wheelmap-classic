@@ -111,59 +111,59 @@ a:hover {
   background-color: #eeeeff;
 }
 
-/* line 1, ../../oauth/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 1, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 a, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, p, pre, span, th, td {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
 }
 
-/* line 6, ../../oauth/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 6, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 10, ../../oauth/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 10, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 fieldset, img {
   border: 0;
 }
 
-/* line 13, ../../oauth/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 13, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 address, em, th {
   font-style: normal;
   font-weight: normal;
 }
 
-/* line 17, ../../oauth/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 17, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 li {
   list-style: none;
 }
 
-/* line 20, ../../oauth/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 20, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 th {
   font-style: normal;
   text-align: left;
 }
 
-/* line 24, ../../oauth/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 24, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 h1, h2, h3, h4, h5, h6, small {
   font-size: 100%;
 }
 
-/* line 27, ../../oauth/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 27, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 input, textarea, select {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
 }
 
-/* line 33, ../../oauth/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 33, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 .msie input, .msie textarea, .msie select {
   font-size: 100%;
 }
 
-/* line 36, ../../oauth/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+/* line 36, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
 header, section, article, aside, footer, time {
   display: block;
 }
@@ -201,7 +201,7 @@ h1 {
   line-height: 40px;
   position: relative;
 }
-/* line 3, ../../oauth/ruby/1.8/gems/redgreengrid-0.3.2/sass/redgreengrid/_browser_support.sass */
+/* line 3, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_browser_support.sass */
 .presto h1 {
   bottom: 1px;
 }
@@ -254,7 +254,7 @@ a:visited:hover {
   *vertical-align: auto;
   vertical-align: baseline;
 }
-/* line 7, ../../oauth/ruby/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+/* line 7, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 .print {
   *display: inline;
 }
@@ -273,7 +273,7 @@ a:visited:hover {
   *vertical-align: auto;
   vertical-align: baseline;
 }
-/* line 7, ../../oauth/ruby/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+/* line 7, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 .mail {
   *display: inline;
 }
@@ -292,7 +292,7 @@ a:visited:hover {
   *vertical-align: auto;
   vertical-align: baseline;
 }
-/* line 7, ../../oauth/ruby/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+/* line 7, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 .link {
   *display: inline;
 }
@@ -312,7 +312,7 @@ a:visited:hover {
   vertical-align: baseline;
   background-image: url(/images/icons/arrow-circle-double.png);
 }
-/* line 7, ../../oauth/ruby/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+/* line 7, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
 .refresh {
   *display: inline;
 }
@@ -1386,40 +1386,46 @@ image[width='16'] {
   overflow: hidden;
 }
 /* line 9, ../../app/stylesheets/partials/map/_popup.sass */
-.olFramedCloudPopupContent a {
+.olFramedCloudPopupContent a.more {
   overflow: hidden;
   white-space: nowrap;
   font-size: 11px;
   font-weight: normal;
-  text-align: right;
+  text-align: left;
+  padding-left: 20px;
+  text-decoration: underline;
   display: block;
 }
-/* line 17, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 19, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent h2 {
   background-position: 0 2px;
   padding-left: 20px;
 }
-/* line 21, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 23, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent address {
   padding-left: 20px;
 }
-/* line 24, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 26, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent input {
   float: left;
   margin-right: 10px;
 }
-/* line 28, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 30, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent label {
+  width: auto;
+}
+/* line 33, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent #update_button {
   position: static;
   float: right;
 }
-/* line 32, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 37, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent #update_spinner {
   display: none;
   float: right;
   margin-right: 5px;
 }
-/* line 37, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 42, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent ol {
   border-top: 1px #cfd7c5 solid;
   -moz-border-radius: 0px;
@@ -1431,7 +1437,7 @@ image[width='16'] {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 44, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 49, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent li,
 .olFramedCloudPopupContent label {
   float: left;
@@ -1443,7 +1449,7 @@ image[width='16'] {
   -khtml-border-radius: 0px !important;
   border-radius: 0px !important;
 }
-/* line 52, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 57, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent label {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-weight: bold;
@@ -1451,30 +1457,30 @@ image[width='16'] {
   text-align: left;
   line-height: 8px;
 }
-/* line 59, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 64, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent li {
   font-family: 'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue','Swiss 721 Light','Helvetica','Arial','sans-serif';
   font-size: 11px;
   font-weight: 100;
 }
-/* line 64, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 69, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent li strong {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-weight: bold;
 }
-/* line 69, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 74, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent .yes label {
   color: #86af4d;
 }
-/* line 73, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 78, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent .limited label {
   color: #f19d46;
 }
-/* line 77, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 82, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent .no label {
   color: #d6382f;
 }
-/* line 81, ../../app/stylesheets/partials/map/_popup.sass */
+/* line 86, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent.unknown label {
   color: #8d8d8e;
 }

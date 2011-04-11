@@ -4,7 +4,8 @@ OpenLayers.Lang.de = {
   'wheelchair_label_no': 'nicht rollstuhlgerecht',
   'wheelchair_label_unknown': 'unbekannt',
   'wheelchair_update_button': 'Speichern',
-  'more_information': 'mehr ...'
+  'more_information': 'mehr ...',
+  'wheelchair_help': 'Rollstuhlgerecht? (Hilfe)'
 };
 OpenLayers.Lang.en = { 
   'wheelchair_label_yes': 'wheelchair accessible',
@@ -12,7 +13,8 @@ OpenLayers.Lang.en = {
   'wheelchair_label_no': 'not wheelchair accessible',
   'wheelchair_label_unknown': 'unknown status',
   'wheelchair_update_button': 'Update',
-  'more_information': 'more ...'
+  'more_information': 'more ...',
+  'wheelchair_help': 'Wheelchair accessible? (Help)'
 };
 OpenLayers.Lang.es = { 
   'wheelchair_label_yes': 'accesible en silla de ruedas',
@@ -20,7 +22,8 @@ OpenLayers.Lang.es = {
   'wheelchair_label_no': 'sin acceso en silla de ruedas',
   'wheelchair_label_unknown': 'se desconoce el estado',
   'wheelchair_update_button': 'Guardar',
-  'more_information': 'más ...'
+  'more_information': 'más ...',
+  'wheelchair_help': '¿Acceso en silla de ruedas? (Ayuda)'
 };
 OpenLayers.Lang.fr = { 
   'wheelchair_label_yes': 'accès pour fauteuil roulant',
@@ -28,7 +31,8 @@ OpenLayers.Lang.fr = {
   'wheelchair_label_no': "pas d'accès pour fauteuil roulant",
   'wheelchair_label_unknown': 'statut inconnu',
   'wheelchair_update_button': 'Sauvegarder',
-  'more_information': 'davantage ...'
+  'more_information': 'davantage ...',
+  'wheelchair_help': 'Accessible pour fauteuil roulant? (Aide)'
 };
 OpenLayers.Lang.it = { 
   'wheelchair_label_yes': 'accessibile in sedia a rotelle',
@@ -36,7 +40,8 @@ OpenLayers.Lang.it = {
   'wheelchair_label_no': 'non accessibile in sedia a rotelle',
   'wheelchair_label_unknown': 'stato sconosciuto',
   'wheelchair_update_button': 'Salva',
-  'more_information': 'più ...'
+  'more_information': 'più ...',
+  'wheelchair_help': 'Accessibile in sedia a rotelle? (Aiuto)'
 };
 OpenLayers.Lang.is = { 
   'wheelchair_label_yes': 'hjólastólaaðgengilegt',
@@ -44,7 +49,9 @@ OpenLayers.Lang.is = {
   'wheelchair_label_no': 'ekki hjólastólaaðgengilegt',
   'wheelchair_label_unknown': 'óvituð staða',
   'wheelchair_update_button': 'vista',
-  'more_information': 'meiri ...'
+  'more_information': 'meiri ...',
+  'wheelchair_help': 'Hjólastólaaðgengilegt? (Hjálp)'
+  
 };
 OpenLayers.Lang.jp = { 
   'wheelchair_label_yes': '車椅子可',
@@ -52,5 +59,6 @@ OpenLayers.Lang.jp = {
   'wheelchair_label_no': '車椅子不可',
   'wheelchair_label_unknown': '不明',
   'wheelchair_update_button': '保存',
-  'more_information': '詳細 ...'
+  'more_information': '詳細 ...',
+  'wheelchair_help': '車椅子で行けますか？ (ヘルプ)'
 };
