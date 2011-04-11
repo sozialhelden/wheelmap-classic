@@ -110,7 +110,7 @@
   <node id='615149995' lat='52.5241066' lon='13.4018257' version='1' changeset='3638724' user='Konrad Aust' uid='115651' visible='true' timestamp='2010-01-17T09:21:12Z'>
     <tag k='amenity' v='nightclub'/>
     <tag k='name' v='Oxymoron'/>
-    <tag k='operator' v='Schliestedt &amp; Partner'/>
+    <tag k='operator' v='Schliestedt & Partner'/>
     <tag k='website' v='http://www.oxymoron-berlin.de'/>
   </node>
   <node id='615152643' lat='52.5240251' lon='13.4025766' version='2' changeset='4617779' user='Aleks-Berlin' uid='85218' visible='true' timestamp='2010-05-05T22:39:02Z'>

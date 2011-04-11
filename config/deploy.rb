@@ -26,6 +26,7 @@ role :db,  "178.77.98.117", :primary => true # This is where Rails migrations wi
 # these http://github.com/rails/irs_process_scripts
 
 after  'deploy:symlink',  'deploy:symlink_configs'
+after  'deploy:symlink',  'deploy:remove_all_unfinished_locales'
 
 namespace :deploy do
   task :start do ; end
@@ -43,6 +44,14 @@ namespace :deploy do
     
     %w(google.yml database.yml osm.yml open_street_map.yml).each do |file|
       run "ln -nfs #{shared_path}/config/#{file} #{release_path}/config/#{file}"
+    end
+  end
+  
+  task :remove_all_unfinished_locales do
+    if rails_env == 'staging'
+      %w(el pt-PT ru tlh tr).each do |locale|
+        run "rm -f #{release_path}/config/locales/#{locale}.yml"
+      end
     end
   end
 end
