@@ -311,6 +311,7 @@ tlh:
       header: 
         title: "Daq: %{node} | wheelmap.org"
       link: 
+        report_bug: "Report a problem"
         edit_node: "Daq choH"
         large_map: tInmoH
     update: 

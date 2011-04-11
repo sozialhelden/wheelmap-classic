@@ -366,6 +366,7 @@ it:
       header: 
         title: "Lougo: %{node} | wheelmap.org "
       link: 
+        report_bug: "Report a problem"
         edit_node: "Modifica luogo"
         large_map: Allarga
     update: 

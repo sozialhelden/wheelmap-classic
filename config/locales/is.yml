@@ -366,6 +366,7 @@ is:
       header: 
         title: "Staður: %{node} | wheelmap.org"
       link: 
+        report_bug: "Report a problem"
         edit_node: "Breyta stað"
         large_map: Stækka
     update: 

@@ -367,6 +367,7 @@ de:
         title: "Ort: %{node} | wheelmap.org"
       link: 
         edit_node: "Ort bearbeiten"
+        report_bug: "Problem melden"
         large_map: "Ansicht vergrößern"
     update: 
       flash: 

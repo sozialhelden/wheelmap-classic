@@ -365,7 +365,8 @@ fr:
     show: 
       header: 
         title: "Lieu: %{node} | wheelmap.org "
-      link: 
+      link:
+        report_bug: "Report a problem"
         edit_node: "Editer lieu"
         large_map: Elargir
     update: 

@@ -365,6 +365,7 @@ jp:
       header: 
         title: "場所: %{node} | wheelmap.org "
       link: 
+        report_bug: "Report a problem"
         edit_node: 場所を編集
         large_map: 拡大
     update: 
