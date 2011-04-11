@@ -28,7 +28,7 @@ de:
       updated: 'Dein Benutzerkonto wurde aktualisiert.'
       destroyed: 'Dein Benutzerkonto wurde efolgreich gelöscht.'
     unlocks:
-      link: "Keine Anleitung zum Entspreen deines Benutzerkontos bekommen?"
+      link: "Keine Anleitung zum Entsperren deines Benutzerkontos bekommen?"
       send_instructions: 'Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto entsperren kannst.'
       unlocked: 'Dein Benutzerkonto wirde erfolgreich entsperrt. Du bist jetzt eingeloggt.'
     mailer:
