@@ -6,12 +6,14 @@ $dd-width: 180px
   width: $dt-width + $gap + $dd-width
   overflow: hidden
   
-  a
+  a.more
     overflow: hidden
     white-space: nowrap
     font-size: 11px
     font-weight: normal
-    text-align: right
+    text-align: left
+    padding-left: 20px
+    text-decoration: underline
     display: block
 
   h2
@@ -24,6 +26,9 @@ $dd-width: 180px
   input
     float: left
     margin-right: 10px
+    
+  label
+    width: auto
 
   #update_button
     position: static

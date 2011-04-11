@@ -277,6 +277,7 @@ function popup_form(feature){
   var form = '';
   form += '<form action="/nodes/' + feature.attributes.osm_id + '/update_wheelchair.js" method="put" class="update_form">';
   form += '<ol class="wheelchair">';
+  form += '<h3><a target="_blank" href="http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei/">' + OpenLayers.Lang.translate('wheelchair_help') + '</a></h3>'
   form += popup_state_radio(feature, 'yes');
   form += popup_state_radio(feature, 'limited');
   form += popup_state_radio(feature, 'no');
@@ -308,7 +309,7 @@ function popup_address(feature){
 
 function popup_more_link(feature){
   var html = '';
-  html += '<a href="' + feature.attributes.url + '">';
+  html += '<a class="more" href="' + feature.attributes.url + '">';
   html += OpenLayers.Lang.translate('more_information');
   html += '</a>';
   return html;

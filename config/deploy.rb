@@ -48,7 +48,7 @@ namespace :deploy do
   end
   
   task :remove_all_unfinished_locales do
-    if rails_env == 'staging'
+    if rails_env == :production
       %w(el pt-PT ru tlh tr).each do |locale|
         run "rm -f #{release_path}/config/locales/#{locale}.yml"
       end
@@ -70,7 +70,5 @@ require "rvm/capistrano"
 set :rvm_ruby_string, 'ruby-1.8.7-p330'
 set :rvm_type, :user
 
-set :whenever_command, "bundle exec whenever"
-require "whenever/capistrano"
 require 'config/boot'
 require 'hoptoad_notifier/capistrano'
