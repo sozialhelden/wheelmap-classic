@@ -20,6 +20,8 @@ module ApplicationHelper
     else
       uri.path = uri.path.gsub(/^(.+?)$/, "/#{locale}" + '\1')
     end
+    # remove trailing slash
+    uri.path = uri.path.gsub(/\/$/,'')
     uri
   end
   
