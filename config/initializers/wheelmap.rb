@@ -116,7 +116,6 @@ Tags = {
   :tram_stop => :railway,
   :university => :amenity,
   :veterinary => :amenity,
-  :video => :shop,
   :viewpoint => :tourism,
   :zoo => :tourism
 }
