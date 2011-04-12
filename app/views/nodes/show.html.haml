@@ -8,7 +8,7 @@
   =@node.name
   %br
   %span.addition
-    = link_to t('.link.edit_node'), edit_node_path(@node)
+    = link_to t('.link.edit_node'), edit_node_path(@node), :rel => 'nofollow'
     &nbsp;
     = mail_to 'bugs@openstreetmap', t('.link.report_bug'), :subject => "[Wheelmap] Problem with #{@node.headline}", :body => "(please only write in English or German)\n\nHi,\n\nsomething is wrong with location: #{node_url(@node)}\n\nthe problem is:"
 
