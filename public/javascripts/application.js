@@ -427,6 +427,10 @@ function runEffect(){
 
 
 $(function() {
+  $('#feedback_link').click(function(){
+    UserVoice.Popin.show(uservoiceOptions);
+    return false;
+  });
   $('a[data=show]').live('click', function() {
     $(this).parent().fadeIn();
     return false;
