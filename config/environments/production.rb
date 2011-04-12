@@ -26,6 +26,7 @@ Wheelmap::Application.configure do
 
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
+  config.cache_store = :file_store
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
