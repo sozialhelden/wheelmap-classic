@@ -25,8 +25,8 @@ role :db,  "178.77.98.117", :primary => true # This is where Rails migrations wi
 # if you're still using the script/reapear helper you will need
 # these http://github.com/rails/irs_process_scripts
 
-after  'deploy:symlink',  'deploy:symlink_configs'
-after  'deploy:symlink',  'deploy:remove_all_unfinished_locales'
+after  'deploy:update_code',  'deploy:symlink_configs'
+after  'deploy:update_code',  'deploy:remove_all_unfinished_locales'
 
 namespace :deploy do
   task :start do ; end
@@ -39,8 +39,10 @@ namespace :deploy do
     run "mkdir -p #{shared_path}/config/"
     run "mkdir -p #{shared_path}/tmp/var"
     run "mkdir -p #{shared_path}/tmp/osmosis-working-dir"
+    run "mkdir -p #{shared_path}/tmp/cache"
     run "ln -nfs #{shared_path}/tmp/osmosis-working-dir #{release_path}/tmp/osmosis-working-dir"
     run "ln -nfs #{shared_path}/tmp/var #{release_path}/tmp/var"
+    run "ln -nfs #{shared_path}/tmp/cache #{release_path}/tmp/cache"
     
     %w(google.yml database.yml open_street_map.yml).each do |file|
       run "ln -nfs #{shared_path}/config/#{file} #{release_path}/config/#{file}"
