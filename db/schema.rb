@@ -24,20 +24,38 @@ ActiveRecord::Schema.define(:version => 20110114163727) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.integer  "failed_attempts",                     :default => 0
     t.string   "unlock_token"
     t.datetime "locked_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_index "admins", ["confirmation_token"], :name => "index_admins_on_confirmation_token"
   add_index "admins", ["email"], :name => "index_admins_on_email"
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token"
   add_index "admins", ["unlock_token"], :name => "index_admins_on_unlock_token"
+
+  create_table "countries", :primary_key => "OGR_FID", :options=>'ENGINE=MyISAM', :force => true do |t|
+    t.geometry "geom",      :limit => nil,                                :null => false
+    t.string   "fips",      :limit => 2
+    t.string   "iso2",      :limit => 2
+    t.string   "iso3",      :limit => 3
+    t.decimal  "un",                       :precision => 3,  :scale => 0
+    t.string   "name",      :limit => 50
+    t.decimal  "area",                     :precision => 7,  :scale => 0
+    t.decimal  "pop2005",                  :precision => 10, :scale => 0
+    t.decimal  "region",                   :precision => 3,  :scale => 0
+    t.decimal  "subregion",                :precision => 3,  :scale => 0
+    t.float    "lon",       :limit => 8
+    t.float    "lat",       :limit => 7
+  end
+
+  add_index "countries", ["OGR_FID"], :name => "OGR_FID"
+  add_index "countries", ["geom"], :name => "geom", :spatial => true
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",         :default => 0
@@ -48,25 +66,26 @@ ActiveRecord::Schema.define(:version => 20110114163727) do
     t.datetime "locked_at"
     t.datetime "failed_at"
     t.string   "locked_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.datetime "first_started_at"
     t.datetime "last_started_at"
     t.datetime "finished_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "pois", :primary_key => "osm_id", :options=>'ENGINE=MyISAM', :force => true do |t|
-    t.integer  "version",                                  :null => false
-    t.text     "tags",                                     :null => false
-    t.point    "geom",       :limit => nil,                :null => false
-    t.integer  "status",     :limit => 3,   :default => 8, :null => false
+    t.integer  "version",                   :null => false
+    t.text     "tags",                      :null => false
+    t.point    "geom",       :limit => nil, :null => false
+    t.integer  "status",     :limit => 3
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "pois", ["geom"], :name => "index_pois_on_geom", :spatial => true
+  add_index "pois", ["osm_id", "status", "created_at"], :name => "pagination"
   add_index "pois", ["osm_id"], :name => "index_pois_on_osm_id"
   add_index "pois", ["status"], :name => "index_pois_on_status"
 
@@ -97,9 +116,9 @@ ActiveRecord::Schema.define(:version => 20110114163727) do
   create_table "tolk_translations", :force => true do |t|
     t.integer  "phrase_id"
     t.integer  "locale_id"
-    t.text     "text"
-    t.text     "previous_text"
-    t.boolean  "primary_updated", :default => false
+    t.text     "text",            :limit => 16777215
+    t.text     "previous_text",   :limit => 16777215
+    t.boolean  "primary_updated",                     :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -121,12 +140,11 @@ ActiveRecord::Schema.define(:version => 20110114163727) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "osm_username"
     t.string   "osm_password"
     t.integer  "changeset_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "oauth_request_token"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email"

@@ -4,6 +4,6 @@ class AddOAuthRequestTokenToUser < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :users, :oauth_request_token
+    # remove_column :users, :oauth_request_token
   end
 end
