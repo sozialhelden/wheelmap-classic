@@ -823,7 +823,7 @@ if(nState!=oRequest.readyState)
 fReadyStateChange(oRequest);nState=oRequest.readyState;}};cXMLHttpRequest.prototype.send=function(vData){if(cXMLHttpRequest.onsend)
 cXMLHttpRequest.onsend.apply(this,arguments);if(vData&&vData.nodeType){vData=window.XMLSerializer?new window.XMLSerializer().serializeToString(vData):vData.xml;if(!this._headers["Content-Type"])
 this._object.setRequestHeader("Content-Type","application/xml");}
-this._object.send(vData);if(bGecko&&!this._async){this.readyState=cXMLHttpRequest.OPENED;fSynchronizeValues(this);while(this.readyState<cXMLHttpRequest.DONE){this.readyState++;fReadyStateChange(this);if(this._aborted)
+try{this._object.send(vData);}catch(e){};if(bGecko&&!this._async){this.readyState=cXMLHttpRequest.OPENED;fSynchronizeValues(this);while(this.readyState<cXMLHttpRequest.DONE){this.readyState++;fReadyStateChange(this);if(this._aborted)
 return;}}};cXMLHttpRequest.prototype.abort=function(){if(cXMLHttpRequest.onabort)
 cXMLHttpRequest.onabort.apply(this,arguments);if(this.readyState>cXMLHttpRequest.UNSENT)
 this._aborted=true;this._object.abort();fCleanTransport(this);};cXMLHttpRequest.prototype.getAllResponseHeaders=function(){return this._object.getAllResponseHeaders();};cXMLHttpRequest.prototype.getResponseHeader=function(sName){return this._object.getResponseHeader(sName);};cXMLHttpRequest.prototype.setRequestHeader=function(sName,sValue){if(!this._headers)
