@@ -37,7 +37,7 @@ jumpTo(lon,lat,zoom);
 
 $(function() {
   $('#options input').click(function() {
-    var state = this.id.replace(/wheelchair-/, '');
+    var state = this.id.replace(/wheelchair_/, '');
     states[state] = this.checked;
     showStates();
   });
