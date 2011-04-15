@@ -190,7 +190,8 @@ en:
     titles: 
       optional: More information <span class="addition">(all fields are optional)</span>
       basic: Basic data
-    labels: 
+    labels:
+      name: "Name:"
       housenumber: "No:"
       city: "City:"
       lon: Longitude

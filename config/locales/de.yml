@@ -264,7 +264,8 @@ de:
       password: "(leer lassen, wenn du es nicht ändern möchtest)"
       phone: "Beispiel: +49 30 123456-78"
       website: "Beispiel: http://www.example.com"
-    labels: 
+    labels:
+      name: "Name:"
       category: "Kategorie:"
       city: "Ort:"
       create: "Ort anlegen"
