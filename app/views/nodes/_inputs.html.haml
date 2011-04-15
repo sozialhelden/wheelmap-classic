@@ -30,8 +30,8 @@
     
   = form.input :website, :required => false
     
-  -#= form.input :phone, :required => false
-  %li.string.optional#node-phone-input
-    %label{:for => 'node-phone'}Telefon:
-    %input#node-phone{:type => :tel, :pattern => '/\+49.*/', :size => 43, :name => 'node[phone]', :value => 'sdd', :'x-moz-errormessage' => 'nee so nicht'}
+  = form.input :phone, :required => false
+  -#%li.string.optional#node-phone-input
+    -#%label{:for => 'node-phone'}Telefon:
+    -#%input#node-phone{:type => :tel, :pattern => '/\+49.*/', :size => 43, :name => 'node[phone]', :value => 'sdd', :'x-moz-errormessage' => 'nee so nicht'}
   
