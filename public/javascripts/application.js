@@ -372,8 +372,8 @@ function onCompleteDrag(feature)
     // replace coordinate values in feature attributes 
     var lonlat = new OpenLayers.LonLat(feature.geometry.x, feature.geometry.y);
     var coordinates = lonlat.clone().transform(map.getProjectionObject(), epsg4326);
-    $('#node-lat').attr('value', coordinates.lat);
-    $('#node-lon').attr('value', coordinates.lon);
+    $('#node_lat').attr('value', coordinates.lat);
+    $('#node_lon').attr('value', coordinates.lon);
   }
 }
 
