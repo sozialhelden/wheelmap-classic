@@ -5,7 +5,7 @@ class UpdatingJob < Struct.new(:node, :user, :client)
       raise ArgumentError.new("Client cannot be nil") if client.nil?
 
       OpenStreetMap.logger = Delayed::Worker.logger
-      Delayed::Worker.logger.info = "UpdatingJob -------------------------->"
+      Delayed::Worker.logger.info "UpdatingJob -------------------------->"
       lat = node.lat
       lon = node.lon
 
