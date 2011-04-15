@@ -6,7 +6,7 @@ class CreatingJob < Struct.new(:node, :user, :client)
     
     begin
       OpenStreetMap.logger = Delayed::Worker.logger
-      Delayed::Worker.logger.info = "CreatingJob -------------------------->"
+      Delayed::Worker.logger.info "CreatingJob -------------------------->"
       osm = OpenStreetMap.new(client)
       
       changeset = osm.find_or_create_changeset(user.changeset_id, "Created new node on wheelmap.org")
