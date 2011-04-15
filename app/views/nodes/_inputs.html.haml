@@ -1,4 +1,4 @@
-- form.inputs :name => t('formtastic.titles.basic'), :id => 'basic' do
+= form.inputs :name => t('formtastic.titles.basic'), :id => 'basic' do
   = form.input :name
 
   %li.select.required#node-wheelchair-input
@@ -16,10 +16,10 @@
       %p.inline-errors
         = @node.errors.on(:type)
 
-  =form.input :lon, :input_html =>{:readonly => 'readonly'}, :as => :numeric
-  =form.input :lat, :input_html =>{:readonly => 'readonly'}, :as => :numeric
+  = form.input :lon, :input_html =>{:readonly => 'readonly', :value => @node.lon}, :as => :numeric
+  = form.input :lat, :input_html =>{:readonly => 'readonly', :value => @node.lat}, :as => :numeric
 
-- form.inputs :name => t('formtastic.titles.optional'), :id => 'optional' do
+= form.inputs :name => t('formtastic.titles.optional'), :id => 'optional' do
   = form.input :street, :required => false
 
   = form.input :housenumber, :required => false
