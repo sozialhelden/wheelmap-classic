@@ -1,7 +1,7 @@
 set :application, "wheelmap"
 set :repository,  "git@github.com:sozialhelden/wheelmap.git"
 
-set :branch, ENV['BRANCH'] || "rails3"
+set :branch, ENV['BRANCH'] || "master"
 
 set :use_sudo, false
 
