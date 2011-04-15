@@ -116,11 +116,11 @@ tr:
         other: "neredeyse %{count} yıl"
       half_a_minute: "yarım dakika"
       less_than_x_minutes: 
-        bir: "bir dakikadan az"
-        diger: "%{count} dakikadan az"
+        one: "bir dakikadan az"
+        other: "%{count} dakikadan az"
       less_than_x_seconds: 
-        bir: "bir saniyeden daha az"
-        diger: "%{count}saniyeden daha az"
+        one: "bir saniyeden daha az"
+        other: "%{count}saniyeden daha az"
       over_x_years: 
         one: "1 yıldan fazla"
         other: "%{count} yıldan fazla"
@@ -391,8 +391,8 @@ tr:
         format: "%n %u"
         units: 
           byte: 
-            bir: Byte
-            digeri: Bytes
+            one: Byte
+            other: Bytes
     percentage: 
       format: 
         delimiter: "."
@@ -407,8 +407,8 @@ tr:
       notice: "%{user} wheelmap hesabınız şimdi OpenStreetMap hesabınız ile bağlanmıştır."
   or: veya
   place: 
-    bir: "%{count} alan/mekan"
-    digeri: "%{count} alanlar/mekanlar"
+    one: "%{count} alan/mekan"
+    other: "%{count} alanlar/mekanlar"
   poi: 
     category: 
       accommodation: "Konaklama Yeri"
