@@ -10,10 +10,10 @@ class UpdatingJob < Struct.new(:node, :user, :client)
 
       old_node = OpenStreetMap.get_node(node.id)
       old_tags = old_node.tags
-      Delayed::Worker.logger.debug("OLD TAGS: #{old_tags.to_yaml}")
+      Delayed::Worker.logger.info("OLD TAGS: #{old_tags.to_yaml}")
 
       new_tags = node.tags.reverse_merge(old_tags)
-      Delayed::Worker.logger.debug("NEW TAGS: #{new_tags.to_yaml}")
+      Delayed::Worker.logger.info("NEW TAGS: #{new_tags.to_yaml}")
 
       node = old_node.clone
       node.tags = new_tags
