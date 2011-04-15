@@ -5,6 +5,8 @@ class UpdateSingleAttributeJob < Struct.new(:node_id, :user, :client, :attribute
     raise ArgumentError.new("User cannot be nil") if user.nil?
     begin
       OpenStreetMap.logger = Delayed::Worker.logger
+      Delayed::Worker.logger.info = "UpdateSingleAttributeJob ------------->"
+
       old_node = OpenStreetMap.get_node(node_id)
       Delayed::Worker.logger.info("OLD WHEELCHAIR STATUS: #{old_node.wheelchair}")
       
