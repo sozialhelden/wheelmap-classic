@@ -12,7 +12,7 @@ group :default do
   gem 'lemonade'
   gem 'haml'
   gem 'geoip'
-  gem 'formtastic', '~> 1.1.0'
+  gem 'formtastic'
   gem 'delayed_job'
   gem 'libxml-ruby'
   gem 'crewait', :path => "#{File.expand_path(__FILE__)}/../vendor/gems/crewait-0.1.6"
