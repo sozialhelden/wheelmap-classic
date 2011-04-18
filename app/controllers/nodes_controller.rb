@@ -2,8 +2,10 @@ class NodesController < ApplicationController
   
   skip_before_filter :verify_authenticity_token
   
+  before_filter :log_before_filter,               :only => :create
   before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update]
   before_filter :authenticate_application!,       :only => [:new, :create, :edit, :update]
+  before_filter :log_after_filter,                :only => :create
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
   before_filter :check_create_params,             :only => :create
@@ -22,6 +24,15 @@ class NodesController < ApplicationController
                         }
 
   caches_action :sitemap
+
+
+  def log_before_filter
+    log.error "---------> BEFORE FILTERS!"
+  end
+  
+  def log_after_filter
+    log.error "<--------- AFTER FILTERS!"
+  end
 
   def index
     @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f) if params[:bbox]
