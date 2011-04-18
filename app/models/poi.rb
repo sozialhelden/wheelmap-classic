@@ -97,6 +97,30 @@ class Poi < ActiveRecord::Base
     def wheelchair
       tags['wheelchair'] ||= 'unknown'
     end
+    
+    def street
+      tags['addr:street']
+    end
+    
+    def housenumber
+      tags['addr:housenumber']
+    end
+    
+    def city
+      tags['addr:city']
+    end
+    
+    def postcode
+      tags['addr:postcode']
+    end
+    
+    def website
+      tags['website']
+    end
+    
+    def phone
+      tags['phone']
+    end
 
     def wheelchair_description
       tags['wheelchair:description']
