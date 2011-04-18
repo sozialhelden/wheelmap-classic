@@ -6,13 +6,13 @@ job_type :rake,         "cd :path && RAILS_ENV=:environment /home/rails/.rvm/bin
 job_type :find_command, "cd :path && :task :output"
 
 # Sync with OSM but not between 1:59 and 3:00 o'clock
-every '* 0-1 * * *' do
+every '* * * * *' do
   rake "osm:replication:sync", :environment => :production
 end
 
-every '* 3-23 * * *' do
-  rake "osm:replication:sync", :environment => :production
-end
+# every '* 3-23 * * *' do
+#   rake "osm:replication:sync", :environment => :production
+# end
 
 #Remove cached files older than 3 days
 every 10.minutes do
