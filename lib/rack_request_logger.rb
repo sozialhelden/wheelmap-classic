@@ -29,6 +29,8 @@ module Rack
         begin
           @logger.debug("----------- RESPONSE HEADERS -----------")
           @logger.debug(response[1].to_yaml)
+          @logger.debug("----------- RESPONSE CODE -----------")
+          @logger.debug(response[0].to_s)
           @logger.debug("----------- RESPONSE BODY -----------")
           @logger.debug(response[2].body.to_s)
         rescue => e
