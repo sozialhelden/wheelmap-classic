@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   
   skip_before_filter :verify_authenticity_token, :only => :authenticate
   
-  before_filter :authenticate_user!, :except => :authenticate
+  before_filter :authenticate_user!,        :except => :authenticate
   before_filter :authenticate_mobile_user,  :only => :authenticate
   before_filter :authenticate_mobile_app,   :only => :authenticate
   
@@ -20,7 +20,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     logger.debug(params.inspect)
     @user.update_attributes(params[:user])
-    redirect_to edit_user_path(@user)
+    flash[:notice] = t('devise.registrations.updated')
+    redirect_to edit_profile_path(@user.id)
   end
   
   def authenticate

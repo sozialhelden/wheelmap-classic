@@ -23,7 +23,7 @@ module NavigationHelpers
     when /the sign_in page/
       '/users/sign_in'
 
-    when /the sign-up page/
+    when /the sign_up page/
       '/users/sign_up'
 
     when /the oauth page/
@@ -40,6 +40,10 @@ module NavigationHelpers
       poi = Poi.last
       "/nodes/#{poi.to_param}.html"
     # the following are examples using path_to_pickle
+    
+    when /the last user's edit page/
+      user = User.last
+      "/profile/#{user.to_param}/edit"
 
     when /^#{capture_model}(?:'s)? page$/                           # eg. the forum's page
       path_to_pickle $1
@@ -52,7 +56,7 @@ module NavigationHelpers
 
     when /^#{capture_model}(?:'s)? (.+?) page$/                     # eg. the forum's posts page
       path_to_pickle $1, :extra => $2                               #  or the forum's edit page
-
+      raise path_to_pickle.inspect
 
     else
       begin
