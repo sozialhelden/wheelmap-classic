@@ -10,7 +10,8 @@ Feature: Locale feature
     Given my browser supports the following languages "de-DE;de;en"
     When I go to the home page
     Then my locale should be "de"
-    
+
+  @wip
   Scenario: I want to see wheelmap in my preferred non german language
     Given my browser supports the following languages "es;en"
     When I go to the home page
@@ -21,6 +22,7 @@ Feature: Locale feature
     When I go to the home page
     Then my locale should be "de"
     
+  @wip
   Scenario: I want to switch manually to the english hompage
     When I go to the german home page
     Then my locale should be "en"
