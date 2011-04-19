@@ -12,6 +12,7 @@ Given /I am logged in/ do
   When "I go to the sign_in page"
   And 'I fill in "E-Mail" with "loggedin@fg.hi"'
   And 'I fill in "Passwort" with "123456"'
+  And 'I check "Eingeloggt bleiben?"'
   And 'I press "Login"'
   And 'I should see "loggedin@fg.hi"'
   @current_user = find_model!('a_user')
