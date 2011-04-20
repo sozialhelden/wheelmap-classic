@@ -1305,7 +1305,7 @@ image[width='16'] {
 .state-yes, .state-limited, .state-no, .state-unknown {
   background: url("/images/marker-yes.png") no-repeat;
   color: #86af4d;
-  line-height: 22px;
+  line-height: 25px;
   margin-bottom: 0px;
   padding: 0px 0px 8px 28px;
 }
