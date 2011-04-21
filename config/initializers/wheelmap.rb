@@ -220,6 +220,7 @@ Icons = {
   :computer => 'computer',
   :bakery => 'cookies',
   :hotel => 'building',
+  :guest_house => 'building',
   :motel => 'building',
   :hostel => 'building',
   :chalet => 'building',
