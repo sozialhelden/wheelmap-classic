@@ -7,6 +7,15 @@ OpenLayers.Lang.de = {
   'more_information': 'mehr ...',
   'wheelchair_help': 'Rollstuhlgerecht? (Hilfe)'
 };
+OpenLayers.Lang.el = { 
+  'wheelchair_label_yes': 'Κατάλληλο για αναπηρική καρέκλα',
+  'wheelchair_label_limited': 'Εν μέρη προσβάσιμο με αναπηρική καρέκλα',
+  'wheelchair_label_no': 'ακατάλληλο για αναπηρική καρέκλα',
+  'wheelchair_label_unknown': 'Κατάσταση άγνωστη',
+  'wheelchair_update_button': 'εκσυγχρονίζω',
+  'more_information': 'περισσότερα ...',
+  'wheelchair_help': 'Δυνατότητα πρόσβασης με αναπηρικής καρέκλας;? (Βοήθεια)'
+};
 OpenLayers.Lang.en = { 
   'wheelchair_label_yes': 'wheelchair accessible',
   'wheelchair_label_limited': 'partly wheelchair accessible',
