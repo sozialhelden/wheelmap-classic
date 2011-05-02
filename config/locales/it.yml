@@ -366,9 +366,9 @@ it:
       header: 
         title: "Lougo: %{node} | wheelmap.org "
       link: 
-        report_bug: "Report a problem"
         edit_node: "Modifica luogo"
         large_map: Allarga
+        report_bug: "Report a problem"
     update: 
       flash: 
         not_successfull: "Scusa, il tuo input era scorretto o incompleto"

@@ -264,8 +264,7 @@ de:
       password: "(leer lassen, wenn du es nicht ändern möchtest)"
       phone: "Beispiel: +49 30 123456-78"
       website: "Beispiel: http://www.example.com"
-    labels:
-      name: "Name:"
+    labels: 
       category: "Kategorie:"
       city: "Ort:"
       create: "Ort anlegen"
@@ -273,6 +272,7 @@ de:
       housenumber: "Nr:"
       lat: Breitengrad
       lon: Längengrad
+      name: "Name:"
       osm_password: OSM-Passwort
       osm_username: OSM-Mitgliedsname
       password: Passwort
@@ -368,8 +368,8 @@ de:
         title: "Ort: %{node} | wheelmap.org"
       link: 
         edit_node: "Ort bearbeiten"
-        report_bug: "Problem melden"
         large_map: "Ansicht vergrößern"
+        report_bug: "Problem melden"
     update: 
       flash: 
         not_successfull: "Oops, die Angaben sind noch unvollständig oder inkorrekt."

@@ -365,9 +365,9 @@ jp:
       header: 
         title: "場所: %{node} | wheelmap.org "
       link: 
-        report_bug: "Report a problem"
         edit_node: 場所を編集
         large_map: 拡大
+        report_bug: "Report a problem"
     update: 
       flash: 
         not_successfull: おっと、入力内容が正しくないか不完全です。

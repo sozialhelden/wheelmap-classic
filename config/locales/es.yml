@@ -365,10 +365,10 @@ es:
     show: 
       header: 
         title: "Sitio: %{node} | wheelmap.org"
-      link:
-        report_bug: "Report a problem"
+      link: 
         edit_node: "Editar sitio"
         large_map: Ampliar
+        report_bug: "Report a problem"
     update: 
       flash: 
         not_successfull: "¡Ay!, su entrada ha sido o incorrecta o incompleta."
