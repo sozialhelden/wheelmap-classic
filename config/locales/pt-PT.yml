@@ -334,9 +334,9 @@ pt-PT:
       not_found: "Desculpe, a página não foi encontrada"
     show: 
       link: 
-        report_bug: "Report a problem"
         edit_node: "Editar lugar"
         large_map: Aumentar
+        report_bug: "Report a problem"
   number: 
     currency: 
       format: 

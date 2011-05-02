@@ -20,6 +20,7 @@ tr:
         less_than_or_equal_to: "%{count} sayısına eşit veya küçük olmalı"
         not_a_number: "geçerli bir sayı değil"
         odd: "tek olmalı"
+        record_invalid: "%{errors}: Onaylama başarılı değildi"
         taken: "hali hazırda kullanılmakta"
         too_long: "çok uzun (en fazla %{count} karakter)"
         too_short: "çok kısa (en az %{count} karakter)"
@@ -162,11 +163,22 @@ tr:
           password_confirmation: "Parolayı tekrarlayın"
         submit: "Değişiklikeri kaydedin"
       headline: "Hesabı yönet"
+    failure: 
+      inactive: "Hesabınız şu an etkinleştirilmemiştir. "
+      invalid: "Geçersiz eposta adresi veya parola"
+      invalid_token: "Geçersiz resmi tasdik belirli."
+      locked: "Hesabınız şu an kilitli."
+      timeout: "Oturumunuzun süresi dolmştur. Devam etmek için lütfen tekrar kaydolun."
+      unauthenticated: "Devam etmek için tekrar kaydolun."
+      unconfirmed: "Devam etmeden önce hesabınızı onaylamanız gerekir."
     mailer: 
       confirmation_instructions: "Onay talimatları"
       reset_password_instructions: "parola talimatlarını sıfırla"
       unlock_instructions: "talimatların kilidini ac"
     mandatory: "* zorunlu alan"
+    omniauth_callbacks: 
+      failure: "%{kind} hesabınıza \"%{reason}\" dolayı yetki verilmemiştir."
+      success: "%{kind} hesab tarafından başarılı bir şekilde yetki verilmiştir. "
     password_recovery: 
       form: 
         labels: 
@@ -191,6 +203,7 @@ tr:
       updated: "Parolanız başarılı bir şekilde değişmiştir. Yeni bir oturum açtınız. "
     registrations: 
       destroyed: "Hoşçakalın! Hesabınız başarılı bir şekilde iptal edilmiştir. Umariz sizi daha sonra tekrar görürüz."
+      inactive_signed_up: "Başarılı bir şekilde kaydoldunuz. Fakat biz sizi kayda alamadık, çünkü hesabınız %{reason}.  "
       link: Kaydol
       signed_up: "Başarılı bir şekilde kaydoldunuz. Kayd etkinleştirildi ise size e-pota ile bunun onayı ilettildi. "
       updated: "Hesabınızı başarılı bir şekilde güncelleştirdiniz. "
@@ -230,8 +243,11 @@ tr:
   el: Ελληνικά
   en: Ingilizce
   errors: 
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
     messages: 
       accepted: "kabul edilmeli"
+      already_confirmed: "tasdiklendi, lütfen kayıt olmayı deneyin\n"
       blank: "dosyalanması gerekir"
       confirmation: "onaylamaya uymuyor"
       empty: "doldurulması gerekiyor"
@@ -245,11 +261,22 @@ tr:
       less_than: "%{count} dan daha eksik olmalı"
       less_than_or_equal_to: "%{count} dan daha alçak veya aynı olması gerekir"
       not_a_number: "bu bir numara değildir"
+      not_an_integer: "Tamsayı olması gerekir"
+      not_found: bulunamadı
+      not_locked: "Kilitli değildi"
+      not_saved: 
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
       odd: "tuhaf olmalı"
       taken: "başkası tarafından alınmış "
       too_long: "çok uzun ( %{count} dan fazla işaret olmamalı}"
       too_short: "çok kısa ( %{count} dan daha eksik işaret olmamalı)"
       wrong_length: "yanlış uzunluk ( tam olarak %{count} kadar işaret olmalı)"
+    template: 
+      body: "Aşağıdaki alanlarda problem var:"
+      header: 
+        one: "1 error prohibited this %{model} from being saved"
+        other: "%{count} errors prohibited this %{model} from being saved"
   es: Ispanyol
   form: 
     show_fully_accessible_places: "tekerlekli sandalye ile ulaşılır"
@@ -259,6 +286,7 @@ tr:
   formtastic: 
     hints: 
       lat: "Işareti haritanın üzerinde doğru yere ulaşana kadar oynatın."
+      osm_username: "Henüz üye değilmisiniz? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an Openstreetmap account now</a>"
       password: "(değistirmek istemiyorsanız, boş bırakın)"
       phone: "Örneğin: +49 30 123456-78"
       website: "Örnegin: http://www.örnek.com"
@@ -278,6 +306,7 @@ tr:
       postcode: "Posta Kodu"
       save: Kaydet
       street: "Sokak:"
+      type: "Tip: "
       website: "Internet sitesi"
       wheelchair: "Tekerlekli Sandalye erişilirliği? "
       wheelchair_description: "Erişilirlik yorumu:"
@@ -313,6 +342,13 @@ tr:
       title_add_place: "Şimdi bu yere yeni bir alan veya mekan ekle!! "
     tagline: "Wheelmap logo"
     title: "Wheelmap - tekerlekli sandalye için ulaşılır mekan/alan bul"
+  helpers: 
+    select: 
+      prompt: "Lütfen seçiniz"
+    submit: 
+      create: "%{model} geliştir"
+      submit: "%{model} kaydet"
+      update: "%{model} Güncelleştir"
   home: 
     index: 
       filter: 
@@ -365,12 +401,13 @@ tr:
       link: 
         edit_node: "Alan veya Mekan düzenle"
         large_map: Genişlet
+        report_bug: "Sorun bildir "
     update: 
       flash: 
         not_successfull: "Oops, girişiniz yanlış veya eksik."
         successfull: "Teşekkür ederiz, tesciliniz başarılı bir şekilde kayıtlanmıştır ve kısa bir süre sonra online olacak."
     update_wheelchair: 
-      successfull: "Teşekkür ederiz, tesciliniz başarılı bir şekilde kayıtlanmıştır ve kısa bir süre sonra online olacaktır. "
+      successfull: "\"%{name}\"statüsü artık \"%{status} tekerlekli sandalya için ulaşılır\" olarak değiştirilmiştir ve kisa süre sonra online olucak. "
   number: 
     currency: 
       format: 
@@ -378,21 +415,39 @@ tr:
         format: "%n %u"
         precision: 2
         separator: ","
+        significant: 0
+        strip_insignificant_zeros: 0
         unit: TL
     format: 
       delimiter: "."
       precision: 3
       separator: ","
+      significant: 0
+      strip_insignificant_zeros: 0
     human: 
+      decimal_units: 
+        format: "%n %u"
+        units: 
+          billion: Milyar
+          million: Milyon
+          quadrillion: Katrilyon
+          thousand: Bin
+          trillion: Trilyon
       format: 
         delimiter: "."
         precision: 1
+        significant: true
+        strip_insignificant_zeros: true
       storage_units: 
         format: "%n %u"
         units: 
           byte: 
             one: Byte
             other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
     percentage: 
       format: 
         delimiter: "."
@@ -406,6 +461,12 @@ tr:
     callback: 
       notice: "%{user} wheelmap hesabınız şimdi OpenStreetMap hesabınız ile bağlanmıştır."
   or: veya
+  pages: 
+    show: 
+      header: 
+        meta: 
+          description: "Wheelmap damgası, bir Sozialhelden e.V. Projesi"
+        title: "Wheelmap - Damgası"
   place: 
     one: "%{count} alan/mekan"
     other: "%{count} alanlar/mekanlar"
@@ -416,6 +477,7 @@ tr:
       food: Yiyecek
       government: Devlet
       leisure: "Boş Vakit"
+      misc: Misc
       money_post: "Banka & Paramatik; Posta "
       public_transfer: "Genel Geçiş"
       shopping: Alışveriş
@@ -442,12 +504,14 @@ tr:
         university: Üniversite
       food: 
         bar: Bar
+        biergarten: "Bira bahçesi"
         cafe: "Cafe Bar"
         drinking_water: "Içme Suyu"
         fast_food: "Fast Food"
         pub: Birahane
         restaurant: Lokanta
       government: 
+        courthouse: Adliye
         embassy: Elçilik
         public_building: "Resmi Bina"
         townhall: "Belediye Binası"
@@ -469,14 +533,122 @@ tr:
       money_post: 
         atm: ATM/Paramatik
         bank: Banka
+        bureau_de_change: "Döviz bürosu"
         post_box: "Posta Kutusu"
         post_office: Postane
       public_transfer: 
         aerodrome: Havaalanı
+        bicycle_parking: "Bisiklet park yeri"
+        bicycle_rental: "Bisiklet kirası"
+        boatyard: Tersana
+        bus_station: "Otobüs garajı, Otogar, Terminal"
+        bus_stop: "Otobüs durağı"
+        cable_car: Teleferik
+        car_rental: "Araba Kirası"
+        car_sharing: "Otomobil paylaşımı"
+        chair_lift: "Koltuklu teleferik"
+        ferry: Feribot
+        ferry_terminal: "Feribot terminalı"
         fuel: "Benzin Istasyonu"
+        halt: Durak
+        light_rail: Tramvay
+        parking: Otopark
+        parking_aisle: "Otopark geçiti"
+        platform: Platform
+        subway: Metro
+        subway_entrance: "Metro girişi"
+        terminal: "Havalimanı terminalı"
+        tram_stop: "Tramvay durağı"
+      shopping: 
+        alcohol: "Alkollü içki"
+        bakery: Fırın
+        beverages: Içecekler
+        bicycle: "Bisiklet dükkanı"
+        books: Kitapcı
+        butcher: Kasap
+        clothes: Giyisi
+        computer: Bilgisayar
+        convenience: Kolaylık
+        department_store: "Büyük mağaza"
+        doityourself: "Kendi işini kendin yap"
+        dry_cleaning: "Kuru temizleme"
+        electronics: Elektronik
+        florist: Çiçekçi
+        furniture: "Mobilya dükkanı"
+        garden_centre: "Bahçivan dükkanı"
+        hairdresser: Kuaför
+        hardware: Hırdavat
+        kiosk: "Satış Kulübesi"
+        laundry: Çamaşirhane
+        mall: "Alışveriş merkezi"
+        optician: Gözlükçü
+        shoes: Ayakkabı
+        supermarket: Süpermarket
+      sport: 
+        sports_centre: "Spor mekezi"
+        stadium: Stadyum/Stat
+        swimming: Yüzme
+        swimming_pool: "Yüzme Havuzu"
+      tourism: 
+        archaeological_site: "Arkeolojik Yer"
+        arts_centre: "Kültür merkezi"
+        artwork: "Sanat eseri"
+        attraction: Atraksiyon
+        battlefield: "Savaş Meydanı"
+        beach: Kumsal
+        beacon: "Fener Kulesi"
+        castle: Hisar/Kale/Şato
+        cave_entrance: "Mağara Girişi"
+        information: "Turist bilgisi"
+        memorial: Anıt
+        theme_park: "Eğlence parkı"
+        tower: Kale/Kule
+        viewpoint: "Durulan yer"
+      unknown: 
+        unknown: Belirsiz
+  profile: 
+    edit: 
+      application: 
+        oauth: 
+          connected: "Statü: bağlantı var"
+          grant: "Şimdi bağlan"
+          not_connected: "Statü: Bağlantı yok"
+          revoke: "Bağlantıyı kesmek"
+      headline: "Profilinizi düzenleyin"
+  pt: Portekizce
+  search: 
+    index: 
+      search: 
+        for: "\"%{q}\" araniyor"
+        not_found: "Alan/Yer bulunamadi!"
+  shared: 
+    imprint: 
+      comment: "Bu internet sitesi Ruby on Rails ve JavaScript kullanırarak geliştirildi."
+      fields: 
+        application: "Uygulama:"
+        design: "Dizayn/Tasarim, geliştirme:"
+        email: "E-posta:"
+        geoip: GeoIP
+        hosting: Hosting
+        icons: Simge/Sembol
+        license: "Lisans:"
+        maps: "Harita:"
+        maps_and_data: "Harita,Bilgiler:"
+        phone: "Telefon:"
+        provider: "Provider:"
+      headline: Künye
+      links: 
+        email_me: "Burayı tıkla"
+        license: 
+          cc: 
+            by_30: "Creative Commons Attribution 3.0 Unported"
+            by_sa_20: "Creative Commons Attribution-ShareAlike 2.0 Generic"
+  statistics: Istatistik
   support: 
     array: 
       last_word_connector: " ve "
+      sentence_connector: ve
+      skip_last_comma: true
       two_words_connector: " ve "
       words_connector: ", "
     select: 
@@ -488,3 +660,38 @@ tr:
       long: "%e %B %Y, %A, %H:%M"
       short: "%e %B, %H:%M"
     pm: "öğleden sonra"
+  tr: Türkçe
+  user_sessions: 
+    create: 
+      activation: 
+        notice: "Hesabınız şimdi aktive edildi!"
+      error: 
+        notice: "E-Posta ve parola birbirine uymuyor"
+      notice: "Oturum açtınız!"
+    destroy: 
+      notice: "Hoşçakalın,yine gelin!"
+    new: 
+      email: "E-Posta adresi"
+      login: "Oturum aç"
+      login_with_twitter: "Twitter ile oturum aç"
+      password: Parola
+      remember_me: "Kayıtlı kal"
+  wheelchairstatus: 
+    limited: "Kısmen tekerlekli sandalye ile ulaşılır"
+    ? "no"
+    : "Tekerlekli sandalye ile ulaşılmaz"
+    unknown: "Tekerlekli sandalye erişilirliği belirsiz"
+    ? "yes"
+    : "Tamamen tekerlekli sandalye ile ulaşılır"
+  wheelmap: 
+    itunes: 
+      alt: "AppStore Logo"
+      title: "iPhone App'i şimdi indirin!"
+    logo: 
+      alt: "Wheelmap Logo - tekerlekli sandalye ile erişilir yer ve alanlar bulun"
+      title: "Wheelmap - tekerlekli sandalye ile ulaşılır yer ve alanlar bulun"
+    what_is: 
+      fully_accessible: "Girşs basamak 7 santimetre den yüksek değil; tüm mevkiler tekerlekli sandalye kullanıcılar tarafından istisnasız ulasılır; engelliler tualeti mevcut "
+      limited_accessible: "Girişdeki basamak 7 santimetre den yüksek değil; en önemli mevkiler tekerlekli sandalye kullanıcılar tarafından ulaşılabilir. "
+      not_accessible: "Girişdeki basamak 7 santimetre den yüksek; veya girişde basamak var; veya en önemli mevkiler tekerlekli sandalye kullanıcılar için ulaşılamaz."
+      unknown_accessible: "Tekerlekli sandalye statüsü belirsiz"

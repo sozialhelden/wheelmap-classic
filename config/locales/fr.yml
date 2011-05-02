@@ -365,10 +365,10 @@ fr:
     show: 
       header: 
         title: "Lieu: %{node} | wheelmap.org "
-      link:
-        report_bug: "Report a problem"
+      link: 
         edit_node: "Editer lieu"
         large_map: Elargir
+        report_bug: "Report a problem"
     update: 
       flash: 
         not_successfull: "Oups, votre entrée était incorrecte ou incomplète."
