@@ -274,10 +274,62 @@ en:
       send_instructions: You will receive an email with instructions about how to reset your password in a few minutes.
       link: Forgot password?
       updated: Your password was changed successfully. You are now signed in.
+    destroy: 
+      confirm: "Are you sure?"
+      headline: "Delete Account"
+      link: "Delete now"
+    edit: 
+      form: 
+        labels: 
+          current_password: "Current password <i>(we need it to confirm your changes)</i>"
+          email: Email
+          password: "Password <i>(leave empty, if you don\'t want to change it)</i>"
+          password_confirmation: "Repeat password"
+        submit: "Save changes"
+      headline: "Edit Account"
+    
     mailer: 
       unlock_instructions: Unlock Instructions
       reset_password_instructions: Reset password instructions
       confirmation_instructions: Confirmation instructions
+    mandatory: "* Required"
+    password_recovery: 
+      form: 
+        labels: 
+          email: Email
+        submit: "Reset password"
+      headline: "Forgot Password?"
+    password_reset: 
+      email: 
+        comment: "In case you did not reqested a password reset, just ignore this Email.<br/>Your password won\'t be changed until you click on the link above and set a new password."
+        headline: "Welcome %{email}"
+        link: "Change my password"
+        text: "Someone has requested to change your password.  You can do that by clicking the following link:"
+      form: 
+        labels: 
+          password: "New password"
+          password_confirmation: "Repeat password"
+        submit: "Reset password"
+      headline: "Reset password"
+    sign_in: 
+      form: 
+        labels: 
+          email: Email
+          password: Password
+          remember_me: "Stay logged in?"
+        submit: Log in
+      headline: Log in
+    sign_out: 
+      headline: Log out
+    sign_up: 
+      form: 
+        labels: 
+          email: Email
+          password: Password
+          password_confirmation: "Repeat password"
+        submit: Sign up
+      headline: Sign up
+    
     unlocks: 
       unlocked: Your account was successfully unlocked. You are now signed in.
       send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
