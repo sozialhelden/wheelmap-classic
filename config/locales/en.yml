@@ -37,10 +37,12 @@ en:
   it: Italiano
   jp: 日本
   pt: Português
+  'pt-PT': Português
+  ru: Русский
+  tlh: Klingon
   tr: Türkçe
   is: Íslenska
   el: Ελληνικά
-  
 
   support:
     array:
