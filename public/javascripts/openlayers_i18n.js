@@ -71,3 +71,12 @@ OpenLayers.Lang.jp = {
   'more_information': '詳細 ...',
   'wheelchair_help': '車椅子で行けますか？ (ヘルプ)'
 };
+OpenLayers.Lang.tlh = { 
+  'wheelchair_label_yes': 'naw\'laH rutlhquS',
+  'wheelchair_label_limited': 'naw\'laH rutlhquS',
+  'wheelchair_label_no': 'naw\'laHbe\' rutlhquS',
+  'wheelchair_label_unknown': 'Suvbe\'bogh Dotlh',
+  'wheelchair_update_button': 'qon',
+  'more_information': 'latlh ...',
+  'wheelchair_help': 'Naw\'laH rutlhquS? (QaH)'
+};
