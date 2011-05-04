@@ -554,6 +554,8 @@ is:
           revoke: Aftengjast
       headline: "Breyttu prófílnum þínum"
   pt: Portúgalska
+  pt-PT: Português
+  ru: Русский
   search: 
     index: 
       search: 
@@ -596,6 +598,7 @@ is:
       long: "%A %e. %B %Y kl. %H:%M"
       short: "%e. %B kl. %H:%M"
     pm: "eftir hádegi"
+  tlh: "tlhIngan Hol"
   tr: Tyrkneska
   user_sessions: 
     create: 

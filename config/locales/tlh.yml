@@ -150,12 +150,19 @@ tlh:
       confirmed: "talIj 'ollu'. bI'elpu'. "
       link: "talIj Da'ol 'e' ghojmoHbogh QIn DaHevbe''a'?"
       send_instructions: "tugh jabbI'ID DaHev. talIj Da'ol 'e' ghojmoH."
+    destroy: 
+      confirm: bIbej'a'?
+      headline: "ta' Qaw''a'?"
+      link: "DaH ta' Qaw'!"
     edit: 
       form: 
         labels: 
+          current_password: "mu' pegh <i>(choHmeylIj wI'olnIS)</i>"
           email: jabbI'ID
+          password: "mu' pegh <i>(DachoH DaneHbe'chugh pagh yIghItlh!)</i>"
           password_confirmation: "pegh mu' yIghItlhqa'"
         submit: qon
+      headline: "ta' choH"
     failure: 
       inactive: "wej chu' ta'lIj."
       invalid: "muj pegh mu', jabI'ID ghap."
@@ -168,6 +175,7 @@ tlh:
       confirmation_instructions: "talIj Da'ol 'e' ghojmoH QInvam."
       reset_password_instructions: "pegh mu' vIcherqa' 'e' HIghojmoH."
       unlock_instructions: "talIj Da'ngaQHa'moH 'e' ghojmoH QIn."
+    mandatory: "* wIpoQ"
     omniauth_callbacks: 
       failure: "\"%{reason}\"mo' %{kind}vo' qachaw'laHbe'."
       success: "Qapla'! %{kind} ta' chaw'lu'."
@@ -179,7 +187,10 @@ tlh:
       headline: "pegh mu' DalIj'a'?"
     password_reset: 
       email: 
+        comment: "mu'lIj pegh DachoH DaneHbe'chugh QInvam yIbuSHa'.<br/>mu'lIj pegh choHbe'lu' 'ach DachoHlaH bIngDaq mu'mey Da'uychugh. "
+        headline: "%{email}"
         link: "pegh mu' choH"
+        text: "mu'lIj pegh choHlu' neHlu'. DachoH DaneHchugh, bIngDaq mu'mey yI'uy:"
       form: 
         labels: 
           password: "pegh mu' chu'"
@@ -212,6 +223,8 @@ tlh:
         labels: 
           email: jabbI'ID
           password: "pegh mu'"
+          remember_me: "'eltaH'a'?"
+        submit: "'el"
       headline: "'el"
     sign_out: 
       headline: mej
@@ -285,6 +298,7 @@ tlh:
       housenumber: "ghobe':"
       lat: Latitude
       lon: Longitude
+      name: "pong:"
       osm_password: "OSM pegh mu'"
       osm_username: "OSM ta pong"
       password: "pegh mu'"
@@ -307,12 +321,14 @@ tlh:
     meta: 
       description: "rutlh quS chawbogh Daq'e' Sam - wheelmap.org"
       homepage: "juH Daq"
+      keywords: "rutlhquS naw' Daqmey Sam nej ghItlh"
       search: nej
     navigation: 
       blog: QonoS
       feedback: qechmey
       home: tagh
       how_to_add_a_place: "chay' Daqmey vIchel?"
+      imprint: "nubop De'"
       logged_in_as: "'elpu': "
       login: "'el"
       logout: mej
@@ -421,6 +437,8 @@ tlh:
       format: 
         delimiter: "."
         precision: 1
+        significant: true
+        strip_insignificant_zeros: true
       storage_units: 
         format: "%n %u"
         units: 
@@ -444,6 +462,12 @@ tlh:
     callback: 
       notice: "DaH ta'lIj %{user} open street map ta' je Darur."
   or: pagh
+  pages: 
+    show: 
+      header: 
+        meta: 
+          description: "Wheelmap bop De', jInmol chenmoH Sozialhelden e.V."
+        title: "Wheelmap - nubop De'"
   place: 
     one: "%{count} Daq"
     other: "%{count} Daqmey"
@@ -593,6 +617,8 @@ tlh:
           revoke: rarHa'
       headline: "ta'lIj choH"
   pt: Português
+  pt-PT: Português
+  ru: Русский
   search: 
     index: 
       search: 
@@ -613,6 +639,7 @@ tlh:
         maps_and_data: "pu'jIn, De':"
         phone: "QumwI':"
         provider: "nobwI':"
+      headline: "nubop De'"
       links: 
         email_me: "naDev yI'uy"
         license: 
@@ -624,6 +651,7 @@ tlh:
     array: 
       last_word_connector: ", 'ej"
       sentence_connector: "'ej"
+      skip_last_comma: true
       two_words_connector: "'ej"
       words_connector: ","
     select: 
@@ -635,6 +663,7 @@ tlh:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: ram
+  tlh: "tlhIngan Hol"
   tr: Türkçe
   user_sessions: 
     create: 

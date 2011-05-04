@@ -554,6 +554,8 @@ fr:
           revoke: Déconnecter
       headline: "Editer votre profil"
   pt: Portugais
+  pt-PT: Português
+  ru: Русский
   search: 
     index: 
       search: 
@@ -596,6 +598,7 @@ fr:
       long: "%A %d %B %Y %H:%M"
       short: "%d %b %H:%M"
     pm: "de l'après-midi"
+  tlh: "tlhIngan Hol"
   tr: Turc
   user_sessions: 
     create: 

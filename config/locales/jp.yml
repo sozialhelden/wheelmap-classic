@@ -553,6 +553,8 @@ jp:
           revoke: 切断
       headline: プロフィールを編集
   pt: Português
+  pt-PT: Português
+  ru: Русский
   search: 
     index: 
       search: 
@@ -595,6 +597,7 @@ jp:
       long: "%B %d, %Y %H:%M "
       short: "%d %b %H:%M"
     pm: pm
+  tlh: "tlhIngan Hol"
   tr: Türkçe
   user_sessions: 
     create: 
