@@ -223,7 +223,7 @@ tr:
         labels: 
           email: E-Posta
           password: Parola
-          remember_me: "kayıtlı kal?"
+          remember_me: "Kayıtlı kal?"
         submit: "Oturum aç"
       headline: "Oturum aç"
     sign_out: 
@@ -235,7 +235,7 @@ tr:
           password: Parola
           password_confirmation: "Parolayı tekrarla"
         submit: Kaydol
-      headline: Kayol
+      headline: Kaydol
     unlocks: 
       link: "Kilidi açmak için talimatları almadınızmı?"
       send_instructions: "Bir kaç dakika içerisinde nasıl hesabınızın kilidini açabileceğinize dahil e-posta ile talimatlar alacaksınız."
@@ -334,13 +334,13 @@ tr:
       logout: "Oturumu kapat"
       suggestions: Öneriler
       tolk: Tercümeler
-      what_is_barrier_free: "\"Tekerleki sandalye icin ulasilir\" ne demek?"
+      what_is_barrier_free: "\"Tekerleki sandalye ile ulasilir\" ne demek?"
       what_is_wheelmap: "Wheelmap nedir?"
     searchbar: 
       add_place: "Başka bir mekan/alan ekle"
       find: Bul
-      placeholder: "mesela Sunset Boulevard San Francisco or Brandenburg Gate Berlin"
-      title_add_place: "Şimdi bu pozisyona yeni bir alan veya mekan ekle!! "
+      placeholder: "mesela Sunset Boulevard San Francisco veya Brandenburger Tor Berlin"
+      title_add_place: "Şimdi bu pozisyona yeni bir alan veya mekan ekle!"
     tagline: "Wheelmap logo"
     title: "Wheelmap - tekerlekli sandalye için ulaşılır yerler bul"
   helpers: 
@@ -349,7 +349,7 @@ tr:
     submit: 
       create: "%{model} geliştir"
       submit: "%{model} kaydet"
-      update: "%{model} Güncelleştir"
+      update: "%{model} güncelleştir"
   home: 
     index: 
       filter: 
@@ -375,7 +375,7 @@ tr:
   nodes: 
     create: 
       flash: 
-        not_successfull: "Ooops, girişleriniz yanlış veya yetersizdi"
+        not_successfull: "Ooops, verileriniz yanlış veya yetersizdi"
         successfull: "Teşekkür ederiz, bildirileriniz basarili bir şekilde kaydedildi ve kısa sürede internet sitesinde sunulacak."
     edit: 
       header: 
@@ -388,7 +388,7 @@ tr:
       not_available: "Üzgünüz, bu sayfa geçici bir süre için mevcut değildir. "
       not_existent: "Üzgünüz, bu alan veya mekan artık mevcut değildir."
       not_found: "Üzgünüz, sayfa bulunamadı."
-      param_missing: "Lütfen bir terim arayın veya temin ediniz."
+      param_missing: "Lütfen aradığınız terimi yazın."
     flash: 
       authorize_wheelmap: "Verileri değiştirebilmek için OpenStreetMap hesabınız olması gerekir."
     new: 
@@ -405,7 +405,7 @@ tr:
         report_bug: "Sorun bildir "
     update: 
       flash: 
-        not_successfull: "Oops, girişiniz yanlış veya eksik."
+        not_successfull: "Oops, verileriniz yanlış veya eksik."
         successfull: "Teşekkür ederiz, tesciliniz başarılı bir şekilde kayıtlanmıştır ve kısa bir süre sonra online olacak."
     update_wheelchair: 
       successfull: "\"%{name}\"statüsü artık \"%{status} tekerlekli sandalya için ulaşılır\" olarak değiştirilmiştir ve kisa süre sonra online olucak. "
@@ -466,8 +466,8 @@ tr:
     show: 
       header: 
         meta: 
-          description: "Wheelmap damgası, bir Sozialhelden e.V. Projesi"
-        title: "Wheelmap - Damgası"
+          description: "Wheelmap künyesi, bir Sozialhelden e.V. Projesi"
+        title: "Wheelmap - Künye"
   place: 
     one: "%{count} alan/mekan"
     other: "%{count} alanlar/mekanlar"
@@ -488,9 +488,9 @@ tr:
     name: 
       accommodation: 
         beach_resort: "Plaj Oteli"
-        bed_and_breakfast: "Kahvaltn veren Pansiyon "
+        bed_and_breakfast: "Kahvaltı veren Pansiyon "
         camp_site: "Kamping Meydanı"
-        caravan_site: "Karavan Parki"
+        caravan_site: "Karavan Parkı"
         chalet: Bungalov
         guest_house: Pansiyon
         hostel: "Öğrenci Yurdu"
