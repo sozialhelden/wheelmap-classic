@@ -73,10 +73,19 @@ OpenLayers.Lang.jp = {
 };
 OpenLayers.Lang.tlh = { 
   'wheelchair_label_yes': 'naw\'laH rutlhquS',
-  'wheelchair_label_limited': 'naw\'laH rutlhquS',
+  'wheelchair_label_limited': 'loQ naw\'laH rutlhquS',
   'wheelchair_label_no': 'naw\'laHbe\' rutlhquS',
   'wheelchair_label_unknown': 'Suvbe\'bogh Dotlh',
   'wheelchair_update_button': 'qon',
   'more_information': 'latlh ...',
   'wheelchair_help': 'Naw\'laH rutlhquS? (QaH)'
+};
+OpenLayers.Lang.tr = { 
+  'wheelchair_label_yes': 'tekerlekli sandalye ile ulaşılır',
+  'wheelchair_label_limited': 'kısmen tekerlekli sandalye ile ulaşılır',
+  'wheelchair_label_no': 'tekerlekli sandalye için ulaşılır değil',
+  'wheelchair_label_unknown': 'belirsiz statü',
+  'wheelchair_update_button': 'Değişiklikeri kaydedin',
+  'more_information': 'daha fazla...',
+  'wheelchair_help': 'Tekerlekli sandalye ile ulaşılır? (Yardım)'
 };

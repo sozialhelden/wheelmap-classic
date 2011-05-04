@@ -280,7 +280,7 @@ tlh:
   es: Español
   form: 
     show_fully_accessible_places: "naw'laH rutlhquS"
-    show_limited_accessible_places: "naw'laH rutlhquS"
+    show_limited_accessible_places: "loQ naw'laH rutlhquS "
     show_places_without_status: "Suvbe'bogh Dotlh"
     show_unaccessible_places: "naw'laHbe' rutlhquS"
   formtastic: 
@@ -681,7 +681,7 @@ tlh:
       password: "pegh mu'"
       remember_me: "'eltaH"
   wheelchairstatus: 
-    limited: "naw'laH rutlhquS 'ach vuSlu'"
+    limited: "loQ naw'laH rutlhquS"
     ? "no"
     : "naw'laHbe' rutlhquS"
     unknown: "rutlhquS chawbogh Daq'e' "
