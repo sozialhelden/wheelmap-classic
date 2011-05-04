@@ -388,6 +388,8 @@ es:
     human: 
       format: 
         precision: 1
+        significant: true
+        strip_insignificant_zeros: true
       storage_units: 
         format: "%n %u"
         units: 
@@ -553,7 +555,9 @@ es:
           not_connected: "Estado: No conectado"
           revoke: Desconectado
       headline: "Editar tu perfil"
-  pt: Portugués
+  pt: Português
+  pt-PT: Português
+  ru: Русский
   search: 
     index: 
       search: 
@@ -596,7 +600,8 @@ es:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
-  tr: Turco
+  tlh: "tlhIngan Hol"
+  tr: Türkçe
   user_sessions: 
     create: 
       activation: 

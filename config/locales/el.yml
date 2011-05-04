@@ -594,6 +594,8 @@ el:
           revoke: Αποσύνδεση
       headline: "Επεξεργαστείτε το προφίλ σας"
   pt: Português
+  pt-PT: Português
+  ru: Русский
   search: 
     index: 
       search: 
@@ -638,6 +640,7 @@ el:
       long: "%A %d %B %Y %H:%M:%S %Z"
       short: "%d %b %H:%M"
     pm: απόγευμα
+  tlh: "tlhIngan Hol"
   tr: Türkçe
   user_sessions: 
     create: 

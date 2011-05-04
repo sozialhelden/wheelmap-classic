@@ -560,6 +560,8 @@ de:
           revoke: "Verbindung aufheben"
       headline: "Dein Profil bearbeiten"
   pt: Português
+  pt-PT: Português
+  ru: Русский
   search: 
     index: 
       search: 
@@ -602,6 +604,7 @@ de:
       long: "%A, %e. %B %Y, %H:%M Uhr"
       short: "%e. %B, %H:%M Uhr"
     pm: nachmittags
+  tlh: "tlhIngan Hol"
   tr: Türkçe
   user_sessions: 
     create: 

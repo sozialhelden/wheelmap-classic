@@ -37,9 +37,9 @@ tr:
           other: "%{model} girişi kadedilemedi: %{count} hata."
   application: 
     require_no_user: 
-      notice: "Sayfaya kayıdlısınız"
+      notice: "Sayfaya kayıtlısınız"
     require_user: 
-      notice: "Bu sayfayı görmek icin kaydolun"
+      notice: "Bu sayfayı görmek icin yeni bir oturum açın."
   breadcrumbs: 
     node: 
       create: "yeni bir mevki/alan ekleyiniz"
@@ -224,18 +224,18 @@ tr:
           email: E-Posta
           password: Parola
           remember_me: "kayıtlı kal?"
-        submit: "Kayıt olmak"
-      headline: "Kayıt olmak"
+        submit: "Oturum aç"
+      headline: "Oturum aç"
     sign_out: 
-      headline: "Kaydı silmek"
+      headline: "Oturumu kapat"
     sign_up: 
       form: 
         labels: 
           email: E-Posta
           password: Parola
           password_confirmation: "Parolayı tekrarla"
-        submit: "Kayıt yap"
-      headline: "Kayıt yap"
+        submit: Kaydol
+      headline: Kayol
     unlocks: 
       link: "Kilidi açmak için talimatları almadınızmı?"
       send_instructions: "Bir kaç dakika içerisinde nasıl hesabınızın kilidini açabileceğinize dahil e-posta ile talimatlar alacaksınız."
@@ -298,6 +298,7 @@ tr:
       housenumber: "No:"
       lat: Enlem
       lon: Boylam
+      name: Isim
       osm_password: "OSM Parola"
       osm_username: "OSM hesap ismi"
       password: Parola
@@ -324,13 +325,13 @@ tr:
       search: Ara
     navigation: 
       blog: Blog
-      feedback: "Geri Bildirim"
+      feedback: Geribildirim
       home: Başlat
       how_to_add_a_place: "Yeni mekan/alan nasıl eklenir?"
-      imprint: Basmak
+      imprint: Künye
       logged_in_as: "- olarak kayıtlı kal: "
-      login: "Kayid ol"
-      logout: "Kaydi sil"
+      login: "Oturum aç"
+      logout: "Oturumu kapat"
       suggestions: Öneriler
       tolk: Tercümeler
       what_is_barrier_free: "\"Tekerleki sandalye icin ulasilir\" ne demek?"
@@ -338,10 +339,10 @@ tr:
     searchbar: 
       add_place: "Başka bir mekan/alan ekle"
       find: Bul
-      placeholder: "yani Sunset Boulevard San Francisco or Brandenburg Gate Berlin"
-      title_add_place: "Şimdi bu yere yeni bir alan veya mekan ekle!! "
+      placeholder: "mesela Sunset Boulevard San Francisco or Brandenburg Gate Berlin"
+      title_add_place: "Şimdi bu pozisyona yeni bir alan veya mekan ekle!! "
     tagline: "Wheelmap logo"
-    title: "Wheelmap - tekerlekli sandalye için ulaşılır mekan/alan bul"
+    title: "Wheelmap - tekerlekli sandalye için ulaşılır yerler bul"
   helpers: 
     select: 
       prompt: "Lütfen seçiniz"
@@ -356,7 +357,7 @@ tr:
         wheelchair: "Tekerlekli sandalye için ulaşılırmı?"
       link: 
         node: 
-          create: "Yeni mekan/alan ekle"
+          create: "Yeni bir yer ekle"
   is: Izlandaca
   it: Italyanca
   jp: Japonca
@@ -399,7 +400,7 @@ tr:
       header: 
         title: "Alan/Mekan: %{node} | wheelmap.org"
       link: 
-        edit_node: "Alan veya Mekan düzenle"
+        edit_node: "Alan veya Mekanı düzenle"
         large_map: Genişlet
         report_bug: "Sorun bildir "
     update: 
@@ -475,11 +476,11 @@ tr:
       accommodation: "Konaklama Yeri"
       education: Eğitim
       food: Yiyecek
-      government: Devlet
+      government: "Resmi Daire ve Büyük Elçilikler"
       leisure: "Boş Vakit"
-      misc: Misc
+      misc: "Diğer Şeyler"
       money_post: "Banka & Paramatik; Posta "
-      public_transfer: "Genel Geçiş"
+      public_transfer: Trafik/Ulaşım
       shopping: Alışveriş
       sport: Spor
       tourism: Turizm
@@ -616,6 +617,8 @@ tr:
           revoke: "Bağlantıyı kesmek"
       headline: "Profilinizi düzenleyin"
   pt: Portekizce
+  pt-PT: Português
+  ru: Русский
   search: 
     index: 
       search: 
@@ -660,6 +663,7 @@ tr:
       long: "%e %B %Y, %A, %H:%M"
       short: "%e %B, %H:%M"
     pm: "öğleden sonra"
+  tlh: "tlhIngan Hol"
   tr: Türkçe
   user_sessions: 
     create: 
@@ -688,10 +692,10 @@ tr:
       alt: "AppStore Logo"
       title: "iPhone App'i şimdi indirin!"
     logo: 
-      alt: "Wheelmap Logo - tekerlekli sandalye ile erişilir yer ve alanlar bulun"
-      title: "Wheelmap - tekerlekli sandalye ile ulaşılır yer ve alanlar bulun"
+      alt: "Wheelmap Logo - tekerlekli sandalye ile ulaşılır yerler bulun"
+      title: "Wheelmap - tekerlekli sandalye ile ulaşılır yerler bulun"
     what_is: 
-      fully_accessible: "Girşs basamak 7 santimetre den yüksek değil; tüm mevkiler tekerlekli sandalye kullanıcılar tarafından istisnasız ulasılır; engelliler tualeti mevcut "
+      fully_accessible: "Giriş basamağı 7 santimetre den yüksek değil; tüm mevkiler tekerlekli sandalye kullanıcılar tarafından istisnasız ulasılır; engelliler tualeti mevcut "
       limited_accessible: "Girişdeki basamak 7 santimetre den yüksek değil; en önemli mevkiler tekerlekli sandalye kullanıcılar tarafından ulaşılabilir. "
       not_accessible: "Girişdeki basamak 7 santimetre den yüksek; veya girişde basamak var; veya en önemli mevkiler tekerlekli sandalye kullanıcılar için ulaşılamaz."
       unknown_accessible: "Tekerlekli sandalye statüsü belirsiz"

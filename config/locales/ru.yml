@@ -340,6 +340,9 @@ ru:
           kb: КБ
           mb: МБ
           tb: ТБ
+  pt: Português
+  pt-PT: Português
+  ru: Русский
   support: 
     array: 
       last_word_connector: " и "
@@ -352,3 +355,5 @@ ru:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: вечера
+  tlh: "tlhIngan Hol"
+  tr: Türkçe

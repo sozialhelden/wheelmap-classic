@@ -554,6 +554,8 @@ it:
           revoke: Scollega
       headline: "Modifica profilo"
   pt: Português
+  pt-PT: Português
+  ru: Русский
   search: 
     index: 
       search: 
@@ -596,6 +598,7 @@ it:
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+  tlh: "tlhIngan Hol"
   tr: "Türkçe "
   user_sessions: 
     create: 
