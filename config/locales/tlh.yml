@@ -319,7 +319,7 @@ tlh:
     form_validation_error: "bIngDaq Qagh yIlegh."
   header: 
     meta: 
-      description: "rutlh quS chawbogh Daq'e' Sam - wheelmap.org"
+      description: "rutlhquS chawbogh Daq'e' Sam - wheelmap.org"
       homepage: "juH Daq"
       keywords: "rutlhquS naw' Daqmey Sam nej ghItlh"
       search: nej
@@ -334,7 +334,7 @@ tlh:
       logout: mej
       suggestions: "vay' chup"
       tolk: mughtaHghach
-      what_is_barrier_free: "\"rutlh quS chawbogh Daq'e'\" DaQIjlaH'a'?"
+      what_is_barrier_free: "\"rutlhquS chawbogh Daq'e'\" DaQIjlaH'a'?"
       what_is_wheelmap: "nuq 'oH wheelmap'e'?"
     searchbar: 
       add_place: "latlh Daq chel"
@@ -342,7 +342,7 @@ tlh:
       placeholder: "i.e. Sunset Boulevard San Francisco pagh Brandenburg Gate Berlin"
       title_add_place: "DaH DaqDaq Daq yIchel!"
     tagline: "Wheelmap Degh"
-    title: "Wheelmap - Daq'e' naw'laHbogh rutlhquS' Sam"
+    title: "Wheelmap - rutlhquS chawbogh Daq'e' Sam"
   helpers: 
     select: 
       prompt: yIwIv
@@ -684,7 +684,7 @@ tlh:
     limited: "loQ naw'laH rutlhquS"
     ? "no"
     : "naw'laHbe' rutlhquS"
-    unknown: "rutlhquS chawbogh Daq'e' "
+    unknown: "rutlhquS chaw Daq 'e' Sovbe'lu' "
     ? "yes"
     : "naw'laHbej rutlhquS"
   wheelmap: 
@@ -692,8 +692,8 @@ tlh:
       alt: "AppStore Degh"
       title: "DaH iPhone App yISuq!"
     logo: 
-      alt: "Wheelmap Degh - Daq'e' naw'laHbogh rutlhquS' Sam"
-      title: "Wheelmap - Daq'e' naw'laHbogh rutlhquS' Sam"
+      alt: "Wheelmap Degh - rutlhquS chawbogh Daq'e' Sam"
+      title: "Wheelmap - rutlhquS chawbogh Daq'e' Sam"
     what_is: 
       fully_accessible: "7cm jen law' letlh jen puS. Hoch Daqmeyvam naw'laHbej rutlhquS. puchpa''e' naw'laHbogh rutlhquS tu'lu'."
       limited_accessible: "7cm jen law' letlh jen puS. HochHom Daqmeyvam potlh naw'laH rutlhquS."
