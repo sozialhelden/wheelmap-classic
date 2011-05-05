@@ -105,7 +105,7 @@ function defaultControls(){
     new OpenLayers.Control.KeyboardDefaults(),
     new OpenLayers.Control.ScaleLine({geodesic:true}),
     new OpenLayers.Control.Permalink(),
-    new OpenLayers.Control.Permalink('createlink', '/nodes/new'),
+    new OpenLayers.Control.Permalink('createlink', '/nodes/new')
   ];
 }
 
@@ -277,7 +277,7 @@ function popup_form(feature){
   var form = '';
   form += '<form action="/nodes/' + feature.attributes.osm_id + '/update_wheelchair.js" method="put" class="update_form">';
   form += '<ol class="wheelchair">';
-  form += '<h3><a target="_blank" href="http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei/">' + OpenLayers.Lang.translate('wheelchair_help') + '</a></h3>'
+  form += '<h3><a target="_blank" href="http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei/">' + OpenLayers.Lang.translate('wheelchair_help') + '</a></h3>';
   form += popup_state_radio(feature, 'yes');
   form += popup_state_radio(feature, 'limited');
   form += popup_state_radio(feature, 'no');
@@ -422,7 +422,7 @@ function runEffect(){
       var options = {};
       $(".flash").fadeOut();
    }, 5000);
-};
+}
 
 
 
@@ -461,9 +461,7 @@ $(function() {
   });
   $('.minimize').live('click', function() {
     $(this).parent('div').css('height', '0.5em');
-    $(this).parent('div').animate({
-      left:'-275px',
-    }, 'fast', 'swing', function() {
+    $(this).parent('div').animate({ left:'-275px'}, 'fast', 'swing', function() {
       $(this).children('.minimize').text('»').addClass('maximize').removeClass('minimize');
       $.cookie('minimized_' + $(this).attr('id'), true);
       
@@ -472,9 +470,7 @@ $(function() {
   });
 
   $('.maximize').live('click', function() {
-    $(this).parent('div').animate({
-      left:'30px',
-    }, 'fast', 'swing', function() {
+    $(this).parent('div').animate({ left:'30px'}, 'fast', 'swing', function() {
       $(this).css('height', 'auto');
       $(this).children('.maximize').text('«').addClass('minimize').removeClass('maximize');
       $.cookie('minimized_' + $(this).attr('id'), false);
