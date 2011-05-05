@@ -14,7 +14,7 @@ OpenLayers.Lang.el = {
   'wheelchair_label_unknown': 'Κατάσταση άγνωστη',
   'wheelchair_update_button': 'εκσυγχρονίζω',
   'more_information': 'περισσότερα ...',
-  'wheelchair_help': 'Δυνατότητα πρόσβασης με αναπηρικής καρέκλας;? (Βοήθεια)'
+  'wheelchair_help': 'Δυνατότητα πρόσβασης με αναπηρική καρέκλα'
 };
 OpenLayers.Lang.en = { 
   'wheelchair_label_yes': 'wheelchair accessible',
@@ -78,7 +78,7 @@ OpenLayers.Lang.tlh = {
   'wheelchair_label_unknown': 'Suvbe\'bogh Dotlh',
   'wheelchair_update_button': 'qon',
   'more_information': 'latlh ...',
-  'wheelchair_help': 'Naw\'laH rutlhquS? (QaH)'
+  'wheelchair_help': 'naw\'laH\'a\' rutlhquS? (QaH)'
 };
 OpenLayers.Lang.tr = { 
   'wheelchair_label_yes': 'tekerlekli sandalye ile ulaşılır',
@@ -87,5 +87,5 @@ OpenLayers.Lang.tr = {
   'wheelchair_label_unknown': 'belirsiz statü',
   'wheelchair_update_button': 'Değişiklikeri kaydedin',
   'more_information': 'daha fazla...',
-  'wheelchair_help': 'Tekerlekli sandalye ile ulaşılır? (Yardım)'
+  'wheelchair_help': 'Tekerlekli sandalye için ulaşılırmı? (Yardım)' 
 };

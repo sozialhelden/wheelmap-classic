@@ -42,8 +42,8 @@ tr:
       notice: "Bu sayfayı görmek icin yeni bir oturum açın."
   breadcrumbs: 
     node: 
-      create: "yeni bir mevki/alan ekleyiniz"
-      edit: "mevki/ alanı şekilendiriniz"
+      create: "yeni bir yer/alan ekleyiniz"
+      edit: "yeri/ alanı şekilendiriniz"
     root: wheelmap
   cn: 中文
   common: 
@@ -144,7 +144,7 @@ tr:
       month: Ay
       second: Saniye
       year: Yıl
-  de: Almanca
+  de: Deutsch
   devise: 
     confirmations: 
       confirmed: "hesab başarılı bir şekilde onaylandı. "
@@ -241,7 +241,7 @@ tr:
       send_instructions: "Bir kaç dakika içerisinde nasıl hesabınızın kilidini açabileceğinize dahil e-posta ile talimatlar alacaksınız."
       unlocked: "Hesabınızın kilidi başarılı bir şekilde açılmıstır. Şu an kayıtlısınız."
   el: Ελληνικά
-  en: Ingilizce
+  en: English
   errors: 
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -277,7 +277,7 @@ tr:
       header: 
         one: "1 error prohibited this %{model} from being saved"
         other: "%{count} errors prohibited this %{model} from being saved"
-  es: Ispanyol
+  es: Español
   form: 
     show_fully_accessible_places: "tekerlekli sandalye ile ulaşılır"
     show_limited_accessible_places: "kısmen tekerlekli sandalye ile ulaşılır"
@@ -314,7 +314,7 @@ tr:
     titles: 
       basic: "Ana Veri:"
       optional: "Daha fazla bilgi <karış sınıfı=\"toplama\"> (tüm alanlar isteğe bağli)</karış>"
-  fr: Fransızca
+  fr: Français
   global: 
     form_validation_error: " Lütfen aşağıda kote edilmiş hataları not alın."
   header: 
@@ -358,9 +358,9 @@ tr:
       link: 
         node: 
           create: "Yeni bir yer ekle"
-  is: Izlandaca
-  it: Italyanca
-  jp: Japonca
+  is: Íslenska
+  it: Italiano
+  jp: 日本
   layouts: 
     application: 
       banner: 
@@ -469,8 +469,8 @@ tr:
           description: "Wheelmap künyesi, bir Sozialhelden e.V. Projesi"
         title: "Wheelmap - Künye"
   place: 
-    one: "%{count} alan/mekan"
-    other: "%{count} alanlar/mekanlar"
+    one: "%{count} Yer ve Mekan"
+    other: "%{count} Yer ve Mekanlar"
   poi: 
     category: 
       accommodation: "Konaklama Yeri"
@@ -623,7 +623,7 @@ tr:
     index: 
       search: 
         for: "\"%{q}\" araniyor"
-        not_found: "Alan/Yer bulunamadi!"
+        not_found: "Yer bulunamadi!"
   shared: 
     imprint: 
       comment: "Bu internet sitesi Ruby on Rails ve JavaScript kullanırarak geliştirildi."
@@ -663,7 +663,7 @@ tr:
       long: "%e %B %Y, %A, %H:%M"
       short: "%e %B, %H:%M"
     pm: "öğleden sonra"
-  tlh: "tlhIngan Hol"
+  tlh: "Klingon Dili"
   tr: Türkçe
   user_sessions: 
     create: 

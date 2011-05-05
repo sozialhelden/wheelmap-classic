@@ -488,7 +488,7 @@ en:
     index: 
       filter: 
         category: "Category:"
-        wheelchair: Wheelchair accessible?
+        wheelchair: Wheelchair accessible? (What does that mean?)
       link: 
         node: 
           create: Add new place
