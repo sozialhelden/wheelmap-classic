@@ -12,7 +12,7 @@ OpenLayers.Lang.el = {
   'wheelchair_label_limited': 'Εν μέρη προσβάσιμο με αναπηρική καρέκλα',
   'wheelchair_label_no': 'ακατάλληλο για αναπηρική καρέκλα',
   'wheelchair_label_unknown': 'Κατάσταση άγνωστη',
-  'wheelchair_update_button': 'εκσυγχρονίζω',
+  'wheelchair_update_button': 'Ενημέρωση',
   'more_information': 'περισσότερα ...',
   'wheelchair_help': 'Δυνατότητα πρόσβασης με αναπηρική καρέκλα'
 };
