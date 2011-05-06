@@ -23,6 +23,7 @@ OpenLayers.Util.onImageLoadError = function() {
         this.src = OpenLayers.Util.OSM.MISSING_TILE_URL;
     } else if (this.src.match(/^http:\/\/[def]\.tah\.openstreetmap\.org\//)) {
         // do nothing - this layer is transparent
+        var xxx;
     } else {
         OpenLayers.Util.OSM.originalOnImageLoadError;
     }

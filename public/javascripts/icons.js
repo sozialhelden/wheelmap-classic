@@ -72,7 +72,6 @@ var iconForType = {
   'bus_stop': 'car',
   'ferry_terminal': 'car',
   'taxi': 'car',
-  'place_of_worship': 'bell',
   'supermarket' : 'shopping-basket',
   'hairdresser' : 'shopping-basket',
   'clothes' : 'shopping-basket',
