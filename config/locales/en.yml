@@ -31,6 +31,7 @@ en:
   cn: 中文
   de: Deutsch
   en: English
+  el: Ελληνικά
   es: Español
   fr: Français
   is: Íslenska
@@ -41,8 +42,7 @@ en:
   ru: Русский
   tlh: Klingon
   tr: Türkçe
-  is: Íslenska
-  el: Ελληνικά
+  se: Svenska
 
   support:
     array:
