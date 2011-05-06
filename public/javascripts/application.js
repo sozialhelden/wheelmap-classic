@@ -387,9 +387,12 @@ function addPin(layer, lon, lat){
   var features = [];
   layer.removeFeatures(layer.features);
   // var center = centerCoordinates();
-  var lonLat = lonLatToMercator({ lon: lon * 1.0, lat: lat * 1.0 });
+  var lo = lon;
+  lo*=1.0;
+  var la = lat;
+  la*=1.0;
+  var lonLat = lonLatToMercator({ lon:lo, lat:la});
   var point = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
-  
   var feature = new OpenLayers.Feature.Vector(point);
   feature.attributes.icon = '/images/icons/' + iconForType['sfsdf'];
   feature.attributes.type = 'Subway';
