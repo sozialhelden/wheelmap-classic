@@ -44,6 +44,7 @@ pt-PT:
     node: 
       create: "Adicionar um novo lugar"
       edit: "Editar um lugar"
+    root: "ê ã õ  ç"
   cn: Chinês
   common: 
     close: fechar
@@ -162,11 +163,22 @@ pt-PT:
           password_confirmation: "Repita a palavra passe"
         submit: "Gravar mudanças"
       headline: "Opções da conta"
+    failure: 
+      inactive: "A sua conta ainda nao foi activada."
+      invalid: "Palavra passe ou Email inválido. "
+      invalid_token: d
+      locked: "A sua conta está bloqueada."
+      timeout: "A sua sess"
+      unauthenticated: "Voçê tem de se registrar antes de poder continuar.  "
+      unconfirmed: "Voçê tem de confirmar a sua conta antes de continuar."
     mailer: 
       confirmation_instructions: "Confirmação das instruções"
       reset_password_instructions: "Restabelecer as intruções sobre a palavra passe"
       unlock_instructions: "Desbloquear as instruções  "
     mandatory: "* campo obrigatório"
+    omniauth_callbacks: 
+      failure: "não pôde ser confirmado de  %{kind} porque \"%{reason}"
+      success: "Autorizado com sucesso de %{kind} conta"
     password_recovery: 
       form: 
         labels: 
@@ -227,10 +239,13 @@ pt-PT:
       link: "Não recebeu instruções para desbloquear a sua conta?"
       send_instructions: "Receberá dentro de minutos um mail com intruções de como desbloquear a sua conta."
       unlocked: "A sua conta foi desbloqueada com sucesso. Está agora ligado(a) à sua conta"
+  el: Ελληνικά
   en: Inglês
   errors: 
+    dynamic_format: "%{message}"
     messages: 
       accepted: "tem de ser aceite"
+      already_confirmed: "já estava confirmado, por favor volte a registrar-se"
       blank: "não pode estar em branco"
       confirmation: "não coincide com a confirmação"
       empty: "não pode estar vazio"
@@ -244,12 +259,32 @@ pt-PT:
       less_than: "tem de ser menor que %{count}"
       less_than_or_equal_to: "tem de ser menor ou igual a %{count}"
       not_a_number: "não é um número"
+      not_an_integer: "tem de ser um número integral"
+      not_found: "não foi encontrado"
+      not_locked: "não estava bloqueado"
+      not_saved: 
+        one: "Um erro impdiu que %{resource} fosse salvo:"
+        other: "%{count} erros impediu que %{resource} fossem salvos :"
       odd: "tem de ser ímpar"
       taken: "já pertence a outra pessoa"
       too_long: "é demasiado grande (o mínimo é de %{count} characters)"
       too_short: "é demasiado pequeno (o mínimo é de %{count} caracteres)"
       wrong_length: "comprimento errado (deve ter %{count} caracteres)"
+    template: 
+      body: "Houve problemas com os seguintes campos: "
+      header: 
+        one: "Um erro impdiu que %{model} fosse salvo:"
+        other: "%{count} erros impediu que %{model} fossem salvos :"
   es: Espanhol
+  flash: 
+    actions: 
+      create: 
+        notice: "%{resource_name} foi criado com sucesso."
+      destroy: 
+        alert: "%{resource_name} não pode ser eliminado. "
+        notice: "%{resource_name} foi eliminado com sucesso"
+      update: 
+        notice: "%{resource_name} foi actualizado com sucesso"
   form: 
     show_fully_accessible_places: "acessível a cadeira de rodas"
     show_limited_accessible_places: "parcialmente acessível a cadeira de rodas"
@@ -270,6 +305,7 @@ pt-PT:
       housenumber: "Nr:"
       lat: Latitude
       lon: Longitude
+      name: "Nome:"
       osm_password: "OSM palavra passe"
       osm_username: "OSM nome da conta"
       password: "Palavra passe"
@@ -300,18 +336,32 @@ pt-PT:
       home: Iniciar
       how_to_add_a_place: "Como adicionar lugares?"
       imprint: Imprimir
+      logged_in_as: "Registrado como:"
       login: Entrar
       logout: Sair
       suggestions: Sugestões
       tolk: Traduções
+      what_is_barrier_free: "Qual o significado de \"acessível a cadeira de rodas\"?"
+      what_is_wheelmap: "O que é o wheelmap?"
     searchbar: 
       add_place: "Adicionar outro lugar"
       find: encontrar
+      placeholder: "p. Ex. Sunset Boulevard San Francisco ou o Portão de Brandenburgo"
       title_add_place: "Adicionar um novo lugar nesta posição agora!"
+    tagline: "Lógotipo do Wheelmap"
+    title: "Wheelmap - encontre lugares acessivéis a cadeira de rodas"
+  helpers: 
+    select: 
+      prompt: "Por favor seleccione"
+    submit: 
+      create: "Criar  %{model}"
+      submit: "Guardar  %{model}"
+      update: "Actualizar  %{model}"
   home: 
     index: 
       filter: 
         category: "Categoria:"
+        wheelchair: "Acessivel a cadeira de rodas? (O que significa isto?) "
       link: 
         node: 
           create: "Adicionar um novo lugar"
@@ -327,16 +377,31 @@ pt-PT:
       phone: "Telefone:"
       website: "site na Web:"
   nodes: 
+    create: 
+      flash: 
+        not_successfull: "Oops, os dados introduzido estão incorrectos ou incompletos"
+        successfull: "Muito obrigado, os dados submetidos foram guardados com sucesso e estarão online em breve. "
     errors: 
+      default: "Oops, algo não correu bem. Nós já fomos informados sobre a situação. "
       not_authorized: "Desculpe, a autentificação falhou"
       not_available: "Desculpe, mas esta página não está de momento acessível"
       not_existent: "Desculpe, este lugar já não está mais acessível"
       not_found: "Desculpe, a página não foi encontrada"
+      param_missing: "Por Favor introduza um termo para procura"
+    flash: 
+      authorize_wheelmap: "Você precisa de uma conta OpenStreetMap para alterar os dados."
+    new: 
+      header: 
+        title: "Novo lugar | wheelmap.org"
     show: 
       link: 
         edit_node: "Editar lugar"
         large_map: Aumentar
         report_bug: "Report a problem"
+    update: 
+      flash: 
+        not_successfull: "Oops, os dados introduzido estão incorrectos ou incompletos"
+        successfull: "Muito obrigado, os dados submetidos foram guardados com sucesso e estarão online em breve. "
   number: 
     currency: 
       format: 
@@ -344,14 +409,27 @@ pt-PT:
         format: "%u%n"
         precision: 2
         separator: ","
+        significant: 0
+        strip_insignificant_zeros: 0
         unit: €
     format: 
       delimiter: "."
       precision: 3
       separator: ","
+      significant: 0
+      strip_insignificant_zeros: 0
     human: 
+      decimal_units: 
+        units: 
+          billion: "Bilhão "
+          million: "Milhão "
+          quadrillion: Quatrilhão
+          thousand: Mil
+          trillion: "Trilhão "
       format: 
         precision: 1
+        significant: true
+        strip_insignificant_zeros: true
       storage_units: 
         format: "%n %u"
         units: 
@@ -362,9 +440,54 @@ pt-PT:
           kb: KB
           mb: MB
           tb: TB
+  or: ou
+  pages: 
+    show: 
+      header: 
+        meta: 
+          description: "Impressão do wheelmap, um projekto de Sozialhelden e.V. "
   poi: 
+    category: 
+      accommodation: "Acomodação "
+      education: "Ecucação "
+      food: Comida
+      government: Governo
+      leisure: Prazer
+      misc: outros
+      money_post: "Banco & Correios"
+      public_transfer: "Trnsportes Públicos"
+      shopping: Shopping
+      sport: Desporto
+      tourism: Turismo
+      unknown: Desconhecido
     name: 
+      accommodation: 
+        beach_resort: "Hotel Praia"
+        bed_and_breakfast: "Bed and Breakfast"
+        camp_site: Acampamento
+        caravan_site: "Sitio de caravana"
+        chalet: Chalet
+        guest_house: "Guest House"
+        hostel: Pousada
+        hotel: Hotel
+        motel: Motel
+      education: 
+        college: Colégio
+        kindergarten: "Jardim escola"
+        library: Biblioteca
+        museum: Museu
+        school: Escola
+        university: Universidade
+      food: 
+        bar: Bar
+        biergarten: "Bar de cerveja"
+        cafe: café
+        drinking_water: "Agua potável"
+        fast_food: "Fast food"
+        pub: Pub
+        restaurant: Restaurante
       government: 
+        courthouse: Tribunal
         embassy: Embaixada
         public_building: "Edificio público"
       leisure: 
@@ -374,9 +497,86 @@ pt-PT:
         nightclub: "Clube Nocturno"
         sauna: Sauna
         theatre: Teatro
+        zoo: Zoológico
       misc: 
+        doctors: Doutores
         hospital: Hospital
+        pharmacy: Farmácia
+        place_of_worship: "Lugar de oração "
+        toilets: "Casa de banho"
+        veterinary: Veterenário
+      money_post: 
+        atm: "Caixa Multibanco"
+        bank: Banco
+        bureau_de_change: "Loja de Cambio"
+        post_box: "Caixa de Correio"
+        post_office: Correios
+      public_transfer: 
+        aerodrome: Aeroporto
+        bicycle_parking: "Parque para bicicletas"
+        bicycle_rental: "Aluguer de bicicletas"
+        boatyard: "Lugar onde barcos são construídos e guardados "
+        bus_station: "Estação de Autocarros"
+        bus_stop: "Estação de Autocarros"
+        cable_car: Teleférico
+        car_rental: "Aluguer de carros"
+        car_sharing: "Car sharing"
+        chair_lift: Elevador
+        ferry: Ferry
+        ferry_terminal: "Terminal Ferry"
+        fuel: "Bomba de gasolina"
+        halt: "Estação "
+        light_rail: Metro
+        parking: "Parque de estacionamento"
+        parking_aisle: "Lugar de estacionamento"
+        platform: Plataforma
+        subway: Metro
+        subway_entrance: "Entrada do Metro "
+        terminal: "Terminal de Aeroporto "
+        tram_stop: "Estação de eléctrico"
+      shopping: 
+        alcohol: Licor
+        bakery: Padaria
+        beverages: Bebidas
+        bicycle: "Loja de bicicletas"
+        books: Livros
+        butcher: Talho
+        clothes: Roupa
+        computer: Computador
+        convenience: Conveniência
+        department_store: "Shopping Center"
+        doityourself: "Faça você mesmo"
+        dry_cleaning: "Limpeza a seco"
+        electronics: Eletrónica
+        florist: Florista
+        furniture: Móvéis
+        garden_centre: "Centro de jardinagem"
+        hairdresser: Cabeleireiro
+        hardware: Hardware
+        kiosk: Quisque
+        laundry: Lavandaria
+        mall: "Shopping Center"
+        optician: Óptica
+        shoes: Sapatos
+        supermarket: Supermercado
+      sport: 
+        sports_centre: "Centro de desporto"
+        stadium: Estádio
+        swimming: Nadar
+        swimming_pool: Piscina
       tourism: 
+        archaeological_site: "Local arqueológico"
+        arts_centre: "centro de artes"
+        artwork: "Obra de arte"
+        attraction: Atracção
+        battlefield: "Campo de batalha"
+        beach: Praia
+        beacon: Farol
+        castle: castelo
+        cave_entrance: "Entrada da caverna"
+        information: "Informação para turistas"
+        memorial: Memorial
+        theme_park: "Parque temático"
         tower: Torre
         viewpoint: "Ponto de vista"
       unknown: 
@@ -385,21 +585,48 @@ pt-PT:
     edit: 
       application: 
         oauth: 
+          connected: "Estado: Ligado"
           grant: "Ligar agora"
+          not_connected: "Estado: Desligado"
           revoke: "Desligar "
       headline: "Editar o seu profil"
   pt: Prtuguês
+  pt-PT: Português
+  ru: Russo
+  se: Sloveno
   search: 
     index: 
       search: 
+        for: "Procurando \"%{q}"
         not_found: "Não foi possível encontrar um lugar"
   shared: 
     imprint: 
+      comment: "Esta página de internet foi desenvolvida usando Ruby on Rails e Javascript"
       fields: 
         application: "Aplicação:"
+        design: "Design, desenvolvimento"
+        email: Email
+        geoip: GeoIP
+        hosting: Hospedar
+        icons: "Icons:"
+        license: Licença
+        maps: "Mapa:"
+        maps_and_data: "Mapa, Dados:"
+        phone: Telefone
+        provider: "Fornecedor:"
+      headline: Impressão
+      links: 
+        email_me: "Clique aqui"
+        license: 
+          cc: 
+            by_30: "Creative Commons Attribution 3.0 Unported"
+            by_sa_20: "Creative Commons Attribution-ShareAlike 2.0 Generic"
+  statistics: Estatísticas
   support: 
     array: 
       last_word_connector: ", e"
+      sentence_connector: e
+      skip_last_comma: true
       two_words_connector: " e "
       words_connector: ", "
     select: 
@@ -411,3 +638,39 @@ pt-PT:
       long: "%A, %d de %B de %Y, %H:%Mh"
       short: "%d/%m, %H:%M hs"
     pm: pm
+  tlh: "tlhIngan Hol"
+  tr: Turco
+  user_sessions: 
+    create: 
+      activation: 
+        notice: "A sua conta está agora activa."
+      error: 
+        notice: "E-Mail e palavra passe não correspondem"
+      notice: "Você está dentro!"
+    destroy: 
+      notice: "Adeus, até breve!"
+    new: 
+      email: E-Mail
+      login: "Log in"
+      login_with_twitter: "Log in com Twitter"
+      password: "Palavra passe"
+      remember_me: "Mantenha-se connectado"
+  wheelchairstatus: 
+    limited: "parcial acesibilidade a cadeira de rodas"
+    ? "no"
+    : "sem acessibilidade a cadeira de rodas"
+    unknown: "acessibilidade a cadeira de rodas desconhecida"
+    ? "yes"
+    : "Completa acessibilidade a cadeira de rodas"
+  wheelmap: 
+    itunes: 
+      alt: "AppStore Logo"
+      title: "Faça agora o download do seu iPhone App!"
+    logo: 
+      alt: "Wheelmap Logo - encontre lugares com acessibilidade para cadeira de rodas"
+      title: "Wheelmap - encontre lugares com acessibilidade para cadeira de rodas"
+    what_is: 
+      fully_accessible: "O desnível na entrada não é superior a 7 cm; todas as localidades com acesso a cadeira de rodas (sem excepção); casa de banho para desabilitados "
+      limited_accessible: "O desnível na entrada não é superior a 7 cm; as localidades mais importantes acesso a cadeira de rodas "
+      not_accessible: "O desnível na entrada não é superior a 7 cm; ou escadas na entrada; ou as mais importantes localidades sem acesso a cadeira de rodas"
+      unknown_accessible: "A acessibilidade a cadeira de rodas é desconhecida."

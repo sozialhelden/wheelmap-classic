@@ -278,6 +278,15 @@ se:
         one: "1 fel hindrade denna %{model} från att sparas"
         other: "%{count} fel hindrade denna %{model} från att sparas"
   es: Español
+  flash: 
+    actions: 
+      create: 
+        notice: "%{resource_name} är skapad."
+      destroy: 
+        alert: "%{resource_name} kunde inte tas bort."
+        notice: "%{resource_name} är borttagen."
+      update: 
+        notice: "%{resource_name} är uppdaterad."
   form: 
     show_fully_accessible_places: rullstolsanpassad
     show_limited_accessible_places: "delvis rullstolsanpassad"
@@ -339,6 +348,7 @@ se:
       find: hitta
       placeholder: "till exempel Sunset Boulevard San Francisco eller Drottningholm Stockholm"
       title_add_place: "Lägg till an plats på denna position!"
+    tagline: "Wheelmap logo"
     title: "Wheelmap - hitta rullstolsanpassade platser"
   helpers: 
     select: 
@@ -351,7 +361,7 @@ se:
     index: 
       filter: 
         category: "Kategori:"
-        wheelchair: Rullstolsanpassad?
+        wheelchair: "Rullstolsanpassad? (Vad betyder det)"
       link: 
         node: 
           create: "Lägg till ny plats"
@@ -466,12 +476,17 @@ se:
     name: 
       accommodation: 
         beach_resort: Strandhotell
+        bed_and_breakfast: "Bed & breakfast\n"
         camp_site: Campingplats
         caravan_site: Husvagnsplats
+        chalet: Fäbod
+        guest_house: Värdshus
         hostel: Vandrarhem
         hotel: Hotell
         motel: Motell
       education: 
+        college: Högskola
+        kindergarten: Förskola
         library: Bibliotek
         museum: Museum
         school: Skola
@@ -486,6 +501,7 @@ se:
       government: 
         courthouse: Domstol
         embassy: Ambassad
+        public_building: "Publik byggnad"
         townhall: Stadshus
       leisure: 
         arena: Arena
@@ -510,6 +526,7 @@ se:
         aerodrome: Flygplats
         bicycle_parking: Cykelparkering
         bicycle_rental: Cykeluthyrning
+        boatyard: Båtvarv
         bus_station: Busstation
         bus_stop: Busshållplats
         car_rental: Biluthyrning
@@ -517,15 +534,23 @@ se:
         ferry_terminal: Färjeterminal
         fuel: Bensinstation
         parking: Parkering
+        platform: Platform
         subway: Tunnelbana
         subway_entrance: Tunnelbaneingång
         terminal: Flygplats-terminal
+        tram_stop: Spårvagnshållplats
       shopping: 
+        alcohol: Alkohol
         bakery: Bageri
+        beverages: Drycker
+        bicycle: Cykelaffär
         books: Böcker
         butcher: Slaktare
         clothes: Kläder
         computer: Datorer
+        convenience: Närbutik
+        department_store: Varuhus
+        doityourself: "Gör det själv"
         dry_cleaning: Kemtvätt
         electronics: Elektronik
         florist: Blomsteraffär
@@ -538,14 +563,25 @@ se:
         mall: Shoppingcentrum
         optician: Optiker
         shoes: Skor
+        supermarket: Livsmedel
       sport: 
+        sports_centre: Sportcenter
         stadium: Stadion
+        swimming: Bad
+        swimming_pool: Simbassäng
       tourism: 
         archaeological_site: "Arkeologisk plats"
+        arts_centre: Kulturcenter
+        artwork: Konstverk
+        attraction: Attraktion
+        battlefield: Slagfält
         beach: Strand
         beacon: Fyr
         castle: Slott
+        cave_entrance: Gruvingång
         information: Turistinformation
+        memorial: Minnesplats
+        theme_park: Nöjespark
         tower: Torn
         viewpoint: Utsiktsplats
       unknown: 
@@ -561,6 +597,7 @@ se:
   pt: Português
   pt-PT: Português
   ru: Русский
+  se: Svenska
   search: 
     index: 
       search: 
@@ -568,10 +605,12 @@ se:
         not_found: "Inga platser hittades!"
   shared: 
     imprint: 
+      comment: "Denna webbplats är skapad med hjälp av Ruby on Rails och JavaScript."
       fields: 
         application: "Applikation:"
         design: "Design, utveckling:"
         email: "E-post:"
+        geoip: GeoIP
         icons: "Ikoner:"
         license: "Licens:"
         maps: "Karta:"
@@ -579,6 +618,10 @@ se:
         phone: "Telefon:"
       links: 
         email_me: "Klicka här"
+        license: 
+          cc: 
+            by_30: "Creative Commons Attribution 3.0 Unported\n"
+            by_sa_20: "Creative Commons Attribution-ShareAlike 2.0 Generic\n"
   statistics: Statistik
   support: 
     array: 
@@ -594,7 +637,7 @@ se:
       default: "%a, %e %b %Y %H:%M:%S %z"
       long: "%e %B %Y %H:%M"
       short: "%e %b %H:%M"
-  tlh: Klingon
+  tlh: "tlhIngan Hol"
   tr: Türkçe
   user_sessions: 
     create: 
@@ -620,9 +663,13 @@ se:
     : "Helt rullstolsanpassat"
   wheelmap: 
     itunes: 
+      alt: "AppStore Logo"
       title: "Hämta för iPhone!"
     logo: 
       alt: "Wheelmap Logo - Hitta rullstolsanpassade platser"
       title: "Wheelmap - Hitta rullstolsanpassade platser"
     what_is: 
+      fully_accessible: "Ingångens kant är inte högre än 7 cm, alla utrymmen är tillgängliga för rullstolsanvändare (utan undantag). Rullstolsanpassade toaletter finns"
+      limited_accessible: "Ingångens kant är inte högre än 7 cm, de viktigaste utrymmena är tillgängliga för rullstolsanvändare"
+      not_accessible: "Ingångens kant är högre än 7 cm, eller det är en trapp till ingången, eller de viktigaste utrymmena är inte tillgängliga för rullstolsanvändare"
       unknown_accessible: "Rullstolsanpassningen är okänd"
