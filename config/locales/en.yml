@@ -188,7 +188,7 @@ en:
       website: "For example: http://www.example.com"
       phone: "For example: +49 30 123456-78"
       lat: Move the marker on the map to the correct position
-      password: (leave empty, if you don't want to change it)
+      password: "(leave empty, if you don't want to change it)"
     titles: 
       optional: More information <span class="addition">(all fields are optional)</span>
       basic: Basic data
@@ -289,7 +289,14 @@ en:
           password_confirmation: "Repeat password"
         submit: "Save changes"
       headline: "Edit Account"
-    
+    failure:
+      unauthenticated: 'You need to sign in or sign up before continuing.'
+      unconfirmed: 'You have to confirm your account before continuing.'
+      locked: 'Your account is locked.'
+      invalid: 'Invalid email or password.'
+      invalid_token: 'Invalid authentication token.'
+      timeout: 'Your session expired, please sign in again to continue.'
+      inactive: 'Your account was not activated yet.'    
     mailer: 
       unlock_instructions: Unlock Instructions
       reset_password_instructions: Reset password instructions
