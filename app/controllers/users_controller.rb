@@ -43,9 +43,12 @@ class UsersController < ApplicationController
   end
   
   def remove_password_from_params_if_blank
-    if params[:user][:osm_password].blank?
-      params[:user].delete(:osm_password)
+    if params[:user][:password].blank?
+      params[:user].delete(:password)
     end
-
+    
+    if params[:user][:password_confirmation].blank?
+      params[:user].delete(:password_confirmation)
+    end
   end
 end
