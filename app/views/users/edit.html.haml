@@ -5,6 +5,7 @@
       = form.input :email, :required => false
       = form.input :password, :required => false, :hint => t('formtastic.hints.password')
       = form.input :password_confirmation, :required => false
+      = form.input :wants_newsletter, :input_html => {:class => 'newsletter'}, :label => t('devise.sign_up.form.labels.wants_newsletter')
     %h2=t('oauth.application.connect.headline')
   
     %br
