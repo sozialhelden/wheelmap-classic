@@ -562,28 +562,6 @@ is:
       search: 
         for: "Leita að \"%{q}\" "
         not_found: "Engir staðir fundust!"
-  shared: 
-    imprint: 
-      comment: "Þessi síða var hönnuð með Ruby on Rails og JavaScript."
-      fields: 
-        application: "Umsókn:"
-        design: "Hönnun, þróun:"
-        email: "Tölvupóstur:"
-        geoip: GeoIP
-        hosting: Hýsing
-        icons: "Merki:"
-        license: "Leyfi:"
-        maps: "Kort:"
-        maps_and_data: "Kort, gögn:"
-        phone: "Sími:"
-        provider: "Framleiðandi:"
-      headline: "Upplýsingar:"
-      links: 
-        email_me: "Smelltu hér"
-        license: 
-          cc: 
-            by_30: "Creative Commons Attribution 3.0 Unported "
-            by_sa_20: "Creative Commons Attribution-ShareAlike 2.0 Generic "
   statistics: "Tölfræðilegar upplýsingar"
   support: 
     array: 

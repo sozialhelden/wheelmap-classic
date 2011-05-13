@@ -562,28 +562,6 @@ it:
       search: 
         for: "Cerco \"%{q}\" "
         not_found: "Nessun luogo trovato!"
-  shared: 
-    imprint: 
-      comment: "Questo sito e stato sviluppato con Ruby on Rails e JavaScript"
-      fields: 
-        application: "Applicazione:"
-        design: "Design, sviluppo:"
-        email: "Email:"
-        geoip: GeoIP
-        hosting: Hosting
-        icons: "Icons:"
-        license: "Licenza:"
-        maps: "Mappa:"
-        maps_and_data: "Mappa, Dati:"
-        phone: "Telefono:"
-        provider: "Provider:"
-      headline: "Informazione legale"
-      links: 
-        email_me: "Clicca qui"
-        license: 
-          cc: 
-            by_30: "Creative Commons Attribution 3.0 Unported "
-            by_sa_20: "Creative Commons Attribution-ShareAlike 2.0 Generic "
   statistics: Statistiche
   support: 
     array: 

@@ -441,11 +441,6 @@ pt-PT:
           mb: MB
           tb: TB
   or: ou
-  pages: 
-    show: 
-      header: 
-        meta: 
-          description: "Impressão do wheelmap, um projekto de Sozialhelden e.V. "
   poi: 
     category: 
       accommodation: "Acomodação "
@@ -599,28 +594,6 @@ pt-PT:
       search: 
         for: "Procurando \"%{q}"
         not_found: "Não foi possível encontrar um lugar"
-  shared: 
-    imprint: 
-      comment: "Esta página de internet foi desenvolvida usando Ruby on Rails e Javascript"
-      fields: 
-        application: "Aplicação:"
-        design: "Design, desenvolvimento"
-        email: Email
-        geoip: GeoIP
-        hosting: Hospedar
-        icons: "Icons:"
-        license: Licença
-        maps: "Mapa:"
-        maps_and_data: "Mapa, Dados:"
-        phone: Telefone
-        provider: "Fornecedor:"
-      headline: Impressão
-      links: 
-        email_me: "Clique aqui"
-        license: 
-          cc: 
-            by_30: "Creative Commons Attribution 3.0 Unported"
-            by_sa_20: "Creative Commons Attribution-ShareAlike 2.0 Generic"
   statistics: Estatísticas
   support: 
     array: 

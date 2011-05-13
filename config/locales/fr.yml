@@ -562,28 +562,6 @@ fr:
       search: 
         for: "Rechercher \"%{q}\" "
         not_found: "Rien trouvé!"
-  shared: 
-    imprint: 
-      comment: "Ce site était dévéloppé en utilisant Ruby on Rails et JavaScript."
-      fields: 
-        application: Application
-        design: "Conception, dévéloppement:"
-        email: "E-mail:"
-        geoip: GeoIP
-        hosting: Hébergement
-        icons: "Icônes:"
-        license: "Licence: "
-        maps: "Plan:"
-        maps_and_data: "Plan, Données:"
-        phone: "Téléphone:"
-        provider: "Fournisseur:"
-      headline: "Mentions légales"
-      links: 
-        email_me: "Cliquez ici"
-        license: 
-          cc: 
-            by_30: "Creative Commons Attribution 3.0 Unported "
-            by_sa_20: "Creative Commons Attribution-ShareAlike 2.0 Generic "
   statistics: Statistique
   support: 
     array: 
