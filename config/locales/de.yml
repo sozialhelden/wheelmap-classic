@@ -577,28 +577,6 @@ de:
       search: 
         for: "Suche nach \"%{q}\""
         not_found: "Es wurden keine Orte gefunden!"
-  shared: 
-    imprint: 
-      comment: "Diese Website ist mit Ruby on Rails und JavaScript entwickelt."
-      fields: 
-        application: "Anwendung:"
-        design: "Design, Entwicklung:"
-        email: "E-Mail:"
-        geoip: GeoIP
-        hosting: Hosting
-        icons: "Icons:"
-        license: "Lizenz:"
-        maps: "Kartenmaterial:"
-        maps_and_data: "Karten, Daten:"
-        phone: "Telefon:"
-        provider: "Anbieter:"
-      headline: Impressum
-      links: 
-        email_me: "Klick hier"
-        license: 
-          cc: 
-            by_30: "Creative Commons Namensnennung 3.0 Unportiert"
-            by_sa_20: "Namensnennung-Weitergabe unter gleichen Bedingungen 2.0 US-amerikanisch (nicht portiert)"
   statistics: Statistik
   support: 
     array: 

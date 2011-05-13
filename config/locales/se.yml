@@ -334,8 +334,10 @@ se:
       search: Sök
     navigation: 
       blog: Blogg
+      feedback: Feedback
       home: Start
       how_to_add_a_place: "Hur lägger jag till platser?"
+      imprint: Om
       logged_in_as: "Inloggad som:"
       login: "Logga in"
       logout: "Logga ut"
@@ -346,6 +348,7 @@ se:
     searchbar: 
       add_place: "Lägg till en plats till"
       find: hitta
+      label: "\"\""
       placeholder: "till exempel Sunset Boulevard San Francisco eller Drottningholm Stockholm"
       title_add_place: "Lägg till an plats på denna position!"
     tagline: "Wheelmap logo"
@@ -419,13 +422,19 @@ se:
   number: 
     currency: 
       format: 
+        delimiter: ","
         format: "%n %u"
         precision: 2
+        separator: "."
+        significant: 0
+        strip_insignificant_zeros: 0
         unit: kr
     format: 
+      delimiter: "\" \""
       precision: 2
       separator: ","
       significant: 0
+      strip_insignificant_zeros: 0
     human: 
       decimal_units: 
         format: "%n %u"
@@ -435,7 +444,9 @@ se:
           quadrillion: Kvadriljon
           thousand: Tusen
           trillion: Trillion
+          unit: "\"\""
       format: 
+        delimiter: "\"\""
         precision: 1
         significant: true
         strip_insignificant_zeros: true
@@ -449,6 +460,12 @@ se:
           kb: KB
           mb: MB
           tb: TB
+    percentage: 
+      format: 
+        delimiter: "\"\""
+    precision: 
+      format: 
+        delimiter: "\"\""
   oauth: 
     application: 
       connect: 
@@ -493,6 +510,7 @@ se:
         university: Universitet
       food: 
         bar: Bar
+        biergarten: Ölträdgård
         cafe: Café
         drinking_water: Dricksvatten
         fast_food: Snabbmat
@@ -506,6 +524,7 @@ se:
       leisure: 
         arena: Arena
         cinema: Bio
+        gallery: Galleri
         nightclub: Nattklubb
         sauna: Bastu
         theatre: Teater
@@ -514,6 +533,7 @@ se:
         doctors: Doktor
         hospital: Sjukhus
         pharmacy: Apotek
+        place_of_worship: "Religiös plats"
         toilets: Toalett
         veterinary: Veterinär
       money_post: 
@@ -529,11 +549,17 @@ se:
         boatyard: Båtvarv
         bus_station: Busstation
         bus_stop: Busshållplats
+        cable_car: Linbana
         car_rental: Biluthyrning
+        car_sharing: Samåkning
+        chair_lift: Stolslift
         ferry: Färja
         ferry_terminal: Färjeterminal
         fuel: Bensinstation
+        halt: Hållplats
+        light_rail: Spårväg
         parking: Parkering
+        parking_aisle: "Väg på parkeringsplats"
         platform: Platform
         subway: Tunnelbana
         subway_entrance: Tunnelbaneingång
@@ -594,6 +620,7 @@ se:
           grant: "Koppla nu"
           not_connected: "Status: frånkopplad"
           revoke: Frånkoppla
+      headline: "Ändra din profil"
   pt: Português
   pt-PT: Português
   ru: Русский
@@ -603,25 +630,6 @@ se:
       search: 
         for: "Söker efter \"%{q}\""
         not_found: "Inga platser hittades!"
-  shared: 
-    imprint: 
-      comment: "Denna webbplats är skapad med hjälp av Ruby on Rails och JavaScript."
-      fields: 
-        application: "Applikation:"
-        design: "Design, utveckling:"
-        email: "E-post:"
-        geoip: GeoIP
-        icons: "Ikoner:"
-        license: "Licens:"
-        maps: "Karta:"
-        maps_and_data: "Karta, kartdata:"
-        phone: "Telefon:"
-      links: 
-        email_me: "Klicka här"
-        license: 
-          cc: 
-            by_30: "Creative Commons Attribution 3.0 Unported\n"
-            by_sa_20: "Creative Commons Attribution-ShareAlike 2.0 Generic\n"
   statistics: Statistik
   support: 
     array: 
@@ -633,10 +641,12 @@ se:
     select: 
       prompt: Välj
   time: 
+    am: am
     formats: 
       default: "%a, %e %b %Y %H:%M:%S %z"
       long: "%e %B %Y %H:%M"
       short: "%e %b %H:%M"
+    pm: pm
   tlh: "tlhIngan Hol"
   tr: Türkçe
   user_sessions: 

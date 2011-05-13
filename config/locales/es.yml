@@ -564,28 +564,6 @@ es:
       search: 
         for: "Buscando \"%{q}\""
         not_found: "No se ha encontrado ningún sitio"
-  shared: 
-    imprint: 
-      comment: "Este sitio se ha creado usando Ruby on Rails and JavaScript."
-      fields: 
-        application: "Aplicación:"
-        design: "Diseño, desarrollo:"
-        email: "Correo electrónico:"
-        geoip: GeoIP
-        hosting: Hosting
-        icons: "Iconos:"
-        license: "Licencia:"
-        maps: "Mapa:"
-        maps_and_data: "Mapa, Fecha:"
-        phone: "Teléfono:"
-        provider: "Proveedor:"
-      headline: "Imprimir:"
-      links: 
-        email_me: "Clic aquí:"
-        license: 
-          cc: 
-            by_30: "Creative Commons Attribution 3.0 Unported"
-            by_sa_20: "Creative Commons Attribution-ShareAlike 2.0 Generic"
   statistics: Estadísticas
   support: 
     array: 

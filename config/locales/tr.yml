@@ -462,12 +462,6 @@ tr:
     callback: 
       notice: "%{user} wheelmap hesabınız şimdi OpenStreetMap hesabınız ile bağlanmıştır."
   or: veya
-  pages: 
-    show: 
-      header: 
-        meta: 
-          description: "Wheelmap künyesi, bir Sozialhelden e.V. Projesi"
-        title: "Wheelmap - Künye"
   place: 
     one: "%{count} Yer ve Mekan"
     other: "%{count} Yer ve Mekanlar"
@@ -625,28 +619,6 @@ tr:
       search: 
         for: "\"%{q}\" araniyor"
         not_found: "Yer bulunamadi!"
-  shared: 
-    imprint: 
-      comment: "Bu internet sitesi Ruby on Rails ve JavaScript kullanırarak geliştirildi."
-      fields: 
-        application: "Uygulama:"
-        design: "Dizayn/Tasarim, geliştirme:"
-        email: "E-posta:"
-        geoip: GeoIP
-        hosting: Hosting
-        icons: Simge/Sembol
-        license: "Lisans:"
-        maps: "Harita:"
-        maps_and_data: "Harita,Bilgiler:"
-        phone: "Telefon:"
-        provider: "Provider:"
-      headline: Künye
-      links: 
-        email_me: "Burayı tıkla"
-        license: 
-          cc: 
-            by_30: "Creative Commons Attribution 3.0 Unported"
-            by_sa_20: "Creative Commons Attribution-ShareAlike 2.0 Generic"
   statistics: Istatistik
   support: 
     array: 

@@ -561,28 +561,6 @@ jp:
       search: 
         for: "\"%{q}\" を検索中"
         not_found: 場所が見つかりません！
-  shared: 
-    imprint: 
-      comment: "このWebsiteはRuby on RailsとJavaScriptで開発されています。"
-      fields: 
-        application: アプリケーション
-        design: "デザイン、開発:"
-        email: Eメール
-        geoip: GeoIP
-        hosting: ホスティング
-        icons: "アイコン:"
-        license: "ライセンス:"
-        maps: "地図:"
-        maps_and_data: "地図、データ:"
-        phone: "電話:"
-        provider: "プロバイダ:"
-      headline: クレジット
-      links: 
-        email_me: こちらをクリック
-        license: 
-          cc: 
-            by_30: "Creative Commons Attribution 3.0 Unported "
-            by_sa_20: "Creative Commons Attribution-ShareAlike 2.0 Generic "
   statistics: 統計
   support: 
     array: 

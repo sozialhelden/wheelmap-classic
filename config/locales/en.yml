@@ -374,28 +374,6 @@ en:
       edit: Edit place
       create: Add new place
     root: wheelmap
-  shared: 
-    imprint: 
-      comment: This website has been developed using Ruby on Rails and JavaScript.
-      headline: Imprint
-      fields: 
-        license: "Licence:"
-        icons: "Icons:"
-        maps: "Map:"
-        application: "Application:"
-        geoip: GeoIP
-        hosting: Hosting
-        phone: "Telephone:"
-        maps_and_data: "Map, Data:"
-        email: "E-mail:"
-        design: "Design, development:"
-        provider: "Provider:"
-      links: 
-        license: 
-          cc: 
-            by_30: Creative Commons Attribution 3.0 Unported
-            by_sa_20: Creative Commons Attribution-ShareAlike 2.0 Generic
-        email_me: Click here
   global: 
     form_validation_error: Please note the errors listed below.
   nodes: 
@@ -561,7 +539,7 @@ en:
         zoo: Zoo
         nightclub: Nightclub
         sauna: Sauna
-        gallery: Galery
+        gallery: Gallery
         cinema: Cinema
         arena: Arena
       shopping: 
@@ -586,7 +564,7 @@ en:
         embassy: Embassy
         townhall: Townhall
         public_building: Public building
-        courthouse: Couthouse
+        courthouse: Courthouse
       sport: 
         swimming: Swimming
         sports_centre: Sports centre

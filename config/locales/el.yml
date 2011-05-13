@@ -439,12 +439,6 @@ el:
     callback: 
       notice: "Ο wheelmap λογαριασμός σας είναι πλέον συνδεδεμένος με τον OpenStreetMap λογαριασμό %{user}. "
   or: ή
-  pages: 
-    show: 
-      header: 
-        meta: 
-          description: "Imprint of wheelmap, a projekt of Sozialhelden e.V."
-        title: "Wheelmap - Στοιχεία Έκδοσης "
   place: 
     one: "%{count} Σημείο"
     other: "%{count} Σημεία"
@@ -602,28 +596,6 @@ el:
       search: 
         for: "Αναζήτηση για \"%{q}\""
         not_found: "Δεν βρέθηκαν τοποθεσίες!"
-  shared: 
-    imprint: 
-      comment: "Η ιστοσελίδα αναπτύχθηκε χρησιμοποιώντας Ruby on Rails and JavaScript."
-      fields: 
-        application: "Εφαρμογή:"
-        design: "Σχεδιασμός και ανάπτυξη:"
-        email: "Email:"
-        geoip: GeoIP
-        hosting: Hosting
-        icons: "Εικονίδια:"
-        license: "Άδεια:"
-        maps: "Χάρτης:"
-        maps_and_data: "Χάρτης, Δεδομένα:"
-        phone: "Τηλέφωνο:"
-        provider: "Παροχός:"
-      headline: "Στοιχεία Έκδοσης"
-      links: 
-        email_me: "Κάντε κλικ εδώ"
-        license: 
-          cc: 
-            by_30: "Creative Commons Attribution 3.0 Unported "
-            by_sa_20: "Creative Commons Attribution-ShareAlike 2.0 Generic "
   statistics: Στατιστικά
   support: 
     array: 

@@ -462,12 +462,6 @@ tlh:
     callback: 
       notice: "DaH ta'lIj %{user} open street map ta' je Darur."
   or: pagh
-  pages: 
-    show: 
-      header: 
-        meta: 
-          description: "Wheelmap bop De', jInmol chenmoH Sozialhelden e.V."
-        title: "Wheelmap - nubop De'"
   place: 
     one: "%{count} Daq"
     other: "%{count} Daqmey"
@@ -625,28 +619,6 @@ tlh:
       search: 
         for: "\"%{q}\" nejtaH"
         not_found: "pagh Daq tu'lu'!"
-  shared: 
-    imprint: 
-      comment: "Daqvam wIchenmoHmeH Ruby on Rails Javascript je wIlo'."
-      fields: 
-        application: "ghuntaHghach:"
-        design: "chenmoHwI':"
-        email: " jabbI'ID"
-        geoip: GeoIP
-        hosting: "De' qengwI'"
-        icons: "mIlloghmey:"
-        license: "chaw':"
-        maps: "pu'jIn:"
-        maps_and_data: "pu'jIn, De':"
-        phone: "QumwI':"
-        provider: "nobwI':"
-      headline: "nubop De'"
-      links: 
-        email_me: "naDev yI'uy"
-        license: 
-          cc: 
-            by_30: "Creative Commons Attribution 3.0 Unported"
-            by_sa_20: "Creative Commons Attribution-ShareAlike 2.0 Generic"
   statistics: De'
   support: 
     array: 
