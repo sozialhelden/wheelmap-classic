@@ -488,7 +488,7 @@ a:visited:hover {
 #header {
   height: 110px;
   width: 100%;
-  padding-top: 15px;
+  padding-top: 25px;
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 13px;
   line-height: 20px;
@@ -498,7 +498,7 @@ a:visited:hover {
 #header .links {
   position: absolute;
   top: 5px;
-  right: 30px;
+  right: 10px;
 }
 /* line 12, ../../app/stylesheets/basics/_header.sass */
 #header .links a {
@@ -1334,53 +1334,12 @@ table#accessibility td.leisure {
   color: black;
 }
 
-/* line 2, ../../app/stylesheets/partials/map/_imprint.sass */
-#imprint dl {
-  padding: 20px 100px 20px 0;
-  clear: both;
-}
-/* line 6, ../../app/stylesheets/partials/map/_imprint.sass */
-#imprint dt {
-  clear: left;
-  color: #4d4d4d;
-  float: left;
-  padding-right: 10px;
-  text-align: right;
-  width: 150px;
-}
-/* line 14, ../../app/stylesheets/partials/map/_imprint.sass */
-#imprint dd {
-  float: left;
-  width: 300px;
-}
-/* line 18, ../../app/stylesheets/partials/map/_imprint.sass */
-#imprint img.logo {
-  padding: 5px;
-}
-/* line 21, ../../app/stylesheets/partials/map/_imprint.sass */
-#imprint a {
-  color: #6e9040;
-  text-decoration: underline;
-}
-/* line 25, ../../app/stylesheets/partials/map/_imprint.sass */
-#imprint h2,
-#imprint p {
-  padding-right: 100px;
-  clear: both;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-/* line 32, ../../app/stylesheets/partials/map/_imprint.sass */
-#imprint p:first-child {
-  text-align: right;
-}
-
-/* line 26, ../../app/stylesheets/node.sass */
+/* line 25, ../../app/stylesheets/node.sass */
 body, html {
   font-family: HelveticaNeue, Helvetica, "Swiss 721", Arial, sans-serif;
 }
 
-/* line 30, ../../app/stylesheets/node.sass */
+/* line 29, ../../app/stylesheets/node.sass */
 .clear {
   clear: both;
   display: block;
