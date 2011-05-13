@@ -1,96 +1,1603 @@
-/*
-Syntax error: File to import not found or unreadable: basics/api_docs.sass.
-              Load paths:
-                /Users/christoph/Projects/wheelmap/app/stylesheets
-                /Users/christoph/Projects/wheelmap/public/stylesheets/sass
-                /Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/blueprint/stylesheets
-                /Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/_blueprint_deprecated_imports/stylesheets
-                /Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/compass/stylesheets
-                /Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/_compass_deprecated_imports/stylesheets
-                /Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass
-        on line 18 of /Users/christoph/Projects/wheelmap/app/stylesheets/screen.sass
+@charset "UTF-8";
+/* line 1, ../../app/stylesheets/vendor/_map.sass */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* line 7, ../../app/stylesheets/vendor/_map.sass */
+html .hide, body .hide {
+  display: none;
+}
 
-13: @import basics/icons.sass
-14: @import basics/open_layers.sass
-15: @import basics/header.sass
-16: @import basics/nav.sass
-17: @import basics/forms.sass
-18: @import basics/api_docs.sass
-19: @import basics/main.sass
-20: 
-21: @import partials/map/footer
-22: @import partials/map/aside
-23: @import partials/map/lists
+/* line 10, ../../app/stylesheets/vendor/_map.sass */
+body.map {
+  overflow: hidden;
+}
 
-Backtrace:
-/Users/christoph/Projects/wheelmap/app/stylesheets/screen.sass:18
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/tree/import_node.rb:98:in `import'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/tree/import_node.rb:28:in `full_filename'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/tree/import_node.rb:63:in `_perform'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/tree/node.rb:213:in `perform'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/tree/root_node.rb:37:in `perform'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/tree/node.rb:327:in `perform_children'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/tree/node.rb:327:in `map'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/tree/node.rb:327:in `perform_children'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/tree/node.rb:317:in `perform!'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/tree/root_node.rb:59:in `perform!'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/tree/node.rb:305:in `_perform'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/tree/node.rb:213:in `perform'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/tree/root_node.rb:37:in `perform'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/tree/root_node.rb:29:in `render'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/plugin.rb:223:in `update_stylesheet'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/plugin.rb:88:in `update_stylesheets_without_lemonade'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/plugin.rb:81:in `each'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/plugin.rb:81:in `update_stylesheets_without_lemonade'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/plugin.rb:79:in `each'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/plugin.rb:79:in `update_stylesheets_without_lemonade'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/lemonade-0.3.4/lib/lemonade.rb:27:in `update_stylesheets'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/plugin.rb:50:in `check_for_updates'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/haml-3.0.25/lib/sass/plugin/rack.rb:40:in `call'
-/Users/christoph/Projects/wheelmap/lib/rack_request_logger.rb:26:in `call'
-/Users/christoph/Projects/wheelmap/lib/rack_i18n_locale_switcher.rb:28:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/warden-1.0.3/lib/warden/manager.rb:35:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/warden-1.0.3/lib/warden/manager.rb:34:in `catch'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/warden-1.0.3/lib/warden/manager.rb:34:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@global/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@global/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@global/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@global/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@global/gems/rack-1.2.2/lib/rack/lock.rb:11:in `synchronize'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@global/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/hoptoad_notifier-2.4.8/lib/hoptoad_notifier/user_informer.rb:12:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
-/Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
-/Users/christoph/Library/Application Support/Pow/Versions/0.3.0/node_modules/nack/lib/nack/server.rb:146:in `handle'
-/Users/christoph/Library/Application Support/Pow/Versions/0.3.0/node_modules/nack/lib/nack/server.rb:99:in `start'
-/Users/christoph/Library/Application Support/Pow/Versions/0.3.0/node_modules/nack/lib/nack/server.rb:86:in `each'
-/Users/christoph/Library/Application Support/Pow/Versions/0.3.0/node_modules/nack/lib/nack/server.rb:86:in `start'
-/Users/christoph/Library/Application Support/Pow/Versions/0.3.0/node_modules/nack/lib/nack/server.rb:66:in `loop'
-/Users/christoph/Library/Application Support/Pow/Versions/0.3.0/node_modules/nack/lib/nack/server.rb:66:in `start'
-/Users/christoph/Library/Application Support/Pow/Versions/0.3.0/node_modules/nack/lib/nack/server.rb:13:in `run'
-/Users/christoph/Library/Application Support/Pow/Versions/0.3.0/node_modules/nack/bin/nack_worker:4
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: basics/api_docs.sass.\A               Load paths:\A                 /Users/christoph/Projects/wheelmap/app/stylesheets\A                 /Users/christoph/Projects/wheelmap/public/stylesheets/sass\A                 /Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/blueprint/stylesheets\A                 /Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/_blueprint_deprecated_imports/stylesheets\A                 /Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/compass/stylesheets\A                 /Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/_compass_deprecated_imports/stylesheets\A                 /Users/christoph/.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass\A         on line 18 of /Users/christoph/Projects/wheelmap/app/stylesheets/screen.sass\A \A 13: @import basics/icons.sass\A 14: @import basics/open_layers.sass\A 15: @import basics/header.sass\A 16: @import basics/nav.sass\A 17: @import basics/forms.sass\A 18: @import basics/api_docs.sass\A 19: @import basics/main.sass\A 20: \A 21: @import partials/map/footer\A 22: @import partials/map/aside\A 23: @import partials/map/lists"; }
+/* line 13, ../../app/stylesheets/vendor/_map.sass */
+a {
+  color: blue;
+  text-decoration: none;
+}
+/* line 17, ../../app/stylesheets/vendor/_map.sass */
+a:hover {
+  color: #000011;
+  text-decoration: underline;
+}
+
+/* line 21, ../../app/stylesheets/vendor/_map.sass */
+#map {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  color: black;
+}
+
+/* line 30, ../../app/stylesheets/vendor/_map.sass */
+.olFramedCloudPopupContent {
+  font-size: 0.8em;
+  font-family: Verdana, sans-serif;
+}
+
+/* line 34, ../../app/stylesheets/vendor/_map.sass */
+#descriptionToggle {
+  position: absolute;
+  font-size: 1em;
+  z-index: 10000;
+  left: 80px;
+  height: 14px;
+  border-left: 1px solid #000040;
+  border-bottom: 1px solid #000040;
+  border-right: 1px solid #000040;
+  padding: 2px 10px;
+  margin-right: 200px;
+  background-color: #eeeeee;
+  font-size: 12px;
+  cursor: default;
+  opacity: 0.7;
+}
+/* line 50, ../../app/stylesheets/vendor/_map.sass */
+#descriptionToggle:hover {
+  background-color: white;
+  opacity: 1;
+}
+
+/* line 55, ../../app/stylesheets/vendor/_map.sass */
+#description {
+  position: absolute;
+  z-index: 10000;
+  left: 80px;
+  top: 18px;
+  border: 1px solid #000040;
+  padding: 10px 10px;
+  margin-right: 200px;
+  background-color: white;
+  font-size: 12px;
+}
+
+/* line 67, ../../app/stylesheets/vendor/_map.sass */
+#attribution {
+  bottom: 0;
+  left: 0;
+  padding: 5px 8px 1px 8px;
+  position: absolute;
+  font-size: 11px;
+  font-style: italic;
+  z-index: 1000;
+}
+
+/* line 77, ../../app/stylesheets/vendor/_map.sass */
+#layer {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  z-index: 10002;
+}
+/* line 83, ../../app/stylesheets/vendor/_map.sass */
+#layer > div {
+  border: 1px solid black;
+  background-color: white;
+  padding: 4px 5px;
+  font-size: 0.7em;
+  cursor: default;
+  margin-bottom: 4px;
+}
+/* line 92, ../../app/stylesheets/vendor/_map.sass */
+#layer .active {
+  background-color: #eeeeff;
+}
+
+/* line 1, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+a, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, p, pre, span, th, td {
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 6, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 10, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+fieldset, img {
+  border: 0;
+}
+
+/* line 13, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+address, em, th {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 17, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+li {
+  list-style: none;
+}
+
+/* line 20, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+th {
+  font-style: normal;
+  text-align: left;
+}
+
+/* line 24, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+h1, h2, h3, h4, h5, h6, small {
+  font-size: 100%;
+}
+
+/* line 27, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* line 33, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+.msie input, .msie textarea, .msie select {
+  font-size: 100%;
+}
+
+/* line 36, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_reset.sass */
+header, section, article, aside, footer, time {
+  display: block;
+}
+
+/* line 4, ../../app/stylesheets/basics/_typography.sass */
+html, body {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+}
+
+/* line 7, ../../app/stylesheets/basics/_typography.sass */
+p,
+article li,
+dt, dd,
+h4, h5, h6,
+address,
+footer {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 13px;
+  line-height: 20px;
+}
+
+/* line 15, ../../app/stylesheets/basics/_typography.sass */
+h2 {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  bottom: 2px;
+}
+
+/* line 18, ../../app/stylesheets/basics/_typography.sass */
+h1 {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 37px;
+  line-height: 40px;
+  position: relative;
+}
+/* line 3, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/redgreengrid-0.3.2/sass/redgreengrid/_browser_support.sass */
+.presto h1 {
+  bottom: 1px;
+}
+
+/* line 16, ../../app/stylesheets/basics/_grid_and_layout.sass */
+body {
+  background: white;
+}
+
+/* line 3, ../../app/stylesheets/basics/_links.sass */
+a {
+  color: #8db458;
+}
+/* line 6, ../../app/stylesheets/basics/_links.sass */
+a:hover {
+  color: #739643;
+}
+/* line 9, ../../app/stylesheets/basics/_links.sass */
+a:visited {
+  color: #587333;
+}
+/* line 12, ../../app/stylesheets/basics/_links.sass */
+a:visited:hover {
+  color: #3d4f24;
+}
+
+/* line 1, ../../app/stylesheets/basics/_sozialhelden.sass */
+#sozialhelden {
+  bottom: 0;
+  position: fixed;
+  right: 0;
+  z-index: 4000;
+}
+/* line 7, ../../app/stylesheets/basics/_sozialhelden.sass */
+#sozialhelden img {
+  vertical-align: bottom;
+}
+
+/* line 10, ../../app/stylesheets/basics/_icons.sass */
+.print {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 -80px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  vertical-align: baseline;
+}
+/* line 7, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.print {
+  *display: inline;
+}
+
+/* line 14, ../../app/stylesheets/basics/_icons.sass */
+.mail {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 -100px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  vertical-align: baseline;
+}
+/* line 7, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.mail {
+  *display: inline;
+}
+
+/* line 18, ../../app/stylesheets/basics/_icons.sass */
+.link {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 -120px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  vertical-align: baseline;
+}
+/* line 7, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.link {
+  *display: inline;
+}
+
+/* line 23, ../../app/stylesheets/basics/_icons.sass */
+.refresh {
+  background-repeat: no-repeat;
+  height: 16px;
+  padding-left: 20px;
+  background-image: url(/images/icons.png);
+  background-position: 0 0px;
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  vertical-align: baseline;
+  background-image: url(/images/icons/arrow-circle-double.png);
+}
+/* line 7, ../../../../.rvm/gems/ruby-1.8.7-p334@wheelmap/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
+.refresh {
+  *display: inline;
+}
+
+/* line 33, ../../app/stylesheets/basics/_icons.sass */
+.arts_centre {
+  background-image: url('/images/icons/palette.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 36, ../../app/stylesheets/basics/_icons.sass */
+.atm {
+  background-image: url('/images/icons/credit-cards.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 45, ../../app/stylesheets/basics/_icons.sass */
+.bank {
+  background-image: url('/images/icons/money-coin.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 48, ../../app/stylesheets/basics/_icons.sass */
+.bar {
+  background-image: url('/images/icons/glass.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 60, ../../app/stylesheets/basics/_icons.sass */
+.biergarten {
+  background-image: url('/images/icons/weather.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 66, ../../app/stylesheets/basics/_icons.sass */
+.bureau_de_change {
+  background-image: url('/images/icons/bureau-de-change.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 69, ../../app/stylesheets/basics/_icons.sass */
+.cafe {
+  background-image: url('/images/icons/cake.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 72, ../../app/stylesheets/basics/_icons.sass */
+.car_rental {
+  background-image: url('/images/icons/car-rental.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 75, ../../app/stylesheets/basics/_icons.sass */
+.car_sharing {
+  background-image: url('/images/icons/car-sharing.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 78, ../../app/stylesheets/basics/_icons.sass */
+.cinema {
+  background-image: url('/images/icons/film.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 81, ../../app/stylesheets/basics/_icons.sass */
+.clock {
+  background-image: url('/images/icons/clock-frame.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 84, ../../app/stylesheets/basics/_icons.sass */
+.coast_guard {
+  background-image: url('/images/icons/lifebuoy.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 93, ../../app/stylesheets/basics/_icons.sass */
+.courthouse {
+  background-image: url('/images/icons/auction-hammer-gavel.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 102, ../../app/stylesheets/basics/_icons.sass */
+.embassy {
+  background-image: url('/images/icons/locale.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 108, ../../app/stylesheets/basics/_icons.sass */
+.fast_food {
+  background-image: url('/images/icons/fast-food.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 111, ../../app/stylesheets/basics/_icons.sass */
+.fire_hydrant {
+  background-image: url('/images/icons/fire.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 114, ../../app/stylesheets/basics/_icons.sass */
+.fire_station {
+  background-image: url('/images/icons/fire-station.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 129, ../../app/stylesheets/basics/_icons.sass */
+.hospital {
+  background-image: url('/images/icons/hospital.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 132, ../../app/stylesheets/basics/_icons.sass */
+.hunting_stand {
+  background-image: url('/images/icons/target.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 135, ../../app/stylesheets/basics/_icons.sass */
+.kindergarten {
+  background-image: url('/images/icons/smiley.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 138, ../../app/stylesheets/basics/_icons.sass */
+.library {
+  background-image: url('/images/icons/book-open.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 141, ../../app/stylesheets/basics/_icons.sass */
+.marketplace {
+  background-image: url('/images/icons/shopping-basket.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 147, ../../app/stylesheets/basics/_icons.sass */
+.nightclub {
+  background-image: url('/images/icons/speaker.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 150, ../../app/stylesheets/basics/_icons.sass */
+.parking {
+  background-image: url('/images/icons/parking.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 153, ../../app/stylesheets/basics/_icons.sass */
+.pharmacy {
+  background-image: url('/images/icons/pharmacie-germany.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 159, ../../app/stylesheets/basics/_icons.sass */
+.police {
+  background-image: url('/images/icons/police.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 162, ../../app/stylesheets/basics/_icons.sass */
+.post_box {
+  background-image: url('/images/icons/mail.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 165, ../../app/stylesheets/basics/_icons.sass */
+.post_office {
+  background-image: url('/images/icons/post-office.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 168, ../../app/stylesheets/basics/_icons.sass */
+.prison {
+  background-image: url('/images/icons/user-thief-baldie.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 174, ../../app/stylesheets/basics/_icons.sass */
+.place_of_worship {
+  background-image: url('/images/icons/bell.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 180, ../../app/stylesheets/basics/_icons.sass */
+.recycling {
+  background-image: url('/images/icons/bin-full.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 186, ../../app/stylesheets/basics/_icons.sass */
+.restaurant {
+  background-image: url('/images/icons/cutlery.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 201, ../../app/stylesheets/basics/_icons.sass */
+.telephone {
+  background-image: url('/images/icons/telephone.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 204, ../../app/stylesheets/basics/_icons.sass */
+.theatre {
+  background-image: url('/images/icons/mask.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 207, ../../app/stylesheets/basics/_icons.sass */
+.toilets {
+  background-image: url('/images/icons/toilet.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 228, ../../app/stylesheets/basics/_icons.sass */
+.subway {
+  background-image: url('/images/icons/public-transport-subway-germany.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 231, ../../app/stylesheets/basics/_icons.sass */
+.light_rail {
+  background-image: url('/images/icons/public-transport-light-rail-germany.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 234, ../../app/stylesheets/basics/_icons.sass */
+.tram_stop {
+  background-image: url('/images/icons/public-transport-tram-germany.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 237, ../../app/stylesheets/basics/_icons.sass */
+.bus_stop {
+  background-image: url('/images/icons/public-transport-bus-germany.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 240, ../../app/stylesheets/basics/_icons.sass */
+.ferry_terminal {
+  background-image: url('/images/icons/public-transport-ferry-germany.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 246, ../../app/stylesheets/basics/_icons.sass */
+.city {
+  background-image: url('/images/icons/target.png?1302612222') !important;
+  border: 0;
+}
+
+/* line 2, ../../app/stylesheets/basics/_open_layers.sass */
+#map .olMapViewport {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  top: 0px;
+  background: #fff7d9;
+}
+/* line 9, ../../app/stylesheets/basics/_open_layers.sass */
+#map a {
+  font-weight: bold;
+}
+/* line 12, ../../app/stylesheets/basics/_open_layers.sass */
+#map .olControlPanZoomBar {
+  left: inherit !important;
+  right: 45px !important;
+  top: 45px !important;
+}
+/* line 19, ../../app/stylesheets/basics/_open_layers.sass */
+#map .olControlAttribution, #map .olControlPermalink {
+  color: #444444;
+  display: block;
+  float: left;
+  font-size: 11px;
+  font-style: normal;
+  left: 40px;
+  padding: 5px 20px 1px 0;
+  position: relative !important;
+  top: 0px;
+  z-index: 1000;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+}
+
+/* line 1, ../../app/stylesheets/basics/_header.sass */
+#header {
+  height: 110px;
+  width: 100%;
+  padding-top: 25px;
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 13px;
+  line-height: 20px;
+  display: block;
+}
+/* line 8, ../../app/stylesheets/basics/_header.sass */
+#header .links {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+/* line 12, ../../app/stylesheets/basics/_header.sass */
+#header .links a {
+  border-right: 1px #cccccc solid;
+  float: left;
+  line-height: 16px;
+  margin: 3px 0;
+  padding: 0 7px;
+}
+/* line 18, ../../app/stylesheets/basics/_header.sass */
+#header .links select {
+  background: transparent;
+  border: 0;
+  margin-left: 7px;
+  padding: 0;
+  vertical-align: -2px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 25, ../../app/stylesheets/basics/_header.sass */
+.gecko #header .links select {
+  margin-left: 3px;
+}
+/* line 27, ../../app/stylesheets/basics/_header.sass */
+.webkit #header .links select {
+  background: transparent url("/images/icons/select-marker.png") 98% 0 no-repeat;
+  padding-right: 20px;
+  -webkit-appearance: none;
+}
+/* line 32, ../../app/stylesheets/basics/_header.sass */
+#header a {
+  text-decoration: underline;
+}
+/* line 35, ../../app/stylesheets/basics/_header.sass */
+#header #appstorebadge {
+  margin: 5px;
+  margin-left: 25px;
+  float: left;
+  position: relative;
+  left: 10px;
+  width: 5px;
+}
+/* line 43, ../../app/stylesheets/basics/_header.sass */
+#header #logo {
+  height: 84px;
+  width: 300px;
+  margin-left: 30px;
+  float: left;
+}
+/* line 49, ../../app/stylesheets/basics/_header.sass */
+#header #searchbar {
+  height: 28px;
+  margin-left: 15px;
+  margin-top: 58px;
+}
+/* line 54, ../../app/stylesheets/basics/_header.sass */
+#header #searchbar label {
+  color: #89b152;
+  float: left;
+  padding: 3px 6px 3px 20px;
+  width: auto;
+}
+/* line 59, ../../app/stylesheets/basics/_header.sass */
+#header #searchbar input {
+  border-right: 0;
+  color: #89b152;
+  float: left;
+  height: 16px;
+  margin: 0;
+  outline: none;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -khtml-border-bottom-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-top-left-radius: 8px;
+  -khtml-border-top-left-radius: 8px;
+  border-top-left-radius: 8px;
+  -moz-border-radius-topright: 0;
+  -webkit-border-top-right-radius: 0;
+  -khtml-border-top-right-radius: 0;
+  border-top-right-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -khtml-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+/* line 68, ../../app/stylesheets/basics/_header.sass */
+#header #searchbar input:focus {
+  background: #f5f8f0;
+}
+/* line 70, ../../app/stylesheets/basics/_header.sass */
+#header #searchbar input.ac_loading {
+  background: #f5f8f0 url("/images/spinner-small.gif") no-repeat right center;
+}
+/* line 73, ../../app/stylesheets/basics/_header.sass */
+#header #searchbar button {
+  float: left;
+  background-color: #a1c175;
+  border: 1px solid #95b963;
+  border-bottom-color: #7ca148;
+  border-top-color: #a1c175;
+  color: #536c31;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'HelveticaNeue-Bold','Helvetica Neue Bold','Helvetica Neue','Swiss 721 Bold','Helvetica','Arial','sans-serif';
+  font-size: 13px;
+  height: 28px;
+  margin: 0;
+  padding: 5px 9px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
+  background-color: #a1c175;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #bad594), color-stop(0.5, #a1c175), color-stop(1, #8ab74c));
+  background-image: -moz-linear-gradient(center bottom, #8ab74c 0%, #a1c175 50%, #bad594 100%);
+  background-image: linear-gradient(center bottom, #8ab74c 0%, #a1c175 50%, #bad594 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#8ab74c', startColorstr='#bad594', gradientType='0');
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -khtml-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  -khtml-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-topright: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -khtml-border-top-right-radius: 8px;
+  border-top-right-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  -khtml-border-bottom-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  height: 28px;
+}
+/* line 23, ../../app/stylesheets/basics/_buttons.sass */
+#header #searchbar button:hover {
+  background-color: #95b963;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aecd82), color-stop(0.5, #95b963), color-stop(1, #7da743));
+  background-image: -moz-linear-gradient(center bottom, #7da743 0%, #95b963 50%, #aecd82 100%);
+  background-image: linear-gradient(center bottom, #7da743 0%, #95b963 50%, #aecd82 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#7da743', startColorstr='#aecd82', gradientType='0');
+  border-color: #95b963 #89b152 #6e9040;
+}
+/* line 26, ../../app/stylesheets/basics/_buttons.sass */
+#header #searchbar button:active {
+  background-color: #7ca148;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #96bf5e), color-stop(0.5, #7ca148), color-stop(1, #618234));
+  background-image: -moz-linear-gradient(center bottom, #618234 0%, #7ca148 50%, #96bf5e 100%);
+  background-image: linear-gradient(center bottom, #618234 0%, #7ca148 50%, #96bf5e 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#618234', startColorstr='#96bf5e', gradientType='0');
+  border-color: #89b152 #617e39 #465b29;
+}
+/* line 80, ../../app/stylesheets/basics/_header.sass */
+#header #searchbar .or {
+  color: #c26a0f;
+  float: left;
+  padding: 5px 10px;
+}
+/* line 84, ../../app/stylesheets/basics/_header.sass */
+#header #searchbar .add-place {
+  float: left;
+  background-color: #f19d46;
+  border: 1px solid #ef902e;
+  border-bottom-color: #da7710;
+  border-top-color: #f19d46;
+  color: #93500b;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'HelveticaNeue-Bold','Helvetica Neue Bold','Helvetica Neue','Swiss 721 Bold','Helvetica','Arial','sans-serif';
+  font-size: 13px;
+  height: 28px;
+  margin: 0;
+  padding: 5px 9px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
+  background-color: #f19d46;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f8b672), color-stop(0.5, #f19d46), color-stop(1, #f48410));
+  background-image: -moz-linear-gradient(center bottom, #f48410 0%, #f19d46 50%, #f8b672 100%);
+  background-image: linear-gradient(center bottom, #f48410 0%, #f19d46 50%, #f8b672 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#f48410', startColorstr='#f8b672', gradientType='0');
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+  height: 16px;
+  line-height: 16px;
+  text-decoration: none;
+}
+/* line 23, ../../app/stylesheets/basics/_buttons.sass */
+#header #searchbar .add-place:hover {
+  background-color: #ef902e;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f7aa59), color-stop(0.5, #ef902e), color-stop(1, #e0770b));
+  background-image: -moz-linear-gradient(center bottom, #e0770b 0%, #ef902e 50%, #f7aa59 100%);
+  background-image: linear-gradient(center bottom, #e0770b 0%, #ef902e 50%, #f7aa59 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#e0770b', startColorstr='#f7aa59', gradientType='0');
+  border-color: #ef902e #ed8417 #c26a0f;
+}
+/* line 26, ../../app/stylesheets/basics/_buttons.sass */
+#header #searchbar .add-place:active {
+  background-color: #da7710;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f59129), color-stop(0.5, #da7710), color-stop(1, #af5d08));
+  background-image: -moz-linear-gradient(center bottom, #af5d08 0%, #da7710 50%, #f59129 100%);
+  background-image: linear-gradient(center bottom, #af5d08 0%, #da7710 50%, #f59129 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#af5d08', startColorstr='#f59129', gradientType='0');
+  border-color: #ed8417 #ab5d0d #7b4309;
+}
+/* line 90, ../../app/stylesheets/basics/_header.sass */
+#header #searchbar .or-add-place {
+  float: left;
+}
+
+/* line 93, ../../app/stylesheets/basics/_header.sass */
+.ac_results {
+  z-index: 9000;
+}
+/* line 95, ../../app/stylesheets/basics/_header.sass */
+.ac_results ul {
+  background: white;
+  border: 1px solid #cccccc;
+  padding: 10px;
+  z-index: 99999;
+  background-color: rgba(255, 255, 255, 0.9);
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -khtml-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  cursor: pointer;
+}
+/* line 105, ../../app/stylesheets/basics/_header.sass */
+.ac_results ul li.ac_over {
+  background-color: rgba(204, 204, 204, 0.9);
+}
+
+/* line 1, ../../app/stylesheets/basics/_nav.sass */
+nav {
+  position: relative;
+  top: -15px;
+  right: 20px;
+  float: right;
+}
+
+/* line 6, ../../app/stylesheets/basics/_forms.sass */
+form {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 13px;
+  line-height: 20px;
+}
+/* line 9, ../../app/stylesheets/basics/_forms.sass */
+form li {
+  display: block;
+  float: left;
+  width: 100%;
+  margin-bottom: 6px;
+}
+/* line 14, ../../app/stylesheets/basics/_forms.sass */
+form li.hidden {
+  margin: 0px;
+  padding: 0px;
+}
+/* line 18, ../../app/stylesheets/basics/_forms.sass */
+form input[type='text'], form input[type='search'], form input[type='password'], form [type='tel'], form [type='email'], form textarea, form select {
+  border: 1px solid #a1c175;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  color: #a1c175;
+  background-color: white;
+  padding: 5px;
+  width: 288px;
+}
+/* line 26, ../../app/stylesheets/basics/_forms.sass */
+form input[readonly] {
+  background-color: #f9f9f9;
+  color: #8d8d8e;
+}
+/* line 30, ../../app/stylesheets/basics/_forms.sass */
+form select {
+  width: 300px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: white url("/images/select-marker.png") no-repeat 98% center;
+}
+/* line 36, ../../app/stylesheets/basics/_forms.sass */
+form #node-wheelchair {
+  height: 2em;
+}
+/* line 38, ../../app/stylesheets/basics/_forms.sass */
+form #node-wheelchair option {
+  height: 20px;
+  margin-bottom: 3px;
+  padding: 3px 0px 3px 28px;
+}
+/* line 43, ../../app/stylesheets/basics/_forms.sass */
+form #node-wheelchair option.wheelchairstatus_yes {
+  background: url("/images/icons/state-yes.png") no-repeat 1px 1px;
+  color: #86af4d;
+}
+/* line 47, ../../app/stylesheets/basics/_forms.sass */
+form #node-wheelchair option.wheelchairstatus_limited {
+  background: url("/images/icons/state-limited.png") no-repeat;
+  color: #f19d46;
+}
+/* line 51, ../../app/stylesheets/basics/_forms.sass */
+form #node-wheelchair option.wheelchairstatus_no {
+  background: url("/images/icons/state-no.png") no-repeat;
+  color: #d6382f;
+}
+/* line 55, ../../app/stylesheets/basics/_forms.sass */
+form #node-wheelchair option.wheelchairstatus_unknown {
+  background: url("/images/icons/state-unknown.png") no-repeat;
+  color: #8d8d8e;
+}
+/* line 59, ../../app/stylesheets/basics/_forms.sass */
+form optgroup {
+  padding-left: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+/* line 64, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.public_transfer {
+  background: white url("/images/icons/public-transport-subway-germany.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 67, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.food {
+  background: white url("/images/icons/cutlery.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 70, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.money_post {
+  background: white url("/images/icons/mail.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 73, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.government {
+  background: white url("/images/icons/bank.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 76, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.education {
+  background: white url("/images/icons/book-open.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 79, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.car {
+  background: white url("/images/icons/car-red.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 82, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.misc {
+  background: white url("/images/icons/store.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 85, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.leisure {
+  background: white url("/images/icons/smiley.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 88, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.accommodation {
+  background: white url("/images/icons/building.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 91, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.shopping {
+  background: white url("/images/icons/shopping-basket.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 94, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.tourism {
+  background: white url("/images/icons/information.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 97, ../../app/stylesheets/basics/_forms.sass */
+form optgroup.sport {
+  background: white url("/images/icons/sport.png") no-repeat 2px top;
+  border: 0;
+}
+/* line 100, ../../app/stylesheets/basics/_forms.sass */
+form option {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+/* line 104, ../../app/stylesheets/basics/_forms.sass */
+form input[type='submit'] {
+  position: relative;
+  left: 140px;
+  background-color: #a1c175;
+  border: 1px solid #95b963;
+  border-bottom-color: #7ca148;
+  border-top-color: #a1c175;
+  color: #536c31;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'HelveticaNeue-Bold','Helvetica Neue Bold','Helvetica Neue','Swiss 721 Bold','Helvetica','Arial','sans-serif';
+  font-size: 13px;
+  height: 28px;
+  margin: 0;
+  padding: 5px 9px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
+  background-color: #a1c175;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #bad594), color-stop(0.5, #a1c175), color-stop(1, #8ab74c));
+  background-image: -moz-linear-gradient(center bottom, #8ab74c 0%, #a1c175 50%, #bad594 100%);
+  background-image: linear-gradient(center bottom, #8ab74c 0%, #a1c175 50%, #bad594 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#8ab74c', startColorstr='#bad594', gradientType='0');
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+}
+/* line 23, ../../app/stylesheets/basics/_buttons.sass */
+form input[type='submit']:hover {
+  background-color: #95b963;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aecd82), color-stop(0.5, #95b963), color-stop(1, #7da743));
+  background-image: -moz-linear-gradient(center bottom, #7da743 0%, #95b963 50%, #aecd82 100%);
+  background-image: linear-gradient(center bottom, #7da743 0%, #95b963 50%, #aecd82 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#7da743', startColorstr='#aecd82', gradientType='0');
+  border-color: #95b963 #89b152 #6e9040;
+}
+/* line 26, ../../app/stylesheets/basics/_buttons.sass */
+form input[type='submit']:active {
+  background-color: #7ca148;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #96bf5e), color-stop(0.5, #7ca148), color-stop(1, #618234));
+  background-image: -moz-linear-gradient(center bottom, #618234 0%, #7ca148 50%, #96bf5e 100%);
+  background-image: linear-gradient(center bottom, #618234 0%, #7ca148 50%, #96bf5e 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#618234', startColorstr='#96bf5e', gradientType='0');
+  border-color: #89b152 #617e39 #465b29;
+}
+/* line 109, ../../app/stylesheets/basics/_forms.sass */
+form label {
+  color: #4d4d4d;
+  display: block;
+  float: left;
+  line-height: 20px;
+  margin-right: 10px;
+  padding-top: 5px;
+  text-align: right;
+  width: 150px;
+}
+/* line 119, ../../app/stylesheets/basics/_forms.sass */
+form legend {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  bottom: 2px;
+  font-weight: bold;
+  color: #333333;
+  margin-top: 20px;
+  top: 15px;
+  bottom: none;
+}
+/* line 127, ../../app/stylesheets/basics/_forms.sass */
+form legend span.addition {
+  color: #aaaaaa;
+}
+/* line 130, ../../app/stylesheets/basics/_forms.sass */
+form fieldset {
+  padding: 30px 0px 10px;
+  overflow: hidden;
+}
+/* line 137, ../../app/stylesheets/basics/_forms.sass */
+form fieldset.buttons {
+  padding: 10px 20px 10px 20px;
+}
+/* line 142, ../../app/stylesheets/basics/_forms.sass */
+form li[class*='error'] label {
+  color: #f19d46;
+}
+/* line 145, ../../app/stylesheets/basics/_forms.sass */
+form li[class*='error'] input[type='text'], form li[class*='error'] input[type='password'], form li[class*='error'] input[type='search'], form li[class*='error'] [type='tel'], form li[class*='error'] textarea, form li[class*='error'] select {
+  border: 1px solid #f19d46;
+}
+/* line 148, ../../app/stylesheets/basics/_forms.sass */
+form p.inline-errors, form p.inline-hints {
+  position: relative;
+  left: 160px;
+  color: #aaaaaa;
+}
+/* line 153, ../../app/stylesheets/basics/_forms.sass */
+form p.inline-errors {
+  color: #f19d46;
+}
+
+/* line 1, ../../app/stylesheets/basics/_main.sass */
+body, html {
+  background: #dbdcda;
+  outline: 0;
+}
+
+/* line 5, ../../app/stylesheets/basics/_main.sass */
+body {
+  background-color: #ededec;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #ededec), color-stop(1, #dbdcda));
+  background-image: -moz-linear-gradient(center bottom, #dbdcda 0%, #ededec 50%, white 100%);
+  background-image: linear-gradient(center bottom, #dbdcda 0%, #ededec 50%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#dbdcda', startColorstr='white', gradientType='0');
+}
+
+/* line 8, ../../app/stylesheets/basics/_main.sass */
+.help {
+  cursor: help;
+}
+
+/* line 12, ../../app/stylesheets/basics/_main.sass */
+#main {
+  background: white;
+  border: 1px #e6e6e6 solid;
+  margin: 0 auto 50px;
+  padding: 19px;
+  width: 980px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -khtml-border-radius: 15px;
+  border-radius: 15px;
+  overflow: hidden;
+  *zoom: 1;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+}
+
+/* line 1, ../../app/stylesheets/partials/map/_aside.sass */
+aside {
+  background: #bfd6a8;
+  float: left;
+  height: 500px;
+  padding: 5px;
+  width: 200px;
+}
+
+/* line 1, ../../app/stylesheets/partials/map/_map.sass */
+#map {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 120px;
+  border-top: 1px rgba(255, 255, 255, 0.6) solid;
+  outline: 1px #e6e6e6 solid;
+  background: #fff7d9;
+}
+
+/* line 12, ../../app/stylesheets/partials/map/_map.sass */
+image[width='16'] {
+  cursor: pointer;
+}
+
+/* line 1, ../../app/stylesheets/partials/map/_info.sass */
+#categories,
+#filter, #counter {
+  position: relative;
+  left: 30px;
+  top: 25px;
+  width: 282px;
+  z-index: 3000;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  overflow: hidden;
+}
+/* line 17, ../../app/stylesheets/partials/map/_info.sass */
+#categories.minimized,
+#filter.minimized, #counter.minimized {
+  height: 0.5em;
+  left: -275px;
+  overflow: hidden;
+}
+/* line 21, ../../app/stylesheets/partials/map/_info.sass */
+#categories h4,
+#filter h4, #counter h4 {
+  margin: -5px 0 5px;
+}
+/* line 24, ../../app/stylesheets/partials/map/_info.sass */
+#categories a, #categories a:visited, #categories a:hover, #categories a:active,
+#filter a,
+#filter a:visited,
+#filter a:hover,
+#filter a:active, #counter a, #counter a:visited, #counter a:hover, #counter a:active {
+  text-decoration: none;
+}
+
+/* line 27, ../../app/stylesheets/partials/map/_info.sass */
+#state-counter {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 29, ../../app/stylesheets/partials/map/_info.sass */
+#state-counter li {
+  width: 40%;
+  float: left;
+}
+
+/* line 1, ../../app/stylesheets/partials/map/_edit.sass */
+#edit {
+  right: 60px;
+  position: absolute;
+  top: 50px;
+  width: 300px;
+  z-index: 5000;
+  background-color: #e7ebe2;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #e7ebe2), color-stop(1, #cfd7c5));
+  background-image: -moz-linear-gradient(center bottom, #cfd7c5 0%, #e7ebe2 50%, white 100%);
+  background-image: linear-gradient(center bottom, #cfd7c5 0%, #e7ebe2 50%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#cfd7c5', startColorstr='white', gradientType='0');
+  background-color: white;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -khtml-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px 0;
+}
+
+/* line 1, ../../app/stylesheets/partials/map/_oauth.sass */
+#oauth {
+  width: 960px;
+  vertical-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 7, ../../app/stylesheets/partials/map/_oauth.sass */
+#oauth h1 {
+  padding-top: 30px;
+}
+/* line 11, ../../app/stylesheets/partials/map/_oauth.sass */
+#oauth ol li {
+  display: block;
+  width: 310px;
+  float: left;
+}
+/* line 16, ../../app/stylesheets/partials/map/_oauth.sass */
+#oauth .clear {
+  clear: both;
+}
+
+/* line 1, ../../app/stylesheets/partials/map/_nodes.sass */
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* line 1, ../../app/stylesheets/partials/map/_bar.sass */
+#bar {
+  padding: 5px;
+  padding: 4px 10px;
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 13px;
+  line-height: 20px;
+}
+/* line 5, ../../app/stylesheets/partials/map/_bar.sass */
+#bar a,
+#bar label,
+#bar span {
+  text-shadow: rgba(255, 255, 255, 0.3) 0 1px 1px;
+}
+
+/* line 10, ../../app/stylesheets/partials/map/_bar.sass */
+.wheelchair {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -khtml-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 17, ../../app/stylesheets/partials/map/_bar.sass */
+.state-yes, .state-limited, .state-no, .state-unknown {
+  background: url("/images/marker-yes.png") no-repeat;
+  color: #86af4d;
+  line-height: 25px;
+  margin-bottom: 0px;
+  padding: 0px 0px 8px 28px;
+}
+
+/* line 24, ../../app/stylesheets/partials/map/_bar.sass */
+.state-limited {
+  background: url("/images/marker-limited.png") no-repeat;
+  color: #f19d46;
+}
+/* line 28, ../../app/stylesheets/partials/map/_bar.sass */
+.webkit .state-limited input {
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5b675), to(#ed8417));
+  border-color: #f19d46;
+}
+
+/* line 31, ../../app/stylesheets/partials/map/_bar.sass */
+.state-no {
+  background: url("/images/marker-no.png") no-repeat;
+  color: #d6382f;
+}
+/* line 35, ../../app/stylesheets/partials/map/_bar.sass */
+.webkit .state-no input {
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#de615a), to(#af2a23));
+  border-color: #d6382f;
+}
+
+/* line 38, ../../app/stylesheets/partials/map/_bar.sass */
+.state-unknown {
+  background: url("/images/marker-unknown.png") no-repeat;
+  color: #8d8d8e;
+}
+/* line 42, ../../app/stylesheets/partials/map/_bar.sass */
+.webkit .state-unknown input {
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#a7a7a7), to(#737375));
+  border-color: #8d8d8e;
+}
+
+/* line 46, ../../app/stylesheets/partials/map/_bar.sass */
+#links {
+  clear: both;
+  padding: 4px 0;
+  margin-bottom: 10px;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 51, ../../app/stylesheets/partials/map/_bar.sass */
+#links a {
+  display: none;
+}
+/* line 53, ../../app/stylesheets/partials/map/_bar.sass */
+#links a.refresh {
+  display: inline;
+}
+
+/* line 1, ../../app/stylesheets/partials/map/_amenities.sass */
+#amenities {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 6, ../../app/stylesheets/partials/map/_amenities.sass */
+#amenities li {
+  float: left;
+  min-width: 50%;
+}
+/* line 10, ../../app/stylesheets/partials/map/_amenities.sass */
+#amenities h4 {
+  color: #363931;
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 18px;
+  margin-left: 2px;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+}
+
+/* line 5, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent {
+  width: 280px;
+  overflow: hidden;
+}
+/* line 9, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent a.more {
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: normal;
+  text-align: left;
+  padding-left: 20px;
+  text-decoration: underline;
+  display: block;
+}
+/* line 19, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent h2 {
+  background-position: 0 2px;
+  padding-left: 20px;
+}
+/* line 23, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent address {
+  padding-left: 20px;
+}
+/* line 26, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent input {
+  float: left;
+  margin-right: 10px;
+}
+/* line 30, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent label {
+  width: auto;
+}
+/* line 33, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent #update_button {
+  position: static;
+  float: right;
+}
+/* line 37, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent #update_spinner {
+  display: none;
+  float: right;
+  margin-right: 5px;
+}
+/* line 42, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent ol {
+  border-top: 1px #cfd7c5 solid;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -khtml-border-radius: 0px;
+  border-radius: 0px;
+  margin-top: 7px;
+  padding-top: 7px;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 49, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li,
+.olFramedCloudPopupContent label {
+  float: left;
+  font-size: 11px;
+  line-height: 15px;
+  margin: 0px 0px !important;
+  -moz-border-radius: 0px !important;
+  -webkit-border-radius: 0px !important;
+  -khtml-border-radius: 0px !important;
+  border-radius: 0px !important;
+}
+/* line 57, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent label {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: left;
+  line-height: 8px;
+}
+/* line 64, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li {
+  font-family: 'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue','Swiss 721 Light','Helvetica','Arial','sans-serif';
+  font-size: 11px;
+  font-weight: 100;
+}
+/* line 69, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li strong {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-weight: bold;
+}
+/* line 74, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent .yes label {
+  color: #86af4d;
+}
+/* line 78, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent .limited label {
+  color: #f19d46;
+}
+/* line 82, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent .no label {
+  color: #d6382f;
+}
+/* line 86, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent.unknown label {
+  color: #8d8d8e;
+}
+
+/* line 1, ../../app/stylesheets/partials/map/_spinner.sass */
+#spinner {
+  background: url('/images/spinner.gif?1302612222') no-repeat center;
+  background-color: #6b7b55;
+  background-color: rgba(107, 123, 85, 0.8);
+  left: 50%;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  z-index: 1000;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  position: absolute;
+}
+
+/* line 2, ../../app/stylesheets/partials/map/_search.sass */
+#bar form {
+  text-align: center;
+}
+/* line 5, ../../app/stylesheets/partials/map/_search.sass */
+#bar form input {
+  background: white url("search.png") 3px 2px no-repeat;
+  border: 1px #9ca393 solid;
+  height: 14px;
+  line-height: 14px;
+  padding: 2px 9px 2px 21px;
+  width: 246px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px inset, white 0 1px 1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px inset, white 0 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px inset, white 0 1px 1px;
+}
+/* line 19, ../../app/stylesheets/partials/map/_search.sass */
+#bar form input:focus {
+  background-color: #f3f5f0;
+  border-color: #838c77;
+  outline: none;
+}
+/* line 24, ../../app/stylesheets/partials/map/_search.sass */
+#bar form ol {
+  padding: 10px 0;
+  text-align: left;
+}
+/* line 28, ../../app/stylesheets/partials/map/_search.sass */
+#bar form ol.loading {
+  background: url("spinner-small.gif") no-repeat center;
+  height: 20px;
+}
+/* line 33, ../../app/stylesheets/partials/map/_search.sass */
+#bar form li a {
+  background-image: url("icons/status-offline.png");
+  background-position: 3px 50%;
+  color: #8db458;
+  display: block;
+  padding: 0 4px 0 24px;
+  white-space: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+}
+/* line 43, ../../app/stylesheets/partials/map/_search.sass */
+#bar form li:first-child a {
+  border-top: 0;
+}
+
+/* line 1, ../../app/stylesheets/partials/nodes/_flash.sass */
+.flash {
+  margin-bottom: 20px;
+  padding: 10px;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+  text-align: center;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  position: relative;
+  top: 10px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 14, ../../app/stylesheets/partials/nodes/_flash.sass */
+.flash#notice {
+  background-color: #a4d561;
+  color: #536c31;
+  border: 1px solid #95b963;
+  border-top-color: #7ca148;
+  border-bottom-color: #c5d9aa;
+}
+/* line 22, ../../app/stylesheets/partials/nodes/_flash.sass */
+.flash#alert {
+  background-color: #ff9d38;
+  color: #93500b;
+  border: 1px solid #ef902e;
+  border-top-color: #da7710;
+  border-bottom-color: #f6c38d;
+}
+/* line 29, ../../app/stylesheets/partials/nodes/_flash.sass */
+.flash a {
+  position: absolute;
+  right: 5px;
+  top: 0px;
+  color: black;
+}
+
+/* line 2, ../../app/stylesheets/partials/map/_trident.sass */
+.trident .ac_results, .trident #categories, .trident #filter, .trident #counter {
+  background-color: white;
+}
