@@ -37,6 +37,4 @@ Wheelmap::Application.routes.draw do
 
   resources :user, :only => :new # Fake route for redirection to OSM register page
 
-  match '/imprint' => 'pages#show'
-
 end
