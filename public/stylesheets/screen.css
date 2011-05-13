@@ -600,7 +600,7 @@ a:visited:hover {
 #header {
   height: 110px;
   width: 100%;
-  padding-top: 15px;
+  padding-top: 25px;
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 13px;
   line-height: 20px;
@@ -610,7 +610,7 @@ a:visited:hover {
 #header .links {
   position: absolute;
   top: 5px;
-  right: 30px;
+  right: 10px;
 }
 /* line 12, ../../app/stylesheets/basics/_header.sass */
 #header .links a {
