@@ -485,12 +485,6 @@ en:
         one: over 1 year
         other: over %{count} years
       half_a_minute: half a minute
-  pages:
-    show:
-      header:
-        title: Wheelmap - Imprint
-        meta:
-          description: "Imprint of wheelmap, a projekt of Sozialhelden e.V."
   home: 
     index: 
       filter: 

@@ -993,46 +993,6 @@ form p.inline-errors {
   color: #f19d46;
 }
 
-/* line 1, ../../app/stylesheets/basics/_page.sass */
-body,
-html {
-  background: #dbdcda;
-  outline: 0;
-}
-
-/* line 6, ../../app/stylesheets/basics/_page.sass */
-body {
-  background-color: #ededec;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #ededec), color-stop(1, #dbdcda));
-  background-image: -moz-linear-gradient(center bottom, #dbdcda 0%, #ededec 50%, white 100%);
-  background-image: linear-gradient(center bottom, #dbdcda 0%, #ededec 50%, white 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#dbdcda', startColorstr='white', gradientType='0');
-}
-
-/* line 9, ../../app/stylesheets/basics/_page.sass */
-.help {
-  cursor: help;
-}
-
-/* line 13, ../../app/stylesheets/basics/_page.sass */
-#main {
-  background: white;
-  border: 1px #e6e6e6 solid;
-  margin: 0 auto 50px;
-  padding: 19px;
-  width: 980px;
-  -moz-border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -khtml-border-radius: 15px;
-  border-radius: 15px;
-  overflow: hidden;
-  *zoom: 1;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
-}
-
 /* line 2, ../../app/stylesheets/partials/nodes/_headlines.sass */
 h1 span.addition {
   font-size: 14px;
@@ -1415,12 +1375,12 @@ table#accessibility td.leisure {
   text-align: right;
 }
 
-/* line 27, ../../app/stylesheets/node.sass */
+/* line 26, ../../app/stylesheets/node.sass */
 body, html {
   font-family: HelveticaNeue, Helvetica, "Swiss 721", Arial, sans-serif;
 }
 
-/* line 31, ../../app/stylesheets/node.sass */
+/* line 30, ../../app/stylesheets/node.sass */
 .clear {
   clear: both;
   display: block;

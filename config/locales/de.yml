@@ -421,12 +421,6 @@ de:
     callback: 
       notice: "Dein Benutzerkonto wurde erfoglreich mit dem OpenStreetMap-Benutzerkonto von '%{user}' verbunden."
   or: oder
-  pages: 
-    show: 
-      header: 
-        meta: 
-          description: "Impressum von Wheelmap, einem Projekt des Sozialhelden e.V."
-        title: "Wheelmap - Impressum"
   place: 
     one: "%{count} Ort"
     other: "%{count} Orte"

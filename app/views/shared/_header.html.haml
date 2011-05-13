@@ -12,7 +12,7 @@
       = link_to t('devise.sign_up.headline'), new_registration_path(:user)
     = link_to t('header.navigation.what_is_wheelmap'), 'http://blog.wheelmap.org/was-ist-wheelmap/'
     = link_to t('header.navigation.blog'), 'http://blog.wheelmap.org/'
-    = link_to t('header.navigation.imprint'), imprint_path
+    = link_to t('header.navigation.imprint'), 'http://blog.wheelmap.org/kontakt/'
     = link_to t('header.navigation.feedback'), 'http://wheelmap.uservoice.com/forums/31554-general', :id => 'feedback_link', :rel => 'nofollow'
     %select{:onchange => 'location.href=this.options[this.selectedIndex].value'}
       - I18n.available_locales.map(&:to_s).sort.each do |locale|
