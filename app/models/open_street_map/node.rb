@@ -11,6 +11,7 @@ class OpenStreetMap
     #validates_numericality_of :lat, :lon, :only_integer => false, :message => I18n.t('errors.messages.not_a_number')
     #validates_true_for :lat, :lon, :logic => lambda { !lat.to_f.zero? }, :message => I18n.t('errors.messages.greater_than', :count => 0.0)
     validates_format_of :website, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true, :message => I18n.t('errors.messages.invalid')
+    validates_length_of :wheelchair_description, :maximum => 255
 
     def initialize(input={})
       data = input.stringify_keys
