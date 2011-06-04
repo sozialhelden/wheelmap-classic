@@ -6,9 +6,9 @@ se:
         format: "%{attribute} %{message}"
       messages: 
         accepted: "måste accepteras"
-        blank: "kan inte vara tomt"
-        confirmation: "är inte samma som valideringen"
-        empty: "kan inte vara tomt"
+        blank: "får inte vara tomt"
+        confirmation: "måste vara samma som det upprepade"
+        empty: "får inte vara tomt"
         equal_to: "måste vara lika med %{count}"
         even: "måste vara jämnt"
         exclusion: "är reserverat"
@@ -199,7 +199,7 @@ se:
       headline: "Återställ lösenord"
     passwords: 
       link: "Glömt lösenord?"
-      send_instructions: "Du kommer att motta ett e-post om hur du kan återställa ditt lösenord om några minuter."
+      send_instructions: "Inom några minuter kommer du att få ett e-post om hur du kan återställa ditt lösenord."
       updated: "Ditt lösenord är ändrat. Du är nu inloggad."
     registrations: 
       destroyed: "Hej då! Ditt konto är nu avslutat. Hoppas vi ses igen snart."
@@ -234,11 +234,12 @@ se:
           email: E-post
           password: Lösenord
           password_confirmation: "Upprepa lösenord"
+          wants_newsletter: "Ja, håll mig updaterad om Wheelmap. (Men inte mer än en gång i månaden)"
         submit: Registrera
       headline: "Registrera dig"
     unlocks: 
       link: "Mottog du inte upplåsningsinstruktioner?"
-      send_instructions: "Du kommer att motta ett e-post med instruktioner för hur man låser upp om några minuter."
+      send_instructions: "Inom några minuter kommer du att få ett e-post om hur du  låser upp ditt konto."
       unlocked: "Ditt konto är nu upplåst. Du kan nu inloggad."
   el: Ελληνικά
   en: English
@@ -249,7 +250,7 @@ se:
       accepted: "måste accepteras"
       already_confirmed: "är redan validerad, prova att logga in"
       blank: "måste fyllas i"
-      confirmation: "är inte samma som valideringen"
+      confirmation: "måste vara samma som det upprepade"
       empty: "måste vara ifyllt"
       equal_to: "måste vara exakt %{count}"
       even: "måste vara jämnt"
@@ -278,15 +279,6 @@ se:
         one: "1 fel hindrade denna %{model} från att sparas"
         other: "%{count} fel hindrade denna %{model} från att sparas"
   es: Español
-  flash: 
-    actions: 
-      create: 
-        notice: "%{resource_name} är skapad."
-      destroy: 
-        alert: "%{resource_name} kunde inte tas bort."
-        notice: "%{resource_name} är borttagen."
-      update: 
-        notice: "%{resource_name} är uppdaterad."
   form: 
     show_fully_accessible_places: rullstolsanpassad
     show_limited_accessible_places: "delvis rullstolsanpassad"
@@ -302,7 +294,7 @@ se:
     labels: 
       category: "Kategori:"
       city: "Stad:"
-      create: "Skapa plats:"
+      create: "Skapa plats"
       email: E-post
       housenumber: "Nummer:"
       lat: Latitud
@@ -319,7 +311,7 @@ se:
       type: "Typ:"
       website: "Webbplats:"
       wheelchair: Rullstolsanpassad?
-      wheelchair_description: "Tillgänglighetskommentar:"
+      wheelchair_description: "Kommentar:"
     titles: 
       basic: "Grundläggande data:"
       optional: "Mer information <span class=\"addition\">(alla fält är frivilliga)</span>"
@@ -346,10 +338,10 @@ se:
       what_is_barrier_free: "Vad betyder \"rullstolsanpassad\"?"
       what_is_wheelmap: "Vad är wheelmap?"
     searchbar: 
-      add_place: "Lägg till en plats till"
+      add_place: "Lägg till en plats"
       find: hitta
       label: "\"\""
-      placeholder: "till exempel Sunset Boulevard San Francisco eller Drottningholm Stockholm"
+      placeholder: "till exempel Sunset Boulevard San Francisco eller Drottningholms slott, Stockholm"
       title_add_place: "Lägg till an plats på denna position!"
     tagline: "Wheelmap logo"
     title: "Wheelmap - hitta rullstolsanpassade platser"

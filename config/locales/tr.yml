@@ -610,7 +610,7 @@ tr:
           not_connected: "Statü: Bağlantı yok"
           revoke: "Bağlantıyı kesmek"
       headline: "Profilinizi düzenleyin"
-  pt: Portekizce
+  pt: Português
   pt-PT: Português
   ru: Русский
   se: Svenska
@@ -636,7 +636,7 @@ tr:
       long: "%e %B %Y, %A, %H:%M"
       short: "%e %B, %H:%M"
     pm: "öğleden sonra"
-  tlh: "Klingon Dili"
+  tlh: "tlhIngan Hol"
   tr: Türkçe
   user_sessions: 
     create: 
