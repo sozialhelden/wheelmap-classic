@@ -79,7 +79,6 @@ class Poi < ActiveRecord::Base
       tags['leisure']   ||
       tags['historic']  ||
       tags['highway']   ||
-      tags['station']   ||
       tags['railway']
     end
     
