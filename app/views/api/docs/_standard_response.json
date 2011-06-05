@@ -1,0 +1,12 @@
+{
+  "conditions": {
+    "format": "json"
+  },
+  "meta": {
+    "item_count":2,
+    "item_count_total":5930
+  },
+  "results": [
+    { result object }
+  ]
+}

@@ -7,7 +7,7 @@ Wheelmap::Application.routes.draw do
 
   devise_for :admins
   devise_for :users
-
+  
   resources :search, :only => :index
   resources :feeds, :only => :index
   resources :sitemap, :only => :index
@@ -16,8 +16,13 @@ Wheelmap::Application.routes.draw do
       get :revoke
       get :callback
       get :osm_register
+      get :authorize
+      get :grant
+      get :deny
     end
   end
+  
+  resources :client_applications
 
   resources :nodes, :except => :destroy do
     member do 
@@ -33,8 +38,37 @@ Wheelmap::Application.routes.draw do
     collection do 
       post :authenticate
     end
+    member do
+      post :reset_token
+    end  
   end
 
   resources :user, :only => :new # Fake route for redirection to OSM register page
+
+  namespace :api do
+    resources :docs,        :only  => [:index]
+    namespace :docs do
+      resources :resources,        :only  => [:index, :show]
+    end
+    
+    resources :nodes,       :only  => [:index, :show, :update, :create] do
+      collection do
+        get :search
+      end
+    end
+
+    resources :categories,  :only  => [:index, :show] do
+      resources :nodes,       :only  => [:index, :show]
+      resources :node_types, :only  => [:index, :show]
+    end
+
+    resources :locales,     :only => :index
+    resources :node_types,  :only => [:index, :show]
+
+    match '/users/authenticate' => 'users#authenticate'
+    
+    #Last route in routes.rb
+    match '*a', :to => 'api#not_found', :format => false
+  end
 
 end

@@ -1,0 +1,19 @@
+#api_docs
+  %h2 Resource Locale
+  %article.doc-block
+    .resource
+      %h3
+        ="/api/locales"
+      %h6 Methods
+      .methods
+        .method
+          %h4 GET
+          %p Retrieve a collection of all available locales.
+          %h6 request query parameter
+
+  %h2#representations Representations
+  %article.doc-block
+    %h3#locales_representation_json Example locales representation. (application/json)
+    %pre=render :partial => 'locales.json'
+    
+  = render :partial => 'api/docs/resource_links'

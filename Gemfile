@@ -2,15 +2,15 @@ source 'http://rubygems.org'
 
 group :default do
   gem 'rails', '3.0.3'
-  gem 'mysql2'
+  gem 'mysql2', '~>0.2.7'
   gem 'spatial_adapter'
   gem 'oauth', :git => 'git://github.com/Bertg/oauth.git'
   gem 'httparty'
   gem 'devise'
-  gem 'compass'
+  gem 'compass', '0.10.6'
   gem 'redgreengrid'
   gem 'lemonade'
-  gem 'haml'
+  gem 'haml', '~>3.0.25'
   gem 'geoip'
   gem 'formtastic'
   gem 'delayed_job'
@@ -21,6 +21,10 @@ group :default do
   gem "tolk", :git => "git://github.com/ZenCocoon/tolk.git", :branch => "rails3"
   gem "routing-filter"
   gem 'newrelic_rpm', '~>3.0.1'
+  gem 'acts_as_api'
+  gem 'inherited_resources'
+  gem 'has_scope'
+  gem 'mapfish'
 end
 
 group :test, :development do
