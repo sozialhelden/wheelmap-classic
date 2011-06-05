@@ -553,7 +553,7 @@ se:
         parking: Parkering
         parking_aisle: "Väg på parkeringsplats"
         platform: Platform
-        subway: Tunnelbana
+        station: Tunnelbana
         subway_entrance: Tunnelbaneingång
         terminal: Flygplats-terminal
         tram_stop: Spårvagnshållplats

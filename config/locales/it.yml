@@ -493,7 +493,7 @@ it:
         parking: Parcheggio
         parking_aisle: Parcheggio
         platform: Binario
-        subway: Metropolitana
+        station: Metropolitana
         subway_entrance: "Ingresso della Metropolitana"
         terminal: "Terminal del aereoporto"
         tram_stop: "Fermata del tram"

@@ -495,7 +495,7 @@ es:
         parking: Parking
         parking_aisle: "Parking lateral"
         platform: Plataforma
-        subway: Metro
+        station: Metro
         subway_entrance: "Entrada de metro"
         terminal: "Terminal del aeropuerto"
         tram_stop: "Parada de tranvía"

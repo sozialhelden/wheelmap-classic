@@ -493,7 +493,7 @@ fr:
         parking: Stationnement
         parking_aisle: Parking
         platform: Quai
-        subway: Métro
+        station: Métro
         subway_entrance: "Entrée du métro"
         terminal: Aéroport
         tram_stop: "Arrêt de tram"
