@@ -1,0 +1,15 @@
+{
+  "id":19,
+  "lat":52.5231376,
+  "lon":13.3595838,
+  "node_type_id":24,
+  "category_id":2,
+  "wheelchair":"yes",
+  "wheelchair_description":null,
+  "street":"Unter den Linden",
+  "housenumber":"1",
+  "city":"Berlin",
+  "postcode":"12345",
+  "website":"http://some-other-url.com",
+  "phone":"+49 30 456456523"
+}

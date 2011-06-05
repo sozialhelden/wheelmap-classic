@@ -1,0 +1,15 @@
+{
+  "resources":[
+    {
+      "categories":{
+        "href":"/api/categories",
+        "description":"The categories Collection Resource"
+      }
+    },{
+      "nodes":{
+        "href":"/api/nodes",
+        "description":"The nodes Collection Resource"
+      }
+    }
+  ]
+}

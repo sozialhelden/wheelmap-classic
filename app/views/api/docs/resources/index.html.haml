@@ -1,0 +1,17 @@
+#api_docs
+  %h2#resources Resources
+  %p This is the Wheelmap API root url. It can be used to discover all available resources.
+
+  %article.doc-block
+    .resource
+      %h3 /api
+      %h6 Methods
+      .methods
+        .method
+          %h4 GET
+          Retrieve the base API URI - information about subresources.
+          %h4 Example request:
+          %pre http://wheelmap.org/api?api_key=api_key
+          %h4#root_representation_json Example root representation. (application/json)
+          %pre=render :partial => 'root.json'
+  = render :partial => 'api/docs/resource_links'

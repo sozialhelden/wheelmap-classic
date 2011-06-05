@@ -1,0 +1,156 @@
+#api_docs
+  %h1 API Docs
+  
+  %p Developers can use our RESTful API to interact with wheelchair accessible place.
+  
+  %h2 Setup
+  %p Before using the Wheelmap API, please read over the Terms of Service and sign up for a user account including an API Key.
+  
+  %h2 Authentication
+  %p All requests to the Wheelmap API service require an api key which is passed with every request.
+
+  %h2 Introduction
+  %p
+    The Wheelmap API provides a simple RESTful interface with lightweight JSON-formatted responses to use many of wheelmap.org's website features, including nodes, categories to allow both read and write access. This document provides information to developers on how to integrate with the Wheelmap API.
+
+  %h2 API Basics
+
+  %h3 Entry Points
+  %p The Wheelmap API has the following entry point:
+  %pre.link
+    http://wheelmap.org/api  
+  %p It is a read-only entry point for public data. It uses the standard parameter api_key for authentication.
+
+  %h3 Authentication
+  %p The Wheelmap API requires an application key that is provided during registration. The key identifies your application to the Wheelmap web service, and is used to track overall call usage. It's passed using the standard api_key parameter.
+
+  /%h3 Rate Limiting
+  /%p Clients are allowed 10,000 requests per 24-hour period, with a limit of 1 query per second. You will receive an automated email when you approach your daily limit. If your application needs more than the allotted amount of calls, contact us at devsupport@wheelmap.org with a description of the application and an estimate on needed call usage. (You might also want to investigate the use of caching to keep the number of calls to a minimum, and make your application more responsive.)
+
+  %h2 API Requests
+  %p The Wheelmap API uses a RESTful calling style that works with standard HTTP calls. Any web programming language (PHP, Ruby, Perl, Python, Java, Objective C, C#...) should be able to make and receive HTTP networking calls; consult the documentation for your language of choice.
+
+  %h3 Request URLs
+  %p In a RESTful API, each resource or collection of resources is identified by a unique URL, such as:
+  %pre http://wheelmap.org/api/nodes/:node_id
+  %p URL paths contain the unique IDs of resources. These are identified by a leading colon, as with :node_id above. Before making a call, you must substitute a valid ID value for these placeholders. ID parameters must appear in the URL and cannot be substituted for GET parameters. All ID parameters listed in the URL pattern must be present.
+
+  %h3 Output Formats
+  %p The Wheelmap API handles multiple output formats. Currently, the only supported formats are JSON and XML (see below.) Output formats are selected with a the HTTP Accept header or a specifier that is appended to the URL, like a filename extension:
+
+  %table
+    %thead
+      %tr
+        %th Format
+        %th Accept header
+        %th Specifier
+        %th Description
+    %tbody
+      %tr
+        %td JSON
+        %td application/json
+        %td .json
+        %td JavaScript Object Notation
+      %tr
+        %td XML
+        %td application/xml
+        %td .xml
+        %td Extensible Markup Language
+      
+  %p JSON is the default, and will be used if nothing is specified. Using the JSON format, the example would look like this:
+  %pre
+    http://wheelmap.org/api/nodes/:node_id.json
+  %h3 Standard Parameters
+  %p Here is a list of standard parameters that are accepted by many or all API methods:
+
+  %table
+    %thead
+      %tr
+        %th Parameter
+        %th Type
+        %th Meaning
+    %tbody
+      %tr
+        %th api_key
+        %td string
+        %td Your API key. Required for all public entry point calls
+      %tr
+        %th page
+        %td integer
+        %td For pagination, what page of the results you are on. Default is 1.
+      %tr
+        %th per_page
+        %td integer
+        %td For pagination, how many results to return per page. Default is 200. Max is 500.
+        
+  %h3 HTTP Methods
+  %p RESTful APIs use standard HTTP methods to denote actions against a resource:
+  %ul
+    %li GET - Reads a resource. Returns HTTP 200 on success.
+    %li POST - Creates a new resource. Returns HTTP 202 on success.
+    %li PUT - Updates a resource. Returns HTTP 202 on success.
+  %p 202 means: The request has been accepted for processing, but the processing has not been completed. The reason why POST and PUT method return the rather unknown status code 202 is, because the update/create operation is not processed immediately. The command will be put on a job queue. Chances are that something goes wrong while execution after the POST/PUT request has been finished.
+  %p Because some toolkits lack support for PUT and DELETE (most notably JavaScript) you can use method overloading to fake an HTTP method. Use a GET or POST call and append the standard method parameter:
+  
+  %pre http://wheelmap.org/api/nodes/:node_id?method=PUT
+
+  %h2 API Responses
+  %h3 JSON Data
+  %p Data is returned using JSON, a lightweight serialization language that is compatible with many different languages. JSON is also syntactically correct JavaScript code, which means that it can be parsed with JavaScript's own eval() function.
+
+  %h3 Standard Response Format
+  %p Each API response is wrapped in a standard structure that holds the results of the API call, plus metadata about the request:
+  %pre= render :partial => 'api/docs/standard_response.json'
+
+  %h4 conditions
+  %p conditions echoes the parameters that were passed into the request. This could be filters, format, pagination and so on.
+
+  %h4 meta
+  %p meta specifies meta information page and total number of pages, entries per page and so on.
+  
+  %h4 results
+  %p results is an array of objects. For consistency's sake, it is always an array, even if only one result is expected.
+  
+  %h2 API Response Codes:
+  %p The Wheelmap API will return a status code upon every request. The following status codes could possibly returned.
+  %table
+    %thead
+      %tr
+        %th Code
+        %th Meaning
+        %th Description
+    %tbody
+      %tr
+        %td 200
+        %td OK (application/json)
+        %td The server serverd the request successfully
+      %tr
+        %td 202
+        %td Accepted (application/json)
+        %td The request has been accepted for processing, but the processing has not been completed.
+      %tr
+        %td 400
+        %td Bad Request (application/json)
+        %td The server could not understand your request. Verify that request parameters (and content, if any) are valid.
+      %tr
+        %td 401
+        %td Authorization Required (application/json)
+        %td Authentication failed or was not provided. Verify that you have sent valid credentials via an api_key parameter. A 'Www-Authenticate' challenge header will be sent with this type of error response.
+      %tr
+        %td 403
+        %td Forbidden (application/json)
+        %td The server understood your request and verified your credentials, but you are not allowed to perform the requested action.
+      %tr
+        %td 404
+        %td Not Found (application/json)
+        %td The resource that you requested does not exist. Verify that any object id provided is valid.
+      %tr
+        %td 406
+        %td Not Acceptable (application/json)
+        %td The resource identified by the request is only capable of generating a desired response. In fact it means the requested content type is not available. Try JSON or XML.
+      %tr
+        %td 500
+        %td Internal Server Error (application/json)
+        %td An unknown error has occurred. When possible, an error message will be returned describing the error.
+
+  = render :partial => 'api/docs/resource_links'

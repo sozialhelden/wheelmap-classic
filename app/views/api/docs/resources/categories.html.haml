@@ -1,0 +1,48 @@
+#api_docs
+  %h2 Resource Category
+  %article.doc-block
+    .resource
+      %h3
+        ="/api/categories"
+        %span.optional> ?locale
+        %span.optional> &page
+        %span.optional> &per_page
+      %h6 Methods
+      .methods
+        .method
+          %h4 GET
+          %p Retrieve the categories collection.
+          %h6 request query parameter
+
+          %table
+            %thead
+              %tr
+                %th Parameter
+                %th Type
+                %th Description
+            %tbody
+              %tr.optional
+                %td locale
+                %td string
+                %td Localize categories with the given locale. Default is "de", valid are any of the available locales.
+              %tr.optional
+                %td page
+                %td integer
+                %td For pagination, what page of the results you are on. Default is 1.
+              %tr.optional
+                %td per_page
+                %td integer
+                %td For pagination, how many results to return per page. Default is 200. Max is 500.
+              
+                
+          %h4 Example request:
+          %pre http://wheelmap.org/api/categories?api_key=api_key&locale=en&page=2&per_page=5
+                
+    
+
+  %h2#representations Representations
+  %article.doc-block
+    %h3#categories_representation_json Example categories representation. (application/json)
+    %pre=render :partial => 'categories.json'
+    
+  = render :partial => 'api/docs/resource_links'

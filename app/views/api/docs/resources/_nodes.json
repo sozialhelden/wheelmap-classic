@@ -1,0 +1,48 @@
+{ "conditions":
+    {
+      "format":"json",
+      "page":1,
+      "per_page":2,
+      "bbox":"13.3417453687,52.505599556059,13.434635631302,52.523390178425"
+    },
+  "meta":
+    {
+      "page":1,
+      "num_pages":533,
+      "item_count":2,
+      "item_count_total":1066
+    },
+  "nodes":[
+    {
+      "id":19,
+      "lat":52.5231376,
+      "lon":13.3595838,
+      "node_type_id":24,
+      "category_id":2,
+      "wheelchair":"yes",
+      "wheelchair_description":null,
+      "street":"Unter den Linden",
+      "housenumber":"1",
+      "city":"Berlin",
+      "postcode":"12345",
+      "website":"http://some-other-url.com",
+      "phone":"+49 30 456456523"
+    },
+    {
+      "id":22,
+      "lat":52.5212151,
+      "lon":13.4118481,
+      "type":87,
+      "category_id":8,
+      "name":"Hotel Central Inn\u200e"
+      "wheelchair":"unknown",
+      "wheelchair_description":"Doors are pretty small.",
+      "street":null,
+      "housenumber":null,
+      "city":null,
+      "postcode":null,
+      "website":"http://hotel-central.example.com",
+      "phone":"+49 30 12345678"
+    }
+  ]
+}
