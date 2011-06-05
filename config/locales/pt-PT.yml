@@ -525,7 +525,7 @@ pt-PT:
         parking: "Parque de estacionamento"
         parking_aisle: "Lugar de estacionamento"
         platform: Plataforma
-        subway: Metro
+        station: Metro
         subway_entrance: "Entrada do Metro "
         terminal: "Terminal de Aeroporto "
         tram_stop: "Estação de eléctrico"

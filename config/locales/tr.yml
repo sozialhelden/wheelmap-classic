@@ -550,7 +550,7 @@ tr:
         parking: Otopark
         parking_aisle: "Otopark geçiti"
         platform: Platform
-        subway: Metro
+        station: Metro
         subway_entrance: "Metro girişi"
         terminal: "Havalimanı terminalı"
         tram_stop: "Tramvay durağı"
