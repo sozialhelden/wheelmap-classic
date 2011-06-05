@@ -527,7 +527,7 @@ el:
         parking: Πάρκινγκ
         parking_aisle: "Πάρκινγκ με διάδρομο"
         platform: Aποβάθρα-Πλατφόρμα
-        subway: Μετρό
+        station: Μετρό
         subway_entrance: "Είσοδος Μετρό"
         terminal: "Σταθμός αερολιμένα"
         tram_stop: "Στάση τράμ"

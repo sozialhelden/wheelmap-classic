@@ -493,7 +493,7 @@ is:
         parking: Bílastæði
         parking_aisle: Bílastæðaröð
         platform: Stæði
-        subway: Neðanjarðarlest
+        station: Neðanjarðarlest
         subway_entrance: "Inngangur að neðanjarðarlest"
         terminal: "Biðstöð á flugvelli"
         tram_stop: Lestavagnastopp

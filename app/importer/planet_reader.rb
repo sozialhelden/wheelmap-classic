@@ -127,7 +127,6 @@ class PlanetReader
     @poi[:tags]['leisure']  ||
     @poi[:tags]['historic'] ||
     @poi[:tags]['highway']  ||
-    @poi[:tags]['station']  ||
     @poi[:tags]['railway']
   end
 
