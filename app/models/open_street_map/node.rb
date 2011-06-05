@@ -25,7 +25,7 @@ class OpenStreetMap
       @changeset = data['changeset']
       @version = data['version'].to_i
       @timestamp = Time.parse(data['timestamp']) rescue Time.now
-      self.type = (data['type'] || tags['amenity'] || tags['station'] || tags['railway'] || tags['highway'] || tags['leisure'] || tags['shop'] || tags['tourism'] || tags['historic'] || tags['shop'])
+      self.type = (data['type'] || tags['amenity'] || tags['railway'] || tags['highway'] || tags['leisure'] || tags['shop'] || tags['tourism'] || tags['historic'] || tags['shop'])
       @wheelchair = tags['wheelchair'] = (data['wheelchair'] || tags['wheelchair'] || tags['hvv:barrier_free'] || 'unknown')
       self.wheelchair_description = (data['wheelchair_description'] || tags['wheelchair:description'])
       self.street       = (data['street'] || tags['addr:street'])
@@ -107,8 +107,8 @@ class OpenStreetMap
     
     def normalize_tags(tags)
       tags.tap do |tags|
-        tags['station'] = 'subway' if tags['hvv:psv_type'] == 'U'
-        tags['station'] = 'light-rail' if tags['hvv:psv_type'] == 'S'
+        tags['railway'] = 'station' if tags['hvv:psv_type'] == 'U'
+        tags['railway'] = 'tram_stop' if tags['hvv:psv_type'] == 'S'
         tags['amenity'] = 'ferry-terminal' if tags['ferry'] == 'halt'
       end
     end
