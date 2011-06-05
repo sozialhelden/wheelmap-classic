@@ -5,7 +5,21 @@
       = form.input :email, :required => false
       = form.input :password, :required => false, :hint => t('formtastic.hints.password')
       = form.input :password_confirmation, :required => false
+
       = form.input :wants_newsletter, :input_html => {:class => 'newsletter'}, :label => t('devise.sign_up.form.labels.wants_newsletter')
+
+    = form.buttons do
+      = form.commit_button t('formtastic.labels.save')
+      
+  - if @user.authentication_token
+    = semantic_form_for :user, :url => reset_token_user_path(@user), :method => :post do |form|
+      = form.inputs do
+        = form.input :authentication_token, :input_html => {:readonly => :readonly}
+
+      = form.buttons do
+        = form.commit_button t('formtastic.labels.reset')
+  
+      
     %h2=t('oauth.application.connect.headline')
   
     %br
@@ -22,7 +36,4 @@
           = link_to t('profile.edit.application.oauth.grant'), new_oauth_path
       
   
-    = form.buttons do
-      = form.commit_button t('formtastic.labels.save')
-      
       

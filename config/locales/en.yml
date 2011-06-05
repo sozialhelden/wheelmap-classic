@@ -206,6 +206,7 @@ en:
       street: "Street:"
       type: "Type:"
       save: Save
+      reset: Reset
       phone: "Telephone:"
       website: "Website:"
       create: Create place

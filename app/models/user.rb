@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include Devise::Models::TokenAuthenticatable
   # Include default devise modules. Others available are:
   # :http_authenticatable, :token_authenticatable, :database_authenticatable, :confirmable, :lockable, :timeoutable and :activatable
   devise :database_authenticatable, :recoverable, :registerable, :rememberable, :trackable, :validatable, :encryptable, :encryptor => :sha1
@@ -9,6 +10,13 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   
   serialize :oauth_request_token
+  
+  acts_as_api
+  
+  api_accessible :simple do |t|
+    t.add :id
+    t.add :email
+  end
   
   def app_authorized?
     oauth_authorized?
