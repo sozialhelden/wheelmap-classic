@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, :case_sensitive => false
   validates_presence_of :email
   
+  before_save :ensure_authentication_token
+  
   serialize :oauth_request_token
   
   acts_as_api
