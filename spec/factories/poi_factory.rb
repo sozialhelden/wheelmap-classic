@@ -8,9 +8,11 @@ Factory.sequence :version do |n|
 end
 
 Factory.define :poi do |p|
-  p.geom Point.from_x_y(13.4, 52.0)
-  p.tags { {'name' => 'name', 'amenity' => 'bar', 'addr:city' => 'Berlin'} }
+  p.lat 52.0
+  p.lon 13.4
   p.version { Factory.next :version }
-  
+  p.tags { Hash.new()}
+  p.name 'name'
+  p.type 'bar'
+  p.wheelchair 'yes'
 end
-

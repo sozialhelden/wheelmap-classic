@@ -77,5 +77,17 @@ class ApplicationController < ActionController::Base
     cookies['last_lat'] = params[:lat] if params[:lat]
     cookies['last_lon'] = params[:lon] if params[:lon]
   end
+  
+  def authenticate_mobile_user
+    unless @user = User.authenticate(params[:email], params[:password])
+      render :text => 'Authorization failed', :status => 400
+    end
+  end
+  
+  def authenticate_mobile_app
+    unless @user.app_authorized?
+      render :json => {:id => @user.id, :message => 'Application needs to be authorized', :url => edit_user_url(@user)}.to_json, :status => 403
+    end
+  end
 
 end
