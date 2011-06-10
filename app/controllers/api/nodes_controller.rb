@@ -1,15 +1,15 @@
 class Api::NodesController < Api::ApiController
   defaults :resource_class => Poi
 
- actions :index, :show, :update, :create
+  actions :index, :show, :update, :create
  
- custom_actions :collection => :search
+  custom_actions :collection => :search
  
   
   
   # Make sure user authenticates itself using an api_key
   before_filter :authenticate_user!,        :only => [:update, :create]
-  before_filter :authenticate_application!, :only => [:update, :create]
+  #before_filter :authenticate_application!, :only => [:update, :create]
   
   has_scope :bbox
   has_scope :wheelchair

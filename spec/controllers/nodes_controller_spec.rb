@@ -18,7 +18,7 @@ describe NodesController do
   before(:each) do
     # default visitor user
     @base_url = "#{OpenStreetMapConfig.oauth_site}/api/0.6"
-    @default_user = Factory.create(:user)
+    @default_user = Factory.create(:user, :email => 'visitor@wheelmap.org')
     @another_user = Factory.create(:user, :email => 'test@rspec.org', :oauth_token =>'token', :oauth_secret => 'secret')
   end
 
