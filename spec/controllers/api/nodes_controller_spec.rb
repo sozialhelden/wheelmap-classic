@@ -16,7 +16,7 @@ describe Api::NodesController do
   include Devise::TestHelpers
   render_views
   
-  before :all do
+  before :each do
     User.delete_all
     @user = Factory.create(:user)
   end
@@ -107,9 +107,10 @@ describe Api::NodesController do
     end
     
     it "access should be denied if osm credentials are missing" do
-      put(:update, {:id => @node.id, :name => 'Something new', :api_key => @user.authentication_token})
+      
+      put(:update, {:id => @node.id, :name => 'Something new', :api_key => @user.authentication_token, :locale => 'en'})
       response.status.should eql 403
-      response.body.should =~ /Application needs to be authorized/
+      response.body.should =~ /Um Daten zu \\u00e4ndern ben\\u00f6tigst Du einen OpenStreetMap Account./
     end
     
     it "should not update node when params are missing or invalid" do
@@ -145,7 +146,7 @@ describe Api::NodesController do
         post(:create, {:name => 'Something new', :api_key => @user.authentication_token})
       }.should_not change(CreateJob, :count)
       response.status.should eql 403
-      response.body.should =~ /Application needs to be authorized/
+      response.body.should =~ /Um Daten zu \\u00e4ndern ben\\u00f6tigst Du einen OpenStreetMap Account./
     end
     
     it "should not create node when params are missing or invalid" do

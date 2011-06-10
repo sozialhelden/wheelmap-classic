@@ -31,8 +31,14 @@ class ApplicationController < ActionController::Base
       if mobile_app?
         render :json => {:id => current_user.id, :message => 'Application needs to be authorized', :url => edit_user_url(current_user)}.to_json, :status => 403
       else
-        flash[:error] = I18n.t('nodes.flash.authorize_wheelmap')
-        redirect_to edit_user_path(current_user)
+        respond_to do |format|
+          format.html{
+            flash[:error] = I18n.t('nodes.flash.authorize_wheelmap')
+            redirect_to edit_user_path(current_user)            
+          }
+          format.json{render_exception(Exception.new(I18n.t('nodes.flash.authorize_wheelmap')), 403)}
+          format.xml{render_exception(Exception.new(I18n.t('nodes.flash.authorize_wheelmap')), 403)}
+        end
       end
     end
   end
