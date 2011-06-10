@@ -45,7 +45,7 @@ class NodesController < ApplicationController
   
   def update_wheelchair
     user = wheelmap_visitor
-    client = OpenStreetMap::BasicAuthClient.new(user.osm_username, user.osm_password)
+    client = OpenStreetMap::OauthClient.new(user.access_token)
     Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], user, client, :wheelchair => params[:wheelchair]))
     @node = Poi.find(params[:id])
     respond_to do |wants|
