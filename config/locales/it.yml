@@ -163,11 +163,22 @@ it:
           password_confirmation: "Ripeti la password"
         submit: "Registra modifiche"
       headline: "Gestione account"
+    failure: 
+      inactive: "Il tuo account non è ancora attivo."
+      invalid: "Email o password invalido."
+      invalid_token: "Token di autenticazione invalido."
+      locked: "Il tuo account è bloccato."
+      timeout: "La tua sessione è scaduta, collegarti da nuovo per continuare."
+      unauthenticated: "Devi registrarti o collegarti per continuare."
+      unconfirmed: "Devi confermare il tuo account prima di procedere."
     mailer: 
       confirmation_instructions: "Istruzioni per la confermazione"
       reset_password_instructions: "Istruzioni per reimpostare la password"
       unlock_instructions: "Istruzioni per sbloccare"
     mandatory: "* campo obbligatorio"
+    omniauth_callbacks: 
+      failure: "Non posso autorizzarti di %{kind} perché \"%{reason}\"."
+      success: "Autorizzato di %{kind}."
     password_recovery: 
       form: 
         labels: 
@@ -192,6 +203,7 @@ it:
       updated: "Il tuo password è stato cambiato con successo. Sei ormai collegato."
     registrations: 
       destroyed: "Ciao! Il tuo account è stato cancellato. Speriamo di rivederti presto."
+      inactive_signed_up: "Sei ormai registrato. Comunque, non possiamo farti accedere perché il tuo account è %{reason}."
       link: Registra
       signed_up: "Sei ormai registrato. Se attivo, una confermazione è stato mandato al tuo indirizzo email."
       updated: "Il tuo account è stato aggiornato."
@@ -222,6 +234,7 @@ it:
           email: Email
           password: Password
           password_confirmation: "Ripeti la password"
+          wants_newsletter: "Si, tenetemi aggiornato su wheelmap. (Ma non più di una volta per mese.) "
         submit: Registrazione
       headline: Registrazione
     unlocks: 
@@ -231,8 +244,11 @@ it:
   el: Ελληνικά
   en: English
   errors: 
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
     messages: 
       accepted: "deve essere accettata"
+      already_confirmed: "è già confermato, prova ad accedere."
       blank: "non può essere lasciato in bianco"
       confirmation: "non coincide con la conferma"
       empty: "non può essere vuoto"
@@ -246,12 +262,32 @@ it:
       less_than: "deve essere meno di %{count}"
       less_than_or_equal_to: "deve essere meno o uguale a %{count}"
       not_a_number: "non è un numero"
+      not_an_integer: "Deve esser un numero intero."
+      not_found: "non trovato"
+      not_locked: "non era bloccato"
+      not_saved: 
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
       odd: "deve essere dispari"
       taken: "è già in uso"
       too_long: "è troppo lungo (il massimo %{count} caratteri)"
       too_short: "è troppo corto (il minimo è %{count} caratteri)"
       wrong_length: "è della lunghezza sbagliata (deve essere di %{count} caratteri)"
+    template: 
+      body: "Per favore ricontrolla i seguenti campi:"
+      header: 
+        one: "Non posso salvare questo %{model}: 1 errore"
+        other: "Non posso salvare questo %{model}: %{count} errori."
   es: Español
+  flash: 
+    actions: 
+      create: 
+        notice: "%{resource_name} è stato creato."
+      destroy: 
+        alert: "non posso cancellare %{resource_name}."
+        notice: "%{resource_name} è stato cancellato"
+      update: 
+        notice: "%{resource_name} è stato aggiornato."
   form: 
     show_fully_accessible_places: "accessibile in sedia a rotelle"
     show_limited_accessible_places: "parzialmente accessibile in sedia a rotelle"
@@ -272,6 +308,7 @@ it:
       housenumber: "numero:"
       lat: Latitudine
       lon: Longitudine
+      name: Nome
       osm_password: "Password OSM"
       osm_username: "Nome del account OSM"
       password: Password
@@ -316,11 +353,18 @@ it:
       title_add_place: "Aggiungi un luogo a questo posizione!"
     tagline: "Wheelmap logo"
     title: "Wheelmap - trova luoghi accessibili in sedia a rotelle"
+  helpers: 
+    select: 
+      prompt: Scegli
+    submit: 
+      create: "Crea %{model}"
+      submit: "Salva %{model}"
+      update: "Aggiorna %{model}"
   home: 
     index: 
       filter: 
         category: "Categoria:"
-        wheelchair: "Accessibile in sedia a rotelle?"
+        wheelchair: "Accessibile in sedia a rotelle? (Che cosa significa?)"
       link: 
         node: 
           create: "Aggiungi nuovo luogo"
@@ -373,6 +417,8 @@ it:
       flash: 
         not_successfull: "Scusa, il tuo input era scorretto o incompleto"
         successfull: "Grazie, i tuoi dati sono stati salvati con successo e saranno online fra poco."
+    update_wheelchair: 
+      successfull: "Lo stato di \"%{name}\" è stato cambiato in \"%{status} accessibile in sedia a rotelle\" e sarà pubblicato fra un po'."
   number: 
     currency: 
       format: 
@@ -380,14 +426,28 @@ it:
         format: "%n %u"
         precision: 2
         separator: "."
+        significant: 0
+        strip_insignificant_zeros: 0
         unit: €
     format: 
       delimiter: "."
       precision: 3
       separator: "."
+      significant: 0
+      strip_insignificant_zeros: 0
     human: 
+      decimal_units: 
+        format: "%n %u"
+        units: 
+          billion: Miliardo
+          million: Milione
+          quadrillion: Quadrilione
+          thousand: Mille
+          trillion: Trilione
       format: 
         precision: 1
+        significant: true
+        strip_insignificant_zeros: true
       storage_units: 
         format: "%n %u"
         units: 
@@ -566,6 +626,8 @@ it:
   support: 
     array: 
       last_word_connector: ", e "
+      sentence_connector: and
+      skip_last_comma: true
       two_words_connector: " e "
       words_connector: ", "
     select: 
