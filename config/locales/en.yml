@@ -467,6 +467,14 @@ en:
       half_a_minute: half a minute
   home: 
     index: 
+      ie:
+        warning:
+          headline: We apologize!
+          message: "You seem to use Internet Explorer. Wheelmap needs a standard-compliant browser to work properly. Please use Firefox, Chrome, Safari or Opera"
+        action:
+          ignore: Ignore
+          upgrade: Update Browser
+      
       filter: 
         category: "Category:"
         wheelchair: Wheelchair accessible? (What does that mean?)

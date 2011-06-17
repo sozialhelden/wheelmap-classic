@@ -1,0 +1,39 @@
+#facebox
+
+  display: none
+  width: 400px
+  border: 10px solid #525252
+
+  z-index: 20000
+  background-color: #fff
+
+  h2
+    margin-bottom: 0px
+    color: #fff
+    background-color: $orange
+    padding: 5px 10px
+    font-size: 20px
+
+  div
+    padding: 10px
+    font-family: "lucida grande",tahoma,verdana,arial,sans-serif
+    
+  p
+    margin-bottom: 10px
+
+  a.button
+    $height: 20px
+    line-height: 20px
+    float: right
+    padding: 3px 6px 3px 20px
+    width: auto
+    margin: 10px!important
+
+    text-align: right
+    text-decoration: none
+    
+    &.primary
+      +green-button($height)
+      
+    &.secondary
+      +grey-button($height)
