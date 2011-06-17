@@ -279,6 +279,15 @@ se:
         one: "1 fel hindrade denna %{model} från att sparas"
         other: "%{count} fel hindrade denna %{model} från att sparas"
   es: Español
+  flash: 
+    actions: 
+      create: 
+        notice: "%{resource_name} är skapad."
+      destroy: 
+        alert: "%{resource_name} kunde inte tas bort."
+        notice: "%{resource_name} är borttagen."
+      update: 
+        notice: "%{resource_name} är uppdaterad."
   form: 
     show_fully_accessible_places: rullstolsanpassad
     show_limited_accessible_places: "delvis rullstolsanpassad"

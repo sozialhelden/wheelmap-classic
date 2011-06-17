@@ -163,11 +163,22 @@ fr:
           password_confirmation: "Répéter mot de passe"
         submit: "Sauvegarder les modifications"
       headline: "Administrer votre compte"
+    failure: 
+      inactive: "Votre compte n'était pas encore activé."
+      invalid: "email ou mot de passe non valide."
+      invalid_token: "signe de vérification non valide"
+      locked: "Votre compte est fermé."
+      timeout: "Votre session a expiré, veuillez reconnecter pour continuer."
+      unauthenticated: "Il faut de se connecter ou s'identifier avant continuer."
+      unconfirmed: "Il faut de confirmer votre compte avant continuer."
     mailer: 
       confirmation_instructions: "Instructions pour la confirmation"
       reset_password_instructions: "Réinitialiser les instructions de mot de passe"
       unlock_instructions: "Déverrouiller les instructions"
     mandatory: "* champ obligatoire"
+    omniauth_callbacks: 
+      failure: "Ne pouvait pas vous confirmer de %{kind} parce que \"%{reason}\". "
+      success: "Vérifié avec succès du compte %{kind}"
     password_recovery: 
       form: 
         labels: 
@@ -231,8 +242,11 @@ fr:
   el: Ελληνικά
   en: English
   errors: 
+    dynamic_format: "%{message} "
+    format: "%{attribute} %{message} "
     messages: 
       accepted: "doit être accepté"
+      already_confirmed: "était déjà confirmé, veuillez essayer de vous connecter"
       blank: "doit être rempli"
       confirmation: "ne correspond pas à l'affirmation"
       empty: "doit être rempli"
@@ -246,12 +260,26 @@ fr:
       less_than: "doit être moins que %{count} "
       less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
       not_a_number: "n' est pas de nombre"
+      not_an_integer: "doit être un nombre entier"
+      not_found: "pas trouvé"
+      not_locked: "n'était pas fermé"
       odd: "doit être impair"
       taken: "est déjà utilisé"
       too_long: "est trop long (pas plus de %{count} caractères) "
       too_short: "est trop court (pas moins de %{count} caractères)"
       wrong_length: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
+    template: 
+      body: "Il y a des problèmes avec les champs suivants:"
   es: Español
+  flash: 
+    actions: 
+      create: 
+        notice: "%{resource_name} était créé avec succès. "
+      destroy: 
+        alert: "%{resource_name} ne pouvait pas être détruit."
+        notice: "%{resource_name} était détruit avec succès."
+      update: 
+        notice: "%{resource_name} était actualisé avec succès."
   form: 
     show_fully_accessible_places: "accès pour fauteuil roulant"
     show_limited_accessible_places: "accès partiel pour fauteuil roulant"
@@ -272,6 +300,7 @@ fr:
       housenumber: "Numéro:"
       lat: Latitude
       lon: Longitude
+      name: "Nom:"
       osm_password: "Mot de passe sur OSM"
       osm_username: "Nom d'utilisateur sur OSM"
       password: "Mot de passe"
@@ -316,6 +345,13 @@ fr:
       title_add_place: "Ajoutez un nouveau lieu sur cette position!"
     tagline: "Wheelmap logo"
     title: "Wheelmap - où aller dans un fauteuil roulant? "
+  helpers: 
+    select: 
+      prompt: "Veuillez choisir"
+    submit: 
+      create: "Créer %{model} "
+      submit: "Sauvegarder %{model} "
+      update: "Actualiser %{model} "
   home: 
     index: 
       filter: 
@@ -380,12 +416,24 @@ fr:
         format: "%n %u"
         precision: 2
         separator: "."
+        significant: 0
+        strip_insignificant_zeros: 0
         unit: €
     format: 
       delimiter: ","
       precision: 3
       separator: "."
+      significant: 0
+      strip_insignificant_zeros: 0
     human: 
+      decimal_units: 
+        format: "%n %u "
+        units: 
+          billion: billion
+          million: million
+          quadrillion: quadrillion
+          thousand: mille
+          trillion: trillion
       format: 
         precision: 1
       storage_units: 
@@ -566,6 +614,7 @@ fr:
   support: 
     array: 
       last_word_connector: ", et"
+      sentence_connector: et
       two_words_connector: et
       words_connector: ","
     select: 
