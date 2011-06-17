@@ -112,7 +112,7 @@ en:
       website: "Website:"
   profile: 
     edit: 
-      headline: Edit your Profil
+      headline: Edit your Profile
       application: 
         oauth: 
           not_connected: "Status: Not connected"
