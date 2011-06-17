@@ -163,6 +163,14 @@ de:
           password_confirmation: "Passwort wiederholen"
         submit: "Änderungen speichern"
       headline: "Benutzerkonto verwalten"
+    failure: 
+      inactive: "Dein Konto wurde noch nicht aktiviert."
+      invalid: "Ungültige Email oder ungültiges Kennwort."
+      invalid_token: "Ungültiger Authentifizierungstoken."
+      locked: "Dein Konto ist gesperrt."
+      timeout: "Deine Sitzung ist abgelaufen! Um fortzufahren, melde dich bitte erneut an."
+      unauthenticated: "Du musst dich anmelden oder registrieren um fortzufahren."
+      unconfirmed: "Du musst dein Konto bestätigen um fortzufahren."
     mailer: 
       confirmation_instructions: "Anleitung zur Bestätigung deines Benutzerkontos"
       reset_password_instructions: "Anleitung zum Neu setzen deines Passworts"
@@ -236,6 +244,7 @@ de:
     format: "%{attribute} %{message}"
     messages: 
       accepted: "muss akzeptiert werden"
+      already_confirmed: "wurde bereits bestätigt"
       blank: "muss ausgefüllt werden"
       confirmation: "stimmt nicht mit der Bestätigung überein"
       empty: "muss ausgefüllt werden"
@@ -249,6 +258,9 @@ de:
       less_than: "muss kleiner als %{count} sein"
       less_than_or_equal_to: "muss kleiner oder gleich %{count} sein"
       not_a_number: "ist keine Zahl"
+      not_an_integer: "muss eine Zahl sein"
+      not_found: "nicht gefunden"
+      not_locked: "war nicht gesperrt"
       odd: "muss ungerade sein"
       taken: "ist bereits vergeben"
       too_long: "ist zu lang (nicht mehr als %{count} Zeichen)"
@@ -282,8 +294,8 @@ de:
       password_confirmation: "Passwort wiederholen"
       phone: "Telefon:"
       postcode: "PLZ:"
+      reset: Reset
       save: Speichern
-      reset: Neu setzen
       street: "Straße:"
       type: "Typ:"
       website: "Webseite:"
@@ -326,16 +338,16 @@ de:
       prompt: "Bitte auswählen"
   home: 
     index: 
-      ie:
-        warning:
-          headline: Entschuldigung!
-          message: "Offenbar verwendest Du Internet Explorer. Wheelmap benötigt einen standard-konformen Browser, um korrekt zu funktionieren. Bitte verwende Firefox, Chrome, Safari oder Opera."
-        action:
-          ignore: Ignorieren
-          upgrade: Browser aktualisieren
       filter: 
         category: "Kategorie:"
         wheelchair: "Rollstuhlgerecht (was heißt das?)"
+      ie: 
+        action: 
+          ignore: Ignorieren
+          upgrade: "Browser aktualisieren"
+        warning: 
+          headline: Entschuldigung!
+          message: "Offenbar verwendest Du Internet Explorer. Wheelmap benötigt einen standard-konformen Browser, um korrekt zu funktionieren. Bitte verwende Firefox, Chrome, Safari oder Opera."
       link: 
         node: 
           create: "Neuen Ort anlegen"
@@ -397,18 +409,24 @@ de:
         format: "%n %u"
         precision: 2
         separator: ","
+        significant: 0
+        strip_insignificant_zeros: 0
         unit: €
     format: 
       delimiter: "."
       precision: 2
       separator: ","
+      significant: 0
+      strip_insignificant_zeros: 0
     human: 
       decimal_units: 
         format: "%n %u"
         units: 
           billion: Milliarde
           million: Million
+          quadrillion: Quadrillion
           thousand: Tausend
+          trillion: Trillion
       format: 
         precision: 1
         significant: true
