@@ -639,7 +639,7 @@ a:visited:hover {
   border-bottom-right-radius: 8px;
   height: 28px;
 }
-/* line 23, ../../app/stylesheets/basics/_buttons.sass */
+/* line 26, ../../app/stylesheets/basics/_buttons.sass */
 #header #searchbar button:hover {
   background-color: #95b963;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aecd82), color-stop(0.5, #95b963), color-stop(1, #7da743));
@@ -648,7 +648,7 @@ a:visited:hover {
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#7da743', startColorstr='#aecd82', gradientType='0');
   border-color: #95b963 #89b152 #6e9040;
 }
-/* line 26, ../../app/stylesheets/basics/_buttons.sass */
+/* line 29, ../../app/stylesheets/basics/_buttons.sass */
 #header #searchbar button:active {
   background-color: #7ca148;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #96bf5e), color-stop(0.5, #7ca148), color-stop(1, #618234));
@@ -692,7 +692,7 @@ a:visited:hover {
   line-height: 16px;
   text-decoration: none;
 }
-/* line 23, ../../app/stylesheets/basics/_buttons.sass */
+/* line 26, ../../app/stylesheets/basics/_buttons.sass */
 #header #searchbar .add-place:hover {
   background-color: #ef902e;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f7aa59), color-stop(0.5, #ef902e), color-stop(1, #e0770b));
@@ -701,7 +701,7 @@ a:visited:hover {
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#e0770b', startColorstr='#f7aa59', gradientType='0');
   border-color: #ef902e #ed8417 #c26a0f;
 }
-/* line 26, ../../app/stylesheets/basics/_buttons.sass */
+/* line 29, ../../app/stylesheets/basics/_buttons.sass */
 #header #searchbar .add-place:active {
   background-color: #da7710;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f59129), color-stop(0.5, #da7710), color-stop(1, #af5d08));
@@ -932,7 +932,7 @@ form input[type='submit'] {
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#8ab74c', startColorstr='#bad594', gradientType='0');
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
 }
-/* line 23, ../../app/stylesheets/basics/_buttons.sass */
+/* line 26, ../../app/stylesheets/basics/_buttons.sass */
 form input[type='submit']:hover {
   background-color: #95b963;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aecd82), color-stop(0.5, #95b963), color-stop(1, #7da743));
@@ -941,7 +941,7 @@ form input[type='submit']:hover {
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#7da743', startColorstr='#aecd82', gradientType='0');
   border-color: #95b963 #89b152 #6e9040;
 }
-/* line 26, ../../app/stylesheets/basics/_buttons.sass */
+/* line 29, ../../app/stylesheets/basics/_buttons.sass */
 form input[type='submit']:active {
   background-color: #7ca148;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #96bf5e), color-stop(0.5, #7ca148), color-stop(1, #618234));
