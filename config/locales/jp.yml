@@ -163,11 +163,22 @@ jp:
           password_confirmation: パスワードをもう一度入力
         submit: 変更を保存
       headline: アカウント管理
+    failure: 
+      inactive: あなたのアカウントはまだ有効化されていません。
+      invalid: メールアドレスかパスワードが違います。
+      invalid_token: 認証トークンが違います。
+      locked: あなたのアカウントはロックされました。
+      timeout: セッションの有効期限が切れています、サイインして続けてください。
+      unauthenticated: 続けるにはログインか登録が必要です。
+      unconfirmed: 続ける前にアカウントを確認してください。
     mailer: 
       confirmation_instructions: 確認手順
       reset_password_instructions: パスワードリセット手順
       unlock_instructions: ロック解除手順
     mandatory: "* 必須項目"
+    omniauth_callbacks: 
+      failure: "%{kind} で \"%{reason}\" のためにあなたを認証できません。"
+      success: "%{kind} アカウントの認証に成功しました。"
     password_recovery: 
       form: 
         labels: 
@@ -192,6 +203,7 @@ jp:
       updated: あなたのパスワードは変更されました。現在サイインしています。
     registrations: 
       destroyed: さようなら！あなたのアカウントはキャンセルされました。またお会いできる日を楽しみにしています。
+      inactive_signed_up: "登録に成功しましたが、%{reason} のためにログインできません。"
       link: サインアップ
       signed_up: サインアップが完了しました。有効化されればあなたのメールアドレス宛てに確認メールが送信されます。
       updated: あなたのアカウントは更新されました。
@@ -222,6 +234,7 @@ jp:
           email: Eメール
           password: パスワード
           password_confirmation: パスワード再入力
+          wants_newsletter: はい、wheelmapの最新情報を送ってください。（ただし月１回）
         submit: 登録
       headline: 登録
     unlocks: 
@@ -231,8 +244,11 @@ jp:
   el: Ελληνικά
   en: English
   errors: 
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
     messages: 
       accepted: 承認してください
+      already_confirmed: は確認済みです、ログインしてみてください
       blank: 値を入力してください
       confirmation: 確認が一致しません
       empty: 値を入力してください
@@ -246,12 +262,32 @@ jp:
       less_than: "%{count} より小さくなければなりません"
       less_than_or_equal_to: "%{count} 以下でなければなりません"
       not_a_number: は数字ではありません
+      not_an_integer: 整数でなければなりません
+      not_found: 見つかりません
+      not_locked: ロックされていません
+      not_saved: 
+        one: "%{resource} にエラーが1件あるので保存できません:"
+        other: "%{resource} に %{count} 件エラーがあるので保存できません:"
       odd: 奇数でなければなりません
       taken: 既に取得されています
       too_long: "が長すぎます(%{count} 文字より多すぎてはいけません)"
       too_short: "が短かすぎます(%{count} 文字より少なすぎてはいけません)"
       wrong_length: "長さが間違っています（正確に%{count}文字にしてください）"
+    template: 
+      body: "次の項目に問題があります:"
+      header: 
+        one: "エラーが1件あるのでこの %{model} を保存できません"
+        other: "エラーが %{count} 件あるのでこの %{model} を保存できません"
   es: Español
+  flash: 
+    actions: 
+      create: 
+        notice: "%{resource_name} が作成されました。"
+      destroy: 
+        alert: "%{resource_name} は削除できませんでした。"
+        notice: "%{resource_name} は削除されました。"
+      update: 
+        notice: "%{resource_name} は更新されました。"
   form: 
     show_fully_accessible_places: 車椅子可
     show_limited_accessible_places: 車椅子一部可
@@ -272,6 +308,7 @@ jp:
       housenumber: "番地:"
       lat: 緯度
       lon: 経度
+      name: "名前:"
       osm_password: OSMパスワード
       osm_username: OSMアカウント
       password: パスワード
@@ -313,8 +350,16 @@ jp:
       add_place: 別の場所を追加
       find: 見つける
       placeholder: "例. Sunset Boulevard San Francisco or Brandenburg Gate Berlin "
+      title_add_place: 今すぐこの位置に新しい場所を追加！
     tagline: "Wheelmap ロゴ"
     title: "Wheelmap - 車椅子で行ける場所を見つけよう "
+  helpers: 
+    select: 
+      prompt: 選択してください
+    submit: 
+      create: "%{model} を作成"
+      submit: "%{model} を保存"
+      update: "%{model} を更新"
   home: 
     index: 
       filter: 
@@ -372,6 +417,8 @@ jp:
       flash: 
         not_successfull: おっと、入力内容が正しくないか不完全です。
         successfull: ありがとうございます、送信内容は保存されました。しばらく経ってからオンラインに反映されます。
+    update_wheelchair: 
+      successfull: "\"%{name}\" のステータスは \"%{status} 車椅子利用可\" に変更されました。しばらくたったらオンラインで表示されます。"
   number: 
     currency: 
       format: 
@@ -379,14 +426,28 @@ jp:
         format: "%u%n"
         precision: 2
         separator: "."
+        significant: 0
+        strip_insignificant_zeros: 0
         unit: $
     format: 
       delimiter: ", "
       precision: 3
       separator: "."
+      significant: 0
+      strip_insignificant_zeros: 0
     human: 
+      decimal_units: 
+        format: "%n %u"
+        units: 
+          billion: 億
+          million: 百万
+          quadrillion: 千兆
+          thousand: 千
+          trillion: 百京
       format: 
         precision: 1
+        significant: true
+        strip_insignificant_zeros: true
       storage_units: 
         format: "%n %u"
         units: 
@@ -565,6 +626,8 @@ jp:
   support: 
     array: 
       last_word_connector: ", and"
+      sentence_connector: かつ
+      skip_last_comma: true
       two_words_connector: "and "
       words_connector: ","
     select: 
