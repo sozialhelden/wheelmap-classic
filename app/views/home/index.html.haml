@@ -6,6 +6,15 @@
   = render :partial => 'home/tag_counter'
 #spinner
 
+#facebox
+  %h2=t('.ie.warning.headline')
+  .content
+    %p=t('.ie.warning.message')
+
+    %p
+      = link_to t('.ie.action.upgrade'), "http://www.updateyourbrowser.net/en/", :class => 'button primary'
+      = link_to t('.ie.action.ignore'), '#', :class => 'button secondary close', :onclick => 'return false;'
+
 - content_for :javascript_constants do
   :javascript
     var lat = #{params[:lat] || cookies['last_lat'] || GeoCache.latlon(request.remote_addr).first};
@@ -15,3 +24,20 @@
 
 -content_for :javascript do
   = render :partial => 'shared/google_event_tracking'
+
+  - if browser_class.include?('trident-7') || browser_class.include?('trident-6')
+    :javascript
+      if($.cookie('ie_warning') == 1){
+        // ignore, user saw IE warning.
+      } else {
+        $("#facebox").overlay({
+          top: 260,
+          mask: {
+            color: '#cccccccc', loadSpeed: 200, opacity: 0.5
+          },
+          closeOnClick: false,
+          load: true
+        });
+        $.cookie('ie_warning', 1);
+      }
+      

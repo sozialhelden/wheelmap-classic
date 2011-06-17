@@ -326,6 +326,13 @@ de:
       prompt: "Bitte auswählen"
   home: 
     index: 
+      ie:
+        warning:
+          headline: Entschuldigung!
+          message: "Offenbar verwendest Du Internet Explorer. Wheelmap benötigt einen standard-konformen Browser, um korrekt zu funktionieren. Bitte verwende Firefox, Chrome, Safari oder Opera."
+        action:
+          ignore: Ignorieren
+          upgrade: Browser aktualisieren
       filter: 
         category: "Kategorie:"
         wheelchair: "Rollstuhlgerecht (was heißt das?)"

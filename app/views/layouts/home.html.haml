@@ -29,9 +29,13 @@
     = render :partial => 'shared/footer'
         
     = render :partial => 'shared/google_tracking'
-
-    - if browser_class == 'trident'
+    
+    -# Using IE
+    - if browser_class.include?('trident')
       = javascript_include_tag 'jquery.ie'
+      -# Using IE 7 or lower
+      - if browser_class.include?('trident-7') || browser_class.include?('trident-6')
+        = javascript_include_tag 'http://cdn.jquerytools.org/1.2.5/jquery.tools.min.js'
     - else
       = javascript_include_tag 'jquery'
       
