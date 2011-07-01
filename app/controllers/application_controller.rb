@@ -69,11 +69,15 @@ class ApplicationController < ActionController::Base
   end
 
   def timeout(exception)
+    HoptoadNotifier.notify(exception,:component => self.class.name, :parameters => params)
+    
     @message = I18n.t('nodes.errors.not_available')
     render :template => 'shared/error', :status => 503
   end
 
   def error(exception)
+    HoptoadNotifier.notify(exception,:component => self.class.name, :parameters => params)
+    
     @message = I18n.t('nodes.errors.default')
     render :template => 'shared/error', :status => 400
   end

@@ -81,6 +81,24 @@ ActiveRecord::Schema.define(:version => 20110513152131) do
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
+  create_table "heatmap", :id => false, :options=>'ENGINE=MyISAM', :force => true do |t|
+    t.integer  "count",                :default => 0,   :null => false
+    t.float    "x",                    :default => 0.0, :null => false
+    t.float    "y",                    :default => 0.0, :null => false
+    t.geometry "geom",  :limit => nil,                  :null => false
+  end
+
+  add_index "heatmap", ["geom"], :name => "geom", :spatial => true
+
+  create_table "heatmaps", :id => false, :options=>'ENGINE=MyISAM', :force => true do |t|
+    t.integer  "count",                :default => 0,   :null => false
+    t.float    "x",                    :default => 0.0, :null => false
+    t.float    "y",                    :default => 0.0, :null => false
+    t.geometry "geom",  :limit => nil,                  :null => false
+  end
+
+  add_index "heatmaps", ["geom"], :name => "geom", :spatial => true
+
   create_table "node_types", :force => true do |t|
     t.integer  "category_id"
     t.string   "identifier"
@@ -103,7 +121,7 @@ ActiveRecord::Schema.define(:version => 20110513152131) do
   add_index "pois", ["osm_id", "status", "created_at"], :name => "pagination"
   add_index "pois", ["osm_id"], :name => "index_pois_on_osm_id"
   add_index "pois", ["status"], :name => "index_pois_on_status"
-  execute "CREATE FULLTEXT INDEX `fulltext_index_pois_on_tags` ON `pois` (`tags`)"
+  add_index "pois", ["tags"], :name => "fulltext_index_pois_on_tags"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false

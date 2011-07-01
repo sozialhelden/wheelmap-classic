@@ -315,6 +315,7 @@ it:
       password_confirmation: "Ripeti la password"
       phone: "Telefono:"
       postcode: "CAP:"
+      reset: Azzera
       save: Registra
       street: "Via:"
       type: "Tipo:"
@@ -365,6 +366,13 @@ it:
       filter: 
         category: "Categoria:"
         wheelchair: "Accessibile in sedia a rotelle? (Che cosa significa?)"
+      ie: 
+        action: 
+          ignore: Ignora
+          upgrade: "Aggiorna Browser"
+        warning: 
+          headline: "Siamo spiacenti!"
+          message: "Sembra che stai usando una vecchia versione di Internet Explorer con cui Wheelmap funziona male. Ti consigliamo di usare Firefox, Chrome, Opera, Safari o un altro browser più recente."
       link: 
         node: 
           create: "Aggiungi nuovo luogo"
