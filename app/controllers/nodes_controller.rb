@@ -113,18 +113,13 @@ class NodesController < ApplicationController
   protected
   
   def gone(exception)
-    HoptoadNotifier.notify(exception, :action => params[:action],
-                              :component => self.class.name,
-                              :parameters => params)
-    
+    HoptoadNotifier.notify(exception,:component => self.class.name, :parameters => params)
     @message = I18n.t('nodes.errors.not_existent')
     render :template => 'shared/error', :status => 410
   end
   
   def not_found(exception)
-    HoptoadNotifier.notify(exception, :action => params[:action],
-                              :component => self.class.name,
-                              :parameters => params)
+    HoptoadNotifier.notify(exception,:component => self.class.name, :parameters => params)
     @message = I18n.t('nodes.errors.not_found')
     render :template => 'shared/error', :status => 404
   end
