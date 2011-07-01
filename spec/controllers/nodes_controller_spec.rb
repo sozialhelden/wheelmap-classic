@@ -19,7 +19,7 @@ describe NodesController do
     # default visitor user
     @base_url = "#{OpenStreetMapConfig.oauth_site}/api/0.6"
     @default_user = Factory.create(:user)
-    @another_user = Factory.create(:user, :email => 'test@rspec.org', :oauth_token =>'token', :oauth_secret => 'secret')
+    @another_user = Factory.create(:user, :email => 'test@rspec.org', :oauth_token =>'token', :oauth_secret => 'secret', :password => 'password', :password_confirmation => 'password')
   end
 
   describe "action show" do
@@ -126,8 +126,20 @@ describe NodesController do
     
       it "should create CreateJob for given node attributes" do
         lambda{
-            post(:create, :node => {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant'})
-          }.should change(CreateJob, :count).by(1)
+          post(:create, {:node => {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant'}})
+        }.should change(CreateJob, :count).by(1)
+      end
+      
+      it "should create CreateJob for given node when posted with iPhone" do
+        # iPhone 1.1 sends invariant accept header */*
+        http_credentials = Base64.encode64("#{@another_user.email}:password")
+        @request.env["HTTP_ACCEPT"]           = "*/*"
+        @request.env["HTTP_USER_AGENT"]       = "Wheelmap/1.1 CFNetwork/485.13.9 Darwin/11.0.0"
+        @request.env["HTTP_ACCEPT_LANGUAGE"]  = "de-de"
+        @request.env["HTTP_AUTHORIZATION"]    = "Basic #{http_credentials}"
+        lambda{
+          post(:create, {:node => {"lon"=>"13.388226983333330944", "name"=>"Bio COMPANY", "wheelchair"=>"yes", "wheelchair_description"=>"Bio bio", "type"=>"supermarket", "lat"=>"52.52287699999996928"}})
+        }.should change(CreateJob, :count).by(1)
       end
       
       it "should have correct values for CreateJob" do
