@@ -44,6 +44,40 @@ describe NodesController do
     
   end
 
+  describe "action edit" do
+    
+    before(:each) do
+     @another_user.should be_app_authorized
+     sign_in @another_user
+     
+     FakeWeb.allow_net_connect = false
+     @full_url = "#{@base_url}/node/16581933"
+    end
+    
+    it "should send Hoptoad message in case OpenStreetMap API times out" do
+      stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/16581933").to_return(:status => 503, :body => "Not Available", :headers => {})
+      HoptoadNotifier.should_receive(:notify)
+
+      get(:edit, :id => 16581933)
+      response.code.should == '503'
+    end
+    
+    it "should send Hoptoad message in case OpenStreetMap Node was deleted" do
+      stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/16581933").to_return(:status => 410, :body => "Gone", :headers => {})
+      HoptoadNotifier.should_receive(:notify)
+
+      get(:edit, :id => 16581933)
+      response.code.should == '410'
+    end
+    
+    it "should send Hoptoad message in case OpenStreetMap Node was not found" do
+      stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/16581933").to_return(:status => 404, :body => "Not found", :headers => {})
+      HoptoadNotifier.should_receive(:notify)
+
+      get(:edit, :id => 16581933)
+      response.code.should == '404'
+    end
+  end
 
   describe "action update wheelchair" do
     describe "as anonymous user" do
@@ -126,8 +160,20 @@ describe NodesController do
     
       it "should create CreateJob for given node attributes" do
         lambda{
-            post(:create, :node => {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant'})
-          }.should change(CreateJob, :count).by(1)
+          post(:create, {:node => {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant'}})
+        }.should change(CreateJob, :count).by(1)
+      end
+      
+      it "should create CreateJob for given node when posted with iPhone" do
+        # iPhone 1.1 sends invariant accept header */*
+        http_credentials = Base64.encode64("#{@another_user.email}:password")
+        @request.env["HTTP_ACCEPT"]           = "*/*"
+        @request.env["HTTP_USER_AGENT"]       = "Wheelmap/1.1 CFNetwork/485.13.9 Darwin/11.0.0"
+        @request.env["HTTP_ACCEPT_LANGUAGE"]  = "de-de"
+        @request.env["HTTP_AUTHORIZATION"]    = "Basic #{http_credentials}"
+        lambda{
+          post(:create, {:node => {"lon"=>"13.388226983333330944", "name"=>"Bio COMPANY", "wheelchair"=>"yes", "wheelchair_description"=>"Bio bio", "type"=>"supermarket", "lat"=>"52.52287699999996928"}})
+        }.should change(CreateJob, :count).by(1)
       end
       
       it "should have correct values for CreateJob" do

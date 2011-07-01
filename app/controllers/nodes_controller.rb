@@ -84,7 +84,7 @@ class NodesController < ApplicationController
   def create
     @node = OpenStreetMap::Node.new(params[:node].stringify_keys!)
     if @node.valid?
-      client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.oauth_authorized?
+      client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.app_authorized?
       Delayed::Job.enqueue(CreatingJob.new(@node, current_user, client))
       flash[:track]  = "'Data', 'Create', '#{@node.wheelchair}'"
       flash[:notice] = I18n.t('nodes.create.flash.successfull')
@@ -111,13 +111,15 @@ class NodesController < ApplicationController
 
   # Before filter
   protected
-    
+  
   def gone(exception)
+    HoptoadNotifier.notify(exception,:component => self.class.name, :parameters => params)
     @message = I18n.t('nodes.errors.not_existent')
     render :template => 'shared/error', :status => 410
   end
   
   def not_found(exception)
+    HoptoadNotifier.notify(exception,:component => self.class.name, :parameters => params)
     @message = I18n.t('nodes.errors.not_found')
     render :template => 'shared/error', :status => 404
   end

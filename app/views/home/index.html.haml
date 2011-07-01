@@ -24,6 +24,7 @@
 
 -content_for :javascript do
   = render :partial => 'shared/google_event_tracking'
+  -#= render :partial => 'shared/heatmap'
 
   - if browser_class.include?('trident-7') || browser_class.include?('trident-6')
     :javascript
@@ -40,4 +41,3 @@
         });
         $.cookie('ie_warning', 1);
       }
-      
