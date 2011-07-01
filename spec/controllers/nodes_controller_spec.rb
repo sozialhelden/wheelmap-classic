@@ -44,6 +44,40 @@ describe NodesController do
     
   end
 
+  describe "action edit" do
+    
+    before(:each) do
+     @another_user.should be_app_authorized
+     sign_in @another_user
+     
+     FakeWeb.allow_net_connect = false
+     @full_url = "#{@base_url}/node/16581933"
+    end
+    
+    it "should send Hoptoad message in case OpenStreetMap API times out" do
+      stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/16581933").to_return(:status => 503, :body => "Not Available", :headers => {})
+      HoptoadNotifier.should_receive(:notify)
+
+      get(:edit, :id => 16581933)
+      response.code.should == '503'
+    end
+    
+    it "should send Hoptoad message in case OpenStreetMap Node was deleted" do
+      stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/16581933").to_return(:status => 410, :body => "Gone", :headers => {})
+      HoptoadNotifier.should_receive(:notify)
+
+      get(:edit, :id => 16581933)
+      response.code.should == '410'
+    end
+    
+    it "should send Hoptoad message in case OpenStreetMap Node was not found" do
+      stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/16581933").to_return(:status => 404, :body => "Not found", :headers => {})
+      HoptoadNotifier.should_receive(:notify)
+
+      get(:edit, :id => 16581933)
+      response.code.should == '404'
+    end
+  end
 
   describe "action update wheelchair" do
     describe "as anonymous user" do
