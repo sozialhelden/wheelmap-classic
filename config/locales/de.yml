@@ -204,6 +204,8 @@ de:
       link: Registrieren
       signed_up: "Deine Registrierung war erfolgreich."
       updated: "Dein Benutzerkonto wurde aktualisiert."
+      admin:
+        inactive_signed_up: 'Deine Registrierung war erfolgreich. Jedoch konntest du nicht angemeldet werden weil dein Konto %{reason} ist.'
     sessions: 
       inactive: "Dein Benutzerkonto wurde noch nicht bestätigt. Um es zu Bestätigen klicke bitte auf den Link, den wir dir per E-Mail geschickt haben."
       invalid: "Ungültige E-Mail oder Passwort."
