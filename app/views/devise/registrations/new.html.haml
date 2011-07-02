@@ -4,7 +4,8 @@
     = form.input :password, :label => t('devise.sign_up.form.labels.password'), :hint => false
     = form.input :password_confirmation, :label => t('devise.sign_up.form.labels.password_confirmation')
     
-    = form.input :wants_newsletter, :input_html => {:class => 'newsletter'}, :label => t('devise.sign_up.form.labels.wants_newsletter')
+    -if resource.is_a? User
+      = form.input :wants_newsletter, :input_html => {:class => 'newsletter'}, :label => t('devise.sign_up.form.labels.wants_newsletter')
     
   = form.buttons do
     = form.commit_button t('devise.sign_up.form.submit')
