@@ -48,6 +48,7 @@ de:
   cn: 中文
   common: 
     close: schließen
+  da: Danske
   date: 
     abbr_day_names: 
       - So
@@ -336,6 +337,10 @@ de:
   helpers: 
     select: 
       prompt: "Bitte auswählen"
+    submit: 
+      create: "%{model} anlegen"
+      submit: "%{model} speichern"
+      update: "%{model} aktualisieren"
   home: 
     index: 
       filter: 
