@@ -22,22 +22,39 @@ da:
         odd: "skal være ulige"
         record_invalid: "Validering fejlede: %{errors}"
         taken: "er allerede brugt"
-        too_long: "er for lang (maksimum %{count} tegn)"
+        too_long: "er for langt (maksimum %{count} tegn)"
         too_short: "er for kort (minimum %{count} tegn)"
         wrong_length: "har forkert længde (skulle være %{count} tegn)"
+      models: 
+        user_session: 
+          email: E-mail-adresse
+          password: Adgangskode
+          remember_me: "Forbliv logget inde"
       template: 
         body: "Der var problemer med følgende felter:"
         header: 
-          one: "En fejl forhindrede %{model} i at blive gemt"
-          other: "%{count} fejl forhindrede %{model} i at blive gemt"
+          andre: "%{count} fejl forhindrede %{model} i at blive gemt"
+          et: "En fejl forhindrede %{model} i at blive gemt"
+  application: 
+    require_no_user: 
+      notice: "Du er allerede logget på ..."
+    require_user: 
+      notice: "Du skal logge på for at se denne side."
+  breadcrumbs: 
+    node: 
+      create: "Tilføj nyt sted"
+      edit: "Ret sted"
+    root: wheelmap
   cn: 中文
+  common: 
+    close: Luk
   da: Danske
   date: 
     abbr_day_names: 
       - sø
       - ma
       - ti
-      - "on"
+      - true
       - to
       - fr
       - lø
@@ -65,7 +82,7 @@ da:
       - lørdag
     formats: 
       default: "%d.%m.%Y"
-      long: "%e. %B %Y"
+      long: "%d. %B %Y"
       short: "%e. %b %Y"
     month_names: 
       - ~
@@ -131,35 +148,108 @@ da:
   de: Deutsch
   devise: 
     confirmations: 
-      confirmed: "Din konto er aktiveret og du er nu logget ind."
-      send_instructions: "Om få minutter vil du modtage en email med instruktioner om aktivering af din konto."
+      confirmed: "Din konto er nu aktiveret. Og du er nu logget ind."
+      link: "Ikke modtaget nogen bekræftigelseintrukser?"
+      send_instructions: "Om få minutter vil du modtage en e-mail med instrukser om aktivering af din konto."
+    destroy: 
+      confirm: "Er du sikker?"
+      headline: "Slet konto"
+      link: "Slet nu"
+    edit: 
+      form: 
+        labels: 
+          current_password: "Nuværende adgangskode <i>(vi skal bruge dette for at bekræfte dine ændringer)</i>"
+          email: E-mail
+          password: "Adgangskode <i>(lad dette felt være tomt, hvis du ikke ønsker at ændre dette)</i>"
+          password_confirmation: "Gentag adgangskode"
+        submit: "Gem ændringer"
+      headline: "Ret konto"
     failure: 
-      inactive: "Din konto er ikke bekræftet."
-      invalid: "Email eller kodeord er ikke gyldig."
+      inactive: "Din konto er ikke arkiveret endnu."
+      invalid: "E-mail eller adgangskode er ikke gyldig."
       invalid_token: "Ugyldig token til autorisering."
       locked: "Din konto er låst."
       timeout: "Din session er udløbet. Log ind igen for at kunne fortsætte."
       unauthenticated: "Du skal logge ind for at kunne fortsætte"
       unconfirmed: "Du skal bekræfte din konto for at kunne fortsætte."
+    mailer: 
+      confirmation_instructions: Bekræftigelsesinstrukser
+      reset_password_instructions: "Nulstil adgangskodeinstrukser"
+      unlock_instructions: "Åben låste instrukser"
+    mandatory: "* Skal udfyldes"
+    omniauth_callbacks: 
+      failure: "Kunne ikke autorisere dig fra %{kind} på grund af \"%{reason}\"."
+      success: "Succesfuld autorisation fra  %{kind} kontoen."
+    password_recovery: 
+      form: 
+        labels: 
+          email: E-mail
+        submit: "Nulstil adgangskode"
+      headline: "Glemt adgangskode?"
+    password_reset: 
+      email: 
+        comment: "I tilfælde af du ikke har bestilt en nulstilling af adgangskode, så se bort fra denne e-mail.<br/>Din adgangskode vil ikke blive ændret før du klikker på linket nedenfor og indstiller en ny adgangskode."
+        headline: "Velkommen %{email}"
+        link: "Ændre min adgangskode"
+        text: "En eller anden har bedt om at ændre din adgangskode. Du kan ændre ved at klikke på det følgende link:"
+      form: 
+        labels: 
+          password: "Ny adgangskode"
+          password_confirmation: "Gentag adgangskode"
+        submit: "Nulstil adgangskode"
+      headline: "Nulstil adgangskode"
     passwords: 
-      send_instructions: "Du vil om et øjeblik modtage en email vedrørende nulstilling af kodeord."
-      updated: "Dit kodeord er ændret og du er nu logget ind."
+      link: "Glemt adgangskode?"
+      send_instructions: "Du vil om et øjeblik modtage en e-mail vedrørende nulstilling af kodeord."
+      updated: "Din  adgangskode er nu ændret. Og du er nu logget ind."
     registrations: 
-      destroyed: "Farvel. Din konto er nu lukket."
+      destroyed: "Farvel. Din konto er nu lukket. Vi håber at se dig snart igen."
+      inactive_signed_up: "Du har oprettet en konto nu. Men vi kunne ikke logge dig ind p.g.a din konto er  %{reason}."
+      link: "Opret konto"
       signed_up: "Din registrering er godkedt."
-      updated: "Din profil er opdateret"
+      updated: "Din profil er opdateret."
     sessions: 
+      inactive: "Din konto er endnu ikke blevet aktiveret."
+      invalid: "Ugyldig e-mail eller adgangskode."
+      invalid_token: "Ugyldig autorisation nøgle."
+      link: Login
+      locked: "Din konto er låst."
       signed_in: "Du er nu logget ind."
       signed_out: "Du er nu logget ud."
+      timeout: "Din loginsession er udløbet, login igen for at fortsætte."
+      unauthenticated: "Du skal logge ind eller oprette en konto før du kan fortsætte."
+      unconfirmed: "Du skal have bekræftet din konto før du kan fortsætte."
+    sign_in: 
+      form: 
+        labels: 
+          email: E-mail
+          password: Adgangskode
+          remember_me: "Forbliv logget ind?"
+        submit: Login
+      headline: Login
+    sign_out: 
+      headline: "Log af"
+    sign_up: 
+      form: 
+        labels: 
+          email: E-mail
+          password: Adgangskode
+          password_confirmation: "Gentag adgangskode"
+          wants_newsletter: "Ja tak, lad mig blive løbende orienteret om wheelmap. (Men ikke mere end en gang om måneden)"
+        submit: "Opret konto"
+      headline: "Opret konto"
     unlocks: 
-      send_instructions: "Om få minutter vil du modtage en email med instruktioner om genåbning af din konto."
+      link: "Ej modtaget nogen åben instrukser?"
+      send_instructions: "Om få minutter vil du modtage en email med instrukser om genåbning af din konto."
       unlocked: "Din konto er genåbnet og du er nu logget ind."
   el: Ελληνικά
   en: English
   errors: 
+    dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages: 
       accepted: "skal accepteres"
+      already_confirmed: "var allerede bekræftet, prøv at logge ind"
       blank: "skal udfyldes"
       confirmation: "stemmer ikke overens med bekræftelse"
       empty: "må ikke udelades"
@@ -168,18 +258,103 @@ da:
       exclusion: "er reserveret"
       greater_than: "skal være større end %{count}"
       greater_than_or_equal_to: "skal være større end eller lig med %{count}"
-      inclusion: "er ikke i listen"
+      inclusion: "er ikke en gyldig værdi"
       invalid: "er ikke gyldig"
       less_than: "skal være mindre end %{count}"
       less_than_or_equal_to: "skal være mindre end eller lig med %{count}"
       not_a_number: "er ikke et tal"
       not_an_integer: "er ikke et heltal"
+      not_found: "ikke fundet"
+      not_locked: "var ikke låst"
+      not_saved: 
+        Et: "1 fejl gjorde at denne %{resource} ikke kunne gemmes being:"
+        andet: "%{count} fejl gjorde at denne %{resource} ikke kunne gemmes:"
       odd: "skal være ulige"
-      too_long: "er for lang (maksimum %{count} tegn)"
+      taken: "er allerede blevet taget"
+      too_long: "er for langt (maksimum %{count} tegn)"
       too_short: "er for kort (minimum %{count} tegn)"
       wrong_length: "har forkert længde (skulle være %{count} tegn)"
+    template: 
+      body: "Der var problemer med følgende felter:"
+      header: 
+        Andet: "%{count} fejl gjorde at denne %{model} ikke kunne gemmes"
+        Et: "1 fejl gjorde at denne %{model} ikke kunne gemmes"
   es: Español
+  flash: 
+    actions: 
+      create: 
+        notice: "%{resource_name} blev succesfuldt lavet."
+      destroy: 
+        alert: "%{resource_name} kunne ikke slettes."
+        notice: "%{resource_name} blev succesfuldt slettet."
+      update: 
+        notice: "%{resource_name}  blev succesfuldt opdateret."
+  form: 
+    show_fully_accessible_places: kørestoltilgængeligt
+    show_limited_accessible_places: "delvis kørestoltilgængeligt"
+    show_places_without_status: "ukendt status"
+    show_unaccessible_places: "ikke kørestol tilgængeligt"
+  formtastic: 
+    hints: 
+      lat: "Flyt markøren på kortet til den korrekte position"
+      osm_username: "Ikke medlem endnu?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Lav en Openstreetmap konto nu</a>"
+      password: "(efterlad feltet tomt, hvis du ikke ønsker at ændre dette)"
+      phone: "For eksempel: +45 12345678"
+      website: "For eksempel: http://www.example.com"
+    labels: 
+      category: "Kategori:"
+      city: "By:"
+      create: "Opret sted"
+      email: E-Mail
+      housenumber: Nr.
+      lat: Breddegrad
+      lon: Længdegrad
+      name: "Navn:"
+      osm_password: "OSM adgangskode"
+      osm_username: "OSM kontonavn"
+      password: Adgangskode
+      password_confirmation: "Gentag adgangskode"
+      phone: "Telefon:"
+      postcode: "Postnummer:"
+      reset: Nulstil
+      save: Gem
+      street: "Vej:"
+      type: "Type:"
+      website: "Hjemmeside:"
+      wheelchair: " Kørestoltilgængeligt?"
+      wheelchair_description: "Tilgængeligheds kommentar:"
+    titles: 
+      basic: Basisinformation
+      optional: "Mere information <span class=\"addition\">(alle felter er valgfrit)</span>"
   fr: Français
+  global: 
+    form_validation_error: "Bemærk fejllisten nedenfor."
+  header: 
+    meta: 
+      description: "Find kørestolstilgængelige steder - wheelmap.org"
+      homepage: Hjemmeside
+      keywords: "kørestolstilgængelige steder find søgemarkering"
+      search: Søg
+    navigation: 
+      blog: Blog
+      feedback: Feedback
+      home: Start
+      how_to_add_a_place: "Hvordan tilføjer jeg steder?"
+      imprint: Om
+      logged_in_as: "Logget ind som:"
+      login: Login
+      logout: "Log ud"
+      suggestions: Forslag
+      tolk: Oversættelser
+      what_is_barrier_free: "Hvad betyder \"kørestoltilgængeligt\"?"
+      what_is_wheelmap: "Hvad er wheelmap?"
+    searchbar: 
+      add_place: "Tilføj endnu et sted"
+      find: Find
+      placeholder: "Fx Sunset Boulevard San Francisco eller Brandenburg Gate Berlin"
+      title_add_place: "Tilføj et nyt sted på denne position nu!"
+    tagline: "Wheelmap logo"
+    title: "Wheelmap - find kørestolstilgængelige steder"
   helpers: 
     select: 
       prompt: Vælg...
@@ -187,9 +362,72 @@ da:
       create: "Opret %{model}"
       submit: "Gem %{model}"
       update: "Opdater %{model}"
+  home: 
+    index: 
+      filter: 
+        category: "Kategori:"
+        wheelchair: "Kørestoltilgængeligt? (hvad betyder dette?)"
+      ie: 
+        action: 
+          ignore: Ignorer
+          upgrade: "Opdaterer browser"
+        warning: 
+          headline: "Vi beklager meget!"
+          message: "Det ser ud til at du bruger Internet Explorer. Wheelmap behøver en browser der bedre kan håndtere webstandarder. Brug fx Firefox, Chrome, Safari eller Opera"
+      link: 
+        node: 
+          create: "Tilføj nyt sted"
   is: Íslenska
   it: Italiano
   jp: 日本
+  layouts: 
+    application: 
+      banner: 
+        alt: "Et projekt af Sozialhelden.de"
+  node: 
+    address: 
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
+    tags: 
+      phone: "Telefon:"
+      website: "Hjemmeside:"
+  nodes: 
+    create: 
+      flash: 
+        not_successfull: "Ups, dit input var enten ukorrekt eller ufuldstændigt."
+        successfull: " Din tilføjelse blev gemt succesfuldt og vil være online snart. Tak for bidrag."
+    edit: 
+      header: 
+        title: "Ret sted:  %{node} | wheelmap.org"
+      link: 
+        large_map: "&laquo; Fortryd"
+    errors: 
+      default: "Ups, et eller andet gik galt. Vi er blevet informeret om dette!"
+      not_authorized: "Underskyld, men autorisationen fejlede"
+      not_available: "Undskylder meget, men denne side er midlertidig ikke tilgængelig."
+      not_existent: "Undskylder meget, dette sted findes ikke mere."
+      not_found: "Undskylder, men siden blev ikke fundet."
+      param_missing: "Tilføj venligst en søgeterm."
+    flash: 
+      authorize_wheelmap: "Du behøver en OpenStreetMap konto for at rette i data."
+    new: 
+      header: 
+        title: "Nyt sted | wheelmap.org"
+      link: 
+        large_map: "&laquo; Fortryd"
+    show: 
+      header: 
+        title: "Sted: %{node} | wheelmap.org"
+      link: 
+        edit_node: "Ret sted"
+        large_map: Forstør
+        report_bug: "Fejlrapporterer et problem"
+    update: 
+      flash: 
+        not_successfull: "Ups, dit input var ikke korrekt eller fuldigstændigt."
+        successfull: "Mange tak, din ændring blev gemt succesfuldt og vil være online at se snart."
+    update_wheelchair: 
+      successfull: "Status for \"%{name}\" er blevet ændret til \"%{status} kørestolstilgængeligt\" og vil snart kunne ses online."
   number: 
     currency: 
       format: 
@@ -197,11 +435,15 @@ da:
         format: "%u %n"
         precision: 2
         separator: ","
+        significant: 0
+        strip_insignificant_zeros: 0
         unit: DKK
     format: 
       delimiter: "."
       precision: 3
       separator: ","
+      significant: 0
+      strip_insignificant_zeros: 0
     human: 
       decimal_units: 
         format: "%n %u"
@@ -225,21 +467,220 @@ da:
           kb: KB
           mb: MB
           tb: TB
+  oauth: 
+    application: 
+      connect: 
+        headline: "Du skal forbinde din konto med din OpenStreetMap konto før du kan oprette eller modificere steder på wheelmap.org."
+    callback: 
+      notice: "Din wheelmap konto er nu forbundet med OpenStreetMap kontoen %{user}."
+  or: eller
+  place: 
+    andre: "%{count} steder"
+    et: "%{count} sted"
+  poi: 
+    category: 
+      accommodation: Overnatning
+      education: Uddannelse
+      food: Mad
+      government: Myndigheder
+      leisure: Fritid
+      misc: Diverse
+      money_post: "Bank & Postkontor"
+      public_transfer: "Offentlig trafik"
+      shopping: Shopping
+      sport: Sport
+      tourism: Turisme
+      unknown: Ukendt
+    name: 
+      accommodation: 
+        beach_resort: Strandhotel
+        bed_and_breakfast: "Bed and breakfast"
+        camp_site: Campingplads
+        caravan_site: Caravancamping
+        chalet: Chalet
+        guest_house: Gæstehus
+        hostel: Vandrehjem
+        hotel: Hotel
+        motel: Motel
+      education: 
+        college: Gymnasium
+        kindergarten: Børnehave
+        library: Bibliotek
+        museum: Museum
+        school: Skole
+        university: Universitet
+      food: 
+        bar: Bar
+        biergarten: Ølhave
+        cafe: Cafe
+        drinking_water: Drikkevand
+        fast_food: "Fast Food"
+        pub: Værtshus
+        restaurant: Restaurant
+      government: 
+        courthouse: Domstol
+        embassy: Ambassade
+        public_building: "Offentlig bygning"
+        townhall: Rådhus
+      leisure: 
+        arena: Sportsarena
+        cinema: Biograf
+        gallery: Galleri
+        nightclub: Natklub
+        sauna: Sauna
+        theatre: Teater
+        zoo: Zoo
+      misc: 
+        doctors: Læge
+        hospital: Hospital
+        pharmacy: " Apotek"
+        place_of_worship: "Religiøs tilbedelsessted"
+        toilets: Toiletter
+        veterinary: Dyrlæge
+      money_post: 
+        atm: Pengeautomat
+        bank: Bank
+        bureau_de_change: Valutaveksling
+        post_box: Postkasse
+        post_office: Postkontor
+      public_transfer: 
+        aerodrome: Lufthavn
+        bicycle_parking: Cykelparkering
+        bicycle_rental: Cykeludlejning
+        boatyard: Lystbådehavn
+        bus_station: Busstation
+        bus_stop: Busstop
+        cable_car: Svævebane
+        car_rental: Biludlejning
+        car_sharing: Delebil
+        chair_lift: Stolelift
+        ferry: Færge
+        ferry_terminal: Færgeterminal
+        fuel: Tankstation
+        halt: Trinbræt
+        light_rail: Letbane
+        parking: Parkering
+        parking_aisle: Parkeringsvej
+        platform: Platform
+        station: Undergrundsbane
+        subway_entrance: "Undergrundsbane indgang"
+        terminal: Lufthavnsterminal
+        tram_stop: Sporvognsstop
+      shopping: 
+        alcohol: Vinhandler
+        bakery: Bager
+        beverages: Drikkevarer
+        bicycle: Cykelforhandler
+        books: Boghandler
+        butcher: Slagter
+        clothes: Tøjbutik
+        computer: Computerbutik
+        convenience: Minimarked
+        department_store: Stormagasin
+        doityourself: Byggemarked
+        dry_cleaning: Tøjenseri
+        electronics: Elektronikbutik
+        florist: Blomsterhandler
+        furniture: Møbelhandler
+        garden_centre: Havecenter
+        hairdresser: Frisør
+        hardware: Værktøjsbutik
+        kiosk: Kiosk
+        laundry: Vaskeri
+        mall: Indkøbscenter
+        optician: Optiker
+        shoes: Skobutik
+        supermarket: Supermarked
+      sport: 
+        sports_centre: Sportscenter
+        stadium: Stadion
+        swimming: Svømming
+        swimming_pool: Svømmepool
+      tourism: 
+        archaeological_site: "Arkæologisk sted"
+        arts_centre: Kunstcenter
+        artwork: Kunstværk
+        attraction: Attraktion
+        battlefield: Slagmark
+        beach: Strand
+        beacon: Fyrtårn
+        castle: Slot
+        cave_entrance: Huleindgang
+        information: Turistinformation
+        memorial: Mindesmærke
+        theme_park: Forlystelsespark
+        tower: Tårn
+        viewpoint: Udsigtspunkt
+      unknown: 
+        unknown: Ukendt
+  profile: 
+    edit: 
+      application: 
+        oauth: 
+          connected: "Status: forbundet"
+          grant: "Forbind nu"
+          not_connected: "Status: ikke forbundet"
+          revoke: Afbryd
+      headline: "Ret din profil"
   pt: Português
   pt-PT: Português
   ru: Русский
   se: Svenska
+  search: 
+    index: 
+      search: 
+        for: "Søger efter \"%{q}\""
+        not_found: "Ingen steder kunne findes!"
+  statistics: Statistik
   support: 
     array: 
       last_word_connector: " og "
+      sentence_connector: og
+      skip_last_comma: true
       two_words_connector: " og "
       words_connector: ", "
     select: 
       prompt: Vælg...
   time: 
+    am: am
     formats: 
       default: "%e. %B %Y, %H:%M"
       long: "%A, %e. %B %Y, %H:%M"
       short: "%e. %b %Y, %H:%M"
+    pm: pm
   tlh: Klingon
   tr: Türkçe
+  user_sessions: 
+    create: 
+      activation: 
+        notice: "Din konto er nu aktiveret!"
+      error: 
+        notice: "E-mail og adgangskode matcher ikke."
+      notice: "Du er nu inde!"
+    destroy: 
+      notice: "Farvel, kom snart igen!"
+    new: 
+      email: E-mail-adresse
+      login: Login
+      login_with_twitter: "Login med Twitter"
+      password: Adgangskode
+      remember_me: "Forbliv logget ind"
+  wheelchairstatus: 
+    limited: "delvis kørestolstilgængeligt"
+    ? "no"
+    : "Ikke kørestolstilgængeligt"
+    unknown: "kørestolstilgængeligt ukendt"
+    ? "yes"
+    : "Fuldt kørestoltilgængeligt"
+  wheelmap: 
+    itunes: 
+      alt: "AppStore logo"
+      title: "Download iPhone App!"
+    logo: 
+      alt: "Wheelmap logo - find kørestolstilgængelige steder"
+      title: "Wheelmap - find kørestolstilgængelige steder"
+    what_is: 
+      fully_accessible: "Indgangstrin er ikke højere end 7 cm, alle lokaler er tilgængelige for kørestolsbrugere (uden undtagelse), handicaptoilet forefindes tillige"
+      limited_accessible: "Indgangstrin er ikke højere end 7 cm, de vigtigste lokaler er tilgængelige for kørestolsbrugere"
+      not_accessible: "Indgangstrin er højere end 7 cm eller der er trappetrin til indgang, eller mest de vigtigste lokaler er ikke tilgængelige for kørestolsbrugere"
+      unknown_accessible: "Status for kørestolstilgængelighed er ukendt"
