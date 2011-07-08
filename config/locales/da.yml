@@ -33,8 +33,8 @@ da:
       template: 
         body: "Der var problemer med følgende felter:"
         header: 
-          andre: "%{count} fejl forhindrede %{model} i at blive gemt"
-          et: "En fejl forhindrede %{model} i at blive gemt"
+          one: "En fejl forhindrede %{model} i at blive gemt"
+          other: "%{count} fejl forhindrede %{model} i at blive gemt"
   application: 
     require_no_user: 
       notice: "Du er allerede logget på ..."
@@ -267,8 +267,8 @@ da:
       not_found: "ikke fundet"
       not_locked: "var ikke låst"
       not_saved: 
-        Et: "1 fejl gjorde at denne %{resource} ikke kunne gemmes being:"
-        andet: "%{count} fejl gjorde at denne %{resource} ikke kunne gemmes:"
+        one: "1 fejl gjorde at denne %{resource} ikke kunne gemmes being:"
+        other: "%{count} fejl gjorde at denne %{resource} ikke kunne gemmes:"
       odd: "skal være ulige"
       taken: "er allerede blevet taget"
       too_long: "er for langt (maksimum %{count} tegn)"
@@ -277,8 +277,8 @@ da:
     template: 
       body: "Der var problemer med følgende felter:"
       header: 
-        Andet: "%{count} fejl gjorde at denne %{model} ikke kunne gemmes"
-        Et: "1 fejl gjorde at denne %{model} ikke kunne gemmes"
+        one: "1 fejl gjorde at denne %{model} ikke kunne gemmes"
+        other: "%{count} fejl gjorde at denne %{model} ikke kunne gemmes"
   es: Español
   flash: 
     actions: 
@@ -475,8 +475,8 @@ da:
       notice: "Din wheelmap konto er nu forbundet med OpenStreetMap kontoen %{user}."
   or: eller
   place: 
-    andre: "%{count} steder"
-    et: "%{count} sted"
+    one: "%{count} sted"
+    other: "%{count} steder"
   poi: 
     category: 
       accommodation: Overnatning
