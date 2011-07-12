@@ -48,7 +48,7 @@ da:
   cn: 中文
   common: 
     close: Luk
-  da: Danske
+  da: Dansk
   date: 
     abbr_day_names: 
       - sø
@@ -200,7 +200,7 @@ da:
       headline: "Nulstil adgangskode"
     passwords: 
       link: "Glemt adgangskode?"
-      send_instructions: "Du vil om et øjeblik modtage en e-mail vedrørende nulstilling af kodeord."
+      send_instructions: "Du vil om et øjeblik modtage en e-mail vedrørende nulstilling af adgangskode."
       updated: "Din  adgangskode er nu ændret. Og du er nu logget ind."
     registrations: 
       destroyed: "Farvel. Din konto er nu lukket. Vi håber at se dig snart igen."
@@ -290,10 +290,10 @@ da:
       update: 
         notice: "%{resource_name}  blev succesfuldt opdateret."
   form: 
-    show_fully_accessible_places: kørestoltilgængeligt
-    show_limited_accessible_places: "delvis kørestoltilgængeligt"
+    show_fully_accessible_places: kørestolstilgængeligt
+    show_limited_accessible_places: "delvis kørestolstilgængeligt"
     show_places_without_status: "ukendt status"
-    show_unaccessible_places: "ikke kørestol tilgængeligt"
+    show_unaccessible_places: "ikke kørestolstilgængeligt"
   formtastic: 
     hints: 
       lat: "Flyt markøren på kortet til den korrekte position"
@@ -321,7 +321,7 @@ da:
       street: "Vej:"
       type: "Type:"
       website: "Hjemmeside:"
-      wheelchair: " Kørestoltilgængeligt?"
+      wheelchair: " Kørestolstilgængeligt?"
       wheelchair_description: "Tilgængeligheds kommentar:"
     titles: 
       basic: Basisinformation
@@ -346,7 +346,7 @@ da:
       logout: "Log ud"
       suggestions: Forslag
       tolk: Oversættelser
-      what_is_barrier_free: "Hvad betyder \"kørestoltilgængeligt\"?"
+      what_is_barrier_free: "Hvad betyder \"kørestolstilgængeligt\"?"
       what_is_wheelmap: "Hvad er wheelmap?"
     searchbar: 
       add_place: "Tilføj endnu et sted"
@@ -366,7 +366,7 @@ da:
     index: 
       filter: 
         category: "Kategori:"
-        wheelchair: "Kørestoltilgængeligt? (hvad betyder dette?)"
+        wheelchair: "Kørestolstilgængeligt? (hvad betyder dette?)"
       ie: 
         action: 
           ignore: Ignorer
@@ -640,7 +640,7 @@ da:
       two_words_connector: " og "
       words_connector: ", "
     select: 
-      prompt: Vælg...
+      prompt: Vælg
   time: 
     am: am
     formats: 
