@@ -1,3 +1,12 @@
+OpenLayers.Lang.da = { 
+  'wheelchair_label_yes': 'Fuldt kørestoltilgængeligt',
+  'wheelchair_label_limited': 'delvis kørestolstilgængeligt',
+  'wheelchair_label_no': 'Ikke kørestolstilgængeligt',
+  'wheelchair_label_unknown': 'ukendt',
+  'wheelchair_update_button': 'Gem',
+  'more_information': 'mere ...',
+  'wheelchair_help': 'Kørestolstilgængeligt? (Hjælp)'
+};
 OpenLayers.Lang.de = { 
   'wheelchair_label_yes': 'rollstuhlgerecht',
   'wheelchair_label_limited': 'teilweise rollstuhlgerecht',
