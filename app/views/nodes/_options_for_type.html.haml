@@ -1,12 +1,15 @@
 %optgroup{:label => t("poi.category.unknown"), :class => "category unknown"}
   %option{:label => t("poi.name.unknown.unknown"), :value => nil, :disabled => :disabled}>
     =t("poi.name.unknown.unknown")
-- Amenities.keys.sort_by{|key| I18n.t("poi.category.#{key}")}.each do |category|
-  %optgroup{:label => t("poi.category.#{category}"), :class => "category #{category}"}
-    - Amenities[category].sort_by{|key| t("poi.name.#{category}.#{key}")}.each do |element|
-      - if options_for_type.to_s == element.to_s
-        %option{:label => t("poi.name.#{category}.#{element}"), :value => element, :selected => 'selected' }>
-          =t("poi.name.#{category}.#{element}")
+    
+    
+-Category.all.sort_by{|c| I18n.t("poi.category.#{c.identifier}")}.each do |category|
+  %optgroup{:label => t("poi.category.#{category.identifier}"), :class => "category #{category.identifier}"}
+    -category.node_types.sort_by{|n| t("poi.name.#{category.identifier}.#{n.identifier}")}.each do |node_type|
+      - if options_for_type.to_s == node_type.identifier
+        %option{:label => t("poi.name.#{category.identifier}.#{node_type.identifier}"), :value => node_type.identifier, :selected => 'selected' }>
+          =t("poi.name.#{category.identifier}.#{node_type.identifier}")
       - else
-        %option{:label => t("poi.name.#{category}.#{element}"), :value => element }>
-          =t("poi.name.#{category}.#{element}")
+        %option{:label => t("poi.name.#{category.identifier}.#{node_type.identifier}"), :value => node_type.identifier }>
+          =t("poi.name.#{category.identifier}.#{node_type.identifier}")
+    

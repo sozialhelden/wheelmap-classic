@@ -21,6 +21,7 @@ group :default do
   gem "tolk", :git => "git://github.com/ZenCocoon/tolk.git", :branch => "rails3"
   gem "routing-filter"
   gem 'newrelic_rpm', '~>3.0.1'
+  gem 'rake', '0.9.2'
 end
 
 group :test, :development do
