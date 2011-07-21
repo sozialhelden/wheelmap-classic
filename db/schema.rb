@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110513152131) do
+ActiveRecord::Schema.define(:version => 20110717073922) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -103,21 +103,27 @@ ActiveRecord::Schema.define(:version => 20110513152131) do
     t.integer  "category_id"
     t.string   "identifier"
     t.string   "osm_key"
+    t.string   "osm_value"
     t.string   "icon"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "node_types", ["id", "category_id"], :name => "index_node_types_on_id_and_category_id"
+  add_index "node_types", ["osm_key", "osm_value"], :name => "index_node_types_on_osm_key_and_osm_value"
+
   create_table "pois", :primary_key => "osm_id", :options=>'ENGINE=MyISAM', :force => true do |t|
-    t.integer  "version",                   :null => false
-    t.text     "tags",                      :null => false
-    t.point    "geom",       :limit => nil, :null => false
-    t.integer  "status",     :limit => 3
+    t.integer  "version",                     :null => false
+    t.text     "tags",                        :null => false
+    t.point    "geom",         :limit => nil, :null => false
+    t.integer  "status",       :limit => 3
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "node_type_id"
   end
 
   add_index "pois", ["geom"], :name => "index_pois_on_geom", :spatial => true
+  add_index "pois", ["node_type_id"], :name => "index_pois_on_node_type_id"
   add_index "pois", ["osm_id", "status", "created_at"], :name => "pagination"
   add_index "pois", ["osm_id"], :name => "index_pois_on_osm_id"
   add_index "pois", ["status"], :name => "index_pois_on_status"
