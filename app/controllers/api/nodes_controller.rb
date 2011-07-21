@@ -1,10 +1,12 @@
 class Api::NodesController < Api::ApiController
-  defaults :resource_class => Poi
+  defaults :resource_class => Poi, :collection_name => 'pois'
 
   actions :index, :show, :update, :create
  
   custom_actions :collection => :search
  
+  optional_belongs_to :category
+  optional_belongs_to :node_type
   
   
   # Make sure user authenticates itself using an api_key

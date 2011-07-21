@@ -61,6 +61,10 @@ Wheelmap::Application.routes.draw do
       resources :nodes,       :only  => [:index, :show]
       resources :node_types, :only  => [:index, :show]
     end
+    
+    resources :node_types, :only  => [:index, :show] do
+      resources :nodes,       :only  => [:index, :show]
+    end
 
     resources :locales,     :only => :index
     resources :node_types,  :only => [:index, :show]
