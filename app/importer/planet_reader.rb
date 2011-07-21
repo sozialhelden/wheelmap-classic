@@ -18,6 +18,14 @@ class PlanetReader
     Crewait.start_waiting
     @to_be_deleted = []
   end
+  
+  def values
+    @values ||= NodeType.all.map(&:osm_value).uniq
+  end
+  
+  def keys
+    @keys ||= NodeType.all.map(&:osm_key).uniq
+  end
 
   # Hauptmethode. Liest die Datei und verarbeitet sie.
   #
@@ -133,7 +141,12 @@ class PlanetReader
   # Verarbeitet einen POI.
   #
   def process_poi
+    @poi[:tags].each do |k,v|
+      @poi[:node_type_id] ||= NodeType.combination[k.to_s][v.to_s] rescue nil
+    end
+
     status = @poi[:tags]['wheelchair'] || 'unknown'
+
     @poi[:status] = Poi::WHEELCHAIR_STATUS_VALUES[status.to_sym]
     return unless @poi[:status]
     if !@osmchange
