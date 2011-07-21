@@ -1,7 +1,8 @@
 class Category < ActiveRecord::Base
-  
-  has_many :node_types
-  
+
+  has_one :node_type
+  has_many :pois, :through => :node_type
+
   validates :identifier, :presence => true
 
   acts_as_api
@@ -15,9 +16,5 @@ class Category < ActiveRecord::Base
   def localized_name
     I18n.t("poi.category.#{identifier}")
   end
-  
-  # def nodes
-  #   Poi.scoped({:conditions => ['type IN (?)', Amenities[self.category_id]]})
-  # end
   
 end

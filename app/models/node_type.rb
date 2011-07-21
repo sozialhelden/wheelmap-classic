@@ -1,9 +1,14 @@
 class NodeType < ActiveRecord::Base
   include ActionView::Helpers::AssetTagHelper
   
+  cattr_accessor :combination
+
+  has_many :pois
   belongs_to :category
   
   validates :identifier, :presence => true
+  validate :category_id, :presence => true
+  
   
   acts_as_api
   
@@ -23,4 +28,18 @@ class NodeType < ActiveRecord::Base
     "/images/icons/#{read_attribute(:icon) || 'unknown'}.png"
   end
   
+  def self.combination
+    return @@combination if @@combination
+    keys = NodeType.all.map(&:osm_key).uniq.sort
+    @@combination = {}
+    keys.each do |osm_key|
+      values = NodeType.all(:conditions => {:osm_key => osm_key})
+      values.each do |value|
+        osm_value = value.osm_value
+        @@combination[osm_key] ||= {}
+        @@combination[osm_key][osm_value] = value.id
+      end
+    end
+    @@combination
+  end
 end

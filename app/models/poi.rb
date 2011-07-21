@@ -36,11 +36,15 @@ class Poi < ActiveRecord::Base
    end
   
   WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
+  
+  belongs_to :node_type
 
     
   validate :relevant?
   
   before_save :set_status
+  before_save :set_node_type
+  before_save :set_updated_at
   
   # Spezielle Find-Methode fuer den Zugriff auf alle POIs in einer 
   # Bounding-Box. Fruehere Versionen von GeoRuby hatten dazu etwas
@@ -56,6 +60,9 @@ class Poi < ActiveRecord::Base
   scope :with_status, lambda {|status| {:conditions => {:status => status}}}
   #scope :search,      lambda {|search| {:conditions => ['tags LIKE ?', "%#{search}%"]}}
   scope :search,      lambda {|search| {:conditions => ['MATCH (tags) AGAINST  (? IN BOOLEAN MODE)', search]}}
+  
+  scope :with_node_type, :conditions => 'node_type_id IS NOT NULL'
+  scope :without_node_type, :conditions => 'node_type_id IS NULL'
   
   scope :within_bbox, lambda {|left, bottom, right, top|{
     :conditions => "MBRContains(GeomFromText('POLYGON(( \
@@ -263,5 +270,16 @@ class Poi < ActiveRecord::Base
   
   def set_status
     self.status = WHEELCHAIR_STATUS_VALUES[wheelchair.to_sym]
+  end
+    
+  def set_node_type
+    self.node_type = nil
+    self.tags.each do |k,v|
+      self.node_type_id ||= NodeType.combination[k][v] rescue nil
+    end
+  end
+  
+  def set_updated_at
+    self.updated_at = Time.now
   end
 end
