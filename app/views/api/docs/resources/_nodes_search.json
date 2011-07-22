@@ -18,8 +18,14 @@
       "id":838558220,
       "lat":52.5207743,
       "lon":13.4094824,
-      "node_type_id":24,
-      "category_id":2,
+      "node_type":{
+        "id":24,
+        "identifier":"cafe"
+      },      
+      "category":{
+        "id":2,
+        "identifier":"food"
+      }
       "name":"Berliner Fernsehturm",
       "wheelchair":"no",
       "wheelchair_description":null,

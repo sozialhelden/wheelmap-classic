@@ -17,43 +17,61 @@
       "id":1,
       "identifier":"veterinary",
       "icon":"/images/icons/hospital.png",
-      "category_id":6,
-      "localized_name":"Tierarzt"
+      "localized_name":"Tierarzt",
+      "category":{
+        "id": 6,
+        "identifier": "misc"
+      }
     },
     {
       "id":3,
       "identifier":"public_building",
       "icon":"/images/icons/bank.png",
-      "category_id":3,
-      "localized_name":"\u00d6ffentliches Geb\u00e4ude"
+      "localized_name":"\u00d6ffentliches Geb\u00e4ude",
+      "category":{
+        "id": 3,
+        "identifier": "government"
+      }
     },
     {
       "id":23,
       "identifier":"hardware",
       "icon":"/images/icons/wrench.png",
-      "category_id":1,
-      "localized_name":"Eisenwarenladen"
+      "localized_name":"Eisenwarenladen",
+      "category":{
+        "id": 1,
+        "identifier": "shopping"
+      }
     },
     {
       "id":7,
       "identifier":"atm",
       "icon":"/images/icons/credit-cards.png",
-      "category_id":2,
-      "localized_name":"Geldautomat"
+      "localized_name":"Geldautomat",
+      "category":{
+        "id": 1,
+        "identifier": "bank"
+      }
     },
     {
       "id":42,
       "identifier":"convenience",
       "icon":"/images/icons/shopping-basket.png",
-      "category_id":1,
-      "localized_name":"Sp\u00e4tkauf"
+      "localized_name":"Sp\u00e4tkauf",
+      "category":{
+        "id": 1,
+        "identifier": "shopping"
+      }
     },
     {
       "id":667,
       "identifier":"butcher",
       "icon":"/images/icons/shopping-basket.png",
-      "category_id":1,
-      "localized_name":"Fleischer"
+      "localized_name":"Fleischer",
+      "category":{
+        "id": 1,
+        "identifier": "shopping"
+      }
     }
   ]
 }
