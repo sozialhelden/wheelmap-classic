@@ -18,7 +18,7 @@
                                                             'osm_id' => node.osm_id,
                                                             'type' => node.type,
                                                             'category' => node.category.try(:identifier),
-                                                            'icon' => image_path("#{node.icon}.png")).reject{|k,v| v.blank?} %>
+                                                            'icon' => node.icon).reject{|k,v| v.blank?} %>
                   <%- count = 0 -%>
                   <%- nodes_to_render.each do |k,v| -%>
                     <%- count += 1 %>
