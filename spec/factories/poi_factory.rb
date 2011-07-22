@@ -8,6 +8,7 @@ Factory.sequence :version do |n|
 end
 
 Factory.define :poi do |p|
+  p.osm_id {Factory.next :version}
   p.lat 52.0
   p.lon 13.4
   p.version { Factory.next :version }

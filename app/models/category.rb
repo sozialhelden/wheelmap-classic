@@ -1,7 +1,7 @@
 class Category < ActiveRecord::Base
 
-  has_one :node_type
-  has_many :pois, :through => :node_type
+  has_many :node_types, :dependent => :nullify
+  has_many :pois, :through => :node_types
 
   validates :identifier, :presence => true
 
@@ -13,8 +13,11 @@ class Category < ActiveRecord::Base
     template.add :localized_name
   end
   
+  api_accessible :id do |template|
+    template.add :id
+  end
+  
   def localized_name
     I18n.t("poi.category.#{identifier}")
   end
-  
 end

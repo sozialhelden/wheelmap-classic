@@ -23,7 +23,8 @@ describe Api::NodesController do
   
   describe 'index action' do
     before :each do
-      @nodes = [Factory.create(:poi), Factory.create(:poi)]
+      Poi.delete_all
+      @nodes = [Factory.create(:poi, :osm_id => 1), Factory.create(:poi, :osm_id => 2)]
     end
     
     describe 'format json' do

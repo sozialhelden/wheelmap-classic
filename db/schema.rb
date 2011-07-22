@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(:version => 20110717073922) do
   end
 
   add_index "pois", ["geom"], :name => "index_pois_on_geom", :spatial => true
-  add_index "pois", ["node_type_id"], :name => "index_pois_on_node_type_id"
+  add_index "pois", ["node_type_id", "osm_id"], :name => "index_pois_on_node_type_id_and_osm_id"
   add_index "pois", ["osm_id", "status", "created_at"], :name => "pagination"
   add_index "pois", ["osm_id"], :name => "index_pois_on_osm_id"
   add_index "pois", ["status"], :name => "index_pois_on_status"
