@@ -51,6 +51,10 @@ GEM
       activemodel (= 3.0.3)
       activesupport (= 3.0.3)
     activesupport (3.0.3)
+    acts_as_api (0.3.6)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      rack (>= 1.1.0)
     addressable (2.2.4)
     arel (2.0.9)
     bcrypt-ruby (2.1.4)
@@ -228,6 +232,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_api
   capistrano
   capistrano-ext
   capybara

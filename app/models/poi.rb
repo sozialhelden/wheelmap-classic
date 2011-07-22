@@ -15,6 +15,8 @@ class Poi < ActiveRecord::Base
 
   validate :relevant?
   
+  serialize :tags
+  
   before_save :set_status
   before_save :set_node_type
   before_save :set_updated_at
@@ -157,7 +159,7 @@ class Poi < ActiveRecord::Base
   end
   
   def headline
-    self.name || I18n.t("poi.name.#{self.category}.#{self.type}")
+    self.name || I18n.t("poi.name.#{self.category.identifier}.#{self.type}")
   end
   
   def url

@@ -39,7 +39,6 @@ class NodesController < ApplicationController
   end
   
   def show
-    # @node = OpenStreetMap.get_node(params[:id])
     @node = Poi.find(params[:id])
   end
   
