@@ -1,4 +1,5 @@
 #api_docs
+  = render :partial => 'api/docs/resource_links'
   %h2 Resource Node
   %article.doc-block
     .resource
@@ -184,6 +185,3 @@
           %pre http://wheelmap.org/api/nodes/19?api_key=api_key
           %h4#node_representation_json Example node representation. (application/json)
           %pre=render :partial => 'node.json'
-          
-
-  = render :partial => 'api/docs/resource_links'
