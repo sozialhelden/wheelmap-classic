@@ -15,6 +15,7 @@ class Category < ActiveRecord::Base
   
   api_accessible :id do |template|
     template.add :id
+    template.add :identifier
   end
   
   def localized_name
