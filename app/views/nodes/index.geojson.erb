@@ -17,7 +17,7 @@
                                                             'wheelchair' => node.wheelchair,
                                                             'osm_id' => node.osm_id,
                                                             'type' => node.type,
-                                                            'category' => node.category,
+                                                            'category' => node.category.try(:identifier),
                                                             'icon' => image_path("#{node.icon}.png")).reject{|k,v| v.blank?} %>
                   <%- count = 0 -%>
                   <%- nodes_to_render.each do |k,v| -%>

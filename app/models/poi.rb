@@ -21,11 +21,11 @@ class Poi < ActiveRecord::Base
      t.add :name
      t.add :wheelchair
      t.add :wheelchair_description
-     t.add :node_type_id
+     t.add :node_type, :template => :id
      t.add :lat
      t.add :lon
      t.add :id
-     t.add :category_id
+     t.add :category, :template => :id
      t.add :street
      t.add :street
      t.add :housenumber
@@ -37,10 +37,12 @@ class Poi < ActiveRecord::Base
   
   WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
   
-  belongs_to :node_type
+  belongs_to :node_type, :touch => false, :include => :category
+  has_one :category, :through => :node_type
 
-    
   validate :relevant?
+  
+  serialize :tags
   
   before_save :set_status
   before_save :set_node_type
@@ -69,11 +71,7 @@ class Poi < ActiveRecord::Base
                     #{left} #{bottom}, #{right} #{bottom}, \
                     #{right} #{top}, #{left} #{top}, \
                     #{left} #{bottom}))'), pois.geom)" } }
-  
-  def node_type_id
-    NodeType.find_by_identifier(type).try(:id)
-  end
-  
+    
   def self.bbox(bounding_box_string)
     left, bottom, right, top = bounding_box_string.split(',').map(&:to_f)
     self.within_bbox(left, bottom, right, top)
@@ -107,7 +105,7 @@ class Poi < ActiveRecord::Base
     'lon' => lon,
     'name' => name,
     'type' => type,
-    'category' => category,
+    'category' => category.try(:identifier),
     'wheelchair' => wheelchair,
     'wheelchair_description' => wheelchair_description
     )
@@ -143,15 +141,8 @@ class Poi < ActiveRecord::Base
     tags[key.to_s] = value.to_s
   end
   
-  def category
-    Amenities.each do |cat, amenities|
-      return cat.to_s if amenities.include?(self.type)
-    end
-    nil
-  end
-
   def category_id
-    Category.find_by_identifier(category).try(:id)
+    self.node_type.category_id
   end
 
   def name
@@ -173,15 +164,11 @@ class Poi < ActiveRecord::Base
   def street
     tags['addr:street']
   end
-
-  def street=(value)
-    tags['addr:street'] = value
-  end
-
+  
   def housenumber
     tags['addr:housenumber']
   end
-  
+    
   def city
     tags['addr:city']
   end
@@ -203,7 +190,7 @@ class Poi < ActiveRecord::Base
   end
   
   def headline
-    self.name || I18n.t("poi.name.#{self.category}.#{self.type}")
+    self.name || I18n.t("poi.name.#{self.category.identifier}.#{self.type}")
   end
   
   def url
@@ -213,13 +200,19 @@ class Poi < ActiveRecord::Base
   def address
     [render_street(self),render_city(self)].compact.join(', ')
   end
-  
-  def city
-    tags['addr:city']
-  end
-  
+        
   def state
     'yes'
+  end
+
+  def icon
+    icon_name = ''
+    if type.blank?
+      icon_name = 'cross-small-white'
+    else
+      icon_name = Icons[type.to_sym] || 'cross-small-white'
+    end
+    ['/images', 'icons', icon_name].join '/'
   end
 
   def to_geojson(options={})
@@ -233,20 +226,10 @@ class Poi < ActiveRecord::Base
                                           'wheelchair' => wheelchair,
                                           'osm_id' => osm_id,
                                           'type' => type,
-                                          'category' => category,
+                                          'category' => category.identifier,
                                           'icon' => icon).reject{|k,v| v.blank?}
     }
     result
-  end
-      
-  def icon
-    icon_name = ''
-    if type.blank?
-      icon_name = 'cross-small-white'
-    else
-      icon_name = Icons[type.to_sym] || 'cross-small-white'
-    end
-    ['/images', 'icons', icon_name].join '/'
   end
 
   def relevant?
@@ -271,7 +254,7 @@ class Poi < ActiveRecord::Base
   def set_status
     self.status = WHEELCHAIR_STATUS_VALUES[wheelchair.to_sym]
   end
-    
+
   def set_node_type
     self.node_type = nil
     self.tags.each do |k,v|

@@ -25,6 +25,7 @@ group :default do
   gem 'inherited_resources'
   gem 'has_scope'
   gem 'mapfish'
+  gem 'rake', '0.9.2'
 end
 
 group :test, :development do

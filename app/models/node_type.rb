@@ -3,12 +3,13 @@ class NodeType < ActiveRecord::Base
   
   cattr_accessor :combination
 
-  has_many :pois
+  has_many :pois, :dependent => :nullify
   belongs_to :category
   
   validates :identifier, :presence => true
-  validate :category_id, :presence => true
+  validates :category_id, :presence => true
   
+  cattr_accessor :combination
   
   acts_as_api
   
@@ -20,6 +21,10 @@ class NodeType < ActiveRecord::Base
     template.add :icon
   end
   
+  api_accessible :id do |template|
+    template.add :id
+  end
+  
   def localized_name
     I18n.t("poi.name.#{category.identifier}.#{identifier}")
   end
@@ -27,7 +32,7 @@ class NodeType < ActiveRecord::Base
   def icon
     "/images/icons/#{read_attribute(:icon) || 'unknown'}.png"
   end
-  
+
   def self.combination
     return @@combination if @@combination
     keys = NodeType.all.map(&:osm_key).uniq.sort

@@ -8,7 +8,7 @@
 
 Category.delete_all
 categories = Category.create([
-  {:id => 1,  :identifier => :public_transport},
+  {:id => 1,  :identifier => :public_transfer},
   {:id => 2,  :identifier => :food},
   {:id => 3,  :identifier => :leisure},
   {:id => 4,  :identifier => :money_post},
@@ -25,24 +25,24 @@ categories = Category.create([
 
 NodeType.delete_all
 
-public_transport = Category.find_by_identifier('public_transport')
+public_transfer = Category.find_by_identifier('public_transfer')
 node_types = NodeType.create([
-  {:category => public_transport, :identifier => :airport,         :osm_key => 'aeroway',  :osm_value => 'aerodrome',      :icon => 'airport.png'},
-  {:category => public_transport, :identifier => :bicycle_rental,  :osm_key => 'amenity',  :osm_value => 'bicycle_rental', :icon => 'cycling.png'},
-  {:category => public_transport, :identifier => :boatyard,        :osm_key => 'waterway', :osm_value => 'boatyard',       :icon => 'boat.png'},
-  {:category => public_transport, :identifier => :bus_station,     :osm_key => 'amenity',  :osm_value => 'bus_station',    :icon => 'bus-stop.png'},
-  {:category => public_transport, :identifier => :bus_stop,        :osm_key => 'highway',  :osm_value => 'bus_stop',       :icon => 'bus-stop.png'},
-  {:category => public_transport, :identifier => :car_rental,      :osm_key => 'amenity',  :osm_value => 'car_rental',     :icon => 'car-rental.png'},
-  {:category => public_transport, :identifier => :car_sharing,     :osm_key => 'amenity',  :osm_value => 'car_sharing',    :icon => 'car-rental.png'},
-  {:category => public_transport, :identifier => :ferry_terminal,  :osm_key => 'amenity',  :osm_value => 'ferry_terminal', :icon => 'ferry.png'},
-  {:category => public_transport, :identifier => :fuel,            :osm_key => 'amenity',  :osm_value => 'fuel',           :icon => 'filling-station.png'},
-  {:category => public_transport, :identifier => :halt,            :osm_key => 'railway',  :osm_value => 'halt',           :icon => 'stop.png'},
-  {:category => public_transport, :identifier => :parking,         :osm_key => 'amenity',  :osm_value => 'parking',        :icon => 'parking.png'},
-  {:category => public_transport, :identifier => :platform,        :osm_key => 'railway',  :osm_value => 'platform',       :icon => 'cctv.png'},
-  {:category => public_transport, :identifier => :station,         :osm_key => 'railway',  :osm_value => 'station',        :icon => 'bus-stop.png'},
-  {:category => public_transport, :identifier => :subway_entrance, :osm_key => 'railway',  :osm_value => 'subway_entrance',:icon => 'subway.png'},
-  {:category => public_transport, :identifier => :terminal,        :osm_key => 'aeroway',  :osm_value => 'terminal',       :icon => 'airport-terminal.png'},
-  {:category => public_transport, :identifier => :tram_stop,       :osm_key => 'railway',  :osm_value => 'tram_stop',      :icon => 'tram.png'}
+  {:category => public_transfer, :identifier => :aerodrome,       :osm_key => 'aeroway',  :osm_value => 'aerodrome',      :icon => 'airport.png'},
+  {:category => public_transfer, :identifier => :bicycle_rental,  :osm_key => 'amenity',  :osm_value => 'bicycle_rental', :icon => 'cycling.png'},
+  {:category => public_transfer, :identifier => :boatyard,        :osm_key => 'waterway', :osm_value => 'boatyard',       :icon => 'boat.png'},
+  {:category => public_transfer, :identifier => :bus_station,     :osm_key => 'amenity',  :osm_value => 'bus_station',    :icon => 'bus-stop.png'},
+  {:category => public_transfer, :identifier => :bus_stop,        :osm_key => 'highway',  :osm_value => 'bus_stop',       :icon => 'bus-stop.png'},
+  {:category => public_transfer, :identifier => :car_rental,      :osm_key => 'amenity',  :osm_value => 'car_rental',     :icon => 'car-rental.png'},
+  {:category => public_transfer, :identifier => :car_sharing,     :osm_key => 'amenity',  :osm_value => 'car_sharing',    :icon => 'car-rental.png'},
+  {:category => public_transfer, :identifier => :ferry_terminal,  :osm_key => 'amenity',  :osm_value => 'ferry_terminal', :icon => 'ferry.png'},
+  {:category => public_transfer, :identifier => :fuel,            :osm_key => 'amenity',  :osm_value => 'fuel',           :icon => 'filling-station.png'},
+  {:category => public_transfer, :identifier => :halt,            :osm_key => 'railway',  :osm_value => 'halt',           :icon => 'stop.png'},
+  {:category => public_transfer, :identifier => :parking,         :osm_key => 'amenity',  :osm_value => 'parking',        :icon => 'parking.png'},
+  {:category => public_transfer, :identifier => :platform,        :osm_key => 'railway',  :osm_value => 'platform',       :icon => 'cctv.png'},
+  {:category => public_transfer, :identifier => :station,         :osm_key => 'railway',  :osm_value => 'station',        :icon => 'bus-stop.png'},
+  {:category => public_transfer, :identifier => :subway_entrance, :osm_key => 'railway',  :osm_value => 'subway_entrance',:icon => 'subway.png'},
+  {:category => public_transfer, :identifier => :terminal,        :osm_key => 'aeroway',  :osm_value => 'terminal',       :icon => 'airport-terminal.png'},
+  {:category => public_transfer, :identifier => :tram_stop,       :osm_key => 'railway',  :osm_value => 'tram_stop',      :icon => 'tram.png'}
 ])
 
 food = Category.find_by_identifier('food')
@@ -56,12 +56,12 @@ node_types = NodeType.create([
 
 leisure = Category.find_by_identifier('leisure')
 node_types = NodeType.create([
-  {:category => leisure,  :identifier => :arts_centre, :osm_key => 'amenity',  :osm_value => 'arts_centre', :icon => 'art-gallery.png'},
   {:category => leisure,  :identifier => :arena,       :osm_key => 'leisure',  :osm_value => 'arena',       :icon => 'stadium.png'},
   {:category => leisure,  :identifier => :cinema,      :osm_key => 'amenity',  :osm_value => 'cinema',      :icon => 'cinema.png'},
   {:category => leisure,  :identifier => :gallery,     :osm_key => 'amenity',  :osm_value => 'gallery',     :icon => 'art-museum.png'},
   {:category => leisure,  :identifier => :nightclub,   :osm_key => 'amenity',  :osm_value => 'nightclub',   :icon => 'dancing-hall.png'},
-  {:category => leisure,  :identifier => :theatre,     :osm_key => 'amenity',  :osm_value => 'theatre',     :icon => 'theatre.png'}
+  {:category => leisure,  :identifier => :theatre,     :osm_key => 'amenity',  :osm_value => 'theatre',     :icon => 'theatre.png'},
+  {:category => leisure,  :identifier => :zoo,         :osm_key => 'tourism',  :osm_value => 'zoo',         :icon => 'zoological-garden.png'}
 ])
 
 money_post = Category.find_by_identifier('money_post')
@@ -106,7 +106,7 @@ node_types = NodeType.create([
   {:category => shopping,  :identifier => :mall,              :osm_key => 'shop', :osm_value => 'mall',             :icon => 'convenience-store.png'},
   {:category => shopping,  :identifier => :kiosk,             :osm_key => 'shop', :osm_value => 'kiosk',            :icon => 'kiosk.png'},
   {:category => shopping,  :identifier => :optician,          :osm_key => 'shop', :osm_value => 'optician',         :icon => nil},
-  {:category => shopping,  :identifier => :outdoor,           :osm_key => 'shop', :osm_value => 'outdoor',          :icon => nil},
+  # {:category => shopping,  :identifier => :outdoor,           :osm_key => 'shop', :osm_value => 'outdoor',          :icon => nil},
   {:category => shopping,  :identifier => :shoes,             :osm_key => 'shop', :osm_value => 'shoes',            :icon => 'shoes.png'},
   {:category => shopping,  :identifier => :supermarket,       :osm_key => 'shop', :osm_value => 'supermarket',      :icon => 'supermarket.png'},
 ])
@@ -122,30 +122,30 @@ node_types = NodeType.create([
 tourism = Category.find_by_identifier('tourism')
 node_types = NodeType.create([
   {:category => tourism,  :identifier => :archaeological_site,  :osm_key => 'historic', :osm_value => 'archaeological_site',  :icon => nil },
+  {:category => tourism,  :identifier => :arts_centre,          :osm_key => 'amenity',  :osm_value => 'arts_centre',          :icon => 'art-gallery.png'},
   {:category => tourism,  :identifier => :artwork,              :osm_key => 'amenity',  :osm_value => 'artwork',              :icon => 'art-gallery.png'},
   {:category => tourism,  :identifier => :attraction,           :osm_key => 'tourism',  :osm_value => 'attraction',           :icon => 'art-gallery.png'},
   {:category => tourism,  :identifier => :battlefield,          :osm_key => 'historic', :osm_value => 'battlefield',          :icon => 'battlefield.png'},
   {:category => tourism,  :identifier => :beach,                :osm_key => 'natural',  :osm_value => 'beach',                :icon => 'beach.png'},
-  {:category => tourism,  :identifier => :beach_resort,         :osm_key => 'leisure',  :osm_value => 'beach_resort',         :icon => 'beach.png'},
-  {:category => tourism,  :identifier => :bed_and_breakfast,    :osm_key => 'tourism',  :osm_value => 'bed_and_breakfast',    :icon => 'motel.png'},
-  {:category => tourism,  :identifier => :camp_site,            :osm_key => 'tourism',  :osm_value => 'camp_site',            :icon => 'camping.png'},
-  {:category => tourism,  :identifier => :caravan_site,         :osm_key => 'tourism',  :osm_value => 'caravan_site',         :icon => 'camping.png'},
   {:category => tourism,  :identifier => :castle,               :osm_key => 'historic', :osm_value => 'castle',               :icon => 'castle.png'},
   {:category => tourism,  :identifier => :cave_entrance,        :osm_key => 'natural',  :osm_value => 'cave_entrance',        :icon => 'cave.png'},
   {:category => tourism,  :identifier => :information,          :osm_key => 'tourism',  :osm_value => 'information',          :icon => 'information.png'},
   {:category => tourism,  :identifier => :memorial,             :osm_key => 'historic', :osm_value => 'memorial',             :icon => 'memorial.png'},
   {:category => tourism,  :identifier => :theme_park,           :osm_key => 'tourism',  :osm_value => 'theme_park',           :icon => 'theme-park.png'},
   {:category => tourism,  :identifier => :viewpoint,            :osm_key => 'tourism',  :osm_value => 'viewpoint',            :icon => 'beautiful-view.png'},
-  {:category => tourism,  :identifier => :zoo,                  :osm_key => 'tourism',  :osm_value => 'zoo',                  :icon => 'zoological-garden.png'}
 ])
 
 accommodation = Category.find_by_identifier('accommodation')
 node_types = NodeType.create([
-  {:category => accommodation,  :identifier => :chalet,       :osm_key => 'tourism',  :osm_value => 'chalet',       :icon => 'motel'},
-  {:category => accommodation,  :identifier => :guest_house,  :osm_key => 'tourism',  :osm_value => 'guest_house',  :icon => 'motel'},
-  {:category => accommodation,  :identifier => :hostel,       :osm_key => 'tourism',  :osm_value => 'hostel',       :icon => 'motel'},
-  {:category => accommodation,  :identifier => :hotel,        :osm_key => 'tourism',  :osm_value => 'hotel',        :icon => 'motel'},
-  {:category => accommodation,  :identifier => :motel,        :osm_key => 'tourism',  :osm_value => 'motel',        :icon => 'motel'},
+  {:category => accommodation,  :identifier => :beach_resort,         :osm_key => 'leisure',  :osm_value => 'beach_resort',       :icon => 'beach.png'},
+  {:category => accommodation,  :identifier => :bed_and_breakfast,    :osm_key => 'tourism',  :osm_value => 'bed_and_breakfast',  :icon => 'motel.png'},
+  {:category => accommodation,  :identifier => :camp_site,            :osm_key => 'tourism',  :osm_value => 'camp_site',          :icon => 'camping.png'},
+  {:category => accommodation,  :identifier => :caravan_site,         :osm_key => 'tourism',  :osm_value => 'caravan_site',       :icon => 'camping.png'},
+  {:category => accommodation,  :identifier => :chalet,               :osm_key => 'tourism',  :osm_value => 'chalet',             :icon => 'motel'},
+  {:category => accommodation,  :identifier => :guest_house,          :osm_key => 'tourism',  :osm_value => 'guest_house',        :icon => 'motel'},
+  {:category => accommodation,  :identifier => :hostel,               :osm_key => 'tourism',  :osm_value => 'hostel',             :icon => 'motel'},
+  {:category => accommodation,  :identifier => :hotel,                :osm_key => 'tourism',  :osm_value => 'hotel',              :icon => 'motel'},
+  {:category => accommodation,  :identifier => :motel,                :osm_key => 'tourism',  :osm_value => 'motel',              :icon => 'motel'},
 ])
 
 misc = Category.find_by_identifier('misc')
@@ -160,8 +160,8 @@ node_types = NodeType.create([
 
 government = Category.find_by_identifier('government')
 node_types = NodeType.create([
-  {:category => misc,  :identifier => :courthouse,      :osm_key => 'amenity',  :osm_value => 'courthouse',       :icon => 'court'},
-  {:category => misc,  :identifier => :public_building, :osm_key => 'amenity',  :osm_value => 'public_building',  :icon => 'big-city'},
-  {:category => misc,  :identifier => :townhall,        :osm_key => 'amenity',  :osm_value => 'townhall',         :icon => 'big-city'},
+  {:category => government,  :identifier => :courthouse,      :osm_key => 'amenity',  :osm_value => 'courthouse',       :icon => 'court'},
+  {:category => government,  :identifier => :public_building, :osm_key => 'amenity',  :osm_value => 'public_building',  :icon => 'big-city'},
+  {:category => government,  :identifier => :townhall,        :osm_key => 'amenity',  :osm_value => 'townhall',         :icon => 'big-city'},
 ])
 

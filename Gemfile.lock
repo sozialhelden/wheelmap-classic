@@ -70,8 +70,8 @@ GEM
       net-scp (>= 1.0.0)
       net-sftp
       net-sftp (>= 2.0.0)
-      net-ssh (>= 2.0.14)
       net-ssh
+      net-ssh (>= 2.0.14)
       net-ssh-gateway
       net-ssh-gateway (>= 1.0.0)
     capistrano-ext (1.2.1)
@@ -197,7 +197,7 @@ GEM
       activesupport (= 3.0.3)
       rake (>= 0.8.7)
       thor (~> 0.14.4)
-    rake (0.8.7)
+    rake (0.9.2)
     redgreengrid (0.3.2)
     responders (0.6.4)
     routing-filter (0.2.3)
@@ -276,6 +276,7 @@ DEPENDENCIES
   oauth!
   pickle
   rails (= 3.0.3)
+  rake (= 0.9.2)
   redgreengrid
   routing-filter
   rspec
