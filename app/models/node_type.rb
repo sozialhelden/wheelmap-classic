@@ -11,10 +11,6 @@ class NodeType < ActiveRecord::Base
     I18n.t("poi.name.#{category.identifier}.#{identifier}")
   end
 
-  def icon
-    "/images/icons/#{read_attribute(:icon) || 'unknown'}"
-  end
-
   def self.combination
     return @@combination if @@combination
     keys = NodeType.all.map(&:osm_key).uniq.sort
