@@ -1,4 +1,7 @@
 #api_docs
+
+  = render :partial => 'api/docs/resource_links'
+  
   %h2 Resource Category
   %article.doc-block
     .resource
@@ -44,5 +47,3 @@
   %article.doc-block
     %h3#categories_representation_json Example categories representation. (application/json)
     %pre=render :partial => 'categories.json'
-    
-  = render :partial => 'api/docs/resource_links'
