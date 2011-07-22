@@ -190,7 +190,7 @@ class Poi < ActiveRecord::Base
   end
   
   def headline
-    self.name || I18n.t("poi.name.#{self.category.identifier}.#{self.type}")
+    self.name || I18n.t("poi.name.#{self.category.try(:identifier)}.#{self.type}")
   end
   
   def url
@@ -206,13 +206,14 @@ class Poi < ActiveRecord::Base
   end
 
   def icon
-    icon_name = ''
-    if type.blank?
-      icon_name = 'cross-small-white'
-    else
-      icon_name = Icons[type.to_sym] || 'cross-small-white'
-    end
-    ['/images', 'icons', icon_name].join '/'
+    # icon_name = ''
+    # if type.blank?
+    #   icon_name = 'cross-small-white'
+    # else
+    #   icon_name = Icons[type.to_sym] || 'cross-small-white'
+    # end
+    # ['/images', 'icons', icon_name].join '/'
+    node_type.try(:icon)
   end
 
   def to_geojson(options={})

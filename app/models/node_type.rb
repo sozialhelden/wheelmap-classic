@@ -29,10 +29,6 @@ class NodeType < ActiveRecord::Base
   def localized_name
     I18n.t("poi.name.#{category.identifier}.#{identifier}")
   end
-  
-  def icon
-    "/images/icons/#{read_attribute(:icon) || 'unknown'}.png"
-  end
 
   def self.combination
     return @@combination if @@combination
