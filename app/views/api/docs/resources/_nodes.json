@@ -17,8 +17,14 @@
       "id":19,
       "lat":52.5231376,
       "lon":13.3595838,
-      "node_type_id":24,
-      "category_id":2,
+      "node_type":{
+        "id":24,
+        "identifier":"museum"
+      },      
+      "category":{
+        "id":2,
+        "identifier":"tourism"
+      }
       "wheelchair":"yes",
       "wheelchair_description":null,
       "street":"Unter den Linden",
@@ -32,8 +38,14 @@
       "id":22,
       "lat":52.5212151,
       "lon":13.4118481,
-      "type":87,
-      "category_id":8,
+      "node_type":{
+        "id":24,
+        "identifier":"hotel"
+      },      
+      "category":{
+        "id":2,
+        "identifier":"tourism"
+      }
       "name":"Hotel Central Inn\u200e"
       "wheelchair":"unknown",
       "wheelchair_description":"Doors are pretty small.",

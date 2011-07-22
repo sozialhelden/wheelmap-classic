@@ -40,6 +40,9 @@
                 %td For pagination, how many results to return per page. Default is 200. Max is 500.
           %h4 Example request:
           %pre http://wheelmap.org/api/nodes?api_key=api_key&bbox=13.341,52.505,13.434,52.523&per_page=10&wheelchair=yes
+          %h4 This resource can also be nested within categories or node_types.
+          %pre http://wheelmap.org/api/categories/1/nodes?api_key=api_key&bbox=13.341,52.505,13.434,52.523&per_page=10&wheelchair=yes
+          %pre http://wheelmap.org/api/node_types/4/nodes?api_key=api_key&bbox=13.341,52.505,13.434,52.523&per_page=10&wheelchair=yes
           
           %h4#nodes_representation_json Example nodes representation. (application/json)
           %pre=render :partial => 'nodes.json'
