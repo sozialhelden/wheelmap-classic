@@ -8,8 +8,6 @@ class Poi < ActiveRecord::Base
   # osm_id ist der Primaerschluessel
   set_primary_key :osm_id
   
-  self.include_root_in_json = false
-  
   attr_accessible :name, :type, :geom, :version, :wheelchair, :created_at, :updated_at, :status, :lat, :lon, :id, :tags, :osm_id, :name
   
   acts_as_api
@@ -31,6 +29,8 @@ class Poi < ActiveRecord::Base
      t.add :website
      t.add :phone
    end
+
+  self.include_root_in_json = false  
   
   WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
   
