@@ -5,12 +5,9 @@ class Poi < ActiveRecord::Base
   include ActionView::Helpers::AssetTagHelper
   include PopupHelper
   
-  # Tags sollen fuer die Datenbank serialisiert werden
-  serialize :tags
-  
   # osm_id ist der Primaerschluessel
   set_primary_key :osm_id
-
+  
   self.include_root_in_json = false
   
   attr_accessible :name, :type, :geom, :version, :wheelchair, :created_at, :updated_at, :status, :lat, :lon, :id, :tags, :osm_id, :name
