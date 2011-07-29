@@ -3,13 +3,12 @@ class Poi < ActiveRecord::Base
   include ActionView::Helpers::TagHelper
   include ActionView::Helpers::UrlHelper
   include ActionView::Helpers::AssetTagHelper
+  include PopupHelper
   
   # osm_id ist der Primaerschluessel
   set_primary_key :osm_id
   
-  self.include_root_in_json = false
-  
-  include PopupHelper
+  self.include_root_in_json = false  
   
   WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
   
