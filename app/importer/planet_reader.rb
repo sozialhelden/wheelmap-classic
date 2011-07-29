@@ -57,7 +57,10 @@ class PlanetReader
   def on_start_element(element, attributes)
     case element
     when 'tag'
-      @poi[:tags][attributes['k']] = attributes['v'] if @poi
+      k = [attributes['k']
+      v = [attributes['v']
+      @poi[:tags][k] = v if @poi
+      @poi[:node_type_id] ||= NodeType.combination[k.to_s][v.to_s] rescue nil
     when 'node'
       @poi = {:osm_id => attributes['id'],
               :geom => Point.from_x_y(attributes['lon'], attributes['lat']),
@@ -101,11 +104,10 @@ class PlanetReader
       @poi = nil
 
     end
-
   end
 
   def valid?
-    @poi && has_tags? && has_type? && has_category?
+    @poi && has_tags? && has_type?
   end
 
   def has_tags?
@@ -113,38 +115,12 @@ class PlanetReader
   end
 
   def has_type?
-    t = type
-    !t.blank?
-  end
-
-  def has_category?
-    c = category
-    !c.blank?
-  end
-
-  def category
-    Tags[type.to_sym]
-  end
-
-  def type
-    @poi[:tags]['amenity']  ||
-    @poi[:tags]['shop']     ||
-    @poi[:tags]['tourism']  ||
-    @poi[:tags]['natural']  ||
-    @poi[:tags]['sport']    ||
-    @poi[:tags]['leisure']  ||
-    @poi[:tags]['historic'] ||
-    @poi[:tags]['highway']  ||
-    @poi[:tags]['railway']
+    !@poi[:node_type_id].blank?
   end
 
   # Verarbeitet einen POI.
   #
   def process_poi
-    @poi[:tags].each do |k,v|
-      @poi[:node_type_id] ||= NodeType.combination[k.to_s][v.to_s] rescue nil
-    end
-
     status = @poi[:tags]['wheelchair'] || 'unknown'
 
     @poi[:status] = Poi::WHEELCHAIR_STATUS_VALUES[status.to_sym]
