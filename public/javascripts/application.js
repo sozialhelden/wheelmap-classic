@@ -431,26 +431,6 @@ $(function() {
     $(this).parent().fadeOut();
     return false;
   });
-  $("#search").autocomplete('/search.js', {
-    max: 10,
-    highlight: false,
-    scroll: true,
-    scrollHeight: 300,
-    minChars: 3,
-    autofill: true,
-    // delimiter: /(,|;)\s*/,
-    formatItem: function(data, i, n, value) {
-      return value.split(':')[0];
-    },
-    formatResult: function(data, value) {
-      return value.split(':')[0];
-    }
-  }).result(function(event, data, formatted) {
-      var parts = data[0].split(':');
-      var lon = parseFloat(parts[1]);
-      var lat = parseFloat(parts[2]);
-      jumpTo(lon,lat, 17);
-  });
   $('.minimize').live('click', function() {
     $(this).parent('div').css('height', '0.5em');
     $(this).parent('div').animate({ left:'-275px'}, 'fast', 'swing', function() {
