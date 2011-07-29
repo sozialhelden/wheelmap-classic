@@ -4,7 +4,8 @@ class Poi < ActiveRecord::Base
   include ActionView::Helpers::UrlHelper
   include ActionView::Helpers::AssetTagHelper
   
-  set_primary_key "osm_id"
+  # osm_id ist der Primaerschluessel
+  set_primary_key :osm_id
   
   self.include_root_in_json = false
   
