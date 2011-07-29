@@ -57,8 +57,8 @@ class PlanetReader
   def on_start_element(element, attributes)
     case element
     when 'tag'
-      k = [attributes['k']
-      v = [attributes['v']
+      k = attributes['k']
+      v = attributes['v']
       @poi[:tags][k] = v if @poi
       @poi[:node_type_id] ||= NodeType.combination[k.to_s][v.to_s] rescue nil
     when 'node'
