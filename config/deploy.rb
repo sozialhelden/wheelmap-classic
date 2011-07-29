@@ -17,16 +17,14 @@ set :ssh_options, :keys => [ File.expand_path("~/.ssh/wheelmap_rsa") ], :forward
 
 set :user, 'rails'
 
-role :web, "178.77.98.117"                          # Your HTTP server, Apache/etc
-role :app, "178.77.98.117"                          # This may be the same as your `Web` server
-role :db,  "178.77.98.117", :primary => true # This is where Rails migrations will run
-
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
 # these http://github.com/rails/irs_process_scripts
 
+after  'deploy:setup',        'deploy:create_shared_config'
 after  'deploy:update_code',  'deploy:symlink_configs'
 after  'deploy:update_code',  'deploy:remove_all_unfinished_locales'
+
 
 namespace :deploy do
   task :start do ; end
@@ -34,12 +32,16 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
-
-  task :symlink_configs do
+  
+  task :create_shared_config do
     run "mkdir -p #{shared_path}/config/"
     run "mkdir -p #{shared_path}/tmp/var"
     run "mkdir -p #{shared_path}/tmp/osmosis-working-dir"
     run "mkdir -p #{shared_path}/tmp/cache"
+    run "touch #{shared_path}/config/database.yml"
+  end
+
+  task :symlink_configs do
     run "ln -nfs #{shared_path}/tmp/osmosis-working-dir #{release_path}/tmp/osmosis-working-dir"
     run "ln -nfs #{shared_path}/tmp/var #{release_path}/tmp/var"
     run "ln -nfs #{shared_path}/tmp/cache #{release_path}/tmp/cache"
@@ -65,12 +67,6 @@ require 'capistrano/ext/multistage'
 # have builder check and install gems after each update_code
 require 'bundler/capistrano'
 set :bundle_without, [:development, :test, :metrics, :deployment]
-
-
-$:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
-require "rvm/capistrano"
-set :rvm_ruby_string, 'ruby-1.8.7-p330'
-set :rvm_type, :user
 
 require 'config/boot'
 require 'hoptoad_notifier/capistrano'

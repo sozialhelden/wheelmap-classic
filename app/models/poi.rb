@@ -4,6 +4,8 @@ class Poi < ActiveRecord::Base
   include ActionView::Helpers::UrlHelper
   include ActionView::Helpers::AssetTagHelper
   
+  set_primary_key "osm_id"
+  
   self.include_root_in_json = false
   
   include PopupHelper
@@ -182,7 +184,11 @@ class Poi < ActiveRecord::Base
     #   icon_name = Icons[type.to_sym] || 'cross-small-white'
     # end
     # ['/images', 'icons', icon_name].join '/'
-    node_type.try(:icon)
+    if node_type.try(:icon)
+      "/marker/#{wheelchair}/#{node_type.icon}" 
+    else
+      "/marker/undefined.png"
+    end
   end
 
   def to_geojson(options={})
