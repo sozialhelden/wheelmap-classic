@@ -4,7 +4,7 @@
   %ul#searchresult
     - @result.each do |entry|
       %li
-        = link_to "#{entry['display_name']}", root_path(:a => :b, :lat => entry['lat'], :lon => entry['lon'], :zoom => 14, :q => entry['display_name'])
+        = link_to "#{entry['display_name']}", root_path(:a => :b, :lat => entry['lat'], :lon => entry['lon'], :zoom => 14, :q => params[:q])
 - else
   %p
     =t('.search.not_found')
