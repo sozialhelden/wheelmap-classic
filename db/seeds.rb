@@ -154,7 +154,7 @@ node_types = NodeType.create([
   {:category => misc,  :identifier => :doctors,           :osm_key => 'amenity',  :osm_value => 'doctors',          :icon => 'medicine.png'},
   {:category => misc,  :identifier => :hospital,          :osm_key => 'amenity',  :osm_value => 'hospital',         :icon => 'firstaid.png'},
   {:category => misc,  :identifier => :pharmacy,          :osm_key => 'amenity',  :osm_value => 'pharmacy',         :icon => 'drugstore.png'},
-  {:category => misc,  :identifier => :place_of_worship,  :osm_key => 'amenity',  :osm_value => 'place_of_worship', :icon => 'cross.png'},
+  {:category => misc,  :identifier => :place_of_worship,  :osm_key => 'amenity',  :osm_value => 'place_of_worship', :icon => 'prayer.png'},
   {:category => misc,  :identifier => :toilets,           :osm_key => 'amenity',  :osm_value => 'toilets',          :icon => 'toilets.png'},
   {:category => misc,  :identifier => :veterinary,        :osm_key => 'amenity',  :osm_value => 'veterinary',       :icon => 'veterinary.png'}
 ])
