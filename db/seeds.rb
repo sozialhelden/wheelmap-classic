@@ -59,7 +59,7 @@ leisure = Category.find_by_identifier('leisure')
 node_types = NodeType.create([
   {:category => leisure,  :identifier => :arena,       :osm_key => 'leisure',  :osm_value => 'arena',       :icon => 'stadium.png'},
   {:category => leisure,  :identifier => :cinema,      :osm_key => 'amenity',  :osm_value => 'cinema',      :icon => 'cinema.png'},
-  {:category => leisure,  :identifier => :gallery,     :osm_key => 'amenity',  :osm_value => 'gallery',     :icon => 'museum-art.png'},
+  {:category => leisure,  :identifier => :gallery,     :osm_key => 'amenity',  :osm_value => 'gallery',     :icon => 'museum_art.png'},
   {:category => leisure,  :identifier => :nightclub,   :osm_key => 'amenity',  :osm_value => 'nightclub',   :icon => 'dancinghall.png'},
   {:category => leisure,  :identifier => :theatre,     :osm_key => 'amenity',  :osm_value => 'theatre',     :icon => 'theater.png'},
   {:category => leisure,  :identifier => :zoo,         :osm_key => 'tourism',  :osm_value => 'zoo',         :icon => 'zoo.png'}
