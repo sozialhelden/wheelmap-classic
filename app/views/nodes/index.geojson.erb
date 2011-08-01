@@ -1,33 +1,13 @@
-{
-    "type":"FeatureCollection",
-    "bbox":[<%= @left %>,<%= @bottom %>,<%= @right %>,<%= @top %>],
-    "features":
-    [
-        <%- @places.each_with_index do |node, index| %>
-            {
-                "type":"Feature",
-                "geometry": {
-                    "coordinates": [ <%= node.lon %>, <%= node.lat %> ],
-                    "type":"Point"
-                },
-                "properties": {
-                  <%- nodes_to_render = node.tags.reverse_merge!('url' => node_path(node, :locale => I18n.locale),
-                                                            'headline' => node.headline,
-                                                            'address' => node.address,
-                                                            'wheelchair' => node.wheelchair,
-                                                            'osm_id' => node.osm_id,
-                                                            'type' => node.type,
-                                                            'category' => node.category.try(:identifier),
-                                                            'icon' => node.icon,
-                                                            'marker' => node.marker).reject{|k,v| v.blank?} %>
-                  <%- count = 0 -%>
-                  <%- nodes_to_render.each do |k,v| -%>
-                    <%- count += 1 %>
-                    "<%= k %>":"<%= v.to_s %>"<%= (nodes_to_render.size == count ? '' : ',') %>
-                  <%- end -%>
-                }
-            }<%= (@places.size == index + 1) ? '' : ',' %>
-        <%- end -%>
-    ]
-}
+{"type":"FeatureCollection", "bbox":[<%= @left %>,<%= @bottom %>,<%= @right %>,<%= @top %>], "features":[
+<%- @places.each_with_index do |node, index| -%>{"type":"Feature","geometry":{"coordinates":[<%= node.lon%>,<%= node.lat%>],"type":"Point"},"properties": {
+        <%- nodes_to_render = node.tags.reverse_merge!('url' => node_path(node, :locale => I18n.locale),
+                                                  'headline' => node.headline,
+                                                  'address' => node.address,
+                                                  'wheelchair' => node.wheelchair,
+                                                  'osm_id' => node.osm_id,
+                                                  'type' => node.type,
+                                                  'category' => node.category.try(:identifier),
+                                                  'icon' => node.icon,
+                                                  'marker' => node.marker).reject{|k,v| v.blank?} %>
+<%- count = 0 -%><%- nodes_to_render.each do |k,v| -%><%- count += 1 -%>"<%= k %>":"<%= v.to_s %>"<%= (nodes_to_render.size == count ? '' : ',') %><%- end -%>}}<%= (@places.size == index + 1) ? '' : ',' %><%- end -%>]}
 
