@@ -13,22 +13,21 @@ class Poi < ActiveRecord::Base
   acts_as_api
   
   api_accessible :simple do |t|
-     t.add :name
-     t.add :wheelchair
-     t.add :wheelchair_description
-     t.add :node_type, :template => :id
-     t.add :lat
-     t.add :lon
-     t.add :id
-     t.add :category, :template => :id
-     t.add :street
-     t.add :street
-     t.add :housenumber
-     t.add :city
-     t.add :postcode
-     t.add :website
-     t.add :phone
-   end
+    t.add :name
+    t.add :wheelchair
+    t.add :wheelchair_description
+    t.add :node_type, :template => :id
+    t.add :lat
+    t.add :lon
+    t.add :id
+    t.add :category, :template => :id
+    t.add :street
+    t.add :housenumber
+    t.add :city
+    t.add :postcode
+    t.add :website
+    t.add :phone
+  end
 
   self.include_root_in_json = false  
   

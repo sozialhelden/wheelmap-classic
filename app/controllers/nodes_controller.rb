@@ -39,9 +39,9 @@ class NodesController < ApplicationController
       @places = @places.select_distance(center_lat,center_lon).order('distance ASC') if @places
     end
     
-    respond_to do |wants|  
-      wants.js{       render :json => @places }
-      wants.json{     render :json => @places }
+    respond_to do |wants|
+      wants.js{       render :template => 'nodes/index.json.erb' }
+      wants.json{     render }
       wants.geojson{  render :content_type => "application/json; subtype=geojson; charset=utf-8" }
       wants.html{ redirect_to root_path }
       wants.sitemap{
