@@ -28,7 +28,7 @@ class NodesController < ApplicationController
     number_of_places = Poi.within_bbox(@left, @bottom, @right, @top).count
     @limit = params[:limit] || 300
 
-    @places = Poi.within_bbox(@left, @bottom, @right, @top).limit(@limit) if @left
+    @places = Poi.order('osm_id DESC').within_bbox(@left, @bottom, @right, @top).limit(@limit) if @left
 
     if number_of_places < 1000 && number_of_places > @limit
 
