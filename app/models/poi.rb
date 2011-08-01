@@ -41,6 +41,8 @@ class Poi < ActiveRecord::Base
   scope :with_node_type, :conditions => 'node_type_id IS NOT NULL'
   scope :without_node_type, :conditions => 'node_type_id IS NULL'
   
+  scope :select_distance, lambda {|lat,lon| {:select => "*,haversine(geom,#{lat},#{lon}) as distance"}}
+  
   scope :within_bbox, lambda {|left, bottom, right, top|{
     :conditions => "MBRContains(GeomFromText('POLYGON(( \
                     #{left} #{bottom}, #{right} #{bottom}, \
@@ -176,7 +178,7 @@ class Poi < ActiveRecord::Base
     'yes'
   end
 
-  def icon
+  def marker
     # icon_name = ''
     # if type.blank?
     #   icon_name = 'cross-small-white'
@@ -189,6 +191,10 @@ class Poi < ActiveRecord::Base
     else
       "/marker/undefined.png"
     end
+  end
+  
+  def icon
+    "/icons/#{node_type.try(:icon)}"
   end
 
   def to_geojson(options={})
@@ -203,7 +209,8 @@ class Poi < ActiveRecord::Base
                                           'osm_id' => osm_id,
                                           'type' => type,
                                           'category' => category.identifier,
-                                          'icon' => icon).reject{|k,v| v.blank?}
+                                          'icon' => icon,
+                                          'marker' => marker).reject{|k,v| v.blank?}
     }
     result
   end
