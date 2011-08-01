@@ -185,7 +185,7 @@ function lonLatToMercator(ll) {
 
 function placesStyle(){
   return new OpenLayers.StyleMap({
-    externalGraphic: "${icon}",
+    externalGraphic: "${marker}",
     graphicWidth: 32,
     graphicHeight: 37,
     graphicXOffset: -16,
@@ -197,7 +197,7 @@ function placesStyle(){
 
 function needleStyle(){
   return new OpenLayers.StyleMap({
-    externalGraphic: "${icon}",
+    externalGraphic: "${marker}",
     graphicWidth: 32,
     graphicHeight: 37,
     graphicXOffset: -16,
@@ -282,7 +282,7 @@ function popup_form(feature){
 
 function popup_headline(feature){
  var html = '';
- html += '<h2 class="' + feature.attributes.type + '">';
+ html += '<h2 style="padding-left:30px;background:url(\''+ feature.attributes.icon + '\') no-repeat bottom left">';
  html += feature.attributes.headline;
  html += '</h2>';
  return html;
@@ -383,7 +383,7 @@ function addPin(layer, lon, lat){
   var lonLat = lonLatToMercator({ lon:lo, lat:la});
   var point = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
   var feature = new OpenLayers.Feature.Vector(point);
-  feature.attributes.icon = '/marker/undefined.png';
+  feature.attributes.marker = '/marker/undefined.png';
   feature.attributes.type = 'Subway';
   feature.attributes.wheelchair = 'no';
   feature.attributes.name = 'Neuer Ort';
