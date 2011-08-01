@@ -212,7 +212,7 @@ function clusterStrategy(){
 }
 
 function bboxStategy(){
-  return new OpenLayers.Strategy.BBOX({ratio : 1.3, resFactor:1.3});
+  return new OpenLayers.Strategy.BBOX({ratio : 1.2, resFactor:1.2});
 }
 
 function geojsonFormat(){
