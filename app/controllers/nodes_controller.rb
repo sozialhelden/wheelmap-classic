@@ -25,20 +25,10 @@ class NodesController < ApplicationController
 
   def index
     @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f) if params[:bbox]
-    number_of_places = Poi.within_bbox(@left, @bottom, @right, @top).count
     @limit = params[:limit] || 300
 
-    @places = Poi.order('osm_id DESC').within_bbox(@left, @bottom, @right, @top).limit(@limit) if @left
+    @places = Poi.within_bbox(@left, @bottom, @right, @top).order('osm_id DESC').limit(@limit) if @left
 
-    if number_of_places < 1000 && number_of_places > @limit
-
-      center_lat = ([@top, @bottom].min + (@bottom - @top).abs / 2.0)
-
-      center_lon = ([@left, @right].min + (@left - @right).abs / 2.0)
-
-      @places = @places.select_distance(center_lat,center_lon).order('distance ASC') if @places
-    end
-    
     respond_to do |wants|
       wants.js{       render :template => 'nodes/index.json.erb' }
       wants.json{     render }
