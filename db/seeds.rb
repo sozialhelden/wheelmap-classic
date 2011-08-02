@@ -37,10 +37,10 @@ node_types = NodeType.create([
   {:category => public_transfer, :identifier => :car_sharing,     :osm_key => 'amenity',  :osm_value => 'car_sharing',    :icon => 'carrental.png'},
   {:category => public_transfer, :identifier => :ferry_terminal,  :osm_key => 'amenity',  :osm_value => 'ferry_terminal', :icon => 'ferry.png'},
   {:category => public_transfer, :identifier => :fuel,            :osm_key => 'amenity',  :osm_value => 'fuel',           :icon => 'fillingstation.png'},
-  {:category => public_transfer, :identifier => :halt,            :osm_key => 'railway',  :osm_value => 'halt',           :icon => 'stop.png'},
+  {:category => public_transfer, :identifier => :halt,            :osm_key => 'railway',  :osm_value => 'halt',           :icon => 'train.png'},
   {:category => public_transfer, :identifier => :parking,         :osm_key => 'amenity',  :osm_value => 'parking',        :icon => 'parking.png'},
   {:category => public_transfer, :identifier => :platform,        :osm_key => 'railway',  :osm_value => 'platform',       :icon => 'train.png'},
-  {:category => public_transfer, :identifier => :station,         :osm_key => 'railway',  :osm_value => 'station',        :icon => 'busstop.png'},
+  {:category => public_transfer, :identifier => :station,         :osm_key => 'railway',  :osm_value => 'station',        :icon => 'train.png'},
   {:category => public_transfer, :identifier => :subway_entrance, :osm_key => 'railway',  :osm_value => 'subway_entrance',:icon => 'underground.png'},
   {:category => public_transfer, :identifier => :terminal,        :osm_key => 'aeroway',  :osm_value => 'terminal',       :icon => 'airport_terminal.png'},
   {:category => public_transfer, :identifier => :tram_stop,       :osm_key => 'railway',  :osm_value => 'tram_stop',      :icon => 'tramway.png'}
