@@ -7,9 +7,8 @@ set :rails_env, :production
 
 $:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
 require "rvm/capistrano"
-set :rvm_ruby_string, 'ree-1.8.7-2011.03'
+set :rvm_ruby_string, 'ruby-1.8.7-p330'
 set :rvm_type, :user
-set :rvm_bin_path, "/usr/local/rvm/bin"
 
 require "whenever/capistrano"
 set :whenever_command, "bundle exec whenever"
