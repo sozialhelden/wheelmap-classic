@@ -300,14 +300,14 @@ function popup_state_radio(feature, state){
 
 function popup_form(feature){
   var form = '';
-  form += '<form action="/nodes/' + feature.attributes.osm_id + '/update_wheelchair.js" method="put" class="update_form">';
+  form += '<form action="/nodes/' + feature.attributes.osm_id + '/update_wheelchair.js" method="post" class="update_form">';
   form += '<ol class="wheelchair">';
   form += '<h3><a target="_blank" href="http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei/">' + OpenLayers.Lang.translate('wheelchair_help') + '</a></h3>';
   form += popup_state_radio(feature, 'yes');
   form += popup_state_radio(feature, 'limited');
   form += popup_state_radio(feature, 'no');
   form += popup_state_radio(feature, 'unknown');
-  form += '<li><input type="hidden" name="method" value="put" /></li>';
+  form += '<li><input type="hidden" name="_method" value="put" /></li>';
   form += '<li>';
   form += '<input type="submit" id="update_button" value="' + OpenLayers.Lang.translate('wheelchair_update_button') +'"/>';
   form += '<img src="/images/spinner-small.gif" id="update_spinner"/>';
