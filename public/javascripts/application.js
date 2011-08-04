@@ -1,3 +1,4 @@
+ /*global  window, jQuery, $, OpenLayers, language, UserVoice*/
 var map;
 var epsg4326, epsg900913;
 if (!window.zoom){
@@ -45,7 +46,7 @@ var styleTypeLookup = {
 
 function markerLayer(name){
   $.each(map.layers, function(i, layer){
-    if(layer.name == name) {
+    if(layer.name === name) {
       alert('Match: ' + layer.name);
       return i;
     }
@@ -146,7 +147,7 @@ function onZoomEnd(){
 
 /* Callback function when map finished panning. */
 function onMoveEnd(){
-  lonlat = centerCoordinates();
+  var lonlat = centerCoordinates();
   $.cookie('last_lat', lonlat.lat);
   $.cookie('last_lon', lonlat.lon);
 }
@@ -253,8 +254,8 @@ function onPopupClose(evt) {
 
 function popup_state_radio(feature, state){
   var id = state + '-' + feature.id;
-  var checked = (state == feature.attributes.wheelchair ? ' checked="checked"' : '');
-  var disabled = (state == 'unknown' ? ' disabled="disabled"' : '');
+  var checked = (state === feature.attributes.wheelchair ? ' checked="checked"' : '');
+  var disabled = (state === 'unknown' ? ' disabled="disabled"' : '');
   var wheelchair_state = '<li class="' + state + '">';
   wheelchair_state += '<input id="' + id + '" type="radio" name="wheelchair"' + checked + disabled + ' value="' + state + '">';
   wheelchair_state += '<label for="' + id + '">' + OpenLayers.Lang.translate('wheelchair_label_' + state) + '</label>';
@@ -306,8 +307,8 @@ function popup_more_link(feature){
 
 function onFeatureSelect(evt){
   removeAllPopups();
-  feature = evt.feature;
-  popup = new OpenLayers.Popup.FramedCloud("featurePopup",
+  var feature = evt.feature;
+  var popup = new OpenLayers.Popup.FramedCloud("featurePopup",
                            feature.geometry.getBounds().getCenterLonLat(),
                            null,
                            popup_headline(feature) +
@@ -415,8 +416,6 @@ function runEffect(){
       $(".flash").fadeOut();
    }, 5000);
 }
-
-
 
 $(function() {
   $('#feedback_link').click(function(){
