@@ -725,37 +725,38 @@ form legend {
   font-weight: bold;
   color: #333333;
   margin-top: 20px;
+  margin-bottom: 30px;
   top: 15px;
   bottom: none;
 }
-/* line 138, ../../app/stylesheets/basics/_forms.sass */
+/* line 139, ../../app/stylesheets/basics/_forms.sass */
 form legend span.addition {
   color: #aaaaaa;
 }
-/* line 141, ../../app/stylesheets/basics/_forms.sass */
+/* line 142, ../../app/stylesheets/basics/_forms.sass */
 form fieldset {
   padding: 30px 0px 10px;
   overflow: hidden;
 }
-/* line 148, ../../app/stylesheets/basics/_forms.sass */
+/* line 149, ../../app/stylesheets/basics/_forms.sass */
 form fieldset.buttons {
   padding: 10px 20px 10px 20px;
 }
-/* line 153, ../../app/stylesheets/basics/_forms.sass */
+/* line 154, ../../app/stylesheets/basics/_forms.sass */
 form li[class*='error'] label {
   color: #f19d46;
 }
-/* line 156, ../../app/stylesheets/basics/_forms.sass */
+/* line 157, ../../app/stylesheets/basics/_forms.sass */
 form li[class*='error'] input[type='text'], form li[class*='error'] input[type='password'], form li[class*='error'] input[type='search'], form li[class*='error'] [type='tel'], form li[class*='error'] textarea, form li[class*='error'] select {
   border: 1px solid #f19d46;
 }
-/* line 159, ../../app/stylesheets/basics/_forms.sass */
+/* line 160, ../../app/stylesheets/basics/_forms.sass */
 form p.inline-errors, form p.inline-hints {
   position: relative;
   left: 160px;
   color: #aaaaaa;
 }
-/* line 164, ../../app/stylesheets/basics/_forms.sass */
+/* line 165, ../../app/stylesheets/basics/_forms.sass */
 form p.inline-errors {
   color: #f19d46;
 }
@@ -1020,7 +1021,7 @@ dd.leisure {
 table#properties,
 table#accessibility {
   display: block;
-  width: 50%;
+  width: 48%;
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 13px;
   line-height: 20px;
