@@ -1,4 +1,5 @@
 //var allAmenities = 'arts-centre atm audiologist baby-hatch bank bar bench bicycle-parking bicycle-rental biergarten brothel bureau-de-change bus-station cafe car-rental car-sharing cinema clock coast-guard college community-centre courthouse crematorium drinking-water embassy emergency-phone fast-food ferry-terminal fire-hydrant fire-station fountain fuel grave-yard grit-bin hospital hunting-stand kindergarten library marketplace milk-dispenser nightclub parking pharmacy place-of-worship police post-box post-office prison pub public-building recycling register-office restaurant sauna school stripclub studio taxi telephone theatre toilets townhall university vending-machine veterinary waste-basket waste-disposal subway'.split(' ');
+/*global  window, jQuery, $, OpenLayers, language, UserVoice*/
 var amenitiesGrouped = {
   'Nahverkehr': ['subway', 'light_rail', 'tram_stop', 'bus_stop', 'ferry_terminal'],
   'Essen & Trinken': ['fast_food', 'restaurant', 'biergarten', 'cafe', 'bar', 'pub'],
@@ -45,36 +46,6 @@ $(function() {
     var category = this.id.replace(/category-/, '').replace(/-/, '_');
     categories[category] = this.checked;
     showStates();
-  });
-  $('.update_form').live('submit', function() {
-    var form = $(this);
-    $('#update_button').attr('disabled', 'disabled');
-    $('#update_spinner').show();
-    
-    $.ajax({ dataType: 'json', type: form.attr('method'), url: form.attr('action') , data: form.serialize(),
-      success: function(data, textStatus, XMLHttpRequest) {
-        $('#map').after('<div class="flash" id="notice">' + data.message + '<a href="#" data="hide">x</a></div>');
-        
-        runEffect();
-        removeAllPopups();
-        $('#update_spinner').hide();
-        $('#update_button').removeAttr('disabled');
-        if(window._gaq){
-          _gaq.push(['_trackEvent', 'Data', 'Tag', data.wheelchair]);
-        }
-        return false;
-      },
-      error: function(XMLHttpRequest, textStatus, errorThrown){
-        $('#map').after('<div class="flash" id="alert">' + textStatus + '<a href="#" data="hide">x</a></div>');
-        $('#update_spinner').hide();
-        $('#update_button').removeAttr('disabled');
-        if(window._gaq){
-          _gaq.push(['_trackEvent', 'Data', 'Tag', 'failed']);
-        }
-        return false;
-      }
-    });
-    return false;
   });
 });
 

@@ -53,6 +53,41 @@ function markerLayer(name){
   });
 }
 
+function submit_handler() {
+  var form = $(this);
+  if((form.find('input:checked').val()) === 'unknown'){
+    return false;
+  }
+  $('#update_button').attr('disabled', 'disabled');
+  $('#update_spinner').show();
+  
+  $.ajax({ dataType: 'json', type: form.attr('method'), url: form.attr('action') , data: form.serialize(),
+    success: function(data, textStatus, XMLHttpRequest) {
+      $('#map').after('<div class="flash" id="notice">' + data.message + '<a href="#" data="hide">x</a></div>');
+      
+      runEffect();
+      removeAllPopups();
+      $('#update_spinner').hide();
+      $('#update_button').removeAttr('disabled');
+      if(window._gaq){
+        _gaq.push(['_trackEvent', 'Data', 'Tag', data.wheelchair]);
+      }
+      return false;
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown){
+      $('#map').after('<div class="flash" id="alert">' + textStatus + '<a href="#" data="hide">x</a></div>');
+      $('#update_spinner').hide();
+      $('#update_button').removeAttr('disabled');
+      if(window._gaq){
+        _gaq.push(['_trackEvent', 'Data', 'Tag', 'failed']);
+      }
+      return false;
+    }
+  });
+  return false;
+}
+
+
 function jumpTo(lon, lat, zoom) {
   var lonlat = new OpenLayers.LonLat(lon, lat).transform(
     epsg4326, //transform from WGS 1984
@@ -319,6 +354,7 @@ function onFeatureSelect(evt){
   feature.popup = popup;
   popup.feature = feature;
   map.addPopup(popup);
+  $('.update_form').submit(submit_handler);
 }
 
 function onFeatureUnselect(evt) {
