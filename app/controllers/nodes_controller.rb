@@ -27,7 +27,7 @@ class NodesController < ApplicationController
     @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f) if params[:bbox]
     @limit = params[:limit] || 300
 
-    @places = Poi.within_bbox(@left, @bottom, @right, @top).order('osm_id DESC').limit(@limit) if @left
+    @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.order('osm_id DESC').limit(@limit) if @left
 
     respond_to do |wants|
       wants.js{       render :template => 'nodes/index.json.erb' }
