@@ -80,7 +80,7 @@ class Api::NodesController < Api::ApiController
   protected
   
   def collection
-    @nodes ||= end_of_association_chain.paginate(:page => params[:page], :per_page => params[:per_page])
+    @nodes ||= end_of_association_chain.including_category.paginate(:page => params[:page], :per_page => params[:per_page])
   end
   
   def meta

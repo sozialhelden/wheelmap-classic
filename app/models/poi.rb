@@ -61,6 +61,7 @@ class Poi < ActiveRecord::Base
   
   scope :with_node_type, :conditions => 'node_type_id IS NOT NULL'
   scope :without_node_type, :conditions => 'node_type_id IS NULL'
+  scope :including_category, :include => :category
   
   scope :select_distance, lambda {|lat,lon| {:select => "*,haversine(geom,#{lat},#{lon}) as distance"}}
   
