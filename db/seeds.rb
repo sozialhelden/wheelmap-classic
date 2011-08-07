@@ -53,6 +53,7 @@ node_types = NodeType.create([
   {:category => food, :identifier => :drinking_water,:osm_key => 'amenity', :osm_value => 'drinking_water', :icon => 'drinkingwater.png'},
   {:category => food, :identifier => :fast_food,     :osm_key => 'amenity', :osm_value => 'fast_food',      :icon => 'fastfood.png'},
   {:category => food, :identifier => :pub,           :osm_key => 'amenity', :osm_value => 'pub',            :icon => 'bar.png'},
+  {:category => food, :identifier => :restaurant,    :osm_key => 'amenity', :osm_value => 'restaurant',     :icon => 'restaurant.png'}
 ])
 
 leisure = Category.find_by_identifier('leisure')
@@ -165,4 +166,3 @@ node_types = NodeType.create([
   {:category => government,  :identifier => :public_building, :osm_key => 'amenity',  :osm_value => 'public_building',  :icon => 'bigcity.png'},
   {:category => government,  :identifier => :townhall,        :osm_key => 'amenity',  :osm_value => 'townhall',         :icon => 'bigcity.png'},
 ])
-
