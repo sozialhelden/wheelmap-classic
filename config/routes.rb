@@ -1,4 +1,6 @@
 Wheelmap::Application.routes.draw do
+  
+  match '/ping' => 'ping#index'
 
   filter :locale
   RoutingFilter::Locale.include_default_locale = false
@@ -76,7 +78,8 @@ Wheelmap::Application.routes.draw do
 
     resources :locales,     :only => :index
     resources :node_types,  :only => [:index, :show]
-
+    
+    
     match '/users/authenticate' => 'users#authenticate'
     
     #Last route in routes.rb
