@@ -35,7 +35,12 @@ class NodesController < ApplicationController
       wants.geojson{  render :content_type => "application/json; subtype=geojson; charset=utf-8" }
       wants.html{ redirect_to root_path }
       wants.sitemap{
-        @nodes = Poi.paginate(:page => params[:page], :per_page => 500)
+        per_page = 500
+        page = params[:page].try(:to_i) || 1
+        @nodes = Poi.all( :select => 'p.status, p.osm_id, p.updated_at',
+                  :from => "(SELECT osm_id FROM pois ORDER BY osm_id LIMIT #{(page * per_page) - per_page}, #{per_page}) o",
+                  :joins => 'JOIN pois p ON p.osm_id = o.osm_id',
+                  :order => 'p.osm_id')
       }
     end
   end
@@ -105,7 +110,7 @@ class NodesController < ApplicationController
   
   def sitemap
     respond_to do |wants|
-      @count = Poi.count
+      @count = Poi.count(:select => 'osm_id')
       wants.xml{ render }
     end
   end

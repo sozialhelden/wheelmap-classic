@@ -12,7 +12,6 @@ Wheelmap::Application.routes.draw do
   
   resources :search, :only => :index
   resources :feeds, :only => :index
-  resources :sitemap, :only => :index
   resources :oauth, :only => [:new, :index] do
     collection do 
       get :revoke
