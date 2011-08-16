@@ -7,6 +7,5 @@
                                                     'name' => node.headline,
                                                     'type' => node.type,
                                                     'wheelchair' => node.wheelchair,
-                                                    'wheelchair_description' => node.wheelchair_description).reject{|k,v| v.blank?} -%><%- count = 0 -%><%- nodes_to_render.each do |k,v| -%><%- count += 1 -%>"<%= k %>":<%= v.to_json.html_safe %><%= (nodes_to_render.size == count ? '' : ',') -%>
-<%- end -%>}<%= (@places.size == index + 1) ? '' : ',' -%>
+                                                    'wheelchair_description' => node.wheelchair_description).reject{|k,v| v.blank?} -%><%- count = 0 -%><%- nodes_to_render.each do |k,v| -%><%- count += 1 -%>"<%= k %>":<%= v.to_json.html_safe %>,<%- end -%>"tags":<%= {}.to_json.html_safe %>}<%= (@places.size == index + 1) ? '' : ',' -%>
 <%- end -%>]

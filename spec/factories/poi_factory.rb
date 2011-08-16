@@ -16,4 +16,5 @@ Factory.define :poi do |p|
   p.name 'name'
   p.type 'bar'
   p.wheelchair 'yes'
+  p.association :node_type
 end

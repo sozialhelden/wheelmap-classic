@@ -159,8 +159,11 @@ describe NodesController do
       end
     
       it "should create CreateJob for given node attributes" do
+        request.env['ACCEPT'] = "*/*"
+        
         lambda{
-          post(:create, {:node => {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant'}})
+          post(:create, {:commit=>"Ort anlegen", :node => {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant', :city=>"", :housenumber=>"", :postcode=>"", :wheelchair_description=>"", :street=>"",:phone=>"", :website=>""}})
+          response.code.should == '200'
         }.should change(CreateJob, :count).by(1)
       end
       
@@ -214,6 +217,29 @@ describe NodesController do
       end
     end
     
+  end
+
+  describe "action: index" do
+    before(:each) do
+      Poi.delete_all
+      @node_type = Factory.create(:node_type)
+      @node_type2 = Factory.create(:node_type, :osm_value => 'pub', :identifier => 'pub')
+      @bar_node = Factory.build(:poi)
+      @bar_node.tags['amenity'] = 'bar'
+      @bar_node.type = 'bar'
+      @bar_node.save!
+      
+      @pub_node = Factory.build(:poi)
+      @pub_node.tags['amenity'] = 'pub'
+      @pub_node.type = 'pub'
+      @pub_node.save!
+      
+    end
+    
+    it "should render legacy json representation for iphone" do
+      response = get(:index, :format => 'js', :bbox => "12.0,51.0,14.0,53.0")
+      json = ActiveSupport::JSON.decode(response.body)
+    end
   end
 
 end
