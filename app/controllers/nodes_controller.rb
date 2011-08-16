@@ -4,9 +4,9 @@ class NodesController < ApplicationController
   
   before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update]
   before_filter :authenticate_application!,       :only => [:new, :create, :edit, :update]
+  before_filter :check_create_params,             :only => :create
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
-  before_filter :check_create_params,             :only => :create
   before_filter :check_bbox_param,                :only => :index
   
   rescue_from ActiveRecord::RecordNotFound,     :with => :not_found
@@ -30,7 +30,7 @@ class NodesController < ApplicationController
     @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.order('osm_id DESC').limit(@limit) if @left
 
     respond_to do |wants|
-      wants.js{       render :template => 'nodes/index.json.erb' }
+      wants.js{       render :file => "#{Rails.root}/app/views/nodes/index.js.erb"}
       wants.json{     render }
       wants.geojson{  render :content_type => "application/json; subtype=geojson; charset=utf-8" }
       wants.html{ redirect_to root_path }

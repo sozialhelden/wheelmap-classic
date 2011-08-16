@@ -226,11 +226,15 @@ describe NodesController do
       @node_type2 = Factory.create(:node_type, :osm_value => 'pub', :identifier => 'pub')
       @bar_node = Factory.build(:poi)
       @bar_node.tags['amenity'] = 'bar'
+      @bar_node.lat = 52.0
+      @bar_node.lon = 13.4
       @bar_node.type = 'bar'
       @bar_node.save!
       
       @pub_node = Factory.build(:poi)
       @pub_node.tags['amenity'] = 'pub'
+      @pub_node.lat = 52.1
+      @pub_node.lon = 13.5
       @pub_node.type = 'pub'
       @pub_node.save!
       
@@ -238,7 +242,17 @@ describe NodesController do
     
     it "should render legacy json representation for iphone" do
       response = get(:index, :format => 'js', :bbox => "12.0,51.0,14.0,53.0")
+      response.code.should == "200"
+      response.body.should_not be_empty
       json = ActiveSupport::JSON.decode(response.body)
+      node = json.first
+      node['category'].should_not be_blank
+      node['id'].should_not be_blank
+      node['lat'].should_not be_blank
+      node['lon'].should_not be_blank
+      node['wheelchair'].should_not be_blank
+      node['type'].should_not be_blank
+      node['tags'].should == {}
     end
   end
 

@@ -1,0 +1,11 @@
+[<%- @places.each_with_index do |node, index| -%>{ <%- nodes_to_render = node.tags.reverse_merge!('url' => node_path(node, :locale => I18n.locale),
+                                                    'category' => node.category.try(:identifier),
+                                                    'icon' => node.icon,
+                                                    'id' => node.osm_id,
+                                                    'lat' => node.lat,
+                                                    'lon' => node.lon,
+                                                    'name' => node.headline,
+                                                    'type' => node.type,
+                                                    'wheelchair' => node.wheelchair,
+                                                    'wheelchair_description' => node.wheelchair_description).reject{|k,v| v.blank?} -%><%- count = 0 -%><%- nodes_to_render.each do |k,v| -%><%- count += 1 -%>"<%= k %>":<%= v.to_json.html_safe %>,<%- end -%>"tags":<%= {}.to_json.html_safe %>}<%= (@places.size == index + 1) ? '' : ',' -%>
+<%- end -%>]
