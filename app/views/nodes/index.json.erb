@@ -1,18 +1,12 @@
 [<%- @places.each_with_index do |node, index| -%>{ <%- nodes_to_render = node.tags.reverse_merge!('url' => node_path(node, :locale => I18n.locale),
-                                                    'headline' => node.headline,
-                                                    'name' => node.headline,
-                                                    'address' => node.address,
-                                                    'wheelchair' => node.wheelchair,
-                                                    'wheelchair_description' => node.wheelchair_description,
-                                                    'osm_id' => node.osm_id,
-                                                    'id' => node.osm_id,
-                                                    'state' => 'yes',
-                                                    'status' => node.status,
-                                                    'lat' => node.lat,
-                                                    'lon' => node.lon,
-                                                    'type' => node.type,
                                                     'category' => node.category.try(:identifier),
                                                     'icon' => node.icon,
-                                                    'marker' => node.marker).reject{|k,v| v.blank?} -%><%- count = 0 -%><%- nodes_to_render.each do |k,v| -%><%- count += 1 -%>"<%= k %>":<%= v.to_json.html_safe %><%= (nodes_to_render.size == count ? '' : ',') -%>
+                                                    'id' => node.osm_id,
+                                                    'lat' => node.lat,
+                                                    'lon' => node.lon,
+                                                    'name' => node.headline,
+                                                    'type' => node.type,
+                                                    'wheelchair' => node.wheelchair,
+                                                    'wheelchair_description' => node.wheelchair_description).reject{|k,v| v.blank?} -%><%- count = 0 -%><%- nodes_to_render.each do |k,v| -%><%- count += 1 -%>"<%= k %>":<%= v.to_json.html_safe %><%= (nodes_to_render.size == count ? '' : ',') -%>
 <%- end -%>}<%= (@places.size == index + 1) ? '' : ',' -%>
 <%- end -%>]
