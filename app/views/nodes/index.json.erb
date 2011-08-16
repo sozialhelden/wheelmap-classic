@@ -13,6 +13,6 @@
                                                     'type' => node.type,
                                                     'category' => node.category.try(:identifier),
                                                     'icon' => node.icon,
-                                                    'marker' => node.marker).reject{|k,v| v.blank?} -%><%- count = 0 -%><%- nodes_to_render.each do |k,v| -%><%- count += 1 -%>"<%= k %>":"<%= v.to_s %>"<%= (nodes_to_render.size == count ? '' : ',') -%>
+                                                    'marker' => node.marker).reject{|k,v| v.blank?} -%><%- count = 0 -%><%- nodes_to_render.each do |k,v| -%><%- count += 1 -%>"<%= k %>":<%= v.to_json.html_safe %><%= (nodes_to_render.size == count ? '' : ',') -%>
 <%- end -%>}<%= (@places.size == index + 1) ? '' : ',' -%>
 <%- end -%>]
