@@ -38,6 +38,7 @@ Wheelmap::Application.routes.draw do
   resources :users do
     collection do 
       post :authenticate
+      get :newsletter
     end
     member do
       post :reset_token
