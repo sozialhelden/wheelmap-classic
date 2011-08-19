@@ -223,20 +223,10 @@ describe NodesController do
     before(:each) do
       Poi.delete_all
       @node_type = Factory.create(:node_type)
-      @node_type2 = Factory.create(:node_type, :osm_value => 'pub', :identifier => 'pub')
       @bar_node = Factory.build(:poi)
       @bar_node.tags['amenity'] = 'bar'
-      @bar_node.lat = 52.0
-      @bar_node.lon = 13.4
       @bar_node.type = 'bar'
       @bar_node.save!
-      
-      @pub_node = Factory.build(:poi)
-      @pub_node.tags['amenity'] = 'pub'
-      @pub_node.lat = 52.1
-      @pub_node.lon = 13.5
-      @pub_node.type = 'pub'
-      @pub_node.save!
       
     end
     

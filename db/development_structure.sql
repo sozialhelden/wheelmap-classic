@@ -34,24 +34,6 @@ CREATE TABLE `categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `countries` (
-  `OGR_FID` int(11) NOT NULL AUTO_INCREMENT,
-  `geom` geometry NOT NULL,
-  `fips` varchar(2) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `iso2` varchar(2) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `iso3` varchar(3) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `un` decimal(3,0) DEFAULT NULL,
-  `name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `area` decimal(7,0) DEFAULT NULL,
-  `pop2005` decimal(10,0) DEFAULT NULL,
-  `region` decimal(3,0) DEFAULT NULL,
-  `subregion` decimal(3,0) DEFAULT NULL,
-  `lon` double(8,3) DEFAULT NULL,
-  `lat` double(7,3) DEFAULT NULL,
-  UNIQUE KEY `OGR_FID` (`OGR_FID`),
-  SPATIAL KEY `geom` (`geom`)
-) ENGINE=MyISAM AUTO_INCREMENT=247 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 CREATE TABLE `delayed_jobs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `priority` int(11) DEFAULT '0',
@@ -69,33 +51,7 @@ CREATE TABLE `delayed_jobs` (
   `finished_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `delayed_jobs_priority` (`priority`,`run_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-CREATE TABLE `geometry_columns` (
-  `F_TABLE_CATALOG` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `F_TABLE_SCHEMA` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `F_TABLE_NAME` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  `F_GEOMETRY_COLUMN` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  `COORD_DIMENSION` int(11) DEFAULT NULL,
-  `SRID` int(11) DEFAULT NULL,
-  `TYPE` varchar(256) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-CREATE TABLE `heatmap` (
-  `count` int(10) unsigned NOT NULL DEFAULT '0',
-  `x` float NOT NULL DEFAULT '0',
-  `y` float NOT NULL DEFAULT '0',
-  `geom` geometry NOT NULL,
-  SPATIAL KEY `geom` (`geom`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-CREATE TABLE `heatmaps` (
-  `count` int(10) unsigned NOT NULL DEFAULT '0',
-  `x` float NOT NULL DEFAULT '0',
-  `y` float NOT NULL DEFAULT '0',
-  `geom` geometry NOT NULL,
-  SPATIAL KEY `geom` (`geom`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=175 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `node_types` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -107,9 +63,9 @@ CREATE TABLE `node_types` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `index_node_types_on_id_and_category_id` (`id`,`category_id`),
-  KEY `index_node_types_on_osm_key_and_osm_value` (`osm_key`,`osm_value`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  KEY `index_node_types_on_osm_key_and_osm_value` (`osm_key`,`osm_value`),
+  KEY `index_node_types_on_id_and_category_id` (`id`,`category_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `pois` (
   `osm_id` int(11) NOT NULL,
@@ -142,7 +98,7 @@ CREATE TABLE `sessions` (
   PRIMARY KEY (`id`),
   KEY `index_sessions_on_session_id` (`session_id`),
   KEY `index_sessions_on_updated_at` (`updated_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=1382 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1415 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `spatial_ref_sys` (
   `SRID` int(11) NOT NULL,
@@ -262,3 +218,5 @@ INSERT INTO schema_migrations (version) VALUES ('20110716131537');
 INSERT INTO schema_migrations (version) VALUES ('20110716140738');
 
 INSERT INTO schema_migrations (version) VALUES ('20110717073922');
+
+INSERT INTO schema_migrations (version) VALUES ('20110801135556');

@@ -1,8 +1,8 @@
 class UpdateSingleAttributeJob < Struct.new(:node_id, :user, :client, :attribute_hash)
   
   def perform
-    raise ArgumentError.new("Client cannot be nil") if client.nil?
-    raise ArgumentError.new("User cannot be nil") if user.nil?
+    raise ArgumentError.new("Client cannot be nil") if client.blank?
+    raise ArgumentError.new("User cannot be nil") if user.blank?
     begin
       OpenStreetMap.logger = Delayed::Worker.logger
       Delayed::Worker.logger.info "UpdateSingleAttributeJob ------------->"
