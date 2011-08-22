@@ -129,11 +129,13 @@ class PlanetReader
       # Neue POIs aus *.osm
       # Purer input aus einem Planet Dump.
       # Stumpf einfach alles in die DB hauen!
+      @poi.created_at = @poi.updated_at = Time.now
       Poi.crewait(@poi) if valid?
 
     elsif @changemode == 'create'
       # Neue POIs (aus <create> in .osc) werden
       # importiert, wenn sie interessant sind.
+      @poi.created_at = @poi.updated_at = Time.now
       Poi.crewait(@poi) if valid?
 
     elsif @changemode == 'modify'
@@ -146,6 +148,7 @@ class PlanetReader
         # aber zu zeitaufwendig, erst einen "find" zu machen - wir
         # probieren den Save, und wenn der nicht geht, probieren wir
         # den Update.
+        @poi.updated_at = Time.now
         Poi.crewait(@poi)
       else
 
