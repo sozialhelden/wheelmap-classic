@@ -104,7 +104,7 @@ GEM
       nokogiri (>= 1.4.4)
       rack-test (>= 0.5.7)
     culerity (0.2.15)
-    daemons (1.1.2)
+    daemons (1.1.4)
     database_cleaner (0.6.6)
     delayed_job (2.1.4)
       activesupport (~> 3.0)
