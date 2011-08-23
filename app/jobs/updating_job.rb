@@ -6,6 +6,7 @@ class UpdatingJob < Struct.new(:node, :user, :client)
 
       OpenStreetMap.logger = Delayed::Worker.logger
       Delayed::Worker.logger.info "UpdatingJob -------------------------->"
+      Delayed::Worker.logger.info "User: #{user.try(:id)}"
       lat = node.lat
       lon = node.lon
 
