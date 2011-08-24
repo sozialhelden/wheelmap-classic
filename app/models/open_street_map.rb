@@ -153,7 +153,7 @@ class OpenStreetMap
   def find_or_create_changeset(id, comment="Modify accessibility status for node")
     changeset = nil
     changeset = self.class.get_changeset(id) unless id.blank?
-    changeset = create_changeset(comment) if changeset.nil? || changeset.closed?
+    changeset = create_changeset(comment) if (changeset.nil? || changeset.closed?)
     changeset
   end
 
@@ -164,7 +164,11 @@ class OpenStreetMap
     self.class.raise_errors(response)
     changeset_id = response.body.to_i
     logger.info("New Changeset ID: #{changeset_id}")
-    self.class.get_changeset(changeset_id)
+    if changeset_id == 0
+      raise "Something went wrong with creating new changeset! #{changeset_id}"
+    else
+      self.class.get_changeset(changeset_id)
+    end
   end
   
   def close_changeset(id)

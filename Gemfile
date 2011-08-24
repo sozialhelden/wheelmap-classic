@@ -28,6 +28,7 @@ group :default do
   gem 'rake', '0.9.2'
   gem 'json_builder'
   gem 'fastercsv'
+  gem 'ruport'
 end
 
 group :test, :development do
