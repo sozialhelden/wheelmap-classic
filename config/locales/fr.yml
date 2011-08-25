@@ -342,7 +342,7 @@ fr:
     searchbar: 
       add_place: "Ajouter encore un lieu"
       find: trouver
-      placeholder: "par exemple Sunset Boulevard San Francisco ou Porte de Brandenbourg à Berlin"
+      placeholder: "par exemple Sunset Boulevard L.A. ou Porte de Brandenbourg à Berlin"
       title_add_place: "Ajoutez un nouveau lieu sur cette position!"
     tagline: "Wheelmap logo"
     title: "Wheelmap - où aller dans un fauteuil roulant? "

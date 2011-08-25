@@ -351,7 +351,7 @@ it:
     searchbar: 
       add_place: "Aggiungi un altro luogo"
       find: ricerca
-      placeholder: "p.e. Sunset Boulevard San Francisco or Brandenburg Gate Berlin"
+      placeholder: "p.e. Sunset Boulevard L.A. or Brandenburg Gate Berlin"
       title_add_place: "Aggiungi un luogo a questo posizione!"
     tagline: "Wheelmap logo"
     title: "Wheelmap - trova luoghi accessibili in sedia a rotelle"

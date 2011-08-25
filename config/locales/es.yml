@@ -313,7 +313,7 @@ es:
     searchbar: 
       add_place: "Añadir otra ciudad"
       find: buscar
-      placeholder: "p.ej. Sunset Boulevard San Francisco ó Brandenburg Gate Berlin\n"
+      placeholder: "p.ej. Sunset Boulevard L.A. ó Brandenburg Gate Berlin\n"
       title_add_place: "¡Añada otro nuevo sitio aquí ahora!"
     tagline: "Logo del mapa de silla de ruedas"
     title: "Silla de ruedas - buscar sitios con acceso en silla de ruedas"

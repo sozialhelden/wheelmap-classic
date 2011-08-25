@@ -351,7 +351,7 @@ se:
       add_place: "Lägg till en plats"
       find: hitta
       label: "\"\""
-      placeholder: "till exempel Sunset Boulevard San Francisco eller Drottningholms slott, Stockholm"
+      placeholder: "till exempel Sunset Boulevard L.A. eller Drottningholms slott, Stockholm"
       title_add_place: "Lägg till an plats på denna position!"
     tagline: "Wheelmap logo"
     title: "Wheelmap - hitta rullstolsanpassade platser"

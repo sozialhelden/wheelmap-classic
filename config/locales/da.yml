@@ -351,7 +351,7 @@ da:
     searchbar: 
       add_place: "Tilføj endnu et sted"
       find: Find
-      placeholder: "Fx Sunset Boulevard San Francisco eller Brandenburg Gate Berlin"
+      placeholder: "Fx Sunset Boulevard L.A. eller Brandenburg Gate Berlin"
       title_add_place: "Tilføj et nyt sted på denne position nu!"
     tagline: "Wheelmap logo"
     title: "Wheelmap - find kørestolstilgængelige steder"

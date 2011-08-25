@@ -347,7 +347,7 @@ pt-PT:
     searchbar: 
       add_place: "Adicionar outro lugar"
       find: encontrar
-      placeholder: "p. Ex. Sunset Boulevard San Francisco ou o Portão de Brandenburgo"
+      placeholder: "p. Ex. Sunset Boulevard L.A. ou o Portão de Brandenburgo"
       title_add_place: "Adicionar um novo lugar nesta posição agora!"
     tagline: "Lógotipo do Wheelmap"
     title: "Wheelmap - encontre lugares acessivéis a cadeira de rodas"
