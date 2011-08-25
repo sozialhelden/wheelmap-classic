@@ -29,6 +29,7 @@ group :default do
   gem 'json_builder'
   gem 'fastercsv'
   gem 'ruport'
+  gem 'smurf'
 end
 
 group :test, :development do
