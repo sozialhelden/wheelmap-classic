@@ -134,7 +134,7 @@ en:
       find: find
       add_place: Add another place
       title_add_place: 'Add a new place at this position now!'
-      placeholder: i.e. Sunset Boulevard San Francisco or Brandenburg Gate Berlin
+      placeholder: i.e. Sunset Boulevard L.A. or Brandenburg Gate Berlin
     title: Wheelmap - find wheelchair accessible places
     meta: 
       homepage: Home page

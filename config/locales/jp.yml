@@ -350,7 +350,7 @@ jp:
     searchbar: 
       add_place: 別の場所を追加
       find: 見つける
-      placeholder: "例. Sunset Boulevard San Francisco or Brandenburg Gate Berlin "
+      placeholder: "例. Sunset Boulevard L.A. or Brandenburg Gate Berlin "
       title_add_place: 今すぐこの位置に新しい場所を追加！
     tagline: "Wheelmap ロゴ"
     title: "Wheelmap - 車椅子で行ける場所を見つけよう "
