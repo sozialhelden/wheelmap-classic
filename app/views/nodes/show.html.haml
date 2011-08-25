@@ -73,7 +73,7 @@
       %td
         =@node.tags['phone'] || '&nbsp;'
 
-= javascript_include_tag "http://maps.google.com/maps?file=api&v=2.x&key=#{GoogleConfig.api_key}"
+= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false"
 
 .clear
 %hr
@@ -103,18 +103,22 @@
     jumpTo(#{@node.lon}, #{@node.lat}, 18);
     createDraggableLayer(placesStyle(),#{@node.lon}, #{@node.lat});    
     
-    var myPano;
     
-    var point = new GLatLng(#{@node.lat}, #{@node.lon});
-    panoramaOptions = { latlng:point };
-    myPano = new GStreetviewPanorama(document.getElementById("streetview"), panoramaOptions);
-    GEvent.addListener(myPano, "error", handleNoFlash);
-    
-    function handleNoFlash(errorCode) {
-      if (errorCode == 600) {
+    var point = new google.maps.LatLng(#{@node.lat}, #{@node.lon});
+    var panorama = new google.maps.StreetViewPanorama(document.getElementById("streetview"));
+    var sv = new google.maps.StreetViewService();
+
+    sv.getPanoramaByLocation(point, 100, checkNearestStreetView);
+
+    function checkNearestStreetView(data, status) {
+      if (status == google.maps.StreetViewStatus.OK) {
+        panorama.setPano(data.location.pano);
+        // TODO: Calculate heading toward the actual poi location.
+        panorama.setVisible(true);
+      } else {
+        panorama.setVisible(false);
         $("#streetview").attr('style', 'height: 30px;');
         $("#streetview_info").text('Ist für diesen Ort leider nicht verfügbar');
-        return;
       }
     }
     

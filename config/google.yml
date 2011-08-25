@@ -1,8 +1,0 @@
-production:
-  api_key: ABQIAAAAohgIztCJQXtb3CK3XZzjbBSJSCjVFVgXAtmYihfMn3PNHfCgqhRM5nxElQ9oWGbsI2AmR_YdqjFd4w
-
-development:
-  api_key: ABQIAAAAohgIztCJQXtb3CK3XZzjbBRk2v_0VKjdx_LZ4HmCktAO6mBRHRSHslYA_datGX8RXDid1ZgM7T8bxA
-
-staging:
-  api_key: ABQIAAAAohgIztCJQXtb3CK3XZzjbBT7cHDYYg6P7x3K1i1wmdDWlhqERRSENeiP_pZhE0yusQ9Er2eX5d7PTw
