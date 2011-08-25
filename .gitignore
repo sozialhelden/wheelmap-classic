@@ -6,3 +6,4 @@ tmp/
 config/database.yml
 config/google.yml
 config/open_street_map.yml
+public/*/cache/*
