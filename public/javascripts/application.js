@@ -334,7 +334,7 @@ function popup_address(feature){
 
 function popup_more_link(feature){
   var html = '';
-  html += '<a class="more" href="' +  ((OpenLayers.Lang.getCode() == 'de') ? '' : '/' + OpenLayers.Lang.getCode()) + '/nodes/' + feature.attributes.osm_id + '/">';
+  html += '<a class="more" href="' +  ((OpenLayers.Lang.getCode() == 'de') ? '' : '/' + OpenLayers.Lang.getCode()) + '/nodes/' + feature.attributes.osm_id + '">';
   html += OpenLayers.Lang.translate('more_information');
   html += '</a>';
   return html;
