@@ -229,7 +229,7 @@ class Poi < ActiveRecord::Base
       :geometry => { :type => 'Point', :coordinates  => [self.lon, self.lat]
       },
       :properties => tags.reverse_merge!( 'url' => url,
-                                          'headline' => headline,
+                                          'name' => headline,
                                           'address' => address,
                                           'wheelchair' => wheelchair,
                                           'osm_id' => osm_id,
