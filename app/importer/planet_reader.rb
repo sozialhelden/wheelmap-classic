@@ -59,6 +59,10 @@ class PlanetReader
     when 'tag'
       k = attributes['k']
       v = attributes['v']
+      # Eliminate utf-encoded HTML Entitiy for & => &amp; or &#38;
+      if @poi && (k == 'website' || k == 'name')
+        v = v.gsub(/&#38;|&amp;/, '&')
+      end
       @poi[:tags][k] = v if @poi
       @poi[:node_type_id] ||= NodeType.combination[k.to_s][v.to_s] rescue nil
     when 'node'
