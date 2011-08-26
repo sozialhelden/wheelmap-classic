@@ -24,4 +24,19 @@ namespace :housekeeping do
       STDOUT.flush
     end
   end
+
+  desc 'Eliminate &#38; encodings from name and website'
+  task :eliminate_ampersand => :environment do
+    Poi.find_in_batches do |batch|
+      batch.each do |node|
+        old_name = node.tags['name']
+        node.name = old_name.gsub(/&#38;|&amp;/, '&') if old_name
+        old_website = node.tags['website']
+        node.tags['website'] = old_website.gsub(/&#38;|&amp;/, '&') if old_website
+        node.save(:validate => false) if node.tags['name'] != old_name || node.tags['website'] != old_website
+      end
+      putc '.'
+      STDOUT.flush
+    end
+  end
 end
