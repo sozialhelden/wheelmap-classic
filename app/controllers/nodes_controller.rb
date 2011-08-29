@@ -25,7 +25,7 @@ class NodesController < ApplicationController
 
   def index
     @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f) if params[:bbox]
-    @limit = params[:limit] || 300
+    @limit = params[:limit].try(:to_i) || 300
 
     @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.order('osm_id DESC').limit(@limit) if @left
 
