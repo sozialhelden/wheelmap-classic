@@ -264,7 +264,10 @@ function httpProtocol() {
     headers: {
       "Content-Type": "application/javascript"
     },
-    format: geojsonFormat()
+    format: geojsonFormat(),
+    params: {
+      limit: 300
+    }
   });
 }
 
