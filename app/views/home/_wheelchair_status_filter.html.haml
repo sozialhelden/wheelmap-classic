@@ -6,18 +6,18 @@
 
 %ul#options.wheelchair.clearfix
   %li.state-yes
-    = check_box_tag(:wheelchair_yes, 1, true)
+    = check_box_tag(:wheelchair_yes, 'yes', true, :class => 'filter', :rel => 'wheelchair')
     = label_tag :wheelchair_yes, t('form.show_fully_accessible_places'), :title => t('wheelmap.what_is.fully_accessible'), :class => :help
     %span
   %li.state-limited
-    = check_box_tag(:wheelchair_limited, 1, true)
+    = check_box_tag(:wheelchair_limited, 'limited', true, :class => 'filter', :rel => 'wheelchair')
     = label_tag :wheelchair_limited, t('form.show_limited_accessible_places'), :title => t('wheelmap.what_is.limited_accessible'), :class => :help
     %span
   %li.state-no
-    = check_box_tag(:wheelchair_no, 1, true)
+    = check_box_tag(:wheelchair_no, 'no', true, :class => 'filter', :rel => 'wheelchair')
     = label_tag :wheelchair_no, t('form.show_unaccessible_places'), :title => t('wheelmap.what_is.not_accessible'), :class => :help
     %span
   %li.state-unknown
-    = check_box_tag(:wheelchair_unknown, 1, true)
+    = check_box_tag(:wheelchair_unknown, 'unknown', true, :class => 'filter', :rel => 'wheelchair')
     = label_tag :wheelchair_unknown, t('form.show_places_without_status'), :title => t('wheelmap.what_is.unknown_accessible'), :class => :help
     %span
