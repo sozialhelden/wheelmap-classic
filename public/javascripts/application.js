@@ -447,7 +447,10 @@ function addFilter(attribute, value) {
   var filterStrategy = activeFilterStrategy();
   filterStrategy.filter.filters.push(filter);
   filterStrategy.setFilter(filterStrategy.filter);
-  _gaq.push(['_trackEvent', 'filter', 'add', attribute, value]);
+  if (window._gaq) {
+    _gaq.push(['_trackEvent', 'Filter', 'add_' + attribute, value]);
+  }
+  _
 }
 
 function removeFilter(attribute, value) {
@@ -463,7 +466,9 @@ function removeFilter(attribute, value) {
   if (position !== null) {
     filters.splice(position, 1);
     filterStrategy.setFilter(filterStrategy.filter);
-    _gaq.push(['_trackEvent', 'filter', 'remove', attribute, value]);
+    if (window._gaq) {
+      _gaq.push(['_trackEvent', 'Filter', 'remove_' + attribute, value]);
+    }
   }
 }
 
