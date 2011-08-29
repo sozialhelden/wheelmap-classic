@@ -145,21 +145,6 @@ function defaultControls(){
   ];
 }
 
-/* This is called for each feature to be added to the layer */
-function determineDisplayState(evt){
-  var feature = evt.feature;
-  if(states[feature.attributes.wheelchair] === true && categories[feature.attributes.category] === true){
-    feature.attributes.state = 'yes';
-  }else{
-    feature.attributes.state = 'no';
-  }
-}
-
-/* This is called after added all features to the layer */
-function addDisplayStateRule(evt){
-  places.styleMap.addUniqueValueRules("default", "state", styleTypeLookup);
-}
-
 function showStates() {
   $.each(places.features, function(i,feature){
     if(states[feature.attributes.wheelchair] === true && categories[feature.attributes.category] === true){
@@ -243,12 +228,39 @@ function needleStyle(){
   });
 }
 
+function defaultFilter(){
+  return new OpenLayers.Filter.Logical({
+    type: OpenLayers.Filter.Logical.AND,
+    filters: [
+      new OpenLayers.Filter.Comparison({
+        type: OpenLayers.Filter.Comparison.NOT_EQUAL_TO,
+        property: "category",
+        value: "unknown"
+      })
+    ]
+  });
+}
+
 function clusterStrategy(){
   return new OpenLayers.Strategy.Cluster({distance: 15, threshold: 3});
 }
 
 function bboxStategy(){
   return new OpenLayers.Strategy.BBOX({ratio : 1.2, resFactor:1.2});
+}
+
+function filterStrategy(filter){
+  return new OpenLayers.Strategy.Filter({filter:filter});
+}
+
+function activeFilterStrategy(){
+  var strtgy = null
+  $.each(places.strategies, function(index, strategy){
+    if(strategy.__proto__.CLASS_NAME === 'OpenLayers.Strategy.Filter'){
+      strtgy = strategy;
+    }
+  });
+  return strtgy;
 }
 
 function geojsonFormat(){
@@ -369,10 +381,11 @@ function createPlacesLayer(style) {
       projection: epsg4326,
       displayProjection: epsg4326,
       rendererOptions: { yOrdering: true },
-      strategies: [bboxStategy()],
+      strategies: [bboxStategy(),filterStrategy(defaultFilter())],
       protocol: httpProtocol(),
       visibility: true
     });
+
   map.addLayer(places);
   activateSelectControl(places);
   places.redraw();
@@ -380,9 +393,7 @@ function createPlacesLayer(style) {
     'featureselected': onFeatureSelect,
     'featureunselected': onFeatureUnselect,
     'loadstart': onLoadStart,
-    'loadend': onLoadEnd,
-    'beforefeatureadded': determineDisplayState,
-    'beforefeaturesadded': addDisplayStateRule
+    'loadend': onLoadEnd
   });
   map.events.on({
     'zoomend': onZoomEnd,
@@ -453,6 +464,35 @@ function runEffect(){
    }, 5000);
 }
 
+function addFilter(attribute, value){
+  filter = new OpenLayers.Filter.Comparison({
+    type: OpenLayers.Filter.Comparison.NOT_EQUAL_TO,
+    property: attribute,
+    value: value
+  });
+  var filterStrategy = activeFilterStrategy();
+  filterStrategy.filter.filters.push(filter);
+  filterStrategy.setFilter(filterStrategy.filter);
+  _gaq.push(['_trackEvent', 'filter', 'add', attribute, value]);
+}
+
+function removeFilter(attribute, value){
+  var filterStrategy = activeFilterStrategy();
+  var filters = filterStrategy.filter.filters
+  var position = null
+  $.each(filters, function(index, filter){
+    if(filter.property === attribute && filter.value === value){
+      position = index;
+    }
+  });
+
+  if(position != null){
+    filters.splice(position,1);
+    filterStrategy.setFilter(filterStrategy.filter);
+    _gaq.push(['_trackEvent', 'filter', 'remove', attribute, value]);
+  }
+}
+
 $(function() {
   $('#feedback_link').click(function(){
     UserVoice.Popin.show(uservoiceOptions);
@@ -485,6 +525,14 @@ $(function() {
     return false;
   });
   
+  $('input.filter').change(function() {
+    if($(this).attr('checked')) {
+      removeFilter($(this).attr('rel'), $(this).attr('value'));
+    } else {
+      addFilter($(this).attr('rel'), $(this).attr('value'));
+    }
+  });
+
   $(window).resize(function() {
     var width = $(window).width() - 780;
     if (width > 100) {
