@@ -20,14 +20,6 @@ $.each(amenitiesGrouped, function(i, group) {
 });
 
 
-var states = {
-  yes: true,
-  no: true,
-  limited: true,
-  unknown: true
-};
-
-
 var counts = { yes: 0, no: 0, limited: 0, unknown: 0 };
 
 drawmap(defaultControls(), 'map');
@@ -35,18 +27,5 @@ drawmap(defaultControls(), 'map');
 createPlacesLayer(placesStyle());
 
 jumpTo(lon,lat,zoom);
-
-$(function() {
-  $('#options input').click(function() {
-    var state = this.id.replace(/wheelchair_/, '');
-    states[state] = this.checked;
-    showStates();
-  });
-  $('#categories input').click(function() {
-    var category = this.id.replace(/category-/, '').replace(/-/, '_');
-    categories[category] = this.checked;
-    showStates();
-  });
-});
 
 
