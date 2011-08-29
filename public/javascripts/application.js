@@ -1,4 +1,4 @@
-/*global  window, jQuery, $, OpenLayers, language, UserVoice, _gaq*/
+/*global  window, jQuery, $, OpenLayers, language, UserVoice, uservoiceOptions, _gaq*/
 /*jslint devel: true, browser: true, maxerr: 200, indent: 2, sloppy: true, nomen: true */
 var map;
 var epsg4326, epsg900913;
@@ -294,7 +294,7 @@ function popup_state_radio(feature, state) {
   return wheelchair_state;
 }
 
-function popup_form(feature){
+function popup_form(feature) {
   var form = '';
   form += '<form action="/nodes/' + feature.attributes.osm_id + '/update_wheelchair.js" method="post" class="update_form">';
   form += '<ol class="wheelchair">';
@@ -305,38 +305,38 @@ function popup_form(feature){
   form += popup_state_radio(feature, 'unknown');
   form += '<li><input type="hidden" name="_method" value="put" /></li>';
   form += '<li>';
-  form += '<input type="submit" id="update_button" value="' + OpenLayers.Lang.translate('wheelchair_update_button') +'"/>';
+  form += '<input type="submit" id="update_button" value="' + OpenLayers.Lang.translate('wheelchair_update_button') + '"/>';
   form += '<img src="/images/spinner-small.gif" id="update_spinner"/>';
   form += '</li></ol>';
   form += '</form>';
   return form;
 }
 
-function popup_headline(feature){
- var html = '';
- html += '<h2 style="padding-left:30px;background:url(\''+ feature.attributes.icon + '\') no-repeat bottom left">';
- html += feature.attributes.name;
- html += '</h2>';
- return html;
+function popup_headline(feature) {
+  var html = '';
+  html += '<h2 style="padding-left:30px;background:url(\'' + feature.attributes.icon + '\') no-repeat bottom left">';
+  html += feature.attributes.name;
+  html += '</h2>';
+  return html;
 }
 
-function popup_address(feature){
+function popup_address(feature) {
   var html = '';
-  if(feature.attributes.address){
+  if (feature.attributes.address) {
     html += '<address>' + feature.attributes.address + '</address>';
   }
   return html;
 }
 
-function popup_more_link(feature){
+function popup_more_link(feature) {
   var html = '';
-  html += '<a class="more" href="' +  ((OpenLayers.Lang.getCode() == 'de') ? '' : '/' + OpenLayers.Lang.getCode()) + '/nodes/' + feature.attributes.osm_id + '">';
+  html += '<a class="more" href="' +  ((OpenLayers.Lang.getCode() === 'de') ? '' : '/' + OpenLayers.Lang.getCode()) + '/nodes/' + feature.attributes.osm_id + '">';
   html += OpenLayers.Lang.translate('more_information');
   html += '</a>';
   return html;
 }
 
-function onFeatureSelect(evt){
+function onFeatureSelect(evt) {
   removeAllPopups();
   var feature = evt.feature;
   var popup = new OpenLayers.Popup.FramedCloud("featurePopup",
@@ -365,10 +365,10 @@ function createPlacesLayer(style) {
       projection: epsg4326,
       displayProjection: epsg4326,
       rendererOptions: { yOrdering: true },
-      strategies: [bboxStategy(),filterStrategy(defaultFilter())],
+      strategies: [bboxStategy(), filterStrategy(defaultFilter())],
       protocol: httpProtocol(),
       visibility: true
-    });
+  });
 
   map.addLayer(places);
   activateSelectControl(places);
@@ -386,10 +386,8 @@ function createPlacesLayer(style) {
   
 }
 
-function onCompleteDrag(feature) 
-{ 
-  if(feature) 
-  {  
+function onCompleteDrag(feature) { 
+  if (feature) {  
     // replace coordinate values in feature attributes 
     var lonlat = new OpenLayers.LonLat(feature.geometry.x, feature.geometry.y);
     var coordinates = lonlat.clone().transform(map.getProjectionObject(), epsg4326);
@@ -398,28 +396,28 @@ function onCompleteDrag(feature)
   }
 }
 
-function activateDragControl(layer){
-  var dg = new OpenLayers.Control.DragFeature(layer, { onComplete:onCompleteDrag });
+function activateDragControl(layer) {
+  var dg = new OpenLayers.Control.DragFeature(layer, { onComplete: onCompleteDrag });
   map.addControl(dg); 
   dg.activate();
 }
 
-function addPin(layer, lon, lat){
+function addPin(layer, lon, lat) {
   var features = [];
   layer.removeFeatures(layer.features);
   // var center = centerCoordinates();
   var lo = lon;
-  lo*=1.0;
+  lo *= 1.0;
   var la = lat;
-  la*=1.0;
-  var lonLat = lonLatToMercator({ lon:lo, lat:la});
+  la *= 1.0;
+  var lonLat = lonLatToMercator({ lon: lo, lat: la});
   var point = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
   var feature = new OpenLayers.Feature.Vector(point);
   feature.attributes.marker = '/marker/undefined.png';
   feature.attributes.type = 'Subway';
   feature.attributes.wheelchair = 'no';
   feature.attributes.name = 'Neuer Ort';
-  feature.attributes.tags = {"railway":"subway","osm_id":"46095762","ref":"U5","construction":"yes","synthesized_name":"Subway"};
+  feature.attributes.tags = {"railway": "subway", "osm_id": "46095762", "ref": "U5", "construction": "yes", "synthesized_name": "Subway"};
   feature.attributes.osmid = 1234;
   features.push(feature);
   layer.addFeatures(features);
@@ -433,14 +431,14 @@ function createDraggableLayer(style, lon, lat) {
       styleMap: style,
       rendererOptions: { yOrdering: true },
       visibility: true
-    });    
+  });    
   map.addLayer(draggable_layer);
   activateDragControl(draggable_layer);
-  addPin(draggable_layer, lon,lat);
+  addPin(draggable_layer, lon, lat);
   draggable_layer.redraw();
 }
 
-function addFilter(attribute, value){
+function addFilter(attribute, value) {
   var filter = new OpenLayers.Filter.Comparison({
     type: OpenLayers.Filter.Comparison.NOT_EQUAL_TO,
     property: attribute,
@@ -452,39 +450,39 @@ function addFilter(attribute, value){
   _gaq.push(['_trackEvent', 'filter', 'add', attribute, value]);
 }
 
-function removeFilter(attribute, value){
+function removeFilter(attribute, value) {
   var filterStrategy = activeFilterStrategy();
-  var filters = filterStrategy.filter.filters
-  var position = null
-  $.each(filters, function(index, filter){
-    if(filter.property === attribute && filter.value === value){
+  var filters = filterStrategy.filter.filters;
+  var position = null;
+  $.each(filters, function (index, filter) {
+    if (filter.property === attribute && filter.value === value) {
       position = index;
     }
   });
 
-  if(position != null){
-    filters.splice(position,1);
+  if (position !== null) {
+    filters.splice(position, 1);
     filterStrategy.setFilter(filterStrategy.filter);
     _gaq.push(['_trackEvent', 'filter', 'remove', attribute, value]);
   }
 }
 
-$(function() {
-  $('#feedback_link').click(function(){
+$(function () {
+  $('#feedback_link').click(function () {
     UserVoice.Popin.show(uservoiceOptions);
     return false;
   });
-  $('a[data=show]').live('click', function() {
+  $('a[data=show]').live('click', function () {
     $(this).parent().fadeIn();
     return false;
   });
-  $('a[data=hide]').live('click', function() {
+  $('a[data=hide]').live('click', function () {
     $(this).parent().fadeOut();
     return false;
   });
-  $('.minimize').live('click', function() {
+  $('.minimize').live('click', function () {
     $(this).parent('div').css('height', '0.5em');
-    $(this).parent('div').animate({ left:'-275px'}, 'fast', 'swing', function() {
+    $(this).parent('div').animate({ left: '-275px'}, 'fast', 'swing', function () {
       $(this).children('.minimize').text('»').addClass('maximize').removeClass('minimize');
       $.cookie('minimized_' + $(this).attr('id'), true);
       
@@ -492,8 +490,8 @@ $(function() {
     return false;
   });
 
-  $('.maximize').live('click', function() {
-    $(this).parent('div').animate({ left:'30px'}, 'fast', 'swing', function() {
+  $('.maximize').live('click', function () {
+    $(this).parent('div').animate({ left: '30px'}, 'fast', 'swing', function () {
       $(this).css('height', 'auto');
       $(this).children('.maximize').text('«').addClass('minimize').removeClass('maximize');
       $.cookie('minimized_' + $(this).attr('id'), false);
@@ -501,15 +499,15 @@ $(function() {
     return false;
   });
   
-  $('input.filter').change(function() {
-    if($(this).attr('checked')) {
+  $('input.filter').change(function () {
+    if ($(this).attr('checked')) {
       removeFilter($(this).attr('rel'), $(this).attr('value'));
     } else {
       addFilter($(this).attr('rel'), $(this).attr('value'));
     }
   });
 
-  $(window).resize(function() {
+  $(window).resize(function () {
     var width = $(window).width() - 780;
     if (width > 100) {
       $('#search').css('width', width + 'px');
