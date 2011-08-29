@@ -450,7 +450,6 @@ function addFilter(attribute, value) {
   if (window._gaq) {
     _gaq.push(['_trackEvent', 'Filter', 'add_' + attribute, value]);
   }
-  _
 }
 
 function removeFilter(attribute, value) {
