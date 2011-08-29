@@ -1,7 +1,8 @@
- /*global  window, jQuery, $, OpenLayers, language, UserVoice*/
+/*global  window, jQuery, $, OpenLayers, language, UserVoice, _gaq*/
+/*jslint devel: true, browser: true, maxerr: 200, indent: 2, sloppy: true, nomen: true */
 var map;
 var epsg4326, epsg900913;
-if (!window.zoom){
+if (!window.zoom) {
   var zoom = 14;
 }
 
@@ -35,50 +36,48 @@ var categories = {
   government: true
 };
 
-var styleTypeLookup = {
-  yes: {
-    display: 'block'
-  },
-  no: {
-    display: 'none'
-  }
-};
+function runEffect() {
+  setTimeout(function () {
+    var selectedEffect = 'blind';
+    var options = {};
+    $(".flash").fadeOut();
+  }, 5000);
+}
 
-function markerLayer(name){
-  $.each(map.layers, function(i, layer){
-    if(layer.name === name) {
-      alert('Match: ' + layer.name);
-      return i;
-    }
+function removeAllPopups() {
+  $.each(map.popups, function (i, popup) {
+    popup.feature = null;
+    map.removePopup(popup);
   });
 }
 
+
 function submit_handler() {
   var form = $(this);
-  if((form.find('input:checked').val()) === 'unknown'){
+  if ((form.find('input:checked').val()) === 'unknown') {
     return false;
   }
   $('#update_button').attr('disabled', 'disabled');
   $('#update_spinner').show();
   
-  $.ajax({ dataType: 'json', type: form.attr('method'), url: form.attr('action') , data: form.serialize(),
-    success: function(data, textStatus, XMLHttpRequest) {
+  $.ajax({ dataType: 'json', type: form.attr('method'), url: form.attr('action'), data: form.serialize(),
+    success: function (data, textStatus, XMLHttpRequest) {
       $('#map').after('<div class="flash" id="notice">' + data.message + '<a href="#" data="hide">x</a></div>');
       
       runEffect();
       removeAllPopups();
       $('#update_spinner').hide();
       $('#update_button').removeAttr('disabled');
-      if(window._gaq){
+      if (window._gaq) {
         _gaq.push(['_trackEvent', 'Data', 'Tag', data.wheelchair]);
       }
       return false;
     },
-    error: function(XMLHttpRequest, textStatus, errorThrown){
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
       $('#map').after('<div class="flash" id="alert">' + textStatus + '<a href="#" data="hide">x</a></div>');
       $('#update_spinner').hide();
       $('#update_button').removeAttr('disabled');
-      if(window._gaq){
+      if (window._gaq) {
         _gaq.push(['_trackEvent', 'Data', 'Tag', 'failed']);
       }
       return false;
@@ -108,13 +107,13 @@ function drawmap(controls, element) {
     projection: epsg900913,
     displayProjection: epsg4326,
     controls: controls,
-    maxExtent: new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34),
+    maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34, 20037508.34, 20037508.34),
     numZoomLevels: 19,
     maxResolution: 156543.0399,
     units: 'm'
   });
   
-  mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", { displayClass:'olMap', opacity:1.0, transitionEffect:'resize', numZoomLevels: 19, buffer: 1});
+  mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", { displayClass: 'olMap', opacity: 1.0, transitionEffect: 'resize', numZoomLevels: 19, buffer: 1});
   
   // Use for offline mode
   // mapnik = new OpenLayers.Layer.OSM("Mapnik", 'http://wheelmap.local/images/tiles/${z}/${x}/${y}.png' ,{displayClass:'olMap', opacity:0.5, transitionEffect:'resize', numZoomLevels: 19});
@@ -132,28 +131,17 @@ function drawmap(controls, element) {
   map.addLayers([mapnik]);
 }
 
-function defaultControls(){
+function defaultControls() {
   return [
     new OpenLayers.Control.ArgParser(),
-    new OpenLayers.Control.Attribution({id:'attribution',displayClass:"olControlAttribution"}),
-    new OpenLayers.Control.PanZoomBar({id:'panzoombar',displayClass:'olControlPanZoomBar'}),
-    new OpenLayers.Control.Navigation({zoomWheelEnabled:true, autoActivate:true}),
+    new OpenLayers.Control.Attribution({id: 'attribution', displayClass: "olControlAttribution"}),
+    new OpenLayers.Control.PanZoomBar({id: 'panzoombar', displayClass: 'olControlPanZoomBar'}),
+    new OpenLayers.Control.Navigation({zoomWheelEnabled: true, autoActivate: true}),
     new OpenLayers.Control.KeyboardDefaults(),
-    new OpenLayers.Control.ScaleLine({geodesic:true}),
+    new OpenLayers.Control.ScaleLine({geodesic: true}),
     new OpenLayers.Control.Permalink(),
     new OpenLayers.Control.Permalink('createlink', '/nodes/new')
   ];
-}
-
-function showStates() {
-  $.each(places.features, function(i,feature){
-    if(states[feature.attributes.wheelchair] === true && categories[feature.attributes.category] === true){
-      feature.attributes.state = 'yes';
-    }else{
-      feature.attributes.state = 'no';
-    }
-  });
-  places.redraw();
 }
 
 function centerCoordinates() {
@@ -161,36 +149,36 @@ function centerCoordinates() {
 }
 
 /* Callback function when map finished zooming. */
-function onZoomEnd(){
+function onZoomEnd() {
   $.cookie('last_zoom', map.getZoom(), { expires: 7, path: '/'});
 }
 
 /* Callback function when map finished panning. */
-function onMoveEnd(){
+function onMoveEnd() {
   var lonlat = centerCoordinates();
   $.cookie('last_lat', lonlat.lat);
   $.cookie('last_lon', lonlat.lon);
 }
 
-function showSpinner(){
+function showSpinner() {
   $('#spinner').show();
 }
 
-function hideSpinner(){
+function hideSpinner() {
   $('#spinner').hide();
 }
 
 /* Callback function when map data is loaded. */
-function onLoadStart(){
+function onLoadStart() {
   showSpinner();
 }
 
 /* Callback function after map data was loaded. */
-function onLoadEnd(){
+function onLoadEnd() {
   hideSpinner();
 }
 
-function addState(feature){
+function addState(feature) {
   
 }
 
@@ -204,7 +192,7 @@ function lonLatToMercator(ll) {
   return new OpenLayers.LonLat(lon, lat);
 }
 
-function placesStyle(){
+function placesStyle() {
   return new OpenLayers.StyleMap({
     externalGraphic: "${marker}",
     graphicWidth: 32,
@@ -216,7 +204,7 @@ function placesStyle(){
   });
 }
 
-function needleStyle(){
+function needleStyle() {
   return new OpenLayers.StyleMap({
     externalGraphic: "${marker}",
     graphicWidth: 32,
@@ -228,7 +216,7 @@ function needleStyle(){
   });
 }
 
-function defaultFilter(){
+function defaultFilter() {
   return new OpenLayers.Filter.Logical({
     type: OpenLayers.Filter.Logical.AND,
     filters: [
@@ -241,56 +229,49 @@ function defaultFilter(){
   });
 }
 
-function clusterStrategy(){
-  return new OpenLayers.Strategy.Cluster({distance: 15, threshold: 3});
+function clusterStrategy() {
+  return new OpenLayers.Strategy.Cluster({distance: 15, threshold: 1});
 }
 
-function bboxStategy(){
-  return new OpenLayers.Strategy.BBOX({ratio : 1.2, resFactor:1.2});
+function bboxStategy() {
+  return new OpenLayers.Strategy.BBOX({ratio : 1.2, resFactor: 1.2});
 }
 
-function filterStrategy(filter){
-  return new OpenLayers.Strategy.Filter({filter:filter});
+function filterStrategy(filter) {
+  return new OpenLayers.Strategy.Filter({filter: filter});
 }
 
-function activeFilterStrategy(){
-  var strtgy = null
-  $.each(places.strategies, function(index, strategy){
-    if(strategy.__proto__.CLASS_NAME === 'OpenLayers.Strategy.Filter'){
+function activeFilterStrategy() {
+  var strtgy = null;
+  $.each(places.strategies, function (index, strategy) {
+    if (strategy.CLASS_NAME === 'OpenLayers.Strategy.Filter') {
       strtgy = strategy;
     }
   });
   return strtgy;
 }
 
-function geojsonFormat(){
+function geojsonFormat() {
   return new OpenLayers.Format.GeoJSON({
     internalProjection: epsg4326,
     externalProjection: epsg4326,
     ignoreExtraDims: true});
 }
 
-function httpProtocol(){
+function httpProtocol() {
   return new OpenLayers.Protocol.HTTP({
     url:  "nodes.geojson",
-    headers:{
+    headers: {
       "Content-Type": "application/javascript"
     },
     format: geojsonFormat()
   });
 }
 
-function activateSelectControl(layer){
-  var sc = new OpenLayers.Control.SelectFeature(layer, {toggle:true, clickout: true});
+function activateSelectControl(layer) {
+  var sc = new OpenLayers.Control.SelectFeature(layer, {toggle: true, clickout: true});
   map.addControl(sc);
   sc.activate();
-}
-
-function removeAllPopups(){
-  $.each(map.popups, function(i, popup){
-    popup.feature = null;
-    map.removePopup(popup);
-  });
 }
 
 function onPopupClose(evt) {
@@ -299,7 +280,7 @@ function onPopupClose(evt) {
    // selectControl.unselect(this.feature);
 }
 
-function popup_state_radio(feature, state){
+function popup_state_radio(feature, state) {
   var id = state + '-' + feature.id;
   var checked = (state === feature.attributes.wheelchair ? ' checked="checked"' : '');
   var disabled = (state === 'unknown' ? ' disabled="disabled"' : '');
@@ -456,16 +437,8 @@ function createDraggableLayer(style, lon, lat) {
   draggable_layer.redraw();
 }
 
-function runEffect(){
-  setTimeout(function(){
-      var selectedEffect = 'blind';
-      var options = {};
-      $(".flash").fadeOut();
-   }, 5000);
-}
-
 function addFilter(attribute, value){
-  filter = new OpenLayers.Filter.Comparison({
+  var filter = new OpenLayers.Filter.Comparison({
     type: OpenLayers.Filter.Comparison.NOT_EQUAL_TO,
     property: attribute,
     value: value
