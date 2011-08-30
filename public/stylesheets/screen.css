@@ -1060,6 +1060,11 @@ image[width='16'] {
   cursor: pointer;
 }
 
+/* line 15, ../../app/stylesheets/partials/map/_map.sass */
+tspan {
+  text-shadow: #322600 0 1px 2px;
+}
+
 /* line 1, ../../app/stylesheets/partials/map/_info.sass */
 #categories,
 #filter, #counter {

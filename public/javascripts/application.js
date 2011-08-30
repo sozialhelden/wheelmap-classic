@@ -193,14 +193,66 @@ function lonLatToMercator(ll) {
 }
 
 function placesStyle() {
-  return new OpenLayers.StyleMap({
-    externalGraphic: "${marker}",
-    graphicWidth: 32,
-    graphicHeight: 37,
-    graphicXOffset: -16,
-    graphicYOffset: -33,
-    graphicZIndex: 10,
-    backgroundGraphicZIndex: 10
+  return new OpenLayers.StyleMap({"default":
+    new OpenLayers.Style({
+      graphicTitle: "${all}",
+      graphicName: "circle",
+      fontColor: "FFF",
+      fontWeight: "bold",
+      fontSize: "13px",
+      fillColor: "${color}",
+      fillOpacity: "${opacity}",
+      strokeColor: "${color}",
+      strokeOpacity: 0.7,
+      strokeWidth: "2",
+      strokeDashstyle: "solid",
+      pointRadius: "${radius}",
+      cursor: "${cursor}",
+      externalGraphic: "${marker}",
+      graphicWidth: 32,
+      graphicHeight: 37,
+      graphicXOffset: -16,
+      graphicYOffset: -33,
+      graphicZIndex: "${zindex}",
+      backgroundGraphicZIndex: 10
+    },{
+      context: {
+        all: function(feature) {
+          if (feature.cluster) {
+            feature.attributes.marker = '';
+            feature.attributes.radius = 10 + (4 * Math.sqrt(feature.cluster.length));
+            feature.attributes.opacity = 0.25;
+            feature.attributes.cursor = "";
+            feature.attributes.zindex = 1;
+            switch (feature.cluster[0].attributes['wheelchair']) {
+              case 'yes': feature.attributes.color = '#86af4d'; feature.attributes.zindex = 15; break;
+              case 'limited': feature.attributes.color = '#F19D46'; feature.attributes.zindex = 10; break;
+              case 'no': feature.attributes.color = '#D6382F'; feature.attributes.zindex = 5; break;
+              case 'unknown': feature.attributes.color = '#8D8D8E'; feature.attributes.zindex = 1; break;
+            }
+          } else {
+            feature.attributes.opacity = 1.0;
+            feature.attributes.cursor = "pointer";
+            switch (feature.attributes.wheelchair) {
+              case 'yes': feature.attributes.zindex = 50; break;
+              case 'limited': feature.attributes.zindex = 40; break;
+              case 'no': feature.attributes.zindex = 30; break;
+              case 'unknown': feature.attributes.zindex = 20; break;
+            }
+          }
+          return feature.attributes.name;
+        },
+        marker: function(feature) { return feature.attributes.marker; },
+        opacity: function(feature) { return feature.attributes.opacity; },
+        cursor: function(feature) { return feature.attributes.cursor; },
+        zindex: function(feature) { return feature.attributes.zindex; },
+        color: function(feature) { return feature.attributes.color; },
+        radius: function(feature) { return feature.attributes.radius; }
+      }
+    }),
+    "select": new OpenLayers.Style({
+      graphicZIndex: 100
+    })
   });
 }
 
@@ -230,7 +282,7 @@ function defaultFilter() {
 }
 
 function clusterStrategy() {
-  return new OpenLayers.Strategy.Cluster({distance: 15, threshold: 1});
+  return new OpenLayers.Strategy.AttributeCluster({attribute: 'wheelchair', distance: 60, threshold: 6});
 }
 
 function bboxStategy() {
@@ -266,7 +318,8 @@ function httpProtocol() {
     },
     format: geojsonFormat(),
     params: {
-      limit: 300
+      limit: 400,
+      zoom: zoom
     }
   });
 }
