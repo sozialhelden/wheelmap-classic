@@ -14,7 +14,7 @@ group :default do
   gem 'geoip'
   gem 'formtastic'
   gem 'delayed_job'
-  gem 'libxml-ruby', '1.1.3'
+  gem 'libxml-ruby', '~> 2.2.1'
   gem 'crewait', :path => "#{File.expand_path(__FILE__)}/../vendor/gems/crewait-0.1.6"
   gem 'hoptoad_notifier', "~> 2.3"
   gem 'whenever', :require => false
