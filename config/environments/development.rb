@@ -6,7 +6,7 @@ Wheelmap::Application.configure do
   # since you don't have to restart the webserver when you make code changes.
   config.cache_classes = false
   
-  config.cache_store = :mem_cache_store, 'localhost', { :namespace => "wheelmap_#{Rails.env}",
+  config.cache_store = :mem_cache_store, 'localhost', { :namespace => "wheelmap/#{Rails.env}/",
                                                         :c_threshold => 10_000,
                                                         :compression => true,
                                                         :debug => Rails.env.development?,
