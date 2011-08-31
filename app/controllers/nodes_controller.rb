@@ -24,7 +24,17 @@ class NodesController < ApplicationController
   caches_action :sitemap
 
   def index
-    @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f).map{|c| c.round(2)} if params[:bbox]
+    if params[:bbox]
+      @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f).map{|bb| bb.round(2)}
+      if @right == @left
+        @left   -= 0.01
+        @right  += 0.01
+      end
+      if @top   == @bottom
+        @bottom -= 0.01
+        @top    += 0.01
+      end
+    end
     @limit = params[:limit].try(:to_i) || 300
 
     @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.order('osm_id DESC').limit(@limit) if @left
