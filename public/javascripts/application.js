@@ -198,7 +198,7 @@ function placesStyle() {
       graphicTitle: "${all}",
       graphicName: "circle",
       label: "${label}",
-      fontColor: "FFF",
+      fontColor: "#FFF",
       fontWeight: "bold",
       fontSize: "13px",
       fillColor: "${color}",
