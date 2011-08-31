@@ -145,7 +145,6 @@ de:
       month: Monat
       second: Sekunde
       year: Jahr
-  de: Deutsch
   devise: 
     confirmations: 
       confirmed: "Dein Benutzerkonto wurde erfolgreich bestätigt. Du bist nun angemeldet."
@@ -240,8 +239,6 @@ de:
       link: "Keine Anleitung zum Entspreen deines Benutzerkontos bekommen?"
       send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto entsperren kannst."
       unlocked: "Dein Benutzerkonto wirde erfolgreich entsperrt. Du bist jetzt eingeloggt."
-  el: Ελληνικά
-  en: English
   errors: 
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -269,7 +266,6 @@ de:
       too_long: "ist zu lang (nicht mehr als %{count} Zeichen)"
       too_short: "ist zu kurz (nicht weniger als %{count} Zeichen)"
       wrong_length: "hat die falsche Länge (muss genau %{count} Zeichen haben)"
-  es: Español
   form: 
     show_fully_accessible_places: Ja
     show_limited_accessible_places: Teilweise
@@ -307,7 +303,6 @@ de:
     titles: 
       basic: Basisdaten
       optional: "Mehr Infos <span class=\"addition\">(alle Felder sind optional)</span>"
-  fr: Français
   global: 
     form_validation_error: "Bitte beachte die unten angezeigten Fehlermeldungen."
   header: 
@@ -358,9 +353,6 @@ de:
       link: 
         node: 
           create: "Neuen Ort anlegen"
-  is: Íslenska
-  it: Italiano
-  jp: 日本
   layouts: 
     application: 
       banner: 
@@ -603,10 +595,6 @@ de:
           not_connected: "Status: nicht verbunden"
           revoke: "Verbindung aufheben"
       headline: "Dein Profil bearbeiten"
-  pt: Português
-  pt-PT: Português
-  ru: Русский
-  se: Svenska
   search: 
     index: 
       search: 
@@ -629,8 +617,6 @@ de:
       long: "%A, %e. %B %Y, %H:%M Uhr"
       short: "%e. %B, %H:%M Uhr"
     pm: nachmittags
-  tlh: "tlhIngan Hol"
-  tr: Türkçe
   user_sessions: 
     create: 
       activation: 

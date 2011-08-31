@@ -45,10 +45,8 @@ da:
       create: "Tilføj nyt sted"
       edit: "Ret sted"
     root: wheelmap
-  cn: 中文
   common: 
     close: Luk
-  da: Dansk
   date: 
     abbr_day_names: 
       - sø
@@ -145,8 +143,6 @@ da:
       month: Måned
       second: Sekund
       year: År
-  de: Deutsch
-  devise: 
     confirmations: 
       confirmed: "Din konto er nu aktiveret. Og du er nu logget ind."
       link: "Ikke modtaget nogen bekræftigelseintrukser?"
@@ -242,8 +238,6 @@ da:
       link: "Ej modtaget nogen åben instrukser?"
       send_instructions: "Om få minutter vil du modtage en email med instrukser om genåbning af din konto."
       unlocked: "Din konto er genåbnet og du er nu logget ind."
-  el: Ελληνικά
-  en: English
   errors: 
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -279,7 +273,6 @@ da:
       header: 
         one: "1 fejl gjorde at denne %{model} ikke kunne gemmes"
         other: "%{count} fejl gjorde at denne %{model} ikke kunne gemmes"
-  es: Español
   flash: 
     actions: 
       create: 
@@ -326,7 +319,6 @@ da:
     titles: 
       basic: Basisinformation
       optional: "Mere information <span class=\"addition\">(alle felter er valgfrit)</span>"
-  fr: Français
   global: 
     form_validation_error: "Bemærk fejllisten nedenfor."
   header: 
@@ -377,9 +369,6 @@ da:
       link: 
         node: 
           create: "Tilføj nyt sted"
-  is: Íslenska
-  it: Italiano
-  jp: 日本
   layouts: 
     application: 
       banner: 
@@ -622,10 +611,6 @@ da:
           not_connected: "Status: ikke forbundet"
           revoke: Afbryd
       headline: "Ret din profil"
-  pt: Português
-  pt-PT: Português
-  ru: Русский
-  se: Svenska
   search: 
     index: 
       search: 
@@ -648,8 +633,6 @@ da:
       long: "%A, %e. %B %Y, %H:%M"
       short: "%e. %b %Y, %H:%M"
     pm: pm
-  tlh: Klingon
-  tr: Türkçe
   user_sessions: 
     create: 
       activation: 

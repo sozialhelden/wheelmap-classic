@@ -1,5 +1,27 @@
 WheelchairStatus = %w{yes limited no unknown}
 
+Languages = {
+  'cn'    => '中文',
+  'da'    => 'Danske',
+  'de'    => 'Deutsch',
+  'de-CH' => 'Schwitzerdütsch',
+  'el'    => 'Ελληνικά',
+  'en'    => 'English',
+  'es'    => 'Español',
+  'fr'    => 'Français',
+  'is'    => 'Íslenska',
+  'it'    => 'Italiano',
+  'jp'    => '日本',
+  'ko'    => '한국의',
+  'pt'    => 'Português',
+  'pt-PT' => 'Português',
+  'ru'    => 'Русский',
+  'se'    => 'Svenska',
+  'tlh'   => 'tlhIngan Hol',
+  'tr'    => 'Türkçe',
+  'zh'    =>  '中文'
+}
+
 Amenities = {
   :public_transfer => %w{station aerodrome bicycle_rental bus_station bus_stop ferry ferry_terminal halt platform subway_entrance terminal tram_stop parking_aisle fuel parking car_rental car_sharing boatyard cable_car chair_lift},
   :food => %w{cafe bar pub restaurant fast_food drinking_water},
