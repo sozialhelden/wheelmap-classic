@@ -14,9 +14,7 @@ class Poi < ActiveRecord::Base
   
   def around_api_response(api_template)
     custom_cache_key = "api_response_#{self.cache_key}_#{api_template.to_s}"
-    logger.info("Exist fragment? #{custom_cache_key}")
     Rails.cache.fetch(custom_cache_key, :expires_in => 1.day) do
-      logger.info("Write fragment #{custom_cache_key}")
       yield
     end
   end
