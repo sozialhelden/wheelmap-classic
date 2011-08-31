@@ -170,6 +170,7 @@ GEM
       GeoRuby
       POpen4 (>= 0.1.4)
       spatial_adapter
+    memcache-client (1.8.5)
     mime-types (1.16)
     mysql2 (0.2.7)
     net-scp (1.0.4)
@@ -288,6 +289,7 @@ DEPENDENCIES
   lemonade
   libxml-ruby (~> 2.2.1)
   mapfish
+  memcache-client
   mysql2 (~> 0.2.7)
   newrelic_rpm (~> 3.0.1)
   nokogiri
