@@ -1,4 +1,4 @@
-<%- cache("bbox_#{[@left, @bottom, @right, @top].join','}", :expires_in => 1.minute) do -%>
+<%- cache("#{I18n.locale}/nodes/bbox_#{[@left, @bottom, @right, @top].join','}", :expires_in => 1.minute) do -%>
 {"type":"FeatureCollection","bbox":[<%= @left %>,<%= @bottom %>,<%= @right %>,<%= @top %>],"features":[
 <%- @places.each_with_index do |node, index| -%>{"type":"Feature","geometry":{"coordinates":[<%= node.lon%>,<%= node.lat%>],"type":"Point"},"properties": <%= node.tags.reverse_merge!( 'name' => node.headline,
                                                   'address' => node.address,
