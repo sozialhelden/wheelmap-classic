@@ -45,10 +45,8 @@ pt-PT:
       create: "Adicionar um novo lugar"
       edit: "Editar um lugar"
     root: "ê ã õ  ç"
-  cn: Chinês
   common: 
     close: fechar
-  da: Dansk
   date: 
     abbr_day_names: 
       - Dom
@@ -145,7 +143,6 @@ pt-PT:
       month: Mês
       second: Segundo
       year: Ano
-  de: Alemão
   devise: 
     confirmations: 
       confirmed: "A sua conta está confirmada. Está agora ligado à sua conta."
@@ -240,8 +237,6 @@ pt-PT:
       link: "Não recebeu instruções para desbloquear a sua conta?"
       send_instructions: "Receberá dentro de minutos um mail com intruções de como desbloquear a sua conta."
       unlocked: "A sua conta foi desbloqueada com sucesso. Está agora ligado(a) à sua conta"
-  el: Ελληνικά
-  en: Inglês
   errors: 
     dynamic_format: "%{message}"
     messages: 
@@ -276,7 +271,6 @@ pt-PT:
       header: 
         one: "Um erro impdiu que %{model} fosse salvo:"
         other: "%{count} erros impediu que %{model} fossem salvos :"
-  es: Espanhol
   flash: 
     actions: 
       create: 
@@ -322,7 +316,6 @@ pt-PT:
     titles: 
       basic: "Data base "
       optional: "Mais informação <span class=\"addition\">(all fields are optional)</span>"
-  fr: Francês
   global: 
     form_validation_error: "Por favor tome atenção aos erros mencionados em baixo."
   header: 
@@ -366,9 +359,6 @@ pt-PT:
       link: 
         node: 
           create: "Adicionar um novo lugar"
-  is: Islandês
-  it: Italiano
-  jp: Japonês
   layouts: 
     application: 
       banner: 
@@ -586,10 +576,6 @@ pt-PT:
           not_connected: "Estado: Desligado"
           revoke: "Desligar "
       headline: "Editar o seu profil"
-  pt: Prtuguês
-  pt-PT: Português
-  ru: Russo
-  se: Sloveno
   search: 
     index: 
       search: 
@@ -612,8 +598,6 @@ pt-PT:
       long: "%A, %d de %B de %Y, %H:%Mh"
       short: "%d/%m, %H:%M hs"
     pm: pm
-  tlh: "tlhIngan Hol"
-  tr: Turco
   user_sessions: 
     create: 
       activation: 

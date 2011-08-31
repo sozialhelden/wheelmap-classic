@@ -45,10 +45,8 @@ it:
       create: "Aggiungi luogo"
       edit: "Modifica luogo"
     root: wheelmap
-  cn: 中文
   common: 
     close: chiudi
-  da: Dansk
   date: 
     abbr_day_names: 
       - Dom
@@ -145,7 +143,6 @@ it:
       month: Mese
       second: Secondi
       year: Anno
-  de: Deutsch
   devise: 
     confirmations: 
       confirmed: "Il tuo account è stato confermato con successo. Sei ormai collegato."
@@ -242,8 +239,6 @@ it:
       link: "No hai ricevuto le istruzioni per sbloccare?"
       send_instructions: "Fra qualche minuti, riceverai una email con le istruzioni per sbloccare."
       unlocked: "Il tuo account è stato sbloccato con successo. Sei ormai collegato."
-  el: Ελληνικά
-  en: English
   errors: 
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -279,7 +274,6 @@ it:
       header: 
         one: "Non posso salvare questo %{model}: 1 errore"
         other: "Non posso salvare questo %{model}: %{count} errori."
-  es: Español
   flash: 
     actions: 
       create: 
@@ -326,7 +320,6 @@ it:
     titles: 
       basic: "Dati di base:"
       optional: "Più dati <span class=\"addition\">(tutti campi sono opzionali)</span> "
-  fr: Français
   global: 
     form_validation_error: "Vedi gli errori sotto."
   header: 
@@ -377,9 +370,6 @@ it:
       link: 
         node: 
           create: "Aggiungi nuovo luogo"
-  is: "Íslenska "
-  it: "Italiano "
-  jp: "日本 "
   layouts: 
     application: 
       banner: 
@@ -622,10 +612,6 @@ it:
           not_connected: "Stato: Non collegato"
           revoke: Scollega
       headline: "Modifica profilo"
-  pt: Português
-  pt-PT: Português
-  ru: Русский
-  se: Svenska
   search: 
     index: 
       search: 
@@ -648,8 +634,6 @@ it:
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
-  tlh: "tlhIngan Hol"
-  tr: "Türkçe "
   user_sessions: 
     create: 
       activation: 

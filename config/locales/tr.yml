@@ -45,10 +45,8 @@ tr:
       create: "yeni bir yer/alan ekleyiniz"
       edit: "yeri/ alanı şekilendiriniz"
     root: wheelmap
-  cn: 中文
   common: 
     close: kapatınız
-  da: Dansk
   date: 
     abbr_day_names: 
       - Pzr
@@ -145,7 +143,6 @@ tr:
       month: Ay
       second: Saniye
       year: Yıl
-  de: Deutsch
   devise: 
     confirmations: 
       confirmed: "hesab başarılı bir şekilde onaylandı. "
@@ -241,8 +238,6 @@ tr:
       link: "Kilidi açmak için talimatları almadınızmı?"
       send_instructions: "Bir kaç dakika içerisinde nasıl hesabınızın kilidini açabileceğinize dahil e-posta ile talimatlar alacaksınız."
       unlocked: "Hesabınızın kilidi başarılı bir şekilde açılmıstır. Şu an kayıtlısınız."
-  el: Ελληνικά
-  en: English
   errors: 
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -278,7 +273,6 @@ tr:
       header: 
         one: "1 error prohibited this %{model} from being saved"
         other: "%{count} errors prohibited this %{model} from being saved"
-  es: Español
   form: 
     show_fully_accessible_places: "tekerlekli sandalye ile ulaşılır"
     show_limited_accessible_places: "kısmen tekerlekli sandalye ile ulaşılır"
@@ -315,7 +309,6 @@ tr:
     titles: 
       basic: "Ana Veri:"
       optional: "Daha fazla bilgi <karış sınıfı=\"toplama\"> (tüm alanlar isteğe bağli)</karış>"
-  fr: Français
   global: 
     form_validation_error: " Lütfen aşağıda kote edilmiş hataları not alın."
   header: 
@@ -359,9 +352,6 @@ tr:
       link: 
         node: 
           create: "Yeni bir yer ekle"
-  is: Íslenska
-  it: Italiano
-  jp: 日本
   layouts: 
     application: 
       banner: 
@@ -611,10 +601,6 @@ tr:
           not_connected: "Statü: Bağlantı yok"
           revoke: "Bağlantıyı kesmek"
       headline: "Profilinizi düzenleyin"
-  pt: Português
-  pt-PT: Português
-  ru: Русский
-  se: Svenska
   search: 
     index: 
       search: 
@@ -637,8 +623,6 @@ tr:
       long: "%e %B %Y, %A, %H:%M"
       short: "%e %B, %H:%M"
     pm: "öğleden sonra"
-  tlh: "tlhIngan Hol"
-  tr: Türkçe
   user_sessions: 
     create: 
       activation: 

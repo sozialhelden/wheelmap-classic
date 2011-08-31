@@ -44,10 +44,8 @@ el:
       create: "Πρόσθεση νέας τοποθεσίας"
       edit: "Επεξεργασία τοποθεσίας"
     root: wheelmap
-  cn: 中文
   common: 
     close: Κλείσιμο
-  da: Dansk
   date: 
     abbr_day_names: 
       - Κυρ
@@ -235,8 +233,6 @@ el:
       link: "Δεν έχετε λάβει οδηγίες ξεκλειδώματος?"
       send_instructions: "Θα λάβετε ένα Email με οδηγίες, για το πως επιβεβαιώνετε τον λογαριασμό σας άμεσα."
       unlocked: "Ο λογαριασμός σας ξεκλειδώθηκε επιτυχώς. Είστε συνδεδεμένος τώρα."
-  el: Ελληνικά
-  en: English
   errors: 
     dynamic_format: "%{message}"
     format: "%{attribute} %{message} "
@@ -264,7 +260,6 @@ el:
       wrong_length: "Έχει λανθασμένο μήκος (πρέπει να είναι %{count} χαρακτήρες)"
     template: 
       body: "Υπήρξαν προβλήματα με τα εξής πεδία"
-  es: Español
   form: 
     show_fully_accessible_places: "Κατάλληλο για αναπηρική καρέκλα"
     show_limited_accessible_places: "Εν μέρη προσβάσιμο με αναπηρική καρέκλα"
@@ -300,7 +295,6 @@ el:
     titles: 
       basic: "Βασικά δεδομένα"
       optional: "Περισσότερες πληροφορίες <span class=\"addition\">(all fields are optional)</span> "
-  fr: Français
   global: 
     form_validation_error: "Παρακαλώ σημειώστε τα παρακάτω λάθη."
   header: 
@@ -344,9 +338,6 @@ el:
       link: 
         node: 
           create: "Πρόσθεσε νέα τοποθεσία"
-  is: Íslenska
-  it: Italiano
-  jp: 日本
   layouts: 
     application: 
       banner: 
@@ -587,10 +578,6 @@ el:
           not_connected: "Κατάσταση: μη συνδεδεμένος"
           revoke: Αποσύνδεση
       headline: "Επεξεργαστείτε το προφίλ σας"
-  pt: Português
-  pt-PT: Português
-  ru: Русский
-  se: Svenska
   search: 
     index: 
       search: 
@@ -613,8 +600,6 @@ el:
       long: "%A %d %B %Y %H:%M:%S %Z"
       short: "%d %b %H:%M"
     pm: απόγευμα
-  tlh: "tlhIngan Hol"
-  tr: Türkçe
   user_sessions: 
     create: 
       activation: 

@@ -143,6 +143,7 @@ da:
       month: Måned
       second: Sekund
       year: År
+  devise: 
     confirmations: 
       confirmed: "Din konto er nu aktiveret. Og du er nu logget ind."
       link: "Ikke modtaget nogen bekræftigelseintrukser?"

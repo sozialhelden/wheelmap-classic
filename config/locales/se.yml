@@ -45,10 +45,8 @@ se:
       create: "Lägg till plats"
       edit: "Ändra plats"
     root: wheelmap
-  cn: 中文
   common: 
     close: stäng
-  da: Dansk
   date: 
     abbr_day_names: 
       - Sön
@@ -145,7 +143,6 @@ se:
       month: Månad
       second: Sekund
       year: År
-  de: Deutsch
   devise: 
     confirmations: 
       confirmed: "Ditt konto är validerat. Du är nu inloggad."
@@ -242,8 +239,6 @@ se:
       link: "Mottog du inte upplåsningsinstruktioner?"
       send_instructions: "Inom några minuter kommer du att få ett e-post om hur du  låser upp ditt konto."
       unlocked: "Ditt konto är nu upplåst. Du kan nu inloggad."
-  el: Ελληνικά
-  en: English
   errors: 
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -279,7 +274,6 @@ se:
       header: 
         one: "1 fel hindrade denna %{model} från att sparas"
         other: "%{count} fel hindrade denna %{model} från att sparas"
-  es: Español
   flash: 
     actions: 
       create: 
@@ -325,7 +319,6 @@ se:
     titles: 
       basic: "Grundläggande data:"
       optional: "Mer information <span class=\"addition\">(alla fält är frivilliga)</span>"
-  fr: Français
   global: 
     form_validation_error: "Dessa fel uppstod."
   header: 
@@ -370,9 +363,6 @@ se:
       link: 
         node: 
           create: "Lägg till ny plats"
-  is: Íslenska
-  it: Italiano
-  jp: 日本
   layouts: 
     application: 
       banner: 
@@ -623,10 +613,6 @@ se:
           not_connected: "Status: frånkopplad"
           revoke: Frånkoppla
       headline: "Ändra din profil"
-  pt: Português
-  pt-PT: Português
-  ru: Русский
-  se: Svenska
   search: 
     index: 
       search: 
@@ -649,8 +635,6 @@ se:
       long: "%e %B %Y %H:%M"
       short: "%e %b %H:%M"
     pm: pm
-  tlh: "tlhIngan Hol"
-  tr: Türkçe
   user_sessions: 
     create: 
       activation: 

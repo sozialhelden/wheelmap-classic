@@ -46,10 +46,8 @@ ru:
       create: "Добавить новое место"
       edit: "Изменить место"
     root: wheelmap
-  cn: 中文
   common: 
     close: закрыть
-  da: Dansk
   date: 
     abbr_day_names: 
       - Вс
@@ -163,7 +161,6 @@ ru:
       month: Месяц
       second: Секунд
       year: Год
-  de: Deutsch
   devise: 
     confirmations: 
       confirmed: "Ваша учётная запись подтверждена. Теперь вы вошли в систему."
@@ -247,7 +244,6 @@ ru:
       link: "Не получили инструкции для разблокировки аккаунта?"
       send_instructions: "В течение нескольких минут вы получите письмо с инструкциями по разблокировке вашей учётной записи."
       unlocked: "Ваша учётная запись разблокирована. Теперь вы вошли в систему."
-  en: English
   errors: 
     messages: 
       accepted: "должен быть принят"
@@ -269,7 +265,6 @@ ru:
       too_long: "слишком длинное значение (должно быть не больше чем %{count} знаков)"
       too_short: "слишком короткое значение (должно быть не меньше чем %{count}  знаков)"
       wrong_length: "не действительная длина значения (должно быть %{count}  знаков)"
-  es: Español
   form: 
     show_fully_accessible_places: "доступно для инвалидов"
     show_limited_accessible_places: "частично доступно для инвалидов"
@@ -305,7 +300,6 @@ ru:
     titles: 
       basic: "Основные данные"
       optional: "Больше информации <span class=\"addition\">(все поля являются необязательными)</span> "
-  fr: Français
   global: 
     form_validation_error: "Обратите пожалуйста внимание на список ошибок внизу"
   header: 
@@ -319,7 +313,6 @@ ru:
       home: Старт
       how_to_add_a_place: "Как добавлять новые места?"
       imprint: Импринт
-  it: Italiano
   number: 
     currency: 
       format: 
@@ -341,10 +334,6 @@ ru:
           kb: КБ
           mb: МБ
           tb: ТБ
-  pt: Português
-  pt-PT: Português
-  ru: Русский
-  se: Svenska
   support: 
     array: 
       last_word_connector: " и "
@@ -357,5 +346,3 @@ ru:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: вечера
-  tlh: "tlhIngan Hol"
-  tr: Türkçe

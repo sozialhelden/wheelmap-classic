@@ -45,10 +45,8 @@ tlh:
       create: "Daq chu' chel"
       edit: "Daq De' choH"
     root: wheelmap
-  cn: 中文
   common: 
     close: SoQmoH
-  da: Dansk
   date: 
     abbr_day_names: 
       - "wa' jaj"
@@ -145,7 +143,6 @@ tlh:
       month: jar
       second: lupmey
       year: jar
-  de: Deutsch
   devise: 
     confirmations: 
       confirmed: "talIj 'ollu'. bI'elpu'. "
@@ -241,8 +238,6 @@ tlh:
       link: "'olmeH jabbI'DI' DaHevbe''a'?"
       send_instructions: "tugh jabbI'ID DaHev. talIj DangaQHa' 'e' ghojmoH."
       unlocked: "ngaQHa' talIj. bI'elpu'. "
-  el: Ελληνικά
-  en: English
   errors: 
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -278,7 +273,6 @@ tlh:
       header: 
         one: "%{model} qonlu'pu' 'e' bot Qagh:"
         other: "%{model} qonlu'pu' 'e' bot %{count} Qaghmey:"
-  es: Español
   form: 
     show_fully_accessible_places: "naw'laH rutlhquS"
     show_limited_accessible_places: "loQ naw'laH rutlhquS "
@@ -315,7 +309,6 @@ tlh:
     titles: 
       basic: "De' nap"
       optional: "latlh De' <span class=\"addition\">(poQbe' De')</span>"
-  fr: Français
   global: 
     form_validation_error: "bIngDaq Qagh yIlegh."
   header: 
@@ -359,9 +352,6 @@ tlh:
       link: 
         node: 
           create: "Daq chu' chel"
-  is: Íslenska
-  it: Italiano
-  jp: 日本
   layouts: 
     application: 
       banner: 
@@ -611,10 +601,6 @@ tlh:
           not_connected: "Dotlh: rarbe'"
           revoke: rarHa'
       headline: "ta'lIj choH"
-  pt: Português
-  pt-PT: Português
-  ru: Русский
-  se: Svenska
   search: 
     index: 
       search: 
@@ -637,8 +623,6 @@ tlh:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: ram
-  tlh: "tlhIngan Hol"
-  tr: Türkçe
   user_sessions: 
     create: 
       activation: 

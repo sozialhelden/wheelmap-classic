@@ -45,10 +45,8 @@ de:
       create: "Neuen Ort anlegen"
       edit: "Ort bearbeiten"
     root: wheelmap-Karte
-  cn: 中文
   common: 
     close: schließen
-  da: Danske
   date: 
     abbr_day_names: 
       - So
@@ -203,8 +201,6 @@ de:
       link: Registrieren
       signed_up: "Deine Registrierung war erfolgreich."
       updated: "Dein Benutzerkonto wurde aktualisiert."
-      admin:
-        inactive_signed_up: 'Deine Registrierung war erfolgreich. Jedoch konntest du nicht angemeldet werden weil dein Konto %{reason} ist.'
     sessions: 
       inactive: "Dein Benutzerkonto wurde noch nicht bestätigt. Um es zu Bestätigen klicke bitte auf den Link, den wir dir per E-Mail geschickt haben."
       invalid: "Ungültige E-Mail oder Passwort."
@@ -327,7 +323,7 @@ de:
     searchbar: 
       add_place: "Ort hinzufügen"
       find: finden
-      placeholder: "z.B. Sunset Boulevard L.A. oder Brandenburger Tor Berlin"
+      placeholder: "z.B. Sunset Boulevard San Francisco oder Brandenburger Tor Berlin"
       title_add_place: "Jetzt einen neuen Ort an dieser Stelle hinzufügen"
     tagline: "Wheelmap logo"
     title: "Wheelmap - Rollstuhlgerechte Orte finden"
