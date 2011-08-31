@@ -25,9 +25,16 @@ Wheelmap::Application.configure do
   # config.logger = SyslogLogger.new
 
   # Use a different cache store in production
-  # config.cache_store = :mem_cache_store
   # default is:
   # config.cache_store = :file_store, "tmp/cache/"
+  config.cache_store = :mem_cache_store, 'localhost', { :namespace => "wheelmap_#{Rails.env}",
+                                                        :c_threshold => 10_000,
+                                                        :compression => true,
+                                                        :debug => Rails.env.development?,
+                                                        :readonly => false,
+                                                        :urlencode => false
+                                                      }
+
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this

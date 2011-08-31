@@ -44,10 +44,14 @@ private
 
   def make_request(format)
     @query.reverse_merge!(:format => format)
-    @http.start do |http|
-      req = Net::HTTP::Get.new("#{@search_url.path}?#{@query.to_param}", {'User-Agent' => USERAGENT})
-      resp = http.request(req)
+    unless resp = Rails.cache.read("#{@search_url.path}?#{@query.to_param}")
+      @http.start do |http|
+        req = Net::HTTP::Get.new("#{@search_url.path}?#{@query.to_param}", {'User-Agent' => USERAGENT})
+        resp = http.request(req)
+        Rails.cache.write("#{@search_url.path}?#{@query.to_param}", resp, :expires_in => 1.hour)
+      end
     end
+    resp
   end
     
   def check_for_search_term
