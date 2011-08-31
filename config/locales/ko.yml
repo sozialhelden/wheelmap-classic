@@ -45,10 +45,8 @@ ko:
       create: "새로운 장소등록"
       edit: "장소 수정"
     root: wheelmap
-  cn: 중국어
   common: 
     close: 닫기
-  da: 덴마크어
   date: 
     abbr_day_names: 
       - 일
@@ -145,7 +143,6 @@ ko:
       month: 월
       second: 초
       year: 년
-  de: 독일어
   devise: 
     confirmations: 
       confirmed: "당신의 계정이 성공적으로 확인되었습니다. 이제 로그인 되었습니다"
@@ -242,8 +239,6 @@ ko:
       link: "계정잠금 해제에 관한 안내를 받지 못했습니까?"
       send_instructions: "몇 분 뒤 당신의 이메일로 계정잠금 해제에 관한 이메일이 도착할 것입니다"
       unlocked: "당신의 계정이 정상적으로 잠금해제 되었습니다. 이제 로그인 하실 수 있습니다"
-  el: 그리스어
-  en: 영어
   errors: 
     dynamic_format: "%{message}"
     format: "%{attribute} %{message} "
@@ -279,7 +274,6 @@ ko:
       header: 
         one: "%{model} 저장 중 1개의 에러가 발생했습니다"
         other: "%{model} 저장 중 %{count}개의 에러가 발생했습니다"
-  es: 에스파냐어
   flash: 
     actions: 
       create: 
@@ -326,7 +320,6 @@ ko:
     titles: 
       basic: "기본 데이터"
       optional: "자세한 정보 <span class=\"addition\">(모든 필드가 선택사항 입니다)</span> "
-  fr: 프랑스어
   global: 
     form_validation_error: "아래 오류 내용들을 참조하시기 바랍니다"
   header: 
@@ -377,9 +370,6 @@ ko:
       link: 
         node: 
           create: "새로운 장소 등록"
-  is: 아이슬란드어
-  it: 이탈리아어
-  jp: 일본어
   layouts: 
     application: 
       banner: 
@@ -621,10 +611,6 @@ ko:
           not_connected: "상태 : 연결되지 않았습니다"
           revoke: 연결끊기
       headline: "프로필 수정"
-  pt: 포르투갈어
-  pt-PT: 포르투갈어
-  ru: 러시아어
-  se: 스웨덴어
   search: 
     index: 
       search: 
@@ -647,8 +633,6 @@ ko:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: 오후
-  tlh: 클링온어
-  tr: 터키어
   user_sessions: 
     create: 
       activation: 

@@ -45,10 +45,8 @@ es:
       create: "Agregar nuevo sitio"
       edit: "Editar sitio"
     root: Mapa
-  cn: 中文
   common: 
     close: Cerrar
-  da: Dansk
   date: 
     abbr_day_names: 
       - Dom
@@ -145,7 +143,6 @@ es:
       month: Mes
       second: Segundos
       year: Año
-  de: Deutsch
   devise: 
     confirmations: 
       confirmed: "Tu cuenta ha sido confirmada. Ya puedes conectarte."
@@ -229,8 +226,6 @@ es:
       link: "¿No ha recibido los pasos para desbloquear?"
       send_instructions: "Recibirás un email con las instrucciones de cómo bloquear tu cuenta en unos minutos"
       unlocked: "Su cuenta ha sido desbloqueada. Ya está conectado."
-  el: Ελληνικά
-  en: English
   errors: 
     messages: 
       accepted: "tiene que ser aceptado"
@@ -252,7 +247,6 @@ es:
       too_long: "es demasiado largo (no más de %{count} caracteres)"
       too_short: "es demasiado corto (no más corto de %{count} caracteres)"
       wrong_length: "no tiene la longitud correcta (deben ser %{count} caracteres)"
-  es: Español
   form: 
     show_fully_accessible_places: "accesible en silla de ruedas"
     show_limited_accessible_places: "acceso medio en silla de ruedas"
@@ -288,7 +282,6 @@ es:
     titles: 
       basic: "Datos básicos"
       optional: "Más información<span class=\"addition\">(all fields are optional)</span>"
-  fr: Français
   global: 
     form_validation_error: "Por favor, tome nota de los siguientes errores."
   header: 
@@ -325,9 +318,6 @@ es:
       link: 
         node: 
           create: "Agregar un nuevo sitio"
-  is: Íslenska
-  it: Italiano
-  jp: 日本
   layouts: 
     application: 
       banner: 
@@ -556,10 +546,6 @@ es:
           not_connected: "Estado: No conectado"
           revoke: Desconectado
       headline: "Editar tu perfil"
-  pt: Português
-  pt-PT: Português
-  ru: Русский
-  se: Svenska
   search: 
     index: 
       search: 
@@ -580,8 +566,6 @@ es:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
-  tlh: "tlhIngan Hol"
-  tr: Türkçe
   user_sessions: 
     create: 
       activation: 

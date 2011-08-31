@@ -45,10 +45,8 @@ jp:
       create: 新しい場所を追加
       edit: 場所を編集
     root: wheelmap
-  cn: 中文
   common: 
     close: 閉じる
-  da: Dansk
   date: 
     abbr_day_names: 
       - 日
@@ -145,7 +143,6 @@ jp:
       month: 月
       second: 秒
       year: 年
-  de: Deutsch
   devise: 
     confirmations: 
       confirmed: あなたのアカウントは確認できました。現在サイインしています。
@@ -242,8 +239,6 @@ jp:
       link: アンロック手順が届きませんでしたか？
       send_instructions: 数分でアンロック手順を書いたメールが届きます。
       unlocked: アカウントはアンロックされました。あなたは現在サイインしています。
-  el: Ελληνικά
-  en: English
   errors: 
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -279,7 +274,6 @@ jp:
       header: 
         one: "エラーが1件あるのでこの %{model} を保存できません"
         other: "エラーが %{count} 件あるのでこの %{model} を保存できません"
-  es: Español
   flash: 
     actions: 
       create: 
@@ -325,7 +319,6 @@ jp:
     titles: 
       basic: 基本データ
       optional: "詳細情報 <span class=\"addition\">(全ての項目はオプションです)</span> "
-  fr: Français
   global: 
     form_validation_error: 下記に挙げられたエラーに注意してください。
   header: 
@@ -369,9 +362,6 @@ jp:
       link: 
         node: 
           create: 新しい場所を追加
-  is: Íslenska
-  it: Italiano
-  jp: " 日本"
   layouts: 
     application: 
       banner: 
@@ -614,10 +604,6 @@ jp:
           not_connected: "状態: 未接続"
           revoke: 切断
       headline: プロフィールを編集
-  pt: Português
-  pt-PT: Português
-  ru: Русский
-  se: Svenska
   search: 
     index: 
       search: 
@@ -640,8 +626,6 @@ jp:
       long: "%B %d, %Y %H:%M "
       short: "%d %b %H:%M"
     pm: pm
-  tlh: "tlhIngan Hol"
-  tr: Türkçe
   user_sessions: 
     create: 
       activation: 

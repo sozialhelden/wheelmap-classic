@@ -45,10 +45,8 @@ fr:
       create: "Ajouter nouveau lieu"
       edit: "Editer lieu"
     root: wheelmap
-  cn: chinois
   common: 
     close: fermer
-  da: Dansk
   date: 
     abbr_day_names: 
       - Dim
@@ -145,7 +143,6 @@ fr:
       month: Mois
       second: Secondes
       year: An
-  de: Deutsch
   devise: 
     confirmations: 
       confirmed: "Votre compte était confirmé avec succès. Maintenant vous êtes connecté."
@@ -240,8 +237,6 @@ fr:
       link: "Vous n'avez pas reçu instructions de déverrouiller?"
       send_instructions: "En quelques minutes vous allez recevoir un e-mail d'instructions comment déverrouiller votre compte."
       unlocked: "Votre compte a été déverrouillé avec succès. Maintenant vous êtes connecté."
-  el: Ελληνικά
-  en: English
   errors: 
     dynamic_format: "%{message} "
     format: "%{attribute} %{message} "
@@ -271,7 +266,6 @@ fr:
       wrong_length: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
     template: 
       body: "Il y a des problèmes avec les champs suivants:"
-  es: Español
   flash: 
     actions: 
       create: 
@@ -317,7 +311,6 @@ fr:
     titles: 
       basic: "Données élémentaires "
       optional: "Plusieurs informations <span class=\"addition\">(tous le champs sont optionnels)</span>"
-  fr: Français
   global: 
     form_validation_error: "Notez les erreurs listés en dessous."
   header: 
@@ -361,9 +354,6 @@ fr:
       link: 
         node: 
           create: "Ajouter un nouveau lieu"
-  is: Íslenska
-  it: Italiano
-  jp: 日本
   layouts: 
     application: 
       banner: 
@@ -604,10 +594,6 @@ fr:
           not_connected: "Statut: Non-connecté"
           revoke: Déconnecter
       headline: "Editer votre profil"
-  pt: Portugais
-  pt-PT: Português
-  ru: Русский
-  se: Svenska
   search: 
     index: 
       search: 
@@ -630,8 +616,6 @@ fr:
       long: "%A %d %B %Y %H:%M"
       short: "%d %b %H:%M"
     pm: "de l'après-midi"
-  tlh: "tlhIngan Hol"
-  tr: Turc
   user_sessions: 
     create: 
       activation: 
