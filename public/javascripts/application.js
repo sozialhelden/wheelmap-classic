@@ -420,7 +420,7 @@ function createPlacesLayer(style) {
       projection: epsg4326,
       displayProjection: epsg4326,
       rendererOptions: { yOrdering: true },
-      strategies: [bboxStategy(), filterStrategy(defaultFilter()), clusterStrategy()],
+      strategies: [bboxStategy(), filterStrategy(defaultFilter())],
       protocol: httpProtocol(),
       visibility: true
   });
