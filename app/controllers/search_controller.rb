@@ -44,14 +44,17 @@ private
 
   def make_request(format)
     @query.reverse_merge!(:format => format)
-    unless resp = Rails.cache.read("#{@search_url.path}?#{@query.to_param}")
+    resp = nil
+    cache_key = "#{@search_url.path}?#{@query.to_param}"
+    logger.info("Exist fragment? #{cache_key}")
+    Rails.cache.fetch("#{cache_key}") do
       @http.start do |http|
-        req = Net::HTTP::Get.new("#{@search_url.path}?#{@query.to_param}", {'User-Agent' => USERAGENT})
+        logger.info("Write fragment #{cache_key}")
+        req = Net::HTTP::Get.new("#{cache_key}", {'User-Agent' => USERAGENT})
         resp = http.request(req)
-        Rails.cache.write("#{@search_url.path}?#{@query.to_param}", resp, :expires_in => 1.hour)
       end
     end
-    resp
+    return resp
   end
     
   def check_for_search_term
