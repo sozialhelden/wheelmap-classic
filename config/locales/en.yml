@@ -28,23 +28,6 @@ en:
     application: 
       banner: 
         alt: A project by Sozialhelden.de
-  cn: 中文
-  da: Danske
-  de: Deutsch
-  en: English
-  el: Ελληνικά
-  es: Español
-  fr: Français
-  is: Íslenska
-  it: Italiano
-  jp: 日本
-  pt: Português
-  'pt-PT': Português
-  ru: Русский
-  tlh: Klingon
-  tr: Türkçe
-  se: Svenska
-
   support:
     array:
       sentence_connector: 'and'
@@ -54,8 +37,6 @@ en:
       words_connector: ','
     select: 
       prompt: "Please select"
-      
-
   activerecord: 
     errors:
       full_messages: 

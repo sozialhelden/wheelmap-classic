@@ -144,7 +144,6 @@ el:
       month: Μήνας
       second: Δευτερόλεπτα
       year: Έτος
-  de: Deutsch
   devise: 
     confirmations: 
       confirmed: "Ο λογαριασμός σάς επιβεβαιώθηκε με επιτυχία. Είστε συνδεδεμένος."
