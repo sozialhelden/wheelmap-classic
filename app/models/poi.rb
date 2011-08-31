@@ -12,6 +12,12 @@ class Poi < ActiveRecord::Base
   
   acts_as_api
   
+  def around_api_response(api_template)
+    Rails.cache.fetch("api_response_#{self.cache_key}_#{api_template.to_s}", :expires_in => 1.day) do
+      yield
+    end
+  end
+  
   api_accessible :simple do |t|
     t.add :name
     t.add :wheelchair
