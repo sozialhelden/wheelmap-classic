@@ -197,6 +197,7 @@ function placesStyle() {
     new OpenLayers.Style({
       graphicTitle: "${all}",
       graphicName: "circle",
+      label: "${label}",
       fontColor: "FFF",
       fontWeight: "bold",
       fontSize: "13px",
@@ -207,7 +208,7 @@ function placesStyle() {
       strokeWidth: "2",
       strokeDashstyle: "solid",
       pointRadius: "${radius}",
-      cursor: "${cursor}",
+      cursor: "pointer",
       externalGraphic: "${marker}",
       graphicWidth: 32,
       graphicHeight: 37,
@@ -222,17 +223,12 @@ function placesStyle() {
             feature.attributes.marker = '';
             feature.attributes.radius = 10 + (4 * Math.sqrt(feature.cluster.length));
             feature.attributes.opacity = 0.25;
-            feature.attributes.cursor = "";
-            feature.attributes.zindex = 1;
-            switch (feature.cluster[0].attributes['wheelchair']) {
-              case 'yes': feature.attributes.color = '#86af4d'; feature.attributes.zindex = 15; break;
-              case 'limited': feature.attributes.color = '#F19D46'; feature.attributes.zindex = 10; break;
-              case 'no': feature.attributes.color = '#D6382F'; feature.attributes.zindex = 5; break;
-              case 'unknown': feature.attributes.color = '#8D8D8E'; feature.attributes.zindex = 1; break;
-            }
+            feature.attributes.zindex = 15;
+            feature.attributes.color = '#8D8D8E';
+            feature.attributes.label = feature.cluster.length;
           } else {
             feature.attributes.opacity = 1.0;
-            feature.attributes.cursor = "pointer";
+            feature.attributes.label = '';
             switch (feature.attributes.wheelchair) {
               case 'yes': feature.attributes.zindex = 50; break;
               case 'limited': feature.attributes.zindex = 40; break;
@@ -247,7 +243,8 @@ function placesStyle() {
         cursor: function(feature) { return feature.attributes.cursor; },
         zindex: function(feature) { return feature.attributes.zindex; },
         color: function(feature) { return feature.attributes.color; },
-        radius: function(feature) { return feature.attributes.radius; }
+        radius: function(feature) { return feature.attributes.radius; },
+        label: function(feature) { return feature.attributes.label; }
       }
     }),
     "select": new OpenLayers.Style({
@@ -282,11 +279,11 @@ function defaultFilter() {
 }
 
 function clusterStrategy() {
-  return new OpenLayers.Strategy.AttributeCluster({attribute: 'wheelchair', distance: 60, threshold: 6});
+  return new OpenLayers.Strategy.Cluster({distance: 60, threshold: 6});
 }
 
 function bboxStategy() {
-  return new OpenLayers.Strategy.BBOX({ratio : 1.2, resFactor: 1.2});
+  return new OpenLayers.Strategy.BBOX({ratio : 0.7, resFactor: 0.2});
 }
 
 function filterStrategy(filter) {
@@ -392,18 +389,22 @@ function popup_more_link(feature) {
 function onFeatureSelect(evt) {
   removeAllPopups();
   var feature = evt.feature;
-  var popup = new OpenLayers.Popup.FramedCloud("featurePopup",
-                           feature.geometry.getBounds().getCenterLonLat(),
-                           null,
-                           popup_headline(feature) +
-                           popup_address(feature) +
-                           popup_more_link(feature) +
-                           popup_form(feature),
-                           null, true, onPopupClose);
-  feature.popup = popup;
-  popup.feature = feature;
-  map.addPopup(popup);
-  $('.update_form').submit(submit_handler);
+  if (feature.cluster) {
+    jumpTo(feature.lon, feature.lat, map.getZoom() + 1);
+  } else {
+    var popup = new OpenLayers.Popup.FramedCloud("featurePopup",
+                             feature.geometry.getBounds().getCenterLonLat(),
+                             null,
+                             popup_headline(feature) +
+                             popup_address(feature) +
+                             popup_more_link(feature) +
+                             popup_form(feature),
+                             null, true, onPopupClose);
+    feature.popup = popup;
+    popup.feature = feature;
+    map.addPopup(popup);
+    $('.update_form').submit(submit_handler);
+  }
 }
 
 function onFeatureUnselect(evt) {
@@ -418,7 +419,7 @@ function createPlacesLayer(style) {
       projection: epsg4326,
       displayProjection: epsg4326,
       rendererOptions: { yOrdering: true },
-      strategies: [bboxStategy(), filterStrategy(defaultFilter())],
+      strategies: [bboxStategy(), filterStrategy(defaultFilter()), clusterStrategy()],
       protocol: httpProtocol(),
       visibility: true
   });
