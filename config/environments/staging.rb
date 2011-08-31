@@ -30,7 +30,7 @@ Wheelmap::Application.configure do
   config.cache_store = :mem_cache_store, 'localhost', { :namespace => "wheelmap_#{Rails.env}",
                                                         :c_threshold => 10_000,
                                                         :compression => true,
-                                                        :debug => Rails.env.development?,
+                                                        :debug => Rails.env.staging?,
                                                         :readonly => false,
                                                         :urlencode => false
                                                       }

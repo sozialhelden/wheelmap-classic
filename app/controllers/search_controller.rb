@@ -46,10 +46,8 @@ private
     @query.reverse_merge!(:format => format)
     resp = nil
     cache_key = "#{@search_url.path}?#{@query.to_param}"
-    logger.info("Exist fragment? #{cache_key}")
     Rails.cache.fetch("#{cache_key}") do
       @http.start do |http|
-        logger.info("Write fragment #{cache_key}")
         req = Net::HTTP::Get.new("#{cache_key}", {'User-Agent' => USERAGENT})
         resp = http.request(req)
       end
