@@ -390,7 +390,8 @@ function onFeatureSelect(evt) {
   removeAllPopups();
   var feature = evt.feature;
   if (feature.cluster) {
-    jumpTo(feature.lon, feature.lat, map.getZoom() + 1);
+    // Center the Map on the cluster with higher zoom level.
+    map.setCenter(feature.geometry.bounds.centerLonLat, map.getZoom() + 1);
   } else {
     var popup = new OpenLayers.Popup.FramedCloud("featurePopup",
                              feature.geometry.getBounds().getCenterLonLat(),
