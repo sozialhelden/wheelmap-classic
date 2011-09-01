@@ -15,7 +15,7 @@ class NodesController < ApplicationController
   rescue_from OpenStreetMap::Unavailable,       :with => :timeout
 
   caches_action :index, :if => lambda {|c| c.request.format.sitemap? },
-                        :expires_in => 1.day
+                        :expires_in => 1.day,
                         :cache_path => Proc.new {|c|
                            params = c.params
                            params.delete(:bbox)
