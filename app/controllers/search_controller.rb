@@ -46,10 +46,12 @@ private
     @query.reverse_merge!(:format => format)
     resp = nil
     cache_key = "#{@search_url.path}?#{@query.to_param}"
-    Rails.cache.fetch("#{cache_key}") do
+    unless resp = Rails.cache.read("#{cache_key}")
       @http.start do |http|
         req = Net::HTTP::Get.new("#{cache_key}", {'User-Agent' => USERAGENT})
         resp = http.request(req)
+        # Cache response object if request was successfull
+        Rails.cache.write("#{cache_key}", resp, :expires_in => 1.hour) if resp.code == 200
       end
     end
     return resp
