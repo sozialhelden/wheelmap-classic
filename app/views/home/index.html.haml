@@ -1,9 +1,12 @@
 #filter{:class => cookies['minimized_filter'] == 'true' ? 'minimized' : ''}
-  = render :partial => 'home/wheelchair_status_filter'
+  - cache("#{I18n.locale}/home/wheelchair_status_filter", :expires_in => 1.day) do
+    = render :partial => 'home/wheelchair_status_filter'
 #categories{:class => cookies['minimized_categories'] == 'true' ? 'minimized' : ''}
-  = render :partial => 'home/category_filter'
+  - cache("#{I18n.locale}/home/category_filter", :expires_in => 1.day) do
+    = render :partial => 'home/category_filter'
 #counter{:class => cookies['minimized_counter'] == 'true' ? 'minimized' : ''}
-  = render :partial => 'home/tag_counter'
+  - cache("#{I18n.locale}/home/tag_counter", :expires_in => 1.minute) do
+    = render :partial => 'home/tag_counter'
 #spinner
 
 #facebox

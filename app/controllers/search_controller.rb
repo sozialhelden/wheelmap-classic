@@ -2,7 +2,7 @@ class SearchController < ApplicationController
   
   URL = "http://nominatim.openstreetmap.org/search"
   # URL = "http://open.mapquestapi.com/nominatim/v1/search"
-  DEFAULT_PARAMS = {:'accept-language' => I18n.locale, :limit => 10, :osm_type => 'N', :email => 'info@wheelmap.org'}
+  DEFAULT_PARAMS = {:limit => 10, :osm_type => 'N', :email => 'info@wheelmap.org'}
   USERAGENT = "Wheelmap v1.0, (http://wheelmap.org)"
   
   TIMEOUT = 1
@@ -17,7 +17,7 @@ class SearchController < ApplicationController
     @http = Net::HTTP.new(@search_url.host, @search_url.port)
     @http.read_timeout = 2
     @http.open_timeout = 2
-    @query = DEFAULT_PARAMS.reverse_merge({:q => params[:q]})
+    @query = DEFAULT_PARAMS.reverse_merge({:'accept-language' => I18n.locale, :q => params[:q]})
     respond_to do |wants|
       wants.js  {
         resp = make_request(:json)
