@@ -30,6 +30,7 @@ group :default do
   gem 'fastercsv'
   gem 'ruport'
   gem 'memcache-client'
+  gem 'jammit'
 end
 
 group :test, :development do

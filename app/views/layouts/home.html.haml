@@ -17,7 +17,7 @@
     
     = content_for :javascript_constants
 
-    = stylesheet_link_tag 'screen', :cache => 'screens'
+    = include_stylesheets :screen, :media => 'screen, projection'
 
   %body(class=browser_class)
     = render :partial => '/shared/header'
@@ -30,15 +30,9 @@
         
     = render :partial => 'shared/google_tracking'
     
-    -# Using IE
     - if browser_class.include?('trident')
-      = javascript_include_tag 'jquery.ie'
-      -# Using IE 7 or lower
-      - if browser_class.include?('trident-7') || browser_class.include?('trident-6')
-        = javascript_include_tag 'http://cdn.jquerytools.org/1.2.5/jquery.tools.min.js'
+      = include_javascripts :ie
     - else
-      = javascript_include_tag 'jquery.min'
-      
-    = javascript_include_tag 'openlayers', 'cookie', 'uservoice', 'openlayers_i18n', 'osm', 'application', 'map', :cache => true
+      = include_javascripts :default
 
     = content_for :javascript
