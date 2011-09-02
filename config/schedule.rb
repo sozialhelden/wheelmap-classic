@@ -18,3 +18,7 @@ end
 every 10.minutes do
  find_command "find tmp/cache/ -mmin +4320 -type f -delete", :environment => :production
 end
+
+every 1.day, :at => '3:30 am' do 
+  rake "sitemap:generate", :environment => :production
+end

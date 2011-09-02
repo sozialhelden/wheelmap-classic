@@ -31,6 +31,7 @@ group :default do
   gem 'ruport'
   gem 'memcache-client'
   gem 'jammit'
+  gem 'big_sitemap', :git => 'git@github.com:christoph-buente/big_sitemap.git'
 end
 
 group :test, :development do
