@@ -8,4 +8,4 @@ config/google.yml
 config/open_street_map.yml
 public/*/cache/*
 public/assets
-public/sitemaps
+public/sitemap_*

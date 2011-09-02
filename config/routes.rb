@@ -29,9 +29,6 @@ Wheelmap::Application.routes.draw do
     member do 
       put :update_wheelchair
     end
-    collection do
-      get :sitemap
-    end
   end
 
   resources :users, :as => 'profile', :path => '/profile'

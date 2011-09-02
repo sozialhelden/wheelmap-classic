@@ -17,16 +17,6 @@ class NodesController < ApplicationController
   rescue_from OpenStreetMap::Gone,              :with => :gone
   rescue_from OpenStreetMap::Unavailable,       :with => :timeout
 
-  caches_action :index, :if => lambda {|c| c.request.format.sitemap? },
-                        :expires_in => 1.day,
-                        :cache_path => Proc.new {|c|
-                           params = c.params
-                           params.delete(:bbox)
-                           params
-                        }
-
-  caches_action :sitemap, :expires_in => 1.day
-
   def index
     if params[:bbox]
       @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f).map{|bb| bb.round(2)}
@@ -48,14 +38,6 @@ class NodesController < ApplicationController
       wants.json{     render }
       wants.geojson{  render :content_type => "application/json; subtype=geojson; charset=utf-8" }
       wants.html{ redirect_to root_path }
-      wants.sitemap{
-        per_page = 500
-        page = params[:page].try(:to_i) || 1
-        @nodes = Poi.all( :select => 'p.status, p.osm_id, p.updated_at',
-                  :from => "(SELECT osm_id FROM pois ORDER BY osm_id LIMIT #{(page * per_page) - per_page}, #{per_page}) o",
-                  :joins => 'JOIN pois p ON p.osm_id = o.osm_id',
-                  :order => 'p.osm_id')
-      }
     end
   end
   
@@ -122,13 +104,6 @@ class NodesController < ApplicationController
     @node = OpenStreetMap.get_node(params[:id])
   end
   
-  def sitemap
-    respond_to do |wants|
-      @count = Poi.count(:select => 'osm_id')
-      wants.xml{ render }
-    end
-  end
-
   # Before filter
   protected
   
