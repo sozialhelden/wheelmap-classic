@@ -8,7 +8,10 @@ class NodesController < ApplicationController
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
   before_filter :check_bbox_param,                :only => :index
-  
+
+  # Manually compress geojson output
+  after_filter :compress,                         :only => :index, :if => lambda {|c| c.request.format.geojson?}
+
   rescue_from ActiveRecord::RecordNotFound,     :with => :not_found
   rescue_from OpenStreetMap::NotFound,          :with => :not_found
   rescue_from OpenStreetMap::Gone,              :with => :gone
@@ -159,5 +162,21 @@ class NodesController < ApplicationController
   
   def check_create_params
     render( :text => 'Params missing', :status => 406 ) if params[:node].blank?
+  end
+
+  def compress
+    if self.request.env['HTTP_ACCEPT_ENCODING'] and self.request.env['HTTP_ACCEPT_ENCODING'].match(/gzip/)
+      if self.response.headers["Content-Transfer-Encoding"] != 'binary'
+        begin
+          ostream = StringIO.new
+          gz = Zlib::GzipWriter.new(ostream)
+          gz.write(self.response.body)
+          self.response.body = ostream.string
+          self.response.headers['Content-Encoding'] = 'gzip'
+        ensure
+          gz.close
+        end
+      end
+    end
   end
 end
