@@ -26,8 +26,10 @@
     var language = '#{I18n.locale}';
 
 -content_for :javascript do
-  = render :partial => 'shared/google_event_tracking'
-  -#= render :partial => 'shared/heatmap'
+  :javascript
+    drawmap(defaultControls(), 'map');
+    createPlacesLayer(placesStyle());
+    jumpTo(lon,lat,zoom);
 
   - if browser_class.include?('trident-7') || browser_class.include?('trident-6')
     :javascript
@@ -44,3 +46,5 @@
         });
         $.cookie('ie_warning', 1);
       }
+
+  = render :partial => 'shared/google_event_tracking'

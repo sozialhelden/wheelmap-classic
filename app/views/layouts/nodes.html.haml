@@ -18,7 +18,7 @@
     
     = content_for :javascript_constants
       
-    = stylesheet_link_tag 'node', :cache => 'nodes'
+    = include_stylesheets :node, :media => 'screen, projection'
 
   %body(class=browser_class)
     = render :partial => '/shared/header'      
@@ -30,6 +30,9 @@
 
     = render :partial => 'shared/google_tracking'
 
-    = javascript_include_tag 'jquery', 'openlayers', 'cookie', 'uservoice', 'osm', 'application'
+    - if browser_class.include?('trident')
+      = include_javascripts :ie
+    - else
+      = include_javascripts :default
     
     = content_for :javascript
