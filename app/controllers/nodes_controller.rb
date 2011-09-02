@@ -10,7 +10,7 @@ class NodesController < ApplicationController
   before_filter :check_bbox_param,                :only => :index
 
   # Manually compress geojson output
-  after_filter :compress,                         :only => :index, :if => lambda {|c| c.request.format.geojson?}
+  after_filter :compress,                         :only => :index, :if => lambda {|c| c.request.format.try(:geojson?)}
 
   rescue_from ActiveRecord::RecordNotFound,     :with => :not_found
   rescue_from OpenStreetMap::NotFound,          :with => :not_found
