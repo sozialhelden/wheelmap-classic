@@ -38,6 +38,8 @@ namespace :deploy do
     run "mkdir -p #{shared_path}/tmp/var"
     run "mkdir -p #{shared_path}/tmp/osmosis-working-dir"
     run "mkdir -p #{shared_path}/tmp/cache"
+    run "mkdir -p #{shared_path}/sitemaps"
+    
     run "touch #{shared_path}/config/database.yml"
   end
 
@@ -45,6 +47,7 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/tmp/osmosis-working-dir #{release_path}/tmp/osmosis-working-dir"
     run "ln -nfs #{shared_path}/tmp/var #{release_path}/tmp/var"
     run "ln -nfs #{shared_path}/tmp/cache #{release_path}/tmp/cache"
+    run "ln -nfs #{shared_path}/sitemaps #{release_path}/public/sitemaps"
     
     %w(database.yml open_street_map.yml).each do |file|
       run "ln -nfs #{shared_path}/config/#{file} #{release_path}/config/#{file}"

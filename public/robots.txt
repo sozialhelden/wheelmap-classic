@@ -3,4 +3,4 @@
 # To ban all spiders from the entire site uncomment the next two lines:
 # User-Agent: *
 # Disallow: /
-Sitemap: http://wheelmap.org/nodes/sitemap.xml
+Sitemap: http://wheelmap.org/sitemaps/sitemap_index.xml.gz
