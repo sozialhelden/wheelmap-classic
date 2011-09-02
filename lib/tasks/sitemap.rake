@@ -8,8 +8,9 @@ namespace :sitemap do
       :primary_column => :osm_id,
       :url_options    => {:host => 'wheelmap.org'},
       :document_root  => "#{Rails.root}/public",
+      :document_path  => "/",
       :ping_google    => true,
-      :ping_yahoo     => true,
+      :ping_yahoo     => false,
       :ping_bing      => true,
       :ping_ask       => true,
       :gzip           => true
@@ -24,6 +25,6 @@ namespace :sitemap do
     )
     
     sitemap.generate
-    sitemap.ping_search_engines if Rails.env.production?
+    sitemap.ping_search_engines(nil) if Rails.env.production?
   end
 end
