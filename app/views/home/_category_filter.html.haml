@@ -4,5 +4,5 @@
 %ul#amenities
   - Category.all.sort_by(&:localized_name).each do |category|
     %li{:class => category.identifier}
-      = check_box_tag("category-#{category.identifier}", category.identifier, true, :class => 'filter', :rel => 'category')
+      = check_box_tag("category-#{category.identifier}", category.identifier, cookies["filter_category_#{category.identifier}"] != 'true', :class => 'filter', :rel => 'category')
       = label_tag "category-#{category.identifier}", category.localized_name
