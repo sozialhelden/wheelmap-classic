@@ -1,4 +1,5 @@
 class NodesController < ApplicationController
+  require 'float'
   
   skip_before_filter :verify_authenticity_token
   
@@ -19,14 +20,18 @@ class NodesController < ApplicationController
 
   def index
     if params[:bbox]
-      @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f).map{|bb| bb.round(2)}
+      @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f)
+      @left = @left.floor_to(3)
+      @bottom = @bottom.floor_to(3)
+      @right = @right.ceil_to(3)
+      @top = @top.ceil_to(3)
       if @right == @left
-        @left   -= 0.01
-        @right  += 0.01
+        @left   -= 0.001
+        @right  += 0.001
       end
       if @top   == @bottom
-        @bottom -= 0.01
-        @top    += 0.01
+        @bottom -= 0.001
+        @top    += 0.001
       end
     end
     @limit = params[:limit].try(:to_i) || 300
