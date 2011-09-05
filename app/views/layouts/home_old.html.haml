@@ -2,7 +2,7 @@
 %html(lang="#{I18n.locale}")
   %head
     = render :partial => 'shared/meta'
-    
+
     / HOPTOAD START
     = hoptoad_javascript_notifier
     / HOPTOAD END
@@ -13,36 +13,26 @@
       %meta{:name => 'description', :content => t('header.meta.description')}
       %title=t('header.title')
     
-
     = render :partial => 'shared/html5_elements'
     
     = content_for :javascript_constants
-      
-    = include_stylesheets :node, :media => 'screen, projection'
+
+    = include_stylesheets :screen, :media => 'screen, projection'
 
   %body(class=browser_class)
-    = render :partial => '/shared/header'      
-    #main
-      = show_flash
+    = render :partial => '/shared/header'
+    #map
       = yield
-
-    = render :partial => 'shared/footer'  
-
+      
+    = show_flash
+    
+    = render :partial => 'shared/footer'
+        
     = render :partial => 'shared/google_tracking'
-
+    
     - if browser_class.include?('trident')
       = include_javascripts :ie
     - else
       = include_javascripts :default
-    
+
     = content_for :javascript
-    = javascript_include_tag 'http://platform.twitter.com/widgets.js'
-    :javascript  
-      (function(d, t) {
-        var g = d.createElement(t),
-        s = d.getElementsByTagName(t)[0];
-        g.async = true;
-        g.src = 'https://apis.google.com/js/plusone.js';
-        s.parentNode.insertBefore(g, s);
-      })(document, 'script');
-    

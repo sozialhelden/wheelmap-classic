@@ -19,7 +19,7 @@
 
     = include_stylesheets :screen, :media => 'screen, projection'
 
-  %body(class=browser_class)
+  %body{:class => browser_class, :style => 'overflow: hidden'}
     = render :partial => '/shared/header'
     #map
       = yield
@@ -34,5 +34,7 @@
       = include_javascripts :ie
     - else
       = include_javascripts :default
+      
 
     = content_for :javascript
+    = javascript_include_tag 'http://platform.twitter.com/widgets.js'

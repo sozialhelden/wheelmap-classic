@@ -37,13 +37,13 @@ a:hover {
   color: black;
 }
 
-/* line 30, ../../app/stylesheets/vendor/_map.sass */
+/* line 29, ../../app/stylesheets/vendor/_map.sass */
 .olFramedCloudPopupContent {
   font-size: 0.8em;
   font-family: Verdana, sans-serif;
 }
 
-/* line 34, ../../app/stylesheets/vendor/_map.sass */
+/* line 33, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle {
   position: absolute;
   font-size: 1em;
@@ -60,13 +60,13 @@ a:hover {
   cursor: default;
   opacity: 0.7;
 }
-/* line 50, ../../app/stylesheets/vendor/_map.sass */
+/* line 49, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle:hover {
   background-color: white;
   opacity: 1;
 }
 
-/* line 55, ../../app/stylesheets/vendor/_map.sass */
+/* line 54, ../../app/stylesheets/vendor/_map.sass */
 #description {
   position: absolute;
   z-index: 10000;
@@ -79,7 +79,7 @@ a:hover {
   font-size: 12px;
 }
 
-/* line 67, ../../app/stylesheets/vendor/_map.sass */
+/* line 66, ../../app/stylesheets/vendor/_map.sass */
 #attribution {
   bottom: 0;
   left: 0;
@@ -90,14 +90,14 @@ a:hover {
   z-index: 1000;
 }
 
-/* line 77, ../../app/stylesheets/vendor/_map.sass */
+/* line 76, ../../app/stylesheets/vendor/_map.sass */
 #layer {
   position: absolute;
   top: 60px;
   right: 10px;
   z-index: 10002;
 }
-/* line 83, ../../app/stylesheets/vendor/_map.sass */
+/* line 82, ../../app/stylesheets/vendor/_map.sass */
 #layer > div {
   border: 1px solid black;
   background-color: white;
@@ -106,7 +106,7 @@ a:hover {
   cursor: default;
   margin-bottom: 4px;
 }
-/* line 92, ../../app/stylesheets/vendor/_map.sass */
+/* line 91, ../../app/stylesheets/vendor/_map.sass */
 #layer .active {
   background-color: #eeeeff;
 }
@@ -228,18 +228,6 @@ a:visited:hover {
   color: #3d4f24;
 }
 
-/* line 1, ../../app/stylesheets/basics/_sozialhelden.sass */
-#sozialhelden {
-  bottom: 0;
-  position: fixed;
-  right: 0;
-  z-index: 4000;
-}
-/* line 7, ../../app/stylesheets/basics/_sozialhelden.sass */
-#sozialhelden img {
-  vertical-align: bottom;
-}
-
 /* line 10, ../../app/stylesheets/basics/_icons.sass */
 .print {
   background-repeat: no-repeat;
@@ -320,7 +308,7 @@ a:visited:hover {
 /* line 2, ../../app/stylesheets/basics/_open_layers.sass */
 #map .olMapViewport {
   width: 100% !important;
-  height: 100% !important;
+  height: 99% !important;
   position: absolute !important;
   top: 0px;
   background: #fff7d9;
@@ -353,20 +341,21 @@ a:visited:hover {
 /* line 1, ../../app/stylesheets/basics/_header.sass */
 #header {
   height: 110px;
-  width: 100%;
-  padding-top: 25px;
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 13px;
   line-height: 20px;
   display: block;
+  background-color: white;
+  margin: 10px;
+  overflow: hidden;
 }
-/* line 8, ../../app/stylesheets/basics/_header.sass */
+/* line 9, ../../app/stylesheets/basics/_header.sass */
 #header .links {
-  position: absolute;
-  top: 5px;
-  right: 10px;
+  float: right;
+  margin-bottom: 18px;
+  height: 20px;
 }
-/* line 12, ../../app/stylesheets/basics/_header.sass */
+/* line 13, ../../app/stylesheets/basics/_header.sass */
 #header .links a {
   border-right: 1px #cccccc solid;
   float: left;
@@ -374,7 +363,7 @@ a:visited:hover {
   margin: 3px 0;
   padding: 0 7px;
 }
-/* line 18, ../../app/stylesheets/basics/_header.sass */
+/* line 19, ../../app/stylesheets/basics/_header.sass */
 #header .links select {
   background: transparent;
   border: 0;
@@ -386,55 +375,46 @@ a:visited:hover {
   -khtml-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 25, ../../app/stylesheets/basics/_header.sass */
+/* line 26, ../../app/stylesheets/basics/_header.sass */
 .gecko #header .links select {
   margin-left: 3px;
 }
-/* line 27, ../../app/stylesheets/basics/_header.sass */
+/* line 28, ../../app/stylesheets/basics/_header.sass */
 .webkit #header .links select {
   background: transparent url("/images/icons/select-marker.png") 98% 0 no-repeat;
   padding-right: 20px;
   -webkit-appearance: none;
 }
-/* line 32, ../../app/stylesheets/basics/_header.sass */
+/* line 33, ../../app/stylesheets/basics/_header.sass */
 #header a {
   text-decoration: underline;
 }
-/* line 35, ../../app/stylesheets/basics/_header.sass */
-#header #appstorebadge {
-  margin: 5px;
-  margin-left: 25px;
-  float: left;
-  position: relative;
-  left: 10px;
-  width: 5px;
-}
-/* line 43, ../../app/stylesheets/basics/_header.sass */
+/* line 36, ../../app/stylesheets/basics/_header.sass */
 #header #logo {
+  float: left;
   height: 84px;
   width: 300px;
-  margin-left: 30px;
-  float: left;
+  margin: 10px;
+  margin-right: 30px;
 }
-/* line 49, ../../app/stylesheets/basics/_header.sass */
+/* line 43, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar {
-  height: 28px;
-  margin-left: 15px;
-  margin-top: 58px;
+  height: 33px;
+  clear: right;
 }
-/* line 54, ../../app/stylesheets/basics/_header.sass */
+/* line 47, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar label {
   color: #89b152;
   float: left;
   padding: 3px 6px 3px 20px;
   width: auto;
 }
-/* line 59, ../../app/stylesheets/basics/_header.sass */
+/* line 52, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar input {
   border-right: 0;
   color: #89b152;
   float: left;
-  height: 16px;
+  height: 21px;
   margin: 0;
   outline: none;
   -moz-border-radius-bottomleft: 8px;
@@ -454,15 +434,15 @@ a:visited:hover {
   -khtml-border-bottom-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-/* line 68, ../../app/stylesheets/basics/_header.sass */
+/* line 61, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar input:focus {
   background: #f5f8f0;
 }
-/* line 70, ../../app/stylesheets/basics/_header.sass */
+/* line 63, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar input.ac_loading {
   background: #f5f8f0 url("/images/spinner-small.gif") no-repeat right center;
 }
-/* line 73, ../../app/stylesheets/basics/_header.sass */
+/* line 66, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar button {
   float: left;
   background-color: #a1c175;
@@ -474,7 +454,7 @@ a:visited:hover {
   font-weight: bold;
   font-family: 'HelveticaNeue-Bold','Helvetica Neue Bold','Helvetica Neue','Swiss 721 Bold','Helvetica','Arial','sans-serif';
   font-size: 13px;
-  height: 28px;
+  height: 33px;
   margin: 0;
   padding: 5px 9px;
   -moz-border-radius: 8px;
@@ -503,7 +483,7 @@ a:visited:hover {
   -webkit-border-bottom-right-radius: 8px;
   -khtml-border-bottom-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  height: 28px;
+  height: 33px;
 }
 /* line 26, ../../app/stylesheets/basics/_buttons.sass */
 #header #searchbar button:hover {
@@ -523,13 +503,13 @@ a:visited:hover {
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#618234', startColorstr='#96bf5e', gradientType='0');
   border-color: #89b152 #617e39 #465b29;
 }
-/* line 80, ../../app/stylesheets/basics/_header.sass */
+/* line 73, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar .or {
   color: #c26a0f;
   float: left;
   padding: 5px 10px;
 }
-/* line 84, ../../app/stylesheets/basics/_header.sass */
+/* line 77, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar .add-place {
   float: left;
   background-color: #f19d46;
@@ -541,7 +521,7 @@ a:visited:hover {
   font-weight: bold;
   font-family: 'HelveticaNeue-Bold','Helvetica Neue Bold','Helvetica Neue','Swiss 721 Bold','Helvetica','Arial','sans-serif';
   font-size: 13px;
-  height: 28px;
+  height: 33px;
   margin: 0;
   padding: 5px 9px;
   -moz-border-radius: 8px;
@@ -554,8 +534,8 @@ a:visited:hover {
   background-image: linear-gradient(center bottom, #f48410 0%, #f19d46 50%, #f8b672 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#f48410', startColorstr='#f8b672', gradientType='0');
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
-  height: 16px;
-  line-height: 16px;
+  height: 21px;
+  line-height: 21px;
   text-decoration: none;
 }
 /* line 26, ../../app/stylesheets/basics/_buttons.sass */
@@ -576,16 +556,16 @@ a:visited:hover {
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#af5d08', startColorstr='#f59129', gradientType='0');
   border-color: #ed8417 #ab5d0d #7b4309;
 }
-/* line 90, ../../app/stylesheets/basics/_header.sass */
+/* line 83, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar .or-add-place {
   float: left;
 }
 
-/* line 93, ../../app/stylesheets/basics/_header.sass */
+/* line 86, ../../app/stylesheets/basics/_header.sass */
 .ac_results {
   z-index: 9000;
 }
-/* line 95, ../../app/stylesheets/basics/_header.sass */
+/* line 88, ../../app/stylesheets/basics/_header.sass */
 .ac_results ul {
   background: white;
   border: 1px solid #cccccc;
@@ -602,16 +582,13 @@ a:visited:hover {
   box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
   cursor: pointer;
 }
-/* line 105, ../../app/stylesheets/basics/_header.sass */
+/* line 98, ../../app/stylesheets/basics/_header.sass */
 .ac_results ul li.ac_over {
   background-color: rgba(204, 204, 204, 0.9);
 }
 
 /* line 1, ../../app/stylesheets/basics/_nav.sass */
 nav {
-  position: relative;
-  top: -15px;
-  right: 20px;
   float: right;
 }
 
@@ -875,25 +852,16 @@ form p.inline-errors {
 
 /* line 1, ../../app/stylesheets/basics/_main.sass */
 body, html {
-  background: #dbdcda;
+  background: white;
   outline: 0;
 }
 
-/* line 5, ../../app/stylesheets/basics/_main.sass */
-body {
-  background-color: #ededec;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #ededec), color-stop(1, #dbdcda));
-  background-image: -moz-linear-gradient(center bottom, #dbdcda 0%, #ededec 50%, white 100%);
-  background-image: linear-gradient(center bottom, #dbdcda 0%, #ededec 50%, white 100%);
-  filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#dbdcda', startColorstr='white', gradientType='0');
-}
-
-/* line 8, ../../app/stylesheets/basics/_main.sass */
+/* line 7, ../../app/stylesheets/basics/_main.sass */
 .help {
   cursor: help;
 }
 
-/* line 12, ../../app/stylesheets/basics/_main.sass */
+/* line 11, ../../app/stylesheets/basics/_main.sass */
 #main {
   background: white;
   border: 1px #e6e6e6 solid;
@@ -1034,6 +1002,61 @@ body {
   border-color: #737375 #4d4d4e #343434;
 }
 
+/* line 1, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar {
+  display: block;
+  float: left;
+  position: relative;
+  top: 10px;
+  margin-left: 20px;
+  width: 350px;
+  background: white;
+}
+
+/* line 1, ../../app/stylesheets/partials/map/_footer.sass */
+#footer {
+  background: white;
+  height: 47px;
+  bottom: 0px;
+  position: fixed;
+  right: 0px;
+  z-index: 4000;
+  width: 100%;
+  border-top: 1px solid #a5c37a;
+  color: #ca1e2e;
+  line-height: 15px;
+  font-size: 12px;
+  overflow: hidden;
+}
+/* line 14, ../../app/stylesheets/partials/map/_footer.sass */
+#footer a {
+  color: #ca1e2e;
+  text-decoration: underline;
+}
+/* line 18, ../../app/stylesheets/partials/map/_footer.sass */
+#footer .social {
+  width: 350px;
+  float: left;
+  margin: 10px;
+}
+/* line 23, ../../app/stylesheets/partials/map/_footer.sass */
+#footer .supporter {
+  width: 450;
+  float: left;
+  margin: 10px;
+}
+/* line 28, ../../app/stylesheets/partials/map/_footer.sass */
+#footer .sozialhelden {
+  float: right;
+  margin: 5px;
+  margin-right: 20px;
+  line-height: 25px;
+}
+/* line 34, ../../app/stylesheets/partials/map/_footer.sass */
+#footer img {
+  vertical-align: bottom;
+}
+
 /* line 1, ../../app/stylesheets/partials/map/_aside.sass */
 aside {
   background: #bfd6a8;
@@ -1045,9 +1068,9 @@ aside {
 
 /* line 1, ../../app/stylesheets/partials/map/_map.sass */
 #map {
-  bottom: 0;
-  left: 0;
   position: absolute;
+  bottom: 1px;
+  left: 0;
   right: 0;
   top: 120px;
   border-top: 1px rgba(255, 255, 255, 0.6) solid;
@@ -1069,7 +1092,7 @@ tspan {
 #categories,
 #filter, #counter {
   position: relative;
-  left: 30px;
+  left: 15px;
   top: 25px;
   width: 282px;
   z-index: 3000;

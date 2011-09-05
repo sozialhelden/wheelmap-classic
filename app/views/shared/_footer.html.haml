@@ -1,3 +1,18 @@
-#footer
-  = link_to 'http://sozialhelden.de', :id => 'sozialhelden', :title => 'sozial is\' muss!' do
-    = image_tag('sozialhelden.png', :alt => t('layouts.application.banner.alt'), :width => 423, :height => 38)
+#footer.fixed
+  .social
+    =link_to "Tweet", "http://twitter.com/share", :class => "twitter-share-button", :style => 'display:none'  
+    %g:plusone{:size => "medium"}
+    %iframe{:src => "http://www.facebook.com/plugins/like.php?app_id=231074856943658&amp;href=#{u "request.url"}&amp;send=false&amp;layout=button_count&amp;width=130&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;height=20", :scrolling => "no", :frameborder => "0", :style =>"border:none; overflow:hidden; width:130px; height:20px;", :allowTransparency => "true"}
+
+  .supporter
+    Hautpförderer
+    = image_tag('immoscout.jpg', :width => 43, :height => 20, :alt => 'Immobilienscout24', :title => 'Immobilienscout24')
+    = image_tag('aktionmensch.jpg', :width => 63, :height => 17, :alt => 'Aktion Mensch', :title => 'Aktion Mensch')
+    |
+    Basiert auf Daten der
+    = link_to "OpenStreetMap", 'http://openstreetmap.org'
+
+  .sozialhelden
+    Ein Projekt der
+    = link_to 'http://sozialhelden.de', :id => 'sozialhelden', :title => 'sozial is\' muss!' do
+      = image_tag('sozialhelden.jpg', :alt => t('layouts.application.banner.alt'), :width => 164, :height => 34)
