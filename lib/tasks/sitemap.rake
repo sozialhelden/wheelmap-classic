@@ -25,6 +25,6 @@ namespace :sitemap do
     )
     
     sitemap.generate
-    sitemap.ping_search_engines(nil) if Rails.env.production?
+    sitemap.ping_search_engines('http://wheelmap.org/sitemap_index.xml.gz') if Rails.env.production?
   end
 end
