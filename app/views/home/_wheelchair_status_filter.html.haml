@@ -1,23 +1,15 @@
-= minimize_overlay('filter')
-
 %h4= link_to t('home.index.filter.wheelchair'), 'http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei', :target => '_blank'
 
-= render :partial => '/shared/paypal_button'
-
 %ul#options.wheelchair.clearfix
-  %li.state-yes
+  %li.state.yes
     = check_box_tag(:wheelchair_yes, 'yes', cookies['filter_wheelchair_yes'] != 'true', :class => 'filter', :rel => 'wheelchair')
-    = label_tag :wheelchair_yes, t('form.show_fully_accessible_places'), :title => t('wheelmap.what_is.fully_accessible'), :class => :help
-    %span
-  %li.state-limited
+    = label_tag :wheelchair_yes, t('wheelchairstatus.yes') + ', ' + t('wheelmap.what_is.fully_accessible')
+  %li.state.limited
     = check_box_tag(:wheelchair_limited, 'limited', cookies['filter_wheelchair_limited'] != 'true', :class => 'filter', :rel => 'wheelchair')
-    = label_tag :wheelchair_limited, t('form.show_limited_accessible_places'), :title => t('wheelmap.what_is.limited_accessible'), :class => :help
-    %span
-  %li.state-no
+    = label_tag :wheelchair_limited, t('wheelchairstatus.limited') + ', ' + t('wheelmap.what_is.limited_accessible')
+  %li.state.no
     = check_box_tag(:wheelchair_no, 'no', cookies['filter_wheelchair_no'] != 'true', :class => 'filter', :rel => 'wheelchair')
-    = label_tag :wheelchair_no, t('form.show_unaccessible_places'), :title => t('wheelmap.what_is.not_accessible'), :class => :help
-    %span
-  %li.state-unknown
+    = label_tag :wheelchair_no, t('wheelchairstatus.no') + ', ' + t('wheelmap.what_is.not_accessible')
+  %li.state.unknown
     = check_box_tag(:wheelchair_unknown, 'unknown', cookies['filter_wheelchair_unknown'] != 'true', :class => 'filter', :rel => 'wheelchair')
-    = label_tag :wheelchair_unknown, t('form.show_places_without_status'), :title => t('wheelmap.what_is.unknown_accessible'), :class => :help
-    %span
+    = label_tag :wheelchair_unknown, t('wheelchairstatus.unknown') + ', ' + t('wheelmap.what_is.unknown_accessible')

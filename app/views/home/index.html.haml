@@ -1,10 +1,12 @@
-#filter{:class => cookies['minimized_filter'] == 'true' ? 'minimized' : ''}
+#sidebar{:class => cookies['minimized_filter'] == 'true' ? 'minimized' : ''}
   = render :partial => 'home/wheelchair_status_filter'
-#categories{:class => cookies['minimized_categories'] == 'true' ? 'minimized' : ''}
   = render :partial => 'home/category_filter'
-#counter{:class => cookies['minimized_counter'] == 'true' ? 'minimized' : ''}
-  - cache("#{I18n.locale}/home/tag_counter", :expires_in => 1.minute) do
-    = render :partial => 'home/tag_counter'
+  .button_wheelmap
+    Die Wheelmap für's Smartphone
+    
+  .button_donate
+    Unterstütze Wheelmap
+  
 #spinner
 
 #facebox

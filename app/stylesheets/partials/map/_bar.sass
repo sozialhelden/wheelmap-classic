@@ -15,7 +15,7 @@
   border-color: $color
 
 .state-yes
-  background: url("/images/marker-yes.png") no-repeat
+  background: url("/marker/yes.png") no-repeat
   color: $yes
   line-height: 25px
   margin-bottom: 0px
@@ -23,21 +23,21 @@
 
 .state-limited
   @extend .state-yes
-  background: url("/images/marker-limited.png") no-repeat
+  background: url("/marker/limited.png") no-repeat
   color: $limited
   .webkit & input
     +checkbox-color($limited)
 
 .state-no
   @extend .state-yes
-  background: url("/images/marker-no.png") no-repeat
+  background: url("/marker/no.png") no-repeat
   color: $no
   .webkit & input
     +checkbox-color($no)
 
 .state-unknown
   @extend .state-yes
-  background: url("/images/marker-unknown.png") no-repeat
+  background: url("/marker/unknown.png") no-repeat
   color: $unknown
   .webkit & input
     +checkbox-color($unknown)

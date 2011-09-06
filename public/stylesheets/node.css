@@ -1119,32 +1119,33 @@ table#accessibility td.leisure {
   line-height: 15px;
   font-size: 12px;
   overflow: hidden;
+  font-family: georgia;
 }
-/* line 10, ../../app/stylesheets/partials/nodes/_footer.sass */
+/* line 12, ../../app/stylesheets/partials/nodes/_footer.sass */
 #footer a {
   color: #ca1e2e;
   text-decoration: underline;
 }
-/* line 14, ../../app/stylesheets/partials/nodes/_footer.sass */
+/* line 16, ../../app/stylesheets/partials/nodes/_footer.sass */
 #footer .social {
   width: 350px;
   float: left;
   margin: 10px;
 }
-/* line 19, ../../app/stylesheets/partials/nodes/_footer.sass */
+/* line 21, ../../app/stylesheets/partials/nodes/_footer.sass */
 #footer .supporter {
   width: 450;
   float: left;
   margin: 10px;
 }
-/* line 24, ../../app/stylesheets/partials/nodes/_footer.sass */
+/* line 26, ../../app/stylesheets/partials/nodes/_footer.sass */
 #footer .sozialhelden {
   float: right;
   margin: 5px;
   margin-right: 20px;
   line-height: 25px;
 }
-/* line 30, ../../app/stylesheets/partials/nodes/_footer.sass */
+/* line 32, ../../app/stylesheets/partials/nodes/_footer.sass */
 #footer img {
   vertical-align: bottom;
 }
