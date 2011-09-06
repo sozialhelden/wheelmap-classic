@@ -1,5 +1,3 @@
-= minimize_overlay('categories')
-  
 %h4= t('home.index.filter.category')
 %ul#amenities
   - Category.all.sort_by(&:localized_name).each do |category|

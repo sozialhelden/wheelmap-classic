@@ -1004,13 +1004,95 @@ body, html {
 
 /* line 1, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar {
-  display: block;
-  float: left;
   position: relative;
-  top: 10px;
-  margin-left: 20px;
-  width: 350px;
-  background: white;
+  width: 340px;
+  z-index: 3000;
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 20px;
+  padding-top: 5px;
+  overflow: hidden;
+  border-right: 1px solid #a5c37a;
+  height: 100%;
+}
+/* line 13, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar ul {
+  margin-bottom: 20px;
+}
+/* line 16, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar .button_wheelmap, #sidebar .button_donate {
+  float: left;
+  text-align: center;
+  color: #536c31;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 15px;
+}
+/* line 25, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar .button_wheelmap {
+  width: 150px;
+  background: url("/images/button_wheelmap.jpg") no-repeat left center;
+  margin-right: 10px;
+}
+/* line 30, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar .button_donate {
+  width: 100px;
+  background: url("/images/button_donate.jpg") no-repeat left center;
+  padding-left: 30px;
+}
+/* line 35, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar.minimized {
+  height: 0.5em;
+  left: -275px;
+  overflow: hidden;
+}
+/* line 39, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar h4 {
+  margin: 5px 0 5px;
+}
+/* line 42, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar a, #sidebar a:visited, #sidebar a:hover, #sidebar a:active {
+  text-decoration: none;
+}
+/* line 45, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar li {
+  color: black;
+  font-size: 12px;
+  line-height: 16px;
+}
+/* line 50, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar li.state {
+  padding: 10px 0px 10px 37px;
+  min-height: 35px;
+  border-bottom: 1px solid #a5c37a;
+}
+/* line 54, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar li.yes {
+  background: url("/marker/yes.png") no-repeat 2px 10px;
+}
+/* line 57, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar li.limited {
+  background: url("/marker/limited.png") no-repeat 2px 10px;
+}
+/* line 59, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar li.no {
+  background: url("/marker/no.png") no-repeat 2px 10px;
+}
+/* line 61, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar li.unknown {
+  background: url("/marker/unknown.png") no-repeat 2px 10px;
+}
+
+/* line 65, ../../app/stylesheets/basics/_sidebar.sass */
+#state-counter {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 67, ../../app/stylesheets/basics/_sidebar.sass */
+#state-counter li {
+  width: 40%;
+  float: left;
 }
 
 /* line 2, ../../app/stylesheets/basics/_api.sass */
@@ -1063,32 +1145,33 @@ body, html {
   line-height: 15px;
   font-size: 12px;
   overflow: hidden;
+  font-family: georgia;
 }
-/* line 14, ../../app/stylesheets/partials/map/_footer.sass */
+/* line 16, ../../app/stylesheets/partials/map/_footer.sass */
 #footer a {
   color: #ca1e2e;
   text-decoration: underline;
 }
-/* line 18, ../../app/stylesheets/partials/map/_footer.sass */
+/* line 20, ../../app/stylesheets/partials/map/_footer.sass */
 #footer .social {
   width: 350px;
   float: left;
   margin: 10px;
 }
-/* line 23, ../../app/stylesheets/partials/map/_footer.sass */
+/* line 25, ../../app/stylesheets/partials/map/_footer.sass */
 #footer .supporter {
   width: 450;
   float: left;
   margin: 10px;
 }
-/* line 28, ../../app/stylesheets/partials/map/_footer.sass */
+/* line 30, ../../app/stylesheets/partials/map/_footer.sass */
 #footer .sozialhelden {
   float: right;
   margin: 5px;
   margin-right: 20px;
   line-height: 25px;
 }
-/* line 34, ../../app/stylesheets/partials/map/_footer.sass */
+/* line 36, ../../app/stylesheets/partials/map/_footer.sass */
 #footer img {
   vertical-align: bottom;
 }
@@ -1109,8 +1192,7 @@ aside {
   left: 0;
   right: 0;
   top: 120px;
-  border-top: 1px rgba(255, 255, 255, 0.6) solid;
-  outline: 1px #e6e6e6 solid;
+  border-top: 1px solid #a5c37a;
   background: #fff7d9;
 }
 
@@ -1125,55 +1207,11 @@ tspan {
 }
 
 /* line 1, ../../app/stylesheets/partials/map/_info.sass */
-#categories,
-#filter, #counter {
-  position: relative;
-  left: 15px;
-  top: 25px;
-  width: 282px;
-  z-index: 3000;
-  background-color: white;
-  background-color: rgba(255, 255, 255, 0.8);
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -khtml-border-radius: 8px;
-  border-radius: 8px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #cccccc;
-  overflow: hidden;
-}
-/* line 17, ../../app/stylesheets/partials/map/_info.sass */
-#categories.minimized,
-#filter.minimized, #counter.minimized {
-  height: 0.5em;
-  left: -275px;
-  overflow: hidden;
-}
-/* line 21, ../../app/stylesheets/partials/map/_info.sass */
-#categories h4,
-#filter h4, #counter h4 {
-  margin: -5px 0 5px;
-}
-/* line 24, ../../app/stylesheets/partials/map/_info.sass */
-#categories a, #categories a:visited, #categories a:hover, #categories a:active,
-#filter a,
-#filter a:visited,
-#filter a:hover,
-#filter a:active, #counter a, #counter a:visited, #counter a:hover, #counter a:active {
-  text-decoration: none;
-}
-
-/* line 27, ../../app/stylesheets/partials/map/_info.sass */
 #state-counter {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 29, ../../app/stylesheets/partials/map/_info.sass */
+/* line 3, ../../app/stylesheets/partials/map/_info.sass */
 #state-counter li {
   width: 40%;
   float: left;
@@ -1256,7 +1294,7 @@ tspan {
 
 /* line 17, ../../app/stylesheets/partials/map/_bar.sass */
 .state-yes, .state-limited, .state-no, .state-unknown {
-  background: url("/images/marker-yes.png") no-repeat;
+  background: url("/marker/yes.png") no-repeat;
   color: #86af4d;
   line-height: 25px;
   margin-bottom: 0px;
@@ -1265,7 +1303,7 @@ tspan {
 
 /* line 24, ../../app/stylesheets/partials/map/_bar.sass */
 .state-limited {
-  background: url("/images/marker-limited.png") no-repeat;
+  background: url("/marker/limited.png") no-repeat;
   color: #f19d46;
 }
 /* line 28, ../../app/stylesheets/partials/map/_bar.sass */
@@ -1276,7 +1314,7 @@ tspan {
 
 /* line 31, ../../app/stylesheets/partials/map/_bar.sass */
 .state-no {
-  background: url("/images/marker-no.png") no-repeat;
+  background: url("/marker/no.png") no-repeat;
   color: #d6382f;
 }
 /* line 35, ../../app/stylesheets/partials/map/_bar.sass */
@@ -1287,7 +1325,7 @@ tspan {
 
 /* line 38, ../../app/stylesheets/partials/map/_bar.sass */
 .state-unknown {
-  background: url("/images/marker-unknown.png") no-repeat;
+  background: url("/marker/unknown.png") no-repeat;
   color: #8d8d8e;
 }
 /* line 42, ../../app/stylesheets/partials/map/_bar.sass */
