@@ -54,6 +54,9 @@ Wheelmap::Application.routes.draw do
       collection do
         get :search
       end
+      member do 
+        put :update_wheelchair
+      end
     end
 
     resources :categories,   :only  => [:index, :show] do

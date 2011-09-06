@@ -3,15 +3,15 @@ class Api::NodesController < Api::ApiController
 
   actions :index, :show, :update, :create
  
-  custom_actions :collection => :search
+  custom_actions :collection => :search, :member => :update_wheelchair
  
   optional_belongs_to :category
   optional_belongs_to :node_type
   
   
   # Make sure user authenticates itself using an api_key
-#  before_filter :authenticate_user!,        :only => [:update, :create]
   before_filter :authenticate_application!, :only => [:update, :create]
+  before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
   
   has_scope :bbox
   has_scope :wheelchair
@@ -47,13 +47,13 @@ class Api::NodesController < Api::ApiController
       
       respond_to do |wants|
         wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
-        wants.json{ render :xml  => {:message => 'OK'}.to_xml,  :status => 202 }
+        wants.xml{  render :xml  => {:message => 'OK'}.to_xml,  :status => 202 }
       end
       
     else
       respond_to do |wants|
         wants.json{ render :json => {:error => @node.errors}.to_json, :status => 400 }
-        wants.json{ render :xml  => {:error => @node.errors}.to_xml,  :status => 400 }
+        wants.xml{  render :xml  => {:error => @node.errors}.to_xml,  :status => 400 }
       end
     end
   end
@@ -66,15 +66,27 @@ class Api::NodesController < Api::ApiController
       
       respond_to do |wants|
         wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
-        wants.json{ render :xml  => {:message => 'OK'}.to_xml,  :status => 202 }
+        wants.xml{  render :xml  => {:message => 'OK'}.to_xml,  :status => 202 }
       end
       
     else
       respond_to do |wants|
         wants.json{ render :json => {:error => @node.errors}.to_json, :status => 400 }
-        wants.json{ render :xml  => {:error => @node.errors}.to_xml,  :status => 400 }
+        wants.xml{  render :xml  => {:error => @node.errors}.to_xml,  :status => 400 }
       end
     end
+  end
+  
+  def update_wheelchair
+    user = wheelmap_visitor
+    client = OpenStreetMap::OauthClient.new(user.access_token)
+    Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], user, client, :wheelchair => params[:wheelchair]))
+    @node = Poi.find(params[:id])
+    respond_to do |wants|
+      wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
+      wants.xml{  render :xml  => {:message => 'OK'}.to_xml,  :status => 202 }
+    end
+    
   end
   
   protected
@@ -100,5 +112,14 @@ class Api::NodesController < Api::ApiController
       @meta[:conditions][:search] = params[:q]    if params[:q]
       @meta[:conditions][:bbox]   = params[:bbox] if params[:bbox]
       @meta
+  end
+  
+  def check_update_wheelchair_params
+    if params[:wheelchair].blank? || ! Poi::WHEELCHAIR_STATUS_VALUES.keys.include?(params[:wheelchair].to_sym)
+      respond_to do |wants|
+        wants.json{ render :json => {:error => 'Param wheelchair must be one of the following values: [yes, no, limited, unknown]'}.to_json, :status => 406 }
+        wants.xml{  render :xml  => {:error => 'Param wheelchair must be one of the following values: [yes, no, limited, unknown]'}.to_xml,  :status => 406 }
+      end
+    end
   end
 end

@@ -19,23 +19,23 @@
           %table
             %thead
               %tr
-                %th Parameter
-                %th Type
-                %th Description
+                %th.param Parameter
+                %th.type Type
+                %th.desc Description
             %tbody
-              %tr.optional
+              %tr.optional.odd
                 %td bbox
                 %td string
                 %td Filter nodes by a bounding box (bbox=west,south,east,north) as comma separated float numbers wich are longitude, latitude values in degrees.
-              %tr.optional
+              %tr.optional.even
                 %td wheelchair
                 %td string
                 %td Filter nodes by a wheelchair status (Valid values: yes, limited, no, unknown)
-              %tr.optional
+              %tr.optional.odd
                 %td page
                 %td integer
                 %td For pagination, what page of the results you are on. Default is 1.
-              %tr.optional
+              %tr.optional.even
                 %td per_page
                 %td integer
                 %td For pagination, how many results to return per page. Default is 200. Max is 500.
@@ -48,6 +48,7 @@
           %h4#nodes_representation_json Example nodes representation. (application/json)
           %pre=render :partial => 'nodes.json'
           
+    %hr
     .resource
       %h3
         ="/api/nodes/search"
@@ -67,27 +68,27 @@
           %table
             %thead
               %tr
-                %th Parameter
-                %th Type
-                %th Description
+                %th.param Parameter
+                %th.type Type
+                %th.desc Description
             %tbody
-              %tr
-                %td q
+              %tr.odd
+                %td q*
                 %td string
                 %td Filter nodes by a search term.
-              %tr.optional
+              %tr.optional.even
                 %td bbox
                 %td string
                 %td Filter nodes by a bounding box (bbox=west,south,east,north) as comma separated float numbers wich are longitude, latitude values in degrees.
-              %tr.optional
+              %tr.optional.odd
                 %td wheelchair
                 %td string
                 %td Filter nodes by a wheelchair status (Valid values: yes, limited, no, unknown)
-              %tr.optional
+              %tr.optional.even
                 %td page
                 %td integer
                 %td For pagination, what page of the results you are on. Default is 1.
-              %tr.optional
+              %tr.optional.odd
                 %td per_page
                 %td integer
                 %td For pagination, how many results to return per page. Default is 200. Max is 500.
@@ -100,7 +101,10 @@
 
           %h4#nodes_representation_json Example nodes representation. (application/json)
           %pre=render :partial => 'nodes_search.json'
-          
+      %hr
+      .resource
+        %h3
+          ="/api/nodes"
       %h6 Methods
       .methods
         .method
@@ -111,55 +115,55 @@
           %table
             %thead
               %tr
-                %th Parameter
-                %th Type
-                %th Description
+                %th.param Parameter
+                %th.type Type
+                %th.desc Description
             %tbody
-              %tr
-                %td name
+              %tr.odd
+                %td name*
                 %td string
                 %td The node's name.
-              %tr
-                %td type
+              %tr.even
+                %td type*
                 %td string
                 %td The node's type, must be one of the available node_type ids
-              %tr
-                %td lat
+              %tr.odd
+                %td lat*
                 %td float
                 %td The node's latitude in degrees as float.
-              %tr
-                %td lon
+              %tr.even
+                %td lon*
                 %td float
                 %td The node's longitude in degrees as float.
-              %tr
+              %tr.optional.odd
                 %td wheelchair
                 %td string
-                %td The node's wheelchair status, must be one of (yes, no, limited, unknown)
-              %tr.optional
+                %td The node's wheelchair status, must be one of [yes, no, limited, unknown]
+              %tr.optional.even
                 %td wheelchair_description
                 %td string
                 %td The node's additional wheelchair comment like "Ask for a ramp.", 255 characters max.
-              %tr.optional
+              %tr.optional.odd
                 %td street
                 %td string
                 %td The node's street.
-              %tr.optional
+              %tr.optional.even
                 %td housenumber
                 %td string
                 %td The node's house number.
-              %tr.optional
+              %tr.optional.odd
                 %td city
                 %td string
                 %td The node's city.
-              %tr.optional
+              %tr.optional.even
                 %td postcode
                 %td string
                 %td The node's postal code.
-              %tr.optional
+              %tr.optional.odd
                 %td website
                 %td string
                 %td The node's url. In case there is a website about this not, for example a restaurant. Use the full url like this: http://www.example.com
-              %tr.optional
+              %tr.optional.even
                 %td phone
                 %td string
                 %td The node's phone number. In case there is a real phone number to call, for example in a restaurant. Use the international format: +49 30 123456-78
@@ -170,8 +174,111 @@
 
           %h4#nodes_representation_json Example nodes representation. (application/json)
           %pre= {:message => 'OK'}.to_json
+      %hr
+      .resource
+        %h3
+          ="/api/nodes/{node_id}"
+      %h6 Methods
+      .methods
+        .method
+          %h4 PUT
+          %p Update an existing node.
+          %h6 request query parameter
+
+          %table
+            %thead
+              %tr
+                %th.param Parameter
+                %th.type Type
+                %th.desc Description
+            %tbody
+              %tr.odd
+                %td name*
+                %td string
+                %td The node's name.
+              %tr.even
+                %td type*
+                %td string
+                %td The node's type, must be one of the available node_type ids
+              %tr.odd
+                %td lat*
+                %td float
+                %td The node's latitude in degrees as float.
+              %tr.even
+                %td lon*
+                %td float
+                %td The node's longitude in degrees as float.
+              %tr.odd
+                %td wheelchair*
+                %td string
+                %td The node's wheelchair status, must be one of [yes, no, limited, unknown]
+              %tr.optional.even
+                %td wheelchair_description
+                %td string
+                %td The node's additional wheelchair comment like "Ask for a ramp.", 255 characters max.
+              %tr.optional.odd
+                %td street
+                %td string
+                %td The node's street.
+              %tr.optional.even
+                %td housenumber
+                %td string
+                %td The node's house number.
+              %tr.optional.odd
+                %td city
+                %td string
+                %td The node's city.
+              %tr.optional.even
+                %td postcode
+                %td string
+                %td The node's postal code.
+              %tr.optional.odd
+                %td website
+                %td string
+                %td The node's url. In case there is a website about this not, for example a restaurant. Use the full url like this: http://www.example.com
+              %tr.optional.even
+                %td phone
+                %td string
+                %td The node's phone number. In case there is a real phone number to call, for example in a restaurant. Use the international format: +49 30 123456-78
+
+
+          %h4 Example request:
+          %pre http://wheelmap.org/api/nodes/123?api_key=api_key&wheelchair=no&name=White+Horse&type=restaurant&lat=51.0&lon=13.4
+
+          %h4#nodes_representation_json Example nodes representation. (application/json)
+          %pre= {:message => 'OK'}.to_json
     
           
+    %hr
+    .resource
+      %h3
+        ="/api/nodes/{node_id}/update_wheelchair"
+    %h6 Methods
+    .methods
+      .method
+        %h4 PUT
+        %p Update the wheelchair status of an existing node.
+        %h6 request query parameter
+
+        %table
+          %thead
+            %tr
+              %th.param Parameter
+              %th.type Type
+              %th.desc Description
+          %tbody
+            %tr.odd
+              %td wheelchair*
+              %td string
+              %td The node's wheelchair status, must be one of [yes, no, limited, unknown]
+
+        %h4 Example request:
+        %pre http://wheelmap.org/api/nodes/123/update_wheelchair?api_key=api_key&wheelchair=yes
+
+        %h4#nodes_representation_json Example nodes representation. (application/json)
+        %pre= {:message => 'OK'}.to_json
+
+    
     %hr
     .resource
       %h3
