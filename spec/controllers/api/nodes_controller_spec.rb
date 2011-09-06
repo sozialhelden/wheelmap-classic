@@ -97,6 +97,34 @@ describe Api::NodesController do
     end
   end
   
+  describe 'update_wheelchair' do
+    before :each do
+      @wheelmap_visitor = Factory.create(:user, :email => 'visitor@wheelmap.org')
+      Poi.delete_all
+      @node = Factory.create(:poi)
+    end
+    
+    it "access should be denied if api key is missing" do
+      put(:update_wheelchair, {:id => @node.id, :name => 'Something new'})
+      response.status.should eql 401
+    end
+    
+    it "should accept update wheelchair status for later processing if params are valid" do
+      lambda {
+        put(:update_wheelchair, {:id => @node.id, :wheelchair => 'no', :api_key => @user.authentication_token})
+        response.status.should eql 202
+        response.body.should =~ /OK/
+      }.should change(UpdateAttributeJob, :count).by(1)
+    end
+    
+    it "should not accept update wheelchair status for later processing if params are invalid" do
+      lambda {
+        put(:update_wheelchair, {:id => @node.id, :wheelchair => 'invalid', :api_key => @user.authentication_token})
+        response.status.should eql 406
+      }.should change(UpdateAttributeJob, :count).by(0)
+    end
+  end
+  
   describe 'update action' do
     before :each do
       @node = Factory.create(:poi)
@@ -108,7 +136,6 @@ describe Api::NodesController do
     end
     
     it "access should be denied if osm credentials are missing" do
-      
       put(:update, {:id => @node.id, :name => 'Something new', :api_key => @user.authentication_token, :locale => 'en'})
       response.status.should eql 403
       response.body.should =~ /Um Daten zu \\u00e4ndern ben\\u00f6tigst Du einen OpenStreetMap Account./
@@ -128,7 +155,7 @@ describe Api::NodesController do
       @user.save!
       lambda {
         put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
-      }.should change(UpdateAttributeJob, :count).by(1)
+      }.should change(UpdateJob, :count).by(1)
       response.status.should eql 202
     end
   end

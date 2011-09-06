@@ -1013,6 +1013,42 @@ body, html {
   background: white;
 }
 
+/* line 2, ../../app/stylesheets/basics/_api.sass */
+#api_docs table {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #eeeeee;
+}
+/* line 7, ../../app/stylesheets/basics/_api.sass */
+#api_docs table tr.optional {
+  color: grey;
+}
+/* line 10, ../../app/stylesheets/basics/_api.sass */
+#api_docs table tr.odd {
+  background-color: #eeeeee;
+}
+/* line 12, ../../app/stylesheets/basics/_api.sass */
+#api_docs table tr.even {
+  background-color: white;
+}
+/* line 15, ../../app/stylesheets/basics/_api.sass */
+#api_docs table td {
+  padding: 5px 10px;
+}
+/* line 17, ../../app/stylesheets/basics/_api.sass */
+#api_docs table th {
+  font-weight: bold;
+  padding: 10px;
+}
+/* line 21, ../../app/stylesheets/basics/_api.sass */
+#api_docs table th.param {
+  width: 15%;
+}
+/* line 24, ../../app/stylesheets/basics/_api.sass */
+#api_docs table th.type {
+  width: 15%;
+}
+
 /* line 1, ../../app/stylesheets/partials/map/_footer.sass */
 #footer {
   background: white;
