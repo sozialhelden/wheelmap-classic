@@ -8,7 +8,9 @@
   padding-top: 5px
   border-right: 1px solid #a5c37a
   height: 100%
-  
+  &.minimized
+    left: -360px
+    
   img.minimize, img.maximize
     cursor: pointer
     float: right
@@ -49,10 +51,6 @@
     background: url('/images/button_donate.jpg') no-repeat left center
     padding-left: 30px
   
-  &.minimized
-    height: 0.5em
-    left: -275px
-    overflow: hidden
   h4
     margin-bottom: 5px
     

@@ -544,8 +544,10 @@ $(function () {
   $('.minimize').live('click', function () {
     $(this).parent('div').animate({ left: '-360px'}, 'fast', 'swing', function () {
       $(this).children('.minimize').addClass('maximize').removeClass('minimize');
-      $.cookie('minimized_' + $(this).attr('id'), true);
-      
+      $.cookie('minimized_filter', true);
+      if (window._gaq) {
+        _gaq.push(['_trackEvent', 'Filter', 'collapse']);
+      }
     });
     return false;
   });
@@ -553,7 +555,10 @@ $(function () {
   $('.maximize').live('click', function () {
     $(this).parent('div').animate({ left: '0px'}, 'fast', 'swing', function () {
       $(this).children('.maximize').addClass('minimize').removeClass('maximize');
-      $.cookie('minimized_' + $(this).attr('id'), false);
+      $.cookie('minimized_filter', false);
+      if (window._gaq) {
+        _gaq.push(['_trackEvent', 'Filter', 'expand']);
+      }
     });
     return false;
   });
