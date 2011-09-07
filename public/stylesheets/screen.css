@@ -1015,25 +1015,32 @@ body, html {
   height: 100%;
 }
 /* line 12, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar img.minimize, #sidebar img.maximize {
+  cursor: pointer;
+  float: right;
+}
+/* line 16, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar div.minimize, #sidebar div.maximize {
   position: relative;
-  right: -355px;
+  float: right;
+  right: -55px;
   width: 40px;
   height: 34px;
+  cursor: pointer;
 }
-/* line 18, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 24, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar div.minimize {
   background: url("/images/minimize.gif") no-repeat;
 }
-/* line 21, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 27, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar div.maximize {
   background: url("/images/maximize.gif") no-repeat;
 }
-/* line 24, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 30, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar ul {
   margin-bottom: 5px;
 }
-/* line 27, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 33, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar .button_wheelmap, #sidebar .button_donate {
   float: left;
   text-align: center;
@@ -1043,68 +1050,68 @@ body, html {
   font-size: 13px;
   padding: 10px 20px;
 }
-/* line 36, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 42, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar .button_wheelmap {
   width: 141px;
   background: url("/images/button_wheelmap.jpg") no-repeat left center;
   margin-right: 10px;
 }
-/* line 41, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 47, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar .button_donate {
   width: 90px;
   background: url("/images/button_donate.jpg") no-repeat left center;
   padding-left: 30px;
 }
-/* line 46, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 52, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar.minimized {
   height: 0.5em;
   left: -275px;
   overflow: hidden;
 }
-/* line 50, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 56, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar h4 {
   margin-bottom: 5px;
 }
-/* line 53, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 59, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar a, #sidebar a:visited, #sidebar a:hover, #sidebar a:active {
   text-decoration: none;
 }
-/* line 56, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 62, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li {
   color: black;
   font-size: 12px;
   line-height: 16px;
 }
-/* line 61, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 67, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.state {
   padding: 10px 0px 10px 37px;
   min-height: 30px;
   border-bottom: 1px solid #a5c37a;
 }
-/* line 66, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 72, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.yes {
   background: url("/marker/yes.png") no-repeat 2px 0px;
   padding: 0px 0px 10px 37px;
 }
-/* line 70, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 76, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.limited {
   background: url("/marker/limited.png") no-repeat 2px 10px;
 }
-/* line 72, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 78, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.no {
   background: url("/marker/no.png") no-repeat 2px 10px;
 }
-/* line 74, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 80, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.unknown {
   background: url("/marker/unknown.png") no-repeat 2px 10px;
 }
 
-/* line 78, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 84, ../../app/stylesheets/basics/_sidebar.sass */
 #state-counter {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 80, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 86, ../../app/stylesheets/basics/_sidebar.sass */
 #state-counter li {
   width: 40%;
   float: left;
