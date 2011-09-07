@@ -1011,15 +1011,29 @@ body, html {
   margin-bottom: 20px;
   padding: 15px;
   padding-top: 5px;
-  overflow: hidden;
   border-right: 1px solid #a5c37a;
   height: 100%;
 }
-/* line 13, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 12, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar div.minimize, #sidebar div.maximize {
+  position: relative;
+  right: -355px;
+  width: 40px;
+  height: 34px;
+}
+/* line 18, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar div.minimize {
+  background: url("/images/minimize.gif") no-repeat;
+}
+/* line 21, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar div.maximize {
+  background: url("/images/maximize.gif") no-repeat;
+}
+/* line 24, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar ul {
   margin-bottom: 5px;
 }
-/* line 16, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 27, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar .button_wheelmap, #sidebar .button_donate {
   float: left;
   text-align: center;
@@ -1029,68 +1043,68 @@ body, html {
   font-size: 13px;
   padding: 10px 20px;
 }
-/* line 25, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 36, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar .button_wheelmap {
   width: 141px;
   background: url("/images/button_wheelmap.jpg") no-repeat left center;
   margin-right: 10px;
 }
-/* line 30, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 41, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar .button_donate {
   width: 90px;
   background: url("/images/button_donate.jpg") no-repeat left center;
   padding-left: 30px;
 }
-/* line 35, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 46, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar.minimized {
   height: 0.5em;
   left: -275px;
   overflow: hidden;
 }
-/* line 39, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 50, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar h4 {
   margin-bottom: 5px;
 }
-/* line 42, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 53, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar a, #sidebar a:visited, #sidebar a:hover, #sidebar a:active {
   text-decoration: none;
 }
-/* line 45, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 56, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li {
   color: black;
   font-size: 12px;
   line-height: 16px;
 }
-/* line 50, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 61, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.state {
   padding: 10px 0px 10px 37px;
   min-height: 30px;
   border-bottom: 1px solid #a5c37a;
 }
-/* line 55, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 66, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.yes {
   background: url("/marker/yes.png") no-repeat 2px 0px;
   padding: 0px 0px 10px 37px;
 }
-/* line 59, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 70, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.limited {
   background: url("/marker/limited.png") no-repeat 2px 10px;
 }
-/* line 61, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 72, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.no {
   background: url("/marker/no.png") no-repeat 2px 10px;
 }
-/* line 63, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 74, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.unknown {
   background: url("/marker/unknown.png") no-repeat 2px 10px;
 }
 
-/* line 67, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 78, ../../app/stylesheets/basics/_sidebar.sass */
 #state-counter {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 69, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 80, ../../app/stylesheets/basics/_sidebar.sass */
 #state-counter li {
   width: 40%;
   float: left;
