@@ -542,9 +542,8 @@ $(function () {
     return false;
   });
   $('.minimize').live('click', function () {
-    $(this).parent('div').css('height', '0.5em');
-    $(this).parent('div').animate({ left: '-275px'}, 'fast', 'swing', function () {
-      $(this).children('.minimize').text('»').addClass('maximize').removeClass('minimize');
+    $(this).parent('div').animate({ left: '-360px'}, 'fast', 'swing', function () {
+      $(this).children('.minimize').addClass('maximize').removeClass('minimize');
       $.cookie('minimized_' + $(this).attr('id'), true);
       
     });
@@ -552,9 +551,8 @@ $(function () {
   });
 
   $('.maximize').live('click', function () {
-    $(this).parent('div').animate({ left: '15px'}, 'fast', 'swing', function () {
-      $(this).css('height', 'auto');
-      $(this).children('.maximize').text('«').addClass('minimize').removeClass('maximize');
+    $(this).parent('div').animate({ left: '0px'}, 'fast', 'swing', function () {
+      $(this).children('.maximize').addClass('minimize').removeClass('maximize');
       $.cookie('minimized_' + $(this).attr('id'), false);
     });
     return false;
