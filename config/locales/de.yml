@@ -643,7 +643,7 @@ de:
       alt: "Wheelmap Logo - Rollstuhlgerechte Orte finden"
       title: "Wheelmap - Rollstuhlgerechte Orte finden"
     what_is: 
-      fully_accessible: "Eine Eingangsstufe nicht höher als 7 cm ist (etwa eine Handbreite), alle Räumlichkeiten (z.B. alle Kinosäle etc.) für Rollstuhlfahrer grundsätzlich (ohne Ausnahme) befahrbar sind, und eine Rollstuhltoilette vorhanden ist."
-      limited_accessible: "Eine Eingangsstufe nicht höher als 7 cm ist (etwa eine Handbreite), die wichtigsten Räumlichkeiten (z.B. ausgewählte Kinosäle etc.) für Rollstuhlfahrer grundsätzlich befahrbar sind."
-      not_accessible: "Eine Eingangsstufe höher als 7 cm ist (etwa eine Handbreite), eine Treppe am Eingang überwunden werden muss oder die wichtigsten Räumlichkeiten von Rollstuhlfahrern nicht befahren werden können."
-      unknown_accessible: "Der Rollstuhlstatus ist unbekannt"
+      fully_accessible: "<em>ja,</em> der Ort ist rollstuhlgerecht. Keine Stufe am Eingang oder Rampe vorhanden. Große Toilette. Platz für Zeile 3"
+      limited_accessible: "<em>teilweise,</em> der Ort ist an sich rollstuhgerecht, jedoch ist keine Toilette vorhanden.. Und noch Platz für Zeile 3"
+      not_accessible: "<em>nein,</em> der Ort ist nicht rollstuhlgerecht. Am Eingang sind Treppen, eine Rampe gibt es nicht. Zeile 3 für auch noch für hier."
+      unknown_accessible: "<em>unbekannt,</em> über diesen Ort liegt keine Information vor. Bitte den Status ändern falls bkannt. Zeile 3 auch für hier."
