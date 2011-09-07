@@ -1,7 +1,7 @@
 #sidebar{:class => cookies['minimized_filter'] == 'true' ? 'minimized' : ''}
-  = image_tag('close.gif', :size => '17x17', :alt => 'x', :class => 'minimize')
+  = image_tag('close.gif', :size => '17x17', :alt => 'x', :class => cookies['minimized_filter'] == 'true' ? 'maximize' : 'minimize')
   = render :partial => 'home/wheelchair_status_filter'
-  .minimize
+  %div{:class => cookies['minimized_filter'] == 'true' ? 'maximize' : 'minimize'}
     &nbsp;
   = render :partial => 'home/category_filter'
   .button_wheelmap

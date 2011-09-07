@@ -1014,12 +1014,16 @@ body, html {
   border-right: 1px solid #a5c37a;
   height: 100%;
 }
-/* line 12, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 11, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar.minimized {
+  left: -360px;
+}
+/* line 14, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar img.minimize, #sidebar img.maximize {
   cursor: pointer;
   float: right;
 }
-/* line 16, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 18, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar div.minimize, #sidebar div.maximize {
   position: relative;
   float: right;
@@ -1028,19 +1032,19 @@ body, html {
   height: 34px;
   cursor: pointer;
 }
-/* line 24, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 26, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar div.minimize {
   background: url("/images/minimize.gif") no-repeat;
 }
-/* line 27, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 29, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar div.maximize {
   background: url("/images/maximize.gif") no-repeat;
 }
-/* line 30, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 32, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar ul {
   margin-bottom: 5px;
 }
-/* line 33, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 35, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar .button_wheelmap, #sidebar .button_donate {
   float: left;
   text-align: center;
@@ -1050,68 +1054,62 @@ body, html {
   font-size: 13px;
   padding: 10px 20px;
 }
-/* line 42, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 44, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar .button_wheelmap {
   width: 141px;
   background: url("/images/button_wheelmap.jpg") no-repeat left center;
   margin-right: 10px;
 }
-/* line 47, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 49, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar .button_donate {
   width: 90px;
   background: url("/images/button_donate.jpg") no-repeat left center;
   padding-left: 30px;
 }
-/* line 52, ../../app/stylesheets/basics/_sidebar.sass */
-#sidebar.minimized {
-  height: 0.5em;
-  left: -275px;
-  overflow: hidden;
-}
-/* line 56, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 54, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar h4 {
   margin-bottom: 5px;
 }
-/* line 59, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 57, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar a, #sidebar a:visited, #sidebar a:hover, #sidebar a:active {
   text-decoration: none;
 }
-/* line 62, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 60, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li {
   color: black;
   font-size: 12px;
   line-height: 16px;
 }
-/* line 67, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 65, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.state {
   padding: 10px 0px 10px 37px;
   min-height: 30px;
   border-bottom: 1px solid #a5c37a;
 }
-/* line 72, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 70, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.yes {
   background: url("/marker/yes.png") no-repeat 2px 0px;
   padding: 0px 0px 10px 37px;
 }
-/* line 76, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 74, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.limited {
   background: url("/marker/limited.png") no-repeat 2px 10px;
 }
-/* line 78, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 76, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.no {
   background: url("/marker/no.png") no-repeat 2px 10px;
 }
-/* line 80, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 78, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.unknown {
   background: url("/marker/unknown.png") no-repeat 2px 10px;
 }
 
-/* line 84, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 82, ../../app/stylesheets/basics/_sidebar.sass */
 #state-counter {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 86, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 84, ../../app/stylesheets/basics/_sidebar.sass */
 #state-counter li {
   width: 40%;
   float: left;
