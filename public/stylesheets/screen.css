@@ -1180,18 +1180,12 @@ body, html {
 }
 /* line 25, ../../app/stylesheets/partials/map/_footer.sass */
 #footer .supporter {
-  width: 450;
-  float: left;
-  margin: 10px;
+  float: right;
+  margin: 5px;
+  margin-right: 10px;
   height: 24px;
 }
 /* line 31, ../../app/stylesheets/partials/map/_footer.sass */
-#footer .sozialhelden {
-  float: right;
-  margin: 5px;
-  margin-right: 15px;
-}
-/* line 36, ../../app/stylesheets/partials/map/_footer.sass */
 #footer img {
   vertical-align: bottom;
 }

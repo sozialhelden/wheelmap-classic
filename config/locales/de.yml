@@ -452,7 +452,7 @@ de:
       accommodation: Unterkunft
       education: Bildung
       food: "Essen & Trinken"
-      government: "Behörden & Botschaften"
+      government: "Behörden"
       leisure: Freizeit
       misc: Sonstiges
       money_post: "Bank & Post"
@@ -644,7 +644,7 @@ de:
       alt: "Wheelmap Logo - Rollstuhlgerechte Orte finden"
       title: "Wheelmap - Rollstuhlgerechte Orte finden"
     what_is: 
-      fully_accessible: "<em>ja,</em> der Ort ist rollstuhlgerecht. Keine Stufe am Eingang oder Rampe vorhanden. Große Toilette. Platz für Zeile 3"
-      limited_accessible: "<em>teilweise,</em> der Ort ist an sich rollstuhgerecht, jedoch ist keine Toilette vorhanden.. Und noch Platz für Zeile 3"
-      not_accessible: "<em>nein,</em> der Ort ist nicht rollstuhlgerecht. Am Eingang sind Treppen, eine Rampe gibt es nicht. Zeile 3 für auch noch für hier."
-      unknown_accessible: "<em>unbekannt,</em> über diesen Ort liegt keine Information vor. Bitte den Status ändern falls bkannt. Zeile 3 auch für hier."
+      fully_accessible: "<em>ja,</em> der Ort ist rollstuhlgerecht. Keine Stufe am Eingang oder Rampe vorhanden. Große Toilette."
+      limited_accessible: "<em>teilweise,</em> der Ort ist an sich rollstuhgerecht, jedoch ist keine Toilette vorhanden."
+      not_accessible: "<em>nein,</em> der Ort ist nicht rollstuhlgerecht. Am Eingang sind Treppen, eine Rampe gibt es nicht."
+      unknown_accessible: "<em>unbekannt,</em> über diesen Ort liegt keine Information vor. Bitte den Status ändern falls bkannt."
