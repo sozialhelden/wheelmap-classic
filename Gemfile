@@ -32,6 +32,7 @@ group :default do
   gem 'memcache-client'
   gem 'jammit'
   gem 'big_sitemap', :git => 'git@github.com:christoph-buente/big_sitemap.git'
+  gem 'unicorn'
 end
 
 group :test, :development do
