@@ -302,7 +302,6 @@ DEPENDENCIES
   httparty
   inherited_resources
   jammit
-  jsonify
   jsonify-rails
   launchy
   lemonade
