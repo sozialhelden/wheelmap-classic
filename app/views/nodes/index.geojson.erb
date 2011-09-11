@@ -1,0 +1,3 @@
+<%- cache("#{I18n.locale}/nodes/bbox_#{@places.first.updated_at.to_i}_#{[@left, @bottom, @right, @top].join','}", :expires_in => 1.hour) do %>
+<%= render(:partial => 'nodes.jsonify', :object => @places).html_safe %>
+<%- end %>
