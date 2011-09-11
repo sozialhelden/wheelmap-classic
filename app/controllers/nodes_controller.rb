@@ -1,5 +1,6 @@
 class NodesController < ApplicationController
   require 'float'
+  include ActionView::Helpers::CacheHelper
   
   skip_before_filter :verify_authenticity_token
   
