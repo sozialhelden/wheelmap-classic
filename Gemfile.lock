@@ -156,11 +156,11 @@ GEM
     jammit (0.6.3)
       yui-compressor (>= 0.9.3)
     json (1.5.1)
-    json_builder (2.0.6)
-      actionpack (~> 3.0.0)
-      activesupport (~> 3.0.0)
-      json
     json_pure (1.5.1)
+    jsonify (0.2.0)
+    jsonify-rails (0.2.0)
+      actionpack
+      jsonify (>= 0.2.0)
     kgio (2.6.0)
     launchy (0.4.0)
       configuration (>= 0.0.5)
@@ -302,7 +302,8 @@ DEPENDENCIES
   httparty
   inherited_resources
   jammit
-  json_builder
+  jsonify
+  jsonify-rails
   launchy
   lemonade
   libxml-ruby (~> 2.2.1)

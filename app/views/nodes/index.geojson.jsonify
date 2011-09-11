@@ -1,0 +1,22 @@
+cache("#{I18n.locale}/nodes/bbox_#{@places.first.updated_at.to_i}_#{[@left, @bottom, @right, @top].join','}", :expires_in => 1.hour) do
+  json = Jsonify::Builder.new(:format => :plain)
+  json.type('FeatureCollection')
+  json.bbox([@left,@bottom,@right,@top])
+  json.features(@places) do |node|
+    json.type('Feature')
+    json.geometry do
+      json.coordinates([node.lon,node.lat])
+      json.type('Point')
+    end
+    json.properties do
+      json.osm_id(node.osm_id)
+      json.wheelchair(node.wheelchair)
+      json.type(node.node_type.try(:identifier))
+      json.category(node.category.try(:identifier))
+      json.name(node.headline)
+      json.marker(image_path(node.marker))
+      json.icon(image_path(node.icon))
+      json.address(node.address) unless node.address.blank?
+    end
+  end
+end
