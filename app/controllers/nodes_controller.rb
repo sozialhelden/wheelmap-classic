@@ -41,7 +41,7 @@ class NodesController < ApplicationController
     respond_to do |wants|
       wants.js{       render :file => "#{Rails.root}/app/views/nodes/index.js.erb"}
       wants.json{     render }
-      wants.geojson{  render :content_type => "application/json; subtype=geojson; charset=utf-8" }
+      wants.geojson{  render :file => "#{Rails.root}/app/views/nodes/index.geojson.jsonify", :content_type => "application/json; subtype=geojson; charset=utf-8" }
       wants.html{ redirect_to root_path }
     end
   end
