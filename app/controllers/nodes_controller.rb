@@ -36,7 +36,7 @@ class NodesController < ApplicationController
     end
     @limit = params[:limit].try(:to_i) || 300
 
-    @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.order('osm_id DESC').limit(@limit) if @left
+    @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.order('updated_at DESC').limit(@limit) if @left
 
     respond_to do |wants|
       wants.js{       render :file => "#{Rails.root}/app/views/nodes/index.js.erb"}
