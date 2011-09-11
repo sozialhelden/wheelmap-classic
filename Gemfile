@@ -26,6 +26,7 @@ group :default do
   gem 'has_scope'
   gem 'mapfish'
   gem 'rake', '0.9.2'
+  gem 'json'
   gem 'jsonify-rails'
   gem 'fastercsv'
   gem 'ruport'
