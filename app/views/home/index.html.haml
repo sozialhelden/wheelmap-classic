@@ -40,20 +40,16 @@
       jumpTo(lon,lat,zoom);
     })
 
-  - if browser_class.include?('trident-7') || browser_class.include?('trident-6')
-    :javascript
-      if($.cookie('ie_warning') == 1){
-        // ignore, user saw IE warning.
-      } else {
-        $("#facebox").overlay({
-          top: 260,
-          mask: {
-            color: '#cccccccc', loadSpeed: 200, opacity: 0.5
-          },
-          closeOnClick: false,
-          load: true
-        });
-        $.cookie('ie_warning', 1);
-      }
+    if($.cookie('ie_warning') != 1 && $.browser.msie && parseInt($.browser.version) < 8){
+      $("#facebox").overlay({
+        top: 260,
+        mask: {
+          color: '#cccccccc', loadSpeed: 200, opacity: 0.5
+        },
+        closeOnClick: false,
+        load: true
+      });
+      $.cookie('ie_warning', 1);
+    }
 
   = render :partial => 'shared/google_event_tracking'
