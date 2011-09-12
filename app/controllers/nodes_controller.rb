@@ -38,21 +38,21 @@ class NodesController < ApplicationController
     end
     @limit = params[:limit].try(:to_i) || 300
 
-    @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.order('updated_at DESC').limit(@limit) if @left
+    @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.order('osm_id DESC').limit(@limit) if @left
 
     respond_to do |wants|
       wants.js{       render :file => "#{Rails.root}/app/views/nodes/index.js.erb"}
       wants.json{     render }
       wants.geojson{  
-        # render :file => "#{Rails.root}/app/views/nodes/index.geojson.erb", :content_type => "application/json; subtype=geojson; charset=utf-8"
-        # Using the Yajl encoder directly in the controller results in miuch faster results:
+        render :file => "#{Rails.root}/app/views/nodes/index.geojson.erb", :content_type => "application/json; subtype=geojson; charset=utf-8"
+        # Using the Yajl encoder directly in the controller results in much faster results:
         # Completed 200 OK in 395ms (Views: 4.5ms | ActiveRecord: 30.5ms)
         # conpared to erb render:
         # Completed 200 OK in 614ms (Views: 513.6ms | ActiveRecord: 86.5ms)
-        json_string = Rails.cache.fetch("#{I18n.locale}/nodes/bbox_#{@places.first.updated_at.to_i}_#{[@left, @bottom, @right, @top].join','}", :expires_in => 1.hour) do
-          Yajl::Encoder.encode({:type => 'FeatureCollection', :bbox => [@left, @bottom, @right, @top], :features => @places.map(&:to_geojson)}, :pretty => Rails.env.development?)
-        end
-        render :json => json_string, :content_type => "application/json; subtype=geojson; charset=utf-8"
+        # json_string = Rails.cache.fetch("#{I18n.locale}/nodes/bbox_#{@places.first.updated_at.to_i}_#{[@left, @bottom, @right, @top].join','}", :expires_in => 1.hour) do
+        #   Yajl::Encoder.encode({:type => 'FeatureCollection', :bbox => [@left, @bottom, @right, @top], :features => @places.map(&:to_geojson)}, :pretty => Rails.env.development?)
+        # end
+        # render :json => json_string, :content_type => "application/json; subtype=geojson; charset=utf-8"
       }
       wants.html{ redirect_to root_path }
     end
