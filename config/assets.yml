@@ -3,16 +3,6 @@ embed_assets: off
 javascripts:
   default:
     - public/javascripts/jquery.js
-    - public/javascripts/openlayers.js
-    - public/javascripts/openlayers_i18n.js
-    - public/javascripts/osm.js
-    - public/javascripts/cookie.js
-    - public/javascripts/uservoice.js
-    - public/javascripts/filter_settings.js
-    - public/javascripts/application.js
-    
-  ie:
-    - public/javascripts/jquery.ie.js
     - public/javascripts/jquery.tools.js
     - public/javascripts/openlayers.js
     - public/javascripts/openlayers_i18n.js

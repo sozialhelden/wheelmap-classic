@@ -30,10 +30,7 @@
         
     = render :partial => 'shared/google_tracking'
     
-    - if browser_class.include?('trident')
-      = include_javascripts :ie
-    - else
-      = include_javascripts :default
+    = include_javascripts :default
       
     = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
 
