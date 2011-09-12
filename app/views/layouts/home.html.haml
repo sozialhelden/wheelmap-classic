@@ -25,8 +25,9 @@
       = yield
       
     = show_flash
-    
-    = render :partial => 'shared/footer'
+
+    #footer.fixed
+      = render :partial => 'shared/footer'
         
     = render :partial => 'shared/google_tracking'
     
@@ -35,6 +36,4 @@
     = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
 
     = content_for :javascript
-    = javascript_include_tag 'http://platform.twitter.com/widgets.js'
-    = render :partial =>  'shared/flattr_embed'
-    = render :partial =>  'shared/googleplus_embed'
+    = render :partial =>  'shared/social_embed'

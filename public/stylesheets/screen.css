@@ -1151,14 +1151,10 @@ body, html {
   width: 15%;
 }
 
-/* line 1, ../../app/stylesheets/partials/map/_footer.sass */
+/* line 1, ../../app/stylesheets/basics/_footer.sass */
 #footer {
   background: white;
   height: 40px;
-  bottom: 0px;
-  position: fixed;
-  right: 0px;
-  z-index: 4000;
   width: 100%;
   border-top: 1px solid #a5c37a;
   color: #ca1e2e;
@@ -1167,25 +1163,31 @@ body, html {
   overflow: hidden;
   font-family: georgia;
 }
-/* line 16, ../../app/stylesheets/partials/map/_footer.sass */
+/* line 12, ../../app/stylesheets/basics/_footer.sass */
+#footer.fixed {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
+/* line 16, ../../app/stylesheets/basics/_footer.sass */
 #footer a {
   color: #ca1e2e;
   text-decoration: underline;
 }
-/* line 20, ../../app/stylesheets/partials/map/_footer.sass */
+/* line 20, ../../app/stylesheets/basics/_footer.sass */
 #footer .social {
   width: 450px;
   float: left;
   margin: 10px;
 }
-/* line 25, ../../app/stylesheets/partials/map/_footer.sass */
+/* line 25, ../../app/stylesheets/basics/_footer.sass */
 #footer .supporter {
   float: right;
   margin: 5px;
   margin-right: 10px;
   height: 24px;
 }
-/* line 31, ../../app/stylesheets/partials/map/_footer.sass */
+/* line 31, ../../app/stylesheets/basics/_footer.sass */
 #footer img {
   vertical-align: bottom;
 }
