@@ -1,5 +1,16 @@
 /*global  window, jQuery, $, OpenLayers, language, UserVoice, uservoiceOptions, _gaq*/
 /*jslint devel: true, browser: true, maxerr: 200, indent: 2, sloppy: true, nomen: true */
+
+jQuery.parseQuery = function(qs,options) {
+  var q = (typeof qs === 'string'?qs:window.location.search), o = {'f':function(v){return unescape(v).replace(/\+/g,' ');}}, options = (typeof qs === 'object' && typeof options === 'undefined')?qs:options, o = jQuery.extend({}, o, options), params = {};
+  jQuery.each(q.match(/^\??(.*)$/)[1].split('&'),function(i,p){
+    p = p.split('=');
+    p[1] = o.f(p[1]);
+    params[p[0]] = params[p[0]]?((params[p[0]] instanceof Array)?(params[p[0]].push(p[1]),params[p[0]]):[params[p[0]],p[1]]):p[1];
+  });
+  return params;
+}
+
 var map;
 var epsg4326, epsg900913;
 if (!window.zoom) {
@@ -563,10 +574,12 @@ $(function () {
     return false;
   });
   
+  if ($.cookie('minimized_filter') === 'true') {
+    $('#sidebar').addClass('minimized')
+    $('#sidebar').children('.minimize').addClass('maximize').removeClass('minimize');
+  }
   
   $('input.filter').change(function () {
-    console.log($(this));
-    
     if ($(this).attr('checked')) {
       removeFilter($(this).attr('rel'), $(this).attr('value'));
     } else {
@@ -587,6 +600,21 @@ $(function () {
     }
   }).resize();
 });
+
+function initGeoData() {
+  // set global variables
+  q = $.parseQuery()
+  lat  = q.lat  || $.cookie('last_lat') //|| GeoCache.latlon(request.remote_addr).first};
+  lon  = q.lon  || $.cookie('last_lon') //|| GeoCache.latlon(request.remote_addr).last};
+  zoom = q.zoom || $.cookie('last_zoom') || 14;
+  
+  if(!(lat && lon)) {
+    // on demand insert JS
+    lat = geoip_latitude();
+    lon = geoip_longitude();
+  }
+}
+
 
 function $w(string) {
   return string.split(' ');
