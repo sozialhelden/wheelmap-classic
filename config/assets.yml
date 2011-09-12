@@ -8,6 +8,7 @@ javascripts:
     - public/javascripts/osm.js
     - public/javascripts/cookie.js
     - public/javascripts/uservoice.js
+    - public/javascripts/filter_settings.js
     - public/javascripts/application.js
     
   ie:
@@ -18,6 +19,7 @@ javascripts:
     - public/javascripts/osm.js
     - public/javascripts/cookie.js
     - public/javascripts/uservoice.js
+    - public/javascripts/filter_settings.js
     - public/javascripts/application.js
     
 stylesheets:

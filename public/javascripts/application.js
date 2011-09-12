@@ -502,7 +502,7 @@ function addFilter(attribute, value) {
   var filterStrategy = activeFilterStrategy();
   filterStrategy.filter.filters.push(filter);
   filterStrategy.setFilter(filterStrategy.filter);
-  $.cookie('filter_' + attribute + '_' + value, true);
+  FilterSettings.set(attribute, value, true)
   if (window._gaq) {
     _gaq.push(['_trackEvent', 'Filter', 'add_' + attribute, value]);
   }
@@ -521,7 +521,7 @@ function removeFilter(attribute, value) {
   if (position !== null) {
     filters.splice(position, 1);
     filterStrategy.setFilter(filterStrategy.filter);
-    $.cookie('filter_' + attribute + '_' + value, false);
+    FilterSettings.set(attribute, value, false)
     if (window._gaq) {
       _gaq.push(['_trackEvent', 'Filter', 'remove_' + attribute, value]);
     }
@@ -565,6 +565,8 @@ $(function () {
   
   
   $('input.filter').change(function () {
+    console.log($(this));
+    
     if ($(this).attr('checked')) {
       removeFilter($(this).attr('rel'), $(this).attr('value'));
     } else {
@@ -572,8 +574,10 @@ $(function () {
     }
   });
   
-  $('input.filter:not(:checked)').each(function() {
-      addFilter($(this).attr('rel'), $(this).attr('value'));
+  $('input.filter').each(function() {
+    if (FilterSettings.get($(this).attr('rel'), $(this).attr('value')) === true) {
+      $(this).attr('checked', false).trigger('change');
+    }
   });
 
   $(window).resize(function () {
