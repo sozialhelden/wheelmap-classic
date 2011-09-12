@@ -23,14 +23,13 @@
 
 - content_for :javascript_constants do
   :javascript
-    var available_locales = #{I18n.available_locales.to_json};
-    var url_locale = window.location.pathname.split('/')[1]
-    if (available_locales.indexOf(url_locale) != -1) { 
+    var available_locales = #{(I18n.available_locales.inject({}) { |memo, o| memo[o] = true; memo }).to_json};
+    var url_locale = window.location.pathname.split('/')[1];
+    if (available_locales[url_locale]) {
       var language = url_locale;
     } else {
       var language = 'de';
     };
-    console.log(language);
 
 -content_for :javascript do
   :javascript

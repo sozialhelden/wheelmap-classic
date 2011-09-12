@@ -1,6 +1,5 @@
 /*global  window, jQuery, $, OpenLayers, language, UserVoice, uservoiceOptions, _gaq*/
 /*jslint devel: true, browser: true, maxerr: 200, indent: 2, sloppy: true, nomen: true */
-
 jQuery.parseQuery = function(qs,options) {
   var q = (typeof qs === 'string'?qs:window.location.search), o = {'f':function(v){return unescape(v).replace(/\+/g,' ');}}, options = (typeof qs === 'object' && typeof options === 'undefined')?qs:options, o = jQuery.extend({}, o, options), params = {};
   jQuery.each(q.match(/^\??(.*)$/)[1].split('&'),function(i,p){
@@ -25,27 +24,6 @@ OpenLayers.IMAGE_RELOAD_ATTEMPTS = 3;
 // OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
 // OpenLayers.ImgPath = "http://wheelmap.local/img/";
 OpenLayers.ImgPath = "http://wheelmap.org/img/";
-
-var states = {
-  yes: true,
-  no: true,
-  limited: true,
-  unknown: true
-};
-
-var categories = {
-  public_transfer: true,
-  food: true,
-  leisure: true,
-  money_post: true,
-  education: true,
-  shopping: true,
-  sport: true,
-  tourism: true,
-  accommodation: true,
-  misc: true,
-  government: true
-};
 
 function runEffect() {
   setTimeout(function () {
