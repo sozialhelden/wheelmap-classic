@@ -235,15 +235,12 @@ class Poi < ActiveRecord::Base
     result = { :type => 'Feature',
       :geometry => { :type => 'Point', :coordinates  => [self.lon, self.lat]
       },
-      :properties => {'url' => url,
-                      'name' => headline,
+      :properties => {'name' => headline,
                       'address' => address,
                       'wheelchair' => wheelchair,
                       'osm_id' => osm_id,
                       'type' => node_type.try(:identifier),
-                      'category' => category.try(:identifier),
-                      'icon' => icon,
-                      'marker' => marker}.reject{|k,v| v.blank?}
+                      'category' => category.try(:identifier)}.reject{|k,v| v.blank?}
     }
     result
   end
