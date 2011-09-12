@@ -72,8 +72,8 @@ GEM
     capistrano (2.5.20)
       highline
       highline
-      net-scp (>= 1.0.0)
       net-scp
+      net-scp (>= 1.0.0)
       net-sftp
       net-sftp (>= 2.0.0)
       net-ssh
@@ -157,10 +157,6 @@ GEM
       yui-compressor (>= 0.9.3)
     json (1.5.1)
     json_pure (1.5.1)
-    jsonify (0.2.0)
-    jsonify-rails (0.2.0)
-      actionpack
-      jsonify (>= 0.2.0)
     kgio (2.6.0)
     launchy (0.4.0)
       configuration (>= 0.0.5)
@@ -303,7 +299,6 @@ DEPENDENCIES
   httparty
   inherited_resources
   jammit
-  jsonify-rails
   launchy
   lemonade
   libxml-ruby (~> 2.2.1)

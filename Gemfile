@@ -27,7 +27,6 @@ group :default do
   gem 'mapfish'
   gem 'rake', '0.9.2'
   gem 'yajl-ruby'
-  gem 'jsonify-rails'
   gem 'fastercsv'
   gem 'ruport'
   gem 'memcache-client'
