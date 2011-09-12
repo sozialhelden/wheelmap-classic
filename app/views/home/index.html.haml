@@ -1,7 +1,7 @@
-#sidebar{:class => cookies['minimized_filter'] == 'true' ? 'minimized' : ''}
-  = image_tag('close.gif', :size => '17x17', :alt => 'x', :class => cookies['minimized_filter'] == 'true' ? 'maximize' : 'minimize')
+#sidebar
+  = image_tag('close.gif', :size => '17x17', :alt => 'x', :class => 'minimize')
   = render :partial => 'home/wheelchair_status_filter'
-  %div{:class => cookies['minimized_filter'] == 'true' ? 'maximize' : 'minimize'}
+  %div.minimize
     &nbsp;
   = render :partial => 'home/category_filter'
   .button_wheelmap
@@ -23,16 +23,23 @@
 
 - content_for :javascript_constants do
   :javascript
-    var lat = #{params[:lat] || cookies['last_lat'] || GeoCache.latlon(request.remote_addr).first};
-    var lon = #{params[:lon] || cookies['last_lon'] || GeoCache.latlon(request.remote_addr).last};
-    var zoom = #{params[:zoom] || cookies['last_zoom'] || 14};
-    var language = '#{I18n.locale}';
+    var available_locales = #{I18n.available_locales.to_json};
+    var url_locale = window.location.pathname.split('/')[1]
+    if (available_locales.indexOf(url_locale) != -1) { 
+      var language = url_locale;
+    } else {
+      var language = 'de';
+    };
+    console.log(language);
 
 -content_for :javascript do
   :javascript
     drawmap(defaultControls(), 'map');
     createPlacesLayer(placesStyle());
-    jumpTo(lon,lat,zoom);
+    initGeoData();
+    $(function () {
+      jumpTo(lon,lat,zoom);
+    })
 
   - if browser_class.include?('trident-7') || browser_class.include?('trident-6')
     :javascript
