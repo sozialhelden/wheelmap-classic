@@ -231,17 +231,17 @@ class Poi < ActiveRecord::Base
   end
 
   def to_geojson(options={})
-    return if type.blank? || category.blank?
-    result = { :type => 'Feature',
-      :geometry => { :type => 'Point', :coordinates  => [self.lon, self.lat]
-      },
-      :properties => {'name' => headline,
-                      'address' => address,
-                      'wheelchair' => wheelchair,
-                      'osm_id' => osm_id,
-                      'type' => node_type.try(:identifier),
-                      'category' => category.try(:identifier)}.reject{|k,v| v.blank?}
-    }
+    result = {  :type => 'Feature',
+                :geometry => { :type => 'Point', :coordinates  => [self.lon, self.lat]},
+                :properties => {
+                  'name' => headline,
+                  'address' => address,
+                  'wheelchair' => wheelchair,
+                  'osm_id' => osm_id,
+                  'type' => node_type.try(:identifier),
+                  'category' => category.try(:identifier)
+                }.reject{|k,v| v.blank?}
+             }
     result
   end
 
