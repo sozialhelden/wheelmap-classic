@@ -1,18 +1,17 @@
-#footer.fixed
-  .social
-    =link_to "Tweet", "http://twitter.com/share", :class => "twitter-share-button", :style => 'display:none'  
-    %g:plusone{:size => "medium"}
-    %iframe{:src => "http://www.facebook.com/plugins/like.php?app_id=231074856943658&amp;href=#{u "request.url"}&amp;send=false&amp;layout=button_count&amp;width=130&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;height=20", :scrolling => "no", :frameborder => "0", :style =>"border:none; overflow:hidden; width:130px; height:20px;", :allowTransparency => "true"}
-    
-    =link_to 'lorem', request.url , :class => "FlattrButton", :style => "display:none;", :title => t('header.title'), :'data-flattr-uid' => "sozialhelden", :'data-flattr-language' => I18n.locale, :'data-flattr-button' => 'compact', :'data-flattr-tags' => "wheelmap, wheelchair, sozialhelden", :'data-flattr-category' => "text"
+.social
+  =link_to "Tweet", "http://twitter.com/share", :class => "twitter-share-button", :style => 'display:none'  
+  %g:plusone{:size => "medium"}
+  %iframe{:src => "http://www.facebook.com/plugins/like.php?app_id=231074856943658&amp;href=#{u "request.url"}&amp;send=false&amp;layout=button_count&amp;width=130&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;height=20", :scrolling => "no", :frameborder => "0", :style =>"border:none; overflow:hidden; width:130px; height:20px;", :allowTransparency => "true"}
+  
+  =link_to 'lorem', request.url , :class => "FlattrButton", :style => "display:none;", :title => t('header.title'), :'data-flattr-uid' => "sozialhelden", :'data-flattr-language' => I18n.locale, :'data-flattr-button' => 'compact', :'data-flattr-tags' => "wheelmap, wheelchair, sozialhelden", :'data-flattr-category' => "text"
 
-  .supporter
-    Basiert auf der
-    = link_to "OpenStreetMap", 'http://openstreetmap.org'
-    |
-    Hauptförderer
-    = image_tag('immoscout.jpg', :width => 43, :height => 20, :alt => 'Immobilienscout24', :title => 'Immobilienscout24')
-    |
-    Ein Projekt der
-    = link_to 'http://sozialhelden.de', :id => 'sozialhelden', :title => 'sozial is\' muss!' do
-      = image_tag('sozialhelden.jpg', :alt => t('layouts.application.banner.alt'), :width => 118, :height => 24)
+.supporter
+  Basiert auf der
+  = link_to "OpenStreetMap", 'http://openstreetmap.org'
+  |
+  Hauptförderer
+  = image_tag('immoscout.jpg', :width => 43, :height => 20, :alt => 'Immobilienscout24', :title => 'Immobilienscout24')
+  |
+  Ein Projekt der
+  = link_to 'http://sozialhelden.de', :id => 'sozialhelden', :title => 'sozial is\' muss!' do
+    = image_tag('sozialhelden.jpg', :alt => t('layouts.application.banner.alt'), :width => 118, :height => 24)

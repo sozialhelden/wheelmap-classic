@@ -1,14 +1,19 @@
-- unless Rails.env.production?
-  %meta{:name => 'robots', :content => 'noindex, nofollow'}
-
 %meta(charset="utf-8")
 %meta{'http-equiv' => 'Content-language', :content => I18n.locale}
 %meta{:name => 'language', :content => I18n.locale}
 %meta{:name => 'copyright', :content => 'Sozialhelden e.V'}
-%meta{:name => 'robots', :content => 'follow index'}
+
+- unless Rails.env.production?
+  %meta{:name => 'robots', :content => 'noindex, nofollow'}
+- else
+  %meta{:name => 'robots', :content => 'follow index'}
+
 %meta{:name => "google-site-verification", :content => "ANQCVlgXNpnBdZInKyE4eWMeNPq-cIckJGMyEYPXNec"}
 
 %link{:href => search_index_url, :rel => 'search', :title => t('header.meta.search')}
 %link{:href => root_url, :rel => 'home', :title => t('header.meta.homepage')}
 %link{:href => 'http://blog.wheelmap.org/kontakt/', :rel => 'copyright', :title => t('header.navigation.imprint')}
 =favicon_link_tag('/favicon.ico')
+
+:javascript
+  var available_locales = #{(I18n.available_locales.inject({}) { |memo, o| memo[o] = true; memo }).to_json};

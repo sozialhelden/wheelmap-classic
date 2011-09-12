@@ -768,6 +768,47 @@ body, html {
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
 }
 
+/* line 1, ../../app/stylesheets/basics/_footer.sass */
+#footer {
+  background: white;
+  height: 40px;
+  width: 100%;
+  border-top: 1px solid #a5c37a;
+  color: #ca1e2e;
+  line-height: 15px;
+  font-size: 12px;
+  overflow: hidden;
+  font-family: georgia;
+}
+/* line 12, ../../app/stylesheets/basics/_footer.sass */
+#footer.fixed {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
+/* line 16, ../../app/stylesheets/basics/_footer.sass */
+#footer a {
+  color: #ca1e2e;
+  text-decoration: underline;
+}
+/* line 20, ../../app/stylesheets/basics/_footer.sass */
+#footer .social {
+  width: 450px;
+  float: left;
+  margin: 10px;
+}
+/* line 25, ../../app/stylesheets/basics/_footer.sass */
+#footer .supporter {
+  float: right;
+  margin: 5px;
+  margin-right: 10px;
+  height: 24px;
+}
+/* line 31, ../../app/stylesheets/basics/_footer.sass */
+#footer img {
+  vertical-align: bottom;
+}
+
 /* line 2, ../../app/stylesheets/partials/nodes/_headlines.sass */
 h1 span.addition {
   font-size: 14px;
@@ -1107,47 +1148,6 @@ table#accessibility td.leisure {
   right: 5px;
   top: 0px;
   color: black;
-}
-
-/* line 1, ../../app/stylesheets/partials/nodes/_footer.sass */
-#footer {
-  background: white;
-  height: 47px;
-  width: 100%;
-  border-top: 1px solid #a5c37a;
-  color: #ca1e2e;
-  line-height: 15px;
-  font-size: 12px;
-  overflow: hidden;
-  font-family: georgia;
-}
-/* line 12, ../../app/stylesheets/partials/nodes/_footer.sass */
-#footer a {
-  color: #ca1e2e;
-  text-decoration: underline;
-}
-/* line 16, ../../app/stylesheets/partials/nodes/_footer.sass */
-#footer .social {
-  width: 340px;
-  float: left;
-  margin: 10px;
-}
-/* line 21, ../../app/stylesheets/partials/nodes/_footer.sass */
-#footer .supporter {
-  width: 450;
-  float: left;
-  margin: 10px;
-  height: 24px;
-}
-/* line 27, ../../app/stylesheets/partials/nodes/_footer.sass */
-#footer .sozialhelden {
-  float: right;
-  margin: 5px;
-  margin-right: 15px;
-}
-/* line 32, ../../app/stylesheets/partials/nodes/_footer.sass */
-#footer img {
-  vertical-align: bottom;
 }
 
 /* line 27, ../../app/stylesheets/node.sass */

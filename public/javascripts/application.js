@@ -19,11 +19,17 @@ if (!window.zoom) {
 var places = [];
 var mapnik;
 var draggable;
+var url_locale = window.location.pathname.split('/')[1];
+if (available_locales[url_locale]) {
+  var language = url_locale;
+} else {
+  var language = 'de';
+};
 
 OpenLayers.IMAGE_RELOAD_ATTEMPTS = 3;
 // OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
 // OpenLayers.ImgPath = "http://wheelmap.local/img/";
-OpenLayers.ImgPath = "http://wheelmap.org/img/";
+OpenLayers.ImgPath = "http://asset2.wheelmap.org/img/";
 
 function runEffect() {
   setTimeout(function () {
@@ -32,6 +38,14 @@ function runEffect() {
     $(".flash").fadeOut();
   }, 5000);
 }
+
+function add_socia_script (d, t, src) {
+  var g = d.createElement(t),
+  s = d.getElementsByTagName(t)[0];
+  g.async = true;
+  g.src = src;
+  s.parentNode.insertBefore(g, s);
+};
 
 function removeAllPopups() {
   $.each(map.popups, function (i, popup) {
