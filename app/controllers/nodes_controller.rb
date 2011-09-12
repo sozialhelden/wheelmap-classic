@@ -49,10 +49,10 @@ class NodesController < ApplicationController
         # Completed 200 OK in 395ms (Views: 4.5ms | ActiveRecord: 30.5ms)
         # conpared to erb render:
         # Completed 200 OK in 614ms (Views: 513.6ms | ActiveRecord: 86.5ms)
-        render :json => Yajl::Encoder.encode({:type => 'FeatureCollection',
-                                              :bbox => [@left, @bottom, @right, @top],
-                                              :features => @places.map(&:to_geojson)}, :pretty => Rails.env.development?),
-               :content_type => "application/json; subtype=geojson; charset=utf-8"
+        json_string = Rails.cache.fetch("#{I18n.locale}/nodes/bbox_#{@places.first.updated_at.to_i}_#{[@left, @bottom, @right, @top].join','}", :expires_in => 1.hour) do
+          Yajl::Encoder.encode({:type => 'FeatureCollection', :bbox => [@left, @bottom, @right, @top], :features => @places.map(&:to_geojson)}, :pretty => Rails.env.development?)
+        end
+        render :json => json_string, :content_type => "application/json; subtype=geojson; charset=utf-8"
       }
       wants.html{ redirect_to root_path }
     end
@@ -170,5 +170,9 @@ class NodesController < ApplicationController
         end
       end
     end
+  end
+  
+  def controller
+    self
   end
 end
