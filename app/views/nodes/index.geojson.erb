@@ -1,4 +1,7 @@
 <%- cache("#{I18n.locale}/nodes/bbox_#{[@left, @bottom, @right, @top].join','}", :expires_in => 1.minute) do -%>
-<%= Yajl::Encoder.encode({:type => 'FeatureCollection', :bbox => [@left, @bottom, @right, @top], :features => @places.map{|node| node_hash = node.to_geojson; node_hash[:properties].update({'marker' => image_path(node.marker), :icon => image_path(node.icon)});node_hash}}, :pretty => false &&  Rails.env.development?).html_safe %>
-<%-#= ActiveSupport::JSON.encode({:type => 'FeatureCollection', :bbox => [@left, @bottom, @right, @top], :features => @places.map{|node| node_hash = node.to_geojson; node_hash[:properties].update({'marker' => image_path(node.marker), :icon => image_path(node.icon)});node_hash}}, :pretty => Rails.env.development?).html_safe %>
+<%= generate_json({
+    :type => 'FeatureCollection',
+    :bbox => [@left, @bottom, @right, @top],
+    :features => prepare_nodes }).html_safe
+%>
 <%- end -%>

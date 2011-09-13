@@ -2,6 +2,7 @@ class NodesController < ApplicationController
   require 'float'
   require 'yajl'
   include ActionView::Helpers::CacheHelper
+  include ActionView::Helpers::AssetTagHelper
   include NewRelic::Agent::MethodTracer
 
 
@@ -98,9 +99,24 @@ class NodesController < ApplicationController
   def edit
     @node = OpenStreetMap.get_node(params[:id])
   end
+  helper_method :prepare_nodes
+  helper_method :generate_json
 
   # Before filter
   protected
+  def prepare_nodes
+    @places.map { |node| node_hash = node.to_geojson
+                         node_hash[:properties].update({ 'marker' => image_path(node.marker),
+                                                            :icon => image_path(node.icon)})
+                         node_hash
+                }
+  end
+  add_method_tracer :prepare_nodes, "Custom/prepare_nodes"
+
+  def generate_json(h)
+    Yajl::Encoder.encode(h, :pretty => (false && Rails.env.development?))
+  end
+  add_method_tracer :generate_json, "Custom/generate_json"
 
   def normalize_bbox
     @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f)
