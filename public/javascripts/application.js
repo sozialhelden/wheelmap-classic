@@ -19,12 +19,6 @@ if (!window.zoom) {
 var places = [];
 var mapnik;
 var draggable;
-var url_locale = window.location.pathname.split('/')[1];
-if (available_locales[url_locale]) {
-  var language = url_locale;
-} else {
-  var language = 'de';
-};
 
 OpenLayers.IMAGE_RELOAD_ATTEMPTS = 3;
 // OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
