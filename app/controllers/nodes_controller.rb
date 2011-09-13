@@ -104,8 +104,13 @@ class NodesController < ApplicationController
 
   # Before filter
   protected
+  def load_and_instantiate_nodes
+    @places.all
+  end
+  add_method_tracer :load_and_instantiate_nodes, "Custom/load_and_instantiate_nodes"
+
   def prepare_nodes
-    @places.map { |node| node_hash = node.to_geojson
+    load_and_instantiate_nodes.map { |node| node_hash = node.to_geojson
                          node_hash[:properties].update({ 'marker' => image_path(node.marker),
                                                             :icon => image_path(node.icon)})
                          node_hash
