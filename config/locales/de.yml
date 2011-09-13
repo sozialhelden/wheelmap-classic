@@ -324,7 +324,7 @@ de:
     searchbar: 
       add_place: "Ort hinzufügen"
       find: finden
-      placeholder: "z.B. Sunset Boulevard San Francisco oder Brandenburger Tor Berlin"
+      placeholder: "z.B. Sunset Boulevard L.A. oder Brandenburger Tor Berlin"
       title_add_place: "Jetzt einen neuen Ort an dieser Stelle hinzufügen"
     tagline: "Wheelmap logo"
     title: "Wheelmap - Rollstuhlgerechte Orte finden"
