@@ -24,6 +24,7 @@ set :user, 'rails'
 after  'deploy:setup',        'deploy:create_shared_config'
 after  'deploy:update_code',  'deploy:symlink_configs'
 after  'deploy:update_code',  'deploy:remove_all_unfinished_locales'
+after  'deploy',              'deploy:cache:clear'
 
 
 namespace :deploy do
@@ -62,7 +63,7 @@ namespace :deploy do
   
   namespace :cache do
     task :clear do
-      run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake cache:clear"
+      run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake cache:clear"
     end
   end
 end
