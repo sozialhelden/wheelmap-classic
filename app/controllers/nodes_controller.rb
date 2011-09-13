@@ -2,9 +2,9 @@ class NodesController < ApplicationController
   require 'float'
   require 'yajl'
   include ActionView::Helpers::CacheHelper
-  
+
   skip_before_filter :verify_authenticity_token
-  
+
   before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update]
   before_filter :authenticate_application!,       :only => [:new, :create, :edit, :update]
   before_filter :check_create_params,             :only => :create
@@ -21,21 +21,7 @@ class NodesController < ApplicationController
   rescue_from OpenStreetMap::Unavailable,       :with => :timeout
 
   def index
-    if params[:bbox]
-      @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f)
-      @left = @left.floor_to(3)
-      @bottom = @bottom.floor_to(3)
-      @right = @right.ceil_to(3)
-      @top = @top.ceil_to(3)
-      if @right == @left
-        @left   -= 0.001
-        @right  += 0.001
-      end
-      if @top   == @bottom
-        @bottom -= 0.001
-        @top    += 0.001
-      end
-    end
+    normalize_bbox if params[:bbox]
     @limit = params[:limit].try(:to_i) || 300
 
     @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.order('osm_id DESC').limit(@limit) if @left
@@ -47,11 +33,11 @@ class NodesController < ApplicationController
       wants.html{     redirect_to root_path }
     end
   end
-  
+
   def show
     @node = Poi.find(params[:id])
   end
-  
+
   def update_wheelchair
     user = wheelmap_visitor
     client = OpenStreetMap::OauthClient.new(user.access_token)
@@ -89,7 +75,7 @@ class NodesController < ApplicationController
       end
     end
   end
-  
+
   def create
     @node = OpenStreetMap::Node.new(params[:node].stringify_keys!)
     if @node.valid?
@@ -102,46 +88,62 @@ class NodesController < ApplicationController
       render :action => :new, :layers => 'BT', :lat => @node.lat, :lon => @node.lon
     end
   end
-  
+
   def new
     @node = OpenStreetMap::Node.new({'lat' => params[:lat], 'lon' => params[:lon]})
   end
-  
+
   def edit
     @node = OpenStreetMap.get_node(params[:id])
   end
-  
+
   # Before filter
   protected
-  
+
+  def normalize_bbox
+    @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f)
+    @left = @left.floor_to(3)
+    @bottom = @bottom.floor_to(3)
+    @right = @right.ceil_to(3)
+    @top = @top.ceil_to(3)
+    if @right == @left
+      @left   -= 0.001
+      @right  += 0.001
+    end
+    if @top   == @bottom
+      @bottom -= 0.001
+      @top    += 0.001
+    end
+  end
+
   def gone(exception)
 #    HoptoadNotifier.notify(exception,:component => self.class.name, :parameters => params)
     @message = I18n.t('nodes.errors.not_existent')
     render :template => 'shared/error', :status => 410
   end
-  
+
   def not_found(exception)
 #    HoptoadNotifier.notify(exception,:component => self.class.name, :parameters => params)
     @message = I18n.t('nodes.errors.not_found')
     render :template => 'shared/error', :status => 404
   end
-  
+
   def set_default_user
     current_user ||= User.find_by_email('visitor@wheelmap.org')
   end
-  
+
   def check_bbox_param
-    params[:bbox] ||= "13.395536804199,52.516078290477,13.404463195801,52.517321704317" 
+    params[:bbox] ||= "13.395536804199,52.516078290477,13.404463195801,52.517321704317"
   end
-  
+
   def check_update_wheelchair_params
     render( :text => 'Params missing', :status => 406 ) if params[:wheelchair].blank?
   end
-  
+
   def check_update_params
     render( :text => 'Params missing', :status => 406 ) if params[:node].blank?
   end
-  
+
   def check_create_params
     render( :text => 'Params missing', :status => 406 ) if params[:node].blank?
   end
@@ -161,7 +163,7 @@ class NodesController < ApplicationController
       end
     end
   end
-  
+
   def controller
     self
   end
