@@ -16,4 +16,4 @@
 =favicon_link_tag('/favicon.ico')
 
 :javascript
-  var available_locales = #{(I18n.available_locales.inject({}) { |memo, o| memo[o] = true; memo }).to_json};
+  var language = '#{I18n.locale}';
