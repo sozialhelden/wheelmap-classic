@@ -59,6 +59,12 @@ namespace :deploy do
       end
     end
   end
+  
+  namespace :cache do
+    task :clear do
+      run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake cache:clear"
+    end
+  end
 end
 
 set :stages,        %w(staging production)
