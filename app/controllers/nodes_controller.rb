@@ -2,6 +2,8 @@ class NodesController < ApplicationController
   require 'float'
   require 'yajl'
   include ActionView::Helpers::CacheHelper
+  include NewRelic::Agent::MethodTracer
+
 
   skip_before_filter :verify_authenticity_token
 
@@ -115,6 +117,7 @@ class NodesController < ApplicationController
       @top    += 0.001
     end
   end
+  add_method_tracer :normalize_bbox, 'Custom/normalize_bbox'
 
   def gone(exception)
 #    HoptoadNotifier.notify(exception,:component => self.class.name, :parameters => params)
@@ -163,6 +166,8 @@ class NodesController < ApplicationController
       end
     end
   end
+  add_method_tracer :compress, "Custom/compress"
+  add_method_tracer :check_bbox_param, "Custom/check_bbox_param"
 
   def controller
     self
