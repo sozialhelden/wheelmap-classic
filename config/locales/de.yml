@@ -645,7 +645,7 @@ de:
       alt: "Wheelmap Logo - Rollstuhlgerechte Orte finden"
       title: "Wheelmap - Rollstuhlgerechte Orte finden"
     what_is: 
-      fully_accessible: "<em>ja:</em> Eingang stufenlos, alle Räume stufenlos, Rollstuhl-WC vorhanden."
-      limited_accessible: "<em>teilweise:</em> Eingang max 1 Stufe (7cm hoch), die wichtigsten Räume stufenlos, WC egal."
-      not_accessible: "<em>nein:</em> Eingang hat höhere oder mehrere Stufen, Räume nicht erreichbar."
-      unknown_accessible: "<em>unbekannt:</em> Hilf mit und markiere diese Orte!"
+      fully_accessible: "<em>Ja:</em> Eingang stufenlos, alle Räume stufenlos, Rollstuhl-WC vorhanden."
+      limited_accessible: "<em>Teilweise:</em> Eingang max 1 Stufe (7cm hoch), die wichtigsten Räume stufenlos, WC egal."
+      not_accessible: "<em>Nein:</em> Eingang hat höhere oder mehrere Stufen, Räume nicht erreichbar."
+      unknown_accessible: "<em>Unbekannt:</em> Hilf mit und markiere diese Orte!"
