@@ -23,7 +23,7 @@ var draggable;
 OpenLayers.IMAGE_RELOAD_ATTEMPTS = 3;
 // OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
 // OpenLayers.ImgPath = "http://wheelmap.local/img/";
-OpenLayers.ImgPath = "http://asset2.wheelmap.org/img/";
+OpenLayers.ImgPath = 'http://' + location.host + '/img/';
 
 function runEffect() {
   setTimeout(function () {
@@ -580,7 +580,7 @@ $(function () {
   });
 
   $(window).resize(function () {
-    var width = $(window).width() - 600;
+    var width = $(window).width() - 800;
     if (width > 100) {
       $('#search').css('width', width + 'px');
     }

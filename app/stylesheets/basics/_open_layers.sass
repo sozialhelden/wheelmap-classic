@@ -10,6 +10,7 @@
     font-weight: bold
 
   .olControlPanZoomBar
+    float: right
     left: inherit !important
     right: 45px !important
     top: 45px !important
@@ -19,12 +20,23 @@
   .olControlAttribution, .olControlPermalink
     color: $text
     display: block
-    float: left
+    float: right
     font-size: 11px
     font-style: normal
-    left: 40px
     padding: 5px 20px 1px 0
-    position: relative !important
-    top: 0px
     z-index: 1000
     +text-shadow(rgba(white, 0.5), 0, 1px, 1px)
+    
+    a
+      color: #000
+      font-weight: normal
+      text-decoration: underline
+    
+  .olControlAttribution
+    position: relative !important
+  
+    
+  .olControlPermalink
+    position: absolute !important
+    bottom: 40px
+    

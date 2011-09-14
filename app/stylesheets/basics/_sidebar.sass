@@ -10,6 +10,10 @@
   height: 100%
   &.minimized
     left: -360px
+
+  em
+    font-weight: bold
+    font-size: 120%
     
   img.minimize, img.maximize
     cursor: pointer
@@ -31,6 +35,9 @@
   
   ul
     margin-bottom: 5px
+    border-bottom: 1px solid #a5c37a
+    width: 100%
+    padding-bottom: 15px
   
   .button_wheelmap, .button_donate
     float: left
@@ -53,6 +60,7 @@
   
   h4
     margin-bottom: 5px
+    font-size: 16px
     
   a, a:visited, a:hover, a:active
     text-decoration: none
@@ -63,13 +71,12 @@
     line-height: 16px
     
     &.state
-      padding: 10px 0px 10px 37px
-      min-height: 30px
-      border-bottom: 1px solid #a5c37a
+      padding: 10px 0px 3px 37px
+      min-height: 2.8em
         
     &.yes
       background: url("/marker/yes.png") no-repeat 2px 0px
-      padding: 0px 0px 10px 37px
+      padding: 0px 0px 3px 37px
       
     &.limited
       background: url("/marker/limited.png") no-repeat 2px 10px

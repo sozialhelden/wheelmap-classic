@@ -4,12 +4,10 @@
   %div.minimize
     &nbsp;
   = render :partial => 'home/category_filter'
-  .button_wheelmap
-    Die Wheelmap für's Smartphone
-    
-  .button_donate
-    Unterstütze Wheelmap
-  
+  - link_to "http://itunes.apple.com/#{I18n.locale}/app/wheelmap/id399239476?mt=8" do
+    =image_tag("/images/app_store_badge.png")
+  - link_to "http://blog.wheelmap.org/android/" do
+    =image_tag("/images/market_store_badge.png")
 #spinner
 
 #facebox

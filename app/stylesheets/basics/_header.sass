@@ -4,11 +4,11 @@
   display: block
   background-color: #FFF
   margin: 10px
-  overflow: hidden
-  
+  margin-top: 5px
+
   .links
     float: right
-    margin-bottom: 14px
+    margin-bottom: 9px
     height: 20px
     a
       border-right: 1px lighten($border-color, 40%) solid
@@ -29,17 +29,17 @@
         background: transparent url('/images/icons/select-marker.png') 98% 0 no-repeat
         padding-right: 20px
         -webkit-appearance: none
-  
+
   a
     text-decoration: underline
-    
+
   #logo
     float: left
     height: 84px
     width: 300px
-    margin: 5px
-    margin-right: 30px
-    
+    margin: 0px
+    margin-right: 60px
+
   #searchbar
     $height: 33px
     height: $height
@@ -69,7 +69,7 @@
       +border-left-radius(0)
       +border-right-radius(8px)
       height: $height
-      
+
     .or
       color: darken($orange, 20%)
       float: left
@@ -82,7 +82,7 @@
       text-decoration: none
     .or-add-place
       float: left
-      
+
 .ac_results
   z-index: 9000
   ul
@@ -94,6 +94,6 @@
     +border-radius(12px)
     +box-shadow(rgba(0, 0, 0, 0.2), 0, 1px, 8px)
     cursor: pointer
-  
+
     li.ac_over
       background-color: rgba(204,204,204, 0.9)
