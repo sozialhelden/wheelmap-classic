@@ -82,10 +82,10 @@ en:
       title: "Download the iPhone App now!"
       alt: "AppStore Logo"
     what_is: 
-      unknown_accessible: 'Help and mark places!'
-      not_accessible: 'Entry has high or several steps, rooms not accessible'
-      fully_accessible: 'entrance without steps, all rooms without steps, accessible toilet'
-      limited_accessible: 'Entry has a step (max. height 7cm), most rooms are stepless, toilet not accessible'
+      unknown_accessible: '<em>Unknown:</em> Help and mark places!'
+      not_accessible: '<em>No:</em> Entry has high or several steps, rooms not accessible'
+      fully_accessible: '<em>Yes:</em> Entrance without steps, all rooms without steps, accessible toilet'
+      limited_accessible: '<em>Limited:</em> Entry has a step (max. height 7cm), most rooms are stepless, toilet not accessible'
   node: 
     address: 
       city: "%{city} %{postcode}"
@@ -460,8 +460,8 @@ en:
           upgrade: Update Browser
       
       filter: 
-        category: "Category:"
-        wheelchair: Wheelchair accessible? (What does that mean?)
+        category: "Choose category"
+        wheelchair: Wheelchair accessible?
       link: 
         node: 
           create: Add new place
