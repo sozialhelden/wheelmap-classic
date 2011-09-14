@@ -1,19 +1,19 @@
 class Api::LocalesController < Api::ApiController
   def index
     index! do |format|
-      format.xml      {render_for_api :simple, :xml  => @locales, :root => :locales, :meta => meta}
-      format.json     {render_for_api :simple, :json => @locales, :root => :locales, :meta => meta}
+      format.xml      {render :xml  =>  meta.update({:locales => @locales})}
+      format.json     {render :json =>  meta.update({:locales => @locales})}
     end
   end
   
   protected
 
   def collection
-    @locales ||= Locale.all
+    @locales ||= I18n.available_locales.inject({}){|memo, l| memo[l] = Languages[l.to_s];memo}
   end
 
   def meta
-    @meta = {
+    @meta ||= {
       :conditions => {
         :format => params[:format]
       },
