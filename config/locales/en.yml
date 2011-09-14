@@ -1,5 +1,6 @@
 --- 
 en: 
+  how?: How?
   number: 
     format: 
       separator: .
@@ -81,10 +82,10 @@ en:
       title: "Download the iPhone App now!"
       alt: "AppStore Logo"
     what_is: 
-      unknown_accessible: The wheelchair status is unknown
-      not_accessible: The entrance step is higher than 7 cm; or a stair at the entrance; or most important localities are not accessible for wheelchair users
-      fully_accessible: The entrance step is not higher than 7 cm; all localities accessible for wheelchair users (without exception); disabled toilet available
-      limited_accessible: The entrance step is not higher than 7 cm; most important localitites accessible for wheelchair users
+      unknown_accessible: 'Help and mark places!'
+      not_accessible: 'Entry has high or several steps, rooms not accessible'
+      fully_accessible: 'entrance without steps, all rooms without steps, accessible toilet'
+      limited_accessible: 'Entry has a step (max. height 7cm), most rooms are stepless, toilet not accessible'
   node: 
     address: 
       city: "%{city} %{postcode}"

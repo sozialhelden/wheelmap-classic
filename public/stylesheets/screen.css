@@ -11,23 +11,18 @@ html .hide, body .hide {
   display: none;
 }
 
-/* line 10, ../../app/stylesheets/vendor/_map.sass */
-body.map {
-  overflow: hidden;
-}
-
-/* line 13, ../../app/stylesheets/vendor/_map.sass */
+/* line 12, ../../app/stylesheets/vendor/_map.sass */
 a {
   color: blue;
   text-decoration: none;
 }
-/* line 17, ../../app/stylesheets/vendor/_map.sass */
+/* line 16, ../../app/stylesheets/vendor/_map.sass */
 a:hover {
   color: #000011;
   text-decoration: underline;
 }
 
-/* line 21, ../../app/stylesheets/vendor/_map.sass */
+/* line 20, ../../app/stylesheets/vendor/_map.sass */
 #map {
   width: 100%;
   padding: 0;
@@ -37,13 +32,13 @@ a:hover {
   color: black;
 }
 
-/* line 29, ../../app/stylesheets/vendor/_map.sass */
+/* line 28, ../../app/stylesheets/vendor/_map.sass */
 .olFramedCloudPopupContent {
   font-size: 0.8em;
   font-family: Verdana, sans-serif;
 }
 
-/* line 33, ../../app/stylesheets/vendor/_map.sass */
+/* line 32, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle {
   position: absolute;
   font-size: 1em;
@@ -60,13 +55,13 @@ a:hover {
   cursor: default;
   opacity: 0.7;
 }
-/* line 49, ../../app/stylesheets/vendor/_map.sass */
+/* line 48, ../../app/stylesheets/vendor/_map.sass */
 #descriptionToggle:hover {
   background-color: white;
   opacity: 1;
 }
 
-/* line 54, ../../app/stylesheets/vendor/_map.sass */
+/* line 53, ../../app/stylesheets/vendor/_map.sass */
 #description {
   position: absolute;
   z-index: 10000;
@@ -79,7 +74,7 @@ a:hover {
   font-size: 12px;
 }
 
-/* line 66, ../../app/stylesheets/vendor/_map.sass */
+/* line 65, ../../app/stylesheets/vendor/_map.sass */
 #attribution {
   bottom: 0;
   left: 0;
@@ -90,14 +85,14 @@ a:hover {
   z-index: 1000;
 }
 
-/* line 76, ../../app/stylesheets/vendor/_map.sass */
+/* line 75, ../../app/stylesheets/vendor/_map.sass */
 #layer {
   position: absolute;
   top: 60px;
   right: 10px;
   z-index: 10002;
 }
-/* line 82, ../../app/stylesheets/vendor/_map.sass */
+/* line 81, ../../app/stylesheets/vendor/_map.sass */
 #layer > div {
   border: 1px solid black;
   background-color: white;
@@ -106,7 +101,7 @@ a:hover {
   cursor: default;
   margin-bottom: 4px;
 }
-/* line 91, ../../app/stylesheets/vendor/_map.sass */
+/* line 90, ../../app/stylesheets/vendor/_map.sass */
 #layer .active {
   background-color: #eeeeff;
 }
@@ -319,23 +314,36 @@ a:visited:hover {
 }
 /* line 12, ../../app/stylesheets/basics/_open_layers.sass */
 #map .olControlPanZoomBar {
+  float: right;
   left: inherit !important;
   right: 45px !important;
   top: 45px !important;
 }
-/* line 19, ../../app/stylesheets/basics/_open_layers.sass */
+/* line 20, ../../app/stylesheets/basics/_open_layers.sass */
 #map .olControlAttribution, #map .olControlPermalink {
   color: #444444;
   display: block;
-  float: left;
+  float: right;
   font-size: 11px;
   font-style: normal;
-  left: 40px;
   padding: 5px 20px 1px 0;
-  position: relative !important;
-  top: 0px;
   z-index: 1000;
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+}
+/* line 30, ../../app/stylesheets/basics/_open_layers.sass */
+#map .olControlAttribution a, #map .olControlPermalink a {
+  color: black;
+  font-weight: normal;
+  text-decoration: underline;
+}
+/* line 35, ../../app/stylesheets/basics/_open_layers.sass */
+#map .olControlAttribution {
+  position: relative !important;
+}
+/* line 39, ../../app/stylesheets/basics/_open_layers.sass */
+#map .olControlPermalink {
+  position: absolute !important;
+  bottom: 40px;
 }
 
 /* line 1, ../../app/stylesheets/basics/_header.sass */
@@ -347,12 +355,12 @@ a:visited:hover {
   display: block;
   background-color: white;
   margin: 10px;
-  overflow: hidden;
+  margin-top: 5px;
 }
 /* line 9, ../../app/stylesheets/basics/_header.sass */
 #header .links {
   float: right;
-  margin-bottom: 14px;
+  margin-bottom: 9px;
   height: 20px;
 }
 /* line 13, ../../app/stylesheets/basics/_header.sass */
@@ -394,8 +402,8 @@ a:visited:hover {
   float: left;
   height: 84px;
   width: 300px;
-  margin: 5px;
-  margin-right: 30px;
+  margin: 0px;
+  margin-right: 60px;
 }
 /* line 43, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar {
@@ -1019,11 +1027,16 @@ body, html {
   left: -360px;
 }
 /* line 14, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar em {
+  font-weight: bold;
+  font-size: 120%;
+}
+/* line 18, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar img.minimize, #sidebar img.maximize {
   cursor: pointer;
   float: right;
 }
-/* line 18, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 22, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar div.minimize, #sidebar div.maximize {
   position: relative;
   float: right;
@@ -1032,19 +1045,22 @@ body, html {
   height: 34px;
   cursor: pointer;
 }
-/* line 26, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 30, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar div.minimize {
   background: url("/images/minimize.gif") no-repeat;
 }
-/* line 29, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 33, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar div.maximize {
   background: url("/images/maximize.gif") no-repeat;
 }
-/* line 32, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 36, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar ul {
   margin-bottom: 5px;
+  border-bottom: 1px solid #a5c37a;
+  width: 100%;
+  padding-bottom: 15px;
 }
-/* line 35, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 42, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar .button_wheelmap, #sidebar .button_donate {
   float: left;
   text-align: center;
@@ -1054,62 +1070,62 @@ body, html {
   font-size: 13px;
   padding: 10px 20px;
 }
-/* line 44, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 51, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar .button_wheelmap {
   width: 141px;
   background: url("/images/button_wheelmap.jpg") no-repeat left center;
   margin-right: 10px;
 }
-/* line 49, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 56, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar .button_donate {
   width: 90px;
   background: url("/images/button_donate.jpg") no-repeat left center;
   padding-left: 30px;
 }
-/* line 54, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 61, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar h4 {
   margin-bottom: 5px;
+  font-size: 16px;
 }
-/* line 57, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 65, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar a, #sidebar a:visited, #sidebar a:hover, #sidebar a:active {
   text-decoration: none;
 }
-/* line 60, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 68, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li {
   color: black;
   font-size: 12px;
   line-height: 16px;
 }
-/* line 65, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 73, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.state {
-  padding: 10px 0px 10px 37px;
-  min-height: 30px;
-  border-bottom: 1px solid #a5c37a;
+  padding: 10px 0px 3px 37px;
+  min-height: 2.8em;
 }
-/* line 70, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 77, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.yes {
   background: url("/marker/yes.png") no-repeat 2px 0px;
-  padding: 0px 0px 10px 37px;
+  padding: 0px 0px 3px 37px;
 }
-/* line 74, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 81, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.limited {
   background: url("/marker/limited.png") no-repeat 2px 10px;
 }
-/* line 76, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 83, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.no {
   background: url("/marker/no.png") no-repeat 2px 10px;
 }
-/* line 78, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 85, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.unknown {
   background: url("/marker/unknown.png") no-repeat 2px 10px;
 }
 
-/* line 82, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 89, ../../app/stylesheets/basics/_sidebar.sass */
 #state-counter {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 84, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 91, ../../app/stylesheets/basics/_sidebar.sass */
 #state-counter li {
   width: 40%;
   float: left;
@@ -1160,7 +1176,6 @@ body, html {
   color: #ca1e2e;
   line-height: 15px;
   font-size: 12px;
-  overflow: hidden;
   font-family: georgia;
 }
 /* line 12, ../../app/stylesheets/basics/_footer.sass */
@@ -1176,7 +1191,7 @@ body, html {
 }
 /* line 20, ../../app/stylesheets/basics/_footer.sass */
 #footer .social {
-  width: 450px;
+  width: 350px;
   float: left;
   margin: 10px;
 }
@@ -1190,6 +1205,29 @@ body, html {
 /* line 31, ../../app/stylesheets/basics/_footer.sass */
 #footer img {
   vertical-align: bottom;
+}
+/* line 34, ../../app/stylesheets/basics/_footer.sass */
+#footer .counter {
+  float: left;
+  margin-right: 10px;
+  margin-top: 0px;
+}
+/* line 39, ../../app/stylesheets/basics/_footer.sass */
+#footer .counter td {
+  padding: 2px 2px;
+  color: gray;
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  line-height: 18px;
+  height: 18px;
+}
+/* line 46, ../../app/stylesheets/basics/_footer.sass */
+#footer .counter span {
+  font-size: 13px;
+  border: 1px solid #cccccc;
+  border-left: 0px;
+  padding: 1px 4px;
+  margin-left: 5px;
+  background: url("/images/bubble-left.png") no-repeat -5px center;
 }
 
 /* line 1, ../../app/stylesheets/partials/map/_aside.sass */
@@ -1207,7 +1245,7 @@ aside {
   bottom: 1px;
   left: 0;
   right: 0;
-  top: 110px;
+  top: 95px;
   border-top: 1px solid #a5c37a;
   background: #fff7d9;
 }

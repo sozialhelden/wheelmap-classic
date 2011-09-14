@@ -207,23 +207,36 @@ a:visited:hover {
 }
 /* line 12, ../../app/stylesheets/basics/_open_layers.sass */
 #map .olControlPanZoomBar {
+  float: right;
   left: inherit !important;
   right: 45px !important;
   top: 45px !important;
 }
-/* line 19, ../../app/stylesheets/basics/_open_layers.sass */
+/* line 20, ../../app/stylesheets/basics/_open_layers.sass */
 #map .olControlAttribution, #map .olControlPermalink {
   color: #444444;
   display: block;
-  float: left;
+  float: right;
   font-size: 11px;
   font-style: normal;
-  left: 40px;
   padding: 5px 20px 1px 0;
-  position: relative !important;
-  top: 0px;
   z-index: 1000;
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+}
+/* line 30, ../../app/stylesheets/basics/_open_layers.sass */
+#map .olControlAttribution a, #map .olControlPermalink a {
+  color: black;
+  font-weight: normal;
+  text-decoration: underline;
+}
+/* line 35, ../../app/stylesheets/basics/_open_layers.sass */
+#map .olControlAttribution {
+  position: relative !important;
+}
+/* line 39, ../../app/stylesheets/basics/_open_layers.sass */
+#map .olControlPermalink {
+  position: absolute !important;
+  bottom: 40px;
 }
 
 /* line 1, ../../app/stylesheets/basics/_header.sass */
@@ -235,12 +248,12 @@ a:visited:hover {
   display: block;
   background-color: white;
   margin: 10px;
-  overflow: hidden;
+  margin-top: 5px;
 }
 /* line 9, ../../app/stylesheets/basics/_header.sass */
 #header .links {
   float: right;
-  margin-bottom: 14px;
+  margin-bottom: 9px;
   height: 20px;
 }
 /* line 13, ../../app/stylesheets/basics/_header.sass */
@@ -282,8 +295,8 @@ a:visited:hover {
   float: left;
   height: 84px;
   width: 300px;
-  margin: 5px;
-  margin-right: 30px;
+  margin: 0px;
+  margin-right: 60px;
 }
 /* line 43, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar {
@@ -777,7 +790,6 @@ body, html {
   color: #ca1e2e;
   line-height: 15px;
   font-size: 12px;
-  overflow: hidden;
   font-family: georgia;
 }
 /* line 12, ../../app/stylesheets/basics/_footer.sass */
@@ -793,7 +805,7 @@ body, html {
 }
 /* line 20, ../../app/stylesheets/basics/_footer.sass */
 #footer .social {
-  width: 450px;
+  width: 350px;
   float: left;
   margin: 10px;
 }
@@ -807,6 +819,29 @@ body, html {
 /* line 31, ../../app/stylesheets/basics/_footer.sass */
 #footer img {
   vertical-align: bottom;
+}
+/* line 34, ../../app/stylesheets/basics/_footer.sass */
+#footer .counter {
+  float: left;
+  margin-right: 10px;
+  margin-top: 0px;
+}
+/* line 39, ../../app/stylesheets/basics/_footer.sass */
+#footer .counter td {
+  padding: 2px 2px;
+  color: gray;
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  line-height: 18px;
+  height: 18px;
+}
+/* line 46, ../../app/stylesheets/basics/_footer.sass */
+#footer .counter span {
+  font-size: 13px;
+  border: 1px solid #cccccc;
+  border-left: 0px;
+  padding: 1px 4px;
+  margin-left: 5px;
+  background: url("/images/bubble-left.png") no-repeat -5px center;
 }
 
 /* line 2, ../../app/stylesheets/partials/nodes/_headlines.sass */

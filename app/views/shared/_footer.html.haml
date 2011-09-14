@@ -1,14 +1,20 @@
 .social
+  %table.counter
+    %tr
+      %td=image_tag('/images/mini_marker.png')
+      %td{:style => "background: url('/images/bubble.png') no-repeat left center;background-position: 0px 0px"} &nbsp;
+      %td{:style => "padding-right: 5px;background: url('/images/bubble.png') no-repeat 100% 0px"}=Poi.where('status < 8').count
   =link_to "Tweet", "http://twitter.com/share", :class => "twitter-share-button", :style => 'display:none'  
-  %g:plusone{:size => "medium"}
   %iframe{:src => "http://www.facebook.com/plugins/like.php?app_id=231074856943658&amp;href=#{u "request.url"}&amp;send=false&amp;layout=button_count&amp;width=130&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;height=20", :scrolling => "no", :frameborder => "0", :style =>"border:none; overflow:hidden; width:130px; height:20px;", :allowTransparency => "true"}
 
 .supporter
-  Basiert auf der
+  Basiert auf
   = link_to "OpenStreetMap", 'http://openstreetmap.org'
   |
   Hauptförderer
   = image_tag('immoscout.jpg', :width => 43, :height => 20, :alt => 'Immobilienscout24', :title => 'Immobilienscout24')
+  |
+  =link_to "Förderer werden", "http://blog.wheelmap.org/foerdern"
   |
   Ein Projekt der
   = link_to 'http://sozialhelden.de', :id => 'sozialhelden', :title => 'sozial is\' muss!' do
