@@ -580,7 +580,7 @@ $(function () {
   });
 
   $(window).resize(function () {
-    var width = $(window).width() - 800;
+    var width = $(window).width() - 620;
     if (width > 100) {
       $('#search').css('width', width + 'px');
     }
