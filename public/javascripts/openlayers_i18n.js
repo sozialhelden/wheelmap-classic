@@ -80,6 +80,15 @@ OpenLayers.Lang.jp = {
   'more_information': '詳細 ...',
   'wheelchair_help': '車椅子で行けますか？ (ヘルプ)'
 };
+OpenLayers.Lang.ko = { 
+  'wheelchair_label_yes': 'wheelchair accessible',
+  'wheelchair_label_limited': 'partly wheelchair accessible',
+  'wheelchair_label_no': 'not wheelchair accessible',
+  'wheelchair_label_unknown': 'unknown status',
+  'wheelchair_update_button': 'Update',
+  'more_information': 'more ...',
+  'wheelchair_help': 'Wheelchair accessible? (Help)'
+};
 OpenLayers.Lang.tlh = { 
   'wheelchair_label_yes': 'naw\'laH rutlhquS',
   'wheelchair_label_limited': 'loQ naw\'laH rutlhquS',
