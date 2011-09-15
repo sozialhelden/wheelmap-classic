@@ -1,6 +1,20 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   
+  # Renders OpenGraph Meta tags for the given option to help facebook parse the website.
+  def render_og_metadata(options = {})
+    html = ''
+    options.reverse_merge({
+      :site_name => 'wheelmap.org'
+    }).reject{|key,value|
+      value.blank?
+    }.each{|key, value|
+      html << tag(:meta, :property => "og:#{key}", :content => value) + "\n"
+    }
+    html << tag(:meta, :property => "fb:app_id", :content => '289221174426029')
+    html.html_safe
+  end
+  
   def category_for_node(type)
     Amenities.each do |category, groups|
       groups.each do |group|
