@@ -1603,6 +1603,11 @@ tspan {
   border-top: 0;
 }
 
+/* line 46, ../../app/stylesheets/partials/map/_search.sass */
+#search {
+  width: 52%;
+}
+
 /* line 1, ../../app/stylesheets/partials/nodes/_flash.sass */
 .flash {
   margin-bottom: 20px;
