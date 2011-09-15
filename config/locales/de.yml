@@ -1,6 +1,5 @@
 --- 
 de: 
-  how?: Wie?
   activerecord: 
     errors: 
       full_messages: 
@@ -314,10 +313,10 @@ de:
       home: Start
       how_to_add_a_place: "Wie trage ich Orte ein?"
       imprint: Impressum
-      press: Presse
       logged_in_as: "Eingeloggt als:"
       login: Login
       logout: Logout
+      press: Presse
       suggestions: Anregungen
       tolk: Übersetzung
       what_is_barrier_free: "Was bedeutet „rollstuhlgerecht“?"
@@ -340,7 +339,7 @@ de:
     index: 
       filter: 
         category: "Kategorie wählen"
-        wheelchair: "Rollstuhlgerecht?"
+        wheelchair: Rollstuhlgerecht?
       ie: 
         action: 
           ignore: Ignorieren
@@ -351,6 +350,7 @@ de:
       link: 
         node: 
           create: "Neuen Ort anlegen"
+  how?: Wie?
   layouts: 
     application: 
       banner: 
@@ -453,7 +453,7 @@ de:
       accommodation: Unterkunft
       education: Bildung
       food: "Essen & Trinken"
-      government: "Behörden"
+      government: "Behörden & Botschaften"
       leisure: Freizeit
       misc: Sonstiges
       money_post: "Bank & Post"
@@ -638,18 +638,17 @@ de:
     ? "yes"
     : Ja
   wheelmap: 
+    footer: 
+      a_project_of: "Ein Projekt der"
+      based_on: "Basiert auf"
+      become_a_supporter: "Förderer werden"
+      main_supporter: Hauptförderer
     itunes: 
       alt: "AppStore Logo"
       title: "Jetzt iPhone App herunterladen!"
     logo: 
       alt: "Wheelmap Logo - Rollstuhlgerechte Orte finden"
       title: "Wheelmap - Rollstuhlgerechte Orte finden"
-    footer:
-      based_on: Basiert auf
-      main_supporter: Hauptförderer
-      become_a_supporter: Förderer werden
-      a_project_of: Ein Projekt der
-    
     what_is: 
       fully_accessible: "<em>Ja:</em> Eingang stufenlos, alle Räume stufenlos, Rollstuhl-WC vorhanden."
       limited_accessible: "<em>Teilweise:</em> Eingang max 1 Stufe (7cm hoch), die wichtigsten Räume stufenlos, WC egal."

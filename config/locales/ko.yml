@@ -232,7 +232,7 @@ ko:
           email: 이메일
           password: 비밀번호
           password_confirmation: "비밀번호 재입력"
-          wants_newsletter: "네, wheelmap의 최신 정보를 보내주세요. (월 1회 정도)"
+          wants_newsletter: "wheelmap에 관한 최신 정보를 이메일로 전해 받겠습니다. (월 1회 가량 발송됩니다.)"
         submit: 회원가입
       headline: 회원가입
     unlocks: 
@@ -334,10 +334,10 @@ ko:
       home: 시작
       how_to_add_a_place: "새로운 장소를 어떻게 추가하나요?"
       imprint: 신용
-      press: 프레스
       logged_in_as: "다음 계정으로 로그인 :"
       login: 로그인
       logout: 로그아웃
+      press: 프레스
       suggestions: 제안
       tolk: 번역
       what_is_barrier_free: "\"휠체어 접근가능\"은 무슨 뜻인가요?"
@@ -476,8 +476,8 @@ ko:
       government: 정부기관
       leisure: 레저
       misc: 기타시설
-      money_post: "은행 겸 우체국"
-      public_transfer: 대중교통
+      money_post: "은행 또는 우체국"
+      public_transfer: 교통시설
       shopping: 쇼핑
       sport: 스포츠
       tourism: 관광
@@ -486,9 +486,9 @@ ko:
       accommodation: 
         beach_resort: 비치호텔
         bed_and_breakfast: 숙박시설(B&B)
-        camp_site: "캠프 야영지"
+        camp_site: 캠핑장
         caravan_site: "캠핑카 야영지"
-        chalet: 오두막
+        chalet: 별장
         guest_house: 게스트하우스
         hostel: 유스호스텔
         hotel: 호텔
@@ -563,7 +563,7 @@ ko:
         beverages: 음료가게
         bicycle: 자전거가게
         books: 서점
-        butcher: 식육점
+        butcher: 정육점
         clothes: 옷가게
         computer: 컴퓨터상점
         convenience: 편의시설
