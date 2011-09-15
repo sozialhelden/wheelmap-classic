@@ -252,8 +252,8 @@ a:visited:hover {
 }
 /* line 9, ../../app/stylesheets/basics/_header.sass */
 #header .links {
-  float: right;
-  margin-bottom: 9px;
+  position: absolute;
+  right: 10px;
   height: 20px;
 }
 /* line 13, ../../app/stylesheets/basics/_header.sass */
@@ -300,17 +300,19 @@ a:visited:hover {
 }
 /* line 43, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar {
+  position: relative;
+  top: 28px;
   height: 33px;
   clear: right;
 }
-/* line 47, ../../app/stylesheets/basics/_header.sass */
+/* line 49, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar label {
   color: #89b152;
   float: left;
   padding: 3px 6px 3px 20px;
   width: auto;
 }
-/* line 52, ../../app/stylesheets/basics/_header.sass */
+/* line 54, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar input {
   border-right: 0;
   color: #89b152;
@@ -335,15 +337,15 @@ a:visited:hover {
   -khtml-border-bottom-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-/* line 61, ../../app/stylesheets/basics/_header.sass */
+/* line 63, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar input:focus {
   background: #f5f8f0;
 }
-/* line 63, ../../app/stylesheets/basics/_header.sass */
+/* line 65, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar input.ac_loading {
   background: #f5f8f0 url("/images/spinner-small.gif") no-repeat right center;
 }
-/* line 66, ../../app/stylesheets/basics/_header.sass */
+/* line 68, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar button {
   float: left;
   background-color: #a1c175;
@@ -404,13 +406,13 @@ a:visited:hover {
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#618234', startColorstr='#96bf5e', gradientType='0');
   border-color: #89b152 #617e39 #465b29;
 }
-/* line 73, ../../app/stylesheets/basics/_header.sass */
+/* line 75, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar .or {
   color: #c26a0f;
   float: left;
   padding: 5px 10px;
 }
-/* line 77, ../../app/stylesheets/basics/_header.sass */
+/* line 79, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar .add-place {
   float: left;
   background-color: #f19d46;
@@ -457,16 +459,16 @@ a:visited:hover {
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#af5d08', startColorstr='#f59129', gradientType='0');
   border-color: #ed8417 #ab5d0d #7b4309;
 }
-/* line 83, ../../app/stylesheets/basics/_header.sass */
+/* line 85, ../../app/stylesheets/basics/_header.sass */
 #header #searchbar .or-add-place {
   float: left;
 }
 
-/* line 86, ../../app/stylesheets/basics/_header.sass */
+/* line 88, ../../app/stylesheets/basics/_header.sass */
 .ac_results {
   z-index: 9000;
 }
-/* line 88, ../../app/stylesheets/basics/_header.sass */
+/* line 90, ../../app/stylesheets/basics/_header.sass */
 .ac_results ul {
   background: white;
   border: 1px solid #cccccc;
@@ -483,7 +485,7 @@ a:visited:hover {
   box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
   cursor: pointer;
 }
-/* line 98, ../../app/stylesheets/basics/_header.sass */
+/* line 100, ../../app/stylesheets/basics/_header.sass */
 .ac_results ul li.ac_over {
   background-color: rgba(204, 204, 204, 0.9);
 }
@@ -805,28 +807,33 @@ body, html {
 }
 /* line 20, ../../app/stylesheets/basics/_footer.sass */
 #footer .social {
-  width: 350px;
-  float: left;
+  position: absolute;
+  text-align: left;
+  left: 10px;
   margin: 10px;
+  z-index: 10;
 }
-/* line 25, ../../app/stylesheets/basics/_footer.sass */
+/* line 27, ../../app/stylesheets/basics/_footer.sass */
 #footer .supporter {
-  float: right;
-  margin: 5px;
-  margin-right: 10px;
+  position: absolute;
+  text-align: right;
+  right: 10px;
+  padding: 5px;
   height: 24px;
+  z-index: 20;
+  background: white;
 }
-/* line 31, ../../app/stylesheets/basics/_footer.sass */
+/* line 36, ../../app/stylesheets/basics/_footer.sass */
 #footer img {
   vertical-align: bottom;
 }
-/* line 34, ../../app/stylesheets/basics/_footer.sass */
+/* line 39, ../../app/stylesheets/basics/_footer.sass */
 #footer .counter {
   float: left;
   margin-right: 10px;
   margin-top: 0px;
 }
-/* line 39, ../../app/stylesheets/basics/_footer.sass */
+/* line 44, ../../app/stylesheets/basics/_footer.sass */
 #footer .counter td {
   padding: 2px 2px;
   color: gray;
@@ -834,7 +841,7 @@ body, html {
   line-height: 18px;
   height: 18px;
 }
-/* line 46, ../../app/stylesheets/basics/_footer.sass */
+/* line 51, ../../app/stylesheets/basics/_footer.sass */
 #footer .counter span {
   font-size: 13px;
   border: 1px solid #cccccc;
