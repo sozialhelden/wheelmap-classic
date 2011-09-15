@@ -371,6 +371,7 @@ ko:
       link: 
         node: 
           create: "새로운 장소 등록"
+  how?: 어떻게?
   layouts: 
     application: 
       banner: 
@@ -568,6 +569,7 @@ ko:
         computer: 컴퓨터상점
         convenience: 편의시설
         department_store: 백화점
+        doityourself: "스스로 할 수 있음"
         dry_cleaning: 세탁소
         electronics: 전자제품
         florist: 꽃집
@@ -657,6 +659,11 @@ ko:
     ? "yes"
     : "휠체어가 완벽하게 접근 가능함"
   wheelmap: 
+    footer: 
+      a_project_of: 프로젝트
+      based_on: "위치정보지원 :"
+      become_a_supporter: "후원자가 되어주세요"
+      main_supporter: 후원
     itunes: 
       alt: "AppStore 로고"
       title: "지금 아이폰 어플리케이션을 다운로드 받으세요!"

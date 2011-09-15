@@ -345,7 +345,7 @@ da:
     searchbar: 
       add_place: "Tilføj endnu et sted"
       find: Find
-      placeholder: "Fx Sunset Boulevard L.A. eller Brandenburg Gate Berlin"
+      placeholder: "Fx Sunset Boulevard L.A. eller Brandenburger Tor Berlin"
       title_add_place: "Tilføj et nyt sted på denne position nu!"
     tagline: "Wheelmap logo"
     title: "Wheelmap - find kørestolstilgængelige steder"
@@ -359,8 +359,8 @@ da:
   home: 
     index: 
       filter: 
-        category: "Kategori:"
-        wheelchair: "Kørestolstilgængeligt? (hvad betyder dette?)"
+        category: "Vælg kategori"
+        wheelchair: Kørestolstilgængeligt?
       ie: 
         action: 
           ignore: Ignorer
@@ -371,6 +371,7 @@ da:
       link: 
         node: 
           create: "Tilføj nyt sted"
+  how?: Hvordan?
   layouts: 
     application: 
       banner: 
@@ -658,6 +659,11 @@ da:
     ? "yes"
     : "Fuldt kørestoltilgængeligt"
   wheelmap: 
+    footer: 
+      a_project_of: "Et projekt fra"
+      based_on: "Baseret på"
+      become_a_supporter: "Bliv en støtter"
+      main_supporter: Hovedstøtter
     itunes: 
       alt: "AppStore logo"
       title: "Download iPhone App!"
@@ -665,7 +671,7 @@ da:
       alt: "Wheelmap logo - find kørestolstilgængelige steder"
       title: "Wheelmap - find kørestolstilgængelige steder"
     what_is: 
-      fully_accessible: "Indgangstrin er ikke højere end 7 cm, alle lokaler er tilgængelige for kørestolsbrugere (uden undtagelse), handicaptoilet forefindes tillige"
-      limited_accessible: "Indgangstrin er ikke højere end 7 cm, de vigtigste lokaler er tilgængelige for kørestolsbrugere"
-      not_accessible: "Indgangstrin er højere end 7 cm eller der er trappetrin til indgang, eller mest de vigtigste lokaler er ikke tilgængelige for kørestolsbrugere"
-      unknown_accessible: "Status for kørestolstilgængelighed er ukendt"
+      fully_accessible: "<em>Ja:</em> Ingen trapper ved indgang, alle rum ingen trapper, handicaptoilet\n"
+      limited_accessible: "<em>Begrænset:</em> Indgang har et trin (max. højde 7cm), de fleste rum har ingen trin, ingen handicaptoilet"
+      not_accessible: "<em>Nej:</em> Indgangen har flere trin, de forskellige rum er ikke tilgængelige"
+      unknown_accessible: "<em>Ukendt:</em> Hjælp med at få stedet markeret!"
