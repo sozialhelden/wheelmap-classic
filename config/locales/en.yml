@@ -75,6 +75,11 @@ en:
           password: Password
           remember_me: Stay logged in
   wheelmap: 
+    footer:
+      based_on: Based on
+      main_supporter: Main supporter
+      become_a_supporter: Become a supporter
+      a_project_of: A project of
     logo: 
       title: Wheelmap - find wheelchair accessible places
       alt: Wheelmap Logo - find wheelchair accessible places
