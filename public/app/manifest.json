@@ -2,7 +2,7 @@
   "name": "__MSG_appName__",
   "description": "__MSG_appDesc__",
   "default_locale": "de",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "app": {
     "urls": [
       "http://wheelmap.org/"
