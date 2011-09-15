@@ -325,14 +325,14 @@ fr:
       home: Accueuil
       how_to_add_a_place: "Comment peut-on ajouter des lieux?"
       imprint: "Mentions légales"
-      press: Presse
       logged_in_as: "Connecté sous le nom de"
       login: Connecter
       logout: Déconnecter
+      press: Presse
       suggestions: Suggestions
       tolk: Traductions
       what_is_barrier_free: "Qu' est-ce que \"accès pour fauteuil roulant\" veut dire?"
-      what_is_wheelmap: "À propos de nous"
+      what_is_wheelmap: "Qu' est-ce que c'est 'wheelmap'?"
     searchbar: 
       add_place: "Ajouter encore un lieu"
       find: trouver
