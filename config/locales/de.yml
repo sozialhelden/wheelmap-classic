@@ -644,6 +644,12 @@ de:
     logo: 
       alt: "Wheelmap Logo - Rollstuhlgerechte Orte finden"
       title: "Wheelmap - Rollstuhlgerechte Orte finden"
+    footer:
+      based_on: Basiert auf
+      main_supporter: Hauptförderer
+      become_a_supporter: Förderer werden
+      a_project_of: Ein Projekt der
+    
     what_is: 
       fully_accessible: "<em>Ja:</em> Eingang stufenlos, alle Räume stufenlos, Rollstuhl-WC vorhanden."
       limited_accessible: "<em>Teilweise:</em> Eingang max 1 Stufe (7cm hoch), die wichtigsten Räume stufenlos, WC egal."
