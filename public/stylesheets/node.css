@@ -792,6 +792,7 @@ body, html {
   color: #ca1e2e;
   line-height: 15px;
   font-size: 12px;
+  z-index: 4000;
   font-family: georgia;
 }
 /* line 12, ../../app/stylesheets/basics/_footer.sass */
