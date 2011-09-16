@@ -38,7 +38,10 @@
     height: 84px
     width: 300px
     margin: 0px
-    margin-right: 60px
+    
+  #search
+    width: 52%
+  
 
   #searchbar
     position: relative
@@ -46,6 +49,8 @@
     $height: 33px
     height: $height
     clear: right
+    margin-left: 360px
+    
     label
       color: darken($green, 10%)
       float: left
@@ -62,8 +67,6 @@
       +border-right-radius(0)
       &:focus
         background: lighten($green, 35%)
-      &.ac_loading
-        background: lighten($green, 35%) url('/images/spinner-small.gif') no-repeat right center
 
     button
       float: left
