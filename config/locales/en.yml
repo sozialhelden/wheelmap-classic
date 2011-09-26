@@ -139,12 +139,13 @@ en:
       what_is_barrier_free: What does "wheelchair accessible" mean?
       logged_in_as: "Logged in as:"
       feedback: Feedback
+      newsletter: Newsletter
       login: Log in
       what_is_wheelmap: What is wheelmap?
       home: Start
       tolk: Translations
-  errors: 
-    messages: 
+  errors:
+    messages:
       greater_than_or_equal_to: must be greater or equal than %{count}
       confirmation: doesn't match confirmation
       less_than_or_equal_to: must be lower or equal than %{count}
