@@ -310,6 +310,7 @@ se:
       password_confirmation: "Upprepa lösenord"
       phone: "Telefon:"
       postcode: "Postnummer:"
+      reset: Återställ
       save: Spara
       street: "Gata:"
       type: "Typ:"
@@ -359,11 +360,19 @@ se:
   home: 
     index: 
       filter: 
-        category: "Kategori:"
-        wheelchair: "Rullstolsanpassad? (Vad betyder det)"
+        category: "Välj kategori:"
+        wheelchair: Rullstolsanpassad?
+      ie: 
+        action: 
+          ignore: Ignorera
+          upgrade: "Uppdatera webbläsaren"
+        warning: 
+          headline: Tyvärr!
+          message: "Du verkar använda Internet Explorer. Wheelmap behöver en webbläsare som följer standarderna för att fungera rätt. Vänligen använd Firefox, Chrome, Safari eller Opera"
       link: 
         node: 
           create: "Lägg till ny plats"
+  how?: Hur?
   layouts: 
     application: 
       banner: 
@@ -659,6 +668,11 @@ se:
     ? "yes"
     : "Helt rullstolsanpassat"
   wheelmap: 
+    footer: 
+      a_project_of: "Ett projekt från"
+      based_on: "Baserad på"
+      become_a_supporter: "Bli en sponsor"
+      main_supporter: Huvudsponsor
     itunes: 
       alt: "AppStore Logo"
       title: "Hämta för iPhone!"
@@ -666,7 +680,7 @@ se:
       alt: "Wheelmap Logo - Hitta rullstolsanpassade platser"
       title: "Wheelmap - Hitta rullstolsanpassade platser"
     what_is: 
-      fully_accessible: "Ingångens kant är inte högre än 7 cm, alla utrymmen är tillgängliga för rullstolsanvändare (utan undantag). Rullstolsanpassade toaletter finns"
-      limited_accessible: "Ingångens kant är inte högre än 7 cm, de viktigaste utrymmena är tillgängliga för rullstolsanvändare"
-      not_accessible: "Ingångens kant är högre än 7 cm, eller det är en trapp till ingången, eller de viktigaste utrymmena är inte tillgängliga för rullstolsanvändare"
-      unknown_accessible: "Rullstolsanpassningen är okänd"
+      fully_accessible: "<em>Ja:</em> Ingången har ingen kant, alla rum saknar kanter, anpassad toalett finns"
+      limited_accessible: "<em>Begränsad:</em> Ingångens kant är inte högre än 7 cm, de flesta rummen är tillgängliga, ingen tillgänglig toalett"
+      not_accessible: "<em>Nej:</em> Ingångens kant är högre än 7 cm eller det är en trapp, rummen är inte tillgängliga"
+      unknown_accessible: "<em>Okänd:</em> Hjälp till att uppdatera!"

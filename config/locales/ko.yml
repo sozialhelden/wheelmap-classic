@@ -181,7 +181,7 @@ ko:
       form: 
         labels: 
           email: 이메일
-        submit: "비밀번호 재설정"
+        submit: "비밀번호 변경"
       headline: "비밀번호를 잊으셨나요?"
     password_reset: 
       email: 
@@ -221,7 +221,7 @@ ko:
         labels: 
           email: 이메일
           password: 비밀번호
-          remember_me: "로그인 상태를 유지하시겠습니까?"
+          remember_me: "로그인 상태유지"
         submit: 로그인
       headline: 로그인
     sign_out: 
@@ -333,7 +333,7 @@ ko:
       feedback: 피드백
       home: 시작
       how_to_add_a_place: "새로운 장소를 어떻게 추가하나요?"
-      imprint: 신용
+      imprint: 문의사항
       logged_in_as: "다음 계정으로 로그인 :"
       login: 로그인
       logout: 로그아웃
@@ -371,7 +371,7 @@ ko:
       link: 
         node: 
           create: "새로운 장소 등록"
-  how?: 어떻게?
+  how?: "접근정보 등록은 어떻게?"
   layouts: 
     application: 
       banner: 

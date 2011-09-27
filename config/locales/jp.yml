@@ -310,6 +310,7 @@ jp:
       password_confirmation: パスワード再入力
       phone: "電話:"
       postcode: "郵便番号:"
+      reset: リセット
       save: 保存
       street: 住所
       type: "タイプ:"
@@ -336,7 +337,7 @@ jp:
       logged_in_as: "次のアカウントでログイン:"
       login: ログイン
       logout: ログアウト
-      press: を押し
+      press: プレス
       suggestions: 提案
       tolk: 翻訳
       what_is_barrier_free: "\"車椅子で行ける(アクセシブル)\"とは？"
@@ -360,9 +361,17 @@ jp:
       filter: 
         category: "カテゴリ:"
         wheelchair: 車椅子で行けますか？
+      ie: 
+        action: 
+          ignore: 無視
+          upgrade: ブラウザを更新
+        warning: 
+          headline: ごめんなさい！
+          message: "Internet Explorerをお使いのようですね。Wheelmapを正しく使うには標準的な動作をするブラウザが必要です。Firefox, Chrome, Safari または Opera をお使いください。"
       link: 
         node: 
           create: 新しい場所を追加
+  how?: やり方は？
   layouts: 
     application: 
       banner: 
@@ -650,6 +659,11 @@ jp:
     ? "yes"
     : 完全に車椅子利用可
   wheelmap: 
+    footer: 
+      a_project_of: プロジェクト推進：
+      based_on: ベース地図：
+      become_a_supporter: サポーターになる
+      main_supporter: 主なサポーター
     itunes: 
       alt: AppStoreロゴ
       title: "今すぐiPhone Appをダウンロード！"
@@ -657,7 +671,7 @@ jp:
       alt: "Wheelmap ロゴ - 車椅子で行ける場所を見つけよう"
       title: "Wheelmap - 車椅子で行ける場所を見つけよう"
     what_is: 
-      fully_accessible: "入口の段差は7cm以下; 全ての場所は車椅子利用者が通れる(例外無しに); 障害者向けトイレが利用可能"
-      limited_accessible: "入口の段差は7cm以下; 最も重要な場所は車椅子利用者が通れる"
-      not_accessible: "入口の段差は7cmより高い; または入口に階段がある; または最も重要な場所は車椅子利用者が通れない"
-      unknown_accessible: 車椅子の利用可能状態は不明
+      fully_accessible: "<em>はい:</em>入口には段差が無い、全ての部屋に段差が無い、車椅子でトイレに行ける"
+      limited_accessible: "<em>一部:</em>入口に段差がある(最大でも高さ7cmまで)、たいていの部屋には段差が無い、車椅子でトイレに行けない"
+      not_accessible: "<em>いいえ:</em>入口の段差が高いか複数あり、部屋に入れません"
+      unknown_accessible: "<em>不明:</em>この場所の印付けを手伝ってください！"
