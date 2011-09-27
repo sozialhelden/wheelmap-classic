@@ -6,33 +6,35 @@
     / HOPTOAD START
     = hoptoad_javascript_notifier
     / HOPTOAD END
-    
+
     - if content_for?(:head)
       = content_for(:head)
     - else
       %meta{:name => 'description', :content => t('header.meta.description')}
       %title=t('header.title')
-    
+
     = render :partial => 'shared/html5_elements'
-    
+
     = content_for :javascript_constants
 
     = include_stylesheets :screen, :media => 'screen, projection'
 
   %body{:class => browser_class, :style => 'overflow:hidden'}
-    = render :partial => '/shared/header'
+    = render :partial => 'shared/header'
+    = render :partial => 'shared/splash'
+
     #map
       = yield
-      
+
     = show_flash
 
     #footer.fixed
       = render :partial => 'shared/footer'
-        
+
     = render :partial => 'shared/google_tracking'
-    
+
     = include_javascripts :default
-      
+
     = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
 
     = content_for :javascript

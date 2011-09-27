@@ -4,6 +4,7 @@ javascripts:
   default:
     - public/javascripts/jquery.js
     - public/javascripts/jquery.tools.js
+    - public/javascripts/jquery.blockUI.js
     - public/javascripts/openlayers211.js
     - public/javascripts/openlayers_i18n.js
     - public/javascripts/osm.js
@@ -11,11 +12,12 @@ javascripts:
     - public/javascripts/uservoice.js
     - public/javascripts/json2.js
     - public/javascripts/filter_settings.js
+    - public/javascripts/splash.js
     - public/javascripts/application.js
-    
+
 stylesheets:
   screen:
     - public/stylesheets/screen.css
-    
+
   node:
     - public/stylesheets/node.css
