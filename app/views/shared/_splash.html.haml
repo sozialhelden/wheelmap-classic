@@ -1,17 +1,17 @@
 #splash(style='display:none')
   .close-splash
     %a.unblock-splash(href='#')
-      %img(height='17' width='17' src="/images/close.gif?1316444271")
+      %img(height='17' width='17' src="/images/close.gif")
   %h1= t('splash.headline')
   %h2= t('splash.countline', :count => Poi.count)
   %hr
   %ol
     %li
-      %p= t('splash.step1')
+      %span= t('splash.step1')
     %li
-      %p= t('splash.step2')
+      %span= t('splash.step2')
     %li
-      %p= t('splash.step3')
+      %span= t('splash.step3')
 
   %p
     = link_to t('splash.start'), '#', :class => 'unblock-splash button splash-start'

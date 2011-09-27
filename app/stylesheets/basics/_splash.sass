@@ -1,5 +1,4 @@
 $headline-color: #7CA148
-$height: 80px
 
 #splash
   cursor: auto
@@ -39,27 +38,25 @@ $height: 80px
     font-size: 20px
     margin-top: 5px
     margin-bottom: 5px
+    margin-left: 25px
     text-align: left
     font-weight: bold
-    list-style-type: decimal
 
   li
     color: $headline-color
     display: list-item
-    list-style-type: decimal
-    list-style-position: inside
+    list-style: decimal
     margin-bottom: 10px
-
-    p
+    span
       font-size: 20px
       color: black
 
   .splash-start
     +green-button(40px)
     font-size: 24px
-    height: $height - 2 * (12px)
+    height: 80px - 2 * (12px)
     width: 300px
-    line-height: $height - 2 * (12px)
+    line-height: 80px - 2 * (12px)
     text-decoration: none
     padding-left: 50px
     padding-right: 50px

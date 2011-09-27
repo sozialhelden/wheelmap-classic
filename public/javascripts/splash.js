@@ -4,7 +4,7 @@ $(function() {
   if(true || !$.cookie(cookieName)) {
     $.blockUI({
       message: $("#splash"),
-      css: { top: '25%' }
+      css: { top: '25%', width: '600px' }
     })
 
     $("#splash .unblock-splash").click($.unblockUI)
