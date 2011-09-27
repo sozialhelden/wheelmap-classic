@@ -1238,12 +1238,12 @@ body, html {
   background: url("/images/bubble-left.png") no-repeat -5px center;
 }
 
-/* line 4, ../../app/stylesheets/basics/_splash.sass */
+/* line 3, ../../app/stylesheets/basics/_splash.sass */
 #splash {
   cursor: auto;
   padding: 0 15px 8px 15px;
 }
-/* line 8, ../../app/stylesheets/basics/_splash.sass */
+/* line 7, ../../app/stylesheets/basics/_splash.sass */
 #splash .close-splash {
   position: absolute;
   top: -3px;
@@ -1251,21 +1251,21 @@ body, html {
   color: red;
   font-size: 26px;
 }
-/* line 14, ../../app/stylesheets/basics/_splash.sass */
+/* line 13, ../../app/stylesheets/basics/_splash.sass */
 #splash .close-splash a {
   color: #cc0000;
 }
-/* line 16, ../../app/stylesheets/basics/_splash.sass */
+/* line 15, ../../app/stylesheets/basics/_splash.sass */
 #splash .close-splash a:hover {
   text-decoration: none;
 }
-/* line 19, ../../app/stylesheets/basics/_splash.sass */
+/* line 18, ../../app/stylesheets/basics/_splash.sass */
 #splash hr {
   color: #7ca148;
   background-color: #7ca148;
   border: 1px solid #7ca148;
 }
-/* line 24, ../../app/stylesheets/basics/_splash.sass */
+/* line 23, ../../app/stylesheets/basics/_splash.sass */
 #splash h1 {
   margin-top: 20px;
   margin-bottom: 15px;
@@ -1274,34 +1274,33 @@ body, html {
   line-height: 30px;
   color: #7ca148;
 }
-/* line 34, ../../app/stylesheets/basics/_splash.sass */
+/* line 33, ../../app/stylesheets/basics/_splash.sass */
 #splash h2 {
   font-size: 18px;
   text-align: left;
 }
-/* line 38, ../../app/stylesheets/basics/_splash.sass */
+/* line 37, ../../app/stylesheets/basics/_splash.sass */
 #splash ol {
   font-size: 20px;
   margin-top: 5px;
   margin-bottom: 5px;
+  margin-left: 25px;
   text-align: left;
   font-weight: bold;
-  list-style-type: decimal;
 }
-/* line 46, ../../app/stylesheets/basics/_splash.sass */
+/* line 45, ../../app/stylesheets/basics/_splash.sass */
 #splash li {
   color: #7ca148;
   display: list-item;
-  list-style-type: decimal;
-  list-style-position: inside;
+  list-style: decimal;
   margin-bottom: 10px;
 }
-/* line 53, ../../app/stylesheets/basics/_splash.sass */
-#splash li p {
+/* line 50, ../../app/stylesheets/basics/_splash.sass */
+#splash li span {
   font-size: 20px;
   color: black;
 }
-/* line 57, ../../app/stylesheets/basics/_splash.sass */
+/* line 54, ../../app/stylesheets/basics/_splash.sass */
 #splash .splash-start {
   background-color: #a1c175;
   border: 1px solid #95b963;
@@ -1351,7 +1350,7 @@ body, html {
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#618234', startColorstr='#96bf5e', gradientType='0');
   border-color: #89b152 #617e39 #465b29;
 }
-/* line 67, ../../app/stylesheets/basics/_splash.sass */
+/* line 64, ../../app/stylesheets/basics/_splash.sass */
 #splash .whatis {
   font-size: 10px;
   font-weight: bold;
