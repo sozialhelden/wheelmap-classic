@@ -144,6 +144,14 @@ en:
       what_is_wheelmap: What is wheelmap?
       home: Start
       tolk: Translations
+  splash:
+    headline: Everyone can add wheelchair accessible places!
+    countline: %{count} places have already been marked.
+    step1: Click on a place you know.
+    step2: Mark it and click save.
+    step3: That's it! No registration necessary.
+    start: Start
+    what_is_wheelmap: What is wheelmap?
   errors:
     messages:
       greater_than_or_equal_to: must be greater or equal than %{count}
