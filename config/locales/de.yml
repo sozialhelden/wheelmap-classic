@@ -316,6 +316,7 @@ de:
       logged_in_as: "Eingeloggt als:"
       login: Login
       logout: Logout
+      newsletter: Newsletter
       press: Presse
       suggestions: Anregungen
       tolk: Übersetzung
@@ -598,6 +599,14 @@ de:
       search: 
         for: "Suche nach \"%{q}\""
         not_found: "Es wurden keine Orte gefunden!"
+  splash: 
+    countline: "%{count} wurden schon markiert. "
+    headline: "Jeder kann rollstuhlgerechte Orte eintragen!"
+    start: Start
+    step1: "Klicke auf einen Ort, den du kennst."
+    step2: "Markiere ihn und klicke auf \"speichern\"."
+    step3: "Fertig! Keine Registrierung nötig!"
+    what_is_wheelmap: "Was ist Wheelmap?"
   statistics: Statistik
   support: 
     array: 
