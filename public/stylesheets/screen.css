@@ -1352,7 +1352,7 @@ body, html {
 }
 /* line 64, ../../app/stylesheets/basics/_splash.sass */
 #splash .whatis {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: bold;
   text-decoration: underline;
 }
