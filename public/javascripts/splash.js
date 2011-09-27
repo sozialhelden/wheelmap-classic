@@ -1,7 +1,7 @@
 $(function() {
   var cookieName = '_wheelmap_splash_seen';
 
-  if(!$.cookie(cookieName)) {
+  if(true || !$.cookie(cookieName)) {
     $.blockUI({
       message: $("#splash"),
       css: { top: '25%' }
