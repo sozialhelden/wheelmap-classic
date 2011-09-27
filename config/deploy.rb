@@ -33,13 +33,13 @@ namespace :deploy do
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
-  
+
   task :create_shared_config do
     run "mkdir -p #{shared_path}/config/"
     run "mkdir -p #{shared_path}/tmp/var"
     run "mkdir -p #{shared_path}/tmp/osmosis-working-dir"
     run "mkdir -p #{shared_path}/tmp/cache"
-    
+
     run "touch #{shared_path}/config/database.yml"
   end
 
@@ -47,12 +47,12 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/tmp/osmosis-working-dir #{release_path}/tmp/osmosis-working-dir"
     run "ln -nfs #{shared_path}/tmp/var #{release_path}/tmp/var"
     run "ln -nfs #{shared_path}/tmp/cache #{release_path}/tmp/cache"
-    
+
     %w(database.yml open_street_map.yml).each do |file|
       run "ln -nfs #{shared_path}/config/#{file} #{release_path}/config/#{file}"
     end
   end
-  
+
   task :remove_all_unfinished_locales do
     if rails_env == :production
       %w(de-CH pt-PT ru zh pt).each do |locale|
@@ -60,12 +60,28 @@ namespace :deploy do
       end
     end
   end
-  
+
   namespace :cache do
     task :clear do
       run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake cache:clear"
     end
   end
+
+end
+
+namespace :i18n do
+  desc <<-EOD
+    Downloads all translation files (except the English one) from the server
+    and stores them into the local config/locales folder.
+  EOD
+  task :download_translations do
+    require 'config/environment'
+    I18n.available_locales.each do |locale|
+      next if locale == :en
+      get "#{current_path}/config/locales/#{locale}.yml", "config/locales/#{locale}.yml"
+    end
+  end
+
 end
 
 set :stages,        %w(staging production)
