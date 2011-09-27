@@ -91,6 +91,10 @@ class Poi < ActiveRecord::Base
     self.with_status(WHEELCHAIR_STATUS_VALUES[stat.to_sym])
   end
 
+  def self.marked_count
+    where('status < 8').count
+  end
+
   def lat
     self.geom.lat if self.geom
   end

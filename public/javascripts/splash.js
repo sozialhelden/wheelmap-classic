@@ -1,11 +1,18 @@
 $(function() {
   var cookieName = '_wheelmap_splash_seen';
 
-  if(true || !$.cookie(cookieName)) {
+  if(!$.cookie(cookieName)) {
+    wwidth = $(window).width();
+    left = (0.5 - 300/wwidth) * 100 + '%';
+
     $.blockUI({
       message: $("#splash"),
-      css: { top: '25%', width: '600px' }
-    })
+      css: {
+              top: '25%',
+              left: left,
+              width: '600px'
+           }
+    });
 
     $("#splash .unblock-splash").click($.unblockUI)
 
