@@ -1,11 +1,15 @@
 $(function() {
   var cookieName = '_wheelmap_splash_seen';
+  var setCookie = function() {
+    x = $.cookie(cookieName, true, { expires: 1000 });
+    console.log("cookie set: " + x)
+  };
 
   if(!$.cookie(cookieName)) {
-    width = 600; // splash width
+    var width = 600; // splash width
 
     // calculate left edge so it is centered
-    left = (0.5 - (width / 2)/($(window).width())) * 100 + '%';
+    var left = (0.5 - (width / 2)/($(window).width())) * 100 + '%';
 
     $.blockUI({
       message: $("#splash"),
@@ -18,7 +22,7 @@ $(function() {
 
     var clickHandler = function() {
       $.unblockUI();
-      $.cookie(cookieName, true);
+      setCookie();
       return false;
     };
 
@@ -26,10 +30,10 @@ $(function() {
     $('.blockOverlay').css('cursor', 'auto').click(clickHandler);
 
     $('a.whatis').click(function() {
-      $.cookie(cookieName, true);
+      setCookie();
       return true;
     });
 
   }
 
-})
+});

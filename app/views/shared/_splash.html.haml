@@ -3,7 +3,7 @@
     %a.unblock-splash(href='#')
       %img(height='17' width='17' src="/images/close.gif")
   %h1= t('splash.headline')
-  %h2= t('splash.countline', :count => Poi.count)
+  %h2= t('splash.countline', :count => Poi.marked_count)
   %hr
   %ol
     %li
