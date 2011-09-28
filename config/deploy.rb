@@ -84,6 +84,26 @@ namespace :i18n do
 
 end
 
+task :log do
+  run "tail -f #{deploy_to}/current/log/#{stage}.log"
+end
+
+task :sh do
+  cmd = "ssh -l #{user} -t #{roles[:app].servers.first} 'cd #{deploy_to}/current; bash -l'"
+  puts cmd
+  system(cmd)
+end
+
+task :console do
+  cmd = "ssh -l #{user} -t #{roles[:app].servers.first} 'cd #{deploy_to}/current; bash -l -c \"bundle exec rails c #{stage}\"'"
+  puts cmd
+  system(cmd)
+end
+
+task :c do
+  console
+end
+
 set :stages,        %w(staging production)
 set :default_stage, "staging"
 require 'capistrano/ext/multistage'
