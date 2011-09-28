@@ -1,8 +1,7 @@
 $(function() {
   var cookieName = '_wheelmap_splash_seen';
   var setCookie = function() {
-    x = $.cookie(cookieName, true, { expires: 1000 });
-    console.log("cookie set: " + x)
+    $.cookie(cookieName, true, { expires: 1000 });
   };
 
   if(!$.cookie(cookieName)) {
