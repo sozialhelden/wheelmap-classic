@@ -53,6 +53,16 @@ CREATE TABLE `delayed_jobs` (
   KEY `delayed_jobs_priority` (`priority`,`run_at`)
 ) ENGINE=InnoDB AUTO_INCREMENT=175 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE `geometry_columns` (
+  `F_TABLE_CATALOG` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `F_TABLE_SCHEMA` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `F_TABLE_NAME` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `F_GEOMETRY_COLUMN` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `COORD_DIMENSION` int(11) DEFAULT NULL,
+  `SRID` int(11) DEFAULT NULL,
+  `TYPE` varchar(256) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 CREATE TABLE `node_types` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(11) DEFAULT NULL,
@@ -76,6 +86,7 @@ CREATE TABLE `pois` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `node_type_id` int(11) DEFAULT NULL,
+  `geojson` text,
   UNIQUE KEY `index_pois_on_osm_id` (`osm_id`),
   SPATIAL KEY `index_pois_on_geom` (`geom`),
   KEY `index_pois_on_status` (`status`),
@@ -83,6 +94,15 @@ CREATE TABLE `pois` (
   KEY `index_pois_on_node_type_id_and_osm_id` (`node_type_id`,`osm_id`),
   FULLTEXT KEY `fulltext_index_pois_on_tags` (`tags`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+CREATE TABLE `queued_nodes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `node_attributes` text COLLATE utf8_unicode_ci,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `schema_migrations` (
   `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -98,7 +118,7 @@ CREATE TABLE `sessions` (
   PRIMARY KEY (`id`),
   KEY `index_sessions_on_session_id` (`session_id`),
   KEY `index_sessions_on_updated_at` (`updated_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=1415 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1541 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `spatial_ref_sys` (
   `SRID` int(11) NOT NULL,
@@ -114,7 +134,7 @@ CREATE TABLE `tolk_locales` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_tolk_locales_on_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `tolk_phrases` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -122,7 +142,7 @@ CREATE TABLE `tolk_phrases` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=516 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=515 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `tolk_translations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -135,7 +155,7 @@ CREATE TABLE `tolk_translations` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_tolk_translations_on_phrase_id_and_locale_id` (`phrase_id`,`locale_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6581 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7085 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -220,3 +240,11 @@ INSERT INTO schema_migrations (version) VALUES ('20110716140738');
 INSERT INTO schema_migrations (version) VALUES ('20110717073922');
 
 INSERT INTO schema_migrations (version) VALUES ('20110801135556');
+
+INSERT INTO schema_migrations (version) VALUES ('20110913165413');
+
+INSERT INTO schema_migrations (version) VALUES ('20110929130332');
+
+INSERT INTO schema_migrations (version) VALUES ('20110929130527');
+
+INSERT INTO schema_migrations (version) VALUES ('20111001183641');

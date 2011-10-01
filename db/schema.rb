@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110717073922) do
+ActiveRecord::Schema.define(:version => 20111001183641) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -45,24 +45,6 @@ ActiveRecord::Schema.define(:version => 20110717073922) do
     t.datetime "updated_at"
   end
 
-  create_table "countries", :primary_key => "OGR_FID", :options=>'ENGINE=MyISAM', :force => true do |t|
-    t.geometry "geom",      :limit => nil,                                :null => false
-    t.string   "fips",      :limit => 2
-    t.string   "iso2",      :limit => 2
-    t.string   "iso3",      :limit => 3
-    t.decimal  "un",                       :precision => 3,  :scale => 0
-    t.string   "name",      :limit => 50
-    t.decimal  "area",                     :precision => 7,  :scale => 0
-    t.decimal  "pop2005",                  :precision => 10, :scale => 0
-    t.decimal  "region",                   :precision => 3,  :scale => 0
-    t.decimal  "subregion",                :precision => 3,  :scale => 0
-    t.float    "lon",       :limit => 8
-    t.float    "lat",       :limit => 7
-  end
-
-  add_index "countries", ["OGR_FID"], :name => "OGR_FID"
-  add_index "countries", ["geom"], :name => "geom", :spatial => true
-
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",         :default => 0
     t.integer  "attempts",         :default => 0
@@ -80,24 +62,6 @@ ActiveRecord::Schema.define(:version => 20110717073922) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
-
-  create_table "heatmap", :id => false, :options=>'ENGINE=MyISAM', :force => true do |t|
-    t.integer  "count",                :default => 0,   :null => false
-    t.float    "x",                    :default => 0.0, :null => false
-    t.float    "y",                    :default => 0.0, :null => false
-    t.geometry "geom",  :limit => nil,                  :null => false
-  end
-
-  add_index "heatmap", ["geom"], :name => "geom", :spatial => true
-
-  create_table "heatmaps", :id => false, :options=>'ENGINE=MyISAM', :force => true do |t|
-    t.integer  "count",                :default => 0,   :null => false
-    t.float    "x",                    :default => 0.0, :null => false
-    t.float    "y",                    :default => 0.0, :null => false
-    t.geometry "geom",  :limit => nil,                  :null => false
-  end
-
-  add_index "heatmaps", ["geom"], :name => "geom", :spatial => true
 
   create_table "node_types", :force => true do |t|
     t.integer  "category_id"
@@ -120,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20110717073922) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "node_type_id"
+    t.text     "geojson"
   end
 
   add_index "pois", ["geom"], :name => "index_pois_on_geom", :spatial => true
@@ -128,6 +93,13 @@ ActiveRecord::Schema.define(:version => 20110717073922) do
   add_index "pois", ["osm_id"], :name => "index_pois_on_osm_id"
   add_index "pois", ["status"], :name => "index_pois_on_status"
   add_index "pois", ["tags"], :name => "fulltext_index_pois_on_tags"
+
+  create_table "queued_nodes", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "node_attributes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false

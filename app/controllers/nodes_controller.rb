@@ -80,10 +80,12 @@ class NodesController < ApplicationController
   end
 
   def create
-    @node = OpenStreetMap::Node.new(params[:node].stringify_keys!)
+    node_attributes = params[:node].stringify_keys!
+    @node = OpenStreetMap::Node.new(node_attributes)
     if @node.valid?
-      client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.app_authorized?
-      Delayed::Job.enqueue(CreatingJob.new(@node, current_user, client))
+      OpenStreetMap::QueuedNode.enqueue(current_user, node_attributes)
+      #client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.app_authorized?
+      #Delayed::Job.enqueue(CreatingJob.new(@node, current_user, client))
       flash[:track]  = "'Data', 'Create', '#{@node.wheelchair}'"
       flash[:notice] = I18n.t('nodes.create.flash.successfull')
       redirect_to root_path(:layers => 'BT', :lat => @node.lat, :lon => @node.lon, :zoom => 18)
