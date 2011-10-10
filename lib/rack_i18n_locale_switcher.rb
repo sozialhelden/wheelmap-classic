@@ -18,7 +18,7 @@ module Rack
         session["locale"] = locale
         path = request.fullpath.gsub(/\/#{locale}\b/, '')
         # ignore paths given with except option
-        unless request.fullpath =~ %r{/tolk/}
+        unless request.fullpath =~ %r{/tolk/|/api/}
           return [ 302, {'Location'=> "#{request.scheme}://#{request.host_with_port}#{path}" }, [] ]
         end
       end
