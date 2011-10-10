@@ -3,7 +3,7 @@
   = link_to t('.link.large_map'), root_path(:locale => I18n.locale, :lat => @node.lat, :lon => @node.lon, :zoom => 18), :class => 'magnify', :id => 'show-on-large-map'
 
 
-  
+
 %h1
   =@node.name
   %br
@@ -14,11 +14,11 @@
 
 %table#accessibility{:class => "#{dom_class(@node)}"}
   %tr
-    
+
     %th=t('formtastic.labels.wheelchair')
     %td= t("wheelchairstatus.#{@node.wheelchair}")
-      
-      
+
+
   -if @node.wheelchair_description
     %tr
       %th=t('formtastic.labels.wheelchair_description')
@@ -26,7 +26,7 @@
 
   %tr
     %th=t('formtastic.labels.category')
-    
+
     - @node.category.identifier
     %td{:class => @node.category.identifier}
       - if @node.category
@@ -41,15 +41,15 @@
         = t("poi.name.#{@node.category.identifier}.#{@node.type}")
       -else
         &nbsp;
-        
+
   - if @node.tags['addr:street'] || @node.tags['addr:housenumber']
     %tr
       %th=t('formtastic.labels.street')
       %td
         =@node.tags['addr:street']
         =@node.tags['addr:housenumber'] || '&nbsp;'
-      
-      
+
+
   - if @node.tags['addr:postcode']
     %tr
       %th=t('formtastic.labels.postcode')
@@ -75,6 +75,7 @@
       %td
         =@node.tags['phone'] || '&nbsp;'
 
+
 = javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false"
 
 .clear
@@ -85,10 +86,13 @@
 %div#streetview{:style => "overflow: hidden; margin-bottom: 10px; width: 980px; height: 250px;"}
   %p#streetview_info
 
+.node-footer
+  = link_to t('.show-in-osm'), "http://www.openstreetmap.org/?lat=#{@node.lat}&lon=#{@node.lon}&zoom=18", :target => :blank
+
 - content_for :head do
   %title= t('.header.title', :node => @node.headline)
   %meta{:name => 'description', :content => t('header.meta.description')}
-  
+
 - content_for :javascript_constants do
   :javascript
     var lon = #{@node.lon};
@@ -102,9 +106,9 @@
   :javascript
     drawmap(defaultControls(), 'minimap');
     jumpTo(#{@node.lon}, #{@node.lat}, 18);
-    createDraggableLayer(placesStyle(),#{@node.lon}, #{@node.lat});    
-    
-    
+    createDraggableLayer(placesStyle(),#{@node.lon}, #{@node.lat});
+
+
     var point = new google.maps.LatLng(#{@node.lat}, #{@node.lon});
     var panorama = new google.maps.StreetViewPanorama(document.getElementById("streetview"));
     var sv = new google.maps.StreetViewService();
@@ -137,4 +141,3 @@
         $("#streetview_info").text('Ist für diesen Ort leider nicht verfügbar');
       }
     }
-    

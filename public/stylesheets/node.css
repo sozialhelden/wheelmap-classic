@@ -1207,3 +1207,8 @@ body, html {
   width: 0;
   height: 0;
 }
+
+/* line 39, ../../app/stylesheets/node.sass */
+.node-footer {
+  font-size: xx-small;
+}
