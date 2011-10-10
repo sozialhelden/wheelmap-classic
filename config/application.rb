@@ -24,7 +24,7 @@ module Wheelmap
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
     require  'rack_i18n_locale_switcher'
 #    require  'rack_request_logger'
-    config.middleware.use(Rack::I18nLocaleSwitcher, :except => '/tolk')
+    config.middleware.use(Rack::I18nLocaleSwitcher)
  #   config.middleware.use(Rack::RequestLogger)
 
     # Activate observers that should always be running.
@@ -46,11 +46,11 @@ module Wheelmap
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password, :password_confirmation, :old_password, :key, :secret, :oauth_token, :oauth_secret]
-    
+
     # Use rspec for test generation instead of test:unit
     config.generators do |g|
       g.test_framework :rspec
     end
-    
+
   end
 end
