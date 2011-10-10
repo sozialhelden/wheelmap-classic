@@ -24,7 +24,7 @@ module Wheelmap
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
     require  'rack_i18n_locale_switcher'
 #    require  'rack_request_logger'
-    config.middleware.use(Rack::I18nLocaleSwitcher)
+    config.middleware.use(Rack::I18nLocaleSwitcher, :except => '/tolk')
  #   config.middleware.use(Rack::RequestLogger)
 
     # Activate observers that should always be running.
