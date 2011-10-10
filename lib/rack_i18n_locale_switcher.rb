@@ -6,7 +6,6 @@ module Rack
 
     def initialize(app, options = {})
       @app = app
-      @options = options
     end
 
     def call(env)
@@ -19,7 +18,7 @@ module Rack
         session["locale"] = locale
         path = request.fullpath.gsub(/\/#{locale}\b/, '')
         # ignore paths given with except option
-        unless @options[:except] && request.fullpath =~ %r{/tolk/}
+        unless request.fullpath =~ %r{/tolk/}
           return [ 302, {'Location'=> "#{request.scheme}://#{request.host_with_port}#{path}" }, [] ]
         end
       end
