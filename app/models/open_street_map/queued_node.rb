@@ -12,7 +12,7 @@ class OpenStreetMap::QueuedNode < ActiveRecord::Base
   end
 
   def attribs
-    @attribs ||= JSON.parse(self.node_attributes)
+    @attribs ||= ActiveSupport::JSON.decode(self.node_attributes)
   end
 
   def to_geojson(options={})
