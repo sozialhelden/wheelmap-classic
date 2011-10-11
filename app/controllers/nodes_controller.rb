@@ -28,6 +28,7 @@ class NodesController < ApplicationController
     @limit = params[:limit].try(:to_i) || 300
 
     @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.order('osm_id DESC').limit(@limit) if @left
+    @places += OpenStreetMap::QueuedNode.within_bbox(@left, @bottom, @right, @top).limit(@limit)
 
     respond_to do |wants|
       wants.js{       render :file => "#{Rails.root}/app/views/nodes/index.js.erb" }
@@ -107,7 +108,7 @@ class NodesController < ApplicationController
   # Before filter
   protected
   def load_and_instantiate_nodes
-    @places.all
+    @places
   end
   add_method_tracer :load_and_instantiate_nodes, "Custom/load_and_instantiate_nodes"
 
