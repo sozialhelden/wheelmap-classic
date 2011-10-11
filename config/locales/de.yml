@@ -174,6 +174,9 @@ de:
       reset_password_instructions: "Anleitung zum Neu setzen deines Passworts"
       unlock_instructions: "Anleitung zum Entsperren deines Benutzerkontos"
     mandatory: "* Pflichtfeld"
+    omniauth_callbacks:
+      failure: "Authorisierung mit %{kind} fehlgeschlagen. Fehler: \"%{reason}\". "
+      success: "Erfolgreich authorisiert mit %{kind}."
     password_recovery:
       form:
         labels:
@@ -198,6 +201,7 @@ de:
       updated: "Dein Passwort wurde erfolgreich geändert. Du bist nun angemeldet."
     registrations:
       destroyed: "Dein Benutzerkonto wurde efolgreich gelöscht."
+      inactive_signed_up: "Anmeldung erfolgreich. Aber wir konnten dich nicht einloggen. Grund: \"%{reason}\". "
       link: Registrieren
       signed_up: "Deine Registrierung war erfolgreich."
       updated: "Dein Benutzerkonto wurde aktualisiert."
@@ -257,11 +261,28 @@ de:
       not_an_integer: "muss eine Zahl sein"
       not_found: "nicht gefunden"
       not_locked: "war nicht gesperrt"
+      not_saved:
+        one: "Ein Fehler hat das Speichern von %{resource} verweigert:"
+        other: "%{count} Fehler: %{resource} verweigerte das Speichern:"
       odd: "muss ungerade sein"
       taken: "ist bereits vergeben"
       too_long: "ist zu lang (nicht mehr als %{count} Zeichen)"
       too_short: "ist zu kurz (nicht weniger als %{count} Zeichen)"
       wrong_length: "hat die falsche Länge (muss genau %{count} Zeichen haben)"
+    template:
+      body: "Mit folgenden Feldern gab es Probleme:"
+      header:
+        one: "Ein Fehler hat das Speichern von %{model} verweigert:"
+        other: "%{count} Fehler: %{model} verweigerte das Speichern:"
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} wurde erfolgreich angelegt. "
+      destroy:
+        alert: "%{resource_name} konnte nicht entfernt werden. "
+        notice: "%{resource_name} wurde erfolgreich entfernt."
+      update:
+        notice: "%{resource_name} wurde erfolgreich aktualisiert."
   form:
     show_fully_accessible_places: Ja
     show_limited_accessible_places: Teilweise
@@ -394,6 +415,7 @@ de:
         edit_node: "Ort bearbeiten"
         large_map: "Ansicht vergrößern"
         report_bug: "Problem melden"
+      show-in-osm: "in Openstreetmap anzeigen"
     update:
       flash:
         not_successfull: "Oops, die Angaben sind noch unvollständig oder inkorrekt."
@@ -600,7 +622,7 @@ de:
         for: "Suche nach \"%{q}\""
         not_found: "Es wurden keine Orte gefunden!"
   splash:
-    countline: "%{count} Orte wurden schon markiert. "
+    countline: "%{count} Orte wurden schon markiert."
     headline: "Jeder kann rollstuhlgerechte Orte eintragen!"
     start: Start
     step1: "Klicke auf einen Ort, den du kennst."
