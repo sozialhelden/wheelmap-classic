@@ -354,7 +354,7 @@ function popup_form(feature) {
   form += '<li><input type="hidden" name="_method" value="put" /></li>';
   form += '<li>';
   if (disabled === true) {
-    form += '<span style="float:right">Wird derzeit überprüft.</span>';
+    form += '<span style="float:right">Wird derzeit überprüft, Status nicht änderbar.</span>';
   } else {
     form += '<input type="submit" '+ disabled + '" id="update_button" value="' + OpenLayers.Lang.translate('wheelchair_update_button') + '"/>';
   }
