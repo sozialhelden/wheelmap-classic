@@ -56,11 +56,11 @@ function submit_handler() {
   }
   $('#update_button').attr('disabled', 'disabled');
   $('#update_spinner').show();
-  
+
   $.ajax({ dataType: 'json', type: form.attr('method'), url: form.attr('action'), data: form.serialize(),
     success: function (data, textStatus, XMLHttpRequest) {
       $('#map').after('<div class="flash" id="notice">' + data.message + '<a href="#" data="hide">x</a></div>');
-      
+
       runEffect();
       removeAllPopups();
       $('#update_spinner').hide();
@@ -109,12 +109,12 @@ function drawmap(controls, element) {
     maxResolution: 156543.0399,
     units: 'm'
   });
-  
+
   mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", { displayClass: 'olMap', opacity: 1.0, transitionEffect: 'resize', numZoomLevels: 19, buffer: 2});
-  
+
   // Use for offline mode
   // mapnik = new OpenLayers.Layer.OSM("Mapnik", 'http://wheelmap.local/images/tiles/${z}/${x}/${y}.png' ,{displayClass:'olMap', opacity:0.5, transitionEffect:'resize', numZoomLevels: 19});
-  
+
   // User cloudmade style
   //  mapnik = new OpenLayers.Layer.CloudMade("CloudMade", {
   //     key: 'ff94b6ad4b174d648b9c491706f13579',
@@ -124,7 +124,7 @@ function drawmap(controls, element) {
   //     transitionEffect:'resize',
   //     numZoomLevels: 19
   // });
-  
+
   map.addLayers([mapnik]);
 }
 
@@ -176,7 +176,7 @@ function onLoadEnd() {
 }
 
 function addState(feature) {
-  
+
 }
 
 function lonLatToMercator(ll) {
@@ -333,7 +333,7 @@ function onPopupClose(evt) {
 function popup_state_radio(feature, state) {
   var id = state + '-' + feature.id;
   var checked = (state === feature.attributes.wheelchair ? ' checked="checked"' : '');
-  var disabled = (state === 'unknown' ? ' disabled="disabled"' : '');
+  var disabled = ((state === 'unknown' || feature.attributes.id === null ) ? ' disabled="disabled"' : '');
   var wheelchair_state = '<li class="' + state + '">';
   wheelchair_state += '<input id="' + id + '" type="radio" name="wheelchair"' + checked + disabled + ' value="' + state + '">';
   wheelchair_state += '<label for="' + id + '">' + OpenLayers.Lang.translate('wheelchair_label_' + state) + '</label>';
@@ -343,7 +343,8 @@ function popup_state_radio(feature, state) {
 
 function popup_form(feature) {
   var form = '';
-  form += '<form action="/nodes/' + feature.attributes.osm_id + '/update_wheelchair.js" method="post" class="update_form">';
+  var disabled = feature.attributes.id === null;
+  form += '<form action="/nodes/' + feature.attributes.id + '/update_wheelchair.js" method="post" class="update_form">';
   form += '<ol class="wheelchair">';
   form += '<h3><a target="_blank" href="http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei/">' + OpenLayers.Lang.translate('wheelchair_help') + '</a></h3>';
   form += popup_state_radio(feature, 'yes');
@@ -352,7 +353,11 @@ function popup_form(feature) {
   form += popup_state_radio(feature, 'unknown');
   form += '<li><input type="hidden" name="_method" value="put" /></li>';
   form += '<li>';
-  form += '<input type="submit" id="update_button" value="' + OpenLayers.Lang.translate('wheelchair_update_button') + '"/>';
+  if (disabled === true) {
+    form += '<span style="float:right">Wird derzeit überprüft.</span>';
+  } else {
+    form += '<input type="submit" '+ disabled + '" id="update_button" value="' + OpenLayers.Lang.translate('wheelchair_update_button') + '"/>';
+  }
   form += '<img src="/images/spinner-small.gif" id="update_spinner"/>';
   form += '</li></ol>';
   form += '</form>';
@@ -377,9 +382,11 @@ function popup_address(feature) {
 
 function popup_more_link(feature) {
   var html = '';
-  html += '<a class="more" href="' +  ((OpenLayers.Lang.getCode() === 'de') ? '' : '/' + OpenLayers.Lang.getCode()) + '/nodes/' + feature.attributes.osm_id + '">';
-  html += OpenLayers.Lang.translate('more_information');
-  html += '</a>';
+  if (feature.attributes.id !== null) {
+    html += '<a class="more" href="' +  ((OpenLayers.Lang.getCode() === 'de') ? '' : '/' + OpenLayers.Lang.getCode()) + '/nodes/' + feature.attributes.id + '">';
+    html += OpenLayers.Lang.translate('more_information');
+    html += '</a>';
+  }
   return html;
 }
 
@@ -435,12 +442,12 @@ function createPlacesLayer(style) {
     'zoomend': onZoomEnd,
     'moveend': onMoveEnd
   });
-  
+
 }
 
-function onCompleteDrag(feature) { 
-  if (feature) {  
-    // replace coordinate values in feature attributes 
+function onCompleteDrag(feature) {
+  if (feature) {
+    // replace coordinate values in feature attributes
     var lonlat = new OpenLayers.LonLat(feature.geometry.x, feature.geometry.y);
     var coordinates = lonlat.clone().transform(map.getProjectionObject(), epsg4326);
     $('#node_lat').attr('value', coordinates.lat);
@@ -450,7 +457,7 @@ function onCompleteDrag(feature) {
 
 function activateDragControl(layer) {
   var dg = new OpenLayers.Control.DragFeature(layer, { onComplete: onCompleteDrag });
-  map.addControl(dg); 
+  map.addControl(dg);
   dg.activate();
 }
 
@@ -475,7 +482,7 @@ function addPin(layer, lon, lat) {
   layer.addFeatures(features);
 }
 
-function createDraggableLayer(style, lon, lat) {  
+function createDraggableLayer(style, lon, lat) {
 
   var draggable_layer = new OpenLayers.Layer.Vector(
     "Draggable",
@@ -483,7 +490,7 @@ function createDraggableLayer(style, lon, lat) {
       styleMap: style,
       rendererOptions: { yOrdering: true },
       visibility: true
-  });    
+  });
   map.addLayer(draggable_layer);
   activateDragControl(draggable_layer);
   addPin(draggable_layer, lon, lat);
@@ -559,12 +566,12 @@ $(function () {
     });
     return false;
   });
-  
+
   if ($.cookie('minimized_filter') === 'true') {
     $('#sidebar').addClass('minimized')
     $('#sidebar').children('.minimize').addClass('maximize').removeClass('minimize');
   }
-  
+
   $('input.filter').change(function () {
     if ($(this).attr('checked')) {
       removeFilter($(this).attr('rel'), $(this).attr('value'));
@@ -572,7 +579,7 @@ $(function () {
       addFilter($(this).attr('rel'), $(this).attr('value'));
     }
   });
-  
+
   $('input.filter').each(function() {
     if (FilterSettings.get($(this).attr('rel'), $(this).attr('value')) === true) {
       $(this).attr('checked', false).trigger('change');
@@ -593,7 +600,7 @@ function initGeoData() {
   lat  = q.lat  || $.cookie('last_lat') //|| GeoCache.latlon(request.remote_addr).first};
   lon  = q.lon  || $.cookie('last_lon') //|| GeoCache.latlon(request.remote_addr).last};
   zoom = q.zoom || $.cookie('last_zoom') || 14;
-  
+
   if(!(lat && lon)) {
     // on demand insert JS
     lat = geoip_latitude();

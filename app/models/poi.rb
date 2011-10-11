@@ -245,7 +245,7 @@ class Poi < ActiveRecord::Base
         :properties => { 'name'       => headline,
                          'address'    => address || '',
                          'wheelchair' => wheelchair,
-                         'osm_id'     => osm_id,
+                         'id'         => osm_id,
                          'type'       => node_type.try(:identifier) || '',
                          'category'   => category.try(:identifier) || '',
                        }
