@@ -597,7 +597,7 @@ es:
       alt: "Wheelmap Logo - buscar zonas con acceso"
       title: "Wheelmap - buscar zonas con acceso"
     what_is: 
-      fully_accessible: "El paso de entrada no es superior a 7 cm; todas las localidades tienen acceso en silla de ruedas (sin excepción); también hay baños para discapacitados"
-      limited_accessible: "El paso de entrada no es más alto de 7 cm; las localidades más importantes para usuarios en silla de ruedas"
-      not_accessible: "El paso de entrada no es más alto de 7 cm; o escalera en la entrada; o las localidades más importantes no tienen acceso para usuarios en silla de ruedas"
+      fully_accessible: "<em>Accesible :</em> Acceso liso, sin peldaños; todas las localidades tienen acceso y circulación para silla de ruedas (sin excepción); baños disponibles para personas con discapacidad"
+      limited_accessible: "<em>Parcial :</em> Acceso no superior a 7 cm; circulaciones accesibles a los recintos más importantes para usuarios en silla de ruedas"
+      not_accessible: "<em>Inaccesible :</em> Desnivel en acceso superior a 7 cm o escalera en la entrada, las localidades más importantes no tienen acceso para usuarios en silla de ruedas."
       unknown_accessible: "El estado de silla de ruedas se desconoce"
