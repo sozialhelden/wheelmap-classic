@@ -28,12 +28,14 @@ class NodesController < ApplicationController
     @limit = params[:limit].try(:to_i) || 300
 
     @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.order('osm_id DESC').limit(@limit) if @left
-    @places += OpenStreetMap::QueuedNode.within_bbox(@left, @bottom, @right, @top).limit(@limit)
 
     respond_to do |wants|
       wants.js{       render :file => "#{Rails.root}/app/views/nodes/index.js.erb" }
       wants.json{     render }
-      wants.geojson{  render :file => "#{Rails.root}/app/views/nodes/index.geojson.erb", :content_type => "application/json; subtype=geojson; charset=utf-8" }
+      wants.geojson do
+        @places += OpenStreetMap::QueuedNode.within_bbox(@left, @bottom, @right, @top).limit(@limit)
+        render :file => "#{Rails.root}/app/views/nodes/index.geojson.erb", :content_type => "application/json; subtype=geojson; charset=utf-8"
+      end
       wants.html{     redirect_to root_path }
     end
   end
