@@ -3,7 +3,6 @@ source 'http://rubygems.org'
 group :default do
   gem 'rails', '3.0.3'
   gem 'mysql2', '~>0.2.7'
-  gem 'spatial_adapter'
   gem 'oauth', :git => 'git://github.com/Bertg/oauth.git'
   gem 'httparty'
   gem 'devise'
@@ -24,7 +23,7 @@ group :default do
   gem 'acts_as_api'
   gem 'inherited_resources'
   gem 'has_scope'
-  gem 'mapfish'
+#  gem 'mapfish'
   gem 'rake', '0.9.2'
   gem 'yajl-ruby'
   gem 'fastercsv'
@@ -33,6 +32,9 @@ group :default do
   gem 'jammit'
   gem 'big_sitemap', :git => 'git@github.com:christoph-buente/big_sitemap.git'
   gem 'unicorn'
+  gem 'rgeo'
+  gem 'spatial_adapter'
+  gem 'friendly_id'
 end
 
 group :test, :development do

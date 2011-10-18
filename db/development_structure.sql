@@ -51,17 +51,7 @@ CREATE TABLE `delayed_jobs` (
   `finished_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `delayed_jobs_priority` (`priority`,`run_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=175 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-CREATE TABLE `geometry_columns` (
-  `F_TABLE_CATALOG` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `F_TABLE_SCHEMA` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `F_TABLE_NAME` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  `F_GEOMETRY_COLUMN` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  `COORD_DIMENSION` int(11) DEFAULT NULL,
-  `SRID` int(11) DEFAULT NULL,
-  `TYPE` varchar(256) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `node_types` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -86,12 +76,13 @@ CREATE TABLE `pois` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `node_type_id` int(11) DEFAULT NULL,
-  `geojson` text,
+  `region_id` int(11) DEFAULT NULL,
   UNIQUE KEY `index_pois_on_osm_id` (`osm_id`),
   SPATIAL KEY `index_pois_on_geom` (`geom`),
   KEY `index_pois_on_status` (`status`),
   KEY `pagination` (`osm_id`,`status`,`created_at`),
   KEY `index_pois_on_node_type_id_and_osm_id` (`node_type_id`,`osm_id`),
+  KEY `index_pois_on_region_id` (`region_id`),
   FULLTEXT KEY `fulltext_index_pois_on_tags` (`tags`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -101,8 +92,19 @@ CREATE TABLE `queued_nodes` (
   `node_attributes` text COLLATE utf8_unicode_ci,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
+  `geom` point NOT NULL,
+  PRIMARY KEY (`id`),
+  SPATIAL KEY `index_queued_nodes_on_geom` (`geom`)
+) ENGINE=MyISAM AUTO_INCREMENT=1172 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `regions` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `grenze` polygon NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `schema_migrations` (
   `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -118,7 +120,7 @@ CREATE TABLE `sessions` (
   PRIMARY KEY (`id`),
   KEY `index_sessions_on_session_id` (`session_id`),
   KEY `index_sessions_on_updated_at` (`updated_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=1541 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1599 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `spatial_ref_sys` (
   `SRID` int(11) NOT NULL,
@@ -142,7 +144,7 @@ CREATE TABLE `tolk_phrases` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=515 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=529 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `tolk_translations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -155,7 +157,7 @@ CREATE TABLE `tolk_translations` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_tolk_translations_on_phrase_id_and_locale_id` (`phrase_id`,`locale_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7085 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7156 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -241,10 +243,10 @@ INSERT INTO schema_migrations (version) VALUES ('20110717073922');
 
 INSERT INTO schema_migrations (version) VALUES ('20110801135556');
 
-INSERT INTO schema_migrations (version) VALUES ('20110913165413');
-
-INSERT INTO schema_migrations (version) VALUES ('20110929130332');
-
-INSERT INTO schema_migrations (version) VALUES ('20110929130527');
-
 INSERT INTO schema_migrations (version) VALUES ('20111001183641');
+
+INSERT INTO schema_migrations (version) VALUES ('20111011120103');
+
+INSERT INTO schema_migrations (version) VALUES ('20111011145011');
+
+INSERT INTO schema_migrations (version) VALUES ('20111017092328');

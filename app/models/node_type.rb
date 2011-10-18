@@ -1,18 +1,18 @@
 class NodeType < ActiveRecord::Base
   include ActionView::Helpers::AssetTagHelper
-  
+
   cattr_accessor :combination
 
   has_many :pois, :dependent => :nullify
-  belongs_to :category
-  
+  belongs_to :category, :touch => false
+
   validates :identifier, :presence => true
   validates :category_id, :presence => true
-  
+
   cattr_accessor :combination
-  
+
   acts_as_api
-  
+
   api_accessible :simple do |template|
     template.add :id
     template.add :identifier
@@ -20,14 +20,14 @@ class NodeType < ActiveRecord::Base
     template.add :localized_name
     template.add :icon
   end
-  
+
   api_accessible :id do |template|
     template.add :id
     template.add :identifier
   end
-  
-  def localized_name
-    I18n.t("poi.name.#{category.identifier}.#{identifier}")
+
+  def localized_name(count=1)
+    I18n.t("poi.name.#{category.identifier}.#{identifier}", :count => count)
   end
 
   def self.combination
