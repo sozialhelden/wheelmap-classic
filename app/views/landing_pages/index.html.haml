@@ -1,10 +1,13 @@
-%h1
-  =@region.name
-  &rsaquo;
-  =@node_type.localized_name
-  &rsaquo;
-  =t("wheelchairstatus.#{@nodes.first.wheelchair}")
-  ="(#{@nodes.total_entries})"
+- unless @nodes.empty?
+  %h1
+    =@region.name
+    &rsaquo;
+    =@node_type.localized_name
+    &rsaquo;
+    =t("wheelchairstatus.#{@nodes.first.wheelchair}")
+    ="(#{@nodes.total_entries})"
+- else
+  %h1="(#{@nodes.total_entries})"
 
 
 %ul#nodes
