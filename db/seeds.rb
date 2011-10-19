@@ -20,7 +20,7 @@ categories = Category.create([
   {:id => 8,  :identifier => :tourism},
   {:id => 9,  :identifier => :accommodation},
   {:id => 10, :identifier => :misc},
-  {:id => 11, :identifier => :government}  
+  {:id => 11, :identifier => :government}
 ])
 
 NodeType.delete_all
@@ -166,3 +166,10 @@ node_types = NodeType.create([
   {:category => government,  :identifier => :public_building, :osm_key => 'amenity',  :osm_value => 'public_building',  :icon => 'bigcity.png'},
   {:category => government,  :identifier => :townhall,        :osm_key => 'amenity',  :osm_value => 'townhall',         :icon => 'bigcity.png'},
 ])
+
+Region.delete_all
+Region.connection.execute('ALTER TABLE regions AUTO_INCREMENT=1')
+f = File.new "#{Rails.root}/db/data/polygons.sql"
+while statements = f.gets("\n") do
+  ActiveRecord::Base.connection.execute(statements)
+end
