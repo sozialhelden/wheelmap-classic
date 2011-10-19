@@ -88,7 +88,7 @@
 
 .node-footer
   = link_to t('.show-in-osm'), "http://www.openstreetmap.org/?lat=#{@node.lat}&lon=#{@node.lon}&zoom=18", :target => :blank
-  = link_to_landing_page(t(".link.listing", :type => @node.node_type.localized_name, :city => @node.region.name), @node.region, @node.wheelchair, @node.node_type, :class => 'right')
+  = link_to_landing_page(t(".link.listing", :type => @node.node_type.localized_name, :city => @node.region.name), @node.region, @node.wheelchair, @node.node_type, :class => 'right') if @node.region
 
 - content_for :head do
   %title= t('.header.title', :node => @node.headline)
