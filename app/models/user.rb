@@ -54,4 +54,9 @@ class User < ActiveRecord::Base
     user = User.where(:email => email).first
     user if user && user.valid_password?(password)
   end
+
+  def inactive_message
+    I18n.t('devise.failure.unconfirmed')
+  end
+
 end
