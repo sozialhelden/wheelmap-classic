@@ -44,6 +44,7 @@ class Poi < ActiveRecord::Base
 
   WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
 
+  belongs_to :region, :touch => false
   belongs_to :node_type, :touch => false, :include => :category
   has_one :category, :through => :node_type
 
@@ -73,6 +74,7 @@ class Poi < ActiveRecord::Base
   scope :with_node_type, :conditions => 'node_type_id IS NOT NULL'
   scope :without_node_type, :conditions => 'node_type_id IS NULL'
   scope :including_category, :include => :category
+  scope :within_region, lambda {|region| {:conditions => {:region_id => region.id}}}
 
   scope :select_distance, lambda {|lat,lon| {:select => "*,haversine(geom,#{lat},#{lon}) as distance"}}
 
@@ -105,7 +107,7 @@ class Poi < ActiveRecord::Base
   end
 
   def lon
-    self.geom.lng if self.geom
+    self.geom.lon if self.geom
   end
 
   def lon=(value)

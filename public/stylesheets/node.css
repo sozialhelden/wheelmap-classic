@@ -115,6 +115,10 @@ a:visited {
 a:visited:hover {
   color: #3d4f24;
 }
+/* line 15, ../../app/stylesheets/basics/_links.sass */
+a.right {
+  float: right;
+}
 
 /* line 10, ../../app/stylesheets/basics/_icons.sass */
 .print {
@@ -781,6 +785,11 @@ body, html {
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
   -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+}
+
+/* line 21, ../../app/stylesheets/basics/_main.sass */
+.odd {
+  background-color: #eeeeee;
 }
 
 /* line 1, ../../app/stylesheets/basics/_footer.sass */

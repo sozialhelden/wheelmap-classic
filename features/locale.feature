@@ -2,11 +2,11 @@ Feature: Locale feature
   In order to use wheelmap
   As a anonymous user with different languages
   I want to switch the language
-  
+
   Background:
     Given the following languages are supported "de;en;es;fr;it;is"
-  
-  Scenario: I want to see wheelmap in my preferred language    
+
+  Scenario: I want to see wheelmap in my preferred language
     Given my browser supports the following languages "de-DE;de;en"
     When I go to the home page
     Then my locale should be "de"
@@ -21,11 +21,10 @@ Feature: Locale feature
     Given my browser supports the following languages "be;pt"
     When I go to the home page
     Then my locale should be "de"
-    
-  @wip
-  Scenario: I want to switch manually to the english hompage
+
+  Scenario: I want to switch manually to the german hompage
     When I go to the german home page
-    Then my locale should be "en"
+    Then my locale should be "de"
     Then I should be on the home page
 
   Scenario: I want to switch manually to the spanish hompage

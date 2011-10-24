@@ -376,6 +376,17 @@ en:
     root: wheelmap
   global:
     form_validation_error: Please note the errors listed below.
+  landing_pages:
+    index:
+      wheelchair:
+        'yes':
+          headline: "All wheelchair accessible %{type} in %{city} (%{count})"
+        'no':
+          headline: "All non-wheelchair accessible %{type} in %{city} (%{count})"
+        limit:
+          headline: "All limited wheelchair accessible %{type} in %{city} (%{count})"
+        unknown:
+          headline: "All %{type} in %{city} with unknown wheelchair status (%{count})"
   nodes:
     new:
       header:
@@ -403,6 +414,7 @@ en:
         report_bug: "Report a problem"
         edit_node: Edit place
         large_map: Enlarge
+        listing: "All places of typ '%{type}' in %{city}"
       show-in-osm: OpenStreetMap
     create:
       flash:
@@ -417,8 +429,8 @@ en:
   wheelchairstatus:
     "no": not wheelchair accessible
     limited: partly wheelchair accessible
-    "yes": completely wheelchair accessible
-    unknown: wheelchair accessibility unknown
+    "yes": wheelchair accessible
+    unknown: unknown status
   user_sessions:
     new:
       remember_me: Stay logged in
