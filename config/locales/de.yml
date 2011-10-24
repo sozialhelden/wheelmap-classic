@@ -431,6 +431,7 @@ de:
       header:
         title: "Ort: %{node} | wheelmap.org"
       link:
+        back: "« Zurück"
         edit_node: "Ort bearbeiten"
         large_map: "Ansicht vergrößern"
         report_bug: "Problem melden"

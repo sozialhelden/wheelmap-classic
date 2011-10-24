@@ -4,6 +4,7 @@
 
 
 
+= link_to t('.link.back'), root_path(:locale => I18n.locale, :lat => @node.lat, :lon => @node.lon, :zoom => 18)
 %h1
   =@node.name
   %br
