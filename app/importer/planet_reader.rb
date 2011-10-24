@@ -18,11 +18,11 @@ class PlanetReader
     Crewait.start_waiting
     @to_be_deleted = []
   end
-  
+
   def values
     @values ||= NodeType.all.map(&:osm_value).uniq
   end
-  
+
   def keys
     @keys ||= NodeType.all.map(&:osm_key).uniq
   end
@@ -153,6 +153,7 @@ class PlanetReader
         # probieren den Save, und wenn der nicht geht, probieren wir
         # den Update.
         @poi[:updated_at] = Time.now
+        @poi[:region_id] = nil
         Poi.crewait(@poi)
       else
 
