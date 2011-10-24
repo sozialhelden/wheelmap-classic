@@ -303,6 +303,7 @@ en:
         subject: Reset password instructions
       confirmation_instructions:
         subject: One more step to activate your account
+        landing_page: "Please click on the link that we just send to your email address. If you did not receive any email from us please make sure it is not hiding in your spam folder. In case you cannot find it you can resend the %{link} again."
     mandatory: "* Required"
     password_recovery:
       form:
@@ -355,6 +356,7 @@ en:
       link: Sign up
       updated: You updated your account successfully.
       signed_up: You have signed up successfully. If enabled, a confirmation was sent to your e-mail.
+      inactive_signed_up: "You have signed up successfully. But we could not sign you in. Reason: \"%{reason}\""
     sessions:
       signed_out: Signed out successfully.
       unauthenticated: You need to sign in or sign up before continuing.

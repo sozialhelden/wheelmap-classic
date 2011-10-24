@@ -172,6 +172,7 @@ de:
     mailer:
       confirmation_instructions:
         subject: "Noch einen Schritt zur Aktivierung deines Benutzerkontos"
+        landing_page: "Bitte klicke auf den Link, den wir Dir gerade an Deine E-Mail Adresse geschickt haben. Solltest Du keine E-Mail bekommen haben, so prüfe bitte auch deinen Spam-Ordner. Wenn sie dort auch nicht ist, dann kannst Du Dir die  %{link} erneut zusenden lassen."
       reset_password_instructions:
         subject: "Anleitung zum Neu setzen deines Passworts"
       unlock_instructions:
@@ -204,7 +205,7 @@ de:
       updated: "Dein Passwort wurde erfolgreich geändert. Du bist nun angemeldet."
     registrations:
       destroyed: "Dein Benutzerkonto wurde efolgreich gelöscht."
-      inactive_signed_up: "Anmeldung erfolgreich. Aber wir konnten dich nicht einloggen. Grund: \"%{reason}\". "
+      inactive_signed_up: "Anmeldung erfolgreich. Aber wir konnten dich nicht einloggen. Grund: \"%{reason}\""
       link: Registrieren
       signed_up: "Deine Registrierung war erfolgreich."
       updated: "Dein Benutzerkonto wurde aktualisiert."
