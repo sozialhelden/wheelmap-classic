@@ -120,7 +120,20 @@ CREATE TABLE `sessions` (
   PRIMARY KEY (`id`),
   KEY `index_sessions_on_session_id` (`session_id`),
   KEY `index_sessions_on_updated_at` (`updated_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=1599 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1610 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `slugs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `sluggable_id` int(11) DEFAULT NULL,
+  `sequence` int(11) NOT NULL DEFAULT '1',
+  `sluggable_type` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `scope` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_slugs_on_n_s_s_and_s` (`name`,`sluggable_type`,`sequence`,`scope`),
+  KEY `index_slugs_on_sluggable_id` (`sluggable_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `spatial_ref_sys` (
   `SRID` int(11) NOT NULL,
@@ -250,3 +263,5 @@ INSERT INTO schema_migrations (version) VALUES ('20111011120103');
 INSERT INTO schema_migrations (version) VALUES ('20111011145011');
 
 INSERT INTO schema_migrations (version) VALUES ('20111017092328');
+
+INSERT INTO schema_migrations (version) VALUES ('20111018102230');

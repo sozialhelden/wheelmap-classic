@@ -44,7 +44,7 @@ Wheelmap::Application.routes.draw do
 
   resources :user, :only => :new # Fake route for redirection to OSM register page
 
-  match '/:region_id/:node_type_id/:wheelchair' => 'landing_pages#index'
+  match '/:region_id/:node_type_id/wheelchair/:wheelchair' => 'landing_pages#index'
 
   namespace :api do
     resources :docs,        :only  => [:index]
