@@ -1,10 +1,10 @@
---- 
-el: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+el:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "Πρέπει να γίνει δεκτό"
         blank: "Πρέπει να συμπληρωθεί"
         confirmation: "Δεν αντιστοιχεί με την επιβεβαίωση"
@@ -24,30 +24,30 @@ el:
         too_long: "Είναι πολύ μεγάλο (το μέγιστο μήκος είναι %{count} χαρακτήρες)"
         too_short: "Είναι πολύ μικρό (το μικρότερο μήκος είναι %{count} χαρακτήρες)"
         wrong_length: "Έχει λανθασμένο μήκος (πρέπει να είναι %{count} χαρακτήρες)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: "Email διεύθυνση"
           password: "Κωδικός πρόσβασης"
           remember_me: "Διατήρηση σύνδεσης"
-      template: 
+      template:
         body: "Υπήρξαν προβλήματα στα εξής πεδία"
-        header: 
+        header:
           one: "1 λάθος παρεμπόδισε αυτό το %{model} να αποθηκευθεί."
           other: "%{count} λάθη εμπόδισαν αυτό το %{model} να αποθηκευθεί."
-  application: 
-    require_no_user: 
+  application:
+    require_no_user:
       notice: "Έχετε ήδη συνδεθεί..."
-    require_user: 
+    require_user:
       notice: "Πρέπει να συνδεθείτε, για να δείτε αυτην τη σελίδα."
-  breadcrumbs: 
-    node: 
+  breadcrumbs:
+    node:
       create: "Πρόσθεση νέας τοποθεσίας"
       edit: "Επεξεργασία τοποθεσίας"
     root: wheelmap
-  common: 
+  common:
     close: Κλείσιμο
-  date: 
-    abbr_day_names: 
+  date:
+    abbr_day_names:
       - Κυρ
       - Δευ
       - Τρι
@@ -55,7 +55,7 @@ el:
       - Πεμ
       - Παρ
       - Σαβ
-    abbr_month_names: 
+    abbr_month_names:
       - ~
       - ΙΑΝ
       - ΦΕΒ
@@ -69,7 +69,7 @@ el:
       - ΟΚΤ
       - ΝΟΕ
       - ΔΕΚ
-    day_names: 
+    day_names:
       - Κυριακή
       - Δευτέρα
       - Τρίτη
@@ -77,11 +77,11 @@ el:
       - Πέμπτη
       - Παρασκευή
       - Σάββατο
-    formats: 
+    formats:
       default: "%d/%m/%Y"
       long: "%B %d, %Y"
       short: "%b %d "
-    month_names: 
+    month_names:
       - ~
       - Ἰανουάριος
       - Φεβρουάριος
@@ -95,112 +95,115 @@ el:
       - Ὀκτώβριος
       - Νοέμβριος
       - Δεκέμβριος
-    order: 
+    order:
       - !ruby/symbol day
       - !ruby/symbol month
       - !ruby/symbol year
-  datetime: 
-    distance_in_words: 
-      about_x_hours: 
+  datetime:
+    distance_in_words:
+      about_x_hours:
         one: "περίπου 1 ώρα"
         other: "περίπου %{count} ώρες"
-      about_x_months: 
+      about_x_months:
         one: "περίπου 1 μήνα"
         other: "περίπου %{count} μήνες"
-      about_x_years: 
+      about_x_years:
         one: "περίπου 1 χρόνο"
         other: "περίπου %{count} χρόνια"
-      almost_x_years: 
+      almost_x_years:
         one: "σχεδόν 1 χρόνος"
         other: "σχεδόν %{count} χρόνια"
       half_a_minute: "μισό λεπτό"
-      less_than_x_minutes: 
+      less_than_x_minutes:
         one: "λιγότερο από ένα λεπτό"
         other: "λιγότερο από %{count} λεπτά"
-      less_than_x_seconds: 
+      less_than_x_seconds:
         one: "λιγότερο από 1 δευτερόλεπτο"
         other: "λιγότερο από %{count} δευτερόλεπτα"
-      over_x_years: 
+      over_x_years:
         one: "πάνω από 1 χρόνο"
         other: "πάνω από %{count} χρόνια"
-      x_days: 
+      x_days:
         one: "1 ημέρα"
         other: "%{count} ημέρες"
-      x_minutes: 
+      x_minutes:
         one: "1 λεπτό"
         other: "%{count} λεπτά"
-      x_months: 
+      x_months:
         one: "1 μήνα"
         other: "%{count} μήνες"
-      x_seconds: 
+      x_seconds:
         one: "1 δευτερόλεπτο"
         other: "%{count} δευτερόλεπτα"
-    prompts: 
+    prompts:
       day: Ημέρα
       hour: Ώρα
       minute: Λεπτό
       month: Μήνας
       second: Δευτερόλεπτα
       year: Έτος
-  devise: 
-    confirmations: 
+  devise:
+    confirmations:
       confirmed: "Ο λογαριασμός σάς επιβεβαιώθηκε με επιτυχία. Είστε συνδεδεμένος."
       link: "Δεν λάβατε οδηγίες επιβεβαίωσης?"
       send_instructions: "Θα λάβετε ένα Email με οδηγίες για το πως επιβεβαιώνετε τον λογαριασμό σας άμεσα."
-    destroy: 
+    destroy:
       confirm: "Είσαι σίγουρος/η;"
       headline: "Διαγραφή λογαριασμού"
       link: "Διαγραφή τώρα"
-    edit: 
-      form: 
-        labels: 
+    edit:
+      form:
+        labels:
           current_password: "Ισχύον κωδικός<i>(we need this to confirm your change)</i> "
           email: Email
           password: "Kωδικός<i>(leave blank if you do not want to change it)</i> "
           password_confirmation: "Επαναλάβετε τον κωδικό πρόσβασης"
         submit: "Αποθήκευση αλλαγών"
       headline: "Διαχείριση λογαριασμού"
-    failure: 
+    failure:
       inactive: "Ο λογαριασμός σας, δεν έχε ενεργοποιηθεί ακόμη."
       invalid: "Μη έγκυρο email ή κωδικός"
       locked: "Ο λογαριασμός σας είναι κλειδωμένος"
       timeout: "Η συνεδρίασή σας έληξε, παρακαλώ συνδεθείτε εκ νέου, για να συνεχίσετε."
       unauthenticated: "Πρέπει να συνδεθείυε ή να εγγραφείτε για να συνεχίσετε."
       unconfirmed: "Πρέπει να επιβεβαιώσετε τον λογαριασμό σας για να συνεχίσετε."
-    mailer: 
-      confirmation_instructions: "Οδηγίες επιβεβαίωσης"
-      reset_password_instructions: "Οδηγίες γαι επαναφορά κωδικού"
-      unlock_instructions: "Οδηγίες για ξεκλήδωμα λογαριασμού"
+    mailer:
+      confirmation_instructions:
+        subject: "Οδηγίες επιβεβαίωσης"
+      reset_password_instructions:
+        subject: "Οδηγίες γαι επαναφορά κωδικού"
+      unlock_instructions:
+        subject: "Οδηγίες για ξεκλήδωμα λογαριασμού"
     mandatory: "* Υποχρεωτικά πεδία"
-    password_recovery: 
-      form: 
-        labels: 
+    password_recovery:
+      form:
+        labels:
           email: Email
         submit: "Eπαναφορά κωδικού."
       headline: "Ξεχάσατε τον κωδικό?"
-    password_reset: 
-      email: 
+    password_reset:
+      email:
         comment: "Eάν δεν ζητήσατε εσείς την αλλαγή κωδικού,σας παρακαλούμε να αγνοήσετε αυτο το μήνυμα.<br/> Ο κωδικός σας δεν θα αλλάξει παρά μόνο εάν κάνετε κλικ στο σύνδεσμο επαλήθευσης."
         headline: "Καλώς ήρθατε %{email} "
         link: "Αλλαγή κώδικα πρόσβασης"
         text: "Κάποιος ζήτησε την αλλαγή του κωδικού σας. Εάν το επιθυμήτε,πατήστε τον ακόλουθο σύνδεσμο:"
-      form: 
-        labels: 
+      form:
+        labels:
           password: "Νέος κώδικας πρόσβασης"
           password_confirmation: "Επανάληψη κωδικού"
         submit: "Επαναφορά κωδικού"
       headline: "Επαναφορά κωδικού"
-    passwords: 
+    passwords:
       link: "Ξεχάσατε τον κωδικό?"
       send_instructions: "Θα λάβετε ένα Εmail με οδηγίες γαι την άμεση επαναφορά του κωδικού σας."
       updated: "Ο κωδικός σας άλλαξε επιτυχώς.Είστε συνδεδεμένος τώρα."
-    registrations: 
+    registrations:
       destroyed: "Αντίο! Ο λογαριαμός σας ακυρώθηκε επιτυχώς.Ευχόμαστε να σας ξαναδούμε σύντομα."
       inactive_signed_up: "Εγγραφήκατε  επιτυχώς.Εντούτοις,δεν μπορέσαμε να σας συνδέσουμε στον λογαριασμό σας επιδή %{reason}."
       link: Εγγραφή
       signed_up: "Συνδεθήκατε επιτυχώς. Σε περίπτωση μη πρόσβασης, έχει σταλθεί επιβεβαίωση στο Εmail σας.\n"
       updated: "Αναβαθμίσατε τον λογαριασμό με επιτυχία."
-    sessions: 
+    sessions:
       inactive: "Ο λογαριασμός σας δεν έχει ενεργοποιηθεί ακόμη."
       invalid: "Άκυρο Εmail ή κωδικός."
       invalid_token: "Άκυρη πιστοποίηση αυθεντικότητας."
@@ -211,32 +214,32 @@ el:
       timeout: "H συνεδρίασή σας έληξε. Παρακαλώ συνδεθείτε εκ νέου."
       unauthenticated: "Πρέπει να συνδεθείυε ή να εγγραφείτε για να συνεχίσετε."
       unconfirmed: "Για να συνεχίσετε πρέπει να επιβεβαιώσετε τον λογαριασμό σας."
-    sign_in: 
-      form: 
-        labels: 
+    sign_in:
+      form:
+        labels:
           email: Email
           password: "Κώδικας πρόσβασης"
           remember_me: "Θέλετε  να παραμείνετε συνδεδεμένη?"
         submit: Σύνδεση
       headline: Σύνδεση
-    sign_out: 
+    sign_out:
       headline: Αποσύνδεση
-    sign_up: 
-      form: 
-        labels: 
+    sign_up:
+      form:
+        labels:
           email: Email
           password: "Κωδικός πρόσβασης"
           password_confirmation: "Επαναλάβετε τον κωδικό\n\n\n\n"
         submit: Εγγραφή
       headline: Εγγραφή
-    unlocks: 
+    unlocks:
       link: "Δεν έχετε λάβει οδηγίες ξεκλειδώματος?"
       send_instructions: "Θα λάβετε ένα Email με οδηγίες, για το πως επιβεβαιώνετε τον λογαριασμό σας άμεσα."
       unlocked: "Ο λογαριασμός σας ξεκλειδώθηκε επιτυχώς. Είστε συνδεδεμένος τώρα."
-  errors: 
+  errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message} "
-    messages: 
+    messages:
       accepted: "Πρέπει να γίνει δεκτό"
       already_confirmed: "Έχει ήδη επιβεβαιωθεί,παρακαλώ δοκιμάστε εκ νέου να συνδεθείτε"
       blank: "Πρέπει να συμπληρωθεί"
@@ -258,21 +261,21 @@ el:
       too_long: "Είναι πολύ μεγάλο (το μέγιστο μήκος είναι %{count} χαρακτήρες)"
       too_short: "Είναι πολύ μικρό (το μικρότερο μήκος είναι %{count} χαρακτήρες)"
       wrong_length: "Έχει λανθασμένο μήκος (πρέπει να είναι %{count} χαρακτήρες)"
-    template: 
+    template:
       body: "Υπήρξαν προβλήματα με τα εξής πεδία"
-  form: 
+  form:
     show_fully_accessible_places: "Κατάλληλο για αναπηρική καρέκλα"
     show_limited_accessible_places: "Εν μέρη προσβάσιμο με αναπηρική καρέκλα"
     show_places_without_status: "Κατάσταση άγνωστη"
     show_unaccessible_places: "Ακατάλληλο για αναπηρική καρέκλα"
-  formtastic: 
-    hints: 
+  formtastic:
+    hints:
       lat: "Mετακινήστε στον χάρτη το σημαιάκι επισήμανσης στην σωστή τοποθεσία"
       osm_username: "Δεν είστε ακόμη μέλος?? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Δημιουργήστε έναν λογαριασμό Openstreetmap τώρα.</a> "
       password: "(αφήστε κενό,εάν δεν θέλετε να το αλλάξετε)"
       phone: "Για παράδειγμα: +49 30 123456-78 "
       website: "Για παράδειγμα: http://www.example.com "
-    labels: 
+    labels:
       category: "Κατηγορία:"
       city: "Πόλη:"
       create: "Δημιουργήστε τοποθεσία"
@@ -292,18 +295,18 @@ el:
       website: "Ιστοσελίδα:"
       wheelchair: "Πρόσβαση με αναπηρική καρέκλα?"
       wheelchair_description: "Σχόλια σχετικά με την προσβασιμότητα:"
-    titles: 
+    titles:
       basic: "Βασικά δεδομένα"
       optional: "Περισσότερες πληροφορίες <span class=\"addition\">(all fields are optional)</span> "
-  global: 
+  global:
     form_validation_error: "Παρακαλώ σημειώστε τα παρακάτω λάθη."
-  header: 
-    meta: 
+  header:
+    meta:
       description: "Βρείτε μέρη προσβάσιμα με αναπηρική καρέκλα - wheelmap.org "
       homepage: "Αρχική σελίδα"
       keywords: "Μέρη προσβάσιμα με αναπηρική καρέκλα - βρείτε σημά αναζήτησης"
       search: Αναζήτηση
-    navigation: 
+    navigation:
       blog: Blog
       feedback: Ανατροφοδότηση
       home: Έναρξη
@@ -317,77 +320,77 @@ el:
       tolk: Μεταφράσεις
       what_is_barrier_free: "Τι σημαίνει 'προσβάσιμο με αναπηρική καρέκλα'?"
       what_is_wheelmap: "Τι είναι το wheelmap?"
-    searchbar: 
+    searchbar:
       add_place: "Πρόσθεσε μια άλλη τοποθεσία\n"
       find: Aναζήτηση
       placeholder: "π.χ. Ακρόπολη, Δελφοί"
       title_add_place: "Πρόσθεσε μια νέα τοποθεσία, τώρα!"
     tagline: "Wheelmap logo"
     title: "Wheelmap - προσβάσιμες τοποθεσίες με αναπηρική καρέκλα"
-  helpers: 
-    select: 
+  helpers:
+    select:
       prompt: "Παρακαλώ επιλέξτε"
-    submit: 
+    submit:
       create: "Δημιουργία %{model} "
       submit: "Αποθήκευση %{model} "
       update: "Ενημέρωση %{model} "
-  home: 
-    index: 
-      filter: 
+  home:
+    index:
+      filter:
         category: "Κατηγορία:"
         wheelchair: "Δυνατότητα πρόσβασης με αναπηρική καρέκλα (Τί σημαίνει;)"
-      link: 
-        node: 
+      link:
+        node:
           create: "Πρόσθεσε νέα τοποθεσία"
-  layouts: 
-    application: 
-      banner: 
+  layouts:
+    application:
+      banner:
         alt: "Μια πρωτοβουλία των Sozialhelden.de"
-  node: 
-    address: 
+  node:
+    address:
       city: "%{city} %{postcode}"
       street: "%{housenumber} %{street} "
-    tags: 
+    tags:
       phone: "Τηλέφωνο:"
       website: "Ιστοσελίδα:"
-  nodes: 
-    create: 
-      flash: 
+  nodes:
+    create:
+      flash:
         not_successfull: "Η εισαγωγή δεδομένων ήταν εσφαλμένη ή μη ολοκληρωμένη."
         successfull: "Ευχαριστούμε, η υποβολή του αιτήματος σας αποθηκεύτηκε επιτυχώς και θα είναι oline σύντομα."
-    edit: 
-      header: 
+    edit:
+      header:
         title: "Επεξεργαστείτε την τοποθεσία: %{node} | wheelmap.org "
-      link: 
+      link:
         large_map: "&laquo; Ακύρωση"
-    errors: 
+    errors:
       default: "Παρουσιάστηκε σφάλμα. Έχουμε ήδη ενημερωθεί!"
       not_authorized: "Συγνώμη, απέτυχε η πιστοποίηση"
       not_available: "Συγνώμη, αυτή η σελίδα δεν είναι προσωρινά διαθέσιμη."
       not_existent: "Συγνώμη, αυτή η τοποθεσία δεν είναι πλέον διαθέσιμη."
       not_found: "Συγνώμη, η σελίδα δεν βρέθηκε."
       param_missing: "Παρακαλώ, εισάγετε έναν όρο αναζήτησης.\n"
-    flash: 
+    flash:
       authorize_wheelmap: "Χρειάζεστε ενα OpenStreetMap λογαριασμό για να τροποποιήσετε πληροφορίες."
-    new: 
-      header: 
+    new:
+      header:
         title: "Νέα τοποθεσία | wheelmap.org "
-      link: 
+      link:
         large_map: "&laquo; Ακύρωση"
-    show: 
-      header: 
+    show:
+      header:
         title: "Τοποθεσία:%{node} | wheelmap.org "
-      link: 
+      link:
         edit_node: "Επεξεργαστείτε τοποθεσία"
         large_map: Μεγέθυνση
         report_bug: "Report a problem"
-    update: 
-      flash: 
+    update:
+      flash:
         not_successfull: "Η εισαγωγή δεδομένων ήταν εσφαλμένη ή μη ολοκληρωμένη."
         successfull: "Ευχαριστούμε, η υποβολή του αιτήματος σας αποθηκεύτηκε επιτυχώς και θα είναι online σύντομα."
-  number: 
-    currency: 
-      format: 
+  number:
+    currency:
+      format:
         delimiter: ","
         format: "%n %u"
         precision: 2
@@ -395,47 +398,47 @@ el:
         significant: 0
         strip_insignificant_zeros: 0
         unit: €
-    format: 
+    format:
       delimiter: ","
       precision: 3
       separator: "."
       significant: 0
       strip_insignificant_zeros: 0
-    human: 
-      decimal_units: 
+    human:
+      decimal_units:
         format: "%n %u"
-        units: 
+        units:
           billion: Δισεκατομμύρια
           million: Εκατομμύρια
           quadrillion: Τετρακισεκατομμύρια
           thousand: Χιλιάδες
           trillion: Τρισεκατομμύρια
-      format: 
+      format:
         precision: 1
         significant: true
         strip_insignificant_zeros: true
-      storage_units: 
+      storage_units:
         format: "%n %u"
-        units: 
-          byte: 
+        units:
+          byte:
             one: Byte
             other: Bytes
           gb: GB
           kb: KB
           mb: MB
           tb: TB
-  oauth: 
-    application: 
-      connect: 
+  oauth:
+    application:
+      connect:
         headline: "Για να επεξεργαστείτε ή να δημιουργήσετε τοποθεσίες στο wheelmap.org, θα πρέπει πρώτα να συνδέσετε τον λογαριασμό σας με τον street map λογαριασμό."
-    callback: 
+    callback:
       notice: "Ο wheelmap λογαριασμός σας είναι πλέον συνδεδεμένος με τον OpenStreetMap λογαριασμό %{user}. "
   or: ή
-  place: 
+  place:
     one: "%{count} Σημείο"
     other: "%{count} Σημεία"
-  poi: 
-    category: 
+  poi:
+    category:
       accommodation: Διαμονή
       education: Εκπαίδευση
       food: Τρόφιμα
@@ -448,8 +451,8 @@ el:
       sport: Αθλητισμός
       tourism: Τουρισμός
       unknown: Άγνωστο
-    name: 
-      accommodation: 
+    name:
+      accommodation:
         beach_resort: "Παραλιακό ξενοδοχείο"
         bed_and_breakfast: "Πανσιόν με πρωινό"
         camp_site: Κάμπινγκ
@@ -459,14 +462,14 @@ el:
         hostel: Hostel
         hotel: Ξενοδοχείο
         motel: Μοτέλ
-      education: 
+      education:
         college: Κολέγιο
         kindergarten: Νηπιαγωγείο
         library: Βιβλιοθήκη
         museum: Μουσείο
         school: Σχολείο
         university: Πανεπιστήμιο
-      food: 
+      food:
         bar: Μπάρ
         biergarten: "Υπαίθρια μπυραρία"
         cafe: Καφετέρια
@@ -474,12 +477,12 @@ el:
         fast_food: Ταχυφαγεία
         pub: Πάμπ
         restaurant: Εστιατόριο
-      government: 
+      government:
         courthouse: Δικαστήριο
         embassy: Πρεσβεία
         public_building: "Δημόσια κτήρια"
         townhall: Δημαρχείο
-      leisure: 
+      leisure:
         arena: Αρένα
         cinema: Κινηματογράφος
         gallery: Πινακοθήκη
@@ -487,20 +490,20 @@ el:
         sauna: Σάουνα
         theatre: Θέατρο
         zoo: "Ζωολογικός κήπος"
-      misc: 
+      misc:
         doctors: Γιατροί
         hospital: Νοσοκομείο
         pharmacy: Φαρμακείο
         place_of_worship: "Τόπος λατρείας"
         toilets: Αποχωρητήριο
         veterinary: Κτηνίατρος
-      money_post: 
+      money_post:
         atm: ΑΤΜ
         bank: Τράπεζα
         bureau_de_change: "Tαμείο συναλλάγματος"
         post_box: Γραμματοκιβώτιο
         post_office: Ταχυδρομείο
-      public_transfer: 
+      public_transfer:
         aerodrome: Αεροδρόμιο
         bicycle_parking: "Χώρος στάθμευσης για ποδήλατα"
         bicycle_rental: "Ενοικίαση ποδηλάτων"
@@ -523,7 +526,7 @@ el:
         subway_entrance: "Είσοδος Μετρό"
         terminal: "Σταθμός αερολιμένα"
         tram_stop: "Στάση τράμ"
-      shopping: 
+      shopping:
         alcohol: "Οινοπνευματώδη ποτά"
         bakery: Φούρνος
         beverages: Ποτά
@@ -548,12 +551,12 @@ el:
         optician: "Οπτικός "
         shoes: Υποδήματα
         supermarket: Σουπερμάρκετ
-      sport: 
+      sport:
         sports_centre: "Αθλητικά κέντρα"
         stadium: Στάδιον
         swimming: Κολύμπι
         swimming_pool: Πισίνα
-      tourism: 
+      tourism:
         archaeological_site: "Αρχαιολογικός χώρος"
         arts_centre: "Κέντρο Τεχνών"
         artwork: "Έργα Τέχνης"
@@ -568,69 +571,69 @@ el:
         theme_park: "Θεματικό πάρκο"
         tower: Πύργος
         viewpoint: Aξιοθέατα
-      unknown: 
+      unknown:
         unknown: Άγνωστο
-  profile: 
-    edit: 
-      application: 
-        oauth: 
+  profile:
+    edit:
+      application:
+        oauth:
           connected: "Κατάσταση: συνδεδεμένος"
           grant: "Συνδεθείτε τώρα"
           not_connected: "Κατάσταση: μη συνδεδεμένος"
           revoke: Αποσύνδεση
       headline: "Επεξεργαστείτε το προφίλ σας"
-  search: 
-    index: 
-      search: 
+  search:
+    index:
+      search:
         for: "Αναζήτηση για \"%{q}\""
         not_found: "Δεν βρέθηκαν τοποθεσίες!"
   statistics: Στατιστικά
-  support: 
-    array: 
+  support:
+    array:
       last_word_connector: και
       sentence_connector: και
       skip_last_comma: true
       two_words_connector: και
       words_connector: ","
-    select: 
+    select:
       prompt: "Παρακαλώ επιλέξτε"
-  time: 
+  time:
     am: πρωί
-    formats: 
+    formats:
       default: "%d %B %Y %H:%M"
       long: "%A %d %B %Y %H:%M:%S %Z"
       short: "%d %b %H:%M"
     pm: απόγευμα
-  user_sessions: 
-    create: 
-      activation: 
+  user_sessions:
+    create:
+      activation:
         notice: "Ο λογαριασμός σας έχει ενεργοποιηθεί!"
-      error: 
+      error:
         notice: "To Email και ο κωδικός δεν ταιριάζουν."
       notice: "Είστε συνδεδεμένος!"
-    destroy: 
+    destroy:
       notice: "Αντίο, ευχόμαστε να επιστρέψτε σύντομα!"
-    new: 
+    new:
       email: Email
       login: Σύνδεση
       login_with_twitter: "Συνδεθείτε μέσω Τwitter"
       password: "Κωδικός πρόσβασης"
       remember_me: "Διατήρηση σύνδεσης"
-  wheelchairstatus: 
+  wheelchairstatus:
     limited: "Έν μέρη προσβάσιμο με αναπηρική καρέκλα"
     ? "no"
     : "Μη προσβάσιμο με αναπηρική καρέκλα"
     unknown: "Άγνωστη η προσβασιμότητα με αναπηρική καρέκλα"
     ? "yes"
     : "Πλήρης προσβασιμότητα με αναπηρική καρέκλα"
-  wheelmap: 
-    itunes: 
+  wheelmap:
+    itunes:
       alt: "AppStore Logo"
       title: "Κατεβάστε το iPhone App τώρα!"
-    logo: 
+    logo:
       alt: "Wheelmap Λογότυπο - Βρείτε μέρη/τοποθεσίες, προσβάσιμα με αναπηρική καρέκλα"
       title: "Wheelmap - Βρείτε μέρη/τοποθεσίες, προσβάσιμα με αναπηρική καρέκλα"
-    what_is: 
+    what_is:
       fully_accessible: "Η είσοδος δεν είναι υψηλότερη των 7 εκατοστών; όλες οι τοποθεσίες είναι προσβάσιμες με αναπηρική καρέκλα (χωρίς καμία εξαίρεση) διαθέσιμο αποχωρητήριο για άτομα με ειδικές ανάγκες."
       limited_accessible: "Η είσοδος δεν είναι υψηλότερη των 7 εκατοστών;  οι περισσότερες τοποθεσίες είναι προσβάσιμες με αναπηρική καρέκλα"
       not_accessible: "Η είσοδος ή ένα σκαλοπάτι είναι υψηλότερο των 7 εκατοστών;  οι περισσότερες τοποθεσίες δεν είναι προσβάσιμες με αναπηρική καρέκλα"

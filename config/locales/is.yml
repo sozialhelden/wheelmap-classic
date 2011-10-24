@@ -1,10 +1,10 @@
---- 
-is: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+is:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "þarf að vera tekið gilt"
         blank: "má ekki vera autt"
         confirmation: "passar ekki við staðfestingu"
@@ -25,30 +25,30 @@ is:
         too_long: "er of langt (má aðeins vera %{count} stafir)"
         too_short: "er of stutt (má aðeins vera %{count} stafir)"
         wrong_length: "er af rangri lengd (má aðeins vera %{count} stafir)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: Tölvupóstur
           password: Lykilorð
           remember_me: "Haldast innskráður"
-      template: 
+      template:
         body: "Upp kom vandamál í eftirfarandi dálkum:"
-        header: 
+        header:
           one: "Ekki var hægt að vista %{model} vegna villu."
           other: "Ekki var hægt að vista %{model} vegna %{count} villna."
-  application: 
-    require_no_user: 
+  application:
+    require_no_user:
       notice: "Þú ert nú þegar innskráður ..."
-    require_user: 
+    require_user:
       notice: "Þú verður að vera innskráður til að sjá þessa síðu"
-  breadcrumbs: 
-    node: 
+  breadcrumbs:
+    node:
       create: "Bæta við nýjum stað"
       edit: "Breyta stað"
     root: wheelmap
-  common: 
+  common:
     close: loka
-  date: 
-    abbr_day_names: 
+  date:
+    abbr_day_names:
       - sun
       - mán
       - þri
@@ -56,7 +56,7 @@ is:
       - fim
       - fös
       - lau
-    abbr_month_names: 
+    abbr_month_names:
       - ~
       - jan
       - feb
@@ -70,7 +70,7 @@ is:
       - okt
       - nóv
       - des
-    day_names: 
+    day_names:
       - sunnudagur
       - mánudagur
       - þriðjudagur
@@ -78,11 +78,11 @@ is:
       - fimmtudagur
       - föstudagur
       - laugardagur
-    formats: 
+    formats:
       default: "%d.%m.%Y"
       long: "%e. %B %Y"
       short: "%e. %b"
-    month_names: 
+    month_names:
       - ~
       - janúar
       - febrúar
@@ -96,72 +96,72 @@ is:
       - október
       - nóvember
       - desember
-    order: 
+    order:
       - !ruby/symbol dagur
       - ":mánuður"
       - ":ár"
-  datetime: 
-    distance_in_words: 
-      about_x_hours: 
+  datetime:
+    distance_in_words:
+      about_x_hours:
         one: "u.þ.b. 1 klukkustund"
         other: "u.þ.b. %{count} klukkustundir"
-      about_x_months: 
+      about_x_months:
         one: "u.þ.b. 1 mánuður"
         other: "u.þ.b. %{count} mánuðir"
-      about_x_years: 
+      about_x_years:
         one: "u.þ.b. 1 ár"
         other: "u.þ.b. %{count} ár"
-      almost_x_years: 
+      almost_x_years:
         one: "næstum 1 ár"
         other: "næstum %{count} ár"
       half_a_minute: "hálf mínúta"
-      less_than_x_minutes: 
+      less_than_x_minutes:
         one: "minna en 1 mínúta"
         other: "minna en %{count} mínútur"
-      less_than_x_seconds: 
+      less_than_x_seconds:
         one: "minna en 1 sekúnda"
         other: "minna en %{count} sekúndur"
-      over_x_years: 
+      over_x_years:
         one: "meira en 1 ár"
         other: "meira en %{count} ár"
-      x_days: 
+      x_days:
         one: "1 dagur"
         other: "%{count} dagar"
-      x_minutes: 
+      x_minutes:
         one: "1 mínúta"
         other: "%{count} mínútur"
-      x_months: 
+      x_months:
         one: "1 mánuður"
         other: "%{count} mánuðir"
-      x_seconds: 
+      x_seconds:
         one: "1 sekúnda"
         other: "%{count} sekúndur"
-    prompts: 
+    prompts:
       day: Dagur
       hour: Klukkustund
       minute: Mínúta
       month: Mánuður
       second: Sekúnda
       year: Ár
-  devise: 
-    confirmations: 
+  devise:
+    confirmations:
       confirmed: "Aðgangurinn hefur verið staðfestur. Þú ert núna skráður inn"
       link: "Fékkstu ekki staðfestinga leiðbeiningar?"
       send_instructions: "Þú munt fá tölvupóst með upplýsingar hvernig þú staðfestir aðganginn þinn eftir nokkrar mínútur"
-    destroy: 
+    destroy:
       confirm: "Ertu viss?"
       headline: "Eyða aðgangi"
       link: "Eyða núna"
-    edit: 
-      form: 
-        labels: 
+    edit:
+      form:
+        labels:
           current_password: "Núverandi lykilorð <i>(við þurfum þessar upplýsingar til að staðfesta breytingarnar)</i> "
           email: Tölvupóstur
           password: "Lykilorð <i>(skildu eftir autt ef þú vilt ekki breyta því)</i> "
           password_confirmation: "Lykilorð aftur"
         submit: "Vista breytingar"
       headline: "Stjórna aðgangi"
-    failure: 
+    failure:
       inactive: "Aðgangurinn þinn hefur ekki enn verið virktur."
       invalid: "Rangt tölvupóstfang eða lykilorð."
       invalid_token: "Rangur kóði til að virkja."
@@ -169,43 +169,46 @@ is:
       timeout: "Tíminn er runninn út, vinsamlegast skráðu þig aftur inn til að halda áfram."
       unauthenticated: "Þú þarft að skrá þig inn til að geta haldið áfram."
       unconfirmed: "Þú þarft að staðfesta aðganginn þinn til að halda áfram."
-    mailer: 
-      confirmation_instructions: "Staðfestinga upplýsingar"
-      reset_password_instructions: "Leiðbeiningar um endursetningu lykilorðs"
-      unlock_instructions: "Aflæsa upplýsingum"
+    mailer:
+      confirmation_instructions:
+        subject: "Staðfestinga upplýsingar"
+      reset_password_instructions:
+        subject: "Leiðbeiningar um endursetningu lykilorðs"
+      unlock_instructions:
+        subject: "Aflæsa upplýsingum"
     mandatory: "* verður að velja"
-    omniauth_callbacks: 
+    omniauth_callbacks:
       failure: "Gat ekki gefið þér aðgang frá %{kind} af því að \"%{reason}\"."
       success: "Gat gefið aðgang frá %{kind} aðgangi."
-    password_recovery: 
-      form: 
-        labels: 
+    password_recovery:
+      form:
+        labels:
           email: Tölvupóstur
         submit: "Endursetja lykilorð"
       headline: "Gleymt lykilorð?"
-    password_reset: 
-      email: 
+    password_reset:
+      email:
         comment: "Ef þú baðst ekki um að breyta lykilorðinu þínu þá vinsamlegast hunsið þennan póst<br/>Lykilorðið þitt mun ekki breytast nema þú smellir á þennan tengil."
         headline: "Velkominn %{email} "
         link: "Breyta lykilorði"
         text: "Einhver bað um breytingu á lykilorði. Þú getur gert það með því að smella á þennan tengil:"
-      form: 
-        labels: 
+      form:
+        labels:
           password: "Nýtt lykilorð"
           password_confirmation: "Lykilorð aftur"
         submit: "Endursetja lykilorð"
       headline: "Endursetja lykilorð"
-    passwords: 
+    passwords:
       link: "Gleymdirðu lykilorði?"
       send_instructions: "Þú munt fá tölvupóst með upplýsingar hvernig þú endursetur aðganginn þinn eftir nokkrar mínútur"
       updated: "Lykilorðinu þínu var breytt. Þú ert núna skráður inn"
-    registrations: 
+    registrations:
       destroyed: "Bless! Aðganginum þínum hefur verið lokað. Vonandi sjáumst við aftur."
       inactive_signed_up: "Þú hefur verið skráður. Hinsvegar gátum við ekki skráð þig inn því aðgangurinn þinn er %{reason}."
       link: Innskráning
       signed_up: "Þú hefur innskráð þig. Ef valið færðu staðfestingu í tölvupósti"
       updated: "Þú hefur uppfært aðganginn þinn"
-    sessions: 
+    sessions:
       inactive: "Aðgangurinn þinn hefur ekki verið staðfestur."
       invalid: "Rangt tölvupóstfang eða lykilorð."
       invalid_token: "Ógilt auðkenningartákn"
@@ -216,33 +219,33 @@ is:
       timeout: "Tíminn er runninn út, vinsamlegast skráðu þig aftur inn til að halda áfram."
       unauthenticated: "Þú þarft að innskrá eða nýskrá þig til að halda áfram."
       unconfirmed: "Þú verður að staðfesta aðganginn þinn áður en þú heldur áfram."
-    sign_in: 
-      form: 
-        labels: 
+    sign_in:
+      form:
+        labels:
           email: Tölvupóstur
           password: Lykilorð
           remember_me: "haldast innskráður?"
         submit: Innskráning
       headline: Innskráning
-    sign_out: 
+    sign_out:
       headline: Útskrá
-    sign_up: 
-      form: 
-        labels: 
+    sign_up:
+      form:
+        labels:
           email: Tölvupóstfang
           password: Lykilorð
           password_confirmation: "Lykilorð aftur"
           wants_newsletter: "Já takk, skráið mig á póstlista wheelmap. (En ekki senda meira en einn póst á mánuði.)"
         submit: "Skrá sig"
       headline: "Skrá sig"
-    unlocks: 
+    unlocks:
       link: "Fékkstu ekki leiðbeiningar til að aflæsa?"
       send_instructions: "Þú munt fá tölvupóst með leiðbeiningum hvernig þú aflæsir aðganginn þinn eftir örfáar mínútur"
       unlocked: "Aðganginum þínum hefur verið ólæst. Þú ert núna innskráður."
-  errors: 
+  errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
-    messages: 
+    messages:
       accepted: "verður að staðfesta"
       already_confirmed: "nú þegar staðfestur, reyndu að skrá þig inn"
       blank: "verður að fylla út"
@@ -261,7 +264,7 @@ is:
       not_an_integer: "verður að vera meira"
       not_found: "fannst ekki"
       not_locked: "var ekki læst"
-      not_saved: 
+      not_saved:
         one: "%{resource} er ekki vistað vegna einnar villu."
         other: "%{resource} ekki vistað vegna %{count} villna."
       odd: "verður að vera stakt"
@@ -269,33 +272,33 @@ is:
       too_long: "er of langt (ekki fleiri en %{count} stafir)"
       too_short: "er of stutt (ekki minna en %{count} stafir)"
       wrong_length: "er vitlaus lengd (ætti að vera %{count} stafir)"
-    template: 
+    template:
       body: "að voru vandamál með eftirfarandi dálka:"
-      header: 
+      header:
         one: "%{model} er ekki vistað vegna einnar villu."
         other: "%{model} ekki vistað vegna %{count} villna."
-  flash: 
-    actions: 
-      create: 
+  flash:
+    actions:
+      create:
         notice: "%{resource_name} var skráð án vandræða."
-      destroy: 
+      destroy:
         alert: "%{resource_name} er ekki hægt að eyða."
         notice: "%{resource_name} var eytt án vandræða."
-      update: 
+      update:
         notice: "%{resource_name} var uppfært án vandræða."
-  form: 
+  form:
     show_fully_accessible_places: Hjólastólaaðgengi
     show_limited_accessible_places: "Eitthvað hjólastólaaðgengi"
     show_places_without_status: Óvitað
     show_unaccessible_places: "Ekkert hjólastólaaðgengi"
-  formtastic: 
-    hints: 
+  formtastic:
+    hints:
       lat: "Færðu merkið á réttan stað á kortinu"
       osm_username: "Ekki meðlimur? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Fáðu þér Openstreetmap aðgang núna</a> "
       password: "(skildu eftir autt ef þú vilt ekki breyta)"
       phone: "Dæmi: +354 5678910"
       website: "Dæmi: http://www.vefsida.is"
-    labels: 
+    labels:
       category: "Flokkur:"
       city: "Borg:"
       create: "Búa til stað"
@@ -317,18 +320,18 @@ is:
       website: "Vefsíða:"
       wheelchair: Hjólastólaaðgengilegt?
       wheelchair_description: "Athugasemd um aðgengi:"
-    titles: 
+    titles:
       basic: "Helstu gögn"
       optional: "Meiri upplýsingar <span class=\"addition\">(allir fletirnir eru valfrjálsir)</span> "
-  global: 
+  global:
     form_validation_error: "Vinsamlegast skrifaðu villurnar sem eru hér fyrir neðan"
-  header: 
-    meta: 
+  header:
+    meta:
       description: "Leitaðu uppi aðgengilega staði - wheelmap.org"
       homepage: Heim
       keywords: "hjólastóll aðgengi staðir finna leita merkja"
       search: Leita
-    navigation: 
+    navigation:
       blog: Blogg
       feedback: Athugasemdir
       home: Byrja
@@ -342,7 +345,7 @@ is:
       tolk: Þýðingar
       what_is_barrier_free: "Hvað þýðir \"hjólastólaaðgengilegt\"?"
       what_is_wheelmap: "Hvað er wheelmap?"
-    searchbar: 
+    searchbar:
       add_place: "Bæta við öðrum stað"
       find: finna
       label: Leit
@@ -350,79 +353,79 @@ is:
       title_add_place: "Bæta við nýju stað á þessari staðsetningu strax!"
     tagline: "Wheelmap logo"
     title: "Wheelmap - finndu staði aðgengilega hjólastólum"
-  helpers: 
-    select: 
+  helpers:
+    select:
       prompt: "Vinsamlega veldu"
-    submit: 
+    submit:
       create: "Búa til %{model}"
       submit: "Vista %{model}"
       update: "Uppfæra %{model}"
-  home: 
-    index: 
-      filter: 
+  home:
+    index:
+      filter:
         category: "Flokkur:"
         wheelchair: Hjólastólaaðgengilegt?
-      ie: 
-        action: 
+      ie:
+        action:
           ignore: Hunsa
           upgrade: "Uppfæra vafra"
-        warning: 
+        warning:
           headline: Afsakið!
           message: "Þú virðist vera að nota Internet Explorer. Wheelmap þarf á öðrum vafra að halda til að virka betur. Vinsamlegast notaðu Firefox, Chrome, Safari eða Opera"
-      link: 
-        node: 
+      link:
+        node:
           create: "Bæta við nýjum stað"
-  layouts: 
-    application: 
-      banner: 
+  layouts:
+    application:
+      banner:
         alt: "Verkefni unnið af Sozialhelden.de"
-  node: 
-    address: 
+  node:
+    address:
       city: "%{city} %{postcode} "
       street: "%{housenumber} %{street} "
-    tags: 
+    tags:
       phone: "Sími:"
       website: "Vefsíða:"
-  nodes: 
-    create: 
-      flash: 
+  nodes:
+    create:
+      flash:
         not_successfull: "Úps, innleggið þitt var annaðhvort rangt eða ekki klárað"
         successfull: "Takk fyrir, innleggið þitt er vistað og mun birtast innan skamms"
-    edit: 
-      header: 
+    edit:
+      header:
         title: "Breyta stað: %{node} | wheelmap.org "
-      link: 
+      link:
         large_map: "&laquo; Hætta við"
-    errors: 
+    errors:
       default: "Úps, eitthvað fór úrskeiðis. En við höfum verið látin vita!"
       not_authorized: "Afsakið, auðkenning mistókst"
       not_available: "Afsakið, þessu síða er tímabundið niðri."
       not_existent: "Afsakið, þessi staður er ekki til lengur."
       not_found: "Afsakið, síða ekki fundin."
       param_missing: "Skrifaðu niður leitarorð"
-    flash: 
+    flash:
       authorize_wheelmap: "Þú þarft OpenStreetMap aðgang til að breyta gögnum"
-    new: 
-      header: 
+    new:
+      header:
         title: "Nýr staður | wheelmap.org "
-      link: 
+      link:
         large_map: "&laquo; Hætta við"
-    show: 
-      header: 
+    show:
+      header:
         title: "Staður: %{node} | wheelmap.org"
-      link: 
+      link:
         edit_node: "Breyta stað"
         large_map: Stækka
         report_bug: "Tilkynntu villu"
-    update: 
-      flash: 
+    update:
+      flash:
         not_successfull: "Úps, innleggið þitt var rangt eða ekki klárað."
         successfull: "Takk fyrir, innleggið þitt hefur verið vistað og verður birt innan skamms"
-    update_wheelchair: 
+    update_wheelchair:
       successfull: "Staðan fyrir \"%{name}\" hefur verið breytt í \"%{status} hjólastólaaðgengilegt\" og verður virkt innan skamms"
-  number: 
-    currency: 
-      format: 
+  number:
+    currency:
+      format:
         delimiter: ","
         format: "%u %n"
         precision: 2
@@ -430,45 +433,45 @@ is:
         significant: 0
         strip_insignificant_zeros: 0
         unit: kr.
-    format: 
+    format:
       delimiter: "."
       precision: 3
       separator: ","
       significant: 0
       strip_insignificant_zeros: 0
-    human: 
-      decimal_units: 
+    human:
+      decimal_units:
         format: "%n %u"
-        units: 
+        units:
           billion: Billjón
           million: Milljón
           quadrillion: Skrilljón
           thousand: Þúsund
           trillion: Trilljón
-      format: 
+      format:
         precision: 1
-      storage_units: 
+      storage_units:
         format: "%n %u"
-        units: 
-          byte: 
+        units:
+          byte:
             one: bæti
             other: bæti
           gb: GB
           kb: KB
           mb: MB
           tb: TB
-  oauth: 
-    application: 
-      connect: 
+  oauth:
+    application:
+      connect:
         headline: "Þú verður að aðganginn þinn við open street map áður en þú getur búið til eða breytt stöðum á wheelmap.org"
-    callback: 
+    callback:
       notice: "Wheelmap aðgangurinn þinn er núna tengdur OpenStreetMap %{user}. "
   or: eða
-  place: 
+  place:
     one: "%{count} staður"
     other: "%{count} staðir"
-  poi: 
-    category: 
+  poi:
+    category:
       accommodation: Gisting
       education: Menntun
       food: Matur
@@ -481,8 +484,8 @@ is:
       sport: Íþróttir
       tourism: Ferðamennska
       unknown: "Ekki vitað"
-    name: 
-      accommodation: 
+    name:
+      accommodation:
         beach_resort: Strandarhótel
         bed_and_breakfast: "Hótel með morgunmat"
         camp_site: Tjaldsvæði
@@ -492,14 +495,14 @@ is:
         hostel: Hostel
         hotel: Hótel
         motel: Mótel
-      education: 
+      education:
         college: Menntaskóli
         kindergarten: Leikskóli
         library: Bókasafn
         museum: Safn
         school: Skóli
         university: Háskóli
-      food: 
+      food:
         bar: Skemmtistaður
         biergarten: Bjórgarður
         cafe: Kaffihús
@@ -507,12 +510,12 @@ is:
         fast_food: Skyndibiti
         pub: Pöbb
         restaurant: Veitingahús
-      government: 
+      government:
         courthouse: Réttarhús
         embassy: Sendiráð
         public_building: "Opinber bygging"
         townhall: Ráðhús
-      leisure: 
+      leisure:
         arena: Svæði
         cinema: Bíóhús
         gallery: Listasöfn
@@ -520,20 +523,20 @@ is:
         sauna: Gufubað
         theatre: Leikhús
         zoo: Dýragarður
-      misc: 
+      misc:
         doctors: Læknir
         hospital: Spítali
         pharmacy: Apótek
         place_of_worship: Bænahús
         toilets: Klósett
         veterinary: Dýralæknir
-      money_post: 
+      money_post:
         atm: Hraðbanki
         bank: Banki
         bureau_de_change: Skiptimynt
         post_box: Pósthólf
         post_office: Póstur
-      public_transfer: 
+      public_transfer:
         aerodrome: Flugvöllur
         bicycle_parking: Reiðhjólastæði
         bicycle_rental: Reiðhjólaleiga
@@ -556,7 +559,7 @@ is:
         subway_entrance: "Inngangur að neðanjarðarlest"
         terminal: "Biðstöð á flugvelli"
         tram_stop: Lestavagnastopp
-      shopping: 
+      shopping:
         alcohol: Áfengi
         bakery: Bakarí
         beverages: Drykkir
@@ -581,12 +584,12 @@ is:
         optician: Gleraugnaverslun
         shoes: Skór
         supermarket: Matarverslun
-      sport: 
+      sport:
         sports_centre: Íþróttabúð
         stadium: Íþróttavellir
         swimming: Sund
         swimming_pool: Sundlaug
-      tourism: 
+      tourism:
         archaeological_site: Fornleifastaður
         arts_centre: Listamiðstöðvar
         artwork: List
@@ -601,68 +604,68 @@ is:
         theme_park: Þemagarður
         tower: Turn
         viewpoint: Útsýnispallur
-      unknown: 
+      unknown:
         unknown: "Ekki vitað"
-  profile: 
-    edit: 
-      application: 
-        oauth: 
+  profile:
+    edit:
+      application:
+        oauth:
           connected: "Staða: tengdur"
           grant: "Tengjast núna"
           not_connected: "Staða: ekki tengdur"
           revoke: Aftengjast
       headline: "Breyttu prófílnum þínum"
-  search: 
-    index: 
-      search: 
+  search:
+    index:
+      search:
         for: "Leita að \"%{q}\" "
         not_found: "Engir staðir fundust!"
   statistics: "Tölfræðilegar upplýsingar"
-  support: 
-    array: 
+  support:
+    array:
       last_word_connector: " og "
       sentence_connector: og
       two_words_connector: " og "
       words_connector: ", "
-    select: 
+    select:
       prompt: "Vinsamlegast veldu"
-  time: 
+  time:
     am: "fyrir hádegi"
-    formats: 
+    formats:
       default: "%A %e. %B %Y kl. %H:%M"
       long: "%A %e. %B %Y kl. %H:%M"
       short: "%e. %B kl. %H:%M"
     pm: "eftir hádegi"
-  user_sessions: 
-    create: 
-      activation: 
+  user_sessions:
+    create:
+      activation:
         notice: "Aðgangurinn þinn er virkur!"
-      error: 
+      error:
         notice: "Tölvupóstur og lykilorð stemma ekki."
       notice: "Þú ert inni!"
-    destroy: 
+    destroy:
       notice: "Bless, komdu aftur fljótlega!"
-    new: 
+    new:
       email: Tölvupóstur
       login: Innskráning
       login_with_twitter: "Innskráning með Twitter"
       password: Lykilorð
       remember_me: "Vera innskráður"
-  wheelchairstatus: 
+  wheelchairstatus:
     limited: "eitthvað hjólastólaaðgengi"
     ? "no"
     : "ekkert hjólastólaaðgengi"
     unknown: "hjólastólaaðgengi ekki vitað"
     ? "yes"
     : "algjörlega hjólastólaaðgengilegt"
-  wheelmap: 
-    itunes: 
+  wheelmap:
+    itunes:
       alt: "AppStore Logo"
       title: "Náðu í iPhone forritið núna!"
-    logo: 
+    logo:
       alt: "Wheelmap Logo - Finndu hjólastólaaðgengilega staði"
       title: "Wheelmap - Finndu hjólastólaaðgengilega staði"
-    what_is: 
+    what_is:
       fully_accessible: "Þröskuldurinn á innganginum er ekki hærri en 7 cm; allir staðir aðgengilegir fyrir hjólastólanotendur (undantekningarlaust); klósett fyrir fatlaða á svæðinu"
       limited_accessible: "Þröskuldurinn á innganginum er ekki hærri en 7 cm; mikilvægustu staðirnir aðgengilegir fyrir hjólastólanotendur"
       not_accessible: "Þröskuldurinn á innganginum er hærri en 7 cm; eða stigi við inngang; mikilvægustu staðirnir eru ekki aðgengilegir fyrir hjólastólanotendur"

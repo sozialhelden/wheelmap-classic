@@ -162,9 +162,12 @@ es:
         submit: "Guardar cambios"
       headline: "Administrar cuenta"
     mailer:
-      confirmation_instructions: "instrucciones de confirmación"
-      reset_password_instructions: "vuelva a poner instrucciones de confirmación"
-      unlock_instructions: "abra instrucciones"
+      confirmation_instructions:
+        subject: "instrucciones de confirmación"
+      reset_password_instructions:
+        subject: "vuelva a poner instrucciones de confirmación"
+      unlock_instructions:
+        subject: "abra instrucciones"
     mandatory: "* casilla obligatoria"
     password_recovery:
       form:

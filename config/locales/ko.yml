@@ -1,10 +1,10 @@
---- 
-ko: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+ko:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message} "
-      messages: 
+      messages:
         accepted: 승인해주세요
         blank: "빈칸을 채워주세요"
         confirmation: "입력한 내용이 일치하지 않습니다."
@@ -25,30 +25,30 @@ ko:
         too_long: "은(는) 너무 깁니다 (최대 %{count} 글자)"
         too_short: "은(는) 너무 짧습니다 (최대 %{count} 글자)"
         wrong_length: "은(는) 길이가 맞지 않습니다 (%{count} 글자여야 합니다)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: 메일주소
           password: 비밀번호
           remember_me: "로그인 상태유지"
-      template: 
+      template:
         body: "다음 항목에 문제가 있습니다 :"
-        header: 
+        header:
           one: "%{model} 저장 중 1개의 에러가 발생했습니다"
           other: "%{model} 저장 중 %{count}개의 에러가 발생했습니다"
-  application: 
-    require_no_user: 
+  application:
+    require_no_user:
       notice: "당신은 이미 로그인 되어 있습니다..."
-    require_user: 
+    require_user:
       notice: "이 페이지를 보려면 로그인을 해야 합니다"
-  breadcrumbs: 
-    node: 
+  breadcrumbs:
+    node:
       create: "새로운 장소등록"
       edit: "장소 수정"
     root: wheelmap
-  common: 
+  common:
     close: 닫기
-  date: 
-    abbr_day_names: 
+  date:
+    abbr_day_names:
       - 일
       - 월
       - 화
@@ -56,7 +56,7 @@ ko:
       - 목
       - 금
       - 토
-    abbr_month_names: 
+    abbr_month_names:
       - ~
       - 1월
       - 2월
@@ -70,7 +70,7 @@ ko:
       - 10월
       - 11월
       - 12월
-    day_names: 
+    day_names:
       - 일요일
       - 월요일
       - 화요일
@@ -78,11 +78,11 @@ ko:
       - 목요일
       - 금요일
       - 토요일
-    formats: 
+    formats:
       default: "%Y-%m-%d "
       long: "%B %d, %Y"
       short: "%b %d"
-    month_names: 
+    month_names:
       - ~
       - 1월
       - 2월
@@ -96,72 +96,72 @@ ko:
       - 10월
       - 11월
       - 12월
-    order: 
+    order:
       - !ruby/symbol year
       - !ruby/symbol month
       - !ruby/symbol day
-  datetime: 
-    distance_in_words: 
-      about_x_hours: 
+  datetime:
+    distance_in_words:
+      about_x_hours:
         one: "약 1시간"
         other: "약 %{count} 시간"
-      about_x_months: 
+      about_x_months:
         one: "약 1개월"
         other: "약 %{count} 개월"
-      about_x_years: 
+      about_x_years:
         one: "약 1년"
         other: "약 %{count}년"
-      almost_x_years: 
+      almost_x_years:
         one: "거의 1년"
         other: "거의 %{count}년"
       half_a_minute: 30초
-      less_than_x_minutes: 
+      less_than_x_minutes:
         one: "1분 미만"
         other: "%{count}초 미만"
-      less_than_x_seconds: 
+      less_than_x_seconds:
         one: "1초 미만"
         other: "%{count}분 미만"
-      over_x_years: 
+      over_x_years:
         one: "1년 이상"
         other: "%{count}년 이상"
-      x_days: 
+      x_days:
         one: 1일
         other: "%{count}일"
-      x_minutes: 
+      x_minutes:
         one: 1분
         other: "%{count}분"
-      x_months: 
+      x_months:
         one: 1월
         other: "%{count}월"
-      x_seconds: 
+      x_seconds:
         one: 1초
         other: "%{count}초"
-    prompts: 
+    prompts:
       day: 일
       hour: 시
       minute: 분
       month: 월
       second: 초
       year: 년
-  devise: 
-    confirmations: 
+  devise:
+    confirmations:
       confirmed: "당신의 계정이 성공적으로 확인되었습니다. 이제 로그인 되었습니다"
       link: "계정확인에 관한 인증메일을 받지 못하셨습니까?"
       send_instructions: "당신은 몇 분 내에 계정확인에 관한 인증메일을 받게 될 것입니다"
-    destroy: 
+    destroy:
       confirm: "계속 진행하시겠습니까?"
       headline: "계정 삭제"
       link: "지금 삭제"
-    edit: 
-      form: 
-        labels: 
+    edit:
+      form:
+        labels:
           current_password: "현재 비밀번호 <i>(비밀번호 변경을 확인하기 위해 필요합니다)</i> "
           email: 이메일
           password: "비밀번호 <i>(만약 비밀번호 변경을 원하지 않는다면 비워두세요)</i> "
           password_confirmation: "비밀번호 재입력"
         submit: "변경내용 저장"
       headline: "계정정보 편집"
-    failure: 
+    failure:
       inactive: "당신의 계정은 아직 활성화되지 않았습니다"
       invalid: "잘못된 이메일 또는 비밀번호 입니다"
       invalid_token: "잘못된 인증코드 입니다"
@@ -169,43 +169,46 @@ ko:
       timeout: "세션이 만료되었습니다. 다시 로그인 해주세요"
       unauthenticated: "진행하려면 로그인 또는 회원가입이 필요합니다"
       unconfirmed: "진행하기 전에 당신의 계정을 확인해주시기 바랍니다"
-    mailer: 
-      confirmation_instructions: 확인단계
-      reset_password_instructions: "비밀번호 재설정 단계"
-      unlock_instructions: "잠금해제 단계"
+    mailer:
+      confirmation_instructions:
+        subject: 확인단계
+      reset_password_instructions:
+        subject: "비밀번호 재설정 단계"
+      unlock_instructions:
+        subject: "잠금해제 단계"
     mandatory: "* 필수사항"
-    omniauth_callbacks: 
+    omniauth_callbacks:
       failure: "%{kind}에서 \"%{reason}\"(으)로 인해 인증할 수 없습니다"
       success: "%{kind} 계정인증에 성공했습니다"
-    password_recovery: 
-      form: 
-        labels: 
+    password_recovery:
+      form:
+        labels:
           email: 이메일
         submit: "비밀번호 변경"
       headline: "비밀번호를 잊으셨나요?"
-    password_reset: 
-      email: 
+    password_reset:
+      email:
         comment: "비밀번호 변경을 요청한 적이 없다면, 이 메일은 무시하셔도 좋습니다<br/>당신의 비밀번호는 당신이 이 링크를 클릭해도 새로운 비밀번호로 변경되지 않습니다"
         headline: "%{email} 님 환영합니다"
         link: "내 비밀번호 변경"
         text: "누군가 당신의 비밀번호 변경을 요청했습니다. 당신은 다음 링크를 클릭해 비밀번호를 변경할 수 있습니다 :"
-      form: 
-        labels: 
+      form:
+        labels:
           password: "새 비밀번호"
           password_confirmation: "비밀번호 재입력"
         submit: "비밀번호 재설정"
       headline: "비밀번호 재설정"
-    passwords: 
+    passwords:
       link: "비밀번호를 잊으셨나요?"
       send_instructions: "비밀번호 재설정에 관한 안내메일이 몇 분 안에 도착할 것입니다"
       updated: "당신의 비밀번호가 성공적으로 변경되었습니다. 이제 로그인 하실 수 있습니다"
-    registrations: 
+    registrations:
       destroyed: "안녕히 가세요! 당신의 계정이 성공적으로 취소되었습니다. 또 다시 뵐 수 있길 바랍니다"
       inactive_signed_up: "당신은 성공적으로 가입되었습니다. 하지만 %{reason} 때문에 당신은 로그인 할 수 없습니다"
       link: 회원가입
       signed_up: "가입이 완료되었습니다. 만약 계정이 활성화되면 당신의 이메일로 확인메일이 전송됩니다"
       updated: "당신의 계정정보가 업데이트 되었습니다"
-    sessions: 
+    sessions:
       inactive: "당신의 계정은 아직 활성화되지 않았습니다"
       invalid: "잘못된 이메일 또는 비밀번호 입니다"
       invalid_token: "잘못된 인증코드 입니다"
@@ -216,33 +219,33 @@ ko:
       timeout: "세션이 만료되었습니다. 다시 로그인 해주세요"
       unauthenticated: "진행하기 전에 회원가입을 하거나 로그인을 해야 합니다"
       unconfirmed: "진행하기 전에 당신의 계정을 확인해주시기 바랍니다"
-    sign_in: 
-      form: 
-        labels: 
+    sign_in:
+      form:
+        labels:
           email: 이메일
           password: 비밀번호
           remember_me: "로그인 상태유지"
         submit: 로그인
       headline: 로그인
-    sign_out: 
+    sign_out:
       headline: 로그아웃
-    sign_up: 
-      form: 
-        labels: 
+    sign_up:
+      form:
+        labels:
           email: 이메일
           password: 비밀번호
           password_confirmation: "비밀번호 재입력"
           wants_newsletter: "wheelmap에 관한 최신 정보를 이메일로 전해 받겠습니다. (월 1회 가량 발송됩니다.)"
         submit: 회원가입
       headline: 회원가입
-    unlocks: 
+    unlocks:
       link: "계정잠금 해제에 관한 안내를 받지 못했습니까?"
       send_instructions: "몇 분 뒤 당신의 이메일로 계정잠금 해제에 관한 이메일이 도착할 것입니다"
       unlocked: "당신의 계정이 정상적으로 잠금해제 되었습니다. 이제 로그인 하실 수 있습니다"
-  errors: 
+  errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message} "
-    messages: 
+    messages:
       accepted: 승인해주세요
       already_confirmed: "이미 확인되었습니다. 로그인을 시도해보세요"
       blank: "내용을 입력해야 합니다"
@@ -261,7 +264,7 @@ ko:
       not_an_integer: "반드시 정수여야 합니다"
       not_found: "찾을 수 없습니다"
       not_locked: "잠겨 있지 않습니다"
-      not_saved: 
+      not_saved:
         one: "%{resource} 저장 중 1개의 에러가 발생했습니다"
         other: "%{resource} 저장 중 %{count}개의 에러가 발생했습니다"
       odd: "홀수여야 합니다"
@@ -269,33 +272,33 @@ ko:
       too_long: "은(는) 너무 깁니다 (%{count} 글자 초과 안됨)"
       too_short: "은(는) 너무 짧습니다 (%{count} 글자 미만 안됨)"
       wrong_length: "은(는) 잘못된 길이 입니다 (%{count} 글자여야 합니다)"
-    template: 
+    template:
       body: "다음 필드에 문제가 발생했습니다 :"
-      header: 
+      header:
         one: "%{model} 저장 중 1개의 에러가 발생했습니다"
         other: "%{model} 저장 중 %{count}개의 에러가 발생했습니다"
-  flash: 
-    actions: 
-      create: 
+  flash:
+    actions:
+      create:
         notice: "%{resource_name}이(가) 성공적으로 생성되었습니다"
-      destroy: 
+      destroy:
         alert: "%{resource_name}이(가) 제거되지 않았습니다"
         notice: "%{resource_name}이(가) 성공적으로 제거되었습니다"
-      update: 
+      update:
         notice: "%{resource_name}이(가) 성공적으로 업데이트 되었습니다"
-  form: 
+  form:
     show_fully_accessible_places: "휠체어 접근가능"
     show_limited_accessible_places: "휠체어 부분적 접근가능"
     show_places_without_status: "알 수 없는 상태"
     show_unaccessible_places: "휠체어 접근불가"
-  formtastic: 
-    hints: 
+  formtastic:
+    hints:
       lat: "지도 위의 정확한 위치로 표시 이동"
       osm_username: "아직 회원이 아니십니까? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">지금 Openstreetmap 계정을 만드세요</a>"
       password: "(내용변경을 원하지 않으시면, 입력창을 비워두세요)"
       phone: "예제 : +49 30 123456-78 "
       website: "예제 : http://www.example.com"
-    labels: 
+    labels:
       category: "카테고리 :"
       city: "도시 :"
       create: 장소생성
@@ -317,18 +320,18 @@ ko:
       website: "웹사이트 :"
       wheelchair: "휠체어 접근여부?"
       wheelchair_description: "접근성에 대한 의견 :"
-    titles: 
+    titles:
       basic: "기본 데이터"
       optional: "자세한 정보 <span class=\"addition\">(모든 필드가 선택사항 입니다)</span> "
-  global: 
+  global:
     form_validation_error: "아래 오류 내용들을 참조하시기 바랍니다"
-  header: 
-    meta: 
+  header:
+    meta:
       description: "휠체어 접근이 가능한 장소를 찾아보세요 - wheelmap.org"
       homepage: 홈페이지
       keywords: "휠체어 접근가능 장소 표시"
       search: 검색
-    navigation: 
+    navigation:
       blog: 블로그
       feedback: 피드백
       home: 시작
@@ -342,87 +345,87 @@ ko:
       tolk: 번역
       what_is_barrier_free: "\"휠체어 접근가능\"은 무슨 뜻인가요?"
       what_is_wheelmap: "Wheelmap이 뭔가요?"
-    searchbar: 
+    searchbar:
       add_place: "다른 장소 등록"
       find: 찾기
       placeholder: "즉 샌프란시스코 선셋 대로 또는 베를린의 브란덴부르크문"
       title_add_place: "지금 이 위치에 새로운 장소를 추가하세요!"
     tagline: "Wheelmap 로고"
     title: "Wheelmap - 휠체어 접근가능 장소찾기"
-  helpers: 
-    select: 
+  helpers:
+    select:
       prompt: 선택해주세요
-    submit: 
+    submit:
       create: "%{model} 생성"
       submit: "%{model} 저장"
       update: "%{model} 업데이트"
-  home: 
-    index: 
-      filter: 
+  home:
+    index:
+      filter:
         category: "카테고리 :"
         wheelchair: "휠체어 접근성? (그것이 무슨 뜻인가요?)"
-      ie: 
-        action: 
+      ie:
+        action:
           ignore: 무시하기
           upgrade: "브라우저 업데이트"
-        warning: 
+        warning:
           headline: 죄송합니다!
           message: "당신은 인터넷 익스플로러를 사용하고 있는 것 같습니다. Wheelmap 서비스의 안정적 구동에 보다 적절한 브라우저가 필요합니다. 파이어폭스, 크롬, 사파리 또는 오페라 브라우저를 사용해주세요."
-      link: 
-        node: 
+      link:
+        node:
           create: "새로운 장소 등록"
   how?: "접근정보 등록은 어떻게?"
-  layouts: 
-    application: 
-      banner: 
+  layouts:
+    application:
+      banner:
         alt: "Sozialhelden.de에 의한 프로젝트"
-  node: 
-    address: 
+  node:
+    address:
       city: "%{city} %{postcode}"
       street: "%{housenumber} %{street}"
-    tags: 
+    tags:
       phone: "전화 :"
       website: "웹사이트 :"
-  nodes: 
-    create: 
-      flash: 
+  nodes:
+    create:
+      flash:
         not_successfull: "입력한 내용이 잘못되었거나 완전하지 않습니다."
         successfull: "감사합니다. 등록하신 내용이 성공적으로 저장되어 곧 온라인에 반영될 예정입니다"
-    edit: 
-      header: 
+    edit:
+      header:
         title: "장소 편집 : %{node} | wheelmap.org"
-      link: 
+      link:
         large_map: "&laquo; 취소"
-    errors: 
+    errors:
       default: "그것은 잘못된 현상입니다. 그러나 우리는 이미 그 내용을 보고 받았습니다"
       not_authorized: "죄송합니다, 인증에 실패했습니다"
       not_available: "죄송합니다, 이 페이지는 일시적으로 이용할 수 없습니다"
       not_existent: "죄송합니다, 이 장소는 더 이상 사용할 수 없습니다"
       not_found: "죄송합니다, 페이지를 찾을 수 없습니다"
       param_missing: "검색어를 입력해주세요"
-    flash: 
+    flash:
       authorize_wheelmap: "데이터 수정을 위해서 OpenStreetMap 계정이 필요합니다"
-    new: 
-      header: 
+    new:
+      header:
         title: "새로운 장소 | wheelmap.org"
-      link: 
+      link:
         large_map: "&laquo; 취소"
-    show: 
-      header: 
+    show:
+      header:
         title: "장소 : %{node} | wheelmap.org"
-      link: 
+      link:
         edit_node: "장소 수정"
         large_map: 확대
         report_bug: 오류신고
-    update: 
-      flash: 
+    update:
+      flash:
         not_successfull: "입력한 내용이 잘못되었거나 완전하지 않습니다."
         successfull: "감사합니다. 등록하신 내용이 성공적으로 저장되어 곧 온라인에 반영될 예정입니다"
-    update_wheelchair: 
+    update_wheelchair:
       successfull: "\"%{name}\"은(는) \"%{status} 휠체어 접근가능\"으로 변경되었습니다. 곧 온라인에 반영될 예정입니다"
-  number: 
-    currency: 
-      format: 
+  number:
+    currency:
+      format:
         delimiter: ","
         format: "%u%n "
         precision: 2
@@ -430,47 +433,47 @@ ko:
         significant: 0
         strip_insignificant_zeros: 0
         unit: $
-    format: 
+    format:
       delimiter: ","
       precision: 3
       separator: "."
       significant: 0
       strip_insignificant_zeros: 0
-    human: 
-      decimal_units: 
+    human:
+      decimal_units:
         format: "%n %u"
-        units: 
+        units:
           billion: 0억
           million: 00만
           quadrillion: 천조
           thousand: 천
           trillion: 조
-      format: 
+      format:
         precision: 1
         significant: true
         strip_insignificant_zeros: true
-      storage_units: 
+      storage_units:
         format: "%n %u"
-        units: 
-          byte: 
+        units:
+          byte:
             one: Byte
             other: Bytes
           gb: GB
           kb: KB
           mb: MB
           tb: TB
-  oauth: 
-    application: 
-      connect: 
+  oauth:
+    application:
+      connect:
         headline: "당신의 계정을 OpenStreetMap과 연계시키면, wheelmap.org에서 새로운 장소를 생성하거나 수정할 수 있습니다"
-    callback: 
+    callback:
       notice: "당신의 wheelmap 계정은 현재 penStreetMap 계정 %{user}과 연결되어 있습니다"
   or: 또는
-  place: 
+  place:
     one: "%{count} 장소"
     other: "%{count} 장소"
-  poi: 
-    category: 
+  poi:
+    category:
       accommodation: 숙박시설
       education: 교육기관
       food: 음식점
@@ -483,8 +486,8 @@ ko:
       sport: 스포츠
       tourism: 관광
       unknown: "알 수 없음"
-    name: 
-      accommodation: 
+    name:
+      accommodation:
         beach_resort: 비치호텔
         bed_and_breakfast: 숙박시설(B&B)
         camp_site: 캠핑장
@@ -494,14 +497,14 @@ ko:
         hostel: 유스호스텔
         hotel: 호텔
         motel: 모텔
-      education: 
+      education:
         college: 단과대학
         kindergarten: 유치원
         library: 도서관
         museum: 박물관
         school: 학교
         university: 대학교
-      food: 
+      food:
         bar: 바
         biergarten: 비어가든
         cafe: 카페
@@ -509,12 +512,12 @@ ko:
         fast_food: 패스트푸드
         pub: 선술집
         restaurant: 식당
-      government: 
+      government:
         courthouse: 법원
         embassy: 대사관
         public_building: 공공기관
         townhall: "읍면동 사무소"
-      leisure: 
+      leisure:
         arena: 경기장
         cinema: 영화관
         gallery: 갤러리
@@ -522,20 +525,20 @@ ko:
         sauna: 사우나
         theatre: 극장
         zoo: 동물원
-      misc: 
+      misc:
         doctors: 의료진
         hospital: 병원
         pharmacy: 약국
         place_of_worship: 기도원
         toilets: 화장실
         veterinary: 동물병원
-      money_post: 
+      money_post:
         atm: ATM기기
         bank: 은행
         bureau_de_change: 환전소
         post_box: 우체통
         post_office: 우체국
-      public_transfer: 
+      public_transfer:
         aerodrome: 공항
         bicycle_parking: "자전거 주차장"
         bicycle_rental: "자전거 임대"
@@ -558,7 +561,7 @@ ko:
         subway_entrance: "지하철 입구"
         terminal: "공항 터미널"
         tram_stop: "전차 정류소"
-      shopping: 
+      shopping:
         alcohol: 술집
         bakery: 빵집
         beverages: 음료가게
@@ -583,12 +586,12 @@ ko:
         optician: 안경점
         shoes: 신발가게
         supermarket: 슈퍼마켓
-      sport: 
+      sport:
         sports_centre: "스포츠 센터"
         stadium: 경기장
         swimming: 수영
         swimming_pool: 수영장
-      tourism: 
+      tourism:
         archaeological_site: 고적지
         arts_centre: 문화센터
         artwork: 예술품
@@ -603,74 +606,74 @@ ko:
         theme_park: 테마파크
         tower: 타워
         viewpoint: "뷰 포인트"
-      unknown: 
+      unknown:
         unknown: "알 수 없음"
-  profile: 
-    edit: 
-      application: 
-        oauth: 
+  profile:
+    edit:
+      application:
+        oauth:
           connected: "상태 : 연결되었습니다"
           grant: "지금 연결"
           not_connected: "상태 : 연결되지 않았습니다"
           revoke: 연결끊기
       headline: "프로필 수정"
-  search: 
-    index: 
-      search: 
+  search:
+    index:
+      search:
         for: "\"%{q}\"을(를) 찾고 있습니다."
         not_found: "위치를 찾을 수 없습니다!"
   statistics: 통계
-  support: 
-    array: 
+  support:
+    array:
       last_word_connector: 그리고
       sentence_connector: 그리고
       skip_last_comma: true
       two_words_connector: 그리고
       words_connector: ",\n"
-    select: 
+    select:
       prompt: 선택해주세요
-  time: 
+  time:
     am: 오전
-    formats: 
+    formats:
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: 오후
-  user_sessions: 
-    create: 
-      activation: 
+  user_sessions:
+    create:
+      activation:
         notice: "당신의 계정이 활성화 되었습니다!"
-      error: 
+      error:
         notice: "이메일과 비밀번호가 맞지 않습니다"
       notice: "접속되어 있는 중입니다"
-    destroy: 
+    destroy:
       notice: "안녕히 가세요, 또 방문해주세요!"
-    new: 
+    new:
       email: "이메일 주소"
       login: 로그인
       login_with_twitter: "트위터 로그인"
       password: 비밀번호
       remember_me: "로그인 상태유지"
-  wheelchairstatus: 
+  wheelchairstatus:
     limited: "휠체어 이용 부분적으로 가능"
     ? "no"
     : "휠체어 이용불가"
     unknown: "휠체어 접근여부 알 수 없음"
     ? "yes"
     : "휠체어가 완벽하게 접근 가능함"
-  wheelmap: 
-    footer: 
+  wheelmap:
+    footer:
       a_project_of: 프로젝트
       based_on: "위치정보지원 :"
       become_a_supporter: "후원자가 되어주세요"
       main_supporter: 후원
-    itunes: 
+    itunes:
       alt: "AppStore 로고"
       title: "지금 아이폰 어플리케이션을 다운로드 받으세요!"
-    logo: 
+    logo:
       alt: "Wheelmap 로고 - 휠체어 접근가능 장소찾기"
       title: "Wheelmap - 휠체어 접근가능 장소찾기"
-    what_is: 
+    what_is:
       fully_accessible: "입구에 7cm 미만의 계단이 있습니다; 모든 위치에 휠체어 이용자가 도달할 수 있습니다(예외 없음); 장애인용 화장실을 사용할 수 있습니다"
       limited_accessible: "입구에 7cm 미만의 계단이 있습니다; 반드시 도달해야 할 위치에 휠체어 이용자가 진입할 수 있습니다."
       not_accessible: "입구에 7cm 이상의 계단이 있습니다; 또는 입구에 1개의 계단이 있습니다; 또는 반드시 도달해야 할 위치에 휠체어 이용자가 진입할 수 없습니다"

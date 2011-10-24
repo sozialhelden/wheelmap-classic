@@ -1,10 +1,10 @@
---- 
-tlh: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+tlh:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: lajnISlu'
         blank: chImlaHbe'
         confirmation: "rapbe' chaw' mI'"
@@ -25,30 +25,30 @@ tlh:
         too_long: "tlhoy tIq (%{count} pIqaDmey 'oH 'aqroS'e')"
         too_short: "tlhoy run (%{count} pIqaDmey 'oH 'rav'e')"
         wrong_length: "chuq muj 'oH (%{count} pIqaDmey 'oHnIS)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: "jabbI'ID ngu'wI'"
           password: "pegh mu'"
           remember_me: "'eltaH"
-      template: 
+      template:
         body: "Qaghmey ngaS permeyvam:"
-        header: 
+        header:
           one: "qonpu' %{model}vam 'e' bot wa' Qagh"
           other: "qonpu' %{model}vam 'e' bot %{count} Qaghmey"
-  application: 
-    require_no_user: 
+  application:
+    require_no_user:
       notice: "bIrarpu'. bIrarnISbe'qa' ..."
-    require_user: 
+    require_user:
       notice: "Daq leghmeH bI'elnIS."
-  breadcrumbs: 
-    node: 
+  breadcrumbs:
+    node:
       create: "Daq chu' chel"
       edit: "Daq De' choH"
     root: wheelmap
-  common: 
+  common:
     close: SoQmoH
-  date: 
-    abbr_day_names: 
+  date:
+    abbr_day_names:
       - "wa' jaj"
       - "cha' jaj"
       - "wej jaj"
@@ -56,7 +56,7 @@ tlh:
       - "vagh jaj"
       - "jav jaj"
       - "Soch jaj"
-    abbr_month_names: 
+    abbr_month_names:
       - ~
       - "wa' jar"
       - "cha' jar"
@@ -70,7 +70,7 @@ tlh:
       - "wa'maH jar"
       - "wa'maH wa' jar"
       - "wa'maH cha' jar"
-    day_names: 
+    day_names:
       - "wa' jaj"
       - "cha' jaj"
       - "wej jaj"
@@ -78,11 +78,11 @@ tlh:
       - "vagh jaj"
       - "jav jaj"
       - "Soch jaj"
-    formats: 
+    formats:
       default: "%Y-%m-%d"
       long: "%B %d, %Y"
       short: "%b %d"
-    month_names: 
+    month_names:
       - ~
       - "wa' jar"
       - "cha' jar"
@@ -96,72 +96,72 @@ tlh:
       - "wa'maH jar"
       - "wa'maH wa' jar"
       - "wa'maH cha' jar"
-    order: 
+    order:
       - !ruby/symbol year
       - !ruby/symbol month
       - !ruby/symbol day
-  datetime: 
-    distance_in_words: 
-      about_x_hours: 
+  datetime:
+    distance_in_words:
+      about_x_hours:
         one: "wa' repHey"
         other: "%{count} repHey"
-      about_x_months: 
+      about_x_months:
         one: "wa' jarHey"
         other: "%{count} jarmeyHey"
-      about_x_years: 
+      about_x_years:
         one: "wa' DISHey"
         other: "%{count} DISmeyHey"
-      almost_x_years: 
+      almost_x_years:
         one: "wa' DISHey"
         other: "%{count} DISmeyHey"
       half_a_minute: "wej'maH tupmey"
-      less_than_x_minutes: 
+      less_than_x_minutes:
         one: "wa' tupHey"
         other: "%{count} tupmeyHey"
-      less_than_x_seconds: 
+      less_than_x_seconds:
         one: "wa' lupHey"
         other: "%{count} lupmeyHey"
-      over_x_years: 
+      over_x_years:
         one: "qaSDI' wa' DIS"
         other: "qaSDI' %{count} DISmey"
-      x_days: 
+      x_days:
         one: "wa' jaj"
         other: "%{count} jajmey"
-      x_minutes: 
+      x_minutes:
         one: "wa' tup"
         other: "%{count} tupmey"
-      x_months: 
+      x_months:
         one: "wa' jar"
         other: "%{count} jarmey"
-      x_seconds: 
+      x_seconds:
         one: "wa' tup"
         other: "%{count} tupmey"
-    prompts: 
+    prompts:
       day: jaj
       hour: rep
       minute: tup
       month: jar
       second: lupmey
       year: jar
-  devise: 
-    confirmations: 
+  devise:
+    confirmations:
       confirmed: "talIj 'ollu'. bI'elpu'. "
       link: "talIj Da'ol 'e' ghojmoHbogh QIn DaHevbe''a'?"
       send_instructions: "tugh jabbI'ID DaHev. talIj Da'ol 'e' ghojmoH."
-    destroy: 
+    destroy:
       confirm: bIbej'a'?
       headline: "ta' Qaw''a'?"
       link: "DaH ta' Qaw'!"
-    edit: 
-      form: 
-        labels: 
+    edit:
+      form:
+        labels:
           current_password: "mu' pegh <i>(choHmeylIj wI'olnIS)</i>"
           email: jabbI'ID
           password: "mu' pegh <i>(DachoH DaneHbe'chugh pagh yIghItlh!)</i>"
           password_confirmation: "pegh mu' yIghItlhqa'"
         submit: qon
       headline: "ta' choH"
-    failure: 
+    failure:
       inactive: "wej chu' ta'lIj."
       invalid: "muj pegh mu', jabI'ID ghap."
       invalid_token: "chaw' qab"
@@ -169,43 +169,46 @@ tlh:
       timeout: "Heghpu' chabHommey, yI'elqa'."
       unauthenticated: "taHmeH yI'el pagh yImuv."
       unconfirmed: "taHmeH ta'lIj Dachu'nIS."
-    mailer: 
-      confirmation_instructions: "talIj Da'ol 'e' ghojmoH QInvam."
-      reset_password_instructions: "pegh mu' vIcherqa' 'e' HIghojmoH."
-      unlock_instructions: "talIj Da'ngaQHa'moH 'e' ghojmoH QIn."
+    mailer:
+      confirmation_instructions:
+        subject: "talIj Da'ol 'e' ghojmoH QInvam."
+      reset_password_instructions:
+        subject: "pegh mu' vIcherqa' 'e' HIghojmoH."
+      unlock_instructions:
+        subject: "talIj Da'ngaQHa'moH 'e' ghojmoH QIn."
     mandatory: "* wIpoQ"
-    omniauth_callbacks: 
+    omniauth_callbacks:
       failure: "\"%{reason}\"mo' %{kind}vo' qachaw'laHbe'."
       success: "Qapla'! %{kind} ta' chaw'lu'."
-    password_recovery: 
-      form: 
-        labels: 
+    password_recovery:
+      form:
+        labels:
           email: jabbI'ID
         submit: "pegh mu' cherqa'"
       headline: "pegh mu' DalIj'a'?"
-    password_reset: 
-      email: 
+    password_reset:
+      email:
         comment: "mu'lIj pegh DachoH DaneHbe'chugh QInvam yIbuSHa'.<br/>mu'lIj pegh choHbe'lu' 'ach DachoHlaH bIngDaq mu'mey Da'uychugh. "
         headline: "%{email}"
         link: "pegh mu' choH"
         text: "mu'lIj pegh choHlu' neHlu'. DachoH DaneHchugh, bIngDaq mu'mey yI'uy:"
-      form: 
-        labels: 
+      form:
+        labels:
           password: "pegh mu' chu'"
           password_confirmation: "pegh mu' yIghItlhqa'"
         submit: "pegh mu' cherqa'"
       headline: "pegh mu' cherqa'"
-    passwords: 
+    passwords:
       link: "pegh mu' DalIj'a'?"
       send_instructions: "tugh jabbI'ID DaHev. pegh mu' DachoH 'e' ghojmoH."
       updated: "Qapla', pegh mu' DachoHta'. DaH bI'elpu'."
-    registrations: 
+    registrations:
       destroyed: "ta'lIj qIllu'. tugh bIchegh 'e' wItul."
       inactive_signed_up: "Qapla' 'ach %{reason}mo' pI'ellaHbe'moH."
       link: muv
       signed_up: "Qapla', jumuv. 'olmeH tugh jabbI'DI' DaHev."
       updated: "talIjDaq qonpu' De' chu'."
-    sessions: 
+    sessions:
       inactive: "wej Qap ta'lIj."
       invalid: "muj jabbI'ID ngu'wI'lIj pegh mu'lIj ghap."
       invalid_token: "chaw' qab"
@@ -216,32 +219,32 @@ tlh:
       timeout: "rIn poHlIj, yI'elqa'!"
       unauthenticated: "jItaHpa', bI'elnIS pagh bImuvnIS."
       unconfirmed: "bItaHpa' talIj Da'ol."
-    sign_in: 
-      form: 
-        labels: 
+    sign_in:
+      form:
+        labels:
           email: jabbI'ID
           password: "pegh mu'"
           remember_me: "'eltaH'a'?"
         submit: "'el"
       headline: "'el"
-    sign_out: 
+    sign_out:
       headline: mej
-    sign_up: 
-      form: 
-        labels: 
+    sign_up:
+      form:
+        labels:
           email: jabbI'ID
           password: "pegh mu'"
           password_confirmation: "pegh mu' yIghItlhqa'"
         submit: muv
       headline: muv
-    unlocks: 
+    unlocks:
       link: "'olmeH jabbI'DI' DaHevbe''a'?"
       send_instructions: "tugh jabbI'ID DaHev. talIj DangaQHa' 'e' ghojmoH."
       unlocked: "ngaQHa' talIj. bI'elpu'. "
-  errors: 
+  errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
-    messages: 
+    messages:
       accepted: lajnIS
       already_confirmed: "chaw'lu'pu'. bI'el 'e' yInID. "
       blank: chImlaHbe'
@@ -260,7 +263,7 @@ tlh:
       not_an_integer: "mI' naQ 'oHnIS"
       not_found: Sambe'
       not_locked: ngaQbe'
-      not_saved: 
+      not_saved:
         one: "%{resource} qonlu'pu' 'e' bot Qagh:"
         other: "%{resource} qonlu'pu' 'e' bot %{count} Qaghmey:"
       odd: "cha'logh boqHa'eghnISlaHbe' mI'"
@@ -268,24 +271,24 @@ tlh:
       too_long: "tlhoy tIq (%{count} pIqaDmey 'oH 'aqroS'e')"
       too_short: "tlhoy run (%{count} pIqaDmey 'oH 'rav'e')"
       wrong_length: "latlh mu'mey ghajnIS (%{count} mu'mey ghajnIS)"
-    template: 
+    template:
       body: "Qaghmey ghaj De'vam:"
-      header: 
+      header:
         one: "%{model} qonlu'pu' 'e' bot Qagh:"
         other: "%{model} qonlu'pu' 'e' bot %{count} Qaghmey:"
-  form: 
+  form:
     show_fully_accessible_places: "naw'laH rutlhquS"
     show_limited_accessible_places: "loQ naw'laH rutlhquS "
     show_places_without_status: "Suvbe'bogh Dotlh"
     show_unaccessible_places: "naw'laHbe' rutlhquS"
-  formtastic: 
-    hints: 
+  formtastic:
+    hints:
       lat: "Daq lughDaq ghItlhwI' yIQay"
       osm_username: "OSM Damuv'a'? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">DaH Openstreetmap ta yIchen</a>"
       password: "(DachoH DaneHbe'chugh, yIchImmoHtaH)"
       phone: "chuptaHghach: +49 30 123456-78"
       website: "chutaHghach: http://www.example.com/"
-    labels: 
+    labels:
       category: "Segh:"
       city: "veng:"
       create: "Daq chen"
@@ -306,18 +309,18 @@ tlh:
       website: "juHDaq:"
       wheelchair: "naw'laH'a' rutlhquS?"
       wheelchair_description: "naw'laHghach qechmey:"
-    titles: 
+    titles:
       basic: "De' nap"
       optional: "latlh De' <span class=\"addition\">(poQbe' De')</span>"
-  global: 
+  global:
     form_validation_error: "bIngDaq Qagh yIlegh."
-  header: 
-    meta: 
+  header:
+    meta:
       description: "rutlhquS chawbogh Daq'e' Sam - wheelmap.org"
       homepage: "juH Daq"
       keywords: "rutlhquS naw' Daqmey Sam nej ghItlh"
       search: nej
-    navigation: 
+    navigation:
       blog: QonoS
       feedback: qechmey
       home: tagh
@@ -331,79 +334,79 @@ tlh:
       tolk: mughtaHghach
       what_is_barrier_free: "\"rutlhquS chawbogh Daq'e'\" DaQIjlaH'a'?"
       what_is_wheelmap: "nuq 'oH wheelmap'e'?"
-    searchbar: 
+    searchbar:
       add_place: "latlh Daq chel"
       find: Sam
       placeholder: "i.e. Sunset Boulevard L.A. pagh Brandenburg Gate Berlin"
       title_add_place: "DaH DaqDaq Daq yIchel!"
     tagline: "Wheelmap Degh"
     title: "Wheelmap - rutlhquS chawbogh Daq'e' Sam"
-  helpers: 
-    select: 
+  helpers:
+    select:
       prompt: yIwIv
-    submit: 
+    submit:
       create: "%{model} chenmoH"
       submit: "%{model} qon"
       update: "%{model} De' chu' qon"
-  home: 
-    index: 
-      filter: 
+  home:
+    index:
+      filter:
         category: "Segh:"
         wheelchair: "naw'laH'a' rutlhquS?"
-      link: 
-        node: 
+      link:
+        node:
           create: "Daq chu' chel"
-  layouts: 
-    application: 
-      banner: 
+  layouts:
+    application:
+      banner:
         alt: "jInmolvam chenmoH Sozialhelden.de"
-  node: 
-    address: 
+  node:
+    address:
       city: "%{city} %{postcode}"
       street: "%{housenumber} %{street}"
-    tags: 
+    tags:
       phone: "QumwI':"
       website: "juHDaq:"
-  nodes: 
-    create: 
-      flash: 
+  nodes:
+    create:
+      flash:
         not_successfull: "De' muj DaghItlh."
         successfull: "qonta' De' 'ej tugh leghlu'."
-    edit: 
-      header: 
+    edit:
+      header:
         title: "Daq choH: %{node} | wheelmap.org"
-      link: 
+      link:
         large_map: "&laquo; qIl"
-    errors: 
+    errors:
       default: "va'! Qagh 'ach Qagh De' wIghaj."
       not_authorized: "Qagh. chaw'be'."
       not_available: "Daqvam tu'be'lu' 'ach ru'."
       not_existent: "Daqvam tu'be'lu'."
       not_found: SamlaHbe'.
       param_missing: "mu' nejbogh yIghItlh"
-    flash: 
+    flash:
       authorize_wheelmap: "De' choHmeH OpenStreetMap ta DaSuqnIS. "
-    new: 
-      header: 
+    new:
+      header:
         title: "Daq chu' | wheelmap.org"
-      link: 
+      link:
         large_map: "&laquo; qIl"
-    show: 
-      header: 
+    show:
+      header:
         title: "Daq: %{node} | wheelmap.org"
-      link: 
+      link:
         edit_node: "Daq choH"
         large_map: tInmoH
         report_bug: "Report a problem"
-    update: 
-      flash: 
+    update:
+      flash:
         not_successfull: "De' muj DaghItlh"
         successfull: "qonta' De' 'ej tugh leghlu'."
-    update_wheelchair: 
+    update_wheelchair:
       successfull: "\"%{name}\" Dutlh choHlu'. DaH \"%{status} naw'laH rutlhquS\" 'oH. tugh DaleghlaH."
-  number: 
-    currency: 
-      format: 
+  number:
+    currency:
+      format:
         delimiter: "."
         format: "%u%n"
         precision: 2
@@ -411,54 +414,54 @@ tlh:
         significant: 0
         strip_insignificant_zeros: 0
         unit: $
-    format: 
+    format:
       delimiter: ","
       precision: 3
       separator: "."
       significant: 0
       strip_insignificant_zeros: 0
-    human: 
-      decimal_units: 
+    human:
+      decimal_units:
         format: "%n %u"
-        units: 
+        units:
           billion: "SaD 'uy'"
           million: "'uy'"
           quadrillion: "SaD 'uy' 'uy'"
           thousand: SaD
           trillion: "'uy' 'uy'"
-      format: 
+      format:
         delimiter: "."
         precision: 1
         significant: true
         strip_insignificant_zeros: true
-      storage_units: 
+      storage_units:
         format: "%n %u"
-        units: 
-          byte: 
+        units:
+          byte:
             one: Byte
             other: Bytes
           gb: GB
           kb: KB
           mb: MB
           tb: TB
-    percentage: 
-      format: 
+    percentage:
+      format:
         delimiter: "."
-    precision: 
-      format: 
+    precision:
+      format:
         delimiter: "."
-  oauth: 
-    application: 
-      connect: 
+  oauth:
+    application:
+      connect:
         headline: "wheelmap.orgDaq Daq DachoHmeH Daq DachelmoH ta'lIj open street map ta'lIj je DarurnIS."
-    callback: 
+    callback:
       notice: "DaH ta'lIj %{user} open street map ta' je Darur."
   or: pagh
-  place: 
+  place:
     one: "%{count} Daq"
     other: "%{count} Daqmey"
-  poi: 
-    category: 
+  poi:
+    category:
       accommodation: ma'taHghach
       education: ghojmoHghach
       food: Sop
@@ -471,8 +474,8 @@ tlh:
       sport: Qujmey
       tourism: SuchwI'
       unknown: Sovbe'ghach
-    name: 
-      accommodation: 
+    name:
+      accommodation:
         beach_resort: "bIQ'a' HeHDaq mebpa'mey"
         bed_and_breakfast: "QongDaq nIQ je"
         camp_site: "raQ Daq"
@@ -482,14 +485,14 @@ tlh:
         hostel: "mebpa'mey qutlh"
         hotel: mebpa'mey
         motel: mebpa'Hommey
-      education: 
+      education:
         college: "'ampaS"
         kindergarten: "puq DuSaQ"
         library: "paq qach"
         museum: "Doch ngo'meH Daq"
         school: DuSaQ
         university: DuSaQ'a'
-      food: 
+      food:
         bar: tach
         biergarten: "HIq tlhutlhmeH Hur Daq"
         cafe: "SopmeH DaqHom"
@@ -497,12 +500,12 @@ tlh:
         fast_food: "moD Soj"
         pub: tach
         restaurant: Qe'
-      government: 
+      government:
         courthouse: "chut qach"
         embassy: rIvSo'
         public_building: "wo' qach"
         townhall: "veng vaS"
-      leisure: 
+      leisure:
         arena: "SuvmeH Daq"
         cinema: "vIHbogh much Daq"
         gallery: "nagh beQ qach"
@@ -510,20 +513,20 @@ tlh:
         sauna: "chebmey ghurHa'meH tuj lo'bogh Daq"
         theatre: "much qach"
         zoo: "HaDI'baH qach"
-      misc: 
+      misc:
         doctors: Qelpu'
         hospital: "Qelpu' qach"
         pharmacy: "Hergh Suy"
         place_of_worship: ghIn
         toilets: puchpa'mey
         veterinary: "HaDI'baH Qel"
-      money_post: 
+      money_post:
         atm: "Huch nobwI'"
         bank: "Huch Suy"
         bureau_de_change: "Huch choHmeH Daq"
         post_box: "QIn ngeHmeH ngaSwI'"
         post_office: "QIn ngeHmeH Daq"
-      public_transfer: 
+      public_transfer:
         aerodrome: "muD Duj juH"
         bicycle_parking: "cha' rutlh lupwI' leSmeH Daq"
         bicycle_rental: "cha' rutlh lupwI' ngIpmeH Daq"
@@ -546,7 +549,7 @@ tlh:
         subway_entrance: "wutlh lupwI' DIn"
         terminal: "muD Duj tIjmeH Daq"
         tram_stop: "lupwI' tIjmeH Daq"
-      shopping: 
+      shopping:
         alcohol: "HIq Suy"
         bakery: "tIr ngogh Suy"
         beverages: "HIvje' Suy"
@@ -571,12 +574,12 @@ tlh:
         optician: "mIn Qel"
         shoes: waqmey
         supermarket: "Sop Suy'a'"
-      sport: 
+      sport:
         sports_centre: "Quj QujmeH Daq"
         stadium: "Quj bejmeH Daq"
         swimming: "bIQ Quj"
         swimming_pool: "bIQ Quj Daq"
-      tourism: 
+      tourism:
         archaeological_site: "Daq tIQ"
         arts_centre: "nagh beQ qach"
         artwork: "nagh beQ"
@@ -591,69 +594,69 @@ tlh:
         theme_park: "Qujmey Daq"
         tower: chalqach
         viewpoint: "Hatlh leghmeH Daq"
-      unknown: 
+      unknown:
         unknown: "pagh pong"
-  profile: 
-    edit: 
-      application: 
-        oauth: 
+  profile:
+    edit:
+      application:
+        oauth:
           connected: "Dotlh: rarta'"
           grant: "DaH yIrar"
           not_connected: "Dotlh: rarbe'"
           revoke: rarHa'
       headline: "ta'lIj choH"
-  search: 
-    index: 
-      search: 
+  search:
+    index:
+      search:
         for: "\"%{q}\" nejtaH"
         not_found: "pagh Daq tu'lu'!"
   statistics: De'
-  support: 
-    array: 
+  support:
+    array:
       last_word_connector: ", 'ej"
       sentence_connector: "'ej"
       skip_last_comma: true
       two_words_connector: "'ej"
       words_connector: ","
-    select: 
+    select:
       prompt: yIwIv
-  time: 
+  time:
     am: pem
-    formats: 
+    formats:
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: ram
-  user_sessions: 
-    create: 
-      activation: 
+  user_sessions:
+    create:
+      activation:
         notice: "DaH chu' ta'lIj!"
-      error: 
+      error:
         notice: "repbe' pegh mu' jabbI'ID jabbI'ID SoQ je."
       notice: bI'el!
-    destroy: 
+    destroy:
       notice: "tugh yIchegh!"
-    new: 
+    new:
       email: "jabbI'ID ngu'wI'"
       login: "'el"
       login_with_twitter: "Twitter lo'taHvIS yI'el"
       password: "pegh mu'"
       remember_me: "'eltaH"
-  wheelchairstatus: 
+  wheelchairstatus:
     limited: "loQ naw'laH rutlhquS"
     ? "no"
     : "naw'laHbe' rutlhquS"
     unknown: "rutlhquS chaw Daq 'e' Sovbe'lu' "
     ? "yes"
     : "naw'laHbej rutlhquS"
-  wheelmap: 
-    itunes: 
+  wheelmap:
+    itunes:
       alt: "AppStore Degh"
       title: "DaH iPhone App yISuq!"
-    logo: 
+    logo:
       alt: "Wheelmap Degh - rutlhquS chawbogh Daq'e' Sam"
       title: "Wheelmap - rutlhquS chawbogh Daq'e' Sam"
-    what_is: 
+    what_is:
       fully_accessible: "7cm jen law' letlh jen puS. Hoch Daqmeyvam naw'laHbej rutlhquS. puchpa''e' naw'laHbogh rutlhquS tu'lu'."
       limited_accessible: "7cm jen law' letlh jen puS. HochHom Daqmeyvam potlh naw'laH rutlhquS."
       not_accessible: "letlh jen law' 7cm jen puS pagh letlh'a' tu'lu' pagh HochHom Daqmeyvam potlh naw'laHbe' rutlhquS."
