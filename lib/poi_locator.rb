@@ -17,7 +17,7 @@ class PoiLocator
       count_poi_in_region = 0
       count_poi_not_in_region = 0
       poi_size = Poi.count(:conditions => {:region_id => nil})
-      progress = ProgressBar.new("Pois kontrolliert #{poi_size}", poi_size)
+      # progress = ProgressBar.new("Pois kontrolliert #{poi_size}", poi_size)
       # iterates over all POIs with undefined region
       Poi.including_category.find_in_batches(:conditions => {:region_id => nil}) do |batch|
         batch.each do |poi|
@@ -35,7 +35,6 @@ class PoiLocator
               @index[idx].each do |region|
                 point = @factory.parse_wkb(poi.geom.as_wkb)
                 if region[:geometry].contains?(point)
-                  # puts "Hit region #{region[:name]} at #{idx}"
                   region_id = region[:id]
                   count_poi_in_region += 1
                 end
@@ -47,7 +46,7 @@ class PoiLocator
 
            # update table "pois"
            poi.update_attribute(:region_id, region_id)
-           progress.inc
+           # progress.inc
         end
       end
 
@@ -79,7 +78,6 @@ class PoiLocator
                if index[idx].nil?
                   index[idx] = Array.new()
                end
-               puts "Put #{region[:name]} to #{idx}"
                index[idx] << region
             end
          end
@@ -91,7 +89,6 @@ class PoiLocator
    def load_regions
       rr = Array.new
       Region.all.each do |db_region|
-        puts "Parsing region #{db_region.name}"
          r = Hash.new
 
          r[:geometry]   = @factory.parse_wkb(db_region.grenze.as_wkb)

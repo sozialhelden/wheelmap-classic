@@ -44,7 +44,7 @@ class Poi < ActiveRecord::Base
 
   WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
 
-  belongs_to :region
+  belongs_to :region, :touch => false
   belongs_to :node_type, :touch => false, :include => :category
   has_one :category, :through => :node_type
 
