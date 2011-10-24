@@ -8,7 +8,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def after_inactive_sign_up_path_for(user)
-    raise session[:return_to]
     registrations_successful_path
   end
 
