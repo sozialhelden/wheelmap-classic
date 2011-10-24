@@ -120,7 +120,7 @@ CREATE TABLE `sessions` (
   PRIMARY KEY (`id`),
   KEY `index_sessions_on_session_id` (`session_id`),
   KEY `index_sessions_on_updated_at` (`updated_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=1610 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1622 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `slugs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -196,13 +196,16 @@ CREATE TABLE `users` (
   `authentication_token` varchar(255) DEFAULT NULL,
   `oauth_request_token` text,
   `wants_newsletter` tinyint(1) NOT NULL DEFAULT '0',
+  `confirmation_token` varchar(255) DEFAULT NULL,
+  `confirmed_at` datetime DEFAULT NULL,
+  `confirmation_sent_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_email` (`email`),
   UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`),
   UNIQUE KEY `index_users_on_authentication_token` (`authentication_token`),
   KEY `index_users_on_oauth_token` (`oauth_token`),
   KEY `index_users_on_wants_newsletter` (`wants_newsletter`)
-) ENGINE=InnoDB AUTO_INCREMENT=1434 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1442 DEFAULT CHARSET=latin1;
 
 INSERT INTO schema_migrations (version) VALUES ('20100520103719');
 
@@ -265,3 +268,5 @@ INSERT INTO schema_migrations (version) VALUES ('20111011145011');
 INSERT INTO schema_migrations (version) VALUES ('20111017092328');
 
 INSERT INTO schema_migrations (version) VALUES ('20111018102230');
+
+INSERT INTO schema_migrations (version) VALUES ('20111024103455');
