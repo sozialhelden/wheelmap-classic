@@ -418,7 +418,7 @@ en:
       header:
         title: "Place: %{node} | wheelmap.org"
       link:
-        back: Back
+        back: back
         report_bug: "Report a problem"
         edit_node: Edit place
         large_map: Enlarge

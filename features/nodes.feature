@@ -19,9 +19,8 @@ Feature: Find, update and create nodes via API
     When I am on the last poi's page
     Then I should see "Alle Orte vom Typ"
 
-  @wip
   Scenario: I want to see a back link to the root page
     When I am on the last poi's page
-    Then I should see "Zurück"
-    When I follow "Zurück"
+    Then I should see "zurück"
+    When I follow "zurück"
     Then I should be on the root page
