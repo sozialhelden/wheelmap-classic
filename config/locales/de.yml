@@ -227,6 +227,10 @@ de:
     sign_out:
       headline: Logout
     sign_up:
+      email:
+        welcome: "Willkommen %{email}!"
+        please_confirm: "Du kannst deine E-Mail Adresse bestätigen indem du folgenden Link klickst:"
+        confirm_my_account: "Mein Benutzerkonto bestätigen."
       form:
         labels:
           email: E-Mail

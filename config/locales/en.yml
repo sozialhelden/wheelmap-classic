@@ -330,6 +330,10 @@ en:
     sign_out:
       headline: Log out
     sign_up:
+      email:
+        welcome: "Welcome %{email}!"
+        please_confirm: "You can confirm your account through the link below:"
+        confirm_my_account: "Confirm my account"
       form:
         labels:
           email: Email
