@@ -1,0 +1,5 @@
+%li{:style => 'padding: 10px', :class => cycle(:odd, :even)}
+  %h2= link_to node.headline, node_path(node)
+  %p.address= [node.address, node.phone].reject{|n| n.blank?}.join(' &ndash; ').html_safe
+
+  %p.description= node.wheelchair_description unless node.wheelchair_description.blank?
