@@ -1,10 +1,10 @@
---- 
-tr: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+tr:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "kabul edilmeli"
         blank: doldurulmalı
         confirmation: "teyidiyle uyuşmamakta"
@@ -25,30 +25,30 @@ tr:
         too_long: "çok uzun (en fazla %{count} karakter)"
         too_short: "çok kısa (en az %{count} karakter)"
         wrong_length: "yanlış uzunlukta (tam olarak %{count} karakter olmalı)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: E-Posta-Adres
           password: Parola
           remember_me: "Kayıtlı kal"
-      template: 
+      template:
         body: "Lütfen aşağıdaki hataları düzeltiniz:"
-        header: 
+        header:
           one: "%{model} girişi kaydedilemedi: 1 hata."
           other: "%{model} girişi kadedilemedi: %{count} hata."
-  application: 
-    require_no_user: 
+  application:
+    require_no_user:
       notice: "Sayfaya kayıtlısınız"
-    require_user: 
+    require_user:
       notice: "Bu sayfayı görmek icin yeni bir oturum açın."
-  breadcrumbs: 
-    node: 
+  breadcrumbs:
+    node:
       create: "yeni bir yer/alan ekleyiniz"
       edit: "yeri/ alanı şekilendiriniz"
     root: wheelmap
-  common: 
+  common:
     close: kapatınız
-  date: 
-    abbr_day_names: 
+  date:
+    abbr_day_names:
       - Pzr
       - Pzt
       - Sal
@@ -56,7 +56,7 @@ tr:
       - Prş
       - Cum
       - Cts
-    abbr_month_names: 
+    abbr_month_names:
       - ~
       - Oca
       - Şub
@@ -70,7 +70,7 @@ tr:
       - Eki
       - Kas
       - Ara
-    day_names: 
+    day_names:
       - Pazar
       - Pazartesi
       - Salı
@@ -78,11 +78,11 @@ tr:
       - Perşembe
       - Cuma
       - Cumartesi
-    formats: 
+    formats:
       default: "%d.%m.%Y"
       long: "%e %B %Y, %A"
       short: "%e %b"
-    month_names: 
+    month_names:
       - ~
       - Ocak
       - Şubat
@@ -96,72 +96,72 @@ tr:
       - Ekim
       - Kasım
       - Aralık
-    order: 
+    order:
       - !ruby/symbol day
       - !ruby/symbol month
       - !ruby/symbol year
-  datetime: 
-    distance_in_words: 
-      about_x_hours: 
+  datetime:
+    distance_in_words:
+      about_x_hours:
         one: "1 saat civarında"
         other: "%{count} saat civarında"
-      about_x_months: 
+      about_x_months:
         one: "1 ay civarında"
         other: "%{count} ay civarında"
-      about_x_years: 
+      about_x_years:
         one: "1 yıl civarında"
         other: "%{count} yıl civarında"
-      almost_x_years: 
+      almost_x_years:
         one: "neredeyse 1 yıl"
         other: "neredeyse %{count} yıl"
       half_a_minute: "yarım dakika"
-      less_than_x_minutes: 
+      less_than_x_minutes:
         one: "bir dakikadan az"
         other: "%{count} dakikadan az"
-      less_than_x_seconds: 
+      less_than_x_seconds:
         one: "bir saniyeden daha az"
         other: "%{count}saniyeden daha az"
-      over_x_years: 
+      over_x_years:
         one: "1 yıldan fazla"
         other: "%{count} yıldan fazla"
-      x_days: 
+      x_days:
         one: "1 gün"
         other: "%{count} gün"
-      x_minutes: 
+      x_minutes:
         one: "1 dakika"
         other: "%{count} dakika"
-      x_months: 
+      x_months:
         one: "1 ay"
         other: "%{count} ay"
-      x_seconds: 
+      x_seconds:
         one: "1 saniye"
         other: "%{count} saniye"
-    prompts: 
+    prompts:
       day: Gün
       hour: Saat
       minute: Dakika
       month: Ay
       second: Saniye
       year: Yıl
-  devise: 
-    confirmations: 
+  devise:
+    confirmations:
       confirmed: "hesab başarılı bir şekilde onaylandı. "
       link: "onaylama icin talimat almadınızmı? "
       send_instructions: "Bir kaç dakika içerisinde e-posta ile hesabınızı nasıl onaylanması gerektiğine dair talimat alacaksınız. "
-    destroy: 
+    destroy:
       confirm: "Emin misiniz?"
       headline: "Hesabı sil"
       link: "Şimdi sil"
-    edit: 
-      form: 
-        labels: 
+    edit:
+      form:
+        labels:
           current_password: "Güncel parola <i> (yapmak istediğiniz değişikleri onaylamak için gerekir) </i>"
           email: E-Posta
           password: "Parola <i> (değiştirmek istemiyorsaniz boş bırakın) </i>"
           password_confirmation: "Parolayı tekrarlayın"
         submit: "Değişiklikeri kaydedin"
       headline: "Hesabı yönet"
-    failure: 
+    failure:
       inactive: "Hesabınız şu an etkinleştirilmemiştir. "
       invalid: "Geçersiz eposta adresi veya parola"
       invalid_token: "Geçersiz resmi tasdik belirli."
@@ -169,43 +169,46 @@ tr:
       timeout: "Oturumunuzun süresi dolmştur. Devam etmek için lütfen tekrar kaydolun."
       unauthenticated: "Devam etmek için tekrar kaydolun."
       unconfirmed: "Devam etmeden önce hesabınızı onaylamanız gerekir."
-    mailer: 
-      confirmation_instructions: "Onay talimatları"
-      reset_password_instructions: "parola talimatlarını sıfırla"
-      unlock_instructions: "talimatların kilidini ac"
+    mailer:
+      confirmation_instructions:
+        subject: "Onay talimatları"
+      reset_password_instructions:
+        subject: "parola talimatlarını sıfırla"
+      unlock_instructions:
+        subject: "talimatların kilidini ac"
     mandatory: "* zorunlu alan"
-    omniauth_callbacks: 
+    omniauth_callbacks:
       failure: "%{kind} hesabınıza \"%{reason}\" dolayı yetki verilmemiştir."
       success: "%{kind} hesab tarafından başarılı bir şekilde yetki verilmiştir. "
-    password_recovery: 
-      form: 
-        labels: 
+    password_recovery:
+      form:
+        labels:
           email: E-Posta
         submit: "Parolayı sıfırla"
       headline: "Parolayı unuttunuzmu?"
-    password_reset: 
-      email: 
+    password_reset:
+      email:
         comment: "Parolanızı değiştirmek istemiyorsanız lütfen bu mesajı dikkate almayın <br> Parolanız bu linke tıklayana kadar değişmiyecektir. "
         headline: "Hoşgeldiniz %{email}"
         link: "Parolayı değistir"
         text: "Üçüncü bir şahıs parolanızı değiştirmeye çalısmış. Parolanızı değiştirmek için buraya tıklayın. "
-      form: 
-        labels: 
+      form:
+        labels:
           password: "Yeni parola"
           password_confirmation: "Parolayı tekrar et"
         submit: "Parolayı sıfırla"
       headline: "Parolayı sıfırla"
-    passwords: 
+    passwords:
       link: "Parolayı unuttunuzmu?"
       send_instructions: "Bir kaç saniye içerisinde parolanızı nasıl sıfırlıyabileceğinize dahil bir e-posta alacaksınız."
       updated: "Parolanız başarılı bir şekilde değişmiştir. Yeni bir oturum açtınız. "
-    registrations: 
+    registrations:
       destroyed: "Hoşçakalın! Hesabınız başarılı bir şekilde iptal edilmiştir. Umariz sizi daha sonra tekrar görürüz."
       inactive_signed_up: "Başarılı bir şekilde kaydoldunuz. Fakat biz sizi kayda alamadık, çünkü hesabınız %{reason}.  "
       link: Kaydol
       signed_up: "Başarılı bir şekilde kaydoldunuz. Kayd etkinleştirildi ise size e-pota ile bunun onayı ilettildi. "
       updated: "Hesabınızı başarılı bir şekilde güncelleştirdiniz. "
-    sessions: 
+    sessions:
       inactive: "Hesabınız şu an aktive edilmemiştir."
       invalid: "Geçersiz e-posta veya parola"
       invalid_token: "Geçersiz resmi tasdik belirtisi. "
@@ -216,32 +219,32 @@ tr:
       timeout: "Oturumuz süresi doldu, devam etmek icin lütfen yeni bir oturum açınız.  "
       unauthenticated: "Devam etmek için oturum açmanız gerekir."
       unconfirmed: "Devam etmek için hesabınızı onaylayınız."
-    sign_in: 
-      form: 
-        labels: 
+    sign_in:
+      form:
+        labels:
           email: E-Posta
           password: Parola
           remember_me: "Kayıtlı kal?"
         submit: "Oturum aç"
       headline: "Oturum aç"
-    sign_out: 
+    sign_out:
       headline: "Oturumu kapat"
-    sign_up: 
-      form: 
-        labels: 
+    sign_up:
+      form:
+        labels:
           email: E-Posta
           password: Parola
           password_confirmation: "Parolayı tekrarla"
         submit: Kaydol
       headline: Kaydol
-    unlocks: 
+    unlocks:
       link: "Kilidi açmak için talimatları almadınızmı?"
       send_instructions: "Bir kaç dakika içerisinde nasıl hesabınızın kilidini açabileceğinize dahil e-posta ile talimatlar alacaksınız."
       unlocked: "Hesabınızın kilidi başarılı bir şekilde açılmıstır. Şu an kayıtlısınız."
-  errors: 
+  errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
-    messages: 
+    messages:
       accepted: "kabul edilmeli"
       already_confirmed: "tasdiklendi, lütfen kayıt olmayı deneyin\n"
       blank: "dosyalanması gerekir"
@@ -260,7 +263,7 @@ tr:
       not_an_integer: "Tamsayı olması gerekir"
       not_found: bulunamadı
       not_locked: "Kilitli değildi"
-      not_saved: 
+      not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
       odd: "tuhaf olmalı"
@@ -268,24 +271,24 @@ tr:
       too_long: "çok uzun ( %{count} dan fazla işaret olmamalı}"
       too_short: "çok kısa ( %{count} dan daha eksik işaret olmamalı)"
       wrong_length: "yanlış uzunluk ( tam olarak %{count} kadar işaret olmalı)"
-    template: 
+    template:
       body: "Aşağıdaki alanlarda problem var:"
-      header: 
+      header:
         one: "1 error prohibited this %{model} from being saved"
         other: "%{count} errors prohibited this %{model} from being saved"
-  form: 
+  form:
     show_fully_accessible_places: "tekerlekli sandalye ile ulaşılır"
     show_limited_accessible_places: "kısmen tekerlekli sandalye ile ulaşılır"
     show_places_without_status: "belirsiz statü"
     show_unaccessible_places: "tekerlekli sandalye için ulaşılır değil"
-  formtastic: 
-    hints: 
+  formtastic:
+    hints:
       lat: "Işareti haritanın üzerinde doğru yere ulaşana kadar oynatın."
       osm_username: "Henüz üye değilmisiniz? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an Openstreetmap account now</a>"
       password: "(değistirmek istemiyorsanız, boş bırakın)"
       phone: "Örneğin: +49 30 123456-78"
       website: "Örnegin: http://www.örnek.com"
-    labels: 
+    labels:
       category: "Tabaka:"
       city: Şehir
       create: "mekan/alan oluştur"
@@ -306,18 +309,18 @@ tr:
       website: "Internet sitesi"
       wheelchair: "Tekerlekli Sandalye erişilirliği? "
       wheelchair_description: "Erişilirlik yorumu:"
-    titles: 
+    titles:
       basic: "Ana Veri:"
       optional: "Daha fazla bilgi <karış sınıfı=\"toplama\"> (tüm alanlar isteğe bağli)</karış>"
-  global: 
+  global:
     form_validation_error: " Lütfen aşağıda kote edilmiş hataları not alın."
-  header: 
-    meta: 
+  header:
+    meta:
       description: "Tekerlekli sandalye ile erişilir alanlar ve mekanlar bul - wheelmap.org"
       homepage: "Ana Sayfa"
       keywords: "Tekerlekli Sandalye ile erişilir alanlar ve mekanlar bul ara işaretle"
       search: Ara
-    navigation: 
+    navigation:
       blog: Blog
       feedback: Geribildirim
       home: Başlat
@@ -331,79 +334,79 @@ tr:
       tolk: Tercümeler
       what_is_barrier_free: "\"Tekerleki sandalye ile ulasilir\" ne demek?"
       what_is_wheelmap: "Wheelmap nedir?"
-    searchbar: 
+    searchbar:
       add_place: "Başka bir mekan/alan ekle"
       find: Bul
       placeholder: "mesela Sunset Boulevard L.A. veya Brandenburger Tor Berlin"
       title_add_place: "Şimdi bu pozisyona yeni bir alan veya mekan ekle!"
     tagline: "Wheelmap logo"
     title: "Wheelmap - tekerlekli sandalye için ulaşılır yerler bul"
-  helpers: 
-    select: 
+  helpers:
+    select:
       prompt: "Lütfen seçiniz"
-    submit: 
+    submit:
       create: "%{model} geliştir"
       submit: "%{model} kaydet"
       update: "%{model} güncelleştir"
-  home: 
-    index: 
-      filter: 
+  home:
+    index:
+      filter:
         category: "Tabaka:"
         wheelchair: "Tekerlekli sandalye için ulaşılırmı?"
-      link: 
-        node: 
+      link:
+        node:
           create: "Yeni bir yer ekle"
-  layouts: 
-    application: 
-      banner: 
+  layouts:
+    application:
+      banner:
         alt: "Bir Sozialhelden.de Projesi"
-  node: 
-    address: 
+  node:
+    address:
       city: "%{city} %{postcode}"
       street: "%{housenumber} %{street}"
-    tags: 
+    tags:
       phone: "Telefon:"
       website: "Internet Sitesi"
-  nodes: 
-    create: 
-      flash: 
+  nodes:
+    create:
+      flash:
         not_successfull: "Ooops, verileriniz yanlış veya yetersizdi"
         successfull: "Teşekkür ederiz, bildirileriniz basarili bir şekilde kaydedildi ve kısa sürede internet sitesinde sunulacak."
-    edit: 
-      header: 
+    edit:
+      header:
         title: "Alan veya mekan düzenle: %{node} | wheelmap.org"
-      link: 
+      link:
         large_map: "&laquo; iptal et"
-    errors: 
+    errors:
       default: "Oops, birşeyeler yanlış gidiyor. Fakat bu konuda bilgilendirildik!"
       not_authorized: "Üzgünüz, resmi tasdik başarılı değildi"
       not_available: "Üzgünüz, bu sayfa geçici bir süre için mevcut değildir. "
       not_existent: "Üzgünüz, bu alan veya mekan artık mevcut değildir."
       not_found: "Üzgünüz, sayfa bulunamadı."
       param_missing: "Lütfen aradığınız terimi yazın."
-    flash: 
+    flash:
       authorize_wheelmap: "Verileri değiştirebilmek için OpenStreetMap hesabınız olması gerekir."
-    new: 
-      header: 
+    new:
+      header:
         title: "Yeni alan veya mekan | wheelmap.org"
-      link: 
+      link:
         large_map: "&laquo; Iptal et"
-    show: 
-      header: 
+    show:
+      header:
         title: "Alan/Mekan: %{node} | wheelmap.org"
-      link: 
+      link:
         edit_node: "Alan veya Mekanı düzenle"
         large_map: Genişlet
         report_bug: "Sorun bildir "
-    update: 
-      flash: 
+    update:
+      flash:
         not_successfull: "Oops, verileriniz yanlış veya eksik."
         successfull: "Teşekkür ederiz, tesciliniz başarılı bir şekilde kayıtlanmıştır ve kısa bir süre sonra online olacak."
-    update_wheelchair: 
+    update_wheelchair:
       successfull: "\"%{name}\"statüsü artık \"%{status} tekerlekli sandalya için ulaşılır\" olarak değiştirilmiştir ve kisa süre sonra online olucak. "
-  number: 
-    currency: 
-      format: 
+  number:
+    currency:
+      format:
         delimiter: "."
         format: "%n %u"
         precision: 2
@@ -411,54 +414,54 @@ tr:
         significant: 0
         strip_insignificant_zeros: 0
         unit: TL
-    format: 
+    format:
       delimiter: "."
       precision: 3
       separator: ","
       significant: 0
       strip_insignificant_zeros: 0
-    human: 
-      decimal_units: 
+    human:
+      decimal_units:
         format: "%n %u"
-        units: 
+        units:
           billion: Milyar
           million: Milyon
           quadrillion: Katrilyon
           thousand: Bin
           trillion: Trilyon
-      format: 
+      format:
         delimiter: "."
         precision: 1
         significant: true
         strip_insignificant_zeros: true
-      storage_units: 
+      storage_units:
         format: "%n %u"
-        units: 
-          byte: 
+        units:
+          byte:
             one: Byte
             other: Bytes
           gb: GB
           kb: KB
           mb: MB
           tb: TB
-    percentage: 
-      format: 
+    percentage:
+      format:
         delimiter: "."
-    precision: 
-      format: 
+    precision:
+      format:
         delimiter: "."
-  oauth: 
-    application: 
-      connect: 
+  oauth:
+    application:
+      connect:
         headline: "Wheelmap.org. da alan veya mekanları değiştirmek için önce hesabınızı OpenStreetMap hesabınız ile bağlamanız gerekir. "
-    callback: 
+    callback:
       notice: "%{user} wheelmap hesabınız şimdi OpenStreetMap hesabınız ile bağlanmıştır."
   or: veya
-  place: 
+  place:
     one: "%{count} Yer ve Mekan"
     other: "%{count} Yer ve Mekanlar"
-  poi: 
-    category: 
+  poi:
+    category:
       accommodation: "Konaklama Yeri"
       education: Eğitim
       food: Yiyecek
@@ -471,8 +474,8 @@ tr:
       sport: Spor
       tourism: Turizm
       unknown: Belirsiz
-    name: 
-      accommodation: 
+    name:
+      accommodation:
         beach_resort: "Plaj Oteli"
         bed_and_breakfast: "Kahvaltı veren Pansiyon "
         camp_site: "Kamping Meydanı"
@@ -482,14 +485,14 @@ tr:
         hostel: "Öğrenci Yurdu"
         hotel: Otel
         motel: Motel
-      education: 
+      education:
         college: Yüksekokul
         kindergarten: "anaokulu/ yuva"
         library: Kütüphane
         museum: Müze
         school: Okul
         university: Üniversite
-      food: 
+      food:
         bar: Bar
         biergarten: "Bira bahçesi"
         cafe: "Cafe Bar"
@@ -497,12 +500,12 @@ tr:
         fast_food: "Fast Food"
         pub: Birahane
         restaurant: Lokanta
-      government: 
+      government:
         courthouse: Adliye
         embassy: Elçilik
         public_building: "Resmi Bina"
         townhall: "Belediye Binası"
-      leisure: 
+      leisure:
         arena: Arena
         cinema: Sinema
         gallery: Galeri
@@ -510,20 +513,20 @@ tr:
         sauna: Sauna
         theatre: Tiyatro
         zoo: "Hayvanat Bahçesi"
-      misc: 
+      misc:
         doctors: Doktor
         hospital: Hastane
         pharmacy: Eczane
         place_of_worship: "Ibadet Yeri"
         toilets: Tuvalet
         veterinary: Veteriner
-      money_post: 
+      money_post:
         atm: ATM/Paramatik
         bank: Banka
         bureau_de_change: "Döviz bürosu"
         post_box: "Posta Kutusu"
         post_office: Postane
-      public_transfer: 
+      public_transfer:
         aerodrome: Havaalanı
         bicycle_parking: "Bisiklet park yeri"
         bicycle_rental: "Bisiklet kirası"
@@ -546,7 +549,7 @@ tr:
         subway_entrance: "Metro girişi"
         terminal: "Havalimanı terminalı"
         tram_stop: "Tramvay durağı"
-      shopping: 
+      shopping:
         alcohol: "Alkollü içki"
         bakery: Fırın
         beverages: Içecekler
@@ -571,12 +574,12 @@ tr:
         optician: Gözlükçü
         shoes: Ayakkabı
         supermarket: Süpermarket
-      sport: 
+      sport:
         sports_centre: "Spor mekezi"
         stadium: Stadyum/Stat
         swimming: Yüzme
         swimming_pool: "Yüzme Havuzu"
-      tourism: 
+      tourism:
         archaeological_site: "Arkeolojik Yer"
         arts_centre: "Kültür merkezi"
         artwork: "Sanat eseri"
@@ -591,69 +594,69 @@ tr:
         theme_park: "Eğlence parkı"
         tower: Kale/Kule
         viewpoint: "Durulan yer"
-      unknown: 
+      unknown:
         unknown: Belirsiz
-  profile: 
-    edit: 
-      application: 
-        oauth: 
+  profile:
+    edit:
+      application:
+        oauth:
           connected: "Statü: bağlantı var"
           grant: "Şimdi bağlan"
           not_connected: "Statü: Bağlantı yok"
           revoke: "Bağlantıyı kesmek"
       headline: "Profilinizi düzenleyin"
-  search: 
-    index: 
-      search: 
+  search:
+    index:
+      search:
         for: "\"%{q}\" araniyor"
         not_found: "Yer bulunamadi!"
   statistics: Istatistik
-  support: 
-    array: 
+  support:
+    array:
       last_word_connector: " ve "
       sentence_connector: ve
       skip_last_comma: true
       two_words_connector: " ve "
       words_connector: ", "
-    select: 
+    select:
       prompt: "Lütfen seçiniz"
-  time: 
+  time:
     am: "öğleden önce"
-    formats: 
+    formats:
       default: "%a %d.%b.%y %H:%M"
       long: "%e %B %Y, %A, %H:%M"
       short: "%e %B, %H:%M"
     pm: "öğleden sonra"
-  user_sessions: 
-    create: 
-      activation: 
+  user_sessions:
+    create:
+      activation:
         notice: "Hesabınız şimdi aktive edildi!"
-      error: 
+      error:
         notice: "E-Posta ve parola birbirine uymuyor"
       notice: "Oturum açtınız!"
-    destroy: 
+    destroy:
       notice: "Hoşçakalın,yine gelin!"
-    new: 
+    new:
       email: "E-Posta adresi"
       login: "Oturum aç"
       login_with_twitter: "Twitter ile oturum aç"
       password: Parola
       remember_me: "Kayıtlı kal"
-  wheelchairstatus: 
+  wheelchairstatus:
     limited: "Kısmen tekerlekli sandalye ile ulaşılır"
     ? "no"
     : "Tekerlekli sandalye ile ulaşılmaz"
     unknown: "Tekerlekli sandalye erişilirliği belirsiz"
     ? "yes"
     : "Tamamen tekerlekli sandalye ile ulaşılır"
-  wheelmap: 
-    itunes: 
+  wheelmap:
+    itunes:
       alt: "AppStore Logo"
       title: "iPhone App'i şimdi indirin!"
-    logo: 
+    logo:
       alt: "Wheelmap Logo - tekerlekli sandalye ile ulaşılır yerler bulun"
       title: "Wheelmap - tekerlekli sandalye ile ulaşılır yerler bulun"
-    what_is: 
+    what_is:
       fully_accessible: "Giriş basamağı 7 santimetre den yüksek değil; tüm mevkiler tekerlekli sandalye kullanıcılar tarafından istisnasız ulasılır; engelliler tualeti mevcut "
       limited_accessible: "Girişdeki basamak 7 santimetre den yüksek değil; en önemli mevkiler tekerlekli sandalye kullanıcılar tarafından ulaşılabilir. "
       not_accessible: "Girişdeki basamak 7 santimetre den yüksek; veya girişde basamak var; veya en önemli mevkiler tekerlekli sandalye kullanıcılar için ulaşılamaz."

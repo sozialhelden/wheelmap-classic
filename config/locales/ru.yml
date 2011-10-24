@@ -1,10 +1,10 @@
---- 
-ru: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+ru:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "нужно подтвердить"
         blank: "не может быть пустым"
         confirmation: "не совпадает с подтверждением"
@@ -24,32 +24,32 @@ ru:
         too_long: "слишком длинный (максимум %{count} знаков )"
         too_short: "слишком короткий (минимум %{count} знаков )"
         wrong_length: "не правильная длинна (должна быть %{count} знаков)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: "Адрес электронной почты"
           password: пароль
           remember_me: "оставаться зарегистрированным"
-      template: 
+      template:
         body: "Проблемы возникли со следующими полями:"
-        header: 
+        header:
           few: "%{model}: сохранение не удалось из-за %{count} ошибок"
           many: "%{model}: сохранение не удалось из-за %{count} ошибок"
           one: "%{model}: сохранение не удалось из-за %{count} ошибки"
           other: "%{model}: сохранение не удалось из-за %{count} ошибки"
-  application: 
-    require_no_user: 
+  application:
+    require_no_user:
       notice: "Вы уже зарегистрированны"
-    require_user: 
+    require_user:
       notice: "Вы должны зарегистрироваться чтобы увидеть эту страницу"
-  breadcrumbs: 
-    node: 
+  breadcrumbs:
+    node:
       create: "Добавить новое место"
       edit: "Изменить место"
     root: wheelmap
-  common: 
+  common:
     close: закрыть
-  date: 
-    abbr_day_names: 
+  date:
+    abbr_day_names:
       - Вс
       - Пн
       - Вт
@@ -57,7 +57,7 @@ ru:
       - Чт
       - Пт
       - Сб
-    abbr_month_names: 
+    abbr_month_names:
       - ~
       - янв.
       - февр.
@@ -71,7 +71,7 @@ ru:
       - окт.
       - нояб.
       - дек.
-    day_names: 
+    day_names:
       - воскресенье
       - понедельник
       - вторник
@@ -79,11 +79,11 @@ ru:
       - четверг
       - пятница
       - суббота
-    formats: 
+    formats:
       default: "%d.%m.%Y"
       long: "%d %B %Y"
       short: "%d %b"
-    month_names: 
+    month_names:
       - ~
       - января
       - февраля
@@ -97,121 +97,124 @@ ru:
       - октября
       - ноября
       - декабря
-    order: 
+    order:
       - !ruby/symbol day
       - !ruby/symbol month
       - !ruby/symbol year
-  datetime: 
-    distance_in_words: 
-      about_x_hours: 
+  datetime:
+    distance_in_words:
+      about_x_hours:
         few: "около %{count} часов"
         many: "около %{count} часов"
         one: "около %{count} часа"
         other: "около %{count} часа"
-      about_x_months: 
+      about_x_months:
         few: "около %{count} месяцев"
         many: "около %{count} месяцев"
         one: "около %{count} месяца"
         other: "около %{count} месяца"
-      about_x_years: 
+      about_x_years:
         few: "около %{count} лет"
         many: "около %{count} лет"
         one: "около %{count} года"
         other: "около %{count} лет"
       half_a_minute: "меньше минуты"
-      less_than_x_minutes: 
+      less_than_x_minutes:
         few: "меньше %{count} минут"
         many: "меньше %{count} минут"
         one: "меньше %{count} минуты"
         other: "меньше %{count} минуты"
-      less_than_x_seconds: 
+      less_than_x_seconds:
         few: "меньше %{count} секунд"
         many: "меньше %{count} секунд"
         one: "меньше %{count} секунды"
         other: "меньше %{count} секунды"
-      over_x_years: 
+      over_x_years:
         few: "больше %{count} лет"
         many: "больше %{count} лет"
         one: "больше %{count} года"
         other: "больше %{count} лет"
-      x_days: 
+      x_days:
         few: "%{count} дня"
         many: "%{count} дней"
         one: "%{count} день"
         other: "%{count} дня"
-      x_minutes: 
+      x_minutes:
         few: "%{count} минуты"
         many: "%{count} минут"
         one: "%{count} минуту"
         other: "%{count} минуты"
-      x_months: 
+      x_months:
         few: "%{count} месяца"
         many: "%{count} месяцев"
         one: "%{count} месяц"
         other: "%{count} месяца"
-      x_seconds: 
+      x_seconds:
         few: "%{count} секунды"
         many: "%{count} секунд"
         one: "%{count} секунда"
         other: "%{count} секунды"
-    prompts: 
+    prompts:
       day: День
       hour: Часов
       minute: Минут
       month: Месяц
       second: Секунд
       year: Год
-  devise: 
-    confirmations: 
+  devise:
+    confirmations:
       confirmed: "Ваша учётная запись подтверждена. Теперь вы вошли в систему."
       link: "Не получили иструкции для подтверждения аккаунта?"
       send_instructions: "В течение нескольких минут вы получите e-mail с инструкциями по подтверждению вашей учётной записи."
-    destroy: 
+    destroy:
       confirm: "Вы уверенны?"
       headline: "Удалить аккаунт"
       link: "Удалить сейчас"
-    edit: 
-      form: 
-        labels: 
+    edit:
+      form:
+        labels:
           current_password: "Ваш пароль <i>(необходим для подтверждения Ваших изменений)</i>"
           email: "Адрес электронной почты"
           password: "Ваш пароль (оставьте пустым если не хотите его менять)"
           password_confirmation: "Повторить пароль"
         submit: "Сохранить изменения"
       headline: "Управление аккаунтом"
-    mailer: 
-      confirmation_instructions: "Инструкции для подтверждения"
-      reset_password_instructions: "Инструкции для сброса пароля"
-      unlock_instructions: "Инструкции для разблокировки"
+    mailer:
+      confirmation_instructions:
+        subject: "Инструкции для подтверждения"
+      reset_password_instructions:
+        subject: "Инструкции для сброса пароля"
+      unlock_instructions:
+        subject: "Инструкции для разблокировки"
     mandatory: "* обязательное поле"
-    password_recovery: 
-      form: 
-        labels: 
+    password_recovery:
+      form:
+        labels:
           email: "Адрес электронной почты"
         submit: "Востановить пароль"
       headline: "Забыли пароль?"
-    password_reset: 
-      email: 
+    password_reset:
+      email:
         comment: "Если Вы не делали запрос об изменении Вашего пароля, пожалуйста проигнорируйте это сообщение.<br/>Ваш пароль останется прежним пока вы не перейдете по этой ссылке"
         headline: "Добро пожаловать %{email} "
         link: "Сменить пароль"
         text: "Кто то сделал запрос об изменении Вашего пароля. Вы можете это сделать перейдя по следующей ссылке:"
-      form: 
-        labels: 
+      form:
+        labels:
           password: "Новый пароль"
           password_confirmation: "Повторить пароль"
         submit: "Вернуть пароль"
       headline: "Вернуть пароль"
-    passwords: 
+    passwords:
       link: "Забли пароль?"
       send_instructions: "В течение нескольких минут вы получите e-mail с инструкциями по восстановлению вашего пароля."
       updated: "Ваш пароль изменён. Теперь вы вошли в систему."
-    registrations: 
+    registrations:
       destroyed: "До свидания! Ваша учётная запись удалена. Надеемся снова увидеть вас."
       link: Регистрация
       signed_up: "Добро пожаловать! Вы успешно зарегистрировались. В течение нескольких минут вы получите e-mail с инструкциями по подтверждению вашей учётной записи."
       updated: "Ваша учётная запись изменена."
-    sessions: 
+    sessions:
       inactive: "Ваш аккаунт еще не активирован."
       invalid: "Неверный пароль или email."
       invalid_token: "Неверный ключ аутентификации."
@@ -222,30 +225,30 @@ ru:
       timeout: "Ваша сессия закончена, пожалуйста, войдите еще раз, чтобы продолжить."
       unauthenticated: "Вы должны войти или зарегистрироваться, прежде чем сможете продолжить."
       unconfirmed: "Вы должны подтвердить Ваш аккаунт, прежде чем сможете продолжить."
-    sign_in: 
-      form: 
-        labels: 
+    sign_in:
+      form:
+        labels:
           email: "Адрес электронной почты"
           password: Пароль
           remember_me: "Оставаться зарегистрированным"
         submit: войти
       headline: Войти
-    sign_out: 
+    sign_out:
       headline: Выйти
-    sign_up: 
-      form: 
-        labels: 
+    sign_up:
+      form:
+        labels:
           email: "Адрес электронной почты"
           password: Пароль
           password_confirmation: "Повторить пароль"
         submit: Регистр
       headline: Регистр
-    unlocks: 
+    unlocks:
       link: "Не получили инструкции для разблокировки аккаунта?"
       send_instructions: "В течение нескольких минут вы получите письмо с инструкциями по разблокировке вашей учётной записи."
       unlocked: "Ваша учётная запись разблокирована. Теперь вы вошли в систему."
-  errors: 
-    messages: 
+  errors:
+    messages:
       accepted: "должен быть принят"
       blank: "должен быть заполнен"
       confirmation: "не соответствует подтверждению"
@@ -265,19 +268,19 @@ ru:
       too_long: "слишком длинное значение (должно быть не больше чем %{count} знаков)"
       too_short: "слишком короткое значение (должно быть не меньше чем %{count}  знаков)"
       wrong_length: "не действительная длина значения (должно быть %{count}  знаков)"
-  form: 
+  form:
     show_fully_accessible_places: "доступно для инвалидов"
     show_limited_accessible_places: "частично доступно для инвалидов"
     show_places_without_status: "неизвестный статус"
     show_unaccessible_places: "не доступно для инвалидов"
-  formtastic: 
-    hints: 
+  formtastic:
+    hints:
       lat: "Переместите маркер на карту "
       osm_username: "Еще не зарегистрированны? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\"> Создать Openstreetmap аккаунт</a> "
       password: "(оставьте поле пустым если Вы не хотите изменять значение)"
       phone: "например:  +49 30 123456-78      "
       website: "например: http://www.example.com"
-    labels: 
+    labels:
       category: "Категория:"
       city: "Город:"
       create: "Создать место "
@@ -297,35 +300,35 @@ ru:
       website: "Интернет страница:"
       wheelchair: "Доступно для инвалидов?"
       wheelchair_description: "Прокомментируйте доступность:"
-    titles: 
+    titles:
       basic: "Основные данные"
       optional: "Больше информации <span class=\"addition\">(все поля являются необязательными)</span> "
-  global: 
+  global:
     form_validation_error: "Обратите пожалуйста внимание на список ошибок внизу"
-  header: 
-    meta: 
+  header:
+    meta:
       description: "Найдите места доступные для инвалидов - wheelmap.org "
       homepage: "Домашняя страница"
       search: Поиск
-    navigation: 
+    navigation:
       blog: Блог
       feedback: Отзыв
       home: Старт
       how_to_add_a_place: "Как добавлять новые места?"
       imprint: Импринт
-  number: 
-    currency: 
-      format: 
+  number:
+    currency:
+      format:
         format: "%n %u"
         separator: "."
         unit: руб.
-    format: 
+    format:
       separator: "."
-    human: 
-      storage_units: 
+    human:
+      storage_units:
         format: "%n %u"
-        units: 
-          byte: 
+        units:
+          byte:
             few: байта
             many: байт
             one: байт
@@ -334,14 +337,14 @@ ru:
           kb: КБ
           mb: МБ
           tb: ТБ
-  support: 
-    array: 
+  support:
+    array:
       last_word_connector: " и "
       two_words_connector: " и "
       words_connector: ", "
-  time: 
+  time:
     am: утра
-    formats: 
+    formats:
       default: "%a, %d %b %Y, %H:%M:%S %z"
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"

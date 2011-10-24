@@ -297,9 +297,12 @@ en:
       timeout: 'Your session expired, please sign in again to continue.'
       inactive: 'Your account was not activated yet.'
     mailer:
-      unlock_instructions: Unlock Instructions
-      reset_password_instructions: Reset password instructions
-      confirmation_instructions: Confirmation instructions
+      unlock_instructions:
+        subject: Unlock Instructions
+      reset_password_instructions:
+        subject: Reset password instructions
+      confirmation_instructions:
+        subject: One more step to activate your account
     mandatory: "* Required"
     password_recovery:
       form:

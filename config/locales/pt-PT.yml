@@ -1,10 +1,10 @@
---- 
-pt-PT: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+pt-PT:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute}%{message}"
-      messages: 
+      messages:
         accepted: "tem de ser aceite"
         blank: "não pode estar em branco"
         confirmation: "não coincide com a confirmação"
@@ -25,30 +25,30 @@ pt-PT:
         too_long: "é demasiado grande (o mínimo é de %{count} characters)"
         too_short: "é demasiado pequeno (o mínimo é de %{count} caracteres)"
         wrong_length: "comprimento errado (deve ter %{count} caracteres)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: E-mail
           password: "Palavra Passe"
           remember_me: "Manter-se ligado à conta"
-      template: 
+      template:
         body: "Por favor, verifique os seguintes campos:"
-        header: 
+        header:
           one: "Não foi possível guardar %{model}: 1 erro"
           other: "Não foi possível guardar %{model}: %{count} erros"
-  application: 
-    require_no_user: 
+  application:
+    require_no_user:
       notice: "Já está ligado à sua conta"
-    require_user: 
+    require_user:
       notice: "Tem de se ligar à sua conta para ver o conteúdo desta página."
-  breadcrumbs: 
-    node: 
+  breadcrumbs:
+    node:
       create: "Adicionar um novo lugar"
       edit: "Editar um lugar"
     root: "ê ã õ  ç"
-  common: 
+  common:
     close: fechar
-  date: 
-    abbr_day_names: 
+  date:
+    abbr_day_names:
       - Dom
       - Seg
       - Ter
@@ -56,7 +56,7 @@ pt-PT:
       - Qui
       - Sex
       - Sáb
-    abbr_month_names: 
+    abbr_month_names:
       - ~
       - Jan
       - Fev
@@ -70,7 +70,7 @@ pt-PT:
       - Out
       - Nov
       - Dez
-    day_names: 
+    day_names:
       - Domingo
       - Segunda
       - Terça
@@ -78,11 +78,11 @@ pt-PT:
       - Quinta
       - Sexta
       - Sábado
-    formats: 
+    formats:
       default: "%d/%m/%Y"
       long: "%d de %B de %Y"
       short: "%d de %B"
-    month_names: 
+    month_names:
       - ~
       - Janeiro
       - Fevereiro
@@ -96,72 +96,72 @@ pt-PT:
       - Outubro
       - Novembro
       - Dezembro
-    order: 
+    order:
       - !ruby/symbol day
       - !ruby/symbol month
       - !ruby/symbol year
-  datetime: 
-    distance_in_words: 
-      about_x_hours: 
+  datetime:
+    distance_in_words:
+      about_x_hours:
         one: "aproximadamente 1 hora"
         other: "aproximadamente %{count} horas"
-      about_x_months: 
+      about_x_months:
         one: "aproximadamente 1 mês"
         other: "aproximadamente %{count} meses"
-      about_x_years: 
+      about_x_years:
         one: "aproximadamente 1 ano"
         other: "aproximadamente %{count} anos"
-      almost_x_years: 
+      almost_x_years:
         one: "quase 1 ano"
         other: "quase %{count} years"
       half_a_minute: "meio minuto"
-      less_than_x_minutes: 
+      less_than_x_minutes:
         one: "menos de um minuto"
         other: "menos de %{count} minutos"
-      less_than_x_seconds: 
+      less_than_x_seconds:
         one: "menos de 1 segundo"
         other: "menos de %{count} segundos"
-      over_x_years: 
+      over_x_years:
         one: "mais de 1 ano"
         other: "mais de %{count} anos"
-      x_days: 
+      x_days:
         one: "1 dia"
         other: "%{count} dias"
-      x_minutes: 
+      x_minutes:
         one: "1 minuto"
         other: "%{count} minutos"
-      x_months: 
+      x_months:
         one: "1 mês"
         other: "%{count} meses"
-      x_seconds: 
+      x_seconds:
         one: "1 segundo"
         other: "%{count} segundos"
-    prompts: 
+    prompts:
       day: Dia
       hour: Hora
       minute: Minuto
       month: Mês
       second: Segundo
       year: Ano
-  devise: 
-    confirmations: 
+  devise:
+    confirmations:
       confirmed: "A sua conta está confirmada. Está agora ligado à sua conta."
       link: "Não recebeu a confirmação com instruções?"
       send_instructions: "Receberá dentro de minutos um e-mail com intruções de como confirmar a sua conta."
-    destroy: 
+    destroy:
       confirm: "Tem a certeza?"
       headline: "Apagar a conta."
       link: "Apagar agora"
-    edit: 
-      form: 
-        labels: 
+    edit:
+      form:
+        labels:
           current_password: "Palavra passe actual <i> (precisamos do seguinte para confirmar a alteração) </i>"
           email: E-mail
           password: "Palavra passe <i> (deixar em branco se não quiser mudar) </i>"
           password_confirmation: "Repita a palavra passe"
         submit: "Gravar mudanças"
       headline: "Opções da conta"
-    failure: 
+    failure:
       inactive: "A sua conta ainda nao foi activada."
       invalid: "Palavra passe ou Email inválido. "
       invalid_token: d
@@ -169,42 +169,45 @@ pt-PT:
       timeout: "A sua sess"
       unauthenticated: "Voçê tem de se registrar antes de poder continuar.  "
       unconfirmed: "Voçê tem de confirmar a sua conta antes de continuar."
-    mailer: 
-      confirmation_instructions: "Confirmação das instruções"
-      reset_password_instructions: "Restabelecer as intruções sobre a palavra passe"
-      unlock_instructions: "Desbloquear as instruções  "
+    mailer:
+      confirmation_instructions:
+        subject: "Confirmação das instruções"
+      reset_password_instructions:
+        subject: "Restabelecer as intruções sobre a palavra passe"
+      unlock_instructions:
+        subject: "Desbloquear as instruções  "
     mandatory: "* campo obrigatório"
-    omniauth_callbacks: 
+    omniauth_callbacks:
       failure: "não pôde ser confirmado de  %{kind} porque \"%{reason}"
       success: "Autorizado com sucesso de %{kind} conta"
-    password_recovery: 
-      form: 
-        labels: 
+    password_recovery:
+      form:
+        labels:
           email: E-mail
         submit: "Restabelecer a sua palavra passe"
       headline: "Esqueceu-se da palavra passe?"
-    password_reset: 
-      email: 
+    password_reset:
+      email:
         comment: "Se não pediu para alterar a sua palavra passe, por favor ignore este mail <br/>. A sua palavra passe não será alterada a não ser que carregue no seguinte link."
         headline: "Bem vindo %{email}"
         link: "Mudar a palavra passe"
         text: "Alguém pediu para alterar a sua palavra passe. Pode fazer essa alteração carregando no seguinte link: "
-      form: 
-        labels: 
+      form:
+        labels:
           password: "Nova palavra passe"
           password_confirmation: "Repita a palavra passe"
         submit: "Restabelecer a palavra passe"
       headline: "Restabelecer a palavra passe"
-    passwords: 
+    passwords:
       link: "Esquececeu-se da palavra passe?"
       send_instructions: "Dentro de minutos receberá um mail com as instruções de como restablecer a sua palavra passe"
       updated: "A sua palavra passe foi alterada con sucesso. Está agora ligado à sua conta."
-    registrations: 
+    registrations:
       destroyed: "Adeus! A sua conta foi cancelada com sucesso. Até breve."
       link: "Criar conta"
       signed_up: "Conta criada com sucesso. Uma confirmação foi mandada para o seu mail."
       updated: "A actualização da sua conta decorreu com sucesso"
-    sessions: 
+    sessions:
       inactive: "A sua conta ainda não foi activada"
       invalid: "E-mail ou palavra passe inválida "
       invalid_token: "Ficha de autentificação inválida"
@@ -215,31 +218,31 @@ pt-PT:
       timeout: "A sua sessão expiou, por favor volte a entrar na sua conta para continuar."
       unauthenticated: "Tem de criar uma conta ou entrar na sua conta para continuar."
       unconfirmed: "Tem de confirmar a sua conta antes de continuar"
-    sign_in: 
-      form: 
-        labels: 
+    sign_in:
+      form:
+        labels:
           email: E-mail
           password: "Palavra passe"
           remember_me: "manter-se ligado à sua conta"
         submit: entrar
       headline: Entrar
-    sign_out: 
+    sign_out:
       headline: Sair
-    sign_up: 
-      form: 
-        labels: 
+    sign_up:
+      form:
+        labels:
           email: E-mail
           password: "Palavra passe"
           password_confirmation: "Repita a palavra passe"
         submit: Registrar-se
       headline: Registrar-se
-    unlocks: 
+    unlocks:
       link: "Não recebeu instruções para desbloquear a sua conta?"
       send_instructions: "Receberá dentro de minutos um mail com intruções de como desbloquear a sua conta."
       unlocked: "A sua conta foi desbloqueada com sucesso. Está agora ligado(a) à sua conta"
-  errors: 
+  errors:
     dynamic_format: "%{message}"
-    messages: 
+    messages:
       accepted: "tem de ser aceite"
       already_confirmed: "já estava confirmado, por favor volte a registrar-se"
       blank: "não pode estar em branco"
@@ -258,7 +261,7 @@ pt-PT:
       not_an_integer: "tem de ser um número integral"
       not_found: "não foi encontrado"
       not_locked: "não estava bloqueado"
-      not_saved: 
+      not_saved:
         one: "Um erro impdiu que %{resource} fosse salvo:"
         other: "%{count} erros impediu que %{resource} fossem salvos :"
       odd: "tem de ser ímpar"
@@ -266,33 +269,33 @@ pt-PT:
       too_long: "é demasiado grande (o mínimo é de %{count} characters)"
       too_short: "é demasiado pequeno (o mínimo é de %{count} caracteres)"
       wrong_length: "comprimento errado (deve ter %{count} caracteres)"
-    template: 
+    template:
       body: "Houve problemas com os seguintes campos: "
-      header: 
+      header:
         one: "Um erro impdiu que %{model} fosse salvo:"
         other: "%{count} erros impediu que %{model} fossem salvos :"
-  flash: 
-    actions: 
-      create: 
+  flash:
+    actions:
+      create:
         notice: "%{resource_name} foi criado com sucesso."
-      destroy: 
+      destroy:
         alert: "%{resource_name} não pode ser eliminado. "
         notice: "%{resource_name} foi eliminado com sucesso"
-      update: 
+      update:
         notice: "%{resource_name} foi actualizado com sucesso"
-  form: 
+  form:
     show_fully_accessible_places: "acessível a cadeira de rodas"
     show_limited_accessible_places: "parcialmente acessível a cadeira de rodas"
     show_places_without_status: "estatuto desconhecido"
     show_unaccessible_places: "não acessível a cadeira de rodas"
-  formtastic: 
-    hints: 
+  formtastic:
+    hints:
       lat: "Coloque o inicador que se encontra no mapa para a posição correcta "
       osm_username: "Ainda não é membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Criar uma conta Openstreetmp agora</a>"
       password: "(deixe em branco se não quiser mudar) "
       phone: "p. ex. +351 21 6100453"
       website: "p. ex. http://www.example.com"
-    labels: 
+    labels:
       category: "Categoria:"
       city: "Cidade:"
       create: "Criar um lugar"
@@ -313,18 +316,18 @@ pt-PT:
       website: Website
       wheelchair: "Acessibilidade para cadeira de rodas?"
       wheelchair_description: "Comentário sobre a acessibilidade: "
-    titles: 
+    titles:
       basic: "Data base "
       optional: "Mais informação <span class=\"addition\">(all fields are optional)</span>"
-  global: 
+  global:
     form_validation_error: "Por favor tome atenção aos erros mencionados em baixo."
-  header: 
-    meta: 
+  header:
+    meta:
       description: "encontrar lugares acessíveis a cadeira de rodas - wheelmap.org"
       homepage: Homepage
       keywords: "lugares acessíveis a cadeira de rodas procurar indicador de procura"
       search: Procurar
-    navigation: 
+    navigation:
       blog: Blog
       feedback: Feedbck
       home: Iniciar
@@ -338,65 +341,65 @@ pt-PT:
       tolk: Traduções
       what_is_barrier_free: "Qual o significado de \"acessível a cadeira de rodas\"?"
       what_is_wheelmap: "O que é o wheelmap?"
-    searchbar: 
+    searchbar:
       add_place: "Adicionar outro lugar"
       find: encontrar
       placeholder: "p. Ex. Sunset Boulevard L.A. ou o Portão de Brandenburgo"
       title_add_place: "Adicionar um novo lugar nesta posição agora!"
     tagline: "Lógotipo do Wheelmap"
     title: "Wheelmap - encontre lugares acessivéis a cadeira de rodas"
-  helpers: 
-    select: 
+  helpers:
+    select:
       prompt: "Por favor seleccione"
-    submit: 
+    submit:
       create: "Criar  %{model}"
       submit: "Guardar  %{model}"
       update: "Actualizar  %{model}"
-  home: 
-    index: 
-      filter: 
+  home:
+    index:
+      filter:
         category: "Categoria:"
         wheelchair: "Acessivel a cadeira de rodas? (O que significa isto?) "
-      link: 
-        node: 
+      link:
+        node:
           create: "Adicionar um novo lugar"
-  layouts: 
-    application: 
-      banner: 
+  layouts:
+    application:
+      banner:
         alt: "Um projecto de Sozialhelden.de"
-  node: 
-    tags: 
+  node:
+    tags:
       phone: "Telefone:"
       website: "site na Web:"
-  nodes: 
-    create: 
-      flash: 
+  nodes:
+    create:
+      flash:
         not_successfull: "Oops, os dados introduzido estão incorrectos ou incompletos"
         successfull: "Muito obrigado, os dados submetidos foram guardados com sucesso e estarão online em breve. "
-    errors: 
+    errors:
       default: "Oops, algo não correu bem. Nós já fomos informados sobre a situação. "
       not_authorized: "Desculpe, a autentificação falhou"
       not_available: "Desculpe, mas esta página não está de momento acessível"
       not_existent: "Desculpe, este lugar já não está mais acessível"
       not_found: "Desculpe, a página não foi encontrada"
       param_missing: "Por Favor introduza um termo para procura"
-    flash: 
+    flash:
       authorize_wheelmap: "Você precisa de uma conta OpenStreetMap para alterar os dados."
-    new: 
-      header: 
+    new:
+      header:
         title: "Novo lugar | wheelmap.org"
-    show: 
-      link: 
+    show:
+      link:
         edit_node: "Editar lugar"
         large_map: Aumentar
         report_bug: "Report a problem"
-    update: 
-      flash: 
+    update:
+      flash:
         not_successfull: "Oops, os dados introduzido estão incorrectos ou incompletos"
         successfull: "Muito obrigado, os dados submetidos foram guardados com sucesso e estarão online em breve. "
-  number: 
-    currency: 
-      format: 
+  number:
+    currency:
+      format:
         delimiter: "."
         format: "%u%n"
         precision: 2
@@ -404,28 +407,28 @@ pt-PT:
         significant: 0
         strip_insignificant_zeros: 0
         unit: €
-    format: 
+    format:
       delimiter: "."
       precision: 3
       separator: ","
       significant: 0
       strip_insignificant_zeros: 0
-    human: 
-      decimal_units: 
-        units: 
+    human:
+      decimal_units:
+        units:
           billion: "Bilhão "
           million: "Milhão "
           quadrillion: Quatrilhão
           thousand: Mil
           trillion: "Trilhão "
-      format: 
+      format:
         precision: 1
         significant: true
         strip_insignificant_zeros: true
-      storage_units: 
+      storage_units:
         format: "%n %u"
-        units: 
-          byte: 
+        units:
+          byte:
             one: Byte
             other: Bytes
           gb: GB
@@ -433,8 +436,8 @@ pt-PT:
           mb: MB
           tb: TB
   or: ou
-  poi: 
-    category: 
+  poi:
+    category:
       accommodation: "Acomodação "
       education: "Ecucação "
       food: Comida
@@ -447,8 +450,8 @@ pt-PT:
       sport: Desporto
       tourism: Turismo
       unknown: Desconhecido
-    name: 
-      accommodation: 
+    name:
+      accommodation:
         beach_resort: "Hotel Praia"
         bed_and_breakfast: "Bed and Breakfast"
         camp_site: Acampamento
@@ -458,14 +461,14 @@ pt-PT:
         hostel: Pousada
         hotel: Hotel
         motel: Motel
-      education: 
+      education:
         college: Colégio
         kindergarten: "Jardim escola"
         library: Biblioteca
         museum: Museu
         school: Escola
         university: Universidade
-      food: 
+      food:
         bar: Bar
         biergarten: "Bar de cerveja"
         cafe: café
@@ -473,11 +476,11 @@ pt-PT:
         fast_food: "Fast food"
         pub: Pub
         restaurant: Restaurante
-      government: 
+      government:
         courthouse: Tribunal
         embassy: Embaixada
         public_building: "Edificio público"
-      leisure: 
+      leisure:
         arena: Arena
         cinema: Cinema
         gallery: Galeria
@@ -485,20 +488,20 @@ pt-PT:
         sauna: Sauna
         theatre: Teatro
         zoo: Zoológico
-      misc: 
+      misc:
         doctors: Doutores
         hospital: Hospital
         pharmacy: Farmácia
         place_of_worship: "Lugar de oração "
         toilets: "Casa de banho"
         veterinary: Veterenário
-      money_post: 
+      money_post:
         atm: "Caixa Multibanco"
         bank: Banco
         bureau_de_change: "Loja de Cambio"
         post_box: "Caixa de Correio"
         post_office: Correios
-      public_transfer: 
+      public_transfer:
         aerodrome: Aeroporto
         bicycle_parking: "Parque para bicicletas"
         bicycle_rental: "Aluguer de bicicletas"
@@ -521,7 +524,7 @@ pt-PT:
         subway_entrance: "Entrada do Metro "
         terminal: "Terminal de Aeroporto "
         tram_stop: "Estação de eléctrico"
-      shopping: 
+      shopping:
         alcohol: Licor
         bakery: Padaria
         beverages: Bebidas
@@ -546,12 +549,12 @@ pt-PT:
         optician: Óptica
         shoes: Sapatos
         supermarket: Supermercado
-      sport: 
+      sport:
         sports_centre: "Centro de desporto"
         stadium: Estádio
         swimming: Nadar
         swimming_pool: Piscina
-      tourism: 
+      tourism:
         archaeological_site: "Local arqueológico"
         arts_centre: "centro de artes"
         artwork: "Obra de arte"
@@ -566,69 +569,69 @@ pt-PT:
         theme_park: "Parque temático"
         tower: Torre
         viewpoint: "Ponto de vista"
-      unknown: 
+      unknown:
         unknown: Desconhecido
-  profile: 
-    edit: 
-      application: 
-        oauth: 
+  profile:
+    edit:
+      application:
+        oauth:
           connected: "Estado: Ligado"
           grant: "Ligar agora"
           not_connected: "Estado: Desligado"
           revoke: "Desligar "
       headline: "Editar o seu profil"
-  search: 
-    index: 
-      search: 
+  search:
+    index:
+      search:
         for: "Procurando \"%{q}"
         not_found: "Não foi possível encontrar um lugar"
   statistics: Estatísticas
-  support: 
-    array: 
+  support:
+    array:
       last_word_connector: ", e"
       sentence_connector: e
       skip_last_comma: true
       two_words_connector: " e "
       words_connector: ", "
-    select: 
+    select:
       prompt: "Por favor seleccione"
-  time: 
+  time:
     am: am
-    formats: 
+    formats:
       default: "%A, %d de %B de %Y, %H:%Mh"
       long: "%A, %d de %B de %Y, %H:%Mh"
       short: "%d/%m, %H:%M hs"
     pm: pm
-  user_sessions: 
-    create: 
-      activation: 
+  user_sessions:
+    create:
+      activation:
         notice: "A sua conta está agora activa."
-      error: 
+      error:
         notice: "E-Mail e palavra passe não correspondem"
       notice: "Você está dentro!"
-    destroy: 
+    destroy:
       notice: "Adeus, até breve!"
-    new: 
+    new:
       email: E-Mail
       login: "Log in"
       login_with_twitter: "Log in com Twitter"
       password: "Palavra passe"
       remember_me: "Mantenha-se connectado"
-  wheelchairstatus: 
+  wheelchairstatus:
     limited: "parcial acesibilidade a cadeira de rodas"
     ? "no"
     : "sem acessibilidade a cadeira de rodas"
     unknown: "acessibilidade a cadeira de rodas desconhecida"
     ? "yes"
     : "Completa acessibilidade a cadeira de rodas"
-  wheelmap: 
-    itunes: 
+  wheelmap:
+    itunes:
       alt: "AppStore Logo"
       title: "Faça agora o download do seu iPhone App!"
-    logo: 
+    logo:
       alt: "Wheelmap Logo - encontre lugares com acessibilidade para cadeira de rodas"
       title: "Wheelmap - encontre lugares com acessibilidade para cadeira de rodas"
-    what_is: 
+    what_is:
       fully_accessible: "O desnível na entrada não é superior a 7 cm; todas as localidades com acesso a cadeira de rodas (sem excepção); casa de banho para desabilitados "
       limited_accessible: "O desnível na entrada não é superior a 7 cm; as localidades mais importantes acesso a cadeira de rodas "
       not_accessible: "O desnível na entrada não é superior a 7 cm; ou escadas na entrada; ou as mais importantes localidades sem acesso a cadeira de rodas"

@@ -1,10 +1,10 @@
---- 
-se: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+se:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "måste accepteras"
         blank: "får inte vara tomt"
         confirmation: "måste vara samma som det upprepade"
@@ -25,30 +25,30 @@ se:
         too_long: "är för långt {max %{count} bokstäver}"
         too_short: "är för kort (min %{count} bokstäver)"
         wrong_length: "är inte av korrekt längd ( borde vara %{count} bokstäver)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: "E-post adress"
           password: Lösenord
           remember_me: "Kom ihåg mig"
-      template: 
+      template:
         body: "Det var problem med följande fält:"
-        header: 
+        header:
           one: "1 fel förhindrade denna %{model} från att sparas"
           other: "%{count} fel förhindrade denna %{model} från att sparas"
-  application: 
-    require_no_user: 
+  application:
+    require_no_user:
       notice: "Du är redan inloggad"
-    require_user: 
+    require_user:
       notice: "Du måste vara inloggad för att se denna sida"
-  breadcrumbs: 
-    node: 
+  breadcrumbs:
+    node:
       create: "Lägg till plats"
       edit: "Ändra plats"
     root: wheelmap
-  common: 
+  common:
     close: stäng
-  date: 
-    abbr_day_names: 
+  date:
+    abbr_day_names:
       - Sön
       - Mån
       - Tis
@@ -56,7 +56,7 @@ se:
       - Tor
       - Fre
       - Lör
-    abbr_month_names: 
+    abbr_month_names:
       - ~
       - Jan
       - Feb
@@ -70,7 +70,7 @@ se:
       - Okt
       - Nov
       - Dec
-    day_names: 
+    day_names:
       - Söndag
       - Måndag
       - Tisdag
@@ -78,11 +78,11 @@ se:
       - Torsdag
       - Fredag
       - Lördag
-    formats: 
+    formats:
       default: "%Y-%m-%d"
       long: "%d %B, %Y"
       short: "%d %b"
-    month_names: 
+    month_names:
       - ~
       - Januari
       - Februari
@@ -96,72 +96,72 @@ se:
       - Oktober
       - November
       - December
-    order: 
+    order:
       - !ruby/symbol year
       - !ruby/symbol month
       - !ruby/symbol day
-  datetime: 
-    distance_in_words: 
-      about_x_hours: 
+  datetime:
+    distance_in_words:
+      about_x_hours:
         one: "ca 1 timme"
         other: "ca %{count} timmar"
-      about_x_months: 
+      about_x_months:
         one: "ca 1 månad"
         other: "ca %{count} månader"
-      about_x_years: 
+      about_x_years:
         one: "ca 1 år"
         other: "ca %{count} år"
-      almost_x_years: 
+      almost_x_years:
         one: "nästan 1 år"
         other: "nästan %{count} år"
       half_a_minute: "en halv minut"
-      less_than_x_minutes: 
+      less_than_x_minutes:
         one: "mindre än en minut"
         other: "mindre än %{count} minuter"
-      less_than_x_seconds: 
+      less_than_x_seconds:
         one: "mindre än 1 sekund"
         other: "mindre än %{count} sekunder"
-      over_x_years: 
+      over_x_years:
         one: "över 1 år"
         other: "över %{count} år"
-      x_days: 
+      x_days:
         one: "1 dag"
         other: "%{count} dagar"
-      x_minutes: 
+      x_minutes:
         one: "1 minut"
         other: "%{count} minuter"
-      x_months: 
+      x_months:
         one: "1 månad"
         other: "%{count} månader"
-      x_seconds: 
+      x_seconds:
         one: "1 sekund"
         other: "%{count} sekunder"
-    prompts: 
+    prompts:
       day: Dag
       hour: Timme
       minute: Minut
       month: Månad
       second: Sekund
       year: År
-  devise: 
-    confirmations: 
+  devise:
+    confirmations:
       confirmed: "Ditt konto är validerat. Du är nu inloggad."
       link: "Mottog inte validerings instruktionerna?"
       send_instructions: "Du kommer att få ett e-post med instruktioner om hur du validerar ditt konto om några minuter."
-    destroy: 
+    destroy:
       confirm: "Är du säker?"
       headline: "Radera konto"
       link: "Radera nu"
-    edit: 
-      form: 
-        labels: 
+    edit:
+      form:
+        labels:
           current_password: "Nuvarande lösenord <i>(behövs för att acceptera ändringar)</i>"
           email: E-post
           password: "Lösenord <i>(lämnas tomt om du inte vill ändra det)</i>"
           password_confirmation: "Upprepa lösenord"
         submit: "Spara ändringar"
       headline: "Ändra konto"
-    failure: 
+    failure:
       inactive: "Ditt konto har inte aktiverats ännu."
       invalid: "Felaktig e-post eller lösenord."
       invalid_token: "Felaktig inloggnings token"
@@ -169,43 +169,46 @@ se:
       timeout: "Din session har avslutats, logga in igen för att fortsätta."
       unauthenticated: "Du måste logga in eller registrera dig för att fortsätta."
       unconfirmed: "Du måste validera ditt konto innan du kan fortsätta"
-    mailer: 
-      confirmation_instructions: Valideringsinstruktioner
-      reset_password_instructions: "Instruktioner för att återställa lösenord"
-      unlock_instructions: "Instruktioner för att låsa upp"
+    mailer:
+      confirmation_instructions:
+        subject: Valideringsinstruktioner
+      reset_password_instructions:
+        subject: "Instruktioner för att återställa lösenord"
+      unlock_instructions:
+        subject: "Instruktioner för att låsa upp"
     mandatory: "* obligatoriskt"
-    omniauth_callbacks: 
+    omniauth_callbacks:
       failure: "Kunde inte auktorisera dig från %{kind} pga \"%{reason}\""
       success: "Auktoriserad från %{kind} konto."
-    password_recovery: 
-      form: 
-        labels: 
+    password_recovery:
+      form:
+        labels:
           email: E-post
         submit: "Återställ lösenord"
       headline: "Glömt lösenord?"
-    password_reset: 
-      email: 
+    password_reset:
+      email:
         comment: "Om du inte har bett om att få återställa ditt lösenord, så bortse från detta e-post.<br/>Ditt lösenord kommer inte att ändras innan du trycker på länken ovan och väljer ett nytt lösenord."
         headline: "Välkommen %{email}"
         link: "Byta lösnord"
         text: "Någon har bett om att byta ditt lösenord. Du kan göra det genom att klicka på följande länk:"
-      form: 
-        labels: 
+      form:
+        labels:
           password: "Nytt lösenord"
           password_confirmation: "Upprepa lösenord"
         submit: "Återställ lösenord"
       headline: "Återställ lösenord"
-    passwords: 
+    passwords:
       link: "Glömt lösenord?"
       send_instructions: "Inom några minuter kommer du att få ett e-post om hur du kan återställa ditt lösenord."
       updated: "Ditt lösenord är ändrat. Du är nu inloggad."
-    registrations: 
+    registrations:
       destroyed: "Hej då! Ditt konto är nu avslutat. Hoppas vi ses igen snart."
       inactive_signed_up: "Du har lyckats registrera dig. Men vi kunde inte logga in dig för ditt konto är %{reason}"
       link: Registrera
       signed_up: "Du är nu registrerad. Om valt, så kommer validering via e-post att ske."
       updated: "Din kontoinformation är uppdaterad."
-    sessions: 
+    sessions:
       inactive: "Ditt konto är inte aktiverat ännu."
       invalid: "Felaktig e-post eller lösenord."
       invalid_token: "Felaktig inloggnings token"
@@ -216,33 +219,33 @@ se:
       timeout: "Din session har avslutats, logga in för att fortsätta."
       unauthenticated: "Du måste logga på eller registrera dig innan du kan fortsätta."
       unconfirmed: "Du måste verifiera ditt konto innan du kan fortsätta."
-    sign_in: 
-      form: 
-        labels: 
+    sign_in:
+      form:
+        labels:
           email: E-post
           password: Lösenord
           remember_me: "Kom ihåg mig?"
         submit: "Logga in"
       headline: "Logga in"
-    sign_out: 
+    sign_out:
       headline: "Logga ut"
-    sign_up: 
-      form: 
-        labels: 
+    sign_up:
+      form:
+        labels:
           email: E-post
           password: Lösenord
           password_confirmation: "Upprepa lösenord"
           wants_newsletter: "Ja, håll mig updaterad om Wheelmap. (Men inte mer än en gång i månaden)"
         submit: Registrera
       headline: "Registrera dig"
-    unlocks: 
+    unlocks:
       link: "Mottog du inte upplåsningsinstruktioner?"
       send_instructions: "Inom några minuter kommer du att få ett e-post om hur du  låser upp ditt konto."
       unlocked: "Ditt konto är nu upplåst. Du kan nu inloggad."
-  errors: 
+  errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
-    messages: 
+    messages:
       accepted: "måste accepteras"
       already_confirmed: "är redan validerad, prova att logga in"
       blank: "måste fyllas i"
@@ -261,7 +264,7 @@ se:
       not_an_integer: "måste vara ett heltal"
       not_found: "hittades inte"
       not_locked: "var inte låst"
-      not_saved: 
+      not_saved:
         one: "1 fel hindrade denna %{resource} från att sparas:"
         other: "%{count} fel hindrade denna %{resource} från att sparas:"
       odd: "måste vara udda"
@@ -269,33 +272,33 @@ se:
       too_long: "är för långt (får inte vara mer än %{count} bokstäver)"
       too_short: "är för kort (får inte vara mindre än %{count} bokstäver)"
       wrong_length: "är av fel längd (borde vara %{count} bokstäver)"
-    template: 
+    template:
       body: "Det var problem med följande fält:"
-      header: 
+      header:
         one: "1 fel hindrade denna %{model} från att sparas"
         other: "%{count} fel hindrade denna %{model} från att sparas"
-  flash: 
-    actions: 
-      create: 
+  flash:
+    actions:
+      create:
         notice: "%{resource_name} är skapad."
-      destroy: 
+      destroy:
         alert: "%{resource_name} kunde inte tas bort."
         notice: "%{resource_name} är borttagen."
-      update: 
+      update:
         notice: "%{resource_name} är uppdaterad."
-  form: 
+  form:
     show_fully_accessible_places: rullstolsanpassad
     show_limited_accessible_places: "delvis rullstolsanpassad"
     show_places_without_status: "okänd status"
     show_unaccessible_places: "inte rullstolsanpassad"
-  formtastic: 
-    hints: 
+  formtastic:
+    hints:
       lat: "Flytta markören på kartan till korrekt position"
       osm_username: "Inte medlem ännu?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Skapa ett Openstreetmap konto nu</a>"
       password: "(lämnas tomt, om du inte vill ändra det)"
       phone: "Till exempel: +46 40 123 45 67"
       website: "Till exempel: http://www.example.se"
-    labels: 
+    labels:
       category: "Kategori:"
       city: "Stad:"
       create: "Skapa plats"
@@ -317,18 +320,18 @@ se:
       website: "Webbplats:"
       wheelchair: Rullstolsanpassad?
       wheelchair_description: "Kommentar:"
-    titles: 
+    titles:
       basic: "Grundläggande data:"
       optional: "Mer information <span class=\"addition\">(alla fält är frivilliga)</span>"
-  global: 
+  global:
     form_validation_error: "Dessa fel uppstod."
-  header: 
-    meta: 
+  header:
+    meta:
       description: "Hitta rullstolsanpassade platser - wheelmap.org"
       homepage: Hemsida
       keywords: "rullstol rullstolsanpassade platser hitta sök lägg till"
       search: Sök
-    navigation: 
+    navigation:
       blog: Blogg
       feedback: Feedback
       home: Start
@@ -342,7 +345,7 @@ se:
       tolk: Översättningar
       what_is_barrier_free: "Vad betyder \"rullstolsanpassad\"?"
       what_is_wheelmap: "Vad är wheelmap?"
-    searchbar: 
+    searchbar:
       add_place: "Lägg till en plats"
       find: hitta
       label: "\"\""
@@ -350,80 +353,80 @@ se:
       title_add_place: "Lägg till an plats på denna position!"
     tagline: "Wheelmap logo"
     title: "Wheelmap - hitta rullstolsanpassade platser"
-  helpers: 
-    select: 
+  helpers:
+    select:
       prompt: Välj
-    submit: 
+    submit:
       create: "Skapa %{model}"
       submit: "Spara %{model}"
       update: "Ändra %{model}"
-  home: 
-    index: 
-      filter: 
+  home:
+    index:
+      filter:
         category: "Välj kategori:"
         wheelchair: Rullstolsanpassad?
-      ie: 
-        action: 
+      ie:
+        action:
           ignore: Ignorera
           upgrade: "Uppdatera webbläsaren"
-        warning: 
+        warning:
           headline: Tyvärr!
           message: "Du verkar använda Internet Explorer. Wheelmap behöver en webbläsare som följer standarderna för att fungera rätt. Vänligen använd Firefox, Chrome, Safari eller Opera"
-      link: 
-        node: 
+      link:
+        node:
           create: "Lägg till ny plats"
   how?: Hur?
-  layouts: 
-    application: 
-      banner: 
+  layouts:
+    application:
+      banner:
         alt: "Ett projekt av Sozialhelden.de"
-  node: 
-    address: 
+  node:
+    address:
       city: "%{postcode} %{city}"
       street: "%{housenumber} %{street}"
-    tags: 
+    tags:
       phone: "Telefon:"
       website: "Webbsida:"
-  nodes: 
-    create: 
-      flash: 
+  nodes:
+    create:
+      flash:
         not_successfull: "Ojdå, formuläret är antingen felaktigt ifyllt eller inte komplett."
         successfull: "Tack, ditt förslag är sparat och kommer snart att synas."
-    edit: 
-      header: 
+    edit:
+      header:
         title: "Ändra plats: %{node} | wheelmap.org"
-      link: 
+      link:
         large_map: "&laquo; Avbryt"
-    errors: 
+    errors:
       default: "Ojdå, något blev fel. Men vi har blivit informerade om det!"
       not_authorized: "Tyvärr, inloggningen misslyckades"
       not_available: "Tyvärr, denna sida är just nu inte tillgänglig."
       not_existent: "Tyvärr, denna sida finns inte längre."
       not_found: "Tyvärr, denna sida hittades inte."
       param_missing: "Ange ett sökuttryck."
-    flash: 
+    flash:
       authorize_wheelmap: "Du behöver ett OpenStreetMap konto för att ändra."
-    new: 
-      header: 
+    new:
+      header:
         title: "Ny plats | wheelmap.org"
-      link: 
+      link:
         large_map: "&laquo; Avbryt"
-    show: 
-      header: 
+    show:
+      header:
         title: "Plats: %{node} | wheelmap.org"
-      link: 
+      link:
         edit_node: "Ändra plats"
         large_map: Förstora
         report_bug: "Rapportera ett problem"
-    update: 
-      flash: 
+    update:
+      flash:
         not_successfull: "Ojdå, du skrev antingen fel eller har inte fyllt i allt."
         successfull: "Tackar, ditt förslag är sparat och kommer snart att vara tillgängligt."
-    update_wheelchair: 
+    update_wheelchair:
       successfull: "Statusen för \"%{name}\" har blivit ändrat till \"%{status} rullstolsanpassad\" och kommer snart att vara tillgängligt."
-  number: 
-    currency: 
-      format: 
+  number:
+    currency:
+      format:
         delimiter: ","
         format: "%n %u"
         precision: 2
@@ -431,55 +434,55 @@ se:
         significant: 0
         strip_insignificant_zeros: 0
         unit: kr
-    format: 
+    format:
       delimiter: "\" \""
       precision: 2
       separator: ","
       significant: 0
       strip_insignificant_zeros: 0
-    human: 
-      decimal_units: 
+    human:
+      decimal_units:
         format: "%n %u"
-        units: 
+        units:
           billion: Miljard
           million: Miljon
           quadrillion: Kvadriljon
           thousand: Tusen
           trillion: Trillion
           unit: "\"\""
-      format: 
+      format:
         delimiter: "\"\""
         precision: 1
         significant: true
         strip_insignificant_zeros: true
-      storage_units: 
+      storage_units:
         format: "%n %u"
-        units: 
-          byte: 
+        units:
+          byte:
             one: Byte
             other: Bytes
           gb: GB
           kb: KB
           mb: MB
           tb: TB
-    percentage: 
-      format: 
+    percentage:
+      format:
         delimiter: "\"\""
-    precision: 
-      format: 
+    precision:
+      format:
         delimiter: "\"\""
-  oauth: 
-    application: 
-      connect: 
+  oauth:
+    application:
+      connect:
         headline: "Du måste koppla ditt konto till ditt OpenStreetMap konto innan du kan skapa eller ändra platser på wheelmap.org"
-    callback: 
+    callback:
       notice: "Ditt wheelmap konto är nu kopplat till OpenStreetMap kontot %{user}."
   or: eller
-  place: 
+  place:
     one: "%{count} plats"
     other: "%{count} platser"
-  poi: 
-    category: 
+  poi:
+    category:
       accommodation: Boende
       education: Utbildning
       food: Mat
@@ -492,8 +495,8 @@ se:
       sport: Sport
       tourism: Turism
       unknown: Okänt
-    name: 
-      accommodation: 
+    name:
+      accommodation:
         beach_resort: Strandhotell
         bed_and_breakfast: "Bed & breakfast\n"
         camp_site: Campingplats
@@ -503,14 +506,14 @@ se:
         hostel: Vandrarhem
         hotel: Hotell
         motel: Motell
-      education: 
+      education:
         college: Högskola
         kindergarten: Förskola
         library: Bibliotek
         museum: Museum
         school: Skola
         university: Universitet
-      food: 
+      food:
         bar: Bar
         biergarten: Ölträdgård
         cafe: Café
@@ -518,12 +521,12 @@ se:
         fast_food: Snabbmat
         pub: Pub
         restaurant: Restaurang
-      government: 
+      government:
         courthouse: Domstol
         embassy: Ambassad
         public_building: "Publik byggnad"
         townhall: Stadshus
-      leisure: 
+      leisure:
         arena: Arena
         cinema: Bio
         gallery: Galleri
@@ -531,20 +534,20 @@ se:
         sauna: Bastu
         theatre: Teater
         zoo: Zoo
-      misc: 
+      misc:
         doctors: Doktor
         hospital: Sjukhus
         pharmacy: Apotek
         place_of_worship: "Religiös plats"
         toilets: Toalett
         veterinary: Veterinär
-      money_post: 
+      money_post:
         atm: Bankomat
         bank: Bank
         bureau_de_change: Växelkontor
         post_box: Postlåda
         post_office: Postkontor
-      public_transfer: 
+      public_transfer:
         aerodrome: Flygplats
         bicycle_parking: Cykelparkering
         bicycle_rental: Cykeluthyrning
@@ -567,7 +570,7 @@ se:
         subway_entrance: Tunnelbaneingång
         terminal: Flygplats-terminal
         tram_stop: Spårvagnshållplats
-      shopping: 
+      shopping:
         alcohol: Alkohol
         bakery: Bageri
         beverages: Drycker
@@ -592,12 +595,12 @@ se:
         optician: Optiker
         shoes: Skor
         supermarket: Livsmedel
-      sport: 
+      sport:
         sports_centre: Sportcenter
         stadium: Stadion
         swimming: Bad
         swimming_pool: Simbassäng
-      tourism: 
+      tourism:
         archaeological_site: "Arkeologisk plats"
         arts_centre: Kulturcenter
         artwork: Konstverk
@@ -612,74 +615,74 @@ se:
         theme_park: Nöjespark
         tower: Torn
         viewpoint: Utsiktsplats
-      unknown: 
+      unknown:
         unknown: Okänt
-  profile: 
-    edit: 
-      application: 
-        oauth: 
+  profile:
+    edit:
+      application:
+        oauth:
           connected: "Status: kopplad"
           grant: "Koppla nu"
           not_connected: "Status: frånkopplad"
           revoke: Frånkoppla
       headline: "Ändra din profil"
-  search: 
-    index: 
-      search: 
+  search:
+    index:
+      search:
         for: "Söker efter \"%{q}\""
         not_found: "Inga platser hittades!"
   statistics: Statistik
-  support: 
-    array: 
+  support:
+    array:
       last_word_connector: och
       sentence_connector: och
       skip_last_comma: true
       two_words_connector: och
       words_connector: ","
-    select: 
+    select:
       prompt: Välj
-  time: 
+  time:
     am: am
-    formats: 
+    formats:
       default: "%a, %e %b %Y %H:%M:%S %z"
       long: "%e %B %Y %H:%M"
       short: "%e %b %H:%M"
     pm: pm
-  user_sessions: 
-    create: 
-      activation: 
+  user_sessions:
+    create:
+      activation:
         notice: "Ditt konto är nu aktiverat!"
-      error: 
+      error:
         notice: "E-post eller lösenord felaktigt."
       notice: "Du är inne!"
-    destroy: 
+    destroy:
       notice: "Hejdå, kom tillbaka snart!"
-    new: 
+    new:
       email: E-postadress
       login: "Logga in"
       login_with_twitter: "Logga in med hjälp av Twitter"
       password: Lösenord
       remember_me: "Kom ihåg mig"
-  wheelchairstatus: 
+  wheelchairstatus:
     limited: "delvis rullstolsanpassat"
     ? "no"
     : "Inte rullstolsanpassat"
     unknown: "rullstolsanpassning okänd"
     ? "yes"
     : "Helt rullstolsanpassat"
-  wheelmap: 
-    footer: 
+  wheelmap:
+    footer:
       a_project_of: "Ett projekt från"
       based_on: "Baserad på"
       become_a_supporter: "Bli en sponsor"
       main_supporter: Huvudsponsor
-    itunes: 
+    itunes:
       alt: "AppStore Logo"
       title: "Hämta för iPhone!"
-    logo: 
+    logo:
       alt: "Wheelmap Logo - Hitta rullstolsanpassade platser"
       title: "Wheelmap - Hitta rullstolsanpassade platser"
-    what_is: 
+    what_is:
       fully_accessible: "<em>Ja:</em> Ingången har ingen kant, alla rum saknar kanter, anpassad toalett finns"
       limited_accessible: "<em>Begränsad:</em> Ingångens kant är inte högre än 7 cm, de flesta rummen är tillgängliga, ingen tillgänglig toalett"
       not_accessible: "<em>Nej:</em> Ingångens kant är högre än 7 cm eller det är en trapp, rummen är inte tillgängliga"

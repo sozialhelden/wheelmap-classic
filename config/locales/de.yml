@@ -170,9 +170,12 @@ de:
       unauthenticated: "Du musst dich anmelden oder registrieren um fortzufahren."
       unconfirmed: "Du musst dein Konto bestätigen um fortzufahren."
     mailer:
-      confirmation_instructions: "Anleitung zur Bestätigung deines Benutzerkontos"
-      reset_password_instructions: "Anleitung zum Neu setzen deines Passworts"
-      unlock_instructions: "Anleitung zum Entsperren deines Benutzerkontos"
+      confirmation_instructions:
+        subject: "Noch einen Schritt zur Aktivierung deines Benutzerkontos"
+      reset_password_instructions:
+        subject: "Anleitung zum Neu setzen deines Passworts"
+      unlock_instructions:
+        subject: "Anleitung zum Entsperren deines Benutzerkontos"
     mandatory: "* Pflichtfeld"
     omniauth_callbacks:
       failure: "Authorisierung mit %{kind} fehlgeschlagen. Fehler: \"%{reason}\". "
