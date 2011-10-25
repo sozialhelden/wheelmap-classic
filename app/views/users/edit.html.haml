@@ -10,7 +10,7 @@
 
     = form.buttons do
       = form.commit_button t('formtastic.labels.save')
-      
+
   - if @user.authentication_token
     = semantic_form_for :user, :url => reset_token_user_path(@user), :method => :post do |form|
       = form.inputs do
@@ -18,10 +18,10 @@
 
       = form.buttons do
         = form.commit_button t('formtastic.labels.reset')
-  
-      
+
+
     %h2=t('oauth.application.connect.headline')
-  
+
     %br
     %p.pad
       - if current_user.oauth_authorized?
@@ -33,7 +33,6 @@
         %h2.center>
           =t('profile.edit.application.oauth.not_connected')
           |
-          = link_to t('profile.edit.application.oauth.grant'), new_oauth_path
-      
-  
-      
+          = link_to t('profile.edit.application.oauth.grant'), new_oauth_path, :onclick => "_gaq.push(['_trackPageview', '/osm/connect/start'])"
+
+

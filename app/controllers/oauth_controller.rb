@@ -34,6 +34,7 @@ class OauthController < ApplicationController
   def callback
     current_user.set_oauth_credentials(params[:oauth_verifier])
     flash[:notice] = t('oauth.callback.notice', :user => current_user.email)
+    flash[:view] = '/osm/connect/done'
     redirect_to root_url
   end
   
