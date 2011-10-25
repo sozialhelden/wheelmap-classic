@@ -168,7 +168,7 @@ de:
       locked: "Dein Konto ist gesperrt."
       timeout: "Deine Sitzung ist abgelaufen! Um fortzufahren, melde dich bitte erneut an."
       unauthenticated: "Du musst dich anmelden oder registrieren um fortzufahren."
-      unconfirmed: "Du musst dein Konto bestätigen um fortzufahren."
+      unconfirmed: "NEU: Bitte bestätige einmalig dein Konto um fortzufahren. Dazu haben wir Dir eine E-Mail mit einem Link geschickt. Falls du diese nicht vorliegen hast hast, klicke bitte am Ende der Seite auf 'Keine Bestätigungsmail bekommen'."
     mailer:
       confirmation_instructions:
         subject: "Noch einen Schritt zur Aktivierung deines Benutzerkontos"
