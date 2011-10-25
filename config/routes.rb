@@ -8,7 +8,7 @@ Wheelmap::Application.routes.draw do
   root :to => 'home#index'
 
   devise_for :admins
-  devise_for :users, :controllers => { :registrations => 'registrations' } do
+  devise_for :users, :controllers => { :registrations => 'registrations', :confirmations => 'confirmations' } do
     get "/registrations/successful", :to => "registrations#after_sign_up"
   end
 

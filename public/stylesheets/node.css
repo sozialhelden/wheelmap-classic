@@ -72,9 +72,13 @@ footer {
   font-size: 13px;
   line-height: 20px;
 }
-
 /* line 15, ../../app/stylesheets/basics/_typography.sass */
-h2 {
+p.large,
+article li.large,
+dt.large, dd.large,
+h4.large, h5.large, h6.large,
+address.large,
+footer.large {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 16px;
   line-height: 20px;
@@ -83,6 +87,21 @@ h2 {
 }
 
 /* line 18, ../../app/stylesheets/basics/_typography.sass */
+h2 {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  bottom: 2px;
+}
+/* line 20, ../../app/stylesheets/basics/_typography.sass */
+h2.large {
+  font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
+  font-size: 20px;
+  line-height: 20px;
+}
+
+/* line 23, ../../app/stylesheets/basics/_typography.sass */
 h1 {
   font-family: 'HelveticaNeue','Helvetica','Swiss 721','Arial','sans-serif';
   font-size: 37px;
@@ -763,12 +782,17 @@ body, html {
   outline: 0;
 }
 
-/* line 7, ../../app/stylesheets/basics/_main.sass */
+/* line 8, ../../app/stylesheets/basics/_main.sass */
+h1.marge, h2.marge, h3.marge, h4.marge, h5.marge, h6.marge, p.marge {
+  margin-bottom: 10px;
+}
+
+/* line 11, ../../app/stylesheets/basics/_main.sass */
 .help {
   cursor: help;
 }
 
-/* line 11, ../../app/stylesheets/basics/_main.sass */
+/* line 15, ../../app/stylesheets/basics/_main.sass */
 #main {
   background: white;
   border: 1px #e6e6e6 solid;
@@ -787,7 +811,7 @@ body, html {
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
 }
 
-/* line 21, ../../app/stylesheets/basics/_main.sass */
+/* line 25, ../../app/stylesheets/basics/_main.sass */
 .odd {
   background-color: #eeeeee;
 }

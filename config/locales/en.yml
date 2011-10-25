@@ -303,7 +303,7 @@ en:
         subject: Reset password instructions
       confirmation_instructions:
         subject: One more step to activate your account
-        landing_page: "Please click on the link that we just send to your email address. If you did not receive any email from us please make sure it is not hiding in your spam folder. In case you cannot find it you can resend the %{link} again."
+        landing_page: "Please click on the link that we just send to your email address. If you did not receive any email from us please make sure it is not hiding in your spam folder. In case you cannot find it you can resend the email again."
     mandatory: "* Required"
     password_recovery:
       form:
