@@ -1,18 +1,18 @@
-#map_wrapper  
+#map_wrapper
   #minimap
   = link_to t('.link.large_map'), root_path, :onclick => "location=permalink('#{root_path}');return false;", :class => 'hide', :id => 'show-on-large-map'
 
 #accessibility
   - semantic_form_for :node, @node,  :url => {:controller => 'nodes', :action => 'create'} do |form|
     = render :partial => 'inputs', :object => @node, :locals => {:form => form}
-    
-    - form.buttons do
+
+    = form.buttons do
       = form.commit_button t('formtastic.labels.create')
       %p.hint= t('devise.mandatory')
-      
+
 - content_for :head do
   %title= t('.header.title')
-  
+
 - content_for :javascript_constants do
   :javascript
     var lat  = #{params[:lat]  || GeoCache.latlon(request.remote_addr).first};
@@ -27,4 +27,3 @@
     createDraggableLayer(placesStyle(),lon, lat);
 
 
-  

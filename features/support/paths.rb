@@ -33,6 +33,9 @@ module NavigationHelpers
       arguments = CGI.escape("/oauth/authorize?oauth_token=#{session[:request_token].token}")
       "http://api06.dev.openstreetmap.org/user/new?referer=#{arguments}"
 
+    when /the registration successfull page/
+      '/registrations/successful'
+
     when /the search result page/
       '/search'
 
@@ -40,7 +43,7 @@ module NavigationHelpers
       poi = Poi.last
       "/nodes/#{poi.to_param}.html"
     # the following are examples using path_to_pickle
-    
+
     when /the last user's edit page/
       user = User.last
       "/profile/#{user.to_param}/edit"
