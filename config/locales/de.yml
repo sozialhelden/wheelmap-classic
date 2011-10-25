@@ -172,7 +172,7 @@ de:
     mailer:
       confirmation_instructions:
         subject: "Noch einen Schritt zur Aktivierung deines Benutzerkontos"
-        landing_page: "Bitte klicke auf den Link, den wir Dir gerade an Deine E-Mail Adresse geschickt haben. Solltest Du keine E-Mail bekommen haben, so prüfe bitte auch deinen Spam-Ordner. Wenn sie dort auch nicht ist, dann kannst Du Dir die  %{link} erneut zusenden lassen."
+        landing_page: "Bitte klicke auf den Link, den wir Dir gerade an Deine E-Mail Adresse geschickt haben. Solltest Du keine E-Mail bekommen haben, so prüfe bitte auch deinen Spam-Ordner. Wenn sie dort auch nicht ist, dann kannst Du Dir die E-Mail erneut zusenden lassen."
       reset_password_instructions:
         subject: "Anleitung zum Neu setzen deines Passworts"
       unlock_instructions:

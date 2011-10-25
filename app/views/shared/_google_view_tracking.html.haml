@@ -1,0 +1,3 @@
+- if (Rails.env.production? || Rails.env.test?) && flash[:view]
+  :javascript
+    _gaq.push(['_trackPageview', "#{flash[:view]}"]);

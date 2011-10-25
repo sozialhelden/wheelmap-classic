@@ -1,2 +1,5 @@
-%h2=t('devise.mailer.confirmation_instructions.subject')
-%p=t('devise.mailer.confirmation_instructions.landing_page', :link => link_to(t('devise.edit.form.labels.email'), new_user_confirmation_path)).html_safe
+%h2.large.marge=t('devise.mailer.confirmation_instructions.subject')
+%p.large.marge=t('devise.mailer.confirmation_instructions.landing_page')
+- if devise_mapping.confirmable? && controller_name != 'confirmations'
+  = link_to( t('devise.confirmations.link'), new_confirmation_path(resource_name))
+

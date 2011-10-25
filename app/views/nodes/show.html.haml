@@ -104,6 +104,7 @@
 
 - content_for :javascript do
   = render :partial => 'shared/google_event_tracking'
+  = render :partial => 'shared/google_view_tracking'
 
   :javascript
     drawmap(defaultControls(), 'minimap');
