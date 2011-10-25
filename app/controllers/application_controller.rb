@@ -69,7 +69,7 @@ class ApplicationController < ActionController::Base
   end
 
   def mobile_app?
-    request.user_agent.start_with?('Wheelmap')
+    request.user_agent.start_with?('Wheelmap') rescue false
   end
 
   def default_user

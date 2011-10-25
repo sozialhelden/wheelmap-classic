@@ -7,15 +7,13 @@ Given /^I am not logged in$/ do
   visit '/users/sign_out'
 end
 
-Given /I am logged in/ do
-  Given 'a user: "a_user" exists with email: "loggedin@fg.hi", password: "123456", password_confirmation: "123456"'
+Given /^I am logged in with email: "([^"]*)", password: "([^"]*)"$/ do |email, password|
   When "I go to the sign_in page"
-  And 'I fill in "E-Mail" with "loggedin@fg.hi"'
-  And 'I fill in "Passwort" with "123456"'
+  And "I fill in \"E-Mail\" with \"#{email}\""
+  And "I fill in \"Passwort\" with \"#{password}\""
   And 'I check "Eingeloggt bleiben?"'
   And 'I press "Login"'
-  And 'I should see "loggedin@fg.hi"'
-  @current_user = find_model!('a_user')
+  And "I should see \"#{email}\""
 end
 
 Given /^a(n| non activated) user with email "([^"]*)" and password "([^"]*)"$/ do |activated, email, password|

@@ -24,3 +24,20 @@ Feature: Find, update and create nodes via API
     Then I should see "zurück"
     When I follow "zurück"
     Then I should be on the root page
+
+  Scenario: I want to create a new node
+    Given a user: "creator" exists with email: "creator@wheelmap.org", password: "123456", password_confirmation: "123456", confirmed_at: "10.10.1999", oauth_token: "oauth_token", oauth_secret: "oauth_secret", oauth_request_token: "oauth_request_token"
+    And user "creator" should be app_authorized
+    And I am logged in with email: "creator@wheelmap.org", password: "123456"
+    And I am on the home page
+    When I follow "Ort hinzufügen"
+    Then I should be on the new node page
+    When I fill in "Name" with "Hotel Recklinghausen"
+    And I select "Voll Rollstuhlgerecht" from "Rollstuhlgerecht?"
+    And I select "Bar" from "node-type"
+    And I fill in "Längengrad" with "54.1"
+    And I fill in "Breitengrad" with "13.9"
+    And I press "Ort anlegen"
+    Then I should be on the home page
+    And I should see "Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert"
+    And I should see "/nodes/created"
