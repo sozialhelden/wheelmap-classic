@@ -47,13 +47,11 @@ OpenLayers.Layer.OSM.Mapnik = OpenLayers.Class(OpenLayers.Layer.OSM, {
             "http://tile1.wheelmap.org/${z}/${x}/${y}.png",
 /*
             "http://tile2.wheelmap.org/${z}/${x}/${y}.png",
-            "http://tile3.wheelmap.org/${z}/${x}/${y}.png"
+            "http://tile3.wheelmap.org/${z}/${x}/${y}.png",
+            "http://a.tile.osm.org/${z}/${x}/${y}.png",
 */
-            "http://a.tile.openstreetmap.org/${z}/${x}/${y}.png",
-            "http://b.tile.openstreetmap.org/${z}/${x}/${y}.png"
-/*
-            "http://c.tile.openstreetmap.org/${z}/${x}/${y}.png"
-*/
+            "http://b.tile.osm.org/${z}/${x}/${y}.png",
+            "http://c.tile.osm.org/${z}/${x}/${y}.png"
         ];
         options = OpenLayers.Util.extend({
             numZoomLevels: 19,
