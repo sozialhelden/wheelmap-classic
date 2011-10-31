@@ -8,10 +8,9 @@ group :default do
   gem 'devise'
   gem 'compass', '0.10.6'
   gem 'redgreengrid'
-  gem 'lemonade'
   gem 'haml', '~>3.0.25'
   gem 'geoip'
-  gem 'formtastic'
+  gem 'formtastic', '1.2.4'
   gem 'delayed_job'
   gem 'libxml-ruby', '~> 2.2.1'
   gem 'crewait', :path => "#{File.expand_path(__FILE__)}/../vendor/gems/crewait-0.1.6"
