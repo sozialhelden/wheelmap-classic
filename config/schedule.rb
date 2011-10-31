@@ -1,6 +1,6 @@
 # Use this file to easily define all of your cron jobs.
 
-set :output, File.join(File.expand_path(File.dirname(__FILE__)), "log", "cron_log.log")
+set :output, File.join(File.expand_path(File.dirname(__FILE__)),"..", "log", "cron_log.log")
 
 job_type :rake,         "cd :path && RAILS_ENV=:environment bundle exec rake :task :output"
 job_type :find_command, "cd :path && :task :output"
@@ -23,6 +23,6 @@ every 1.day, :at => '3:30 am' do
   rake "sitemap:generate", :environment => :production
 end
 
-# every 8.minutes do
-#   rake "poi:locate", :environment => :production
-# end
+every 1.hour do
+  rake "poi:locate", :environment => :production
+end
