@@ -8,12 +8,14 @@ Given /^I am not logged in$/ do
 end
 
 Given /^I am logged in with email: "([^"]*)", password: "([^"]*)"$/ do |email, password|
-  When "I go to the sign_in page"
-  And "I fill in \"E-Mail\" with \"#{email}\""
-  And "I fill in \"Passwort\" with \"#{password}\""
-  And 'I check "Eingeloggt bleiben?"'
-  And 'I press "Login"'
-  And "I should see \"#{email}\""
+  steps %Q{
+    When I go to the sign_in page
+    And I fill in "E-Mail" with "#{email}"
+    And I fill in "Passwort" with "#{password}"
+    And I check "Eingeloggt bleiben?"
+    And I press "Login"
+    And I should see "#{email}"
+  }
 end
 
 Given /^a(n| non activated) user with email "([^"]*)" and password "([^"]*)"$/ do |activated, email, password|

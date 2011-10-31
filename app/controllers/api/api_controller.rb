@@ -6,8 +6,8 @@ class Api::ApiController < ApplicationController
   custom_actions :collection => :not_found
   
   # The order is essential, catch all exception first, fine grained exceptions to the bottom
-  rescue_from Exception, :with => :render_500
-  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
+  # rescue_from Exception, :with => :render_500
+  # rescue_from ActiveRecord::RecordNotFound, :with => :render_404
   
   PER_PAGE= 200
   PER_PAGE_MAX=500
