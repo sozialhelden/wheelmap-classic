@@ -264,7 +264,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts_as_api
+  acts_as_api (= 0.3.10)
   big_sitemap!
   capistrano
   capistrano-ext

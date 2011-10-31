@@ -19,7 +19,7 @@ group :default do
   gem "tolk", :git => "git://github.com/ZenCocoon/tolk.git", :branch => "rails3"
   gem "routing-filter"
   gem 'newrelic_rpm', '~>3.0.1'
-  gem 'acts_as_api'
+  gem 'acts_as_api', '0.3.10'
   gem 'inherited_resources'
   gem 'has_scope'
 #  gem 'mapfish'

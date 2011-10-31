@@ -4,7 +4,7 @@ Feature: Find, update and create nodes via API
   I want to be able to request certain nodes
 
   Background:
-    Given 20 pois exist
+    Given 20 valid pois exist
 
   Scenario: retrieve all nodes as JSON
     And I send and accept JSON

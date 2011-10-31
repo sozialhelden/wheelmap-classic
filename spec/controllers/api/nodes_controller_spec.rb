@@ -24,7 +24,7 @@ describe Api::NodesController do
   describe 'index action' do
     before :each do
       Poi.delete_all
-      @nodes = [Factory.create(:poi, :osm_id => 1), Factory.create(:poi, :osm_id => 2)]
+      @nodes = [Factory.create(:poi, :osm_id => 1, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'}), Factory.create(:poi, :osm_id => 2, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})]
     end
 
     describe 'format json' do
@@ -66,8 +66,9 @@ describe Api::NodesController do
 
       it "should render result object containing a node" do
         get(:index, :api_key => @user.authentication_token)
+        response.should be_success
         json = JSON.parse(response.body)
-        json['nodes'].should_not be_nil
+        json['nodes'].should_not be_empty
         node = json['nodes'].first
         node['lat'].should eql 52.0
         node['lon'].should eql 13.4
@@ -101,7 +102,7 @@ describe Api::NodesController do
     before :each do
       @wheelmap_visitor = Factory.create(:user, :email => 'visitor@wheelmap.org')
       Poi.delete_all
-      @node = Factory.create(:poi)
+      @node = Factory.create(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
     end
 
     it "access should be denied if api key is missing" do
@@ -127,7 +128,7 @@ describe Api::NodesController do
 
   describe 'update action' do
     before :each do
-      @node = Factory.create(:poi)
+      @node = Factory.create(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
     end
 
     it "access should be denied if api key is missing" do

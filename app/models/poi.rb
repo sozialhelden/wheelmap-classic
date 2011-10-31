@@ -12,7 +12,20 @@ class Poi < ActiveRecord::Base
   # osm_id ist der Primaerschluessel
   set_primary_key :osm_id
 
+
   attr_accessible :name, :type, :geom, :version, :wheelchair, :created_at, :updated_at, :status, :lat, :lon, :id, :tags, :osm_id, :name
+
+  self.include_root_in_json = false
+
+  WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
+
+  belongs_to :region, :touch => false
+  belongs_to :node_type, :touch => false, :include => :category
+  has_one :category, :through => :node_type
+
+  validate :relevant?
+
+  serialize :tags
 
   acts_as_api
 
@@ -39,18 +52,6 @@ class Poi < ActiveRecord::Base
     t.add :website
     t.add :phone
   end
-
-  self.include_root_in_json = false
-
-  WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
-
-  belongs_to :region, :touch => false
-  belongs_to :node_type, :touch => false, :include => :category
-  has_one :category, :through => :node_type
-
-  validate :relevant?
-
-  serialize :tags
 
   before_save :set_status
   before_save :set_node_type
@@ -154,7 +155,8 @@ class Poi < ActiveRecord::Base
 
   def type=(value)
     key = Tags[value.to_sym]
-    tags[key.to_s] = value.to_s
+    self.tags = {} if self.tags.is_a?(String)
+    self.tags[key.to_s] = value.to_s
   end
 
   def category_id
@@ -166,7 +168,8 @@ class Poi < ActiveRecord::Base
   end
 
   def name=(value)
-    tags['name'] = value
+    self.tags = {} if self.tags.is_a?(String)
+    self.tags['name'] = value
   end
 
   def wheelchair
@@ -174,7 +177,8 @@ class Poi < ActiveRecord::Base
   end
 
   def wheelchair=(value)
-    tags['wheelchair'] = value
+    self.tags = {} if self.tags.is_a?(String)
+    self.tags['wheelchair'] = value
   end
 
   def street

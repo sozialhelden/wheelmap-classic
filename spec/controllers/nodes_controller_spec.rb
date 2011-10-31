@@ -271,7 +271,7 @@ describe NodesController do
     before(:each) do
       Poi.delete_all
       @node_type = Factory.create(:node_type)
-      @bar_node = Factory.build(:poi)
+      @bar_node = Factory.build(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'}, :node_type => @node_type)
       @bar_node.tags['amenity'] = 'bar'
       @bar_node.type = 'bar'
       @bar_node.save!

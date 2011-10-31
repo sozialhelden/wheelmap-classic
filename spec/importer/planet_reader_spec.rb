@@ -16,11 +16,13 @@ OSM_IMPORT = <<-XML
 XML
 
 describe PlanetReader do
-  
+
   before :each do
-    Poi.destroy_all
+    @category = Factory.create(:category, :identifier => 'food')
+    @node_type = Factory.create(:node_type, :osm_key => 'amenity', :osm_value => 'restaurant', :category => @category)
+    Poi.delete_all
   end
-  
+
   it "should import a new POI" do
     PlanetReader.new(StringIO.new(OSM_IMPORT)).load
     Poi.exists?(26735750).should be_true
