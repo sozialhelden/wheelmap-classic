@@ -108,6 +108,9 @@ class NodesController < ApplicationController
   helper_method :prepare_nodes
   helper_method :generate_json
 
+  def claim
+  end
+
   # Before filter
   protected
   def load_and_instantiate_nodes

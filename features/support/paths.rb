@@ -44,6 +44,10 @@ module NavigationHelpers
       "/nodes/#{poi.to_param}.html"
     # the following are examples using path_to_pickle
 
+    when /#{capture_model}(?:'s)? claim page/
+      poi = Poi.last
+      claim_node_path(poi)
+
     when /the last user's edit page/
       user = User.last
       "/profile/#{user.to_param}/edit"
