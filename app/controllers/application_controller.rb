@@ -107,8 +107,7 @@ class ApplicationController < ActionController::Base
 
   def set_ab_tester
     # Tester dont't participate, if they already saw the splash screen
-    puts "SESSION: #{session['_ab_tester']} - COOKIES: #{cookies['_wheelmap_splash_seen']}"
-    session['_ab_tester'] ||= cookies['_wheelmap_splash_seen'].blank?
+    session['_ab_tester'] = cookies['_wheelmap_splash_seen'].blank? unless session['_ab_tester'].blank?
     puts "SESSION: #{session['_ab_tester']} - COOKIES: #{cookies['_wheelmap_splash_seen']}"
 
   end
