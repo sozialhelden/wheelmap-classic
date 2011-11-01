@@ -437,6 +437,7 @@ de:
         large_map: "Ansicht vergrößern"
         report_bug: "Problem melden"
         listing: "Alle Orte vom Typ '%{type}' in %{city}"
+        claim: "Du arbeitest hier?"
       show-in-osm: "in Openstreetmap anzeigen"
 
     update:
