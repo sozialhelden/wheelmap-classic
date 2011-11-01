@@ -25,6 +25,13 @@ Feature: Find, update and create nodes via API
     When I follow "zurück"
     Then I should be on the root page
 
+  @wip
+  Scenario: I want to see a link - i work here
+    When I am on the last poi's page
+    Then I should see "Du arbeitest hier?"
+    When I follow "Du arbeitest hier?"
+    Then I should be on the last poi's claim page
+
   Scenario: I want to create a new node
     Given a user: "creator" exists with email: "creator@wheelmap.org", password: "123456", password_confirmation: "123456", confirmed_at: "10.10.1999", oauth_token: "oauth_token", oauth_secret: "oauth_secret", oauth_request_token: "oauth_request_token"
     And user "creator" should be app_authorized
