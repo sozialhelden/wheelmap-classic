@@ -425,6 +425,7 @@ en:
         edit_node: Edit place
         large_map: Enlarge
         listing: "All places of typ '%{type}' in %{city}"
+        claim: "Do you work here?"
       show-in-osm: OpenStreetMap
     create:
       flash:

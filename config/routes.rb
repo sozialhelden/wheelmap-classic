@@ -30,6 +30,7 @@ Wheelmap::Application.routes.draw do
   resources :nodes, :except => :destroy do
     member do
       put :update_wheelchair
+      get :claim
     end
   end
 
