@@ -201,7 +201,7 @@ GEM
       rake (>= 0.8.7)
       thor (~> 0.14.4)
     raindrops (0.8.0)
-    rake (0.9.2)
+    rake (0.9.2.2)
     redgreengrid (0.3.2)
     responders (0.6.4)
     rgeo (0.3.2)
@@ -297,7 +297,7 @@ DEPENDENCIES
   oauth!
   pickle
   rails (= 3.0.3)
-  rake (= 0.9.2)
+  rake (= 0.9.2.2)
   redgreengrid
   rgeo
   routing-filter
