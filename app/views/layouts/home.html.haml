@@ -21,8 +21,7 @@
 
   %body{:class => browser_class, :style => 'overflow:hidden'}
     = render :partial => 'shared/header'
-    - if ab_test("splash_screen", nil, :conversion => 'node_tag')
-      = render :partial => 'shared/splash'
+    = render :partial => 'shared/splash'
 
     #map
       = yield
