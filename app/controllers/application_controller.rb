@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_last_location
 
+  before_filter :set_ab_tester
+
   before_filter :set_abingo_identity
 
   rescue_from Errno::ETIMEDOUT, :with => :timeout
@@ -105,7 +107,10 @@ class ApplicationController < ActionController::Base
 
   def set_ab_tester
     # Tester dont't participate, if they already saw the splash screen
-    session['_ab_tester'] ||= (cookies['_wheelmap_splash_seen'].blank?)
+    puts "SESSION: #{session['_ab_tester']} - COOKIES: #{cookies['_wheelmap_splash_seen']}"
+    session['_ab_tester'] ||= cookies['_wheelmap_splash_seen'].blank?
+    puts "SESSION: #{session['_ab_tester']} - COOKIES: #{cookies['_wheelmap_splash_seen']}"
+
   end
 
   def set_last_location
