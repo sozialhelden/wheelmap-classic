@@ -27,6 +27,8 @@ Wheelmap::Application.routes.draw do
 
   resources :client_applications
 
+  match 'abingo(/:action(/:id))', :to => 'abingo_dashboard', :as => :abingo
+
   resources :nodes, :except => :destroy do
     member do
       put :update_wheelchair
