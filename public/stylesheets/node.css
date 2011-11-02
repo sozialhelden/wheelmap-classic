@@ -718,7 +718,7 @@ form option {
   -moz-appearance: none;
 }
 /* line 115, ../../app/stylesheets/basics/_forms.sass */
-form input[type='submit'], form a.button {
+form input[type='submit'] {
   position: relative;
   left: 140px;
   background-color: #a1c175;
@@ -745,7 +745,7 @@ form input[type='submit'], form a.button {
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
 }
 /* line 26, ../../app/stylesheets/basics/_buttons.sass */
-form input[type='submit']:hover, form a.button:hover {
+form input[type='submit']:hover {
   background-color: #95b963;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aecd82), color-stop(0.5, #95b963), color-stop(1, #7da743));
   background-image: -moz-linear-gradient(center bottom, #7da743 0%, #95b963 50%, #aecd82 100%);
@@ -754,7 +754,7 @@ form input[type='submit']:hover, form a.button:hover {
   border-color: #95b963 #89b152 #6e9040;
 }
 /* line 29, ../../app/stylesheets/basics/_buttons.sass */
-form input[type='submit']:active, form a.button:active {
+form input[type='submit']:active {
   background-color: #7ca148;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #96bf5e), color-stop(0.5, #7ca148), color-stop(1, #618234));
   background-image: -moz-linear-gradient(center bottom, #618234 0%, #7ca148 50%, #96bf5e 100%);
