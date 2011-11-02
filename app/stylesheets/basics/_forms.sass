@@ -14,18 +14,18 @@ form
     &.hidden
       margin: 0px
       padding: 0px
-      
+
     &.boolean
       margin-left: 160px
-      
+
       label
         width: 100%
         text-align: left
-        
+
       input
         float:left
         width: 15px
-    
+
   input[type='text'], input[type='search'], input[type='password'], [type='tel'], [type='email'], textarea, select
     border: 1px solid $green
     +border-radius(3px)
@@ -33,11 +33,11 @@ form
     background-color: white
     padding: 5px
     width: 288px
-    
+
   input[readonly]
     background-color: #F9F9F9
     color: $unknown
-    
+
   select
     width: 300px
     -webkit-appearance: none
@@ -66,7 +66,7 @@ form
       &.wheelchairstatus_unknown
         background: url("/images/icons/state-unknown.png") no-repeat
         color: $unknown
-    
+
   optgroup
     padding-left: 20px
     -webkit-appearance: none
@@ -95,16 +95,16 @@ form
 
     &.leisure
       +optgroup-icon(smiley)
-      
+
     &.accommodation
       +optgroup-icon(building)
-    
+
     &.shopping
       +optgroup-icon(shopping-basket)
-    
+
     &.tourism
       +optgroup-icon(information)
-    
+
     &.sport
       +optgroup-icon(sport)
 
@@ -112,11 +112,11 @@ form
     -webkit-appearance: none
     -moz-appearance: none
 
-  input[type='submit']
+  input[type='submit'], a.button
     position: relative
     left: 140px
     +green-button
-    
+
   label
     color: lighten($text-color, 10%)
     display: block
@@ -126,34 +126,34 @@ form
     padding-top: 5px
     text-align: right
     width: 150px
-    
+
   legend
-    +helvetica-16
+    +font(!helvetica, 20px)
     font-weight: bold
     color: $text-color
-    margin-top: 20px
-    margin-bottom: 30px
+    margin-top: 10px
+    margin-bottom: 20px
     top: 15px
     bottom: none
-    
+
     span.addition
       color: #AAA
-    
+
   fieldset
     padding: 30px 0px 10px
     overflow: hidden
-    
+
     &.inputs
-      
-    
+
+
     &.buttons
       padding: 10px 20px 10px 20px
-    
+
 
   li[class*='error']
     label
       color: $orange
-      
+
     input[type='text'], input[type='password'], input[type='search'], [type='tel'], textarea, select
       border: 1px solid $orange
 
@@ -161,7 +161,6 @@ form
     position: relative
     left: 160px
     color: #AAA
-    
+
   p.inline-errors
     color: $orange
-      
