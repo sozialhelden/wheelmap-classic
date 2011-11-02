@@ -20,7 +20,7 @@ class Api::CategoriesController < Api::ApiController
   protected
 
   def collection
-    @categories ||= Category.paginate(:page => params[:page], :per_page => params[:per_page])
+    @categories ||= end_of_association_chain.paginate(:page => params[:page], :per_page => params[:per_page])
   end
 
   def meta

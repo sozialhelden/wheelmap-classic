@@ -20,7 +20,7 @@ group :default do
   gem "routing-filter"
   gem 'newrelic_rpm', '~>3.0.1'
   gem 'acts_as_api', '0.3.10'
-  gem 'inherited_resources'
+  gem 'inherited_resources', '1.2.2'
   gem 'has_scope'
 #  gem 'mapfish'
   gem 'rake', '0.9.2.2'
