@@ -7,10 +7,25 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_last_location
 
+  before_filter :set_ab_tester
+
+  before_filter :set_abingo_identity
+
   rescue_from Errno::ETIMEDOUT, :with => :timeout
   rescue_from Timeout::Error,   :with => :timeout
 
   protected
+
+  def set_abingo_identity
+    if request.user_agent =~ /\b(Baidu|Gigabot|Googlebot|libwww-perl|lwp-trivial|msnbot|SiteUptime|Slurp|WordPress|ZIBB|ZyBorg)\b/i
+        Abingo.identity = "robot"
+    elsif user_signed_in?
+      Abingo.identity = current_user.id
+    else
+      session[:abingo_identity] ||= rand(10 ** 10)
+      Abingo.identity = session[:abingo_identity]
+    end
+  end
 
   def redirect_to_default_locale
     match = /^\/#{I18n.default_locale}\b/
@@ -90,6 +105,12 @@ class ApplicationController < ActionController::Base
     render :template => 'shared/error', :status => 400
   end
 
+  def set_ab_tester
+    # Tester dont't participate, if they already saw the splash screen
+    session['_ab_tester'] = cookies['_wheelmap_splash_seen'].blank? if session['_ab_tester'].blank?
+    puts "SESSION: #{session['_ab_tester']} - COOKIES: #{cookies['_wheelmap_splash_seen']}"
+
+  end
 
   def set_last_location
     cookies['last_lat'] = params[:lat] if params[:lat]

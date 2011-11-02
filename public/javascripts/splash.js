@@ -9,15 +9,17 @@ $(function() {
 
     // calculate left edge so it is centered
     var left = (0.5 - (width / 2)/($(window).width())) * 100 + '%';
+    if (!$('#splash').is(':empty')){
+      $.blockUI({
+        message: $("#splash"),
+        css: {
+                top: '25%',
+                left: left,
+                width: width + 'px'
+             }
+      });
+    }
 
-    $.blockUI({
-      message: $("#splash"),
-      css: {
-              top: '25%',
-              left: left,
-              width: width + 'px'
-           }
-    });
 
     var clickHandler = function() {
       $.unblockUI();

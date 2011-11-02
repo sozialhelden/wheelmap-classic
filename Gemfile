@@ -23,7 +23,7 @@ group :default do
   gem 'inherited_resources'
   gem 'has_scope'
 #  gem 'mapfish'
-  gem 'rake', '0.9.2'
+  gem 'rake', '0.9.2.2'
   gem 'yajl-ruby'
   gem 'fastercsv'
   gem 'ruport'
