@@ -350,6 +350,15 @@ tr:
       update: "%{model} güncelleştir"
   home:
     index:
+      popup:
+        form:
+          'yes': "tekerlekli sandalye ile ulaşılır"
+          limited: "kısmen tekerlekli sandalye ile ulaşılır"
+          'no': "tekerlekli sandalye için ulaşılır değil"
+          unknown: "belirsiz statü"
+          save: "Değişiklikeri kaydedin"
+        more: "daha fazla..."
+        help: "Tekerlekli sandalye için ulaşılırmı? (Yardım)"
       filter:
         category: "Tabaka:"
         wheelchair: "Tekerlekli sandalye için ulaşılırmı?"
