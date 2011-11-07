@@ -368,6 +368,15 @@ de:
       update: "%{model} aktualisieren"
   home:
     index:
+      popup:
+        form:
+          'yes': "Voll Rollstuhlgerecht"
+          limited: "Teilweise rollstuhlgerecht"
+          'no': "Nicht rollstuhlgerecht"
+          unknown: "Unbekannter Status"
+          save: "Speichern"
+        more: "mehr ..."
+        help: "Rollstuhlgerecht? (Hilfe)"
       filter:
         category: "Kategorie wählen"
         wheelchair: Rollstuhlgerecht?

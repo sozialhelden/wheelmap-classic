@@ -361,6 +361,15 @@ da:
       update: "Opdater %{model}"
   home:
     index:
+      popup:
+        more: "mere ..."
+        help: "Kørestolstilgængeligt? (Hjælp)"
+        form:
+          'yes': "Fuldt kørestoltilgængeligt"
+          'no': "Ikke kørestolstilgængeligt"
+          limited: "delvis kørestolstilgængeligt"
+          unknown: "ukendt"
+          save: "Gem"
       filter:
         category: "Vælg kategori"
         wheelchair: Kørestolstilgængeligt?

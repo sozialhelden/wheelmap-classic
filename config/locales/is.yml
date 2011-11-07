@@ -365,6 +365,15 @@ is:
       filter:
         category: "Flokkur:"
         wheelchair: Hjólastólaaðgengilegt?
+      popup:
+        form:
+          'yes': "hjólastólaaðgengilegt"
+          limited: "að hluta til hjólastólaaðgengilegt"
+          'no': "ekki hjólastólaaðgengilegt"
+          unknown: "óvituð staða"
+          save: "vista"
+        more: "meiri ..."
+        help: "Hjólastólaaðgengilegt? (Hjálp)"
       ie:
         action:
           ignore: Hunsa

@@ -358,6 +358,15 @@ fr:
       link:
         node:
           create: "Ajouter un nouveau lieu"
+      popup:
+        more: "davantage ..."
+        help: "Accessible pour fauteuil roulant? (Aide)"
+        form:
+          'yes': "accès pour fauteuil roulant"
+          'no': "pas d'accès pour fauteuil roulant"
+          limited: "accès partiel pour fauteuil roulant"
+          unknown: "statut inconnu"
+          save: "Sauvegarder"
   layouts:
     application:
       banner:
