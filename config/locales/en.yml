@@ -296,7 +296,7 @@ en:
       invalid_token: 'Invalid authentication token.'
       timeout: 'Your session expired, please sign in again to continue.'
       inactive: 'Your account was not activated yet.'
-      already_authenticated: "Your are already signed in."
+      already_authenticated: "You are already signed in."
     mailer:
       unlock_instructions:
         subject: Unlock Instructions
