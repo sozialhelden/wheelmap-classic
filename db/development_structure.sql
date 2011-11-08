@@ -26,6 +26,19 @@ CREATE TABLE `admins` (
   UNIQUE KEY `index_admins_on_unlock_token` (`unlock_token`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
+CREATE TABLE `alternatives` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `experiment_id` int(11) DEFAULT NULL,
+  `content` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lookup` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `weight` int(11) DEFAULT '1',
+  `participants` int(11) DEFAULT '0',
+  `conversions` int(11) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `index_alternatives_on_experiment_id` (`experiment_id`),
+  KEY `index_alternatives_on_lookup` (`lookup`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -51,7 +64,17 @@ CREATE TABLE `delayed_jobs` (
   `finished_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `delayed_jobs_priority` (`priority`,`run_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=205 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `experiments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `test_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_experiments_on_test_name` (`test_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `node_types` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -120,7 +143,7 @@ CREATE TABLE `sessions` (
   PRIMARY KEY (`id`),
   KEY `index_sessions_on_session_id` (`session_id`),
   KEY `index_sessions_on_updated_at` (`updated_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=1644 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1716 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `slugs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -270,3 +293,7 @@ INSERT INTO schema_migrations (version) VALUES ('20111017092328');
 INSERT INTO schema_migrations (version) VALUES ('20111018102230');
 
 INSERT INTO schema_migrations (version) VALUES ('20111024103455');
+
+INSERT INTO schema_migrations (version) VALUES ('20111101112924');
+
+INSERT INTO schema_migrations (version) VALUES ('20111101122153');
