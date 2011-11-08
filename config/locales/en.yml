@@ -1,280 +1,139 @@
 ---
 en:
-  how?: How?
-  number:
-    format:
-      separator: .
-      precision: 3
-      delimiter: ","
-    human:
-      format:
-        precision: 1
-        delimiter: ""
-    percentage:
-      format:
-        delimiter: ""
-    currency:
-      format:
-        format: "%u%n"
-        unit: $
-        separator: "."
-        precision: 2
-        delimiter: ","
-    precision:
-      format:
-        delimiter: ""
-  common:
-    close: close
-  layouts:
-    application:
-      banner:
-        alt: A project by Sozialhelden.de
-  support:
-    array:
-      sentence_connector: 'and'
-      skip_last_comma: true
-      two_words_connector: ' and '
-      last_word_connector: ' and '
-      words_connector: ','
-    select:
-      prompt: "Please select"
   activerecord:
     errors:
       full_messages:
         format: "%{attribute} %{message}"
       messages:
-        greater_than_or_equal_to: must be greater than or equal to %{count}
-        less_than_or_equal_to: must be less than or equal to %{count}
-        confirmation: doesn't match confirmation
-        blank: can't be blank
-        invalid: is invalid
-        exclusion: is reserved
-        odd: must be odd
-        wrong_length: is the wrong length (should be %{count} characters)
-        empty: can't be empty
-        too_short: is too short (minimum is %{count} characters)
-        even: must be even
-        less_than: must be less than %{count}
-        equal_to: must be equal to %{count}
-        greater_than: must be greater than %{count}
-        taken: has already been taken
-        accepted: must be accepted
-        too_long: is too long (maximum is %{count} characters)
-        not_a_number: is not a number
-        inclusion: is not included in the list
+        accepted: "must be accepted"
+        blank: "can't be blank"
+        confirmation: "doesn't match confirmation"
+        empty: "can't be empty"
+        equal_to: "must be equal to %{count}"
+        even: "must be even"
+        exclusion: "is reserved"
+        greater_than: "must be greater than %{count}"
+        greater_than_or_equal_to: "must be greater than or equal to %{count}"
+        inclusion: "is not included in the list"
+        invalid: "is invalid"
+        less_than: "must be less than %{count}"
+        less_than_or_equal_to: "must be less than or equal to %{count}"
+        not_a_number: "is not a number"
+        odd: "must be odd"
         record_invalid: "Validation failed: %{errors}"
-      template:
-        body: "There were problems with the following fields:"
-        header:
-          one: 1 error prohibited this %{model} from being saved
-          other: "%{count} errors prohibited this %{model} from being saved"
-
+        taken: "has already been taken"
+        too_long: "is too long (maximum is %{count} characters)"
+        too_short: "is too short (minimum is %{count} characters)"
+        wrong_length: "is the wrong length (should be %{count} characters)"
       models:
         user_session:
           email: E-Mail-Address
           password: Password
-          remember_me: Stay logged in
-  wheelmap:
-    footer:
-      based_on: Based on
-      main_supporter: Main supporter
-      become_a_supporter: Become a supporter
-      a_project_of: A project of
-    logo:
-      title: Wheelmap - find wheelchair accessible places
-      alt: Wheelmap Logo - find wheelchair accessible places
-    itunes:
-      title: "Download the iPhone App now!"
-      alt: "AppStore Logo"
-    what_is:
-      unknown_accessible: '<em>Unknown:</em> Help and mark places!'
-      not_accessible: '<em>No:</em> Entry has high or several steps, rooms not accessible'
-      fully_accessible: '<em>Yes:</em> Entrance without steps, all rooms without steps, accessible toilet'
-      limited_accessible: '<em>Limited:</em> Entry has a step (max. height 7cm), most rooms are stepless, toilet not accessible'
-  node:
-    address:
-      city: "%{city} %{postcode}"
-      street: "%{housenumber} %{street}"
-    tags:
-      phone: "Phone:"
-      website: "Website:"
-  profile:
-    edit:
-      headline: Edit your Profile
-      application:
-        oauth:
-          not_connected: "Status: Not connected"
-          connected: "Status: connected"
-          grant: Connect now
-          revoke: Disconnect
-  or: or
-  statistics: Statistics
-  oauth:
-    callback:
-      notice: Your wheelmap account is now connected to the OpenStreetMap account %{user}.
-    application:
-      connect:
-        headline: You have to connect your account with your open street map account before you can create or modify places on wheelmap.org.
-  header:
-    searchbar:
-      label: ""
-      find: find
-      add_place: Add another place
-      title_add_place: 'Add a new place at this position now!'
-      placeholder: i.e. Sunset Boulevard L.A. or Brandenburg Gate Berlin
-    title: Wheelmap - find wheelchair accessible places
-    meta:
-      homepage: Home page
-      description: Find wheelchair accessible places - wheelmap.org
-      search: Search
-      keywords: wheelchair accessible places find search mark
-    tagline: Wheelmap logo
-    navigation:
-      logout: Log out
-      blog: Blog
-      how_to_add_a_place: How do I add places?
-      imprint: Imprint
-      press: Press
-      suggestions: Suggestions
-      what_is_barrier_free: What does "wheelchair accessible" mean?
-      logged_in_as: "Logged in as:"
-      feedback: Feedback
-      newsletter: Newsletter
-      login: Log in
-      what_is_wheelmap: What is wheelmap?
-      home: Start
-      tolk: Translations
-  splash:
-    headline: Everyone can add wheelchair accessible places!
-    countline: %{count} places have already been marked.
-    step1: Click on a place you know.
-    step2: Mark it and click save.
-    step3: That's it! No registration necessary.
-    start: Start
-    what_is_wheelmap: What is wheelmap?
-  errors:
-    messages:
-      greater_than_or_equal_to: must be greater or equal than %{count}
-      confirmation: doesn't match confirmation
-      less_than_or_equal_to: must be lower or equal than %{count}
-      blank: has to be filled
-      invalid: not valid
-      exclusion: is reserved
-      odd: must be odd
-      wrong_length: is the wrong length (should be %{count} characters)
-      empty: has to be filled
-      even: must be even
-      too_short: is too short (not less than %{count} characters)
-      less_than: must be less than %{count}
-      equal_to: must be exactly %{count}
-      greater_than: must be greater than %{count}
-      taken: has already been taken
-      accepted: has to be accepted
-      too_long: is too long (not more than %{count} characters)
-      inclusion: not a valid value
-      not_a_number: is not a number
-  time:
-    am: am
-    formats:
-      default: "%a, %d %b %Y %H:%M:%S %z"
-      short: "%d %b %H:%M"
-      long: "%B %d, %Y %H:%M"
-    pm: pm
-  formtastic:
-    hints:
-      osm_username: Not a member yet? <a href="http://openstreetmap.org/user/new" target="_blank">Create an Openstreetmap account now</a>
-      website: "For example: http://www.example.com"
-      phone: "For example: +49 30 123456-78"
-      lat: Move the marker on the map to the correct position
-      password: "(leave empty, if you don't want to change it)"
-    titles:
-      optional: More information <span class="addition">(all fields are optional)</span>
-      basic: Basic data
-    labels:
-      name: "Name:"
-      housenumber: "No:"
-      city: "City:"
-      lon: Longitude
-      category: "Category:"
-      wheelchair: Wheelchair accessibility?
-      postcode: "Post code:"
-      wheelchair_description: "Accessibility comment:"
-      osm_username: OSM account name
-      password_confirmation: Repeat password
-      street: "Street:"
-      type: "Type:"
-      save: Save
-      reset: Reset
-      phone: "Telephone:"
-      website: "Website:"
-      create: Create place
-      osm_password: OSM password
-      lat: Latitude
-      password: Password
-      email: E-Mail
+          remember_me: "Stay logged in"
+      template:
+        body: "There were problems with the following fields:"
+        header:
+          one: "1 error prohibited this %{model} from being saved"
+          other: "%{count} errors prohibited this %{model} from being saved"
   application:
     require_no_user:
-      notice: "You\xE2\x80\x99re already logged in \xE2\x80\xA6"
+      notice: "You’re already logged in …"
     require_user:
-      notice: You have to log in to see this page.
+      notice: "You have to log in to see this page."
+  breadcrumbs:
+    node:
+      create: "Add new place"
+      edit: "Edit place"
+    root: wheelmap
+  common:
+    close: close
   date:
-    month_names:
-      0:
-      1:  January
-      2:  February
-      3:  March
-      4:  April
-      5:  May
-      6:  June
-      7:  July
-      9:  August
-      10: September
-      11: October
-      12: November
-      13: December
     abbr_day_names:
-      0: Sun
-      1: Mon
-      2: Tue
-      3: Wed
-      4: Thu
-      5: Fri
-      6: Sat
-    order:
-      0: year
-      1: month
-      2: day
+      - Sun
+      - Mon
+      - Tue
+      - Wed
+      - Thu
+      - Fri
+      - Sat
+    abbr_month_names:
+      - ~
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - ~
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+    day_names:
+      - Sunday
+      - Monday
+      - Tuesday
+      - Wednesday
+      - Thursday
+      - Friday
+      - Saturday
     formats:
       default: "%Y-%m-%d"
-      short: "%b %d"
       long: "%B %d, %Y"
-    day_names:
-      0: Sunday
-      1: Monday
-      2: Tuesday
-      3: Wednesday
-      4: Thursday
-      5: Friday
-      6: Saturday
-    abbr_month_names:
-      0:
-      1:  Jan
-      2:  Feb
-      3:  Mar
-      4:  Apr
-      5:  May
-      6:  Jun
-      7:  Jul
-      9:  Aug
-      10: Sep
-      11: Oct
-      12: Nov
-      13: Dec
+      short: "%b %d"
+    month_names:
+      - ~
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - ~
+      - August
+      - September
+      - October
+      - November
+      - December
+    order:
+      - year
+      - month
+      - day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "about 1 hour"
+        other: "about %{count} hours"
+      about_x_months:
+        one: "about 1 month"
+        other: "about %{count} months"
+      about_x_years:
+        one: "about 1 year"
+        other: "about %{count} years"
+      half_a_minute: "half a minute"
+      over_x_years:
+        one: "over 1 year"
+        other: "over %{count} years"
+      x_days:
+        one: "1 day"
+        other: "%{count} days"
+      x_minutes:
+        one: "1 minute"
+        other: "%{count} minutes"
+      x_months:
+        one: "1 month"
+        other: "%{count} months"
+      x_seconds:
+        one: "1 second"
+        other: "%{count} seconds"
   devise:
-    passwords:
-      send_instructions: You will receive an email with instructions about how to reset your password in a few minutes.
-      link: Forgot password?
-      updated: Your password was changed successfully. You are now signed in.
+    confirmations:
+      confirmed: "Your account was successfully confirmed. You are now signed in."
+      link: "Didn't receive confirmation instructions?"
+      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
     destroy:
       confirm: "Are you sure?"
       headline: "Delete Account"
@@ -284,27 +143,27 @@ en:
         labels:
           current_password: "Current password <i>(we need it to confirm your changes)</i>"
           email: Email
-          password: "Password <i>(leave empty, if you don\'t want to change it)</i>"
+          password: "Password <i>(leave empty, if you don\\'t want to change it)</i>"
           password_confirmation: "Repeat password"
         submit: "Save changes"
       headline: "Edit Account"
     failure:
-      unauthenticated: 'You need to sign in or sign up before continuing.'
-      unconfirmed: 'You have to confirm your account before continuing.'
-      locked: 'Your account is locked.'
-      invalid: 'Invalid email or password.'
-      invalid_token: 'Invalid authentication token.'
-      timeout: 'Your session expired, please sign in again to continue.'
-      inactive: 'Your account was not activated yet.'
       already_authenticated: "You are already signed in."
+      inactive: "Your account was not activated yet."
+      invalid: "Invalid email or password."
+      invalid_token: "Invalid authentication token."
+      locked: "Your account is locked."
+      timeout: "Your session expired, please sign in again to continue."
+      unauthenticated: "You need to sign in or sign up before continuing."
+      unconfirmed: "You have to confirm your account before continuing."
     mailer:
-      unlock_instructions:
-        subject: Unlock Instructions
-      reset_password_instructions:
-        subject: Reset password instructions
       confirmation_instructions:
-        subject: One more step to activate your account
         landing_page: "Please click on the link that we just send to your email address. If you did not receive any email from us please make sure it is not hiding in your spam folder. In case you cannot find it you can resend the email again."
+        subject: "One more step to activate your account"
+      reset_password_instructions:
+        subject: "Reset password instructions"
+      unlock_instructions:
+        subject: "Unlock Instructions"
     mandatory: "* Required"
     password_recovery:
       form:
@@ -314,7 +173,7 @@ en:
       headline: "Forgot Password?"
     password_reset:
       email:
-        comment: "In case you did not reqested a password reset, just ignore this Email.<br/>Your password won\'t be changed until you click on the link above and set a new password."
+        comment: "In case you did not reqested a password reset, just ignore this Email.<br/>Your password won\\'t be changed until you click on the link above and set a new password."
         headline: "Welcome %{email}"
         link: "Change my password"
         text: "Someone has requested to change your password.  You can do that by clicking the following link:"
@@ -324,333 +183,477 @@ en:
           password_confirmation: "Repeat password"
         submit: "Reset password"
       headline: "Reset password"
+    passwords:
+      link: "Forgot password?"
+      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
+      updated: "Your password was changed successfully. You are now signed in."
+    registrations:
+      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
+      inactive_signed_up: "You have signed up successfully. But we could not sign you in. Reason: \"%{reason}\""
+      link: "Sign up"
+      signed_up: "You have signed up successfully. If enabled, a confirmation was sent to your e-mail."
+      updated: "You updated your account successfully."
+    sessions:
+      inactive: "Your account was not activated yet."
+      invalid: "Invalid email or password."
+      invalid_token: "Invalid authentication token."
+      link: "Sign in"
+      locked: "Your account is locked."
+      signed_in: "Signed in successfully."
+      signed_out: "Signed out successfully."
+      timeout: "Your session expired, please sign in again to continue."
+      unauthenticated: "You need to sign in or sign up before continuing."
+      unconfirmed: "You have to confirm your account before continuing."
     sign_in:
       form:
         labels:
           email: Email
           password: Password
           remember_me: "Stay logged in?"
-        submit: Log in
-      headline: Log in
+        submit: "Log in"
+      headline: "Log in"
     sign_out:
-      headline: Log out
+      headline: "Log out"
     sign_up:
       email:
-        welcome: "Welcome %{email}!"
-        please_confirm: "You can confirm your account through the link below:"
         confirm_my_account: "Confirm my account"
+        please_confirm: "You can confirm your account through the link below:"
+        welcome: "Welcome %{email}!"
       form:
         labels:
           email: Email
           password: Password
           password_confirmation: "Repeat password"
           wants_newsletter: "Yes, keep me up to date about wheelmap. (But please no more than once a month.)"
-        submit: Sign up
-      headline: Sign up
-
+        submit: "Sign up"
+      headline: "Sign up"
     unlocks:
-      unlocked: Your account was successfully unlocked. You are now signed in.
-      send_instructions: You will receive an email with instructions about how to unlock your account in a few minutes.
-      link: Didn't receive unlock instructions?
-    registrations:
-      destroyed: Bye! Your account was successfully cancelled. We hope to see you again soon.
-      link: Sign up
-      updated: You updated your account successfully.
-      signed_up: You have signed up successfully. If enabled, a confirmation was sent to your e-mail.
-      inactive_signed_up: "You have signed up successfully. But we could not sign you in. Reason: \"%{reason}\""
-    sessions:
-      signed_out: Signed out successfully.
-      unauthenticated: You need to sign in or sign up before continuing.
-      invalid: Invalid email or password.
-      timeout: Your session expired, please sign in again to continue.
-      inactive: Your account was not activated yet.
-      unconfirmed: You have to confirm your account before continuing.
-      link: Sign in
-      signed_in: Signed in successfully.
-      invalid_token: Invalid authentication token.
-      locked: Your account is locked.
-    confirmations:
-      confirmed: Your account was successfully confirmed. You are now signed in.
-      link: Didn't receive confirmation instructions?
-      send_instructions: You will receive an email with instructions about how to confirm your account in a few minutes.
+      link: "Didn't receive unlock instructions?"
+      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
+      unlocked: "Your account was successfully unlocked. You are now signed in."
+  errors:
+    messages:
+      accepted: "has to be accepted"
+      blank: "has to be filled"
+      confirmation: "doesn't match confirmation"
+      empty: "has to be filled"
+      equal_to: "must be exactly %{count}"
+      even: "must be even"
+      exclusion: "is reserved"
+      greater_than: "must be greater than %{count}"
+      greater_than_or_equal_to: "must be greater or equal than %{count}"
+      inclusion: "not a valid value"
+      invalid: "not valid"
+      less_than: "must be less than %{count}"
+      less_than_or_equal_to: "must be lower or equal than %{count}"
+      not_a_number: "is not a number"
+      odd: "must be odd"
+      taken: "has already been taken"
+      too_long: "is too long (not more than %{count} characters)"
+      too_short: "is too short (not less than %{count} characters)"
+      wrong_length: "is the wrong length (should be %{count} characters)"
   form:
-    show_limited_accessible_places: partly wheelchair accessible
-    show_places_without_status: unknown status
-    show_unaccessible_places: not wheelchair accessible
-    show_fully_accessible_places: wheelchair accessible
-
-  breadcrumbs:
-    node:
-      edit: Edit place
-      create: Add new place
-    root: wheelmap
+    show_fully_accessible_places: "wheelchair accessible"
+    show_limited_accessible_places: "partly wheelchair accessible"
+    show_places_without_status: "unknown status"
+    show_unaccessible_places: "not wheelchair accessible"
+  formtastic:
+    hints:
+      lat: "Move the marker on the map to the correct position"
+      osm_username: "Not a member yet? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an Openstreetmap account now</a>"
+      password: "(leave empty, if you don't want to change it)"
+      phone: "For example: +49 30 123456-78"
+      website: "For example: http://www.example.com"
+    labels:
+      category: "Category:"
+      city: "City:"
+      create: "Create place"
+      email: E-Mail
+      housenumber: "No:"
+      lat: Latitude
+      lon: Longitude
+      name: "Name:"
+      osm_password: "OSM password"
+      osm_username: "OSM account name"
+      password: Password
+      password_confirmation: "Repeat password"
+      phone: "Telephone:"
+      postcode: "Post code:"
+      reset: Reset
+      save: Save
+      street: "Street:"
+      type: "Type:"
+      website: "Website:"
+      wheelchair: "Wheelchair accessibility?"
+      wheelchair_description: "Accessibility comment:"
+    titles:
+      basic: "Basic data"
+      optional: "More information <span class=\"addition\">(all fields are optional)</span>"
   global:
-    form_validation_error: Please note the errors listed below.
+    form_validation_error: "Please note the errors listed below."
+  header:
+    meta:
+      description: "Find wheelchair accessible places - wheelmap.org"
+      homepage: "Home page"
+      keywords: "wheelchair accessible places find search mark"
+      search: Search
+    navigation:
+      blog: Blog
+      feedback: Feedback
+      home: Start
+      how_to_add_a_place: "How do I add places?"
+      imprint: Imprint
+      logged_in_as: "Logged in as:"
+      login: "Log in"
+      logout: "Log out"
+      newsletter: Newsletter
+      press: Press
+      suggestions: Suggestions
+      tolk: Translations
+      what_is_barrier_free: "What does \"wheelchair accessible\" mean?"
+      what_is_wheelmap: "What is wheelmap?"
+    searchbar:
+      add_place: "Add another place"
+      find: find
+      label: ~
+      placeholder: "i.e. Sunset Boulevard L.A. or Brandenburg Gate Berlin"
+      title_add_place: "Add a new place at this position now!"
+    tagline: "Wheelmap logo"
+    title: "Wheelmap - find wheelchair accessible places"
+  home:
+    index:
+      filter:
+        category: "Choose category"
+        wheelchair: "Wheelchair accessible?"
+      ie:
+        action:
+          ignore: Ignore
+          upgrade: "Update Browser"
+        warning:
+          headline: "We apologize!"
+          message: "You seem to use Internet Explorer. Wheelmap needs a standard-compliant browser to work properly. Please use Firefox, Chrome, Safari or Opera"
+      link:
+        node:
+          create: "Add new place"
+      popup:
+        form:
+          limited: "partly wheelchair accessible"
+          ? "no"
+          : "not wheelchair accessible"
+          save: Update
+          unknown: "unknown status"
+          ? "yes"
+          : "wheelchair accessible"
+        help: "Wheelchair accessible? (Help)"
+        more: "more ..."
+  how?: How?
   landing_pages:
     index:
       wheelchair:
-        'yes':
-          headline: "All wheelchair accessible %{type} in %{city} (%{count})"
-        'no':
-          headline: "All non-wheelchair accessible %{type} in %{city} (%{count})"
         limit:
           headline: "All limited wheelchair accessible %{type} in %{city} (%{count})"
+        ? "no"
+        :
+          headline: "All non-wheelchair accessible %{type} in %{city} (%{count})"
         unknown:
           headline: "All %{type} in %{city} with unknown wheelchair status (%{count})"
+        ? "yes"
+        :
+          headline: "All wheelchair accessible %{type} in %{city} (%{count})"
+  layouts:
+    application:
+      banner:
+        alt: "A project by Sozialhelden.de"
+  node:
+    address:
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
+    tags:
+      phone: "Phone:"
+      website: "Website:"
   nodes:
-    new:
-      header:
-        title: New place | wheelmap.org
-      link:
-        large_map: "&laquo; Cancel"
+    create:
+      flash:
+        not_successfull: "Oops, your input was either uncorrect or uncomplete."
+        successfull: "Thank you, the submission was saved successfully and will be online shortly."
     edit:
       header:
         title: "Edit place: %{node} | wheelmap.org"
       link:
         large_map: "&laquo; Cancel"
     errors:
-      param_missing: Please provide a search term.
-      not_found: Sorry, page not found.
-      not_existent: Sorry, this place is not available anymore.
-      not_authorized: Sorry, authentication failed
-      not_available: Sorry, this page is temporarily not available.
-    update_wheelchair:
-      successfull: "The status for \"%{name}\" has been changed to \"%{status} wheelchair accessible\" and will be online shortly."
-
+      not_authorized: "Sorry, authentication failed"
+      not_available: "Sorry, this page is temporarily not available."
+      not_existent: "Sorry, this place is not available anymore."
+      not_found: "Sorry, page not found."
+      param_missing: "Please provide a search term."
+    flash:
+      authorize_wheelmap: "You need an OpenStreetMap account to modify data."
+    new:
+      header:
+        title: "New place | wheelmap.org"
+      link:
+        large_map: "&laquo; Cancel"
     show:
       header:
         title: "Place: %{node} | wheelmap.org"
       link:
         back: back
-        report_bug: "Report a problem"
-        edit_node: Edit place
+        claim: "Do you work here?"
+        edit_node: "Edit place"
         large_map: Enlarge
         listing: "All places of typ '%{type}' in %{city}"
-        claim: "Do you work here?"
+        report_bug: "Report a problem"
       show-in-osm: OpenStreetMap
-    create:
-      flash:
-        not_successfull: Oops, your input was either uncorrect or uncomplete.
-        successfull: Thank you, the submission was saved successfully and will be online shortly.
-    flash:
-      authorize_wheelmap: You need an OpenStreetMap account to modify data.
     update:
       flash:
-        not_successfull: Oops, your input was either uncorrect or uncomplete.
-        successfull: Thank you, the submission was saved successfully and will be online shortly.
-  wheelchairstatus:
-    "no": not wheelchair accessible
-    limited: partly wheelchair accessible
-    "yes": wheelchair accessible
-    unknown: unknown status
-  user_sessions:
-    new:
-      remember_me: Stay logged in
-      login_with_twitter: Log in with Twitter
-      login: Log in
-      password: Password
-      email: E-mail address
-    destroy:
-      notice: Bye, come back soon!
-    create:
-      notice: You're in!
-      activation:
-        notice: Your account is activated now!
-      error:
-        notice: E-mail and password don't match.
+        not_successfull: "Oops, your input was either uncorrect or uncomplete."
+        successfull: "Thank you, the submission was saved successfully and will be online shortly."
+    update_wheelchair:
+      successfull: "The status for \"%{name}\" has been changed to \"%{status} wheelchair accessible\" and will be online shortly."
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        unit: $
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+    human:
+      format:
+        delimiter: ~
+        precision: 1
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "You have to connect your account with your open street map account before you can create or modify places on wheelmap.org."
+    callback:
+      notice: "Your wheelmap account is now connected to the OpenStreetMap account %{user}."
+  or: or
   place:
     one: "%{count} place"
     other: "%{count} places"
-  datetime:
-    distance_in_words:
-      x_days:
-        one: 1 day
-        other: "%{count} days"
-      x_seconds:
-        one: 1 second
-        other: "%{count} seconds"
-      x_minutes:
-        one: 1 minute
-        other: "%{count} minutes"
-      x_months:
-        one: 1 month
-        other: "%{count} months"
-      about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
-      about_x_months:
-        one: about 1 month
-        other: about %{count} months
-      about_x_years:
-        one: about 1 year
-        other: about %{count} years
-      over_x_years:
-        one: over 1 year
-        other: over %{count} years
-      half_a_minute: half a minute
-  home:
-    index:
-      ie:
-        warning:
-          headline: We apologize!
-          message: "You seem to use Internet Explorer. Wheelmap needs a standard-compliant browser to work properly. Please use Firefox, Chrome, Safari or Opera"
-        action:
-          ignore: Ignore
-          upgrade: Update Browser
-
-      filter:
-        category: "Choose category"
-        wheelchair: Wheelchair accessible?
-      link:
-        node:
-          create: Add new place
-      popup:
-        more: "more ..."
-        help: "Wheelchair accessible? (Help)"
-        form:
-          'yes': "wheelchair accessible"
-          'no': "not wheelchair accessible"
-          limited: "partly wheelchair accessible"
-          unknown: "unknown status"
-          save: "Update"
   poi:
+    category:
+      accommodation: Accomodation
+      education: Education
+      food: Food
+      government: Government
+      leisure: Leisure
+      misc: Misc
+      money_post: "Bank Post"
+      public_transfer: "Public transfer"
+      shopping: Shopping
+      sport: Sport
+      tourism: Tourism
+      unknown: Unknown
     name:
       accommodation:
-        bed_and_breakfast: Bed and breakfast
-        hotel: Hotel
-        guest_house: Guest house
-        motel: Motel
-        caravan_site: Caravan site
-        hostel: Hostel
-        beach_resort: Beach hotel
-        camp_site: Camp site
+        beach_resort: "Beach hotel"
+        bed_and_breakfast: "Bed and breakfast"
+        camp_site: "Camp site"
+        caravan_site: "Caravan site"
         chalet: Chalet
-      misc:
-        pharmacy: Pharmacy
-        doctors: Doctors
-        hospital: Hospital
-        toilets: Toiletts
-        veterinary: Veterinary
-        place_of_worship: Place of worship
-      money_post:
-        bureau_de_change: Bureau de change
-        post_box: Post box
-        atm: ATM
-        post_office: Post office
-        bank: Bank
-      tourism:
-        artwork: Artwork
-        theme_park: Theme park
-        viewpoint: View point
-        arts_centre: Arts centre
-        beacon: Lighthouse
-        battlefield: Battlefield
-        castle: Castle
-        beach: Beach
-        information: Tourist information
-        attraction: Attraction
-        cave_entrance: Cave entrance
-        memorial: Memorial
-        archaeological_site: Archaeological site
-        tower: Tower
-      public_transfer:
-        halt: Halt
-        tram_stop: Tram stop
-        bus_stop: Bus stop
-        bus_station: Bus station
-        ferry_terminal: Ferry terminal
-        fuel: Gas station
-        bicycle_parking: Bicyle parking
-        station: Subway
-        light_rail: Light rail
-        ferry: Ferry
-        bicycle_rental: Bicyle rental
-        boatyard: Boatyard
-        car_rental: Car rental
-        parking: Parking
-        aerodrome: Airport
-        cable_car: Cable car
-        car_sharing: Car sharing
-        subway_entrance: Subway entrance
-        terminal: Airport terminal
-        parking_aisle: Parking aisle
-        chair_lift: Chair lift
-        platform: Platform
+        guest_house: "Guest house"
+        hostel: Hostel
+        hotel: Hotel
+        motel: Motel
+      education:
+        college: College
+        kindergarten: Kindergarten
+        library: Library
+        museum: Museum
+        school: School
+        university: University
+      food:
+        bar: Bar
+        biergarten: Biergarten
+        cafe: Cafe
+        drinking_water: "Drinking water"
+        fast_food: "Fast Food"
+        pub: Pub
+        restaurant: Restaurant
+      government:
+        courthouse: Couthouse
+        embassy: Embassy
+        public_building: "Public building"
+        townhall: Townhall
       leisure:
-        theatre: Theatre
-        zoo: Zoo
+        arena: Arena
+        cinema: Cinema
+        gallery: Gallery
         nightclub: Nightclub
         sauna: Sauna
-        gallery: Gallery
-        cinema: Cinema
-        arena: Arena
+        theatre: Theatre
+        zoo: Zoo
+      misc:
+        doctors: Doctors
+        hospital: Hospital
+        pharmacy: Pharmacy
+        place_of_worship: "Place of worship"
+        toilets: Toiletts
+        veterinary: Veterinary
+      money_post:
+        atm: ATM
+        bank: Bank
+        bureau_de_change: "Bureau de change"
+        post_box: "Post box"
+        post_office: "Post office"
+      public_transfer:
+        aerodrome: Airport
+        bicycle_parking: "Bicyle parking"
+        bicycle_rental: "Bicyle rental"
+        boatyard: Boatyard
+        bus_station: "Bus station"
+        bus_stop: "Bus stop"
+        cable_car: "Cable car"
+        car_rental: "Car rental"
+        car_sharing: "Car sharing"
+        chair_lift: "Chair lift"
+        ferry: Ferry
+        ferry_terminal: "Ferry terminal"
+        fuel: "Gas station"
+        halt: Halt
+        light_rail: "Light rail"
+        parking: Parking
+        parking_aisle: "Parking aisle"
+        platform: Platform
+        station: Subway
+        subway_entrance: "Subway entrance"
+        terminal: "Airport terminal"
+        tram_stop: "Tram stop"
       shopping:
+        alcohol: Liquor
+        bakery: Bakery
         beverages: Beverages
-        laundry: Laundry
-        electronics: Elektronics
+        bicycle: Bikeshop
         books: Books
         butcher: Butcher
         clothes: Clothes
-        convenience: Convenience
-        doityourself: Do it yourself
-        dry_cleaning: Dry cleaning
-        florist: Florist
-        mall: Shoppingcenter
-        alcohol: Liquor
-        supermarket: Supermarket
-        bakery: Bakery
-        hairdresser: Hairdresser
-        optician: Optiker
-        garden_centre: Garden center
         computer: Computer
-        department_store: Department store
+        convenience: Convenience
+        department_store: "Department store"
+        doityourself: "Do it yourself"
+        dry_cleaning: "Dry cleaning"
+        electronics: Elektronics
+        florist: Florist
         furniture: Furniture
-        shoes: Shoes
+        garden_centre: "Garden center"
+        hairdresser: Hairdresser
         hardware: Hardware
         kiosk: Kiosk
         laundry: Laundry
-      government:
-        embassy: Embassy
-        townhall: Townhall
-        public_building: Public building
-        courthouse: Courthouse
+        mall: Shoppingcenter
+        optician: Optiker
+        shoes: Shoes
+        supermarket: Supermarket
       sport:
-        swimming: Swimming
-        sports_centre: Sports centre
-        swimming_pool: Swimming pool
+        sports_centre: "Sports centre"
         stadium: Stadion
-      food:
-        restaurant: Restaurant
-        fast_food: Fast Food
-        drinking_water: Drinking water
-        cafe: Cafe
-        biergarten: Biergarten
-        pub: Pub
-        bar: Bar
-      education:
-        school: School
-        college: College
-        university: University
-        library: Library
-        kindergarten: Kindergarten
-        museum: Museum
+        swimming: Swimming
+        swimming_pool: "Swimming pool"
+      tourism:
+        archaeological_site: "Archaeological site"
+        arts_centre: "Arts centre"
+        artwork: Artwork
+        attraction: Attraction
+        battlefield: Battlefield
+        beach: Beach
+        beacon: Lighthouse
+        castle: Castle
+        cave_entrance: "Cave entrance"
+        information: "Tourist information"
+        memorial: Memorial
+        theme_park: "Theme park"
+        tower: Tower
+        viewpoint: "View point"
       unknown:
         unknown: Unknown
-    category:
-      accommodation: Accomodation
-      misc: Misc
-      tourism: Tourism
-      money_post: "Bank & Post"
-      public_transfer: Public transfer
-      leisure: Leisure
-      government: Government
-      shopping: Shopping
-      sport: Sport
-      education: Education
-      unknown: Unknown
-      food: Food
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "Status: connected"
+          grant: "Connect now"
+          not_connected: "Status: Not connected"
+          revoke: Disconnect
+      headline: "Edit your Profile"
   search:
     index:
       search:
-        not_found: No places could be found!
-        for: Searching for "%{q}"
+        for: "Searching for \"%{q}\""
+        not_found: "No places could be found!"
+  splash:
+    countline: "%{count} places have already been marked."
+    headline: "Everyone can add wheelchair accessible places!"
+    start: Start
+    step1: "Click on a place you know."
+    step2: "Mark it and click save."
+    step3: "That's it! No registration necessary."
+    what_is_wheelmap: "What is wheelmap?"
+  statistics: Statistics
+  support:
+    array:
+      last_word_connector: " and "
+      sentence_connector: and
+      skip_last_comma: "true"
+      two_words_connector: " and "
+      words_connector: ","
+    select:
+      prompt: "Please select"
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+  user_sessions:
+    create:
+      activation:
+        notice: "Your account is activated now!"
+      error:
+        notice: "E-mail and password don't match."
+      notice: "You're in!"
+    destroy:
+      notice: "Bye, come back soon!"
+    new:
+      email: "E-mail address"
+      login: "Log in"
+      login_with_twitter: "Log in with Twitter"
+      password: Password
+      remember_me: "Stay logged in"
+  wheelchairstatus:
+    limited: "partly wheelchair accessible"
+    ? "no"
+    : "not wheelchair accessible"
+    unknown: "unknown status"
+    ? "yes"
+    : "wheelchair accessible"
+  wheelmap:
+    footer:
+      a_project_of: "A project of"
+      based_on: "Based on"
+      become_a_supporter: "Become a supporter"
+      main_supporter: "Main supporter"
+    itunes:
+      alt: "AppStore Logo"
+      title: "Download the iPhone App now!"
+    logo:
+      alt: "Wheelmap Logo - find wheelchair accessible places"
+      title: "Wheelmap - find wheelchair accessible places"
+    what_is:
+      fully_accessible: "<em>Yes:</em> Entrance without steps, all rooms without steps, accessible toilet"
+      limited_accessible: "<em>Limited:</em> Entry has a step (max. height 7cm), most rooms are stepless, toilet not accessible"
+      not_accessible: "<em>No:</em> Entry has high or several steps, rooms not accessible"
+      unknown_accessible: "<em>Unknown:</em> Help and mark places!"
