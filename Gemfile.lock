@@ -312,4 +312,5 @@ DEPENDENCIES
   unicorn
   webmock
   whenever
+  ya2yaml
   yajl-ruby

@@ -57,7 +57,7 @@ en:
       - Fri
       - Sat
     abbr_month_names:
-      - ~
+      - ""
       - Jan
       - Feb
       - Mar
@@ -65,7 +65,6 @@ en:
       - May
       - Jun
       - Jul
-      - ~
       - Aug
       - Sep
       - Oct
@@ -84,7 +83,7 @@ en:
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
-      - ~
+      - ""
       - January
       - February
       - March
@@ -92,7 +91,6 @@ en:
       - May
       - June
       - July
-      - ~
       - August
       - September
       - October
