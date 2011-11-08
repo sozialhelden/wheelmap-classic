@@ -589,7 +589,12 @@ en:
         laundry: Laundry
         electronics: Elektronics
         books: Books
+        butcher: Butcher
         clothes: Clothes
+        convenience: Convenience
+        doityourself: Do it yourself
+        dry_cleaning: Dry cleaning
+        florist: Florist
         mall: Shoppingcenter
         alcohol: Liquor
         supermarket: Supermarket
@@ -602,6 +607,8 @@ en:
         furniture: Furniture
         shoes: Shoes
         hardware: Hardware
+        kiosk: Kiosk
+        laundry: Laundry
       government:
         embassy: Embassy
         townhall: Townhall
