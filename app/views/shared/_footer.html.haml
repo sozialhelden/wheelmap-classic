@@ -14,7 +14,7 @@
   = t('wheelmap.footer.main_supporter')
   = image_tag('immoscout.jpg', :width => 43, :height => 20, :alt => 'ImmobilienScout24', :title => 'ImmobilienScout24')
   |
-  %a(href="http://rollstuhlsport.de" target='_blank')
+  = link_to "http://rollstuhlsport.de", :target => '_blank', :class => 'icon' do
     = image_tag "/images/drs-logo.jpg"
   |
   = image_tag "/images/sanitrans-logo.jpg"

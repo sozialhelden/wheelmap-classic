@@ -881,6 +881,10 @@ h1.marge, h2.marge, h3.marge, h4.marge, h5.marge, h6.marge, p.marge {
   text-decoration: underline;
 }
 /* line 20, ../../app/stylesheets/basics/_footer.sass */
+#footer a.icon {
+  text-decoration: none;
+}
+/* line 23, ../../app/stylesheets/basics/_footer.sass */
 #footer .social {
   position: absolute;
   text-align: left;
@@ -888,7 +892,7 @@ h1.marge, h2.marge, h3.marge, h4.marge, h5.marge, h6.marge, p.marge {
   margin: 10px;
   z-index: 10;
 }
-/* line 27, ../../app/stylesheets/basics/_footer.sass */
+/* line 30, ../../app/stylesheets/basics/_footer.sass */
 #footer .supporter {
   position: absolute;
   text-align: right;
@@ -898,17 +902,17 @@ h1.marge, h2.marge, h3.marge, h4.marge, h5.marge, h6.marge, p.marge {
   z-index: 20;
   background: white;
 }
-/* line 36, ../../app/stylesheets/basics/_footer.sass */
+/* line 39, ../../app/stylesheets/basics/_footer.sass */
 #footer img {
   vertical-align: bottom;
 }
-/* line 39, ../../app/stylesheets/basics/_footer.sass */
+/* line 42, ../../app/stylesheets/basics/_footer.sass */
 #footer .counter {
   float: left;
   margin-right: 10px;
   margin-top: 0px;
 }
-/* line 44, ../../app/stylesheets/basics/_footer.sass */
+/* line 47, ../../app/stylesheets/basics/_footer.sass */
 #footer .counter td {
   padding: 2px 2px;
   color: gray;
@@ -916,7 +920,7 @@ h1.marge, h2.marge, h3.marge, h4.marge, h5.marge, h6.marge, p.marge {
   line-height: 18px;
   height: 18px;
 }
-/* line 51, ../../app/stylesheets/basics/_footer.sass */
+/* line 54, ../../app/stylesheets/basics/_footer.sass */
 #footer .counter span {
   font-size: 13px;
   border: 1px solid #cccccc;
