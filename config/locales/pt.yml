@@ -1,5 +1,5 @@
 ---
-pt-PT:
+pt:
   activerecord:
     errors:
       full_messages:
