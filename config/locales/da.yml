@@ -49,13 +49,13 @@ da:
     close: Luk
   date:
     abbr_day_names:
-      - sø
-      - ma
-      - ti
-      - true
-      - to
-      - fr
-      - lø
+      - søn
+      - man
+      - tir
+      - ons
+      - tor
+      - fre
+      - lør
     abbr_month_names:
       - ~
       - jan
