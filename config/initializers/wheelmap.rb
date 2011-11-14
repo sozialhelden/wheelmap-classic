@@ -1,6 +1,7 @@
 WheelchairStatus = %w{yes limited no unknown}
 
 Languages = {
+  'bg'    => 'български',
   'cn'    => '中文',
   'da'    => 'Danske',
   'de'    => 'Deutsch',
@@ -13,8 +14,9 @@ Languages = {
   'it'    => 'Italiano',
   'jp'    => '日本',
   'ko'    => '한국어',
+  'nl'    => 'Nederlands',
+  'pl'    => 'Polski',
   'pt'    => 'Português',
-  'pt' => 'Português',
   'ru'    => 'Русский',
   'se'    => 'Svenska',
   'tlh'   => 'tlhIngan Hol',
