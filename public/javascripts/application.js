@@ -426,7 +426,8 @@ function createPlacesLayer(style) {
       rendererOptions: { yOrdering: true },
       strategies: [bboxStategy(), filterStrategy(defaultFilter())],
       protocol: httpProtocol(),
-      visibility: true
+      visibility: true,
+      attribution: 'Map Icons Collection CC-By-SA by <a href="http://mapicons.nicolasmollet.com">Nicolas Mollet</a>'
   });
 
   map.addLayer(places);
