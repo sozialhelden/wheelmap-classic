@@ -16,4 +16,19 @@ namespace :export do
     end
     puts csv_string
   end
+
+  desc 'Export Categories and NodeTypes'
+  task :categories => :environment do
+    csv_string = ""
+    csv_string = FasterCSV.generate(:force_quotes => true) do |csv|
+      csv << ["wheelmap-Kategorien", "wheelmap-Typen", "OSM Key", "OSM Value"]
+      Category.all.each do |category|
+        category.node_types.each do |node_type|
+          csv << [node_type.category.localized_name, node_type.localized_name, node_type.osm_key, node_type.osm_value]
+        end
+      end
+    end
+    puts csv_string
+  end
+
 end
