@@ -55,7 +55,7 @@ namespace :deploy do
 
   task :remove_all_unfinished_locales do
     if rails_env == :production
-      %w(de-CH pt ru zh pt pl).each do |locale|
+      %w(bg de-CH nl pt ru zh pt pl).each do |locale|
         run "rm -f #{release_path}/config/locales/#{locale}.yml"
       end
     end
