@@ -3,7 +3,7 @@
     #splash{:style => 'display:none'}
       .close-splash
         %a.unblock-splash(href='#')
-          %img(height='17' width='17' src="/images/close.gif")
+          = image_tag('close.gif', :size => '17x17', :alt => 'x')
       %h1= t('splash.headline')
       %h2= t('splash.countline', :count => Poi.marked_count)
       %hr
