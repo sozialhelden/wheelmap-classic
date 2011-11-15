@@ -28,7 +28,6 @@ NodeType.connection.execute('ALTER TABLE node_types AUTO_INCREMENT=1')
 
 public_transfer = Category.find_by_identifier('public_transfer')
 node_types = NodeType.create([
-  {:category => public_transfer, :identifier => :aerodrome,       :osm_key => 'aeroway',  :osm_value => 'aerodrome',      :icon => 'airport.png'},
   {:category => public_transfer, :identifier => :bicycle_rental,  :osm_key => 'amenity',  :osm_value => 'bicycle_rental', :icon => 'cycling.png'},
   {:category => public_transfer, :identifier => :boatyard,        :osm_key => 'waterway', :osm_value => 'boatyard',       :icon => 'boat.png'},
   {:category => public_transfer, :identifier => :bus_station,     :osm_key => 'amenity',  :osm_value => 'bus_station',    :icon => 'busstop.png'},
@@ -108,7 +107,6 @@ node_types = NodeType.create([
   {:category => shopping,  :identifier => :mall,              :osm_key => 'shop', :osm_value => 'mall',             :icon => 'mall.png'},
   {:category => shopping,  :identifier => :kiosk,             :osm_key => 'shop', :osm_value => 'kiosk',            :icon => 'kiosk.png'},
   {:category => shopping,  :identifier => :optician,          :osm_key => 'shop', :osm_value => 'optician',         :icon => 'ophthalmologist.png'},
-  # {:category => shopping,  :identifier => :outdoor,           :osm_key => 'shop', :osm_value => 'outdoor',          :icon => nil},
   {:category => shopping,  :identifier => :shoes,             :osm_key => 'shop', :osm_value => 'shoes',            :icon => 'shoes.png'},
   {:category => shopping,  :identifier => :supermarket,       :osm_key => 'shop', :osm_value => 'supermarket',      :icon => 'supermarket.png'},
 ])
@@ -117,8 +115,7 @@ node_types = NodeType.create([
 sport = Category.find_by_identifier('sport')
 node_types = NodeType.create([
   {:category => sport,  :identifier => :sports_centre,  :osm_key => 'leisure', :osm_value => 'sports_centre', :icon => 'fitness.png' },
-  {:category => sport,  :identifier => :stadium,        :osm_key => 'leisure', :osm_value => 'stadium',       :icon => 'stadium.png' },
-  {:category => sport,  :identifier => :swimming_pool,  :osm_key => 'leisure', :osm_value => 'swimming_pool', :icon => 'swimming.png' }
+  {:category => sport,  :identifier => :stadium,        :osm_key => 'leisure', :osm_value => 'stadium',       :icon => 'stadium.png' }
 ])
 
 tourism = Category.find_by_identifier('tourism')
@@ -131,7 +128,6 @@ node_types = NodeType.create([
   {:category => tourism,  :identifier => :beach,                :osm_key => 'natural',  :osm_value => 'beach',                :icon => 'beach.png'},
   {:category => tourism,  :identifier => :castle,               :osm_key => 'historic', :osm_value => 'castle',               :icon => 'castle.png'},
   {:category => tourism,  :identifier => :cave_entrance,        :osm_key => 'natural',  :osm_value => 'cave_entrance',        :icon => 'cave.png'},
-  {:category => tourism,  :identifier => :information,          :osm_key => 'tourism',  :osm_value => 'information',          :icon => 'information.png'},
   {:category => tourism,  :identifier => :memorial,             :osm_key => 'historic', :osm_value => 'memorial',             :icon => 'memorial.png'},
   {:category => tourism,  :identifier => :theme_park,           :osm_key => 'tourism',  :osm_value => 'theme_park',           :icon => 'themepark.png'},
   {:category => tourism,  :identifier => :viewpoint,            :osm_key => 'tourism',  :osm_value => 'viewpoint',            :icon => 'beautifulview.png'},
@@ -163,8 +159,7 @@ node_types = NodeType.create([
 government = Category.find_by_identifier('government')
 node_types = NodeType.create([
   {:category => government,  :identifier => :courthouse,      :osm_key => 'amenity',  :osm_value => 'courthouse',       :icon => 'court.png'},
-  {:category => government,  :identifier => :public_building, :osm_key => 'amenity',  :osm_value => 'public_building',  :icon => 'bigcity.png'},
-  {:category => government,  :identifier => :townhall,        :osm_key => 'amenity',  :osm_value => 'townhall',         :icon => 'bigcity.png'},
+  {:category => government,  :identifier => :townhall,        :osm_key => 'amenity',  :osm_value => 'townhall',         :icon => 'bigcity.png'}
 ])
 
 Region.delete_all

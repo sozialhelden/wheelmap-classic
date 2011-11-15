@@ -17,7 +17,7 @@ def ensure_directory_exists(dirname)
     FileUtils.mkdir_p dirname, :verbose => true
   else
     puts "OK: #{dirname} already exists."
-  end  
+  end
 end
 
 def ensure_configuration_file_exists
@@ -86,7 +86,17 @@ def remove_merged_file
 end
 
 
-namespace :osm do  
+namespace :osm do
+
+  desc 'Download POI Data for a given key,value combination and import'
+  task :download => :environment do
+    key = ENV['key'] || raise( "rake osm:download key=<osmkey> value=<osmvalue>")
+    value = ENV['value'] || raise( "rake osm:download key=<osmkey> value=<osmvalue>")
+    ENV['file'] ||= "/tmp/#{Time.now.to_i}.osm" #saving to file for further processing
+    puts "Saving to #{ENV['file']}"
+    system "curl -s http://open.mapquestapi.com/xapi/api/0.6/node%5B#{key}=#{value}%5D > #{ENV['file']}"
+    Rake::Task['osm:import'].invoke
+  end
 
   desc 'Import POI Data from STDIN'
   task :import => :environment do
@@ -95,12 +105,12 @@ namespace :osm do
     p = PlanetReader.new(file || STDIN)
     p.load()
   end
-  
+
   namespace :replication do
-    
+
     desc 'Prepare replication requirements'
     task :prepare => :environment do
-      
+
       ensure_directory_exists OSMOSIS_DIR
       ensure_directory_exists VAR_DIR
       ensure_directory_exists WORKING_DIR
@@ -108,23 +118,23 @@ namespace :osm do
       ensure_state_file_exists
       puts "\nNow call rake osm:replication:sync"
     end
-    
-    
+
+
     desc 'Sync current database with osm planet data'
     task :sync => :environment do
-      
+
       ensure_lockfile_doesnt_exist
       ensure_state_file_exists
-      
+
       begin
         create_lock_file
-        
+
         backup_state_file
-        
+
         remove_old_replication_files
-      
-        get_new_replication_file        
-        
+
+        get_new_replication_file
+
         if File.exists? MERGED_FILE
           # There is some left over from last replication
           puts "INFO: merging #{MERGED_FILE} with #{CHANGE_FILE}"
@@ -138,7 +148,7 @@ namespace :osm do
         if Rake::Task["osm:import"].invoke
           remove_merged_file
         end
-        
+
       rescue Exception => e
         STDERR.puts "Something went wrong, restoring old state.txt"
         STDERR.puts e.message

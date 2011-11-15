@@ -3,7 +3,7 @@ class NodeType < ActiveRecord::Base
 
   cattr_accessor :combination
 
-  has_many :pois, :dependent => :nullify
+  has_many :pois, :dependent => :destroy
   belongs_to :category, :touch => false
 
   validates :identifier, :presence => true
