@@ -487,12 +487,17 @@ de:
         embassy: Botschaft
         public_building: "Öffentliches Gebäude"
         townhall: Stadthalle
+        police: Polizei
       leisure:
         arena: Stadion
+        brothel: Bordell
         cinema: Kino
+        community_center: Gemeindezentrum
         gallery: Galerie
         nightclub: Nachtclub
+        playground: Spielplatz
         sauna: Sauna
+        stripclub: Stripclub
         theatre: Theater
         zoo: Zoo
       health:
@@ -506,6 +511,8 @@ de:
       misc:
         place_of_worship: "Religiöser Ort"
         toilets: "Öffentliche Toilette"
+        lawyer: "Anwalt"
+        company: "Unternehmen (Büro)"
       money_post:
         atm: Geldautomat
         bank: Bank
@@ -542,6 +549,9 @@ de:
         bicycle: Fahrradladen
         books: Buchhandlung
         butcher: Fleischer
+        car_shop: Autohandel
+        car_repair: Autowerkstatt
+        chemist: Drogerie
         clothes: Bekleidung
         computer: Computer
         convenience: Spätkauf
@@ -558,8 +568,13 @@ de:
         laundry: Wäscherei
         mall: Shoppingcenter
         optician: Optiker
+        photo: Foto
+        second_hand: Second-Hand
         shoes: Schuhe
+        sports: Sportlerbedarf
+        stationery: Schreibwaren
         supermarket: Supermarkt
+        video: Videothek
       sport:
         sports_centre: Fitnesstudio
         stadium: Stadion
