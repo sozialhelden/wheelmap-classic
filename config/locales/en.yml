@@ -487,12 +487,17 @@ en:
         embassy: Embassy
         public_building: "Public building"
         townhall: Townhall
+        police: Police
       leisure:
         arena: Arena
+        brothel: Brother
         cinema: Cinema
+        community_center: "Community Center"
         gallery: Gallery
         nightclub: Nightclub
+        playground: Playground
         sauna: Sauna
+        stripclub: Stripclub
         theatre: Theatre
         zoo: Zoo
       health:
@@ -506,6 +511,8 @@ en:
       misc:
         place_of_worship: "Place of worship"
         toilets: Toiletts
+        lawyer: Lawyer
+        company: "Company (Office)"
       money_post:
         atm: ATM
         bank: Bank
@@ -542,6 +549,9 @@ en:
         bicycle: Bikeshop
         books: Books
         butcher: Butcher
+        car_shop: Car shop
+        car_repair: Car repair
+        chemist: Chemist
         clothes: Clothes
         computer: Computer
         convenience: Convenience
@@ -558,8 +568,13 @@ en:
         laundry: Laundry
         mall: Shoppingcenter
         optician: Optiker
+        photo: Photo
+        second_hand: Second hand
         shoes: Shoes
+        sports: Sports
+        stationery: Stationery
         supermarket: Supermarket
+        video: Videothek
       sport:
         sports_centre: "Sports centre"
         stadium: Stadion
