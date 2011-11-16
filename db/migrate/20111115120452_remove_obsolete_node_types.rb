@@ -11,7 +11,7 @@ class RemoveObsoleteNodeTypes < ActiveRecord::Migration
     health = Category.find_or_create_by_id_and_identifier(12, 'health')
     NodeType.create(:category => health, :identifier => :medical_supply, :osm_key => 'shop', :osm_value => 'medical_supply', :icon => 'medicalstore.png') unless NodeType.find_by_identifier('medical_supply')
     NodeType.create(:category => health, :identifier => :hearing_aids, :osm_key => 'shop', :osm_value => 'hearing_aids', :icon => 'hearing_aids.png') unless NodeType.find_by_identifier('hearing_aids')
-    NodeType.create(:category => health, :identifier => :social_facility, :osm_key => 'amenity', :osm_value => 'hearing_aids', :icon => 'social_facility.png') unless NodeType.find_by_identifier('hearing_aids')
+    NodeType.create(:category => health, :identifier => :social_facility, :osm_key => 'amenity', :osm_value => 'social_facility', :icon => 'social_facility.png') unless NodeType.find_by_identifier('social_facility')
 
     # Move some node types over to health category
     health.node_types << NodeType.find_by_identifier('doctors')
@@ -26,8 +26,8 @@ class RemoveObsoleteNodeTypes < ActiveRecord::Migration
 
     # Add  to leisure
     leisure = Category.find_by_identifier('leisure')
-    NodeType.create(:category => leisure, :identifier => :brothel, :osm_key => 'amenity', :osm_value => 'brothel', :icon => 'brothel.png') unless NodeType.find_by_identifier('brothel')
-    NodeType.create(:category => leisure, :identifier => :community_center, :osm_key => 'amenity', :osm_value => 'community_center', :icon => 'community_center.png') unless NodeType.find_by_identifier('community_center')
+    NodeType.create(:category => leisure, :identifier => :brothel, :osm_key => 'amenity', :osm_value => 'brothel', :icon => 'lantern.png') unless NodeType.find_by_identifier('brothel')
+    NodeType.create(:category => leisure, :identifier => :community_center, :osm_key => 'amenity', :osm_value => 'community_center', :icon => 'communitycentre.png') unless NodeType.find_by_identifier('community_center')
     NodeType.create(:category => leisure, :identifier => :stripclub, :osm_key => 'amenity', :osm_value => 'stripclub', :icon => 'stripclub.png') unless NodeType.find_by_identifier('stripclub')
     NodeType.create(:category => leisure, :identifier => :playground, :osm_key => 'leisure', :osm_value => 'playground', :icon => 'playground.png') unless NodeType.find_by_identifier('playground')
 
@@ -45,7 +45,7 @@ class RemoveObsoleteNodeTypes < ActiveRecord::Migration
     NodeType.create(:category => shopping, :identifier => :chemist, :osm_key => 'shop', :osm_value => 'chemist', :icon => 'chemist.png') unless NodeType.find_by_identifier('chemist')
     NodeType.create(:category => shopping, :identifier => :stationery, :osm_key => 'shop', :osm_value => 'stationery', :icon => 'stationery.png') unless NodeType.find_by_identifier('stationery')
     NodeType.create(:category => shopping, :identifier => :video, :osm_key => 'shop', :osm_value => 'video', :icon => 'music.png') unless NodeType.find_by_identifier('video')
-    NodeType.create(:category => shopping, :identifier => :second_hand, :osm_key => 'shop', :osm_value => 'second_hand', :icon => 'second_hand.png') unless NodeType.find_by_identifier('second_hand')
+    NodeType.create(:category => shopping, :identifier => :second_hand, :osm_key => 'shop', :osm_value => 'second_hand', :icon => '2hand.png') unless NodeType.find_by_identifier('second_hand')
     NodeType.create(:category => shopping, :identifier => :car_shop, :osm_key => 'shop', :osm_value => 'car', :icon => 'car.png') unless NodeType.find_by_identifier('car_shop')
     NodeType.create(:category => shopping, :identifier => :car_repair, :osm_key => 'shop', :osm_value => 'car_repair', :icon => 'car_repair.png') unless NodeType.find_by_identifier('car_repair')
     NodeType.create(:category => shopping, :identifier => :sports, :osm_key => 'shop', :osm_value => 'sports', :icon => 'weights.png') unless NodeType.find_by_identifier('sports')
