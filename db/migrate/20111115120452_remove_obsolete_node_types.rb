@@ -8,12 +8,10 @@ class RemoveObsoleteNodeTypes < ActiveRecord::Migration
     NodeType.where(:osm_key => 'aeroway', :osm_value => 'aerodrome').first.try(:destroy)
 
     # Create new category health and with new node types
-    health = Category.create(:id => 12, :identifier => :health)
-    node_types = NodeType.create([
-      {:category => health, :identifier => :medical_supply, :osm_key => 'shop', :osm_value => 'medical_supply', :icon => 'medical_supply.png'},
-      {:category => health, :identifier => :hearing_aids, :osm_key => 'shop', :osm_value => 'hearing_aids', :icon => 'hearing_aids.png'},
-      {:category => health, :identifier => :social_facility, :osm_key => 'amenity', :osm_value => 'social_facility', :icon => 'social_facility.png'}
-    ])
+    health = Category.find_or_create_by_id_and_identifier(12, 'health')
+    NodeType.create(:category => health, :identifier => :medical_supply, :osm_key => 'shop', :osm_value => 'medical_supply', :icon => 'medical_supply.png') unless NodeType.find_by_identifier('medical_supply')
+    NodeType.create(:category => health, :identifier => :hearing_aids, :osm_key => 'shop', :osm_value => 'hearing_aids', :icon => 'hearing_aids.png') unless NodeType.find_by_identifier('hearing_aids')
+    NodeType.create(:category => health, :identifier => :social_facility, :osm_key => 'amenity', :osm_value => 'hearing_aids', :icon => 'social_facility.png') unless NodeType.find_by_identifier('hearing_aids')
 
     # Move some node types over to health category
     health.node_types << NodeType.find_by_identifier('doctors')
@@ -24,52 +22,38 @@ class RemoveObsoleteNodeTypes < ActiveRecord::Migration
 
     # Add biergaten to food
     food = Category.find_by_identifier('food')
-    node_types = NodeType.create([
-      {:category => food, :identifier => :biergarten, :osm_key => 'amenity', :osm_value => 'biergarten', :icon => 'biergarten.png'}
-    ])
+    NodeType.create(:category => food, :identifier => :biergarten, :osm_key => 'amenity', :osm_value => 'biergarten', :icon => 'biergarten.png') unless NodeType.find_by_identifier('biergarten')
 
-    # Add biergaten to leisure
+    # Add  to leisure
     leisure = Category.find_by_identifier('leisure')
-    node_types = NodeType.create([
-      {:category => leisure, :identifier => :brothel, :osm_key => 'amenity', :osm_value => 'brothel', :icon => 'brothel.png'},
-      {:category => leisure, :identifier => :community_center, :osm_key => 'amenity', :osm_value => 'community_center', :icon => 'community_center.png'},
-      {:category => leisure, :identifier => :stripclub, :osm_key => 'amenity', :osm_value => 'stripclub', :icon => 'stripclub.png'},
-      {:category => leisure, :identifier => :playground, :osm_key => 'leisure', :osm_value => 'playground', :icon => 'playground.png'}
-    ])
+    NodeType.create(:category => leisure, :identifier => :brothel, :osm_key => 'amenity', :osm_value => 'brothel', :icon => 'brothel.png') unless NodeType.find_by_identifier('brothel')
+    NodeType.create(:category => leisure, :identifier => :community_center, :osm_key => 'amenity', :osm_value => 'community_center', :icon => 'community_center.png') unless NodeType.find_by_identifier('community_center')
+    NodeType.create(:category => leisure, :identifier => :stripclub, :osm_key => 'amenity', :osm_value => 'stripclub', :icon => 'stripclub.png') unless NodeType.find_by_identifier('stripclub')
+    NodeType.create(:category => leisure, :identifier => :playground, :osm_key => 'leisure', :osm_value => 'playground', :icon => 'playground.png') unless NodeType.find_by_identifier('playground')
 
     transport = Category.find_by_identifier('public_transfer')
-    node_types = NodeType.create([
-      {:category => transport, :identifier => :cable_car, :osm_key => 'aerialway', :osm_value => 'station', :icon => 'cable_car.png'}
-    ])
+    NodeType.create(:category => transport, :identifier => :cable_car, :osm_key => 'aerialway', :osm_value => 'station', :icon => 'cable_car.png') unless NodeType.find_by_identifier('cable_car')
 
     government = Category.find_by_identifier('government')
-    node_types = NodeType.create([
-      {:category => government,  :identifier => :embassy, :osm_key => 'amenity',  :osm_value => 'embassy', :icon => 'embassy.png'},
-      {:category => government,  :identifier => :police,  :osm_key => 'amenity',  :osm_value => 'police',  :icon => 'police.png'},
-    ])
+    NodeType.create(:category => government,  :identifier => :embassy, :osm_key => 'amenity',  :osm_value => 'embassy', :icon => 'embassy.png') unless NodeType.find_by_identifier('embassy')
+    NodeType.create(:category => government,  :identifier => :police,  :osm_key => 'amenity',  :osm_value => 'police',  :icon => 'police.png') unless NodeType.find_by_identifier('police')
 
     sport = Category.find_by_identifier('sport')
-    node_types = NodeType.create([
-      {:category => sport, :identifier => :swimming_pool, :osm_key => 'amenity', :osm_value => 'swimming_pool', :icon => 'swimming_pool.png'}
-    ])
+    NodeType.create(:category => sport, :identifier => :swimming_pool, :osm_key => 'amenity', :osm_value => 'swimming_pool', :icon => 'swimming_pool.png') unless NodeType.find_by_identifier('swimming_pool')
 
     shopping = Category.find_by_identifier('shopping')
-    node_types = NodeType.create([
-      {:category => shopping, :identifier => :chemist, :osm_key => 'shop', :osm_value => 'chemist', :icon => 'chemist.png'},
-      {:category => shopping, :identifier => :stationery, :osm_key => 'shop', :osm_value => 'stationery', :icon => 'stationery.png'},
-      {:category => shopping, :identifier => :video, :osm_key => 'shop', :osm_value => 'video', :icon => 'music.png'},
-      {:category => shopping, :identifier => :video, :osm_key => 'shop', :osm_value => 'second_hand', :icon => 'second_hand.png'},
-      {:category => shopping, :identifier => :car_shop, :osm_key => 'shop', :osm_value => 'car', :icon => 'car.png'},
-      {:category => shopping, :identifier => :car_repair, :osm_key => 'shop', :osm_value => 'car_repair', :icon => 'car_repair.png'},
-      {:category => shopping, :identifier => :sports, :osm_key => 'shop', :osm_value => 'sports', :icon => 'weights.png'},
-      {:category => shopping, :identifier => :photo, :osm_key => 'shop', :osm_value => 'photo', :icon => 'photography.png'}
-    ])
+    NodeType.create(:category => shopping, :identifier => :chemist, :osm_key => 'shop', :osm_value => 'chemist', :icon => 'chemist.png') unless NodeType.find_by_identifier('chemist')
+    NodeType.create(:category => shopping, :identifier => :stationery, :osm_key => 'shop', :osm_value => 'stationery', :icon => 'stationery.png') unless NodeType.find_by_identifier('stationery')
+    NodeType.create(:category => shopping, :identifier => :video, :osm_key => 'shop', :osm_value => 'video', :icon => 'music.png') unless NodeType.find_by_identifier('video')
+    NodeType.create(:category => shopping, :identifier => :second_hand, :osm_key => 'shop', :osm_value => 'second_hand', :icon => 'second_hand.png') unless NodeType.find_by_identifier('second_hand')
+    NodeType.create(:category => shopping, :identifier => :car_shop, :osm_key => 'shop', :osm_value => 'car', :icon => 'car.png') unless NodeType.find_by_identifier('car')
+    NodeType.create(:category => shopping, :identifier => :car_repair, :osm_key => 'shop', :osm_value => 'car_repair', :icon => 'car_repair.png') unless NodeType.find_by_identifier('car_repair')
+    NodeType.create(:category => shopping, :identifier => :sports, :osm_key => 'shop', :osm_value => 'sports', :icon => 'weights.png') unless NodeType.find_by_identifier('sports')
+    NodeType.create(:category => shopping, :identifier => :photo, :osm_key => 'shop', :osm_value => 'photo', :icon => 'photography.png') unless NodeType.find_by_identifier('photo')
 
     misc = Category.find_by_identifier('misc')
-    node_types = NodeType.create([
-      {:category => misc, :identifier => :company, :osm_key => 'office', :osm_value => 'company', :icon => 'workoffice.png'},
-      {:category => misc, :identifier => :lawyer, :osm_key => 'office', :osm_value => 'lawyer', :icon => 'court.png'}
-    ])
+    NodeType.create(:category => misc, :identifier => :company, :osm_key => 'office', :osm_value => 'company', :icon => 'workoffice.png') unless NodeType.find_by_identifier('company')
+    NodeType.create(:category => misc, :identifier => :lawyer, :osm_key => 'office', :osm_value => 'lawyer', :icon => 'court.png') unless NodeType.find_by_identifier('lawyer')
 
   end
 
