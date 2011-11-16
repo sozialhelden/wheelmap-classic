@@ -46,7 +46,7 @@ class RemoveObsoleteNodeTypes < ActiveRecord::Migration
     NodeType.create(:category => shopping, :identifier => :stationery, :osm_key => 'shop', :osm_value => 'stationery', :icon => 'stationery.png') unless NodeType.find_by_identifier('stationery')
     NodeType.create(:category => shopping, :identifier => :video, :osm_key => 'shop', :osm_value => 'video', :icon => 'music.png') unless NodeType.find_by_identifier('video')
     NodeType.create(:category => shopping, :identifier => :second_hand, :osm_key => 'shop', :osm_value => 'second_hand', :icon => 'second_hand.png') unless NodeType.find_by_identifier('second_hand')
-    NodeType.create(:category => shopping, :identifier => :car_shop, :osm_key => 'shop', :osm_value => 'car', :icon => 'car.png') unless NodeType.find_by_identifier('car')
+    NodeType.create(:category => shopping, :identifier => :car_shop, :osm_key => 'shop', :osm_value => 'car', :icon => 'car.png') unless NodeType.find_by_identifier('car_shop')
     NodeType.create(:category => shopping, :identifier => :car_repair, :osm_key => 'shop', :osm_value => 'car_repair', :icon => 'car_repair.png') unless NodeType.find_by_identifier('car_repair')
     NodeType.create(:category => shopping, :identifier => :sports, :osm_key => 'shop', :osm_value => 'sports', :icon => 'weights.png') unless NodeType.find_by_identifier('sports')
     NodeType.create(:category => shopping, :identifier => :photo, :osm_key => 'shop', :osm_value => 'photo', :icon => 'photography.png') unless NodeType.find_by_identifier('photo')
