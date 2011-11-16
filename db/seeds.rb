@@ -120,7 +120,7 @@ node_types = NodeType.create([
 
 tourism = Category.find_by_identifier('tourism')
 node_types = NodeType.create([
-  {:category => tourism,  :identifier => :archaeological_site,  :osm_key => 'historic', :osm_value => 'archaeological_site',  :icon => nil },
+  {:category => tourism,  :identifier => :archaeological_site,  :osm_key => 'historic', :osm_value => 'archaeological_site',  :icon => 'fossils.png' },
   {:category => tourism,  :identifier => :arts_centre,          :osm_key => 'amenity',  :osm_value => 'arts_centre',          :icon => 'artgallery.png'},
   {:category => tourism,  :identifier => :artwork,              :osm_key => 'amenity',  :osm_value => 'artwork',              :icon => 'publicart.png'},
   {:category => tourism,  :identifier => :attraction,           :osm_key => 'tourism',  :osm_value => 'attraction',           :icon => 'artgallery.png'},
