@@ -448,6 +448,7 @@ en:
       food: Food
       government: Government
       leisure: Leisure
+      health: Health
       misc: Misc
       money_post: "Bank Post"
       public_transfer: "Public transfer"
@@ -494,13 +495,17 @@ en:
         sauna: Sauna
         theatre: Theatre
         zoo: Zoo
-      misc:
+      health:
         doctors: Doctors
         hospital: Hospital
         pharmacy: Pharmacy
+        veterinary: Veterinary
+        medical_supply: Medical supplies
+        hearing_aids: Hearing aid dealer
+        social_facility: Social facility
+      misc:
         place_of_worship: "Place of worship"
         toilets: Toiletts
-        veterinary: Veterinary
       money_post:
         atm: ATM
         bank: Bank

@@ -447,6 +447,7 @@ de:
       education: Bildung
       food: "Essen & Trinken"
       government: "Behörden & Botschaften"
+      health: Gesundheit
       leisure: Freizeit
       misc: Sonstiges
       money_post: "Bank & Post"
@@ -494,13 +495,17 @@ de:
         sauna: Sauna
         theatre: Theater
         zoo: Zoo
-      misc:
+      health:
         doctors: Arzt
         hospital: Krankenhaus
         pharmacy: Apotheke
+        veterinary: Tierarzt
+        medical_supply: Sanitätshaus
+        hearing_aids: Hörgeräteakustiker
+        social_facility: "Soziale Einrichtung"
+      misc:
         place_of_worship: "Religiöser Ort"
         toilets: "Öffentliche Toilette"
-        veterinary: Tierarzt
       money_post:
         atm: Geldautomat
         bank: Bank

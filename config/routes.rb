@@ -12,6 +12,7 @@ Wheelmap::Application.routes.draw do
     get "/registrations/successful", :to => "registrations#after_sign_up"
   end
 
+  resources :node_types, :only => :index
   resources :search, :only => :index
   resources :feeds, :only => :index
   resources :oauth, :only => [:new, :index] do
