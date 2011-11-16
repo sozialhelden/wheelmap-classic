@@ -9,7 +9,7 @@ class RemoveObsoleteNodeTypes < ActiveRecord::Migration
 
     # Create new category health and with new node types
     health = Category.find_or_create_by_id_and_identifier(12, 'health')
-    NodeType.create(:category => health, :identifier => :medical_supply, :osm_key => 'shop', :osm_value => 'medical_supply', :icon => 'medical_supply.png') unless NodeType.find_by_identifier('medical_supply')
+    NodeType.create(:category => health, :identifier => :medical_supply, :osm_key => 'shop', :osm_value => 'medical_supply', :icon => 'medicalstore.png') unless NodeType.find_by_identifier('medical_supply')
     NodeType.create(:category => health, :identifier => :hearing_aids, :osm_key => 'shop', :osm_value => 'hearing_aids', :icon => 'hearing_aids.png') unless NodeType.find_by_identifier('hearing_aids')
     NodeType.create(:category => health, :identifier => :social_facility, :osm_key => 'amenity', :osm_value => 'hearing_aids', :icon => 'social_facility.png') unless NodeType.find_by_identifier('hearing_aids')
 
@@ -32,14 +32,14 @@ class RemoveObsoleteNodeTypes < ActiveRecord::Migration
     NodeType.create(:category => leisure, :identifier => :playground, :osm_key => 'leisure', :osm_value => 'playground', :icon => 'playground.png') unless NodeType.find_by_identifier('playground')
 
     transport = Category.find_by_identifier('public_transfer')
-    NodeType.create(:category => transport, :identifier => :cable_car, :osm_key => 'aerialway', :osm_value => 'station', :icon => 'cable_car.png') unless NodeType.find_by_identifier('cable_car')
+    NodeType.create(:category => transport, :identifier => :cable_car, :osm_key => 'aerialway', :osm_value => 'station', :icon => 'cablecar.png') unless NodeType.find_by_identifier('cable_car')
 
     government = Category.find_by_identifier('government')
     NodeType.create(:category => government,  :identifier => :embassy, :osm_key => 'amenity',  :osm_value => 'embassy', :icon => 'embassy.png') unless NodeType.find_by_identifier('embassy')
     NodeType.create(:category => government,  :identifier => :police,  :osm_key => 'amenity',  :osm_value => 'police',  :icon => 'police.png') unless NodeType.find_by_identifier('police')
 
     sport = Category.find_by_identifier('sport')
-    NodeType.create(:category => sport, :identifier => :swimming_pool, :osm_key => 'amenity', :osm_value => 'swimming_pool', :icon => 'swimming_pool.png') unless NodeType.find_by_identifier('swimming_pool')
+    NodeType.create(:category => sport, :identifier => :swimming_pool, :osm_key => 'amenity', :osm_value => 'swimming_pool', :icon => 'swimming.png') unless NodeType.find_by_identifier('swimming_pool')
 
     shopping = Category.find_by_identifier('shopping')
     NodeType.create(:category => shopping, :identifier => :chemist, :osm_key => 'shop', :osm_value => 'chemist', :icon => 'chemist.png') unless NodeType.find_by_identifier('chemist')
@@ -54,6 +54,10 @@ class RemoveObsoleteNodeTypes < ActiveRecord::Migration
     misc = Category.find_by_identifier('misc')
     NodeType.create(:category => misc, :identifier => :company, :osm_key => 'office', :osm_value => 'company', :icon => 'workoffice.png') unless NodeType.find_by_identifier('company')
     NodeType.create(:category => misc, :identifier => :lawyer, :osm_key => 'office', :osm_value => 'lawyer', :icon => 'court.png') unless NodeType.find_by_identifier('lawyer')
+
+    n =  NodeType.where(:osm_key => 'historic', :osm_value => 'archaeological_site').first
+    n.icon = 'fossils.png'
+    n.save
 
   end
 
