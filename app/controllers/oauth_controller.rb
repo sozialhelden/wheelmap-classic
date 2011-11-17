@@ -1,12 +1,12 @@
 require 'oauth'
 require 'oauth/consumer'
-require 'oauth/request_proxy/action_controller_request'
+#require 'oauth/request_proxy/action_controller_request'
 require 'oauth/signature/rsa/sha1'
 require 'oauth/signature/hmac/sha1'
 
 class OauthController < ApplicationController
   before_filter :authenticate_user!
-  
+
   # rescue_from OAuth::Unauthorized, :with => :unauthorized
 
   def new
@@ -15,7 +15,7 @@ class OauthController < ApplicationController
     current_user.update_attribute(:oauth_request_token, request_token)
     redirect_to request_token.authorize_url
   end
-  
+
   def osm_register
     @consumer = OAuth::Consumer.new(OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret, :site => OpenStreetMapConfig.oauth_site)
     request_token = @consumer.get_request_token
@@ -37,7 +37,7 @@ class OauthController < ApplicationController
     flash[:view] = '/osm/connect/done'
     redirect_to root_url
   end
-  
+
   protected
   def unauthorized
     @message = I18n.t('nodes.errors.not_authorized')
