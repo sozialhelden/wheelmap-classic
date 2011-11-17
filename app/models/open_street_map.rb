@@ -9,10 +9,10 @@ class OpenStreetMap
   # production "http://api.openstreetmap.org/api/#{API_VERSION}" #live
   base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
   # basic_auth(OpenStreetMapConfig.user, OpenStreetMapConfig.password)
-  
+
   attr_reader :client
   cattr_accessor :logger
-  
+
   # Initialize with basic auth credentials
   def initialize(client)
     @client = client
@@ -20,16 +20,16 @@ class OpenStreetMap
       raise ArgumentError.new('Unsupported Client')
     end
   end
-  
+
   def logger
     self.class.logger
   end
-  
+
   def self.logger
     @@logger || Rails.logger
   end
-  
-  
+
+
   # Create a new node by calling the OSM API
   # Returns the id of the newly created node
   def create_node(node, changeset_id)
@@ -38,7 +38,7 @@ class OpenStreetMap
     node_id = create(node)
     self.class.get_node(node_id) if node_id
   end
-  
+
   def update_node(node, changeset_id)
     logger.info "Old version: #{node.version}"
     logger.info "Old changeset: #{node.changeset}"
@@ -47,7 +47,7 @@ class OpenStreetMap
     node.version = new_version
     node
   end
-  
+
   def destroy_node(node, comment="Delete node on wheelmap.org")
     logger.info "Old version: #{node.version}"
     logger.info "Old changeset: #{node.changeset}"
@@ -72,7 +72,7 @@ class OpenStreetMap
     bbox ||= "13.397,52.523,13.406,52.526"
     # bbox = round_bounding_box(bbox)
     types = 'amenity,shop,leisure,sport,historic,natural,power,tourism,railway'
-    
+
     types = types.split(',')
     type_string = types.map(&:underscore).join('|')
     logger.info("TYPES: #{type_string}")
@@ -82,10 +82,10 @@ class OpenStreetMap
       amenity_types = CGI.escape("[#{type_string}]")
       t = Time.now
       logger.info "Fetching now: /node#{bounding_box}#{amenity_types}"
-      
+
       result = get("/node#{bounding_box}#{amenity_types}")
       logger.info "Finished: #{Time.now - t}s"
-      if result['osm']['node'].blank? 
+      if result['osm']['node'].blank?
         logger.info "Found no nodes"
         return []
       elsif result['osm']['node'].is_a? Hash
@@ -102,7 +102,7 @@ class OpenStreetMap
       return []
     end
   end
-  
+
   # Fetch the node from OSM API with the given ID
   def self.get_node(osmid)
     logger.info("OpenStreetMap#get_node #{osmid}")
@@ -131,7 +131,7 @@ class OpenStreetMap
     logger.info("Node id: #{node_id}")
     node_id
   end
-    
+
   def update(node)
     logger.info("OpenStreetMap#update #{node.id}")
     logger.info node.inspect
@@ -142,14 +142,14 @@ class OpenStreetMap
     logger.info("New version: #{new_version}")
     new_version
   end
-  
+
   def destroy(node)
     url = request_uri("/node/#{node.id}")
     response = delete(url, :body => node.to_xml)
     self.class.raise_errors(response)
     response.body
   end
-  
+
   def find_or_create_changeset(id, comment="Modify accessibility status for node")
     changeset = nil
     changeset = self.class.get_changeset(id) unless id.blank?
@@ -170,7 +170,7 @@ class OpenStreetMap
       self.class.get_changeset(changeset_id)
     end
   end
-  
+
   def close_changeset(id)
     logger.info("OpenStreetMap#close_changeset #{id}")
     url = request_uri("/changeset/#{id}/close")
@@ -178,7 +178,7 @@ class OpenStreetMap
     self.class.raise_errors(response)
     response.body
   end
-  
+
   def request_uri(path)
     url = ''
     if oauth_client?
@@ -189,15 +189,15 @@ class OpenStreetMap
     logger.info("calculated URI: #{url}")
     url
   end
-  
+
   def oauth_client?
     @client.is_a? OauthClient
   end
-  
+
   def basic_auth_client?
     @client.is_a? BasicAuthClient
   end
-  
+
   # Indirection to HTTParty class method id called as instance method
   def put(url, options={})
     if client.respond_to?(:put) # oauth_client?
@@ -207,7 +207,7 @@ class OpenStreetMap
       self.class.put(url, options)
     end
   end
-  
+
   # Indirection to HTTParty class method id called as instance method
   def post(url, options={})
     if client.respond_to?(:put) # oauth_client?
@@ -217,7 +217,7 @@ class OpenStreetMap
       self.class.post(url, options)
     end
   end
-  
+
   # Indirection to HTTParty class method id called as instance method
   def delete(url, options={})
     p url
@@ -234,6 +234,9 @@ class OpenStreetMap
     # logger.info("HTTP REQUEST: #{response.inspect}")
     case response.code.to_i
       when 400
+        logger.error("(#{response.code}): #{response.message} - #{data if data}")
+        raise BadRequest.new(data), "(#{response.code}): #{response.message} - #{data if data}"
+      when 401
         logger.error("(#{response.code}): #{response.message} - #{data if data}")
         raise BadRequest.new(data), "(#{response.code}): #{response.message} - #{data if data}"
       when 404
