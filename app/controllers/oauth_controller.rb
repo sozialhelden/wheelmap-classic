@@ -1,8 +1,4 @@
 require 'oauth'
-require 'oauth/consumer'
-#require 'oauth/request_proxy/action_controller_request'
-require 'oauth/signature/rsa/sha1'
-require 'oauth/signature/hmac/sha1'
 
 class OauthController < ApplicationController
   before_filter :authenticate_user!
