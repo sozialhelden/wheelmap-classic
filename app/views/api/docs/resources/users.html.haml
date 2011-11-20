@@ -1,0 +1,39 @@
+#api_docs
+  = render :partial => 'api/docs/resource_links'
+  %h2 Resource Users
+  %article.doc-block
+    .resource
+      %h3
+        ="/api/users/authenticate"
+        %span.optional> ?email
+        %span.optional> &password
+
+      %h6 Methods
+      .methods
+        .method
+          %h4 POST
+          %p
+            Authenticate a given user with email & password. If the email&password combination is correct and the user has connected it's wheelmap account with the OSM account, the API will return the user's API key. If the combination is correct, but the user has no osm credentials, the API will answer 403 "Application needs to be authorized". If combination is not correct, API answers 400, "Authorization failed"
+          %h6 request query parameter
+
+          %table
+            %thead
+              %tr
+                %th.param Parameter
+                %th.type Type
+                %th.desc Description
+            %tbody
+              %tr.odd
+                %td email*
+                %td string
+                %td The user's email address
+              %tr.even
+                %td password*
+                %td string
+                %td The user's password
+
+
+  %h2#representations Representations
+  %article.doc-block
+    %h3#locales_representation_json Example locales representation. (application/json)
+    %pre=render :partial => 'users.json'

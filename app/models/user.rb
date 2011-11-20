@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
     t.add :email
   end
 
+  api_accessible :api_simple do |t|
+    t.add :authentication_token, :as => :api_key
+  end
+
   def app_authorized?
     oauth_authorized?
   end

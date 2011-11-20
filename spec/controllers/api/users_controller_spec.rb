@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UsersController do
+describe Api::UsersController do
   include Devise::TestHelpers
 
   before(:each) do
@@ -14,8 +14,10 @@ describe UsersController do
 
   it "should authenticate user successfully with given credentials" do
     @user.should be_app_authorized
-    post :authenticate, :email => 'email@wheelmap.org', :password => 'password'
+    post :authenticate, :email => 'email@wheelmap.org', :password => 'password', :api_key => @user.authentication_token
     response.code.should == '200'
+    response_hash = ActiveSupport::JSON.decode(response.body)
+    response_hash["user"]["api_key"].should_not be_empty
   end
 
   it "should authenticate user successfully but app not connected" do
@@ -23,13 +25,13 @@ describe UsersController do
     @user.oauth_secret = nil
     @user.save!
     @user.should_not be_app_authorized
-    post :authenticate, :email => 'email@wheelmap.org', :password => 'password'
+    post :authenticate, :email => 'email@wheelmap.org', :password => 'password', :api_key => @user.authentication_token
     response.code.should == '403'
     response.body.should match /Application needs to be authorized/
   end
 
   it "should not authenticate user with wrong credentials" do
-    post :authenticate, :email => 'horst@yahoo.com', :password => 'gibberish'
+    post :authenticate, :email => 'horst@yahoo.com', :password => 'gibberish', :api_key => @user.authentication_token
     response.code.should == '400'
   end
 
