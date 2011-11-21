@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 group :default do
   gem 'rails', '3.0.10'
   gem 'mysql2', '~>0.2.11'
-  gem 'oauth', :git => 'git://github.com/Bertg/oauth.git'
+  gem 'oauth'
   gem 'httparty'
   gem 'devise'
   gem 'compass', '0.10.6'
