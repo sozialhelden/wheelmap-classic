@@ -362,15 +362,6 @@ se:
       update: "Ändra %{model}"
   home:
     index:
-      popup:
-        form:
-          'yes': "wheelchair accessible"
-          limited: "partly wheelchair accessible"
-          'no': "not wheelchair accessible"
-          unknown: "unknown status"
-          save: "Update"
-        more: "more ..."
-        help: "Wheelchair accessible? (Help)"
       filter:
         category: "Välj kategori:"
         wheelchair: Rullstolsanpassad?
@@ -384,6 +375,17 @@ se:
       link:
         node:
           create: "Lägg till ny plats"
+      popup:
+        form:
+          limited: "partly wheelchair accessible"
+          ? "no"
+          : "not wheelchair accessible"
+          save: Update
+          unknown: "unknown status"
+          ? "yes"
+          : "wheelchair accessible"
+        help: "Wheelchair accessible? (Help)"
+        more: "more ..."
   how?: Hur?
   layouts:
     application:

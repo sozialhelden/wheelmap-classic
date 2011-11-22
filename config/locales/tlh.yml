@@ -350,21 +350,23 @@ tlh:
       update: "%{model} De' chu' qon"
   home:
     index:
-      popup:
-        form:
-          'yes': "naw'laH rutlhquS"
-          limited: "loQ naw'laH rutlhquS"
-          'no': "naw'laHbe' rutlhquS"
-          unknown: "Suvbe'bogh Dotlh"
-          save: "qon"
-        more: "latlh ..."
-        help: "naw'laH'a' rutlhquS? (QaH)"
       filter:
         category: "Segh:"
         wheelchair: "naw'laH'a' rutlhquS?"
       link:
         node:
           create: "Daq chu' chel"
+      popup:
+        form:
+          limited: "loQ naw'laH rutlhquS"
+          ? "no"
+          : "naw'laHbe' rutlhquS"
+          save: qon
+          unknown: "Suvbe'bogh Dotlh"
+          ? "yes"
+          : "naw'laH rutlhquS"
+        help: "naw'laH'a' rutlhquS? (QaH)"
+        more: "latlh ..."
   layouts:
     application:
       banner:
