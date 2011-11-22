@@ -483,7 +483,7 @@ en:
         pub: Pub
         restaurant: Restaurant
       government:
-        courthouse: Couthouse
+        courthouse: Courthouse
         embassy: Embassy
         public_building: "Public building"
         townhall: Townhall
@@ -510,7 +510,7 @@ en:
         social_facility: Social facility
       misc:
         place_of_worship: "Place of worship"
-        toilets: Toiletts
+        toilets: Toilets
         lawyer: Lawyer
         company: "Company (Office)"
       money_post:
@@ -521,8 +521,8 @@ en:
         post_office: "Post office"
       public_transfer:
         aerodrome: Airport
-        bicycle_parking: "Bicyle parking"
-        bicycle_rental: "Bicyle rental"
+        bicycle_parking: "Bicycle parking"
+        bicycle_rental: "Bicycle rental"
         boatyard: Boatyard
         bus_station: "Bus station"
         bus_stop: "Bus stop"
@@ -574,7 +574,7 @@ en:
         sports: Sports
         stationery: Stationery
         supermarket: Supermarket
-        video: Videothek
+        video: "Video rental store"
       sport:
         sports_centre: "Sports centre"
         stadium: Stadion
