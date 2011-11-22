@@ -331,14 +331,16 @@ es:
         node:
           create: "Agregar un nuevo sitio"
       popup:
-        more: "más ..."
-        help: "¿Acceso en silla de ruedas? (Ayuda)"
         form:
-          'yes': "accesible en silla de ruedas"
-          'no': "sin acceso en silla de ruedas"
           limited: "acceso medio en silla de ruedas"
+          ? "no"
+          : "sin acceso en silla de ruedas"
+          save: Guardar
           unknown: "se desconoce el estado"
-          save: "Guardar"
+          ? "yes"
+          : "accesible en silla de ruedas"
+        help: "¿Acceso en silla de ruedas? (Ayuda)"
+        more: "más ..."
   layouts:
     application:
       banner:

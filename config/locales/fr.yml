@@ -229,6 +229,9 @@ fr:
     sign_out:
       headline: Déconnexion
     sign_up:
+      email:
+        confirm_my_account: "Confirmer mon compte"
+        welcome: "Bienvenue %{email}! "
       form:
         labels:
           email: E-mail
@@ -331,6 +334,7 @@ fr:
       logged_in_as: "Connecté sous le nom de"
       login: Connecter
       logout: Déconnecter
+      newsletter: bulletin
       press: Presse
       suggestions: Suggestions
       tolk: Traductions
@@ -355,18 +359,24 @@ fr:
       filter:
         category: "Catégorie:"
         wheelchair: "Accessible pour fauteuil roulant?"
+      ie:
+        warning:
+          headline: "Nous nous excusons!"
       link:
         node:
           create: "Ajouter un nouveau lieu"
       popup:
-        more: "davantage ..."
-        help: "Accessible pour fauteuil roulant? (Aide)"
         form:
-          'yes': "accès pour fauteuil roulant"
-          'no': "pas d'accès pour fauteuil roulant"
           limited: "accès partiel pour fauteuil roulant"
+          ? "no"
+          : "pas d'accès pour fauteuil roulant"
+          save: Sauvegarder
           unknown: "statut inconnu"
-          save: "Sauvegarder"
+          ? "yes"
+          : "accès pour fauteuil roulant"
+        help: "Accessible pour fauteuil roulant? (Aide)"
+        more: "davantage ..."
+  how?: Comment?
   layouts:
     application:
       banner:
@@ -612,6 +622,8 @@ fr:
       search:
         for: "Rechercher \"%{q}\" "
         not_found: "Rien trouvé!"
+  splash:
+    headline: "Tout le monde peut ajouter des endroits accessibles en fauteuil roulant!"
   statistics: Statistique
   support:
     array:

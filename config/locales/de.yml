@@ -111,7 +111,16 @@ de:
       about_x_years:
         one: "etwa 1 Jahr"
         other: "etwa %{count} Jahre"
+      almost_x_years:
+        one: "fast 1 Jahr"
+        other: "fast %{count} Jahre"
       half_a_minute: "eine halbe Minute"
+      less_than_x_minutes:
+        one: "weniger als eine Minute"
+        other: "weniger als %{count} Minuten"
+      less_than_x_seconds:
+        one: "weniger als eine Sekunde"
+        other: "weniger als %{count} Sekunden"
       over_x_years:
         one: "mehr als 1 Jahr"
         other: "mehr als %{count} Jahre"
@@ -127,11 +136,19 @@ de:
       x_seconds:
         one: "1 Sekunde"
         other: "%{count} Sekunden"
+    prompts:
+      day: Tag
+      hour: Stunde
+      minute: Minute
+      month: Monat
+      second: Sekunde
+      year: Jahr
   devise:
     confirmations:
       confirmed: "Dein Benutzerkonto wurde erfolgreich bestätigt. Du bist nun angemeldet."
       link: "Keine Bestätigungsmail bekommen?"
       send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto bestätigen kannst."
+      send_paranoid_instructions: "Wenn Deine E-Mail-Adresse in unserer Datenbank ist, wirst Du eine E-mail mit Anweisungen zur Bestätigung Deines Kontos in wenigen Minuten erhalten."
     destroy:
       confirm: "Bist du dir sicher?"
       headline: "Benutzerkonto löschen"
@@ -163,6 +180,9 @@ de:
       unlock_instructions:
         subject: "Anleitung zum Entsperren deines Benutzerkontos"
     mandatory: "* Pflichtfeld"
+    omniauth_callbacks:
+      failure: "Authorisierung mit %{kind} fehlgeschlagen. Fehler: \"%{reason}\". "
+      success: "Erfolgreich authorisiert mit %{kind}."
     password_recovery:
       form:
         labels:
@@ -184,11 +204,17 @@ de:
     passwords:
       link: "Passwort vergessen?"
       send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Passwort neu setzen kannst."
+      send_paranoid_instructions: "Wenn Deine E-Mail-Adresse in unserer Datenbank ist, wirst Du eine E-mail mit einem Link zum Rücksetzen des Passwortes erhalten."
       updated: "Dein Passwort wurde erfolgreich geändert. Du bist nun angemeldet."
+      updated_not_active: "Dein Passwort wurde erfolgreich geändert."
     registrations:
       destroyed: "Dein Benutzerkonto wurde efolgreich gelöscht."
       inactive_signed_up: "Anmeldung erfolgreich. Aber wir konnten dich nicht einloggen. Grund: \"%{reason}\""
       link: Registrieren
+      reasons:
+        inactive: inaktiv
+        locked: gesperrt
+        unconfirmed: unbestätigt
       signed_up: "Deine Registrierung war erfolgreich."
       updated: "Dein Benutzerkonto wurde aktualisiert."
     sessions:
@@ -228,16 +254,21 @@ de:
     unlocks:
       link: "Keine Anleitung zum Entspreen deines Benutzerkontos bekommen?"
       send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto entsperren kannst."
+      send_paranoid_instructions: "Wenn Dein Konto vorhanden ist, wirst Du in wenigen Minuten eine E-Mail erhalten mit Anweisungen, wie man es wieder entsperrt. "
       unlocked: "Dein Benutzerkonto wirde erfolgreich entsperrt. Du bist jetzt eingeloggt."
   errors:
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
     messages:
       accepted: "muss akzeptiert werden"
+      already_confirmed: "wurde bereits bestätigt"
       blank: "muss ausgefüllt werden"
       confirmation: "stimmt nicht mit der Bestätigung überein"
       empty: "muss ausgefüllt werden"
       equal_to: "muss genau %{count} sein"
       even: "muss gerade sein"
       exclusion: "ist nicht verfügbar"
+      expired: "ist abgelaufen, bitte neu anfordern "
       greater_than: "muss größer als %{count} sein"
       greater_than_or_equal_to: "muss größer oder gleich %{count} sein"
       inclusion: "ist kein gültiger Wert"
@@ -245,11 +276,26 @@ de:
       less_than: "muss kleiner als %{count} sein"
       less_than_or_equal_to: "muss kleiner oder gleich %{count} sein"
       not_a_number: "ist keine Zahl"
+      not_an_integer: "muss eine Zahl sein"
+      not_found: "nicht gefunden"
+      not_locked: "war nicht gesperrt"
+      not_saved:
+        one: "Ein Fehler hat das Speichern von %{resource} verweigert:"
+        other: "%{count} Fehler: %{resource} verweigerte das Speichern:"
       odd: "muss ungerade sein"
       taken: "ist bereits vergeben"
       too_long: "ist zu lang (nicht mehr als %{count} Zeichen)"
       too_short: "ist zu kurz (nicht weniger als %{count} Zeichen)"
       wrong_length: "hat die falsche Länge (muss genau %{count} Zeichen haben)"
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} wurde erfolgreich angelegt. "
+      destroy:
+        alert: "%{resource_name} konnte nicht entfernt werden. "
+        notice: "%{resource_name} wurde erfolgreich entfernt."
+      update:
+        notice: "%{resource_name} wurde erfolgreich aktualisiert."
   form:
     show_fully_accessible_places: Ja
     show_limited_accessible_places: Teilweise
@@ -318,6 +364,13 @@ de:
       title_add_place: "Jetzt einen neuen Ort an dieser Stelle hinzufügen"
     tagline: "Wheelmap logo"
     title: "Wheelmap - Rollstuhlgerechte Orte finden"
+  helpers:
+    select:
+      prompt: "Bitte auswählen"
+    submit:
+      create: "%{model} anlegen"
+      submit: "%{model} speichern"
+      update: "%{model} aktualisieren"
   home:
     index:
       filter:
@@ -380,6 +433,7 @@ de:
       link:
         large_map: "&laquo; Abbrechen"
     errors:
+      default: "Oops, das ist was schief gegangen. Wir wurden aber darüber informiert!"
       not_authorized: "Authentifizierung fehlgeschlagen"
       not_available: "Leider steht diese Seite zur Zeit nicht zur Verfügung"
       not_existent: "Leider ist dieser Ort nicht mehr da"
@@ -396,7 +450,7 @@ de:
       header:
         title: "Ort: %{node} | wheelmap.org"
       link:
-        back: zurück
+        back: "« Zurück"
         claim: "Du arbeitest hier?"
         edit_node: "Ort bearbeiten"
         large_map: "Ansicht vergrößern"
@@ -416,12 +470,24 @@ de:
         format: "%n %u"
         precision: 2
         separator: ","
+        significant: 0
+        strip_insignificant_zeros: 0
         unit: €
     format:
       delimiter: "."
       precision: 2
       separator: ","
+      significant: 0
+      strip_insignificant_zeros: 0
     human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Milliarde
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Tausend
+          trillion: Trillion
       format:
         delimiter: ~
         precision: 1
@@ -431,6 +497,18 @@ de:
     precision:
       format:
         delimiter: ~
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
   oauth:
     application:
       connect:
@@ -675,3 +753,18 @@ de:
       limited_accessible: "<em>Teilweise:</em> Eingang max 1 Stufe (7cm hoch), die wichtigsten Räume stufenlos, WC egal."
       not_accessible: "<em>Nein:</em> Eingang hat höhere oder mehrere Stufen, Räume nicht erreichbar."
       unknown_accessible: "<em>Unbekannt:</em> Hilf mit und markiere diese Orte!"
+  will_paginate:
+    next_label: "Vor &#8594;"
+    page_entries_info:
+      multi_page: "Zeige %{model} %{from} - %{to} von %{count} insgesamt "
+      multi_page_html: "Zeige %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> von <b>%{count}</b> insgesamt"
+      single_page:
+        one: "Zeige 1 %{model}"
+        other: "Zeige alle %{count} %{model} "
+        zero: "Nicht %{model} gefunden"
+      single_page_html:
+        one: "Zeige <b>1</b> %{model} "
+        other: "Zeige <b>all&nbsp;%{count}</b> %{model} "
+        zero: "Nicht %{model} gefunden "
+    page_gap: " &hellip; "
+    previous_label: "&#8592; Zurück"
