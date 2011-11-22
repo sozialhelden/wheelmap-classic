@@ -361,15 +361,6 @@ it:
       update: "Aggiorna %{model}"
   home:
     index:
-      popup:
-        form:
-          'yes': "accessibile in sedia a rotelle"
-          limited: "parzialmente accessibile in sedia a rotelle"
-          'no': "non accessibile in sedia a rotelle"
-          unknown: "stato sconosciuto"
-          save: "Salva"
-        more: "più ..."
-        help: "Accessibile in sedia a rotelle? (Aiuto)"
       filter:
         category: "Categoria:"
         wheelchair: "Accessibile in sedia a rotelle? (Che cosa significa?)"
@@ -383,6 +374,17 @@ it:
       link:
         node:
           create: "Aggiungi nuovo luogo"
+      popup:
+        form:
+          limited: "parzialmente accessibile in sedia a rotelle"
+          ? "no"
+          : "non accessibile in sedia a rotelle"
+          save: Salva
+          unknown: "stato sconosciuto"
+          ? "yes"
+          : "accessibile in sedia a rotelle"
+        help: "Accessibile in sedia a rotelle? (Aiuto)"
+        more: "più ..."
   layouts:
     application:
       banner:

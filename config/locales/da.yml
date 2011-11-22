@@ -361,15 +361,6 @@ da:
       update: "Opdater %{model}"
   home:
     index:
-      popup:
-        more: "mere ..."
-        help: "Kørestolstilgængeligt? (Hjælp)"
-        form:
-          'yes': "Fuldt kørestoltilgængeligt"
-          'no': "Ikke kørestolstilgængeligt"
-          limited: "delvis kørestolstilgængeligt"
-          unknown: "ukendt"
-          save: "Gem"
       filter:
         category: "Vælg kategori"
         wheelchair: Kørestolstilgængeligt?
@@ -383,6 +374,17 @@ da:
       link:
         node:
           create: "Tilføj nyt sted"
+      popup:
+        form:
+          limited: "delvis kørestolstilgængeligt"
+          ? "no"
+          : "Ikke kørestolstilgængeligt"
+          save: Gem
+          unknown: ukendt
+          ? "yes"
+          : "Fuldt kørestoltilgængeligt"
+        help: "Kørestolstilgængeligt? (Hjælp)"
+        more: "mere ..."
   how?: Hvordan?
   layouts:
     application:
