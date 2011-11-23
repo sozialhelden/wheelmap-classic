@@ -13,7 +13,7 @@
         .method
           %h4 POST
           %p
-            Authenticate a given user with email & password. If the email&password combination is correct and the user has connected it's wheelmap account with the OSM account, the API will return the user's API key. If the combination is correct, but the user has no osm credentials, the API will answer 403 "Application needs to be authorized". If combination is not correct, API answers 400, "Authorization failed"
+            Authenticate a given user with email & password. If the email&password combination is correct and the user has connected it's wheelmap account with the OSM account, the API will return the user's API key. If the combination is correct, but the user has no osm credentials, the API will answer 403 "Application needs to be authorized". Send the user to http://wheelmap.org/users/:user_id/edit to connect with osm. If combination is not correct, API answers 400, "Authorization failed"
           %h6 request query parameter
 
           %table

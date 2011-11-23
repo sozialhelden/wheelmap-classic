@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   end
 
   api_accessible :api_simple do |t|
+    t.add :id
     t.add :authentication_token, :as => :api_key
   end
 
