@@ -2,6 +2,8 @@ class Api::UsersController < Api::ApiController
 
   custom_actions :collection => :authenticate
 
+  skip_before_filter :authenticate_by_token
+
   before_filter :authenticate_mobile_user,  :only => :authenticate
   before_filter :authenticate_mobile_app,   :only => :authenticate
 
