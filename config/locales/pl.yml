@@ -1,18 +1,53 @@
+---
 pl:
+  activerecord:
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: "musi zostać zaakceptowane"
+        blank: "nie może być puste"
+        confirmation: "nie zgadza się z potwierdzeniem"
+        empty: "nie może być puste"
+        equal_to: "musi być równe %{count}"
+        even: "musi być parzyste"
+        exclusion: "jest zarezerwowane"
+        greater_than: "musi być większe od %{count}"
+        greater_than_or_equal_to: "musi być większe lub równe %{count}"
+        inclusion: "nie znajduje się na liście dopuszczalnych wartości"
+        invalid: "jest nieprawidłowe"
+        less_than: "musi być mniejsze od %{count}"
+        less_than_or_equal_to: "musi być mniejsze lub równe %{count}"
+        not_a_number: "nie jest liczbą"
+        odd: "musi być nieparzyste"
+        record_invalid: "Negatywne sprawdzenie poprawności: %{errors}"
+        taken: "zostało już zajęte"
+        too_long: "jest za długie (maksymalnie %{count} znaków)"
+        too_short: "jest za krótkie (przynajmniej %{count} znaków)"
+        wrong_length: "ma nieprawidłową długość (powinna wynosić %{count} znaków)"
+      models:
+        user_session:
+          email: "Adres e-mail"
+          password: Hasło
+          remember_me: "Nie wylogowywuj się"
+      template:
+        body: "Błędy dotyczą następujących pól:"
+        header:
+          one: "%{model} nie został zachowany z powodu jednego błędu"
+          other: "%{model} nie został zachowany z powodu %{count} błędów"
+  application:
+    require_no_user:
+      notice: "Już jesteś zalogowany ..."
+    require_user:
+      notice: " Aby zobaczyć te stronę, musisz się zalogować."
+  breadcrumbs:
+    node:
+      create: "Dodaj nowe miejsce"
+      edit: "Edytuj miejsce"
+    root: wheelmap
+  common:
+    close: zamknij
   date:
-    formats:
-      default: "%d-%m-%Y"
-      short: "%d %b"
-      long: "%B %d, %Y"
-
-    day_names:
-      - niedziela
-      - poniedziałek
-      - wtorek
-      - środa
-      - czwartek
-      - piątek
-      - sobota
     abbr_day_names:
       - nie
       - pon
@@ -21,23 +56,8 @@ pl:
       - czw
       - pia
       - sob
-
-    month_names:
-      - ~
-      - styczeń
-      - luty
-      - marzec
-      - kwiecień
-      - maj
-      - czerwiec
-      - lipiec
-      - sierpień
-      - wrzesień
-      - październik
-      - listopad
-      - grudzień
     abbr_month_names:
-      - ~
+      - ""
       - sty
       - lut
       - mar
@@ -50,234 +70,610 @@ pl:
       - paź
       - lis
       - gru
-    order:
-      - :day
-      - :month
-      - :year
-
-  time:
+    day_names:
+      - niedziela
+      - poniedziałek
+      - wtorek
+      - środa
+      - czwartek
+      - piątek
+      - sobota
     formats:
-      default: "%a, %d %b %Y %H:%M:%S %z"
-      short: "%d %b %H:%M"
-      long: "%B %d, %Y %H:%M"
-    am: "przed południem"
-    pm: "po południu"
-
-  support:
-    array:
-      words_connector: ", "
-      two_words_connector: " i "
-      last_word_connector: " oraz "
-
-    select:
-      prompt: "Proszę wybrać"
-
-  number:
-    format:
-      separator: ","
-      delimiter: " "
-      precision: 3
-      significant: false
-      strip_insignificant_zeros: false
-
-    currency:
-      format:
-        format: "%u %n"
-        unit: "PLN"
-        separator: ","
-        delimiter: " "
-        precision: 2
-        significant: false
-        strip_insignificant_zeros: true
-
-    percentage:
-      format:
-        delimiter: ""
-
-    precision:
-      format:
-        delimiter: ""
-
-    human:
-      format:
-        delimiter: ""
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: "%n %u"
-        units:
-          byte:
-            one:   "bajt"
-            other: "bajty"
-          kb: "KB"
-          mb: "MB"
-          gb: "GB"
-          tb: "TB"
-      decimal_units:
-        format: "%n %u"
-        units:
-          unit: ""
-          thousand: Tysiąc
-          million: Milion
-          billion: Miliard
-          trillion: Bilion
-          quadrillion: Biliard
-
+      default: "%d-%m-%Y"
+      long: "%B %d, %Y"
+      short: "%d %b"
+    month_names:
+      - ""
+      - styczeń
+      - luty
+      - marzec
+      - kwiecień
+      - maj
+      - czerwiec
+      - lipiec
+      - sierpień
+      - wrzesień
+      - październik
+      - listopad
+      - grudzień
+    order:
+      - "!ruby/symbol day"
+      - "!ruby/symbol month"
+      - "!ruby/symbol year"
   datetime:
     distance_in_words:
-      half_a_minute: "pół minuty"
-      less_than_x_seconds:
-        one:   "mniej niż sekundę"
-        few:   "mniej niż %{count} sekundy"
-        other: "mniej niż %{count} sekund"
-      x_seconds:
-        one:   "1 sekunda"
-        few:   "%{count} sekundy"
-        other: "%{count} sekund"
-      less_than_x_minutes:
-        one:   "mniej niż minutę"
-        few:   "mniej niż %{count} minuty"
-        other: "mniej niż %{count} minut"
-      x_minutes:
-        one:   "1 minuta"
-        few:   "%{count} minuty"
-        other: "%{count} minut"
       about_x_hours:
-        one:   "około godziny"
-        few:   "około %{count} godziny"
+        one: "około godziny"
         other: "około %{count} godzin"
-      x_days:
-        one:   "1 dzień"
-        few:   "%{count} dni"
-        other: "%{count} dni"
       about_x_months:
-        one:   "około miesiąca"
-        few:   "około %{count} miesiące"
+        one: "około miesiąca"
         other: "około %{count} miesięcy"
-      x_months:
-        one:   "1 miesiąc"
-        few:   "%{count} miesiące"
-        other: "%{count} miesięcy"
       about_x_years:
-        one:   "około rok"
-        few:   "około %{count} lata"
+        one: "około rok"
         other: "około %{count} lat"
+      half_a_minute: "pół minuty"
       over_x_years:
-        one:   "ponad rok"
-        few:   "ponad %{count} lata"
+        one: "ponad rok"
         other: "ponad %{count} lat"
-      almost_x_years:
-        one:   "prawie rok"
-        few:   "prawie %{count} lata"
-        other: "prawie %{count} lat"
-    prompts:
-      year:   "Rok"
-      month:  "Miesiąc"
-      day:    "Dzień"
-      hour:   "Godzina"
-      minute: "Minuta"
-      second: "Sekundy"
-
-  helpers:
-    select:
-      prompt: "Proszę wybrać"
-
-    submit:
-      create: 'Utwórz %{model}'
-      update: 'Aktualizuj %{model}'
-      submit: 'Zapisz %{model}'
-
-  errors:
-    format: "%{attribute} %{message}"
-
-    messages: &errors_messages
-      inclusion: "nie znajduje się na liście dopuszczalnych wartości"
-      exclusion: "jest zarezerwowane"
-      invalid: "jest nieprawidłowe"
-      confirmation: "nie zgadza się z potwierdzeniem"
-      accepted: "musi zostać zaakceptowane"
-      empty: "nie może być puste"
-      blank: "nie może być puste"
-      too_long: "jest za długie (maksymalnie %{count} znaków)"
-      too_short: "jest za krótkie (przynajmniej %{count} znaków)"
-      wrong_length: "ma nieprawidłową długość (powinna wynosić %{count} znaków)"
-      not_a_number: "nie jest liczbą"
-      not_an_integer: "musi być liczbą całkowitą"
-      greater_than: "musi być większe od %{count}"
-      greater_than_or_equal_to: "musi być większe lub równe %{count}"
-      equal_to: "musi być równe %{count}"
-      less_than: "musi być mniejsze od %{count}"
-      less_than_or_equal_to: "musi być mniejsze lub równe %{count}"
-      odd: "musi być nieparzyste"
-      even: "musi być parzyste"
-
-  activerecord:
-    errors:
-      template:
-        header:
-          one:    "%{model} nie został zachowany z powodu jednego błędu"
-          other:  "%{model} nie został zachowany z powodu %{count} błędów"
-        body: "Błędy dotyczą następujących pól:"
-
-      messages:
-        taken: "zostało już zajęte"
-        record_invalid: "Negatywne sprawdzenie poprawności: %{errors}"
-        <<: *errors_messages
-
-      full_messages:
-        format: "%{attribute} %{message}"
-  errors:
-    messages:
-      expired: "stracił ważność, wyślij zapytanie o nowy"
-      not_found: "nie znaleziono"
-      already_confirmed: "już został aktywowany, możesz się zalogować"
-      not_locked: "nie był zablokowany"
-      not_saved:
-        one: "%{resource} nie został zapisany z powodu jednego błędu:"
-        other: "%{resource} nie został zapisany z powodu %{count} błędów:"
+      x_days:
+        one: "1 dzień"
+        other: "%{count} dni"
+      x_minutes:
+        one: "1 minuta"
+        other: "%{count} minut"
+      x_months:
+        one: "1 miesiąc"
+        other: "%{count} miesięcy"
+      x_seconds:
+        one: "1 sekunda"
+        other: "%{count} sekund"
   devise:
-    failure:
-      already_authenticated: 'Jesteś już zalogowany.'
-      unauthenticated: 'Aby kontynuować zaloguj lub zarejestruj się.'
-      unconfirmed: 'Aby kontynuować aktywuj konto.'
-      locked: 'Twoje konto jest zablokowane.'
-      invalid: 'Niepoprawny adres email lub hasło.'
-      invalid_token: 'Niepoprawny token.'
-      timeout: 'Sesja wygasła, aby kontynuować zaloguj się ponownie.'
-      inactive: 'Konto nie zostało jeszcze aktywowane.'
-    sessions:
-      signed_in: 'Zalogowano pomyślnie.'
-      signed_out: 'Wylogowano pomyślnie.'
-    passwords:
-      send_instructions: 'Instrukcja zmiany hasła zostanie niezwłocznie wysłana na podany adres email.'
-      updated: 'Hasło zmienione poprawnie. Zostałeś automatycznie zalogowany.'
-      updated_not_active: 'Hasło zmienione poprawnie.'
-      send_paranoid_instructions: "Jeśli Twój mail istnieje w naszej bazie, otrzymasz zaraz email z instrukcjami odzyskiwania hasła"
     confirmations:
-      send_instructions: 'Instrukcja jak aktywować konto zostanie niezwłocznie wysłana na podany adres email.'
-      send_paranoid_instructions: 'Jeśli Twój email istnieje w naszej bazie, w ciągu najbliższych minut otrzymasz instrukcję jak aktywować konto.'
-      confirmed: 'Konto zostało poprawnie aktywowane. Zostałeś automatycznie zalogowany.'
-    registrations:
-      signed_up: 'Witaj! Rejestracja zakończyła się sukcesem.'
-      inactive_signed_up: 'Rejestracja zakończyła się pomyślnie. Nie zostałeś jednak zalogowany ponieważ konto jest %{reason}.'
-      updated: 'Konto zostało pomyślnie zaktualizowane.'
-      destroyed: 'Konto zostało usunięte.'
-      reasons:
-        inactive: 'nieaktywne'
-        unconfirmed: 'niepotwierdzone'
-        locked: 'zablokowane'
-    unlocks:
-      send_instructions: 'Wkrótce powinieneś otrzymać email z instrukcją jak odblokować swoje konto.'
-      unlocked: 'Twoje konto zostało odblokowane. Jesteś już zalogowany.'
-      send_paranoid_instructions: 'Jeśli Twoje konto istnieje w naszej bazie, otrzymasz zaraz email z instrukcją jak odblokować swoje konto.'
-    omniauth_callbacks:
-      success: 'Logowanie przez konto %{kind} zakończyło się sukcesem.'
-      failure: 'Logowanie przez konto %{kind} zakończyło się błędem z powodu "%{reason}".'
+      confirmed: "Konto zostało poprawnie aktywowane. Zostałeś automatycznie zalogowany."
+      link: "Nie otrzymałeś instrukcji potwierdzenia?"
+      send_instructions: "Instrukcja jak aktywować konto zostanie niezwłocznie wysłana na podany adres email."
+    destroy:
+      confirm: "Jesteś pewien?"
+      headline: "Usuń konto"
+      link: "Skasuj teraz"
+    edit:
+      form:
+        labels:
+          current_password: "Aktualne hasło <i>(potrzebujemy go, aby potwierdzić Twoje zmiany)</i>"
+          email: E-mail
+          password: "Hasło <i>(zostaw to pole puste, jeśli nie chcesz go zmieniać)</i>"
+          password_confirmation: "Powtórz hasło"
+        submit: "Zachowaj zmiany"
+      headline: "Edytuj dane konta"
+    failure:
+      already_authenticated: "Jesteś już zalogowany."
+      inactive: "Konto nie zostało jeszcze aktywowane."
+      invalid: "Niepoprawny adres email lub hasło."
+      invalid_token: "Niepoprawny token."
+      locked: "Twoje konto jest zablokowane."
+      timeout: "Sesja wygasła, aby kontynuować zaloguj się ponownie."
+      unauthenticated: "Aby kontynuować zaloguj lub zarejestruj się."
+      unconfirmed: "Aby kontynuować aktywuj konto."
     mailer:
       confirmation_instructions:
-        subject: 'Instrukcja aktywacji konta'
+        landing_page: "Kliknij w link, który przesłaliśmy na Twój adres mailowy. Jeżeli nie otrzymałeś od nas maila, upewnij się, że nie wpadł do spamu. Jeżeli nadal nie możesz go znaleźć, spróbuj jeszcze raz."
+        subject: "Instrukcja aktywacji konta"
       reset_password_instructions:
-        subject: 'Instrukcja ustawienia nowego hasła'
+        subject: "Instrukcja ustawienia nowego hasła"
       unlock_instructions:
-        subject: 'Instrukcja odblokowania konta'
+        subject: "Instrukcja odblokowania konta"
+    mandatory: "* Wymagane"
+    password_recovery:
+      form:
+        labels:
+          email: E-mail
+        submit: "Ustaw nowe hasło"
+      headline: "Zapomniałeś hasła?"
+    password_reset:
+      email:
+        comment: "Jeżeli nie próbowałeś zmienić hasła, zignoruj ten e-mail.<br/>Twoje hasło nie zostanie zmienione, dopóki nie klikniesz w link powyżej i nie ustawisz nowego hasła."
+        headline: "Witaj %{email}"
+        link: "Zmień moje hasło"
+        text: "Ktoś zażądał zmiany Twojego hasła. Możesz to zrobić klikając w ten link:"
+      form:
+        labels:
+          password: "Nowe hasło"
+          password_confirmation: "Powtórz hasło"
+        submit: "Ustaw nowe hasło"
+      headline: "Ustaw nowe hasło"
+    passwords:
+      link: "Zapomniałeś hasła?"
+      send_instructions: "Instrukcja zmiany hasła zostanie niezwłocznie wysłana na podany adres email."
+      updated: "Hasło zmienione poprawnie. Zostałeś automatycznie zalogowany."
+    registrations:
+      destroyed: "Konto zostało usunięte."
+      inactive_signed_up: "Rejestracja zakończyła się pomyślnie. Nie zostałeś jednak zalogowany ponieważ konto jest %{reason}."
+      link: "Zarejestruj się"
+      signed_up: "Witaj! Rejestracja zakończyła się sukcesem."
+      updated: "Konto zostało pomyślnie zaktualizowane."
+    sessions:
+      inactive: "Twoje konto jeszcze nie zostało aktywowane."
+      invalid: "Niepoprawny adres e-mail lub hasło"
+      invalid_token: "Nieprawidłowy token autoryzacji"
+      link: "Zaloguj się"
+      locked: "Twoje konto jest zablokowane"
+      signed_in: "Zalogowano pomyślnie."
+      signed_out: "Wylogowano pomyślnie."
+      timeout: "Sesja wygasła, aby kontynuować zaloguj się ponownie."
+      unauthenticated: "Aby kontynuować zaloguj lub zarejestruj się."
+      unconfirmed: "Aby kontynuować aktywuj konto."
+    sign_in:
+      form:
+        labels:
+          email: E-mail
+          password: Hasło
+          remember_me: "Nie wylogowywać?"
+        submit: "Zaloguj się"
+      headline: "Zaloguj się"
+    sign_out:
+      headline: "Wyloguj się"
+    sign_up:
+      email:
+        confirm_my_account: "Potwierdź moje konto"
+        please_confirm: "Kliknij w poniższy link i potwierdź Twoje konto:"
+        welcome: "Witaj %{email}"
+      form:
+        labels:
+          email: E-mail
+          password: Hasło
+          password_confirmation: "Powtórz hasło"
+          wants_newsletter: "Tak, chcę otrzymywać najnowsze informacje na temat wheelmap. (Ale nie częściej niż raz w miesiącu.)"
+        submit: "Zarejestruj się"
+      headline: "Zarejestruj się"
+    unlocks:
+      link: "Nie otrzymałeś instrukcji odblokowania?"
+      send_instructions: "Wkrótce powinieneś otrzymać email z instrukcją jak odblokować swoje konto."
+      unlocked: "Twoje konto zostało odblokowane. Jesteś już zalogowany."
+  errors:
+    messages:
+      accepted: "należy potwierdzić"
+      blank: "należy uzupełnić"
+      confirmation: "nie można potwierdzić"
+      empty: "należy uzupełnić"
+      equal_to: "musi wynosić dokładnie %{count}"
+      even: "musi być równe"
+      exclusion: "jest zarezerwowany"
+      greater_than: "musi być większe niż %{count}"
+      greater_than_or_equal_to: "musi być większy lub równy %{count}"
+      inclusion: "nieważna wartość"
+      invalid: nieważny
+      less_than: "musi wynosić mniej niż %{count}"
+      less_than_or_equal_to: "musi być mniejsze niż lub równe %{count}"
+      not_a_number: "nie jest liczbą"
+      odd: "musi być nieparzyste"
+      taken: "jest już zajęte"
+      too_long: "jest za długie (nie więcej niż %{count} znaków)"
+      too_short: "jest za krótkie (nie mniej niż %{count} znaków)"
+      wrong_length: "niewłaściwa długość (powinno być %{count} znaków)"
+  form:
+    show_fully_accessible_places: "dostępne dla osób na wózkach"
+    show_limited_accessible_places: "częściowo dostępne dla osób na wózkach"
+    show_places_without_status: "Status nieznany"
+    show_unaccessible_places: "niedostępne dla osób na wózkach"
+  formtastic:
+    hints:
+      lat: "Przesuń znacznik na mapie w poprawne miejsce"
+      osm_username: "Nie jesteś jeszcze członkiem? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Utwórz konto w serwisie Openstreetmap</a>"
+      password: "(zostaw to pole puste, jeśli nie chcesz go zmieniać)"
+      phone: "Na przykład: +48 22 123456-78"
+      website: "Na przykład: http://www.example.com"
+    labels:
+      category: "Kategoria:"
+      city: "Miasto:"
+      create: "Utwórz miejsce"
+      email: E-mail
+      housenumber: "Nr:"
+      lat: "Szerokość geograficzna"
+      lon: "Długość geograficzna"
+      name: "Nazwisko:"
+      osm_password: "Hasło w OSM"
+      osm_username: "nazwa konta w OSM"
+      password: Hasło
+      password_confirmation: "Powtórz hasło"
+      phone: "Telefon:"
+      postcode: "Kod pocztowy:"
+      reset: Resetuj
+      save: Zachowaj
+      street: "Ulica:"
+      type: "Type:"
+      website: "Strona www:"
+      wheelchair: "Dostępność dla osób na wózkach?"
+      wheelchair_description: "Komentarz dostępności:"
+    titles:
+      basic: "Podstawowe dane"
+      optional: "Więcej informacji <span class=\"addition\">(wszystkie pola są nieobowiązkowe)</span>"
+  global:
+    form_validation_error: "Zobacz listę błędów poniżej."
+  header:
+    meta:
+      description: "Znajdź miejsca dostępne dla osób na wózkach - wheelmap.org"
+      homepage: "Strona startowa"
+      keywords: "znajdź szukaj zaznacz miejsca dostępne dla osób na wózkach"
+      search: Szukaj
+    navigation:
+      blog: Blog
+      feedback: Feedback
+      home: Start
+      how_to_add_a_place: "Jak dodać nowe miejsce?"
+      imprint: "Stopka redakcyjna"
+      logged_in_as: "Zalogowany jako:"
+      login: "Zaloguj się"
+      logout: "Wyloguj się"
+      newsletter: Newsletter
+      press: Prasa
+      suggestions: Sugestie
+      tolk: Tłumaczenia
+      what_is_barrier_free: "Co to znaczy \"dostępne dla osób na wózkach\"?"
+      what_is_wheelmap: "Co to jest wheelmap?"
+    searchbar:
+      add_place: "Dodaj kolejne miejsce"
+      find: znajdź
+      label: ~
+      placeholder: "np. Sunset Boulevard L.A. lub Brandenburg Gate Berlin"
+      title_add_place: "Dodaj nowe miejsce w tej pozycji"
+    tagline: "Logo wheelmap"
+    title: "Wheelmap - znajdź miejsca dostępne dla osób na wózkach"
+  home:
+    index:
+      filter:
+        category: "Wybierz kategorię"
+        wheelchair: "Dostępne dla osób na wózkach?"
+      ie:
+        action:
+          ignore: Ignoruj
+          upgrade: "Zaktualizuj przegladarkę"
+        warning:
+          headline: Przepraszamy!
+          message: "Wygląda na to, że używasz Internet Explorera. Aby poprawnie funkcjonować, Wheelmap potrzebuje przeglądarki, która obsługuje wszystkie standardy. Wejdź na stronę za pomocą następujących przeglądarek: Firefox, Chrome, Safari lub Opera."
+      link:
+        node:
+          create: "Dodaj nowe miejsce"
+      popup:
+        form:
+          limited: "częściowo dostępne dla osób na wózkach"
+          ? "no"
+          : "niedostępne dla osób na wózkach"
+          save: Aktualizuj
+          unknown: "nieznany status"
+          ? "yes"
+          : "dostępne dla osób na wózkach"
+        help: "Dostępne dla osób na wózkach? (Pomoc)"
+        more: "więcej ..."
+  how?: Jak?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Wszystkie miejsca dostępne dla osób na wózkach w ograniczonym zakresie %{type} w %{city} (%{count})"
+        ? "no"
+        :
+          headline: "Wszystkie niedostępne dla osób na wózkach %{type} w %{city} (%{count})"
+        unknown:
+          headline: "Wszystkie %{type} w %{city} z nieznanym statusem dostępności dla osób na wózkach (%{count})"
+        ? "yes"
+        :
+          headline: "Wszystkie dostępne dla osób na wózkach %{type} w %{city} (%{count})"
+  layouts:
+    application:
+      banner:
+        alt: "Projekt organizacji Sozialhelden.de"
+  node:
+    address:
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
+    tags:
+      phone: "Telefon:"
+      website: "Strona internetowa:"
+  nodes:
+    create:
+      flash:
+        not_successfull: "Ups, Twój wpis był niepoprawny lub niekompletny."
+        successfull: "Dziękujemy, wpis został poprawnie dodany i wkrótce pojawi się na stronie"
+    edit:
+      header:
+        title: "Edytuj miejsce: %{node} | wheelmap.org"
+      link:
+        large_map: "&laquo; Anuluj"
+    errors:
+      not_authorized: "Przepraszamy, autoryzacja nie powiodła się"
+      not_available: "Przepraszamy, strona jest chwilowo niedostępna"
+      not_existent: "Przepraszamy, to miejsce już nie jest dostępne."
+      not_found: "Przepraszamy, strona nie została znaleziona"
+      param_missing: "Proszę wpisać szukane słowo."
+    flash:
+      authorize_wheelmap: "Aby edytować dane, potrzebujesz konta w serwisie OpenStreetMap"
+    new:
+      header:
+        title: "Nowe miejsce | wheelmap.org"
+      link:
+        large_map: "&laquo; Anuluj"
+    show:
+      header:
+        title: "Miejsce: %{node} | wheelmap.org"
+      link:
+        back: wróć
+        claim: "Pracujesz tutaj?"
+        edit_node: "Edytuj miejsce"
+        large_map: Powiększ
+        listing: "Wszystkie miejsca typu '%{type}' w %{city}"
+        report_bug: "Zgłoś problem"
+      show-in-osm: OpenStreetMap
+    update:
+      flash:
+        not_successfull: "Ups, Twój wpis był niepoprawny lub niekompletny."
+        successfull: "Dziękujemy, wpis został poprawnie dodany i wkrótce pojawi się na stronie"
+    update_wheelchair:
+      successfull: "Status dla miejsca \"%{name}\" zmienił się na \"%{status} dostępny dla osób na wózkach\" i wkrótce będzie widoczny."
+  number:
+    currency:
+      format:
+        delimiter: " ,"
+        format: "%u %n"
+        precision: 2
+        separator: ","
+        unit: PLN
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+    human:
+      format:
+        delimiter: ~
+        precision: 3
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "Aby tworzyć lub edytować miejsca na wheelmap.org, musisz połączyć Twoje konto z kontem w serwisie open street map."
+    callback:
+      notice: "Twoje konto w serwisie wheelmap jest już połączone z kontem w serwisie OpenStreetMap użytkownika %{user}."
+  or: lub
+  place:
+    one: |-
+
+        %{count} miejsce
+    other: "%{count} miejsc(a)"
+  poi:
+    category:
+      accommodation: Zakwaterowanie
+      education: Edukacja
+      food: Jedzenie
+      government: "Budynki rządowe"
+      health: "Szpital lub przychodnia"
+      leisure: "Czas wolny"
+      misc: Różne
+      money_post: "Bank, poczta"
+      public_transfer: "Transport publiczny"
+      shopping: Zakupy
+      sport: Sport
+      tourism: Turystyka
+      unknown: Nieznany
+    name:
+      accommodation:
+        beach_resort: "Hotel na plaży"
+        bed_and_breakfast: "Bed and breakfast"
+        camp_site: "Pole kempingowe"
+        caravan_site: Kemping
+        chalet: "Domek wypoczynkowy"
+        guest_house: Pensjonat
+        hostel: Hostel
+        hotel: Hotel
+        motel: Motel
+      education:
+        college: "Szkoła wyższa"
+        kindergarten: Przedszkole
+        library: Biblioteka
+        museum: Muzeum
+        school: Szkoła
+        university: Uniwersytet
+      food:
+        bar: Bar
+        biergarten: "Ogródek piwny"
+        cafe: Kawiarnia
+        drinking_water: "Ujęcie wody pitnej"
+        fast_food: "Fast food"
+        pub: Pub
+        restaurant: Restauracja
+      government:
+        courthouse: Sąd
+        embassy: Ambasada
+        police: Policja
+        public_building: "Budynek użyteczności publicznej"
+        townhall: Ratusz
+      health:
+        doctors: Lekarz
+        hearing_aids: "Sklep z aparatami słuchowymi"
+        hospital: Szpital
+        medical_supply: "Zaopatrzenie medyczne"
+        pharmacy: Apteka
+        social_facility: "Infrastruktura społeczna"
+        veterinary: Weterynarz
+      leisure:
+        arena: "Hala sportowa"
+        brothel: "Agencja towarzyska"
+        cinema: Kino
+        community_center: "Dom kultury"
+        gallery: Galeria
+        nightclub: "Klub nocny"
+        playground: "Plac zabaw"
+        sauna: Sauna
+        stripclub: "Klub nocny ze strptizem"
+        theatre: Teatr
+        zoo: Zoo
+      misc:
+        company: "Firma (Biuro)"
+        lawyer: "Kancelaria prawna"
+        place_of_worship: "Miejsce kultu"
+        toilets: Toaleta
+      money_post:
+        atm: Bankomat
+        bank: Bank
+        bureau_de_change: "Kantor wymiany walut"
+        post_box: "Skrzynka pocztowa"
+        post_office: Poczta
+      public_transfer:
+        aerodrome: Lotnisko
+        bicycle_parking: "Parking dla rowerów"
+        bicycle_rental: "Wypożyczalnia rowerów"
+        boatyard: "Stocznia jachtowa"
+        bus_station: "Dworzec autobusowy"
+        bus_stop: "Przystanek autobusowy"
+        cable_car: "Kolejka linowa"
+        car_rental: "Wypożyczalnia samochodów"
+        car_sharing: "Car sharing"
+        chair_lift: "Wyciąg krzesełkowy"
+        ferry: Prom
+        ferry_terminal: "Terminal promowy"
+        fuel: "Stacja paliw"
+        halt: Przystanek
+        light_rail: "Pociąg podmiejski"
+        parking: Parking
+        parking_aisle: "Przejście na parkingu"
+        platform: Peron
+        station: Metro
+        subway_entrance: "Wejście do metra"
+        terminal: "Terminal lotniska"
+        tram_stop: "Przystanek tramwajowy"
+      shopping:
+        alcohol: "Sklep monopolowy"
+        bakery: Piekarnia
+        beverages: "Sklep z napojami"
+        bicycle: "Sklep rowerowy"
+        books: Księgarnia
+        butcher: Rzeźnik
+        car_repair: "Warsztat samochodowy"
+        car_shop: "Salon samochodowy"
+        chemist: Apteka
+        clothes: "Sklep z ubraniami"
+        computer: Komputer
+        convenience: Sklep
+        department_store: "Dom towarowy"
+        doityourself: "Zrób to sam"
+        dry_cleaning: "Pralnia chemiczna"
+        electronics: "Sklep ze sprzętem RTV"
+        florist: Kwiaciarnia
+        furniture: "Sklep z meblami"
+        garden_centre: "Sklep ogrodniczy"
+        hairdresser: Fryzjer
+        hardware: Hardware
+        kiosk: Kiosk
+        laundry: Pralnia
+        mall: "Centrum handlowe"
+        optician: Optyk
+        photo: Zdjęcie
+        second_hand: "Sklep z używaną odzieżą"
+        shoes: "Sklep z obuwiem"
+        sports: Sport
+        stationery: "Sklep z artykułami biurowymi"
+        supermarket: Supermarket
+        video: "Wypożyczalnia płyt DVD"
+      sport:
+        sports_centre: "Ośrodek sportowy"
+        stadium: Stadion
+        swimming: Kąpielisko
+        swimming_pool: Basen
+      tourism:
+        archaeological_site: "Stanowisko archeologiczne"
+        arts_centre: "Centrum kulturalne"
+        artwork: "Dzieło sztuki"
+        attraction: Atrakcja
+        battlefield: "Pole bitwy"
+        beach: Plaża
+        beacon: "Latarnia morska"
+        castle: Zamek
+        cave_entrance: "Wejście do jaskini"
+        information: "Informacja turystyczna"
+        memorial: Pomnik
+        theme_park: "Park rozrywki"
+        tower: Wieża
+        viewpoint: "Punkt widokowy"
+      unknown:
+        unknown: Nieznany
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "Stan: połączony"
+          grant: "Połącz się"
+          not_connected: "Status: nie połączony"
+          revoke: Rozłącz
+      headline: "Edytuj profil"
+  search:
+    index:
+      search:
+        for: "Szukam \"%{q}\""
+        not_found: "Nie można znaleźć miejsca!"
+  splash:
+    countline: "%{count} miejsc zostało już oznaczonych."
+    headline: "Każdy może dodawać miejsca dostępne dla osób na wózkach!"
+    start: Start
+    step1: "Kliknij w miejsce, które znasz"
+    step2: "Zaznacz i kliknij zachowaj"
+    step3: "Rejestracja nie jest potrzebna."
+    what_is_wheelmap: "Co to jest wheelmap?"
+  statistics: Statystyki
+  support:
+    array:
+      last_word_connector: " oraz "
+      sentence_connector: i
+      skip_last_comma: prawda
+      two_words_connector: " i "
+      words_connector: ", "
+    select:
+      prompt: "Proszę wybrać"
+  time:
+    am: "przed południem"
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: "po południu"
+  user_sessions:
+    create:
+      activation:
+        notice: "Twoje konto jest już aktywne!"
+      error:
+        notice: "E-mail i hasło nie pasują do siebie."
+      notice: "Jesteś zalogowany!"
+    destroy:
+      notice: "Do widzenia, wróć tutaj wkrótce!"
+    new:
+      email: "Adres e-mail"
+      login: "Zaloguj się"
+      login_with_twitter: "Zaloguj się kontem z Twittera"
+      password: Hasło
+      remember_me: "Nie wylogowywuj się"
+  wheelchairstatus:
+    limited: "częściowo dostępne dla osób na wózkach"
+    ? "no"
+    : "niedostępne dla osób na wózkach"
+    unknown: "status nieznany"
+    ? "yes"
+    : "dostępne dla osób na wózkach"
+  wheelmap:
+    footer:
+      a_project_of: "Projekt wykonany przez"
+      based_on: "Projekt oparty na"
+      become_a_supporter: "Zostań sponsorem"
+      main_supporter: "Główny sponsor"
+    itunes:
+      alt: "Logo AppStore"
+      title: "Ściągnij teraz aplikację na iPhone'a!"
+    logo:
+      alt: "Logo wheelmap - znajdź miejsca dostępne dla osób na wózkach"
+      title: "Wheelmap - znajdź miejsca dostępne dla osób na wózkach"
+    what_is:
+      fully_accessible: "<em>Tak:</em> Wejście bez schodów, wszystkie pomieszczenia bez schodów, toaleta dostępna"
+      limited_accessible: "<em>W ograniczonym zakresie:</em> Wejście ma stopień (o maks. wysokości 7 cm), większość pomieszczeń bez schodów, toaleta niedostępna"
+      not_accessible: "<em>Nr:</em> Wejście ma wysokie schody lub kilka schodów, pomieszczenia nie są dostępne"
+      unknown_accessible: "<em>Nie wiadomo:</em> Pomóż nam i zaznacz miejsca na mapie!"
