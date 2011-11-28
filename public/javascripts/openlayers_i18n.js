@@ -88,6 +88,24 @@ OpenLayers.Lang.ko = {
   'more_information': "자세히 ...",
   'wheelchair_help': "휠체어 접근성? (도움말)"
 };
+OpenLayers.Lang.nl = {
+  'wheelchair_label_yes': "rolstoel toegangelijk",
+  'wheelchair_label_limited': "deels rolstoel toegangelijk",
+  'wheelchair_label_no': "niet rolstoel toegangelijk",
+  'wheelchair_label_unknown': "onbekende status",
+  'wheelchair_update_button': "Actualiseren",
+  'more_information': "meer...",
+  'wheelchair_help': "rolstoel toegangelijk? (Hulp)"
+};
+OpenLayers.Lang.pl = {
+  'wheelchair_label_yes': "dostępne dla osób na wózkach",
+  'wheelchair_label_limited': "częściowo dostępne dla osób na wózkach",
+  'wheelchair_label_no': "niedostępne dla osób na wózkach",
+  'wheelchair_label_unknown': "nieznany status",
+  'wheelchair_update_button': "Aktualizuj",
+  'more_information': "więcej ...",
+  'wheelchair_help': "Dostępne dla osób na wózkach? (Pomoc)"
+};
 OpenLayers.Lang.se = {
   'wheelchair_label_yes': "wheelchair accessible",
   'wheelchair_label_limited': "partly wheelchair accessible",
