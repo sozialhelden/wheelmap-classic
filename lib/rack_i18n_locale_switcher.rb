@@ -11,6 +11,7 @@ module Rack
     def call(env)
       request = Rack::Request.new env
 
+
       session = request.session
       locale = extract_locale_from_path_or_params(request)
 
@@ -43,8 +44,9 @@ module Rack
     end
 
     def extract_locale_from_path(request)
-      locale = request.path_info.split("/")[1]
-      locale if is_available?(locale)
+      if request.path_info =~ /^\/(\w{2,3})\b/
+        $1 if is_available?($1)
+      end
     end
 
     def extract_locale_from_path_or_params(request)
