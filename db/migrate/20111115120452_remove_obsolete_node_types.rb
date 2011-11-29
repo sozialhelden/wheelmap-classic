@@ -6,6 +6,7 @@ class RemoveObsoleteNodeTypes < ActiveRecord::Migration
     NodeType.where(:osm_key => 'leisure', :osm_value => 'swimming_pool').first.try(:destroy)
     NodeType.where(:osm_key => 'amenity', :osm_value => 'public_building').first.try(:destroy)
     NodeType.where(:osm_key => 'aeroway', :osm_value => 'aerodrome').first.try(:destroy)
+    NodeType.where(:osm_key => 'historic', :osm_value => 'battlefield').first.try(:destroy)
 
     # Create new category health and with new node types
     health = Category.find_or_create_by_id_and_identifier(12, 'health')
@@ -64,7 +65,8 @@ class RemoveObsoleteNodeTypes < ActiveRecord::Migration
   def self.down
     tourism = Category.find_by_identifier('tourism')
     node_types = NodeType.create([
-      {:category => tourism, :identifier => :information, :osm_key => 'tourism', :osm_value => 'information', :icon => 'information.png'}
+      {:category => tourism, :identifier => :information, :osm_key => 'tourism',  :osm_value => 'information', :icon => 'information.png'},
+      {:category => tourism, :identifier => :battlefield, :osm_key => 'historic', :osm_value => 'battlefield', :icon => 'battlefield.png'}
     ])
 
     sport = Category.find_by_identifier('sport')
