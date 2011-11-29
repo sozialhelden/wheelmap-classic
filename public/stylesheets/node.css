@@ -963,7 +963,7 @@ h1 span.addition {
   color: #8d8d8e;
 }
 
-/* line 6, ../../app/stylesheets/partials/nodes/_lists.sass */
+/* line 1, ../../app/stylesheets/partials/nodes/_lists.sass */
 .status {
   width: 20px;
   height: 20px;
@@ -974,24 +974,24 @@ h1 span.addition {
   margin: 3px;
   float: left;
 }
-/* line 17, ../../app/stylesheets/partials/nodes/_lists.sass */
+/* line 12, ../../app/stylesheets/partials/nodes/_lists.sass */
 .status.yes {
   background: #86af4d;
 }
-/* line 20, ../../app/stylesheets/partials/nodes/_lists.sass */
+/* line 15, ../../app/stylesheets/partials/nodes/_lists.sass */
 .status.limited {
   background: #f19d46;
 }
-/* line 23, ../../app/stylesheets/partials/nodes/_lists.sass */
+/* line 18, ../../app/stylesheets/partials/nodes/_lists.sass */
 .status.no {
   background: #d6382f;
 }
-/* line 26, ../../app/stylesheets/partials/nodes/_lists.sass */
+/* line 21, ../../app/stylesheets/partials/nodes/_lists.sass */
 .status.unknown {
   background: #8d8d8e;
 }
 
-/* line 29, ../../app/stylesheets/partials/nodes/_lists.sass */
+/* line 24, ../../app/stylesheets/partials/nodes/_lists.sass */
 dl {
   background-color: #f9faf9;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #f9faf9), color-stop(1, #f4f5f4));
@@ -1002,7 +1002,7 @@ dl {
   padding: 30px 20px;
 }
 
-/* line 34, ../../app/stylesheets/partials/nodes/_lists.sass */
+/* line 29, ../../app/stylesheets/partials/nodes/_lists.sass */
 dt {
   display: block;
   float: left;
@@ -1011,63 +1011,13 @@ dt {
   margin-bottom: 10px;
 }
 
-/* line 40, ../../app/stylesheets/partials/nodes/_lists.sass */
+/* line 35, ../../app/stylesheets/partials/nodes/_lists.sass */
 dd {
   display: block;
   float: left;
   width: 230px;
   margin-bottom: 10px;
   padding-left: 20px;
-}
-/* line 48, ../../app/stylesheets/partials/nodes/_lists.sass */
-dd.public_transfer {
-  background: url("/images/icons/public-transport-subway-germany.png") no-repeat left top;
-  border: 0;
-}
-/* line 51, ../../app/stylesheets/partials/nodes/_lists.sass */
-dd.food {
-  background: url("/images/icons/cutlery.png") no-repeat left top;
-  border: 0;
-}
-/* line 54, ../../app/stylesheets/partials/nodes/_lists.sass */
-dd.post {
-  background: url("/images/icons/mail.png") no-repeat left top;
-  border: 0;
-}
-/* line 57, ../../app/stylesheets/partials/nodes/_lists.sass */
-dd.money {
-  background: url("/images/icons/money-coin.png") no-repeat left top;
-  border: 0;
-}
-/* line 60, ../../app/stylesheets/partials/nodes/_lists.sass */
-dd.health {
-  background: url("/images/icons/hospital.png") no-repeat left top;
-  border: 0;
-}
-/* line 63, ../../app/stylesheets/partials/nodes/_lists.sass */
-dd.government {
-  background: url("/images/icons/bank.png") no-repeat left top;
-  border: 0;
-}
-/* line 66, ../../app/stylesheets/partials/nodes/_lists.sass */
-dd.education {
-  background: url("/images/icons/book-open.png") no-repeat left top;
-  border: 0;
-}
-/* line 69, ../../app/stylesheets/partials/nodes/_lists.sass */
-dd.car {
-  background: url("/images/icons/car-red.png") no-repeat left top;
-  border: 0;
-}
-/* line 72, ../../app/stylesheets/partials/nodes/_lists.sass */
-dd.misc {
-  background: url("/images/icons/store.png") no-repeat left top;
-  border: 0;
-}
-/* line 75, ../../app/stylesheets/partials/nodes/_lists.sass */
-dd.leisure {
-  background: url("/images/icons/smiley.png") no-repeat left top;
-  border: 0;
 }
 
 /* line 1, ../../app/stylesheets/partials/nodes/_map.sass */
@@ -1169,66 +1119,6 @@ table#accessibility td {
   width: 250px;
   color: #8d8d8e;
   padding-left: 20px;
-}
-/* line 16, ../../app/stylesheets/partials/nodes/_tables.sass */
-table#properties td.public_transfer,
-table#accessibility td.public_transfer {
-  background: url("/images/icons/public-transport-subway-germany.png") no-repeat left top;
-  border: 0;
-}
-/* line 19, ../../app/stylesheets/partials/nodes/_tables.sass */
-table#properties td.food,
-table#accessibility td.food {
-  background: url("/images/icons/cutlery.png") no-repeat left top;
-  border: 0;
-}
-/* line 22, ../../app/stylesheets/partials/nodes/_tables.sass */
-table#properties td.post,
-table#accessibility td.post {
-  background: url("/images/icons/mail.png") no-repeat left top;
-  border: 0;
-}
-/* line 25, ../../app/stylesheets/partials/nodes/_tables.sass */
-table#properties td.money,
-table#accessibility td.money {
-  background: url("/images/icons/money-coin.png") no-repeat left top;
-  border: 0;
-}
-/* line 28, ../../app/stylesheets/partials/nodes/_tables.sass */
-table#properties td.health,
-table#accessibility td.health {
-  background: url("/images/icons/hospital.png") no-repeat left top;
-  border: 0;
-}
-/* line 31, ../../app/stylesheets/partials/nodes/_tables.sass */
-table#properties td.government,
-table#accessibility td.government {
-  background: url("/images/icons/bank.png") no-repeat left top;
-  border: 0;
-}
-/* line 34, ../../app/stylesheets/partials/nodes/_tables.sass */
-table#properties td.education,
-table#accessibility td.education {
-  background: url("/images/icons/book-open.png") no-repeat left top;
-  border: 0;
-}
-/* line 37, ../../app/stylesheets/partials/nodes/_tables.sass */
-table#properties td.car,
-table#accessibility td.car {
-  background: url("/images/icons/car-red.png") no-repeat left top;
-  border: 0;
-}
-/* line 40, ../../app/stylesheets/partials/nodes/_tables.sass */
-table#properties td.misc,
-table#accessibility td.misc {
-  background: url("/images/icons/store.png") no-repeat left top;
-  border: 0;
-}
-/* line 43, ../../app/stylesheets/partials/nodes/_tables.sass */
-table#properties td.leisure,
-table#accessibility td.leisure {
-  background: url("/images/icons/smiley.png") no-repeat left top;
-  border: 0;
 }
 
 /* line 1, ../../app/stylesheets/partials/nodes/_flash.sass */

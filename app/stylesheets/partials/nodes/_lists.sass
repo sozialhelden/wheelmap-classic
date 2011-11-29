@@ -1,8 +1,3 @@
-=category-icon($name: null)
-  @if $name != null
-    background: url("/images/icons/#{ $name }.png") no-repeat left top
-    border: 0
-
 .status
   width: 20px
   height: 20px
@@ -12,7 +7,7 @@
   background-color: $unknown
   margin: 3px
   float: left
-  
+
 
   &.yes
     background: $yes
@@ -44,34 +39,3 @@ dd
   margin-bottom: 10px
   padding-left: 20px
 
-
-  &.public_transfer
-    +category-icon(public-transport-subway-germany)
-
-  &.food
-    +category-icon(cutlery)
-
-  &.post
-    +category-icon(mail)
-
-  &.money
-    +category-icon(money-coin)
-
-  &.health
-    +category-icon(hospital)
-
-  &.government
-    +category-icon(bank)
-
-  &.education
-    +category-icon(book-open)
-
-  &.car
-    +category-icon(car-red)
-
-  &.misc
-    +category-icon(store)
-
-  &.leisure
-    +category-icon(smiley)
-    
