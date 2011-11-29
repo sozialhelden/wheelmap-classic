@@ -1,3 +1,12 @@
+OpenLayers.Lang.bg = {
+  'wheelchair_label_yes': "достъпно за инвалидни колички",
+  'wheelchair_label_limited': "отчасти достъпно за инвалидни колички",
+  'wheelchair_label_no': "недостъпно за инвалидни колички",
+  'wheelchair_label_unknown': "неизвестен статус",
+  'wheelchair_update_button': "Актуализация",
+  'more_information': "повече...",
+  'wheelchair_help': "Достъпно за инвалидни колички? (Помощ)"
+};
 OpenLayers.Lang.da = {
   'wheelchair_label_yes': "Fuldt kørestoltilgængeligt",
   'wheelchair_label_limited': "delvis kørestolstilgængeligt",
