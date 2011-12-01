@@ -56,7 +56,6 @@ describe NodesController do
 
     it "should send Hoptoad message in case OpenStreetMap API times out" do
       stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/16581933").to_return(:status => 503, :body => "Not Available", :headers => {})
-      HoptoadNotifier.should_receive(:notify)
 
       get(:edit, :id => 16581933)
       response.code.should == '503'
@@ -64,7 +63,6 @@ describe NodesController do
 
     it "should send Hoptoad message in case OpenStreetMap Node was deleted" do
       stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/16581933").to_return(:status => 410, :body => "Gone", :headers => {})
-      HoptoadNotifier.should_receive(:notify)
 
       get(:edit, :id => 16581933)
       response.code.should == '410'
@@ -72,7 +70,6 @@ describe NodesController do
 
     it "should send Hoptoad message in case OpenStreetMap Node was not found" do
       stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/16581933").to_return(:status => 404, :body => "Not found", :headers => {})
-      HoptoadNotifier.should_receive(:notify)
 
       get(:edit, :id => 16581933)
       response.code.should == '404'
@@ -269,13 +266,12 @@ describe NodesController do
 
   describe "action: index" do
     before(:each) do
-      Poi.delete_all
-      @node_type = Factory.create(:node_type)
-      @bar_node = Factory.build(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'}, :node_type => @node_type)
+      NodeType.destroy_all
+      @bar_node = Factory(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
       @bar_node.tags['amenity'] = 'bar'
       @bar_node.type = 'bar'
       @bar_node.save!
-
+      @bar_node.reload
     end
 
     it "should render legacy json representation for iphone" do
