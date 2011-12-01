@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   def set_abingo_identity
     if request.user_agent =~ /\b(Baidu|Gigabot|Googlebot|libwww-perl|lwp-trivial|msnbot|SiteUptime|Slurp|WordPress|ZIBB|ZyBorg)\b/i
         Abingo.identity = "robot"
-    elsif user_signed_in?
+    elsif (user_signed_in? rescue false)
       Abingo.identity = current_user.id
     else
       session[:abingo_identity] ||= rand(10 ** 10)
