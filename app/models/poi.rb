@@ -13,7 +13,7 @@ class Poi < ActiveRecord::Base
   set_primary_key :osm_id
 
 
-  attr_accessible :name, :type, :geom, :version, :wheelchair, :created_at, :updated_at, :status, :lat, :lon, :id, :tags, :osm_id, :name
+  attr_accessible :name, :type, :geom, :version, :wheelchair, :created_at, :updated_at, :status, :lat, :lon, :id, :tags, :osm_id, :name, :node_type_id
 
   self.include_root_in_json = false
 

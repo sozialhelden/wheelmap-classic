@@ -30,18 +30,22 @@ class NodeType < ActiveRecord::Base
     I18n.t("poi.name.#{category.identifier}.#{identifier}", :count => count)
   end
 
-  def self.combination
-    return @@combination if @@combination
-    keys = NodeType.all.map(&:osm_key).uniq.sort
-    @@combination = {}
-    keys.each do |osm_key|
-      values = NodeType.all(:conditions => {:osm_key => osm_key})
-      values.each do |value|
-        osm_value = value.osm_value
-        @@combination[osm_key] ||= {}
-        @@combination[osm_key][osm_value] = value.id
+  class << self
+    extend ActiveSupport::Memoizable
+
+    def combination
+      keys = NodeType.all.map(&:osm_key).uniq.sort
+      @@combination = {}
+      keys.each do |osm_key|
+        values = NodeType.all(:conditions => {:osm_key => osm_key})
+        values.each do |value|
+          osm_value = value.osm_value
+          @@combination[osm_key] ||= {}
+          @@combination[osm_key][osm_value] = value.id
+        end
       end
+      @@combination
     end
-    @@combination
+    memoize :combination if Rails.env.production? || Rails.env.staging?
   end
 end
