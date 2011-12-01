@@ -1,3 +1,4 @@
+# encoding: UTF-8
 WheelchairStatus = %w{yes limited no unknown}
 
 Languages = {
