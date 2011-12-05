@@ -30,27 +30,26 @@ stdout_path "#{shared_path}/log/unicorn.stdout.log"
 stderr_path "#{shared_path}/log/unicorn.stderr.log"
 
 before_fork do |server, worker|
-# This option works in together with preload_app true setting
-# What is does is prevent the master process from holding
-# the database connection
-  defined?(ActiveRecord::Base) and
-    ActiveRecord::Base.connection.disconnect!
+  # This option works in together with preload_app true setting
+  # What is does is prevent the master process from holding
+  # the database connection
+  defined?(ActiveRecord::Base) and ActiveRecord::Base.connection.disconnect!
 
-# Before forking, kill the master process that belongs to the .oldbin PID.
-# This enables 0 downtime deploys.
-old_pid = "#{shared_path}/pids/unicorn.pid.oldbin"
+  # Before forking, kill the master process that belongs to the .oldbin PID.
+  # This enables 0 downtime deploys.
+  old_pid = "#{shared_path}/pids/unicorn.pid.oldbin"
 
-if File.exists?(old_pid) && server.pid != old_pid
-  begin
-    Process.kill("QUIT", File.read(old_pid).to_i)
-  rescue Errno::ENOENT, Errno::ESRCH
-    # someone else did our job for us
+  if File.exists?(old_pid) && server.pid != old_pid
+    begin
+      Process.kill("QUIT", File.read(old_pid).to_i)
+    rescue Errno::ENOENT, Errno::ESRCH
+      # someone else did our job for us
+    end
   end
 end
 
 after_fork do |server, worker|
 # Here we are establishing the connection after forking worker
 # processes
-  defined?(ActiveRecord::Base) and
-    ActiveRecord::Base.establish_connection
+  defined?(ActiveRecord::Base) and ActiveRecord::Base.establish_connection
 end
