@@ -1,6 +1,10 @@
-worker_processes 2
-base_dir = "/var/apps/wheelmap/staging/current"
-shared_path = "/var/apps/wheelmap/staging/shared"
+# config/unicorn.rb
+# Set environment to development unless something else is specified
+env = ENV["RAILS_ENV"] || "staging"
+
+worker_processes 4
+base_dir = "/var/apps/wheelmap/#{env}/current"
+shared_path = "/var/apps/wheelmap/#{env}/shared"
 working_directory base_dir
 
 # This loads the application in the master process before forking
@@ -31,6 +35,17 @@ before_fork do |server, worker|
 # the database connection
   defined?(ActiveRecord::Base) and
     ActiveRecord::Base.connection.disconnect!
+
+# Before forking, kill the master process that belongs to the .oldbin PID.
+# This enables 0 downtime deploys.
+old_pid = "#{shared_path}/pids/unicorn.pid.oldbin"
+
+if File.exists?(old_pid) && server.pid != old_pid
+  begin
+    Process.kill("QUIT", File.read(old_pid).to_i)
+  rescue Errno::ENOENT, Errno::ESRCH
+    # someone else did our job for us
+  end
 end
 
 after_fork do |server, worker|
