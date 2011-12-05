@@ -29,7 +29,7 @@ after  'deploy',              'deploy:cache:clear'
 namespace :unicorn do
   desc "Zero-downtime restart of Unicorn"
   task :restart, :except => { :no_release => true } do
-    run "kill -s USR2 `cat #{shared_path}/pids/unicorn.pid`"
+    run "if [ -f #{shared_path}/pids/unicorn.pid ]; then kill -s USR2 `cat #{shared_path}/pids/unicorn.pid`; fi"
   end
 
   desc "Start unicorn"
