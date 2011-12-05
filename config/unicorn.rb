@@ -2,7 +2,7 @@
 # Set environment to development unless something else is specified
 env = ENV["RAILS_ENV"] || "staging"
 
-worker_processes 4
+worker_processes 10
 base_dir = "/var/apps/wheelmap/#{env}/current"
 shared_path = "/var/apps/wheelmap/#{env}/shared"
 working_directory base_dir
@@ -21,7 +21,7 @@ timeout 30
 
 # This is where we specify the socket.
 # We will point the upstream Nginx module to this socket later on
-listen "#{base_dir}/tmp/sockets/unicorn.sock", :backlog => 64
+listen "#{shared_path}/unicorn.sock", :backlog => 64
 
 pid "#{shared_path}/pids/unicorn.pid"
 
