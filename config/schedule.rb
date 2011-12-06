@@ -25,7 +25,7 @@ end
 
 # Remove old sessions from database
 every 1.day, :at => '4:42 am' do
-  rake "housekeeping:session_cleanup", :environment => [:production, :staging]
+  rake "housekeeping:session_cleanup", :environment => :production
 end
 
 every 1.hour do
