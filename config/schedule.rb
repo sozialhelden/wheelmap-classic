@@ -23,6 +23,11 @@ every 1.day, :at => '3:30 am' do
   rake "sitemap:generate", :environment => :production
 end
 
+# Remove old sessions from database
+every 1.day, :at => '4:42 am' do
+  rake "housekeeping:session_cleanup", :environment => [:production, :staging]
+end
+
 every 1.hour do
   rake "poi:locate", :environment => :production
 end
