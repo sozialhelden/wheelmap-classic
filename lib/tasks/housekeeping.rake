@@ -1,5 +1,17 @@
 namespace :housekeeping do
-  
+
+  desc 'remove sessions older than 10 days'
+  task :session_cleanup => :environment do
+
+    class Session < ActiveRecord::Base;end
+
+    latest_date = 10.days.ago
+    youngest_session = Session.first(:conditions => ['updated_at < ?', latest_date], :order => 'updated_at DESC')
+    Session.find_each do |session|
+      session.delete if session.id < youngest_session.id
+    end
+  end
+
   desc 'Determine node type for nodes without node type'
   task :calculate_node_type => :environment do
     Poi.without_node_type.find_in_batches do |batch|
@@ -11,7 +23,7 @@ namespace :housekeeping do
       STDOUT.flush
     end
   end
-  
+
   desc 'Determine node type for nodes with outdated node type'
   task :recalculate_node_type => :environment do
     Poi.find_in_batches do |batch|
