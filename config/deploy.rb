@@ -22,6 +22,7 @@ set :user, 'rails'
 # these http://github.com/rails/irs_process_scripts
 
 after  'deploy:setup',        'deploy:create_shared_config'
+after  'deploy:update_code',  'deploy:generate_assets'
 after  'deploy:update_code',  'deploy:symlink_configs'
 after  'deploy:update_code',  'deploy:remove_all_unfinished_locales'
 after  'deploy',              'deploy:cache:clear'
@@ -89,6 +90,11 @@ namespace :deploy do
       run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake cache:clear"
     end
   end
+
+  task :generate_assets, :roles => :web do
+    send(:run, "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec jammit config/assets.yml")
+  end
+
 
 end
 
