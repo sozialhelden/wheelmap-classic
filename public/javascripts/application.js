@@ -107,7 +107,8 @@ function drawmap(controls, element) {
     maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34, 20037508.34, 20037508.34),
     numZoomLevels: 19,
     maxResolution: 156543.0399,
-    units: 'm'
+    units: 'm',
+    theme: OpenLayers._getScriptLocation() + '/theme/default/style.css'
   });
 
   mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", { displayClass: 'olMap', opacity: 1.0, transitionEffect: 'resize', numZoomLevels: 19, buffer: 2});
