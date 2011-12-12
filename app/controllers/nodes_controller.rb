@@ -49,7 +49,6 @@ class NodesController < ApplicationController
     client = OpenStreetMap::OauthClient.new(user.access_token)
     Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], user, client, :wheelchair => params[:wheelchair]))
     @node = Poi.find(params[:id])
-    bingo! "splash_screen" if session['_ab_tester']
     respond_to do |wants|
       wants.js{ render :json => {:message => t('nodes.update_wheelchair.successfull', :status => t("wheelchairstatus.#{params[:wheelchair]}"), :name => @node.headline), :wheelchair => params[:wheelchair] }.to_json}
       wants.html{ render :text => t('nodes.update_wheelchair.successfull') }

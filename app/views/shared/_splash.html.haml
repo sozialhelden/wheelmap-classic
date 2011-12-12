@@ -1,23 +1,19 @@
-= ab_test("splash_screen") do |version|
-  - if version
-    #splash{:style => 'display:none'}
-      .close-splash
-        %a.unblock-splash(href='#')
-          = image_tag('close.gif', :size => '17x17', :alt => 'x')
-      %h1= t('splash.headline')
-      %h2= t('splash.countline', :count => Poi.marked_count)
-      %hr
-      %ol
-        %li
-          %span= t('splash.step1')
-        %li
-          %span= t('splash.step2')
-        %li
-          %span= t('splash.step3')
+#splash{:style => 'display:none'}
+  .close-splash
+    %a.unblock-splash(href='#')
+      = image_tag('close.gif', :size => '17x17', :alt => 'x')
+  %h1= t('splash.headline')
+  %h2= t('splash.countline', :count => Poi.marked_count)
+  %hr
+  %ol
+    %li
+      %span= t('splash.step1')
+    %li
+      %span= t('splash.step2')
+    %li
+      %span= t('splash.step3')
 
-      %p
-        = link_to t('splash.start'), '#', :class => 'unblock-splash button splash-start'
-      %p
-        = link_to t('splash.what_is_wheelmap'), 'http://blog.wheelmap.org/', :class => 'whatis'
-  - else
-    #splash{:style => 'display:none'}
+  %p
+    = link_to t('splash.start'), '#', :class => 'unblock-splash button splash-start'
+  %p
+    = link_to t('splash.what_is_wheelmap'), 'http://blog.wheelmap.org/', :class => 'whatis'
