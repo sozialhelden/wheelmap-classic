@@ -26,7 +26,7 @@ Languages = {
 }
 
 Amenities = {
-  :public_transfer => %w{station bicycle_rental bus_station bus_stop ferry ferry_terminal halt platform subway_entrance terminal tram_stop parking_aisle fuel parking car_rental car_sharing cable_car chair_lift},
+  :public_transfer => %w{station bicycle_rental bus_station bus_stop ferry ferry_terminal halt platform subway_entrance terminal tram_stop parking_aisle fuel parking car_rental car_sharing boatyard cable_car chair_lift},
   :food => %w{cafe bar pub restaurant fast_food drinking_water},
   :leisure => %w{cinema theatre zoo nightclub gallery arena},
   :money_post => %w{post_office atm bank bureau_de_change},
@@ -58,6 +58,7 @@ Tags = {
   :bicycle => :shop,
   :bicycle_rental => :amenity,
   :biergarten => :amenity,
+  :boatyard => :waterway,
   :books => :shop,
   :brothel => :amenity,
   :bureau_de_change => :amenity,
