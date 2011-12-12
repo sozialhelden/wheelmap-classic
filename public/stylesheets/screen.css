@@ -455,7 +455,7 @@ a.button:active {
 }
 /* line 28, ../../app/stylesheets/basics/_header.sass */
 .webkit #header .links select {
-  background: transparent url("/images/icons/select-marker.png") 98% 0 no-repeat;
+  background: transparent url("/images/select-marker.png") 98% 0 no-repeat;
   padding-right: 20px;
   -webkit-appearance: none;
 }
