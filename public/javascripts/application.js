@@ -534,6 +534,12 @@ function removeFilter(attribute, value) {
   }
 }
 
+function getURLParameter(name) {
+  return decodeURI(
+    (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [,null])[1]
+  ).replace(/\+/g, " ");
+}
+
 $(function () {
   $('#feedback_link').click(function () {
     UserVoice.Popin.show(uservoiceOptions);
@@ -588,6 +594,10 @@ $(function () {
     }
   });
 
+  if (getURLParameter('q') != 'null' && $('#search').val() == '') {
+      $('#search').val(getURLParameter('q'));
+  }
+
   $(window).resize(function () {
     var width = $(window).width() - 750;
     if (width > 100) {
@@ -609,7 +619,6 @@ function initGeoData() {
     lon = geoip_longitude();
   }
 }
-
 
 function $w(string) {
   return string.split(' ');
