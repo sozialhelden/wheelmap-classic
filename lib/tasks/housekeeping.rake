@@ -7,9 +7,7 @@ namespace :housekeeping do
 
     latest_date = 10.days.ago
     youngest_session = Session.first(:conditions => ['updated_at < ?', latest_date], :order => 'updated_at DESC')
-    Session.find_each do |session|
-      session.delete if session.id < youngest_session.id
-    end
+    Session.delete_all(['id <= ?', youngest_session.id])
   end
 
   desc 'Determine node type for nodes without node type'
