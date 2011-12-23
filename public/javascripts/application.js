@@ -23,7 +23,7 @@ var draggable;
 OpenLayers.IMAGE_RELOAD_ATTEMPTS = 3;
 // OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
 // OpenLayers.ImgPath = "http://wheelmap.local/img/";
-OpenLayers.ImgPath = 'http://asset0.' + location.host + '/img/';
+OpenLayers.ImgPath = 'http://asset.' + location.host + '/img/';
 
 function runEffect() {
   setTimeout(function () {
