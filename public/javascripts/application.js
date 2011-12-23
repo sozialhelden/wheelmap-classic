@@ -108,7 +108,7 @@ function drawmap(controls, element) {
     numZoomLevels: 19,
     maxResolution: 156543.0399,
     units: 'm',
-    theme: OpenLayers._getScriptLocation() + '/theme/default/style.css'
+    theme: 'http://asset1.' + location.host + '/theme/default/style.css'
   });
 
   mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", { displayClass: 'olMap', opacity: 1.0, transitionEffect: 'resize', numZoomLevels: 19, buffer: 2});
@@ -191,8 +191,8 @@ function lonLatToMercator(ll) {
 }
 
 function placesStyle() {
-  return new OpenLayers.StyleMap({"default":
-    new OpenLayers.Style({
+  return new OpenLayers.StyleMap({
+    "default": new OpenLayers.Style({
       graphicTitle: "${all}",
       graphicName: "circle",
       label: "${label}",

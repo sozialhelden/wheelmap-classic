@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def set_abingo_identity
-    if request.user_agent =~ /\b(Baidu|Gigabot|Googlebot|libwww-perl|lwp-trivial|msnbot|SiteUptime|Slurp|WordPress|ZIBB|ZyBorg)\b/i
+    if request.user_agent =~ /\b(Baidu|Gigabot|Googlebot|libwww-perl|lwp-trivial|msnbot|SiteUptime|Slurp|WordPress|Yodao|ZIBB|ZyBorg)\b/i
         Abingo.identity = "robot"
     elsif (user_signed_in? rescue false)
       Abingo.identity = current_user.id
