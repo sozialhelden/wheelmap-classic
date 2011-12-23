@@ -23,7 +23,7 @@ var draggable;
 OpenLayers.IMAGE_RELOAD_ATTEMPTS = 3;
 // OpenLayers.ImgPath = "http://js.mapbox.com/theme/dark/";
 // OpenLayers.ImgPath = "http://wheelmap.local/img/";
-OpenLayers.ImgPath = 'http://asset.' + location.host + '/img/';
+OpenLayers.ImgPath = 'http://asset0.' + location.host + '/img/';
 
 function runEffect() {
   setTimeout(function () {
@@ -108,7 +108,7 @@ function drawmap(controls, element) {
     numZoomLevels: 19,
     maxResolution: 156543.0399,
     units: 'm',
-    theme: 'http://asset.' + location.host + '/theme/default/style.css'
+    theme: 'http://asset0.' + location.host + '/theme/default/style.css'
   });
 
   mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", { displayClass: 'olMap', opacity: 1.0, transitionEffect: 'resize', numZoomLevels: 19, buffer: 2});
