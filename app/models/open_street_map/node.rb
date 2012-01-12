@@ -168,7 +168,7 @@ class OpenStreetMap
         xml.node(:id => id, :lat => lat, :lon => lon, :version => version, :changeset => changeset, :user => user, :uid => uid, :visible => visible, :timestamp => timestamp) do
           tags.each do |key,value|
             xml.tag(:k => key, :v => value) unless value.blank?
-          end
+          end unless tags.empty?
         end
       end
     end
