@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
       else
         respond_to do |format|
           format.html{
-            flash[:error] = I18n.t('nodes.flash.authorize_wheelmap')
+            flash[:alert] = I18n.t('nodes.flash.authorize_wheelmap')
             redirect_to edit_user_path(current_user)
           }
           format.json{render_exception(Exception.new(I18n.t('nodes.flash.authorize_wheelmap')), 403)}
