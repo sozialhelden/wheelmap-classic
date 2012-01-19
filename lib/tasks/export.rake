@@ -31,4 +31,14 @@ namespace :export do
     puts csv_string
   end
 
+  desc 'Export nodes from OSM XML file'
+  task :from_osm => :environment do
+    puts "Reading vom STDIN. Please pipe some data in or use infile parameter: bzcat planet.osm.bz2 | rake export:from_osm outfile=germany.csv"
+    infile  = ENV['infile']  || STDIN
+    outfile = ENV['outfile'] || 'wheelmap.csv'
+
+    p = CsvExporter.new(infile, outfile)
+    p.load()
+  end
+
 end
