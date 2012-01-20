@@ -100,6 +100,7 @@ CREATE TABLE `pois` (
   `updated_at` datetime DEFAULT NULL,
   `node_type_id` int(11) DEFAULT NULL,
   `region_id` int(11) DEFAULT NULL,
+  `type` varchar(255) DEFAULT 'Node',
   UNIQUE KEY `index_pois_on_osm_id` (`osm_id`),
   SPATIAL KEY `index_pois_on_geom` (`geom`),
   KEY `index_pois_on_status` (`status`),
@@ -127,7 +128,7 @@ CREATE TABLE `regions` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `schema_migrations` (
   `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -143,7 +144,7 @@ CREATE TABLE `sessions` (
   PRIMARY KEY (`id`),
   KEY `index_sessions_on_session_id` (`session_id`),
   KEY `index_sessions_on_updated_at` (`updated_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=1766 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1769 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `slugs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -271,3 +272,7 @@ INSERT INTO schema_migrations (version) VALUES ('20111101122153');
 INSERT INTO schema_migrations (version) VALUES ('20111115120452');
 
 INSERT INTO schema_migrations (version) VALUES ('20111201194619');
+
+INSERT INTO schema_migrations (version) VALUES ('20120119150643');
+
+INSERT INTO schema_migrations (version) VALUES ('20120120143510');
