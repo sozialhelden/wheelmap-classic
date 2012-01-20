@@ -125,7 +125,7 @@ GEM
     geoip (1.1.1)
     gherkin (2.6.2)
       json (>= 1.4.6)
-    haml (3.0.25)
+    haml (3.1.4)
     has_scope (0.5.1)
     highline (1.6.9)
     hoe (2.12.3)
@@ -222,6 +222,7 @@ GEM
     ruport (1.6.3)
       fastercsv
       pdf-writer (= 1.1.8)
+    sass (3.1.12)
     selenium-webdriver (2.10.0)
       childprocess (>= 0.2.1)
       ffi (= 1.0.9)
@@ -280,7 +281,7 @@ DEPENDENCIES
   formtastic (= 1.2.4)
   friendly_id
   geoip
-  haml (~> 3.0.25)
+  haml
   has_scope
   hoptoad_notifier
   httparty
@@ -302,6 +303,7 @@ DEPENDENCIES
   rspec
   rspec-rails (= 2.8)
   ruport
+  sass
   spatial_adapter
   tolk!
   unicorn
