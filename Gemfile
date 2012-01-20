@@ -14,11 +14,11 @@ group :default do
   gem 'delayed_job'
   gem 'libxml-ruby', '~> 2.2.1'
   gem 'crewait', :path => "#{File.expand_path(__FILE__)}/../vendor/gems/crewait-0.1.6"
-  gem 'hoptoad_notifier', "~> 2.3"
+  gem 'hoptoad_notifier'
   gem 'whenever', :require => false
   gem "tolk", :git => "git://github.com/ZenCocoon/tolk.git", :branch => "rails3"
   gem "routing-filter"
-  gem 'newrelic_rpm', '~>3.0.1'
+  gem 'newrelic_rpm'
   gem 'acts_as_api', '0.3.10'
   gem 'inherited_resources', '1.2.2'
   gem 'has_scope'
@@ -38,7 +38,7 @@ group :default do
 end
 
 group :test, :development do
-  gem 'rspec-rails', "~>2.1"
+  gem 'rspec-rails', "2.8"
 end
 
 group :test do
