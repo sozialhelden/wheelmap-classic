@@ -17,6 +17,7 @@ class PlanetReader
     @parser.callbacks = self
     Crewait.start_waiting
     @to_be_deleted = []
+    @combination = NodeType.combination
   end
 
   def values
@@ -64,12 +65,32 @@ class PlanetReader
         v = v.gsub(/&#38;|&amp;/, '&')
       end
       @poi[:tags][k] = v if @poi
-      @poi[:node_type_id] ||= NodeType.combination[k.to_s][v.to_s] rescue nil
+      @poi[:node_type_id] ||= @combination[k.to_s][v.to_s] rescue nil
     when 'node'
-      @poi = {:osm_id => attributes['id'],
-              :geom => Point.from_x_y(attributes['lon'], attributes['lat']),
-              :version => attributes['version'],
-              :tags => {}}
+      #puts attributes.inspect
+      @poi = nil
+      id = attributes['id'].to_i
+      if (id > 0) then
+        @poi = {:osm_id => id,
+                :geom => Point.from_x_y(attributes['lon'], attributes['lat']),
+                :type => 'Node',
+                :version => attributes['version'],
+                :tags => {}}
+      elsif (id < 0 and id > -10000000) then
+        # Ignore, its a node from a relation.
+        #  update relation id.abs in osm
+        # puts "Ignore: it's from a relation: #{id}"
+      else
+        # It's a node from a way
+        # update way "-id-10000000" in osm
+        puts "Process: it's from a way: #{(id + 10000000).abs}"
+        @poi = {:osm_id => (id + 10000000).abs,
+                :geom => Point.from_x_y(attributes['lon'], attributes['lat']),
+                :type => 'Way',
+                :version => attributes['version'],
+                :tags => {}}
+      end
+
     when 'modify'
       @changemode = element if @osmchange
     when 'delete'
@@ -97,13 +118,15 @@ class PlanetReader
       Crewait.go!
       flush_pois
     when 'node'
-      process_poi
-      @processed += 1
+      if @poi
+        process_poi
+        @processed += 1
 
-      if (@processed % 10000 == 0)
-        Crewait.go!
-        print("\rprocessed #{@processed/10000}0k nodes")
-        STDOUT.flush
+        if (@processed % 10000 == 0)
+          Crewait.go!
+          print("\rprocessed #{@processed/10000}0k nodes")
+          STDOUT.flush
+        end
       end
       @poi = nil
 
