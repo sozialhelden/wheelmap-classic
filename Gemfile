@@ -12,14 +12,14 @@ group :default do
   gem 'geoip'
   gem 'formtastic', '1.2.4'
   gem 'delayed_job'
-  gem 'libxml-ruby', '~> 2.2.1'
+  gem 'libxml-ruby'
   gem 'crewait', :path => "#{File.expand_path(__FILE__)}/../vendor/gems/crewait-0.1.6"
   gem 'hoptoad_notifier'
   gem 'whenever', :require => false
   gem "tolk", :git => "git://github.com/ZenCocoon/tolk.git", :branch => "rails3"
   gem "routing-filter"
   gem 'newrelic_rpm'
-  gem 'acts_as_api', '0.3.10'
+  gem 'acts_as_api'
   gem 'inherited_resources', '1.2.2'
   gem 'has_scope'
 #  gem 'mapfish'
