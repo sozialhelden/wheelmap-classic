@@ -17,7 +17,6 @@ group :default do
   gem 'crewait', :path => "#{File.expand_path(__FILE__)}/../vendor/gems/crewait-0.1.6"
   gem 'hoptoad_notifier'
   gem 'whenever', :require => false
-  gem "tolk", :git => "git://github.com/ZenCocoon/tolk.git", :branch => "rails3"
   gem "routing-filter"
   gem 'newrelic_rpm'
   gem 'acts_as_api'
@@ -36,6 +35,7 @@ group :default do
   gem 'rgeo'
   gem 'spatial_adapter'
   gem 'friendly_id'
+  gem 'will_paginate'
 end
 
 group :test, :development do
