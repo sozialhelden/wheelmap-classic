@@ -55,7 +55,7 @@ def get_new_replication_file
 end
 
 def merge_replication_files
-  system "#{OSMOSIS_BIN} --read-xml-change-0.6 #{MERGED_FILE} --tf reject-ways --tf reject-relations --sort-change-0.6 --read-xml-change-0.6 #{CHANGE_FILE} --sort-change-0.6 --merge-change-0.6 --wxc #{MERGED_FILE}.new"
+  system "#{OSMOSIS_BIN} --read-xml-change-0.6 #{MERGED_FILE} --tf reject-ways --tf reject-relations --tf accept-nodes natural=* shop=* railway=* office=* aerialway=* waterway=* leisure=* historic=* highway=* tourism=* amenity=* aeroway=* --sort-change-0.6 --read-xml-change-0.6 #{CHANGE_FILE} --sort-change-0.6 --merge-change-0.6 --wxc #{MERGED_FILE}.new"
   if File.exists? "#{MERGED_FILE}.new"
     FileUtils.mv "#{MERGED_FILE}.new", MERGED_FILE, :verbose => true
   end
