@@ -252,6 +252,7 @@ class Poi < ActiveRecord::Base
                          'address'    => address || '',
                          'wheelchair' => wheelchair,
                          'id'         => osm_id,
+                         'class'      => self.class.name.downcase,
                          'type'       => node_type.try(:identifier) || '',
                          'category'   => category.try(:identifier) || '',
                        }

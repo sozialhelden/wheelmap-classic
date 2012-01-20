@@ -1,0 +1,2 @@
+class Way < Poi
+end
