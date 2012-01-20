@@ -34,7 +34,7 @@ group :default do
   gem 'unicorn'
   gem 'rgeo'
   gem 'spatial_adapter'
-  gem 'friendly_id'
+  gem 'friendly_id', '~>3.3.1' # upgrade to 4.x takes more effort.
   gem 'will_paginate'
 end
 
