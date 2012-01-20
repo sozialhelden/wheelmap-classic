@@ -127,7 +127,7 @@ GEM
       json (>= 1.4.6)
     haml (3.0.25)
     has_scope (0.5.1)
-    highline (1.6.5)
+    highline (1.6.9)
     hoe (2.12.3)
       rake (~> 0.8)
     hoptoad_notifier (2.4.11)
