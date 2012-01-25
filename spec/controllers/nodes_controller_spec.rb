@@ -25,7 +25,7 @@ describe NodesController do
   describe "action show" do
 
     before(:each) do
-     FakeWeb.allow_net_connect = false
+     WebMock.disable_net_connect!
      @full_url = "#{@base_url}/node/16581933"
     end
 
@@ -50,7 +50,7 @@ describe NodesController do
      @another_user.should be_app_authorized
      sign_in @another_user
 
-     FakeWeb.allow_net_connect = false
+     WebMock.disable_net_connect!
      @full_url = "#{@base_url}/node/16581933"
     end
 
@@ -96,7 +96,7 @@ describe NodesController do
 
   describe "action: update" do
     before(:each) do
-      FakeWeb.allow_net_connect = false
+      WebMock.disable_net_connect!
       @full_url = "#{@base_url}/node/84644746"
     end
 
@@ -108,7 +108,7 @@ describe NodesController do
       end
 
       it "should create UpdateJob for given node" do
-        FakeWeb.register_uri(:get, @full_url, :body => "#{Rails.root}/spec/fixtures/node.xml", :content_type => 'text/xml')
+        stub_request(:get, @full_url).to_return(:status => 200, :body => "#{Rails.root}/spec/fixtures/node.xml", :headers => { 'Content-Type' => 'text/xml'})
          lambda{
             put(:update, :id => 84644746, :node => {:wheelchair => 'yes', :name => 'A nice place', :type => 'cafe'})
           }.should change(UpdateJob, :count).by(1)
@@ -116,7 +116,7 @@ describe NodesController do
       end
 
       it "should have correct values for UpdateJob" do
-        FakeWeb.register_uri(:get, @full_url, :body => "#{Rails.root}/spec/fixtures/node.xml", :content_type => 'text/xml')
+        stub_request(:get, @full_url).to_return(:status => 200, :body => "#{Rails.root}/spec/fixtures/node.xml", :headers => { 'Content-Type' => 'text/xml'})
         lambda{
           put(:update, :id => 84644746, :node => {:id => 84644746, :wheelchair => 'yes', :name => 'A nice place', :type => 'cafe'})
         }.should change(UpdateJob, :count).by(1)
@@ -137,7 +137,7 @@ describe NodesController do
 
     describe "anonymous" do
       it "should not create UpdateJob for given node" do
-        FakeWeb.register_uri(:get, @full_url, :body => "#{Rails.root}/spec/fixtures/node.xml", :content_type => 'text/xml')
+        stub_request(:get, @full_url).to_return(:status => 200, :body => "#{Rails.root}/spec/fixtures/node.xml", :headers => { 'Content-Type' => 'text/xml'})
          lambda{
             put(:update, :id => 84644746, :node => {:wheelchair => 'yes'})
             response.should be_redirect
