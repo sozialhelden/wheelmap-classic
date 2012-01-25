@@ -4,6 +4,12 @@ GIT
   specs:
     big_sitemap (0.8.3.3)
 
+GIT
+  remote: git@github.com:christoph-buente/redgreengrid.git
+  revision: 730825cbb3e5eb9d9f47b5c7339b56c11a3bcaaa
+  specs:
+    redgreengrid (0.3.1)
+
 PATH
   remote: vendor/gems/crewait-0.1.6
   specs:
@@ -191,7 +197,6 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
-    redgreengrid (0.3.2)
     responders (0.6.4)
     rgeo (0.3.2)
     routing-filter (0.2.4)
@@ -288,7 +293,7 @@ DEPENDENCIES
   pickle
   rails (= 3.0.11)
   rake
-  redgreengrid
+  redgreengrid!
   rgeo
   routing-filter
   rspec

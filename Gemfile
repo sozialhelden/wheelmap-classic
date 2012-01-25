@@ -7,7 +7,7 @@ group :default do
   gem 'httparty'
   gem 'devise'
   gem 'compass', '0.10.6'
-  gem 'redgreengrid'
+  gem 'redgreengrid', :git => 'git@github.com:christoph-buente/redgreengrid.git'
   gem 'haml'
   gem 'sass'
   gem 'geoip'
