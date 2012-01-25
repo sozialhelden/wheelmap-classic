@@ -156,8 +156,8 @@ describe Api::NodesController do
       @user.save!
       lambda {
         put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
+        response.status.should eql 202
       }.should change(UpdateJob, :count).by(1)
-      response.status.should eql 202
     end
   end
 
