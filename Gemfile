@@ -44,7 +44,6 @@ group :test, :development do
 end
 
 group :test do
-  gem 'fakeweb'
   gem 'webmock'
   gem 'factory_girl_rails'
   gem "capybara"  # on mac, you need sudo port install libffi
