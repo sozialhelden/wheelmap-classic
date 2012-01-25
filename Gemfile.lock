@@ -17,6 +17,7 @@ GEM
       Platform (>= 0.4.0)
       open4
     Platform (0.4.0)
+    ZenTest (4.6.2)
     abstract (1.0.0)
     actionmailer (3.0.11)
       actionpack (= 3.0.11)
@@ -50,6 +51,8 @@ GEM
       rack (>= 1.1.0)
     addressable (2.2.6)
     arel (2.0.10)
+    autotest (4.4.6)
+      ZenTest (>= 4.4.1)
     babosa (0.3.6)
     bcrypt-ruby (3.0.1)
     builder (2.1.2)
@@ -144,7 +147,7 @@ GEM
       treetop (~> 1.4.8)
     memcache-client (1.8.5)
     mime-types (1.17.2)
-    multi_json (1.0.3)
+    multi_json (1.0.4)
     multi_xml (0.4.1)
     mysql2 (0.2.13)
     net-scp (1.0.4)
@@ -253,6 +256,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_api
+  autotest
   big_sitemap!
   capistrano
   capistrano-ext
