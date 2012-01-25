@@ -236,7 +236,7 @@ GEM
       raindrops (~> 0.6)
     warden (1.1.0)
       rack (>= 1.0)
-    webmock (1.7.7)
+    webmock (1.7.10)
       addressable (~> 2.2, > 2.2.5)
       crack (>= 0.1.7)
     whenever (0.7.2)
