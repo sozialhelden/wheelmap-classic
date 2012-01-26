@@ -30,6 +30,11 @@ de:
           email: E-Mail-Adresse
           password: Passwort
           remember_me: "Angemeldet bleiben"
+      template:
+        body: "Bitte überprüfen Sie die folgenden Felder:"
+        header:
+          one: "Konnte dieses %{model}-Objekt nicht speichern, da Fehler auftrat."
+          other: "Konnte dieses %{model}-Objekt nicht speichern, da %{count} Fehler auftraten."
   application:
     require_no_user:
       notice: "Du bist doch schon eingeloggt …"
@@ -495,7 +500,6 @@ de:
         lawyer: Anwalt
         place_of_worship: "Religiöser Ort"
         toilets: "Öffentliche Toilette"
-        veterinary: Tierarzt
       money_post:
         atm: Geldautomat
         bank: Bank

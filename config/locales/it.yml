@@ -430,6 +430,11 @@ it:
         embassy: Ambasciata
         public_building: "Edificio pubblico"
         townhall: Municipio
+      health:
+        doctors: Medici
+        hospital: Ospedale
+        pharmacy: Farmacia
+        veterinary: "Ambulatorio Veterinario"
       leisure:
         arena: Arena
         cinema: Cinema
@@ -439,12 +444,8 @@ it:
         theatre: Teatro
         zoo: Zoo
       misc:
-        doctors: Medici
-        hospital: Ospedale
-        pharmacy: Farmacia
         place_of_worship: "Luogo di culto"
         toilets: "Bagno pubblico"
-        veterinary: "Ambulatorio Veterinario"
       money_post:
         atm: Bancomat
         bank: Banco

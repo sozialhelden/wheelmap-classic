@@ -429,6 +429,11 @@ is:
         embassy: Sendiráð
         public_building: "Opinber bygging"
         townhall: Ráðhús
+      health:
+        doctors: Læknir
+        hospital: Spítali
+        pharmacy: Apótek
+        veterinary: Dýralæknir
       leisure:
         arena: Svæði
         cinema: Bíóhús
@@ -438,12 +443,8 @@ is:
         theatre: Leikhús
         zoo: Dýragarður
       misc:
-        doctors: Læknir
-        hospital: Spítali
-        pharmacy: Apótek
         place_of_worship: Bænahús
         toilets: Klósett
-        veterinary: Dýralæknir
       money_post:
         atm: Hraðbanki
         bank: Banki
@@ -584,3 +585,5 @@ is:
       limited_accessible: "Þröskuldurinn á innganginum er ekki hærri en 7 cm; mikilvægustu staðirnir aðgengilegir fyrir hjólastólanotendur"
       not_accessible: "Þröskuldurinn á innganginum er hærri en 7 cm; eða stigi við inngang; mikilvægustu staðirnir eru ekki aðgengilegir fyrir hjólastólanotendur"
       unknown_accessible: "Hjólastólaaðgengi ekki vitað"
+  will_paginate:
+    page_gap: "&hellip;"

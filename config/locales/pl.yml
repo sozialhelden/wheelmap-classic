@@ -358,9 +358,7 @@ pl:
       notice: "Twoje konto w serwisie wheelmap jest już połączone z kontem w serwisie OpenStreetMap użytkownika %{user}."
   or: lub
   place:
-    one: |-
-
-        %{count} miejsce
+    one: "%{count} miejsce"
     other: "%{count} miejsc(a)"
   poi:
     category:

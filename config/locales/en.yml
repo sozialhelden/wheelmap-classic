@@ -52,6 +52,7 @@ en:
       confirmed: "Your account was successfully confirmed. You are now signed in."
       link: "Didn't receive confirmation instructions?"
       send_instructions: "You will receive an email with instructions how to confirm your account in a few minutes."
+      send_paranoid_instructions: "If your account exists, you will receive an email with instructions how to confirm your account in a few minutes."
     destroy:
       confirm: "Are you sure?"
       headline: "Delete Account"
@@ -107,7 +108,9 @@ en:
     passwords:
       link: "Forgot password?"
       send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes"
-      updated: "Your password was changed successfully. You are now logged in."
+      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to reset your password in a few minutes"
+      updated: "Your password was changed successfully, you are now logged in"
+      updated_not_active: "Your password was changed successfully"
     registrations:
       destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
       inactive_signed_up: "You have signed up successfully, but we could not log you in. Reason: \"%{reason}\""
@@ -177,7 +180,7 @@ en:
       less_than: "must be less than %{count}"
       less_than_or_equal_to: "must be lower or equal than %{count}"
       not_a_number: "is not a number"
-      not_an_integer: must be an integer
+      not_an_integer: "must be an integer"
       not_found: "was not found"
       not_locked: "was not locked"
       not_saved:
@@ -202,7 +205,6 @@ en:
         notice: "%{resource_name} was successfully deleted"
       update:
         notice: "%{resource_name} was successfully updated"
-
   form:
     show_fully_accessible_places: "Wheelchair accessible"
     show_limited_accessible_places: "partly wheelchair accessible"
@@ -339,6 +341,7 @@ en:
       link:
         large_map: "&laquo; Cancel"
     errors:
+      default: "Oops somethin went wrong. We have been informed about this issue"
       not_authorized: "Sorry, authentication failed"
       not_available: "Sorry, this page is temporarily not available."
       not_existent: "Sorry, this place is not available anymore."
@@ -386,21 +389,21 @@ en:
       strip_insignificant_zeros: 0
     human:
       decimal_units:
-        format: ! '%n %u'
+        format: "%n %u"
         units:
           billion: Billion
           million: Million
           quadrillion: Quadrillion
           thousand: Thousand
           trillion: Trillion
-          unit: ''
+          unit: ~
       format:
-        delimiter: ''
+        delimiter: ~
         precision: 3
-        significant: true
-        strip_insignificant_zeros: true
+        significant: "true"
+        strip_insignificant_zeros: "true"
       storage_units:
-        format: ! '%n %u'
+        format: "%n %u"
         units:
           byte:
             one: Byte
@@ -665,12 +668,12 @@ en:
       multi_page: "Displaying %{model} %{from} - %{to} of %{count} in total"
       multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"
       single_page:
-        one:   "Displaying 1 %{model}"
+        one: "Displaying 1 %{model}"
         other: "Displaying all %{count} %{model}"
-        zero:  "No %{model} found"
+        zero: "No %{model} found"
       single_page_html:
-        one:   "Displaying <b>1</b> %{model}"
+        one: "Displaying <b>1</b> %{model}"
         other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
-        zero:  "No %{model} found"
+        zero: "No %{model} found"
     page_gap: "&hellip;"
     previous_label: "&#8592; Previous"

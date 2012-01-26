@@ -396,6 +396,11 @@ el:
         embassy: Πρεσβεία
         public_building: "Δημόσια κτήρια"
         townhall: Δημαρχείο
+      health:
+        doctors: Γιατροί
+        hospital: Νοσοκομείο
+        pharmacy: Φαρμακείο
+        veterinary: Κτηνίατρος
       leisure:
         arena: Αρένα
         cinema: Κινηματογράφος
@@ -405,12 +410,8 @@ el:
         theatre: Θέατρο
         zoo: "Ζωολογικός κήπος"
       misc:
-        doctors: Γιατροί
-        hospital: Νοσοκομείο
-        pharmacy: Φαρμακείο
         place_of_worship: "Τόπος λατρείας"
         toilets: Αποχωρητήριο
-        veterinary: Κτηνίατρος
       money_post:
         atm: ΑΤΜ
         bank: Τράπεζα

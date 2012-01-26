@@ -419,6 +419,11 @@ tr:
         embassy: Elçilik
         public_building: "Resmi Bina"
         townhall: "Belediye Binası"
+      health:
+        doctors: Doktor
+        hospital: Hastane
+        pharmacy: Eczane
+        veterinary: Veteriner
       leisure:
         arena: Arena
         cinema: Sinema
@@ -428,12 +433,8 @@ tr:
         theatre: Tiyatro
         zoo: "Hayvanat Bahçesi"
       misc:
-        doctors: Doktor
-        hospital: Hastane
-        pharmacy: Eczane
         place_of_worship: "Ibadet Yeri"
         toilets: Tuvalet
-        veterinary: Veteriner
       money_post:
         atm: ATM/Paramatik
         bank: Banka

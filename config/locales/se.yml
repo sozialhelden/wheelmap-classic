@@ -440,6 +440,11 @@ se:
         embassy: Ambassad
         public_building: "Publik byggnad"
         townhall: Stadshus
+      health:
+        doctors: Doktor
+        hospital: Sjukhus
+        pharmacy: Apotek
+        veterinary: Veterinär
       leisure:
         arena: Arena
         cinema: Bio
@@ -449,12 +454,8 @@ se:
         theatre: Teater
         zoo: Zoo
       misc:
-        doctors: Doktor
-        hospital: Sjukhus
-        pharmacy: Apotek
         place_of_worship: "Religiös plats"
         toilets: Toalett
-        veterinary: Veterinär
       money_post:
         atm: Bankomat
         bank: Bank
