@@ -542,7 +542,7 @@ bg:
     array:
       last_word_connector: " и "
       sentence_connector: и
-      skip_last_comma: "true"
+      skip_last_comma: true
       two_words_connector: " и "
       words_connector: ", "
     select:
