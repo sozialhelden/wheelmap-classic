@@ -32,6 +32,9 @@ nl:
           remember_me: "Ingeloggd blijven"
       template:
         body: "Er zijn problemen met de volgende velden:"
+        header:
+          one: "%{model} niet opgeslagen: 1 fout gevonden"
+          other: "%{model} niet opgeslagen: %{count} fouten gevonden"
   application:
     require_no_user:
       notice: "Je bent al ingeloggd..."
@@ -44,139 +47,6 @@ nl:
     root: wheelmap
   common:
     close: sluiten
-  date:
-    abbr_day_names:
-      ? "0"
-      : Zon
-      ? "1"
-      : Maa
-      ? "2"
-      : Din
-      ? "3"
-      : Woe
-      ? "4"
-      : Don
-      ? "5"
-      : Vri
-      ? "6"
-      : Zat
-    abbr_month_names:
-      ? "1"
-      : Jan
-      ? "10"
-      : Sep
-      ? "11"
-      : Oct
-      ? "12"
-      : Nov
-      ? "13"
-      : Dec
-      ? "2"
-      : Feb
-      ? "3"
-      : Maa
-      ? "4"
-      : Apr
-      ? "5"
-      : Mei
-      ? "6"
-      : Jun
-      ? "7"
-      : Jul
-      ? "9"
-      : Aug
-    day_names:
-      ? "0"
-      : Zondag
-      ? "1"
-      : Maandag
-      ? "2"
-      : Dinsdag
-      ? "3"
-      : Woensdag
-      ? "4"
-      : Donderdag
-      ? "5"
-      : Vrijdag
-      ? "6"
-      : Zaterdag
-    formats:
-      default: "%d-%m-%Y"
-    month_names:
-      ? "1"
-      : Januari
-      ? "10"
-      : September
-      ? "11"
-      : October
-      ? "12"
-      : November
-      ? "13"
-      : December
-      ? "2"
-      : Febuari
-      ? "3"
-      : Maart
-      ? "4"
-      : April
-      ? "5"
-      : Mei
-      ? "6"
-      : Juni
-      ? "7"
-      : Juli
-      ? "9"
-      : Augustus
-    order:
-      ? "0"
-      : jaar
-      ? "1"
-      : maand
-      ? "2"
-      : dag
-  datetime:
-    distance_in_words:
-      about_x_hours:
-        one: "ongeveer 1 uur"
-        other: "ongeveer %{count} uren"
-      about_x_months:
-        one: "ongeveer 1 maand"
-        other: "ongeveer %{count} maanden"
-      about_x_years:
-        one: "ongeveer 1 jaar"
-        other: "ongeveer %{count} jaren"
-      almost_x_years:
-        one: "bijna 1 jaar"
-        other: "bijna %{count} jaren"
-      half_a_minute: "half minuut"
-      less_than_x_minutes:
-        one: "minder dan een minuut"
-        other: "minder dan %{count} minuten"
-      less_than_x_seconds:
-        one: "minder dan 1 seconde"
-        other: "minder dan %{count} seconden"
-      over_x_years:
-        one: "voor 1 jaar"
-        other: "voor %{count} jaren"
-      x_days:
-        one: "1 dag"
-        other: "%{count} dagen"
-      x_minutes:
-        one: "1 minuut"
-        other: "%{count} minuten"
-      x_months:
-        one: "1 maand"
-        other: "%{count} maanden"
-      x_seconds:
-        one: "1 seconde"
-        other: "%{count} seconden"
-    prompts:
-      day: Dag
-      hour: uur
-      minute: minuut
-      month: maand
-      second: Seconden
-      year: Jaar
   devise:
     confirmations:
       confirmed: "Jouw account is succesvol bevestigd. Je bent nu aangemeld."
@@ -207,7 +77,7 @@ nl:
       unconfirmed: "Je moet jouw account bevestigen voordat je doorgaat."
     mailer:
       confirmation_instructions:
-        landing_page: "Alsjeblief klik op de link wat wij naar jouw e-mail adres gestuurd hebben. Als je geen e-mail van ons hebt ontvangen dan kijk of die niet in de spam map is. Als je de e-mail niet kan vinden kan je de aanvraag nog een keer sturen."
+        landing_page: "Alsjeblieft klik op de link wat wij naar jouw e-mail adres gestuurd hebben. Als je geen e-mail van ons hebt ontvangen dan kijk of die niet in de spam map is. Als je de e-mail niet kan vinden kan je de aanvraag nog een keer sturen."
         subject: "Een stap nog om jouw account te activeren"
       reset_password_instructions:
         subject: "Reset wachtwoord aanwijzing."
@@ -305,24 +175,26 @@ nl:
       inclusion: "niet geldig waard"
       invalid: "niet geldig"
       less_than: "moet minder zijn dan %{count}"
-      less_than_or_equal_to: "moet minder zijn dan %{count} of gelijk zijn met %{count}"
+      less_than_or_equal_to: "moet minder zijn dan of gelijk zijn met %{count}"
       not_a_number: "is geen numer"
       not_an_integer: "moet een gehele getal zijn"
       not_found: "niet gevonden"
       not_locked: "is niet geblokkeerd"
       odd: "moet oneven zijn"
+      taken: "werd al volbracht"
       too_long: "is te lang (niet meer dan %{count} letters)\n"
       too_short: "is te kort (niet minder dan %{count} letters)\n"
       wrong_length: "is de foute lengte (moet %{count} letters zijn)\n"
   form:
-    show_fully_accessible_places: "rolstoel toegangelijk"
-    show_limited_accessible_places: "deels rolstoel toegangelijk"
+    show_fully_accessible_places: "rolstoel toegankelijk"
+    show_limited_accessible_places: "deels rolstoel toegankelijk"
     show_places_without_status: "onbekende status"
-    show_unaccessible_places: "niet rolstoel toegangelijk"
+    show_unaccessible_places: "niet rolstoel toegankelijk"
   formtastic:
     hints:
       lat: "Beweeg de marker op de kaart in de correcte positie"
-      password: "(laat leeg als je niet veranderen wil)"
+      osm_username: "Nog geen lid op dit moment? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Maak nu een Openstreetmap account</a>\n"
+      password: "(laat dit leeg als je het niet wil veranderen )"
       phone: "Bijvoorbeeld: +49 30 123456-78"
       website: "Bijvoorbeeld: http://www.voorbeeld.com"
     labels:
@@ -343,9 +215,10 @@ nl:
       reset: Resetten
       save: Opslaan
       street: "Straat:"
+      type: "Invullen:"
       website: "Internetpagina:"
-      wheelchair: "Rolstoel toegangelijkheid?"
-      wheelchair_description: "Toegangelijkheid commentaar:"
+      wheelchair: "Rolstoel toegankelijkheid?"
+      wheelchair_description: "Toegankelijkheid commentaar:"
     titles:
       basic: "Basic data"
       optional: "Meer informatie <span class=\"addition\">(all fields are optional)</span>"
@@ -353,9 +226,9 @@ nl:
     form_validation_error: "Alsjeblieft let op de fouten in de onderstaande lijst"
   header:
     meta:
-      description: "Vind rolstoel toegangelijke plaatsen - wheelmap.org"
+      description: "Vind rolstoel toegankelijke plaatsen - wheelmap.org"
       homepage: "Startpagina / internetpagina"
-      keywords: "rolstoel toegangelijk plaatsen vinden, zoek markering"
+      keywords: "rolstoel toegankelijk plaatsen vinden, zoek markering"
       search: Zoeken
     navigation:
       blog: Blog
@@ -367,13 +240,14 @@ nl:
       login: Inloggen
       logout: Uitloggen
       newsletter: Nieuwsbrief
-      press: Duwen
+      press: Pers
       suggestions: Adviezen
       what_is_barrier_free: "Wat betekend \"wheelchair accessible\"?"
       what_is_wheelmap: "Wat is wheelmap?"
     searchbar:
       add_place: "Voeg een andere plaats toe"
       find: Vind
+      label: ~
       placeholder: "Bijvoorbeeld Sunset Boulevard L.A. of Brandenburg Gate Berlin"
       title_add_place: "Voeg nu een nieuwe plaats op deze positie toe!"
     tagline: "Wheelmap logo"
@@ -401,14 +275,14 @@ nl:
           create: "Voeg een nieuwe plaats toe"
       popup:
         form:
-          limited: "deels rolstoel toegangelijk"
+          limited: "deels rolstoel toegankelijk"
           ? "no"
           : "niet rolstoel toegangelijk"
           save: Actualiseren
           unknown: "onbekende status"
           ? "yes"
-          : "rolstoel toegangelijk"
-        help: "rolstoel toegangelijk? (Hulp)"
+          : "rolstoel toegankelijk"
+        help: "rolstoel toegankelijk? (Hulp)"
         more: meer...
   how?: Hoe?
   landing_pages:
@@ -418,18 +292,19 @@ nl:
           headline: "Beperkt rolstoel toegangelijk %{type} in %{city} (%{count})"
         ? "no"
         :
-          headline: "Alles niet-rolstoel toegangelijk %{type} in %{city} (%{count})"
+          headline: "Alles niet-rolstoel toegankelijk %{type} in %{city} (%{count})"
         unknown:
           headline: "All %{type} in %{city} met onbekende rolstoel status (%{count})"
         ? "yes"
         :
-          headline: "Compleet rolstoel toegangelijk %{type} in %{city} (%{count})"
+          headline: "Compleet rolstoel toegankelijk %{type} in %{city} (%{count})"
   layouts:
     application:
       banner:
         alt: "Een project van Sozialhelden.de"
   node:
     address:
+      city: "%{city} %{postcode}\n"
       street: "%{housenumber} %{street}\n"
     tags:
       phone: "Telefoon:"
@@ -451,28 +326,35 @@ nl:
       not_existent: "Excuus, de plaats is niet meer beschikbaar."
       not_found: "Excuus, pagina niet gevonden."
       param_missing: "Alsjeblieft voeg een zoek term toe"
+    flash:
+      authorize_wheelmap: "Je hebt een OpenStreetMap account nodig om de data te veranderen."
     new:
       header:
-        title: "Nieuwe plaats wheelmap.org"
+        title: "Nieuwe plaats | wheelmap.org"
       link:
         large_map: Annuleren
     show:
       header:
         title: "Plaats:  %{node} | wheelmap.org"
       link:
-        back: berug
+        back: terug
         claim: "Werk je hier?"
         edit_node: "Bewerk plaats"
         large_map: Verruimen
+        listing: "Alle vergelijkbare plaatsen '%{type}' in %{city}\n"
         report_bug: "Geef een probleem op"
+      show-in-osm: OpenStreetMap
     update:
       flash:
         not_successfull: "Oops, jouw input was of niet correct of niet compleet."
         successfull: "Dank je, de invoer werd succesvol opgeslagen en zal straks online staan."
+    update_wheelchair:
+      successfull: "De statuus voor \"%{name}\" werd verandert naar \"%{status} rolstoel toegankelijk\" en zal straks online op de site staan. "
   number:
     currency:
       format:
         delimiter: ","
+        format: "%u%n"
         precision: 2
         separator: "."
         significant: 0
@@ -493,14 +375,31 @@ nl:
           thousand: Duizend
           trillion: Triljoen
       format:
+        delimiter: ~
         precision: 1
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "Je moet je account met open street map verbinden, dan kan je plaatsen bij wheelmap.org toevoegen of veranderen. "
+    callback:
+      notice: "Jouw wheelmap account is nu verbonden met de OpenStreetMap account %{user}.\n"
   or: of
+  place:
+    one: "%{count} plaats"
+    other: "%{count} plaatsen"
   poi:
     category:
       accommodation: Accomodatie
       education: Educatie
       food: Voedsel
       government: Overheid
+      health: Gezondheid
       leisure: "Vrije tijd"
       misc: Overige
       money_post: "Bank & Post"
@@ -513,13 +412,17 @@ nl:
       accommodation:
         beach_resort: "Strand hotel"
         bed_and_breakfast: "Bed en ontbijt"
+        camp_site: Kampeerplaats
+        caravan_site: Kampeerplaats
         chalet: Berghut
         guest_house: Gasthuis
         hostel: Hostel
         hotel: Hotel
         motel: Motel
       education:
+        college: Hogeschool/universiteit
         kindergarten: Kleuterschool
+        library: bibliotheek
         museum: Museum
         school: School
         university: Universiteit
@@ -529,24 +432,47 @@ nl:
         cafe: "Café "
         drinking_water: Drinkwater
         fast_food: "Fast Food"
+        pub: Kroeg
         restaurant: Restaurant
       government:
+        courthouse: "Het paleis van justitie"
         embassy: Ambassade
+        police: Politie
+        public_building: "Openbaar gebouw"
         townhall: Stadshal
+      health:
+        doctors: Artsen
+        hearing_aids: "Audicien (gehoorapperaat winkel)"
+        hospital: Ziekenhuis
+        medical_supply: "Medische verzorging"
+        pharmacy: Apotheek
+        social_facility: "Sociale voorziening"
+        veterinary: Dierenarts
       leisure:
+        arena: Arena
+        brothel: Bordeel
         cinema: bioscoop
+        community_center: Wijkcentrum
         gallery: Galerij
+        nightclub: Nachtclub
+        playground: Speelplaats
         sauna: Sauna
+        stripclub: Stripclub
         theatre: Theater
         zoo: Dierentuin
       misc:
+        company: "Bedrijf (zetel)"
         doctors: Arts
         hospital: Ziekenhuis
+        lawyer: Advocaat
         place_of_worship: "Kerk, religieuze plaats"
         toilets: Toiletten
       money_post:
+        atm: Pinautomaat
         bank: Bank
+        bureau_de_change: Wisselkantor
         post_box: Brievenbus
+        post_office: Postkantoor
       public_transfer:
         aerodrome: Vliegveld
         bicycle_parking: "Fiets parkeerplaats"
@@ -554,44 +480,73 @@ nl:
         boatyard: Werft
         bus_station: Bushalte
         bus_stop: Bushalte
+        cable_car: Kabelbaan
         car_rental: "Auto verhuur"
         car_sharing: "Car sharing / Auto verhuren en delen"
         chair_lift: Stoeltjeslift
         ferry: Veerboot
         ferry_terminal: "Veerboot haven"
+        fuel: Tankstation
+        halt: Bushalte
+        light_rail: Sprinter
         parking: Parkeren
+        parking_aisle: Parkeerplaats
+        platform: Perron
         station: Metro
+        subway_entrance: "Metro ingang"
         terminal: "Vliegveld terminal"
+        tram_stop: Tramhalte
       shopping:
+        alcohol: Spiritualia
         bakery: Bakkerij
+        beverages: Dranken
         bicycle: Fietswinkel
         books: Boeken
+        butcher: Slager
+        car_repair: Autogarage
+        car_shop: "Auto winkel"
+        chemist: Apotheek
         clothes: Kleren
         computer: Computer
+        convenience: Commoditeit
+        department_store: Afdelingswinkel
         doityourself: "Doe het zelf"
         dry_cleaning: "Stomerij "
+        electronics: Elektronica
         florist: Bloemenbinder
         furniture: Meubels
         garden_centre: "Tuin center"
         hairdresser: Kapper
+        hardware: Hardware
         kiosk: Kiosk
         laundry: Wasserij
         mall: Winkelcentrum
         optician: Opticien
+        photo: Foto
+        second_hand: Tweedehands
         shoes: Schoenen
+        sports: Sport
+        stationery: Kantoorbenodigheden
         supermarket: Supermarkt
+        video: Videotheek
       sport:
         sports_centre: "Sport centrum"
+        stadium: Stadion
         swimming: Zwemmen
         swimming_pool: Zwembad
       tourism:
+        archaeological_site: "Archeologische kant "
         arts_centre: "Kunst huis"
         artwork: Kunstwerk
         attraction: Attractie
+        battlefield: Slagveld
         beach: Strand
+        beacon: Vuurtoren
         castle: kasteel
+        cave_entrance: "Holte ingang"
         information: "VVV Toeristen informatie"
         memorial: Monument
+        theme_park: Attractiepark
         tower: Toren
         viewpoint: Uitkijkpunt
       unknown:
@@ -603,6 +558,7 @@ nl:
           connected: "Status: verbonden"
           grant: "Nu verbinden"
           not_connected: "Status: Niet verbonden"
+          revoke: onderbroken
       headline: "Bewerk jouw profiel"
   search:
     index:
@@ -610,22 +566,30 @@ nl:
         for: "Zoek naar  \"%{q}\""
         not_found: "Geen plaats gevonden!"
   splash:
-    headline: "Iedereen kan roelstoel toegangelijke plaatsen toevoegen!"
+    countline: "%{count} plaatsen zijn al getekend."
+    headline: "Iedereen kan rolstoel toegankelijke plaatsen toevoegen!"
     start: Start
     step1: "Klik op een plaats die je kent"
     step2: "Markeer het en klik op opslaan."
-    step3: "Gelukt! Geen registratie nodig."
+    step3: "Gelukt! Registreren is niet nodig."
     what_is_wheelmap: "Wat is wheelmap?"
+  statistics: Statistieken
   support:
     array:
       last_word_connector: en
       sentence_connector: en
       skip_last_comma: true
       two_words_connector: en
+      words_connector: ", "
     select:
       prompt: "Alsjeblieft kies"
   time:
     am: ben
+    formats:
+      default: "%a %d %b %Y %H:%M:%S %Z"
+      long: "%d %B %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: "'s middags"
   user_sessions:
     create:
       activation:
@@ -642,12 +606,12 @@ nl:
       password: Wachtwoord
       remember_me: "Aangemeld blijven"
   wheelchairstatus:
-    limited: "deels rolstoel toegangelijk"
+    limited: "deels rolstoel toegankelijk"
     ? "no"
-    : "niet rolstoel toegangelijk"
+    : "niet rolstoel toegankelijk"
     unknown: "onbekende status"
     ? "yes"
-    : "rolstoel toegangelijk"
+    : "rolstoel toegankelijk"
   wheelmap:
     footer:
       a_project_of: "Een project van"
@@ -660,5 +624,10 @@ nl:
     logo:
       alt: "Wheelmap logo - vind rolstoel toegangelijke plaatsen"
       title: "Wheelmap - vind rolstoel toegangelijke plaatsen"
+    what_is:
+      fully_accessible: "<em>Yes:</em> Ingang drempelvrij, alle ruimtes drempelvrij, gehandicaptentoilet aanwezig  "
+      limited_accessible: "<em>Limited:</em> Ingang heeft een drempel (maximaal hoogte 7 cm), bijna alle kamers drempelvrij, toilet niet toegankelijk   "
+      not_accessible: "<em>No:</em> Ingang heeft hoge of meerdere treden, kamers zijn niet toegankelijk"
+      unknown_accessible: "<em>Unknown:</em> Hulp mee en markeer plaatsen!"
   will_paginate:
     previous_label: "&#8592; Volgende"

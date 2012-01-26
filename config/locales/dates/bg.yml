@@ -1,0 +1,82 @@
+---
+bg:
+  date:
+    abbr_day_names:
+      - нед
+      - пон
+      - вт
+      - ср
+      - чет
+      - пет
+      - съб
+    abbr_month_names:
+      - ~
+      - яну.
+      - фев.
+      - март
+      - апр.
+      - май
+      - юни
+      - юли
+      - авг.
+      - сеп.
+      - окт.
+      - ноем.
+      - дек.
+    day_names:
+      - неделя
+      - понеделник
+      - вторник
+      - сряда
+      - четвъртък
+      - петък
+      - събота
+    formats:
+      default: "%d.%m.%Y"
+      long: "%d %B %Y"
+      short: "%d %b"
+    month_names:
+      - ~
+      - януари
+      - февруари
+      - март
+      - април
+      - май
+      - юни
+      - юли
+      - август
+      - септември
+      - октомври
+      - ноември
+      - декември
+    order:
+      - "!ruby/symbol day"
+      - "!ruby/symbol month"
+      - "!ruby/symbol year"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "около 1 час"
+        other: "около %{count} часа"
+      about_x_months:
+        one: "около 1 месец"
+        other: "около %{count} месеца"
+      about_x_years:
+        one: "около 1 година"
+        other: "около %{count} години"
+      half_a_minute: "половин минута"
+      over_x_years:
+        one: "над 1 година"
+        other: "над %{count} години"
+      x_days:
+        one: "1 ден"
+        other: "%{count} дни"
+      x_minutes:
+        one: "1 минута"
+        other: "%{count} минути"
+      x_months:
+        one: "1 месец"
+        other: "%{count} месеца"
+      x_seconds:
+        one: "1 секунда"
+        other: "%{count} секунди"

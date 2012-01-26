@@ -1,0 +1,109 @@
+# Chinese (China) translations for Ruby on Rails
+# by tsechingho (http://github.com/tsechingho)
+
+zh:
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b%d日"
+      long: "%Y年%b%d日"
+    day_names:
+      - 星期日
+      - 星期一
+      - 星期二
+      - 星期三
+      - 星期四
+      - 星期五
+      - 星期六
+    abbr_day_names:
+      - 日
+      - 一
+      - 二
+      - 三
+      - 四
+      - 五
+      - 六
+    month_names:
+      - ~
+      - 一月
+      - 二月
+      - 三月
+      - 四月
+      - 五月
+      - 六月
+      - 七月
+      - 八月
+      - 九月
+      - 十月
+      - 十一月
+      - 十二月
+    abbr_month_names:
+      - ~
+      - 1月
+      - 2月
+      - 3月
+      - 4月
+      - 5月
+      - 6月
+      - 7月
+      - 8月
+      - 9月
+      - 10月
+      - 11月
+      - 12月
+    order:
+      - :year
+      - :month
+      - :day
+
+  time:
+    formats:
+      default: "%Y年%b%d日 %A %H:%M:%S %Z"
+      short: "%b%d日 %H:%M"
+      long: "%Y年%b%d日 %H:%M"
+    am: "上午"
+    pm: "下午"
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "半分钟"
+      less_than_x_seconds:
+        one: "不到一秒"
+        other: "不到 %{count} 秒"
+      x_seconds:
+        one: "一秒"
+        other: "%{count} 秒"
+      less_than_x_minutes:
+        one: "不到一分钟"
+        other: "不到 %{count} 分钟"
+      x_minutes:
+        one: "一分钟"
+        other: "%{count} 分钟"
+      about_x_hours:
+        one: "大约一小时"
+        other: "大约 %{count} 小时"
+      x_days:
+        one: "一天"
+        other: "%{count} 天"
+      about_x_months:
+        one: "大约一个月"
+        other: "大约 %{count} 个月"
+      x_months:
+        one: "一个月"
+        other: "%{count} 个月"
+      about_x_years:
+        one: "大约一年"
+        other: "大约 %{count} 年"
+      over_x_years:
+        one: "一年多"
+        other: "%{count} 年多"
+      almost_x_years:
+        one:   "接近一年"
+        other: "接近 %{count} 年"
+    prompts:
+      year:   "年"
+      month:  "月"
+      day:    "日"
+      hour:   "时"
+      minute: "分"
+      second: "秒"

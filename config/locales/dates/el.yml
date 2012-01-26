@@ -1,0 +1,98 @@
+---
+el:
+  date:
+    abbr_day_names:
+      - Κυρ
+      - Δευ
+      - Τρι
+      - Τετ
+      - Πεμ
+      - Παρ
+      - Σαβ
+    abbr_month_names:
+      - ~
+      - ΙΑΝ
+      - ΦΕΒ
+      - ΜΑΡ
+      - ΑΠΡ
+      - ΜΑΙ
+      - ΙΟΥΝ
+      - ΙΟΥΛ
+      - ΑΥΓ
+      - ΣΕΠ
+      - ΟΚΤ
+      - ΝΟΕ
+      - ΔΕΚ
+    day_names:
+      - Κυριακή
+      - Δευτέρα
+      - Τρίτη
+      - Τετάρτη
+      - Πέμπτη
+      - Παρασκευή
+      - Σάββατο
+    formats:
+      default: "%d/%m/%Y"
+      long: "%B %d, %Y"
+      short: "%b %d "
+    month_names:
+      - ~
+      - Ἰανουάριος
+      - Φεβρουάριος
+      - Μάρτιος
+      - Ἀπρίλιος
+      - Μάϊος
+      - Ἰούνιος
+      - Ἰούλιος
+      - Αὔγουστος
+      - Σεπτέμβριος
+      - Ὀκτώβριος
+      - Νοέμβριος
+      - Δεκέμβριος
+    order:
+      - !ruby/symbol day
+      - !ruby/symbol month
+      - !ruby/symbol year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "περίπου 1 ώρα"
+        other: "περίπου %{count} ώρες"
+      about_x_months:
+        one: "περίπου 1 μήνα"
+        other: "περίπου %{count} μήνες"
+      about_x_years:
+        one: "περίπου 1 χρόνο"
+        other: "περίπου %{count} χρόνια"
+      almost_x_years:
+        one: "σχεδόν 1 χρόνος"
+        other: "σχεδόν %{count} χρόνια"
+      half_a_minute: "μισό λεπτό"
+      less_than_x_minutes:
+        one: "λιγότερο από ένα λεπτό"
+        other: "λιγότερο από %{count} λεπτά"
+      less_than_x_seconds:
+        one: "λιγότερο από 1 δευτερόλεπτο"
+        other: "λιγότερο από %{count} δευτερόλεπτα"
+      over_x_years:
+        one: "πάνω από 1 χρόνο"
+        other: "πάνω από %{count} χρόνια"
+      x_days:
+        one: "1 ημέρα"
+        other: "%{count} ημέρες"
+      x_minutes:
+        one: "1 λεπτό"
+        other: "%{count} λεπτά"
+      x_months:
+        one: "1 μήνα"
+        other: "%{count} μήνες"
+      x_seconds:
+        one: "1 δευτερόλεπτο"
+        other: "%{count} δευτερόλεπτα"
+    prompts:
+      day: Ημέρα
+      hour: Ώρα
+      minute: Λεπτό
+      month: Μήνας
+      second: Δευτερόλεπτα
+      year: Έτος
