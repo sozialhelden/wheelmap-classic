@@ -396,7 +396,7 @@ de:
           quadrillion: Quadrillion
           thousand: Tausend
           trillion: Trillion
-          unit: ''
+          unit: ~
       format:
         delimiter: ~
         precision: 3
@@ -611,7 +611,7 @@ de:
     array:
       last_word_connector: ", und"
       sentence_connector: und
-      skip_last_comma: "true"
+      skip_last_comma: true
       two_words_connector: " und "
       words_connector: ","
     select:

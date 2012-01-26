@@ -19,7 +19,7 @@ def append(new_yaml, key, val)
   elsif tree.size == 0
     if val.numeric?
       new_yaml[current] = val.to_i
-    if val.boolean?
+    elsif val.boolean?
       new_yaml[current] = val.to_boolean
     elsif val.to_s == ''
       new_yaml[current] = nil

@@ -10,7 +10,7 @@ class String
   end
 
   def boolean?
-    !(self =~ (/(true|false|t|f|yes|no|y|n|1|0)$/i)).nil?
+    !(self =~ (/^(true|false|yes|no|1|0)$/i)).nil?
   end
 
   def to_boolean
