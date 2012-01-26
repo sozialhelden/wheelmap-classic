@@ -37,6 +37,8 @@ Wheelmap::Application.routes.draw do
     end
   end
 
+  resources :ways, :only => [:index, :show]
+
   resources :users, :as => 'profile', :path => '/profile'
   resources :users do
     collection do
