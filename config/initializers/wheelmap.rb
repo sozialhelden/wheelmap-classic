@@ -13,6 +13,7 @@ Languages = {
   'fr'    => 'Français',
   'is'    => 'Íslenska',
   'it'    => 'Italiano',
+  'ja'    => '日本',
   'jp'    => '日本',
   'ko'    => '한국어',
   'nl'    => 'Nederlands',
