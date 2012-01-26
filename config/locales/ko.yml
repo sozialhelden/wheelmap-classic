@@ -439,6 +439,11 @@ ko:
         embassy: 대사관
         public_building: 공공기관
         townhall: "읍면동 사무소"
+      health:
+        doctors: 의료진
+        hospital: 병원
+        pharmacy: 약국
+        veterinary: 동물병원
       leisure:
         arena: 경기장
         cinema: 영화관
@@ -448,12 +453,8 @@ ko:
         theatre: 극장
         zoo: 동물원
       misc:
-        doctors: 의료진
-        hospital: 병원
-        pharmacy: 약국
         place_of_worship: 기도원
         toilets: 화장실
-        veterinary: 동물병원
       money_post:
         atm: ATM기기
         bank: 은행

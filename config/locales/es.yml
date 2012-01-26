@@ -386,6 +386,11 @@ es:
         embassy: Embajada
         public_building: "Edificio público"
         townhall: Ayuntamiento
+      health:
+        doctors: Médicos
+        hospital: Hospital
+        pharmacy: Farmacia
+        veterinary: Veterinario
       leisure:
         arena: Estadio
         cinema: Cine
@@ -395,12 +400,8 @@ es:
         theatre: Teatro
         zoo: Zoo
       misc:
-        doctors: Médicos
-        hospital: Hospital
-        pharmacy: Farmacia
         place_of_worship: "Zona religiosa"
         toilets: Aseos
-        veterinary: Veterinario
       money_post:
         atm: ATM
         bank: Banco

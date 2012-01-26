@@ -383,6 +383,11 @@ pt:
         courthouse: Tribunal
         embassy: Embaixada
         public_building: "Edificio público"
+      health:
+        doctors: Doutores
+        hospital: Hospital
+        pharmacy: Farmácia
+        veterinary: Veterenário
       leisure:
         arena: Arena
         cinema: Cinema
@@ -392,12 +397,8 @@ pt:
         theatre: Teatro
         zoo: Zoológico
       misc:
-        doctors: Doutores
-        hospital: Hospital
-        pharmacy: Farmácia
         place_of_worship: "Lugar de oração "
         toilets: "Casa de banho"
-        veterinary: Veterenário
       money_post:
         atm: "Caixa Multibanco"
         bank: Banco
