@@ -83,7 +83,7 @@ class PlanetReader
       else
         # It's a node from a way
         # update way "-id-10000000" in osm
-        puts "Process: it's from a way: #{(id + 10000000).abs}"
+        # puts "Process: it's from a way: #{(id + 10000000).abs}"
         @poi = {:osm_id => (id + 10000000).abs,
                 :geom => Point.from_x_y(attributes['lon'], attributes['lat']),
                 :type => 'Way',
