@@ -334,7 +334,7 @@ function onPopupClose(evt) {
 function popup_state_radio(feature, state) {
   var id = state + '-' + feature.id;
   var checked = (state === feature.attributes.wheelchair ? ' checked="checked"' : '');
-  var disabled = ((state === 'unknown' || feature.attributes.id === null ) ? ' disabled="disabled"' : '');
+  var disabled = ((state === 'unknown' || feature.attributes.id === null || feature.attributes['class'] === 'way') ? ' disabled="disabled"' : '');
   var wheelchair_state = '<li class="' + state + '">';
   wheelchair_state += '<input id="' + id + '" type="radio" name="wheelchair"' + checked + disabled + ' value="' + state + '">';
   wheelchair_state += '<label for="' + id + '">' + OpenLayers.Lang.translate('wheelchair_label_' + state) + '</label>';
@@ -344,6 +344,7 @@ function popup_state_radio(feature, state) {
 
 function popup_form(feature) {
   var form = '';
+  var way = feature.attributes['class'];
   var disabled = feature.attributes.id === null;
   form += '<form action="/nodes/' + feature.attributes.id + '/update_wheelchair.js" method="post" class="update_form">';
   form += '<ol class="wheelchair">';
@@ -356,6 +357,8 @@ function popup_form(feature) {
   form += '<li>';
   if (disabled === true) {
     form += '<span style="float:right">Wird derzeit überprüft, Status nicht änderbar.</span>';
+  } else if (way === 'way') {
+    form += ''
   } else {
     form += '<input type="submit" '+ disabled + '" id="update_button" value="' + OpenLayers.Lang.translate('wheelchair_update_button') + '"/>';
   }
@@ -384,7 +387,7 @@ function popup_address(feature) {
 function popup_more_link(feature) {
   var html = '';
   if (feature.attributes.id !== null) {
-    html += '<a class="more" href="' +  ((OpenLayers.Lang.getCode() === 'de') ? '' : '/' + OpenLayers.Lang.getCode()) + '/nodes/' + feature.attributes.id + '">';
+    html += '<a class="more" href="' +  ((OpenLayers.Lang.getCode() === 'de') ? '' : '/' + OpenLayers.Lang.getCode()) + '/' + feature.attributes['class'] +'s/' + feature.attributes.id + '">';
     html += OpenLayers.Lang.translate('more_information');
     html += '</a>';
   }
