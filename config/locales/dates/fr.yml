@@ -1,0 +1,98 @@
+---
+fr:
+  date:
+    abbr_day_names:
+      - Dim
+      - Lun
+      - Mar
+      - Mer
+      - Jeu
+      - Ven
+      - Sam
+    abbr_month_names:
+      - ~
+      - Janv
+      - Fév
+      - Mars
+      - Avr
+      - Mai
+      - Juin
+      - Juill
+      - Août
+      - Sept
+      - Oct
+      - Nov
+      - Déc
+    day_names:
+      - dimanche
+      - lundi
+      - mardi
+      - mercredi
+      - jeudi
+      - ventredi
+      - samedi
+    formats:
+      default: "%d-%m-%Y "
+      long: "%e %B %Y"
+      short: "%e %b"
+    month_names:
+      - ~
+      - janvier
+      - février
+      - mars
+      - avril
+      - mai
+      - juin
+      - juillet
+      - août
+      - septembre
+      - octobre
+      - novembre
+      - décembre
+    order:
+      - !ruby/symbol day
+      - !ruby/symbol month
+      - !ruby/symbol year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "une heure environ"
+        other: "%{count} heures environ"
+      about_x_months:
+        one: "un mois environ"
+        other: "%{count} mois environ"
+      about_x_years:
+        one: "un an environ"
+        other: "%{count} ans environ"
+      almost_x_years:
+        one: "presque 1 an"
+        other: "presque %{count} ans"
+      half_a_minute: "une demi-minute"
+      less_than_x_minutes:
+        one: "moins d'une minute"
+        other: "moinds de %{count} minutes"
+      less_than_x_seconds:
+        one: "moins d'une seconde"
+        other: "moins de %{count} secondes"
+      over_x_years:
+        one: "plus d'un an"
+        other: "plus de %{count} ans"
+      x_days:
+        one: "un jour"
+        other: "%{count} jours"
+      x_minutes:
+        one: "1 minute"
+        other: "%{count} minutes"
+      x_months:
+        one: "un mois"
+        other: "%{count} mois"
+      x_seconds:
+        one: "1 seconde"
+        other: "%{count} secondes"
+    prompts:
+      day: Jour
+      hour: Heure
+      minute: Minute
+      month: Mois
+      second: Secondes
+      year: An

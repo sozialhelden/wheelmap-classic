@@ -20,7 +20,7 @@ bg:
         less_than_or_equal_to: "трябва да има стойност, по-голяма или равна на %{count}"
         not_a_number: "не е число"
         odd: "трябва да е четно"
-        record_invalid: "имаше грешки: %{errors}"
+        record_invalid: "Имаше грешки: %{errors}"
         taken: "вече съществува"
         too_long: "е прекаленo дълго (не може да е повече от %{count} символа)"
         too_short: "е прекалено късо (не може да бъде по-малко от %{count} символа)"
@@ -33,8 +33,8 @@ bg:
       template:
         body: "Възникнаха проблеми със следните полета:"
         header:
-          one: "%{model}: записа е неуспешен заради 1 грешка"
-          other: "%{model}: записа е неуспешен заради %{count} грешки"
+          one: "%{model}: записът е неуспешен заради 1 грешка"
+          other: "%{model}: записът е неуспешен заради %{count} грешки"
   application:
     require_no_user:
       notice: "Ти вече си вътре"
@@ -57,7 +57,7 @@ bg:
       - пет
       - съб
     abbr_month_names:
-      - ""
+      - ~
       - яну.
       - фев.
       - март
@@ -83,7 +83,7 @@ bg:
       long: "%d %B %Y"
       short: "%d %b"
     month_names:
-      - ""
+      - ~
       - януари
       - февруари
       - март
@@ -99,7 +99,7 @@ bg:
     order:
       - "!ruby/symbol day"
       - "!ruby/symbol month"
-      - ден
+      - "!ruby/symbol year"
   datetime:
     distance_in_words:
       about_x_hours:
@@ -149,20 +149,20 @@ bg:
       already_authenticated: "Вече си вътре."
       inactive: "Акаунтът ти още не е активиран."
       invalid: "Невалиден и-мейл или парола."
-      invalid_token: "Невалиден token."
+      invalid_token: "Невалиден код за активация."
       locked: "Твоят акаунт е блокиран."
       timeout: "Твоята сесия е изтекла, моля влез отново, за да продължиш."
       unauthenticated: "Трябва да влезнеш или да се регистрираш, преди да продължиш."
       unconfirmed: "Трябва да потвърдиш акаунта си, преди да продължиш."
     mailer:
       confirmation_instructions:
-        landing_page: "Моля, кликни върху линка, който току-що изпратихме на твоя и-мейл адрес. Ако не си получил и-мейл от нас, моля увери се, че не е попаднал в папката със спам. В случай, че не можеш да го намериш, можеш да изпратиш имейл отново."
+        landing_page: "Моля, кликни върху линка, който току-що изпратихме на твоя и-мейл адрес. Ако не си получил и-мейл от нас, увери се, че не е попаднал в папката със спам. В случай, че не можеш да го намериш, можеш да ни изпратиш имейл отново."
         subject: "Още една стъпка до активирането на акаунта ти"
       reset_password_instructions:
         subject: "Нови инструкции за парола"
       unlock_instructions:
         subject: "Инструкции за отключване"
-    mandatory: "* Задължително"
+    mandatory: "* Задължително поле"
     password_recovery:
       form:
         labels:
@@ -174,7 +174,7 @@ bg:
         comment: "В случай, че не си искал нулиране на паролата, можеш да пренебрегнеш този имейл. <br/> Твоята парола няма да бъде променена, докато не кликнеш върху линка по-горе и не зададеш нова парола."
         headline: "Добре дошъл/дошла %{email}"
         link: "Смяна на парола"
-        text: "Някой е поискал да смениш паролата си. Можеш да направиш това, като кликнеш върху следния линк:"
+        text: "Някой е поискал да смениш паролата си. Можеш да го направиш, като кликнеш върху следния линк:"
       form:
         labels:
           password: "Нова парола"
@@ -187,13 +187,14 @@ bg:
       updated: "Паролата ти беше сменена успешно. Сега си включен."
     registrations:
       destroyed: "Чао! Твоят акаунт беше успешно отменен. Надяваме се да те видим отново скоро."
-      link: Вход
+      inactive_signed_up: "Регистрацията ти е успешна, но имаше проблем с влизането. Причина: \"%{reason}\""
+      link: Регистрация
       signed_up: "Ти се регистрира успешно. Изпратено е потвърждение на електронната ти поща."
       updated: "Ти актуализира акаунта си успешно."
     sessions:
       inactive: "Твоят акаунт още не е активиран."
       invalid: "Невалиден email или парола"
-      invalid_token: "Невалиден token."
+      invalid_token: "Невалиден код за активация."
       link: Вход
       locked: "Твоят акаунт е блокиран."
       signed_in: "Успешна регистрация."
@@ -223,7 +224,7 @@ bg:
           password_confirmation: "Повтори паролата"
           wants_newsletter: "Да, информирайте ме относно wheelmap. (Но моля, не повече от веднъж месечно.)"
         submit: Регистрация
-      headline: Вход
+      headline: Регистрация
     unlocks:
       link: "Не получи инструкции за отключване?"
       send_instructions: "Ще получиш и-мейл с интрукции как да отблокираш акаунта си до няколко минути."
@@ -257,7 +258,7 @@ bg:
   formtastic:
     hints:
       lat: "Премести маркера на картата на правилната позиция"
-      osm_username: "Още не си членt? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Създай Openstreetmap акаунт сега</a>"
+      osm_username: "Още не си член? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Създай Openstreetmap акаунт сега</a>"
       password: "(остави празно, ако не искаш промяна)"
       phone: "Например +49 30 123456-78"
       website: "Например:  http://www.example.com "
@@ -299,14 +300,15 @@ bg:
       feedback: "Обратна връзка"
       home: Начало
       how_to_add_a_place: "Как се добавят места?"
-      imprint: Относно
+      imprint: Контакт
       logged_in_as: "Регистриран като:"
       login: Вход
       logout: Изход
       newsletter: Нюзлетър
       press: Преса
       suggestions: Предложения
-      what_is_barrier_free: "Какво значи \"достъпен за инвалидни колички\"?"
+      tolk: Преводи
+      what_is_barrier_free: "Какво значи \"достъпно за инвалидни колички\"?"
       what_is_wheelmap: "Какво е wheelmap?"
     searchbar:
       add_place: "Добави ново място"
@@ -352,7 +354,7 @@ bg:
         :
           headline: "Всички недостъпни за инвалидни колички %{type} в %{city} (%{count})"
         unknown:
-          headline: "Всички %{type} в %{city} с неясен достъп за инвалидни колички (%{count})"
+          headline: "Всички %{type} в %{city} с неизвестен достъп за инвалидни колички (%{count})"
         ? "yes"
         :
           headline: "Всички достъпни за инвалидни колички %{type} в %{city} (%{count})"
@@ -378,6 +380,7 @@ bg:
       link:
         large_map: "&laquo; Отказ"
     errors:
+      not_authorized: "Съжаляваме, удостоверяването не бе успешно."
       not_available: "Съжаляваме, тази страница временно е недостъпна."
       not_existent: "За съжаление, това място вече не е на разположение."
       not_found: "Съжаляваме, страницата не може да бъде намерена."
@@ -409,7 +412,7 @@ bg:
   number:
     currency:
       format:
-        delimiter: " "
+        delimiter: " ,"
         format: "%n %u"
         precision: 2
         separator: ","
@@ -431,7 +434,7 @@ bg:
   oauth:
     application:
       connect:
-        headline: "Трябва да свържеш твоя акаунт с акаунта си в open street map, за да можеш да създаваш или модифицираш места на wheelmap.org."
+        headline: "Трябва да свържеш твоя акаунт с акаунта си в Open Street Map, за да можеш да създаваш или редактираш места на wheelmap.org."
     callback:
       notice: "Твоят wheelmap акаунт е свързан с акаунта в OpenStreetMap %{user}."
   or: или
@@ -443,13 +446,13 @@ bg:
       accommodation: Настаняване
       education: Образование
       food: Храна
-      government: Правителство
+      government: Управление
       health: Здраве
       leisure: "Отдих и свободно време"
       misc: Разни
-      money_post: "Пощенска банка"
+      money_post: "Пощи и банки"
       public_transfer: Транспорт
-      shopping: Пазаруване
+      shopping: Магазини
       sport: Спорт
       tourism: Туризъм
       unknown: Неизвестен
@@ -467,7 +470,7 @@ bg:
       education:
         college: ВУЗ
         kindergarten: "Детска градина"
-        library: Платформа
+        library: Библиотека
         museum: Музей
         school: Училище
         university: Университет
@@ -533,14 +536,14 @@ bg:
         light_rail: Теснолинейка
         parking: Паркинг
         parking_aisle: "Паркинг алея"
-        platform: Платформа
+        platform: Перон
         station: Метро
         subway_entrance: "Вход за метро"
         terminal: "Летищен терминал"
         tram_stop: "Трамвайна спирка"
       shopping:
         alcohol: "Магазин за спиртни напитки"
-        bakery: Пекарна
+        bakery: Фурна
         beverages: Напитки
         bicycle: "Магазин за колела"
         books: Книги
@@ -657,9 +660,9 @@ bg:
   wheelmap:
     footer:
       a_project_of: "Проект на"
-      based_on: "Базиран на"
+      based_on: "На базата на"
       become_a_supporter: "Подкрепи проекта"
-      main_supporter: "Основен партньор"
+      main_supporter: "Основни партньори"
     itunes:
       alt: "Лого на AppStore "
       title: "Свали iPhone App сега!"
@@ -667,7 +670,7 @@ bg:
       alt: "Wheelmap лого - намери места, достъпни за инвалидни колички"
       title: "Wheelmap - намери места, достъпни за инвалидни колички"
     what_is:
-      fully_accessible: "<em>Да:</em> Вход без стъпала, всички помещения без стъпала, достъпна тоалетна"
-      limited_accessible: "<em>Ограничен:</em> Входът има стъпало (макс. 7см), повечето помещения са без стъпала, тоалетната е недостъпна."
+      fully_accessible: "<em>Да:</em> Входът е без стъпала, всички помещения са без стъпала, тоалетната е достъпна."
+      limited_accessible: "<em>Ограничен достъп:</em> Входът има стъпало (макс. 7см), повечето помещения са без стъпала, тоалетната е недостъпна."
       not_accessible: "<em>Не:</em> На входа има високи или повече стъпала, помещенията са недостъпни."
-      unknown_accessible: "<em>Непознат:</em> Помогни и маркирай места!"
+      unknown_accessible: "<em>Неизвестен достъп:</em> Помогни и маркирай места!"
