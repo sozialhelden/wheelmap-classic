@@ -41,7 +41,7 @@ class PlanetReader
       flush_pois(0)
       sleep 1
       @duration = (Time.now - @start_time).to_i
-      puts "\nProcessed #{@processed} nodes in #{@duration}s ~= #{@processed/@duration}/s"
+      puts "\nINFO: Processed #{@processed} nodes in #{@duration}s ~= #{@processed/@duration}/s"
     end
   end
 
