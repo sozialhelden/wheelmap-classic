@@ -127,4 +127,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def not_found(exception)
+    # HoptoadNotifier.notify(exception,:component => self.class.name, :parameters => params)
+    @message = I18n.t('nodes.errors.not_found')
+    render :template => 'shared/error', :status => 404
+  end
+
+  def check_update_wheelchair_params
+    render( :text => 'Params missing', :status => 406 ) if params[:wheelchair].blank?
+  end
+
 end

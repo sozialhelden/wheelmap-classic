@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="OpenStreetMap server">
+  <way id="123" visible="true" timestamp="2012-01-29T17:53:45Z" version="14" changeset="10532883" user="micha_k" uid="37608">
+    <nd ref="534792"/>
+    <nd ref="1290033538"/>
+    <nd ref="763553528"/>
+    <nd ref="293396265"/>
+    <nd ref="534793"/>
+    <nd ref="1290033550"/>
+    <nd ref="534635"/>
+    <nd ref="366356166"/>
+    <nd ref="366356173"/>
+    <nd ref="534634"/>
+    <nd ref="367835399"/>
+    <nd ref="138966239"/>
+    <tag k="electrified" v="contact_line"/>
+    <tag k="frequency" v="0"/>
+    <tag k="gauge" v="1450"/>
+    <tag k="highway" v="tertiary"/>
+    <tag k="maxspeed" v="50"/>
+    <tag k="name" v="Ackermannstraße"/>
+    <tag k="railway" v="tram"/>
+    <tag k="source:maxspeed" v="DE:urban"/>
+    <tag k="zone:traffic" v="DE:urban"/>
+  </way>
+</osm>
