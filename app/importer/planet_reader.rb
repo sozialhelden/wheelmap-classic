@@ -16,7 +16,7 @@ class PlanetReader
     @parser = stream_or_file.is_a?(String) ? LibXML::XML::SaxParser.file(stream_or_file) : LibXML::XML::SaxParser.io(stream_or_file)
     @parser.callbacks = self
     Crewait.start_waiting
-    @to_be_deleted = []
+    @to_be_deleted = {'Node' => [], 'Way' => []}
     @combination = NodeType.combination
   end
 
@@ -38,7 +38,7 @@ class PlanetReader
       puts e.backtrace
     ensure
       Crewait.go!
-      flush_pois(0)
+      flush_pois(1)
       sleep 1
       @duration = (Time.now - @start_time).to_i
       puts "\nINFO: Processed #{@processed} nodes in #{@duration}s ~= #{@processed/@duration}/s"
@@ -46,11 +46,13 @@ class PlanetReader
   end
 
   def flush_pois(min_amount=200)
-    if @to_be_deleted.size >= min_amount
-      Poi.delete(@to_be_deleted)
-      @to_be_deleted = []
+    @to_be_deleted.keys.each do |klass_name|
+      if (size = @to_be_deleted[klass_name].size) >= min_amount
+        # puts "Delete #{size} #{klass_name}s."
+        klass_name.constantize.delete(@to_be_deleted[klass_name])
+        @to_be_deleted[klass_name] = []
+      end
     end
-
   end
 
   # Callback-Methode des XML-Parsers.
@@ -111,12 +113,12 @@ class PlanetReader
   def on_end_element(element)
     case element
     when 'delete'
-      flush_pois
+      flush_pois(1)
     when 'create'
       Crewait.go!
     when 'modify'
       Crewait.go!
-      flush_pois
+      flush_pois(1)
     when 'node'
       if @poi
         process_poi
@@ -186,13 +188,13 @@ class PlanetReader
         # "find_by_osm_id", ob eine alte Version ueberhaupt
         # existiert, denn das waere Zeitverschwendung; der
         # delete-Aufruf macht das schneller.
-        @to_be_deleted << @poi[:osm_id]
+        @to_be_deleted[@poi[:type]] << @poi[:osm_id]
         flush_pois
 
       end
 
     elsif @changemode == 'delete'
-      @to_be_deleted << @poi[:osm_id]
+      @to_be_deleted[@poi[:type]] << @poi[:osm_id]
       flush_pois
     end
   end

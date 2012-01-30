@@ -155,22 +155,12 @@ class NodesController < ApplicationController
     render :template => 'shared/error', :status => 410
   end
 
-  def not_found(exception)
-#    HoptoadNotifier.notify(exception,:component => self.class.name, :parameters => params)
-    @message = I18n.t('nodes.errors.not_found')
-    render :template => 'shared/error', :status => 404
-  end
-
   def set_default_user
     current_user ||= User.find_by_email('visitor@wheelmap.org')
   end
 
   def check_bbox_param
     params[:bbox] ||= "13.395536804199,52.516078290477,13.404463195801,52.517321704317"
-  end
-
-  def check_update_wheelchair_params
-    render( :text => 'Params missing', :status => 406 ) if params[:wheelchair].blank?
   end
 
   def check_update_params
