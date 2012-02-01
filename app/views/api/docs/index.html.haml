@@ -1,11 +1,11 @@
 #api_docs
   %h1 API Docs
-  
+
   %p Developers can use our RESTful API to interact with wheelchair accessible place.
-  
+
   %h2 Setup
   %p Before using the Wheelmap API, please read over the Terms of Service and sign up for a user account including an API Key.
-  
+
   %h2 Authentication
   %p All requests to the Wheelmap API service require an api key which is passed with every request.
 
@@ -18,7 +18,7 @@
   %h3 Entry Points
   %p The Wheelmap API has the following entry point:
   %pre.link
-    http://wheelmap.org/api  
+    http://wheelmap.org/api
   %p It is a read-only entry point for public data. It uses the standard parameter api_key for authentication.
 
   %h3 Authentication
@@ -56,7 +56,7 @@
         %td application/xml
         %td .xml
         %td Extensible Markup Language
-      
+
   %p JSON is the default, and will be used if nothing is specified. Using the JSON format, the example would look like this:
   %pre
     http://wheelmap.org/api/nodes/:node_id.json
@@ -82,7 +82,7 @@
         %th per_page
         %td integer
         %td For pagination, how many results to return per page. Default is 200. Max is 500.
-        
+
   %h3 HTTP Methods
   %p RESTful APIs use standard HTTP methods to denote actions against a resource:
   %ul
@@ -91,7 +91,7 @@
     %li PUT - Updates a resource. Returns HTTP 202 on success.
   %p 202 means: The request has been accepted for processing, but the processing has not been completed. The reason why POST and PUT method return the rather unknown status code 202 is, because the update/create operation is not processed immediately. The command will be put on a job queue. Chances are that something goes wrong while execution after the POST/PUT request has been finished.
   %p Because some toolkits lack support for PUT and DELETE (most notably JavaScript) you can use method overloading to fake an HTTP method. Use a GET or POST call and append the standard method parameter:
-  
+
   %pre http://wheelmap.org/api/nodes/:node_id?method=PUT
 
   %h2 API Responses
@@ -107,10 +107,10 @@
 
   %h4 meta
   %p meta specifies meta information page and total number of pages, entries per page and so on.
-  
+
   %h4 results
   %p results is an array of objects. For consistency's sake, it is always an array, even if only one result is expected.
-  
+
   %h2 API Response Codes:
   %p The Wheelmap API will return a status code upon every request. The following status codes could possibly returned.
   %table
@@ -152,5 +152,8 @@
         %td 500
         %td Internal Server Error (application/json)
         %td An unknown error has occurred. When possible, an error message will be returned describing the error.
+
+  %h2 API Error Messages
+  %p If the API responds with an HTTP status code with 400 or higher, there will be a descriptive error message. Please make sure your client can handle error codes and display this message to the client.
 
   = render :partial => 'api/docs/resource_links'
