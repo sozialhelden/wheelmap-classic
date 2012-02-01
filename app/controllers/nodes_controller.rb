@@ -104,7 +104,7 @@ class NodesController < ApplicationController
   end
 
   def edit
-    @node = OpenStreetMap.get_node(params[:id])
+    @node = Node.find(params[:id])
   end
   helper_method :prepare_nodes
   helper_method :generate_json

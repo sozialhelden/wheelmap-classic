@@ -210,7 +210,7 @@ class Poi < ActiveRecord::Base
   end
 
   def headline
-    self.name || I18n.t("poi.name.#{self.category.try(:identifier)}.#{self.type}")
+    self.name || I18n.t("poi.name.#{self.category.try(:identifier)}.#{self.node_type.try(:identifier)}")
   end
 
   def url
