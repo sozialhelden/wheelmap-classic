@@ -1,0 +1,117 @@
+---
+en:
+  date:
+    abbr_day_names:
+      - Sun
+      - Mon
+      - ~
+      - ~
+      - Wed
+      - Tue
+      - ~
+      - Fri
+      - ~
+      - Thu
+      - ~
+      - ~
+      - Sat
+    abbr_month_names:
+      - ""
+      - ~
+      - Jan
+      - Feb
+      - ~
+      - ~
+      - Apr
+      - Mar
+      - ~
+      - Jun
+      - ~
+      - May
+      - Aug
+      - ~
+      - ~
+      - Jul
+      - Nov
+      - ~
+      - ~
+      - Sep
+      - ~
+      - Oct
+      - ~
+      - ~
+      - Dec
+    day_names:
+      - Sunday
+      - ~
+      - Monday
+      - Tuesday
+      - ~
+      - ~
+      - Thursday
+      - Wednesday
+      - ~
+      - Saturday
+      - ~
+      - Friday
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+      - ""
+      - ~
+      - January
+      - February
+      - ~
+      - ~
+      - April
+      - March
+      - ~
+      - June
+      - ~
+      - May
+      - August
+      - ~
+      - ~
+      - July
+      - ~
+      - December
+      - ~
+      - September
+      - ~
+      - ~
+      - November
+    order:
+      - year
+      - month
+      - ~
+      - ~
+      - day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "about 1 hour"
+        other: "about %{count} hours"
+      about_x_months:
+        one: "about 1 month"
+        other: "about %{count} months"
+      about_x_years:
+        one: "about 1 year"
+        other: "about %{count} years"
+      half_a_minute: "half a minute"
+      over_x_years:
+        one: "over 1 year"
+        other: "over %{count} years"
+      x_days:
+        one: "1 day"
+        other: "%{count} days"
+      x_minutes:
+        one: "1 minute"
+        other: "%{count} minutes"
+      x_months:
+        one: "1 month"
+        other: "%{count} months"
+      x_seconds:
+        one: "1 second"
+        other: "%{count} seconds"

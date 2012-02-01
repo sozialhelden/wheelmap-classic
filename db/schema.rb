@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111001183641) do
+ActiveRecord::Schema.define(:version => 20120120143510) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -39,6 +39,18 @@ ActiveRecord::Schema.define(:version => 20111001183641) do
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token"
   add_index "admins", ["unlock_token"], :name => "index_admins_on_unlock_token"
 
+  create_table "alternatives", :force => true do |t|
+    t.integer "experiment_id"
+    t.string  "content"
+    t.string  "lookup",        :limit => 32
+    t.integer "weight",                      :default => 1
+    t.integer "participants",                :default => 0
+    t.integer "conversions",                 :default => 0
+  end
+
+  add_index "alternatives", ["experiment_id"], :name => "index_alternatives_on_experiment_id"
+  add_index "alternatives", ["lookup"], :name => "index_alternatives_on_lookup"
+
   create_table "categories", :force => true do |t|
     t.string   "identifier"
     t.datetime "created_at"
@@ -63,6 +75,15 @@ ActiveRecord::Schema.define(:version => 20111001183641) do
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
+  create_table "experiments", :force => true do |t|
+    t.string   "test_name"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "experiments", ["test_name"], :name => "index_experiments_on_test_name"
+
   create_table "node_types", :force => true do |t|
     t.integer  "category_id"
     t.string   "identifier"
@@ -77,26 +98,38 @@ ActiveRecord::Schema.define(:version => 20111001183641) do
   add_index "node_types", ["osm_key", "osm_value"], :name => "index_node_types_on_osm_key_and_osm_value"
 
   create_table "pois", :primary_key => "osm_id", :options=>'ENGINE=MyISAM', :force => true do |t|
-    t.integer  "version",                     :null => false
-    t.text     "tags",                        :null => false
-    t.point    "geom",         :limit => nil, :null => false
+    t.integer  "version",                                         :null => false
+    t.text     "tags",                                            :null => false
+    t.point    "geom",         :limit => nil,                     :null => false
     t.integer  "status",       :limit => 3
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "node_type_id"
-    t.text     "geojson"
+    t.integer  "region_id"
+    t.string   "type",                        :default => "Node"
   end
 
   add_index "pois", ["geom"], :name => "index_pois_on_geom", :spatial => true
   add_index "pois", ["node_type_id", "osm_id"], :name => "index_pois_on_node_type_id_and_osm_id"
   add_index "pois", ["osm_id", "status", "created_at"], :name => "pagination"
   add_index "pois", ["osm_id"], :name => "index_pois_on_osm_id"
+  add_index "pois", ["region_id"], :name => "index_pois_on_region_id"
   add_index "pois", ["status"], :name => "index_pois_on_status"
   add_index "pois", ["tags"], :name => "fulltext_index_pois_on_tags"
 
-  create_table "queued_nodes", :force => true do |t|
+  create_table "queued_nodes", :options=>'ENGINE=MyISAM', :force => true do |t|
     t.integer  "user_id"
     t.text     "node_attributes"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.point    "geom",            :limit => nil, :null => false
+  end
+
+  add_index "queued_nodes", ["geom"], :name => "index_queued_nodes_on_geom", :spatial => true
+
+  create_table "regions", :force => true do |t|
+    t.string   "name"
+    t.polygon  "grenze",     :limit => nil, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -111,31 +144,17 @@ ActiveRecord::Schema.define(:version => 20111001183641) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
-  create_table "tolk_locales", :force => true do |t|
+  create_table "slugs", :force => true do |t|
     t.string   "name"
+    t.integer  "sluggable_id"
+    t.integer  "sequence",                     :default => 1, :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.string   "scope"
     t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
-  add_index "tolk_locales", ["name"], :name => "index_tolk_locales_on_name"
-
-  create_table "tolk_phrases", :force => true do |t|
-    t.text     "key"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tolk_translations", :force => true do |t|
-    t.integer  "phrase_id"
-    t.integer  "locale_id"
-    t.text     "text",            :limit => 16777215
-    t.text     "previous_text",   :limit => 16777215
-    t.boolean  "primary_updated",                     :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "tolk_translations", ["phrase_id", "locale_id"], :name => "index_tolk_translations_on_phrase_id_and_locale_id"
+  add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s"
+  add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
   create_table "users", :force => true do |t|
     t.string   "users"
@@ -160,6 +179,9 @@ ActiveRecord::Schema.define(:version => 20111001183641) do
     t.string   "authentication_token"
     t.text     "oauth_request_token"
     t.boolean  "wants_newsletter",                    :default => false, :null => false
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token"

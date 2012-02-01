@@ -16,7 +16,8 @@ class PlanetReader
     @parser = stream_or_file.is_a?(String) ? LibXML::XML::SaxParser.file(stream_or_file) : LibXML::XML::SaxParser.io(stream_or_file)
     @parser.callbacks = self
     Crewait.start_waiting
-    @to_be_deleted = []
+    @to_be_deleted = {'Node' => [], 'Way' => []}
+    @combination = NodeType.combination
   end
 
   def values
@@ -37,19 +38,21 @@ class PlanetReader
       puts e.backtrace
     ensure
       Crewait.go!
-      flush_pois(0)
+      flush_pois(1)
       sleep 1
       @duration = (Time.now - @start_time).to_i
-      puts "\nProcessed #{@processed} nodes in #{@duration}s ~= #{@processed/@duration}/s"
+      puts "\nINFO: Processed #{@processed} nodes in #{@duration}s ~= #{@processed/@duration}/s"
     end
   end
 
   def flush_pois(min_amount=200)
-    if @to_be_deleted.size >= min_amount
-      Poi.delete(@to_be_deleted)
-      @to_be_deleted = []
+    @to_be_deleted.keys.each do |klass_name|
+      if (size = @to_be_deleted[klass_name].size) >= min_amount
+        # puts "Delete #{size} #{klass_name}s."
+        klass_name.constantize.delete(@to_be_deleted[klass_name])
+        @to_be_deleted[klass_name] = []
+      end
     end
-
   end
 
   # Callback-Methode des XML-Parsers.
@@ -64,12 +67,32 @@ class PlanetReader
         v = v.gsub(/&#38;|&amp;/, '&')
       end
       @poi[:tags][k] = v if @poi
-      @poi[:node_type_id] ||= NodeType.combination[k.to_s][v.to_s] rescue nil
+      @poi[:node_type_id] ||= @combination[k.to_s][v.to_s] rescue nil
     when 'node'
-      @poi = {:osm_id => attributes['id'],
-              :geom => Point.from_x_y(attributes['lon'], attributes['lat']),
-              :version => attributes['version'],
-              :tags => {}}
+      #puts attributes.inspect
+      @poi = nil
+      id = attributes['id'].to_i
+      if (id > 0) then
+        @poi = {:osm_id => id,
+                :geom => Point.from_x_y(attributes['lon'], attributes['lat']),
+                :type => 'Node',
+                :version => attributes['version'],
+                :tags => {}}
+      elsif (id < 0 and id > -10000000) then
+        # Ignore, its a node from a relation.
+        #  update relation id.abs in osm
+        # puts "Ignore: it's from a relation: #{id}"
+      else
+        # It's a node from a way
+        # update way "-id-10000000" in osm
+        # puts "Process: it's from a way: #{(id + 10000000).abs}"
+        @poi = {:osm_id => (id + 10000000).abs,
+                :geom => Point.from_x_y(attributes['lon'], attributes['lat']),
+                :type => 'Way',
+                :version => attributes['version'],
+                :tags => {}}
+      end
+
     when 'modify'
       @changemode = element if @osmchange
     when 'delete'
@@ -90,20 +113,22 @@ class PlanetReader
   def on_end_element(element)
     case element
     when 'delete'
-      flush_pois
+      flush_pois(1)
     when 'create'
       Crewait.go!
     when 'modify'
       Crewait.go!
-      flush_pois
+      flush_pois(1)
     when 'node'
-      process_poi
-      @processed += 1
+      if @poi
+        process_poi
+        @processed += 1
 
-      if (@processed % 10000 == 0)
-        Crewait.go!
-        print("\rprocessed #{@processed/10000}0k nodes")
-        STDOUT.flush
+        if (@processed % 10000 == 0)
+          Crewait.go!
+          print("\rprocessed #{@processed/10000}0k nodes")
+          STDOUT.flush
+        end
       end
       @poi = nil
 
@@ -163,13 +188,13 @@ class PlanetReader
         # "find_by_osm_id", ob eine alte Version ueberhaupt
         # existiert, denn das waere Zeitverschwendung; der
         # delete-Aufruf macht das schneller.
-        @to_be_deleted << @poi[:osm_id]
+        @to_be_deleted[@poi[:type]] << @poi[:osm_id]
         flush_pois
 
       end
 
     elsif @changemode == 'delete'
-      @to_be_deleted << @poi[:osm_id]
+      @to_be_deleted[@poi[:type]] << @poi[:osm_id]
       flush_pois
     end
   end

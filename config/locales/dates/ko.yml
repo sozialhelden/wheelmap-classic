@@ -1,0 +1,98 @@
+---
+ko:
+  date:
+    abbr_day_names:
+      - 일
+      - 월
+      - 화
+      - 수
+      - 목
+      - 금
+      - 토
+    abbr_month_names:
+      - ~
+      - 1월
+      - 2월
+      - 3월
+      - 4월
+      - 5월
+      - 6월
+      - 7월
+      - 8월
+      - 9월
+      - 10월
+      - 11월
+      - 12월
+    day_names:
+      - 일요일
+      - 월요일
+      - 화요일
+      - 수요일
+      - 목요일
+      - 금요일
+      - 토요일
+    formats:
+      default: "%Y-%m-%d "
+      long: "%B %d, %Y"
+      short: "%b %d"
+    month_names:
+      - ~
+      - 1월
+      - 2월
+      - 3월
+      - 4월
+      - 5월
+      - 6월
+      - 7월
+      - 8월
+      - 9월
+      - 10월
+      - 11월
+      - 12월
+    order:
+      - !ruby/symbol year
+      - !ruby/symbol month
+      - !ruby/symbol day
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "약 1시간"
+        other: "약 %{count} 시간"
+      about_x_months:
+        one: "약 1개월"
+        other: "약 %{count} 개월"
+      about_x_years:
+        one: "약 1년"
+        other: "약 %{count}년"
+      almost_x_years:
+        one: "거의 1년"
+        other: "거의 %{count}년"
+      half_a_minute: 30초
+      less_than_x_minutes:
+        one: "1분 미만"
+        other: "%{count}초 미만"
+      less_than_x_seconds:
+        one: "1초 미만"
+        other: "%{count}분 미만"
+      over_x_years:
+        one: "1년 이상"
+        other: "%{count}년 이상"
+      x_days:
+        one: 1일
+        other: "%{count}일"
+      x_minutes:
+        one: 1분
+        other: "%{count}분"
+      x_months:
+        one: 1월
+        other: "%{count}월"
+      x_seconds:
+        one: 1초
+        other: "%{count}초"
+    prompts:
+      day: 일
+      hour: 시
+      minute: 분
+      month: 월
+      second: 초
+      year: 년

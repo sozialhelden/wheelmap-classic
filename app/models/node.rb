@@ -1,0 +1,2 @@
+class Node < Poi
+end

@@ -4,6 +4,7 @@ OSMOSIS_BIN="#{OSMOSIS_DIR}/bin/osmosis"
 VAR_DIR="tmp/var"
 CHANGE_FILE="#{VAR_DIR}/replicate-#{Time.now.to_i}.osc"
 MERGED_FILE="#{VAR_DIR}/merged.osc"
+SHAPE_FILE="#{VAR_DIR}/shapes.osc"
 STATE_FILE="#{WORKING_DIR}/state.txt"
 BACKUP_FILE="#{WORKING_DIR}/state.old"
 LOCKFILE="tmp/replicate.lock"
@@ -50,12 +51,31 @@ def remove_old_replication_files
   FileUtils.rm_rf Dir.glob("#{VAR_DIR}/replicate-*.osc"), :verbose => true
 end
 
+def remove_shape_replication_file
+  FileUtils.rm_rf SHAPE_FILE, :verbose => true
+end
+
 def get_new_replication_file
+  puts "INFO: Fetching node changes."
   system "#{OSMOSIS_BIN} --rri workingDirectory=#{RAILS_ROOT}/#{WORKING_DIR} --simc --wxc #{CHANGE_FILE}"
 end
 
+def get_new_shape_replication_files
+  puts "INFO: Fetching shape changes."
+  system "ssh -p 22022 osm@176.9.63.171 \"ruby make_osc.rb -d\" 2> /dev/null >> #{SHAPE_FILE}"
+  puts "INFO: Downloaded #{File.size(SHAPE_FILE)} bytes"
+  # system "ssh -p 22022 osm@176.9.63.171 \"cat diff.osc\" 2> /dev/null >> #{SHAPE_FILE}"
+end
+
 def merge_replication_files
-  system "#{OSMOSIS_BIN} --read-xml-change-0.6 #{MERGED_FILE} --tf reject-ways --tf reject-relations --sort-change-0.6 --read-xml-change-0.6 #{CHANGE_FILE} --sort-change-0.6 --merge-change-0.6 --wxc #{MERGED_FILE}.new"
+  system "#{OSMOSIS_BIN} --read-xml-change-0.6 #{MERGED_FILE} --sort-change-0.6 --read-xml-change-0.6 #{CHANGE_FILE} --sort-change-0.6 --merge-change-0.6 --wxc #{MERGED_FILE}.new"
+  if File.exists? "#{MERGED_FILE}.new"
+    FileUtils.mv "#{MERGED_FILE}.new", MERGED_FILE, :verbose => true
+  end
+end
+
+def merge_shape_replication_files
+  system "#{OSMOSIS_BIN} --read-xml-change-0.6 #{MERGED_FILE} --sort-change-0.6 --read-xml-change-0.6 #{SHAPE_FILE} --sort-change-0.6 --merge-change-0.6 --wxc #{MERGED_FILE}.new"
   if File.exists? "#{MERGED_FILE}.new"
     FileUtils.mv "#{MERGED_FILE}.new", MERGED_FILE, :verbose => true
   end
@@ -139,14 +159,24 @@ namespace :osm do
           # There is some left over from last replication
           puts "INFO: merging #{MERGED_FILE} with #{CHANGE_FILE}"
           merge_replication_files
-
         else
           # There is nothing left
           FileUtils.cp CHANGE_FILE, MERGED_FILE, :verbose => true, :preserve => true
         end
+
+        # get_new_shape_replication_files
+        #
+        # if File.exists?(SHAPE_FILE) && File.size(SHAPE_FILE) > 150
+        #   puts "INFO: merging #{MERGED_FILE} with #{SHAPE_FILE}"
+        #   merge_shape_replication_files
+        # else
+        #   puts "INFO: No changes in shape files."
+        # end
+
         ENV['file'] = MERGED_FILE
         if Rake::Task["osm:import"].invoke
           remove_merged_file
+          # remove_shape_replication_file
         end
 
       rescue Exception => e

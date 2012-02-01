@@ -48,6 +48,15 @@ class OpenStreetMap
     node
   end
 
+  def update_way(way, changeset_id)
+    logger.info "Old version: #{way.version}"
+    logger.info "Old changeset: #{way.changeset}"
+    way.changeset = changeset_id
+    new_version = update_w(way)
+    way.version = new_version
+    way
+  end
+
   def destroy_node(node, comment="Delete node on wheelmap.org")
     logger.info "Old version: #{node.version}"
     logger.info "Old changeset: #{node.changeset}"
@@ -112,6 +121,15 @@ class OpenStreetMap
     node = OpenStreetMap::Node.new(response['osm']['node'])
   end
 
+  # Fetch the node from OSM API with the given ID
+  def self.get_way(osmid)
+    logger.info("OpenStreetMap#get_way #{osmid}")
+    base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
+    response = get("#{base_uri}/way/#{osmid}", :timeout => 15)
+    raise_errors(response)
+    way = OpenStreetMap::Way.new(response['osm']['way'])
+  end
+
   def self.get_changeset(id)
     logger.info("OpenStreetMap#get_changeset #{id}")
     base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
@@ -137,6 +155,17 @@ class OpenStreetMap
     logger.info node.inspect
     url = request_uri("/node/#{node.id}")
     response = put(url, :body => node.to_xml)
+    self.class.raise_errors(response)
+    new_version = response.body
+    logger.info("New version: #{new_version}")
+    new_version
+  end
+
+  def update_w(way)
+    logger.info("OpenStreetMap#update #{way.id}")
+    logger.info way.inspect
+    url = request_uri("/way/#{way.id}")
+    response = put(url, :body => way.to_xml)
     self.class.raise_errors(response)
     new_version = response.body
     logger.info("New version: #{new_version}")

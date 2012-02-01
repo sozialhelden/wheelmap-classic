@@ -6,9 +6,9 @@ pl:
         format: "%{attribute} %{message}"
       messages:
         accepted: "musi zostać zaakceptowane"
-        blank: "nie może być puste"
+        blank: "nie może być pusty"
         confirmation: "nie zgadza się z potwierdzeniem"
-        empty: "nie może być puste"
+        empty: "nie może być pusty"
         equal_to: "musi być równe %{count}"
         even: "musi być parzyste"
         exclusion: "jest zarezerwowane"
@@ -47,86 +47,6 @@ pl:
     root: wheelmap
   common:
     close: zamknij
-  date:
-    abbr_day_names:
-      - nie
-      - pon
-      - wto
-      - śro
-      - czw
-      - pia
-      - sob
-    abbr_month_names:
-      - ""
-      - sty
-      - lut
-      - mar
-      - kwi
-      - maj
-      - cze
-      - lip
-      - sie
-      - wrz
-      - paź
-      - lis
-      - gru
-    day_names:
-      - niedziela
-      - poniedziałek
-      - wtorek
-      - środa
-      - czwartek
-      - piątek
-      - sobota
-    formats:
-      default: "%d-%m-%Y"
-      long: "%B %d, %Y"
-      short: "%d %b"
-    month_names:
-      - ""
-      - styczeń
-      - luty
-      - marzec
-      - kwiecień
-      - maj
-      - czerwiec
-      - lipiec
-      - sierpień
-      - wrzesień
-      - październik
-      - listopad
-      - grudzień
-    order:
-      - "!ruby/symbol day"
-      - "!ruby/symbol month"
-      - "!ruby/symbol year"
-  datetime:
-    distance_in_words:
-      about_x_hours:
-        one: "około godziny"
-        other: "około %{count} godzin"
-      about_x_months:
-        one: "około miesiąca"
-        other: "około %{count} miesięcy"
-      about_x_years:
-        one: "około rok"
-        other: "około %{count} lat"
-      half_a_minute: "pół minuty"
-      over_x_years:
-        one: "ponad rok"
-        other: "ponad %{count} lat"
-      x_days:
-        one: "1 dzień"
-        other: "%{count} dni"
-      x_minutes:
-        one: "1 minuta"
-        other: "%{count} minut"
-      x_months:
-        one: "1 miesiąc"
-        other: "%{count} miesięcy"
-      x_seconds:
-        one: "1 sekunda"
-        other: "%{count} sekund"
   devise:
     confirmations:
       confirmed: "Konto zostało poprawnie aktywowane. Zostałeś automatycznie zalogowany."
@@ -207,7 +127,7 @@ pl:
         labels:
           email: E-mail
           password: Hasło
-          remember_me: "Nie wylogowywać?"
+          remember_me: "Zapamiętaj mnie"
         submit: "Zaloguj się"
       headline: "Zaloguj się"
     sign_out:
@@ -305,9 +225,8 @@ pl:
       login: "Zaloguj się"
       logout: "Wyloguj się"
       newsletter: Newsletter
-      press: Prasa
+      press: "Dla mediów"
       suggestions: Sugestie
-      tolk: Tłumaczenia
       what_is_barrier_free: "Co to znaczy \"dostępne dla osób na wózkach\"?"
       what_is_wheelmap: "Co to jest wheelmap?"
     searchbar:
@@ -439,16 +358,14 @@ pl:
       notice: "Twoje konto w serwisie wheelmap jest już połączone z kontem w serwisie OpenStreetMap użytkownika %{user}."
   or: lub
   place:
-    one: |-
-
-        %{count} miejsce
+    one: "%{count} miejsce"
     other: "%{count} miejsc(a)"
   poi:
     category:
       accommodation: Zakwaterowanie
       education: Edukacja
       food: Jedzenie
-      government: "Budynki rządowe"
+      government: Urzędy
       health: "Szpital lub przychodnia"
       leisure: "Czas wolny"
       misc: Różne
@@ -673,7 +590,7 @@ pl:
       alt: "Logo wheelmap - znajdź miejsca dostępne dla osób na wózkach"
       title: "Wheelmap - znajdź miejsca dostępne dla osób na wózkach"
     what_is:
-      fully_accessible: "<em>Tak:</em> Wejście bez schodów, wszystkie pomieszczenia bez schodów, toaleta dostępna"
-      limited_accessible: "<em>W ograniczonym zakresie:</em> Wejście ma stopień (o maks. wysokości 7 cm), większość pomieszczeń bez schodów, toaleta niedostępna"
-      not_accessible: "<em>Nr:</em> Wejście ma wysokie schody lub kilka schodów, pomieszczenia nie są dostępne"
+      fully_accessible: "<em>Tak:</em> Wejście bez stopni, wszystkie pomieszczenia bez stopni, toaleta dostępna"
+      limited_accessible: "<em>Ograniczone:</em> Wejście ma stopień (do 7 cm), większość pomieszczeń bez stopni, toaleta niedostępna"
+      not_accessible: "<em>Nie:</em> Wejście ma wysoki stopień lub kilka stopni, pomieszczenia są niedostępne"
       unknown_accessible: "<em>Nie wiadomo:</em> Pomóż nam i zaznacz miejsca na mapie!"

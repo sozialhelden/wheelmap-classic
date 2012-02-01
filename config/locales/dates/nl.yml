@@ -1,0 +1,135 @@
+---
+nl:
+  date:
+    abbr_day_names:
+      ? "0"
+      : Zon
+      ? "1"
+      : Maa
+      ? "2"
+      : Din
+      ? "3"
+      : Woe
+      ? "4"
+      : Don
+      ? "5"
+      : Vri
+      ? "6"
+      : Zat
+    abbr_month_names:
+      ? "1"
+      : Jan
+      ? "10"
+      : Sep
+      ? "11"
+      : Oct
+      ? "12"
+      : Nov
+      ? "13"
+      : Dec
+      ? "2"
+      : Feb
+      ? "3"
+      : Maa
+      ? "4"
+      : Apr
+      ? "5"
+      : Mei
+      ? "6"
+      : Jun
+      ? "7"
+      : Jul
+      ? "9"
+      : Aug
+    day_names:
+      ? "0"
+      : Zondag
+      ? "1"
+      : Maandag
+      ? "2"
+      : Dinsdag
+      ? "3"
+      : Woensdag
+      ? "4"
+      : Donderdag
+      ? "5"
+      : Vrijdag
+      ? "6"
+      : Zaterdag
+    formats:
+      default: "%d-%m-%Y"
+    month_names:
+      ? "1"
+      : Januari
+      ? "10"
+      : September
+      ? "11"
+      : October
+      ? "12"
+      : November
+      ? "13"
+      : December
+      ? "2"
+      : Febuari
+      ? "3"
+      : Maart
+      ? "4"
+      : April
+      ? "5"
+      : Mei
+      ? "6"
+      : Juni
+      ? "7"
+      : Juli
+      ? "9"
+      : Augustus
+    order:
+      ? "0"
+      : jaar
+      ? "1"
+      : maand
+      ? "2"
+      : dag
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "ongeveer 1 uur"
+        other: "ongeveer %{count} uren"
+      about_x_months:
+        one: "ongeveer 1 maand"
+        other: "ongeveer %{count} maanden"
+      about_x_years:
+        one: "ongeveer 1 jaar"
+        other: "ongeveer %{count} jaren"
+      almost_x_years:
+        one: "bijna 1 jaar"
+        other: "bijna %{count} jaren"
+      half_a_minute: "half minuut"
+      less_than_x_minutes:
+        one: "minder dan een minuut"
+        other: "minder dan %{count} minuten"
+      less_than_x_seconds:
+        one: "minder dan 1 seconde"
+        other: "minder dan %{count} seconden"
+      over_x_years:
+        one: "voor 1 jaar"
+        other: "voor %{count} jaren"
+      x_days:
+        one: "1 dag"
+        other: "%{count} dagen"
+      x_minutes:
+        one: "1 minuut"
+        other: "%{count} minuten"
+      x_months:
+        one: "1 maand"
+        other: "%{count} maanden"
+      x_seconds:
+        one: "1 seconde"
+        other: "%{count} seconden"
+    prompts:
+      day: Dag
+      hour: uur
+      minute: minuut
+      month: maand
+      second: Seconden
+      year: Jaar

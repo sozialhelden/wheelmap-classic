@@ -1,29 +1,29 @@
 source 'http://rubygems.org'
 
 group :default do
-  gem 'rails', '3.0.10'
+  gem 'rails', '3.0.11'
   gem 'mysql2', '~>0.2.11'
   gem 'oauth'
   gem 'httparty'
   gem 'devise'
   gem 'compass', '0.10.6'
-  gem 'redgreengrid'
-  gem 'haml', '~>3.0.25'
+  gem 'redgreengrid', :git => 'git@github.com:christoph-buente/redgreengrid.git'
+  gem 'haml'
+  gem 'sass'
   gem 'geoip'
   gem 'formtastic', '1.2.4'
   gem 'delayed_job'
-  gem 'libxml-ruby', '~> 2.2.1'
+  gem 'libxml-ruby'
   gem 'crewait', :path => "#{File.expand_path(__FILE__)}/../vendor/gems/crewait-0.1.6"
-  gem 'hoptoad_notifier', "~> 2.3"
+  gem 'hoptoad_notifier'
   gem 'whenever', :require => false
-  gem "tolk", :git => "git://github.com/ZenCocoon/tolk.git", :branch => "rails3"
   gem "routing-filter"
-  gem 'newrelic_rpm', '~>3.0.1'
-  gem 'acts_as_api', '0.3.10'
-  gem 'inherited_resources', '1.2.2'
+  gem 'newrelic_rpm'
+  gem 'acts_as_api'
+  gem 'inherited_resources'
   gem 'has_scope'
 #  gem 'mapfish'
-  gem 'rake', '0.9.2.2'
+  gem 'rake'
   gem 'yajl-ruby'
   gem 'ya2yaml'
   gem 'fastercsv'
@@ -34,21 +34,23 @@ group :default do
   gem 'unicorn'
   gem 'rgeo'
   gem 'spatial_adapter'
-  gem 'friendly_id'
+  gem 'friendly_id', '~>3.3.1' # upgrade to 4.x takes more effort.
+  gem 'will_paginate'
+#  gem 'openstreetmap', :git => 'git@github.com:sozialhelden/openstreetmap.git'
 end
 
 group :test, :development do
-  gem 'rspec-rails', "~>2.1"
+  gem 'rspec-rails', "2.8"
 end
 
 group :test do
-  gem 'fakeweb'
   gem 'webmock'
   gem 'factory_girl_rails'
   gem "capybara"  # on mac, you need sudo port install libffi
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'rspec'
+  gem 'autotest'
   gem 'nokogiri'
   gem 'pickle'
   gem 'launchy'

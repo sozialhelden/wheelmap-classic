@@ -23,6 +23,7 @@ class OpenStreetMap::QueuedNode < ActiveRecord::Base
                          'address'    => address,
                          'wheelchair' => wheelchair,
                          'id'         => nil,
+                         'class'      => self.class.name.downcase,
                          'type'       => node_type.try(:identifier) || '',
                          'category'   => category.try(:identifier) || '',
                        }

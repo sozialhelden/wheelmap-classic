@@ -1,0 +1,98 @@
+---
+es:
+  date:
+    abbr_day_names:
+      - Dom
+      - Lun
+      - Mar
+      - Mie
+      - Jue
+      - Vie
+      - Sáb
+    abbr_month_names:
+      - ~
+      - ene
+      - feb
+      - mar
+      - apr
+      - may
+      - jun
+      - jul
+      - ago
+      - set
+      - oct
+      - nov
+      - dic
+    day_names:
+      - Domingo
+      - Lunes
+      - Martes
+      - Miércoles
+      - Jueves
+      - Viernes
+      - Sábado
+    formats:
+      default: "%d.%m.%Y"
+      long: "%M %D %A"
+      short: "%M %D"
+    month_names:
+      - ~
+      - Enero
+      - Febrero
+      - Marzo
+      - Abril
+      - Mayo
+      - Junio
+      - Julio
+      - Agosto
+      - Septiembre
+      - Octubre
+      - Noviembre
+      - Diciembre
+    order:
+      - ":año"
+      - !ruby/symbol mes
+      - ":día"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "sobre 1 hora"
+        other: "sobre %{count} horas"
+      about_x_months:
+        one: "sobre 1 mes"
+        other: "sobre %{count} meses"
+      about_x_years:
+        one: "sobre 1 año"
+        other: "sobre %{count} años"
+      almost_x_years:
+        one: "casi 1 año"
+        other: "casi %{count} años"
+      half_a_minute: "medio minuto"
+      less_than_x_minutes:
+        one: "menos de 1 minuto"
+        other: "menos de %{count} minutos"
+      less_than_x_seconds:
+        one: "menos de 1 segundo"
+        other: "menos de %{count} segundos"
+      over_x_years:
+        one: "más de 1 año"
+        other: "más de %{count} años"
+      x_days:
+        one: "1 día"
+        other: "%{count} días"
+      x_minutes:
+        one: "1 minuto"
+        other: "%{count} minutos"
+      x_months:
+        one: "1 mes"
+        other: "%{count} meses"
+      x_seconds:
+        one: "1 segundo"
+        other: "%{count} segundos"
+    prompts:
+      day: Día
+      hour: Hora
+      minute: Minuto
+      month: Mes
+      second: Segundos
+      year: Año

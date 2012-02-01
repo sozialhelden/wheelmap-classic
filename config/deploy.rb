@@ -98,37 +98,6 @@ namespace :deploy do
 
 end
 
-namespace :tolk do
-  desc <<-EOD
-    Downloads all translation files (except the English one) from the server
-    and stores them into the local config/locales folder.
-  EOD
-  task :download_translations do
-    require 'config/environment'
-    I18n.available_locales.each do |locale|
-      next if locale == :en
-      get "#{current_path}/config/locales/#{locale}.yml", "config/locales/#{locale}.yml"
-    end
-  end
-
-  task :dump_all do
-    run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake tolk:dump_all"
-  end
-
-  task :sync do
-    run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake tolk:sync"
-  end
-
-  desc <<-EOD
-    Downloads all translation files (except the English one) from the server
-    and stores them into the local config/locales folder.
-  EOD
-  task :dump_and_download do
-    dump_all
-    download_translations
-  end
-end
-
 task :log do
   run "tail -f #{deploy_to}/current/log/#{stage}.log"
 end

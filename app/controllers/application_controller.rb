@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
       else
         respond_to do |format|
           format.html{
-            flash[:error] = I18n.t('nodes.flash.authorize_wheelmap')
+            flash[:alert] = I18n.t('nodes.flash.authorize_wheelmap')
             redirect_to edit_user_path(current_user)
           }
           format.json{render_exception(Exception.new(I18n.t('nodes.flash.authorize_wheelmap')), 403)}
@@ -125,6 +125,16 @@ class ApplicationController < ActionController::Base
     unless @user.app_authorized?
       render :json => {:id => @user.id, :message => 'Application needs to be authorized', :url => edit_user_url(@user)}.to_json, :status => 403
     end
+  end
+
+  def not_found(exception)
+    # HoptoadNotifier.notify(exception,:component => self.class.name, :parameters => params)
+    @message = I18n.t('nodes.errors.not_found')
+    render :template => 'shared/error', :status => 404
+  end
+
+  def check_update_wheelchair_params
+    render( :text => 'Params missing', :status => 406 ) if params[:wheelchair].blank?
   end
 
 end

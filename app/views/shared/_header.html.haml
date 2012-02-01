@@ -8,7 +8,6 @@
       = link_to t('devise.sign_out.headline'), destroy_user_session_path
     - elsif admin_signed_in?
       = link_to "ADM: #{current_admin.email}", '#'
-      = link_to t('header.navigation.tolk'), tolk_root_path
       = link_to t('devise.sign_out.headline'), destroy_admin_session_path
     - else
       = link_to t('devise.sign_in.headline'), new_user_session_path
