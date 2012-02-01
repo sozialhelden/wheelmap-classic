@@ -1,5 +1,5 @@
 class Api::NodesController < Api::ApiController
-  defaults :resource_class => Poi, :collection_name => 'pois'
+  defaults :resource_class => Node, :collection_name => 'pois'
 
   actions :index, :show, :update, :create
 
@@ -85,7 +85,7 @@ class Api::NodesController < Api::ApiController
     user = wheelmap_visitor
     client = OpenStreetMap::OauthClient.new(user.access_token)
     Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], user, client, :wheelchair => params[:wheelchair]))
-    @node = Poi.find(params[:id])
+    @node = Node.find(params[:id])
     respond_to do |wants|
       wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
       wants.xml{  render :xml  => {:message => 'OK'}.to_xml,  :status => 202 }
