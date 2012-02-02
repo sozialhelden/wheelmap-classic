@@ -1,2 +1,0 @@
-class Way < Poi
-end

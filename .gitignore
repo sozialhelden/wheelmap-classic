@@ -3,6 +3,7 @@
 db/*.sqlite3
 log
 tmp/
+doc/
 config/database.yml
 config/google.yml
 config/open_street_map.yml

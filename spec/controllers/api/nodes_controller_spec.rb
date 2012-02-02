@@ -159,6 +159,18 @@ describe Api::NodesController do
         response.status.should eql 202
       }.should change(UpdateJob, :count).by(1)
     end
+
+    it "should not be possible to update a way" do
+      @user.oauth_token = :a_token
+      @user.oauth_secret = :a_secret
+      @user.save!
+      # Ways are the same as Nodes but with negative id
+      @node.osm_id = (@node.osm_id * -1)
+      lambda {
+        put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
+        response.status.should eql 406
+      }.should_not change(UpdateJob, :count)
+    end
   end
 
   describe 'create action' do

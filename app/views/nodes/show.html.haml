@@ -8,7 +8,7 @@
 %h1
   =@node.name
 %br
-= render :partial => @node
+= render :partial => 'nodes/node', :object => @node
 
 %table#accessibility{:class => "#{dom_class(@node)}"}
   %tr

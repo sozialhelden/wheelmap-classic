@@ -252,12 +252,14 @@ describe NodesController do
 
   describe "action: index" do
     before(:each) do
+      Poi.destroy_all
       NodeType.destroy_all
       @bar_node = Factory(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
       @bar_node.tags['amenity'] = 'bar'
       @bar_node.type = 'bar'
       @bar_node.save!
       @bar_node.reload
+      @bar_node.category.should_not be_nil
     end
 
     it "should render legacy json representation for iphone" do
