@@ -5,9 +5,11 @@ namespace :housekeeping do
 
     class Session < ActiveRecord::Base;end
 
-    latest_date = 10.days.ago
-    youngest_session = Session.first(:conditions => ['updated_at < ?', latest_date], :order => 'updated_at DESC')
-    Session.delete_all(['id <= ?', youngest_session.id])
+    latest_date = 7.days.ago
+    Session.find_in_batches(:batch_size => 100, :conditions => ['updated_at < ?', latest_date]) do |session_batch|
+      Session.delete_all(['id in (?)', session_batch.map(&:id)])
+      sleep 1
+    end
   end
 
   desc 'Determine node type for nodes without node type'
