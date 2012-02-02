@@ -54,20 +54,6 @@ describe NodesController do
      @full_url = "#{@base_url}/node/16581933"
     end
 
-    it "should send Hoptoad message in case OpenStreetMap API times out" do
-      stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/16581933").to_return(:status => 503, :body => "Not Available", :headers => {})
-
-      get(:edit, :id => 16581933)
-      response.code.should == '503'
-    end
-
-    it "should send Hoptoad message in case OpenStreetMap Node was deleted" do
-      stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/16581933").to_return(:status => 410, :body => "Gone", :headers => {})
-
-      get(:edit, :id => 16581933)
-      response.code.should == '410'
-    end
-
     it "should send Hoptoad message in case OpenStreetMap Node was not found" do
       stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/16581933").to_return(:status => 404, :body => "Not found", :headers => {})
 
