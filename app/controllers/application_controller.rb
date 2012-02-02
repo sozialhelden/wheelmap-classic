@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def set_abingo_identity
-    if request.user_agent =~ /\b(Baidu|Gigabot|Googlebot|libwww-perl|lwp-trivial|msnbot|SiteUptime|Slurp|WordPress|Yodao|ZIBB|ZyBorg)\b/i
+    if user_is_a_bot?
         Abingo.identity = "robot"
     elsif (user_signed_in? rescue false)
       Abingo.identity = current_user.id
@@ -27,14 +27,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def user_is_a_bot?
+    @bot ||= !(request.user_agent =~ /\b(Baidu|Gigabot|Googlebot|libwww-perl|lwp-trivial|msnbot|SiteUptime|Slurp|WordPress|Yodao|ZIBB|ZyBorg)\b/i).nil?
+  end
+
   def redirect_to_default_locale
     match = /^\/#{I18n.default_locale}\b/
     redirect_to request.fullpath.gsub(match, '') if request.fullpath =~ match
-  end
-
-  def url_includes_default_locale?
-    # /de
-    !(request.path =~ /^\/#{I18n.default_locale}($|\/)?/).nil?
   end
 
   def default_url_options(options = nil)
