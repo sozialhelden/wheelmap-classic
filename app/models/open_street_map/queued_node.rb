@@ -8,7 +8,7 @@ class OpenStreetMap::QueuedNode < ActiveRecord::Base
                     #{left} #{bottom}))'), queued_nodes.geom)" } }
 
   def self.enqueue(user, node_attributes)
-    self.create(:user => user, :node_attributes => node_attributes.to_json, :geom => Point.from_x_y(node_attributes['lon'], node_attributes['lat']))
+    self.create(:user => user, :node_attributes => node_attributes.to_json, :geom => Point.from_x_y(node_attributes['lon'].to_f, node_attributes['lat'].to_f))
   end
 
   def attribs

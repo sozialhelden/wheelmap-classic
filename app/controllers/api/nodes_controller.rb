@@ -115,7 +115,7 @@ class Api::NodesController < Api::ApiController
         :page => params[:page],
         :num_pages => collection.total_pages,
         :item_count_total => collection.total_entries,
-        :item_count => collection.nitems
+        :item_count => collection.compact.size
         }
       }
       @meta[:conditions][:search] = params[:q]    if params[:q]
