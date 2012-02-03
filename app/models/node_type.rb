@@ -9,8 +9,6 @@ class NodeType < ActiveRecord::Base
   validates :identifier, :presence => true
   validates :category_id, :presence => true
 
-  cattr_accessor :combination
-
   acts_as_api
 
   api_accessible :simple do |template|
