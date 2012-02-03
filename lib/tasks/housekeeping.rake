@@ -1,17 +1,5 @@
 namespace :housekeeping do
 
-  desc 'remove sessions older than 10 days'
-  task :session_cleanup => :environment do
-
-    class Session < ActiveRecord::Base;end
-
-    latest_date = 7.days.ago
-    Session.find_in_batches(:batch_size => 100, :conditions => ['updated_at < ?', latest_date]) do |session_batch|
-      Session.delete_all(['id in (?)', session_batch.map(&:id)])
-      sleep 1
-    end
-  end
-
   desc 'Determine node type for nodes without node type'
   task :calculate_node_type => :environment do
     Poi.without_node_type.find_in_batches do |batch|
