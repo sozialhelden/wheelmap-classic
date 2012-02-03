@@ -118,9 +118,9 @@ class PlanetReader
         process_poi
         @processed += 1
 
-        if (@processed % 10000 == 0)
+        if (@processed % 1000 == 0)
           Crewait.go!
-          print("\rprocessed #{@processed/10000}0k nodes")
+          print("\rprocessed #{@processed/1000}k nodes")
           STDOUT.flush
         end
       end
