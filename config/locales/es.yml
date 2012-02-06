@@ -143,6 +143,7 @@ es:
       send_instructions: "Recibirás un email con las instrucciones de cómo bloquear tu cuenta en unos minutos"
       unlocked: "Su cuenta ha sido desbloqueada. Ya está conectado."
   errors:
+    format: "%{attribute} %{message}"
     messages:
       accepted: "tiene que ser aceptado"
       blank: "tiene que ser rellenado"
@@ -164,6 +165,10 @@ es:
       too_long: "es demasiado largo (no más de %{count} caracteres)"
       too_short: "es demasiado corto (no más corto de %{count} caracteres)"
       wrong_length: "no tiene la longitud correcta (deben ser %{count} caracteres)"
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} "
   form:
     show_fully_accessible_places: "accesible en silla de ruedas"
     show_limited_accessible_places: "acceso medio en silla de ruedas"
@@ -226,6 +231,7 @@ es:
     searchbar:
       add_place: "Añadir otra lugar"
       find: buscar
+      label: ~
       placeholder: "p.ej. Sunset Boulevard L.A. ó Brandenburg Gate Berlin\n"
       title_add_place: "¡Añada otro nuevo sitio aquí ahora!"
     tagline: "Logo del mapa de silla de ruedas"
@@ -300,6 +306,7 @@ es:
         edit_node: "Editar sitio"
         large_map: Ampliar
         report_bug: "Report a problem"
+      show-in-osm: OpenStreetMap
     update:
       flash:
         not_successfull: "¡Ay!, su entrada ha sido o incorrecta o incompleta."
@@ -311,13 +318,21 @@ es:
         format: "%u%n"
         precision: 2
         separator: "-"
+        significant: 0
+        strip_insignificant_zeros: 0
         unit: $
     format:
       delimiter: ","
       precision: 3
       separator: "-"
+      significant: 0
+      strip_insignificant_zeros: ~
     human:
+      decimal_units:
+        units:
+          unit: ~
       format:
+        delimiter: ~
         precision: 1
         significant: true
         strip_insignificant_zeros: true
@@ -331,6 +346,12 @@ es:
           kb: KB
           mb: MB
           tb: TB
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
   oauth:
     application:
       connect:
@@ -494,6 +515,7 @@ es:
         for: "Buscando \"%{q}\""
         not_found: "No se ha encontrado ningún sitio"
   splash:
+    countline: "%{count}"
     headline: "Todo el mundo puede añadir lugares accesible para sillas de ruedas!"
   statistics: Estadísticas
   support:

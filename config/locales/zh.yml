@@ -138,6 +138,10 @@ zh:
     precision:
       format:
         delimiter: ~
+  poi:
+    name:
+      education:
+        university: 大学
   support:
     array:
       last_word_connector: ", 和 "

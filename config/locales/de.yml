@@ -14,7 +14,7 @@ de:
         exclusion: "ist nicht verfügbar"
         greater_than: "muss größer als %{count} sein"
         greater_than_or_equal_to: "muss größer oder gleich %{count} sein"
-        inclusion: "ist kein gültiger Wert"
+        inclusion: "ist nicht in der Liste aufgeführt"
         invalid: "ist nicht gültig"
         less_than: "muss kleiner als %{count} sein"
         less_than_or_equal_to: "muss kleiner oder gleich %{count} sein"
@@ -37,9 +37,9 @@ de:
           other: "Konnte dieses %{model}-Objekt nicht speichern, da %{count} Fehler auftraten."
   application:
     require_no_user:
-      notice: "Du bist doch schon eingeloggt …"
+      notice: "Du bist bereits eingeloggt…"
     require_user:
-      notice: "Du musst dich einloggen, um diese Seite zu sehen."
+      notice: "Du musst dich anmelden, um diese Seite zu sehen."
   breadcrumbs:
     node:
       create: "Neuen Ort anlegen"
@@ -98,7 +98,7 @@ de:
         comment: "Solltest du diese Anfrage nicht gestellt haben, ignoriere diese E-Mail einfach.<br/>Dein Passwort wird nicht geändert, bis du auf den oben angegebenen Link klickst und ein neues Passwort setzt."
         headline: "Willkommen %{email}"
         link: "Mein Passwort ändern"
-        text: "Jemand hat angefragt dein Passwort zu ändern.  Das kannst du tun, indem du folgendend Link anklickst:"
+        text: "Jemand hat angefragt, dein Passwort zu ändern. Falls du es warst, kannst du Dein Passwort ändern, indem du folgenden Link anklickst - falls nicht, bitte ignorieren:"
       form:
         labels:
           password: "Neues Passwort"
@@ -639,7 +639,7 @@ de:
       password: Passwort
       remember_me: "Eingeloggt bleiben"
   wheelchairstatus:
-    limited: "Teilweise rollstuhlgerecht"
+    limited: "teilweise rollstuhlgerecht"
     ? "no"
     : "Nicht rollstuhlgerecht"
     unknown: "Unbekannter Status"
