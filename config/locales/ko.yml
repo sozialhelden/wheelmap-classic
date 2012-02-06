@@ -98,7 +98,7 @@ ko:
         comment: "비밀번호 변경을 요청한 적이 없다면, 이 메일은 무시하셔도 좋습니다<br/>당신의 비밀번호는 당신이 이 링크를 클릭해도 새로운 비밀번호로 변경되지 않습니다."
         headline: "%{email} 님 환영합니다"
         link: "내 비밀번호 변경"
-        text: "누군가 당신의 비밀번호 변경을 요청했습니다. 당신은 다음 링크를 클릭해 비밀번호를 변경할 수 있습니다 :"
+        text: "비밀번호 변경을 원하셨다면, 다음 링크를 클릭하세요 - 요청한 바가 없다면 무시하셔도 좋습니다."
       form:
         labels:
           password: "새 비밀번호"
@@ -206,7 +206,7 @@ ko:
       update:
         notice: "%{resource_name}이(가) 성공적으로 업데이트 되었습니다"
   form:
-    show_fully_accessible_places: "휠체어 접근가능"
+    show_fully_accessible_places: 네
     show_limited_accessible_places: "휠체어 부분적 접근가능"
     show_places_without_status: "알 수 없는 상태"
     show_unaccessible_places: "휠체어 접근불가"
@@ -366,7 +366,7 @@ ko:
         back: 뒤로
         large_map: 확대
         listing: "%{city}의 모든 '%{type}'"
-      show-in-osm: OpenStreetMap
+      show-in-osm: "OpenStreetMap 보기 "
     update:
       flash:
         not_successfull: "입력한 내용이 잘못되었거나 완전하지 않습니다."
@@ -385,7 +385,7 @@ ko:
         unit: $
     format:
       delimiter: ","
-      precision: 3
+      precision: 2
       separator: "."
       significant: 0
       strip_insignificant_zeros: 0
@@ -425,7 +425,7 @@ ko:
       connect:
         headline: "당신의 계정을 OpenStreetMap과 연계시키면, wheelmap.org에서 새로운 장소를 생성하거나 수정할 수 있습니다."
     callback:
-      notice: "당신의 wheelmap 계정은 현재 penStreetMap 계정 %{user}과 연결되어 있습니다"
+      notice: "당신의 wheelmap 계정은 현재 OpenStreetMap 계정 %{user}과 연결되어 있습니다"
   or: 또는
   place:
     one: "%{count} 장소"
