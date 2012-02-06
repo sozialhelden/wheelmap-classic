@@ -354,16 +354,18 @@ de:
         title: "Neuer Ort | wheelmap.org"
       link:
         large_map: "&laquo; Abbrechen"
+    node:
+      link:
+        claim: "Du arbeitest hier?"
+        edit_node: "Ort bearbeiten"
+        report_bug: "Problem melden"
     show:
       header:
         title: "Ort: %{node} | wheelmap.org"
       link:
         back: zurück
-        claim: "Du arbeitest hier?"
-        edit_node: "Ort bearbeiten"
         large_map: "Ansicht vergrößern"
         listing: "Alle Orte vom Typ '%{type}' in %{city}"
-        report_bug: "Problem melden"
       show-in-osm: "in Openstreetmap anzeigen"
     update:
       flash:

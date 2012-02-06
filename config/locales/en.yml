@@ -354,16 +354,18 @@ en:
         title: "New place | wheelmap.org"
       link:
         large_map: "&laquo; Cancel"
+    node:
+      link:
+        claim: "Do you work here?"
+        edit_node: "Edit place"
+        report_bug: "Report a problem"
     show:
       header:
         title: "Place: %{node} | wheelmap.org"
       link:
         back: back
-        claim: "Do you work here?"
-        edit_node: "Edit place"
         large_map: Enlarge
         listing: "All places of typ '%{type}' in %{city}"
-        report_bug: "Report a problem"
       show-in-osm: OpenStreetMap
     update:
       flash:

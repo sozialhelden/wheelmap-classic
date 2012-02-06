@@ -311,16 +311,18 @@ bg:
         title: "Ново място | wheelmap.org"
       link:
         large_map: "&laquo; Отказ"
+    node:
+      link:
+        claim: "Тук ли работиш?"
+        edit_node: "Редактирай място"
+        report_bug: "Съобщи за проблем"
     show:
       header:
         title: "Място: %{node} | wheelmap.org"
       link:
         back: обратно
-        claim: "Тук ли работиш?"
-        edit_node: "Редактирай място"
         large_map: Увеличи
         listing: "Всички видове '%{type}' в %{city}"
-        report_bug: "Съобщи за проблем"
       show-in-osm: OpenStreetMap
     update:
       flash:

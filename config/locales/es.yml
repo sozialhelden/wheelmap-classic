@@ -298,14 +298,16 @@ es:
         title: "Nuevo sitio | wheelmap.org"
       link:
         large_map: "&laquo; Cancelar"
+    node:
+      link:
+        claim: "¿Trabaja usted aquí?"
+        edit_node: "Editar sitio"
+        report_bug: "Report a problem"
     show:
       header:
         title: "Sitio: %{node} | wheelmap.org"
       link:
-        claim: "¿Trabaja usted aquí?"
-        edit_node: "Editar sitio"
         large_map: Ampliar
-        report_bug: "Report a problem"
       show-in-osm: OpenStreetMap
     update:
       flash:

@@ -325,13 +325,16 @@ se:
         title: "Ny plats | wheelmap.org"
       link:
         large_map: "&laquo; Avbryt"
+    node:
+      link:
+        claim:
+        edit_node: "Ändra plats"
+        report_bug: "Rapportera ett problem"
     show:
       header:
         title: "Plats: %{node} | wheelmap.org"
       link:
-        edit_node: "Ändra plats"
         large_map: Förstora
-        report_bug: "Rapportera ett problem"
     update:
       flash:
         not_successfull: "Ojdå, du skrev antingen fel eller har inte fyllt i allt."
