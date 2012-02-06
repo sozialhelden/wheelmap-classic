@@ -103,7 +103,7 @@ describe OpenStreetMap do
 
   describe"method :update_way" do
     before :each do
-      @way = Factory.build(:way, :version => 1, :id => 123)
+      @way = Factory.build(:way, :version => 1, :id => -123)
       @changeset_create_url = "#{@base_url}/changeset/create"
       @put_url = "#{@base_url}/way/#{@way.id}"
       @get_url = "#{@base_url}/way/#{@way.id}"

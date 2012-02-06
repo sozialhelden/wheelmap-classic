@@ -100,7 +100,6 @@ CREATE TABLE `pois` (
   `updated_at` datetime DEFAULT NULL,
   `node_type_id` int(11) DEFAULT NULL,
   `region_id` int(11) DEFAULT NULL,
-  `type` varchar(255) DEFAULT 'Node',
   UNIQUE KEY `index_pois_on_osm_id` (`osm_id`),
   SPATIAL KEY `index_pois_on_geom` (`geom`),
   KEY `index_pois_on_status` (`status`),
@@ -276,3 +275,5 @@ INSERT INTO schema_migrations (version) VALUES ('20111201194619');
 INSERT INTO schema_migrations (version) VALUES ('20120119150643');
 
 INSERT INTO schema_migrations (version) VALUES ('20120120143510');
+
+INSERT INTO schema_migrations (version) VALUES ('20120202134608');

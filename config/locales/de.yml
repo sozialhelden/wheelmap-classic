@@ -14,7 +14,7 @@ de:
         exclusion: "ist nicht verfügbar"
         greater_than: "muss größer als %{count} sein"
         greater_than_or_equal_to: "muss größer oder gleich %{count} sein"
-        inclusion: "ist kein gültiger Wert"
+        inclusion: "ist nicht in der Liste aufgeführt"
         invalid: "ist nicht gültig"
         less_than: "muss kleiner als %{count} sein"
         less_than_or_equal_to: "muss kleiner oder gleich %{count} sein"
@@ -37,9 +37,9 @@ de:
           other: "Konnte dieses %{model}-Objekt nicht speichern, da %{count} Fehler auftraten."
   application:
     require_no_user:
-      notice: "Du bist doch schon eingeloggt …"
+      notice: "Du bist bereits eingeloggt…"
     require_user:
-      notice: "Du musst dich einloggen, um diese Seite zu sehen."
+      notice: "Du musst dich anmelden, um diese Seite zu sehen."
   breadcrumbs:
     node:
       create: "Neuen Ort anlegen"
@@ -67,7 +67,7 @@ de:
         submit: "Änderungen speichern"
       headline: "Benutzerkonto verwalten"
     failure:
-      already_authenticated: "Sie sind bereits angemeldet."
+      already_authenticated: "Du bist bereits angemeldet."
       inactive: "Dein Konto wurde noch nicht aktiviert."
       invalid: "Ungültige Email oder ungültiges Kennwort."
       invalid_token: "Ungültiger Authentifizierungstoken."
@@ -98,7 +98,7 @@ de:
         comment: "Solltest du diese Anfrage nicht gestellt haben, ignoriere diese E-Mail einfach.<br/>Dein Passwort wird nicht geändert, bis du auf den oben angegebenen Link klickst und ein neues Passwort setzt."
         headline: "Willkommen %{email}"
         link: "Mein Passwort ändern"
-        text: "Jemand hat angefragt dein Passwort zu ändern.  Das kannst du tun, indem du folgendend Link anklickst:"
+        text: "Jemand hat angefragt, dein Passwort zu ändern. Falls du es warst, kannst du Dein Passwort ändern, indem du folgenden Link anklickst - falls nicht, bitte ignorieren:"
       form:
         labels:
           password: "Neues Passwort"
@@ -156,7 +156,7 @@ de:
         submit: Registrieren
       headline: Registrieren
     unlocks:
-      link: "Keine Anleitung zum Entspreen deines Benutzerkontos bekommen?"
+      link: "Keine Anleitung zum Entsperren deines Benutzerkontos bekommen?"
       send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto entsperren kannst."
       send_paranoid_instructions: "Wenn Dein Konto vorhanden ist, wirst Du in wenigen Minuten eine E-Mail erhalten mit Anweisungen, wie man es wieder entsperrt. "
       unlocked: "Dein Benutzerkonto wirde erfolgreich entsperrt. Du bist jetzt eingeloggt."
@@ -248,7 +248,7 @@ de:
     meta:
       description: "Stufen hier, Treppen da oder keine Behindertentoiletten - dank Wheelmap wissen Sie jetzt im Vorhinein, ob ein Museum, eine Kino oder das nächste Restaurant rollstuhlgerecht sind."
       homepage: Startseite
-      keywords: "rollstuhl gerechte orte finden suchen markieren"
+      keywords: "rollstuhl gerechte Orte finden suchen markieren"
       search: Suche
     navigation:
       blog: Blog
@@ -329,12 +329,12 @@ de:
       street: "%{street} %{housenumber}"
     tags:
       phone: "Telefon:"
-      website: "Webseite:"
+      website: "Website:"
   nodes:
     create:
       flash:
         not_successfull: "Oops, die Angaben sind noch unvollständig oder inkorrekt."
-        successfull: "Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert"
+        successfull: "Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert."
     edit:
       header:
         title: "Ort bearbeiten: %{node} | wheelmap.org"
@@ -346,7 +346,7 @@ de:
       not_available: "Leider steht diese Seite zur Zeit nicht zur Verfügung"
       not_existent: "Leider ist dieser Ort nicht mehr da"
       not_found: "Leider konnte die Seite nicht gefunden werden"
-      param_missing: "Bitte geben Sie einen Suchbegriff ein."
+      param_missing: "Bitte einen Suchbegriff eingeben."
     flash:
       authorize_wheelmap: "Um Daten zu ändern benötigst Du einen OpenStreetMap Account."
     new:
@@ -354,16 +354,18 @@ de:
         title: "Neuer Ort | wheelmap.org"
       link:
         large_map: "&laquo; Abbrechen"
+    node:
+      link:
+        claim: "Du arbeitest hier?"
+        edit_node: "Ort bearbeiten"
+        report_bug: "Problem melden"
     show:
       header:
         title: "Ort: %{node} | wheelmap.org"
       link:
         back: zurück
-        claim: "Du arbeitest hier?"
-        edit_node: "Ort bearbeiten"
         large_map: "Ansicht vergrößern"
         listing: "Alle Orte vom Typ '%{type}' in %{city}"
-        report_bug: "Problem melden"
       show-in-osm: "in Openstreetmap anzeigen"
     update:
       flash:
@@ -509,7 +511,7 @@ de:
       public_transfer:
         aerodrome: Flughafen
         bicycle_parking: Fahrradparkplatz
-        bicycle_rental: Fahradvermietung
+        bicycle_rental: Fahrradvermietung
         boatyard: Hafen
         bus_station: Bushaltestelle
         bus_stop: Bus
@@ -568,7 +570,7 @@ de:
         swimming: Freibad
         swimming_pool: Schwimmbad
       tourism:
-        archaeological_site: "Archäoligische Ausgrabungstätte"
+        archaeological_site: "Archäologische Ausgrabungstätte"
         arts_centre: Kunstzentrum
         artwork: Kunstwerk
         attraction: Attraktion
@@ -639,7 +641,7 @@ de:
       password: Passwort
       remember_me: "Eingeloggt bleiben"
   wheelchairstatus:
-    limited: "Teilweise rollstuhlgerecht"
+    limited: "teilweise rollstuhlgerecht"
     ? "no"
     : "Nicht rollstuhlgerecht"
     unknown: "Unbekannter Status"

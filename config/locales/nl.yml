@@ -333,16 +333,18 @@ nl:
         title: "Nieuwe plaats | wheelmap.org"
       link:
         large_map: Annuleren
+    node:
+      link:
+        claim: "Werk je hier?"
+        edit_node: "Bewerk plaats"
+        report_bug: "Geef een probleem op"
     show:
       header:
         title: "Plaats:  %{node} | wheelmap.org"
       link:
         back: terug
-        claim: "Werk je hier?"
-        edit_node: "Bewerk plaats"
         large_map: Verruimen
         listing: "Alle vergelijkbare plaatsen '%{type}' in %{city}\n"
-        report_bug: "Geef een probleem op"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -374,9 +376,16 @@ nl:
           quadrillion: Biljard
           thousand: Duizend
           trillion: Triljoen
+          unit: ~
       format:
         delimiter: ~
         precision: 1
+        strip_insignificant_zeros: 0
+      storage_units:
+        units:
+          byte:
+            one: Byte
+            other: Bytes
     percentage:
       format:
         delimiter: ~

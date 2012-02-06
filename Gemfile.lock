@@ -1,14 +1,17 @@
 GIT
-  remote: git@github.com:christoph-buente/big_sitemap.git
-  revision: dce4f93ce6d70c26270be8b8ee7d8bbd1a0666f9
-  specs:
-    big_sitemap (0.8.3.3)
-
-GIT
   remote: git@github.com:christoph-buente/redgreengrid.git
   revision: 730825cbb3e5eb9d9f47b5c7339b56c11a3bcaaa
   specs:
     redgreengrid (0.3.1)
+
+GIT
+  remote: git@github.com:sozialhelden/big_sitemap.git
+  revision: 3c59ffe8e8609fffad1c3796abf132b23a98ae1d
+  specs:
+    big_sitemap (1.0.0)
+      bundler
+      rake
+      rdoc
 
 PATH
   remote: vendor/gems/crewait-0.1.6

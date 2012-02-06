@@ -291,11 +291,14 @@ pt:
     new:
       header:
         title: "Novo lugar | wheelmap.org"
+    node:
+      link:
+        claim: ~
+        edit_node: "Editar lugar"
+        report_bug: "Report a problem"
     show:
       link:
-        edit_node: "Editar lugar"
         large_map: Aumentar
-        report_bug: "Report a problem"
     update:
       flash:
         not_successfull: "Oops, os dados introduzido estão incorrectos ou incompletos"

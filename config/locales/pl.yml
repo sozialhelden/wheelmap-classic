@@ -311,16 +311,18 @@ pl:
         title: "Nowe miejsce | wheelmap.org"
       link:
         large_map: "&laquo; Anuluj"
+    node:
+      link:
+        claim: "Pracujesz tutaj?"
+        edit_node: "Edytuj miejsce"
+        report_bug: "Zgłoś problem"
     show:
       header:
         title: "Miejsce: %{node} | wheelmap.org"
       link:
         back: wróć
-        claim: "Pracujesz tutaj?"
-        edit_node: "Edytuj miejsce"
         large_map: Powiększ
         listing: "Wszystkie miejsca typu '%{type}' w %{city}"
-        report_bug: "Zgłoś problem"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -335,12 +337,17 @@ pl:
         format: "%u %n"
         precision: 2
         separator: ","
+        significant: 0
         unit: PLN
     format:
       delimiter: " "
       precision: 3
       separator: ","
+      strip_insignificant_zeros: 0
     human:
+      decimal_units:
+        units:
+          unit: ~
       format:
         delimiter: ~
         precision: 3

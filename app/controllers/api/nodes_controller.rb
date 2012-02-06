@@ -1,13 +1,14 @@
 class Api::NodesController < Api::ApiController
-  defaults :resource_class => Node, :collection_name => 'pois'
+  defaults :resource_class => Poi, :collection_name => 'pois'
 
-  actions :index, :show, :update, :create
+  actions :index, :show, :edit, :update, :create
 
   custom_actions :collection => :search, :member => :update_wheelchair
 
   optional_belongs_to :category
   optional_belongs_to :node_type
 
+  before_filter :check_for_way_id, :only => :update
 
   # Make sure user authenticates itself using an api_key
   before_filter :authenticate_application!, :only => [:update, :create]
@@ -84,8 +85,12 @@ class Api::NodesController < Api::ApiController
   def update_wheelchair
     user = wheelmap_visitor
     client = OpenStreetMap::OauthClient.new(user.access_token)
-    Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], user, client, :wheelchair => params[:wheelchair]))
-    @node = Node.find(params[:id])
+    if (id = params[:id]) < 0 # Ways have a negative id
+      Delayed::Job.enqueue(UpdateSingleWayAttributeJob.new(params[:id].abs, user, client, :wheelchair => params[:wheelchair]))
+    else
+      Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], user, client, :wheelchair => params[:wheelchair]))
+    end
+    @node = Poi.find(params[:id])
     respond_to do |wants|
       wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
       wants.xml{  render :xml  => {:message => 'OK'}.to_xml,  :status => 202 }
@@ -110,7 +115,7 @@ class Api::NodesController < Api::ApiController
         :page => params[:page],
         :num_pages => collection.total_pages,
         :item_count_total => collection.total_entries,
-        :item_count => collection.nitems
+        :item_count => collection.compact.size
         }
       }
       @meta[:conditions][:search] = params[:q]    if params[:q]
@@ -118,12 +123,17 @@ class Api::NodesController < Api::ApiController
       @meta
   end
 
+  def check_for_way_id
+    respond_to do |wants|
+      wants.json{ render :json => {:error => 'This type of node is not editable'}.to_json, :status => 406 }
+      wants.xml{  render :xml  => {:error => 'This type of node is not editable'}.to_xml,  :status => 406 }
+    end if params[:id] < 0 # Way ids are negative
+  end
+
   def check_update_wheelchair_params
-    if params[:wheelchair].blank? || ! Poi::WHEELCHAIR_STATUS_VALUES.keys.include?(params[:wheelchair].to_sym)
-      respond_to do |wants|
-        wants.json{ render :json => {:error => 'Param wheelchair must be one of the following values: [yes, no, limited, unknown]'}.to_json, :status => 406 }
-        wants.xml{  render :xml  => {:error => 'Param wheelchair must be one of the following values: [yes, no, limited, unknown]'}.to_xml,  :status => 406 }
-      end
-    end
+    respond_to do |wants|
+      wants.json{ render :json => {:error => 'Param wheelchair must be one of the following values: [yes, no, limited, unknown]'}.to_json, :status => 406 }
+      wants.xml{  render :xml  => {:error => 'Param wheelchair must be one of the following values: [yes, no, limited, unknown]'}.to_xml,  :status => 406 }
+    end if params[:wheelchair].blank? || ! Poi::WHEELCHAIR_STATUS_VALUES.keys.include?(params[:wheelchair].to_sym)
   end
 end

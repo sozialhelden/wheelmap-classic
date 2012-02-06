@@ -323,13 +323,16 @@ it:
         title: "Nuovo luogo | wheelmap.org "
       link:
         large_map: "&laquo; Annulla"
+    node:
+      link:
+        claim: ~
+        edit_node: "Modifica luogo"
+        report_bug: "Report a problem"
     show:
       header:
         title: "Lougo: %{node} | wheelmap.org "
       link:
-        edit_node: "Modifica luogo"
         large_map: Allarga
-        report_bug: "Report a problem"
     update:
       flash:
         not_successfull: "Scusa, il tuo input era scorretto o incompleto"

@@ -324,13 +324,16 @@ is:
         title: "Nýr staður | wheelmap.org "
       link:
         large_map: "&laquo; Hætta við"
+    node:
+      link:
+        claim: ~
+        edit_node: "Breyta stað"
+        report_bug: "Tilkynntu villu"
     show:
       header:
         title: "Staður: %{node} | wheelmap.org"
       link:
-        edit_node: "Breyta stað"
         large_map: Stækka
-        report_bug: "Tilkynntu villu"
     update:
       flash:
         not_successfull: "Úps, innleggið þitt var rangt eða ekki klárað."

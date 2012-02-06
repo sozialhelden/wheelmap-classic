@@ -16,7 +16,7 @@ class PlanetReader
     @parser = stream_or_file.is_a?(String) ? LibXML::XML::SaxParser.file(stream_or_file) : LibXML::XML::SaxParser.io(stream_or_file)
     @parser.callbacks = self
     Crewait.start_waiting
-    @to_be_deleted = {'Node' => [], 'Way' => []}
+    @to_be_deleted = []
     @combination = NodeType.combination
   end
 
@@ -46,12 +46,8 @@ class PlanetReader
   end
 
   def flush_pois(min_amount=200)
-    @to_be_deleted.keys.each do |klass_name|
-      if (size = @to_be_deleted[klass_name].size) >= min_amount
-        # puts "Delete #{size} #{klass_name}s."
-        klass_name.constantize.delete(@to_be_deleted[klass_name])
-        @to_be_deleted[klass_name] = []
-      end
+    if @to_be_deleted.size >= min_amount
+      Poi.delete_all(['osm_id in (?)'], @to_be_deleted)
     end
   end
 
@@ -74,9 +70,8 @@ class PlanetReader
       id = attributes['id'].to_i
       if (id > 0) then
         @poi = {:osm_id => id,
-                :geom => Point.from_x_y(attributes['lon'], attributes['lat']),
-                :type => 'Node',
-                :version => attributes['version'],
+                :geom => Point.from_x_y(attributes['lon'].to_f, attributes['lat'].to_f),
+                :version => attributes['version'].to_i,
                 :tags => {}}
       elsif (id < 0 and id > -10000000) then
         # Ignore, its a node from a relation.
@@ -86,10 +81,9 @@ class PlanetReader
         # It's a node from a way
         # update way "-id-10000000" in osm
         # puts "Process: it's from a way: #{(id + 10000000).abs}"
-        @poi = {:osm_id => (id + 10000000).abs,
-                :geom => Point.from_x_y(attributes['lon'], attributes['lat']),
-                :type => 'Way',
-                :version => attributes['version'],
+        @poi = {:osm_id => (id + 10000000),
+                :geom => Point.from_x_y(attributes['lon'].to_f, attributes['lat'].to_f),
+                :version => attributes['version'].to_i,
                 :tags => {}}
       end
 
@@ -124,9 +118,9 @@ class PlanetReader
         process_poi
         @processed += 1
 
-        if (@processed % 10000 == 0)
+        if (@processed % 1000 == 0)
           Crewait.go!
-          print("\rprocessed #{@processed/10000}0k nodes")
+          print("\rprocessed #{@processed/1000}k nodes")
           STDOUT.flush
         end
       end
@@ -188,13 +182,13 @@ class PlanetReader
         # "find_by_osm_id", ob eine alte Version ueberhaupt
         # existiert, denn das waere Zeitverschwendung; der
         # delete-Aufruf macht das schneller.
-        @to_be_deleted[@poi[:type]] << @poi[:osm_id]
+        @to_be_deleted << @poi[:osm_id]
         flush_pois
 
       end
 
     elsif @changemode == 'delete'
-      @to_be_deleted[@poi[:type]] << @poi[:osm_id]
+      @to_be_deleted << @poi[:osm_id]
       flush_pois
     end
   end

@@ -1,5 +1,5 @@
 ---
-jp:
+ja:
   activerecord:
     errors:
       full_messages:
@@ -47,102 +47,6 @@ jp:
     root: wheelmap
   common:
     close: 閉じる
-  date:
-    abbr_day_names:
-      - 日
-      - 月
-      - 火
-      - 水
-      - 木
-      - 金
-      - 土
-    abbr_month_names:
-      - ~
-      - 1月
-      - 2月
-      - 3月
-      - 4月
-      - 5月
-      - 6月
-      - 7月
-      - 8月
-      - 9月
-      - 10月
-      - 11月
-      - 12月
-    day_names:
-      - 日曜
-      - 月曜
-      - 火曜
-      - 水曜
-      - 木曜
-      - 金曜
-      - 土曜
-    formats:
-      default: "%Y-%m-%d "
-      long: "%B %d, %Y"
-      short: "%b %d "
-    month_names:
-      - ~
-      - 1月
-      - 2月
-      - 3月
-      - 4月
-      - 5月
-      - 6月
-      - 7月
-      - 8月
-      - 9月
-      - 10月
-      - 11月
-      - 12月
-    order:
-      - !ruby/symbol year
-      - !ruby/symbol month
-      - !ruby/symbol day
-  datetime:
-    distance_in_words:
-      about_x_hours:
-        one: 約1時間
-        other: "約 %{count} 時間"
-      about_x_months:
-        one: 約1か月
-        other: "約 %{count}か月"
-      about_x_years:
-        one: 約1年
-        other: "約 %{count} 年"
-      almost_x_years:
-        one: "約 1 年"
-        other: "約 %{count} 年"
-      half_a_minute: 0.5分
-      less_than_x_minutes:
-        one: 1分未満
-        other: "%{count} 分未満"
-      less_than_x_seconds:
-        one: 1秒未満
-        other: "%{count} 秒未満"
-      over_x_years:
-        one: 1年以上
-        other: "%{count}年以上"
-      x_days:
-        one: 1日
-        other: "%{count}日"
-      x_minutes:
-        one: 1分
-        other: "%{count}分"
-      x_months:
-        one: 1か月
-        other: "%{count} か月"
-      x_seconds:
-        one: 1秒
-        other: "%{count}秒"
-    prompts:
-      day: 日
-      hour: 時
-      minute: 分
-      month: 月
-      second: 秒
-      year: 年
   devise:
     confirmations:
       confirmed: あなたのアカウントは確認できました。現在サイインしています。
@@ -177,9 +81,6 @@ jp:
       unlock_instructions:
         subject: ロック解除手順
     mandatory: "* 必須項目"
-    omniauth_callbacks:
-      failure: "%{kind} で \"%{reason}\" のためにあなたを認証できません。"
-      success: "%{kind} アカウントの認証に成功しました。"
     password_recovery:
       form:
         labels:
@@ -243,11 +144,8 @@ jp:
       send_instructions: 数分でアンロック手順を書いたメールが届きます。
       unlocked: アカウントはアンロックされました。あなたは現在サイインしています。
   errors:
-    dynamic_format: "%{message}"
-    format: "%{attribute} %{message}"
     messages:
       accepted: 承認してください
-      already_confirmed: は確認済みです、ログインしてみてください
       blank: 値を入力してください
       confirmation: 確認が一致しません
       empty: 値を入力してください
@@ -261,31 +159,11 @@ jp:
       less_than: "%{count} より小さくなければなりません"
       less_than_or_equal_to: "%{count} 以下でなければなりません"
       not_a_number: は数字ではありません
-      not_an_integer: 整数でなければなりません
-      not_found: 見つかりません
-      not_locked: ロックされていません
-      not_saved:
-        one: "%{resource} にエラーが1件あるので保存できません:"
-        other: "%{resource} に %{count} 件エラーがあるので保存できません:"
       odd: 奇数でなければなりません
       taken: 既に取得されています
       too_long: "が長すぎます(%{count} 文字より多すぎてはいけません)"
       too_short: "が短かすぎます(%{count} 文字より少なすぎてはいけません)"
       wrong_length: "長さが間違っています（正確に%{count}文字にしてください）"
-    template:
-      body: "次の項目に問題があります:"
-      header:
-        one: "エラーが1件あるのでこの %{model} を保存できません"
-        other: "エラーが %{count} 件あるのでこの %{model} を保存できません"
-  flash:
-    actions:
-      create:
-        notice: "%{resource_name} が作成されました。"
-      destroy:
-        alert: "%{resource_name} は削除できませんでした。"
-        notice: "%{resource_name} は削除されました。"
-      update:
-        notice: "%{resource_name} は更新されました。"
   form:
     show_fully_accessible_places: 車椅子可
     show_limited_accessible_places: 車椅子一部可
@@ -351,13 +229,6 @@ jp:
       title_add_place: 今すぐこの位置に新しい場所を追加！
     tagline: "Wheelmap ロゴ"
     title: "Wheelmap - 車椅子で行ける場所を見つけよう "
-  helpers:
-    select:
-      prompt: 選択してください
-    submit:
-      create: "%{model} を作成"
-      submit: "%{model} を保存"
-      update: "%{model} を更新"
   home:
     index:
       filter:
@@ -407,7 +278,6 @@ jp:
       link:
         large_map: "&laquo; キャンセル"
     errors:
-      default: おっと、何かがおかしいようです。この問題はレポートされました。
       not_authorized: 申し訳ありません、認証に失敗しました
       not_available: 申し訳ありません、このページは一時的に利用できません。
       not_existent: 申し訳ありません、この場所は既に利用できなくなっています。
@@ -422,7 +292,7 @@ jp:
         large_map: "&laquo; キャンセル"
     node:
       link:
-        claim:
+        claim: ~
         edit_node: 場所を編集
         report_bug: "Report a problem"
     show:
@@ -443,38 +313,14 @@ jp:
         format: "%u%n"
         precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: $
     format:
       delimiter: ", "
       precision: 3
       separator: "."
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
-      decimal_units:
-        format: "%n %u"
-        units:
-          billion: 億
-          million: 百万
-          quadrillion: 千兆
-          thousand: 千
-          trillion: 百京
       format:
         precision: 1
-        significant: true
-        strip_insignificant_zeros: true
-      storage_units:
-        format: "%n %u"
-        units:
-          byte:
-            one: Byte
-            other: Bytes
-          gb: GB
-          kb: KB
-          mb: MB
-          tb: TB
   oauth:
     application:
       connect:
@@ -539,12 +385,8 @@ jp:
         theatre: 劇場
         zoo: 動物園
       misc:
-        doctors: 医者
-        hospital: 病院
-        pharmacy: 薬局
         place_of_worship: 寺社礼拝所
         toilets: トイレ
-        veterinary: 獣医
       money_post:
         atm: ATM
         bank: 銀行

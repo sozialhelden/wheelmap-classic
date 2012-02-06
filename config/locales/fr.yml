@@ -315,13 +315,16 @@ fr:
         title: "Nouveau lieu | wheelmap.org "
       link:
         large_map: "&laquo; Annuler"
+    node:
+      link:
+        claim: ~
+        edit_node: "Editer lieu"
+        report_bug: "Report a problem"
     show:
       header:
         title: "Lieu: %{node} | wheelmap.org "
       link:
-        edit_node: "Editer lieu"
         large_map: Elargir
-        report_bug: "Report a problem"
     update:
       flash:
         not_successfull: "Oups, votre entrée était incorrecte ou incomplète."

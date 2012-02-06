@@ -104,6 +104,14 @@ def remove_merged_file
   FileUtils.rm_rf MERGED_FILE, :verbose => true
 end
 
+def tag_filter
+  tag_filter = []
+  NodeType.combination.keys.each do |key|
+    tag_filter << "#{key}=#{NodeType.combination[key].keys.join(',')}"
+  end
+  tag_filter.join(' ')
+end
+
 
 namespace :osm do
 
@@ -115,6 +123,21 @@ namespace :osm do
     puts "Saving to #{ENV['file']}"
     system "curl -s http://open.mapquestapi.com/xapi/api/0.6/node%5B#{key}=#{value}%5D > #{ENV['file']}"
     Rake::Task['osm:import'].invoke
+  end
+
+  desc 'Strip planet dump from unwanted data'
+  task :strip_planet => :environment do
+    file = ENV['file']
+    raise "Run rake osm:strip_planet file=planet-latest.osm-pbf" unless file
+    format = file.include?('pbf') ? 'pbf' : 'xml'
+    commando = <<-EOR
+#{OSMOSIS_BIN} --read-#{format} file=#{file} \
+--tag-filter reject-relations \
+--tag-filter reject-ways \
+--tag-filter accept-nodes #{tag_filter} \
+--write-#{format} file=stripped_#{file}
+    EOR
+    system commando
   end
 
   desc 'Import POI Data from STDIN'
@@ -163,19 +186,19 @@ namespace :osm do
           FileUtils.cp CHANGE_FILE, MERGED_FILE, :verbose => true, :preserve => true
         end
 
-        # get_new_shape_replication_files
-        #
-        # if File.exists?(SHAPE_FILE) && File.size(SHAPE_FILE) > 150
-        #   puts "INFO: merging #{MERGED_FILE} with #{SHAPE_FILE}"
-        #   merge_shape_replication_files
-        # else
-        #   puts "INFO: No changes in shape files."
-        # end
+        get_new_shape_replication_files
+
+        if File.exists?(SHAPE_FILE) && File.size(SHAPE_FILE) > 150
+          puts "INFO: merging #{MERGED_FILE} with #{SHAPE_FILE}"
+          merge_shape_replication_files
+        else
+          puts "INFO: No changes in shape files."
+        end
 
         ENV['file'] = MERGED_FILE
         if Rake::Task["osm:import"].invoke
           remove_merged_file
-          # remove_shape_replication_file
+          remove_shape_replication_file
         end
 
       rescue Exception => e

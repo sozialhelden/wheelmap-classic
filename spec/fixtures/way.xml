@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <osm version="0.6" generator="OpenStreetMap server">
-  <way id="123" visible="true" timestamp="2012-01-29T17:53:45Z" version="14" changeset="10532883" user="micha_k" uid="37608">
+  <way id="-123" visible="true" timestamp="2012-01-29T17:53:45Z" version="14" changeset="10532883" user="micha_k" uid="37608">
     <nd ref="534792"/>
     <nd ref="1290033538"/>
     <nd ref="763553528"/>

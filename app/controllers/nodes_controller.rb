@@ -27,14 +27,13 @@ class NodesController < ApplicationController
     normalize_bbox if params[:bbox]
     @limit = params[:limit].try(:to_i) || 300
 
-    @places = Node.within_bbox(@left, @bottom, @right, @top).including_category.order('osm_id DESC').limit(@limit) if @left
+    @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.limit(@limit) if @left
 
     respond_to do |wants|
       wants.js{       render :file => "#{Rails.root}/app/views/nodes/index.js.erb" }
       wants.json{     render }
       wants.geojson do
         @places += OpenStreetMap::QueuedNode.within_bbox(@left, @bottom, @right, @top).limit(@limit)
-        @places += Way.within_bbox(@left, @bottom, @right, @top).including_category.order('osm_id DESC').limit(@limit)
         render :file => "#{Rails.root}/app/views/nodes/index.geojson.erb", :content_type => "application/json; subtype=geojson; charset=utf-8"
       end
       wants.html{     redirect_to root_path }
@@ -42,14 +41,18 @@ class NodesController < ApplicationController
   end
 
   def show
-    @node = Node.find(params[:id])
+    @node = Poi.find(params[:id])
   end
 
   def update_wheelchair
     user = wheelmap_visitor
     client = OpenStreetMap::OauthClient.new(user.access_token)
-    Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], user, client, :wheelchair => params[:wheelchair]))
-    @node = Node.find(params[:id])
+    if (id = params[:id]) < 0 # Negative IDs belong to pseudo_node (osm ways)
+      update_wheelchair_for_way(id, user, client, params[:wheelchair])
+    else
+      update_wheelchair_for_node(id, user, client, params[:wheelchair])
+    end
+    @node = Poi.find(params[:id])
     respond_to do |wants|
       wants.js{ render :json => {:message => t('nodes.update_wheelchair.successfull', :status => t("wheelchairstatus.#{params[:wheelchair]}"), :name => @node.headline), :wheelchair => params[:wheelchair] }.to_json}
       wants.html{ render :text => t('nodes.update_wheelchair.successfull') }
@@ -104,7 +107,11 @@ class NodesController < ApplicationController
   end
 
   def edit
-    @node = Node.find(params[:id])
+    @node = Poi.find(params[:id])
+    if @node.osm_id < 0
+      flash[:alert] = I18n.t('nodes.update.flash.not_successfull')
+      redirect_to node_path(@node)
+    end
   end
   helper_method :prepare_nodes
   helper_method :generate_json
@@ -114,6 +121,15 @@ class NodesController < ApplicationController
 
   # Before filter
   protected
+
+  def update_wheelchair_for_node(id, user, client, wheelchair_status)
+    Delayed::Job.enqueue(UpdateSingleAttributeJob.new(id, user, client, :wheelchair => wheelchair_status))
+  end
+
+  def update_wheelchair_for_way(id, user, client, wheelchair_status)
+    Delayed::Job.enqueue(UpdateSingleWayAttributeJob.new(id.abs, user, client, :wheelchair => wheelchair_status))
+  end
+
   def load_and_instantiate_nodes
     @places
   end
