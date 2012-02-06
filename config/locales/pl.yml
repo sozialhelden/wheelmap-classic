@@ -311,16 +311,18 @@ pl:
         title: "Nowe miejsce | wheelmap.org"
       link:
         large_map: "&laquo; Anuluj"
+    node:
+      link:
+        claim: "Pracujesz tutaj?"
+        edit_node: "Edytuj miejsce"
+        report_bug: "Zgłoś problem"
     show:
       header:
         title: "Miejsce: %{node} | wheelmap.org"
       link:
         back: wróć
-        claim: "Pracujesz tutaj?"
-        edit_node: "Edytuj miejsce"
         large_map: Powiększ
         listing: "Wszystkie miejsca typu '%{type}' w %{city}"
-        report_bug: "Zgłoś problem"
       show-in-osm: OpenStreetMap
     update:
       flash:

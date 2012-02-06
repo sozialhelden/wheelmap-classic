@@ -305,13 +305,16 @@ tr:
         title: "Yeni alan veya mekan | wheelmap.org"
       link:
         large_map: "&laquo; Iptal et"
+    node:
+      link:
+        claim:
+        edit_node: "Alan veya Mekanı düzenle"
+        report_bug: "Sorun bildir "
     show:
       header:
         title: "Alan/Mekan: %{node} | wheelmap.org"
       link:
-        edit_node: "Alan veya Mekanı düzenle"
         large_map: Genişlet
-        report_bug: "Sorun bildir "
     update:
       flash:
         not_successfull: "Oops, verileriniz yanlış veya eksik."

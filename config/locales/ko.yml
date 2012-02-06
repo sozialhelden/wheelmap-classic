@@ -354,16 +354,18 @@ ko:
         title: "새로운 장소 | wheelmap.org"
       link:
         large_map: "&laquo; 취소"
+    node:
+      link:
+        claim: "당신이 이곳에서 근무합니까?"
+        edit_node: "장소 수정"
+        report_bug: 오류신고
     show:
       header:
         title: "장소 : %{node} | wheelmap.org"
       link:
         back: 뒤로
-        claim: "당신이 이곳에서 근무합니까?"
-        edit_node: "장소 수정"
         large_map: 확대
         listing: "%{city}의 모든 '%{type}'"
-        report_bug: 오류신고
       show-in-osm: OpenStreetMap
     update:
       flash:

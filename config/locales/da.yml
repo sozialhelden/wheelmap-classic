@@ -324,13 +324,16 @@ da:
         title: "Nyt sted | wheelmap.org"
       link:
         large_map: "&laquo; Fortryd"
+    node:
+      link:
+        claim:
+        edit_node: "Ret sted"
+        report_bug: "Fejlrapporterer et problem"
     show:
       header:
         title: "Sted: %{node} | wheelmap.org"
       link:
-        edit_node: "Ret sted"
         large_map: Forstør
-        report_bug: "Fejlrapporterer et problem"
     update:
       flash:
         not_successfull: "Ups, dit input var ikke korrekt eller fuldigstændigt."

@@ -291,13 +291,16 @@ el:
         title: "Νέα τοποθεσία | wheelmap.org "
       link:
         large_map: "&laquo; Ακύρωση"
+    node:
+      link:
+        claim:
+        edit_node: "Επεξεργαστείτε τοποθεσία"
+        report_bug: "Report a problem"
     show:
       header:
         title: "Τοποθεσία:%{node} | wheelmap.org "
       link:
-        edit_node: "Επεξεργαστείτε τοποθεσία"
         large_map: Μεγέθυνση
-        report_bug: "Report a problem"
     update:
       flash:
         not_successfull: "Η εισαγωγή δεδομένων ήταν εσφαλμένη ή μη ολοκληρωμένη."

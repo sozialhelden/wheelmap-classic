@@ -401,13 +401,16 @@ tlh:
         title: "Daq chu' | wheelmap.org"
       link:
         large_map: "&laquo; qIl"
+    node:
+      link:
+        claim:
+        edit_node: "Daq choH"
+        report_bug: "Report a problem"
     show:
       header:
         title: "Daq: %{node} | wheelmap.org"
       link:
-        edit_node: "Daq choH"
         large_map: tInmoH
-        report_bug: "Report a problem"
     update:
       flash:
         not_successfull: "De' muj DaghItlh"
