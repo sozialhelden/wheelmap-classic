@@ -79,8 +79,8 @@ namespace :deploy do
 
   task :remove_all_unfinished_locales do
     if rails_env == :production
-      %w(bg de-CH nl pt ru zh pt pl).each do |locale|
-        run "find #{current_path}/config/locales -name #{locale}.yml -delete"
+      %w(bg de-CH nl pt ru zh pt pl ko).each do |locale|
+        run "find -r #{current_path}/config/locales -name #{locale}.yml -delete"
       end
     end
   end
