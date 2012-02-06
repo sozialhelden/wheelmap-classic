@@ -335,12 +335,17 @@ pl:
         format: "%u %n"
         precision: 2
         separator: ","
+        significant: 0
         unit: PLN
     format:
       delimiter: " "
       precision: 3
       separator: ","
+      strip_insignificant_zeros: 0
     human:
+      decimal_units:
+        units:
+          unit: ~
       format:
         delimiter: ~
         precision: 3

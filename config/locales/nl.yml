@@ -374,9 +374,16 @@ nl:
           quadrillion: Biljard
           thousand: Duizend
           trillion: Triljoen
+          unit: ~
       format:
         delimiter: ~
         precision: 1
+        strip_insignificant_zeros: 0
+      storage_units:
+        units:
+          byte:
+            one: Byte
+            other: Bytes
     percentage:
       format:
         delimiter: ~
