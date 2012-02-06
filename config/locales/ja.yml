@@ -292,7 +292,7 @@ ja:
         large_map: "&laquo; キャンセル"
     node:
       link:
-        claim:
+        claim: ~
         edit_node: 場所を編集
         report_bug: "Report a problem"
     show:

@@ -317,7 +317,7 @@ fr:
         large_map: "&laquo; Annuler"
     node:
       link:
-        claim:
+        claim: ~
         edit_node: "Editer lieu"
         report_bug: "Report a problem"
     show:

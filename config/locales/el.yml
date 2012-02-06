@@ -293,7 +293,7 @@ el:
         large_map: "&laquo; Ακύρωση"
     node:
       link:
-        claim:
+        claim: ~
         edit_node: "Επεξεργαστείτε τοποθεσία"
         report_bug: "Report a problem"
     show:

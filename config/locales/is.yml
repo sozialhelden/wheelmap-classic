@@ -326,7 +326,7 @@ is:
         large_map: "&laquo; Hætta við"
     node:
       link:
-        claim:
+        claim: ~
         edit_node: "Breyta stað"
         report_bug: "Tilkynntu villu"
     show:
