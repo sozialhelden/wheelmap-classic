@@ -327,7 +327,7 @@ se:
         large_map: "&laquo; Avbryt"
     node:
       link:
-        claim:
+        claim: ~
         edit_node: "Ändra plats"
         report_bug: "Rapportera ett problem"
     show:

@@ -326,7 +326,7 @@ da:
         large_map: "&laquo; Fortryd"
     node:
       link:
-        claim:
+        claim: ~
         edit_node: "Ret sted"
         report_bug: "Fejlrapporterer et problem"
     show:

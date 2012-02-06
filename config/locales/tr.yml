@@ -307,7 +307,7 @@ tr:
         large_map: "&laquo; Iptal et"
     node:
       link:
-        claim:
+        claim: ~
         edit_node: "Alan veya Mekanı düzenle"
         report_bug: "Sorun bildir "
     show:

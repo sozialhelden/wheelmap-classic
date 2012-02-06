@@ -293,7 +293,7 @@ pt:
         title: "Novo lugar | wheelmap.org"
     node:
       link:
-        claim:
+        claim: ~
         edit_node: "Editar lugar"
         report_bug: "Report a problem"
     show:
