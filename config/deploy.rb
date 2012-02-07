@@ -48,9 +48,7 @@ end
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-  end
+  task :restart do; end
 
   task :create_shared_config do
     run "mkdir -p #{shared_path}/config/"
