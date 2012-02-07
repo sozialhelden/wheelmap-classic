@@ -119,7 +119,9 @@ class PlanetReader
         @processed += 1
 
         if (@processed % 1000 == 0)
-          Crewait.go!
+          if (@processed % 5000 == 0)
+            Crewait.go!
+          end
           print("\rprocessed #{@processed/1000}k nodes")
           STDOUT.flush
         end
