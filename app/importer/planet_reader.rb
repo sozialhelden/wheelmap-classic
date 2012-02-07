@@ -107,12 +107,12 @@ class PlanetReader
   def on_end_element(element)
     case element
     when 'delete'
-      flush_pois(1)
+      flush_pois
     when 'create'
       Crewait.go!
     when 'modify'
       Crewait.go!
-      flush_pois(1)
+      flush_pois
     when 'node'
       if @poi
         process_poi
