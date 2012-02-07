@@ -48,6 +48,7 @@ class PlanetReader
   def flush_pois(min_amount=200)
     if @to_be_deleted.size >= min_amount
       Poi.delete_all(['osm_id in (?)', @to_be_deleted])
+      @to_be_deleted = []
     end
   end
 
