@@ -2,7 +2,7 @@
 %meta{'http-equiv' => 'Content-language', :content => I18n.locale}
 %meta{:name => 'language', :content => I18n.locale}
 %meta{:name => 'copyright', :content => 'Sozialhelden e.V'}
-=render_og_metadata(:type => 'website', :title => "Wheelmap.org", :url => root_url, :description => t('header.title'), :image => image_path("wm_logo_#{I18n.locale}.png"))
+=render_og_metadata(:type => 'website', :title => "Wheelmap.org", :url => root_url, :description => t('header.title'), :image => image_path("wm_logo_#{I18n.locale}.png"), :locale => I18n.locale)
 
 - unless Rails.env.production?
   %meta{:name => 'robots', :content => 'noindex, nofollow'}
