@@ -3,7 +3,7 @@ set :repository,  "git@github.com:sozialhelden/wheelmap.git"
 
 set :branch, ENV['BRANCH'] || "master"
 
-set :use_sudo, false
+set :use_sudo, true
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
@@ -30,23 +30,17 @@ after  'deploy',              'deploy:cache:clear'
 namespace :unicorn do
   desc "Zero-downtime restart of Unicorn"
   task :restart, :except => { :no_release => true } do
-    run <<-EOF
-      if [ -f #{shared_path}/pids/unicorn.pid ]; then
-        kill -s USR2 `cat #{shared_path}/pids/unicorn.pid`;
-      else
-        cd #{current_path} ; RAILS_ENV=#{rails_env} bundle exec unicorn_rails -c config/unicorn.rb -D;
-      fi
-    EOF
+    sudo "/etc/init.d/unicorn_#{rails_env} restart"
   end
 
   desc "Start unicorn"
   task :start, :except => { :no_release => true } do
-    run "cd #{current_path} ; RAILS_ENV=#{rails_env} bundle exec unicorn_rails -c config/unicorn.rb -D"
+    sudo "/etc/init.d/unicorn_#{rails_env} start"
   end
 
   desc "Stop unicorn"
   task :stop, :except => { :no_release => true } do
-    run "kill -s QUIT `cat #{shared_path}/pids/unicorn.pid`"
+    sudo "/etc/init.d/unicorn_#{rails_env} stop"
   end
   after "deploy:restart", "unicorn:restart"
 end
