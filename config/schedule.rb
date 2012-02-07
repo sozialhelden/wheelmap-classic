@@ -24,6 +24,6 @@ end
 #   rake "housekeeping:session_cleanup", :environment => :production
 # end
 
-# every 1.hour do
-#   rake "poi:locate", :environment => :production
-# end
+every 1.hour do
+  rake "poi:locate", :environment => :production
+end
