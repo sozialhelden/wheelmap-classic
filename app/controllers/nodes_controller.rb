@@ -47,12 +47,12 @@ class NodesController < ApplicationController
   def update_wheelchair
     user = wheelmap_visitor
     client = OpenStreetMap::OauthClient.new(user.access_token)
-    if (id = params[:id]) < 0 # Negative IDs belong to pseudo_node (osm ways)
+    @node = Poi.find(params[:id])
+    if (id = @node.osm_id) < 0 # Negative IDs belong to pseudo_node (osm ways)
       update_wheelchair_for_way(id, user, client, params[:wheelchair])
     else
       update_wheelchair_for_node(id, user, client, params[:wheelchair])
     end
-    @node = Poi.find(params[:id])
     respond_to do |wants|
       wants.js{ render :json => {:message => t('nodes.update_wheelchair.successfull', :status => t("wheelchairstatus.#{params[:wheelchair]}"), :name => @node.headline), :wheelchair => params[:wheelchair] }.to_json}
       wants.html{ render :text => t('nodes.update_wheelchair.successfull') }
@@ -63,7 +63,7 @@ class NodesController < ApplicationController
     node_id = params[:id]
     node_params = params[:node].reverse_merge(:id => node_id)
     @node = OpenStreetMap::Node.new(node_params.stringify_keys!)
-    if @node.valid?
+    if @node.valid? && @node.id > 0
       client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.oauth_authorized?
       Delayed::Job.enqueue(UpdatingJob.new(@node, current_user, client))
       respond_to do |wants|

@@ -16,6 +16,8 @@ describe NodesController do
   include Devise::TestHelpers
 
   before(:each) do
+    Poi.delete_all
+
     # default visitor user
     @base_url = "#{OpenStreetMapConfig.oauth_site}/api/0.6"
     @default_user = Factory.create(:user, :email => 'visitor@wheelmap.org')
@@ -63,10 +65,16 @@ describe NodesController do
   end
 
   describe "action update wheelchair" do
+
+    before :each do
+      @poi = Factory.create(:poi, :osm_id => 1234)
+    end
+
     describe "as anonymous user" do
       it "should create am UpdateWheelchairJob " do
         lambda {
           put(:update_wheelchair, :id => 1234, :wheelchair => 'yes')
+          response.code.should == '200'
         }.should change(UpdateAttributeJob, :count).by(1)
       end
 
