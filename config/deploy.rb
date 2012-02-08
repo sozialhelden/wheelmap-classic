@@ -3,7 +3,7 @@ set :repository,  "git@github.com:sozialhelden/wheelmap.git"
 
 set :branch, ENV['BRANCH'] || "master"
 
-set :use_sudo, true
+set :use_sudo, false
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
