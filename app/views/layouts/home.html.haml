@@ -3,10 +3,6 @@
   %head
     = render :partial => 'shared/meta'
 
-    / HOPTOAD START
-    = hoptoad_javascript_notifier
-    / HOPTOAD END
-
     - if content_for?(:head)
       = content_for(:head)
     - else
