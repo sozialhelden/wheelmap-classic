@@ -44,15 +44,14 @@ class NodesController < ApplicationController
     @node = Poi.find(params[:id])
   end
 
-  def update_wheelchair
-    user = wheelmap_visitor
-    client = OpenStreetMap::OauthClient.new(user.access_token)
+  def edit
     @node = Poi.find(params[:id])
-    if (id = @node.osm_id) < 0 # Negative IDs belong to pseudo_node (osm ways)
-      update_wheelchair_for_way(id, user, client, params[:wheelchair])
-    else
-      update_wheelchair_for_node(id, user, client, params[:wheelchair])
-    end
+  end
+
+  def update_wheelchair
+    @node = Poi.find(params[:id])
+    @node.osm_update_wheelchair_status(wheelmap_visitor, params[:wheelchair])
+
     respond_to do |wants|
       wants.js{ render :json => {:message => t('nodes.update_wheelchair.successfull', :status => t("wheelchairstatus.#{params[:wheelchair]}"), :name => @node.headline), :wheelchair => params[:wheelchair] }.to_json}
       wants.html{ render :text => t('nodes.update_wheelchair.successfull') }
@@ -60,25 +59,24 @@ class NodesController < ApplicationController
   end
 
   def update
-    node_id = params[:id]
-    node_params = params[:node].reverse_merge(:id => node_id)
-    @node = OpenStreetMap::Node.new(node_params.stringify_keys!)
-    if @node.valid? && @node.id > 0
-      client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.oauth_authorized?
-      Delayed::Job.enqueue(UpdatingJob.new(@node, current_user, client))
+    poi = Poi.find(params[:id])
+    @node = poi.osm_update(current_user, params[:node])
+
+    if @node.try(:valid?)
       respond_to do |wants|
-        wants.js{ render :text => 'OK' }
-        wants.html{
+        wants.js   { render :text => 'OK' }
+
+        wants.html {
           flash[:track]  = "'Data', 'Update', '#{@node.wheelchair}'"
           flash[:notice] = I18n.t('nodes.update.flash.successfull')
-          redirect_to node_path(@node)
+          redirect_to node_path(poi.id)
         }
       end
     else
-      # raise @node.errors.inspect
       respond_to do |wants|
-        wants.js{ render :text => 'FAIL', :status => 406 }
-        wants.html{
+        wants.js   { render :text => 'FAIL', :status => 406 }
+
+        wants.html {
           flash[:alert] = I18n.t('nodes.update.flash.not_successfull')
           render :action => :edit
         }
@@ -86,12 +84,16 @@ class NodesController < ApplicationController
     end
   end
 
+  def new
+    @node = OpenStreetMap::Node.new({'lat' => params[:lat], 'lon' => params[:lon]})
+  end
+
   def create
     node_attributes = params[:node].stringify_keys!
     @node = OpenStreetMap::Node.new(node_attributes)
     if @node.valid?
       OpenStreetMap::QueuedNode.enqueue(current_user, node_attributes)
-      #client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.app_authorized?
+      #client = OpenStreetMap::OauthClient.new(current_user.access_token)
       #Delayed::Job.enqueue(CreatingJob.new(@node, current_user, client))
       flash[:track]  = "'Data', 'Create', '#{@node.wheelchair}'"
       flash[:view] = '/nodes/created'
@@ -102,17 +104,6 @@ class NodesController < ApplicationController
     end
   end
 
-  def new
-    @node = OpenStreetMap::Node.new({'lat' => params[:lat], 'lon' => params[:lon]})
-  end
-
-  def edit
-    @node = Poi.find(params[:id])
-    if @node.osm_id < 0
-      flash[:alert] = I18n.t('nodes.update.flash.not_successfull')
-      redirect_to node_path(@node)
-    end
-  end
   helper_method :prepare_nodes
   helper_method :generate_json
 
@@ -121,14 +112,6 @@ class NodesController < ApplicationController
 
   # Before filter
   protected
-
-  def update_wheelchair_for_node(id, user, client, wheelchair_status)
-    Delayed::Job.enqueue(UpdateSingleAttributeJob.new(id, user, client, :wheelchair => wheelchair_status))
-  end
-
-  def update_wheelchair_for_way(id, user, client, wheelchair_status)
-    Delayed::Job.enqueue(UpdateSingleWayAttributeJob.new(id.abs, user, client, :wheelchair => wheelchair_status))
-  end
 
   def load_and_instantiate_nodes
     @places

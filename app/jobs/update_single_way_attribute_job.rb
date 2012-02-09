@@ -1,4 +1,12 @@
 class UpdateSingleWayAttributeJob < Struct.new(:way_id, :user, :client, :attribute_hash)
+  def self.enqueue(node_id, user, attributes)
+    raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
+
+    client = OpenStreetMap::OauthClient.new(user.access_token)
+    new(node_id, user, client, attributes).tap do |job|
+      Delayed::Job.enqueue(job)
+    end
+  end
 
   def perform
     raise ArgumentError.new("Client cannot be nil") if client.blank?
