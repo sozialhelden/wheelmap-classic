@@ -292,4 +292,36 @@ class Poi < ActiveRecord::Base
   def set_updated_at
     self.updated_at = Time.now
   end
+
+  def movable?
+    # determine whether a node is movable by the user
+    # right now we forbid it for way-pseudo-nodes (voodoo-nodes :)
+    # later here would be the point to also disallow it for nodes that are part of a way in OSM
+    !way?
+  end
+
+  def way?
+    osm_id < 0
+  end
+
+  def osm_update_wheelchair_status(user, new_status)
+    if way?
+      UpdateSingleWayAttributeJob.enqueue(osm_id.abs, user, :wheelchair => new_status)
+    else
+      UpdateSingleAttributeJob.enqueue(osm_id, user, :wheelchair => new_status)
+    end
+  end
+
+  def osm_update(user, attributes)
+    attributes = attributes.reverse_merge(:id => osm_id.abs).stringify_keys!
+    if way?
+      way = OpenStreetMap::Way.new(attributes)
+      WayUpdatingJob.enqueue(way, user) if way.valid?
+      return way
+    else
+      node = OpenStreetMap::Node.new(attributes)
+      UpdatingJob.enqueue(node, user) if node.valid?
+      return node
+    end
+  end
 end

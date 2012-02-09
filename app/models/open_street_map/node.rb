@@ -120,6 +120,10 @@ class OpenStreetMap
       tags['highway'] == 'bus_stop'
     end
 
+    def movable?
+      true
+    end
+
     def type=(value)
       if !value.blank? && Tags.has_key?(value.to_sym)
         @type = value
@@ -173,4 +177,5 @@ class OpenStreetMap
       end
     end
   end
+
 end
