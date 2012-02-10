@@ -24,7 +24,8 @@ set :user, 'rails'
 after  'deploy:setup',        'deploy:create_shared_config'
 after  'deploy:update_code',  'deploy:generate_assets'
 after  'deploy:update_code',  'deploy:symlink_configs'
-after  'deploy:update_code',  'deploy:remove_all_unfinished_locales'
+
+after  'deploy',              'deploy:remove_all_unfinished_locales'
 after  'deploy',              'deploy:cache:clear'
 
 namespace :unicorn do
@@ -70,7 +71,7 @@ namespace :deploy do
   end
 
   task :remove_all_unfinished_locales do
-    if rails_env == :production
+    if rails_env.to_sym == :production
       %w(bg de-CH nl pt ru zh pt pl ko).each do |locale|
         run "find #{current_path}/config/locales -name #{locale}.yml -delete"
       end
