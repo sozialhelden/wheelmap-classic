@@ -8,13 +8,13 @@
 
   = form.input :wheelchair_description, :required => false
 
-  %li.select.required#node-type-input{:class => @node.errors.on(:type) ? 'error' : ''}
+  %li.select.required#node-type-input{:class => @node.errors[:type].present? ? 'error' : ''}
     = form.label :type, :required => true
     %select#node-type{:name => 'node[type]'}
       = render :partial => 'options_for_type', :object => inputs.type
-    - if @node.errors.on(:type)
+    - if @node.errors[:type].present?
       %p.inline-errors
-        = @node.errors.on(:type)
+        = @node.errors[:type].to_sentence
 
   = form.input :lon, :input_html =>{:readonly => 'readonly', :value => @node.lon}, :as => :numeric
   = form.input :lat, :input_html =>{:readonly => 'readonly', :value => @node.lat}, :as => :numeric

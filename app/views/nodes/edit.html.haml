@@ -3,10 +3,10 @@
   = link_to t('.link.large_map'), root_path, :onclick => "location=permalink('#{root_path}');return false;", :class => 'hide', :id => 'show-on-large-map'
 
 #accessibility
-  - semantic_form_for @node, :as => :node, :url => {:controller => 'nodes', :action => 'update', :id => @node}, :html => { :method => :put} do |form|
+  = semantic_form_for @node, :as => :node, :url => {:controller => 'nodes', :action => 'update', :id => @node}, :html => { :method => :put} do |form|
     = render :partial => 'inputs', :object => @node, :locals => {:form => form}
 
-    - form.buttons do
+    = form.buttons do
       = form.commit_button t('formtastic.labels.save')
       %p.hint= t('devise.mandatory')
 
@@ -24,4 +24,4 @@
   :javascript
     drawmap(defaultControls(), 'minimap');
     jumpTo(#{@node.lon}, #{@node.lat}, 18);
-    createDraggableLayer(placesStyle(),#{@node.lon}, #{@node.lat});
+    createDraggableLayer(placesStyle(),#{@node.lon}, #{@node.lat}, { movable: #{@node.movable?} } );
