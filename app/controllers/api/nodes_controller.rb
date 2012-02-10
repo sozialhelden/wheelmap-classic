@@ -85,7 +85,7 @@ class Api::NodesController < Api::ApiController
   def update_wheelchair
     user = wheelmap_visitor
     client = OpenStreetMap::OauthClient.new(user.access_token)
-    if (id = params[:id]) < 0 # Ways have a negative id
+    if (id = params[:id].to_i) < 0 # Ways have a negative id
       Delayed::Job.enqueue(UpdateSingleWayAttributeJob.new(params[:id].abs, user, client, :wheelchair => params[:wheelchair]))
     else
       Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], user, client, :wheelchair => params[:wheelchair]))
@@ -127,7 +127,7 @@ class Api::NodesController < Api::ApiController
     respond_to do |wants|
       wants.json{ render :json => {:error => 'This type of node is not editable'}.to_json, :status => 406 }
       wants.xml{  render :xml  => {:error => 'This type of node is not editable'}.to_xml,  :status => 406 }
-    end if params[:id] < 0 # Way ids are negative
+    end if params[:id].to_i < 0 # Way ids are negative
   end
 
   def check_update_wheelchair_params
