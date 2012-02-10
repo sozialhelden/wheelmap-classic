@@ -1,8 +1,17 @@
 class UpdatingJob < Struct.new(:node, :user, :client)
-  
+  def self.enqueue(node, user)
+    raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
+
+    client = OpenStreetMap::OauthClient.new(user.access_token)
+    new(node, user, client).tap do |job|
+      Delayed::Job.enqueue(job)
+    end
+  end
+
   def perform
     begin
       raise ArgumentError.new("Client cannot be nil") if client.nil?
+      raise ArgumentError.new("Node is a way. Use WayUpdatingJob") if node.id < 0
 
       OpenStreetMap.logger = Delayed::Worker.logger
       Delayed::Worker.logger.info "UpdatingJob -------------------------->"
@@ -23,10 +32,10 @@ class UpdatingJob < Struct.new(:node, :user, :client)
       node.lon = lon
 
       osm = OpenStreetMap.new(client)
-      
+
       changeset = osm.find_or_create_changeset(user.changeset_id, "Modified node on wheelmap.org")
       user.update_attribute('changeset_id', changeset.id) if user.changeset_id != changeset.id
-      
+
       updated_node = osm.update_node(node, user.changeset_id)
     rescue OpenStreetMap::Conflict => conflict
       # These changes have already been made, so dismiss this update!
@@ -35,10 +44,10 @@ class UpdatingJob < Struct.new(:node, :user, :client)
       HoptoadNotifier.notify(e, :component => 'UpdatingJob#perform', :action => 'perform', :parameters => {:user => user.inspect, :node => node.inspect, :client => client.inspect})
       raise e
     end
-    
+
   end
-  
+
   def on_permanent_failure
-    #TODO 
+    #TODO
   end
 end

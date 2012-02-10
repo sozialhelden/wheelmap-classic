@@ -484,7 +484,8 @@ function addPin(layer, lon, lat) {
   layer.addFeatures(features);
 }
 
-function createDraggableLayer(style, lon, lat) {
+function createDraggableLayer(style, lon, lat, options) {
+  options = $.extend({ movable: true }, options)
 
   var draggable_layer = new OpenLayers.Layer.Vector(
     "Draggable",
@@ -494,7 +495,9 @@ function createDraggableLayer(style, lon, lat) {
       visibility: true
   });
   map.addLayer(draggable_layer);
-  activateDragControl(draggable_layer);
+  if (options.movable) {
+    activateDragControl(draggable_layer);
+  }
   addPin(draggable_layer, lon, lat);
   draggable_layer.redraw();
 }
