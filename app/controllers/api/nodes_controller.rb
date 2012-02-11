@@ -86,9 +86,9 @@ class Api::NodesController < Api::ApiController
     user = wheelmap_visitor
     client = OpenStreetMap::OauthClient.new(user.access_token)
     if (id = params[:id].to_i) < 0 # Ways have a negative id
-      Delayed::Job.enqueue(UpdateSingleWayAttributeJob.new(params[:id].abs, user, client, :wheelchair => params[:wheelchair]))
+      Delayed::Job.enqueue(UpdateSingleWayAttributeJob.new(id.abs, user, client, :wheelchair => params[:wheelchair]))
     else
-      Delayed::Job.enqueue(UpdateSingleAttributeJob.new(params[:id], user, client, :wheelchair => params[:wheelchair]))
+      Delayed::Job.enqueue(UpdateSingleAttributeJob.new(id, user, client, :wheelchair => params[:wheelchair]))
     end
     @node = Poi.find(params[:id])
     respond_to do |wants|
