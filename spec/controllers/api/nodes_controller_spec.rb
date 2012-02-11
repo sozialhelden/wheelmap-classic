@@ -98,12 +98,7 @@ describe Api::NodesController do
     end
   end
 
-  describe 'update_wheelchair' do
-    before :each do
-      @wheelmap_visitor = Factory.create(:user, :email => 'visitor@wheelmap.org')
-      Poi.delete_all
-      @node = Factory.create(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
-    end
+  shared_examples "update_wheelchair" do
 
     it "access should be denied if api key is missing" do
       put(:update_wheelchair, {:id => @node.id, :name => 'Something new'})
@@ -125,6 +120,29 @@ describe Api::NodesController do
       }.should change(UpdateAttributeJob, :count).by(0)
     end
   end
+
+  describe 'as a node' do
+
+    before :each do
+      @wheelmap_visitor = Factory.create(:user, :email => 'visitor@wheelmap.org')
+      Poi.delete_all
+      @node = Factory.create(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
+    end
+
+    it_behaves_like "update_wheelchair"
+  end
+
+  describe 'as a way' do
+
+    before :each do
+      @wheelmap_visitor = Factory.create(:user, :email => 'visitor@wheelmap.org')
+      Poi.delete_all
+      @node = Factory.create(:poi, :osm_id => (Factory.next(:version) * -1), :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
+    end
+
+    it_behaves_like "update_wheelchair"
+  end
+
 
   describe 'update action' do
     before :each do
