@@ -10,3 +10,4 @@ config/open_street_map.yml
 public/*/cache/*
 public/assets
 public/sitemap_*
+vendor/bundle
