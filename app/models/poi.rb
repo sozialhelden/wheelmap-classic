@@ -12,8 +12,12 @@ class Poi < ActiveRecord::Base
   # osm_id ist der Primaerschluessel
   set_primary_key :osm_id
 
+  DELEGATED_ADDR_ATTRIBUTES = [:street, :housenumber, :postcode, :city].map(&:to_s).freeze
 
-  attr_accessible :name, :type, :geom, :version, :wheelchair, :created_at, :updated_at, :status, :lat, :lon, :id, :tags, :osm_id, :name, :node_type_id
+
+  attr_accessible :name, :type, :geom, :version, :wheelchair, :created_at, :updated_at, :status
+  attr_accessible :lat, :lon, :id, :tags, :osm_id, :name, :node_type_id
+  attr_accessible *DELEGATED_ADDR_ATTRIBUTES
 
   self.include_root_in_json = false
 
@@ -24,6 +28,9 @@ class Poi < ActiveRecord::Base
   has_one :category, :through => :node_type
 
   validate :relevant?
+  validates_presence_of :name, :wheelchair, :type, :message => I18n.t('errors.messages.empty')
+  validates_format_of :website, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true, :message => I18n.t('errors.messages.invalid')
+  validates_length_of :wheelchair_description, :maximum => 255
 
   serialize :tags
 
@@ -116,6 +123,16 @@ class Poi < ActiveRecord::Base
     self.geom.x = value
   end
 
+  DELEGATED_ADDR_ATTRIBUTES.each do |attr|
+    define_method("#{attr}=") do |value|
+      self.tags[attr.to_s] = value
+    end
+
+    define_method(attr) do
+      self.tags[attr.to_s]
+    end
+  end
+
   def attributes
     super.reverse_merge!(
     'lat' => lat,
@@ -179,22 +196,6 @@ class Poi < ActiveRecord::Base
   def wheelchair=(value)
     self.tags = {} if self.tags.is_a?(String)
     self.tags['wheelchair'] = value
-  end
-
-  def street
-    tags['addr:street']
-  end
-
-  def housenumber
-    tags['addr:housenumber']
-  end
-
-  def city
-    tags['addr:city']
-  end
-
-  def postcode
-    tags['addr:postcode']
   end
 
   def website
@@ -312,16 +313,23 @@ class Poi < ActiveRecord::Base
     end
   end
 
-  def osm_update(user, attributes)
-    attributes = attributes.reverse_merge(:id => osm_id.abs).stringify_keys!
+  def to_osm_attributes
+    attributes.reverse_merge(:id => osm_id.abs).stringify_keys!.tap do |attribs|
+      attribs['tag'] = tags.map do |k,v|
+                          key = DELEGATED_ADDR_ATTRIBUTES.include?(k) ? "addr:#{k}" : k
+                          { 'k' => key, 'v' => v }
+                       end
+      attribs.delete 'tags'
+    end
+  end
+
+  def save_to_osm(user)
     if way?
-      way = OpenStreetMap::Way.new(attributes)
+      way = OpenStreetMap::Way.new(to_osm_attributes)
       WayUpdatingJob.enqueue(way, user) if way.valid?
-      return way
     else
-      node = OpenStreetMap::Node.new(attributes)
+      node = OpenStreetMap::Node.new(to_osm_attributes)
       UpdatingJob.enqueue(node, user) if node.valid?
-      return node
     end
   end
 end

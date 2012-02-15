@@ -45,7 +45,7 @@ class NodesController < ApplicationController
   end
 
   def edit
-    @node = Poi.find(params[:id])
+    @node ||= Poi.find(params[:id])
   end
 
   def update_wheelchair
@@ -59,17 +59,17 @@ class NodesController < ApplicationController
   end
 
   def update
-    poi = Poi.find(params[:id])
-    @node = poi.osm_update(current_user, params[:node])
-
-    if @node.try(:valid?)
+    @node = Poi.find(params[:id])
+    @node.attributes = params[:node]
+    if @node.valid?
+      @node.save_to_osm(current_user)
       respond_to do |wants|
         wants.js   { render :text => 'OK' }
 
         wants.html {
           flash[:track]  = "'Data', 'Update', '#{@node.wheelchair}'"
           flash[:notice] = I18n.t('nodes.update.flash.successfull')
-          redirect_to node_path(poi.id)
+          redirect_to node_path(@node)
         }
       end
     else
