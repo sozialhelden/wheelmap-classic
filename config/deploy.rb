@@ -47,6 +47,21 @@ namespace :unicorn do
 end
 
 namespace :deploy do
+  after  "deploy:restart", "deploy:git:push_deploy_tag"
+  before "deploy:cleanup", "deploy:git:cleanup_deploy_tag"
+
+  namespace :git do
+
+    desc "Place release tag into Git and push it to server."
+    task :push_deploy_tag do
+      user = `git config --get user.name`
+      email = `git config --get user.email`
+
+      puts `git tag #{rails_env}_#{release_name} #{revision} -m "Deployed by #{user} <#{email}>"`
+      puts `git push --tags`
+    end
+  end
+
   task :start do ; end
   task :stop do ; end
   task :restart do; end
