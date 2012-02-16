@@ -20,7 +20,7 @@ describe NodesController do
 
     # default visitor user
     @base_url = "#{OpenStreetMapConfig.oauth_site}/api/0.6"
-    @default_user = Factory.create(:user, :email => 'visitor@wheelmap.org')
+    @default_user = Factory.create(:user, :email => 'visitor@wheelmap.org', :oauth_token =>'token', :oauth_secret => 'secret')
     @another_user = Factory.create(:user, :email => 'test@rspec.org', :oauth_token =>'token', :oauth_secret => 'secret')
   end
 
@@ -94,17 +94,23 @@ describe NodesController do
       @full_url = "#{@base_url}/node/84644746"
     end
 
+    let! :poi do
+      Factory(:poi, :osm_id => 84644746)
+    end
+
     describe "signed_in" do
 
       before(:each) do
         @another_user.should be_app_authorized
         sign_in @another_user
+
       end
 
       it "should create UpdateJob for given node" do
         stub_request(:get, @full_url).to_return(:status => 200, :body => "#{Rails.root}/spec/fixtures/node.xml", :headers => { 'Content-Type' => 'text/xml'})
          lambda{
             put(:update, :id => 84644746, :node => {:wheelchair => 'yes', :name => 'A nice place', :type => 'cafe'})
+            response.code.should == '302'
           }.should change(UpdateJob, :count).by(1)
           response.should redirect_to(node_path(84644746))
       end
