@@ -16,7 +16,7 @@ class Poi < ActiveRecord::Base
 
 
   attr_accessible :name, :type, :geom, :version, :wheelchair, :created_at, :updated_at, :status
-  attr_accessible :lat, :lon, :id, :tags, :osm_id, :name, :node_type_id
+  attr_accessible :lat, :lon, :id, :tags, :osm_id, :name, :node_type_id, :website, :phone
   attr_accessible *DELEGATED_ADDR_ATTRIBUTES
 
   self.include_root_in_json = false
@@ -123,7 +123,7 @@ class Poi < ActiveRecord::Base
     self.geom.x = value
   end
 
-  DELEGATED_ADDR_ATTRIBUTES.each do |attr|
+  (DELEGATED_ADDR_ATTRIBUTES + [:phone, :website]).each do |attr|
     define_method("#{attr}=") do |value|
       self.tags[attr.to_s] = value
     end
