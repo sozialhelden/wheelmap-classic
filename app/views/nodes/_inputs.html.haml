@@ -17,7 +17,7 @@
         = @node.errors[:type].to_sentence
 
   = form.input :lon, :input_html =>{:readonly => 'readonly', :value => @node.lon}, :as => :numeric
-  = form.input :lat, :input_html =>{:readonly => 'readonly', :value => @node.lat}, :as => :numeric
+  = form.input :lat, :input_html =>{:readonly => 'readonly', :value => @node.lat}, :as => :numeric, :hint => @node.movable?
 
 = form.inputs :name => t('formtastic.titles.optional'), :id => 'optional' do
   = form.input :street, :required => false
