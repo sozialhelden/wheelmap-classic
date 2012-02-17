@@ -15,7 +15,7 @@ class Poi < ActiveRecord::Base
   DELEGATED_ADDR_ATTRIBUTES = [:street, :housenumber, :postcode, :city].map(&:to_s).freeze
 
 
-  attr_accessible :name, :type, :geom, :version, :wheelchair, :created_at, :updated_at, :status
+  attr_accessible :name, :type, :geom, :version, :wheelchair, :wheelchair_description, :created_at, :updated_at, :status
   attr_accessible :lat, :lon, :id, :tags, :osm_id, :name, :node_type_id, :website, :phone
   attr_accessible *DELEGATED_ADDR_ATTRIBUTES
 
@@ -31,6 +31,7 @@ class Poi < ActiveRecord::Base
   validates_presence_of :name, :wheelchair, :type, :message => I18n.t('errors.messages.empty')
   validates_format_of :website, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true, :message => I18n.t('errors.messages.invalid')
   validates_length_of :wheelchair_description, :maximum => 255
+  validates_presence_of :lat, :lon, :message => "Bitte in der Karte klicken!"
 
   serialize :tags
 
@@ -123,6 +124,17 @@ class Poi < ActiveRecord::Base
     self.geom.x = value
   end
 
+  def tags
+    a = read_attribute(:tags)
+    if a.blank?
+      h = {}
+      write_attribute(:tags, h)
+      h
+    else
+      a
+    end
+  end
+
   (DELEGATED_ADDR_ATTRIBUTES + [:phone, :website]).each do |attr|
     define_method("#{attr}=") do |value|
       self.tags[attr.to_s] = value
@@ -131,23 +143,6 @@ class Poi < ActiveRecord::Base
     define_method(attr) do
       self.tags[attr.to_s]
     end
-  end
-
-  def attributes
-    super.reverse_merge!(
-    'lat' => lat,
-    'lon' => lon,
-    'name' => name,
-    'type' => type,
-    'category' => category.try(:identifier),
-    'wheelchair' => wheelchair,
-    'wheelchair_description' => wheelchair_description
-    )
-  end
-
-  def as_json(options={})
-    options.merge!(:methods => [:id, :state, :icon, :type], :except => [:geom, :version, :osm_id])
-    super(options)
   end
 
   def id
@@ -172,7 +167,6 @@ class Poi < ActiveRecord::Base
 
   def type=(value)
     key = Tags[value.to_sym]
-    self.tags = {} if self.tags.is_a?(String)
     self.tags[key.to_s] = value.to_s
   end
 
@@ -185,7 +179,6 @@ class Poi < ActiveRecord::Base
   end
 
   def name=(value)
-    self.tags = {} if self.tags.is_a?(String)
     self.tags['name'] = value
   end
 
@@ -194,7 +187,6 @@ class Poi < ActiveRecord::Base
   end
 
   def wheelchair=(value)
-    self.tags = {} if self.tags.is_a?(String)
     self.tags['wheelchair'] = value
   end
 
@@ -208,6 +200,10 @@ class Poi < ActiveRecord::Base
 
   def wheelchair_description
     tags['wheelchair:description']
+  end
+
+  def wheelchair_description=(value)
+    tags['wheelchair:description'] = value
   end
 
   def headline
@@ -294,15 +290,8 @@ class Poi < ActiveRecord::Base
     self.updated_at = Time.now
   end
 
-  def movable?
-    # determine whether a node is movable by the user
-    # right now we forbid it for way-pseudo-nodes (voodoo-nodes :)
-    # later here would be the point to also disallow it for nodes that are part of a way in OSM
-    !way?
-  end
-
   def way?
-    osm_id < 0
+    osm_id and osm_id < 0
   end
 
   def osm_update_wheelchair_status(user, new_status)
@@ -321,6 +310,16 @@ class Poi < ActiveRecord::Base
                        end
       attribs.delete 'tags'
     end
+  end
+
+  def as_json(options={})
+    json = super(:methods => %w(lat lon street wheelchair postcode city website wheelchair_description phone name housenumber type),
+                 :except => %w(tags node_type_id created_at updated_at region_id version geom status))
+    json.delete_if { |k,v| v.nil? }
+  end
+
+  def osm_create(user)
+    OpenStreetMap::QueuedNode.enqueue(user, as_json)
   end
 
   def save_to_osm(user)

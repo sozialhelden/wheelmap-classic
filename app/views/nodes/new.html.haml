@@ -1,5 +1,5 @@
 #map_wrapper
-  #minimap
+  #minimap.create-node
   = link_to t('.link.large_map'), root_path, :onclick => "location=permalink('#{root_path}');return false;", :class => 'hide', :id => 'show-on-large-map'
 
 #accessibility
@@ -23,7 +23,7 @@
 - content_for :javascript do
   :javascript
     drawmap(defaultControls(), 'minimap');
-    jumpTo(#{@node.lon}, #{@node.lat}, 18);
-    createDraggableLayer(placesStyle(),lon, lat);
+    jumpTo(lon, lat, 18);
+    createClickableLayer(placesStyle(), #{@node.lon.present? ? @node.lon : 'null' }, #{@node.lat.present? ? @node.lat : 'null' });
 
 

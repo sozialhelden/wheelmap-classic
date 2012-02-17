@@ -31,7 +31,7 @@ class NodesController < ApplicationController
 
     respond_to do |wants|
       wants.js{       render :file => "#{Rails.root}/app/views/nodes/index.js.erb" }
-      wants.json{     render }
+
       wants.geojson do
         @places += OpenStreetMap::QueuedNode.within_bbox(@left, @bottom, @right, @top).limit(@limit)
         render :file => "#{Rails.root}/app/views/nodes/index.geojson.erb", :content_type => "application/json; subtype=geojson; charset=utf-8"
@@ -85,16 +85,15 @@ class NodesController < ApplicationController
   end
 
   def new
-    @node = OpenStreetMap::Node.new({'lat' => params[:lat], 'lon' => params[:lon]})
+    @node = Poi.new
   end
 
   def create
-    node_attributes = params[:node].stringify_keys!
-    @node = OpenStreetMap::Node.new(node_attributes)
+    @node = Poi.new(params[:node])
+
     if @node.valid?
-      OpenStreetMap::QueuedNode.enqueue(current_user, node_attributes)
-      #client = OpenStreetMap::OauthClient.new(current_user.access_token)
-      #Delayed::Job.enqueue(CreatingJob.new(@node, current_user, client))
+      @node.osm_create(current_user)
+
       flash[:track]  = "'Data', 'Create', '#{@node.wheelchair}'"
       flash[:view] = '/nodes/created'
       flash[:notice] = I18n.t('nodes.create.flash.successfull')

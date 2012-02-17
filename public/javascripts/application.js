@@ -475,32 +475,95 @@ function addPin(layer, lon, lat) {
   var point = new OpenLayers.Geometry.Point(lonLat.lon, lonLat.lat);
   var feature = new OpenLayers.Feature.Vector(point);
   feature.attributes.marker = '/marker/undefined.png';
-  feature.attributes.type = 'Subway';
-  feature.attributes.wheelchair = 'no';
-  feature.attributes.name = 'Neuer Ort';
-  feature.attributes.tags = {"railway": "subway", "osm_id": "46095762", "ref": "U5", "construction": "yes", "synthesized_name": "Subway"};
-  feature.attributes.osmid = 1234;
   features.push(feature);
   layer.addFeatures(features);
 }
 
-function createDraggableLayer(style, lon, lat, options) {
-  options = $.extend({ movable: true }, options)
+OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {
+      defaultHandlerOptions: {
+          'single': true,
+          'double': false,
+          'pixelTolerance': 0,
+          'stopSingle': false,
+          'stopDouble': false
+      },
 
-  var draggable_layer = new OpenLayers.Layer.Vector(
+      initialize: function(options) {
+          this.handlerOptions = OpenLayers.Util.extend(
+              {}, this.defaultHandlerOptions
+          );
+          OpenLayers.Control.prototype.initialize.apply(
+              this, arguments
+          );
+          this.handler = new OpenLayers.Handler.Click(
+              this, {
+                  'click': this.trigger
+              }, this.handlerOptions
+          );
+      },
+
+      trigger: function(e) {
+        console.log("Set 'trigger' when instantiating a OpenLayers.Control.Click: " +
+                    "e.g. var click = new OpenLayers.Control.Click({ trigger: function(e) {...})");
+        // nop. overwrite me.
+      }
+
+});
+
+function createClickableLayer(style, lon, lat, options) {
+  var draggableLayer = new OpenLayers.Layer.Vector(
     "Draggable",
     {
       styleMap: style,
       rendererOptions: { yOrdering: true },
       visibility: true
   });
-  map.addLayer(draggable_layer);
-  if (options.movable) {
-    activateDragControl(draggable_layer);
+
+  var setPin = function(lon, lat) {
+    addPin(draggableLayer, lon, lat);
+    activateDragControl(draggableLayer);
+    $('#node_lat').attr('value', lat);
+    $('#node_lon').attr('value', lon);
+  };
+
+  map.addLayer(draggableLayer);
+
+  // initially set pin if coords are given
+  if (lon && lat) {
+    setPin(lon, lat);
+    // update the form (not necessary on update, but doesn't harm either)
   }
-  addPin(draggable_layer, lon, lat);
-  draggable_layer.redraw();
+
+  // click handler to move the pin and update the form again
+  var click = new OpenLayers.Control.Click({
+    trigger: function(e) {
+      var lonlat = map.getLonLatFromViewPortPx(e.xy);
+      var coordinates = lonlat.clone().transform(map.getProjectionObject(), epsg4326);
+      setPin(coordinates.lon, coordinates.lat)
+    }
+  });
+
+  map.addControl(click);
+  click.activate();
+
+  draggableLayer.redraw();
 }
+
+
+function createDraggableLayer(style, lon, lat) {
+  var draggableLayer = new OpenLayers.Layer.Vector(
+    "Draggable",
+    {
+      styleMap: style,
+      rendererOptions: { yOrdering: true },
+      visibility: true
+  });
+
+  map.addLayer(draggableLayer);
+  addPin(draggableLayer, lon, lat);
+  draggableLayer.redraw();
+}
+
 
 function addFilter(attribute, value) {
   var filter = new OpenLayers.Filter.Comparison({
