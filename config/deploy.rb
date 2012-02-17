@@ -111,13 +111,13 @@ task :log do
 end
 
 task :sh do
-  cmd = "ssh -l #{user} -t #{roles[:app].servers.first} 'cd #{deploy_to}/current; bash -l'"
+  cmd = "ssh -l #{user} -t #{roles[:app].servers.first} -p 22022 'cd #{deploy_to}/current; bash -l'"
   puts cmd
   system(cmd)
 end
 
 task :console do
-  cmd = "ssh -l #{user} -t #{roles[:app].servers.first} 'cd #{deploy_to}/current; bash -l -c \"bundle exec rails c #{stage}\"'"
+  cmd = "ssh -l #{user} -t #{roles[:app].servers.first} -p 22022 'cd #{deploy_to}/current; bash -l -c \"bundle exec rails c #{stage}\"'"
   puts cmd
   system(cmd)
 end
