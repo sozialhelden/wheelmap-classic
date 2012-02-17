@@ -185,8 +185,4 @@ class OpenStreetMap
       end
     end
   end
-
-  def movable?
-    false
-  end
 end

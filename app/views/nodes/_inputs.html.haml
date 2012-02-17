@@ -15,9 +15,17 @@
     - if @node.errors[:type].present?
       %p.inline-errors
         = @node.errors[:type].to_sentence
+= form.inputs :name => "Lage des Ortes", :legend => "foo" do
+  - if @node.new_record?
+    .form-info
+      Bitte klicke auf der Karte an die Stelle, wo sich der Ort befindet!
 
-  = form.input :lon, :input_html =>{:readonly => 'readonly', :value => @node.lon}, :as => :numeric
-  = form.input :lat, :input_html =>{:readonly => 'readonly', :value => @node.lat}, :as => :numeric, :hint => @node.movable?
+  = form.input :lon, :input_html =>{:readonly => 'readonly', :value => @node.lon}, :as => :numeric, :required => true
+  = form.input :lat, :input_html =>{:readonly => 'readonly', :value => @node.lat}, :as => :numeric, :hint => false
+  - unless @node.new_record? # !is_new?
+    .form-info
+      Dieser Ort ist nicht korrekt?
+      = mail_to 'bugs@wheelmap.org', t('.link.report_bug'), :subject => "[Wheelmap] Problem with #{@node.headline}", :body => "(please only write in English or German)\n\nHi,\n\nsomething is wrong with location: #{node_url(@node)}\n\nthe problem is:"
 
 = form.inputs :name => t('formtastic.titles.optional'), :id => 'optional' do
   = form.input :street, :required => false

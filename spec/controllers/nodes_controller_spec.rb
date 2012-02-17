@@ -146,9 +146,9 @@ describe NodesController do
     end
   end
 
-  describe "action: create" do
+  describe "creating a node" do
 
-    describe "signed_in" do
+    describe "as a signed_in user" do
 
       before(:each) do
         @another_user.should be_app_authorized
@@ -175,7 +175,7 @@ describe NodesController do
 
       it "stores the right stuff in a QueuedNode for given node" do
         request.env['ACCEPT'] = "*/*"
-        node_attributes = {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant', :city=>"", :housenumber=>"", :postcode=>"", :wheelchair_description=>"", :street=>"",:phone=>"", :website=>""}
+        node_attributes = {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant', :city=>"", :housenumber=>"", :postcode=>"", :street=>"",:phone=>"", :website=>""}
         post(:create, {:commit=>"Ort anlegen", :node => node_attributes })
 
         job = OpenStreetMap::QueuedNode.last
