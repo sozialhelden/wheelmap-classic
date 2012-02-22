@@ -45,16 +45,8 @@
         =@node.tags['addr:street']
         =@node.tags['addr:housenumber'] || '&nbsp;'
 
-
-  - if @node.tags['addr:postcode']
-    %tr
-      %th=t('formtastic.labels.postcode')
-      %td=@node.tags['addr:postcode'] || '&nbsp;'
-
-  - if @node.tags['addr:city']
-    %tr
-      %th=t('formtastic.labels.city')
-      %td=@node.tags['addr:city'] || '&nbsp;'.html_safe
+  = tag_line @node, 'addr:postcode', :label_key => 'postcode'
+  = tag_line @node, 'addr:city', :label_key => 'city'
 
   - if @node.tags['website']
     %tr
@@ -65,18 +57,12 @@
         - else
           = @node.tags['website']
 
-  - if @node.tags['phone']
-    %tr
-      %th=t('formtastic.labels.phone')
-      %td
-        =@node.tags['phone'] || '&nbsp;'
+  =tag_line(@node,'phone')
+  =tag_line(@node,'centralkey')
 
-
-= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false"
-
+=javascript_include_tag"http://maps.google.com/maps/api/js?sensor=false"
 .clear
 %hr
-
 %h2 Google Streetview:
 
 %div#streetview{:style => "overflow: hidden; margin-bottom: 10px; width: 980px; height: 250px;"}
