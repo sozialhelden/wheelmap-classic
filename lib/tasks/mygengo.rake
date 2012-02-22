@@ -1,9 +1,10 @@
+require 'locale_flatter'
+
 namespace 'mygengo' do
   desc 'Exports the rails i18n locale files from config/locales into tmp/mygengo as flat json.'
   task :export => [:environment, :clear_tmp_dir] do
-    I18n.available_locales.each do |locale|
-      sh "#{Rails.root}/bin/locales-flatten.rb #{Rails.root}/config/locales/#{locale}.yml"
-      sh "for file in `find #{Rails.root}/config/locales/#{locale} -type f`; do #{Rails.root}/bin/locales-flatten.rb $file; done"
+    Dir["config/locales/*.yml"].each do |path|
+      LocaleFlatter.process path
     end
   end
 
