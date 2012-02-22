@@ -223,6 +223,7 @@ de:
       create: "Ort anlegen"
       email: E-Mail
       housenumber: "Nr:"
+      centralkey: "Zentralschlüssel:"
       lat: Breitengrad
       lon: Längengrad
       name: "Name:"

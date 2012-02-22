@@ -223,6 +223,7 @@ en:
       create: "Create place"
       email: E-Mail
       housenumber: "No:"
+      centralkey: "Central key:"
       lat: Latitude
       lon: Longitude
       name: "Name:"
