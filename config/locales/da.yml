@@ -39,19 +39,20 @@ da:
     require_no_user:
       notice: "Du er allerede logget på ..."
     require_user:
-      notice: "Du skal logge på for at se denne side."
+      notice: "Du skal være logget på for at se denne side."
   breadcrumbs:
     node:
       create: "Tilføj nyt sted"
       edit: "Ret sted"
     root: wheelmap
   common:
-    close: Luk
+    close: luk
   devise:
     confirmations:
       confirmed: "Din konto er nu aktiveret. Og du er nu logget ind."
       link: "Ikke modtaget nogen bekræftigelseintrukser?"
-      send_instructions: "Om få minutter vil du modtage en e-mail med instrukser om aktivering af din konto."
+      send_instructions: "I løbet af få minutter vil du modtage en e-mail med instrukser om aktivering af din konto."
+      send_paranoid_instructions: "Hvis din konto findes, så vil du modtage en e-mail i løbet af få minutter med instrukser hvordan du bekræfter din konto."
     destroy:
       confirm: "Er du sikker?"
       headline: "Slet konto"
@@ -66,15 +67,17 @@ da:
         submit: "Gem ændringer"
       headline: "Ret konto"
     failure:
+      already_authenticated: "Du er allerede logget på."
       inactive: "Din konto er ikke arkiveret endnu."
       invalid: "E-mail eller adgangskode er ikke gyldig."
       invalid_token: "Ugyldig token til autorisering."
-      locked: "Din konto er låst."
+      locked: "Din konto er låst"
       timeout: "Din session er udløbet. Log ind igen for at kunne fortsætte."
-      unauthenticated: "Du skal logge ind for at kunne fortsætte"
+      unauthenticated: "Du skal logge ind eller oprette en konto for at kunne fortsætte"
       unconfirmed: "Du skal bekræfte din konto for at kunne fortsætte."
     mailer:
       confirmation_instructions:
+        landing_page: "Klik venligst på linket vi lige har sendt til din e-mail. Hvis du ikke har modtaget en e-mail fra os, så tjek først i spam mail mappen, hvis der intet er der, så prøv registreringssiden igen."
         subject: Bekræftigelsesinstrukser
       reset_password_instructions:
         subject: "Nulstil adgangskodeinstrukser"
@@ -92,10 +95,10 @@ da:
       headline: "Glemt adgangskode?"
     password_reset:
       email:
-        comment: "I tilfælde af du ikke har bestilt en nulstilling af adgangskode, så se bort fra denne e-mail.<br/>Din adgangskode vil ikke blive ændret før du klikker på linket nedenfor og indstiller en ny adgangskode."
+        comment: "I tilfælde af du ikke har bestilt en nulstilling af adgangskoden, så se bort fra denne e-mail.<br/>Din adgangskode vil ikke blive ændret før du klikker på linket ovenfor og indstiller en ny adgangskode."
         headline: "Velkommen %{email}"
         link: "Ændre min adgangskode"
-        text: "En eller anden har bedt om at ændre din adgangskode. Du kan ændre ved at klikke på det følgende link:"
+        text: "Der blev lavet en forespørgsel om at ændre din adgangskode. Du kan ændre ved at klikke på det følgende link - ellers se bort fra denne her besked!"
       form:
         labels:
           password: "Ny adgangskode"
@@ -104,25 +107,31 @@ da:
       headline: "Nulstil adgangskode"
     passwords:
       link: "Glemt adgangskode?"
-      send_instructions: "Du vil om et øjeblik modtage en e-mail vedrørende nulstilling af adgangskode."
-      updated: "Din  adgangskode er nu ændret. Og du er nu logget ind."
+      send_instructions: "Du vil i løbet af få minutter en modtage en e-mail med instrukser hvordan du laver  nulstilling af adgangskode."
+      send_paranoid_instructions: "Hvis din konto findes, så vil du modtage en e-mail i løbet af få minutter med instrukser hvordan du nulstiller din adgangskode"
+      updated: "Din  adgangskode er nu ændret, og du er nu logget ind"
+      updated_not_active: "Din adgangskode blev ændret med succes"
     registrations:
       destroyed: "Farvel. Din konto er nu lukket. Vi håber at se dig snart igen."
-      inactive_signed_up: "Du har oprettet en konto nu. Men vi kunne ikke logge dig ind p.g.a din konto er  %{reason}."
+      inactive_signed_up: "Du har oprettet en konto nu. Men vi kunne ikke logge dig ind p.g.a din konto er  \"%{reason}\""
       link: "Opret konto"
-      signed_up: "Din registrering er godkedt."
+      reasons:
+        inactive: inaktiv
+        locked: låst
+        unconfirmed: ubekræftet
+      signed_up: "Din registrering er godkedt. En bekræftigelse er sendt til din e-mail."
       updated: "Din profil er opdateret."
     sessions:
-      inactive: "Din konto er endnu ikke blevet aktiveret."
+      inactive: "Din konto er endnu ikke blevet aktiveret"
       invalid: "Ugyldig e-mail eller adgangskode."
-      invalid_token: "Ugyldig autorisation nøgle."
+      invalid_token: "Ugyldig autorisation token"
       link: Login
-      locked: "Din konto er låst."
-      signed_in: "Du er nu logget ind."
-      signed_out: "Du er nu logget ud."
+      locked: "Din konto er låst"
+      signed_in: "Du er nu logget ind"
+      signed_out: "Du er nu logget ud"
       timeout: "Din loginsession er udløbet, login igen for at fortsætte."
-      unauthenticated: "Du skal logge ind eller oprette en konto før du kan fortsætte."
-      unconfirmed: "Du skal have bekræftet din konto før du kan fortsætte."
+      unauthenticated: "Du skal logge ind eller oprette en konto før du kan fortsætte"
+      unconfirmed: "Du skal have bekræftet din konto før du kan fortsætte"
     sign_in:
       form:
         labels:
@@ -134,17 +143,22 @@ da:
     sign_out:
       headline: "Log af"
     sign_up:
+      email:
+        confirm_my_account: "Bekræft min konto"
+        please_confirm: "Du kan bekræfte din konto gennem nedenstående link:"
+        welcome: "Velkommen %{email}!"
       form:
         labels:
           email: E-mail
           password: Adgangskode
           password_confirmation: "Gentag adgangskode"
-          wants_newsletter: "Ja tak, lad mig blive løbende orienteret om wheelmap. (Men ikke mere end en gang om måneden)"
+          wants_newsletter: "Ja tak, lad mig blive løbende orienteret om wheelmap. Men ikke mere end en gang om måneden."
         submit: "Opret konto"
       headline: "Opret konto"
     unlocks:
       link: "Ej modtaget nogen åben instrukser?"
       send_instructions: "Om få minutter vil du modtage en email med instrukser om genåbning af din konto."
+      send_paranoid_instructions: "Hvis din konto findes, så vil du modtage en e-mail i løbet af få minutter med instrukser, hvordan du åbner din konto igen"
       unlocked: "Din konto er genåbnet og du er nu logget ind."
   errors:
     dynamic_format: "%{message}"
@@ -158,6 +172,7 @@ da:
       equal_to: "skal være lig med %{count}"
       even: "skal være lige"
       exclusion: "er reserveret"
+      expired: "udløbet, bed venligst om en ny"
       greater_than: "skal være større end %{count}"
       greater_than_or_equal_to: "skal være større end eller lig med %{count}"
       inclusion: "er ikke en gyldig værdi"
@@ -198,7 +213,7 @@ da:
   formtastic:
     hints:
       lat: "Flyt markøren på kortet til den korrekte position"
-      osm_username: "Ikke medlem endnu?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Lav en Openstreetmap konto nu</a>"
+      osm_username: "Ikke medlem endnu?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Opret en Openstreetmap konto nu</a>"
       password: "(efterlad feltet tomt, hvis du ikke ønsker at ændre dette)"
       phone: "For eksempel: +45 12345678"
       website: "For eksempel: http://www.example.com"
@@ -206,7 +221,7 @@ da:
       category: "Kategori:"
       city: "By:"
       create: "Opret sted"
-      email: E-Mail
+      email: E-mail
       housenumber: Nr.
       lat: Breddegrad
       lon: Længdegrad
@@ -228,7 +243,7 @@ da:
       basic: Basisinformation
       optional: "Mere information <span class=\"addition\">(alle felter er valgfrit)</span>"
   global:
-    form_validation_error: "Bemærk fejllisten nedenfor."
+    form_validation_error: "Bemærk fejllisten nedenfor"
   header:
     meta:
       description: "Find kørestolstilgængelige steder - wheelmap.org"
@@ -244,6 +259,7 @@ da:
       logged_in_as: "Logget ind som:"
       login: Login
       logout: "Log ud"
+      newsletter: Nyhedsbrev
       press: "Tryk på"
       suggestions: Forslag
       what_is_barrier_free: "Hvad betyder \"kørestolstilgængeligt\"?"
@@ -251,6 +267,7 @@ da:
     searchbar:
       add_place: "Tilføj endnu et sted"
       find: Find
+      label: ~
       placeholder: "Fx Sunset Boulevard L.A. eller Brandenburger Tor Berlin"
       title_add_place: "Tilføj et nyt sted på denne position nu!"
     tagline: "Wheelmap logo"
@@ -272,8 +289,8 @@ da:
           ignore: Ignorer
           upgrade: "Opdaterer browser"
         warning:
-          headline: "Vi beklager meget!"
-          message: "Det ser ud til at du bruger Internet Explorer. Wheelmap behøver en browser der bedre kan håndtere webstandarder. Brug fx Firefox, Chrome, Safari eller Opera"
+          headline: "Vi undskylder meget!"
+          message: "Det ser ud til at du bruger Internet Explorer. Wheelmap behøver en browser der bedre kan håndtere webstandarder. Overvej at bruge  fx Firefox, Chrome, Safari eller Opera."
       link:
         node:
           create: "Tilføj nyt sted"
@@ -289,6 +306,19 @@ da:
         help: "Kørestolstilgængeligt? (Hjælp)"
         more: "mere ..."
   how?: Hvordan?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Alle begrænset kørestolstilgængelige steder %{type} i %{city} (%{count})"
+        ? "no"
+        :
+          headline: "Alle ikke kørestolstilgængelige steder %{type} i %{city} (%{count})"
+        unknown:
+          headline: "Alle %{type} i %{city} med ukendt kørestolstilgængeligs status (%{count})"
+        ? "yes"
+        :
+          headline: "Alle kørestolstilgængelige steder %{type} i %{city} (%{count})"
   layouts:
     application:
       banner:
@@ -303,8 +333,8 @@ da:
   nodes:
     create:
       flash:
-        not_successfull: "Ups, dit input var enten ukorrekt eller ufuldstændigt."
-        successfull: " Din tilføjelse blev gemt succesfuldt og vil være online snart. Tak for bidrag."
+        not_successfull: "Ups, dit input var enten ukorrekt eller ufuldstændigt"
+        successfull: "Mange tak, din tilføjelse blev gemt og vil snart være online."
     edit:
       header:
         title: "Ret sted:  %{node} | wheelmap.org"
@@ -312,13 +342,13 @@ da:
         large_map: "&laquo; Fortryd"
     errors:
       default: "Ups, et eller andet gik galt. Vi er blevet informeret om dette!"
-      not_authorized: "Underskyld, men autorisationen fejlede"
+      not_authorized: "Undskyld, men autorisationen fejlede"
       not_available: "Undskylder meget, men denne side er midlertidig ikke tilgængelig."
       not_existent: "Undskylder meget, dette sted findes ikke mere."
       not_found: "Undskylder, men siden blev ikke fundet."
-      param_missing: "Tilføj venligst en søgeterm."
+      param_missing: "Tilføj venligst en søgeterm"
     flash:
-      authorize_wheelmap: "Du behøver en OpenStreetMap konto for at rette i data."
+      authorize_wheelmap: "Du behøver en OpenStreetMap konto for at rette i data"
     new:
       header:
         title: "Nyt sted | wheelmap.org"
@@ -326,24 +356,27 @@ da:
         large_map: "&laquo; Fortryd"
     node:
       link:
-        claim: ~
+        claim: "Arbejder du her?"
         edit_node: "Ret sted"
         report_bug: "Fejlrapporterer et problem"
     show:
       header:
         title: "Sted: %{node} | wheelmap.org"
       link:
+        back: tilbage
         large_map: Forstør
+        listing: "Alle steder af  kategoren '%{type}' i %{city}"
+      show-in-osm: OpenStreetMap
     update:
       flash:
-        not_successfull: "Ups, dit input var ikke korrekt eller fuldigstændigt."
-        successfull: "Mange tak, din ændring blev gemt succesfuldt og vil være online at se snart."
+        not_successfull: "Ups, dit input var ikke korrekt eller ufuldstændigt"
+        successfull: "Mange tak, din ændring blev gemt succesfuldt og vil være online snart."
     update_wheelchair:
       successfull: "Status for \"%{name}\" er blevet ændret til \"%{status} kørestolstilgængeligt\" og vil snart kunne ses online."
   number:
     currency:
       format:
-        delimiter: "."
+        delimiter: ","
         format: "%u %n"
         precision: 2
         separator: ","
@@ -365,9 +398,11 @@ da:
           quadrillion: Billiard
           thousand: Tusind
           trillion: Billion
+          unit: ~
       format:
+        delimiter: ~
         precision: 3
-        significant: true
+        significant: sandt
         strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
@@ -379,6 +414,12 @@ da:
           kb: KB
           mb: MB
           tb: TB
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
   oauth:
     application:
       connect:
@@ -395,9 +436,10 @@ da:
       education: Uddannelse
       food: Mad
       government: Myndigheder
+      health: Sundhed
       leisure: Fritid
       misc: Diverse
-      money_post: "Bank & Postkontor"
+      money_post: "Bank post"
       public_transfer: "Offentlig trafik"
       shopping: Shopping
       sport: Sport
@@ -430,24 +472,34 @@ da:
         pub: Værtshus
         restaurant: Restaurant
       government:
-        courthouse: Domstol
+        courthouse: Retsbygning
         embassy: Ambassade
+        police: Politi
         public_building: "Offentlig bygning"
         townhall: Rådhus
       health:
         doctors: Læge
+        hearing_aids: Høreapparatforhandler
         hospital: Hospital
+        medical_supply: Håndkøbsmedicin
         pharmacy: " Apotek"
+        social_facility: Plejehjem
         veterinary: Dyrlæge
       leisure:
         arena: Sportsarena
+        brothel: Bordel
         cinema: Biograf
+        community_center: Borgerhus
         gallery: Galleri
         nightclub: Natklub
+        playground: Legeplads
         sauna: Sauna
+        stripclub: Stripclub
         theatre: Teater
         zoo: Zoo
       misc:
+        company: "Firma (kontor)"
+        lawyer: Advokat
         place_of_worship: "Religiøs tilbedelsessted"
         toilets: Toiletter
       money_post:
@@ -486,6 +538,9 @@ da:
         bicycle: Cykelforhandler
         books: Boghandler
         butcher: Slagter
+        car_repair: Bilværksted
+        car_shop: Biludstyrsbutik
+        chemist: Materialist
         clothes: Tøjbutik
         computer: Computerbutik
         convenience: Minimarked
@@ -502,8 +557,13 @@ da:
         laundry: Vaskeri
         mall: Indkøbscenter
         optician: Optiker
+        photo: Foto
+        second_hand: Genbrugsbutik
         shoes: Skobutik
+        sports: Sportsforretninger
+        stationery: Papirartikler
         supermarket: Supermarked
+        video: Videoudlejning
       sport:
         sports_centre: Sportscenter
         stadium: Stadion
@@ -540,12 +600,20 @@ da:
       search:
         for: "Søger efter \"%{q}\""
         not_found: "Ingen steder kunne findes!"
+  splash:
+    countline: "%{count} steder er allerede blevet markeret."
+    headline: "Alle kan tilføje kørestolstilgængelige steder!"
+    start: Start
+    step1: "Klik på et sted du kender"
+    step2: "Markerer den og klik gem"
+    step3: "Det var det hele! Ingen registering er nødvendig"
+    what_is_wheelmap: "Hvad er wheelmap?"
   statistics: Statistik
   support:
     array:
       last_word_connector: " og "
       sentence_connector: og
-      skip_last_comma: true
+      skip_last_comma: sandt
       two_words_connector: " og "
       words_connector: ", "
     select:
@@ -562,7 +630,7 @@ da:
       activation:
         notice: "Din konto er nu aktiveret!"
       error:
-        notice: "E-mail og adgangskode matcher ikke."
+        notice: "E-mail og adgangskode er ikke korrekte."
       notice: "Du er nu inde!"
     destroy:
       notice: "Farvel, kom snart igen!"
@@ -593,6 +661,21 @@ da:
       title: "Wheelmap - find kørestolstilgængelige steder"
     what_is:
       fully_accessible: "<em>Ja:</em> Ingen trapper ved indgang, alle rum ingen trapper, handicaptoilet\n"
-      limited_accessible: "<em>Begrænset:</em> Indgang har et trin (max. højde 7cm), de fleste rum har ingen trin, ingen handicaptoilet"
-      not_accessible: "<em>Nej:</em> Indgangen har flere trin, de forskellige rum er ikke tilgængelige"
+      limited_accessible: "<em>Begrænset:</em> Indgang har et trin (max. højde 7 cm), de fleste rum har ingen trin, ingen handicaptoilet"
+      not_accessible: "<em>Nej:</em> Indgangen har et trin eller flere trin, de forskellige rum er ikke tilgængelige"
       unknown_accessible: "<em>Ukendt:</em> Hjælp med at få stedet markeret!"
+  will_paginate:
+    next_label: "Næste &#8594;"
+    page_entries_info:
+      multi_page: "Viser %{model} %{from} - %{to} af  %{count} ialt"
+      multi_page_html: "Viser %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> af <b>%{count}</b> i alt"
+      single_page:
+        one: "Viser 1 %{model}"
+        other: "Viser alle %{count} %{model}"
+        zero: "Ingen %{model} fundet"
+      single_page_html:
+        one: "Viser <b>1</b> %{model}"
+        other: "Viser <b>all&nbsp;%{count}</b> %{model}"
+        zero: "Ingen %{model} fundet"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Forrige"
