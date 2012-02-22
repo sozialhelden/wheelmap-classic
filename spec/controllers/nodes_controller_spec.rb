@@ -155,16 +155,16 @@ describe NodesController do
         sign_in @another_user
       end
 
-      it "does not create an CreateJob for given node attributes" do
+      it "does create an CreateJob for given node attributes" do
         request.env['ACCEPT'] = "*/*"
 
         lambda{
           post(:create, {:commit=>"Ort anlegen", :node => {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant', :city=>"", :housenumber=>"", :postcode=>"", :wheelchair_description=>"", :street=>"",:phone=>"", :website=>""}})
           response.code.should == '302'
-        }.should change(CreateJob, :count).by(0)
+        }.should change(CreateJob, :count).by(1)
       end
 
-      it "creates a QueuedNode for given node" do
+      xit "creates a QueuedNode for given node" do
         request.env['ACCEPT'] = "*/*"
 
         lambda{
@@ -173,7 +173,7 @@ describe NodesController do
         }.should change(OpenStreetMap::QueuedNode, :count).by(1)
       end
 
-      it "stores the right stuff in a QueuedNode for given node" do
+      xit "stores the right stuff in a QueuedNode for given node" do
         request.env['ACCEPT'] = "*/*"
         node_attributes = {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant', :city=>"", :housenumber=>"", :postcode=>"", :street=>"",:phone=>"", :website=>""}
         post(:create, {:commit=>"Ort anlegen", :node => node_attributes })
@@ -185,7 +185,7 @@ describe NodesController do
       end
 
 
-      it "should create not CreateJob for given node when posted with iPhone" do
+      it "should create CreateJob for given node when posted with iPhone" do
         # iPhone 1.1 sends invariant accept header */*
         http_credentials = Base64.encode64("#{@another_user.email}:password")
         @request.env["HTTP_ACCEPT"]           = "*/*"
@@ -194,10 +194,10 @@ describe NodesController do
         @request.env["HTTP_AUTHORIZATION"]    = "Basic #{http_credentials}"
         lambda{
           post(:create, {:node => {"lon"=>"13.388226983333330944", "name"=>"Bio COMPANY", "wheelchair"=>"yes", "wheelchair_description"=>"Bio bio", "type"=>"supermarket", "lat"=>"52.52287699999996928"}})
-        }.should change(CreateJob, :count).by(0)
+        }.should change(CreateJob, :count).by(1)
       end
 
-      it "should create a QueuedNode for given node when posted with iPhone" do
+      xit "should create a QueuedNode for given node when posted with iPhone" do
         # iPhone 1.1 sends invariant accept header */*
         http_credentials = Base64.encode64("#{@another_user.email}:password")
         @request.env["HTTP_ACCEPT"]           = "*/*"
@@ -209,7 +209,7 @@ describe NodesController do
         }.should change(OpenStreetMap::QueuedNode, :count).by(1)
       end
 
-      it "stores the right stuff in a QueuedNode for given node when posted with iPhone" do
+      xit "stores the right stuff in a QueuedNode for given node when posted with iPhone" do
         # iPhone 1.1 sends invariant accept header */*
         http_credentials = Base64.encode64("#{@another_user.email}:password")
         @request.env["HTTP_ACCEPT"]           = "*/*"
@@ -238,6 +238,18 @@ describe NodesController do
         response = post(:create, :id => 1234)
         response.code.should == '406'
         response.body.should == "Params missing"
+      end
+
+      it "should not update node if node is a way" do
+        p = Factory(:poi, :osm_id => -28)
+        response = post(:update, :id => -28, :node => { :name => "foo" })
+        response.code.should == '406'
+      end
+
+      it "should not allow editing node if node is a way" do
+        p = Factory(:poi, :osm_id => -28)
+        response = get(:edit, :id => -28)
+        response.code.should == '406'
       end
 
       it "should redirect if app is not connected" do

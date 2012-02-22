@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'OpenStreetMap::Node' do
-  
+
   before(:each) do
     @valid_attributes ={'id'        => '78252168',
                         'lat'       => '52.5235634',
@@ -33,7 +33,7 @@ describe 'OpenStreetMap::Node' do
                       }
     @node = OpenStreetMap::Node.new(@valid_attributes)
   end
-  
+
   it "should have latitude, longitude and name" do
     @node.lat.should == 52.5235634
     @node.lon.should == 13.3988069
@@ -41,7 +41,14 @@ describe 'OpenStreetMap::Node' do
     @node.name.should == 'Telefonzelle am neuen Tor'
     @node.type.should == 'pub'
   end
-  
+
+  it "has lat and lon if created with poi.to_osm_attributes" do
+    node = OpenStreetMap::Node.new(Poi.new(:lat => 52, :lon => 13).to_osm_attributes)
+    node.lat.should == 52
+    node.lon.should == 13
+  end
+
+
   it "should have tags" do
     @node.tags.should == {'amenity' => 'pub',
                           'created_by' => 'Potlatch 0.4c',
@@ -72,52 +79,52 @@ describe 'OpenStreetMap::Node' do
     @json = ActiveSupport::JSON.decode(@node.to_json)
     @json['wheelchair'].should == 'yes'
   end
-  
+
   it "should set wheelchair attribute and tag" do
     @node.wheelchair = 'yes'
     @node.tags['wheelchair'].should == 'yes'
   end
-  
+
   it "should set wheelchair_description attribute and tag" do
     @node.wheelchair_description = 'Toilets are too narrow'
     @node.tags['wheelchair:description'].should == 'Toilets are too narrow'
   end
-  
+
   it "should set city attribute and tag" do
     @node.city = 'Berlin'
     @node.tags['addr:city'].should == 'Berlin'
   end
-  
+
   it "should set housenumber attribute and tag" do
     @node.housenumber = 238
     @node.tags['addr:housenumber'].should == 238
   end
-  
+
   it "should set postcode attribute and tag" do
     @node.postcode = 10117
     @node.tags['addr:postcode'].should == 10117
   end
-  
+
   it "should set phone attribute and tag" do
     @node.phone = '+49 30 1232345'
     @node.tags['phone'].should == '+49 30 1232345'
     @node.phone.should == '+49 30 1232345'
   end
-  
+
   it "should set url attribute and tag" do
     @node.website = 'http://www.example.com'
     @node.tags['website'].should == 'http://www.example.com'
     @node.website.should == 'http://www.example.com'
   end
-  
+
   it "should not render empty tags" do
     @node.tags['empty_tag'] = nil
     @node.to_json.should_not =~ /empty_tag/
   end
-  
-  
+
+
   #TODO
-  #  
+  #
   # it "should show tram stops" do
   #   run_data <<-XML
   #     <node id="30694741" lat="52.5489931" lon="13.5871162">
@@ -125,11 +132,11 @@ describe 'OpenStreetMap::Node' do
   #      <tag k="railway" v="tram_stop"/>
   #     </node>
   #   XML
-  #   
+  #
   #   @json.first['type'].should == 'tram-stop'
   #   @json.first['name'].should == 'Landsberger Chaussee/Zossener Straße'
   # end
-  #   
+  #
   # it "should show ligh-rail (DE: S-Bahn) stations" do
   #   run_data <<-XML
   #     <node id="29918292" lat="52.5120912" lon="13.5890899">
@@ -139,12 +146,12 @@ describe 'OpenStreetMap::Node' do
   #       <tag k="wheelchair" v="no"/>
   #     </node>
   #   XML
-  #   
+  #
   #   @json.first['type'].should == 'light-rail'
   #   @json.first['name'].should == 'S Kaulsdorf'
   # end
-  # 
-  #   
+  #
+  #
   # it "should show subway (DE: U-Bahn) stations" do
   #   run_data <<-XML
   #     <node id="52684988" lat="52.5382584" lon="13.6336218">
@@ -154,12 +161,12 @@ describe 'OpenStreetMap::Node' do
   #       <tag k="surveillance" v="indoor"/>
   #     </node>
   #   XML
-  #   
+  #
   #   @json.first['type'].should == 'subway'
   #   @json.first['name'].should == 'U Hönow'
   # end
-  # 
-  #   
+  #
+  #
   # it "should show bus stops" do
   #   run_data <<-XML
   #     <node id="59852353" lat="52.5163493" lon="13.6089862">
@@ -167,12 +174,12 @@ describe 'OpenStreetMap::Node' do
   #       <tag k="name" v="Hirtschulzstraße"/>
   #     </node>
   #   XML
-  #   
+  #
   #   @json.first['type'].should == 'bus-stop'
   #   @json.first['name'].should == 'Hirtschulzstraße'
   # end
-  # 
-  #   
+  #
+  #
   # it "should show ferry terminals" do
   #   run_data <<-XML
   #     <node id='595683949' lat='52.4297529' lon='13.6891915'>
@@ -182,12 +189,12 @@ describe 'OpenStreetMap::Node' do
   #       <tag k='name' v='Frei fahrende Fähre'/>
   #     </node>
   #   XML
-  #   
+  #
   #   @json.first['type'].should == 'ferry-terminal'
   #   @json.first['name'].should == 'Frei fahrende Fähre'
   # end
-  # 
-  # 
+  #
+  #
   # it "should convert subway and light rails stations in Hamburg" do
   #   run_data <<-XML
   #     <node id="52144750" lat="53.544153" lon="9.9815198">
@@ -209,16 +216,16 @@ describe 'OpenStreetMap::Node' do
   #      <tag k="uic_ref" v="8003518"/>
   #     </node>
   #   XML
-  #   
+  #
   #   @json.first['type'].should == 'subway'
   #   @json.first['wheelchair'].should == 'yes'
-  #   
+  #
   #   @json.last['type'].should == 'light-rail'
   #   @json.last['wheelchair'].should == 'no'
   # end
-  # 
-  #   
+  #
+  #
   # end
-  
+
 
 end

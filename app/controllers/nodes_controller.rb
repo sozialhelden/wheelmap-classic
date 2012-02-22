@@ -11,6 +11,7 @@ class NodesController < ApplicationController
   before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update]
   before_filter :authenticate_application!,       :only => [:new, :create, :edit, :update]
   before_filter :check_create_params,             :only => :create
+  before_filter :block_way_updates,               :only => [:update, :edit]
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
   before_filter :check_bbox_param,                :only => :index
@@ -160,6 +161,10 @@ class NodesController < ApplicationController
 
   def check_bbox_param
     params[:bbox] ||= "13.395536804199,52.516078290477,13.404463195801,52.517321704317"
+  end
+
+  def block_way_updates
+    render( :text => 'Can not update ways', :status => 406 ) if params[:id].to_i <= 0
   end
 
   def check_update_params

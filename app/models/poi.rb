@@ -303,7 +303,7 @@ class Poi < ActiveRecord::Base
   end
 
   def to_osm_attributes
-    attributes.reverse_merge(:id => osm_id.abs).stringify_keys!.tap do |attribs|
+    as_json.reverse_merge(:id => osm_id.try(:abs)).stringify_keys!.tap do |attribs|
       attribs['tag'] = tags.map do |k,v|
                           key = DELEGATED_ADDR_ATTRIBUTES.include?(k) ? "addr:#{k}" : k
                           { 'k' => key, 'v' => v }
@@ -319,7 +319,8 @@ class Poi < ActiveRecord::Base
   end
 
   def osm_create(user)
-    OpenStreetMap::QueuedNode.enqueue(user, as_json)
+    node = OpenStreetMap::Node.new(to_osm_attributes)
+    CreatingJob.enqueue(node, user) if node.valid?
   end
 
   def save_to_osm(user)

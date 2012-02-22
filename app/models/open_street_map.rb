@@ -48,6 +48,13 @@ class OpenStreetMap
     node
   end
 
+  def update_node_with_changeset(node, user)
+    changeset = find_or_create_changeset(user.changeset_id, "Modified node on wheelmap.org")
+    user.update_attribute('changeset_id', changeset.id) if user.changeset_id != changeset.id
+
+    updated_node = osm.update_node(node, user.changeset_id)
+  end
+
   def update_way(way, changeset_id)
     logger.info "Old version: #{way.version}"
     logger.info "Old changeset: #{way.changeset}"
