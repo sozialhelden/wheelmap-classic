@@ -3,10 +3,6 @@ set :repository,  "git@github.com:sozialhelden/wheelmap.git"
 
 set :branch, ENV['BRANCH'] || ((rails_env.to_sym == :production) ? "production" : "master")
 
-if rails_env.to_sym == :production
-  c = CLI.ui.ask "This will deploy branch '#{branch}' to production. Ok Y/N?"
-  exit unless c.downcase == 'y'
-end
 
 set :use_sudo, false
 
@@ -26,12 +22,21 @@ set :user, 'rails'
 # if you're still using the script/reapear helper you will need
 # these http://github.com/rails/irs_process_scripts
 
+before 'deploy',              'safety_check'
+
 after  'deploy:setup',        'deploy:create_shared_config'
 after  'deploy:update_code',  'deploy:generate_assets'
+after  'deploy:update_code',  'deploy:remove_all_unfinished_locales'
 after  'deploy:update_code',  'deploy:symlink_configs'
 
-after  'deploy',              'deploy:remove_all_unfinished_locales'
 after  'deploy',              'deploy:cache:clear'
+
+task :safety_check do
+  if rails_env.to_sym == :production
+    c = CLI.ui.ask "This will deploy branch '#{branch}' to production. Ok Y/N?"
+    exit unless c.downcase == 'y'
+  end
+end
 
 namespace :unicorn do
   desc "Zero-downtime restart of Unicorn"
