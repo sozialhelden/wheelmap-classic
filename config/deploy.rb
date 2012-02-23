@@ -1,7 +1,12 @@
 set :application, "wheelmap"
 set :repository,  "git@github.com:sozialhelden/wheelmap.git"
 
-set :branch, ENV['BRANCH'] || "master"
+set :branch, ENV['BRANCH'] || ((rails_env.to_sym == :production) ? "production" : "master")
+
+if rails_env.to_sym == :production
+  c = CLI.ui.ask "This will deploy branch '#{branch}' to production. Ok Y/N?"
+  exit unless c.downcase == 'y'
+end
 
 set :use_sudo, false
 
@@ -87,7 +92,7 @@ namespace :deploy do
 
   task :remove_all_unfinished_locales do
     if rails_env.to_sym == :production
-      run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec housekeeping:remove_all_unfinished_locales"
+      run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake housekeeping:remove_all_unfinished_locales"
     else
       puts "This task only runs in production env."
     end
