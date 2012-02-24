@@ -43,9 +43,8 @@ class Api::NodesController < Api::ApiController
   def update
     @node = resource
     @node.attributes = params
-    if @node.valid?
-      @node.save_to_osm(current_user)
 
+    if @node.save_to_osm(current_user)
       respond_to do |wants|
         wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
         wants.xml{  render :xml  => {:message => 'OK'}.to_xml,  :status => 202 }
@@ -64,8 +63,7 @@ class Api::NodesController < Api::ApiController
     node_attributes = params.dup.delete_if { |k,v| unwanted_keys.include? k }
 
     @node = Poi.new(node_attributes)
-    if @node.valid?
-      @node.osm_create(current_user)
+    if @node.osm_create(current_user)
 
       respond_to do |wants|
         wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
