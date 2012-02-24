@@ -39,10 +39,8 @@ class OpenStreetMap
 
     def ==(anOther)
       [:id, :lat, :lon, :version].each do |attrib|
-        puts "#{self.send(attrib)} <=> #{anOther.send(attrib)}"
         return false unless self.send(attrib) == anOther.send(attrib)
       end
-      puts "#{self.tags.inspect} versus #{anOther.tags.inspect}"
       self.tags == anOther.tags
     end
 

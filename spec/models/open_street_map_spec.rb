@@ -1,22 +1,25 @@
 require 'spec_helper'
 
 describe OpenStreetMap do
-
-  before(:each) do
+  let :oauth_client do
     @base_url = "#{OpenStreetMapConfig.oauth_site}/api/0.6"
     uri = URI.parse("#{OpenStreetMapConfig.oauth_site}/api/0.6")
 
+    @oauth_url = uri
     @basic_auth_client = OpenStreetMap::BasicAuthClient.new('foo', 'bar')
     @basic_auth_url = "#{uri.scheme}://foo:bar@#{uri.host}#{uri.path}"
 
     @consumer = ::OAuth::Consumer.new(OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret, :site => @base_url)
     @access_token = ::OAuth::AccessToken.new(@consumer, 'foo', 'bar')
 
-    @oauth_client = OpenStreetMap::OauthClient.new(@access_token)
-    @oauth_url = uri
-
-    @osm = OpenStreetMap.new(@oauth_client)
+    OpenStreetMap::OauthClient.new(@access_token)
   end
+
+  before(:each) do
+    @osm = OpenStreetMap.new(oauth_client)
+  end
+
+  subject { @osm }
 
   def stub_osm_request(method, url, status, body, content_type)
     stub_request(method, url).
@@ -79,6 +82,19 @@ describe OpenStreetMap do
   end
 
   describe "method: save_changeset" do
+
+  end
+
+  describe "Updating nodes with implicit changeset" do
+    it "creates a new changeset, updates the user and calls update_node" do
+      user = Factory(:authorized_user)
+      node = Factory.build(:node, :version => 1, :id => 100)
+      changeset = mock(:id => 99)
+      subject.should_receive(:find_or_create_changeset).with(user.changeset_id, anything()).and_return(changeset)
+      subject.should_receive(:update_node).with(node, changeset.id)
+      subject.update_node_with_changeset(node, user)
+      user.changeset_id.should == changeset.id
+    end
   end
 
   describe"method :update_node" do
