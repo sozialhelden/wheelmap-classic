@@ -82,7 +82,7 @@ class Api::NodesController < Api::ApiController
 
   def update_wheelchair
     user = wheelmap_visitor
-    client = OpenStreetMap::OauthClient.new(user.access_token)
+    client = OldOsm::OauthClient.new(user.access_token)
     if (id = params[:id].to_i) < 0 # Ways have a negative id
       Delayed::Job.enqueue(UpdateSingleWayAttributeJob.new(id.abs, user, client, :wheelchair => params[:wheelchair]))
     else

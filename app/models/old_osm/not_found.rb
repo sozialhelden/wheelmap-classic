@@ -1,4 +1,4 @@
-class OpenStreetMap
+class OldOsm
   class NotFound < Error
   end
 end
