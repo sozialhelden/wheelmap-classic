@@ -121,6 +121,7 @@ task :log do
 end
 
 task :sh do
+  user = ENV['USER'] if ENV['USER']
   cmd = "ssh -l #{user} -t #{roles[:app].servers.first} -p 22022 'cd #{deploy_to}/current; bash -l'"
   puts cmd
   system(cmd)
