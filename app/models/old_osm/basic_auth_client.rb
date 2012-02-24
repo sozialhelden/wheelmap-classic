@@ -1,4 +1,4 @@
-class OpenStreetMap
+class OldOsm
   class BasicAuthClient
     
     attr_reader :username, :password

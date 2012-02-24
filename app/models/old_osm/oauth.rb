@@ -1,4 +1,4 @@
-class OpenStreetMap
+class OldOsm
   class Oauth
     extend Forwardable
     

@@ -12,7 +12,7 @@ describe UpdatingJob do
   end
 
   let :node do
-    OpenStreetMap::Node.new(poi.to_osm_attributes)
+    OldOsm::Node.new(poi.to_osm_attributes)
   end
 
   let :user do
@@ -24,9 +24,9 @@ describe UpdatingJob do
     node.lon = 10
     job = UpdatingJob.enqueue(node, user)
 
-    unedited_node = OpenStreetMap::Node.new(poi.to_osm_attributes)
-    OpenStreetMap.should_receive(:get_node).and_return(unedited_node)
-    OpenStreetMap.any_instance.should_receive(:update_node_with_changeset) { |node, user| node.lat.should eql 52.0; node.lon.should eql 13.0 }
+    unedited_node = OldOsm::Node.new(poi.to_osm_attributes)
+    OldOsm.should_receive(:get_node).and_return(unedited_node)
+    OldOsm.any_instance.should_receive(:update_node_with_changeset) { |node, user| node.lat.should eql 52.0; node.lon.should eql 13.0 }
     update_node = job.perform
   end
 
@@ -34,9 +34,9 @@ describe UpdatingJob do
     node.tags['addr:housenumber'] = 99
     job = UpdatingJob.enqueue(node, user)
 
-    unedited_node = OpenStreetMap::Node.new(poi.to_osm_attributes)
-    OpenStreetMap.should_receive(:get_node).and_return(unedited_node)
-    OpenStreetMap.any_instance.should_receive(:update_node_with_changeset) { |node, user| node.tags['addr:housenumber'].should eql 99 }
+    unedited_node = OldOsm::Node.new(poi.to_osm_attributes)
+    OldOsm.should_receive(:get_node).and_return(unedited_node)
+    OldOsm.any_instance.should_receive(:update_node_with_changeset) { |node, user| node.tags['addr:housenumber'].should eql 99 }
     update_node = job.perform
   end
 

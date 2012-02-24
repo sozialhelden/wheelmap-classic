@@ -2,7 +2,7 @@ class UpdateSingleWayAttributeJob < Struct.new(:way_id, :user, :client, :attribu
   def self.enqueue(node_id, user, attributes)
     raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
 
-    client = OpenStreetMap::OauthClient.new(user.access_token)
+    client = OldOsm::OauthClient.new(user.access_token)
     new(node_id, user, client, attributes).tap do |job|
       Delayed::Job.enqueue(job)
     end
@@ -12,11 +12,11 @@ class UpdateSingleWayAttributeJob < Struct.new(:way_id, :user, :client, :attribu
     raise ArgumentError.new("Client cannot be nil") if client.blank?
     raise ArgumentError.new("User cannot be nil") if user.blank?
     begin
-      OpenStreetMap.logger = Delayed::Worker.logger
+      OldOsm.logger = Delayed::Worker.logger
       Delayed::Worker.logger.info "UpdateSingleWayAttributeJob ------------->"
       Delayed::Worker.logger.info "User: #{user.try(:id)}"
 
-      old_way = OpenStreetMap.get_way(way_id)
+      old_way = OldOsm.get_way(way_id)
       Delayed::Worker.logger.info("OLD WHEELCHAIR STATUS: #{old_way.wheelchair}")
 
       new_way = old_way.clone
@@ -33,14 +33,14 @@ class UpdateSingleWayAttributeJob < Struct.new(:way_id, :user, :client, :attribu
         return
       end
 
-      client = OpenStreetMap::OauthClient.new(user.access_token)
-      osm = OpenStreetMap.new(client)
+      client = OldOsm::OauthClient.new(user.access_token)
+      osm = OldOsm.new(client)
 
       changeset = osm.find_or_create_changeset(user.changeset_id, "Modified wheelchair tag on wheelmap.org")
       user.update_attribute('changeset_id', changeset.id) if user.changeset_id != changeset.id
 
       osm.update_way(new_way, user.changeset_id)
-    rescue OpenStreetMap::Conflict => conflict
+    rescue OldOsm::Conflict => conflict
       # These changes have already been made, so dismiss this update!
       HoptoadNotifier.notify(conflict, :action => 'perform', :component => 'UpdateSingleWayAttributeJob', :parameters => {:user => user.inspect, :new_way => new_way.inspect, :client => client.inspect, :attributes => attribute_hash})
     rescue Exception => e

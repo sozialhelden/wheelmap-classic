@@ -1,5 +1,5 @@
 require 'builder'
-class OpenStreetMap
+class OldOsm
   class Changeset
     attr_accessor :min_lat, :max_lat, :min_lon, :max_lon, :id, :closed_at, :created_at, :uid, :open, :tag, :user
     

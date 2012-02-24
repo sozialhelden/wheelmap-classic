@@ -235,16 +235,5 @@ describe Api::NodesController do
       response.status.should eql 202
 
     end
-    xit "should create queued node for later processing if params are valid" do
-      @user.oauth_token = :a_token
-      @user.oauth_secret = :a_secret
-      @user.save!
-      lambda {
-        post(:create, {:lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
-      }.should change(OpenStreetMap::QueuedNode, :count).by(1)
-      response.status.should eql 202
-
-    end
   end
-
 end
