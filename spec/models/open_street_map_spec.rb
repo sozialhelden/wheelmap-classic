@@ -1,22 +1,22 @@
 require 'spec_helper'
 
-describe OpenStreetMap do
+describe OldOsm do
   let :oauth_client do
     @base_url = "#{OpenStreetMapConfig.oauth_site}/api/0.6"
     uri = URI.parse("#{OpenStreetMapConfig.oauth_site}/api/0.6")
 
     @oauth_url = uri
-    @basic_auth_client = OpenStreetMap::BasicAuthClient.new('foo', 'bar')
+    @basic_auth_client = OldOsm::BasicAuthClient.new('foo', 'bar')
     @basic_auth_url = "#{uri.scheme}://foo:bar@#{uri.host}#{uri.path}"
 
     @consumer = ::OAuth::Consumer.new(OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret, :site => @base_url)
     @access_token = ::OAuth::AccessToken.new(@consumer, 'foo', 'bar')
 
-    OpenStreetMap::OauthClient.new(@access_token)
+    OldOsm::OauthClient.new(@access_token)
   end
 
   before(:each) do
-    @osm = OpenStreetMap.new(oauth_client)
+    @osm = OldOsm.new(oauth_client)
   end
 
   subject { @osm }
@@ -34,22 +34,22 @@ describe OpenStreetMap do
 
     it "should fetch node as xml data from API" do
       stub_osm_request(:get, @full_url, 200, File.read("#{Rails.root}/spec/fixtures/node.xml"), "text/xml")
-      node = OpenStreetMap.get_node(16581933)
-      node.class.should == OpenStreetMap::Node
+      node = OldOsm.get_node(16581933)
+      node.class.should == OldOsm::Node
     end
 
     it "should raise not found exception if API sends 404" do
       stub_osm_request(:get, @full_url, 404, "NOT FOUND", 'text/plain')
       lambda{
-        OpenStreetMap.get_node(16581933)
-      }.should raise_error(OpenStreetMap::NotFound)
+        OldOsm.get_node(16581933)
+      }.should raise_error(OldOsm::NotFound)
     end
 
     it "should raise gone exception if API sends 410" do
       stub_osm_request(:get, @full_url, 410, "Node has been deleted", 'text/plain')
       lambda{
-        OpenStreetMap.get_node(16581933)
-      }.should raise_error(OpenStreetMap::Gone)
+        OldOsm.get_node(16581933)
+      }.should raise_error(OldOsm::Gone)
     end
   end
 
@@ -70,14 +70,14 @@ describe OpenStreetMap do
       stub_osm_request(:put, @full_url, 400, "Could not parse xml", 'text/plain')
       lambda{
         @osm.create_changeset
-      }.should raise_error(OpenStreetMap::BadRequest)
+      }.should raise_error(OldOsm::BadRequest)
     end
 
     it "should raise method not allowed exception when not using put request" do
       stub_osm_request(:put, @full_url, 405, "Just method put is supported",'text/plain')
       lambda{
         @osm.create_changeset
-      }.should raise_error(OpenStreetMap::MethodNotAllowed)
+      }.should raise_error(OldOsm::MethodNotAllowed)
     end
   end
 

@@ -1,10 +1,10 @@
 require 'builder'
-class OpenStreetMap
-  class Way
+class OldOsm
+  class Node
     include ActiveModel::Validations
     # include ActiveSupport::CoreExtensions::Hash::Keys
 
-    attr_accessor :lat, :lon, :user, :uid, :changeset, :id, :timestamp, :visible, :name, :version, :tags, :member, :type, :wheelchair, :wheelchair_description, :street, :postcode, :country, :housenumber, :city, :website, :phone, :tag
+    attr_accessor :lat, :lon, :user, :uid, :changeset, :id, :timestamp, :visible, :name, :version, :tags, :type, :wheelchair, :wheelchair_description, :street, :postcode, :country, :housenumber, :city, :website, :phone, :tag
     attr_accessor_with_default :changed, false
 
     validates_presence_of :name, :wheelchair, :type, :message => I18n.t('errors.messages.empty')
@@ -18,7 +18,6 @@ class OpenStreetMap
       @lat = data['lat'].to_f
       @lon = data['lon'].to_f
       @tags = extract_tags(data)
-      @member = extract_member(data)
       @user = data['user']
       @uid = data['uid'].to_i
       @id = data['id'].to_i
@@ -40,10 +39,8 @@ class OpenStreetMap
 
     def ==(anOther)
       [:id, :lat, :lon, :version].each do |attrib|
-        puts "#{self.send(attrib)} <=> #{anOther.send(attrib)}"
         return false unless self.send(attrib) == anOther.send(attrib)
       end
-      puts "#{self.tags.inspect} versus #{anOther.tags.inspect}"
       self.tags == anOther.tags
     end
 
@@ -93,14 +90,6 @@ class OpenStreetMap
 
     def website=(value)
       @website = tags['website'] = value
-    end
-
-    def extract_member(data)
-      tees = []
-      [data['nd']].flatten.compact.each do |member_hash|
-        tees << member_hash['ref'].to_i
-      end
-      tees
     end
 
     def extract_tags(data)
@@ -162,7 +151,7 @@ class OpenStreetMap
       nil
     end
 
-    # <way id='78252182' lat='52.5220063' lon='13.4006779' version='4' changeset='2883406' user='gkai' uid='74224' visible='true' timestamp='2009-10-18T14:16:48Z'>
+    # <node id='78252182' lat='52.5220063' lon='13.4006779' version='4' changeset='2883406' user='gkai' uid='74224' visible='true' timestamp='2009-10-18T14:16:48Z'>
     #   <tag k='amenity' v='post_box'/>
     #   <tag k='collection_times' v='Mo-Fr 15:00,17:00,21:15; Sa 16:00; Su 10:45,21:15'/>
     #   <tag k='name' v='Burgstraße 29'/>
@@ -170,14 +159,11 @@ class OpenStreetMap
     #   <tag k='postal_code' v='10178'/>
     #   <tag k='source' v='survey'/>
     #   <tag k='wheelchair' v='limited'/>
-    # </way>
+    # </node>
     def to_xml(options={})
       xml = Builder::XmlMarkup.new()
       xml.osm do
-        xml.way(:id => id, :lat => lat, :lon => lon, :version => version, :changeset => changeset, :user => user, :uid => uid, :visible => visible, :timestamp => timestamp) do
-          member.each do |node_id|
-            xml.nd(:ref => node_id)
-          end
+        xml.node(:id => id, :lat => lat, :lon => lon, :version => version, :changeset => changeset, :user => user, :uid => uid, :visible => visible, :timestamp => timestamp) do
           tags.each do |key,value|
             xml.tag(:k => key, :v => value) unless value.blank?
           end unless tags.empty?
@@ -185,4 +171,5 @@ class OpenStreetMap
       end
     end
   end
+
 end

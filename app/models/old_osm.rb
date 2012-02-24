@@ -1,7 +1,7 @@
 #= Description
 #
 # This is a wrapper class updating Open Street Map Nodes
-class OpenStreetMap
+class OldOsm
   include HTTParty
   API_VERSION = "0.6".freeze
   #http://api.openstreetmap.org/api/0.6/changeset/create
@@ -120,33 +120,33 @@ class OpenStreetMap
 
   # Fetch the node from OSM API with the given ID
   def self.get_node(osmid)
-    logger.info("OpenStreetMap#get_node #{osmid}")
+    logger.info("OldOsm#get_node #{osmid}")
     base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
     response = get("#{base_uri}/node/#{osmid}", :timeout => 15)
     raise_errors(response)
-    node = OpenStreetMap::Node.new(response['osm']['node'])
+    node = OldOsm::Node.new(response['osm']['node'])
   end
 
   # Fetch the node from OSM API with the given ID
   def self.get_way(osmid)
-    logger.info("OpenStreetMap#get_way #{osmid}")
+    logger.info("OldOsm#get_way #{osmid}")
     base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
     response = get("#{base_uri}/way/#{osmid}", :timeout => 15)
     raise_errors(response)
-    way = OpenStreetMap::Way.new(response['osm']['way'])
+    way = OldOsm::Way.new(response['osm']['way'])
   end
 
   def self.get_changeset(id)
-    logger.info("OpenStreetMap#get_changeset #{id}")
+    logger.info("OldOsm#get_changeset #{id}")
     base_uri "#{OpenStreetMapConfig.oauth_site}/api/#{API_VERSION}"
     response = get("#{base_uri}/changeset/#{id}")
     logger.info "#{base_uri}/changeset/#{id}"
     raise_errors(response)
-    changeset = OpenStreetMap::Changeset.new(response['osm']['changeset'])
+    changeset = OldOsm::Changeset.new(response['osm']['changeset'])
   end
 
   def create(node)
-    logger.info("OpenStreetMap#create")
+    logger.info("OldOsm#create")
     logger.info(node.inspect)
     url = request_uri("/node/create")
     response = put(url, :body => node.to_xml)
@@ -157,7 +157,7 @@ class OpenStreetMap
   end
 
   def update(node)
-    logger.info("OpenStreetMap#update #{node.id}")
+    logger.info("OldOsm#update #{node.id}")
     logger.info node.inspect
     url = request_uri("/node/#{node.id}")
     response = put(url, :body => node.to_xml)
@@ -168,7 +168,7 @@ class OpenStreetMap
   end
 
   def update_w(way)
-    logger.info("OpenStreetMap#update #{way.id}")
+    logger.info("OldOsm#update #{way.id}")
     logger.info way.inspect
     url = request_uri("/way/#{way.id}")
     response = put(url, :body => way.to_xml)
@@ -193,7 +193,7 @@ class OpenStreetMap
   end
 
   def create_changeset(comment="Modify accessibility status for node")
-    logger.info("OpenStreetMap#create_changeset")
+    logger.info("OldOsm#create_changeset")
     url = request_uri('/changeset/create')
     response = put(url, :body => "<osm><changeset><tag k='created_by' v='wheelmap.org'/><tag k='comment' v='#{comment}'/></changeset></osm>")
     self.class.raise_errors(response)
@@ -207,7 +207,7 @@ class OpenStreetMap
   end
 
   def close_changeset(id)
-    logger.info("OpenStreetMap#close_changeset #{id}")
+    logger.info("OldOsm#close_changeset #{id}")
     url = request_uri("/changeset/#{id}/close")
     response = put(url)
     self.class.raise_errors(response)

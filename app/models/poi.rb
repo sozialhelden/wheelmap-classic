@@ -311,16 +311,16 @@ class Poi < ActiveRecord::Base
   end
 
   def osm_create(user)
-    node = OpenStreetMap::Node.new(to_osm_attributes)
+    node = OldOsm::Node.new(to_osm_attributes)
     CreatingJob.enqueue(node, user) if node.valid?
   end
 
   def save_to_osm(user)
     if way?
-      way = OpenStreetMap::Way.new(to_osm_attributes)
+      way = OldOsm::Way.new(to_osm_attributes)
       WayUpdatingJob.enqueue(way, user) if way.valid?
     else
-      node = OpenStreetMap::Node.new(to_osm_attributes)
+      node = OldOsm::Node.new(to_osm_attributes)
       UpdatingJob.enqueue(node, user) if node.valid?
     end
   end

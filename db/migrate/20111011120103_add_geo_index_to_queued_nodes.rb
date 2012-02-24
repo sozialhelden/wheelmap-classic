@@ -1,9 +1,12 @@
 class AddGeoIndexToQueuedNodes < ActiveRecord::Migration
+
+  class QueuedNode < ActiveRecord::Base; end
+
   def self.up
     execute 'ALTER TABLE queued_nodes ENGINE=MyISAM'
     add_column :queued_nodes, :geom, :point, :null => false rescue nil
 
-    OpenStreetMap::QueuedNode.all.each do |node|
+    QueuedNode.all.each do |node|
       attribs = ActiveSupport::JSON.decode(node.node_attributes)
       node.geom = Point.from_x_y(attribs['lon'], attribs['lat'])
       node.save!
