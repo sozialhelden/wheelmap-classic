@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'OpenStreetMap::Node' do
+describe 'OldOsm::Node' do
 
   before(:each) do
     @valid_attributes ={'id'        => '78252168',
@@ -31,7 +31,7 @@ describe 'OpenStreetMap::Node' do
                           }
                         ]
                       }
-    @node = OpenStreetMap::Node.new(@valid_attributes)
+    @node = OldOsm::Node.new(@valid_attributes)
   end
 
   it "should have latitude, longitude and name" do
@@ -43,7 +43,7 @@ describe 'OpenStreetMap::Node' do
   end
 
   it "has lat and lon if created with poi.to_osm_attributes" do
-    node = OpenStreetMap::Node.new(Poi.new(:lat => 52, :lon => 13).to_osm_attributes)
+    node = OldOsm::Node.new(Poi.new(:lat => 52, :lon => 13).to_osm_attributes)
     node.lat.should == 52
     node.lon.should == 13
   end

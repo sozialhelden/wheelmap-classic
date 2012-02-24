@@ -1,4 +1,4 @@
-class OpenStreetMap
+class OldOsm
   class Error < StandardError
     attr_reader :data
 

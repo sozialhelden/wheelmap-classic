@@ -1,4 +1,4 @@
-class OpenStreetMap
+class OldOsm
   class OauthClient
 
     attr_reader :access_token
