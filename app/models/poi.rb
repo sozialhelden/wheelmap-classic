@@ -28,6 +28,7 @@ class Poi < ActiveRecord::Base
   has_one :category, :through => :node_type
 
   validate :relevant?
+  validate :validate_type
   validates_presence_of :name, :wheelchair, :type
   validates_format_of :website, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true, :message => I18n.t('errors.messages.invalid')
   validates_length_of :wheelchair_description, :maximum => 255
@@ -165,7 +166,13 @@ class Poi < ActiveRecord::Base
 
   def type=(value)
     key = Tags[value.to_sym]
-    self.tags[key.to_s] = value.to_s
+    self.tags[key.to_s] = value.to_s if key
+  end
+
+  def validate_type
+    puts "Validate: #{tags}"
+    puts "Valid?: #{NodeType.valid_type?(tags)}"
+    errors.add(:tags, 'sdsd') unless NodeType.valid_type?(self.tags)
   end
 
   def category_id
