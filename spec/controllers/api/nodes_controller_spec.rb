@@ -167,18 +167,18 @@ describe Api::NodesController do
 
       Poi.should_receive(:find).with(@node.id).and_return(@node)
       @node.should_receive(:valid?).and_return(false)
-      @node.should_not_receive(:save_to_osm)
       lambda {
         put(:update, {:id => @node.id, :api_key => @user.authentication_token})
+        response.status.should eql 400
       }.should change(UpdateJob, :count).by(0)
 
-      response.status.should eql 400
     end
 
     it "should accept update for later processing if params are valid" do
       @user.oauth_token = :a_token
       @user.oauth_secret = :a_secret
       @user.save!
+
       lambda {
         put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
         response.status.should eql 202
@@ -221,18 +221,18 @@ describe Api::NodesController do
       @user.save!
       lambda {
         post(:create, {:lat => 52.0, :lon => 13.4, :name => 'Something new', :api_key => @user.authentication_token})
+        response.status.should eql 400
       }.should_not change(CreateJob, :count)
-      response.status.should eql 400
     end
 
-    it "doesn't create node job for later processing if params are valid" do
+    it "create node job for later processing if params are valid" do
       @user.oauth_token = :a_token
       @user.oauth_secret = :a_secret
       @user.save!
       lambda {
         post(:create, {:lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
+        response.status.should eql 202
       }.should change(CreateJob, :count).by(1)
-      response.status.should eql 202
 
     end
   end

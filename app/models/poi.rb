@@ -28,7 +28,7 @@ class Poi < ActiveRecord::Base
   has_one :category, :through => :node_type
 
   validate :relevant?
-  validates_presence_of :name, :wheelchair, :type, :message => I18n.t('errors.messages.empty')
+  validates_presence_of :name, :wheelchair, :type
   validates_format_of :website, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true, :message => I18n.t('errors.messages.invalid')
   validates_length_of :wheelchair_description, :maximum => 255
   validates_presence_of :lat, :lon, :message => "Bitte in der Karte klicken!"
@@ -319,17 +319,21 @@ class Poi < ActiveRecord::Base
   end
 
   def osm_create(user)
+    return false unless valid?
+
     node = OldOsm::Node.new(to_osm_attributes)
-    CreatingJob.enqueue(node, user) if node.valid?
+    CreatingJob.enqueue(node, user)
   end
 
   def save_to_osm(user)
+    return false unless valid?
+
     if way?
       way = OldOsm::Way.new(to_osm_attributes)
-      WayUpdatingJob.enqueue(way, user) if way.valid?
+      WayUpdatingJob.enqueue(way, user)
     else
       node = OldOsm::Node.new(to_osm_attributes)
-      UpdatingJob.enqueue(node, user) if node.valid?
+      UpdatingJob.enqueue(node, user)
     end
   end
 end

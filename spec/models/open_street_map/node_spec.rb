@@ -63,10 +63,6 @@ describe 'OldOsm::Node' do
                           'phone' => nil }
   end
 
-  it "should build valid object" do
-    Factory.build(:node).should be_valid
-  end
-
   it "should be a valid node type" do
     @node.should be_valid_type
   end
