@@ -45,5 +45,15 @@ class NodeType < ActiveRecord::Base
       @@combination
     end
     memoize :combination if Rails.env.production? || Rails.env.staging?
+
+    def valid_combination?(key, value)
+      puts "#{key}/#{value}"
+      find_by_osm_key_and_osm_value(key, value)
+    end
+
+    def valid_type?(tags)
+      tags.any?  &self.method(:valid_combination?)
+    end
+
   end
 end

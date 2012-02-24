@@ -49,7 +49,6 @@ class Api::NodesController < Api::ApiController
         wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
         wants.xml{  render :xml  => {:message => 'OK'}.to_xml,  :status => 202 }
       end
-
     else
       respond_to do |wants|
         wants.json{ render :json => {:error => @node.errors}.to_json, :status => 400 }
@@ -71,6 +70,7 @@ class Api::NodesController < Api::ApiController
       end
 
     else
+      raise @node.errors.inspect
       respond_to do |wants|
         wants.json{ render :json => {:error => @node.errors}.to_json, :status => 400 }
         wants.xml{  render :xml  => {:error => @node.errors}.to_xml,  :status => 400 }

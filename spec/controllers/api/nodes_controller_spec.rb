@@ -200,6 +200,10 @@ describe Api::NodesController do
 
   describe 'create action' do
 
+    before do
+      Factory.create(:node_type, :osm_key => 'amenity', :osm_key => 'bar')
+    end
+
     it "access should be denied if api key is missing" do
       lambda{
         post(:create, {:name => 'Something new'})
