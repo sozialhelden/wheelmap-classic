@@ -62,8 +62,7 @@ class NodesController < ApplicationController
   def update
     @node = Poi.find(params[:id])
     @node.attributes = params[:node]
-    if @node.valid?
-      @node.save_to_osm(current_user)
+    if @node.save_to_osm(current_user)
       respond_to do |wants|
         wants.js   { render :text => 'OK' }
 
@@ -92,8 +91,7 @@ class NodesController < ApplicationController
   def create
     @node = Poi.new(params[:node])
 
-    if @node.valid?
-      @node.osm_create(current_user)
+    if @node.osm_create(current_user)
 
       flash[:track]  = "'Data', 'Create', '#{@node.wheelchair}'"
       flash[:view] = '/nodes/created'
