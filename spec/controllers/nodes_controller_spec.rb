@@ -122,7 +122,7 @@ describe NodesController do
         }.should change(UpdateJob, :count).by(1)
         response.should redirect_to(node_path(84644746))
         job = YAML.load(UpdateJob.last.handler)
-        job.client.class.should == OpenStreetMap::OauthClient
+        job.client.class.should == OldOsm::OauthClient
         job.node.id.should == 84644746
         job.node.wheelchair.should == 'yes'
       end
@@ -170,7 +170,7 @@ describe NodesController do
         lambda{
           post(:create, {:commit=>"Ort anlegen", :node => {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant', :city=>"", :housenumber=>"", :postcode=>"", :wheelchair_description=>"", :street=>"",:phone=>"", :website=>""}})
           response.code.should == '302'
-        }.should change(OpenStreetMap::QueuedNode, :count).by(1)
+        }.should change(OldOsm::QueuedNode, :count).by(1)
       end
 
       xit "stores the right stuff in a QueuedNode for given node" do
@@ -178,7 +178,7 @@ describe NodesController do
         node_attributes = {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant', :city=>"", :housenumber=>"", :postcode=>"", :street=>"",:phone=>"", :website=>""}
         post(:create, {:commit=>"Ort anlegen", :node => node_attributes })
 
-        job = OpenStreetMap::QueuedNode.last
+        job = OldOsm::QueuedNode.last
         job.user_id.should == @another_user.id
 
         JSON::parse(job.node_attributes).should == node_attributes.stringify_keys!
@@ -206,7 +206,7 @@ describe NodesController do
         @request.env["HTTP_AUTHORIZATION"]    = "Basic #{http_credentials}"
         lambda{
           post(:create, {:node => {"lon"=>"13.388226983333330944", "name"=>"Bio COMPANY", "wheelchair"=>"yes", "wheelchair_description"=>"Bio bio", "type"=>"supermarket", "lat"=>"52.52287699999996928"}})
-        }.should change(OpenStreetMap::QueuedNode, :count).by(1)
+        }.should change(OldOsm::QueuedNode, :count).by(1)
       end
 
       xit "stores the right stuff in a QueuedNode for given node when posted with iPhone" do
@@ -218,7 +218,7 @@ describe NodesController do
         @request.env["HTTP_AUTHORIZATION"]    = "Basic #{http_credentials}"
         node_attributes = {"lon"=>"13.388226983333330944", "name"=>"Bio COMPANY", "wheelchair"=>"yes", "wheelchair_description"=>"Bio bio", "type"=>"supermarket", "lat"=>"52.52287699999996928"}
         post(:create, {:node => node_attributes})
-        job = OpenStreetMap::QueuedNode.last
+        job = OldOsm::QueuedNode.last
         job.user_id.should == @another_user.id
 
         JSON::parse(job.node_attributes).should == node_attributes.stringify_keys!
@@ -227,7 +227,7 @@ describe NodesController do
       # it "should have correct values for CreateJob" do
       #   post(:create, :node => {:lat => '52.4', :lon => '13.9', :name => 'test node', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant'})
       #   job = YAML.load(CreateJob.last.handler)
-      #   job.client.class.should == OpenStreetMap::OauthClient
+      #   job.client.class.should == OldOsm::OauthClient
       #   job.node.name.should == 'test node'
       #   job.node.wheelchair.should == 'yes'
       #   job.node.lat.should == 52.4
