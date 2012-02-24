@@ -164,7 +164,14 @@ describe Api::NodesController do
       @user.oauth_token = :a_token
       @user.oauth_secret = :a_secret
       @user.save!
-      put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :name => 'Something new', :api_key => @user.authentication_token})
+
+      Poi.should_receive(:find).with(@node.id).and_return(@node)
+      @node.should_receive(:valid?).and_return(false)
+      @node.should_not_receive(:save_to_osm)
+      lambda {
+        put(:update, {:id => @node.id, :api_key => @user.authentication_token})
+      }.should change(UpdateJob, :count).by(0)
+
       response.status.should eql 400
     end
 
@@ -224,11 +231,11 @@ describe Api::NodesController do
       @user.save!
       lambda {
         post(:create, {:lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
-      }.should change(CreateJob, :count).by(0)
+      }.should change(CreateJob, :count).by(1)
       response.status.should eql 202
 
     end
-    it "should create queued node for later processing if params are valid" do
+    xit "should create queued node for later processing if params are valid" do
       @user.oauth_token = :a_token
       @user.oauth_secret = :a_secret
       @user.save!
@@ -236,19 +243,6 @@ describe Api::NodesController do
         post(:create, {:lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
       }.should change(OpenStreetMap::QueuedNode, :count).by(1)
       response.status.should eql 202
-
-    end
-    it "should store the right data in a queued node for later processing if params are valid" do
-      @user.oauth_token = :a_token
-      @user.oauth_secret = :a_secret
-      @user.save!
-      node_attributes = {:lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token}
-      post(:create, node_attributes)
-
-      job = OpenStreetMap::QueuedNode.last
-      job.user_id.should == @user.id
-
-      JSON::parse(job.node_attributes).should == node_attributes.stringify_keys!
 
     end
   end
