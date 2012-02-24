@@ -15,7 +15,7 @@ class Api::NodesController < Api::ApiController
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
 
   has_scope :bbox
-  has_scope :wheelchair
+  has_scope :wheelchair, :except => :update
 
   def index
     index! do |format|
@@ -41,10 +41,10 @@ class Api::NodesController < Api::ApiController
   end
 
   def update
-    @node = OpenStreetMap::Node.new(params.stringify_keys!)
+    @node = resource
+    @node.attributes = params
     if @node.valid?
-      client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.oauth_authorized?
-      Delayed::Job.enqueue(UpdatingJob.new(@node, current_user, client))
+      @node.save_to_osm(current_user)
 
       respond_to do |wants|
         wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
@@ -63,11 +63,9 @@ class Api::NodesController < Api::ApiController
     unwanted_keys = %w(action controller page per_page format)
     node_attributes = params.dup.delete_if { |k,v| unwanted_keys.include? k }
 
-    @node = OpenStreetMap::Node.new(node_attributes)
+    @node = Poi.new(node_attributes)
     if @node.valid?
-      OpenStreetMap::QueuedNode.enqueue(current_user, node_attributes)
-      #client = OpenStreetMap::OauthClient.new(current_user.access_token) if current_user.oauth_authorized?
-      #Delayed::Job.enqueue(CreatingJob.new(@node, current_user, client))
+      @node.osm_create(current_user)
 
       respond_to do |wants|
         wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
