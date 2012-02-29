@@ -13,6 +13,16 @@ GIT
       rake
       rdoc
 
+GIT
+  remote: git@github.com:sozialhelden/openstreetmap.git
+  revision: eaa74f037134ee0f13ee1ac7c4c83261b00b4f55
+  specs:
+    openstreetmap (0.1.3)
+      activemodel
+      builder
+      httparty
+      oauth
+
 PATH
   remote: vendor/gems/crewait-0.1.6
   specs:
@@ -293,6 +303,7 @@ DEPENDENCIES
   newrelic_rpm
   nokogiri
   oauth
+  openstreetmap!
   pickle
   rails (= 3.0.11)
   rake
