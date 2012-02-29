@@ -172,9 +172,7 @@ class Poi < ActiveRecord::Base
   end
 
   def validate_type
-    puts "Validate: #{tags}"
-    puts "Valid?: #{NodeType.valid_type?(tags)}"
-    errors.add(:tags, 'sdsd') unless NodeType.valid_type?(self.tags)
+    errors.add(:tags, 'Invalid type') unless NodeType.valid_type?(self.tags)
   end
 
   def category_id

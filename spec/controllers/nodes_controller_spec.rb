@@ -15,6 +15,8 @@ end
 describe NodesController do
   include Devise::TestHelpers
 
+  fixtures :node_types
+
   before(:each) do
     Poi.delete_all
 
@@ -159,7 +161,9 @@ describe NodesController do
         request.env['ACCEPT'] = "*/*"
 
         lambda{
-          post(:create, {:commit=>"Ort anlegen", :node => {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant', :city=>"", :housenumber=>"", :postcode=>"", :wheelchair_description=>"", :street=>"",:phone=>"", :website=>""}})
+          post(:create, {:commit=>"Ort anlegen", :node => {:lat => '52.4', :lon => '13.9', :name => 'test name',
+               :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant', :city=>"",
+               :housenumber=>"", :postcode=>"", :wheelchair_description=>"", :street=>"",:phone=>"", :website=>""}})
           response.code.should == '302'
         }.should change(CreateJob, :count).by(1)
       end
@@ -168,14 +172,18 @@ describe NodesController do
         request.env['ACCEPT'] = "*/*"
 
         lambda{
-          post(:create, {:commit=>"Ort anlegen", :node => {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant', :city=>"", :housenumber=>"", :postcode=>"", :wheelchair_description=>"", :street=>"",:phone=>"", :website=>""}})
+          post(:create, {:commit=>"Ort anlegen", :node => {:lat => '52.4', :lon => '13.9', :name => 'test name',
+               :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant', :city=>"",
+               :housenumber=>"", :postcode=>"", :wheelchair_description=>"", :street=>"",:phone=>"", :website=>""}})
           response.code.should == '302'
         }.should change(OldOsm::QueuedNode, :count).by(1)
       end
 
       xit "stores the right stuff in a QueuedNode for given node" do
         request.env['ACCEPT'] = "*/*"
-        node_attributes = {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant', :city=>"", :housenumber=>"", :postcode=>"", :street=>"",:phone=>"", :website=>""}
+        node_attributes = {:lat => '52.4', :lon => '13.9', :name => 'test name', :wheelchair => 'yes',
+                          :wheelchair_description => 'All good', :type => 'restaurant', :city=>"",
+                          :housenumber=>"", :postcode=>"", :street=>"",:phone=>"", :website=>""}
         post(:create, {:commit=>"Ort anlegen", :node => node_attributes })
 
         job = OldOsm::QueuedNode.last
@@ -193,7 +201,8 @@ describe NodesController do
         @request.env["HTTP_ACCEPT_LANGUAGE"]  = "de-de"
         @request.env["HTTP_AUTHORIZATION"]    = "Basic #{http_credentials}"
         lambda{
-          post(:create, {:node => {"lon"=>"13.388226983333330944", "name"=>"Bio COMPANY", "wheelchair"=>"yes", "wheelchair_description"=>"Bio bio", "type"=>"supermarket", "lat"=>"52.52287699999996928"}})
+          post(:create, {:node => {"lon"=>"13.388226983333330944", "name"=>"Bio COMPANY", "wheelchair"=>"yes",
+               "wheelchair_description"=>"Bio bio", "type"=>"supermarket", "lat"=>"52.52287699999996928"}})
         }.should change(CreateJob, :count).by(1)
       end
 
@@ -205,7 +214,8 @@ describe NodesController do
         @request.env["HTTP_ACCEPT_LANGUAGE"]  = "de-de"
         @request.env["HTTP_AUTHORIZATION"]    = "Basic #{http_credentials}"
         lambda{
-          post(:create, {:node => {"lon"=>"13.388226983333330944", "name"=>"Bio COMPANY", "wheelchair"=>"yes", "wheelchair_description"=>"Bio bio", "type"=>"supermarket", "lat"=>"52.52287699999996928"}})
+          post(:create, {:node => {"lon"=>"13.388226983333330944", "name"=>"Bio COMPANY", "wheelchair"=>"yes",
+               "wheelchair_description"=>"Bio bio", "type"=>"supermarket", "lat"=>"52.52287699999996928"}})
         }.should change(OldOsm::QueuedNode, :count).by(1)
       end
 
@@ -216,7 +226,8 @@ describe NodesController do
         @request.env["HTTP_USER_AGENT"]       = "Wheelmap/1.1 CFNetwork/485.13.9 Darwin/11.0.0"
         @request.env["HTTP_ACCEPT_LANGUAGE"]  = "de-de"
         @request.env["HTTP_AUTHORIZATION"]    = "Basic #{http_credentials}"
-        node_attributes = {"lon"=>"13.388226983333330944", "name"=>"Bio COMPANY", "wheelchair"=>"yes", "wheelchair_description"=>"Bio bio", "type"=>"supermarket", "lat"=>"52.52287699999996928"}
+        node_attributes = {"lon"=>"13.388226983333330944", "name"=>"Bio COMPANY", "wheelchair"=>"yes",
+          "wheelchair_description"=>"Bio bio", "type"=>"supermarket", "lat"=>"52.52287699999996928"}
         post(:create, {:node => node_attributes})
         job = OldOsm::QueuedNode.last
         job.user_id.should == @another_user.id

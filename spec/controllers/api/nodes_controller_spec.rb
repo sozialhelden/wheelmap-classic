@@ -15,6 +15,7 @@ end
 describe Api::NodesController do
   include Devise::TestHelpers
   render_views
+  fixtures :node_types
 
   before :each do
     User.delete_all
@@ -200,10 +201,6 @@ describe Api::NodesController do
 
   describe 'create action' do
 
-    before do
-      Factory.create(:node_type, :osm_key => 'amenity', :osm_key => 'bar')
-    end
-
     it "access should be denied if api key is missing" do
       lambda{
         post(:create, {:name => 'Something new'})
@@ -224,7 +221,8 @@ describe Api::NodesController do
       @user.oauth_secret = :a_secret
       @user.save!
       lambda {
-        post(:create, {:lat => 52.0, :lon => 13.4, :name => 'Something new', :api_key => @user.authentication_token})
+        post(:create, {:lat => 52.0, :lon => 13.4, :api_key => @user.authentication_token,
+             :type => "foo", :tags => {"amenity"=>"restaurant"}})
         response.status.should eql 400
       }.should_not change(CreateJob, :count)
     end
@@ -234,7 +232,8 @@ describe Api::NodesController do
       @user.oauth_secret = :a_secret
       @user.save!
       lambda {
-        post(:create, {:lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
+        post(:create, {:lat => 52.0, :lon => 13.4, :tags => {"amenity"=>"restaurant",
+             :name => 'Cocktails on the rocks'}, :wheelchair => 'no', :api_key => @user.authentication_token})
         response.status.should eql 202
       }.should change(CreateJob, :count).by(1)
 

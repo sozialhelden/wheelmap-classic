@@ -63,14 +63,12 @@ class Api::NodesController < Api::ApiController
 
     @node = Poi.new(node_attributes)
     if @node.osm_create(current_user)
-
       respond_to do |wants|
         wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
         wants.xml{  render :xml  => {:message => 'OK'}.to_xml,  :status => 202 }
       end
 
     else
-      raise @node.errors.inspect
       respond_to do |wants|
         wants.json{ render :json => {:error => @node.errors}.to_json, :status => 400 }
         wants.xml{  render :xml  => {:error => @node.errors}.to_xml,  :status => 400 }

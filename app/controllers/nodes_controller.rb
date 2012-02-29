@@ -73,6 +73,7 @@ class NodesController < ApplicationController
         }
       end
     else
+      raise @node.errors.inspect
       respond_to do |wants|
         wants.js   { render :text => 'FAIL', :status => 406 }
 
@@ -92,7 +93,6 @@ class NodesController < ApplicationController
     @node = Poi.new(params[:node])
 
     if @node.osm_create(current_user)
-
       flash[:track]  = "'Data', 'Create', '#{@node.wheelchair}'"
       flash[:view] = '/nodes/created'
       flash[:notice] = I18n.t('nodes.create.flash.successfull')
