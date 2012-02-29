@@ -47,7 +47,6 @@ class NodeType < ActiveRecord::Base
     memoize :combination if Rails.env.production? || Rails.env.staging?
 
     def valid_combination?(key, value)
-      puts "#{key}/#{value}"
       find_by_osm_key_and_osm_value(key, value)
     end
 
