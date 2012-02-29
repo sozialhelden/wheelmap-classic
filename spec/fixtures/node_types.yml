@@ -1,0 +1,16 @@
+restaurant:
+  osm_key: amenity
+  osm_value: restaurant
+
+bar:
+  osm_key: amenity
+  osm_value: bar
+
+cafe:
+  osm_key: amenity
+  osm_value: cafe
+
+supermarket:
+  osm_key: shop
+  osm_value: supermarket
+
