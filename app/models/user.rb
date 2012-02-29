@@ -64,4 +64,16 @@ class User < ActiveRecord::Base
     I18n.t('devise.failure.unconfirmed')
   end
 
+  def create_authorized_api
+    consumer = OAuth::Consumer.new( OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret,
+                                { :site => 'http://www.openstreetmap.org',
+                                  :request_token_path => '/oauth/request_token',
+                                  :access_token_path => '/oauth/access_token',
+                                  :authorize_path => '/oauth/authorize'
+                                })
+    access_token = OAuth::AccessToken.new(consumer, 'osm_user_token', 'osm_user_key')
+    client = ::OpenStreetMap::OauthClient.new(access_token)
+    api = ::OpenStreetMap::Api.new(client)
+  end
+
 end
