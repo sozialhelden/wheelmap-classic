@@ -219,6 +219,7 @@ lv:
       website: "Piemēram: http://www.piemers.com"
     labels:
       category: "Kategorija:"
+      centralkey: "Centrālā atslēga:"
       city: "Pilsēta:"
       create: "Izveidot vietu"
       email: E-pasts
@@ -299,7 +300,7 @@ lv:
           limited: "daļēji pieejams ar ratiņkrēslu"
           ? "no"
           : "nav pieejams ar ratiņkrēslu"
-          save: ~
+          save: Atjaunot
           unknown: "nezināms statuss"
           ? "yes"
           : "pieejams ar ratiņkrēslu"
@@ -377,7 +378,7 @@ lv:
     currency:
       format:
         delimiter: ","
-        format: ~
+        format: "%u%n\n"
         precision: 2
         separator: "."
         significant: 0
@@ -405,7 +406,7 @@ lv:
         significant: atbilst
         strip_insignificant_zeros: true
       storage_units:
-        format: ~
+        format: "%n %u\n"
         units:
           byte:
             one: Bits
@@ -450,7 +451,7 @@ lv:
         beach_resort: "Pludmales viesnīca"
         bed_and_breakfast: B&B
         camp_site: "Nometnes vieta"
-        caravan_site: ~
+        caravan_site: "Treileru kempings"
         chalet: "Kempinga mājiņas"
         guest_house: "Viesu māja"
         hostel: Hostelis
@@ -621,9 +622,9 @@ lv:
   time:
     am: "no rīta"
     formats:
-      default: ~
-      long: ~
-      short: ~
+      default: "%a, %d %b %Y %H:%M:%S %z\n"
+      long: "%B %d, %Y %H:%M\n"
+      short: "%d %b %H:%M\n"
     pm: vakarā
   user_sessions:
     create:

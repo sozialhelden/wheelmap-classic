@@ -6,9 +6,9 @@ fr:
         format: "%{attribute} %{message}"
       messages:
         accepted: "doit être accepté"
-        blank: "ne peut pas rester blanc"
+        blank: "champ obligatoire"
         confirmation: "ne correspond pas à la confirmation"
-        empty: "ne peut pas rester vide"
+        empty: "champ obligatoire"
         equal_to: "doit être égal à %{count}"
         even: "doit être pair"
         exclusion: "pas disponible"
@@ -23,11 +23,11 @@ fr:
         record_invalid: "La validation a échoué: %{errors}"
         taken: "est déjà donné"
         too_long: "est trop long (le maximum est %{count} caractères)"
-        too_short: "est trop court (le minimum est %{count} caractères)"
+        too_short: "est trop court ( minimum %{count} caractères)"
         wrong_length: "n'a pas la bonne longueur (doit comporter %{count} caractères)"
       models:
         user_session:
-          email: "Adresse e-mail"
+          email: "Adresse mail"
           password: "Mot de passe"
           remember_me: "Rester connecté"
       template:
@@ -43,15 +43,16 @@ fr:
   breadcrumbs:
     node:
       create: "Ajouter nouveau lieu"
-      edit: "Editer lieu"
+      edit: "Modifier lieu"
     root: wheelmap
   common:
     close: fermer
   devise:
     confirmations:
       confirmed: "Votre compte était confirmé avec succès. Maintenant vous êtes connecté."
-      link: "Vous avez reçu pas d'instructions pour la confirmation? \n"
-      send_instructions: "Dans quelques minutes vous allez recevoir un e-mail avec des instructions pour la confirmation de votre compte."
+      link: "Vous n'avez pas reçu de mail de confirmation?\n"
+      send_instructions: "Dans quelques minutes vous allez recevoir un mail avec des instructions pour confirmer votre compte."
+      send_paranoid_instructions: "Si nous possédons votre adresse mail, vous recevrez dans quelques minutes un mail avec des instructions pour confirmer votre compte."
     destroy:
       confirm: "Vous êtes sûr?"
       headline: "Annuler le compte"
@@ -59,12 +60,12 @@ fr:
     edit:
       form:
         labels:
-          current_password: "Mot de passe actuel <i>(nous en avons besoin pour affirmer votre modification)</i> "
+          current_password: "Mot de passe actuel <i>(nous en avons besoin pour confirmer votre modification)</i> "
           email: E-mail
-          password: "Mot de passe <i>(laissez blanc si vous ne voulez pas le changer)</i> "
+          password: "Mot de passe <i>(ne pas remplir si vous ne voulez pas le changer)</i> "
           password_confirmation: "Répéter mot de passe"
         submit: "Sauvegarder les modifications"
-      headline: "Administrer votre compte"
+      headline: "Gérer votre compte"
     failure:
       already_authenticated: "Vous êtes déjà enregistré."
       inactive: "Votre compte n'était pas encore activé."
@@ -84,7 +85,7 @@ fr:
         subject: "Instructions pour débloquer votre compte d'utilisateur"
     mandatory: "* champ obligatoire"
     omniauth_callbacks:
-      failure: "Ne pouvait pas vous confirmer de %{kind} parce que \"%{reason}\". "
+      failure: "Erreur d'autorisation avec %{kind} parce que \"%{reason}\". "
       success: "Vérifié avec succès du compte %{kind}"
     password_recovery:
       form:
@@ -97,7 +98,9 @@ fr:
         comment: "Si vous n'avez pas demandé de changer votre mot de passe, ignorez cet e-mail s.v.p. <br/>Votre mot de passe ne sera pas changé sauf si vous cliquez sur ce lien et que vous le remplacez par un nouveau mot de passe."
         headline: "Bienvenue %{email} "
         link: "Changer le mot de passe"
-        text: "Quelqu'un a demandé de change votre mot passe. Vous pouvez le changer par cliquer sur le liens suivant:"
+        text: |-
+            Quelqu'un a demandé de changer votre mot passe, s'il s'agissait de vous-même, vous pouvez le changer en cliquant sur le lien suivant:
+            Dans le cas contraire merci de l'ignorer.
       form:
         labels:
           password: "Nouveau mot de passe"
@@ -105,18 +108,20 @@ fr:
         submit: "Réinitialiser le mot de passe"
       headline: "Réinitialiser le mot de passe"
     passwords:
-      link: "Oublié votre mot de passe?"
-      send_instructions: "Dans quelques minutes, vous aller recevoir un e-mail avec des instructions pour réinitialiser votre mot de passe."
+      link: "Mot de passe oublié?"
+      send_instructions: "Dans quelques minutes, vous allez recevoir un e-mail avec des instructions pour réinitialiser votre mot de passe."
       send_paranoid_instructions: "Si nous possédons votre adresse mail, nous vous enverrons un mail avec un lien pour la récupération du mot de passe"
       updated: "Votre mot de passe a été modifié avec succès. Maintenant vous êtes connecté."
       updated_not_active: "Votre mot de passe a été modifié avec succès."
     registrations:
       destroyed: "Votre compte a été supprimé avec succès. Nous espérons vous revoir bientôt."
-      link: Inscrivez-vous
+      inactive_signed_up: "Vous vous êtes enregistré avec succès mais nous ne pouvons pas vous connecter. Raison: \"%{reason}\""
+      link: Enregistrer
       reasons:
         inactive: "non actif"
         locked: bloqué
-      signed_up: "Votre inscription était faite avec succès. Si activé, un e-mail de confirmation est envoyé a votre adresse courriel."
+        unconfirmed: "non confirmé"
+      signed_up: "Votre inscription était couronnée de succès. Dès l'activation de votre compte vous recevrez un mail de confirmation à votre adresse mail. "
       updated: "Vous avez actualisé votre compte avec succès."
     sessions:
       inactive: "Votre compte n'était pas encore activé. Pour l'activation, merci de cliquer sur le lien que nous avons envoyé par mail. "
@@ -127,8 +132,8 @@ fr:
       signed_in: "Connecté avec succès."
       signed_out: "Déconnecté avec succès."
       timeout: "Votre session a expiré, reconnecter s.v.p."
-      unauthenticated: "Avant continuer, inscrivez-vous ou connectez s.v.p."
-      unconfirmed: "Il faut confirmer votre compte d'utilisateur avant de continuer. Pour confirmer, merci de cliquer sur le lien que nous vous avons envoyé par mail. "
+      unauthenticated: "Avant de continuer, merci de vous inscrire ou de vous connecter. "
+      unconfirmed: "Il faut d'abord confirmer votre compte d'utilisateur avant de continuer. Pour confirmer, merci de cliquer sur le lien que nous vous avons envoyé par mail. "
     sign_in:
       form:
         labels:
@@ -154,7 +159,7 @@ fr:
       headline: S'inscrire
     unlocks:
       link: "Vous n'avez pas reçu les instructions pour débloquer votre compte?"
-      send_instructions: "En quelques minutes vous allez recevoir un e-mail d'instructions comment déverrouiller votre compte."
+      send_instructions: "Dans quelques minutes vous allez recevoir un mail avec des instructions pour déverrouiller votre compte."
       send_paranoid_instructions: "Si votre compte existe, vous recevrez un mail indiquant comment le débloquer."
       unlocked: "Votre compte a été déverrouillé avec succès. Maintenant vous êtes connecté."
   errors:
@@ -163,10 +168,8 @@ fr:
     messages:
       accepted: "doit être accepté"
       already_confirmed: "était déjà confirmé, veuillez essayer de vous connecter"
-      blank: |-
-          doit être rempli
-          champ obligatoire
-      confirmation: "ne correspond pas à l'affirmation"
+      blank: "champ obligatoire"
+      confirmation: "ne correspond pas à la confirmation"
       empty: "doit être rempli"
       equal_to: "doit être exactement %{count}"
       even: "doit être pair"
@@ -176,7 +179,7 @@ fr:
       greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
       inclusion: "valeur non-valide"
       invalid: non-valide
-      less_than: "doit être moins que %{count} "
+      less_than: "doit être plus petit que %{count} "
       less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
       not_a_number: "n' est pas un nombre"
       not_an_integer: "doit être un nombre entier"
@@ -184,16 +187,17 @@ fr:
       not_locked: "n'était pas fermé"
       not_saved:
         one: "Une erreur a empêché la sauvegarde de %{resource} "
-        other: "%{count} erreur: %{resource} refuse la sauvegarde"
+        other: "%{count} erreur: %{resource} sauvegarde refusée"
       odd: "doit être impair"
       taken: "est déjà utilisé"
       too_long: "est trop long (pas plus de %{count} caractères) "
       too_short: "est trop court (pas moins de %{count} caractères)"
       wrong_length: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
     template:
-      body: "Il y a des problèmes avec les champs suivants:"
+      body: "Merci de vérifier les champs suivants:"
       header:
         one: "Erreur, impossible de sauvegarder l'objet %{model}"
+        other: "Ne pouvait pas sauvegarder cet objet %{model} suite à des erreurs %{count}"
   flash:
     actions:
       create:
@@ -204,7 +208,7 @@ fr:
       update:
         notice: "%{resource_name} était actualisé avec succès."
   form:
-    show_fully_accessible_places: "accès pour fauteuil roulant"
+    show_fully_accessible_places: "oui, accessible en fauteuil roulant"
     show_limited_accessible_places: "partiellement accessible en fauteuil roulant"
     show_places_without_status: "statut inconnu"
     show_unaccessible_places: "pas accessible en fauteuil roulant"
@@ -212,11 +216,12 @@ fr:
     hints:
       lat: "Pointez le marqueur à la position correcte sur le plan"
       osm_username: "Vous n'êtes pas encore membre?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Vous pouvez vous inscrire sur Openstreetmap ici</a> "
-      password: "(laissez vide, si vous ne voulez pas le modifier)"
+      password: "(ne pas remplir, si vous ne voulez pas le modifier)"
       phone: "Par exemple:  +49 30 123456-78      "
       website: "Par exemple: http://www.example.com "
     labels:
       category: "Catégorie:"
+      centralkey: "clé centrale"
       city: "Ville:"
       create: "Créer un lieu"
       email: E-mail
@@ -230,6 +235,7 @@ fr:
       password_confirmation: "Répéter le mot de passe"
       phone: "Téléphone:"
       postcode: "Code postal:"
+      reset: Reset
       save: Sauvegarder
       street: "Rue:"
       type: "Type:"
@@ -238,14 +244,14 @@ fr:
       wheelchair_description: "Commentaire d'accessibilité:"
     titles:
       basic: "Données élémentaires "
-      optional: "Plusieurs informations <span class=\"addition\">(tous le champs sont optionnels)</span>"
+      optional: "Plus d' informations <span class=\"addition\">(tous les champs sont optionnels)</span>"
   global:
-    form_validation_error: "Notez les erreurs listés en dessous."
+    form_validation_error: "Voir les erreurs indiquées ci-dessous."
   header:
     meta:
-      description: "Des marches, des escaliers ou pas de WC handicapé - grâce à Wheelmap vous saurez à l'avance si un musé, un cinéma ou le restaurant le plus proche sont accessibles en fauteuil roulant. "
+      description: "Des marches, des escaliers ou pas de WC handicapé - grâce à Wheelmap vous saurez à l'avance si un musée, un cinéma ou le restaurant le plus proche sont accessibles en fauteuil roulant. "
       homepage: "Page d'accueil"
-      keywords: "lieux accessibles pour fauteuil roulant trouvent signe de recherche"
+      keywords: "lieux accessibles en fauteuil roulant trouver chercher marquer"
       search: Récherche
     navigation:
       blog: Blog
@@ -260,7 +266,7 @@ fr:
       press: Presse
       suggestions: Suggestions
       what_is_barrier_free: "Que veut dire \"accessible en fauteuil roulant\""
-      what_is_wheelmap: "Qu' est-ce que c'est 'wheelmap'?"
+      what_is_wheelmap: "Qu' est-ce que 'wheelmap'?"
     searchbar:
       add_place: "Ajouter un lieu"
       find: trouver
@@ -282,6 +288,9 @@ fr:
         category: "Catégorie:"
         wheelchair: "Accessible en fauteuil roulant?"
       ie:
+        action:
+          ignore: ignorer
+          upgrade: "actualiser le navigateur"
         warning:
           headline: "Avec toutes nos excuses! "
           message: "Apparemment , tu utilises Internet Explorer. Wheelmap nécessite un navigateur ............. pour fonctionner correctement. Merci d'utiliser Firefox, Chrome, Safari ou Opera."
@@ -291,14 +300,13 @@ fr:
       popup:
         form:
           limited: |-
-              accès partiel pour fauteuil roulant
               partiellement accessible en fauteuil roulant
           ? "no"
-          : "pas d'accès pour fauteuil roulant"
+          : "Non accessible en fauteuil roulant"
           save: Sauvegarder
           unknown: "statut inconnu"
           ? "yes"
-          : "accès pour fauteuil roulant"
+          : "entièrement accessible en fauteuil roulant"
         help: "Accessible en fauteuil roulant? (Aide)"
         more: "davantage ..."
   how?: Comment?
@@ -309,7 +317,7 @@ fr:
           headline: "Tous (ou toutes)  les %{type} accessible en fauteuil roulant à %{city} (%{count})"
         ? "no"
         :
-          headline: "Tous (ou toutes) %{type}  accessibles en fauteuil roulant à %{city} (%{count})"
+          headline: "Tous (ou toutes) %{type}  non accessibles en fauteuil roulant à %{city} (%{count})"
         unknown:
           headline: "Tous (ou toutes) %{type} à  %{city}  avec statut d'accessibilité inconnu"
         ? "yes"
@@ -333,7 +341,7 @@ fr:
         successfull: "Merci beaucoup, votre entrée a été sauvegardée et sera publiée bientôt."
     edit:
       header:
-        title: "Editer lieu: %{node} | wheelmap.org "
+        title: "traiter lieu: %{node} | wheelmap.org "
       link:
         large_map: "&laquo; Annuler"
     errors:
@@ -342,7 +350,7 @@ fr:
       not_available: "Désolé, cette page est temporairement indisponible."
       not_existent: "Désolé, ce lieu n'est plus disponible."
       not_found: "Désolé, page introuvable."
-      param_missing: "Donnez un terme de recherche s.v.p."
+      param_missing: "Entrer une recherche"
     flash:
       authorize_wheelmap: "Vous avez besoin d'un compte sur OpenStreetMap pour modifier des données."
     new:
@@ -360,12 +368,13 @@ fr:
         title: "Lieu: %{node} | wheelmap.org "
       link:
         back: retour
-        large_map: Elargir
+        large_map: Agrandir
         listing: "Tous les endroits du type %{type} dans %{city}"
+      show-in-osm: "indiquer sur Openstreetpmap"
     update:
       flash:
         not_successfull: "Oups, votre entrée était incorrecte ou incomplète."
-        successfull: "Merci, votre entrée était sauvegardée avec succès et sera publiée bientôt."
+        successfull: "Merci, votre entrée a été sauvegardée avec succès et sera publiée bientôt."
     update_wheelchair:
       successfull: "Le statut du lieu \"%{name} a été modifié en \"accessible en fauteuil\": %{status} et sera actualisé prochainement"
   number:
@@ -470,12 +479,13 @@ fr:
         courthouse: "Palais de Justice"
         embassy: Ambassade
         police: Police
-        public_building: "Edifices public"
+        public_building: "Edifice public"
         townhall: "Salle des fêtes / salle polyvalente"
       health:
         doctors: Médecin
         hearing_aids: "Audioprothésiste "
         hospital: Hôpital
+        medical_supply: "Magasin de matériel médical"
         pharmacy: Pharmacie
         social_facility: "centre social"
         veterinary: Vétérinaire
@@ -485,7 +495,8 @@ fr:
         cinema: Cinéma
         community_center: "Centre municipal"
         gallery: Galerie
-        nightclub: "Club de nuit"
+        nightclub: "Boîte de nuit"
+        playground: "aire de jeux"
         sauna: Sauna
         stripclub: "Club de striptease"
         theatre: Théâtre
@@ -503,9 +514,9 @@ fr:
         post_office: "Bureau de poste"
       public_transfer:
         aerodrome: Aéroport
-        bicycle_parking: "Parking à vélos"
+        bicycle_parking: "Stationnement vélos"
         bicycle_rental: "Location de bicyclettes"
-        boatyard: "Chantier naval"
+        boatyard: Port
         bus_station: "arrêt de bus"
         bus_stop: "Arrêt de bus "
         cable_car: Télécabine
@@ -518,7 +529,7 @@ fr:
         halt: Arrêt
         light_rail: "Transport urbain sur rail"
         parking: Stationnement/parking
-        parking_aisle: Parking
+        parking_aisle: "voie de circulation sur parking"
         platform: "Quai de gare"
         station: Métro
         subway_entrance: "Entrée du métro"
@@ -531,12 +542,14 @@ fr:
         bicycle: "magasin de vélos"
         books: Librairie
         butcher: Boucherie
+        car_repair: Garage
         car_shop: Concessionaire
+        chemist: droguerie
         clothes: Vêtements
         computer: Ordinateur
         convenience: Supérette
         department_store: "Grand magasin"
-        doityourself: Bricolage
+        doityourself: "Magasin de bricolage"
         dry_cleaning: "Nettoyage à sec"
         electronics: Électronique
         florist: Fleuriste
@@ -551,6 +564,8 @@ fr:
         photo: Photo
         second_hand: Friperie
         shoes: "Magasin de chaussures"
+        sports: "Magasin de sports"
+        stationery: Papeterie
         supermarket: Supermarché
         video: vidéothèque
       sport:
@@ -592,7 +607,11 @@ fr:
   splash:
     countline: "Les %{count} lieux ont déjà été marqué."
     headline: "Tout le monde peut ajouter des endroits accessibles en fauteuil roulant!"
+    start: start
+    step1: "Cliquez sur un lieu que vous connaissez."
     step2: "Indiquez le et cliquez sur \"sauvegarder\""
+    step3: "Terminé. Inutile d'enregistrer!"
+    what_is_wheelmap: "Qu'est-ce que Wheelmap?"
   statistics: Statistique
   support:
     array:
@@ -609,13 +628,13 @@ fr:
       default: "%d %B %Y %H:%M:%S montre / heure "
       long: "%A %d %B %Y %H:%M"
       short: "%d %b %H:%M"
-    pm: "de l'après-midi"
+    pm: "dans l'après-midi"
   user_sessions:
     create:
       activation:
         notice: "Votre compte est maintenant activé!"
       error:
-        notice: "L' e-mail et le mot de passe ne correspondent pas."
+        notice: "L'adresse mail et le mot de passe ne correspondent pas."
       notice: Connecté!
     destroy:
       notice: "Au revoir, à bientôt!"
@@ -626,25 +645,24 @@ fr:
       password: "Mot de passe"
       remember_me: "Rester connecté"
   wheelchairstatus:
-    limited: "accès partiel pour fauteuil roulant"
+    limited: "partiellement accessible en  fauteuil roulant"
     ? "no"
     : "pas accessible en fauteuil roulant"
     unknown: "statut de l'accessibilité inconnu"
     ? "yes"
-    : |-
-        accès complet pour fauteuil roulant
-        Totalement accessible en fauteuil roulant
+    : "Entièrement accessible en fauteuil roulant."
   wheelmap:
     footer:
       a_project_of: "Un projet de"
+      based_on: "Basé sur"
       become_a_supporter: "Devenir sponsor"
       main_supporter: "Sponsor principal"
     itunes:
       alt: "AppStore Logo "
       title: "Vous pouvez télécharger maintenant l'application pour l'iPhone!"
     logo:
-      alt: "Wheelmap Logo - où aller dans un fauteuil roulant?"
-      title: "Wheelmap - où aller dans un fauteuil roulant?"
+      alt: "Wheelmap Logo - où aller en fauteuil roulant?"
+      title: "Wheelmap - où aller en fauteuil roulant?"
     what_is:
       fully_accessible: "La hauteur de la marche à l'entrée ne dépasse pas 7cm; tous les endroits sont accessibles en fauteuil roulant, toilettes handicapés disponibles"
       limited_accessible: "La hauteur de la marche à  l'entrée ne dépasse pas 7cm; les endroits les plus importants sont accessibles en fauteuil roulant, WC sans importance."
