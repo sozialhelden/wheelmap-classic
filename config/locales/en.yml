@@ -219,11 +219,11 @@ en:
       website: "For example: http://www.example.com"
     labels:
       category: "Category:"
+      centralkey: "Central key:"
       city: "City:"
       create: "Create place"
       email: E-Mail
       housenumber: "No:"
-      centralkey: "Central key:"
       lat: Latitude
       lon: Longitude
       name: "Name:"

@@ -219,11 +219,11 @@ de:
       website: "Beispiel: http://www.example.com"
     labels:
       category: "Kategorie:"
+      centralkey: "Zentralschlüssel:"
       city: "Ort:"
       create: "Ort anlegen"
       email: E-Mail
       housenumber: "Nr:"
-      centralkey: "Zentralschlüssel:"
       lat: Breitengrad
       lon: Längengrad
       name: "Name:"
