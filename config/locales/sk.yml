@@ -1,0 +1,124 @@
+---
+sk:
+  activerecord:
+    errors:
+      messages:
+        accepted: "musí byť potvrdené"
+        blank: "je povinná položka"
+        confirmation: "nebolo potvrdené"
+        empty: "nesmie byť prázdny/e"
+        equal_to: "sa musí rovnať %{count}"
+        even: "musí byť párne číslo"
+        exclusion: "je vyhradené pre iný účel"
+        greater_than: "musí byť väčšie ako %{count}"
+        greater_than_or_equal_to: "musí byť väčšie alebo rovné %{count}"
+        inclusion: "nie je v zozname povolených hodnôt"
+        invalid: "nie je platná hodnota"
+        less_than: "musí byť menšie ako %{count}"
+        less_than_or_equal_to: "musí byť menšie alebo rovné %{count}"
+        not_a_number: "nie je číslo"
+        odd: "musí byť nepárne číslo"
+        record_invalid: "Validácia neúspešná: %{errors}"
+        taken: "ste už použili"
+        too_long: "je príliš dlhá/ý (max. %{count} znakov)"
+        too_short: "je príliš krátky/a (min. %{count} znakov)"
+        wrong_length: "nemá správnu dĺžku (očakáva sa %{count} znakov)"
+      template:
+        body: "Nasledujúce polia obsahujú chybne vyplnené údaje:"
+        header:
+          one: "Pri ukladaní objektu %{model} došlo k chybám a nebolo ho možné uložiť"
+          other: "Pri ukladaní objektu %{model} došlo k %{count} chybám a nebolo ho možné uložiť"
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "musí byť potvrdené"
+      blank: "je povinná položka"
+      confirmation: "nebolo potvrdené"
+      empty: "nesmie byť prázdny/e"
+      equal_to: "sa musí rovnať %{count}"
+      even: "musí byť párne číslo"
+      exclusion: "je vyhradené pre iný účel"
+      greater_than: "musí byť väčšie ako %{count}"
+      greater_than_or_equal_to: "musí byť väčšie alebo rovné %{count}"
+      inclusion: "nie je v zozname povolených hodnôt"
+      invalid: "nie je platná hodnota"
+      less_than: "musí byť menšie ako %{count}"
+      less_than_or_equal_to: "musí byť menšie alebo rovné %{count}"
+      not_a_number: "nie je číslo"
+      not_an_integer: "musí byť celé číslo"
+      odd: "musí byť nepárne číslo"
+      taken: "ste už použili"
+      too_long: "je príliš dlhá/ý (max. %{count} znakov)"
+      too_short: "je príliš krátky/a (min. %{count} znakov)"
+      wrong_length: "nemá správnu dĺžku (očakáva sa %{count} znakov)"
+    template:
+      body: "Nasledujúce polia obsahujú chybne vyplnené údaje:"
+      header:
+        one: "Pri ukladaní objektu %{model} došlo k chybám a nebolo ho možné uložiť"
+        other: "Pri ukladaní objektu %{model} došlo k %{count} chybám a nebolo ho možné uložiť"
+  helpers:
+    select:
+      prompt: "Prosím vyberte si"
+    submit:
+      create: "Vytvoriť %{model}"
+      submit: "Uložiť %{model}"
+      update: "Aktualizovať %{model}"
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: €
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Miliarda
+          million: Milión
+          quadrillion: Biliarda
+          thousand: Tisíc
+          trillion: Bilión
+          unit: ~
+      format:
+        delimiter: ~
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: B
+            other: B
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: " "
+    precision:
+      format:
+        delimiter: ~
+  support:
+    array:
+      last_word_connector: " a "
+      two_words_connector: " a "
+      words_connector: ", "
+  time:
+    am: dopoludnia
+    formats:
+      default: "%a %d. %B %Y %H:%M %z"
+      long: "%A %d. %B %Y %H:%M"
+      short: "%d.%m. %H:%M"
+    pm: popoludní
