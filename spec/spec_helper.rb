@@ -32,9 +32,12 @@ Spork.prefork do
       DatabaseCleaner.clean_with(:truncation)
     end
 
+    config.include FactoryGirl::Syntax::Methods
+
     config.before(:each) do
       DatabaseCleaner.start
     end
+
 
     config.after(:each) do
       DatabaseCleaner.clean
