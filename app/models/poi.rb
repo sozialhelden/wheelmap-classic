@@ -153,16 +153,14 @@ class Poi < ActiveRecord::Base
     self.osm_id = value
   end
 
+  # usually, one of the keys we map to in Tags must be present for a poi to be valid
+  RELEVANT_KEYS = Tags.values.uniq.map(&:to_s)
+
   def type
-    tags['amenity']   ||
-    tags['shop']      ||
-    tags['tourism']   ||
-    tags['natural']   ||
-    tags['sport']     ||
-    tags['leisure']   ||
-    tags['historic']  ||
-    tags['highway']   ||
-    tags['railway']
+    RELEVANT_KEYS.each do |k|
+      return tags[k] if tags.has_key?(k)
+    end
+    nil
   end
 
   def type=(value)
@@ -257,17 +255,8 @@ class Poi < ActiveRecord::Base
   add_method_tracer :to_geojson, 'Custom/to_geojson'
 
   def relevant?
-    if !tags.blank? &&
-      ( tags.has_key?('amenity') ||
-      tags.has_key?('shop') ||
-      tags.has_key?('tourism') ||
-      tags.has_key?('natural') ||
-      tags.has_key?('sport') ||
-      tags.has_key?('leisure') ||
-      tags.has_key?('historic'))
-      # valid!
-    else
-      errors.add(:tags, "needs to have at least one of the following keys: amenity, tourism natural sport leisure shop historic")
+    if tags.values_at(*RELEVANT_KEYS).compact.empty?
+      errors.add(:tags, "needs to have at least one of the following keys: #{relevant_keys.join(',')}")
     end
   end
 
