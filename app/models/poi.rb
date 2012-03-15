@@ -254,10 +254,13 @@ class Poi < ActiveRecord::Base
   end
   add_method_tracer :to_geojson, 'Custom/to_geojson'
 
+  # method used as validation
   def relevant?
     if tags.values_at(*RELEVANT_KEYS).compact.empty?
-      errors.add(:tags, "needs to have at least one of the following keys: #{relevant_keys.join(',')}")
+      errors.add(:tags, "needs to have at least one of the following keys: #{RELEVANT_KEYS.join(',')}")
+      return false
     end
+    true
   end
 
   def existing_record!
