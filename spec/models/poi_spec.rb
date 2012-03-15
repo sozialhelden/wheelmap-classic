@@ -10,12 +10,17 @@ describe Poi do
     it { should be_valid }
   end
 
-  context "type" do
-    let (:poi) { Poi.new :name => "foo", :lat => 52.0, :lon => 13.0 }
+  context "inital state" do
+    subject { Poi.new }
+    it { should_not be_relevant }
 
     it "is initially nil" do
-      poi.type.should be_nil
+      subject.type.should be_nil
     end
+  end
+
+  context "type" do
+    let (:poi) { Poi.new :name => "foo", :lat => 52.0, :lon => 13.0 }
 
     # check each of the types offered in the create-form leads to a valid poi
     Tags.keys.map(&:to_s).each do |k|
