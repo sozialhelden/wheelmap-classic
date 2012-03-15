@@ -9,9 +9,9 @@ describe UpdateSingleAttributeJob do
       attributes = mock()
       mock_job = mock()
 
-
-      UpdateSingleAttributeJob.enqueue(node_id, user, attributes)
-      Delayed::Job.should_receive(:enqueue)#.with(an_instance_of(UpdateSingleAttributeJob))
+      lambda {
+        UpdateSingleAttributeJob.enqueue(node_id, user, attributes)
+      }.should change(Delayed::Job, :count).by(1)
     end
   end
 end
