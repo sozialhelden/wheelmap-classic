@@ -41,6 +41,11 @@ end
 
 group :test, :development do
   gem 'rspec-rails', "2.8"
+  gem 'spork'
+  gem 'rb-fsevent'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
 end
 
 group :test do
