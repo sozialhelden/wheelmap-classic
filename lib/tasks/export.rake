@@ -31,6 +31,20 @@ namespace :export do
     puts csv_string
   end
 
+  desc 'Export Categories and NodeTypes'
+  task :sorted_categories => :environment do
+    csv_string = ""
+    csv_string = FasterCSV.generate(:force_quotes => true) do |csv|
+      csv << ["wheelmap-Kategorien", "wheelmap-Typen", "OSM Key", "OSM Value"]
+      Category.all.sort_by{|c| I18n.t("poi.category.#{c.identifier}")}.each do |category|
+        category.node_types.sort_by{|n| I18n.t("poi.name.#{category.identifier}.#{n.identifier}")}.each do |node_type|
+          csv << [node_type.category.localized_name, node_type.localized_name, node_type.osm_key, node_type.osm_value]
+        end
+      end
+    end
+    puts csv_string
+  end
+
   desc 'Export nodes from OSM XML file'
   task :from_osm => :environment do
     puts "Reading vom STDIN. Please pipe some data in or use infile parameter: bzcat planet.osm.bz2 | rake export:from_osm outfile=germany.csv"
