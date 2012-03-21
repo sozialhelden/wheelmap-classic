@@ -20,9 +20,9 @@ class NodesController < ApplicationController
   after_filter :compress,                         :only => :index, :if => lambda {|c| c.request.format.try(:geojson?)}
 
   rescue_from ActiveRecord::RecordNotFound,     :with => :not_found
-  rescue_from OldOsm::NotFound,          :with => :not_found
-  rescue_from OldOsm::Gone,              :with => :gone
-  rescue_from OldOsm::Unavailable,       :with => :timeout
+  rescue_from OpenStreetMap::NotFound,          :with => :not_found
+  rescue_from OpenStreetMap::Gone,              :with => :gone
+  rescue_from OpenStreetMap::Unavailable,       :with => :timeout
 
   def index
     normalize_bbox if params[:bbox]
@@ -34,7 +34,7 @@ class NodesController < ApplicationController
       wants.js{       render :file => "#{Rails.root}/app/views/nodes/index.js.erb" }
 
       wants.geojson do
-        @places += OldOsm::QueuedNode.within_bbox(@left, @bottom, @right, @top).limit(@limit)
+        @places += QueuedNode.within_bbox(@left, @bottom, @right, @top).limit(@limit)
         render :file => "#{Rails.root}/app/views/nodes/index.geojson.erb", :content_type => "application/json; subtype=geojson; charset=utf-8"
       end
       wants.html{     redirect_to root_path }

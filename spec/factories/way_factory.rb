@@ -1,5 +1,5 @@
 # encoding: UTF-8
-Factory.define :way, :class => OldOsm::Way do |way|
+Factory.define :way, :class => OpenStreetMap::Way do |way|
   way.name         'Irish time'
   way.lat          52.5073116
   way.lon          13.3901918
