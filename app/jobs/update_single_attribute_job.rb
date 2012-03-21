@@ -12,41 +12,31 @@ class UpdateSingleAttributeJob < Struct.new(:node_id, :user, :client, :attribute
     raise ArgumentError.new("Client cannot be nil") if client.blank?
     raise ArgumentError.new("User cannot be nil") if user.blank?
     begin
-      osm = OpenStreetMap::Api.new
-      #OldOsm.logger = Delayed::Worker.logger
-      Delayed::Worker.logger.info "UpdateSingleAttributeJob ------------->"
-      Delayed::Worker.logger.info "User: #{user.try(:id)}"
+      osm = OpenStreetMap::Api.new(client)
 
+      logger.info "UpdateSingleAttributeJob ------------->"
+      logger.info "User: #{user.try(:id)}"
 
-      old_node = osm.find_node(node_id)
-      Delayed::Worker.logger.info("OLD WHEELCHAIR STATUS: #{old_node.wheelchair}")
+      node = osm.find_node(node_id)
+      logger.info "OLD WHEELCHAIR STATUS: #{node.wheelchair}"
 
-      new_node = old_node.clone
-
-      attribute_hash.each do |key,value|
-        new_node.send("#{key}=", value)
+      if node.update_attributes(attribute_hash)
+        osm.save(node)
+      else
+        logger.info "No change. No op."
       end
-
-      Delayed::Worker.logger.info("NEW WHEELCHAIR STATUS: #{new_node.wheelchair}")
-
-      # quit if all attributes hash are the same in old and new node
-      if attribute_hash.all?{|key,value| old_node.send(key) == new_node.send(key)}
-        Delayed::Worker.logger.info("Ignoring, nodes are the same!")
-        return
-      end
-
-      changeset = osm.find_or_create_changeset(user.changeset_id, "Modified wheelchair tag on wheelmap.org")
-      user.update_attribute('changeset_id', changeset.id) if user.changeset_id != changeset.id
-
-      osm.save(new_node)
     rescue OpenStreetMap::Conflict => conflict
       # These changes have already been made, so dismiss this update!
-      HoptoadNotifier.notify(conflict, :action => 'perform', :component => 'UpdateSingleAttributeJob', :parameters => {:user => user.inspect, :new_node => new_node.inspect, :client => client.inspect, :attributes => attribute_hash})
+      HoptoadNotifier.notify(conflict, :action => 'perform', :component => 'UpdateSingleAttributeJob', :parameters => {:user => user.inspect, :new_node => node.inspect, :client => client.inspect, :attributes => attribute_hash})
     rescue Exception => e
       HoptoadNotifier.notify(e, :action => 'perform', :component => 'UpdateSingleAttributeJob', :parameters => {:user => user.inspect, :node_id => node_id, :client => client.inspect, :attributes => attribute_hash})
       raise e
     end
 
+  end
+
+  def logger
+    Delayed::Worker.logger
   end
 
   def on_permanent_failure

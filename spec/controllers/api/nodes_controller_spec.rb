@@ -125,7 +125,7 @@ describe Api::NodesController do
   describe 'as a node' do
 
     before :each do
-      @wheelmap_visitor = Factory.create(:user, :email => 'visitor@wheelmap.org')
+      @wheelmap_visitor = Factory.create(:authorized_user, :email => 'visitor@wheelmap.org')
       Poi.delete_all
       @node = Factory.create(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
     end
@@ -136,7 +136,7 @@ describe Api::NodesController do
   describe 'as a way' do
 
     before :each do
-      @wheelmap_visitor = Factory.create(:user, :email => 'visitor@wheelmap.org')
+      @wheelmap_visitor = Factory.create(:authorized_user, :email => 'visitor@wheelmap.org')
       Poi.delete_all
       @node = Factory.create(:poi, :osm_id => (Factory.next(:version) * -1), :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
     end
