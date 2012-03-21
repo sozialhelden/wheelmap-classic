@@ -12,31 +12,36 @@ class UpdateSingleAttributeJob < Struct.new(:node_id, :user, :client, :attribute
     raise ArgumentError.new("Client cannot be nil") if client.blank?
     raise ArgumentError.new("User cannot be nil") if user.blank?
     begin
-      osm = OpenStreetMap::Api.new
+      osm = OpenStreetMap::Api.new(client)
       #OldOsm.logger = Delayed::Worker.logger
-      Delayed::Worker.logger.info "UpdateSingleAttributeJob ------------->"
-      Delayed::Worker.logger.info "User: #{user.try(:id)}"
+      logger.info "UpdateSingleAttributeJob ------------->"
+      logger.info "User: #{user.try(:id)}"
 
 
       old_node = osm.find_node(node_id)
-      Delayed::Worker.logger.info("OLD WHEELCHAIR STATUS: #{old_node.wheelchair}")
+      logger.info("OLD WHEELCHAIR STATUS: #{old_node.wheelchair}")
 
-      new_node = old_node.clone
+      new_node = old_node.dup
+      logger.info("NEW NODE: #{new_node.inspect}")
+      logger.info("OLD NODE 2: #{old_node.inspect}")
 
       attribute_hash.each do |key,value|
+        logger.debug "key: #{key}"
         new_node.send("#{key}=", value)
       end
+      logger.info("NEW NODE: #{new_node.inspect}")
+      logger.info("OLD NODE2: #{old_node.inspect}")
 
-      Delayed::Worker.logger.info("NEW WHEELCHAIR STATUS: #{new_node.wheelchair}")
+      logger.info("NEW WHEELCHAIR STATUS: #{new_node.wheelchair}")
 
       # quit if all attributes hash are the same in old and new node
       if attribute_hash.all?{|key,value| old_node.send(key) == new_node.send(key)}
-        Delayed::Worker.logger.info("Ignoring, nodes are the same!")
+        logger.info("Ignoring, nodes are the same!")
         return
       end
 
-      changeset = osm.find_or_create_changeset(user.changeset_id, "Modified wheelchair tag on wheelmap.org")
-      user.update_attribute('changeset_id', changeset.id) if user.changeset_id != changeset.id
+      #changeset = osm.find_or_create_open_changeset
+      #user.update_attribute('changeset_id', changeset.id) if user.changeset_id != changeset.id
 
       osm.save(new_node)
     rescue OpenStreetMap::Conflict => conflict
@@ -47,6 +52,10 @@ class UpdateSingleAttributeJob < Struct.new(:node_id, :user, :client, :attribute
       raise e
     end
 
+  end
+
+  def logger
+    Delayed::Worker.logger
   end
 
   def on_permanent_failure

@@ -2,7 +2,7 @@ class UpdatingJob < Struct.new(:node, :user, :client)
   def self.enqueue(node, user)
     raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
 
-    client = OldOsm::OauthClient.new(user.access_token)
+    client = OpenStreetMap::OauthClient.new(user.access_token)
     new(node, user, client).tap do |job|
       Delayed::Job.enqueue(job)
     end
@@ -13,7 +13,7 @@ class UpdatingJob < Struct.new(:node, :user, :client)
       raise ArgumentError.new("Client cannot be nil") if client.nil?
       raise ArgumentError.new("Node is a way. Use WayUpdatingJob") if node.id < 0
 
-      OldOsm.logger = Delayed::Worker.logger
+      # OldOsm.logger = Delayed::Worker.logger
       Delayed::Worker.logger.info "UpdatingJob -------------------------->"
       Delayed::Worker.logger.info "User: #{user.try(:id)}"
 
