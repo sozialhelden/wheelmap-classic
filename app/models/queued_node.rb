@@ -1,4 +1,4 @@
-class OldOsm::QueuedNode < ActiveRecord::Base
+class QueuedNode < ActiveRecord::Base
   belongs_to :user
 
   scope :within_bbox, lambda {|left, bottom, right, top|{

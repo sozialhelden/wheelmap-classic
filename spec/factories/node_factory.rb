@@ -1,5 +1,5 @@
 # encoding: UTF-8
-Factory.define :node, :class => OldOsm::Node do |node|
+Factory.define :node, :class => OpenStreetMap::Node do |node|
   node.name         'Irish time'
   node.lat          52.5073116
   node.lon          13.3901918
