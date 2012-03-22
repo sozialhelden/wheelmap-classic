@@ -650,7 +650,7 @@ en:
     : "wheelchair accessible"
   wheelmap:
     footer:
-      a_project_of: "A project of"
+      a_project_of: "A project by"
       based_on: "Based on"
       become_a_supporter: "Become a supporter"
       main_supporter: "Main supporter"
