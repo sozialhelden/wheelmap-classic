@@ -14,8 +14,8 @@ class UpdatingJob < Struct.new(:node, :user, :client)
       raise ArgumentError.new("Node is a way. Use WayUpdatingJob") if node.id < 0
 
       # OldOsm.logger = Delayed::Worker.logger
-      Delayed::Worker.logger.info "UpdatingJob -------------------------->"
-      Delayed::Worker.logger.info "User: #{user.try(:id)}"
+      logger.info "UpdatingJob -------------------------->"
+      logger.info "User: #{user.try(:id)}"
 
       api = OpenStreetMap::Api.new(client)
       old_node = api.find_node(node.id)
@@ -31,11 +31,13 @@ class UpdatingJob < Struct.new(:node, :user, :client)
       HoptoadNotifier.notify(e, :component => 'UpdatingJob#perform', :action => 'perform', :parameters => {:user => user.inspect, :new_node => new_node.inspect, :client => client.inspect})
       raise e
     end
+  end
 
+  def logger
+    Delayed::Worker.logger
   end
 
   def on_permanent_failure
     #TODO
   end
-
 end
