@@ -50,7 +50,7 @@ ja:
   devise:
     confirmations:
       confirmed: あなたのアカウントは確認できました。現在サイインしています。
-      link: 確認手順を受け取っていませんか？
+      link: 確認手順を受け取っていない？
       send_instructions: 数分であなたのアカウントを確認する手順がメールで届きます。
       send_paranoid_instructions: もしあなたのアカウントがあれば、あなたのアカウントの確認手順が書かれたメールが数分で届きます。
     destroy:
@@ -259,7 +259,7 @@ ja:
       logged_in_as: "次のアカウントでログイン:"
       login: ログイン
       logout: ログアウト
-      newsletter: 新聞販売店
+      newsletter: ニュースレター
       press: プレス
       suggestions: 提案
       what_is_barrier_free: "\"車椅子で行ける(アクセシブル)\"とは？"
