@@ -77,7 +77,7 @@ describe UpdateSingleAttributeJob do
         <tag k="created_by" v="osm for ruby"/></changeset></osm>', :headers => { "Content-Type" => "text/xml; charset=utf-8" })
 
       stub_request(:put, "http://api06.dev.openstreetmap.org/api/0.6/node/1").
-        with(:body => "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm><node timestamp=\"Tue May 03 11:14:13 UTC 2005\" user=\"Petter Reinholdtsen\" changeset=\"14702\" lon=\"16.8725128\" lat=\"68.3893433\" version=\"1\" id=\"1\" uid=\"24\"><tag k=\"wheelchair\" v=\"no\"/></node></osm>").
+        with(:body => "<?xml version=\"1.0\" encoding=\"UTF-8\"?><osm><node user=\"Petter Reinholdtsen\" lon=\"16.8725128\" version=\"1\" lat=\"68.3893433\" id=\"1\" uid=\"24\" changeset=\"14702\" timestamp=\"Tue May 03 11:14:13 UTC 2005\"><tag k=\"wheelchair\" v=\"no\"/></node></osm>").
         to_return(:status => 200, :body => "", :headers => { "Content-Type" => "text/plain; charset=utf-8" })
       job.perform
     end
