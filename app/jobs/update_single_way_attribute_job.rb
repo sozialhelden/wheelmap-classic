@@ -25,7 +25,7 @@ class UpdateSingleWayAttributeJob < Struct.new(:way_id, :user, :client, :attribu
       else
         logger.info "No change. No op."
       end
-    rescue OldOsm::Conflict => conflict
+    rescue OpenStreetMap::Conflict => conflict
       # These changes have already been made, so dismiss this update!
       HoptoadNotifier.notify(conflict, :action => 'perform', :component => 'UpdateSingleWayAttributeJob', :parameters => {:user => user.inspect, :new_way => new_way.inspect, :client => client.inspect, :attributes => attribute_hash})
     rescue Exception => e

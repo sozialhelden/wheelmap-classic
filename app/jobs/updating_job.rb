@@ -13,18 +13,15 @@ class UpdatingJob < Struct.new(:node, :user, :client)
       raise ArgumentError.new("Client cannot be nil") if client.nil?
       raise ArgumentError.new("Node is a way. Use WayUpdatingJob") if node.id < 0
 
-      # OldOsm.logger = Delayed::Worker.logger
       logger.info "UpdatingJob -------------------------->"
       logger.info "User: #{user.try(:id)}"
 
-      api = OpenStreetMap::Api.new(client)
-      old_node = api.find_node(node.id)
-
-      new_node = old_node.dup
+      osm = OpenStreetMap::Api.new(client)
+      new_node = osm.find_node(node.id)
+      # unify this with the other updater jobs.
       new_node.tags.merge!(node.tags)
-      osm = OldOsm.new(client)
-      updated_node = osm.update_node_with_changeset new_node, user
-    rescue OldOsm::Conflict => conflict
+      osm.save(new_node)
+    rescue OpenStreetMap::Conflict => conflict
       # These changes have already been made, so dismiss this update!
       HoptoadNotifier.notify(conflict, :component => 'UpdatingJob#perform', :parameters => {:user => user.inspect, :old_node => old_node.inspect, :new_node => new_node.inspect, :client => client})
     rescue Exception => e

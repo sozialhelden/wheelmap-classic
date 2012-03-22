@@ -34,7 +34,7 @@ class NodesController < ApplicationController
       wants.js{       render :file => "#{Rails.root}/app/views/nodes/index.js.erb" }
 
       wants.geojson do
-        @places += OldOsm::QueuedNode.within_bbox(@left, @bottom, @right, @top).limit(@limit)
+        @places += QueuedNode.within_bbox(@left, @bottom, @right, @top).limit(@limit)
         render :file => "#{Rails.root}/app/views/nodes/index.geojson.erb", :content_type => "application/json; subtype=geojson; charset=utf-8"
       end
       wants.html{     redirect_to root_path }
