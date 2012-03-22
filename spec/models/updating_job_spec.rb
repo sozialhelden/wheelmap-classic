@@ -24,7 +24,7 @@ describe UpdatingJob do
     node.lon = 10
     job = UpdatingJob.enqueue(node, user)
 
-    unedited_node = OldOsm::Node.new(poi.to_osm_attributes)
+    unedited_node = OpenStreetMap::Node.new(poi.to_osm_attributes)
     OldOsm.should_receive(:get_node).and_return(unedited_node)
     OldOsm.any_instance.should_receive(:update_node_with_changeset) { |node, user| node.lat.should eql 52.0; node.lon.should eql 13.0 }
     update_node = job.perform
