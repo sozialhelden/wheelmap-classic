@@ -114,7 +114,7 @@ lv:
     registrations:
       destroyed: "Uz redzēšanos! Jūsu konts tika veiksmīgi atcelts. Mēs ceram drīz atkal jūs redzēt."
       inactive_signed_up: "Jūs esat veiksmīgi piereģistrējies, bet pierakstīšanās neiedevās. Iemesls: \"%{reason}\""
-      link: Pierakstīties
+      link: "Izveidot kontu"
       reasons:
         inactive: neaktīvs
         locked: bloķēts
@@ -153,7 +153,7 @@ lv:
           password: Parole
           password_confirmation: "Atkārtojiet paroli"
           wants_newsletter: "Jā, informējiet mani par wheelmap jaunumiem, bet lūdzu ne biežāk kā reizi mēnesī."
-        submit: Pierakstīties
+        submit: "Izveidot kontu"
       headline: Pierakstīties
     unlocks:
       link: "Nesaņēmāt atbloķēšanas instrukcijas?"
@@ -261,7 +261,7 @@ lv:
       login: Pierakstīties
       logout: Izrakstīties
       newsletter: "Paziņojumi par jaunumiem"
-      press: Nospiediet
+      press: Presei
       suggestions: Ieteikumi
       what_is_barrier_free: "Ko \"pieejams ar ratiņkrēslu\" nozīmē?"
       what_is_wheelmap: "Kas ir wheelmap?"
@@ -435,13 +435,13 @@ lv:
     category:
       accommodation: "Apmešanās vietas"
       education: Izglītība
-      food: Pārtika
+      food: "Sabiedriskā ēdināšana"
       government: Valdība
       health: Veselība
       leisure: Atpūta
       misc: Dažādi
       money_post: "Bankas filiāle"
-      public_transfer: "sabiedriskais transports"
+      public_transfer: "Sabiedriskais transports"
       shopping: Iepirkšanās
       sport: Sports
       tourism: Tūrisms
@@ -603,7 +603,7 @@ lv:
         not_found: "Neviena vieta nav atrasta!"
   splash:
     countline: "%{count} vietas jau ir atzīmētas"
-    headline: "ikviens var pievienot ar ratiņkrēsliem pieejamās vietas!"
+    headline: "Ikviens var pievienot ar ratiņkrēsliem pieejamās vietas!"
     start: Sākt
     step1: "Klikšķiniet uz vietas, kuru ziniet"
     step2: "Atzīmējiet to un nospiežiet saglabāt"
@@ -662,8 +662,8 @@ lv:
       title: "Wheelmap - atrodiet ar ratiņkrēslu pieejamas vietas"
     what_is:
       fully_accessible: "<em>Jā:</em> Ieeja bez pakāpieniem, visas istabas bez pakāpieniem, pieejamas labierīcības."
-      limited_accessible: "<em>Ierobežota:</em> Ieejai ir pakāpiens (maks. augtums 7 cm), lielākā daļa istabu ir bez pakāpieniem, labierīcības nav pieejamas."
-      not_accessible: "Pie ieejas ir pakāpiens vai vairāki pakāpieni, istabas nav pieejamas"
+      limited_accessible: "<em>Ierobežota:</em> Ieejai ir pakāpiens (maks. augstums 7 cm), lielākā daļa istabu ir bez pakāpieniem, labierīcības nav pieejamas."
+      not_accessible: "<em>Nē:</em> Pie ieejas ir pakāpiens vai vairāki pakāpieni, istabas nav pieejamas"
       unknown_accessible: "<em>Nezināms:</em> Palīdzi un atzīmē šīs vietas!"
   will_paginate:
     next_label: "Nākošais &#8594;"
