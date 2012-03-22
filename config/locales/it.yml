@@ -110,6 +110,8 @@ it:
       destroyed: "Ciao! Il tuo account è stato cancellato. Speriamo di rivederti presto."
       inactive_signed_up: "Sei ormai registrato. Comunque, non possiamo farti accedere perché il tuo account è %{reason}."
       link: Registra
+      reasons:
+        inactive: inattivo
       signed_up: "Sei ormai registrato. Se attivo, una confermazione è stato mandato al tuo indirizzo email."
       updated: "Il tuo account è stato aggiornato."
     sessions:
@@ -390,14 +392,14 @@ it:
     other: "%{count} loughi"
   poi:
     category:
-      accommodation: Alloggio
+      accommodation: Alloggi
       education: Educazione
       food: Alimenti
       government: Governo
       leisure: "Tempo Libero"
-      misc: Miscellaneo
-      money_post: "Banco è Posta"
-      public_transfer: "Mezzi pubblici"
+      misc: Miscellanea
+      money_post: "Banca e Posta"
+      public_transfer: "mezzi Pubblici"
       shopping: Shopping
       sport: Sport
       tourism: Turismo
