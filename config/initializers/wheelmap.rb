@@ -17,6 +17,7 @@ Languages = {
   'jp'    => '日本',
   'ko'    => '한국어',
   'lv'    => 'Latviešu',
+  'nb'    => 'Norsk Bokmål',
   'nl'    => 'Nederlands',
   'pl'    => 'Polski',
   'pt'    => 'Português',
