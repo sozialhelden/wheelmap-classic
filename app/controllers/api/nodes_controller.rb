@@ -78,7 +78,7 @@ class Api::NodesController < Api::ApiController
 
   def update_wheelchair
     user = wheelmap_visitor
-    client = OpenStreetMap::OauthClient.new(user.access_token)
+    client = Rosemary::OauthClient.new(user.access_token)
     if (id = params[:id].to_i) < 0 # Ways have a negative id
       UpdateSingleWayAttributeJob.enqueue(id.abs, user, :wheelchair => params[:wheelchair])
     else

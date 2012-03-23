@@ -2,7 +2,7 @@ class UpdateSingleAttributeJob < Struct.new(:node_id, :user, :client, :attribute
   def self.enqueue(node_id, user, attributes)
     raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
 
-    client = OpenStreetMap::OauthClient.new(user.access_token)
+    client = Rosemary::OauthClient.new(user.access_token)
     new(node_id, user, client, attributes).tap do |job|
       Delayed::Job.enqueue(job)
     end
@@ -12,7 +12,7 @@ class UpdateSingleAttributeJob < Struct.new(:node_id, :user, :client, :attribute
     raise ArgumentError.new("Client cannot be nil") if client.blank?
     raise ArgumentError.new("User cannot be nil") if user.blank?
     begin
-      osm = OpenStreetMap::Api.new(client)
+      osm = Rosemary::Api.new(client)
 
       logger.info "UpdateSingleAttributeJob ------------->"
       logger.info "User: #{user.try(:id)}"
@@ -25,7 +25,7 @@ class UpdateSingleAttributeJob < Struct.new(:node_id, :user, :client, :attribute
       else
         logger.info "No change. No op."
       end
-    rescue OpenStreetMap::Conflict => conflict
+    rescue Rosemary::Conflict => conflict
       # These changes have already been made, so dismiss this update!
       HoptoadNotifier.notify(conflict, :action => 'perform', :component => 'UpdateSingleAttributeJob', :parameters => {:user => user.inspect, :new_node => node.inspect, :client => client.inspect, :attributes => attribute_hash})
     rescue Exception => e

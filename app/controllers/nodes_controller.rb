@@ -20,9 +20,9 @@ class NodesController < ApplicationController
   after_filter :compress,                         :only => :index, :if => lambda {|c| c.request.format.try(:geojson?)}
 
   rescue_from ActiveRecord::RecordNotFound,     :with => :not_found
-  rescue_from OpenStreetMap::NotFound,          :with => :not_found
-  rescue_from OpenStreetMap::Gone,              :with => :gone
-  rescue_from OpenStreetMap::Unavailable,       :with => :timeout
+  rescue_from Rosemary::NotFound,          :with => :not_found
+  rescue_from Rosemary::Gone,              :with => :gone
+  rescue_from Rosemary::Unavailable,       :with => :timeout
 
   def index
     normalize_bbox if params[:bbox]

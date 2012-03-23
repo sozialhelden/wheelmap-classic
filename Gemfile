@@ -36,7 +36,7 @@ group :default do
   gem 'spatial_adapter'
   gem 'friendly_id', '~>3.3.1' # upgrade to 4.x takes more effort.
   gem 'will_paginate'
-  gem 'openstreetmap', :path => '../openstreetmap'
+  gem 'rosemary'
 end
 
 group :test, :development do
