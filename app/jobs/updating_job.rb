@@ -2,7 +2,7 @@ class UpdatingJob < Struct.new(:node, :user, :client)
   def self.enqueue(node, user)
     raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
 
-    client = OpenStreetMap::OauthClient.new(user.access_token)
+    client = Rosemary::OauthClient.new(user.access_token)
     new(node, user, client).tap do |job|
       Delayed::Job.enqueue(job)
     end
@@ -16,12 +16,12 @@ class UpdatingJob < Struct.new(:node, :user, :client)
       logger.info "UpdatingJob -------------------------->"
       logger.info "User: #{user.try(:id)}"
 
-      osm = OpenStreetMap::Api.new(client)
+      osm = Rosemary::Api.new(client)
       new_node = osm.find_node(node.id)
       # unify this with the other updater jobs.
       new_node.tags.merge!(node.tags)
       osm.save(new_node)
-    rescue OpenStreetMap::Conflict => conflict
+    rescue Rosemary::Conflict => conflict
       # These changes have already been made, so dismiss this update!
       HoptoadNotifier.notify(conflict, :component => 'UpdatingJob#perform', :parameters => {:user => user.inspect, :old_node => old_node.inspect, :new_node => new_node.inspect, :client => client})
     rescue Exception => e

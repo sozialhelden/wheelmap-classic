@@ -19,9 +19,9 @@ describe UpdateSingleAttributeJob do
       client = mock()
       @api = mock()
       job = UpdateSingleAttributeJob.new(1, user, client, { 'wheelchair' => 'yes' })
-      OpenStreetMap::Api.should_receive(:new).with(client).and_return(@api)
+      Rosemary::Api.should_receive(:new).with(client).and_return(@api)
 
-      node = OpenStreetMap::Node.new(:tag => { 'wheelchair' => 'no' })
+      node = Rosemary::Node.new(:tag => { 'wheelchair' => 'no' })
 
       @api.should_receive(:find_node).with(1).and_return(node)
       @api.should_receive(:save).with(node)
@@ -33,9 +33,9 @@ describe UpdateSingleAttributeJob do
       client = mock()
       @api = mock()
       job = UpdateSingleAttributeJob.new(1, user, client, { 'wheelchair' => 'no' })
-      OpenStreetMap::Api.should_receive(:new).with(client).and_return(@api)
+      Rosemary::Api.should_receive(:new).with(client).and_return(@api)
 
-      node = OpenStreetMap::Node.new(:tag => { 'wheelchair' => 'no' })
+      node = Rosemary::Node.new(:tag => { 'wheelchair' => 'no' })
 
       @api.should_receive(:find_node).with(1).and_return(node)
       @api.should_not_receive(:save).with(node)
@@ -46,7 +46,7 @@ describe UpdateSingleAttributeJob do
 
   # context "integration" do
   #   xit "does not update the node if wheelchair state is same" do
-  #     client = OpenStreetMap::OauthClient.new(user.access_token)
+  #     client = Rosemary::OauthClient.new(user.access_token)
   #     attributes = { 'wheelchair' => 'yes' }
   #     job = UpdateSingleAttributeJob.new(1, user, client, attributes)
   #     stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/1").
@@ -58,7 +58,7 @@ describe UpdateSingleAttributeJob do
   #   end
   #
   #   xit "updates the node if wheelchair state is different, no cs open" do
-  #     client = OpenStreetMap::OauthClient.new(user.access_token)
+  #     client = Rosemary::OauthClient.new(user.access_token)
   #     attributes = { 'wheelchair' => 'no' }
   #     job = UpdateSingleAttributeJob.new(1, user, client, attributes)
   #     stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/1").

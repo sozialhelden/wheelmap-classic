@@ -72,8 +72,8 @@ class User < ActiveRecord::Base
                                   :authorize_path => '/oauth/authorize'
                                 })
     access_token = OAuth::AccessToken.new(consumer, 'osm_user_token', 'osm_user_key')
-    client = ::OpenStreetMap::OauthClient.new(access_token)
-    api = ::OpenStreetMap::Api.new(client)
+    client = ::Rosemary::OauthClient.new(access_token)
+    api = ::Rosemary::Api.new(client)
   end
 
 end

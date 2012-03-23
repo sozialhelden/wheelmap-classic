@@ -12,7 +12,7 @@ describe UpdatingJob do
   end
 
   let :node do
-    OpenStreetMap::Node.new(poi.to_osm_attributes)
+    Rosemary::Node.new(poi.to_osm_attributes)
   end
 
   let :user do
@@ -24,10 +24,10 @@ describe UpdatingJob do
     node.lon = 10
     job = UpdatingJob.enqueue(node, user)
 
-    unedited_node = OpenStreetMap::Node.new(poi.to_osm_attributes)
+    unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
     api = mock()
 
-    OpenStreetMap::Api.should_receive(:new).and_return(api)
+    Rosemary::Api.should_receive(:new).and_return(api)
     api.should_receive(:find_node).and_return(unedited_node)
     api.should_receive(:save) { |node| node.lat.should eql 52.0; node.lon.should eql 13.0 }
     update_node = job.perform
@@ -37,10 +37,10 @@ describe UpdatingJob do
     node.tags['addr:housenumber'] = 99
     job = UpdatingJob.enqueue(node, user)
 
-    unedited_node = OpenStreetMap::Node.new(poi.to_osm_attributes)
+    unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
     api = mock()
 
-    OpenStreetMap::Api.should_receive(:new).and_return(api)
+    Rosemary::Api.should_receive(:new).and_return(api)
     api.should_receive(:find_node).and_return(unedited_node)
     api.should_receive(:save) { |node| node.tags['addr:housenumber'].should eql 99 }
     update_node = job.perform
