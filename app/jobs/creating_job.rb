@@ -2,7 +2,7 @@ class CreatingJob < Struct.new(:node, :user, :client)
   def self.enqueue(node, user)
     raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
 
-    client = OpenStreetMap::OauthClient.new(user.access_token)
+    client = Rosemary::OauthClient.new(user.access_token)
     new(node, user, client).tap do |job|
       Delayed::Job.enqueue(job)
     end
@@ -16,7 +16,7 @@ class CreatingJob < Struct.new(:node, :user, :client)
       logger.info "CreatingJob -------------------------->"
       logger.info "User: #{user.try(:id)}"
 
-      osm = OpenStreetMap::Api.new(client)
+      osm = Rosemary::Api.new(client)
       osm.create(node)
     rescue Exception => e
       HoptoadNotifier.notify(e, :action => 'perform',
