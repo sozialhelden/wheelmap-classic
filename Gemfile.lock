@@ -14,6 +14,16 @@ GIT
       rdoc
 
 PATH
+  remote: ../rosemary
+  specs:
+    rosemary (0.2.6)
+      activemodel
+      builder
+      httparty
+      libxml-ruby
+      oauth
+
+PATH
   remote: vendor/gems/crewait-0.1.6
   specs:
     crewait (0.1.6)
@@ -211,12 +221,6 @@ GEM
       json (~> 1.4)
     responders (0.6.4)
     rgeo (0.3.2)
-    rosemary (0.2.5)
-      activemodel
-      builder
-      httparty
-      libxml-ruby
-      oauth
     routing-filter (0.2.4)
       actionpack
     rspec (2.8.0)
@@ -318,7 +322,7 @@ DEPENDENCIES
   rb-fsevent
   redgreengrid!
   rgeo
-  rosemary (~> 0.2.5)
+  rosemary!
   routing-filter
   rspec
   rspec-rails (= 2.8)

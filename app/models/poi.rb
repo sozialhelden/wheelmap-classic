@@ -146,14 +146,6 @@ class Poi < ActiveRecord::Base
     end
   end
 
-  def id
-    osm_id
-  end
-
-  def id=(value)
-    self.osm_id = value
-  end
-
   # usually, one of the keys we map to in Tags must be present for a poi to be valid
   RELEVANT_KEYS = Tags.values.uniq.map(&:to_s)
 
@@ -291,22 +283,24 @@ class Poi < ActiveRecord::Base
     osm_id and osm_id < 0
   end
 
-  def osm_update_wheelchair_status(user, new_status)
-    if way?
-      UpdateSingleWayAttributeJob.enqueue(osm_id.abs, user, :wheelchair => new_status)
-    else
-      UpdateSingleAttributeJob.enqueue(osm_id, user, :wheelchair => new_status)
+  def to_osm_attributes
+    as_json.reverse_merge(:id => osm_id.try(:abs)).stringify_keys!.tap do |attribs|
+      attribs['tag'] = osm_tags
+      attribs.delete 'tags'
     end
   end
 
-  def to_osm_attributes
-    as_json.reverse_merge(:id => osm_id.try(:abs)).stringify_keys!.tap do |attribs|
-      attribs['tag'] = tags.map do |k,v|
-                          key = DELEGATED_ADDR_ATTRIBUTES.include?(k) ? "addr:#{k}" : k
-                          { 'k' => key, 'v' => v }
-                       end
-      attribs.delete 'tags'
+  def osm_tags
+    result = {}
+    tags.each do |k, v|
+      key = DELEGATED_ADDR_ATTRIBUTES.include?(k) ? "addr:#{k}" : k
+      result[key] = v
     end
+    result
+  end
+
+  def osm_type
+    self.way? ? 'way' : 'node'
   end
 
   def as_json(options={})
@@ -320,17 +314,5 @@ class Poi < ActiveRecord::Base
 
     node = Rosemary::Node.new(to_osm_attributes)
     CreatingJob.enqueue(node, user)
-  end
-
-  def save_to_osm(user)
-    return false unless valid?
-
-    if way?
-      way = Rosemary::Way.new(to_osm_attributes)
-      WayUpdatingJob.enqueue(way, user)
-    else
-      node = Rosemary::Node.new(to_osm_attributes)
-      UpdatingJob.enqueue(node, user)
-    end
   end
 end

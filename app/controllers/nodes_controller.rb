@@ -51,7 +51,7 @@ class NodesController < ApplicationController
 
   def update_wheelchair
     @node = Poi.find(params[:id])
-    @node.osm_update_wheelchair_status(wheelmap_visitor, params[:wheelchair])
+    UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, { 'wheelchair' => params[:wheelchair] }, wheelmap_visitor)
 
     respond_to do |wants|
       wants.js{ render :json => {:message => t('nodes.update_wheelchair.successfull', :status => t("wheelchairstatus.#{params[:wheelchair]}"), :name => @node.headline), :wheelchair => params[:wheelchair] }.to_json}
@@ -62,7 +62,9 @@ class NodesController < ApplicationController
   def update
     @node = Poi.find(params[:id])
     @node.attributes = params[:node]
-    if @node.save_to_osm(current_user)
+    if @node.valid?
+      UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.osm_tags, current_user)
+
       respond_to do |wants|
         wants.js   { render :text => 'OK' }
 

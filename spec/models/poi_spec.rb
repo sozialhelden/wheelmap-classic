@@ -11,7 +11,7 @@ describe Poi do
   end
 
   describe 'validations' do
-    subject{ Factory.build(:poi)}
+    subject { Factory.build(:poi) }
     it { should be_valid }
 
     it "is not be valid without existing node type" do
@@ -20,6 +20,20 @@ describe Poi do
       subject.should_not be_valid
       subject.type = 'alcohol'
       subject.should be_valid
+    end
+  end
+
+  context 'osm stuff' do
+    subject { Factory.build(:poi, :tags => { 'wheelchair' => 'yes', 'street' => "Sesame street" }) }
+    it 'osm_tags maps "addr" keys' do
+      subject.osm_tags['addr:street'].should eq('Sesame street')
+      subject.osm_tags['street'].should be_nil
+      subject.osm_tags['wheelchair'].should eq('yes')
+    end
+
+    it 'osm_type identifies types properly' do
+      Poi.new(:osm_id => 1).osm_type.should eq('node')
+      Poi.new(:osm_id => -1).osm_type.should eq('way')
     end
   end
 

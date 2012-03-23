@@ -125,8 +125,8 @@ describe NodesController do
         response.should redirect_to(node_path(84644746))
         job = YAML.load(UpdateJob.last.handler)
         job.client.class.should == Rosemary::OauthClient
-        job.node.id.should == 84644746
-        job.node.wheelchair.should == 'yes'
+        job.element_id.should == 84644746
+        job.tags['wheelchair'].should == 'yes'
       end
 
       it "should not update node if wheelchair is missing" do
