@@ -1,17 +1,5 @@
 require 'spec_helper'
 
-class UpdateJob < ActiveRecord::Base
-  set_table_name 'delayed_jobs'
-end
-
-class CreateJob < ActiveRecord::Base
-  set_table_name 'delayed_jobs'
-end
-
-class UpdateAttributeJob <ActiveRecord::Base
-  set_table_name 'delayed_jobs'
-end
-
 describe Api::NodesController do
   include Devise::TestHelpers
   render_views
@@ -111,14 +99,14 @@ describe Api::NodesController do
         put(:update_wheelchair, {:id => @node.id, :wheelchair => 'no', :api_key => @user.authentication_token})
         response.status.should eql 202
         response.body.should =~ /OK/
-      }.should change(UpdateAttributeJob, :count).by(1)
+      }.should change(Delayed::Job, :count).by(1)
     end
 
     it "should not accept update wheelchair status for later processing if params are invalid" do
       lambda {
         put(:update_wheelchair, {:id => @node.id, :wheelchair => 'invalid', :api_key => @user.authentication_token})
         response.status.should eql 406
-      }.should change(UpdateAttributeJob, :count).by(0)
+      }.should change(Delayed::Job, :count).by(0)
     end
   end
 
@@ -171,7 +159,7 @@ describe Api::NodesController do
       lambda {
         put(:update, {:id => @node.id, :api_key => @user.authentication_token})
         response.status.should eql 400
-      }.should change(UpdateJob, :count).by(0)
+      }.should change(Delayed::Job, :count).by(0)
 
     end
 
@@ -183,7 +171,7 @@ describe Api::NodesController do
       lambda {
         put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
         response.status.should eql 202
-      }.should change(UpdateJob, :count).by(1)
+      }.should change(Delayed::Job, :count).by(1)
     end
 
     it "should not be possible to update a way" do
@@ -195,7 +183,7 @@ describe Api::NodesController do
       lambda {
         put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
         response.status.should eql 406
-      }.should_not change(UpdateJob, :count)
+      }.should_not change(Delayed::Job, :count)
     end
   end
 
@@ -204,14 +192,14 @@ describe Api::NodesController do
     it "access should be denied if api key is missing" do
       lambda{
         post(:create, {:name => 'Something new'})
-      }.should_not change(CreateJob, :count)
+      }.should_not change(Delayed::Job, :count)
       response.status.should eql 401
     end
 
     it "access should be denied if osm credentials are missing" do
       lambda{
         post(:create, {:name => 'Something new', :api_key => @user.authentication_token})
-      }.should_not change(CreateJob, :count)
+      }.should_not change(Delayed::Job, :count)
       response.status.should eql 403
       response.body.should =~ /Um Daten zu \\u00e4ndern ben\\u00f6tigst Du einen OpenStreetMap Account./
     end
@@ -224,7 +212,7 @@ describe Api::NodesController do
         post(:create, {:lat => 52.0, :lon => 13.4, :api_key => @user.authentication_token,
              :type => "foo", :tags => {"amenity"=>"restaurant"}})
         response.status.should eql 400
-      }.should_not change(CreateJob, :count)
+      }.should_not change(Delayed::Job, :count)
     end
 
     it "create node job for later processing if params are valid" do
@@ -235,7 +223,7 @@ describe Api::NodesController do
         post(:create, {:lat => 52.0, :lon => 13.4, :tags => {"amenity"=>"restaurant",
              :name => 'Cocktails on the rocks'}, :wheelchair => 'no', :api_key => @user.authentication_token})
         response.status.should eql 202
-      }.should change(CreateJob, :count).by(1)
+      }.should change(Delayed::Job, :count).by(1)
 
     end
   end

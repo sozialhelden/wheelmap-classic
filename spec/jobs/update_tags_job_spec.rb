@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UpdatingJob do
+describe UpdateTagsJob do
 
   before do
     Poi.delete_all
@@ -22,26 +22,26 @@ describe UpdatingJob do
   it "should not update lat attribute in updating job" do
     node.lat = 45
     node.lon = 10
-    job = UpdatingJob.enqueue(node, user)
+    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.osm_tags, user)
 
     unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
     api = mock()
 
     Rosemary::Api.should_receive(:new).and_return(api)
-    api.should_receive(:find_node).and_return(unedited_node)
+    api.should_receive(:find_element).with('node', node.id.abs).and_return(unedited_node)
     api.should_receive(:save) { |node| node.lat.should eql 52.0; node.lon.should eql 13.0 }
     update_node = job.perform
   end
 
   it "updates the tags" do
-    node.tags['addr:housenumber'] = 99
-    job = UpdatingJob.enqueue(node, user)
+    unedited_node = Rosemary::Node.new(:tags => { 'addr:housenumber' => 10 })
 
-    unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
+    job = UpdateTagsJob.enqueue(1, 'node', { 'addr:housenumber' => 99 }, user)
+
     api = mock()
 
     Rosemary::Api.should_receive(:new).and_return(api)
-    api.should_receive(:find_node).and_return(unedited_node)
+    api.should_receive(:find_element).and_return(unedited_node)
     api.should_receive(:save) { |node| node.tags['addr:housenumber'].should eql 99 }
     update_node = job.perform
   end
