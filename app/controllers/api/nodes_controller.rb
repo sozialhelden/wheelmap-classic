@@ -44,7 +44,9 @@ class Api::NodesController < Api::ApiController
     @node = resource
     @node.attributes = params
 
-    if @node.save_to_osm(current_user)
+    if @node.valid?
+      UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.osm_tags, current_user)
+
       respond_to do |wants|
         wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
         wants.xml{  render :xml  => {:message => 'OK'}.to_xml,  :status => 202 }
@@ -77,13 +79,8 @@ class Api::NodesController < Api::ApiController
   end
 
   def update_wheelchair
-    user = wheelmap_visitor
-    client = Rosemary::OauthClient.new(user.access_token)
-    if (id = params[:id].to_i) < 0 # Ways have a negative id
-      UpdateSingleWayAttributeJob.enqueue(id.abs, user, :wheelchair => params[:wheelchair])
-    else
-      UpdateSingleAttributeJob.enqueue(id, user, :wheelchair => params[:wheelchair])
-    end
+    node = Poi.find(params[:id])
+    UpdateTagsJob.enqueue(node.osm_id.abs, node.osm_type, { 'wheelchair' => params[:wheelchair] }, wheelmap_visitor)
 
     respond_to do |wants|
       wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
