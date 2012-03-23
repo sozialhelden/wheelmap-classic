@@ -39,6 +39,15 @@ CREATE TABLE `alternatives` (
   KEY `index_alternatives_on_lookup` (`lookup`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE `borders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `admin_level` tinyint(4) NOT NULL,
+  `border` geometry NOT NULL,
+  PRIMARY KEY (`id`),
+  SPATIAL KEY `border` (`border`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -118,7 +127,7 @@ CREATE TABLE `queued_nodes` (
   `geom` point NOT NULL,
   PRIMARY KEY (`id`),
   SPATIAL KEY `index_queued_nodes_on_geom` (`geom`)
-) ENGINE=MyISAM AUTO_INCREMENT=1176 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5723 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `regions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -127,7 +136,7 @@ CREATE TABLE `regions` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `schema_migrations` (
   `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -268,3 +277,5 @@ INSERT INTO schema_migrations (version) VALUES ('20120120143510');
 INSERT INTO schema_migrations (version) VALUES ('20120202134608');
 
 INSERT INTO schema_migrations (version) VALUES ('20120203121324');
+
+INSERT INTO schema_migrations (version) VALUES ('20120217102914');

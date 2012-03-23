@@ -124,7 +124,7 @@ describe NodesController do
         }.should change(UpdateJob, :count).by(1)
         response.should redirect_to(node_path(84644746))
         job = YAML.load(UpdateJob.last.handler)
-        job.client.class.should == OpenStreetMap::OauthClient
+        job.client.class.should == Rosemary::OauthClient
         job.node.id.should == 84644746
         job.node.wheelchair.should == 'yes'
       end
