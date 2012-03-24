@@ -373,7 +373,7 @@ en:
         not_successfull: "Oops, your input was either incorrect or incomplete"
         successfull: "Thank you, your submission was saved successfully and will be online shortly."
     update_wheelchair:
-      successfull: "The status for \"%{name}\" has been changed to \"%{status} wheelchair accessible\" and will be online shortly."
+      successfull: "The status for \"%{name}\" has been changed to \"%{status}\" and will be online shortly."
   number:
     currency:
       format:
@@ -661,7 +661,7 @@ en:
       alt: "Wheelmap Logo - find wheelchair accessible places"
       title: "Wheelmap - find wheelchair accessible places"
     what_is:
-      fully_accessible: "<em>Yes:</em> Entrance without steps, all rooms without steps, accessible toilet"
+      fully_accessible: "<em>Yes:</em> Entrance without steps, all rooms without steps, accessible toilet if customary in a place"
       limited_accessible: "<em>Limited:</em> Entry has a step (max. height 7cm), most rooms are without steps, toilet is not accessible"
       not_accessible: "<em>No:</em> Entry has steep or several steps, rooms are not accessible"
       unknown_accessible: "<em>Unknown:</em> Help by mark places!"
