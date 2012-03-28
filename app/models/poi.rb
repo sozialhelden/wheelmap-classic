@@ -308,11 +308,4 @@ class Poi < ActiveRecord::Base
                  :except => %w(tags node_type_id created_at updated_at region_id version geom status))
     json.delete_if { |k,v| v.nil? }
   end
-
-  def osm_create(user)
-    return false unless valid?
-
-    node = Rosemary::Node.new(to_osm_attributes)
-    CreatingJob.enqueue(node, user)
-  end
 end
