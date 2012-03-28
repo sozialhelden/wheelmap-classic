@@ -94,7 +94,9 @@ class NodesController < ApplicationController
   def create
     @node = Poi.new(params[:node])
 
-    if @node.osm_create(current_user)
+    if @node.valid?
+      CreateNodeJob.enqueue(@node.lat, @node.lon, @node.osm_tags, current_user)
+
       flash[:track]  = "'Data', 'Create', '#{@node.wheelchair}'"
       flash[:view] = '/nodes/created'
       flash[:notice] = I18n.t('nodes.create.flash.successfull')

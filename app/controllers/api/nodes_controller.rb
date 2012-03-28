@@ -64,7 +64,9 @@ class Api::NodesController < Api::ApiController
     node_attributes = params.dup.delete_if { |k,v| unwanted_keys.include? k }
 
     @node = Poi.new(node_attributes)
-    if @node.osm_create(current_user)
+    if @node.valid?
+      CreateNodeJob.enqueue(@node.lat, @node.lon, @node.osm_tags, current_user)
+
       respond_to do |wants|
         wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
         wants.xml{  render :xml  => {:message => 'OK'}.to_xml,  :status => 202 }
