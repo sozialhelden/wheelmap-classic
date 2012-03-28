@@ -56,6 +56,7 @@ namespace :unicorn do
   after "deploy:restart", "unicorn:restart"
   after "deploy:start", "unicorn:start"
   after "deploy:stop", "unicorn:stop"
+  after "deploy:symlink", "deploy:create_release_info"
 end
 
 namespace :deploy do
@@ -95,6 +96,10 @@ namespace :deploy do
     %w(database.yml open_street_map.yml).each do |file|
       run "ln -nfs #{shared_path}/config/#{file} #{release_path}/config/#{file}"
     end
+  end
+
+  task :create_release_info do
+    run "gitrev=`cat #{current_path}/REVISION`; echo \"release_name: #{release_name}\\nbranch: #{branch}\\ngit_sha: $gitrev\" > #{current_path}/RELEASE_INFO"
   end
 
   task :remove_all_unfinished_locales do
