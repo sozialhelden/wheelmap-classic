@@ -1,0 +1,1 @@
+RELEASE_INFO = (YAML::load_file "RELEASE_INFO" rescue {})
