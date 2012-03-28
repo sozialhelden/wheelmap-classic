@@ -54,10 +54,12 @@ namespace :unicorn do
     sudo "/etc/init.d/unicorn_#{rails_env} stop"
   end
   after "deploy:restart", "unicorn:restart"
+  after "deploy:start", "unicorn:start"
+  after "deploy:stop", "unicorn:stop"
 end
 
 namespace :deploy do
-  after  "deploy:restart", "deploy:git:push_deploy_tag"
+  after  "deploy:symlink", "deploy:git:push_deploy_tag"
   before "deploy:cleanup", "deploy:git:cleanup_deploy_tag"
 
   namespace :git do
