@@ -211,7 +211,7 @@ GEM
       json (~> 1.4)
     responders (0.6.4)
     rgeo (0.3.2)
-    rosemary (0.2.6)
+    rosemary (0.2.7)
       activemodel
       builder
       httparty
@@ -318,7 +318,7 @@ DEPENDENCIES
   rb-fsevent
   redgreengrid!
   rgeo
-  rosemary (~> 0.2.6)
+  rosemary (~> 0.2.7)
   routing-filter
   rspec
   rspec-rails (= 2.8)
