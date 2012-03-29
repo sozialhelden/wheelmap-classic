@@ -75,7 +75,6 @@ class NodesController < ApplicationController
         }
       end
     else
-      raise @node.errors.inspect
       respond_to do |wants|
         wants.js   { render :text => 'FAIL', :status => 406 }
 
