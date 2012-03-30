@@ -161,8 +161,8 @@ zh:
       send_paranoid_instructions: 如果您的邮箱存在于我们的数据库中，您将收到一封解锁账号的邮件.
       unlocked: 您的帐号已成功解锁，您现在已登录.
   errors:
-    dynamic_format: "%{讯息}"
-    format: "%{属性} %{讯息}"
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
     messages:
       accepted: 已被接受
       already_confirmed: 已经确认
@@ -324,8 +324,8 @@ zh:
         alt: Sozialhelden.de的方案
   node:
     address:
-      city: "%{城市} %{邮政编码}"
-      street: "%{门牌号} %{街道}"
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
     tags:
       phone: 电话：
       website: 网页
@@ -364,7 +364,7 @@ zh:
       link:
         back: 退回
         large_map: 放大
-        listing: "所有典型地点 '%{type}' in %{城市}"
+        listing: "所有典型地点 '%{type}' in %{city}"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -673,7 +673,7 @@ zh:
         other: "显示全部%{count} %{model}"
         zero: "%{model}没找到"
       single_page_html:
-        one: "显示<b>1</b> %{模式}"
+        one: "显示<b>1</b> %{model}"
         other: "显示<b>all&nbsp;%{count}</b> %{model}"
         zero: "没找到%{model}"
     page_gap: 取hellip变量地址
