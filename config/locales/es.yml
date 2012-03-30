@@ -168,7 +168,7 @@ es:
   flash:
     actions:
       create:
-        notice: "%{resource_name} "
+        notice: "%{resource_name} fué creado exitosamente."
   form:
     show_fully_accessible_places: "accesible en silla de ruedas"
     show_limited_accessible_places: "acceso medio en silla de ruedas"
@@ -517,7 +517,7 @@ es:
         for: "Buscando \"%{q}\""
         not_found: "No se ha encontrado ningún sitio"
   splash:
-    countline: "%{count}"
+    countline: "%{count} lugares ya han sido marcados."
     headline: "Todo el mundo puede añadir lugares accesible para sillas de ruedas!"
   statistics: Estadísticas
   support:
