@@ -21,7 +21,10 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client)
       element = api.find_element(type, element_id)
       element.tags.merge!(tags)
 
-      api.save(element)
+      changeset = api.find_or_create_open_changeset(user.changeset_id, "Modified via wheelmap.org")
+      user.update_attribute(:changeset_id, changeset.id)
+
+      api.save(element, changeset)
     rescue Rosemary::Conflict => conflict
       # These changes have already been made, so dismiss this update!
       HoptoadNotifier.notify(conflict, :component => 'UpdateTagsJob#perform', :parameters => {:user => user.inspect, :element => element.inspect, :client => client})

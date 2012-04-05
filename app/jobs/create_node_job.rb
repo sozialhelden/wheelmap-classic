@@ -18,7 +18,11 @@ class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client)
 
       osm = Rosemary::Api.new(client)
       node = Rosemary::Node.new(:lat => lat, :lon => lon, :tag => tags)
-      osm.create(node)
+
+      changeset = osm.find_or_create_open_changeset(user.changeset_id, "Modified via wheelmap.org")
+      user.update_attribute(:changeset_id, changeset.id)
+
+      osm.create(node, changeset)
     rescue Exception => e
       HoptoadNotifier.notify(e, :action => 'perform',
                                 :component => 'CreateNodeJob',
