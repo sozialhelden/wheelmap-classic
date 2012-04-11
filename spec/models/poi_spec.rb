@@ -25,11 +25,6 @@ describe Poi do
 
   context 'osm stuff' do
     subject { Factory.build(:poi, :tags => { 'wheelchair' => 'yes', 'street' => "Sesame street" }) }
-    it 'osm_tags maps "addr" keys' do
-      subject.osm_tags['addr:street'].should eq('Sesame street')
-      subject.osm_tags['street'].should be_nil
-      subject.osm_tags['wheelchair'].should eq('yes')
-    end
 
     it 'osm_type identifies types properly' do
       Poi.new(:osm_id => 1).osm_type.should eq('node')
@@ -59,6 +54,7 @@ describe Poi do
   end
 
   context "address attributes" do
+
     Poi::DELEGATED_ADDR_ATTRIBUTES.each do |attr|
 
       it "has virtual getter for address tag #{attr}" do
@@ -73,6 +69,7 @@ describe Poi do
         p.tags["addr:#{attr}"].should == "horst"
       end
     end
+
   end
 
   context "other tag based attributes" do
@@ -92,6 +89,62 @@ describe Poi do
         p.tags["#{attr}"].should == "horst"
       end
     end
+  end
+
+  context "json rendering" do
+    context "for osm" do
+      REQUIRED_KEYS = [:id, :lat, :lon]
+
+      REQUIRED_KEYS.each do |name|
+        it "has key and value '#{name}'" do
+          p = Factory.create(:poi)
+          attributes = p.as_api_response(:osm)
+          attributes[name].should_not be_blank
+        end
+      end
+
+      it "renders addr data mapped to tags" do
+        h = {
+          :wheelchair => "yes",
+          :street => "Mittelweg",
+          :housenumber => "99",
+          :city => "Entenhausen",
+          :postcode => "98976",
+          :phone => "0123456",
+          :website => "http://foo.bar.com"
+        }
+
+        p = Factory.create(:poi, h)
+        attributes = p.as_api_response(:osm).as_json
+
+        tags = attributes['tag']
+        tags['wheelchair'].should == h[:wheelchair]
+        tags['addr:street'].should == h[:street]
+        tags['addr:housenumber'].should == h[:housenumber]
+        tags['addr:postcode'].should == h[:postcode]
+        tags['addr:city'].should == h[:city]
+        tags['phone'].should == h[:phone]
+        tags['website'].should == h[:website]
+      end
+
+      it "renders version and  positive id" do
+        h = {
+          :id => -99,
+          :wheelchair => "yes",
+          :version => 7
+        }
+
+        p = Factory.create(:poi, h)
+        attributes = p.as_api_response(:osm).as_json
+
+        tags = attributes['tag']
+        tags['wheelchair'].should == h[:wheelchair]
+        attributes['id'].should == 99
+        attributes['version'].should == 7
+      end
+
+    end
+
   end
 
 
