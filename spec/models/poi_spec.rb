@@ -58,6 +58,42 @@ describe Poi do
     end
   end
 
+  context "address attributes" do
+    Poi::DELEGATED_ADDR_ATTRIBUTES.each do |attr|
+
+      it "has virtual getter for address tag #{attr}" do
+        p = Factory.build(:poi)
+        p.tags["addr:#{attr}"] = "horst"
+        p.send(attr).should == "horst"
+      end
+
+      it "has virtual setter for address tag #{attr}" do
+        p = Factory.build(:poi)
+        p.send "#{attr}=", "horst"
+        p.tags["addr:#{attr}"].should == "horst"
+      end
+    end
+  end
+
+  context "other tag based attributes" do
+    names = [:phone, :website]
+
+    names.each do |attr|
+      it "has virtual getters for #{attr}" do
+        p = Factory.build(:poi)
+
+        p.tags["#{attr}"] = "horst"
+        p.send(attr).should == "horst"
+      end
+
+      it "has virtual setters for #{attr}" do
+        p = Factory.build(:poi)
+        p.send "#{attr}=", "horst"
+        p.tags["#{attr}"].should == "horst"
+      end
+    end
+  end
+
 
   # describe 'scopes' do
   #   should_have_scope :fully_accessible, :conditions => {:status => 1}
