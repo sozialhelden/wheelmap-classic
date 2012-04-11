@@ -62,7 +62,7 @@ class NodesController < ApplicationController
     @node = Poi.find(params[:id])
     @node.attributes = params[:node]
     if @node.valid?
-      UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.osm_tags, current_user)
+      UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user)
 
       respond_to do |wants|
         wants.js   { render :text => 'OK' }
@@ -93,7 +93,7 @@ class NodesController < ApplicationController
     @node = Poi.new(params[:node])
 
     if @node.valid?
-      CreateNodeJob.enqueue(@node.lat, @node.lon, @node.osm_tags, current_user)
+      CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user)
 
       flash[:track]  = "'Data', 'Create', '#{@node.wheelchair}'"
       flash[:view] = '/nodes/created'

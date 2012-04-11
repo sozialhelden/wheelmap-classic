@@ -62,6 +62,14 @@ class Poi < ActiveRecord::Base
     t.add :phone
   end
 
+  api_accessible :osm do |t|
+    t.add lambda { |poi| poi.osm_id.abs }, :as => :id
+    t.add :lat
+    t.add :lon
+    t.add :tags, :as => :tag
+    t.add :version
+  end
+
   before_save :set_status
   before_save :set_node_type
   before_save :set_updated_at
@@ -292,28 +300,10 @@ class Poi < ActiveRecord::Base
   end
 
   def to_osm_attributes
-    as_json.reverse_merge(:id => osm_id.try(:abs)).stringify_keys!.tap do |attribs|
-      attribs['tag'] = osm_tags
-      attribs.delete 'tags'
-    end
-  end
-
-  def osm_tags
-    result = {}
-    tags.each do |k, v|
-      key = DELEGATED_ADDR_ATTRIBUTES.include?(k) ? "addr:#{k}" : k
-      result[key] = v
-    end
-    result
+    as_api_response(:osm)
   end
 
   def osm_type
     self.way? ? 'way' : 'node'
-  end
-
-  def as_json(options={})
-    json = super(:methods => %w(lat lon street wheelchair postcode city website wheelchair_description phone name housenumber type),
-                 :except => %w(tags node_type_id created_at updated_at region_id version geom status))
-    json.delete_if { |k,v| v.nil? }
   end
 end

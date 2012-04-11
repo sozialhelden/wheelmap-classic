@@ -19,7 +19,7 @@ describe UpdateTagsJob do
   it "should not update lat attribute in updating job" do
     node.lat, node.lon = 45, 10
 
-    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.osm_tags, user)
+    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user)
 
     unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
     api = mock(:find_or_create_open_changeset => changeset)
