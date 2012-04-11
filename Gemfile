@@ -36,8 +36,8 @@ group :default do
   gem 'spatial_adapter'
   gem 'friendly_id', '~>3.3.1' # upgrade to 4.x takes more effort.
   gem 'will_paginate'
-  #gem 'rosemary', '~>0.2.7'
-  gem 'rosemary', :path => '../rosemary'
+  gem 'rosemary', '~>0.3.1'
+  #gem 'rosemary', :path => '../rosemary'
 end
 
 group :test, :development do
