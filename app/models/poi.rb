@@ -136,15 +136,23 @@ class Poi < ActiveRecord::Base
     end
   end
 
-  (DELEGATED_ADDR_ATTRIBUTES + [:phone, :website]).each do |attr|
-    define_method("#{attr}=") do |value|
-      self.tags[attr.to_s] = value
-    end
+  def self.create_tag_based_attributes(names, options = {})
+    prefix = options[:prefix] || ""
 
-    define_method(attr) do
-      self.tags[attr.to_s]
+    names.each do |attr|
+      key = "#{prefix}#{attr}"
+      define_method("#{attr}=") do |value|
+        self.tags[key] = value
+      end
+
+      define_method(attr) do
+        self.tags[key]
+      end
     end
   end
+
+  create_tag_based_attributes DELEGATED_ADDR_ATTRIBUTES, :prefix => 'addr:'
+  create_tag_based_attributes [:phone, :website]
 
   # usually, one of the keys we map to in Tags must be present for a poi to be valid
   RELEVANT_KEYS = Tags.values.uniq.map(&:to_s)
