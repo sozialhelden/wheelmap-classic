@@ -20,7 +20,9 @@ require 'pickle/path/world'
 # Example of configuring pickle:
 #
 # Pickle.configure do |config|
-#   config.adapters = [:machinist]
-#   config.map 'I', 'myself', 'me', 'my', :to => 'user: "me"'
+#   # config.adapters = [:machinist]
+#   # config.map 'I', 'myself', 'me', 'my', :to => 'user: "me"'
+#   # config.map 'delayed_job', :to => Delayed::Job
 # end
+
 require 'pickle/email/world'

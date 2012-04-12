@@ -28,5 +28,4 @@ Then /^I should see an "([^\"]*)" div$/ do |div|
   else
     assert_have_selector 'div#info'
   end
-
 end
