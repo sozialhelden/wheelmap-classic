@@ -39,6 +39,10 @@ module NavigationHelpers
     when /the search result page/
       '/search'
 
+    when /that poi's page/
+      m = find_model("that poi")
+      node_path(m)
+
     when /the last poi's page/
       poi = Poi.last
       "/nodes/#{poi.to_param}.html"
@@ -53,7 +57,8 @@ module NavigationHelpers
       "/profile/#{user.to_param}/edit"
 
     when /^#{capture_model}(?:'s)? page$/                           # eg. the forum's page
-      path_to_pickle $1
+      r =  $1.gsub(/poi/, 'node')
+      path_to_pickle r
 
     when /^#{capture_model}(?:'s)? #{capture_model}(?:'s)? page$/   # eg. the forum's post's page
       path_to_pickle $1, $2
