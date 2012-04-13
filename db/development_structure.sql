@@ -37,16 +37,7 @@ CREATE TABLE `alternatives` (
   PRIMARY KEY (`id`),
   KEY `index_alternatives_on_experiment_id` (`experiment_id`),
   KEY `index_alternatives_on_lookup` (`lookup`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-CREATE TABLE `borders` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `admin_level` tinyint(4) NOT NULL,
-  `border` geometry NOT NULL,
-  PRIMARY KEY (`id`),
-  SPATIAL KEY `border` (`border`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -54,7 +45,7 @@ CREATE TABLE `categories` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `delayed_jobs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -73,7 +64,7 @@ CREATE TABLE `delayed_jobs` (
   `finished_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `delayed_jobs_priority` (`priority`,`run_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=223 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=204 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `experiments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -83,7 +74,17 @@ CREATE TABLE `experiments` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_experiments_on_test_name` (`test_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `geometry_columns` (
+  `F_TABLE_CATALOG` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `F_TABLE_SCHEMA` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `F_TABLE_NAME` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `F_GEOMETRY_COLUMN` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `COORD_DIMENSION` int(11) DEFAULT NULL,
+  `SRID` int(11) DEFAULT NULL,
+  `TYPE` varchar(256) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `node_types` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -97,7 +98,7 @@ CREATE TABLE `node_types` (
   PRIMARY KEY (`id`),
   KEY `index_node_types_on_osm_key_and_osm_value` (`osm_key`,`osm_value`),
   KEY `index_node_types_on_id_and_category_id` (`id`,`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=259 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `pois` (
   `osm_id` int(11) NOT NULL,
@@ -127,7 +128,7 @@ CREATE TABLE `queued_nodes` (
   `geom` point NOT NULL,
   PRIMARY KEY (`id`),
   SPATIAL KEY `index_queued_nodes_on_geom` (`geom`)
-) ENGINE=MyISAM AUTO_INCREMENT=5723 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `regions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -136,7 +137,7 @@ CREATE TABLE `regions` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `schema_migrations` (
   `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -154,7 +155,7 @@ CREATE TABLE `slugs` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_slugs_on_n_s_s_and_s` (`name`,`sluggable_type`,`sequence`,`scope`),
   KEY `index_slugs_on_sluggable_id` (`sluggable_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `spatial_ref_sys` (
   `SRID` int(11) NOT NULL,
@@ -190,13 +191,14 @@ CREATE TABLE `users` (
   `confirmation_token` varchar(255) DEFAULT NULL,
   `confirmed_at` datetime DEFAULT NULL,
   `confirmation_sent_at` datetime DEFAULT NULL,
+  `osm_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_email` (`email`),
   UNIQUE KEY `index_users_on_reset_password_token` (`reset_password_token`),
   UNIQUE KEY `index_users_on_authentication_token` (`authentication_token`),
   KEY `index_users_on_oauth_token` (`oauth_token`),
   KEY `index_users_on_wants_newsletter` (`wants_newsletter`)
-) ENGINE=InnoDB AUTO_INCREMENT=1466 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1434 DEFAULT CHARSET=latin1;
 
 INSERT INTO schema_migrations (version) VALUES ('20100520103719');
 
@@ -250,6 +252,12 @@ INSERT INTO schema_migrations (version) VALUES ('20110717073922');
 
 INSERT INTO schema_migrations (version) VALUES ('20110801135556');
 
+INSERT INTO schema_migrations (version) VALUES ('20110913165413');
+
+INSERT INTO schema_migrations (version) VALUES ('20110929130332');
+
+INSERT INTO schema_migrations (version) VALUES ('20110929130527');
+
 INSERT INTO schema_migrations (version) VALUES ('20111001183641');
 
 INSERT INTO schema_migrations (version) VALUES ('20111011120103');
@@ -262,13 +270,9 @@ INSERT INTO schema_migrations (version) VALUES ('20111018102230');
 
 INSERT INTO schema_migrations (version) VALUES ('20111024103455');
 
-INSERT INTO schema_migrations (version) VALUES ('20111101112924');
-
 INSERT INTO schema_migrations (version) VALUES ('20111101122153');
 
 INSERT INTO schema_migrations (version) VALUES ('20111115120452');
-
-INSERT INTO schema_migrations (version) VALUES ('20111201194619');
 
 INSERT INTO schema_migrations (version) VALUES ('20120119150643');
 
@@ -278,4 +282,4 @@ INSERT INTO schema_migrations (version) VALUES ('20120202134608');
 
 INSERT INTO schema_migrations (version) VALUES ('20120203121324');
 
-INSERT INTO schema_migrations (version) VALUES ('20120217102914');
+INSERT INTO schema_migrations (version) VALUES ('20120413133645');

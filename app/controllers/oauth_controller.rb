@@ -29,6 +29,7 @@ class OauthController < ApplicationController
 
   def callback
     current_user.set_oauth_credentials(params[:oauth_verifier])
+    store_osm_id unless current_user.osm_id
     flash[:notice] = t('oauth.callback.notice', :user => current_user.email)
     flash[:view] = '/osm/connect/done'
     redirect_to root_url
@@ -38,5 +39,13 @@ class OauthController < ApplicationController
   def unauthorized
     @message = I18n.t('nodes.errors.not_authorized')
     render :template => 'shared/error', :status => 400
+  end
+
+  def store_osm_id
+    begin
+      api = current_user.create_authorized_api
+      current_user.update_attribute(:osm_id, api.find_user.id)
+    rescue Rosemary::StandardError
+    end
   end
 end
