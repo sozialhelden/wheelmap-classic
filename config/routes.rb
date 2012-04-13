@@ -8,7 +8,7 @@ Wheelmap::Application.routes.draw do
   root :to => 'home#index'
 
   devise_for :admins
-  devise_for :users, :controllers => { :registrations => 'registrations', :confirmations => 'confirmations' } do
+  devise_for :users, :controllers => { :registrations => 'registrations', :confirmations => 'confirmations', :omniauth_callbacks => 'omniauth_callbacks' } do
     get "/registrations/successful", :to => "registrations#after_sign_up"
   end
 

@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   include Devise::Models::TokenAuthenticatable
   # Include default devise modules. Others available are:
   # :http_authenticatable, :token_authenticatable, :database_authenticatable, :confirmable, :lockable, :timeoutable and :activatable
-  devise :database_authenticatable, :recoverable, :registerable, :rememberable, :confirmable, :trackable, :validatable, :encryptable, :encryptor => :sha1
+  devise :database_authenticatable, :recoverable, :registerable, :rememberable, :confirmable,
+    :trackable, :validatable, :encryptable, :omniauthable, :encryptor => :sha1
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter
@@ -69,4 +70,9 @@ class User < ActiveRecord::Base
     api = ::Rosemary::Api.new(client)
   end
 
+  def update_osm_id
+    api = create_authorized_api
+    update_attribute(:osm_id, api.find_user.id)
+  rescue Rosemary::Error
+  end
 end
