@@ -45,8 +45,8 @@
         =@node.tags['addr:street']
         =@node.tags['addr:housenumber'] || '&nbsp;'
 
-  = tag_line @node, 'addr:postcode', :label_key => 'postcode'
-  = tag_line @node, 'addr:city', :label_key => 'city'
+  = tag_line @node, 'addr:postcode', :label_key => t('formtastic.labels.postcode')
+  = tag_line @node, 'addr:city', :label_key => t('formtastic.labels.city')
 
   - if @node.tags['website']
     %tr
