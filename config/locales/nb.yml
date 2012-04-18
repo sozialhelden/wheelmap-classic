@@ -29,6 +29,7 @@ nb:
         user_session:
           email: "Epost addresse"
           password: Passord
+          remember_me: "Forbli pålogget"
       template:
         body: "Det oppstod problemer i følgende felt:"
         header:
@@ -43,6 +44,7 @@ nb:
     node:
       create: "Legg til et sted"
       edit: "Rediger stedet"
+    root: wheelmap
   common:
     close: lukk
   devise:
@@ -61,6 +63,7 @@ nb:
           email: Epost
           password: "Passord <i>(La den stå tom hvis du ikke vil endre)</i>"
           password_confirmation: "Gjenta passord"
+        submit: "Lagre endringer"
       headline: "Rediger konto"
     failure:
       inactive: "Din konto er ikke aktivert."
@@ -90,11 +93,13 @@ nb:
     password_reset:
       email:
         comment: "Hvis du ikke bestilte tilbakestilling av passord, bare ignorer denne epost. Ditt passord vil ikke bli endret så lenge du ikke klikker på linken over og setter et nytt passord."
+        headline: "Velkommen  %{email}"
         link: "Endre passordet"
         text: "Det har blitt sendt ønske om å bytte passord, hvis det var deg trykk på linken. Hvis det ikke var deg se bort ifra meldingen"
       form:
         labels:
           password: "Nytt passord"
+          password_confirmation: "Repeter passord"
         submit: "Tilbakestill passord"
       headline: "Tilbakestill passord"
     passwords:
@@ -110,12 +115,13 @@ nb:
         inactive: Inaktiv
         locked: Låst
         unconfirmed: Ubrekreftet
-      signed_up: "Velkommen! Din registrering er vellykket."
+      signed_up: "Velkommen! Din registrering er vellykket. En bekreftelse vil bli sendt på epost"
       updated: "Din profil er oppdatert."
     sessions:
       inactive: "Din konto er ikke aktivisert enda"
       invalid: "Feil epost eller passord"
       link: "Logg inn"
+      locked: "Din konto er låst"
       signed_in: "Du er nå innlogget."
       signed_out: "Du er nå logget ut."
       timeout: "Din sessjon har gått ut på tid, vennligst logg inn igjen for å fortsette"
@@ -124,6 +130,7 @@ nb:
       form:
         labels:
           email: Epost
+          password: Passord
           remember_me: "Forbli innlogget?"
         submit: "Logg inn"
       headline: "Logg inn"
@@ -133,6 +140,7 @@ nb:
       email:
         confirm_my_account: "Bekreft min konto"
         please_confirm: "Du kan bekrefte kontoen med linken nedenfor:"
+        welcome: "Velkommen %{email}!"
       form:
         labels:
           email: Epost
@@ -188,6 +196,8 @@ nb:
       destroy:
         alert: "%{resource_name} kunne ikke fjernes"
         notice: "%{resource_name} er nå slettet"
+      update:
+        notice: "%{resource_name} var velykket oppdatert"
   form:
     show_fully_accessible_places: "Rullestol vennlig"
     show_limited_accessible_places: "Delvis rullestol vennlig"
@@ -203,17 +213,23 @@ nb:
       city: "By:"
       create: "Legg til sted"
       email: E-post
+      housenumber: "Nummer:"
       lon: Longitude
+      name: "Navn:"
       password: Passord
       password_confirmation: "Gjenta passord"
       phone: "Telefon:"
+      postcode: Postnummer
+      reset: Reset
       save: Lagre
       street: "Gate:"
       type: "Type:"
       website: "Webside:"
       wheelchair: "Rullestol tilgjenglig?"
+      wheelchair_description: "Tilgjenglighets kommentar"
     titles:
       basic: "Generell data"
+      optional: "Mer informasjon <span class=\"addition\">(alle felter er valgfrie)</span>"
   global:
     form_validation_error: "Vennligst legg merke til feilene nedenfor"
   header:
@@ -225,7 +241,9 @@ nb:
     navigation:
       blog: Blog
       feedback: Tilbakemelding
+      home: Start
       how_to_add_a_place: "Hvordan legger jeg til et sted?"
+      imprint: Avtrykk
       logged_in_as: "Logget på som:"
       login: "Logg in"
       logout: "Logg ut"
@@ -234,7 +252,9 @@ nb:
       suggestions: Forslag
       what_is_wheelmap: "Hva er wheelmap?"
     searchbar:
+      find: Søk
       label: ~
+      placeholder: "Eksempel Sunset Boulevard L.A. eller Brandenburg Gate Berlin"
     tagline: "Wheelmap logo"
     title: "Wheelmap - finn rullestol vennlige steder"
   helpers:
@@ -260,6 +280,8 @@ nb:
           ? "no"
           : "Ikke rullestol vennlig"
           save: Oppdater
+          ? "yes"
+          : "Rullestol tilgjenglig"
         help: "Rullestol vennlig? (hjelp)"
         more: Mer...
   how?: Hvordan?
@@ -288,6 +310,7 @@ nb:
   nodes:
     create:
       flash:
+        not_successfull: "Oops, ditt bidrag er enten feil eller ufullstendig"
         successfull: "Tusen takk, ditt bidrag har blitt lagret og vil snart være tilgjenglig"
     edit:
       header:
@@ -317,6 +340,7 @@ nb:
       link:
         back: Tilbake
         listing: "Alle steder av typen '%{type}' i %{city}"
+      show-in-osm: OpenStreetMap
     update:
       flash:
         not_successfull: "Oops, utfyllingen din var enten feil eller ufullstendig"
@@ -373,7 +397,10 @@ nb:
     application:
       connect:
         headline: "Du må koble sammen kontoen din med 'open street map' kontoen før du kan lage eller endre steder på wheelmap.org"
+    callback:
+      notice: "Din wheelmap konto er nå koblet sammen med OpenStreetMap konto %{user}"
   place:
+    one: "%{count} plasser"
     other: "%{count} steder"
   poi:
     category:
@@ -391,8 +418,10 @@ nb:
         beach_resort: Strandhotell
         bed_and_breakfast: "Seng og frokost"
         chalet: "Sveitser hus"
+        guest_house: Gjestehus
         motel: Motel
       education:
+        college: Høyskole
         kindergarten: Barnehage
         library: Bibliotek
         museum: Museum
@@ -404,20 +433,29 @@ nb:
         drinking_water: Drikkevann
         fast_food: Gatekjøkken
         pub: Pub
+        restaurant: Restaurant
       government:
         courthouse: Tinghus
+        embassy: Ambassade
         police: Politi
         public_building: "Offentlig byggning"
+        townhall: Rådhus
       health:
         doctors: Leger
+        hearing_aids: "Høreapparat forhandler"
+        hospital: Sykehus
         medical_supply: Apotek
         pharmacy: Apotek
         veterinary: Vetrinær
       leisure:
+        arena: Arena
         cinema: Kino
+        community_center: Samfunnshus
         gallery: Galleri
         nightclub: Nattklubb
+        playground: Lekeplass
         sauna: Badstue
+        stripclub: Strippeklubb
         theatre: Teater
         zoo: Dyrepark
       misc:
@@ -435,12 +473,14 @@ nb:
         bicycle_rental: "Sykkel utleie"
         boatyard: Kai
         bus_station: "Buss stasjon"
+        bus_stop: "Buss stop"
         cable_car: Taubane
         car_rental: Bilutleie
         car_sharing: "Bil deling"
         ferry: Ferge
         ferry_terminal: "Ferge terminal"
         fuel: Bensinstasjon
+        halt: Stop
         parking_aisle: "Parkerings plass"
         platform: Plattform
         station: Undergrunnsbane
@@ -452,13 +492,17 @@ nb:
         beverages: Drikkevarer
         books: Bøker
         butcher: Slakter
+        car_repair: Bilverksted
         car_shop: "Bil butikk"
         chemist: Kjemiker
         clothes: Klær
         computer: Datamaskin
         department_store: Varemagasin
         doityourself: "Gjør det selv"
+        dry_cleaning: Renseri
+        electronics: Elektronikk
         florist: Blomsterbutikk
+        furniture: Møbler
         garden_centre: Hagesenter
         hairdresser: Frisør
         hardware: Jernvare
@@ -466,6 +510,7 @@ nb:
         laundry: Rengjøring
         mall: Kjøpesenter
         optician: Optiker
+        photo: Foto
         second_hand: "Second hand"
         shoes: Sko
         sports: Sport
@@ -477,6 +522,7 @@ nb:
         swimming_pool: "Svømme basseng"
       tourism:
         archaeological_site: "Arkeologisk sted"
+        arts_centre: Kunstsenter
         artwork: Kunstverk
         attraction: Attraksjon
         battlefield: Slagmark
@@ -485,12 +531,14 @@ nb:
         information: "Turist informasjon"
         memorial: Minnesmerke
         tower: Tårn
+        viewpoint: "Utsikt sted"
       unknown:
         unknown: Ukjent
   profile:
     edit:
       application:
         oauth:
+          connected: "Status: Tilkoblet"
           not_connected: "Status: Ikke tilkoblet"
           revoke: Frakoblet
       headline: "Rediger profilen din"
@@ -516,12 +564,12 @@ nb:
     select:
       prompt: "Vennligst velg"
   time:
-    am: ~
+    am: am
     formats:
       default: "%A, %e. %B %Y, %H:%M"
       long: "%A, %e. %B %Y, %H:%M"
       short: "%e. %B, %H:%M"
-    pm: ~
+    pm: pm
   user_sessions:
     create:
       activation:
@@ -533,6 +581,7 @@ nb:
     new:
       email: "E-post addresse"
       login: "Logg inn"
+      login_with_twitter: "Logg på med Twitter"
       password: Passord
       remember_me: "Forbli innlogget"
   wheelchairstatus:
@@ -560,6 +609,7 @@ nb:
   will_paginate:
     next_label: "Neste &#8594;"
     page_entries_info:
+      multi_page: "Viser %{model} %{from} - %{to} av %{count} totalt"
       multi_page_html: "Viser %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> av <b>%{count}</b> totalt"
       single_page:
         one: "Viser 1 %{model}"
