@@ -37,7 +37,7 @@ group :default do
   gem 'friendly_id', '~>3.3.1' # upgrade to 4.x takes more effort.
   gem 'will_paginate'
   gem 'omniauth-osm'
-  gem 'rosemary', '~>0.3.3'
+  gem 'rosemary', '~>0.3.4'
   #gem 'rosemary', :path => '../rosemary'
 end
 
