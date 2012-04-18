@@ -43,6 +43,10 @@ module NavigationHelpers
       m = find_model("that poi")
       node_path(m)
 
+    when /that poi's edit page/
+      m = find_model("that poi")
+      edit_node_path(m)
+
     when /the last poi's page/
       poi = Poi.last
       "/nodes/#{poi.to_param}.html"

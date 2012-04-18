@@ -3,19 +3,6 @@ Feature: User feature
   As a registered user
   I want to visit my profile page
 
-  Scenario: I want to log into my profile
-    Given a user "horst" exists with email: "horst@wheelmap.org", password: "password", password_confirmation: "password", confirmed_at: "10.10.1999"
-    Given I am on the home page
-    When I follow "Login"
-    Then I should be on the sign_in page
-    And I should see "Login" within "legend"
-    When I fill in "E-Mail" with "horst@wheelmap.org"
-    And I fill in "Passwort" with "password"
-    And I check "Eingeloggt bleiben?"
-    And I press "Login"
-    Then I should be on the home page
-    And I should see "Login erfolgreich."
-
   Scenario: I want to register as a new wheelmap user
     Given I am on the home page
     When I follow "Registrieren"
