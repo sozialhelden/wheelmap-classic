@@ -61,7 +61,7 @@ class ApplicationController < ActionController::Base
     if params[:controller] =~ /registration/
       edit_profile_path(current_user.id)
     else
-      root_path
+      super
     end
   end
 
