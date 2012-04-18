@@ -27,7 +27,7 @@ it:
         wrong_length: "è della lunghezza sbagliata (deve essere di %{count} caratteri)"
       models:
         user_session:
-          email: "Indirizzo Email"
+          email: "Indirizzo e-mail"
           password: Password
           remember_me: "Resta collegato"
       template:
@@ -39,7 +39,7 @@ it:
     require_no_user:
       notice: "Sei già collegato ..."
     require_user:
-      notice: "Collegarti per vedere questa pagina."
+      notice: "Devi collegarti per vedere questa pagina."
   breadcrumbs:
     node:
       create: "Aggiungi luogo"
@@ -52,6 +52,7 @@ it:
       confirmed: "Il tuo account è stato confermato con successo. Sei ormai collegato."
       link: "Non hai ricevuto gli istruzioni per confermare lo account?"
       send_instructions: "Fra qualche minuti riceverai una email con le istruzioni per confermare il nuovo account."
+      send_paranoid_instructions: "Se il tuo account esiste, riceverai una e-mail con le istruzioni per confermare in pochi minuti il tuo account."
     destroy:
       confirm: "Sei sicuro?"
       headline: "Cancella account"
@@ -61,7 +62,7 @@ it:
         labels:
           current_password: "Password attuale <i>(ne abbiamo bisogno per confermare la tua modifica)</i> "
           email: Email
-          password: "Password <i>(lasciare vuoto per non cambiarlo)</i> "
+          password: "Password <i>(lasciare vuoto se non vuoi cambiarlo)</i> "
           password_confirmation: "Ripeti la password"
         submit: "Registra modifiche"
       headline: "Gestione account"
@@ -70,11 +71,12 @@ it:
       invalid: "Email o password invalido."
       invalid_token: "Token di autenticazione invalido."
       locked: "Il tuo account è bloccato."
-      timeout: "La tua sessione è scaduta, collegarti da nuovo per continuare."
-      unauthenticated: "Devi registrarti o collegarti per continuare."
+      timeout: "La tua sessione è scaduta, per favore collegati nuovamente per continuare."
+      unauthenticated: "Devi registrarti o collegarti prima di continuare."
       unconfirmed: "Devi confermare il tuo account prima di procedere."
     mailer:
       confirmation_instructions:
+        landing_page: "Clicca per favore sul link che ti abbiamo appena inviato per e-mail al tuo indirizzo di posta elettronica. Se non dovessi ricevere la nostra e-mail, per prima cosa controlla per favore che non sia stata nascosta nella cartella di spam. Se non è presente neanche in quest'ultimo caso, ritorna alla pagina di iscrizione e riprova."
         subject: "Istruzioni per la confermazione"
       reset_password_instructions:
         subject: "Istruzioni per reimpostare la password"
@@ -116,9 +118,9 @@ it:
       updated: "Il tuo account è stato aggiornato."
     sessions:
       inactive: "Il tuo account non è ancora attivo."
-      invalid: "Email o password invalido."
+      invalid: "Indirizzo e-mail o password non validi."
       invalid_token: "Token di autenticazione invalido."
-      link: Collega
+      link: Iscriviti
       locked: "Il tuo account è bloccato."
       signed_in: "Collegato con successo."
       signed_out: "Scollegato con successo."
@@ -136,6 +138,8 @@ it:
     sign_out:
       headline: Esci
     sign_up:
+      email:
+        confirm_my_account: "Conferma il tuo account"
       form:
         labels:
           email: Email
@@ -179,7 +183,7 @@ it:
       too_short: "è troppo corto (il minimo è %{count} caratteri)"
       wrong_length: "è della lunghezza sbagliata (deve essere di %{count} caratteri)"
     template:
-      body: "Per favore ricontrolla i seguenti campi:"
+      body: "Sono stati riscontrati dei problemi nei seguenti campi:"
       header:
         one: "Non posso salvare questo %{model}: 1 errore"
         other: "Non posso salvare questo %{model}: %{count} errori."
@@ -201,7 +205,7 @@ it:
     hints:
       lat: "Sposta l'indicatore nella posizione coretta"
       osm_username: "Non ancora un membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Crea un accountsu Openstreetmap</a> "
-      password: "(lascia vuoto se non vuoi cambiarlo"
+      password: "(lascia vuoto se non vuoi cambiarlo)"
       phone: "Per esempio: +39 050 12345-78"
       website: "Per esempio: http://www.example.com"
     labels:
@@ -247,7 +251,7 @@ it:
       login: Collega
       logout: Esci
       press: Giornalismo
-      suggestions: Suggestioni
+      suggestions: Suggerimenti
       what_is_barrier_free: "Cosa significa \"accessibile in sedia a rotelle\"?"
       what_is_wheelmap: "Cos'è wheelmap?"
     searchbar:
@@ -284,7 +288,7 @@ it:
           limited: "parzialmente accessibile in sedia a rotelle"
           ? "no"
           : "non accessibile in sedia a rotelle"
-          save: Salva
+          save: Aggiorna
           unknown: "stato sconosciuto"
           ? "yes"
           : "accessibile in sedia a rotelle"
@@ -327,7 +331,7 @@ it:
         large_map: "&laquo; Annulla"
     node:
       link:
-        claim: ~
+        claim: "Lavori qui?"
         edit_node: "Modifica luogo"
         report_bug: "Report a problem"
     show:
@@ -380,10 +384,13 @@ it:
           kb: Kb
           mb: Mb
           tb: Tb
+    precision:
+      format:
+        delimiter: ~
   oauth:
     application:
       connect:
-        headline: "Devi collegare il tuo account con il tuo account su open street map prima di creare o modificare  luoghi su wheelmap.org"
+        headline: "Devi collegare il tuo account con il tuo account di \"open street map\" prima di creare o modificare luoghi su wheelmap.org"
     callback:
       notice: "Il tuo account è stato collegato al account %{user} su OpenStreetMap."
   or: o
@@ -458,7 +465,7 @@ it:
         post_box: "Cassetta postale"
         post_office: "Ufficio postale"
       public_transfer:
-        aerodrome: Aereoporto
+        aerodrome: Aeroporto
         bicycle_parking: "Parcheggio per biciclette"
         bicycle_rental: "Noleggio biciclette"
         boatyard: "Cantiere navale"
@@ -478,7 +485,7 @@ it:
         platform: Binario
         station: Metropolitana
         subway_entrance: "Ingresso della Metropolitana"
-        terminal: "Terminal del aereoporto"
+        terminal: "Terminal dell'aeroporto"
         tram_stop: "Fermata del tram"
       shopping:
         alcohol: "Bevande alcoliche"
@@ -533,8 +540,8 @@ it:
         oauth:
           connected: "Stato: Collegato"
           grant: "Collega adesso"
-          not_connected: "Stato: Non collegato"
-          revoke: Scollega
+          not_connected: "Stato: Non connesso"
+          revoke: Scollegati
       headline: "Modifica profilo"
   search:
     index:
@@ -568,8 +575,8 @@ it:
     destroy:
       notice: "Ciao, ritorna presto!"
     new:
-      email: "Indirizzo email"
-      login: Collega
+      email: "Indirizzo e-mail"
+      login: Entra
       login_with_twitter: "Collegamento con Twitter"
       password: Password
       remember_me: "Resta collegato"
