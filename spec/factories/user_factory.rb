@@ -3,7 +3,7 @@ Factory.sequence :email do |n|
 end
 
 Factory.define :user do |user|
-  user.confirmed_at           { 10.days.ago }
+  # user.confirmed_at           { 10.days.ago }
 end
 
 
