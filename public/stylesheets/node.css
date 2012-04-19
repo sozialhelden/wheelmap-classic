@@ -797,6 +797,11 @@ h1.marge, h2.marge, h3.marge, h4.marge, h5.marge, h6.marge, p.marge {
   background-color: #eeeeee;
 }
 
+/* line 28, ../../app/stylesheets/basics/_main.sass */
+.hidden {
+  display: none;
+}
+
 /* line 1, ../../app/stylesheets/basics/_footer.sass */
 #footer {
   background: white;
