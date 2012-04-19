@@ -7,7 +7,7 @@ Feature: Create a new node via website
     Given a node type exists with osm_key: "amenity", osm_value: "bar", identifier: "bar"
 
   Scenario: I want to create a new node
-    Given a user: "creator" exists with email: "creator@wheelmap.org", password: "123456", password_confirmation: "123456", confirmed_at: "10.10.1999", oauth_token: "oauth_token", oauth_secret: "oauth_secret", oauth_request_token: "oauth_request_token"
+    Given a user: "creator" exists with email: "creator@wheelmap.org", password: "123456", password_confirmation: "123456", confirmed_at: "10.10.1999", oauth_token: "oauth_token", oauth_secret: "oauth_secret"
     And user "creator" should be app_authorized
     And I am logged in with email: "creator@wheelmap.org", password: "123456"
     And I am on the home page
