@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   include Devise::Models::TokenAuthenticatable
   # Include default devise modules. Others available are:
   # :http_authenticatable, :token_authenticatable, :database_authenticatable, :confirmable, :lockable, :timeoutable and :activatable
-  devise :database_authenticatable, :recoverable, :registerable, :rememberable, :confirmable,
+  devise :database_authenticatable, :rememberable, :confirmable,
     :trackable, :validatable, :encryptable, :omniauthable, :encryptor => :sha1
 
   # Setup accessible (or protected) attributes for your model
@@ -13,8 +13,6 @@ class User < ActiveRecord::Base
 
   before_save :ensure_authentication_token
   after_destroy :notify_admins
-
-  serialize :oauth_request_token
 
   acts_as_api
 
