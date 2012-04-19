@@ -33,6 +33,10 @@ class User < ActiveRecord::Base
     false
   end
 
+  def confirmation_required?
+    false
+  end
+
   def app_authorized?
     oauth_authorized?
   end
