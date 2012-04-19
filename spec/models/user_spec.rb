@@ -14,6 +14,11 @@ describe User do
     subject.should be_valid
   end
 
+  it "should be valid without email" do
+    subject.email = nil
+    subject.should be_valid
+  end
+
   it "should revoke the oauth credentials" do
     @user = Factory.create(:authorized_user)
     @user.revoke_oauth_credentials
