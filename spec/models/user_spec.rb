@@ -8,6 +8,12 @@ describe User do
 
   it { should be_valid }
 
+  it "should be valid without password" do
+    subject.password = nil
+    subject.password_confirmation = nil
+    subject.should be_valid
+  end
+
   it "should revoke the oauth credentials" do
     @user = Factory.create(:authorized_user)
     @user.revoke_oauth_credentials
