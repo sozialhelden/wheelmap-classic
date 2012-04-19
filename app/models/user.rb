@@ -64,6 +64,12 @@ class User < ActiveRecord::Base
     save!
   end
 
+  def update_oauth_credentials(credentials_hash)
+    oauth_token  = credentials_hash['token']
+    oauth_secret = credentials_hash['secret']
+    save(:validate => false)
+  end
+
   def self.authenticate(email, password)
     user = User.where(:email => email).first
     user if user && user.valid_password?(password)
