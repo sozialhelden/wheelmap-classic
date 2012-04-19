@@ -8,8 +8,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter
 
-  validates_uniqueness_of :email, :case_sensitive => false
-  validates_presence_of :email
+  validates_uniqueness_of :email, :case_sensitive => false, :allow_blank => true
 
   before_save :ensure_authentication_token
 
@@ -26,6 +25,10 @@ class User < ActiveRecord::Base
   end
 
   def password_required?
+    false
+  end
+
+  def email_required?
     false
   end
 
