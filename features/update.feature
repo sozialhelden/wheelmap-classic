@@ -10,7 +10,7 @@ Feature: Find, update and create nodes via API
       | foo | bar |
 
   Scenario: I want to update an existing node
-    Given a user: "editor" exists with email: "editor@wheelmap.org", password: "123456", password_confirmation: "123456", confirmed_at: "10.10.1999", oauth_token: "oauth_token", oauth_secret: "oauth_secret", oauth_request_token: "oauth_request_token"
+    Given a user: "editor" exists with email: "editor@wheelmap.org", password: "123456", password_confirmation: "123456", confirmed_at: "10.10.1999", oauth_token: "oauth_token", oauth_secret: "oauth_secret"
     And user "editor" should be app_authorized
     And I am logged in with email: "editor@wheelmap.org", password: "123456"
     And I am on that poi's page
