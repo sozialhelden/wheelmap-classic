@@ -46,7 +46,6 @@ class User < ActiveRecord::Base
   def revoke_oauth_credentials
     self.oauth_token = nil
     self.oauth_secret = nil
-    self.oauth_request_token = nil
     save!
   end
 
