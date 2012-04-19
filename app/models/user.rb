@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
     t.add :authentication_token, :as => :api_key
   end
 
+  def password_required?
+    false
+  end
+
   def app_authorized?
     oauth_authorized?
   end
