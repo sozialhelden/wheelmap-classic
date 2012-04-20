@@ -1,6 +1,9 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def osm
     osm_id = request.env['omniauth.auth']['uid']
+
+    return failure(t('devise.omniauth_callbacks.permission_missing')) unless osm_id
+
     user = User.find_by_osm_id(osm_id)
     if user
       sign_in user
@@ -18,7 +21,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def failure(message = nil)
-    set_flash_message :alert, :failure, :kind => :osm, :reason => (message || failure_message)
+    set_flash_message :alert, :failure, :kind => 'OpenStreetMap', :reason => (message || failure_message)
     redirect_to after_omniauth_failure_path_for(:user)
   end
 end
