@@ -12,6 +12,12 @@ Wheelmap::Application.routes.draw do
     get "/registrations/successful", :to => "registrations#after_sign_up"
   end
 
+  devise_scope :user do
+    scope 'users' do
+      match '/auth/failure' => 'omniauth_callbacks#failure'
+    end
+  end
+
   resources :node_types, :only => :index
   resources :search, :only => :index
   resources :feeds, :only => :index
