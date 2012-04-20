@@ -66,8 +66,8 @@ class User < ActiveRecord::Base
   end
 
   def update_oauth_credentials(credentials_hash)
-    oauth_token  = credentials_hash['token']
-    oauth_secret = credentials_hash['secret']
+    self.oauth_token  = credentials_hash['token']
+    self.oauth_secret = credentials_hash['secret']
     save(:validate => false)
   end
 
