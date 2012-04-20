@@ -6,8 +6,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in user
       user.update_oauth_credentials(request.env['omniauth.auth']['credentials'])
       set_flash_message :notice, :success, :kind => 'OpenStreetMap'
-
-      redirect_to root_url # maybe to somewhere else after_signin_url blah
+      redirect_to after_sign_in_path_for(:user)
     else
       # OSM user not in wheelmap db
       user = User.create
