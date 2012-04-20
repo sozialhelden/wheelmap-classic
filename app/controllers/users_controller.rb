@@ -45,13 +45,6 @@ class UsersController < ApplicationController
     render :json => {:id => @user.id}.to_json, :status => 200
   end
 
-  def reset_token
-    raise OAuth::Unauthorized.new if params[:id] == current_user.id
-    current_user.reset_authentication_token! if current_user.authentication_token
-    redirect_to edit_profile_path(current_user.id)
-    return
-  end
-
   protected
 
   def authenticate_mobile_user
