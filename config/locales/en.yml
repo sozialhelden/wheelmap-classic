@@ -86,6 +86,7 @@ en:
     mandatory: "* Required"
     omniauth_callbacks:
       failure: "Authorization with %{kind} failed. Error: \"%{reason}\". "
+      permission_missing: "You did not grant the required permissions."
       success: "Successfully logged in with %{kind}."
     password_recovery:
       form:
