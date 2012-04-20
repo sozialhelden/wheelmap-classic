@@ -83,4 +83,28 @@ describe OmniauthCallbacksController do
     end
   end
 
+  context "failure" do
+
+    it "doesn't login user when no uid is provided via oauth" do
+      OmniAuth.config.mock_auth[:osm] = {
+      'provider' => 'osm',
+        'credentials' => {
+          'token' => 'token',
+          'secret' => 'secret'
+        }
+      }
+
+      request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:osm]
+      User.should_not_receive(:find_by_osm_id)
+      get :osm
+
+      controller.current_user.should be_nil
+      response.should redirect_to new_user_session_url
+    end
+
+    it "should redirect to login page on failure" do
+      get :failure
+      response.should be_redirect user_sign_in_path
+    end
+  end
 end
