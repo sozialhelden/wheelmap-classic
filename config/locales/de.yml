@@ -86,6 +86,7 @@ de:
     mandatory: "* Pflichtfeld"
     omniauth_callbacks:
       failure: "Authorisierung mit %{kind} fehlgeschlagen. Fehler: \"%{reason}\". "
+      permission_missing: "Du hast uns nicht die benötigten Rechte eingeräumt."
       success: "Erfolgreich authorisiert mit %{kind}."
     password_recovery:
       form:
