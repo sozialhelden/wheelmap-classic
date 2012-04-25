@@ -209,6 +209,7 @@ CREATE TABLE `users` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `changeset_id` int(11) DEFAULT NULL,
+  `authentication_token` varchar(255) DEFAULT NULL,
   `wants_newsletter` tinyint(1) NOT NULL DEFAULT '0',
   `authentication_token` varchar(255) DEFAULT NULL,
   `confirmation_token` varchar(255) DEFAULT NULL,
@@ -318,3 +319,5 @@ INSERT INTO schema_migrations (version) VALUES ('20120427102536');
 INSERT INTO schema_migrations (version) VALUES ('20120427103805');
 
 INSERT INTO schema_migrations (version) VALUES ('20120525115535');
+
+INSERT INTO schema_migrations (version) VALUES ('20120425085200');

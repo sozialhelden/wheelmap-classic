@@ -41,8 +41,21 @@ class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client, :source)
     Delayed::Worker.logger
   end
 
+  def enqueue(job)
+  end
 
-  def on_permanent_failure
-    #TODO
+  def before(job)
+  end
+
+  def after(job)
+  end
+
+  def success(job)
+  end
+
+  def error(job, exception)
+  end
+
+  def failure
   end
 end
