@@ -60,9 +60,9 @@ de:
     skip: überspringen
   devise:
     confirmations:
-      confirmed: "Dein Benutzerkonto wurde erfolgreich bestätigt. Du bist nun angemeldet."
+      confirmed: "Dein E-Mail-Adresse wurde erfolgreich bestätigt."
       link: "Keine Bestätigungsmail bekommen?"
-      send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto bestätigen kannst."
+      send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit einem Link, um deine E-Mail-Adresse zu bestätigen."
       send_paranoid_instructions: "Wenn Deine E-Mail-Adresse in unserer Datenbank ist, wirst Du eine E-mail mit Anweisungen zur Bestätigung Deines Kontos in wenigen Minuten erhalten."
     destroy:
       confirm: "Bist du dir sicher?"
@@ -648,6 +648,12 @@ de:
       long: "%A, %e. %B %Y, %H:%M Uhr"
       short: "%e. %B, %H:%M Uhr"
     pm: nachmittags
+
+  users:
+    after_signup_edit:
+      welcome:
+        headline: Willkommen bei wheelmap
+        text: Wie können wir dich in Zukunft über Neuigkeiten rund um die Wheelmap erreichen? Du kannst diese Informationen auch später in Deinem Profil ändern.
   user_sessions:
     create:
       activation:
