@@ -1,7 +1,7 @@
 class RemovePasswordRequirementFromUsers < ActiveRecord::Migration
   def self.up
     change_column :users, :encrypted_password, :string, :null => true, :default => nil
-    remove_index :users, :email
+    remove_index :users, :email rescue nil
     change_column :users, :email, :string, :null => true, :default => nil
 
     remove_column :users, :reset_password_token
@@ -16,7 +16,7 @@ class RemovePasswordRequirementFromUsers < ActiveRecord::Migration
   def self.down
     change_column :users, :encrypted_password, :string, :null => false
     change_column :users, :email, :string, :null => false
-    add_index :users, :email, :unique => true
+    add_index :users, :email, :unique => true rescue nil
 
     add_column :users, :reset_password_token, :string
     add_column :users, :oauth_request_token, :text
