@@ -16,6 +16,8 @@
 
     = include_stylesheets :node, :media => 'screen, projection'
 
+    = render :partial => 'shared/mixpanel_tracking'
+
   %body(class=browser_class)
     = render :partial => '/shared/header'
     #main
