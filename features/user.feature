@@ -3,21 +3,36 @@ Feature: User feature
   As a registered user
   I want to visit my profile page
 
-  Scenario: I want to edit my profile
+  Background:
     Given a user "horst" exists with email: "horst@wheelmap.org", password: "password", password_confirmation: "password", confirmed_at: "10.10.1999"
     And I am logged in with email: "horst@wheelmap.org", password: "password"
+
+  Scenario: I want to edit my profile
     And I am on the last user's edit page
     Then I should see "E-Mail"
+    And I should see "Vorname"
+    And I should see "Nachname"
     And I should see "Passwort"
     And I should see "Passwort wiederholen"
 
   Scenario: I want to change my password
-    Given a user "horst" exists with email: "horst@wheelmap.org", password: "password", password_confirmation: "password", confirmed_at: "10.10.1999"
-    And I am logged in with email: "horst@wheelmap.org", password: "password"
     And I am on the last user's edit page
     When I fill in "Passwort" with "new_password"
     And I fill in "Passwort wiederholen" with "new_password"
     And I press "Speichern"
     Then I should be on the last user's edit page
-    And I should see "Dein Benutzerkonto wurde aktualisiert."
+    And I should see "Benutzer wurde erfolgreich aktualisiert."
 
+  Scenario: I changed my email address
+    When I am on the last user's edit page
+    When I fill in "E-Mail" with "peter@wheelmap.org"
+    And I press "Speichern"
+    Then 1 email should be delivered to "peter@wheelmap.org"
+    And I should see "Du bekommst in wenigen Minuten eine E-Mail mit einem Link"
+
+  Scenario: I set my email after signup
+    When I am on the last user's after signup edit page
+    When I fill in "E-Mail" with "peter@wheelmap.org"
+    And I press "Fertigstellen"
+    Then 1 email should be delivered to "peter@wheelmap.org"
+    And I should see "Du bekommst in wenigen Minuten eine E-Mail mit einem Link"
