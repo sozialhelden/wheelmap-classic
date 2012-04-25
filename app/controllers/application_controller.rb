@@ -65,13 +65,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def after_sign_up_path_for(user)
-     registration_successful_path
-  end
-
-  def after_inactive_sign_up_path_for(user)
-    registration_successful_path
-  end
+  helper_method :after_sign_in_path_for
 
   def stored_location_for(resource_or_scope)
     location = super
@@ -135,5 +129,14 @@ class ApplicationController < ActionController::Base
   def check_update_wheelchair_params
     render( :text => 'Params missing', :status => 406 ) if params[:wheelchair].blank?
   end
+
+  def track_page_view(url)
+    flash[:view] = url
+  end
+
+  def track_event(params)
+    flash[:track] = params
+  end
+
 
 end
