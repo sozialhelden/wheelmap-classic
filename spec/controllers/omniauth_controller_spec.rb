@@ -44,7 +44,7 @@ describe OmniauthCallbacksController do
   context "known user" do
 
     before do
-      Factory.create(:user, :osm_id => 174)
+      Factory.create(:user, :osm_id => 174, :sign_in_count => 1)
     end
 
     it "does not create a new user" do
@@ -75,9 +75,9 @@ describe OmniauthCallbacksController do
 
     it_behaves_like "any authorized user"
 
-    it "redirects to after_sign_in_path" do
+    it "redirects to after_signup_edit_user_path" do
       get :osm
-      response.should redirect_to '/'
+      response.should redirect_to after_signup_edit_user_url(User.first)
     end
   end
 

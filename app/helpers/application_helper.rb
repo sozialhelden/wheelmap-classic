@@ -15,6 +15,15 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def category_for_node(type)
+    Amenities.each do |category, groups|
+      groups.each do |group|
+        return category if group.keys.include?(type.to_sym)
+      end
+    end
+    nil
+  end
+
   def url_for_locale(url, locale)
     uri = URI.parse(url)
     # Ommit leading locale for default locale
