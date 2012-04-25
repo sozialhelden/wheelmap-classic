@@ -1,6 +1,6 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-  
+
   # Renders OpenGraph Meta tags for the given option to help facebook parse the website.
   def render_og_metadata(options = {})
     html = ''
@@ -14,7 +14,7 @@ module ApplicationHelper
     html << tag(:meta, :property => "fb:app_id", :content => '289221174426029')
     html.html_safe
   end
-  
+
   def category_for_node(type)
     Amenities.each do |category, groups|
       groups.each do |group|
@@ -38,7 +38,7 @@ module ApplicationHelper
     uri.path = uri.path.gsub(/\/$/,'')
     uri
   end
-  
+
   def show_flash
     html = ''
     [:notice,:error,:alert].each do |type|
@@ -47,7 +47,7 @@ module ApplicationHelper
         html << flash[type]
         html << "<a data='hide' href='#'>x</a>"
         html << "</div>"
-      end 
+      end
     end
     html.html_safe
   end

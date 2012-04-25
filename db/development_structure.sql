@@ -39,15 +39,6 @@ CREATE TABLE `alternatives` (
   KEY `index_alternatives_on_lookup` (`lookup`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `borders` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `admin_level` tinyint(4) NOT NULL,
-  `border` geometry NOT NULL,
-  PRIMARY KEY (`id`),
-  SPATIAL KEY `border` (`border`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -71,9 +62,10 @@ CREATE TABLE `delayed_jobs` (
   `first_started_at` datetime DEFAULT NULL,
   `last_started_at` datetime DEFAULT NULL,
   `finished_at` datetime DEFAULT NULL,
+  `queue` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `delayed_jobs_priority` (`priority`,`run_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=224 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=242 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `experiments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -186,11 +178,13 @@ CREATE TABLE `users` (
   `confirmed_at` datetime DEFAULT NULL,
   `confirmation_sent_at` datetime DEFAULT NULL,
   `osm_id` int(11) DEFAULT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_authentication_token` (`authentication_token`),
   KEY `index_users_on_oauth_token` (`oauth_token`),
   KEY `index_users_on_wants_newsletter` (`wants_newsletter`)
-) ENGINE=InnoDB AUTO_INCREMENT=1466 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1479 DEFAULT CHARSET=latin1;
 
 INSERT INTO schema_migrations (version) VALUES ('20100520103719');
 
@@ -277,3 +271,7 @@ INSERT INTO schema_migrations (version) VALUES ('20120217102914');
 INSERT INTO schema_migrations (version) VALUES ('20120413133645');
 
 INSERT INTO schema_migrations (version) VALUES ('20120418164644');
+
+INSERT INTO schema_migrations (version) VALUES ('20120425085200');
+
+INSERT INTO schema_migrations (version) VALUES ('20120425104911');
