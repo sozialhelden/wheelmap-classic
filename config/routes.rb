@@ -8,9 +8,7 @@ Wheelmap::Application.routes.draw do
   root :to => 'home#index'
 
   devise_for :admins
-  devise_for :users, :controllers => { :confirmations => 'confirmations', :omniauth_callbacks => 'omniauth_callbacks' } do
-    get "/registrations/successful", :to => "registrations#after_sign_up"
-  end
+  devise_for :users, :controllers => { :confirmations => 'confirmations', :omniauth_callbacks => 'omniauth_callbacks' }
 
   devise_scope :user do
     scope 'users' do
@@ -50,6 +48,8 @@ Wheelmap::Application.routes.draw do
     end
     member do
       post :reset_token
+      get :after_signup_edit
+      put :after_signup_update
     end
   end
 
