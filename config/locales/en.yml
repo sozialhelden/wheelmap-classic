@@ -1,6 +1,12 @@
 ---
 en:
   activerecord:
+    models:
+      user: User
+    attributes:
+      user:
+        first_name: Given name
+        last_name: Last name
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -47,11 +53,12 @@ en:
     root: wheelmap
   common:
     close: close
+    skip: skip
   devise:
     confirmations:
-      confirmed: "Your account was successfully confirmed. You are now signed in."
+      confirmed: "Your email address was successfully confirmed."
       link: "Didn't receive confirmation instructions?"
-      send_instructions: "You will receive an email with instructions how to confirm your account in a few minutes."
+      send_instructions: "In a few minutes you will receive an email with a link to confirm your email address."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions how to confirm your account in a few minutes."
     destroy:
       confirm: "Are you sure?"
@@ -224,6 +231,7 @@ en:
       city: "City:"
       create: "Create place"
       email: E-Mail
+      finish: Finish
       housenumber: "No:"
       lat: Latitude
       lon: Longitude
@@ -628,6 +636,12 @@ en:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+
+  users:
+    after_signup_edit:
+      welcome:
+        headline: Welcome to wheelmap
+        text: How can we get in touch with you? You can change this information later in your profile.
   user_sessions:
     create:
       activation:
