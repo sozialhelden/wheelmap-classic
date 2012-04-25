@@ -33,12 +33,28 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
-      flash[:notice] = t('devise.registrations.updated')
-    else
-      flash[:alert] = @user.errors.full_messages.to_sentence
+    @user.attributes = params[:user]
+    email_changed = @user.email_changed?
+    if @user.save
+      flash[:notice] = t('flash.actions.update.notice', :resource_name => User.model_name.human)
+      flash[:notice] = t('devise.confirmations.send_instructions') if email_changed
     end
-    redirect_to edit_profile_path(current_user)
+    redirect_to edit_profile_path(@user.id)
+  end
+
+
+  def after_signup_edit
+    @user ||= current_user
+  end
+
+  def after_signup_update
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      flash[:notice] = t('devise.confirmations.send_instructions') if @user.email.present?
+      redirect_to after_sign_in_path_for(:user)
+    else
+      render :template => 'users/after_signup_edit'
+    end
   end
 
   def authenticate
