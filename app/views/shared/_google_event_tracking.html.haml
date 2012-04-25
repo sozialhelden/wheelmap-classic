@@ -1,3 +1,6 @@
 - if Rails.env.production? && flash[:track]
   :javascript
     _gaq.push(['_trackEvent', #{flash[:track]}]);
+    _gaq.push(['_gat._anonymizeIp']);
+    _gaq.push(['_setSiteSpeedSampleRate, 100]);
+
