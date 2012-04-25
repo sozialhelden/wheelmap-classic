@@ -6,12 +6,15 @@ class User < ActiveRecord::Base
     :trackable, :validatable, :encryptable, :omniauthable, :encryptor => :sha1
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter, :first_name, :last_name
 
   validates_uniqueness_of :email, :case_sensitive => false, :allow_blank => true
 
   before_save :ensure_authentication_token
   after_destroy :notify_admins
+
+  before_save :send_email_confirmation,
+    :unless => :new_record?, :if => :email_changed?
 
   acts_as_api
 
@@ -23,6 +26,12 @@ class User < ActiveRecord::Base
   api_accessible :api_simple do |t|
     t.add :id
     t.add :authentication_token, :as => :api_key
+  end
+
+  def send_email_confirmation
+    return if self.email.blank?
+    self.generate_confirmation_token if self.confirmation_token.nil?
+    self.devise_mailer.confirmation_instructions(self).deliver
   end
 
   def password_required?

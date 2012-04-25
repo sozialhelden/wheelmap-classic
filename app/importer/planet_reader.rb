@@ -41,7 +41,7 @@ class PlanetReader
       flush_pois(1)
       sleep 1
       @duration = (Time.now - @start_time).to_i
-      puts "\nINFO: Processed #{@processed} nodes in #{@duration}s ~= #{@processed/@duration}/s"
+      puts "\nINFO: Processed #{@processed} nodes in #{@duration}s ~= #{@processed/@duration}/s" unless Rails.env.test?
     end
   end
 
