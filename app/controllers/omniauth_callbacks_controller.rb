@@ -9,10 +9,11 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if user.sign_in_count == 0
       set_flash_message :notice, :success, :kind => 'OpenStreetMap'
-      redirect_to after_sign_in_path_for(:user)
+      track_page_view '/registrations/successful'
+      redirect_to after_signup_edit_user_path(user)
     else
       # OSM user not in wheelmap db
-      redirect_to edit_user_path(user)
+      redirect_to after_sign_in_path_for(user)
     end
     sign_in user
   end

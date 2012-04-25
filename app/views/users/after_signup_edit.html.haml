@@ -1,0 +1,20 @@
+#user_form
+  %h1{:style => 'margin-bottom:30px'}=t('.welcome.headline')
+
+  %p.large
+    =t('.welcome.text')
+
+  = semantic_form_for @user, :url => after_signup_update_user_path(@user), :method => :put, :html => {:novalidate => ''} do |form|
+    = form.inputs do
+      .grid_4{:style => 'width:460px; float:left;'}
+        = form.input :first_name, :required => true
+      .grid_4{:style => 'width:500px; float:left;'}
+        = form.input :last_name, :required => true, :hint => false
+      = form.input :email, :required => true, :hint => 'Wir behandeln Deine Adresse vertraulich, kein Spam, versprochen!'
+
+      = form.input :wants_newsletter, :as => :hidden, :value => true
+
+    = form.buttons do
+      = form.commit_button t('formtastic.labels.finish')
+
+  = link_to t('common.skip'), after_sign_in_path_for(:user)
