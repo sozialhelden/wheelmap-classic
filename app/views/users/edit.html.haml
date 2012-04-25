@@ -2,12 +2,16 @@
   %h1{:style => 'margin-bottom:30px'}=t('profile.edit.headline')
 
   = semantic_form_for @user do |form|
-    = form.inputs :name => t('devise.sign_up.form.labels.email') + ' + ' + t('devise.sign_up.form.labels.password') do
-      = form.input :email, :required => false
-      = form.input :password, :required => false, :hint => false
-      = form.input :password_confirmation, :required => false, :hint => t('formtastic.hints.password')
-
+    = form.inputs :name => t('devise.sign_up.form.labels.email') do
+      = form.input :first_name
+      = form.input :last_name
+      = form.input :email
       = form.input :wants_newsletter, :input_html => {:class => 'newsletter'}, :label => t('devise.sign_up.form.labels.wants_newsletter')
+
+
+    = form.inputs :name => t('devise.sign_up.form.labels.password') do
+      = form.input :password, :hint => false
+      = form.input :password_confirmation, :hint => t('formtastic.hints.password')
 
     = form.buttons do
       = form.commit_button t('formtastic.labels.save')
