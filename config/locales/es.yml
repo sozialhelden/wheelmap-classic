@@ -165,6 +165,8 @@ es:
       too_long: "es demasiado largo (no más de %{count} caracteres)"
       too_short: "es demasiado corto (no más corto de %{count} caracteres)"
       wrong_length: "no tiene la longitud correcta (deben ser %{count} caracteres)"
+    template:
+      body: "Hubo problemas con los siguientes campos:"
   flash:
     actions:
       create:
@@ -312,7 +314,7 @@ es:
     update:
       flash:
         not_successfull: "¡Ay!, su entrada ha sido o incorrecta o incompleta."
-        successfull: "Gracias, su sumisión ha sido guardada con éxito y estará en línea en breve. "
+        successfull: "Gracias, su envío ha sido guardado con éxito y estará en línea en breve. "
   number:
     currency:
       format:
@@ -424,7 +426,7 @@ es:
         zoo: Zoo
       misc:
         place_of_worship: "Zona religiosa"
-        toilets: Aseos
+        toilets: Sanitarios
       money_post:
         atm: ATM
         bank: Banco
@@ -571,3 +573,7 @@ es:
       limited_accessible: "<em>Parcial :</em> Acceso no superior a 7 cm; circulaciones accesibles a los recintos más importantes para usuarios en silla de ruedas"
       not_accessible: "<em>Inaccesible :</em> Desnivel en acceso superior a 7 cm o escalera en la entrada, las localidades más importantes no tienen acceso para usuarios en silla de ruedas."
       unknown_accessible: "<em>Desconocido:</em> Ayuda y marcar los lugares!"
+  will_paginate:
+    page_entries_info:
+      single_page_html:
+        one: "Mostrando <b>1</b> %{model}"
