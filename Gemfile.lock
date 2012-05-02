@@ -263,6 +263,8 @@ GEM
       ffi (= 1.0.9)
       json_pure
       rubyzip
+    shoulda-matchers (1.1.0)
+      activesupport (>= 3.0.0)
     spatial_adapter (1.3.1)
       GeoRuby (>= 1.3.0)
       activerecord (>= 2.2.2, < 3.1.0)
@@ -348,6 +350,7 @@ DEPENDENCIES
   ruby-debug
   ruport
   sass
+  shoulda-matchers
   spatial_adapter
   spork
   unicorn

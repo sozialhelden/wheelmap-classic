@@ -12,6 +12,9 @@ class Poi < ActiveRecord::Base
   # osm_id ist der Primaerschluessel
   set_primary_key :osm_id
 
+  has_many :provided_pois
+  has_many :providers, :through => :provided_pois
+
   DELEGATED_ADDR_ATTRIBUTES = [:street, :housenumber, :postcode, :city].map(&:to_s).freeze
 
 

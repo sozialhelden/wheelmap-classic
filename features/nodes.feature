@@ -4,12 +4,12 @@ Feature: Find, update and create nodes via API
   I want to be able to request certain nodes
 
   Background:
-    Given 5 valid pois exist
+    Given a provider "stiftung" exists with name: "Stiftung Gesundheit"
+    And 1 valid pois exist
+    And the following provided_pois exist
+      | wheelchair | url                         | poi      | provider            |
+      | yes        | http://www.arzt-auskunft.de | last poi | provider "stiftung" |
 
-  Scenario: retrieve all nodes as JSON
-    And I send and accept JSON
-    When I send a GET request for "/nodes?bbox=13.39,51.9,13.41,52.1"
-    Then the response code should be "200"
 
   Scenario: I want to see a decent title on the poi detail page
     When I am on the last poi's page
@@ -31,3 +31,7 @@ Feature: Find, update and create nodes via API
     When I follow "Du arbeitest hier?"
     Then I should be on the last poi's claim page
 
+  Scenario: I want to see a link to provider's detail page
+    When I am on the last poi's page
+    Then I should see "Stiftung Gesundheit"
+    And I should see "http://www.arzt-auskunft.de"
