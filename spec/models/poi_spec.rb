@@ -8,6 +8,8 @@ describe Poi do
   end
 
   describe 'associations' do
+    it { should have_many :provided_pois }
+    it { should have_many(:providers).through(:provided_pois) }
   end
 
   describe 'validations' do

@@ -64,6 +64,7 @@ group :test do
   gem 'pickle'
   gem 'launchy'
   gem 'database_cleaner'
+  gem 'shoulda-matchers'
 end
 
 group :deployment do

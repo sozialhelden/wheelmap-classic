@@ -59,9 +59,17 @@
 
   =tag_line(@node,'phone')
   =tag_line(@node,'centralkey')
+  - unless @node.provided_pois.empty?
+    - @node.provided_pois.each do |p|
+      %tr
+        %th= p.provider.name
+        %td= link_to(p.url, p.url) if p.url.present?
+
 
 =javascript_include_tag"http://maps.google.com/maps/api/js?sensor=false"
 .clear
+
+
 %hr
 %h2 Google Streetview:
 
