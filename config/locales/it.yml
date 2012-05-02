@@ -5,7 +5,7 @@ it:
       full_messages:
         format: "%{attribute}%{message}"
       messages:
-        accepted: "deve essere accettata"
+        accepted: "deve essere accettato"
         blank: "non può essere lasciato in bianco"
         confirmation: "non coincide con la conferma"
         empty: "non può essere vuoto"
@@ -31,10 +31,10 @@ it:
           password: Password
           remember_me: "Resta collegato"
       template:
-        body: "Per favore ricontrolla i seguenti campi:"
+        body: "Sono stati riscontrati dei problemi nei seguenti campi:"
         header:
-          one: "Non posso salvare questo %{model}: 1 errore"
-          other: "Non posso salvare questo %{model}: %{count} errori."
+          one: "Un errore ha impedito il salvataggio di questo %{model}"
+          other: "Non può essere salvato questo %{model}: %{count} errori."
   application:
     require_no_user:
       notice: "Sei già collegato ..."
@@ -42,17 +42,17 @@ it:
       notice: "Devi collegarti per vedere questa pagina."
   breadcrumbs:
     node:
-      create: "Aggiungi luogo"
+      create: "Aggiungi un nuovo luogo"
       edit: "Modifica luogo"
     root: wheelmap
   common:
     close: chiudi
   devise:
     confirmations:
-      confirmed: "Il tuo account è stato confermato con successo. Sei ormai collegato."
-      link: "Non hai ricevuto gli istruzioni per confermare lo account?"
-      send_instructions: "Fra qualche minuti riceverai una email con le istruzioni per confermare il nuovo account."
-      send_paranoid_instructions: "Se il tuo account esiste, riceverai una e-mail con le istruzioni per confermare in pochi minuti il tuo account."
+      confirmed: "Il tuo account è stato confermato con successo. Ora sei collegato."
+      link: "Non hai ricevuto le istruzioni per confermare il tuo account?"
+      send_instructions: "Riceverai una e-mail contenente le istruzioni su come confermare in pochi minuti il tuo account."
+      send_paranoid_instructions: "Se il tuo account esiste, riceverai una e-mail contenente le istruzioni per confermare in pochi minuti il tuo account."
     destroy:
       confirm: "Sei sicuro?"
       headline: "Cancella account"
@@ -60,110 +60,119 @@ it:
     edit:
       form:
         labels:
-          current_password: "Password attuale <i>(ne abbiamo bisogno per confermare la tua modifica)</i> "
-          email: Email
-          password: "Password <i>(lasciare vuoto se non vuoi cambiarlo)</i> "
+          current_password: "Password attuale <i>(è necessaria per confermare le tue modifiche)</i> "
+          email: E-mail
+          password: "Password <i>(lascia vuoto se non vuoi cambiarlo)</i> "
           password_confirmation: "Ripeti la password"
-        submit: "Registra modifiche"
-      headline: "Gestione account"
+        submit: "Salva modifiche"
+      headline: "Modifica account"
     failure:
+      already_authenticated: "Ti sei già registrato."
       inactive: "Il tuo account non è ancora attivo."
-      invalid: "Email o password invalido."
-      invalid_token: "Token di autenticazione invalido."
+      invalid: "Indirizzo e-mail o password non validi."
+      invalid_token: "Token di autenticazione non valido."
       locked: "Il tuo account è bloccato."
       timeout: "La tua sessione è scaduta, per favore collegati nuovamente per continuare."
-      unauthenticated: "Devi registrarti o collegarti prima di continuare."
-      unconfirmed: "Devi confermare il tuo account prima di procedere."
+      unauthenticated: "Per continuare devi prima registrarti o collegarti."
+      unconfirmed: "Per procedere devi prima confermare il tuo account."
     mailer:
       confirmation_instructions:
-        landing_page: "Clicca per favore sul link che ti abbiamo appena inviato per e-mail al tuo indirizzo di posta elettronica. Se non dovessi ricevere la nostra e-mail, per prima cosa controlla per favore che non sia stata nascosta nella cartella di spam. Se non è presente neanche in quest'ultimo caso, ritorna alla pagina di iscrizione e riprova."
-        subject: "Istruzioni per la confermazione"
+        landing_page: "Clicca per favore sul link che ti abbiamo appena inviato per e-mail al tuo indirizzo. Se non dovessi ricevere la nostra e-mail, controlla prima di tutto che non sia archiviata nella cartella dello spam. Se non è presente neanche qui, ritorna alla pagina di iscrizione e riprova."
+        subject: "Continua a seguire le istruzioni per attivare il tuo account"
       reset_password_instructions:
         subject: "Istruzioni per reimpostare la password"
       unlock_instructions:
         subject: "Istruzioni per sbloccare"
     mandatory: "* campo obbligatorio"
     omniauth_callbacks:
-      failure: "Non posso autorizzarti di %{kind} perché \"%{reason}\"."
-      success: "Autorizzato di %{kind}."
+      failure: "Non posso autorizzarti con %{kind} perché \"%{reason}\"."
+      success: "Collegato con successo con %{kind}."
     password_recovery:
       form:
         labels:
-          email: Email
+          email: E-mail
         submit: "Reimposta la password"
       headline: "Dimenticato la password?"
     password_reset:
       email:
-        comment: "Se non desidera cambiare la password, ignora questa email<br/>La tua password non cambierà a meno che clicchi questo link."
+        comment: "Se non hai chiesto di cambiare la password, ignora questa e-mail.<br/>La tua password non cambierà a meno che non clicchi sul link sopra e non registri una nuova password."
         headline: "Benvenuto %{email} "
-        link: "Cambia password"
-        text: "Qualcuno ha richiesto di cambiare la tua password. Puoi farlo cliccando questo link:"
+        link: "Cambia la mia password"
+        text: "Qualcuno ha richiesto di cambiare la tua password. Se sei stato tu, clicca su questo link - oppure ignoralo!"
       form:
         labels:
-          password: "Nuovo password"
+          password: "Nuova password"
           password_confirmation: "Ripeti la password"
         submit: "Reimposta la password"
       headline: "Reimposta la password"
     passwords:
       link: "Dimenticato la password?"
-      send_instructions: "Fra qualche minuti, riceverai una email con le istruzioni per reimpostare la password."
-      updated: "Il tuo password è stato cambiato con successo. Sei ormai collegato."
+      send_instructions: "Riceverai una e-mail contente le istruzioni su come reimpostare in pochi minuti la tua password."
+      send_paranoid_instructions: "Se il tuo account esiste, riceverai una e-mail contenente le istruzioni su come modificare in pochi minuti la tua password"
+      updated: "La tua password è stata modificata con successo. Ora sei collegato."
+      updated_not_active: "La tua password è stata modificata con successo"
     registrations:
       destroyed: "Ciao! Il tuo account è stato cancellato. Speriamo di rivederti presto."
-      inactive_signed_up: "Sei ormai registrato. Comunque, non possiamo farti accedere perché il tuo account è %{reason}."
-      link: Registra
+      inactive_signed_up: "Sei stato registrato con successo, ma non possiamo farti accedere perché il tuo account è %{reason}."
+      link: Registrati
       reasons:
-        inactive: inattivo
-      signed_up: "Sei ormai registrato. Se attivo, una confermazione è stato mandato al tuo indirizzo email."
+        inactive: "non attivo"
+        locked: bloccato
+        unconfirmed: "non confermato"
+      signed_up: "Sei stato registrato con successo. Verrà inviata al tuo indirizzo e-mail una e-mail di conferma."
       updated: "Il tuo account è stato aggiornato."
     sessions:
       inactive: "Il tuo account non è ancora attivo."
       invalid: "Indirizzo e-mail o password non validi."
-      invalid_token: "Token di autenticazione invalido."
-      link: Iscriviti
+      invalid_token: "Token di autenticazione non valido."
+      link: Registrati
       locked: "Il tuo account è bloccato."
       signed_in: "Collegato con successo."
-      signed_out: "Scollegato con successo."
-      timeout: "La tua sessione è scaduta, collegarti da nuovo per continuare."
-      unauthenticated: "Devi registrarti o collegarti per continuare."
-      unconfirmed: "Devi confermare il tuo account prima di procedere."
+      signed_out: "Sei stato scollegato con successo."
+      timeout: "La tua sessione è scaduta, per favore collegati di nuovo per continuare."
+      unauthenticated: "Per continuare devi prima registrarti o collegarti."
+      unconfirmed: "Per procedere devi prima confermare il tuo account."
     sign_in:
       form:
         labels:
-          email: Email
+          email: E-mail
           password: Password
-          remember_me: "resta collegato?"
-        submit: accedi
+          remember_me: "Resti collegato?"
+        submit: Accedi
       headline: Accedi
     sign_out:
       headline: Esci
     sign_up:
       email:
         confirm_my_account: "Conferma il tuo account"
+        please_confirm: "Puoi confermare il tuo account cliccando sul seguente link:"
+        welcome: "Benvenuto %{email}!"
       form:
         labels:
-          email: Email
+          email: E-mail
           password: Password
           password_confirmation: "Ripeti la password"
-          wants_newsletter: "Si, tenetemi aggiornato su wheelmap. (Ma non più di una volta per mese.) "
-        submit: Registrazione
-      headline: Registrazione
+          wants_newsletter: "Sì, tenetemi aggiornato su wheelmap - ma non più di una volta al mese. "
+        submit: Registrati
+      headline: Registrati
     unlocks:
       link: "No hai ricevuto le istruzioni per sbloccare?"
-      send_instructions: "Fra qualche minuti, riceverai una email con le istruzioni per sbloccare."
-      unlocked: "Il tuo account è stato sbloccato con successo. Sei ormai collegato."
+      send_instructions: "Riceverai una e-mail contente le istruzioni su come sbloccare in pochi minuti il tuo account."
+      send_paranoid_instructions: "Se il tuo account esiste, riceverai una e-mail contenente le istruzioni su come sbloccare in pochi minuti il tuo account"
+      unlocked: "Il tuo account è stato sbloccato con successo. Ora sei collegato."
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "deve essere accettata"
+      accepted: "devi essere accettato"
       already_confirmed: "è già confermato, prova ad accedere."
       blank: "non può essere lasciato in bianco"
       confirmation: "non coincide con la conferma"
-      empty: "non può essere vuoto"
+      empty: "non può essere lasciato in bianco"
       equal_to: "deve essere uguale a %{count}"
       even: "deve essere pari"
       exclusion: "è riservato"
+      expired: "scaduto, per favore richiedine un altro"
       greater_than: "deve essere superiore a %{count}"
       greater_than_or_equal_to: "deve essere superiore o uguale a %{count}"
       inclusion: "non è incluso nella lista"
@@ -175,8 +184,8 @@ it:
       not_found: "non trovato"
       not_locked: "non era bloccato"
       not_saved:
-        one: "1 error prohibited this %{resource} from being saved:"
-        other: "%{count} errors prohibited this %{resource} from being saved:"
+        one: "Un errore ha impedito il salvataggio di %{resource}:"
+        other: "%{count} errori hanno impedito di salvare: %{resource}"
       odd: "deve essere dispari"
       taken: "è già in uso"
       too_long: "è troppo lungo (il massimo %{count} caratteri)"
@@ -185,38 +194,39 @@ it:
     template:
       body: "Sono stati riscontrati dei problemi nei seguenti campi:"
       header:
-        one: "Non posso salvare questo %{model}: 1 errore"
-        other: "Non posso salvare questo %{model}: %{count} errori."
+        one: "Non può essere salvato questo %{model}: %{count} errori"
+        other: "%{count} errori hanno impedito il salvataggio %{model}"
   flash:
     actions:
       create:
         notice: "%{resource_name} è stato creato."
       destroy:
-        alert: "non posso cancellare %{resource_name}."
-        notice: "%{resource_name} è stato cancellato"
+        alert: "%{resource_name} non può essere cancellato."
+        notice: "%{resource_name} è stato cancellato con successo"
       update:
         notice: "%{resource_name} è stato aggiornato."
   form:
-    show_fully_accessible_places: "accessibile in sedia a rotelle"
+    show_fully_accessible_places: "Accessibile in sedia a rotelle"
     show_limited_accessible_places: "parzialmente accessibile in sedia a rotelle"
     show_places_without_status: "stato sconosciuto"
     show_unaccessible_places: "non accessibile in sedia a rotelle"
   formtastic:
     hints:
-      lat: "Sposta l'indicatore nella posizione coretta"
-      osm_username: "Non ancora un membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Crea un accountsu Openstreetmap</a> "
+      lat: "Sposta l'indicatore sulla mappa nella posizione coretta"
+      osm_username: "Non sei ancora un membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Crea ora un account su Openstreetmap</a> "
       password: "(lascia vuoto se non vuoi cambiarlo)"
       phone: "Per esempio: +39 050 12345-78"
       website: "Per esempio: http://www.example.com"
     labels:
       category: "Categoria:"
+      centralkey: "Tasto centrale:"
       city: "Città:"
       create: "Crea luogo"
-      email: Email
-      housenumber: "numero:"
+      email: E-mail
+      housenumber: "Numero:"
       lat: Latitudine
       lon: Longitudine
-      name: Nome
+      name: "Nome:"
       osm_password: "Password OSM"
       osm_username: "Nome del account OSM"
       password: Password
@@ -224,41 +234,43 @@ it:
       phone: "Telefono:"
       postcode: "CAP:"
       reset: Azzera
-      save: Registra
+      save: Salva
       street: "Via:"
       type: "Tipo:"
       website: "Sito Web:"
       wheelchair: "Accessibilità per sedie a rotelle?"
-      wheelchair_description: "Commento sulla accessibilità:"
+      wheelchair_description: "Commento sull'accessibilità:"
     titles:
-      basic: "Dati di base:"
+      basic: "Dati fondamentali:"
       optional: "Più dati <span class=\"addition\">(tutti campi sono opzionali)</span> "
   global:
-    form_validation_error: "Vedi gli errori sotto."
+    form_validation_error: "Vedi gli errori sotto"
   header:
     meta:
       description: "Trova luoghi accessibili in sedia a rotelle - wheelmap.org"
       homepage: "Home page"
-      keywords: "sedie a rotelle accessibilita luoghi ricerca"
+      keywords: "Ricerca luoghi accessibili in sedia a rotelle"
       search: Ricerca
     navigation:
       blog: Blog
       feedback: Feedback
-      home: Start
+      home: Inizia
       how_to_add_a_place: "Come faccio ad aggiungere luoghi?"
       imprint: "Informazione legale"
       logged_in_as: "Collegato come:"
-      login: Collega
+      login: Accedi
       logout: Esci
-      press: Giornalismo
+      newsletter: Newsletter
+      press: "Articoli di giornale"
       suggestions: Suggerimenti
       what_is_barrier_free: "Cosa significa \"accessibile in sedia a rotelle\"?"
-      what_is_wheelmap: "Cos'è wheelmap?"
+      what_is_wheelmap: "Che cos'è wheelmap?"
     searchbar:
       add_place: "Aggiungi un altro luogo"
       find: ricerca
+      label: ~
       placeholder: "p.e. Sunset Boulevard L.A. or Brandenburg Gate Berlin"
-      title_add_place: "Aggiungi un luogo a questo posizione!"
+      title_add_place: "Aggiungi ora un luogo a questo posizione!"
     tagline: "Wheelmap logo"
     title: "Wheelmap - trova luoghi accessibili in sedia a rotelle"
   helpers:
@@ -271,8 +283,8 @@ it:
   home:
     index:
       filter:
-        category: "Categoria:"
-        wheelchair: "Accessibile in sedia a rotelle? (Che cosa significa?)"
+        category: "Scegli categoria:"
+        wheelchair: "Accessibile in sedia a rotelle?"
       ie:
         action:
           ignore: Ignora
@@ -294,6 +306,20 @@ it:
           : "accessibile in sedia a rotelle"
         help: "Accessibile in sedia a rotelle? (Aiuto)"
         more: "più ..."
+  how?: Come?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Luoghi parzialmente accessibili in sedia a rotelle %{type} in %{city} (%{count})"
+        ? "no"
+        :
+          headline: "Non accessibili in sedia a rotelle %{type} in %{city} (%{count})"
+        unknown:
+          headline: "%{type} in %{city} con stato di accessibilità in sedia a rotelle sconosciuto (%{count})"
+        ? "yes"
+        :
+          headline: "Accessibili in sedia a rotelle %{type} in %{city} (%{count})\n"
   layouts:
     application:
       banner:
@@ -301,27 +327,27 @@ it:
   node:
     address:
       city: "%{city} %{postcode} "
-      street: "%{housenumber} %{street} "
+      street: "%{street} %{housenumber}"
     tags:
       phone: "Telefono:"
       website: "Sito Web:"
   nodes:
     create:
       flash:
-        not_successfull: "Scusa, il tuo input era scorretto o incompleto"
-        successfull: "Grazie, i tuoi dati sono stati salvati con successo e saranno online fra poco."
+        not_successfull: "Oops, il tuo input era scorretto o incompleto"
+        successfull: "Grazie, i tuoi dati sono stati salvati con successo e saranno pubblicati fra poco."
     edit:
       header:
         title: "Modifica luogo: %{node} | wheelmap.org "
       link:
         large_map: "&laquo; Annulla "
     errors:
-      default: "Qualcosa è andato storto. Ma siamo stati informati."
+      default: "Oops, qualcosa è andato storto.. Ma ne siamo al corrente."
       not_authorized: "Scusa, autenticazione fallita"
-      not_available: "Scusa, la pagina è temporaneamente indisponibile"
+      not_available: "Scusa, la pagina è momentaneamente non disponibile"
       not_existent: "Scusa, ma questo luogo non è più disponibile"
-      not_found: "Scusa, non ho trovato la pagina"
-      param_missing: "Fornisci una parola di ricerca"
+      not_found: "Scusa, pagina non trovata."
+      param_missing: "Per favore inserisci una parola di ricerca"
     flash:
       authorize_wheelmap: "Ti serve un account su OpenStreetMap per modificare i dati."
     new:
@@ -333,18 +359,21 @@ it:
       link:
         claim: "Lavori qui?"
         edit_node: "Modifica luogo"
-        report_bug: "Report a problem"
+        report_bug: "Segnala un problema"
     show:
       header:
         title: "Lougo: %{node} | wheelmap.org "
       link:
+        back: Indietro
         large_map: Allarga
+        listing: "Tutti i luoghi '%{type}' in %{city} "
+      show-in-osm: OpenStreetMap
     update:
       flash:
-        not_successfull: "Scusa, il tuo input era scorretto o incompleto"
-        successfull: "Grazie, i tuoi dati sono stati salvati con successo e saranno online fra poco."
+        not_successfull: "Oops, il tuo input era scorretto o incompleto"
+        successfull: "Grazie, i tuoi dati sono stati salvati con successo e saranno pubblicati fra poco."
     update_wheelchair:
-      successfull: "Lo stato di \"%{name}\" è stato cambiato in \"%{status} accessibile in sedia a rotelle\" e sarà pubblicato fra un po'."
+      successfull: "Lo stato di \"%{name}\" è stato cambiato in \"%{status} accessibile in sedia a rotelle\" e sarà pubblicato fra poco."
   number:
     currency:
       format:
@@ -370,29 +399,34 @@ it:
           quadrillion: Quadrilione
           thousand: Mille
           trillion: Trilione
+          unit: ~
       format:
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
+        delimiter: ~
+        precision: 3
+        significant: vero
+        strip_insignificant_zeros: vero
       storage_units:
         format: "%n %u"
         units:
           byte:
             one: Byte
-            other: Byte
+            other: Bytes
           gb: Gb
           kb: Kb
           mb: Mb
           tb: Tb
+    percentage:
+      format:
+        delimiter: ~
     precision:
       format:
         delimiter: ~
   oauth:
     application:
       connect:
-        headline: "Devi collegare il tuo account con il tuo account di \"open street map\" prima di creare o modificare luoghi su wheelmap.org"
+        headline: "Per creare o modificare luoghi su wheelmap.org, devi prima collegare il tuo account con quello di \"open street map\"."
     callback:
-      notice: "Il tuo account è stato collegato al account %{user} su OpenStreetMap."
+      notice: "Il tuo account di wheelmap è stato collegato all'account %{user} di OpenStreetMap."
   or: o
   place:
     one: "%{count} luogo"
@@ -403,10 +437,11 @@ it:
       education: Educazione
       food: Alimenti
       government: Governo
+      health: Salute
       leisure: "Tempo Libero"
-      misc: Miscellanea
-      money_post: "Banca e Posta"
-      public_transfer: "mezzi Pubblici"
+      misc: Altro
+      money_post: Bancoposta
+      public_transfer: "Mezzi pubblici"
       shopping: Shopping
       sport: Sport
       tourism: Turismo
@@ -418,12 +453,12 @@ it:
         camp_site: Campeggio
         caravan_site: "Area caravan e camper"
         chalet: "Casetta turistica"
-        guest_house: "Guest House, Agriturismo"
+        guest_house: "Affittacamere, Pensione"
         hostel: Ostello
         hotel: Albergo
         motel: Motel
       education:
-        college: Collegio
+        college: Università
         kindergarten: "Scuola d'infanzia"
         library: Biblioteca
         museum: Museo
@@ -440,28 +475,38 @@ it:
       government:
         courthouse: Tribunale
         embassy: Ambasciata
+        police: Polizia
         public_building: "Edificio pubblico"
         townhall: Municipio
       health:
         doctors: Medici
+        hearing_aids: "Apparecchio per l'udito"
         hospital: Ospedale
+        medical_supply: "Rifornimento sanitario"
         pharmacy: Farmacia
+        social_facility: "Servizi sociali"
         veterinary: "Ambulatorio Veterinario"
       leisure:
         arena: Arena
+        brothel: Casinò
         cinema: Cinema
-        gallery: Galleria
+        community_center: "Centro Comunitario"
+        gallery: "Galleria d'arte"
         nightclub: "Night club"
+        playground: "Parco giochi"
         sauna: Sauna
+        stripclub: "Strip club"
         theatre: Teatro
         zoo: Zoo
       misc:
+        company: "Compagnia (Officio)\n"
+        lawyer: Avvocato
         place_of_worship: "Luogo di culto"
         toilets: "Bagno pubblico"
       money_post:
         atm: Bancomat
-        bank: Banco
-        bureau_de_change: "Cambia valute"
+        bank: Banca
+        bureau_de_change: "Ufficio cambia valute"
         post_box: "Cassetta postale"
         post_office: "Ufficio postale"
       public_transfer:
@@ -472,16 +517,16 @@ it:
         bus_station: "Stazione degli autobus"
         bus_stop: "Fermata dell'autobus"
         cable_car: Funivia
-        car_rental: "Noleggio auto"
-        car_sharing: "Auto condivisa"
+        car_rental: " Autonoleggio "
+        car_sharing: "Parcheggio auto condivise"
         chair_lift: Seggiovia
         ferry: Traghetto
         ferry_terminal: "Terminal traghetti"
-        fuel: "Stazione di rifornimento"
+        fuel: "Distributore di benzina"
         halt: "Stazione non presidiata"
-        light_rail: "Metropolitana di superficie"
+        light_rail: Ferrovia
         parking: Parcheggio
-        parking_aisle: Parcheggio
+        parking_aisle: "Corsia di sosta"
         platform: Binario
         station: Metropolitana
         subway_entrance: "Ingresso della Metropolitana"
@@ -491,16 +536,19 @@ it:
         alcohol: "Bevande alcoliche"
         bakery: Panetteria
         beverages: Bevande
-        bicycle: Biciclette
+        bicycle: "Negozio di biciclette"
         books: Libreria
         butcher: Macelleria
+        car_repair: Autofficina
+        car_shop: Autoconcessionaria
+        chemist: Farmacia
         clothes: Abbigliamento
-        computer: Computer
+        computer: "Negozio di computers"
         convenience: Minimarket
         department_store: "Grande magazzino"
-        doityourself: Fai-da-te
-        dry_cleaning: Lavasecco
-        electronics: "Elettronica di consumo"
+        doityourself: "Fai da te"
+        dry_cleaning: Lavanderia
+        electronics: "Negozio d'elettronica"
         florist: Fiorista
         furniture: Arredamento
         garden_centre: "Centro per il giardinaggio"
@@ -510,8 +558,13 @@ it:
         laundry: Lavanderia
         mall: "Centro commerciale"
         optician: Ottico
+        photo: Fotografo
+        second_hand: ~
         shoes: Calzature
+        sports: Sports
+        stationery: Cartoleria
         supermarket: Supermercato
+        video: "Negozio di video noleggio"
       sport:
         sports_centre: "Centro sportivo"
         stadium: Stadio
@@ -527,7 +580,7 @@ it:
         beacon: Faro
         castle: Castello
         cave_entrance: "Entrata di grotta"
-        information: "Informazioni per turisti e visitatori"
+        information: "Ufficio informazioni turistiche"
         memorial: Memoriale
         theme_park: "Parco divertimenti"
         tower: Torre
@@ -539,21 +592,29 @@ it:
       application:
         oauth:
           connected: "Stato: Collegato"
-          grant: "Collega adesso"
-          not_connected: "Stato: Non connesso"
+          grant: "Collegati adesso"
+          not_connected: "Stato: Non collegato"
           revoke: Scollegati
-      headline: "Modifica profilo"
+      headline: "Modifica il tuo profilo"
   search:
     index:
       search:
-        for: "Cerco \"%{q}\" "
+        for: "Cerca \"%{q}\" "
         not_found: "Nessun luogo trovato!"
+  splash:
+    countline: "%{count} dei luoghi sono già stati contrassegnati"
+    headline: "Chiunque può aggiungere luoghi accessibili in sedia a rotelle!"
+    start: Inizia
+    step1: "Clicca su un luogo che conosci"
+    step2: "Selezionalo e clicca su salva"
+    step3: "Ed è fatta! Non è necessaria la registrazione"
+    what_is_wheelmap: "Che cos'è wheelmap?"
   statistics: Statistiche
   support:
     array:
-      last_word_connector: ", e "
+      last_word_connector: "e "
       sentence_connector: and
-      skip_last_comma: true
+      skip_last_comma: vero
       two_words_connector: " e "
       words_connector: ", "
     select:
@@ -568,16 +629,16 @@ it:
   user_sessions:
     create:
       activation:
-        notice: "Il tuo account è stato attivato!"
+        notice: "Il tuo account è ora attivo!"
       error:
-        notice: "Email e password non corrispondono"
+        notice: "E-mail e password non corrispondono"
       notice: "Sei dentro!"
     destroy:
       notice: "Ciao, ritorna presto!"
     new:
       email: "Indirizzo e-mail"
       login: Entra
-      login_with_twitter: "Collegamento con Twitter"
+      login_with_twitter: "Collegati con Twitter"
       password: Password
       remember_me: "Resta collegato"
   wheelchairstatus:
@@ -588,6 +649,11 @@ it:
     ? "yes"
     : "completamente accessibile in sedia a rotelle"
   wheelmap:
+    footer:
+      a_project_of: "Un progetto di"
+      based_on: "Basato su"
+      become_a_supporter: "Diventa un supporter"
+      main_supporter: "Il principale supporter"
     itunes:
       alt: "Logo AppStore"
       title: "Scarica l'app per il tuo iPhone!"
@@ -595,7 +661,22 @@ it:
       alt: "Logo Wheelmap - trova luoghi accessibili in sedia a rotelle"
       title: "Wheelmap - trova luoghi accessibili in sedia a rotelle"
     what_is:
-      fully_accessible: "L'ingresso non ha un gradino più alto di 7cm; tutte le località (senza eccezione) sono raggiungibile in sedia a rotelle; un bagno per gli handicappati è disponibile"
-      limited_accessible: "L'ingresso non ha un gradino più alto di 7cm; le località più importante sono raggiungibile in sedia a rotelle"
-      not_accessible: "L'ingresso ha un gradino più alto di 7cm o le località più importante non sono raggiungibile in sedia a rotelle"
-      unknown_accessible: "Stato della accessibilità in sedia a rotelle sconosciuta"
+      fully_accessible: "<em>Sì:</em> L'ingresso non ha gradini; tutte le sale (senza eccezione) sono raggiungibili in sedia a rotelle; un bagno per disabili è disponibile"
+      limited_accessible: "<em>Parzialmente accessibile in sedia a rotelle:</em> L'ingresso non ha un gradino più alto di 7 cm; le sale prinicipali non hanno scalini, il bagno non è accessibile in sedia a rotelle"
+      not_accessible: "<em>No:</em> L'ingresso ha diversi scalini o uno scalino più alto di 7 cm e le sale non sono raggiungibili in sedia a rotelle"
+      unknown_accessible: "<em>Stato della accessibilità in sedia a rotelle sconosciuto:</em> Aiutaci contrassegnando i luoghi!"
+  will_paginate:
+    next_label: "Successivo &#8594;"
+    page_entries_info:
+      multi_page: "Visualizzazione %{model} %{from} - %{to} di %{count} in totale"
+      multi_page_html: "Visualizzazione %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> di <b>%{count}</b> in totale"
+      single_page:
+        one: "Visualizzazione {count} %{model}"
+        other: "Visualizzazone totale %{count} %{model}"
+        zero: "Nessun %{model} trovato\n"
+      single_page_html:
+        one: "Visualizzazione <b>{count}</b> %{model}"
+        other: "Visualizzazione <b>all&nbsp;%{count}</b> %{model}"
+        zero: "Non %{model} trovato\n"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Precedente\n"
