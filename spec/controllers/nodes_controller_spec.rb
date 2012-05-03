@@ -227,7 +227,7 @@ describe NodesController do
     before(:each) do
       Poi.destroy_all
       NodeType.destroy_all
-      @bar_node = Factory(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
+      @bar_node = Factory(:poi, :tags => {'wheelchair:description' => 'Bitte klingeln.', 'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
       @bar_node.tags['amenity'] = 'bar'
       @bar_node.type = 'bar'
       @bar_node.save!
@@ -247,7 +247,8 @@ describe NodesController do
       node['lon'].should_not be_blank
       node['wheelchair'].should_not be_blank
       node['type'].should_not be_blank
-      node['tags'].should == {}
+      node['tags'].class.should eql Hash
+      node['tags']['wheelchair:description'].should eql "Bitte klingeln."
     end
   end
 
