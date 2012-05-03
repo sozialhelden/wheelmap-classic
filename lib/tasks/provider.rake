@@ -21,21 +21,34 @@ namespace :provider do
     file_name = ENV['file']
     raise "Use bundle exec rake provider:import file=<file_name>" unless file_name
 
+    Rosemary::Api.base_uri 'http://www.openstreetmap.org'
     client    = Rosemary::BasicAuthClient.new('schmerzbereiter', 'password')
     api       = Rosemary::Api.new(client)
-    changeset = Rosemary::Api.create_changeset('Import of Wheelchair data from Arzt-Auskunft')
+    changeset = api.find_or_create_open_changeset(11487230, 'Import of wheelchair data from Arzt Auskunft')
+    puts changeset.id
 
     headers = [:OSM_Id, :OSM_Type, :OSM_Name, :OSM_Kategorie, :OSM_Rollstuhlstatus, :OSM_Latitude, :OSM_Longitude, :OSM_Strasse, :OSM_Hausnummer, :OSM_Stadt, :OSM_Plz, :AA_Direktlink, :AA_Ampel]
     FasterCSV.foreach(file_name, :force_quotes => true, :headers => headers) do |row|
       next if row[:OSM_Id] == 'OSM_Id'
       poi_id = find_poi_id(row)
-      node = api.find_element(row[:OSM_Type], row[:OSM_Id]) rescue nil
-      if node
-        node.wheelchair = row[:AA_Ampel]
-        api.save(node, changeset)
+      begin
+        node = api.find_element(row[:OSM_Type], row[:OSM_Id])
+        if node.wheelchair != row[:AA_Ampel]
+          node.wheelchair = row[:AA_Ampel]
+          api.save(node, changeset)
+        end
+      rescue Rosemary::Unavailable => e
+        puts "Timeout while fetching #{row[:OSM_Type]} #{row[:OSM_Id]}!"
+        redo # If the API times out, we want to try fetch the node again
+      rescue Rosemary::Gone => e
+        puts "#{row[:OSM_Type]} #{row[:OSM_Id]} is gone!"
+      rescue Rosemary::NotFound => e
+        puts "#{row[:OSM_Type]} #{row[:OSM_Id]} not found!"
+      rescue Exception => e
+        puts e.message
       end
     end
-    changeset.close
+    api.close_changeset(changeset)
   end
 
   def find_poi_id(row)
