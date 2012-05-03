@@ -74,15 +74,14 @@ class Poi < ActiveRecord::Base
   end
 
   api_accessible :iphone do |t|
+    t.add :icon, :if => :icon
+    t.add :id
+    t.add :lat
+    t.add :lon
     t.add :name
     t.add :tags_without_blank_values, :as => :tags
-    t.add :lon
-    t.add :lat
     t.add :type
     t.add :wheelchair
-    t.add :url
-    t.add :osm_id, :as => :id
-    t.add :icon, :if => :icon
     t.add :category_for_node, :as => :category
   end
 
