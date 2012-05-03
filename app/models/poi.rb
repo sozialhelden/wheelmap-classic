@@ -73,6 +73,19 @@ class Poi < ActiveRecord::Base
     t.add :version
   end
 
+  api_accessible :iphone do |t|
+    t.add :name
+    t.add :tags_without_blank_values, :as => :tags
+    t.add :lon
+    t.add :lat
+    t.add :type
+    t.add :wheelchair
+    t.add :url
+    t.add :osm_id, :as => :id
+    t.add :icon, :if => :icon
+    t.add :category_for_node, :as => :category
+  end
+
   before_save :set_status
   before_save :set_node_type
   before_save :set_updated_at
@@ -147,6 +160,10 @@ class Poi < ActiveRecord::Base
     end
   end
 
+  def tags_without_blank_values
+    tags.reject{ |k,v| v.blank? }
+  end
+
   def self.create_tag_based_attributes(names, options = {})
     prefix = options[:prefix] || ""
 
@@ -187,6 +204,16 @@ class Poi < ActiveRecord::Base
   def category_id
     self.node_type.category_id
   end
+
+  def category_for_node
+    Amenities.each do |category, groups|
+      groups.each do |group|
+        return category if group.include?(type)
+      end
+    end
+    nil
+  end
+
 
   def name
     tags['name']
