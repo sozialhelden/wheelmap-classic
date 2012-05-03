@@ -666,7 +666,8 @@ $(function () {
   });
 
   $('a.external').click(function() {
-    recordOutboundLink($(this).attr('href'), 'external', 'click')
+    recordOutboundLink($(this).attr('href'), 'external', 'click');
+    return false;
   });
 
   if (getURLParameter('q') != 'null' && $('#search').val() == '') {
