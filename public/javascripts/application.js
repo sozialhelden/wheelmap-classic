@@ -666,7 +666,7 @@ $(function () {
   });
 
   $('a.external').click(function() {
-    recordOutboundLink($(this).attr('href'), 'external', 'click');
+    recordOutboundLink($(this), 'external', 'click');
     return false;
   });
 
