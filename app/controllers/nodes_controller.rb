@@ -94,10 +94,15 @@ class NodesController < ApplicationController
     if @node.valid?
       CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user)
 
-      flash[:track]  = "'Data', 'Create', '#{@node.wheelchair}'"
-      flash[:view] = '/nodes/created'
-      flash[:notice] = I18n.t('nodes.create.flash.successfull')
-      redirect_to root_path(:layers => 'BT', :lat => @node.lat, :lon => @node.lon, :zoom => 18)
+      respond_to do |wants|
+        wants.json{ render :status => 200, :json => {} } # iphone wants 200. nothing more.
+        wants.html do
+          flash[:track]  = "'Data', 'Create', '#{@node.wheelchair}'"
+          flash[:view] = '/nodes/created'
+          flash[:notice] = I18n.t('nodes.create.flash.successfull')
+          redirect_to root_path(:layers => 'BT', :lat => @node.lat, :lon => @node.lon, :zoom => 18)
+        end
+      end
     else
       render :action => :new, :layers => 'BT', :lat => @node.lat, :lon => @node.lon, :zoom => (params[:zoom] || 18)
     end
