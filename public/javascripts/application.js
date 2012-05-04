@@ -665,9 +665,11 @@ $(function () {
     }
   });
 
-  $('a.external').click(function() {
-    recordOutboundLink($(this), 'external', 'click');
-    return false;
+  $('a.external').each(function (index) {
+    $(this).click(function () {
+      recordOutboundLink(this, 'external', 'click');
+      return false;
+    });
   });
 
   if (getURLParameter('q') != 'null' && $('#search').val() == '') {
