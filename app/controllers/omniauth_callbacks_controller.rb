@@ -25,12 +25,19 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   private
 
+  WANTED_PERMISSIONS = %w(allow_read_prefs allow_write_api).freeze
   def check_for_valid_permissions
-    osm_id = request.env['omniauth.auth']['uid']
-    unless osm_id
+    missing = WANTED_PERMISSIONS - granted_permissions
+
+    if missing.any?
       params[:message] = t('devise.omniauth_callbacks.permission_missing')
       failure
     end
+  end
+
+  def granted_permissions
+    granted = request.env['omniauth.auth']['info']['permissions'] rescue nil
+    granted || []
   end
 
   def find_or_create_user
