@@ -157,7 +157,7 @@ GEM
       yui-compressor (>= 0.9.3)
     json (1.6.5)
     json_pure (1.6.1)
-    kgio (2.6.0)
+    kgio (2.7.4)
     launchy (2.0.5)
       addressable (~> 2.2.6)
     libxml-ruby (2.2.2)
@@ -277,10 +277,10 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.31)
-    unicorn (4.1.1)
-      kgio (~> 2.4)
+    unicorn (4.3.1)
+      kgio (~> 2.6)
       rack
-      raindrops (~> 0.6)
+      raindrops (~> 0.7)
     warden (1.1.0)
       rack (>= 1.0)
     webmock (1.7.10)
