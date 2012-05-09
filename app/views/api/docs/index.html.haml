@@ -90,9 +90,9 @@
     %li POST - Creates a new resource. Returns HTTP 202 on success.
     %li PUT - Updates a resource. Returns HTTP 202 on success.
   %p 202 means: The request has been accepted for processing, but the processing has not been completed. The reason why POST and PUT method return the rather unknown status code 202 is, because the update/create operation is not processed immediately. The command will be put on a job queue. Chances are that something goes wrong while execution after the POST/PUT request has been finished.
-  %p Because some toolkits lack support for PUT and DELETE (most notably JavaScript) you can use method overloading to fake an HTTP method. Use a GET or POST call and append the standard method parameter:
+  %p Because some toolkits lack support for PUT and DELETE (most notably JavaScript) you can use method overloading to fake an HTTP method. Use a POST call and append the standard method parameter:
 
-  %pre http://wheelmap.org/api/nodes/:node_id?method=PUT
+  %pre http://wheelmap.org/api/nodes/:node_id?_method=put
 
   %h2 API Responses
   %h3 JSON Data
