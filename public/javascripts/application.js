@@ -606,11 +606,6 @@ function getURLParameter(name) {
   ).replace(/\+/g, " ");
 }
 
-function recordOutboundLink(link, category, action) {
-  _gat._getTrackerByName()._trackEvent(category, action);
-  setTimeout('document.location = "' + link.href + '"', 100);
-}
-
 $(function () {
   $('#feedback_link').click(function () {
     UserVoice.Popin.show(uservoiceOptions);
@@ -663,13 +658,6 @@ $(function () {
     if (FilterSettings.get($(this).attr('rel'), $(this).attr('value')) === true) {
       $(this).attr('checked', false).trigger('change');
     }
-  });
-
-  $('a.external').each(function (index) {
-    $(this).click(function () {
-      recordOutboundLink(this, 'external', 'click');
-      return false;
-    });
   });
 
   if (getURLParameter('q') != 'null' && $('#search').val() == '') {
