@@ -36,7 +36,8 @@ group :default do
   gem 'spatial_adapter'
   gem 'friendly_id', '~>3.3.1' # upgrade to 4.x takes more effort.
   gem 'will_paginate'
-  gem 'omniauth-osm'
+  gem 'omniauth-osm', '~>0.3.0'
+  # gem 'omniauth-osm', :path => '../omniauth-osm'
   gem 'rosemary', '~>0.3.4'
   #gem 'rosemary', :path => '../rosemary'
 end
