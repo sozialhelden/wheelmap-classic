@@ -27,8 +27,10 @@ Devise.setup do |config|
 
   # Tell if authentication through HTTP Basic Auth is enabled. False by default.
   config.http_authenticatable = true
+
+  # use custom osm provider and let him fetch the permissions granted, too:
   config.omniauth :osm, OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret,
-    :client_options => {:site => OpenStreetMapConfig.oauth_site}
+    :fetch_permissions => true, :client_options => {:site => OpenStreetMapConfig.oauth_site }
 
   # Set this to true to use Basic Auth for AJAX requests.  True by default.
   # config.http_authenticatable_on_xhr = true
