@@ -39,6 +39,7 @@ group :default do
   gem 'omniauth-osm'
   gem 'rosemary', '~>0.3.4'
   #gem 'rosemary', :path => '../rosemary'
+  gem 'librato-metrics'
 end
 
 group :test, :development do
