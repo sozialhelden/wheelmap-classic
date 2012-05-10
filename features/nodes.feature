@@ -34,4 +34,4 @@ Feature: Find, update and create nodes via API
   Scenario: I want to see a link to provider's detail page
     When I am on the last poi's page
     Then I should see "Stiftung Gesundheit"
-    And I should see "http://www.arzt-auskunft.de"
+    And I should see "Voll Rollstuhlgerecht"
