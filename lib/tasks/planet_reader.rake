@@ -208,10 +208,11 @@ namespace :osm do
         restore_state_file
       ensure
         remove_lock_file
+        hostname = `hostname`.gsub(/\n/, '')
         queue = Librato::Metrics::Queue.new
-        queue.add :wheelchair_yes     => { :value => Poi.fully_accessible.count   }
-        queue.add :wheelchair_no      => { :value => Poi.not_accessible.count     }
-        queue.add :wheelchair_limited => { :value => Poi.limited_accessible.count }
+        queue.add :wheelchair_yes     => { :source => hostname, :value => Poi.fully_accessible.count   }
+        queue.add :wheelchair_no      => { :source => hostname, :value => Poi.not_accessible.count     }
+        queue.add :wheelchair_limited => { :source => hostname, :value => Poi.limited_accessible.count }
         queue.submit
       end
     end
