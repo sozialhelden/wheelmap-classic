@@ -657,13 +657,16 @@ $(function () {
   $('input.filter').each(function() {
     if (FilterSettings.get($(this).attr('rel'), $(this).attr('value')) === true) {
       $(this).attr('checked', false).trigger('change');
+      $(this)
     }
+  });
+  $('#amenities li label').click(function() {
+  	$(this).toggleClass('active');
   });
 
   if (getURLParameter('q') != 'null' && $('#search').val() == '') {
       $('#search').val(getURLParameter('q'));
   }
-
   $(window).resize(function () {
     var width = $(window).width() - 750;
     if (width > 100) {

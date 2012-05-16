@@ -1147,6 +1147,41 @@ h1.marge, h2.marge, h3.marge, h4.marge, h5.marge, h6.marge, p.marge {
   float: left;
 }
 
+/* line 95, ../../app/stylesheets/basics/_sidebar.sass */
+#amenities input[type=checkbox] {
+  display: none;
+}
+
+/* line 98, ../../app/stylesheets/basics/_sidebar.sass */
+#amenities label {
+  width: auto;
+  background-color: #f69d40;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f8b570), to(#f48511));
+  background-image: -webkit-linear-gradient(top, #f8b570, #f48511);
+  background-image: -moz-linear-gradient(top, #f8b570, #f48511);
+  background-image: -o-linear-gradient(top, #f8b570, #f48511);
+  background-image: -ms-linear-gradient(top, #f8b570, #f48511);
+  background-image: linear-gradient(top, #f8b570, #f48511);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f8b570', EndColorStr='#f48511');
+  padding: 3px 4px 2px 4px;
+  margin: 2px 3px;
+  float: left;
+  font-size: 12px;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #da7710;
+  text-shadow: 0 1px 0 #f8b46e;
+  color: #703a1b;
+}
+/* line 120, ../../app/stylesheets/basics/_sidebar.sass */
+#amenities label.active {
+  background: #f0f0f0;
+  color: #999999;
+  border: 1px solid #dddddd;
+  text-shadow: none;
+}
+
 /* line 2, ../../app/stylesheets/basics/_api.sass */
 #api_docs table {
   width: 100%;
@@ -1560,9 +1595,8 @@ tspan {
 /* line 6, ../../app/stylesheets/partials/map/_amenities.sass */
 #amenities li {
   float: left;
-  min-width: 50%;
 }
-/* line 10, ../../app/stylesheets/partials/map/_amenities.sass */
+/* line 9, ../../app/stylesheets/partials/map/_amenities.sass */
 #amenities h4 {
   color: #363931;
   font-size: 11px;
@@ -1679,7 +1713,7 @@ tspan {
 
 /* line 1, ../../app/stylesheets/partials/map/_spinner.sass */
 #spinner {
-  background: url('/images/spinner.gif?1294913923') no-repeat center;
+  background: url('/images/spinner.gif?1336728631') no-repeat center;
   background-color: #6b7b55;
   background-color: rgba(107, 123, 85, 0.8);
   left: 50%;

@@ -91,3 +91,37 @@
   li
     width: 40%
     float: left
+    
+#amenities input[type=checkbox]
+  display: none
+  
+#amenities label
+  width: auto
+  background-color: #f69d40
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f8b570), to(#f48511))
+  background-image: -webkit-linear-gradient(top, #f8b570, #f48511)
+  background-image: -moz-linear-gradient(top, #f8b570, #f48511)
+  background-image: -o-linear-gradient(top, #f8b570, #f48511)
+  background-image: -ms-linear-gradient(top, #f8b570, #f48511)
+  background-image: linear-gradient(top, #f8b570, #f48511)
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f8b570', EndColorStr='#f48511')
+  padding: 3px 4px 2px 4px
+  margin: 2px 3px
+  float: left
+  
+  font-size: 12px
+  border-radius: 3px
+  font-weight: bold
+  cursor: pointer
+  border: 1px solid #da7710
+  text-shadow: 0 1px 0 #F8B46E
+  color: #703A1B
+  
+  &.active
+    background: #F0F0F0
+    color: #999
+    border: 1px solid #DDD
+    text-shadow: none
+
+#amenities label:active
+  box-shadow:inset 0 4px 0 #333
