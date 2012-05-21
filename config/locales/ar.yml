@@ -1,0 +1,171 @@
+---
+ar:
+  activerecord:
+    errors:
+      messages:
+        accepted: "يجب أن تقبل"
+        blank: "فارغ، يرجى ملء الحقل"
+        confirmation: "لا تتوافق مع التأكيد"
+        empty: "فارغ، يرجى ملء الحقل"
+        equal_to: "يجب أن يساوي %{count}"
+        even: "يجب أن يكون زوجي"
+        exclusion: محجوز
+        greater_than: "يجب أن يكون أكبر من %{count}"
+        greater_than_or_equal_to: "يجب أن يكون أكبر من أو يساوي %{count}"
+        inclusion: "ليس خيارا مقبولا"
+        invalid: "غير معرف أو محدد"
+        less_than: "يجب أن يكون أصغر من %{count}"
+        less_than_or_equal_to: "يجب أن يكون أصغر من أو يساوي %{count}"
+        not_a_number: "ليس رقما"
+        odd: "يجب أن يكون فردي"
+        record_invalid: "%{errors} فشل التحقق من صحة"
+        taken: "غير متوفر (مستخدم)"
+        too_long: "أطول من اللازم (الحد الأقصى هو %{count})"
+        too_short: "أقصر من اللازم (الحد الأدنى هو %{count})"
+        wrong_length: "بطول غير مناسب (يجب أن يكون %{count})"
+      template:
+        body: "يرجى التحقق من الحقول التالية:"
+        header:
+          one: "ليس بالامكان حفظ %{model}: خطأ واحد."
+          other: "ليس بالامكان حفظ %{model}: %{count} أخطاء."
+  devise:
+    confirmations:
+      confirmed: "أكد حسابك بنجاح. أنت الآن مسجل الدخول."
+      send_instructions: "سوف تتلقى رسالة بريد إلكتروني مع تعليمات حول كيفية تأكيد حسابك في بضع دقائق."
+      send_paranoid_instructions: "إذا كان لديك بريد إلكتروني موجود على قاعدة بياناتنا، سوف تتلقى رسالة بريد إلكتروني مع تعليمات حول كيفية تأكيد حسابك في بضع دقائق."
+    failure:
+      already_authenticated: ".انت بالفعل مسجل"
+      inactive: "لم يكن تنشيط حسابك بعد."
+      invalid: "بريد إلكتروني أو كلمة السر غير صالحة."
+      invalid_token: "رمز التوثيق غير صالح."
+      locked: "حسابك مغلق مؤقتا."
+      timeout: "جلستك انتهت، الرجاء تسجيل الدخول مرة أخرى للمتابعة."
+      unauthenticated: "تحتاج لتسجيل الدخول أو الاشتراك قبل المتابعة."
+      unconfirmed: "لا بد من تأكيد حسابك قبل المتابعة."
+    mailer:
+      confirmation_instructions:
+        subject: "تعليمات التأكيد"
+      reset_password_instructions:
+        subject: "تعليمات إعادة تعيين كلمة المرور"
+      unlock_instructions:
+        subject: "تعليمات إعادة الفتح"
+    omniauth_callbacks:
+      failure: "تعذر توثيقك من %{kind} بسبب \"%{reason}\"."
+      success: "تم التوثيق بنجاح من حساب %{kind}."
+    passwords:
+      send_instructions: "سوف تتلقى رسالة بريد إلكتروني مع تعليمات حول كيفية إعادة تعيين كلمة المرور الخاصة بك في بضع دقائق."
+      send_paranoid_instructions: "إذا كان لديك بريد إلكتروني موجود على قاعدة بياناتا، سوف نرسل لك رابط استعادة كلمة السر في بريدك الإلكتروني."
+      updated: "تم تغيير كلمة السر الخاصة بك بنجاح. وقعت الآن أنت فيه. أنت الأن مسجل الدخول."
+      updated_not_active: "تم تغيير كلمة السر الخاصة بك بنجاح."
+    registrations:
+      destroyed: "وداعا! تم إلغاء حسابك بنجاح. نأمل لرؤيتك مرة أخرى في وقت قريب."
+      signed_up: "مرحبا! قمت بالتسجيل بنجاح."
+      updated: "قمت بتحديث حسابك بنجاح."
+    sessions:
+      signed_in: "سجلت الدخول بنجاح."
+      signed_out: "سجلت الخروج بنجاح."
+    unlocks:
+      send_instructions: "سوف تتلقى رسالة بريد إلكتروني مع تعليمات حول كيفية إعادة فتح حسابك في بضع دقائق."
+      send_paranoid_instructions: "إذا كان حسابك موجودا، سوف تتلقى رسالة بريد إلكتروني مع تعليمات حول كيفية إعادة فتحه في بضع دقائق."
+      unlocked: "تم إعادة فتح حسابك بنجاح. الرجاء تسجيل الدخول للمتابعة."
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "يجب أن تقبل"
+      already_confirmed: "تأكد بالفعل، من فضلك حاول تسجيل الدخول"
+      blank: "فارغ، يرجى ملء الحقل"
+      confirmation: "لا تتوافق مع التأكيد"
+      empty: "فارغ، يرجى ملء الحقل"
+      equal_to: "يجب أن يساوي %{count}"
+      even: "يجب أن يكون زوجي"
+      exclusion: محجوز
+      expired: "انتهت الصلاحية، يرجى طلب واحد جديد"
+      greater_than: "يجب أن يكون أكبر من %{count}"
+      greater_than_or_equal_to: "يجب أن يكون أكبر من أو يساوي %{count}"
+      inclusion: "ليس خيارا مقبولا"
+      invalid: "غير معرف أو محدد"
+      less_than: "يجب أن يكون أصغر من %{count}"
+      less_than_or_equal_to: "يجب أن يكون أصغر من أو يساوي %{count}"
+      not_a_number: "ليس رقما"
+      not_an_integer: "يجب أن يكون صحيحا"
+      not_found: "لا يوجد"
+      not_locked: "لم يغلق مؤقتا"
+      not_saved:
+        one: "خطأ واحد منع %{resource} من ان يحفظ"
+        other: "%{count} خطء منع %{resource} من أن يحفظ:"
+      odd: "يجب أن يكون فردي"
+      taken: "غير متوفر (مستخدم)"
+      too_long: "أطول من اللازم (الحد الأقصى هو %{count})"
+      too_short: "أقصر من اللازم (الحد الأدنى هو %{count})"
+      wrong_length: "بطول غير مناسب (يجب أن يكون %{count})"
+    template:
+      body: "يرجى التحقق من الحقول التالية:"
+      header:
+        one: "ليس بالامكان حفظ %{model}: خطأ واحد."
+        other: "ليس بالامكان حفظ %{model}: %{count} أخطاء."
+  helpers:
+    select:
+      prompt: "الرجاء اختيار"
+    submit:
+      create: "%{model} إنشاء"
+      submit: "%{model} حفظ"
+      update: "%{model} نموذج"
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: $
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: مليار
+          million: مليون
+          quadrillion: "الكدريليون رقم"
+          thousand: ألف
+          trillion: تريليون
+          unit: ~
+      format:
+        delimiter: ~
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
+  support:
+    array:
+      last_word_connector: ", و "
+      two_words_connector: " و "
+      words_connector: ", "
+  time:
+    am: صباحا
+    formats:
+      default: "%a %b %d %H:%M:%S %Z %Y"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: مساءا

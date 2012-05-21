@@ -1,0 +1,97 @@
+ar:
+  date:
+    abbr_day_names:
+    - الأحد
+    - الإثنين
+    - الثلاثاء
+    - الأربعاء
+    - الخميس
+    - الجمعة
+    - السبت
+    abbr_month_names:
+    -
+    - يناير
+    - فبراير
+    - مارس
+    - ابريل
+    - مايو
+    - يونيو
+    - يوليو
+    - اغسطس
+    - سبتمبر
+    - اكتوبر
+    - نوفمبر
+    - ديسمبر
+    day_names:
+    - الأحد
+    - الإثنين
+    - الثلاثاء
+    - الأربعاء
+    - الخميس
+    - الجمعة
+    - السبت
+    formats:
+      default: ! '%Y-%m-%d'
+      long: ! '%B %e, %Y'
+      short: ! '%e %b'
+    month_names:
+    -
+    - يناير
+    - فبراير
+    - مارس
+    - ابريل
+    - مايو
+    - يونيو
+    - يوليو
+    - اغسطس
+    - سبتمبر
+    - اكتوبر
+    - نوفمبر
+    - ديسمبر
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: حوالي ساعة واحدة
+        other: ! '%{count} ساعات'
+      about_x_months:
+        one: حوالي شهر واحد
+        other: ! '%{count} أشهر'
+      about_x_years:
+        one: حوالي سنة
+        other: ! '%{count} سنوات'
+      almost_x_years:
+        one: تقريبا سنة واحدة
+        other: ما يقرب من %{count} سنة
+      half_a_minute: نصف دقيقة
+      less_than_x_minutes:
+        one: أقل من دقيقة
+        other: ! '%{count} دقائق'
+      less_than_x_seconds:
+        one: أقل من ثانية
+        other: ! '%{count} ثوان'
+      over_x_years:
+        one: أكثر من سنة
+        other: ! '%{count} سنوات'
+      x_days:
+        one: يوم واحد
+        other: ! '%{count} أيام'
+      x_minutes:
+        one: دقيقة واحدة
+        other: ! '%{count} دقائق'
+      x_months:
+        one: شهر واحد
+        other: ! '%{count} أشهر'
+      x_seconds:
+        one: ثانية واحدة
+        other: ! '%{count} ثوان'
+    prompts:
+      day: اليوم
+      hour: ساعة
+      minute: دقيقة
+      month: الشهر
+      second: ثانية
+      year: السنة
