@@ -150,6 +150,12 @@ cs:
     precision:
       format:
         delimiter: ~
+  poi:
+    name:
+      misc:
+        toilets: Toalety
+  splash:
+    start: Start
   support:
     array:
       last_word_connector: " a "
