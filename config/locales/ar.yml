@@ -2,13 +2,15 @@
 ar:
   activerecord:
     errors:
+      full_messages:
+        format: "%{attribute} %{message}"
       messages:
         accepted: "يجب أن تقبل"
         blank: "فارغ، يرجى ملء الحقل"
         confirmation: "لا تتوافق مع التأكيد"
         empty: "فارغ، يرجى ملء الحقل"
         equal_to: "يجب أن يساوي %{count}"
-        even: "يجب أن يكون زوجي"
+        even: "يجب أن يكون العدد زوجي"
         exclusion: محجوز
         greater_than: "يجب أن يكون أكبر من %{count}"
         greater_than_or_equal_to: "يجب أن يكون أكبر من أو يساوي %{count}"
@@ -18,21 +20,49 @@ ar:
         less_than_or_equal_to: "يجب أن يكون أصغر من أو يساوي %{count}"
         not_a_number: "ليس رقما"
         odd: "يجب أن يكون فردي"
-        record_invalid: "%{errors} فشل التحقق من صحة"
+        record_invalid: "%{errors} فشل التحقق من صحة الرسالة"
         taken: "غير متوفر (مستخدم)"
         too_long: "أطول من اللازم (الحد الأقصى هو %{count})"
         too_short: "أقصر من اللازم (الحد الأدنى هو %{count})"
         wrong_length: "بطول غير مناسب (يجب أن يكون %{count})"
+      models:
+        user_session:
+          email: "عنوان البريد الالكتروني"
+          password: "كلمة المرور"
       template:
         body: "يرجى التحقق من الحقول التالية:"
         header:
           one: "ليس بالامكان حفظ %{model}: خطأ واحد."
           other: "ليس بالامكان حفظ %{model}: %{count} أخطاء."
+  application:
+    require_no_user:
+      notice: "تم الدخول"
+    require_user:
+      notice: "لابد أن تكون مسجلا لتشاهد هذه الصفحة"
+  breadcrumbs:
+    node:
+      create: "قم بإضافة مكان جديد"
+      edit: "تعديل مكان"
+  common:
+    close: مغلق
   devise:
     confirmations:
       confirmed: "أكد حسابك بنجاح. أنت الآن مسجل الدخول."
+      link: "لم تتلق تعليمات التأكيد ؟"
       send_instructions: "سوف تتلقى رسالة بريد إلكتروني مع تعليمات حول كيفية تأكيد حسابك في بضع دقائق."
       send_paranoid_instructions: "إذا كان لديك بريد إلكتروني موجود على قاعدة بياناتنا، سوف تتلقى رسالة بريد إلكتروني مع تعليمات حول كيفية تأكيد حسابك في بضع دقائق."
+    destroy:
+      confirm: "هل أنت متأكد ؟"
+      link: "إحذف الآن"
+    edit:
+      form:
+        labels:
+          current_password: "كلمة المرور الحالية <i>(لابد من تأكيد التعديلات)</i>"
+          email: "بريد الكتروني"
+          password: "كلمة المرور <i>(اتركه فارغا اذا كنت لاتريد التعديل)</i>"
+          password_confirmation: "إعادة كلمة المرور"
+        submit: "حفظ التعديلات"
+      headline: "تحرير الحساب"
     failure:
       already_authenticated: ".انت بالفعل مسجل"
       inactive: "لم يكن تنشيط حسابك بعد."
@@ -44,14 +74,31 @@ ar:
       unconfirmed: "لا بد من تأكيد حسابك قبل المتابعة."
     mailer:
       confirmation_instructions:
+        landing_page: "من فضلك تأكد من وصول الرابط لعنوانك الإلكتروني،إذا لم توجد في البريد الوارد تأكد من قسم المحذوف ، في حال عدم وجود أي رسالة يرجى العودة لصفحة التسجيل وتكرار المحاولة."
         subject: "تعليمات التأكيد"
       reset_password_instructions:
         subject: "تعليمات إعادة تعيين كلمة المرور"
       unlock_instructions:
         subject: "تعليمات إعادة الفتح"
+    mandatory: مطلوب
     omniauth_callbacks:
       failure: "تعذر توثيقك من %{kind} بسبب \"%{reason}\"."
       success: "تم التوثيق بنجاح من حساب %{kind}."
+    password_recovery:
+      form:
+        labels:
+          email: "بريد الكتروني"
+      headline: "نسيت كلمة السر ؟"
+    password_reset:
+      email:
+        comment: "اذا لم تتقدم بطلب تغيير كلمة المرور تجاهل هذه الرسالة، كلمة المرور الخاصة بك لن تتغير إلا بالذهاب إلى الرابط التالي لإعادة التعيين."
+        link: "تغيير كلمة المرور"
+        text: "يوجد طلب بتغيير كلمة المرور، اذا كنت من قام بالطلب اتبع الرابط التالي، في حال لم تقم بالطلب تجاهل الرسالة"
+      form:
+        labels:
+          password: "كلمة المرور الجديدة"
+        submit: "إعادة تعيين كلمة المرور"
+      headline: "إعادة تعيين كلمة المرور"
     passwords:
       send_instructions: "سوف تتلقى رسالة بريد إلكتروني مع تعليمات حول كيفية إعادة تعيين كلمة المرور الخاصة بك في بضع دقائق."
       send_paranoid_instructions: "إذا كان لديك بريد إلكتروني موجود على قاعدة بياناتا، سوف نرسل لك رابط استعادة كلمة السر في بريدك الإلكتروني."
@@ -59,20 +106,49 @@ ar:
       updated_not_active: "تم تغيير كلمة السر الخاصة بك بنجاح."
     registrations:
       destroyed: "وداعا! تم إلغاء حسابك بنجاح. نأمل لرؤيتك مرة أخرى في وقت قريب."
+      reasons:
+        inactive: "غير نشط"
+        locked: مقفل
       signed_up: "مرحبا! قمت بالتسجيل بنجاح."
       updated: "قمت بتحديث حسابك بنجاح."
     sessions:
+      inactive: "لم يتم تنشيط حسابك بعد"
+      invalid: "البريد الالكتروني أوكلمة المرور غير صالحة"
+      link: التسجيل
       signed_in: "سجلت الدخول بنجاح."
       signed_out: "سجلت الخروج بنجاح."
+      timeout: "انتهت الجلسة ، الرجاء تسجيل الدخول من جديد للمتابعة"
+      unconfirmed: "للإستمرار، قم بتأكيد الحساب"
+    sign_in:
+      form:
+        labels:
+          email: "بريد الكتروني"
+          remember_me: "هل تريد البقاء متصلا؟"
+      headline: "تسجيل الدخول"
+    sign_out:
+      headline: "تسجيل الخروج"
+    sign_up:
+      email:
+        confirm_my_account: "تأكيد الحساب"
+        please_confirm: "يمكنك تأكيد حسابك عبر الرابط أدناه:"
+      form:
+        labels:
+          email: "بريد الكتروني"
+          password: "كلمة المرور"
+          password_confirmation: "إعادة كلمة المرور"
+          wants_newsletter: "نعم ، أبقني غلى اطلاع بآخر المستجدات في wheelmap , نشرة واحدة شهريا ستكون كافية."
+        submit: التسجيل
     unlocks:
+      link: "لم تتلق تعليمات فتح القفل ؟ "
       send_instructions: "سوف تتلقى رسالة بريد إلكتروني مع تعليمات حول كيفية إعادة فتح حسابك في بضع دقائق."
       send_paranoid_instructions: "إذا كان حسابك موجودا، سوف تتلقى رسالة بريد إلكتروني مع تعليمات حول كيفية إعادة فتحه في بضع دقائق."
       unlocked: "تم إعادة فتح حسابك بنجاح. الرجاء تسجيل الدخول للمتابعة."
   errors:
+    dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
       accepted: "يجب أن تقبل"
-      already_confirmed: "تأكد بالفعل، من فضلك حاول تسجيل الدخول"
+      already_confirmed: "تم التأكيد بالفعل"
       blank: "فارغ، يرجى ملء الحقل"
       confirmation: "لا تتوافق مع التأكيد"
       empty: "فارغ، يرجى ملء الحقل"
@@ -83,13 +159,13 @@ ar:
       greater_than: "يجب أن يكون أكبر من %{count}"
       greater_than_or_equal_to: "يجب أن يكون أكبر من أو يساوي %{count}"
       inclusion: "ليس خيارا مقبولا"
-      invalid: "غير معرف أو محدد"
+      invalid: "غير صالح "
       less_than: "يجب أن يكون أصغر من %{count}"
       less_than_or_equal_to: "يجب أن يكون أصغر من أو يساوي %{count}"
       not_a_number: "ليس رقما"
       not_an_integer: "يجب أن يكون صحيحا"
       not_found: "لا يوجد"
-      not_locked: "لم يغلق مؤقتا"
+      not_locked: "لم يكن مغلق"
       not_saved:
         one: "خطأ واحد منع %{resource} من ان يحفظ"
         other: "%{count} خطء منع %{resource} من أن يحفظ:"
@@ -102,7 +178,61 @@ ar:
       body: "يرجى التحقق من الحقول التالية:"
       header:
         one: "ليس بالامكان حفظ %{model}: خطأ واحد."
-        other: "ليس بالامكان حفظ %{model}: %{count} أخطاء."
+        other: "ليس بالامكان الحفظ %{model}: %{count} "
+  flash:
+    actions:
+      create:
+        notice: "تم الإنشاء بنجاح %{resource_name} "
+      destroy:
+        alert: "%{resource_name} لا يمكن ازالته "
+        notice: "تم الحذف بنجاح %{resource_name}"
+      update:
+        notice: "تم التحديث بنجاح %{resource_name}"
+  form:
+    show_fully_accessible_places: "ممكن الوصول بالكرسي المتحرك"
+    show_limited_accessible_places: "إمكانية الوصول بالكرسي المتحرك جزئية"
+    show_places_without_status: "الوضع غير معروف"
+    show_unaccessible_places: "غير ممكن الوصول بالكرسي المتحرك"
+  formtastic:
+    hints:
+      lat: "حرك المؤشر على الخريطة لتصحيح موقع"
+      password: "إذا كنت لاتريد تغييره، اتركه فارغاً"
+      website: "على سبيل المثال : http://www.example.com"
+    labels:
+      centralkey: "المفتاح المركزي"
+      city: "المدينة :"
+      create: "أوجد مكانا"
+      email: "بريد الكتروني"
+      lon: "خط الطول"
+      password: "كلمة المرور"
+      password_confirmation: "إعادة كلمة السر"
+      phone: "رقم الهاتف :"
+      save: حفظ
+      street: شارع
+      type: "النوع :"
+      website: "موقع :"
+      wheelchair: "امكاننية الوصول بالكرسي المتحرك ؟"
+  global:
+    form_validation_error: "يرجى ملاحظة الأخطاء المذكورة"
+  header:
+    meta:
+      description: "ابحث عن أماكن ممكنة الوصول بالكرسي المتحرك - wheelmap.org"
+      homepage: "الصفحة الرئيسية"
+      search: بحث
+    navigation:
+      blog: مدونة
+      feedback: آراؤكم
+      how_to_add_a_place: "كيف يمكنني اضافة مكان ؟"
+      logged_in_as: "الدخول كـ :"
+      login: "تسجيل الدخول"
+      logout: "تسجيل خروج"
+      newsletter: "نشرة اخبارية"
+      press: صحافة
+      suggestions: الإقتراحات
+      what_is_wheelmap: "ماهو ويل ماب ؟"
+    searchbar:
+      label: ~
+    tagline: "شعار ويل ماب"
   helpers:
     select:
       prompt: "الرجاء اختيار"
@@ -110,6 +240,79 @@ ar:
       create: "%{model} إنشاء"
       submit: "%{model} حفظ"
       update: "%{model} نموذج"
+  home:
+    index:
+      filter:
+        wheelchair: "هل يمكن الوصول بالكرسي المتحرك؟"
+      ie:
+        action:
+          upgrade: "تحديث المتصفح"
+        warning:
+          headline: "نعتذر !"
+          message: "يبدو أنك تستخدم انترنت اكسبلورر، يفضل استخدام متصفح آخر فاير فوكس،كروم ،سفاري أو اوبرا ليتوافق مع Wheelmap"
+      popup:
+        form:
+          limited: "إمكانية الوصول جزئية للكرسي المتحرك"
+          ? "no"
+          : "لايمكن الوصول بالكرسي المتحرك"
+          save: تحديث
+        help: "إمكانية وصول الكرسي المتحرك؟(مساعدة)"
+  how?: "كيف ؟"
+  landing_pages:
+    index:
+      wheelchair:
+        ? "no"
+        :
+          headline: "غير ممكن الوصول بالكرسي المتحرك %{type} in %{city} (%{count})"
+        unknown:
+          headline: "%{city} إمكانية الوصول بالكرسي المتحرك غير معلومة (%{count})"
+        ? "yes"
+        :
+          headline: "ممكن الوصول بالكرسي المتحرك %{type} in %{city} (%{count})"
+  layouts:
+    application:
+      banner:
+        alt: "قام بتنفيذ المشروع Sozialhelden.de"
+  node:
+    address:
+      street: "%{رقم المنزل} %{الشارع}\n"
+    tags:
+      phone: "رقم الهاتف:"
+      website: موقع
+  nodes:
+    create:
+      flash:
+        successfull: "شكرا لك ، لقد تم حفظ التعليق وسينشر قريبا"
+    edit:
+      link:
+        large_map: إلغاء
+    errors:
+      default: "شيء مايجري بشكل خاطئ، جرى إخطارنا بذلك"
+      not_available: "عفواً، هذه الصفحة غير متوفرة حالياً"
+      not_existent: "عذرا،هذا المكان لم يعد موجودا"
+      not_found: "عذراً، الصفحة غير موجودة"
+      param_missing: "فضلا اكتب عبارة البحث"
+    new:
+      header:
+        title: "مكان جديد | wheelmap.org"
+      link:
+        large_map: الغاء
+    node:
+      link:
+        claim: "هل تعمل هنا؟"
+        edit_node: "تعديل مكان"
+        report_bug: "بلغ عن مشكلة"
+    show:
+      header:
+        title: "مكان : %{node} | wheelmap.org"
+      link:
+        back: العودة
+        listing: "جميع الأماكن '%{type}' in %{city}"
+    update:
+      flash:
+        successfull: "تم التسليم بنجاح وسيعرض قريباً،شكرا لك."
+    update_wheelchair:
+      successfull: "تم تغيير الحالة من \"%{name}\"  إلى \"%{status}\" وسيتم النشرقريبا."
   number:
     currency:
       format:
@@ -117,15 +320,15 @@ ar:
         format: "%u%n"
         precision: 2
         separator: "."
-        significant: false
+        significant: 0
         strip_insignificant_zeros: false
         unit: $
     format:
       delimiter: ","
       precision: 3
       separator: "."
-      significant: false
-      strip_insignificant_zeros: false
+      significant: 0
+      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -139,8 +342,8 @@ ar:
       format:
         delimiter: ~
         precision: 3
-        significant: true
-        strip_insignificant_zeros: true
+        significant: صحيح
+        strip_insignificant_zeros: صحيح
       storage_units:
         format: "%n %u"
         units:
@@ -157,15 +360,201 @@ ar:
     precision:
       format:
         delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "يجب أن تقوم بربط حسابك بحسابك في  \"الخارطة المفتوحة\" لتتمكن من اضافة وتعديل الأماكن على wheelmap.org."
+  place:
+    other: "أماكن %{count}"
+  poi:
+    category:
+      accommodation: التوافق
+      education: تعليم
+      food: طعام
+      government: حكومة
+      health: صحة
+      leisure: الراحة
+      misc: متفرقات
+      money_post: ~
+      public_transfer: "مواصلات عامة"
+      tourism: سياحة
+    name:
+      accommodation:
+        beach_resort: "فندق على الشاطئ"
+        bed_and_breakfast: "فندق للمبيت والإفطار"
+        chalet: شاليه
+        motel: "نُزل "
+      education:
+        kindergarten: "روضة أطفال"
+        library: مكتبة
+        school: مدرسة
+        university: جامعة
+      food:
+        biergarten: "مكان عام للجلوس"
+        cafe: مقهى
+        fast_food: "وجبات سريعة"
+        restaurant: مطعم
+      government:
+        courthouse: المحكمة
+        embassy: سفارة
+        police: الشرطة
+        public_building: "مبنى عام"
+      health:
+        doctors: أطباء
+        medical_supply: "مستلزمات طبية"
+        pharmacy: صيدلية
+        veterinary: "طبيب بيطري"
+      leisure:
+        cinema: سينما
+        community_center: "مركز اجتماعي"
+        gallery: المعرض
+        nightclub: "ملهى ليلي"
+        sauna: "حمام البخار"
+        theatre: مسرح
+        zoo: "حديقة الحيوانات"
+      misc:
+        company: شركة(مكتب)
+        place_of_worship: "مكان للعبادة"
+        toilets: "دورات المياه"
+      money_post:
+        atm: "مكينة صرافة"
+        bank: بنك
+        bureau_de_change: "صرافة نقود"
+        post_box: "صندوق البريد"
+        post_office: "مكتب البريد"
+      public_transfer:
+        aerodrome: مطار
+        bicycle_parking: "موقف للدراجات الهوائية"
+        bicycle_rental: "لتأجير الدراجات الهوائية"
+        boatyard: "مرسى القوارب"
+        bus_station: "محطة الأوتوبيس"
+        cable_car: "عربة كهربائية"
+        car_rental: "تأجير السيارات"
+        car_sharing: "سيارة للمشاركة"
+        ferry: "معبر مائي"
+        ferry_terminal: "محطة عبور مائي"
+        fuel: "محطة للغاز"
+        light_rail: "القطارات الخفيفة"
+        parking_aisle: "رصيف ايقاف السيارات"
+        platform: رصيف
+        station: "قطارات الأنفاق"
+        subway_entrance: "مدخل المترو"
+        terminal: المطار
+        tram_stop: "موقف عربات الترام"
+      shopping:
+        bakery: مخبز
+        beverages: مشروبات
+        books: كتب
+        butcher: الجزار
+        car_shop: "متجر السيارات"
+        chemist: صيدلي
+        clothes: ملابس
+        computer: كمبيوتر
+        department_store: "متجر شامل"
+        doityourself: "إعمله بنفسك"
+        dry_cleaning: "التنظيف الجاف"
+        electronics: "أجهزة كهربائية"
+        garden_centre: "مركز الحديقة"
+        hairdresser: "صالون تصفيف الشعر"
+        hardware: أجهزة
+        kiosk: كشك
+        laundry: "مغسلة الملابس"
+        mall: "مركز تسوق"
+        optician: "محل النظارات"
+        second_hand: اليدالأخرى
+        shoes: أحذية
+        sports: رياضة
+        stationery: قرطاسية
+        supermarket: سوبرماركت
+      sport:
+        swimming: سباحة
+        swimming_pool: "بركة سباحة"
+      tourism:
+        archaeological_site: "موقع أثري"
+        arts_centre: "مركز الفنون"
+        artwork: "عمل فني"
+        attraction: "موقع جاذب"
+        battlefield: "ساحة المعركة"
+        beacon: منارة
+        information: "معلومات للسائح"
+        memorial: "نصب تذكاري"
+        tower: برج
+      unknown:
+        unknown: "غير معروف"
+  profile:
+    edit:
+      application:
+        oauth:
+          not_connected: "الوضع:غير متصل"
+          revoke: "غير متصل"
+      headline: "تحرير الحساب"
+  search:
+    index:
+      search:
+        for: "البحث عن \"%{q}\""
+        not_found: "لايمكن إيجاد المكان"
+  splash:
+    countline: "أماكن تم تحديدها %{count}"
+    headline: "الجميع يمكنه إضافة أماكن يمكن لوصول لها بالكرسي المتحرك!"
+    step1: "انقر على المكان المطلوب"
+    step2: "قم بالتحديد ثم انقر اختيار حفظ"
+    step3: "لايتطلب التسجيل"
+    what_is_wheelmap: "ماهو ويل ماب\"خارطة العجلة\"؟"
+  statistics: إحصاءات
   support:
     array:
       last_word_connector: ", و "
       two_words_connector: " و "
       words_connector: ", "
+    select:
+      prompt: "إختر من فضلك"
   time:
     am: صباحا
     formats:
       default: "%a %b %d %H:%M:%S %Z %Y"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
-    pm: مساءا
+    pm: مساء
+  user_sessions:
+    create:
+      activation:
+        notice: "الحساب مفعل الآن!"
+      error:
+        notice: "البريد الالكتروني وكلمة المرور غير مطابقة"
+    destroy:
+      notice: "عد قريباً، إلى اللقاء"
+    new:
+      email: "عنوان البريد الإلكتروني"
+      login: "تسجيل الدخول"
+      password: "كلمة المرور"
+      remember_me: "البقاء متصلا"
+  wheelchairstatus:
+    ? "no"
+    : "غير ممكن الوصول بالكرسي المتحرك"
+    ? "yes"
+    : "ممكن الوصول بالكرسي المتحرك"
+  wheelmap:
+    footer:
+      based_on: "مستند على"
+      become_a_supporter: "أصبح داعم"
+      main_supporter: "الراعي الرسمي"
+    itunes:
+      alt: "شعارنا في متجر التطبيقات"
+    logo:
+      title: "خريطة العجلة - ابحث عن أماكن يمكن الوصول اليها بالكرسي المتحرك"
+    what_is:
+      fully_accessible: "مدخل سهل بلا درجات، جميع الغرف بلا درجات، وصل يسير لدورات المياه"
+      limited_accessible: "<em>Limited:</em> توجد عدة درجات في المدخل (الأعلى. الارتفاع ٧ سم)، معظم الغرف لايمكن الوصول اليها بالكرسي المتحرك وكذلك دورات المياه"
+      not_accessible: "مدخل شديد الانحدار أو يتكون من عدة درجات، لايمكن الوصول للغرف"
+      unknown_accessible: "قدم المساعدة بتحديد المزيد من الأماكن <em>Unknown:</em>"
+  will_paginate:
+    next_label: "بعد&#8594;"
+    page_entries_info:
+      single_page:
+        one: "عرض 1 %{نموذج}"
+        zero: "غير %{model} موجود\n"
+      single_page_html:
+        one: "العرض <b>1</b> %{model}"
+        other: "العرض <b>all&nbsp;%{count}</b> %{model}"
+    page_gap: "..."
+    previous_label: السابق
