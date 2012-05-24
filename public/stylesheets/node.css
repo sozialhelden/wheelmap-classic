@@ -852,23 +852,24 @@ h1.marge, h2.marge, h3.marge, h4.marge, h5.marge, h6.marge, p.marge {
 /* line 61, ../../app/stylesheets/basics/_main.sass */
 .login_box p {
   text-align: center;
+  margin-bottom: 5px;
 }
 
-/* line 64, ../../app/stylesheets/basics/_main.sass */
+/* line 65, ../../app/stylesheets/basics/_main.sass */
 .image_block {
   margin: 20px auto;
   position: relative;
   width: 200px;
   height: 210px;
 }
-/* line 70, ../../app/stylesheets/basics/_main.sass */
+/* line 71, ../../app/stylesheets/basics/_main.sass */
 .image_block a {
   width: 100%;
   text-align: center;
   position: absolute;
   top: 0px;
 }
-/* line 76, ../../app/stylesheets/basics/_main.sass */
+/* line 77, ../../app/stylesheets/basics/_main.sass */
 .image_block a.button {
   text-decoration: none;
   margin: 0px auto;
@@ -876,12 +877,12 @@ h1.marge, h2.marge, h3.marge, h4.marge, h5.marge, h6.marge, p.marge {
   top: 180px;
 }
 
-/* line 87, ../../app/stylesheets/basics/_main.sass */
+/* line 88, ../../app/stylesheets/basics/_main.sass */
 .odd {
   background-color: #eeeeee;
 }
 
-/* line 90, ../../app/stylesheets/basics/_main.sass */
+/* line 91, ../../app/stylesheets/basics/_main.sass */
 .hidden {
   display: none;
 }
