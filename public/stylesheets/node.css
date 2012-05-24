@@ -182,6 +182,13 @@ a.button:active {
   border-color: #89b152 #617e39 #465b29;
 }
 
+/* line 2, ../../app/stylesheets/basics/_lists.sass */
+ul.bullets li {
+  list-style-type: disc;
+  list-style-position: outside;
+  margin-left: 20px;
+}
+
 /* line 10, ../../app/stylesheets/basics/_icons.sass */
 .print {
   background-repeat: no-repeat;
@@ -793,11 +800,88 @@ h1.marge, h2.marge, h3.marge, h4.marge, h5.marge, h6.marge, p.marge {
 }
 
 /* line 25, ../../app/stylesheets/basics/_main.sass */
+#content {
+  margin: 20px auto 60px;
+  padding: 19px;
+  width: 900px;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 31, ../../app/stylesheets/basics/_main.sass */
+.promo_box {
+  width: 55%;
+  float: left;
+}
+/* line 35, ../../app/stylesheets/basics/_main.sass */
+.promo_box h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+/* line 39, ../../app/stylesheets/basics/_main.sass */
+.promo_box p {
+  margin-bottom: 15px;
+  font-size: 12px;
+  padding-left: 80px;
+}
+/* line 44, ../../app/stylesheets/basics/_main.sass */
+.promo_box p.osm {
+  background: url("/images/openstreetmap_logo_small.jpg") no-repeat left center;
+}
+/* line 47, ../../app/stylesheets/basics/_main.sass */
+.promo_box p.wheelmap {
+  background: url("/images/markerhead.jpg") no-repeat left center;
+}
+/* line 50, ../../app/stylesheets/basics/_main.sass */
+.promo_box em {
+  font-weight: bold;
+}
+
+/* line 53, ../../app/stylesheets/basics/_main.sass */
+.login_box {
+  width: 335px;
+  float: right;
+  border: 1px solid #dfdfdf;
+  background-color: #efefef;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -khtml-border-radius: 12px;
+  border-radius: 12px;
+  position: relative;
+}
+/* line 61, ../../app/stylesheets/basics/_main.sass */
+.login_box p {
+  text-align: center;
+}
+
+/* line 64, ../../app/stylesheets/basics/_main.sass */
+.image_block {
+  margin: 20px auto;
+  position: relative;
+  width: 200px;
+  height: 210px;
+}
+/* line 70, ../../app/stylesheets/basics/_main.sass */
+.image_block a {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+}
+/* line 76, ../../app/stylesheets/basics/_main.sass */
+.image_block a.button {
+  text-decoration: none;
+  margin: 0px auto;
+  height: 18px;
+  top: 180px;
+}
+
+/* line 87, ../../app/stylesheets/basics/_main.sass */
 .odd {
   background-color: #eeeeee;
 }
 
-/* line 28, ../../app/stylesheets/basics/_main.sass */
+/* line 90, ../../app/stylesheets/basics/_main.sass */
 .hidden {
   display: none;
 }
@@ -1114,12 +1198,12 @@ table#provider td {
   color: black;
 }
 
-/* line 27, ../../app/stylesheets/node.sass */
+/* line 28, ../../app/stylesheets/node.sass */
 body, html {
   font-family: HelveticaNeue, Helvetica, "Swiss 721", Arial, sans-serif;
 }
 
-/* line 31, ../../app/stylesheets/node.sass */
+/* line 32, ../../app/stylesheets/node.sass */
 .clear {
   clear: both;
   display: block;
@@ -1129,7 +1213,7 @@ body, html {
   height: 0;
 }
 
-/* line 39, ../../app/stylesheets/node.sass */
+/* line 40, ../../app/stylesheets/node.sass */
 .node-footer {
   font-size: xx-small;
 }
