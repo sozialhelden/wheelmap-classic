@@ -65,7 +65,7 @@ CREATE TABLE `delayed_jobs` (
   `queue` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `delayed_jobs_priority` (`priority`,`run_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=242 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=243 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `experiments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -118,8 +118,14 @@ CREATE TABLE `provided_pois` (
   `url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
+<<<<<<< HEAD
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+=======
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_provided_pois_on_provider_id_and_poi_id` (`provider_id`,`poi_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=223 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+>>>>>>> Redesign of sign in page for oauth+osm.
 
 CREATE TABLE `providers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -127,7 +133,11 @@ CREATE TABLE `providers` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+>>>>>>> Redesign of sign in page for oauth+osm.
 
 CREATE TABLE `queued_nodes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -191,8 +201,8 @@ CREATE TABLE `users` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `changeset_id` int(11) DEFAULT NULL,
-  `authentication_token` varchar(255) DEFAULT NULL,
   `wants_newsletter` tinyint(1) NOT NULL DEFAULT '0',
+  `authentication_token` varchar(255) DEFAULT NULL,
   `confirmation_token` varchar(255) DEFAULT NULL,
   `confirmed_at` datetime DEFAULT NULL,
   `confirmation_sent_at` datetime DEFAULT NULL,
@@ -203,7 +213,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `index_users_on_authentication_token` (`authentication_token`),
   KEY `index_users_on_oauth_token` (`oauth_token`),
   KEY `index_users_on_wants_newsletter` (`wants_newsletter`)
-) ENGINE=InnoDB AUTO_INCREMENT=1479 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10242 DEFAULT CHARSET=latin1;
 
 INSERT INTO schema_migrations (version) VALUES ('20100520103719');
 
