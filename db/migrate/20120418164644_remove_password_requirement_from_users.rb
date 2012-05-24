@@ -18,7 +18,7 @@ class RemovePasswordRequirementFromUsers < ActiveRecord::Migration
     change_column :users, :email, :string, :null => false
     add_index :users, :email, :unique => true rescue nil
 
-    add_column :users, :reset_password_token, :string
-    add_column :users, :oauth_request_token, :text
+    add_column :users, :reset_password_token, :string rescue nil
+    add_column :users, :oauth_request_token, :text rescue nil
   end
 end
