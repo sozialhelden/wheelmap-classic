@@ -1,26 +1,21 @@
-%table
-  %tbody
-    %tr
-      %td{:style => 'width:40%'}
-        %p.large
-          Die Wheelmap ist ein Teil der OpenStreetMap. Eine freie, editierbare Karte der gesamten Welt, die von Menschen wie dir erstellt wird. Wikipedia für Karten.
+.promo_box
+  %h2=t('devise.sign_in.headline')
+  %p.osm= t('.osm_promo_text')
+  %p.wheelmap= t('.wheelmap_promo_text')
+  %p
+    %em= t('.promo_text_thank_you')
+.login_box
 
-        %p.large
-          Logge dich ein um bestehende Orte zu bearbeiten oder neue anzulegen.
+  .image_block
+    = link_to '/users/auth/osm' do
+      = image_tag('openstreetmap_logo.png')
 
-        %ul.bullets
-          %li Teile dein Wissen über rollstuhlgerechte Orte"
-          %li Mit Deinem Beitrag können Menschen mit Mobilitätseinschränkungen besser planen wo sie reinkommen, und wo nicht.
+    =link_to t('.sign_in_with', :kind => 'OpenstreetMap'), '/users/auth/osm', :class => 'button'
 
-      %td{:style => 'width:50%;padding-left: 150px'}
-        %div{:style => 'width: 200px'}
-          = image_tag('openstreetmap_logo.png')
-          =link_to 'Log in with OpenStreetMap', '/users/auth/osm', :class => 'button'
-
-        %p
-          %br
-          Noch nicht bei OpenStreetMap?
-          = link_to "Registrieren", register_osm_oauth_index_url
+  %p
+    =t('.no_osm_account')
+    = link_to t('.sign_up_with_osm'), register_osm_oauth_index_url
+.clearFix
 
 .hidden
   = semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |form|
