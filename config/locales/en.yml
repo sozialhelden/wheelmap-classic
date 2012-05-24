@@ -135,6 +135,13 @@ en:
       invalid_token: "Invalid authentication token"
       link: "Sign in"
       locked: "Your account is locked"
+      new:
+        no_osm_account: "No OpenStreetMap account?"
+        osm_promo_text: "The wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must to be logged in with it."
+        promo_text_thank_you: "Thank you very much for your support!"
+        sign_in_with: "Log in with %{kind}"
+        sign_up_with_osm: "Register now."
+        wheelmap_promo_text: "With your knowledge about wheelchair accessible places you help people with physical impairments to better organize their everyday live. Furthermore the OpenStreetMap gets considerably richer in detail."
       signed_in: "Logged in successfully"
       signed_out: "You have signed out successfully"
       timeout: "Your session expired, please sign in again to continue."
