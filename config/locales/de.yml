@@ -135,6 +135,13 @@ de:
       invalid_token: "Ungültiger Authentizitätstoken. Bitte lösche die Cookies in deinem Browser und versuche es noch einmal."
       link: Login
       locked: "Dein Benutzerkonto ist gesperrt."
+      new:
+        no_osm_account: "Nicht bei OpenStreetMap?"
+        osm_promo_text: "Die Wheelmap basiert auf dem Kartenmaterial der OpenStreetMap (OSM). Die OSM ist eine freie editierbare Weltkarte, die von Menschen wie dir erstellt wird. Eine Wikipedia für Karten. Damit du bestehende Orte bearbeiten oder neue Orte anlegen kannst, musst du bei der OSM einen Benutzerkonto haben und mit diesem hier eingeloggt sein."
+        promo_text_thank_you: "Vielen Dank für deine Unterstützung!"
+        sign_in_with: "Einloggen mit %{kind}"
+        sign_up_with_osm: "Registriere dich hier."
+        wheelmap_promo_text: "Mit deinem Wissen über rollstuhlgerechte Orte leistest du einen Beitrag dazu, dass Menschen mit Mobilitätseinschränkungen ihren Alltag besser planen können. Zudem werden die Ortsinformationen in der OSM umfangreicher."
       signed_in: "Login erfolgreich."
       signed_out: "Logout erfolgreich."
       timeout: "Deine Sitzung ist abgelaufen, bitte melde dich erneut an."
