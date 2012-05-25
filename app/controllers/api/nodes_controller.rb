@@ -45,7 +45,7 @@ class Api::NodesController < Api::ApiController
     @node.attributes = params
 
     if @node.valid?
-      UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user)
+      UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user, 'update_android')
 
       respond_to do |wants|
         wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
@@ -65,7 +65,7 @@ class Api::NodesController < Api::ApiController
 
     @node = Poi.new(node_attributes)
     if @node.valid?
-      CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user)
+      CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user, 'create_android')
 
       respond_to do |wants|
         wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
@@ -82,7 +82,7 @@ class Api::NodesController < Api::ApiController
 
   def update_wheelchair
     node = Poi.find(params[:id])
-    UpdateTagsJob.enqueue(node.osm_id.abs, node.osm_type, { 'wheelchair' => params[:wheelchair] }, wheelmap_visitor)
+    UpdateTagsJob.enqueue(node.osm_id.abs, node.osm_type, { 'wheelchair' => params[:wheelchair] }, wheelmap_visitor, 'tag_android')
 
     respond_to do |wants|
       wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }

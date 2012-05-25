@@ -1,9 +1,9 @@
-class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client)
-  def self.enqueue(lat, lon, tags, user)
+class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client, :source)
+  def self.enqueue(lat, lon, tags, user, source)
     raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
 
     client = Rosemary::OauthClient.new(user.access_token)
-    new(lat, lon, tags, user, client).tap do |job|
+    new(lat, lon, tags, user, client, source).tap do |job|
       Delayed::Job.enqueue(job)
     end
   end
@@ -23,6 +23,8 @@ class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client)
       user.update_attribute(:changeset_id, changeset.id)
 
       osm.create(node, changeset)
+
+      Counter.increment(source)
     rescue Exception => e
       HoptoadNotifier.notify(e, :action => 'perform',
                                 :component => 'CreateNodeJob',
