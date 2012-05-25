@@ -10,7 +10,7 @@ describe CreateNodeJob do
   let(:changeset) { Rosemary::Changeset.new(:id => 12345, :open? => true) }
 
   subject {
-    CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'yes', 'amenity' => 'bar', 'name' => 'White horse' }, user)
+    CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'yes', 'amenity' => 'bar', 'name' => 'White horse' }, user, 'create_iphone')
   }
 
   it "should create a Node" do

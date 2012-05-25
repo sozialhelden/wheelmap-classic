@@ -13,13 +13,13 @@ describe UpdateTagsJob do
   let(:changeset) { Rosemary::Changeset.new(:id => 12345) }
   let(:unedited_node) { Rosemary::Node.new(:tags => { 'addr:housenumber' => 10 }) }
 
-  subject { UpdateTagsJob.enqueue(1, 'node', { 'addr:housenumber' => 99 }, user) }
+  subject { UpdateTagsJob.enqueue(1, 'node', { 'addr:housenumber' => 99 }, user, 'update_iphone') }
 
 
   it "should not update lat attribute in updating job" do
     node.lat, node.lon = 45, 10
 
-    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user)
+    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
 
     unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
     api = mock(:find_or_create_open_changeset => changeset)
@@ -32,7 +32,7 @@ describe UpdateTagsJob do
 
   it "updates the tags" do
 
-    job = UpdateTagsJob.enqueue(1, 'node', { 'addr:housenumber' => 99 }, user)
+    job = UpdateTagsJob.enqueue(1, 'node', { 'addr:housenumber' => 99 }, user, 'update_iphone')
 
     api = mock(:find_or_create_open_changeset => changeset)
 

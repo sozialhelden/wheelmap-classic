@@ -49,7 +49,8 @@ class NodesController < ApplicationController
 
   def update_wheelchair
     @node = Poi.find(params[:id])
-    UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, { 'wheelchair' => params[:wheelchair] }, wheelmap_visitor)
+    source = "tag_#{(mobile_app? ? 'iphone' : 'website')}"
+    UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, { 'wheelchair' => params[:wheelchair] }, wheelmap_visitor, source)
 
     respond_to do |wants|
       wants.js{ render :json => {:message => t('nodes.update_wheelchair.successfull', :status => t("wheelchairstatus.#{params[:wheelchair]}"), :name => @node.headline), :wheelchair => params[:wheelchair] }.to_json}
@@ -61,7 +62,8 @@ class NodesController < ApplicationController
     @node = Poi.find(params[:id])
     @node.attributes = params[:node]
     if @node.valid?
-      UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user)
+      source = "update_#{(mobile_app? ? 'iphone' : 'website')}"
+      UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user, source)
 
       respond_to do |wants|
         wants.js   { render :text => 'OK' }
@@ -92,7 +94,8 @@ class NodesController < ApplicationController
     @node = Poi.new(params[:node])
 
     if @node.valid?
-      CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user)
+      source = "create_#{(mobile_app? ? 'iphone' : 'website')}"
+      CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user, source)
 
       respond_to do |wants|
         wants.json{ render :status => 200, :json => {} } # iphone wants 200. nothing more.
