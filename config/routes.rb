@@ -10,7 +10,6 @@ Wheelmap::Application.routes.draw do
   devise_for :admins
   devise_for :users, :controllers => {  :confirmations      => 'confirmations',
                                         :omniauth_callbacks => 'omniauth_callbacks',
-                                        :sessions           => 'devise/sessions'
                                       }
 
   devise_scope :user do
