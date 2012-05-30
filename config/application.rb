@@ -54,5 +54,9 @@ module Wheelmap
       g.test_framework :rspec
     end
 
+    config.to_prepare do
+      Devise::SessionsController.layout "simple"
+    end
+
   end
 end
