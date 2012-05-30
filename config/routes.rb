@@ -99,5 +99,7 @@ Wheelmap::Application.routes.draw do
     match '*a', :to => 'api#not_found', :format => false
   end
 
-  match "/ziemlich-beste-freunde", :to => redirect("http://blog.wheelmap.org/zbf")
+  match "/ziemlich-beste-freunde",  :to => redirect("http://blog.wheelmap.org/zbf")
+  match "/goeslondon",              :to => redirect("http://blog.wheelmap.org/mitmachen/goes-london/")
+  match "/goes-london",             :to => redirect("http://blog.wheelmap.org/mitmachen/goes-london/")
 end
