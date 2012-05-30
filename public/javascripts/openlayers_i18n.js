@@ -97,6 +97,15 @@ OpenLayers.Lang.ko = {
   'more_information': "자세히 ...",
   'wheelchair_help': "휠체어 접근성? (도움말)"
 };
+OpenLayers.Lang.lv = {
+  'wheelchair_label_yes': "pieejams ar ratiņkrēslu",
+  'wheelchair_label_limited': "daļēji pieejams ar ratiņkrēslu",
+  'wheelchair_label_no': "nav pieejams ar ratiņkrēslu",
+  'wheelchair_label_unknown': "nezināms statuss",
+  'wheelchair_update_button': "Actualiseren",
+  'more_information': "vairāk...",
+  'wheelchair_help': "Pieejams ar ratiņkrēslu? (Palīdzība)"
+};
 OpenLayers.Lang.nl = {
   'wheelchair_label_yes': "rolstoel toegangelijk",
   'wheelchair_label_limited': "deels rolstoel toegangelijk",
