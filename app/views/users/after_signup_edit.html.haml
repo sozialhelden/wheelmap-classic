@@ -1,20 +1,28 @@
 #user_form
-  %h1{:style => 'margin-bottom:30px'}=t('.welcome.headline')
+  %h2{:style => 'font-size: 20px'}=t('.welcome.headline')
 
-  %p.large
-    =t('.welcome.text')
-
-  = semantic_form_for @user, :url => after_signup_update_user_path(@user), :method => :put, :html => {:novalidate => ''} do |form|
+  = semantic_form_for @user, :url => after_signup_update_user_path(@user), :method => :put, :html => {:novalidate => '', :class => 'after_signup_edit'} do |form|
     = form.inputs do
-      .grid_4{:style => 'width:460px; float:left;'}
-        = form.input :first_name, :required => true
-      .grid_4{:style => 'width:500px; float:left;'}
-        = form.input :last_name, :required => true, :hint => false
-      = form.input :email, :required => true, :hint => 'Wir behandeln Deine Adresse vertraulich, kein Spam, versprochen!'
+      %li.optional{:style => 'width:660px'}
+        %label.small{:style => 'margin-bottom:20px'} &nbsp;
+        %p=t('.welcome.text')
 
+      .grid_3{:style => 'float:left;'}
+        = form.input :first_name, :required => false, :input_html => { :class => :small }, :label_html => {:class => :small }
+      .grid_3{:style => 'width:500px; float:left;'}
+        = form.input :last_name, :required => false, :hint => false, :input_html => { :class => :small }, :label_html => {:class => :small }
+      = form.input :email, :required => false, :hint => 'Wir behandeln Deine Adresse vertraulich, kein Spam, versprochen!', :hint_class => [:small, 'inline-hints'], :input_html => { :class => :large }, :label_html => {:class => :small }
       = form.input :wants_newsletter, :as => :hidden, :value => true
 
-    = form.buttons do
-      = form.commit_button t('formtastic.labels.finish')
+    = form.inputs do
+      %li.optional{:style => 'width:660px'}
+        %label.small{:style => 'margin-bottom:20px'} &nbsp;
+        %p Besitzt du ein Smartphone? Dann definiere hier dein Passwort, um die Wheelmap auch von unterwegs mit deinem iPhone- oder Android-Handy zu benutzen.
+      = form.input :password, :required => true, :hint => false, :required => false, :label_html => {:class => :small }
 
-  = link_to t('common.skip'), after_sign_in_path_for(:user)
+    = form.buttons do
+      %ol
+        %li.commit
+          %input.small.update#user_submit{:name => 'commit', :type => 'submit', :value => t('formtastic.labels.finish'), :style => 'display:inline'}
+          = link_to t('common.skip'), after_sign_in_path_for(:user), :style => 'display: inline; position: relative;left:200px'
+
