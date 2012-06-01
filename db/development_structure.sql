@@ -47,6 +47,23 @@ CREATE TABLE `categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE `counters` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `counter_date` date DEFAULT NULL,
+  `tag_website` int(11) DEFAULT '0',
+  `tag_iphone` int(11) DEFAULT '0',
+  `tag_android` int(11) DEFAULT '0',
+  `update_website` int(11) DEFAULT '0',
+  `update_iphone` int(11) DEFAULT '0',
+  `update_android` int(11) DEFAULT '0',
+  `create_website` int(11) DEFAULT '0',
+  `create_iphone` int(11) DEFAULT '0',
+  `create_android` int(11) DEFAULT '0',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 CREATE TABLE `delayed_jobs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `priority` int(11) DEFAULT '0',
@@ -65,7 +82,7 @@ CREATE TABLE `delayed_jobs` (
   `queue` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `delayed_jobs_priority` (`priority`,`run_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=243 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=249 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `experiments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -299,3 +316,5 @@ INSERT INTO schema_migrations (version) VALUES ('20120425104911');
 INSERT INTO schema_migrations (version) VALUES ('20120427102536');
 
 INSERT INTO schema_migrations (version) VALUES ('20120427103805');
+
+INSERT INTO schema_migrations (version) VALUES ('20120525115535');
