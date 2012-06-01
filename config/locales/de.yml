@@ -654,8 +654,8 @@ de:
   users:
     after_signup_edit:
       welcome:
-        headline: Willkommen bei wheelmap
-        text: Wie können wir dich in Zukunft über Neuigkeiten rund um die Wheelmap erreichen? Du kannst diese Informationen auch später in Deinem Profil ändern.
+        headline: Fast geschafft!
+        text: Du bist nun erfolgreich registriert. Wie können wir dich in Zukunft über wichtige Neuigkeiten rund um die Wheelmap informieren?
   user_sessions:
     create:
       activation:
