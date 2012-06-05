@@ -1,11 +1,10 @@
 #sidebar
   position: relative
-  width: 340px
+  width: 360px
   z-index: 3000
   background-color: white
   margin-bottom: 20px
-  padding: 15px
-  padding-top: 5px
+  padding: 0
   border-right: 1px solid #a5c37a
   height: 100%
   &.minimized
@@ -15,6 +14,8 @@
     font-weight: bold
     font-size: 120%
     
+  img.minimize
+    margin: 12px 6px 0 0
   img.minimize, img.maximize
     cursor: pointer
     float: right
@@ -22,7 +23,7 @@
   div.minimize, div.maximize
     position: relative
     float: right
-    right: -55px
+    right: -40px
     width: 40px
     height: 34px
     cursor: pointer
@@ -34,10 +35,10 @@
     background: url('/images/maximize.gif') no-repeat
   
   ul
-    margin-bottom: 5px
-    border-bottom: 1px solid #a5c37a
-    width: 100%
-    padding-bottom: 15px
+    margin: 0 10px 5px 3%
+    border-bottom: 1px solid #FFF
+    width: 94%
+    padding: 10px 0 15px 0
   
   .button_wheelmap, .button_donate
     float: left
@@ -60,10 +61,27 @@
   
   h4
     margin-bottom: 5px
-    font-size: 16px
+    font-size: 14px
+    text-shadow: 0 1px 0 #FFF
+    color: #555
+    border-top: 1px solid #F0F0F0
+    border-bottom: 1px solid #DDD
+    
+    padding: 10px 3% 8px 3%
+    
+    background-color: #f5f5f5
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ebebeb))
+    background-image: -webkit-linear-gradient(top, #ffffff, #ebebeb)
+    background-image: -moz-linear-gradient(top, #ffffff, #ebebeb)
+    background-image: -o-linear-gradient(top, #ffffff, #ebebeb)
+    background-image: -ms-linear-gradient(top, #ffffff, #ebebeb)
+    background-image: linear-gradient(top, #ffffff, #ebebeb)
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ffffff', EndColorStr='#ebebeb')
+    
     
   a, a:visited, a:hover, a:active
     text-decoration: none
+    margin: 0 -10px 0 14px
     
   li
     color: black
