@@ -8,7 +8,11 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter, :first_name, :last_name
 
+  before_validation :copy_password_to_confirmation
+
   validates_uniqueness_of :email, :case_sensitive => false, :allow_blank => true
+
+  validate :ensure_email_when_password_set
 
   before_save :ensure_authentication_token
 
@@ -97,5 +101,15 @@ class User < ActiveRecord::Base
     api = create_authorized_api
     update_attribute(:osm_id, api.find_user.id)
   rescue Rosemary::Error
+  end
+
+  def ensure_email_when_password_set
+    errors.add_on_blank(:email) if !password.blank? and email.blank?
+  end
+
+  def copy_password_to_confirmation
+    if password and !password_confirmation
+      password_confirmation = password
+    end
   end
 end
