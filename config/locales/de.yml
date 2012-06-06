@@ -650,12 +650,6 @@ de:
       long: "%A, %e. %B %Y, %H:%M Uhr"
       short: "%e. %B, %H:%M Uhr"
     pm: nachmittags
-
-  users:
-    after_signup_edit:
-      welcome:
-        headline: Fast geschafft!
-        text: Du bist nun erfolgreich registriert. Wie können wir dich in Zukunft über wichtige Neuigkeiten rund um die Wheelmap informieren?
   user_sessions:
     create:
       activation:
