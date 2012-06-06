@@ -1,6 +1,9 @@
 ---
 es:
   activerecord:
+    attributes:
+      user:
+        last_name: Apellido
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -35,9 +38,11 @@ es:
         header:
           one: "1 error no deja que %{model} se guarde"
           other: "%{count} errores no dejaron que %{model} se guarde"
+    models:
+      user: Usuario
   application:
     require_no_user:
-      notice: "Ya está conectado como"
+      notice: "Ya estás conectado como"
     require_user:
       notice: "Tiene que conectarse en esta página"
   breadcrumbs:
@@ -51,7 +56,7 @@ es:
     confirmations:
       confirmed: "Tu cuenta ha sido confirmada. Ya puedes conectarte."
       link: "¿No has recibido las instrucciones de confirmación?"
-      send_instructions: "Recibirás un email con las instrucciones de cómo confirmar tu cuenta en unos minutos."
+      send_instructions: "En unos minutos recibirás un email con las instrucciones de cómo confirmar tu cuenta."
     destroy:
       confirm: "¿Está seguro?"
       headline: "Borrar cuenta"
@@ -71,6 +76,8 @@ es:
       invalid: "Correo electrónico o contraseña no válidos."
       invalid_token: "Ficha de auntenticación inválida."
       locked: "Su cuenta está bloqueada."
+      timeout: "La sesión ha caducado. Por favor, entra de nuevo."
+      unauthenticated: "Tienes que acceder a su cuenta o registrarse antes de continuar"
     mailer:
       confirmation_instructions:
         landing_page: "Por favor haga clic en el enlace que hemos enviado a su dirección de correo. Si usted no recibe ningún correo de nosotros asegúrese de que no está escondido en su carpeta de spam. En caso de que no lo encuentre puede reenviarlo de nuevo."
@@ -101,10 +108,14 @@ es:
     passwords:
       link: "¿Olvidaste tu contraseña?"
       send_instructions: "Recibirás un email con las instrucciones de cómo cambiar tu password en unos minutos."
+      send_paranoid_instructions: "Si la cuenta existe, recibirá un eamil con las instrucciones para resetear su contraseña en unos minutos"
       updated: "Tu contraseña ha sido cambiada. Ya estás conectado."
+      updated_not_active: "Tu contraseña se ha cambiado con éxito"
     registrations:
       destroyed: "¡Adiós! Tu cuenta ha sido cancelada. Esperamos verte pronto."
       link: Registrarse
+      reasons:
+        locked: bloqueado
       signed_up: "Te has registrado. Se te mandará un correo de confirmación."
       updated: "Has actualizado tu cuenta satisfactoriamente."
     sessions:
@@ -114,7 +125,7 @@ es:
       link: Registrarse
       locked: "Tu cuenta está bloqueada."
       signed_in: "Registrado satisfactoriamente."
-      signed_out: "Se ha desconectado"
+      signed_out: "Se ha desconectado "
       timeout: "Tu sesión ha expirado, por favor entra otra vez para continuar."
       unauthenticated: "Necesitar entrar o registrarte antes de continuar."
       unconfirmed: "Tienes que confirmar tu cuenta para continuar"
@@ -131,17 +142,19 @@ es:
     sign_up:
       email:
         confirm_my_account: "Confirmar mi cuenta"
+        welcome: "Bievenido %{email}!"
       form:
         labels:
           email: "Correo electrónico"
           password: Contraseña
           password_confirmation: "Repetir contraseña"
+          wants_newsletter: "Sí, quiero estar informado sobre wheelmap, pero no más de una vez al mes."
         submit: Registrarse
       headline: Registrarse
     unlocks:
       link: "¿No ha recibido los pasos para desbloquear?"
       send_instructions: "Recibirás un email con las instrucciones de cómo bloquear tu cuenta en unos minutos"
-      unlocked: "Su cuenta ha sido desbloqueada. Ya está conectado."
+      unlocked: "Tu cuenta ha sido desbloqueada. Ya estás conectado."
   errors:
     format: "%{attribute} %{message}"
     messages:
@@ -152,6 +165,7 @@ es:
       equal_to: "tiene que ser exacto %{count}"
       even: "debe ser igual"
       exclusion: "está reservado"
+      expired: "ha caducado, solicite una nueva."
       greater_than: "tiene que ser mayor que %{count}"
       greater_than_or_equal_to: "tiene que ser mayor o igual a %{count}"
       inclusion: "no es un valor correcto"
@@ -159,7 +173,12 @@ es:
       less_than: "tiene que ser menor que %{count}"
       less_than_or_equal_to: "tiene que ser menor o igual que %{count}"
       not_a_number: "no es un número"
+      not_an_integer: "tiene que ser un número entero"
       not_found: "no se ha encontrado"
+      not_locked: "no estaba bloqueado"
+      not_saved:
+        one: "Un error ha impedido que se guarde %{resource}:"
+        other: "%{count} errores han impedido guardar un %{resource}:\n"
       odd: "tiene que ser impar"
       taken: "ya ha sido cogido"
       too_long: "es demasiado largo (no más de %{count} caracteres)"
@@ -167,10 +186,16 @@ es:
       wrong_length: "no tiene la longitud correcta (deben ser %{count} caracteres)"
     template:
       body: "Hubo problemas con los siguientes campos:"
+      header:
+        other: "%{count} errores han impedido que este %{model} se guardara\n"
   flash:
     actions:
       create:
         notice: "%{resource_name} fué creado exitosamente."
+      destroy:
+        alert: "%{resource_name} no se puede borrar"
+      update:
+        notice: "%{resource_name} se ha actualizado satisfactoriamente"
   form:
     show_fully_accessible_places: "accesible en silla de ruedas"
     show_limited_accessible_places: "acceso medio en silla de ruedas"
@@ -229,7 +254,7 @@ es:
       press: Prensa
       suggestions: Sugerencias
       what_is_barrier_free: "¿Qué significa \"accesible en silla de ruedas\"?"
-      what_is_wheelmap: "¿Qué es el mapa de silla de ruedas?"
+      what_is_wheelmap: "¿Qué es Wheelmap?"
     searchbar:
       add_place: "Añadir otra lugar"
       find: buscar
@@ -238,14 +263,23 @@ es:
       title_add_place: "¡Añada otro nuevo sitio aquí ahora!"
     tagline: "Logo del mapa de silla de ruedas"
     title: "Silla de ruedas - buscar sitios con acceso en silla de ruedas"
+  helpers:
+    select:
+      prompt: "Por favor, elija"
+    submit:
+      create: "crear %{model}"
+      submit: "guardar %{model}"
   home:
     index:
       filter:
         category: "Elegir Categoría:"
         wheelchair: "¿Accesible a silla de ruedas?"
       ie:
+        action:
+          upgrade: "Actualizar navegador"
         warning:
           headline: "Lo sentimos!"
+          message: "Parece que estás usando Internet Explorer. Para que Wheelmpa funcione correctamente es necesario que uses un navegador que tenga en cuenta los estandares. Puede usar Firefox, Chrome, Safari u Opera."
       link:
         node:
           create: "Agregar un nuevo sitio"
@@ -263,8 +297,14 @@ es:
   landing_pages:
     index:
       wheelchair:
+        ? "no"
+        :
+          headline: "Todos los %{type} no accesibles en %{city} (%{count})"
         unknown:
           headline: "Todos %{type} en %{city} con estado de silla de ruedas desconocido (%{count})"
+        ? "yes"
+        :
+          headline: "Todos los %{type} accesibles en %{city} (%{count})"
   layouts:
     application:
       banner:
@@ -280,7 +320,7 @@ es:
     create:
       flash:
         not_successfull: "¡Ay!, su entrada ha sido o incorrecta o incompleta."
-        successfull: "Gracias, su sumisión ha sido guardada con éxito y estará en línea en breve. "
+        successfull: "Gracias, tu actualización ha sido guardada con éxito y estará en línea en breve. "
     edit:
       header:
         title: "Editar sitio: %{node} | wheelmap.org "
@@ -288,7 +328,7 @@ es:
         large_map: "&laquo; Cancelar"
     errors:
       default: "Oops, algo no acaba de funcionar. Pero sabemos de qué se trata! "
-      not_authorized: "Disculpe, error en la autenticidad."
+      not_authorized: "Disculpe, la autenticación ha fallado"
       not_available: "Disculpe, esta página no está disponible temporalmente."
       not_existent: "Disculpe, esta página ya no está disponible."
       not_found: "Disculpe, página no encontrada."
@@ -313,8 +353,10 @@ es:
       show-in-osm: OpenStreetMap
     update:
       flash:
-        not_successfull: "¡Ay!, su entrada ha sido o incorrecta o incompleta."
+        not_successfull: "¡Ay!, tu entrada es incorrecta o incompleta."
         successfull: "Gracias, su envío ha sido guardado con éxito y estará en línea en breve. "
+    update_wheelchair:
+      successfull: "El estado de \"%{name}\" ha cambiado a \"%{status}\" y estará online en breve. "
   number:
     currency:
       format:
@@ -330,10 +372,12 @@ es:
       precision: 3
       separator: "-"
       significant: 0
-      strip_insignificant_zeros: ~
+      strip_insignificant_zeros: 0
     human:
       decimal_units:
         units:
+          billion: Billón
+          thousand: Mil
           unit: ~
       format:
         delimiter: ~
@@ -372,6 +416,7 @@ es:
       education: Educación
       food: Comida
       government: Gobierno
+      health: Salud
       leisure: Entretenimiento
       misc: Variado
       money_post: Banco
@@ -402,7 +447,7 @@ es:
         bar: Bar
         biergarten: Biergarten
         cafe: Cafe
-        drinking_water: "Beber agua"
+        drinking_water: "Agua potable"
         fast_food: "Comida rápida"
         pub: Pub
         restaurant: Restaurante
@@ -419,12 +464,15 @@ es:
       leisure:
         arena: Estadio
         cinema: Cine
+        community_center: "Centro cívico"
         gallery: Galería
         nightclub: Discoteca
         sauna: Sauna
         theatre: Teatro
         zoo: Zoo
       misc:
+        company: "Empresa (oficinas)"
+        lawyer: Abogado
         place_of_worship: "Zona religiosa"
         toilets: Sanitarios
       money_post:
@@ -432,7 +480,7 @@ es:
         bank: Banco
         bureau_de_change: "Cambio de moneda"
         post_box: Buzón
-        post_office: Correos
+        post_office: "Oficina de correos"
       public_transfer:
         aerodrome: Aeropuerto
         bicycle_parking: "Parking de Bicicletas"
@@ -463,6 +511,9 @@ es:
         bicycle: "Tienda de motos"
         books: Libros
         butcher: Carnicería
+        car_repair: "Taller de coches\n"
+        car_shop: Concesionario
+        chemist: Farmacia
         clothes: Ropa
         computer: Ordenadores
         convenience: Comodidad
@@ -481,7 +532,9 @@ es:
         optician: Ópica
         second_hand: "Segunda mano"
         shoes: Zapatos
+        sports: Deportes
         supermarket: Supermercado
+        video: Videoclub
       sport:
         sports_centre: "Centro de deportes"
         stadium: Estadio
@@ -521,6 +574,10 @@ es:
   splash:
     countline: "%{count} lugares ya han sido marcados."
     headline: "Todo el mundo puede añadir lugares accesible para sillas de ruedas!"
+    start: Comenzar
+    step1: "Haz click en un sitio que conozcas"
+    step3: "¡Eso es! No hace falta registrarse."
+    what_is_wheelmap: "¿Qué es Wheelmap?"
   statistics: Estadísticas
   support:
     array:
@@ -552,15 +609,21 @@ es:
       login_with_twitter: "Conectarse con Twitter"
       password: Contraseña
       remember_me: "Seguir conectado"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Bienvenido a Wheelmap\n"
+        text: "¿Cómo podemos ponernos en contacto contigo? Puedes cambiar esta información más tarde en tu perfil."
   wheelchairstatus:
     limited: "acceso en silla de ruedas medio"
     ? "no"
-    : "sin acceso en silla de ruedas"
+    : "No es accesible en silla de ruedas"
     unknown: "acceso en silla de ruedas desconocido"
     ? "yes"
     : "acceso en silla de ruedas completo"
   wheelmap:
     footer:
+      a_project_of: "Un proyecto de"
       based_on: "Basado en"
     itunes:
       alt: "AppStore Logo"
@@ -575,5 +638,11 @@ es:
       unknown_accessible: "<em>Desconocido:</em> Ayuda y marcar los lugares!"
   will_paginate:
     page_entries_info:
+      multi_page: "Mostrar %{model} %{from} - %{to} de %{count} en total"
+      multi_page_html: "Mostrar %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> en total"
+      single_page:
+        one: "Mostrar 1 %{model}"
+        zero: "No se ha encontrdo %{model}"
       single_page_html:
         one: "Mostrando <b>1</b> %{model}"
+    previous_label: Anterior

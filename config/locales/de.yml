@@ -1,6 +1,10 @@
 ---
 de:
   activerecord:
+    attributes:
+      user:
+        first_name: Vorname
+        last_name: Nachname
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -26,6 +30,10 @@ de:
         too_short: "ist zu kurz (mindestens %{count} Zeichen)"
         wrong_length: "hat die falsche Länge (muss genau %{count} Zeichen haben)"
       models:
+        user:
+          attributes:
+            email:
+              blank: "muss ausgefüllt werden, wenn Passwort ein gesetzt wird"
         user_session:
           email: E-Mail-Adresse
           password: Passwort
@@ -35,6 +43,8 @@ de:
         header:
           one: "Konnte dieses %{model}-Objekt nicht speichern, da Fehler auftrat."
           other: "Konnte dieses %{model}-Objekt nicht speichern, da %{count} Fehler auftraten."
+    models:
+      user: Benutzer
   application:
     require_no_user:
       notice: "Du bist bereits eingeloggt…"
@@ -47,6 +57,7 @@ de:
     root: wheelmap-Karte
   common:
     close: schließen
+    skip: überspringen
   devise:
     confirmations:
       confirmed: "Dein Benutzerkonto wurde erfolgreich bestätigt. Du bist nun angemeldet."
@@ -86,6 +97,7 @@ de:
     mandatory: "* Pflichtfeld"
     omniauth_callbacks:
       failure: "Authorisierung mit %{kind} fehlgeschlagen. Fehler: \"%{reason}\". "
+      permission_missing: "Du hast uns nicht die benötigten Rechte eingeräumt."
       success: "Erfolgreich authorisiert mit %{kind}."
     password_recovery:
       form:
@@ -127,6 +139,13 @@ de:
       invalid_token: "Ungültiger Authentizitätstoken. Bitte lösche die Cookies in deinem Browser und versuche es noch einmal."
       link: Login
       locked: "Dein Benutzerkonto ist gesperrt."
+      new:
+        no_osm_account: "Nicht bei OpenStreetMap?"
+        osm_promo_text: "Die Wheelmap basiert auf dem Kartenmaterial der OpenStreetMap (OSM). Die OSM ist eine freie editierbare Weltkarte, die von Menschen wie dir erstellt wird. Eine Wikipedia für Karten. Damit du bestehende Orte bearbeiten oder neue Orte anlegen kannst, musst du bei der OSM einen Benutzerkonto haben und mit diesem hier eingeloggt sein."
+        promo_text_thank_you: "Vielen Dank für deine Unterstützung!"
+        sign_in_with: "Einloggen mit %{kind}"
+        sign_up_with_osm: "Registriere dich hier."
+        wheelmap_promo_text: "Mit deinem Wissen über rollstuhlgerechte Orte leistest du einen Beitrag dazu, dass Menschen mit Mobilitätseinschränkungen ihren Alltag besser planen können. Zudem werden die Ortsinformationen in der OSM umfangreicher."
       signed_in: "Login erfolgreich."
       signed_out: "Logout erfolgreich."
       timeout: "Deine Sitzung ist abgelaufen, bitte melde dich erneut an."
@@ -223,6 +242,7 @@ de:
       city: "Ort:"
       create: "Ort anlegen"
       email: E-Mail
+      finish: Fertigstellen
       housenumber: "Nr:"
       lat: Breitengrad
       lon: Längengrad
@@ -642,6 +662,11 @@ de:
       login_with_twitter: "Mit Twitter einloggen"
       password: Passwort
       remember_me: "Eingeloggt bleiben"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Fast geschafft!"
+        text: "Du bist nun erfolgreich registriert. Wie können wir dich in Zukunft über wichtige Neuigkeiten rund um die Wheelmap informieren?"
   wheelchairstatus:
     limited: "teilweise rollstuhlgerecht"
     ? "no"
