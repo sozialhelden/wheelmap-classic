@@ -11,7 +11,7 @@
         = form.input :first_name, :required => false, :input_html => { :class => :small }, :label_html => {:class => :small }
       .grid_3{:style => 'width:500px; float:left;'}
         = form.input :last_name, :required => false, :hint => false, :input_html => { :class => :small }, :label_html => {:class => :small }
-      = form.input :email, :required => false, :hint => 'Wir behandeln Deine Adresse vertraulich, kein Spam, versprochen!', :hint_class => [:small, 'inline-hints'], :input_html => { :class => :large }, :label_html => {:class => :small }
+      = form.input :email, :required => false, :hint => 'Wir behandeln Deine Adresse vertraulich, kein Spam, versprochen!', :hint_class => [:small, 'inline-hints'], :input_html => { :class => :large }, :label_html => {:class => :small }, :error_class => ['inline-errors', 'small']
       = form.input :wants_newsletter, :as => :hidden, :value => true
 
     = form.inputs do
