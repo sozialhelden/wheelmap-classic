@@ -1,6 +1,10 @@
 ---
 en:
   activerecord:
+    attributes:
+      user:
+        first_name: "Given name"
+        last_name: "Last name"
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -26,6 +30,10 @@ en:
         too_short: "is too short (minimum is %{count} characters)"
         wrong_length: "is the wrong length (should be %{count} characters)"
       models:
+        user:
+          attributes:
+            email:
+              blank: "can't be blank if password is given"
         user_session:
           email: "Email address"
           password: Password
@@ -35,6 +43,8 @@ en:
         header:
           one: "1 error prohibited this %{model} from being saved"
           other: "%{count} errors prohibited this %{model} from being saved"
+    models:
+      user: User
   application:
     require_no_user:
       notice: "You’re already logged in…"
@@ -47,6 +57,7 @@ en:
     root: wheelmap
   common:
     close: close
+    skip: skip
   devise:
     confirmations:
       confirmed: "Your account was successfully confirmed. You are now signed in."
@@ -86,6 +97,7 @@ en:
     mandatory: "* Required"
     omniauth_callbacks:
       failure: "Authorization with %{kind} failed. Error: \"%{reason}\". "
+      permission_missing: "You did not grant the required permissions."
       success: "Successfully logged in with %{kind}."
     password_recovery:
       form:
@@ -127,6 +139,13 @@ en:
       invalid_token: "Invalid authentication token"
       link: "Sign in"
       locked: "Your account is locked"
+      new:
+        no_osm_account: "No OpenStreetMap account?"
+        osm_promo_text: "The wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must to be logged in with it."
+        promo_text_thank_you: "Thank you very much for your support!"
+        sign_in_with: "Log in with %{kind}"
+        sign_up_with_osm: "Register now."
+        wheelmap_promo_text: "With your knowledge about wheelchair accessible places you help people with physical impairments to better organize their everyday live. Furthermore the OpenStreetMap gets considerably richer in detail."
       signed_in: "Logged in successfully"
       signed_out: "You have signed out successfully"
       timeout: "Your session expired, please sign in again to continue."
@@ -223,6 +242,7 @@ en:
       city: "City:"
       create: "Create place"
       email: E-Mail
+      finish: Finish
       housenumber: "No:"
       lat: Latitude
       lon: Longitude
@@ -642,6 +662,11 @@ en:
       login_with_twitter: "Log in with Twitter"
       password: Password
       remember_me: "Stay logged in"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Welcome to wheelmap"
+        text: "How can we get in touch with you? You can change this information later in your profile."
   wheelchairstatus:
     limited: "partially wheelchair accessible"
     ? "no"
