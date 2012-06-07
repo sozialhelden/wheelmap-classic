@@ -667,8 +667,8 @@ de:
     after_signup_edit:
       welcome:
         headline: "Fast geschafft!"
-        text: "Du bist nun erfolgreich registriert. Wie können wir dich in Zukunft über wichtige Neuigkeiten rund um die Wheelmap informieren?"
         set_password_for_mobile: "Besitzt du ein Smartphone? Dann definiere hier dein Passwort, um die Wheelmap auch von unterwegs mit deinem iPhone- oder Android-Handy zu benutzen."
+        text: "Du bist nun erfolgreich registriert. Wie können wir dich in Zukunft über wichtige Neuigkeiten rund um die Wheelmap informieren?"
   wheelchairstatus:
     limited: "teilweise rollstuhlgerecht"
     ? "no"
