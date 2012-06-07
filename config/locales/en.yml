@@ -669,6 +669,7 @@ en:
         headline: "Welcome to wheelmap"
         set_password_for_mobile: "Do you have a smartphone? Please define a password in order to use the Wheelmap while on the go with your iPhone or Android phone."
         text: "How can we get in touch with you? You can change this information later in your profile."
+        set_password_for_mobile: "Do you have a smartphone? Please define a password in order to use the Wheelmap while on the go with your iPhone or Android phone."
   wheelchairstatus:
     limited: "partially wheelchair accessible"
     ? "no"
