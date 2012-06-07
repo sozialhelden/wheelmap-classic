@@ -175,6 +175,7 @@ pl:
       send_paranoid_instructions: "Jeśli twoje konto istnieje, za kilka minut otrzymasz email z instrukcją, jak je odblokować."
       unlocked: "Twoje konto zostało odblokowane. Jesteś zalogowany."
   errors:
+    dynamic_format: "%{message}"
     messages:
       accepted: "należy potwierdzić"
       already_confirmed: "zostało już potwierdzone"
@@ -403,6 +404,7 @@ pl:
       strip_insignificant_zeros: 0
     human:
       decimal_units:
+        format: "%n %u"
         units:
           billion: Miliard
           million: Milion
@@ -416,6 +418,7 @@ pl:
         significant: prawda
         strip_insignificant_zeros: prawda
       storage_units:
+        format: "%n %u"
         units:
           byte:
             one: bajt
@@ -684,4 +687,5 @@ pl:
       single_page_html:
         other: "Wyświetlanie <b>all&nbsp;%{count}</b> %{model}"
         zero: "Nie odnaleziono %{model} "
+    page_gap: "&hellip;"
     previous_label: "&#8592; Poprzedni"
