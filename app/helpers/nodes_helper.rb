@@ -6,10 +6,11 @@ module NodesHelper
 
   def tag_line(node, key, options = nil)
     if node.tags[key]
+      itemprop = options.delete(:itemprop)
       label = options.try(:[], :label_key) || t("formtastic.labels.#{key}")
       content_tag(:tr) do
         content_tag(:th, label || "formtastic.labels.#{key}") +
-        content_tag(:td, node.tags[key] || '&nbsp;')
+        content_tag(:td, node.tags[key] || '&nbsp;', :itemprop => itemprop)
       end
     end
   end

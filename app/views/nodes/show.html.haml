@@ -3,92 +3,101 @@
   = link_to t('.link.large_map'), root_path(:locale => I18n.locale, :lat => @node.lat, :lon => @node.lon, :zoom => 18), :class => 'magnify', :id => 'show-on-large-map'
 
 = link_to t('.link.back'), root_path(:locale => I18n.locale, :lat => @node.lat, :lon => @node.lon, :zoom => 18)
-%h1
-  =@node.name
-%br
-= render :partial => 'nodes/node', :object => @node
-
-%table#accessibility{:class => "#{dom_class(@node)}"}
-  %tr
-
-    %th=t('formtastic.labels.wheelchair')
-    %td= t("wheelchairstatus.#{@node.wheelchair}")
-
-
-  -if @node.wheelchair_description
-    %tr
-      %th=t('formtastic.labels.wheelchair_description')
-      %td{:colspan => 2}= @node.wheelchair_description
-
-  %tr
-    %th=t('formtastic.labels.category')
-
-    - @node.category.identifier
-    %td{:class => @node.category.identifier}
-      - if @node.category
-        = t("poi.category.#{@node.category.identifier}")
-      - else
-        &nbsp;
-
-  %tr
-    %th=t('formtastic.labels.type')
-    %td
-      - if @node.type
-        = t("poi.name.#{@node.category.identifier}.#{@node.type}")
-      -else
-        &nbsp;
-
-  - if @node.tags['addr:street'] || @node.tags['addr:housenumber']
-    %tr
-      %th=t('formtastic.labels.street')
-      %td
-        =@node.tags['addr:street']
-        =@node.tags['addr:housenumber'] || '&nbsp;'
-
-  = tag_line @node, 'addr:postcode', :label_key => t('formtastic.labels.postcode')
-  = tag_line @node, 'addr:city', :label_key => t('formtastic.labels.city')
-
-  - if @node.tags['website']
-    %tr
-      %th=t('formtastic.labels.website')
-      %td
-        - if url = URI.parse(@node.tags['website']) rescue nil
-          %a{:href => url.to_s.html_safe, :rel => 'nofollow', :target => '_blank'}>=url.to_s.html_safe
-        - else
-          = @node.tags['website']
-
-  =tag_line(@node,'phone')
-  =tag_line(@node,'centralkey')
-
-
-- unless @node.provided_pois.empty?
+%div{ :itemscope => '', :itemtype => "http://schema.org/Place" }
+  %h1{ :itemprop => "name" }
+    =@node.name
   %br
-  %br
-  %h2= t('.more_data_from')
-  %table#provider{:class => "#{dom_class(@node)}"}
-    - @node.provided_pois.each do |p|
+  %span{ :itemprop => :geo, :itemscope => '', :itemtype => "http://schema.org/GeoCoordinates" }
+    %meta{ :itemprop => 'latitude', :content => @node.lat }
+    %meta{ :itemprop => 'longitude', :content => @node.lon }
+
+  = render :partial => 'nodes/node', :object => @node
+
+  %table#accessibility{:class => "#{dom_class(@node)}"}
+    %tbody
       %tr
-        %th= "#{p.provider.name}:"
-        %td= link_to(t("wheelchairstatus.#{p.wheelchair}"), p.url, :target => '_blank', :class => :external) if p.url.present?
+
+        %th=t('formtastic.labels.wheelchair')
+        %td= t("wheelchairstatus.#{@node.wheelchair}")
 
 
-=javascript_include_tag"http://maps.google.com/maps/api/js?sensor=false"
-.clear
+      -if @node.wheelchair_description
+        %tr
+          %th=t('formtastic.labels.wheelchair_description')
+          %td{ :colspan => 2, :itemprop => 'description' }= @node.wheelchair_description
+
+      %tr
+        %th=t('formtastic.labels.category')
+
+        - @node.category.identifier
+        %td{:class => @node.category.identifier}
+          - if @node.category
+            = t("poi.category.#{@node.category.identifier}")
+          - else
+            &nbsp;
+
+      %tr
+        %th=t('formtastic.labels.type')
+        %td
+          - if @node.type
+            = t("poi.name.#{@node.category.identifier}.#{@node.type}")
+          -else
+            &nbsp;
+    %tbody{ :itemprop => :address, :itemscope => '', :itemtype => "http://schema.org/PostalAddress" }
+      - if @node.tags['addr:street'] || @node.tags['addr:housenumber']
+        %tr
+          %th=t('formtastic.labels.street')
+          %td{ :itemprop => "streetAddress" }
+            =@node.tags['addr:street']
+            =@node.tags['addr:housenumber'] || '&nbsp;'
+
+      = tag_line @node, 'addr:postcode', :label_key => t('formtastic.labels.postcode'), :itemprop => 'postalCode'
+      = tag_line @node, 'addr:city', :label_key => t('formtastic.labels.city'), :itemprop => 'addressLocality'
+
+    - if @node.tags['website']
+      %tr
+        %th=t('formtastic.labels.website')
+        %td
+          - if url = URI.parse(@node.tags['website']) rescue nil
+            %a{:href => url.to_s.html_safe, :rel => 'nofollow', :target => '_blank'}>=url.to_s.html_safe
+          - else
+            = @node.tags['website']
+
+    =tag_line( @node,'phone', :itemprop => 'telephone' )
+    =tag_line(@node,'centralkey')
 
 
-%hr
-%h2 Google Streetview:
+  - unless @node.provided_pois.empty?
+    %br
+    %br
+    %h2= t('.more_data_from')
+    %table#provider{:class => "#{dom_class(@node)}"}
+      - @node.provided_pois.each do |p|
+        %tr
+          %th= "#{p.provider.name}:"
+          %td= link_to(t("wheelchairstatus.#{p.wheelchair}"), p.url, :target => '_blank', :class => :external) if p.url.present?
 
-%div#streetview{:style => "overflow: hidden; margin-bottom: 10px; width: 980px; height: 250px;"}
-  %p#streetview_info
 
-.node-footer
-  = link_to t('.show-in-osm'), "http://www.openstreetmap.org/edit?lat=#{@node.lat}&lon=#{@node.lon}&zoom=20", :target => :blank
-  = link_to_landing_page(t(".link.listing", :type => @node.node_type.localized_name, :city => @node.region.name), @node.region, @node.wheelchair, @node.node_type, :class => 'right') if @node.region
+  =javascript_include_tag"http://maps.google.com/maps/api/js?sensor=false"
+  .clear
+
+
+  %hr
+  %h2 Google Streetview:
+
+  %div#streetview{:style => "overflow: hidden; margin-bottom: 10px; width: 980px; height: 250px;"}
+    %p#streetview_info
+
+  .node-footer
+    = link_to t('.show-in-osm'), "http://www.openstreetmap.org/edit?lat=#{@node.lat}&lon=#{@node.lon}&zoom=20", :target => :blank
+    = link_to_landing_page(t(".link.listing", :type => @node.node_type.localized_name, :city => @node.region.name), @node.region, @node.wheelchair, @node.node_type, :class => 'right') if @node.region
 
 - content_for :head do
   %title= t('.header.title', :node => @node.headline)
-  %meta{:name => 'description', :content => t('header.meta.description')}
+  %meta{ :name => 'description', :content => t('header.meta.description')}
+
+  %meta{ :name => "DCTERMS.license", :scheme => "DCTERMS.URI", :content => "http://www.openstreetmap.org/copyright/en"}
+  %meta{ :name => "DCTERMS.rightsHolder", :content => "OpenStreetMap Foundation" }
 
 - content_for :javascript_constants do
   :javascript
