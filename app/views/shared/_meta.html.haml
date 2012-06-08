@@ -11,6 +11,9 @@
 - else
   %meta{:name => 'robots', :content => 'follow index'}
 
+- I18n.available_locales.each do |locale|
+  %link{ :rel => "alternate", :hreflang => locale, :href => url_for(:only_path => false, :locale => locale)}
+
 %meta{:name => "google-site-verification", :content => "ANQCVlgXNpnBdZInKyE4eWMeNPq-cIckJGMyEYPXNec"}
 
 %link{:href => search_index_url, :rel => 'search', :title => t('header.meta.search')}
