@@ -16,7 +16,6 @@ Languages = {
   'is'    => 'Íslenska',
   'it'    => 'Italiano',
   'ja'    => '日本',
-  'jp'    => '日本',
   'ko'    => '한국어',
   'lv'    => 'Latviešu',
   'nb'    => 'Norsk Bokmål',

@@ -79,7 +79,7 @@ OpenLayers.Lang.it = {
   'more_information': "più ...",
   'wheelchair_help': "Accessibile in sedia a rotelle? (Aiuto)"
 };
-OpenLayers.Lang.jp = {
+OpenLayers.Lang.ja = {
   'wheelchair_label_yes': "車椅子可",
   'wheelchair_label_limited': "車椅子一部可",
   'wheelchair_label_no': "車椅子不可",
