@@ -19,7 +19,8 @@ class PoiLocator
       poi_size = Poi.count(:conditions => {:region_id => nil})
       # progress = ProgressBar.new("Pois kontrolliert #{poi_size}", poi_size)
       # iterates over all POIs with undefined region
-      Poi.including_category.find_in_batches(:conditions => {:region_id => nil}) do |batch|
+      lowest_id = Poi.order('osm_id ASC').limit(1).first.osm_id
+      Poi.including_category.find_in_batches(:conditions => {:region_id => nil}, :start => lowest_id) do |batch|
         batch.each do |poi|
 
            # default: poi NOT matched in a region
