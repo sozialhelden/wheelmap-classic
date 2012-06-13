@@ -249,7 +249,7 @@ ar:
       lon: "خط الطول"
       name: "الإسم :"
       osm_password: "OSM كلمة المرور"
-      osm_username: "OSM إسم الحساب\n\n"
+      osm_username: "OSM إسم الحساب"
       password: "كلمة المرور"
       password_confirmation: "إعادة كلمة السر"
       phone: "رقم الهاتف :"
@@ -347,8 +347,8 @@ ar:
         alt: "قام بتنفيذ المشروع Sozialhelden.de"
   node:
     address:
-      city: "%{city}% {postcode}\n"
-      street: "%{housenumber} %{street}\n\n"
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
     tags:
       phone: "رقم الهاتف:"
       website: موقع
@@ -361,8 +361,7 @@ ar:
       header:
         title: "%{%{node} تحرير مكان"
       link:
-        large_map: |-
-            &laquo;  إلغاء
+        large_map: "&laquo;  إلغاء"
     errors:
       default: "خطأ في العملية، تم إرسال تنبيه بذلك"
       not_authorized: "عذرا، خطأ في المصادقة"
@@ -415,7 +414,7 @@ ar:
       strip_insignificant_zeros: 0
     human:
       decimal_units:
-        format: "%n %u\n"
+        format: "%n %u"
         units:
           billion: مليار
           million: مليون
@@ -449,7 +448,7 @@ ar:
       connect:
         headline: "عليك أن تقوم بربط  حسابك في \"أوبن ستريت ماب\" مع حسابك في \"ويل ماب\"  لتتمكن من إضافة وتعديل الأماكن ."
     callback:
-      notice: "%{user} حسابك في \"ويل ماب\" مرتبط بحسابك في\" أوبن ستريت ماب \"\n"
+      notice: "%{user} حسابك في \"ويل ماب\" مرتبط بحسابك في\" أوبن ستريت ماب \""
   or: أو
   place:
     one: "%{count} مكان"
@@ -702,10 +701,10 @@ ar:
       single_page:
         one: "%{model} عرض "
         other: "%{count} %{model} عرض الكل"
-        zero: "%{model} غير  موجود\n"
+        zero: "%{model} غير  موجود"
       single_page_html:
         one: "<b>1</b> %{model} العرض "
         other: "<b>all&nbsp;%{count}</b> %{model} العرض "
         zero: "%{model} غير موجود"
-    page_gap: "&hellip;\n"
+    page_gap: "&hellip;"
     previous_label: "&#8592;السابق"
