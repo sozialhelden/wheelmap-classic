@@ -1,3 +1,12 @@
+OpenLayers.Lang.ar = {
+  'wheelchair_label_yes': "سهولة الوصول للكرسي المتحرك",
+  'wheelchair_label_limited': "إمكانية الوصول جزئية للكرسي المتحرك",
+  'wheelchair_label_no': "لايمكن الوصول بالكرسي المتحرك",
+  'wheelchair_label_unknown': "حالة غير معروفة",
+  'wheelchair_update_button': "تحديث",
+  'more_information': "المزيد...",
+  'wheelchair_help': "هل وصول الكرسي المتحرك سهل؟ (بادر بتقديم المساعدة)"
+};
 OpenLayers.Lang.bg = {
   'wheelchair_label_yes': "достъпно за инвалидни колички",
   'wheelchair_label_limited': "отчасти достъпно за инвалидни колички",
