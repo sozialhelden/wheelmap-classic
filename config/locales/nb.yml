@@ -10,9 +10,9 @@ nb:
         format: "%{attribute} %{message}"
       messages:
         accepted: "må være akseptert"
-        blank: "kan ikke være blank"
+        blank: "kan ikke stå tom"
         confirmation: "passer ikke bekreftelsen"
-        empty: "kan ikke være tom"
+        empty: "kan ikke stå tom"
         equal_to: "må være lik %{count}"
         even: "må være partall"
         exclusion: "er reservert"
@@ -25,13 +25,17 @@ nb:
         not_a_number: "er ikke et tall"
         odd: "må være oddetall"
         record_invalid: "Det oppstod feil: %{errors}"
-        taken: "er allerede i bruk"
+        taken: "er allerede opptatt"
         too_long: "er for lang (maksimum %{count} tegn)"
         too_short: "er for kort (minimum %{count} tegn)"
         wrong_length: "er av feil lengde (maksimum %{count} tegn)"
       models:
+        user:
+          attributes:
+            email:
+              blank: "kan ikke stå tom dersom passord er utdelt"
         user_session:
-          email: "Epost addresse"
+          email: Epostadresse
           password: Passord
           remember_me: "Forbli pålogget"
       template:
@@ -45,10 +49,10 @@ nb:
     require_no_user:
       notice: "Du er allerede logget inn"
     require_user:
-      notice: "Du må være innlogget for å se denne siden"
+      notice: "Du må være innlogget for å se denne siden."
   breadcrumbs:
     node:
-      create: "Legg til et sted"
+      create: "Legg til nytt sted"
       edit: "Rediger stedet"
     root: wheelmap
   common:
@@ -57,8 +61,8 @@ nb:
   devise:
     confirmations:
       confirmed: "Epostadressen din har blitt bekreftet."
-      link: "Mottok du ikke noen bekreftelse instruksjoner?"
-      send_instructions: "Du vil i løpet av noen minutter motta en epost med en lenke for å bekrefte epostadressen din."
+      link: "Mottok du ikke noen instruksjoner for bekreftelse?"
+      send_instructions: "Du vil i løpet av noen minutter motta en epost med en lenke til bruk for å bekrefte epostadressen din."
       send_paranoid_instructions: "Hvis kontoen din eksisterer så vil du få en epost med instruksjoner på hvordan du kan bekrefte kontoen din i løpet av noen minutter"
     destroy:
       confirm: "Er du sikker?"
@@ -75,24 +79,24 @@ nb:
       headline: "Rediger konto"
     failure:
       already_authenticated: "Du har allerede logget deg på."
-      inactive: "Din konto er ikke aktivert."
-      invalid: "Epost-adresse eller passord er ikke gyldig."
-      invalid_token: "Ugyldig autentiserings-token."
-      locked: "Din konto er låst."
-      timeout: "Din sesjon er utløpt. Logg inn igjen for å kunne fortsette."
-      unauthenticated: "Du må logge inn eller registrere deg for å kunne fortsette."
+      inactive: "Din konto er foreløpig ikke aktivert."
+      invalid: "Epost eller passord er ikke gyldig."
+      invalid_token: "Ugyldig autentifisering."
+      locked: "Din konto er låst"
+      timeout: "Din sesjon er utløpt, vennligst logg på igjen for å fortsette."
+      unauthenticated: "Du må logge på eller registrere deg for å kunne fortsette"
       unconfirmed: "Du må bekrefte kontoen din for å kunne fortsette."
     mailer:
       confirmation_instructions:
-        landing_page: "Vennligst klikk på linken vi akkurat sendt til din epost addresse. Hvis du ikke har mottatt noe fra oss vennligst sjekk om den har havnet i søppelpost katalogen, hvis den ikke er der gå tilbake til registrerings siden og prøv igjen."
-        subject: Bekreftelsesinstruksjoner
+        landing_page: "Vennligst klikk på linken vi akkurat sendte til din epostaddresse. Hvis du ikke har mottatt noe fra oss, vennligst sjekk om den har havnet i søppelpost katalogen. Hvis den ikke finnes der, gå tilbake til registreringssiden, og prøv igjen."
+        subject: "En siste steg for å aktivere kontoen"
       reset_password_instructions:
-        subject: "Nullstilling av passord"
+        subject: "Innstruksjoner for nullstilling av passord"
       unlock_instructions:
-        subject: "Gjenåpning av konto"
+        subject: "Intruksjoner for gjenåpning av konto"
     mandatory: "* Påkrevd"
     omniauth_callbacks:
-      failure: "Kunne ikke autorisere deg fra %{kind} fordi \"%{reason}\"."
+      failure: "Kunne ikke autorisere deg med %{kind}. Feilmelding: \"%{reason}\"."
       permission_missing: "Du har ikke gitt de nødvendige tillatelsene."
       success: "Vellykket autorisering fra %{kind}."
     password_recovery:
@@ -103,10 +107,10 @@ nb:
       headline: "Glemt passord?"
     password_reset:
       email:
-        comment: "Hvis du ikke bestilte tilbakestilling av passord, bare ignorer denne epost. Ditt passord vil ikke bli endret så lenge du ikke klikker på linken over og setter et nytt passord."
+        comment: "Hvis du ikke bestilte tilbakestilling av passord, bare ignorer denne epost. Ditt passord vil ikke bli endret med mindre du klikker på linken over og lager et nytt passord."
         headline: "Velkommen  %{email}"
         link: "Endre passordet"
-        text: "Det har blitt sendt ønske om å bytte passord, hvis det var deg trykk på linken. Hvis det ikke var deg se bort ifra meldingen"
+        text: "Det har kommet forespørsel om bytte av passord. Hvis forespørselen kom deg, trykk på linken - i motsatt fall, overse dette."
       form:
         labels:
           password: "Nytt passord"
@@ -115,35 +119,36 @@ nb:
       headline: "Tilbakestill passord"
     passwords:
       link: "Glemt passord?"
-      send_instructions: "Du vil snart motta en epost med instruksjoner for å nullstille passordet ditt."
+      send_instructions: "Du vil om få minutter motta en epost med instruksjoner for å nullstille passordet ditt"
       send_paranoid_instructions: "Hvis kontoen eksisterer vil du motta epost med bruker veiledning for tilbakestilling av passordet i løpet av noen minutter"
-      updated: "Ditt passord er endret og du er nå innlogget."
-      updated_not_active: "Passord endringen var vellykket"
+      updated: "Ditt passord ble endret, du er nå pålogget"
+      updated_not_active: "Passordet ditt har blitt endret"
     registrations:
-      destroyed: "Farvel. Din konto er nå slettet."
-      inactive_signed_up: "Din registrering er vellykket, men vi kunne ikke logge deg inn på grunn av at din konto er %{reason}."
+      destroyed: "Farvel. Din konto er nå slettet. Velkommen igjen."
+      inactive_signed_up: "Din registrering var vellykket, men vi kunne ikke logge deg inn. Årsak: \"%{reason}\"."
       link: Registrer
       reasons:
-        inactive: Inaktiv
+        inactive: inaktiv
         locked: Låst
         unconfirmed: Ubrekreftet
-      signed_up: "Velkommen! Din registrering er vellykket. En bekreftelse vil bli sendt på epost"
-      updated: "Din profil er oppdatert."
+      signed_up: "Din registrering var vellykket. En bekreftelse vil bli sendt til din epostadresse."
+      updated: "Din profil er nå oppdatert."
     sessions:
-      inactive: "Din konto er ikke aktivisert enda"
-      invalid: "Feil epost eller passord"
+      inactive: "Din konto ble foreløpig ikke aktivert"
+      invalid: "Feil epost eller passord."
       invalid_token: "Ugyldig autorisasjon"
-      link: "Logg inn"
+      link: "Logg på"
       locked: "Din konto er låst"
       new:
-        no_osm_account: "Ingen OpenStreetMap konto?"
+        no_osm_account: "Ingen OpenStreetMap-konto?"
+        osm_promo_text: "Wheelmap baserer seg på geodata fra OpenStreetMap (OSM). Open StreetMap er et gratis verdenskart, laget av personer som deg. Det minner om Wikipedia for kart. For å redigere steder eller opprette nye trenger du en OpenStreetMap-konto og må være logget på den."
         promo_text_thank_you: "Tusen takk for din støtte!"
         sign_in_with: "Logg på med %{kind}\n"
         sign_up_with_osm: "Registrer nå."
         wheelmap_promo_text: "Med din kunnskap om rullestoltilgjengelige steder bidrar du til at folk med funksjonsnedsettelser lettere kan organisere hverdagen sin. Dette gjør også OpenStreetMap betraktelig mer detaljerikt."
-      signed_in: "Du er nå innlogget."
-      signed_out: "Du er nå logget ut."
-      timeout: "Din sessjon har gått ut på tid, vennligst logg inn igjen for å fortsette"
+      signed_in: "Du er nå innlogget"
+      signed_out: "Du er nå logget av"
+      timeout: "Din sessjon har gått ut på tid, vennligst logg på på nytt for å fortsette."
       unauthenticated: "Du må logge deg på eller registrere deg før du kan fortsette"
       unconfirmed: "Du må bekrefte kontoen før du kan fortsette"
     sign_in:
@@ -166,42 +171,42 @@ nb:
           email: Epost
           password: Passord
           password_confirmation: "Gjenta passord"
-          wants_newsletter: "Vennligst hold meg oppdatert om wheelmap - men ikke mer enn engang pr. måned"
-        submit: "Meld deg på"
+          wants_newsletter: "Vennligst hold meg oppdatert om wheelmap - men ikke mer enn engang pr. måned."
+        submit: Registrer
       headline: Registrer
     unlocks:
-      link: "Mottok du ikke opplåsnings instruksjoner?"
-      send_instructions: "Du vil snart motta en epost med instruksjon for å gjenåpne din konto."
+      link: "Mottok du ikke instruksjoner for gjenåpning?"
+      send_instructions: "Du vil i løpet av få minutter motta en epost med instruksjoner om hvordan gjenåpne din konto."
       send_paranoid_instructions: "Hvis kontoen din eksisterer, så vil du motta en epost med instruksjoner på hvordan du skal låse opp kontoen i løpet av få minutter"
-      unlocked: "Din konto er gjenåpnet og du er nå innlogget."
+      unlocked: "Din konto er gjenåpnet. Du er nå pålogget."
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
       accepted: "må være akseptert"
-      already_confirmed: "har allerede blitt bekreftet. Prøv å logg inn."
+      already_confirmed: "er allerede bekreftet"
       blank: "kan ikke være blank"
       confirmation: "passer ikke bekreftelsen"
-      empty: "kan ikke være tom"
+      empty: "må være utfylt"
       equal_to: "må være lik %{count}"
       even: "må være partall"
       exclusion: "er reservert"
       expired: "Utgått, vennligst be om ny"
       greater_than: "må være større enn %{count}"
       greater_than_or_equal_to: "må være større enn eller lik %{count}"
-      inclusion: "er ikke inkludert i listen"
+      inclusion: "ikke akseptert verdi"
       invalid: "er ugyldig"
       less_than: "må være mindre enn %{count}"
       less_than_or_equal_to: "må være mindre enn eller lik %{count}"
       not_a_number: "er ikke et tall"
-      not_an_integer: "Må være eheltall"
+      not_an_integer: "Må være heltall"
       not_found: "ikke funnet"
       not_locked: "var ikke låst"
       not_saved:
-        one: "Én feil gjorde at %{resource} ikke kunne lagres:"
+        one: "En feil gjorde at %{resource} ikke kunne lagres:"
         other: "%{count} feil gjorde at %{resource} ikke kunne lagres:"
       odd: "må være oddetall"
-      taken: "er allerede i bruk"
+      taken: "er allerede opptatt"
       too_long: "er for lang (maksimum %{count} tegn)"
       too_short: "er for kort (minimum %{count} tegn)"
       wrong_length: "er av feil lengde (maksimum %{count} tegn)"
@@ -220,40 +225,42 @@ nb:
       update:
         notice: "%{resource_name} var velykket oppdatert"
   form:
-    show_fully_accessible_places: "Rullestol vennlig"
-    show_limited_accessible_places: "Delvis rullestol vennlig"
+    show_fully_accessible_places: Rullestoltilgjengelig
+    show_limited_accessible_places: "Delvis rullestoltilgjengelig"
     show_places_without_status: "Ukjent status"
-    show_unaccessible_places: "Ikke rullestol tilgjenglig"
+    show_unaccessible_places: "Ikke rullestoltilgjenglig"
   formtastic:
     hints:
-      lat: "Flytt markøren på kartet for å rette opp posisjonen"
-      osm_username: "Fortsatt ikke medlem? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>\n"
-      password: "La den være tom, hvis du ikke vil endre den"
+      email: "Vi behandler adressen din konfidensielt, ingen søppelpost. Vi lover!"
+      lat: "Flytt markøren på kartet til riktig sted"
+      osm_username: "Fortsatt ikke medlem? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Opprett en OpenStreetMap-konto nå</a>\n"
+      password: "(La den stå tom, hvis du ikke vil endre den)"
       phone: "For eksempel +47 12345678"
-      website: "For eksempel: http://www.example.com/"
+      website: "For eksempel: http://www.example.com"
     labels:
-      category: Kategori
+      category: "Kategori:"
+      centralkey: "Sentral tast:"
       city: "By:"
       create: "Legg til sted"
-      email: E-post
+      email: Epost
       finish: Mål
       housenumber: "Nummer:"
       lat: Breddegrad
-      lon: Longitude
+      lon: Lengdegrad
       name: "Navn:"
       osm_password: "OSM passord"
       osm_username: "OSM kontonavn"
       password: Passord
       password_confirmation: "Gjenta passord"
       phone: "Telefon:"
-      postcode: Postnummer
-      reset: Reset
+      postcode: "Postnummer:"
+      reset: Nullstil
       save: Lagre
       street: "Gate:"
       type: "Type:"
       website: "Webside:"
-      wheelchair: "Rullestol tilgjenglig?"
-      wheelchair_description: "Tilgjenglighets kommentar"
+      wheelchair: Rullestoltilgjenglighet?
+      wheelchair_description: "Kommentar om tilgjengelighet:"
     titles:
       basic: "Generell data"
       optional: "Mer informasjon <span class=\"addition\">(alle felter er valgfrie)</span>"
@@ -261,15 +268,15 @@ nb:
     form_validation_error: "Vennligst legg merke til feilene nedenfor"
   header:
     meta:
-      description: "Finn et rullestol vennlig sted - wheelmap.org"
+      description: "Finn rullestoltilgjengelige steder - wheelmap.org"
       homepage: Hjemmeside
-      keywords: "Rullestol tilgjenglige steder finn søk merk"
+      keywords: "Rullestoltilgjenglige steder finn søk merk"
       search: Søk
     navigation:
-      blog: Blog
+      blog: Blogg
       feedback: Tilbakemelding
       home: Start
-      how_to_add_a_place: "Hvordan legger jeg til et sted?"
+      how_to_add_a_place: "Hvordan legger jeg til steder?"
       imprint: Avtrykk
       logged_in_as: "Logget på som:"
       login: "Logg in"
@@ -281,7 +288,7 @@ nb:
       what_is_wheelmap: "Hva er wheelmap?"
     searchbar:
       add_place: "Legg til nytt sted"
-      find: Søk
+      find: finn
       label: ~
       placeholder: "Eksempel Sunset Boulevard L.A. eller Brandenburg Gate Berlin"
       title_add_place: "Legg til nytt sted her nå!"
@@ -298,26 +305,26 @@ nb:
     index:
       filter:
         category: "Velg kategori"
-        wheelchair: "Rullestol vennlig?"
+        wheelchair: Rullestoltilgjengelig?
       ie:
         action:
           ignore: Overse
           upgrade: "Oppdater nettleser"
         warning:
-          headline: "Vi beklager"
-          message: "Det ser ut som du benytter Internet Explorer. Wheelmap krever at du bruker en nettleser som følgerer standarder. Vurder å benytt deg av Firefox, Chrome, Safari eller Opera"
+          headline: "Vi beklager!"
+          message: "Det ser ut som du benytter Internet Explorer. Wheelmap krever at du bruker en nettleser som følger bestemte standarder for å fungere ordentlig. Vurder å benytt deg av Firefox, Chrome, Safari eller Opera."
       link:
         node:
           create: "Legg til nytt sted"
       popup:
         form:
-          limited: "Delevis rullestol vennlig"
+          limited: "Delevis rullestoltilgjengelig"
           ? "no"
-          : "Ikke rullestol vennlig"
+          : "Ikke rullestoltilgjengelig"
           save: Oppdater
           unknown: "Ukjent status"
           ? "yes"
-          : "Rullestol tilgjenglig"
+          : rullestoltilgjenglig
         help: "Rullestoltilgjengelig? (hjelp)"
         more: Mer...
   how?: Hvordan?
@@ -328,12 +335,12 @@ nb:
           headline: "Alle begrensede rullestoltilgjengelige %{type} i %{city} (%{count})\n"
         ? "no"
         :
-          headline: "Alle ikke rullestol vennlige %{type} i %{city} (%{count})"
+          headline: "Alle utilgjengelige %{type} i %{city} (%{count})"
         unknown:
           headline: "Alle %{type} i %{city} med ukjent rullestol status (%{count})"
         ? "yes"
         :
-          headline: "Alle rullestol tilgjenglige %{type} i %{city} (%{count})"
+          headline: "Alle rullestoltilgjenglige %{type} i %{city} (%{count})"
   layouts:
     application:
       banner:
@@ -349,19 +356,19 @@ nb:
     create:
       flash:
         not_successfull: "Oops, ditt bidrag er enten feil eller ufullstendig"
-        successfull: "Tusen takk, ditt bidrag har blitt lagret og vil snart være tilgjenglig"
+        successfull: "Tusen takk, ditt bidrag har blitt lagret og vil snart være tilgjenglig."
     edit:
       header:
         title: "Rediger sted: %{node} | wheelmap.org"
       link:
         large_map: "&laquo; Avbryt"
     errors:
-      default: "Oops, noe gikk feil. Vi har fått melding om saken"
+      default: "Oops, noe gikk galt. Vi har fått melding om saken"
       not_authorized: "Beklager, pålogging feilet"
-      not_available: "Beklager, denne siden er midlertidig ikke tilgjenglig"
-      not_existent: "Beklager, men dette stedet er ikke tilgjenglig lenger"
+      not_available: "Beklager, denne siden er midlertidig ikke tilgjenglig."
+      not_existent: "Beklager, men dette stedet er ikke lenger tilgjengelig."
       not_found: "Beklager, finner ikke siden"
-      param_missing: "Vennligst fyll ut søke streng"
+      param_missing: "Vennligst fyll ut et søkekriterium"
     flash:
       authorize_wheelmap: "Du trenger en OpenStreetMap-konto for å endre data."
     new:
@@ -378,7 +385,7 @@ nb:
       header:
         title: "Sted: %{node} | wheelmap.org"
       link:
-        back: Tilbake
+        back: tilbake
         large_map: Forstørr
         listing: "Alle steder av typen '%{type}' i %{city}"
       more_data_from: "Det finnes mer data om dette stedet, kontrollert av:"
@@ -386,39 +393,39 @@ nb:
     update:
       flash:
         not_successfull: "Oops, utfyllingen din var enten feil eller ufullstendig"
-        successfull: "Tusen takk, ditt bidrag har blitt lagret og vil snart være tilgjenglig"
+        successfull: "Tusen takk, ditt bidrag har blitt lagret og vil snart ligge på nettet."
     update_wheelchair:
-      successfull: "Statusen for \"%{name}\" har blitt endret til \"%{status}\" og vil være tiljgenglig snart"
+      successfull: "Statusen for \"%{name}\" har blitt endret til \"%{status}\" og vil snart ligge på nettet."
   number:
     currency:
       format:
         delimiter: " ,"
         format: "%n %u"
         precision: 2
-        separator: ","
+        separator: "."
         significant: false
-        strip_insignificant_zeros: true
+        strip_insignificant_zeros: 0
         unit: kr
     format:
-      delimiter: " "
+      delimiter: ","
       precision: 3
-      separator: ","
-      significant: false
-      strip_insignificant_zeros: true
+      separator: "."
+      significant: 0
+      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
         units:
           billion: Milliard
           million: Million
-          quadrillion: Quadrillion
+          quadrillion: kvadrillion
           thousand: tusen
-          trillion: Trillion
+          trillion: Billion
           unit: ~
       format:
         delimiter: " "
-        precision: 1
-        significant: false
+        precision: 3
+        significant: sant
         strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
@@ -439,9 +446,9 @@ nb:
   oauth:
     application:
       connect:
-        headline: "Du må koble sammen kontoen din med 'open street map' kontoen før du kan lage eller endre steder på wheelmap.org"
+        headline: "Du må koble sammen kontoen din med 'open street map'-kontoen før du kan lage eller endre steder på wheelmap.org"
     callback:
-      notice: "Din wheelmap konto er nå koblet sammen med OpenStreetMap konto %{user}"
+      notice: "Din wheelmap-konto er nå koblet sammen med OpenStreetMap-kontoen %{user}"
   or: eller
   place:
     one: "%{count} plasser"
@@ -451,7 +458,7 @@ nb:
       accommodation: Overnatting
       education: Utdanning
       food: Mat
-      government: Kommunal
+      government: Myndighetene
       health: Helse
       leisure: Fritid
       misc: Diverse
@@ -459,17 +466,17 @@ nb:
       public_transfer: "Offentlig transport"
       shopping: Butikker
       sport: Sport
-      tourism: Turist
+      tourism: Turisme
       unknown: Ukjent
     name:
       accommodation:
         beach_resort: Strandhotell
-        bed_and_breakfast: "Seng og frokost"
+        bed_and_breakfast: "Bed and breakfast"
         camp_site: Leirplass
         caravan_site: Campingvognsted
-        chalet: "Sveitser hus"
+        chalet: Hytte
         guest_house: Gjestehus
-        hostel: Motell
+        hostel: Herberge
         hotel: Hotell
         motel: Motel
       education:
@@ -480,7 +487,7 @@ nb:
         school: Skole
         university: Universitet
       food:
-        bar: Bar
+        bar: Pub
         biergarten: Uteservering
         cafe: Kafe
         drinking_water: Drikkevann
@@ -495,7 +502,7 @@ nb:
         townhall: Rådhus
       health:
         doctors: Leger
-        hearing_aids: "Høreapparat forhandler"
+        hearing_aids: Høreapparatforhandler
         hospital: Sykehus
         medical_supply: Apotek
         pharmacy: Apotek
@@ -516,7 +523,7 @@ nb:
       misc:
         company: "Bedrift (kontor)"
         lawyer: Advokat
-        place_of_worship: "Gudsrom / stillerom"
+        place_of_worship: "Bønnerom / stillerom"
         toilets: Toaletter
       money_post:
         atm: Minibank
@@ -526,8 +533,8 @@ nb:
         post_office: Postkontor
       public_transfer:
         aerodrome: Flyplass
-        bicycle_parking: "Sykkel parkering"
-        bicycle_rental: "Sykkel utleie"
+        bicycle_parking: Sykkelparkering
+        bicycle_rental: Sykkelutleie
         boatyard: Kai
         bus_station: "Buss stasjon"
         bus_stop: Bussholdeplass
@@ -536,26 +543,26 @@ nb:
         car_sharing: "Bil deling"
         chair_lift: "Trappeheis / løfteplattform"
         ferry: Ferge
-        ferry_terminal: "Ferge terminal"
+        ferry_terminal: Fergeterminal
         fuel: Bensinstasjon
         halt: Stop
         light_rail: Bybane
         parking: Parkering
-        parking_aisle: "Parkerings plass"
+        parking_aisle: Parkeringsplass
         platform: Plattform
-        station: Undergrunnsbane
-        subway_entrance: "Inngang undergrunnen"
+        station: T-bane
+        subway_entrance: "Inngang t-bane"
         terminal: "Flyplass terminal"
         tram_stop: Trikkestop
       shopping:
         alcohol: Brennevin
-        bakery: Bakkeri
-        beverages: Drikkevarer
+        bakery: Bakeri
+        beverages: Forfriskninger
         bicycle: Sykkelbutikk
         books: Bøker
         butcher: Slakter
         car_repair: Bilverksted
-        car_shop: "Bil butikk"
+        car_shop: Bilbutikk
         chemist: Kjemiker
         clothes: Klær
         computer: Datamaskin
@@ -570,7 +577,7 @@ nb:
         hairdresser: Frisør
         hardware: Jernvare
         kiosk: Kiosk
-        laundry: Rengjøring
+        laundry: Vask
         mall: Kjøpesenter
         optician: Optiker
         photo: Foto
@@ -578,28 +585,28 @@ nb:
         shoes: Sko
         sports: Sport
         stationery: Skrivesaker
-        supermarket: Supermarked
+        supermarket: Dagligvare
         video: Videoutleie
       sport:
         sports_centre: Sportssenter
         stadium: Stadion
         swimming: Svømming
-        swimming_pool: "Svømme basseng"
+        swimming_pool: Svømmebasseng
       tourism:
-        archaeological_site: "Arkeologisk sted"
+        archaeological_site: "Arkeologisk utgravning"
         arts_centre: Kunstsenter
-        artwork: Kunstverk
+        artwork: Kunst
         attraction: Attraksjon
         battlefield: Slagmark
         beach: Strand
-        beacon: Fyrtårn
+        beacon: Fyr
         castle: Borg
         cave_entrance: "Inngang til grotte"
-        information: "Turist informasjon"
+        information: Turistinformasjon
         memorial: Minnesmerke
         theme_park: Fornøyelsespark
         tower: Tårn
-        viewpoint: "Utsikt sted"
+        viewpoint: Utsiktspunkt
       unknown:
         unknown: Ukjent
   profile:
@@ -615,10 +622,10 @@ nb:
     index:
       search:
         for: "Søker etter \"%{q}\""
-        not_found: "Ingen steder kunne bli funnet"
+        not_found: "Ingen steder funnet!"
   splash:
     countline: "%{count} steder har allerede blitt merket"
-    headline: "Alle kan legge til et rullestol vennlig sted"
+    headline: "Alle kan legge til et rullestoltilgjengelig sted!"
     start: Start
     step1: "Klikk på et sted du kjenner"
     step2: "Merk den og klikk lagre"
@@ -637,21 +644,21 @@ nb:
   time:
     am: am
     formats:
-      default: "%A, %e. %B %Y, %H:%M"
-      long: "%A, %e. %B %Y, %H:%M"
-      short: "%e. %B, %H:%M"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
     pm: pm
   user_sessions:
     create:
       activation:
-        notice: "Kontoen din er nå aktivert"
+        notice: "Kontoen din er nå aktivert!"
       error:
         notice: "Epost og passord passer ikke sammen"
       notice: "Du er inne!"
     destroy:
       notice: "Hadet, kom snart tilbake"
     new:
-      email: "E-post addresse"
+      email: Epostadresse
       login: "Logg inn"
       login_with_twitter: "Logg på med Twitter"
       password: Passord
@@ -660,30 +667,31 @@ nb:
     after_signup_edit:
       welcome:
         headline: "Velkommen til wheelmap"
+        set_password_for_mobile: "Har du en smarttelefon? Venligst lag deg et passord for å kunne ta med deg Wheelmap på din iPhone eller Android-telefon."
         text: "Hvordan kan vi få kontakt med deg? Du kan endre denne informasjonen i profilen din senere."
   wheelchairstatus:
-    limited: "Delevis rullestol tilgjenglig"
+    limited: "Delevis rullestoltilgjenglig"
     ? "no"
-    : "ikke rullestol vennlig"
+    : "ikke rullestoltilgjengelig"
     unknown: "Ukjent status"
     ? "yes"
-    : "Rullestol vennlig"
+    : rullestoltilgjengelig
   wheelmap:
     footer:
-      a_project_of: "En prosjekt laget av"
-      based_on: "Bassert på"
+      a_project_of: "Et prosjekt laget av"
+      based_on: "Basert på"
       become_a_supporter: "Bli en sponsor"
-      main_supporter: "Hoved sponsor"
+      main_supporter: Hovedsponsor
     itunes:
       alt: "AppStore Logo"
       title: "Last ned iPhone-app nå!"
     logo:
       alt: "Wheelmap Logo - finn rullestoltilgjengelige steder"
-      title: "Wheelmap - finn rullestol vennlige steder"
+      title: "Wheelmap - finn rullestoltilgjengelige steder"
     what_is:
-      fully_accessible: "Ja: Inngangen er uten trinn, alle rom er tilgjenglig. Tilgjenglig toalett hvis det er vanlig på et sted"
-      limited_accessible: "<em>Begrenset:</em> Inngangen har et trinn (maks. høyde 7cm), de fleste rom er uten trinn, men toalletene er ikke tilgenglige."
-      not_accessible: "<em>Nei:</em> Innganng har kant eller flere trappetrinn. Rommene er ikke tilgjenglig"
+      fully_accessible: "<em>Ja:</em> Inngang uten trinn, alle rom uten trinn, tilgjenglig toalett hvis forventet på et sted"
+      limited_accessible: "<em>Begrenset:</em> Inngangen har et trinn (maks. høyde 7cm), de fleste rom er uten trinn, toalettene er ikke tilgjengelige."
+      not_accessible: "<em>Nei:</em> Inngang har kant eller flere trappetrinn, rommene er ikke tilgjengelige"
       unknown_accessible: "<em>Ukjent:</em> Hjelp ved å merke stedet!"
   will_paginate:
     next_label: "Neste &#8594;"
