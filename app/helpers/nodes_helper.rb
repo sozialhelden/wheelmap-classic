@@ -6,7 +6,7 @@ module NodesHelper
 
   def tag_line(node, key, options = nil)
     if node.tags[key]
-      itemprop = options.delete(:itemprop)
+      itemprop = options.delete(:itemprop) if options
       label = options.try(:[], :label_key) || t("formtastic.labels.#{key}")
       content_tag(:tr) do
         content_tag(:th, label || "formtastic.labels.#{key}") +
