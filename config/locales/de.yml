@@ -33,7 +33,7 @@ de:
         user:
           attributes:
             email:
-              blank: "muss ausgefüllt werden, wenn Passwort ein gesetzt wird"
+              blank: "muss ausgefüllt werden, wenn ein Passwort gesetzt wird"
         user_session:
           email: E-Mail-Adresse
           password: Passwort
