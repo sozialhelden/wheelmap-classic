@@ -346,7 +346,7 @@ DEPENDENCIES
   newrelic_rpm
   nokogiri
   oauth
-  omniauth-osm (~> 0.3.0)
+  omniauth-osm
   pickle
   rails (= 3.0.14)
   rake
