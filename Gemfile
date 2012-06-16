@@ -4,7 +4,6 @@ group :default do
   gem 'rails', '3.0.14'
   gem 'mysql2', '~>0.2.18'
   gem 'oauth'
-  gem 'httparty'
   gem 'devise'
   gem 'compass', '0.10.6'
   gem 'redgreengrid', :git => 'git@github.com:christoph-buente/redgreengrid.git'
@@ -37,7 +36,7 @@ group :default do
   gem 'friendly_id', '~>3.3.1' # upgrade to 4.x takes more effort.
   gem 'will_paginate'
   gem 'omniauth-osm'
-  gem 'rosemary', '~>0.3.4'
+  gem 'rosemary'
   #gem 'rosemary', :path => '../rosemary'
   gem 'librato-metrics'
 end
