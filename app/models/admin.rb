@@ -7,6 +7,6 @@ class Admin < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation
-  
-  validates_format_of :email, :with => /@wheelmap.org|@sozialhelden.de$/
+
+  validates_format_of :email, :with => /\A.+@wheelmap.org|@sozialhelden.de\z/
 end
