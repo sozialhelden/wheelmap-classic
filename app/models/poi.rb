@@ -33,7 +33,7 @@ class Poi < ActiveRecord::Base
   validate :relevant?
   validate :validate_type
   validates_presence_of :name, :wheelchair, :type
-  validates_format_of :website, :with => /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$/ix, :allow_blank => true, :message => I18n.t('errors.messages.invalid')
+  validates_format_of :website, :with => /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?\z/ix, :allow_blank => true, :message => I18n.t('errors.messages.invalid')
   validates_length_of :wheelchair_description, :maximum => 255
   validates_presence_of :lat, :lon, :message => "Bitte in der Karte klicken!"
 
