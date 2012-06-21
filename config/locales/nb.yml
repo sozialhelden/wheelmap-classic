@@ -277,12 +277,12 @@ nb:
       feedback: Tilbakemelding
       home: Start
       how_to_add_a_place: "Hvordan legger jeg til steder?"
-      imprint: Avtrykk
+      imprint: Kontakt
       logged_in_as: "Logget på som:"
       login: "Logg in"
       logout: "Logg ut"
       newsletter: Nyhetsbrev
-      press: Trykk
+      press: Presse
       suggestions: Forslag
       what_is_barrier_free: "Hva betyr \"rullestoltilgjengelig\"?"
       what_is_wheelmap: "Hva er wheelmap?"
@@ -457,12 +457,12 @@ nb:
     category:
       accommodation: Overnatting
       education: Utdanning
-      food: Mat
+      food: "Mat & drikke"
       government: Myndighetene
-      health: Helse
-      leisure: Fritid
+      health: Helsehjelp
+      leisure: "Kultur & Fritid"
       misc: Diverse
-      money_post: "Bank post"
+      money_post: "Bank / post"
       public_transfer: "Offentlig transport"
       shopping: Butikker
       sport: Sport
@@ -536,7 +536,7 @@ nb:
         bicycle_parking: Sykkelparkering
         bicycle_rental: Sykkelutleie
         boatyard: Kai
-        bus_station: "Buss stasjon"
+        bus_station: Bussstasjon
         bus_stop: Bussholdeplass
         cable_car: Taubane
         car_rental: Bilutleie
