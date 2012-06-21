@@ -115,6 +115,15 @@ OpenLayers.Lang.lv = {
   'more_information': "vairāk...",
   'wheelchair_help': "Pieejams ar ratiņkrēslu? (Palīdzība)"
 };
+OpenLayers.Lang.nb = {
+  'wheelchair_label_yes': "rullestoltilgjenglig",
+  'wheelchair_label_limited': "Delevis rullestoltilgjengelig",
+  'wheelchair_label_no': "Ikke rullestoltilgjengelig",
+  'wheelchair_label_unknown': "Ukjent status",
+  'wheelchair_update_button': "Oppdater",
+  'more_information': "Mer...",
+  'wheelchair_help': "Rullestoltilgjengelig? (hjelp)"
+};
 OpenLayers.Lang.nl = {
   'wheelchair_label_yes': "rolstoel toegangelijk",
   'wheelchair_label_limited': "deels rolstoel toegangelijk",
