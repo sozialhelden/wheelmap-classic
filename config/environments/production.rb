@@ -23,6 +23,7 @@ Wheelmap::Application.configure do
 
   # Use a different logger for distributed setups
   # config.logger = SyslogLogger.new
+  config.logger = Logger.new('log/production.log', 10, 2147483648) # 2GB
 
   # Use a different cache store in production
   # default is:
