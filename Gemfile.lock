@@ -99,6 +99,7 @@ GEM
       capybara (>= 1.1.1)
       cucumber (>= 1.1.1)
       nokogiri (>= 1.5.0)
+    daemons (1.1.4)
     database_cleaner (0.7.1)
     delayed_job (3.0.2)
       activesupport (~> 3.0)
@@ -322,6 +323,7 @@ DEPENDENCIES
   crewait!
   cucumber
   cucumber-rails
+  daemons
   database_cleaner
   delayed_job
   delayed_job_active_record
