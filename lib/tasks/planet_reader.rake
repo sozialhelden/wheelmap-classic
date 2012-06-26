@@ -213,6 +213,7 @@ namespace :osm do
         queue.add :wheelchair_yes     => { :source => hostname, :value => Poi.fully_accessible.count   }
         queue.add :wheelchair_no      => { :source => hostname, :value => Poi.not_accessible.count     }
         queue.add :wheelchair_limited => { :source => hostname, :value => Poi.limited_accessible.count }
+        queue.add :wheelchair_marked  => { :source => hostname, :value => Poi.where('status < 8').count }
         queue.add :user_total         => { :source => hostname, :value => User.count }
         queue.add :user_with_osm_id   => { :source => hostname, :value => User.where('osm_id IS NOT NULL').count }
         queue.add :user_with_oauth    => { :source => hostname, :value => User.where('oauth_token IS NOT NULL AND oauth_secret IS NOT NULL').count }
