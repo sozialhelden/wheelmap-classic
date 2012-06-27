@@ -7,7 +7,8 @@ job_type :find_command, "cd :path && :task :output"
 
 # Sync with OSM but not between 1:59 and 3:00 o'clock
 every '* * * * *' do
-  rake "osm:replication:sync", :environment => :production
+  rake "osm:replication:sync",  :environment => :production
+  rake "report:minutely",       :environment => :production
 end
 
 #Remove cached files older than 3 days
@@ -19,11 +20,10 @@ every 1.day, :at => '3:30 am' do
   rake "sitemap:generate", :environment => :production
 end
 
-# # Remove old sessions from database
-# every 1.day, :at => '4:42 am' do
-#   rake "housekeeping:session_cleanup", :environment => :production
-# end
+every '12 * * * *' do
+  rake "poi:locate",    :environment => :production
+end
 
-every 1.hour do
-  rake "poi:locate", :environment => :production
+every '35 * * * *' do
+  rake "report:hourly", :environment => :production
 end

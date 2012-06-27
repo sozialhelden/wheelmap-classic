@@ -11,4 +11,8 @@ class Counter < ActiveRecord::Base
   def self.today
     Counter.find_or_initialize_by_counter_date(Date.today)
   end
+
+  def changed_within?(t)
+    self.updated_at > t.minutes.ago
+  end
 end
