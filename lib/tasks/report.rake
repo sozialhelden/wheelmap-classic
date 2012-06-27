@@ -24,15 +24,41 @@ namespace :report do
 
   desc 'Report all metrics every hour'
   task :hourly => :environment do
+    time = Time.now
+    colors = {'yes' => '86af4d', 'no' => 'D6382F', 'limited' => 'F19D46'}
 
     hostname = `hostname`.gsub(/\n/, '')
     queue = Librato::Metrics::Queue.new
     Region.find_each do |region|
       %w{ yes no limited }.each do |status|
-        queue.add "#{region.slug.name}_#{status}" => { :source => hostname, :value => region.pois.with_status(Poi::WHEELCHAIR_STATUS_VALUES[status.to_sym]).count }
+        metric_name = "#{region.slug.name}_#{status}"
+        queue.add metric_name =>
+        { :source => hostname,
+          :measure_time => time,
+          :value => region.pois.with_status(Poi::WHEELCHAIR_STATUS_VALUES[status.to_sym]).count,
+        }
       end
     end
     queue.submit
+
+    Region.find_each do |region|
+      %w{ yes no limited }.each do |status|
+        metric_name = "#{region.slug.name}_#{status}"
+
+        params = {
+          :attributes => {
+            :color => colors[status],
+            :display_units_long => 'Orte',
+            :display_units_short => 'Orte'
+          }
+        }
+
+        Librato::Metrics.connection.put do |request|
+          request.url Librato::Metrics.connection.build_url("metrics/#{metric_name}", params)
+          request.body = MultiJson.dump(params)
+        end
+      end
+    end
   end
 
 end
