@@ -24,7 +24,7 @@ namespace :report do
 
   desc 'Report all metrics every hour'
   task :hourly => :environment do
-    time = Time.now
+    time = Time.now.to_i
     colors = {'yes' => '86af4d', 'no' => 'D6382F', 'limited' => 'F19D46'}
 
     hostname = `hostname`.gsub(/\n/, '')
