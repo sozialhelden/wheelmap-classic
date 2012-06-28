@@ -70,8 +70,8 @@ class Api::ApiController < ApplicationController
   protected
 
   def set_default_response_format
-    request.format = nil if request.format.to_sym == :html
-    request.format ||= :json if params[:format].blank?
+    symbolized_format = request.format.to_sym
+    request.format = :json if symbolized_format == :html || symbolized_format.blank?
   end
 
   def set_default_page
