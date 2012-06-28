@@ -11,4 +11,5 @@ config/metrics.yml
 public/*/cache/*
 public/assets
 public/sitemap_*
+public/system/sitemap*
 vendor/bundle
