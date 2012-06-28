@@ -30,6 +30,16 @@ describe UpdateTagsJob do
     update_node = job.perform
   end
 
+  it "increments the counter" do
+    job = UpdateTagsJob.enqueue(1, 'node', { 'addr:housenumber' => 99 }, user, 'update_iphone')
+    api = mock(:find_or_create_open_changeset => changeset)
+    Rosemary::Api.should_receive(:new).and_return(api)
+    api.should_receive(:find_element).and_return(unedited_node)
+    api.should_receive(:save) { |node, _| node.tags['addr:housenumber'].should eql 99 }
+    Counter.should_receive(:increment)
+    Delayed::Worker.new.work_off
+  end
+
   it "updates the tags" do
 
     job = UpdateTagsJob.enqueue(1, 'node', { 'addr:housenumber' => 99 }, user, 'update_iphone')
