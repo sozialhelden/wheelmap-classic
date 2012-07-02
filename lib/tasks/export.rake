@@ -1,10 +1,54 @@
 namespace :export do
   require 'csv'
+  require 'rgeo'
 
-  desc 'Export CSV of nodes'
-  task :nodes => :environment do
+  desc 'Export CSV of nodes in a category'
+  task :category_nodes => :environment do
+    category_name = ENV['CATEGORY']
+    raise "Run rake export:category_nodes CATEGORY=sport" unless category_name
+    category = Category.find_by_identifier(category_name)
+    raise "Category #{category_name} not found!" unless category
+    csv_string = ""
+    csv_string = FasterCSV.generate(:force_quotes => true) do |csv|
+      csv << ["osm_id", "lat", "lon", "Rollstuhlstatus", "Kommentar", "name", "Typ", "Strasse", "Hausnummer", "PLZ", "Stadt", "Telefon", "URL"]
+      category.pois.find_each do |poi|
+        csv << [poi.osm_id, poi.lat, poi.lon, poi.wheelchair, poi.wheelchair_description, poi.name, poi.node_type.try(:localized_name), poi.street, poi.housenumber, poi.postcode, poi.city, poi.phone, poi.website]
+      end
+    end
+    puts csv_string
+  end
+
+  desc 'Export CSV of nodes in a category and region'
+  task :filter_region_nodes => :environment do
     region_name = ENV['REGION']
-    raise "Run rake export:nodes REGION=Berlin" unless region_name
+    raise "Run rake export:filter_region_nodes REGION=berlin" unless region_name
+    region = Region.find(region_name)
+
+    factory = RGeo::Cartesian.factory
+    grenze = factory.parse_wkb(region.grenze.as_wkb)
+    bounding_box = RGeo::Cartesian::BoundingBox.new(factory)
+    bounding_box.add(grenze)
+
+    csv_string = FasterCSV.generate(:force_quotes => true) do |csv_out|
+      FCSV(STDIN, :force_quotes => true, :headers => true) do |csv_in|
+        csv_out << ["osm_id", "lat", "lon", "Rollstuhlstatus", "Kommentar", "name", "Typ", "Strasse", "Hausnummer", "PLZ", "Stadt", "Telefon", "URL"]
+        csv_in.each do |row|
+          point = factory.point(row[2].to_f, row[1].to_f)
+          if bounding_box.contains?(point) && grenze.contains?(point)
+            # csv << [poi.osm_id, poi.lat, poi.lon, poi.wheelchair, poi.wheelchair_description, poi.name, poi.node_type.try(:localized_name), poi.street, poi.housenumber, poi.postcode, poi.city, poi.phone, poi.website]
+            csv_out << row
+          end
+        end
+      end
+    end
+    STDOUT.puts csv_string
+  end
+
+
+  desc 'Export CSV of nodes in a region'
+  task :region_nodes => :environment do
+    region_name = ENV['REGION']
+    raise "Run rake export:region_nodes REGION=Berlin" unless region_name
     region = Region.find_by_name(region_name)
     raise "Region #{region_name} not found!" unless region
     csv_string = ""
