@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!,        :except => :authenticate
   before_filter :authenticate_mobile_user,  :only => :authenticate
   before_filter :authenticate_mobile_app,   :only => :authenticate
+  before_filter :require_owner, :only => [:edit, :update, :reset_token]
 
   before_filter :remove_password_from_params_if_blank, :only => :update
 
@@ -32,13 +33,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    logger.debug(params.inspect)
     if @user.update_attributes(params[:user])
       flash[:notice] = t('devise.registrations.updated')
     else
       flash[:alert] = @user.errors.full_messages.to_sentence
     end
-    redirect_to edit_profile_path(@user.id)
+    redirect_to edit_profile_path(current_user)
   end
 
   def authenticate
@@ -46,13 +46,19 @@ class UsersController < ApplicationController
   end
 
   def reset_token
-    raise OAuth::Unauthorized.new if params[:id] == current_user.id
     current_user.reset_authentication_token! if current_user.authentication_token
     redirect_to edit_profile_path(current_user.id)
     return
   end
 
   protected
+
+  def require_owner
+    unless params[:id].to_i == current_user.id
+      flash[:alert] = t('devise.failure.invalid_token')
+      redirect_to edit_user_path(current_user)
+    end
+  end
 
   def authenticate_mobile_user
     unless @user = User.authenticate(params[:email], params[:password])
