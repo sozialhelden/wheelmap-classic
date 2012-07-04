@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!,        :except => :authenticate
   before_filter :authenticate_mobile_user,  :only => :authenticate
   before_filter :authenticate_mobile_app,   :only => :authenticate
-  before_filter :require_owner, :only => [:edit, :update, :reset_token]
+  before_filter :require_owner, :only => [:edit, :update, :reset_token, :after_signup_edit, :after_signup_update]
 
   before_filter :remove_password_from_params_if_blank, :only => :update
 
@@ -72,7 +72,12 @@ class UsersController < ApplicationController
   def require_owner
     unless params[:id].to_i == current_user.id
       flash[:alert] = t('devise.failure.invalid_token')
-      redirect_to edit_user_path(current_user)
+      case params[:action]
+      when 'after_signup_edit', 'after_signup_update'
+        redirect_to after_signup_edit_user_path(current_user)
+      else
+        redirect_to edit_user_path(current_user)
+      end
     end
   end
 
