@@ -15,5 +15,4 @@ public/*/cache/*
 public/assets
 public/sitemap_*
 public/system/sitemap*
-public/stylesheets/*.css
 vendor/bundle
