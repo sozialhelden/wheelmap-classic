@@ -106,6 +106,7 @@ class User < ActiveRecord::Base
 
   def notify_admins
     UserMailer.user_destroyed(self).deliver
+  end
 
   def ensure_email_when_password_set
     errors.add_on_blank(:email) if !password.blank? and email.blank?
