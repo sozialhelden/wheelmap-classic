@@ -43,14 +43,30 @@ describe User do
 
   context "validations" do
 
-    let :user do
+    subject do
       Factory(:user, :email => "foo@bar.org", :password => "secret", :password_confirmation => "secret")
     end
 
     it "should not be possible to save a user with a short password" do
-      user.password = 'short'
-      user.password_confirmation = 'short'
-      user.should_not be_valid
+      subject.password = 'short'
+      subject.password_confirmation = 'short'
+      subject.should_not be_valid
+    end
+  end
+
+  context "callbacks" do
+
+    before do
+      ActionMailer::Base.deliveries = []
+    end
+
+    subject do
+      Factory(:user)
+    end
+
+    it "should send email after destroy" do
+      subject.destroy
+      ActionMailer::Base.deliveries.size.should eql 1
     end
   end
 end

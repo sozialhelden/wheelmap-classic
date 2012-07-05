@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   validates_presence_of :email
 
   before_save :ensure_authentication_token
+  after_destroy :notify_admins
 
   serialize :oauth_request_token
 
@@ -74,5 +75,9 @@ class User < ActiveRecord::Base
     api = create_authorized_api
     update_attribute(:osm_id, api.find_user.id)
   rescue Rosemary::Error
+  end
+
+  def notify_admins
+    UserMailer.user_destroyed(self).deliver
   end
 end

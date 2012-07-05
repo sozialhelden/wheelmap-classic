@@ -43,4 +43,8 @@
         = form.commit_button t('formtastic.labels.reset')
 
 
-
+  %hr
+  = semantic_form_for :user, :url => user_registration_path, :html => {:method => 'delete'} do |form|
+    = form.inputs :name => t('devise.destroy.headline') do
+      = form.buttons do
+        = form.submit t('devise.destroy.link'), :onclick => "if(!confirm('#{t('devise.destroy.confirm')}')){ return false; }"
