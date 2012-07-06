@@ -1,8 +1,9 @@
 !!!
-%html(lang="#{I18n.locale}")
+%html(lang="#{ I18n.locale }")
   %head{ :profile => "http://dublincore.org/documents/dcq-html/" }
     %link{ :rel => "schema.DC", :href => "http://purl.org/dc/elements/1.1/" }
     %link{ :rel => "schema.DCTERMS", :href => "http://purl.org/dc/terms/" }
+
     = render :partial => 'shared/meta'
 
     - if content_for?(:head)
@@ -33,7 +34,7 @@
 
     = render :partial => 'shared/google_tracking'
 
-    = include_javascripts :default
+    = include_javascripts :default, :media => 'screen, projection'
 
     = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
 
