@@ -15,6 +15,9 @@ javascripts:
     - public/javascripts/splash.js
     - public/javascripts/application.js
 
+  ie:
+    - public/javascripts/html5.js
+
 stylesheets:
   screen:
     - public/stylesheets/screen.css

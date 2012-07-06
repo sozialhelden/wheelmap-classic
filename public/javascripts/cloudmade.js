@@ -1,21 +1,21 @@
 OpenLayers.Layer.CloudMade = OpenLayers.Class(OpenLayers.Layer.TMS, {
     initialize: function(name, options) {
-		if (!options.key) {
-			throw "Please provide key property in options (your API key).";
-		}
+    if (!options.key) {
+      throw "Please provide key property in options (your API key).";
+    }
         options = OpenLayers.Util.extend({
             attribution: "Data &copy; 2009 <a href='http://openstreetmap.org/'>OpenStreetMap</a>. Rendering &copy; 2009 <a href='http://cloudmade.com'>CloudMade</a>.",
             maxExtent: new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34),
             maxResolution: 156543.0339,
             units: "m",
             projection: "EPSG:900913",
-			isBaseLayer: true,
-			numZoomLevels: 19,
-			displayOutsideMaxExtent: true,
-			wrapDateLine: true,
-			styleId: 1
+      isBaseLayer: true,
+      numZoomLevels: 19,
+      displayOutsideMaxExtent: true,
+      wrapDateLine: true,
+      styleId: 1
         }, options);
-		var prefix = [options.key, options.styleId, 256].join('/') + '/';
+    var prefix = [options.key, options.styleId, 256].join('/') + '/';
         var url = [
             "http://a.tile.cloudmade.com/" + prefix,
             "http://b.tile.cloudmade.com/" + prefix,
