@@ -18,6 +18,11 @@ describe Api::NodesController do
 
     describe 'format json' do
 
+      it "should refuse index when api key is missing" do
+        get(:index)
+        response.status.should eql 401
+      end
+
       it "should render json when using accept header" do
         request.env['HTTP_ACCEPT'] = 'application/json'
         get(:index, :api_key => @user.authentication_token)
