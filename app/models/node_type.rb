@@ -32,12 +32,21 @@ class NodeType < ActiveRecord::Base
     extend ActiveSupport::Memoizable
 
     def combination
-      keys = NodeType.all.map(&:osm_key).uniq.sort
+      keys = NodeType.all.map(&:osm_key)
+      keys += NodeType.where('alt_osm_key IS NOT NULL').map(&:alt_osm_key)
+      keys = keys.uniq.sort
       @@combination = {}
       keys.each do |osm_key|
         values = NodeType.all(:conditions => {:osm_key => osm_key})
         values.each do |value|
           osm_value = value.osm_value
+          @@combination[osm_key] ||= {}
+          @@combination[osm_key][osm_value] = value.id
+        end
+
+        values = NodeType.all(:conditions => {:alt_osm_key => osm_key})
+        values.each do |value|
+          osm_value = value.alt_osm_value
           @@combination[osm_key] ||= {}
           @@combination[osm_key][osm_value] = value.id
         end
@@ -47,7 +56,7 @@ class NodeType < ActiveRecord::Base
     memoize :combination if Rails.env.production? || Rails.env.staging?
 
     def valid_combination?(key, value)
-      find_by_osm_key_and_osm_value(key, value)
+      find_by_osm_key_and_osm_value(key, value) || find_by_alt_osm_key_and_alt_osm_value(key, value)
     end
 
     def valid_type?(tags)

@@ -263,13 +263,6 @@ class Poi < ActiveRecord::Base
   end
 
   def marker
-    # icon_name = ''
-    # if type.blank?
-    #   icon_name = 'cross-small-white'
-    # else
-    #   icon_name = Icons[type.to_sym] || 'cross-small-white'
-    # end
-    # ['/images', 'icons', icon_name].join '/'
     if node_type.try(:icon)
       "/marker/#{wheelchair}/#{node_type.icon}"
     else
