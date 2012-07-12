@@ -41,6 +41,7 @@ group :default do
   gem 'rosemary'
   #gem 'rosemary', :path => '../rosemary'
   gem 'librato-metrics'
+  gem 'system_timer' # Optional for librato dependency faraday
 end
 
 group :test, :development do
