@@ -1,0 +1,165 @@
+---
+uk:
+  activerecord:
+    errors:
+      messages:
+        accepted: "має бути прийнятий"
+        blank: "не може бути пустим"
+        confirmation: "не збігається з підтвердженням"
+        empty: "не може бути порожнім"
+        equal_to: "має дорівнювати %{count}"
+        even: "має бути парним"
+        exclusion: зарезервовано
+        greater_than: "має бути більше ніж %{count}"
+        greater_than_or_equal_to: "має бути більше ніж або дорівнювати %{count}"
+        inclusion: "не включено до переліку"
+        invalid: недійсний
+        less_than: "має бути менше ніж %{count}"
+        less_than_or_equal_to: "має бути менше ніж або дорівнювати %{count}"
+        not_a_number: "не число"
+        odd: "має бути непарним"
+        record_invalid: "Виникли помилки: %{errors}"
+        taken: "вже зайнятий"
+      template:
+        body: "Помилки виявлено в таких полях:"
+        header:
+          one: "%{model} не збережено через %{count} помилку"
+          other: "%{model} не збережено через %{count} помилки"
+  devise:
+    confirmations:
+      confirmed: "Ваш обліковий запис було успішно підтверджено."
+      send_instructions: "На Ваш email надіслано інструкції з підтвердження облікового запису."
+      send_paranoid_instructions: "Якщо Ваш email існує у нашій базі даних, Вам надіслано інструкції з підтвердження облікового запису."
+    failure:
+      already_authenticated: "Ви вже увійшли."
+      inactive: "Ваш обліковий запис ще не було активовано."
+      invalid: "Невірний email або пароль."
+      invalid_token: "Невірний токен."
+      locked: "Ваш обліковий запис заблоковано."
+      timeout: "Час вашої сесії вичерпано. Увійдіть знову для продовження, будь ласка."
+      unauthenticated: "Ви маєте увійти або зареєструватися."
+      unconfirmed: "Ви маєте підтвердити Ваш обліковий запис."
+    mailer:
+      confirmation_instructions:
+        subject: "Інструкції з підтвердження паролю"
+      reset_password_instructions:
+        subject: "Інструкції зі скидання паролю"
+      unlock_instructions:
+        subject: "Інструкції з розблокування"
+    omniauth_callbacks:
+      failure: "Неможливо увійти з облікового запису %{kind} через те, що обліковий запис \"%{reason}\"."
+      success: "Вхід успішний з облікового запису %{kind}."
+    passwords:
+      send_instructions: "Ви отримаєте інструкції зі скидання паролю через декілька хвилин."
+      send_paranoid_instructions: "Ваш email існує у нашій базі даних, Вам надіслано посилання для відновлення вашого паролю"
+      updated: "Ваш пароль було успішно змінено."
+      updated_not_active: "Ваш пароль було успішно змінено."
+    registrations:
+      destroyed: "До побачення! Ваш обліковий запис було успішно закрито. Сподіваємось незабаром побачитись з Вами знову."
+      inactive_signed_up: "Ви успішно зареєструвалися. Але, Ви не можете увійти через те, що ваш обліковий запис %{reason}."
+      reasons:
+        inactive: "не активний"
+        locked: заблоковано
+        unconfirmed: "не підтверджено"
+      signed_up: "Вітаємо! Ви успішно зареєструвалися."
+      updated: "Ви успішно оновили свій обліковий запис."
+    sessions:
+      signed_in: "Вхід успішний."
+      signed_out: "Вихід успішний."
+    unlocks:
+      send_instructions: "На Ваш email надіслано інструкції з розблокування."
+      send_paranoid_instructions: "Якщо Ваш email існує у нашій базі даних, Вам надіслано інструкції з розблокування."
+      unlocked: "Ваш обліковий запис було успішно розблоковано."
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "має бути прийнятий"
+      already_confirmed: "вже було підтверджено, спробуйте увійти"
+      blank: "не може бути пустим"
+      confirmation: "не збігається з підтвердженням"
+      empty: "не може бути порожнім"
+      equal_to: "має дорівнювати %{count}"
+      even: "має бути парним"
+      exclusion: зарезервовано
+      expired: "прострочено, створіть новий"
+      greater_than: "має бути більше ніж %{count}"
+      greater_than_or_equal_to: "має бути більше ніж або дорівнювати %{count}"
+      inclusion: "не включено до переліку"
+      invalid: недійсний
+      less_than: "має бути менше ніж %{count}"
+      less_than_or_equal_to: "має бути менше ніж або дорівнювати %{count}"
+      not_a_number: "не число"
+      not_an_integer: "не э цілим числом"
+      not_found: "не знайдено"
+      not_locked: "не було заблоковано"
+      not_saved:
+        one: "Виникла помилка, через яку неможливо зберегти зміни:"
+        other: "Виникли помилки (загалом - %{count}), через які неможливо зберегти зміни:"
+      odd: "має бути непарним"
+      taken: "вже зайнятий"
+    template:
+      body: "Помилки виявлено в таких полях:"
+      header:
+        one: "%{model} не збережено через %{count} помилку"
+        other: "%{model} не збережено через %{count} помилки"
+  helpers:
+    select:
+      prompt: "Оберіть: "
+    submit:
+      create: "Створити %{model}"
+      submit: "Зберегти %{model}"
+      update: "Зберегти %{model}"
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: грн.
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ~
+      format:
+        delimiter: ~
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: байт
+            other: байту
+          gb: ГБ
+          kb: кБ
+          mb: МБ
+          tb: ТБ
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
+  support:
+    array:
+      last_word_connector: " та "
+      two_words_connector: " і "
+      words_connector: ", "
+  time:
+    am: "до полудня"
+    formats:
+      default: "%a, %d %b %Y, %H:%M:%S %z"
+      long: "%d %B %Y, %H:%M"
+      short: "%d %b, %H:%M"
+    pm: "по полудні"
