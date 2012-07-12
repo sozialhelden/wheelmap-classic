@@ -238,7 +238,7 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     responders (0.6.4)
-    rgeo (0.3.2)
+    rgeo (0.3.14)
     rosemary (0.3.7)
       activemodel
       builder
