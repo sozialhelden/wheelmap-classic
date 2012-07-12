@@ -1,6 +1,9 @@
 .DS_Store
 .bundle
 db/*.sqlite3
+db/data/*.csv
+db/data/*.sql
+db/data/*.xls
 log
 tmp/
 doc/
