@@ -1192,11 +1192,32 @@ h1.marge, h2.marge, h3.marge, h4.marge, h5.marge, h6.marge, p.marge {
   color: #703a1b;
 }
 /* line 138, ../../app/stylesheets/basics/_sidebar.sass */
-#amenities label.active {
+#amenities label.deactivated {
   background: #f0f0f0;
-  color: #999999;
+  color: #777777;
   border: 1px solid #dddddd;
   text-shadow: none;
+}
+
+/* line 147, ../../app/stylesheets/basics/_sidebar.sass */
+#fast-select {
+  width: 200px;
+  height: 30px;
+  margin: -10px 0 0 14px;
+}
+
+/* line 154, ../../app/stylesheets/basics/_sidebar.sass */
+#fast-select div {
+  float: left;
+  margin-right: 8px;
+  font-size: 11px;
+  color: #999999;
+  cursor: pointer;
+}
+
+/* line 161, ../../app/stylesheets/basics/_sidebar.sass */
+#fast-select div:hover {
+  color: #f38a1d;
 }
 
 /* line 2, ../../app/stylesheets/basics/_api.sass */

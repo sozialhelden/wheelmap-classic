@@ -661,8 +661,17 @@ $(function () {
     }
   });
   $('#amenities li label').click(function() {
-  	$(this).toggleClass('active');
+  	$(this).toggleClass('deactivated');
   });
+//  $(".select-all").click(function() {
+//	  $('#amenities label').removeClass('deactivated');
+//	  $('#amenities input').attr('checked', true);
+//  });
+//  $(".deselect-all").click(function() {
+//  	$('#amenities label').addClass('deactivated');
+//  	$('#amenities input').attr('checked', false);
+//  });
+  
 
   if (getURLParameter('q') != 'null' && $('#search').val() == '') {
       $('#search').val(getURLParameter('q'));
