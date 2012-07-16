@@ -660,18 +660,21 @@ $(function () {
       $(this)
     }
   });
+  //Simon UI fixes
   $('#amenities li label').click(function() {
   	$(this).toggleClass('deactivated');
   });
-//  $(".select-all").click(function() {
-//	  $('#amenities label').removeClass('deactivated');
-//	  $('#amenities input').attr('checked', true);
-//  });
-//  $(".deselect-all").click(function() {
-//  	$('#amenities label').addClass('deactivated');
-//  	$('#amenities input').attr('checked', false);
-//  });
-  
+  $(".select-all").click(function() {
+	  $('#amenities label').removeClass('deactivated');
+	  $('#amenities input:not(:checked)').trigger('click');
+	  $(this).addClass('sel-active');
+  });
+  $(".deselect-all").click(function() {
+  	$('#amenities label').addClass('deactivated');
+  	$('#amenities input:checked').trigger('click');
+  	$(this).addClass('sel-active');
+  });
+  //end
 
   if (getURLParameter('q') != 'null' && $('#search').val() == '') {
       $('#search').val(getURLParameter('q'));
