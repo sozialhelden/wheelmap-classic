@@ -36,7 +36,7 @@ module ApplicationHelper
       unless flash[type].blank?
         html << "<div id='#{type}' class='flash'>"
         html << flash[type]
-        html << "<a data='hide' href='#'>x</a>"
+        html << "<a data='hide' href='#'>&times;</a>"
         html << "</div>"
       end
     end
