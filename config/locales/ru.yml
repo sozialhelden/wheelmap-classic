@@ -1,6 +1,10 @@
 ---
 ru:
   activerecord:
+    attributes:
+      user:
+        first_name: "Дать имя"
+        last_name: Фамилия
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -20,11 +24,16 @@ ru:
         less_than_or_equal_to: "может иметь значение меньшее или равное %{count}"
         not_a_number: "не является числом"
         odd: "может иметь лишь четное значение"
+        record_invalid: "Проверка не удалась:%{errors}"
         taken: "уже существует"
         too_long: "слишком длинный (максимум %{count} знаков )"
         too_short: "слишком короткий (минимум %{count} знаков )"
         wrong_length: "не правильная длинна (должна быть %{count} знаков)"
       models:
+        user:
+          attributes:
+            email:
+              blank: "Не может быть пустым, если пароль указывается"
         user_session:
           email: "Адрес электронной почты"
           password: пароль
@@ -34,6 +43,8 @@ ru:
         header:
           one: "%{model}: сохранение не удалось из-за %{count} ошибки"
           other: "%{model}: сохранение не удалось из-за %{count} ошибки"
+    models:
+      user: Пользователь
   application:
     require_no_user:
       notice: "Вы уже зарегистрированны"
@@ -46,11 +57,13 @@ ru:
     root: wheelmap
   common:
     close: закрыть
+    skip: пропускать
   devise:
     confirmations:
       confirmed: "Ваша учётная запись подтверждена. Теперь вы вошли в систему."
       link: "Не получили иструкции для подтверждения аккаунта?"
       send_instructions: "В течение нескольких минут вы получите e-mail с инструкциями по подтверждению вашей учётной записи."
+      send_paranoid_instructions: "Если Ваш аккаунт не существует, вы получите письмо с инструкциями, как подтвердить свой аккаунт в течение нескольких минут."
     destroy:
       confirm: "Вы уверенны?"
       headline: "Удалить аккаунт"
@@ -64,14 +77,28 @@ ru:
           password_confirmation: "Повторить пароль"
         submit: "Сохранить изменения"
       headline: "Управление аккаунтом"
+    failure:
+      already_authenticated: "Вы уже авторизованы"
+      inactive: "Ваш аккаунт пока не активирован."
+      invalid: "Неверное имя пользователя или пароль."
+      invalid_token: "Недопустимый маркер аутентификации"
+      locked: "Ваш аккаунт заблокирован"
+      timeout: "Сеанс закончился, пожалуйста, войдите снова, чтобы продолжить."
+      unauthenticated: "Вы должны войти или зарегистрироваться, прежде чем продолжить"
+      unconfirmed: "Вы должны подтвердить свой аккаунт, прежде чем продолжить."
     mailer:
       confirmation_instructions:
+        landing_page: "Пожалуйста, нажмите на ссылку, что мы только что отправили на Ваш электронный адрес. Если вы не получили письмо, пожалуйста, сначала проверьте его не скрывает ли папку со спамом, если нет, то закройте страницу и попробуйте снова."
         subject: "Инструкции для подтверждения"
       reset_password_instructions:
         subject: "Инструкции для сброса пароля"
       unlock_instructions:
         subject: "Инструкции для разблокировки"
     mandatory: "* обязательное поле"
+    omniauth_callbacks:
+      failure: "Авторизация с %{kind} неудалась. Ошибка: \"%{reason}\"."
+      permission_missing: "Вы не предоставили необходимых разрешений."
+      success: "Успешно войти в систему с %{kind}."
     password_recovery:
       form:
         labels:
@@ -80,10 +107,10 @@ ru:
       headline: "Забыли пароль?"
     password_reset:
       email:
-        comment: "Если Вы не делали запрос об изменении Вашего пароля, пожалуйста проигнорируйте это сообщение.<br/>Ваш пароль останется прежним пока вы не перейдете по этой ссылке"
+        comment: "Если Вы не делали запрос об изменении Вашего пароля, пожалуйста, проигнорируйте это сообщение.<br/>Ваш пароль останется прежним пока вы не перейдете по этой ссылке"
         headline: "Добро пожаловать %{email} "
         link: "Сменить пароль"
-        text: "Кто то сделал запрос об изменении Вашего пароля. Вы можете это сделать перейдя по следующей ссылке:"
+        text: "Кто-то сделал запрос об изменении Вашего пароля. Вы можете это сделать перейдя по следующей ссылке:"
       form:
         labels:
           password: "Новый пароль"
@@ -93,10 +120,17 @@ ru:
     passwords:
       link: "Забли пароль?"
       send_instructions: "В течение нескольких минут вы получите e-mail с инструкциями по восстановлению вашего пароля."
+      send_paranoid_instructions: "Если Ваш аккаунт не существует, вы получите письмо с инструкциями о том, как сбросить пароль в течение нескольких минут"
       updated: "Ваш пароль изменён. Теперь вы вошли в систему."
+      updated_not_active: "Пароль изменен успешно"
     registrations:
       destroyed: "До свидания! Ваша учётная запись удалена. Надеемся снова увидеть вас."
+      inactive_signed_up: "Вы подписались успешно, но не вас найти. Причина:\"%{reason}\""
       link: Регистрация
+      reasons:
+        inactive: "не активен"
+        locked: заблокированный
+        unconfirmed: Неподтвержденный
       signed_up: "Добро пожаловать! Вы успешно зарегистрировались. В течение нескольких минут вы получите e-mail с инструкциями по подтверждению вашей учётной записи."
       updated: "Ваша учётная запись изменена."
     sessions:
@@ -105,8 +139,15 @@ ru:
       invalid_token: "Неверный ключ аутентификации."
       link: Войти
       locked: "Ваш аккаунт заблокирован."
+      new:
+        no_osm_account: "Нет аккунта на OpenStreetMap?"
+        osm_promo_text: "Wheelmap базируется на географических данных OpenStreetMap (OSM). OpenStreetMap является бесплатным во всем мире картой, созданной людьми, как и вы. Это как Википедия для карт. Для того, чтобы изменить место или создать новые нужносоздать аккаунт на OpenStreetMap."
+        promo_text_thank_you: "Спасибо большое за вашу поддержку!"
+        sign_in_with: "Войти с %{kind}"
+        sign_up_with_osm: "Зарегистрируйтесь сейчас."
+        wheelmap_promo_text: "С помощью знаний о места адаптированых для инвалидных колясок, вы можете помочь людям с физическими недостатками, чтобы лучше организовать свою повседневную жизнь. Кроме того, OpenStreetMap информирует о всех местах в деталях."
       signed_in: "Вход в систему выполнен."
-      signed_out: "Выход из системы выполнен."
+      signed_out: "Вы успешно вышли из системы"
       timeout: "Ваша сессия закончена, пожалуйста, войдите еще раз, чтобы продолжить."
       unauthenticated: "Вы должны войти или зарегистрироваться, прежде чем сможете продолжить."
       unconfirmed: "Вы должны подтвердить Ваш аккаунт, прежде чем сможете продолжить."
@@ -121,26 +162,36 @@ ru:
     sign_out:
       headline: Выйти
     sign_up:
+      email:
+        confirm_my_account: "Подтвердите свой ​​аккаунт"
+        please_confirm: "Вы можете подтвердить свой аккаунт по ссылке ниже:"
+        welcome: "Добро пожаловать %{email}!"
       form:
         labels:
           email: "Адрес электронной почты"
           password: Пароль
           password_confirmation: "Повторить пароль"
+          wants_newsletter: "Да, держите меня в курсе wheelmap - но, пожалуйста, не чаще одного раза в месяц."
         submit: Регистр
       headline: Регистр
     unlocks:
       link: "Не получили инструкции для разблокировки аккаунта?"
       send_instructions: "В течение нескольких минут вы получите письмо с инструкциями по разблокировке вашей учётной записи."
+      send_paranoid_instructions: "Если Ваш аккаунт не существует, вы получите письмо с инструкциями о том, как открыть свой ​​аккаунт в течение нескольких минут"
       unlocked: "Ваша учётная запись разблокирована. Теперь вы вошли в систему."
   errors:
+    dynamic_format: "%{message} "
+    format: "%{attribute} %{message}"
     messages:
       accepted: "должен быть принят"
+      already_confirmed: Подтверждено
       blank: "должен быть заполнен"
       confirmation: "не соответствует подтверждению"
       empty: "должен быть заполнен"
       equal_to: "должен быть точно %{count} "
       even: "должен быть четным"
       exclusion: зарезервированно
+      expired: "истек срок, пожалуйста, запросите новый"
       greater_than: "должен быть больше чем %{count}"
       greater_than_or_equal_to: "должен быть больше или равен чем %{count}"
       inclusion: "недействительное значение"
@@ -148,18 +199,40 @@ ru:
       less_than: "должен быть меньше чем %{count} "
       less_than_or_equal_to: "должен быть меньше или равен чем %{count} "
       not_a_number: "Не является числом"
+      not_an_integer: "Должно быть целым"
+      not_found: "Не найдено"
+      not_locked: "Не была заблокирована"
+      not_saved:
+        one: "Ошибка, запрещено для сохранения %{resource}:"
+        other: "%{count} ошибка, запрещено для сохранения %{resource}:"
       odd: "Должен иметь нечетное значение"
       taken: "уже был использован"
       too_long: "слишком длинное значение (должно быть не больше чем %{count} знаков)"
       too_short: "слишком короткое значение (должно быть не меньше чем %{count}  знаков)"
       wrong_length: "не действительная длина значения (должно быть %{count}  знаков)"
+    template:
+      body: "Были проблемы со следующими полями:"
+      header:
+        one: "1 ошибка действие запрещено %{model} сохраняется"
+        other: |-
+            %{count} Ошибка, это запрещено%{model} сохраняется
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} был успешно создан"
+      destroy:
+        alert: "%{resource_name} не могут быть удалены"
+        notice: "%{resource_name} был успешно удален"
+      update:
+        notice: "%{resource_name} был успешно обновлен"
   form:
-    show_fully_accessible_places: "доступно для инвалидов"
+    show_fully_accessible_places: "доступно для людей с инвалидностью"
     show_limited_accessible_places: "частично доступно для инвалидов"
     show_places_without_status: "неизвестный статус"
     show_unaccessible_places: "не доступно для инвалидов"
   formtastic:
     hints:
+      email: "Мы относимся к вашему адресу конфиденциальнос, без спама. Гарантигуем!"
       lat: "Переместите маркер на карту "
       osm_username: "Еще не зарегистрированны? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\"> Создать Openstreetmap аккаунт</a> "
       password: "(оставьте поле пустым если Вы не хотите изменять значение)"
@@ -167,18 +240,22 @@ ru:
       website: "например: http://www.example.com"
     labels:
       category: "Категория:"
+      centralkey: "Центральная клавиша:"
       city: "Город:"
       create: "Создать место "
       email: "Адресс эл. почты"
+      finish: конец
       housenumber: "Нет:"
       lat: широта
       lon: долгота
+      name: "Имя:"
       osm_password: "пароль для OSM"
       osm_username: "логин для OSM"
       password: Пароль
       password_confirmation: "Повторите пароль"
       phone: "Телефон:"
       postcode: "Индекс:"
+      reset: Сброс
       save: Сохранить
       street: "Улица:"
       type: "Тип:"
@@ -189,11 +266,12 @@ ru:
       basic: "Основные данные"
       optional: "Больше информации <span class=\"addition\">(все поля являются необязательными)</span> "
   global:
-    form_validation_error: "Обратите пожалуйста внимание на список ошибок внизу"
+    form_validation_error: "Обратите, пожалуйста, внимание на список ошибок внизу"
   header:
     meta:
       description: "Найдите места доступные для инвалидов - wheelmap.org "
       homepage: "Домашняя страница"
+      keywords: "найти мето для инвалидных колясок"
       search: Поиск
     navigation:
       blog: Блог
@@ -201,27 +279,155 @@ ru:
       home: Старт
       how_to_add_a_place: "Как добавлять новые места?"
       imprint: Импринт
+      logged_in_as: "Вы вошли как:"
+      login: Войти
+      logout: Выход
+      newsletter: "Информацыонное письмо"
+      press: Пресса
+      suggestions: Предложения
+      what_is_barrier_free: "Что значит \"для инвалидной коляски\"?"
+      what_is_wheelmap: "Что такое wheelmap?"
     searchbar:
+      add_place: "Добавить другое место"
+      find: Найти
       label: ~
+      placeholder: "т.е. бульваре Сансет в Лос-Анджелесе или Бранденбургских ворот в Берлине"
+      title_add_place: "Добавить новое место в этой позиции сейчас!"
+    tagline: "Логотип Wheelmap"
+    title: "Wheelmap - поиск мест для людей с инвалидностью"
+  helpers:
+    select:
+      prompt: "Пожалуйста, выберите"
+    submit:
+      create: "Создать %{model}"
+      submit: "Сохранить %{model}"
+      update: "Обновление %{model}"
+  home:
+    index:
+      filter:
+        category: "Выберите категорию"
+        wheelchair: "Доступно для инвалидной коляски?"
+      ie:
+        action:
+          ignore: Отклонено
+          upgrade: "Обновление браузера"
+        warning:
+          headline: "Приносим свои извинения!"
+          message: "Вы, похоже, используют Internet Explorer. Wheelmap требуется соответствие стандартам браузер для корректной работы. Пожалуйста, подумайте об использовании Firefox, Chrome, Safari или Opera."
+      link:
+        node:
+          create: "Добавить место"
+      popup:
+        form:
+          limited: "частично для инвалидных колясок"
+          ? "no"
+          : "Нет доступа для инвалидных колясок"
+          save: обновление
+          unknown: "Статус неизвесный"
+          ? "yes"
+          : "Инвалидная коляска"
+        help: "Доступ для инвалидных колясок? (Справка)"
+        more: "Подробней ..."
+  how?: Как?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Ограниченния для инвалидных колясок %{type} в %{city} (%{count})"
+        ? "no"
+        :
+          headline: "Места адаптированные для инвалидных колясок отсутствуют %{type} в %{city} (%{count})"
+        unknown:
+          headline: "Все %{type} в %{city} с  неизвестным статусом для инвалидных колясок (%{count})"
+        ? "yes"
+        :
+          headline: "Все места адаптированы для инвалидных колясок %{type} в %{city} (%{count})"
+  layouts:
+    application:
+      banner:
+        alt: "Проект Sozialhelden.de"
+  node:
+    address:
+      city: "%{city} %{postcode} "
+      street: "%{housenumber} %{street}"
+    tags:
+      phone: "Телефон:"
+      website: "Вебсайт:"
+  nodes:
+    create:
+      flash:
+        not_successfull: "К сожалению, ваш вклад был неверным или неполным"
+        successfull: "Спасибо, ваша заявка была успешно сохранена и будет выполнена в ближайшее время."
+    edit:
+      header:
+        title: "Изменить место:%{node} | wheelmap.org"
+      link:
+        large_map: "&laquo; Отмена"
+    errors:
+      default: "Что-то пошло не так. Мы были поинформированы об проблеме."
+      not_authorized: "К сожалению, аутентификация не удалась"
+      not_available: "Извините, эта страница временно недоступна."
+      not_existent: "Извините, но место больше не доступно."
+      not_found: "Страница не найдена"
+      param_missing: "Пожалуйста, предоставьте поис"
+    flash:
+      authorize_wheelmap: "Вы должны иметь аккаунт на OpenStreetMap для изменения данных"
+    new:
+      header:
+        title: "Новое место | wheelmap.org"
+      link:
+        large_map: "&laquo; Отмена"
+    node:
+      link:
+        claim: "Вы работаете здесь?"
+        edit_node: "Изменить место"
+        report_bug: "Сообщить о проблеме"
+    show:
+      header:
+        title: "Место: %{node} | wheelmap.org"
+      link:
+        back: Назад
+        large_map: Увеличить
+        listing: "Все места типа %{type}' в %{city}"
+      more_data_from: "Существует больше данных для этого месте, проверяются:"
+      show-in-osm: OpenStreetMap
+    update:
+      flash:
+        not_successfull: "К сожалению, ваш вклад был неверным или неполным"
+        successfull: "Спасибо, ваша заявка была успешно сохранена и будет выполнена в ближайшее время."
+    update_wheelchair:
+      successfull: "Статус \"%{name}\" был изменен на \"%{status} и в ближайшее время будет обновлен."
   number:
     currency:
       format:
+        delimiter: ","
         format: "%n %u"
+        precision: 2
         separator: "."
         significant: 0
         strip_insignificant_zeros: 0
         unit: руб.
     format:
       delimiter: ","
+      precision: 3
       separator: "."
       significant: 0
       strip_insignificant_zeros: 0
     human:
       decimal_units:
+        format: "%n %u "
         units:
+          billion: Миллиард
+          million: Миллион
+          quadrillion: Квадрильон
+          thousand: тысяча
+          trillion: Трильйон
           unit: ~
       format:
         delimiter: ~
+        precision: 3
+        significant: Правда
+        strip_insignificant_zeros: Правда
       storage_units:
         format: "%n %u"
         units:
@@ -238,11 +444,201 @@ ru:
     precision:
       format:
         delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "Вам необходимо подключить ваш аккаунт с учетом «открытые карты улиц\" прежде чем вы сможете создать или изменить места на wheelmap.org."
+    callback:
+      notice: "Ваш wheelmap аккаунт подключены к аккаунту OpenStreetMap %{user}."
+  or: или
+  place:
+    one: "%{count}  место"
+    other: "%{count} место"
+  poi:
+    category:
+      accommodation: Проживание
+      education: Образование
+      food: Питание
+      government: Правительство
+      health: Здоровье
+      leisure: "свободное время"
+      misc: Разное
+      money_post: "Банк сообщений"
+      public_transfer: Перевод
+      shopping: Шопинг
+      sport: Спорт
+      tourism: Туризм
+      unknown: Неизвестный
+    name:
+      accommodation:
+        beach_resort: "Пляж отеля"
+        bed_and_breakfast: "Только завтраки"
+        camp_site: Турбаза
+        caravan_site: "Палаточный лагерь"
+        guest_house: "Гостевой дом"
+        hostel: Общежытие
+        hotel: Готель
+        motel: Мотель
+      education:
+        college: Коледж
+        kindergarten: "Детский сад"
+        library: Библиотека
+        museum: Музей
+        school: Школа
+        university: Университет
+      food:
+        bar: Бар
+        biergarten: "Паб под открытим небом"
+        cafe: Кафе
+        drinking_water: "Питтевая вода"
+        fast_food: "Фаст фуд"
+        pub: паб
+      government:
+        courthouse: "Здание суда"
+        embassy: Посольство
+        police: Полиция
+        public_building: "Общественное здание"
+        townhall: ратуша
+      health:
+        doctors: Врачь
+        hearing_aids: "Продажа слуховых аппаратов"
+        hospital: Больница
+        medical_supply: Медикаменты
+        pharmacy: Аптека
+        social_facility: "Социальный объект"
+        veterinary: Вететеринар
+      leisure:
+        arena: Арена
+        brothel: Бордель
+        cinema: Кинотеатр
+        community_center: "Общинный центр"
+        gallery: Галерея
+        nightclub: "Ночной клуб"
+        playground: "Детская площадка"
+        sauna: Сауна
+        stripclub: Стрипклуб
+        theatre: Театр
+        zoo: Зоопарк
+      misc:
+        company: "компания (офис)"
+        lawyer: юрист
+        place_of_worship: "Место поклонения"
+        toilets: Туалет
+      money_post:
+        atm: Банкомат
+        bank: Банк
+        bureau_de_change: Обменник
+        post_box: "Почтовый ящик"
+        post_office: "Почтовое отделение"
+      public_transfer:
+        aerodrome: Аеропорт
+        bicycle_parking: "Парковка для велосипеда"
+        bicycle_rental: "Прокат велосипедов"
+        boatyard: Катеры
+        bus_station: "Автобусная остановка"
+        bus_stop: "Автобусная остановка"
+        cable_car: "Канатная дорога"
+        car_rental: "прокат автомобилей"
+        car_sharing: Автообмен
+        chair_lift: "Кресельный подъемник"
+        ferry: Паром
+        ferry_terminal: "Терминал парома"
+        fuel: Автозаправка
+        halt: остановить
+        parking: Парковка
+        parking_aisle: "Проход на парковку"
+        platform: Платформа
+        station: Метро
+        subway_entrance: "Вход в метро"
+        terminal: "Терминал аеропорта"
+        tram_stop: "Трамвайная остановка"
+      shopping:
+        alcohol: Ликер
+        bakery: Кондитерская
+        beverages: Напитки
+        bicycle: "Велосипедний магазин"
+        books: Книги
+        butcher: мясник
+        car_repair: "ремонт автомобилей"
+        car_shop: Автосалон
+        chemist: Аптекарь
+        clothes: Одежда
+        computer: Компютер
+        convenience: Удобства
+        department_store: Универмаг
+        doityourself: "Сделай сам"
+        dry_cleaning: Химчистка
+        electronics: Електроника
+        florist: Флорист
+        furniture: Мебель
+        garden_centre: "Садовый центр"
+        hairdresser: парекмахер
+        hardware: аппаратура
+        kiosk: Магазин
+        laundry: Прачечная
+        mall: "Торговый центр"
+        optician: Оптика
+        photo: Фото
+        second_hand: "Другая сторона"
+        shoes: Обувь
+        sports: Спорт
+        stationery: "Канцелярские товары"
+        supermarket: Супермаркет
+        video: Видеопрокат
+      sport:
+        sports_centre: Спортзал
+        stadium: Стадион
+        swimming: Плаванье
+        swimming_pool: Басейн
+      tourism:
+        archaeological_site: "Археологический сайт"
+        arts_centre: "Арт центр"
+        artwork: "Произведение искусства"
+        attraction: Аттракцион
+        battlefield: "Поле боя"
+        beach: пляж
+        beacon: маяк
+        castle: Церковь
+        cave_entrance: "вход в пещеру"
+        information: "Информация для туристов"
+        memorial: Памятник
+        theme_park: "Парк развлечений"
+        tower: Башта
+        viewpoint: "место наблюдений"
+      unknown:
+        unknown: Неизвестный
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "Статус:подключенный"
+          grant: Соединить
+          not_connected: "Статус: не подключено"
+          revoke: Отключено
+      headline: "Изменить профиль"
+  search:
+    index:
+      search:
+        for: "Искать для \"%{q}\""
+        not_found: "Нет мест, которые можно найти!"
+  splash:
+    countline: "%{count} Места уже были отмечены"
+    headline: "Каждый может добавить места адаптированные для инвалидных колясок!"
+    start: Старт
+    step1: "Нажмите на место, которое вы знаете"
+    step2: "Отметить, и нажать кнопку для сохранения"
+    step3: "Вот и все! Нет необходимости регистрации"
+    what_is_wheelmap: "Что такое wheelmap?"
+  statistics: Статистика
   support:
     array:
       last_word_connector: " и "
+      sentence_connector: и
+      skip_last_comma: правда
       two_words_connector: " и "
       words_connector: ", "
+    select:
+      prompt: "Пожалуйста, выберите"
   time:
     am: утра
     formats:
@@ -250,3 +646,63 @@ ru:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: вечера
+  user_sessions:
+    create:
+      activation:
+        notice: "Ваш аккаунт уже активный!"
+      error:
+        notice: "Электронной почты и пароль не совпадают."
+      notice: "Вы вошли!"
+    destroy:
+      notice: "Пока,до скорово возвращения!"
+    new:
+      email: "Электронная почта"
+      login: Войти
+      login_with_twitter: "Войти в Twitter"
+      password: Пароль
+      remember_me: "Запомнить меня"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Добро пожаловать к wheelmap"
+        set_password_for_mobile: "У вас есть смартфон? Пожалуйста, задать пароль для того, чтобы использовать Wheelmap на ходу с помощью iPhone или Android."
+        text: "Как мы можем связаться с вами? Вы можете изменить эту информацию позже в своем профиле."
+  wheelchairstatus:
+    limited: "Частично адаптировано для инвалидных колясок"
+    ? "no"
+    : "Без адаптации для инвалидных колясок"
+    unknown: "Неизвестный статус"
+    ? "yes"
+    : "Инвалидная коляска"
+  wheelmap:
+    footer:
+      a_project_of: Проект
+      based_on: "Основан на"
+      become_a_supporter: "Стать сторонником"
+      main_supporter: "Главная поддержка"
+    itunes:
+      alt: "Логотип AppStore"
+      title: "Скачать iPhone App сейчас!"
+    logo:
+      alt: "Логотип Wheelmap - найти места адаптированние для инвалидных колясок"
+      title: "Wheelmap - найти места адаптированные для инвалидных колясок"
+    what_is:
+      fully_accessible: "<em> Да: </ EM> вход без ступенек, все номера без ступенек, доступный туалет, если в обычном месте"
+      limited_accessible: "<em> Limited: </ EM> Вступление (максимальная высота 7 см), большинство номеров без ступенек, туалет не доступен"
+      not_accessible: "<em> No: </ EM> Вступление имеет крутой или несколько этапов, номера не доступны"
+      unknown_accessible: "<em> Неизвестный: </ EM> Помощь по отметке места!"
+  will_paginate:
+    next_label: "Следующий &#8594;"
+    page_entries_info:
+      multi_page: "Отображение %{model} %{from} - %{to} of %{count} в общей сложности"
+      multi_page_html: "Показывать %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> з <b>%{count}</b> в целом"
+      single_page:
+        one: "Показано 1%{model}"
+        other: "Отображать все %{count} %{model}"
+        zero: "Не найдено %{model}"
+      single_page_html:
+        one: "Отображать <b>1</b> %{model}"
+        other: "Отображать <b>all&nbsp;%{count}</b> %{model}"
+        zero: "Не найдено %{model}"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Предыдущий"
