@@ -38,8 +38,11 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = t('flash.actions.update.notice', :resource_name => User.model_name.human)
       flash[:notice] = t('devise.confirmations.send_instructions') if email_changed
+      redirect_to edit_profile_path(@user.id)
+    else
+      flash.now[:alert] = @user.errors.full_messages.to_sentence
+      render :action => 'edit'
     end
-    redirect_to edit_profile_path(@user.id)
   end
 
 
