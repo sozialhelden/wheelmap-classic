@@ -247,6 +247,7 @@ pt:
     searchbar:
       add_place: "Adicionar outro lugar"
       find: encontrar
+      label: ~
       placeholder: "p. Ex. Sunset Boulevard L.A. ou o Portão de Brandenburgo"
       title_add_place: "Adicionar um novo lugar nesta posição agora!"
     tagline: "Lógotipo do Wheelmap"
@@ -327,7 +328,9 @@ pt:
           quadrillion: Quatrilhão
           thousand: Mil
           trillion: "Trilhão "
+          unit: ~
       format:
+        delimiter: ~
         precision: 1
         significant: true
         strip_insignificant_zeros: true
@@ -341,6 +344,12 @@ pt:
           kb: KB
           mb: MB
           tb: TB
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
   or: ou
   poi:
     category:
