@@ -56,6 +56,7 @@ class UsersController < ApplicationController
       flash[:notice] = t('devise.confirmations.send_instructions') if @user.email.present?
       redirect_to after_sign_in_path_for(:user)
     else
+      flash.now[:alert] = @user.errors.full_messages.to_sentence
       render :template => 'users/after_signup_edit'
     end
   end
