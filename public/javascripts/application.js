@@ -111,7 +111,7 @@ function drawmap(controls, element) {
     theme: 'http://asset0.' + location.host + '/theme/default/style.css'
   });
 
-  mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", { displayClass: 'olMap', opacity: 1.0, transitionEffect: 'resize', numZoomLevels: 19, buffer: 2});
+  mapnik = new OpenLayers.Layer.OSM.Mapnik("Mapnik", { displayClass: 'olMap', opacity: 1.0, transitionEffect: 'resize', numZoomLevels: 19, buffer: 1});
 
   // Use for offline mode
   // mapnik = new OpenLayers.Layer.OSM("Mapnik", 'http://wheelmap.local/images/tiles/${z}/${x}/${y}.png' ,{displayClass:'olMap', opacity:0.5, transitionEffect:'resize', numZoomLevels: 19});
@@ -134,7 +134,7 @@ function defaultControls() {
     new OpenLayers.Control.ArgParser(),
     new OpenLayers.Control.Attribution({id: 'attribution', displayClass: "olControlAttribution"}),
     new OpenLayers.Control.PanZoomBar({id: 'panzoombar', displayClass: 'olControlPanZoomBar'}),
-    new OpenLayers.Control.Navigation({zoomWheelEnabled: true, autoActivate: true}),
+    new OpenLayers.Control.Navigation({zoomWheelEnabled: true, autoActivate: true, dragPanOptions: {enableKinetic: true}}),
     new OpenLayers.Control.KeyboardDefaults(),
     new OpenLayers.Control.ScaleLine({geodesic: true}),
     new OpenLayers.Control.Permalink(),
