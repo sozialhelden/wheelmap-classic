@@ -17,7 +17,7 @@ uk:
         even: "має бути парним"
         exclusion: зарезервовано
         greater_than: "має бути більше ніж %{count}"
-        greater_than_or_equal_to: "має бути більше ніж або дорівнювати %{count}"
+        greater_than_or_equal_to: "має бути більше або рівним %{count}"
         inclusion: "не включено до переліку"
         invalid: недійсний
         less_than: "має бути менше ніж %{count}"
@@ -81,24 +81,24 @@ uk:
       already_authenticated: "Ви вже увійшли."
       inactive: "Ваш обліковий запис ще не було активовано."
       invalid: "Невірний email або пароль."
-      invalid_token: "Невірний токен."
+      invalid_token: "Невірний код аутентифікації"
       locked: "Ваш обліковий запис заблоковано."
       timeout: "Час вашої сесії вичерпано. Увійдіть знову для продовження, будь ласка."
       unauthenticated: "Ви маєте увійти або зареєструватися."
-      unconfirmed: "Ви маєте підтвердити Ваш обліковий запис."
+      unconfirmed: "Ви маєте підтвердити Вашу реєстрацію."
     mailer:
       confirmation_instructions:
         landing_page: "Будь ласка, натисніть на посилання, що ми тільки що відправили на Вашу електронну адресу. Якщо ви не отримали лист, будь ласка, спочатку перевірте його, чи не містить він папку зі спамом, якщо його там не було, згорніть сторінку та спробуйте знову."
         subject: "Інструкції з підтвердження паролю"
       reset_password_instructions:
-        subject: "Інструкції зі скидання паролю"
+        subject: "Інструкції зі зміни паролю"
       unlock_instructions:
         subject: "Інструкції з розблокування"
     mandatory: "* Обов'язково"
     omniauth_callbacks:
       failure: "Неможливо увійти з облікового запису %{kind} через те, що обліковий запис \"%{reason}\"."
       permission_missing: "Ви не надали необхідних дозволів."
-      success: "Вхід успішний з облікового запису %{kind}."
+      success: "Вхід успішний %{kind}."
     password_recovery:
       form:
         labels:
@@ -199,7 +199,7 @@ uk:
       less_than: "має бути менше ніж %{count}"
       less_than_or_equal_to: "має бути менше ніж або дорівнювати %{count}"
       not_a_number: "не число"
-      not_an_integer: "не э цілим числом"
+      not_an_integer: "не є цілим числом"
       not_found: "не знайдено"
       not_locked: "не було заблоковано"
       not_saved:
@@ -225,7 +225,7 @@ uk:
       update:
         notice: "%{resource_name} був успішно оновлений"
   form:
-    show_fully_accessible_places: "Інвалідна коляска"
+    show_fully_accessible_places: "Інвалідний візок"
     show_limited_accessible_places: "Частково для інвалідних калясок"
     show_places_without_status: "Невідомий статус"
     show_unaccessible_places: "Не адаптовано для інвалідних колясок"
@@ -318,13 +318,13 @@ uk:
           create: "Додати місце"
       popup:
         form:
-          limited: "Частково для інвалідних колясок"
+          limited: "Частково для інвалідних візків"
           ? "no"
-          : "Не адаптоване для інвалідних колясок"
+          : "Не адаптоване для інвалідних візків"
           save: Оновлення
           unknown: "Невідомий статус"
           ? "yes"
-          : "Інвалідні коляски"
+          : "Інвалідний візок"
         help: "Чи доступно для інвалідних калясок? (Довідка)"
         more: "Детальніше ..."
   how?: Як?
@@ -351,11 +351,11 @@ uk:
       street: "%{housenumber} %{street}"
     tags:
       phone: "Телефон:"
-      website: "Вебсай:"
+      website: "Вебсайт:"
   nodes:
     create:
       flash:
-        not_successfull: "На жаль, ваш вклад був невірним або неповним"
+        not_successfull: "На жаль, введена Вами інформацяи не вірна або не повна"
         successfull: "Спасибі, ваша заявка була успішно збережена і буде виконана найближчим часом."
     edit:
       header:
@@ -366,11 +366,11 @@ uk:
       default: "Щось пішло не так. Ми були поінформовані про цю проблему"
       not_authorized: "На жаль, аутентифікація не вдалася"
       not_available: "Вибачте, ця сторінка тимчасово недоступна."
-      not_existent: "Вибачте,це місце більше не доступно"
+      not_existent: "Вибачте, це місце більше не доступно"
       not_found: "Сторінку не знайдено"
       param_missing: "Знайдіть, будь-ласка"
     flash:
-      authorize_wheelmap: "Для зміни даних вам необхідний рахунок в OpenStreetMap"
+      authorize_wheelmap: "Для зміни даних вам необхідний аккаунт в OpenStreetMap"
     new:
       header:
         title: "Нове місце| wheelmap.org"
@@ -417,7 +417,7 @@ uk:
         format: "%n %u"
         units:
           billion: Мільярд
-          million: "міліон\n"
+          million: мільйон
           quadrillion: Квадрільон
           thousand: Тисяча
           trillion: Трильйон
@@ -434,7 +434,7 @@ uk:
             one: байт
             other: байти
           gb: ГБ
-          kb: кБ
+          kb: КБ
           mb: МБ
           tb: ТБ
     percentage:
@@ -471,7 +471,7 @@ uk:
     name:
       accommodation:
         beach_resort: "Пляж готелю"
-        bed_and_breakfast: "Ліжко та сніданок"
+        bed_and_breakfast: "Ліжко та сніданок. Готель"
         camp_site: Турбаза
         caravan_site: "Наметовій табір"
         guest_house: "Гостьовий будинок"
@@ -505,7 +505,7 @@ uk:
         hospital: Лікарня
         medical_supply: Медикаменти
         pharmacy: Аптека
-        social_facility: "Соціальний обєкт"
+        social_facility: "Соціальний об'єкт"
         veterinary: Ветеринар
       leisure:
         arena: Арена
@@ -548,7 +548,7 @@ uk:
         platform: Платформа
         station: Метро
         subway_entrance: "Вхід в метро"
-        terminal: "Терминал аеропорту"
+        terminal: "Термінал аеропорту"
         tram_stop: "Трамвайна зупинка"
       shopping:
         alcohol: Лікер
@@ -609,10 +609,10 @@ uk:
     edit:
       application:
         oauth:
-          connected: "Статус: зєднано"
+          connected: "Статус: з'єднано"
           grant: З'єднати
           not_connected: "Статус: немає з'єднання"
-          revoke: Розєднано
+          revoke: Роз'єднано
       headline: "Змінити порофіль"
   search:
     index:
@@ -625,7 +625,7 @@ uk:
     start: Старт
     step1: "Клікніть на місце, яке ви знаєте"
     step2: "Відзначити його і натисніть кнопку Зберегти"
-    step3: "От і все! Немає необхідності реєстрації"
+    step3: "От і все! Жодні реєстрації не потрібні"
     what_is_wheelmap: "Що таке wheelmap?"
   statistics: Статистика
   support:
@@ -671,7 +671,7 @@ uk:
     : "Не адаптоване для інвалідних калясок"
     unknown: "Невідомий статус"
     ? "yes"
-    : "Інвалідна коляска"
+    : "Інвалідний візок"
   wheelmap:
     footer:
       a_project_of: Проект
