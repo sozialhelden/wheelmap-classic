@@ -125,7 +125,7 @@ ru:
       updated_not_active: "Пароль изменен успешно"
     registrations:
       destroyed: "До свидания! Ваша учётная запись удалена. Надеемся снова увидеть вас."
-      inactive_signed_up: "Вы подписались успешно, но не вас найти. Причина:\"%{reason}\""
+      inactive_signed_up: "Вы  успешно подписались, нет возможности входа. Причина:\"%{reason}\""
       link: Регистрация
       reasons:
         inactive: "не активен"
@@ -208,7 +208,7 @@ ru:
       odd: "Должен иметь нечетное значение"
       taken: "уже был использован"
       too_long: "слишком длинное значение (должно быть не больше чем %{count} знаков)"
-      too_short: "слишком короткое значение (должно быть не меньше чем %{count}  знаков)"
+      too_short: "слишком короткое значение (должно быть не меньше, чем %{count}  знаков)"
       wrong_length: "не действительная длина значения (должно быть %{count}  знаков)"
     template:
       body: "Были проблемы со следующими полями:"
@@ -229,7 +229,7 @@ ru:
     show_fully_accessible_places: "доступно для людей с инвалидностью"
     show_limited_accessible_places: "частично доступно для инвалидов"
     show_places_without_status: "неизвестный статус"
-    show_unaccessible_places: "не доступно для инвалидов"
+    show_unaccessible_places: "не доступно для людей на инвалидных колясках"
   formtastic:
     hints:
       email: "Мы относимся к вашему адресу конфиденциальнос, без спама. Гарантигуем!"
@@ -282,7 +282,7 @@ ru:
       logged_in_as: "Вы вошли как:"
       login: Войти
       logout: Выход
-      newsletter: "Информацыонное письмо"
+      newsletter: "Информационное письмо"
       press: Пресса
       suggestions: Предложения
       what_is_barrier_free: "Что значит \"для инвалидной коляски\"?"
@@ -333,7 +333,7 @@ ru:
     index:
       wheelchair:
         limit:
-          headline: "Ограниченния для инвалидных колясок %{type} в %{city} (%{count})"
+          headline: "Ограниченния для людей на инвалидных колясках%{type} в %{city} (%{count})"
         ? "no"
         :
           headline: "Места адаптированные для инвалидных колясок отсутствуют %{type} в %{city} (%{count})"
@@ -356,7 +356,7 @@ ru:
   nodes:
     create:
       flash:
-        not_successfull: "К сожалению, ваш вклад был неверным или неполным"
+        not_successfull: "К сожалению, введенная Вами информация неполная или некорректная"
         successfull: "Спасибо, ваша заявка была успешно сохранена и будет выполнена в ближайшее время."
     edit:
       header:
@@ -369,7 +369,7 @@ ru:
       not_available: "Извините, эта страница временно недоступна."
       not_existent: "Извините, но место больше не доступно."
       not_found: "Страница не найдена"
-      param_missing: "Пожалуйста, предоставьте поис"
+      param_missing: "Пожалуйста, предоставьте задачу для поиска"
     flash:
       authorize_wheelmap: "Вы должны иметь аккаунт на OpenStreetMap для изменения данных"
     new:
@@ -393,7 +393,7 @@ ru:
       show-in-osm: OpenStreetMap
     update:
       flash:
-        not_successfull: "К сожалению, ваш вклад был неверным или неполным"
+        not_successfull: "К сожалению, введенная Вами информация неверная или неполная"
         successfull: "Спасибо, ваша заявка была успешно сохранена и будет выполнена в ближайшее время."
     update_wheelchair:
       successfull: "Статус \"%{name}\" был изменен на \"%{status} и в ближайшее время будет обновлен."
@@ -406,7 +406,7 @@ ru:
         separator: "."
         significant: 0
         strip_insignificant_zeros: 0
-        unit: руб.
+        unit: доллар
     format:
       delimiter: ","
       precision: 3
@@ -437,7 +437,7 @@ ru:
           gb: ГБ
           kb: КБ
           mb: МБ
-          tb: ТБ
+          tb: ТВ
     percentage:
       format:
         delimiter: ~
@@ -472,12 +472,12 @@ ru:
     name:
       accommodation:
         beach_resort: "Пляж отеля"
-        bed_and_breakfast: "Только завтраки"
+        bed_and_breakfast: "Завтрак и постель. Отель"
         camp_site: Турбаза
         caravan_site: "Палаточный лагерь"
         guest_house: "Гостевой дом"
-        hostel: Общежытие
-        hotel: Готель
+        hostel: Общежитие
+        hotel: Отель
         motel: Мотель
       education:
         college: Коледж
@@ -500,13 +500,13 @@ ru:
         public_building: "Общественное здание"
         townhall: ратуша
       health:
-        doctors: Врачь
+        doctors: Доктор
         hearing_aids: "Продажа слуховых аппаратов"
         hospital: Больница
         medical_supply: Медикаменты
         pharmacy: Аптека
         social_facility: "Социальный объект"
-        veterinary: Вететеринар
+        veterinary: Ветеринар
       leisure:
         arena: Арена
         brothel: Бордель
@@ -568,7 +568,7 @@ ru:
         department_store: Универмаг
         doityourself: "Сделай сам"
         dry_cleaning: Химчистка
-        electronics: Електроника
+        electronics: Электроника
         florist: Флорист
         furniture: Мебель
         garden_centre: "Садовый центр"
@@ -589,7 +589,7 @@ ru:
         sports_centre: Спортзал
         stadium: Стадион
         swimming: Плаванье
-        swimming_pool: Басейн
+        swimming_pool: Бассейн
       tourism:
         archaeological_site: "Археологический сайт"
         arts_centre: "Арт центр"
@@ -654,7 +654,7 @@ ru:
         notice: "Электронной почты и пароль не совпадают."
       notice: "Вы вошли!"
     destroy:
-      notice: "Пока,до скорово возвращения!"
+      notice: "Пока, до скорого возвращения!"
     new:
       email: "Электронная почта"
       login: Войти
@@ -670,7 +670,7 @@ ru:
   wheelchairstatus:
     limited: "Частично адаптировано для инвалидных колясок"
     ? "no"
-    : "Без адаптации для инвалидных колясок"
+    : "Без адаптации для людей на инвалидных колясках"
     unknown: "Неизвестный статус"
     ? "yes"
     : "Инвалидная коляска"
@@ -678,7 +678,7 @@ ru:
     footer:
       a_project_of: Проект
       based_on: "Основан на"
-      become_a_supporter: "Стать сторонником"
+      become_a_supporter: "Стать сопровождающим"
       main_supporter: "Главная поддержка"
     itunes:
       alt: "Логотип AppStore"
