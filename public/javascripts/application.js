@@ -647,7 +647,7 @@ $(function () {
   }
 
   $('input.filter').change(function () {
-    if ($(this).attr('checked')) {
+    if ($(this).is(':checked')) {
       removeFilter($(this).attr('rel'), $(this).attr('value'));
     } else {
       addFilter($(this).attr('rel'), $(this).attr('value'));
@@ -657,13 +657,28 @@ $(function () {
   $('input.filter').each(function() {
     if (FilterSettings.get($(this).attr('rel'), $(this).attr('value')) === true) {
       $(this).attr('checked', false).trigger('change');
+      $(this);
     }
   });
+  //Simon UI fixes
+  $('#amenities li label').click(function() {
+    $(this).toggleClass('deactivated');
+  });
+  $(".select-all").click(function() {
+    $('#amenities label').removeClass('deactivated');
+    $('#amenities input:not(:checked)').trigger('click');
+    $(this).addClass('sel-active');
+  });
+  $(".deselect-all").click(function() {
+    $('#amenities label').addClass('deactivated');
+    $('#amenities input:checked').trigger('click');
+    $(this).addClass('sel-active');
+  });
+  //end
 
   if (getURLParameter('q') != 'null' && $('#search').val() == '') {
       $('#search').val(getURLParameter('q'));
   }
-
   $(window).resize(function () {
     var width = $(window).width() - 750;
     if (width > 100) {

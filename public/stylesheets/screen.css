@@ -1029,54 +1029,57 @@ h1.marge, h2.marge, h3.marge, h4.marge, h5.marge, h6.marge, p.marge {
 /* line 1, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar {
   position: relative;
-  width: 340px;
+  width: 360px;
   z-index: 3000;
   background-color: white;
   margin-bottom: 20px;
-  padding: 15px;
-  padding-top: 5px;
+  padding: 0;
   border-right: 1px solid #a5c37a;
   height: 100%;
 }
-/* line 11, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 10, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar.minimized {
   left: -360px;
 }
-/* line 14, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 13, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar em {
   font-weight: bold;
   font-size: 120%;
 }
-/* line 18, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 17, ../../app/stylesheets/basics/_sidebar.sass */
+#sidebar img.minimize {
+  margin: 12px 6px 0 0;
+}
+/* line 19, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar img.minimize, #sidebar img.maximize {
   cursor: pointer;
   float: right;
 }
-/* line 22, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 23, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar div.minimize, #sidebar div.maximize {
   position: relative;
   float: right;
-  right: -55px;
+  right: -40px;
   width: 40px;
   height: 34px;
   cursor: pointer;
 }
-/* line 30, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 31, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar div.minimize {
   background: url("/images/minimize.gif") no-repeat;
 }
-/* line 33, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 34, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar div.maximize {
   background: url("/images/maximize.gif") no-repeat;
 }
-/* line 36, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 37, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar ul {
-  margin-bottom: 5px;
-  border-bottom: 1px solid #a5c37a;
-  width: 100%;
-  padding-bottom: 15px;
+  margin: 0 10px 5px 3%;
+  border-bottom: 1px solid white;
+  width: 94%;
+  padding: 10px 0 15px 0;
 }
-/* line 42, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 43, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar .button_wheelmap, #sidebar .button_donate {
   float: left;
   text-align: center;
@@ -1086,65 +1089,135 @@ h1.marge, h2.marge, h3.marge, h4.marge, h5.marge, h6.marge, p.marge {
   font-size: 13px;
   padding: 10px 20px;
 }
-/* line 51, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 52, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar .button_wheelmap {
   width: 141px;
   background: url("/images/button_wheelmap.jpg") no-repeat left center;
   margin-right: 10px;
 }
-/* line 56, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 57, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar .button_donate {
   width: 90px;
   background: url("/images/button_donate.jpg") no-repeat left center;
   padding-left: 30px;
 }
-/* line 61, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 62, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar h4 {
   margin-bottom: 5px;
-  font-size: 16px;
+  font-size: 14px;
+  text-shadow: 0 1px 0 white;
+  color: #555555;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #dddddd;
+  padding: 10px 3% 8px 3%;
+  background-color: #f5f5f5;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#ebebeb));
+  background-image: -webkit-linear-gradient(top, white, #ebebeb);
+  background-image: -moz-linear-gradient(top, white, #ebebeb);
+  background-image: -o-linear-gradient(top, white, #ebebeb);
+  background-image: -ms-linear-gradient(top, white, #ebebeb);
+  background-image: linear-gradient(top, white, #ebebeb);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ffffff', EndColorStr='#ebebeb');
 }
-/* line 65, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 82, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar a, #sidebar a:visited, #sidebar a:hover, #sidebar a:active {
   text-decoration: none;
+  margin: 0 -10px 0 14px;
 }
-/* line 68, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 86, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li {
   color: black;
   font-size: 12px;
   line-height: 16px;
 }
-/* line 73, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 91, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.state {
   padding: 10px 0px 3px 37px;
   min-height: 2.8em;
 }
-/* line 77, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 95, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.yes {
   background: url("/marker/yes.png") no-repeat 2px 0px;
   padding: 0px 0px 3px 37px;
 }
-/* line 81, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 99, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.limited {
   background: url("/marker/limited.png") no-repeat 2px 10px;
 }
-/* line 83, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 101, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.no {
   background: url("/marker/no.png") no-repeat 2px 10px;
 }
-/* line 85, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 103, ../../app/stylesheets/basics/_sidebar.sass */
 #sidebar li.unknown {
   background: url("/marker/unknown.png") no-repeat 2px 10px;
 }
 
-/* line 89, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 107, ../../app/stylesheets/basics/_sidebar.sass */
 #state-counter {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 91, ../../app/stylesheets/basics/_sidebar.sass */
+/* line 109, ../../app/stylesheets/basics/_sidebar.sass */
 #state-counter li {
   width: 40%;
   float: left;
+}
+
+/* line 113, ../../app/stylesheets/basics/_sidebar.sass */
+#amenities input[type=checkbox] {
+  display: none;
+}
+
+/* line 116, ../../app/stylesheets/basics/_sidebar.sass */
+#amenities label {
+  width: auto;
+  background-color: #f69d40;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f8b570), to(#f48511));
+  background-image: -webkit-linear-gradient(top, #f8b570, #f48511);
+  background-image: -moz-linear-gradient(top, #f8b570, #f48511);
+  background-image: -o-linear-gradient(top, #f8b570, #f48511);
+  background-image: -ms-linear-gradient(top, #f8b570, #f48511);
+  background-image: linear-gradient(top, #f8b570, #f48511);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f8b570', EndColorStr='#f48511');
+  padding: 3px 4px 2px 4px;
+  margin: 2px 3px;
+  float: left;
+  font-size: 12px;
+  border-radius: 3px;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid #da7710;
+  text-shadow: 0 1px 0 #f8b46e;
+  color: #703a1b;
+}
+/* line 138, ../../app/stylesheets/basics/_sidebar.sass */
+#amenities label.deactivated {
+  background: #f0f0f0;
+  color: #777777;
+  border: 1px solid #dddddd;
+  text-shadow: none;
+}
+
+/* line 147, ../../app/stylesheets/basics/_sidebar.sass */
+#fast-select {
+  width: 200px;
+  height: 30px;
+  margin: -10px 0 0 14px;
+}
+
+/* line 154, ../../app/stylesheets/basics/_sidebar.sass */
+#fast-select div {
+  float: left;
+  margin-right: 8px;
+  font-size: 11px;
+  color: #999999;
+  cursor: pointer;
+}
+
+/* line 161, ../../app/stylesheets/basics/_sidebar.sass */
+#fast-select div:hover {
+  color: #f38a1d;
 }
 
 /* line 2, ../../app/stylesheets/basics/_api.sass */
@@ -1560,9 +1633,8 @@ tspan {
 /* line 6, ../../app/stylesheets/partials/map/_amenities.sass */
 #amenities li {
   float: left;
-  min-width: 50%;
 }
-/* line 10, ../../app/stylesheets/partials/map/_amenities.sass */
+/* line 9, ../../app/stylesheets/partials/map/_amenities.sass */
 #amenities h4 {
   color: #363931;
   font-size: 11px;
@@ -1679,7 +1751,7 @@ tspan {
 
 /* line 1, ../../app/stylesheets/partials/map/_spinner.sass */
 #spinner {
-  background: url('/images/spinner.gif?1294913923') no-repeat center;
+  background: url('/images/spinner.gif?1342190038') no-repeat center;
   background-color: #6b7b55;
   background-color: rgba(107, 123, 85, 0.8);
   left: 50%;
