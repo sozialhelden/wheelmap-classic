@@ -15,4 +15,26 @@ namespace :region do
 
   end
 
+  desc 'Import region from poly file'
+  task :import => :environment do
+    poly_file_name = ENV['FILE']
+    region_name = ENV['NAME']
+    parent_name = ENV['PARENT']
+    raise "Use: bundle exec rake region:import FILE=berlin.poly NAME=Berlin PARENT=Deutschland" if !poly_file_name || !region_name
+
+    raise "Region already exists" if Region.find_by_name(region_name)
+
+    parent = Region.find_by_name(parent_name) if parent_name
+
+    system "perl #{Rails.root}/script/poly2wkt.pl #{poly_file_name} > #{Rails.root}/tmp/#{region_name}.wkt"
+
+    wkt_string = File.open("#{Rails.root}/tmp/#{region_name}.wkt").first
+    puts wkt_string
+
+    region = Region.new(:name => region_name, :parent_id => parent.try(:id), :grenze => wkt_string)
+    region.grenze = Polygon.from_ewkt(wkt_string)
+    region.save!
+
+  end
+
 end

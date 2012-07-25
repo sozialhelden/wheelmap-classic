@@ -1,5 +1,7 @@
 class Region < ActiveRecord::Base
-  has_many :pois
+  has_many    :pois
+  has_many    :children, :class_name => 'Region', :foreign_key => :parent_id
+  belongs_to  :parent, :class_name => 'Region'
 
   has_friendly_id :name,
     :use_slug => true,
