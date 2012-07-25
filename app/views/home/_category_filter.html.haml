@@ -4,3 +4,10 @@
     %li{:class => category.identifier}
       = check_box_tag("category-#{category.identifier}", category.identifier, true, :class => 'filter', :rel => 'category')
       = label_tag "category-#{category.identifier}", category.localized_name
+
+
+#fast-select
+  .select-all
+    Alle auswählen
+  .deselect-all
+    Alle deaktivieren
