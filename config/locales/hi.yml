@@ -23,11 +23,41 @@ hi:
         too_long: "अत्यधिक लंबा है (अधिकतम %{count} वर्ण हैं)"
         too_short: "अत्यधिक छोटा है (न्यूनतम %{count} वर्ण हैं)"
         wrong_length: "गलत लंबाई है (%{count} वर्ण युक्त होना चाहिए)"
+      models:
+        user_session:
+          remember_me: "लॅाग इन रहिए"
       template:
         body: "निम्नलिखित क्षेत्रों के साथ समस्या थी:"
         header:
           one: "इस %{model} को सहेजे जाना एक त्रुटि के कारण नहीं हुआ"
           other: "इस %{model} को सहेजे जाना %{count} त्रुटि के कारण नहीं हुआ"
+  common:
+    close: बंद
+    skip: स्किप
+  devise:
+    mailer:
+      confirmation_instructions:
+        subject: "खाता खोलने के लिए एक और कदम"
+    password_reset:
+      form:
+        labels:
+          password_confirmation: "पासवर्ड दोहराइए"
+    registrations:
+      reasons:
+        locked: "तालाबंद, बंद"
+      updated: |-
+          आपने अपना खाता सफलतापूर्वक अपडेट
+          कर लिया है।
+    sign_up:
+      form:
+        labels:
+          password_confirmation: "पासवर्ड दोहराइए"
+    unlocks:
+      send_instructions: |-
+          कुछ ही पलों में आपको अपना खाता खोलने की
+          जानकारी ईमेल के जरिए मिलेगी
+      unlocked: "आपका अकाउँट खुल गया है। आप साइंड \n\
+          इन हैं।  "
   errors:
     format: "%{attribute} %{message}"
     messages:
@@ -46,6 +76,7 @@ hi:
       less_than_or_equal_to: "%{count} से कम या बराबर होना आवश्यक है"
       not_a_number: "कोई संख्या नहीं है"
       not_an_integer: "एक पूर्णांक होना चाहिए"
+      not_found: "नहीं मिला"
       odd: "विसम होना चाहिए"
       taken: "पहले ही ले लिया गया है"
       too_long: "अत्यधिक लंबा है (अधिकतम %{count} वर्ण हैं)"
@@ -56,6 +87,25 @@ hi:
       header:
         one: "इस %{model} को सहेजे जाना एक त्रुटि के कारण नहीं हुआ"
         other: "इस %{model} को सहेजे जाना %{count} त्रुटि के कारण नहीं हुआ"
+  formtastic:
+    labels:
+      category: श्रेणी
+      city: "शहर:"
+      finish: "खत्म, समाप्त, अंत"
+      lon: "देशांतर रेखा"
+      password: पासवर्ड
+  global:
+    form_validation_error: "नीचे दीं त्रुटियों को नोट कीजिए"
+  header:
+    meta:
+      homepage: "होम पेज, मुख्य पृष्ठ\n"
+      keywords: "व्हीलचेयर सुलभ जगहों के लिए खोज का निशान"
+    navigation:
+      blog: ब्लॅाग
+      feedback: "राय, प्रतिक्रिया, फीडबैक "
+      press: दबाएं
+    searchbar:
+      find: ढूंढो
   helpers:
     select:
       prompt: "कृपया चुनें"
@@ -63,6 +113,34 @@ hi:
       create: "%{model} बनाएँ"
       submit: "%{model} सौंपें"
       update: "%{model} अद्यतन"
+  home:
+    index:
+      filter:
+        category: "श्रेणी चुनिए "
+      link:
+        node:
+          create: "नई जगह जोडिए"
+      popup:
+        form:
+          limited: "आंशिक रूप से व्हीलचेयर सुलभ"
+  how?: कैसे
+  node:
+    tags:
+      phone: "फोन, दूर्भाष"
+  nodes:
+    errors:
+      not_available: "माफ कीजिए, यह पेज अस्थाई रूप से उपलब्ध नहीं है"
+    flash:
+      authorize_wheelmap: "डेटा बदलने के लिए आपको ओपनस्ट्रीटमैप खाता चाहिए"
+    new:
+      header:
+        title: "नई जगह । wheelmp.org"
+    node:
+      link:
+        edit_node: "जगह संपादित कीजिए"
+    show:
+      link:
+        back: "वापस, पीछे"
   number:
     currency:
       format:
@@ -110,6 +188,77 @@ hi:
     precision:
       format:
         delimiter: ~
+  poi:
+    category:
+      accommodation: "रहने की जगह "
+      government: सरकार
+      leisure: "अवकाश, मस्ती"
+    name:
+      accommodation:
+        guest_house: "गेस्ट हाउस, अतिथि आराम ग्रह"
+        hotel: "होटल, आराम ग्रह"
+      education:
+        library: पुस्तकालय
+        school: "पाठशाला, विद्यालय, स्कूल"
+      food:
+        bar: "मदिरालय, बार, मैखाना\n"
+        drinking_water: "पीने का पानी"
+        fast_food: "फास्ट फूड"
+        pub: पब
+      government:
+        public_building: "सार्वजनिक बिल्डिंग"
+        townhall: "टाउन हॉल"
+      health:
+        doctors: "चिकित्सक, डॅाक्टर "
+        pharmacy: "दवाई की दुकान"
+      leisure:
+        brothel: "रण्डी खाना, कोठा, "
+        cinema: "सिनेमा, "
+      misc:
+        company: "कंपनी (दफ्तर)"
+        lawyer: वकील
+        toilets: "शौचालय, संडास"
+      public_transfer:
+        bicycle_rental: "साइकल किराए पर"
+        bus_station: "बस अड्डा"
+        bus_stop: "बस स्टॅाप"
+        car_rental: "कार किराए पर"
+        halt: रुको
+        terminal: "हवाई अड्डा"
+        tram_stop: "ट्राम स्टौप"
+      shopping:
+        bicycle: " सायकल की दुकान"
+        books: "किताबे, पुस्तकें"
+        butcher: कसाई
+        car_repair: "कार की मरम्मत "
+        car_shop: " कार की दुकान"
+        clothes: "कपड़े, वस्त्र"
+        doityourself: "खुद कीजिए"
+        dry_cleaning: "ड्राई क्लीनिंग"
+        garden_centre: "बगीचे के बीच "
+        hairdresser: नाई
+        kiosk: "गुमटी, गाडा, खोमचा"
+        second_hand: "इस्तेमाल किया हुआ"
+        shoes: जूते
+        sports: खेल
+      sport:
+        swimming: तैराकी
+      tourism:
+        beacon: "लाईट हाउस, प्रकाश स्तम्भ"
+        castle: "महल, किला"
+        cave_entrance: "गुफा प्रवेश  "
+        information: "पर्यटन जानकारी"
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "स्थिति:कनेक्टेड"
+  search:
+    index:
+      search:
+        not_found: "कोई जगह नहीं मिली!"
+  splash:
+    start: "शुरू, शुरुआत, प्रारंभ "
   support:
     array:
       last_word_connector: ", और "
@@ -122,3 +271,16 @@ hi:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: अपराह्न
+  wheelmap:
+    footer:
+      become_a_supporter: "समर्थक बनिए"
+      main_supporter: "मुख्य समर्थक"
+    what_is:
+      limited_accessible: |-
+          <em>Limited:</em> प्रवेश पर एक सीढी (अधिक्तम
+          ऊंचाई ७ सेमी), अधिकांश कमरे बगैर सीढी के,
+          शौचालय पहुंचने में बाधा
+  will_paginate:
+    page_entries_info:
+      single_page:
+        one: "प्रदर्शित १ 1 %{model}"
