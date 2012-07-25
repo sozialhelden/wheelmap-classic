@@ -130,6 +130,10 @@ class Poi < ActiveRecord::Base
     where('status < 8').count
   end
 
+  def self.lowest_id
+    Poi.order('osm_id ASC').limit(1).first.osm_id
+  end
+
   def lat
     self.geom.lat if self.geom
   end
