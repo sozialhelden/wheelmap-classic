@@ -31,7 +31,7 @@ namespace :report do
     queue = Librato::Metrics::Queue.new
     Region.find_each do |region|
       %w{ yes no limited }.each do |status|
-        metric_name = "#{region.slug.name}_#{status}"
+        metric_name = "#{region.slug.name}_#{status}_test"
         queue.add metric_name =>
         { :source => hostname,
           :measure_time => time,
@@ -43,7 +43,7 @@ namespace :report do
 
     Region.find_each do |region|
       %w{ yes no limited }.each do |status|
-        metric_name = "#{region.slug.name}_#{status}"
+        metric_name = "#{region.slug.name}_#{status}_test"
 
         params = {
           :attributes => {
@@ -53,10 +53,11 @@ namespace :report do
           }
         }
 
-        Librato::Metrics.connection.put do |request|
-          request.url Librato::Metrics.connection.build_url("metrics/#{metric_name}", params)
-          request.body = MultiJson.dump(params)
-        end
+        Librato::Metrics.update metric_name, params
+        # Librato::Metrics.connection.put do |request|
+        #   request.url Librato::Metrics.connection.build_url("metrics/#{metric_name}", params)
+        #   request.body = MultiJson.dump(params)
+        # end
       end
     end
   end
