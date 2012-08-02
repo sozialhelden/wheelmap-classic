@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_abingo_identity
 
-  before_filter :store_iphone_stats, :if => :get_request?
+  before_filter :store_iphone_stats, :if => [:get_request?, :mobile_app?]
 
   rescue_from Errno::ETIMEDOUT, :with => :timeout
   rescue_from Timeout::Error,   :with => :timeout
@@ -153,7 +153,7 @@ class ApplicationController < ActionController::Base
     unless @iphone_headers.empty? || IphoneCounter.exists?(:install_id => @iphone_headers['Install-Id'])
       iphone_counter = IphoneCounter.create!({
         :install_id     => @iphone_headers['Install-Id'],
-        :app_version    => @iphone_headers['User-Agent'],
+        :app_version    => @iphone_headers['User-Agent'].gsub(/^(Wheelmap\/\S+)\s.+/, "\1"),
         :os_version     => @iphone_headers['Os-Version'],
         :device_version => @iphone_headers['Device-Model']
       })
