@@ -11,6 +11,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_abingo_identity
 
+  before_filter :store_iphone_stats, :if => :get_request?
+
   rescue_from Errno::ETIMEDOUT, :with => :timeout
   rescue_from Timeout::Error,   :with => :timeout
 
@@ -134,6 +136,28 @@ class ApplicationController < ActionController::Base
 
   def check_update_wheelchair_params
     render( :text => 'Params missing', :status => 406 ) if params[:wheelchair].blank?
+  end
+
+  def get_request?
+    request.method == 'GET'
+  end
+
+  def store_iphone_stats
+    @iphone_headers ||= request.env.inject({}) do |h, (k, v)|
+      if k =~ /^(HTTP|CONTENT)_/
+        h[k.sub(/^HTTP_/, '').dasherize.gsub(/([^\-]+)/) { $1.capitalize }] = v
+      end
+      h
+    end
+
+    unless @iphone_headers.empty? || IphoneCounter.exists?(:install_id => @iphone_headers['Install-Id'])
+      iphone_counter = IphoneCounter.create!({
+        :install_id     => @iphone_headers['Install-Id'],
+        :app_version    => @iphone_headers['User-Agent'],
+        :os_version     => @iphone_headers['Os-Version'],
+        :device_version => @iphone_headers['Device-Model']
+      })
+    end
   end
 
 end
