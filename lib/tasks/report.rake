@@ -23,7 +23,32 @@ namespace :report do
   end
 
   desc 'Report all metrics every hour'
-  task :hourly => :environment do
+  task :hourly => [:regions, :iphone] do
+
+  end
+
+  desc 'Report iphone'
+  task :iphone => :environment do
+    IphoneCounter.outdated.map(&:destroy)
+
+    time = Time.now.to_i
+    hostname = `hostname`.gsub(/\n/, '')
+    queue = Librato::Metrics::Queue.new
+
+    %w{device_versions os_versions app_versions}.each do |hash_method|
+      IphoneCounter.send(hash_method.to_sym).each do |metric_name, value|
+        queue.add metric_name => {
+          :source => hostname,
+          :measure_time => time,
+          :value => value
+        }
+      end
+    end
+    queue.submit
+  end
+
+  desc 'Report regions'
+  task :regions => :environment do
     time = Time.now.to_i
     colors = {'yes' => '#86af4d', 'no' => '#D6382F', 'limited' => '#F19D46'}
 
