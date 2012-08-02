@@ -153,7 +153,7 @@ class ApplicationController < ActionController::Base
     unless @iphone_headers.empty? || IphoneCounter.exists?(:install_id => @iphone_headers['Install-Id'])
       iphone_counter = IphoneCounter.create!({
         :install_id     => @iphone_headers['Install-Id'],
-        :app_version    => @iphone_headers['User-Agent'].gsub(/^(Wheelmap\/\S+)\s.+/, "\1"),
+        :app_version    => @iphone_headers['User-Agent'].gsub(/^Wheelmap\/(\S+)\s.+/, '\1'),
         :os_version     => @iphone_headers['Os-Version'],
         :device_version => @iphone_headers['Device-Model']
       })
