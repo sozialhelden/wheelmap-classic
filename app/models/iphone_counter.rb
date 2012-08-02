@@ -35,6 +35,6 @@ class IphoneCounter < ActiveRecord::Base
   end
 
   def self.normalize_key(key)
-    key.gsub(/[\s\-\.]+/, '_')
+    key.gsub(/[\s\-\.\,\;]+/, '_')
   end
 end
