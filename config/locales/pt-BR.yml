@@ -3,7 +3,7 @@ pt-BR:
   activerecord:
     attributes:
       user:
-        first_name: prenome
+        first_name: "primeiro nome"
     errors:
       full_messages:
         format: "%{attribute}%{message}"
@@ -27,7 +27,7 @@ pt-BR:
         taken: "não está disponível"
         too_long: "é demasiado grande (o mínimo é de %{count} characters)"
         too_short: "é demasiado pequeno (o mínimo é de %{count} caracteres)"
-        wrong_length: "comprimento errado (deve ter %{count} caracteres)"
+        wrong_length: "tem comprimento errado (deve ter %{count} caracteres)"
       models:
         user_session:
           email: E-mail
@@ -112,17 +112,19 @@ pt-BR:
     passwords:
       link: "Esquececeu-se da palavra passe?"
       send_instructions: "Dentro de minutos receberá um mail com as instruções de como restablecer a sua palavra passe"
-      updated: "A sua senha foi alterada com sucesso. Está agora ligado à sua conta."
+      send_paranoid_instructions: "Se seu e-mail estiver no nosso banco de dados, você vai receber um e-mail com um link para redefinir sua senha."
+      updated: "A sua senha foi alterada com sucesso. Está conectado à sua conta."
+      updated_not_active: "A sua senha foi modificada com sucesso."
     registrations:
       destroyed: "A sua conta foi cancelada com sucesso."
-      inactive_signed_up: "Registro com sucesso. Mas não conseguimos conectar você. Motivo: \"%{reason}\""
+      inactive_signed_up: "Registrado com sucesso. Mas não conseguimos te conectar. Motivo: \"%{reason}\""
       link: "Criar conta"
       reasons:
         locked: bloqueado
       signed_up: "Conta criada com sucesso."
       updated: "Sua conta foi atualizada."
     sessions:
-      inactive: "A sua conta ainda não foi ativada"
+      inactive: "A sua conta ainda não foi confirmada. Para confirmá-la clique no link que mandamos por e-mail."
       invalid: "E-mail ou palavra passe inválida "
       invalid_token: "Ficha de autentificação inválida"
       link: Entrar
@@ -130,10 +132,11 @@ pt-BR:
       new:
         osm_promo_text: "O Wheelmap é baseado em mapas do OpenStreetMap (OSM). OSM é um mapa do mundo criado por pessoas como você. Uma Wikipedia de mapas. Para editar lugares existentes ou criar novos lugares, precisa duma conta no OSM."
         promo_text_thank_you: "Obrigado por sua ajuda!"
+        sign_up_with_osm: "Registre-se aqui."
       signed_in: "Entrou na conta com sucesso"
       signed_out: "Saiu da conta com sucesso"
-      timeout: "A sua sessão expirou, por favor volte a entrar na sua conta para continuar."
-      unauthenticated: "Por favor conecte-se ou se registre de novo para continuar."
+      timeout: "A sua sessão expirou, por favor entre novamente."
+      unauthenticated: "Por favor conecte-se ou registre-se novamente para continuar."
       unconfirmed: "Tem de confirmar a sua conta antes de continuar"
     sign_in:
       form:
@@ -172,7 +175,7 @@ pt-BR:
       equal_to: "tem de ser igual a %{count}"
       even: "tem de ser par"
       exclusion: "não está disponível"
-      expired: "expirou, pedir de novo"
+      expired: "expirou, peça novamente"
       greater_than: "tem de ser maior que %{count}"
       greater_than_or_equal_to: "tem de ser maior ou igual a %{count}"
       inclusion: "não é um valor válido"
@@ -189,8 +192,8 @@ pt-BR:
       odd: "tem de ser ímpar"
       taken: "já existe"
       too_long: "é demasiado grande (o mínimo é de %{count} characters)"
-      too_short: "é demasiado curto (o mínimo é de %{count} caratéres)"
-      wrong_length: "comprimento errado (deve ter exatamente %{count} caratéres)"
+      too_short: "é demasiado curto. (O mínimo é de %{count} carateres.)"
+      wrong_length: "tem comprimento errado (deve ter exatamente %{count} carateres)"
     template:
       body: "Houve problemas com os seguintes campos: "
       header:
@@ -201,18 +204,18 @@ pt-BR:
       create:
         notice: "%{resource_name} foi criado com sucesso."
       destroy:
-        alert: "%{resource_name} não podia ser eliminado."
-        notice: "%{resource_name} foi eliminado com sucesso."
+        alert: "%{resource_name} não pôde ser excluido."
+        notice: "%{resource_name} foi excluido com sucesso."
       update:
         notice: "%{resource_name} foi actualizado com sucesso"
   form:
     show_fully_accessible_places: "acessível a cadeira de rodas"
     show_limited_accessible_places: Parcialmente
     show_places_without_status: "estatuto desconhecido"
-    show_unaccessible_places: "não acessível a cadeira de rodas"
+    show_unaccessible_places: "não acessível a cadeirantes"
   formtastic:
     hints:
-      email: ~
+      email: "Mantemos seu endereço confidencial. Nenhum lixo eletrônico, garantido!"
       lat: "Coloque o inicador que se encontra no mapa para a posição correcta "
       osm_username: "Ainda não é membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Criar uma conta Openstreetmap</a>"
       password: "(deixe em branco se não quiser mudar) "
@@ -242,10 +245,10 @@ pt-BR:
       wheelchair: "Acessível a cadeirantes?"
       wheelchair_description: "Comentário sobre a acessibilidade: "
     titles:
-      basic: "Data base "
+      basic: "Dados básicos"
       optional: "Mais informação <span class=\"addition\">(all fields are optional)</span>"
   global:
-    form_validation_error: "Por favor veja os erros em baixo."
+    form_validation_error: "Por favor veja os erros abaixo."
   header:
     meta:
       description: "encontrar lugares acessíveis a cadeira de rodas - wheelmap.org"
@@ -264,7 +267,7 @@ pt-BR:
       press: Imprensa
       suggestions: Sugestões
       what_is_barrier_free: "Qual o significado de \"acessível a cadeira de rodas\"?"
-      what_is_wheelmap: "O que é o wheelmap?"
+      what_is_wheelmap: "O que é o Wheelmap?"
     searchbar:
       add_place: "Adicionar outro lugar"
       find: encontrar
@@ -293,11 +296,12 @@ pt-BR:
           ? "no"
           : "Não acessível a cadeirantes"
           save: Salvar
+        help: "Acessível a cadeirantes? (Ajuda)"
   landing_pages:
     index:
       wheelchair:
         unknown:
-          headline: "Todos %{type} em %{city} com acessibilidade desconhecida (%{count})"
+          headline: "Todos os %{type} em %{city} com acessibilidade desconhecida (%{count})"
   layouts:
     application:
       banner:
@@ -317,7 +321,7 @@ pt-BR:
       default: "Oops, algo não correu bem. Nós já fomos informados sobre a situação. "
       not_authorized: "Desculpe, a autentificação falhou"
       not_available: "Desculpe, mas no momento esta página não está disponível"
-      not_existent: "Desculpe, este lugar já não existe mais"
+      not_existent: "Desculpe, este lugar não existe mais"
       not_found: "Desculpe, a página não foi encontrada"
       param_missing: "Por favor digite sua busca."
     flash:
@@ -334,7 +338,7 @@ pt-BR:
       link:
         back: Voltar
         large_map: Aumentar
-        listing: "Todos lugares do tipo '%{type}' em %{city}"
+        listing: "Todos os lugares do tipo '%{type}' em %{city}"
       show-in-osm: "mostrar em Openstreetmap"
     update:
       flash:
@@ -390,7 +394,7 @@ pt-BR:
       government: Governo
       leisure: Lazer
       misc: outros
-      money_post: "Banco & Correios"
+      money_post: "Bancos & Correios"
       public_transfer: "Transporte Público"
       shopping: Compras
       sport: Esporte
@@ -403,10 +407,10 @@ pt-BR:
         camp_site: Acampamento
         caravan_site: "Sitio de caravana"
         chalet: Chalet
-        guest_house: "Guest House"
+        guest_house: Albergue
         hostel: Pousada
         hotel: Hotel
-        motel: "Motor Hotel"
+        motel: "Hotel na rodovia"
       education:
         college: Colégio
         kindergarten: Creche
@@ -417,7 +421,7 @@ pt-BR:
       food:
         bar: Bar
         biergarten: "Cervejaria ao ar livre"
-        cafe: café
+        cafe: Café
         drinking_water: "Agua potável"
         fast_food: Lanchonete
         pub: Pub
@@ -453,7 +457,7 @@ pt-BR:
         bank: Banco
         bureau_de_change: "Loja de Cambio"
         post_box: "Caixa de Correio"
-        post_office: Correios
+        post_office: "Agência de Correios"
       public_transfer:
         aerodrome: Aeroporto
         bicycle_parking: Bicicletário
@@ -469,11 +473,11 @@ pt-BR:
         ferry_terminal: "Terminal Ferry"
         fuel: "Bomba de gasolina"
         halt: Estação
-        light_rail: Metro
+        light_rail: "Metrô Leve"
         parking: Estacionamento
         parking_aisle: "Lugar de estacionamento"
         platform: Plataforma
-        station: Metro
+        station: Metrô
         subway_entrance: "Entrada do Metro "
         terminal: "Terminal de Aeroporto "
         tram_stop: "Parada de bonde"
@@ -484,7 +488,7 @@ pt-BR:
         bicycle: "Loja de bicicletas"
         books: Livros
         butcher: Açougue
-        car_repair: "Oficina de carros"
+        car_repair: "Oficina mecânica"
         car_shop: "Loja de automóveis"
         clothes: Roupa
         computer: Computador
@@ -560,7 +564,7 @@ pt-BR:
     select:
       prompt: "Por favor seleccione"
   time:
-    am: "de manhã"
+    am: "da manhã"
     formats:
       default: "%A, %d de %B de %Y, %H:%M"
       long: "%A, %d de %B de %Y, %H:%M"
@@ -603,12 +607,12 @@ pt-BR:
       title: "Faça agora o download do seu iPhone App!"
     logo:
       alt: "Wheelmap Logo - encontre lugares com acessibilidade para cadeira de rodas"
-      title: "Wheelmap - encontre lugares acessíveis a cadeirantes"
+      title: "Wheelmap - Encontre lugares acessíveis a cadeirantes"
     what_is:
       fully_accessible: "<em>Sim:</em> Entrada sem degraus, todos os ambientes sem degraus, com banheiro acessível se houver."
       limited_accessible: "<em>Parcialmente:</em> Desnível na entrada não superior a 7 cm; ambientes mais importantes acessíveis."
       not_accessible: "<em>Não:</em> Entrada com altos degraus ou ambientes importantes não acessíveis."
-      unknown_accessible: "A acessibilidade a cadeira de rodas é desconhecida."
+      unknown_accessible: "<em>Sem informações:</em> Ajude avaliando estes lugares!"
   will_paginate:
     next_label: "Próximo &#8594;"
     page_entries_info:
@@ -617,4 +621,4 @@ pt-BR:
         other: "Mostrar todos os %{count} %{model}"
       single_page_html:
         one: "Mostrar <b>1</b> %{model}"
-        other: "Mostre <b>todos&nbsp;%{count}</b> %{model}"
+        other: "Mostre <b>todos os &nbsp;%{count}</b> %{model}"
