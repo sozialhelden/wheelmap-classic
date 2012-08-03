@@ -3,7 +3,7 @@ class IphoneCounter < ActiveRecord::Base
   validates :install_id, :uniqueness => true
 
   def self.outdated
-    self.where(["created_at < ?", 7.days.ago])
+    self.where(["created_at < ?", 30.days.ago])
   end
 
   def self.unique_installs
