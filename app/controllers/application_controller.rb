@@ -150,13 +150,20 @@ class ApplicationController < ActionController::Base
       h
     end
 
-    unless @iphone_headers.empty? || IphoneCounter.exists?(:install_id => @iphone_headers['Install-Id'])
-      iphone_counter = IphoneCounter.create!({
-        :install_id     => @iphone_headers['Install-Id'],
-        :app_version    => @iphone_headers['User-Agent'].gsub(/^Wheelmap\/(\S+)\s.+/, '\1'),
-        :os_version     => @iphone_headers['Os-Version'],
-        :device_version => @iphone_headers['Device-Model'].gsub(/,/, '_')
-      })
+    unless @iphone_headers.empty?
+      if iphone_counter = IphoneCounter.find_by_install_id(@iphone_headers['Install-Id'])
+        iphone_counter.app_version    = @iphone_headers['User-Agent'].gsub(/^Wheelmap\/(\S+)\s.+/, '\1')
+        iphone_counter.os_version     = @iphone_headers['Os-Version']
+        iphone_counter.device_version = @iphone_headers['Device-Model'].gsub(/,/, '_')
+        iphone_counter.save if iphone_counter.changed?
+      else
+        iphone_counter = IphoneCounter.create!({
+          :install_id     => @iphone_headers['Install-Id'],
+          :app_version    => @iphone_headers['User-Agent'].gsub(/^Wheelmap\/(\S+)\s.+/, '\1'),
+          :os_version     => @iphone_headers['Os-Version'],
+          :device_version => @iphone_headers['Device-Model'].gsub(/,/, '_')
+        })
+      end
     end
   end
 
