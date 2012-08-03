@@ -155,7 +155,7 @@ class ApplicationController < ActionController::Base
         :install_id     => @iphone_headers['Install-Id'],
         :app_version    => @iphone_headers['User-Agent'].gsub(/^Wheelmap\/(\S+)\s.+/, '\1'),
         :os_version     => @iphone_headers['Os-Version'],
-        :device_version => @iphone_headers['Device-Model']
+        :device_version => @iphone_headers['Device-Model'].gsub(/,/, '_')
       })
     end
   end
