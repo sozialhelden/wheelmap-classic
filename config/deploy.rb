@@ -80,7 +80,7 @@ namespace :deploy do
   namespace :newrelic do
     task :notify_deployment do
       if rails_env.to_sym == :production
-        run_local 'curl -H "x-api-key:4b26d9adb684ffd9794d030a79d3103ef5d2dd98" -d "deployment[app_name]=Wheelmap" https://api.newrelic.com/deployments.xml'
+        system 'curl -H "x-api-key:4b26d9adb684ffd9794d030a79d3103ef5d2dd98" -d "deployment[app_name]=Wheelmap" https://api.newrelic.com/deployments.xml'
       end
     end
   end
