@@ -32,13 +32,12 @@ namespace :report do
     IphoneCounter.outdated.map(&:destroy)
 
     time = Time.now.to_i
-    hostname = `hostname`.gsub(/\n/, '')
     queue = Librato::Metrics::Queue.new
 
     %w{device_versions os_versions app_versions}.each do |hash_method|
-      IphoneCounter.send(hash_method.to_sym).each do |metric_name, value|
-        queue.add metric_name => {
-          :source => hostname,
+      IphoneCounter.send(hash_method.to_sym).each do |source, value|
+        queue.add hash_method.singularize => {
+          :source => source,
           :measure_time => time,
           :value => value
         }
