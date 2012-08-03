@@ -31,6 +31,7 @@ after  'deploy:update_code',  'deploy:symlink_configs'
 
 after  'deploy',              'deploy:cache:clear'
 
+
 task :safety_check do
   if rails_env.to_sym == :production
     c = CLI.ui.ask "This will deploy branch '#{branch}' to production. Ok Y/N?"
@@ -61,6 +62,7 @@ end
 
 namespace :deploy do
   after  "deploy:symlink", "deploy:git:push_deploy_tag"
+  after  "deploy:symlink", "deploy:newrelic:notify_deployment"
   before "deploy:cleanup", "deploy:git:cleanup_deploy_tag"
 
   namespace :git do
@@ -72,6 +74,14 @@ namespace :deploy do
 
       puts `git tag #{rails_env}_#{release_name} #{revision} -m "Deployed by #{user} <#{email}>"`
       puts `git push --tags`
+    end
+  end
+
+  namespace :newrelic do
+    task :notify_deployment do
+      if rails_env.to_sym == :production
+        system 'curl -H "x-api-key:***REMOVED***" -d "deployment[app_name]=Wheelmap" https://api.newrelic.com/deployments.xml'
+      end
     end
   end
 
