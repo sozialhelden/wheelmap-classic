@@ -2,7 +2,8 @@
   "name": "__MSG_appName__",
   "description": "__MSG_appDesc__",
   "default_locale": "de",
-  "version": "1.0.4",
+  "version": "1.0.6",
+  "manifest_version": 2,
   "app": {
     "urls": [
       "http://wheelmap.org/"
@@ -12,7 +13,7 @@
     }
   },
   "icons": {
-    "128": "128.png"
+    "128": "129.png"
   },
   "permissions": [
     "geolocation"
