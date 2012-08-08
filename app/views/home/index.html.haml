@@ -28,7 +28,7 @@
 
 -content_for :javascript do
   :javascript
-    drawmap(defaultControls(), 'map');
+    drawmap(defaultControls(document), 'map');
     createPlacesLayer(placesStyle());
     initGeoData();
     $(function () {
