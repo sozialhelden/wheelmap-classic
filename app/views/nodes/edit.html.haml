@@ -22,6 +22,6 @@
 
 - content_for :javascript do
   :javascript
-    drawmap(defaultControls(), 'minimap');
+    drawmap(defaultControls('minimap'), 'minimap');
     jumpTo(#{escape_once(@node.lon)}, #{escape_once(@node.lat)}, 18);
     createDraggableLayer(placesStyle(),#{escape_once(@node.lon)}, #{escape_once(@node.lat)});

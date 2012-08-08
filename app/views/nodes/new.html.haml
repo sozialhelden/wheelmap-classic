@@ -23,7 +23,7 @@
 
 - content_for :javascript do
   :javascript
-    drawmap(defaultControls(), 'minimap');
+    drawmap(defaultControls('minimap'), 'minimap');
     jumpTo(lon, lat, zoom);
     createClickableLayer(placesStyle(), #{@node.lon.present? ? escape_once(@node.lon) : 'null' }, #{@node.lat.present? ? escape_once(@node.lat) : 'null' });
 

@@ -129,13 +129,13 @@ function drawmap(controls, element) {
   map.addLayers([mapnik]);
 }
 
-function defaultControls() {
+function defaultControls(map_id) {
   return [
     new OpenLayers.Control.ArgParser(),
     new OpenLayers.Control.Attribution({id: 'attribution', displayClass: "olControlAttribution"}),
     new OpenLayers.Control.PanZoomBar({id: 'panzoombar', displayClass: 'olControlPanZoomBar'}),
     new OpenLayers.Control.Navigation({zoomWheelEnabled: true, autoActivate: true, dragPanOptions: {enableKinetic: true}}),
-    new OpenLayers.Control.KeyboardDefaults(),
+    new OpenLayers.Control.KeyboardDefaults({observeElement: map_id}),
     new OpenLayers.Control.ScaleLine({geodesic: true}),
     new OpenLayers.Control.Permalink(),
     new OpenLayers.Control.Permalink('createlink', '/nodes/new')
