@@ -1398,24 +1398,23 @@ hr {
   line-height: 15px;
   font-size: 12px;
   z-index: 4000;
-  font-family: georgia;
 }
-/* line 12, ../../app/stylesheets/basics/_footer.sass */
+/* line 11, ../../app/stylesheets/basics/_footer.sass */
 #footer.fixed {
   position: fixed;
   bottom: 0px;
   right: 0px;
 }
-/* line 16, ../../app/stylesheets/basics/_footer.sass */
+/* line 15, ../../app/stylesheets/basics/_footer.sass */
 #footer a {
   color: #ca1e2e;
   text-decoration: underline;
 }
-/* line 20, ../../app/stylesheets/basics/_footer.sass */
+/* line 19, ../../app/stylesheets/basics/_footer.sass */
 #footer a.icon {
   text-decoration: none;
 }
-/* line 23, ../../app/stylesheets/basics/_footer.sass */
+/* line 22, ../../app/stylesheets/basics/_footer.sass */
 #footer .social {
   position: absolute;
   text-align: left;
@@ -1423,19 +1422,20 @@ hr {
   margin: 10px;
   z-index: 10;
 }
-/* line 30, ../../app/stylesheets/basics/_footer.sass */
+/* line 29, ../../app/stylesheets/basics/_footer.sass */
 #footer .supporter {
   position: absolute;
   text-align: right;
   right: 10px;
-  padding: 5px;
+  padding: 12px 2px;
   height: 24px;
   z-index: 20;
   background: white;
 }
-/* line 39, ../../app/stylesheets/basics/_footer.sass */
+/* line 38, ../../app/stylesheets/basics/_footer.sass */
 #footer img {
-  vertical-align: bottom;
+  vertical-align: middle;
+  margin-top: -3px;
 }
 /* line 42, ../../app/stylesheets/basics/_footer.sass */
 #footer .counter {
