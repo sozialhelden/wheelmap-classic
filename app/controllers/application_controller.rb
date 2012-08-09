@@ -154,14 +154,14 @@ class ApplicationController < ActionController::Base
       if iphone_counter = IphoneCounter.find_by_install_id(@iphone_headers['Install-Id'])
         iphone_counter.app_version    = @iphone_headers['User-Agent'].gsub(/^Wheelmap\/(\S+)\s.+/, '\1')
         iphone_counter.os_version     = @iphone_headers['Os-Version']
-        iphone_counter.device_version = @iphone_headers['Device-Model'].gsub(/,/, '_') if @iphone_headers['Device-Model']
+        iphone_counter.device_version = @iphone_headers['Device-Model'].try(:gsub, /,/, '_')
         iphone_counter.save if iphone_counter.changed?
       else
         iphone_counter = IphoneCounter.create!({
           :install_id     => @iphone_headers['Install-Id'],
           :app_version    => @iphone_headers['User-Agent'].gsub(/^Wheelmap\/(\S+)\s.+/, '\1'),
           :os_version     => @iphone_headers['Os-Version'],
-          :device_version => @iphone_headers['Device-Model'].gsub(/,/, '_')
+          :device_version => @iphone_headers['Device-Model'].try(:gsub, /,/, '_')
         })
       end
     end
