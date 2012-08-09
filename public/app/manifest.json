@@ -2,7 +2,7 @@
   "name": "__MSG_appName__",
   "description": "__MSG_appDesc__",
   "default_locale": "de",
-  "version": "1.0.6",
+  "version": "1.0.5",
   "manifest_version": 2,
   "app": {
     "urls": [
@@ -13,7 +13,7 @@
     }
   },
   "icons": {
-    "128": "129.png"
+    "128": "128.png"
   },
   "permissions": [
     "geolocation"
