@@ -72,7 +72,7 @@ namespace :report do
 
     Region.find_each do |region|
       %w{ yes no limited }.each do |status|
-        metric_name = "#{region.slug.name}_#{status}_test"
+        metric_name = "#{region.slug.name}_#{status}"
 
         params = {
           :attributes => {
