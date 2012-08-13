@@ -42,7 +42,7 @@ end
 namespace :delayed_job do
   desc 'Start monitoring the delayed job process'
   task :monitor do
-    sudo "/usr/sbin/monit unmonitor delayed_job"
+    sudo "/usr/sbin/monit monitor delayed_job"
   end
 
   desc 'Stop monitoring the delayed job process'
