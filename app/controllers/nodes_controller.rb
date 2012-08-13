@@ -11,7 +11,6 @@ class NodesController < ApplicationController
   before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update]
   before_filter :authenticate_application!,       :only => [:new, :create, :edit, :update]
   before_filter :check_create_params,             :only => :create
-  before_filter :block_way_updates,               :only => [:update, :edit]
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
   before_filter :check_bbox_param,                :only => :index

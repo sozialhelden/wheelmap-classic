@@ -8,8 +8,6 @@ class Api::NodesController < Api::ApiController
   optional_belongs_to :category
   optional_belongs_to :node_type
 
-  before_filter :check_for_way_id, :only => :update
-
   # Make sure user authenticates itself using an api_key
   before_filter :authenticate_application!, :only => [:update, :create]
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
