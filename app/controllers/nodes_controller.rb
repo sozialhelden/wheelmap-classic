@@ -31,7 +31,6 @@ class NodesController < ApplicationController
     respond_to do |wants|
       wants.js{ render :json => @places.as_api_response(:iphone) }
       wants.geojson do
-        @places += QueuedNode.within_bbox(@left, @bottom, @right, @top).limit(@limit)
         render :file => "#{Rails.root}/app/views/nodes/index.geojson.erb", :content_type => "application/json; subtype=geojson; charset=utf-8"
       end
       wants.html{     redirect_to root_path }
