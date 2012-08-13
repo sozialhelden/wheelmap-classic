@@ -60,7 +60,7 @@ namespace :report do
     queue = Librato::Metrics::Queue.new
     Region.find_each do |region|
       %w{ yes no limited }.each do |status|
-        metric_name = "#{region.slug.name}_#{status}_test"
+        metric_name = "#{region.slug.name}_#{status}"
         queue.add metric_name =>
         { :source => hostname,
           :measure_time => rounded_time,
