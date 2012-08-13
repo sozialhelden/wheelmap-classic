@@ -7,8 +7,10 @@ set :whenever_environment, :production
 
 # Delayed Job
 require "delayed/recipes"
+before "delayed_job:stop", "delayed_job:unmonitor"
 before "deploy:restart", "delayed_job:stop"
 after  "deploy:restart", "delayed_job:start"
+after  "delayed_job:start", "delayed_job:monitor"
 
 after "deploy:stop",  "delayed_job:stop"
 after "deploy:start", "delayed_job:start"

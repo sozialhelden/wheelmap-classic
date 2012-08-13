@@ -39,6 +39,19 @@ task :safety_check do
   end
 end
 
+namespace :delayed_job do
+  desc 'Start monitoring the delayed job process'
+  task :monitor do
+    sudo "/usr/sbin/monit unmonitor delayed_job"
+  end
+
+  desc 'Stop monitoring the delayed job process'
+  task :unmonitor do
+    sudo "/usr/sbin/monit unmonitor delayed_job"
+  end
+
+end
+
 namespace :unicorn do
   desc "Zero-downtime restart of Unicorn"
   task :restart, :except => { :no_release => true } do
