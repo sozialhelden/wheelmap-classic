@@ -283,6 +283,8 @@ da:
     index:
       filter:
         category: "Vælg kategori"
+        deselect_all: "Fravælg alle"
+        select_all: "Vælg alle"
         wheelchair: Kørestolstilgængeligt?
       ie:
         action:

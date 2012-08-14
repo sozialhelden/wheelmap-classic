@@ -295,6 +295,8 @@ pl:
     index:
       filter:
         category: "Wybierz kategorię"
+        deselect_all: "Odznacz wszystko"
+        select_all: "Zaznacz wszystko"
         wheelchair: "Dostępne dla osób na wózkach?"
       ie:
         action:

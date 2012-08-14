@@ -307,6 +307,8 @@ ru:
     index:
       filter:
         category: "Выберите категорию"
+        deselect_all: "Отменить все"
+        select_all: "Выбрать все"
         wheelchair: "Доступно ли для людей на инвалидной коляске?"
       ie:
         action:

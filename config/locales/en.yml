@@ -132,7 +132,7 @@ en:
         locked: locked
         unconfirmed: unconfirmed
       signed_up: "You have signed up successfully. A confirmation was sent to your e-mail."
-      updated: "You updated your account successfully."
+      updated: "You have updated your account successfully."
     sessions:
       inactive: "Your account was not activated yet"
       invalid: "Invalid email or password."
@@ -305,6 +305,8 @@ en:
     index:
       filter:
         category: "Choose category"
+        deselect_all: "Deselect all"
+        select_all: "Select all"
         wheelchair: "Wheelchair accessible?"
       ie:
         action:
