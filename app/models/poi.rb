@@ -332,4 +332,48 @@ class Poi < ActiveRecord::Base
   def osm_type
     self.way? ? 'way' : 'node'
   end
+
+  def bounding_box(distance = 20)
+    geofactory = RGeo::Cartesian.factory
+    bounding_box = RGeo::Cartesian::BoundingBox.new(geofactory)
+    north_east = geofactory.parse_wkt("POINT(#{self.move_east_by(distance)} #{self.move_north_by(distance)})")
+    south_west = geofactory.parse_wkt("POINT(#{self.move_west_by(distance)} #{self.move_south_by(distance)})")
+    bounding_box.add(north_east)
+    bounding_box.add(south_west)
+    # left, bottom, right, top
+    [bounding_box.min_x, bounding_box.min_y, bounding_box.max_x, bounding_box.max_y]
+  end
+
+  def move_north_by(meters = 1)
+    self.lat + degrees_per_meter_latitude(meters)
+  end
+
+  def move_south_by(meters = 1)
+    self.lat - degrees_per_meter_latitude(meters)
+  end
+
+  def move_east_by(meters = 1)
+    self.lon + degrees_per_meter_longitude(meters)
+  end
+
+  def move_west_by(meters = 1)
+    self.lon - degrees_per_meter_longitude(meters)
+  end
+
+  def meters_per_degrees_latitude
+    111132.92 - (559.82 * Math.cos(2 * self.lat)) + (1.175 * Math.cos(4 * self.lat))
+  end
+
+  def meters_per_degrees_longitude
+    111412.84 * Math.cos(self.lat) - 93.5 * Math.cos(3 * self.lat)
+  end
+
+  def degrees_per_meter_latitude(meters = 1)
+    meters / meters_per_degrees_latitude
+  end
+
+  def degrees_per_meter_longitude(meters = 1)
+    meters / meters_per_degrees_longitude
+  end
+
 end
