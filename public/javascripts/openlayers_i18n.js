@@ -144,7 +144,7 @@ OpenLayers.Lang.pl = {
 };
 OpenLayers.Lang.ru = {
   'wheelchair_label_yes': "Инвалидная коляска",
-  'wheelchair_label_limited': "частичный доступ для людей на инвалидных<br/>колясках",
+  'wheelchair_label_limited': "частичный доступ для людей на<br/>инвалидных колясках",
   'wheelchair_label_no': "Нет доступа для людей на инвалидных<br/>колясках",
   'wheelchair_label_unknown': "Статус неизвесный",
   'wheelchair_update_button': "обновление",
