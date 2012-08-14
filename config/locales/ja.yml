@@ -283,6 +283,8 @@ ja:
     index:
       filter:
         category: "カテゴリ:"
+        deselect_all: すべての選択を解除
+        select_all: すべてを選択
         wheelchair: 車椅子で行けますか？
       ie:
         action:

@@ -273,6 +273,8 @@ es:
     index:
       filter:
         category: "Elegir Categoría:"
+        deselect_all: "Deseleccionar todo"
+        select_all: "Seleccionar todo"
         wheelchair: "¿Accesible a silla de ruedas?"
       ie:
         action:

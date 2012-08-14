@@ -286,6 +286,8 @@ fr:
     index:
       filter:
         category: "Catégorie:"
+        deselect_all: "Désélectionner tout"
+        select_all: "Sélectionnez tous les"
         wheelchair: "Accessible en fauteuil roulant?"
       ie:
         action:

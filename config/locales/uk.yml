@@ -305,6 +305,8 @@ uk:
     index:
       filter:
         category: "Оберіть категорію"
+        deselect_all: "Скасувати всі"
+        select_all: "вибрати всі"
         wheelchair: "Чи адаптовано для людей на інвалідних візках?"
       ie:
         action:
