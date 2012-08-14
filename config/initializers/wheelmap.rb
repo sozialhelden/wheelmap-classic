@@ -13,6 +13,7 @@ Languages = {
   'en'    => 'English',
   'es'    => 'Español',
   'fr'    => 'Français',
+  'hi'    => 'हिन्दी',
   'is'    => 'Íslenska',
   'it'    => 'Italiano',
   'ja'    => '日本',
@@ -28,6 +29,7 @@ Languages = {
   'sk'    => 'Slovenčina',
   'tlh'   => 'tlhIngan Hol',
   'tr'    => 'Türkçe',
+  'uk'    => 'Український',
   'zh'    =>  '中文'
 }
 

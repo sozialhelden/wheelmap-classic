@@ -142,6 +142,15 @@ OpenLayers.Lang.pl = {
   'more_information': "więcej ...",
   'wheelchair_help': "Dostępne dla osób na wózkach? (Pomoc)"
 };
+OpenLayers.Lang.ru = {
+  'wheelchair_label_yes': "Инвалидная коляска",
+  'wheelchair_label_limited': "частичный доступ для людей на инвалидных колясках",
+  'wheelchair_label_no': "Нет доступа для людей на инвалидных колясках",
+  'wheelchair_label_unknown': "Статус неизвесный",
+  'wheelchair_update_button': "обновление",
+  'more_information': "Подробней ...",
+  'wheelchair_help': "Доступ для людей на инвалидных колясках? (Справка)"
+};
 OpenLayers.Lang.se = {
   'wheelchair_label_yes': "wheelchair accessible",
   'wheelchair_label_limited': "partly wheelchair accessible",
@@ -168,4 +177,13 @@ OpenLayers.Lang.tr = {
   'wheelchair_update_button': "Değişiklikeri kaydedin",
   'more_information': "daha fazla...",
   'wheelchair_help': "Tekerlekli sandalye için ulaşılırmı? (Yardım)"
+};
+OpenLayers.Lang.uk = {
+  'wheelchair_label_yes': "Інвалідний візок",
+  'wheelchair_label_limited': "Частковий доступ для людей на інвалідних візках",
+  'wheelchair_label_no': "Не адаптоване для людей на інвалідних візках",
+  'wheelchair_label_unknown': "Невідомий статус",
+  'wheelchair_update_button': "Оновлення",
+  'more_information': "Детальніше ...",
+  'wheelchair_help': "Чи є доступн для людей на інвалідних візках? (Довідка)"
 };
