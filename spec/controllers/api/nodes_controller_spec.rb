@@ -185,10 +185,11 @@ describe Api::NodesController do
       @user.save!
       # Ways are the same as Nodes but with negative id
       @node.osm_id = (@node.osm_id * -1)
+      Poi.should_receive(:find).with(@node.osm_id).and_return @node
       lambda {
         put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
-        response.status.should eql 406
-      }.should_not change(Delayed::Job, :count)
+        response.status.should eql 202
+      }.should change(Delayed::Job, :count).by(1)
     end
   end
 

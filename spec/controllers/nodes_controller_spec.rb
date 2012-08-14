@@ -187,16 +187,16 @@ describe NodesController do
         response.body.should == "Params missing"
       end
 
-      it "should not update node if node is a way" do
+      it "should update node if node is a way" do
         p = Factory(:poi, :osm_id => -28)
         response = post(:update, :id => -28, :node => { :name => "foo" })
-        response.code.should == '406'
+        response.code.should == '302'
       end
 
-      it "should not allow editing node if node is a way" do
+      it "should allow editing node if node is a way" do
         p = Factory(:poi, :osm_id => -28)
         response = get(:edit, :id => -28)
-        response.code.should == '406'
+        response.code.should == '200'
       end
 
       it "should redirect if app is not connected" do
