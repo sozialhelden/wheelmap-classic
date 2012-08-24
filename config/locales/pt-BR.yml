@@ -29,6 +29,10 @@ pt-BR:
         too_short: "é demasiado pequeno (o mínimo é de %{count} caracteres)"
         wrong_length: "tem comprimento errado (deve ter %{count} caracteres)"
       models:
+        user:
+          attributes:
+            email:
+              blank: "tem de ser preenchido se uma senha é dada"
         user_session:
           email: E-mail
           password: Senha
@@ -214,9 +218,9 @@ pt-BR:
         alert: "%{resource_name} não pôde ser excluido."
         notice: "%{resource_name} foi excluido com sucesso."
       update:
-        notice: "%{resource_name} foi actualizado com sucesso"
+        notice: "%{resource_name} foi atualizado com sucesso."
   form:
-    show_fully_accessible_places: "acessível a cadeira de rodas"
+    show_fully_accessible_places: "Acessível a cadeirantes"
     show_limited_accessible_places: Parcialmente
     show_places_without_status: "estatuto desconhecido"
     show_unaccessible_places: "não acessível a cadeirantes"
@@ -279,6 +283,7 @@ pt-BR:
     searchbar:
       add_place: "Adicionar outro lugar"
       find: encontrar
+      label: ~
       placeholder: "p. Ex. Sunset Boulevard L.A. ou o Portão de Brandenburgo"
       title_add_place: "Adicionar um novo lugar nesta posição agora!"
     tagline: "Logotipo do Wheelmap"
@@ -294,7 +299,8 @@ pt-BR:
     index:
       filter:
         category: "Escolher categoria"
-        wheelchair: "Acessivel a cadeira de rodas? (O que significa isto?) "
+        select_all: "Desativar todos"
+        wheelchair: "Acessível a cadeirantes?"
       ie:
         action:
           upgrade: "Atualizar browser"
@@ -394,7 +400,9 @@ pt-BR:
           quadrillion: Quatrilhão
           thousand: Mil
           trillion: "Trilhão "
+          unit: ~
       format:
+        delimiter: ~
         precision: 1
         significant: true
         strip_insignificant_zeros: true
@@ -408,6 +416,9 @@ pt-BR:
           kb: KB
           mb: MB
           tb: TB
+    percentage:
+      format:
+        delimiter: ~
   oauth:
     application:
       connect:
@@ -464,6 +475,7 @@ pt-BR:
         townhall: Prefeitura
       health:
         doctors: Médicos
+        hearing_aids: "Loja de aparelhos auditivos"
         hospital: Hospital
         pharmacy: Farmácia
         social_facility: "Instituição social"
@@ -475,6 +487,7 @@ pt-BR:
         community_center: "Centro comunitário"
         gallery: "Galeria de arte"
         nightclub: "Casa noturna"
+        playground: "Área recreacional"
         sauna: Sauna
         stripclub: "clube de strip-tease"
         theatre: Teatro
@@ -528,9 +541,9 @@ pt-BR:
         department_store: "Loja de Departamentos"
         doityourself: "Loja de ferragens"
         dry_cleaning: "Lavanderia a seco"
-        electronics: Eletrónica
+        electronics: "Loja de Eletrônicos"
         florist: Florista
-        furniture: Móvéis
+        furniture: Móveis
         garden_centre: "Centro de jardinagem"
         hairdresser: Cabeleireiro
         hardware: "Utensílios e Ferramentas"
@@ -538,6 +551,8 @@ pt-BR:
         laundry: Lavandaria
         mall: "Shopping Center"
         optician: Ótica
+        photo: "Loja fotográfica"
+        second_hand: Brechó
         shoes: Sapatos
         sports: "Produtos esportivos"
         stationery: Papelaria
@@ -622,6 +637,7 @@ pt-BR:
     after_signup_edit:
       welcome:
         headline: "Quase pronto!"
+        set_password_for_mobile: "Você tem um smartphone? Então defina uma senha aqui para usar o wheelmap no seu iPhone ou celular Android."
         text: "Você se registrou com sucesso. Nos lhe informaremos sobre notícias importantes acerca do Wheelmap."
   wheelchairstatus:
     limited: "parcialmente acessível a cadeirantes"
@@ -651,6 +667,7 @@ pt-BR:
     next_label: "Próximo &#8594;"
     page_entries_info:
       multi_page: "Mostre %{model} %{from} - %{to} de %{count} no total"
+      multi_page_html: "Mostre %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> dum total de <b>%{count}</b>"
       single_page:
         one: "Mostrar 1 %{model}"
         other: "Mostrar todos os %{count} %{model}"
