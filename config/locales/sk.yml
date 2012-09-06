@@ -51,6 +51,8 @@ sk:
       form:
         labels:
           password_confirmation: "Znovu zadajte heslo"
+        submit: "Uložiť zmeny"
+      headline: "Zmeniť účet"
     failure:
       already_authenticated: "Už ste prihláseny."
       inactive: "Váš účet ešte nebol aktivovaný."
@@ -70,9 +72,12 @@ sk:
     mandatory: "* Povinné"
     omniauth_callbacks:
       failure: "Nie je možné vás autorizovať z %{kind}, pretože %{reason}."
+      permission_missing: "Nepridelili ste potrebné oprávnenia."
       success: "Úspešná autorizácia z účtu %{kind}."
     password_recovery:
       form:
+        labels:
+          email: Email
         submit: "Obnoviť heslo"
       headline: "Zabudli ste heslo?"
     password_reset:
@@ -82,8 +87,10 @@ sk:
       form:
         labels:
           password_confirmation: "Znovu zadajte heslo"
+        submit: "Obnoviť heslo"
       headline: "Obnoviť heslo"
     passwords:
+      link: "Zabudli ste heslo?"
       send_instructions: "O niekoľko minút obdržíte email s inštrukciami ako nastaviť nové heslo."
       send_paranoid_instructions: "Ak sa váš email nachádza v našej databáze, obdržíte odkaz na obnovu hesla na svoj email."
       updated: "Vaše heslo bolo úspešne zmenené. Teraz ste prihláseny."
@@ -93,20 +100,27 @@ sk:
       reasons:
         inactive: neaktívne
         locked: zamknuté
+        unconfirmed: nepotvrdené
       signed_up: "Vitajte! Registrácia bola úspešná."
       updated: "Váš účet bol úspešne aktualizovaný."
     sessions:
+      inactive: "Váš účet ešte nebol aktivovaný"
       invalid: "Nesprávny email alebo heslo."
       link: "Prihlásiť sa"
+      locked: "Váš účet je uzamknutý"
       new:
         no_osm_account: "Nemáte účet u OpenStreetMap?"
         promo_text_thank_you: "Ďakujeme za vašu podporu!"
+        sign_up_with_osm: "Registrujte sa."
       signed_in: "Prihlásenie úspešné."
       signed_out: "Odhlásenie úspešné."
     sign_in:
       form:
         labels:
+          email: Email
           remember_me: "Ostať prihlásený?"
+    sign_out:
+      headline: Odhlásiť
     sign_up:
       email:
         confirm_my_account: "Potvrdiť svoj účet"
@@ -114,6 +128,7 @@ sk:
       form:
         labels:
           email: Email
+          password_confirmation: "Znovu zadajte heslo"
         submit: "Vytvoriť účet"
       headline: "Vytvoriť účet"
     unlocks:
@@ -121,6 +136,7 @@ sk:
       send_paranoid_instructions: "Ak váš účet existuje, o niekoľko minút obdržíte email s inštrukciami ako ho odomknúť."
       unlocked: "Váš účet bol úspešne odomknutý. Teraz ste prihláseny"
   errors:
+    dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
       accepted: "musí byť potvrdené"
@@ -161,16 +177,21 @@ sk:
   formtastic:
     hints:
       osm_username: "Nie ste ešte členom? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Vytvorte si účet na OpenStreetMap</a>"
+      password: "(nechajte prázdne ak nechcete zmeniť)"
+      phone: "Napríklad: +421 123 456789"
       website: "Napríklad: http://www.example.com"
     labels:
       create: "Vytvoriť miesto"
       finish: Dokončiť
+      lon: Dĺžka
       name: "Meno:"
       osm_password: "OSM heslo"
       password_confirmation: "Zopakujte heslo"
+      phone: "Telefón:"
       save: Uložiť
       street: "Ulica:"
       type: "Typ:"
+      wheelchair_description: "Poznámka k prístupnosti:"
     titles:
       basic: "Základné údaje"
   global:
@@ -181,8 +202,11 @@ sk:
       search: Hľadať
     navigation:
       blog: Blog
+      feedback: "Spätná väzba"
       how_to_add_a_place: "Ako pridám miesta?"
+      login: Prihlásiť
       logout: "Odhlásiť sa"
+      press: Tlač
       suggestions: Návrhy
       what_is_wheelmap: "Čo je to wheelmap?"
     searchbar:
@@ -210,6 +234,7 @@ sk:
         form:
           ? "no"
           : "neprístupné vozíčkarom"
+          unknown: "neznámy stav"
           ? "yes"
           : "prístupné pre vozíčkarov"
         help: "Prístupné pre vozíčkarov? (Pomoc)"
@@ -233,11 +258,20 @@ sk:
     edit:
       link:
         large_map: "&laquo; Zrušiť"
+    errors:
+      not_available: "Ospravedlňujeme sa, táto stránka je dočasne nedostupná."
+      not_found: "Prepáčte, stránka sa nenašla."
     new:
       header:
         title: "Nové miesto | wheelmap.org"
       link:
         large_map: "&laquo; Zrušiť"
+    node:
+      link:
+        edit_node: "Zmeniť miesto"
+    show:
+      link:
+        large_map: Zväčšiť
     update_wheelchair:
       successfull: "Stav pre \"%{name}\" sa zmenil na \"%{status}\" a čoskoro bude prihlásený."
   number:
@@ -298,6 +332,7 @@ sk:
       accommodation: Ubytovanie
       food: Jedlo
       government: Vláda
+      shopping: Nákupy
       sport: Šport
       unknown: Neznáme
     name:
@@ -308,8 +343,11 @@ sk:
         kindergarten: Škôlka
         library: Knižnica
         school: Škola
+      food:
+        fast_food: "Rýchle občerstvenie"
       government:
         courthouse: "Budova súdu"
+        embassy: Veľvyslanectvo
         public_building: "Verejná budova"
         townhall: Radnica
       health:
@@ -318,6 +356,7 @@ sk:
       leisure:
         arena: Štadión
         cinema: Kino
+        community_center: "Komunitné centrum"
         nightclub: "Nočný klub"
         sauna: Sauna
         zoo: Zoo
@@ -328,24 +367,36 @@ sk:
         post_box: "Poštovná schránka"
         post_office: Pošta
       public_transfer:
+        aerodrome: Letisko
+        bicycle_rental: "Požičovňa bicyklov"
         bus_station: "Autobusová zastávka"
         bus_stop: "Autobusová zastávka"
         ferry: Trajekt
         parking: Parkovanie
+        parking_aisle: "Parkovacia ulička"
         terminal: "Letištný terminál"
       shopping:
+        books: Knihy
+        computer: Počítač
+        doityourself: "Urob si sám"
         florist: Kvetinárstvo
         garden_centre: "Záhradné centrum"
+        kiosk: Stánok
+        laundry: Prádelňa
         mall: "Nákupné stredisko"
+        optician: Optik
+        shoes: Topánky
         supermarket: Supermarket
         video: Videopožičovňa
       sport:
         stadium: Štadión
         swimming: Plávanie
+        swimming_pool: "Plavecký bazén"
       tourism:
         archaeological_site: "Archeologické nálezisko"
         arts_centre: "Kultúrne centrum"
         attraction: Atrakcia
+        battlefield: Bojisko
         beach: Pláž
         beacon: Maják
         castle: Hrad
@@ -361,16 +412,22 @@ sk:
         oauth:
           connected: "Stav: pripojený"
           not_connected: "Stav: Nepripojený"
+          revoke: Odpojiť
+      headline: "Upravte svoj účet"
   search:
     index:
       search:
         for: "Vyhľadávanie pre \"%{q}\""
   splash:
+    headline: "Každý môže pridávať miesta prístupné pre vozíčkarov!"
+    start: Štart
     step2: "Označte to a dajte uložiť"
+    step3: "A je to! Registráciu nie je potreba"
   statistics: Štatistiky
   support:
     array:
       last_word_connector: " a "
+      sentence_connector: a
       skip_last_comma: ano
       two_words_connector: " a "
       words_connector: ", "
@@ -411,7 +468,10 @@ sk:
       fully_accessible: "<em>Áno:</em> Vstup bez schodov, všetky miestnosti bez schodov, prístupný záchod ak je na danom mieste obvyklý"
       limited_accessible: "<em>Obmedzený:</em> Vstup má schod (max. výška 7cm), väčšina miestností je bez schodov, záchod nie je prístupný"
       not_accessible: "<em>Nie:</em> Vstup má vysoký alebo niekoľko schodov, izby sú nedostupné\n"
+      unknown_accessible: "<em>Neznáme:</em> Pomôžte označením miest!"
   will_paginate:
     page_entries_info:
       single_page_html:
+        one: "Zobrazujem <b>1</b> %{model}"
         zero: "%{model} sa nenašlo\n"
+    page_gap: "&hellip;"

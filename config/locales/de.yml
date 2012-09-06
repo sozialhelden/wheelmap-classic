@@ -305,8 +305,8 @@ de:
     index:
       filter:
         category: "Kategorie wählen"
-        deselect_all: "Alle auswählen"
-        select_all: "Alle deaktivieren"
+        deselect_all: "Alle deaktivieren"
+        select_all: "Alle auswählen"
         wheelchair: Rollstuhlgerecht?
       ie:
         action:

@@ -305,6 +305,8 @@ ar:
     index:
       filter:
         category: "إختر التصنيف"
+        deselect_all: "عدم الإختيار"
+        select_all: "اختيار الكل"
         wheelchair: "هل يمكن الوصول بالكرسي المتحرك؟"
       ie:
         action:
