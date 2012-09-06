@@ -99,6 +99,7 @@ Wheelmap::Application.routes.draw do
     match '*a', :to => 'api#not_found', :format => false
   end
 
+  match "/dashboard",               :to => redirect("https://metrics.librato.com/share/dashboards/3wf885ot?duration=604800")
   match "/ziemlich-beste-freunde",  :to => redirect("http://blog.wheelmap.org/zbf")
   match "/goeslondon",              :to => redirect("http://blog.wheelmap.org/mitmachen/goes-london/")
   match "/goes-london",             :to => redirect("http://blog.wheelmap.org/mitmachen/goes-london/")
