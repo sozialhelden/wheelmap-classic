@@ -8,22 +8,21 @@ Wheelmap::Application.routes.draw do
   root :to => 'home#index'
 
   devise_for :admins
-  devise_for :users, :controllers => { :registrations => 'registrations', :confirmations => 'confirmations', :omniauth_callbacks => 'omniauth_callbacks' } do
-    get "/registrations/successful", :to => "registrations#after_sign_up"
+  devise_for :users, :controllers => {  :confirmations      => 'confirmations',
+                                        :omniauth_callbacks => 'omniauth_callbacks'
+                                      }
+
+  devise_scope :user do
+    scope 'users' do
+      match '/auth/failure' => 'omniauth_callbacks#failure'
+    end
   end
 
   resources :node_types, :only => :index
   resources :search, :only => :index
   resources :feeds, :only => :index
-  resources :oauth, :only => [:new, :index] do
-    collection do
-      get :revoke
-      get :callback
-      get :osm_register
-      get :authorize
-      get :grant
-      get :deny
-    end
+  resources :oauth, :only => [] do
+    get :register_osm, :on => :collection
   end
 
   resources :client_applications
@@ -51,6 +50,8 @@ Wheelmap::Application.routes.draw do
     end
     member do
       post :reset_token
+      get :after_signup_edit
+      put :after_signup_update
     end
   end
 

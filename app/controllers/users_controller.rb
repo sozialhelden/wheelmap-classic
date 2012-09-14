@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!,        :except => :authenticate
   before_filter :authenticate_mobile_user,  :only => :authenticate
   before_filter :authenticate_mobile_app,   :only => :authenticate
-  before_filter :require_owner, :only => [:edit, :update, :reset_token]
+  before_filter :require_owner, :only => [:edit, :update, :reset_token, :after_signup_edit, :after_signup_update]
 
   before_filter :remove_password_from_params_if_blank, :only => :update
 
@@ -33,12 +33,32 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:user])
-      flash[:notice] = t('devise.registrations.updated')
+    @user.attributes = params[:user]
+    email_changed = @user.email_changed?
+    if @user.save
+      flash[:notice] = t('flash.actions.update.notice', :resource_name => User.model_name.human)
+      flash[:notice] = t('devise.confirmations.send_instructions') if email_changed
+      redirect_to edit_profile_path(@user.id)
     else
-      flash[:alert] = @user.errors.full_messages.to_sentence
+      flash.now[:alert] = @user.errors.full_messages.to_sentence
+      render :action => 'edit'
     end
-    redirect_to edit_profile_path(current_user)
+  end
+
+
+  def after_signup_edit
+    @user ||= current_user
+  end
+
+  def after_signup_update
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      flash[:notice] = t('devise.confirmations.send_instructions') if @user.email.present?
+      redirect_to after_sign_in_path_for(:user)
+    else
+      flash.now[:alert] = @user.errors.full_messages.to_sentence
+      render :template => 'users/after_signup_edit'
+    end
   end
 
   def authenticate
@@ -56,7 +76,12 @@ class UsersController < ApplicationController
   def require_owner
     unless params[:id].to_i == current_user.id
       flash[:alert] = t('devise.failure.invalid_token')
-      redirect_to edit_user_path(current_user)
+      case params[:action]
+      when 'after_signup_edit', 'after_signup_update'
+        redirect_to after_signup_edit_user_path(current_user)
+      else
+        redirect_to edit_user_path(current_user)
+      end
     end
   end
 

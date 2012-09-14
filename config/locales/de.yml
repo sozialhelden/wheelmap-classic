@@ -60,9 +60,9 @@ de:
     skip: überspringen
   devise:
     confirmations:
-      confirmed: "Dein Benutzerkonto wurde erfolgreich bestätigt. Du bist nun angemeldet."
+      confirmed: "Dein E-Mail-Adresse wurde erfolgreich bestätigt."
       link: "Keine Bestätigungsmail bekommen?"
-      send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto bestätigen kannst."
+      send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit einem Link, um deine E-Mail-Adresse zu bestätigen."
       send_paranoid_instructions: "Wenn Deine E-Mail-Adresse in unserer Datenbank ist, wirst Du eine E-mail mit Anweisungen zur Bestätigung Deines Kontos in wenigen Minuten erhalten."
     destroy:
       confirm: "Bist du dir sicher?"

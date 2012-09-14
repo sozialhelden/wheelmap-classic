@@ -1,0 +1,34 @@
+!!!
+%html(lang="#{I18n.locale}")
+  %head
+    = render :partial => 'shared/meta'
+
+    - if content_for?(:head)
+      = content_for(:head)
+    - else
+      %meta{:name => 'description', :content => t('header.meta.description')}
+      %title=t('header.title')
+
+
+    = render :partial => 'shared/html5_elements'
+
+    = content_for :javascript_constants
+
+    = include_stylesheets :node, :media => 'screen, projection'
+
+  %body(class=browser_class)
+    = render :partial => '/shared/header'
+    #content
+      = show_flash
+      = yield
+
+    #footer.fixed
+      = render :partial => 'shared/footer'
+
+    = render :partial => 'shared/google_tracking'
+
+    = include_javascripts :default
+
+    = content_for :javascript
+
+    = render :partial =>  'shared/social_embed'

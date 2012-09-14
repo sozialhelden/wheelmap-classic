@@ -27,8 +27,10 @@ Devise.setup do |config|
 
   # Tell if authentication through HTTP Basic Auth is enabled. False by default.
   config.http_authenticatable = true
-  config.omniauth :osm, '***REMOVED***', '***REMOVED***',
-    :client_options => {:site => "http://api06.dev.openstreetmap.org"}
+
+  # use custom osm provider and let him fetch the permissions granted, too:
+  config.omniauth :osm, OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret,
+    :fetch_permissions => true, :client_options => {:site => OpenStreetMapConfig.oauth_site }
 
   # Set this to true to use Basic Auth for AJAX requests.  True by default.
   # config.http_authenticatable_on_xhr = true
@@ -61,7 +63,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
-  # config.remember_for = 2.weeks
+  config.remember_for = 2.weeks
 
   # If true, a valid remember token can be re-used between multiple browsers.
   # config.remember_across_browsers = true
@@ -126,7 +128,7 @@ Devise.setup do |config|
   # access, but formats like :xml or :json, should return 401.
   # If you have any extra navigational formats, like :iphone or :mobile, you
   # should add them to the navigational formats lists. Default is [:html]
-  # config.navigational_formats = [:html, :iphone]
+  config.navigational_formats = [ :html ]
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not (yet) supported by Devise,

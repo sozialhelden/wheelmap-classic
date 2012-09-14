@@ -6,6 +6,9 @@
 form
   +helvetica-13
 
+  &.after_signup_edit
+    background: url("/images/iphone.jpg") 700px bottom no-repeat
+
   li
     display: block
     float: left
@@ -17,6 +20,13 @@ form
 
     &.boolean
       margin-left: 160px
+
+      &.small
+        margin-left: 130px
+
+        label
+          width: 520px
+
 
       label
         width: 100%
@@ -33,6 +43,12 @@ form
     background-color: white
     padding: 5px
     width: 288px
+
+    &.small
+      width: 180px
+
+    &.large
+      width: 502px
 
   input[readonly]
     background-color: #F9F9F9
@@ -77,6 +93,9 @@ form
     left: 140px
     +green-button
 
+    &.small
+      left: 110px
+
   label
     color: lighten($text-color, 10%)
     display: block
@@ -86,6 +105,9 @@ form
     padding-top: 5px
     text-align: right
     width: 150px
+
+    &.small
+      width: 120px
 
   legend
     +font($helvetica, 20px)
@@ -120,6 +142,9 @@ form
     position: relative
     left: 160px
     color: #AAA
+
+    &.small
+      left: 130px
 
   p.inline-errors
     color: $orange

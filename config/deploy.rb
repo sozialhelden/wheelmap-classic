@@ -55,7 +55,9 @@ end
 namespace :unicorn do
   desc "Zero-downtime restart of Unicorn"
   task :restart, :except => { :no_release => true } do
-    sudo "/etc/init.d/unicorn_#{rails_env} restart"
+    stop
+    sleep 3
+    start
   end
 
   desc "Start unicorn"
