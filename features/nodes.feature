@@ -10,7 +10,6 @@ Feature: Find, update and create nodes via API
       | wheelchair | url                         | poi      | provider            |
       | yes        | http://www.arzt-auskunft.de | last poi | provider "stiftung" |
 
-
   Scenario: I want to see a decent title on the poi detail page
     When I am on the last poi's page
     Then I should see "Ort: name | wheelmap.org" within "title"

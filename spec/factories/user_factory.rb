@@ -2,11 +2,13 @@ Factory.sequence :email do |n|
   "visitor#{n}@wheelmap.org"
 end
 
+Factory.sequence :osm_id do |n|
+  n
+end
+
 Factory.define :user do |user|
-  user.email                  { Factory.next :email }
-  user.password               'e5AGwTANzqKW'
-  user.password_confirmation  'e5AGwTANzqKW'
-  user.confirmed_at           { 10.days.ago }
+  user.osm_id { Factory.next(:osm_id)}
+  # user.confirmed_at           { 10.days.ago }
 end
 
 

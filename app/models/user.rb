@@ -2,19 +2,21 @@ class User < ActiveRecord::Base
   include Devise::Models::TokenAuthenticatable
   # Include default devise modules. Others available are:
   # :http_authenticatable, :token_authenticatable, :database_authenticatable, :confirmable, :lockable, :timeoutable and :activatable
-  devise :database_authenticatable, :recoverable, :registerable, :rememberable, :confirmable,
+  devise :database_authenticatable, :rememberable, :confirmable, :registerable,
     :trackable, :validatable, :encryptable, :omniauthable, :encryptor => :sha1
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter, :first_name, :last_name
 
-  validates_uniqueness_of :email, :case_sensitive => false
-  validates_presence_of :email
+  validates :password, :confirmation =>true
+
+  validate :ensure_email_when_password_set
 
   before_save :ensure_authentication_token
   after_destroy :notify_admins
 
-  serialize :oauth_request_token
+  before_save :send_email_confirmation,
+    :unless => :new_record?, :if => :email_changed?
 
   acts_as_api
 
@@ -26,6 +28,24 @@ class User < ActiveRecord::Base
   api_accessible :api_simple do |t|
     t.add :id
     t.add :authentication_token, :as => :api_key
+  end
+
+  def send_email_confirmation
+    return if self.email.blank?
+    self.generate_confirmation_token if self.confirmation_token.nil?
+    self.devise_mailer.confirmation_instructions(self).deliver
+  end
+
+  def password_required?
+    false
+  end
+
+  def email_required?
+    false
+  end
+
+  def confirmation_required?
+    false
   end
 
   def app_authorized?
@@ -46,7 +66,6 @@ class User < ActiveRecord::Base
   def revoke_oauth_credentials
     self.oauth_token = nil
     self.oauth_secret = nil
-    self.oauth_request_token = nil
     save!
   end
 
@@ -55,6 +74,12 @@ class User < ActiveRecord::Base
     self.oauth_token  = access_token.token
     self.oauth_secret = access_token.secret
     save!
+  end
+
+  def update_oauth_credentials(credentials_hash)
+    self.oauth_token  = credentials_hash['token']
+    self.oauth_secret = credentials_hash['secret']
+    save(:validate => false)
   end
 
   def self.authenticate(email, password)
@@ -80,4 +105,9 @@ class User < ActiveRecord::Base
   def notify_admins
     UserMailer.user_destroyed(self).deliver
   end
+
+  def ensure_email_when_password_set
+    errors.add_on_blank(:email) if !password.blank? and email.blank?
+  end
+
 end

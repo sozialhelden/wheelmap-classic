@@ -8,6 +8,12 @@ h1,h2,h3,h4,h5,h6,p
   &.marge
     margin-bottom: 10px
 
+hr
+  background-color: #E6E6E6
+  color: #E6E6E6
+  border: 0
+  height: 1px
+
 .help
   cursor: help
 
@@ -22,5 +28,73 @@ h1,h2,h3,h4,h5,h6,p
   +clearfix
   +box-shadow(rgba(black, 0.1), 0, 2px, 15px)
 
+#content
+  margin: 20px auto 60px
+  padding: 19px
+  width: 900px
+  +clearfix
+
+.promo_box
+  width: 55%
+  float: left
+
+  h2
+    font-size: 20px
+    margin-bottom: 20px
+
+  p
+    margin-bottom: 15px
+    font-size: 12px
+    padding-left: 80px
+
+    &.osm
+      background: url('/images/openstreetmap_logo_small.jpg') no-repeat left center
+
+    &.wheelmap
+      background: url('/images/markerhead.jpg') no-repeat 4px center
+
+  em
+    font-weight: bold
+
+.login_box
+  width: 335px
+  float: right
+  border: 1px solid #DFDFDF
+  background-color: #EFEFEF
+  +border-radius(12px)
+  position: relative
+
+  p
+    text-align: center
+    margin-bottom: 5px
+
+.image_block
+  margin: 20px auto
+  position: relative
+  width: 200px
+  height: 210px
+
+  a
+    width: 100%
+    text-align: center
+    position: absolute
+    top: 0px
+
+    &.button
+      display: inline-block
+      text-decoration: none
+      margin: 0px auto
+      height: 18px
+      top: 180px
+      left: -11px
+
+
+
+
+
+
 .odd
   background-color: $odd-color
+
+.hidden
+  display: none
