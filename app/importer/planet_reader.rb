@@ -147,9 +147,14 @@ class PlanetReader
   # Verarbeitet einen POI.
   #
   def process_poi
+    # For some reason there is a node which empty wheelchair tag. Gotta handle this
     status = @poi[:tags]['wheelchair'] || 'unknown'
+    if status.blank?
+      @poi[:status] = Poi::WHEELCHAIR_STATUS_VALUES[:unknown]
+    else
+      @poi[:status] = Poi::WHEELCHAIR_STATUS_VALUES[status.to_sym]
+    end
 
-    @poi[:status] = Poi::WHEELCHAIR_STATUS_VALUES[status.to_sym]
     return unless @poi[:status]
     if !@osmchange
       # Neue POIs aus *.osm

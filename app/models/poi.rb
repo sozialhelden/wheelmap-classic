@@ -307,7 +307,12 @@ class Poi < ActiveRecord::Base
   end
 
   def set_status
-    self.status = WHEELCHAIR_STATUS_VALUES[wheelchair.to_sym]
+    # For some reason there is a node which empty wheelchair tag. Gotta handle this
+    if wheelchair.blank?
+      self.status = WHEELCHAIR_STATUS_VALUES[:unknown]
+    else
+      self.status = WHEELCHAIR_STATUS_VALUES[wheelchair.to_sym]
+    end
   end
 
   def set_node_type
