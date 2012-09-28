@@ -19,7 +19,10 @@ describe UpdateTagsJob do
   it "should not update lat attribute in updating job" do
     node.lat, node.lon = 45, 10
 
-    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
+    # change at least one tag to trigger the save action
+    tags = poi.tags
+    tags['addr:housenumber'] = 99
+    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, tags, user, 'update_iphone')
 
     unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
     api = mock(:find_or_create_open_changeset => changeset)
@@ -28,6 +31,19 @@ describe UpdateTagsJob do
     api.should_receive(:find_element).with('node', node.id.abs).and_return(unedited_node)
     api.should_receive(:save) { |node, _| node.lat.should eql 52.0; node.lon.should eql 13.0 }
     update_node = job.perform
+  end
+
+  it "should not update the node when nothing has been changed" do
+    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
+
+    unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
+    api = mock(:find_or_create_open_changeset => changeset)
+
+    Rosemary::Api.should_receive(:new).and_return(api)
+    api.should_receive(:find_element).with('node', node.id.abs).and_return(unedited_node)
+    api.should_not_receive(:save)
+    update_node = job.perform
+
   end
 
   it "increments the counter" do
