@@ -30,6 +30,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       # Ignore this job, as there are no changes to be saved
       if comparison_value == 0
         logger.info "IGNORE: #{type}:#{element_id} nothing has changed!"
+        HoptoadNotifier.notify(Exception.new('NotChanged'), :component => 'UpdateTagsJob#perform', :parameters => {:user => user.inspect, :element => element.inspect, :client => client})
         return
       end
 
