@@ -18,8 +18,20 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
 
       api = Rosemary::Api.new(client)
 
-      element = api.find_element(type, element_id)
+      element_to_compare = api.find_element(type, element_id)
+
+      element = element_to_compare.dup
       element.tags.merge!(tags)
+
+      # Use spaceship operator for comparision:
+      # as "element == element_to_compare" is false because of object_id
+      comparison_value = (element_to_compare <=> element)
+
+      # Ignore this job, as there are no changes to be saved
+      if comparison_value == 0
+        logger.info "IGNORE: #{type}:#{element_id} nothing has changed!"
+        return
+      end
 
       changeset = api.find_or_create_open_changeset(user.changeset_id, "Modified via wheelmap.org")
       user.update_attribute(:changeset_id, changeset.id)
