@@ -15,6 +15,14 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def link_to_participate
+    if I18n.locale == :de
+      link_to( t('how?'), "http://blog.wheelmap.org/mitmachen", :target => '_blank')
+    else
+      link_to( t('how?'), "http://blog.wheelmap.org/en/participate", :target => '_blank')
+    end
+  end
+
   def category_for_node(type)
     Amenities.each do |category, groups|
       groups.each do |group|
