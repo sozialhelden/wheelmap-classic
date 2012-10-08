@@ -8,12 +8,6 @@
     =image_tag("/images/app_store_badge.png", :size => '134x45')
   = link_to "https://market.android.com/details?id=org.wheelmap.android.online&hl=#{I18n.locale}" do
     =image_tag("/images/market_store_badge.png", :size => '129x45')
-  - if I18n.locale == :de
-    = link_to "http://blog.wheelmap.org/mitmachen/goes-london/", :target => '_blank' do
-      =image_tag("/images/wheelmapgoeslondon_de.png", :size => '267x86')
-  - else
-    = link_to "http://blog.wheelmap.org/en/participate/goes-london/", :target => '_blank' do
-      =image_tag("/images/wheelmapgoeslondon_en.png", :size => '267x86')
 
 #spinner
 
