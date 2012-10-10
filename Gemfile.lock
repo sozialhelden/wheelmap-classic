@@ -345,6 +345,7 @@ DEPENDENCIES
   librato-metrics
   libxml-ruby
   memcache-client
+  multipart-post
   mysql2 (~> 0.2.18)
   newrelic_rpm
   nokogiri
