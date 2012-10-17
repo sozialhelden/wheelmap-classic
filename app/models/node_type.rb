@@ -60,7 +60,7 @@ class NodeType < ActiveRecord::Base
     end
 
     def valid_type?(tags)
-      tags.any?  &self.method(:valid_combination?)
+      tags.any?{|k,v| valid_combination?(k,v)}
     end
 
   end
