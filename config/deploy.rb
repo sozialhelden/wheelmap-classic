@@ -90,6 +90,22 @@ namespace :deploy do
       puts `git tag #{rails_env}_#{release_name} #{revision} -m "Deployed by #{user} <#{email}>"`
       puts `git push --tags`
     end
+
+    desc "Place release tag into Git and push it to server."
+    task :cleanup_deploy_tag do
+      count = fetch(:keep_releases, 5).to_i
+      if count >= releases.length
+        logger.important "no old release tags to clean up"
+      else
+        logger.info "keeping #{count} of #{releases.length} release tags"
+
+        tags = (releases - releases.last(count)).map { |release| "#{rails_env}_#{release}" }
+
+        tags.each do |tag|
+          `git push origin :refs/tags/#{tag}`
+        end
+      end
+    end
   end
 
   namespace :newrelic do
