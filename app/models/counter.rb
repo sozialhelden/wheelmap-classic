@@ -9,7 +9,7 @@ class Counter < ActiveRecord::Base
   end
 
   def self.today
-    Counter.find_or_initialize_by_counter_date(Date.today)
+    Counter.find_or_create_by_counter_date(Date.today)
   end
 
   def changed_within?(t)

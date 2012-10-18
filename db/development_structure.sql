@@ -61,8 +61,11 @@ CREATE TABLE `counters` (
   `create_android` int(11) DEFAULT '0',
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
+  `search_website` int(11) DEFAULT '0',
+  `search_iphone` int(11) DEFAULT '0',
+  `search_android` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `delayed_jobs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -349,3 +352,5 @@ INSERT INTO schema_migrations (version) VALUES ('20120726081246');
 INSERT INTO schema_migrations (version) VALUES ('20120727060024');
 
 INSERT INTO schema_migrations (version) VALUES ('20120802105205');
+
+INSERT INTO schema_migrations (version) VALUES ('20121018171714');
