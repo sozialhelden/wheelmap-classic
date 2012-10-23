@@ -15,10 +15,21 @@ class RemoveObsoleteNodeTypes < ActiveRecord::Migration
     NodeType.create(:category => health, :identifier => :social_facility, :osm_key => 'amenity', :osm_value => 'social_facility', :icon => 'social_facility.png') unless NodeType.find_by_identifier('social_facility')
 
     # Move some node types over to health category
-    health.node_types << NodeType.find_by_identifier('doctors')
-    health.node_types << NodeType.find_by_identifier('hospital')
-    health.node_types << NodeType.find_by_identifier('pharmacy')
-    health.node_types << NodeType.find_by_identifier('veterinary')
+    if doctors = NodeType.find_by_identifier('doctors')
+      health.node_types << doctors
+    end
+
+    if hospital = NodeType.find_by_identifier('hospital')
+      health.node_types << hospital
+    end
+
+    if pharmacy = NodeType.find_by_identifier('pharmacy')
+      health.node_types << pharmacy
+    end
+
+    if veterinary = NodeType.find_by_identifier('veterinary')
+      health.node_types << veterinary
+    end
     health.save
 
     # Add biergaten to food
@@ -56,9 +67,10 @@ class RemoveObsoleteNodeTypes < ActiveRecord::Migration
     NodeType.create(:category => misc, :identifier => :company, :osm_key => 'office', :osm_value => 'company', :icon => 'workoffice.png') unless NodeType.find_by_identifier('company')
     NodeType.create(:category => misc, :identifier => :lawyer, :osm_key => 'office', :osm_value => 'lawyer', :icon => 'court.png') unless NodeType.find_by_identifier('lawyer')
 
-    n =  NodeType.where(:osm_key => 'historic', :osm_value => 'archaeological_site').first
-    n.icon = 'fossils.png'
-    n.save
+    if n =  NodeType.where(:osm_key => 'historic', :osm_value => 'archaeological_site').first
+      n.icon = 'fossils.png'
+      n.save
+    end
 
   end
 
