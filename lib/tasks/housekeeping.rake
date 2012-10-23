@@ -20,7 +20,8 @@ namespace :housekeeping do
 
   desc 'Determine node type for nodes without node type'
   task :calculate_node_type => :environment do
-    Poi.without_node_type.find_in_batches do |batch|
+    lowest_id = Poi.lowest_id
+    Poi.without_node_type.find_in_batches(:start => lowest_id) do |batch|
       batch.each do |node|
         node.set_node_type
         Poi.update_all("node_type_id = #{node.node_type_id || 'NULL'}", "osm_id = #{node.id}") if node.changed?
