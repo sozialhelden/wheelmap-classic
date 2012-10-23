@@ -20,7 +20,8 @@ categories = Category.create([
   {:id => 8,  :identifier => :tourism},
   {:id => 9,  :identifier => :accommodation},
   {:id => 10, :identifier => :misc},
-  {:id => 11, :identifier => :government}
+  {:id => 11, :identifier => :government},
+  {:id => 12, :identifier => :health}
 ])
 
 NodeType.delete_all
@@ -28,21 +29,22 @@ NodeType.connection.execute('ALTER TABLE node_types AUTO_INCREMENT=1')
 
 public_transfer = Category.find_by_identifier('public_transfer')
 node_types = NodeType.create([
-  {:category => public_transfer, :identifier => :bicycle_rental,  :osm_key => 'amenity',  :osm_value => 'bicycle_rental', :icon => 'cycling.png'},
-  {:category => public_transfer, :identifier => :boatyard,        :osm_key => 'waterway', :osm_value => 'boatyard',       :icon => 'boat.png'},
-  {:category => public_transfer, :identifier => :bus_station,     :osm_key => 'amenity',  :osm_value => 'bus_station',    :icon => 'busstop.png'},
-  {:category => public_transfer, :identifier => :bus_stop,        :osm_key => 'highway',  :osm_value => 'bus_stop',       :icon => 'busstop.png'},
-  {:category => public_transfer, :identifier => :car_rental,      :osm_key => 'amenity',  :osm_value => 'car_rental',     :icon => 'carrental.png'},
-  {:category => public_transfer, :identifier => :car_sharing,     :osm_key => 'amenity',  :osm_value => 'car_sharing',    :icon => 'carrental.png'},
-  {:category => public_transfer, :identifier => :ferry_terminal,  :osm_key => 'amenity',  :osm_value => 'ferry_terminal', :icon => 'ferry.png'},
-  {:category => public_transfer, :identifier => :fuel,            :osm_key => 'amenity',  :osm_value => 'fuel',           :icon => 'fillingstation.png'},
-  {:category => public_transfer, :identifier => :halt,            :osm_key => 'railway',  :osm_value => 'halt',           :icon => 'train.png'},
-  {:category => public_transfer, :identifier => :parking,         :osm_key => 'amenity',  :osm_value => 'parking',        :icon => 'parking.png'},
-  {:category => public_transfer, :identifier => :platform,        :osm_key => 'railway',  :osm_value => 'platform',       :icon => 'train.png'},
-  {:category => public_transfer, :identifier => :station,         :osm_key => 'railway',  :osm_value => 'station',        :icon => 'train.png'},
-  {:category => public_transfer, :identifier => :subway_entrance, :osm_key => 'railway',  :osm_value => 'subway_entrance',:icon => 'underground.png'},
-  {:category => public_transfer, :identifier => :terminal,        :osm_key => 'aeroway',  :osm_value => 'terminal',       :icon => 'airport_terminal.png'},
-  {:category => public_transfer, :identifier => :tram_stop,       :osm_key => 'railway',  :osm_value => 'tram_stop',      :icon => 'tramway.png'}
+  {:category => public_transfer, :identifier => :bicycle_rental,  :osm_key => 'amenity',   :osm_value => 'bicycle_rental', :icon => 'cycling.png'},
+  {:category => public_transfer, :identifier => :boatyard,        :osm_key => 'waterway',  :osm_value => 'boatyard',       :icon => 'boat.png'},
+  {:category => public_transfer, :identifier => :bus_station,     :osm_key => 'amenity',   :osm_value => 'bus_station',    :icon => 'busstop.png'},
+  {:category => public_transfer, :identifier => :bus_stop,        :osm_key => 'highway',   :osm_value => 'bus_stop',       :icon => 'busstop.png'},
+  {:category => public_transfer, :identifier => :car_rental,      :osm_key => 'amenity',   :osm_value => 'car_rental',     :icon => 'carrental.png'},
+  {:category => public_transfer, :identifier => :car_sharing,     :osm_key => 'amenity',   :osm_value => 'car_sharing',    :icon => 'carrental.png'},
+  {:category => public_transfer, :identifier => :ferry_terminal,  :osm_key => 'amenity',   :osm_value => 'ferry_terminal', :icon => 'ferry.png'},
+  {:category => public_transfer, :identifier => :fuel,            :osm_key => 'amenity',   :osm_value => 'fuel',           :icon => 'fillingstation.png'},
+  {:category => public_transfer, :identifier => :halt,            :osm_key => 'railway',   :osm_value => 'halt',           :icon => 'train.png'},
+  {:category => public_transfer, :identifier => :parking,         :osm_key => 'amenity',   :osm_value => 'parking',        :icon => 'parking.png'},
+  {:category => public_transfer, :identifier => :platform,        :osm_key => 'railway',   :osm_value => 'platform',       :icon => 'train.png'},
+  {:category => public_transfer, :identifier => :station,         :osm_key => 'railway',   :osm_value => 'station',        :icon => 'train.png'},
+  {:category => public_transfer, :identifier => :subway_entrance, :osm_key => 'railway',   :osm_value => 'subway_entrance',:icon => 'underground.png'},
+  {:category => public_transfer, :identifier => :terminal,        :osm_key => 'aeroway',   :osm_value => 'terminal',       :icon => 'airport_terminal.png'},
+  {:category => public_transfer, :identifier => :tram_stop,       :osm_key => 'railway',   :osm_value => 'tram_stop',      :icon => 'tramway.png'},
+  {:category => public_transfer, :identifier => :cable_car,       :osm_key => 'aerialway', :osm_value => 'station',        :icon => 'cablecar.png'}
 ])
 
 food = Category.find_by_identifier('food')
@@ -52,7 +54,8 @@ node_types = NodeType.create([
   {:category => food, :identifier => :drinking_water,:osm_key => 'amenity', :osm_value => 'drinking_water', :icon => 'drinkingwater.png'},
   {:category => food, :identifier => :fast_food,     :osm_key => 'amenity', :osm_value => 'fast_food',      :icon => 'fastfood.png'},
   {:category => food, :identifier => :pub,           :osm_key => 'amenity', :osm_value => 'pub',            :icon => 'bar.png'},
-  {:category => food, :identifier => :restaurant,    :osm_key => 'amenity', :osm_value => 'restaurant',     :icon => 'restaurant.png'}
+  {:category => food, :identifier => :restaurant,    :osm_key => 'amenity', :osm_value => 'restaurant',     :icon => 'restaurant.png'},
+  {:category => food, :identifier => :biergarten,    :osm_key => 'amenity', :osm_value => 'biergarten',     :icon => 'biergarten.png'}
 ])
 
 leisure = Category.find_by_identifier('leisure')
@@ -62,7 +65,11 @@ node_types = NodeType.create([
   {:category => leisure,  :identifier => :gallery,     :osm_key => 'amenity',  :osm_value => 'gallery',     :icon => 'museum_art.png'},
   {:category => leisure,  :identifier => :nightclub,   :osm_key => 'amenity',  :osm_value => 'nightclub',   :icon => 'dancinghall.png'},
   {:category => leisure,  :identifier => :theatre,     :osm_key => 'amenity',  :osm_value => 'theatre',     :icon => 'theater.png'},
-  {:category => leisure,  :identifier => :zoo,         :osm_key => 'tourism',  :osm_value => 'zoo',         :icon => 'zoo.png'}
+  {:category => leisure,  :identifier => :zoo,         :osm_key => 'tourism',  :osm_value => 'zoo',         :icon => 'zoo.png'},
+  {:category => leisure, :identifier => :brothel, :osm_key => 'amenity', :osm_value => 'brothel', :icon => 'lantern.png'},
+  {:category => leisure, :identifier => :community_center, :osm_key => 'amenity', :osm_value => 'community_center', :icon => 'communitycentre.png'},
+  {:category => leisure, :identifier => :stripclub, :osm_key => 'amenity', :osm_value => 'stripclub', :icon => 'stripclub.png'},
+  {:category => leisure, :identifier => :playground, :osm_key => 'leisure', :osm_value => 'playground', :icon => 'playground.png'}
 ])
 
 money_post = Category.find_by_identifier('money_post')
@@ -109,13 +116,21 @@ node_types = NodeType.create([
   {:category => shopping,  :identifier => :optician,          :osm_key => 'shop', :osm_value => 'optician',         :icon => 'ophthalmologist.png'},
   {:category => shopping,  :identifier => :shoes,             :osm_key => 'shop', :osm_value => 'shoes',            :icon => 'shoes.png'},
   {:category => shopping,  :identifier => :supermarket,       :osm_key => 'shop', :osm_value => 'supermarket',      :icon => 'supermarket.png'},
+  {:category => shopping,  :identifier => :chemist,           :osm_key => 'shop', :osm_value => 'chemist',          :icon => 'chemist.png'},
+  {:category => shopping,  :identifier => :stationery,        :osm_key => 'shop', :osm_value => 'stationery',       :icon => 'stationery.png'},
+  {:category => shopping,  :identifier => :video,             :osm_key => 'shop', :osm_value => 'video',            :icon => 'music.png'},
+  {:category => shopping,  :identifier => :second_hand,       :osm_key => 'shop', :osm_value => 'second_hand',      :icon => '2hand.png'},
+  {:category => shopping,  :identifier => :car_shop,          :osm_key => 'shop', :osm_value => 'car',              :icon => 'car.png'},
+  {:category => shopping,  :identifier => :car_repair,        :osm_key => 'shop', :osm_value => 'car_repair',       :icon => 'car_repair.png'},
+  {:category => shopping,  :identifier => :sports,            :osm_key => 'shop', :osm_value => 'sports',           :icon => 'weights.png'},
+  {:category => shopping,  :identifier => :photo,             :osm_key => 'shop', :osm_value => 'photo',            :icon => 'photography.png'}
 ])
-
 
 sport = Category.find_by_identifier('sport')
 node_types = NodeType.create([
   {:category => sport,  :identifier => :sports_centre,  :osm_key => 'leisure', :osm_value => 'sports_centre', :icon => 'fitness.png' },
-  {:category => sport,  :identifier => :stadium,        :osm_key => 'leisure', :osm_value => 'stadium',       :icon => 'stadium.png' }
+  {:category => sport,  :identifier => :stadium,        :osm_key => 'leisure', :osm_value => 'stadium',       :icon => 'stadium.png' },
+  {:category => sport,  :identifier => :swimming_pool,  :osm_key => 'amenity', :osm_value => 'swimming_pool', :icon => 'swimming.png'}
 ])
 
 tourism = Category.find_by_identifier('tourism')
@@ -124,7 +139,6 @@ node_types = NodeType.create([
   {:category => tourism,  :identifier => :arts_centre,          :osm_key => 'amenity',  :osm_value => 'arts_centre',          :icon => 'artgallery.png'},
   {:category => tourism,  :identifier => :artwork,              :osm_key => 'amenity',  :osm_value => 'artwork',              :icon => 'publicart.png'},
   {:category => tourism,  :identifier => :attraction,           :osm_key => 'tourism',  :osm_value => 'attraction',           :icon => 'artgallery.png'},
-  {:category => tourism,  :identifier => :battlefield,          :osm_key => 'historic', :osm_value => 'battlefield',          :icon => 'battlefield.png'},
   {:category => tourism,  :identifier => :beach,                :osm_key => 'natural',  :osm_value => 'beach',                :icon => 'beach.png'},
   {:category => tourism,  :identifier => :castle,               :osm_key => 'historic', :osm_value => 'castle',               :icon => 'castle.png'},
   {:category => tourism,  :identifier => :cave_entrance,        :osm_key => 'natural',  :osm_value => 'cave_entrance',        :icon => 'cave.png'},
@@ -148,23 +162,35 @@ node_types = NodeType.create([
 
 misc = Category.find_by_identifier('misc')
 node_types = NodeType.create([
-  {:category => misc,  :identifier => :doctors,           :osm_key => 'amenity',  :osm_value => 'doctors',          :icon => 'medicine.png'},
-  {:category => misc,  :identifier => :hospital,          :osm_key => 'amenity',  :osm_value => 'hospital',         :icon => 'firstaid.png'},
-  {:category => misc,  :identifier => :pharmacy,          :osm_key => 'amenity',  :osm_value => 'pharmacy',         :icon => 'firstaid.png'},
   {:category => misc,  :identifier => :place_of_worship,  :osm_key => 'amenity',  :osm_value => 'place_of_worship', :icon => 'prayer.png'},
   {:category => misc,  :identifier => :toilets,           :osm_key => 'amenity',  :osm_value => 'toilets',          :icon => 'toilets.png'},
-  {:category => misc,  :identifier => :veterinary,        :osm_key => 'amenity',  :osm_value => 'veterinary',       :icon => 'veterinary.png'}
+  {:category => misc,  :identifier => :company,           :osm_key => 'office',   :osm_value => 'company',          :icon => 'workoffice.png'},
+  {:category => misc,  :identifier => :lawyer,            :osm_key => 'office',   :osm_value => 'lawyer',           :icon => 'court.png'}
+
 ])
 
 government = Category.find_by_identifier('government')
 node_types = NodeType.create([
   {:category => government,  :identifier => :courthouse,      :osm_key => 'amenity',  :osm_value => 'courthouse',       :icon => 'court.png'},
-  {:category => government,  :identifier => :townhall,        :osm_key => 'amenity',  :osm_value => 'townhall',         :icon => 'bigcity.png'}
+  {:category => government,  :identifier => :townhall,        :osm_key => 'amenity',  :osm_value => 'townhall',         :icon => 'bigcity.png'},
+  {:category => government,  :identifier => :embassy,         :osm_key => 'amenity',  :osm_value => 'embassy',          :icon => 'embassy.png'},
+  {:category => government,  :identifier => :police,          :osm_key => 'amenity',  :osm_value => 'police',           :icon => 'police.png'}
 ])
 
-Region.delete_all
-Region.connection.execute('ALTER TABLE regions AUTO_INCREMENT=1')
-f = File.new "#{Rails.root}/db/data/polygons.sql"
-while statements = f.gets("\n") do
-  ActiveRecord::Base.connection.execute(statements)
-end
+health = Category.find_by_identifier('health')
+node_types = NodeType.create([
+  {:category => health,  :identifier => :doctors,           :osm_key => 'amenity',  :osm_value => 'doctors',          :icon => 'medicine.png'},
+  {:category => health,  :identifier => :hospital,          :osm_key => 'amenity',  :osm_value => 'hospital',         :icon => 'firstaid.png'},
+  {:category => health,  :identifier => :pharmacy,          :osm_key => 'amenity',  :osm_value => 'pharmacy',         :icon => 'firstaid.png'},
+  {:category => health,  :identifier => :veterinary,        :osm_key => 'amenity',  :osm_value => 'veterinary',       :icon => 'veterinary.png'},
+  {:category => health,  :identifier => :medical_supply,    :osm_key => 'shop',     :osm_value => 'medical_supply',   :icon => 'medicalstore.png'},
+  {:category => health,  :identifier => :hearing_aids,      :osm_key => 'shop',     :osm_value => 'hearing_aids',     :icon => 'hearing_aids.png'},
+  {:category => health,  :identifier => :social_facility,   :osm_key => 'amenity',  :osm_value => 'social_facility',  :icon => 'social_facility.png'}
+])
+
+# Region.delete_all
+# Region.connection.execute('ALTER TABLE regions AUTO_INCREMENT=1')
+# f = File.new "#{Rails.root}/db/data/polygons.sql"
+# while statements = f.gets("\n") do
+#   ActiveRecord::Base.connection.execute(statements)
+# end
