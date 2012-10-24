@@ -21,7 +21,7 @@ namespace :report do
         queue.add attrib => { :source => hostname, :measure_time => rounded_time, :value => Counter.sum(attrib), :type => :counter }
       end
     end
-    queue.submit
+    queue.submit unless queue.empty?
 
   end
 
@@ -47,7 +47,7 @@ namespace :report do
         }
       end
     end
-    queue.submit
+    queue.submit unless queue.empty?
   end
 
   desc 'Report regions'
@@ -68,7 +68,7 @@ namespace :report do
         }
       end
     end
-    queue.submit
+    queue.submit unless queue.empty?
 
     Region.find_each do |region|
       %w{ yes no limited }.each do |status|
