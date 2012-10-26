@@ -44,7 +44,9 @@ module Rack
     end
 
     def extract_locale_from_path(request)
-      if request.path_info =~ /^\/(\w{2,3})\b/
+      if request.path_info =~ /\/([a-z]{2}-[A-Z]{2})($|\/)/
+        $1 if is_available?($1)
+      elsif request.path_info =~ /^\/([a-z]{2,3})($|\/)/
         $1 if is_available?($1)
       end
     end
