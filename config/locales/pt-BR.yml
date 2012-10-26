@@ -4,6 +4,7 @@ pt-BR:
     attributes:
       user:
         first_name: "primeiro nome"
+        last_name: Sobrenome
     errors:
       full_messages:
         format: "%{attribute}%{message}"
@@ -27,7 +28,7 @@ pt-BR:
         taken: "não está disponível"
         too_long: "é demasiado grande (o mínimo é de %{count} characters)"
         too_short: "é demasiado pequeno (o mínimo é de %{count} caracteres)"
-        wrong_length: "tem comprimento errado (deve ter %{count} caracteres)"
+        wrong_length: "tem quantidade de caracteres incompatível (deve ter %{count} caracteres)"
       models:
         user:
           attributes:
@@ -52,8 +53,8 @@ pt-BR:
   breadcrumbs:
     node:
       create: "Adicionar um novo lugar"
-      edit: "Editar um lugar"
-    root: "ê ã õ  ç"
+      edit: "Editar lugar"
+    root: wheelmap
   common:
     close: fechar
     skip: Pular
@@ -62,6 +63,7 @@ pt-BR:
       confirmed: "Seu e-mail foi confirmado com sucesso."
       link: "E-mail de confirmação não recebido?"
       send_instructions: "Dentro de alguns minutos você receberá um e-mail com instruções como confirmar a sua conta."
+      send_paranoid_instructions: "Se seu e-mail está no nosso banco de dados, você vai receber um e-mail com instruções para confirmar sua conta em alguns minutos."
     destroy:
       confirm: "Tem certeza?"
       headline: "Apagar a conta."
@@ -83,9 +85,10 @@ pt-BR:
       locked: "A sua conta está bloqueada."
       timeout: "A sua sess"
       unauthenticated: "Voçê precisa se conectar ou registrar parar continuar.  "
-      unconfirmed: "Confirme sua conta antes de continuar; para este fim, mandamo-lhe um e-mail com um link. Se você não tiver o recebido, clique em \"E-mail de confirmação não recebido?\" no final desta página. "
+      unconfirmed: "Por favor, confirme sua conta antes de continuar. Para este fim, mandamo-lhe um e-mail com um link. Se você não tiver o recebido, clique em \"E-mail de confirmação não recebido?\" no final desta página. "
     mailer:
       confirmation_instructions:
+        landing_page: "Por favor, clique no link que acabamos de mandar para seu e-mail. Se você não recebeu nenhum e-mail, também veja seu lixo eletrônico. Se este não estiver lá, você pode solicitar o e-mail novamente."
         subject: "Mais um passo para ativar sua conta"
       reset_password_instructions:
         subject: "Instruções para redefinir a senha"
@@ -94,7 +97,8 @@ pt-BR:
     mandatory: "* campo obrigatório"
     omniauth_callbacks:
       failure: "não pôde ser confirmado de  %{kind} porque \"%{reason}"
-      success: "Autorizado com sucesso de %{kind} conta"
+      permission_missing: "Você não nos deu os direitos necessários."
+      success: "Autorizado com sucesso com %{kind}"
     password_recovery:
       form:
         labels:
@@ -117,7 +121,7 @@ pt-BR:
       link: "Esquececeu sua senha?"
       send_instructions: "Dentro de alguns minutos receberá um e-mail com instruções para criar uma nova senha."
       send_paranoid_instructions: "Se seu e-mail estiver no nosso banco de dados, você vai receber um e-mail com um link para redefinir sua senha."
-      updated: "A sua senha foi alterada com sucesso. Está conectado à sua conta."
+      updated: "A sua senha foi alterada com sucesso. Está conectado(a) à sua conta."
       updated_not_active: "A sua senha foi modificada com sucesso."
     registrations:
       destroyed: "A sua conta foi cancelada com sucesso."
@@ -137,7 +141,7 @@ pt-BR:
       locked: "A sua conta está bloqueada."
       new:
         no_osm_account: "Nenhuma conta em OpenStreetMap?"
-        osm_promo_text: "O Wheelmap é baseado em mapas do OpenStreetMap (OSM). OSM é um mapa do mundo criado por pessoas como você. Uma Wikipedia de mapas. Para editar lugares existentes ou criar novos lugares, precisa duma conta no OSM."
+        osm_promo_text: "O Wheelmap é baseado em mapas do OpenStreetMap (OSM). OSM é um mapa do mundo criado por pessoas como você. Uma Wikipedia de mapas. Para editar lugares existentes ou criar novos lugares você precisa duma conta no OSM."
         promo_text_thank_you: "Obrigado por sua ajuda!"
         sign_in_with: "Conectar com %{kind}"
         sign_up_with_osm: "Registre-se aqui."
@@ -165,7 +169,7 @@ pt-BR:
       form:
         labels:
           email: E-mail
-          password: "Palavra passe"
+          password: Senha
           password_confirmation: "Repetir senha"
           wants_newsletter: "Sim, mantenha-me informado sobre wheelmap. (Mas por favor não mais que uma vez por mês.)"
         submit: Registrar-se
@@ -174,9 +178,10 @@ pt-BR:
       link: "Não recebeu instruções para desbloquear a sua conta?"
       send_instructions: "Dentro de alguns minutos receberá um e-mail com instruções para desbloquear a sua conta."
       send_paranoid_instructions: "Se você já tem uma conta, vai receber um e-mail para desbloqueá-la em alguns minutos."
-      unlocked: "Sua conta foi ativada com sucesso. Está ligado agora."
+      unlocked: "Sua conta foi ativada com sucesso. Está conectado(a) agora."
   errors:
     dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
     messages:
       accepted: "tem de ser aceito"
       already_confirmed: "já estava confirmado, por favor volte a registrar-se"
@@ -222,7 +227,7 @@ pt-BR:
   form:
     show_fully_accessible_places: "Acessível a cadeirantes"
     show_limited_accessible_places: Parcialmente
-    show_places_without_status: "estatuto desconhecido"
+    show_places_without_status: "Status desconhecido"
     show_unaccessible_places: "não acessível a cadeirantes"
   formtastic:
     hints:
@@ -243,7 +248,7 @@ pt-BR:
       lat: Latitude
       lon: Longitude
       name: "Nome:"
-      osm_password: "OSM palavra passe"
+      osm_password: "Senha OSM"
       osm_username: "OSM nome da conta"
       password: Senha
       password_confirmation: "Repetir senha"
@@ -263,7 +268,7 @@ pt-BR:
     form_validation_error: "Por favor veja os erros abaixo."
   header:
     meta:
-      description: "encontrar lugares acessíveis a cadeira de rodas - wheelmap.org"
+      description: "Degrau aqui, escadas ali ou sem banheiros adaptados - graças a Wheelmap você pode saber antes se um museu, um cinema ou um restaurante são acessíveis a cadeirantes."
       homepage: "Página principal"
       keywords: "lugares acessíveis a cadeirantes cadeira de rodas achar procurar marcar"
       search: Procurar
@@ -276,18 +281,19 @@ pt-BR:
       logged_in_as: "Conectado como:"
       login: Entrar
       logout: Sair
+      newsletter: Newsletter
       press: Imprensa
       suggestions: Sugestões
-      what_is_barrier_free: "Qual o significado de \"acessível a cadeira de rodas\"?"
+      what_is_barrier_free: "Qual o significado de \"acessível a cadeirantes\"?"
       what_is_wheelmap: "O que é o Wheelmap?"
     searchbar:
       add_place: "Adicionar outro lugar"
       find: encontrar
       label: ~
-      placeholder: "p. Ex. Sunset Boulevard L.A. ou o Portão de Brandenburgo"
+      placeholder: "exemplos: 'Brasília', 'Av. Paulista, São Paulo'"
       title_add_place: "Adicionar um novo lugar nesta posição agora!"
     tagline: "Logotipo do Wheelmap"
-    title: "Wheelmap - encontre lugares acessivéis a cadeira de rodas"
+    title: "Wheelmap - encontre lugares acessivéis a cadeirantes"
   helpers:
     select:
       prompt: "Por favor selecione"
@@ -299,11 +305,16 @@ pt-BR:
     index:
       filter:
         category: "Escolher categoria"
+        deselect_all: "Desativar todos"
         select_all: "Desativar todos"
         wheelchair: "Acessível a cadeirantes?"
       ie:
         action:
+          ignore: Ignorar
           upgrade: "Atualizar browser"
+        warning:
+          headline: Desculpe!
+          message: "Aparentemente você está usando Internet Explorer.  Wheelmap precisa dum browser compatível com o padrão para funcionar. Por favor, use Firefox, Chrome, Safari ou Opera."
       link:
         node:
           create: "Adicionar novo lugar"
@@ -314,12 +325,19 @@ pt-BR:
           : "Não acessível a cadeirantes"
           save: Salvar
           unknown: "Status desconhecido"
+          ? "yes"
+          : "Completamente acessível"
         help: "Acessível a cadeirantes? (Ajuda)"
+        more: "mais ..."
+  how?: Como?
   landing_pages:
     index:
       wheelchair:
         limit:
           headline: "Todos os %{type} acessíveis em %{city} (%{count})"
+        ? "no"
+        :
+          headline: "Todos os %{type} não acessíveis em %{city} (%{count})"
         unknown:
           headline: "Todos os %{type} em %{city} com acessibilidade desconhecida (%{count})"
         ? "yes"
@@ -331,6 +349,7 @@ pt-BR:
         alt: "Um projeto de Sozialhelden.de"
   node:
     address:
+      city: "%{city} %{postcode}"
       street: "%{street}, %{housenumber}"
     tags:
       phone: "Telefone:"
@@ -365,6 +384,8 @@ pt-BR:
         edit_node: "Editar lugar"
         report_bug: "Relatar um problema"
     show:
+      header:
+        title: "Lugar: %{node} | wheelmap.org"
       link:
         back: Voltar
         large_map: Aumentar
@@ -375,6 +396,8 @@ pt-BR:
       flash:
         not_successfull: "Oops, os dados ainda são incompletos ou incorretos."
         successfull: "Muito obrigado, os dados submetidos foram guardados com sucesso e estarão online em breve. "
+    update_wheelchair:
+      successfull: "O status  do lugar \"%{name}\" foi mudado para \"%{status}\"."
   number:
     currency:
       format:
@@ -419,10 +442,15 @@ pt-BR:
     percentage:
       format:
         delimiter: ~
+    precision:
+      format:
+        delimiter: ~
   oauth:
     application:
       connect:
         headline: "Para editar ou adicionar lugares em wheelmap.org, você tem de conectar sua conta com Openstreetmap."
+    callback:
+      notice: "Sua conta foi conectada com sucesso com a conta OpenStreetMap de '%{user}'."
   or: ou
   place:
     one: "%{count} lugar"
@@ -452,7 +480,7 @@ pt-BR:
         guest_house: Albergue
         hostel: Hostel
         hotel: Hotel
-        motel: "Hotel na rodovia"
+        motel: "Hotel de rodovia"
       education:
         college: Colégio
         kindergarten: Creche
@@ -471,12 +499,14 @@ pt-BR:
       government:
         courthouse: Tribunal
         embassy: Embaixada
+        police: Polícia
         public_building: "Prédio público"
         townhall: Prefeitura
       health:
         doctors: Médicos
         hearing_aids: "Loja de aparelhos auditivos"
         hospital: Hospital
+        medical_supply: "Equipamentos Médicos"
         pharmacy: Farmácia
         social_facility: "Instituição social"
         veterinary: Veterinário
@@ -493,13 +523,14 @@ pt-BR:
         theatre: Teatro
         zoo: Zoológico
       misc:
+        company: Empresa
         lawyer: Advogado
         place_of_worship: "Lugar de Adoração"
         toilets: "Banheiros públicos"
       money_post:
-        atm: "Caixa Multibanco"
+        atm: "Caixa eletrônico"
         bank: Banco
-        bureau_de_change: "Loja de Cambio"
+        bureau_de_change: "Loja de Câmbio"
         post_box: "Caixa de Correio"
         post_office: "Agência de Correios"
       public_transfer:
@@ -508,18 +539,18 @@ pt-BR:
         bicycle_rental: "Aluguel de bicicletas"
         boatyard: Estaleiro
         bus_station: "Ponto de ônibus"
-        bus_stop: "Estação de Autocarros"
+        bus_stop: "Ponto de ônibus"
         cable_car: "Teleférico de cabine"
         car_rental: "Aluguel de carros"
         car_sharing: "Car sharing (compartilhamento)"
         chair_lift: "Teleférico de cadeira"
         ferry: Ferry
-        ferry_terminal: "Terminal Ferry"
+        ferry_terminal: "Terminal de barco"
         fuel: "Posto de gasolina"
         halt: Estação
         light_rail: "Metrô Leve"
         parking: Estacionamento
-        parking_aisle: "Lugar de estacionamento"
+        parking_aisle: "Corredor de estacionamento"
         platform: Plataforma
         station: Metrô
         subway_entrance: "Entrada do Metrô"
@@ -561,7 +592,7 @@ pt-BR:
       sport:
         sports_centre: "Centro esportivo"
         stadium: Estádio
-        swimming: Nadar
+        swimming: Natação
         swimming_pool: Piscina
       tourism:
         archaeological_site: "Local arqueológico"
@@ -584,7 +615,7 @@ pt-BR:
     edit:
       application:
         oauth:
-          connected: "Estado: Ligado"
+          connected: "Estatus: Conectado"
           grant: "Ligar agora"
           not_connected: "Status: não conectado"
           revoke: "Desligar "
@@ -599,6 +630,7 @@ pt-BR:
     headline: "Todo mundo pode adicionar lugares acessíveis!"
     start: Começo
     step1: "Clique num lugar que você conhece."
+    step2: "Marque-lo e clique em \"Salvar\""
     step3: "Pronto! Nenhum registro necessário!"
     what_is_wheelmap: "O que é Wheelmap?"
   statistics: Estatísticas
@@ -621,16 +653,16 @@ pt-BR:
   user_sessions:
     create:
       activation:
-        notice: "A sua conta está agora activa."
+        notice: "A sua conta foi ativada."
       error:
         notice: "E-Mail e senha não conferem."
       notice: "Você está dentro!"
     destroy:
-      notice: "Adeus, até breve!"
+      notice: "Até breve!"
     new:
       email: E-mail
       login: Entrar
-      login_with_twitter: "Log in com Twitter"
+      login_with_twitter: "Conecte-se pelo Twitter"
       password: Senha
       remember_me: "Mantenha-se connectado"
   users:
@@ -645,7 +677,7 @@ pt-BR:
     : "Não acessível a cadeirantes"
     unknown: "Sem informações sobre acessibilidade"
     ? "yes"
-    : "Completa acessibilidade a cadeira de rodas"
+    : "Completamente acessível a cadeirantes"
   wheelmap:
     footer:
       a_project_of: "Um projeto de"
@@ -656,7 +688,7 @@ pt-BR:
       alt: "AppStore Logotipo"
       title: "Faça agora o download do seu iPhone App!"
     logo:
-      alt: "Wheelmap Logotipo - encontre lugares acessíveis para cadeirantes"
+      alt: "Wheelmap Logotipo - Encontre lugares acessíveis a cadeirantes"
       title: "Wheelmap - Encontre lugares acessíveis a cadeirantes"
     what_is:
       fully_accessible: "<em>Sim:</em> Entrada sem degraus, todos os ambientes sem degraus, com banheiro acessível se houver."
@@ -671,6 +703,10 @@ pt-BR:
       single_page:
         one: "Mostrar 1 %{model}"
         other: "Mostrar todos os %{count} %{model}"
+        zero: "%{model} não encontrado"
       single_page_html:
         one: "Mostrar <b>1</b> %{model}"
         other: "Mostre <b>todos os &nbsp;%{count}</b> %{model}"
+        zero: "%{model} não encontrado"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Voltar"
