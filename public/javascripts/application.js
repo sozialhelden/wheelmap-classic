@@ -384,7 +384,7 @@ function popup_address(feature) {
 function popup_more_link(feature) {
   var html = '';
   if (feature.attributes.id !== null) {
-    html += '<a class="more" href="' +  ((OpenLayers.Lang.getCode() === 'de') ? '' : '/' + OpenLayers.Lang.getCode()) + '/nodes/' + feature.attributes.id + '">';
+    html += '<a class="more" href="' +  ((OpenLayers.Lang.getCode() === 'de') ? '' : '/' + OpenLayers.Lang.getCode().toLowerCase()) + '/nodes/' + feature.attributes.id + '">';
     html += OpenLayers.Lang.translate('more_information');
     html += '</a>';
   }

@@ -142,6 +142,24 @@ OpenLayers.Lang.pl = {
   'more_information': "więcej ...",
   'wheelchair_help': "Dostępne dla osób na wózkach? (Pomoc)"
 };
+OpenLayers.Lang.pt = {
+  'wheelchair_label_yes': "Completamente acessível",
+  'wheelchair_label_limited': "Parcialmente acessível",
+  'wheelchair_label_no': "Não acessível a cadeirantes",
+  'wheelchair_label_unknown': "Status desconhecido",
+  'wheelchair_update_button': "Salvar",
+  'more_information': "mais ...",
+  'wheelchair_help': "Acessível a cadeirantes? (Ajuda)"
+};
+OpenLayers.Lang['pt-BR'] = {
+  'wheelchair_label_yes': "Completamente acessível",
+  'wheelchair_label_limited': "Parcialmente acessível",
+  'wheelchair_label_no': "Não acessível a cadeirantes",
+  'wheelchair_label_unknown': "Status desconhecido",
+  'wheelchair_update_button': "Salvar",
+  'more_information': "mais ...",
+  'wheelchair_help': "Acessível a cadeirantes? (Ajuda)"
+};
 OpenLayers.Lang.ru = {
   'wheelchair_label_yes': "Инвалидная коляска",
   'wheelchair_label_limited': "частичный доступ для людей на<br/>инвалидных колясках",

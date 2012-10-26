@@ -19,7 +19,7 @@
     var lat  = #{escape_once(params[:lat]  || GeoCache.latlon(request.remote_addr).first )};
     var lon  = #{escape_once(params[:lon]  || GeoCache.latlon(request.remote_addr).last )};
     var zoom = #{escape_once(params[:zoom] || 18)};
-    var language = '#{I18n.locale}';
+    #{var_language};
 
 - content_for :javascript do
   :javascript

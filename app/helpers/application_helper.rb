@@ -32,6 +32,10 @@ module ApplicationHelper
     nil
   end
 
+  def var_language
+    "var language = \"#{I18n.locale.to_s.gsub(/(-[a-z]{2})/){ $1.upcase unless $1.nil?}}\""
+  end
+
   def url_for_locale(url, locale)
     uri = URI.parse(url)
     # Ommit leading locale for default locale
@@ -39,7 +43,7 @@ module ApplicationHelper
       uri.path = "/#{locale}/"
     elsif uri.path =~ /^\/tlh($|\/)/
       uri.path = uri.path.gsub(/^\/tlh($|\/)/, "/#{locale}/")
-    elsif uri.path =~ /^\/[a-z]{2}(-[A-Z]{2})?($|\/)/ #/pt-TR/
+    elsif uri.path =~ /^\/[a-z]{2}(-[a-zA-Z]{2})?($|\/)/ #/pt-TR/
       uri.path = uri.path.gsub(/^\/\w{2}(-\w{2})?($|\/)/, "/#{locale}/")
     else
       uri.path = uri.path.gsub(/^(.+?)$/, "/#{locale}" + '\1')
