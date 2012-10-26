@@ -104,7 +104,7 @@
     var lon = #{escape_once(@node.lon)};
     var lat = #{escape_once(@node.lat)};
     var zoom = #{escape_once(params[:zoom] || 18)};
-    var language = '#{I18n.locale}';
+    #{var_language};
 
 - content_for :javascript do
   = render :partial => 'shared/google_event_tracking'
