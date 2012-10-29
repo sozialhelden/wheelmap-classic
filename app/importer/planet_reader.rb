@@ -180,7 +180,8 @@ class PlanetReader
         # probieren den Save, und wenn der nicht geht, probieren wir
         # den Update.
         @poi[:updated_at] = Time.now
-        @poi[:region_id] = nil
+        @poi[:region_id] = nil # reset region, the node could have moved
+        @poi[:geoj] = nil # Reset prerendered geojson string
         Poi.crewait(@poi)
       else
 

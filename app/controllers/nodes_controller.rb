@@ -16,7 +16,7 @@ class NodesController < ApplicationController
   before_filter :check_bbox_param,                :only => :index
 
   # Manually compress geojson output
-  after_filter :compress,                         :only => :index, :if => lambda {|c| c.request.format.try(:geojson?)}
+  after_filter :compress,                         :only => :index, :if => lambda {|c| c.request.format.try(:geojson?) || c.request.format.try(:geojson2?)}
 
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
   rescue_from Rosemary::Gone,               :with => :gone
@@ -34,6 +34,9 @@ class NodesController < ApplicationController
         render :file => "#{Rails.root}/app/views/nodes/index.geojson.erb", :content_type => "application/json; subtype=geojson; charset=utf-8"
       end
       wants.html{     redirect_to root_path }
+      wants.geojson2 do
+        render :file => "#{Rails.root}/app/views/nodes/index.geojson2.erb", :content_type => "application/json; subtype=geojson; charset=utf-8"
+      end
     end
   end
 
@@ -124,11 +127,7 @@ class NodesController < ApplicationController
   add_method_tracer :load_and_instantiate_nodes, "Custom/load_and_instantiate_nodes"
 
   def prepare_nodes
-    load_and_instantiate_nodes.map { |node| node_hash = node.to_geojson
-                         node_hash[:properties].update({ 'marker' => image_path(node.marker),
-                                                            :icon => image_path(node.icon)})
-                         node_hash
-                }
+    load_and_instantiate_nodes.map { |node| node.to_geojson }
   end
   add_method_tracer :prepare_nodes, "Custom/prepare_nodes"
 
