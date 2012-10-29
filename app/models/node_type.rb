@@ -31,10 +31,21 @@ class NodeType < ActiveRecord::Base
   class << self
     extend ActiveSupport::Memoizable
 
+    def osm_keys
+      NodeType.select('DISTINCT osm_key').where('osm_key IS NOT NULL').map(&:osm_key)
+    end
+
+    def alt_osm_keys
+      NodeType.select('DISTINCT alt_osm_key').where('alt_osm_key IS NOT NULL').map(&:alt_osm_key)
+    end
+
+    memoize :osm_keys     #if Rails.env.production? || Rails.env.staging?
+    memoize :alt_osm_keys  #if Rails.env.production? || Rails.env.staging?
+
     def combination
-      keys = NodeType.all.map(&:osm_key)
-      keys += NodeType.where('alt_osm_key IS NOT NULL').map(&:alt_osm_key)
-      keys = keys.uniq.sort
+      keys = osm_keys
+      keys += alt_osm_keys
+      keys.uniq!
       @@combination = {}
       keys.each do |osm_key|
         values = NodeType.all(:conditions => {:osm_key => osm_key})
@@ -53,7 +64,7 @@ class NodeType < ActiveRecord::Base
       end
       @@combination
     end
-    memoize :combination if Rails.env.production? || Rails.env.staging?
+    memoize :combination # if Rails.env.production? || Rails.env.staging?
 
     def valid_combination?(key, value)
       find_by_osm_key_and_osm_value(key, value) || find_by_alt_osm_key_and_alt_osm_value(key, value)

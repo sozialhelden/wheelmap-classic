@@ -8,6 +8,7 @@ class Poi < ActiveRecord::Base
   include ActionView::Helpers::AssetTagHelper
   include PopupHelper
   include NewRelic::Agent::MethodTracer
+  include ApplicationHelper
 
   # osm_id ist der Primaerschluessel
   set_primary_key :osm_id
@@ -107,6 +108,7 @@ class Poi < ActiveRecord::Base
   scope :with_node_type, :conditions => 'node_type_id IS NOT NULL'
   scope :without_node_type, :conditions => 'node_type_id IS NULL'
   scope :including_category, :include => :category
+  scope :including_node_type, :include => {:node_type => :category}
   scope :within_region, lambda {|region| {:conditions => {:region_id => region.id}}}
 
   scope :select_distance, lambda {|lat,lon| {:select => "*,haversine(geom,#{lat},#{lon}) as distance"}}
@@ -278,17 +280,43 @@ class Poi < ActiveRecord::Base
     "/icons/#{node_type.try(:icon)}"
   end
 
+
+  # Dummy methods to generate full image paths
+  def config
+    Wheelmap::Application.config.action_controller
+  end
+
+
+  # Dummy methods to generate full image paths
+  def controller
+    ''
+  end
+
+  def marker_path
+    image_path(marker)
+  end
+
+  def icon_path
+    image_path(icon)
+  end
+
   def to_geojson(options={})
     {
-        :type       => 'Feature',
-        :geometry   => { :type => 'Point', :coordinates  => [ self.lon, self.lat ] },
-        :properties => { 'name'       => headline,
-                         'address'    => address || '',
-                         'wheelchair' => wheelchair,
-                         'id'         => osm_id,
-                         'type'       => node_type.try(:identifier) || '',
-                         'category'   => category.try(:identifier) || '',
-                       }
+      :type       => 'Feature',
+      :geometry   => {
+        :type => 'Point',
+        :coordinates  => [ self.lon, self.lat ]
+      },
+      :properties => {
+        'name'       => headline,
+        'address'    => address || '',
+        'wheelchair' => wheelchair,
+        'id'         => osm_id,
+        'type'       => node_type.try(:identifier) || '',
+        'category'   => category.try(:identifier) || '',
+        'marker'     => marker_path,
+        'icon'       => icon_path
+      }
     }
   end
   add_method_tracer :to_geojson, 'Custom/to_geojson'

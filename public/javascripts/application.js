@@ -307,7 +307,7 @@ function geojsonFormat() {
 
 function httpProtocol() {
   return new OpenLayers.Protocol.HTTP({
-    url:  "nodes.geojson",
+    url:  "nodes.geojson2",
     headers: {
       "Content-Type": "application/javascript"
     },

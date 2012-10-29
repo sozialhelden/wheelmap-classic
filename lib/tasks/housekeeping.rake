@@ -1,3 +1,4 @@
+require 'yajl'
 namespace :housekeeping do
 
   desc 'Remove queued nodes from osm file'
@@ -42,6 +43,19 @@ namespace :housekeeping do
       end
       putc '.'
       STDOUT.flush
+    end
+  end
+
+  desc 'Prerender geojson'
+  task :calculate_geojson => :environment do
+    lowest_id = Poi.lowest_id
+    Poi.where('geoj IS NULL').including_category.find_in_batches(:start => lowest_id) do |batch|
+      Poi.transaction do
+        batch.each do |node|
+          geojson = Yajl::Encoder.encode(node.to_geojson).html_safe
+          Poi.update_all(['geoj = ?', geojson], ['osm_id = ?', node.osm_id]) unless geojson.blank?
+        end
+      end
     end
   end
 
