@@ -16,7 +16,7 @@ class NodesController < ApplicationController
   before_filter :check_bbox_param,                :only => :index
 
   # Manually compress geojson output
-  after_filter :compress,                         :only => :index, :if => lambda {|c| c.request.format.try(:geojson?) || c.request.format.try(:geojson2?)}
+  after_filter :compress,                         :only => :index, :if => lambda {|c| c.request.format.try(:geojson?)}
 
   rescue_from ActiveRecord::RecordNotFound, :with => :not_found
   rescue_from Rosemary::Gone,               :with => :gone
@@ -34,9 +34,6 @@ class NodesController < ApplicationController
         render :file => "#{Rails.root}/app/views/nodes/index.geojson.erb", :content_type => "application/json; subtype=geojson; charset=utf-8"
       end
       wants.html{     redirect_to root_path }
-      wants.geojson2 do
-        render :file => "#{Rails.root}/app/views/nodes/index.geojson2.erb", :content_type => "application/json; subtype=geojson; charset=utf-8"
-      end
     end
   end
 

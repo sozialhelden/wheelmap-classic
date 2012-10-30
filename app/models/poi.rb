@@ -300,6 +300,10 @@ class Poi < ActiveRecord::Base
     image_path(icon)
   end
 
+  def geoj
+    read_attribute(:geoj) || Yajl::Encoder.encode(to_geojson)
+  end
+
   def to_geojson(options={})
     {
       :type       => 'Feature',

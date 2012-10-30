@@ -1,1 +1,0 @@
-{"type":"FeatureCollection","bbox":[<%=[@left, @bottom, @right, @top].join(',')%>],"features":[<%= @places.map{|p| p.geoj.blank? ? Yajl::Encoder.encode(p.to_geojson) : p.geoj }.join(',').html_safe %>]}

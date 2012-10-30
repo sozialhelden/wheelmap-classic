@@ -1,7 +1,1 @@
-<%- cache("#{I18n.locale}/nodes/bbox_#{[@left, @bottom, @right, @top].join','}", :expires_in => 1.minute) do -%>
-<%= generate_json({
-    :type => 'FeatureCollection',
-    :bbox => [@left, @bottom, @right, @top],
-    :features => prepare_nodes }).html_safe
-%>
-<%- end -%>
+{"type":"FeatureCollection","bbox":[<%=[@left, @bottom, @right, @top].join(',')%>],"features":[<%= @places.map{|p| p.geoj }.join(',').html_safe %>]}

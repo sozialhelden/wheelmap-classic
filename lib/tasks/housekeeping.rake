@@ -53,9 +53,11 @@ namespace :housekeeping do
       Poi.transaction do
         batch.each do |node|
           geojson = Yajl::Encoder.encode(node.to_geojson).html_safe
+          # Direct write without callbacks
           Poi.update_all(['geoj = ?', geojson], ['osm_id = ?', node.osm_id]) unless geojson.blank?
         end
       end
+      sleep 1
     end
   end
 
