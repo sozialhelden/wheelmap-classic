@@ -676,6 +676,15 @@ $(function () {
   });
   //end
 
+  $('#search').focus(function() {
+    map.getControlsByClass('OpenLayers.Control.KeyboardDefaults')[0].deactivate();
+  });
+
+  $('#search').blur(function() {
+    map.getControlsByClass('OpenLayers.Control.KeyboardDefaults')[0].activate();
+  });
+
+
   if (getURLParameter('q') != 'null' && $('#search').val() == '') {
       $('#search').val(getURLParameter('q'));
   }
