@@ -49,12 +49,12 @@ namespace :housekeeping do
   desc 'Prerender geojson'
   task :calculate_geojson => :environment do
     lowest_id = Poi.lowest_id
-    Poi.where('geoj IS NULL').including_category.find_in_batches(:start => lowest_id) do |batch|
+    Poi.where('geoj IS NULL OR geoj_dirty = true').including_category.find_in_batches(:start => lowest_id) do |batch|
       Poi.transaction do
         batch.each do |node|
           geojson = Yajl::Encoder.encode(node.to_geojson).html_safe
           # Direct write without callbacks
-          Poi.update_all(['geoj = ?', geojson], ['osm_id = ?', node.osm_id]) unless geojson.blank?
+          Poi.update_all(['geoj = ?, geoj_dirty = false', geojson], ['osm_id = ?', node.osm_id]) unless geojson.blank?
         end
       end
       sleep 1

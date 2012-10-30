@@ -1,1 +1,1 @@
-{"type":"FeatureCollection","bbox":[<%=[@left, @bottom, @right, @top].join(',')%>],"features":[<%= @places.map{|p| p.geoj }.join(',').html_safe %>]}
+{"type":"FeatureCollection","bbox":[<%=[@left, @bottom, @right, @top].join(',')%>],"features":[<%= @places.where('geoj IS NOT NULL').values_of(:geoj).join(',').html_safe %>]}

@@ -181,7 +181,7 @@ class PlanetReader
         # den Update.
         @poi[:updated_at] = Time.now
         @poi[:region_id] = nil # reset region, the node could have moved
-        @poi[:geoj] = nil # Reset prerendered geojson string
+        @poi[:geoj_dirty] = true # Reset prerendered geojson string
         Poi.crewait(@poi)
       else
 
