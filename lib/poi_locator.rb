@@ -45,8 +45,8 @@ class PoiLocator
             count_poi_not_in_region += 1
           end
 
-          # update table "pois"
-          poi.update_attribute(:region_id, region_id)
+          # update table "pois" without callbacks
+          Poi.update_all(['region_id = ?', region_id], ['osm_id = ?', poi.osm_id])
         end
       end
     end
