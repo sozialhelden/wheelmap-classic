@@ -188,9 +188,10 @@ node_types = NodeType.create([
   {:category => health,  :identifier => :social_facility,   :osm_key => 'amenity',  :osm_value => 'social_facility',  :icon => 'social_facility.png'}
 ])
 
-# Region.delete_all
-# Region.connection.execute('ALTER TABLE regions AUTO_INCREMENT=1')
-# f = File.new "#{Rails.root}/db/data/polygons.sql"
-# while statements = f.gets("\n") do
-#   ActiveRecord::Base.connection.execute(statements)
-# end
+Region.delete_all
+Region.connection.execute('ALTER TABLE regions AUTO_INCREMENT=1')
+
+f = File.new "#{Rails.root}/db/data/polygons.sql"
+while statements = f.gets("\n") do
+  ActiveRecord::Base.connection.execute(statements)
+end
