@@ -21,6 +21,8 @@ javascripts:
 stylesheets:
   screen:
     - public/stylesheets/screen.css
+    - public/theme/default/style.css
 
   node:
     - public/stylesheets/node.css
+    - public/theme/default/style.css
