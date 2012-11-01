@@ -1,5 +1,9 @@
 Wheelmap::Application.routes.draw do
 
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   match '/ping' => 'ping#index'
 
   filter :locale
@@ -7,7 +11,6 @@ Wheelmap::Application.routes.draw do
 
   root :to => 'home#index'
 
-  devise_for :admins
   devise_for :users, :controllers => {  :confirmations      => 'confirmations',
                                         :omniauth_callbacks => 'omniauth_callbacks'
                                       }
