@@ -8,6 +8,15 @@ namespace :poi do
     locator.run
   end
 
+  desc 'Relocate all unassigned POIs to new regions'
+  task :relocate => :environment do
+    Region.all.each do |region|
+      left, bottom, right, top = region.bounding_box
+      Poi.where(:region_id => 0).within_bbox(left, bottom, right, top).update_all(:region_id => nil)
+    end
+   Rake::Task['poi:locate'].invoke
+  end
+
 end
 
 namespace :region do
