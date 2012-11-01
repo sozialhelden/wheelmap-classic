@@ -3,7 +3,7 @@ ActiveAdmin.register Poi do
   controller do
     def update
       region = resource
-      region.update_attributes!(params[:poi])
+      region.update_attributes(params[:poi])
       super
     end
   end
