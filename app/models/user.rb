@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   before_save :ensure_authentication_token
   after_destroy :notify_admins
 
+  scope :wants_newsletter, where(:wants_newsletter => true)
+
   before_save :send_email_confirmation,
     :unless => :new_record?, :if => :email_changed?
 

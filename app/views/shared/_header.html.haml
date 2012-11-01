@@ -6,9 +6,9 @@
     - if user_signed_in?
       = link_to (current_user.email.blank? ? t('devise.edit.form.labels.email') : current_user.email), edit_user_path(current_user)
       = link_to t('devise.sign_out.headline'), destroy_user_session_path
-    - elsif admin_signed_in?
-      = link_to "ADM: #{current_admin.email}", '#'
-      = link_to t('devise.sign_out.headline'), destroy_admin_session_path
+    - elsif admin_user_signed_in?
+      = link_to "ADMIN", admin_dashboard_path
+      = link_to t('devise.sign_out.headline'), destroy_admin_user_session_path
     - else
       = link_to t('devise.sign_in.headline'), new_user_session_path
     = link_to t('header.navigation.what_is_wheelmap'), 'http://blog.wheelmap.org/'
