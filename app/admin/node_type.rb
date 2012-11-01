@@ -14,7 +14,7 @@ ActiveAdmin.register NodeType do
       image_tag("/icons/#{node_type.icon}")
     end
     column :identifier
-    column 'name', :localized_name
+    column :name
     column :category
     column :osm_key
     column :osm_value

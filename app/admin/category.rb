@@ -13,7 +13,7 @@ ActiveAdmin.register Category do
   index do
     column :id
     column :identifier
-    column 'name', :localized_name
+    column :name
     default_actions
   end
 

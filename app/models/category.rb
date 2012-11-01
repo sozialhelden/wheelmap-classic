@@ -18,11 +18,8 @@ class Category < ActiveRecord::Base
     template.add :identifier
   end
 
-  def name
-    localized_name
-  end
-
   def localized_name
     I18n.t("poi.category.#{identifier}")
   end
+  alias_method :name, :localized_name
 end
