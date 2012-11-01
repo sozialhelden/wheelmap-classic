@@ -27,6 +27,15 @@ describe CreateNodeJob do
     subject.perform
   end
 
+  it "increments the counter" do
+    api = mock(:find_or_create_open_changeset => changeset)
+    Rosemary::Api.should_receive(:new).and_return(api)
+    api.should_receive(:create)
+    User.any_instance.should_receive(:increment!).with(:create_counter)
+    subject.perform
+  end
+
+
   it "tries to find a changeset for the user" do
     Rosemary::Api.should_receive(:new).and_return(api = mock())
 

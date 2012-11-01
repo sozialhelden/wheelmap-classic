@@ -53,6 +53,7 @@ describe UpdateTagsJob do
     api.should_receive(:find_element).and_return(unedited_node)
     api.should_receive(:save) { |node, _| node.tags['addr:housenumber'].should eql 99 }
     Counter.should_receive(:increment)
+    User.any_instance.should_receive(:increment!).with(:edit_counter)
     Delayed::Worker.new.work_off
   end
 

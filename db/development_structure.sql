@@ -65,7 +65,7 @@ CREATE TABLE `counters` (
   `search_iphone` int(11) DEFAULT '0',
   `search_android` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `delayed_jobs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -122,7 +122,7 @@ CREATE TABLE `node_types` (
   PRIMARY KEY (`id`),
   KEY `index_node_types_on_id_and_category_id` (`id`,`category_id`),
   KEY `index_node_types_on_osm_key_and_osm_value` (`osm_key`,`osm_value`)
-) ENGINE=InnoDB AUTO_INCREMENT=118 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `pois` (
   `osm_id` int(11) NOT NULL,
@@ -134,6 +134,8 @@ CREATE TABLE `pois` (
   `updated_at` datetime DEFAULT NULL,
   `node_type_id` int(11) DEFAULT NULL,
   `region_id` int(11) DEFAULT NULL,
+  `geoj` text COLLATE utf8_unicode_ci,
+  `geoj_dirty` tinyint(1) DEFAULT '1',
   UNIQUE KEY `index_pois_on_osm_id` (`osm_id`),
   SPATIAL KEY `index_pois_on_geom` (`geom`),
   KEY `index_pois_on_status` (`status`),
@@ -186,7 +188,7 @@ CREATE TABLE `regions` (
   `rgt` int(11) DEFAULT NULL,
   `depth` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=613 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `schema_migrations` (
   `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -204,7 +206,7 @@ CREATE TABLE `slugs` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_slugs_on_n_s_s_and_s` (`name`,`sluggable_type`,`sequence`,`scope`),
   KEY `index_slugs_on_sluggable_id` (`sluggable_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=657 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=684 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `spatial_ref_sys` (
   `SRID` int(11) NOT NULL,
@@ -238,6 +240,8 @@ CREATE TABLE `users` (
   `osm_id` int(11) DEFAULT NULL,
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
+  `create_counter` int(11) NOT NULL DEFAULT '0',
+  `edit_counter` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_email` (`email`),
   UNIQUE KEY `index_users_on_authentication_token` (`authentication_token`),
@@ -354,3 +358,7 @@ INSERT INTO schema_migrations (version) VALUES ('20120727060024');
 INSERT INTO schema_migrations (version) VALUES ('20120802105205');
 
 INSERT INTO schema_migrations (version) VALUES ('20121018171714');
+
+INSERT INTO schema_migrations (version) VALUES ('20121026103336');
+
+INSERT INTO schema_migrations (version) VALUES ('20121101130728');

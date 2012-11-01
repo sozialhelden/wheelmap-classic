@@ -25,6 +25,7 @@ class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client, :source)
       osm.create(node, changeset)
 
       Counter.increment(source)
+      user.increment!(:create_counter)
     rescue Exception => e
       HoptoadNotifier.notify(e, :action => 'perform',
                                 :component => 'CreateNodeJob',
