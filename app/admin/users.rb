@@ -5,7 +5,7 @@ ActiveAdmin.register User do
   controller do
     def update
       region = resource
-      region.update_attributes!(params[:user])
+      region.update_attributes(params[:user])
       super
     end
   end

@@ -1,5 +1,14 @@
 ActiveAdmin.register AdminUser do
 
+  controller do
+    def update
+      region = resource
+      region.update_attributes(params[:admin_user])
+      super
+    end
+  end
+
+
   index do
     column :email
     column :last_sign_in_at

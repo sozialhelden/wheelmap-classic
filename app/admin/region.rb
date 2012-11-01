@@ -3,7 +3,7 @@ ActiveAdmin.register Region do
   controller do
     def update
       region = resource
-      region.update_attributes!(params[:region])
+      region.update_attributes(params[:region])
       super
     end
   end

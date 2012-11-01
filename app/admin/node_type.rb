@@ -3,7 +3,7 @@ ActiveAdmin.register NodeType do
   controller do
     def update
       region = resource
-      region.update_attributes!(params[:node_type])
+      region.update_attributes(params[:node_type])
       super
     end
   end
