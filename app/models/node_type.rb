@@ -28,6 +28,8 @@ class NodeType < ActiveRecord::Base
     I18n.t("poi.name.#{category.identifier}.#{identifier}", :count => count)
   end
 
+  alias_method :name, :localized_name
+
   class << self
     extend ActiveSupport::Memoizable
 

@@ -2,6 +2,14 @@ ActiveAdmin.register User do
 
   scope :wants_newsletter
 
+  controller do
+    def update
+      region = resource
+      region.update_attributes!(params[:user])
+      super
+    end
+  end
+
   index do
     column :first_name
     column :last_name
@@ -22,9 +30,6 @@ ActiveAdmin.register User do
     end
     f.inputs "OSM" do
       f.input :osm_id, :label => 'OSM ID'
-      f.input :changeset_id
-      f.input :create_counter, :input_html => { :readonly=>true }
-      f.input :edit_counter, :input_html => { :readonly=>true }
     end
     f.buttons
   end
