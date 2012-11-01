@@ -1,11 +1,7 @@
 class Counter < ActiveRecord::Base
 
   def self.increment(attrib)
-    counter = today
-    Counter.transaction do
-      counter.update_attribute(attrib, counter.read_attribute(attrib) + 1)
-    end
-    counter.read_attribute(attrib)
+    today.increment!(attrib)
   end
 
   def self.today
