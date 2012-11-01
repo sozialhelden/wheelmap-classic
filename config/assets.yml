@@ -19,6 +19,10 @@ javascripts:
     - public/javascripts/html5.js
 
 stylesheets:
+
+  active_admin:
+    - public/stylesheets/active_admin.css
+
   screen:
     - public/stylesheets/screen.css
     - public/theme/default/style.css

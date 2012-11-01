@@ -43,6 +43,8 @@ group :default do
   gem 'librato-metrics'
   gem 'system_timer' # Optional for librato dependency faraday
   gem 'multipart-post'
+  gem 'activeadmin'
+  gem 'kaminari'
 end
 
 group :test, :development do
