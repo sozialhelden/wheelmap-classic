@@ -4,90 +4,55 @@ en:
     abbr_day_names:
       - Sun
       - Mon
-      - ~
-      - ~
-      - Wed
       - Tue
-      - ~
-      - Fri
-      - ~
+      - Wed
       - Thu
-      - ~
-      - ~
+      - Fri
       - Sat
     abbr_month_names:
       - ""
-      - ~
       - Jan
       - Feb
-      - ~
-      - ~
-      - Apr
       - Mar
-      - ~
-      - Jun
-      - ~
+      - Apr
       - May
-      - Aug
-      - ~
-      - ~
+      - Jun
       - Jul
-      - Nov
-      - ~
-      - ~
+      - Aug
       - Sep
-      - ~
       - Oct
-      - ~
-      - ~
+      - Nov
       - Dec
     day_names:
       - Sunday
-      - ~
       - Monday
       - Tuesday
-      - ~
-      - ~
-      - Thursday
       - Wednesday
-      - ~
-      - Saturday
-      - ~
+      - Thursday
       - Friday
+      - Saturday
     formats:
       default: "%Y-%m-%d"
       long: "%B %d, %Y"
       short: "%b %d"
     month_names:
       - ""
-      - ~
       - January
       - February
-      - ~
-      - ~
-      - April
       - March
-      - ~
-      - June
-      - ~
+      - April
       - May
-      - August
-      - ~
-      - ~
+      - June
       - July
-      - ~
-      - December
-      - ~
+      - August
       - September
-      - ~
-      - ~
+      - October
       - November
+      - December
     order:
-      - year
-      - month
-      - ~
-      - ~
-      - day
+      - :year
+      - :month
+      - :day
   datetime:
     distance_in_words:
       about_x_hours:
