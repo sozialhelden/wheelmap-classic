@@ -26,5 +26,6 @@ ActiveAdmin.register User do
       f.input :create_counter, :input_html => { :readonly=>true }
       f.input :edit_counter, :input_html => { :readonly=>true }
     end
+    f.buttons
   end
 end
