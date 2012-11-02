@@ -112,4 +112,9 @@ class User < ActiveRecord::Base
     errors.add_on_blank(:email) if !password.blank? and email.blank?
   end
 
+  def full_name
+    f = [first_name, last_name].compact.join(' ')
+    f = id if f.blank?
+  end
+
 end
