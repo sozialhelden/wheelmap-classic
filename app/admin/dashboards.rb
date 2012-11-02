@@ -3,7 +3,7 @@ ActiveAdmin::Dashboards.build do
   section "Power creators" do
     table_for User.order('create_counter DESC').limit(10) do
       column :name do |user|
-        link_to(user.first_name, admin_user_path(user))
+        link_to(user.full_name, admin_user_path(user))
       end
       column 'POIs created', :create_counter
     end
@@ -12,7 +12,7 @@ ActiveAdmin::Dashboards.build do
   section "Power editors" do
     table_for User.order('edit_counter DESC').limit(10) do
       column :name do |user|
-        link_to(user.first_name, admin_user_path(user))
+        link_to(user.full_name, admin_user_path(user))
       end
       column 'POIs edited', :edit_counter
     end
