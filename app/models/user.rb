@@ -115,6 +115,7 @@ class User < ActiveRecord::Base
   def full_name
     f = [first_name, last_name].compact.join(' ')
     f = id if f.blank?
+    f
   end
 
 end

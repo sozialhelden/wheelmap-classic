@@ -152,4 +152,35 @@ describe User do
       ActionMailer::Base.deliveries.size.should eql 1
     end
   end
+
+  context "methods" do
+
+    subject do
+      Factory.build(:user)
+    end
+
+    it "should show first and last name when given" do
+      subject.first_name = 'Chris'
+      subject.last_name = 'Tucker'
+      subject.full_name.should eql 'Chris Tucker'
+    end
+
+    it "should show first name when given" do
+      subject.first_name = 'Chris'
+      subject.full_name.should eql 'Chris'
+    end
+
+
+    it "should show last name when given" do
+      subject.last_name = 'Tucker'
+      subject.full_name.should eql 'Tucker'
+    end
+
+    it "should show id if name is mising" do
+      subject.id = 123
+      subject.full_name.should eql 123
+    end
+
+
+  end
 end
