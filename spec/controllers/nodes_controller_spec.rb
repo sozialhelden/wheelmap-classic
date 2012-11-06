@@ -88,6 +88,22 @@ describe NodesController do
         response.body.should == "Params missing"
       end
     end
+
+    describe "as a signed_in user" do
+
+      before(:each) do
+        @another_user.should be_app_authorized
+        sign_in @another_user
+      end
+
+      it "should create am UpdateWheelchairJob on behalf of signed in user" do
+        lambda {
+          put(:update_wheelchair, :id => 1234, :wheelchair => 'yes')
+          response.code.should == '200'
+        }.should change(UpdateAttributeJob, :count).by(1)
+        Delayed::Job.last.handler.should =~ /id: #{@another_user.id}/
+      end
+    end
   end
 
   describe "action: update" do

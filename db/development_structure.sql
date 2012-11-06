@@ -76,7 +76,7 @@ CREATE TABLE `counters` (
   `search_iphone` int(11) DEFAULT '0',
   `search_android` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `delayed_jobs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -96,7 +96,7 @@ CREATE TABLE `delayed_jobs` (
   `queue` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `delayed_jobs_priority` (`priority`,`run_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=258 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=259 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `experiments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -217,7 +217,7 @@ CREATE TABLE `slugs` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_slugs_on_n_s_s_and_s` (`name`,`sluggable_type`,`sequence`,`scope`),
   KEY `index_slugs_on_sluggable_id` (`sluggable_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=689 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=690 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `spatial_ref_sys` (
   `SRID` int(11) NOT NULL,
@@ -253,12 +253,14 @@ CREATE TABLE `users` (
   `last_name` varchar(255) DEFAULT NULL,
   `create_counter` int(11) NOT NULL DEFAULT '0',
   `edit_counter` int(11) NOT NULL DEFAULT '0',
+  `osm_username` varchar(255) DEFAULT NULL,
+  `tag_counter` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_email` (`email`),
   UNIQUE KEY `index_users_on_authentication_token` (`authentication_token`),
   KEY `index_users_on_oauth_token` (`oauth_token`),
   KEY `index_users_on_wants_newsletter` (`wants_newsletter`)
-) ENGINE=InnoDB AUTO_INCREMENT=11491 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11492 DEFAULT CHARSET=latin1;
 
 INSERT INTO schema_migrations (version) VALUES ('20100520103719');
 
@@ -381,3 +383,7 @@ INSERT INTO schema_migrations (version) VALUES ('20121101150011');
 INSERT INTO schema_migrations (version) VALUES ('20121101150012');
 
 INSERT INTO schema_migrations (version) VALUES ('20121101150013');
+
+INSERT INTO schema_migrations (version) VALUES ('20121106102638');
+
+INSERT INTO schema_migrations (version) VALUES ('20121106115711');

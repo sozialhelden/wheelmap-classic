@@ -40,7 +40,13 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       api.save(element, changeset)
 
       Counter.increment(source)
-      user.increment!(:edit_counter)
+
+      # Check if the job updates the wheelchair tag only
+      if tags.keys == ['wheelchair']
+        user.increment!(:tag_counter)
+      else
+        user.increment!(:edit_counter)
+      end
     rescue Rosemary::Conflict => conflict
       # These changes have already been made, so dismiss this update!
       HoptoadNotifier.notify(conflict, :component => 'UpdateTagsJob#perform', :parameters => {:user => user.inspect, :element => element.inspect, :client => client})
