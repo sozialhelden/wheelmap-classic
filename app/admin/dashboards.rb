@@ -5,14 +5,28 @@ ActiveAdmin::Dashboards.build do
       column :name do |user|
         link_to(user.full_name, admin_user_path(user))
       end
+      column 'OSM', :osm_id do |u|
+        if u.osm_username.blank?
+          span u.osm_id
+        else
+          link_to u.osm_username, "http://www.openstreetmap.org/user/#{u.osm_username}"
+        end
+      end
       column 'POIs created', :create_counter
     end
   end
 
   section "Power editors" do
     table_for User.order('edit_counter DESC').limit(10) do
-      column :name do |user|
-        link_to(user.full_name, admin_user_path(user))
+      column :name do |u|
+        link_to(u.full_name, admin_user_path(u))
+      end
+      column 'OSM', :osm_id do |u|
+        if u.osm_username.blank?
+          span u.osm_id
+        else
+          link_to u.osm_username, "http://www.openstreetmap.org/user/#{u.osm_username}"
+        end
       end
       column 'POIs edited', :edit_counter
     end
