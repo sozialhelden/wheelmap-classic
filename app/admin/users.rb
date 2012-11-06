@@ -14,7 +14,13 @@ ActiveAdmin.register User do
     column :first_name
     column :last_name
     column :email
-    column 'OSM ID', :osm_id
+    column 'OSM', :osm_id do |u|
+      if u.osm_username.blank?
+        span u.osm_id
+      else
+        link_to u.osm_username, "http://www.openstreetmap.org/user/#{u.osm_username}"
+      end
+    end
     column 'API key', :authentication_token
     column 'POIs created', :create_counter
     column 'POIs edited', :edit_counter
