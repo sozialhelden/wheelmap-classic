@@ -18,12 +18,12 @@ ActiveAdmin.register User do
       if u.osm_username.blank?
         span u.osm_id
       else
-        link_to u.osm_username, "http://www.openstreetmap.org/user/#{u.osm_username}"
+        link_to u.osm_username, "#{OpenStreetMapConfig.oauth_site}/user/#{u.osm_username}"
       end
     end
-    column 'API key', :authentication_token
-    column 'POIs created', :create_counter
+    column 'POIs tagged', :tag_counter
     column 'POIs edited', :edit_counter
+    column 'POIs created', :create_counter
     default_actions
   end
 

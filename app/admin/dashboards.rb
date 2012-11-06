@@ -1,9 +1,9 @@
 ActiveAdmin::Dashboards.build do
 
-  section "Power creators" do
-    table_for User.order('create_counter DESC').limit(10) do
-      column :name do |user|
-        link_to(user.full_name, admin_user_path(user))
+  section "Power taggers", :priority => 1 do
+    table_for User.order('tag_counter DESC').limit(10) do
+      column :name do |u|
+        link_to(u.full_name, admin_user_path(u))
       end
       column 'OSM', :osm_id do |u|
         if u.osm_username.blank?
@@ -12,11 +12,13 @@ ActiveAdmin::Dashboards.build do
           link_to u.osm_username, "#{OpenStreetMapConfig.oauth_site}/user/#{u.osm_username}"
         end
       end
-      column 'POIs created', :create_counter
+      column 'POIs tagged', :tag_counter
     end
   end
 
-  section "Power editors" do
+
+
+  section "Power editors", :priority => 2 do
     table_for User.order('edit_counter DESC').limit(10) do
       column :name do |u|
         link_to(u.full_name, admin_user_path(u))
@@ -29,6 +31,22 @@ ActiveAdmin::Dashboards.build do
         end
       end
       column 'POIs edited', :edit_counter
+    end
+  end
+
+  section "Power creators", :priority => 3 do
+    table_for User.order('create_counter DESC').limit(10) do
+      column :name do |user|
+        link_to(user.full_name, admin_user_path(user))
+      end
+      column 'OSM', :osm_id do |u|
+        if u.osm_username.blank?
+          span u.osm_id
+        else
+          link_to u.osm_username, "#{OpenStreetMapConfig.oauth_site}/user/#{u.osm_username}"
+        end
+      end
+      column 'POIs created', :create_counter
     end
   end
 

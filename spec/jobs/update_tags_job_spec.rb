@@ -57,6 +57,17 @@ describe UpdateTagsJob do
     Delayed::Worker.new.work_off
   end
 
+  it "updates tag counter" do
+    job = UpdateTagsJob.enqueue(1, 'node', { 'wheelchair' => 'yes' }, user, 'update_iphone')
+    api = mock(:find_or_create_open_changeset => changeset)
+    Rosemary::Api.should_receive(:new).and_return(api)
+    api.should_receive(:find_element).and_return(unedited_node)
+    api.should_receive(:save)
+    Counter.should_receive(:increment)
+    User.any_instance.should_receive(:increment!).with(:tag_counter)
+    Delayed::Worker.new.work_off
+  end
+
   it "updates the tags" do
 
     job = UpdateTagsJob.enqueue(1, 'node', { 'addr:housenumber' => 99 }, user, 'update_iphone')
