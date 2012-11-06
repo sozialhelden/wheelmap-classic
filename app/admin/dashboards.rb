@@ -9,7 +9,7 @@ ActiveAdmin::Dashboards.build do
         if u.osm_username.blank?
           span u.osm_id
         else
-          link_to u.osm_username, "http://www.openstreetmap.org/user/#{u.osm_username}"
+          link_to u.osm_username, "#{OpenStreetMapConfig.oauth_site}/user/#{u.osm_username}"
         end
       end
       column 'POIs created', :create_counter
@@ -25,7 +25,7 @@ ActiveAdmin::Dashboards.build do
         if u.osm_username.blank?
           span u.osm_id
         else
-          link_to u.osm_username, "http://www.openstreetmap.org/user/#{u.osm_username}"
+          link_to u.osm_username, "#{OpenStreetMapConfig.oauth_site}/user/#{u.osm_username}"
         end
       end
       column 'POIs edited', :edit_counter

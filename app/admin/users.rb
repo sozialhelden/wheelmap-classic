@@ -31,11 +31,12 @@ ActiveAdmin.register User do
     f.inputs do
       f.input :first_name
       f.input :last_name
-      f.input :email, :input_html => { :readonly=>true }
+      f.input :email, :input_html => { :readonly=>true }, :hint => false
       f.input :wants_newsletter
     end
     f.inputs "OSM" do
       f.input :osm_id, :label => 'OSM ID'
+      f.input :osm_username, :label => 'OSM Username', :hint => false
     end
     f.buttons
   end
