@@ -104,6 +104,12 @@ class User < ActiveRecord::Base
   rescue Rosemary::Error
   end
 
+  def update_osm_username
+    api = create_authorized_api
+    update_attribute(:osm_username, api.find_user.display_name)
+  rescue Rosemary::Error
+  end
+
   def notify_admins
     UserMailer.user_destroyed(self).deliver
   end
