@@ -44,10 +44,10 @@
           %h4 This resource can also be nested within categories or node_types.
           %pre http://wheelmap.org/api/categories/1/nodes?api_key=api_key&bbox=13.341,52.505,13.434,52.523&per_page=10&wheelchair=yes
           %pre http://wheelmap.org/api/node_types/4/nodes?api_key=api_key&bbox=13.341,52.505,13.434,52.523&per_page=10&wheelchair=yes
-          
+
           %h4#nodes_representation_json Example nodes representation. (application/json)
           %pre=render :partial => 'nodes.json'
-          
+
     %hr
     .resource
       %h3
@@ -57,7 +57,7 @@
         %span.optional> &wheelchair
         %span.optional> &page
         %span.optional> &per_page
-    
+
       %h6 Methods
       .methods
         .method
@@ -94,7 +94,8 @@
                 %td For pagination, how many results to return per page. Default is 200. Max is 500.
           %h4 Example request:
           %pre http://wheelmap.org/api/nodes/search?api_key=api_key&q=Fernsehturm&bbox=13.341,52.505,13.434,52.523&wheelchair=no
-          
+          %h4 The q parameter can contain asterisk characters like "*" to match not just the exact String. Extending the search to match 'Andreasstr', 'Andreasstrasse', 'Andreasstraße' or even 'Andreasstrumpf' you can use the following url
+          %pre http://wheelmap.org/api/nodes/search?api_key=api_key&q=Andreasstr*
           %h4 This resource can also be nested within categories or node_types.
           %pre http://wheelmap.org/api/categories/1/nodes/search?api_key=api_key&q=Fernsehturm&bbox=13.341,52.505,13.434,52.523&wheelchair=no
           %pre http://wheelmap.org/api/node_types/1/nodes/search?api_key=api_key&q=Fernsehturm&bbox=13.341,52.505,13.434,52.523&wheelchair=no
@@ -111,7 +112,7 @@
           %h4 POST
           %p Create a new node.
           %h6 request query parameter
-          
+
           %table
             %thead
               %tr
@@ -167,8 +168,8 @@
                 %td phone
                 %td string
                 %td The node's phone number. In case there is a real phone number to call, for example in a restaurant. Use the international format: +49 30 123456-78
-            
-              
+
+
           %h4 Example request:
           %pre http://wheelmap.org/api/nodes?api_key=api_key&name=White+Horse&type=restaurant&lat=51.0&lon=13.4
 
@@ -247,8 +248,8 @@
 
           %h4#nodes_representation_json Example nodes representation. (application/json)
           %pre= {:message => 'OK'}.to_json
-    
-          
+
+
     %hr
     .resource
       %h3
@@ -278,7 +279,7 @@
         %h4#nodes_representation_json Example nodes representation. (application/json)
         %pre= {:message => 'OK'}.to_json
 
-    
+
     %hr
     .resource
       %h3
