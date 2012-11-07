@@ -14,6 +14,9 @@ class Poi < ActiveRecord::Base
 
   has_many :provided_pois
   has_many :providers, :through => :provided_pois
+  has_many :photos
+
+  accepts_nested_attributes_for :photos
 
   DELEGATED_ADDR_ATTRIBUTES = [:street, :housenumber, :postcode, :city].map(&:to_s).freeze
 

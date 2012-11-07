@@ -46,6 +46,8 @@ group :default do
   gem 'multipart-post'
   gem 'activeadmin'
   gem 'kaminari'
+  gem 'carrierwave'
+  gem 'rmagick'
 end
 
 group :test, :development do
