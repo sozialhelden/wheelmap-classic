@@ -16,8 +16,6 @@ ActiveAdmin::Dashboards.build do
     end
   end
 
-
-
   section "Power editors", :priority => 2 do
     table_for User.order('edit_counter DESC').limit(10) do
       column :name do |u|
@@ -49,6 +47,17 @@ ActiveAdmin::Dashboards.build do
       column 'POIs created', :create_counter
     end
   end
+
+  section "Latest users", :priority => 4 do
+    table_for User.order('created_at DESC').limit(10) do
+      column :name do |user|
+        link_to(user.full_name, admin_user_path(user))
+      end
+      column :created_at
+    end
+  end
+
+
 
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just
