@@ -392,6 +392,16 @@ function popup_more_link(feature) {
   return html;
 }
 
+function onFeaturesAdded(evt) {
+  if(typeof node_id != 'undefined') {
+    $.each(evt.features, function (index, feature) {
+      if (feature.attributes.id == node_id) {
+        places.events.triggerEvent('featureselected',  {'feature':feature});
+      }
+    });
+  }
+}
+
 function onFeatureSelect(evt) {
   removeAllPopups();
   var feature = evt.feature;
@@ -436,6 +446,7 @@ function createPlacesLayer(style) {
   activateSelectControl(places);
   places.redraw();
   places.events.on({
+    'featuresadded': onFeaturesAdded,
     'featureselected': onFeatureSelect,
     'featureunselected': onFeatureUnselect,
     'loadstart': onLoadStart,
@@ -703,6 +714,7 @@ function initGeoData() {
   lat  = q.lat  || $.cookie('last_lat') //|| GeoCache.latlon(request.remote_addr).first};
   lon  = q.lon  || $.cookie('last_lon') //|| GeoCache.latlon(request.remote_addr).last};
   zoom = q.zoom || $.cookie('last_zoom') || 14;
+  window.node_id = q.node_id
 
   if(!(lat && lon)) {
     // on demand insert JS
