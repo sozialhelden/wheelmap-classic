@@ -3,8 +3,16 @@
   = link_to t('.link.large_map'), root_path, :onclick => "location=permalink('#{root_path}');return false;", :class => 'hide', :id => 'show-on-large-map'
 
 #accessibility
-  = semantic_form_for @node, :as => :node, :url => {:controller => 'nodes', :action => 'update', :id => @node}, :html => { :method => :put} do |form|
+  = semantic_form_for @node, :as => :node, :url => {:controller => 'nodes', :action => 'update', :id => @node}, :html => { :method => :put, :multipart => true } do |form|
     = render :partial => 'inputs', :object => @node, :locals => {:form => form}
+
+    = form.inputs :name => t('formtastic.titles.basic'), :id => 'photos' do
+
+      =form.fields_for :photos do |photo|
+        - if photo.object.new_record?
+          = photo.file_field :image
+        - else
+          = image_tag(photo.object.image.url(:thumb))
 
     = form.buttons do
       = form.commit_button t('formtastic.labels.save')
