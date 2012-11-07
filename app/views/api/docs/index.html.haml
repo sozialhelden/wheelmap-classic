@@ -22,7 +22,7 @@
   %p It is a read-only entry point for public data. It uses the standard parameter api_key for authentication.
 
   %h3 Authentication
-  %p The Wheelmap API requires an application key that is provided during registration. The key identifies your application to the Wheelmap web service, and is used to track overall call usage. It's passed using the standard api_key parameter.
+  %p The Wheelmap API requires an application key that is provided during registration. The key identifies your application to the Wheelmap web service, and is used to track overall call usage. It's passed using the standard api_key parameter. Alternatively the api_key can be submitted via the 'X-API-KEY' HTTP header flag.
 
   /%h3 Rate Limiting
   /%p Clients are allowed 10,000 requests per 24-hour period, with a limit of 1 query per second. You will receive an automated email when you approach your daily limit. If your application needs more than the allotted amount of calls, contact us at devsupport@wheelmap.org with a description of the application and an estimate on needed call usage. (You might also want to investigate the use of caching to keep the number of calls to a minimum, and make your application more responsive.)
