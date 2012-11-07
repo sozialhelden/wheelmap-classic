@@ -21,6 +21,7 @@ ActiveAdmin.register User do
         link_to u.osm_username, "#{OpenStreetMapConfig.oauth_site}/user/#{u.osm_username}"
       end
     end
+    column :sign_in_count
     column 'POIs tagged', :tag_counter
     column 'POIs edited', :edit_counter
     column 'POIs created', :create_counter
