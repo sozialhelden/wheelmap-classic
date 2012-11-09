@@ -6,14 +6,6 @@
   = semantic_form_for @node, :as => :node, :url => {:controller => 'nodes', :action => 'update', :id => @node}, :html => { :method => :put, :multipart => true } do |form|
     = render :partial => 'inputs', :object => @node, :locals => {:form => form}
 
-    = form.inputs :name => t('formtastic.titles.basic'), :id => 'photos' do
-
-      =form.fields_for :photos do |photo|
-        - if photo.object.new_record?
-          = photo.file_field :image
-        - else
-          = image_tag(photo.object.image.url(:thumb))
-
     = form.buttons do
       = form.commit_button t('formtastic.labels.save')
       %p.hint= t('devise.mandatory')
@@ -28,8 +20,11 @@
     var zoom = #{escape_once(params[:zoom] || 18)};
     #{var_language};
 
+- key = Rails.application.config.session_options[:key]
 - content_for :javascript do
   :javascript
     drawmap(defaultControls('minimap'), 'minimap');
     jumpTo(#{escape_once(@node.lon)}, #{escape_once(@node.lat)}, 18);
     createDraggableLayer(placesStyle(),#{escape_once(@node.lon)}, #{escape_once(@node.lat)});
+
+
