@@ -46,7 +46,10 @@ group :default do
   gem 'activeadmin'
   gem 'kaminari'
   gem 'carrierwave'
+  gem 'carrierwave_backgrounder'
   gem 'rmagick'
+  gem 'flash_cookie_session'
+  gem 'exifr'
 end
 
 group :test, :development do
