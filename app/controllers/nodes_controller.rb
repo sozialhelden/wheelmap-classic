@@ -39,6 +39,7 @@ class NodesController < ApplicationController
 
   def show
     @node = Poi.find(params[:id])
+    @node.photos.build if @node.photos.blank?
   end
 
   def edit
@@ -60,6 +61,7 @@ class NodesController < ApplicationController
   def update
     @node = Poi.find(params[:id])
     @node.attributes = params[:node]
+    @node.photos.map(&:save) # save photos regardless if poi is valid
     if @node.valid?
       source = "update_#{(mobile_app? ? 'iphone' : 'website')}"
       UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user, source)
