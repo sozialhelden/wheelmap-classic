@@ -1,0 +1,3 @@
+%li
+  = link_to_photo photo.image.url(:gallery).to_s, photo
+  -#= link_to_remote "Delete", node_photo_path(photo.poi_id, photo), :method => :delete, :confirm => "Areyou sure?"
