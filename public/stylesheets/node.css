@@ -1002,6 +1002,37 @@ hr {
   background: url("/images/bubble-left.png") no-repeat -5px center;
 }
 
+/* line 1, ../../app/stylesheets/basics/_photos.sass */
+#thumbs {
+  margin-top: 20px;
+  width: 472px;
+}
+
+/* line 5, ../../app/stylesheets/basics/_photos.sass */
+.thumb img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  padding: 3px;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 10px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 10px 0;
+  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 10px 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 10px 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  border-radius: 3px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+/* line 17, ../../app/stylesheets/basics/_photos.sass */
+#lightbox-nav {
+  z-index: 9999;
+}
+
 /* line 1, ../../app/stylesheets/partials/nodes/_headlines.sass */
 span.addition {
   font-size: 14px;
@@ -1099,8 +1130,9 @@ dd {
   height: 430px;
   float: right;
   margin-bottom: 1em;
+  z-index: 1000;
 }
-/* line 6, ../../app/stylesheets/partials/nodes/_map.sass */
+/* line 7, ../../app/stylesheets/partials/nodes/_map.sass */
 #map_wrapper #minimap {
   height: 430px;
   width: 500px;
@@ -1134,7 +1166,11 @@ dd {
   display: none;
 }
 
+<<<<<<< HEAD
 /* line 32, ../../app/stylesheets/partials/nodes/_map.sass */
+=======
+/* line 19, ../../app/stylesheets/partials/nodes/_map.sass */
+>>>>>>> Use uploadify and lightbox to upload an slideshow.
 #minimap.create-node {
   cursor: crosshair;
 }
@@ -1259,12 +1295,12 @@ table#provider td {
   color: black;
 }
 
-/* line 28, ../../app/stylesheets/node.sass */
+/* line 30, ../../app/stylesheets/node.sass */
 body, html {
   font-family: HelveticaNeue, Helvetica, "Swiss 721", Arial, sans-serif;
 }
 
-/* line 32, ../../app/stylesheets/node.sass */
+/* line 34, ../../app/stylesheets/node.sass */
 .clear {
   clear: both;
   display: block;
@@ -1274,7 +1310,7 @@ body, html {
   height: 0;
 }
 
-/* line 40, ../../app/stylesheets/node.sass */
+/* line 42, ../../app/stylesheets/node.sass */
 .node-footer {
   font-size: xx-small;
 }
