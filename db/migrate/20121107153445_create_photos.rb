@@ -3,9 +3,13 @@ class CreatePhotos < ActiveRecord::Migration
     create_table :photos do |t|
       t.string :caption
       t.string :image
-      t.string :poi_id
+      t.boolean :image_processing
 
-      t.timestamps
+      t.references :poi
+      t.references :user
+
+      t.datetime :taken_at
+      t.datetime :created_at
     end
   end
 
