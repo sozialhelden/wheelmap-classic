@@ -11,13 +11,20 @@ Wheelmap::Application.routes.draw do
 
   root :to => 'home#index'
 
-  devise_for :users, :controllers => {  :confirmations      => 'confirmations',
-                                        :omniauth_callbacks => 'omniauth_callbacks'
-                                      }
+  devise_for :users, :skip => [:sessions],
+                     :controllers => {
+                       :confirmations      => 'confirmations',
+                       :omniauth_callbacks => 'omniauth_callbacks'
+                     }
 
   devise_scope :user do
     scope 'users' do
       match '/auth/failure' => 'omniauth_callbacks#failure'
+      get  'sign_up'  => 'devise/sessions#new',     :as => :new_user_session
+      get  'sign_in'  => 'devise/sessions#new',     :as => :new_user_session
+      post 'sign_in'  => 'devise/sessions#create',  :as => :user_session
+      get  'sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session
+
     end
   end
 

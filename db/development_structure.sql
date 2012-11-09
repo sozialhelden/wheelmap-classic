@@ -76,7 +76,7 @@ CREATE TABLE `counters` (
   `search_iphone` int(11) DEFAULT '0',
   `search_android` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `delayed_jobs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -96,7 +96,7 @@ CREATE TABLE `delayed_jobs` (
   `queue` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `delayed_jobs_priority` (`priority`,`run_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=259 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=286 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `experiments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -134,6 +134,18 @@ CREATE TABLE `node_types` (
   KEY `index_node_types_on_id_and_category_id` (`id`,`category_id`),
   KEY `index_node_types_on_osm_key_and_osm_value` (`osm_key`,`osm_value`)
 ) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+CREATE TABLE `photos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `caption` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image_processing` tinyint(1) DEFAULT NULL,
+  `poi_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `taken_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `pois` (
   `osm_id` int(11) NOT NULL,
@@ -387,3 +399,5 @@ INSERT INTO schema_migrations (version) VALUES ('20121101150013');
 INSERT INTO schema_migrations (version) VALUES ('20121106102638');
 
 INSERT INTO schema_migrations (version) VALUES ('20121106115711');
+
+INSERT INTO schema_migrations (version) VALUES ('20121107153445');
