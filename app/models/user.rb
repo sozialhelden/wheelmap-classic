@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
   before_save :send_email_confirmation,
     :unless => :new_record?, :if => :email_changed?
 
+  has_many :photos
+
   acts_as_api
 
   api_accessible :simple do |t|

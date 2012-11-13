@@ -1,7 +1,7 @@
 class Photo < ActiveRecord::Base
   attr_accessible :image
   belongs_to :poi
-  belongs_to :user
+  belongs_to :user, :counter_cache => true
   mount_uploader :image, PhotoUploader
   process_in_background :image
 
