@@ -13,8 +13,6 @@ ActiveAdmin.register Poi do
   filter :created_at
   filter :updated_at
 
-
-
   controller do
     def update
       region = resource
@@ -35,7 +33,33 @@ ActiveAdmin.register Poi do
     column :lat
     column :lon
     column :region
+    column :photos do |poi|
+      link_to "Photos", admin_poi_photos_path(poi) if poi.photos.size > 0
+    end
     default_actions
+  end
+
+  show :title => :headline do |poi|
+    attributes_table do
+      row :osm_id
+      row :version
+      row :node_type
+      row :tags do
+        ul do
+          poi.tags.each do |k,v|
+            li "#{k} => #{v}"
+          end
+        end
+      end
+      row :region
+      row :created_at
+      row :updated_at
+      row :photos do
+        link_to "Photos", admin_poi_photos_path(poi)
+      end
+    end
+
+    active_admin_comments
   end
 
   form do |f|
