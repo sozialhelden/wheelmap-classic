@@ -6,7 +6,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
-  include ::CarrierWave::Backgrounder::Delay
+  # include ::CarrierWave::Backgrounder::Delay
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -19,7 +19,8 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     subdirs = ("%09d" % model.id).scan(/.{1,3}/m)
-    File.join('uploads', model.class.to_s.underscore, mounted_as.to_s, subdirs)
+    File.join('system', 'uploads', model.class.to_s.underscore, subdirs)
+    # File.join('uploads', model.class.to_s.underscore, mounted_as.to_s, subdirs)
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
