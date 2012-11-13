@@ -1,11 +1,1 @@
-= semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |form|
-  = form.inputs :name => t('devise.sign_up.headline') do
-    = form.input :email, :label => t('devise.sign_up.form.labels.email'), :hint => false
-    = form.input :password, :label => t('devise.sign_up.form.labels.password'), :hint => false
-    = form.input :password_confirmation, :label => t('devise.sign_up.form.labels.password_confirmation')
-
-  = form.buttons do
-    = form.commit_button t('devise.sign_up.form.submit')
-    %p.hint= t('devise.mandatory')
-
-= render :partial => "devise/shared/links"
+= render :template => 'devise/sessions/new'
