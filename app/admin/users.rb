@@ -21,6 +21,9 @@ ActiveAdmin.register User do
         link_to u.osm_username, "#{OpenStreetMapConfig.oauth_site}/user/#{u.osm_username}"
       end
     end
+    column :photos do |u|
+      link_to "Photos", admin_user_photos_path(u) if u.photos.size > 0
+    end
     column :sign_in_count
     column 'POIs tagged', :tag_counter
     column 'POIs edited', :edit_counter
