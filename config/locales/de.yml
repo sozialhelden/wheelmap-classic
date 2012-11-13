@@ -390,6 +390,7 @@ de:
         back: zurück
         large_map: "Ansicht vergrößern"
         listing: "Alle Orte vom Typ '%{type}' in %{city}"
+        upload: "Bilder hochladen"
       more_data_from: "Zu diesem Ort gibt es weitere Daten, qualifiziert von:"
       show-in-osm: "in Openstreetmap anzeigen"
     update:

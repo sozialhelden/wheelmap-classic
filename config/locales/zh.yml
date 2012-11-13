@@ -1,6 +1,9 @@
 ---
 zh:
   activerecord:
+    attributes:
+      user:
+        first_name: 名
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -35,6 +38,8 @@ zh:
         header:
           one: "有 1 个错误发生导致「%{model}」无法被保存。"
           other: "有 %{count} 个错误发生导致「%{model}」无法被保存。"
+    models:
+      user: 使用者
   application:
     require_no_user:
       notice: 您已经登录...
@@ -127,6 +132,8 @@ zh:
       invalid_token: 无效的身份证明
       link: 登录
       locked: 您的帐户已被锁定
+      new:
+        no_osm_account: "沒有 OpenStreetMap 的帳號嗎？"
       signed_in: 登录成功.
       signed_out: 退出成功.
       timeout: 您的有效期已过，请重新登录并继续操作
@@ -222,6 +229,7 @@ zh:
       city: 城市：
       create: 创建地点
       email: 电子邮件
+      finish: 完成
       housenumber: 没有：
       lat: 纬度
       lon: 经度

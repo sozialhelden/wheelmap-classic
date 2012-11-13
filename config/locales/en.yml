@@ -390,6 +390,7 @@ en:
         back: back
         large_map: Enlarge
         listing: "All places of typ '%{type}' in %{city}"
+        upload: "Upload images"
       more_data_from: "There is more data for this place, checked by:"
       show-in-osm: OpenStreetMap
     update:

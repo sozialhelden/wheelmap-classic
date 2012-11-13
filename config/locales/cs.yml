@@ -28,6 +28,9 @@ cs:
         header:
           one: "Při ukládání objektu %{model} došlo k chybám a nebylo jej možné uložit"
           other: "Při ukládání objektu %{model} došlo ke %{count} chybám a nebylo možné jej uložit"
+  breadcrumbs:
+    node:
+      edit: "Upravit místo"
   devise:
     confirmations:
       confirmed: "Váš účet byl úspěšně potvrzen. Nyní jste přihlášen(a)."
@@ -99,6 +102,10 @@ cs:
       header:
         one: "Při ukládání objektu %{model} došlo k chybám a nebylo jej možné uložit"
         other: "Při ukládání objektu %{model} došlo ke %{count} chybám a nebylo možné jej uložit"
+  formtastic:
+    labels:
+      save: Uložit
+      street: "Ulice:"
   helpers:
     select:
       prompt: "Prosím vyberte si"
@@ -106,6 +113,12 @@ cs:
       create: "Vytvořit %{model}"
       submit: "Uložit %{model}"
       update: "Aktualizovat %{model}"
+  home:
+    index:
+      popup:
+        form:
+          ? "yes"
+          : "přístupné pro vozíčkáře"
   number:
     currency:
       format:
@@ -151,9 +164,23 @@ cs:
       format:
         delimiter: ~
   poi:
+    category:
+      government: Vláda
+      sport: Sport
     name:
+      education:
+        school: Škola
       misc:
         toilets: Toalety
+      money_post:
+        atm: Bankomat
+        bureau_de_change: Směnárna
+      shopping:
+        department_store: "Obchodní dům"
+      sport:
+        stadium: Stadion
+      tourism:
+        information: "Turistické informace"
   splash:
     start: Start
   support:
@@ -168,3 +195,7 @@ cs:
       long: "%A %d. %B %Y %H:%M"
       short: "%d. %m. %H:%M"
     pm: pm
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Vítejte na wheelmap"
