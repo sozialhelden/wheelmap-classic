@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe OauthController do
-  include Devise::TestHelpers
+
 
   it "should redirects to the OSM registration page" do
     stub_request(:post, "#{OpenStreetMapConfig.oauth_site}/oauth/request_token").

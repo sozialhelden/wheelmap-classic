@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Api::NodesController do
-  include Devise::TestHelpers
+
   render_views
   fixtures :node_types
 

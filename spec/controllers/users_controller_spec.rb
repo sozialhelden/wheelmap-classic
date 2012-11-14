@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe UsersController do
-  include Devise::TestHelpers
+
 
   before(:each) do
     User.destroy_all
