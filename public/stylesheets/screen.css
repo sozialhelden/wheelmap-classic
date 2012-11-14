@@ -1654,9 +1654,14 @@ hr {
   margin-bottom: 5px;
 }
 
-/* line 51, ../../app/stylesheets/basics/_photos.sass */
-#lightbox-nav {
-  z-index: 9999;
+/* line 52, ../../app/stylesheets/basics/_photos.sass */
+#jquery-overlay {
+  z-index: 1012 !important;
+}
+
+/* line 54, ../../app/stylesheets/basics/_photos.sass */
+#jquery-lightbox {
+  z-index: 1013 !important;
 }
 
 /* line 1, ../../app/stylesheets/partials/map/_aside.sass */
