@@ -43,8 +43,3 @@ CarrierWave.configure do |config|
 #  config.directory_permissions = 0755
   config.storage = :file
 end
-
-CarrierWave::Backgrounder.configure do |c|
-  c.backend = :delayed_job
-end
-
