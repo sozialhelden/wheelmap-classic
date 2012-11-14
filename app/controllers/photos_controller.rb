@@ -9,7 +9,7 @@ class PhotosController < ApplicationController
 
   before_filter :authenticate_user!
 
-  before_filter :require_owner
+  before_filter :require_owner, :only => :destroy
 
   def create
     @photo = Photo.new(params[:photo])
@@ -31,7 +31,10 @@ class PhotosController < ApplicationController
 
   def require_owner
     @photo = resource
-    redirect_to :back unless @photo.user == current_user
+    if @photo.user != current_user
+      @message = I18n.t('nodes.errors.not_authorized')
+      render :template => 'shared/error', :status => 403
+    end
   end
 
 end
