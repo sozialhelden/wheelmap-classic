@@ -346,7 +346,7 @@ function popup_state_radio(feature, state) {
 function popup_form(feature) {
   var form = '';
   var disabled = feature.attributes.id === null;
-  form += '<form action="/nodes/' + feature.attributes.id + '/update_wheelchair.js" method="post" class="update_form">';
+  form += '<form action="/nodes/' + feature.attributes.id + '/update_wheelchair.js" method="post" class="update_form formtastic">';
   form += '<ol class="wheelchair">';
   form += '<h3><a target="_blank" href="http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei/">' + OpenLayers.Lang.translate('wheelchair_help') + '</a></h3>';
   form += popup_state_radio(feature, 'yes');
