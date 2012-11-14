@@ -1074,9 +1074,14 @@ hr {
   margin-bottom: 5px;
 }
 
-/* line 51, ../../app/stylesheets/basics/_photos.sass */
-#lightbox-nav {
-  z-index: 9999;
+/* line 52, ../../app/stylesheets/basics/_photos.sass */
+#jquery-overlay {
+  z-index: 1012 !important;
+}
+
+/* line 54, ../../app/stylesheets/basics/_photos.sass */
+#jquery-lightbox {
+  z-index: 1013 !important;
 }
 
 /* line 1, ../../app/stylesheets/partials/nodes/_headlines.sass */
@@ -1176,9 +1181,8 @@ dd {
   height: 430px;
   float: right;
   margin-bottom: 1em;
-  z-index: 1000;
 }
-/* line 7, ../../app/stylesheets/partials/nodes/_map.sass */
+/* line 6, ../../app/stylesheets/partials/nodes/_map.sass */
 #map_wrapper #minimap {
   height: 430px;
   width: 500px;
@@ -1212,11 +1216,7 @@ dd {
   display: none;
 }
 
-<<<<<<< HEAD
 /* line 32, ../../app/stylesheets/partials/nodes/_map.sass */
-=======
-/* line 19, ../../app/stylesheets/partials/nodes/_map.sass */
->>>>>>> Use uploadify and lightbox to upload an slideshow.
 #minimap.create-node {
   cursor: crosshair;
 }
