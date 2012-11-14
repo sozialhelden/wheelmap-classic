@@ -96,8 +96,6 @@ GEM
       xpath (~> 0.1.4)
     carrierwave (0.5.8)
       activesupport (~> 3.0)
-    carrierwave_backgrounder (0.0.8)
-      carrierwave (~> 0.5)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
     chronic (0.9.0)
@@ -371,7 +369,6 @@ DEPENDENCIES
   capistrano-maintenance
   capybara (= 1.1.1)
   carrierwave
-  carrierwave_backgrounder
   compass (= 0.10.6)
   crewait!
   cucumber (= 1.2.1)
