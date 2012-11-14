@@ -135,12 +135,13 @@
         'uploader'          : $('input#photo_image').attr('rel'),
         'fileObjName'       : 'photo[image]',
         'fileTypeExts'      : '*.png;*.jpg;*.gif;*.jpeg',
+        'fileSizeLimit'     : '4MB',
         'multi'             : true,
         'formData'          : upload_params,
         'auto'              : true,
         'buttonText'        : '#{I18n.t("nodes.show.link.upload")}',
         'removeTimeout'     : 1,
-        'progressData'      : 'progress',
+        'progressData'      : 'percentage',
         'buttonClass'       : 'button',
         'onUploadSuccess'   : function(response, data) {
           $('#thumbs').append(data);
