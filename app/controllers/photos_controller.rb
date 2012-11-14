@@ -15,11 +15,8 @@ class PhotosController < ApplicationController
     @photo = Photo.new(params[:photo])
     @photo.poi = Poi.find(params[:node_id])
     @photo.user = current_user
-    if @photo.save
-      render :partial => 'photo', :object => @photo
-    else
-      redirect_to :back
-    end
+    @photo.save!
+    render :partial => 'photo', :object => @photo
   end
 
   def destroy
