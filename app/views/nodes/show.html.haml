@@ -144,7 +144,15 @@
         'progressData'      : 'percentage',
         'buttonClass'       : 'button',
         'onUploadSuccess'   : function(response, data) {
-          $('#thumbs').append(data);
+          $('#thumbs ul').append(data);
+          $('#thumbs a').lightBox({
+            fixedNavigation: true,
+            imageLoading:  '/images/spinner.gif',
+            imageBtnClose: '/images/lightbox-btn-close.gif',
+            imageBtnPrev:  '/images/lightbox-btn-prev.gif',
+            imageBtnNext:  '/images/lightbox-btn-next.gif',
+            txtOf: '/'
+          });
         }
       });
 
