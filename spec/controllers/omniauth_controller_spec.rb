@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe OmniauthCallbacksController do
-  include Devise::TestHelpers
+
 
   before do
     OmniAuth.config.test_mode = true

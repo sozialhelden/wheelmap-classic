@@ -13,7 +13,7 @@ class UpdateAttributeJob <ActiveRecord::Base
 end
 
 describe NodesController do
-  include Devise::TestHelpers
+
 
   fixtures :node_types
 
