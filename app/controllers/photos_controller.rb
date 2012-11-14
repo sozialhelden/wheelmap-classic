@@ -5,9 +5,11 @@ class PhotosController < ApplicationController
 
   actions :create, :destroy
 
-  optional_belongs_to :node
+  optional_belongs_to :node, :parent_class => Poi
 
   before_filter :authenticate_user!
+
+  before_filter :require_owner
 
   def create
     @photo = Photo.new(params[:photo])
@@ -19,6 +21,17 @@ class PhotosController < ApplicationController
     else
       redirect_to :back
     end
+  end
+
+  def destroy
+    destroy! { :back }
+  end
+
+  protected
+
+  def require_owner
+    @photo = resource
+    redirect_to :back unless @photo.user == current_user
   end
 
 end
