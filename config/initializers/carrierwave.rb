@@ -28,6 +28,24 @@ module CarrierWave
       end
     end
 
+    def effectively_resize_to_fill(width, height, format = 'jpg', quality = 70)
+      resize_to_fill(width, height) do |img|
+        img.auto_orient!
+        img.strip!
+        img.write(current_path){ self.quality = quality }
+        img
+      end
+    end
+
+    def effectively_resize_to_limit(width, height, format = 'jpg', quality = 70)
+      resize_to_limit(width, height) do |img|
+        img.auto_orient!
+        img.strip!
+        img.write(current_path){ self.quality = quality }
+        img
+      end
+    end
+
   end
 end
 
