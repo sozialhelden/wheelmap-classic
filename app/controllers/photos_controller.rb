@@ -16,7 +16,6 @@ class PhotosController < ApplicationController
     @photo.poi = Poi.find(params[:node_id])
     @photo.user = current_user
     if @photo.save
-      @photo.process_image_upload = true
       render :partial => 'photo', :object => @photo
     else
       redirect_to :back
