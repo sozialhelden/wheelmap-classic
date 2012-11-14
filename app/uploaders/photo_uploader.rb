@@ -34,20 +34,26 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
+
+  # Chain all blocks to effectively transform a
   version :thumb do
-    process :fix_exif_rotation
-    process :strip
-    process :convert        => 'jpg'
-    process :resize_to_fill => [100, 100]
-    process :quality        => 70
+    process :effectively_resize_to_fill => [100,100]
+    process :convert => 'jpg'
   end
 
   version :gallery do
-    process :fix_exif_rotation
-    process :strip
+    process :effectively_resize_to_limit => [600, 600]
     process :convert => 'jpg'
-    process :resize_to_fit => [600, 600]
-    process :quality        => 70
+  end
+
+  version :p720p do
+    process :effectively_resize_to_limit => [1280, 720]
+    process :convert => 'jpg'
+  end
+
+  version :p1080 do
+    process :effectively_resize_to_limit => [1920, 1080]
+    process :convert => 'jpg'
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
@@ -61,4 +67,5 @@ class PhotoUploader < CarrierWave::Uploader::Base
   def filename
     super.chomp(File.extname(super)) + '.jpg'
   end
+
 end
