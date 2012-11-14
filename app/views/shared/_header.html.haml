@@ -20,7 +20,7 @@
       - I18n.available_locales.map(&:to_s).sort.each do |locale|
         %option{:value => url_for_locale(request.url, locale), :selected => (I18n.locale.to_s.downcase == locale.to_s.downcase)}=Languages[locale.to_s]
   #searchbar
-    %form{:action => '/search'}
+    %form{:action => '/search', :class => 'formtastic'}
       = text_field_tag :search, '', :placeholder => t('header.searchbar.placeholder'), :autocomplete => 'off', :value => params[:q] ? params[:q] : nil, :name => 'q'
       %button(type="submit")= t('header.searchbar.find')
       .or-add-place
