@@ -568,51 +568,63 @@ nav {
   float: right;
 }
 
-/* line 6, ../../app/stylesheets/basics/_forms.sass */
-form {
+/* line 7, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic.update_form label {
+  text-align: left;
+  line-height: 8px;
+  height: 8px;
+}
+/* line 12, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic.update_form input {
+  height: 13px;
+  line-height: normal;
+}
+
+/* line 16, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic {
   font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
   font-size: 13px;
   line-height: 20px;
 }
-/* line 9, ../../app/stylesheets/basics/_forms.sass */
-form.after_signup_edit {
+/* line 19, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic.after_signup_edit {
   background: url("/images/iphone.jpg") 700px bottom no-repeat;
 }
-/* line 12, ../../app/stylesheets/basics/_forms.sass */
-form li {
+/* line 22, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic li {
   display: block;
   float: left;
   width: 100%;
   margin-bottom: 6px;
 }
-/* line 17, ../../app/stylesheets/basics/_forms.sass */
-form li.hidden {
+/* line 27, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic li.hidden {
   margin: 0px;
   padding: 0px;
 }
-/* line 21, ../../app/stylesheets/basics/_forms.sass */
-form li.boolean {
+/* line 31, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic li.boolean {
   margin-left: 160px;
 }
-/* line 24, ../../app/stylesheets/basics/_forms.sass */
-form li.boolean.small {
+/* line 34, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic li.boolean.small {
   margin-left: 130px;
 }
-/* line 27, ../../app/stylesheets/basics/_forms.sass */
-form li.boolean.small label {
+/* line 37, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic li.boolean.small label {
   width: 520px;
 }
-/* line 31, ../../app/stylesheets/basics/_forms.sass */
-form li.boolean label {
+/* line 41, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic li.boolean label {
   width: 100%;
   text-align: left;
 }
-/* line 35, ../../app/stylesheets/basics/_forms.sass */
-form li.boolean input {
+/* line 45, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic li.boolean input {
   width: 15px;
 }
-/* line 39, ../../app/stylesheets/basics/_forms.sass */
-form input[type='text'], form input[type='search'], form input[type='password'], form [type='tel'], form [type='email'], form textarea, form select {
+/* line 49, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic input[type='text'], form.formtastic input[type='search'], form.formtastic input[type='password'], form.formtastic [type='tel'], form.formtastic [type='email'], form.formtastic textarea, form.formtastic select {
   border: 1px solid #a1c175;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -623,65 +635,65 @@ form input[type='text'], form input[type='search'], form input[type='password'],
   padding: 5px;
   width: 288px;
 }
-/* line 47, ../../app/stylesheets/basics/_forms.sass */
-form input[type='text'].small, form input[type='search'].small, form input[type='password'].small, form [type='tel'].small, form [type='email'].small, form textarea.small, form select.small {
+/* line 57, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic input[type='text'].small, form.formtastic input[type='search'].small, form.formtastic input[type='password'].small, form.formtastic [type='tel'].small, form.formtastic [type='email'].small, form.formtastic textarea.small, form.formtastic select.small {
   width: 180px;
 }
-/* line 50, ../../app/stylesheets/basics/_forms.sass */
-form input[type='text'].large, form input[type='search'].large, form input[type='password'].large, form [type='tel'].large, form [type='email'].large, form textarea.large, form select.large {
+/* line 60, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic input[type='text'].large, form.formtastic input[type='search'].large, form.formtastic input[type='password'].large, form.formtastic [type='tel'].large, form.formtastic [type='email'].large, form.formtastic textarea.large, form.formtastic select.large {
   width: 502px;
 }
-/* line 53, ../../app/stylesheets/basics/_forms.sass */
-form input[readonly] {
+/* line 63, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic input[readonly] {
   background-color: #f9f9f9;
   color: #8d8d8e;
 }
-/* line 57, ../../app/stylesheets/basics/_forms.sass */
-form select {
+/* line 67, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic select {
   width: 300px;
   -webkit-appearance: none;
   -moz-appearance: none;
   background: white url("/images/select-marker.png") no-repeat 98% center;
 }
-/* line 63, ../../app/stylesheets/basics/_forms.sass */
-form #node-wheelchair {
+/* line 73, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic #node-wheelchair {
   height: 2em;
 }
-/* line 65, ../../app/stylesheets/basics/_forms.sass */
-form #node-wheelchair option {
+/* line 75, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic #node-wheelchair option {
   height: 20px;
   margin-bottom: 3px;
   padding: 3px 0px 3px 28px;
 }
-/* line 70, ../../app/stylesheets/basics/_forms.sass */
-form #node-wheelchair option.wheelchairstatus_yes {
+/* line 80, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic #node-wheelchair option.wheelchairstatus_yes {
   color: #86af4d;
 }
-/* line 73, ../../app/stylesheets/basics/_forms.sass */
-form #node-wheelchair option.wheelchairstatus_limited {
+/* line 83, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic #node-wheelchair option.wheelchairstatus_limited {
   color: #f19d46;
 }
-/* line 76, ../../app/stylesheets/basics/_forms.sass */
-form #node-wheelchair option.wheelchairstatus_no {
+/* line 86, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic #node-wheelchair option.wheelchairstatus_no {
   color: #d6382f;
 }
-/* line 79, ../../app/stylesheets/basics/_forms.sass */
-form #node-wheelchair option.wheelchairstatus_unknown {
+/* line 89, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic #node-wheelchair option.wheelchairstatus_unknown {
   color: #8d8d8e;
 }
-/* line 82, ../../app/stylesheets/basics/_forms.sass */
-form optgroup {
+/* line 92, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic optgroup {
   padding-left: 20px;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-/* line 87, ../../app/stylesheets/basics/_forms.sass */
-form option {
+/* line 97, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic option {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-/* line 91, ../../app/stylesheets/basics/_forms.sass */
-form input[type='submit'] {
+/* line 101, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic input[type='submit'] {
   position: relative;
   left: 140px;
   background-color: #a1c175;
@@ -708,7 +720,7 @@ form input[type='submit'] {
   text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
 }
 /* line 26, ../../app/stylesheets/basics/_buttons.sass */
-form input[type='submit']:hover {
+form.formtastic input[type='submit']:hover {
   background-color: #95b963;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #aecd82), color-stop(0.5, #95b963), color-stop(1, #7da743));
   background-image: -moz-linear-gradient(center bottom, #7da743 0%, #95b963 50%, #aecd82 100%);
@@ -717,7 +729,7 @@ form input[type='submit']:hover {
   border-color: #95b963 #89b152 #6e9040;
 }
 /* line 29, ../../app/stylesheets/basics/_buttons.sass */
-form input[type='submit']:active {
+form.formtastic input[type='submit']:active {
   background-color: #7ca148;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #96bf5e), color-stop(0.5, #7ca148), color-stop(1, #618234));
   background-image: -moz-linear-gradient(center bottom, #618234 0%, #7ca148 50%, #96bf5e 100%);
@@ -725,12 +737,12 @@ form input[type='submit']:active {
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#618234', startColorstr='#96bf5e', gradientType='0');
   border-color: #89b152 #617e39 #465b29;
 }
-/* line 96, ../../app/stylesheets/basics/_forms.sass */
-form input[type='submit'].small {
+/* line 106, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic input[type='submit'].small {
   left: 110px;
 }
-/* line 99, ../../app/stylesheets/basics/_forms.sass */
-form label {
+/* line 109, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic label {
   color: #4d4d4d;
   display: block;
   float: left;
@@ -740,12 +752,12 @@ form label {
   text-align: right;
   width: 150px;
 }
-/* line 109, ../../app/stylesheets/basics/_forms.sass */
-form label.small {
+/* line 119, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic label.small {
   width: 120px;
 }
-/* line 112, ../../app/stylesheets/basics/_forms.sass */
-form legend {
+/* line 122, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic legend {
   font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
   font-size: 20px;
   line-height: 20px;
@@ -756,43 +768,43 @@ form legend {
   top: 15px;
   bottom: none;
 }
-/* line 121, ../../app/stylesheets/basics/_forms.sass */
-form legend span.addition {
+/* line 131, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic legend span.addition {
   color: #aaaaaa;
 }
-/* line 124, ../../app/stylesheets/basics/_forms.sass */
-form fieldset {
+/* line 134, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic fieldset {
   padding: 30px 0px 10px;
   overflow: hidden;
 }
-/* line 128, ../../app/stylesheets/basics/_forms.sass */
-form fieldset.buttons {
+/* line 138, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic fieldset.buttons {
   padding: 10px 20px 10px 20px;
 }
-/* line 131, ../../app/stylesheets/basics/_forms.sass */
-form .form-info {
+/* line 141, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic .form-info {
   padding-bottom: 10px;
 }
-/* line 135, ../../app/stylesheets/basics/_forms.sass */
-form li[class*='error'] label {
+/* line 145, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic li[class*='error'] label {
   color: #f19d46;
 }
-/* line 138, ../../app/stylesheets/basics/_forms.sass */
-form li[class*='error'] input[type='text'], form li[class*='error'] input[type='password'], form li[class*='error'] input[type='search'], form li[class*='error'] [type='tel'], form li[class*='error'] textarea, form li[class*='error'] select {
+/* line 148, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic li[class*='error'] input[type='text'], form.formtastic li[class*='error'] input[type='password'], form.formtastic li[class*='error'] input[type='search'], form.formtastic li[class*='error'] [type='tel'], form.formtastic li[class*='error'] textarea, form.formtastic li[class*='error'] select {
   border: 1px solid #f19d46;
 }
-/* line 141, ../../app/stylesheets/basics/_forms.sass */
-form p.inline-errors, form p.inline-hints {
+/* line 151, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic p.inline-errors, form.formtastic p.inline-hints {
   position: relative;
   left: 160px;
   color: #aaaaaa;
 }
-/* line 146, ../../app/stylesheets/basics/_forms.sass */
-form p.inline-errors.small, form p.inline-hints.small {
+/* line 156, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic p.inline-errors.small, form.formtastic p.inline-hints.small {
   left: 130px;
 }
-/* line 149, ../../app/stylesheets/basics/_forms.sass */
-form p.inline-errors {
+/* line 159, ../../app/stylesheets/basics/_forms.sass */
+form.formtastic p.inline-errors {
   color: #f19d46;
 }
 
@@ -1008,12 +1020,46 @@ hr {
   width: 472px;
 }
 
-/* line 5, ../../app/stylesheets/basics/_photos.sass */
+/* line 8, ../../app/stylesheets/basics/_photos.sass */
+#thumbs ul.thumbs li, #thumbs_private ul.thumbs li {
+  float: left;
+  margin-right: 10px;
+  width: 108px;
+  height: 130px;
+}
+/* line 14, ../../app/stylesheets/basics/_photos.sass */
+#thumbs a.delete, #thumbs_private a.delete {
+  float: right;
+  position: relative;
+  bottom: 35px;
+  right: 5px;
+  text-decoration: none;
+}
+/* line 22, ../../app/stylesheets/basics/_photos.sass */
+#thumbs form.button_to, #thumbs_private form.button_to {
+  width: 0px;
+  height: 0px;
+}
+/* line 26, ../../app/stylesheets/basics/_photos.sass */
+#thumbs form.button_to input.delete, #thumbs_private form.button_to input.delete {
+  position: relative;
+  top: 102px;
+  right: 30px;
+  background: transparent;
+  line-height: normal;
+  border: 0px;
+  padding: 2px 4px;
+  margin: 0px;
+  cursor: pointer;
+}
+
+/* line 38, ../../app/stylesheets/basics/_photos.sass */
 .thumb img {
   float: left;
   width: 100px;
   height: 100px;
   padding: 3px;
+  padding-bottom: 20px;
   background-color: white;
   border: 1px solid #e6e6e6;
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 10px 0;
@@ -1028,7 +1074,7 @@ hr {
   margin-bottom: 5px;
 }
 
-/* line 17, ../../app/stylesheets/basics/_photos.sass */
+/* line 51, ../../app/stylesheets/basics/_photos.sass */
 #lightbox-nav {
   z-index: 9999;
 }
