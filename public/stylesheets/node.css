@@ -1074,9 +1074,14 @@ hr {
   margin-bottom: 5px;
 }
 
-/* line 51, ../../app/stylesheets/basics/_photos.sass */
-#lightbox-nav {
-  z-index: 9999;
+/* line 52, ../../app/stylesheets/basics/_photos.sass */
+#jquery-overlay {
+  z-index: 1012 !important;
+}
+
+/* line 54, ../../app/stylesheets/basics/_photos.sass */
+#jquery-lightbox {
+  z-index: 1013 !important;
 }
 
 /* line 1, ../../app/stylesheets/partials/nodes/_headlines.sass */
@@ -1176,25 +1181,24 @@ dd {
   height: 430px;
   float: right;
   margin-bottom: 1em;
-  z-index: 1000;
 }
-/* line 7, ../../app/stylesheets/partials/nodes/_map.sass */
+/* line 6, ../../app/stylesheets/partials/nodes/_map.sass */
 #map_wrapper #minimap {
   height: 430px;
   width: 500px;
   background-color: #fff7d9;
   border: 1px solid #cccccc;
 }
-/* line 13, ../../app/stylesheets/partials/nodes/_map.sass */
+/* line 12, ../../app/stylesheets/partials/nodes/_map.sass */
 #map_wrapper a.magnify {
   padding-right: 20px;
 }
-/* line 16, ../../app/stylesheets/partials/nodes/_map.sass */
+/* line 15, ../../app/stylesheets/partials/nodes/_map.sass */
 #map_wrapper a.hide {
   display: none;
 }
 
-/* line 19, ../../app/stylesheets/partials/nodes/_map.sass */
+/* line 18, ../../app/stylesheets/partials/nodes/_map.sass */
 #minimap.create-node {
   cursor: crosshair;
 }
