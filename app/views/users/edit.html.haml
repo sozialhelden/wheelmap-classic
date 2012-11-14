@@ -30,3 +30,8 @@
     = form.inputs :name => t('devise.destroy.headline') do
       = form.buttons do
         = form.submit t('devise.destroy.link'), :onclick => "if(!confirm('#{t('devise.destroy.confirm')}')){ return false; }"
+
+  %hr
+  #thumbs_private
+    %ul.thumbs.noscript
+      = render :partial => 'photos/photo', :collection => @user.photos
