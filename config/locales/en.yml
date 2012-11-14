@@ -553,7 +553,7 @@ en:
         parking: Parking
         parking_aisle: "Parking aisle"
         platform: Platform
-        station: Subway
+        station: "Train station"
         subway_entrance: "Subway entrance"
         terminal: "Airport terminal"
         tram_stop: "Tram stop"
