@@ -1020,14 +1020,20 @@ hr {
   width: 472px;
 }
 
-/* line 8, ../../app/stylesheets/basics/_photos.sass */
+/* line 5, ../../app/stylesheets/basics/_photos.sass */
+#thumbs_private {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+/* line 11, ../../app/stylesheets/basics/_photos.sass */
 #thumbs ul.thumbs li, #thumbs_private ul.thumbs li {
   float: left;
   margin-right: 10px;
   width: 108px;
   height: 130px;
 }
-/* line 14, ../../app/stylesheets/basics/_photos.sass */
+/* line 17, ../../app/stylesheets/basics/_photos.sass */
 #thumbs a.delete, #thumbs_private a.delete {
   float: right;
   position: relative;
@@ -1035,12 +1041,12 @@ hr {
   right: 5px;
   text-decoration: none;
 }
-/* line 22, ../../app/stylesheets/basics/_photos.sass */
+/* line 25, ../../app/stylesheets/basics/_photos.sass */
 #thumbs form.button_to, #thumbs_private form.button_to {
   width: 0px;
   height: 0px;
 }
-/* line 26, ../../app/stylesheets/basics/_photos.sass */
+/* line 29, ../../app/stylesheets/basics/_photos.sass */
 #thumbs form.button_to input.delete, #thumbs_private form.button_to input.delete {
   position: relative;
   top: 102px;
@@ -1053,7 +1059,7 @@ hr {
   cursor: pointer;
 }
 
-/* line 38, ../../app/stylesheets/basics/_photos.sass */
+/* line 41, ../../app/stylesheets/basics/_photos.sass */
 .thumb img {
   float: left;
   width: 100px;
@@ -1074,12 +1080,12 @@ hr {
   margin-bottom: 5px;
 }
 
-/* line 52, ../../app/stylesheets/basics/_photos.sass */
+/* line 55, ../../app/stylesheets/basics/_photos.sass */
 #jquery-overlay {
   z-index: 1012 !important;
 }
 
-/* line 54, ../../app/stylesheets/basics/_photos.sass */
+/* line 57, ../../app/stylesheets/basics/_photos.sass */
 #jquery-lightbox {
   z-index: 1013 !important;
 }
