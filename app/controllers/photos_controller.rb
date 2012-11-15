@@ -32,5 +32,4 @@ class PhotosController < ApplicationController
       render :template => 'shared/error', :status => 403
     end
   end
-
 end
