@@ -4,7 +4,7 @@
       = image_tag "wm_logo_#{I18n.locale}.png", :size => '300x85', :alt => t('wheelmap.logo.alt')
   %nav.links
     - if user_signed_in?
-      = link_to (current_user.email.blank? ? t('devise.edit.form.labels.email') : current_user.email), edit_user_path(current_user)
+      = link_to t('header.navigation.profile'), edit_user_path(current_user)
       = link_to t('devise.sign_out.headline'), destroy_user_session_path
     - elsif admin_user_signed_in?
       = link_to "ADMIN", admin_dashboard_path
