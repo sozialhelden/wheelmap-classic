@@ -224,6 +224,9 @@ de:
         notice: "%{resource_name} wurde erfolgreich entfernt."
       update:
         notice: "%{resource_name} wurde erfolgreich aktualisiert."
+    photos:
+      destroy:
+        notice: "Bild wurde erfolgreich entfernt."
   form:
     show_fully_accessible_places: Ja
     show_limited_accessible_places: Teilweise
@@ -391,7 +394,7 @@ de:
         back: zurück
         large_map: "Ansicht vergrößern"
         listing: "Alle Orte vom Typ '%{type}' in %{city}"
-        upload: "Bilder hochladen"
+        upload: "Bild hochladen"
       more_data_from: "Zu diesem Ort gibt es weitere Daten, qualifiziert von:"
       show-in-osm: "in Openstreetmap anzeigen"
     update:
@@ -673,6 +676,9 @@ de:
         headline: "Fast geschafft!"
         set_password_for_mobile: "Besitzt du ein Smartphone? Dann definiere hier dein Passwort, um die Wheelmap auch von unterwegs mit deinem iPhone- oder Android-Handy zu benutzen."
         text: "Du bist nun erfolgreich registriert. Wie können wir dich in Zukunft über wichtige Neuigkeiten rund um die Wheelmap informieren?"
+    edit:
+      headline:
+        your_images: "Deine hochgeladenen Bilder"
   wheelchairstatus:
     limited: "teilweise rollstuhlgerecht"
     ? "no"
