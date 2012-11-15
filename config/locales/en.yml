@@ -224,6 +224,9 @@ en:
         notice: "%{resource_name} was successfully deleted"
       update:
         notice: "%{resource_name} was successfully updated"
+    photos:
+      destroy:
+        notice: "Image was successfully deleted"
   form:
     show_fully_accessible_places: "Wheelchair accessible"
     show_limited_accessible_places: "partly wheelchair accessible"
@@ -391,7 +394,7 @@ en:
         back: back
         large_map: Enlarge
         listing: "All places of typ '%{type}' in %{city}"
-        upload: "Upload images"
+        upload: "Upload image"
       more_data_from: "There is more data for this place, checked by:"
       show-in-osm: OpenStreetMap
     update:
@@ -673,6 +676,9 @@ en:
         headline: "Welcome to wheelmap"
         set_password_for_mobile: "Do you have a smartphone? Please define a password in order to use the Wheelmap while on the go with your iPhone or Android phone."
         text: "How can we get in touch with you? You can change this information later in your profile."
+    edit:
+      headline:
+        your_images: "Your uploaded images"
   wheelchairstatus:
     limited: "partially wheelchair accessible"
     ? "no"
