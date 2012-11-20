@@ -4,12 +4,42 @@ class Photo < ActiveRecord::Base
   belongs_to :user, :counter_cache => true
   mount_uploader :image, PhotoUploader
 
-  before_save :extract_date_time
+  before_create :extract_date_time
+
+  after_destroy :remove_empty_directory
+
+  acts_as_api
+
+  def around_api_response(api_template)
+    custom_cache_key = "api_response_#{self.cache_key}_#{api_template.to_s}"
+    Rails.cache.fetch(custom_cache_key, :expires_in => 1.day) do
+      yield
+    end
+  end
+
+  api_accessible :simple do |t|
+    t.add :id
+    t.add :image_versions, :as => :images
+  end
+
+  def image_versions
+    i = []
+    i << {:original => {:url => image.url.to_s, :width => image.width(:original), :height => image.height(:original)} }
+    image.versions.keys.each do |version|
+      v = version.to_sym
+      i << {v => {:url => image.url(v).to_s, :width => image.width(v), :height => image.height(v)} }
+    end
+    i
+  end
 
   protected
 
   def extract_date_time
     self.taken_at = EXIFR::JPEG.new(image.path).date_time rescue nil
+  end
+
+  def remove_empty_directory
+    FileUtils.remove_dir(Rails.root.join('public', image.store_dir), :force => true)
   end
 
 end
