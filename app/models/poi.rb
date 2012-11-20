@@ -271,14 +271,14 @@ class Poi < ActiveRecord::Base
 
   def marker
     if node_type.try(:icon)
-      "/marker/#{wheelchair}/#{node_type.icon}"
+      image_path("/marker/#{wheelchair}/#{node_type.icon}")
     else
-      "/marker/undefined.png"
+      image_path("/marker/undefined.png")
     end
   end
 
   def icon
-    "/icons/#{node_type.try(:icon)}"
+    image_path("/icons/#{node_type.try(:icon)}")
   end
 
   def to_geojson(options={})
@@ -291,6 +291,8 @@ class Poi < ActiveRecord::Base
                          'id'         => osm_id,
                          'type'       => node_type.try(:identifier) || '',
                          'category'   => category.try(:identifier) || '',
+                         'marker'     => marker,
+                         'icon'       => icon
                        }
     }
   end
@@ -382,6 +384,19 @@ class Poi < ActiveRecord::Base
 
   def degrees_per_meter_longitude(meters = 1)
     meters / meters_per_degrees_longitude
+  end
+
+  protected
+
+  # Dummy methods to generate full image paths
+  def config
+    Wheelmap::Application.config.action_controller
+  end
+
+
+  # Dummy methods to generate full image paths
+  def controller
+    ''
   end
 
 end
