@@ -90,6 +90,8 @@ Wheelmap::Application.routes.draw do
       member do
         put :update_wheelchair
       end
+      resources :photos do
+      end
     end
 
     resources :categories,   :only  => [:index, :show] do
@@ -111,6 +113,10 @@ Wheelmap::Application.routes.draw do
 
     resources :locales,     :only => :index
     resources :node_types,  :only => [:index, :show]
+
+    resource :user do
+      resources :photos, :only => [:index, :destroy]
+    end
 
     match '/users/authenticate' => 'users#authenticate'
 
