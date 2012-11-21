@@ -71,9 +71,52 @@ describe Api::PhotosController do
   end
 
   context 'create action' do
+
+    before :each do
+      user.save!
+      poi.save!
+    end
+
+    it "is possible to upload images for a given node" do
+      post(:create, :node_id => poi.id, :api_key => user.authentication_token, :photo => {:image => fixture_file_upload('/placeholder.jpg')})
+      response.code.should eql "201"
+    end
+
+    it "is not possible to upload images for a user" do
+      lambda {
+        post(:create, :url => api_user_photos_path, :api_key => user.authentication_token, :photo => {:image => fixture_file_upload('/placeholder.jpg')})
+      }.should raise_error ActionController::RoutingError
+    end
   end
 
   context 'destroy action' do
+    before :each do
+      photo.save!
+    end
+
+    let :another_photo do
+      Factory.create(:photo)
+    end
+
+    it "is possible to delete images for a given node" do
+      delete(:destroy, :id => photo.id, :node_id => poi.id, :api_key => user.authentication_token)
+      response.code.should eql "200"
+    end
+
+    it "is possible to delete images for a given user" do
+      delete(:destroy, :id => photo.id, :url => api_user_photo_path(photo), :api_key => user.authentication_token)
+      response.code.should eql "200"
+    end
+
+    it "is not possible to delete an image, which does not belong to given node" do
+      delete(:destroy, :id => another_photo.id, :node_id => poi.id, :api_key => user.authentication_token)
+      response.code.should eql "404"
+    end
+
+    it "is not possible to delete an image, which does not belong to given user" do
+      delete(:destroy, :id => another_photo.id, :url => api_user_photo_path(another_photo), :api_key => user.authentication_token)
+      response.code.should eql "404"
+    end
   end
 
 end
