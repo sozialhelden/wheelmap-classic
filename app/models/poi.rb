@@ -387,6 +387,10 @@ class Poi < ActiveRecord::Base
     meters / meters_per_degrees_longitude
   end
 
+  def build_photo(params)
+    self.photos.build(params)
+  end
+
   protected
 
   # Dummy methods to generate full image paths
