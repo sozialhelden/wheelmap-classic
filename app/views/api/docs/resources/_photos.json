@@ -1,0 +1,96 @@
+{
+    "conditions": {
+        "page": 1,
+        "per_page": 200,
+        "locale": null,
+        "format": "json"
+    },
+    "meta": {
+        "page": 1,
+        "item_count": 2,
+        "item_count_total": 2,
+        "num_pages": 1
+    },
+    "photos": [
+        {
+            "id": 1,
+            "images": [
+                {
+                    "original": {
+                        "width": 4288,
+                        "height": 2848,
+                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/original.jpg?1353426904"
+                    }
+                },
+                {
+                    "p1080": {
+                        "width": 1920,
+                        "height": 1080,
+                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/p1080.jpg?1353426904"
+                    }
+                },
+                {
+                    "p720": {
+                        "width": 1280,
+                        "height": 720,
+                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/p720.jpg?1353426904"
+                    }
+                },
+                {
+                    "gallery": {
+                        "width": 600,
+                        "height": 449,
+                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/gallery.jpg?1353426904"
+                    }
+                },
+                {
+                    "thumb": {
+                        "width": 100,
+                        "height": 100,
+                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/thumb.jpg?1353426904"
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "images": [
+                {
+                    "original": {
+                        "width": 4288,
+                        "height": 2848,
+                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/original.jpg?1353426905"
+                    }
+                },
+                {
+                    "p1080": {
+                        "width": 1920,
+                        "height": 1080,
+                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/p1080.jpg?1353426905"
+                    }
+                },
+                {
+                    "p720": {
+                        "width": 1280,
+                        "height": 720,
+                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/p720.jpg?1353426905"
+                    }
+                },
+                {
+                    "gallery": {
+                        "width": 531,
+                        "height": 354,
+                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/gallery.jpg?1353426905"
+                    }
+                },
+                {
+                    "thumb": {
+                        "width": 100,
+                        "height": 100,
+                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/thumb.jpg?1353426905"
+                    }
+                }
+            ]
+        }
+    ]
+}
