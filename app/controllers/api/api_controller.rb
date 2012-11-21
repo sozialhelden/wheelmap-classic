@@ -68,7 +68,7 @@ class Api::ApiController < ApplicationController
   end
 
   def not_found
-    render_404(ActionController::RoutingError.new("No route matches '#{request.path}', check API root url for available resources: #{api_url(:locale => false)}"))
+    render_404(ActionController::RoutingError.new("No route matches '#{request.path}', check API root url for available resources: /api/docs/resources"))
   end
 
   protected
