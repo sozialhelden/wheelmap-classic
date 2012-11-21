@@ -152,6 +152,7 @@ namespace :deploy do
   namespace :cache do
     task :clear do
       run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake cache:clear"
+      run "rm -fr #{current_path}/public/api"
     end
   end
 
