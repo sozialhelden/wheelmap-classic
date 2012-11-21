@@ -12,6 +12,8 @@ class Photo < ActiveRecord::Base
 
   after_destroy :remove_empty_directory
 
+  validates :user_id, :poi_id, :presence => true
+
   acts_as_api
 
   def around_api_response(api_template)
