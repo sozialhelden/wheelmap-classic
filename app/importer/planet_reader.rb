@@ -133,7 +133,11 @@ class PlanetReader
   end
 
   def valid?
-    @poi && has_tags? && has_type?
+    @poi && has_tags? && has_type? && !private?
+  end
+
+  def private?
+    @poi[:tags]['access'] == 'private' || @poi[:tags]['access'] == 'no'
   end
 
   def has_tags?
