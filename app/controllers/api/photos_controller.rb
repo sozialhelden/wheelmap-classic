@@ -1,4 +1,5 @@
 class Api::PhotosController < Api::ApiController
+  require 'active_resource/exceptions'
 
   belongs_to :user, :optional => true, :singleton => true
   belongs_to :node, :optional => true, :parent_class => Poi
@@ -7,7 +8,9 @@ class Api::PhotosController < Api::ApiController
 
   defaults :resource_class => Photo, :collection_name => 'photos'
 
-  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
+  rescue_from ActiveRecord::RecordNotFound, :with => :render_403
+
+  before_filter :require_owner, :only => :destroy
 
   def index
     @photos = collection
@@ -18,7 +21,7 @@ class Api::PhotosController < Api::ApiController
   end
 
   def create
-    @photo = build_resource
+    @photo = parent.photos.build(:image => params[:photo])
     @photo.user = current_user
     create! do |success, failure|
       success.json{ render :json => { :message  => 'OK'           }.to_json, :status => 201 }
@@ -34,10 +37,10 @@ class Api::PhotosController < Api::ApiController
     @photo = resource
     destroy! do |success, failure|
       success.json{ render :json => { :message  => 'OK'           }.to_json, :status => 200 }
-      failure.json{ render :json => { :error    => @photo.errors  }.to_json, :status => 400 }
+      failure.json{ render :json => { :error    => @photo.errors  }.to_json, :status => 403 }
 
       success.xml{  render :xml  => { :message  => 'OK'           }.to_xml,  :status => 200 }
-      failure.xml{  render :xml  => { :error    => @photo.errors  }.to_xml,  :status => 400 }
+      failure.xml{  render :xml  => { :error    => @photo.errors  }.to_xml,  :status => 403 }
     end
   end
 
@@ -57,6 +60,18 @@ class Api::PhotosController < Api::ApiController
 
   def resource
     @photo ||= parent.photos.find(params[:id])
+  end
+
+  def render_403
+    Rails.logger.error "403"
+    render_exception(StandardError.new("Forbidden"), 403)
+  end
+
+  def require_owner
+    unless resource.user_id == current_user.id
+      Rails.logger.warn("User #{current_user.id} is not owner of Photo #{resource.id}!!!")
+      render_403
+    end
   end
 
 end
