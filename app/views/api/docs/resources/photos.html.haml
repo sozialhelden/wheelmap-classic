@@ -48,7 +48,47 @@
 
 
 
-  %h2#representations Representations
-  %article.doc-block
-    %h3#photos_representation_json Example photos representation. (application/json)
-    %pre=render :partial => 'photos.json'
+          %h2#representations Representations
+          %article.doc-block
+            %h3#photos_representation_json Example photos representation. (application/json)
+            %pre=render :partial => 'photos.json'
+
+    %hr
+    .resource
+      %h3
+        ="/api/nodes/{node_id}/photos"
+      %h6 Methods
+      .methods
+        .method
+          %h4 POST
+          %p Upload a new Photo for the given node. NOTE: This post must be submitted as a multipart Request, as the payload does not fit into one packet.
+          %h6 request query parameter
+          %table
+            %thead
+              %tr
+                %th.param Parameter
+                %th.type Type
+                %th.desc Description
+            %tbody
+              %tr.odd
+                %td photo*
+                %td file
+                %td The photo you want to upload.
+                %h4 Example request:
+                %pre http://wheelmap.org/api/nodes/123/photos?api_key=api_key&photo=File:///var/folders/v9ds5x297nx6xv1jth1013bw0000gn/image.jpg
+
+          %h4#photos_representation_json Example photo representation. (application/json)
+          %pre= {:message => 'OK'}.to_json
+
+    %hr
+    .resource
+      %h3
+        ="/api/nodes/{node_id}/photos/{photo_id}"
+      %h6 Methods
+      .methods
+        .method
+          %h4 DELETE
+          %p Delete a photo for the given node or user. NOTE: The photo and all resized version are deleted immidiately. THERE IS NO UNDO!
+
+          %h4#photos_representation_json Example photo representation. (application/json)
+          %pre= {:message => 'OK'}.to_json
