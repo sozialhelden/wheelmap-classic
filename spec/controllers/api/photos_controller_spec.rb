@@ -78,8 +78,10 @@ describe Api::PhotosController do
     end
 
     it "is possible to upload images for a given node" do
-      post(:create, :node_id => poi.id, :api_key => user.authentication_token, :photo => {:image => fixture_file_upload('/placeholder.jpg')})
-      response.code.should eql "201"
+      lambda {
+        post(:create, :node_id => poi.id, :api_key => user.authentication_token, :photo => fixture_file_upload('/placeholder.jpg'))
+        response.status.should eql 201
+      }.should change(Photo, :count).by(1)
     end
 
     it "is not possible to upload images for a user" do
@@ -110,12 +112,17 @@ describe Api::PhotosController do
 
     it "is not possible to delete an image, which does not belong to given node" do
       delete(:destroy, :id => another_photo.id, :node_id => poi.id, :api_key => user.authentication_token)
-      response.code.should eql "404"
+      response.code.should eql "403"
     end
 
     it "is not possible to delete an image, which does not belong to given user" do
       delete(:destroy, :id => another_photo.id, :url => api_user_photo_path(another_photo), :api_key => user.authentication_token)
-      response.code.should eql "404"
+      response.code.should eql "403"
+    end
+
+    it "is not possible to delete an image, which belongs to a node, but not to the current user" do
+      delete(:destroy, :id => another_photo.id, :node_id => another_photo.poi.id, :api_key => user.authentication_token)
+      response.code.should eql "403"
     end
   end
 
