@@ -30,6 +30,7 @@ after  'deploy:update_code',  'deploy:remove_all_unfinished_locales'
 after  'deploy:update_code',  'deploy:symlink_configs'
 
 after  'deploy',              'deploy:cache:clear'
+after  'deploy',              'deploy:zip_assets'
 
 
 task :safety_check do
@@ -147,6 +148,10 @@ namespace :deploy do
     else
       puts "This task only runs in production env."
     end
+  end
+
+  task :zip_assets do
+    run "cd #{release_path}/public && zip -9 -r marker.zip marker"
   end
 
   namespace :cache do
