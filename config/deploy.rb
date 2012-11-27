@@ -151,7 +151,7 @@ namespace :deploy do
   end
 
   task :zip_assets do
-    run "cd #{release_path}/public && zip -9 -r marker.zip marker"
+    run "cd #{release_path}/public && zip -q -9 -r marker.zip marker"
   end
 
   namespace :cache do
