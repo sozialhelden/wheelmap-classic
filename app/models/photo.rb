@@ -14,6 +14,9 @@ class Photo < ActiveRecord::Base
 
   validates :user_id, :poi_id, :presence => true
 
+  scope :with_user, :include => :user
+  scope :with_poi,  :include => :poi
+
   acts_as_api
 
   def around_api_response(api_template)
