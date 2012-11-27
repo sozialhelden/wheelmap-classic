@@ -11,7 +11,7 @@ ActiveAdmin.register Photo do
   index do
     column :id
     column :image do |photo|
-      image_tag photo.image.url(:thumb).to_s
+      link_to "Gallerie", photo.image.url(:gallery).to_s
     end
     column :user
     column :poi
