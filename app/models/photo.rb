@@ -28,6 +28,7 @@ class Photo < ActiveRecord::Base
 
   api_accessible :simple do |t|
     t.add :id
+    t.add :taken_on
     t.add :image_versions, :as => :images
   end
 
@@ -39,6 +40,10 @@ class Photo < ActiveRecord::Base
       i << {v => {:url => image_path(image.url(v).to_s), :width => image.width(v), :height => image.height(v)} }
     end
     i
+  end
+
+  def taken_on
+    (taken_at || created_at).to_i
   end
 
   protected
