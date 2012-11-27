@@ -40,6 +40,24 @@ class PhotoUploader < CarrierWave::Uploader::Base
     end
   end
 
+  version :thumb_iphone do
+    process :effectively_resize_to_fill => [80,56]
+    process :convert => 'jpg'
+
+    def full_filename(for_file = model.image.file)
+      "thumb_iphone.jpg"
+    end
+  end
+
+  version :thumb_iphone_retina do
+    process :effectively_resize_to_fill => [160,112]
+    process :convert => 'jpg'
+
+    def full_filename(for_file = model.image.file)
+      "thumb_iphone_retina.jpg"
+    end
+  end
+
   version :gallery do
     process :effectively_resize_to_limit => [600, 600]
     process :convert => 'jpg'
@@ -49,21 +67,39 @@ class PhotoUploader < CarrierWave::Uploader::Base
     end
   end
 
-  version :p720 do
-    process :effectively_resize_to_limit => [1280, 720]
+  version :gallery_iphone do
+    process :effectively_resize_to_limit => [480, 320]
     process :convert => 'jpg'
 
     def full_filename(for_file = model.image.file)
-      "p720.jpg"
+      "gallery_iphone.jpg"
     end
   end
 
-  version :p1080 do
-    process :effectively_resize_to_limit => [1920, 1080]
+  version :gallery_iphone_retina do
+    process :effectively_resize_to_limit => [960, 640]
     process :convert => 'jpg'
 
     def full_filename(for_file = model.image.file)
-      "p1080.jpg"
+      "gallery_iphone_retina.jpg"
+    end
+  end
+
+  version :gallery_ipad do
+    process :effectively_resize_to_limit => [1024, 768]
+    process :convert => 'jpg'
+
+    def full_filename(for_file = model.image.file)
+      "gallery_ipad.jpg"
+    end
+  end
+
+  version :gallery_ipad_retina do
+    process :effectively_resize_to_limit => [2048, 1536]
+    process :convert => 'jpg'
+
+    def full_filename(for_file = model.image.file)
+      "gallery_ipad_retina.jpg"
     end
   end
 
