@@ -30,8 +30,6 @@ after  'deploy:update_code',  'deploy:remove_all_unfinished_locales'
 after  'deploy:update_code',  'deploy:symlink_configs'
 
 after  'deploy',              'deploy:cache:clear'
-after  'deploy',              'deploy:zip_assets'
-
 
 task :safety_check do
   if rails_env.to_sym == :production
@@ -148,10 +146,6 @@ namespace :deploy do
     else
       puts "This task only runs in production env."
     end
-  end
-
-  task :zip_assets do
-    run "cd #{release_path}/public && zip -q -9 -r marker.zip marker"
   end
 
   namespace :cache do
