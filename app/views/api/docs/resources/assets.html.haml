@@ -1,0 +1,24 @@
+#api_docs
+
+  = render :partial => 'api/docs/resource_links'
+
+  %h2 Resource Assets
+  %article.doc-block
+    .resource
+      %h3
+        ="/api/assets"
+
+      %h6 Methods
+      .methods
+        .method
+          %h4 GET
+          %p Retrieve the assets collection.
+
+      %h4 Example request:
+      %pre http://wheelmap.org/api/assets?api_key=api_key
+
+
+  %h2#representations Representations
+  %article.doc-block
+    %h3#categories_representation_json Example assets representation. (application/json)
+    %pre=render :partial => 'assets.json'
