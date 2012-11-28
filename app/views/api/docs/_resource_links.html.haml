@@ -5,6 +5,7 @@
   %li
     = link_to 'Resources', api_docs_resources_path
     %ul
+      %li= link_to 'Assets', api_docs_resource_path(:id => 'assets')
       %li= link_to 'Categories', api_docs_resource_path(:id => 'categories')
       %li= link_to 'Locales', api_docs_resource_path(:id => 'locales')
       %li= link_to 'Nodes', api_docs_resource_path(:id => 'nodes')

@@ -75,6 +75,8 @@ Wheelmap::Application.routes.draw do
       resources :resources,        :only  => [:index, :show]
     end
 
+    resources :assets,      :only => [:index]
+
     resources :nodes,       :only  => [:index, :show, :update, :create] do
       collection do
         get :search

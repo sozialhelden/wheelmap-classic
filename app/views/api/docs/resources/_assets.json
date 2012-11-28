@@ -1,0 +1,27 @@
+{ "conditions":
+    {
+      "format":"json",
+      "page":1,
+      "per_page":5,
+    },
+  "meta":
+    {
+      "page":1,
+      "num_pages":1,
+      "item_count":2,
+      "item_count_total":2
+    },
+  "assets":[
+    {
+      "type":"marker",
+      "url":"http://wheelmap.org/marker.zip",
+      "license":"cc-by-sa",
+      "modified_at":1352367626
+    },{
+      "type":"icons",
+      "url":"http://wheelmap.org/icons.zip",
+      "license":"cc-by-sa",
+      "modified_at":1317548442
+    }
+  ]
+}
