@@ -7,6 +7,7 @@ class Photo < ActiveRecord::Base
   belongs_to :poi
   belongs_to :user, :counter_cache => true
   mount_uploader :image, PhotoUploader
+  process_in_background :image
 
   before_create :extract_date_time
 
