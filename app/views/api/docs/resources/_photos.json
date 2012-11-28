@@ -17,67 +17,58 @@
             "taken_on": 1353678018,
             "images": [
                 {
-                    "original": {
-                        "width": 4288,
-                        "height": 2848,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/original.jpg?1353426904"
-                    }
+                    "type": "original",
+                    "width": 4288,
+                    "height": 2848,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/original.jpg?1353426904"
                 },
                 {
-                    "gallery": {
-                        "width": 600,
-                        "height": 400,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/gallery.jpg?1353426904"
-                    }
+                    "type": "gallery",
+                    "width": 600,
+                    "height": 400,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/gallery.jpg?1353426904"
                 },
                 {
-                    "gallery_iphone": {
-                        "width": 480,
-                        "height": 320,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/gallery_iphone.jpg?1353426904"
-                    }
+                    "type": "gallery_iphone",
+                    "width": 480,
+                    "height": 320,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/gallery_iphone.jpg?1353426904"
                 },
                 {
-                    "gallery_iphone_retina": {
-                        "width": 960,
-                        "height": 640,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/gallery_iphone_retina.jpg?1353426904"
-                    }
+                    "type": "gallery_iphone_retina",
+                    "width": 960,
+                    "height": 640,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/gallery_iphone_retina.jpg?1353426904"
                 },
                 {
-                    "gallery_ipad": {
-                        "width": 1024,
-                        "height": 680,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/gallery_ipad.jpg?1353426904"
-                    }
+                    "type": "gallery_ipad",
+                    "width": 1024,
+                    "height": 680,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/gallery_ipad.jpg?1353426904"
                 },
                 {
-                    "gallery_ipad_retina": {
-                        "width": 2048,
-                        "height": 1350,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/gallery_ipad_retina.jpg?1353426904"
-                    }
+                    "type": "gallery_ipad_retina",
+                    "width": 2048,
+                    "height": 1350,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/gallery_ipad_retina.jpg?1353426904"
                 },
                 {
-                    "thumb": {
-                        "width": 100,
-                        "height": 100,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/thumb.jpg?1353426904"
-                    }
+                    "type": "thumb",
+                    "width": 100,
+                    "height": 100,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/thumb.jpg?1353426904"
                 },
                 {
-                    "thumb_iphone": {
-                        "width": 80,
-                        "height": 56,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/thumb_iphone.jpg?1353426904"
-                    }
+                    "type": "thumb_iphone",
+                    "width": 80,
+                    "height": 56,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/thumb_iphone.jpg?1353426904"
                 },
                 {
-                    "thumb_iphone_retina": {
-                        "width": 160,
-                        "height": 112,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/thumb_iphone_retina.jpg?1353426904"
-                    }
+                    "type": "thumb_iphone_retina",
+                    "width": 160,
+                    "height": 112,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/155/thumb_iphone_retina.jpg?1353426904"
                 }
             ]
         },
@@ -86,67 +77,58 @@
             "taken_on": 1353672018,
             "images": [
                 {
-                    "original": {
-                        "width": 4288,
-                        "height": 2848,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/original.jpg?1353426905"
-                    }
+                    "type": "original",
+                    "width": 4288,
+                    "height": 2848,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/original.jpg?1353426905"
                 },
                 {
-                    "gallery": {
-                        "width": 600,
-                        "height": 400,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/gallery.jpg?1353426905"
-                    }
+                    "type": "gallery",
+                    "width": 600,
+                    "height": 400,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/gallery.jpg?1353426905"
                 },
                 {
-                    "gallery_iphone": {
-                        "width": 480,
-                        "height": 320,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/gallery_iphone.jpg?1353426905"
-                    }
+                    "type": "gallery_iphone",
+                    "width": 480,
+                    "height": 320,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/gallery_iphone.jpg?1353426905"
                 },
                 {
-                    "gallery_iphone_retina": {
-                        "width": 960,
-                        "height": 640,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/gallery_iphone_retina.jpg?1353426905"
-                    }
+                    "type": "gallery_iphone_retina",
+                    "width": 960,
+                    "height": 640,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/gallery_iphone_retina.jpg?1353426905"
                 },
                 {
-                    "gallery_ipad": {
-                        "width": 1024,
-                        "height": 680,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/gallery_ipad.jpg?1353426905"
-                    }
+                    "type": "gallery_ipad",
+                    "width": 1024,
+                    "height": 680,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/gallery_ipad.jpg?1353426905"
                 },
                 {
-                    "gallery_ipad_retina": {
-                        "width": 2048,
-                        "height": 1360,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/gallery_ipad_retina.jpg?1353426905"
-                    }
+                    "type": "gallery_ipad_retina",
+                    "width": 2048,
+                    "height": 1360,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/gallery_ipad_retina.jpg?1353426905"
                 },
                 {
-                    "thumb": {
-                        "width": 100,
-                        "height": 100,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/thumb.jpg?1353426905"
-                    }
+                    "type": "thumb",
+                    "width": 100,
+                    "height": 100,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/thumb.jpg?1353426905"
                 },
                 {
-                    "thumb_iphone": {
-                        "width": 80,
-                        "height": 56,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/thumb_iphone.jpg?1353426905"
-                    }
+                    "type": "thumb_iphone",
+                    "width": 80,
+                    "height": 56,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/thumb_iphone.jpg?1353426905"
                 },
                 {
-                    "thumb_iphone_retina": {
-                        "width": 160,
-                        "height": 80,
-                        "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/thumb_iphone_retina.jpg?1353426905"
-                    }
+                    "type": "thumb_iphone_retina",
+                    "width": 160,
+                    "height": 80,
+                    "url": "http://asset0.staging.wheelmap.org/system/uploads/photo/000/000/156/thumb_iphone_retina.jpg?1353426905"
                 }
             ]
         }
