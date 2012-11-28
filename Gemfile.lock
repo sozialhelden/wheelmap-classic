@@ -92,6 +92,10 @@ GEM
       xpath (~> 0.1.4)
     carrierwave (0.5.8)
       activesupport (~> 3.0)
+    carrierwave-meta (0.0.4)
+      activesupport (>= 3.0)
+      carrierwave (>= 0.5.7)
+      mime-types
     childprocess (0.2.2)
       ffi (~> 1.0.6)
     chronic (0.6.7)
@@ -345,6 +349,7 @@ DEPENDENCIES
   capistrano-ext
   capybara
   carrierwave
+  carrierwave-meta
   compass (= 0.10.6)
   crewait!
   cucumber
