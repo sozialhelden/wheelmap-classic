@@ -6,6 +6,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   include CarrierWave::Meta
+  include CarrierWave::Backgrounder::Delay
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -28,7 +29,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+    "/images/fallback/#{version_name}_default.png"
   end
 
   # Create different versions of your uploaded files:
