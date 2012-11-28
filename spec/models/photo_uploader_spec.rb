@@ -3,7 +3,7 @@ require 'spec_helper'
 describe PhotoUploader do
 
   let :photo do
-    Factory.build(:photo)
+    @photo ||= Factory.create(:photo, :process_image_upload => true)
   end
 
   before do
@@ -17,9 +17,16 @@ describe PhotoUploader do
     @uploader.remove!
   end
 
-  context 'the thumb version' do
-    it "should scale down a landscape image to be exactly 100 by 100 pixels" do
+  context 'the versions' do
+
+    it "should scale down thumb to be exactly 100 by 100 pixels" do
+      # It's 1x1 because of the placeholder.jpg fixture file
       @uploader.thumb.should have_dimensions(100, 100)
+    end
+
+    it "should scale down galley to be no larger than 600 by 600 pixels" do
+      # It's 1x1 because of the placeholder.jpg fixture file
+      @uploader.gallery.should be_no_larger_than(600, 600)
     end
   end
 end
