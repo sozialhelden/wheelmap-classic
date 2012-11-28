@@ -1,5 +1,13 @@
 set :rails_env, :staging
 
+# Delayed Job
+require "delayed/recipes"
+before "deploy:restart", "delayed_job:stop"
+after  "deploy:restart", "delayed_job:start"
+
+after "deploy:stop",  "delayed_job:stop"
+after "deploy:start", "delayed_job:start"
+
 role :web, "176.9.63.170"                          # Your HTTP server, Apache/etc
 role :app, "176.9.63.170"                          # This may be the same as your `Web` server
 role :db,  "176.9.63.170", :primary => true # This is where Rails migrations will run
