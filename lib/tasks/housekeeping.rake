@@ -45,6 +45,14 @@ namespace :housekeeping do
     end
   end
 
+  desc 'Recalculate image meta information'
+  task :recalculate_image_meta => :environment do
+    Photo.find_each do |photo|
+      photo.image.store_meta
+      photo.save if photo.changed?
+    end
+  end
+
   desc 'Eliminate &#38; encodings from name and website'
   task :eliminate_ampersand => :environment do
     Poi.find_in_batches do |batch|
