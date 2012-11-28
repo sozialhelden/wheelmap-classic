@@ -46,6 +46,13 @@ namespace :housekeeping do
   end
 
   desc 'Recalculate image meta information'
+  task :recalculate_image_versions => :environment do
+    Photo.find_each do |photo|
+      photo.image.recreate_versions!
+    end
+  end
+
+  desc 'Recalculate image meta information'
   task :recalculate_image_meta => :environment do
     Photo.find_each do |photo|
       photo.image.store_meta
