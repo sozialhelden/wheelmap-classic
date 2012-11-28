@@ -34,10 +34,10 @@ class Photo < ActiveRecord::Base
 
   def image_versions
     i = []
-    i << {:original => {:url => image_path(image.url.to_s), :width => image.width(:original), :height => image.height(:original)} }
+    i << {:type => "original", :url => image_path(image.url.to_s), :width => image.width(:original), :height => image.height(:original)}
     image.versions.keys.each do |version|
       v = version.to_sym
-      i << {v => {:url => image_path(image.url(v).to_s), :width => image.width(v), :height => image.height(v)} }
+      i << {:type => v, :url => image_path(image.url(v).to_s), :width => image.width(v), :height => image.height(v) }
     end
     i
   end
