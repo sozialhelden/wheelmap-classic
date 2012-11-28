@@ -47,6 +47,7 @@ group :default do
   gem 'activeadmin'
   gem 'kaminari'
   gem 'carrierwave'
+  gem 'carrierwave-meta'
   gem 'rmagick'
   gem 'flash_cookie_session'
   gem 'exifr'

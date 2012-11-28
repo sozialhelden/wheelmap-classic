@@ -5,12 +5,15 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
+  include CarrierWave::Meta
 
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
 
+
   process :convert => 'jpg'
+  process :store_meta
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -34,6 +37,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   version :thumb do
     process :effectively_resize_to_fill => [100,100]
     process :convert => 'jpg'
+    process :store_meta
 
     def full_filename(for_file = model.image.file)
       "thumb.jpg"
@@ -43,6 +47,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   version :thumb_iphone do
     process :effectively_resize_to_fill => [80,56]
     process :convert => 'jpg'
+    process :store_meta
 
     def full_filename(for_file = model.image.file)
       "thumb_iphone.jpg"
@@ -52,6 +57,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   version :thumb_iphone_retina do
     process :effectively_resize_to_fill => [160,112]
     process :convert => 'jpg'
+    process :store_meta
 
     def full_filename(for_file = model.image.file)
       "thumb_iphone_retina.jpg"
@@ -61,6 +67,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   version :gallery do
     process :effectively_resize_to_limit => [600, 600]
     process :convert => 'jpg'
+    process :store_meta
 
     def full_filename(for_file = model.image.file)
       "gallery.jpg"
@@ -70,6 +77,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   version :gallery_iphone do
     process :effectively_resize_to_limit => [480, 320]
     process :convert => 'jpg'
+    process :store_meta
 
     def full_filename(for_file = model.image.file)
       "gallery_iphone.jpg"
@@ -79,6 +87,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   version :gallery_iphone_retina do
     process :effectively_resize_to_limit => [960, 640]
     process :convert => 'jpg'
+    process :store_meta
 
     def full_filename(for_file = model.image.file)
       "gallery_iphone_retina.jpg"
@@ -88,6 +97,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   version :gallery_ipad do
     process :effectively_resize_to_limit => [1024, 768]
     process :convert => 'jpg'
+    process :store_meta
 
     def full_filename(for_file = model.image.file)
       "gallery_ipad.jpg"
@@ -97,6 +107,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   version :gallery_ipad_retina do
     process :effectively_resize_to_limit => [2048, 1536]
     process :convert => 'jpg'
+    process :store_meta
 
     def full_filename(for_file = model.image.file)
       "gallery_ipad_retina.jpg"
@@ -104,23 +115,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   def dimension(version = :thumb)
-    width, height = `identify -format "%wx%h" #{versions[version].file.path}`.gsub(/\n/,'').split(/x/).map(&:to_i)
-  end
-
-  def width(version = :thumb)
-    if version.to_sym == :original
-      ::Magick::Image::read(path).first.columns
-    else
-      ::Magick::Image::read(self.send(version).path).first.columns
-    end
-  end
-
-  def height(version = :thumb)
-    if version.to_sym == :original
-      ::Magick::Image::read(path).first.rows
-    else
-      ::Magick::Image::read(self.send(version).path).first.rows
-    end
+    [self.send(version).width, self.send(version).height]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
