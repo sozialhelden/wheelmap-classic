@@ -49,6 +49,9 @@ namespace :housekeeping do
   task :recalculate_image_meta => :environment do
     Photo.find_each do |photo|
       photo.image.store_meta
+      photo.image.versions.map(&:first).each do |version|
+        photo.image.send(version).store_meta
+      end
       photo.save if photo.changed?
     end
   end
