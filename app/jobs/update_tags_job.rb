@@ -3,6 +3,9 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
   def self.enqueue(element_id, type, tags, user, source)
     raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
 
+    # Do not enqeue job if not in production or test environment
+    return unless Rails.env.production? || Rails.env.test?
+
     client = Rosemary::OauthClient.new(user.access_token)
     new(element_id, type, tags, user, client, source).tap do |job|
       Delayed::Job.enqueue(job)

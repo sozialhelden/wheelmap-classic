@@ -1,6 +1,10 @@
 class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client, :source)
+
   def self.enqueue(lat, lon, tags, user, source)
     raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
+
+    # Do not enqeue job if not in production or test environment
+    return unless Rails.env.production? || Rails.env.test?
 
     client = Rosemary::OauthClient.new(user.access_token)
     new(lat, lon, tags, user, client, source).tap do |job|
