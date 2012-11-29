@@ -90,7 +90,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       osm_id = osm_id * -1 if type == 'way'
       p = Poi.find osm_id
       p.wheelchair = tags["wheelchair"]
-      p.save!
+      p.save(:validate => false)
     rescue Exception => e
       logger.error e.message
       logger.error e.backtrace
