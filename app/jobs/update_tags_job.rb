@@ -94,7 +94,6 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
     rescue Exception => e
       logger.error e.message
       logger.error e.backtrace
-      raise e
     end
   end
 end
