@@ -71,6 +71,7 @@ group :test do
   gem 'launchy'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'syntax'
 end
 
 group :deployment do

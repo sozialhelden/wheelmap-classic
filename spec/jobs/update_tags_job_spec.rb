@@ -13,8 +13,43 @@ describe UpdateTagsJob do
   let(:changeset) { Rosemary::Changeset.new(:id => 12345) }
   let(:unedited_node) { Rosemary::Node.new(:tags => { 'addr:housenumber' => 10 }) }
 
-  subject { UpdateTagsJob.enqueue(1, 'node', { 'addr:housenumber' => 99 }, user, 'update_iphone') }
+  subject { UpdateTagsJob.enqueue(poi.id.abs, 'node', { 'addr:housenumber' => 99 }, user, 'update_iphone') }
 
+  it "should fail the job when element cannot be found" do
+    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
+    api = mock(:find_or_create_open_changeset => changeset)
+    Rosemary::Api.should_receive(:new).and_return(api)
+    api.should_receive(:find_element).with('node', node.id.abs).and_raise(Rosemary::NotFound.new('NOT FOUND'))
+    api.should_not_receive(:save)
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 0
+    failures.should eql 1
+  end
+
+  it "should fail the job if api is not reachable" do
+    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
+    api = mock(:find_or_create_open_changeset => changeset)
+    Rosemary::Api.should_receive(:new).and_return(api)
+    api.should_receive(:find_element).with('node', node.id.abs).and_raise(Rosemary::Unavailable.new('Unavailable'))
+    api.should_not_receive(:save)
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 0
+    failures.should eql 1
+
+  end
+
+  it "should not update when no changes have been made" do
+    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
+    unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
+    api = mock(:find_or_create_open_changeset => changeset)
+    Rosemary::Api.should_receive(:new).and_return(api)
+    api.should_receive(:find_element).with('node', node.id.abs).and_return(unedited_node)
+    api.should_not_receive(:save)
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
+
+  end
 
   it "should not update lat attribute in updating job" do
     node.lat, node.lon = 45, 10
@@ -30,7 +65,10 @@ describe UpdateTagsJob do
     Rosemary::Api.should_receive(:new).and_return(api)
     api.should_receive(:find_element).with('node', node.id.abs).and_return(unedited_node)
     api.should_receive(:save) { |node, _| node.lat.should eql 52.0; node.lon.should eql 13.0 }
-    update_node = job.perform
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
+
   end
 
   it "should not update the node when nothing has been changed" do
@@ -42,7 +80,10 @@ describe UpdateTagsJob do
     Rosemary::Api.should_receive(:new).and_return(api)
     api.should_receive(:find_element).with('node', node.id.abs).and_return(unedited_node)
     api.should_not_receive(:save)
-    update_node = job.perform
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
+
 
   end
 
@@ -54,18 +95,50 @@ describe UpdateTagsJob do
     api.should_receive(:save) { |node, _| node.tags['addr:housenumber'].should eql 99 }
     Counter.should_receive(:increment)
     User.any_instance.should_receive(:increment!).with(:edit_counter)
-    Delayed::Worker.new.work_off
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
+
   end
 
+  it "does not update tag counter when node did not change" do
+    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
+    unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
+    api = mock(:find_or_create_open_changeset => changeset)
+    Rosemary::Api.should_receive(:new).and_return(api)
+    api.should_receive(:find_element).with('node', node.id.abs).and_return(unedited_node)
+    Counter.should_not_receive(:increment)
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
+
+  end
+
+
   it "updates tag counter" do
-    job = UpdateTagsJob.enqueue(1, 'node', { 'wheelchair' => 'yes' }, user, 'update_iphone')
+    job = UpdateTagsJob.enqueue(poi.id.abs, 'node', { 'wheelchair' => 'no' }, user, 'update_iphone')
     api = mock(:find_or_create_open_changeset => changeset)
     Rosemary::Api.should_receive(:new).and_return(api)
     api.should_receive(:find_element).and_return(unedited_node)
     api.should_receive(:save)
-    Counter.should_receive(:increment)
     User.any_instance.should_receive(:increment!).with(:tag_counter)
-    Delayed::Worker.new.work_off
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
+  end
+
+  it "does not update tag counter when node did not change" do
+    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
+    unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
+    api = mock(:find_or_create_open_changeset => changeset)
+    Rosemary::Api.should_receive(:new).and_return(api)
+    api.should_receive(:find_element).with('node', node.id.abs).and_return(unedited_node)
+    Counter.should_not_receive(:increment)
+    User.any_instance.should_not_receive(:increment!)
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
+
   end
 
   it "updates the tags" do
@@ -77,7 +150,10 @@ describe UpdateTagsJob do
     Rosemary::Api.should_receive(:new).and_return(api)
     api.should_receive(:find_element).and_return(unedited_node)
     api.should_receive(:save) { |node, _| node.tags['addr:housenumber'].should eql 99 }
-    update_node = subject.perform
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
+
   end
 
   it "tries to reuse the users changeset" do
@@ -92,8 +168,11 @@ describe UpdateTagsJob do
       node.tags['addr:housenumber'].should eql 99
       another_changeset.should == changeset
     end
+    job = subject
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
 
-    update_node = subject.perform
   end
 
   it "updates the users' changeset id" do
@@ -104,7 +183,11 @@ describe UpdateTagsJob do
     api.should_receive(:find_element).and_return(unedited_node)
     api.should_receive(:save)
 
-    update_node = subject.perform
+    job = subject
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
+
 
     user.reload.changeset_id.should == changeset.id
   end
