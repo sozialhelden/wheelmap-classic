@@ -24,7 +24,10 @@ describe CreateNodeJob do
       node.tags['amenity'].should eq 'bar'
       node.tags['name'].should eq 'White horse'
     end
-    subject.perform
+    job = subject
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
   end
 
   it "increments the counter" do
@@ -32,7 +35,10 @@ describe CreateNodeJob do
     Rosemary::Api.should_receive(:new).and_return(api)
     api.should_receive(:create)
     User.any_instance.should_receive(:increment!).with(:create_counter)
-    subject.perform
+    job = subject
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
   end
 
 
@@ -42,7 +48,10 @@ describe CreateNodeJob do
     api.should_receive(:find_or_create_open_changeset).with(user.changeset_id, anything()).and_return(changeset)
     api.should_receive(:create).with(anything(), changeset)
 
-    subject.perform
+    job = subject
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
   end
 
   it "updates the users' changeset id" do
@@ -52,7 +61,10 @@ describe CreateNodeJob do
     Rosemary::Api.should_receive(:new).and_return(api)
     api.should_receive(:create)
 
-    subject.perform
+    job = subject
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
 
     user.reload.changeset_id.should == changeset.id
   end

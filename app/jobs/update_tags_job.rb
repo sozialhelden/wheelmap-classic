@@ -1,5 +1,4 @@
 class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :source)
-
   def self.enqueue(element_id, type, tags, user, source)
     raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
 
@@ -10,14 +9,12 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
   end
 
   def perform
-    begin
-      raise ArgumentError.new("Client cannot be nil") if client.nil?
+    raise ArgumentError.new("Client cannot be nil") if client.nil?
 
       logger.info "UpdateTagsJob -------------------------->"
       logger.info "User: #{user.try(:id)}"
 
-      api = Rosemary::Api.new(client)
-
+    begin
       element_to_compare = api.find_element(type, element_id)
 
       element = element_to_compare.dup
@@ -28,11 +25,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       comparison_value = (element_to_compare <=> element)
 
       # Ignore this job, as there are no changes to be saved
-      if comparison_value == 0
-        logger.info "IGNORE: #{type}:#{element_id} nothing has changed!"
-        HoptoadNotifier.notify(Exception.new('NotChanged'), :component => 'UpdateTagsJob#perform', :parameters => {:user => user.inspect, :element => element.inspect, :client => client})
-        return
-      end
+      raise Rosemary::Conflict.new('NotChanged') if comparison_value == 0
 
       changeset = api.find_or_create_open_changeset(user.changeset_id, "Modified via wheelmap.org")
       user.update_attribute(:changeset_id, changeset.id)
@@ -40,20 +33,21 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       api.save(element, changeset)
 
       Counter.increment(source)
-
-      # Check if the job updates the wheelchair tag only
-      if tags.keys == ['wheelchair']
+      if update_wheelchair?
         user.increment!(:tag_counter)
+        update_poi!
       else
         user.increment!(:edit_counter)
       end
     rescue Rosemary::Conflict => conflict
+      logger.info "IGNORE: #{type}:#{element_id} nothing has changed!"
       # These changes have already been made, so dismiss this update!
       HoptoadNotifier.notify(conflict, :component => 'UpdateTagsJob#perform', :parameters => {:user => user.inspect, :element => element.inspect, :client => client})
-    rescue Exception => e
-      HoptoadNotifier.notify(e, :component => 'UpdateTagsJob#perform', :action => 'perform', :parameters => {:user => user.inspect, :element => element.inspect, :client => client.inspect})
-      raise e
     end
+  end
+
+  def api
+    @api ||= Rosemary::Api.new(client)
   end
 
   def logger
@@ -66,15 +60,41 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
   def before(job)
   end
 
-  def after(job)
-  end
-
   def success(job)
   end
 
-  def error(job, exception)
+  def error(job, e)
+    logger.error "ERROR: "
+    HoptoadNotifier.notify(e, :action => 'perform',
+                              :component => 'UpdateTagsJob',
+                              :parameters => {
+                                :user => user.inspect,
+                                :element_id => element_id.inspect,
+                                :type => type.inspect,
+                                :client => client.inspect
+                              })
   end
 
-  def failure
+  def after(job)
+  end
+
+  def update_wheelchair?
+    # Check if the job updates the wheelchair tag only
+    tags.keys == ['wheelchair']
+  end
+
+  def update_poi!
+    begin
+      logger.info "SET poi to new wheelchair status: #{tags["wheelchair"]}"
+      osm_id = element_id
+      osm_id = osm_id * -1 if type == 'way'
+      p = Poi.find osm_id
+      p.wheelchair = tags["wheelchair"]
+      p.save!
+    rescue Exception => e
+      logger.error e.message
+      logger.error e.backtrace
+      raise e
+    end
   end
 end
