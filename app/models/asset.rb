@@ -8,7 +8,7 @@ class Asset
   include ActionView::Helpers::AssetTagHelper
 
 
-  attr_accessor :name
+  attr_accessor :id, :name
 
   acts_as_api
 
@@ -20,6 +20,7 @@ class Asset
   end
 
   api_accessible :simple do |template|
+    template.add :id
     template.add :name
     template.add :modified_at
     template.add :license
