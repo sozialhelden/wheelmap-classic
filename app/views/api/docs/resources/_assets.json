@@ -13,11 +13,13 @@
     },
   "assets":[
     {
+      "id":1,
       "type":"marker",
       "url":"http://wheelmap.org/marker.zip",
       "license":"cc-by-sa",
       "modified_at":1352367626
     },{
+      "id":2,
       "type":"icons",
       "url":"http://wheelmap.org/icons.zip",
       "license":"cc-by-sa",
