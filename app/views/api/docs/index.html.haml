@@ -52,6 +52,11 @@
         %td .json
         %td JavaScript Object Notation
       %tr
+        %td JSONP
+        %td application/json
+        %td .json
+        %td JSON with padding
+      %tr
         %td XML
         %td application/xml
         %td .xml
@@ -82,6 +87,12 @@
         %th per_page
         %td integer
         %td For pagination, how many results to return per page. Default is 200. Max is 500.
+      %tr
+        %th callback
+        %td string
+        %td
+          %b Note: For JSONP only!
+          Name of the method you want to call locally with the result of the API
 
   %h3 HTTP Methods
   %p RESTful APIs use standard HTTP methods to denote actions against a resource:
@@ -101,6 +112,10 @@
   %h3 Standard Response Format
   %p Each API response is wrapped in a standard structure that holds the results of the API call, plus metadata about the request:
   %pre= render :partial => 'api/docs/standard_response.json'
+
+  %h3 JSONP Data
+  %p The Data is returned using JSON, but the return value is wrapped in a JavaScript method call. The first argument to the method is the result of the API call, the second is the API Response Code. This makes it easy to check, if the call was successfull, or not.
+  %pre= render :partial => 'api/docs/standard_response.jsonp'
 
   %h4 conditions
   %p conditions echoes the parameters that were passed into the request. This could be filters, format, pagination and so on.
