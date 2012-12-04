@@ -1108,15 +1108,33 @@ dd {
   border: 1px solid #cccccc;
 }
 /* line 12, ../../app/stylesheets/partials/nodes/_map.sass */
+#map_wrapper #minimap .olControlScaleLine {
+  left: 10px;
+  bottom: 15px;
+}
+/* line 16, ../../app/stylesheets/partials/nodes/_map.sass */
+#map_wrapper #minimap .olControlAttribution {
+  bottom: auto;
+  top: 10px;
+}
+/* line 20, ../../app/stylesheets/partials/nodes/_map.sass */
+#map_wrapper #minimap .olControlPermalink {
+  bottom: 1em;
+}
+/* line 22, ../../app/stylesheets/partials/nodes/_map.sass */
+#map_wrapper #minimap .olControlPermalink a {
+  text-decoration: underline;
+}
+/* line 26, ../../app/stylesheets/partials/nodes/_map.sass */
 #map_wrapper a.magnify {
   padding-right: 20px;
 }
-/* line 15, ../../app/stylesheets/partials/nodes/_map.sass */
+/* line 29, ../../app/stylesheets/partials/nodes/_map.sass */
 #map_wrapper a.hide {
   display: none;
 }
 
-/* line 18, ../../app/stylesheets/partials/nodes/_map.sass */
+/* line 32, ../../app/stylesheets/partials/nodes/_map.sass */
 #minimap.create-node {
   cursor: crosshair;
 }
