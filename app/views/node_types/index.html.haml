@@ -6,6 +6,7 @@
     %th=t('wheelchairstatus.limited')
     %th=t('wheelchairstatus.no')
     %th=t('wheelchairstatus.unknown')
+    %th='Icon'
     %th='Key - Value'
     %th='Amount'
   - @node_types.group_by(&:category).each do |category, node_types|
