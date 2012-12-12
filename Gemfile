@@ -48,7 +48,7 @@ group :default do
 end
 
 group :test, :development do
-  gem 'rspec-rails', "2.8"
+  gem 'rspec-rails', "2.12.0"
   gem 'spork'
   gem 'rb-fsevent'
   gem 'guard'
@@ -64,7 +64,7 @@ group :test do
   gem "capybara"  # on mac, you need sudo port install libffi
   gem 'cucumber'
   gem 'cucumber-rails'
-  gem 'rspec'
+  gem 'rspec', "2.12.0"
   gem 'autotest'
   gem 'nokogiri'
   gem 'pickle'
