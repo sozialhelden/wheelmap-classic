@@ -54,7 +54,7 @@ group :test, :development do
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-spork'
-  gem 'guard-cucumber'
+  gem 'guard-cucumber', "1.2.2"
   gem 'ruby-debug'
 end
 
@@ -62,7 +62,7 @@ group :test do
   gem 'webmock'
   gem 'factory_girl_rails'
   gem "capybara"  # on mac, you need sudo port install libffi
-  gem 'cucumber'
+  gem 'cucumber', "1.2.1"
   gem 'cucumber-rails'
   gem 'rspec', "2.12.0"
   gem 'autotest'
