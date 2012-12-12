@@ -39,7 +39,7 @@ class UsersController < ApplicationController
       flash[:notice] = t('flash.actions.update.notice', :resource_name => User.model_name.human)
       flash[:notice] = t('devise.confirmations.send_instructions') if email_changed
       sign_in(@user, :bypass => true)
-      redirect_to edit_user_path(@user.id)
+      redirect_to edit_profile_path(@user.id)
     else
       flash.now[:alert] = @user.errors.full_messages.to_sentence
       render :action => 'edit'
@@ -68,7 +68,7 @@ class UsersController < ApplicationController
 
   def reset_token
     current_user.reset_authentication_token! if current_user.authentication_token
-    redirect_to edit_user_path(current_user.id)
+    redirect_to edit_profile_path(current_user.id)
     return
   end
 
