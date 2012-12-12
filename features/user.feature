@@ -1,14 +1,14 @@
 Feature: User feature
   In order to change my password
   As a registered user
-  I want to visit my user page
+  I want to visit my profile page
 
   Background:
     Given a user "horst" exists with email: "horst@wheelmap.org", password: "password", password_confirmation: "password", confirmed_at: "10.10.1999", osm_id: "174"
     And I am logged in with email: "horst@wheelmap.org", password: "password"
 
   @omniauth_test
-  Scenario: I want to edit my user
+  Scenario: I want to edit my profile
     And I am on the last user's edit page
     Then I should see "E-Mail"
     And I should see "Vorname"
@@ -16,7 +16,7 @@ Feature: User feature
     And I should see "Passwort"
     And I should see "Passwort wiederholen"
 
-  @omniauth_test @wip
+  @omniauth_test
   Scenario: I want to change my password
     And I am on the last user's edit page
     When I fill in "Passwort" with "new_password"
