@@ -9,8 +9,9 @@ Feature: Find, update and create nodes via API
     And that poi has the following tags
       | foo | bar |
 
+  @omniauth_test
   Scenario: I want to update an existing node
-    Given a user: "editor" exists with email: "editor@wheelmap.org", password: "123456", password_confirmation: "123456", confirmed_at: "10.10.1999", oauth_token: "oauth_token", oauth_secret: "oauth_secret"
+    Given a user: "editor" exists with email: "editor@wheelmap.org", password: "123456", password_confirmation: "123456", confirmed_at: "10.10.1999", oauth_token: "oauth_token", oauth_secret: "oauth_secret", osm_id: "174"
     And user "editor" should be app_authorized
     And I am logged in with email: "editor@wheelmap.org", password: "123456"
     And I am on that poi's page

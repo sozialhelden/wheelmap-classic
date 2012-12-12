@@ -8,15 +8,21 @@ Given /^I am not logged in$/ do
 end
 
 Given /^I am logged in with email: "([^"]*)", password: "([^"]*)"$/ do |email, password|
-  steps %Q{
-    When I go to the sign_in page
-    And I fill in "E-Mail" with "#{email}"
-    And I fill in "Passwort" with "#{password}"
-    And I check "Eingeloggt bleiben?"
-    And I press "Login"
-    And I should see "#{email}"
-  }
+  visit new_user_session_path
+  visit '/users/auth/osm'
+  visit '/users/auth/osm/callback'
 end
+
+# Given /^I am logged in with email: "([^"]*)", password: "([^"]*)"$/ do |email, password|
+#   steps %Q{
+#     When I go to the sign_in page
+#     And I fill in "E-Mail" with "#{email}"
+#     And I fill in "Passwort" with "#{password}"
+#     And I check "Eingeloggt bleiben?"
+#     And I press "Login"
+#     And I should see "Profil"
+#   }
+# end
 
 Given /^a(n| non activated) user with email "([^"]*)" and password "([^"]*)"$/ do |activated, email, password|
   @user = User.create!(:email => email, :password => password, :password_confirmation => password)

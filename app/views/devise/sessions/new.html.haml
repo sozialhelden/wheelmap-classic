@@ -10,7 +10,7 @@
     = link_to '/users/auth/osm' do
       = image_tag('openstreetmap_logo.png')
 
-    =link_to t('.sign_in_with', :kind => 'OpenstreetMap'), '/users/auth/osm', :class => 'button'
+    =link_to t('.sign_in_with', :kind => 'OpenstreetMap'), user_omniauth_authorize_path(:osm), :class => 'button'
 
   %p
     =t('.no_osm_account')
