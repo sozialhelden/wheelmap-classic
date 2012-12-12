@@ -33,6 +33,7 @@ Spork.prefork do
   # Remove this line if your app doesn't have a database.
   # For some databases (like MongoDB and CouchDB) you may need to use :truncation instead.
   DatabaseCleaner.strategy = :transaction
+  DatabaseCleaner.clean_with(:truncation)
 
     # Loading more in this block will cause your tests to run faster. However,
     # if you change any configuration or code from libraries loaded here, you'll
