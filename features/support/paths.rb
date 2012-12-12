@@ -55,7 +55,7 @@ module NavigationHelpers
 
     when /the last user's edit page/
       user = User.last
-      "/profile/#{user.to_param}/edit"
+      "/users/#{user.to_param}/edit"
 
     when /^#{capture_model}(?:'s)? page$/                           # eg. the forum's page
       r =  $1.gsub(/poi/, 'node')
