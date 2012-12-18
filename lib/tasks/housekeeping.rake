@@ -62,7 +62,7 @@ namespace :housekeeping do
 
   desc "Remove all unfinished translations"
   task :remove_all_unfinished_locales do
-    WHITELIST = %w(ar bg da de el en es fr is it ja ko lv pl ru se tlh tr)
+    WHITELIST = %w(ar bg da de el en es fr is it ja ko lv pl pt-br ru se tlh tr)
     Dir['config/locales/*.yml'].each do |path|
        basename =  File.basename(path, ".yml")
 
