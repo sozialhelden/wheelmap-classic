@@ -61,7 +61,17 @@
       .methods
         .method
           %h4 POST
-          %p Upload a new Photo for the given node. NOTE: This post must be submitted as a multipart Request, as the payload does not fit into one packet.
+          %p Upload a new Photo for the given node. NOTE: This post must be submitted as a <em>multipart Request</em>, as the payload does not fit into one packet. The Content-Type can be either: "image/jpg", "image/gif", "image/png" or "image/tif"
+          %p
+            See the following links how it is done on Android and iOS Devices:
+            %br
+            %ul
+              %li
+                %a{:href => "http://stackoverflow.com/questions/8042360/nsdata-and-uploading-images-via-post-in-ios#answer-8043522"}
+                  Photo upload with iOS Example
+              %li
+                %a{:href => "http://blog.tacticalnuclearstrike.com/2010/01/using-multipartentity-in-android-applications/"}
+                  Photo upload with Android Example
           %h6 request query parameter
           %table
             %thead
@@ -73,9 +83,9 @@
               %tr.odd
                 %td photo*
                 %td file
-                %td The photo you want to upload.
+                %td The photo you want to upload. This must be part of the HTTP Multipart POST Body.
                 %h4 Example request:
-                %pre http://wheelmap.org/api/nodes/123/photos?api_key=api_key&photo=File:///var/folders/v9ds5x297nx6xv1jth1013bw0000gn/image.jpg
+                %pre http://wheelmap.org/api/nodes/123/photos?api_key=api_key
 
           %h4#photos_representation_json Example photo representation. (application/json)
           %pre= {:message => 'OK'}.to_json
