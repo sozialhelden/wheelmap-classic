@@ -224,6 +224,9 @@ sk:
         notice: "%{resource_name} už neexistuje\n"
       update:
         notice: "Úspešne ste zmenili %{resource_name}"
+    photos:
+      destroy:
+        notice: "Obrázok bol úspešne zmazaný"
   form:
     show_fully_accessible_places: "Prístupné pre vozíčkarov"
     show_limited_accessible_places: "čiastočne prístupne pre vozíčkarov"
@@ -283,6 +286,7 @@ sk:
       logout: "Odhlásiť sa"
       newsletter: Spravodaj
       press: Tlač
+      profile: Profil
       suggestions: Návrhy
       what_is_barrier_free: "Čo to znamená \"prístupné pre vozíčkarov\"?"
       what_is_wheelmap: "Čo je to wheelmap?"
@@ -390,6 +394,7 @@ sk:
         back: späť
         large_map: Zväčšiť
         listing: "Všetky miesta typu  '%{type}' v %{city}"
+        upload: "Nahrať obrázok"
       more_data_from: "O tomto mieste je viac údajov, skontroloval:"
       show-in-osm: OpenStreetMap
     update:
@@ -671,6 +676,9 @@ sk:
         headline: "Vitajte na wheelmap"
         set_password_for_mobile: "Máte komunikátor? Určite si heslo aby ste mohli Wheelmap používať aj na cestách vo vašom iPhone alebo telefóne s Androidom."
         text: "Ako vás môžeme kontaktovať? Tieto údaje môžete kedykoľvek zmeniť na svojom profile."
+    edit:
+      headline:
+        your_images: "Vaše obrázky"
   wheelchairstatus:
     limited: "čiastočne prístupné pre vozíčkarov"
     ? "no"
