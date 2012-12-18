@@ -143,9 +143,8 @@ namespace :deploy do
   task :remove_all_unfinished_locales do
     if rails_env.to_sym == :production
       run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake housekeeping:remove_all_unfinished_locales"
-      run "find #{shared_path} -name 'pt-BR.yml' -delete"
-      run "find #{shared_path} -name 'zh_cn.yml' -delete"
-      zh_cn
+      run "find #{shared_path}/bundle -name 'pt-BR.yml' -delete"
+      run "find #{shared_path}/bundle -name 'zh_cn.yml' -delete"
     else
       puts "This task only runs in production env."
     end
