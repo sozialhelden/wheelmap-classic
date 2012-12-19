@@ -5,11 +5,12 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!,        :except => :authenticate
   before_filter :authenticate_mobile_user,  :only => :authenticate
   before_filter :authenticate_mobile_app,   :only => :authenticate
-  before_filter :require_owner, :only => [:edit, :update, :reset_token, :after_signup_edit, :after_signup_update]
+  before_filter :require_owner, :only => [:edit, :update, :reset_token, :after_signup_edit, :after_signup_update, :terms]
 
   before_filter :remove_password_from_params_if_blank, :only => :update
 
   before_filter :authenticate_admin!, :only => :newsletter
+  before_filter :terms_accepted, :only => :terms
 
   rescue_from OAuth::Unauthorized, :with => :unauthorized
 
@@ -66,6 +67,21 @@ class UsersController < ApplicationController
     render :json => {:id => @user.id}.to_json, :status => 200
   end
 
+  def terms
+    @accepted = (params[:user][:terms] == "1")
+    if @accepted
+      Rails.logger.info "ACCEPTED"
+      current_user.update_attribute(:terms, :true)
+      redirect_to session.delete(:user_return_to)
+    else
+      # show terms page again if user did not accept terms
+      Rails.logger.info "REJECTED"
+      current_user.errors.add(:terms, :accepted) unless @accepted
+      flash.now[:alert] = current_user.errors.full_messages.to_sentence
+      render :template => 'terms/index'
+    end
+  end
+
   def reset_token
     current_user.reset_authentication_token! if current_user.authentication_token
     redirect_to edit_profile_path(current_user.id)
@@ -73,6 +89,15 @@ class UsersController < ApplicationController
   end
 
   protected
+
+  def terms_accepted
+    if current_user.terms?
+      # Redirect back if user accepted the terms already
+      current_user.errors.add(:terms, :already_confirmed)
+      flash[:alert] = current_user.errors.full_messages.to_sentence
+      redirect_to :back
+    end
+  end
 
   def require_owner
     unless params[:id].to_i == current_user.id
