@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
     :trackable, :validatable, :encryptable, :omniauthable, :encryptor => :sha1
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter, :first_name, :last_name, :osm_username
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter, :first_name, :last_name, :osm_username, :terms
 
   validates :password, :confirmation =>true
 
@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
 
   before_save :send_email_confirmation,
     :unless => :new_record?, :if => :email_changed?
+
+  before_save :set_accepted_timestamp, :if => :terms? && :terms_changed?
 
   has_many :photos
 
@@ -110,6 +112,10 @@ class User < ActiveRecord::Base
     api = create_authorized_api
     update_attribute(:osm_username, api.find_user.display_name)
   rescue Rosemary::Error
+  end
+
+  def set_accepted_timestamp
+    self.accepted_at = Time.now if self.terms?
   end
 
   def notify_admins
