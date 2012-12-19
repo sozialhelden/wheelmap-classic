@@ -48,6 +48,9 @@ OpenLayers.Layer.OSM.Mapnik = OpenLayers.Class(OpenLayers.Layer.OSM, {
             "http://tile2.wheelmap.org/${z}/${x}/${y}.png",
             "http://tile3.wheelmap.org/${z}/${x}/${y}.png"
 /*
+            "http://otile1.mqcdn.com/tiles/1.0.0/map/${z}/${x}/${y}.png",
+            "http://otile2.mqcdn.com/tiles/1.0.0/map/${z}/${x}/${y}.png",
+            "http://otile3.mqcdn.com/tiles/1.0.0/map/${z}/${x}/${y}.png"
             "http://a.tile.osm.org/${z}/${x}/${y}.png",
             "http://b.tile.osm.org/${z}/${x}/${y}.png",
             "http://c.tile.osm.org/${z}/${x}/${y}.png"
