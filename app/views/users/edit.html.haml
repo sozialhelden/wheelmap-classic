@@ -40,3 +40,5 @@
       = form.buttons do
         = form.submit t('devise.destroy.link'), :onclick => "if(!confirm('#{t('devise.destroy.confirm')}')){ return false; }"
 
+  %hr
+  =link_to 'Terms', terms_path
