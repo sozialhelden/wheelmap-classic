@@ -34,6 +34,8 @@ Wheelmap::Application.routes.draw do
     end
   end
 
+  resources :terms, :only => :index
+
   resources :node_types, :only => :index
   resources :search, :only => :index
   resources :feeds, :only => :index
@@ -67,8 +69,9 @@ Wheelmap::Application.routes.draw do
     end
     member do
       post :reset_token
-      get :after_signup_edit
-      put :after_signup_update
+      get  :after_signup_edit
+      put  :after_signup_update
+      put :terms
     end
   end
 
