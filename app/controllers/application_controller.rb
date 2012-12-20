@@ -42,6 +42,20 @@ class ApplicationController < ActionController::Base
     {:locale => I18n.locale}
   end
 
+  def authenticate_terms!
+    unless current_user.terms
+      current_user.errors.add(:terms, :accepted)
+      respond_to do |format|
+        format.html{
+          flash[:alert] = current_user.errors.full_messages.to_sentence
+          redirect_to terms_path
+        }
+        format.json{render_exception(Exception.new(current_user.errors.full_messages.to_sentence), 403)}
+        format.xml{render_exception(Exception.new(current_user.errors.full_messages.to_sentence), 403)}
+      end
+    end
+  end
+
   def authenticate_application!
     unless current_user.app_authorized?
       if mobile_app?
