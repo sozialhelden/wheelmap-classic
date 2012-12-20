@@ -37,10 +37,10 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
 
       Counter.increment(source)
       if update_wheelchair?
-        user.increment!(:tag_counter)
+        user.increment!(:tag_counter) if user.terms?
         update_poi!
       else
-        user.increment!(:edit_counter)
+        user.increment!(:edit_counter) if user.terms?
       end
     rescue Rosemary::Conflict => conflict
       logger.info "IGNORE: #{type}:#{element_id} nothing has changed!"
