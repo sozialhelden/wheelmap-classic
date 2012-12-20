@@ -9,6 +9,7 @@ class TermsController < ApplicationController
 
   def store_location
     Rails.logger.info("REF: #{request.referer}")
-    session[:user_return_to] = request.referer if request.referer != terms_url
+    session[:user_return_to] = request.referer # unless request.referer == terms_url
+    Rails.logger.info(session[:user_return_to])
   end
 end
