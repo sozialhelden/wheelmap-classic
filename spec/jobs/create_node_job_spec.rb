@@ -41,6 +41,18 @@ describe CreateNodeJob do
     failures.should eql 0
   end
 
+  it "does not increment counter if terms not accepted" do
+    user = Factory.create(:authorized_user, :terms => false)
+    job = CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'yes', 'amenity' => 'bar', 'name' => 'White horse' }, user, 'create_iphone')
+    api = mock(:find_or_create_open_changeset => changeset)
+    Rosemary::Api.should_receive(:new).and_return(api)
+    api.should_receive(:create)
+    User.any_instance.should_not_receive(:increment!)
+    successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
+  end
+
 
   it "tries to find a changeset for the user" do
     Rosemary::Api.should_receive(:new).and_return(api = mock())
