@@ -70,12 +70,11 @@ class UsersController < ApplicationController
   def terms
     @accepted = (params[:user][:terms] == "1")
     if @accepted
-      Rails.logger.info "ACCEPTED"
-      current_user.update_attribute(:terms, :true)
+      current_user.terms = @accepted
+      current_user.save(:validation => false)
       redirect_to session.delete(:user_return_to)
     else
       # show terms page again if user did not accept terms
-      Rails.logger.info "REJECTED"
       current_user.errors.add(:terms, :accepted) unless @accepted
       flash.now[:alert] = current_user.errors.full_messages.to_sentence
       render :template => 'terms/index'

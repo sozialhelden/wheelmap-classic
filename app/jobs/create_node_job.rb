@@ -25,7 +25,8 @@ class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client, :source)
     api.create(node, changeset)
 
     Counter.increment(source)
-    user.increment!(:create_counter)
+    user.increment!(:create_counter) if user.terms?
+    true
   end
 
   def node
