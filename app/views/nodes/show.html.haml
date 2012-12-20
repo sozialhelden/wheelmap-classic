@@ -87,7 +87,7 @@
       = semantic_form_for [@node, Photo.new], :url => node_photos_path(@node), :html => { :multipart => true } do |form|
         = form.file_field :image, :rel => node_photos_path(@node)
     - else
-      = link_to "Bilder hochladen", terms_path, :class => 'button'
+      = link_to t('nodes.show.link.upload'), terms_path, :class => 'button'
 
 
   =javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false"
