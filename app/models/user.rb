@@ -42,6 +42,12 @@ class User < ActiveRecord::Base
     self.devise_mailer.confirmation_instructions(self).deliver
   end
 
+  # Do not update tracked fields if user did not accept terms.
+  def update_tracked_fields_with_terms!(request)
+    update_tracked_fields_without_terms!(request) if terms?
+  end
+  alias_method_chain :update_tracked_fields!, :terms
+
   def password_required?
     false
   end
