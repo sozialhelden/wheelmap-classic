@@ -71,12 +71,12 @@ namespace :unicorn do
   after "deploy:restart", "unicorn:restart"
   after "deploy:start", "unicorn:start"
   after "deploy:stop", "unicorn:stop"
-  after "deploy:symlink", "deploy:create_release_info"
+  after "deploy:create_symlink", "deploy:create_release_info"
 end
 
 namespace :deploy do
-  after  "deploy:symlink", "deploy:git:push_deploy_tag"
-  after  "deploy:symlink", "deploy:newrelic:notify_deployment"
+  after  "deploy:create_symlink", "deploy:git:push_deploy_tag"
+  after  "deploy:create_symlink", "deploy:newrelic:notify_deployment"
   before "deploy:cleanup", "deploy:git:cleanup_deploy_tag"
 
   namespace :git do
