@@ -29,6 +29,11 @@ pid "#{shared_path}/pids/unicorn.pid"
 stdout_path "#{shared_path}/log/unicorn.stdout.log"
 stderr_path "#{shared_path}/log/unicorn.stderr.log"
 
+# The new check_client_connection option allows unicorn to detect
+# most disconnected local clients before potentially expensive
+# application processing begins.
+check_client_connection true
+
 before_fork do |server, worker|
   # This option works in together with preload_app true setting
   # What is does is prevent the master process from holding
