@@ -1,14 +1,14 @@
 source 'http://rubygems.org'
 
 group :default do
-  gem 'rails', '3.0.17'
-  gem 'mysql2', '~>0.2.18'
+  gem 'rails', '3.0.18'
+  gem 'mysql2', '<0.3.0'
   gem 'oauth'
   gem 'devise'
   gem 'compass', '0.10.6'
   gem 'redgreengrid', :git => 'git@github.com:christoph-buente/redgreengrid.git'
-  gem 'haml'
-  gem 'sass'
+  gem 'haml', "3.1.4"
+  gem 'sass', "3.1.12"
   gem 'geoip'
   gem 'formtastic', '1.2.4'
   gem 'delayed_job'
@@ -60,8 +60,8 @@ end
 
 group :test do
   gem 'webmock'
-  gem 'factory_girl_rails'
-  gem "capybara"  # on mac, you need sudo port install libffi
+  gem 'factory_girl_rails', "1.6.0"
+  gem "capybara", "1.1.1"  # on mac, you need sudo port install libffi
   gem 'cucumber', "1.2.1"
   gem 'cucumber-rails'
   gem 'rspec', "2.12.0"
