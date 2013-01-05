@@ -76,7 +76,7 @@ CREATE TABLE `counters` (
   `search_iphone` int(11) DEFAULT '0',
   `search_android` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `delayed_jobs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -96,7 +96,7 @@ CREATE TABLE `delayed_jobs` (
   `queue` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `delayed_jobs_priority` (`priority`,`run_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=286 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `experiments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -139,13 +139,32 @@ CREATE TABLE `photos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `caption` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `image_processing` tinyint(1) DEFAULT NULL,
   `poi_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `taken_at` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
+  `image_width` int(11) DEFAULT NULL,
+  `image_height` int(11) DEFAULT NULL,
+  `image_gallery_ipad_retina_width` int(11) DEFAULT NULL,
+  `image_gallery_ipad_retina_height` int(11) DEFAULT NULL,
+  `image_thumb_width` int(11) DEFAULT NULL,
+  `image_thumb_height` int(11) DEFAULT NULL,
+  `image_thumb_iphone_width` int(11) DEFAULT NULL,
+  `image_thumb_iphone_height` int(11) DEFAULT NULL,
+  `image_thumb_iphone_retina_width` int(11) DEFAULT NULL,
+  `image_thumb_iphone_retina_height` int(11) DEFAULT NULL,
+  `image_gallery_iphone_width` int(11) DEFAULT NULL,
+  `image_gallery_iphone_height` int(11) DEFAULT NULL,
+  `image_gallery_iphone_retina_width` int(11) DEFAULT NULL,
+  `image_gallery_iphone_retina_height` int(11) DEFAULT NULL,
+  `image_gallery_ipad_width` int(11) DEFAULT NULL,
+  `image_gallery_ipad_height` int(11) DEFAULT NULL,
+  `image_gallery_width` int(11) DEFAULT NULL,
+  `image_gallery_height` int(11) DEFAULT NULL,
+  `image_processing` tinyint(1) DEFAULT NULL,
+  `image_tmp` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=303 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `pois` (
   `osm_id` int(11) NOT NULL,
@@ -267,12 +286,15 @@ CREATE TABLE `users` (
   `edit_counter` int(11) NOT NULL DEFAULT '0',
   `osm_username` varchar(255) DEFAULT NULL,
   `tag_counter` int(11) NOT NULL DEFAULT '0',
+  `photos_count` int(11) NOT NULL DEFAULT '0',
+  `terms` tinyint(1) NOT NULL DEFAULT '0',
+  `accepted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_email` (`email`),
   UNIQUE KEY `index_users_on_authentication_token` (`authentication_token`),
   KEY `index_users_on_oauth_token` (`oauth_token`),
   KEY `index_users_on_wants_newsletter` (`wants_newsletter`)
-) ENGINE=InnoDB AUTO_INCREMENT=11492 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11494 DEFAULT CHARSET=latin1;
 
 INSERT INTO schema_migrations (version) VALUES ('20100520103719');
 
@@ -401,3 +423,9 @@ INSERT INTO schema_migrations (version) VALUES ('20121106102638');
 INSERT INTO schema_migrations (version) VALUES ('20121106115711');
 
 INSERT INTO schema_migrations (version) VALUES ('20121107153445');
+
+INSERT INTO schema_migrations (version) VALUES ('20121113125237');
+
+INSERT INTO schema_migrations (version) VALUES ('20121128105658');
+
+INSERT INTO schema_migrations (version) VALUES ('20121219120846');
