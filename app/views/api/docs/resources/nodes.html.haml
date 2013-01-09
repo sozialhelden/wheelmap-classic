@@ -123,7 +123,9 @@
               %tr.odd
                 %td name*
                 %td string
-                %td The node's name.
+                %td
+                  The node's name.
+                  %b NOTE: A name is mandatory when creating a new node.
               %tr.even
                 %td type*
                 %td string
@@ -194,25 +196,27 @@
                 %th.desc Description
             %tbody
               %tr.odd
-                %td name*
-                %td string
-                %td The node's name.
-              %tr.even
                 %td type*
                 %td string
                 %td The node's type, must be one of the available node_type ids
-              %tr.odd
+              %tr.even
                 %td lat*
                 %td float
                 %td The node's latitude in degrees as float.
-              %tr.even
+              %tr.odd
                 %td lon*
                 %td float
                 %td The node's longitude in degrees as float.
-              %tr.odd
+              %tr.even
                 %td wheelchair*
                 %td string
                 %td The node's wheelchair status, must be one of [yes, no, limited, unknown]
+              %tr.optional.odd
+                %td name
+                %td string
+                %td
+                  The node's name.
+                  %b NOTE: The name is optional for existing nodes.
               %tr.optional.even
                 %td wheelchair_description
                 %td string

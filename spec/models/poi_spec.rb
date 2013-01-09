@@ -16,6 +16,19 @@ describe Poi do
     subject { Factory.build(:poi) }
     it { should be_valid }
 
+    it "should validate presence of name for new node" do
+      node = subject
+      node.name = nil
+      node.should_not be_valid
+    end
+
+    it "should node validate presence of name for existing node" do
+      node = subject
+      node.save!
+      node.name = nil
+      node.should be_valid
+    end
+
     it "is not be valid without existing node type" do
       subject.tags = {'name' => 'a_name', 'wheelchair' => 'yes'}
       subject.type = :invalid

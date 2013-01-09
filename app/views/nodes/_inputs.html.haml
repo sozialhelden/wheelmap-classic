@@ -1,5 +1,5 @@
 = form.inputs :name => t('formtastic.titles.basic'), :id => 'basic' do
-  = form.input :name
+  = form.input :name, :required => @node.new_record?
 
   %li.select.required#node-wheelchair-input
     =label_tag('node-wheelchair', link_to(t('formtastic.labels.wheelchair'), 'http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei', :target => '_blank') + '*')

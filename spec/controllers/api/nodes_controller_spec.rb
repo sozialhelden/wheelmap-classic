@@ -168,6 +168,19 @@ describe Api::NodesController do
 
     end
 
+    it "should update node when name is missing and existing node lacks a name" do
+      @node.name = nil
+      @node.save!
+      @user.oauth_token = :a_token
+      @user.oauth_secret = :a_secret
+      @user.save!
+
+      lambda {
+        put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :wheelchair => 'no', :api_key => @user.authentication_token})
+        response.status.should eql 202
+      }.should change(Delayed::Job, :count).by(1)
+    end
+
     it "should accept update for later processing if params are valid" do
       @user.oauth_token = :a_token
       @user.oauth_secret = :a_secret
@@ -217,6 +230,16 @@ describe Api::NodesController do
       lambda {
         post(:create, {:lat => 52.0, :lon => 13.4, :api_key => @user.authentication_token,
              :type => "foo", :tags => {"amenity"=>"restaurant"}})
+        response.status.should eql 400
+      }.should_not change(Delayed::Job, :count)
+    end
+
+    it "should not create node when name missing" do
+      @user.oauth_token = :a_token
+      @user.oauth_secret = :a_secret
+      @user.save!
+      lambda {
+        post(:create, {:lat => 52.0, :lon => 13.4, :tags => {"amenity"=>"restaurant"}, :wheelchair => 'no', :api_key => @user.authentication_token})
         response.status.should eql 400
       }.should_not change(Delayed::Job, :count)
     end
