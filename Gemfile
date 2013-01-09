@@ -76,5 +76,6 @@ end
 
 group :deployment do
   gem 'capistrano'
+  gem 'capistrano-maintenance'
   gem 'capistrano-ext'
 end
