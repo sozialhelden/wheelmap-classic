@@ -149,6 +149,31 @@ describe Poi do
 
   end
 
+  context "64 bit" do
+
+    let :poi do
+      Poi.new(:osm_id => -4294967934).tap do |p|
+        p.lat = 52.0
+        p.lon = 13.4
+        p.version = 1
+        p.type = 'restaurant'
+        p.name = "White bull"
+      end
+    end
+
+    it "should save and load poi with 64 bit signed id" do
+      poi.save!
+
+      Poi.exists?(-4294967934).should be_true
+
+      # If the primary key column does not support 64 bit values,
+      # the node id is saved with the highest 32 bit signed int
+      # which is -2147483648
+      Poi.exists?(-2147483648).should be_false
+    end
+
+  end
+
 
   # describe 'scopes' do
   #   should_have_scope :fully_accessible, :conditions => {:status => 1}
