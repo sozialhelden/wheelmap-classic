@@ -1,3 +1,5 @@
+require 'capistrano/maintenance'
+
 set :application, "wheelmap"
 set :repository,  "git@github.com:sozialhelden/wheelmap.git"
 
