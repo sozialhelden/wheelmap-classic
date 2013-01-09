@@ -1,8 +1,8 @@
 CREATE TABLE `active_admin_comments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `resource_id` int(11) NOT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `resource_id` bigint(20) NOT NULL,
   `resource_type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `author_id` int(11) DEFAULT NULL,
+  `author_id` bigint(20) DEFAULT NULL,
   `author_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `body` text COLLATE utf8_unicode_ci,
   `created_at` datetime DEFAULT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE `active_admin_comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `admin_users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `encrypted_password` varchar(128) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `reset_password_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -38,8 +38,8 @@ CREATE TABLE `admin_users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `alternatives` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `experiment_id` int(11) DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `experiment_id` bigint(20) DEFAULT NULL,
   `content` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `lookup` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
   `weight` int(11) DEFAULT '1',
@@ -51,7 +51,7 @@ CREATE TABLE `alternatives` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `counters` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `counter_date` date DEFAULT NULL,
   `tag_website` int(11) DEFAULT '0',
   `tag_iphone` int(11) DEFAULT '0',
@@ -79,7 +79,7 @@ CREATE TABLE `counters` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `delayed_jobs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `priority` int(11) DEFAULT '0',
   `attempts` int(11) DEFAULT '0',
   `handler` text COLLATE utf8_unicode_ci,
@@ -99,7 +99,7 @@ CREATE TABLE `delayed_jobs` (
 ) ENGINE=InnoDB AUTO_INCREMENT=286 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `experiments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `test_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `status` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
@@ -109,7 +109,7 @@ CREATE TABLE `experiments` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `iphone_counters` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `install_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `device_version` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `app_version` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -120,8 +120,8 @@ CREATE TABLE `iphone_counters` (
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `node_types` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `category_id` int(11) DEFAULT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `category_id` bigint(20) DEFAULT NULL,
   `identifier` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `osm_key` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `osm_value` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -136,11 +136,11 @@ CREATE TABLE `node_types` (
 ) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `photos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `caption` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `image_processing` tinyint(1) DEFAULT NULL,
-  `poi_id` int(11) DEFAULT NULL,
+  `poi_id` bigint(20) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `taken_at` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
@@ -148,15 +148,15 @@ CREATE TABLE `photos` (
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `pois` (
-  `osm_id` int(11) NOT NULL,
+  `osm_id` bigint(20) NOT NULL,
   `version` int(11) NOT NULL,
   `tags` text COLLATE utf8_unicode_ci NOT NULL,
   `geom` point NOT NULL,
   `status` mediumint(9) NOT NULL DEFAULT '8',
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `node_type_id` int(11) DEFAULT NULL,
-  `region_id` int(11) DEFAULT NULL,
+  `node_type_id` bigint(20) DEFAULT NULL,
+  `region_id` bigint(20) DEFAULT NULL,
   `geoj` text COLLATE utf8_unicode_ci,
   `geoj_dirty` tinyint(1) DEFAULT '1',
   UNIQUE KEY `index_pois_on_osm_id` (`osm_id`),
@@ -169,9 +169,9 @@ CREATE TABLE `pois` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `provided_pois` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `poi_id` int(11) NOT NULL,
-  `provider_id` int(11) NOT NULL,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `poi_id` bigint(20) NOT NULL,
+  `provider_id` bigint(20) NOT NULL,
   `wheelchair` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
@@ -181,31 +181,20 @@ CREATE TABLE `provided_pois` (
 ) ENGINE=InnoDB AUTO_INCREMENT=223 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `providers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `queued_nodes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `node_attributes` text COLLATE utf8_unicode_ci,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `geom` point NOT NULL,
-  PRIMARY KEY (`id`),
-  SPATIAL KEY `index_queued_nodes_on_geom` (`geom`)
-) ENGINE=MyISAM AUTO_INCREMENT=5723 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 CREATE TABLE `regions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `grenze` polygon NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `parent_id` int(11) DEFAULT NULL,
+  `parent_id` bigint(20) DEFAULT NULL,
   `admin_level` int(11) DEFAULT NULL,
   `lft` int(11) DEFAULT NULL,
   `rgt` int(11) DEFAULT NULL,
@@ -219,9 +208,9 @@ CREATE TABLE `schema_migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `slugs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `sluggable_id` int(11) DEFAULT NULL,
+  `sluggable_id` bigint(20) DEFAULT NULL,
   `sequence` int(11) NOT NULL DEFAULT '1',
   `sluggable_type` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
   `scope` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -239,7 +228,7 @@ CREATE TABLE `spatial_ref_sys` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `oauth_token` varchar(255) DEFAULT NULL,
   `oauth_secret` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL DEFAULT '',
@@ -254,13 +243,13 @@ CREATE TABLE `users` (
   `last_sign_in_ip` varchar(255) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `changeset_id` int(11) DEFAULT NULL,
+  `changeset_id` bigint(20) DEFAULT NULL,
   `wants_newsletter` tinyint(1) NOT NULL DEFAULT '0',
   `authentication_token` varchar(255) DEFAULT NULL,
   `confirmation_token` varchar(255) DEFAULT NULL,
   `confirmed_at` datetime DEFAULT NULL,
   `confirmation_sent_at` datetime DEFAULT NULL,
-  `osm_id` int(11) DEFAULT NULL,
+  `osm_id` bigint(20) DEFAULT NULL,
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
   `create_counter` int(11) NOT NULL DEFAULT '0',
