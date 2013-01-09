@@ -76,7 +76,7 @@ CREATE TABLE `counters` (
   `search_iphone` int(11) DEFAULT '0',
   `search_android` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `delayed_jobs` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -139,7 +139,6 @@ CREATE TABLE `photos` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `caption` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `image_processing` tinyint(1) DEFAULT NULL,
   `poi_id` bigint(20) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `taken_at` datetime DEFAULT NULL,
@@ -419,3 +418,5 @@ INSERT INTO schema_migrations (version) VALUES ('20121113125237');
 INSERT INTO schema_migrations (version) VALUES ('20121128105658');
 
 INSERT INTO schema_migrations (version) VALUES ('20121219120846');
+
+INSERT INTO schema_migrations (version) VALUES ('20130108144233');
