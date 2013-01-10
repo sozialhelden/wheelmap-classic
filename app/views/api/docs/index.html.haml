@@ -152,6 +152,11 @@
         %td 500
         %td Internal Server Error (application/json)
         %td An unknown error has occurred. When possible, an error message will be returned describing the error.
+      %tr
+        %td 503
+        %td Temporarily not available
+        %td The wheelmap service is currently not available. This usually happens when we have to do maintainenance tasks. Please make sure your client is ready to react on this status gracefully as it makes for a good user experience. We try to minimize these kind of downtimes but some are not avoidable.
+
 
   %h2 API Error Messages
   %p If the API responds with an HTTP status code with 400 or higher, there will be a descriptive error message. Please make sure your client can handle error codes and display this message to the client.
