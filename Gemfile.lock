@@ -197,6 +197,9 @@ GEM
       aggregate (~> 0.2.2)
       faraday (~> 0.7)
       multi_json
+    librato-rails (0.8.1)
+      librato-metrics (~> 1.0.2)
+      rails (>= 3.0)
     libwebsocket (0.1.7.1)
       addressable
       websocket
@@ -402,6 +405,7 @@ DEPENDENCIES
   kaminari
   launchy
   librato-metrics
+  librato-rails
   libxml-ruby
   memcache-client
   multipart-post
