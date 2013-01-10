@@ -5,6 +5,7 @@ set :repository,  "git@github.com:sozialhelden/wheelmap.git"
 
 set :branch, ENV['BRANCH'] || ((rails_env.to_sym == :production) ? "production" : "master")
 
+set :start_time, Time.now
 
 set :use_sudo, false
 
@@ -32,6 +33,7 @@ after  'deploy:update_code',  'deploy:remove_all_unfinished_locales'
 after  'deploy:update_code',  'deploy:symlink_configs'
 
 after  'deploy',              'deploy:cache:clear'
+after  'deploy',              'deploy:notifiy_metrics'
 
 task :safety_check do
   if rails_env.to_sym == :production
@@ -157,6 +159,12 @@ namespace :deploy do
       run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake cache:clear"
       run "rm -fr #{current_path}/public/api"
     end
+  end
+
+  task :notifiy_metrics do
+    cmd = "bundle exec rake metrics:deploy BRANCH=#{branch} START_TIME=#{start_time.to_i} SOURCE=#{rails_env}"
+    puts cmd
+    system(cmd)
   end
 
   task :generate_assets, :roles => :web do
