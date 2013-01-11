@@ -2,7 +2,6 @@ set :rails_env, :production
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> All the same
 require "whenever/capistrano"
-set :whenever_command, "bundle exec whenever"
 set :whenever_environment, :production
 
 # Delayed Job
