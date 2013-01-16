@@ -2,6 +2,12 @@ Wheelmap::Application.routes.draw do
 
   ActiveAdmin.routes(self)
 
+  namespace :admin do
+    resources :pois do
+      resources :photos
+    end
+  end
+
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   match '/ping' => 'ping#index'
@@ -28,6 +34,8 @@ Wheelmap::Application.routes.draw do
     end
   end
 
+  resources :terms, :only => :index
+
   resources :node_types, :only => :index
   resources :search, :only => :index
   resources :feeds, :only => :index
@@ -44,6 +52,7 @@ Wheelmap::Application.routes.draw do
       put :update_wheelchair
       get :claim
     end
+    # resources :photos, :only => [:create, :destroy]
   end
 
   resources :ways, :only => [:index, :show] do
@@ -60,14 +69,17 @@ Wheelmap::Application.routes.draw do
     end
     member do
       post :reset_token
-      get :after_signup_edit
-      put :after_signup_update
+      get  :after_signup_edit
+      put  :after_signup_update
+      put :terms
     end
   end
 
   resources :user, :only => :new # Fake route for redirection to OSM register page
 
   match '/:region_id/:node_type_id/wheelchair/:wheelchair' => 'landing_pages#index'
+
+  match '/api' => 'api/api#index'
 
   namespace :api do
     resources :docs,        :only  => [:index]
@@ -83,6 +95,8 @@ Wheelmap::Application.routes.draw do
       end
       member do
         put :update_wheelchair
+      end
+      resources :photos do
       end
     end
 
@@ -105,6 +119,13 @@ Wheelmap::Application.routes.draw do
 
     resources :locales,     :only => :index
     resources :node_types,  :only => [:index, :show]
+
+    resource :user, :except => [:index, :show, :new, :create, :edit, :update, :destroy] do
+      resources :photos, :only => [:index, :destroy]
+      member do
+        post :accept_terms
+      end
+    end
 
     match '/users/authenticate' => 'users#authenticate'
 

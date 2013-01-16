@@ -37,3 +37,33 @@
   %article.doc-block
     %h3#locales_representation_json Example locales representation. (application/json)
     %pre=render :partial => 'users.json'
+    .resource
+      %h3
+        ="/api/users/accept_terms"
+        %span> ?accepted
+
+      %h6 Methods
+      .methods
+        .method
+          %h4 POST
+          %p
+            Any client can declare on behalf of the authenticated user, that this given user has willfully accepted wheelmap.org's terms of usage. These terms have to presented to the user, or a link to the terms has to be provided. Please use the following url:
+            =link_to "http://blog.wheelmap.org/was-ist-wheelmap/terms/", "http://blog.wheelmap.org/was-ist-wheelmap/terms/"
+          %h6 request query parameter
+
+          %table
+            %thead
+              %tr
+                %th.param Parameter
+                %th.type Type
+                %th.desc Description
+            %tbody
+              %tr.odd
+                %td accepted*
+                %td string
+                %td Can be one of the following values. 'true', 'yes', '1' for ACCEPTED and 'false', 'no', '0' for DENIED.
+
+  %h2#representations Representations
+  %article.doc-block
+    %h3#locales_representation_json Example locales representation. (application/json)
+    %pre=render :partial => 'users.json'

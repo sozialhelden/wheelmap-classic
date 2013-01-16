@@ -5,6 +5,9 @@ javascripts:
     - public/javascripts/jquery.js
     - public/javascripts/jquery.tools.js
     - public/javascripts/jquery.blockUI.js
+    - public/javascripts/jquery.uploadify.js
+    - public/javascripts/jquery.lightbox.js
+    - public/javascripts/rails.js
     - public/javascripts/openlayers211.js
     - public/javascripts/openlayers_i18n.js
     - public/javascripts/osm.js
@@ -25,8 +28,11 @@ stylesheets:
 
   screen:
     - public/stylesheets/screen.css
+
     - public/theme/default/style.css
 
   node:
     - public/stylesheets/node.css
+    - public/stylesheets/uploadify.css
+    - public/stylesheets/jquery.lightbox.css
     - public/theme/default/style.css

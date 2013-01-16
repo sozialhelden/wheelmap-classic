@@ -77,9 +77,23 @@
           %th= "#{p.provider.name}:"
           %td= link_to(t("wheelchairstatus.#{p.wheelchair}"), p.url, :target => '_blank', :class => :external) if p.url.present?
 
-
-  =javascript_include_tag"http://maps.google.com/maps/api/js?sensor=false"
+  #thumbs
+    %ul.thumbs.noscript
+      -#= render :partial => 'photos/photo', :collection => @node.photos.reject{|p| p.new_record?}
   .clear
+
+  -# if user_signed_in?
+    -# if current_user.terms?
+      -#= semantic_form_for [@node, Photo.new], :url => node_photos_path(@node), :html => { :multipart => true } do |form|
+        -#= form.file_field :image, :rel => node_photos_path(@node)
+    -# else
+      -#= link_to t('nodes.show.link.upload'), terms_path, :class => 'button'
+
+
+  =javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false"
+
+  .clear
+
 
 
   %hr
@@ -106,10 +120,47 @@
     var zoom = #{escape_once(params[:zoom] || 18)};
     #{var_language};
 
+- key = Rails.application.config.session_options[:key]
 - content_for :javascript do
   = render :partial => 'shared/google_event_tracking'
   = render :partial => 'shared/google_view_tracking'
 
+- if user_signed_in?
+  - content_for :javascript do
+    :javascript
+      var upload_params = {
+        '#{key}'                              : '#{cookies[key]}',
+        '#{request_forgery_protection_token}' : '#{form_authenticity_token}',
+        '_http_accept'                        : 'application/javascript'
+      };
+      $('input#photo_image').uploadify({
+        'swf'               : '/uploadify.swf',
+        'uploader'          : $('input#photo_image').attr('rel'),
+        'fileObjName'       : 'photo[image]',
+        'fileTypeExts'      : '*.png;*.jpg;*.gif;*.jpeg',
+        'fileSizeLimit'     : '4MB',
+        'multi'             : true,
+        'formData'          : upload_params,
+        'auto'              : true,
+        'buttonText'        : '#{I18n.t("nodes.show.link.upload")}',
+        'removeTimeout'     : 1,
+        'progressData'      : 'percentage',
+        'buttonClass'       : 'button',
+        'onUploadSuccess'   : function(response, data) {
+          $('#thumbs ul').append(data);
+          $('#thumbs a').lightBox({
+            fixedNavigation: true,
+            imageLoading:  '/images/spinner.gif',
+            imageBtnClose: '/images/lightbox-btn-close.gif',
+            imageBtnPrev:  '/images/lightbox-btn-prev.gif',
+            imageBtnNext:  '/images/lightbox-btn-next.gif',
+            imageBlank:    '/images/lightbox-blank.gif',
+            txtOf: '/'
+          });
+        }
+      });
+
+- content_for :javascript do
   :javascript
     drawmap(defaultControls('minimap'), 'minimap');
     jumpTo(#{escape_once(@node.lon)}, #{escape_once(@node.lat)}, 18);

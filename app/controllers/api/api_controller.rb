@@ -52,8 +52,12 @@ class Api::ApiController < ApplicationController
           :description => 'The locales Resource',
           :href => api_locales_path
         }
+      },{
+        :photos => {
+          :description => 'The photos Resource',
+          :href => api_user_photos_path
+        }
       }
-
     ]
 
     respond_to do |format|
@@ -64,7 +68,7 @@ class Api::ApiController < ApplicationController
   end
 
   def not_found
-    render_404(ActionController::RoutingError.new("No route matches '#{request.path}', check API root url for available resources: #{api_url(:locale => false)}"))
+    render_404(ActionController::RoutingError.new("No route matches '#{request.path}', check API documentation for available resources: /api/docs/resources"))
   end
 
   protected
@@ -122,4 +126,22 @@ class Api::ApiController < ApplicationController
     end
     render_exception_without_notification(Exception.new('invalid API key.'), 401) unless current_user
   end
+
+  def meta
+    @meta = {
+      :conditions => {
+        :page => params[:page],
+        :per_page => params[:per_page],
+        :format => params[:format],
+        :locale => params[:locale]
+      },
+      :meta => {
+        :page => params[:page],
+        :num_pages => collection.total_pages,
+        :item_count_total => collection.total_entries,
+        :item_count => collection.compact.size
+      }
+    }
+  end
+
 end

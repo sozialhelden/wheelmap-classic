@@ -15,6 +15,7 @@ class NodeType < ActiveRecord::Base
     template.add :id
     template.add :identifier
     template.add :category_id
+    template.add :category, :template => :id
     template.add :localized_name
     template.add :icon
   end
