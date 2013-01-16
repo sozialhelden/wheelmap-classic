@@ -2,5 +2,6 @@
   {
     "id": 1,
     "api_key":"A valid API key",
+    "terms_accepted": false
   }
 }

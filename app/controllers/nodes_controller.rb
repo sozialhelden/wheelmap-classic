@@ -10,6 +10,7 @@ class NodesController < ApplicationController
 
   before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update]
   before_filter :authenticate_application!,       :only => [:new, :create, :edit, :update]
+  # before_filter :authenticate_terms!,             :only => [:new, :create, :edit, :update], :unless => :mobile_app?
   before_filter :check_create_params,             :only => :create
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
@@ -39,6 +40,7 @@ class NodesController < ApplicationController
 
   def show
     @node = Poi.find(params[:id])
+    @node.photos.build if @node.photos.blank?
   end
 
   def edit
@@ -60,6 +62,7 @@ class NodesController < ApplicationController
   def update
     @node = Poi.find(params[:id])
     @node.attributes = params[:node]
+    @node.photos.map(&:save) # save photos regardless if poi is valid
     if @node.valid?
       source = "update_#{(mobile_app? ? 'iphone' : 'website')}"
       UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user, source)
@@ -125,11 +128,7 @@ class NodesController < ApplicationController
   add_method_tracer :load_and_instantiate_nodes, "Custom/load_and_instantiate_nodes"
 
   def prepare_nodes
-    load_and_instantiate_nodes.map { |node| node_hash = node.to_geojson
-                         node_hash[:properties].update({ 'marker' => image_path(node.marker),
-                                                            :icon => image_path(node.icon)})
-                         node_hash
-                }
+    load_and_instantiate_nodes.map(&:to_geojson)
   end
   add_method_tracer :prepare_nodes, "Custom/prepare_nodes"
 

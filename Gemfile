@@ -46,6 +46,12 @@ group :default do
   gem 'multipart-post'
   gem 'activeadmin'
   gem 'kaminari'
+  gem 'carrierwave'
+  gem 'carrierwave-meta'
+  gem 'carrierwave_backgrounder', '0.0.9'
+  gem 'rmagick'
+  gem 'flash_cookie_session'
+  gem 'exifr'
 end
 
 group :test, :development do
