@@ -35,4 +35,20 @@ describe Api::UsersController do
     response.code.should == '400'
   end
 
+  it "should set terms accepted to true" do
+    post :accept_terms, :accepted => 'true', :api_key => @user.authentication_token
+    @user.reload.terms.should be_true
+  end
+
+  it "should set terms accepted to false" do
+    post :accept_terms, :accepted => 'false', :api_key => @user.authentication_token
+    @user.reload.terms.should be_false
+  end
+
+  it "should not set terms accepted if wrong value" do
+    @user.terms.should be_true
+    post :accept_terms, :accepted => 'foo', :api_key => @user.authentication_token
+    @user.reload.terms.should be_true
+  end
+
 end

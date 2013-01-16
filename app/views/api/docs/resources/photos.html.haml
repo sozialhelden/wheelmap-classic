@@ -1,0 +1,105 @@
+#api_docs
+
+  = render :partial => 'api/docs/resource_links'
+
+  %h2 Resource Photos
+  %article.doc-block
+    .resource
+      %h3
+        ="/api/nodes/{node_id}/photos"
+        %span.optional{:title => 'optional'}> ?page
+        %span.optional{:title => 'optional'}> &per_page
+      %h3
+        ="/api/user/photos"
+        %span.optional{:title => 'optional'}> ?page
+        %span.optional{:title => 'optional'}> &per_page
+
+      %h6 Methods
+      .methods
+        .method
+          %h4 GET
+          %p Retrieve a collection of photos. This resource is always nested under a user or node url, to just return the photos associated with the given node or the current user. See examples
+          %h6 request query parameter
+
+          %table
+            %thead
+              %tr
+                %th Parameter
+                %th Type
+                %th Description
+            %tbody
+              %tr.optional
+                %td page
+                %td integer
+                %td For pagination, what page of the results you are on. Default is 1.
+              %tr.optional
+                %td per_page
+                %td integer
+                %td For pagination, how many results to return per page. Default is 200. Max is 500.
+
+
+          %h4 Example request to get all photos of the current user
+          %pre
+            http://wheelmap.org/api/user/photos?api_key=api_key&per_page=6
+
+          %h4 Example request to get all photos of the given node
+          %pre
+            http://wheelmap.org/api/nodes/1/photos?api_key=api_key&per_page=6
+
+
+
+          %h2#representations Representations
+          %article.doc-block
+            %h3#photos_representation_json Example photos representation. (application/json)
+            %pre=render :partial => 'photos.json'
+
+    %hr
+    .resource
+      %h3
+        ="/api/nodes/{node_id}/photos"
+      %h6 Methods
+      .methods
+        .method
+          %h4 POST
+          %p Upload a new Photo for the given node. NOTE: This post must be submitted as a <em>multipart Request</em>, as the payload does not fit into one packet. The Content-Type can be either: "image/jpg", "image/gif", "image/png" or "image/tif"
+          %p
+            See the following links how it is done on Android and iOS Devices:
+            %br
+            %ul
+              %li
+                %a{:href => "http://stackoverflow.com/questions/8042360/nsdata-and-uploading-images-via-post-in-ios#answer-8043522"}
+                  Photo upload with iOS Example
+              %li
+                %a{:href => "http://blog.tacticalnuclearstrike.com/2010/01/using-multipartentity-in-android-applications/"}
+                  Photo upload with Android Example
+            Upon upload the image is processed on the server. This is done asynchronously. So it might take some time.
+          %h6 request query parameter
+          %table
+            %thead
+              %tr
+                %th.param Parameter
+                %th.type Type
+                %th.desc Description
+            %tbody
+              %tr.odd
+                %td photo*
+                %td file
+                %td The photo you want to upload. This must be part of the HTTP Multipart POST Body.
+                %h4 Example request:
+                %pre http://wheelmap.org/api/nodes/123/photos?api_key=api_key
+
+          %h4#photos_representation_json Example photo representation. (application/json)
+          %pre= {:message => 'OK'}.to_json
+
+    %hr
+    .resource
+      %h3
+        ="/api/nodes/{node_id}/photos/{photo_id}"
+      %h6 Methods
+      .methods
+        .method
+          %h4 DELETE
+          %p Delete a photo for the given node or user. NOTE: The photo and all resized version are deleted immidiately. THERE IS NO UNDO!
+
+          %h4#photos_representation_json Example photo representation. (application/json)
+          %pre= {:message => 'OK'}.to_json

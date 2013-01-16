@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
     :trackable, :validatable, :encryptable, :omniauthable, :encryptor => :sha1
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter, :first_name, :last_name, :osm_username
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter, :first_name, :last_name, :osm_username, :terms
 
   validates :password, :confirmation =>true
 
@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
   before_save :send_email_confirmation,
     :unless => :new_record?, :if => :email_changed?
 
+  before_save :set_accepted_timestamp, :if => :terms? && :terms_changed?
+
+  has_many :photos
+
   acts_as_api
 
   api_accessible :simple do |t|
@@ -30,6 +34,7 @@ class User < ActiveRecord::Base
   api_accessible :api_simple do |t|
     t.add :id
     t.add :authentication_token, :as => :api_key
+    t.add :terms?, :as => :terms_accepted
   end
 
   def send_email_confirmation
@@ -37,6 +42,13 @@ class User < ActiveRecord::Base
     self.generate_confirmation_token if self.confirmation_token.nil?
     self.devise_mailer.confirmation_instructions(self).deliver
   end
+
+  # TODO Renebale user tracking
+  # # Do not update tracked fields if user did not accept terms.
+  # def update_tracked_fields_with_terms!(request)
+  #   update_tracked_fields_without_terms!(request) if terms?
+  # end
+  # alias_method_chain :update_tracked_fields!, :terms
 
   def password_required?
     false
@@ -108,6 +120,10 @@ class User < ActiveRecord::Base
     api = create_authorized_api
     update_attribute(:osm_username, api.find_user.display_name)
   rescue Rosemary::Error
+  end
+
+  def set_accepted_timestamp
+    self.accepted_at = Time.now if self.terms?
   end
 
   def notify_admins

@@ -26,6 +26,7 @@ set :user, 'rails'
 # these http://github.com/rails/irs_process_scripts
 
 before 'deploy',              'safety_check'
+before 'deploy:migrations',   'safety_check'
 
 after  'deploy:setup',        'deploy:create_shared_config'
 after  'deploy:update_code',  'deploy:generate_assets'
@@ -33,7 +34,9 @@ after  'deploy:update_code',  'deploy:remove_all_unfinished_locales'
 after  'deploy:update_code',  'deploy:symlink_configs'
 
 after  'deploy',              'deploy:cache:clear'
+after  'deploy:migrations',   'deploy:cache:clear'
 after  'deploy',              'deploy:notifiy_metrics'
+after  'deploy:migrations',   'deploy:notifiy_metrics'
 
 task :safety_check do
   if rails_env.to_sym == :production

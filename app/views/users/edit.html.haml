@@ -16,7 +16,17 @@
     = form.buttons do
       = form.commit_button t('formtastic.labels.save')
 
+  -# TODO Renebale user photos
+  -#%hr
+  -#%h2= t('.headline.your_images')
+  -##thumbs_private
+    -#%ul.thumbs.noscript
+      -#= render :partial => 'photos/photo', :collection => @user.photos
+  -#.clear
+
+
   - if @user.authentication_token
+    %hr
     = semantic_form_for :user, :url => reset_token_user_path(@user), :method => :post do |form|
       = form.inputs :name => 'API'do
         = form.input :authentication_token, :input_html => {:readonly => :readonly}
@@ -30,3 +40,6 @@
     = form.inputs :name => t('devise.destroy.headline') do
       = form.buttons do
         = form.submit t('devise.destroy.link'), :onclick => "if(!confirm('#{t('devise.destroy.confirm')}')){ return false; }"
+
+  %hr
+  =link_to 'Terms', terms_path

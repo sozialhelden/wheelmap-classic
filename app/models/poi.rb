@@ -14,12 +14,15 @@ class Poi < ActiveRecord::Base
 
   has_many :provided_pois
   has_many :providers, :through => :provided_pois
+  has_many :photos
+
+  accepts_nested_attributes_for :photos
 
   DELEGATED_ADDR_ATTRIBUTES = [:street, :housenumber, :postcode, :city].map(&:to_s).freeze
 
 
   attr_accessible :name, :type, :geom, :version, :wheelchair, :wheelchair_description, :created_at, :updated_at, :status
-  attr_accessible :lat, :lon, :id, :tags, :osm_id, :name, :node_type_id, :website, :phone
+  attr_accessible :lat, :lon, :id, :tags, :osm_id, :name, :node_type_id, :website, :phone, :photos_attributes
   attr_accessible *DELEGATED_ADDR_ATTRIBUTES
 
   self.include_root_in_json = false
@@ -269,14 +272,14 @@ class Poi < ActiveRecord::Base
 
   def marker
     if node_type.try(:icon)
-      "/marker/#{wheelchair}/#{node_type.icon}"
+      image_path("/marker/#{wheelchair}/#{node_type.icon}")
     else
-      "/marker/undefined.png"
+      image_path("/marker/undefined.png")
     end
   end
 
   def icon
-    "/icons/#{node_type.try(:icon)}"
+    image_path("/icons/#{node_type.try(:icon)}")
   end
 
   def to_geojson(options={})
@@ -289,6 +292,8 @@ class Poi < ActiveRecord::Base
                          'id'         => osm_id,
                          'type'       => node_type.try(:identifier) || '',
                          'category'   => category.try(:identifier) || '',
+                         'marker'     => marker,
+                         'icon'       => icon
                        }
     }
   end
@@ -380,6 +385,23 @@ class Poi < ActiveRecord::Base
 
   def degrees_per_meter_longitude(meters = 1)
     meters / meters_per_degrees_longitude
+  end
+
+  def build_photo(params)
+    self.photos.build(params)
+  end
+
+  protected
+
+  # Dummy methods to generate full image paths
+  def config
+    Wheelmap::Application.config.action_controller
+  end
+
+
+  # Dummy methods to generate full image paths
+  def controller
+    ''
   end
 
 end

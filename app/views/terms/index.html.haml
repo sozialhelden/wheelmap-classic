@@ -1,0 +1,7 @@
+%iframe{:align => 'center', :src => 'http://blog.wheelmap.org/was-ist-wheelmap/terms/', :width => '100%', :height => '600', :frameborder => '0', :seamless => 'seamless'}
+
+- if user_signed_in? && !current_user.terms?
+  = semantic_form_for current_user, :url => terms_user_path(current_user) do |form|
+    = form.input :terms
+    = form.buttons do
+      = form.commit_button t('formtastic.labels.save')

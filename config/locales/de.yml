@@ -5,6 +5,7 @@ de:
       user:
         first_name: Vorname
         last_name: Nachname
+        terms: Nutzungsbedingung
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -260,6 +261,7 @@ de:
       reset: Reset
       save: Speichern
       street: "Straße:"
+      terms: "Ja, ich stimme den Nutzungsbedingungen von wheelmap.org zu."
       type: "Typ:"
       website: "Webseite:"
       wheelchair: Rollstuhlgerecht?
