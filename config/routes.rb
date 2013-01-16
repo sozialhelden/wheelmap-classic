@@ -52,7 +52,7 @@ Wheelmap::Application.routes.draw do
       put :update_wheelchair
       get :claim
     end
-    resources :photos, :only => [:create, :destroy]
+    # resources :photos, :only => [:create, :destroy]
   end
 
   resources :ways, :only => [:index, :show] do
