@@ -118,8 +118,11 @@ Wheelmap::Application.routes.draw do
     resources :locales,     :only => :index
     resources :node_types,  :only => [:index, :show]
 
-    resource :user do
+    resource :user, :except => [:index, :show, :new, :create, :edit, :update, :destroy] do
       resources :photos, :only => [:index, :destroy]
+      member do
+        post :accept_terms
+      end
     end
 
     match '/users/authenticate' => 'users#authenticate'
