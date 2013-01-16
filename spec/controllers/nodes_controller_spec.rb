@@ -33,10 +33,14 @@ describe NodesController do
      @full_url = "#{@base_url}/node/16581933"
     end
 
+    let :node do
+      Factory.build(:poi)
+    end
+
     it "should show node view" do
-      Poi.should_receive(:find).with(123).and_return(:a_node)
+      Poi.should_receive(:find).with(123).and_return(node)
       get(:show, :id => 123)
-      assigns(:node).should eql(:a_node)
+      assigns(:node).should eql(node)
       response.should be_success
     end
 
@@ -49,6 +53,10 @@ describe NodesController do
   end
 
   describe "action edit" do
+
+    let :node do
+      Factory.build(:poi)
+    end
 
     before(:each) do
      @another_user.should be_app_authorized
@@ -64,6 +72,14 @@ describe NodesController do
       get(:edit, :id => 16581933)
       response.code.should == '404'
     end
+
+    # it "should redirect user to EULA page if terms not accepted" do
+    #   @another_user.update_attribute(:terms, false)
+    #   get(:edit, :id => 123)
+    #
+    #   response.code.should == '302'
+    # end
+
   end
 
   describe "action update wheelchair" do

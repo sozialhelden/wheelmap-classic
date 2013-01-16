@@ -3,7 +3,17 @@
     background: #FFF url("/images/icons/#{ $name }.png") no-repeat 2px top
     border: 0
 
-form
+form.formtastic.update_form
+  label
+    text-align: left
+    line-height: 8px
+    height: 8px
+
+  input
+    height: 13px
+    line-height: normal
+
+form.formtastic
   +helvetica-13
 
   &.after_signup_edit
