@@ -79,6 +79,8 @@ Wheelmap::Application.routes.draw do
 
   match '/:region_id/:node_type_id/wheelchair/:wheelchair' => 'landing_pages#index'
 
+  match '/api' => 'api/api#index'
+
   namespace :api do
     resources :docs,        :only  => [:index]
     namespace :docs do
