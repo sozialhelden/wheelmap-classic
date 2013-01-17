@@ -15,26 +15,38 @@ namespace :region do
 
   end
 
-  desc 'Import region from poly file'
-  task :import => :environment do
-    poly_file_name = ENV['FILE']
-    region_name = ENV['NAME']
-    parent_name = ENV['PARENT']
-    raise "Use: bundle exec rake region:import FILE=berlin.poly NAME=Berlin PARENT=Deutschland" if !poly_file_name || !region_name
-
-    raise "Region already exists" if Region.find_by_name(region_name)
-
-    parent = Region.find_by_name(parent_name) if parent_name
-
-    system "perl #{Rails.root}/script/poly2wkt.pl #{poly_file_name} > #{Rails.root}/tmp/#{region_name}.wkt"
-
-    wkt_string = File.open("#{Rails.root}/tmp/#{region_name}.wkt").first
-    puts wkt_string
-
-    region = Region.new(:name => region_name, :parent_id => parent.try(:id), :grenze => wkt_string)
-    region.grenze = Polygon.from_ewkt(wkt_string)
+  desc 'Create a region for the hole world'
+  task :create_world => :environment do
+    region = Region.find_or_initialize_by_name('World')
+    region.parent_id = nil
+    region.grenze = Polygon.from_ewkt('POLYGON((-180.0 -90.0, 180.0 -90.0, 180.0 90.0, -180.0 90.0, -180.0 -90.0))')
     region.save!
-
   end
 
+  desc 'Create continents from wkt files'
+  task :import => [:environment, :create_world] do
+    world = Region.find('world')
+    dirs = ["db","data"]
+    postfix = ["wkt"]
+    base_dir = File.join([Rails.root, dirs ])
+    imported_region = import_region(base_dir, postfix, world)
+  end
+
+  def import_region(base_dir, postfix, parent)
+    Dir.glob(File.join(base_dir, postfix, "*.wkt")).each do |wkt_file_name|
+
+      base_name = File.basename(wkt_file_name, '.wkt')
+      region_name = base_name.gsub(/_/, ' ')
+
+      imported_region = nil
+      if imported_region = Region.find_by_name(region_name)
+        # Nothing to do
+      else
+        imported_region = Region.from_wkt_file(wkt_file_name, parent)
+      end
+
+      import_region(base_dir, postfix + [base_name], imported_region)
+      imported_region
+    end
+  end
 end

@@ -52,6 +52,7 @@ group :default do
   gem 'rmagick'
   gem 'flash_cookie_session'
   gem 'exifr'
+  gem 'awesome_nested_set'
 end
 
 group :test, :development do
