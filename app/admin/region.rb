@@ -15,6 +15,8 @@ ActiveAdmin.register Region do
   index do
     column :id
     column :name
+    column :depth
+    column :parent
     default_actions
   end
 
