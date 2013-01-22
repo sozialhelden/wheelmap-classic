@@ -187,7 +187,20 @@ describe Poi do
 
   end
 
+  context "unicode" do
 
+    it "should not escape latin characters" do
+      Poi.escape_search_string('Latin').should eql 'Latin'
+    end
+
+    it "should escape utf characters that are made up of 2 bytes" do
+      Poi.escape_search_string('Müller').should eql 'M\\xc3\\xbcller'
+    end
+
+    it "should escape utf characters that are made up of 3 bytes" do
+      Poi.escape_search_string('선소 (Seonso)').should eql '\\xec\\x84\\xa0\\xec\\x86\\x8c (Seonso)'
+    end
+  end
   # describe 'scopes' do
   #   should_have_scope :fully_accessible, :conditions => {:status => 1}
   #   should_have_scope :limited_accessible, :conditions => {:status => 2}
