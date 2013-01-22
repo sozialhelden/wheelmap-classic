@@ -16,8 +16,7 @@ class Region < ActiveRecord::Base
   scope :parent_id, lambda {|parent_id| { :conditions => { :parent_id => parent_id }}}
 
   def pois_of_children
-    region_ids = [self.id]
-    region_ids += Region.where(['lft > ? AND rgt < ?', self.lft, self.rgt]).select('id').map(&:id)
+    region_ids  = Region.where(['regions.lft >= ? AND regions.rgt <= ?', self.lft, self.rgt]).select('id').map(&:id)
     Poi.where(:region_id => region_ids)
   end
 
