@@ -7,24 +7,25 @@ class PoiLocator
 
   public
 
-  def initialize
+  def initialize(parent_id = nil)
+    @parent_id = parent_id
     @factory = RGeo::Cartesian.factory
-    @regions = load_regions
+    @regions = load_regions(@parent_id)
     @index = generate_index
   end
 
   def run
     count_poi_in_region = 0
     count_poi_not_in_region = 0
-    poi_size = Poi.count(:conditions => {:region_id => nil})
-    # iterates over all POIs with undefined region
+
     lowest_id = Poi.lowest_id
-    Poi.including_category.find_in_batches(:conditions => {:region_id => nil}, :start => lowest_id) do |batch|
+    Poi.find_in_batches(:conditions => {:region_id => @parent_id }, :start => lowest_id) do |batch|
+      poi_regions = {}
       Poi.transaction do
         batch.each do |poi|
 
           # default: poi NOT matched in a region
-          region_id = 0
+          region_id = @parent_id
 
           # rounds coordinates of poi => corresponding index hash key
           idx = "#{poi.geom.x.to_i},#{poi.geom.y.to_i}"
@@ -36,7 +37,9 @@ class PoiLocator
             @index[idx].each do |region|
               point = @factory.parse_wkb(poi.geom.as_wkb)
               if region[:geometry].contains?(point)
-                region_id = region[:id]
+                poi_regions[region[:id]] = [] if poi_regions[region[:id]].nil?
+                poi_regions[region[:id]] << poi.osm_id
+                # region_id = region[:id]
                 count_poi_in_region += 1
               end
             end
@@ -45,17 +48,29 @@ class PoiLocator
             count_poi_not_in_region += 1
           end
 
-          # update table "pois" without callbacks
-          Poi.update_all(['region_id = ?', region_id], ['osm_id = ?', poi.osm_id])
+        end
+        # update table "pois" without callbacks
+        poi_regions.delete(@parent_id) if poi_regions[@parent_id]
+        poi_regions.each do |region_id, osm_ids|
+          Poi.where(:osm_id => osm_ids).update_all(:region_id => region_id)
         end
       end
     end
 
     puts "Anzahl der POIs, die einer Region zugeordnet werden konnten: #{count_poi_in_region}"
     puts "Anzahl der POIs, die keiner Region zugeordnet werden konnten: #{count_poi_not_in_region}"
+
+    @regions.each do |region|
+      locator = PoiLocator.new(region[:id])
+      locator.run
+    end
   end
 
   private
+
+  def region_ids
+    @regions.map{|r| r[:id]}
+  end
 
   # generates an index hash
   # value contains an array of regions intersecting the rectangle
@@ -87,9 +102,9 @@ class PoiLocator
   end
 
   # load regions from database
-  def load_regions
+  def load_regions(parent_id = nil)
     rr = Array.new
-    Region.all.each do |db_region|
+    Region.parent_id(parent_id).each do |db_region|
       r = Hash.new
 
       r[:geometry]   = @factory.parse_wkb(db_region.grenze.as_wkb)

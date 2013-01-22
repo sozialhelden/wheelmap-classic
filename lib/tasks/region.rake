@@ -15,4 +15,49 @@ namespace :region do
 
   end
 
+  desc 'Create a region for the hole world'
+  task :create_world => :environment do
+    region = Region.find_or_initialize_by_name('World')
+    region.parent_id = nil
+    region.grenze = Polygon.from_ewkt('POLYGON((-180.0 -90.0, 180.0 -90.0, 180.0 90.0, -180.0 90.0, -180.0 -90.0))')
+    region.save!
+    region.move_to_root
+  end
+
+  desc 'Create continents from wkt files'
+  task :import => [:environment, :create_world] do
+    world = Region.find('world')
+    dirs = ["db","data"]
+    postfix = ["wkt"]
+    base_dir = File.join([Rails.root, dirs ])
+    imported_region = import_region(base_dir, postfix, world)
+  end
+
+  def import_region(base_dir, postfix, parent)
+    puts "Importing files from #{base_dir}/#{postfix.join('/')} into #{parent.name}"
+    Dir.glob(File.join(base_dir, postfix, "*.wkt")).each do |wkt_file_name|
+
+      base_name = File.basename(wkt_file_name, '.wkt')
+      region_name = base_name.gsub(/_/, ' ')
+      puts "importing: #{region_name} into parent #{parent.name}"
+      imported_region = nil
+      if imported_region = Region.find_by_name(region_name)
+        # First time import handling ony
+        if imported_region.lft.nil? and imported_region.rgt.nil?
+          root = parent
+          while !root.nil? && !root.parent.nil? do
+            root = root.parent
+          end
+          puts "Updating Region #{imported_region.id} lft: #{root.rgt + 1}, rgt: #{root.rgt + 2}"
+          Region.where(:id => imported_region.id).update_all(:lft => (root.rgt + 1), :rgt => (root.rgt + 2))
+        end
+        imported_region.reload.move_to_child_of(parent) unless imported_region.parent == parent
+      else
+        imported_region = Region.from_wkt_file(wkt_file_name, parent)
+      end
+
+      import_region(base_dir, postfix + [base_name], imported_region)
+      imported_region
+    end
+  end
 end
