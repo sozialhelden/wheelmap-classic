@@ -20,6 +20,25 @@ ActiveAdmin.register Region do
     default_actions
   end
 
+  show do |region|
+    attributes_table do
+      row :id
+      row :parent
+      row :name
+      row :poi_count do
+        span region.pois_of_children.count
+      end
+      row :children do
+        ul do
+          region.children.each do |child|
+            li(link_to(child.name, admin_region_path(child)))
+          end
+        end
+      end
+    end
+    active_admin_comments
+  end
+
   form do |f|
     f.inputs do
       f.input :name
