@@ -106,7 +106,7 @@ class Poi < ActiveRecord::Base
   scope :unknown_accessibility, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:unknown]}
   scope :with_status, lambda {|status| {:conditions => {:status => status}}}
   #scope :search,      lambda {|search| {:conditions => ['tags LIKE ?', "%#{search}%"]}}
-  scope :search,      lambda {|search| {:conditions => ['MATCH (tags) AGAINST  (? IN BOOLEAN MODE)', search]}}
+  scope :search,      lambda {|search| {:conditions => ['MATCH (tags) AGAINST  (? IN BOOLEAN MODE)', escape_search_string(search)]}}
 
   scope :with_node_type, :conditions => 'node_type_id IS NOT NULL'
   scope :without_node_type, :conditions => 'node_type_id IS NULL'
@@ -389,6 +389,21 @@ class Poi < ActiveRecord::Base
 
   def build_photo(params)
     self.photos.build(params)
+  end
+
+  def self.escape_search_string(search_string)
+    escaped_search_string = ''
+    search_string.split(//).each do |character|
+      if character.unpack('C*').size > 1
+        # Split the character in hex bytes and escape them.
+        character.unpack('H*').first.scan(/.{1,2}/).each do |half_byte|
+          escaped_search_string << "\\x#{half_byte}"
+        end
+      else
+        escaped_search_string << character
+      end
+    end
+    escaped_search_string
   end
 
   protected
