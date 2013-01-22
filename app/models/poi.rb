@@ -104,6 +104,7 @@ class Poi < ActiveRecord::Base
   scope :not_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:no]}
   scope :limited_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:limited]}
   scope :unknown_accessibility, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:unknown]}
+  scope :tagged, :conditions => ['status < ?', WHEELCHAIR_STATUS_VALUES[:unknown]]
   scope :with_status, lambda {|status| {:conditions => {:status => status}}}
   #scope :search,      lambda {|search| {:conditions => ['tags LIKE ?', "%#{search}%"]}}
   scope :search,      lambda {|search| {:conditions => ['MATCH (tags) AGAINST  (? IN BOOLEAN MODE)', escape_search_string(search)]}}
@@ -128,10 +129,6 @@ class Poi < ActiveRecord::Base
 
   def self.wheelchair(stat)
     self.with_status(WHEELCHAIR_STATUS_VALUES[stat.to_sym])
-  end
-
-  def self.marked_count
-    where('status < 8').count
   end
 
   def self.lowest_id
