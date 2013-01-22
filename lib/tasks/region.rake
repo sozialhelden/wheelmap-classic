@@ -34,11 +34,12 @@ namespace :region do
   end
 
   def import_region(base_dir, postfix, parent)
+    puts "Importing files from #{base_dir}/#{postfix.join('/')} into #{parent.name}"
     Dir.glob(File.join(base_dir, postfix, "*.wkt")).each do |wkt_file_name|
 
       base_name = File.basename(wkt_file_name, '.wkt')
       region_name = base_name.gsub(/_/, ' ')
-
+      puts "importing: #{region_name} into parent #{parent.name}"
       imported_region = nil
       if imported_region = Region.find_by_name(region_name)
         # First time import handling ony
