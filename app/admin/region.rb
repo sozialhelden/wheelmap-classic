@@ -27,7 +27,7 @@ ActiveAdmin.register Region do
       row :name
       row :depth
       row :poi_count do
-        span r.pois_of_children.count
+        span r.pois_of_children.tagged.count
       end
       row :children do
         ul do
