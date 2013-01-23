@@ -50,8 +50,14 @@ namespace :region do
           end
           puts "Updating Region #{imported_region.id} lft: #{root.rgt + 1}, rgt: #{root.rgt + 2}"
           Region.where(:id => imported_region.id).update_all(:lft => (root.rgt + 1), :rgt => (root.rgt + 2))
+          imported_region = imported_region.reload
         end
-        imported_region.reload.move_to_child_of(parent) unless imported_region.parent == parent
+        imported_region.move_to_child_of(parent) unless imported_region.parent == parent
+
+        # update geo-shape in case it changed.
+        wkt_string = File.open(wkt_file_name).first.strip
+        imported_region.grenze = Polygon.from_ewkt(wkt_string)
+        imported_region.save
       else
         imported_region = Region.from_wkt_file(wkt_file_name, parent)
       end
