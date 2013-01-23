@@ -1,7 +1,8 @@
-class ConvertRegionsToMultiPolygon < ActiveRecord::Migration
+class ConvertRegionsToGeometry < ActiveRecord::Migration
   def self.up
     change_table :regions do |t|
-      t.change :grenze, :multipolygon
+      #use general geometry to support polygons and multipolygons
+      t.change :grenze, :geometry
     end
   end
 
