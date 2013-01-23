@@ -152,6 +152,7 @@ namespace :deploy do
       run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake housekeeping:remove_all_unfinished_locales"
       run "find #{shared_path}/bundle -name 'pt-BR.yml' -delete"
       run "find #{shared_path}/bundle -name 'zh_cn.yml' -delete"
+      run "find #{shared_path}/bundle -name 'sv-SE.yml' -delete"
     else
       puts "This task only runs in production env."
     end
