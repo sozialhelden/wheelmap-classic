@@ -17,12 +17,12 @@
       = form.commit_button t('formtastic.labels.save')
 
   -# TODO Renebale user photos
-  %hr
-  %h2= t('.headline.your_images')
-  #thumbs_private
-    %ul.thumbs.noscript
-      = render :partial => 'photos/photo', :collection => @user.photos
-  .clear
+  -#%hr
+  -#%h2= t('.headline.your_images')
+  -##thumbs_private
+    -#%ul.thumbs.noscript
+      -#= render :partial => 'photos/photo', :collection => @user.photos
+  -#.clear
 
 
   - if @user.authentication_token

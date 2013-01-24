@@ -53,7 +53,7 @@ Wheelmap::Application.routes.draw do
       get :claim
     end
     # TODO reenable photo routes
-    resources :photos, :only => [:create, :destroy]
+    # resources :photos, :only => [:create, :destroy]
   end
 
   resources :ways, :only => [:index, :show] do
