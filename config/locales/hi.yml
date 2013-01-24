@@ -235,6 +235,9 @@ hi:
         notice: "%{resource_name} सफलतापूर्वक हटाया गया"
       update:
         notice: "%{resource_name} सफलतापूर्वक अपडेट हुआ"
+    photos:
+      destroy:
+        notice: ~
   form:
     show_fully_accessible_places: "व्हीलचेयर सुलभ "
     show_limited_accessible_places: "आंशिक तौर पर व्हीलचेयर सुलभ\n"
@@ -296,6 +299,7 @@ hi:
       logout: "लॅाग आउट "
       newsletter: "न्यूज़लैटर, संदेश पत्र, सामाचार पत्र "
       press: दबाएं
+      profile: ~
       suggestions: "सुझाव\n"
       what_is_barrier_free: "\"व्हीलचेयर सुलभ\" का मतलब क्या है?"
       what_is_wheelmap: "व्हीलमैप क्या है?"
@@ -318,6 +322,8 @@ hi:
     index:
       filter:
         category: "श्रेणी चुनिए "
+        deselect_all: ~
+        select_all: ~
         wheelchair: "व्हीलचेयर सुलभ?"
       ie:
         action:
@@ -405,6 +411,7 @@ hi:
         back: "वापस, पीछे"
         large_map: "बड़ा करें"
         listing: ~
+        upload: ~
       more_data_from: "के लिए और भी डेटा है, जांचकर्ता ः"
       show-in-osm: ओपनस्ट्रीटमैप
     update:
@@ -689,6 +696,9 @@ hi:
         set_password_for_mobile: "क्या आपके पास स्मार्टफन है? अगर हाँ, तो आईफओन और ऐंड्रॅाइड फोन पर व्हीलमैप इस्तेमाल करने के लिए पासवर्ड निर्धारित करें। "
         text: "आपसे कैसे संपर्क करें? यह जानकारी\n\
             आप बाद में भी बदल सकते हैं। "
+    edit:
+      headline:
+        your_images: ~
   wheelchairstatus:
     limited: "आंशिक तौर पर व्हीलचेयर सुलभ "
     ? "no"

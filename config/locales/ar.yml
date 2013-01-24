@@ -224,6 +224,9 @@ ar:
         notice: "%{resource_name} تم الحذف بنجاح "
       update:
         notice: "%{resource_name} تم التحديث بنجاح "
+    photos:
+      destroy:
+        notice: "تم حذف الصورة بنجاح"
   form:
     show_fully_accessible_places: "سهولة الوصول بالكرسي المتحرك"
     show_limited_accessible_places: "إمكانية الوصول بالكرسي المتحرك ليست سهلة تماما"
@@ -290,7 +293,8 @@ ar:
     searchbar:
       add_place: "أضف مكاناً آخر"
       find: أوجد
-      label: ~
+      label: |
+          header.searchbar.label
       placeholder: "سن سيت بوليڨارد، لوس أنجلوس  أو  براندن بيرڠ ،برلين"
       title_add_place: "أضف مكاناً جديداً في هذا الموقع الآن!"
     tagline: "شعار ويل ماب"
@@ -391,6 +395,7 @@ ar:
         back: العودة
         large_map: تكبير
         listing: "'%{type}' in %{city} جميع الأماكن "
+        upload: "تحميل الصورة"
       more_data_from: "هناك المزيد من المعلومات  عن هذا المكان :"
       show-in-osm: "\"أوبن ستريت ماب\""
     update:
@@ -424,9 +429,11 @@ ar:
           quadrillion: "الكدريليون رقم"
           thousand: ألف
           trillion: تريليون
-          unit: ~
+          unit: |
+              number.human.decimal_units.units.unit
       format:
-        delimiter: ~
+        delimiter: |
+            number.human.format.delimiter
         precision: 3
         significant: صحيح
         strip_insignificant_zeros: صحيح
@@ -442,10 +449,12 @@ ar:
           tb: TB
     percentage:
       format:
-        delimiter: ~
+        delimiter: |
+            number.percentage.format.delimiter
     precision:
       format:
-        delimiter: ~
+        delimiter: |
+            number.precision.format.delimiter
   oauth:
     application:
       connect:
@@ -672,6 +681,9 @@ ar:
         headline: "مرحبا بك في ويل ماب "
         set_password_for_mobile: "لديك هاتف نقال ذكي؟ أدخل كلمة المرور ليكون\" ويل ماب\" معك أين ماكنت."
         text: "كيف يمكننا التواصل معك؟ يمكنك تغيير هذه المعلومات لاحقا في ملفك."
+    edit:
+      headline:
+        your_images: "الصور التي قمت بتحميلها"
   wheelchairstatus:
     limited: "الوصول ليس سهلا تماما للكرسي المتحرك"
     ? "no"

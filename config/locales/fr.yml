@@ -1,6 +1,10 @@
 ---
 fr:
   activerecord:
+    attributes:
+      user:
+        first_name: Prénom
+        last_name: "nom de famille"
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -26,6 +30,10 @@ fr:
         too_short: "est trop court ( minimum %{count} caractères)"
         wrong_length: "n'a pas la bonne longueur (doit comporter %{count} caractères)"
       models:
+        user:
+          attributes:
+            email:
+              blank: "doit être complété en cas de ........ mot de pass"
         user_session:
           email: "Adresse mail"
           password: "Mot de passe"
@@ -35,6 +43,8 @@ fr:
         header:
           one: "Impossible d'enregistrer ce %{model} :  erreur"
           other: "Impossible d'enregistrer ce %{model} : %{count} erreurs"
+    models:
+      user: utilisateur
   application:
     require_no_user:
       notice: "Vous êtes déjà connecté."
@@ -47,11 +57,12 @@ fr:
     root: wheelmap
   common:
     close: fermer
+    skip: passer
   devise:
     confirmations:
-      confirmed: "Votre compte était confirmé avec succès. Maintenant vous êtes connecté."
+      confirmed: "Votre adresse mail a été confirmé."
       link: "Vous n'avez pas reçu de mail de confirmation?\n"
-      send_instructions: "Dans quelques minutes vous allez recevoir un mail avec des instructions pour confirmer votre compte."
+      send_instructions: "Dans quelques minutes vous allez recevoir un mail avec un lien pour confirmer votre compte."
       send_paranoid_instructions: "Si nous possédons votre adresse mail, vous recevrez dans quelques minutes un mail avec des instructions pour confirmer votre compte."
     destroy:
       confirm: "Vous êtes sûr?"
@@ -86,6 +97,7 @@ fr:
     mandatory: "* champ obligatoire"
     omniauth_callbacks:
       failure: "Erreur d'autorisation avec %{kind} parce que \"%{reason}\". "
+      permission_missing: "Vous ne nous avez pas accordé les droits nécessaires."
       success: "Vérifié avec succès du compte %{kind}"
     password_recovery:
       form:
@@ -122,13 +134,19 @@ fr:
         locked: bloqué
         unconfirmed: "non confirmé"
       signed_up: "Votre inscription était couronnée de succès. Dès l'activation de votre compte vous recevrez un mail de confirmation à votre adresse mail. "
-      updated: "Vous avez actualisé votre compte avec succès."
+      updated: "Vous avez actualisé votre compte utilisateur avec succès."
     sessions:
       inactive: "Votre compte n'était pas encore activé. Pour l'activation, merci de cliquer sur le lien que nous avons envoyé par mail. "
       invalid: "L'adresse mail ou le mot de passe ne sont pas valides."
       invalid_token: "Jeton d'authentification incorrect. Merci de supprimer les cookies dans votre navigateur et essayez encore une fois."
       link: S'identifier
       locked: "Votre compte est fermé."
+      new:
+        no_osm_account: "Pas chez OpenStreetMap?"
+        osm_promo_text: "La Wheelmap est basée sur la cartographie de OpenStreetMap (OSM). L'OSM est une mappemonde libre de droits, développée par des personnes comme vous. Une Wikipedia pour cartes géographiques. Pour pouvoir traiter des lieux ou d'ajouter de nouveaux lieux, il est nécessaire de posséder un compte utilisateur OSM et d'être connecté avec celui-ci ici."
+        promo_text_thank_you: "Merci pour votre aide!"
+        sign_up_with_osm: "enregistrez-vous ici"
+        wheelmap_promo_text: "Grâce à vos connaissances des endroits accessibles en fauteuil, vous permettez aux personnes à mobilité réduite de pouvoir mieux organisez leur vie de tous les jours. De plus, les informations concernant les différents endroits sur l'OSM (OpenStreetMap) augmentent."
       signed_in: "Connecté avec succès."
       signed_out: "Déconnecté avec succès."
       timeout: "Votre session a expiré, reconnecter s.v.p."
@@ -207,6 +225,9 @@ fr:
         notice: "%{resource_name} était détruit avec succès."
       update:
         notice: "%{resource_name} était actualisé avec succès."
+    photos:
+      destroy:
+        notice: "La photo a été supprimée avec succès."
   form:
     show_fully_accessible_places: "oui, accessible en fauteuil roulant"
     show_limited_accessible_places: "partiellement accessible en fauteuil roulant"
@@ -214,6 +235,7 @@ fr:
     show_unaccessible_places: "pas accessible en fauteuil roulant"
   formtastic:
     hints:
+      email: "Nous vous certifions de ne pas divulguer votre adresse, pas de spam. Promis!"
       lat: "Pointez le marqueur à la position correcte sur le plan"
       osm_username: "Vous n'êtes pas encore membre?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Vous pouvez vous inscrire sur Openstreetmap ici</a> "
       password: "(ne pas remplir, si vous ne voulez pas le modifier)"
@@ -225,6 +247,7 @@ fr:
       city: "Ville:"
       create: "Créer un lieu"
       email: E-mail
+      finish: terminer
       housenumber: "Numéro:"
       lat: Latitude
       lon: Longitude
@@ -373,13 +396,15 @@ fr:
         back: retour
         large_map: Agrandir
         listing: "Tous les endroits du type %{type} dans %{city}"
+        upload: "télécharger la photo"
+      more_data_from: "Il existe d'autres données concernant ce lieu, confirmeés par"
       show-in-osm: "indiquer sur Openstreetpmap"
     update:
       flash:
         not_successfull: "Oups, votre entrée était incorrecte ou incomplète."
         successfull: "Merci, votre entrée a été sauvegardée avec succès et sera publiée bientôt."
     update_wheelchair:
-      successfull: "Le statut du lieu \"%{name} a été modifié en \"accessible en fauteuil\": %{status} et sera actualisé prochainement"
+      successfull: "Le statut du lieu \"%{name} a été modifié en : %{status} et sera actualisé prochainement"
   number:
     currency:
       format:
@@ -534,7 +559,7 @@ fr:
         parking: Stationnement/parking
         parking_aisle: "voie de circulation sur parking"
         platform: "Quai de gare"
-        station: Métro
+        station: "Gare féroviaire"
         subway_entrance: "Entrée du métro"
         terminal: Aéroport
         tram_stop: "Arrêt de tram"
@@ -647,6 +672,15 @@ fr:
       login_with_twitter: "Connecter sur Twitter"
       password: "Mot de passe"
       remember_me: "Rester connecté"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "C'est presque fini!"
+        set_password_for_mobile: "Tu possèdes un Smartphone? Crée ici ton mot de passe pour pouvoir utiliser la Wheelmap également sur ton iPhone ou sur ton smartphone androïde."
+        text: "Vous vous êtes connectez avec succès. A l'avenir, comment pouvons nous vous informer des nouveautés de Wheelmap?"
+    edit:
+      headline:
+        your_images: "vos photos téléchargées"
   wheelchairstatus:
     limited: "partiellement accessible en  fauteuil roulant"
     ? "no"
@@ -667,7 +701,7 @@ fr:
       alt: "Wheelmap Logo - où aller en fauteuil roulant?"
       title: "Wheelmap - où aller en fauteuil roulant?"
     what_is:
-      fully_accessible: "La hauteur de la marche à l'entrée ne dépasse pas 7cm; tous les endroits sont accessibles en fauteuil roulant, toilettes handicapés disponibles"
+      fully_accessible: "Entrée de plain pied; tous les endroits sont accessibles en fauteuil roulant, toilettes handicapés disponibles en fonction de l'endroit."
       limited_accessible: "La hauteur de la marche à  l'entrée ne dépasse pas 7cm; les endroits les plus importants sont accessibles en fauteuil roulant, WC sans importance."
       not_accessible: "La hauteur de la marche à l'entrée est supérieur à  7cm ; ou il y a plusieurs marches à  l'entrée; ou les endroits les plus importants ne sont pas accessibles en fauteuil roulant"
       unknown_accessible: "<em>inconnu:</em> aide nous à classer ce lieu"
