@@ -22,24 +22,28 @@ ActiveAdmin.register Region do
 
   show do |r|
     attributes_table do
-      row :parent
+      row :parent do
+        if !r.parent.nil?
+          link_to(r.parent.name, admin_region_path(r.parent))
+        end
+      end
       row :id
       row :name
       row :depth
       row :pois_total do
-        span r.pois_of_children.count
+        span(number_with_delimiter(r.pois_of_children.count))
       end
       row :pois_tagged do
-        span r.pois_of_children.tagged.count
+        span(number_with_delimiter(r.pois_of_children.tagged.count))
       end
-      row :pois_wheelchair_accessible do
-        span r.pois_of_children.fully_accessible.count
+      row :yes do
+        span(number_with_delimiter(r.pois_of_children.fully_accessible.count))
       end
-      row :pois_wheelchair_limited_accessible do
-        span r.pois_of_children.limited_accessible.count
+      row :limited do
+        span(number_with_delimiter(r.pois_of_children.limited_accessible.count))
       end
-      row :pois_wheelchair_not_accessible do
-        span r.pois_of_children.not_accessible.count
+      row :no do
+        span(number_with_delimiter(r.pois_of_children.not_accessible.count))
       end
       row :children do
         ul do
