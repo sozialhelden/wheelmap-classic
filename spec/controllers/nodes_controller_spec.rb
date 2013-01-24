@@ -73,6 +73,7 @@ describe NodesController do
       response.code.should == '404'
     end
 
+    # TODO reenable feature terms
     # it "should redirect user to EULA page if terms not accepted" do
     #   @another_user.update_attribute(:terms, false)
     #   get(:edit, :id => 123)
