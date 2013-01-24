@@ -26,8 +26,20 @@ ActiveAdmin.register Region do
       row :id
       row :name
       row :depth
-      row :poi_count do
+      row :pois_total do
+        span r.pois_of_children.count
+      end
+      row :pois_tagged do
         span r.pois_of_children.tagged.count
+      end
+      row :pois_wheelchair_accessible do
+        span r.pois_of_children.fully_accessible.count
+      end
+      row :pois_wheelchair_limited_accessible do
+        span r.pois_of_children.limited_accessible.count
+      end
+      row :pois_wheelchair_not_accessible do
+        span r.pois_of_children.not_accessible.count
       end
       row :children do
         ul do
