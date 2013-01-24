@@ -178,6 +178,15 @@ OpenLayers.Lang.se = {
   'more_information': "more ...",
   'wheelchair_help': "Wheelchair accessible? (Help)"
 };
+OpenLayers.Lang.sk = {
+  'wheelchair_label_yes': "prístupné pre vozíčkarov",
+  'wheelchair_label_limited': "čiastočne prístupné pre vozíčkarov",
+  'wheelchair_label_no': "neprístupné vozíčkarom",
+  'wheelchair_label_unknown': "neznámy stav",
+  'wheelchair_update_button': "Aktualizovať",
+  'more_information': "viac ...",
+  'wheelchair_help': "Prístupné pre vozíčkarov? (Pomoc)"
+};
 OpenLayers.Lang.tlh = {
   'wheelchair_label_yes': "naw'laH rutlhquS",
   'wheelchair_label_limited': "loQ naw'laH rutlhquS",
