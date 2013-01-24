@@ -23,30 +23,30 @@ describe Api::CategoriesController do
     end
 
     # TODO reenable terms feature
-    describe 'terms' do
-
-      describe 'accepted' do
-
-        it "should save tracking parameter" do
-          get(:index, :api_key => user.authentication_token)
-          user.reload
-          assert_equal 1, user.sign_in_count
-        end
-      end
-
-      describe 'not accepted' do
-
-        let :user do
-          Factory.create(:user, :terms => false)
-        end
-
-        it "should not save tracking parameter" do
-          get(:index, :api_key => user.authentication_token)
-          user.reload
-          assert_equal 0, user.sign_in_count
-        end
-      end
-    end
+    # describe 'terms' do
+    #
+    #   describe 'accepted' do
+    #
+    #     it "should save tracking parameter" do
+    #       get(:index, :api_key => user.authentication_token)
+    #       user.reload
+    #       assert_equal 1, user.sign_in_count
+    #     end
+    #   end
+    #
+    #   describe 'not accepted' do
+    #
+    #     let :user do
+    #       Factory.create(:user, :terms => false)
+    #     end
+    #
+    #     it "should not save tracking parameter" do
+    #       get(:index, :api_key => user.authentication_token)
+    #       user.reload
+    #       assert_equal 0, user.sign_in_count
+    #     end
+    #   end
+    # end
 
     describe 'format json' do
 
