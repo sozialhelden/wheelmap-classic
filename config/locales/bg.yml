@@ -1,6 +1,10 @@
 ---
 bg:
   activerecord:
+    attributes:
+      user:
+        first_name: Име
+        last_name: Фамилия
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -26,6 +30,10 @@ bg:
         too_short: "е прекалено късо (не може да бъде по-малко от %{count} символа)"
         wrong_length: "е с грешна дължина (трябва да е с дължина, равна на %{count} символа)"
       models:
+        user:
+          attributes:
+            email:
+              blank: "Не може да бъде оставено празно, ако е дадена парола"
         user_session:
           email: E-mail-адрес
           password: Парола
@@ -35,6 +43,8 @@ bg:
         header:
           one: "1 грешка направи запазването на %{model} невъзможно"
           other: "%{count} грешки направиха невъзможно запазването на %{model}:"
+    models:
+      user: Потребител
   application:
     require_no_user:
       notice: "Ти вече си вътре"
@@ -47,6 +57,7 @@ bg:
     root: wheelmap
   common:
     close: затвори
+    skip: пропусни
   devise:
     confirmations:
       confirmed: "Твоят акаунт беше потвърден успешно. Сега си регистриран."
@@ -86,6 +97,7 @@ bg:
     mandatory: "* Задължително поле"
     omniauth_callbacks:
       failure: "Идентификацията с %{kind} е неуспешна. Грешка: \"%{reason}\"."
+      permission_missing: "Не си предоставил необходимите разрешения."
       success: "Успешно регистриран с %{kind}."
     password_recovery:
       form:
@@ -127,6 +139,13 @@ bg:
       invalid_token: "Невалиден код за активиране."
       link: Вход
       locked: "Твоят акаунт е блокиран."
+      new:
+        no_osm_account: "Нямаш регистрация в OpenStreetMap?"
+        osm_promo_text: "wheelmap е базирана на геоданни от OpenStreetMap (OSM). OpenStreetMap е безплатна световна карта, създадена от потребители като теб. Това е като Уикипедия за карти. За да редактираш съществуващи или да създаваш нови места, се нуждаеш от регистрация OpenStreetMap."
+        promo_text_thank_you: "Благодарим за подкрепата!"
+        sign_in_with: " Влез с %{kind}"
+        sign_up_with_osm: "Регистрирай се сега."
+        wheelmap_promo_text: "С познанията си за достъпните места за инвалидни колички помагаш на хора с физически увреждания да организират по-добре ежедневието си. Освен това OpenStreetMap става значително по-богата на информация в детайли."
       signed_in: "Успешна регистрация."
       signed_out: "Излезе успешно."
       timeout: "Твоята сесия изтече, моля влез отново, за да продължиш."
@@ -205,6 +224,9 @@ bg:
         notice: "%{resource_name} беше успешно изтрит"
       update:
         notice: "%{resource_name} беше актуализиран успешно"
+    photos:
+      destroy:
+        notice: "Снимката беше изтрита успешно"
   form:
     show_fully_accessible_places: "достъпно за инвалидни колички"
     show_limited_accessible_places: "отчасти достъпно за инвалидни колички"
@@ -212,6 +234,7 @@ bg:
     show_unaccessible_places: "недостъпно за инвалидни колички"
   formtastic:
     hints:
+      email: "Ние се грижим за поверителната информация, без спам. Обещаваме!"
       lat: "Премести маркера на картата на правилната позиция"
       osm_username: "Още не си член? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Създай OpenStreetMap акаунт сега</a>"
       password: "(остави празно, ако не искаш промяна)"
@@ -223,6 +246,7 @@ bg:
       city: "Град:"
       create: "Създай място"
       email: Email
+      finish: Готово
       housenumber: "Номер:"
       lat: Ширина
       lon: Дължина
@@ -262,7 +286,7 @@ bg:
       logout: Изход
       newsletter: Newsletter
       press: Преса
-      profile: профила
+      profile: Профил
       suggestions: Предложения
       what_is_barrier_free: "Какво значи \"достъпно за инвалидни колички\"?"
       what_is_wheelmap: "Какво е wheelmap?"
@@ -285,6 +309,8 @@ bg:
     index:
       filter:
         category: "Избери категория"
+        deselect_all: "Отмаркирай всички"
+        select_all: "Избери всички"
         wheelchair: "Достъпно за инвалидни колички?"
       ie:
         action:
@@ -368,6 +394,8 @@ bg:
         back: обратно
         large_map: Увеличи
         listing: "Всички видове '%{type}' в %{city}"
+        upload: "Качи снимка"
+      more_data_from: "Има повече данни за това място, предоставени от:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -642,6 +670,15 @@ bg:
       login_with_twitter: "Влез с Twitter."
       password: Парола
       remember_me: "Запомни ме"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Добре дошъл на wheelmap"
+        set_password_for_mobile: "Имаш ли смартфон? Моля, избери парола, за да използваш Wheelmap по време на движение с твоя iPhone или Android телефон."
+        text: "Как можем да се свържем с теб? По-късно можеш да промениш тази информация в профила си."
+    edit:
+      headline:
+        your_images: "Твоите качени снимки"
   wheelchairstatus:
     limited: "отчасти достъпно за инвалидни колички"
     ? "no"

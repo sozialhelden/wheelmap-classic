@@ -5,6 +5,7 @@ en:
       user:
         first_name: "Given name"
         last_name: "Last name"
+        terms: Terms
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -260,6 +261,7 @@ en:
       reset: Reset
       save: Save
       street: "Street:"
+      terms: "Yes, i accept wheelmap.org's terms of usage."
       type: "Type:"
       website: "Website:"
       wheelchair: "Wheelchair accessibility?"
