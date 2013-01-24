@@ -56,8 +56,10 @@ namespace :region do
 
         # update geo-shape in case it changed.
         wkt_string = File.open(wkt_file_name).first.strip
-        imported_region.grenze = Polygon.from_ewkt(wkt_string)
-        imported_region.save
+        # For some reason INSERT Statement with geomFromWKB inserts null value.
+        Region.where(:id => imported_region.id).update_all("grenze = GeomFromText('#{wkt_string}')")
+        # imported_region.grenze = Polygon.from_ewkt(wkt_string)
+        # imported_region.save
       else
         imported_region = Region.from_wkt_file(wkt_file_name, parent)
       end
