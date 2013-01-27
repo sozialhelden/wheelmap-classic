@@ -28465,7 +28465,7 @@ OpenLayers.Layer.XYZ = OpenLayers.Class(OpenLayers.Layer.Grid, {
  */
 OpenLayers.Layer.OSM = OpenLayers.Class(OpenLayers.Layer.XYZ, {
      name: "OpenStreetMap",
-     attribution: "Data CC-By-SA by <a href='http://openstreetmap.org/'>OpenStreetMap</a>",
+     attribution: "Data under ODbL by <a href='http://openstreetmap.org/'>OpenStreetMap</a>",
      sphericalMercator: true,
      url: 'http://tile.openstreetmap.org/${z}/${x}/${y}.png',
      clone: function(obj) {

@@ -17120,7 +17120,7 @@ OpenLayers.Layer.OSM = OpenLayers.Class(OpenLayers.Layer.XYZ, {
      * Property: attribution
      * {String} The layer attribution.
      */
-    attribution: "Data CC-By-SA by <a href='http://openstreetmap.org/'>OpenStreetMap</a>",
+    attribution: "Data under ODbl by <a href='http://openstreetmap.org/'>OpenStreetMap</a>",
 
     /**
      * Property: sphericalMercator
