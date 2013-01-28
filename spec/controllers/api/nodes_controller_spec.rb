@@ -137,6 +137,18 @@ describe Api::NodesController do
     it_behaves_like "update_wheelchair"
   end
 
+  describe 'search action' do
+
+    it "should not fail when no search key is passed" do
+      get(:search, :api_key => @user.authentication_token)
+      response.status.should eql 200
+    end
+
+    it "should not fail when empty search key is passed" do
+      get(:search, :api_key => @user.authentication_token, :q => '')
+      response.status.should eql 200
+    end
+  end
 
   describe 'update action' do
     before :each do
