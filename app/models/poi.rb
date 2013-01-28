@@ -389,6 +389,7 @@ class Poi < ActiveRecord::Base
   end
 
   def self.escape_search_string(search_string)
+    return search_string if search_string.blank?
     escaped_search_string = ''
     search_string.split(//).each do |character|
       if character.unpack('C*').size > 1
