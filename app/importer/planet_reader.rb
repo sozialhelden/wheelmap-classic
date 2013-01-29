@@ -133,11 +133,15 @@ class PlanetReader
   end
 
   def valid?
-    @poi && has_tags? && has_type? && !private?
+    @poi && has_tags? && has_type? && !private? && !abandoned?
   end
 
   def private?
     @poi[:tags]['access'] == 'private' || @poi[:tags]['access'] == 'no'
+  end
+
+  def abandoned?
+    @poi[:tags]['disused'] == 'yes' || @poi[:tags]['abandoned'] == 'yes'
   end
 
   def has_tags?
