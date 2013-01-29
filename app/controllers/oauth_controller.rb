@@ -12,7 +12,7 @@ class OauthController < ApplicationController
                                    :site => OpenStreetMapConfig.oauth_site)
     request_token = consumer.get_request_token
     base_url = URI.parse(OpenStreetMapConfig.oauth_site + '/user/new')
-    base_url.query = {:referer => request_token.authorize_url}.to_param
+    base_url.query = { :referer => request_token.authorize_url, :locale => I18n.locale }.to_param
     base_url.to_s
   end
 end

@@ -28,7 +28,7 @@ module NavigationHelpers
 
     when /the registration page/
       arguments = CGI.escape("/oauth/authorize?oauth_token=#{session[:request_token].token}")
-      "http://api06.dev.openstreetmap.org/user/new?referer=#{arguments}"
+      "http://api06.dev.openstreetmap.org/user/new?referer=#{arguments}&locale=#{I18n.locale}"
 
     when /the registration successfull page/
       '/registrations/successful'
