@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 group :default do
-  gem 'rails', '3.0.18'
+  gem 'rails', '3.0.20'
   gem 'mysql2', '<0.3.0'
   gem 'oauth'
   gem 'devise'
