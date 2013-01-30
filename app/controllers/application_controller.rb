@@ -159,15 +159,16 @@ class ApplicationController < ActionController::Base
     end
 
     unless @iphone_headers.empty?
+      Rails.logger.info "iOS User Agent: '#{@iphone_headers['User-Agent']}'"
       if iphone_counter = IphoneCounter.find_by_install_id(@iphone_headers['Install-Id'])
-        iphone_counter.app_version    = @iphone_headers['User-Agent'].gsub(/^Wheelmap\/(\S+)\s.+/, '\1')
+        iphone_counter.app_version    = @iphone_headers['User-Agent'].gsub(/\AWheelmap( iOS)?\/(\d+\.?\d?.?\d*)(\s|.|\z)*/, '\2')
         iphone_counter.os_version     = @iphone_headers['Os-Version']
         iphone_counter.device_version = @iphone_headers['Device-Model'].try(:gsub, /,/, '_')
         iphone_counter.save if iphone_counter.changed?
       else
         iphone_counter = IphoneCounter.create!({
           :install_id     => @iphone_headers['Install-Id'],
-          :app_version    => @iphone_headers['User-Agent'].gsub(/^Wheelmap\/(\S+)\s.+/, '\1'),
+          :app_version    => @iphone_headers['User-Agent'].gsub(/\AWheelmap( iOS)?\/(\d+\.?\d?.?\d*)(\s|.|\z)*/, '\2'),
           :os_version     => @iphone_headers['Os-Version'],
           :device_version => @iphone_headers['Device-Model'].try(:gsub, /,/, '_')
         })
