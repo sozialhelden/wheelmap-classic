@@ -47,7 +47,7 @@ class PlanetReader
 
   def flush_pois(min_amount=200)
     if @to_be_deleted.size >= min_amount
-      Poi.delete_all(['osm_id in (?)', @to_be_deleted])
+      Poi.where(:osm_id => @to_be_deleted).delete_all
       @to_be_deleted = []
     end
   end
@@ -111,6 +111,7 @@ class PlanetReader
       flush_pois
     when 'create'
       Crewait.go!
+      flush_pois
     when 'modify'
       Crewait.go!
       flush_pois
@@ -175,8 +176,14 @@ class PlanetReader
       # Neue POIs (aus <create> in .osc) werden
       # importiert, wenn sie interessant sind.
       @poi[:created_at] = @poi[:updated_at] = Time.now
-      Poi.crewait(@poi) if valid?
-
+      if valid?
+        # Der Node ist valide und kann neu angelegt werden.
+        Poi.crewait(@poi)
+      else
+        # Der Node ist nicht valide. Falls er schon im System ist, muss er entfernt werden.
+        @to_be_deleted << @poi[:osm_id]
+        flush_pois
+      end
     elsif @changemode == 'modify'
       # Bei geaenderten POIs kommt es darauf an:
 
