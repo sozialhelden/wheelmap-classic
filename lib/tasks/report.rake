@@ -54,7 +54,7 @@ namespace :report do
   task :regions => :environment do
     time = Time.now.to_i
     rounded_time = time - (time % 60)
-    colors = {'yes' => '#86af4d', 'no' => '#D6382F', 'limited' => '#F19D46'}
+    colors = {'yes' => '#86AF4D', 'no' => '#D6382F', 'limited' => '#F19D46'}
 
     hostname = `hostname`.gsub(/\n/, '')
     queue = Librato::Metrics::Queue.new
@@ -82,11 +82,13 @@ namespace :report do
           }
         }
 
-        Librato::Metrics.update metric_name, params
-        # Librato::Metrics.connection.put do |request|
-        #   request.url Librato::Metrics.connection.build_url("metrics/#{metric_name}", params)
-        #   request.body = MultiJson.dump(params)
-        # end
+        puts "Updating metric #{metric_name} with #{params.inspect}"
+        begin
+          Librato::Metrics.update metric_name, params
+          sleep 1
+        rescue Exception => e
+          STDERR.puts "Failed to update metric #{metric_name}"
+        end
       end
     end
   end
