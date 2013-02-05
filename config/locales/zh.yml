@@ -454,7 +454,6 @@ zh:
       unknown: 未知
     name:
       accommodation:
-        beach_resort: 海滨旅馆
         bed_and_breakfast: 床位和早餐
         camp_site: 露营网页
         caravan_site: 篷车场所
@@ -493,7 +492,6 @@ zh:
         social_facility: 公用设施
         veterinary: 兽医
       leisure:
-        arena: 竞技场
         brothel: 妓院
         cinema: 影院
         community_center: 社区中心
@@ -519,7 +517,6 @@ zh:
         aerodrome: 机场
         bicycle_parking: 单车停放
         bicycle_rental: 单车出租
-        boatyard: 码头
         bus_station: 公共汽车站
         bus_stop: 公共汽车站
         cable_car: 缆车
