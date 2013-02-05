@@ -371,7 +371,6 @@ el:
       unknown: Άγνωστο
     name:
       accommodation:
-        beach_resort: "Παραλιακό ξενοδοχείο"
         bed_and_breakfast: "Πανσιόν με πρωινό"
         camp_site: Κάμπινγκ
         caravan_site: "Τοποθεσία κατάλληλη για τροχόσπιτα"
@@ -406,7 +405,6 @@ el:
         pharmacy: Φαρμακείο
         veterinary: Κτηνίατρος
       leisure:
-        arena: Αρένα
         cinema: Κινηματογράφος
         gallery: Πινακοθήκη
         nightclub: "Νυχτερινό κέντρο διασκέδασης"
@@ -426,7 +424,6 @@ el:
         aerodrome: Αεροδρόμιο
         bicycle_parking: "Χώρος στάθμευσης για ποδήλατα"
         bicycle_rental: "Ενοικίαση ποδηλάτων"
-        boatyard: Ναυπηγείο
         bus_station: "Σταθμός λεωφορείων"
         bus_stop: "Στάση λεωφορείου"
         cable_car: Τελεφερίκ
