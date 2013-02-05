@@ -450,7 +450,6 @@ ko:
       unknown: "알 수 없음"
     name:
       accommodation:
-        beach_resort: 비치호텔
         bed_and_breakfast: 숙박시설(B&B)
         camp_site: 캠핑장
         caravan_site: "캠핑카 야영지"
@@ -489,7 +488,6 @@ ko:
         social_facility: 복지시설
         veterinary: 동물병원
       leisure:
-        arena: 경기장
         brothel: 성매매업소
         cinema: 영화관
         community_center: 시민회관
@@ -515,7 +513,6 @@ ko:
         aerodrome: 공항
         bicycle_parking: "자전거 주차장"
         bicycle_rental: "자전거 임대"
-        boatyard: 선착장
         bus_station: 버스터미널
         bus_stop: 버스정류소
         cable_car: 케이블카
