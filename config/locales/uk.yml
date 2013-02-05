@@ -472,7 +472,6 @@ uk:
       unknown: Невідомий
     name:
       accommodation:
-        beach_resort: "Пляж готелю"
         bed_and_breakfast: "Ліжко та сніданок. Готель"
         camp_site: Турбаза
         caravan_site: "Наметовій табір"
@@ -511,7 +510,6 @@ uk:
         social_facility: "Соціальний об'єкт"
         veterinary: Ветеринар
       leisure:
-        arena: Арена
         brothel: Бордель
         cinema: Кінотеатр
         community_center: "Общинний центр"
@@ -537,7 +535,6 @@ uk:
         aerodrome: "Аеропорт\n"
         bicycle_parking: "Парковка для велосипедів"
         bicycle_rental: "Оренда велосипедів"
-        boatyard: "шлюпочна майстерня"
         bus_station: "Автобусна зупинка"
         bus_stop: "Автобусна зупинка"
         cable_car: "Канатна дорога"
