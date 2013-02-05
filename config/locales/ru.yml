@@ -475,7 +475,6 @@ ru:
       unknown: Неизвестный
     name:
       accommodation:
-        beach_resort: "Пляж отеля"
         bed_and_breakfast: "Аренда жилья"
         camp_site: Турбаза
         caravan_site: "Палаточный лагерь"
@@ -514,7 +513,6 @@ ru:
         social_facility: "Социальный центр"
         veterinary: Ветеринар
       leisure:
-        arena: Площадь
         brothel: "Публичный дом"
         cinema: Кинотеатр
         community_center: "Общинный центр"
@@ -540,7 +538,6 @@ ru:
         aerodrome: Аэропорт
         bicycle_parking: "Парковка для велосипеда"
         bicycle_rental: "Прокат велосипедов"
-        boatyard: Катеры
         bus_station: "Автобусная станция"
         bus_stop: "Автобусная остановка"
         cable_car: "Канатная дорога"

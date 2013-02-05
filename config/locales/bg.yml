@@ -477,7 +477,6 @@ bg:
       unknown: Неизвестен
     name:
       accommodation:
-        beach_resort: "Хотел на плажа"
         bed_and_breakfast: "Bed and breakfast"
         camp_site: "Къмпинг за палатки"
         caravan_site: "Къмпинг за каравани"
@@ -516,7 +515,6 @@ bg:
         social_facility: "Социално съоръжение"
         veterinary: Ветеринар
       leisure:
-        arena: Арена
         brothel: "Публичен дом"
         cinema: Кино
         community_center: "Общински център"
@@ -542,7 +540,6 @@ bg:
         aerodrome: Летище
         bicycle_parking: "Паркинг за велосипеди"
         bicycle_rental: "Колела под наем"
-        boatyard: Корабостроителница
         bus_station: "Автобусна спирка"
         bus_stop: "Автобусна спирка"
         cable_car: Лифт
