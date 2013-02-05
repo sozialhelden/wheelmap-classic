@@ -5,6 +5,7 @@ sk:
       user:
         first_name: "Krstné meno"
         last_name: Priezvisko
+        terms: "Podmienky použitia"
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -120,7 +121,7 @@ sk:
     passwords:
       link: "Zabudli ste heslo?"
       send_instructions: "O niekoľko minút obdržíte email s inštrukciami ako nastaviť nové heslo."
-      send_paranoid_instructions: "Ak sa váš email nachádza v našej databáze, obdržíte odkaz na obnovu hesla na svoj email."
+      send_paranoid_instructions: "Ak váš účet existuje, behom pár minút obdržíte email s inštrukciami ako si obnoviť heslo"
       updated: "Vaše heslo bolo úspešne zmenené. Teraz ste prihláseny."
       updated_not_active: "Vaše heslo bolo úspešne zmenené."
     registrations:
@@ -249,7 +250,7 @@ sk:
       finish: Dokončiť
       housenumber: "Číslo:"
       lat: "Zemepisná šírka"
-      lon: Dĺžka
+      lon: "Zemepisná dĺžka"
       name: "Meno:"
       osm_password: "OSM heslo"
       osm_username: "Prihlasovacie meno do OSM"
@@ -260,6 +261,7 @@ sk:
       reset: Obnoviť
       save: Uložiť
       street: "Ulica:"
+      terms: "Áno, súhlasím s podmienkami použitia wheelmap.org."
       type: "Typ:"
       website: "Stránka:"
       wheelchair: "Prístupnosť pre vozíčkarov?"
@@ -309,8 +311,8 @@ sk:
     index:
       filter:
         category: "Vyberte kategóriu"
-        deselect_all: "Odznačiť všetko"
-        select_all: "Vybrať všetko"
+        deselect_all: "Skryť všetko"
+        select_all: "Zobraziť všetko"
         wheelchair: "Prístupné pre vozíčkarov?"
       ie:
         action:
@@ -543,8 +545,8 @@ sk:
         bicycle_parking: "Stojan na bicykle"
         bicycle_rental: "Požičovňa bicyklov"
         boatyard: Lodenica
-        bus_station: "Autobusová zastávka"
-        bus_stop: "Autobusová zastávka"
+        bus_station: "Autobusová stanica"
+        bus_stop: "Zastávka autobusu"
         cable_car: Lanovka
         car_rental: "Požičovňa automobilov"
         car_sharing: "Zdieľanie automobilov"
@@ -666,7 +668,7 @@ sk:
       notice: "Dovidenia, zase sa vráťte. "
     new:
       email: "Emailová adresa"
-      login: Prihlásiť
+      login: "Prihlásiť sa"
       login_with_twitter: "Prihláste sa cez Twitter"
       password: Heslo
       remember_me: "Ostať prihlásený"
@@ -674,7 +676,7 @@ sk:
     after_signup_edit:
       welcome:
         headline: "Vitajte na wheelmap"
-        set_password_for_mobile: "Máte komunikátor? Určite si heslo aby ste mohli Wheelmap používať aj na cestách vo vašom iPhone alebo telefóne s Androidom."
+        set_password_for_mobile: "Máte smartphone? Určite si heslo aby ste mohli Wheelmap používať aj na cestách vo vašom iPhone alebo telefóne s Androidom."
         text: "Ako vás môžeme kontaktovať? Tieto údaje môžete kedykoľvek zmeniť na svojom profile."
     edit:
       headline:
@@ -699,9 +701,9 @@ sk:
       alt: "Logo Wheelmap - nájdite miesta prístupné vozíčkarom"
       title: "Wheelmap - nájdite miesta prístupné pre vozíčkarov"
     what_is:
-      fully_accessible: "<em>Áno:</em> Vstup bez schodov, všetky miestnosti bez schodov, prístupný záchod ak je na danom mieste obvyklý"
+      fully_accessible: "<em>Áno:</em> Vstup je bez schodov, všetky miestnosti sú bez schodov, záchod je prístupný ak je na danom mieste obvyklý"
       limited_accessible: "<em>Obmedzený:</em> Vstup má schod (max. výška 7cm), väčšina miestností je bez schodov, záchod nie je prístupný"
-      not_accessible: "<em>Nie:</em> Vstup má vysoký alebo niekoľko schodov, izby sú nedostupné\n"
+      not_accessible: "<em>Nie:</em> Na vstupe je vysoký schod alebo niekoľko schodov, izby sú nedostupné\n"
       unknown_accessible: "<em>Neznáme:</em> Pomôžte označením miest!"
   will_paginate:
     next_label: "Ďalej &#8594;"
