@@ -450,7 +450,6 @@ da:
       unknown: Ukendt
     name:
       accommodation:
-        beach_resort: Strandhotel
         bed_and_breakfast: "Bed and breakfast"
         camp_site: Campingplads
         caravan_site: Caravancamping
@@ -489,7 +488,6 @@ da:
         social_facility: Plejehjem
         veterinary: Dyrlæge
       leisure:
-        arena: Sportsarena
         brothel: Bordel
         cinema: Biograf
         community_center: Borgerhus
@@ -515,7 +513,6 @@ da:
         aerodrome: Lufthavn
         bicycle_parking: Cykelparkering
         bicycle_rental: Cykeludlejning
-        boatyard: Lystbådehavn
         bus_station: Busstation
         bus_stop: Busstop
         cable_car: Svævebane

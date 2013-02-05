@@ -367,7 +367,6 @@ pt:
       unknown: Desconhecido
     name:
       accommodation:
-        beach_resort: "Hotel Praia"
         bed_and_breakfast: "Bed and Breakfast"
         camp_site: Acampamento
         caravan_site: "Sitio de caravana"
@@ -401,7 +400,6 @@ pt:
         pharmacy: Farmácia
         veterinary: Veterenário
       leisure:
-        arena: Arena
         cinema: Cinema
         gallery: Galeria
         nightclub: "Clube Nocturno"
@@ -421,7 +419,6 @@ pt:
         aerodrome: Aeroporto
         bicycle_parking: "Parque para bicicletas"
         bicycle_rental: "Aluguer de bicicletas"
-        boatyard: "Lugar onde barcos são construídos e guardados "
         bus_station: "Estação de Autocarros"
         bus_stop: "Estação de Autocarros"
         cable_car: Teleférico

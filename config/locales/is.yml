@@ -404,7 +404,6 @@ is:
       unknown: "Ekki vitað"
     name:
       accommodation:
-        beach_resort: Strandarhótel
         bed_and_breakfast: "Hótel með morgunmat"
         camp_site: Tjaldsvæði
         caravan_site: "Tjaldsvæði fyrir hjólhýsi"
@@ -439,7 +438,6 @@ is:
         pharmacy: Apótek
         veterinary: Dýralæknir
       leisure:
-        arena: Svæði
         cinema: Bíóhús
         gallery: Listasöfn
         nightclub: Næturklúbbur
@@ -459,7 +457,6 @@ is:
         aerodrome: Flugvöllur
         bicycle_parking: Reiðhjólastæði
         bicycle_rental: Reiðhjólaleiga
-        boatyard: Bryggja
         bus_station: Rútustöð
         bus_stop: Strætó
         cable_car: Dráttarbílar

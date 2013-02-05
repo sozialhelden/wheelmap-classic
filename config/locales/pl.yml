@@ -459,7 +459,6 @@ pl:
       unknown: Nieznany
     name:
       accommodation:
-        beach_resort: "Hotel na plaży"
         bed_and_breakfast: "Bed and breakfast"
         camp_site: "Pole kempingowe"
         caravan_site: Kemping
@@ -498,7 +497,6 @@ pl:
         social_facility: "Infrastruktura społeczna"
         veterinary: Weterynarz
       leisure:
-        arena: "Hala sportowa"
         brothel: "Agencja towarzyska"
         cinema: Kino
         community_center: "Dom kultury"
@@ -524,7 +522,6 @@ pl:
         aerodrome: Lotnisko
         bicycle_parking: "Parking dla rowerów"
         bicycle_rental: "Wypożyczalnia rowerów"
-        boatyard: "Stocznia jachtowa"
         bus_station: "Dworzec autobusowy"
         bus_stop: "Przystanek autobusowy"
         cable_car: "Kolejka linowa"
