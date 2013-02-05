@@ -494,7 +494,6 @@ hi:
       unknown: अज्ञात
     name:
       accommodation:
-        beach_resort: "समुद्र तट पर होटल, बीच पर होटल "
         bed_and_breakfast: "बेड एंड ब्रेकफ़ास्ट, रहने की व्यवस्था और नाश्ता भी"
         camp_site: "कैंप स्थल, शिविर स्थल"
         caravan_site: "कारवां स्थल "
@@ -535,7 +534,6 @@ hi:
         social_facility: "सार्वजनिक सुविधा"
         veterinary: "जानवरों का डॅाक्टर"
       leisure:
-        arena: "अखाड़ा, मैदान"
         brothel: "रण्डी खाना, कोठा, "
         cinema: "सिनेमा, "
         community_center: "सामुदायिक केन्द्र"
@@ -561,7 +559,6 @@ hi:
         aerodrome: "हवाई अड्डा "
         bicycle_parking: "साइकिल पार्किंग "
         bicycle_rental: "साइकल किराए पर"
-        boatyard: "नावों का यार्ड"
         bus_station: "बस अड्डा"
         bus_stop: "बस स्टॅाप"
         cable_car: "केबल कार"

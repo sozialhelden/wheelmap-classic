@@ -1,10 +1,10 @@
---- 
-ja: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+ja:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: 承認してください
         blank: 入力必須です
         confirmation: 確認入力が一致しません
@@ -25,30 +25,30 @@ ja:
         too_long: "が長すぎます (最大 %{count}文字)"
         too_short: "が短かすぎます (最小 %{count}文字)"
         wrong_length: "の文字数が誤っています (%{count}文字でなければなりません)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: メールアドレス
           password: パスワード
           remember_me: ログインを続ける
-      template: 
+      template:
         body: 次の項目に問題がありました：
-        header: 
+        header:
           one: "エラーがひとつありこの %{model} は保存できませんでした"
           other: "%{count} 件のエラーがあり、この %{model} は保存できませんでした"
-  application: 
-    require_no_user: 
+  application:
+    require_no_user:
       notice: "あなたはログイン済です ..."
-    require_user: 
+    require_user:
       notice: このページはログインしてから閲覧してください
-  breadcrumbs: 
-    node: 
+  breadcrumbs:
+    node:
       create: 新しい場所を追加
       edit: 場所を編集
     root: wheelmap
-  common: 
+  common:
     close: 閉じる
-  date: 
-    abbr_day_names: 
+  date:
+    abbr_day_names:
       - 日
       - ~
       - 月
@@ -61,7 +61,7 @@ ja:
       - 土
       - ~
       - 金
-    abbr_month_names: 
+    abbr_month_names:
       - ""
       - 1月
       - ~
@@ -86,7 +86,7 @@ ja:
       - ~
       - ~
       - 12月
-    day_names: 
+    day_names:
       - 日曜
       - 月曜
       - ~
@@ -100,11 +100,11 @@ ja:
       - ~
       - ~
       - 土曜
-    formats: 
+    formats:
       default: "%Y-%m-%d "
       long: "%B %d, %Y"
       short: "%b %d "
-    month_names: 
+    month_names:
       - ""
       - ~
       - 1月
@@ -126,57 +126,57 @@ ja:
       - ~
       - ~
       - 9月
-    order: 
+    order:
       - "!ruby/symbol year"
       - ~
       - "!ruby/symbol month"
       - "!ruby/symbol day"
-  datetime: 
-    distance_in_words: 
-      about_x_hours: 
+  datetime:
+    distance_in_words:
+      about_x_hours:
         one: 約1時間
         other: "約 %{count} 時間"
-      about_x_months: 
+      about_x_months:
         one: 約1か月
         other: "約 %{count}か月"
-      about_x_years: 
+      about_x_years:
         one: 約1年
         other: "約 %{count} 年"
       half_a_minute: 0.5分
-      over_x_years: 
+      over_x_years:
         one: 1年以上
         other: "%{count}年以上"
-      x_days: 
+      x_days:
         one: 1日
         other: "%{count}日"
-      x_minutes: 
+      x_minutes:
         one: 1分
         other: "%{count}分"
-      x_months: 
+      x_months:
         one: 1か月
         other: "%{count} か月"
-      x_seconds: 
+      x_seconds:
         one: 1秒
         other: "%{count}秒"
-  devise: 
-    confirmations: 
+  devise:
+    confirmations:
       confirmed: あなたのアカウントは確認できました。現在サイインしています。
       link: 確認手順を受け取っていませんか？
       send_instructions: 数分であなたのアカウントを確認する手順がメールで届きます。
-    destroy: 
+    destroy:
       confirm: 本当によろしいですか？
       headline: アカウントを削除
       link: 今すぐ削除
-    edit: 
-      form: 
-        labels: 
+    edit:
+      form:
+        labels:
           current_password: "現在のパスワード <i>(変更確認のために必要です)</i>  "
           email: Eメール
           password: "パスワード <i>(変更しない場合は空白)</i> "
           password_confirmation: パスワードをもう一度入力
         submit: 変更を保存
       headline: アカウント管理
-    failure: 
+    failure:
       inactive: あなたのアカウントはまだ有効化されていません。
       invalid: メールアドレスかパスワードが違います。
       invalid_token: 認証トークンが違います。
@@ -184,43 +184,43 @@ ja:
       timeout: セッションの有効期限が切れています、サイインして続けてください。
       unauthenticated: 続けるにはログインか登録が必要です。
       unconfirmed: 続ける前にアカウントを確認してください。
-    mailer: 
-      confirmation_instructions: 
+    mailer:
+      confirmation_instructions:
         subject: 確認手順
-      reset_password_instructions: 
+      reset_password_instructions:
         subject: パスワードリセット手順
-      unlock_instructions: 
+      unlock_instructions:
         subject: ロック解除手順
     mandatory: "* 必須項目"
-    password_recovery: 
-      form: 
-        labels: 
+    password_recovery:
+      form:
+        labels:
           email: Eメール
         submit: パスワードをリセット
       headline: パスワードを忘れた？
-    password_reset: 
-      email: 
+    password_reset:
+      email:
         comment: あなたがパスワード変更を要求した記憶が無い場合は、このメールは無視してください<br/>あなたのパスワードはこのリンクをクリックしなければ変更されません。
         headline: "ようこそ %{email} さん"
         link: パスワードを変更
         text: 誰かがあなたのパスワード変更を要求しました。次のリンクをクリックして変更できます。
-      form: 
-        labels: 
+      form:
+        labels:
           password: 新しいパスワード
           password_confirmation: パスワード再入力
         submit: パスワードをリセット
       headline: パスワードをリセット
-    passwords: 
+    passwords:
       link: パスワードを忘れた？
       send_instructions: 数分でパスワードのリセット手順が書かれたメールが届きます。
       updated: あなたのパスワードは変更されました。現在サイインしています。
-    registrations: 
+    registrations:
       destroyed: さようなら！あなたのアカウントはキャンセルされました。またお会いできる日を楽しみにしています。
       inactive_signed_up: "登録に成功しましたが、%{reason} のためにログインできません。"
       link: サインアップ
       signed_up: サインアップが完了しました。有効化されればあなたのメールアドレス宛てに確認メールが送信されます。
       updated: あなたのアカウントは更新されました。
-    sessions: 
+    sessions:
       inactive: あなたのアカウントはまだ有効化されていません。
       invalid: Eメールまたはパスワードが違います。
       invalid_token: 不正な認証トークン。
@@ -231,31 +231,31 @@ ja:
       timeout: セッション有効期限切れです。もう一度サイインしてから続けてください。
       unauthenticated: サイインインまたはサインアップして続けてください。
       unconfirmed: アカウントを確認してから続けてください。
-    sign_in: 
-      form: 
-        labels: 
+    sign_in:
+      form:
+        labels:
           email: Eメール
           password: パスワード
           remember_me: ログインを続けますか？
         submit: ログイン
       headline: ログイン
-    sign_out: 
+    sign_out:
       headline: ログアウト
-    sign_up: 
-      form: 
-        labels: 
+    sign_up:
+      form:
+        labels:
           email: Eメール
           password: パスワード
           password_confirmation: パスワード再入力
           wants_newsletter: はい、wheelmapの最新情報を送ってください。（ただし月１回）
         submit: 登録
       headline: 登録
-    unlocks: 
+    unlocks:
       link: アンロック手順が届きませんでしたか？
       send_instructions: 数分でアンロック手順を書いたメールが届きます。
       unlocked: アカウントはアンロックされました。あなたは現在サイインしています。
-  errors: 
-    messages: 
+  errors:
+    messages:
       accepted: 承認してください
       blank: 値を入力してください
       confirmation: 確認が一致しません
@@ -275,19 +275,19 @@ ja:
       too_long: "が長すぎます(%{count} 文字より多すぎてはいけません)"
       too_short: "が短かすぎます(%{count} 文字より少なすぎてはいけません)"
       wrong_length: "長さが間違っています（正確に%{count}文字にしてください）"
-  form: 
+  form:
     show_fully_accessible_places: 車椅子可
     show_limited_accessible_places: 車椅子一部可
     show_places_without_status: 不明な状態
     show_unaccessible_places: 車椅子不可
-  formtastic: 
-    hints: 
+  formtastic:
+    hints:
       lat: 地図上のマーカーを正しい位置に移動
       osm_username: "まだメンバーではありませんか？<a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">今すぐOpenstreetmap のアカウントを作成</a> "
       password: (変更しない場合は空白のまま)
       phone: "例: +49 30 123456-78"
       website: "例: http://www.example.com"
-    labels: 
+    labels:
       category: "カテゴリ:"
       city: "都市:"
       create: 場所を作成
@@ -309,18 +309,18 @@ ja:
       website: "Website:"
       wheelchair: 車椅子のアクセシビリティは？
       wheelchair_description: "アクセシビリティについてのコメント:"
-    titles: 
+    titles:
       basic: 基本データ
       optional: "詳細情報 <span class=\"addition\">(全ての項目はオプションです)</span> "
-  global: 
+  global:
     form_validation_error: 下記に挙げられたエラーに注意してください。
-  header: 
-    meta: 
+  header:
+    meta:
       description: "車椅子で行ける場所を見つけよう - wheelmap.org"
       homepage: ホームページ
       keywords: 車椅子で行ける場所を見つけよう検索マーク
       search: 検索
-    navigation: 
+    navigation:
       blog: ブログ
       feedback: ご意見
       home: 開始
@@ -334,30 +334,30 @@ ja:
       tolk: 翻訳
       what_is_barrier_free: "\"車椅子で行ける(アクセシブル)\"とは？"
       what_is_wheelmap: wheelmapとは？
-    searchbar: 
+    searchbar:
       add_place: 別の場所を追加
       find: 見つける
       placeholder: "例. Sunset Boulevard L.A. or Brandenburg Gate Berlin "
       title_add_place: 今すぐこの位置に新しい場所を追加！
     tagline: "Wheelmap ロゴ"
     title: "Wheelmap - 車椅子で行ける場所を見つけよう "
-  home: 
-    index: 
-      filter: 
+  home:
+    index:
+      filter:
         category: "カテゴリ:"
         wheelchair: 車椅子で行けますか？
-      ie: 
-        action: 
+      ie:
+        action:
           ignore: 無視
           upgrade: ブラウザを更新
-        warning: 
+        warning:
           headline: ごめんなさい！
           message: "Internet Explorerをお使いのようですね。Wheelmapを正しく使うには標準的な動作をするブラウザが必要です。Firefox, Chrome, Safari または Opera をお使いください。"
-      link: 
-        node: 
+      link:
+        node:
           create: 新しい場所を追加
-      popup: 
-        form: 
+      popup:
+        form:
           limited: 車椅子一部可
           ? "no"
           : 車椅子不可
@@ -368,80 +368,80 @@ ja:
         help: "車椅子で行けますか？ (ヘルプ)"
         more: "詳細 ..."
   how?: やり方は？
-  layouts: 
-    application: 
-      banner: 
+  layouts:
+    application:
+      banner:
         alt: Sozialhelden.deによるプロジェクト
-  node: 
-    address: 
+  node:
+    address:
       city: "%{postcode} %{city}"
       street: "%{street} %{housenumber}"
-    tags: 
+    tags:
       phone: "電話:"
       website: "Website:"
-  nodes: 
-    create: 
-      flash: 
+  nodes:
+    create:
+      flash:
         not_successfull: おっと、入力内容が正しくないか不完全です。
         successfull: ありがとうございます、送信内容は保存されました。しばらく経ってからオンラインに反映されます。
-    edit: 
-      header: 
+    edit:
+      header:
         title: "場所を編集: %{node} | wheelmap.org "
-      link: 
+      link:
         large_map: "&laquo; キャンセル"
-    errors: 
+    errors:
       not_authorized: 申し訳ありません、認証に失敗しました
       not_available: 申し訳ありません、このページは一時的に利用できません。
       not_existent: 申し訳ありません、この場所は既に利用できなくなっています。
       not_found: 申し訳ありません、ページが見つかりません。
       param_missing: 検索する言葉を入れてください。
-    flash: 
+    flash:
       authorize_wheelmap: データを変更するためにはOpenStreetMapのアカウントが必要です。
-    new: 
-      header: 
+    new:
+      header:
         title: "新しい場所 | wheelmap.org"
-      link: 
+      link:
         large_map: "&laquo; キャンセル"
-    show: 
-      header: 
+    show:
+      header:
         title: "場所: %{node} | wheelmap.org "
-      link: 
+      link:
         edit_node: 場所を編集
         large_map: 拡大
         report_bug: "Report a problem"
-    update: 
-      flash: 
+    update:
+      flash:
         not_successfull: おっと、入力内容が正しくないか不完全です。
         successfull: ありがとうございます、送信内容は保存されました。しばらく経ってからオンラインに反映されます。
-    update_wheelchair: 
+    update_wheelchair:
       successfull: "\"%{name}\" のステータスは \"%{status} 車椅子利用可\" に変更されました。しばらくたったらオンラインで表示されます。"
-  number: 
-    currency: 
-      format: 
+  number:
+    currency:
+      format:
         delimiter: ","
         format: "%u%n"
         precision: 2
         separator: "."
         unit: $
-    format: 
+    format:
       delimiter: ", "
       precision: 3
       separator: "."
-    human: 
-      format: 
+    human:
+      format:
         precision: 1
-  oauth: 
-    application: 
-      connect: 
+  oauth:
+    application:
+      connect:
         headline: あなたのアカウントをOpenStreetMapアカウントと連携させるとwheelmap.orgで場所を作成したり変更したりすることができます。
-    callback: 
+    callback:
       notice: "あなたのwheelmapアカウントは現在OpenStreetMapアカウント%{user}と連携しています。"
   or: or
-  place: 
+  place:
     one: "%{count} 件の場所"
     other: "%{count} 件の場所"
-  poi: 
-    category: 
+  poi:
+    category:
       accommodation: 宿泊施設
       education: 教育施設
       food: 食事
@@ -454,9 +454,8 @@ ja:
       sport: スポーツ
       tourism: 観光
       unknown: 不明
-    name: 
-      accommodation: 
-        beach_resort: ビーチホテル
+    name:
+      accommodation:
         bed_and_breakfast: 簡易宿泊所
         camp_site: キャンプ場
         caravan_site: カーキャンプ場
@@ -465,14 +464,14 @@ ja:
         hostel: ホステル
         hotel: ホテル
         motel: モーテル
-      education: 
+      education:
         college: 短大
         kindergarten: 幼稚園
         library: 図書館
         museum: 博物館
         school: 学校
         university: 大学
-      food: 
+      food:
         bar: バー
         biergarten: ビアガーデン
         cafe: カフェ
@@ -480,37 +479,35 @@ ja:
         fast_food: ファストフード
         pub: パブ
         restaurant: レストラン
-      government: 
+      government:
         courthouse: 裁判所
         embassy: 大使館
         public_building: 公共施設
         townhall: 役場
-      leisure: 
-        arena: アリーナ
+      leisure:
         cinema: 映画館
         gallery: ギャラリー
         nightclub: ナイトクラブ
         sauna: サウナ
         theatre: 劇場
         zoo: 動物園
-      misc: 
+      misc:
         doctors: 医者
         hospital: 病院
         pharmacy: 薬局
         place_of_worship: 寺社礼拝所
         toilets: トイレ
         veterinary: 獣医
-      money_post: 
+      money_post:
         atm: ATM
         bank: 銀行
         bureau_de_change: 両替所
         post_box: 郵便ポスト
         post_office: 郵便局
-      public_transfer: 
+      public_transfer:
         aerodrome: 空港
         bicycle_parking: 駐輪場
         bicycle_rental: レンタサイクル
-        boatyard: ボート場
         bus_station: バスターミナル
         bus_stop: バス停
         cable_car: ケーブルカー
@@ -529,7 +526,7 @@ ja:
         subway_entrance: 地下鉄入口
         terminal: 空港ターミナル
         tram_stop: 電停
-      shopping: 
+      shopping:
         alcohol: 酒屋
         bakery: パン屋
         beverages: 飲み物屋
@@ -554,12 +551,12 @@ ja:
         optician: めがね屋
         shoes: 靴屋
         supermarket: スーパーマーケット
-      sport: 
+      sport:
         sports_centre: スポーツセンター
         stadium: スタジアム
         swimming: 水泳
         swimming_pool: スイミングプール
-      tourism: 
+      tourism:
         archaeological_site: 遺跡
         arts_centre: アートセンター
         artwork: 美術品
@@ -574,74 +571,74 @@ ja:
         theme_park: テーマパーク
         tower: 塔
         viewpoint: 展望所
-      unknown: 
+      unknown:
         unknown: 不明
-  profile: 
-    edit: 
-      application: 
-        oauth: 
+  profile:
+    edit:
+      application:
+        oauth:
           connected: "状態: 接続済"
           grant: 今すぐ接続
           not_connected: "状態: 未接続"
           revoke: 切断
       headline: プロフィールを編集
-  search: 
-    index: 
-      search: 
+  search:
+    index:
+      search:
         for: "\"%{q}\" を検索中"
         not_found: 場所が見つかりません！
   statistics: 統計
-  support: 
-    array: 
+  support:
+    array:
       last_word_connector: ", and"
       sentence_connector: かつ
       skip_last_comma: "true"
       two_words_connector: "and "
       words_connector: ","
-    select: 
+    select:
       prompt: 選んでください
-  time: 
+  time:
     am: am
-    formats: 
+    formats:
       default: "%a, %d %b %Y %H:%M:%S %z "
       long: "%B %d, %Y %H:%M "
       short: "%d %b %H:%M"
     pm: pm
-  user_sessions: 
-    create: 
-      activation: 
+  user_sessions:
+    create:
+      activation:
         notice: あなたのアカウントは有効化されました！
-      error: 
+      error:
         notice: Eメールとパスワードが一致しません。
       notice: 入っています！
-    destroy: 
+    destroy:
       notice: さよなら、またお越しください！
-    new: 
+    new:
       email: Eメールアドレス
       login: ログイン
       login_with_twitter: Twitterでログイン
       password: パスワード
       remember_me: ログインを保持する
-  wheelchairstatus: 
+  wheelchairstatus:
     limited: 一部車椅子利用可
     ? "no"
     : 車椅子利用不可
     unknown: 車椅子利用不明
     ? "yes"
     : 完全に車椅子利用可
-  wheelmap: 
-    footer: 
+  wheelmap:
+    footer:
       a_project_of: プロジェクト推進：
       based_on: ベース地図：
       become_a_supporter: サポーターになる
       main_supporter: 主なサポーター
-    itunes: 
+    itunes:
       alt: AppStoreロゴ
       title: "今すぐiPhone Appをダウンロード！"
-    logo: 
+    logo:
       alt: "Wheelmap ロゴ - 車椅子で行ける場所を見つけよう"
       title: "Wheelmap - 車椅子で行ける場所を見つけよう"
-    what_is: 
+    what_is:
       fully_accessible: "<em>はい:</em>入口には段差が無い、全ての部屋に段差が無い、車椅子でトイレに行ける"
       limited_accessible: "<em>一部:</em>入口に段差がある(最大でも高さ7cmまで)、たいていの部屋には段差が無い、車椅子でトイレに行けない"
       not_accessible: "<em>いいえ:</em>入口の段差が高いか複数あり、部屋に入れません"
