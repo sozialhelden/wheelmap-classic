@@ -56,13 +56,12 @@ describe UpdateTagsJob do
 
     # change at least one tag to trigger the save action
     tags = poi.tags
-    tags['addr:housenumber'] = 99
-    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, tags, user, 'update_iphone')
+    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, tags.merge({'access' => 'public'}), user, 'update_iphone')
 
     unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
     api = mock(:find_or_create_open_changeset => changeset)
-
     Rosemary::Api.should_receive(:new).and_return(api)
+
     api.should_receive(:find_element).with('node', node.id.abs).and_return(unedited_node)
     api.should_receive(:save) { |node, _| node.lat.should eql 52.0; node.lon.should eql 13.0 }
     successes, failures = Delayed::Worker.new.work_off
