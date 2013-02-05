@@ -1,6 +1,10 @@
 ---
 cs:
   activerecord:
+    attributes:
+      user:
+        first_name: "Křestní jméno"
+        terms: Podmínky
     errors:
       messages:
         accepted: "musí být potvrzeno"
@@ -35,10 +39,16 @@ cs:
     confirmations:
       confirmed: "Váš účet byl úspěšně potvrzen. Nyní jste přihlášen(a)."
       send_instructions: "Za několik minut obdržíte email s instrukcemi k potvrzení vašeho účtu."
+    destroy:
+      confirm: "Jste si jistí?"
+    edit:
+      form:
+        labels:
+          password: "Heslo <i>(nechte prázdné jestli ho nechcete měnit)</i>"
     failure:
       already_authenticated: "Přihlášení již proběhlo."
       inactive: "Váš účet ještě nebyl aktivován."
-      invalid: "Neplatná identita nebo heslo."
+      invalid: "Nesprávný email nebo heslo."
       invalid_token: "Neplatný ověřovací symbol."
       locked: "Váš účet je uzamčen."
       timeout: "Vaše relace vypršela, přihlašte se prosím znovu, pak můžete pokračovat."
@@ -46,6 +56,7 @@ cs:
       unconfirmed: "Musíte potvrdit svůj účet, pak můžete pokračovat."
     mailer:
       confirmation_instructions:
+        landing_page: "Prosím klikněte na odkaz, který jsme vám poslali na vaši emailovou adresu. Jestli od nás nedostanete email tak nejprve zkontrolujte jestli neskončil v spamu. Jestli tam není tak se vraťte na stránku pro vytvoření účtu a zkuste to znova."
         subject: "Potvrzovací instrukce"
       reset_password_instructions:
         subject: "Instrukce k nastavení nového hesla"
@@ -54,17 +65,29 @@ cs:
     omniauth_callbacks:
       failure: "Není možné autorizovat z %{kind}, protože: \"%{reason}\"."
       success: "Úspěšná autorizace z účtu %{kind}."
+    password_reset:
+      email:
+        link: "Změnit heslo"
     passwords:
       send_instructions: "Za několik minut obdržíte email s instrukcemi k nastavení nového hesla."
+      send_paranoid_instructions: "Jestli váš účet existuje, během pár minut obdržíte email s instrukcemi jak si obnovit heslo"
       updated: "Vaše heslo bylo úspěšně změněno. Nyní jste přihlášen(a)."
     registrations:
       destroyed: "Nashle! Váš účet byl úspěšně zrušen. Doufáme, že se brzy opět uvidíme."
       inactive_signed_up: "Registrace byla úspěšná. Nicméně, nemůžete se přihlásit, protože: \"%{reason}\"."
+      link: "Vytvořit účet"
       signed_up: "Vítejte! Registrace byla úspěšná."
       updated: "Váš účet byl úspěšně aktualizován."
     sessions:
+      invalid: "Nesprávný email nebo heslo."
+      new:
+        sign_up_with_osm: "Zaregistrujte se."
       signed_in: "Přihlášení úspěšné."
       signed_out: "Odhlášení úspěšné."
+    sign_up:
+      form:
+        labels:
+          email: Email
     unlocks:
       send_instructions: "Za několik minut obdržíte email s instrukcemi, jak odemknout svůj účet."
       unlocked: "Váš účet byl úspěšně odemknut. Nyní jste přihlášen(a)."
@@ -102,10 +125,21 @@ cs:
       header:
         one: "Při ukládání objektu %{model} došlo k chybám a nebylo jej možné uložit"
         other: "Při ukládání objektu %{model} došlo ke %{count} chybám a nebylo možné jej uložit"
+  flash:
+    actions:
+      destroy:
+        alert: "%{resource_name} se nepovedlo odstranit"
+        notice: "%{resource_name} již neexistuje"
+  form:
+    show_places_without_status: "neznámý stav"
   formtastic:
     labels:
+      centralkey: "Společný klíč:"
+      postcode: "Směrovací číslo:"
       save: Uložit
       street: "Ulice:"
+      type: "Typ:"
+      wheelchair_description: "Poznámka k přístupnosti:"
   helpers:
     select:
       prompt: "Prosím vyberte si"
@@ -115,10 +149,28 @@ cs:
       update: "Aktualizovat %{model}"
   home:
     index:
+      filter:
+        select_all: "Označit vše"
+      ie:
+        action:
+          ignore: Ignorovat
       popup:
         form:
           ? "yes"
           : "přístupné pro vozíčkáře"
+  how?: Jak?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Všechny %{type} s omezeným přístupem pro vozíčkáře v %{city} (%{count})"
+  nodes:
+    errors:
+      not_authorized: "Přihlášení bylo neúspěšné"
+      not_available: "Omlouváme se, tahle stránka je dočasně nedostupná."
+    show:
+      link:
+        back: zpět
   number:
     currency:
       format:
@@ -153,6 +205,8 @@ cs:
       storage_units:
         format: "%n %u"
         units:
+          byte:
+            other: B
           gb: GB
           kb: KB
           mb: MB
@@ -163,29 +217,52 @@ cs:
     precision:
       format:
         delimiter: ~
+  or: nebo
   poi:
     category:
+      accommodation: Ubytování
       government: Vláda
       sport: Sport
+      tourism: Cestování
     name:
       education:
         school: Škola
+        university: Univerzita
+      food:
+        fast_food: "Rychlé občerstvení"
       misc:
         toilets: Toalety
       money_post:
         atm: Bankomat
         bureau_de_change: Směnárna
+      public_transfer:
+        bus_station: "Autobusová stanice"
+        subway_entrance: "Vchod do metra"
       shopping:
+        alcohol: Alkohol
+        beverages: Nápoje
+        chemist: Lékárna
         department_store: "Obchodní dům"
+        florist: Květinářství
+        hardware: Železářství
+        laundry: Prádelna
+        optician: Optika
+        photo: Fotky
+        second_hand: "Second hand"
+        supermarket: Supermarket
       sport:
         stadium: Stadion
+        swimming_pool: "Plavecký bazen"
       tourism:
         information: "Turistické informace"
+        tower: Věž
   splash:
     start: Start
   support:
     array:
       last_word_connector: " a "
+      sentence_connector: a
+      skip_last_comma: ano
       two_words_connector: " a "
       words_connector: ", "
   time:
@@ -195,7 +272,18 @@ cs:
       long: "%A %d. %B %Y %H:%M"
       short: "%d. %m. %H:%M"
     pm: pm
+  user_sessions:
+    new:
+      login: "Přihlásit se"
+      password: Heslo
   users:
     after_signup_edit:
       welcome:
         headline: "Vítejte na wheelmap"
+        set_password_for_mobile: "Máte smartphone? Určete si heslo aby jste mohli Wheelmap používat i na cestách ve vašem iPhone nebo telefonu s Androidem."
+  wheelchairstatus:
+    limited: "částečně přístupné pro vozíčkáře"
+    unknown: "neznámý stav"
+  will_paginate:
+    page_entries_info:
+      multi_page: "Zobrazuju %{model} %{from} - %{to} z celkového počtu %{count}"
