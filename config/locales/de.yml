@@ -489,14 +489,14 @@ de:
         bed_and_breakfast: "Zimmer mit Frühstück"
         camp_site: Zeltplatz
         caravan_site: Campingplatz
-        chalet: Chalet
-        guest_house: Gasthaus
+        chalet: Ferienhaus
+        guest_house: Pension
         hostel: Hostel
         hotel: Hotel
         motel: Motel
       education:
         college: Hochschule
-        kindergarten: Kindergarten
+        kindergarten: Kindertagesstätte
         library: Bibliothek
         museum: Museum
         school: Schule
@@ -527,7 +527,7 @@ de:
         arena: Stadion
         brothel: Bordell
         cinema: Kino
-        community_center: Gemeindezentrum
+        community_center: Stadthalle/Gemeindezentrum
         gallery: Galerie
         nightclub: Nachtclub
         playground: Spielplatz
@@ -551,11 +551,11 @@ de:
         bicycle_parking: Fahrradparkplatz
         bicycle_rental: Fahrradvermietung
         boatyard: Hafen
-        bus_station: Bushaltestelle
-        bus_stop: Bus
-        cable_car: Seilbahn
+        bus_station: Busbahnhof
+        bus_stop: Bushaltestelle
+        cable_car: Seilbahnstation
         car_rental: Autovermietung
-        car_sharing: "Car sharing"
+        car_sharing: Carsharing
         chair_lift: Sessellift
         ferry: Fähre
         ferry_terminal: Fähranlegestelle
@@ -568,7 +568,7 @@ de:
         station: Bahnhof
         subway_entrance: "U-Bahn Eingang"
         terminal: Flughafenterminal
-        tram_stop: Straßenbahn
+        tram_stop: Straßenbahnhaltestelle
       shopping:
         alcohol: Spirituosen
         bakery: Bäckerei
@@ -603,13 +603,13 @@ de:
         supermarket: Supermarkt
         video: Videothek
       sport:
-        sports_centre: Fitnesstudio
+        sports_centre: Sportzentrum/-halle
         stadium: Stadion
         swimming: Freibad
         swimming_pool: Schwimmbad
       tourism:
         archaeological_site: "Archäologische Ausgrabungstätte"
-        arts_centre: Kunstzentrum
+        arts_centre: Kulturzentrum
         artwork: Kunstwerk
         attraction: Attraktion
         battlefield: Kampfschauplatz
