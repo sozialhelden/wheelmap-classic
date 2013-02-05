@@ -1,3 +1,10 @@
+CREATE TABLE `Borders` (
+  `Name` varchar(255) DEFAULT NULL,
+  `Admin_Level` tinyint(4) NOT NULL,
+  `Border` geometry NOT NULL,
+  SPATIAL KEY `Border` (`Border`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
 CREATE TABLE `active_admin_comments` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `resource_id` bigint(20) NOT NULL,
@@ -387,11 +394,7 @@ INSERT INTO schema_migrations (version) VALUES ('20120628101234');
 
 INSERT INTO schema_migrations (version) VALUES ('20120711130327');
 
-INSERT INTO schema_migrations (version) VALUES ('20120725143229');
-
 INSERT INTO schema_migrations (version) VALUES ('20120726081246');
-
-INSERT INTO schema_migrations (version) VALUES ('20120727060024');
 
 INSERT INTO schema_migrations (version) VALUES ('20120802105205');
 
@@ -422,3 +425,13 @@ INSERT INTO schema_migrations (version) VALUES ('20121128105658');
 INSERT INTO schema_migrations (version) VALUES ('20121219120846');
 
 INSERT INTO schema_migrations (version) VALUES ('20130108144233');
+
+INSERT INTO schema_migrations (version) VALUES ('20130117143229');
+
+INSERT INTO schema_migrations (version) VALUES ('20130122193813');
+
+INSERT INTO schema_migrations (version) VALUES ('20130205114724');
+
+INSERT INTO schema_migrations (version) VALUES ('20130205134253');
+
+INSERT INTO schema_migrations (version) VALUES ('20130205134630');
