@@ -394,7 +394,6 @@ tr:
       unknown: Belirsiz
     name:
       accommodation:
-        beach_resort: "Plaj Oteli"
         bed_and_breakfast: "Kahvaltı veren Pansiyon "
         camp_site: "Kamping Meydanı"
         caravan_site: "Karavan Parkı"
@@ -429,7 +428,6 @@ tr:
         pharmacy: Eczane
         veterinary: Veteriner
       leisure:
-        arena: Arena
         cinema: Sinema
         gallery: Galeri
         nightclub: "Gece Kulübü"
@@ -449,7 +447,6 @@ tr:
         aerodrome: Havaalanı
         bicycle_parking: "Bisiklet park yeri"
         bicycle_rental: "Bisiklet kirası"
-        boatyard: Tersana
         bus_station: "Otobüs garajı, Otogar, Terminal"
         bus_stop: "Otobüs durağı"
         cable_car: Teleferik
