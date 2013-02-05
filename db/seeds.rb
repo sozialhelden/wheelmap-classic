@@ -30,7 +30,6 @@ NodeType.connection.execute('ALTER TABLE node_types AUTO_INCREMENT=1')
 public_transfer = Category.find_by_identifier('public_transfer')
 node_types = NodeType.create([
   {:category => public_transfer, :identifier => :bicycle_rental,  :osm_key => 'amenity',   :osm_value => 'bicycle_rental', :icon => 'cycling.png'},
-  {:category => public_transfer, :identifier => :boatyard,        :osm_key => 'waterway',  :osm_value => 'boatyard',       :icon => 'boat.png'},
   {:category => public_transfer, :identifier => :bus_station,     :osm_key => 'amenity',   :osm_value => 'bus_station',    :icon => 'busstop.png'},
   {:category => public_transfer, :identifier => :bus_stop,        :osm_key => 'highway',   :osm_value => 'bus_stop',       :icon => 'busstop.png'},
   {:category => public_transfer, :identifier => :car_rental,      :osm_key => 'amenity',   :osm_value => 'car_rental',     :icon => 'carrental.png'},
@@ -56,20 +55,21 @@ node_types = NodeType.create([
   {:category => food, :identifier => :pub,           :osm_key => 'amenity', :osm_value => 'pub',            :icon => 'bar.png'},
   {:category => food, :identifier => :restaurant,    :osm_key => 'amenity', :osm_value => 'restaurant',     :icon => 'restaurant.png'},
   {:category => food, :identifier => :biergarten,    :osm_key => 'amenity', :osm_value => 'biergarten',     :icon => 'biergarten.png'}
+  {:category => food, :identifier => :ice_cream,     :osm_key => 'amenity', :osm_value => 'ice_cream',      :icon => 'icecream.png'}
 ])
 
 leisure = Category.find_by_identifier('leisure')
 node_types = NodeType.create([
-  {:category => leisure,  :identifier => :arena,       :osm_key => 'leisure',  :osm_value => 'arena',       :icon => 'stadium.png'},
   {:category => leisure,  :identifier => :cinema,      :osm_key => 'amenity',  :osm_value => 'cinema',      :icon => 'cinema.png'},
-  {:category => leisure,  :identifier => :gallery,     :osm_key => 'amenity',  :osm_value => 'gallery',     :icon => 'museum_art.png'},
+  {:category => leisure,  :identifier => :gallery,     :osm_key => 'tourism',  :osm_value => 'gallery',     :alt_osm_key => 'amenity', :alt_osm_value => 'gallery', :icon => 'museum_art.png'},
   {:category => leisure,  :identifier => :nightclub,   :osm_key => 'amenity',  :osm_value => 'nightclub',   :icon => 'dancinghall.png'},
   {:category => leisure,  :identifier => :theatre,     :osm_key => 'amenity',  :osm_value => 'theatre',     :icon => 'theater.png'},
   {:category => leisure,  :identifier => :zoo,         :osm_key => 'tourism',  :osm_value => 'zoo',         :icon => 'zoo.png'},
-  {:category => leisure, :identifier => :brothel, :osm_key => 'amenity', :osm_value => 'brothel', :icon => 'lantern.png'},
-  {:category => leisure, :identifier => :community_center, :osm_key => 'amenity', :osm_value => 'community_center', :icon => 'communitycentre.png'},
-  {:category => leisure, :identifier => :stripclub, :osm_key => 'amenity', :osm_value => 'stripclub', :icon => 'stripclub.png'},
-  {:category => leisure, :identifier => :playground, :osm_key => 'leisure', :osm_value => 'playground', :icon => 'playground.png'}
+  {:category => leisure,  :identifier => :brothel,     :osm_key => 'amenity', :osm_value => 'brothel', :icon => 'lantern.png'},
+  {:category => leisure,  :identifier => :community_center, :osm_key => 'amenity', :osm_value => 'community_centre', :alt_osm_key => 'amenity', :alt_osm_value => 'community_center', :icon => 'communitycentre.png'},
+  {:category => leisure,  :identifier => :stripclub,   :osm_key => 'amenity', :osm_value => 'stripclub', :icon => 'stripclub.png'},
+  {:category => leisure,  :identifier => :playground,  :osm_key => 'leisure', :osm_value => 'playground', :icon => 'playground.png'}
+  {:category => leisure,  :identifier => :casino,      :osm_key => 'amenity', :osm_value => 'casino', :icon => 'poker.png'}
 ])
 
 money_post = Category.find_by_identifier('money_post')
@@ -82,12 +82,13 @@ node_types = NodeType.create([
 
 education = Category.find_by_identifier('education')
 node_types = NodeType.create([
-  {:category => education,  :identifier => :college,      :osm_key => 'amenity',  :osm_value => 'college',      :icon => 'university.png'},
-  {:category => education,  :identifier => :kindergarten, :osm_key => 'amenity',  :osm_value => 'kindergarten', :icon => 'daycare.png'},
-  {:category => education,  :identifier => :library,      :osm_key => 'amenity',  :osm_value => 'library',      :icon => 'library.png'},
-  {:category => education,  :identifier => :museum,       :osm_key => 'tourism',  :osm_value => 'museum',       :icon => 'museum_archeological.png'},
-  {:category => education,  :identifier => :school,       :osm_key => 'amenity',  :osm_value => 'school',       :icon => 'school.png'},
-  {:category => education,  :identifier => :university,   :osm_key => 'amenity',  :osm_value => 'university',   :icon => 'university.png'}
+  {:category => education,  :identifier => :college,        :osm_key => 'amenity',  :osm_value => 'college',        :icon => 'university.png'},
+  {:category => education,  :identifier => :kindergarten,   :osm_key => 'amenity',  :osm_value => 'kindergarten',   :icon => 'daycare.png'},
+  {:category => education,  :identifier => :library,        :osm_key => 'amenity',  :osm_value => 'library',        :icon => 'library.png'},
+  {:category => education,  :identifier => :museum,         :osm_key => 'tourism',  :osm_value => 'museum',         :icon => 'museum_archeological.png'},
+  {:category => education,  :identifier => :school,         :osm_key => 'amenity',  :osm_value => 'school',         :icon => 'school.png'},
+  {:category => education,  :identifier => :university,     :osm_key => 'amenity',  :osm_value => 'university',     :icon => 'university.png'}
+  {:category => education,  :identifier => :driving_school, :osm_key => 'amenity',  :osm_value => 'driving_school', :icon => 'car.png'}
 ])
 
 shopping = Category.find_by_identifier('shopping')
@@ -124,13 +125,26 @@ node_types = NodeType.create([
   {:category => shopping,  :identifier => :car_repair,        :osm_key => 'shop', :osm_value => 'car_repair',       :icon => 'car_repair.png'},
   {:category => shopping,  :identifier => :sports,            :osm_key => 'shop', :osm_value => 'sports',           :icon => 'weights.png'},
   {:category => shopping,  :identifier => :photo,             :osm_key => 'shop', :osm_value => 'photo',            :icon => 'photography.png'}
+  {:category => shopping,  :identifier => :deli,              :osm_key => 'shop', :osm_value => 'deli',             :icon => 'lobster-export.png'}
+  {:category => shopping,  :identifier => :confectionery,     :osm_key => 'shop', :osm_value => 'confectionery',    :icon => 'targ.png'}
+  {:category => shopping,  :identifier => :beauty,            :osm_key => 'shop', :osm_value => 'beauty',           :icon => 'beautysalon.png'}
+  {:category => shopping,  :identifier => :jewelry,           :osm_key => 'shop', :osm_value => 'jewelry',          :icon => 'jewelry.png'}
+  {:category => shopping,  :identifier => :gift,              :osm_key => 'shop', :osm_value => 'gift',             :icon => 'gifts.png'}
+  {:category => shopping,  :identifier => :toys,              :osm_key => 'shop', :osm_value => 'toys',             :icon => 'toys.png'}
+  {:category => shopping,  :identifier => :farm_shop,         :osm_key => 'shop', :osm_value => 'farm',             :icon => 'farmstand.png'}
+  {:category => shopping,  :identifier => :travel_agency,     :osm_key => 'shop', :osm_value => 'travel_agency',    :icon => 'travel_agency.png'}
+  {:category => shopping,  :identifier => :outdoor,           :osm_key => 'shop', :osm_value => 'outdoor',          :icon => 'hiking.png'}
+  {:category => shopping,  :identifier => :organic,           :osm_key => 'shop', :osm_value => 'organic',          :icon => 'restaurant_vegetarian.png'}
+  {:category => shopping,  :identifier => :pet,               :osm_key => 'shop', :osm_value => 'pet',              :icon => 'cat.png'}
+  {:category => shopping,  :identifier => :fabric,            :osm_key => 'shop', :osm_value => 'fabric',           :icon => 'textiles.png'}
 ])
 
 sport = Category.find_by_identifier('sport')
 node_types = NodeType.create([
-  {:category => sport,  :identifier => :sports_centre,  :osm_key => 'leisure', :osm_value => 'sports_centre', :icon => 'fitness.png' },
+  {:category => sport,  :identifier => :sports_centre,  :osm_key => 'leisure', :osm_value => 'sports_centre', :icon => 'tennis.png' },
   {:category => sport,  :identifier => :stadium,        :osm_key => 'leisure', :osm_value => 'stadium',       :icon => 'stadium.png' },
-  {:category => sport,  :identifier => :swimming_pool,  :osm_key => 'amenity', :osm_value => 'swimming_pool', :icon => 'swimming.png'}
+  {:category => sport,  :identifier => :swimming_pool,  :osm_key => 'amenity', :osm_value => 'swimming_pool', :icon => 'swimming.png'},
+  {:category => sport,  :identifier => :pitch,          :osm_key => 'leisure', :osm_value => 'pitch',         :icon => 'soccer.png'}
 ])
 
 tourism = Category.find_by_identifier('tourism')
@@ -149,15 +163,15 @@ node_types = NodeType.create([
 
 accommodation = Category.find_by_identifier('accommodation')
 node_types = NodeType.create([
-  {:category => accommodation,  :identifier => :beach_resort,         :osm_key => 'leisure',  :osm_value => 'beach_resort',       :icon => 'beach.png'},
-  {:category => accommodation,  :identifier => :bed_and_breakfast,    :osm_key => 'tourism',  :osm_value => 'bed_and_breakfast',  :icon => 'motel.png'},
+  {:category => accommodation,  :identifier => :bed_and_breakfast,    :osm_key => 'tourism',  :osm_value => 'bed_and_breakfast',  :icon => 'bed_breakfast1-2.png'},
   {:category => accommodation,  :identifier => :camp_site,            :osm_key => 'tourism',  :osm_value => 'camp_site',          :icon => 'camping.png'},
   {:category => accommodation,  :identifier => :caravan_site,         :osm_key => 'tourism',  :osm_value => 'caravan_site',       :icon => 'camping.png'},
-  {:category => accommodation,  :identifier => :chalet,               :osm_key => 'tourism',  :osm_value => 'chalet',             :icon => 'motel.png'},
-  {:category => accommodation,  :identifier => :guest_house,          :osm_key => 'tourism',  :osm_value => 'guest_house',        :icon => 'motel.png'},
-  {:category => accommodation,  :identifier => :hostel,               :osm_key => 'tourism',  :osm_value => 'hostel',             :icon => 'motel.png'},
-  {:category => accommodation,  :identifier => :hotel,                :osm_key => 'tourism',  :osm_value => 'hotel',              :icon => 'motel.png'},
+  {:category => accommodation,  :identifier => :chalet,               :osm_key => 'tourism',  :osm_value => 'chalet',             :icon => 'home-2.png'},
+  {:category => accommodation,  :identifier => :guest_house,          :osm_key => 'tourism',  :osm_value => 'guest_house',        :icon => 'villa.png'},
+  {:category => accommodation,  :identifier => :hostel,               :osm_key => 'tourism',  :osm_value => 'hostel',             :icon => 'lodging_0star.png'},
+  {:category => accommodation,  :identifier => :hotel,                :osm_key => 'tourism',  :osm_value => 'hotel',              :icon => 'lodging_0star.png'},
   {:category => accommodation,  :identifier => :motel,                :osm_key => 'tourism',  :osm_value => 'motel',              :icon => 'motel.png'},
+  {:category => accommodation,  :identifier => :dormitory,            :osm_key => 'building', :osm_value => 'dormitory',          :icon => 'apartment-3.png'},
 ])
 
 misc = Category.find_by_identifier('misc')
@@ -166,6 +180,8 @@ node_types = NodeType.create([
   {:category => misc,  :identifier => :toilets,           :osm_key => 'amenity',  :osm_value => 'toilets',          :icon => 'toilets.png'},
   {:category => misc,  :identifier => :company,           :osm_key => 'office',   :osm_value => 'company',          :icon => 'workoffice.png'},
   {:category => misc,  :identifier => :lawyer,            :osm_key => 'office',   :osm_value => 'lawyer',           :icon => 'court.png'}
+  {:category => misc,  :identifier => :estate_agent,      :osm_key => 'office',   :osm_value => 'estate_agent',     :icon => 'house.png'}
+  {:category => misc,  :identifier => :insurance,         :osm_key => 'office',   :osm_value => 'insurance',        :icon => 'workoffice.png'}
 
 ])
 
@@ -175,6 +191,7 @@ node_types = NodeType.create([
   {:category => government,  :identifier => :townhall,        :osm_key => 'amenity',  :osm_value => 'townhall',         :icon => 'bigcity.png'},
   {:category => government,  :identifier => :embassy,         :osm_key => 'amenity',  :osm_value => 'embassy',          :icon => 'embassy.png'},
   {:category => government,  :identifier => :police,          :osm_key => 'amenity',  :osm_value => 'police',           :icon => 'police.png'}
+  {:category => government,  :identifier => :government,      :osm_key => 'office',   :osm_value => 'government',       :icon => 'office-building.png'}
 ])
 
 health = Category.find_by_identifier('health')
@@ -185,7 +202,8 @@ node_types = NodeType.create([
   {:category => health,  :identifier => :veterinary,        :osm_key => 'amenity',  :osm_value => 'veterinary',       :icon => 'veterinary.png'},
   {:category => health,  :identifier => :medical_supply,    :osm_key => 'shop',     :osm_value => 'medical_supply',   :icon => 'medicalstore.png'},
   {:category => health,  :identifier => :hearing_aids,      :osm_key => 'shop',     :osm_value => 'hearing_aids',     :icon => 'hearing_aids.png'},
-  {:category => health,  :identifier => :social_facility,   :osm_key => 'amenity',  :osm_value => 'social_facility',  :icon => 'social_facility.png'}
+  {:category => health,  :identifier => :social_facility,   :osm_key => 'amenity',  :osm_value => 'social_facility',  :icon => 'social_facility.png'},
+  {:category => health,  :identifier => :dentist,           :osm_key => 'amenity',  :osm_value => 'dentist',          :icon => 'dentist.png'}
 ])
 
 Region.delete_all

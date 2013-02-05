@@ -479,7 +479,6 @@ fr:
       unknown: Inconnu
     name:
       accommodation:
-        beach_resort: "Hôtel près de la plage"
         bed_and_breakfast: "Chambre d'hôtes"
         camp_site: Camping
         caravan_site: Camping
@@ -518,7 +517,6 @@ fr:
         social_facility: "centre social"
         veterinary: Vétérinaire
       leisure:
-        arena: Stade
         brothel: "Maison close"
         cinema: Cinéma
         community_center: "Centre municipal"
@@ -544,7 +542,6 @@ fr:
         aerodrome: Aéroport
         bicycle_parking: "Stationnement vélos"
         bicycle_rental: "Location de bicyclettes"
-        boatyard: Port
         bus_station: "arrêt de bus"
         bus_stop: "Arrêt de bus "
         cable_car: Télécabine

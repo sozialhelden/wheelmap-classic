@@ -479,17 +479,18 @@ de:
       unknown: Unbekannt
     name:
       accommodation:
-        beach_resort: Strandhotel
         bed_and_breakfast: "Zimmer mit Frühstück"
         camp_site: Zeltplatz
         caravan_site: Campingplatz
         chalet: Ferienhaus
+        dormitory: Studentenwohnheim
         guest_house: Pension
         hostel: Hostel
         hotel: Hotel
         motel: Motel
       education:
         college: Hochschule
+        driving_school: Fahrschule
         kindergarten: Kindertagesstätte
         library: Bibliothek
         museum: Museum
@@ -501,15 +502,18 @@ de:
         cafe: Café
         drinking_water: Trinkwasser
         fast_food: "Fast Food"
+        ice_cream: Eisdiele
         pub: Pub
         restaurant: Restaurant
       government:
         courthouse: Gericht
         embassy: Botschaft
+        government: "Amt/Behörde"
         police: Polizei
         public_building: "Öffentliches Gebäude"
         townhall: Rathaus
       health:
+        dentist: Zahnarzt
         doctors: Arzt
         hearing_aids: Hörgeräteakustiker
         hospital: Krankenhaus
@@ -518,8 +522,8 @@ de:
         social_facility: "Soziale Einrichtung"
         veterinary: Tierarzt
       leisure:
-        arena: Stadion
         brothel: Bordell
+        casino: Spielcasino
         cinema: Kino
         community_center: Stadthalle/Gemeindezentrum
         gallery: Galerie
@@ -531,6 +535,8 @@ de:
         zoo: Zoo
       misc:
         company: "Unternehmen (Büro)"
+        estate_agent: Immobilienmakler
+        insurance: Versicherung
         lawyer: Anwalt
         place_of_worship: "Religiöser Ort"
         toilets: "Öffentliche Toilette"
@@ -544,7 +550,6 @@ de:
         aerodrome: Flughafen
         bicycle_parking: Fahrradparkplatz
         bicycle_rental: Fahrradvermietung
-        boatyard: Hafen
         bus_station: Busbahnhof
         bus_stop: Bushaltestelle
         cable_car: Seilbahnstation
@@ -566,6 +571,7 @@ de:
       shopping:
         alcohol: Spirituosen
         bakery: Bäckerei
+        beauty: Schönheitssalon
         beverages: Getränkemarkt
         bicycle: Fahrradladen
         books: Buchhandlung
@@ -575,28 +581,40 @@ de:
         chemist: Drogerie
         clothes: Bekleidung
         computer: Computer
+        confectionery: Süßwarengeschäft
         convenience: Spätkauf
+        deli: Feinkostladen
         department_store: Warenhaus
         doityourself: Baumarkt
         dry_cleaning: "Chemische Reinigung"
         electronics: Elektronik
+        fabric: Stoffladen
+        farm_shop: Hofladen
         florist: Blumengeschäft
         furniture: Möbelhaus
         garden_centre: Garten-Center
+        gift: Souvenir-/Geschenkartikelladen
         hairdresser: Friseur
         hardware: Eisenwarenladen
+        jewelry: Juwelier
         kiosk: Kiosk
         laundry: Wäscherei
         mall: Shoppingcenter
         optician: Optiker
+        organic: Bio-Laden
+        outdoor: Outdoorbedarf
+        pet: Zoohandlung
         photo: Foto
         second_hand: Second-Hand
         shoes: Schuhe
         sports: Sportlerbedarf
         stationery: Schreibwaren
         supermarket: Supermarkt
+        toys: Spielwarenladen
+        travel_agency: Reisebüro
         video: Videothek
       sport:
+        pitch: Spielfeld/Sportplatz
         sports_centre: Sportzentrum/-halle
         stadium: Stadion
         swimming: Freibad
