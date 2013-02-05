@@ -479,7 +479,6 @@ sk:
       unknown: Neznáme
     name:
       accommodation:
-        beach_resort: "Plážový hotel"
         bed_and_breakfast: "Nocľah s raňajkami"
         camp_site: Kemping
         caravan_site: "Autokemping pre obytné prívesy"
@@ -518,7 +517,6 @@ sk:
         social_facility: "Spoločenské zázemie"
         veterinary: Veterinár
       leisure:
-        arena: Štadión
         brothel: Nevestinec
         cinema: Kino
         community_center: "Komunitné centrum"
@@ -544,7 +542,6 @@ sk:
         aerodrome: Letisko
         bicycle_parking: "Stojan na bicykle"
         bicycle_rental: "Požičovňa bicyklov"
-        boatyard: Lodenica
         bus_station: "Autobusová stanica"
         bus_stop: "Zastávka autobusu"
         cable_car: Lanovka

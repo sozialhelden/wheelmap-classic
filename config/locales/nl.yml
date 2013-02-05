@@ -419,7 +419,6 @@ nl:
       unknown: Onbekend
     name:
       accommodation:
-        beach_resort: "Strand hotel"
         bed_and_breakfast: "Bed en ontbijt"
         camp_site: Kampeerplaats
         caravan_site: Kampeerplaats
@@ -458,7 +457,6 @@ nl:
         social_facility: "Sociale voorziening"
         veterinary: Dierenarts
       leisure:
-        arena: Arena
         brothel: Bordeel
         cinema: bioscoop
         community_center: Wijkcentrum
@@ -484,7 +482,6 @@ nl:
         aerodrome: Vliegveld
         bicycle_parking: "Fiets parkeerplaats"
         bicycle_rental: "Fiets verhuur"
-        boatyard: Werft
         bus_station: Bushalte
         bus_stop: Bushalte
         cable_car: Kabelbaan

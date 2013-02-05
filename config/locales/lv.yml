@@ -449,7 +449,6 @@ lv:
       unknown: Nezināms
     name:
       accommodation:
-        beach_resort: "Pludmales viesnīca"
         bed_and_breakfast: B&B
         camp_site: "Nometnes vieta"
         caravan_site: "Treileru kempings"
@@ -488,7 +487,6 @@ lv:
         social_facility: "Sociālā iestāde"
         veterinary: "veterinārā klīnika"
       leisure:
-        arena: Arēna
         brothel: Bordelis
         cinema: Kinoteātris
         community_center: "Bērnu un jauniešu centrs"
@@ -514,7 +512,6 @@ lv:
         aerodrome: Lidosta
         bicycle_parking: "Velosipēdu novietne"
         bicycle_rental: "Velosipēdu noma"
-        boatyard: Doki
         bus_station: "Autobusa pietura"
         bus_stop: "Autobusu pietura"
         cable_car: "Trosu dzelzceļš"

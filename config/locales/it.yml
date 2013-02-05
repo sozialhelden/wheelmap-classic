@@ -451,7 +451,6 @@ it:
       unknown: Sconosciuto
     name:
       accommodation:
-        beach_resort: "Albergo sulla spiaggia"
         bed_and_breakfast: "Bed and breakfast"
         camp_site: Campeggio
         caravan_site: "Area caravan e camper"
@@ -490,7 +489,6 @@ it:
         social_facility: "Servizi sociali"
         veterinary: "Ambulatorio Veterinario"
       leisure:
-        arena: Arena
         brothel: Casinò
         cinema: Cinema
         community_center: "Centro Comunitario"
@@ -516,7 +514,6 @@ it:
         aerodrome: Aeroporto
         bicycle_parking: "Parcheggio per biciclette"
         bicycle_rental: "Noleggio biciclette"
-        boatyard: "Cantiere navale"
         bus_station: "Stazione degli autobus"
         bus_stop: "Fermata dell'autobus"
         cable_car: Funivia
