@@ -489,7 +489,6 @@ tlh:
       unknown: Sovbe'ghach
     name:
       accommodation:
-        beach_resort: "bIQ'a' HeHDaq mebpa'mey"
         bed_and_breakfast: "QongDaq nIQ je"
         camp_site: "raQ Daq"
         caravan_site: "rutlhmey ghajbogh juH Daq"
@@ -519,7 +518,6 @@ tlh:
         public_building: "wo' qach"
         townhall: "veng vaS"
       leisure:
-        arena: "SuvmeH Daq"
         cinema: "vIHbogh much Daq"
         gallery: "nagh beQ qach"
         nightclub: "mI'meH qach"
@@ -543,7 +541,6 @@ tlh:
         aerodrome: "muD Duj juH"
         bicycle_parking: "cha' rutlh lupwI' leSmeH Daq"
         bicycle_rental: "cha' rutlh lupwI' ngIpmeH Daq"
-        boatyard: "bIQDuj Daq"
         bus_station: "lupwI' waw'"
         bus_stop: "lupwI' mevmeH Daq"
         cable_car: lupwI'
