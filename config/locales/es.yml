@@ -430,7 +430,6 @@ es:
       unknown: Desconocido
     name:
       accommodation:
-        beach_resort: "Hotel de playa"
         bed_and_breakfast: "Dormir y desayuno"
         camp_site: Campo
         caravan_site: "Zona de caravanas"
@@ -465,7 +464,6 @@ es:
         pharmacy: Farmacia
         veterinary: Veterinario
       leisure:
-        arena: Estadio
         cinema: Cine
         community_center: "Centro cívico"
         gallery: Galería
@@ -488,7 +486,6 @@ es:
         aerodrome: Aeropuerto
         bicycle_parking: "Estacionamiento de bicicletas"
         bicycle_rental: "Alquiler de Bicicletas"
-        boatyard: Astillero
         bus_station: "Estación de autobús"
         bus_stop: "Parada de autobús"
         cable_car: Teleférico

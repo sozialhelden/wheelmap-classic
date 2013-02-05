@@ -472,7 +472,6 @@ pt-br:
       unknown: Desconhecido
     name:
       accommodation:
-        beach_resort: Balneário
         bed_and_breakfast: Pensão
         camp_site: Acampamento
         caravan_site: "Acampamento de treiler"
@@ -511,7 +510,6 @@ pt-br:
         social_facility: "Instituição social"
         veterinary: Veterinário
       leisure:
-        arena: Arena
         brothel: Bordel
         cinema: Cinema
         community_center: "Centro comunitário"
@@ -537,7 +535,6 @@ pt-br:
         aerodrome: Aeroporto
         bicycle_parking: Bicicletário
         bicycle_rental: "Aluguel de bicicletas"
-        boatyard: Estaleiro
         bus_station: "Ponto de ônibus"
         bus_stop: "Ponto de ônibus"
         cable_car: "Teleférico de cabine"
