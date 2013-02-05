@@ -482,7 +482,6 @@ ar:
       unknown: "غير معروف"
     name:
       accommodation:
-        beach_resort: "فندق على الشاطئ"
         bed_and_breakfast: "فندق للمبيت والإفطار"
         camp_site: "موقع للتخييم"
         caravan_site: "موقع العربة\"كاراڨان\""
@@ -521,7 +520,6 @@ ar:
         social_facility: "مرافق اجتماعية"
         veterinary: "طبيب بيطري"
       leisure:
-        arena: ميدان
         brothel: "ماخور\"بيت دعارة\""
         cinema: سينما
         community_center: "مركز اجتماعي"
@@ -547,7 +545,6 @@ ar:
         aerodrome: مطار
         bicycle_parking: "موقف للدراجات الهوائية"
         bicycle_rental: "لتأجير الدراجات الهوائية"
-        boatyard: "مرسى القوارب"
         bus_station: "محطة الأوتوبيس"
         bus_stop: "موقف أوتوبيس"
         cable_car: "عربة كهربائية"
