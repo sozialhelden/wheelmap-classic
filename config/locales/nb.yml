@@ -470,7 +470,6 @@ nb:
       unknown: Ukjent
     name:
       accommodation:
-        beach_resort: Strandhotell
         bed_and_breakfast: "Bed and breakfast"
         camp_site: Leirplass
         caravan_site: Campingvognsted
@@ -509,7 +508,6 @@ nb:
         social_facility: Fellesområde
         veterinary: Vetrinær
       leisure:
-        arena: Arena
         brothel: Bordell
         cinema: Kino
         community_center: Samfunnshus
@@ -535,7 +533,6 @@ nb:
         aerodrome: Flyplass
         bicycle_parking: Sykkelparkering
         bicycle_rental: Sykkelutleie
-        boatyard: Kai
         bus_station: Bussstasjon
         bus_stop: Bussholdeplass
         cable_car: Taubane

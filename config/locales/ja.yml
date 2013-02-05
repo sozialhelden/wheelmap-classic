@@ -450,7 +450,6 @@ ja:
       unknown: 不明
     name:
       accommodation:
-        beach_resort: ビーチホテル
         bed_and_breakfast: 簡易宿泊所
         camp_site: キャンプ場
         caravan_site: カーキャンプ場
@@ -489,7 +488,6 @@ ja:
         social_facility: 社会福祉施設
         veterinary: 動物病院
       leisure:
-        arena: アリーナ
         brothel: 風俗店
         cinema: 映画館
         community_center: 市民センター
@@ -515,7 +513,6 @@ ja:
         aerodrome: 空港
         bicycle_parking: 駐輪場
         bicycle_rental: レンタサイクル
-        boatyard: ボート場
         bus_station: バスターミナル
         bus_stop: バス停
         cable_car: ケーブルカー
