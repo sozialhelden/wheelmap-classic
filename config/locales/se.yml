@@ -415,7 +415,6 @@ se:
       unknown: Okänt
     name:
       accommodation:
-        beach_resort: Strandhotell
         bed_and_breakfast: "Bed & breakfast\n"
         camp_site: Campingplats
         caravan_site: Husvagnsplats
@@ -450,7 +449,6 @@ se:
         pharmacy: Apotek
         veterinary: Veterinär
       leisure:
-        arena: Arena
         cinema: Bio
         gallery: Galleri
         nightclub: Nattklubb
@@ -470,7 +468,6 @@ se:
         aerodrome: Flygplats
         bicycle_parking: Cykelparkering
         bicycle_rental: Cykeluthyrning
-        boatyard: Båtvarv
         bus_station: Busstation
         bus_stop: Busshållplats
         cable_car: Linbana
