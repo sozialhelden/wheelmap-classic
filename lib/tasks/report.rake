@@ -81,8 +81,6 @@ namespace :report do
             :display_units_short => 'Orte'
           }
         }
-
-        puts "Updating metric #{metric_name} with #{params.inspect}"
         begin
           Librato::Metrics.update metric_name, params
           sleep 1
