@@ -1,6 +1,29 @@
 ActiveAdmin.register User do
 
   scope :wants_newsletter
+  scope :no_osm_id
+  scope :no_oauth_token
+  scope :no_osm_id_and_oauth_token
+  scope :no_password
+
+  filter :first_name
+  filter :last_name
+  filter :email
+  filter :sign_in_count
+  filter :current_sign_in_at
+  filter :current_sign_in_ip
+  filter :last_sign_in_at
+  filter :last_sign_in_ip
+  filter :authentication_token
+  filter :tag_counter
+  filter :edit_counter
+  filter :create_counter
+  filter :photos_count
+  filter :confirmed_at
+  filter :created_at
+  filter :updated_at
+  filter :accepted_at
+
 
   controller do
     def update

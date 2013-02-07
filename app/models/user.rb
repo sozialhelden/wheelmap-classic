@@ -16,6 +16,11 @@ class User < ActiveRecord::Base
   after_destroy :notify_admins
 
   scope :wants_newsletter, where(:wants_newsletter => true)
+  scope :no_osm_id, where(:osm_id => nil)
+  scope :no_oauth_token, where(:oauth_token => nil)
+  scope :no_osm_id_and_oauth_token, where(:osm_id => nil, :oauth_token => nil)
+  scope :no_password, where(:encrypted_password => "")
+
 
   before_save :send_email_confirmation,
     :unless => :new_record?, :if => :email_changed?
