@@ -9,6 +9,7 @@ ActiveAdmin.register User do
   filter :first_name
   filter :last_name
   filter :email
+  filter :wants_newsletter, :as => :check_boxes
   filter :sign_in_count
   filter :current_sign_in_at
   filter :current_sign_in_ip
@@ -30,6 +31,12 @@ ActiveAdmin.register User do
       region = resource
       region.update_attributes(params[:user])
       super
+    end
+
+    def destroy
+      poop = resource
+      poop.destroy
+      redirect_to(:back)
     end
   end
 
