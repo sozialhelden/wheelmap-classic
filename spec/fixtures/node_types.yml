@@ -122,17 +122,9 @@ tag_electronics:
   osm_key: shop
   osm_value: electronics
 
-tag_boatyard:
-  osm_key: waterway
-  osm_value: boatyard
-
 tag_chair_lift:
   osm_key: aerialway
   osm_value: chair_lift
-
-tag_arena:
-  osm_key: leisure
-  osm_value: arena
 
 tag_townhall:
   osm_key: amenity
@@ -377,10 +369,6 @@ tag_guest_house:
 tag_convenience:
   osm_key: shop
   osm_value: convenience
-
-tag_beach_resort:
-  osm_key: leisure
-  osm_value: beach_resort
 
 tag_parking:
   osm_key: amenity
