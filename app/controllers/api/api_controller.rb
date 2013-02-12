@@ -75,8 +75,7 @@ class Api::ApiController < ApplicationController
 
   def set_default_response_format
     symbolized_format = request.format.to_sym
-    request.format = :json if (symbolized_format == :html || symbolized_format.blank?)
-    params[:format] = request.format.to_sym
+    request.format = :json if symbolized_format == :html || symbolized_format.blank?
   end
 
   def set_default_page
