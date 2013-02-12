@@ -8,7 +8,6 @@ class Poi < ActiveRecord::Base
   include ActionView::Helpers::AssetTagHelper
   include PopupHelper
   include NewRelic::Agent::MethodTracer
-  include ActiveModel::ForbiddenAttributes
 
   # osm_id ist der Primaerschluessel
   set_primary_key :osm_id
