@@ -23,12 +23,12 @@ ActiveAdmin.register NodeType do
     column :icon do |node_type|
       image_tag("/icons/#{node_type.icon}")
     end
-    column :name
-    column :category
-    column :osm_key do |node_type|
+    column :name, :sortable => false
+    column :category, :sortable => false
+    column :osm_key, :sortable => :osm_key do |node_type|
       link_to node_type.osm_key, "http://wiki.openstreetmap.org/wiki/Key:#{node_type.osm_key}", :target => '_blank'
     end
-    column :osm_value do |node_type|
+    column :osm_value, :sortable => :osm_value  do |node_type|
       link_to node_type.osm_value, "http://wiki.openstreetmap.org/wiki/Tag:#{node_type.osm_key}%3D#{node_type.osm_value}", :target => '_blank'
     end
     default_actions
