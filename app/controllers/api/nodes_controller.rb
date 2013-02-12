@@ -41,7 +41,7 @@ class Api::NodesController < Api::ApiController
 
   def update
     @node = resource
-    @node.attributes = node_params
+    @node.attributes = params
 
     if @node.valid?
       UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user, 'update_android')
@@ -59,7 +59,10 @@ class Api::NodesController < Api::ApiController
   end
 
   def create
-    @node = Poi.new(node_params)
+    unwanted_keys = %w(action controller page per_page format)
+    node_attributes = params.dup.delete_if { |k,v| unwanted_keys.include? k }
+
+    @node = Poi.new(node_attributes)
     if @node.valid?
       CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user, 'create_android')
 
@@ -88,10 +91,6 @@ class Api::NodesController < Api::ApiController
   end
 
   protected
-
-  def node_params
-    params.permit(:name, :type, :lat, :lon, :tags, :wheelchair, :wheelchair_description, :street, :housenumber, :city, :postcode, :website, :phone)
-  end
 
   def collection
     @nodes ||= end_of_association_chain.including_category.paginate(:page => params[:page], :per_page => params[:per_page])

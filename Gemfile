@@ -53,7 +53,6 @@ group :default do
   gem 'flash_cookie_session'
   gem 'exifr'
   gem 'awesome_nested_set'
-  gem 'strong_parameters'
 end
 
 group :test, :development do
@@ -65,7 +64,6 @@ group :test, :development do
   gem 'guard-spork'
   gem 'guard-cucumber', "1.2.2"
   gem 'ruby-debug'
-  gem 'brakeman'
 end
 
 group :test do
