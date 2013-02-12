@@ -13,7 +13,7 @@ ActiveAdmin.register Category do
   index do
     column :id
     column :identifier
-    column :name
+    column :name, :sortable => false
     default_actions
   end
 
