@@ -64,7 +64,7 @@ namespace :report do
         queue.add metric_name =>
         { :source => hostname,
           :measure_time => rounded_time,
-          :value => region.pois.with_status(Poi::WHEELCHAIR_STATUS_VALUES[status.to_sym]).count,
+          :value => region.pois_of_children.with_status(Poi::WHEELCHAIR_STATUS_VALUES[status.to_sym]).count,
         }
       end
     end
