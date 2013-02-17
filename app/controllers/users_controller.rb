@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   before_filter :remove_password_from_params_if_blank, :only => :update
 
   before_filter :authenticate_admin!, :only => :newsletter
-  before_filter :terms_accepted, :only => :terms
 
   rescue_from OAuth::Unauthorized, :with => :unauthorized
 
@@ -69,13 +68,29 @@ class UsersController < ApplicationController
 
   def terms
     @accepted = (params[:user][:terms] == "1")
+    @privacy_accepted = (params[:user][:privacy_policy] == "1")
+
+    # TERMS ACCEPTED?
     if @accepted
       current_user.terms = @accepted
+    else
+      # show terms page again if user did not accept terms
+      current_user.errors.add(:terms, :accepted)
+    end
+
+    # PRIVACY POLICY ACCEPTED?
+    if @privacy_accepted
+      current_user.privacy_policy = @privacy_accepted
+    else
+      # show terms page again if user did not accept terms
+      current_user.errors.add(:privacy_policy, :accepted)
+    end
+
+
+    if current_user.errors.empty?
       current_user.save(:validation => false)
       redirect_to session.delete(:user_return_to)
     else
-      # show terms page again if user did not accept terms
-      current_user.errors.add(:terms, :accepted) unless @accepted
       flash.now[:alert] = current_user.errors.full_messages.to_sentence
       render :template => 'terms/index'
     end
@@ -88,15 +103,6 @@ class UsersController < ApplicationController
   end
 
   protected
-
-  def terms_accepted
-    if current_user.terms?
-      # Redirect back if user accepted the terms already
-      current_user.errors.add(:terms, :already_confirmed)
-      flash[:alert] = current_user.errors.full_messages.to_sentence
-      redirect_to :back
-    end
-  end
 
   def require_owner
     unless params[:id].to_i == current_user.id
