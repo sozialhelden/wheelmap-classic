@@ -5,6 +5,7 @@ en:
       user:
         first_name: "Given name"
         last_name: "Last name"
+        privacy_policy: "Privacy policy"
         terms: Terms
     errors:
       full_messages:
@@ -35,6 +36,10 @@ en:
           attributes:
             email:
               blank: "can't be blank if password is given"
+            privacy_policy:
+              accepted: "must be accepted"
+            terms:
+              accepted: "must be accepted"
         user_session:
           email: "Email address"
           password: Password
@@ -258,6 +263,7 @@ en:
       password_confirmation: "Repeat password"
       phone: "Telephone:"
       postcode: "Post code:"
+      privacy_policy: "Yes, i accept wheelmap.org's privacy policy."
       reset: Reset
       save: Save
       street: "Street:"

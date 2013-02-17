@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
     :trackable, :validatable, :encryptable, :omniauthable, :encryptor => :sha1
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter, :first_name, :last_name, :osm_username, :terms
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter, :first_name, :last_name, :osm_username, :terms, :privacy_policy
 
   validates :password, :confirmation =>true
 
@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
     :unless => :new_record?, :if => :email_changed?
 
   before_save :set_accepted_timestamp, :if => :terms? && :terms_changed?
+  before_save :set_privacy_timestamp, :if => :privacy_policy? && :privacy_policy_changed?
 
   has_many :photos
 
@@ -129,6 +130,10 @@ class User < ActiveRecord::Base
 
   def set_accepted_timestamp
     self.accepted_at = Time.now if self.terms?
+  end
+
+  def set_privacy_timestamp
+    self.privacy_policy_accepted_at = Time.now if self.privacy_policy?
   end
 
   def notify_admins

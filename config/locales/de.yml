@@ -5,7 +5,8 @@ de:
       user:
         first_name: Vorname
         last_name: Nachname
-        terms: Nutzungsbedingung
+        privacy_policy: Datenschutzbestimmungen
+        terms: Nutzungsbedingungen
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -35,6 +36,10 @@ de:
           attributes:
             email:
               blank: "muss ausgefüllt werden, wenn ein Passwort gesetzt wird"
+            privacy_policy:
+              accepted: "müssen akzeptiert werden"
+            terms:
+              accepted: "müssen akzeptiert werden"
         user_session:
           email: E-Mail-Adresse
           password: Passwort
@@ -258,6 +263,7 @@ de:
       password_confirmation: "Passwort wiederholen"
       phone: "Telefon:"
       postcode: "PLZ:"
+      privacy_policy: "Ja, ich stimme den Datenschutzbestimmungen von wheelmap.org zu."
       reset: Reset
       save: Speichern
       street: "Straße:"
