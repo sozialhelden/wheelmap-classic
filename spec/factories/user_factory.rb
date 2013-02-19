@@ -10,6 +10,7 @@ Factory.define :user do |user|
   user.osm_id { Factory.next(:osm_id)}
   user.email  { Factory.next(:email)}
   user.terms true
+  user.privacy_policy true
   # user.confirmed_at           { 10.days.ago }
 end
 

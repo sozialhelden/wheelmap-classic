@@ -41,6 +41,7 @@ class User < ActiveRecord::Base
     t.add :id
     t.add :authentication_token, :as => :api_key
     t.add :terms?, :as => :terms_accepted
+    t.add :privacy_policy?, :as => :privacy_accepted
   end
 
   def send_email_confirmation

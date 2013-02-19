@@ -53,4 +53,22 @@ describe Api::UsersController do
     @user.reload.terms.should be_true
   end
 
+  it "should set privacy accepted to true" do
+    @user.terms.should be_true
+    post :accept_terms, :privacy_accepted => 'true', :api_key => @user.authentication_token
+    @user.reload.privacy_policy.should be_true
+  end
+
+  it "should set privacy accepted to false" do
+    @user.terms.should be_true
+    post :accept_terms, :privacy_accepted => 'false', :api_key => @user.authentication_token
+    @user.reload.privacy_policy.should be_false
+  end
+
+  it "should not set privacy accepted if wrong value" do
+    @user.terms.should be_true
+    post :accept_terms, :privacy_accepted => 'foo', :api_key => @user.authentication_token
+    @user.reload.privacy_policy.should be_true
+  end
+
 end
