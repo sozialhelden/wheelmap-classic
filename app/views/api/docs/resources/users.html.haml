@@ -47,8 +47,10 @@
         .method
           %h4 POST
           %p
-            Any client can declare on behalf of the authenticated user, that this given user has willfully accepted wheelmap.org's terms of usage. These terms have to presented to the user, or a link to the terms has to be provided. Please use the following url:
+            Any client can declare on behalf of the authenticated user, that this given user has willfully accepted wheelmap.org's terms of usage and the privacy policy. The terms and the privacy policy have to be presented to the user separately, or a link to the terms and the privacy policy has to be provided. Please use the following url:
             =link_to "http://blog.wheelmap.org/was-ist-wheelmap/terms/", "http://blog.wheelmap.org/was-ist-wheelmap/terms/"
+            %br
+            =link_to "http://blog.wheelmap.org/was-ist-wheelmap/privacy/", "http://blog.wheelmap.org/was-ist-wheelmap/privacy/"
           %h6 request query parameter
 
           %table
@@ -62,6 +64,11 @@
                 %td terms_accepted*
                 %td string
                 %td Can be one of the following values. 'true', 'yes', '1' for ACCEPTED and 'false', 'no', '0' for DENIED.
+              %tr.even
+                %td privacy_accepted*
+                %td string
+                %td Can be one of the following values. 'true', 'yes', '1' for ACCEPTED and 'false', 'no', '0' for DENIED.
+
 
   %h2#representations Representations
   %article.doc-block

@@ -1,4 +1,4 @@
-# # TODO Reenable terms feature
+# TODO Reenable terms feature
 # Feature: User must accept terms
 #   In order to do some resticted action
 #   As a user

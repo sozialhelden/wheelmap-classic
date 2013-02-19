@@ -43,9 +43,10 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_terms!
-    unless current_user.terms
-      current_user.errors.add(:terms, :accepted)
-      current_user.errors.add(:privacy_policy, :accepted) unless current_user.privacy_policy
+
+    current_user.errors.add(:terms, :accepted) unless current_user.terms
+    current_user.errors.add(:privacy_policy, :accepted) unless current_user.privacy_policy
+    unless current_user.errors.empty?
       respond_to do |format|
         format.html{
           flash[:alert] = current_user.errors.full_messages.to_sentence
