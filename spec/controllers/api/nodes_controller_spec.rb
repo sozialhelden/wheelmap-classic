@@ -267,5 +267,22 @@ describe Api::NodesController do
       }.should change(Delayed::Job, :count).by(1)
 
     end
+
+    it "should create a node wit a lot of missing parameters" do
+      @user.oauth_token = :a_token
+      @user.oauth_secret = :a_secret
+      @user.save!
+      lambda {
+        post(:create, {"wheelchair_description"=>"", "type"=>"convenience",
+          "street"=>nil, "name"=>"Kochhaus", "wheelchair"=>nil, "postcode"=>nil,
+          "phone"=>nil, "city"=>nil, "website"=>nil, "lon"=>"13.35598468780518",
+          "lat"=>"52.48627569798567", "housenumber"=>nil, :api_key => @user.authentication_token})
+      }.should change(Delayed::Job, :count).by(1)
+
+      successes, failures = Delayed::Worker.new.work_off
+      successes.should eql 1
+      failures.should eql 0
+
+    end
   end
 end
