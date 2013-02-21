@@ -39,7 +39,7 @@ group :default do
   gem 'will_paginate'
   gem 'omniauth-osm'
   gem 'rosemary'
-  #gem 'rosemary', :path => '../rosemary'
+  # gem 'rosemary', :path => '../rosemary'
   gem 'librato-metrics'
   gem 'librato-rails'
   gem 'system_timer' # Optional for librato dependency faraday
