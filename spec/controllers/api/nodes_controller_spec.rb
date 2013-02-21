@@ -278,11 +278,6 @@ describe Api::NodesController do
           "phone"=>nil, "city"=>nil, "website"=>nil, "lon"=>"13.35598468780518",
           "lat"=>"52.48627569798567", "housenumber"=>nil, :api_key => @user.authentication_token})
       }.should change(Delayed::Job, :count).by(1)
-
-      successes, failures = Delayed::Worker.new.work_off
-      successes.should eql 1
-      failures.should eql 0
-
     end
   end
 end
