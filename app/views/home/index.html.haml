@@ -1,46 +1,70 @@
-#sidebar
-  = image_tag('close.gif', :size => '17x17', :alt => 'x', :class => 'minimize')
-  = render :partial => 'home/wheelchair_status_filter'
-  %div.minimize
-    &nbsp;
-  = render :partial => 'home/category_filter'
+:javascript
+  var map;
+  var cadastralLayer;
 
-  = link_to "http://itunes.apple.com/#{I18n.locale}/app/wheelmap/id399239476?mt=8" do
-    =image_tag("/images/app_store_badge.png", :size => '134x45')
-  = link_to "https://market.android.com/details?id=org.wheelmap.android.online&hl=#{I18n.locale}" do
-    =image_tag("/images/market_store_badge.png", :size => '129x45')
+  $(document).ready(function () {
+    map = new L.Map('map');
 
-#spinner
+    var url = 'http://tile3.wheelmap.org/{z}\/{x}\/{y}.png';
+    var copyright = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade';
+    var tileLayer = new L.TileLayer(url, {maxZoom: 18, attribution: copyright});
+    var startPosition = new L.LatLng(52.51017,13.3902);
+    map.on('load', function(e) {
+      requestUpdatedCadastre(e.target.getBounds());
+    });
+    map.setView(startPosition, 18).addLayer(tileLayer);
+    map.on('moveend', function(e) {
+      requestUpdatedCadastre(e.target.getBounds());
+    });
+  });
 
-#facebox
-  %h2=t('.ie.warning.headline')
-  .content
-    %p=t('.ie.warning.message')
+  function requestUpdatedCadastre(bounds) {
 
-    %p
-      = link_to t('.ie.action.upgrade'), "http://www.updateyourbrowser.net/en/", :class => 'button primary'
-      = link_to t('.ie.action.ignore'), '#', :class => 'button secondary close', :onclick => 'return false;'
+    var north = bounds._northEast.lat;
+    var east  = bounds._northEast.lng;
+    var south = bounds._southWest.lat;
+    var west  = bounds._southWest.lng;
 
--content_for :javascript do
-  :javascript
-    drawmap(defaultControls(document), 'map');
-    createPlacesLayer(placesStyle());
-    initGeoData();
-    $(function () {
-      jumpTo(lon,lat,zoom);
-    })
-
-    if($.cookie('ie_warning') != 1 && $.browser.msie && parseInt($.browser.version) < 8){
-      $("#facebox").overlay({
-        top: 260,
-        mask: {
-          color: '#cccccccc', loadSpeed: 200, opacity: 0.5
+    var boundbox = [west, south, east, north].join(',')
+    $.ajax(
+      {
+        type: 'GET',
+        url: '/nodes.geojson',
+        dataType: 'json',
+        data: {
+          bbox:boundbox,
+          limit:500
         },
-        closeOnClick: false,
-        load: true
+        contentType: 'application/json; charset=utf-8',
+        success: function (result) {
+          parseResponse(result)
+        },
+        error: function (req, status, error) {
+          alert('Unable to get cadastral data');
+        }
       });
-      $.cookie('ie_warning', 1);
-    }
+  }
 
-  = render :partial => 'shared/google_event_tracking'
-  = render :partial => 'shared/google_view_tracking'
+  function onEachFeature(feature, layer) {
+    // does this feature have a property named popupContent?
+    layer.bindPopup(feature.properties.name);
+  }
+
+  function featureStyle(feature) {
+    return {
+      iconUrl: feature.properties.marker
+    };
+  }
+
+  function parseResponse(data) {
+    var cadastralLayer_new = new L.GeoJSON(data, {
+      onEachFeature: onEachFeature,
+      style: featureStyle
+    });
+    map.addLayer(cadastralLayer_new);
+    if (cadastralLayer != undefined)
+    {
+      map.removeLayer(cadastralLayer);
+    }
+    cadastralLayer = cadastralLayer_new;
+  }
