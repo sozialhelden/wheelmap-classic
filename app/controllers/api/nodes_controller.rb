@@ -64,7 +64,11 @@ class Api::NodesController < Api::ApiController
 
     @node = Poi.new(node_attributes)
     if @node.valid?
-      CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user, 'create_android')
+      if Rails.env.staging?
+        @node.save
+      else
+        CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user, 'create_android')
+      end
 
       respond_to do |wants|
         wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
