@@ -5,6 +5,7 @@ class HomeController < ApplicationController
                         :cache_path => Proc.new {|c|
                           c.params.delete_if { |k,v| %w{lat lon zoom q layers a}.include?(k) }
                         }
+  layout 'relaunch'
 
   def index
     render
