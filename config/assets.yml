@@ -18,6 +18,12 @@ javascripts:
     - public/javascripts/splash.js
     - public/javascripts/application.js
 
+  relaunch:
+    - public/javascripts/jquery.js
+    - public/javascripts/jquery.tools.js
+    - public/javascripts/rails.js
+    - public/javascripts/leaflet-src.js
+
   ie:
     - public/javascripts/html5.js
 
@@ -28,8 +34,11 @@ stylesheets:
 
   screen:
     - public/stylesheets/screen.css
-
     - public/theme/default/style.css
+
+  relaunch:
+    - public/stylesheets/relaunch.css
+    - public/stylesheets/leaflet.css
 
   node:
     - public/stylesheets/node.css
