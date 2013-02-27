@@ -12,7 +12,7 @@ class Api::NodesController < Api::ApiController
   before_filter :authenticate_application!, :only => [:update, :create]
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
 
-  has_scope :bbox
+  has_scope :bbox, :except => :search # we handle this manually
   has_scope :wheelchair, :except => :update
 
   def index
@@ -24,7 +24,12 @@ class Api::NodesController < Api::ApiController
   end
 
   def search
-    @nodes ||= end_of_association_chain.search(params[:q]).paginate(:page => params[:page], :per_page => params[:per_page])
+    # If bounding box is given: use distance search
+    if params[:bbox]
+      @nodes = end_of_association_chain.paginate(:page => params[:page], :per_page => params[:per_page]).distance_search(params[:q], params[:bbox], params[:page])
+    else
+      @nodes = end_of_association_chain.search(params[:q]).paginate(:page => params[:page], :per_page => params[:per_page])
+    end
     respond_to do |format|
       format.xml      {render_for_api :simple, :xml  => @nodes, :root => :nodes, :meta => meta}
       format.json     {render_for_api :simple, :json => @nodes, :root => :nodes, :meta => meta}
