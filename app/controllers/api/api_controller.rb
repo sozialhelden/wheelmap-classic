@@ -30,6 +30,9 @@ class Api::ApiController < ApplicationController
   # If no param is set, default to PER_PAGE
   before_filter :set_default_per_page
 
+  # Normalize given bounding box
+  before_filter :normalize_bbox
+
   def index
     @resources = [
       {
@@ -72,6 +75,27 @@ class Api::ApiController < ApplicationController
   end
 
   protected
+
+  def normalize_bbox
+    if params[:bbox]
+      left, bottom, right, top = params[:bbox].split(',').map(&:to_f)
+      left = left.floor_to(3)
+      bottom = bottom.floor_to(3)
+      right = right.ceil_to(3)
+      top = top.ceil_to(3)
+      if right == left
+        left   -= 0.001
+        right  += 0.001
+      end
+      if top   == bottom
+        bottom -= 0.001
+        top    += 0.001
+      end
+
+      params[:bbox] = [left, bottom, right, top].join(',')
+    end
+  end
+
 
   def set_default_response_format
     symbolized_format = request.format.to_sym
