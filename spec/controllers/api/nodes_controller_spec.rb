@@ -148,6 +148,11 @@ describe Api::NodesController do
       get(:search, :api_key => @user.authentication_token, :q => '')
       response.status.should eql 200
     end
+
+    it "should use distance search when bbox is passed" do
+      get(:search, :api_key => @user.authentication_token, :q => 'name', :bbox => '13.377,52.515,13.383,52.518')
+      response.status.should eql 200
+    end
   end
 
   describe 'update action' do
