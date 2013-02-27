@@ -90,6 +90,7 @@ class Poi < ActiveRecord::Base
   end
 
   before_save :set_status
+  before_save :set_version
   before_save :set_node_type
   before_save :set_updated_at
 
@@ -307,6 +308,10 @@ class Poi < ActiveRecord::Base
 
   def existing_record!
       @new_record = false
+  end
+
+  def set_version
+    self.version ||= 1
   end
 
   def set_status
