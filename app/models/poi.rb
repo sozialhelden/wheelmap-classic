@@ -350,6 +350,20 @@ class Poi < ActiveRecord::Base
     self.way? ? 'way' : 'node'
   end
 
+  def self.distance_search(search_string, bbox, limit=200)
+    @node_ids = []
+    left, bottom, right, top = bbox.split(',').map(&:to_f)
+    @bbox = Bbox.new(left, bottom, right, top)
+    max_box = Bbox.max
+    # Increase the bounding box as long enough nodes are found or it covers the whole world
+    while @node_ids.size <= limit and @bbox.within?(max_box) do
+      found_node_ids = self.select(:osm_id).search(search_string).within_bbox(@bbox.west, @bbox.south, @bbox.east, @bbox.north).map(&:id)
+      @node_ids = found_node_ids
+      @bbox.widen_by_percent(100)
+    end
+    search(search_string).within_bbox(@bbox.west, @bbox.south, @bbox.east, @bbox.north)
+  end
+
   def bounding_box(distance = 20)
     geofactory = RGeo::Cartesian.factory
     bounding_box = RGeo::Cartesian::BoundingBox.new(geofactory)
