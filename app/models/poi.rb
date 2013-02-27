@@ -133,7 +133,11 @@ class Poi < ActiveRecord::Base
   end
 
   def self.lowest_id
-    Poi.order('osm_id ASC').limit(1).first.osm_id
+    Poi.order('osm_id ASC').limit(1).select(:osm_id).first.osm_id
+  end
+
+  def self.highest_id
+    Poi.order('osm_id DESC').limit(1).select(:osm_id).first.osm_id
   end
 
   def lat
