@@ -8,6 +8,9 @@ class Poi < ActiveRecord::Base
   include ActionView::Helpers::AssetTagHelper
   include PopupHelper
   include NewRelic::Agent::MethodTracer
+  include Tire::Model::Search
+  include Tire::Model::Callbacks
+
 
   # osm_id ist der Primaerschluessel
   set_primary_key :osm_id
@@ -157,6 +160,43 @@ class Poi < ActiveRecord::Base
   def lon=(value)
     self.geom ||= Point.from_x_y(0.0,0.0)
     self.geom.x = value
+  end
+
+  tire.mapping do
+    indexes :osm_id,    :index    => :not_analyzed
+    indexes :name,      :type => 'string',    :analyzer => 'keyword'
+    indexes :location,  :type => 'geo_point', :lat_lon => true
+  end
+
+  def location
+  [lat,lon].join(',')
+  end
+
+  def to_indexed_json
+    to_json(:only => [:osm_id], :methods => ['name', 'location'])
+  end
+
+  def self.search_with_es(search_string, lat=nil, lon=nil, options={})
+
+    s = Poi.tire.search :load => false do
+      query do
+        string search_string
+      end
+
+      search_size = options[:per] || 200
+      size search_size
+
+      sort do
+        by :_geo_distance, {
+          :location => {
+            :lat => lat,
+            :lon => lon
+          },
+          :order => 'asc'
+        }
+      end if lat.present? and lon.present?
+    end
+    where(:osm_id => s.results.map(&:id))
   end
 
   def tags
