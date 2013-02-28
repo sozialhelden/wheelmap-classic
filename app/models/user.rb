@@ -2,15 +2,18 @@ class User < ActiveRecord::Base
   include Devise::Models::TokenAuthenticatable
   # Include default devise modules. Others available are:
   # :http_authenticatable, :token_authenticatable, :database_authenticatable, :confirmable, :lockable, :timeoutable and :activatable
-  devise :database_authenticatable, :rememberable, :confirmable, :registerable,
+  devise :database_authenticatable, :rememberable, :confirmable, :registerable, :recoverable,
     :trackable, :validatable, :encryptable, :omniauthable, :encryptor => :sha1
 
+  attr_accessor :first_time
+
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter, :first_name, :last_name, :osm_username, :terms, :privacy_policy
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter, :first_name, :last_name, :osm_username, :terms, :privacy_policy, :first_time
 
   validates :password, :confirmation =>true
 
   validate :ensure_email_when_password_set
+  validate :ensure_password_when_email_set, :if => :first_time?
 
   before_save :ensure_authentication_token
   after_destroy :notify_admins
@@ -142,13 +145,21 @@ class User < ActiveRecord::Base
   end
 
   def ensure_email_when_password_set
-    errors.add_on_blank(:email) if !password.blank? and email.blank?
+    errors.add_on_blank(:email)     if !password.blank? and email.blank?
+  end
+
+  def ensure_password_when_email_set
+    errors.add_on_blank(:password)  if !email.blank? and password.blank?
   end
 
   def full_name
     f = [first_name, last_name].compact.join(' ')
     f = id if f.blank?
     f
+  end
+
+  def first_time?
+    @first_time == '1'
   end
 
 end

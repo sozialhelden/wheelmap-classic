@@ -5,21 +5,13 @@
     = form.inputs do
       %li.optional{:style => 'width:660px'}
         %label.small{:style => 'margin-bottom:20px'} &nbsp;
-        %p=t('.welcome.text')
-
-      .grid_3{:style => 'float:left;'}
-        = form.input :first_name, :required => false, :input_html => { :class => :small }, :label_html => {:class => :small }
-      .grid_3{:style => 'width:500px; float:left;'}
-        = form.input :last_name, :required => false, :hint => false, :input_html => { :class => :small }, :label_html => {:class => :small }
-      = form.input :email, :required => false, :hint => true, :hint_class => [:small, 'inline-hints'], :input_html => { :class => :large }, :label_html => {:class => :small }, :error_class => ['inline-errors', 'small']
-      = form.input :wants_newsletter, :label => t('devise.sign_up.form.labels.wants_newsletter'), :wrapper_html => {:class => :small }
-
-    = form.inputs do
-      %li.optional{:style => 'width:660px'}
-        %label.small{:style => 'margin-bottom:20px'} &nbsp;
         %p= t('.welcome.set_password_for_mobile')
-      = form.input :password, :hint => false, :required => false, :label_html => {:class => :small }, :error_class => ['inline-errors', 'small']
-      = form.input :password_confirmation, :hint => false, :required => false, :label_html => {:class => :small }, :error_class => ['inline-errors', 'small']
+
+      = form.input :email, :required => true, :hint => true, :hint_class => [:small, 'inline-hints'], :label_html => {:class => :small }, :error_class => ['inline-errors', 'small']
+      = form.input :first_time, :as => :hidden, :value => @user.encrypted_password.blank? ? '1' : '0'
+    = form.inputs do
+      = form.input :password, :hint => false, :required => true, :label_html => {:class => :small }, :error_class => ['inline-errors', 'small']
+      = form.input :password_confirmation, :hint => false, :required => true, :label_html => {:class => :small }, :error_class => ['inline-errors', 'small']
 
     = form.buttons do
       %ol
