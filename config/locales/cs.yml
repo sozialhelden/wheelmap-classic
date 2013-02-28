@@ -65,6 +65,8 @@ cs:
     omniauth_callbacks:
       failure: "Není možné autorizovat z %{kind}, protože: \"%{reason}\"."
       success: "Úspěšná autorizace z účtu %{kind}."
+    password_recovery:
+      headline: "Zapomněli jste heslo?"
     password_reset:
       email:
         link: "Změnit heslo"
@@ -76,22 +78,30 @@ cs:
       destroyed: "Nashle! Váš účet byl úspěšně zrušen. Doufáme, že se brzy opět uvidíme."
       inactive_signed_up: "Registrace byla úspěšná. Nicméně, nemůžete se přihlásit, protože: \"%{reason}\"."
       link: "Vytvořit účet"
+      reasons:
+        locked: zamčeno
+        unconfirmed: nepotvrzené
       signed_up: "Vítejte! Registrace byla úspěšná."
       updated: "Váš účet byl úspěšně aktualizován."
     sessions:
       invalid: "Nesprávný email nebo heslo."
       new:
+        osm_promo_text: "Wheelmap využívá informace z OpenStreetMap (OSM). OpenStreetMap je volná celosvětová mapa, vytvářená lidmi jako vy. Je to jako Wikipedie pro mapy. Aby jste mohli upravovat místa nebo vytvářet nové, potřebujete u OpenStreetMap mít účet a musíte být přihlášení."
         sign_up_with_osm: "Zaregistrujte se."
       signed_in: "Přihlášení úspěšné."
       signed_out: "Odhlášení úspěšné."
     sign_up:
+      email:
+        please_confirm: "Váš účet potvrdíte následujícím odkazem:"
       form:
         labels:
           email: Email
+      headline: "Vytvořit účet"
     unlocks:
       send_instructions: "Za několik minut obdržíte email s instrukcemi, jak odemknout svůj účet."
       unlocked: "Váš účet byl úspěšně odemknut. Nyní jste přihlášen(a)."
   errors:
+    dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
       accepted: "musí být potvrzeno"
@@ -130,16 +140,29 @@ cs:
       destroy:
         alert: "%{resource_name} se nepovedlo odstranit"
         notice: "%{resource_name} již neexistuje"
+      update:
+        notice: "Úspěšně jste změnili %{resource_name}"
   form:
     show_places_without_status: "neznámý stav"
   formtastic:
     labels:
       centralkey: "Společný klíč:"
+      password_confirmation: "Zopakujte heslo"
       postcode: "Směrovací číslo:"
       save: Uložit
       street: "Ulice:"
       type: "Typ:"
       wheelchair_description: "Poznámka k přístupnosti:"
+  header:
+    meta:
+      homepage: "Domovská stránka"
+      keywords: "místa přístupné pro vozíčkáře hledat označovat"
+    navigation:
+      feedback: "Zpětná vazba"
+      what_is_wheelmap: "Co je to wheelpmap?"
+    searchbar:
+      find: najít
+    tagline: "Logo Wheelmap"
   helpers:
     select:
       prompt: "Prosím vyberte si"
@@ -150,10 +173,14 @@ cs:
   home:
     index:
       filter:
+        category: "Vyberte kategorii"
         select_all: "Označit vše"
       ie:
         action:
           ignore: Ignorovat
+        warning:
+          headline: "Omlouváme se!"
+          message: "Zda se, že používáte Internet Explorer. Wheelmap potřebuje prohlížeč, který odpovídá normám. Prosím zvažte použití některého z následujících prohlížečů: Firefox, Chrome, Safari nebo Opera."
       popup:
         form:
           ? "yes"
@@ -165,12 +192,26 @@ cs:
         limit:
           headline: "Všechny %{type} s omezeným přístupem pro vozíčkáře v %{city} (%{count})"
   nodes:
+    create:
+      flash:
+        successfull: "Děkujeme, váš příspěvek byl uložený a brzy bude zobrazený na mapě."
     errors:
       not_authorized: "Přihlášení bylo neúspěšné"
       not_available: "Omlouváme se, tahle stránka je dočasně nedostupná."
+    new:
+      header:
+        title: "Nové místo | wheelmap.org"
+      link:
+        large_map: "&laquo; Zrušit\n"
     show:
+      header:
+        title: "Místo: %{node} | wheelmap.org\n"
       link:
         back: zpět
+      more_data_from: "O tomhle místě je více údajů, zkontroloval:"
+    update:
+      flash:
+        not_successfull: "Zadali jste neúplné nebo nesprávné heslo"
   number:
     currency:
       format:
@@ -225,11 +266,21 @@ cs:
       sport: Sport
       tourism: Cestování
     name:
+      accommodation:
+        hotel: Hotel
       education:
         school: Škola
         university: Univerzita
       food:
         fast_food: "Rychlé občerstvení"
+      government:
+        public_building: "Veřejná budova"
+      health:
+        medical_supply: "Medicínské vybavení"
+        pharmacy: Lékárna
+      leisure:
+        cinema: Kino
+        sauna: Sauna
       misc:
         toilets: Toalety
       money_post:
@@ -237,12 +288,16 @@ cs:
         bureau_de_change: Směnárna
       public_transfer:
         bus_station: "Autobusová stanice"
+        parking_aisle: "Parkovací ulička"
         subway_entrance: "Vchod do metra"
+        terminal: "Letištní terminál"
       shopping:
         alcohol: Alkohol
         beverages: Nápoje
+        car_repair: Autoservis
         chemist: Lékárna
         department_store: "Obchodní dům"
+        electronics: Elektronika
         florist: Květinářství
         hardware: Železářství
         laundry: Prádelna
@@ -250,12 +305,17 @@ cs:
         photo: Fotky
         second_hand: "Second hand"
         supermarket: Supermarket
+        toys: Hračky
+        travel_agency: "Cestovní kancelář"
       sport:
         stadium: Stadion
         swimming_pool: "Plavecký bazen"
       tourism:
         information: "Turistické informace"
         tower: Věž
+  profile:
+    edit:
+      headline: "Upravte svůj účet"
   splash:
     start: Start
   support:
@@ -275,6 +335,7 @@ cs:
   user_sessions:
     new:
       login: "Přihlásit se"
+      login_with_twitter: "Přihlašte se přes Twitter"
       password: Heslo
   users:
     after_signup_edit:
@@ -287,3 +348,4 @@ cs:
   will_paginate:
     page_entries_info:
       multi_page: "Zobrazuju %{model} %{from} - %{to} z celkového počtu %{count}"
+    page_gap: "&hellip;"
