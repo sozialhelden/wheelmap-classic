@@ -1,10 +1,10 @@
 #user_form
-  %h2{:style => 'font-size: 20px'}=t('.welcome.headline')
+  %h2{:style => 'font-size: 22px'}=t('.welcome.headline')
 
   = semantic_form_for @user, :url => after_signup_update_user_path(@user), :method => :put, :html => {:novalidate => '', :class => 'after_signup_edit'} do |form|
     = form.inputs do
       %li.optional{:style => 'width:660px'}
-        %label.small{:style => 'margin-bottom:20px'} &nbsp;
+        %label.small{:style => 'margin-bottom:40px'} &nbsp;
         %p= t('.welcome.set_password_for_mobile')
 
       = form.input :email, :required => true, :hint => true, :hint_class => [:small, 'inline-hints'], :label_html => {:class => :small }, :error_class => ['inline-errors', 'small']
