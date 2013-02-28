@@ -263,11 +263,11 @@ en:
       password_confirmation: "Repeat password"
       phone: "Telephone:"
       postcode: "Post code:"
-      privacy_policy: "Yes, i accept wheelmap.org's privacy policy."
+      privacy_policy: "I accept paragraphs 1 and 2 of the data privacy agreement."
       reset: Reset
       save: Save
       street: "Street:"
-      terms: "Yes, i accept wheelmap.org's terms of usage."
+      terms: "I accept the terms of use."
       type: "Type:"
       website: "Website:"
       wheelchair: "Wheelchair accessibility?"
@@ -300,7 +300,7 @@ en:
       what_is_wheelmap: "What is wheelmap?"
     searchbar:
       add_place: "Add another place"
-      find: find
+      find: Find
       label: ~
       placeholder: "i.e. Sunset Boulevard L.A. or Brandenburg Gate Berlin"
       title_add_place: "Add a new place at this position now!"
@@ -698,8 +698,9 @@ en:
   users:
     after_signup_edit:
       welcome:
-        headline: "Welcome to wheelmap"
-        set_password_for_mobile: "Do you have a smartphone? Please define a password in order to use the Wheelmap while on the go with your iPhone or Android phone."
+        headline: "You're almost there! Finish the sign up for your Wheelmap account here:"
+        set_password_for_mobile: "You've completed your registration with OpenStreetMap.\n\
+            Now choose an email address and password for your Wheelmap account and then you're all set! You need this email address and password to log in the Wheelmap app for iPhone or Android. "
         text: "How can we get in touch with you? You can change this information later in your profile."
     edit:
       headline:

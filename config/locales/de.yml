@@ -63,7 +63,7 @@ de:
     root: wheelmap-Karte
   common:
     close: schließen
-    skip: überspringen
+    skip: Überspringen
   devise:
     confirmations:
       confirmed: "Dein E-Mail-Adresse wurde erfolgreich bestätigt."
@@ -263,11 +263,11 @@ de:
       password_confirmation: "Passwort wiederholen"
       phone: "Telefon:"
       postcode: "PLZ:"
-      privacy_policy: "Ja, ich stimme den Datenschutzbestimmungen von wheelmap.org zu."
+      privacy_policy: "Ich stimme Ziffer 1 und 2 der Datenschutzbestimmungen zu."
       reset: Reset
       save: Speichern
       street: "Straße:"
-      terms: "Ja, ich stimme den Nutzungsbedingungen von wheelmap.org zu."
+      terms: "Ich stimme den Nutzungsbedingungen zu."
       type: "Typ:"
       website: "Webseite:"
       wheelchair: Rollstuhlgerecht?
@@ -300,7 +300,7 @@ de:
       what_is_wheelmap: "Was ist Wheelmap?"
     searchbar:
       add_place: "Ort hinzufügen"
-      find: finden
+      find: Finden
       label: ~
       placeholder: "z.B. Sunset Boulevard L.A. oder Brandenburger Tor Berlin"
       title_add_place: "Jetzt einen neuen Ort an dieser Stelle hinzufügen"
@@ -698,8 +698,10 @@ de:
   users:
     after_signup_edit:
       welcome:
-        headline: "Fast geschafft!"
-        set_password_for_mobile: "Besitzt du ein Smartphone? Dann definiere hier dein Passwort, um die Wheelmap auch von unterwegs mit deinem iPhone- oder Android-Handy zu benutzen."
+        headline: "Fast geschafft! Jetzt noch den Wheelmap-Account fertigstellen:"
+        set_password_for_mobile: |-
+            Du hast Dich erfolgreich bei OpenStreetMap angemeldet.
+            Wähle jetzt noch die Email-Adresse und das Passwort für Deinen Wheelmap-Account aus. Du brauchst diese Email-Adresse und das Passwort, um dich in der Wheelmap-App für iPhone und Android einloggen zu können.
         text: "Du bist nun erfolgreich registriert. Wie können wir dich in Zukunft über wichtige Neuigkeiten rund um die Wheelmap informieren?"
     edit:
       headline:
