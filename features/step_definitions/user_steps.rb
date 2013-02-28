@@ -28,6 +28,10 @@ Given /^a(n| non activated) user with email "([^"]*)" and password "([^"]*)"$/ d
   @user = User.create!(:email => email, :password => password, :password_confirmation => password)
 end
 
+Given /^there are no users$/ do
+  User.delete_all
+end
+
 Then /^I should see an "([^\"]*)" div$/ do |div|
   if response.respond_to? :should
     response.should have_selector "div##{div}"

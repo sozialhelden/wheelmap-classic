@@ -27,6 +27,23 @@ describe User do
       subject.should be_valid
     end
 
+    it "should not be valid without password but with email when saving first time" do
+      subject.password = nil
+      subject.password_confirmation = nil
+      subject.first_time = '1'
+      subject.email = 'email@example.com'
+
+      subject.should_not be_valid
+    end
+
+    it "should not be valid with password but without email" do
+      subject.password = 'a_password'
+      subject.password_confirmation = 'a_password'
+      subject.email = ''
+      subject.should_not be_valid
+    end
+
+
     it "should not be valid with password but no email" do
       @user = Factory.build(:user, :email => nil, :password => 'password')
       @user.should_not be_valid
