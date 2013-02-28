@@ -143,4 +143,7 @@ Devise.setup do |config|
   #   end
   #   manager.default_strategies(:scope => :user).unshift :twitter_oauth
   # end
+
+  # Do not send reset password mail for this time range when users asks for it again.
+  config.reset_password_within = 1.hour
 end
