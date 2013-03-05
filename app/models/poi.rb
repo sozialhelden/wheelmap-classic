@@ -165,6 +165,9 @@ class Poi < ActiveRecord::Base
   tire.mapping do
     indexes :osm_id,    :index    => :not_analyzed
     indexes :name,      :type => 'string',    :analyzer => 'keyword'
+    indexes :address
+    indexes :website
+    indexes :phone
     indexes :location,  :type => 'geo_point', :lat_lon => true
   end
 
@@ -173,7 +176,7 @@ class Poi < ActiveRecord::Base
   end
 
   def to_indexed_json
-    to_json(:only => [:osm_id], :methods => ['name', 'location'])
+    to_json(:only => [:osm_id], :methods => ['name', 'address', 'website', 'phone', 'location'])
   end
 
   def self.search_with_es(search_string, lat=nil, lon=nil, options={})
