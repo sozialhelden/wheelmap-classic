@@ -23,7 +23,9 @@ ActiveAdmin.register Poi do
   end
 
   index do
-    column :osm_id
+    column :osm_id do |poi|
+      link_to poi.osm_id, node_path(poi)
+    end
     column :wheelchair
     column :name
     column :node_type
