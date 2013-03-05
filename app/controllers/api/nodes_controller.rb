@@ -12,7 +12,11 @@ class Api::NodesController < Api::ApiController
   before_filter :authenticate_application!, :only => [:update, :create]
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
 
+<<<<<<< HEAD
   has_scope :bbox, :except => :search # we handle this manually
+=======
+  has_scope :bbox,       :except => :search
+>>>>>>> Add search for api with elasticsearch.
   has_scope :wheelchair, :except => :update
 
   def index
@@ -24,15 +28,30 @@ class Api::NodesController < Api::ApiController
   end
 
   def search
+<<<<<<< HEAD
     # If bounding box is given: use distance search
     if params[:bbox]
       @nodes = end_of_association_chain.paginate(:page => params[:page], :per_page => params[:per_page]).distance_search(params[:q], params[:bbox], params[:page])
     else
       @nodes = end_of_association_chain.search(params[:q]).paginate(:page => params[:page], :per_page => params[:per_page])
     end
+=======
+    if params[:bbox].present?
+      @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f)
+      geofactory = RGeo::Cartesian.factory
+      bbox = RGeo::Cartesian::BoundingBox.new(geofactory)
+      north_east = geofactory.point(@east, @top)
+      south_west = geofactory.point(@west, @bottom)
+      bbox.add(north_east)
+      bbox.add(south_west)
+      @lat = bbox.center_y
+      @lon = bbox.center_x
+    end
+    @nodes ||= end_of_association_chain.search_with_es("*#{params[:q]}*", :page =>params[:page], :per_page => params[:per_page], :lat => @lat, :lon => @lon)
+>>>>>>> Add search for api with elasticsearch.
     respond_to do |format|
-      format.xml      {render_for_api :simple, :xml  => @nodes, :root => :nodes, :meta => meta}
-      format.json     {render_for_api :simple, :json => @nodes, :root => :nodes, :meta => meta}
+      format.xml      {render_for_api :simple, :xml  => @nodes.results, :root => :nodes, :meta => meta}
+      format.json     {render_for_api :simple, :json => @nodes.results, :root => :nodes, :meta => meta}
     end
     Counter.increment('search_android')
   end
@@ -118,7 +137,7 @@ class Api::NodesController < Api::ApiController
         :page => params[:page],
         :num_pages => collection.total_pages,
         :item_count_total => collection.total_entries,
-        :item_count => collection.compact.size
+        :item_count => collection.to_a.compact.size
         }
       }
       @meta[:conditions][:search] = params[:q]    if params[:q]

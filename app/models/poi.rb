@@ -164,10 +164,12 @@ class Poi < ActiveRecord::Base
 
   tire.mapping do
     indexes :osm_id,    :index    => :not_analyzed
-    indexes :name,      :type => 'string',    :analyzer => 'keyword'
+    indexes :name,      :type => 'string',    :analyzer => 'keyword', :boost => 100
     indexes :address
     indexes :website
     indexes :phone
+    indexes :wheelchair
+    indexes :wheelchair_description
     indexes :location,  :type => 'geo_point', :lat_lon => true
   end
 
@@ -176,30 +178,34 @@ class Poi < ActiveRecord::Base
   end
 
   def to_indexed_json
-    to_json(:only => [:osm_id], :methods => ['name', 'address', 'website', 'phone', 'location'])
+    to_json(:only => [:osm_id], :methods => ['name', 'address', 'website', 'phone', 'wheelchair', 'wheelchair_description', 'location'])
   end
 
-  def self.search_with_es(search_string, lat=nil, lon=nil, options={})
+  def remove_from_index
+    Poi.tire.index.remove self.osm_id
+  end
 
-    s = Poi.tire.search :load => false do
+  def self.search_with_es(search_string, options={})
+
+    Poi.tire.search :load => true do
       query do
-        string search_string
+        string "*#{search_string}*"
       end
-
-      search_size = options[:per] || 200
+      page = (options[:page] || 1).to_i
+      search_size = options[:per_page] || 200
+      from (page -1) * search_size
       size search_size
 
       sort do
         by :_geo_distance, {
           :location => {
-            :lat => lat,
-            :lon => lon
+            :lat => options[:lat],
+            :lon => options[:lon]
           },
           :order => 'asc'
         }
-      end if lat.present? and lon.present?
+      end if !options[:lat].blank? and !options[:lon].blank?
     end
-    where(:osm_id => s.results.map(&:id))
   end
 
   def tags
