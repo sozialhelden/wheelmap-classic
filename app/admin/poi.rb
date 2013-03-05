@@ -4,6 +4,7 @@ ActiveAdmin.register Poi do
   scope :limited_accessible
   scope :not_accessible
   scope :unknown_accessibility
+  scope :has_provider
 
   filter :node_type, :as => :select, :collection => proc { NodeType.all.inject([]){|memo,r| memo << [r.name, r.id]; memo} }
   filter :region, :as => :select, :collection => proc { Region.all.inject([]){|memo,r| memo << [r.name, r.id]; memo} }
