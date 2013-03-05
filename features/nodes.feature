@@ -24,12 +24,6 @@ Feature: Find, update and create nodes via API
     When I follow "zurück"
     Then I should be on the root page
 
-  Scenario: I want to see a link - i work here
-    When I am on the last poi's page
-    Then I should see "Du arbeitest hier?"
-    When I follow "Du arbeitest hier?"
-    Then I should be on the last poi's claim page
-
   Scenario: I want to see a link to provider's detail page
     When I am on the last poi's page
     Then I should see "Stiftung Gesundheit"
