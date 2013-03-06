@@ -42,6 +42,7 @@ class PlanetReader
     ensure
       create_pois(1)
       flush_pois(1)
+      Poi.tire.index.refresh
       sleep 1
       @duration = (Time.now - @start_time).to_i
       puts "\nINFO: Processed #{@processed} nodes in #{@duration}s ~= #{@processed/@duration}/s" unless Rails.env.test?
@@ -51,13 +52,19 @@ class PlanetReader
   def create_pois(min_amount=500)
     if @to_be_created.size >= min_amount
       Poi.import @columns, @to_be_created, :validate => false, :on_duplicate_key_update => @columns_without_create, :timestamps => false
+      Poi.where(:osm_id => @to_be_created.map{|t| t[0]}).each do |p|
+        p.tire.update_index
+      end
       @to_be_created = []
     end
   end
 
   def flush_pois(min_amount=500)
     if @to_be_deleted.size >= min_amount
-      Poi.where(:osm_id => @to_be_deleted).delete_all
+      Poi.where(:osm_id => @to_be_deleted).each do |p|
+        Poi.tire.index.remove p
+        p.delete
+      end
       @to_be_deleted = []
     end
   end
@@ -186,7 +193,6 @@ class PlanetReader
         @to_be_created << @columns.map{|c| @poi[c]}
         create_pois
       end
-
     elsif @changemode == 'create'
       # Neue POIs (aus <create> in .osc) werden
       # importiert, wenn sie interessant sind.
