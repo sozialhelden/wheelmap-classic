@@ -5,10 +5,9 @@ Spork.prefork do
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   require 'factory_girl'
+  require 'webmock/rspec'
   require 'carrierwave/test/matchers'
 
-  require 'webmock'
-  WebMock.disable_net_connect!(:allow => "http://localhost:9200")
 
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
@@ -52,6 +51,7 @@ Spork.prefork do
 
 
     config.after(:each) do
+      Poi.tire.index.delete
       DatabaseCleaner.clean
     end
   end
