@@ -30,6 +30,8 @@ Spork.prefork do
     # instead of true.
     config.use_transactional_fixtures = false
     config.before(:suite) do
+      WebMock.disable_net_connect!(:allow_localhost => true)
+
       DatabaseCleaner.strategy = :transaction
       DatabaseCleaner.clean_with(:truncation)
     end
