@@ -42,7 +42,15 @@ end
 
 
 Spork.each_run do
-  # This code will be run each time you run your specs.
+  Before do
+    # Do something before each scenario.
+    WebMock.disable_net_connect!(:allow_localhost => true)
+  end
+
+  After do |scenario|
+    # Do something after each step.
+    Poi.tire.index.delete
+  end
 
 end
 
