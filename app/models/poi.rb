@@ -162,6 +162,8 @@ class Poi < ActiveRecord::Base
     self.geom.x = value
   end
 
+  index_name("#{Rails.env}-wheelmap-#{table_name}")
+
   tire.mapping do
     indexes :osm_id,    :index    => :not_analyzed
     indexes :name,      :type => 'string',    :analyzer => 'keyword', :boost => 100
@@ -187,7 +189,7 @@ class Poi < ActiveRecord::Base
 
   def self.search_with_es(search_string, options={})
 
-    Poi.tire.search :load => true do
+    Poi.tire.search :load => { :include => ['category', 'node_type'] } do
       query do
         string "*#{search_string}*"
       end
