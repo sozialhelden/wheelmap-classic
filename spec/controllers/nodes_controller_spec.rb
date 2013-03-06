@@ -29,7 +29,7 @@ describe NodesController do
   describe "action show" do
 
     before(:each) do
-     WebMock.disable_net_connect!
+     WebMock.disable_net_connect!(:allow => "http://localhost:9200")
      @full_url = "#{@base_url}/node/16581933"
     end
 
@@ -62,7 +62,7 @@ describe NodesController do
      @another_user.should be_app_authorized
      sign_in @another_user
 
-     WebMock.disable_net_connect!
+     WebMock.disable_net_connect!(:allow => "http://localhost:9200")
      @full_url = "#{@base_url}/node/16581933"
     end
 
@@ -147,7 +147,7 @@ describe NodesController do
 
   describe "action: update" do
     before(:each) do
-      WebMock.disable_net_connect!
+      WebMock.disable_net_connect!(:allow => "http://localhost:9200")
       @full_url = "#{@base_url}/node/84644746"
     end
 
