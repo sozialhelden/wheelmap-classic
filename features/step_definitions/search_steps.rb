@@ -1,6 +1,6 @@
 Given /^I search for "([^"]*)"$/ do |arg1|
   fill_in 'search', :with => arg1
-  click_button 'finden'
+  click_button 'Finden'
 end
 
 Given /^a search result exists for the query "([^"]*)"$/ do |query|
