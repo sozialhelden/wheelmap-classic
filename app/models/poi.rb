@@ -191,8 +191,9 @@ class Poi < ActiveRecord::Base
 
     Poi.tire.search :load => { :include => ['category', 'node_type'] } do
       query do
-        string "*#{search_string}*"
-      end
+        string search_string
+      end unless search_string.blank?
+
       page = (options[:page] || 1).to_i
       search_size = options[:per_page] || 200
       from (page -1) * search_size

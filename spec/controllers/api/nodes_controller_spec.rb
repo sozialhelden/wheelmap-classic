@@ -138,6 +138,10 @@ describe Api::NodesController do
   end
 
   describe 'search action' do
+    before :each do
+      Poi.delete_all
+      @node = Factory.create(:poi, :osm_id => 1, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
+    end
 
     it "should not fail when no search key is passed" do
       get(:search, :api_key => @user.authentication_token)
