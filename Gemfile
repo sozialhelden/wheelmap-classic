@@ -3,7 +3,9 @@ source 'http://rubygems.org'
 group :default do
   gem 'rails', '3.0.20'
   gem 'mysql2', '<0.3.0'
-  gem 'activerecord-import', '<0.3.0', :require => false
+  # Make sure to require this before tire cause to has trouble with import method
+  # on active record
+  gem 'activerecord-import', '<0.3.0'
   gem 'oauth'
   gem 'devise'
   gem 'compass', '0.10.6'
