@@ -56,6 +56,7 @@ group :default do
   gem 'exifr'
   gem 'awesome_nested_set'
   gem 'tire'
+  gem 'curb'
 end
 
 group :test, :development do
