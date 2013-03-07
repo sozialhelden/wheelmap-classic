@@ -2,7 +2,6 @@
 
 require 'rubygems'
 require 'libxml'
-require 'crewait'
 
 class CsvExporter
 
