@@ -120,6 +120,7 @@ GEM
       capybara (>= 1.1.1)
       cucumber (>= 1.1.1)
       nokogiri (>= 1.5.0)
+    curb (0.8.3)
     daemons (1.1.9)
     database_cleaner (0.9.1)
     delayed_job (3.0.4)
@@ -391,6 +392,7 @@ DEPENDENCIES
   compass (= 0.10.6)
   cucumber (= 1.2.1)
   cucumber-rails
+  curb
   daemons
   database_cleaner
   delayed_job
