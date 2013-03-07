@@ -13,11 +13,6 @@ GIT
       rake
       rdoc
 
-PATH
-  remote: vendor/gems/crewait-0.1.6
-  specs:
-    crewait (0.1.6)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -59,6 +54,9 @@ GEM
       activesupport (= 3.0.20)
       arel (~> 2.0.10)
       tzinfo (~> 0.3.23)
+    activerecord-import (0.2.11)
+      activerecord (~> 3.0)
+      activerecord (~> 3.0)
     activeresource (3.0.20)
       activemodel (= 3.0.20)
       activesupport (= 3.0.20)
@@ -369,6 +367,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  activerecord-import (< 0.3.0)
   acts_as_api
   autotest
   awesome_nested_set
@@ -381,7 +380,6 @@ DEPENDENCIES
   carrierwave-meta
   carrierwave_backgrounder (= 0.0.9)
   compass (= 0.10.6)
-  crewait!
   cucumber (= 1.2.1)
   cucumber-rails
   daemons

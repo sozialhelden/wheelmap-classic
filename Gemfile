@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 group :default do
   gem 'rails', '3.0.20'
   gem 'mysql2', '<0.3.0'
+  gem 'activerecord-import', '<0.3.0', :require => false
   gem 'oauth'
   gem 'devise'
   gem 'compass', '0.10.6'
@@ -15,7 +16,6 @@ group :default do
   gem 'delayed_job_active_record'
   gem 'daemons'
   gem 'libxml-ruby'
-  gem 'crewait', :path => "#{File.expand_path(__FILE__)}/../vendor/gems/crewait-0.1.6"
   gem 'hoptoad_notifier'
   gem 'whenever', :require => false
   gem "routing-filter"

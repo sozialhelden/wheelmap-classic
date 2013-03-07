@@ -2,7 +2,8 @@
 
 require 'rubygems'
 require 'libxml'
-require 'crewait'
+require "activerecord-import/base"
+ActiveRecord::Import.require_adapter('mysql2')
 
 class PlanetReader
 
@@ -15,7 +16,9 @@ class PlanetReader
     @processed = 0
     @parser = stream_or_file.is_a?(String) ? LibXML::XML::SaxParser.file(stream_or_file) : LibXML::XML::SaxParser.io(stream_or_file)
     @parser.callbacks = self
-    Crewait.start_waiting
+    @columns = [:osm_id, :version, :tags, :geom, :status, :created_at , :updated_at, :node_type_id, :region_id]
+    @columns_without_create = @columns - [:created_at]
+    @to_be_created = []
     @to_be_deleted = []
     @combination = NodeType.combination
   end
@@ -37,7 +40,7 @@ class PlanetReader
       puts e.message
       puts e.backtrace
     ensure
-      Crewait.go!
+      create_pois(1)
       flush_pois(1)
       sleep 1
       @duration = (Time.now - @start_time).to_i
@@ -45,7 +48,14 @@ class PlanetReader
     end
   end
 
-  def flush_pois(min_amount=200)
+  def create_pois(min_amount=500)
+    if @to_be_created.size >= min_amount
+      Poi.import @columns, @to_be_created, :validate => false, :on_duplicate_key_update => @columns_without_create, :timestamps => false
+      @to_be_created = []
+    end
+  end
+
+  def flush_pois(min_amount=500)
     if @to_be_deleted.size >= min_amount
       Poi.where(:osm_id => @to_be_deleted).delete_all
       @to_be_deleted = []
@@ -73,7 +83,9 @@ class PlanetReader
         @poi = {:osm_id => id,
                 :geom => Point.from_x_y(attributes['lon'].to_f, attributes['lat'].to_f),
                 :version => attributes['version'].to_i,
-                :tags => {}}
+                :tags => {},
+                :created_at => Time.now,
+                :updated_at => Time.now }
       elsif (id < 0 and id > -10000000) then
         # Ignore, its a node from a relation.
         #  update relation id.abs in osm
@@ -85,7 +97,9 @@ class PlanetReader
         @poi = {:osm_id => (id + 10000000),
                 :geom => Point.from_x_y(attributes['lon'].to_f, attributes['lat'].to_f),
                 :version => attributes['version'].to_i,
-                :tags => {}}
+                :tags => {},
+                :created_at => Time.now,
+                :updated_at => Time.now }
       end
 
     when 'modify'
@@ -108,13 +122,13 @@ class PlanetReader
   def on_end_element(element)
     case element
     when 'delete'
-      flush_pois
+      flush_pois(1)
     when 'create'
-      Crewait.go!
-      flush_pois
+      create_pois(1)
+      flush_pois(1)
     when 'modify'
-      Crewait.go!
-      flush_pois
+      create_pois(1)
+      flush_pois(1)
     when 'node'
       if @poi
         process_poi
@@ -122,14 +136,13 @@ class PlanetReader
 
         if (@processed % 1000 == 0)
           if (@processed % 5000 == 0)
-            Crewait.go!
+            create_pois
           end
           print("\rprocessed #{@processed/1000}k nodes")
           STDOUT.flush
         end
       end
       @poi = nil
-
     end
   end
 
@@ -169,16 +182,18 @@ class PlanetReader
       # Neue POIs aus *.osm
       # Purer input aus einem Planet Dump.
       # Stumpf einfach alles in die DB hauen!
-      @poi[:created_at] = @poi[:updated_at] = Time.now
-      Poi.crewait(@poi) if valid?
+      if valid?
+        @to_be_created << @columns.map{|c| @poi[c]}
+        create_pois
+      end
 
     elsif @changemode == 'create'
       # Neue POIs (aus <create> in .osc) werden
       # importiert, wenn sie interessant sind.
-      @poi[:created_at] = @poi[:updated_at] = Time.now
       if valid?
         # Der Node ist valide und kann neu angelegt werden.
-        Poi.crewait(@poi)
+        @to_be_created << @columns.map{|c| @poi[c]}
+        create_pois
       else
         # Der Node ist nicht valide. Falls er schon im System ist, muss er entfernt werden.
         @to_be_deleted << @poi[:osm_id]
@@ -194,9 +209,9 @@ class PlanetReader
         # aber zu zeitaufwendig, erst einen "find" zu machen - wir
         # probieren den Save, und wenn der nicht geht, probieren wir
         # den Update.
-        @poi[:updated_at] = Time.now
         @poi[:region_id] = nil
-        Poi.crewait(@poi)
+        @to_be_created << @columns.map{|c| @poi[c]}
+        create_pois
       else
 
         # falls die neue Version des Nodes nicht interessant ist,
