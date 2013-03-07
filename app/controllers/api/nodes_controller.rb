@@ -29,8 +29,8 @@ class Api::NodesController < Api::ApiController
       @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f)
       geofactory = RGeo::Cartesian.factory
       bbox = RGeo::Cartesian::BoundingBox.new(geofactory)
-      north_east = geofactory.point(@east, @top)
-      south_west = geofactory.point(@west, @bottom)
+      north_east = geofactory.point(@right, @top)
+      south_west = geofactory.point(@left, @bottom)
       bbox.add(north_east)
       bbox.add(south_west)
       @lat = bbox.center_y
