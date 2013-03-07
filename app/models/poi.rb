@@ -189,7 +189,7 @@ class Poi < ActiveRecord::Base
 
   def self.search_with_es(search_string, options={})
 
-    Poi.tire.search :load => { :include => ['category', 'node_type'] } do
+    Poi.tire.search :load => true do
       query do
         string search_string
       end unless search_string.blank?
