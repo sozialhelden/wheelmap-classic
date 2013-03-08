@@ -10,7 +10,7 @@ class Api::ApiController < ApplicationController
   # rescue_from ActiveRecord::RecordNotFound, :with => :render_404
 
   PER_PAGE= 200
-  PER_PAGE_MAX=500
+  PER_PAGE_MAX=1000
   PAGE    = 1
 
   layout false
