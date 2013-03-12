@@ -212,6 +212,7 @@ class Poi < ActiveRecord::Base
 
       filter :term, {:category_id =>  options[:category_id].to_i}  if options[:category_id].present?
       filter :term, {:node_type_id => options[:node_type_id].to_i} if options[:node_type_id].present?
+      filter :term, {:wheelchair => options[:wheelchair]} if options[:wheelchair].present?
 
       sort do
         by :_geo_distance, {
