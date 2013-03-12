@@ -190,7 +190,7 @@ class Poi < ActiveRecord::Base
   end
 
   def self.reindex
-    find_each(:start => lowest_id){ |p| p.tire.update_index }
+    including_category.find_each(:start => lowest_id){ |p| p.tire.update_index }
   end
 
   def self.search_with_es(search_string, options={})
@@ -278,7 +278,7 @@ class Poi < ActiveRecord::Base
   end
 
   def category_id
-    self.node_type.category_id
+    self.node_type.try(:category_id)
   end
 
   def category_for_node
