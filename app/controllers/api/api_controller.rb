@@ -77,22 +77,22 @@ class Api::ApiController < ApplicationController
   protected
 
   def normalize_bbox
-    if params[:bbox]
-      left, bottom, right, top = params[:bbox].split(',').map(&:to_f)
-      left = left.floor_to(3)
-      bottom = bottom.floor_to(3)
-      right = right.ceil_to(3)
-      top = top.ceil_to(3)
-      if right == left
-        left   -= 0.001
-        right  += 0.001
+    if params[:bbox].present?
+      @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f)
+      @left = @left.floor_to(3)
+      @bottom = @bottom.floor_to(3)
+      @right = @right.ceil_to(3)
+      @top = @top.ceil_to(3)
+      if @right == @left
+        @left   -= 0.001
+        @right  += 0.001
       end
-      if top   == bottom
-        bottom -= 0.001
-        top    += 0.001
+      if @top   == @bottom
+        @bottom -= 0.001
+        @top    += 0.001
       end
 
-      params[:bbox] = [left, bottom, right, top].join(',')
+      params[:bbox] = [@left, @bottom, @right, @top].join(',')
     end
   end
 

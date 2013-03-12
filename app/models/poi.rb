@@ -173,6 +173,8 @@ class Poi < ActiveRecord::Base
     indexes :wheelchair
     indexes :wheelchair_description
     indexes :location,  :type => 'geo_point', :lat_lon => true
+    indexes :category_id, :type => 'integer'
+    indexes :node_type_id, :type => 'integer'
   end
 
   def location
@@ -180,11 +182,15 @@ class Poi < ActiveRecord::Base
   end
 
   def to_indexed_json
-    to_json(:only => [:osm_id], :methods => ['name', 'address', 'website', 'phone', 'wheelchair', 'wheelchair_description', 'location'])
+    to_json(:only => [:osm_id, :node_type_id], :methods => ['name', 'address', 'website', 'phone', 'wheelchair', 'wheelchair_description', 'location', 'category_id'])
   end
 
   def remove_from_index
     Poi.tire.index.remove self.osm_id
+  end
+
+  def self.reindex
+    find_each(:start => lowest_id){ |p| p.tire.update_index }
   end
 
   def self.search_with_es(search_string, options={})
@@ -198,6 +204,14 @@ class Poi < ActiveRecord::Base
       search_size = options[:per_page] || 200
       from (page -1) * search_size
       size search_size
+
+      filter :geo_bounding_box, :location => {
+        :top_left => [options[:left], options[:top]],
+        :bottom_right => [options[:right], options[:bottom]]
+      } if !options[:left].blank? and !options[:top].blank? and !options[:right].blank? and !options[:bottom].blank?
+
+      filter :term, {:category_id =>  options[:category_id].to_i}  if options[:category_id].present?
+      filter :term, {:node_type_id => options[:node_type_id].to_i} if options[:node_type_id].present?
 
       sort do
         by :_geo_distance, {
