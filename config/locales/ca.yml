@@ -5,11 +5,14 @@ ca:
       user:
         first_name: "Nom de pila"
         last_name: Cognom
+        privacy_policy: "Política de privacitat"
         terms: Termes
     errors:
       full_messages:
         format: "%{attribute} %{message}"
       messages:
+        accepted: "cal que s'accepti"
+        blank: "No pot estar en blanc"
         empty: "no pot estar buit"
         equal_to: "ha de ser igual a %{count}"
         even: "ha de ser parell"
@@ -22,6 +25,8 @@ ca:
         less_than_or_equal_to: "ha de ser més petit o igual a %{count}"
         not_a_number: "no és un nombre"
         odd: "ha de ser senar"
+        record_invalid: "Error de validació: %{errors}"
+        taken: "ja s'ha fet"
         too_long: "és massa llarg (el màxim és de %{count} caràcters)"
         too_short: "és massa curt (el mínim són %{count} caràcters)"
         wrong_length: "és una llargària incorrecte (hauria de ser de %{count} caràcters)"
@@ -30,11 +35,22 @@ ca:
           attributes:
             email:
               blank: "no pot ser buit si s'ha determinat una contrasenya"
+            privacy_policy:
+              accepted: "s'ha d'acceptar"
+            terms:
+              accepted: "s'ha d'acceptar"
         user_session:
           email: "Adreça de correu electrònic"
           password: Contrasenya
+      template:
+        body: "Van haver-hi problemes amb els següents camps:"
     models:
       user: Usuari
+  application:
+    require_no_user:
+      notice: "Ja heu iniciat la sessió..."
+    require_user:
+      notice: "Heu d'iniciar la sessió per veure aquesta pàgina."
   breadcrumbs:
     node:
       create: "Afegeix un lloc nou"
@@ -45,6 +61,8 @@ ca:
   devise:
     confirmations:
       confirmed: "El vostre correu electrònic ha estat confirmat correctament."
+      link: "No heu rebut les instruccions de confirmació?"
+      send_instructions: "Rebreu un correu en pocs minuts a la vostra adreça de correu electrònic que conté un enllaç de confirmació."
       send_paranoid_instructions: "Si el vostre compte existeix, de seguida rebreu un correu electrònic amb instruccions sobre com confirmar-lo."
     destroy:
       confirm: "N'esteu segur?"
@@ -70,12 +88,14 @@ ca:
     mailer:
       confirmation_instructions:
         landing_page: "Si us plau, feu clic a l'enllaç que us enviarem al vostre correu electrònic. Si no rebéssiu el nostre correu assegureu-vos primer de què no ha quedat amagat a la carpeta del correu brossa, si no és així, torneu a la pàgina de registre i proveu-ho altra vegada."
+        subject: "Un pas més per activar el vostre compte"
       reset_password_instructions:
         subject: "Instruccions per reiniciar la contrasenya"
       unlock_instructions:
         subject: "Instruccions de desbloqueig"
     mandatory: "* Es requereix"
     omniauth_callbacks:
+      failure: "L'autorització amb %{kind} ha fallat. Error: \"%{reason}\".\n"
       success: "S'ha iniciat correctament la sessió amb %{kind}."
     password_recovery:
       form:
@@ -95,6 +115,7 @@ ca:
       headline: "Reinicia la contrasenya"
     passwords:
       link: "Heu oblidat la contrasenya?"
+      send_instructions: "Rebreu un correu amb les instruccions sobre com reiniciar la vostra contrasenya en pocs minuts"
       send_paranoid_instructions: "Si el vostre compte existeix, rebreu un correu electrònic amb les instruccions per reiniciar la vostra contrasenya en pocs minuts"
       updated: "La vostra contrasenya s'ha canviat correctament i ara heu iniciat la sessió"
       updated_not_active: "La vostra contrasenya s'ha canviat correctament"
@@ -104,6 +125,7 @@ ca:
         inactive: inactiu
         locked: bloquejat
         unconfirmed: "no confirmat"
+      signed_up: "Us heu registrat correctament. Rebreu una confirmació per correu electrònic."
     sessions:
       inactive: "El vostre compte encara no s'ha activat"
       invalid: "Correu electrònic o contrasenya no vàlid"
@@ -111,10 +133,15 @@ ca:
       locked: "El vostre compte està bloquejat"
       new:
         no_osm_account: "No teniu compte a OpenStreetMap?"
+        osm_promo_text: "Wheelmap es basa en les dades geogràfiques d'OpenStreetMap (OSM).\n\
+            OpenStreetMap és un mapa lliure del món creat per gent com vós.\n\
+            Se l'anomena la Viquipèdia dels mapes. Per poder editar llocs o crear-ne de nous, us caldrà tenir un compte a OpenStreetMap i haureu d'iniciar-hi la sessió. "
         promo_text_thank_you: "Moltes gràcies pel vostre suport!"
+        sign_in_with: "Inicia la sessió amb %{kind}"
         sign_up_with_osm: "Registreu-vos ara."
       signed_in: "Sessió iniciada correctament"
       timeout: "La vostra sessió ha vençut, torneu a iniciar-la per continuar."
+      unauthenticated: "Cal que inicieu la sessió o us registreu abans de continuar"
       unconfirmed: "Necessiteu confirmar el vostre compte abans de continuar"
     sign_in:
       form:
@@ -122,25 +149,37 @@ ca:
           email: "Correu electrònic"
           password: Contrasenya
         submit: "Inicia la sessió"
+      headline: "Inicieu la sessió"
+    sign_out:
+      headline: "Finalitza la sessió"
     sign_up:
       email:
+        confirm_my_account: "Confirma el meu compte"
+        please_confirm: "Podeu confirmar el vostre compte a través del següent enllaç:"
         welcome: "Benvingut %{email}!"
       form:
         labels:
           email: "Correu electrònic"
           password: Contrasenya
           password_confirmation: "Repeteix la contrasenya"
+          wants_newsletter: "Sí, mantingueu-me informat de Wheelmap però, si us plau, no més d'una vegada al mes."
         submit: Registreu-vos
       headline: Registreu-vos
     unlocks:
+      link: "No vau rebre les instruccions de desbloqueig?"
+      send_instructions: "Rebreu un correu electrònic amb les instruccions sobre com desbloquejar el vostre compte en pocs minuts."
+      send_paranoid_instructions: "Si el vostre compte existeix, rebreu un correu amb les instruccions sobre com desbloquejar el vostre compte en pocs minuts"
       unlocked: "El vostre compte ha estat desbloquejat correctament. Ara heu iniciat la sessió."
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      confirmation: "La confirmació no concorda"
+      accepted: "s'ha d'acceptar"
+      already_confirmed: "ja s'ha confirmat"
+      confirmation: "la confirmació no concorda"
       equal_to: "ha de ser exactament %{count}"
       even: "ha de ser parell"
+      exclusion: "està reservat"
       greater_than: "ha de ser més gran que %{count}"
       greater_than_or_equal_to: "ha de ser més gran o igual que %{count}"
       inclusion: "no és un valor vàlid"
@@ -152,8 +191,11 @@ ca:
       not_found: "no s'ha trobat"
       not_locked: "no s'ha bloquejat"
       odd: "ha de ser senar"
+      taken: "ja s'ha fet"
       too_long: "és massa llarg (no pot superar els %{count} caràcters)"
       too_short: "és massa curt (no pot tenir menys de %{count} caràcters)"
+    template:
+      body: "Va haver-hi problemes amb els següents camps:"
   flash:
     actions:
       create:
@@ -168,11 +210,15 @@ ca:
         notice: "La imatge s'ha eliminat correctament"
   form:
     show_fully_accessible_places: "accessible amb cadira de rodes"
+    show_limited_accessible_places: "accessible parcialment amb cadira de rodes"
     show_places_without_status: "estat desconegut"
     show_unaccessible_places: "no accessible amb cadira de rodes"
   formtastic:
     hints:
+      email: "Us garantim que tractarem la seva adreça de manera confidencial i no hi rebrà spam."
       osm_username: "Encara no en sou membre? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Creeu-vos ara un compte a OpenStreetMap</a>"
+      password: "(deixeu-ho en blanc si no voleu canviar-la)"
+      phone: "Per exemple: +34 93 1234567"
       website: "Per exemple: http://www.exemple.cat"
     labels:
       category: "Categoria:"
@@ -191,22 +237,31 @@ ca:
       password_confirmation: "Repeteix la contrasenya"
       phone: "Telèfon:"
       postcode: "Codi postal:"
+      privacy_policy: "Accepto els paràgrafs 1 i 2 sobre la privacitat de dades."
       reset: Reinicia
       save: Desa
       street: "Carrer:"
-      terms: "Sí, accepto els termes d'ús de wheelmap.org."
+      terms: "Sí, accepto els termes d'ús."
       type: "Tipus:"
       website: "Pàgina web:"
       wheelchair: "Accessibilitat amb cadira de rodes?"
+      wheelchair_description: "Comentari de l'accessibilitat:"
+    titles:
+      basic: "Dades bàsiques"
+      optional: "Més informació <span class=\"addition\">(tots els camps són opcionals)</span>"
   header:
     meta:
+      description: "Troba llocs acessibles amb cadira de rodes - wheelmap.org"
       homepage: "Pàgina d'inici"
       search: Cerca
     navigation:
       blog: Bloc
+      feedback: Comentaris
       home: Inicia
       how_to_add_a_place: "Com podeu afegir llocs?"
+      imprint: Impressió
       logged_in_as: "Sessió iniciada com a:"
+      login: "Inicieu sessió"
       logout: "Finalitza la sessió"
       newsletter: Butlletí
       profile: Perfil
@@ -215,10 +270,14 @@ ca:
       what_is_wheelmap: "Què és Wheelmap?"
     searchbar:
       add_place: "Afegeix un altre lloc"
-      find: cerca
+      find: Cerca
       label: ~
       title_add_place: "Afegeix un lloc nou en aquesta posició"
+    tagline: "Logotip de Wheelmap"
+    title: "Wheelmap - troba llocs accessibles amb cadira de rodes"
   helpers:
+    select:
+      prompt: "Si us plau, seleccioneu"
     submit:
       create: "crea %{model}"
       submit: "desa %{model}"
@@ -227,6 +286,7 @@ ca:
     index:
       filter:
         category: "Tria la categoria"
+        deselect_all: "Desfès la selecció"
         select_all: "Selecciona-ho tot"
         wheelchair: "És accessible amb cadira de rodes?"
       ie:
@@ -234,12 +294,16 @@ ca:
           ignore: Ignora
           upgrade: "Actualitza el navegador"
         warning:
+          headline: "Li demanem disculpes."
           message: "Esteu utilitzant l'Internet Explorer i Wheelmap necessita un navegador que respecti els estàndards per funcionar adequadament. Si us plau, considereu la possibilitat d'utilitzar Firefox, Chrome, Safari o Opera."
       link:
         node:
           create: "Afegeix un lloc nou"
       popup:
         form:
+          limited: "accessible amb cadira de rodes de manera parcial"
+          ? "no"
+          : "no accessible amb cadira de rodes"
           save: Actualitza
           unknown: "estat desconegut"
           ? "yes"
@@ -247,6 +311,12 @@ ca:
         help: "Accessible amb cadira de rodes? (ajuda)"
         more: més...
   how?: Com?
+  landing_pages:
+    index:
+      wheelchair:
+        ? "yes"
+        :
+          headline: "Llocs d'accessibilitat amb cadira de rodes %{type} a %{city} (%{count})"
   layouts:
     application:
       banner:
@@ -261,6 +331,7 @@ ca:
   nodes:
     create:
       flash:
+        not_successfull: "Vaja, la vostra entrada va ser incorrecta o bé incompleta"
         successfull: "La vostra tramesa s'ha desat correctament i en breu apareixerà en línia. Moltes gràcies."
     edit:
       header:
@@ -269,6 +340,7 @@ ca:
         large_map: "&laquo; Cancel·la"
     errors:
       not_authorized: "Ha fallat l'autenticació"
+      not_available: "Ho sentim, aquesta pàgina no està disponible temporalment."
       not_found: "La pàgina no existeix"
     flash:
       authorize_wheelmap: "Us cal un compte a OpenStreetMap per poder modificar dades"
@@ -281,6 +353,7 @@ ca:
       link:
         claim: "Treballeu aquí?"
         edit_node: "Edita el lloc"
+        report_bug: "Informa d'un problema"
     show:
       header:
         title: "Lloc: %{node} | wheelmap.org"
@@ -288,7 +361,14 @@ ca:
         back: enrere
         listing: "Tots els llocs del tipus '%{type}' a %{city}"
         upload: "Penja una imatge"
+      more_data_from: "Hi ha més dades per aquest lloc, revisades per:"
       show-in-osm: OpenStreetMap
+    update:
+      flash:
+        not_successfull: "Vaja, la vostra entrada va ser incorrecta o bé incompleta"
+        successfull: "Gràcies, la vostra tramesa ha estat desada correctament i en breu serà en línia."
+    update_wheelchair:
+      successfull: "L'estat de «%{name}» ha canviat a «%{status}» i en breu estarà en línia."
   number:
     currency:
       format:
@@ -298,6 +378,7 @@ ca:
         separator: "."
         significant: 0
         strip_insignificant_zeros: 0
+        unit: $
     format:
       delimiter: ","
       precision: 3
@@ -334,10 +415,14 @@ ca:
       format:
         delimiter: ~
   oauth:
+    application:
+      connect:
+        headline: "Cal que connecteu el vostre compte amb el vostre compte a OpenStreetMap abans de crear o modificar llocs a wheelmap.org."
     callback:
       notice: "El vostre compte de Wheelmap està connectat amb el compte %{user} d'OpenStreetMap."
   or: o
   place:
+    one: "%{count} llocs"
     other: "%{count} llocs"
   poi:
     category:
@@ -352,86 +437,144 @@ ca:
       unknown: Desconegut
     name:
       accommodation:
+        camp_site: "Zona d'acampada/Càmping"
+        caravan_site: "Zona d'acampada de caravanes"
+        chalet: "Casa rural"
         guest_house: Pensió
+        hostel: Hostal/alberg
         hotel: Hotel
         motel: Motel
       education:
+        driving_school: Autoescola
         kindergarten: "Llar d'infants"
         library: Biblioteca
         museum: Museu
         school: Escola
         university: Universitat
       food:
+        bar: Bar
         cafe: Cafè
         drinking_water: "Font per beure"
         fast_food: "Menjar ràpid"
+        ice_cream: Gelateria
         restaurant: Restaurant
       government:
+        courthouse: Jutjat
+        embassy: Ambaixada
+        government: "Oficina governamental"
+        police: Policia
         public_building: "Edifici públic"
+        townhall: Ajuntament
       health:
+        dentist: Dentista
+        doctors: "Centre mèdic"
+        hearing_aids: "Aparells auditius"
+        hospital: Hospital
+        medical_supply: "Subministraments mèdics"
         pharmacy: Farmàcia
+        social_facility: "Serveis socials"
         veterinary: Veterinari
       leisure:
         brothel: Prostíbul
+        casino: Casino
         cinema: Cinema
         community_center: "Centre comunitari"
+        gallery: Galeria
         nightclub: Discoteca
+        playground: "Parc infantil"
         sauna: Sauna
         stripclub: "Club d'striptease"
         theatre: Teatre
         zoo: Zoo
       misc:
         company: "Companyia (oficina)"
+        estate_agent: Immobiliària
+        insurance: "Corredoria d'assegurances"
+        lawyer: "Despatx d'advocats"
         place_of_worship: "Lloc de culte"
         toilets: Lavabos
       money_post:
         atm: "Caixer automàtic"
         bank: Banc
         bureau_de_change: "Casa de canvi"
+        post_box: Bústia
+        post_office: "Oficina de correus"
       public_transfer:
         aerodrome: Aeroport
         bicycle_parking: "Pàrquing de bicicletes"
         bicycle_rental: "Lloguer de bicicletes"
         bus_station: "Estació d'autobusos"
         bus_stop: "Parada d'autobús"
+        cable_car: "Telefèric (amb cabina tancada)"
         car_rental: "Lloguer de cotxes"
+        car_sharing: "Lloc per compartir cotxe"
+        chair_lift: Telecadira
+        ferry: Ferri
+        ferry_terminal: "Terminal de ferri"
+        fuel: Gasolinera
         halt: Baixador
         parking: Pàrquing
+        parking_aisle: "Zona d'aparcaments"
+        platform: Andana/marquesina
         station: "Estació de tren"
         subway_entrance: "Entrada de metro"
+        terminal: "Terminal d'aeroport"
+        tram_stop: "Parada de tramvia"
       shopping:
         alcohol: Licors
         bakery: "Forn i pastisseria"
+        beauty: "Saló de bellesa"
         beverages: Begudes
+        bicycle: "Bicicletes i accessoris"
         books: Llibreria
         butcher: Carnisseria
         car_repair: "Taller de cotxes"
         chemist: Farmàcia
         clothes: Roba
         computer: Informàtica
+        confectionery: Llaminadures
+        convenience: "Queviures/petit súper"
+        deli: Delicadeses
+        department_store: "Gran magatzem"
         doityourself: Bricolatge
         dry_cleaning: Tintoreria
         electronics: Electrònica
+        fabric: Teleria
+        farm_shop: "Productes de granja"
         florist: Floristeria
         furniture: Mobles
+        garden_centre: Planter/viver
+        gift: "Botiga de regals"
         hairdresser: Perruqueria
         hardware: Ferreteria
+        jewelry: Joieria
         kiosk: Quiosc
         laundry: Bugaderia
+        mall: "Centre comercial"
         optician: Òptica
+        outdoor: "Articles d'esport a l'aire lliure"
+        pet: "Botiga per mascotes"
         photo: Fotografia
         second_hand: "Segona mà"
         shoes: Sabateria
         sports: Esports
+        stationery: Papereria
         supermarket: Supermercat
+        toys: Joguines
+        travel_agency: "Agència de viatges"
         video: Videoclub
       sport:
+        pitch: "Camp d'esports"
         sports_centre: Poliesportiu
         stadium: Estadi
+        swimming: Natació
         swimming_pool: Piscina
       tourism:
+        archaeological_site: "Espai arqueològic"
         arts_centre: "Centre d'arts"
         artwork: "Obra d'art"
+        attraction: "Atracció turística"
+        battlefield: "Antic camp de batalla"
         beach: Platja
         beacon: Far
         castle: Castell
@@ -458,9 +601,11 @@ ca:
         for: "S'està cercant \"%{q}\""
         not_found: "No s'ha pogut trobar llocs."
   splash:
+    countline: "S'han marcat %{count} llocs."
     headline: "Tothom pot afegir llocs accessibles amb cadira de rodes."
     start: Inicia
     step1: "Feu clic sobre un lloc que conegueu"
+    step2: "Marqueu i feu clic per desar"
     what_is_wheelmap: "Què és Wheelmap?"
   statistics: Estadístiques
   support:
@@ -481,6 +626,7 @@ ca:
     new:
       email: "Adreça de correu electrònic"
       login: "Inicia la sessió"
+      login_with_twitter: "Inicia la sessió amb Twitter"
       password: Contrasenya
   users:
     after_signup_edit:
@@ -490,6 +636,7 @@ ca:
       headline:
         your_images: "Imatges que heu penjat"
   wheelchairstatus:
+    limited: "accessible amb cadira de rodes de manera parcial"
     ? "no"
     : "no accessible amb cadira de rodes"
     unknown: "estat desconegut"
@@ -499,20 +646,27 @@ ca:
     footer:
       a_project_of: "Un projecte de"
       based_on: "Basat en"
+      become_a_supporter: "Covertiu-vos en col·laborador"
     itunes:
       title: "Baixeu-vos ara l'aplicació per iPhone"
     logo:
+      alt: "Logotip de Wheelmap - cerca llocs accessibles amb cadira de rodes"
       title: "Wheelmap - cerca llocs accessibles amb cadira de rodes"
     what_is:
       fully_accessible: "<em>Sí:</em> Entrada sense graons així com totes les habitacions sense excepció, com a mínim un lavabo és accessible "
       not_accessible: "<em>No:</em> L'entrada té un o diversos graons, i les habitacions no són accessibles "
       unknown_accessible: "<em>Desconegut:</em> Ajuda'ns a marcar llocs "
   will_paginate:
+    next_label: "Següent &#8594;"
     page_entries_info:
       multi_page: "S'està mostrant %{model} %{from} - %{to} de %{count} en total"
       single_page:
         one: "S'està mostrant 1 %{model}"
+        other: "S'està visualitzant tots %{count} %{model}"
+        zero: "No %{model} trobat"
       single_page_html:
         one: "S'està mostrant <b>1</b> %{model}"
+        other: "S'està visualitzant <b>tot&nbsp;%{count}</b> %{model}"
         zero: "%{model} no s'ha trobat"
     page_gap: "&hellip;"
+    previous_label: "&#8592; Anterior\n"

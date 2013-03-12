@@ -4,6 +4,7 @@ WheelchairStatus = %w{yes limited no unknown}
 Languages = {
   'ar'    => 'العربية',
   'bg'    => 'български',
+  'ca'    => 'Català',
   'cn'    => '中文',
   'cs'    => 'српски',
   'da'    => 'Danske',
