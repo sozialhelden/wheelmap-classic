@@ -17,8 +17,8 @@ class Api::NodesController < Api::ApiController
 
   def index
     index! do |format|
-      format.xml      {render_for_api :simple, :xml  => @nodes, :root => :nodes, :meta => meta}
-      format.json     {render_for_api :simple, :json => @nodes, :root => :nodes, :meta => meta}
+      format.xml      {render_for_api :simple, :xml  => @nodes.results, :root => :nodes, :meta => meta}
+      format.json     {render_for_api :simple, :json => @nodes.results, :root => :nodes, :meta => meta}
       format.geojson  {render :json => @nodes.to_geojson}
     end
   end
@@ -111,7 +111,17 @@ class Api::NodesController < Api::ApiController
   protected
 
   def collection
-    @nodes ||= end_of_association_chain.including_category.paginate(:page => params[:page], :per_page => params[:per_page])
+    # @nodes ||= end_of_association_chain.including_category.paginate(:page => params[:page], :per_page => params[:per_page])
+    @nodes ||= end_of_association_chain.including_category.search_with_es('', :page =>params[:page],
+                                                                              :per_page => params[:per_page],
+                                                                              :top => @top,
+                                                                              :bottom => @bottom,
+                                                                              :left => @left,
+                                                                              :right => @right,
+                                                                              :lat => params[:lat],
+                                                                              :lon => params[:lon],
+                                                                              :category_id => params[:category_id],
+                                                                              :node_type_id => params[:node_type_id])
   end
 
   def meta
