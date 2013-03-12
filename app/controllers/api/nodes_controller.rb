@@ -121,7 +121,8 @@ class Api::NodesController < Api::ApiController
                                                                               :lat => params[:lat],
                                                                               :lon => params[:lon],
                                                                               :category_id => params[:category_id],
-                                                                              :node_type_id => params[:node_type_id])
+                                                                              :node_type_id => params[:node_type_id],
+                                                                              :wheelchair => params[:wheelchair])
   end
 
   def meta
@@ -138,8 +139,14 @@ class Api::NodesController < Api::ApiController
         :item_count => collection.to_a.compact.size
         }
       }
-      @meta[:conditions][:search] = params[:q]    if params[:q]
-      @meta[:conditions][:bbox]   = params[:bbox] if params[:bbox]
+      @meta[:conditions][:search]       = params[:q]            if params[:q].present?
+      @meta[:conditions][:bbox]         = params[:bbox]         if params[:bbox].present?
+      @meta[:conditions][:lat]          = params[:lat]          if params[:lat].present?
+      @meta[:conditions][:lon]          = params[:lon]          if params[:lon].present?
+      @meta[:conditions][:wheelchair]   = params[:wheelchair]   if params[:wheelchair].present?
+      @meta[:conditions][:category_id]  = params[:category_id]  if params[:category_id].present?
+      @meta[:conditions][:node_type_id] = params[:node_type_id] if params[:node_type_id].present?
+
       @meta
   end
 
