@@ -1,0 +1,162 @@
+header {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1001;
+  float: left;
+  background: url(../images/bg_header.png);
+  background-image: -webkit-image-set(url(../images/bg_header.png) 1x, url(../images/bg_header@2x.png) 2x);
+}
+
+.logo {
+  width: 220px;
+  padding: 36px 0 0 38px;
+  margin: -3px 0 0 0;
+  float: left;
+  background: url(../images/bg_logo.png) center center no-repeat;
+  background-image: -webkit-image-set(url(../images/bg_logo.png) 1x, url(../images/bg_logo@2x.png) 2x);
+  z-index: 1;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: right;
+  color: #999;
+}
+
+nav {
+  width: 470px;
+  margin: auto;
+  ul {
+    float: left;
+    margin-right: 20px;
+  }
+  li {
+    float: left;
+    list-style: none;
+    padding: 17px 1px 17px 1px;
+    a {
+      color: #666;
+      padding: 7px 10px 6px 10px;
+      &:visited {
+        color: #666;
+        padding: 7px 10px 6px 10px;
+      }
+      &:hover {
+        color: #000;
+        background: #DCDBD4;
+        border-radius: 3px;
+        box-shadow: inset 0 2px 2px rgba(170, 170, 170, 0.2);
+        border: 1px solid #c4c2b5;
+        margin: 0 -1px;
+      }
+    }
+  }
+}
+
+.accountbar {
+  width: auto;
+  margin: 13px 0 0 0;
+  float: right;
+  li {
+    list-style: none;
+    float: left;
+    border-left: 1px solid #B1B0AE;
+    border: 1px solid #c6c5bd;
+    border-radius: 3px;
+    box-shadow: 0px 1px 0px #FFF;
+    /*		background: url(../images/bg_accountbar.png);
+    		box-shadow: 0 2px 2px rgba(170, 170, 170, 0.2);*/
+    margin-left: 3px;
+    &:first-child {
+      border-left: none;
+    }
+    a {
+      height: 24px;
+      float: left;
+    }
+    &:hover {
+      a span:after {
+        position: absolute;
+        left: 24px;
+        top: -5px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        content: "";
+        border-bottom: 5px solid #000;
+      }
+      box-shadow: inset 0 10px 20px rgba(48, 66, 81, 0.05);
+    }
+    a {
+      &.add, &.profil {
+        width: auto;
+        padding: 0 8px;
+        height: 25px;
+        color: #FFF;
+        font-size: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      &.add .icon {
+        width: 20px;
+        height: 25px;
+        float: left;
+        margin: 0px 5px 0 -8px;
+        padding: 0px 3px 0 3px;
+        background-color: #87b346;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(151, 194, 78)), to(rgb(120, 164, 62)));
+        background-image: -webkit-linear-gradient(top, rgb(151, 194, 78), rgb(120, 164, 62));
+        background-image: -moz-linear-gradient(top, rgb(151, 194, 78), rgb(120, 164, 62));
+        background-image: -o-linear-gradient(top, rgb(151, 194, 78), rgb(120, 164, 62));
+        background-image: -ms-linear-gradient(top, rgb(151, 194, 78), rgb(120, 164, 62));
+        background-image: linear-gradient(top, rgb(151, 194, 78), rgb(120, 164, 62));
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#97c24e', EndColorStr='#78a43e');
+        border-radius: 3px 0 0 3px;
+      }
+    }
+    p {
+      float: left;
+      margin: 3px 4px 0 0px;
+      color: #888;
+      /*text-shadow: 0 1px 0 #E8E7E3;*/
+      text-transform: none;
+    }
+    .icon {
+      width: 20px;
+      float: left;
+      margin-top: -2px;
+      text-align: center;
+      font-size: 30px;
+      font-family: 'EntypoRegular', sans-serif;
+      color: #666;
+      text-shadow: 0 1px 0 #E8E7E3;
+    }
+  }
+}
+
+li a.add .icon {
+  margin-top: -4px;
+  color: #FFF;
+  text-shadow: 0 1px 0 #000;
+}
+
+.profil p {
+  margin-left: 20px;
+  float: left;
+}
+
+.accountbar select {
+  float: left;
+  border: none;
+  padding: 6px 10px 6px 0;
+  margin: 0 2px 0 8px;
+  background: url(../images/bg_accountbar-select.png) no-repeat right;
+  background-position-y: 6px;
+  color: #666;
+  text-shadow: 0 1px 0 #E8E7E3;
+  font-weight: bold;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}

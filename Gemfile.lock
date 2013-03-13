@@ -186,7 +186,10 @@ GEM
       responders (~> 0.6.0)
     jammit (0.6.5)
       yui-compressor (>= 0.9.3)
-    json (1.7.6)
+    jquery-rails (2.2.1)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
+    json (1.7.7)
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -259,7 +262,7 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.3.1)
-    rack (1.2.7)
+    rack (1.2.8)
     rack-mount (0.6.14)
       rack (>= 1.0.0)
     rack-test (0.5.7)
@@ -282,7 +285,7 @@ GEM
     rake (10.0.3)
     rb-fsevent (0.9.3)
     rbx-require-relative (0.0.9)
-    rdoc (3.12)
+    rdoc (3.12.2)
       json (~> 1.4)
     responders (0.6.5)
     rgeo (0.3.20)
@@ -340,7 +343,7 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.35)
+    tzinfo (0.3.37)
     unicorn (4.5.0)
       kgio (~> 2.6)
       rack
@@ -403,6 +406,7 @@ DEPENDENCIES
   hoptoad_notifier
   inherited_resources
   jammit
+  jquery-rails
   kaminari
   launchy
   librato-metrics

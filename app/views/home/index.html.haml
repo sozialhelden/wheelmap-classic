@@ -1,70 +1,29 @@
-:javascript
-  var map;
-  var cadastralLayer;
+- content_for :javascript do
+  :javascript
+    $(document).ready(function() {
+      var height = $(window).height();
+        var headerheight = 102;
+        $('#map').css('height', height-headerheight);
 
-  $(document).ready(function () {
-    map = new L.Map('map');
+          $(window).resize(function() {
+              var height = $(window).height();
+              var headerheight = 102;
+              $('#map').css('height', height-headerheight);
+          });
 
-    var url = 'http://tile3.wheelmap.org/{z}\/{x}\/{y}.png';
-    var copyright = 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade';
-    var tileLayer = new L.TileLayer(url, {maxZoom: 18, attribution: copyright});
-    var startPosition = new L.LatLng(52.51017,13.3902);
-    map.on('load', function(e) {
-      requestUpdatedCadastre(e.target.getBounds());
+
+
+        $('.ort-filter li').click(function() {
+          $(this).toggleClass('active');
+        });
+
+
+
+      addEventListener("load", function() { setTimeout(hideURLbar, 100); }, false);
+      function hideURLbar() {
+
+             window.scrollTo(0,0);
+         }
     });
-    map.setView(startPosition, 18).addLayer(tileLayer);
-    map.on('moveend', function(e) {
-      requestUpdatedCadastre(e.target.getBounds());
-    });
-  });
 
-  function requestUpdatedCadastre(bounds) {
-
-    var north = bounds._northEast.lat;
-    var east  = bounds._northEast.lng;
-    var south = bounds._southWest.lat;
-    var west  = bounds._southWest.lng;
-
-    var boundbox = [west, south, east, north].join(',')
-    $.ajax(
-      {
-        type: 'GET',
-        url: '/nodes.geojson',
-        dataType: 'json',
-        data: {
-          bbox:boundbox,
-          limit:500
-        },
-        contentType: 'application/json; charset=utf-8',
-        success: function (result) {
-          parseResponse(result)
-        },
-        error: function (req, status, error) {
-          alert('Unable to get cadastral data');
-        }
-      });
-  }
-
-  function onEachFeature(feature, layer) {
-    // does this feature have a property named popupContent?
-    layer.bindPopup(feature.properties.name);
-  }
-
-  function featureStyle(feature) {
-    return {
-      iconUrl: feature.properties.marker
-    };
-  }
-
-  function parseResponse(data) {
-    var cadastralLayer_new = new L.GeoJSON(data, {
-      onEachFeature: onEachFeature,
-      style: featureStyle
-    });
-    map.addLayer(cadastralLayer_new);
-    if (cadastralLayer != undefined)
-    {
-      map.removeLayer(cadastralLayer);
-    }
-    cadastralLayer = cadastralLayer_new;
-  }
+%section#map
