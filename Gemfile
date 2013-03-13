@@ -42,6 +42,7 @@ group :default do
   # gem 'rosemary', :path => '../rosemary'
   gem 'librato-metrics'
   gem 'librato-rails'
+  gem 'jquery-rails'
   gem 'system_timer' # Optional for librato dependency faraday
   gem 'multipart-post'
   gem 'activeadmin'
