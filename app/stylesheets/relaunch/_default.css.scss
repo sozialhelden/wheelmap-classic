@@ -1,0 +1,44 @@
+body {
+  width: 100%;
+  min-width: 1160px;
+  font-family: Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: 'EntypoRegular';
+  src: url('../fonts/entypo.eot');
+  src: url('../fonts/entypo.eot?#iefix') format("embedded-opentype"), url('../fonts/entypo.woff') format("woff"), url('../fonts/entypo.ttf') format("truetype"), url('../fonts/entypo.svg#EntypoRegular') format("svg");
+}
+
+
+/* @group Allgemein ================================================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+::-moz-selection, ::selection {
+  background: #999;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* @end */
+
+p {
+  font-size: 12px;
+  line-height: 20px;
+  float: left;
+}
+
+.content {
+  width: 100%;
+  max-width: 95%;
+  margin: auto;
+}
