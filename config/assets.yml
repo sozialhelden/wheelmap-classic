@@ -43,6 +43,9 @@ stylesheets:
     - public/stylesheets/relaunch.css
     - public/stylesheets/leaflet.css
 
+  relaunch.ie:
+    - public/stylesheets/leaflet.ie.css
+
   node:
     - public/stylesheets/node.css
     - public/stylesheets/uploadify.css
