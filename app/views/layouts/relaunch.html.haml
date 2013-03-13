@@ -6,6 +6,8 @@
 %head
   = include_javascripts :modernizr, :media => 'screen, projection'
   = include_stylesheets :relaunch, :media => 'screen, projection'
+  /[if lte IE 8]
+    = include_stylesheets 'relaunch.ie', :media => 'screen, projection'
 
   %meta(charset ='utf-8')
   %meta(http-equiv = "X-UA-Compatible")
