@@ -1,4 +1,118 @@
 @charset "utf-8";
+/* line 1, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+a, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, p, pre, span, th, td {
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 6, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 10, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+fieldset, img {
+  border: 0;
+}
+
+/* line 13, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+address, em, th {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 17, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+li {
+  list-style: none;
+}
+
+/* line 20, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+th {
+  font-style: normal;
+  text-align: left;
+}
+
+/* line 24, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+h1, h2, h3, h4, h5, h6, small {
+  font-size: 100%;
+}
+
+/* line 27, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* line 33, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+.msie input, .msie textarea, .msie select {
+  font-size: 100%;
+}
+
+/* line 36, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+header, section, article, aside, footer, time {
+  display: block;
+}
+
+/* line 4, ../../app/stylesheets/basics/_typography.sass */
+html, body {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+}
+
+/* line 7, ../../app/stylesheets/basics/_typography.sass */
+p,
+article li,
+dt, dd,
+h4, h5, h6,
+address,
+footer {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+  font-size: 13px;
+  line-height: 20px;
+}
+/* line 15, ../../app/stylesheets/basics/_typography.sass */
+p.large,
+article li.large,
+dt.large, dd.large,
+h4.large, h5.large, h6.large,
+address.large,
+footer.large {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  bottom: 2px;
+}
+
+/* line 18, ../../app/stylesheets/basics/_typography.sass */
+h2 {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  bottom: 2px;
+}
+/* line 20, ../../app/stylesheets/basics/_typography.sass */
+h2.large {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+  font-size: 20px;
+  line-height: 20px;
+}
+
+/* line 23, ../../app/stylesheets/basics/_typography.sass */
+h1 {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+  font-size: 37px;
+  line-height: 40px;
+  position: relative;
+}
+/* line 3, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_browser_support.sass */
+.presto h1 {
+  bottom: 1px;
+}
+
 /* line 1, ../../app/stylesheets/relaunch/_default.css.scss */
 body {
   width: 100%;
@@ -592,6 +706,120 @@ li a.add .icon {
 /* line 24, ../../app/stylesheets/relaunch/_map.css.scss */
 .wheelchair-unknown {
   background: transparent url("/images/marker_unknown.png") 0 0 !important;
+}
+
+/* line 28, ../../app/stylesheets/relaunch/_map.css.scss */
+.leaflet-popup {
+  background-color: #FFF;
+}
+
+/* line 5, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent {
+  width: 280px;
+  overflow: hidden;
+}
+/* line 9, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent a.more {
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: normal;
+  text-align: left;
+  padding-left: 20px;
+  text-decoration: underline;
+  display: block;
+}
+/* line 19, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent h2 {
+  background-position: 0 2px;
+  padding-left: 20px;
+}
+/* line 23, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent address {
+  padding-left: 20px;
+}
+/* line 26, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent input {
+  float: left;
+  margin-right: 10px;
+}
+/* line 30, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent label {
+  width: auto;
+}
+/* line 33, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent #update_button {
+  position: static;
+  float: right;
+}
+/* line 37, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent #update_spinner {
+  display: none;
+  float: right;
+  margin-right: 5px;
+}
+/* line 42, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent ol {
+  border-top: 1px #cfd7c5 solid;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -o-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -khtml-border-radius: 0px;
+  border-radius: 0px;
+  margin-top: 7px;
+  padding-top: 7px;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 49, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li,
+.olFramedCloudPopupContent label {
+  float: left;
+  font-size: 11px;
+  line-height: 15px;
+  margin: 0px 0px !important;
+  -moz-border-radius: 0px !important;
+  -webkit-border-radius: 0px !important;
+  -o-border-radius: 0px !important;
+  -ms-border-radius: 0px !important;
+  -khtml-border-radius: 0px !important;
+  border-radius: 0px !important;
+}
+/* line 57, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent label {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: left;
+  line-height: 8px;
+}
+/* line 64, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Swiss 721 Light", "Helvetica", "Arial", "sans-serif";
+  font-size: 11px;
+  font-weight: 100;
+}
+/* line 69, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li strong {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+  font-weight: bold;
+}
+/* line 74, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent .yes label {
+  color: #86af4d;
+}
+/* line 78, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent .limited label {
+  color: #f19d46;
+}
+/* line 82, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent .no label {
+  color: #d6382f;
+}
+/* line 86, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent.unknown label {
+  color: #8d8d8e;
 }
 
 /* line 1, ../../app/stylesheets/relaunch/_footer.css.scss */
