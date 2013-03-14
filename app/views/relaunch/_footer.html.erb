@@ -2,21 +2,29 @@
   <ul class="social">
     <li>
       <table class="counter">
-      <tbody><tr><td><img alt="Mini_marker" height="17" src="http://asset1.wheelmap.org/images/mini_marker.png?1362741213" title="Voll Rollstuhlgerecht:172227
-      teilweise rollstuhlgerecht:68612
-      Nicht rollstuhlgerecht:74629" width="28"></td><td style="background: url('http://asset1.wheelmap.org/images/bubble.png?1362741213') no-repeat left center;background-position: 0px 0px">&nbsp;</td>
-      <td style="padding-right: 5px;background: url('http://asset1.wheelmap.org/images/bubble.png?1362741213') no-repeat 100% 0px">315468</td>
-      </tr>
-      </tbody></table>
+        <tbody>
+          <tr>
+            <td>
+              <%= image_tag('/images/mini_marker.png', :size => '28x17', :title => "#{t('wheelchairstatus.yes')}:#{Poi.fully_accessible.count}\n#{t('wheelchairstatus.limited')}:#{Poi.limited_accessible.count}\n#{t('wheelchairstatus.no')}:#{Poi.not_accessible.count}") %>
+            </td>
+            <td style="background: url('http://asset1.wheelmap.org/images/bubble.png?1362741213') no-repeat left center;background-position: 0px 0px">&nbsp;</td>
+            <td style="padding-right: 5px;background: url('http://asset1.wheelmap.org/images/bubble.png?1362741213') no-repeat 100% 0px"><%= Poi.tagged.count %></td>
+          </tr>
+        </tbody>
+      </table>
     </li>
-    <li><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://wheelmap.org" data-text="test" data-lang="de">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></li>
-    <li><iframe allowTransparency='true' frameborder='0' scrolling='no' src='http://www.facebook.com/plugins/like.php?app_id=231074856943658&amp;href=http%3A%2F%2Fwheelmap.org%2F&amp;send=false&amp;layout=button_count&amp;width=130&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;height=20' style='border:none; overflow:hidden; width:130px; height:20px;'></iframe></li>
+    <li>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://wheelmap.org" data-text="test" data-lang="de">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </li>
+    <li>
+      <iframe allowTransparency='true' frameborder='0' scrolling='no' src='http://www.facebook.com/plugins/like.php?app_id=231074856943658&amp;href=http%3A%2F%2Fwheelmap.org%2F&amp;send=false&amp;layout=button_count&amp;width=130&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;height=20' style='border:none; overflow:hidden; width:130px; height:20px;'></iframe>
+    </li>
   </ul>
   <ul class="credits">
     <li><span>Basiert auf <a href="http://www.openstreetmap.org/">OpenStreetMap</a></span></li>
     <li><span>Hauptförderer</span><%= image_tag 'immoscout.jpg', :style => "margin-top: -3px;", :size =>'43x20', :alt => "ImmobilienScout24" %></li>
-    <li><%= image_tag 'drs-logo.jpg', :style => "margin-top: -3px;", :size =>'49x20', :alt => "Deutscher Rollstuhlsport Verband" %></li>
+    <li><a href="http://sozialhelden.de/"><%= image_tag 'drs-logo.jpg', :style => "margin-top: -3px;", :size =>'49x20', :alt => "Deutscher Rollstuhlsport Verband" %></a></li>
     <li><span>Ein Projekt der</span><%= image_tag 'sozialhelden.png', :style => "margin-top: -6px;", :size => '120x24', :alt => "Sozialhelden" %></li>
   </ul>
 </footer>
