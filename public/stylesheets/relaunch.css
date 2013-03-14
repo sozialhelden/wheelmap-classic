@@ -569,6 +569,31 @@ li a.add .icon {
   background: #E8E0D8;
 }
 
+/* line 8, ../../app/stylesheets/relaunch/_map.css.scss */
+.leaflet-marker-icon, .leaflet-div-icon, .leaflet-clickable, .leaflet-zoom-animated-div-icon {
+  border: 0px solid red !important;
+}
+
+/* line 12, ../../app/stylesheets/relaunch/_map.css.scss */
+.wheelchair-yes {
+  background: transparent url("/images/marker_yes.png") 0 0 !important;
+}
+
+/* line 16, ../../app/stylesheets/relaunch/_map.css.scss */
+.wheelchair-no {
+  background: transparent url("/images/marker_no.png") 0 0 !important;
+}
+
+/* line 20, ../../app/stylesheets/relaunch/_map.css.scss */
+.wheelchair-limited {
+  background: transparent url("/images/marker_limited.png") 0 0 !important;
+}
+
+/* line 24, ../../app/stylesheets/relaunch/_map.css.scss */
+.wheelchair-unknown {
+  background: transparent url("/images/marker_unknown.png") 0 0 !important;
+}
+
 /* line 1, ../../app/stylesheets/relaunch/_footer.css.scss */
 #footer {
   width: 100%;
