@@ -1,0 +1,4 @@
+%select{:onchange => 'location.href=this.options[this.selectedIndex].value'}
+  %optgroup{:label => I18n.t('header.navigation.choose_language')}
+    - I18n.available_locales.map(&:to_s).sort.each do |locale|
+      %option{:value => url_for_locale(request.url, locale), :selected => (I18n.locale.to_s.downcase == locale.to_s.downcase)}=Languages[locale.to_s]
