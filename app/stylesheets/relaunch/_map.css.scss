@@ -4,3 +4,24 @@
   margin: 100px 0 0 0;
   background: #E8E0D8;
 }
+
+.leaflet-marker-icon, .leaflet-div-icon, .leaflet-clickable, .leaflet-zoom-animated-div-icon {
+  border: 0px solid red !important;
+}
+
+.wheelchair-yes {
+  background: transparent url('/images/marker_yes.png') 0 0 !important;
+}
+
+.wheelchair-no {
+  background: transparent url('/images/marker_no.png') 0 0 !important;
+}
+
+.wheelchair-limited {
+  background: transparent url('/images/marker_limited.png') 0 0 !important;
+}
+
+.wheelchair-unknown {
+  background: transparent url('/images/marker_unknown.png') 0 0 !important;
+}
+
