@@ -1,3 +1,13 @@
+String.prototype.format = function() {
+  var args = arguments;
+  return this.replace(/{(\d+)}/g, function(match, number) {
+    return typeof args[number] != 'undefined'
+      ? args[number]
+      : match
+    ;
+  });
+};
+
 var geojson_layer;
 ////GRÜN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var markergreen = L.divIcon({
@@ -119,8 +129,15 @@ map.on('popupopen', function(e) {
 
 });
 
+
 map.on('moveend', function(e) {
   requesNodes(e.target.getBounds());
+}).on('popupopen', function(e) {
+  $('.update_form').bind('ajax:success', function(xhr, data, status){
+    $('footer').before('<div class="notification">'+ data.message + '</div>')
+  }).bind('ajax:error', function(xhr, data, status){
+    $('footer').before('<div class="alert">'+ data.message + '</div>')
+  });
 });
 
 function requesNodes(bounds) {
@@ -157,7 +174,9 @@ var featureStyle = {
 };
 
 function onEachFeature(feature, layer) {
-  layer.bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="first active"><div class="status"><div class="status-show green"></div><div class="status-choose green"></div></div><div class="button"></div><a href="detail.html" class="linktoedit"></a></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>');
+  var cardTemplate = $("#cardTemplate").html();
+  var template = cardTemplate.format(feature.properties.icon, feature.properties.name, feature.properties.address, feature.properties.id);
+  layer.bindPopup(template);
 }
 
 function parseResponse(data) {
@@ -171,7 +190,6 @@ function parseResponse(data) {
       }
     },
     onEachFeature: onEachFeature
-
   });
   map.addLayer(new_geojson_layer);
   if (geojson_layer != undefined)
@@ -199,4 +217,3 @@ function parseResponse(data) {
 //
 //    map.locate({setView: true, maxZoom: 14});
 
-map.invalidateSize();

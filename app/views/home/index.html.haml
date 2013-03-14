@@ -27,3 +27,28 @@
     });
 
 %section#map
+  %script{:type => "text/template", :id => "cardTemplate"}
+    .olFramedCloudPopupContent{:id => 'featurePopup_content_{3}'}
+      %h2{:style => "padding-left:30px;background:url('{0}') no-repeat bottom left"} {1}
+      %address {2}
+      = link_to t('home.index.popup.more'), "/nodes/{3}", :class => 'more'
+      = form_tag "/nodes/{3}/update_wheelchair.js", :method => 'put', :remote => true, :'data-type' => :json, :class => "update_form formtastic", :id => "wheelchair_update_form" do
+        %ol.wheelchair
+          %h3= link_to t('home.index.popup.help'), "http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei/"
+          %li.yes
+            =radio_button_tag "wheelchair", "yes", true, :id => "yes-OpenLayers.Feature.Vector_{3}"
+            %label{:for => "yes-OpenLayers.Feature.Vector_{3}"}= t('home.index.popup.form.yes')
+
+          %li.limited
+            =radio_button_tag "wheelchair", "limited", true, :id => "limited-OpenLayers.Feature.Vector_{3}"
+            %label{:for => "limited-OpenLayers.Feature.Vector_{3}"}= t('home.index.popup.form.limited')
+
+          %li.no
+            =radio_button_tag "wheelchair", "no", true, :id => "no-OpenLayers.Feature.Vector_{3}"
+            %label{:for => "no-OpenLayers.Feature.Vector_{3}"}= t('home.index.popup.form.no')
+
+          %li.unknown
+            =radio_button_tag "wheelchair", "unknown", true, :id => "unknown-OpenLayers.Feature.Vector_{3}", :disabled => "disabled"
+            %label{:for => "unknown-OpenLayers.Feature.Vector_{3}"}= t('home.index.popup.form.unknown')
+          %li
+            =submit_tag t('home.index.popup.form.save')
