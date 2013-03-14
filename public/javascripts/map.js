@@ -1,69 +1,55 @@
 var geojson_layer;
 ////GRÜN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var markergreen = L.icon({
+var markergreen = L.divIcon({
   iconSize:     [32, 26],
   iconAnchor:   [6, 12],
   popupAnchor:  [5, -15],
-  iconUrl: '/images/marker_yes.png'
+  iconUrl: '/images/marker_yes.png',
+  className: 'wheelchair-yes'
 });
 var markeryes = new L.LayerGroup();
-L.marker([52.51539, 13.42126], {icon: markergreen})
-  .bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="first active"><div class="status"><div class="status-show green"></div><div class="status-choose green"></div></div><div class="button"></div><a href="detail.html" class="linktoedit"></a></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markeryes),
-L.marker([52.50933, 13.43388], {icon: markergreen})
-  .bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="first active"><div class="status"><div class="status-show green"></div><div class="status-choose green"></div></div><div class="button"></div><a href="detail.html" class="linktoedit"></a></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markeryes);
 
 ////ORANGE/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var markerorange = L.icon({
+var markerorange = L.divIcon({
   iconSize:     [32, 26],
   iconAnchor:   [6, 12],
   popupAnchor:  [5, -15],
-  iconUrl: '/images/marker_limited.png'
+  iconUrl: '/images/marker_limited.png',
+  className: 'wheelchair-limited'
 });
 var markerlimited = new L.LayerGroup();
-L.marker([52.514, 13.44], {icon: markerorange})
-  .bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="first active"><div class="status"><div class="status-show yellow"></div><div class="status-choose yellow"></div></div><div class="button"></div><a href="detail.html" class="linktoedit"></a></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markerlimited),
-L.marker([52.52, 13.44], {icon: markerorange})
-  .bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="first active"><div class="status"><div class="status-show yellow"></div><div class="status-choose yellow"></div></div><div class="button"></div><a href="detail.html" class="linktoedit"></a></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markerlimited);
 
 ////ROT/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var markerred = L.icon({
+var markerred = L.divIcon({
   iconSize:     [32, 26],
   iconAnchor:   [6, 12],
   popupAnchor:  [5, -15],
-  iconUrl: '/images/marker_no.png'
+  iconUrl: '/images/marker_no.png',
+  className: 'wheelchair-no'
 });
 var markerno = new L.LayerGroup();
-L.marker([52.52123, 13.42538], {icon: markerred})
-  .bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="first active"><div class="status"><div class="status-show red"></div><div class="status-choose red"></div></div><div class="button"></div><a href="detail.html" class="linktoedit"></a></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markerno),
-L.marker([52.50833, 13.41396], {icon: markerred})
-  .bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="first active"><div class="status"><div class="status-show red"></div><div class="status-choose red"></div></div><div class="button"></div><a href="detail.html" class="linktoedit"></a></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markerno);
 
 ////GRAU/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var markergrey = L.icon({
+var markergrey = L.divIcon({
   iconSize:     [32, 26],
   iconAnchor:   [6, 12],
   popupAnchor:  [5, -15],
-  iconUrl: '/images/marker_unknown.png'
+  iconUrl: '/images/marker_unknown.png',
+  className: 'wheelchair-unknown'
 });
 var markerunknown = new L.LayerGroup();
-L.marker([52.50912, 13.44452], {icon: markergrey})
-  .bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="grey active"><div class="status"><div class="status-show green"></div><div class="status-choose green"></div></div><div class="button"></div></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markerunknown),
-L.marker([52.50713, 13.4234], {icon: markergrey})
-  .bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="grey active"><div class="status"><div class="status-show green"></div><div class="status-choose green"></div></div><div class="button"></div></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markerunknown);
-
-
 
 var map = L.map('map', {
-      center: [52.50521, 13.4231],
-      zoom: 12,
-      trackResize: true,
-      layers: [markeryes,markerlimited,markerno,markerunknown]
-  });
+  center: [52.50521, 13.4231],
+  zoom: 12,
+  trackResize: true
+});
 
 L.tileLayer('http://a.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.png', {
   maxZoom: 17,
   minZoom: 2,
-  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+  detectRetina: true
 
 }).addTo(map);
 
@@ -152,7 +138,7 @@ function requesNodes(bounds) {
       dataType: 'json',
       data: {
         bbox:boundbox,
-        limit:100
+        limit: 300
       },
       closeOnClick: false,
       load: true,
@@ -178,10 +164,10 @@ function parseResponse(data) {
   var new_geojson_layer = new L.GeoJSON(data, {
     pointToLayer: function (feature, latlng) {
       switch (feature.properties.wheelchair) {
-        case 'yes': return L.marker(latlng, {icon: markergreen});
-        case 'limited': return L.marker(latlng, {icon: markerorange});
-        case 'no': return L.marker(latlng, {icon: markerred});
-        case 'unknown': return L.marker(latlng, {icon: markergrey});
+        case 'yes': return L.marker(latlng, {icon: markergreen, title: feature.properties.name, riseOnHover: true});
+        case 'limited': return L.marker(latlng, {icon: markerorange, title: feature.properties.name, riseOnHover: true});
+        case 'no': return L.marker(latlng, {icon: markerred, title: feature.properties.name, riseOnHover: true});
+        case 'unknown': return L.marker(latlng, {icon: markergrey, title: feature.properties.name, riseOnHover: true});
       }
     },
     onEachFeature: onEachFeature
@@ -213,7 +199,4 @@ function parseResponse(data) {
 //
 //    map.locate({setView: true, maxZoom: 14});
 
-
-
-var popup = L.popup();
-
+map.invalidateSize();
