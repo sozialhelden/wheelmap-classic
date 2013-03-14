@@ -1,14 +1,6 @@
-String.prototype.format = function() {
-  var args = arguments;
-  return this.replace(/{(\d+)}/g, function(match, number) {
-    return typeof args[number] != 'undefined'
-      ? args[number]
-      : match
-    ;
-  });
-};
-
 var geojson_layer;
+var source = $("#cardTemplate").html();
+var template = Handlebars.compile(source);
 ////GRÜN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var markergreen = L.divIcon({
   iconSize:     [32, 26],
@@ -174,9 +166,8 @@ var featureStyle = {
 };
 
 function onEachFeature(feature, layer) {
-  var cardTemplate = $("#cardTemplate").html();
-  var template = cardTemplate.format(feature.properties.icon, feature.properties.name, feature.properties.address, feature.properties.id);
-  layer.bindPopup(template);
+  var popup_html = template(feature.properties);
+  layer.bindPopup(popup_html, { closeButton: false} );
 }
 
 function parseResponse(data) {
