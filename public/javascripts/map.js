@@ -131,7 +131,7 @@ map.on('popupopen', function(e) {
 
 
 map.on('moveend', function(e) {
-  requesNodes(e.target.getBounds());
+  requestNodes(e.target.getBounds());
 }).on('popupopen', function(e) {
   $('.update_form').bind('ajax:success', function(xhr, data, status){
     $('footer').before('<div class="notification">'+ data.message + '</div>')
@@ -140,7 +140,7 @@ map.on('moveend', function(e) {
   });
 });
 
-function requesNodes(bounds) {
+function requestNodes(bounds) {
 
   var north = bounds._northEast.lat;
   var east  = bounds._northEast.lng;
