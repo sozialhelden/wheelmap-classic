@@ -1,8 +1,10 @@
 <div id="toolbar">
   <div class="content">
   <div class="searchbar">
-    <input type="search" name="" value="" placeholder="Nach Orten suchen" />
-    <button>&#128269;</button>
+    <form action"/search">
+      <input type="search" name="q" value="<%= params[:q].present? ? params[:q] : nil %>" autocomplete="off" placeholder="<%= t('header.searchbar.placeholder') %>" />
+      <button type="submit">&#128269;</button>
+    </form>
   </div>
   <ul class="ort-filter">
     <li class="yes active">
@@ -38,19 +40,12 @@
       </div>
     </li>
   </ul>
+
   <select>
-    <option>Alle Kategorien</option>
-    <option>Banken &amp; Post</option>
-    <option>Behörden</option>
-    <option>Bildung</option>
-    <option>Einkaufen</option>
-    <option>Essen &amp; Trinken</option>
-    <option>Freizeit</option>
-    <option>Gesundheit</option>
-    <option>Sport</option>
-    <option>Tourismus</option>
-    <option>Unterkünfte</option>
-    <option>Verkehr</option>
+    <option value="">Alle Kategorien</option>
+    <%- Category.all.sort_by(&:localized_name).each do |category| %>
+      <option value="<%= category.identifier%>"><%= category.localized_name %></option>
+    <% end %>
   </select>
 <!--      <button>WC</button>-->
 

@@ -285,6 +285,7 @@ en:
       search: Search
     navigation:
       blog: Blog
+      choose_language: "Choose language"
       feedback: Feedback
       home: Start
       how_to_add_a_place: "How do I add places?"

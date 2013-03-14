@@ -4,53 +4,53 @@ var markergreen = L.icon({
 	iconAnchor:   [6, 12],
 	popupAnchor:  [5, -15],
 	iconUrl: '/images/marker_yes.png'
-});	
-var markeryes = new L.LayerGroup();	
+});
+var markeryes = new L.LayerGroup();
 L.marker([52.51539, 13.42126], {icon: markergreen})
 	.bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="first active"><div class="status"><div class="status-show green"></div><div class="status-choose green"></div></div><div class="button"></div><a href="detail.html" class="linktoedit"></a></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markeryes),
 L.marker([52.50933, 13.43388], {icon: markergreen})
 	.bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="first active"><div class="status"><div class="status-show green"></div><div class="status-choose green"></div></div><div class="button"></div><a href="detail.html" class="linktoedit"></a></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markeryes);
-	
-////ORANGE/////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+
+////ORANGE/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var markerorange = L.icon({
 	iconSize:     [32, 26],
 	iconAnchor:   [6, 12],
 	popupAnchor:  [5, -15],
 	iconUrl: '/images/marker_limited.png'
-});	
-var markerlimited = new L.LayerGroup();	
+});
+var markerlimited = new L.LayerGroup();
 L.marker([52.514, 13.44], {icon: markerorange})
 	.bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="first active"><div class="status"><div class="status-show yellow"></div><div class="status-choose yellow"></div></div><div class="button"></div><a href="detail.html" class="linktoedit"></a></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markerlimited),
 L.marker([52.52, 13.44], {icon: markerorange})
 	.bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="first active"><div class="status"><div class="status-show yellow"></div><div class="status-choose yellow"></div></div><div class="button"></div><a href="detail.html" class="linktoedit"></a></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markerlimited);
 
-////ROT/////////////////////////////////////////////////////////////////////////////////////////////////////////////		
+////ROT/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var markerred = L.icon({
 	iconSize:     [32, 26],
 	iconAnchor:   [6, 12],
 	popupAnchor:  [5, -15],
 	iconUrl: '/images/marker_no.png'
-});	
-var markerno = new L.LayerGroup();	
+});
+var markerno = new L.LayerGroup();
 L.marker([52.52123, 13.42538], {icon: markerred})
 	.bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="first active"><div class="status"><div class="status-show red"></div><div class="status-choose red"></div></div><div class="button"></div><a href="detail.html" class="linktoedit"></a></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markerno),
 L.marker([52.50833, 13.41396], {icon: markerred})
-	.bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="first active"><div class="status"><div class="status-show red"></div><div class="status-choose red"></div></div><div class="button"></div><a href="detail.html" class="linktoedit"></a></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markerno);	
-	
-////GRAU/////////////////////////////////////////////////////////////////////////////////////////////////////////////		
+	.bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="first active"><div class="status"><div class="status-show red"></div><div class="status-choose red"></div></div><div class="button"></div><a href="detail.html" class="linktoedit"></a></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markerno);
+
+////GRAU/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var markergrey = L.icon({
 	iconSize:     [32, 26],
 	iconAnchor:   [6, 12],
 	popupAnchor:  [5, -15],
 	iconUrl: '/images/marker_unknown.png'
-});	
-var markerunknown = new L.LayerGroup();	
+});
+var markerunknown = new L.LayerGroup();
 L.marker([52.50912, 13.44452], {icon: markergrey})
 	.bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="grey active"><div class="status"><div class="status-show green"></div><div class="status-choose green"></div></div><div class="button"></div></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markerunknown),
 L.marker([52.50713, 13.4234], {icon: markergrey})
-	.bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="grey active"><div class="status"><div class="status-show green"></div><div class="status-choose green"></div></div><div class="button"></div></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markerunknown);		
-	
-		
+	.bindPopup('<div class="popup-content"><div class="success">Erfolgreich geändert</div><a href="liste.html" class="linktolist"></a><ul class="tabs"><li class="grey active"><div class="status"><div class="status-show green"></div><div class="status-choose green"></div></div><div class="button"></div></li><li class="second"><a href="detail.html" class="linktoedit"></a></li><li class="third"><a href="detail.html" class="linktoedit"></a><a href="detail.html" class="linktomore"></a></li></ul><ul class="tabnav"><li class="active">Übersicht</li><li>Fotos</li><li>mehr Infos</li></ul></div>').addTo(markerunknown);
+
+
 
 var map = L.map('map', {
 			center: [52.50521, 13.4231],
@@ -61,7 +61,8 @@ var map = L.map('map', {
 L.tileLayer('http://a.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.png', {
 	maxZoom: 17,
 	minZoom: 2,
-	
+	attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+
 }).addTo(map);
 
 var overlays = {
@@ -126,8 +127,8 @@ map.on('popupopen', function(e) {
      	$('.success').fadeIn(100).delay(1000).fadeOut(1000);
      	$(this).removeClass('grey');
     });
- 
-  
+
+
 });
 
 
