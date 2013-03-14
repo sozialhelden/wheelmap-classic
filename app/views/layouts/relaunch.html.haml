@@ -13,13 +13,12 @@
   %meta(http-equiv = "X-UA-Compatible")
 
 %body
-  = render :partial => '/shared/header'
-  = render :partial => '/shared/toolbar'
-
+  = render :partial => 'relaunch/header'
+  = render :partial => 'relaunch/toolbar'
 
   = yield
-  = render :partial => 'shared/footer'
 
+  = render :partial => 'relaunch/footer'
 
   = include_javascripts :relaunch, :media => 'screen, projection'
   = content_for :javascript

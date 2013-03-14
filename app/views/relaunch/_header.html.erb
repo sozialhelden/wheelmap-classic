@@ -1,0 +1,34 @@
+<header>
+  <div class="content">
+    <a href="#" class="logo">find wheelchair accessible places</a>
+    <ul class="accountbar">
+      <li>
+        <%= link_to new_node_path, :class => 'add' do %>
+          <div class="icon">&#10133;</div>
+          <p>Ort hinzufügen</p>
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to new_user_session_path, :class => 'profile' do %>
+          <div class="icon">&#128100;</div>
+          <p><%= t('header.navigation.login') %></p>
+        <% end %>
+
+      </li>
+      <li>
+        <%= render :partial => 'shared/available_locales' %>
+      </li>
+    </ul>
+    <nav>
+      <ul>
+      <li><a href="http://community.wheelmap.org/about/">Über Wheelmap</a></li>
+      <li><a href="#" class="active">Karte</a></li>
+      <li><a href="http://community.wheelmap.org/projekte/">Mitmach-Projekte</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="http://community.wheelmap.org/about/presse/">Presse</a></li>
+      <li><a href="http://community.wheelmap.org/kontakt/">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
