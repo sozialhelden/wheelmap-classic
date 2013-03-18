@@ -1,57 +1,57 @@
 @charset "utf-8";
-/* line 1, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 1, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 a, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, p, pre, span, th, td {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
 }
 
-/* line 6, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 6, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 10, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 10, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 fieldset, img {
   border: 0;
 }
 
-/* line 13, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 13, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 address, em, th {
   font-style: normal;
   font-weight: normal;
 }
 
-/* line 17, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 17, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 li {
   list-style: none;
 }
 
-/* line 20, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 20, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 th {
   font-style: normal;
   text-align: left;
 }
 
-/* line 24, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 24, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 h1, h2, h3, h4, h5, h6, small {
   font-size: 100%;
 }
 
-/* line 27, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 27, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 input, textarea, select {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
 }
 
-/* line 33, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 33, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 .msie input, .msie textarea, .msie select {
   font-size: 100%;
 }
 
-/* line 36, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 36, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 header, section, article, aside, footer, time {
   display: block;
 }
@@ -108,7 +108,7 @@ h1 {
   line-height: 40px;
   position: relative;
 }
-/* line 3, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_browser_support.sass */
+/* line 3, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_browser_support.sass */
 .presto h1 {
   bottom: 1px;
 }
@@ -259,6 +259,8 @@ nav li a:hover {
 }
 /* line 61, ../../app/stylesheets/relaunch/_header.css.scss */
 .accountbar li {
+  height: 25px;
+  overflow: hidden;
   list-style: none;
   float: left;
   border-left: 1px solid #B1B0AE;
@@ -269,20 +271,20 @@ nav li a:hover {
   		box-shadow: 0 2px 2px rgba(170, 170, 170, 0.2);*/
   margin-left: 3px;
 }
-/* line 71, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 73, ../../app/stylesheets/relaunch/_header.css.scss */
 .accountbar li:first-child {
   border-left: none;
 }
-/* line 74, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 76, ../../app/stylesheets/relaunch/_header.css.scss */
 .accountbar li a {
   height: 24px;
   float: left;
 }
-/* line 78, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 80, ../../app/stylesheets/relaunch/_header.css.scss */
 .accountbar li:hover {
   box-shadow: inset 0 10px 20px rgba(48, 66, 81, 0.05);
 }
-/* line 79, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 81, ../../app/stylesheets/relaunch/_header.css.scss */
 .accountbar li:hover a span:after {
   position: absolute;
   left: 24px;
@@ -292,7 +294,7 @@ nav li a:hover {
   content: "";
   border-bottom: 5px solid #000;
 }
-/* line 91, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 93, ../../app/stylesheets/relaunch/_header.css.scss */
 .accountbar li a.add, .accountbar li a.profil {
   width: auto;
   padding: 0 8px;
@@ -302,12 +304,12 @@ nav li a:hover {
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 100, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 102, ../../app/stylesheets/relaunch/_header.css.scss */
 .accountbar li a.add .icon {
   width: 20px;
-  height: 25px;
+  height: 29px;
   float: left;
-  margin: 0px 5px 0 -8px;
+  margin: -3px 5px 0 -8px;
   padding: 0px 3px 0 3px;
   background-color: #87b346;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#97c24e), to(#78a43e));
@@ -319,17 +321,20 @@ nav li a:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#97c24e', EndColorStr='#78a43e');
   border-radius: 3px 0 0 3px;
 }
-/* line 117, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 119, ../../app/stylesheets/relaunch/_header.css.scss */
 .accountbar li p {
+  font-size: 12px;
+  font-weight: bold;
   float: left;
+  padding: 0 6px 0 0;
   margin: 3px 4px 0 0px;
   color: #888;
   /*text-shadow: 0 1px 0 #E8E7E3;*/
   text-transform: none;
 }
-/* line 124, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 129, ../../app/stylesheets/relaunch/_header.css.scss */
 .accountbar li .icon {
-  width: 20px;
+  width: 30px;
   float: left;
   margin-top: -2px;
   text-align: center;
@@ -339,20 +344,20 @@ nav li a:hover {
   text-shadow: 0 1px 0 #E8E7E3;
 }
 
-/* line 137, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 142, ../../app/stylesheets/relaunch/_header.css.scss */
 li a.add .icon {
   margin-top: -4px;
   color: #FFF;
   text-shadow: 0 1px 0 #000;
 }
 
-/* line 143, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 148, ../../app/stylesheets/relaunch/_header.css.scss */
 .profil p {
   margin-left: 20px;
   float: left;
 }
 
-/* line 148, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 153, ../../app/stylesheets/relaunch/_header.css.scss */
 .accountbar select {
   float: left;
   border: none;
@@ -360,8 +365,9 @@ li a.add .icon {
   margin: 0 2px 0 8px;
   background: url(../images/bg_accountbar-select.png) no-repeat right;
   background-position-y: 6px;
-  color: #666;
-  text-shadow: 0 1px 0 #E8E7E3;
+  font-size: 12px;
+  font-weight: normal;
+  color: #888;
   font-weight: bold;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -430,7 +436,7 @@ li a.add .icon {
   margin-left: 0px;
   border-left: none;
   border-radius: 0 3px 3px 0;
-  padding: 2px 10px 2px 10px;
+  padding: 2px 10px 1px 10px;
   font-family: 'EntypoRegular', sans-serif;
   font-size: 30px;
   font-weight: normal;
