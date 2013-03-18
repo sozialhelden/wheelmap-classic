@@ -166,3 +166,40 @@ li a.add .icon {
   -o-appearance: none;
   appearance: none;
 }
+@media screen and (max-width:760px) {
+.logo {
+	display:none;
+}
+nav {
+  width: 120px;
+  float: left;
+  ul {
+    float: left;
+    margin-right: 0;
+  }
+  li {
+    float: left;
+    list-style: none;
+    padding: 17px 1px 17px 1px;
+    a {
+      color: #666;
+      padding: 7px 10px 6px 10px;
+      &:visited {
+        color: #666;
+        padding: 7px 10px 6px 10px;
+      }
+      &:hover {
+        color: #000;
+        background: #DCDBD4;
+        border-radius: 3px;
+        box-shadow: inset 0 2px 2px rgba(170, 170, 170, 0.2);
+        border: 1px solid #c4c2b5;
+        margin: 0 -1px;
+      }
+    }
+  }
+}
+.accountbar li, .accountbar select {
+	width: 30px;
+}
+}
