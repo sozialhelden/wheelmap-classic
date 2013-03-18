@@ -269,3 +269,18 @@
     text-shadow: 0 1px 0 #000;
   }
 }
+@media screen and (max-width:760px) {
+.searchbar {
+	width:100%;
+	height: 50px;
+	position: absolute;
+	top: 50px;
+	left: 0px;
+	background: #FFF;
+}
+#toolbar select {
+	width: 40px;	
+	float: right;
+	margin-right: 10px;
+}
+}
