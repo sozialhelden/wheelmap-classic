@@ -116,7 +116,6 @@ h1 {
 /* line 1, ../../app/stylesheets/relaunch/_default.css.scss */
 body {
   width: 100%;
-  min-width: 1160px;
   font-family: Helvetica, sans-serif;
 }
 
@@ -127,19 +126,19 @@ body {
 }
 
 /* @group Allgemein ================================================================================= */
-/* line 16, ../../app/stylesheets/relaunch/_default.css.scss */
+/* line 15, ../../app/stylesheets/relaunch/_default.css.scss */
 * {
   margin: 0;
   padding: 0;
   position: relative;
 }
-/* line 20, ../../app/stylesheets/relaunch/_default.css.scss */
+/* line 19, ../../app/stylesheets/relaunch/_default.css.scss */
 *:focus {
   outline: none;
   border: none;
 }
 
-/* line 26, ../../app/stylesheets/relaunch/_default.css.scss */
+/* line 25, ../../app/stylesheets/relaunch/_default.css.scss */
 ::-moz-selection, ::selection {
   background: #999;
   color: #fff;
@@ -147,14 +146,14 @@ body {
 }
 
 /* @end */
-/* line 34, ../../app/stylesheets/relaunch/_default.css.scss */
+/* line 33, ../../app/stylesheets/relaunch/_default.css.scss */
 p {
   font-size: 12px;
   line-height: 20px;
   float: left;
 }
 
-/* line 40, ../../app/stylesheets/relaunch/_default.css.scss */
+/* line 39, ../../app/stylesheets/relaunch/_default.css.scss */
 .content {
   width: 100%;
   max-width: 95%;
@@ -375,6 +374,53 @@ li a.add .icon {
   appearance: none;
 }
 
+@media screen and (max-width:760px) {
+  /* line 170, ../../app/stylesheets/relaunch/_header.css.scss */
+  .logo {
+    display: none;
+  }
+
+  /* line 173, ../../app/stylesheets/relaunch/_header.css.scss */
+  nav {
+    width: 120px;
+    float: left;
+  }
+  /* line 176, ../../app/stylesheets/relaunch/_header.css.scss */
+  nav ul {
+    float: left;
+    margin-right: 0;
+  }
+  /* line 180, ../../app/stylesheets/relaunch/_header.css.scss */
+  nav li {
+    float: left;
+    list-style: none;
+    padding: 17px 1px 17px 1px;
+  }
+  /* line 184, ../../app/stylesheets/relaunch/_header.css.scss */
+  nav li a {
+    color: #666;
+    padding: 7px 10px 6px 10px;
+  }
+  /* line 187, ../../app/stylesheets/relaunch/_header.css.scss */
+  nav li a:visited {
+    color: #666;
+    padding: 7px 10px 6px 10px;
+  }
+  /* line 191, ../../app/stylesheets/relaunch/_header.css.scss */
+  nav li a:hover {
+    color: #000;
+    background: #DCDBD4;
+    border-radius: 3px;
+    box-shadow: inset 0 2px 2px rgba(170, 170, 170, 0.2);
+    border: 1px solid #c4c2b5;
+    margin: 0 -1px;
+  }
+
+  /* line 202, ../../app/stylesheets/relaunch/_header.css.scss */
+  .accountbar li, .accountbar select {
+    width: 30px;
+  }
+}
 /* line 1, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar {
   width: 100%;
@@ -681,6 +727,24 @@ li a.add .icon {
   text-shadow: 0 1px 0 #000;
 }
 
+@media screen and (max-width:760px) {
+  /* line 273, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  .searchbar {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    background: #FFF;
+  }
+
+  /* line 281, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar select {
+    width: 40px;
+    float: right;
+    margin-right: 10px;
+  }
+}
 /* line 1, ../../app/stylesheets/relaunch/_map.css.scss */
 #map {
   width: 100%;
@@ -725,6 +789,12 @@ li a.add .icon {
   background-color: #FFF;
 }
 
+@media screen and (max-width:760px) {
+  /* line 38, ../../app/stylesheets/relaunch/_map.css.scss */
+  .leaflet-control-container {
+    display: none;
+  }
+}
 /* line 5, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent {
   width: 280px;
@@ -906,4 +976,11 @@ li a.add .icon {
   padding: 1px 4px;
   margin-left: 5px;
   background: url(/images/bubble-left.png) no-repeat -5px center;
+}
+
+@media screen and (max-width:760px) {
+  /* line 66, ../../app/stylesheets/relaunch/_footer.css.scss */
+  .social {
+    display: none;
+  }
 }
