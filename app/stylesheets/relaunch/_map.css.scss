@@ -33,3 +33,9 @@
 .leaflet-popup {
   background-color: #FFF;
 }
+
+@media screen and (max-width:760px) {
+.leaflet-control-container {
+	display:none;
+}
+}
