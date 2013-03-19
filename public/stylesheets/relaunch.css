@@ -1,57 +1,57 @@
 @charset "utf-8";
-/* line 1, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 1, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 a, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, p, pre, span, th, td {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
 }
 
-/* line 6, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 6, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 10, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 10, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 fieldset, img {
   border: 0;
 }
 
-/* line 13, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 13, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 address, em, th {
   font-style: normal;
   font-weight: normal;
 }
 
-/* line 17, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 17, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 li {
   list-style: none;
 }
 
-/* line 20, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 20, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 th {
   font-style: normal;
   text-align: left;
 }
 
-/* line 24, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 24, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 h1, h2, h3, h4, h5, h6, small {
   font-size: 100%;
 }
 
-/* line 27, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 27, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 input, textarea, select {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
 }
 
-/* line 33, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 33, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 .msie input, .msie textarea, .msie select {
   font-size: 100%;
 }
 
-/* line 36, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 36, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 header, section, article, aside, footer, time {
   display: block;
 }
@@ -108,7 +108,7 @@ h1 {
   line-height: 40px;
   position: relative;
 }
-/* line 3, ../../../../../Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/gems/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_browser_support.sass */
+/* line 3, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_browser_support.sass */
 .presto h1 {
   bottom: 1px;
 }
@@ -745,7 +745,7 @@ li a.add .icon {
     margin-right: 10px;
   }
 }
-/* line 1, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 2, ../../app/stylesheets/relaunch/_map.css.scss */
 #map {
   width: 100%;
   height: 700px;
@@ -754,43 +754,56 @@ li a.add .icon {
   background: #E8E0D8;
 }
 
-/* line 9, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 10, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-marker-icon, .leaflet-div-icon, .leaflet-clickable, .leaflet-zoom-animated-div-icon {
   border: 0px solid red !important;
 }
 
-/* line 13, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 14, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-popup {
   padding: 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
 }
 
-/* line 17, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 19, ../../app/stylesheets/relaunch/_map.css.scss */
+.restaurant {
+  width: 24px;
+  height: 24px;
+  background: url("/icons/restaurant.png") 2px 2px no-repeat;
+}
+
+/* line 24, ../../app/stylesheets/relaunch/_map.css.scss */
 .wheelchair-yes {
   background: transparent url("/images/marker_yes.png") 0 0 !important;
 }
 
-/* line 21, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 28, ../../app/stylesheets/relaunch/_map.css.scss */
 .wheelchair-no {
   background: transparent url("/images/marker_no.png") 0 0 !important;
 }
 
-/* line 25, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 32, ../../app/stylesheets/relaunch/_map.css.scss */
 .wheelchair-limited {
   background: transparent url("/images/marker_limited.png") 0 0 !important;
 }
 
-/* line 29, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 36, ../../app/stylesheets/relaunch/_map.css.scss */
 .wheelchair-unknown {
   background: transparent url("/images/marker_unknown.png") 0 0 !important;
 }
 
-/* line 33, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 40, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-popup {
   background-color: #FFF;
 }
 
 @media screen and (max-width:760px) {
-  /* line 38, ../../app/stylesheets/relaunch/_map.css.scss */
+  /* line 45, ../../app/stylesheets/relaunch/_map.css.scss */
   .leaflet-control-container {
     display: none;
   }

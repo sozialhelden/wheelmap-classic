@@ -2,43 +2,15 @@ var geojson_layer;
 var source = $("#cardTemplate").html();
 var template = Handlebars.compile(source);
 ////GRÜN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var markergreen = L.divIcon({
-  iconSize:     [32, 26],
-  iconAnchor:   [6, 12],
-  popupAnchor:  [5, -15],
-  iconUrl: '/images/marker_yes.png',
-  className: 'wheelchair-yes'
-});
 var markeryes = new L.LayerGroup();
 
 ////ORANGE/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var markerorange = L.divIcon({
-  iconSize:     [32, 26],
-  iconAnchor:   [6, 12],
-  popupAnchor:  [5, -15],
-  iconUrl: '/images/marker_limited.png',
-  className: 'wheelchair-limited'
-});
 var markerlimited = new L.LayerGroup();
 
 ////ROT/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var markerred = L.divIcon({
-  iconSize:     [32, 26],
-  iconAnchor:   [6, 12],
-  popupAnchor:  [5, -15],
-  iconUrl: '/images/marker_no.png',
-  className: 'wheelchair-no'
-});
 var markerno = new L.LayerGroup();
 
 ////GRAU/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var markergrey = L.divIcon({
-  iconSize:     [32, 26],
-  iconAnchor:   [6, 12],
-  popupAnchor:  [5, -15],
-  iconUrl: '/images/marker_unknown.png',
-  className: 'wheelchair-unknown'
-});
 var markerunknown = new L.LayerGroup();
 
 var map = L.map('map', {
@@ -147,7 +119,7 @@ function requestNodes(bounds) {
       dataType: 'json',
       data: {
         bbox:boundbox,
-        limit: 300
+        limit: 400
       },
       closeOnClick: false,
       load: true,
@@ -161,24 +133,26 @@ function requestNodes(bounds) {
   });
 }
 
-var featureStyle = {
-  icon: markergreen
-};
-
 function onEachFeature(feature, layer) {
   var popup_html = template(feature.properties);
-  layer.bindPopup(popup_html, { closeButton: false} );
+  layer.bindPopup(popup_html, { closeButton: false, autoPan: false} );
 }
 
 function parseResponse(data) {
   var new_geojson_layer = new L.GeoJSON(data, {
     pointToLayer: function (feature, latlng) {
-      switch (feature.properties.wheelchair) {
-        case 'yes': return L.marker(latlng, {icon: markergreen, title: feature.properties.name, riseOnHover: true});
-        case 'limited': return L.marker(latlng, {icon: markerorange, title: feature.properties.name, riseOnHover: true});
-        case 'no': return L.marker(latlng, {icon: markerred, title: feature.properties.name, riseOnHover: true});
-        case 'unknown': return L.marker(latlng, {icon: markergrey, title: feature.properties.name, riseOnHover: true});
-      }
+      return L.marker(latlng, {
+        icon: L.divIcon({
+          iconSize:     [40, 33],
+          iconAnchor:   [6, 12],
+          popupAnchor:  [5, 15],
+          className: 'wheelchair-' + feature.properties.wheelchair,
+          html: '<div class="restaurant"></div>'
+          // html: '<span class="' + feature.properties.type + '"></span>'
+        }),
+        title: feature.properties.name,
+        riseOnHover: true
+      });
     },
     onEachFeature: onEachFeature
   });
