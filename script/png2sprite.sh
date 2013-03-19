@@ -34,9 +34,9 @@ then
     convert *$ext -append $name/$classname-sprite$ext;
     echo "Sprite complete! - Creating css & test output...";
 
-    echo -e "<html>\n<head>\n\t<link rel=\"stylesheet\" href=\"`basename $css`\" />\n</head>\n<body>\n\t<h1>Sprite test page</h1>\n" >> $html
+    echo -e "<html>\n<head>\n  <link rel=\"stylesheet\" href=\"`basename $css`\" />\n</head>\n<body>\n  <h1>Sprite test page</h1>\n" >> $html
 
-    echo -e ".$classname {\n\tmargin:2px;\n\tbackground:url('/icons/$classname-sprite$ext') no-repeat top left; display:inline-block;\n}" >> $css;
+    echo -e ".leaflet-marker-icon .$classname {\n  margin:2px;\n  background:url('/icons/$classname-sprite$ext') no-repeat top left; display:inline-block;\n}" >> $css;
     counter=0;
     offset=0;
     for file in *$ext
@@ -45,18 +45,17 @@ then
         height=`identify -format "%[fx:h]" "$file"`;
         idname=`basename "$file" $ext`;
         clean=${idname// /-}
-        echo ".$classname#$clean {" >> $css;
-        echo -e "\tbackground-position:0 -${offset}px;" >> $css;
-        echo -e "\twidth: ${width}px;" >> $css;
-        echo -e "\theight: ${height}px;\n}" >> $css;
+        echo ".leaflet-marker-icon .$classname#$clean {" >> $css;
+        echo -e "  background-position:0 -${offset}px;" >> $css;
+        echo -e "  width: ${width}px;" >> $css;
+        echo -e "  height: ${height}px;\n}" >> $css;
 
         echo -e "<a href=\"#\" class=\"$classname\" id=\"$clean\"></a>\n" >> $html;
 
         let offset+=$height;
         let counter+=1;
-        echo -e "\t#$counter done";
+        echo -e "  #$counter done";
     done
-
     echo -e "<h2>Full sprite:</h2>\n<img src=\"$classname$ext\" />" >> $html;
     echo -e "</body>\n</html>" >> $html;
 
@@ -66,6 +65,6 @@ then
 
 else
 
-    echo -e "There should be at least 1 argument!\n\tbuildSprite.sh output_folder classname input_extension"
+    echo -e "There should be at least 1 argument!\nbuildSprite.sh output_folder classname input_extension"
 
 fi
