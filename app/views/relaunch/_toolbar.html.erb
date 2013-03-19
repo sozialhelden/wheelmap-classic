@@ -1,9 +1,9 @@
 <div id="toolbar">
   <div class="content">
   <div class="searchbar">
-    <form action"/search">
-      <input type="search" name="q" value="<%= params[:q].present? ? params[:q] : nil %>" autocomplete="off" placeholder="<%= t('header.searchbar.placeholder') %>" />
-      <button type="submit">&#128269;</button>
+    <form action="/search" method="GET">
+      <input type="search" id="search" name="q" value="<%= params[:q].present? ? params[:q] : nil %>" autocomplete="off" placeholder="<%= t('header.searchbar.placeholder') %>" />
+      <button type="submit" value="<%= t('header.searchbar.find')%>">&#128269;</button>
     </form>
   </div>
   <ul class="ort-filter">
