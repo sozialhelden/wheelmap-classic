@@ -16,14 +16,14 @@
         $('.ort-filter li').click(function() {
           $(this).toggleClass('active');
         });
-        requestNodes(map.getBounds());
+
 
 
       addEventListener("load", function() { setTimeout(hideURLbar, 100); }, false);
       function hideURLbar() {
-
-             window.scrollTo(0,0);
-         }
+        window.scrollTo(0,0);
+      }
+      requestNodes(map.getBounds());
     });
 
 %section#map

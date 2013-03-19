@@ -22,7 +22,9 @@ javascripts:
   relaunch:
     - public/javascripts/jquery.js
     - public/javascripts/jquery_ujs.js
+    - public/javascripts/jquery.parsequery.js
     - public/javascripts/leaflet.js
+    - public/javascripts/cookie.js
     - public/javascripts/handlebars.js
     - public/javascripts/map.js
 
