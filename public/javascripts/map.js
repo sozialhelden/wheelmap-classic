@@ -147,6 +147,11 @@ function onEachFeature(feature, layer) {
   layer.bindPopup(popup_html, { closeButton: false, autoPan: false} );
 }
 
+function onEachFilter(feature, layer) {
+  // Filter for wheelchair or category attribute
+  return true;
+}
+
 function initGeoData() {
   // set global variables
   q = $.parseQuery();
@@ -178,7 +183,8 @@ function parseResponse(data) {
         riseOnHover: true
       });
     },
-    onEachFeature: onEachFeature
+    onEachFeature: onEachFeature,
+    filter: onEachFilter
   });
   map.addLayer(new_geojson_layer);
   if (geojson_layer != undefined)
