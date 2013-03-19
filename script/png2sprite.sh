@@ -36,7 +36,7 @@ then
 
     echo -e "<html>\n<head>\n  <link rel=\"stylesheet\" href=\"`basename $css`\" />\n</head>\n<body>\n  <h1>Sprite test page</h1>\n" >> $html
 
-    echo -e ".leaflet-marker-icon .$classname {\n  margin:2px;\n  background:url('/icons/$classname-sprite$ext') no-repeat top left; display:inline-block;\n}" >> $css;
+    echo -e ".leaflet-marker-icon .$classname {\n  margin: 2px;\n  background:url('/icons/$classname-sprite$ext') no-repeat top left;\n  display:inline-block;\n}" >> $css;
     counter=0;
     offset=0;
     for file in *$ext
