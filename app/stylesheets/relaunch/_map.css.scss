@@ -1,3 +1,4 @@
+
 #map {
   width: 100%;
   height: 700px;
@@ -12,8 +13,14 @@
 
 .leaflet-popup{
   padding: 10px;
+  @include border-radius(8px);
 }
 
+.restaurant {
+  width: 24px;
+  height: 24px;
+  background: url('/icons/restaurant.png') 2px 2px no-repeat;
+}
 .wheelchair-yes {
   background: transparent url('/images/marker_yes.png') 0 0 !important;
 }
