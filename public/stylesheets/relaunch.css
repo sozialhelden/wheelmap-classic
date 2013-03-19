@@ -746,694 +746,694 @@ li a.add .icon {
   }
 }
 /* line 1, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon {
+.leaflet-marker-icon .icon {
   margin: 2px;
   background: url("/icons/icon-sprite.png") no-repeat top left;
   display: inline-block;
 }
 
 /* line 5, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#2hand {
+.leaflet-marker-icon .icon#2hand {
   background-position: 0 0px;
   width: 22px;
   height: 22px;
 }
 
 /* line 10, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#airport {
+.leaflet-marker-icon .icon#airport {
   background-position: 0 -22px;
   width: 22px;
   height: 22px;
 }
 
 /* line 15, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#airport_terminal {
+.leaflet-marker-icon .icon#airport_terminal {
   background-position: 0 -44px;
   width: 22px;
   height: 22px;
 }
 
 /* line 20, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#artgallery {
+.leaflet-marker-icon .icon#artgallery {
   background-position: 0 -66px;
   width: 22px;
   height: 22px;
 }
 
 /* line 25, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#atm {
+.leaflet-marker-icon .icon#atm {
   background-position: 0 -88px;
   width: 22px;
   height: 22px;
 }
 
 /* line 30, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#bank {
+.leaflet-marker-icon .icon#bank {
   background-position: 0 -110px;
   width: 22px;
   height: 22px;
 }
 
 /* line 35, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#bar {
+.leaflet-marker-icon .icon#bar {
   background-position: 0 -132px;
   width: 22px;
   height: 22px;
 }
 
 /* line 40, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#bar_coktail {
+.leaflet-marker-icon .icon#bar_coktail {
   background-position: 0 -154px;
   width: 22px;
   height: 22px;
 }
 
 /* line 45, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#barber {
+.leaflet-marker-icon .icon#barber {
   background-position: 0 -176px;
   width: 22px;
   height: 22px;
 }
 
 /* line 50, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#beach {
+.leaflet-marker-icon .icon#beach {
   background-position: 0 -198px;
   width: 22px;
   height: 22px;
 }
 
 /* line 55, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#beautifulview {
+.leaflet-marker-icon .icon#beautifulview {
   background-position: 0 -220px;
   width: 22px;
   height: 22px;
 }
 
 /* line 60, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#biergarten {
+.leaflet-marker-icon .icon#biergarten {
   background-position: 0 -242px;
   width: 22px;
   height: 22px;
 }
 
 /* line 65, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#bigcity {
+.leaflet-marker-icon .icon#bigcity {
   background-position: 0 -264px;
   width: 22px;
   height: 22px;
 }
 
 /* line 70, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#boat {
+.leaflet-marker-icon .icon#boat {
   background-position: 0 -286px;
   width: 22px;
   height: 22px;
 }
 
 /* line 75, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#bread {
+.leaflet-marker-icon .icon#bread {
   background-position: 0 -308px;
   width: 22px;
   height: 22px;
 }
 
 /* line 80, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#busstop {
+.leaflet-marker-icon .icon#busstop {
   background-position: 0 -330px;
   width: 22px;
   height: 22px;
 }
 
 /* line 85, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#butcher {
+.leaflet-marker-icon .icon#butcher {
   background-position: 0 -352px;
   width: 22px;
   height: 22px;
 }
 
 /* line 90, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#cablecar {
+.leaflet-marker-icon .icon#cablecar {
   background-position: 0 -374px;
   width: 22px;
   height: 22px;
 }
 
 /* line 95, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#camping {
+.leaflet-marker-icon .icon#camping {
   background-position: 0 -396px;
   width: 22px;
   height: 22px;
 }
 
 /* line 100, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#car {
+.leaflet-marker-icon .icon#car {
   background-position: 0 -418px;
   width: 22px;
   height: 22px;
 }
 
 /* line 105, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#car_repair {
+.leaflet-marker-icon .icon#car_repair {
   background-position: 0 -440px;
   width: 22px;
   height: 22px;
 }
 
 /* line 110, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#carrental {
+.leaflet-marker-icon .icon#carrental {
   background-position: 0 -462px;
   width: 22px;
   height: 22px;
 }
 
 /* line 115, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#castle {
+.leaflet-marker-icon .icon#castle {
   background-position: 0 -484px;
   width: 22px;
   height: 22px;
 }
 
 /* line 120, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#cave {
+.leaflet-marker-icon .icon#cave {
   background-position: 0 -506px;
   width: 22px;
   height: 22px;
 }
 
 /* line 125, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#chemist {
+.leaflet-marker-icon .icon#chemist {
   background-position: 0 -528px;
   width: 22px;
   height: 22px;
 }
 
 /* line 130, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#cinema {
+.leaflet-marker-icon .icon#cinema {
   background-position: 0 -550px;
   width: 22px;
   height: 22px;
 }
 
 /* line 135, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#clothers_male {
+.leaflet-marker-icon .icon#clothers_male {
   background-position: 0 -572px;
   width: 22px;
   height: 22px;
 }
 
 /* line 140, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#coffee {
+.leaflet-marker-icon .icon#coffee {
   background-position: 0 -594px;
   width: 22px;
   height: 22px;
 }
 
 /* line 145, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#communitycentre {
+.leaflet-marker-icon .icon#communitycentre {
   background-position: 0 -616px;
   width: 22px;
   height: 22px;
 }
 
 /* line 150, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#computers {
+.leaflet-marker-icon .icon#computers {
   background-position: 0 -638px;
   width: 22px;
   height: 22px;
 }
 
 /* line 155, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#conveniencestore {
+.leaflet-marker-icon .icon#conveniencestore {
   background-position: 0 -660px;
   width: 22px;
   height: 22px;
 }
 
 /* line 160, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#court {
+.leaflet-marker-icon .icon#court {
   background-position: 0 -682px;
   width: 22px;
   height: 22px;
 }
 
 /* line 165, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#cross {
+.leaflet-marker-icon .icon#cross {
   background-position: 0 -704px;
   width: 22px;
   height: 22px;
 }
 
 /* line 170, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#currencyexchange {
+.leaflet-marker-icon .icon#currencyexchange {
   background-position: 0 -726px;
   width: 22px;
   height: 22px;
 }
 
 /* line 175, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#cycling {
+.leaflet-marker-icon .icon#cycling {
   background-position: 0 -748px;
   width: 22px;
   height: 22px;
 }
 
 /* line 180, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#dancinghall {
+.leaflet-marker-icon .icon#dancinghall {
   background-position: 0 -770px;
   width: 22px;
   height: 22px;
 }
 
 /* line 185, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#daycare {
+.leaflet-marker-icon .icon#daycare {
   background-position: 0 -792px;
   width: 22px;
   height: 22px;
 }
 
 /* line 190, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#dentist {
+.leaflet-marker-icon .icon#dentist {
   background-position: 0 -814px;
   width: 22px;
   height: 22px;
 }
 
 /* line 195, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#departmentstore {
+.leaflet-marker-icon .icon#departmentstore {
   background-position: 0 -836px;
   width: 22px;
   height: 22px;
 }
 
 /* line 200, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#drinkingwater {
+.leaflet-marker-icon .icon#drinkingwater {
   background-position: 0 -858px;
   width: 22px;
   height: 22px;
 }
 
 /* line 205, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#drugstore {
+.leaflet-marker-icon .icon#drugstore {
   background-position: 0 -880px;
   width: 22px;
   height: 22px;
 }
 
 /* line 210, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#embassy {
+.leaflet-marker-icon .icon#embassy {
   background-position: 0 -902px;
   width: 22px;
   height: 22px;
 }
 
 /* line 215, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#fastfood {
+.leaflet-marker-icon .icon#fastfood {
   background-position: 0 -924px;
   width: 22px;
   height: 22px;
 }
 
 /* line 220, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#ferry {
+.leaflet-marker-icon .icon#ferry {
   background-position: 0 -946px;
   width: 22px;
   height: 22px;
 }
 
 /* line 225, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#fillingstation {
+.leaflet-marker-icon .icon#fillingstation {
   background-position: 0 -968px;
   width: 22px;
   height: 22px;
 }
 
 /* line 230, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#firstaid {
+.leaflet-marker-icon .icon#firstaid {
   background-position: 0 -990px;
   width: 22px;
   height: 22px;
 }
 
 /* line 235, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#fitness {
+.leaflet-marker-icon .icon#fitness {
   background-position: 0 -1012px;
   width: 22px;
   height: 22px;
 }
 
 /* line 240, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#flowers {
+.leaflet-marker-icon .icon#flowers {
   background-position: 0 -1034px;
   width: 22px;
   height: 22px;
 }
 
 /* line 245, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#fossils {
+.leaflet-marker-icon .icon#fossils {
   background-position: 0 -1056px;
   width: 22px;
   height: 22px;
 }
 
 /* line 250, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#hearing_aids {
+.leaflet-marker-icon .icon#hearing_aids {
   background-position: 0 -1078px;
   width: 22px;
   height: 22px;
 }
 
 /* line 255, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#homecenter {
+.leaflet-marker-icon .icon#homecenter {
   background-position: 0 -1100px;
   width: 22px;
   height: 22px;
 }
 
 /* line 260, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#hospital {
+.leaflet-marker-icon .icon#hospital {
   background-position: 0 -1122px;
   width: 22px;
   height: 22px;
 }
 
 /* line 265, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#icon-sprite {
+.leaflet-marker-icon .icon#icon-sprite {
   background-position: 0 -1144px;
   width: 22px;
-  height: 2134px;
+  height: 19206px;
 }
 
 /* line 270, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#information {
-  background-position: 0 -3278px;
+.leaflet-marker-icon .icon#information {
+  background-position: 0 -20350px;
   width: 22px;
   height: 22px;
 }
 
 /* line 275, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#kiosk {
-  background-position: 0 -3300px;
+.leaflet-marker-icon .icon#kiosk {
+  background-position: 0 -20372px;
   width: 22px;
   height: 22px;
 }
 
 /* line 280, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#lantern {
-  background-position: 0 -3322px;
+.leaflet-marker-icon .icon#lantern {
+  background-position: 0 -20394px;
   width: 22px;
   height: 22px;
 }
 
 /* line 285, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#laundromat {
-  background-position: 0 -3344px;
+.leaflet-marker-icon .icon#laundromat {
+  background-position: 0 -20416px;
   width: 22px;
   height: 22px;
 }
 
 /* line 290, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#library {
-  background-position: 0 -3366px;
+.leaflet-marker-icon .icon#library {
+  background-position: 0 -20438px;
   width: 22px;
   height: 22px;
 }
 
 /* line 295, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#liquor {
-  background-position: 0 -3388px;
+.leaflet-marker-icon .icon#liquor {
+  background-position: 0 -20460px;
   width: 22px;
   height: 22px;
 }
 
 /* line 300, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#mall {
-  background-position: 0 -3410px;
+.leaflet-marker-icon .icon#mall {
+  background-position: 0 -20482px;
   width: 22px;
   height: 22px;
 }
 
 /* line 305, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#medicalstore {
-  background-position: 0 -3432px;
+.leaflet-marker-icon .icon#medicalstore {
+  background-position: 0 -20504px;
   width: 22px;
   height: 22px;
 }
 
 /* line 310, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#medicine {
-  background-position: 0 -3454px;
+.leaflet-marker-icon .icon#medicine {
+  background-position: 0 -20526px;
   width: 22px;
   height: 22px;
 }
 
 /* line 315, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#memorial {
-  background-position: 0 -3476px;
+.leaflet-marker-icon .icon#memorial {
+  background-position: 0 -20548px;
   width: 22px;
   height: 22px;
 }
 
 /* line 320, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#motel {
-  background-position: 0 -3498px;
+.leaflet-marker-icon .icon#motel {
+  background-position: 0 -20570px;
   width: 22px;
   height: 22px;
 }
 
 /* line 325, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#museum_archeological {
-  background-position: 0 -3520px;
+.leaflet-marker-icon .icon#museum_archeological {
+  background-position: 0 -20592px;
   width: 22px;
   height: 22px;
 }
 
 /* line 330, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#museum_art {
-  background-position: 0 -3542px;
+.leaflet-marker-icon .icon#museum_art {
+  background-position: 0 -20614px;
   width: 22px;
   height: 22px;
 }
 
 /* line 335, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#music {
-  background-position: 0 -3564px;
+.leaflet-marker-icon .icon#music {
+  background-position: 0 -20636px;
   width: 22px;
   height: 22px;
 }
 
 /* line 340, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#ophthalmologist {
-  background-position: 0 -3586px;
+.leaflet-marker-icon .icon#ophthalmologist {
+  background-position: 0 -20658px;
   width: 22px;
   height: 22px;
 }
 
 /* line 345, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#parking {
-  background-position: 0 -3608px;
+.leaflet-marker-icon .icon#parking {
+  background-position: 0 -20680px;
   width: 22px;
   height: 22px;
 }
 
 /* line 350, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#phones {
-  background-position: 0 -3630px;
+.leaflet-marker-icon .icon#phones {
+  background-position: 0 -20702px;
   width: 22px;
   height: 22px;
 }
 
 /* line 355, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#photography {
-  background-position: 0 -3652px;
+.leaflet-marker-icon .icon#photography {
+  background-position: 0 -20724px;
   width: 22px;
   height: 22px;
 }
 
 /* line 360, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#playground {
-  background-position: 0 -3674px;
+.leaflet-marker-icon .icon#playground {
+  background-position: 0 -20746px;
   width: 22px;
   height: 22px;
 }
 
 /* line 365, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#police {
-  background-position: 0 -3696px;
+.leaflet-marker-icon .icon#police {
+  background-position: 0 -20768px;
   width: 22px;
   height: 22px;
 }
 
 /* line 370, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#postal {
-  background-position: 0 -3718px;
+.leaflet-marker-icon .icon#postal {
+  background-position: 0 -20790px;
   width: 22px;
   height: 22px;
 }
 
 /* line 375, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#prayer {
-  background-position: 0 -3740px;
+.leaflet-marker-icon .icon#prayer {
+  background-position: 0 -20812px;
   width: 22px;
   height: 22px;
 }
 
 /* line 380, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#publicart {
-  background-position: 0 -3762px;
+.leaflet-marker-icon .icon#publicart {
+  background-position: 0 -20834px;
   width: 22px;
   height: 22px;
 }
 
 /* line 385, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#restaurant {
-  background-position: 0 -3784px;
+.leaflet-marker-icon .icon#restaurant {
+  background-position: 0 -20856px;
   width: 22px;
   height: 22px;
 }
 
 /* line 390, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#school {
-  background-position: 0 -3806px;
+.leaflet-marker-icon .icon#school {
+  background-position: 0 -20878px;
   width: 22px;
   height: 22px;
 }
 
 /* line 395, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#shoes {
-  background-position: 0 -3828px;
+.leaflet-marker-icon .icon#shoes {
+  background-position: 0 -20900px;
   width: 22px;
   height: 22px;
 }
 
 /* line 400, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#social_facility {
-  background-position: 0 -3850px;
+.leaflet-marker-icon .icon#social_facility {
+  background-position: 0 -20922px;
   width: 22px;
   height: 22px;
 }
 
 /* line 405, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#stadium {
-  background-position: 0 -3872px;
+.leaflet-marker-icon .icon#stadium {
+  background-position: 0 -20944px;
   width: 22px;
   height: 22px;
 }
 
 /* line 410, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#stationery {
-  background-position: 0 -3894px;
+.leaflet-marker-icon .icon#stationery {
+  background-position: 0 -20966px;
   width: 22px;
   height: 22px;
 }
 
 /* line 415, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#stop {
-  background-position: 0 -3916px;
+.leaflet-marker-icon .icon#stop {
+  background-position: 0 -20988px;
   width: 22px;
   height: 22px;
 }
 
 /* line 420, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#stripclub {
-  background-position: 0 -3938px;
+.leaflet-marker-icon .icon#stripclub {
+  background-position: 0 -21010px;
   width: 22px;
   height: 22px;
 }
 
 /* line 425, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#supermarket {
-  background-position: 0 -3960px;
+.leaflet-marker-icon .icon#supermarket {
+  background-position: 0 -21032px;
   width: 22px;
   height: 22px;
 }
 
 /* line 430, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#swimming {
-  background-position: 0 -3982px;
+.leaflet-marker-icon .icon#swimming {
+  background-position: 0 -21054px;
   width: 22px;
   height: 22px;
 }
 
 /* line 435, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#theater {
-  background-position: 0 -4004px;
+.leaflet-marker-icon .icon#theater {
+  background-position: 0 -21076px;
   width: 22px;
   height: 22px;
 }
 
 /* line 440, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#themepark {
-  background-position: 0 -4026px;
+.leaflet-marker-icon .icon#themepark {
+  background-position: 0 -21098px;
   width: 22px;
   height: 22px;
 }
 
 /* line 445, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#toilets {
-  background-position: 0 -4048px;
+.leaflet-marker-icon .icon#toilets {
+  background-position: 0 -21120px;
   width: 22px;
   height: 22px;
 }
 
 /* line 450, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#tools {
-  background-position: 0 -4070px;
+.leaflet-marker-icon .icon#tools {
+  background-position: 0 -21142px;
   width: 22px;
   height: 22px;
 }
 
 /* line 455, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#train {
-  background-position: 0 -4092px;
+.leaflet-marker-icon .icon#train {
+  background-position: 0 -21164px;
   width: 22px;
   height: 22px;
 }
 
 /* line 460, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#tramway {
-  background-position: 0 -4114px;
+.leaflet-marker-icon .icon#tramway {
+  background-position: 0 -21186px;
   width: 22px;
   height: 22px;
 }
 
 /* line 465, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#underground {
-  background-position: 0 -4136px;
+.leaflet-marker-icon .icon#underground {
+  background-position: 0 -21208px;
   width: 22px;
   height: 22px;
 }
 
 /* line 470, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#university {
-  background-position: 0 -4158px;
+.leaflet-marker-icon .icon#university {
+  background-position: 0 -21230px;
   width: 22px;
   height: 22px;
 }
 
 /* line 475, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#veterinary {
-  background-position: 0 -4180px;
+.leaflet-marker-icon .icon#veterinary {
+  background-position: 0 -21252px;
   width: 22px;
   height: 22px;
 }
 
 /* line 480, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#weights {
-  background-position: 0 -4202px;
+.leaflet-marker-icon .icon#weights {
+  background-position: 0 -21274px;
   width: 22px;
   height: 22px;
 }
 
 /* line 485, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#workoffice {
-  background-position: 0 -4224px;
+.leaflet-marker-icon .icon#workoffice {
+  background-position: 0 -21296px;
   width: 22px;
   height: 22px;
 }
 
 /* line 490, ../../app/stylesheets/relaunch/_icons.css.scss */
-.icon#zoo {
-  background-position: 0 -4246px;
+.leaflet-marker-icon .icon#zoo {
+  background-position: 0 -21318px;
   width: 22px;
   height: 22px;
 }
