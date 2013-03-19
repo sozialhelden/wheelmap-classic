@@ -173,7 +173,7 @@ function parseResponse(data) {
           iconAnchor:   [6, 12],
           popupAnchor:  [5, 15],
           className: 'wheelchair-' + feature.properties.wheelchair,
-          html: '<div class="restaurant"></div>'
+          html: '<div id="'+ feature.properties.icon +'" class="icon"></div>'
         }),
         title: feature.properties.name,
         riseOnHover: true
