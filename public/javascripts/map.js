@@ -13,9 +13,15 @@ var markerno = new L.LayerGroup();
 ////GRAU/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var markerunknown = new L.LayerGroup();
 
+var lat = 52.50521;
+var lon = 13.4231;
+var zoom = 12;
+
+initGeoData();
+
 var map = L.map('map', {
-  center: [52.50521, 13.4231],
-  zoom: 12,
+  center: [lat,lon],
+  zoom: zoom,
   trackResize: true
 });
 
@@ -95,7 +101,11 @@ map.on('popupopen', function(e) {
 
 
 map.on('moveend', function(e) {
+  $.cookie('last_lat', map.getCenter().lat, { expires: 7, path: '/'});
+  $.cookie('last_lon', map.getCenter().lng, { expires: 7, path: '/'});
   requestNodes(e.target.getBounds());
+}).on('zoomend', function(e){
+  $.cookie('last_zoom', map.getZoom(), { expires: 7, path: '/'});
 }).on('popupopen', function(e) {
   $('.update_form').bind('ajax:success', function(xhr, data, status){
     $('footer').before('<div class="notification">'+ data.message + '</div>')
@@ -138,6 +148,22 @@ function onEachFeature(feature, layer) {
   layer.bindPopup(popup_html, { closeButton: false, autoPan: false} );
 }
 
+function initGeoData() {
+  // set global variables
+  q = $.parseQuery();
+  lat  = q.lat  || $.cookie('last_lat');
+  lon  = q.lon  || $.cookie('last_lon');
+  zoom = q.zoom || $.cookie('last_zoom') || 14;
+  window.node_id = q.node_id
+
+  if(!(lat && lon)) {
+    // on demand insert JS
+    lat = geoip_latitude();
+    lon = geoip_longitude();
+  }
+}
+
+
 function parseResponse(data) {
   var new_geojson_layer = new L.GeoJSON(data, {
     pointToLayer: function (feature, latlng) {
@@ -148,7 +174,6 @@ function parseResponse(data) {
           popupAnchor:  [5, 15],
           className: 'wheelchair-' + feature.properties.wheelchair,
           html: '<div class="restaurant"></div>'
-          // html: '<span class="' + feature.properties.type + '"></span>'
         }),
         title: feature.properties.name,
         riseOnHover: true
@@ -163,22 +188,3 @@ function parseResponse(data) {
   }
   geojson_layer = new_geojson_layer;
 }
-
-//function onLocationFound(e) {
-//      var radius = e.accuracy / 2;
-//
-//      L.marker(e.latlng, {icon: standort}).addTo(map)
-//        .bindPopup("<strong>Dein Standort:<br/><i>Ungefähr " + radius + " Meter genau</i></strong>").openPopup();
-//
-//      L.circle(e.latlng, radius, {color: '#384C60'}).addTo(map);
-//    }
-//
-//    function onLocationError(e) {
-//      alert(e.message);
-//    }
-//
-//    map.on('locationfound', onLocationFound);
-    //map.on('locationerror', onLocationError);
-//
-//    map.locate({setView: true, maxZoom: 14});
-
