@@ -29,7 +29,7 @@
 %section#map
   %script{:type => "text/x-handlebars-template", :id => "cardTemplate"}
     .olFramedCloudPopupContent{:id => 'featurePopup_content_{{id}}'}
-      %h2{:style => "padding-left:30px;background:url('{{icon}}') no-repeat bottom left"} {{name}}
+      %h2{:style => "padding-left:30px;background:url('/icons/{{icon}}.png') no-repeat bottom left"} {{name}}
       {{#if address}}
       %address {{address}}
       {{/if}}

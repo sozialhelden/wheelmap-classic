@@ -282,7 +282,7 @@ class Poi < ActiveRecord::Base
   end
 
   def icon
-    image_path("/icons/#{node_type.try(:icon)}")
+    node_type.try(:icon).to_s.gsub(/\.png$/,'')
   end
 
   def to_geojson(options={})
@@ -295,7 +295,6 @@ class Poi < ActiveRecord::Base
                          'id'         => osm_id,
                          'type'       => node_type.try(:identifier) || '',
                          'category'   => category.try(:identifier) || '',
-                         'marker'     => marker,
                          'icon'       => icon
                        }
     }
