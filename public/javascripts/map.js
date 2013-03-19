@@ -1,6 +1,5 @@
 var geojson_layer;
 var source = $("#cardTemplate").html();
-var template = Handlebars.compile(source);
 ////GRÜN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var markeryes = new L.LayerGroup();
 
@@ -144,7 +143,7 @@ function requestNodes(bounds) {
 }
 
 function onEachFeature(feature, layer) {
-  var popup_html = template(feature.properties);
+  var popup_html = L.Util.template(source, feature.properties);
   layer.bindPopup(popup_html, { closeButton: false, autoPan: false} );
 }
 
