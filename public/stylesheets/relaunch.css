@@ -777,11 +777,21 @@ li a.add .icon {
   z-index: 9999;
   top: 102px;
   left: 0px;
-  background: #6AA74A;
   display: none;
 }
-
-/* line 284, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 283, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.notification.success {
+  background: #6AA74A;
+}
+/* line 287, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.notification.error {
+  background: #D6382F;
+}
+/* line 291, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.notification.alert {
+  background: #F19D46;
+}
+/* line 295, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 .notification span {
   width: 100%;
   float: left;
@@ -792,7 +802,7 @@ li a.add .icon {
 }
 
 @media screen and (max-width:760px) {
-  /* line 293, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 305, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   .btn-searchbar {
     display: block;
     float: left;
@@ -809,7 +819,7 @@ li a.add .icon {
     background-image: -webkit-image-set(url(../images/bg_button.png) 1x, url(../images/bg_button@2x.png) 2x);
   }
 
-  /* line 311, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 323, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   .searchbar {
     display: none;
     width: 100%;
@@ -828,18 +838,18 @@ li a.add .icon {
     box-shadow: inset 0 3px 0 #333, 0 0 4px #333;
     border-top: 1px solid #555;
   }
-  /* line 330, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 342, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   .searchbar input, .searchbar input:focus {
     width: 80%;
     margin-left: 5%;
   }
 
-  /* line 335, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 347, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   .searchbar.active {
     display: block;
   }
 
-  /* line 338, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 350, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   .ort-filter {
     width: 179px;
     position: absolute;
@@ -848,7 +858,7 @@ li a.add .icon {
     margin-left: -89px;
   }
 
-  /* line 345, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 357, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar select {
     width: 44px;
     float: right;
