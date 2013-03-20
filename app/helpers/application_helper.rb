@@ -53,6 +53,21 @@ module ApplicationHelper
     uri
   end
 
+  # Flash message for new layout.
+  def render_flash
+    html = ''
+    [:notice,:error,:alert].each do |type|
+      unless flash[type].blank?
+        html << "<div class='notification active #{type}'>"
+        html << "<span>"
+        html << flash[type]
+        html << "</span></div>"
+      end
+    end
+    html.html_safe
+  end
+
+  # Flash message for old layout.
   def show_flash
     html = ''
     [:notice,:error,:alert].each do |type|
