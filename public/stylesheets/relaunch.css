@@ -212,12 +212,16 @@ header {
   z-index: 1001;
   float: left;
   background: url(/images/bg_header.png);
+<<<<<<< HEAD
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (   min--moz-device-pixel-ratio: 2), only screen and (     -o-min-device-pixel-ratio: 2/1), only screen and (        min-device-pixel-ratio: 2), only screen and (                min-resolution: 192dpi), only screen and (                min-resolution: 2dppx) {
   /* line 1, ../../app/stylesheets/relaunch/_header.css.scss */
   header {
     background-image: url(/images/bg_header@2x.png);
   }
+=======
+  background-image: -webkit-image-set(url(/images/bg_header.png) 1x, url(/images/bg_header@2x.png) 2x);
+>>>>>>> Changed Image Path
 }
 
 /* line 22, ../../app/stylesheets/relaunch/_header.css.scss */
@@ -226,8 +230,8 @@ header {
   padding: 36px 0 0 38px;
   margin: -3px 0 0 0;
   float: left;
-  background: url(../images/bg_logo.png) center center no-repeat;
-  background-image: -webkit-image-set(url(../images/bg_logo.png) 1x, url(../images/bg_logo@2x.png) 2x);
+  background: url(/images/bg_logo.png) center center no-repeat;
+  background-image: -webkit-image-set(url(/images/bg_logo.png) 1x, url(/images/bg_logo@2x.png) 2x);
   z-index: 1;
   font-size: 11px;
   font-weight: bold;
@@ -287,7 +291,7 @@ nav li a:hover {
   border: 1px solid #c6c5bd;
   border-radius: 3px;
   box-shadow: 0px 1px 0px #FFF;
-  /*		background: url(../images/bg_accountbar.png);
+  /*		background: url(/images/bg_accountbar.png);
   		box-shadow: 0 2px 2px rgba(170, 170, 170, 0.2);*/
   margin-left: 3px;
 }
@@ -383,7 +387,7 @@ li a.add .icon {
   border: none;
   padding: 6px 10px 6px 0;
   margin: 0 2px 0 8px;
-  background: url(../images/bg_accountbar-select.png) no-repeat right;
+  background: url(/images/bg_accountbar-select.png) no-repeat right;
   background-position-y: 6px;
   font-size: 12px;
   font-weight: normal;
@@ -403,8 +407,8 @@ li a.add .icon {
     padding: 0;
     margin: 10px 0 0 0;
     text-indent: -9999px !important;
-    background: url(../images/bg_mobile_logo.png) center top no-repeat;
-    background-image: -webkit-image-set(url(../images/bg_mobile_logo.png) 1x, url(../images/bg_mobile_logo@2x.png) 2x);
+    background: url(/images/bg_mobile_logo.png) center top no-repeat;
+    background-image: -webkit-image-set(url(/images/bg_mobile_logo.png) 1x, url(/images/bg_mobile_logo@2x.png) 2x);
     color: rgba(255, 255, 255, 0);
     /*Behelfslösung*/
   }
@@ -425,7 +429,7 @@ li a.add .icon {
     border: none;
     padding: 6px 10px 6px 6px;
     margin: 13px 2px 0 8px;
-    background: url(../images/bg_accountbar-select.png) no-repeat right;
+    background: url(/images/bg_accountbar-select.png) no-repeat right;
     background-position-y: 6px;
     font-size: 12px;
     font-weight: normal;
