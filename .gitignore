@@ -17,3 +17,7 @@ public/sitemap_*
 public/system/sitemap*
 public/system/uploads*
 vendor/bundle
+
+wheelmap.esproj/Project.espressostorage
+
+*.espressostorage
