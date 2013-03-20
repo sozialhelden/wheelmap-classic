@@ -1,3 +1,13 @@
+$('.btn-searchbar').click(function() {
+	$('.searchbar').toggleClass('active');
+});
+$('.notification.active').slideDown(500).delay(3000).slideUp(400);
+
+addEventListener('load', function() { setTimeout(hideURLbar, 100); }, false);
+	function hideURLbar() {
+	   
+	       window.scrollTo(0,0);
+	   }
 var geojson_layer;
 var source = $("#cardTemplate").html();
 ////GRÜN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
