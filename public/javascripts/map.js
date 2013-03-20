@@ -177,9 +177,17 @@ function parseResponse(data) {
   var new_geojson_layer = new L.GeoJSON(data, {
     pointToLayer: function (feature, latlng) {
       var classesToAdd = [feature.properties.wheelchair, feature.properties.category]
-      $.each(['yes', 'no', 'limited', 'unknown'], function(index, el){
-        if (feature.properties.wheelchair === el && $.cookie('filter_' + el) === '1') {
+      $('.ort-filter input:checked').each(function() {
+        var filter_class = $(this).val();
+        if ( feature.properties.wheelchair === filter_class ) {
           classesToAdd.push('wheelchair_hidden');
+        }
+      });
+
+      $('.category-filter option:selected').each(function() {
+        var filter_class = $(this).val();
+        if ( filter_class !== 'all' && feature.properties.category !== filter_class ) {
+          classesToAdd.push('category_hidden');
         }
       });
       return L.marker(latlng, {
@@ -223,13 +231,20 @@ $('.ort-filter').each(function(i) {
 });
 
 $('.category-filter').on('change', function(e){
-  var filter_class = $(e.target).find('option:selected').val()
-  if (filter_class === 'all') {
-    $('.leaflet-marker-icon').removeClass('category_hidden');
-  } else {
-    $('.leaflet-marker-icon').addClass('category_hidden');
-    $('.leaflet-marker-icon.' + filter_class).removeClass('category_hidden');
-  }
+  $(e.target).find('option').each(function(i) {
+    var filter_class = $(this).val();
+    if ( $(this).is(':selected') ) {
+      $.cookie('filter_'+filter_class, '1', { expires: 7, path: '/'});
+      if (filter_class === 'all') {
+        $('.leaflet-marker-icon').removeClass('category_hidden');
+      } else {
+        $('.leaflet-marker-icon').addClass('category_hidden');
+        $('.leaflet-marker-icon.' + filter_class).removeClass('category_hidden');
+      }
+    } else {
+      $.removeCookie('filter_'+filter_class);
+    }
+  })
 });
 
 addEventListener('load', function() { setTimeout(hideURLbar, 100); }, false);
