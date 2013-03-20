@@ -1,108 +1,1832 @@
-/*
-Syntax error: Invalid CSS after "...bg_header.png);": expected "}", was "<<<<<<< HEAD"
-        on line 10 of /Volumes/Server/wheelmap/app/stylesheets/relaunch/_header.css.scss
-        from line 8 of /Volumes/Server/wheelmap/app/stylesheets/relaunch.sass
+@charset "utf-8";
+/* line 1, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+a, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, p, pre, span, th, td {
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
 
-5:   top: 0px;
-6:   left: 0px;
-7:   z-index: 1001;
-8:   float: left;
-9:   background: url(/images/bg_header.png);
-10: <<<<<<< HEAD
-11: 
-12:   @media
-13:   only screen and (-webkit-min-device-pixel-ratio: 2),
-14:   only screen and (   min--moz-device-pixel-ratio: 2),
-15:   only screen and (     -o-min-device-pixel-ratio: 2/1),
+/* line 6, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
-Backtrace:
-/Volumes/Server/wheelmap/app/stylesheets/relaunch/_header.css.scss:10
-/Volumes/Server/wheelmap/app/stylesheets/relaunch.sass:8
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/scss/parser.rb:929:in `expected'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/scss/parser.rb:875:in `expected'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/scss/parser.rb:870:in `tok!'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/scss/parser.rb:381:in `block'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/scss/parser.rb:374:in `ruleset'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/scss/parser.rb:398:in `block_child'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/scss/parser.rb:388:in `block_contents'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/scss/parser.rb:59:in `stylesheet'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/scss/parser.rb:28:in `parse'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/engine.rb:327:in `_to_tree'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/engine.rb:258:in `to_tree'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/util.rb:297:in `silence_sass_warnings'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/engine.rb:258:in `to_tree'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/perform.rb:144:in `visit_import'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/perform.rb:18:in `visit'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/base.rb:53:in `map'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/base.rb:53:in `visit_children'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/perform.rb:27:in `visit_children'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/perform.rb:39:in `with_environment'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/perform.rb:26:in `visit_children'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/perform.rb:47:in `visit_root'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/perform.rb:18:in `visit'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/perform.rb:7:in `send'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/visitors/perform.rb:7:in `visit'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/tree/root_node.rb:20:in `render'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/engine.rb:300:in `_render'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/engine.rb:248:in `render'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/util.rb:297:in `silence_sass_warnings'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/engine.rb:248:in `render'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/plugin/compiler.rb:339:in `update_stylesheet'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/plugin/compiler.rb:202:in `update_stylesheets'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/plugin/compiler.rb:200:in `each'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/plugin/compiler.rb:200:in `update_stylesheets'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/plugin.rb:81:in `update_stylesheets'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/plugin.rb:54:in `check_for_updates'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/sass-3.1.12/lib/sass/../sass/plugin/rack.rb:51:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/warden-1.2.1/lib/warden/manager.rb:35:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/warden-1.2.1/lib/warden/manager.rb:34:in `catch'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/warden-1.2.1/lib/warden/manager.rb:34:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/actionpack-3.0.20/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/actionpack-3.0.20/lib/action_dispatch/middleware/head.rb:14:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/rack-1.2.8/lib/rack/methodoverride.rb:24:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/actionpack-3.0.20/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/actionpack-3.0.20/lib/action_dispatch/middleware/flash.rb:182:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/actionpack-3.0.20/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/flash_cookie_session-1.1.3/lib/flash_cookie_session/middleware.rb:18:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/actionpack-3.0.20/lib/action_dispatch/middleware/cookies.rb:302:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/activerecord-3.0.20/lib/active_record/query_cache.rb:32:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/activerecord-3.0.20/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/activerecord-3.0.20/lib/active_record/query_cache.rb:12:in `cache'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/activerecord-3.0.20/lib/active_record/query_cache.rb:31:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/activerecord-3.0.20/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/actionpack-3.0.20/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/activesupport-3.0.20/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/actionpack-3.0.20/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/rack-1.2.8/lib/rack/sendfile.rb:106:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/actionpack-3.0.20/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/actionpack-3.0.20/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/railties-3.0.20/lib/rails/rack/logger.rb:13:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/rack-1.2.8/lib/rack/runtime.rb:17:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/activesupport-3.0.20/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/rack-1.2.8/lib/rack/lock.rb:13:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/rack-1.2.8/lib/rack/lock.rb:13:in `synchronize'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/rack-1.2.8/lib/rack/lock.rb:13:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/actionpack-3.0.20/lib/action_dispatch/middleware/static.rb:30:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/hoptoad_notifier-2.4.11/lib/hoptoad_notifier/user_informer.rb:12:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/railties-3.0.20/lib/rails/application.rb:168:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/railties-3.0.20/lib/rails/application.rb:77:in `send'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/railties-3.0.20/lib/rails/application.rb:77:in `method_missing'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/railties-3.0.20/lib/rails/rack/log_tailer.rb:14:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/rack-1.2.8/lib/rack/content_length.rb:13:in `call'
-/Volumes/Server/wheelmap/vendor/bundle/ruby/1.8/gems/rack-1.2.8/lib/rack/handler/webrick.rb:52:in `service'
-/Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-/Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-/Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-/Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/1.8/webrick/server.rb:162:in `start'
-/Users/NETZPULSEN/.rbenv/versions/ree-1.8.7-2012.02/lib/ruby/1.8/webrick/server.rb:162
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"...bg_header.png);\": expected \"}\", was \"<<<<<<< HEAD\"\A         on line 10 of /Volumes/Server/wheelmap/app/stylesheets/relaunch/_header.css.scss\A         from line 8 of /Volumes/Server/wheelmap/app/stylesheets/relaunch.sass\A \A 5:   top: 0px;\A 6:   left: 0px;\A 7:   z-index: 1001;\A 8:   float: left;\A 9:   background: url(/images/bg_header.png);\A 10: <<<<<<< HEAD\A 11: \A 12:   @media\A 13:   only screen and (-webkit-min-device-pixel-ratio: 2),\A 14:   only screen and (   min--moz-device-pixel-ratio: 2),\A 15:   only screen and (     -o-min-device-pixel-ratio: 2/1),"; }
+/* line 10, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+fieldset, img {
+  border: 0;
+}
+
+/* line 13, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+address, em, th {
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* line 17, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+li {
+  list-style: none;
+}
+
+/* line 20, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+th {
+  font-style: normal;
+  text-align: left;
+}
+
+/* line 24, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+h1, h2, h3, h4, h5, h6, small {
+  font-size: 100%;
+}
+
+/* line 27, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* line 33, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+.msie input, .msie textarea, .msie select {
+  font-size: 100%;
+}
+
+/* line 36, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+header, section, article, aside, footer, time {
+  display: block;
+}
+
+/* line 4, ../../app/stylesheets/basics/_typography.sass */
+html, body {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+}
+
+/* line 7, ../../app/stylesheets/basics/_typography.sass */
+p,
+article li,
+dt, dd,
+h4, h5, h6,
+address,
+footer {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+  font-size: 13px;
+  line-height: 20px;
+}
+/* line 15, ../../app/stylesheets/basics/_typography.sass */
+p.large,
+article li.large,
+dt.large, dd.large,
+h4.large, h5.large, h6.large,
+address.large,
+footer.large {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  bottom: 2px;
+}
+
+/* line 18, ../../app/stylesheets/basics/_typography.sass */
+h2 {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+  bottom: 2px;
+}
+/* line 20, ../../app/stylesheets/basics/_typography.sass */
+h2.large {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+  font-size: 20px;
+  line-height: 20px;
+}
+
+/* line 23, ../../app/stylesheets/basics/_typography.sass */
+h1 {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+  font-size: 37px;
+  line-height: 40px;
+  position: relative;
+}
+/* line 3, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_browser_support.sass */
+.presto h1 {
+  bottom: 1px;
+}
+
+/* line 1, ../../app/stylesheets/relaunch/_default.css.scss */
+body {
+  width: 100%;
+  font-family: Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: 'EntypoRegular';
+  src: url("/fonts/entypo.eot");
+  src: url("/fonts/entypo.eot?#iefix") format("embedded-opentype"), url("/fonts/entypo.woff") format("woff"), url("/fonts/entypo.ttf") format("truetype"), url("/fonts/entypo.svg#EntypoRegular") format("svg");
+}
+
+/* @group Allgemein ================================================================================= */
+/* line 15, ../../app/stylesheets/relaunch/_default.css.scss */
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+/* line 19, ../../app/stylesheets/relaunch/_default.css.scss */
+*:focus {
+  outline: none;
+  border: none;
+}
+
+/* line 25, ../../app/stylesheets/relaunch/_default.css.scss */
+::-moz-selection, ::selection {
+  background: #999;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* @end */
+/* line 33, ../../app/stylesheets/relaunch/_default.css.scss */
+p {
+  font-size: 12px;
+  line-height: 20px;
+  float: left;
+}
+
+/* line 39, ../../app/stylesheets/relaunch/_default.css.scss */
+.content {
+  width: 100%;
+  max-width: 95%;
+  margin: auto;
+}
+
+/* line 44, ../../app/stylesheets/relaunch/_default.css.scss */
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width:760px) {
+  /* line 50, ../../app/stylesheets/relaunch/_default.css.scss */
+  .mobile {
+    display: block;
+  }
+
+  /* line 53, ../../app/stylesheets/relaunch/_default.css.scss */
+  .desktop {
+    display: none;
+  }
+}
+/* line 1, ../../app/stylesheets/relaunch/_links.css.scss */
+a {
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+}
+/* line 5, ../../app/stylesheets/relaunch/_links.css.scss */
+a:visited {
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+}
+/* line 10, ../../app/stylesheets/relaunch/_links.css.scss */
+a:hover {
+  color: #F00;
+  text-decoration: inherit;
+}
+/* line 14, ../../app/stylesheets/relaunch/_links.css.scss */
+a:active {
+  color: #444;
+}
+/* line 17, ../../app/stylesheets/relaunch/_links.css.scss */
+a:focus {
+  outline: none;
+}
+
+/* line 1, ../../app/stylesheets/relaunch/_header.css.scss */
+header {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1001;
+  float: left;
+  background: url(/images/bg_header.png);
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (   min--moz-device-pixel-ratio: 2), only screen and (     -o-min-device-pixel-ratio: 2/1), only screen and (        min-device-pixel-ratio: 2), only screen and (                min-resolution: 192dpi), only screen and (                min-resolution: 2dppx) {
+  /* line 1, ../../app/stylesheets/relaunch/_header.css.scss */
+  header {
+    background-image: url(/images/bg_header@2x.png);
+  }
+}
+
+/* line 22, ../../app/stylesheets/relaunch/_header.css.scss */
+.logo {
+  width: 220px;
+  padding: 36px 0 0 38px;
+  margin: -3px 0 0 0;
+  float: left;
+  background: url(/images/bg_logo.png) center center no-repeat;
+  background-image: -webkit-image-set(url(/images/bg_logo.png) 1x, url(/images/bg_logo@2x.png) 2x);
+  z-index: 1;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: right;
+  color: #999;
+}
+
+/* line 36, ../../app/stylesheets/relaunch/_header.css.scss */
+nav {
+  width: 470px;
+  margin: auto;
+}
+/* line 39, ../../app/stylesheets/relaunch/_header.css.scss */
+nav ul {
+  float: left;
+  margin-right: 20px;
+}
+/* line 43, ../../app/stylesheets/relaunch/_header.css.scss */
+nav li {
+  float: left;
+  list-style: none;
+  padding: 17px 1px 17px 1px;
+}
+/* line 47, ../../app/stylesheets/relaunch/_header.css.scss */
+nav li a {
+  color: #666;
+  padding: 7px 10px 6px 10px;
+}
+/* line 50, ../../app/stylesheets/relaunch/_header.css.scss */
+nav li a:visited {
+  color: #666;
+  padding: 7px 10px 6px 10px;
+}
+/* line 54, ../../app/stylesheets/relaunch/_header.css.scss */
+nav li a:hover {
+  color: #000;
+  background: #DCDBD4;
+  border-radius: 3px;
+  box-shadow: inset 0 2px 2px rgba(170, 170, 170, 0.2);
+  border: 1px solid #c4c2b5;
+  margin: 0 -1px;
+}
+
+/* line 66, ../../app/stylesheets/relaunch/_header.css.scss */
+.accountbar {
+  width: auto;
+  margin: 13px 0 0 0;
+  float: right;
+}
+/* line 70, ../../app/stylesheets/relaunch/_header.css.scss */
+.accountbar li {
+  height: 25px;
+  overflow: hidden;
+  list-style: none;
+  float: left;
+  border-left: 1px solid #B1B0AE;
+  border: 1px solid #c6c5bd;
+  border-radius: 3px;
+  box-shadow: 0px 1px 0px #FFF;
+  /*		background: url(/images/bg_accountbar.png);
+  		box-shadow: 0 2px 2px rgba(170, 170, 170, 0.2);*/
+  margin-left: 3px;
+}
+/* line 82, ../../app/stylesheets/relaunch/_header.css.scss */
+.accountbar li:first-child {
+  border-left: none;
+}
+/* line 85, ../../app/stylesheets/relaunch/_header.css.scss */
+.accountbar li a {
+  height: 24px;
+  float: left;
+}
+/* line 89, ../../app/stylesheets/relaunch/_header.css.scss */
+.accountbar li:hover {
+  box-shadow: inset 0 10px 20px rgba(48, 66, 81, 0.05);
+}
+/* line 90, ../../app/stylesheets/relaunch/_header.css.scss */
+.accountbar li:hover a span:after {
+  position: absolute;
+  left: 24px;
+  top: -5px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  content: "";
+  border-bottom: 5px solid #000;
+}
+/* line 102, ../../app/stylesheets/relaunch/_header.css.scss */
+.accountbar li a.add, .accountbar li a.profil {
+  width: auto;
+  padding: 0 8px;
+  height: 25px;
+  color: #FFF;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* line 111, ../../app/stylesheets/relaunch/_header.css.scss */
+.accountbar li a.add .icon {
+  width: 20px;
+  height: 29px;
+  float: left;
+  margin: -2px 5px 0 -8px;
+  padding: 0px 3px 0 3px;
+  background-color: #87b346;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#97c24e), to(#78a43e));
+  background-image: -webkit-linear-gradient(top, #97c24e, #78a43e);
+  background-image: -moz-linear-gradient(top, #97c24e, #78a43e);
+  background-image: -o-linear-gradient(top, #97c24e, #78a43e);
+  background-image: -ms-linear-gradient(top, #97c24e, #78a43e);
+  background-image: linear-gradient(top, #97c24e, #78a43e);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#97c24e', EndColorStr='#78a43e');
+  border-radius: 3px 0 0 3px;
+}
+/* line 128, ../../app/stylesheets/relaunch/_header.css.scss */
+.accountbar li p {
+  font-size: 12px;
+  font-weight: bold;
+  float: left;
+  padding: 0 6px 0 0;
+  margin: 3px 4px 0 0px;
+  color: #888;
+  /*text-shadow: 0 1px 0 #E8E7E3;*/
+  text-transform: none;
+}
+/* line 138, ../../app/stylesheets/relaunch/_header.css.scss */
+.accountbar li .icon {
+  width: 30px;
+  float: left;
+  margin-top: -2px;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'EntypoRegular', sans-serif;
+  color: #666;
+  text-shadow: 0 1px 0 #E8E7E3;
+}
+
+/* line 151, ../../app/stylesheets/relaunch/_header.css.scss */
+li a.add .icon {
+  margin-top: -4px;
+  color: #FFF;
+  text-shadow: 0 1px 0 #000;
+}
+
+/* line 157, ../../app/stylesheets/relaunch/_header.css.scss */
+.profil p {
+  margin-left: 20px;
+  float: left;
+}
+
+/* line 162, ../../app/stylesheets/relaunch/_header.css.scss */
+.accountbar select {
+  float: left;
+  border: none;
+  padding: 6px 10px 6px 0;
+  margin: 0 2px 0 8px;
+  background: url(/images/bg_accountbar-select.png) no-repeat right;
+  background-position-y: 6px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #888;
+  font-weight: bold;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+@media screen and (max-width:760px) {
+  /* line 179, ../../app/stylesheets/relaunch/_header.css.scss */
+  .logo, .logo:visited {
+    width: 85px;
+    height: 40px;
+    padding: 0;
+    margin: 10px 0 0 0;
+    text-indent: -9999px !important;
+    background: url(/images/bg_mobile_logo.png) center top no-repeat;
+    background-image: -webkit-image-set(url(/images/bg_mobile_logo.png) 1x, url(/images/bg_mobile_logo@2x.png) 2x);
+    color: rgba(255, 255, 255, 0);
+    /*Behelfslösung*/
+  }
+
+  /* line 191, ../../app/stylesheets/relaunch/_header.css.scss */
+  nav {
+    width: auto;
+    float: left;
+  }
+  /* line 194, ../../app/stylesheets/relaunch/_header.css.scss */
+  nav ul {
+    display: none;
+  }
+  /* line 197, ../../app/stylesheets/relaunch/_header.css.scss */
+  nav .mobile {
+    width: 80px;
+    float: left;
+    border: none;
+    padding: 6px 10px 6px 6px;
+    margin: 13px 2px 0 8px;
+    background: url(/images/bg_accountbar-select.png) no-repeat right;
+    background-position-y: 6px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #888;
+    font-weight: bold;
+    border-left: 1px solid #B1B0AE;
+    border: 1px solid #c6c5bd;
+    border-radius: 3px;
+    box-shadow: 0px 1px 0px #FFF;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+  }
+
+  /* line 220, ../../app/stylesheets/relaunch/_header.css.scss */
+  .accountbar li, .accountbar select {
+    width: 30px;
+  }
+
+  /* line 223, ../../app/stylesheets/relaunch/_header.css.scss */
+  .accountbar li a.add .icon {
+    width: 26px;
+  }
+
+  /* line 226, ../../app/stylesheets/relaunch/_header.css.scss */
+  .accountbar select {
+    text-indent: -9999px;
+    background: url(/images/bg_mobile_language.png) top center no-repeat;
+    background-image: -webkit-image-set(url(/images/bg_mobile_language.png) 1x, url(/images/bg_mobile_language@2x.png) 2x);
+  }
+}
+/* line 1, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar {
+  width: 100%;
+  height: 52px;
+  position: absolute;
+  top: 50px;
+  float: left;
+  background: url(/images/bg_toolbar.png) #304151;
+  background-image: -webkit-image-set(url(/images/bg_toolbar.png) 1x, url(/images/bg_toolbar@2x.png) 2x);
+  box-shadow: 0px 0px 10px #444;
+  z-index: 998;
+}
+/* line 11, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .content {
+  max-width: 640px;
+}
+
+/* line 15, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.btn-searchbar {
+  display: none;
+}
+
+/* line 18, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.searchbar {
+  float: left;
+}
+/* line 20, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.searchbar input {
+  width: 160px;
+  float: left;
+  margin: 7px 0 0 0;
+  padding: 11px 0px 9px 4px;
+  border: 1px solid #000;
+  border-radius: 3px 0 0 3px;
+  box-shadow: 0px 1px 0px #566D82;
+  background: #A4ACB4;
+  font-size: 12px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/* line 42, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+::-webkit-input-placeholder, ::-moz-placeholder, input:-moz-placeholder {
+  color: #2D3D4D;
+}
+
+/* firefox 19+ */
+/* line 48, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.searchbar input:focus {
+  width: 200px;
+  background: #FFF;
+}
+
+/* line 53, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .searchbar button {
+  float: left;
+  margin-left: 0px;
+  border-left: none;
+  border-radius: 0 3px 3px 0;
+  padding: 2px 10px 1px 10px;
+  font-family: 'EntypoRegular', sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+/* line 64, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.searchbar button a {
+  color: #FFF;
+}
+
+/* line 68, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.ort-filter {
+  float: left;
+  margin: 7px 20px 0  20px;
+  box-shadow: 0px 1px 0px #566D82;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+/* line 74, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.ort-filter li {
+  width: 44px;
+  height: 36px;
+  float: left;
+  cursor: pointer;
+  border-right: 1px solid #000;
+  opacity: 0.2;
+  background: url(/images/bg_button.png) #4c6277 top right no-repeat;
+  background-image: -webkit-image-set(url(/images/bg_button.png) 1x, url(/images/bg_button@2x.png) 2x);
+  list-style: none;
+}
+/* line 75, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.ort-filter li.active {
+  opacity: 1;
+}
+/* line 87, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.ort-filter li:hover {
+  box-shadow: inset 0 10px 20px rgba(48, 66, 81, 0.3);
+}
+/* line 90, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.ort-filter li:last-child {
+  border-radius: 0 3px 3px 0;
+  border-right: none;
+}
+/* line 94, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.ort-filter li:first-child {
+  border-radius: 3px 0 0 3px;
+}
+/* line 98, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.ort-filter label {
+  display: none;
+}
+/* line 101, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.ort-filter input[type=checkbox] {
+  width: 44px;
+  height: 36px;
+  float: left;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+/* line 113, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.ort-filter li.yes input[type=checkbox] {
+  background-image: url(/images/marker-yes.png);
+}
+/* line 116, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.ort-filter li.limited input[type=checkbox] {
+  background-image: url(/images/marker-limited.png);
+}
+/* line 119, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.ort-filter li.no input[type=checkbox] {
+  background-image: url(/images/marker-no.png);
+}
+/* line 122, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.ort-filter li.unknown input[type=checkbox] {
+  background-image: url(/images/marker-unknown.png);
+}
+/* line 125, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.ort-filter li .tooltip {
+  width: 168px;
+  height: auto;
+  background: #FFF;
+  border-radius: 4px;
+  position: absolute;
+  top: 40px;
+  left: -60px;
+  z-index: 100;
+  text-indent: 0px;
+  box-shadow: 0px 3px 5px #444;
+  border-radius: 4px;
+  display: none;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  -ms-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+/* line 143, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.ort-filter li .tooltip:after {
+  position: absolute;
+  left: 76px;
+  top: -7px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  content: "";
+}
+
+/* line 155, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.yes .tooltip:after {
+  border-bottom: 7px solid #97c34e;
+}
+
+/* line 159, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.limited .tooltip:after {
+  border-bottom: 7px solid #F1BD56;
+}
+
+/* line 163, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.no .tooltip:after {
+  border-bottom: 7px solid #E5002A;
+}
+
+/* line 167, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.unknown .tooltip:after {
+  border-bottom: 7px solid #A5A5A6;
+}
+
+/* line 171, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.wc .tooltip:after {
+  border-bottom: 7px solid #FFFFFF;
+}
+
+/* line 175, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.tooltip h3 {
+  width: 90%;
+  padding: 10px 5% 6px 5%;
+  margin: 0;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px 4px 0 0;
+}
+
+/* line 184, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.yes h3 {
+  background-color: #87b346;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#97c34e), to(#78a33e));
+  background-image: -webkit-linear-gradient(top, #97c34e, #78a33e);
+  background-image: -moz-linear-gradient(top, #97c34e, #78a33e);
+  background-image: -o-linear-gradient(top, #97c34e, #78a33e);
+  background-image: -ms-linear-gradient(top, #97c34e, #78a33e);
+  background-image: linear-gradient(top, #97c34e, #78a33e);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#97c34e', EndColorStr='#78a33e');
+  color: #222;
+}
+
+/* line 196, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.limited h3 {
+  background: #F1BD56;
+  color: #222;
+}
+
+/* line 201, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.no h3 {
+  background: #E5002A;
+  color: #39000A;
+}
+
+/* line 206, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.unknown h3 {
+  background: #A5A5A6;
+  color: #222;
+}
+
+/* line 211, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.tooltip p {
+  font-size: 11px;
+  line-height: 14px;
+  color: #333;
+  width: 90%;
+  padding: 10px 5% 10px 5%;
+}
+
+/* line 219, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.ort-filter li.active:hover .tooltip {
+  display: block;
+}
+
+/* line 224, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar select {
+  float: left;
+  width: auto;
+  padding: 11px 22px 9px 10px;
+  margin: 7px 0 0 0px;
+  border: 1px solid #000;
+  background: url(/images/bg_select.png) #4c6277 top right no-repeat;
+  background-image: -webkit-image-set(url(/images/bg_select.png) 1x, url(/images/bg_select@2x.png) 2x);
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFF;
+  text-shadow: 0 1px 0 #000;
+  box-shadow: 0px 1px 0px #566D82;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+/* line 242, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar select:hover {
+  box-shadow: 0px 1px 0px #566d82, inset 0 10px 20px rgba(48, 66, 81, 0.3);
+  cursor: pointer;
+}
+/* line 247, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar button:hover {
+  box-shadow: 0px 1px 0px #566d82, inset 0 10px 20px rgba(48, 66, 81, 0.3);
+  cursor: pointer;
+}
+/* line 251, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar optgroup {
+  background: #F00;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+/* line 258, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar button {
+  padding: 11px 10px 9px 10px;
+  margin: 7px 0 0 10px;
+  padding: 10px 20px;
+  float: left;
+  background: url(/images/bg_button.png) #4c6277 top right no-repeat;
+  background-image: -webkit-image-set(url(/images/bg_button.png) 1x, url(/images/bg_button@2x.png) 2x);
+  box-shadow: 0px 1px 0px #566D82;
+  border: 1px solid #000;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #FFF;
+  text-shadow: 0 1px 0 #000;
+}
+
+/* line 274, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.notification {
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  z-index: 9999;
+  top: 102px;
+  left: 0px;
+  display: none;
+}
+/* line 283, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.notification.success {
+  background: #6AA74A;
+}
+/* line 287, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.notification.error {
+  background: #D6382F;
+}
+/* line 291, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.notification.alert {
+  background: #F19D46;
+}
+/* line 295, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+.notification span {
+  width: 100%;
+  float: left;
+  text-align: center;
+  margin: 12px 0 0 0;
+  color: #FFF;
+  font-size: 14px;
+}
+
+@media screen and (max-width:760px) {
+  /* line 305, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  .btn-searchbar {
+    display: block;
+    float: left;
+    margin: 7px 0px 0px 10px;
+    padding: 2px 12px 3px 12px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    font-family: 'EntypoRegular', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFF;
+    text-shadow: 0 1px 0 #000;
+    background: url(/images/bg_button.png) #4c6277 top right no-repeat;
+    background-image: -webkit-image-set(url(/images/bg_button.png) 1x, url(/images/bg_button@2x.png) 2x);
+  }
+
+  /* line 323, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  .searchbar {
+    display: none;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    background-color: #3d3d3d;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#363535), to(#454545));
+    background-image: -webkit-linear-gradient(top, #363535, #454545);
+    background-image: -moz-linear-gradient(top, #363535, #454545);
+    background-image: -o-linear-gradient(top, #363535, #454545);
+    background-image: -ms-linear-gradient(top, #363535, #454545);
+    background-image: linear-gradient(top, #363535, #454545);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#363535', EndColorStr='#454545');
+    box-shadow: inset 0 3px 0 #333, 0 0 4px #333;
+    border-top: 1px solid #555;
+  }
+  /* line 342, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  .searchbar input, .searchbar input:focus {
+    width: 80%;
+    margin-left: 5%;
+  }
+
+  /* line 347, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  .searchbar.active {
+    display: block;
+  }
+
+  /* line 350, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  .ort-filter {
+    width: 179px;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: -89px;
+  }
+
+  /* line 357, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar select {
+    width: 44px;
+    float: right;
+    margin-right: 10px;
+    text-indent: -9999px;
+    background: url(/images/bg_mobile_select.png) #4c6277 top center no-repeat;
+    background-image: -webkit-image-set(url(/images/bg_mobile_select.png) 1x, url(/images/bg_mobile_select@2x.png) 2x);
+  }
+}
+/* line 1, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon {
+  margin: 2px;
+  background: url("/icons/icon-sprite.png") no-repeat top left;
+  display: inline-block;
+}
+
+/* line 5, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#2hand {
+  background-position: 0 0px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 10, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#airport {
+  background-position: 0 -22px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 15, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#airport_terminal {
+  background-position: 0 -44px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 20, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#artgallery {
+  background-position: 0 -66px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 25, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#atm {
+  background-position: 0 -88px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 30, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#bank {
+  background-position: 0 -110px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 35, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#bar {
+  background-position: 0 -132px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 40, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#bar_coktail {
+  background-position: 0 -154px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 45, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#barber {
+  background-position: 0 -176px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 50, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#beach {
+  background-position: 0 -198px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 55, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#beautifulview {
+  background-position: 0 -220px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 60, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#biergarten {
+  background-position: 0 -242px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 65, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#bigcity {
+  background-position: 0 -264px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 70, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#boat {
+  background-position: 0 -286px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 75, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#bread {
+  background-position: 0 -308px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 80, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#busstop {
+  background-position: 0 -330px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 85, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#butcher {
+  background-position: 0 -352px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 90, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#cablecar {
+  background-position: 0 -374px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 95, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#camping {
+  background-position: 0 -396px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 100, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#car {
+  background-position: 0 -418px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 105, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#car_repair {
+  background-position: 0 -440px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 110, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#carrental {
+  background-position: 0 -462px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 115, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#castle {
+  background-position: 0 -484px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 120, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#cave {
+  background-position: 0 -506px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 125, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#chemist {
+  background-position: 0 -528px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 130, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#cinema {
+  background-position: 0 -550px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 135, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#clothers_male {
+  background-position: 0 -572px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 140, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#coffee {
+  background-position: 0 -594px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 145, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#communitycentre {
+  background-position: 0 -616px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 150, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#computers {
+  background-position: 0 -638px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 155, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#conveniencestore {
+  background-position: 0 -660px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 160, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#court {
+  background-position: 0 -682px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 165, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#cross {
+  background-position: 0 -704px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 170, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#currencyexchange {
+  background-position: 0 -726px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 175, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#cycling {
+  background-position: 0 -748px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 180, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#dancinghall {
+  background-position: 0 -770px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 185, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#daycare {
+  background-position: 0 -792px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 190, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#dentist {
+  background-position: 0 -814px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 195, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#departmentstore {
+  background-position: 0 -836px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 200, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#drinkingwater {
+  background-position: 0 -858px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 205, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#drugstore {
+  background-position: 0 -880px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 210, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#embassy {
+  background-position: 0 -902px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 215, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#fastfood {
+  background-position: 0 -924px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 220, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#ferry {
+  background-position: 0 -946px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 225, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#fillingstation {
+  background-position: 0 -968px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 230, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#firstaid {
+  background-position: 0 -990px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 235, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#fitness {
+  background-position: 0 -1012px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 240, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#flowers {
+  background-position: 0 -1034px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 245, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#fossils {
+  background-position: 0 -1056px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 250, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#hearing_aids {
+  background-position: 0 -1078px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 255, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#homecenter {
+  background-position: 0 -1100px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 260, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#hospital {
+  background-position: 0 -1122px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 265, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#icon-sprite {
+  background-position: 0 -1144px;
+  width: 22px;
+  height: 19206px;
+}
+
+/* line 270, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#information {
+  background-position: 0 -20350px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 275, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#kiosk {
+  background-position: 0 -20372px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 280, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#lantern {
+  background-position: 0 -20394px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 285, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#laundromat {
+  background-position: 0 -20416px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 290, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#library {
+  background-position: 0 -20438px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 295, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#liquor {
+  background-position: 0 -20460px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 300, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#mall {
+  background-position: 0 -20482px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 305, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#medicalstore {
+  background-position: 0 -20504px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 310, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#medicine {
+  background-position: 0 -20526px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 315, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#memorial {
+  background-position: 0 -20548px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 320, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#motel {
+  background-position: 0 -20570px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 325, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#museum_archeological {
+  background-position: 0 -20592px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 330, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#museum_art {
+  background-position: 0 -20614px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 335, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#music {
+  background-position: 0 -20636px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 340, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#ophthalmologist {
+  background-position: 0 -20658px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 345, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#parking {
+  background-position: 0 -20680px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 350, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#phones {
+  background-position: 0 -20702px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 355, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#photography {
+  background-position: 0 -20724px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 360, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#playground {
+  background-position: 0 -20746px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 365, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#police {
+  background-position: 0 -20768px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 370, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#postal {
+  background-position: 0 -20790px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 375, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#prayer {
+  background-position: 0 -20812px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 380, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#publicart {
+  background-position: 0 -20834px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 385, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#restaurant {
+  background-position: 0 -20856px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 390, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#school {
+  background-position: 0 -20878px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 395, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#shoes {
+  background-position: 0 -20900px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 400, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#social_facility {
+  background-position: 0 -20922px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 405, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#stadium {
+  background-position: 0 -20944px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 410, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#stationery {
+  background-position: 0 -20966px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 415, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#stop {
+  background-position: 0 -20988px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 420, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#stripclub {
+  background-position: 0 -21010px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 425, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#supermarket {
+  background-position: 0 -21032px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 430, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#swimming {
+  background-position: 0 -21054px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 435, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#theater {
+  background-position: 0 -21076px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 440, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#themepark {
+  background-position: 0 -21098px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 445, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#toilets {
+  background-position: 0 -21120px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 450, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#tools {
+  background-position: 0 -21142px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 455, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#train {
+  background-position: 0 -21164px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 460, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#tramway {
+  background-position: 0 -21186px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 465, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#underground {
+  background-position: 0 -21208px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 470, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#university {
+  background-position: 0 -21230px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 475, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#veterinary {
+  background-position: 0 -21252px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 480, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#weights {
+  background-position: 0 -21274px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 485, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#workoffice {
+  background-position: 0 -21296px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 490, ../../app/stylesheets/relaunch/_icons.css.scss */
+.leaflet-marker-icon .icon#zoo {
+  background-position: 0 -21318px;
+  width: 22px;
+  height: 22px;
+}
+
+/* line 2, ../../app/stylesheets/relaunch/_map.css.scss */
+#map {
+  width: 100%;
+  height: 700px;
+  float: left;
+  margin: 100px 0 0 0;
+  background: #E8E0D8;
+}
+
+/* line 10, ../../app/stylesheets/relaunch/_map.css.scss */
+.leaflet-marker-icon, .leaflet-div-icon, .leaflet-clickable, .leaflet-zoom-animated-div-icon {
+  border: 0px solid red !important;
+}
+
+/* line 14, ../../app/stylesheets/relaunch/_map.css.scss */
+.leaflet-popup {
+  padding: 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -khtml-border-radius: 8px;
+  border-radius: 8px;
+}
+
+/* line 21, ../../app/stylesheets/relaunch/_map.css.scss */
+.leaflet-marker-icon.wheelchair_hidden {
+  display: none;
+}
+/* line 25, ../../app/stylesheets/relaunch/_map.css.scss */
+.leaflet-marker-icon.category_hidden {
+  display: none;
+}
+/* line 29, ../../app/stylesheets/relaunch/_map.css.scss */
+.leaflet-marker-icon.yes {
+  background: transparent url("/images/marker_yes.png") 0 0 !important;
+}
+/* line 33, ../../app/stylesheets/relaunch/_map.css.scss */
+.leaflet-marker-icon.no {
+  background: transparent url("/images/marker_no.png") 0 0 !important;
+}
+/* line 37, ../../app/stylesheets/relaunch/_map.css.scss */
+.leaflet-marker-icon.limited {
+  background: transparent url("/images/marker_limited.png") 0 0 !important;
+}
+/* line 41, ../../app/stylesheets/relaunch/_map.css.scss */
+.leaflet-marker-icon.unknown {
+  background: transparent url("/images/marker_unknown.png") 0 0 !important;
+}
+
+/* line 47, ../../app/stylesheets/relaunch/_map.css.scss */
+.leaflet-popup {
+  background-color: #FFF;
+  box-shadow: 0 0 10px #333;
+}
+
+/* line 52, ../../app/stylesheets/relaunch/_map.css.scss */
+.leaflet-popup-tip {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  width: 8px!important;
+  height: 8px!important;
+  margin: -6px auto 0 !important;
+}
+
+@media screen and (max-width:760px) {
+  /* line 60, ../../app/stylesheets/relaunch/_map.css.scss */
+  .leaflet-control-container {
+    display: none;
+  }
+}
+/* line 5, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent {
+  width: 280px;
+  overflow: hidden;
+}
+/* line 9, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent a.more {
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: normal;
+  text-align: left;
+  padding-left: 20px;
+  text-decoration: underline;
+  display: block;
+}
+/* line 19, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent h2 {
+  background-position: 0 2px;
+  padding-left: 20px;
+}
+/* line 23, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent address {
+  padding-left: 20px;
+}
+/* line 26, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent input {
+  float: left;
+  margin-right: 10px;
+}
+/* line 30, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent label {
+  width: auto;
+}
+/* line 33, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent #update_button {
+  position: static;
+  float: right;
+}
+/* line 37, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent #update_spinner {
+  display: none;
+  float: right;
+  margin-right: 5px;
+}
+/* line 42, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent ol {
+  border-top: 1px #cfd7c5 solid;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -o-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -khtml-border-radius: 0px;
+  border-radius: 0px;
+  margin-top: 7px;
+  padding-top: 7px;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 49, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li,
+.olFramedCloudPopupContent label {
+  float: left;
+  font-size: 11px;
+  line-height: 15px;
+  margin: 0px 0px !important;
+  -moz-border-radius: 0px !important;
+  -webkit-border-radius: 0px !important;
+  -o-border-radius: 0px !important;
+  -ms-border-radius: 0px !important;
+  -khtml-border-radius: 0px !important;
+  border-radius: 0px !important;
+}
+/* line 57, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent label {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: left;
+  line-height: 8px;
+}
+/* line 64, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Swiss 721 Light", "Helvetica", "Arial", "sans-serif";
+  font-size: 11px;
+  font-weight: 100;
+}
+/* line 69, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent li strong {
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+  font-weight: bold;
+}
+/* line 74, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent .yes label {
+  color: #86af4d;
+}
+/* line 78, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent .limited label {
+  color: #f19d46;
+}
+/* line 82, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent .no label {
+  color: #d6382f;
+}
+/* line 86, ../../app/stylesheets/partials/map/_popup.sass */
+.olFramedCloudPopupContent.unknown label {
+  color: #8d8d8e;
+}
+
+/* line 1, ../../app/stylesheets/relaunch/_footer.css.scss */
+#footer {
+  width: 100%;
+  height: 30px;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  background: #EDECEA;
+  border-top: 1px solid #FFF;
+  box-shadow: 0px -1px 3px #999999;
+}
+/* line 11, ../../app/stylesheets/relaunch/_footer.css.scss */
+#footer ul.social {
+  float: left;
+}
+/* line 14, ../../app/stylesheets/relaunch/_footer.css.scss */
+#footer ul.credits {
+  float: right;
+}
+/* line 18, ../../app/stylesheets/relaunch/_footer.css.scss */
+#footer li {
+  border-right: 1px solid #CCCAC0;
+  padding: 7px 8px 4px 8px;
+  list-style: none;
+  float: left;
+  font-size: 12px;
+  color: #666;
+}
+/* line 23, ../../app/stylesheets/relaunch/_footer.css.scss */
+#footer li span {
+  float: left;
+}
+/* line 26, ../../app/stylesheets/relaunch/_footer.css.scss */
+#footer li img {
+  float: left;
+  margin-left: 4px;
+}
+/* line 33, ../../app/stylesheets/relaunch/_footer.css.scss */
+#footer a {
+  font-size: 12px;
+  color: #666;
+}
+
+/* line 39, ../../app/stylesheets/relaunch/_footer.css.scss */
+.social li {
+  overflow: visible;
+  border: none;
+  margin-top: -3px;
+}
+
+/* line 45, ../../app/stylesheets/relaunch/_footer.css.scss */
+#footer .counter {
+  float: left;
+  margin-right: 10px;
+  margin-top: 0;
+}
+/* line 49, ../../app/stylesheets/relaunch/_footer.css.scss */
+#footer .counter td {
+  padding: 2px 2px;
+  color: gray;
+  font-family: "HelveticaNeue","Helvetica","Swiss 721","Arial","sans-serif";
+  line-height: 18px;
+  height: 18px;
+}
+/* line 56, ../../app/stylesheets/relaunch/_footer.css.scss */
+#footer .counter span {
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-left: 0;
+  padding: 1px 4px;
+  margin-left: 5px;
+  background: url(/images/bubble-left.png) no-repeat -5px center;
+}
+
+@media screen and (max-width:760px) {
+  /* line 66, ../../app/stylesheets/relaunch/_footer.css.scss */
+  .social {
+    display: none;
+  }
+
+  /* line 69, ../../app/stylesheets/relaunch/_footer.css.scss */
+  .credits li {
+    border-right: none;
+  }
+
+  /* line 72, ../../app/stylesheets/relaunch/_footer.css.scss */
+  .credits span {
+    display: none;
+  }
+}
