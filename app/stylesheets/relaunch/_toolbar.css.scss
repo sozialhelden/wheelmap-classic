@@ -12,7 +12,9 @@
     max-width: 640px;
   }
 }
-
+.btn-searchbar {
+	display: none;
+}
 .searchbar {
   float: left;
   input {
@@ -269,18 +271,83 @@
     text-shadow: 0 1px 0 #000;
   }
 }
+.notification {
+	width: 100%;
+	height: 40px;
+	position: fixed;
+	z-index: 9999;
+	top: 102px;
+	left: 0px;
+	background: #6AA74A;
+	display:none;
+}	
+.notification span {
+	width:100%;
+	float:left;
+	text-align:center;
+	margin: 12px 0 0 0;
+	color: #FFF;
+	font-size: 14px;
+}
 @media screen and (max-width:760px) {
+.btn-searchbar {
+	display: block;
+	
+	float:left;
+	margin: 7px 0px 0px 10px;
+	padding: 2px 12px 3px 12px;
+	
+	border: 1px solid #000;
+	border-radius: 3px;
+	font-family: 'EntypoRegular', sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	color: #FFF;
+	text-shadow: 0 1px 0 #000;
+	
+	background: url(../images/bg_button.png) #4c6277 top right no-repeat;
+	background-image: -webkit-image-set(url(../images/bg_button.png) 1x, url(../images/bg_button@2x.png) 2x);
+}
 .searchbar {
+	display: none;
+	
 	width:100%;
 	height: 50px;
 	position: absolute;
 	top: 50px;
 	left: 0px;
-	background: #FFF;
+	background-color: #3d3d3d;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(54, 53, 53)), to(rgb(69, 69, 69)));
+	background-image: -webkit-linear-gradient(top, rgb(54, 53, 53), rgb(69, 69, 69));
+	background-image: -moz-linear-gradient(top, rgb(54, 53, 53), rgb(69, 69, 69));
+	background-image: -o-linear-gradient(top, rgb(54, 53, 53), rgb(69, 69, 69));
+	background-image: -ms-linear-gradient(top, rgb(54, 53, 53), rgb(69, 69, 69));
+	background-image: linear-gradient(top, rgb(54, 53, 53), rgb(69, 69, 69));
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#363535', EndColorStr='#454545');
+	box-shadow: inset 0 3px 0 #333, 0 0 4px #333;
+	border-top: 1px solid #555;
+	
+	input, input:focus {
+		width:80%;
+		margin-left:5%;
+	}	
+}
+.searchbar.active {
+	display: block;
+}
+.ort-filter {
+	width: 179px;
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	margin-left: -89px;
 }
 #toolbar select {
-	width: 40px;	
+	width: 44px;	
 	float: right;
 	margin-right: 10px;
+	text-indent: -9999px;
+	background: url(/images/bg_mobile_select.png) #4c6277 top center no-repeat;
+	background-image: -webkit-image-set(url(/images/bg_mobile_select.png) 1x, url(/images/bg_mobile_select@2x.png) 2x);
 }
 }
