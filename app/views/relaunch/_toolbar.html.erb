@@ -1,5 +1,6 @@
 <div id="toolbar">
   <div class="content">
+  <div class="btn-searchbar">&#128269;</div>
   <div class="searchbar">
     <form action="/search" method="GET">
       <input type="search" id="search" name="q" value="<%= params[:q].present? ? params[:q] : nil %>" autocomplete="off" placeholder="<%= t('header.searchbar.placeholder') %>" />
@@ -49,5 +50,8 @@
   </select>
 <!--      <button>WC</button>-->
 
+  </div>
+  <div class="notification active success">
+  	<span>Notification Message</span>
   </div>
 </div>
