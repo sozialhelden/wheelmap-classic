@@ -16,25 +16,32 @@
   @include border-radius(8px);
 }
 
-.restaurant {
-  width: 24px;
-  height: 24px;
-  background: url('/icons/restaurant.png') 2px 2px no-repeat;
-}
-.wheelchair-yes {
-  background: transparent url('/images/marker_yes.png') 0 0 !important;
-}
+.leaflet-marker-icon {
 
-.wheelchair-no {
-  background: transparent url('/images/marker_no.png') 0 0 !important;
-}
+  &.wheelchair_hidden {
+    display: none;
+  }
 
-.wheelchair-limited {
-  background: transparent url('/images/marker_limited.png') 0 0 !important;
-}
+  &.category_hidden {
+    display: none;
+  }
 
-.wheelchair-unknown {
-  background: transparent url('/images/marker_unknown.png') 0 0 !important;
+  &.yes {
+    background: transparent url('/images/marker_yes.png') 0 0 !important;
+  }
+
+  &.no {
+    background: transparent url('/images/marker_no.png') 0 0 !important;
+  }
+
+  &.limited {
+    background: transparent url('/images/marker_limited.png') 0 0 !important;
+  }
+
+  &.unknown {
+    background: transparent url('/images/marker_unknown.png') 0 0 !important;
+  }
+
 }
 
 .leaflet-popup {
@@ -42,7 +49,7 @@
   box-shadow: 0 0 10px #333;
 }
 
-.leaflet-popup-tip {	
+.leaflet-popup-tip {
 	background-color: rgba(0, 0, 0, 0.70)!important;
 	width: 8px!important;
 	height: 8px!important;
