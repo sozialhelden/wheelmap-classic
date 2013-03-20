@@ -18,6 +18,7 @@ javascripts:
     - public/javascripts/filter_settings.js
     - public/javascripts/splash.js
     - public/javascripts/application.js
+    - public/javascripts/function.js
 
   relaunch:
     - public/javascripts/jquery.js

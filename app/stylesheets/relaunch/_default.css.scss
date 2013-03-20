@@ -41,3 +41,16 @@ p {
   max-width: 95%;
   margin: auto;
 }
+.mobile {
+	display: none;
+}
+
+
+@media screen and (max-width:760px) {
+	.mobile {
+		display: block;
+	}
+	.desktop {
+		display: none;
+	}
+}
