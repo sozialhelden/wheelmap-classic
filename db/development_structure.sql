@@ -76,7 +76,7 @@ CREATE TABLE `counters` (
   `search_iphone` int(11) DEFAULT '0',
   `search_android` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `delayed_jobs` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -278,6 +278,8 @@ CREATE TABLE `users` (
   `photos_count` int(11) NOT NULL DEFAULT '0',
   `terms` tinyint(1) NOT NULL DEFAULT '0',
   `accepted_at` datetime DEFAULT NULL,
+  `privacy_policy` tinyint(1) DEFAULT '0',
+  `privacy_policy_accepted_at` datetime DEFAULT NULL,
   `reset_password_token` varchar(255) DEFAULT NULL,
   `reset_password_sent_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -387,11 +389,7 @@ INSERT INTO schema_migrations (version) VALUES ('20120628101234');
 
 INSERT INTO schema_migrations (version) VALUES ('20120711130327');
 
-INSERT INTO schema_migrations (version) VALUES ('20120725143229');
-
 INSERT INTO schema_migrations (version) VALUES ('20120726081246');
-
-INSERT INTO schema_migrations (version) VALUES ('20120727060024');
 
 INSERT INTO schema_migrations (version) VALUES ('20120802105205');
 
@@ -422,3 +420,17 @@ INSERT INTO schema_migrations (version) VALUES ('20121128105658');
 INSERT INTO schema_migrations (version) VALUES ('20121219120846');
 
 INSERT INTO schema_migrations (version) VALUES ('20130108144233');
+
+INSERT INTO schema_migrations (version) VALUES ('20130117143229');
+
+INSERT INTO schema_migrations (version) VALUES ('20130122193813');
+
+INSERT INTO schema_migrations (version) VALUES ('20130205114724');
+
+INSERT INTO schema_migrations (version) VALUES ('20130205134253');
+
+INSERT INTO schema_migrations (version) VALUES ('20130205134630');
+
+INSERT INTO schema_migrations (version) VALUES ('20130214133154');
+
+INSERT INTO schema_migrations (version) VALUES ('20130228153529');

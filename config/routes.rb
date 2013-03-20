@@ -35,7 +35,7 @@ Wheelmap::Application.routes.draw do
   end
 
   # TODO reenable feature terms
-  # resources :terms, :only => :index
+  resources :terms, :only => :index
 
   resources :node_types, :only => :index
   resources :search, :only => :index
@@ -54,7 +54,7 @@ Wheelmap::Application.routes.draw do
       get :claim
     end
     # TODO reenable photo routes
-    # resources :photos, :only => [:create, :destroy]
+    resources :photos, :only => [:create, :destroy]
   end
 
   resources :ways, :only => [:index, :show] do

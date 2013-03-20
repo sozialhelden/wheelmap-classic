@@ -74,34 +74,34 @@ describe NodesController do
     end
 
     # TODO reenable feature terms
-    # it "should redirect user to EULA page if terms and privacy policy was not accepted" do
-    #   @another_user.update_attributes(:terms => false, :privacy_policy => false)
-    #   get(:edit, :id => 16581933)
-    #
-    #   response.code.should == '302'
-    # end
-    #
-    # it "should redirect user to EULA page if privacy policy was not accepted" do
-    #   @another_user.update_attributes(:terms => true, :privacy_policy => false)
-    #   get(:edit, :id => 16581933)
-    #
-    #   response.code.should == '302'
-    # end
-    #
-    # it "should redirect user to EULA page if privacy policy was not accepted" do
-    #   @another_user.update_attributes(:terms => false, :privacy_policy => true)
-    #   get(:edit, :id => 16581933)
-    #
-    #   response.code.should == '302'
-    # end
-    #
-    # it "should not redirect user if terms and privacy policy were accepted" do
-    #   @another_user.update_attributes(:terms => true, :privacy_policy => true)
-    #   node.save!
-    #   get(:edit, :id => node.osm_id)
-    #
-    #   response.code.should == '200'
-    # end
+    it "should redirect user to EULA page if terms and privacy policy was not accepted" do
+      @another_user.update_attributes(:terms => false, :privacy_policy => false)
+      get(:edit, :id => 16581933)
+
+      response.code.should == '302'
+    end
+
+    it "should redirect user to EULA page if privacy policy was not accepted" do
+      @another_user.update_attributes(:terms => true, :privacy_policy => false)
+      get(:edit, :id => 16581933)
+
+      response.code.should == '302'
+    end
+
+    it "should redirect user to EULA page if privacy policy was not accepted" do
+      @another_user.update_attributes(:terms => false, :privacy_policy => true)
+      get(:edit, :id => 16581933)
+
+      response.code.should == '302'
+    end
+
+    it "should not redirect user if terms and privacy policy were accepted" do
+      @another_user.update_attributes(:terms => true, :privacy_policy => true)
+      node.save!
+      get(:edit, :id => node.osm_id)
+
+      response.code.should == '200'
+    end
 
   end
 
