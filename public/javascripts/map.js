@@ -1,13 +1,13 @@
 $('.btn-searchbar').click(function() {
 	$('.searchbar').toggleClass('active');
 });
-$('.notification.active').slideDown(500).delay(3000).slideUp(400);
+$('.notification.active').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
 
 addEventListener('load', function() { setTimeout(hideURLbar, 100); }, false);
 	function hideURLbar() {
-	   
-	       window.scrollTo(0,0);
-	   }
+
+  window.scrollTo(0,0);
+}
 var geojson_layer;
 var source = $("#cardTemplate").html();
 ////GRÜN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -117,9 +117,9 @@ map.on('moveend', function(e) {
   $.cookie('last_zoom', map.getZoom(), { expires: 7, path: '/'});
 }).on('popupopen', function(e) {
   $('.update_form').bind('ajax:success', function(xhr, data, status){
-    $('footer').before('<div class="notification">'+ data.message + '</div>')
+    $('#toolbar .content').after('<div class="notification active success" style="display: none;">'+ data.message + '</div>')
   }).bind('ajax:error', function(xhr, data, status){
-    $('footer').before('<div class="alert">'+ data.message + '</div>')
+    $('#toolbar .content').after('<div class="notification active alert" style="display: none;">'+ data.message + '</div>')
   });
 });
 
