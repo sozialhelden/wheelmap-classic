@@ -117,9 +117,9 @@ map.on('moveend', function(e) {
   $.cookie('last_zoom', map.getZoom(), { expires: 7, path: '/'});
 }).on('popupopen', function(e) {
   $('.update_form').bind('ajax:success', function(xhr, data, status){
-    $('#toolbar .content').after('<div class="notification active success" style="display: none;">'+ data.message + '</div>')
+    $('<div class="notification active success"><span>'+ data.message + '</span></div>').insertAfter('#toolbar .content').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
   }).bind('ajax:error', function(xhr, data, status){
-    $('#toolbar .content').after('<div class="notification active alert" style="display: none;">'+ data.message + '</div>')
+    $('<div class="notification active success"><span>'+ data.message + '</span></div>').insertAfter('#toolbar .content').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
   });
 });
 
