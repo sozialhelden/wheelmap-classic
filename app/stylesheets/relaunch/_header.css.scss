@@ -6,8 +6,17 @@ header {
   left: 0px;
   z-index: 1001;
   float: left;
-  background: url(../images/bg_header.png);
-  background-image: -webkit-image-set(url(../images/bg_header.png) 1x, url(../images/bg_header@2x.png) 2x);
+  background: url(/images/bg_header.png);
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    background-image: url(/images/bg_header@2x.png);
+  }
 }
 
 .logo {
