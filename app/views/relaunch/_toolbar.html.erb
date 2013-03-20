@@ -8,33 +8,33 @@
     </form>
   </div>
   <ul class="ort-filter">
-    <li class="yes active">
+    <li class="yes <%= cookies['filter_yes'].present? ? nil : 'active' %>">
       <label>Ja</label>
-      <input type="checkbox" name="" value="" />
+      <input type="checkbox" name="yes" value="yes" <%= cookies['filter_yes'].present? ? 'checked="checked"' : nil %> />
       <div class="tooltip">
         <h3>Rollstuhlgerecht</h3>
         <p>Eingang stufenlos, alle Räume stufenlos, mit behindertengerechtem WC, falls ortsüblich.</p>
       </div>
     </li>
-    <li class="limited active">
+    <li class="limited <%= cookies['filter_limited'].present? ? nil : 'active' %>">
       <label>Teilweise</label>
-      <input type="checkbox" name="" value="" />
+      <input type="checkbox" name="limited" value="limited" <%= cookies['filter_limited'].present? ? 'checked="checked"' : nil %> />
       <div class="tooltip">
         <h3>Teilweise Rollstuhlgerecht</h3>
         <p>Eingang max 1 Stufe (7cm hoch), die wichtigsten Räume stufenlos, WC egal.</p>
       </div>
     </li>
-    <li class="no active">
+    <li class="no <%= cookies['filter_no'].present? ? nil : 'active' %>">
       <label>Nein</label>
-      <input type="checkbox" name="" value="" />
+      <input type="checkbox" name="no" value="no" <%= cookies['filter_no'].present? ? 'checked="checked"' : nil %> />
       <div class="tooltip">
         <h3>Nicht Rollstuhlgerecht</h3>
         <p>Eingang hat höhere oder mehrere Stufen, Räume nicht erreichbar.</p>
       </div>
     </li>
-    <li class="unknown active">
+    <li class="unknown <%= cookies['filter_unknown'].present? ? nil : 'active' %>">
       <label>Unbekannter Status</label>
-      <input type="checkbox" name="" value="" />
+      <input type="checkbox" name="unknown" value="unknown" <%= cookies['filter_unknown'].present? ? 'checked="checked"' : nil %>  />
       <div class="tooltip">
         <h3>Unbekannter Status</h3>
         <p>Hilf mit und markiere diese Orte!</p>
@@ -42,8 +42,8 @@
     </li>
   </ul>
 
-  <select>
-    <option value="">Alle Kategorien</option>
+  <select class="category-filter">
+    <option value="all">Alle Kategorien</option>
     <%- Category.all.sort_by(&:localized_name).each do |category| %>
       <option value="<%= category.identifier%>"><%= category.localized_name %></option>
     <% end %>

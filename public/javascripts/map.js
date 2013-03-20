@@ -1,13 +1,3 @@
-$('.btn-searchbar').click(function() {
-	$('.searchbar').toggleClass('active');
-});
-$('.notification.active').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
-
-addEventListener('load', function() { setTimeout(hideURLbar, 100); }, false);
-	function hideURLbar() {
-
-  window.scrollTo(0,0);
-}
 var geojson_layer;
 var source = $("#cardTemplate").html();
 ////GRÜN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -123,6 +113,16 @@ map.on('moveend', function(e) {
   });
 });
 
+function by(a, b) {
+    return function(f) { return f.properties[a] === b; };
+}
+function filterby(a, b) {
+    return function() { markers.filter(by(a, b)); };
+}
+
+function all() { return true; }
+function none() { return false; }
+
 function requestNodes(bounds) {
 
   var north = bounds._northEast.lat;
@@ -157,11 +157,6 @@ function onEachFeature(feature, layer) {
   layer.bindPopup(popup_html, { closeButton: false, autoPan: false} );
 }
 
-function onEachFilter(feature, layer) {
-  // Filter for wheelchair or category attribute
-  return true;
-}
-
 function initGeoData() {
   // set global variables
   q = $.parseQuery();
@@ -181,20 +176,25 @@ function initGeoData() {
 function parseResponse(data) {
   var new_geojson_layer = new L.GeoJSON(data, {
     pointToLayer: function (feature, latlng) {
+      var classesToAdd = [feature.properties.wheelchair, feature.properties.category]
+      $.each(['yes', 'no', 'limited', 'unknown'], function(index, el){
+        if (feature.properties.wheelchair === el && $.cookie('filter_' + el) === '1') {
+          classesToAdd.push('wheelchair_hidden');
+        }
+      });
       return L.marker(latlng, {
         icon: L.divIcon({
           iconSize:     [40, 33],
           iconAnchor:   [6, 12],
           popupAnchor:  [5, 15],
-          className: 'wheelchair-' + feature.properties.wheelchair,
+          className: classesToAdd.join(' '),
           html: '<div id="'+ feature.properties.icon +'" class="icon"></div>'
         }),
         title: feature.properties.name,
         riseOnHover: true
       });
     },
-    onEachFeature: onEachFeature,
-    filter: onEachFilter
+    onEachFeature: onEachFeature
   });
   map.addLayer(new_geojson_layer);
   if (geojson_layer != undefined)
@@ -202,4 +202,38 @@ function parseResponse(data) {
     map.removeLayer(geojson_layer);
   }
   geojson_layer = new_geojson_layer;
+}
+
+$('.btn-searchbar').click(function() {
+	$('.searchbar').toggleClass('active');
+});
+$('.notification.active').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
+
+$('.ort-filter').each(function(i) {
+  $(this).on('change', function(e) {
+    var filter_class = $(e.target).val();
+    if ($(e.target).is(':checked')) {
+      $('.leaflet-marker-icon.' + filter_class).addClass('wheelchair_hidden');
+      $.cookie('filter_'+filter_class, '1', { expires: 7, path: '/'});
+    } else {
+      $.removeCookie('filter_'+filter_class);
+      $('.leaflet-marker-icon.' + filter_class).removeClass('wheelchair_hidden');
+    }
+  });
+});
+
+$('.category-filter').on('change', function(e){
+  var filter_class = $(e.target).find('option:selected').val()
+  if (filter_class === 'all') {
+    $('.leaflet-marker-icon').removeClass('category_hidden');
+  } else {
+    $('.leaflet-marker-icon').addClass('category_hidden');
+    $('.leaflet-marker-icon.' + filter_class).removeClass('category_hidden');
+  }
+});
+
+addEventListener('load', function() { setTimeout(hideURLbar, 100); }, false);
+	function hideURLbar() {
+
+  window.scrollTo(0,0);
 }
