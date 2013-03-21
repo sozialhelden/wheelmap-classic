@@ -133,6 +133,9 @@ function requestNodes(bounds) {
 }
 
 function onEachFeature(feature, layer) {
+  if (feature.properties.name === null) {
+    feature.properties.name = I18n.t("poi.name."+feature.properties.category+"."+ feature.properties.type)
+  }
   var popup_html = L.Util.template(source, feature.properties);
   layer.bindPopup(popup_html, { closeButton: false, autoPan: false} );
 }
