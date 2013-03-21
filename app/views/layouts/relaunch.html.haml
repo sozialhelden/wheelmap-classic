@@ -4,10 +4,10 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="#{I18n.locale}"> <![endif]-->
 <!--[if gt IE 8]> <!--><html class="no-js" lang="#{I18n.locale}"> <![endif]-->
 %head
-  = include_javascripts :modernizr, :media => 'screen, projection'
   = include_stylesheets :relaunch, :media => 'screen, projection'
   /[if lte IE 8]
     = include_stylesheets 'relaunch.ie', :media => 'screen, projection'
+  = include_javascripts :modernizr, :media => 'screen, projection'
 
   %meta(charset ='utf-8')
   %meta(http-equiv = "X-UA-Compatible")
@@ -24,5 +24,9 @@
 
   = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
   = include_javascripts :relaunch, :media => 'screen, projection'
+  :javascript
+    I18n.defaultLocale = "de";
+    I18n.locale = "#{I18n.locale}";
+
   = content_for :javascript
 </html>
