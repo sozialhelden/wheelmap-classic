@@ -80,7 +80,7 @@
   right: 0;
   }
 .leaflet-bottom {
-  bottom: 0;
+  top: 5px;
   }
 .leaflet-left {
   left: 0;
@@ -324,8 +324,8 @@
 /* attribution and scale controls */
 
 .leaflet-container .leaflet-control-attribution {
-  background-color: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 5px #bbb;
+  /*background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 5px #bbb;*/
   margin: 0;
   }
 .leaflet-control-attribution,
@@ -334,8 +334,9 @@
   color: #333;
   }
 .leaflet-container .leaflet-control-attribution,
+.leaflet-container .leaflet-control-attribution a,
 .leaflet-container .leaflet-control-scale {
-  font-size: 11px;
+  font-size: 9px;
   }
 .leaflet-left .leaflet-control-scale {
   margin-left: 5px;
