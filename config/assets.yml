@@ -29,7 +29,6 @@ javascripts:
     - public/javascripts/leaflet.js
     - public/javascripts/map.js
     - public/javascripts/function.js
-    - public/javascripts/bootstrap-select.js    
 
   modernizr:
     - public/javascripts/modernizr.js
