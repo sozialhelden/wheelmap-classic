@@ -54,6 +54,7 @@ group :default do
   gem 'flash_cookie_session'
   gem 'exifr'
   gem 'awesome_nested_set'
+  gem 'i18n-js'
 end
 
 group :test, :development do

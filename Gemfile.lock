@@ -181,6 +181,8 @@ GEM
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
     i18n (0.5.0)
+    i18n-js (2.1.2)
+      i18n
     inherited_resources (1.2.2)
       has_scope (~> 0.5.0)
       responders (~> 0.6.0)
@@ -404,6 +406,7 @@ DEPENDENCIES
   haml (= 3.1.4)
   has_scope
   hoptoad_notifier
+  i18n-js
   inherited_resources
   jammit
   jquery-rails
