@@ -25,6 +25,8 @@ javascripts:
     - public/javascripts/jquery_ujs.js
     - public/javascripts/jquery.parsequery.js
     - public/javascripts/jquery.cookies.js
+    - public/javascripts/translations.js
+    - public/javascripts/i18n.js
     - public/javascripts/leaflet.js
     - public/javascripts/map.js
 
