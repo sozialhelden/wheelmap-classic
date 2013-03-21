@@ -7,6 +7,5 @@ $('.notification.active').slideDown(500).delay(8000).slideUp(400, function() { $
 
 
 
-$('.test').selectpicker();
 
 });
