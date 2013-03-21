@@ -195,11 +195,6 @@ function parseResponse(data) {
   geojson_layer = new_geojson_layer;
 }
 
-$('.btn-searchbar').click(function() {
-	$('.searchbar').toggleClass('active');
-});
-$('.notification.active').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
-
 $('.ort-filter').each(function(i) {
   $(this).on('change', function(e) {
     var filter_class = $(e.target).val();
