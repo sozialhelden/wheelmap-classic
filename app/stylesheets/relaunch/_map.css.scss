@@ -26,20 +26,27 @@
     display: none;
   }
 
-  &.yes {
-    background: transparent url('/images/marker_yes.png') 0 0 !important;
-  }
+  background: transparent url('/images/marker-sprites.png') no-repeat;
 
-  &.no {
-    background: transparent url('/images/marker_no.png') 0 0 !important;
+  &.yes{
+  background-position: 0 0;
+  width: 40px;
+  height: 33px;
   }
-
-  &.limited {
-    background: transparent url('/images/marker_limited.png') 0 0 !important;
+  &.limited{
+  background-position: 0 -34px;
+  width: 41px;
+  height: 33px;
   }
-
-  &.unknown {
-    background: transparent url('/images/marker_unknown.png') 0 0 !important;
+  &.no{
+  background-position: 0 -68px;
+  width: 40px;
+  height: 33px;
+  }
+  &.unknown{
+  background-position: 0 -102px;
+  width: 40px;
+  height: 33px;
   }
 
 }

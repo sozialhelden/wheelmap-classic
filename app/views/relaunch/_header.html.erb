@@ -10,11 +10,17 @@
       </li>
 
       <li>
-        <%= link_to new_user_session_path, :class => 'profile' do %>
-          <div class="icon">&#128100;</div>
-          <p><%= t('header.navigation.login') %></p>
-        <% end %>
-
+        <%- if user_signed_in? -%>
+          <%= link_to edit_profile_path(current_user), :class => 'profile' do %>
+            <div class="icon">&#128100;</div>
+            <p><%= t('header.navigation.profile') %></p>
+          <% end %>
+        <%-  else -%>
+          <%= link_to new_user_session_path, :class => 'profile' do %>
+            <div class="icon">&#128100;</div>
+            <p><%= t('header.navigation.login') %></p>
+          <% end %>
+        <%- end %>
       </li>
       <li>
         <%= render :partial => 'shared/available_locales' %>

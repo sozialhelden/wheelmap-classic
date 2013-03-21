@@ -1586,6 +1586,10 @@ li a.add .icon {
   border-radius: 8px;
 }
 
+/* line 19, ../../app/stylesheets/relaunch/_map.css.scss */
+.leaflet-marker-icon {
+  background: transparent url("/images/marker-sprites.png") no-repeat;
+}
 /* line 21, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-marker-icon.wheelchair_hidden {
   display: none;
@@ -1594,30 +1598,38 @@ li a.add .icon {
 .leaflet-marker-icon.category_hidden {
   display: none;
 }
-/* line 29, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 31, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-marker-icon.yes {
-  background: transparent url("/images/marker_yes.png") 0 0 !important;
+  background-position: 0 0;
+  width: 40px;
+  height: 33px;
 }
-/* line 33, ../../app/stylesheets/relaunch/_map.css.scss */
-.leaflet-marker-icon.no {
-  background: transparent url("/images/marker_no.png") 0 0 !important;
-}
-/* line 37, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 36, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-marker-icon.limited {
-  background: transparent url("/images/marker_limited.png") 0 0 !important;
+  background-position: 0 -34px;
+  width: 41px;
+  height: 33px;
 }
 /* line 41, ../../app/stylesheets/relaunch/_map.css.scss */
+.leaflet-marker-icon.no {
+  background-position: 0 -68px;
+  width: 40px;
+  height: 33px;
+}
+/* line 46, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-marker-icon.unknown {
-  background: transparent url("/images/marker_unknown.png") 0 0 !important;
+  background-position: 0 -102px;
+  width: 40px;
+  height: 33px;
 }
 
-/* line 47, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 54, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-popup {
   background-color: #FFF;
   box-shadow: 0 0 10px #333;
 }
 
-/* line 52, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 59, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-popup-tip {
   background-color: rgba(0, 0, 0, 0.7) !important;
   width: 8px!important;
@@ -1626,7 +1638,7 @@ li a.add .icon {
 }
 
 @media screen and (max-width:760px) {
-  /* line 60, ../../app/stylesheets/relaunch/_map.css.scss */
+  /* line 67, ../../app/stylesheets/relaunch/_map.css.scss */
   .leaflet-control-container {
     display: none;
   }
