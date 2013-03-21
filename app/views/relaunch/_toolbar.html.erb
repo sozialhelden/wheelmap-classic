@@ -42,7 +42,7 @@
     </li>
   </ul>
 
-  <select class="category-filter">
+  <select class="test">
     <option value="all">Alle Kategorien</option>
     <%- Category.all.sort_by(&:localized_name).each do |category| %>
       <option value="<%= category.identifier%>"  <%= cookies["filter_#{category.identifier}"].present? ? 'selected="selected"' : nil %> ><%= category.localized_name %></option>
