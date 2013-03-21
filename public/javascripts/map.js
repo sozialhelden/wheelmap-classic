@@ -1,16 +1,5 @@
 var geojson_layer;
 var source = $("#cardTemplate").html();
-////GRÜN/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var markeryes = new L.LayerGroup();
-
-////ORANGE/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var markerlimited = new L.LayerGroup();
-
-////ROT/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var markerno = new L.LayerGroup();
-
-////GRAU/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var markerunknown = new L.LayerGroup();
 
 var lat = 52.50521;
 var lon = 13.4231;
@@ -31,15 +20,6 @@ L.tileLayer('http://a.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.
   detectRetina: true
 
 }).addTo(map);
-
-var overlays = {
-    "markeryes": markeryes,
-    "markerlimited": markerlimited,
-    "markerno": markerno,
-    "markerunknown": markerunknown
-};
-
-L.control.layers([], overlays).addTo(map);
 
 var standort = L.icon({
   iconSize:     [1, 1],
