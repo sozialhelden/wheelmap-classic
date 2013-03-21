@@ -89,7 +89,7 @@ class UsersController < ApplicationController
 
     if current_user.errors.empty?
       current_user.save(:validation => false)
-      redirect_to session.delete(:user_return_to)
+      redirect_to session.delete(:user_return_to) || :back
     else
       flash.now[:alert] = current_user.errors.full_messages.to_sentence
       render :template => 'terms/index'
