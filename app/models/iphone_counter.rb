@@ -42,7 +42,7 @@ class IphoneCounter < ActiveRecord::Base
 
   def remove_whitespace
     app_version    =  app_version.strip    unless app_version.blank?
-    device_version =  device_version.srip  unless device_version.blank?
+    device_version =  device_version.strip unless device_version.blank?
     install_id     =  install_id.strip     unless install_id.blank?
     os_version     =  os_version.strip     unless os_version.blank?
   end
