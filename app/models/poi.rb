@@ -289,7 +289,7 @@ class Poi < ActiveRecord::Base
     {
         :type       => 'Feature',
         :geometry   => { :type => 'Point', :coordinates  => [ self.lon, self.lat ] },
-        :properties => { 'name'       => headline,
+        :properties => { 'name'       => name,
                          'address'    => address || '',
                          'wheelchair' => wheelchair,
                          'id'         => osm_id,
