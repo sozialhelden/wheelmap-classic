@@ -1,5 +1,12 @@
+$(document).ready(function() {
+
 $('.btn-searchbar').click(function() {
-	console.log(test);
 	$('.searchbar').toggleClass('active');
 });
-console.log('test');
+$('.notification.active').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
+
+
+
+$('.test').selectpicker();
+
+});
