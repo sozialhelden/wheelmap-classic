@@ -26,10 +26,6 @@ class ChangePrimaryAndForeignKeysTo64BitBigint < ActiveRecord::Migration
     end
 
     change_table :photos do |t|
-      t.change :changeset_id, :bigint rescue nil
-    end
-
-    change_table :photos do |t|
       t.change :poi_id,  :bigint rescue nil
       t.change :user_id, :bigint rescue nil
     end
