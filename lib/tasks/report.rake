@@ -41,7 +41,7 @@ namespace :report do
     %w{device_versions os_versions app_versions}.each do |hash_method|
       IphoneCounter.send(hash_method.to_sym).each do |source, value|
         queue.add hash_method.singularize => {
-          :source => source,
+          :source => source.strip,
           :measure_time => rounded_time,
           :value => value
         }
