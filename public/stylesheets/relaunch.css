@@ -51,7 +51,7 @@ p {
   display: none;
 }
 
-@media screen and (max-width:760px) {
+@media screen and (max-width: 760px) {
   /* line 50, ../../app/stylesheets/relaunch/_default.css.scss */
   .mobile {
     display: block;
@@ -99,7 +99,7 @@ header {
   float: left;
   background: url(/images/bg_header.png);
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (   min--moz-device-pixel-ratio: 2), only screen and (     -o-min-device-pixel-ratio: 2/1), only screen and (        min-device-pixel-ratio: 2), only screen and (                min-resolution: 192dpi), only screen and (                min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   /* line 1, ../../app/stylesheets/relaunch/_header.css.scss */
   header {
     background-image: url(/images/bg_header@2x.png);
@@ -281,7 +281,7 @@ li a.add .icon {
   appearance: none;
 }
 
-@media screen and (max-width:760px) {
+@media screen and (max-width: 760px) {
   /* line 179, ../../app/stylesheets/relaunch/_header.css.scss */
   .logo, .logo:visited {
     width: 85px;
@@ -424,7 +424,7 @@ li a.add .icon {
 /* line 68, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 .ort-filter {
   float: left;
-  margin: 7px 20px 0  20px;
+  margin: 7px 20px 0 20px;
   box-shadow: 0px 1px 0px #566D82;
   border: 1px solid #000;
   border-radius: 3px;
@@ -742,7 +742,7 @@ li a.add .icon {
   text-shadow: 0 1px 0 #000;
 }
 
-@media screen and (max-width:760px) {
+@media screen and (max-width: 760px) {
   /* line 356, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   .btn-searchbar {
     display: block;
@@ -818,7 +818,7 @@ li a.add .icon {
 
 /* line 5, ../../app/stylesheets/relaunch/_icons.css.scss */
 .leaflet-marker-icon .icon#2hand {
-  background-position: 0 0px;
+  background-position: 0 -0px;
   width: 22px;
   height: 22px;
 }
@@ -1519,11 +1519,10 @@ li a.add .icon {
 /* line 13, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-popup {
   padding: 10px;
-  -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
-  -o-border-radius: 8px;
+  -moz-border-radius: 8px;
   -ms-border-radius: 8px;
-  -khtml-border-radius: 8px;
+  -o-border-radius: 8px;
   border-radius: 8px;
 }
 
@@ -1573,12 +1572,12 @@ li a.add .icon {
 /* line 58, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-popup-tip {
   background-color: rgba(0, 0, 0, 0.7) !important;
-  width: 8px!important;
-  height: 8px!important;
+  width: 8px !important;
+  height: 8px !important;
   margin: -6px auto 0 !important;
 }
 
-@media screen and (max-width:760px) {
+@media screen and (max-width: 760px) {
   /* line 66, ../../app/stylesheets/relaunch/_map.css.scss */
   .leaflet-control-container {
     display: none;
@@ -1632,11 +1631,10 @@ li a.add .icon {
 /* line 42, ../../app/stylesheets/partials/map/_popup.sass */
 .olFramedCloudPopupContent ol {
   border-top: 1px #cfd7c5 solid;
-  -moz-border-radius: 0px;
   -webkit-border-radius: 0px;
-  -o-border-radius: 0px;
+  -moz-border-radius: 0px;
   -ms-border-radius: 0px;
-  -khtml-border-radius: 0px;
+  -o-border-radius: 0px;
   border-radius: 0px;
   margin-top: 7px;
   padding-top: 7px;
@@ -1650,11 +1648,10 @@ li a.add .icon {
   font-size: 11px;
   line-height: 15px;
   margin: 0px 0px !important;
-  -moz-border-radius: 0px !important;
   -webkit-border-radius: 0px !important;
-  -o-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
   -ms-border-radius: 0px !important;
-  -khtml-border-radius: 0px !important;
+  -o-border-radius: 0px !important;
   border-radius: 0px !important;
 }
 /* line 57, ../../app/stylesheets/partials/map/_popup.sass */
@@ -1767,7 +1764,7 @@ li a.add .icon {
   background: url(/images/bubble-left.png) no-repeat -5px center;
 }
 
-@media screen and (max-width:760px) {
+@media screen and (max-width: 760px) {
   /* line 66, ../../app/stylesheets/relaunch/_footer.css.scss */
   .social {
     display: none;
