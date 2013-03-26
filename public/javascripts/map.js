@@ -14,9 +14,9 @@ var map = L.map('map', {
 });
 
 L.tileLayer('http://a.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.png', {
-  maxZoom: 17,
+  maxZoom: 19,
   minZoom: 2,
-  attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+  attribution: '&copy; Data under ODbL by <a href="http://osm.org/copyright">OpenStreetMap</a>, Map Icons Collection CC-By-SA by <a href="http://mapicons.nicolasmollet.com/">Nicolas Mollet</a>',
   detectRetina: true
 
 }).addTo(map);
@@ -226,7 +226,7 @@ $('.category-filter').on('change', function(e){
 });
 
 addEventListener('load', function() { setTimeout(hideURLbar, 100); }, false);
-	function hideURLbar() {
+  function hideURLbar() {
 
   window.scrollTo(0,0);
 }
