@@ -26,7 +26,7 @@ namespace :report do
   end
 
   desc 'Report all metrics every hour'
-  task :hourly => [:regions, :iphone] do
+  task :hourly => [:regions, :photos, :iphone] do
 
   end
 
@@ -47,6 +47,21 @@ namespace :report do
         }
       end
     end
+    queue.submit unless queue.empty?
+  end
+
+  desc 'Report Photos'
+  task :photos => :environment do
+    time = Time.now.to_i
+    rounded_time = time - (time % 60)
+    hostname = `hostname`.gsub(/\n/, '')
+    queue = Librato::Metrics::Queue.new
+    metric_name = "photo_count"
+    queue.add metric_name =>
+    { :source => hostname,
+      :measure_time => rounded_time,
+      :value => Photo.count
+    }
     queue.submit unless queue.empty?
   end
 
