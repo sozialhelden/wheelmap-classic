@@ -161,7 +161,7 @@ a.button {
   background-image: -moz-linear-gradient(center bottom, #8ab74c 0%, #a1c175 50%, #bad594 100%);
   background-image: linear-gradient(center bottom, #8ab74c 0%, #a1c175 50%, #bad594 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#8ab74c', startColorstr='#bad594', gradientType='0');
-  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+  text-shadow: rgba(255, 255, 255, 0.5), 0, 1px, 1px;
 }
 /* line 26, ../../app/stylesheets/basics/_buttons.sass */
 a.button:hover {
@@ -196,16 +196,13 @@ ul.bullets li {
   padding-left: 20px;
   background-image: url(/images/icons.png);
   background-position: 0 -80px;
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
+  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-  vertical-align: baseline;
-}
-/* line 7, ../../vendor/bundle/ruby/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-.print {
+  zoom: 1;
   *display: inline;
+  vertical-align: baseline;
 }
 
 /* line 14, ../../app/stylesheets/basics/_icons.sass */
@@ -215,16 +212,13 @@ ul.bullets li {
   padding-left: 20px;
   background-image: url(/images/icons.png);
   background-position: 0 -100px;
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
+  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-  vertical-align: baseline;
-}
-/* line 7, ../../vendor/bundle/ruby/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-.mail {
+  zoom: 1;
   *display: inline;
+  vertical-align: baseline;
 }
 
 /* line 18, ../../app/stylesheets/basics/_icons.sass */
@@ -234,16 +228,13 @@ ul.bullets li {
   padding-left: 20px;
   background-image: url(/images/icons.png);
   background-position: 0 -120px;
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
+  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-  vertical-align: baseline;
-}
-/* line 7, ../../vendor/bundle/ruby/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-.link {
+  zoom: 1;
   *display: inline;
+  vertical-align: baseline;
 }
 
 /* line 23, ../../app/stylesheets/basics/_icons.sass */
@@ -253,17 +244,14 @@ ul.bullets li {
   padding-left: 20px;
   background-image: url(/images/icons.png);
   background-position: 0 0px;
-  display: -moz-inline-box;
-  -moz-box-orient: vertical;
+  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
   vertical-align: baseline;
   background-image: url(/images/icons/arrow-circle-double.png);
-}
-/* line 7, ../../vendor/bundle/ruby/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/css3/_inline-block.scss */
-.refresh {
-  *display: inline;
 }
 
 /* line 2, ../../app/stylesheets/basics/_open_layers.sass */
@@ -294,7 +282,7 @@ ul.bullets li {
   font-style: normal;
   padding: 5px 20px 1px 0;
   z-index: 1000;
-  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+  text-shadow: rgba(255, 255, 255, 0.5), 0, 1px, 1px;
 }
 /* line 30, ../../app/stylesheets/basics/_open_layers.sass */
 #map .olControlAttribution a, #map .olControlPermalink a {
@@ -442,7 +430,7 @@ ul.bullets li {
   background-image: -moz-linear-gradient(center bottom, #8ab74c 0%, #a1c175 50%, #bad594 100%);
   background-image: linear-gradient(center bottom, #8ab74c 0%, #a1c175 50%, #bad594 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#8ab74c', startColorstr='#bad594', gradientType='0');
-  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+  text-shadow: rgba(255, 255, 255, 0.5), 0, 1px, 1px;
   -moz-border-radius-bottomleft: 0;
   -webkit-border-bottom-left-radius: 0;
   -khtml-border-bottom-left-radius: 0;
@@ -509,7 +497,7 @@ ul.bullets li {
   background-image: -moz-linear-gradient(center bottom, #f48410 0%, #f19d46 50%, #f8b672 100%);
   background-image: linear-gradient(center bottom, #f48410 0%, #f19d46 50%, #f8b672 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#f48410', startColorstr='#f8b672', gradientType='0');
-  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+  text-shadow: rgba(255, 255, 255, 0.5), 0, 1px, 1px;
   height: 21px;
   line-height: 21px;
   text-decoration: none;
@@ -552,10 +540,9 @@ ul.bullets li {
   -webkit-border-radius: 12px;
   -khtml-border-radius: 12px;
   border-radius: 12px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 1px 8px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2), 0, 1px, 8px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.2), 0, 1px, 8px;
+  box-shadow: rgba(0, 0, 0, 0.2), 0, 1px, 8px;
   cursor: pointer;
 }
 /* line 103, ../../app/stylesheets/basics/_header.sass */
@@ -717,7 +704,7 @@ form.formtastic input[type='submit'] {
   background-image: -moz-linear-gradient(center bottom, #8ab74c 0%, #a1c175 50%, #bad594 100%);
   background-image: linear-gradient(center bottom, #8ab74c 0%, #a1c175 50%, #bad594 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#8ab74c', startColorstr='#bad594', gradientType='0');
-  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+  text-shadow: rgba(255, 255, 255, 0.5), 0, 1px, 1px;
 }
 /* line 26, ../../app/stylesheets/basics/_buttons.sass */
 form.formtastic input[type='submit']:hover {
@@ -845,10 +832,9 @@ hr {
   border-radius: 15px;
   overflow: hidden;
   *zoom: 1;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 15px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1), 0, 2px, 15px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1), 0, 2px, 15px;
+  box-shadow: rgba(0, 0, 0, 0.1), 0, 2px, 15px;
 }
 
 /* line 31, ../../app/stylesheets/basics/_main.sass */
@@ -1068,10 +1054,9 @@ hr {
   padding-bottom: 20px;
   background-color: white;
   border: 1px solid #e6e6e6;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 10px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 10px 0;
-  -o-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 10px 0;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 10px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1), 0, 2px, 10px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1), 0, 2px, 10px;
+  box-shadow: rgba(0, 0, 0, 0.1), 0, 2px, 10px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -khtml-border-radius: 3px;
@@ -1157,7 +1142,7 @@ dl {
   background-color: #f9faf9;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, white), color-stop(0.5, #f9faf9), color-stop(1, #f4f5f4));
   background-image: -moz-linear-gradient(center bottom, #f4f5f4 0%, #f9faf9 50%, white 100%);
-  background-image: linear-gradient(center bottom, #f4f5f4 0%, #f9faf9 50%, white 100%);
+  background-image: linear-gradient(center bottom, #f4f5f4 0%, #f9faf9 50%, #ffffff 100%);
   filter: progid:DXImageTransform.Microsoft.Gradient(endColorstr='#f4f5f4', startColorstr='white', gradientType='0');
   display: block;
   padding: 30px 20px;
@@ -1311,7 +1296,7 @@ table#provider td {
 .flash {
   margin-bottom: 20px;
   padding: 10px;
-  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 1px;
+  text-shadow: rgba(255, 255, 255, 0.5), 0, 1px, 1px;
   text-align: center;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -1347,12 +1332,12 @@ table#provider td {
   color: black;
 }
 
-/* line 30, ../../app/stylesheets/node.sass */
+/* line 36, ../../app/stylesheets/node.sass */
 body, html {
   font-family: HelveticaNeue, Helvetica, "Swiss 721", Arial, sans-serif;
 }
 
-/* line 34, ../../app/stylesheets/node.sass */
+/* line 40, ../../app/stylesheets/node.sass */
 .clear {
   clear: both;
   display: block;
@@ -1362,7 +1347,7 @@ body, html {
   height: 0;
 }
 
-/* line 42, ../../app/stylesheets/node.sass */
+/* line 48, ../../app/stylesheets/node.sass */
 .node-footer {
   font-size: xx-small;
 }
