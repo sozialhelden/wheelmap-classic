@@ -17,6 +17,7 @@ public/sitemap_*
 public/system/sitemap*
 public/system/uploads*
 vendor/bundle
+.sass-cache
 
 wheelmap.esproj/Project.espressostorage
 

@@ -6,10 +6,10 @@ group :default do
   gem 'activerecord-import', '<0.3.0', :require => false
   gem 'oauth'
   gem 'devise'
-  gem 'compass', '0.10.6'
+  gem 'compass'
   gem 'redgreengrid', :git => 'git@github.com:christoph-buente/redgreengrid.git'
-  gem 'haml', "3.1.4"
-  gem 'sass', "3.1.12"
+  gem 'haml'
+  gem 'sass'
   gem 'geoip'
   gem 'formtastic', '1.2.4'
   gem 'delayed_job'
