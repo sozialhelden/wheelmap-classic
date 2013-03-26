@@ -90,6 +90,8 @@
         = form.file_field :image, :rel => node_photos_path(@node)
     - else
       = link_to t('nodes.show.link.upload'), terms_path, :class => 'button'
+  - else
+    = link_to t('nodes.show.link.upload'), new_user_session_path, :class => 'button'
 
 
   =javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false"
