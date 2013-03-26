@@ -1,4 +1,3 @@
-
 #map {
   width: 100%;
   height: 700px;
@@ -18,6 +17,8 @@
 
 .leaflet-marker-icon {
 
+  background: transparent url('/images/marker-sprites.png') no-repeat;
+
   &.wheelchair_hidden {
     display: none;
   }
@@ -26,27 +27,25 @@
     display: none;
   }
 
-  background: transparent url('/images/marker-sprites.png') no-repeat;
-
   &.yes{
-  background-position: 0 0;
-  width: 40px;
-  height: 33px;
+    background-position: 0 0;
+    width: 40px;
+    height: 33px;
   }
   &.limited{
-  background-position: 0 -34px;
-  width: 41px;
-  height: 33px;
+    background-position: 0 -34px;
+    width: 41px;
+    height: 33px;
   }
   &.no{
-  background-position: 0 -68px;
-  width: 40px;
-  height: 33px;
+    background-position: 0 -68px;
+    width: 40px;
+    height: 33px;
   }
   &.unknown{
-  background-position: 0 -102px;
-  width: 40px;
-  height: 33px;
+    background-position: 0 -102px;
+    width: 40px;
+    height: 33px;
   }
 
 }
@@ -64,7 +63,7 @@
 }
 
 @media screen and (max-width:760px) {
-.leaflet-control-container {
-	display:none;
-}
+  .leaflet-control-container {
+    display:none;
+  }
 }
