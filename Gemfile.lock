@@ -74,6 +74,8 @@ GEM
       activerecord (>= 3.0.0)
     babosa (0.3.8)
     bcrypt-ruby (3.0.1)
+    bootstrap-sass (2.3.1.0)
+      sass (~> 3.2)
     bourne (1.1.2)
       mocha (= 0.10.5)
     builder (2.1.2)
@@ -383,6 +385,7 @@ DEPENDENCIES
   autotest
   awesome_nested_set
   big_sitemap!
+  bootstrap-sass
   capistrano
   capistrano-ext
   capistrano-maintenance
