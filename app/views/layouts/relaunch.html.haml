@@ -4,15 +4,14 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="#{I18n.locale}"> <![endif]-->
 <!--[if gt IE 8]> <!--><html class="no-js" lang="#{I18n.locale}"> <![endif]-->
 %head
-  = include_stylesheets :relaunch, :media => 'screen, projection'
-  /[if lte IE 8]
-    = include_stylesheets 'relaunch.ie', :media => 'screen, projection'
-  = include_javascripts :modernizr, :media => 'screen, projection'
-
   %meta(charset ='utf-8')
   %meta(http-equiv = "X-UA-Compatible")
   %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0, user-scalable=0"}
 
+  = include_stylesheets :relaunch, :media => 'screen, projection'
+  /[if lte IE 8]
+    = include_stylesheets 'relaunch.ie', :media => 'screen, projection'
+  = include_javascripts :modernizr, :media => 'screen, projection'
 
 %body
   = render :partial => 'relaunch/header'
