@@ -10,6 +10,7 @@ group :default do
   gem 'redgreengrid', :git => 'git@github.com:christoph-buente/redgreengrid.git'
   gem 'haml'
   gem 'sass'
+  gem 'bootstrap-sass'
   gem 'geoip'
   gem 'formtastic', '1.2.4'
   gem 'delayed_job'
