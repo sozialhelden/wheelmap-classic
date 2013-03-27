@@ -1,31 +1,3 @@
-- content_for :javascript do
-  :javascript
-    $(document).ready(function() {
-      var height = $(window).height();
-        var headerheight = 102;
-        $('#map').css('height', height-headerheight);
-
-          $(window).resize(function() {
-              var height = $(window).height();
-              var headerheight = 102;
-              $('#map').css('height', height-headerheight);
-          });
-
-
-
-        $('.ort-filter li').click(function() {
-          $(this).toggleClass('active');
-        });
-
-
-
-      addEventListener("load", function() { setTimeout(hideURLbar, 100); }, false);
-      function hideURLbar() {
-        window.scrollTo(0,0);
-      }
-      requestNodes(map.getBounds());
-    });
-
 %section#map
   %script{:type => "text/x-handlebars-template", :id => "cardTemplate"}
     .olFramedCloudPopupContent{:id => 'featurePopup_content_{id}'}
