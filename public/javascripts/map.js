@@ -13,6 +13,7 @@ var map = L.map('map', {
   trackResize: true
 });
 
+// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 L.tileLayer('http://{s}.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.png', {
   maxZoom: 19,
   minZoom: 2,
@@ -176,7 +177,7 @@ function parseResponse(data) {
       return L.marker(latlng, {
         icon: L.divIcon({
           iconSize:     [40, 33],
-          iconAnchor:   [6, 12],
+          iconAnchor:   [14, 30],
           popupAnchor:  [5, 15],
           className: classesToAdd.join(' '),
           html: '<div id="'+ feature.properties.icon +'" class="icon"></div>'
@@ -225,8 +226,26 @@ $('.category-filter').on('change', function(e){
   })
 });
 
-addEventListener('load', function() { setTimeout(hideURLbar, 100); }, false);
-  function hideURLbar() {
+$(document).ready(function() {
+  var height = $(window).height();
+    var headerheight = 102;
+    $('#map').css('height', height-headerheight);
 
-  window.scrollTo(0,0);
-}
+      $(window).resize(function() {
+          var height = $(window).height();
+          var headerheight = 102;
+          $('#map').css('height', height-headerheight);
+      });
+
+
+
+    $('.ort-filter li').click(function() {
+      $(this).toggleClass('active');
+    });
+
+  addEventListener("load", function() { setTimeout(hideURLbar, 100); }, false);
+  function hideURLbar() {
+    window.scrollTo(0,0);
+  }
+  requestNodes(map.getBounds());
+});
