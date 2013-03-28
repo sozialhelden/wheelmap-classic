@@ -24,11 +24,20 @@ javascripts:
     - public/javascripts/jquery_ujs.js
     - public/javascripts/jquery.parsequery.js
     - public/javascripts/jquery.cookies.js
-    - public/javascripts/translations.js
-    - public/javascripts/i18n.js
-    - public/javascripts/leaflet.js
-    - public/javascripts/map.js
-    - public/javascripts/function.js
+    - public/javascripts/bootstrap/bootstrap-transition.js
+    - public/javascripts/bootstrap/bootstrap-affix.js
+    - public/javascripts/bootstrap/bootstrap-alert.js
+    - public/javascripts/bootstrap/bootstrap-button.js
+    # - public/javascripts/bootstrap/bootstrap-carousel.js
+    - public/javascripts/bootstrap/bootstrap-collapse.js
+    - public/javascripts/bootstrap/bootstrap-dropdown.js
+    - public/javascripts/bootstrap/bootstrap-modal.js
+    # - public/javascripts/bootstrap/bootstrap-scrollspy.js
+    - public/javascripts/bootstrap/bootstrap-tab.js
+    - public/javascripts/bootstrap/bootstrap-tooltip.js
+    - public/javascripts/bootstrap/bootstrap-popover.js
+    - public/javascripts/bootstrap/bootstrap-select.js
+    # - public/javascripts/bootstrap/bootstrap-typeahead.js
 
   modernizr:
     - public/javascripts/modernizr.js
@@ -47,10 +56,9 @@ stylesheets:
 
   relaunch:
     - public/stylesheets/relaunch.css
-    - public/stylesheets/leaflet.css
 
   relaunch.ie:
-    - public/stylesheets/leaflet.ie.css
+    - public/stylesheets/leaflet/leaflet.ie.css
 
   node:
     - public/stylesheets/node.css
