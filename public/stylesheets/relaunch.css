@@ -8295,27 +8295,26 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 .bootstrap-select.btn-group {
   float: none;
   display: inline-block;
-  margin-bottom: 10px;
   margin-left: 0;
 }
-/* line 16, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 15, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group[class*="span"] {
   float: none;
   display: inline-block;
   margin-bottom: 10px;
   margin-left: 0;
 }
-/* line 24, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 23, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select .btn {
   width: 220px;
 }
-/* line 26, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 25, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select .btn:focus {
   outline: thin dotted #333333 !important;
   outline: 5px auto -webkit-focus-ring-color !important;
   outline-offset: -2px;
 }
-/* line 34, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 33, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group .btn .filter-option {
   overflow: hidden;
   position: absolute;
@@ -8323,92 +8322,92 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   right: 25px;
   text-align: left;
 }
-/* line 41, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 40, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group .btn .caret {
   position: absolute;
   right: 12px;
 }
-/* line 46, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 45, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group > .disabled, .bootstrap-select.btn-group .dropdown-menu li.disabled > a {
   cursor: not-allowed;
 }
-/* line 49, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 48, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group[class*="span"] .btn {
   width: 100%;
 }
-/* line 52, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 51, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group .dropdown-menu {
   min-width: 100%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 57, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 56, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group .dropdown-menu dt {
   display: block;
   padding: 3px 20px;
   cursor: default;
 }
-/* line 63, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 62, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group .div-contain {
   overflow: hidden;
 }
-/* line 66, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 65, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group .dropdown-menu li > a {
   min-height: 20px;
 }
-/* line 67, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 66, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group .dropdown-menu li > a.opt {
   padding-left: 35px;
 }
 
-/* line 75, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 74, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 bootstrap-select.btn-group .dropdown-menu li > a {
   min-height: 20px;
 }
 
-/* line 81, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 80, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group .dropdown-menu li small {
   padding-left: 0.5em;
 }
-/* line 84, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 83, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group .dropdown-menu li:not(.disabled) > a:hover small {
   color: #64b1d8;
   color: rgba(255, 255, 255, 0.4);
 }
-/* line 88, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 87, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group .dropdown-menu li > dt small {
   font-weight: normal;
 }
-/* line 92, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 91, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a i.check-mark {
   visibility: visible;
   display: inline-block;
   margin-left: 20px;
 }
-/* line 98, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 97, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group .dropdown-menu li a i.check-mark {
   visibility: hidden;
   margin-left: 20px;
 }
-/* line 102, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 101, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group .dropdown-menu li small {
   padding-left: 0.5em;
 }
-/* line 105, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 104, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group .dropdown-menu li:not(.disabled) > a:hover small {
   color: #64b1d8;
   color: rgba(255, 255, 255, 0.4);
 }
-/* line 109, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 108, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group .dropdown-menu li > dt small {
   font-weight: normal;
 }
-/* line 113, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 112, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group.show-menu-arrow .dropdown-menu {
   overflow-y: visible !important;
 }
-/* line 115, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 114, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group.show-menu-arrow .dropdown-menu::after {
   position: absolute;
   top: -6px;
@@ -8419,7 +8418,7 @@ bootstrap-select.btn-group .dropdown-menu li > a {
   border-left: 6px solid transparent;
   content: '';
 }
-/* line 125, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
+/* line 124, ../../app/stylesheets/relaunch/_bootstrap-select.css.scss */
 .bootstrap-select.btn-group.show-menu-arrow .dropdown-menu::before {
   position: absolute;
   top: -7px;
