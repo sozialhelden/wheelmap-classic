@@ -1,0 +1,17 @@
+#toolbar
+  .row-fluid
+    %form.form-inline{:action =>"/search", :method => "GET", :style => 'display:inline-block'}
+      %input.input-medium#search{:type => "search", :name => "q", :value => params[:q].present? ? params[:q] : nil, :autocomplete => "off", :placeholder => t('header.searchbar.placeholder')}
+      %button.btn.btn-info{:type => "submit", :value => t('header.searchbar.find')}
+        %i.icon-search.icon-white
+
+    .btn-group(data-toggle="buttons-checkbox")
+      %button.btn.btn-info YES
+      %button.btn.btn-info No
+      %button.btn.btn-info Limited
+      %button.btn.btn-info Unknow
+
+
+    %select.selectpicker.show-menu-arrow.span2{:multiple => 'multiple', :title => 'Alle', :'data-style' => "btn-info", :'data-selected-text-format' => "count>2"}
+      - Category.all.sort_by(&:localized_name).each do |category|
+        %option{ :value => category.identifier, :selected => cookies["filter_#{category.identifier}"].present? ? "selected" : nil }= category.localized_name
