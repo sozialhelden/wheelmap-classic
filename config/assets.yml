@@ -24,6 +24,7 @@ javascripts:
     - public/javascripts/jquery_ujs.js
     - public/javascripts/jquery.parsequery.js
     - public/javascripts/jquery.cookies.js
+    - public/javascripts/function.js
     - public/javascripts/bootstrap/bootstrap-transition.js
     - public/javascripts/bootstrap/bootstrap-affix.js
     - public/javascripts/bootstrap/bootstrap-alert.js
