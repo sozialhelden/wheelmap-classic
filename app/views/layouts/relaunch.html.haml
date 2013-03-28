@@ -7,6 +7,7 @@
   %meta(charset ='utf-8')
   %meta(http-equiv = "X-UA-Compatible")
   %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0, user-scalable=0"}
+  = content_for :meta
 
   = include_stylesheets :relaunch, :media => 'screen, projection'
   /[if lte IE 8]
@@ -15,17 +16,11 @@
 
 %body
   = render :partial => 'relaunch/header'
-  = render :partial => 'relaunch/toolbar'
-
+  = render :partial => 'relaunch/toolbar.html.haml'
   = yield
 
   = render :partial => 'relaunch/footer'
-
-  = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
   = include_javascripts :relaunch, :media => 'screen, projection'
-  :javascript
-    I18n.defaultLocale = "de";
-    I18n.locale = "#{I18n.locale}";
 
   = content_for :javascript
 </html>

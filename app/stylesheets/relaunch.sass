@@ -1,24 +1,75 @@
 @charset "utf-8"
 
-@import "bootstrap"
-@import "bootstrap/responsive"
+// Modify this for custom colors, font-sizes, etc
+@import "bootstrap/mixins"
 
-@import "compass/utilities/general/clearfix"
-@import "compass/css3/border-radius"
-@import "compass/css3/box-shadow"
-@import "compass/css3/images"
-@import "compass/css3/text-shadow"
-@import "compass/css3/appearance"
+@import "relaunch/bootstrap_variables"
 
-@import basics/colors
-@import basics/fonts
+// CSS Reset
+@import "bootstrap/reset"
 
-@import relaunch/default
-@import relaunch/links
+// Grid system and page structure
+@import "bootstrap/scaffolding"
+@import "bootstrap/grid"
+@import "bootstrap/layouts"
+
+// Base CSS
+@import "bootstrap/type"
+@import "bootstrap/code"
+@import "bootstrap/forms"
+@import "bootstrap/tables"
+
+// Components: common
+@import "bootstrap/sprites"
+@import "bootstrap/dropdowns"
+@import "bootstrap/wells"
+@import "bootstrap/component-animations"
+@import "bootstrap/close"
+
+// Components: Buttons & Alerts
+@import "bootstrap/buttons"
+@import "bootstrap/button-groups"
+// Note: alerts share common CSS with buttons and thus have styles in buttons
+@import "bootstrap/alerts"
+
+// Components: Nav
+@import "bootstrap/navs"
+@import "bootstrap/navbar"
+@import "bootstrap/breadcrumbs"
+@import "bootstrap/pagination"
+@import "bootstrap/pager"
+
+// Components: Popovers
+@import "bootstrap/modals"
+@import "bootstrap/tooltip"
+@import "bootstrap/popovers"
+
+// Components: Misc
+@import "bootstrap/thumbnails"
+@import "bootstrap/media"
+@import "bootstrap/labels-badges"
+@import "bootstrap/progress-bars"
+@import "bootstrap/accordion"
+@import "bootstrap/carousel"
+@import "bootstrap/hero-unit"
+
+// Utility classes
+// Has to be last to override when necessary
+@import "bootstrap/utilities"
+
+// Make the website responsive
+@import "bootstrap-responsive.scss"
+
+// Multi select for
+@import "relaunch/bootstrap-select"
+
+
+@import "leaflet/leaflet"
+
+@import "compass/css3"
+
+@import relaunch/variables
 @import relaunch/header
 @import relaunch/toolbar
-@import relaunch/icons
-@import relaunch/map
-@import partials/map/popup
-@import relaunch/footer
 @import relaunch/overlay
+@import relaunch/footer
