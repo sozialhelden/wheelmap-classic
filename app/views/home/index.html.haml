@@ -1,9 +1,7 @@
 - content_for :javascript do
   :javascript
     window.onload=function(){
-      $('.selectpicker').selectpicker({
-        style: 'btn-info'
-      });
+      $('.selectpicker').selectpicker();
     };
 %section#map
 %script{:type => "text/x-handlebars-template", :id => "cardTemplate"}
