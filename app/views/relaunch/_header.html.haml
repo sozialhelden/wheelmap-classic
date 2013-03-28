@@ -8,18 +8,18 @@
       %li= link_to "Presse", "http://community.wheelmap.org/about/presse/"
       %li= link_to "Kontakt", "http://community.wheelmap.org/kontakt/"
 
-  .btn-toolbar.pull-right
-    .btn-group
-      = link_to new_node_path, :class => ['btn', 'btn-success'] do
+  .btn-toolbar.pull-right{:style => 'padding-right:10px'}
+    .btn-group{:style => 'margin:0'}
+      = link_to new_node_path, :class => ['btn', 'btn-success', 'btn-small'] do
         %i.icon-plus.icon-white
-      = link_to t('header.searchbar.add_place'), new_node_path, :class => 'btn'
+      = link_to t('header.searchbar.add_place'), new_node_path, :class => ['btn', 'btn-small']
 
-    = link_to new_user_session_path, :class => 'btn' do
+    = link_to new_user_session_path, :class => ['btn', 'btn-small'], :style => 'margin:0 10px' do
       %i.icon-user
       = t('header.navigation.login')
 
 
-    %select.selectpicker.show-menu-arrow.pull-right{:onchange => 'location.href=this.options[this.selectedIndex].value', :title => Languages[I18n.locale.to_s]}
+    %select.selectpicker.show-menu-arrow.pull-right{:onchange => 'location.href=this.options[this.selectedIndex].value', :title => Languages[I18n.locale.to_s], :'data-style' => "btn-small"}
       %optgroup{:label => I18n.t('header.navigation.choose_language')}
         - I18n.available_locales.map(&:to_s).sort.each do |locale|
           %option{:value => url_for_locale(request.url, locale), :selected => (I18n.locale.to_s.downcase == locale.to_s.downcase)}=Languages[locale.to_s]
