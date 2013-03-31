@@ -2445,7 +2445,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url(/images/glyphicons-halflings.png?1364472901);
+  background-image: url(/images/glyphicons-halflings.png?1364484033);
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px;
@@ -2470,7 +2470,7 @@ table th[class*="span"],
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url(/images/glyphicons-halflings-white.png?1364481416);
+  background-image: url(/images/glyphicons-halflings-white.png?1364484033);
 }
 
 /* line 52, ../../vendor/bundle/ruby/1.8/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_sprites.scss */
@@ -8974,252 +8974,21 @@ header {
   color: #999;
 }
 
-/* line 36, ../../app/stylesheets/relaunch/_header.css.scss */
-nav {
-  width: 470px;
-  margin: auto;
+/* line 35, ../../app/stylesheets/relaunch/_header.css.scss */
+.bootstrap-select {
+  width: auto;
 }
+
 /* line 39, ../../app/stylesheets/relaunch/_header.css.scss */
-nav ul {
-  float: left;
-  margin-right: 20px;
-}
-/* line 43, ../../app/stylesheets/relaunch/_header.css.scss */
-nav li {
-  float: left;
-  list-style: none;
-  padding: 17px 1px 17px 1px;
-}
-/* line 47, ../../app/stylesheets/relaunch/_header.css.scss */
-nav li a {
-  color: #666;
-  padding: 7px 10px 6px 10px;
-}
-/* line 50, ../../app/stylesheets/relaunch/_header.css.scss */
-nav li a:visited {
-  color: #666;
-  padding: 7px 10px 6px 10px;
-}
-/* line 54, ../../app/stylesheets/relaunch/_header.css.scss */
-nav li a:hover {
-  color: #000;
-  background: #DCDBD4;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: inset 2px 2px 0 0 rgba(170, 170, 170, 0.2);
-  -moz-box-shadow: inset 2px 2px 0 0 rgba(170, 170, 170, 0.2);
-  box-shadow: inset 2px 2px 0 0 rgba(170, 170, 170, 0.2);
-  border: 1px solid #c4c2b5;
-  margin: 0 -1px;
+.language-select .btn {
+  max-width: 90px;
 }
 
-/* line 66, ../../app/stylesheets/relaunch/_header.css.scss */
-.accountbar {
-  width: auto;
-  margin: 13px 0 0 0;
-  float: right;
-}
-/* line 70, ../../app/stylesheets/relaunch/_header.css.scss */
-.accountbar li {
-  height: 25px;
-  overflow: hidden;
-  list-style: none;
-  float: left;
-  border-left: 1px solid #B1B0AE;
-  border: 1px solid #c6c5bd;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: 0px 1px 0px white;
-  -moz-box-shadow: 0px 1px 0px white;
-  box-shadow: 0px 1px 0px white;
-  /*		background: url(/images/bg_accountbar.png);
-  		box-shadow: 0 2px 2px rgba(170, 170, 170, 0.2);*/
-  margin-left: 3px;
-}
-/* line 82, ../../app/stylesheets/relaunch/_header.css.scss */
-.accountbar li:first-child {
-  border-left: none;
-}
-/* line 85, ../../app/stylesheets/relaunch/_header.css.scss */
-.accountbar li a {
-  height: 24px;
-  float: left;
-}
-/* line 89, ../../app/stylesheets/relaunch/_header.css.scss */
-.accountbar li:hover {
-  -webkit-box-shadow: inset 0 10px 20px 0 rgba(48, 66, 81, 0.05);
-  -moz-box-shadow: inset 0 10px 20px 0 rgba(48, 66, 81, 0.05);
-  box-shadow: inset 0 10px 20px 0 rgba(48, 66, 81, 0.05);
-}
-/* line 90, ../../app/stylesheets/relaunch/_header.css.scss */
-.accountbar li:hover a span:after {
-  position: absolute;
-  left: 24px;
-  top: -5px;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  content: "";
-  border-bottom: 5px solid #000;
-}
-/* line 102, ../../app/stylesheets/relaunch/_header.css.scss */
-.accountbar li a.add, .accountbar li a.profil {
-  width: auto;
-  padding: 0 8px;
-  height: 25px;
-  color: #FFF;
-  font-size: 10px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-/* line 111, ../../app/stylesheets/relaunch/_header.css.scss */
-.accountbar li a.add .icon {
-  width: 20px;
-  height: 29px;
-  float: left;
-  margin: -2px 5px 0 -8px;
-  padding: 0px 3px 0 3px;
-  background-color: #87b346;
-  background: #87b346, -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #97c24e), color-stop(100%, #78a43e));
-  background: #87b346, -webkit-linear-gradient(top, #97c24e, #78a43e);
-  background: #87b346, -moz-linear-gradient(top, #97c24e, #78a43e);
-  background: #87b346, -o-linear-gradient(top, #97c24e, #78a43e);
-  background: #87b346, linear-gradient(top, #97c24e, #78a43e);
-  *zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF97C24E', endColorstr='#FF78A43E');
-  -moz-border-radius-topleft: 3px;
-  -webkit-border-top-left-radius: 3px;
-  border-top-left-radius: 3px;
-  -moz-border-radius-bottomleft: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-/* line 123, ../../app/stylesheets/relaunch/_header.css.scss */
-.accountbar li p {
-  font-size: 12px;
-  font-weight: bold;
-  float: left;
-  padding: 0 6px 0 0;
-  margin: 3px 4px 0 0px;
-  color: #888;
-  /*text-shadow: 0 1px 0 #E8E7E3;*/
-  text-transform: none;
-}
-/* line 133, ../../app/stylesheets/relaunch/_header.css.scss */
-.accountbar li .icon {
-  width: 30px;
-  float: left;
-  margin-top: -2px;
-  text-align: center;
-  font-size: 30px;
-  font-family: 'EntypoRegular', sans-serif;
-  color: #666;
-  text-shadow: 0px 1px 0px #e8e7e3;
+/* line 44, ../../app/stylesheets/relaunch/_header.css.scss */
+nav {
+  display: none;
 }
 
-/* line 146, ../../app/stylesheets/relaunch/_header.css.scss */
-li a.add .icon {
-  margin-top: -4px;
-  color: #FFF;
-  text-shadow: 0px 1px 0px black;
-}
-
-/* line 152, ../../app/stylesheets/relaunch/_header.css.scss */
-.profil p {
-  margin-left: 20px;
-  float: left;
-}
-
-/* line 157, ../../app/stylesheets/relaunch/_header.css.scss */
-.accountbar select {
-  float: left;
-  border: none;
-  padding: 6px 10px 6px 0;
-  margin: 0 2px 0 8px;
-  background: url(/images/bg_accountbar-select.png) no-repeat right;
-  background-position-y: 6px;
-  font-size: 12px;
-  font-weight: normal;
-  color: #888;
-  font-weight: bold;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-@media screen and (max-width: 760px) {
-  /* line 171, ../../app/stylesheets/relaunch/_header.css.scss */
-  .logo, .logo:visited {
-    width: 85px;
-    height: 40px;
-    padding: 0;
-    margin: 10px 0 0 0;
-    text-indent: -9999px !important;
-    background: url(/images/bg_mobile_logo.png) center top no-repeat;
-    background-image: -webkit-image-set(url(/images/bg_mobile_logo.png) 1x, url(/images/bg_mobile_logo@2x.png) 2x);
-    color: rgba(255, 255, 255, 0);
-    /*Behelfslösung*/
-  }
-
-  /* line 183, ../../app/stylesheets/relaunch/_header.css.scss */
-  nav {
-    width: auto;
-    float: left;
-  }
-  /* line 186, ../../app/stylesheets/relaunch/_header.css.scss */
-  nav ul {
-    display: none;
-  }
-  /* line 189, ../../app/stylesheets/relaunch/_header.css.scss */
-  nav .mobile {
-    width: 80px;
-    float: left;
-    border: none;
-    padding: 6px 10px 6px 6px;
-    margin: 13px 2px 0 8px;
-    background: url(/images/bg_accountbar-select.png) no-repeat right;
-    background-position-y: 6px;
-    font-size: 12px;
-    font-weight: normal;
-    color: #888;
-    font-weight: bold;
-    border-left: 1px solid #B1B0AE;
-    border: 1px solid #c6c5bd;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: 0px 1px 0 white;
-    -moz-box-shadow: 0px 1px 0 white;
-    box-shadow: 0px 1px 0 white;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-
-  /* line 209, ../../app/stylesheets/relaunch/_header.css.scss */
-  .accountbar li, .accountbar select {
-    width: 30px;
-  }
-
-  /* line 212, ../../app/stylesheets/relaunch/_header.css.scss */
-  .accountbar li a.add .icon {
-    width: 26px;
-  }
-
-  /* line 215, ../../app/stylesheets/relaunch/_header.css.scss */
-  .accountbar select {
-    text-indent: -9999px;
-    background: url(/images/bg_mobile_language.png) top center no-repeat;
-    background-image: -webkit-image-set(url(/images/bg_mobile_language.png) 1x, url(/images/bg_mobile_language@2x.png) 2x);
-  }
-}
 /* line 1, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar {
   width: 100%;
@@ -9235,10 +9004,144 @@ li a.add .icon {
 /* line 11, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .content {
   max-width: 640px;
+  margin: auto;
+  margin-top: -2px;
+}
+/* line 16, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .btn {
+  background-color: #5c748b;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#6c859d), to(#4d647a));
+  background-image: -webkit-linear-gradient(top, #6c859d, #4d647a);
+  background-image: -moz-linear-gradient(top, #6c859d, #4d647a);
+  background-image: -o-linear-gradient(top, #6c859d, #4d647a);
+  background-image: -ms-linear-gradient(top, #6c859d, #4d647a);
+  background-image: linear-gradient(top, #6c859d, #4d647a);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#6c859d', EndColorStr='#4d647a');
+  border: 1px solid #000;
+  -webkit-box-shadow: 0px 1px 0px #566d82, inset 0px 1px 0px #8298aa;
+  -moz-box-shadow: 0px 1px 0px #566d82, inset 0px 1px 0px #8298aa;
+  box-shadow: 0px 1px 0px #566d82, inset 0px 1px 0px #8298aa;
+}
+/* line 30, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .btn:hover {
+  -webkit-box-shadow: 0px 1px 0px #566d82, inset 0 10px 20px rgba(48, 66, 81, 0.3);
+  -moz-box-shadow: 0px 1px 0px #566d82, inset 0 10px 20px rgba(48, 66, 81, 0.3);
+  box-shadow: 0px 1px 0px #566d82, inset 0 10px 20px rgba(48, 66, 81, 0.3);
+}
+/* line 33, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .input-append {
+  /* firefox 19+ */
+}
+/* line 34, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .input-append input {
+  width: 160px;
+  float: left;
+  margin: 0 0 0 0;
+  padding: 8px 0px 6px 10px;
+  border: 1px solid #000;
+  background: #A4ACB4;
+  font-size: 12px;
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  -ms-border-radius: 3px 0 0 3px;
+  -o-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+  -webkit-box-shadow: 0px 1px 0px #566d82;
+  -moz-box-shadow: 0px 1px 0px #566d82;
+  box-shadow: 0px 1px 0px #566d82;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+/* line 48, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .input-append input:focus {
+  width: 200px;
+  background: #FFF;
+}
+/* line 52, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .input-append ::-webkit-input-placeholder {
+  color: #2D3D4D;
+}
+/* line 53, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .input-append ::-moz-placeholder {
+  color: #2D3D4D;
+}
+/* line 54, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .input-append input:-moz-placeholder {
+  color: #2D3D4D;
+}
+/* line 55, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .input-append button {
+  height: 36px;
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  -ms-border-radius: 0 3px 3px 0;
+  -o-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+}
+/* line 60, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .status-filter {
+  margin: 0 10px;
+}
+/* line 62, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .status-filter .btn {
+  width: 46px;
+  height: 36px;
+  padding: 0;
+  text-indent: -99999px;
+}
+/* line 67, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .status-filter .btn span {
+  width: 22px;
+  height: 22px;
+  margin: 2px 0 0 11px;
+  float: left;
+}
+/* line 74, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .status-filter .btn:first-child {
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  -ms-border-radius: 3px 0 0 3px;
+  -o-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+}
+/* line 77, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .status-filter .btn:last-child {
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  -ms-border-radius: 0 3px 3px 0;
+  -o-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+}
+/* line 80, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .status-filter .yes span {
+  background: url("/images/marker-yes.png") no-repeat;
+}
+/* line 83, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .status-filter .limited span {
+  background: url("/images/marker-limited.png") no-repeat;
+}
+/* line 86, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .status-filter .no span {
+  background: url("/images/marker-no.png") no-repeat;
+}
+/* line 89, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .status-filter .unknown span {
+  background: url("/images/marker-unknown.png") no-repeat;
+}
+/* line 93, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .category-filter {
+  width: 150px;
+}
+/* line 95, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .category-filter .btn {
+  height: 35px;
 }
 
 /* line 1, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay {
+  display: none;
   width: 600px;
   height: 500px;
   position: fixed;
@@ -9256,7 +9159,7 @@ li a.add .icon {
   -o-border-radius: 3;
   border-radius: 3;
 }
-/* line 12, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 13, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay .header {
   width: 100%;
   height: 180px;
@@ -9270,11 +9173,11 @@ li a.add .icon {
   background-image: linear-gradient(top, #ffffff, #edecea);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ffffff', EndColorStr='#edecea');
 }
-/* line 25, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 26, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay .close-btn {
   float: right;
 }
-/* line 28, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 29, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay h1 {
   width: 80%;
   float: left;
