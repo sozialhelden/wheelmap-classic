@@ -10,5 +10,90 @@
   z-index: 998;
   .content {
     max-width: 640px;
+    margin: auto;
+    margin-top: -2px;
+  }
+  .btn {
+    background-color: #5c748b;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(108, 133, 157)), to(rgb(77, 100, 122)));
+    background-image: -webkit-linear-gradient(top, rgb(108, 133, 157), rgb(77, 100, 122));
+    background-image: -moz-linear-gradient(top, rgb(108, 133, 157), rgb(77, 100, 122));
+    background-image: -o-linear-gradient(top, rgb(108, 133, 157), rgb(77, 100, 122));
+    background-image: -ms-linear-gradient(top, rgb(108, 133, 157), rgb(77, 100, 122));
+    background-image: linear-gradient(top, rgb(108, 133, 157), rgb(77, 100, 122));
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#6c859d', EndColorStr='#4d647a');
+    
+    border: 1px solid #000;
+    
+    @include box-shadow(0px 1px 0px #566D82, inset 0px 1px 0px #8298AA);
+  }
+  .btn:hover {
+    @include box-shadow(0px 1px 0px #566D82, inset 0 10px 20px rgba(48, 66, 81, 0.30));
+  }
+  .input-append {
+    input {
+    		width: 160px;
+    		float: left;
+    		margin: 0 0 0 0;
+    		padding: 8px 0px 6px 10px;
+    		border: 1px solid #000;
+    		background: #A4ACB4;
+    		
+    		font-size: 12px;
+    		
+    		@include border-radius(3px 0 0 3px);
+    		@include box-shadow(0px 1px 0px #566D82);
+    		@include transition(all 0.3s ease-in-out); 	
+    	}
+    	input:focus {
+    		width: 200px;
+    		background: #FFF;
+    	}
+    	::-webkit-input-placeholder { color:#2D3D4D; }
+    	::-moz-placeholder { color:#2D3D4D; } /* firefox 19+ */
+    	input:-moz-placeholder { color:#2D3D4D; }
+    	button {
+    	  height:36px;
+    	  @include border-radius(0 3px 3px 0); 	
+    	}
+  }
+  .status-filter {
+    margin:0 10px;
+    .btn {
+      width: 46px;
+      height: 36px;
+      padding:0;
+      text-indent: -99999px;
+      span {
+        width:22px;
+        height:22px;
+        margin: 2px 0 0 11px;
+        float:left;
+      }
+    }
+    .btn:first-child {
+       @include border-radius(3px 0 0 3px);
+    }
+    .btn:last-child {
+      @include border-radius(0 3px 3px 0);
+    }
+    .yes span {
+      background: url('/images/marker-yes.png') no-repeat;
+    }
+    .limited span {
+      background: url('/images/marker-limited.png') no-repeat;
+    }
+    .no span {
+      background: url('/images/marker-no.png') no-repeat;
+    }
+    .unknown span {
+      background: url('/images/marker-unknown.png') no-repeat;
+    }
+  }
+  .category-filter {
+    width: 150px;
+    .btn {
+      height:35px;
+    }
   }
 }
