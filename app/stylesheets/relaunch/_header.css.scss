@@ -32,189 +32,201 @@ header {
   text-align: right;
   color: #999;
 }
-
-nav {
-  width: 470px;
-  margin: auto;
-  ul {
-    float: left;
-    margin-right: 20px;
-  }
-  li {
-    float: left;
-    list-style: none;
-    padding: 17px 1px 17px 1px;
-    a {
-      color: #666;
-      padding: 7px 10px 6px 10px;
-      &:visited {
-        color: #666;
-        padding: 7px 10px 6px 10px;
-      }
-      &:hover {
-        color: #000;
-        background: #DCDBD4;
-        @include border-radius(3px);
-        @include single-box-shadow(rgba(170, 170, 170, 0.2), 2px, 2px, 0, 0, inset);
-        border: 1px solid #c4c2b5;
-        margin: 0 -1px;
-      }
-    }
-  }
-}
-
-.accountbar {
+.bootstrap-select {
   width: auto;
-  margin: 13px 0 0 0;
-  float: right;
-  li {
-  	height: 25px;
-  	overflow:hidden;
-    list-style: none;
-    float: left;
-    border-left: 1px solid #B1B0AE;
-    border: 1px solid #c6c5bd;
-    @include border-radius(3px);
-    @include single-box-shadow(#FFF, 0px, 1px, 0px);
-    /*		background: url(/images/bg_accountbar.png);
-    		box-shadow: 0 2px 2px rgba(170, 170, 170, 0.2);*/
-    margin-left: 3px;
-    &:first-child {
-      border-left: none;
-    }
-    a {
-      height: 24px;
-      float: left;
-    }
-    &:hover {
-      a span:after {
-        position: absolute;
-        left: 24px;
-        top: -5px;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        content: "";
-        border-bottom: 5px solid #000;
-      }
-      @include single-box-shadow(rgba(48, 66, 81, 0.05), 0, 10px, 20px, 0, inset);
-    }
-    a {
-      &.add, &.profil {
-        width: auto;
-        padding: 0 8px;
-        height: 25px;
-        color: #FFF;
-        font-size: 10px;
-        font-weight: bold;
-        text-transform: uppercase;
-      }
-      &.add .icon {
-        width: 20px;
-        height: 29px;
-        float: left;
-        margin: -2px 5px 0 -8px;
-        padding: 0px 3px 0 3px;
-        background-color: #87b346;
-        @include background(#87b346, linear-gradient(top, #97c24e, #78a43e));
-        @include filter-gradient(#97c24e, #78a43e, vertical);
-        @include border-left-radius(3px);
-      }
-    }
-    p {
-   	  font-size:12px;
-   	  font-weight: bold;
-      float: left;
-      padding: 0 6px 0 0;
-      margin: 3px 4px 0 0px;
-      color: #888;
-      /*text-shadow: 0 1px 0 #E8E7E3;*/
-      text-transform: none;
-    }
-    .icon {
-      width: 30px;
-      float: left;
-      margin-top: -2px;
-      text-align: center;
-      font-size: 30px;
-      font-family: 'EntypoRegular', sans-serif;
-      color: #666;
-      @include single-text-shadow(#E8E7E3, 0px, 1px, 0px );
-    }
+}
+.language-select {
+  .btn {
+    max-width: 90px;
   }
 }
 
-li a.add .icon {
-  margin-top: -4px;
-  color: #FFF;
-  @include single-text-shadow(#000, 0px, 1px, 0px);
-}
-
-.profil p {
-  margin-left: 20px;
-  float: left;
-}
-
-.accountbar select {
-  float: left;
-  border: none;
-  padding: 6px 10px 6px 0;
-  margin: 0 2px 0 8px;
-  background: url(/images/bg_accountbar-select.png) no-repeat right;
-  background-position-y: 6px;
-  font-size:12px;
-  font-weight: normal;
-  color: #888;
-  font-weight: bold;
-  @include appearance(none);
-}
-@media screen and (max-width:760px) {
-.logo, .logo:visited {
-	width: 85px;
-	height:40px;
-	padding: 0;
-	margin: 10px 0 0 0;
-	text-indent: -9999px!important;
-
-	background: url(/images/bg_mobile_logo.png) center top no-repeat;
-	background-image: -webkit-image-set(url(/images/bg_mobile_logo.png) 1x, url(/images/bg_mobile_logo@2x.png) 2x);
-
-	color: rgba(255, 255, 255, 0);/*Behelfslösung*/
-}
 nav {
-	width: auto;
-  float: left;
-  ul {
-    display: none
-  }
- .mobile {
- 	width: 80px;
-  	  float: left;
-  	  border: none;
-  	  padding: 6px 10px 6px 6px;
-  	  margin: 13px 2px 0 8px;
-  	  background: url(/images/bg_accountbar-select.png) no-repeat right;
-  	  background-position-y: 6px;
-  	  font-size:12px;
-  	  font-weight: normal;
-  	  color: #888;
-  	  font-weight: bold;
-
-  	  border-left: 1px solid #B1B0AE;
-  	  border: 1px solid #c6c5bd;
-  	  @include border-radius(3px);
-  	  @include single-box-shadow(#FFF, 0px, 1px, 0);
-  	  @include appearance(none);
-  }
- }
-.accountbar li, .accountbar select {
-	width: 30px;
-}
-.accountbar li a.add .icon {
-	width: 26px;
-}
-.accountbar select {
-	text-indent: -9999px;
-	background: url(/images/bg_mobile_language.png) top center no-repeat;
-	background-image: -webkit-image-set(url(/images/bg_mobile_language.png) 1x, url(/images/bg_mobile_language@2x.png) 2x);
-}
-}
+  display:none;
+}  
+//  
+//  
+//  width: 470px;
+//  margin: auto;
+//  ul {
+//    float: left;
+//    margin-right: 20px;
+//  }
+//  li {
+//    float: left;
+//    list-style: none;
+//    padding: 17px 1px 17px 1px;
+//    a {
+//      color: #666;
+//      padding: 7px 10px 6px 10px;
+//      &:visited {
+//        color: #666;
+//        padding: 7px 10px 6px 10px;
+//      }
+//      &:hover {
+//        color: #000;
+//        background: #DCDBD4;
+//        @include border-radius(3px);
+//        @include single-box-shadow(rgba(170, 170, 170, 0.2), 2px, 2px, 0, 0, inset);
+//        border: 1px solid #c4c2b5;
+//        margin: 0 -1px;
+//      }
+//    }
+//  }
+//}
+//
+//.accountbar {
+//  width: auto;
+//  margin: 13px 0 0 0;
+//  float: right;
+//  li {
+//  	height: 25px;
+//  	overflow:hidden;
+//    list-style: none;
+//    float: left;
+//    border-left: 1px solid #B1B0AE;
+//    border: 1px solid #c6c5bd;
+//    @include border-radius(3px);
+//    @include single-box-shadow(#FFF, 0px, 1px, 0px);
+//    /*		background: url(/images/bg_accountbar.png);
+//    		box-shadow: 0 2px 2px rgba(170, 170, 170, 0.2);*/
+//    margin-left: 3px;
+//    &:first-child {
+//      border-left: none;
+//    }
+//    a {
+//      height: 24px;
+//      float: left;
+//    }
+//    &:hover {
+//      a span:after {
+//        position: absolute;
+//        left: 24px;
+//        top: -5px;
+//        border-left: 5px solid transparent;
+//        border-right: 5px solid transparent;
+//        content: "";
+//        border-bottom: 5px solid #000;
+//      }
+//      @include single-box-shadow(rgba(48, 66, 81, 0.05), 0, 10px, 20px, 0, inset);
+//    }
+//    a {
+//      &.add, &.profil {
+//        width: auto;
+//        padding: 0 8px;
+//        height: 25px;
+//        color: #FFF;
+//        font-size: 10px;
+//        font-weight: bold;
+//        text-transform: uppercase;
+//      }
+//      &.add .icon {
+//        width: 20px;
+//        height: 29px;
+//        float: left;
+//        margin: -2px 5px 0 -8px;
+//        padding: 0px 3px 0 3px;
+//        background-color: #87b346;
+//        @include background(#87b346, linear-gradient(top, #97c24e, #78a43e));
+//        @include filter-gradient(#97c24e, #78a43e, vertical);
+//        @include border-left-radius(3px);
+//      }
+//    }
+//    p {
+//   	  font-size:12px;
+//   	  font-weight: bold;
+//      float: left;
+//      padding: 0 6px 0 0;
+//      margin: 3px 4px 0 0px;
+//      color: #888;
+//      /*text-shadow: 0 1px 0 #E8E7E3;*/
+//      text-transform: none;
+//    }
+//    .icon {
+//      width: 30px;
+//      float: left;
+//      margin-top: -2px;
+//      text-align: center;
+//      font-size: 30px;
+//      font-family: 'EntypoRegular', sans-serif;
+//      color: #666;
+//      @include single-text-shadow(#E8E7E3, 0px, 1px, 0px );
+//    }
+//  }
+//}
+//
+//li a.add .icon {
+//  margin-top: -4px;
+//  color: #FFF;
+//  @include single-text-shadow(#000, 0px, 1px, 0px);
+//}
+//
+//.profil p {
+//  margin-left: 20px;
+//  float: left;
+//}
+//
+//.accountbar select {
+//  float: left;
+//  border: none;
+//  padding: 6px 10px 6px 0;
+//  margin: 0 2px 0 8px;
+//  background: url(/images/bg_accountbar-select.png) no-repeat right;
+//  background-position-y: 6px;
+//  font-size:12px;
+//  font-weight: normal;
+//  color: #888;
+//  font-weight: bold;
+//  @include appearance(none);
+//}
+//@media screen and (max-width:760px) {
+//.logo, .logo:visited {
+//	width: 85px;
+//	height:40px;
+//	padding: 0;
+//	margin: 10px 0 0 0;
+//	text-indent: -9999px!important;
+//
+//	background: url(/images/bg_mobile_logo.png) center top no-repeat;
+//	background-image: -webkit-image-set(url(/images/bg_mobile_logo.png) 1x, url(/images/bg_mobile_logo@2x.png) 2x);
+//
+//	color: rgba(255, 255, 255, 0);/*Behelfslösung*/
+//}
+//nav {
+//	width: auto;
+//  float: left;
+//  ul {
+//    display: none
+//  }
+// .mobile {
+// 	width: 80px;
+//  	  float: left;
+//  	  border: none;
+//  	  padding: 6px 10px 6px 6px;
+//  	  margin: 13px 2px 0 8px;
+//  	  background: url(/images/bg_accountbar-select.png) no-repeat right;
+//  	  background-position-y: 6px;
+//  	  font-size:12px;
+//  	  font-weight: normal;
+//  	  color: #888;
+//  	  font-weight: bold;
+//
+//  	  border-left: 1px solid #B1B0AE;
+//  	  border: 1px solid #c6c5bd;
+//  	  @include border-radius(3px);
+//  	  @include single-box-shadow(#FFF, 0px, 1px, 0);
+//  	  @include appearance(none);
+//  }
+// }
+//.accountbar li, .accountbar select {
+//	width: 30px;
+//}
+//.accountbar li a.add .icon {
+//	width: 26px;
+//}
+//.accountbar select {
+//	text-indent: -9999px;
+//	background: url(/images/bg_mobile_language.png) top center no-repeat;
+//	background-image: -webkit-image-set(url(/images/bg_mobile_language.png) 1x, url(/images/bg_mobile_language@2x.png) 2x);
+//}
+//}
