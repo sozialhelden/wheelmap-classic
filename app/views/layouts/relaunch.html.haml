@@ -22,5 +22,9 @@
   = render :partial => 'relaunch/footer'
   = include_javascripts :relaunch, :media => 'screen, projection'
 
+  :javascript
+    I18n.defaultLocale = "de";
+    I18n.locale = "#{I18n.locale}";
+
   = content_for :javascript
 </html>
