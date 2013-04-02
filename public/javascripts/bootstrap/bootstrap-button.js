@@ -58,6 +58,7 @@
       .removeClass('active')
 
     this.$element.toggleClass('active')
+    this.$element.trigger('change')
   }
 
 
