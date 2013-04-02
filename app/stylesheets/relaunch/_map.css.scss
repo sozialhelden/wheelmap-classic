@@ -13,7 +13,7 @@ section#map {
 
 .leaflet-popup{
   padding: 10px;
-  @include border-radius(8px);
+  @include border-radius(2px);
 }
 
 .leaflet-marker-icon {
@@ -49,18 +49,6 @@ section#map {
     height: 33px;
   }
 
-}
-
-.leaflet-popup {
-  background-color: #FFF;
-  box-shadow: 0 0 10px #333;
-}
-
-.leaflet-popup-tip {
-	background-color: rgba(0, 0, 0, 0.70)!important;
-	width: 8px!important;
-	height: 8px!important;
-	margin: -6px auto 0!important;
 }
 
 @media screen and (max-width:760px) {
