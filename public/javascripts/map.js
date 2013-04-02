@@ -1,4 +1,3 @@
-var geojson_layer;
 var source = $("#cardTemplate").html();
 
 var lat = 52.50521;
@@ -22,61 +21,13 @@ L.tileLayer('http://{s}.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y
 
 }).addTo(map);
 
+var geojson_layer = L.geoJson(null).addTo(map);
+
 var standort = L.icon({
   iconSize:     [1, 1],
   iconAnchor:   [7, 2],
   popupAnchor:  [10, 20],
   iconUrl: '/images/location.png'
-});
-
-
-map.on('popupopen', function(e) {
-
-  $('.tabnav li').click(function() {
-    $('.tabnav li').removeClass('active');
-    $(this).addClass('active');
-  });
-  $('.tabnav li:nth-child(1)').click(function() {
-    $('.tabs li').removeClass('active');
-    $('.tabs li:nth-child(1)').addClass('active');
-  });
-  $('.tabnav li:nth-child(2)').click(function() {
-    $('.tabs li').removeClass('active');
-    $('.tabs li:nth-child(2)').addClass('active');
-  });
-  $('.tabnav li:nth-child(3)').click(function() {
-    $('.tabs li').removeClass('active');
-    $('.tabs li:nth-child(3)').addClass('active');
-  });
-   $('.status-show').click(function() {
-     $('.status-choose').toggleClass('active');
-     $('.button').show();
-  });
- $('.status-choose.green').click(function() {
-     $('.status-show').toggleClass('yellow');
-     $(this).removeClass('active');
-  });
-  $('.status-choose.yellow').click(function() {
-      $('.status-show').removeClass('yellow');
-      $('.status-show').toggleClass('green');
-      $(this).removeClass('active');
-   });
-   $('.status-choose.red').click(function() {
-       $('.status-show').removeClass('red');
-       $('.status-show').toggleClass('yellow');
-       $(this).removeClass('active');
-    });
-  $('.button').click(function() {
-      $(this).fadeOut(100);
-      $('.success').fadeIn(100).delay(1000).fadeOut(1000);
-   });
-   $('.grey').click(function() {
-       $(this).addClass('first');
-       $('.success').fadeIn(100).delay(1000).fadeOut(1000);
-       $(this).removeClass('grey');
-    });
-
-
 });
 
 
@@ -94,18 +45,8 @@ map.on('moveend', function(e) {
   });
 });
 
-function by(a, b) {
-    return function(f) { return f.properties[a] === b; };
-}
-function filterby(a, b) {
-    return function() { markers.filter(by(a, b)); };
-}
-
-function all() { return true; }
-function none() { return false; }
-
 function requestNodes(bounds) {
-
+  geojson_layer.fire('data:loading');
   var north = bounds._northEast.lat;
   var east  = bounds._northEast.lng;
   var south = bounds._southWest.lat;
@@ -129,6 +70,9 @@ function requestNodes(bounds) {
       },
       error: function (req, status, error) {
         alert('Unable to get node data');
+      },
+      complete: function(res) {
+        geojson_layer.fire('data:loaded');
       }
   });
 }
