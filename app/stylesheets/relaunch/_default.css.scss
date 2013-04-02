@@ -11,15 +11,6 @@ body {
   padding: 0;
 }
 
-section#map {
-  position: absolute;
-  top: $headerHeight + $toolbarHeight;
-  bottom: $footerHeight;
-  left: 0;
-  width: 100%;
-  background: yellow;
-}
-
 /* @group Allgemein ================================================================================= */
 
 * {
