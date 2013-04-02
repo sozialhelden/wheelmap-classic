@@ -25,7 +25,7 @@ L.tileLayer('http://{s}.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y
 var standort = L.icon({
   iconSize:     [1, 1],
   iconAnchor:   [7, 2],
-  popupAnchor:  [2, 0],
+  popupAnchor:  [10, 20],
   iconUrl: '/images/location.png'
 });
 
@@ -178,7 +178,7 @@ function parseResponse(data) {
         icon: L.divIcon({
           iconSize:     [40, 33],
           iconAnchor:   [14, 30],
-          popupAnchor:  [5, 15],
+          popupAnchor:  [0, -8],
           className: classesToAdd.join(' '),
           html: '<div id="'+ feature.properties.icon +'" class="icon"></div>'
         }),
