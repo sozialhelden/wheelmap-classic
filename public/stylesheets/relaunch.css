@@ -9342,7 +9342,7 @@ nav {
 /* line 99, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .category-filter .btn {
   width: 150px;
-  height: 35px;
+  height: 36px;
 }
 /* line 104, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .dropdown-menu {
@@ -9374,6 +9374,11 @@ nav {
 #toolbar .bootstrap-select.btn-group.show-menu-arrow .dropdown-menu {
   overflow-x: scroll !important;
   overflow-y: none !important;
+}
+/* line 132, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar select.category-filter {
+  height: 33px;
+  margin-bottom: 0px;
 }
 
 /* line 1, ../../app/stylesheets/relaunch/_overlay.css.scss */
