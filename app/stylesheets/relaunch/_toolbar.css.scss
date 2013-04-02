@@ -97,7 +97,7 @@
     width: 150px;
     .btn {
       width: 150px;
-      height:35px;
+      height:36px;
     }
   }
   .dropdown-menu {
@@ -127,6 +127,11 @@
   .bootstrap-select.btn-group.show-menu-arrow .dropdown-menu {
     overflow-x: scroll!important;
     overflow-y: none!important;
+  }
+
+  select.category-filter {
+    height: 33px;
+    margin-bottom: 0px;
   }
 
 }
