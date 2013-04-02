@@ -41,7 +41,9 @@ javascripts:
     - public/javascripts/bootstrap/bootstrap-popover.js
     - public/javascripts/bootstrap/bootstrap-select.js
     # - public/javascripts/bootstrap/bootstrap-typeahead.js
+    - public/javascripts/spin.js
     - public/javascripts/leaflet.js
+    - public/javascripts/leaflet.spin.js
     - public/javascripts/map.js
 
   modernizr:
