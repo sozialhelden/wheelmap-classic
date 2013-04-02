@@ -2445,7 +2445,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url(/images/glyphicons-halflings.png?1364484033);
+  background-image: url(/images/glyphicons-halflings.png?1364893171);
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px;
@@ -2470,7 +2470,7 @@ table th[class*="span"],
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url(/images/glyphicons-halflings-white.png?1364484033);
+  background-image: url(/images/glyphicons-halflings-white.png?1364893171);
 }
 
 /* line 52, ../../vendor/bundle/ruby/1.8/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_sprites.scss */
@@ -8942,6 +8942,89 @@ bootstrap-select.btn-group .dropdown-menu li > a {
   border-radius: 2px;
 }
 
+@font-face {
+  font-family: 'EntypoRegular';
+  src: url("/fonts/entypo.eot");
+  src: url("/fonts/entypo.eot?#iefix") format("embedded-opentype"), url("/fonts/entypo.woff") format("woff"), url("/fonts/entypo.ttf") format("truetype"), url("/fonts/entypo.svg#EntypoRegular") format("svg");
+}
+
+/* line 1, ../../app/stylesheets/relaunch/_default.css.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* braucht es fÃ¼r die min-height des Containers */
+}
+
+/* line 7, ../../app/stylesheets/relaunch/_default.css.scss */
+body {
+  width: 100%;
+  font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
+  margin: 0;
+  padding: 0;
+}
+
+/* line 14, ../../app/stylesheets/relaunch/_default.css.scss */
+section#map {
+  position: absolute;
+  top: 102px;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  background: yellow;
+}
+
+/* @group Allgemein ================================================================================= */
+/* line 25, ../../app/stylesheets/relaunch/_default.css.scss */
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+/* line 29, ../../app/stylesheets/relaunch/_default.css.scss */
+*:focus {
+  outline: none;
+  border: none;
+}
+
+/* line 35, ../../app/stylesheets/relaunch/_default.css.scss */
+::-moz-selection, ::selection {
+  background: #999;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* @end */
+/* line 43, ../../app/stylesheets/relaunch/_default.css.scss */
+p {
+  font-size: 12px;
+  line-height: 20px;
+  float: left;
+}
+
+/* line 49, ../../app/stylesheets/relaunch/_default.css.scss */
+.content {
+  width: 100%;
+  max-width: 95%;
+  margin: auto;
+}
+
+/* line 54, ../../app/stylesheets/relaunch/_default.css.scss */
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 760px) {
+  /* line 60, ../../app/stylesheets/relaunch/_default.css.scss */
+  .mobile {
+    display: block;
+  }
+
+  /* line 63, ../../app/stylesheets/relaunch/_default.css.scss */
+  .desktop {
+    display: none;
+  }
+}
 /* line 1, ../../app/stylesheets/relaunch/_header.css.scss */
 header {
   width: 100%;
@@ -8996,19 +9079,18 @@ nav {
   height: 52px;
   position: absolute;
   top: 50px;
-  float: left;
   background: url(/images/bg_toolbar.png) #304151;
   background-image: -webkit-image-set(url(/images/bg_toolbar.png) 1x, url(/images/bg_toolbar@2x.png) 2x);
   box-shadow: 0px 0px 10px #444;
   z-index: 998;
 }
-/* line 11, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 10, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .content {
   max-width: 640px;
   margin: auto;
   margin-top: -2px;
 }
-/* line 16, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 15, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .btn {
   background-color: #5c748b;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#6c859d), to(#4d647a));
@@ -9023,17 +9105,17 @@ nav {
   -moz-box-shadow: 0px 1px 0px #566d82, inset 0px 1px 0px #8298aa;
   box-shadow: 0px 1px 0px #566d82, inset 0px 1px 0px #8298aa;
 }
-/* line 30, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 29, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .btn:hover {
   -webkit-box-shadow: 0px 1px 0px #566d82, inset 0 10px 20px rgba(48, 66, 81, 0.3);
   -moz-box-shadow: 0px 1px 0px #566d82, inset 0 10px 20px rgba(48, 66, 81, 0.3);
   box-shadow: 0px 1px 0px #566d82, inset 0 10px 20px rgba(48, 66, 81, 0.3);
 }
-/* line 33, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 32, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .input-append {
   /* firefox 19+ */
 }
-/* line 34, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 33, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .input-append input {
   width: 160px;
   float: left;
@@ -9055,24 +9137,24 @@ nav {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-/* line 48, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 47, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .input-append input:focus {
   width: 200px;
   background: #FFF;
 }
-/* line 52, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 51, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .input-append ::-webkit-input-placeholder {
   color: #2D3D4D;
 }
-/* line 53, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 52, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .input-append ::-moz-placeholder {
   color: #2D3D4D;
 }
-/* line 54, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 53, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .input-append input:-moz-placeholder {
   color: #2D3D4D;
 }
-/* line 55, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 54, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .input-append button {
   height: 36px;
   -webkit-border-radius: 0 3px 3px 0;
@@ -9081,25 +9163,25 @@ nav {
   -o-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
-/* line 60, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 59, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter {
   margin: 0 10px;
 }
-/* line 62, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 61, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .btn {
   width: 46px;
   height: 36px;
   padding: 0;
   text-indent: -99999px;
 }
-/* line 67, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 66, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .btn span {
   width: 22px;
   height: 22px;
   margin: 2px 0 0 11px;
   float: left;
 }
-/* line 74, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 73, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .btn:first-child {
   -webkit-border-radius: 3px 0 0 3px;
   -moz-border-radius: 3px 0 0 3px;
@@ -9107,7 +9189,7 @@ nav {
   -o-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
 }
-/* line 77, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 76, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .btn:last-child {
   -webkit-border-radius: 0 3px 3px 0;
   -moz-border-radius: 0 3px 3px 0;
@@ -9115,27 +9197,27 @@ nav {
   -o-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
-/* line 80, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 79, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .yes span {
   background: url("/images/marker-yes.png") no-repeat;
 }
-/* line 83, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 82, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .limited span {
   background: url("/images/marker-limited.png") no-repeat;
 }
-/* line 86, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 85, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .no span {
   background: url("/images/marker-no.png") no-repeat;
 }
-/* line 89, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 88, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .unknown span {
   background: url("/images/marker-unknown.png") no-repeat;
 }
-/* line 93, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 92, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .category-filter {
   width: 150px;
 }
-/* line 95, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 94, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .category-filter .btn {
   height: 35px;
 }
