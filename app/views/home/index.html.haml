@@ -3,6 +3,7 @@
     window.onload=function(){
       $('.selectpicker').selectpicker();
     };
+    requestNodes(map.getBounds());
 %section#map
 = render :partial => 'relaunch/popup_template'
 = render :partial => 'overlay'

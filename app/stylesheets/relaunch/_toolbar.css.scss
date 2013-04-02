@@ -31,11 +31,7 @@
     @include box-shadow(0px 1px 0px #566D82, inset 0 10px 20px rgba(48, 66, 81, 0.30));
   }
   .btn.active {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-    filter: alpha(opacity=30);
-    -moz-opacity: 0.3;
-    khtml-opacity: 0.3;
-    opacity: 0.3;
+    @include opacity(0.3);
   }
   .input-append {
     input {
