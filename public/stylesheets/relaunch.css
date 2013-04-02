@@ -9375,7 +9375,7 @@ nav {
   overflow-x: scroll !important;
   overflow-y: none !important;
 }
-/* line 132, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 133, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar select.category-filter {
   height: 33px;
   margin-bottom: 0px;
@@ -9493,7 +9493,13 @@ section#map {
   height: 33px;
 }
 
-/* line 53, ../../app/stylesheets/relaunch/_map.css.scss */
+@media screen and (max-width: 760px) {
+  /* line 55, ../../app/stylesheets/relaunch/_map.css.scss */
+  .leaflet-control-container {
+    display: none;
+  }
+}
+/* line 1, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper {
   background: #FFF;
   padding: 6px 14px 14px 14px;
@@ -9503,73 +9509,76 @@ section#map {
   -o-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 58, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 6, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content {
   margin: 0px;
 }
-/* line 61, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 9, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper h2 {
   font-size: 16px;
   line-height: 20px;
 }
-/* line 65, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 13, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper h3 {
-  margin: 0px;
+  margin: 0 0 10px 0;
   line-height: 20px;
 }
-/* line 69, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 17, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper address {
   margin: 0;
 }
-/* line 72, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 20, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper ol {
   list-style-type: none;
   margin: 0 0 0 0;
 }
-/* line 76, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 24, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .more {
   float: right;
 }
-/* line 79, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 27, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper li {
   width: 240px;
   display: block;
   margin: 0 0 4px 0;
-  padding: 6px 4px 0px 4px;
+  padding: 0;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 86, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 34, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .yes {
-  color: #6AA74A;
+  color: #6aa74a;
 }
-/* line 90, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 38, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .limited {
   color: #F1BD56;
 }
-/* line 94, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 42, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .no {
   color: #E5002A;
 }
-/* line 98, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 46, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .unknown {
   color: #555;
 }
-/* line 102, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 50, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper input[type=radio] {
   float: left;
   margin-right: 10px;
 }
-/* line 106, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 54, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper input[type=submit] {
-  float: right;
-  margin-right: 10px;
+  margin: 0 0 -20px 155px;
+}
+/* line 57, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper .save {
+  display: none;
 }
 
-/* line 111, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 61, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-tip {
   background-color: white !important;
   width: 8px !important;
@@ -9577,12 +9586,6 @@ section#map {
   margin: -6px auto 0 !important;
 }
 
-@media screen and (max-width: 760px) {
-  /* line 119, ../../app/stylesheets/relaunch/_map.css.scss */
-  .leaflet-control-container {
-    display: none;
-  }
-}
 /* line 1, ../../app/stylesheets/relaunch/_links.css.scss */
 a {
   font-size: 12px;
