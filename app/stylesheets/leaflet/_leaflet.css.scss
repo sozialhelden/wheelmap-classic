@@ -93,7 +93,7 @@
 }
 
 .leaflet-bottom {
-  top: 5px;
+  bottom: 0;
 }
 
 .leaflet-left {
@@ -375,8 +375,8 @@
 /* attribution and scale controls */
 
 .leaflet-container .leaflet-control-attribution {
-  /*background-color: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 5px #bbb;*/
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 5px #bbb;
   margin: 0;
 }
 
@@ -386,14 +386,8 @@
 }
 
 .leaflet-container {
-  .leaflet-control-attribution {
-    font-size: 9px;
-    a {
-      font-size: 9px;
-    }
-  }
-  .leaflet-control-scale {
-    font-size: 9px;
+  .leaflet-control-attribution, .leaflet-control-scale {
+    font-size: 11px;
   }
 }
 
@@ -437,7 +431,74 @@
   }
 }
 
-/* div icon */
+.leaflet-popup {
+  position: absolute;
+  text-align: center;
+}
+
+.leaflet-popup-content-wrapper {
+  padding: 1px;
+  text-align: left;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.leaflet-popup-content {
+  margin: 14px 20px;
+  line-height: 1.4;
+  p {
+    margin: 18px 0;
+  }
+}
+
+.leaflet-popup-tip-container {
+  margin: 0 auto;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.leaflet-popup-tip {
+  width: 15px;
+  height: 15px;
+  padding: 1px;
+  margin: -8px auto 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: white;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 5px 0 0;
+  text-align: center;
+  width: 18px;
+  height: 14px;
+  font: 16px / 14px Tahoma, Verdana, sans-serif;
+  color: #c3c3c3;
+  text-decoration: none;
+  font-weight: bold;
+  background: transparent;
+  &:hover {
+    color: #999;
+  }
+}
+
+.leaflet-popup-scrolled {
+  overflow: auto;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
 
 .leaflet-div-icon {
   background: #fff;

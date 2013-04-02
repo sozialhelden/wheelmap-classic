@@ -2445,7 +2445,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url(/images/glyphicons-halflings.png?1364893171);
+  background-image: url(/images/glyphicons-halflings.png?1364907456);
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px;
@@ -2470,7 +2470,7 @@ table th[class*="span"],
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url(/images/glyphicons-halflings-white.png?1364893171);
+  background-image: url(/images/glyphicons-halflings-white.png?1364907456);
 }
 
 /* line 52, ../../vendor/bundle/ruby/1.8/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_sprites.scss */
@@ -8541,7 +8541,7 @@ bootstrap-select.btn-group .dropdown-menu li > a {
 
 /* line 95, ../../app/stylesheets/leaflet/_leaflet.css.scss */
 .leaflet-bottom {
-  top: 5px;
+  bottom: 0;
 }
 
 /* line 99, ../../app/stylesheets/leaflet/_leaflet.css.scss */
@@ -8859,8 +8859,8 @@ bootstrap-select.btn-group .dropdown-menu li > a {
 /* attribution and scale controls */
 /* line 377, ../../app/stylesheets/leaflet/_leaflet.css.scss */
 .leaflet-container .leaflet-control-attribution {
-  /*background-color: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 5px #bbb;*/
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 5px #bbb;
   margin: 0;
 }
 
@@ -8871,29 +8871,21 @@ bootstrap-select.btn-group .dropdown-menu li > a {
 }
 
 /* line 389, ../../app/stylesheets/leaflet/_leaflet.css.scss */
-.leaflet-container .leaflet-control-attribution {
-  font-size: 9px;
-}
-/* line 391, ../../app/stylesheets/leaflet/_leaflet.css.scss */
-.leaflet-container .leaflet-control-attribution a {
-  font-size: 9px;
-}
-/* line 395, ../../app/stylesheets/leaflet/_leaflet.css.scss */
-.leaflet-container .leaflet-control-scale {
-  font-size: 9px;
+.leaflet-container .leaflet-control-attribution, .leaflet-container .leaflet-control-scale {
+  font-size: 11px;
 }
 
-/* line 400, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+/* line 394, ../../app/stylesheets/leaflet/_leaflet.css.scss */
 .leaflet-left .leaflet-control-scale {
   margin-left: 5px;
 }
 
-/* line 404, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+/* line 398, ../../app/stylesheets/leaflet/_leaflet.css.scss */
 .leaflet-bottom .leaflet-control-scale {
   margin-bottom: 5px;
 }
 
-/* line 408, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+/* line 402, ../../app/stylesheets/leaflet/_leaflet.css.scss */
 .leaflet-control-scale-line {
   border: 2px solid #777;
   border-top: none;
@@ -8907,35 +8899,113 @@ bootstrap-select.btn-group .dropdown-menu li > a {
   white-space: nowrap;
   overflow: hidden;
 }
-/* line 420, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+/* line 414, ../../app/stylesheets/leaflet/_leaflet.css.scss */
 .leaflet-control-scale-line:not(:first-child) {
   border-top: 2px solid #777;
   border-bottom: none;
   margin-top: -2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-/* line 425, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+/* line 419, ../../app/stylesheets/leaflet/_leaflet.css.scss */
 .leaflet-control-scale-line:not(:first-child):not(:last-child) {
   border-bottom: 2px solid #777;
 }
 
-/* line 432, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+/* line 426, ../../app/stylesheets/leaflet/_leaflet.css.scss */
 .leaflet-touch .leaflet-control-attribution, .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-control-zoom {
   box-shadow: none;
 }
-/* line 435, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+/* line 429, ../../app/stylesheets/leaflet/_leaflet.css.scss */
 .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-control-zoom {
   border: 4px solid rgba(0, 0, 0, 0.3);
 }
 
-/* div icon */
-/* line 442, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+/* line 434, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+.leaflet-popup {
+  position: absolute;
+  text-align: center;
+}
+
+/* line 439, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+.leaflet-popup-content-wrapper {
+  padding: 1px;
+  text-align: left;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+}
+
+/* line 446, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+.leaflet-popup-content {
+  margin: 14px 20px;
+  line-height: 1.4;
+}
+/* line 449, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+.leaflet-popup-content p {
+  margin: 18px 0;
+}
+
+/* line 454, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+.leaflet-popup-tip-container {
+  margin: 0 auto;
+  width: 40px;
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* line 462, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+.leaflet-popup-tip {
+  width: 15px;
+  height: 15px;
+  padding: 1px;
+  margin: -8px auto 0;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* line 474, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: white;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+}
+
+/* line 479, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+.leaflet-container a.leaflet-popup-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 5px 0 0;
+  text-align: center;
+  width: 18px;
+  height: 14px;
+  font: 16px / 14px Tahoma, Verdana, sans-serif;
+  color: #c3c3c3;
+  text-decoration: none;
+  font-weight: bold;
+  background: transparent;
+}
+/* line 492, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+.leaflet-container a.leaflet-popup-close-button:hover {
+  color: #999;
+}
+
+/* line 497, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+.leaflet-popup-scrolled {
+  overflow: auto;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+
+/* line 503, ../../app/stylesheets/leaflet/_leaflet.css.scss */
 .leaflet-div-icon {
   background: #fff;
   border: 1px solid #666;
 }
 
-/* line 447, ../../app/stylesheets/leaflet/_leaflet.css.scss */
+/* line 508, ../../app/stylesheets/leaflet/_leaflet.css.scss */
 .leaflet-editing-icon {
   -webkit-border-radius: 2px;
   border-radius: 2px;
