@@ -18,6 +18,6 @@
           %span{:'data-value' => 'yes'}
 
 
-      %select.selectpicker.show-menu-arrow.category-filter{:multiple => 'multiple', :title => 'Alle', :'data-style' => "btn-info", :'data-selected-text-format' => "count>2"}
+      %select.selectpicker.show-menu-arrow.category-filter{:size => 5, :multiple => 'multiple', :title => 'Alle', :'data-style' => "btn-info", :title => "Choose one"}
         - Category.all.sort_by(&:localized_name).each do |category|
-          %option{ :value => category.identifier, :selected => cookies["filter_#{category.identifier}"].present? ? "selected" : nil }= category.localized_name
+          %option{ :value => category.identifier, :selected => cookies["filter_#{category.identifier}"].present? ? nil : "selected" }= category.localized_name

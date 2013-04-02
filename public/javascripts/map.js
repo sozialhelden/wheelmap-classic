@@ -168,9 +168,9 @@ function parseResponse(data) {
         }
       });
 
-      $('.category-filter option:selected').each(function() {
+      $('.category-filter option:not(:selected)').each(function() {
         var filter_class = $(this).val();
-        if ( filter_class !== 'all' && feature.properties.category !== filter_class ) {
+        if ( feature.properties.category === filter_class ) {
           classesToAdd.push('category_hidden');
         }
       });
@@ -221,15 +221,11 @@ $('.category-filter').on('change', function(e){
   $(e.target).find('option').each(function(i) {
     var filter_class = $(this).val();
     if ( $(this).is(':selected') ) {
-      $.cookie('filter_'+filter_class, '1', { expires: 7, path: '/'});
-      if (filter_class === 'all') {
-        $('.leaflet-marker-icon').removeClass('category_hidden');
-      } else {
-        $('.leaflet-marker-icon').addClass('category_hidden');
-        $('.leaflet-marker-icon.' + filter_class).removeClass('category_hidden');
-      }
-    } else {
+      $('.leaflet-marker-icon.' + filter_class).removeClass('category_hidden');
       $.removeCookie('filter_'+filter_class);
+    } else {
+      $.cookie('filter_'+filter_class, '1', { expires: 7, path: '/'});
+      $('.leaflet-marker-icon.' + filter_class).addClass('category_hidden');
     }
   })
 });
