@@ -11,7 +11,7 @@
     line-height: 20px;
   }
   h3 {
-    margin: 0px;
+    margin: 0 0 10px 0;
     line-height:20px;
   }
   address {
@@ -28,11 +28,11 @@
     width: 240px;
     display: block;
     margin: 0 0 4px 0;
-    padding: 6px 4px 0px 4px;
+    padding:0;
     @include border-radius(4px); 
   }
   .yes {
-    color: #6AA74A;
+    color: $green;
     //background: #F0F6ED;
   }
   .limited {
@@ -52,8 +52,10 @@
     margin-right: 10px;
   }
   input[type=submit] {
-    float:right;
-    margin-right: 10px;
+    margin: 0 0 -20px 155px;
+  }
+  .save {
+    display: none;
   }
 }
 .leaflet-popup-tip {
