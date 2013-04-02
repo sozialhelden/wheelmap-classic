@@ -1,14 +1,24 @@
+html,body {
+  margin:0;
+  padding:0;
+  height:100%; /* braucht es fÃ¼r die min-height des Containers */
+}
+
 body {
   width: 100%;
   font-family: $helvetica;
+  margin: 0;
+  padding: 0;
 }
 
-@font-face {
-  font-family: 'EntypoRegular';
-  src: url('/fonts/entypo.eot');
-  src: url('/fonts/entypo.eot?#iefix') format("embedded-opentype"), url('/fonts/entypo.woff') format("woff"), url('/fonts/entypo.ttf') format("truetype"), url('/fonts/entypo.svg#EntypoRegular') format("svg");
+section#map {
+  position: absolute;
+  top: $headerHeight + $toolbarHeight;
+  bottom: $footerHeight;
+  left: 0;
+  width: 100%;
+  background: yellow;
 }
-
 
 /* @group Allgemein ================================================================================= */
 

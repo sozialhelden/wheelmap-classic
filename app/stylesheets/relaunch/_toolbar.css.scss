@@ -1,9 +1,8 @@
 #toolbar {
   width: 100%;
-  height: 52px;
+  height: $toolbarHeight;
   position: absolute;
-  top: 50px;
-  float: left;
+  top: $headerHeight;
   background: url(/images/bg_toolbar.png) #304151;
   background-image: -webkit-image-set(url(/images/bg_toolbar.png) 1x, url(/images/bg_toolbar@2x.png) 2x);
   box-shadow: 0px 0px 10px #444;
@@ -22,9 +21,10 @@
     background-image: -ms-linear-gradient(top, rgb(108, 133, 157), rgb(77, 100, 122));
     background-image: linear-gradient(top, rgb(108, 133, 157), rgb(77, 100, 122));
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#6c859d', EndColorStr='#4d647a');
-    
+
     border: 1px solid #000;
     background-position: 0;
+
     @include box-shadow(0px 1px 0px #566D82, inset 0px 1px 0px #8298AA);
   }
   
@@ -40,30 +40,30 @@
   }
   .input-append {
     input {
-    		width: 160px;
-    		float: left;
-    		margin: 0 0 0 0;
-    		padding: 8px 0px 6px 10px;
-    		border: 1px solid #000;
-    		background: #A4ACB4;
-    		
-    		font-size: 12px;
-    		
-    		@include border-radius(3px 0 0 3px);
-    		@include box-shadow(0px 1px 0px #566D82);
-    		@include transition(all 0.3s ease-in-out); 	
-    	}
-    	input:focus {
-    		width: 200px;
-    		background: #FFF;
-    	}
-    	::-webkit-input-placeholder { color:#2D3D4D; }
-    	::-moz-placeholder { color:#2D3D4D; } /* firefox 19+ */
-    	input:-moz-placeholder { color:#2D3D4D; }
-    	button {
-    	  height:36px;
-    	  @include border-radius(0 3px 3px 0); 	
-    	}
+        width: 160px;
+        float: left;
+        margin: 0 0 0 0;
+        padding: 8px 0px 6px 10px;
+        border: 1px solid #000;
+        background: #A4ACB4;
+
+        font-size: 12px;
+
+        @include border-radius(3px 0 0 3px);
+        @include box-shadow(0px 1px 0px #566D82);
+        @include transition(all 0.3s ease-in-out);
+      }
+      input:focus {
+        width: 200px;
+        background: #FFF;
+      }
+      ::-webkit-input-placeholder { color:#2D3D4D; }
+      ::-moz-placeholder { color:#2D3D4D; } /* firefox 19+ */
+      input:-moz-placeholder { color:#2D3D4D; }
+      button {
+        height:36px;
+        @include border-radius(0 3px 3px 0);
+      }
   }
   .status-filter {
     margin:0 10px;
