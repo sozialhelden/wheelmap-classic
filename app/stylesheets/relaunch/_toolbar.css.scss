@@ -27,16 +27,12 @@
 
     @include box-shadow(0px 1px 0px #566D82, inset 0px 1px 0px #8298AA);
   }
-  
+
   .btn:hover {
     @include box-shadow(0px 1px 0px #566D82, inset 0 10px 20px rgba(48, 66, 81, 0.30));
   }
   .btn.active {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-    filter: alpha(opacity=30);
-    -moz-opacity: 0.3;
-    khtml-opacity: 0.3;
-    opacity: 0.3;
+    @include opacity(0.3);
   }
   .input-append {
     input {
@@ -111,7 +107,7 @@
   .dropdown-menu > li > a {
     padding: 6px 10px 5px 10px;
     border-bottom: 1px solid #F0F0F0;
-    
+
     font-size: 13px;
   }
   .dropdown-menu li:last-child a{
@@ -126,11 +122,11 @@
     background-image: -ms-linear-gradient(top, rgb(107, 132, 155), rgb(77, 100, 122));
     background-image: linear-gradient(top, rgb(107, 132, 155), rgb(77, 100, 122));
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#6b849b', EndColorStr='#4d647a');
-    
+
   }
   .bootstrap-select.btn-group.show-menu-arrow .dropdown-menu {
     overflow-x: scroll!important;
     overflow-y: none!important;
   }
-  
+
 }

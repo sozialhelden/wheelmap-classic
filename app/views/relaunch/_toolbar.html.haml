@@ -6,18 +6,18 @@
           %input#search{:type => "text", :name => "q", :value => params[:q].present? ? params[:q] : nil, :autocomplete => "off", :placeholder => t('header.searchbar.placeholder')}
           %button.btn{:type => "submit", :value => t('header.searchbar.find')}
             %i.icon-search.icon-white
-  
+
       .btn-group.status-filter(data-toggle="buttons-checkbox")
-        %button.btn.yes
-          %span YES
-        %button.btn.no
-          %span No
-        %button.btn.limited
-          %span Limited
-        %button.btn.unknown
-          %span Unknow
-  
-  
-      %select.selectpicker.show-menu-arrow.span2.category-filter{:multiple => 'multiple', :title => 'Alle', :'data-style' => "btn-info", :'data-selected-text-format' => "count>2"}
+        %button.btn.yes{:'data-value' => 'yes', :class => cookies["filter_yes"].present? ? 'active' : nil }
+          %span{:'data-value' => 'yes'}
+        %button.btn.no{:'data-value' => 'no', :class => cookies["filter_no"].present? ? 'active' : nil }
+          %span{:'data-value' => 'yes'}
+        %button.btn.limited{:'data-value' => 'limited', :class => cookies["filter_limited"].present? ? 'active' : nil }
+          %span{:'data-value' => 'yes'}
+        %button.btn.unknown{:'data-value' => 'unknown', :class => cookies["filter_unknown"].present? ? 'active' : nil }
+          %span{:'data-value' => 'yes'}
+
+
+      %select.selectpicker.show-menu-arrow.category-filter{:multiple => 'multiple', :title => 'Alle', :'data-style' => "btn-info", :'data-selected-text-format' => "count>2"}
         - Category.all.sort_by(&:localized_name).each do |category|
           %option{ :value => category.identifier, :selected => cookies["filter_#{category.identifier}"].present? ? "selected" : nil }= category.localized_name
