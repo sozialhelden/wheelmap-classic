@@ -1,0 +1,64 @@
+.leaflet-popup-content-wrapper {
+  background: #FFF;
+  padding: 6px 14px 14px 14px;
+  @include border-radius(4px);
+  
+  .leaflet-popup-content {
+    margin: 0px;
+  }
+  h2 {
+    font-size:16px;
+    line-height: 20px;
+  }
+  h3 {
+    margin: 0px;
+    line-height:20px;
+  }
+  address {
+    margin: 0;
+  }
+  ol {
+    list-style-type: none;
+    margin: 0 0 0 0;
+  }
+  .more {
+    float: right;
+  }
+  li {
+    width: 240px;
+    display: block;
+    margin: 0 0 4px 0;
+    padding: 6px 4px 0px 4px;
+    @include border-radius(4px); 
+  }
+  .yes {
+    color: #6AA74A;
+    //background: #F0F6ED;
+  }
+  .limited {
+    color: #F1BD56;
+    //background: #FEF9EE;
+  }
+  .no {
+    color: #E5002A;
+    //background: #FCE6EA;
+  }
+  .unknown {
+    color: #555;
+    //background: #F6F6F6;
+  }
+  input[type=radio] {
+    float:left;
+    margin-right: 10px;
+  }
+  input[type=submit] {
+    float:right;
+    margin-right: 10px;
+  }
+}
+.leaflet-popup-tip {
+	background-color: rgb(255,255,255)!important;
+	width: 8px!important;
+	height: 8px!important;
+	margin: -6px auto 0!important;
+}
