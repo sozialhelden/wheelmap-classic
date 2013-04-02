@@ -199,7 +199,6 @@ function parseResponse(data) {
 $('.status-filter').find('button').button();
 $('.status-filter button').each(function(i) {
   $(this).on('change', function(e) {
-    console.log(e.target);
     var target = $(e.target);
     if (target.is('button')) {
       // OK
@@ -209,11 +208,9 @@ $('.status-filter button').each(function(i) {
     var filter_class = target.attr('data-value');
 
     if (target.hasClass('active')) {
-      console.log("is active")
       $('.leaflet-marker-icon.' + filter_class).addClass('wheelchair_hidden');
       $.cookie('filter_'+filter_class, '1', { expires: 7, path: '/'});
     } else {
-      console.log("is inactive")
       $.removeCookie('filter_'+filter_class);
       $('.leaflet-marker-icon.' + filter_class).removeClass('wheelchair_hidden');
     }
