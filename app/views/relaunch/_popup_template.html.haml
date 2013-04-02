@@ -21,5 +21,5 @@
         %li.unknown
           =radio_button_tag "wheelchair", "unknown", true, :id => "unknown-OpenLayers.Feature.Vector_{id}", :disabled => "disabled"
           %label{:for => "unknown-OpenLayers.Feature.Vector_{id}"}= t('home.index.popup.form.unknown')
-        %li
+        %li.save
           =submit_tag t('home.index.popup.form.save'), :class => 'btn'
