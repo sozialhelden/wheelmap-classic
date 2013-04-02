@@ -73,6 +73,7 @@
 /* control positioning */
 
 .leaflet-control {
+  height: 100%;
   position: relative;
   z-index: 7;
   pointer-events: auto;
@@ -80,7 +81,7 @@
 
 .leaflet-top, .leaflet-bottom {
   position: absolute;
-  z-index: 1000;
+  z-index: 100;
   pointer-events: none;
 }
 
@@ -93,7 +94,7 @@
 }
 
 .leaflet-bottom {
-  bottom: 0;
+  top: 0px;
 }
 
 .leaflet-left {
@@ -386,8 +387,8 @@
 }
 
 .leaflet-container {
-  .leaflet-control-attribution, .leaflet-control-scale {
-    font-size: 11px;
+  .leaflet-control-attribution, .leaflet-control-scale, .leaflet-control-attribution a {
+    font-size: 10px;
   }
 }
 
@@ -472,7 +473,7 @@
 }
 
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
-  background: white;
+  background: red;
   box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
 }
 
