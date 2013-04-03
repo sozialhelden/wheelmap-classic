@@ -34,6 +34,9 @@
   .btn.active {
     @include opacity(0.3);
   }
+  .btn-searchbar {
+    display:none;
+  }
   .input-append {
     input {
         width: 160px;
@@ -100,6 +103,10 @@
       width: 150px;
       height:36px;
     }
+    .dropdown-menu {
+          right: 0px;
+          left: auto;
+    }
   }
   .dropdown-menu {
     border-radius: 3px;
@@ -137,15 +144,47 @@
 
 }
 @media screen and (max-width:767px) {
-.content {
-  max-width: 100%;
+  #toolbar { 
+    .content {
+      max-width: 100%;
+      .btn-searchbar {
+        display: inline;
+      } 
+      form.navbar-form {
+        width: 98%;
+        padding: 10px 1% 10px 1%;
+        position: absolute;
+        top:44px;
+        left: 0px;
+        background: #333;
+        display: none !important;
+        
+        &.active {
+          display: block !important;
+        }
+        .input-append {
+          margin: 0 !important;
+          width: 100% !important;
+
+          input, input:focus {
+            width: 80%;
+          }
+        }
+      }
+      .btn, .btn-group {
+         width:50px;
+      }
+      .category-filter {
+        float: right;
+        margin-right: 1%;
+        span.filter-option {
+          text-indent: -99999px;
+        }
+      }
+    } 
+  } 
 }
-.navbar-form {
-  width: 96%;
-  padding: 10px 2%;
-  position: absolute;
-  top:44px;
-  left: 0px;
-  background: #F00;
-}
-}
+
+
+
+

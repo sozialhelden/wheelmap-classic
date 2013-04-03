@@ -9234,10 +9234,14 @@ nav {
   opacity: 0.3;
 }
 /* line 37, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .btn-searchbar {
+  display: none;
+}
+/* line 40, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .input-append {
   /* firefox 19+ */
 }
-/* line 38, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 41, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .input-append input {
   width: 160px;
   float: left;
@@ -9259,24 +9263,24 @@ nav {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-/* line 52, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 55, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .input-append input:focus {
   width: 200px;
   background: #FFF;
 }
-/* line 56, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 59, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .input-append ::-webkit-input-placeholder {
   color: #2D3D4D;
 }
-/* line 57, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 60, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .input-append ::-moz-placeholder {
   color: #2D3D4D;
 }
-/* line 58, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 61, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .input-append input:-moz-placeholder {
   color: #2D3D4D;
 }
-/* line 59, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 62, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .input-append button {
   height: 36px;
   -webkit-border-radius: 0 3px 3px 0;
@@ -9285,25 +9289,25 @@ nav {
   -o-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
-/* line 64, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 67, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter {
   margin: 0 10px;
 }
-/* line 66, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 69, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .btn {
   width: 46px;
   height: 36px;
   padding: 0;
   text-indent: -99999px;
 }
-/* line 71, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 74, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .btn span {
   width: 22px;
   height: 22px;
   margin: 2px 0 0 11px;
   float: left;
 }
-/* line 78, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 81, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .btn:first-child {
   -webkit-border-radius: 3px 0 0 3px;
   -moz-border-radius: 3px 0 0 3px;
@@ -9311,7 +9315,7 @@ nav {
   -o-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
 }
-/* line 81, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 84, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .btn:last-child {
   -webkit-border-radius: 0 3px 3px 0;
   -moz-border-radius: 0 3px 3px 0;
@@ -9319,47 +9323,52 @@ nav {
   -o-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
 }
-/* line 84, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 87, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .yes span {
   background: url("/images/marker-yes.png") no-repeat;
 }
-/* line 87, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 90, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .limited span {
   background: url("/images/marker-limited.png") no-repeat;
 }
-/* line 90, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 93, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .no span {
   background: url("/images/marker-no.png") no-repeat;
 }
-/* line 93, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 96, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .status-filter .unknown span {
   background: url("/images/marker-unknown.png") no-repeat;
 }
-/* line 97, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 100, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .category-filter {
   width: 150px;
 }
-/* line 99, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 102, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .category-filter .btn {
   width: 150px;
   height: 36px;
 }
-/* line 104, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 106, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .category-filter .dropdown-menu {
+  right: 0px;
+  left: auto;
+}
+/* line 111, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .dropdown-menu {
   border-radius: 3px;
   padding: 5px 0 0 0;
 }
-/* line 108, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 115, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .dropdown-menu > li > a {
   padding: 6px 10px 5px 10px;
   border-bottom: 1px solid #F0F0F0;
   font-size: 13px;
 }
-/* line 114, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 121, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .dropdown-menu li:last-child a {
   border: none;
 }
-/* line 117, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 124, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .dropdown-menu > li > a:hover {
   background-color: #5c748a;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#6b849b), to(#4d647a));
@@ -9370,31 +9379,61 @@ nav {
   background-image: linear-gradient(top, #6b849b, #4d647a);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#6b849b', EndColorStr='#4d647a');
 }
-/* line 128, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 135, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .bootstrap-select.btn-group.show-menu-arrow .dropdown-menu {
   overflow-x: scroll !important;
   overflow-y: none !important;
 }
-/* line 133, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 140, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar select.category-filter {
   height: 33px;
   margin-bottom: 0px;
 }
 
 @media screen and (max-width: 767px) {
-  /* line 140, ../../app/stylesheets/relaunch/_toolbar.css.scss */
-  .content {
+  /* line 148, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar .content {
     max-width: 100%;
   }
-
-  /* line 143, ../../app/stylesheets/relaunch/_toolbar.css.scss */
-  .navbar-form {
-    width: 96%;
-    padding: 10px 2%;
+  /* line 150, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar .content .btn-searchbar {
+    display: inline;
+  }
+  /* line 153, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar .content form.navbar-form {
+    width: 98%;
+    padding: 10px 1% 10px 1%;
     position: absolute;
     top: 44px;
     left: 0px;
-    background: #F00;
+    background: #333;
+    display: none !important;
+  }
+  /* line 162, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar .content form.navbar-form.active {
+    display: block !important;
+  }
+  /* line 165, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar .content form.navbar-form .input-append {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  /* line 169, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar .content form.navbar-form .input-append input, #toolbar .content form.navbar-form .input-append input:focus {
+    width: 80%;
+  }
+  /* line 174, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar .content .btn, #toolbar .content .btn-group {
+    width: 50px;
+  }
+  /* line 177, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar .content .category-filter {
+    float: right;
+    margin-right: 1%;
+  }
+  /* line 180, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar .content .category-filter span.filter-option {
+    text-indent: -99999px;
   }
 }
 /* line 1, ../../app/stylesheets/relaunch/_overlay.css.scss */

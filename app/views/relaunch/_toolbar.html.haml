@@ -1,6 +1,8 @@
 #toolbar
   .content
     .btn-toolbar.center
+      %button.btn.btn-searchbar
+        %i.icon-search.icon-white
       %form.navbar-form{:action =>"/search", :method => "GET", :style => 'display:inline-block;margin-bottom:0'}
         .input-append{:style => 'margin:0 10px'}
           %input#search{:type => "text", :name => "q", :value => params[:q].present? ? params[:q] : nil, :autocomplete => "off", :placeholder => t('header.searchbar.placeholder')}
