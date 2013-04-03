@@ -10,7 +10,7 @@
             %i.icon-search.icon-white
 
       .btn-group.status-filter(data-toggle="buttons-checkbox")
-        %button.btn.yes{:'data-value' => 'yes', :class => cookies["filter_yes"].present? ? 'active' : nil }
+        %button.btn.yes{:'data-value' => 'yes', :class => cookies["filter_yes"].present? ? 'active' : nil, :'data-toggle' => "popover", :'data-placement' => "bottom", :'data-content' => "Vivamus sagittis lacus vel augue laoreet rutrum faucibus.", :title => "", :'data-original-title' => "Popover on bottom" }
           %span{:'data-value' => 'yes'}
         %button.btn.no{:'data-value' => 'no', :class => cookies["filter_no"].present? ? 'active' : nil }
           %span{:'data-value' => 'yes'}
