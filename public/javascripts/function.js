@@ -1,9 +1,7 @@
 $(document).ready(function() {
 
-// $('.status-filter button').popover({
-// 	trigger: 'hover'
-// });
-$('.status-filter button').popover('show');
+$('.status-filter button').popover({trigger: 'hover'});
+
 
 $('.btn-searchbar').click(function() {
 	$('.navbar-form').toggleClass('active');
