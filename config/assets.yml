@@ -28,15 +28,15 @@ javascripts:
     - public/javascripts/i18n.js
     - public/javascripts/translations.js
     - public/javascripts/bootstrap/bootstrap-transition.js
-    - public/javascripts/bootstrap/bootstrap-affix.js
-    - public/javascripts/bootstrap/bootstrap-alert.js
+    # - public/javascripts/bootstrap/bootstrap-affix.js
+    # - public/javascripts/bootstrap/bootstrap-alert.js
     - public/javascripts/bootstrap/bootstrap-button.js
     # - public/javascripts/bootstrap/bootstrap-carousel.js
     - public/javascripts/bootstrap/bootstrap-collapse.js
     - public/javascripts/bootstrap/bootstrap-dropdown.js
     - public/javascripts/bootstrap/bootstrap-modal.js
     # - public/javascripts/bootstrap/bootstrap-scrollspy.js
-    - public/javascripts/bootstrap/bootstrap-tab.js
+    # - public/javascripts/bootstrap/bootstrap-tab.js
     - public/javascripts/bootstrap/bootstrap-tooltip.js
     - public/javascripts/bootstrap/bootstrap-popover.js
     - public/javascripts/bootstrap/bootstrap-select.js
