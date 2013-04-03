@@ -1,3 +1,8 @@
+.icon-white {
+  color: white;
+  @include single-text-shadow(rgba(black, 0.5), 0, 1px, 1px);
+}
+
 .leaflet-marker-icon .icon {
   margin:2px;
   background:url('/icons/icon-sprite.png') no-repeat top left; display:inline-block;
