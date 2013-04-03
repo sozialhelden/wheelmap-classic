@@ -25,7 +25,11 @@
     @include box-shadow(0px 1px 0px #566D82, inset 0 10px 20px rgba(48, 66, 81, 0.30));
   }
   .btn.active {
-    @include opacity(0.3);
+    @include background(linear-gradient(bottom, rgb(108, 133, 157), rgb(77, 100, 122)));
+    @include filter-gradient(#4d647a, #6c859d, vertical);
+    & span {
+      @include opacity(0.5);
+    }
   }
   .btn-searchbar {
     display:none;
@@ -63,7 +67,6 @@
       width: 46px;
       height: 36px;
       padding:0;
-      text-indent: -99999px;
       span {
         width:22px;
         height:22px;
@@ -77,17 +80,50 @@
     .btn:last-child {
       @include border-radius(0 3px 3px 0);
     }
-    .yes span {
-      background: url('/images/marker-yes.png') no-repeat;
+    .yes {
+      span {
+        background: url('/images/marker-yes.png') no-repeat;
+      }
+      .popover-title {
+        background: #7EA940;
+        color: #FFF;
+        font-weight: bold;
+        @include text-shadow(0 1px 0 #000);
+      }
     }
-    .limited span {
-      background: url('/images/marker-limited.png') no-repeat;
+    
+    .limited {
+      span {
+        background: url('/images/marker-limited.png') no-repeat;
+      }
+      .popover-title {
+        background: #F1BD56;
+        color: #FFF;
+        font-weight: bold;
+        @include text-shadow(0 1px 0 #000);
+      }
     }
-    .no span {
-      background: url('/images/marker-no.png') no-repeat;
+    .no {
+      span {
+        background: url('/images/marker-no.png') no-repeat;
+      }
+      .popover-title {
+        background: #E5002A;
+        color: #FFF;
+        font-weight: bold;
+        @include text-shadow(0 1px 0 #000);
+      }
     }
-    .unknown span {
-      background: url('/images/marker-unknown.png') no-repeat;
+    .unknown {
+      span {
+        background: url('/images/marker-unknown.png') no-repeat;
+      }
+      .popover-title {
+        background: #A5A5A6;
+        color: #FFF;
+        font-weight: bold;
+        @include text-shadow(0 1px 0 #000);
+      }
     }
   }
   .category-filter {
@@ -134,7 +170,9 @@
     height: 33px;
     margin-bottom: 0px;
   }
-
+  .popover {
+    width: 180px;
+  }
 }
 @media screen and (max-width:767px) {
   #toolbar { 
