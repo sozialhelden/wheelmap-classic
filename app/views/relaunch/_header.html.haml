@@ -21,11 +21,11 @@
             %span.hidden-phone= t('header.navigation.login')
 
 
-          %select.selectpicker.pull-right.language-select{:onchange => 'location.href=this.options[this.selectedIndex].value', :title => Languages[I18n.locale.to_s], :'data-style' => "btn-small"}
+          %select.selectpicker.pull-right.language-select{:onchange => 'location.href=this.options[this.selectedIndex].value', :title => "\f0ac", :'data-style' => "btn-small"}
             %i
             %optgroup{:label => I18n.t('header.navigation.choose_language'), :class => 'icon-globe'}
               - I18n.available_locales.map(&:to_s).sort.each do |locale|
-                %option{:value => url_for_locale(request.url, locale), :selected => (I18n.locale.to_s.downcase == locale.to_s.downcase)}=Languages[locale.to_s]
+                %option{:value => url_for_locale(request.url, locale),:title => "<i class='icon-globe'></i><span class='hidden-phone hidden-tablet'>#{Languages[I18n.locale.to_s]}</span>", :selected => (I18n.locale.to_s.downcase == locale.to_s.downcase)}=Languages[locale.to_s]
 
         .nav-collapse.collapse
           .list-wrapper

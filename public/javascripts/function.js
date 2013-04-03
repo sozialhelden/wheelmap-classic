@@ -1,12 +1,17 @@
 $(document).ready(function() {
 
+// $('.status-filter button').popover({
+// 	trigger: 'hover'
+// });
+$('.status-filter button').popover('show');
+
 $('.btn-searchbar').click(function() {
 	$('.navbar-form').toggleClass('active');
 });
 $('.notification.active').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
 
 $('.close-btn, .btn-start').click(function() {
-		 	$('.overlay').fadeOut(500);
+	$('.overlay').fadeOut(500);
 });
 
 map.on('popupopen', function(e) {
