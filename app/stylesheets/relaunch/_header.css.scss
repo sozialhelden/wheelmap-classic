@@ -35,6 +35,11 @@ header {
     text-align: right;
     color: #999;
   }
+   @media screen and (max-width:767px) {
+   .logo {
+      width: 25px;
+    }
+  }
   .btn-toolbar {
     margin-top:0px;
     }
@@ -45,8 +50,8 @@ header {
   }
   .btn-add, .btn-add:hover {
     background-color: #87b346;
-    @include background(linear-gradient(top left, rgb(150, 193, 78), rgb(121, 165, 62)));
-    @include filter-gradient(#96c14e, #79a53e, horizontal);
+    @include background(linear-gradient(top, rgb(150, 193, 78), rgb(121, 165, 62)));
+    @include filter-gradient(#96c14e, #79a53e, vertical);
   }
   .btn-add:hover {
     background-position: 0;
@@ -55,11 +60,20 @@ header {
     width: auto;
   }
 }
-
+select {
+  width: 120px;
+  height: 26px;
+  margin-top: 10px;
+}
 .language-select {
   .btn {
-    max-width: 90px;
+    max-width: 120px;
   }
+  @media screen and (max-width:767px) {
+   .btn {
+      max-width: 50px;
+    }
+  }  
 }
 nav {
   .list-wrapper{
@@ -91,3 +105,4 @@ nav {
     }
   }
 }
+
