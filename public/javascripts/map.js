@@ -12,8 +12,7 @@ var map = L.map('map', {
   trackResize: true
 });
 
-// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-L.tileLayer('http://{s}.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.png', {
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   minZoom: 2,
   attribution: '&copy; Data under ODbL by <a href="http://osm.org/copyright">OpenStreetMap</a>, Map Icons Collection CC-By-SA by <a href="http://mapicons.nicolasmollet.com/">Nicolas Mollet</a>',

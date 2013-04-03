@@ -135,3 +135,16 @@
   }
 
 }
+@media screen and (max-width:767px) {
+.content {
+  max-width: 100%;
+}
+.navbar-form {
+  width: 96%;
+  padding: 10px 2%;
+  position: absolute;
+  top:44px;
+  left: 0px;
+  background: #F00;
+}
+}

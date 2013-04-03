@@ -9394,6 +9394,22 @@ nav {
   margin-bottom: 0px;
 }
 
+@media screen and (max-width: 767px) {
+  /* line 140, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  .content {
+    max-width: 100%;
+  }
+
+  /* line 143, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  .navbar-form {
+    width: 96%;
+    padding: 10px 2%;
+    position: absolute;
+    top: 44px;
+    left: 0px;
+    background: #F00;
+  }
+}
 /* line 1, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay {
   display: none;
