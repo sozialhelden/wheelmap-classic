@@ -20,6 +20,11 @@ header {
 
   .navbar-inner {
     @include border-radius(0px);
+
+    .btn-navbar {
+       height: 10px;
+       padding: 5px 10px 8px;
+     }
   }
 
   .logo {
@@ -40,6 +45,7 @@ header {
       width: 25px;
     }
   }
+
   .btn-toolbar {
     margin-top:0px;
     }
@@ -73,7 +79,7 @@ select {
    .btn {
       max-width: 50px;
     }
-  }  
+  }
 }
 nav {
   .list-wrapper{
