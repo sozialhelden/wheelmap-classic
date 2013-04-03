@@ -12,14 +12,15 @@
     .btn-group{:style => 'margin:0'}
       = link_to new_node_path, :class => ['btn', 'btn-add', 'btn-small'] do
         %i.icon-plus.icon-white
-      = link_to t('header.searchbar.add_place'), new_node_path, :class => ['btn', 'btn-small']
+      = link_to t('header.searchbar.add_place'), new_node_path, :class => ['btn', 'btn-small', 'hidden-phone']
 
     = link_to new_user_session_path, :class => ['btn', 'btn-small'], :style => 'margin:0 10px' do
       %i.icon-user
-      = t('header.navigation.login')
+      %span.hidden-phone= t('header.navigation.login')
 
 
     %select.selectpicker.show-menu-arrow.pull-right.language-select{:onchange => 'location.href=this.options[this.selectedIndex].value', :title => Languages[I18n.locale.to_s], :'data-style' => "btn-small"}
-      %optgroup{:label => I18n.t('header.navigation.choose_language')}
+      %i
+      %optgroup{:label => I18n.t('header.navigation.choose_language'), :class => 'icon-globe'}
         - I18n.available_locales.map(&:to_s).sort.each do |locale|
           %option{:value => url_for_locale(request.url, locale), :selected => (I18n.locale.to_s.downcase == locale.to_s.downcase)}=Languages[locale.to_s]
