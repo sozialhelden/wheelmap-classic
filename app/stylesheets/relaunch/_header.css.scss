@@ -6,17 +6,8 @@ header {
   left: 0px;
   z-index: 1001;
   float: left;
-  background: url(/images/bg_header.png);
-
-  @media
-  only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (   min--moz-device-pixel-ratio: 2),
-  only screen and (     -o-min-device-pixel-ratio: 2/1),
-  only screen and (        min-device-pixel-ratio: 2),
-  only screen and (                min-resolution: 192dpi),
-  only screen and (                min-resolution: 2dppx) {
-    background-image: url(/images/bg_header@2x.png);
-  }
+  background: url('/images/bg_header.png');
+  @include background-image-retina('/images/bg_header@2x.png');
 
   .navbar-inner {
     @include border-radius(0px);
@@ -86,7 +77,7 @@ select {
     }
   }
   .dropdown-menu {
-    height:400px; 
+    height:400px;
     border-radius: 3px;
     padding: 5px 0 0 0;
     > li > a {
@@ -99,11 +90,11 @@ select {
     > li > a:hover {
       @include background(linear-gradient(top, rgb(107, 132, 155), rgb(77, 100, 122)));
       @include filter-gradient(#96c14e, #4d647a, vertical);
-    } 
+    }
     dt {
       font-size:12px;
       padding: 2px 0 0 9px!important;
-    } 
+    }
  }
 }
 nav {

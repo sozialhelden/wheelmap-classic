@@ -2387,7 +2387,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url(/images/glyphicons-halflings.png?1364484033);
+  background-image: url(/images/glyphicons-halflings.png?1364907456);
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px;
@@ -2412,7 +2412,7 @@ table th[class*="span"],
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url(/images/glyphicons-halflings-white.png?1364484033);
+  background-image: url(/images/glyphicons-halflings-white.png?1364907456);
 }
 
 /* line 52, ../../vendor/bundle/ruby/1.8/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_sprites.scss */
@@ -9531,15 +9531,16 @@ header {
   left: 0px;
   z-index: 1001;
   float: left;
-  background: url(/images/bg_header.png);
+  background: url("/images/bg_header.png");
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   /* line 1, ../../app/stylesheets/relaunch/_header.css.scss */
   header {
-    background-image: url(/images/bg_header@2x.png);
+    background-size: 50% auto;
+    background-image: url("/images/bg_header@2x.png");
   }
 }
-/* line 21, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 12, ../../app/stylesheets/relaunch/_header.css.scss */
 header .navbar-inner {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -9547,12 +9548,12 @@ header .navbar-inner {
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 24, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 15, ../../app/stylesheets/relaunch/_header.css.scss */
 header .navbar-inner .btn-navbar {
   height: 10px;
   padding: 5px 10px 8px;
 }
-/* line 30, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 21, ../../app/stylesheets/relaunch/_header.css.scss */
 header .logo {
   width: 160px;
   padding-top: 50px;
@@ -9567,22 +9568,22 @@ header .logo {
   color: #999;
 }
 @media screen and (max-width: 767px) {
-  /* line 44, ../../app/stylesheets/relaunch/_header.css.scss */
+  /* line 35, ../../app/stylesheets/relaunch/_header.css.scss */
   header .logo {
     width: 25px;
   }
 }
-/* line 49, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 40, ../../app/stylesheets/relaunch/_header.css.scss */
 header .btn-toolbar {
   margin-top: 0px;
 }
-/* line 52, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 43, ../../app/stylesheets/relaunch/_header.css.scss */
 header .btn {
   color: #555;
   padding: 2px 10px 1px 10px;
   background-position: 0;
 }
-/* line 57, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 48, ../../app/stylesheets/relaunch/_header.css.scss */
 header .btn-add, header .btn-add:hover {
   background-color: #87b346;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #96c14e), color-stop(100%, #79a53e));
@@ -9593,23 +9594,23 @@ header .btn-add, header .btn-add:hover {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF96C14E', endColorstr='#FF79A53E');
 }
-/* line 62, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 53, ../../app/stylesheets/relaunch/_header.css.scss */
 header .btn-add:hover {
   background-position: 0;
 }
-/* line 65, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 56, ../../app/stylesheets/relaunch/_header.css.scss */
 header .bootstrap-select {
   width: auto;
 }
 
-/* line 69, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 60, ../../app/stylesheets/relaunch/_header.css.scss */
 select {
   width: 120px;
   height: 26px;
   margin-top: 10px;
 }
 
-/* line 75, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 66, ../../app/stylesheets/relaunch/_header.css.scss */
 .language-select .btn {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -9619,32 +9620,32 @@ select {
   max-width: 120px;
   color: #333;
 }
-/* line 79, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 70, ../../app/stylesheets/relaunch/_header.css.scss */
 .language-select .btn i {
   margin-right: 4px;
 }
 @media screen and (max-width: 767px) {
-  /* line 84, ../../app/stylesheets/relaunch/_header.css.scss */
+  /* line 75, ../../app/stylesheets/relaunch/_header.css.scss */
   .language-select .btn {
     max-width: 50px;
   }
 }
-/* line 88, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 79, ../../app/stylesheets/relaunch/_header.css.scss */
 .language-select .dropdown-menu {
   height: 400px;
   border-radius: 3px;
   padding: 5px 0 0 0;
 }
-/* line 92, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 83, ../../app/stylesheets/relaunch/_header.css.scss */
 .language-select .dropdown-menu > li > a {
   padding: 1px 10px 1px 10px !important;
   font-size: 11px;
 }
-/* line 96, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 87, ../../app/stylesheets/relaunch/_header.css.scss */
 .language-select .dropdown-menu li:last-child a {
   border: none;
 }
-/* line 99, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 90, ../../app/stylesheets/relaunch/_header.css.scss */
 .language-select .dropdown-menu > li > a:hover {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6b849b), color-stop(100%, #4d647a));
   background: -webkit-linear-gradient(top, #6b849b, #4d647a);
@@ -9654,39 +9655,39 @@ select {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF96C14E', endColorstr='#FF4D647A');
 }
-/* line 103, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 94, ../../app/stylesheets/relaunch/_header.css.scss */
 .language-select .dropdown-menu dt {
   font-size: 12px;
   padding: 2px 0 0 9px !important;
 }
 
-/* line 110, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 101, ../../app/stylesheets/relaunch/_header.css.scss */
 nav .list-wrapper {
   text-align: center;
   float: left;
 }
-/* line 113, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 104, ../../app/stylesheets/relaunch/_header.css.scss */
 nav .list-wrapper ul.inline {
   display: inline-block;
   margin: 0;
 }
-/* line 116, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 107, ../../app/stylesheets/relaunch/_header.css.scss */
 nav .list-wrapper ul.inline li {
   float: left;
   list-style: none;
   padding: 15px 1px 5px 1px;
 }
-/* line 120, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 111, ../../app/stylesheets/relaunch/_header.css.scss */
 nav .list-wrapper ul.inline li a {
   color: #666;
   padding: 7px 10px 6px 10px;
 }
-/* line 123, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 114, ../../app/stylesheets/relaunch/_header.css.scss */
 nav .list-wrapper ul.inline li a:visited {
   color: #666;
   padding: 7px 10px 6px 10px;
 }
-/* line 127, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 118, ../../app/stylesheets/relaunch/_header.css.scss */
 nav .list-wrapper ul.inline li a:hover {
   color: #000;
   background: #DCDBD4;
@@ -9936,24 +9937,29 @@ nav .list-wrapper ul.inline li a:hover {
   overflow-x: scroll !important;
   overflow-y: none !important;
 }
-/* line 167, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 168, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar select.category-filter {
+  height: 36px;
+  margin: 0;
+}
+/* line 172, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .popover {
   width: 180px;
 }
 
-@media screen and (max-width: 67px) {
-  /* line 173, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+@media screen and (max-width: 640px) {
+  /* line 178, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content {
     max-width: 100%;
   }
-  /* line 175, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 180, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content .btn-searchbar {
     display: inline;
     padding: 7px 2px;
     width: 45px;
     margin-left: 1%;
   }
-  /* line 181, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 186, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form {
     width: 98%;
     padding: 10px 1% 10px 1%;
@@ -9963,29 +9969,29 @@ nav .list-wrapper ul.inline li a:hover {
     background: #333;
     display: none !important;
   }
-  /* line 190, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 195, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form.active {
     display: block !important;
   }
-  /* line 193, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 198, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form .input-append {
     margin: 0 !important;
     width: 100% !important;
   }
-  /* line 197, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 202, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form .input-append input, #toolbar .content form.navbar-form .input-append input:focus {
     width: 80%;
   }
-  /* line 202, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 207, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content .btn, #toolbar .content .btn-group {
     width: 50px;
   }
-  /* line 205, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 210, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content .category-filter {
     float: right;
     margin-right: 1%;
   }
-  /* line 208, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 213, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content .category-filter span.filter-option {
     text-indent: -99999px;
   }
