@@ -142,15 +142,17 @@
           left: auto;
     }
     @media screen and (max-width:420px) {
-      width:50px;
+      width: 50px;
       float: right;
       margin-right: 1%;
 
       span.filter-option {
-       text-indent: -99999px;
+        @media screen and (max-width:410px) {
+          font-size:20px;
+        }
       }  
       .btn {
-         width:50px;
+         width:67px;
       }
     }
   }
