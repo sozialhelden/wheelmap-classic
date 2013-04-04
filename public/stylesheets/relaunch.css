@@ -1,4 +1,9 @@
 @charset "utf-8";
+@-ms-viewport { width: device-width; };
+@-o-viewport { width: device-width; };
+@-webkit-viewport { width: device-width; };
+@-moz-viewport { width : device-width; };
+@viewport { width: device-width; };
 /* line 19, ../../vendor/bundle/ruby/1.8/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_reset.scss */
 article,
 aside,
