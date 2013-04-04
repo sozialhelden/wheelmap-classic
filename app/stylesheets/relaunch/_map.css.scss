@@ -20,6 +20,11 @@ section#map {
 
   background: transparent url('/images/marker-sprites.png') no-repeat;
 
+  @include if-min-resolution(1.5) {
+    background: transparent url('/images/marker-sprites@2x.png') no-repeat;
+    background-size: 100% auto;
+  }
+
   &.wheelchair_hidden {
     display: none;
   }
@@ -31,22 +36,22 @@ section#map {
   &.yes{
     background-position: 0 0;
     width: 40px;
-    height: 33px;
+    height: 35px;
   }
   &.limited{
-    background-position: 0 -34px;
-    width: 41px;
-    height: 33px;
+    background-position: 0 -36px;
+    width: 40px;
+    height: 35px;
   }
   &.no{
-    background-position: 0 -68px;
+    background-position: 0 -72px;
     width: 40px;
-    height: 33px;
+    height: 35px;
   }
   &.unknown{
-    background-position: 0 -102px;
+    background-position: 0 -108px;
     width: 40px;
-    height: 33px;
+    height: 35px;
   }
 
 }
