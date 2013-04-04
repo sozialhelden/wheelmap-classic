@@ -9536,19 +9536,13 @@ header {
   float: left;
   background: url("/images/bg_header.png");
 }
-@media (-webkit-max-device-pixel-ratio: 1.49), (max--moz-device-pixel-ratio: 1.49), (-o-max-device-pixel-ratio: 2.98 / 2), (-ms-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143.04dpi), (max-resolution: 1.49dppx) {
-  /* line 1, ../../app/stylesheets/relaunch/_header.css.scss */
-  header {
-    background: url(/images/bg_header.png);
-  }
-}
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (-ms-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   /* line 1, ../../app/stylesheets/relaunch/_header.css.scss */
   header {
     background: url(/images/bg_header@2x.png);
   }
 }
-/* line 17, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 14, ../../app/stylesheets/relaunch/_header.css.scss */
 header .navbar-inner {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
@@ -9556,53 +9550,48 @@ header .navbar-inner {
   -o-border-radius: 0px;
   border-radius: 0px;
 }
-/* line 20, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 17, ../../app/stylesheets/relaunch/_header.css.scss */
 header .navbar-inner .btn-navbar {
   height: 10px;
   padding: 5px 10px 8px;
 }
-/* line 26, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 23, ../../app/stylesheets/relaunch/_header.css.scss */
 header .logo {
   width: 160px;
   padding-top: 50px;
   margin: -3px 0 0 0;
   float: left;
+  background: url(/images/bg_logo.png) center left no-repeat;
   z-index: 1;
   font-size: 11px;
   font-weight: bold;
   text-align: right;
   color: #999;
 }
-@media (-webkit-max-device-pixel-ratio: 1.49), (max--moz-device-pixel-ratio: 1.49), (-o-max-device-pixel-ratio: 2.98 / 2), (-ms-max-device-pixel-ratio: 1.49), (max-device-pixel-ratio: 1.49), (max-resolution: 143.04dpi), (max-resolution: 1.49dppx) {
-  /* line 26, ../../app/stylesheets/relaunch/_header.css.scss */
-  header .logo {
-    background: url("/images/bg_logo.png") center left no-repeat;
-  }
-}
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (-ms-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-  /* line 26, ../../app/stylesheets/relaunch/_header.css.scss */
+  /* line 23, ../../app/stylesheets/relaunch/_header.css.scss */
   header .logo {
-    background: url("/images/bg_logo@2x.png") center left no-repeat;
+    background: url(/images/bg_logo@2x.png) center left no-repeat;
     background-size: 150px 32px;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 47, ../../app/stylesheets/relaunch/_header.css.scss */
+  /* line 43, ../../app/stylesheets/relaunch/_header.css.scss */
   header .logo {
     width: 25px;
   }
 }
-/* line 52, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 48, ../../app/stylesheets/relaunch/_header.css.scss */
 header .btn-toolbar {
   margin-top: 0px;
 }
-/* line 55, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 51, ../../app/stylesheets/relaunch/_header.css.scss */
 header .btn {
   color: #555;
   padding: 2px 10px 1px 10px;
   background-position: 0;
 }
-/* line 60, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 56, ../../app/stylesheets/relaunch/_header.css.scss */
 header .btn-add, header .btn-add:hover {
   background-color: #87b346;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #96c14e), color-stop(100%, #79a53e));
@@ -9613,16 +9602,16 @@ header .btn-add, header .btn-add:hover {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF96C14E', endColorstr='#FF79A53E');
 }
-/* line 65, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 61, ../../app/stylesheets/relaunch/_header.css.scss */
 header .btn-add:hover {
   background-position: 0;
 }
-/* line 68, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 64, ../../app/stylesheets/relaunch/_header.css.scss */
 header .bootstrap-select {
   width: auto;
 }
 
-/* line 73, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 69, ../../app/stylesheets/relaunch/_header.css.scss */
 select.language-select {
   width: 120px;
   height: 26px;
@@ -9632,6 +9621,12 @@ select.language-select {
   -moz-appearance: none;
   appearance: none;
   line-height: 16px;
+}
+@media screen and (max-width: 767px) {
+  /* line 69, ../../app/stylesheets/relaunch/_header.css.scss */
+  select.language-select {
+    max-width: 50px;
+  }
 }
 
 /* line 83, ../../app/stylesheets/relaunch/_header.css.scss */
