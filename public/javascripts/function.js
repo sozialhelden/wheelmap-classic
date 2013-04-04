@@ -35,14 +35,12 @@ $(document).ready(function() {
     });
   });
 
-  addEventListener("load", function() {
-    new FastClick(document.body);
-    setTimeout(hideURLbar, 100);
+  window.addEventListener("load",function() {
+    setTimeout(function(){
+      window.scrollTo(0, 0);
+    }, 0);
   });
 
-  function hideURLbar() {
-    window.scrollTo(0,0);
-  }
   requestNodes(map.getBounds());
 
 });
