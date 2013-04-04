@@ -5,6 +5,9 @@ section#map {
   left: 0;
   width: 100%;
   background: #E8E0D8;
+  @media screen and (max-width:767px) {
+      top: 52px;
+  } 
 }
 
 .leaflet-marker-icon, .leaflet-div-icon, .leaflet-clickable, .leaflet-zoom-animated-div-icon {
