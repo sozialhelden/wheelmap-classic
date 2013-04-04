@@ -141,6 +141,17 @@
           right: 0px;
           left: auto;
     }
+    @media screen and (max-width:420px) {
+      float: right;
+      margin-right: 1%;
+
+      span.filter-option {
+       text-indent: -99999px;
+      }  
+      .btn, .btn-group {
+         width:50px;
+      }
+    }
   }
   .dropdown-menu {
     border-radius: 3px;
@@ -171,11 +182,18 @@
   .popover {
     width: 180px;
   }
+  .content {
+    @media screen and (max-width:640px) {
+      width: 410px;
+    }
+    @media screen and (max-width:410px) {
+      width: 320px;
+    }
+  }
 }
 @media screen and (max-width:640px) {
   #toolbar {
     .content {
-      max-width: 100%;
       .btn-searchbar {
         display: inline;
         padding: 7px 2px;
@@ -201,16 +219,6 @@
           input, input:focus {
             width: 80%;
           }
-        }
-      }
-      .btn, .btn-group {
-         width:50px;
-      }
-      .category-filter {
-        float: right;
-        margin-right: 1%;
-        span.filter-option {
-          text-indent: -99999px;
         }
       }
     }
