@@ -20,11 +20,8 @@
 
   = render :partial => 'relaunch/footer'
   = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
-  = include_javascripts :relaunch, :media => 'screen, projection'
-
-  :javascript
-    I18n.defaultLocale = "de";
-    I18n.locale = "#{I18n.locale}";
+  = include_javascripts :relaunch
+  = include_javascripts :async, :defer => true
 
   = content_for :javascript
 </html>
