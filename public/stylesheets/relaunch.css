@@ -2387,7 +2387,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url(/images/glyphicons-halflings.png?1364907456);
+  background-image: url(/images/glyphicons-halflings.png?1364484033);
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px;
@@ -2412,7 +2412,7 @@ table th[class*="span"],
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url(/images/glyphicons-halflings-white.png?1364907456);
+  background-image: url(/images/glyphicons-halflings-white.png?1364484033);
 }
 
 /* line 52, ../../vendor/bundle/ruby/1.8/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_sprites.scss */
@@ -9560,12 +9560,18 @@ header .logo {
   margin: -3px 0 0 0;
   float: left;
   background: url(/images/bg_logo.png) center left no-repeat;
-  background-image: -webkit-image-set(url(/images/bg_logo.png) 1x, url(/images/bg_logo@2x.png) 2x);
   z-index: 1;
   font-size: 11px;
   font-weight: bold;
   text-align: right;
   color: #999;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  /* line 21, ../../app/stylesheets/relaunch/_header.css.scss */
+  header .logo {
+    background-size: 50% auto;
+    background-image: url("/images/bg_logo@2x.png");
+  }
 }
 @media screen and (max-width: 767px) {
   /* line 35, ../../app/stylesheets/relaunch/_header.css.scss */
@@ -9907,22 +9913,37 @@ nav .list-wrapper ul.inline li a:hover {
   right: 0px;
   left: auto;
 }
-/* line 146, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+@media screen and (max-width: 420px) {
+  /* line 135, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar .category-filter {
+    float: right;
+    margin-right: 1%;
+  }
+  /* line 149, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar .category-filter span.filter-option {
+    text-indent: -99999px;
+  }
+  /* line 152, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar .category-filter .btn, #toolbar .category-filter .btn-group {
+    width: 50px;
+  }
+}
+/* line 157, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .dropdown-menu {
   border-radius: 3px;
   padding: 5px 0 0 0;
 }
-/* line 150, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 161, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .dropdown-menu > li > a {
   padding: 6px 10px 5px 10px;
   border-bottom: 1px solid #F0F0F0;
   font-size: 13px;
 }
-/* line 156, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 167, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .dropdown-menu li:last-child a {
   border: none;
 }
-/* line 159, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 170, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .dropdown-menu > li > a:hover {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6b849b), color-stop(100%, #4d647a));
   background: -webkit-linear-gradient(top, #6b849b, #4d647a);
@@ -9932,34 +9953,42 @@ nav .list-wrapper ul.inline li a:hover {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF6B849B', endColorstr='#FF4D647A');
 }
-/* line 163, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 174, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .bootstrap-select.btn-group.show-menu-arrow .dropdown-menu {
   overflow-x: scroll !important;
   overflow-y: none !important;
 }
-/* line 168, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 179, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar select.category-filter {
   height: 36px;
   margin: 0;
 }
-/* line 172, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 183, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .popover {
   width: 180px;
 }
+@media screen and (max-width: 640px) {
+  /* line 186, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar .content {
+    width: 410px;
+  }
+}
+@media screen and (max-width: 410px) {
+  /* line 186, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  #toolbar .content {
+    width: 320px;
+  }
+}
 
 @media screen and (max-width: 640px) {
-  /* line 178, ../../app/stylesheets/relaunch/_toolbar.css.scss */
-  #toolbar .content {
-    max-width: 100%;
-  }
-  /* line 180, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 198, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content .btn-searchbar {
     display: inline;
     padding: 7px 2px;
     width: 45px;
     margin-left: 1%;
   }
-  /* line 186, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 204, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form {
     width: 98%;
     padding: 10px 1% 10px 1%;
@@ -9969,31 +9998,18 @@ nav .list-wrapper ul.inline li a:hover {
     background: #333;
     display: none !important;
   }
-  /* line 195, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 213, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form.active {
     display: block !important;
   }
-  /* line 198, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 216, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form .input-append {
     margin: 0 !important;
     width: 100% !important;
   }
-  /* line 202, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 220, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form .input-append input, #toolbar .content form.navbar-form .input-append input:focus {
     width: 80%;
-  }
-  /* line 207, ../../app/stylesheets/relaunch/_toolbar.css.scss */
-  #toolbar .content .btn, #toolbar .content .btn-group {
-    width: 50px;
-  }
-  /* line 210, ../../app/stylesheets/relaunch/_toolbar.css.scss */
-  #toolbar .content .category-filter {
-    float: right;
-    margin-right: 1%;
-  }
-  /* line 213, ../../app/stylesheets/relaunch/_toolbar.css.scss */
-  #toolbar .content .category-filter span.filter-option {
-    text-indent: -99999px;
   }
 }
 /* line 1, ../../app/stylesheets/relaunch/_overlay.css.scss */
