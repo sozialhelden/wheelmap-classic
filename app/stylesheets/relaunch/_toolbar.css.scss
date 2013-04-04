@@ -143,13 +143,14 @@
           left: auto;
     }
     @media screen and (max-width:420px) {
+      width:50px;
       float: right;
       margin-right: 1%;
 
       span.filter-option {
        text-indent: -99999px;
       }  
-      .btn, .btn-group {
+      .btn {
          width:50px;
       }
     }
@@ -188,7 +189,7 @@
       width: 410px;
     }
     @media screen and (max-width:410px) {
-      width: 320px;
+      width: 303px;
     }
   }
 }
@@ -204,8 +205,8 @@
       form.navbar-form {
         width: 98%;
         padding: 10px 1% 10px 1%;
-        position: absolute;
-        top:44px;
+        position: fixed;
+        top:102px;
         left: 0px;
         background: #333;
         display: none !important;
