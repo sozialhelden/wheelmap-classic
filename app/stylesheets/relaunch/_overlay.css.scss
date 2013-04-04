@@ -9,19 +9,13 @@
   margin:-250px 0 0 -300px;
   background: #FFF;
   @include box-shadow(0 0 10px #333);
-  @include border-radius(3);
+  @include border-radius(3px);
   .header {
     width:100%;
     height:180px;
     float:left;
-    background-color: #f6f5f4;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(237, 236, 234)));
-    background-image: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(237, 236, 234));
-    background-image: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(237, 236, 234));
-    background-image: -o-linear-gradient(top, rgb(255, 255, 255), rgb(237, 236, 234));
-    background-image: -ms-linear-gradient(top, rgb(255, 255, 255), rgb(237, 236, 234));
-    background-image: linear-gradient(top, rgb(255, 255, 255), rgb(237, 236, 234));
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ffffff', EndColorStr='#edecea');
+    @include background(linear-gradient(top, rgb(255, 255, 255), rgb(237, 236, 234)));
+    @include filter-gradient(#ffffff, #edecea, vertical);
   }
   .close-btn {
     float:right;
