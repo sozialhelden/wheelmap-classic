@@ -10121,41 +10121,48 @@ section#map {
 .leaflet-marker-icon {
   background: transparent url("/images/marker-sprites.png") no-repeat;
 }
-/* line 23, ../../app/stylesheets/relaunch/_map.css.scss */
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3 / 2), (-ms-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  /* line 19, ../../app/stylesheets/relaunch/_map.css.scss */
+  .leaflet-marker-icon {
+    background: transparent url("/images/marker-sprites@2x.png") no-repeat;
+    background-size: 100% auto;
+  }
+}
+/* line 28, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-marker-icon.wheelchair_hidden {
   display: none;
 }
-/* line 27, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 32, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-marker-icon.category_hidden {
   display: none;
 }
-/* line 31, ../../app/stylesheets/relaunch/_map.css.scss */
+/* line 36, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-marker-icon.yes {
   background-position: 0 0;
   width: 40px;
-  height: 33px;
-}
-/* line 36, ../../app/stylesheets/relaunch/_map.css.scss */
-.leaflet-marker-icon.limited {
-  background-position: 0 -34px;
-  width: 41px;
-  height: 33px;
+  height: 35px;
 }
 /* line 41, ../../app/stylesheets/relaunch/_map.css.scss */
-.leaflet-marker-icon.no {
-  background-position: 0 -68px;
+.leaflet-marker-icon.limited {
+  background-position: 0 -36px;
   width: 40px;
-  height: 33px;
+  height: 35px;
 }
 /* line 46, ../../app/stylesheets/relaunch/_map.css.scss */
-.leaflet-marker-icon.unknown {
-  background-position: 0 -102px;
+.leaflet-marker-icon.no {
+  background-position: 0 -72px;
   width: 40px;
-  height: 33px;
+  height: 35px;
+}
+/* line 51, ../../app/stylesheets/relaunch/_map.css.scss */
+.leaflet-marker-icon.unknown {
+  background-position: 0 -108px;
+  width: 40px;
+  height: 35px;
 }
 
 @media screen and (max-width: 760px) {
-  /* line 55, ../../app/stylesheets/relaunch/_map.css.scss */
+  /* line 60, ../../app/stylesheets/relaunch/_map.css.scss */
   .leaflet-control-container {
     display: none;
   }
@@ -10281,7 +10288,7 @@ a:focus {
 
 /* line 6, ../../app/stylesheets/relaunch/_icons.css.scss */
 .leaflet-marker-icon .icon {
-  margin: 2px;
+  margin: 3px 4px;
   background: url("/icons/icon-sprite.png") no-repeat top left;
   display: inline-block;
 }
