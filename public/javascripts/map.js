@@ -120,7 +120,7 @@ function parseResponse(data) {
       });
       return L.marker(latlng, {
         icon: L.divIcon({
-          iconSize:     [40, 33],
+          iconSize:     [40, 35],
           iconAnchor:   [14, 30],
           popupAnchor:  [0, -8],
           className: classesToAdd.join(' '),
