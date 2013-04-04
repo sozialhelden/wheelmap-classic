@@ -36,8 +36,6 @@ javascripts:
     - public/javascripts/bootstrap/bootstrap-popover.js
     - public/javascripts/bootstrap/bootstrap-select.js
     # - public/javascripts/bootstrap/bootstrap-typeahead.js
-
-  async:
     - public/javascripts/fastclick.js
     - public/javascripts/jquery.parsequery.js
     - public/javascripts/jquery.cookies.js

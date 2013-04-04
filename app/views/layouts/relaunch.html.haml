@@ -7,6 +7,9 @@
   %meta(charset ='utf-8')
   %meta(http-equiv = "X-UA-Compatible")
   %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0, user-scalable=0"}
+  %meta{:name => "apple-mobile-web-app-capable", :content => "yes"}
+  %meta{:name => "apple-mobile-web-app-status-bar-style", :content =>"black"}
+
   = content_for :meta
 
   = include_stylesheets :relaunch, :media => 'screen, projection'
@@ -20,8 +23,7 @@
 
   = render :partial => 'relaunch/footer'
   = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
-  = include_javascripts :relaunch
-  = include_javascripts :async, :defer => true
+  = include_javascripts :relaunch, :defer => true, :async => true
 
   = content_for :javascript
 </html>
