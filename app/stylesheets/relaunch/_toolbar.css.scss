@@ -61,6 +61,12 @@
         @include border-radius(0 3px 3px 0);
       }
   }
+
+  .btn-toolbar {
+    .btn-search {
+      height: 36px;
+    }
+  }
   .status-filter {
     margin:0 10px;
     .btn {
@@ -91,7 +97,7 @@
         @include text-shadow(0 1px 0 #000);
       }
     }
-    
+
     .limited {
       span {
         background: url('/images/marker-limited.png') no-repeat;
@@ -175,12 +181,12 @@
   }
 }
 @media screen and (max-width:767px) {
-  #toolbar { 
+  #toolbar {
     .content {
       max-width: 100%;
       .btn-searchbar {
         display: inline;
-      } 
+      }
       form.navbar-form {
         width: 98%;
         padding: 10px 1% 10px 1%;
@@ -189,7 +195,7 @@
         left: 0px;
         background: #333;
         display: none !important;
-        
+
         &.active {
           display: block !important;
         }
@@ -212,8 +218,8 @@
           text-indent: -99999px;
         }
       }
-    } 
-  } 
+    }
+  }
 }
 
 
