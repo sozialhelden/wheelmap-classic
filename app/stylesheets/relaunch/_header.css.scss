@@ -57,12 +57,16 @@ header {
     width: auto;
   }
 }
-select {
+
+select.language-select {
+
   width: 120px;
   height: 26px;
   margin-top: 10px;
-}
-.language-select {
+  margin-bottom: 0px;
+  @include appearance(none);
+  line-height: 16px;
+
   .btn {
     @include border-radius(2px);
     max-width: 120px;
