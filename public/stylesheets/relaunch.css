@@ -2387,7 +2387,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url(/images/glyphicons-halflings.png?1364484033);
+  background-image: url(/images/glyphicons-halflings.png?1364907456);
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px;
@@ -2412,7 +2412,7 @@ table th[class*="span"],
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url(/images/glyphicons-halflings-white.png?1364484033);
+  background-image: url(/images/glyphicons-halflings-white.png?1364907456);
 }
 
 /* line 52, ../../vendor/bundle/ruby/1.8/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_sprites.scss */
@@ -9536,8 +9536,7 @@ header {
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   /* line 1, ../../app/stylesheets/relaunch/_header.css.scss */
   header {
-    background-size: 50% auto;
-    background-image: url("/images/bg_header@2x.png");
+    background-image: "/images/bg_header@2x.png";
   }
 }
 /* line 12, ../../app/stylesheets/relaunch/_header.css.scss */
@@ -9569,8 +9568,7 @@ header .logo {
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   /* line 21, ../../app/stylesheets/relaunch/_header.css.scss */
   header .logo {
-    background-size: 50% auto;
-    background-image: url("/images/bg_logo@2x.png");
+    background-image: url(/images/bg_logo@2x.png);
   }
 }
 @media screen and (max-width: 767px) {
@@ -9970,33 +9968,43 @@ nav .list-wrapper ul.inline li a:hover {
 #toolbar select.category-filter {
   height: 36px;
   margin: 0;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6c859d), color-stop(100%, #4d647a));
+  background: -webkit-linear-gradient(top, #6c859d, #4d647a);
+  background: -moz-linear-gradient(top, #6c859d, #4d647a);
+  background: -o-linear-gradient(top, #6c859d, #4d647a);
+  background: linear-gradient(top, #6c859d, #4d647a);
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF6C859D', endColorstr='#FF4D647A');
+  border: 1px solid #000;
+  color: white;
+  padding: 10px;
 }
-/* line 186, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 191, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .popover {
   width: 180px;
 }
 @media screen and (max-width: 640px) {
-  /* line 189, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 194, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content {
     width: 410px;
   }
 }
 @media screen and (max-width: 410px) {
-  /* line 189, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 194, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content {
     width: 303px;
   }
 }
 
 @media screen and (max-width: 640px) {
-  /* line 201, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 206, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content .btn-searchbar {
     display: inline;
     padding: 7px 2px;
     width: 45px;
     margin-left: 1%;
   }
-  /* line 207, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 212, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form {
     width: 98%;
     padding: 10px 1% 10px 1%;
@@ -10006,16 +10014,16 @@ nav .list-wrapper ul.inline li a:hover {
     background: #333;
     display: none !important;
   }
-  /* line 216, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 221, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form.active {
     display: block !important;
   }
-  /* line 219, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 224, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form .input-append {
     margin: 0 !important;
     width: 100% !important;
   }
-  /* line 223, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 228, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form .input-append input, #toolbar .content form.navbar-form .input-append input:focus {
     width: 80%;
   }

@@ -7,7 +7,7 @@ header {
   z-index: 1001;
   float: left;
   background: url('/images/bg_header.png');
-  @include background-image-retina('/images/bg_header@2x.png');
+  @include background-image-retina(url(/images/bg_header@2x.png));
 
   .navbar-inner {
     @include border-radius(0px);
@@ -24,7 +24,7 @@ header {
     margin: -3px 0 0 0;
     float: left;
     background: url(/images/bg_logo.png) center left no-repeat;
-    @include background-image-retina('/images/bg_logo@2x.png');
+    @include background-image-retina(url(/images/bg_logo@2x.png));
     z-index: 1;
     font-size: 11px;
     font-weight: bold;
