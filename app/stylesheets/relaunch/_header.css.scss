@@ -73,7 +73,13 @@ select {
 }
 .language-select {
   .btn {
+    @include border-radius(2px);
     max-width: 120px;
+    color: #333;
+
+    i {
+      margin-right: 4px;
+    }
   }
   @media screen and (max-width:767px) {
    .btn {
