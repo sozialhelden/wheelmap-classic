@@ -163,6 +163,11 @@
     overflow-x: scroll!important;
     overflow-y: none!important;
   }
+
+  select.category-filter {
+    height: 36px;
+    margin: 0;
+  }
   .popover {
     width: 180px;
   }
@@ -176,7 +181,7 @@
         padding: 7px 2px;
         width: 45px;
         margin-left: 1%;
-      } 
+      }
       form.navbar-form {
         width: 98%;
         padding: 10px 1% 10px 1%;
