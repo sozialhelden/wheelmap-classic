@@ -173,12 +173,3 @@ $('.category-filter').on('change', function(e){
     }
   })
 });
-
-$(document).ready(function() {
-
-  addEventListener("load", function() { setTimeout(hideURLbar, 100); }, false);
-  function hideURLbar() {
-    window.scrollTo(0,0);
-  }
-  requestNodes(map.getBounds());
-});
