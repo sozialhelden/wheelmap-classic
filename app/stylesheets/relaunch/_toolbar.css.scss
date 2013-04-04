@@ -150,7 +150,7 @@
         @media screen and (max-width:410px) {
           font-size:20px;
         }
-      }  
+      }
       .btn {
          width:67px;
       }
@@ -181,6 +181,11 @@
   select.category-filter {
     height: 36px;
     margin: 0;
+    @include background(linear-gradient(top, rgb(108, 133, 157), rgb(77, 100, 122)));
+    @include filter-gradient(#6c859d, #4d647a, vertical);
+    border: 1px solid #000;
+    color: white;
+    padding: 10px;
   }
   .popover {
     width: 180px;
