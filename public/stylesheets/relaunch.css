@@ -9619,32 +9619,32 @@ select {
   max-width: 120px;
   color: #333;
 }
-/* line 80, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 79, ../../app/stylesheets/relaunch/_header.css.scss */
 .language-select .btn i {
   margin-right: 4px;
 }
 @media screen and (max-width: 767px) {
-  /* line 85, ../../app/stylesheets/relaunch/_header.css.scss */
+  /* line 84, ../../app/stylesheets/relaunch/_header.css.scss */
   .language-select .btn {
     max-width: 50px;
   }
 }
-/* line 89, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 88, ../../app/stylesheets/relaunch/_header.css.scss */
 .language-select .dropdown-menu {
   height: 400px;
   border-radius: 3px;
   padding: 5px 0 0 0;
 }
-/* line 93, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 92, ../../app/stylesheets/relaunch/_header.css.scss */
 .language-select .dropdown-menu > li > a {
   padding: 1px 10px 1px 10px !important;
   font-size: 11px;
 }
-/* line 97, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 96, ../../app/stylesheets/relaunch/_header.css.scss */
 .language-select .dropdown-menu li:last-child a {
   border: none;
 }
-/* line 100, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 99, ../../app/stylesheets/relaunch/_header.css.scss */
 .language-select .dropdown-menu > li > a:hover {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6b849b), color-stop(100%, #4d647a));
   background: -webkit-linear-gradient(top, #6b849b, #4d647a);
@@ -9654,39 +9654,39 @@ select {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF96C14E', endColorstr='#FF4D647A');
 }
-/* line 104, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 103, ../../app/stylesheets/relaunch/_header.css.scss */
 .language-select .dropdown-menu dt {
   font-size: 12px;
   padding: 2px 0 0 9px !important;
 }
 
-/* line 111, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 110, ../../app/stylesheets/relaunch/_header.css.scss */
 nav .list-wrapper {
   text-align: center;
   float: left;
 }
-/* line 114, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 113, ../../app/stylesheets/relaunch/_header.css.scss */
 nav .list-wrapper ul.inline {
   display: inline-block;
   margin: 0;
 }
-/* line 117, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 116, ../../app/stylesheets/relaunch/_header.css.scss */
 nav .list-wrapper ul.inline li {
   float: left;
   list-style: none;
   padding: 15px 1px 5px 1px;
 }
-/* line 121, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 120, ../../app/stylesheets/relaunch/_header.css.scss */
 nav .list-wrapper ul.inline li a {
   color: #666;
   padding: 7px 10px 6px 10px;
 }
-/* line 124, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 123, ../../app/stylesheets/relaunch/_header.css.scss */
 nav .list-wrapper ul.inline li a:visited {
   color: #666;
   padding: 7px 10px 6px 10px;
 }
-/* line 128, ../../app/stylesheets/relaunch/_header.css.scss */
+/* line 127, ../../app/stylesheets/relaunch/_header.css.scss */
 nav .list-wrapper ul.inline li a:hover {
   color: #000;
   background: #DCDBD4;
@@ -9923,38 +9923,37 @@ nav .list-wrapper ul.inline li a:hover {
 }
 /* line 159, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .dropdown-menu > li > a:hover {
-  background-color: #5c748a;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#6b849b), to(#4d647a));
-  background-image: -webkit-linear-gradient(top, #6b849b, #4d647a);
-  background-image: -moz-linear-gradient(top, #6b849b, #4d647a);
-  background-image: -o-linear-gradient(top, #6b849b, #4d647a);
-  background-image: -ms-linear-gradient(top, #6b849b, #4d647a);
-  background-image: linear-gradient(top, #6b849b, #4d647a);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#6b849b', EndColorStr='#4d647a');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6b849b), color-stop(100%, #4d647a));
+  background: -webkit-linear-gradient(top, #6b849b, #4d647a);
+  background: -moz-linear-gradient(top, #6b849b, #4d647a);
+  background: -o-linear-gradient(top, #6b849b, #4d647a);
+  background: linear-gradient(top, #6b849b, #4d647a);
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF6B849B', endColorstr='#FF4D647A');
 }
-/* line 170, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 163, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .bootstrap-select.btn-group.show-menu-arrow .dropdown-menu {
   overflow-x: scroll !important;
   overflow-y: none !important;
 }
-/* line 174, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 167, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .popover {
   width: 180px;
 }
 
-@media screen and (max-width: 767px) {
-  /* line 180, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+@media screen and (max-width: 67px) {
+  /* line 173, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content {
     max-width: 100%;
   }
-  /* line 182, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 175, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content .btn-searchbar {
     display: inline;
     padding: 7px 2px;
     width: 45px;
     margin-left: 1%;
   }
-  /* line 188, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 181, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form {
     width: 98%;
     padding: 10px 1% 10px 1%;
@@ -9964,29 +9963,29 @@ nav .list-wrapper ul.inline li a:hover {
     background: #333;
     display: none !important;
   }
-  /* line 197, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 190, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form.active {
     display: block !important;
   }
-  /* line 200, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 193, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form .input-append {
     margin: 0 !important;
     width: 100% !important;
   }
-  /* line 204, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 197, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form .input-append input, #toolbar .content form.navbar-form .input-append input:focus {
     width: 80%;
   }
-  /* line 209, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 202, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content .btn, #toolbar .content .btn-group {
     width: 50px;
   }
-  /* line 212, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 205, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content .category-filter {
     float: right;
     margin-right: 1%;
   }
-  /* line 215, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 208, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content .category-filter span.filter-option {
     text-indent: -99999px;
   }
@@ -10005,31 +10004,30 @@ nav .list-wrapper ul.inline li a:hover {
   -webkit-box-shadow: 0 0 10px #333333;
   -moz-box-shadow: 0 0 10px #333333;
   box-shadow: 0 0 10px #333333;
-  -webkit-border-radius: 3;
-  -moz-border-radius: 3;
-  -ms-border-radius: 3;
-  -o-border-radius: 3;
-  border-radius: 3;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
 }
 /* line 13, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay .header {
   width: 100%;
   height: 180px;
   float: left;
-  background-color: #f6f5f4;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#edecea));
-  background-image: -webkit-linear-gradient(top, white, #edecea);
-  background-image: -moz-linear-gradient(top, white, #edecea);
-  background-image: -o-linear-gradient(top, white, #edecea);
-  background-image: -ms-linear-gradient(top, white, #edecea);
-  background-image: linear-gradient(top, #ffffff, #edecea);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ffffff', EndColorStr='#edecea');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #edecea));
+  background: -webkit-linear-gradient(top, #ffffff, #edecea);
+  background: -moz-linear-gradient(top, #ffffff, #edecea);
+  background: -o-linear-gradient(top, #ffffff, #edecea);
+  background: linear-gradient(top, #ffffff, #edecea);
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFEDECEA');
 }
-/* line 26, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 20, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay .close-btn {
   float: right;
 }
-/* line 29, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 23, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay h1 {
   width: 80%;
   float: left;
