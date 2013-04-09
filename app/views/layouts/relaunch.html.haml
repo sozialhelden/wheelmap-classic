@@ -15,6 +15,7 @@
   = include_stylesheets :relaunch, :media => 'screen, projection'
   /[if lte IE 8]
     = include_stylesheets 'relaunch.ie', :media => 'screen, projection'
+    = include_javascripts :modernizr, :media => 'screen, projection'
 
 %body
   = render :partial => 'relaunch/header'
@@ -23,7 +24,7 @@
 
   = render :partial => 'relaunch/footer'
   = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
-  = include_javascripts :relaunch, :defer => true, :async => true
+  = include_javascripts :relaunch, :async => true
 
   = content_for :javascript
 </html>
