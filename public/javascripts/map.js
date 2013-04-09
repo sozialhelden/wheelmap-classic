@@ -12,9 +12,9 @@ var map = L.map('map', {
   trackResize: true
 });
 
-// L.tileLayer('http://{s}.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.png', {
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-  maxZoom: 18,
+// L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+L.tileLayer('http://{s}.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.png', {
+  maxZoom: 19,
   minZoom: 2,
   attribution: '&copy; Data under ODbL by <a href="http://osm.org/copyright">OpenStreetMap</a>, Map Icons Collection CC-By-SA by <a href="http://mapicons.nicolasmollet.com/">Nicolas Mollet</a>',
   detectRetina: true
@@ -44,6 +44,8 @@ map.on('moveend', function(e) {
   }).bind('ajax:error', function(xhr, data, status){
     $('<div class="notification active success"><span>'+ data.message + '</span></div>').insertAfter('#toolbar .content').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
   });
+}).on('popupclose', function(e){
+   window.node_id = null;
 });
 
 function requestNodes(bounds) {
