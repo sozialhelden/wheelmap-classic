@@ -73,8 +73,11 @@ select.language-select {
   margin-top: 10px;
   margin-bottom: 0px;
   @include appearance(none);
-  @include highlight(rgba(0,0,0,0));
   line-height: 16px;
+  &:focus {
+    @include highlight(rgba(0,0,0,0));
+  }
+
 
   @media screen and (max-width:767px) {
     max-width: 50px;
@@ -83,9 +86,11 @@ select.language-select {
 div.language-select {
   .btn {
     @include border-radius(2px);
-    @include highlight(rgba(0,0,0,0));
     max-width: 120px;
     color: #333;
+    &:focus {
+      @include highlight(rgba(0,0,0,0));
+    }
     i {
       margin-right: 4px;
     }
