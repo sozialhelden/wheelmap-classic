@@ -83,6 +83,7 @@ select.language-select {
 div.language-select {
   .btn {
     @include border-radius(2px);
+    @include highlight(rgba(0,0,0,0));
     max-width: 120px;
     color: #333;
     i {
