@@ -38,6 +38,7 @@ map.on('moveend', function(e) {
 }).on('zoomend', function(e){
   $.cookie('last_zoom', map.getZoom(), { expires: 7, path: '/'});
 }).on('popupopen', function(e) {
+  window.node_id = e.popup._source.feature.properties.id.toString();
   $('.update_form').bind('ajax:success', function(xhr, data, status){
     $('<div class="notification active success"><span>'+ data.message + '</span></div>').insertAfter('#toolbar .content').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
   }).bind('ajax:error', function(xhr, data, status){
@@ -82,7 +83,12 @@ function onEachFeature(feature, layer) {
     feature.properties.name = I18n.t("poi.name."+feature.properties.category+"."+ feature.properties.type)
   }
   var popup_html = L.Util.template(source, feature.properties);
-  layer.bindPopup(popup_html, { closeButton: false, autoPan: false} );
+  var popup = layer.bindPopup(popup_html, { closeButton: false });
+
+  // Save the popup to be opened later on
+  if (window.node_id && window.node_id === feature.properties.id.toString()) {
+    window.popup = popup;
+  }
 }
 
 function initGeoData() {
@@ -138,6 +144,11 @@ function parseResponse(data) {
     map.removeLayer(geojson_layer);
   }
   geojson_layer = new_geojson_layer;
+
+  // Is there a popup? Then open it now!
+  if (window.popup) {
+    window.popup.openPopup();
+  }
 }
 
 $('.status-filter').find('button').button();
