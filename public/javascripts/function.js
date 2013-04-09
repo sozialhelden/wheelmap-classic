@@ -35,11 +35,13 @@ $(document).ready(function() {
     });
   });
 
-  window.addEventListener("load",function() {
-    setTimeout(function(){
-      window.scrollTo(0, 0);
-    }, 0);
-  });
+  if (window.addEventListener) {
+    window.addEventListener("load",function() {
+      setTimeout(function(){
+        window.scrollTo(0, 0);
+      }, 0);
+    });
+  }
 
   requestNodes(map.getBounds());
 
