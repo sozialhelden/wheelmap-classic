@@ -28,3 +28,9 @@
       @content;
   }
 }
+
+@mixin highlight($color: rgba(0,0,0,0)) {
+  -webkit-tap-highlight-color: $color;
+  -ms-interpolation-mode: bicubic;
+  ::-moz-selection { }
+}
