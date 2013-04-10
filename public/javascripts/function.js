@@ -29,11 +29,7 @@ $(document).ready(function() {
   $(window).resize(ResizeElements);
 
 
-  map.on('popupopen', function(e) {
-    $('ol.wheelchair label, ol.wheelchair input').click(function() {
-      $('li.save').fadeIn(1000);
-    });
-  });
+
 
   if (window.addEventListener) {
     window.addEventListener("load",function() {
