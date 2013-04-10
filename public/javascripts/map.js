@@ -128,8 +128,8 @@ function parseResponse(data) {
       });
       return L.marker(latlng, {
         icon: L.divIcon({
-          iconSize:     [40, 35],
-          iconAnchor:   [14, 30],
+          iconSize:     [29, 32],
+          iconAnchor:   [15, 30],
           popupAnchor:  [0, -8],
           className: classesToAdd.join(' '),
           html: '<div id="'+ feature.properties.icon +'" class="icon"></div>'
