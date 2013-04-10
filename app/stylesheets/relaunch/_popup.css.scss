@@ -1,70 +1,74 @@
-.header {
-  width: 90%;
-  height: 40px;
-  padding: 10px 5%;
-  float: left;
-  @include background(linear-gradient(top, #FEFEFE, #EAEAEA));
-  @include filter-gradient(#FEFEFE, #EAEAEA, vertical);
-}
+
 .leaflet-popup-content-wrapper {
   background: #FFF;
   padding: 0;
   border:none;
   overflow: hidden;
+  width: 260px;
   @include border-radius(4px);
-  
   .leaflet-popup-content {
     margin: 0px;
-  }
-  h2 {
-    font-size:16px;
-    line-height: 20px;
-    margin: 0;
-  }
-  h3 {
-    margin: 0 0 10px 0;
-    line-height:20px;
-  }
-  address {
-    margin: 0;
-  }
-  ol {
-    list-style-type: none;
-    margin: 13px 10px 0 10px;
-    padding-bottom: 20px;
-  }
-  .more {
-    float: right;
-  }
-  li {
-    width: 240px;
-    display: block;
-    margin: 0 0 4px 0;
-    padding:0;
-    @include border-radius(4px); 
-  }
-  .yes {
-    color: $green;
-    //background: #F0F6ED;
-  }
-  .limited {
-    color: #F1BD56;
-    //background: #FEF9EE;
-  }
-  .no {
-    color: #E5002A;
-    //background: #FCE6EA;
-  }
-  .unknown {
-    color: #555;
-    //background: #F6F6F6;
-  }
-  input[type=radio] {
-    float:left;
-    margin-right: 10px;
-  }
-  input[type=submit] {
-    float: right;
+    .header {
+      width: 90%;
+      height: auto;
+      overflow: hidden;
+      padding: 10px 5%;
+      float: left;
+      @include background(linear-gradient(top, #FEFEFE, #EAEAEA));
+      @include filter-gradient(#FEFEFE, #EAEAEA, vertical);
+      h2 {
+        font-size:16px;
+        line-height: 20px;
+        margin: 0;
+        padding-left: 30px;
+        background-position: center left;
+        background-repeat: no-repeat;
+      }
+      address {
+        margin: 0;
+      }
+      .more {
+        float: right;
+      }
+    }
+    .bubble-ctn {
+      float: left;
+      h3 {
+        margin: 0 0 4px 0;
+        line-height:20px;
+      }
+      ol {
+        list-style-type: none;
+        margin: 13px 10px 0 10px;
+        padding-bottom: 20px;
+        li {
+          width: 240px;
+          display: block;
+          margin: 0 0 4px 0;
+          padding:0;
+          @include border-radius(4px);
+          &.yes {
+            color: $green;
+          }
+          &.limited {
+            color: #F1BD56;
+          }
+          &.no {
+            color: #E5002A;
+          }
+          &.unknown {
+            color: #555;
+          }
+          input[type=radio] {
+            float:left;
+            margin-right: 10px;
+          }
+          input[type=submit] {
+            float: right;
+          }
+        }
+      }
+    }
   }
 }
 .leaflet-popup-tip {
