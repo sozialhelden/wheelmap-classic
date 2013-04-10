@@ -39,22 +39,22 @@ section#map {
   &.yes{
     background-position: 0 0;
     width: 29px;
-    height: 32px;
+    height: 33px;
   }
   &.limited{
     background-position: 0 -33px;
     width: 29px;
-    height: 32px;
+    height: 33px;
   }
   &.no{
     background-position: 0 -67px;
     width: 29px;
-    height: 32px;
+    height: 33px;
   }
   &.unknown{
     background-position: 0 -100px;
     width: 29px;
-    height: 32px;
+    height: 33px;
   }
 
 }
