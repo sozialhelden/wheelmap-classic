@@ -21,14 +21,24 @@
         line-height: 20px;
         margin: 0;
         padding-left: 30px;
+        padding-right: 30px;
         background-position: center left;
         background-repeat: no-repeat;
       }
       address {
-        margin: 0;
+        margin: 4px 30px 0 0;
+        float: left;
       }
       .more {
-        float: right;
+        width: 30px;
+        height: 30px;
+        padding: 0px;
+        overflow: hidden;
+        position: absolute;
+        top: 10px;
+        right: 8px;
+        font-family: 'EntypoRegular', sans-serif;
+        text-indent: -10000px
       }
     }
     .bubble-ctn {
