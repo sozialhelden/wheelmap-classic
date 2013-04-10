@@ -4,7 +4,10 @@ $(document).ready(function() {
   I18n.defaultLocale = 'de';
   I18n.locale = $('html').attr('lang');
 
-  $('.status-filter button').popover({trigger: 'hover'});
+  $('.status-filter button').popover({
+    trigger: 'hover',
+    placement: getPopoverPlacement
+  });
 
   $('.btn-searchbar').click(function() {
     $('.navbar-form').toggleClass('active');
@@ -14,6 +17,14 @@ $(document).ready(function() {
   $('.close-btn, .btn-start').click(function() {
     $('.overlay').fadeOut(500);
   });
+
+  function getPopoverPlacement(){
+    if (window.innerWidth < 420) {
+      return 'top';
+    } else {
+      return 'bottom';
+    }
+  }
 
 
   function ResizeElements() {
@@ -27,12 +38,9 @@ $(document).ready(function() {
     var widthTablet = $(window).width();
     if (widthTablet < 767) {
       $('.category-filter').addClass('dropup');
-      $('.status-filter button').attr('data-placement', 'top').popover();
     }
     else {
       $('.category-filter').removeClass('dropup');
-      $('.status-filter button').attr('data-placement', 'bottom').popover();
-      console.log($(window).width());
     }
   }
   $(window).load(ResizeElements);
