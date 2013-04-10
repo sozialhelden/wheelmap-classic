@@ -10193,10 +10193,28 @@ section#map {
     display: none;
   }
 }
-/* line 1, ../../app/stylesheets/relaunch/_popup.css.scss */
-.header {
+/* line 2, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper {
+  background: #FFF;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  width: 260px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 9, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+  margin: 0px;
+}
+/* line 11, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content .header {
   width: 90%;
-  height: 40px;
+  height: auto;
+  overflow: hidden;
   padding: 10px 5%;
   float: left;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fefefe), color-stop(100%, #eaeaea));
@@ -10207,50 +10225,40 @@ section#map {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFEFEFE', endColorstr='#FFEAEAEA');
 }
-
-/* line 9, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper {
-  background: #FFF;
-  padding: 0;
-  border: none;
-  overflow: hidden;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-}
-/* line 16, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper .leaflet-popup-content {
-  margin: 0px;
-}
 /* line 19, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper h2 {
+.leaflet-popup-content-wrapper .leaflet-popup-content .header h2 {
   font-size: 16px;
   line-height: 20px;
   margin: 0;
+  padding-left: 30px;
+  background-position: top left;
+  background-repeat: no-repeat;
 }
-/* line 24, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper h3 {
-  margin: 0 0 10px 0;
-  line-height: 20px;
-}
-/* line 28, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper address {
+/* line 27, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content .header address {
   margin: 0;
 }
-/* line 31, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper ol {
+/* line 30, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content .header .more {
+  float: right;
+}
+/* line 34, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn {
+  float: left;
+}
+/* line 36, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn h3 {
+  margin: 0 0 4px 0;
+  line-height: 20px;
+}
+/* line 40, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol {
   list-style-type: none;
   margin: 13px 10px 0 10px;
   padding-bottom: 20px;
 }
-/* line 36, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper .more {
-  float: right;
-}
-/* line 39, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper li {
+/* line 44, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li {
   width: 240px;
   display: block;
   margin: 0 0 4px 0;
@@ -10261,33 +10269,33 @@ section#map {
   -o-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 46, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper .yes {
+/* line 50, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.yes {
   color: #6aa74a;
 }
-/* line 50, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper .limited {
+/* line 53, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.limited {
   color: #F1BD56;
 }
-/* line 54, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper .no {
+/* line 56, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.no {
   color: #E5002A;
 }
-/* line 58, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper .unknown {
+/* line 59, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.unknown {
   color: #555;
 }
 /* line 62, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper input[type=radio] {
+.leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li input[type=radio] {
   float: left;
   margin-right: 10px;
 }
 /* line 66, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper input[type=submit] {
-  margin: 0 0 -20px 10px;
+.leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li input[type=submit] {
+  float: right;
 }
 
-/* line 70, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 74, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-tip {
   background-color: white !important;
   width: 8px !important;

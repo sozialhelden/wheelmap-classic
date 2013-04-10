@@ -1,7 +1,7 @@
 %script{:type => "text/x-handlebars-template", :id => "cardTemplate"}
   .olFramedCloudPopupContent{:id => 'featurePopup_content_{id}'}
     .header  
-      %h2{:style => "padding-left:30px;background:url('/icons/{icon}.png') no-repeat bottom left"} {name}
+      %h2{:style => "background-image:url('/icons/{icon}.png')"} {name}
       %address {address}
       = link_to t('home.index.popup.more'), "/nodes/{id}", :class => 'more'
     .bubble-ctn
