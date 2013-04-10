@@ -10047,7 +10047,7 @@ nav .list-wrapper ul.inline li a:hover {
   border-bottom: 1px solid #48642F;
 }
 /* line 221, ../../app/stylesheets/relaunch/_toolbar.css.scss */
-#toolbar .notification.success {
+#toolbar .notification.error {
   background-color: #D11B2E;
   background-color: rgba(215, 6, 6, 0.96);
   border-bottom: 1px solid #93060A;
@@ -10233,6 +10233,7 @@ section#map {
   overflow: hidden;
   padding: 10px 5%;
   float: left;
+  border-bottom: 1px solid #DDD;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fefefe), color-stop(100%, #eaeaea));
   background: -webkit-linear-gradient(top, #fefefe, #eaeaea);
   background: -moz-linear-gradient(top, #fefefe, #eaeaea);
@@ -10241,7 +10242,7 @@ section#map {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFEFEFE', endColorstr='#FFEAEAEA');
 }
-/* line 19, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 20, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .header h2 {
   font-size: 16px;
   line-height: 20px;
@@ -10251,12 +10252,12 @@ section#map {
   background-position: center left;
   background-repeat: no-repeat;
 }
-/* line 28, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 29, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .header address {
   margin: 4px 30px 0 0;
   float: left;
 }
-/* line 32, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 33, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .header .more {
   width: 30px;
   height: 30px;
@@ -10268,22 +10269,22 @@ section#map {
   font-family: 'EntypoRegular', sans-serif;
   text-indent: -10000px;
 }
-/* line 44, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 45, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn {
   float: left;
 }
-/* line 46, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 47, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn h3 {
   margin: 0 0 4px 0;
   line-height: 20px;
 }
-/* line 50, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 51, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol {
   list-style-type: none;
   margin: 13px 10px 0 10px;
   padding-bottom: 20px;
 }
-/* line 54, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 55, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li {
   width: 240px;
   display: block;
@@ -10295,33 +10296,33 @@ section#map {
   -o-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 60, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 61, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.yes {
   color: #6aa74a;
 }
-/* line 63, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 64, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.limited {
   color: #F1BD56;
 }
-/* line 66, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 67, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.no {
   color: #E5002A;
 }
-/* line 69, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 70, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.unknown {
   color: #555;
 }
-/* line 72, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 73, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li input[type=radio] {
   float: left;
   margin-right: 10px;
 }
-/* line 76, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 77, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li input[type=submit] {
   float: right;
 }
 
-/* line 84, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 85, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-tip {
   background-color: white !important;
   width: 8px !important;

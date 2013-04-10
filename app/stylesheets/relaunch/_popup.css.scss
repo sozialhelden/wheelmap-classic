@@ -14,6 +14,7 @@
       overflow: hidden;
       padding: 10px 5%;
       float: left;
+      border-bottom: 1px solid #DDD;
       @include background(linear-gradient(top, #FEFEFE, #EAEAEA));
       @include filter-gradient(#FEFEFE, #EAEAEA, vertical);
       h2 {

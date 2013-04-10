@@ -17,12 +17,22 @@ $(document).ready(function() {
 
 
   function ResizeElements() {
-    var width = $(window).width();
-    if (width < 420) {
+    var widthMobile = $(window).width();
+    if (widthMobile < 420) {
       $('.category-filter .filter-option').addClass('icon-tags');
     }
     else {
       $('.category-filter .filter-option').removeClass('icon-tags');
+    }
+    var widthTablet = $(window).width();
+    if (widthTablet < 767) {
+      $('.category-filter').addClass('dropup');
+      $('.status-filter button').attr('data-placement', 'top').popover();
+    }
+    else {
+      $('.category-filter').removeClass('dropup');
+      $('.status-filter button').attr('data-placement', 'bottom').popover();
+      console.log($(window).width());
     }
   }
   $(window).load(ResizeElements);
