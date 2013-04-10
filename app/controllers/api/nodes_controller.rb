@@ -49,7 +49,7 @@ class Api::NodesController < Api::ApiController
     @node.attributes = params
 
     if @node.valid?
-      UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user, 'update_android')
+      UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user, source('update'))
 
       respond_to do |wants|
         wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
@@ -74,7 +74,7 @@ class Api::NodesController < Api::ApiController
         @node.osm_id = Poi.highest_id + 1
         @node.save
       else
-        CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user, 'create_android')
+        CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user, source('create'))
       end
 
       respond_to do |wants|
@@ -93,7 +93,7 @@ class Api::NodesController < Api::ApiController
   def update_wheelchair
     node = Poi.find(params[:id])
     updating_user = (user_signed_in? && current_user.app_authorized?) ? current_user : wheelmap_visitor
-    UpdateTagsJob.enqueue(node.osm_id.abs, node.osm_type, { 'wheelchair' => params[:wheelchair] }, wheelmap_visitor, 'tag_android')
+    UpdateTagsJob.enqueue(node.osm_id.abs, node.osm_type, { 'wheelchair' => params[:wheelchair] }, wheelmap_visitor, source('tag'))
 
     respond_to do |wants|
       wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
@@ -124,6 +124,10 @@ class Api::NodesController < Api::ApiController
       @meta[:conditions][:search] = params[:q]    if params[:q]
       @meta[:conditions][:bbox]   = params[:bbox] if params[:bbox]
       @meta
+  end
+
+  def source(prefix='tag')
+    @source ||= [prefix,iphone? ? 'iphone' : 'android'].join('_')
   end
 
   def check_for_way_id

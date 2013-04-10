@@ -113,6 +113,17 @@ describe Api::NodesController do
         response.status.should eql 406
       }.should change(Delayed::Job, :count).by(0)
     end
+
+    it "should compose source from user agent" do
+      put(:update_wheelchair, {:id => @node.id, :wheelchair => 'yes', :api_key => @user.authentication_token})
+      assigns(:source).should eql 'tag_android'
+    end
+
+    it "should compose source from user agent" do
+      request.env['HTTP_USER_AGENT'] = 'Wheelmap iOS/1.2.4'
+      put(:update_wheelchair, {:id => @node.id, :wheelchair => 'yes', :api_key => @user.authentication_token})
+      assigns(:source).should eql 'tag_iphone'
+    end
   end
 
   describe 'as a node' do
@@ -209,6 +220,23 @@ describe Api::NodesController do
       }.should change(Delayed::Job, :count).by(1)
     end
 
+    it "should compose source from user agent" do
+      @user.oauth_token = :a_token
+      @user.oauth_secret = :a_secret
+      @user.save!
+      put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
+      assigns(:source).should eql 'update_android'
+    end
+
+    it "should compose source from user agent" do
+      @user.oauth_token = :a_token
+      @user.oauth_secret = :a_secret
+      @user.save!
+      request.env['HTTP_USER_AGENT'] = 'Wheelmap iOS/1.2.4'
+      put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
+      assigns(:source).should eql 'update_iphone'
+    end
+
     it "should not be possible to update a way" do
       @user.oauth_token = :a_token
       @user.oauth_secret = :a_secret
@@ -271,6 +299,23 @@ describe Api::NodesController do
         response.status.should eql 202
       }.should change(Delayed::Job, :count).by(1)
 
+    end
+
+    it "should compose source from user agent" do
+      @user.oauth_token = :a_token
+      @user.oauth_secret = :a_secret
+      @user.save!
+      post(:create, {:lat => 52.0, :lon => 13.4, :tags => {"amenity"=>"restaurant", :name => 'Cocktails on the rocks'}, :wheelchair => 'no', :api_key => @user.authentication_token})
+      assigns(:source).should eql 'create_android'
+    end
+
+    it "should compose source from user agent" do
+      @user.oauth_token = :a_token
+      @user.oauth_secret = :a_secret
+      @user.save!
+      request.env['HTTP_USER_AGENT'] = 'Wheelmap iOS/1.2.4'
+      post(:create, {:lat => 52.0, :lon => 13.4, :tags => {"amenity"=>"restaurant", :name => 'Cocktails on the rocks'}, :wheelchair => 'no', :api_key => @user.authentication_token})
+      assigns(:source).should eql 'create_iphone'
     end
 
     it "should create a node wit a lot of missing parameters" do

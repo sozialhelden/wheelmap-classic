@@ -50,9 +50,8 @@ class NodesController < ApplicationController
 
   def update_wheelchair
     @node = Poi.find(params[:id])
-    source = "tag_#{(mobile_app? ? 'iphone' : 'website')}"
     updating_user = (user_signed_in? && current_user.app_authorized?) ? current_user : wheelmap_visitor
-    UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, { 'wheelchair' => params[:wheelchair] }, updating_user, source)
+    UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, { 'wheelchair' => params[:wheelchair] }, updating_user, source('tag'))
 
     respond_to do |wants|
       wants.js{ render :json => {:message => t('nodes.update_wheelchair.successfull', :status => t("wheelchairstatus.#{params[:wheelchair]}"), :name => @node.headline), :wheelchair => params[:wheelchair] }.to_json}
@@ -65,8 +64,7 @@ class NodesController < ApplicationController
     @node.attributes = params[:node]
     @node.photos.map(&:save) # save photos regardless if poi is valid
     if @node.valid?
-      source = "update_#{(mobile_app? ? 'iphone' : 'website')}"
-      UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user, source)
+      UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user, source('update'))
 
       respond_to do |wants|
         wants.js   { render :text => 'OK' }
@@ -97,8 +95,7 @@ class NodesController < ApplicationController
     @node = Poi.new(params[:node])
 
     if @node.valid?
-      source = "create_#{(mobile_app? ? 'iphone' : 'website')}"
-      CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user, source)
+      CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user, source('create'))
 
       respond_to do |wants|
         wants.json{ render :status => 200, :json => {} } # iphone wants 200. nothing more.
@@ -179,6 +176,10 @@ class NodesController < ApplicationController
 
   def check_create_params
     render( :text => 'Params missing', :status => 406 ) if params[:node].blank?
+  end
+
+  def source(prefix='tag')
+    @source ||= [prefix,mobile_app? ? 'iphone' : 'website'].join('_')
   end
 
   def compress
