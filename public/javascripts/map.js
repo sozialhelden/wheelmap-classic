@@ -31,10 +31,20 @@ var standort = L.icon({
 });
 
 
-map.on('moveend', function(e) {
-  $.cookie('last_lat', map.getCenter().lat, { expires: 7, path: '/'});
-  $.cookie('last_lon', map.getCenter().lng, { expires: 7, path: '/'});
-  requestNodes(e.target.getBounds());
+map.on('movestart', function(e) {
+  if ( !window.padded_bounds || window.padded_bounds === null ) {
+    window.padded_bounds = map.getBounds().pad(0.42);
+  }
+}).on('moveend', function(e) {
+  // Ignore moving of the map if panned by 300m
+  if (window.padded_bounds !== null && !window.padded_bounds.contains(map.getBounds())) {
+    $.cookie('last_lat', map.getCenter().lat, { expires: 7, path: '/'});
+    $.cookie('last_lon', map.getCenter().lng, { expires: 7, path: '/'});
+    requestNodes(e.target.getBounds());
+    window.padded_bounds = null;
+  }
+}).on('zoomstart', function(e){
+  window.padded_bounds = null;
 }).on('zoomend', function(e){
   $.cookie('last_zoom', map.getZoom(), { expires: 7, path: '/'});
 }).on('popupopen', function(e) {
