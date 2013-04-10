@@ -98,6 +98,10 @@ class ApplicationController < ActionController::Base
     request.user_agent.start_with?('Wheelmap') rescue false
   end
 
+  def iphone?
+    request.user_agent.downcase.include?('ios') rescue false
+  end
+
   def default_user
     current_user || wheelmap_visitor
   end
