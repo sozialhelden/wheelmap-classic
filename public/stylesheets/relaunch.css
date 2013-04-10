@@ -10188,25 +10188,25 @@ section#map {
 .leaflet-marker-icon.yes {
   background-position: 0 0;
   width: 29px;
-  height: 32px;
+  height: 33px;
 }
 /* line 44, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-marker-icon.limited {
   background-position: 0 -33px;
   width: 29px;
-  height: 32px;
+  height: 33px;
 }
 /* line 49, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-marker-icon.no {
   background-position: 0 -67px;
   width: 29px;
-  height: 32px;
+  height: 33px;
 }
 /* line 54, ../../app/stylesheets/relaunch/_map.css.scss */
 .leaflet-marker-icon.unknown {
   background-position: 0 -100px;
   width: 29px;
-  height: 32px;
+  height: 33px;
 }
 
 /* line 2, ../../app/stylesheets/relaunch/_popup.css.scss */
@@ -10231,7 +10231,7 @@ section#map {
   width: 90%;
   height: auto;
   overflow: hidden;
-  padding: 10px 5%;
+  padding: 10px 5% 3px 5%;
   float: left;
   border-bottom: 1px solid #DDD;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fefefe), color-stop(100%, #eaeaea));
@@ -10248,7 +10248,7 @@ section#map {
   line-height: 20px;
   margin: 0;
   padding-left: 30px;
-  padding-right: 30px;
+  padding-right: 15px;
   background-position: center left;
   background-repeat: no-repeat;
 }
@@ -10257,34 +10257,31 @@ section#map {
   margin: 4px 30px 0 0;
   float: left;
 }
-/* line 33, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper .leaflet-popup-content .header .more {
-  width: 30px;
-  height: 30px;
-  padding: 0px;
+/* line 34, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn {
+  float: left;
+}
+/* line 36, ../../app/stylesheets/relaunch/_popup.css.scss */
+.leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn .more {
+  padding: 0px 6px;
   overflow: hidden;
   position: absolute;
   top: 10px;
   right: 8px;
-  font-family: 'EntypoRegular', sans-serif;
-  text-indent: -10000px;
+  color: #555;
 }
-/* line 45, ../../app/stylesheets/relaunch/_popup.css.scss */
-.leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn {
-  float: left;
-}
-/* line 47, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 44, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn h3 {
   margin: 0 0 4px 0;
   line-height: 20px;
 }
-/* line 51, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 48, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol {
   list-style-type: none;
   margin: 13px 10px 0 10px;
   padding-bottom: 20px;
 }
-/* line 55, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 52, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li {
   width: 240px;
   display: block;
@@ -10296,33 +10293,33 @@ section#map {
   -o-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 61, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 58, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.yes {
   color: #6aa74a;
 }
-/* line 64, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 61, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.limited {
   color: #F1BD56;
 }
-/* line 67, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 64, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.no {
   color: #E5002A;
 }
-/* line 70, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 67, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.unknown {
   color: #555;
 }
-/* line 73, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 70, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li input[type=radio] {
   float: left;
   margin-right: 10px;
 }
-/* line 77, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 74, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li input[type=submit] {
   float: right;
 }
 
-/* line 85, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 82, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-tip {
   background-color: white !important;
   width: 8px !important;

@@ -19,14 +19,12 @@ $(document).ready(function() {
   });
 
   function getPopoverPlacement(){
-    if (window.innerWidth < 420) {
+    if (window.innerWidth < 767) {
       return 'top';
     } else {
       return 'bottom';
     }
   }
-
-
   function ResizeElements() {
     var widthMobile = $(window).width();
     if (widthMobile < 420) {
