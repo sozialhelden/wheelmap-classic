@@ -38,23 +38,23 @@ section#map {
 
   &.yes{
     background-position: 0 0;
-    width: 40px;
-    height: 35px;
+    width: 29px;
+    height: 32px;
   }
   &.limited{
-    background-position: 0 -36px;
-    width: 40px;
-    height: 35px;
+    background-position: 0 -33px;
+    width: 29px;
+    height: 32px;
   }
   &.no{
-    background-position: 0 -72px;
-    width: 40px;
-    height: 35px;
+    background-position: 0 -67px;
+    width: 29px;
+    height: 32px;
   }
   &.unknown{
-    background-position: 0 -108px;
-    width: 40px;
-    height: 35px;
+    background-position: 0 -100px;
+    width: 29px;
+    height: 32px;
   }
 
 }
