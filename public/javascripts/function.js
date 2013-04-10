@@ -29,8 +29,6 @@ $(document).ready(function() {
   $(window).resize(ResizeElements);
 
 
-
-
   if (window.addEventListener) {
     window.addEventListener("load",function() {
       setTimeout(function(){
