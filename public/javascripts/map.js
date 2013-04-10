@@ -39,6 +39,8 @@ map.on('moveend', function(e) {
   $.cookie('last_zoom', map.getZoom(), { expires: 7, path: '/'});
 }).on('popupopen', function(e) {
   window.node_id = e.popup._source.feature.properties.id.toString();
+  var wheelchair_class = e.popup._source.feature.properties.wheelchair;
+  $('#featurePopup_content_' + window.node_id + ' .' + wheelchair_class + ' input').prop('checked',true);
   $('.update_form').bind('ajax:success', function(xhr, data, status){
     $('<div class="notification active success"><span>'+ data.message + '</span></div>').insertAfter('#toolbar .content').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
   }).bind('ajax:error', function(xhr, data, status){
