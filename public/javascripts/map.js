@@ -39,8 +39,7 @@ map.on('movestart', function(e) {
     padded_bounds = map.getBounds().pad(0.42);
   }
 }).on('moveend', function(e) {
-  console.log("move end");
-  // Ignore moving of the map if panned just 40% of the visible map
+  // Ignore moving of the map if panned just 40% of the visible mapc
   if (zoomed === true || padded_bounds !== null && !padded_bounds.contains(map.getBounds())) {
     $.cookie('last_lat', map.getCenter().lat, { expires: 7, path: '/'});
     $.cookie('last_lon', map.getCenter().lng, { expires: 7, path: '/'});
