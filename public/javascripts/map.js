@@ -3,6 +3,8 @@ var source = $("#cardTemplate").html();
 var lat = 52.50521;
 var lon = 13.4231;
 var zoom = 12;
+var zoomed = false;
+var padded_bounds = null;
 
 initGeoData();
 
@@ -32,19 +34,22 @@ var standort = L.icon({
 
 
 map.on('movestart', function(e) {
-  if ( !window.padded_bounds || window.padded_bounds === null ) {
-    window.padded_bounds = map.getBounds().pad(0.42);
+  // Recall the current bounds with padding for later use
+  if ( !padded_bounds || padded_bounds === null ) {
+    padded_bounds = map.getBounds().pad(0.42);
   }
 }).on('moveend', function(e) {
-  // Ignore moving of the map if panned by 300m
-  if (window.padded_bounds !== null && !window.padded_bounds.contains(map.getBounds())) {
+  console.log("move end");
+  // Ignore moving of the map if panned just 40% of the visible map
+  if (zoomed === true || padded_bounds !== null && !padded_bounds.contains(map.getBounds())) {
     $.cookie('last_lat', map.getCenter().lat, { expires: 7, path: '/'});
     $.cookie('last_lon', map.getCenter().lng, { expires: 7, path: '/'});
     requestNodes(e.target.getBounds());
-    window.padded_bounds = null;
+    padded_bounds = null;
+    zoomed = false;
   }
 }).on('zoomstart', function(e){
-  window.padded_bounds = null;
+  zoomed = true;
 }).on('zoomend', function(e){
   $.cookie('last_zoom', map.getZoom(), { expires: 7, path: '/'});
 }).on('popupopen', function(e) {
