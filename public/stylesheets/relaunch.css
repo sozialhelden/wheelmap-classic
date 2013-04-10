@@ -10030,16 +10030,38 @@ nav .list-wrapper ul.inline li a:hover {
     width: 303px;
   }
 }
+/* line 207, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .notification {
+  width: 98%;
+  padding: 10px 2%;
+  margin-top: -2px;
+  float: left;
+  text-align: center;
+  color: #FFF;
+  text-shadow: 0 0 20px #48642F;
+}
+/* line 216, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .notification.success {
+  background-color: #7EA940;
+  background-color: rgba(125, 169, 64, 0.96);
+  border-bottom: 1px solid #48642F;
+}
+/* line 221, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .notification.success {
+  background-color: #D11B2E;
+  background-color: rgba(215, 6, 6, 0.96);
+  border-bottom: 1px solid #93060A;
+}
 
 @media screen and (max-width: 640px) {
-  /* line 211, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 231, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content .btn-searchbar {
     display: inline;
     padding: 7px 2px;
     width: 45px;
     margin-left: 1%;
   }
-  /* line 217, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 237, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form {
     width: 98%;
     padding: 10px 1% 10px 1%;
@@ -10049,16 +10071,16 @@ nav .list-wrapper ul.inline li a:hover {
     background: #333;
     display: none !important;
   }
-  /* line 226, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 246, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form.active {
     display: block !important;
   }
-  /* line 229, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 249, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form .input-append {
     margin: 0 !important;
     width: 100% !important;
   }
-  /* line 233, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 253, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form .input-append input, #toolbar .content form.navbar-form .input-append input:focus {
     width: 80%;
   }
@@ -10187,12 +10209,6 @@ section#map {
   height: 32px;
 }
 
-@media screen and (max-width: 760px) {
-  /* line 63, ../../app/stylesheets/relaunch/_map.css.scss */
-  .leaflet-control-container {
-    display: none;
-  }
-}
 /* line 2, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper {
   background: #FFF;
@@ -10231,33 +10247,43 @@ section#map {
   line-height: 20px;
   margin: 0;
   padding-left: 30px;
-  background-position: top left;
+  padding-right: 30px;
+  background-position: center left;
   background-repeat: no-repeat;
 }
-/* line 27, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 28, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .header address {
-  margin: 0;
+  margin: 4px 30px 0 0;
+  float: left;
 }
-/* line 30, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 32, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .header .more {
-  float: right;
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  font-family: 'EntypoRegular', sans-serif;
+  text-indent: -10000px;
 }
-/* line 34, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 44, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn {
   float: left;
 }
-/* line 36, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 46, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn h3 {
   margin: 0 0 4px 0;
   line-height: 20px;
 }
-/* line 40, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 50, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol {
   list-style-type: none;
   margin: 13px 10px 0 10px;
   padding-bottom: 20px;
 }
-/* line 44, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 54, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li {
   width: 240px;
   display: block;
@@ -10269,33 +10295,33 @@ section#map {
   -o-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 50, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 60, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.yes {
   color: #6aa74a;
 }
-/* line 53, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 63, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.limited {
   color: #F1BD56;
 }
-/* line 56, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 66, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.no {
   color: #E5002A;
 }
-/* line 59, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 69, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li.unknown {
   color: #555;
 }
-/* line 62, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 72, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li input[type=radio] {
   float: left;
   margin-right: 10px;
 }
-/* line 66, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 76, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol li input[type=submit] {
   float: right;
 }
 
-/* line 74, ../../app/stylesheets/relaunch/_popup.css.scss */
+/* line 84, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-tip {
   background-color: white !important;
   width: 8px !important;
