@@ -10,16 +10,16 @@
             %i.icon-search.icon-white
 
       .btn-group.status-filter(data-toggle="buttons-checkbox")
-        %button.btn.yes{:'data-value' => 'yes', :class => cookies["filter_yes"].present? ? 'active' : nil, :'data-toggle' => "popover", :'data-placement' => "top", :'data-container' => "button.yes", :'data-content' => "Eingang stufenlos, alle Räume stufenlos, mit behindertengerechtem WC, falls ortsüblich.", :title => "", :'data-original-title' => "Rollstuhlgerecht" }
+        %button.btn.yes{:'data-value' => 'yes', :class => cookies["filter_yes"].present? ? 'active' : nil, :'data-toggle' => "popover", :'data-container' => "button.yes", :'data-content' => "Eingang stufenlos, alle Räume stufenlos, mit behindertengerechtem WC, falls ortsüblich.", :title => "", :'data-original-title' => "Rollstuhlgerecht" }
           %span{:'data-value' => 'yes'}
-        %button.btn.limited{:'data-value' => 'limited', :class => cookies["filter_limited"].present? ? 'active' : nil, :'data-toggle' => "popover", :'data-placement' => "top", :'data-container' => "button.limited", :'data-content' => "Eingang max 1 Stufe (7cm hoch), die wichtigsten Räume stufenlos, WC egal.", :title => "", :'data-original-title' => "Teilweise Rollstuhlgerecht" }
+        %button.btn.limited{:'data-value' => 'limited', :class => cookies["filter_limited"].present? ? 'active' : nil, :'data-toggle' => "popover", :'data-container' => "button.limited", :'data-content' => "Eingang max 1 Stufe (7cm hoch), die wichtigsten Räume stufenlos, WC egal.", :title => "", :'data-original-title' => "Teilweise Rollstuhlgerecht" }
           %span{:'data-value' => 'yes'}
-        %button.btn.no{:'data-value' => 'no', :class => cookies["filter_no"].present? ? 'active' : nil, :'data-toggle' => "popover", :'data-placement' => "top", :'data-container' => "button.no", :'data-content' => "Eingang hat höhere oder mehrere Stufen, Räume nicht erreichbar.", :title => "", :'data-original-title' => "Nicht Rollstuhlgerecht" }
+        %button.btn.no{:'data-value' => 'no', :class => cookies["filter_no"].present? ? 'active' : nil, :'data-toggle' => "popover", :'data-container' => "button.no", :'data-content' => "Eingang hat höhere oder mehrere Stufen, Räume nicht erreichbar.", :title => "", :'data-original-title' => "Nicht Rollstuhlgerecht" }
           %span{:'data-value' => 'yes'}
-        %button.btn.unknown{:'data-value' => 'unknown', :class => cookies["filter_unknown"].present? ? 'active' : nil, :'data-toggle' => "popover", :'data-placement' => "top", :'data-container' => "button.unknown", :'data-content' => "Hilf mit und markiere diese Orte!", :title => "", :'data-original-title' => "Unbekannter Status" }
+        %button.btn.unknown{:'data-value' => 'unknown', :class => cookies["filter_unknown"].present? ? 'active' : nil, :'data-toggle' => "popover", :'data-container' => "button.unknown", :'data-content' => "Hilf mit und markiere diese Orte!", :title => "", :'data-original-title' => "Unbekannter Status" }
           %span{:'data-value' => 'yes'}
 
 
-      %select.selectpicker.show-menu-arrow.category-filter.dropup{:size => 5, :multiple => 'multiple', :title => 'Alle', :'data-style' => "btn-info", :title => "Choose one"}
+      %select.selectpicker.show-menu-arrow.category-filter{:size => 5, :multiple => 'multiple', :title => 'Alle', :'data-style' => "btn-info", :title => "Choose one"}
         - Category.all.sort_by(&:localized_name).each do |category|
           %option{ :value => category.identifier, :selected => cookies["filter_#{category.identifier}"].present? ? nil : "selected" }= category.localized_name
