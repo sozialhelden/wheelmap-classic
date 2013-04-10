@@ -1,6 +1,8 @@
 .header {
-  width: 100%;
+  width: 90%;
   height: 40px;
+  padding: 10px 5%;
+  float: left;
   @include background(linear-gradient(top, #FEFEFE, #EAEAEA));
   @include filter-gradient(#FEFEFE, #EAEAEA, vertical);
 }
@@ -17,6 +19,7 @@
   h2 {
     font-size:16px;
     line-height: 20px;
+    margin: 0;
   }
   h3 {
     margin: 0 0 10px 0;
@@ -27,7 +30,8 @@
   }
   ol {
     list-style-type: none;
-    margin: 13px 0 0 0;
+    margin: 13px 10px 0 10px;
+    padding-bottom: 20px;
   }
   .more {
     float: right;
@@ -60,10 +64,7 @@
     margin-right: 10px;
   }
   input[type=submit] {
-    margin: 0 0 -20px 155px;
-  }
-  .save {
-    display: none;
+    float: right;
   }
 }
 .leaflet-popup-tip {
