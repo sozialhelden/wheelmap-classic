@@ -4,7 +4,6 @@
       %h2{:style => "background-image:url('/icons/{icon}.png')"} {name}
       %address {address}
     .bubble-ctn
-      = link_to t('home.index.popup.more'), "/nodes/{id}", :class => 'more btn btn-small'
       = form_tag "/nodes/{id}/update_wheelchair.js", :method => 'put', :remote => true, :'data-type' => :json, :class => "update_form formtastic", :id => "wheelchair_update_form" do
         %ol.wheelchair
           %h3= link_to t('home.index.popup.help'), "http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei/"
@@ -25,3 +24,6 @@
             %label{:for => "unknown-OpenLayers.Feature.Vector_{id}"}= t('home.index.popup.form.unknown')
           %li.save
             =submit_tag t('home.index.popup.form.save'), :class => 'btn'
+      = link_to t('home.index.popup.more'), "/nodes/{id}", :class => 'more btn btn-small'
+            
+            
