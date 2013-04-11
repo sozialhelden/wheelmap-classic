@@ -177,7 +177,7 @@ GEM
     hoptoad_notifier (2.4.11)
       activesupport
       builder
-    httparty (0.10.2)
+    httparty (0.11.0)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
     i18n (0.5.0)
@@ -224,7 +224,7 @@ GEM
     mime-types (1.19)
     mocha (0.10.5)
       metaclass (~> 0.0.1)
-    multi_json (1.6.1)
+    multi_json (1.7.2)
     multi_xml (0.5.3)
     multipart-post (1.1.5)
     mysql2 (0.2.18)
@@ -287,7 +287,7 @@ GEM
     responders (0.6.5)
     rgeo (0.3.20)
     rmagick (2.13.1)
-    rosemary (0.3.11)
+    rosemary (0.3.12)
       activemodel (>= 3.0.20)
       builder (>= 2.1.2)
       httparty (>= 0.10.0)
