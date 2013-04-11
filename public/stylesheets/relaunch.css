@@ -10278,7 +10278,7 @@ section#map {
 /* line 48, ../../app/stylesheets/relaunch/_popup.css.scss */
 .leaflet-popup-content-wrapper .leaflet-popup-content .bubble-ctn ol {
   list-style-type: none;
-  margin: 13px 10px 0 10px;
+  margin: 5px 10px 0 10px;
   padding-bottom: 20px;
 }
 /* line 52, ../../app/stylesheets/relaunch/_popup.css.scss */
