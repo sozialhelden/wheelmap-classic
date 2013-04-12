@@ -18,8 +18,7 @@ class SearchController < ApplicationController
     @http.read_timeout = 2
     @http.open_timeout = 2
     @query = DEFAULT_PARAMS.reverse_merge({:'accept-language' => I18n.locale, :q => params[:q]})
-    source = "search_#{(mobile_app? ? 'iphone' : 'website')}"
-    Counter.increment(source)
+    Counter.increment(source('search'))
     respond_to do |wants|
       wants.js  {
         resp = make_request(:json)
@@ -65,5 +64,10 @@ private
       render :action => 'shared/error', :status => 406
     end
   end
+
+  def source(prefix='search')
+    @source ||= [prefix,mobile_app? ? 'iphone' : 'website'].join('_')
+  end
+
 
 end

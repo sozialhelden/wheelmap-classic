@@ -164,6 +164,18 @@ describe Api::NodesController do
       get(:search, :api_key => @user.authentication_token, :q => 'name', :bbox => '13.377,52.515,13.383,52.518')
       response.status.should eql 200
     end
+
+    it "should compose source from user agent" do
+      get(:search, :api_key => @user.authentication_token, :q => 'Berlin')
+      assigns(:source).should eql 'search_android'
+    end
+
+    it "should compose source from user agent" do
+      request.env['HTTP_USER_AGENT'] = 'Wheelmap iOS/1.2.4'
+      get(:search, :api_key => @user.authentication_token, :q => 'Berlin')
+      assigns(:source).should eql 'search_iphone'
+    end
+
   end
 
   describe 'update action' do

@@ -34,7 +34,7 @@ class Api::NodesController < Api::ApiController
       format.xml      {render_for_api :simple, :xml  => @nodes, :root => :nodes, :meta => meta}
       format.json     {render_for_api :simple, :json => @nodes, :root => :nodes, :meta => meta}
     end
-    Counter.increment('search_android')
+    Counter.increment(source('search'))
   end
 
   def show
