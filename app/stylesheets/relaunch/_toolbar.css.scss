@@ -148,6 +148,10 @@
       left: auto;
       border-radius: 3px;
       padding: 5px 0 0 0;
+      @media screen and (max-width:420px) {
+        height: 240px;
+        -webkit-overflow-scrolling:touch;
+      }
       > li {
          > a {
           padding: 6px 10px 5px 10px;
@@ -160,10 +164,8 @@
          }
          :last-child a{
            border:none;
-           
        } 
-      }
-      
+      }      
     }
     @media screen and (max-width:420px) {
       width: 50px;
