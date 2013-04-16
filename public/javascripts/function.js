@@ -53,6 +53,13 @@ $(document).ready(function() {
     });
   }
 
+  $(['yes', 'no', 'limited', 'unknown']).each(function(index, item){
+    if ($.cookie('filter_'+item)) {
+      $('.status-filter button.'+item).addClass('active');
+    } else {
+      $('.status-filter button.'+item).removeClass('active');
+    }
+  });
   requestNodes(map.getBounds());
 
 });
