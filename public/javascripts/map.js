@@ -18,10 +18,11 @@ var map = L.map('map', {
 L.tileLayer('http://{s}.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.png', {
   maxZoom: 19,
   minZoom: 2,
-  attribution: '&copy; Data under ODbL by <a href="http://osm.org/copyright">OpenStreetMap</a>, Map Icons Collection CC-By-SA by <a href="http://mapicons.nicolasmollet.com/">Nicolas Mollet</a>',
+  attribution: 'Data: ODbL <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Map Icons: CC-By-SA <a href="http://mapicons.nicolasmollet.com/">Nicolas Mollet</a>',
   detectRetina: true
 
 }).addTo(map);
+map.attributionControl.setPrefix('');
 
 var geojson_layer = L.geoJson(null).addTo(map);
 
