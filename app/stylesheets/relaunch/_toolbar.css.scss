@@ -144,14 +144,31 @@
       height:36px;
     }
     .dropdown-menu {
-          right: 0px;
-          left: auto;
+      right: 0px;
+      left: auto;
+      border-radius: 3px;
+      padding: 5px 0 0 0;
+      > li {
+         > a {
+          padding: 6px 10px 5px 10px;
+          border-bottom: 1px solid #F0F0F0;
+          font-size: 13px;
+          :hover {
+            @include background(linear-gradient(top, rgb(107, 132, 155), rgb(77, 100, 122)));
+            @include filter-gradient(#6b849b, #4d647a, vertical);
+          }
+         }
+         :last-child a{
+           border:none;
+           
+       } 
+      }
+      
     }
     @media screen and (max-width:420px) {
       width: 50px;
       float: right;
       margin-right: 1%;
-
       span.filter-option {
         @media screen and (max-width:410px) {
           font-size:20px;
@@ -161,23 +178,6 @@
          width:67px;
       }
     }
-  }
-  .dropdown-menu {
-    border-radius: 3px;
-    padding: 5px 0 0 0;
-  }
-  .dropdown-menu > li > a {
-    padding: 6px 10px 5px 10px;
-    border-bottom: 1px solid #F0F0F0;
-
-    font-size: 13px;
-  }
-  .dropdown-menu li:last-child a{
-    border:none;
-  }
-  .dropdown-menu > li > a:hover {
-    @include background(linear-gradient(top, rgb(107, 132, 155), rgb(77, 100, 122)));
-    @include filter-gradient(#6b849b, #4d647a, vertical);
   }
   .bootstrap-select.btn-group.show-menu-arrow .dropdown-menu {
     overflow-x: scroll!important;
@@ -238,7 +238,7 @@
         width: 98%;
         padding: 10px 1% 10px 1%;
         position: fixed;
-        top:102px;
+        top:50px;
         left: 0px;
         background: #333;
         display: none !important;
