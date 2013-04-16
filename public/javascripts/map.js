@@ -15,7 +15,7 @@ var map = L.map('map', {
 });
 
 // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-L.tileLayer('http://{s}.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.png', {
+L.tileLayer('http://{s}.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.png32', {
   maxZoom: 19,
   minZoom: 2,
   attribution: 'Data: ODbL <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Map Icons: CC-By-SA <a href="http://mapicons.nicolasmollet.com/">Nicolas Mollet</a>',
@@ -67,19 +67,13 @@ map.on('movestart', function(e) {
 
 function requestNodes(bounds) {
   geojson_layer.fire('data:loading');
-  var north = bounds._northEast.lat;
-  var east  = bounds._northEast.lng;
-  var south = bounds._southWest.lat;
-  var west  = bounds._southWest.lng;
-
-  var boundbox = [west, south, east, north].join(',')
   $.ajax(
     {
       type: 'GET',
       url: '/nodes.geojson',
       dataType: 'json',
       data: {
-        bbox:boundbox,
+        bbox:bounds.toBBoxString(),
         limit: 400
       },
       closeOnClick: false,
