@@ -8,14 +8,20 @@ $(document).ready(function() {
     trigger: 'hover',
     placement: getPopoverPlacement
   });
-
+  
+  
+  $('.lookup').delay(1500).fadeIn(400);
+  $('.filter').delay(3500).fadeIn(400);
+  $('.categories').delay(5500).fadeIn(400);
+  $('.go').delay(7000).fadeIn(400);
+  
   $('.btn-searchbar').click(function() {
     $('.navbar-form').toggleClass('active');
   });
   $('.notification.active').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
 
-  $('.close-btn, .btn-start').click(function() {
-    $('.overlay').fadeOut(500);
+  $('.close-btn, .go').click(function() {
+    $('.overlay-wrapper').fadeOut(500);
   });
 
   function getPopoverPlacement(){

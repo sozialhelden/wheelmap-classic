@@ -1,4 +1,29 @@
-.overlay
-  .header
-    .close-btn Close
-    %h1 wheelmap.org ist eine Karte, mit der Du rollstuhlgerechte Orte<br/>finden und makrieren kannst.
+.overlay-wrapper
+  .overlay
+    .header
+      .close-btn &#10060;
+      %h1 Mit Wheelmap.org kannst Du rollstuhlgerechte Orte finden und markieren - weltweit und kostenlos. So einfach gehts:
+    .example-toolbar
+      .tip.lookup Direkt Orte finden
+      .tip.categories Kategorien filtern
+      .tip.filter Ergebnisse auf der Karte nach<br/>Rollstuhlgerechtigkeit filtern
+      %img{:src => "/images/overlay-example-toolbar.jpg"}
+    %h2 Das Ampelsystem zum Markieren der Rollstuhlgerechtigkeit:
+    %ul
+      %li.green
+        %img{:src => "/images/overlay-bsp_green.png"}
+        %h3 Rollstuhlgerecht 
+        %p Eingang stufenlos, alle Räume stufenlos, mit behindertengerechtem WC, falls ortsüblich.
+      %li.orange
+        %img{:src => "/images/overlay-bsp_orange.png"}
+        %h3 Teilweise rollstuhlgerecht
+        %p Eingang max 1 Stufe (7cm hoch), die wichtigsten Räume stufenlos, WC egal.
+      %li.red
+        %img{:src => "/images/overlay-bsp_red.png"}
+        %h3 Nicht rollstuhlgerecht
+        %p Eingang hat höhere oder mehrere Stufen, Räume nicht erreichbar.
+      %li.grey
+        %img{:src => "/images/overlay-bsp_grey.png"}
+        %h3 Unbekannter Status
+        %p Hilf mit und markiere diese Orte!
+      %span.go Okay, Los geht´s!
