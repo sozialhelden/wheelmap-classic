@@ -9950,6 +9950,28 @@ nav .list-wrapper ul.inline li a:hover {
 #toolbar .category-filter .dropdown-menu {
   right: 0px;
   left: auto;
+  border-radius: 3px;
+  padding: 5px 0 0 0;
+}
+/* line 152, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .category-filter .dropdown-menu > li > a {
+  padding: 6px 10px 5px 10px;
+  border-bottom: 1px solid #F0F0F0;
+  font-size: 13px;
+}
+/* line 156, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .category-filter .dropdown-menu > li > a :hover {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6b849b), color-stop(100%, #4d647a));
+  background: -webkit-linear-gradient(top, #6b849b, #4d647a);
+  background: -moz-linear-gradient(top, #6b849b, #4d647a);
+  background: -o-linear-gradient(top, #6b849b, #4d647a);
+  background: linear-gradient(top, #6b849b, #4d647a);
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF6B849B', endColorstr='#FF4D647A');
+}
+/* line 161, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .category-filter .dropdown-menu > li :last-child a {
+  border: none;
 }
 @media screen and (max-width: 420px) {
   /* line 140, ../../app/stylesheets/relaunch/_toolbar.css.scss */
@@ -9958,41 +9980,16 @@ nav .list-wrapper ul.inline li a:hover {
     float: right;
     margin-right: 1%;
   }
-  /* line 160, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 177, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .category-filter .btn {
     width: 67px;
   }
 }
 @media screen and (max-width: 420px) and (max-width: 410px) {
-  /* line 155, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 172, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .category-filter span.filter-option {
     font-size: 20px;
   }
-}
-/* line 165, ../../app/stylesheets/relaunch/_toolbar.css.scss */
-#toolbar .dropdown-menu {
-  border-radius: 3px;
-  padding: 5px 0 0 0;
-}
-/* line 169, ../../app/stylesheets/relaunch/_toolbar.css.scss */
-#toolbar .dropdown-menu > li > a {
-  padding: 6px 10px 5px 10px;
-  border-bottom: 1px solid #F0F0F0;
-  font-size: 13px;
-}
-/* line 175, ../../app/stylesheets/relaunch/_toolbar.css.scss */
-#toolbar .dropdown-menu li:last-child a {
-  border: none;
-}
-/* line 178, ../../app/stylesheets/relaunch/_toolbar.css.scss */
-#toolbar .dropdown-menu > li > a:hover {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6b849b), color-stop(100%, #4d647a));
-  background: -webkit-linear-gradient(top, #6b849b, #4d647a);
-  background: -moz-linear-gradient(top, #6b849b, #4d647a);
-  background: -o-linear-gradient(top, #6b849b, #4d647a);
-  background: linear-gradient(top, #6b849b, #4d647a);
-  *zoom: 1;
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF6B849B', endColorstr='#FF4D647A');
 }
 /* line 182, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .bootstrap-select.btn-group.show-menu-arrow .dropdown-menu {
@@ -10066,7 +10063,7 @@ nav .list-wrapper ul.inline li a:hover {
     width: 98%;
     padding: 10px 1% 10px 1%;
     position: fixed;
-    top: 102px;
+    top: 50px;
     left: 0px;
     background: #333;
     display: none !important;
