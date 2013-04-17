@@ -8,7 +8,7 @@
 }
 .overlay {
   width: 700px;
-  height: 650px;
+  height: auto;
   position: fixed;
   z-index: 2000;
   left: 50%;
@@ -112,11 +112,15 @@
       background: #FFF;
       padding: 4px 10px;
       display: none;
+      
+      font-size: 12px;
+      line-height: 18px;
+      
       @include box-shadow (0 0 4px #333);
       @include border-radius(3px);
       &.lookup {
         width: 130px;
-        top: -20px;
+        top: -30px;
         z-index: 200;
         margin-left: -230px;
       }
@@ -128,7 +132,7 @@
       }
       &.categories {
         width: 120px;
-        top: -20px;
+        top: -30px;
         z-index: 200;
         margin-left: 120px;
       }
