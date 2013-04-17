@@ -14,6 +14,7 @@
   left: 50%;
   top: 50%;
   margin: -325px 0 0 -350px;
+  padding: 0 0 20px 0;
   background: url('/images/bg-overlay.png') #FFF no-repeat;
   background-position: 0 219px;
   @include box-shadow(0 0 10px #333);
@@ -24,7 +25,7 @@
     left: 1%;
     top: 1%;
     margin: 0px;
-    background-position: 0 110px;
+    background-position: 0 50px;
     @include border-radius(0px);
   }
   .header {
@@ -114,16 +115,19 @@
       @include box-shadow (0 0 4px #333);
       @include border-radius(3px);
       &.lookup {
+        width: 130px;
         top: -20px;
         z-index: 200;
-        margin-left: -220px;
+        margin-left: -230px;
       }
       &.filter {
+        width: 170px;
         top: -45px;
         z-index: 200;
-        margin-left: -90px;
+        margin-left: -70px;
       }
       &.categories {
+        width: 120px;
         top: -20px;
         z-index: 200;
         margin-left: 120px;
@@ -134,7 +138,7 @@
     width: 92%;
     margin: 0;
     float: left;
-    margin: 20px 4% 0 4%;
+    margin: 20px 4% 15px 4%;
     li {
       width: 23%;
       float: left;
@@ -183,7 +187,7 @@
   span.go {
     width: 50%;
     padding: 20px 0px;
-    margin: 20px 25% 0 25%;
+    margin: 0 25%;
     float: left;
     display: none;
     cursor: pointer;
