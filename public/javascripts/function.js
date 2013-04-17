@@ -9,7 +9,7 @@ $(document).ready(function() {
     placement: getPopoverPlacement
   });
   
-  
+  $('.show-overlay').fadeIn(1200);
   $('.lookup').delay(1500).fadeIn(400);
   $('.filter').delay(3500).fadeIn(400);
   $('.categories').delay(5500).fadeIn(400);
@@ -34,7 +34,7 @@ $(document).ready(function() {
   function ResizeElements() {
     var widthMobile = $(window).width();
     if (widthMobile < 420) {
-      $('.category-filter .filter-option').addClass('icon-tags');
+      $('.category-filter .filter-option').addClass('icon-tags').html('');
     }
     else {
       $('.category-filter .filter-option').removeClass('icon-tags');
