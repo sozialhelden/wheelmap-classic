@@ -332,12 +332,12 @@ en:
         node:
           create: "Add new place"
       overlay:
-        button: "Ok, Let's go!"
-        categories: "Filter categories"
-        filter: "Filter results depending on the wheelchair status"
-        headline: "Mit Wheelmap.org kannst Du rollstuhlgerechte Orte finden und markieren - weltweit und kostenlos. So einfach gehts:"
-        lookup: "Find places quickly"
-        secondary_headline: "Das Ampelsystem zum Markieren der Rollstuhlgerechtigkeit:"
+        button: "Okay, let’s go!"
+        categories: "Filter places by categories"
+        filter: "Filter places by wheelchair accessibility"
+        headline: "Mark and find wheelchair accessible places with Wheelmap.org - worldwide and for free. It’s easy:"
+        lookup: "Search for a specific place"
+        secondary_headline: "Our traffic light system to mark the wheelchair accessibility of public places:"
       popup:
         form:
           limited: "partially wheelchair accessible"
