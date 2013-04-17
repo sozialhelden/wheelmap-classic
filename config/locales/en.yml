@@ -331,6 +331,13 @@ en:
       link:
         node:
           create: "Add new place"
+      overlay:
+        button: "Ok, Let's go!"
+        categories: "Filter categories"
+        filter: "Filter results depending on the wheelchair status"
+        headline: "Mit Wheelmap.org kannst Du rollstuhlgerechte Orte finden und markieren - weltweit und kostenlos. So einfach gehts:"
+        lookup: "Find places quickly"
+        secondary_headline: "Das Ampelsystem zum Markieren der Rollstuhlgerechtigkeit:"
       popup:
         form:
           limited: "partially wheelchair accessible"
@@ -709,10 +716,10 @@ en:
       alt: "Wheelmap Logo - find wheelchair accessible places"
       title: "Wheelmap - find wheelchair accessible places"
     what_is:
-      fully_accessible: "<em>Yes:</em> Entrance without steps, all rooms without steps, accessible toilet if customary in a place"
-      limited_accessible: "<em>Limited:</em> Entry has a step (max. height 7cm), most rooms are without steps, toilet is not accessible"
-      not_accessible: "<em>No:</em> Entry has steep or several steps, rooms are not accessible"
-      unknown_accessible: "<em>Unknown:</em> Help by mark places!"
+      fully_accessible: "Entrance without steps, all rooms without steps, accessible toilet if customary in a place"
+      limited_accessible: "Entry has a step (max. height 7cm), most rooms are without steps, toilet is not accessible"
+      not_accessible: "Entry has steep or several steps, rooms are not accessible"
+      unknown_accessible: "Help by mark places!"
   will_paginate:
     next_label: "Next &#8594;"
     page_entries_info:
