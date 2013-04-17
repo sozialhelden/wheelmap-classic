@@ -8,13 +8,17 @@ $(document).ready(function() {
     trigger: 'hover',
     placement: getPopoverPlacement
   });
-  
+
+  if (!$.cookie('_wheelmap_first_time_visitor')) {
+    $('.overlay-wrapper').addClass('show-overlay');
+    $.cookie('_wheelmap_first_time_visitor', true, { expires: 1000 });
+  }
   $('.show-overlay').fadeIn(1200);
   $('.lookup').delay(1500).fadeIn(400);
   $('.filter').delay(3500).fadeIn(400);
   $('.categories').delay(5500).fadeIn(400);
   $('.go').delay(7000).fadeIn(400);
-  
+
   $('.btn-searchbar').click(function() {
     $('.navbar-form').toggleClass('active');
   });
@@ -66,6 +70,7 @@ $(document).ready(function() {
       $('.status-filter button.'+item).removeClass('active');
     }
   });
+
   requestNodes(map.getBounds());
 
 });
