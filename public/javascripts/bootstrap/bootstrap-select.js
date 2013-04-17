@@ -224,7 +224,7 @@
             if(_this.multiple && _this.options.selectedTextFormat.indexOf('count') > -1) {
                 var max = _this.options.selectedTextFormat.split(">");
                 if( (max.length>1 && selectedItems.length > max[1]) || (max.length==1 && selectedItems.length>=2)) {
-                    title = selectedItems.length +'/' + this.$element.find('option').length + ' Kategorien';
+                    title = '<span class="counter">' + selectedItems.length +'</span> Kategorien';
                 }
              }
 

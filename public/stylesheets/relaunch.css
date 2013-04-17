@@ -9961,6 +9961,40 @@ nav .list-wrapper ul.inline li a:hover {
   height: 36px;
 }
 /* line 151, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .category-filter .counter {
+  background: #F00;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: -13px;
+  right: -34px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  border-radius: 100px;
+  border: 1px solid #FFF;
+  -webkit-box-shadow: 0 0 3px #666666;
+  -moz-box-shadow: 0 0 3px #666666;
+  box-shadow: 0 0 3px #666666;
+  background-color: #f4f4f4;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fefefe), color-stop(100%, #eaeaea));
+  background-image: -webkit-linear-gradient(top, #fefefe, #eaeaea);
+  background-image: -moz-linear-gradient(top, #fefefe, #eaeaea);
+  background-image: -o-linear-gradient(top, #fefefe, #eaeaea);
+  background-image: linear-gradient(top, #fefefe, #eaeaea);
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFEFEFE', endColorstr='#FFEAEAEA');
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  color: #444;
+}
+/* line 171, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+#toolbar .category-filter .filter-option {
+  overflow: visible;
+}
+/* line 174, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .category-filter .dropdown-menu {
   right: 0px;
   left: auto;
@@ -9968,19 +10002,19 @@ nav .list-wrapper ul.inline li a:hover {
   padding: 5px 0 0 0;
 }
 @media screen and (max-width: 420px) {
-  /* line 151, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 174, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .category-filter .dropdown-menu {
     height: 240px;
     -webkit-overflow-scrolling: touch;
   }
 }
-/* line 160, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 183, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .category-filter .dropdown-menu > li > a {
   padding: 6px 10px 5px 10px;
   border-bottom: 1px solid #F0F0F0;
   font-size: 13px;
 }
-/* line 164, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 187, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .category-filter .dropdown-menu > li > a :hover {
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6b849b), color-stop(100%, #4d647a));
   background: -webkit-linear-gradient(top, #6b849b, #4d647a);
@@ -9990,7 +10024,7 @@ nav .list-wrapper ul.inline li a:hover {
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF6B849B', endColorstr='#FF4D647A');
 }
-/* line 168, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 191, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .category-filter .dropdown-menu > li > a :last-child a {
   border: none;
 }
@@ -10001,23 +10035,23 @@ nav .list-wrapper ul.inline li a:hover {
     float: right;
     margin-right: 1%;
   }
-  /* line 182, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 205, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .category-filter .btn {
     width: 67px;
   }
 }
 @media screen and (max-width: 420px) and (max-width: 410px) {
-  /* line 177, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 200, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .category-filter span.filter-option {
     font-size: 20px;
   }
 }
-/* line 187, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 210, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .bootstrap-select.btn-group.show-menu-arrow .dropdown-menu {
   overflow-x: scroll !important;
   overflow-y: none !important;
 }
-/* line 192, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 215, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar select.category-filter {
   height: 36px;
   margin: 0;
@@ -10032,23 +10066,23 @@ nav .list-wrapper ul.inline li a:hover {
   color: white;
   padding: 10px;
 }
-/* line 201, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 224, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .popover {
   width: 180px;
 }
 @media screen and (max-width: 640px) {
-  /* line 204, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 227, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content {
     width: 410px;
   }
 }
 @media screen and (max-width: 410px) {
-  /* line 204, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 227, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content {
     width: 303px;
   }
 }
-/* line 212, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 235, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .notification {
   width: 98%;
   padding: 10px 2%;
@@ -10058,13 +10092,13 @@ nav .list-wrapper ul.inline li a:hover {
   color: #FFF;
   text-shadow: 0 0 20px #48642F;
 }
-/* line 221, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 244, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .notification.success {
   background-color: #7EA940;
   background-color: rgba(125, 169, 64, 0.96);
   border-bottom: 1px solid #48642F;
 }
-/* line 226, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 249, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 #toolbar .notification.error {
   background-color: #D11B2E;
   background-color: rgba(215, 6, 6, 0.96);
@@ -10072,14 +10106,14 @@ nav .list-wrapper ul.inline li a:hover {
 }
 
 @media screen and (max-width: 640px) {
-  /* line 236, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 259, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content .btn-searchbar {
     display: inline;
     padding: 7px 2px;
     width: 45px;
     margin-left: 1%;
   }
-  /* line 242, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 265, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form {
     width: 98%;
     padding: 10px 1% 10px 1%;
@@ -10089,16 +10123,16 @@ nav .list-wrapper ul.inline li a:hover {
     background: #333;
     display: none !important;
   }
-  /* line 251, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 274, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form.active {
     display: block !important;
   }
-  /* line 254, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 277, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form .input-append {
     margin: 0 !important;
     width: 100% !important;
   }
-  /* line 258, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 281, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form .input-append input, #toolbar .content form.navbar-form .input-append input:focus {
     width: 80%;
   }
@@ -10110,9 +10144,10 @@ nav .list-wrapper ul.inline li a:hover {
   position: absolute;
   z-index: 9999999999999999;
   background: rgba(40, 54, 69, 0.8);
+  display: none;
 }
 
-/* line 8, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 10, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay {
   width: 700px;
   height: 650px;
@@ -10133,12 +10168,12 @@ nav .list-wrapper ul.inline li a:hover {
   border-radius: 3px;
 }
 @media screen and (max-width: 700px) {
-  /* line 8, ../../app/stylesheets/relaunch/_overlay.css.scss */
+  /* line 10, ../../app/stylesheets/relaunch/_overlay.css.scss */
   .overlay {
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    top: 0px;
+    width: 98%;
+    height: 98%;
+    left: 1%;
+    top: 1%;
     margin: 0px;
     background-position: 0 110px;
     -webkit-border-radius: 0px;
@@ -10148,7 +10183,7 @@ nav .list-wrapper ul.inline li a:hover {
     border-radius: 0px;
   }
 }
-/* line 29, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 31, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay .header {
   width: 100%;
   height: 200px;
@@ -10167,7 +10202,7 @@ nav .list-wrapper ul.inline li a:hover {
   border-radius: 3px 3px 0 0;
 }
 @media screen and (max-width: 700px) {
-  /* line 29, ../../app/stylesheets/relaunch/_overlay.css.scss */
+  /* line 31, ../../app/stylesheets/relaunch/_overlay.css.scss */
   .overlay .header {
     height: auto;
     -webkit-box-shadow: 0 0 8px #333333;
@@ -10175,7 +10210,7 @@ nav .list-wrapper ul.inline li a:hover {
     box-shadow: 0 0 8px #333333;
   }
 }
-/* line 41, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 43, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay .close-btn {
   float: right;
   font-family: 'EntypoRegular', sans-serif;
@@ -10191,7 +10226,7 @@ nav .list-wrapper ul.inline li a:hover {
   -o-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 52, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 54, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay h1 {
   width: 90%;
   float: left;
@@ -10204,16 +10239,16 @@ nav .list-wrapper ul.inline li a:hover {
   font-weight: normal;
 }
 @media screen and (max-width: 700px) {
-  /* line 52, ../../app/stylesheets/relaunch/_overlay.css.scss */
+  /* line 54, ../../app/stylesheets/relaunch/_overlay.css.scss */
   .overlay h1 {
-    background-size: 50%;
+    background-size: 170px;
     font-size: 12px;
     line-height: 18px;
     padding-top: 50px;
     margin: -10px 0 0 0;
   }
 }
-/* line 72, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 74, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay h2 {
   width: 90%;
   float: left;
@@ -10226,14 +10261,14 @@ nav .list-wrapper ul.inline li a:hover {
   color: #273543;
 }
 @media screen and (max-width: 700px) {
-  /* line 72, ../../app/stylesheets/relaunch/_overlay.css.scss */
+  /* line 74, ../../app/stylesheets/relaunch/_overlay.css.scss */
   .overlay h2 {
     padding-top: 10px;
     font-size: 14px;
     line-height: 18px;
   }
 }
-/* line 89, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 91, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay .example-toolbar {
   width: 100%;
   height: 50px;
@@ -10248,12 +10283,12 @@ nav .list-wrapper ul.inline li a:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF40576D', endColorstr='#FF263341');
 }
 @media screen and (max-width: 700px) {
-  /* line 89, ../../app/stylesheets/relaunch/_overlay.css.scss */
+  /* line 91, ../../app/stylesheets/relaunch/_overlay.css.scss */
   .overlay .example-toolbar {
     display: none;
   }
 }
-/* line 99, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 101, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay .example-toolbar img {
   width: 500px;
   position: absolute;
@@ -10262,7 +10297,7 @@ nav .list-wrapper ul.inline li a:hover {
   margin-left: -250px;
   z-index: 100;
 }
-/* line 107, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 109, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay .example-toolbar .tip {
   position: absolute;
   left: 50%;
@@ -10279,44 +10314,44 @@ nav .list-wrapper ul.inline li a:hover {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 116, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 118, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay .example-toolbar .tip.lookup {
   top: -20px;
   z-index: 200;
   margin-left: -220px;
 }
-/* line 121, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 123, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay .example-toolbar .tip.filter {
   top: -45px;
   z-index: 200;
   margin-left: -90px;
 }
-/* line 126, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 128, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay .example-toolbar .tip.categories {
   top: -20px;
   z-index: 200;
   margin-left: 120px;
 }
-/* line 133, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 135, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay ul {
   width: 92%;
   margin: 0;
   float: left;
   margin: 20px 4% 0 4%;
 }
-/* line 138, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 140, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay ul li {
   width: 23%;
   float: left;
   list-style: none;
   margin: 0 1%;
 }
-/* line 143, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 145, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay ul li img {
   width: 80%;
   margin: 0px 10%;
 }
-/* line 147, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 149, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay ul li h3 {
   width: 100%;
   float: left;
@@ -10324,34 +10359,34 @@ nav .list-wrapper ul.inline li a:hover {
   line-height: 16px;
   text-align: center;
 }
-/* line 154, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 156, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay ul li p {
   padding: 0 5%;
   float: left;
 }
 @media screen and (max-width: 700px) {
-  /* line 154, ../../app/stylesheets/relaunch/_overlay.css.scss */
+  /* line 156, ../../app/stylesheets/relaunch/_overlay.css.scss */
   .overlay ul li p {
     display: none;
   }
 }
-/* line 163, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 165, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay ul .green h3 {
   color: #48642F;
 }
-/* line 168, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 170, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay ul .orange h3 {
   color: #A46426;
 }
-/* line 173, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 175, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay ul .red h3 {
   color: #891A16;
 }
-/* line 178, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 180, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay ul .grey h3 {
   color: #3A3A42;
 }
-/* line 183, ../../app/stylesheets/relaunch/_overlay.css.scss */
+/* line 185, ../../app/stylesheets/relaunch/_overlay.css.scss */
 .overlay span.go {
   width: 50%;
   padding: 20px 0px;
@@ -10378,7 +10413,7 @@ nav .list-wrapper ul.inline li a:hover {
   border: 1px solid #333;
 }
 @media screen and (max-width: 700px) {
-  /* line 183, ../../app/stylesheets/relaunch/_overlay.css.scss */
+  /* line 185, ../../app/stylesheets/relaunch/_overlay.css.scss */
   .overlay span.go {
     font-size: 12px;
     padding: 10px 0px;
