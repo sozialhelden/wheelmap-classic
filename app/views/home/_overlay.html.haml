@@ -2,28 +2,28 @@
   .overlay
     .header
       .close-btn &#10060;
-      %h1 Mit Wheelmap.org kannst Du rollstuhlgerechte Orte finden und markieren - weltweit und kostenlos. So einfach gehts:
+      %h1=t('home.index.overlay.headline')
     .example-toolbar
-      .tip.lookup Direkt Orte finden
-      .tip.categories Kategorien filtern
-      .tip.filter Ergebnisse auf der Karte nach<br/>Rollstuhlgerechtigkeit filtern
+      .tip.lookup=t('home.index.overlay.lookup')
+      .tip.categories=t('home.index.overlay.categories')
+      .tip.filter=t('home.index.overlay.filter')
       %img{:src => "/images/overlay-example-toolbar.jpg"}
-    %h2 Das Ampelsystem zum Markieren der Rollstuhlgerechtigkeit:
+    %h2=t('home.index.overlay.secondary_headline')
     %ul
       %li.green
         %img{:src => "/images/overlay-bsp_green.png"}
-        %h3 Rollstuhlgerecht
-        %p Eingang stufenlos, alle Räume stufenlos, mit behindertengerechtem WC, falls ortsüblich.
+        %h3=t('home.index.popup.form.yes')
+        %p=t('wheelmap.what_is.fully_accessible')
       %li.orange
         %img{:src => "/images/overlay-bsp_orange.png"}
-        %h3 Teilweise rollstuhlgerecht
-        %p Eingang max 1 Stufe (7cm hoch), die wichtigsten Räume stufenlos, WC egal.
+        %h3=t('home.index.popup.form.limited')
+        %p=t('wheelmap.what_is.limited_accessible')
       %li.red
         %img{:src => "/images/overlay-bsp_red.png"}
-        %h3 Nicht rollstuhlgerecht
-        %p Eingang hat höhere oder mehrere Stufen, Räume nicht erreichbar.
+        %h3=t('home.index.popup.form.no')
+        %p=t('wheelmap.what_is.not_accessible')
       %li.grey
         %img{:src => "/images/overlay-bsp_grey.png"}
-        %h3 Unbekannter Status
-        %p Hilf mit und markiere diese Orte!
-      %span.go Okay, Los geht´s!
+        %h3=t('home.index.popup.form.unknown')
+        %p=t('wheelmap.what_is.unknown_accessible')
+      %span.go=t('home.index.overlay.button')
