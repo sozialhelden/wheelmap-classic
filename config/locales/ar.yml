@@ -292,7 +292,8 @@ ar:
       what_is_wheelmap: "تعرف على ويل ماب ؟"
     searchbar:
       add_place: "أضف مكاناً آخر"
-      find: أوجد
+      find: |-
+          بحث
       label: |
           header.searchbar.label
       placeholder: "سن سيت بوليڨارد، لوس أنجلوس  أو  براندن بيرڠ ،برلين"
@@ -678,8 +679,10 @@ ar:
   users:
     after_signup_edit:
       welcome:
-        headline: "مرحبا بك في ويل ماب "
-        set_password_for_mobile: "لديك هاتف نقال ذكي؟ أدخل كلمة المرور ليكون\" ويل ماب\" معك أين ماكنت."
+        headline: "\n\
+            مرحبا بك في ويل ماب "
+        set_password_for_mobile: |-
+            لديك هاتف ذكي؟ أدخل كلمة المرور ليكون" ويل ماب" معك أين ماكنت.
         text: "كيف يمكننا التواصل معك؟ يمكنك تغيير هذه المعلومات لاحقا في ملفك."
     edit:
       headline:
