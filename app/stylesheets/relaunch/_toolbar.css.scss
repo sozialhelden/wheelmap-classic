@@ -148,6 +148,29 @@
       width: 150px;
       height:36px;
     }
+    .counter {
+      background: #F00;
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      top: -13px;
+      right: -34px;
+      @include border-radius(100px);
+      border: 1px solid #FFF;
+      @include box-shadow(0 0 3px #666);
+      background-color: #f4f4f4;
+      @include background-image(linear-gradient(top, rgb(254, 254, 254), rgb(234, 234, 234)));
+      @include filter-gradient(rgb(254, 254, 254), rgb(234, 234, 234), vertical);
+      
+      
+      font-size: 10px;
+      font-weight: bold;
+      text-align: center;
+      color: #444;
+    }
+    .filter-option {
+      overflow: visible;
+    }
     .dropdown-menu {
       right: 0px;
       left: auto;
