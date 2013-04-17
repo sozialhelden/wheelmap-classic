@@ -1,6 +1,10 @@
 ---
 cs:
   activerecord:
+    attributes:
+      user:
+        first_name: "Křestní jméno"
+        terms: Podmínky
     errors:
       messages:
         accepted: "musí být potvrzeno"
@@ -23,6 +27,11 @@ cs:
         too_long: "je příliš dlouhý/á/é (max. %{count} znaků)"
         too_short: "je příliš krátký/á/é (min. %{count} znaků)"
         wrong_length: "nemá správnou délku (očekáváno %{count} znaků)"
+      models:
+        user:
+          attributes:
+            terms:
+              accepted: "musí být přijaté"
       template:
         body: "Následující pole obsahují chybně vyplněné údaje: "
         header:
@@ -31,14 +40,22 @@ cs:
   breadcrumbs:
     node:
       edit: "Upravit místo"
+  common:
+    close: zavřít
   devise:
     confirmations:
       confirmed: "Váš účet byl úspěšně potvrzen. Nyní jste přihlášen(a)."
       send_instructions: "Za několik minut obdržíte email s instrukcemi k potvrzení vašeho účtu."
+    destroy:
+      confirm: "Jste si jistí?"
+    edit:
+      form:
+        labels:
+          password: "Heslo <i>(nechte prázdné jestli ho nechcete měnit)</i>"
     failure:
       already_authenticated: "Přihlášení již proběhlo."
       inactive: "Váš účet ještě nebyl aktivován."
-      invalid: "Neplatná identita nebo heslo."
+      invalid: "Nesprávný email nebo heslo."
       invalid_token: "Neplatný ověřovací symbol."
       locked: "Váš účet je uzamčen."
       timeout: "Vaše relace vypršela, přihlašte se prosím znovu, pak můžete pokračovat."
@@ -46,6 +63,7 @@ cs:
       unconfirmed: "Musíte potvrdit svůj účet, pak můžete pokračovat."
     mailer:
       confirmation_instructions:
+        landing_page: "Prosím klikněte na odkaz, který jsme vám poslali na vaši emailovou adresu. Jestli od nás nedostanete email tak nejprve zkontrolujte jestli neskončil v spamu. Jestli tam není tak se vraťte na stránku pro vytvoření účtu a zkuste to znova."
         subject: "Potvrzovací instrukce"
       reset_password_instructions:
         subject: "Instrukce k nastavení nového hesla"
@@ -54,21 +72,55 @@ cs:
     omniauth_callbacks:
       failure: "Není možné autorizovat z %{kind}, protože: \"%{reason}\"."
       success: "Úspěšná autorizace z účtu %{kind}."
+    password_recovery:
+      form:
+        submit: "Obnovit heslo"
+      headline: "Zapomněli jste heslo?"
+    password_reset:
+      email:
+        link: "Změnit heslo"
+        text: "Dostali jsme požadavek na změnu vašeho hesla. Jestli jste to byli vy klikněte na následující odkaz - jinak toto ignorujte!"
     passwords:
       send_instructions: "Za několik minut obdržíte email s instrukcemi k nastavení nového hesla."
+      send_paranoid_instructions: "Jestli váš účet existuje, během pár minut obdržíte email s instrukcemi jak si obnovit heslo"
       updated: "Vaše heslo bylo úspěšně změněno. Nyní jste přihlášen(a)."
     registrations:
       destroyed: "Nashle! Váš účet byl úspěšně zrušen. Doufáme, že se brzy opět uvidíme."
       inactive_signed_up: "Registrace byla úspěšná. Nicméně, nemůžete se přihlásit, protože: \"%{reason}\"."
+      link: "Vytvořit účet"
+      reasons:
+        locked: zamčeno
+        unconfirmed: nepotvrzené
       signed_up: "Vítejte! Registrace byla úspěšná."
       updated: "Váš účet byl úspěšně aktualizován."
     sessions:
+      invalid: "Nesprávný email nebo heslo."
+      locked: "Váš účet je zablokovaný"
+      new:
+        osm_promo_text: "Wheelmap využívá informace z OpenStreetMap (OSM). OpenStreetMap je volná celosvětová mapa, vytvářená lidmi jako vy. Je to jako Wikipedie pro mapy. Aby jste mohli upravovat místa nebo vytvářet nové, potřebujete u OpenStreetMap mít účet a musíte být přihlášení."
+        sign_up_with_osm: "Zaregistrujte se."
       signed_in: "Přihlášení úspěšné."
       signed_out: "Odhlášení úspěšné."
+      timeout: "Vaše přihlášení vypršelo, prosím přihlašte se znova."
+    sign_in:
+      form:
+        submit: "Přihlásit se"
+    sign_up:
+      email:
+        confirm_my_account: "Potvrdit svůj účet"
+        please_confirm: "Váš účet potvrdíte následujícím odkazem:"
+      form:
+        labels:
+          email: Email
+          wants_newsletter: "Ano, informujte mne o novinkách na wheelmap - ne častěji než jednou měsíčně"
+        submit: "Vytvořit účet"
+      headline: "Vytvořit účet"
     unlocks:
+      link: "Neobdrželi jste instrukce na odblokování?"
       send_instructions: "Za několik minut obdržíte email s instrukcemi, jak odemknout svůj účet."
       unlocked: "Váš účet byl úspěšně odemknut. Nyní jste přihlášen(a)."
   errors:
+    dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
       accepted: "musí být potvrzeno"
@@ -102,10 +154,44 @@ cs:
       header:
         one: "Při ukládání objektu %{model} došlo k chybám a nebylo jej možné uložit"
         other: "Při ukládání objektu %{model} došlo ke %{count} chybám a nebylo možné jej uložit"
+  flash:
+    actions:
+      destroy:
+        alert: "%{resource_name} se nepovedlo odstranit"
+        notice: "%{resource_name} již neexistuje"
+      update:
+        notice: "Úspěšně jste změnili %{resource_name}"
+  form:
+    show_places_without_status: "neznámý stav"
+    show_unaccessible_places: "nepřístupné pro vozíčkáře"
   formtastic:
+    hints:
+      email: "Vaše adresa je u nás v bezpečí - žádný spam. Slibujeme!"
     labels:
+      centralkey: "Společný klíč:"
+      password_confirmation: "Zopakujte heslo"
+      postcode: "Směrovací číslo:"
       save: Uložit
       street: "Ulice:"
+      type: "Typ:"
+      wheelchair_description: "Poznámka k přístupnosti:"
+    titles:
+      basic: "Základní údaje"
+      optional: "Více informací <span class=\"addition\">(všechny položky jsou povinné)</span>"
+  header:
+    meta:
+      homepage: "Domovská stránka"
+      keywords: "místa přístupné pro vozíčkáře hledat označovat"
+    navigation:
+      feedback: "Zpětná vazba"
+      how_to_add_a_place: "Jak přidám místa?"
+      imprint: Impresum
+      login: "Přihlásit se"
+      logout: "Odhlásit se"
+      what_is_wheelmap: "Co je to wheelpmap?"
+    searchbar:
+      find: najít
+    tagline: "Logo Wheelmap"
   helpers:
     select:
       prompt: "Prosím vyberte si"
@@ -115,10 +201,51 @@ cs:
       update: "Aktualizovat %{model}"
   home:
     index:
+      filter:
+        category: "Vyberte kategorii"
+        select_all: "Označit vše"
+      ie:
+        action:
+          ignore: Ignorovat
+        warning:
+          headline: "Omlouváme se!"
+          message: "Zda se, že používáte Internet Explorer. Wheelmap potřebuje prohlížeč, který odpovídá normám. Prosím zvažte použití některého z následujících prohlížečů: Firefox, Chrome, Safari nebo Opera."
       popup:
         form:
+          limited: "částečně přístupné pro vozíčkáře"
           ? "yes"
           : "přístupné pro vozíčkáře"
+  how?: Jak?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Všechny %{type} s omezeným přístupem pro vozíčkáře v %{city} (%{count})"
+  nodes:
+    create:
+      flash:
+        successfull: "Děkujeme, váš příspěvek byl uložený a brzy bude zobrazený na mapě."
+    errors:
+      not_authorized: "Přihlášení bylo neúspěšné"
+      not_available: "Omlouváme se, tahle stránka je dočasně nedostupná."
+    new:
+      header:
+        title: "Nové místo | wheelmap.org"
+      link:
+        large_map: "&laquo; Zrušit\n"
+    node:
+      link:
+        report_bug: "Nahlaste problém"
+    show:
+      header:
+        title: "Místo: %{node} | wheelmap.org\n"
+      link:
+        back: zpět
+        upload: "Nahrát obrázek"
+      more_data_from: "O tomhle místě je více údajů, zkontroloval:"
+    update:
+      flash:
+        not_successfull: "Zadali jste neúplné nebo nesprávné heslo"
   number:
     currency:
       format:
@@ -153,6 +280,9 @@ cs:
       storage_units:
         format: "%n %u"
         units:
+          byte:
+            one: B
+            other: B
           gb: GB
           kb: KB
           mb: MB
@@ -163,29 +293,108 @@ cs:
     precision:
       format:
         delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "Aby jste mohli vytvářet nebo měnit místa na wheelmap.org musíte si propojit svůj účet s OpenStreetMap účtem."
+  or: nebo
   poi:
     category:
+      accommodation: Ubytování
       government: Vláda
+      misc: Různé
+      money_post: Finančnictví
+      public_transfer: "Veřejná doprava"
       sport: Sport
+      tourism: Cestování
     name:
+      accommodation:
+        camp_site: Kemp
+        chalet: "Horská chata"
+        hostel: Hostel
+        hotel: Hotel
       education:
         school: Škola
+        university: Univerzita
+      food:
+        bar: Bar
+        biergarten: Zahrádka
+        drinking_water: "Pitná voda"
+        fast_food: "Rychlé občerstvení"
+        ice_cream: Zmrzlina
+      government:
+        public_building: "Veřejná budova"
+      health:
+        dentist: Zubař
+        medical_supply: "Medicínské vybavení"
+        pharmacy: Lékárna
+        veterinary: Veterinář
+      leisure:
+        casino: Kasino
+        cinema: Kino
+        nightclub: "Noční klub"
+        sauna: Sauna
+        theatre: Divadlo
       misc:
+        estate_agent: "Realitní kancelář"
+        lawyer: Právník
         toilets: Toalety
       money_post:
         atm: Bankomat
         bureau_de_change: Směnárna
+        post_box: "Poštovná schránka"
+      public_transfer:
+        bus_station: "Autobusová stanice"
+        parking_aisle: "Parkovací ulička"
+        platform: Nástupiště
+        subway_entrance: "Vchod do metra"
+        terminal: "Letištní terminál"
+        tram_stop: "Zastávka tramvaje"
       shopping:
+        alcohol: Alkohol
+        beverages: Nápoje
+        car_repair: Autoservis
+        car_shop: Automobily
+        chemist: Lékárna
+        convenience: Příslušenství
         department_store: "Obchodní dům"
+        electronics: Elektronika
+        florist: Květinářství
+        hairdresser: Kadeřnictví
+        hardware: Železářství
+        jewelry: Klenotnictví
+        laundry: Prádelna
+        optician: Optika
+        outdoor: "Outdoorové vybavení"
+        photo: Fotky
+        second_hand: "Second hand"
+        shoes: Boty
+        sports: Sporty
+        supermarket: Supermarket
+        toys: Hračky
+        travel_agency: "Cestovní kancelář"
       sport:
         stadium: Stadion
+        swimming_pool: "Plavecký bazen"
       tourism:
         information: "Turistické informace"
+        tower: Věž
+      unknown:
+        unknown: Neznámé
+  profile:
+    edit:
+      application:
+        oauth:
+          revoke: Odpojit
+      headline: "Upravte svůj účet"
   splash:
     start: Start
+    step2: "Označte to a dejte uložit"
   support:
     array:
       last_word_connector: " a "
+      sentence_connector: a
+      skip_last_comma: ano
       two_words_connector: " a "
       words_connector: ", "
   time:
@@ -195,7 +404,32 @@ cs:
       long: "%A %d. %B %Y %H:%M"
       short: "%d. %m. %H:%M"
     pm: pm
+  user_sessions:
+    new:
+      login: "Přihlásit se"
+      login_with_twitter: "Přihlašte se přes Twitter"
+      password: Heslo
   users:
     after_signup_edit:
       welcome:
         headline: "Vítejte na wheelmap"
+        set_password_for_mobile: "Máte smartphone? Určete si heslo aby jste mohli Wheelmap používat i na cestách ve vašem iPhone nebo telefonu s Androidem."
+    edit:
+      headline:
+        your_images: "Vaše obrázky"
+  wheelchairstatus:
+    limited: "částečně přístupné pro vozíčkáře"
+    unknown: "neznámý stav"
+  wheelmap:
+    footer:
+      based_on: "Založeno na"
+    itunes:
+      title: "Stáhněte si aplikaci pro iPhone!"
+  will_paginate:
+    page_entries_info:
+      multi_page: "Zobrazuju %{model} %{from} - %{to} z celkového počtu %{count}"
+      single_page:
+        one: "Zobrazuji 1 %{model}"
+      single_page_html:
+        zero: "%{model} nenalezeno"
+    page_gap: "&hellip;"
