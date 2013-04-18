@@ -9,7 +9,8 @@ class PoiLocator
 
   def initialize(parent_id = nil)
     @parent_id = parent_id
-    @factory = RGeo::Cartesian.factory
+    @factory = RGeo::Geos::Factory.create(:wkb_parser => :geos)
+    raise "No geos support installt. Make sure libgeos is installed and rgeo gem has native bindings" if @factory.nil?
     @regions = load_regions(@parent_id)
     @index = generate_index
   end
@@ -17,6 +18,10 @@ class PoiLocator
   def run
     count_poi_in_region = 0
     count_poi_not_in_region = 0
+    if @regions.empty?
+      puts "This region has no children regions, so we can skip."
+      return
+    end
 
     lowest_id = Poi.lowest_id
     Poi.find_in_batches(:conditions => {:region_id => @parent_id }, :start => lowest_id) do |batch|
