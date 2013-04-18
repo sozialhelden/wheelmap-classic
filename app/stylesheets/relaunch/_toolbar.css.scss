@@ -101,7 +101,8 @@
       span {
         background: url('/images/toolbar_marker_yes.png') no-repeat;
         @include if-min-resolution(1.3) {
-          background: url(/images/toolbar_marker_yes@2x.png);
+          background: url(/images/toolbar_marker_yes@2x.png) no-repeat;
+          background-size: 20px 24px;
         }
       }
       .popover-title {
@@ -116,7 +117,8 @@
       span {
         background: url('/images/toolbar_marker_limited.png') no-repeat;
         @include if-min-resolution(1.3) {
-          background: url(/images/toolbar_marker_limited@2x.png);
+          background: url(/images/toolbar_marker_limited@2x.png) no-repeat;
+          background-size: 20px 24px;
         }
       }
       .popover-title {
@@ -130,7 +132,8 @@
       span {
         background: url('/images/toolbar_marker_no.png') no-repeat;
         @include if-min-resolution(1.3) {
-          background: url(/images/toolbar_marker_no@2x.png);
+          background: url(/images/toolbar_marker_no@2x.png) no-repeat;
+          background-size: 20px 24px;
         }
       }
       .popover-title {
@@ -144,7 +147,8 @@
       span {
         background: url('/images/toolbar_marker_unknown.png') no-repeat;
         @include if-min-resolution(1.3) {
-          background: url(/images/toolbar_marker_unknown@2x.png);
+          background: url(/images/toolbar_marker_unknown@2x.png) no-repeat;
+          background-size: 20px 24px;
         }
       }
       .popover-title {
