@@ -1,8 +1,27 @@
 $(document).ready(function() {
-  $('.selectpicker').selectpicker();
 
   I18n.defaultLocale = 'de';
   I18n.locale = $('html').attr('lang');
+
+  $(['yes', 'no', 'limited', 'unknown']).each(function(index, item){
+    if ($.cookie('filter_'+item)) {
+      $('.status-filter button.'+item).addClass('active');
+    } else {
+      $('.status-filter button.'+item).removeClass('active');
+    }
+  });
+
+  $('.category-filter option').each(function() {
+    var filter_class = $(this).val();
+    if ($.cookie('filter_'+filter_class)) {
+      console.log('NOPE', $(this));
+    } else {
+      console.log('YEP', $(this));
+      $(this).attr('selected', 'selected');
+    }
+  });
+
+  $('.selectpicker').selectpicker();
 
   $('.status-filter button').popover({
     trigger: 'hover',
@@ -62,14 +81,6 @@ $(document).ready(function() {
       }, 0);
     });
   }
-
-  $(['yes', 'no', 'limited', 'unknown']).each(function(index, item){
-    if ($.cookie('filter_'+item)) {
-      $('.status-filter button.'+item).addClass('active');
-    } else {
-      $('.status-filter button.'+item).removeClass('active');
-    }
-  });
 
   requestNodes(map.getBounds());
 
