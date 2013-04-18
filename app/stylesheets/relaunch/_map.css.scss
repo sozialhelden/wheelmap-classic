@@ -5,8 +5,9 @@ section#map {
   left: 0;
   width: 100%;
   background: #E8E0D8;
-  @media screen and (max-width:767px) {
-      top: 52px;
+  @media screen and (max-width:$breakTablet) {
+      top: $headerHeight;
+      bottom: $toolbarHeight;
   } 
 }
 

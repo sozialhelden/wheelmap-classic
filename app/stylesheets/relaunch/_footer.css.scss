@@ -7,6 +7,9 @@
   background: #EDECEA;
   border-top: 1px solid #FFF;
   box-shadow: 0px -1px 3px #999999;
+  @media screen and (max-width:760px) {
+    display: none;
+  }
   ul {
     &.social {
       float: left;
@@ -63,13 +66,13 @@
   }
 }
 @media screen and (max-width:760px) {
-.social {
-	display:none;
-}
-.credits li {
-	border-right:none;
-}
-.credits span {
-	display:none;
-}
+  .social {
+  	display:none;
+  }
+  .credits li {
+  	border-right:none;
+  }
+  .credits span {
+  	display:none;
+  }
 }

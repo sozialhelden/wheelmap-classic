@@ -5,10 +5,10 @@
   top: $headerHeight;
   border-top: 1px solid #FFF;
   background-color: #334557;
+  z-index: 100;
   @include background-image(linear-gradient(top, rgb(64, 87, 109), rgb(38, 51, 65)));
   @include filter-gradient(rgb(64, 87, 109), rgb(38, 51, 65), vertical);
   @include box-shadow(0px 0px 10px #444, inset 0px 2px 6px #000);
-  z-index: 998;
   @media screen and (max-width: $breakTablet) {
       position: fixed;
       top: auto;
@@ -59,7 +59,7 @@
         @include box-shadow(0px 1px 0px #566D82);
         @include transition(all 0.3s ease-in-out);
       }
-      input:focus {
+      :focus {
         width: 200px;
         background: #FFF;
       }
@@ -198,17 +198,23 @@
         height: 240px;
         -webkit-overflow-scrolling: touch;
       }
-      > li > a {
-       padding: 6px 10px 5px 10px;
-       border-bottom: 1px solid #F0F0F0;
-       font-size: 13px;
-       :hover {
-         @include background(linear-gradient(top, rgb(107, 132, 155), rgb(77, 100, 122)));
-         @include filter-gradient(#6b849b, #4d647a, vertical);
-       }
-       :last-child a {
-         border: none;
-        } 
+      li {
+        width: auto; 
+        a {
+         padding: 6px 10px 5px 10px;
+         border-bottom: 1px solid #F0F0F0;
+         font-size: 13px;
+         &:hover {
+           @include background(linear-gradient(top, rgb(107, 132, 155), rgb(77, 100, 122)));
+           @include filter-gradient(#6b849b, #4d647a, vertical);
+         }
+         &:last-child a {
+           border: none;
+          }
+         i {
+           margin-top: 3px;
+         }  
+        }
       }      
     }
     @media screen and (max-width:420px) {
@@ -306,7 +312,26 @@
     }
   }
 }
-
+.no-js {
+  #toolbar {
+    .counter {
+      display: none;
+    }
+    .dropdown-menu {
+      li {
+        a {
+         padding-right: 50px;
+         i {
+           margin-right: -40px;
+         }
+        }
+      }
+    }  
+   .show-menu-arrow.btn-group.bootstrap-select .dropdown-menu {
+     overflow-x: hidden!important; //IE Fix
+   }
+  }  
+}
 
 
 
