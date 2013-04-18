@@ -57,11 +57,6 @@ Wheelmap::Application.routes.draw do
     resources :photos, :only => [:create, :destroy]
   end
 
-  resources :ways, :only => [:index, :show] do
-    member do
-      put :update_wheelchair
-    end
-  end
 
   resources :users, :as => 'profile', :path => '/profile'
   resources :users do
