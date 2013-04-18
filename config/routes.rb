@@ -57,6 +57,7 @@ Wheelmap::Application.routes.draw do
     resources :photos, :only => [:create, :destroy]
   end
 
+  resources :regions, :only => [:index, :show], :constraints => { :format => 'kml' }
 
   resources :users, :as => 'profile', :path => '/profile'
   resources :users do

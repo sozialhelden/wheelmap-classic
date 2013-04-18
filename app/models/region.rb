@@ -14,6 +14,7 @@ class Region < ActiveRecord::Base
   attr_protected :lft, :rgt
 
   scope :parent_id, lambda {|parent_id| { :conditions => { :parent_id => parent_id }}}
+  scope :depth, lambda { |depth| where(:depth => depth) }
 
   def pois_of_children
     region_ids  = Region.where(['regions.lft >= ? AND regions.rgt <= ?', self.lft, self.rgt]).select('id').map(&:id)
