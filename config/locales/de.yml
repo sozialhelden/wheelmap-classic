@@ -284,10 +284,7 @@ de:
       keywords: "rollstuhl gerechte Orte finden suchen markieren"
       search: Suche
     navigation:
-      about_wheelmap: "Über Wheelmap"
       blog: Blog
-      choose_language: "Sprache wählen"
-      contact: Kontakt
       feedback: Feedback
       home: Start
       how_to_add_a_place: "Wie trage ich Orte ein?"
@@ -295,11 +292,9 @@ de:
       logged_in_as: "Eingeloggt als:"
       login: Login
       logout: Logout
-      map: Karte
       newsletter: Newsletter
       press: Presse
       profile: Profil
-      projects: "Mitmach-Projekte"
       suggestions: Anregungen
       what_is_barrier_free: "Was bedeutet „rollstuhlgerecht“?"
       what_is_wheelmap: "Was ist Wheelmap?"
@@ -335,13 +330,6 @@ de:
       link:
         node:
           create: "Neuen Ort anlegen"
-      overlay:
-        button: "Okay, Los geht's!"
-        categories: "Kategorien filtern"
-        filter: "Ergebnisse auf der Karte nach Roll&shy;stuhl&shy;ge&shy;rechtig&shy;keit filtern"
-        headline: "Mit Wheelmap.org kannst Du rollstuhlgerechte Orte finden und markieren - weltweit und kostenlos. So einfach gehts:"
-        lookup: "Direkt Orte finden"
-        secondary_headline: "Das Ampelsystem zum Markieren der Rollstuhlgerechtigkeit:"
       popup:
         form:
           limited: "Teilweise rollstuhlgerecht"
