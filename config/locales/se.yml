@@ -26,8 +26,12 @@ se:
         too_short: "är för kort (min %{count} bokstäver)"
         wrong_length: "är inte av korrekt längd ( borde vara %{count} bokstäver)"
       models:
+        user:
+          attributes:
+            terms:
+              accepted: "måste godkännas"
         user_session:
-          email: "E-post adress"
+          email: E-postadress
           password: Lösenord
           remember_me: "Kom ihåg mig"
       template:
@@ -49,9 +53,10 @@ se:
     close: stäng
   devise:
     confirmations:
-      confirmed: "Ditt konto är validerat. Du är nu inloggad."
+      confirmed: "Ditt konto är godkänt. Du är nu inloggad."
       link: "Mottog inte validerings instruktionerna?"
-      send_instructions: "Du kommer att få ett e-post med instruktioner om hur du validerar ditt konto om några minuter."
+      send_instructions: "Du kommer att få ett e-post med instruktioner om hur du bekräftar ditt konto om några minuter."
+      send_paranoid_instructions: "Om ditt konto finnsså kommer du inom kort att få ett e-postmeddelande med instruktioner om hur du bekräftar ditt konto"
     destroy:
       confirm: "Är du säker?"
       headline: "Radera konto"
@@ -68,11 +73,11 @@ se:
     failure:
       inactive: "Ditt konto har inte aktiverats ännu."
       invalid: "Felaktig e-post eller lösenord."
-      invalid_token: "Felaktig inloggnings token"
+      invalid_token: "Felaktig inloggning"
       locked: "Ditt konto är låst."
       timeout: "Din session har avslutats, logga in igen för att fortsätta."
       unauthenticated: "Du måste logga in eller registrera dig för att fortsätta."
-      unconfirmed: "Du måste validera ditt konto innan du kan fortsätta"
+      unconfirmed: "Du måste bekräfta ditt konto innan du kan fortsätta"
     mailer:
       confirmation_instructions:
         subject: Valideringsinstruktioner
@@ -92,7 +97,7 @@ se:
       headline: "Glömt lösenord?"
     password_reset:
       email:
-        comment: "Om du inte har bett om att få återställa ditt lösenord, så bortse från detta e-post.<br/>Ditt lösenord kommer inte att ändras innan du trycker på länken ovan och väljer ett nytt lösenord."
+        comment: "Om du inte har önskat att få återställa ditt lösenord, så bortse från detta e-postmeddelande.<br/>Ditt lösenord kommer inte att ändras om du inte klickar på länken ovan och väljer ett nytt lösenord."
         headline: "Välkommen %{email}"
         link: "Byta lösnord"
         text: "Någon har bett om att byta ditt lösenord. Du kan göra det genom att klicka på följande länk:"
@@ -108,7 +113,7 @@ se:
       updated: "Ditt lösenord är ändrat. Du är nu inloggad."
     registrations:
       destroyed: "Hej då! Ditt konto är nu avslutat. Hoppas vi ses igen snart."
-      inactive_signed_up: "Du har lyckats registrera dig. Men vi kunde inte logga in dig för ditt konto är %{reason}"
+      inactive_signed_up: "Du har lyckats registrera dig men vi kunde inte logga in dig. Orsak: %{reason}"
       link: Registrera
       signed_up: "Du är nu registrerad. Om valt, så kommer validering via e-post att ske."
       updated: "Din kontoinformation är uppdaterad."
@@ -118,6 +123,8 @@ se:
       invalid_token: "Felaktig inloggnings token"
       link: "Logga in"
       locked: "Ditt konto är låst."
+      new:
+        osm_promo_text: "Wheelmap bygger på kartdata från OpenStreetMap (OSM). OpenStreetMap är en fri global karttjänst, Wikipedia för kartor, som skapats av personer som du. För att kunna lägga in och ändra platser måste man ha ett OpenStreetMap-konto och vara inloggad."
       signed_in: Inloggad.
       signed_out: Utloggad.
       timeout: "Din session har avslutats, logga in för att fortsätta."
@@ -139,7 +146,7 @@ se:
           email: E-post
           password: Lösenord
           password_confirmation: "Upprepa lösenord"
-          wants_newsletter: "Ja, håll mig updaterad om Wheelmap. (Men inte mer än en gång i månaden)"
+          wants_newsletter: "Ja, håll mig informerad om Wheelmap. (Men inte mer än en gång i månaden)"
         submit: Registrera
       headline: "Registrera dig"
     unlocks:
@@ -191,10 +198,10 @@ se:
       update:
         notice: "%{resource_name} är uppdaterad."
   form:
-    show_fully_accessible_places: rullstolsanpassad
-    show_limited_accessible_places: "delvis rullstolsanpassad"
+    show_fully_accessible_places: Rullstolstillgänglig
+    show_limited_accessible_places: "delvis rullstolstillgänglig"
     show_places_without_status: "okänd status"
-    show_unaccessible_places: "inte rullstolsanpassad"
+    show_unaccessible_places: "inte rullstolstillgänglig"
   formtastic:
     hints:
       lat: "Flytta markören på kartan till korrekt position"
@@ -222,18 +229,18 @@ se:
       street: "Gata:"
       type: "Typ:"
       website: "Webbplats:"
-      wheelchair: Rullstolsanpassad?
-      wheelchair_description: "Kommentar:"
+      wheelchair: Rullstolstillgänglighet?
+      wheelchair_description: "Tillgänglighetskommentar:"
     titles:
-      basic: "Grundläggande data:"
+      basic: "Grundläggande data"
       optional: "Mer information <span class=\"addition\">(alla fält är frivilliga)</span>"
   global:
     form_validation_error: "Dessa fel uppstod."
   header:
     meta:
-      description: "Hitta rullstolsanpassade platser - wheelmap.org"
+      description: "Hitta rullstolstillgängliga platser - wheelmap.org"
       homepage: Hemsida
-      keywords: "rullstol rullstolsanpassade platser hitta sök lägg till"
+      keywords: "rullstolstillgängliga platser hitta sök lägg till"
       search: Sök
     navigation:
       blog: Blogg
@@ -247,16 +254,16 @@ se:
       press: "Tryck på"
       profile: Profil
       suggestions: Förslag
-      what_is_barrier_free: "Vad betyder \"rullstolsanpassad\"?"
+      what_is_barrier_free: "Vad betyder \"rullstolstillgänglig\"?"
       what_is_wheelmap: "Vad är wheelmap?"
     searchbar:
       add_place: "Lägg till en plats"
-      find: hitta
+      find: Hitta
       label: "\"\""
       placeholder: "till exempel Sunset Boulevard L.A. eller Drottningholms slott, Stockholm"
       title_add_place: "Lägg till an plats på denna position!"
     tagline: "Wheelmap logo"
-    title: "Wheelmap - hitta rullstolsanpassade platser"
+    title: "Wheelmap - hitta rullstolstillgängliga platser"
   helpers:
     select:
       prompt: Välj
@@ -268,7 +275,7 @@ se:
     index:
       filter:
         category: "Välj kategori:"
-        wheelchair: Rullstolsanpassad?
+        wheelchair: Rullstolstillgänglig?
       ie:
         action:
           ignore: Ignorera
@@ -281,14 +288,14 @@ se:
           create: "Lägg till ny plats"
       popup:
         form:
-          limited: "partly wheelchair accessible"
+          limited: "begränsat rullstolstillgänglig"
           ? "no"
           : "not wheelchair accessible"
           save: Update
           unknown: "unknown status"
           ? "yes"
           : "wheelchair accessible"
-        help: "Wheelchair accessible? (Help)"
+        help: "Rullstolstillgänglig? (Hjälp)"
         more: "more ..."
   how?: Hur?
   layouts:
@@ -305,7 +312,7 @@ se:
   nodes:
     create:
       flash:
-        not_successfull: "Ojdå, formuläret är antingen felaktigt ifyllt eller inte komplett."
+        not_successfull: "Ojdå, formuläret är antingen felaktigt eller ofullständigt ifyllt."
         successfull: "Tack, ditt förslag är sparat och kommer snart att synas."
     edit:
       header:
@@ -320,7 +327,7 @@ se:
       not_found: "Tyvärr, denna sida hittades inte."
       param_missing: "Ange ett sökuttryck."
     flash:
-      authorize_wheelmap: "Du behöver ett OpenStreetMap konto för att ändra."
+      authorize_wheelmap: "Du behöver ett OpenStreetMap-konto för att ändra."
     new:
       header:
         title: "Ny plats | wheelmap.org"
@@ -339,9 +346,9 @@ se:
     update:
       flash:
         not_successfull: "Ojdå, du skrev antingen fel eller har inte fyllt i allt."
-        successfull: "Tackar, ditt förslag är sparat och kommer snart att vara tillgängligt."
+        successfull: "Tack! Ditt förslag är sparat och kommer snart att vara tillgängligt."
     update_wheelchair:
-      successfull: "Statusen för \"%{name}\" har blivit ändrat till \"%{status} rullstolsanpassad\" och kommer snart att vara tillgängligt."
+      successfull: "Statusen för \"%{name}\" har blivit ändrat till \"%{status} rullstolstillgänglig\" och kommer snart att synas."
   number:
     currency:
       format:
@@ -392,7 +399,7 @@ se:
   oauth:
     application:
       connect:
-        headline: "Du måste koppla ditt konto till ditt OpenStreetMap konto innan du kan skapa eller ändra platser på wheelmap.org"
+        headline: "Du måste koppla ditt konto till ditt OpenStreetMap-konto innan du kan skapa eller ändra platser på wheelmap.org."
     callback:
       notice: "Ditt wheelmap konto är nu kopplat till OpenStreetMap kontot %{user}."
   or: eller
@@ -582,8 +589,12 @@ se:
       login_with_twitter: "Logga in med hjälp av Twitter"
       password: Lösenord
       remember_me: "Kom ihåg mig"
+  users:
+    edit:
+      headline:
+        your_images: "Dina uppladdade bilder"
   wheelchairstatus:
-    limited: "delvis rullstolsanpassat"
+    limited: "begränsat rullstolstillgänglig"
     ? "no"
     : "Inte rullstolsanpassat"
     unknown: "rullstolsanpassning okänd"
@@ -599,10 +610,14 @@ se:
       alt: "AppStore Logo"
       title: "Hämta för iPhone!"
     logo:
-      alt: "Wheelmap Logo - Hitta rullstolsanpassade platser"
-      title: "Wheelmap - Hitta rullstolsanpassade platser"
+      alt: "Wheelmap Logo - Hitta rullstolstillgängliga platser"
+      title: "Wheelmap - Hitta rullstolstillgängliga platser"
     what_is:
-      fully_accessible: "<em>Ja:</em> Ingången har ingen kant, alla rum saknar kanter, anpassad toalett finns"
-      limited_accessible: "<em>Begränsad:</em> Ingångens kant är inte högre än 7 cm, de flesta rummen är tillgängliga, ingen tillgänglig toalett"
-      not_accessible: "<em>Nej:</em> Ingångens kant är högre än 7 cm eller det är en trapp, rummen är inte tillgängliga"
+      fully_accessible: "<em>Ja:</em> Ingången har ingen tröskel, alla rum utan trappsteg, hk-toalett finns"
+      limited_accessible: "<em>Begränsad:</em> Ingångens tröskel är inte högre än 7 cm, de flesta rummen är tillgängliga, ingen tillgänglig toalett"
+      not_accessible: "<em>Nej:</em> Ingångens tröskel är större än 7 cm eller så har den trappsteg. Rummen är inte tillgängliga"
       unknown_accessible: "<em>Okänd:</em> Hjälp till att uppdatera!"
+  will_paginate:
+    page_entries_info:
+      single_page:
+        other: "Visar alla %{count} %{model}"

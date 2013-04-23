@@ -32,11 +32,18 @@ cs:
           attributes:
             terms:
               accepted: "musí být přijaté"
+        user_session:
+          remember_me: "Zůstaňte přihlášení"
       template:
         body: "Následující pole obsahují chybně vyplněné údaje: "
         header:
           one: "Při ukládání objektu %{model} došlo k chybám a nebylo jej možné uložit"
           other: "Při ukládání objektu %{model} došlo ke %{count} chybám a nebylo možné jej uložit"
+  application:
+    require_no_user:
+      notice: "Už jste přihlášený..."
+    require_user:
+      notice: "Musíte se přihlásit aby jste viděli tuto stránku."
   breadcrumbs:
     node:
       edit: "Upravit místo"
@@ -44,14 +51,17 @@ cs:
     close: zavřít
   devise:
     confirmations:
-      confirmed: "Váš účet byl úspěšně potvrzen. Nyní jste přihlášen(a)."
+      confirmed: "Váš účet byl úspěšně potvrzen."
       send_instructions: "Za několik minut obdržíte email s instrukcemi k potvrzení vašeho účtu."
+      send_paranoid_instructions: "Jestli váš účet u nás existuje obdržíte email s instrukcemi jak ho potvrdit."
     destroy:
       confirm: "Jste si jistí?"
     edit:
       form:
         labels:
+          current_password: "Současné heslo <i>(potřebujeme ověřit vaše změny)</i>"
           password: "Heslo <i>(nechte prázdné jestli ho nechcete měnit)</i>"
+          password_confirmation: "Znovu zadejte heslo"
     failure:
       already_authenticated: "Přihlášení již proběhlo."
       inactive: "Váš účet ještě nebyl aktivován."
@@ -78,8 +88,12 @@ cs:
       headline: "Zapomněli jste heslo?"
     password_reset:
       email:
+        comment: "Jestli jste nežádali o obnovení hesla tak tento email ignorujte. <br/> Vaše heslo bude změněné jenom jestli kliknete na odkaz nahoře a nastavíte si heslo nové."
         link: "Změnit heslo"
         text: "Dostali jsme požadavek na změnu vašeho hesla. Jestli jste to byli vy klikněte na následující odkaz - jinak toto ignorujte!"
+      form:
+        labels:
+          password_confirmation: "Zopakujte heslo"
     passwords:
       send_instructions: "Za několik minut obdržíte email s instrukcemi k nastavení nového hesla."
       send_paranoid_instructions: "Jestli váš účet existuje, během pár minut obdržíte email s instrukcemi jak si obnovit heslo"
@@ -92,18 +106,22 @@ cs:
         locked: zamčeno
         unconfirmed: nepotvrzené
       signed_up: "Vítejte! Registrace byla úspěšná."
-      updated: "Váš účet byl úspěšně aktualizován."
+      updated: "Úspěšně jste si aktualizovali účet."
     sessions:
       invalid: "Nesprávný email nebo heslo."
       locked: "Váš účet je zablokovaný"
       new:
+        no_osm_account: "Nemáte účet u OpenStreetMap?"
         osm_promo_text: "Wheelmap využívá informace z OpenStreetMap (OSM). OpenStreetMap je volná celosvětová mapa, vytvářená lidmi jako vy. Je to jako Wikipedie pro mapy. Aby jste mohli upravovat místa nebo vytvářet nové, potřebujete u OpenStreetMap mít účet a musíte být přihlášení."
+        promo_text_thank_you: "Děkujeme za vaší podporu!"
         sign_up_with_osm: "Zaregistrujte se."
       signed_in: "Přihlášení úspěšné."
       signed_out: "Odhlášení úspěšné."
       timeout: "Vaše přihlášení vypršelo, prosím přihlašte se znova."
     sign_in:
       form:
+        labels:
+          remember_me: "Zůstat přihlášený?"
         submit: "Přihlásit se"
     sign_up:
       email:
@@ -156,12 +174,15 @@ cs:
         other: "Při ukládání objektu %{model} došlo ke %{count} chybám a nebylo možné jej uložit"
   flash:
     actions:
+      create:
+        notice: "%{resource_name} - úspěšně vytvorřeno"
       destroy:
         alert: "%{resource_name} se nepovedlo odstranit"
         notice: "%{resource_name} již neexistuje"
       update:
         notice: "Úspěšně jste změnili %{resource_name}"
   form:
+    show_limited_accessible_places: "částečně přístupné pro vozíčkáře"
     show_places_without_status: "neznámý stav"
     show_unaccessible_places: "nepřístupné pro vozíčkáře"
   formtastic:
@@ -169,19 +190,24 @@ cs:
       email: "Vaše adresa je u nás v bezpečí - žádný spam. Slibujeme!"
     labels:
       centralkey: "Společný klíč:"
+      lon: "Zeměpisná délka"
       password_confirmation: "Zopakujte heslo"
       postcode: "Směrovací číslo:"
+      reset: Obnovit
       save: Uložit
       street: "Ulice:"
       type: "Typ:"
+      wheelchair: "Přístupnost pro vozíčkáře?"
       wheelchair_description: "Poznámka k přístupnosti:"
     titles:
       basic: "Základní údaje"
       optional: "Více informací <span class=\"addition\">(všechny položky jsou povinné)</span>"
   header:
     meta:
+      description: "Nalezněte místa přístupné pro vozíčkáře - wheelmap.org"
       homepage: "Domovská stránka"
       keywords: "místa přístupné pro vozíčkáře hledat označovat"
+      search: Hledat
     navigation:
       feedback: "Zpětná vazba"
       how_to_add_a_place: "Jak přidám místa?"
@@ -190,7 +216,8 @@ cs:
       logout: "Odhlásit se"
       what_is_wheelmap: "Co je to wheelpmap?"
     searchbar:
-      find: najít
+      find: Najít
+      title_add_place: "Přidejte sem nové místo!"
     tagline: "Logo Wheelmap"
   helpers:
     select:
@@ -207,23 +234,34 @@ cs:
       ie:
         action:
           ignore: Ignorovat
+          upgrade: "Aktualizovat prohlížeč"
         warning:
           headline: "Omlouváme se!"
           message: "Zda se, že používáte Internet Explorer. Wheelmap potřebuje prohlížeč, který odpovídá normám. Prosím zvažte použití některého z následujících prohlížečů: Firefox, Chrome, Safari nebo Opera."
       popup:
         form:
           limited: "částečně přístupné pro vozíčkáře"
+          unknown: "neznámý status"
           ? "yes"
           : "přístupné pro vozíčkáře"
+        help: "Přístupné pro vozíčkáře? (Pomoc)"
   how?: Jak?
   landing_pages:
     index:
       wheelchair:
         limit:
           headline: "Všechny %{type} s omezeným přístupem pro vozíčkáře v %{city} (%{count})"
+        unknown:
+          headline: "Všechny %{type} ve městě %{city} s neznámou dostupností pro vozíčkáře (%{count})"
+  node:
+    address:
+      city: "%{city} %{postcode}"
+    tags:
+      phone: "Telefon:"
   nodes:
     create:
       flash:
+        not_successfull: "Jeje, vaše zadání bylo nesprávné nebo neúplné"
         successfull: "Děkujeme, váš příspěvek byl uložený a brzy bude zobrazený na mapě."
     errors:
       not_authorized: "Přihlášení bylo neúspěšné"
@@ -246,6 +284,8 @@ cs:
     update:
       flash:
         not_successfull: "Zadali jste neúplné nebo nesprávné heslo"
+    update_wheelchair:
+      successfull: "Stav pro \"%{name}\" byl změněný na \"%{status}\" a brzy bude online."
   number:
     currency:
       format:
@@ -297,6 +337,8 @@ cs:
     application:
       connect:
         headline: "Aby jste mohli vytvářet nebo měnit místa na wheelmap.org musíte si propojit svůj účet s OpenStreetMap účtem."
+    callback:
+      notice: "Váš wheelmap účet je teď propojený s OpenStreetMap účtem uživatele %{user}."
   or: nebo
   poi:
     category:
@@ -385,8 +427,13 @@ cs:
     edit:
       application:
         oauth:
+          connected: "Stav: připojený"
           revoke: Odpojit
       headline: "Upravte svůj účet"
+  search:
+    index:
+      search:
+        not_found: "Nepovedlo se najít žádná místa!"
   splash:
     start: Start
     step2: "Označte to a dejte uložit"
@@ -400,12 +447,13 @@ cs:
   time:
     am: am
     formats:
-      default: "%a %d. %B %Y %H:%M %z"
+      default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%A %d. %B %Y %H:%M"
       short: "%d. %m. %H:%M"
     pm: pm
   user_sessions:
     new:
+      email: "E-mailová adresa"
       login: "Přihlásit se"
       login_with_twitter: "Přihlašte se přes Twitter"
       password: Heslo
@@ -420,6 +468,8 @@ cs:
   wheelchairstatus:
     limited: "částečně přístupné pro vozíčkáře"
     unknown: "neznámý stav"
+    ? "yes"
+    : "přístupné pro vozíčkáře"
   wheelmap:
     footer:
       based_on: "Založeno na"
@@ -430,6 +480,8 @@ cs:
       multi_page: "Zobrazuju %{model} %{from} - %{to} z celkového počtu %{count}"
       single_page:
         one: "Zobrazuji 1 %{model}"
+        other: "Zobrazuji všech %{count} %{model}"
       single_page_html:
         zero: "%{model} nenalezeno"
     page_gap: "&hellip;"
+    previous_label: "&#8592; Předchozí"

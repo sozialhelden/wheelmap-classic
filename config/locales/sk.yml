@@ -120,7 +120,7 @@ sk:
       form:
         labels:
           password: "Nové heslo"
-          password_confirmation: "Znovu zadajte heslo"
+          password_confirmation: "Zopakujte heslo"
         submit: "Obnoviť heslo"
       headline: "Obnoviť heslo"
     passwords:
@@ -718,11 +718,11 @@ sk:
       multi_page_html: "Zobrazujem %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> z celkového počtu <b>%{count}</b>\n"
       single_page:
         one: "Zobrazujem 1 %{model}"
-        other: "Zobrazujem všetky %{count} %{model}"
+        other: "Zobrazujem všetkých %{count} %{model}"
         zero: "%{model} nebol nájdený"
       single_page_html:
         one: "Zobrazujem <b>1</b> %{model}"
         other: "Zobrazené <b>všetkých&nbsp;%{count}</b> %{model}"
         zero: "%{model} sa nenašlo\n"
     page_gap: "&hellip;"
-    previous_label: "&#8592; Späť"
+    previous_label: "&#8592; Predchádzajúci"
