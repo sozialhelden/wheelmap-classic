@@ -284,8 +284,10 @@ de:
       keywords: "rollstuhl gerechte Orte finden suchen markieren"
       search: Suche
     navigation:
+      about_wheelmap: "Über Wheelmap"
       blog: Blog
       choose_language: "Sprache wählen"
+      contact: Kontakt
       feedback: Feedback
       home: Start
       how_to_add_a_place: "Wie trage ich Orte ein?"
@@ -293,9 +295,11 @@ de:
       logged_in_as: "Eingeloggt als:"
       login: Login
       logout: Logout
+      map: Karte
       newsletter: Newsletter
       press: Presse
       profile: Profil
+      projects: "Mitmach-Projekte"
       suggestions: Anregungen
       what_is_barrier_free: "Was bedeutet „rollstuhlgerecht“?"
       what_is_wheelmap: "Was ist Wheelmap?"
