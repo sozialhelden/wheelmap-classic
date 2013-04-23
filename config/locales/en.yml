@@ -284,8 +284,10 @@ en:
       keywords: "wheelchair accessible places find search mark"
       search: Search
     navigation:
+      about_wheelmap: "About Wheelmap"
       blog: Blog
       choose_language: "Choose language"
+      contact: Contact
       feedback: Feedback
       home: Start
       how_to_add_a_place: "How do I add places?"
@@ -293,6 +295,7 @@ en:
       logged_in_as: "Logged in as:"
       login: "Log in"
       logout: "Log out"
+      map: Map
       newsletter: Newsletter
       press: Press
       profile: Profile

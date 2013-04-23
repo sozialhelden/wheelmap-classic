@@ -31,9 +31,9 @@
         .nav-collapse.collapse
           .list-wrapper
             %ul.inline
-              %li= link_to "Über Wheelmap", "http://community.wheelmap.org/about/"
-              %li= link_to "Karte", "#"
-              %li= link_to "Mitmach-Projekte", "http://community.wheelmap.org/projekte/"
-              %li= link_to "Blog", "http://community.wheelmap.org/"
-              %li= link_to "Presse", "http://community.wheelmap.org/about/presse/"
-              %li= link_to "Kontakt", "http://community.wheelmap.org/kontakt/"
+              %li= link_to t('header.navigation.about_wheelmap', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), "http://community.wheelmap.org/about/#{I18n.locale == :de ? nil : 'en/'}"
+              %li= link_to t('header.navigation.map', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), "#"
+              %li= link_to t('header.navigation.projects', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), "http://community.wheelmap.org/projekte/#{I18n.locale == :de ? nil : 'en/'}"
+              %li= link_to t('header.navigation.blog', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), "http://community.wheelmap.org/#{I18n.locale == :de ? nil : 'en/'}"
+              %li= link_to t('header.navigation.press', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), "http://community.wheelmap.org/about/presse/#{I18n.locale == :de ? nil : 'en/'}"
+              %li= link_to t('header.navigation.contact', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), "http://community.wheelmap.org/kontakt/#{I18n.locale == :de ? nil : 'en/'}"
