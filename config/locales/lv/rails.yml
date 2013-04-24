@@ -1,10 +1,10 @@
---- 
-lv: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+lv:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: Jāapstiprina
         blank: "nevar palikt neaizpildīts"
         confirmation: "neatbilst apstiprinājumam"
@@ -25,13 +25,13 @@ lv:
         too_long: "Ir par garu (maksimums %{count} zīmes)"
         too_short: "ir par īsu (minimums ir %{count} zīmes)"
         wrong_length: "garums ir nepareizs (jābūt %{count} zīmēm)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: "E-pasta adrese"
           password: Parole
           remember_me: "Palikt piereģistrētam"
-      template: 
+      template:
         body: "Radās sarežģījumi ar sekojošiem laukiem:"
-        header: 
+        header:
           one: "1 kļūda neļāva saglabāt %{model}"
           other: "%{count} kļūdas liedza saglabāt %{model}"

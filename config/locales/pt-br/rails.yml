@@ -1,14 +1,14 @@
---- 
-pt-br: 
-  activerecord: 
-    attributes: 
-      user: 
+---
+pt-br:
+  activerecord:
+    attributes:
+      user:
         first_name: "primeiro nome"
         last_name: Sobrenome
-    errors: 
-      full_messages: 
+    errors:
+      full_messages:
         format: "%{attribute}%{message}"
-      messages: 
+      messages:
         accepted: "tem de ser aceito"
         blank: "não pode estar em branco"
         confirmation: "não coincide com a confirmação"
@@ -29,19 +29,19 @@ pt-br:
         too_long: "é demasiado grande (o mínimo é de %{count} characters)"
         too_short: "é demasiado pequeno (o mínimo é de %{count} caracteres)"
         wrong_length: "tem quantidade de caracteres incompatível (deve ter %{count} caracteres)"
-      models: 
-        user: 
-          attributes: 
-            email: 
+      models:
+        user:
+          attributes:
+            email:
               blank: "tem de ser preenchido se uma senha é dada"
-        user_session: 
+        user_session:
           email: E-mail
           password: Senha
           remember_me: "Manter-se conectado"
-      template: 
+      template:
         body: "Por favor, verifique os seguintes campos:"
-        header: 
+        header:
           one: "Não foi possível salvar %{model}: 1 erro."
           other: "Não foi possível guardar %{model}: %{count} erros"
-    models: 
+    models:
       user: Usuário

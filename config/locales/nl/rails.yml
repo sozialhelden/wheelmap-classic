@@ -1,10 +1,10 @@
---- 
-nl: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+nl:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "moet geaccepteerd worden"
         blank: "Kan niet leeg zijn"
         confirmation: "bevestiging past niet"
@@ -25,13 +25,13 @@ nl:
         too_long: "is te lang (maximum is %{count} characters)"
         too_short: "is te kort (minimum is %{count} characters)"
         wrong_length: "lengte is fout (should be %{count} characters)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: "E-Mail adres"
           password: Wachtwoord
           remember_me: "Ingeloggd blijven"
-      template: 
+      template:
         body: "Er zijn problemen met de volgende velden:"
-        header: 
+        header:
           one: "%{model} niet opgeslagen: 1 fout gevonden"
           other: "%{model} niet opgeslagen: %{count} fouten gevonden"

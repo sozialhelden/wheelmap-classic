@@ -1,10 +1,10 @@
---- 
-is: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+is:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "þarf að vera tekið gilt"
         blank: "má ekki vera autt"
         confirmation: "passar ekki við staðfestingu"
@@ -25,13 +25,13 @@ is:
         too_long: "er of langt (má aðeins vera %{count} stafir)"
         too_short: "er of stutt (má aðeins vera %{count} stafir)"
         wrong_length: "er af rangri lengd (má aðeins vera %{count} stafir)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: Tölvupóstur
           password: Lykilorð
           remember_me: "Haldast innskráður"
-      template: 
+      template:
         body: "Upp kom vandamál í eftirfarandi dálkum:"
-        header: 
+        header:
           one: "Ekki var hægt að vista %{model} vegna villu."
           other: "Ekki var hægt að vista %{model} vegna %{count} villna."

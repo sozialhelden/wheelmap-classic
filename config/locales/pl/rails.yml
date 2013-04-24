@@ -1,14 +1,14 @@
---- 
-pl: 
-  activerecord: 
-    attributes: 
-      user: 
+---
+pl:
+  activerecord:
+    attributes:
+      user:
         first_name: Imię
         last_name: Nazwisko
-    errors: 
-      full_messages: 
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "musi zostać zaakceptowane"
         blank: "nie może być pusty"
         confirmation: "nie zgadza się z potwierdzeniem"
@@ -29,15 +29,15 @@ pl:
         too_long: "jest za długie (maksymalnie %{count} znaków)"
         too_short: "jest za krótkie (przynajmniej %{count} znaków)"
         wrong_length: "ma nieprawidłową długość (powinna wynosić %{count} znaków)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: "Adres e-mail"
           password: Hasło
           remember_me: "Nie wylogowywuj się"
-      template: 
+      template:
         body: "Wystąpiły problemy z następującymi polami:"
-        header: 
+        header:
           one: "%{model} nie został zachowany z powodu jednego błędu"
           other: "%{model} nie został zachowany z powodu %{count} błędów"
-    models: 
+    models:
       user: Użytkownik

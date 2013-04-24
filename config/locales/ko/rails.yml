@@ -1,10 +1,10 @@
---- 
-ko: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+ko:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message} "
-      messages: 
+      messages:
         accepted: 승인해주세요
         blank: "빈칸을 채워주세요"
         confirmation: "입력한 내용이 일치하지 않습니다."
@@ -25,13 +25,13 @@ ko:
         too_long: "은(는) 너무 깁니다 (최대 %{count} 글자)"
         too_short: "은(는) 너무 짧습니다 (최대 %{count} 글자)"
         wrong_length: "은(는) 길이가 맞지 않습니다 (%{count} 글자여야 합니다)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: 메일주소
           password: 비밀번호
           remember_me: "로그인 상태유지"
-      template: 
+      template:
         body: "다음 항목에 문제가 있습니다 :"
-        header: 
+        header:
           one: "%{model} 저장 중 1개의 에러가 발생했습니다"
           other: "%{model} 저장 중 %{count}개의 에러가 발생했습니다"

@@ -1,14 +1,14 @@
---- 
-bg: 
-  activerecord: 
-    attributes: 
-      user: 
+---
+bg:
+  activerecord:
+    attributes:
+      user:
         first_name: Име
         last_name: Фамилия
-    errors: 
-      full_messages: 
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "трябва да се потвърди"
         blank: "не може да е без стойност"
         confirmation: "не съответства на потвърждението"
@@ -29,19 +29,19 @@ bg:
         too_long: "е прекаленo дълго (не може да е повече от %{count} символа)"
         too_short: "е прекалено късо (не може да бъде по-малко от %{count} символа)"
         wrong_length: "е с грешна дължина (трябва да е с дължина, равна на %{count} символа)"
-      models: 
-        user: 
-          attributes: 
-            email: 
+      models:
+        user:
+          attributes:
+            email:
               blank: "Не може да бъде оставено празно, ако е дадена парола"
-        user_session: 
+        user_session:
           email: E-mail-адрес
           password: Парола
           remember_me: "Остани включен."
-      template: 
+      template:
         body: "Възникнаха проблеми със следните полета:"
-        header: 
+        header:
           one: "1 грешка направи запазването на %{model} невъзможно"
           other: "%{count} грешки направиха невъзможно запазването на %{model}:"
-    models: 
+    models:
       user: Потребител

@@ -1,14 +1,14 @@
---- 
-fr: 
-  activerecord: 
-    attributes: 
-      user: 
+---
+fr:
+  activerecord:
+    attributes:
+      user:
         first_name: Prénom
         last_name: "nom de famille"
-    errors: 
-      full_messages: 
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "doit être accepté"
         blank: "champ obligatoire"
         confirmation: "ne correspond pas à la confirmation"
@@ -29,19 +29,19 @@ fr:
         too_long: "est trop long (le maximum est %{count} caractères)"
         too_short: "est trop court ( minimum %{count} caractères)"
         wrong_length: "n'a pas la bonne longueur (doit comporter %{count} caractères)"
-      models: 
-        user: 
-          attributes: 
-            email: 
+      models:
+        user:
+          attributes:
+            email:
               blank: "doit être complété en cas de ........ mot de pass"
-        user_session: 
+        user_session:
           email: "Adresse mail"
           password: "Mot de passe"
           remember_me: "Rester connecté"
-      template: 
+      template:
         body: "Merci de vérifier les champs suivants:"
-        header: 
+        header:
           one: "Impossible d'enregistrer ce %{model} :  erreur"
           other: "Impossible d'enregistrer ce %{model} : %{count} erreurs"
-    models: 
+    models:
       user: utilisateur

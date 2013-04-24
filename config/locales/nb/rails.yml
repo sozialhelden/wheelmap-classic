@@ -1,14 +1,14 @@
---- 
-nb: 
-  activerecord: 
-    attributes: 
-      user: 
+---
+nb:
+  activerecord:
+    attributes:
+      user:
         first_name: Navngitt
         last_name: Etternavn
-    errors: 
-      full_messages: 
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "må være akseptert"
         blank: "kan ikke stå tom"
         confirmation: "passer ikke bekreftelsen"
@@ -29,19 +29,19 @@ nb:
         too_long: "er for lang (maksimum %{count} tegn)"
         too_short: "er for kort (minimum %{count} tegn)"
         wrong_length: "er av feil lengde (maksimum %{count} tegn)"
-      models: 
-        user: 
-          attributes: 
-            email: 
+      models:
+        user:
+          attributes:
+            email:
               blank: "kan ikke stå tom dersom passord er utdelt"
-        user_session: 
+        user_session:
           email: Epostadresse
           password: Passord
           remember_me: "Forbli pålogget"
-      template: 
+      template:
         body: "Det oppstod problemer i følgende felt:"
-        header: 
+        header:
           one: "Kunne ikke lagre %{model} på grunn av én feil."
           other: "Kunne ikke lagre %{model} på grunn av %{count} feil."
-    models: 
+    models:
       user: Bruker

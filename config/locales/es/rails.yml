@@ -1,13 +1,13 @@
---- 
-es: 
-  activerecord: 
-    attributes: 
-      user: 
+---
+es:
+  activerecord:
+    attributes:
+      user:
         last_name: Apellido
-    errors: 
-      full_messages: 
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "debe ser aceptada"
         blank: "no puede estar en blanco"
         confirmation: "no se encontró coincidencia"
@@ -28,15 +28,15 @@ es:
         too_long: "es demasiado largo (máximo %{count} caracteres)"
         too_short: "es demasiado corto (mínimo %{count} caracteres)"
         wrong_length: "no tiene la longitud correcta (deben ser %{count} caracteres)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: "Dirección de correo electrónico"
           password: Contraseña
           remember_me: "Siga conectado"
-      template: 
+      template:
         body: "Hubo problemas con los siguientos campos"
-        header: 
+        header:
           one: "1 error no deja que %{model} se guarde"
           other: "%{count} errores no dejaron que %{model} se guarde"
-    models: 
+    models:
       user: Usuario

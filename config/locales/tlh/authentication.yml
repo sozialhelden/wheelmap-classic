@@ -1,24 +1,24 @@
---- 
-tlh: 
-  devise: 
-    confirmations: 
+---
+tlh:
+  devise:
+    confirmations:
       confirmed: "talIj 'ollu'. bI'elpu'. "
       link: "talIj Da'ol 'e' ghojmoHbogh QIn DaHevbe''a'?"
       send_instructions: "tugh jabbI'ID DaHev. talIj Da'ol 'e' ghojmoH."
-    destroy: 
+    destroy:
       confirm: bIbej'a'?
       headline: "ta' Qaw''a'?"
       link: "DaH ta' Qaw'!"
-    edit: 
-      form: 
-        labels: 
+    edit:
+      form:
+        labels:
           current_password: "mu' pegh <i>(choHmeylIj wI'olnIS)</i>"
           email: jabbI'ID
           password: "mu' pegh <i>(DachoH DaneHbe'chugh pagh yIghItlh!)</i>"
           password_confirmation: "pegh mu' yIghItlhqa'"
         submit: qon
       headline: "ta' choH"
-    failure: 
+    failure:
       inactive: "wej chu' ta'lIj."
       invalid: "muj pegh mu', jabI'ID ghap."
       invalid_token: "chaw' qab"
@@ -26,46 +26,46 @@ tlh:
       timeout: "Heghpu' chabHommey, yI'elqa'."
       unauthenticated: "taHmeH yI'el pagh yImuv."
       unconfirmed: "taHmeH ta'lIj Dachu'nIS."
-    mailer: 
-      confirmation_instructions: 
+    mailer:
+      confirmation_instructions:
         subject: "talIj Da'ol 'e' ghojmoH QInvam."
-      reset_password_instructions: 
+      reset_password_instructions:
         subject: "pegh mu' vIcherqa' 'e' HIghojmoH."
-      unlock_instructions: 
+      unlock_instructions:
         subject: "talIj Da'ngaQHa'moH 'e' ghojmoH QIn."
     mandatory: "* wIpoQ"
-    omniauth_callbacks: 
+    omniauth_callbacks:
       failure: "\"%{reason}\"mo' %{kind}vo' qachaw'laHbe'."
       success: "Qapla'! %{kind} ta' chaw'lu'."
-    password_recovery: 
-      form: 
-        labels: 
+    password_recovery:
+      form:
+        labels:
           email: jabbI'ID
         submit: "pegh mu' cherqa'"
       headline: "pegh mu' DalIj'a'?"
-    password_reset: 
-      email: 
+    password_reset:
+      email:
         comment: "mu'lIj pegh DachoH DaneHbe'chugh QInvam yIbuSHa'.<br/>mu'lIj pegh choHbe'lu' 'ach DachoHlaH bIngDaq mu'mey Da'uychugh. "
         headline: "%{email}"
         link: "pegh mu' choH"
         text: "mu'lIj pegh choHlu' neHlu'. DachoH DaneHchugh, bIngDaq mu'mey yI'uy:"
-      form: 
-        labels: 
+      form:
+        labels:
           password: "pegh mu' chu'"
           password_confirmation: "pegh mu' yIghItlhqa'"
         submit: "pegh mu' cherqa'"
       headline: "pegh mu' cherqa'"
-    passwords: 
+    passwords:
       link: "pegh mu' DalIj'a'?"
       send_instructions: "tugh jabbI'ID DaHev. pegh mu' DachoH 'e' ghojmoH."
       updated: "Qapla', pegh mu' DachoHta'. DaH bI'elpu'."
-    registrations: 
+    registrations:
       destroyed: "ta'lIj qIllu'. tugh bIchegh 'e' wItul."
       inactive_signed_up: "Qapla' 'ach %{reason}mo' pI'ellaHbe'moH."
       link: muv
       signed_up: "Qapla', jumuv. 'olmeH tugh jabbI'DI' DaHev."
       updated: "talIjDaq qonpu' De' chu'."
-    sessions: 
+    sessions:
       inactive: "wej Qap ta'lIj."
       invalid: "muj jabbI'ID ngu'wI'lIj pegh mu'lIj ghap."
       invalid_token: "chaw' qab"
@@ -76,25 +76,25 @@ tlh:
       timeout: "rIn poHlIj, yI'elqa'!"
       unauthenticated: "jItaHpa', bI'elnIS pagh bImuvnIS."
       unconfirmed: "bItaHpa' talIj Da'ol."
-    sign_in: 
-      form: 
-        labels: 
+    sign_in:
+      form:
+        labels:
           email: jabbI'ID
           password: "pegh mu'"
           remember_me: "'eltaH'a'?"
         submit: "'el"
       headline: "'el"
-    sign_out: 
+    sign_out:
       headline: mej
-    sign_up: 
-      form: 
-        labels: 
+    sign_up:
+      form:
+        labels:
           email: jabbI'ID
           password: "pegh mu'"
           password_confirmation: "pegh mu' yIghItlhqa'"
         submit: muv
       headline: muv
-    unlocks: 
+    unlocks:
       link: "'olmeH jabbI'DI' DaHevbe''a'?"
       send_instructions: "tugh jabbI'ID DaHev. talIj DangaQHa' 'e' ghojmoH."
       unlocked: "ngaQHa' talIj. bI'elpu'. "
