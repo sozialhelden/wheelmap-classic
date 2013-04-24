@@ -344,6 +344,7 @@ cs:
     category:
       accommodation: Ubytování
       government: Vláda
+      health: Zdraví
       misc: Různé
       money_post: Finančnictví
       public_transfer: "Veřejná doprava"
@@ -355,7 +356,11 @@ cs:
         chalet: "Horská chata"
         hostel: Hostel
         hotel: Hotel
+        motel: Motel
       education:
+        driving_school: Autoškola
+        kindergarten: Školka
+        museum: Muzeum
         school: Škola
         university: Univerzita
       food:
@@ -365,16 +370,21 @@ cs:
         fast_food: "Rychlé občerstvení"
         ice_cream: Zmrzlina
       government:
+        embassy: Velvyslanectví
+        government: "Vládní agentura"
+        police: Policie
         public_building: "Veřejná budova"
       health:
         dentist: Zubař
         medical_supply: "Medicínské vybavení"
         pharmacy: Lékárna
+        social_facility: "Společenské zázemí"
         veterinary: Veterinář
       leisure:
         casino: Kasino
         cinema: Kino
         nightclub: "Noční klub"
+        playground: Hřiště
         sauna: Sauna
         theatre: Divadlo
       misc:
@@ -383,10 +393,13 @@ cs:
         toilets: Toalety
       money_post:
         atm: Bankomat
+        bank: Banka
         bureau_de_change: Směnárna
         post_box: "Poštovná schránka"
       public_transfer:
         bus_station: "Autobusová stanice"
+        cable_car: Lanovka
+        car_sharing: "Sdílení automobilů"
         parking_aisle: "Parkovací ulička"
         platform: Nástupiště
         subway_entrance: "Vchod do metra"
@@ -394,20 +407,29 @@ cs:
         tram_stop: "Zastávka tramvaje"
       shopping:
         alcohol: Alkohol
+        beauty: "Salon krásy"
         beverages: Nápoje
+        bicycle: Kola
+        books: Knihy
         car_repair: Autoservis
         car_shop: Automobily
         chemist: Lékárna
+        confectionery: Cukrárna
         convenience: Příslušenství
         department_store: "Obchodní dům"
         electronics: Elektronika
+        fabric: Textil
+        farm_shop: "Farmářský obchod"
         florist: Květinářství
+        furniture: Nábytek
         hairdresser: Kadeřnictví
         hardware: Železářství
         jewelry: Klenotnictví
+        kiosk: Stánek
         laundry: Prádelna
         optician: Optika
         outdoor: "Outdoorové vybavení"
+        pet: Zverimex
         photo: Fotky
         second_hand: "Second hand"
         shoes: Boty
@@ -416,11 +438,16 @@ cs:
         toys: Hračky
         travel_agency: "Cestovní kancelář"
       sport:
+        pitch: Hřiště
+        sports_centre: "Sportovní centrum"
         stadium: Stadion
         swimming_pool: "Plavecký bazen"
       tourism:
+        arts_centre: "Kulturní centrum"
+        cave_entrance: "Vstup do jeskyně"
         information: "Turistické informace"
         tower: Věž
+        viewpoint: Rozhled
       unknown:
         unknown: Neznámé
   profile:

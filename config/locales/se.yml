@@ -426,13 +426,14 @@ se:
         bed_and_breakfast: "Bed & breakfast\n"
         camp_site: Campingplats
         caravan_site: Husvagnsplats
-        chalet: Fäbod
+        chalet: Stuga
         guest_house: Värdshus
         hostel: Vandrarhem
         hotel: Hotell
         motel: Motell
       education:
         college: Högskola
+        driving_school: Trafikskola
         kindergarten: Förskola
         library: Bibliotek
         museum: Museum
@@ -444,14 +445,17 @@ se:
         cafe: Café
         drinking_water: Dricksvatten
         fast_food: Snabbmat
+        ice_cream: Glassbar
         pub: Pub
         restaurant: Restaurang
       government:
         courthouse: Domstol
         embassy: Ambassad
+        police: Polis
         public_building: "Publik byggnad"
         townhall: Stadshus
       health:
+        dentist: Tandläkare
         doctors: Doktor
         hospital: Sjukhus
         pharmacy: Apotek
@@ -461,10 +465,12 @@ se:
         cinema: Bio
         gallery: Galleri
         nightclub: Nattklubb
+        playground: Lekplats
         sauna: Bastu
         theatre: Teater
         zoo: Zoo
       misc:
+        lawyer: Advokat
         place_of_worship: "Religiös plats"
         toilets: Toalett
       money_post:
@@ -503,8 +509,11 @@ se:
         bicycle: Cykelaffär
         books: Böcker
         butcher: Slaktare
+        car_repair: Bilverkstad
+        car_shop: Bilförsäljning
         clothes: Kläder
         computer: Datorer
+        confectionery: Godisaffär
         convenience: Närbutik
         department_store: Varuhus
         doityourself: "Gör det själv"
@@ -515,15 +524,17 @@ se:
         garden_centre: Plantskola
         hairdresser: Frisersalong
         hardware: Järnhandel
+        jewelry: Smycken
         kiosk: Kiosk
         laundry: Tvätt
-        mall: Shoppingcentrum
+        mall: Köpcentrum
         optician: Optiker
         shoes: Skor
+        sports: Sport
         supermarket: Livsmedel
       sport:
         sports_centre: Sportcenter
-        stadium: Stadion
+        stadium: Idrottsarena
         swimming: Bad
         swimming_pool: Simbassäng
       tourism:

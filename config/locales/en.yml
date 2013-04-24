@@ -496,6 +496,7 @@ en:
         motel: Motel
       education:
         college: College
+        driving_school: "Driving school"
         kindergarten: Kindergarten
         library: Library
         museum: Museum
@@ -507,15 +508,18 @@ en:
         cafe: Cafe
         drinking_water: "Drinking water"
         fast_food: "Fast Food"
+        ice_cream: "Ice cream parlour"
         pub: Pub
         restaurant: Restaurant
       government:
         courthouse: Courthouse
         embassy: Embassy
+        government: "Governent agency"
         police: Police
         public_building: "Public building"
         townhall: Townhall
       health:
+        dentist: Dentist
         doctors: Doctors
         hearing_aids: "Hearing aid dealer"
         hospital: Hospital
@@ -526,6 +530,7 @@ en:
       leisure:
         arena: Arena
         brothel: Brothel
+        casino: Casino
         cinema: Cinema
         community_center: "Community Center"
         gallery: Gallery
@@ -537,6 +542,8 @@ en:
         zoo: Zoo
       misc:
         company: "Company (Office)"
+        estate_agent: "Real estate agent"
+        insurance: Insurance
         lawyer: Lawyer
         place_of_worship: "Place of worship"
         toilets: Toilets
@@ -572,6 +579,7 @@ en:
       shopping:
         alcohol: Liquor
         bakery: Bakery
+        beauty: "Beauty salon"
         beverages: Beverages
         bicycle: "Bike shop"
         books: Books
@@ -581,28 +589,40 @@ en:
         chemist: Chemist
         clothes: Clothes
         computer: Computer
+        confectionery: "Candy store"
         convenience: Convenience
+        deli: Delicatessen
         department_store: "Department store"
         doityourself: "Do it yourself"
         dry_cleaning: "Dry cleaning"
         electronics: Electronics
+        fabric: "Facric shop"
+        farm_shop: "Farm shop"
         florist: Florist
         furniture: Furniture
         garden_centre: "Garden center"
+        gift: "Gift shop"
         hairdresser: Hairdresser
         hardware: Hardware
+        jewelry: Jewelry
         kiosk: Kiosk
         laundry: Laundry
         mall: "Shopping centre"
         optician: Optician
+        organic: "Organic shop"
+        outdoor: "Outdoor supply"
+        pet: "Pet shop"
         photo: Photo
         second_hand: "Second hand"
         shoes: Shoes
         sports: Sports
         stationery: Stationery
         supermarket: Supermarket
+        toys: Toys
+        travel_agency: "Travel agency"
         video: "Video rental store"
       sport:
+        pitch: "Sports field"
         sports_centre: "Sports centre"
         stadium: Stadium
         swimming: Swimming
