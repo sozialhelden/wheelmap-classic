@@ -277,7 +277,7 @@ pt-br:
       feedback: Feedback
       home: Iniciar
       how_to_add_a_place: "Como adicionar lugares?"
-      imprint: Imprimir
+      imprint: Contato
       logged_in_as: "Conectado como:"
       login: Entrar
       logout: Sair
@@ -288,12 +288,12 @@ pt-br:
       what_is_wheelmap: "O que é o Wheelmap?"
     searchbar:
       add_place: "Adicionar outro lugar"
-      find: encontrar
+      find: Encontrar
       label: ~
       placeholder: "exemplos: 'Brasília', 'Av. Paulista, São Paulo'"
       title_add_place: "Adicionar um novo lugar nesta posição agora!"
     tagline: "Logotipo do Wheelmap"
-    title: "Wheelmap - encontre lugares acessivéis a cadeirantes"
+    title: "Wheelmap - Encontre lugares acessíveis a cadeirantes"
   helpers:
     select:
       prompt: "Por favor selecione"
@@ -306,7 +306,7 @@ pt-br:
       filter:
         category: "Escolher categoria"
         deselect_all: "Desativar todos"
-        select_all: "Desativar todos"
+        select_all: "Ativar todos"
         wheelchair: "Acessível a cadeirantes?"
       ie:
         action:
@@ -463,7 +463,7 @@ pt-br:
       government: Governo
       health: Saúde
       leisure: Lazer
-      misc: outros
+      misc: Outros
       money_post: "Bancos & Correios"
       public_transfer: "Transporte Público"
       shopping: Compras
@@ -472,7 +472,6 @@ pt-br:
       unknown: Desconhecido
     name:
       accommodation:
-        beach_resort: Balneário
         bed_and_breakfast: Pensão
         camp_site: Acampamento
         caravan_site: "Acampamento de treiler"
@@ -511,7 +510,6 @@ pt-br:
         social_facility: "Instituição social"
         veterinary: Veterinário
       leisure:
-        arena: Arena
         brothel: Bordel
         cinema: Cinema
         community_center: "Centro comunitário"
@@ -537,7 +535,6 @@ pt-br:
         aerodrome: Aeroporto
         bicycle_parking: Bicicletário
         bicycle_rental: "Aluguel de bicicletas"
-        boatyard: Estaleiro
         bus_station: "Ponto de ônibus"
         bus_stop: "Ponto de ônibus"
         cable_car: "Teleférico de cabine"
@@ -561,13 +558,13 @@ pt-br:
         bakery: Padaria
         beverages: Bebidas
         bicycle: "Loja de bicicletas"
-        books: Livros
+        books: Livraria
         butcher: Açougue
         car_repair: "Oficina mecânica"
         car_shop: "Loja de automóveis"
         chemist: Drogaria
         clothes: Roupa
-        computer: Computador
+        computer: Computadores
         convenience: "Loja de Conveniência"
         department_store: "Loja de Departamentos"
         doityourself: "Loja de ferragens"
@@ -582,9 +579,9 @@ pt-br:
         laundry: Lavandaria
         mall: "Shopping Center"
         optician: Ótica
-        photo: "Loja fotográfica"
+        photo: "Loja de fotografia"
         second_hand: Brechó
-        shoes: Sapatos
+        shoes: Sapataria
         sports: "Produtos esportivos"
         stationery: Papelaria
         supermarket: Supermercado
@@ -628,7 +625,7 @@ pt-br:
   splash:
     countline: "%{count} lugares já foram marcados."
     headline: "Todo mundo pode adicionar lugares acessíveis!"
-    start: Começo
+    start: Começar
     step1: "Clique num lugar que você conhece."
     step2: "Marque-lo e clique em \"Salvar\""
     step3: "Pronto! Nenhum registro necessário!"
@@ -672,7 +669,7 @@ pt-br:
         set_password_for_mobile: "Você tem um smartphone? Então defina uma senha aqui para usar o wheelmap no seu iPhone ou celular Android."
         text: "Você se registrou com sucesso. Nos lhe informaremos sobre notícias importantes acerca do Wheelmap."
   wheelchairstatus:
-    limited: "parcialmente acessível a cadeirantes"
+    limited: "Parcialmente acessível a cadeirantes"
     ? "no"
     : "Não acessível a cadeirantes"
     unknown: "Sem informações sobre acessibilidade"
@@ -691,9 +688,9 @@ pt-br:
       alt: "Wheelmap Logotipo - Encontre lugares acessíveis a cadeirantes"
       title: "Wheelmap - Encontre lugares acessíveis a cadeirantes"
     what_is:
-      fully_accessible: "<em>Sim:</em> Entrada sem degraus, todos os ambientes sem degraus, com banheiro acessível se houver."
-      limited_accessible: "<em>Parcialmente:</em> Desnível na entrada não superior a 7 cm; ambientes mais importantes acessíveis."
-      not_accessible: "<em>Não:</em> Entrada com altos degraus ou ambientes importantes não acessíveis."
+      fully_accessible: "<em>Sim:</em> Entrada e todos os ambientes sem degraus, com banheiro acessível se houver."
+      limited_accessible: "<em>Parcialmente:</em> Desnível na entrada inferior a 7 cm; ambientes mais importantes acessíveis."
+      not_accessible: "<em>Não:</em> Entrada com degraus altos ou ambientes importantes não acessíveis."
       unknown_accessible: "<em>Sem informações:</em> Ajude avaliando estes lugares!"
   will_paginate:
     next_label: "Próximo &#8594;"

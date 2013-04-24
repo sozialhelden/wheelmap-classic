@@ -47,102 +47,6 @@ tlh:
     root: wheelmap
   common:
     close: SoQmoH
-  date:
-    abbr_day_names:
-      - "wa' jaj"
-      - "cha' jaj"
-      - "wej jaj"
-      - "loS jaj"
-      - "vagh jaj"
-      - "jav jaj"
-      - "Soch jaj"
-    abbr_month_names:
-      - ~
-      - "wa' jar"
-      - "cha' jar"
-      - "wej jar"
-      - "loS jar"
-      - "vagh jar"
-      - "jav jar"
-      - "Soch jar"
-      - "chorgh jar"
-      - "Hut jar"
-      - "wa'maH jar"
-      - "wa'maH wa' jar"
-      - "wa'maH cha' jar"
-    day_names:
-      - "wa' jaj"
-      - "cha' jaj"
-      - "wej jaj"
-      - "loS jaj"
-      - "vagh jaj"
-      - "jav jaj"
-      - "Soch jaj"
-    formats:
-      default: "%Y-%m-%d"
-      long: "%B %d, %Y"
-      short: "%b %d"
-    month_names:
-      - ~
-      - "wa' jar"
-      - "cha' jar"
-      - "wej jar"
-      - "loS jar"
-      - "vagh jar"
-      - "jav jar"
-      - "Soch jar"
-      - "chorgh jar"
-      - "Hut jar"
-      - "wa'maH jar"
-      - "wa'maH wa' jar"
-      - "wa'maH cha' jar"
-    order:
-      - !ruby/symbol year
-      - !ruby/symbol month
-      - !ruby/symbol day
-  datetime:
-    distance_in_words:
-      about_x_hours:
-        one: "wa' repHey"
-        other: "%{count} repHey"
-      about_x_months:
-        one: "wa' jarHey"
-        other: "%{count} jarmeyHey"
-      about_x_years:
-        one: "wa' DISHey"
-        other: "%{count} DISmeyHey"
-      almost_x_years:
-        one: "wa' DISHey"
-        other: "%{count} DISmeyHey"
-      half_a_minute: "wej'maH tupmey"
-      less_than_x_minutes:
-        one: "wa' tupHey"
-        other: "%{count} tupmeyHey"
-      less_than_x_seconds:
-        one: "wa' lupHey"
-        other: "%{count} lupmeyHey"
-      over_x_years:
-        one: "qaSDI' wa' DIS"
-        other: "qaSDI' %{count} DISmey"
-      x_days:
-        one: "wa' jaj"
-        other: "%{count} jajmey"
-      x_minutes:
-        one: "wa' tup"
-        other: "%{count} tupmey"
-      x_months:
-        one: "wa' jar"
-        other: "%{count} jarmey"
-      x_seconds:
-        one: "wa' tup"
-        other: "%{count} tupmey"
-    prompts:
-      day: jaj
-      hour: rep
-      minute: tup
-      month: jar
-      second: lupmey
-      year: jar
   devise:
     confirmations:
       confirmed: "talIj 'ollu'. bI'elpu'. "
@@ -403,7 +307,7 @@ tlh:
         large_map: "&laquo; qIl"
     node:
       link:
-        claim:
+        claim: ~
         edit_node: "Daq choH"
         report_bug: "Report a problem"
     show:
@@ -527,12 +431,8 @@ tlh:
         theatre: "much qach"
         zoo: "HaDI'baH qach"
       misc:
-        doctors: Qelpu'
-        hospital: "Qelpu' qach"
-        pharmacy: "Hergh Suy"
         place_of_worship: ghIn
         toilets: puchpa'mey
-        veterinary: "HaDI'baH Qel"
       money_post:
         atm: "Huch nobwI'"
         bank: "Huch Suy"
