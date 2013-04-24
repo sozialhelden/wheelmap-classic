@@ -16,8 +16,8 @@
       bottom: 0px;
       @include box-shadow(none);
       background-color: #334557;
-      border-top: 1px solid #273442;      
-  }    
+      border-top: 1px solid #273442;
+  }
   .content {
     max-width: 640px;
     margin: auto;
@@ -178,8 +178,8 @@
       background-color: #f4f4f4;
       @include background-image(linear-gradient(top, rgb(254, 254, 254), rgb(234, 234, 234)));
       @include filter-gradient(rgb(254, 254, 254), rgb(234, 234, 234), vertical);
-      
-      
+
+
       font-size: 10px;
       font-weight: bold;
       text-align: center;
@@ -199,7 +199,7 @@
         -webkit-overflow-scrolling: touch;
       }
       li {
-        width: auto; 
+        width: auto;
         a {
          padding: 6px 10px 5px 10px;
          border-bottom: 1px solid #F0F0F0;
@@ -213,9 +213,9 @@
           }
          i {
            margin-top: 3px;
-         }  
+         }
         }
-      }      
+      }
     }
     @media screen and (max-width:420px) {
       width: 46px;
@@ -256,26 +256,6 @@
     }
     @media screen and (max-width:410px) {
       width: 303px;
-    }
-  }
-  .notification {
-    width: 98%;
-    padding: 10px 2%;
-    margin-top: -2px;
-    float: left;
-
-    text-align: center;
-    color: #FFF;
-    text-shadow: 0 0 20px #48642F;
-    &.success {
-      background-color: #7EA940;
-      background-color: rgba(125, 169, 64, 0.96);
-      border-bottom: 1px solid #48642F;
-    }
-    &.error {
-      background-color: #D11B2E;
-      background-color: rgba(215, 6, 6, 0.96);
-      border-bottom: 1px solid #93060A;
     }
   }
 }
@@ -326,11 +306,11 @@
          }
         }
       }
-    }  
+    }
    .show-menu-arrow.btn-group.bootstrap-select .dropdown-menu {
      overflow-x: hidden!important; //IE Fix
    }
-  }  
+  }
 }
 
 

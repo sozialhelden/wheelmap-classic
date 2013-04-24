@@ -31,7 +31,6 @@ Feature: Create a new node via website
     And I press "Ort anlegen"
     Then I should be on the home page
     And I should see "Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert"
-    And I should see "/nodes/created"
 
     And a create node job has been enqueued with lat: "54.1", lon: "13.9" and tags
       | name                   | Hotel Recklinghausen            |

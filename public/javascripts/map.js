@@ -57,9 +57,9 @@ map.on('movestart', function(e) {
   var wheelchair_class = e.popup._source.feature.properties.wheelchair;
   $('#featurePopup_content_' + window.node_id + ' .' + wheelchair_class + ' input').prop('checked',true);
   $('.update_form').bind('ajax:success', function(xhr, data, status){
-    $('<div class="notification active success"><span>'+ data.message + '</span></div>').insertAfter('#toolbar .content').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
+    $('<div class="notification active notice"><span>'+ data.message + '</span></div>').insertAfter('#toolbar .content').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
   }).bind('ajax:error', function(xhr, data, status){
-    $('<div class="notification active success"><span>'+ data.message + '</span></div>').insertAfter('#toolbar .content').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
+    $('<div class="notification active error"><span>'+ data.message + '</span></div>').insertAfter('#toolbar .content').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
   });
 }).on('popupclose', function(e){
    window.node_id = null;
