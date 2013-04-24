@@ -1,0 +1,25 @@
+.notification {
+  width: 98%;
+  padding: 10px 2%;
+  margin-top: -2px;
+  float: left;
+
+  text-align: center;
+  color: #FFF;
+  text-shadow: 0 0 20px #48642F;
+  &.notice {
+    background-color: #7EA940;
+    background-color: rgba(125, 169, 64, 0.96);
+    border-bottom: 1px solid #48642F;
+  }
+  &.alert {
+    background-color: #7EA940;
+    background-color: rgba(125, 169, 64, 0.96);
+    border-bottom: 1px solid #48642F;
+  }
+  &.error {
+    background-color: #D11B2E;
+    background-color: rgba(215, 6, 6, 0.96);
+    border-bottom: 1px solid #93060A;
+  }
+}
