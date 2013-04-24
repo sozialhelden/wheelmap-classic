@@ -292,9 +292,8 @@ ar:
       what_is_wheelmap: "تعرف على ويل ماب ؟"
     searchbar:
       add_place: "أضف مكاناً آخر"
-      label: |
-          header.searchbar.label
       find: بحث
+      label: ~
       placeholder: "سن سيت بوليڨارد، لوس أنجلوس  أو  براندن بيرڠ ،برلين"
       title_add_place: "أضف مكاناً جديداً في هذا الموقع الآن!"
     tagline: "شعار ويل ماب"
@@ -429,9 +428,9 @@ ar:
           quadrillion: "الكدريليون رقم"
           thousand: ألف
           trillion: تريليون
-          unit: ''
+          unit: ~
       format:
-        delimiter: ''
+        delimiter: ~
         precision: 3
         significant: صحيح
         strip_insignificant_zeros: صحيح
@@ -447,11 +446,10 @@ ar:
           tb: TB
     percentage:
       format:
-        delimiter: ''
+        delimiter: ~
     precision:
       format:
-        delimiter: |
-            number.precision.format.delimiter
+        delimiter: ~
   oauth:
     application:
       connect:
