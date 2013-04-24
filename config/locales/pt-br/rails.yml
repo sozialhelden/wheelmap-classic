@@ -1,0 +1,47 @@
+--- 
+pt-br: 
+  activerecord: 
+    attributes: 
+      user: 
+        first_name: "primeiro nome"
+        last_name: Sobrenome
+    errors: 
+      full_messages: 
+        format: "%{attribute}%{message}"
+      messages: 
+        accepted: "tem de ser aceito"
+        blank: "não pode estar em branco"
+        confirmation: "não coincide com a confirmação"
+        empty: "deve ser preenchido"
+        equal_to: "tem de ser igual a %{count}"
+        even: "tem de ser par"
+        exclusion: "não está disponível"
+        greater_than: "tem de ser maior que %{count}"
+        greater_than_or_equal_to: "tem de ser maior ou igual a %{count}"
+        inclusion: "não está na lista"
+        invalid: "é inválido"
+        less_than: "tem de ser menor que %{count}"
+        less_than_or_equal_to: "tem de ser menor ou igual a %{count}"
+        not_a_number: "não é um número"
+        odd: "tem de ser ímpar"
+        record_invalid: "A validação falhou: %{errors}"
+        taken: "não está disponível"
+        too_long: "é demasiado grande (o mínimo é de %{count} characters)"
+        too_short: "é demasiado pequeno (o mínimo é de %{count} caracteres)"
+        wrong_length: "tem quantidade de caracteres incompatível (deve ter %{count} caracteres)"
+      models: 
+        user: 
+          attributes: 
+            email: 
+              blank: "tem de ser preenchido se uma senha é dada"
+        user_session: 
+          email: E-mail
+          password: Senha
+          remember_me: "Manter-se conectado"
+      template: 
+        body: "Por favor, verifique os seguintes campos:"
+        header: 
+          one: "Não foi possível salvar %{model}: 1 erro."
+          other: "Não foi possível guardar %{model}: %{count} erros"
+    models: 
+      user: Usuário

@@ -1,0 +1,123 @@
+--- 
+en: 
+  devise: 
+    confirmations: 
+      confirmed: "Your email address was successfully confirmed."
+      link: "Didn't receive confirmation instructions?"
+      send_instructions: "In a few minutes you will receive an email with a link to confirm your email address."
+      send_paranoid_instructions: "If your account exists, you will receive an email with instructions how to confirm your account in a few minutes."
+    destroy: 
+      confirm: "Are you sure?"
+      headline: "Delete Account"
+      link: "Delete now"
+    edit: 
+      form: 
+        labels: 
+          current_password: "Current password <i>(we need it to confirm your changes)</i>"
+          email: Email
+          password: "Password <i>(leave empty if you don\\'t want to change it)</i>"
+          password_confirmation: "Repeat password"
+        submit: "Save changes"
+      headline: "Edit account"
+    failure: 
+      already_authenticated: "You are already signed in."
+      inactive: "Your account was not activated yet."
+      invalid: "Invalid email or password."
+      invalid_token: "Invalid authentication token"
+      locked: "Your account is locked"
+      timeout: "Your session expired, please sign in again to continue."
+      unauthenticated: "You need to sign in or sign up before continuing"
+      unconfirmed: "You need to confirm your account before continuing."
+    mailer: 
+      confirmation_instructions: 
+        landing_page: "Please click on the link that we just sent to your email address. If you do not receive an email from us please first check it is not hiding in your spam folder, if it is not there return to the sign up page and try again."
+        subject: "One more step to activate your account"
+      reset_password_instructions: 
+        subject: "Reset password instructions"
+      unlock_instructions: 
+        subject: "Unlock Instructions"
+    mandatory: "* Required"
+    omniauth_callbacks: 
+      failure: "Authorization with %{kind} failed. Error: \"%{reason}\". "
+      permission_missing: "You did not grant the required permissions."
+      success: "Successfully logged in with %{kind}."
+    password_recovery: 
+      form: 
+        labels: 
+          email: Email
+        submit: "Reset password"
+      headline: "Forgot Password?"
+    password_reset: 
+      email: 
+        comment: "If you did not request a password reset, just ignore this email.<br/>Your password won\\'t be changed unless you click on the link above and set a new password."
+        headline: "Welcome %{email}"
+        link: "Change my password"
+        text: "There was a request to change your password, if it was you click the following link - else ignore!"
+      form: 
+        labels: 
+          password: "New password"
+          password_confirmation: "Repeat password"
+        submit: "Reset password"
+      headline: "Reset password"
+    passwords: 
+      link: "Forgot password?"
+      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes"
+      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to reset your password in a few minutes"
+      updated: "Your password was changed successfully, you are now logged in"
+      updated_not_active: "Your password was changed successfully"
+    registrations: 
+      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
+      inactive_signed_up: "You have signed up successfully, but we could not log you in. Reason: \"%{reason}\""
+      link: "Sign up"
+      reasons: 
+        inactive: inactive
+        locked: locked
+        unconfirmed: unconfirmed
+      signed_up: "You have signed up successfully. A confirmation was sent to your e-mail."
+      updated: "You have updated your account successfully."
+    sessions: 
+      inactive: "Your account was not activated yet"
+      invalid: "Invalid email or password."
+      invalid_token: "Invalid authentication token"
+      link: "Sign in"
+      locked: "Your account is locked"
+      new: 
+        no_osm_account: "No OpenStreetMap account?"
+        osm_promo_text: "The wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must to be logged in with it."
+        promo_text_thank_you: "Thank you very much for your support!"
+        sign_in_with: "Log in with %{kind}"
+        sign_up_with_osm: "Register now."
+        wheelmap_promo_text: "With your knowledge about wheelchair accessible places you help people with physical impairments to better organize their everyday live. Furthermore the OpenStreetMap gets considerably richer in detail."
+      signed_in: "Logged in successfully"
+      signed_out: "You have signed out successfully"
+      timeout: "Your session expired, please sign in again to continue."
+      unauthenticated: "You need to sign in or sign up before continuing"
+      unconfirmed: "You need to confirm your account before continuing"
+    sign_in: 
+      form: 
+        labels: 
+          email: Email
+          password: Password
+          remember_me: "Stay logged in?"
+        submit: "Log in"
+      headline: "Log in"
+    sign_out: 
+      headline: "Log out"
+    sign_up: 
+      email: 
+        confirm_my_account: "Confirm my account"
+        please_confirm: "You can confirm your account through the link below:"
+        welcome: "Welcome %{email}!"
+      form: 
+        labels: 
+          email: Email
+          password: Password
+          password_confirmation: "Repeat password"
+          wants_newsletter: "Yes, keep me up to date about wheelmap - but please not more than once a month."
+        submit: "Sign up"
+      headline: "Sign up"
+    unlocks: 
+      link: "Didn't receive unlock instructions?"
+      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes"
+      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock your account in a few minutes"
+      unlocked: "Your account was successfully unlocked. You are now signed in."

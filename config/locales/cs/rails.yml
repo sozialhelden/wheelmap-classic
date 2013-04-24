@@ -1,0 +1,41 @@
+--- 
+cs: 
+  activerecord: 
+    attributes: 
+      user: 
+        first_name: "Křestní jméno"
+        terms: Podmínky
+    errors: 
+      messages: 
+        accepted: "musí být potvrzeno"
+        blank: "je povinná položka"
+        confirmation: "nebylo potvrzeno"
+        empty: "nesmí být prázdný/á/é"
+        equal_to: "musí být rovno %{count}"
+        even: "musí být sudé číslo"
+        exclusion: "je vyhrazeno pro jiný účel"
+        greater_than: "musí být větší než %{count}"
+        greater_than_or_equal_to: "musí být větší nebo rovno %{count}"
+        inclusion: "není v seznamu povolených hodnot"
+        invalid: "není platná hodnota"
+        less_than: "musí být méně než %{count}"
+        less_than_or_equal_to: "musí být méně nebo rovno %{count}"
+        not_a_number: "není číslo"
+        odd: "musí být liché číslo"
+        record_invalid: "Validace je neúspešná: %{errors}"
+        taken: "již databáze obsahuje"
+        too_long: "je příliš dlouhý/á/é (max. %{count} znaků)"
+        too_short: "je příliš krátký/á/é (min. %{count} znaků)"
+        wrong_length: "nemá správnou délku (očekáváno %{count} znaků)"
+      models: 
+        user: 
+          attributes: 
+            terms: 
+              accepted: "musí být přijaté"
+        user_session: 
+          remember_me: "Zůstaňte přihlášení"
+      template: 
+        body: "Následující pole obsahují chybně vyplněné údaje: "
+        header: 
+          one: "Při ukládání objektu %{model} došlo k chybám a nebylo jej možné uložit"
+          other: "Při ukládání objektu %{model} došlo ke %{count} chybám a nebylo možné jej uložit"

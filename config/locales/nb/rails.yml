@@ -1,0 +1,47 @@
+--- 
+nb: 
+  activerecord: 
+    attributes: 
+      user: 
+        first_name: Navngitt
+        last_name: Etternavn
+    errors: 
+      full_messages: 
+        format: "%{attribute} %{message}"
+      messages: 
+        accepted: "må være akseptert"
+        blank: "kan ikke stå tom"
+        confirmation: "passer ikke bekreftelsen"
+        empty: "kan ikke stå tom"
+        equal_to: "må være lik %{count}"
+        even: "må være partall"
+        exclusion: "er reservert"
+        greater_than: "må være større enn %{count}"
+        greater_than_or_equal_to: "må være større enn eller lik %{count}"
+        inclusion: "er ikke inkludert i listen"
+        invalid: "er ugyldig"
+        less_than: "må være mindre enn %{count}"
+        less_than_or_equal_to: "må være mindre enn eller lik %{count}"
+        not_a_number: "er ikke et tall"
+        odd: "må være oddetall"
+        record_invalid: "Det oppstod feil: %{errors}"
+        taken: "er allerede opptatt"
+        too_long: "er for lang (maksimum %{count} tegn)"
+        too_short: "er for kort (minimum %{count} tegn)"
+        wrong_length: "er av feil lengde (maksimum %{count} tegn)"
+      models: 
+        user: 
+          attributes: 
+            email: 
+              blank: "kan ikke stå tom dersom passord er utdelt"
+        user_session: 
+          email: Epostadresse
+          password: Passord
+          remember_me: "Forbli pålogget"
+      template: 
+        body: "Det oppstod problemer i følgende felt:"
+        header: 
+          one: "Kunne ikke lagre %{model} på grunn av én feil."
+          other: "Kunne ikke lagre %{model} på grunn av %{count} feil."
+    models: 
+      user: Bruker
