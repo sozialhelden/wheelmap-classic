@@ -1,10 +1,10 @@
---- 
-it: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+it:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute}%{message}"
-      messages: 
+      messages:
         accepted: "deve essere accettato"
         blank: "non può essere lasciato in bianco"
         confirmation: "non coincide con la conferma"
@@ -25,13 +25,13 @@ it:
         too_long: "è troppo lungo (il massimo è %{count} caratteri)"
         too_short: "è troppo corto (il minimo è %{count} caratteri)"
         wrong_length: "è della lunghezza sbagliata (deve essere di %{count} caratteri)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: "Indirizzo e-mail"
           password: Password
           remember_me: "Resta collegato"
-      template: 
+      template:
         body: "Sono stati riscontrati dei problemi nei seguenti campi:"
-        header: 
+        header:
           one: "Un errore ha impedito il salvataggio di questo %{model}"
           other: "Non può essere salvato questo %{model}: %{count} errori."

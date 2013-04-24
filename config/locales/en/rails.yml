@@ -1,16 +1,16 @@
---- 
-en: 
-  activerecord: 
-    attributes: 
-      user: 
+---
+en:
+  activerecord:
+    attributes:
+      user:
         first_name: "Given name"
         last_name: "Last name"
         privacy_policy: "Privacy policy"
         terms: Terms
-    errors: 
-      full_messages: 
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "must be accepted"
         blank: "can't be blank"
         confirmation: "doesn't match confirmation"
@@ -31,23 +31,23 @@ en:
         too_long: "is too long (maximum is %{count} characters)"
         too_short: "is too short (minimum is %{count} characters)"
         wrong_length: "is the wrong length (should be %{count} characters)"
-      models: 
-        user: 
-          attributes: 
-            email: 
+      models:
+        user:
+          attributes:
+            email:
               blank: "can't be blank if password is given"
-            privacy_policy: 
+            privacy_policy:
               accepted: "must be accepted"
-            terms: 
+            terms:
               accepted: "must be accepted"
-        user_session: 
+        user_session:
           email: "Email address"
           password: Password
           remember_me: "Stay logged in"
-      template: 
+      template:
         body: "There were problems with the following fields:"
-        header: 
+        header:
           one: "1 error prohibited this %{model} from being saved"
           other: "%{count} errors prohibited this %{model} from being saved"
-    models: 
+    models:
       user: User

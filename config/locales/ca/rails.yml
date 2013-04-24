@@ -1,16 +1,16 @@
---- 
-ca: 
-  activerecord: 
-    attributes: 
-      user: 
+---
+ca:
+  activerecord:
+    attributes:
+      user:
         first_name: "Nom de pila"
         last_name: Cognom
         privacy_policy: "Política de privacitat"
         terms: Termes
-    errors: 
-      full_messages: 
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "cal que s'accepti"
         blank: "No pot estar en blanc"
         empty: "no pot estar buit"
@@ -30,19 +30,19 @@ ca:
         too_long: "és massa llarg (el màxim és de %{count} caràcters)"
         too_short: "és massa curt (el mínim són %{count} caràcters)"
         wrong_length: "és una llargària incorrecte (hauria de ser de %{count} caràcters)"
-      models: 
-        user: 
-          attributes: 
-            email: 
+      models:
+        user:
+          attributes:
+            email:
               blank: "no pot ser buit si s'ha determinat una contrasenya"
-            privacy_policy: 
+            privacy_policy:
               accepted: "s'ha d'acceptar"
-            terms: 
+            terms:
               accepted: "s'ha d'acceptar"
-        user_session: 
+        user_session:
           email: "Adreça de correu electrònic"
           password: Contrasenya
-      template: 
+      template:
         body: "Van haver-hi problemes amb els següents camps:"
-    models: 
+    models:
       user: Usuari

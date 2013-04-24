@@ -1,16 +1,16 @@
---- 
-sk: 
-  activerecord: 
-    attributes: 
-      user: 
+---
+sk:
+  activerecord:
+    attributes:
+      user:
         first_name: "Krstné meno"
         last_name: Priezvisko
         privacy_policy: "Ochrana súkromia"
         terms: "Podmienky použitia"
-    errors: 
-      full_messages: 
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "musí byť potvrdené"
         blank: "je povinná položka"
         confirmation: "nebolo potvrdené"
@@ -31,23 +31,23 @@ sk:
         too_long: "je príliš dlhá/ý (max. %{count} znakov)"
         too_short: "je príliš krátky/a (min. %{count} znakov)"
         wrong_length: "nemá správnu dĺžku (očakáva sa %{count} znakov)"
-      models: 
-        user: 
-          attributes: 
-            email: 
+      models:
+        user:
+          attributes:
+            email:
               blank: "nemôže byt prázdne keď je zadané heslo"
-            privacy_policy: 
+            privacy_policy:
               accepted: "musí byť akceptované"
-            terms: 
+            terms:
               accepted: "musí byť akceptované"
-        user_session: 
+        user_session:
           email: "Emailová adresa"
           password: Heslo
           remember_me: "Ostať prihlásený"
-      template: 
+      template:
         body: "Nasledujúce polia obsahujú chybne vyplnené údaje:"
-        header: 
+        header:
           one: "Pri ukladaní objektu %{model} došlo k chybám a nebolo ho možné uložiť"
           other: "Pri ukladaní objektu %{model} došlo k %{count} chybám a nebolo ho možné uložiť"
-    models: 
+    models:
       user: Užívateľ

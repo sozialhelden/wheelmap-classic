@@ -1,16 +1,16 @@
---- 
-zh-tw: 
-  activerecord: 
-    attributes: 
-      user: 
+---
+zh-tw:
+  activerecord:
+    attributes:
+      user:
         first_name: 名
         last_name: 姓氏
         privacy_policy: 隱私政策
         terms: 使用條款
-    errors: 
-      full_messages: 
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: 必須被接受
         blank: 不能留白
         confirmation: 與確認值不符合
@@ -31,23 +31,23 @@ zh-tw:
         too_long: "太長 (最長 %{count} 個字元)"
         too_short: "太短 (最短為 %{count} 個字元)"
         wrong_length: "長度不符 (必須為 %{count} 個字元) "
-      models: 
-        user: 
-          attributes: 
-            email: 
+      models:
+        user:
+          attributes:
+            email:
               blank: 若有密碼必須填寫
-            privacy_policy: 
+            privacy_policy:
               accepted: 必須被接受
-            terms: 
+            terms:
               accepted: 必須被接受
-        user_session: 
+        user_session:
           email: 電子郵件
           password: 密碼
           remember_me: 保持登入
-      template: 
+      template:
         body: 以下欄位出現問題：
-        header: 
+        header:
           one: "因為一個錯誤導致 %{model} 無法存檔"
           other: "%{count} 個錯誤導致此 %{model} 存檔失敗。"
-    models: 
+    models:
       user: 使用者

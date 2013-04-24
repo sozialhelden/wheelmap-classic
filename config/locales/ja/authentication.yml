@@ -1,25 +1,25 @@
---- 
-ja: 
-  devise: 
-    confirmations: 
+---
+ja:
+  devise:
+    confirmations:
       confirmed: あなたのアカウントは確認できました。現在サイインしています。
       link: 確認手順を受け取っていない？
       send_instructions: 数分であなたのアカウントを確認する手順がメールで届きます。
       send_paranoid_instructions: もしあなたのアカウントがあれば、あなたのアカウントの確認手順が書かれたメールが数分で届きます。
-    destroy: 
+    destroy:
       confirm: 本当によろしいですか？
       headline: アカウントを削除
       link: 今すぐ削除
-    edit: 
-      form: 
-        labels: 
+    edit:
+      form:
+        labels:
           current_password: "現在のパスワード <i>(変更確認のために必要です)</i>  "
           email: Eメール
           password: "パスワード <i>(変更しない場合は空白)</i> "
           password_confirmation: パスワードをもう一度入力
         submit: 変更を保存
       headline: アカウント管理
-    failure: 
+    failure:
       already_authenticated: あなたはサインイン済です。
       inactive: あなたのアカウントはまだ有効化されていません。
       invalid: メールアドレスかパスワードが違います。
@@ -28,53 +28,53 @@ ja:
       timeout: セッションの有効期限が切れています、サイインして続けてください。
       unauthenticated: 続けるにはログインか登録が必要です。
       unconfirmed: 続ける前にアカウントを確認してください。
-    mailer: 
-      confirmation_instructions: 
+    mailer:
+      confirmation_instructions:
         landing_page: 先ほどあなたのメールアドレスにお送りしたメールのリンクをクリックしてください。メールが届かない場合は、まずスパムフォルダーを探してください、もしそこになければサインアップページに戻ってやり直してください。
         subject: 確認手順
-      reset_password_instructions: 
+      reset_password_instructions:
         subject: パスワードリセット手順
-      unlock_instructions: 
+      unlock_instructions:
         subject: ロック解除手順
     mandatory: "* 必須項目"
-    omniauth_callbacks: 
+    omniauth_callbacks:
       failure: "%{kind} での認証に失敗。エラー: \"%{reason}\"。"
       success: "%{kind} でログインしました"
-    password_recovery: 
-      form: 
-        labels: 
+    password_recovery:
+      form:
+        labels:
           email: Eメール
         submit: パスワードをリセット
       headline: パスワードを忘れた？
-    password_reset: 
-      email: 
+    password_reset:
+      email:
         comment: あなたがパスワード変更を要求した記憶が無い場合は、このメールは無視してください<br/>あなたのパスワードはこのリンクをクリックしなければ変更されません。
         headline: "ようこそ %{email} さん"
         link: パスワードを変更
         text: あなたのパスワード変更要求がありました。あなたのものであれば次のリンクをクリックして変更できます。そうでなければ無視してください！
-      form: 
-        labels: 
+      form:
+        labels:
           password: 新しいパスワード
           password_confirmation: パスワード再入力
         submit: パスワードをリセット
       headline: パスワードをリセット
-    passwords: 
+    passwords:
       link: パスワードを忘れた？
       send_instructions: 数分でパスワードのリセット手順が書かれたメールが届きます。
       send_paranoid_instructions: アカウントがあれば、パスワードのリセット手順を書いたメールが数分で届きます。
       updated: あなたのパスワードは変更されました。現在サイインしています。
       updated_not_active: パスワードが変更されました
-    registrations: 
+    registrations:
       destroyed: さようなら！あなたのアカウントはキャンセルされました。またお会いできる日を楽しみにしています。
       inactive_signed_up: "登録に成功しましたが、%{reason} のためにログインできません。"
       link: サインアップ
-      reasons: 
+      reasons:
         inactive: 無効
         locked: ロック済
         unconfirmed: 未確認
       signed_up: サインアップが完了しました。あなたのメールアドレス宛てに確認メールが送信されました。
       updated: あなたのアカウントは更新されました。
-    sessions: 
+    sessions:
       inactive: あなたのアカウントはまだ有効化されていません。
       invalid: Eメールまたはパスワードが違います。
       invalid_token: 不正な認証トークン。
@@ -85,30 +85,30 @@ ja:
       timeout: セッション有効期限切れです。もう一度サイインしてから続けてください。
       unauthenticated: サイインインまたはサインアップして続けてください。
       unconfirmed: アカウントを確認してから続けてください。
-    sign_in: 
-      form: 
-        labels: 
+    sign_in:
+      form:
+        labels:
           email: Eメール
           password: パスワード
           remember_me: ログインを続けますか？
         submit: ログイン
       headline: ログイン
-    sign_out: 
+    sign_out:
       headline: ログアウト
-    sign_up: 
-      email: 
+    sign_up:
+      email:
         confirm_my_account: 自分のアカウントを確認
         please_confirm: 下記リンクからあなたのアカウントを確認できます：
         welcome: "ようこそ %{email} さん！"
-      form: 
-        labels: 
+      form:
+        labels:
           email: Eメール
           password: パスワード
           password_confirmation: パスワード再入力
           wants_newsletter: はい、wheelmapの最新情報を送ってください。（ただし月１回）
         submit: 登録
       headline: 登録
-    unlocks: 
+    unlocks:
       link: アンロック手順が届きませんでしたか？
       send_instructions: 数分でアカウントのアンロック手順を書いたメールが届きます。
       send_paranoid_instructions: アカウントがあれば、アカウントのロック解除手順を書いたメールが数分で届きます。

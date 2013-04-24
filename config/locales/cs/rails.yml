@@ -1,12 +1,12 @@
---- 
-cs: 
-  activerecord: 
-    attributes: 
-      user: 
+---
+cs:
+  activerecord:
+    attributes:
+      user:
         first_name: "Křestní jméno"
         terms: Podmínky
-    errors: 
-      messages: 
+    errors:
+      messages:
         accepted: "musí být potvrzeno"
         blank: "je povinná položka"
         confirmation: "nebylo potvrzeno"
@@ -27,15 +27,15 @@ cs:
         too_long: "je příliš dlouhý/á/é (max. %{count} znaků)"
         too_short: "je příliš krátký/á/é (min. %{count} znaků)"
         wrong_length: "nemá správnou délku (očekáváno %{count} znaků)"
-      models: 
-        user: 
-          attributes: 
-            terms: 
+      models:
+        user:
+          attributes:
+            terms:
               accepted: "musí být přijaté"
-        user_session: 
+        user_session:
           remember_me: "Zůstaňte přihlášení"
-      template: 
+      template:
         body: "Následující pole obsahují chybně vyplněné údaje: "
-        header: 
+        header:
           one: "Při ukládání objektu %{model} došlo k chybám a nebylo jej možné uložit"
           other: "Při ukládání objektu %{model} došlo ke %{count} chybám a nebylo možné jej uložit"

@@ -1,10 +1,10 @@
---- 
-tr: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+tr:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "kabul edilmeli"
         blank: doldurulmalı
         confirmation: "teyidiyle uyuşmamakta"
@@ -25,13 +25,13 @@ tr:
         too_long: "çok uzun (en fazla %{count} karakter)"
         too_short: "çok kısa (en az %{count} karakter)"
         wrong_length: "yanlış uzunlukta (tam olarak %{count} karakter olmalı)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: E-Posta-Adres
           password: Parola
           remember_me: "Kayıtlı kal"
-      template: 
+      template:
         body: "Lütfen aşağıdaki hataları düzeltiniz:"
-        header: 
+        header:
           one: "%{model} girişi kaydedilemedi: 1 hata."
           other: "%{model} girişi kadedilemedi: %{count} hata."

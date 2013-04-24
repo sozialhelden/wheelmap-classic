@@ -1,24 +1,24 @@
---- 
-pt: 
-  devise: 
-    confirmations: 
+---
+pt:
+  devise:
+    confirmations:
       confirmed: "A sua conta está confirmada. Está agora ligado à sua conta."
       link: "Não recebeu a confirmação com instruções?"
       send_instructions: "Receberá dentro de minutos um e-mail com intruções de como confirmar a sua conta."
-    destroy: 
+    destroy:
       confirm: "Tem a certeza?"
       headline: "Apagar a conta."
       link: "Apagar agora"
-    edit: 
-      form: 
-        labels: 
+    edit:
+      form:
+        labels:
           current_password: "Palavra passe actual <i> (precisamos do seguinte para confirmar a alteração) </i>"
           email: E-mail
           password: "Palavra passe <i> (deixar em branco se não quiser mudar) </i>"
           password_confirmation: "Repita a palavra passe"
         submit: "Gravar mudanças"
       headline: "Opções da conta"
-    failure: 
+    failure:
       inactive: "A sua conta ainda nao foi activada."
       invalid: "Palavra passe ou Email inválido. "
       invalid_token: d
@@ -26,45 +26,45 @@ pt:
       timeout: "A sua sess"
       unauthenticated: "Voçê tem de se registrar antes de poder continuar.  "
       unconfirmed: "Voçê tem de confirmar a sua conta antes de continuar."
-    mailer: 
-      confirmation_instructions: 
+    mailer:
+      confirmation_instructions:
         subject: "Confirmação das instruções"
-      reset_password_instructions: 
+      reset_password_instructions:
         subject: "Restabelecer as intruções sobre a palavra passe"
-      unlock_instructions: 
+      unlock_instructions:
         subject: "Desbloquear as instruções  "
     mandatory: "* campo obrigatório"
-    omniauth_callbacks: 
+    omniauth_callbacks:
       failure: "não pôde ser confirmado de  %{kind} porque \"%{reason}"
       success: "Autorizado com sucesso de %{kind} conta"
-    password_recovery: 
-      form: 
-        labels: 
+    password_recovery:
+      form:
+        labels:
           email: E-mail
         submit: "Restabelecer a sua palavra passe"
       headline: "Esqueceu-se da palavra passe?"
-    password_reset: 
-      email: 
+    password_reset:
+      email:
         comment: "Se não pediu para alterar a sua palavra passe, por favor ignore este mail <br/>. A sua palavra passe não será alterada a não ser que carregue no seguinte link."
         headline: "Bem vindo %{email}"
         link: "Mudar a palavra passe"
         text: "Alguém pediu para alterar a sua palavra passe. Pode fazer essa alteração carregando no seguinte link: "
-      form: 
-        labels: 
+      form:
+        labels:
           password: "Nova palavra passe"
           password_confirmation: "Repita a palavra passe"
         submit: "Restabelecer a palavra passe"
       headline: "Restabelecer a palavra passe"
-    passwords: 
+    passwords:
       link: "Esquececeu-se da palavra passe?"
       send_instructions: "Dentro de minutos receberá um mail com as instruções de como restablecer a sua palavra passe"
       updated: "A sua palavra passe foi alterada con sucesso. Está agora ligado à sua conta."
-    registrations: 
+    registrations:
       destroyed: "Adeus! A sua conta foi cancelada com sucesso. Até breve."
       link: "Criar conta"
       signed_up: "Conta criada com sucesso. Uma confirmação foi mandada para o seu mail."
       updated: "A actualização da sua conta decorreu com sucesso"
-    sessions: 
+    sessions:
       inactive: "A sua conta ainda não foi activada"
       invalid: "E-mail ou palavra passe inválida "
       invalid_token: "Ficha de autentificação inválida"
@@ -75,25 +75,25 @@ pt:
       timeout: "A sua sessão expiou, por favor volte a entrar na sua conta para continuar."
       unauthenticated: "Tem de criar uma conta ou entrar na sua conta para continuar."
       unconfirmed: "Tem de confirmar a sua conta antes de continuar"
-    sign_in: 
-      form: 
-        labels: 
+    sign_in:
+      form:
+        labels:
           email: E-mail
           password: "Palavra passe"
           remember_me: "manter-se ligado à sua conta"
         submit: entrar
       headline: Entrar
-    sign_out: 
+    sign_out:
       headline: Sair
-    sign_up: 
-      form: 
-        labels: 
+    sign_up:
+      form:
+        labels:
           email: E-mail
           password: "Palavra passe"
           password_confirmation: "Repita a palavra passe"
         submit: Registrar-se
       headline: Registrar-se
-    unlocks: 
+    unlocks:
       link: "Não recebeu instruções para desbloquear a sua conta?"
       send_instructions: "Receberá dentro de minutos um mail com intruções de como desbloquear a sua conta."
       unlocked: "A sua conta foi desbloqueada com sucesso. Está agora ligado(a) à sua conta"
