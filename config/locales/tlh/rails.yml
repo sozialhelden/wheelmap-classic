@@ -1,10 +1,10 @@
---- 
-tlh: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+tlh:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: lajnISlu'
         blank: chImlaHbe'
         confirmation: "rapbe' chaw' mI'"
@@ -25,13 +25,13 @@ tlh:
         too_long: "tlhoy tIq (%{count} pIqaDmey 'oH 'aqroS'e')"
         too_short: "tlhoy run (%{count} pIqaDmey 'oH 'rav'e')"
         wrong_length: "chuq muj 'oH (%{count} pIqaDmey 'oHnIS)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: "jabbI'ID ngu'wI'"
           password: "pegh mu'"
           remember_me: "'eltaH"
-      template: 
+      template:
         body: "Qaghmey ngaS permeyvam:"
-        header: 
+        header:
           one: "qonpu' %{model}vam 'e' bot wa' Qagh"
           other: "qonpu' %{model}vam 'e' bot %{count} Qaghmey"

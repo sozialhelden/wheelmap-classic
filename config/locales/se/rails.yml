@@ -1,10 +1,10 @@
---- 
-se: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+se:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "måste accepteras"
         blank: "får inte vara tomt"
         confirmation: "måste vara samma som det upprepade"
@@ -25,17 +25,17 @@ se:
         too_long: "är för långt {max %{count} bokstäver}"
         too_short: "är för kort (min %{count} bokstäver)"
         wrong_length: "är inte av korrekt längd ( borde vara %{count} bokstäver)"
-      models: 
-        user: 
-          attributes: 
-            terms: 
+      models:
+        user:
+          attributes:
+            terms:
               accepted: "måste godkännas"
-        user_session: 
+        user_session:
           email: E-postadress
           password: Lösenord
           remember_me: "Kom ihåg mig"
-      template: 
+      template:
         body: "Det var problem med följande fält:"
-        header: 
+        header:
           one: "1 fel förhindrade denna %{model} från att sparas"
           other: "%{count} fel förhindrade denna %{model} från att sparas"

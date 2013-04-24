@@ -1,25 +1,25 @@
---- 
-fr: 
-  devise: 
-    confirmations: 
+---
+fr:
+  devise:
+    confirmations:
       confirmed: "Votre adresse mail a été confirmé."
       link: "Vous n'avez pas reçu de mail de confirmation?\n"
       send_instructions: "Dans quelques minutes vous allez recevoir un mail avec un lien pour confirmer votre compte."
       send_paranoid_instructions: "Si nous possédons votre adresse mail, vous recevrez dans quelques minutes un mail avec des instructions pour confirmer votre compte."
-    destroy: 
+    destroy:
       confirm: "Vous êtes sûr?"
       headline: "Annuler le compte"
       link: "Effacer maintenant"
-    edit: 
-      form: 
-        labels: 
+    edit:
+      form:
+        labels:
           current_password: "Mot de passe actuel <i>(nous en avons besoin pour confirmer votre modification)</i> "
           email: E-mail
           password: "Mot de passe <i>(ne pas remplir si vous ne voulez pas le changer)</i> "
           password_confirmation: "Répéter mot de passe"
         submit: "Sauvegarder les modifications"
       headline: "Gérer votre compte"
-    failure: 
+    failure:
       already_authenticated: "Vous êtes déjà enregistré."
       inactive: "Votre compte n'était pas encore activé."
       invalid: "email ou mot de passe non valide."
@@ -28,62 +28,62 @@ fr:
       timeout: "Votre session a expiré, veuillez vous reconnecter pour continuer."
       unauthenticated: "Merci de vous connecter ou de vous identifier avant de continuer."
       unconfirmed: "Nouveau: merci de confirmer votre compte avant de continuer en cliquant sur le lien que nous vous avons envoyé par mail. Si vous n'avez pas reçu de mail, merci de cliquer à la fin de la page sur \"pas reçu de mail de confirmation\""
-    mailer: 
-      confirmation_instructions: 
+    mailer:
+      confirmation_instructions:
         landing_page: "Merci de cliquer sur le lien que nous venons de vous envoyer à votre adresse mail. Si vous n'avez pas reçu de mail, merci de vérifier parmi les spams. Si le mail ne s'y trouve pas non plus, demandez l'envoie d'un nouveau mail."
         subject: "Encore une petite étape pour activer votre compte d'utilisateur."
-      reset_password_instructions: 
+      reset_password_instructions:
         subject: "Réinitialiser les instructions de mot de passe"
-      unlock_instructions: 
+      unlock_instructions:
         subject: "Instructions pour débloquer votre compte d'utilisateur"
     mandatory: "* champ obligatoire"
-    omniauth_callbacks: 
+    omniauth_callbacks:
       failure: "Erreur d'autorisation avec %{kind} parce que \"%{reason}\". "
       permission_missing: "Vous ne nous avez pas accordé les droits nécessaires."
       success: "Vérifié avec succès du compte %{kind}"
-    password_recovery: 
-      form: 
-        labels: 
+    password_recovery:
+      form:
+        labels:
           email: E-mail
         submit: "Réinitialiser le mot de passe"
       headline: "Mot de passe oublié?"
-    password_reset: 
-      email: 
+    password_reset:
+      email:
         comment: "Si vous n'avez pas demandé de changer votre mot de passe, ignorez cet e-mail s.v.p. <br/>Votre mot de passe ne sera pas changé sauf si vous cliquez sur ce lien et que vous le remplacez par un nouveau mot de passe."
         headline: "Bienvenue %{email} "
         link: "Changer le mot de passe"
         text: |-
             Quelqu'un a demandé de changer votre mot passe, s'il s'agissait de vous-même, vous pouvez le changer en cliquant sur le lien suivant:
             Dans le cas contraire merci de l'ignorer.
-      form: 
-        labels: 
+      form:
+        labels:
           password: "Nouveau mot de passe"
           password_confirmation: "Répéter le mot de passe"
         submit: "Réinitialiser le mot de passe"
       headline: "Réinitialiser le mot de passe"
-    passwords: 
+    passwords:
       link: "Mot de passe oublié?"
       send_instructions: "Dans quelques minutes, vous allez recevoir un e-mail avec des instructions pour réinitialiser votre mot de passe."
       send_paranoid_instructions: "Si nous possédons votre adresse mail, nous vous enverrons un mail avec un lien pour la récupération du mot de passe"
       updated: "Votre mot de passe a été modifié avec succès. Maintenant vous êtes connecté."
       updated_not_active: "Votre mot de passe a été modifié avec succès."
-    registrations: 
+    registrations:
       destroyed: "Votre compte a été supprimé avec succès. Nous espérons vous revoir bientôt."
       inactive_signed_up: "Vous vous êtes enregistré avec succès mais nous ne pouvons pas vous connecter. Raison: \"%{reason}\""
       link: Enregistrer
-      reasons: 
+      reasons:
         inactive: "non actif"
         locked: bloqué
         unconfirmed: "non confirmé"
       signed_up: "Votre inscription était couronnée de succès. Dès l'activation de votre compte vous recevrez un mail de confirmation à votre adresse mail. "
       updated: "Vous avez actualisé votre compte utilisateur avec succès."
-    sessions: 
+    sessions:
       inactive: "Votre compte n'était pas encore activé. Pour l'activation, merci de cliquer sur le lien que nous avons envoyé par mail. "
       invalid: "L'adresse mail ou le mot de passe ne sont pas valides."
       invalid_token: "Jeton d'authentification incorrect. Merci de supprimer les cookies dans votre navigateur et essayez encore une fois."
       link: S'identifier
       locked: "Votre compte est fermé."
-      new: 
+      new:
         no_osm_account: "Pas chez OpenStreetMap?"
         osm_promo_text: "La Wheelmap est basée sur la cartographie de OpenStreetMap (OSM). L'OSM est une mappemonde libre de droits, développée par des personnes comme vous. Une Wikipedia pour cartes géographiques. Pour pouvoir traiter des lieux ou d'ajouter de nouveaux lieux, il est nécessaire de posséder un compte utilisateur OSM et d'être connecté avec celui-ci ici."
         promo_text_thank_you: "Merci pour votre aide!"
@@ -94,30 +94,30 @@ fr:
       timeout: "Votre session a expiré, reconnecter s.v.p."
       unauthenticated: "Avant de continuer, merci de vous inscrire ou de vous connecter. "
       unconfirmed: "Il faut d'abord confirmer votre compte d'utilisateur avant de continuer. Pour confirmer, merci de cliquer sur le lien que nous vous avons envoyé par mail. "
-    sign_in: 
-      form: 
-        labels: 
+    sign_in:
+      form:
+        labels:
           email: E-mail
           password: "Mot de passe"
           remember_me: "Rester connecté?"
         submit: Connecter
       headline: Connexion
-    sign_out: 
+    sign_out:
       headline: Déconnexion
-    sign_up: 
-      email: 
+    sign_up:
+      email:
         confirm_my_account: "Confirmer mon compte"
         please_confirm: "Vous pouvez confirmer votre adresse mail en cliquant sur le lien suivant:"
         welcome: "Bienvenue %{email}! "
-      form: 
-        labels: 
+      form:
+        labels:
           email: E-mail
           password: "Mot de passe"
           password_confirmation: "Répéter le mot de passe"
           wants_newsletter: "Oui, tenez-moi au courant des nouveautés sur Wheelmap. (Pas plus d'une fois par mois.)"
         submit: S'inscrire
       headline: S'inscrire
-    unlocks: 
+    unlocks:
       link: "Vous n'avez pas reçu les instructions pour débloquer votre compte?"
       send_instructions: "Dans quelques minutes vous allez recevoir un mail avec des instructions pour déverrouiller votre compte."
       send_paranoid_instructions: "Si votre compte existe, vous recevrez un mail indiquant comment le débloquer."

@@ -1,10 +1,10 @@
---- 
-el: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+el:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "Πρέπει να γίνει δεκτό"
         blank: "Πρέπει να συμπληρωθεί"
         confirmation: "Δεν αντιστοιχεί με την επιβεβαίωση"
@@ -24,13 +24,13 @@ el:
         too_long: "Είναι πολύ μεγάλο (το μέγιστο μήκος είναι %{count} χαρακτήρες)"
         too_short: "Είναι πολύ μικρό (το μικρότερο μήκος είναι %{count} χαρακτήρες)"
         wrong_length: "Έχει λανθασμένο μήκος (πρέπει να είναι %{count} χαρακτήρες)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: "Email διεύθυνση"
           password: "Κωδικός πρόσβασης"
           remember_me: "Διατήρηση σύνδεσης"
-      template: 
+      template:
         body: "Υπήρξαν προβλήματα στα εξής πεδία"
-        header: 
+        header:
           one: "1 λάθος παρεμπόδισε αυτό το %{model} να αποθηκευθεί."
           other: "%{count} λάθη εμπόδισαν αυτό το %{model} να αποθηκευθεί."

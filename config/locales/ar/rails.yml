@@ -1,14 +1,14 @@
---- 
-ar: 
-  activerecord: 
-    attributes: 
-      user: 
+---
+ar:
+  activerecord:
+    attributes:
+      user:
         first_name: "الإسم الأول"
         last_name: "الإسم الأخير"
-    errors: 
-      full_messages: 
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "يجب أن تقبل"
         blank: " يرجى ملء الحقل"
         confirmation: "غير متوافق مع التأكيد"
@@ -29,19 +29,19 @@ ar:
         too_long: "%{count}أطول من اللازم (الحد الأقصى هو)"
         too_short: "%{count} أقصر من اللازم (الحد الأدنى هو)"
         wrong_length: "%{count} الطول غير مناسب (يجب أن يكون )"
-      models: 
-        user: 
-          attributes: 
-            email: 
+      models:
+        user:
+          attributes:
+            email:
               blank: "أدخل كلمة المرور"
-        user_session: 
+        user_session:
           email: "عنوان البريد الالكتروني"
           password: "كلمة المرور"
           remember_me: "البقاء مسجلا"
-      template: 
+      template:
         body: "يرجى التحقق من الحقول التالية:"
-        header: 
+        header:
           one: "%{model} ليس بالامكان الحفظ خطأ واحد."
           other: "%{count}  يوجد خطأ %{model} لايمكن الحفظ"
-    models: 
+    models:
       user: مستخدم

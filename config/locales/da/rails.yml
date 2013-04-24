@@ -1,10 +1,10 @@
---- 
-da: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+da:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "skal accepteres"
         blank: "skal udfyldes"
         confirmation: "stemmer ikke overens med bekræftelse"
@@ -25,13 +25,13 @@ da:
         too_long: "er for langt (maksimum %{count} tegn)"
         too_short: "er for kort (minimum %{count} tegn)"
         wrong_length: "har forkert længde (skulle være %{count} tegn)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: E-mail-adresse
           password: Adgangskode
           remember_me: "Forbliv logget inde"
-      template: 
+      template:
         body: "Der var problemer med følgende felter:"
-        header: 
+        header:
           one: "En fejl forhindrede %{model} i at blive gemt"
           other: "%{count} fejl forhindrede %{model} i at blive gemt"

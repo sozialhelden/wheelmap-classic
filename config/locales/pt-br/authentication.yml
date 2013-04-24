@@ -1,25 +1,25 @@
---- 
-pt-br: 
-  devise: 
-    confirmations: 
+---
+pt-br:
+  devise:
+    confirmations:
       confirmed: "Seu e-mail foi confirmado com sucesso."
       link: "E-mail de confirmação não recebido?"
       send_instructions: "Dentro de alguns minutos você receberá um e-mail com instruções como confirmar a sua conta."
       send_paranoid_instructions: "Se seu e-mail está no nosso banco de dados, você vai receber um e-mail com instruções para confirmar sua conta em alguns minutos."
-    destroy: 
+    destroy:
       confirm: "Tem certeza?"
       headline: "Apagar a conta."
       link: "Apagar agora"
-    edit: 
-      form: 
-        labels: 
+    edit:
+      form:
+        labels:
           current_password: "Palavra passe actual <i> (precisamos do seguinte para confirmar a alteração) </i>"
           email: E-mail
           password: "Senha <i>(deixar em branco se não quiser mudar)</i>"
           password_confirmation: "Repetir senha"
         submit: "Salvar mudanças"
       headline: "Configuração da conta"
-    failure: 
+    failure:
       already_authenticated: "Você já está conectado."
       inactive: "A sua conta ainda não foi ativada."
       invalid: "Palavra passe ou Email inválido. "
@@ -28,60 +28,60 @@ pt-br:
       timeout: "A sua sess"
       unauthenticated: "Voçê precisa se conectar ou registrar parar continuar.  "
       unconfirmed: "Por favor, confirme sua conta antes de continuar. Para este fim, mandamo-lhe um e-mail com um link. Se você não tiver o recebido, clique em \"E-mail de confirmação não recebido?\" no final desta página. "
-    mailer: 
-      confirmation_instructions: 
+    mailer:
+      confirmation_instructions:
         landing_page: "Por favor, clique no link que acabamos de mandar para seu e-mail. Se você não recebeu nenhum e-mail, também veja seu lixo eletrônico. Se este não estiver lá, você pode solicitar o e-mail novamente."
         subject: "Mais um passo para ativar sua conta"
-      reset_password_instructions: 
+      reset_password_instructions:
         subject: "Instruções para redefinir a senha"
-      unlock_instructions: 
+      unlock_instructions:
         subject: "Instruções para desbloquear sua conta"
     mandatory: "* campo obrigatório"
-    omniauth_callbacks: 
+    omniauth_callbacks:
       failure: "não pôde ser confirmado de  %{kind} porque \"%{reason}"
       permission_missing: "Você não nos deu os direitos necessários."
       success: "Autorizado com sucesso com %{kind}"
-    password_recovery: 
-      form: 
-        labels: 
+    password_recovery:
+      form:
+        labels:
           email: E-mail
         submit: "Redefinir senha"
       headline: "Esqueceu sua senha?"
-    password_reset: 
-      email: 
+    password_reset:
+      email:
         comment: "Se não pediu para alterar a sua senha, por favor ignore este e-mail <br/>. A sua senha não será alterada a não ser que clique no seguinte link."
         headline: "Bem vindo %{email}"
         link: "Mudar a palavra passe"
         text: "Alguém pediu para alterar a sua palavra passe. Pode fazer essa alteração carregando no seguinte link: "
-      form: 
-        labels: 
+      form:
+        labels:
           password: "Nova senha"
           password_confirmation: "Repetir senha"
         submit: "Escolher nova senha"
       headline: "Restabelecer a palavra passe"
-    passwords: 
+    passwords:
       link: "Esquececeu sua senha?"
       send_instructions: "Dentro de alguns minutos receberá um e-mail com instruções para criar uma nova senha."
       send_paranoid_instructions: "Se seu e-mail estiver no nosso banco de dados, você vai receber um e-mail com um link para redefinir sua senha."
       updated: "A sua senha foi alterada com sucesso. Está conectado(a) à sua conta."
       updated_not_active: "A sua senha foi modificada com sucesso."
-    registrations: 
+    registrations:
       destroyed: "A sua conta foi cancelada com sucesso."
       inactive_signed_up: "Registrado com sucesso. Mas não conseguimos te conectar. Motivo: \"%{reason}\""
       link: "Criar conta"
-      reasons: 
+      reasons:
         inactive: inativo
         locked: bloqueado
         unconfirmed: "não confirmado"
       signed_up: "Conta criada com sucesso."
       updated: "Sua conta foi atualizada."
-    sessions: 
+    sessions:
       inactive: "A sua conta ainda não foi confirmada. Para confirmá-la clique no link que mandamos por e-mail."
       invalid: "E-mail ou senha inválida "
       invalid_token: "Código de autentificação inválido."
       link: Entrar
       locked: "A sua conta está bloqueada."
-      new: 
+      new:
         no_osm_account: "Nenhuma conta em OpenStreetMap?"
         osm_promo_text: "O Wheelmap é baseado em mapas do OpenStreetMap (OSM). OSM é um mapa do mundo criado por pessoas como você. Uma Wikipedia de mapas. Para editar lugares existentes ou criar novos lugares você precisa duma conta no OSM."
         promo_text_thank_you: "Obrigado por sua ajuda!"
@@ -93,30 +93,30 @@ pt-br:
       timeout: "A sua sessão expirou, por favor entre novamente."
       unauthenticated: "Por favor conecte-se ou registre-se novamente para continuar."
       unconfirmed: "Tem de confirmar a sua conta antes de continuar"
-    sign_in: 
-      form: 
-        labels: 
+    sign_in:
+      form:
+        labels:
           email: E-mail
           password: "Palavra passe"
           remember_me: "Deseja se manter conectado?"
         submit: Entrar
       headline: Entrar
-    sign_out: 
+    sign_out:
       headline: Sair
-    sign_up: 
-      email: 
+    sign_up:
+      email:
         confirm_my_account: "Confirmar minha conta."
         please_confirm: "Você pode confirmar seu e-mail clicando no seguinte link:"
         welcome: "Bem-vindo %{email}!"
-      form: 
-        labels: 
+      form:
+        labels:
           email: E-mail
           password: Senha
           password_confirmation: "Repetir senha"
           wants_newsletter: "Sim, mantenha-me informado sobre wheelmap. (Mas por favor não mais que uma vez por mês.)"
         submit: Registrar-se
       headline: Registrar-se
-    unlocks: 
+    unlocks:
       link: "Não recebeu instruções para desbloquear a sua conta?"
       send_instructions: "Dentro de alguns minutos receberá um e-mail com instruções para desbloquear a sua conta."
       send_paranoid_instructions: "Se você já tem uma conta, vai receber um e-mail para desbloqueá-la em alguns minutos."

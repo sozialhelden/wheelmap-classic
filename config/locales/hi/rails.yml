@@ -1,14 +1,14 @@
---- 
-hi: 
-  activerecord: 
-    attributes: 
-      user: 
+---
+hi:
+  activerecord:
+    attributes:
+      user:
         first_name: "दीया हुआ नाम "
         last_name: "उपनाम, सरनेम, कुलनाम"
-    errors: 
-      full_messages: 
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "स्वीकार किया जाना जरूरी"
         blank: "खाली नहीं रह सकता है"
         confirmation: "पुष्टिकरण मेल नहीं खाता"
@@ -29,19 +29,19 @@ hi:
         too_long: "अत्यधिक लंबा है (अधिकतम %{count} वर्ण हैं)"
         too_short: "अत्यधिक छोटा है (न्यूनतम %{count} वर्ण हैं)"
         wrong_length: "गलत लंबाई है (%{count} वर्ण युक्त होना चाहिए)"
-      models: 
-        user: 
-          attributes: 
-            email: 
+      models:
+        user:
+          attributes:
+            email:
               blank: "अगर पासवर्ड दिया है तो रिक्त नहीं छोड़ सकते"
-        user_session: 
+        user_session:
           email: "ईमेल का पता"
           password: पायवर्ड
           remember_me: "लॅाग इन रहिए"
-      template: 
+      template:
         body: "निम्नलिखित क्षेत्रों के साथ समस्या थी:"
-        header: 
+        header:
           one: "इस %{model} को सहेजे जाना एक त्रुटि के कारण नहीं हुआ"
           other: "इस %{model} को सहेजे जाना %{count} त्रुटि के कारण नहीं हुआ"
-    models: 
+    models:
       user: "यूज़र, इस्तेमाल करने वाला"

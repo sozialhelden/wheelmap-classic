@@ -1,14 +1,14 @@
---- 
-ru: 
-  activerecord: 
-    attributes: 
-      user: 
+---
+ru:
+  activerecord:
+    attributes:
+      user:
         first_name: "Дать имя"
         last_name: Фамилия
-    errors: 
-      full_messages: 
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: "нужно подтвердить"
         blank: "не может быть пустым"
         confirmation: "не совпадает с подтверждением"
@@ -29,19 +29,19 @@ ru:
         too_long: "слишком длинный (максимум %{count} знаков )"
         too_short: "слишком короткий (минимум %{count} знаков )"
         wrong_length: "не правильная длинна (должна быть %{count} знаков)"
-      models: 
-        user: 
-          attributes: 
-            email: 
+      models:
+        user:
+          attributes:
+            email:
               blank: "не может быть пустым, в случае предоставления пароля"
-        user_session: 
+        user_session:
           email: "Адрес электронной почты"
           password: пароль
           remember_me: "оставаться зарегистрированным"
-      template: 
+      template:
         body: "Проблемы возникли со следующими полями:"
-        header: 
+        header:
           one: "%{model}: сохранение не удалось из-за %{count} ошибки"
           other: "%{count} сохранение не удалось из-за ошибки %{model}"
-    models: 
+    models:
       user: Пользователь

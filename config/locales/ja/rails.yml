@@ -1,10 +1,10 @@
---- 
-ja: 
-  activerecord: 
-    errors: 
-      full_messages: 
+---
+ja:
+  activerecord:
+    errors:
+      full_messages:
         format: "%{attribute} %{message}"
-      messages: 
+      messages:
         accepted: 承認してください
         blank: 入力必須です
         confirmation: 確認入力が一致しません
@@ -25,13 +25,13 @@ ja:
         too_long: "が長すぎます (最大 %{count}文字)"
         too_short: "が短かすぎます (最小 %{count}文字)"
         wrong_length: "の文字数が誤っています (%{count}文字でなければなりません)"
-      models: 
-        user_session: 
+      models:
+        user_session:
           email: メールアドレス
           password: パスワード
           remember_me: ログインを続ける
-      template: 
+      template:
         body: 次の項目に問題がありました：
-        header: 
+        header:
           one: "エラーがひとつありこの %{model} は保存できませんでした"
           other: "%{count} 件のエラーがあり、この %{model} は保存できませんでした"
