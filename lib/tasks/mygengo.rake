@@ -1,5 +1,6 @@
 require 'locale_flatter'
 require 'locale_expander'
+require 'locale_extractor'
 
 def gengo_dir
   Rails.root.join('tmp', 'mygengo')
@@ -25,6 +26,18 @@ namespace 'mygengo' do
     sh "cd #{gengo_dir} && unzip all.zip"
     Dir[gengo_sub_dirs].each do |path|
       LocaleExpander.process path
+    end
+  end
+
+  desc 'Extracts subkey from translation file to external file.'
+  task :extract => [:environment] do
+    sub_key = ENV['KEY']
+    file_name = ENV['FILE']
+    raise "Use: bundle exec rake mygengo:extract KEY=devise FILE=authentication.yml" if sub_key.blank? or file_name.blank?
+    I18n.available_locales.each do |locale|
+      Dir["config/locales/#{locale}/*.yml"].each do |path|
+        LocaleExtractor.process path, locale, sub_key.split('.'), file_name
+      end
     end
   end
 

@@ -1,0 +1,37 @@
+--- 
+ko: 
+  activerecord: 
+    errors: 
+      full_messages: 
+        format: "%{attribute} %{message} "
+      messages: 
+        accepted: 승인해주세요
+        blank: "빈칸을 채워주세요"
+        confirmation: "입력한 내용이 일치하지 않습니다."
+        empty: "빈칸을 채워주세요"
+        equal_to: "%{count}과 같아야 합니다."
+        even: "짝수여야 합니다."
+        exclusion: "은(는) 예약되어 있습니다"
+        greater_than: "%{count} 보다 커야 합니다."
+        greater_than_or_equal_to: "%{count} 과 같거나 그 이상이어야 합니다."
+        inclusion: "은(는) 목록에 없습니다"
+        invalid: "은(는) 유효하지 않습니다"
+        less_than: "%{count} 보다 작아야 합니다."
+        less_than_or_equal_to: "%{count} 과 같거나 그 이하여야 합니다."
+        not_a_number: "은(는) 숫자가 아닙니다"
+        odd: "홀수여야 합니다"
+        record_invalid: "인증에 실패했습니다. %{errors}"
+        taken: "은(는) 이미 사용되고 있습니다."
+        too_long: "은(는) 너무 깁니다 (최대 %{count} 글자)"
+        too_short: "은(는) 너무 짧습니다 (최대 %{count} 글자)"
+        wrong_length: "은(는) 길이가 맞지 않습니다 (%{count} 글자여야 합니다)"
+      models: 
+        user_session: 
+          email: 메일주소
+          password: 비밀번호
+          remember_me: "로그인 상태유지"
+      template: 
+        body: "다음 항목에 문제가 있습니다 :"
+        header: 
+          one: "%{model} 저장 중 1개의 에러가 발생했습니다"
+          other: "%{model} 저장 중 %{count}개의 에러가 발생했습니다"

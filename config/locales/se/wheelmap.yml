@@ -28,6 +28,8 @@ se:
       models:
         user:
           attributes:
+            privacy_policy:
+              accepted: "måste godkännas"
             terms:
               accepted: "måste godkännas"
         user_session:
@@ -80,6 +82,7 @@ se:
       unconfirmed: "Du måste bekräfta ditt konto innan du kan fortsätta"
     mailer:
       confirmation_instructions:
+        landing_page: "Klicka på länken som vi skickat till din e-postadress. Om du saknar e-postmeddelande från oss så kolla för säkerhets skull i din skräppostmapp. Om det inte finns där så gå tillbaka till registreringssidan och gör ett nytt försök."
         subject: Valideringsinstruktioner
       reset_password_instructions:
         subject: "Instruktioner för att återställa lösenord"
@@ -261,7 +264,7 @@ se:
       find: Hitta
       label: "\"\""
       placeholder: "till exempel Sunset Boulevard L.A. eller Drottningholms slott, Stockholm"
-      title_add_place: "Lägg till an plats på denna position!"
+      title_add_place: "Lägg till en ny plats på denna position!"
     tagline: "Wheelmap logo"
     title: "Wheelmap - hitta rullstolstillgängliga platser"
   helpers:
@@ -320,10 +323,10 @@ se:
       link:
         large_map: "&laquo; Avbryt"
     errors:
-      default: "Ojdå, något blev fel. Men vi har blivit informerade om det!"
+      default: "Ojdå, något blev fel, men vi har blivit informerade om det!"
       not_authorized: "Tyvärr, inloggningen misslyckades"
       not_available: "Tyvärr, denna sida är just nu inte tillgänglig."
-      not_existent: "Tyvärr, denna sida finns inte längre."
+      not_existent: "Tyvärr, denna plats finns inte längre."
       not_found: "Tyvärr, denna sida hittades inte."
       param_missing: "Ange ett sökuttryck."
     flash:
@@ -515,6 +518,7 @@ se:
         computer: Datorer
         confectionery: Godisaffär
         convenience: Närbutik
+        deli: Delikatesser
         department_store: Varuhus
         doityourself: "Gör det själv"
         dry_cleaning: Kemtvätt
@@ -561,7 +565,7 @@ se:
           connected: "Status: kopplad"
           grant: "Koppla nu"
           not_connected: "Status: frånkopplad"
-          revoke: Frånkoppla
+          revoke: "Koppla ifrån"
       headline: "Ändra din profil"
   search:
     index:
@@ -629,6 +633,9 @@ se:
       not_accessible: "<em>Nej:</em> Ingångens tröskel är större än 7 cm eller så har den trappsteg. Rummen är inte tillgängliga"
       unknown_accessible: "<em>Okänd:</em> Hjälp till att uppdatera!"
   will_paginate:
+    next_label: "Nästa &#8594;"
     page_entries_info:
       single_page:
         other: "Visar alla %{count} %{model}"
+      single_page_html:
+        one: "Visar <b>1<b> %{model}"

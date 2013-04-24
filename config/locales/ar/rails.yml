@@ -1,0 +1,47 @@
+--- 
+ar: 
+  activerecord: 
+    attributes: 
+      user: 
+        first_name: "الإسم الأول"
+        last_name: "الإسم الأخير"
+    errors: 
+      full_messages: 
+        format: "%{attribute} %{message}"
+      messages: 
+        accepted: "يجب أن تقبل"
+        blank: " يرجى ملء الحقل"
+        confirmation: "غير متوافق مع التأكيد"
+        empty: " يرجى ملء الحقل"
+        equal_to: "%{count} يجب أن يساوي "
+        even: "يجب أن يكون العدد زوجي"
+        exclusion: محجوز
+        greater_than: "%{count} يجب أن يكون أكبر من"
+        greater_than_or_equal_to: "%{count} يجب أن يكون أكبر من أو يساوي "
+        inclusion: "ليس خيارا مقبولا"
+        invalid: خطأ
+        less_than: "%{count} يجب أن يكون أصغر من"
+        less_than_or_equal_to: "%{count} يجب أن يكون أصغر من أو يساوي "
+        not_a_number: "ليس رقما"
+        odd: "يجب أن يكون فردي"
+        record_invalid: " %{errors} فشل التحقق من صحة الرسالة"
+        taken: "غير متوفر (مستخدم)"
+        too_long: "%{count}أطول من اللازم (الحد الأقصى هو)"
+        too_short: "%{count} أقصر من اللازم (الحد الأدنى هو)"
+        wrong_length: "%{count} الطول غير مناسب (يجب أن يكون )"
+      models: 
+        user: 
+          attributes: 
+            email: 
+              blank: "أدخل كلمة المرور"
+        user_session: 
+          email: "عنوان البريد الالكتروني"
+          password: "كلمة المرور"
+          remember_me: "البقاء مسجلا"
+      template: 
+        body: "يرجى التحقق من الحقول التالية:"
+        header: 
+          one: "%{model} ليس بالامكان الحفظ خطأ واحد."
+          other: "%{count}  يوجد خطأ %{model} لايمكن الحفظ"
+    models: 
+      user: مستخدم

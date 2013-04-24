@@ -40,7 +40,8 @@ class LocaleFlatter
     locale = yaml.keys.first
     yaml = yaml[locale]
 
-    FileUtils.mkdir_p "./tmp/mygengo/#{locale}"
+    locale_dir = Rails.root.join('tmp','mygengo', locale)
+    FileUtils.mkdir_p locale_dir, :verbose => true unless File.exists?(locale_dir)
 
     # Mygengo uses the filename as the "section" name, so need to rename the "generic" yaml to something more useful.
     new_file = Pathname.new("./tmp/mygengo/#{locale}/#{file.basename}")

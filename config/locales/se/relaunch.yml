@@ -1,2 +1,18 @@
 ---
-se: ~
+se:
+  header:
+    navigation:
+      about_wheelmap: "Om Wheelmap"
+      choose_language: "Välj språk"
+      contact: Kontakt
+      map: Karta
+      projects: "Engagera dig"
+  home:
+    index:
+      overlay:
+        button: "OK, Nu startar vi!"
+        categories: "Filtrera platser utifrån kategorier"
+        filter: "Filtrera platser utifrån rullstolstillgänglighet"
+        headline: "Markera och hitta rullstolstillgängliga platser med hjälp av Wheelmap.org - världsomfattande och gratis. Det är lätt:"
+        lookup: "Sök en speciell plats"
+        secondary_headline: "Vårt \"trafikljussystem\" för att markera rullstolstillgängligheten hos allmänna platser:"
