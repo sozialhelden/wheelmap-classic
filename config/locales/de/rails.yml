@@ -1,0 +1,53 @@
+--- 
+de: 
+  activerecord: 
+    attributes: 
+      user: 
+        first_name: Vorname
+        last_name: Nachname
+        privacy_policy: Datenschutzbestimmungen
+        terms: Nutzungsbedingungen
+    errors: 
+      full_messages: 
+        format: "%{attribute} %{message}"
+      messages: 
+        accepted: "muss akzeptiert werden"
+        blank: "muss ausgefüllt werden"
+        confirmation: "stimmt nicht mit der Bestätigung überein"
+        empty: "muss ausgefüllt werden"
+        equal_to: "muss genau %{count} sein"
+        even: "muss gerade sein"
+        exclusion: "ist nicht verfügbar"
+        greater_than: "muss größer als %{count} sein"
+        greater_than_or_equal_to: "muss größer oder gleich %{count} sein"
+        inclusion: "ist nicht in der Liste aufgeführt"
+        invalid: "ist nicht gültig"
+        less_than: "muss kleiner als %{count} sein"
+        less_than_or_equal_to: "muss kleiner oder gleich %{count} sein"
+        not_a_number: "ist keine Zahl"
+        odd: "muss ungerade sein"
+        record_invalid: "Gültigkeitsprüfung ist fehlgeschlagen: %{errors}"
+        taken: "ist bereits vergeben"
+        too_long: "ist zu lang (maximal %{count} Zeichen)"
+        too_short: "ist zu kurz (mindestens %{count} Zeichen)"
+        wrong_length: "hat die falsche Länge (muss genau %{count} Zeichen haben)"
+      models: 
+        user: 
+          attributes: 
+            email: 
+              blank: "muss ausgefüllt werden, wenn ein Passwort gesetzt wird"
+            privacy_policy: 
+              accepted: "müssen akzeptiert werden"
+            terms: 
+              accepted: "müssen akzeptiert werden"
+        user_session: 
+          email: E-Mail-Adresse
+          password: Passwort
+          remember_me: "Angemeldet bleiben"
+      template: 
+        body: "Bitte überprüfen Sie die folgenden Felder:"
+        header: 
+          one: "Konnte dieses %{model}-Objekt nicht speichern, da Fehler auftrat."
+          other: "Konnte dieses %{model}-Objekt nicht speichern, da %{count} Fehler auftraten."
+    models: 
+      user: Benutzer

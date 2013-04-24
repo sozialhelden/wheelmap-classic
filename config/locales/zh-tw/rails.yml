@@ -1,0 +1,53 @@
+--- 
+zh-tw: 
+  activerecord: 
+    attributes: 
+      user: 
+        first_name: 名
+        last_name: 姓氏
+        privacy_policy: 隱私政策
+        terms: 使用條款
+    errors: 
+      full_messages: 
+        format: "%{attribute} %{message}"
+      messages: 
+        accepted: 必須被接受
+        blank: 不能留白
+        confirmation: 與確認值不符合
+        empty: 不能留空
+        equal_to: "必須等於 %{count}"
+        even: 必須是偶數
+        exclusion: 已被預定
+        greater_than: "必須大於 %{count}"
+        greater_than_or_equal_to: "必須大於等於 %{count}"
+        inclusion: 不在清單中
+        invalid: 無效
+        less_than: "必須少於 %{count}"
+        less_than_or_equal_to: "必須小於或等於 %{count}"
+        not_a_number: 不是數字
+        odd: 必須是奇數
+        record_invalid: "驗證失敗: %{errors}"
+        taken: 已被使用
+        too_long: "太長 (最長 %{count} 個字元)"
+        too_short: "太短 (最短為 %{count} 個字元)"
+        wrong_length: "長度不符 (必須為 %{count} 個字元) "
+      models: 
+        user: 
+          attributes: 
+            email: 
+              blank: 若有密碼必須填寫
+            privacy_policy: 
+              accepted: 必須被接受
+            terms: 
+              accepted: 必須被接受
+        user_session: 
+          email: 電子郵件
+          password: 密碼
+          remember_me: 保持登入
+      template: 
+        body: 以下欄位出現問題：
+        header: 
+          one: "因為一個錯誤導致 %{model} 無法存檔"
+          other: "%{count} 個錯誤導致此 %{model} 存檔失敗。"
+    models: 
+      user: 使用者

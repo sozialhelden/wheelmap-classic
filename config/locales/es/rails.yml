@@ -1,0 +1,42 @@
+--- 
+es: 
+  activerecord: 
+    attributes: 
+      user: 
+        last_name: Apellido
+    errors: 
+      full_messages: 
+        format: "%{attribute} %{message}"
+      messages: 
+        accepted: "debe ser aceptada"
+        blank: "no puede estar en blanco"
+        confirmation: "no se encontró coincidencia"
+        empty: "no puede estar vacío"
+        equal_to: "debe ser igual a %{count}"
+        even: "debe ser par"
+        exclusion: "está reservado"
+        greater_than: "tiene que ser mayor que %{count}"
+        greater_than_or_equal_to: "tiene que ser mayor o igual que %{count}"
+        inclusion: "no está en la lista"
+        invalid: "es incorrecto"
+        less_than: "tiene que ser inferior a %{count}"
+        less_than_or_equal_to: "tiene que ser inferior o igual a %{count}"
+        not_a_number: "no es un número"
+        odd: "debe ser impar"
+        record_invalid: "La validación falló: %{errors}"
+        taken: "ya ha sido cogido"
+        too_long: "es demasiado largo (máximo %{count} caracteres)"
+        too_short: "es demasiado corto (mínimo %{count} caracteres)"
+        wrong_length: "no tiene la longitud correcta (deben ser %{count} caracteres)"
+      models: 
+        user_session: 
+          email: "Dirección de correo electrónico"
+          password: Contraseña
+          remember_me: "Siga conectado"
+      template: 
+        body: "Hubo problemas con los siguientos campos"
+        header: 
+          one: "1 error no deja que %{model} se guarde"
+          other: "%{count} errores no dejaron que %{model} se guarde"
+    models: 
+      user: Usuario
