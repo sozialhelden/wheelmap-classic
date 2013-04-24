@@ -2392,7 +2392,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url(/images/glyphicons-halflings.png?1366196094);
+  background-image: url(/images/glyphicons-halflings.png?1366732152);
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px;
@@ -2417,7 +2417,7 @@ table th[class*="span"],
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url(/images/glyphicons-halflings-white.png?1366196094);
+  background-image: url(/images/glyphicons-halflings-white.png?1366732152);
 }
 
 /* line 52, ../../vendor/bundle/ruby/1.8/gems/bootstrap-sass-2.3.1.0/vendor/assets/stylesheets/bootstrap/_sprites.scss */
@@ -10124,38 +10124,16 @@ nav .list-wrapper ul.inline li a:hover {
     width: 303px;
   }
 }
-/* line 261, ../../app/stylesheets/relaunch/_toolbar.css.scss */
-#toolbar .notification {
-  width: 98%;
-  padding: 10px 2%;
-  margin-top: -2px;
-  float: left;
-  text-align: center;
-  color: #FFF;
-  text-shadow: 0 0 20px #48642F;
-}
-/* line 270, ../../app/stylesheets/relaunch/_toolbar.css.scss */
-#toolbar .notification.success {
-  background-color: #7EA940;
-  background-color: rgba(125, 169, 64, 0.96);
-  border-bottom: 1px solid #48642F;
-}
-/* line 275, ../../app/stylesheets/relaunch/_toolbar.css.scss */
-#toolbar .notification.error {
-  background-color: #D11B2E;
-  background-color: rgba(215, 6, 6, 0.96);
-  border-bottom: 1px solid #93060A;
-}
 
 @media screen and (max-width: 640px) {
-  /* line 285, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 265, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content .btn-searchbar {
     display: inline;
     padding: 7px 2px;
     width: 45px;
     margin-left: 1%;
   }
-  /* line 291, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 271, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form {
     width: 98%;
     padding: 10px 1% 10px 1%;
@@ -10165,35 +10143,64 @@ nav .list-wrapper ul.inline li a:hover {
     background: #333;
     display: none !important;
   }
-  /* line 300, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 280, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form.active {
     display: block !important;
   }
-  /* line 303, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 283, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form .input-append {
     margin: 0 !important;
     width: 100% !important;
   }
-  /* line 307, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+  /* line 287, ../../app/stylesheets/relaunch/_toolbar.css.scss */
   #toolbar .content form.navbar-form .input-append input, #toolbar .content form.navbar-form .input-append input:focus {
     width: 80%;
   }
 }
-/* line 317, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 297, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 .no-js #toolbar .counter {
   display: none;
 }
-/* line 322, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 302, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 .no-js #toolbar .dropdown-menu li a {
   padding-right: 50px;
 }
-/* line 324, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 304, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 .no-js #toolbar .dropdown-menu li a i {
   margin-right: -40px;
 }
-/* line 330, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 310, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 .no-js #toolbar .show-menu-arrow.btn-group.bootstrap-select .dropdown-menu {
   overflow-x: hidden !important;
+}
+
+/* line 1, ../../app/stylesheets/relaunch/_flash.css.scss */
+.notification {
+  width: 98%;
+  padding: 10px 2%;
+  margin-top: -2px;
+  float: left;
+  text-align: center;
+  color: #FFF;
+  text-shadow: 0 0 20px #48642F;
+}
+/* line 10, ../../app/stylesheets/relaunch/_flash.css.scss */
+.notification.notice {
+  background-color: #7EA940;
+  background-color: rgba(125, 169, 64, 0.96);
+  border-bottom: 1px solid #48642F;
+}
+/* line 15, ../../app/stylesheets/relaunch/_flash.css.scss */
+.notification.alert {
+  background-color: #7EA940;
+  background-color: rgba(125, 169, 64, 0.96);
+  border-bottom: 1px solid #48642F;
+}
+/* line 20, ../../app/stylesheets/relaunch/_flash.css.scss */
+.notification.error {
+  background-color: #D11B2E;
+  background-color: rgba(215, 6, 6, 0.96);
+  border-bottom: 1px solid #93060A;
 }
 
 /* line 1, ../../app/stylesheets/relaunch/_overlay.css.scss */
