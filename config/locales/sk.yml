@@ -496,6 +496,7 @@ sk:
         motel: Motel
       education:
         college: "Vysoká škola"
+        driving_school: Autoškola
         kindergarten: Škôlka
         library: Knižnica
         museum: Múzeum
@@ -507,15 +508,18 @@ sk:
         cafe: Kaviareň
         drinking_water: "Pitná voda"
         fast_food: "Rýchle občerstvenie"
+        ice_cream: Zmrzlina
         pub: Krčma
         restaurant: Reštaurácia
       government:
         courthouse: "Budova súdu"
         embassy: Veľvyslanectvo
+        government: "Vládna agentúra"
         police: Polícia
         public_building: "Verejná budova"
         townhall: Radnica
       health:
+        dentist: Zubár
         doctors: Doktor
         hearing_aids: "Dodavateľ načúvacích prístrojov"
         hospital: Nemocnica
@@ -526,6 +530,7 @@ sk:
       leisure:
         arena: Štadión
         brothel: Nevestinec
+        casino: Kasíno
         cinema: Kino
         community_center: "Komunitné centrum"
         gallery: Galéria
@@ -537,6 +542,8 @@ sk:
         zoo: Zoo
       misc:
         company: "Spoločnosť (kancelárie)"
+        estate_agent: "Realitná kancelária"
+        insurance: Poistenie
         lawyer: Právnik
         place_of_worship: Svätyňa
         toilets: Toalety
@@ -551,8 +558,8 @@ sk:
         bicycle_parking: "Stojan na bicykle"
         bicycle_rental: "Požičovňa bicyklov"
         boatyard: Lodenica
-        bus_station: "Autobusová zastávka"
-        bus_stop: "Autobusová zastávka"
+        bus_station: "Autobusová stanica"
+        bus_stop: "Zastávka autobusu"
         cable_car: Lanovka
         car_rental: "Požičovňa automobilov"
         car_sharing: "Zdieľanie automobilov"
@@ -572,6 +579,7 @@ sk:
       shopping:
         alcohol: Alkohol
         bakery: Pekáreň
+        beauty: "Salón krásy"
         beverages: Nápoje
         bicycle: Bicykle
         books: Knihy
@@ -581,28 +589,40 @@ sk:
         chemist: Lekáreň
         clothes: Oblečenie
         computer: Počítač
+        confectionery: Cukráreň
         convenience: Príslušenstvo
+        deli: Delikatesy
         department_store: "Obchodný dom"
         doityourself: "Kutilské potreby"
         dry_cleaning: Čistiareň
         electronics: Elektronika
+        fabric: Textil
+        farm_shop: "Farmársky obchod"
         florist: Kvetinárstvo
         furniture: Nábytok
         garden_centre: "Záhradné centrum"
+        gift: Suveníry
         hairdresser: Kaderníctvo
         hardware: Železiarstvo
+        jewelry: Klenotníctvo
         kiosk: Stánok
         laundry: Prádelňa
         mall: "Nákupné stredisko"
         optician: Optik
+        organic: "Organické výrobky"
+        outdoor: "Outdoorové vybavenie"
+        pet: Zverimex
         photo: Fotky
         second_hand: "Second hand"
         shoes: Topánky
         sports: Šport
         stationery: Papiernictvo
         supermarket: Supermarket
+        toys: Hračky
+        travel_agency: "Cestovná kancelária"
         video: Videopožičovňa
       sport:
+        pitch: Ihrisko
         sports_centre: "Športové centrum"
         stadium: Štadión
         swimming: Plávanie
