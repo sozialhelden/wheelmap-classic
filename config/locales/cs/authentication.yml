@@ -49,17 +49,21 @@ cs:
       send_instructions: "Za několik minut obdržíte email s instrukcemi k nastavení nového hesla."
       send_paranoid_instructions: "Jestli váš účet existuje, během pár minut obdržíte email s instrukcemi jak si obnovit heslo"
       updated: "Vaše heslo bylo úspěšně změněno. Nyní jste přihlášen(a)."
+      updated_not_active: "Vaše heslo bylo úspěšně změněno."
     registrations:
       destroyed: "Nashle! Váš účet byl úspěšně zrušen. Doufáme, že se brzy opět uvidíme."
       inactive_signed_up: "Registrace byla úspěšná. Nicméně, nemůžete se přihlásit, protože: \"%{reason}\"."
       link: "Vytvořit účet"
       reasons:
+        inactive: "Váš účet ještě nebyl aktivován."
         locked: zamčeno
         unconfirmed: nepotvrzené
       signed_up: "Vítejte! Registrace byla úspěšná."
       updated: "Úspěšně jste si aktualizovali účet."
     sessions:
+      inactive: "Váš účet ještě nebyl aktivován."
       invalid: "Nesprávný email nebo heslo."
+      invalid_token: "Neplatný ověřovací symbol."
       locked: "Váš účet je zablokovaný"
       new:
         no_osm_account: "Nemáte účet u OpenStreetMap?"
@@ -69,6 +73,8 @@ cs:
       signed_in: "Přihlášení úspěšné."
       signed_out: "Odhlášení úspěšné."
       timeout: "Vaše přihlášení vypršelo, prosím přihlašte se znova."
+      unauthenticated: "Musíte se zaregistrovat nebo přihlásit, pak můžete pokračovat."
+      unconfirmed: "Musíte potvrdit svůj účet, pak můžete pokračovat."
     sign_in:
       form:
         labels:
