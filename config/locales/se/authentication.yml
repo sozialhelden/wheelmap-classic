@@ -39,6 +39,7 @@ se:
     mandatory: "* obligatoriskt"
     omniauth_callbacks:
       failure: "Kunde inte auktorisera dig från %{kind} pga \"%{reason}\""
+      permission_missing: "Du beviljades inte de begärda tillstånden."
       success: "Auktoriserad från %{kind} konto."
     password_recovery:
       form:
@@ -51,7 +52,7 @@ se:
         comment: "Om du inte har önskat att få återställa ditt lösenord, så bortse från detta e-postmeddelande.<br/>Ditt lösenord kommer inte att ändras om du inte klickar på länken ovan och väljer ett nytt lösenord."
         headline: "Välkommen %{email}"
         link: "Byta lösnord"
-        text: "Någon har bett om att byta ditt lösenord. Du kan göra det genom att klicka på följande länk:"
+        text: "Vi har fått en begäran om att byta ditt lösenord. Om det är du så kan du göra det genom att klicka på följande länk:"
       form:
         labels:
           password: "Nytt lösenord"
