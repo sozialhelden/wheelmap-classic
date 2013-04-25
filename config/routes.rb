@@ -44,8 +44,6 @@ Wheelmap::Application.routes.draw do
     get :register_osm, :on => :collection
   end
 
-  resources :client_applications
-
   match 'abingo(/:action(/:id))', :to => 'abingo_dashboard', :as => :abingo
 
   resources :nodes, :except => :destroy do
