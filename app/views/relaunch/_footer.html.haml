@@ -20,8 +20,7 @@
         %span{:style => 'display:inline-block'}= t('wheelmap.footer.main_supporter')
         = image_tag('immoscout@2x.png', :size => '42x20', :alt => 'ImmobilienScout24', :title => 'ImmobilienScout24', :style => "margin-top: -3px;height:20px")
       %li
-        = link_to "http://rollstuhlsport.de", :target => '_blank', :class => 'icon', :title => 'Deutscher Rollstuhlsportverband' do
-          = image_tag "/images/drs-logo@2x.png", :size => '47x20', :style => 'margin-top:-3px;height:20px;'
+        = link_to t('header.navigation.imprint'), "http://blog.wheelmap.org/kontakt", :target => '_blank'
       %li
         %span= t('wheelmap.footer.a_project_of')
         = link_to 'http://sozialhelden.de', :id => 'sozialhelden', :title => 'Sozialhelden' do
