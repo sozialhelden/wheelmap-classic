@@ -1,6 +1,9 @@
 ---
 se:
   activerecord:
+    attributes:
+      user:
+        last_name: Efternamn
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -39,3 +42,5 @@ se:
         header:
           one: "1 fel förhindrade denna %{model} från att sparas"
           other: "%{count} fel förhindrade denna %{model} från att sparas"
+    models:
+      user: Användare

@@ -301,6 +301,12 @@ se:
         help: "Rullstolstillgänglig? (Hjälp)"
         more: "more ..."
   how?: Hur?
+  landing_pages:
+    index:
+      wheelchair:
+        ? "yes"
+        :
+          headline: "Alla rullstolstillgängliga %{type} i %{city} (%{count})"
   layouts:
     application:
       banner:
@@ -413,12 +419,12 @@ se:
     category:
       accommodation: Boende
       education: Utbildning
-      food: Mat
+      food: "Mat & Dryck"
       government: Myndighet
-      leisure: Fritid
-      misc: Diverse
+      leisure: "Fritid & Kultur"
+      misc: Blandat
       money_post: "Bank & Post"
-      public_transfer: Kollektivtrafik
+      public_transfer: Trafik
       shopping: Shopping
       sport: Sport
       tourism: Turism
