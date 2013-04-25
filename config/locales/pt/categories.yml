@@ -1,0 +1,138 @@
+---
+pt:
+  poi:
+    category:
+      accommodation: "Acomodação "
+      education: "Ecucação "
+      food: Comida
+      government: Governo
+      leisure: Prazer
+      misc: outros
+      money_post: "Banco & Correios"
+      public_transfer: "Trnsportes Públicos"
+      shopping: Shopping
+      sport: Desporto
+      tourism: Turismo
+      unknown: Desconhecido
+    name:
+      accommodation:
+        beach_resort: "Hotel Praia"
+        bed_and_breakfast: "Bed and Breakfast"
+        camp_site: Acampamento
+        caravan_site: "Sitio de caravana"
+        chalet: Chalet
+        guest_house: "Guest House"
+        hostel: Pousada
+        hotel: Hotel
+        motel: Motel
+      education:
+        college: Colégio
+        kindergarten: "Jardim escola"
+        library: Biblioteca
+        museum: Museu
+        school: Escola
+        university: Universidade
+      food:
+        bar: Bar
+        biergarten: "Bar de cerveja"
+        cafe: café
+        drinking_water: "Agua potável"
+        fast_food: "Fast food"
+        pub: Pub
+        restaurant: Restaurante
+      government:
+        courthouse: Tribunal
+        embassy: Embaixada
+        public_building: "Edificio público"
+      health:
+        doctors: Doutores
+        hospital: Hospital
+        pharmacy: Farmácia
+        veterinary: Veterenário
+      leisure:
+        arena: Arena
+        cinema: Cinema
+        gallery: Galeria
+        nightclub: "Clube Nocturno"
+        sauna: Sauna
+        theatre: Teatro
+        zoo: Zoológico
+      misc:
+        place_of_worship: "Lugar de oração "
+        toilets: "Casa de banho"
+      money_post:
+        atm: "Caixa Multibanco"
+        bank: Banco
+        bureau_de_change: "Loja de Cambio"
+        post_box: "Caixa de Correio"
+        post_office: Correios
+      public_transfer:
+        aerodrome: Aeroporto
+        bicycle_parking: "Parque para bicicletas"
+        bicycle_rental: "Aluguer de bicicletas"
+        boatyard: "Lugar onde barcos são construídos e guardados "
+        bus_station: "Estação de Autocarros"
+        bus_stop: "Estação de Autocarros"
+        cable_car: Teleférico
+        car_rental: "Aluguer de carros"
+        car_sharing: "Car sharing"
+        chair_lift: Elevador
+        ferry: Ferry
+        ferry_terminal: "Terminal Ferry"
+        fuel: "Bomba de gasolina"
+        halt: "Estação "
+        light_rail: Metro
+        parking: "Parque de estacionamento"
+        parking_aisle: "Lugar de estacionamento"
+        platform: Plataforma
+        station: Metro
+        subway_entrance: "Entrada do Metro "
+        terminal: "Terminal de Aeroporto "
+        tram_stop: "Estação de eléctrico"
+      shopping:
+        alcohol: Licor
+        bakery: Padaria
+        beverages: Bebidas
+        bicycle: "Loja de bicicletas"
+        books: Livros
+        butcher: Talho
+        clothes: Roupa
+        computer: Computador
+        convenience: Conveniência
+        department_store: "Shopping Center"
+        doityourself: "Faça você mesmo"
+        dry_cleaning: "Limpeza a seco"
+        electronics: Eletrónica
+        florist: Florista
+        furniture: Móvéis
+        garden_centre: "Centro de jardinagem"
+        hairdresser: Cabeleireiro
+        hardware: Hardware
+        kiosk: Quisque
+        laundry: Lavandaria
+        mall: "Shopping Center"
+        optician: Óptica
+        shoes: Sapatos
+        supermarket: Supermercado
+      sport:
+        sports_centre: "Centro de desporto"
+        stadium: Estádio
+        swimming: Nadar
+        swimming_pool: Piscina
+      tourism:
+        archaeological_site: "Local arqueológico"
+        arts_centre: "centro de artes"
+        artwork: "Obra de arte"
+        attraction: Atracção
+        battlefield: "Campo de batalha"
+        beach: Praia
+        beacon: Farol
+        castle: castelo
+        cave_entrance: "Entrada da caverna"
+        information: "Informação para turistas"
+        memorial: Memorial
+        theme_park: "Parque temático"
+        tower: Torre
+        viewpoint: "Ponto de vista"
+      unknown:
+        unknown: Desconhecido

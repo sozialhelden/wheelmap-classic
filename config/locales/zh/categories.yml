@@ -1,0 +1,158 @@
+---
+zh:
+  poi:
+    category:
+      accommodation: 住宿
+      education: 教育
+      food: 食物
+      government: 政府
+      health: 健康
+      leisure: 休闲
+      misc: 其它
+      money_post: 邮政银行
+      public_transfer: 公共交通
+      shopping: 购物
+      sport: 体育
+      tourism: 旅游
+      unknown: 未知
+    name:
+      accommodation:
+        beach_resort: 海滨旅馆
+        bed_and_breakfast: 床位和早餐
+        camp_site: 露营网页
+        caravan_site: 篷车场所
+        chalet: 农舍
+        guest_house: 招待所
+        hostel: 青年旅社
+        hotel: 宾馆
+        motel: 汽车旅馆
+      education:
+        college: 学院
+        kindergarten: 幼儿园
+        library: 图书馆
+        museum: 博物馆
+        school: 学校
+        university: 大学
+      food:
+        bar: 酒吧
+        biergarten: 啤酒花园
+        cafe: 咖啡店
+        drinking_water: 饮用水
+        fast_food: 快餐
+        pub: 酒吧
+        restaurant: 餐馆
+      government:
+        courthouse: 法院
+        embassy: 大使馆
+        police: 警察
+        public_building: 公共建筑
+        townhall: 市政厅
+      health:
+        doctors: 医生
+        hearing_aids: 助听器经销商
+        hospital: 医院
+        medical_supply: 医药用品
+        pharmacy: 药店
+        social_facility: 公用设施
+        veterinary: 兽医
+      leisure:
+        arena: 竞技场
+        brothel: 妓院
+        cinema: 影院
+        community_center: 社区中心
+        gallery: 展厅
+        nightclub: 夜总会
+        playground: 活动场所
+        sauna: 桑拿
+        stripclub: 脱衣舞夜总会
+        theatre: 剧院
+        zoo: 动物园
+      misc:
+        company: 公司（办公室）
+        lawyer: 律师
+        place_of_worship: 教堂
+        toilets: 厕所
+      money_post:
+        atm: 自动取款机
+        bank: 银行
+        bureau_de_change: 外币兑换
+        post_box: 邮箱
+        post_office: 邮局
+      public_transfer:
+        aerodrome: 机场
+        bicycle_parking: 单车停放
+        bicycle_rental: 单车出租
+        boatyard: 码头
+        bus_station: 公共汽车站
+        bus_stop: 公共汽车站
+        cable_car: 缆车
+        car_rental: 汽车出租
+        car_sharing: 拼车
+        chair_lift: 升降机
+        ferry: 轮渡
+        ferry_terminal: 轮渡码头
+        fuel: 加油站
+        halt: 停靠站
+        light_rail: 轻轨
+        parking: 停车
+        parking_aisle: 停车道
+        platform: 站台
+        station: 地铁
+        subway_entrance: 地铁入口
+        terminal: 机场航站楼
+        tram_stop: 电车站
+      shopping:
+        alcohol: 酒类
+        bakery: 面包店
+        beverages: 饮料
+        bicycle: 单车店
+        books: 书籍
+        butcher: 肉店
+        car_repair: 汽车修理
+        car_shop: 车行
+        chemist: 药店
+        clothes: 服装
+        computer: 电脑
+        convenience: 方便
+        department_store: 百货商店
+        doityourself: 自己动手
+        dry_cleaning: 干洗
+        electronics: 电子产品
+        florist: 花店
+        furniture: 家具
+        garden_centre: 园艺中心
+        hairdresser: 理发师
+        hardware: 硬件
+        kiosk: 书报亭
+        laundry: 洗衣店
+        mall: 购物中心
+        optician: 验光师
+        photo: 照片
+        second_hand: 二手
+        shoes: 鞋子
+        sports: 体育
+        stationery: 文具店
+        supermarket: 超市
+        video: 影像出租店
+      sport:
+        sports_centre: 体育中心
+        stadium: 体育场
+        swimming: 游泳
+        swimming_pool: 游泳池
+      tourism:
+        archaeological_site: 考古网页
+        arts_centre: 艺术中心
+        artwork: 工艺品
+        attraction: 吸引力
+        battlefield: 战场
+        beach: 海滩
+        beacon: 灯塔
+        castle: 城堡
+        cave_entrance: 洞穴入口
+        information: 旅客信息
+        memorial: 纪念物
+        theme_park: 主题公园
+        tower: 塔楼
+        viewpoint: 观点
+      unknown:
+        unknown: 未知

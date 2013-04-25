@@ -1,0 +1,178 @@
+---
+sk:
+  poi:
+    category:
+      accommodation: Ubytovanie
+      education: Vzdelávanie
+      food: Jedlo
+      government: Vláda
+      health: Zdravie
+      leisure: "Voľný čas"
+      misc: Rôzne
+      money_post: Finančníctvo
+      public_transfer: "Verejná doprava"
+      shopping: Nákupy
+      sport: Šport
+      tourism: Cestovanie
+      unknown: Neznáme
+    name:
+      accommodation:
+        beach_resort: "Plážový hotel"
+        bed_and_breakfast: "Nocľah s raňajkami"
+        camp_site: Kemping
+        caravan_site: "Autokemping pre obytné prívesy"
+        chalet: "Horská chata"
+        guest_house: Penzión
+        hostel: Hostel
+        hotel: Hotel
+        motel: Motel
+      education:
+        college: "Vysoká škola"
+        driving_school: Autoškola
+        kindergarten: Škôlka
+        library: Knižnica
+        museum: Múzeum
+        school: Škola
+        university: Univerzita
+      food:
+        bar: Bar
+        biergarten: Záhradka
+        cafe: Kaviareň
+        drinking_water: "Pitná voda"
+        fast_food: "Rýchle občerstvenie"
+        ice_cream: Zmrzlina
+        pub: Krčma
+        restaurant: Reštaurácia
+      government:
+        courthouse: "Budova súdu"
+        embassy: Veľvyslanectvo
+        government: "Vládna agentúra"
+        police: Polícia
+        public_building: "Verejná budova"
+        townhall: Radnica
+      health:
+        dentist: Zubár
+        doctors: Doktor
+        hearing_aids: "Dodavateľ načúvacích prístrojov"
+        hospital: Nemocnica
+        medical_supply: "Medicínske vybavenie"
+        pharmacy: Lekáreň
+        social_facility: "Spoločenské zázemie"
+        veterinary: Veterinár
+      leisure:
+        arena: Štadión
+        brothel: Nevestinec
+        casino: Kasíno
+        cinema: Kino
+        community_center: "Komunitné centrum"
+        gallery: Galéria
+        nightclub: "Nočný klub"
+        playground: Ihrisko
+        sauna: Sauna
+        stripclub: "Strip club"
+        theatre: Divadlo
+        zoo: Zoo
+      misc:
+        company: "Spoločnosť (kancelárie)"
+        estate_agent: "Realitná kancelária"
+        insurance: Poistenie
+        lawyer: Právnik
+        place_of_worship: Svätyňa
+        toilets: Toalety
+      money_post:
+        atm: Bankomat
+        bank: Banka
+        bureau_de_change: Zmenáreň
+        post_box: "Poštovná schránka"
+        post_office: Pošta
+      public_transfer:
+        aerodrome: Letisko
+        bicycle_parking: "Stojan na bicykle"
+        bicycle_rental: "Požičovňa bicyklov"
+        boatyard: Lodenica
+        bus_station: "Autobusová stanica"
+        bus_stop: "Zastávka autobusu"
+        cable_car: Lanovka
+        car_rental: "Požičovňa automobilov"
+        car_sharing: "Zdieľanie automobilov"
+        chair_lift: "Sedačková lanovka"
+        ferry: Trajekt
+        ferry_terminal: "Nástupište na trajekt"
+        fuel: "Benzínová pumpa"
+        halt: Zastávka
+        light_rail: "Rýchlodrážna električka"
+        parking: Parkovanie
+        parking_aisle: "Parkovacia ulička"
+        platform: Nástupište
+        station: Metro
+        subway_entrance: "Vchod do metra"
+        terminal: "Letiskový terminál"
+        tram_stop: "Zastávka električky"
+      shopping:
+        alcohol: Alkohol
+        bakery: Pekáreň
+        beauty: "Salón krásy"
+        beverages: Nápoje
+        bicycle: Bicykle
+        books: Knihy
+        butcher: Mäsiarstvo
+        car_repair: Autoservis
+        car_shop: Automobily
+        chemist: Lekáreň
+        clothes: Oblečenie
+        computer: Počítač
+        confectionery: Cukráreň
+        convenience: Príslušenstvo
+        deli: Delikatesy
+        department_store: "Obchodný dom"
+        doityourself: "Kutilské potreby"
+        dry_cleaning: Čistiareň
+        electronics: Elektronika
+        fabric: Textil
+        farm_shop: "Farmársky obchod"
+        florist: Kvetinárstvo
+        furniture: Nábytok
+        garden_centre: "Záhradné centrum"
+        gift: Suveníry
+        hairdresser: Kaderníctvo
+        hardware: Železiarstvo
+        jewelry: Klenotníctvo
+        kiosk: Stánok
+        laundry: Prádelňa
+        mall: "Nákupné stredisko"
+        optician: Optik
+        organic: "Organické výrobky"
+        outdoor: "Outdoorové vybavenie"
+        pet: Zverimex
+        photo: Fotky
+        second_hand: "Second hand"
+        shoes: Topánky
+        sports: Šport
+        stationery: Papiernictvo
+        supermarket: Supermarket
+        toys: Hračky
+        travel_agency: "Cestovná kancelária"
+        video: Videopožičovňa
+      sport:
+        pitch: Ihrisko
+        sports_centre: "Športové centrum"
+        stadium: Štadión
+        swimming: Plávanie
+        swimming_pool: "Plavecký bazén"
+      tourism:
+        archaeological_site: "Archeologické nálezisko"
+        arts_centre: "Kultúrne centrum"
+        artwork: Umenie
+        attraction: Atrakcia
+        battlefield: Bojisko
+        beach: Pláž
+        beacon: Maják
+        castle: Hrad
+        cave_entrance: "Vstup do jaskyne"
+        information: "Informácie pre turistov"
+        memorial: Pamätník
+        theme_park: "Zábavný park"
+        tower: Veža
+        viewpoint: Výhľad
+      unknown:
+        unknown: Neznáme
