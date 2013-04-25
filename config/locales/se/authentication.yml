@@ -30,6 +30,7 @@ se:
       unconfirmed: "Du måste bekräfta ditt konto innan du kan fortsätta"
     mailer:
       confirmation_instructions:
+        landing_page: "Klicka på länken som vi nyss skickade till din e-postadress. Om du inte får något e-postmeddelande från oss så kontrollera att det inte har hamnat i din mapp för skräppost. Om det inte finns så gå tillbaka till registreringssidan och gör ett nytt försök."
         subject: Valideringsinstruktioner
       reset_password_instructions:
         subject: "Instruktioner för att återställa lösenord"
@@ -68,6 +69,7 @@ se:
       inactive_signed_up: "Du har lyckats registrera dig men vi kunde inte logga in dig. Orsak: %{reason}"
       link: Registrera
       reasons:
+        inactive: "ej aktiv"
         locked: låst
         unconfirmed: "ej bekräftad"
       signed_up: "Du är nu registrerad. Om valt, så kommer validering via e-post att ske."
