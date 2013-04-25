@@ -1,0 +1,158 @@
+---
+ko:
+  poi:
+    category:
+      accommodation: 숙박시설
+      education: 교육기관
+      food: 음식점
+      government: 정부기관
+      health: 약국
+      leisure: 레저
+      misc: 기타시설
+      money_post: "은행 또는 우체국"
+      public_transfer: 교통시설
+      shopping: 쇼핑
+      sport: 스포츠
+      tourism: 관광
+      unknown: "알 수 없음"
+    name:
+      accommodation:
+        beach_resort: 비치호텔
+        bed_and_breakfast: 숙박시설(B&B)
+        camp_site: 캠핑장
+        caravan_site: "캠핑카 야영지"
+        chalet: 별장
+        guest_house: 게스트하우스
+        hostel: 유스호스텔
+        hotel: 호텔
+        motel: 모텔
+      education:
+        college: 단과대학
+        kindergarten: 유치원
+        library: 도서관
+        museum: 박물관
+        school: 학교
+        university: 대학교
+      food:
+        bar: 바
+        biergarten: 비어가든
+        cafe: 카페
+        drinking_water: 식수대
+        fast_food: 패스트푸드
+        pub: 선술집
+        restaurant: 식당
+      government:
+        courthouse: 법원
+        embassy: 대사관
+        police: 경찰서
+        public_building: 공공기관
+        townhall: "읍면동 사무소"
+      health:
+        doctors: 의료진
+        hearing_aids: 보청기판매점
+        hospital: 병원
+        medical_supply: 의료
+        pharmacy: 약국
+        social_facility: 복지시설
+        veterinary: 동물병원
+      leisure:
+        arena: 경기장
+        brothel: 성매매업소
+        cinema: 영화관
+        community_center: 시민회관
+        gallery: 갤러리
+        nightclub: 나이트클럽
+        playground: 놀이터
+        sauna: 사우나
+        stripclub: 스트립클럽
+        theatre: 극장
+        zoo: 동물원
+      misc:
+        company: 회사(사무실)
+        lawyer: 변호사
+        place_of_worship: 기도원
+        toilets: 화장실
+      money_post:
+        atm: ATM기기
+        bank: 은행
+        bureau_de_change: 환전소
+        post_box: 우체통
+        post_office: 우체국
+      public_transfer:
+        aerodrome: 공항
+        bicycle_parking: "자전거 주차장"
+        bicycle_rental: "자전거 임대"
+        boatyard: 선착장
+        bus_station: 버스터미널
+        bus_stop: 버스정류소
+        cable_car: 케이블카
+        car_rental: 렌트카
+        car_sharing: "카 쉐어링"
+        chair_lift: "스키장 리프트"
+        ferry: 여객선
+        ferry_terminal: "여객선 터미널"
+        fuel: 주유소
+        halt: 정류소
+        light_rail: 경전철
+        parking: 주차장
+        parking_aisle: "주차장 통로"
+        platform: 플랫폼
+        station: 지하철
+        subway_entrance: "지하철 입구"
+        terminal: "공항 터미널"
+        tram_stop: "전차 정류소"
+      shopping:
+        alcohol: 술집
+        bakery: 빵집
+        beverages: 음료가게
+        bicycle: 자전거가게
+        books: 서점
+        butcher: 정육점
+        car_repair: 카센터
+        car_shop: 자동차매장
+        chemist: 약국
+        clothes: 옷가게
+        computer: 컴퓨터상점
+        convenience: 편의시설
+        department_store: 백화점
+        doityourself: "스스로 할 수 있음"
+        dry_cleaning: 세탁소
+        electronics: 전자제품
+        florist: 꽃집
+        furniture: 가구점
+        garden_centre: 가든센터
+        hairdresser: 미용실
+        hardware: 하드웨어
+        kiosk: 간이매점
+        laundry: 세탁소
+        mall: 쇼핑센터
+        optician: 안경점
+        photo: 사진관
+        second_hand: 중고품가게
+        shoes: 신발가게
+        sports: 스포츠
+        stationery: 문구점
+        supermarket: 슈퍼마켓
+        video: 비디오대여점
+      sport:
+        sports_centre: "스포츠 센터"
+        stadium: 경기장
+        swimming: 수영
+        swimming_pool: 수영장
+      tourism:
+        archaeological_site: 고적지
+        arts_centre: 문화센터
+        artwork: 예술품
+        attraction: 명소
+        battlefield: "옛 전쟁터"
+        beach: 해변
+        beacon: 등대
+        castle: 성채
+        cave_entrance: 터널입구
+        information: 관광안내소
+        memorial: 기념물
+        theme_park: 테마파크
+        tower: 타워
+        viewpoint: "뷰 포인트"
+      unknown:
+        unknown: "알 수 없음"

@@ -1,0 +1,158 @@
+---
+da:
+  poi:
+    category:
+      accommodation: Overnatning
+      education: Uddannelse
+      food: Mad
+      government: Myndigheder
+      health: Sundhed
+      leisure: Fritid
+      misc: Diverse
+      money_post: "Bank post"
+      public_transfer: "Offentlig trafik"
+      shopping: Shopping
+      sport: Sport
+      tourism: Turisme
+      unknown: Ukendt
+    name:
+      accommodation:
+        beach_resort: Strandhotel
+        bed_and_breakfast: "Bed and breakfast"
+        camp_site: Campingplads
+        caravan_site: Caravancamping
+        chalet: Chalet
+        guest_house: Gæstehus
+        hostel: Vandrehjem
+        hotel: Hotel
+        motel: Motel
+      education:
+        college: Gymnasium
+        kindergarten: Børnehave
+        library: Bibliotek
+        museum: Museum
+        school: Skole
+        university: Universitet
+      food:
+        bar: Bar
+        biergarten: Ølhave
+        cafe: Cafe
+        drinking_water: Drikkevand
+        fast_food: "Fast Food"
+        pub: Værtshus
+        restaurant: Restaurant
+      government:
+        courthouse: Retsbygning
+        embassy: Ambassade
+        police: Politi
+        public_building: "Offentlig bygning"
+        townhall: Rådhus
+      health:
+        doctors: Læge
+        hearing_aids: Høreapparatforhandler
+        hospital: Hospital
+        medical_supply: Håndkøbsmedicin
+        pharmacy: " Apotek"
+        social_facility: Plejehjem
+        veterinary: Dyrlæge
+      leisure:
+        arena: Sportsarena
+        brothel: Bordel
+        cinema: Biograf
+        community_center: Borgerhus
+        gallery: Galleri
+        nightclub: Natklub
+        playground: Legeplads
+        sauna: Sauna
+        stripclub: Stripclub
+        theatre: Teater
+        zoo: Zoo
+      misc:
+        company: "Firma (kontor)"
+        lawyer: Advokat
+        place_of_worship: "Religiøs tilbedelsessted"
+        toilets: Toiletter
+      money_post:
+        atm: Pengeautomat
+        bank: Bank
+        bureau_de_change: Valutaveksling
+        post_box: Postkasse
+        post_office: Postkontor
+      public_transfer:
+        aerodrome: Lufthavn
+        bicycle_parking: Cykelparkering
+        bicycle_rental: Cykeludlejning
+        boatyard: Lystbådehavn
+        bus_station: Busstation
+        bus_stop: Busstop
+        cable_car: Svævebane
+        car_rental: Biludlejning
+        car_sharing: Delebil
+        chair_lift: Stolelift
+        ferry: Færge
+        ferry_terminal: Færgeterminal
+        fuel: Tankstation
+        halt: Trinbræt
+        light_rail: Letbane
+        parking: Parkering
+        parking_aisle: Parkeringsvej
+        platform: Platform
+        station: Undergrundsbane
+        subway_entrance: "Undergrundsbane indgang"
+        terminal: Lufthavnsterminal
+        tram_stop: Sporvognsstop
+      shopping:
+        alcohol: Vinhandler
+        bakery: Bager
+        beverages: Drikkevarer
+        bicycle: Cykelforhandler
+        books: Boghandler
+        butcher: Slagter
+        car_repair: Bilværksted
+        car_shop: Biludstyrsbutik
+        chemist: Materialist
+        clothes: Tøjbutik
+        computer: Computerbutik
+        convenience: Minimarked
+        department_store: Stormagasin
+        doityourself: Byggemarked
+        dry_cleaning: Tøjenseri
+        electronics: Elektronikbutik
+        florist: Blomsterhandler
+        furniture: Møbelhandler
+        garden_centre: Havecenter
+        hairdresser: Frisør
+        hardware: Værktøjsbutik
+        kiosk: Kiosk
+        laundry: Vaskeri
+        mall: Indkøbscenter
+        optician: Optiker
+        photo: Foto
+        second_hand: Genbrugsbutik
+        shoes: Skobutik
+        sports: Sportsforretninger
+        stationery: Papirartikler
+        supermarket: Supermarked
+        video: Videoudlejning
+      sport:
+        sports_centre: Sportscenter
+        stadium: Stadion
+        swimming: Svømming
+        swimming_pool: Svømmepool
+      tourism:
+        archaeological_site: "Arkæologisk sted"
+        arts_centre: Kunstcenter
+        artwork: Kunstværk
+        attraction: Attraktion
+        battlefield: Slagmark
+        beach: Strand
+        beacon: Fyrtårn
+        castle: Slot
+        cave_entrance: Huleindgang
+        information: Turistinformation
+        memorial: Mindesmærke
+        theme_park: Forlystelsespark
+        tower: Tårn
+        viewpoint: Udsigtspunkt
+      unknown:
+        unknown: Ukendt

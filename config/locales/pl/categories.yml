@@ -1,0 +1,158 @@
+---
+pl:
+  poi:
+    category:
+      accommodation: Zakwaterowanie
+      education: Edukacja
+      food: Jedzenie
+      government: Urzędy
+      health: "Szpital lub przychodnia"
+      leisure: "Czas wolny"
+      misc: Różne
+      money_post: "Bank, poczta"
+      public_transfer: "Transport publiczny"
+      shopping: Zakupy
+      sport: Sport
+      tourism: Turystyka
+      unknown: Nieznany
+    name:
+      accommodation:
+        beach_resort: "Hotel na plaży"
+        bed_and_breakfast: "Bed and breakfast"
+        camp_site: "Pole kempingowe"
+        caravan_site: Kemping
+        chalet: "Domek wypoczynkowy"
+        guest_house: Pensjonat
+        hostel: Hostel
+        hotel: Hotel
+        motel: Motel
+      education:
+        college: "Szkoła wyższa"
+        kindergarten: Przedszkole
+        library: Biblioteka
+        museum: Muzeum
+        school: Szkoła
+        university: Uniwersytet
+      food:
+        bar: Bar
+        biergarten: "Ogródek piwny"
+        cafe: Kawiarnia
+        drinking_water: "Ujęcie wody pitnej"
+        fast_food: "Fast food"
+        pub: Pub
+        restaurant: Restauracja
+      government:
+        courthouse: Sąd
+        embassy: Ambasada
+        police: Policja
+        public_building: "Budynek użyteczności publicznej"
+        townhall: Ratusz
+      health:
+        doctors: Lekarz
+        hearing_aids: "Sklep z aparatami słuchowymi"
+        hospital: Szpital
+        medical_supply: "Zaopatrzenie medyczne"
+        pharmacy: Apteka
+        social_facility: "Infrastruktura społeczna"
+        veterinary: Weterynarz
+      leisure:
+        arena: "Hala sportowa"
+        brothel: "Agencja towarzyska"
+        cinema: Kino
+        community_center: "Dom kultury"
+        gallery: Galeria
+        nightclub: "Klub nocny"
+        playground: "Plac zabaw"
+        sauna: Sauna
+        stripclub: "Klub nocny ze striptizem"
+        theatre: Teatr
+        zoo: Zoo
+      misc:
+        company: "Firma (Biuro)"
+        lawyer: "Kancelaria prawna"
+        place_of_worship: "Miejsce kultu"
+        toilets: Toaleta
+      money_post:
+        atm: Bankomat
+        bank: Bank
+        bureau_de_change: "Kantor wymiany walut"
+        post_box: "Skrzynka pocztowa"
+        post_office: Poczta
+      public_transfer:
+        aerodrome: Lotnisko
+        bicycle_parking: "Parking dla rowerów"
+        bicycle_rental: "Wypożyczalnia rowerów"
+        boatyard: "Stocznia jachtowa"
+        bus_station: "Dworzec autobusowy"
+        bus_stop: "Przystanek autobusowy"
+        cable_car: "Kolejka linowa"
+        car_rental: "Wypożyczalnia samochodów"
+        car_sharing: "Car sharing"
+        chair_lift: "Wyciąg krzesełkowy"
+        ferry: Prom
+        ferry_terminal: "Terminal promowy"
+        fuel: "Stacja paliw"
+        halt: Przystanek
+        light_rail: "Pociąg podmiejski"
+        parking: Parking
+        parking_aisle: "Przejście na parkingu"
+        platform: Peron
+        station: Metro
+        subway_entrance: "Wejście do metra"
+        terminal: "Terminal lotniska"
+        tram_stop: "Przystanek tramwajowy"
+      shopping:
+        alcohol: "Sklep monopolowy"
+        bakery: Piekarnia
+        beverages: "Sklep z napojami"
+        bicycle: "Sklep rowerowy"
+        books: Księgarnia
+        butcher: Rzeźnik
+        car_repair: "Warsztat samochodowy"
+        car_shop: "Salon samochodowy"
+        chemist: Apteka
+        clothes: "Sklep z ubraniami"
+        computer: Komputer
+        convenience: Sklep
+        department_store: "Dom towarowy"
+        doityourself: "Zrób to sam"
+        dry_cleaning: "Pralnia chemiczna"
+        electronics: "Sklep ze sprzętem RTV"
+        florist: Kwiaciarnia
+        furniture: "Sklep z meblami"
+        garden_centre: "Sklep ogrodniczy"
+        hairdresser: Fryzjer
+        hardware: Hardware
+        kiosk: Kiosk
+        laundry: Pralnia
+        mall: "Centrum handlowe"
+        optician: Optyk
+        photo: Zdjęcie
+        second_hand: "Sklep z używaną odzieżą"
+        shoes: "Sklep z obuwiem"
+        sports: Sport
+        stationery: "Sklep z artykułami biurowymi"
+        supermarket: Supermarket
+        video: "Wypożyczalnia video / płyt DVD"
+      sport:
+        sports_centre: "Ośrodek sportowy"
+        stadium: Stadion
+        swimming: Kąpielisko
+        swimming_pool: Basen
+      tourism:
+        archaeological_site: "Stanowisko archeologiczne"
+        arts_centre: "Centrum kultury"
+        artwork: "Dzieło sztuki"
+        attraction: Atrakcja
+        battlefield: "Pole bitwy"
+        beach: Plaża
+        beacon: "Latarnia morska"
+        castle: Zamek
+        cave_entrance: "Wejście do jaskini"
+        information: "Informacja turystyczna"
+        memorial: Pomnik
+        theme_park: "Park rozrywki"
+        tower: Wieża
+        viewpoint: "Punkt widokowy"
+      unknown:
+        unknown: Nieznany
