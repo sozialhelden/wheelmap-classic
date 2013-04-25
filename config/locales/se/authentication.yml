@@ -60,12 +60,16 @@ se:
     passwords:
       link: "Glömt lösenord?"
       send_instructions: "Inom några minuter kommer du att få ett e-post om hur du kan återställa ditt lösenord."
+      send_paranoid_instructions: "Om ditt konto finns så kommer du inom några minuter att få ett e-postmeddelande med instruktioner om hur du återställer ditt lösenord"
       updated: "Ditt lösenord är ändrat. Du är nu inloggad."
       updated_not_active: "Ditt lösenord är nu ändrat"
     registrations:
       destroyed: "Hej då! Ditt konto är nu avslutat. Hoppas vi ses igen snart."
       inactive_signed_up: "Du har lyckats registrera dig men vi kunde inte logga in dig. Orsak: %{reason}"
       link: Registrera
+      reasons:
+        locked: låst
+        unconfirmed: "ej bekräftad"
       signed_up: "Du är nu registrerad. Om valt, så kommer validering via e-post att ske."
       updated: "Din kontoinformation är uppdaterad."
     sessions:
@@ -75,8 +79,12 @@ se:
       link: "Logga in"
       locked: "Ditt konto är låst."
       new:
+        no_osm_account: "Saknar du OpenStreetMap-konto?"
         osm_promo_text: "Wheelmap bygger på kartdata från OpenStreetMap (OSM). OpenStreetMap är en fri global karttjänst, Wikipedia för kartor, som skapats av personer som du. För att kunna lägga in och ändra platser måste man ha ett OpenStreetMap-konto och vara inloggad."
+        promo_text_thank_you: "Tack för din support!"
         sign_in_with: "Logga in med %{kind}"
+        sign_up_with_osm: "Registrera dig nu"
+        wheelmap_promo_text: "Med din kännedom om rullstolstillgängliga platser hjälper du personer med funktionsnedsättningar att lättare planera sitt vardagsliv. Dessutom blir OpenStreetMap mer detaljerad."
       signed_in: Inloggad.
       signed_out: Utloggad.
       timeout: "Din session har avslutats, logga in för att fortsätta."
@@ -94,7 +102,9 @@ se:
       headline: "Logga ut"
     sign_up:
       email:
+        confirm_my_account: "Bekräfta mitt konto"
         please_confirm: "Du kan bekräfta ditt konto med hjälp av följande länk:"
+        welcome: "Välkommen %{email}!"
       form:
         labels:
           email: E-post
@@ -106,4 +116,5 @@ se:
     unlocks:
       link: "Mottog du inte upplåsningsinstruktioner?"
       send_instructions: "Inom några minuter kommer du att få ett e-post om hur du  låser upp ditt konto."
-      unlocked: "Ditt konto är nu upplåst. Du kan nu inloggad."
+      send_paranoid_instructions: "Om ditt konto finns så kommer du inom några minuter att erhålla ett e-postmeddelande med instruktioner om hur du låser upp ditt konto"
+      unlocked: "Ditt konto är nu upplåst. Du kan nu logga in."
