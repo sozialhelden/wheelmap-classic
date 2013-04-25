@@ -51,12 +51,14 @@ se:
       health:
         dentist: Tandläkare
         doctors: Doktor
+        hearing_aids: Hörcentral
         hospital: Sjukhus
         pharmacy: Apotek
         veterinary: Veterinär
       leisure:
         arena: Arena
         cinema: Bio
+        community_center: Allaktivitetshus
         gallery: Galleri
         nightclub: Nattklubb
         playground: Lekplats
@@ -64,6 +66,9 @@ se:
         theatre: Teater
         zoo: Zoo
       misc:
+        company: Företagskontor
+        estate_agent: Fastighetsmäklare
+        insurance: Försäkringar
         lawyer: Advokat
         place_of_worship: "Religiös plats"
         toilets: Toalett
@@ -99,6 +104,7 @@ se:
       shopping:
         alcohol: Alkohol
         bakery: Bageri
+        beauty: Skönhetssalong
         beverages: Drycker
         bicycle: Cykelaffär
         books: Böcker
@@ -117,6 +123,7 @@ se:
         florist: Blomsteraffär
         furniture: Möbler
         garden_centre: Plantskola
+        gift: Presentbutik
         hairdresser: Frisersalong
         hardware: Järnhandel
         jewelry: Smycken
@@ -126,8 +133,10 @@ se:
         optician: Optiker
         shoes: Skor
         sports: Sport
+        stationery: Kontorsmateriel
         supermarket: Livsmedel
         travel_agency: Resebyrå
+        video: Videouthyrning
       sport:
         sports_centre: Sportcenter
         stadium: Idrottsarena
