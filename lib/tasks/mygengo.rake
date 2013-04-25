@@ -35,7 +35,7 @@ namespace 'mygengo' do
     file_name = ENV['FILE']
     raise "Use: bundle exec rake mygengo:extract KEY=devise FILE=authentication.yml" if sub_key.blank? or file_name.blank?
     I18n.available_locales.each do |locale|
-      Dir["config/locales/#{locale}/*.yml"].each do |path|
+      Dir[Rails.root.join("config", "locales", locale.to_s, "*.yml")].each do |path|
         LocaleExtractor.process path, locale, sub_key.split('.'), file_name
       end
     end

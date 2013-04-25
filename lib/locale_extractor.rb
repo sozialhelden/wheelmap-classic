@@ -15,21 +15,23 @@ class LocaleExtractor
     yaml = YAML.load(file.read)[locale.to_s]
     # puts yaml.inspect
 
+    if !yaml.nil?
+      # Mygengo uses the filename as the "section" name, so need to rename the "generic" yaml to something more useful.
+      new_file = Rails.root.join('config', 'locales', locale.to_s, file_name)
+      old_file = Rails.root.join('config', 'locales', locale.to_s, File.basename(path))
 
-    # Mygengo uses the filename as the "section" name, so need to rename the "generic" yaml to something more useful.
-    old_file = File.new(path)
-    new_file = Rails.root.join('config', 'locales', locale.to_s, file_name)
-
-    unless yaml.nil?
       remainder = yaml.slice!(*sub_key)
       new_yaml = yaml
       yaml = remainder
-      new_file.open('w') do |f|
-        f.write({ locale.to_s => new_yaml }.ya2yaml(:syck_compatible => true))
-      end
 
-      old_file.open('w') do |f|
-        f.write({ locale.to_s => yaml }.ya2yaml(:syck_compatible => true))
+      unless new_yaml.empty?
+        new_file.open('w') do |f|
+          f.write({ locale.to_s => new_yaml }.ya2yaml(:syck_compatible => true).gsub(/\s+$/, '') + "\n")
+        end
+
+        old_file.open('w') do |f|
+          f.write({ locale.to_s => yaml }.ya2yaml(:syck_compatible => true).gsub(/\s+$/, '') + "\n")
+        end
       end
     end
   end
