@@ -10157,19 +10157,15 @@ nav .list-wrapper ul.inline li a:hover {
     width: 80%;
   }
 }
-/* line 297, ../../app/stylesheets/relaunch/_toolbar.css.scss */
-.no-js #toolbar .counter {
-  display: none;
-}
-/* line 302, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 299, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 .no-js #toolbar .dropdown-menu li a {
   padding-right: 50px;
 }
-/* line 304, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 301, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 .no-js #toolbar .dropdown-menu li a i {
   margin-right: -40px;
 }
-/* line 310, ../../app/stylesheets/relaunch/_toolbar.css.scss */
+/* line 307, ../../app/stylesheets/relaunch/_toolbar.css.scss */
 .no-js #toolbar .show-menu-arrow.btn-group.bootstrap-select .dropdown-menu {
   overflow-x: hidden !important;
 }
