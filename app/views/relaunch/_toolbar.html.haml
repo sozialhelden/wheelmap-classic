@@ -10,17 +10,17 @@
             %i.icon-search.icon-white
 
       .btn-group.status-filter(data-toggle="buttons-checkbox")
-        %button.btn.yes{:'data-value' => 'yes', :'data-toggle' => "popover", :'data-container' => "button.yes", :'data-content' => "Eingang stufenlos, alle Räume stufenlos, mit behindertengerechtem WC, falls ortsüblich.", :title => "", :'data-original-title' => "Rollstuhlgerecht" }
+        %button.btn.yes{:'data-value' => 'yes', :'data-toggle' => "popover", :'data-container' => "button.yes", :'data-content' =>  t('wheelmap.what_is.fully_accessible'), :title => "", :'data-original-title' => t('home.index.popup.form.yes') }
           %span{:'data-value' => 'yes'}
-        %button.btn.limited{:'data-value' => 'limited', :'data-toggle' => "popover", :'data-container' => "button.limited", :'data-content' => "Eingang max 1 Stufe (7cm hoch), die wichtigsten Räume stufenlos, WC egal.", :title => "", :'data-original-title' => "Teilweise Rollstuhlgerecht" }
+        %button.btn.limited{:'data-value' => 'limited', :'data-toggle' => "popover", :'data-container' => "button.limited", :'data-content' =>  t('wheelmap.what_is.limited_accessible'), :title => "", :'data-original-title' => t('home.index.popup.form.limited') }
           %span{:'data-value' => 'yes'}
-        %button.btn.no{:'data-value' => 'no', :'data-toggle' => "popover", :'data-container' => "button.no", :'data-content' => "Eingang hat höhere oder mehrere Stufen, Räume nicht erreichbar.", :title => "", :'data-original-title' => "Nicht Rollstuhlgerecht" }
+        %button.btn.no{:'data-value' => 'no', :'data-toggle' => "popover", :'data-container' => "button.no", :'data-content' => t('wheelmap.what_is.not_accessible'), :title => "", :'data-original-title' => t('home.index.popup.form.no') }
           %span{:'data-value' => 'yes'}
-        %button.btn.unknown{:'data-value' => 'unknown', :'data-toggle' => "popover", :'data-container' => "button.unknown", :'data-content' => "Hilf mit und markiere diese Orte!", :title => "", :'data-original-title' => "Unbekannter Status" }
+        %button.btn.unknown{:'data-value' => 'unknown', :'data-toggle' => "popover", :'data-container' => "button.unknown", :'data-content' => t('wheelmap.what_is.unknown_accessible'), :title => "", :'data-original-title' => t('home.index.popup.form.unknown') }
           %span{:'data-value' => 'yes'}
 
 
-      %select.selectpicker.show-menu-arrow.category-filter{:size => 5, :multiple => 'multiple', :title => t('home.index.filter.category'), :'data-style' => "btn-info", :title => "Choose one", :'data-selected-text-format' => "count"}
+      %select.selectpicker.show-menu-arrow.category-filter{:size => 5, :multiple => 'multiple', :title => t('header.toolbar.categories'), :'data-style' => "btn-info", :'data-selected-text-format' => "count"}
         - Category.all.sort_by(&:localized_name).each do |category|
           %option{ :value => category.identifier }= category.localized_name
   = render_flash

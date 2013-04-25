@@ -7,6 +7,8 @@ de:
       contact: Kontakt
       map: Karte
       projects: Projekte
+    toolbar:
+      categories: Kategorien
   home:
     index:
       overlay:
