@@ -1,4 +1,5 @@
 ActiveAdmin.register Poi do
+  belongs_to :region, :optional => true
 
   scope :fully_accessible
   scope :limited_accessible
@@ -6,9 +7,9 @@ ActiveAdmin.register Poi do
   scope :unknown_accessibility
   scope :has_provider
 
-  filter :node_type, :as => :select, :collection => proc { NodeType.all.inject([]){|memo,r| memo << [r.name, r.id]; memo} }
-  filter :region, :as => :select, :collection => proc { Region.all.inject([]){|memo,r| memo << [r.name, r.id]; memo} }
-  filter :category, :as => :select, :collection => proc { Category.all.inject([]){|memo,r| memo << [r.name, r.id]; memo} }
+  filter :node_type, :as => :select, :collection => proc { NodeType.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort }
+  filter :region, :as => :select, :collection => proc { Region.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort }
+  filter :category, :as => :select, :collection => proc { Category.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort }
   filter :version
   filter :tags
   filter :created_at
@@ -20,6 +21,22 @@ ActiveAdmin.register Poi do
       region.update_attributes(params[:poi])
       super
     end
+
+    def setup_pagination_for_csv
+      @per_page = 80 if request.format == 'text/csv'
+    end
+
+  end
+
+  csv do
+    column :id
+    column :name
+    column :lat
+    column :lon
+    column :street
+    column :housenumber
+    column :postcode
+    column :city
   end
 
   index do
@@ -27,12 +44,12 @@ ActiveAdmin.register Poi do
       link_to poi.osm_id, node_path(poi)
     end
     column :wheelchair
+    column :version
     column :name
     column :node_type
-    column :street
-    column :housenumber
-    column :postcode
-    column :city
+    column :address do |p|
+      span p.address
+    end
     column :lat
     column :lon
     column :region
