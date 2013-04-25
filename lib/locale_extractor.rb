@@ -26,11 +26,11 @@ class LocaleExtractor
 
       unless new_yaml.empty?
         new_file.open('w') do |f|
-          f.write({ locale.to_s => new_yaml }.ya2yaml(:syck_compatible => true).gsub(/\s+$/, '') + "\n")
+          f.write({ locale.to_s => new_yaml }.ya2yaml(:syck_compatible => true).gsub(/\s+$/, ''))
         end
 
         old_file.open('w') do |f|
-          f.write({ locale.to_s => yaml }.ya2yaml(:syck_compatible => true).gsub(/\s+$/, '') + "\n")
+          f.write({ locale.to_s => yaml }.ya2yaml(:syck_compatible => true).gsub(/\s+$/, ''))
         end
       end
     end
