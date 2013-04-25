@@ -7,6 +7,8 @@ se:
       contact: Kontakt
       map: Karta
       projects: "Engagera dig"
+    toolbar:
+      categories: Kategorier
   home:
     index:
       overlay:

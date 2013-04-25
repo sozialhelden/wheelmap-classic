@@ -31,6 +31,8 @@ se:
       models:
         user:
           attributes:
+            privacy_policy:
+              accepted: "måste godkännas"
             terms:
               accepted: "måste godkännas"
         user_session:

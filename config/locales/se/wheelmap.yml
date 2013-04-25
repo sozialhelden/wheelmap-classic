@@ -110,7 +110,8 @@ se:
       logged_in_as: "Inloggad som:"
       login: "Logga in"
       logout: "Logga ut"
-      press: "Tryck på"
+      newsletter: Nyhetsbrev
+      press: Press
       profile: Profil
       suggestions: Förslag
       what_is_barrier_free: "Vad betyder \"rullstolstillgänglig\"?"
@@ -149,7 +150,7 @@ se:
         form:
           limited: "begränsat rullstolstillgänglig"
           ? "no"
-          : "not wheelchair accessible"
+          : "ej rullstolstillgänglig"
           save: Update
           unknown: "unknown status"
           ? "yes"
@@ -208,6 +209,7 @@ se:
         title: "Plats: %{node} | wheelmap.org"
       link:
         large_map: Förstora
+        upload: "Ladda upp bild"
     update:
       flash:
         not_successfull: "Ojdå, du skrev antingen fel eller har inte fyllt i allt."
@@ -285,6 +287,8 @@ se:
       search:
         for: "Söker efter \"%{q}\""
         not_found: "Inga platser hittades!"
+  splash:
+    step1: "Klicka på en plats som du känner till"
   statistics: Statistik
   support:
     array:
