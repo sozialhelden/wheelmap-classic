@@ -18,7 +18,6 @@ header {
        padding: 5px 10px 8px;
      }
   }
-
   .logo {
     width: 160px;
     height: 10px;
@@ -52,6 +51,9 @@ header {
       color: #555;
       padding: 2px 10px 1px 10px;
       background-position: 0;
+      .icon-tags {
+        display: none;
+      }
     }
     .btn-add,
     .btn-add:hover {
@@ -82,8 +84,6 @@ select.language-select {
   &:focus {
     @include highlight(rgba(0,0,0,0));
   }
-
-
   @media screen and (max-width:767px) {
     max-width: 50px;
   }
@@ -132,25 +132,24 @@ nav {
     float: left;
     ul.inline {
       display: inline-block;
-      margin: 0 0 20px 0;
+      margin: 0;
       li {
         float: left;
         list-style: none;
-        padding: 15px 1% 5px 1%;
-        margin: 4px 1%;
-        width: 46%;
-        border-bottom: 1px solid #DDD;
-        text-align: left;
+        padding: 15px 1px 5px 1px;
         a {
           color: #666;
           padding: 7px 10px 6px 10px;
-          font-size: 15px;
           &:visited {
             color: #666;
             padding: 7px 10px 6px 10px;
           }
           &:hover {
             color: #000;
+            background: #DCDBD4;
+            @include border-radius(3px);
+            @include single-box-shadow(rgba(170, 170, 170, 0.2), 2px, 2px, 0, 0, inset);
+            border: 1px solid #c4c2b5;
             margin: 0 -1px;
           }
         }
@@ -158,4 +157,3 @@ nav {
     }
   }
 }
-
