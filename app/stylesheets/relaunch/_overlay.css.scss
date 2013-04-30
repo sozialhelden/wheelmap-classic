@@ -4,7 +4,6 @@
   position: absolute;
   z-index: 9999999999999999;
   background: rgba(40,	54, 69, 0.8);
-  display: none;
 }
 .overlay {
   width: 700px;
@@ -106,6 +105,7 @@
       z-index: 100;
     }
     .tip {
+      width: auto;
       position: absolute;
       left: 50%;
       color: #333;
@@ -118,21 +118,30 @@
       
       @include box-shadow (0 0 4px #333);
       @include border-radius(3px);
+      &:after {
+        position: absolute;
+        left: 45%;
+        bottom: -10px;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #FFF;
+        content: "";
+      }
       &.lookup {
-        width: 130px;
-        top: -30px;
+        max-width: 100px;
         z-index: 200;
-        margin-left: -230px;
+        margin-left: -200px;
+        bottom: 40px;
       }
       &.filter {
-        width: 170px;
-        top: -45px;
+        max-width: 130px;
         z-index: 200;
-        margin-left: -70px;
+        margin-left: -44px;
+        bottom: 40px;
       }
       &.categories {
-        width: 120px;
-        top: -30px;
+        max-width: 100px;
+        bottom: 40px;
         z-index: 200;
         margin-left: 120px;
       }

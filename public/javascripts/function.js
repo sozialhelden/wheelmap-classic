@@ -25,7 +25,10 @@ $(document).ready(function() {
     trigger: 'hover',
     placement: getPopoverPlacement
   });
-
+  $('.status-filter button').click(function() {
+    $('.popover').fadeOut(300);
+  })
+  
   if (!$.cookie('_wheelmap_first_time_visitor')) {
     $('.overlay-wrapper').addClass('show-overlay');
     $.cookie('_wheelmap_first_time_visitor', true, { expires: 1000 });
