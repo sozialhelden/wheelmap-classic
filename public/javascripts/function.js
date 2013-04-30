@@ -3,6 +3,7 @@ $(document).ready(function() {
   I18n.defaultLocale = 'de';
   I18n.locale = $('html').attr('lang');
   
+  
   $(['yes', 'no', 'limited', 'unknown']).each(function(index, item){
     if ($.cookie('filter_'+item)) {
       $('.status-filter button.'+item).addClass('active');

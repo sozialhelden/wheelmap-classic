@@ -5,7 +5,7 @@
   top: $headerHeight;
   border-top: 1px solid #FFF;
   background-color: #334557;
-  z-index: 100;
+  z-index: 0;
   @include background-image(linear-gradient(top, rgb(64, 87, 109), rgb(38, 51, 65)));
   @include filter-gradient(rgb(64, 87, 109), rgb(38, 51, 65), vertical);
   @include box-shadow(0px 0px 10px #444, inset 0px 2px 6px #000);
@@ -302,8 +302,13 @@
     }
   }
 }
-.no-js {
+
+.ie9, .ie8, .ie7 {
   #toolbar {
+    z-index: auto;
+    .counter {
+      display: none;
+    }
     .dropdown-menu {
       li {
         a {
@@ -317,17 +322,6 @@
    .show-menu-arrow.btn-group.bootstrap-select .dropdown-menu {
      overflow-x: hidden!important; //IE Fix
    }
-  }
-}
-.ie9, .ie8, .ie7 {
-  .counter {
-    display: none;
-  }
-  #toolbar {
-    position: static;
-    top: 20px;
-  }
-  #map {
   }
 }
 
