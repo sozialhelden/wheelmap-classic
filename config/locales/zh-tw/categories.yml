@@ -17,6 +17,7 @@ zh-tw:
       unknown: 未知
     name:
       accommodation:
+        beach_resort: 海灘飯店
         bed_and_breakfast: 住宿和早餐
         camp_site: 露營區
         caravan_site: 篷車露營地
@@ -59,6 +60,7 @@ zh-tw:
         social_facility: 社會機構
         veterinary: 獸醫
       leisure:
+        arena: 巨蛋
         brothel: 妓院
         casino: 賭場
         cinema: 電影院
@@ -87,6 +89,7 @@ zh-tw:
         aerodrome: 機場
         bicycle_parking: 自行車停車場
         bicycle_rental: 自行車出租
+        boatyard: 船屋
         bus_station: 公車站
         bus_stop: 公車站
         cable_car: 纜車

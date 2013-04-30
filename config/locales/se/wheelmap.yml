@@ -58,7 +58,7 @@ se:
         notice: "%{resource_name} är uppdaterad."
   form:
     show_fully_accessible_places: Rullstolstillgänglig
-    show_limited_accessible_places: "delvis rullstolstillgänglig"
+    show_limited_accessible_places: "begränsad rullstolstillgänglig"
     show_places_without_status: "okänd status"
     show_unaccessible_places: "inte rullstolstillgänglig"
   formtastic:
@@ -73,6 +73,7 @@ se:
       city: "Stad:"
       create: "Skapa plats"
       email: E-post
+      finish: Avsluta
       housenumber: "Nummer:"
       lat: Latitud
       lon: Longitud
@@ -129,7 +130,7 @@ se:
       prompt: Välj
     submit:
       create: "Skapa %{model}"
-      submit: "Spara %{model}"
+      submit: "spara %{model}"
       update: "Ändra %{model}"
   home:
     index:
@@ -154,7 +155,7 @@ se:
           save: Update
           unknown: "unknown status"
           ? "yes"
-          : "wheelchair accessible"
+          : rullstolstillgänglig
         help: "Rullstolstillgänglig? (Hjälp)"
         more: "more ..."
   how?: Hur?
@@ -288,6 +289,7 @@ se:
         for: "Söker efter \"%{q}\""
         not_found: "Inga platser hittades!"
   splash:
+    start: Starta
     step1: "Klicka på en plats som du känner till"
   statistics: Statistik
   support:
@@ -348,7 +350,7 @@ se:
       fully_accessible: "<em>Ja:</em> Ingången har ingen tröskel, alla rum utan trappsteg, hk-toalett finns"
       limited_accessible: "<em>Begränsad:</em> Ingångens tröskel är inte högre än 7 cm, de flesta rummen är tillgängliga, ingen tillgänglig toalett"
       not_accessible: "<em>Nej:</em> Ingångens tröskel är större än 7 cm eller så har den trappsteg. Rummen är inte tillgängliga"
-      unknown_accessible: "<em>Okänd:</em> Hjälp till att uppdatera!"
+      unknown_accessible: "<em>Okänd:</em> Hjälp till att markera platser !"
   will_paginate:
     next_label: "Nästa &#8594;"
     page_entries_info:
@@ -356,3 +358,4 @@ se:
         other: "Visar alla %{count} %{model}"
       single_page_html:
         one: "Visar <b>1<b> %{model}"
+        zero: "Ingen %{model} hittad"
