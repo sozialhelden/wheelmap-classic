@@ -21,8 +21,9 @@ header {
 
   .logo {
     width: 160px;
-    padding-top: 50px;
-    margin: -3px 0 0 0;
+    height: 10px;
+    padding: 25px 0 0 28px;
+    margin: 4px 0 0 0;
     float: left;
     background: url(/images/bg_logo.png) center left no-repeat;
 
@@ -35,12 +36,14 @@ header {
     z-index: 1;
     font-size: 11px;
     font-weight: bold;
-    text-align: right;
     color: #999;
   }
    @media screen and (max-width:767px) {
    .logo {
       width: 25px;
+      text-indent: -9999999px;
+      padding-left: 0px; 
+      margin-top: 6px;
     }
   }
   .btn-toolbar {
@@ -56,9 +59,12 @@ header {
       @include background(linear-gradient(top, rgb(150, 193, 78), rgb(121, 165, 62)));
       @include filter-gradient(#96c14e, #79a53e, vertical);
     }
-    .btn-add:hover {
-      background-position: 0;
-    }      
+    .btn-add {
+      @include border-radius(3px);
+      :hover {
+        background-position: 0;
+      }
+    }       
   }
   .bootstrap-select {
     width: auto;
@@ -126,24 +132,25 @@ nav {
     float: left;
     ul.inline {
       display: inline-block;
-      margin: 0;
+      margin: 0 0 20px 0;
       li {
         float: left;
         list-style: none;
-        padding: 15px 1px 5px 1px;
+        padding: 15px 1% 5px 1%;
+        margin: 4px 1%;
+        width: 46%;
+        border-bottom: 1px solid #DDD;
+        text-align: left;
         a {
           color: #666;
           padding: 7px 10px 6px 10px;
+          font-size: 15px;
           &:visited {
             color: #666;
             padding: 7px 10px 6px 10px;
           }
           &:hover {
             color: #000;
-            background: #DCDBD4;
-            @include border-radius(3px);
-            @include single-box-shadow(rgba(170, 170, 170, 0.2), 2px, 2px, 0, 0, inset);
-            border: 1px solid #c4c2b5;
             margin: 0 -1px;
           }
         }
