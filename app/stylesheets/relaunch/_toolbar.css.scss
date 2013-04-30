@@ -5,7 +5,7 @@
   top: $headerHeight;
   border-top: 1px solid #FFF;
   background-color: #334557;
-  z-index: 0;
+  z-index: 100;
   @include background-image(linear-gradient(top, rgb(64, 87, 109), rgb(38, 51, 65)));
   @include filter-gradient(rgb(64, 87, 109), rgb(38, 51, 65), vertical);
   @include box-shadow(0px 0px 10px #444, inset 0px 2px 6px #000);
@@ -282,7 +282,7 @@
         width: 98%;
         padding: 10px 1% 10px 1%;
         position: fixed;
-        top:50px;
+        top: 50px;
         left: 0px;
         background: #333;
         display: none !important;
