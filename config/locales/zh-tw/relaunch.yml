@@ -1,2 +1,15 @@
 ---
-zh-tw: ~
+zh-tw:
+  header:
+    navigation:
+      about_wheelmap: "關於 Wheelmap"
+      choose_language: 選擇語言
+      contact: 聯繫我們
+      map: 地圖
+    toolbar:
+      categories: 分類
+  home:
+    index:
+      overlay:
+        button: OK，走吧
+        categories: 篩選地點的種類

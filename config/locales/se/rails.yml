@@ -3,7 +3,10 @@ se:
   activerecord:
     attributes:
       user:
+        first_name: "Angivet namn"
         last_name: Efternamn
+        privacy_policy: "Privacy policy"
+        terms: Benämning
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -31,6 +34,8 @@ se:
       models:
         user:
           attributes:
+            email:
+              blank: "kan inte lämnas tomt om lösenord angetts"
             privacy_policy:
               accepted: "måste godkännas"
             terms:

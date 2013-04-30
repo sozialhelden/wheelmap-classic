@@ -6,12 +6,13 @@ se:
       education: Utbildning
       food: "Mat & Dryck"
       government: Myndighet
+      health: "Hälsa & Sjukvård"
       leisure: "Fritid & Kultur"
       misc: Blandat
       money_post: "Bank & Post"
       public_transfer: Trafik
       shopping: Shopping
-      sport: Sport
+      sport: Idrott
       tourism: Turism
       unknown: Okänt
     name:
@@ -35,7 +36,7 @@ se:
         university: Universitet
       food:
         bar: Bar
-        biergarten: Ölträdgård
+        biergarten: Biergarten
         cafe: Café
         drinking_water: Dricksvatten
         fast_food: Snabbmat
@@ -45,24 +46,30 @@ se:
       government:
         courthouse: Domstol
         embassy: Ambassad
+        government: Servicekontor
         police: Polis
         public_building: "Publik byggnad"
         townhall: Stadshus
       health:
         dentist: Tandläkare
-        doctors: Doktor
+        doctors: Läkare
         hearing_aids: Hörcentral
         hospital: Sjukhus
+        medical_supply: "Medicinsk utr."
         pharmacy: Apotek
+        social_facility: Socialkontor
         veterinary: Veterinär
       leisure:
         arena: Arena
+        brothel: Bordell
+        casino: Casino
         cinema: Bio
         community_center: Allaktivitetshus
         gallery: Galleri
         nightclub: Nattklubb
         playground: Lekplats
         sauna: Bastu
+        stripclub: Stripklubb
         theatre: Teater
         zoo: Zoo
       misc:
@@ -96,7 +103,7 @@ se:
         light_rail: Spårväg
         parking: Parkering
         parking_aisle: "Väg på parkeringsplats"
-        platform: Platform
+        platform: Plattform
         station: Tunnelbana
         subway_entrance: Tunnelbaneingång
         terminal: Flygplats-terminal
@@ -108,9 +115,10 @@ se:
         beverages: Drycker
         bicycle: Cykelaffär
         books: Böcker
-        butcher: Slaktare
+        butcher: Köttaffär
         car_repair: Bilverkstad
         car_shop: Bilförsäljning
+        chemist: Kosmetika
         clothes: Kläder
         computer: Datorer
         confectionery: Godisaffär
@@ -120,24 +128,33 @@ se:
         doityourself: "Gör det själv"
         dry_cleaning: Kemtvätt
         electronics: Elektronik
+        fabric: Bygghandel
+        farm_shop: Lantbruksutrustning
         florist: Blomsteraffär
         furniture: Möbler
         garden_centre: Plantskola
         gift: Presentbutik
-        hairdresser: Frisersalong
+        hairdresser: Frisör
         hardware: Järnhandel
         jewelry: Smycken
         kiosk: Kiosk
         laundry: Tvätt
         mall: Köpcentrum
         optician: Optiker
+        organic: Hälsokost
+        outdoor: Friluftsutrustning
+        pet: Djurbutik
+        photo: Foto
+        second_hand: Begagnat
         shoes: Skor
         sports: Sport
         stationery: Kontorsmateriel
         supermarket: Livsmedel
+        toys: Leksaker
         travel_agency: Resebyrå
         video: Videouthyrning
       sport:
+        pitch: Idrottsplats
         sports_centre: Sportcenter
         stadium: Idrottsarena
         swimming: Bad
