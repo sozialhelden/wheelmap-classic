@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   I18n.defaultLocale = 'de';
   I18n.locale = $('html').attr('lang');
-
+  
   $(['yes', 'no', 'limited', 'unknown']).each(function(index, item){
     if ($.cookie('filter_'+item)) {
       $('.status-filter button.'+item).addClass('active');
@@ -56,13 +56,6 @@ $(document).ready(function() {
     }
   }
   function ResizeElements() {
-    var widthMobile = $(window).width();
-    if (widthMobile < 420) {
-      $('.category-filter .filter-option').addClass('icon-tags').html('');
-    }
-    else {
-      $('.category-filter .filter-option').removeClass('icon-tags');
-    }
     var widthTablet = $(window).width();
     if (widthTablet < 767) {
       $('.category-filter').addClass('dropup');

@@ -165,29 +165,38 @@
       width: 150px;
       height: 36px;
     }
-    .counter {
-      background: #F00;
-      position: absolute;
-      width: 18px;
-      height: 18px;
-      top: -13px;
-      right: -34px;
-      @include border-radius(100px);
-      border: 1px solid #FFF;
-      @include box-shadow(0 0 3px #666);
-      background-color: #f4f4f4;
-      @include background-image(linear-gradient(top, rgb(254, 254, 254), rgb(234, 234, 234)));
-      @include filter-gradient(rgb(254, 254, 254), rgb(234, 234, 234), vertical);
-
-
-      font-size: 10px;
-      font-weight: bold;
-      text-align: center;
-      color: #444;
+    .icon-tags {
+      display: none;
+      @media screen and (max-width:420px) {
+        display: inline;
+      }
     }
     .filter-option {
       overflow: visible;
       left: 9px;
+      @media screen and (max-width:420px) {
+        text-indent: -9999999px;
+      }
+      .counter {
+            background: #F00;
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            top: -13px;
+            right: -34px;
+            @include border-radius(100px);
+            border: 1px solid #FFF;
+            @include box-shadow(0 0 3px #666);
+            background-color: #f4f4f4;
+            @include background-image(linear-gradient(top, rgb(254, 254, 254), rgb(234, 234, 234)));
+            @include filter-gradient(rgb(254, 254, 254), rgb(234, 234, 234), vertical);
+      
+            text-indent: 0px;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            color: #444;
+          }
     }
     .dropdown-menu {
       right: 0px;
@@ -227,6 +236,7 @@
       }
       .btn {
          width: 55px;
+         padding: 4px 12px 4px 6px;
          .caret {
            right: 7px;
          }
@@ -309,6 +319,15 @@
    }
   }
 }
-
-
+.ie9, .ie8, .ie7 {
+  .counter {
+    display: none;
+  }
+  #toolbar {
+    position: static;
+    top: 20px;
+  }
+  #map {
+  }
+}
 
