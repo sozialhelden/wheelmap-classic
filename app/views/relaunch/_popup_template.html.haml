@@ -1,12 +1,12 @@
 %script{:type => "text/x-handlebars-template", :id => "cardTemplate"}
   .olFramedCloudPopupContent{:id => 'featurePopup_content_{id}'}
-    .header  
+    .header
       %h2{:style => "background-image:url('/icons/{icon}.png')"} {name}
       %address {address}
     .bubble-ctn
       = form_tag "/nodes/{id}/update_wheelchair.js", :method => 'put', :remote => true, :'data-type' => :json, :class => "update_form formtastic", :id => "wheelchair_update_form" do
         %ol.wheelchair
-          %h3= link_to t('home.index.popup.help'), "http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei/"
+          %h3= link_to t('home.index.popup.help'), I18n.locale == :de ? "http://community.wheelmap.org/about/mappen/" : "http://community.wheelmap.org/en/about/how-to-map/"
           %li.yes
             =radio_button_tag "wheelchair", "yes", true, :id => "yes-OpenLayers.Feature.Vector_{id}"
             %label{:for => "yes-OpenLayers.Feature.Vector_{id}"}= t('home.index.popup.form.yes')
@@ -25,5 +25,4 @@
           %li.save
             =submit_tag t('home.index.popup.form.save'), :class => 'btn'
       = link_to t('home.index.popup.more'), "/nodes/{id}", :class => 'more btn btn-small'
-            
-            
+
