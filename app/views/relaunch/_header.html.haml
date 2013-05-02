@@ -2,12 +2,15 @@
   %nav.navbar
     .navbar-inner
       .container
+        =link_to (root_path, :class => "logo") do
+          %span= t('header.title')
+          
         %a.btn.btn-navbar{:'data-toggle' => "collapse", :'data-target' => ".nav-collapse"}
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-
-        =link_to t('header.title'), root_path, :class => "logo"
+      
+        
           
 
         .btn-toolbar.pull-right{:style => 'padding-right:10px'}

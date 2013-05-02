@@ -34,6 +34,7 @@ $(document).ready(function() {
     $('.overlay-wrapper').addClass('show-overlay');
     $.cookie('_wheelmap_first_time_visitor', true, { expires: 1000 });
   }
+  
   $('.show-overlay').fadeIn(1200);
   $('.lookup').delay(1500).fadeIn(400);
   $('.filter').delay(3500).fadeIn(400);
