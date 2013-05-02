@@ -28,7 +28,7 @@
     @include filter-gradient(#6c859d, #4d647a, vertical);
     border: 1px solid #000;
     background-position: 0;
-    @include box-shadow(0px 1px 0px #566D82, inset 0px 1px 0px #8298AA);
+    @include box-shadow(0px 1px 0px #566D82, inset 0px 1px 0px #8298aa, inset 0px 1px 0px #8298AA);
   }
 
   .btn:hover {
@@ -56,7 +56,7 @@
         font-size: 12px;
 
         @include border-radius(3px 0 0 3px);
-        @include box-shadow(0px 1px 0px #566D82);
+        @include box-shadow(0px 1px 0px #566D82, inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0px 5px 5px rgba(0, 0, 0, 0.1));
         @include transition(all 0.3s ease-in-out);
       }
       :focus {
@@ -164,6 +164,7 @@
     .btn {
       width: 150px;
       height: 36px;
+      @include border-radius(3px);
     }
     .icon-tags {
       display: none;
@@ -178,24 +179,25 @@
         text-indent: -9999999px;
       }
       .counter {
-            background: #F00;
             position: absolute;
             width: 18px;
             height: 18px;
             top: -13px;
             right: -34px;
             @include border-radius(100px);
-            border: 1px solid #FFF;
-            @include box-shadow(0 0 3px #666);
+            border: 2px solid #FFF;
+            @include box-shadow(0 0 5px #111);
             background-color: #f4f4f4;
-            @include background-image(linear-gradient(top, rgb(254, 254, 254), rgb(234, 234, 234)));
-            @include filter-gradient(rgb(254, 254, 254), rgb(234, 234, 234), vertical);
+            @include background-image(linear-gradient(top, #E5002A, #B93028));
+            @include filter-gradient(#E5002A, #B93028, vertical);
       
             text-indent: 0px;
             font-size: 10px;
+            line-height: 18px;
             font-weight: bold;
             text-align: center;
-            color: #444;
+            color: #FFF;
+            text-shadow: 0 1px 0 #000;
           }
     }
     .dropdown-menu {
@@ -294,8 +296,11 @@
           margin: 0 !important;
           width: 100% !important;
 
-          input, input:focus {
+          input {
             width: 80%;
+            &:focus {
+              width: 80%;
+            }
           }
         }
       }
