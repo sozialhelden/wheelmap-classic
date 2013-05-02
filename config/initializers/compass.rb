@@ -6,5 +6,7 @@ Compass.configuration do |config|
   config.environment = Rails.env.to_sym
   config.sass_dir = "app/stylesheets"
   config.css_dir = "public/stylesheets"
+  config.output_style = (config.environment == :production) ? :compressed : :expanded
+  config.line_comments = (config.environment == :production) ? false : true
 end
 Compass.configure_sass_plugin!

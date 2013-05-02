@@ -44,7 +44,7 @@ header {
       position: absolute;
       top: 25px;
       left: 27px;
-      
+
       font-weight: normal;
       @media screen and (max-width:550px) {
         display: none;
@@ -72,7 +72,7 @@ header {
       :hover {
         background-position: 0;
       }
-    }       
+    }
   }
   .bootstrap-select {
     width: auto;
@@ -136,6 +136,7 @@ nav {
   .list-wrapper{
     text-align: center;
     float: left;
+    margin-left: 10px;
     ul.inline {
       display: inline-block;
       margin: 0;
