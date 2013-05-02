@@ -28,6 +28,7 @@ ja:
         motel: モーテル
       education:
         college: 短大
+        driving_school: 自動車学校
         kindergarten: 幼稚園
         library: 図書館
         museum: 博物館・美術館
@@ -39,15 +40,18 @@ ja:
         cafe: カフェ
         drinking_water: 水道
         fast_food: ファストフード
+        ice_cream: アイスクリームパーラー
         pub: パブ/居酒屋
         restaurant: レストラン
       government:
         courthouse: 裁判所
         embassy: 大使館
+        government: 政府機関
         police: 警察
         public_building: 公共施設
         townhall: 市役所・役場
       health:
+        dentist: 歯科医院
         doctors: 診療所
         hearing_aids: 補聴器取扱店
         hospital: 病院
@@ -58,6 +62,7 @@ ja:
       leisure:
         arena: アリーナ
         brothel: 風俗店
+        casino: カジノ
         cinema: 映画館
         community_center: 市民センター
         gallery: ギャラリー
@@ -69,6 +74,8 @@ ja:
         zoo: 動物園
       misc:
         company: 会社(オフィス)
+        estate_agent: 不動産屋
+        insurance: 保険代理店
         lawyer: 法律家
         place_of_worship: 寺社・礼拝所
         toilets: トイレ
@@ -104,6 +111,7 @@ ja:
       shopping:
         alcohol: 酒屋
         bakery: パン屋
+        beauty: ビューティサロン
         beverages: 飲み物屋
         bicycle: 自転車屋
         books: 書店
@@ -113,28 +121,40 @@ ja:
         chemist: 薬品店・化粧品店
         clothes: 衣料品店
         computer: パソコン店
+        confectionery: キャンディショップ
         convenience: コンビニ
+        deli: 惣菜店
         department_store: デパート
         doityourself: ＤＩＹ店
         dry_cleaning: クリーニング店
         electronics: 電器店
+        fabric: 布地店
+        farm_shop: 野菜直売所
         florist: 花屋
         furniture: 家具屋
         garden_centre: ガーデニング店
+        gift: ギフトショップ
         hairdresser: 美容院
         hardware: 金物屋
+        jewelry: 宝石店
         kiosk: キオスク
         laundry: コインランドリー
         mall: ショッピングセンター
         optician: めがね屋
+        organic: 有機食品店
+        outdoor: アウトドアショップ
+        pet: ペットショップ
         photo: 写真
         second_hand: リサイクル店
         shoes: 靴屋
         sports: スポーツ
         stationery: 文房具店
         supermarket: スーパーマーケット
+        toys: 玩具店
+        travel_agency: 旅行代理店
         video: ビデオレンタル店
       sport:
+        pitch: 運動場
         sports_centre: スポーツセンター
         stadium: スタジアム
         swimming: 水泳

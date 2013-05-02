@@ -39,6 +39,7 @@ ja:
     mandatory: "* 必須項目"
     omniauth_callbacks:
       failure: "%{kind} での認証に失敗。エラー: \"%{reason}\"。"
+      permission_missing: あなたは必要な許可を承認していません
       success: "%{kind} でログインしました"
     password_recovery:
       form:
@@ -80,6 +81,13 @@ ja:
       invalid_token: 不正な認証トークン。
       link: サインイン
       locked: あなたのアカウントはロックされました。
+      new:
+        no_osm_account: "OpenStreetMap のアカウントを持っていませんか？"
+        osm_promo_text: "Wheelmap はOpenStreetMap(OSM) の地理データをベースにしています。OpenStreetMap はフリーな世界規模の地図で、あなたのような普通の人が作成しています。地図のWikipediaのようなものです。場所を編集したり、新しく作成する場合には、OpenStreetMapのアカウントが必要で、それを使ってログインしなければなりません。"
+        promo_text_thank_you: あなたのサポートに感謝します！
+        sign_in_with: " %{kind} でログイン"
+        sign_up_with_osm: 今すぐ登録。
+        wheelmap_promo_text: "車椅子で行ける場所についてのあなたの知識で、身体的な障害のある人が日々の生活をより良く組み立てることができます。さらには、OpenStreetMap にも詳細な情報が増えることになります。"
       signed_in: サイインインしました。
       signed_out: サインアウトしました。
       timeout: セッション有効期限切れです。もう一度サイインしてから続けてください。

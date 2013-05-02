@@ -378,10 +378,10 @@ zh-tw:
       alt: "Wheelmap logo－尋找輪椅無障礙空間"
       title: Wheelmap－尋找輪椅無障礙空間
     what_is:
-      fully_accessible: <em>是：</em>入口沒有台階，所有房間都沒有台階，廁所無障礙
-      limited_accessible: "<em>部分：</em>入口有一階台階 (最高 7 公分)，大部分房間沒有台階，無法以輪椅進入廁所"
-      not_accessible: <em>否：</em>入口有階梯，房間不能以輪椅進入
-      unknown_accessible: <em>未知：</em>請幫忙標記
+      fully_accessible: 入口沒有台階，所有房間都沒有台階，廁所無障礙
+      limited_accessible: "入口有一階台階 (最高 7 公分)，大部分房間沒有台階，無法以輪椅進入廁所"
+      not_accessible: 入口有階梯，房間不能以輪椅進入
+      unknown_accessible: 請幫忙標記
   will_paginate:
     next_label: "往後 &#8594;"
     page_entries_info:

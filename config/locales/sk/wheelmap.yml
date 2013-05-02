@@ -133,7 +133,7 @@ sk:
       placeholder: "napr. \"Prvá budova Matice slovenskej Martin\" alebo \"Grasalkovičov palác Bratislava\""
       title_add_place: "Pridajte sem nové miesto!"
     tagline: "Logo Wheelmap"
-    title: "Wheelmap - nájdite miesta prístupné vozíčkarom"
+    title: "Nájdite miesta prístupné vozíčkarom"
   helpers:
     select:
       prompt: "Prosím vyberte si"
@@ -379,10 +379,10 @@ sk:
       alt: "Logo Wheelmap - nájdite miesta prístupné vozíčkarom"
       title: "Wheelmap - nájdite miesta prístupné pre vozíčkarov"
     what_is:
-      fully_accessible: "<em>Áno:</em> Vstup je bez schodov, všetky miestnosti sú bez schodov, záchod je prístupný ak je na danom mieste obvyklý"
-      limited_accessible: "<em>Obmedzený:</em> Vstup má schod (max. výška 7cm), väčšina miestností je bez schodov, záchod nie je prístupný"
-      not_accessible: "<em>Nie:</em> Na vstupe je vysoký schod alebo niekoľko schodov, izby sú nedostupné\n"
-      unknown_accessible: "<em>Neznáme:</em> Pomôžte označením miest!"
+      fully_accessible: "Vstup je bez schodov, všetky miestnosti sú bez schodov, záchod je prístupný ak je na danom mieste obvyklý"
+      limited_accessible: "Vstup má schod (max. výška 7cm), väčšina miestností je bez schodov, záchod nie je prístupný"
+      not_accessible: "Na vstupe je vysoký schod alebo niekoľko schodov, izby sú nedostupné\n"
+      unknown_accessible: "Pomôžte označením miest!"
   will_paginate:
     next_label: "Ďalej &#8594;"
     page_entries_info:

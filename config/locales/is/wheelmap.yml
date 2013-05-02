@@ -122,7 +122,7 @@ is:
       placeholder: "t.d. Árbæjarsafn eða Ráðhús Reykjavíkur"
       title_add_place: "Bæta við nýju stað á þessari staðsetningu strax!"
     tagline: "Wheelmap logo"
-    title: "Wheelmap - finndu staði aðgengilega hjólastólum"
+    title: "Finndu staði aðgengilega hjólastólum"
   helpers:
     select:
       prompt: "Vinsamlega veldu"

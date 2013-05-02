@@ -28,6 +28,7 @@ nl:
         motel: Motel
       education:
         college: Hogeschool/universiteit
+        driving_school: Rijschool
         kindergarten: Kleuterschool
         library: bibliotheek
         museum: Museum
@@ -39,15 +40,18 @@ nl:
         cafe: "Café "
         drinking_water: Drinkwater
         fast_food: "Fast Food"
+        ice_cream: Ijssalon
         pub: Kroeg
         restaurant: Restaurant
       government:
         courthouse: "Het paleis van justitie"
         embassy: Ambassade
+        government: Overheidskantoor
         police: Politie
         public_building: "Openbaar gebouw"
         townhall: Stadshal
       health:
+        dentist: Tandarts
         doctors: Artsen
         hearing_aids: "Audicien (gehoorapperaat winkel)"
         hospital: Ziekenhuis
@@ -58,6 +62,7 @@ nl:
       leisure:
         arena: Arena
         brothel: Bordeel
+        casino: Casino
         cinema: bioscoop
         community_center: Wijkcentrum
         gallery: Galerij
@@ -69,6 +74,8 @@ nl:
         zoo: Dierentuin
       misc:
         company: "Bedrijf (zetel)"
+        estate_agent: Makelaar
+        insurance: Verzekering
         lawyer: Advocaat
         place_of_worship: "Kerk, religieuze plaats"
         toilets: Toiletten
@@ -104,6 +111,7 @@ nl:
       shopping:
         alcohol: Spiritualia
         bakery: Bakkerij
+        beauty: Schoonheidssalon
         beverages: Dranken
         bicycle: Fietswinkel
         books: Boeken
@@ -113,28 +121,40 @@ nl:
         chemist: Apotheek
         clothes: Kleren
         computer: Computer
+        confectionery: "Zoetwaren winkel"
         convenience: Commoditeit
+        deli: Delicatessen
         department_store: Afdelingswinkel
         doityourself: "Doe het zelf"
         dry_cleaning: "Stomerij "
         electronics: Elektronica
+        fabric: "Stoffen winkel"
+        farm_shop: "Groenten winkel"
         florist: Bloemenbinder
         furniture: Meubels
         garden_centre: "Tuin center"
+        gift: "Cadeau winkel"
         hairdresser: Kapper
         hardware: Hardware
+        jewelry: Juwelier
         kiosk: Kiosk
         laundry: Wasserij
         mall: Winkelcentrum
         optician: Opticien
+        organic: "Organische winkel"
+        outdoor: "Buitensport winkel"
+        pet: "Huisdier winkel"
         photo: Foto
         second_hand: Tweedehands
         shoes: Schoenen
         sports: Sport
         stationery: Kantoorbenodigheden
         supermarket: Supermarkt
+        toys: Speelgoed
+        travel_agency: Reisbureau
         video: Videotheek
       sport:
+        pitch: "Sport velden"
         sports_centre: "Sport centrum"
         stadium: Stadion
         swimming: Zwemmen

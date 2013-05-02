@@ -116,7 +116,7 @@ ca:
       label: ~
       title_add_place: "Afegeix un lloc nou en aquesta posició"
     tagline: "Logotip de Wheelmap"
-    title: "Wheelmap - troba llocs accessibles amb cadira de rodes"
+    title: "Troba llocs accessibles amb cadira de rodes"
   helpers:
     select:
       prompt: "Si us plau, seleccioneu"
@@ -333,9 +333,9 @@ ca:
       alt: "Logotip de Wheelmap - cerca llocs accessibles amb cadira de rodes"
       title: "Wheelmap - cerca llocs accessibles amb cadira de rodes"
     what_is:
-      fully_accessible: "<em>Sí:</em> Entrada sense graons així com totes les habitacions sense excepció, com a mínim un lavabo és accessible "
-      not_accessible: "<em>No:</em> L'entrada té un o diversos graons, i les habitacions no són accessibles "
-      unknown_accessible: "<em>Desconegut:</em> Ajuda'ns a marcar llocs "
+      fully_accessible: "Entrada sense graons així com totes les habitacions sense excepció, com a mínim un lavabo és accessible "
+      not_accessible: "L'entrada té un o diversos graons, i les habitacions no són accessibles "
+      unknown_accessible: "Ajuda'ns a marcar llocs "
   will_paginate:
     next_label: "Següent &#8594;"
     page_entries_info:

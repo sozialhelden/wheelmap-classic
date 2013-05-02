@@ -12,6 +12,7 @@ da:
     root: wheelmap
   common:
     close: luk
+    skip: "Spring over"
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -57,6 +58,9 @@ da:
         notice: "%{resource_name} blev succesfuldt slettet."
       update:
         notice: "%{resource_name}  blev succesfuldt opdateret."
+    photos:
+      destroy:
+        notice: "Billedet blev slettet"
   form:
     show_fully_accessible_places: kørestolstilgængeligt
     show_limited_accessible_places: "delvis kørestolstilgængeligt"
@@ -64,6 +68,7 @@ da:
     show_unaccessible_places: "ikke kørestolstilgængeligt"
   formtastic:
     hints:
+      email: "Vi behandler din adresse fortroligt og vil aldrig udsende spam!"
       lat: "Flyt markøren på kortet til den korrekte position"
       osm_username: "Ikke medlem endnu?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Opret en Openstreetmap konto nu</a>"
       password: "(efterlad feltet tomt, hvis du ikke ønsker at ændre dette)"
@@ -71,9 +76,11 @@ da:
       website: "For eksempel: http://www.example.com"
     labels:
       category: "Kategori:"
+      centralkey: "Centralnøgle:"
       city: "By:"
       create: "Opret sted"
       email: E-mail
+      finish: Færdig
       housenumber: Nr.
       lat: Breddegrad
       lon: Længdegrad
@@ -84,9 +91,11 @@ da:
       password_confirmation: "Gentag adgangskode"
       phone: "Telefon:"
       postcode: "Postnummer:"
+      privacy_policy: "Jeg accepterer paragraf 1 og 2 vedr. data fortrolighedsaftale."
       reset: Nulstil
       save: Gem
       street: "Vej:"
+      terms: "Jeg accepterer disse betingelser for brug."
       type: "Type:"
       website: "Hjemmeside:"
       wheelchair: " Kørestolstilgængeligt?"
@@ -121,10 +130,10 @@ da:
       add_place: "Tilføj endnu et sted"
       find: Find
       label: ~
-      placeholder: "Fx Sunset Boulevard L.A. eller Brandenburger Tor Berlin"
+      placeholder: "Søg efter et sted"
       title_add_place: "Tilføj et nyt sted på denne position nu!"
     tagline: "Wheelmap logo"
-    title: "Wheelmap - find kørestolstilgængelige steder"
+    title: "Find kørestolstilgængelige steder"
   helpers:
     select:
       prompt: Vælg...
@@ -155,7 +164,7 @@ da:
           ? "no"
           : "Ikke kørestolstilgængeligt"
           save: Gem
-          unknown: ukendt
+          unknown: "ukendt status"
           ? "yes"
           : "Fuldt kørestoltilgængeligt"
         help: "Kørestolstilgængeligt? (Hjælp)"
@@ -221,6 +230,8 @@ da:
         back: tilbage
         large_map: Forstør
         listing: "Alle steder af  kategoren '%{type}' i %{city}"
+        upload: "Opload billede"
+      more_data_from: "Der er mere information for dette sted, tjekket af:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -339,11 +350,22 @@ da:
       login_with_twitter: "Login med Twitter"
       password: Adgangskode
       remember_me: "Forbliv logget ind"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Du er næsten der! Afslut oprettelsen af din Wheelmap konto her:"
+        set_password_for_mobile: |-
+            Du har nu afsluttet din registering med OpenStreetMap.
+            Vælg nu en e-mail adresse og en adgangskode til din Wheelmap konto og dernæst er du helt færdig! Du behøver denne e-mail adresse og adgangskode for at logge ind på Wheelmap app til iPhone eller Android.
+        text: "Hvordan kan vi komme i kontakt med dig? Du kan altid ændre dette her senere i din profil."
+    edit:
+      headline:
+        your_images: "Dine oploadede billeder"
   wheelchairstatus:
     limited: "delvis kørestolstilgængeligt"
     ? "no"
     : "Ikke kørestolstilgængeligt"
-    unknown: "kørestolstilgængeligt ukendt"
+    unknown: "kørestolstilgængeligt ukendt status"
     ? "yes"
     : "Fuldt kørestoltilgængeligt"
   wheelmap:
@@ -359,10 +381,10 @@ da:
       alt: "Wheelmap logo - find kørestolstilgængelige steder"
       title: "Wheelmap - find kørestolstilgængelige steder"
     what_is:
-      fully_accessible: "<em>Ja:</em> Ingen trapper ved indgang, alle rum ingen trapper, handicaptoilet\n"
-      limited_accessible: "<em>Begrænset:</em> Indgang har et trin (max. højde 7 cm), de fleste rum har ingen trin, ingen handicaptoilet"
-      not_accessible: "<em>Nej:</em> Indgangen har et trin eller flere trin, de forskellige rum er ikke tilgængelige"
-      unknown_accessible: "<em>Ukendt:</em> Hjælp med at få stedet markeret!"
+      fully_accessible: "Ingen trapper ved indgang, alle rum ingen trapper, handicaptoilet\n"
+      limited_accessible: "Indgang har et trin (max. højde 7 cm), de fleste rum har ingen trin, ingen handicaptoilet"
+      not_accessible: "Indgangen har et trin eller flere trin, de forskellige rum er ikke tilgængelige"
+      unknown_accessible: "Hjælp med at få stedet markeret!"
   will_paginate:
     next_label: "Næste &#8594;"
     page_entries_info:

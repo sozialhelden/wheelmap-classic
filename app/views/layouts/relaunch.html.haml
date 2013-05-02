@@ -5,8 +5,17 @@
 <!--[if IE 9 ]>    <html class="ie9" lang="#{I18n.locale}"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="" lang="#{I18n.locale}"> <!--<![endif]-->
 %head
+  %link{ :rel => "schema.DC", :href => "http://purl.org/dc/elements/1.1/" }
+  %link{ :rel => "schema.DCTERMS", :href => "http://purl.org/dc/terms/" }
   = render :partial => 'relaunch/meta'
   = content_for :meta
+
+  - if content_for? :head
+    = content_for :head
+  - else
+    %meta{:name => 'description', :content => t('header.meta.description')}
+    %title= "Wheelmap - #{t('header.title')}"
+
 
   = include_stylesheets :relaunch, :media => 'screen, projection'
   /[if lte IE 8]

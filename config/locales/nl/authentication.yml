@@ -38,6 +38,8 @@ nl:
         subject: "Open instructies"
     mandatory: "* nodig"
     omniauth_callbacks:
+      failure: "Autorisatie met  %{kind} mislukte. Fout: \"%{reason}\"."
+      permission_missing: "Je hebt de benodigde toestemming niet ingewilligd."
       success: "Succesvol goedgekeurd van %{kind} account"
     password_recovery:
       form:
@@ -79,6 +81,13 @@ nl:
       invalid_token: "Ongeldig authentificatie bewijs."
       link: Aanmelden
       locked: "Jouw account is geblokkeerd."
+      new:
+        no_osm_account: "Geen OpenStreetMap account?"
+        osm_promo_text: "Deze wheelmap is gebaseerd op de geodata van OpenStreetMap (OSM). OpenStreetMap is een vrije wereldmap, gemaakt door mensen als jij. Het is zoals Wikipedia voor plattegronden. Om plaatsen te veranderen of nieuwe in te voegen heb je een OpenStreetMap account nodig en moet je er ingeloggd zijn."
+        promo_text_thank_you: "Dank je wel voor je ondersteuning!"
+        sign_in_with: "Log in met %{kind}"
+        sign_up_with_osm: "Registreer je nu."
+        wheelmap_promo_text: "Met jouw kennis over rolstoel toegankelijke plaatsen kan je mensen met fysieke beperkingen helpen om het dagelijkse leven beter te organiseren. Bovendien wordt de OpenStreetMap prezieser door nieuwe details.  "
       signed_in: "Succesvol aangemeld."
       signed_out: "Succesvol uitgelogd."
       timeout: "Jouw sessie is afgelopen, alsjeblieft log in om door te gaan."

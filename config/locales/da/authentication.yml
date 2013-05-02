@@ -39,6 +39,7 @@ da:
     mandatory: "* Skal udfyldes"
     omniauth_callbacks:
       failure: "Kunne ikke autorisere dig fra %{kind} på grund af \"%{reason}\"."
+      permission_missing: "Du fik ikke de påkrævede tilladelser."
       success: "Succesfuld autorisation fra  %{kind} kontoen."
     password_recovery:
       form:
@@ -80,6 +81,13 @@ da:
       invalid_token: "Ugyldig autorisation token"
       link: Login
       locked: "Din konto er låst"
+      new:
+        no_osm_account: "Ingen OpenStreetMap konto?"
+        osm_promo_text: "Wheelmap er baseret på geodata fra OpenStreetMap. OpenStreetMap er et verdensomspændende kort lavet af folk lige som dig. Det er som en Wikipedia for kort. For at rette eller lave nye steder skal du have oprettet en OpenStreeMap konto og samtidigt skal du være logget ind med denne konto."
+        promo_text_thank_you: "Mange tak for din støtte!"
+        sign_in_with: "Log ind med %{kind}"
+        sign_up_with_osm: "Registrer nu."
+        wheelmap_promo_text: "Din lokale viden om kørestolstilgængelige steder hjælper fysisk handicappede til bedre at organisere deres hverdag. Samtidigt gør du også OpenStreetMap mere værdifuldt."
       signed_in: "Du er nu logget ind"
       signed_out: "Du er nu logget ud"
       timeout: "Din loginsession er udløbet, login igen for at fortsætte."

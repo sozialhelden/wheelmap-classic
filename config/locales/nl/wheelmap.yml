@@ -12,7 +12,10 @@ nl:
     root: wheelmap
   common:
     close: sluiten
+    skip: Overslaan
   errors:
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
     messages:
       accepted: "Moet geaccepteerd worden."
       already_confirmed: "Was al bevestigd, alsjeblieft probeer in te loggen."
@@ -33,11 +36,31 @@ nl:
       not_an_integer: "moet een gehele getal zijn"
       not_found: "niet gevonden"
       not_locked: "is niet geblokkeerd"
+      not_saved:
+        one: "Een fout verbied het opslaan van  %{resource}:"
+        other: "%{count} fouten verbieden op te slaan %{resource}:"
       odd: "moet oneven zijn"
       taken: "werd al volbracht"
       too_long: "is te lang (niet meer dan %{count} letters)\n"
       too_short: "is te kort (niet minder dan %{count} letters)\n"
       wrong_length: "is de foute lengte (moet %{count} letters zijn)\n"
+    template:
+      body: "Er waren problemen met de volgende velden:"
+      header:
+        one: "1 fout verbied dat %{model} opgeslagen te worden."
+        other: "%{count} fouten verbieden dit %{model} op te slaan"
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} werd succesvol ingevoegd"
+      destroy:
+        alert: "%{resource_name} kan niet verplaatst worden"
+        notice: "%{resource_name} werd succesvol verwijderd"
+      update:
+        notice: "%{resource_name} werd succesvol vernieuwed"
+    photos:
+      destroy:
+        notice: "Beeld werd succesvol verwijderd"
   form:
     show_fully_accessible_places: "rolstoel toegankelijk"
     show_limited_accessible_places: "deels rolstoel toegankelijk"
@@ -45,6 +68,7 @@ nl:
     show_unaccessible_places: "niet rolstoel toegankelijk"
   formtastic:
     hints:
+      email: "Wij behandelen je gegevens veilig, geen spam. Beloofd!"
       lat: "Beweeg de marker op de kaart in de correcte positie"
       osm_username: "Nog geen lid op dit moment? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Maak nu een Openstreetmap account</a>\n"
       password: "(laat dit leeg als je het niet wil veranderen )"
@@ -52,9 +76,11 @@ nl:
       website: "Bijvoorbeeld: http://www.voorbeeld.com"
     labels:
       category: "Categorie:"
+      centralkey: "Centrale sluitel"
       city: "Stad:"
       create: "Creëer plaats"
       email: E-mail
+      finish: Einde
       housenumber: "Nee:"
       lat: Bewegingsvrijheid
       lon: Lengtegraad
@@ -65,9 +91,11 @@ nl:
       password_confirmation: "Herhaal wachtwoord"
       phone: "Telefoon:"
       postcode: Postcode
+      privacy_policy: "Ik accepteer paragraaf 1 en 2 van het privacy overeenkomst."
       reset: Resetten
       save: Opslaan
       street: "Straat:"
+      terms: "Ik accepteer de voorwaarden."
       type: "Invullen:"
       website: "Internetpagina:"
       wheelchair: "Rolstoel toegankelijkheid?"
@@ -94,6 +122,7 @@ nl:
       logout: Uitloggen
       newsletter: Nieuwsbrief
       press: Pers
+      profile: Profiel
       suggestions: Adviezen
       what_is_barrier_free: "Wat betekend \"wheelchair accessible\"?"
       what_is_wheelmap: "Wat is wheelmap?"
@@ -104,17 +133,20 @@ nl:
       placeholder: "Bijvoorbeeld Sunset Boulevard L.A. of Brandenburg Gate Berlin"
       title_add_place: "Voeg nu een nieuwe plaats op deze positie toe!"
     tagline: "Wheelmap logo"
-    title: "Wheelmap - vind rolstoel toegangelijke plaatsen"
+    title: "Vind rolstoel toegangelijke plaatsen"
   helpers:
     select:
       prompt: "Kies alsjeblieft"
     submit:
       create: "Creëer %{model}"
       submit: " %{model} opslaan"
+      update: "update %{model}"
   home:
     index:
       filter:
         category: "Kies categorie"
+        deselect_all: "Los de hele selectie op"
+        select_all: "Selecteer alles"
         wheelchair: "Rolstoel toegangelijk?"
       ie:
         action:
@@ -198,6 +230,8 @@ nl:
         back: terug
         large_map: Verruimen
         listing: "Alle vergelijkbare plaatsen '%{type}' in %{city}\n"
+        upload: "Upload beeld"
+      more_data_from: "Er is meer informatie over deze plaats, gecontroleerd door:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -223,6 +257,7 @@ nl:
       strip_insignificant_zeros: 0
     human:
       decimal_units:
+        format: "%n %u\n"
         units:
           billion: Biljoen
           million: miljoen
@@ -233,12 +268,18 @@ nl:
       format:
         delimiter: ~
         precision: 1
+        significant: waar
         strip_insignificant_zeros: 0
       storage_units:
+        format: "%n %u"
         units:
           byte:
             one: Byte
             other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
     percentage:
       format:
         delimiter: ~
@@ -309,6 +350,17 @@ nl:
       login_with_twitter: "Log in met Twitter"
       password: Wachtwoord
       remember_me: "Aangemeld blijven"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Je bent er bijna! Beëindigen je registratie voor je Wheelmap account hier:"
+        set_password_for_mobile: |-
+            Je registratie bij OpenStreetMap is geslaagd.
+            Kies nu je email adres en je wachtwoord voor je Wheelmap account en dan ben je erbij! Je hebt deze email adres en het wachtword nodig om bij de Wheelmap app for iPone of Android in te loggen.
+        text: "Hoe kunnen wij contact met je opnemen? Je kan deze informatie later in je profiel veranderen."
+    edit:
+      headline:
+        your_images: "Jouw geupload beelden"
   wheelchairstatus:
     limited: "deels rolstoel toegankelijk"
     ? "no"
@@ -329,9 +381,22 @@ nl:
       alt: "Wheelmap logo - vind rolstoel toegangelijke plaatsen"
       title: "Wheelmap - vind rolstoel toegangelijke plaatsen"
     what_is:
-      fully_accessible: "<em>Yes:</em> Ingang drempelvrij, alle ruimtes drempelvrij, gehandicaptentoilet aanwezig  "
-      limited_accessible: "<em>Limited:</em> Ingang heeft een drempel (maximaal hoogte 7 cm), bijna alle kamers drempelvrij, toilet niet toegankelijk   "
-      not_accessible: "<em>No:</em> Ingang heeft hoge of meerdere treden, kamers zijn niet toegankelijk"
-      unknown_accessible: "<em>Unknown:</em> Hulp mee en markeer plaatsen!"
+      fully_accessible: "Ingang drempelvrij, alle ruimtes drempelvrij, gehandicaptentoilet aanwezig  "
+      limited_accessible: "Ingang heeft een drempel (maximaal hoogte 7 cm), bijna alle kamers drempelvrij, toilet niet toegankelijk   "
+      not_accessible: "Ingang heeft hoge of meerdere treden, kamers zijn niet toegankelijk"
+      unknown_accessible: "Hulp mee en markeer plaatsen!"
   will_paginate:
+    next_label: "Volgende &#8594;"
+    page_entries_info:
+      multi_page: "Laat %{model} %{from} - %{to} of %{count} in het geheel zien"
+      multi_page_html: "Betoon %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in het geheel "
+      single_page:
+        one: "Betoon 1 %{model}"
+        other: "Betoon alle %{count} %{model}"
+        zero: "Niet %{model} gevonden"
+      single_page_html:
+        one: "Betoon  <b>1</b> %{model}"
+        other: "Betoon <b>all&nbsp;%{count}</b> %{model}"
+        zero: "Niet %{model} gevonden"
+    page_gap: "&hellip;"
     previous_label: "&#8592; Volgende"

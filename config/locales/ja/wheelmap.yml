@@ -12,6 +12,7 @@ ja:
     root: wheelmap
   common:
     close: 閉じる
+    skip: スキップ
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -57,6 +58,9 @@ ja:
         notice: "%{resource_name} は削除されました"
       update:
         notice: "%{resource_name} は更新されました"
+    photos:
+      destroy:
+        notice: 画像は削除されました。
   form:
     show_fully_accessible_places: 車椅子可
     show_limited_accessible_places: 車椅子一部可
@@ -64,6 +68,7 @@ ja:
     show_unaccessible_places: 車椅子不可
   formtastic:
     hints:
+      email: あなたの住所は厳重に取扱い、スパムメールを送ったりしないことをお約束します！
       lat: 地図上のマーカーを正しい位置に移動
       osm_username: "まだメンバーではありませんか？<a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">今すぐOpenstreetmap のアカウントを作成</a> "
       password: (変更しない場合は空白のまま)
@@ -71,9 +76,11 @@ ja:
       website: "例: http://www.example.com"
     labels:
       category: "カテゴリ:"
+      centralkey: 中央キー：
       city: "都市:"
       create: 場所を作成
       email: Eメール
+      finish: 終了
       housenumber: "番地:"
       lat: 緯度
       lon: 経度
@@ -84,9 +91,11 @@ ja:
       password_confirmation: パスワード再入力
       phone: "電話:"
       postcode: "郵便番号:"
+      privacy_policy: データプライバシー同意書の1節と2節に同意します。
       reset: リセット
       save: 保存
       street: 住所
+      terms: 利用条件に同意します。
       type: "タイプ:"
       website: ウェブサイト
       wheelchair: 車椅子のアクセシビリティは？
@@ -119,9 +128,9 @@ ja:
       what_is_wheelmap: wheelmapとは？
     searchbar:
       add_place: 別の場所を追加
-      find: 見つける
+      find: 探す
       label: ~
-      placeholder: "例. Sunset Boulevard L.A. or Brandenburg Gate Berlin "
+      placeholder: 場所を探す
       title_add_place: 今すぐこの位置に新しい場所を追加！
     tagline: "Wheelmap ロゴ"
     title: "Wheelmap - 車椅子で行ける場所を見つけよう "
@@ -221,13 +230,15 @@ ja:
         back: 戻る
         large_map: 拡大
         listing: "%{city} 内のtyp '%{type}' の全ての場所"
+        upload: 画像をアップロード
+      more_data_from: この場所のはもっとデータがあります、チェック：
       show-in-osm: OpenStreetMap
     update:
       flash:
         not_successfull: おっと、入力内容が正しくないか不完全です。
         successfull: ありがとうございます、送信内容は保存されました。しばらく経ってからオンラインに反映されます。
     update_wheelchair:
-      successfull: "\"%{name}\" のステータスは \"%{status} 車椅子利用可\" に変更されました。しばらくたったらオンラインで表示されます。"
+      successfull: "\"%{name}\" のステータスは \"%{status} \" に変更されました。しばらくたったらオンラインで表示されます。"
   number:
     currency:
       format:
@@ -339,6 +350,17 @@ ja:
       login_with_twitter: Twitterでログイン
       password: パスワード
       remember_me: ログインを保持する
+  users:
+    after_signup_edit:
+      welcome:
+        headline: ほぼ終了です！Wheelmapアカウントのサインアップはここで終わりです。
+        set_password_for_mobile: |-
+            OpenStreetMap への登録が完了しました。
+            あなたのwheelmap アカウント用のメールアドレスとパスワードを選んだら設定完了です！iPhoneまたはAndroid 向けのWheelmapアプリにログインする時にこのメールアドレスとパスワードが必要になります。
+        text: あなたと連絡を取るにはどうしたら良いですか？この情報はあとからあなたのプロファイル欄で変更できます。
+    edit:
+      headline:
+        your_images: あなたのアップロード画像
   wheelchairstatus:
     limited: 車椅子利用一部可
     ? "no"
@@ -348,7 +370,7 @@ ja:
     : 完全に車椅子利用可
   wheelmap:
     footer:
-      a_project_of: プロジェクト推進：
+      a_project_of: プロジェクト運営：
       based_on: ベース地図：
       become_a_supporter: サポーターになる
       main_supporter: 主なサポーター
@@ -359,10 +381,10 @@ ja:
       alt: "Wheelmap ロゴ - 車椅子で行ける場所を見つけよう"
       title: "Wheelmap - 車椅子で行ける場所を見つけよう"
     what_is:
-      fully_accessible: "<em>はい:</em>入口には段差が無い、全ての部屋に段差が無い、車椅子でトイレに行ける"
-      limited_accessible: "<em>一部:</em>入口に段差がある(最大でも高さ7cmまで)、たいていの部屋には段差が無い、車椅子でトイレに行けない"
-      not_accessible: "<em>いいえ:</em>入口の段差が高いか複数あり、部屋に入れません"
-      unknown_accessible: "<em>不明:</em>この場所の印付けを手伝ってください！"
+      fully_accessible: 入口には段差が無い、全ての部屋に段差が無い、車椅子で無理なくトイレに行ける
+      limited_accessible: 入口に段差がある(最大でも高さ7cmまで)、たいていの部屋には段差が無い、車椅子でトイレに行けない
+      not_accessible: 入口の段差が高いか複数あり、部屋に入れない
+      unknown_accessible: 場所をマークして手助けしてください！
   will_paginate:
     next_label: "次へ &#8594"
     page_entries_info:

@@ -6,6 +6,7 @@ zh-tw:
       choose_language: 選擇語言
       contact: 聯繫我們
       map: 地圖
+      projects: 參與這個專案
     toolbar:
       categories: 分類
   home:
@@ -13,3 +14,7 @@ zh-tw:
       overlay:
         button: OK，走吧
         categories: 篩選地點的種類
+        filter: 篩選地點的輪椅無障礙程度
+        headline: "透過 Wheelmap.org 標示和尋找輪椅無障礙空間 - 全球化而免費。這並不困難："
+        lookup: 搜尋特定地點
+        secondary_headline: 我們以類似「紅綠燈」的方式標示公共空間的輪椅無障礙程度：

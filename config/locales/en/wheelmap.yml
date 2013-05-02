@@ -133,7 +133,7 @@ en:
       placeholder: "i.e. Sunset Boulevard L.A. or Brandenburg Gate Berlin"
       title_add_place: "Add a new place at this position now!"
     tagline: "Wheelmap logo"
-    title: "Wheelmap - find wheelchair accessible places"
+    title: "find wheelchair accessible places"
   helpers:
     select:
       prompt: "Please choose"

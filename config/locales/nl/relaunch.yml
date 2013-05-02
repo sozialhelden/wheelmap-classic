@@ -1,2 +1,20 @@
 ---
-nl: ~
+nl:
+  header:
+    navigation:
+      about_wheelmap: "Over Wheelmap"
+      choose_language: "Kies de taal"
+      contact: Contact
+      map: Plattegrond
+      projects: "Start ermee"
+    toolbar:
+      categories: Categorieën
+  home:
+    index:
+      overlay:
+        button: "Oké laat ons beginnen."
+        categories: "Selecteer plaatsen via de categorieën"
+        filter: "Selecteer plaatsen met de Wheelchair toegang"
+        headline: "Markeer en vind rolstoel toegankelijke plaatsen met Wheelmap.org - wereldwijd en gratis. Het is makkelijk:"
+        lookup: "Zoek een speciale plaats"
+        secondary_headline: "Ons stoplicht systeem om de rolstoel toegankelijke openbare ruimtes te markeren:"

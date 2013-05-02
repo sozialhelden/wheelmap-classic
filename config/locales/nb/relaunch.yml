@@ -1,2 +1,20 @@
 ---
-nb: ~
+nb:
+  header:
+    navigation:
+      about_wheelmap: "Om Wheelmap"
+      choose_language: "Velg språk"
+      contact: Kontakt
+      map: Kart
+      projects: "Bli aktiv"
+    toolbar:
+      categories: Kategorier
+  home:
+    index:
+      overlay:
+        button: "Okay, sett igang"
+        categories: "Filtrer steder etter kategorier"
+        filter: "Filtrer sider etter tilgjenglighet"
+        headline: "Merk og finn rullestol tilgjenglige steder med Wheelmap.org - verdenrundt helt gratis. Det er enkelt"
+        lookup: "Søk etter et bestemt sted"
+        secondary_headline: "Vårt trafikk lys system for å merke rullestol tiljgenligheten av offentlig steder"
