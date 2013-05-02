@@ -4,6 +4,7 @@
   position: absolute;
   z-index: 1999;
   background: rgba(40,	54, 69, 0.8);
+  display: none;
 }
 .overlay {
   width: 700px;
@@ -55,17 +56,17 @@
     padding: 75px 5% 5px 5%;
     margin: 0 0 40px 0;
     text-align: center;
-    
+
     background: url('/images/logo-overlay.png') center top no-repeat;
-    
+
     font-size: 16px;
     line-height: 24px;
     font-weight: normal;
     @media screen and (max-width:700px) {
       background-size: 170px;
       font-size: 12px;
-      line-height: 18px; 
-      padding-top: 50px; 
+      line-height: 18px;
+      padding-top: 50px;
       margin: -10px 0 0 0;
     }
   }
@@ -75,7 +76,7 @@
     padding: 25px 5% 0px 5%;
     text-align: center;
     margin: 0px;
-    
+
     font-size: 18px;
     line-height: 20px;
     font-weight: bold;
@@ -112,10 +113,10 @@
       background: #FFF;
       padding: 4px 10px;
       display: none;
-      
+
       font-size: 12px;
       line-height: 18px;
-      
+
       @include box-shadow (0 0 4px #333);
       @include border-radius(3px);
       &:after {
@@ -204,15 +205,15 @@
     float: left;
     display: none;
     cursor: pointer;
-    
+
     font-size: 20px;
     font-weight: bold;
     color: #FFF;
     text-align: center;
-    
+
     @include background-image(linear-gradient(top, rgb(64, 87, 109), rgb(38, 51, 65)));
     @include filter-gradient(rgb(64, 87, 109), rgb(38, 51, 65), vertical);
-    
+
     @include border-radius(8px);
     border: 1px solid #333;
     @media screen and (max-width:700px) {
