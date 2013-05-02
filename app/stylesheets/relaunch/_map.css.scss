@@ -1,7 +1,7 @@
 section#map {
   position: absolute;
   top: $headerHeight + $toolbarHeight;
-  bottom: $footerHeight;
+  bottom: $footerHeight + 2;
   left: 0;
   width: 100%;
   background: #E8E0D8;
