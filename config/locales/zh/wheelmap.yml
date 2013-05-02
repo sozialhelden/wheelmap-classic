@@ -356,10 +356,10 @@ zh:
       alt: "Wheelmap 标志－找到轮椅通道的地点"
       title: "Wheelmap 标志－找到轮椅通道的地点"
     what_is:
-      fully_accessible: "<em>Yes:</em>入口没有台阶，所有房间没有台阶，厕所可通过"
-      limited_accessible: "<em>Limited:</em>入口有台阶（最高7厘米），大部分房间没有台阶。厕所不能通过"
-      not_accessible: "<em>No:</em>入口很快到达，房间不能通过"
-      unknown_accessible: "<em>未知:</em>标记地点帮助"
+      fully_accessible: "入口没有台阶，所有房间没有台阶，厕所可通过"
+      limited_accessible: "入口有台阶（最高7厘米），大部分房间没有台阶。厕所不能通过"
+      not_accessible: "入口很快到达，房间不能通过"
+      unknown_accessible: "标记地点帮助"
   will_paginate:
     next_label: "往后&#8594;"
     page_entries_info:

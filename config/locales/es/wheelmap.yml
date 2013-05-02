@@ -120,7 +120,7 @@ es:
       placeholder: "p.ej. Sunset Boulevard L.A. ó Brandenburg Gate Berlin\n"
       title_add_place: "¡Añada otro nuevo sitio aquí ahora!"
     tagline: "Logo del mapa de silla de ruedas"
-    title: "Silla de ruedas - buscar sitios con acceso en silla de ruedas"
+    title: "Buscar sitios con acceso en silla de ruedas"
   helpers:
     select:
       prompt: "Por favor, elija"
@@ -345,10 +345,10 @@ es:
       alt: "Wheelmap Logo - buscar zonas con acceso"
       title: "Wheelmap - buscar zonas con acceso"
     what_is:
-      fully_accessible: "<em>Accesible :</em> Acceso liso, sin peldaños; todas las localidades tienen acceso y circulación para silla de ruedas (sin excepción); baños disponibles para personas con discapacidad"
-      limited_accessible: "<em>Parcial :</em> Acceso no superior a 7 cm; circulaciones accesibles a los recintos más importantes para usuarios en silla de ruedas"
-      not_accessible: "<em>Inaccesible :</em> Desnivel en acceso superior a 7 cm o escalera en la entrada, las localidades más importantes no tienen acceso para usuarios en silla de ruedas."
-      unknown_accessible: "<em>Desconocido:</em> Ayuda y marcar los lugares!"
+      fully_accessible: "Acceso liso, sin peldaños; todas las localidades tienen acceso y circulación para silla de ruedas (sin excepción); baños disponibles para personas con discapacidad"
+      limited_accessible: "Acceso no superior a 7 cm; circulaciones accesibles a los recintos más importantes para usuarios en silla de ruedas"
+      not_accessible: "Desnivel en acceso superior a 7 cm o escalera en la entrada, las localidades más importantes no tienen acceso para usuarios en silla de ruedas."
+      unknown_accessible: "Ayuda y marcar los lugares!"
   will_paginate:
     page_entries_info:
       multi_page: "Mostrar %{model} %{from} - %{to} de %{count} en total"

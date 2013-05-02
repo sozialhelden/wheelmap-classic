@@ -127,7 +127,7 @@ nb:
       placeholder: "Eksempel Sunset Boulevard L.A. eller Brandenburg Gate Berlin"
       title_add_place: "Legg til nytt sted her nå!"
     tagline: "Wheelmap logo"
-    title: "Wheelmap - finn rullestoltilgjengelige steder"
+    title: "Finn rullestoltilgjengelige steder"
   helpers:
     select:
       prompt: "Vennligst velg"
@@ -367,10 +367,10 @@ nb:
       alt: "Wheelmap Logo - finn rullestoltilgjengelige steder"
       title: "Wheelmap - finn rullestoltilgjengelige steder"
     what_is:
-      fully_accessible: "<em>Ja:</em> Inngang uten trinn, alle rom uten trinn, tilgjenglig toalett hvis forventet på et sted"
-      limited_accessible: "<em>Begrenset:</em> Inngangen har et trinn (maks. høyde 7cm), de fleste rom er uten trinn, toalettene er ikke tilgjengelige."
-      not_accessible: "<em>Nei:</em> Inngang har kant eller flere trappetrinn, rommene er ikke tilgjengelige"
-      unknown_accessible: "<em>Ukjent:</em> Hjelp ved å merke stedet!"
+      fully_accessible: "Inngang uten trinn, alle rom uten trinn, tilgjenglig toalett hvis forventet på et sted"
+      limited_accessible: "Inngangen har et trinn (maks. høyde 7cm), de fleste rom er uten trinn, toalettene er ikke tilgjengelige."
+      not_accessible: "Inngang har kant eller flere trappetrinn, rommene er ikke tilgjengelige"
+      unknown_accessible: "Hjelp ved å merke stedet!"
   will_paginate:
     next_label: "Neste &#8594;"
     page_entries_info:

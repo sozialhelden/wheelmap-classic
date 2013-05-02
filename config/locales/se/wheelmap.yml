@@ -124,7 +124,7 @@ se:
       placeholder: "till exempel Sunset Boulevard L.A. eller Drottningholms slott, Stockholm"
       title_add_place: "Lägg till en ny plats på denna position!"
     tagline: "Wheelmap logo"
-    title: "Wheelmap - hitta rullstolstillgängliga platser"
+    title: "Hitta rullstolstillgängliga platser"
   helpers:
     select:
       prompt: Välj
@@ -347,10 +347,10 @@ se:
       alt: "Wheelmap Logo - Hitta rullstolstillgängliga platser"
       title: "Wheelmap - Hitta rullstolstillgängliga platser"
     what_is:
-      fully_accessible: "<em>Ja:</em> Ingången har ingen tröskel, alla rum utan trappsteg, hk-toalett finns"
-      limited_accessible: "<em>Begränsad:</em> Ingångens tröskel är inte högre än 7 cm, de flesta rummen är tillgängliga, ingen tillgänglig toalett"
-      not_accessible: "<em>Nej:</em> Ingångens tröskel är större än 7 cm eller så har den trappsteg. Rummen är inte tillgängliga"
-      unknown_accessible: "<em>Okänd:</em> Hjälp till att markera platser !"
+      fully_accessible: "Ingången har ingen tröskel, alla rum utan trappsteg, hk-toalett finns"
+      limited_accessible: "Ingångens tröskel är inte högre än 7 cm, de flesta rummen är tillgängliga, ingen tillgänglig toalett"
+      not_accessible: "Ingångens tröskel är större än 7 cm eller så har den trappsteg. Rummen är inte tillgängliga"
+      unknown_accessible: "Hjälp till att markera platser !"
   will_paginate:
     next_label: "Nästa &#8594;"
     page_entries_info:

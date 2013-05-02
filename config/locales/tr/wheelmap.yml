@@ -111,7 +111,7 @@ tr:
       placeholder: "mesela Sunset Boulevard L.A. veya Brandenburger Tor Berlin"
       title_add_place: "Şimdi bu pozisyona yeni bir alan veya mekan ekle!"
     tagline: "Wheelmap logo"
-    title: "Wheelmap - tekerlekli sandalye için ulaşılır yerler bul"
+    title: "Tekerlekli sandalye için ulaşılır yerler bul"
   helpers:
     select:
       prompt: "Lütfen seçiniz"

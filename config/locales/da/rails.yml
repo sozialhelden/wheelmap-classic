@@ -1,6 +1,12 @@
 ---
 da:
   activerecord:
+    attributes:
+      user:
+        first_name: Fornavn
+        last_name: Efternavn
+        privacy_policy: "Privatlivs politik"
+        terms: Betingelser
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -26,6 +32,14 @@ da:
         too_short: "er for kort (minimum %{count} tegn)"
         wrong_length: "har forkert længde (skulle være %{count} tegn)"
       models:
+        user:
+          attributes:
+            email:
+              blank: "Dette felt kan ikke være blankt når der er adgangskode"
+            privacy_policy:
+              accepted: "skal accepteres"
+            terms:
+              accepted: "skal accepteres"
         user_session:
           email: E-mail-adresse
           password: Adgangskode
@@ -35,3 +49,5 @@ da:
         header:
           one: "En fejl forhindrede %{model} i at blive gemt"
           other: "%{count} fejl forhindrede %{model} i at blive gemt"
+    models:
+      user: Bruger

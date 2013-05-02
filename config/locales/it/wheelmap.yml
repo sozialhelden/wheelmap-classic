@@ -125,7 +125,7 @@ it:
       placeholder: "p.e. Sunset Boulevard L.A. or Brandenburg Gate Berlin"
       title_add_place: "Aggiungi ora un luogo a questo posizione!"
     tagline: "Wheelmap logo"
-    title: "Wheelmap - trova luoghi accessibili in sedia a rotelle"
+    title: "Trova luoghi accessibili in sedia a rotelle"
   helpers:
     select:
       prompt: Scegli
@@ -360,10 +360,10 @@ it:
       alt: "Logo Wheelmap - trova luoghi accessibili in sedia a rotelle"
       title: "Wheelmap - trova luoghi accessibili in sedia a rotelle"
     what_is:
-      fully_accessible: "<em>Sì:</em> L'ingresso non ha gradini; tutte le sale (senza eccezione) sono raggiungibili in sedia a rotelle; un bagno per disabili è disponibile"
-      limited_accessible: "<em>Parzialmente accessibile in sedia a rotelle:</em> L'ingresso non ha un gradino più alto di 7 cm; le sale prinicipali non hanno scalini, il bagno non è accessibile in sedia a rotelle"
-      not_accessible: "<em>No:</em> L'ingresso ha diversi scalini o uno scalino più alto di 7 cm e le sale non sono raggiungibili in sedia a rotelle"
-      unknown_accessible: "<em>Stato della accessibilità in sedia a rotelle sconosciuto:</em> Aiutaci contrassegnando i luoghi!"
+      fully_accessible: "L'ingresso non ha gradini; tutte le sale (senza eccezione) sono raggiungibili in sedia a rotelle; un bagno per disabili è disponibile"
+      limited_accessible: "L'ingresso non ha un gradino più alto di 7 cm; le sale prinicipali non hanno scalini, il bagno non è accessibile in sedia a rotelle"
+      not_accessible: "L'ingresso ha diversi scalini o uno scalino più alto di 7 cm e le sale non sono raggiungibili in sedia a rotelle"
+      unknown_accessible: "Aiutaci contrassegnando i luoghi!"
   will_paginate:
     next_label: "Successivo &#8594;"
     page_entries_info:

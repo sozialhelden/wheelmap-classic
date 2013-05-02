@@ -28,6 +28,7 @@ da:
         motel: Motel
       education:
         college: Gymnasium
+        driving_school: Køreskole
         kindergarten: Børnehave
         library: Bibliotek
         museum: Museum
@@ -39,15 +40,18 @@ da:
         cafe: Cafe
         drinking_water: Drikkevand
         fast_food: "Fast Food"
+        ice_cream: Isbutik
         pub: Værtshus
         restaurant: Restaurant
       government:
         courthouse: Retsbygning
         embassy: Ambassade
+        government: "Statslig organisation"
         police: Politi
         public_building: "Offentlig bygning"
         townhall: Rådhus
       health:
+        dentist: Tandlæge
         doctors: Læge
         hearing_aids: Høreapparatforhandler
         hospital: Hospital
@@ -58,6 +62,7 @@ da:
       leisure:
         arena: Sportsarena
         brothel: Bordel
+        casino: Kasino
         cinema: Biograf
         community_center: Borgerhus
         gallery: Galleri
@@ -69,6 +74,8 @@ da:
         zoo: Zoo
       misc:
         company: "Firma (kontor)"
+        estate_agent: Ejendomsmægler
+        insurance: Forsikringsselskab
         lawyer: Advokat
         place_of_worship: "Religiøs tilbedelsessted"
         toilets: Toiletter
@@ -104,6 +111,7 @@ da:
       shopping:
         alcohol: Vinhandler
         bakery: Bager
+        beauty: Skønhedssalon
         beverages: Drikkevarer
         bicycle: Cykelforhandler
         books: Boghandler
@@ -113,28 +121,40 @@ da:
         chemist: Materialist
         clothes: Tøjbutik
         computer: Computerbutik
+        confectionery: Slikbutik
         convenience: Minimarked
+        deli: Deli
         department_store: Stormagasin
         doityourself: Byggemarked
         dry_cleaning: Tøjenseri
         electronics: Elektronikbutik
+        fabric: Stofbutik
+        farm_shop: Gårdbutik
         florist: Blomsterhandler
         furniture: Møbelhandler
         garden_centre: Havecenter
+        gift: Gavebutik
         hairdresser: Frisør
         hardware: Værktøjsbutik
+        jewelry: Smykkeforretning
         kiosk: Kiosk
         laundry: Vaskeri
         mall: Indkøbscenter
         optician: Optiker
+        organic: "Økologisk butik"
+        outdoor: Friluftudstyrsbutik
+        pet: Dyreforhandler
         photo: Foto
         second_hand: Genbrugsbutik
         shoes: Skobutik
         sports: Sportsforretninger
         stationery: Papirartikler
         supermarket: Supermarked
+        toys: Legetøj
+        travel_agency: Rejsebureau
         video: Videoudlejning
       sport:
+        pitch: Sportsplads
         sports_centre: Sportscenter
         stadium: Stadion
         swimming: Svømming

@@ -1,2 +1,20 @@
 ---
-ja: ~
+ja:
+  header:
+    navigation:
+      about_wheelmap: "Wheelmap について"
+      choose_language: 言語を選択
+      contact: 連絡先
+      map: 地図
+      projects: 参加する
+    toolbar:
+      categories: カテゴリ
+  home:
+    index:
+      overlay:
+        button: OK、さあ始めよう！
+        categories: 場所をカテゴリでフィルター
+        filter: 車椅子のアクセシビリティで場所をフィルター
+        headline: "Wheelmao.org で車椅子で行ける場所を探してマークしよう - 世界のどこでも無料。とても簡単です。"
+        lookup: 指定した場所を探す
+        secondary_headline: 公共の場所での車椅子のアクセシビリティをマークする自分たちの交通信号システム

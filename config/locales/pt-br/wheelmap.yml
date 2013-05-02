@@ -127,7 +127,7 @@ pt-br:
       placeholder: "exemplos: 'Brasília', 'Av. Paulista, São Paulo'"
       title_add_place: "Adicionar um novo lugar nesta posição agora!"
     tagline: "Logotipo do Wheelmap"
-    title: "Wheelmap - Encontre lugares acessíveis a cadeirantes"
+    title: "Encontre lugares acessíveis a cadeirantes"
   helpers:
     select:
       prompt: "Por favor selecione"
@@ -369,10 +369,10 @@ pt-br:
       alt: "Wheelmap Logotipo - Encontre lugares acessíveis a cadeirantes"
       title: "Wheelmap - Encontre lugares acessíveis a cadeirantes"
     what_is:
-      fully_accessible: "<em>Sim:</em> Entrada e todos os ambientes sem degraus, com banheiro acessível se houver."
-      limited_accessible: "<em>Parcialmente:</em> Desnível na entrada inferior a 7 cm; ambientes mais importantes acessíveis."
-      not_accessible: "<em>Não:</em> Entrada com degraus altos ou ambientes importantes não acessíveis."
-      unknown_accessible: "<em>Sem informações:</em> Ajude avaliando estes lugares!"
+      fully_accessible: "Entrada e todos os ambientes sem degraus, com banheiro acessível se houver."
+      limited_accessible: "Desnível na entrada inferior a 7 cm; ambientes mais importantes acessíveis."
+      not_accessible: "Entrada com degraus altos ou ambientes importantes não acessíveis."
+      unknown_accessible: "Ajude avaliando estes lugares!"
   will_paginate:
     next_label: "Próximo &#8594;"
     page_entries_info:

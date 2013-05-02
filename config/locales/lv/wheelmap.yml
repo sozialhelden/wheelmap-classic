@@ -125,7 +125,7 @@ lv:
       placeholder: "piem., Sunset Boulevard L.A. or Brandenburg Gate Berlin"
       title_add_place: "Pievieno jaunu vietu šajā pozīcijā!"
     tagline: "Wheelmap logo\n"
-    title: "Wheelmap - atrodiet ar ratiņkrēslu pieejamas vietas"
+    title: "Atrodiet ar ratiņkrēslu pieejamas vietas"
   helpers:
     select:
       prompt: "Lūdzu izvēlieties"
@@ -358,10 +358,10 @@ lv:
       alt: "Wheelmap Logo - atrodiet ar ratiņkrēslu pieejamas vietas"
       title: "Wheelmap - atrodiet ar ratiņkrēslu pieejamas vietas"
     what_is:
-      fully_accessible: "<em>Jā:</em> Ieeja bez pakāpieniem, visas istabas bez pakāpieniem, pieejamas labierīcības."
-      limited_accessible: "<em>Ierobežota:</em> Ieejai ir pakāpiens (maks. augstums 7 cm), lielākā daļa istabu ir bez pakāpieniem, labierīcības nav pieejamas."
-      not_accessible: "<em>Nē:</em> Pie ieejas ir pakāpiens vai vairāki pakāpieni, istabas nav pieejamas"
-      unknown_accessible: "<em>Nezināms:</em> Palīdzi un atzīmē šīs vietas!"
+      fully_accessible: "Ieeja bez pakāpieniem, visas istabas bez pakāpieniem, pieejamas labierīcības."
+      limited_accessible: "Ieejai ir pakāpiens (maks. augstums 7 cm), lielākā daļa istabu ir bez pakāpieniem, labierīcības nav pieejamas."
+      not_accessible: "Pie ieejas ir pakāpiens vai vairāki pakāpieni, istabas nav pieejamas"
+      unknown_accessible: "Palīdzi un atzīmē šīs vietas!"
   will_paginate:
     next_label: "Nākošais &#8594;"
     page_entries_info:

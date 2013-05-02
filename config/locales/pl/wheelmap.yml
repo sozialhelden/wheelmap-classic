@@ -123,7 +123,7 @@ pl:
       placeholder: "np. Sunset Boulevard L.A. lub Brandenburg Gate Berlin"
       title_add_place: "Dodaj nowe miejsce dla tej pozycji!"
     tagline: "Logo wheelmap"
-    title: "Wheelmap - znajdź miejsca dostępne dla osób na wózkach"
+    title: "Znajdź miejsca dostępne dla osób na wózkach"
   helpers:
     select:
       prompt: Wybierz
@@ -360,10 +360,10 @@ pl:
       alt: "Logo wheelmap - znajdź miejsca dostępne dla osób na wózkach"
       title: "Wheelmap - znajdź miejsca dostępne dla osób na wózkach"
     what_is:
-      fully_accessible: "<em>Tak:</em> Wejście bez stopni, wszystkie pomieszczenia bez stopni, toaleta dostępna"
-      limited_accessible: "<em>Ograniczone:</em> Wejście ma stopień (do 7 cm), większość pomieszczeń bez stopni, toaleta niedostępna"
-      not_accessible: "<em>Nie:</em> Wejście ma wysoki stopień lub kilka stopni, pomieszczenia są niedostępne"
-      unknown_accessible: "<em>Nie znane:</em> Pomóż nam i zaznacz miejsca na mapie!"
+      fully_accessible: "Wejście bez stopni, wszystkie pomieszczenia bez stopni, toaleta dostępna"
+      limited_accessible: "Wejście ma stopień (do 7 cm), większość pomieszczeń bez stopni, toaleta niedostępna"
+      not_accessible: "Wejście ma wysoki stopień lub kilka stopni, pomieszczenia są niedostępne"
+      unknown_accessible: "Pomóż nam i zaznacz miejsca na mapie!"
   will_paginate:
     next_label: "Następny &#8594;"
     page_entries_info:

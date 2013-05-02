@@ -1,6 +1,12 @@
 ---
 nl:
   activerecord:
+    attributes:
+      user:
+        first_name: Geboortenaam
+        last_name: Achternaam
+        privacy_policy: "Privacy policy / Voorwaarden"
+        terms: Termen
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -26,6 +32,14 @@ nl:
         too_short: "is te kort (minimum is %{count} characters)"
         wrong_length: "lengte is fout (should be %{count} characters)"
       models:
+        user:
+          attributes:
+            email:
+              blank: "Kan niet leeg zijn als het wachtwoord gegeven is. "
+            privacy_policy:
+              accepted: "moet geaccepteerd worden"
+            terms:
+              accepted: "moet geaccepteerd worden"
         user_session:
           email: "E-Mail adres"
           password: Wachtwoord
@@ -35,3 +49,5 @@ nl:
         header:
           one: "%{model} niet opgeslagen: 1 fout gevonden"
           other: "%{model} niet opgeslagen: %{count} fouten gevonden"
+    models:
+      user: Gebruiker

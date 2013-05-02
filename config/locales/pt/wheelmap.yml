@@ -119,7 +119,7 @@ pt:
       placeholder: "p. Ex. Sunset Boulevard L.A. ou o Portão de Brandenburgo"
       title_add_place: "Adicionar um novo lugar nesta posição agora!"
     tagline: "Lógotipo do Wheelmap"
-    title: "Wheelmap - encontre lugares acessivéis a cadeira de rodas"
+    title: "Encontre lugares acessivéis a cadeira de rodas"
   helpers:
     select:
       prompt: "Por favor seleccione"

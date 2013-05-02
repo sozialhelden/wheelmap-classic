@@ -361,8 +361,8 @@ ko:
     what_is:
       fully_accessible: "접근가능 : 입구에 7cm 미만의 계단이 있습니다; 모든 위치에 휠체어 이용자가 도달할 수 있습니다(예외 없음); 장애인용 화장실을 사용할 수 있습니다"
       limited_accessible: "접근정도 : 입구에 7cm 미만의 계단이 있습니다; 반드시 도달해야 할 위치에 휠체어 이용자가 진입할 수 있습니다."
-      not_accessible: "<em>불가 :</em> 입구가 심한게 경사져 있거나 여러 계단이 있습니다, 실내에 진입할 수 없습니다."
-      unknown_accessible: "<em>알 수 없음 : </em>이 장소에 대한 정보를 올려주세요!"
+      not_accessible: "입구가 심한게 경사져 있거나 여러 계단이 있습니다, 실내에 진입할 수 없습니다."
+      unknown_accessible: "이 장소에 대한 정보를 올려주세요!"
   will_paginate:
     next_label: "다음 &#8594;"
     page_entries_info:

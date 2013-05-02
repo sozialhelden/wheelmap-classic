@@ -102,7 +102,7 @@ el:
       placeholder: "π.χ. Ακρόπολη, Δελφοί"
       title_add_place: "Πρόσθεσε μια νέα τοποθεσία, τώρα!"
     tagline: "Wheelmap logo"
-    title: "Wheelmap - προσβάσιμες τοποθεσίες με αναπηρική καρέκλα"
+    title: "προσβάσιμες τοποθεσίες με αναπηρική καρέκλα"
   helpers:
     select:
       prompt: "Παρακαλώ επιλέξτε"

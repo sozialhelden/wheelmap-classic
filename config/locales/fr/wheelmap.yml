@@ -131,7 +131,7 @@ fr:
       placeholder: "par exemple Sunset Boulevard L.A. ou Porte de Brandenbourg à Berlin"
       title_add_place: "Ajoutez un nouveau lieu à cet endroit"
     tagline: "Wheelmap logo"
-    title: "Wheelmap - où aller en  fauteuil roulant? "
+    title: "Où aller en  fauteuil roulant? "
   helpers:
     select:
       prompt: "Veuillez choisir"
@@ -380,7 +380,7 @@ fr:
       fully_accessible: "Entrée de plain pied; tous les endroits sont accessibles en fauteuil roulant, toilettes handicapés disponibles en fonction de l'endroit."
       limited_accessible: "La hauteur de la marche à  l'entrée ne dépasse pas 7cm; les endroits les plus importants sont accessibles en fauteuil roulant, WC sans importance."
       not_accessible: "La hauteur de la marche à l'entrée est supérieur à  7cm ; ou il y a plusieurs marches à  l'entrée; ou les endroits les plus importants ne sont pas accessibles en fauteuil roulant"
-      unknown_accessible: "<em>inconnu:</em> aide nous à classer ce lieu"
+      unknown_accessible: "aide nous à classer ce lieu"
   will_paginate:
     next_label: |-
         avant &#8594; Zeit

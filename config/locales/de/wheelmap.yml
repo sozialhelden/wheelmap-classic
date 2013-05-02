@@ -130,10 +130,10 @@ de:
       add_place: "Ort hinzufügen"
       find: Finden
       label: ~
-      placeholder: "z.B. Sunset Boulevard L.A. oder Brandenburger Tor Berlin"
+      placeholder: "Nach Ort suchen"
       title_add_place: "Jetzt einen neuen Ort an dieser Stelle hinzufügen"
     tagline: "Wheelmap logo"
-    title: "Wheelmap - Rollstuhlgerechte Orte finden"
+    title: "Rollstuhlgerechte Orte finden"
   helpers:
     select:
       prompt: "Bitte auswählen"
