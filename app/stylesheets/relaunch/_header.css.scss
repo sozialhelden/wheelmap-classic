@@ -42,8 +42,10 @@ header {
     span {
       width: 320px;
       position: absolute;
-      top: 23px;
+      top: 25px;
       left: 27px;
+      
+      font-weight: normal;
       @media screen and (max-width:550px) {
         display: none;
       }
@@ -133,6 +135,7 @@ div.language-select {
 nav {
   .list-wrapper{
     text-align: center;
+    float: left;
     ul.inline {
       display: inline-block;
       margin: 0;
