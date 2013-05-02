@@ -11,11 +11,11 @@
       = link_to t('devise.sign_out.headline'), destroy_admin_user_session_path
     - else
       = link_to t('devise.sign_in.headline'), new_user_session_path
-    = link_to t('header.navigation.what_is_wheelmap'), 'http://blog.wheelmap.org/'
-    = link_to t('header.navigation.press'), 'http://blog.wheelmap.org/presse/'
-    = link_to t('header.navigation.imprint'), 'http://blog.wheelmap.org/kontakt/'
+    = link_to t('header.navigation.what_is_wheelmap'), community_about_url
+    = link_to t('header.navigation.press'), community_press_url
+    = link_to t('header.navigation.imprint'), community_imprint_url
     = link_to t('header.navigation.feedback'), 'http://wheelmap.uservoice.com/forums/31554-general', :id => 'feedback_link', :rel => 'nofollow'
-    = link_to t('header.navigation.newsletter'), 'http://blog.wheelmap.org/newsletter', :id => 'newsletter_link', :rel => 'nofollow'
+    = link_to t('header.navigation.newsletter'), community_newsletter_url, :id => 'newsletter_link', :rel => 'nofollow'
     %select{:onchange => 'location.href=this.options[this.selectedIndex].value'}
       - I18n.available_locales.map(&:to_s).sort.each do |locale|
         %option{:value => url_for_locale(request.url, locale), :selected => (I18n.locale.to_s.downcase == locale.to_s.downcase)}=Languages[locale.to_s]

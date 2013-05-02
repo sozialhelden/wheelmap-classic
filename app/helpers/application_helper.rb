@@ -80,4 +80,52 @@ module ApplicationHelper
     end
     html.html_safe
   end
+
+  def community_press_url
+    if I18n.locale == :de
+      "http://community.wheelmap.org/about/presse/"
+    else
+      "http://community.wheelmap.org/en/about/press/"
+    end
+  end
+
+  def community_contact_url
+    if I18n.locale == :de
+      "http://community.wheelmap.org/kontakt/"
+    else
+      "http://community.wheelmap.org/en/contact/"
+    end
+  end
+
+  def community_projects_url
+    if I18n.locale == :de
+      "http://community.wheelmap.org/projekte/"
+    else
+      "http://community.wheelmap.org/en/get-engaged/"
+    end
+  end
+
+  def community_imprint_url
+    if I18n.locale == :de
+      "http://community.wheelmap.org/impressum/"
+    else
+      "http://community.wheelmap.org/en/imprint/"
+    end
+  end
+
+  def community_about_url
+    if I18n.locale == :de
+      "http://community.wheelmap.org/about/"
+    else
+      "http://community.wheelmap.org/en/about/"
+    end
+  end
+
+  def community_newsletter_url
+    if I18n.locale == :de
+      "http://community.wheelmap.org/newsletter/"
+    else
+      "http://community.wheelmap.org/newsletter-2/"
+    end
+  end
 end
