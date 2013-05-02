@@ -9,7 +9,8 @@
           %span.icon-bar
 
 
-        =link_to(root_path, :class => "logo") do
+        -# Using / explicitly to end up at the wordpress landing page
+        =link_to('/', :class => "logo") do
           %span= t('header.title')
 
 
