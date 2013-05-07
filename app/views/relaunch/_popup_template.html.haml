@@ -6,7 +6,7 @@
     .bubble-ctn
       = form_tag "/nodes/{id}/update_wheelchair.js", :method => 'put', :remote => true, :'data-type' => :json, :class => "update_form formtastic", :id => "wheelchair_update_form" do
         %ol.wheelchair
-          %h3= link_to t('home.index.popup.help'), I18n.locale == :de ? "http://community.wheelmap.org/about/mappen/" : "http://community.wheelmap.org/en/about/how-to-map/"
+          %h3= link_to t('home.index.popup.help'), I18n.locale == :de ? "http://wheelmap.org/about/mappen/" : "http://wheelmap.org/en/about/how-to-map/"
           %li.yes
             =radio_button_tag "wheelchair", "yes", true, :id => "yes-OpenLayers.Feature.Vector_{id}"
             %label{:for => "yes-OpenLayers.Feature.Vector_{id}"}= t('home.index.popup.form.yes')
