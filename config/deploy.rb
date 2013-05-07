@@ -30,9 +30,9 @@ before 'deploy:migrations',   'safety_check'
 
 after  'deploy:setup',        'deploy:create_shared_config'
 after  'deploy:update_code',  'deploy:generate_assets'
-after  'deploy:update_code',  'deploy:remove_all_unfinished_locales'
 after  'deploy:update_code',  'deploy:symlink_configs'
 
+after  'deploy',              'deploy:remove_all_unfinished_locales'
 after  'deploy',              'deploy:cache:clear'
 after  'deploy:migrations',   'deploy:cache:clear'
 after  'deploy',              'deploy:notifiy_metrics'
@@ -149,7 +149,7 @@ namespace :deploy do
 
   task :remove_all_unfinished_locales do
     if rails_env.to_sym == :production
-      run "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec rake housekeeping:remove_all_unfinished_locales"
+      run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake housekeeping:remove_all_unfinished_locales"
       run "find #{shared_path}/bundle -type f -path \"*/active_admin/locales/*.yml\" ! -iname \"en.yml\" ! -iname \"de.yml\" -delete"
       # run "find #{shared_path}/bundle -name 'pt-BR.yml' -delete"
       # run "find #{shared_path}/bundle -name 'zh_cn.yml' -delete"
