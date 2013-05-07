@@ -1,0 +1,26 @@
+TM_GIT                = "/usr/local/bin/git"
+TM_RUBY               = "$HOME/.rbenv/shims/ruby"
+PATH                  = "$HOME/.rbenv/bin:$PATH"
+excludeFiles          = "*.{so,pyc,o,scssc}"
+excludeDirectories    = "build,dist,tmp,log,vendor"
+excludeInFileChooser  = "{$excludeInFileChooser,log,vendor,tmp}"
+excludeInBrowser      = "{$excludeInBrowser,log,vendor,tmp}"
+excludeInFolderSearch = "{$excludeInFolderSearch,log,vendor,tmp}"
+
+# show the path to the current tab's file in the window title
+# (replace the 2 instances of 'username' in the string below
+# with your mac username).
+windowTitle    = "$TM_DISPLAYNAME${TM_DIRECTORY/\A(?:\/Users\/username\w+\/?(.*)|(.+))\z/${2:? – ${2/\A\/Users\/username/~/}:${1/\A(?=.)/ – /}}/}"
+
+fontName       = "Monaco"
+fontSize       = 20
+tabSize        = 2
+softTabs       = true
+wrapColumn     = "Use Window Frame"
+sofWrap        = false
+showInvisibles = true
+
+# special per-filetype rules can be specified like so:
+[ *.{txt,md,mdown,markdown} ]
+spellChecking  = true
+tabSize        = 2

@@ -1,0 +1,43 @@
+/ meta start
+- cache("#{I18n.locale}/relaunch/_meta.html.haml'}", :expires_in => 1.hour) do
+  %meta{:charset      => 'utf-8'}
+  %meta{:'http-equiv' => "X-UA-Compatible"}
+  %meta{:name         => "viewport", :content => "width=device-width, initial-scale=1.0, user-scalable=0"}
+  %meta{:name         => "google-site-verification", :content => "ANQCVlgXNpnBdZInKyE4eWMeNPq-cIckJGMyEYPXNec"}
+  %meta{:name         => "apple-mobile-web-app-capable", :content => "yes"}
+  %meta{:name         => "apple-mobile-web-app-status-bar-style", :content =>"black"}
+  %meta{:name         => "apple-itunes-app", :content =>"app-id=399239476"}
+
+  %link{:rel => "apple-touch-icon-precomposed", :sizes => "144x144", :href => "images/webapp/icon_144-144.png"}
+  %link{:rel => "apple-touch-icon-precomposed", :sizes => "114x114", :href => "images/webapp/icon_114-114.png"}
+  %link{:rel => "apple-touch-icon-precomposed", :sizes => "72x72", :href => "images/webapp/icon_72-72.png"}
+  %link{:rel => "apple-touch-icon-precomposed", :href => "images/webapp/icon_57-57.png"}
+  %link{:rel => "shortcut icon", :href => "images/webapp/icon_57-57.png"}
+
+  %link{:rel => "apple-touch-startup-image", :href => "images/webapp/splash-screen_iphone.png"}
+  %link{:rel => "apple-touch-startup-image", :media => "(device-width: 320px)", :href => "images/webapp/splash-screen_iphone.png"}
+  %link{:rel => "apple-touch-startup-image", :media => "(device-width: 320px) and (-webkit-device-pixel-ratio: 2)", :href => "images/webapp/splash-screen_iphone@2x.png"}
+  %link{:rel => "apple-touch-startup-image", :media => "(device-width: 768px) and (orientation: portrait)", :href => "images/webapp/ipad_splashscreens_horizontal.png"}
+  %link{:rel => "apple-touch-startup-image", :media => "(device-width: 768px) and (orientation: landscape)", :href => "images/webapp/ipad_splashscreens_vertikal.png"}
+  %link{:rel => "apple-touch-startup-image", :media => "(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)", :href => "images/webapp/ipad_splashscreens_vertikal.png@2x"}
+  %link{:rel => "apple-touch-startup-image", :media => "(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)", :href => "images/webapp/ipad_splashscreens_horizontal.png@2x"}
+
+  - RELEASE_INFO.each do |k,v|
+    %meta{:name => k, :content => v}
+
+  =render_og_metadata(:type => 'website', :title => "Wheelmap.org", :url => root_url, :description => t('header.title'), :image => image_path("bg_logo.png"), :locale => I18n.locale)
+
+  - unless Rails.env.production?
+    %meta{:name => 'robots', :content => 'noindex, nofollow'}
+  - else
+    %meta{:name => 'robots', :content => 'follow index'}
+
+  - I18n.available_locales.each do |locale|
+    - next if locale == I18n.locale
+    %link{ :rel => "alternate", :hreflang => locale, :href => url_for(:only_path => false, :locale => locale)}
+
+  %link{:href => search_index_url,  :rel => 'search', :title => t('header.meta.search')}
+  %link{:href => root_url,  :rel => 'home', :title => t('header.meta.homepage')}
+
+  =favicon_link_tag('/favicon.ico')
+/ meta end

@@ -1,0 +1,44 @@
+%header#header
+  %nav.navbar
+    .navbar-inner
+      .container
+
+        %a.btn.btn-navbar{:'data-toggle' => "collapse", :'data-target' => ".nav-collapse"}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+
+        -# Using / explicitly to end up at the wordpress landing page
+        =link_to('/', :class => "logo") do
+          %span= t('header.title')
+
+        .btn-toolbar.pull-right{:style => 'padding-right:10px'}
+          .btn-group
+            = link_to new_node_path, :class => ['btn', 'btn-add', 'btn-small'], :title =>  t('header.searchbar.add_place') do
+              %i.icon-plus.icon-white
+            = link_to t('header.searchbar.add_place'), new_node_path, :class => ['btn', 'btn-small', 'hidden-phone', 'hidden-tablet']
+
+          - if user_signed_in?
+            = link_to edit_user_path(current_user), :class => ['btn', 'btn-small'], :style => 'margin: 10px 10px 0px' do
+              %i.icon-user
+              %span.hidden-phone=t('header.navigation.profile')
+          - else
+            = link_to new_user_session_path, :class => ['btn', 'btn-small'], :style => 'margin: 10px 10px 0px' do
+              %i.icon-user
+              %span.hidden-phone=t('header.navigation.login')
+
+          %select.selectpicker.pull-right.language-select{:onchange => 'location.href=this.options[this.selectedIndex].value', :title => "\f0ac", :'data-style' => "btn-small"}
+            %i
+            %optgroup{:label => I18n.t('header.navigation.choose_language'), :class => 'icon-globe'}
+              - I18n.available_locales.map(&:to_s).sort.each do |locale|
+                %option{:value => url_for_locale(request.url, locale),:title => "<i class='icon-globe'></i><span class='hidden-phone'>#{Languages[I18n.locale.to_s]}</span>", :selected => (I18n.locale.to_s.downcase == locale.to_s.downcase)}=Languages[locale.to_s]
+
+        .nav-collapse.collapse
+          .list-wrapper
+            %ul.inline
+              %li= link_to t('header.navigation.about_wheelmap', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), community_about_url
+              %li= link_to t('header.navigation.map', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), root_path
+              %li= link_to t('header.navigation.projects', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), community_projects_url
+              %li= link_to t('header.navigation.blog', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), "http://community.wheelmap.org/#{I18n.locale == :de ? nil : 'en/'}"
+              %li= link_to t('header.navigation.press', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), community_press_url
+              %li= link_to t('header.navigation.contact', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), community_contact_url

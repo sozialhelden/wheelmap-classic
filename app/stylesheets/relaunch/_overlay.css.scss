@@ -1,0 +1,225 @@
+.overlay-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1999;
+  background: rgba(40,	54, 69, 0.8);
+  display: none;
+}
+.overlay {
+  width: 700px;
+  height: auto;
+  position: fixed;
+  z-index: 2000;
+  left: 50%;
+  top: 50%;
+  margin: -325px 0 0 -350px;
+  padding: 0 0 20px 0;
+  background: url('/images/bg-overlay.png') #FFF no-repeat;
+  background-position: 0 219px;
+  @include box-shadow(0 0 10px #333);
+  @include border-radius(3px);
+  @media screen and (max-width:700px) {
+    width: 98%;
+    height: 98%;
+    left: 1%;
+    top: 1%;
+    margin: 0px;
+    background-position: 0 50px;
+    @include border-radius(0px);
+  }
+  .header {
+    width: 100%;
+    height: 200px;
+    float: left;
+    @include background(linear-gradient(top, rgb(255, 255, 255), rgb(237, 236, 234)));
+    @include filter-gradient(#ffffff, #edecea, vertical);
+    @include border-radius(3px 3px 0 0);
+    @media screen and (max-width:700px) {
+      height: auto;
+      @include box-shadow (0 0 8px #333);
+    }
+  }
+  .close-btn {
+    float: right;
+    font-family: 'EntypoRegular', sans-serif;
+    font-size: 40px;
+    color: #999;
+    padding: 1px 6px 0px 6px;
+    margin: 5px 5px 0 0;
+    cursor: pointer;
+    @include border-radius(4px);
+  }
+  h1 {
+    width: 90%;
+    float: left;
+    padding: 75px 5% 5px 5%;
+    margin: 0 0 40px 0;
+    text-align: center;
+
+    background: url('/images/logo-overlay.png') center top no-repeat;
+
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: normal;
+    @media screen and (max-width:700px) {
+      background-size: 170px;
+      font-size: 12px;
+      line-height: 18px;
+      padding-top: 50px;
+      margin: -10px 0 0 0;
+    }
+  }
+  h2 {
+    width: 90%;
+    float: left;
+    padding: 25px 5% 0px 5%;
+    text-align: center;
+    margin: 0px;
+
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+    color: #273543;
+    @media screen and (max-width:700px) {
+      padding-top: 10px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+  .example-toolbar {
+    width: 100%;
+    height: 50px;
+    float: left;
+    position: relative;
+    @include background-image(linear-gradient(top, rgb(64, 87, 109), rgb(38, 51, 65)));
+    @include filter-gradient(rgb(64, 87, 109), rgb(38, 51, 65), vertical);
+    @media screen and (max-width:700px) {
+      display: none;
+    }
+    img {
+      width: 500px;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      margin-left: -250px;
+      z-index: 100;
+    }
+    .tip {
+      width: auto;
+      position: absolute;
+      left: 50%;
+      color: #333;
+      background: #FFF;
+      padding: 4px 10px;
+      display: none;
+
+      font-size: 12px;
+      line-height: 18px;
+
+      @include box-shadow (0 0 4px #333);
+      @include border-radius(3px);
+      &:after {
+        position: absolute;
+        left: 45%;
+        bottom: -10px;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #FFF;
+        content: "";
+      }
+      &.lookup {
+        max-width: 100px;
+        z-index: 200;
+        margin-left: -200px;
+        bottom: 40px;
+      }
+      &.filter {
+        max-width: 130px;
+        z-index: 200;
+        margin-left: -44px;
+        bottom: 40px;
+      }
+      &.categories {
+        max-width: 100px;
+        bottom: 40px;
+        z-index: 200;
+        margin-left: 120px;
+      }
+    }
+  }
+  ul {
+    width: 92%;
+    margin: 0;
+    float: left;
+    margin: 20px 4% 15px 4%;
+    li {
+      width: 23%;
+      float: left;
+      list-style: none;
+      margin: 0 1%;
+      img {
+        width: 80%;
+        margin: 0px 10%;
+      }
+      h3 {
+        width: 100%;
+        float: left;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+      }
+      p {
+        padding: 0 5%;
+        float: left;
+        @media screen and (max-width:700px) {
+          display: none;
+        }
+      }
+    }
+    .green {
+      h3 {
+        color: #48642F;
+      }
+    }
+    .orange {
+      h3 {
+        color: #A46426;
+      }
+    }
+    .red {
+      h3 {
+        color: #891A16;
+      }
+    }
+    .grey {
+      h3 {
+        color: #3A3A42;
+      }
+    }
+  }
+  span.go {
+    width: 50%;
+    padding: 20px 0px;
+    margin: 0 25%;
+    float: left;
+    display: none;
+    cursor: pointer;
+
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+
+    @include background-image(linear-gradient(top, rgb(64, 87, 109), rgb(38, 51, 65)));
+    @include filter-gradient(rgb(64, 87, 109), rgb(38, 51, 65), vertical);
+
+    @include border-radius(8px);
+    border: 1px solid #333;
+    @media screen and (max-width:700px) {
+      font-size: 12px;
+      padding: 10px 0px;
+      margin-top: 5px;
+    }
+  }
+}

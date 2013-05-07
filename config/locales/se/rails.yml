@@ -1,0 +1,53 @@
+---
+se:
+  activerecord:
+    attributes:
+      user:
+        first_name: "Angivet namn"
+        last_name: Efternamn
+        privacy_policy: "Privacy policy"
+        terms: Benämning
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: "måste accepteras"
+        blank: "får inte vara tomt"
+        confirmation: "måste vara samma som det upprepade"
+        empty: "får inte vara tomt"
+        equal_to: "måste vara lika med %{count}"
+        even: "måste vara jämnt"
+        exclusion: "är reserverat"
+        greater_than: "måste vara större än %{count}"
+        greater_than_or_equal_to: "måste vara större eller lika med %{count}"
+        inclusion: "är inte med i listan"
+        invalid: "är ogiltigt"
+        less_than: "måste vara mindre än %{count}"
+        less_than_or_equal_to: "måste vara mindre eller likna med %{count}"
+        not_a_number: "är inte ett nummer"
+        odd: "måste vara udda"
+        record_invalid: "Valideringen misslyckades: %{errors}"
+        taken: "är redan upptaget"
+        too_long: "är för långt {max %{count} bokstäver}"
+        too_short: "är för kort (min %{count} bokstäver)"
+        wrong_length: "är inte av korrekt längd ( borde vara %{count} bokstäver)"
+      models:
+        user:
+          attributes:
+            email:
+              blank: "kan inte lämnas tomt om lösenord angetts"
+            privacy_policy:
+              accepted: "måste godkännas"
+            terms:
+              accepted: "måste godkännas"
+        user_session:
+          email: E-postadress
+          password: Lösenord
+          remember_me: "Kom ihåg mig"
+      template:
+        body: "Det var problem med följande fält:"
+        header:
+          one: "1 fel förhindrade denna %{model} från att sparas"
+          other: "%{count} fel förhindrade denna %{model} från att sparas"
+    models:
+      user: Användare

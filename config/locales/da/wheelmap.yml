@@ -1,0 +1,402 @@
+---
+da:
+  application:
+    require_no_user:
+      notice: "Du er allerede logget på ..."
+    require_user:
+      notice: "Du skal være logget på for at se denne side."
+  breadcrumbs:
+    node:
+      create: "Tilføj nyt sted"
+      edit: "Ret sted"
+    root: wheelmap
+  common:
+    close: luk
+    skip: "Spring over"
+  errors:
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "skal accepteres"
+      already_confirmed: "var allerede bekræftet, prøv at logge ind"
+      blank: "skal udfyldes"
+      confirmation: "stemmer ikke overens med bekræftelse"
+      empty: "må ikke udelades"
+      equal_to: "skal være lig med %{count}"
+      even: "skal være lige"
+      exclusion: "er reserveret"
+      expired: "udløbet, bed venligst om en ny"
+      greater_than: "skal være større end %{count}"
+      greater_than_or_equal_to: "skal være større end eller lig med %{count}"
+      inclusion: "er ikke en gyldig værdi"
+      invalid: "er ikke gyldig"
+      less_than: "skal være mindre end %{count}"
+      less_than_or_equal_to: "skal være mindre end eller lig med %{count}"
+      not_a_number: "er ikke et tal"
+      not_an_integer: "er ikke et heltal"
+      not_found: "ikke fundet"
+      not_locked: "var ikke låst"
+      not_saved:
+        one: "1 fejl gjorde at denne %{resource} ikke kunne gemmes being:"
+        other: "%{count} fejl gjorde at denne %{resource} ikke kunne gemmes:"
+      odd: "skal være ulige"
+      taken: "er allerede blevet taget"
+      too_long: "er for langt (maksimum %{count} tegn)"
+      too_short: "er for kort (minimum %{count} tegn)"
+      wrong_length: "har forkert længde (skulle være %{count} tegn)"
+    template:
+      body: "Der var problemer med følgende felter:"
+      header:
+        one: "1 fejl gjorde at denne %{model} ikke kunne gemmes"
+        other: "%{count} fejl gjorde at denne %{model} ikke kunne gemmes"
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} blev succesfuldt lavet."
+      destroy:
+        alert: "%{resource_name} kunne ikke slettes."
+        notice: "%{resource_name} blev succesfuldt slettet."
+      update:
+        notice: "%{resource_name}  blev succesfuldt opdateret."
+    photos:
+      destroy:
+        notice: "Billedet blev slettet"
+  form:
+    show_fully_accessible_places: kørestolstilgængeligt
+    show_limited_accessible_places: "delvis kørestolstilgængeligt"
+    show_places_without_status: "ukendt status"
+    show_unaccessible_places: "ikke kørestolstilgængeligt"
+  formtastic:
+    hints:
+      email: "Vi behandler din adresse fortroligt og vil aldrig udsende spam!"
+      lat: "Flyt markøren på kortet til den korrekte position"
+      osm_username: "Ikke medlem endnu?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Opret en Openstreetmap konto nu</a>"
+      password: "(efterlad feltet tomt, hvis du ikke ønsker at ændre dette)"
+      phone: "For eksempel: +45 12345678"
+      website: "For eksempel: http://www.example.com"
+    labels:
+      category: "Kategori:"
+      centralkey: "Centralnøgle:"
+      city: "By:"
+      create: "Opret sted"
+      email: E-mail
+      finish: Færdig
+      housenumber: Nr.
+      lat: Breddegrad
+      lon: Længdegrad
+      name: "Navn:"
+      osm_password: "OSM adgangskode"
+      osm_username: "OSM kontonavn"
+      password: Adgangskode
+      password_confirmation: "Gentag adgangskode"
+      phone: "Telefon:"
+      postcode: "Postnummer:"
+      privacy_policy: "Jeg accepterer paragraf 1 og 2 vedr. data fortrolighedsaftale."
+      reset: Nulstil
+      save: Gem
+      street: "Vej:"
+      terms: "Jeg accepterer disse betingelser for brug."
+      type: "Type:"
+      website: "Hjemmeside:"
+      wheelchair: " Kørestolstilgængeligt?"
+      wheelchair_description: "Tilgængeligheds kommentar:"
+    titles:
+      basic: Basisinformation
+      optional: "Mere information <span class=\"addition\">(alle felter er valgfrit)</span>"
+  global:
+    form_validation_error: "Bemærk fejllisten nedenfor"
+  header:
+    meta:
+      description: "Find kørestolstilgængelige steder - wheelmap.org"
+      homepage: Hjemmeside
+      keywords: "kørestolstilgængelige steder find søgemarkering"
+      search: Søg
+    navigation:
+      blog: Blog
+      feedback: Feedback
+      home: Start
+      how_to_add_a_place: "Hvordan tilføjer jeg steder?"
+      imprint: Om
+      logged_in_as: "Logget ind som:"
+      login: Login
+      logout: "Log ud"
+      newsletter: Nyhedsbrev
+      press: "Tryk på"
+      profile: Profil
+      suggestions: Forslag
+      what_is_barrier_free: "Hvad betyder \"kørestolstilgængeligt\"?"
+      what_is_wheelmap: "Hvad er wheelmap?"
+    searchbar:
+      add_place: "Tilføj endnu et sted"
+      find: Find
+      label: ~
+      placeholder: "Søg efter et sted"
+      title_add_place: "Tilføj et nyt sted på denne position nu!"
+    tagline: "Wheelmap logo"
+    title: "Find kørestolstilgængelige steder"
+  helpers:
+    select:
+      prompt: Vælg...
+    submit:
+      create: "Opret %{model}"
+      submit: "Gem %{model}"
+      update: "Opdater %{model}"
+  home:
+    index:
+      filter:
+        category: "Vælg kategori"
+        deselect_all: "Fravælg alle"
+        select_all: "Vælg alle"
+        wheelchair: Kørestolstilgængeligt?
+      ie:
+        action:
+          ignore: Ignorer
+          upgrade: "Opdaterer browser"
+        warning:
+          headline: "Vi undskylder meget!"
+          message: "Det ser ud til at du bruger Internet Explorer. Wheelmap behøver en browser der bedre kan håndtere webstandarder. Overvej at bruge  fx Firefox, Chrome, Safari eller Opera."
+      link:
+        node:
+          create: "Tilføj nyt sted"
+      popup:
+        form:
+          limited: "delvis kørestolstilgængeligt"
+          ? "no"
+          : "Ikke kørestolstilgængeligt"
+          save: Gem
+          unknown: "ukendt status"
+          ? "yes"
+          : "Fuldt kørestoltilgængeligt"
+        help: "Kørestolstilgængeligt? (Hjælp)"
+        more: "mere ..."
+  how?: Hvordan?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Alle begrænset kørestolstilgængelige steder %{type} i %{city} (%{count})"
+        ? "no"
+        :
+          headline: "Alle ikke kørestolstilgængelige steder %{type} i %{city} (%{count})"
+        unknown:
+          headline: "Alle %{type} i %{city} med ukendt kørestolstilgængeligs status (%{count})"
+        ? "yes"
+        :
+          headline: "Alle kørestolstilgængelige steder %{type} i %{city} (%{count})"
+  layouts:
+    application:
+      banner:
+        alt: "Et projekt af Sozialhelden.de"
+  node:
+    address:
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
+    tags:
+      phone: "Telefon:"
+      website: "Hjemmeside:"
+  nodes:
+    create:
+      flash:
+        not_successfull: "Ups, dit input var enten ukorrekt eller ufuldstændigt"
+        successfull: "Mange tak, din tilføjelse blev gemt og vil snart være online."
+    edit:
+      header:
+        title: "Ret sted:  %{node} | wheelmap.org"
+      link:
+        large_map: "&laquo; Fortryd"
+    errors:
+      default: "Ups, et eller andet gik galt. Vi er blevet informeret om dette!"
+      not_authorized: "Undskyld, men autorisationen fejlede"
+      not_available: "Undskylder meget, men denne side er midlertidig ikke tilgængelig."
+      not_existent: "Undskylder meget, dette sted findes ikke mere."
+      not_found: "Undskylder, men siden blev ikke fundet."
+      param_missing: "Tilføj venligst en søgeterm"
+    flash:
+      authorize_wheelmap: "Du behøver en OpenStreetMap konto for at rette i data"
+    new:
+      header:
+        title: "Nyt sted | wheelmap.org"
+      link:
+        large_map: "&laquo; Fortryd"
+    node:
+      link:
+        claim: "Arbejder du her?"
+        edit_node: "Ret sted"
+        report_bug: "Fejlrapporterer et problem"
+    show:
+      header:
+        title: "Sted: %{node} | wheelmap.org"
+      link:
+        back: tilbage
+        large_map: Forstør
+        listing: "Alle steder af  kategoren '%{type}' i %{city}"
+        upload: "Opload billede"
+      more_data_from: "Der er mere information for dette sted, tjekket af:"
+      show-in-osm: OpenStreetMap
+    update:
+      flash:
+        not_successfull: "Ups, dit input var ikke korrekt eller ufuldstændigt"
+        successfull: "Mange tak, din ændring blev gemt succesfuldt og vil være online snart."
+    update_wheelchair:
+      successfull: "Status for \"%{name}\" er blevet ændret til \"%{status} kørestolstilgængeligt\" og vil snart kunne ses online."
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u %n"
+        precision: 2
+        separator: ","
+        significant: 0
+        strip_insignificant_zeros: 0
+        unit: DKK
+    format:
+      delimiter: "."
+      precision: 3
+      separator: ","
+      significant: 0
+      strip_insignificant_zeros: 0
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Milliard
+          million: Million
+          quadrillion: Billiard
+          thousand: Tusind
+          trillion: Billion
+          unit: ~
+      format:
+        delimiter: ~
+        precision: 3
+        significant: sandt
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "Du skal forbinde din konto med din OpenStreetMap konto før du kan oprette eller modificere steder på wheelmap.org."
+    callback:
+      notice: "Din wheelmap konto er nu forbundet med OpenStreetMap kontoen %{user}."
+  or: eller
+  place:
+    one: "%{count} sted"
+    other: "%{count} steder"
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "Status: forbundet"
+          grant: "Forbind nu"
+          not_connected: "Status: ikke forbundet"
+          revoke: Afbryd
+      headline: "Ret din profil"
+  search:
+    index:
+      search:
+        for: "Søger efter \"%{q}\""
+        not_found: "Ingen steder kunne findes!"
+  splash:
+    countline: "%{count} steder er allerede blevet markeret."
+    headline: "Alle kan tilføje kørestolstilgængelige steder!"
+    start: Start
+    step1: "Klik på et sted du kender"
+    step2: "Markerer den og klik gem"
+    step3: "Det var det hele! Ingen registering er nødvendig"
+    what_is_wheelmap: "Hvad er wheelmap?"
+  statistics: Statistik
+  support:
+    array:
+      last_word_connector: " og "
+      sentence_connector: og
+      skip_last_comma: sandt
+      two_words_connector: " og "
+      words_connector: ", "
+    select:
+      prompt: Vælg
+  time:
+    am: am
+    formats:
+      default: "%e. %B %Y, %H:%M"
+      long: "%A, %e. %B %Y, %H:%M"
+      short: "%e. %b %Y, %H:%M"
+    pm: pm
+  user_sessions:
+    create:
+      activation:
+        notice: "Din konto er nu aktiveret!"
+      error:
+        notice: "E-mail og adgangskode er ikke korrekte."
+      notice: "Du er nu inde!"
+    destroy:
+      notice: "Farvel, kom snart igen!"
+    new:
+      email: E-mail-adresse
+      login: Login
+      login_with_twitter: "Login med Twitter"
+      password: Adgangskode
+      remember_me: "Forbliv logget ind"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Du er næsten der! Afslut oprettelsen af din Wheelmap konto her:"
+        set_password_for_mobile: |-
+            Du har nu afsluttet din registering med OpenStreetMap.
+            Vælg nu en e-mail adresse og en adgangskode til din Wheelmap konto og dernæst er du helt færdig! Du behøver denne e-mail adresse og adgangskode for at logge ind på Wheelmap app til iPhone eller Android.
+        text: "Hvordan kan vi komme i kontakt med dig? Du kan altid ændre dette her senere i din profil."
+    edit:
+      headline:
+        your_images: "Dine oploadede billeder"
+  wheelchairstatus:
+    limited: "delvis kørestolstilgængeligt"
+    ? "no"
+    : "Ikke kørestolstilgængeligt"
+    unknown: "kørestolstilgængeligt ukendt status"
+    ? "yes"
+    : "Fuldt kørestoltilgængeligt"
+  wheelmap:
+    footer:
+      a_project_of: "Et projekt fra"
+      based_on: "Baseret på"
+      become_a_supporter: "Bliv en støtter"
+      main_supporter: Hovedstøtter
+    itunes:
+      alt: "AppStore logo"
+      title: "Download iPhone App!"
+    logo:
+      alt: "Wheelmap logo - find kørestolstilgængelige steder"
+      title: "Wheelmap - find kørestolstilgængelige steder"
+    what_is:
+      fully_accessible: "Ingen trapper ved indgang, alle rum ingen trapper, handicaptoilet\n"
+      limited_accessible: "Indgang har et trin (max. højde 7 cm), de fleste rum har ingen trin, ingen handicaptoilet"
+      not_accessible: "Indgangen har et trin eller flere trin, de forskellige rum er ikke tilgængelige"
+      unknown_accessible: "Hjælp med at få stedet markeret!"
+  will_paginate:
+    next_label: "Næste &#8594;"
+    page_entries_info:
+      multi_page: "Viser %{model} %{from} - %{to} af  %{count} ialt"
+      multi_page_html: "Viser %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> af <b>%{count}</b> i alt"
+      single_page:
+        one: "Viser 1 %{model}"
+        other: "Viser alle %{count} %{model}"
+        zero: "Ingen %{model} fundet"
+      single_page_html:
+        one: "Viser <b>1</b> %{model}"
+        other: "Viser <b>all&nbsp;%{count}</b> %{model}"
+        zero: "Ingen %{model} fundet"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Forrige"

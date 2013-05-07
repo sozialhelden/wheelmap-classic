@@ -1,0 +1,43 @@
+---
+pl:
+  activerecord:
+    attributes:
+      user:
+        first_name: Imię
+        last_name: Nazwisko
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: "musi zostać zaakceptowane"
+        blank: "nie może być pusty"
+        confirmation: "nie zgadza się z potwierdzeniem"
+        empty: "nie może być pusty"
+        equal_to: "musi być równe %{count}"
+        even: "musi być parzyste"
+        exclusion: "jest zarezerwowane"
+        greater_than: "musi być większe od %{count}"
+        greater_than_or_equal_to: "musi być większe lub równe %{count}"
+        inclusion: "nie znajduje się na liście dopuszczalnych wartości"
+        invalid: "jest nieprawidłowe"
+        less_than: "musi być mniejsze od %{count}"
+        less_than_or_equal_to: "musi być mniejsze lub równe %{count}"
+        not_a_number: "nie jest liczbą"
+        odd: "musi być nieparzyste"
+        record_invalid: "Negatywne sprawdzenie poprawności: %{errors}"
+        taken: "zostało już zajęte"
+        too_long: "jest za długie (maksymalnie %{count} znaków)"
+        too_short: "jest za krótkie (przynajmniej %{count} znaków)"
+        wrong_length: "ma nieprawidłową długość (powinna wynosić %{count} znaków)"
+      models:
+        user_session:
+          email: "Adres e-mail"
+          password: Hasło
+          remember_me: "Nie wylogowywuj się"
+      template:
+        body: "Wystąpiły problemy z następującymi polami:"
+        header:
+          one: "%{model} nie został zachowany z powodu jednego błędu"
+          other: "%{model} nie został zachowany z powodu %{count} błędów"
+    models:
+      user: Użytkownik

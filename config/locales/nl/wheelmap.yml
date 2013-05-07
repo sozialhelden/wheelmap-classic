@@ -1,0 +1,402 @@
+---
+nl:
+  application:
+    require_no_user:
+      notice: "Je bent al ingeloggd..."
+    require_user:
+      notice: "Je moet inloggen om de pagina te zien."
+  breadcrumbs:
+    node:
+      create: "Voeg een nieuwe plaats toe"
+      edit: "Bewerk plaats"
+    root: wheelmap
+  common:
+    close: sluiten
+    skip: Overslaan
+  errors:
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "Moet geaccepteerd worden."
+      already_confirmed: "Was al bevestigd, alsjeblieft probeer in te loggen."
+      blank: "Moet ingevuld worden"
+      confirmation: "Past niet bij de bevestiging"
+      empty: "Moet ingevlud worden"
+      equal_to: "Moet precies %{count} zijn"
+      even: "moet gelijk zijn"
+      exclusion: "is gereserveerd"
+      expired: "Is verlopen, alsjeblieft vraag een nieuwe aan"
+      greater_than: "moet groter dan %{count} zijn"
+      greater_than_or_equal_to: "Moet groter of gelijk zijn dan %{count}"
+      inclusion: "niet geldig waard"
+      invalid: "niet geldig"
+      less_than: "moet minder zijn dan %{count}"
+      less_than_or_equal_to: "moet minder zijn dan of gelijk zijn met %{count}"
+      not_a_number: "is geen numer"
+      not_an_integer: "moet een gehele getal zijn"
+      not_found: "niet gevonden"
+      not_locked: "is niet geblokkeerd"
+      not_saved:
+        one: "Een fout verbied het opslaan van  %{resource}:"
+        other: "%{count} fouten verbieden op te slaan %{resource}:"
+      odd: "moet oneven zijn"
+      taken: "werd al volbracht"
+      too_long: "is te lang (niet meer dan %{count} letters)\n"
+      too_short: "is te kort (niet minder dan %{count} letters)\n"
+      wrong_length: "is de foute lengte (moet %{count} letters zijn)\n"
+    template:
+      body: "Er waren problemen met de volgende velden:"
+      header:
+        one: "1 fout verbied dat %{model} opgeslagen te worden."
+        other: "%{count} fouten verbieden dit %{model} op te slaan"
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} werd succesvol ingevoegd"
+      destroy:
+        alert: "%{resource_name} kan niet verplaatst worden"
+        notice: "%{resource_name} werd succesvol verwijderd"
+      update:
+        notice: "%{resource_name} werd succesvol vernieuwed"
+    photos:
+      destroy:
+        notice: "Beeld werd succesvol verwijderd"
+  form:
+    show_fully_accessible_places: "rolstoel toegankelijk"
+    show_limited_accessible_places: "deels rolstoel toegankelijk"
+    show_places_without_status: "onbekende status"
+    show_unaccessible_places: "niet rolstoel toegankelijk"
+  formtastic:
+    hints:
+      email: "Wij behandelen je gegevens veilig, geen spam. Beloofd!"
+      lat: "Beweeg de marker op de kaart in de correcte positie"
+      osm_username: "Nog geen lid op dit moment? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Maak nu een Openstreetmap account</a>\n"
+      password: "(laat dit leeg als je het niet wil veranderen )"
+      phone: "Bijvoorbeeld: +49 30 123456-78"
+      website: "Bijvoorbeeld: http://www.voorbeeld.com"
+    labels:
+      category: "Categorie:"
+      centralkey: "Centrale sluitel"
+      city: "Stad:"
+      create: "Creëer plaats"
+      email: E-mail
+      finish: Einde
+      housenumber: "Nee:"
+      lat: Bewegingsvrijheid
+      lon: Lengtegraad
+      name: "Naam:"
+      osm_password: "OSM wachtwoord"
+      osm_username: "OSM account naam"
+      password: Wachtwoord
+      password_confirmation: "Herhaal wachtwoord"
+      phone: "Telefoon:"
+      postcode: Postcode
+      privacy_policy: "Ik accepteer paragraaf 1 en 2 van het privacy overeenkomst."
+      reset: Resetten
+      save: Opslaan
+      street: "Straat:"
+      terms: "Ik accepteer de voorwaarden."
+      type: "Invullen:"
+      website: "Internetpagina:"
+      wheelchair: "Rolstoel toegankelijkheid?"
+      wheelchair_description: "Toegankelijkheid commentaar:"
+    titles:
+      basic: "Basic data"
+      optional: "Meer informatie <span class=\"addition\">(all fields are optional)</span>"
+  global:
+    form_validation_error: "Alsjeblieft let op de fouten in de onderstaande lijst"
+  header:
+    meta:
+      description: "Vind rolstoel toegankelijke plaatsen - wheelmap.org"
+      homepage: "Startpagina / internetpagina"
+      keywords: "rolstoel toegankelijk plaatsen vinden, zoek markering"
+      search: Zoeken
+    navigation:
+      blog: Blog
+      feedback: Feedback
+      home: Start
+      how_to_add_a_place: "Hoe kan ik plaatsen toevoegen?"
+      imprint: "Colofon "
+      logged_in_as: "Aangemeld als:"
+      login: Inloggen
+      logout: Uitloggen
+      newsletter: Nieuwsbrief
+      press: Pers
+      profile: Profiel
+      suggestions: Adviezen
+      what_is_barrier_free: "Wat betekend \"wheelchair accessible\"?"
+      what_is_wheelmap: "Wat is wheelmap?"
+    searchbar:
+      add_place: "Voeg een andere plaats toe"
+      find: Vind
+      label: ~
+      placeholder: "Bijvoorbeeld Sunset Boulevard L.A. of Brandenburg Gate Berlin"
+      title_add_place: "Voeg nu een nieuwe plaats op deze positie toe!"
+    tagline: "Wheelmap logo"
+    title: "Vind rolstoel toegangelijke plaatsen"
+  helpers:
+    select:
+      prompt: "Kies alsjeblieft"
+    submit:
+      create: "Creëer %{model}"
+      submit: " %{model} opslaan"
+      update: "update %{model}"
+  home:
+    index:
+      filter:
+        category: "Kies categorie"
+        deselect_all: "Los de hele selectie op"
+        select_all: "Selecteer alles"
+        wheelchair: "Rolstoel toegangelijk?"
+      ie:
+        action:
+          ignore: Negeren
+          upgrade: "actualiseer Broswer"
+        warning:
+          headline: "Wij excuseren!"
+          message: "Je gebruikt blijkbaar Internet Explorer. Wheelmap heeft een standart-passend browser nodig om optimaal te werken. Alsjeblieft gebruik Firefox, Chrome, Safari or Opera"
+      link:
+        node:
+          create: "Voeg een nieuwe plaats toe"
+      popup:
+        form:
+          limited: "deels rolstoel toegankelijk"
+          ? "no"
+          : "niet rolstoel toegangelijk"
+          save: Actualiseren
+          unknown: "onbekende status"
+          ? "yes"
+          : "rolstoel toegankelijk"
+        help: "rolstoel toegankelijk? (Hulp)"
+        more: meer...
+  how?: Hoe?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Beperkt rolstoel toegangelijk %{type} in %{city} (%{count})"
+        ? "no"
+        :
+          headline: "Alles niet-rolstoel toegankelijk %{type} in %{city} (%{count})"
+        unknown:
+          headline: "All %{type} in %{city} met onbekende rolstoel status (%{count})"
+        ? "yes"
+        :
+          headline: "Compleet rolstoel toegankelijk %{type} in %{city} (%{count})"
+  layouts:
+    application:
+      banner:
+        alt: "Een project van Sozialhelden.de"
+  node:
+    address:
+      city: "%{city} %{postcode}\n"
+      street: "%{housenumber} %{street}\n"
+    tags:
+      phone: "Telefoon:"
+      website: Internetpagina
+  nodes:
+    create:
+      flash:
+        not_successfull: "Oops, jouw input was niet correct of niet compleet."
+        successfull: "Dank je, de invoer werd opgeslagen en zal straks online staan."
+    edit:
+      header:
+        title: "Bewerk plaats: %{node} | wheelmap.org"
+      link:
+        large_map: "&laquo; Annuleer"
+    errors:
+      default: "Oops, er ging iets mis. Maar werden erover geïnformeerd!"
+      not_authorized: "Excuus, authentificatie faalde"
+      not_available: "Excuus, de pagina is tijdelijk niet beschikkbar."
+      not_existent: "Excuus, de plaats is niet meer beschikbaar."
+      not_found: "Excuus, pagina niet gevonden."
+      param_missing: "Alsjeblieft voeg een zoek term toe"
+    flash:
+      authorize_wheelmap: "Je hebt een OpenStreetMap account nodig om de data te veranderen."
+    new:
+      header:
+        title: "Nieuwe plaats | wheelmap.org"
+      link:
+        large_map: Annuleren
+    node:
+      link:
+        claim: "Werk je hier?"
+        edit_node: "Bewerk plaats"
+        report_bug: "Geef een probleem op"
+    show:
+      header:
+        title: "Plaats:  %{node} | wheelmap.org"
+      link:
+        back: terug
+        large_map: Verruimen
+        listing: "Alle vergelijkbare plaatsen '%{type}' in %{city}\n"
+        upload: "Upload beeld"
+      more_data_from: "Er is meer informatie over deze plaats, gecontroleerd door:"
+      show-in-osm: OpenStreetMap
+    update:
+      flash:
+        not_successfull: "Oops, jouw input was of niet correct of niet compleet."
+        successfull: "Dank je, de invoer werd succesvol opgeslagen en zal straks online staan."
+    update_wheelchair:
+      successfull: "De statuus voor \"%{name}\" werd verandert naar \"%{status} rolstoel toegankelijk\" en zal straks online op de site staan. "
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: 0
+        strip_insignificant_zeros: 0
+        unit: $
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: 0
+      strip_insignificant_zeros: 0
+    human:
+      decimal_units:
+        format: "%n %u\n"
+        units:
+          billion: Biljoen
+          million: miljoen
+          quadrillion: Biljard
+          thousand: Duizend
+          trillion: Triljoen
+          unit: ~
+      format:
+        delimiter: ~
+        precision: 1
+        significant: waar
+        strip_insignificant_zeros: 0
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "Je moet je account met open street map verbinden, dan kan je plaatsen bij wheelmap.org toevoegen of veranderen. "
+    callback:
+      notice: "Jouw wheelmap account is nu verbonden met de OpenStreetMap account %{user}.\n"
+  or: of
+  place:
+    one: "%{count} plaats"
+    other: "%{count} plaatsen"
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "Status: verbonden"
+          grant: "Nu verbinden"
+          not_connected: "Status: Niet verbonden"
+          revoke: onderbroken
+      headline: "Bewerk jouw profiel"
+  search:
+    index:
+      search:
+        for: "Zoek naar  \"%{q}\""
+        not_found: "Geen plaats gevonden!"
+  splash:
+    countline: "%{count} plaatsen zijn al getekend."
+    headline: "Iedereen kan rolstoel toegankelijke plaatsen toevoegen!"
+    start: Start
+    step1: "Klik op een plaats die je kent"
+    step2: "Markeer het en klik op opslaan."
+    step3: "Gelukt! Registreren is niet nodig."
+    what_is_wheelmap: "Wat is wheelmap?"
+  statistics: Statistieken
+  support:
+    array:
+      last_word_connector: en
+      sentence_connector: en
+      skip_last_comma: true
+      two_words_connector: en
+      words_connector: ", "
+    select:
+      prompt: "Alsjeblieft kies"
+  time:
+    am: ben
+    formats:
+      default: "%a %d %b %Y %H:%M:%S %Z"
+      long: "%d %B %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: "'s middags"
+  user_sessions:
+    create:
+      activation:
+        notice: "Jouw account is nu geactiveerd!"
+      error:
+        notice: "E-mail en wachtwoord passen niet. "
+      notice: "Je bent in!"
+    destroy:
+      notice: "Tot zien en tot straks!"
+    new:
+      email: "E-mail adres"
+      login: "Log in"
+      login_with_twitter: "Log in met Twitter"
+      password: Wachtwoord
+      remember_me: "Aangemeld blijven"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Je bent er bijna! Beëindigen je registratie voor je Wheelmap account hier:"
+        set_password_for_mobile: |-
+            Je registratie bij OpenStreetMap is geslaagd.
+            Kies nu je email adres en je wachtwoord voor je Wheelmap account en dan ben je erbij! Je hebt deze email adres en het wachtword nodig om bij de Wheelmap app for iPone of Android in te loggen.
+        text: "Hoe kunnen wij contact met je opnemen? Je kan deze informatie later in je profiel veranderen."
+    edit:
+      headline:
+        your_images: "Jouw geupload beelden"
+  wheelchairstatus:
+    limited: "deels rolstoel toegankelijk"
+    ? "no"
+    : "niet rolstoel toegankelijk"
+    unknown: "onbekende status"
+    ? "yes"
+    : "rolstoel toegankelijk"
+  wheelmap:
+    footer:
+      a_project_of: "Een project van"
+      based_on: "Gebaseerd op"
+      become_a_supporter: "Wordt een ondersteuner"
+      main_supporter: "Hoofd donateur"
+    itunes:
+      alt: "AppStore Logo / AppWinkel logo"
+      title: "Download de iPhone App nu"
+    logo:
+      alt: "Wheelmap logo - vind rolstoel toegangelijke plaatsen"
+      title: "Wheelmap - vind rolstoel toegangelijke plaatsen"
+    what_is:
+      fully_accessible: "Ingang drempelvrij, alle ruimtes drempelvrij, gehandicaptentoilet aanwezig  "
+      limited_accessible: "Ingang heeft een drempel (maximaal hoogte 7 cm), bijna alle kamers drempelvrij, toilet niet toegankelijk   "
+      not_accessible: "Ingang heeft hoge of meerdere treden, kamers zijn niet toegankelijk"
+      unknown_accessible: "Hulp mee en markeer plaatsen!"
+  will_paginate:
+    next_label: "Volgende &#8594;"
+    page_entries_info:
+      multi_page: "Laat %{model} %{from} - %{to} of %{count} in het geheel zien"
+      multi_page_html: "Betoon %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in het geheel "
+      single_page:
+        one: "Betoon 1 %{model}"
+        other: "Betoon alle %{count} %{model}"
+        zero: "Niet %{model} gevonden"
+      single_page_html:
+        one: "Betoon  <b>1</b> %{model}"
+        other: "Betoon <b>all&nbsp;%{count}</b> %{model}"
+        zero: "Niet %{model} gevonden"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Volgende"

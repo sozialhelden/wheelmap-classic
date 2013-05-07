@@ -1,0 +1,47 @@
+---
+ru:
+  activerecord:
+    attributes:
+      user:
+        first_name: "Дать имя"
+        last_name: Фамилия
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: "нужно подтвердить"
+        blank: "не может быть пустым"
+        confirmation: "не совпадает с подтверждением"
+        empty: "не может быть пустым"
+        equal_to: "может иметь лишь значение, равное %{count}"
+        even: "может иметь лишь четное значение"
+        exclusion: "имеет зарезервированное значение"
+        greater_than: "может иметь значение большее %{count}"
+        greater_than_or_equal_to: "может иметь значение большее или равное %{count}"
+        inclusion: "имеет непредусмотренное значение"
+        invalid: "имеет неверное значение"
+        less_than: "может иметь значение меньшее чем %{count}"
+        less_than_or_equal_to: "может иметь значение меньшее или равное %{count}"
+        not_a_number: "не является числом"
+        odd: "может иметь лишь четное значение"
+        record_invalid: "Проверка не удалась:%{errors}"
+        taken: "уже существует"
+        too_long: "слишком длинный (максимум %{count} знаков )"
+        too_short: "слишком короткий (минимум %{count} знаков )"
+        wrong_length: "не правильная длинна (должна быть %{count} знаков)"
+      models:
+        user:
+          attributes:
+            email:
+              blank: "не может быть пустым, в случае предоставления пароля"
+        user_session:
+          email: "Адрес электронной почты"
+          password: пароль
+          remember_me: "оставаться зарегистрированным"
+      template:
+        body: "Проблемы возникли со следующими полями:"
+        header:
+          one: "%{model}: сохранение не удалось из-за %{count} ошибки"
+          other: "%{count} сохранение не удалось из-за ошибки %{model}"
+    models:
+      user: Пользователь

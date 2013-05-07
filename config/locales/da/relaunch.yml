@@ -1,0 +1,20 @@
+---
+da:
+  header:
+    navigation:
+      about_wheelmap: "Om Wheelmap"
+      choose_language: "Vælg sprog"
+      contact: Kontakt
+      map: Kort
+      projects: "Bliv engageret"
+    toolbar:
+      categories: kategorier
+  home:
+    index:
+      overlay:
+        button: "Okay, lad os komme igang!"
+        categories: "Filtrer steder efter kategorier"
+        filter: "Filtrer steder efter kørestolstilgængelig"
+        headline: "Markerer og find kørestolstilgængelige steder med Wheelmap.org - verden over og helt gratis. Det er nemt:"
+        lookup: "Søg efter et bestemt sted"
+        secondary_headline: "Vores trafiklys system til at markerer kørestolstilgængelighed for offentlige steder:"

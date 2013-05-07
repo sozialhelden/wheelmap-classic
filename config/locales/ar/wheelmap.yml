@@ -1,0 +1,403 @@
+---
+ar:
+  application:
+    require_no_user:
+      notice: "تم الدخول"
+    require_user:
+      notice: "لابد أن تكون مسجلا لتشاهد هذه الصفحة"
+  breadcrumbs:
+    node:
+      create: "إضافة مكان جديد"
+      edit: "تعديل مكان"
+    root: "ويل ماب"
+  common:
+    close: مغلق
+    skip: تخطي
+  errors:
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "يجب أن تقبل"
+      already_confirmed: "تم التأكيد بالفعل"
+      blank: "فارغ، يرجى ملء الحقل"
+      confirmation: "غير متوافق مع التأكيد"
+      empty: " يرجى ملء الحقل"
+      equal_to: " %{count} يجب أن يساوي "
+      even: "يجب أن يكون العدد زوجي"
+      exclusion: محجوز
+      expired: "انتهت الصلاحية، يرجى إعادة الطلب"
+      greater_than: "%{count} يجب أن يكون أكبر من "
+      greater_than_or_equal_to: "%{count} يجب أن يكون أكبر من أو يساوي "
+      inclusion: "ليس خيارا مقبولا"
+      invalid: "غير صالح "
+      less_than: "%{count} يجب أن يكون أصغر من "
+      less_than_or_equal_to: "%{count} يجب أن يكون أصغر من أو يساوي "
+      not_a_number: "ليس رقما"
+      not_an_integer: "يجب أن يكون صحيحا"
+      not_found: "لا يوجد"
+      not_locked: "لم يكن مغلق"
+      not_saved:
+        one: "%{resource}: خطأ واحد يمنع من الحفظ"
+        other: "%{count} خطأ يمنع من الحفظ %{resource}::"
+      odd: "يجب أن يكون فردي"
+      taken: "غير متوفر (مستخدم)"
+      too_long: "%{count} characters) أطول من اللازم (الحد الأقصى هو)"
+      too_short: "%{count} أقصر من اللازم (الحد الأدنى هو )"
+      wrong_length: "%{count} الطول غير مناسب (يجب أن يكون)"
+    template:
+      body: "يرجى التحقق من الحقول التالية:"
+      header:
+        one: "%{model} ليس بالامكان حفظ  خطأ واحد."
+        other: "%{count} ليس بالامكان الحفظ %{model}"
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} تم الإنشاء بنجاح  "
+      destroy:
+        alert: "%{resource_name} لا يمكن ازالته "
+        notice: "%{resource_name} تم الحذف بنجاح "
+      update:
+        notice: "%{resource_name} تم التحديث بنجاح "
+    photos:
+      destroy:
+        notice: "تم حذف الصورة بنجاح"
+  form:
+    show_fully_accessible_places: "سهولة الوصول بالكرسي المتحرك"
+    show_limited_accessible_places: "إمكانية الوصول بالكرسي المتحرك ليست سهلة تماما"
+    show_places_without_status: "الوضع غير معروف"
+    show_unaccessible_places: "غير ممكن الوصول بالكرسي المتحرك"
+  formtastic:
+    hints:
+      email: "المعلومات الشخصية تحظى بسرية تامة"
+      lat: "حرك المؤشر على الخريطة لتصحيح موقع"
+      osm_username: "<a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a> غير مشترك في \"أوبن ستريت ماب\" بادر بالتسجيل الآن  ؟"
+      password: "في حال لم ترغب بالتغيير، أبقه فارغاً"
+      phone: "+49 30 123456-78 على سبيل المثال: "
+      website: "على سبيل المثال : http://www.example.com"
+    labels:
+      category: "الصنف :"
+      centralkey: "المفتاح المركزي"
+      city: "المدينة :"
+      create: "أضف مكاناً"
+      email: "البريد الإكتروني"
+      finish: انتهى
+      housenumber: "الرقم :"
+      lat: "خط العرض"
+      lon: "خط الطول"
+      name: "الإسم :"
+      osm_password: "OSM كلمة المرور"
+      osm_username: "OSM إسم الحساب"
+      password: "كلمة المرور"
+      password_confirmation: "إعادة كلمة السر"
+      phone: "رقم الهاتف :"
+      postcode: "الرمز البريدي :"
+      privacy_policy: |-
+          أقبل المقطع الأول والثاني من إتفاقية خصوصية المعلومات
+      reset: "إعادة تعيين"
+      save: حفظ
+      street: شارع
+      terms: |-
+          أقبل بشروط الإستخدام
+      type: "النوع :"
+      website: "موقع :"
+      wheelchair: "امكانية الوصول بالكرسي المتحرك ؟"
+      wheelchair_description: "تعليق حول سهولة الوصول :"
+    titles:
+      basic: "معلومات أساسية"
+      optional: "<span class=\"addition\">(all fields are optional)</span> لمزيد من المعلومات "
+  global:
+    form_validation_error: "يرجى ملاحظة الأخطاء المذكورة"
+  header:
+    meta:
+      description: "ابحث عن أماكن يسهل الوصول إليها بالكرسي المتحرك - wheelmap.org"
+      homepage: "الصفحة الرئيسية"
+      keywords: "أماكن يسهل الوصول اليها بالكرسي المتحرك، أضف علامة بحث"
+      search: بحث
+    navigation:
+      blog: مدونة
+      feedback: الآراء
+      home: ابدأ
+      how_to_add_a_place: "كيف يمكنني اضافة مكان ؟"
+      imprint: مشاركة
+      logged_in_as: "الدخول كـ :"
+      login: "تسجيل الدخول"
+      logout: "تسجيل خروج"
+      newsletter: "أخبار الموقع"
+      press: صحافة
+      profile: الحساب
+      suggestions: الإقتراحات
+      what_is_barrier_free: "ماذا تعني هذة الجملة \"إمكانية الوصول بالكرسي المتحرك\"؟"
+      what_is_wheelmap: "تعرف على ويل ماب ؟"
+    searchbar:
+      add_place: "أضف مكاناً آخر"
+      find: بحث
+      label: ~
+      placeholder: "سن سيت بوليڨارد، لوس أنجلوس  أو  براندن بيرڠ ،برلين"
+      title_add_place: "أضف مكاناً جديداً في هذا الموقع الآن!"
+    tagline: "شعار ويل ماب"
+    title: "ويل ماب - جد أماكن يسهل الوصول إليها بالكرسي المتحرك"
+  helpers:
+    select:
+      prompt: "اختر رجاء"
+    submit:
+      create: " %{model} إنشاء"
+      submit: " %{model} حفظ"
+      update: "%{model} نموذج"
+  home:
+    index:
+      filter:
+        category: "إختر التصنيف"
+        deselect_all: "عدم الإختيار"
+        select_all: "اختيار الكل"
+        wheelchair: "هل يمكن الوصول بالكرسي المتحرك؟"
+      ie:
+        action:
+          ignore: تخطي
+          upgrade: "تحديث المتصفح"
+        warning:
+          headline: "نعتذر !"
+          message: "يبدو أنك تستخدم انترنت اكسبلورر، يفضل استخدام متصفح آخر : فاير فوكس،كروم ،سفاري أو اوبرا ليتوافق مع \"ويل ماب\""
+      link:
+        node:
+          create: "أضف مكانا جديداً"
+      popup:
+        form:
+          limited: "إمكانية الوصول جزئية للكرسي المتحرك"
+          ? "no"
+          : "لايمكن الوصول بالكرسي المتحرك"
+          save: تحديث
+          unknown: "حالة غير معروفة"
+          ? "yes"
+          : "سهولة الوصول للكرسي المتحرك"
+        help: "هل وصول الكرسي المتحرك سهل؟ (بادر بتقديم المساعدة)"
+        more: المزيد...
+  how?: "كيف ؟"
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "%{type} in %{city} (%{count}) إمكانية الوصول بالكرسي المتحرك محدودة"
+        ? "no"
+        :
+          headline: " %{type} in %{city} (%{count}) الوصول بالكرسي المتحرك غير ممكن"
+        unknown:
+          headline: "(%{count})إمكانية الوصول بالكرسي المتحرك غير معلومة"
+        ? "yes"
+        :
+          headline: "%{type} in %{city} (%{count}) يسهل الوصول بالكرسي المتحرك "
+  layouts:
+    application:
+      banner:
+        alt: "قام بتنفيذ المشروع Sozialhelden.de"
+  node:
+    address:
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
+    tags:
+      phone: "رقم الهاتف:"
+      website: موقع
+  nodes:
+    create:
+      flash:
+        not_successfull: "مدخلاتك إما خاطئة أو غير مكتملة"
+        successfull: "شكرا لك ، لقد تم حفظ التعليق وسينشر قريبا"
+    edit:
+      header:
+        title: "%{%{node} تحرير مكان"
+      link:
+        large_map: "&laquo;  إلغاء"
+    errors:
+      default: "خطأ في العملية، تم إرسال تنبيه بذلك"
+      not_authorized: "عذرا، خطأ في المصادقة"
+      not_available: "عفواً، هذه الصفحة غير متوفرة حالياً"
+      not_existent: "عذرا،هذا المكان لم يعد موجودا"
+      not_found: "عذراً، الصفحة غير موجودة"
+      param_missing: "فضلا اكتب عبارة البحث"
+    flash:
+      authorize_wheelmap: " بادر بإنشاء حساب في \"أوبن ستريت ماب\" لتتمكن من التعديل"
+    new:
+      header:
+        title: "مكان جديد | wheelmap.org"
+      link:
+        large_map: "&laquo;  الغاء"
+    node:
+      link:
+        claim: "هل تعمل هنا؟"
+        edit_node: "تعديل مكان"
+        report_bug: "بلغ عن مشكلة"
+    show:
+      header:
+        title: " %{node} مكان : "
+      link:
+        back: العودة
+        large_map: تكبير
+        listing: "'%{type}' in %{city} جميع الأماكن "
+        upload: "تحميل الصورة"
+      more_data_from: "هناك المزيد من المعلومات  عن هذا المكان :"
+      show-in-osm: "\"أوبن ستريت ماب\""
+    update:
+      flash:
+        not_successfull: "المدخلات إما غيرصحيحة أو غير كاملة"
+        successfull: "تم التسليم بنجاح وسيعرض قريباً،شكرا لك."
+    update_wheelchair:
+      successfull: "تم تغيير الحالة من \"%{name} إلى \"%{status}\"  وسيتم النشرقريبا."
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: 0
+        strip_insignificant_zeros: 0
+        unit: $
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: 0
+      strip_insignificant_zeros: 0
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: مليار
+          million: مليون
+          quadrillion: "الكدريليون رقم"
+          thousand: ألف
+          trillion: تريليون
+          unit: ~
+      format:
+        delimiter: ~
+        precision: 3
+        significant: صحيح
+        strip_insignificant_zeros: صحيح
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: بايت
+            other: بايت
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "عليك أن تقوم بربط  حسابك في \"أوبن ستريت ماب\" مع حسابك في \"ويل ماب\"  لتتمكن من إضافة وتعديل الأماكن ."
+    callback:
+      notice: "%{user} حسابك في \"ويل ماب\" مرتبط بحسابك في\" أوبن ستريت ماب \""
+  or: أو
+  place:
+    one: "%{count} مكان"
+    other: "%{count} أماكن "
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "الحالة : متصل"
+          grant: "الآن متصل"
+          not_connected: "الوضع:غير متصل"
+          revoke: "غير متصل"
+      headline: "تحرير الحساب"
+  search:
+    index:
+      search:
+        for: "\"%{q}\" البحث عن "
+        not_found: "لايمكن إيجاد المكان"
+  splash:
+    countline: "%{count} أماكن تم تحديدها "
+    headline: "الجميع يمكنه إضافة أماكن يسهل الوصول لها بالكرسي المتحرك!"
+    start: ابدأ
+    step1: "قم بالنقر على المكان المطلوب"
+    step2: "قم بالتحديد ثم انقر اختيار حفظ"
+    step3: "لايتطلب التسجيل"
+    what_is_wheelmap: "تعرف على ويل ماب ؟"
+  statistics: إحصاءات
+  support:
+    array:
+      last_word_connector: ", و "
+      sentence_connector: و
+      skip_last_comma: صحيح
+      two_words_connector: " و "
+      words_connector: ", "
+    select:
+      prompt: "إختر من فضلك"
+  time:
+    am: صباحا
+    formats:
+      default: "%a %b %d %H:%M:%S %Z %Y"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: مساء
+  user_sessions:
+    create:
+      activation:
+        notice: "تم تفعيل الحساب"
+      error:
+        notice: "البريد الالكتروني وكلمة المرور غير مطابقة"
+      notice: "تم الدخول!"
+    destroy:
+      notice: " إلى اللقاء"
+    new:
+      email: "عنوان البريد الإلكتروني"
+      login: "تسجيل الدخول"
+      login_with_twitter: "الدخول عن طريق حساب تويتر"
+      password: "كلمة المرور"
+      remember_me: "البقاء متصلا"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "\n\
+            مرحبا بك في ويل ماب "
+        set_password_for_mobile: "لديك هاتف ذكي؟ أدخل كلمة المرور ليكون\" ويل ماب\" معك أين ماكنت."
+        text: "كيف يمكننا التواصل معك؟ يمكنك تغيير هذه المعلومات لاحقا في ملفك."
+    edit:
+      headline:
+        your_images: "الصور التي قمت بتحميلها"
+  wheelchairstatus:
+    limited: "الوصول ليس سهلا تماما للكرسي المتحرك"
+    ? "no"
+    : "غير ممكن الوصول بالكرسي المتحرك"
+    unknown: "حالة غير معروفة"
+    ? "yes"
+    : "يسهل الوصول بالكرسي المتحرك"
+  wheelmap:
+    footer:
+      a_project_of: "نفذ المشروع بواسطة"
+      based_on: "مستند على"
+      become_a_supporter: "تريد تقديم الدعم"
+      main_supporter: "الراعي الرسمي"
+    itunes:
+      alt: "شعارنا في متجر التطبيقات"
+      title: "قم بتحميل التطبيق على الآيفون الآن!"
+    logo:
+      alt: "شعار ويل ماب -جد أماكن يسهل الوصول إليها بالكرسي المتحرك"
+      title: "ويل ماب - ابحث عن أماكن يسهل الوصول اليها بالكرسي المتحرك"
+    what_is:
+      fully_accessible: "مدخل سهل بلا درجات، جميع الغرف بلا درجات، وصول سهل لدورات المياه"
+      limited_accessible: "توجد عدة درجات في المدخل ( الارتفاع الأعلى ٧ سم)، معظم الغرف لايمكن الوصول اليها بالكرسي المتحرك وكذلك دورات المياه"
+      not_accessible: "مدخل شديد الانحدار أو يتكون من عدة درجات، لايمكن الوصول للغرف"
+      unknown_accessible: "يمكنك تقديم المساعدة بإضافة المزيد من الأماكن "
+  will_paginate:
+    next_label: "&#8594; بعد"
+    page_entries_info:
+      multi_page: "%{model} %{from} - %{to} of %{count} عرض المجموع"
+      multi_page_html: "%{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> عرض"
+      single_page:
+        one: "%{model} عرض "
+        other: "%{count} %{model} عرض الكل"
+        zero: "%{model} غير  موجود"
+      single_page_html:
+        one: "<b>1</b> %{model} العرض "
+        other: "<b>all&nbsp;%{count}</b> %{model} العرض "
+        zero: "%{model} غير موجود"
+    page_gap: "&hellip;"
+    previous_label: "&#8592;السابق"

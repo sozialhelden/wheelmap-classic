@@ -1,0 +1,47 @@
+---
+uk:
+  activerecord:
+    attributes:
+      user:
+        first_name: "Дати ім'я"
+        last_name: Прізвище
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: "має бути прийнятий"
+        blank: "не може бути пустим"
+        confirmation: "не збігається з підтвердженням"
+        empty: "не може бути порожнім"
+        equal_to: "має дорівнювати %{count}"
+        even: "має бути парним"
+        exclusion: зарезервовано
+        greater_than: "має бути більше ніж %{count}"
+        greater_than_or_equal_to: "має бути більше або рівним %{count}"
+        inclusion: "не включено до переліку"
+        invalid: недійсний
+        less_than: "має бути менше ніж %{count}"
+        less_than_or_equal_to: "має бути менше ніж або дорівнювати %{count}"
+        not_a_number: "не число"
+        odd: "має бути непарним"
+        record_invalid: "Виникли помилки: %{errors}"
+        taken: "вже зайнятий"
+        too_long: "Занадто довгий ( максимум %{count} символів)"
+        too_short: "Занадто короткий (мінімум %{count} символів)"
+        wrong_length: "має неправильну довжину (має бути% {число} символів)"
+      models:
+        user:
+          attributes:
+            email:
+              blank: "не може бути порожнім, якщо є пароль"
+        user_session:
+          email: "Адреса електронної пошти"
+          password: Пароль
+          remember_me: "Запам'ятати мене"
+      template:
+        body: "Помилки виявлено в таких полях:"
+        header:
+          one: "%{model} не збережено через %{count} помилку"
+          other: "%{model} не збережено через %{count} помилки"
+    models:
+      user: Користувач

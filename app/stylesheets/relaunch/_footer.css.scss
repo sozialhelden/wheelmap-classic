@@ -1,0 +1,78 @@
+#footer {
+  width: 100%;
+  height: $footerHeight;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  background: #EDECEA;
+  border-top: 1px solid #FFF;
+  box-shadow: 0px -1px 3px #999999;
+  @media screen and (max-width:760px) {
+    display: none;
+  }
+  ul {
+    &.social {
+      float: left;
+    }
+    &.credits {
+      float: right;
+    }
+  }
+  li {
+    border-right: 1px solid #CCCAC0;
+    padding: 7px 8px 4px 8px;
+    list-style: none;
+    float: left;
+    span {
+      float: left;
+    }
+    img {
+      float: left;
+      margin-left: 4px;
+    }
+    font-size: 12px;
+    color: #666;
+  }
+  a {
+    font-size: 12px;
+    color: #666;
+  }
+}
+
+.social li {
+  overflow: visible;
+  border: none;
+  margin-top: -3px;
+}
+
+#footer .counter {
+  float: left;
+  margin-right: 10px;
+  margin-top: 0;
+  td {
+    padding: 2px 2px;
+    color: gray;
+    font-family: "HelveticaNeue","Helvetica","Swiss 721","Arial","sans-serif";
+    line-height: 18px;
+    height: 18px;
+  }
+  span {
+    font-size: 13px;
+    border: 1px solid #ccc;
+    border-left: 0;
+    padding: 1px 4px;
+    margin-left: 5px;
+    background: url(/images/bubble-left.png) no-repeat -5px center;
+  }
+}
+@media screen and (max-width:760px) {
+  .social {
+  	display:none;
+  }
+  .credits li {
+  	border-right:none;
+  }
+  .credits span {
+  	display:none;
+  }
+}

@@ -1,0 +1,53 @@
+---
+ja:
+  activerecord:
+    attributes:
+      user:
+        first_name: 名
+        last_name: 姓
+        privacy_policy: プライバシーポリシー
+        terms: 条件
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: 承認してください
+        blank: 入力必須です
+        confirmation: 確認入力が一致しません
+        empty: 空白は許されていません
+        equal_to: "%{count} と等しくなければなりません"
+        even: 偶数でなければなりません
+        exclusion: は予約済みです
+        greater_than: "%{count} より大きくなければなりません"
+        greater_than_or_equal_to: "%{count} 以上でなければなりません"
+        inclusion: はリストにありません
+        invalid: 正しくありません
+        less_than: "%{count} より小さくなければなりません"
+        less_than_or_equal_to: "%{count} 以下でなければなりません"
+        not_a_number: は数字ではありません
+        odd: 奇数でなければなりません
+        record_invalid: "バリデーションに失敗しました。 %{errors}"
+        taken: 既に取得されています
+        too_long: "が長すぎます (最大 %{count}文字)"
+        too_short: "が短かすぎます (最小 %{count}文字)"
+        wrong_length: "の文字数が誤っています (%{count}文字でなければなりません)"
+      models:
+        user:
+          attributes:
+            email:
+              blank: パスワードがあれば空白にはできません
+            privacy_policy:
+              accepted: 承諾必須
+            terms:
+              accepted: 承諾必須
+        user_session:
+          email: メールアドレス
+          password: パスワード
+          remember_me: ログインを続ける
+      template:
+        body: 次の項目に問題がありました：
+        header:
+          one: "エラーがひとつありこの %{model} は保存できませんでした"
+          other: "%{count} 件のエラーがあり、この %{model} は保存できませんでした"
+    models:
+      user: ユーザ

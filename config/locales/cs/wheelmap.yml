@@ -1,0 +1,277 @@
+---
+cs:
+  application:
+    require_no_user:
+      notice: "Už jste přihlášený..."
+    require_user:
+      notice: "Musíte se přihlásit aby jste viděli tuto stránku."
+  breadcrumbs:
+    node:
+      edit: "Upravit místo"
+  common:
+    close: zavřít
+  errors:
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "musí být potvrzeno"
+      already_confirmed: "byl již potvrzen, prosím, zkuste se přihlásit"
+      blank: "je povinná položka"
+      confirmation: "nebylo potvrzeno"
+      empty: "nesmí být prázdný/á/é"
+      equal_to: "musí být rovno %{count}"
+      even: "musí být sudé číslo"
+      exclusion: "je vyhrazeno pro jiný účel"
+      greater_than: "musí být větší než %{count}"
+      greater_than_or_equal_to: "musí být větší nebo rovno %{count}"
+      inclusion: "není v seznamu povolených hodnot"
+      invalid: "není platná hodnota"
+      less_than: "musí být méně než %{count}"
+      less_than_or_equal_to: "musí být méně nebo rovno %{count}"
+      not_a_number: "není číslo"
+      not_an_integer: "musí být celé číslo"
+      not_found: nenalezen
+      not_locked: "nebyl uzamčen"
+      not_saved:
+        one: "%{resource} nebyl uložen kvůli chybě:"
+        other: "%{resource} nebyl uložen kvůli %{count} chybám:"
+      odd: "musí být liché číslo"
+      taken: "již databáze obsahuje"
+      too_long: "je příliš dlouhý/á/é (max. %{count} znaků)"
+      too_short: "je příliš krátký/á/é (min. %{count} znaků)"
+      wrong_length: "nemá správnou délku (očekáváno %{count} znaků)"
+    template:
+      body: "Následující pole obsahují chybně vyplněné údaje: "
+      header:
+        one: "Při ukládání objektu %{model} došlo k chybám a nebylo jej možné uložit"
+        other: "Při ukládání objektu %{model} došlo ke %{count} chybám a nebylo možné jej uložit"
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} - úspěšně vytvorřeno"
+      destroy:
+        alert: "%{resource_name} se nepovedlo odstranit"
+        notice: "%{resource_name} již neexistuje"
+      update:
+        notice: "Úspěšně jste změnili %{resource_name}"
+  form:
+    show_limited_accessible_places: "částečně přístupné pro vozíčkáře"
+    show_places_without_status: "neznámý stav"
+    show_unaccessible_places: "nepřístupné pro vozíčkáře"
+  formtastic:
+    hints:
+      email: "Vaše adresa je u nás v bezpečí - žádný spam. Slibujeme!"
+    labels:
+      centralkey: "Společný klíč:"
+      lon: "Zeměpisná délka"
+      password_confirmation: "Zopakujte heslo"
+      postcode: "Směrovací číslo:"
+      reset: Obnovit
+      save: Uložit
+      street: "Ulice:"
+      type: "Typ:"
+      wheelchair: "Přístupnost pro vozíčkáře?"
+      wheelchair_description: "Poznámka k přístupnosti:"
+    titles:
+      basic: "Základní údaje"
+      optional: "Více informací <span class=\"addition\">(všechny položky jsou povinné)</span>"
+  header:
+    meta:
+      description: "Nalezněte místa přístupné pro vozíčkáře - wheelmap.org"
+      homepage: "Domovská stránka"
+      keywords: "místa přístupné pro vozíčkáře hledat označovat"
+      search: Hledat
+    navigation:
+      feedback: "Zpětná vazba"
+      how_to_add_a_place: "Jak přidám místa?"
+      imprint: Impresum
+      login: "Přihlásit se"
+      logout: "Odhlásit se"
+      what_is_wheelmap: "Co je to wheelpmap?"
+    searchbar:
+      find: Najít
+      title_add_place: "Přidejte sem nové místo!"
+    tagline: "Logo Wheelmap"
+  helpers:
+    select:
+      prompt: "Prosím vyberte si"
+    submit:
+      create: "Vytvořit %{model}"
+      submit: "Uložit %{model}"
+      update: "Aktualizovat %{model}"
+  home:
+    index:
+      filter:
+        category: "Vyberte kategorii"
+        select_all: "Označit vše"
+      ie:
+        action:
+          ignore: Ignorovat
+          upgrade: "Aktualizovat prohlížeč"
+        warning:
+          headline: "Omlouváme se!"
+          message: "Zda se, že používáte Internet Explorer. Wheelmap potřebuje prohlížeč, který odpovídá normám. Prosím zvažte použití některého z následujících prohlížečů: Firefox, Chrome, Safari nebo Opera."
+      popup:
+        form:
+          limited: "částečně přístupné pro vozíčkáře"
+          unknown: "neznámý status"
+          ? "yes"
+          : "přístupné pro vozíčkáře"
+        help: "Přístupné pro vozíčkáře? (Pomoc)"
+  how?: Jak?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Všechny %{type} s omezeným přístupem pro vozíčkáře v %{city} (%{count})"
+        unknown:
+          headline: "Všechny %{type} ve městě %{city} s neznámou dostupností pro vozíčkáře (%{count})"
+  node:
+    address:
+      city: "%{city} %{postcode}"
+    tags:
+      phone: "Telefon:"
+  nodes:
+    create:
+      flash:
+        not_successfull: "Jeje, vaše zadání bylo nesprávné nebo neúplné"
+        successfull: "Děkujeme, váš příspěvek byl uložený a brzy bude zobrazený na mapě."
+    errors:
+      not_authorized: "Přihlášení bylo neúspěšné"
+      not_available: "Omlouváme se, tahle stránka je dočasně nedostupná."
+    new:
+      header:
+        title: "Nové místo | wheelmap.org"
+      link:
+        large_map: "&laquo; Zrušit\n"
+    node:
+      link:
+        report_bug: "Nahlaste problém"
+    show:
+      header:
+        title: "Místo: %{node} | wheelmap.org\n"
+      link:
+        back: zpět
+        upload: "Nahrát obrázek"
+      more_data_from: "O tomhle místě je více údajů, zkontroloval:"
+    update:
+      flash:
+        not_successfull: "Zadali jste neúplné nebo nesprávné heslo"
+    update_wheelchair:
+      successfull: "Stav pro \"%{name}\" byl změněný na \"%{status}\" a brzy bude online."
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: Kč
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Miliarda
+          million: Milion
+          quadrillion: Kvadrilion
+          thousand: Tisíc
+          trillion: Bilion
+          unit: ~
+      format:
+        delimiter: ~
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: B
+            other: B
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "Aby jste mohli vytvářet nebo měnit místa na wheelmap.org musíte si propojit svůj účet s OpenStreetMap účtem."
+    callback:
+      notice: "Váš wheelmap účet je teď propojený s OpenStreetMap účtem uživatele %{user}."
+  or: nebo
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "Stav: připojený"
+          revoke: Odpojit
+      headline: "Upravte svůj účet"
+  search:
+    index:
+      search:
+        not_found: "Nepovedlo se najít žádná místa!"
+  splash:
+    start: Start
+    step2: "Označte to a dejte uložit"
+  support:
+    array:
+      last_word_connector: " a "
+      sentence_connector: a
+      skip_last_comma: ano
+      two_words_connector: " a "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%A %d. %B %Y %H:%M"
+      short: "%d. %m. %H:%M"
+    pm: pm
+  user_sessions:
+    new:
+      email: "E-mailová adresa"
+      login: "Přihlásit se"
+      login_with_twitter: "Přihlašte se přes Twitter"
+      password: Heslo
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Vítejte na wheelmap"
+        set_password_for_mobile: "Máte smartphone? Určete si heslo aby jste mohli Wheelmap používat i na cestách ve vašem iPhone nebo telefonu s Androidem."
+    edit:
+      headline:
+        your_images: "Vaše obrázky"
+  wheelchairstatus:
+    limited: "částečně přístupné pro vozíčkáře"
+    unknown: "neznámý stav"
+    ? "yes"
+    : "přístupné pro vozíčkáře"
+  wheelmap:
+    footer:
+      based_on: "Založeno na"
+    itunes:
+      title: "Stáhněte si aplikaci pro iPhone!"
+  will_paginate:
+    page_entries_info:
+      multi_page: "Zobrazuju %{model} %{from} - %{to} z celkového počtu %{count}"
+      single_page:
+        one: "Zobrazuji 1 %{model}"
+        other: "Zobrazuji všech %{count} %{model}"
+      single_page_html:
+        zero: "%{model} nenalezeno"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Předchozí"

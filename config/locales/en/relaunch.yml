@@ -1,0 +1,20 @@
+---
+en:
+  header:
+    navigation:
+      about_wheelmap: "About Wheelmap"
+      choose_language: "Choose language"
+      contact: Contact
+      map: Map
+      projects: "Get engaged"
+    toolbar:
+      categories: Categories
+  home:
+    index:
+      overlay:
+        button: "Okay, let’s go!"
+        categories: "Filter places by categories"
+        filter: "Filter places by wheelchair accessibility"
+        headline: "Mark and find wheelchair accessible places with Wheelmap.org - worldwide and for free. It’s easy:"
+        lookup: "Search for a specific place"
+        secondary_headline: "Our traffic light system to mark the wheelchair accessibility of public places:"

@@ -1,0 +1,20 @@
+a {
+  font-size: 12px;
+  color: #333;
+  text-decoration: none;
+  &:visited {
+    font-size: 12px;
+    color: #333;
+    text-decoration: none;
+  }
+  &:hover {
+    color: #F00;
+    text-decoration: inherit;
+  }
+  &:active {
+    color: #444;
+  }
+  &:focus {
+    outline: none;
+  }
+}

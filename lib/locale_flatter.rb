@@ -40,17 +40,14 @@ class LocaleFlatter
     locale = yaml.keys.first
     yaml = yaml[locale]
 
-    FileUtils.mkdir_p "./tmp/mygengo/#{locale}"
+    locale_dir = Rails.root.join('tmp','mygengo', locale)
+    FileUtils.mkdir_p locale_dir, :verbose => true unless File.exists?(locale_dir)
 
-    if matches = file.to_s.match(/locales\/([^\/]+)$/)
-      # Mygengo uses the filename as the "section" name, so need to rename the "generic" yaml to something more useful.
-      new_file = Pathname.new("./tmp/mygengo/#{locale}/wheelmap.yml")
-    else
-      new_file = Pathname.new("./tmp/mygengo/#{locale}/#{file.basename}")
-    end
+    # Mygengo uses the filename as the "section" name, so need to rename the "generic" yaml to something more useful.
+    new_file = Pathname.new("./tmp/mygengo/#{locale}/#{file.basename}")
 
     new_yaml = {}
-    LocaleFlatter.flatten(new_yaml, yaml)
+    LocaleFlatter.flatten(new_yaml, yaml) unless yaml.nil?
     new_file.open('w') do |f|
       # f.write({ locale => new_yaml }.ya2yaml(:syck_compatible => true))
       f.write "---\n"

@@ -1,0 +1,379 @@
+---
+lv:
+  application:
+    require_no_user:
+      notice: "Jūs jau esat pierakstījies..."
+    require_user:
+      notice: "Jums ir jāpierakstās lai redzētu šo lapu."
+  breadcrumbs:
+    node:
+      create: "Pievienot jaunu vietu"
+      edit: "Labot vietu"
+    root: "wheelmap\n"
+  common:
+    close: aizvērt
+  errors:
+    dynamic_format: "%{message}\n"
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "Ir jābūt akceptētam"
+      already_confirmed: "jau ir apstiprināts"
+      blank: "ir jāaizpilda"
+      confirmation: "Neatbilst apstiprinājumam"
+      empty: jāaizpilda
+      equal_to: "Jābūt precīzi %{count}"
+      even: "vērtībai jābūt pāra skaitlim"
+      exclusion: "ir rezervēts"
+      expired: "Izbeidzies derīgums, lūdzu pieprasiet jaunu"
+      greater_than: "jābūt lielākam par %{count}"
+      greater_than_or_equal_to: "ir jābūt lielākam vai vienādam ar %{count}"
+      inclusion: "nederīga vērtība"
+      invalid: "nav derīgs"
+      less_than: "jābūt mazāk nekā %{count}"
+      less_than_or_equal_to: "ir jābūt mazākam vai vienādam ar %{count}"
+      not_a_number: "nav skaitlis"
+      not_an_integer: "jābūt veselam skaitlim"
+      not_found: "netika atrasts"
+      not_locked: "netika bloķēts"
+      not_saved:
+        one: "%{resource} netika saglabāts kļūdas dēļ: "
+        other: "%{count} kļūdas neļāva saglabāt %{resource}:"
+      odd: "jābūt nepāra vērtībai"
+      taken: "jau ir aizņemts"
+      too_long: "ir par garu (ne vairāk kā %{count} zīmes)"
+      too_short: "ir par īsu (ne mazāk kā %{count} zīmes)"
+      wrong_length: "garums ir nepareizs (jābūt %{count} zīmēm)"
+    template:
+      body: "Ar sekojošiem laukiem radās problēmas:"
+      header:
+        one: "1 kļūda neļāva saglabāt %{model} "
+        other: "%{count} kļūdas neļāva saglabāt šo %{model}"
+  flash:
+    actions:
+      create:
+        notice: "Veiksmīgi tika izveidots %{resource_name} "
+      destroy:
+        alert: "%{resource_name} nevarēja izdzēst "
+        notice: "%{resource_name} tika veiksmīgi izdzēsts"
+      update:
+        notice: "%{resource_name} tika veiksmīgi atjaunots"
+  form:
+    show_fully_accessible_places: "pieejams ar ratiņkrēslu"
+    show_limited_accessible_places: "daļēji pieejams ar ratiņkrēslu"
+    show_places_without_status: "nezināms statuss"
+    show_unaccessible_places: "Nav pieejams ar ratiņkrēslu"
+  formtastic:
+    hints:
+      lat: "Pārvietojiet atzīmi uz pareizo vietu kartē "
+      osm_username: "Neesi reģistrējies? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>"
+      password: "(atstājiet tukšu, ja nevēlaties mainīt)"
+      phone: "Piemēram: +49 30 123456-78"
+      website: "Piemēram: http://www.piemers.com"
+    labels:
+      category: "Kategorija:"
+      centralkey: "Centrālā atslēga:"
+      city: "Pilsēta:"
+      create: "Izveidot vietu"
+      email: E-pasts
+      housenumber: "Nr.:"
+      lat: garums
+      lon: garums
+      name: "Vārds:"
+      osm_password: "OSM parole"
+      osm_username: "OSM konts"
+      password: Parole
+      password_confirmation: "Atkārtot paroli"
+      phone: "Tālrunis:"
+      postcode: "pasta indekss:"
+      reset: "Reset\n"
+      save: Saglabāt
+      street: "Iela:"
+      type: "Veids:"
+      website: "Mājas lapa:"
+      wheelchair: "Pieejamība ar ratiņkrēslu?"
+      wheelchair_description: "Komentārs par pieejamību"
+    titles:
+      basic: Pamatdati
+      optional: "Vairāk informācijas <span class=\"addition\">(all fields are optional)</span>"
+  global:
+    form_validation_error: "Lūdzu ņemiet vērā zemāk uzskaitītās kļūdas"
+  header:
+    meta:
+      description: "Atrast ar ratiņkrēslu pieejamas vietas - wheelmap.org"
+      homepage: "Mājas lapa"
+      keywords: "Ar ratiņkrēsliem pieejamas vietas meklēt atrast atzīmēt"
+      search: Meklēt
+    navigation:
+      blog: Blogs
+      feedback: Atsauksmes
+      home: Sākt
+      how_to_add_a_place: "Ka es varu pievienot vietas?"
+      imprint: "Par mums"
+      logged_in_as: "Pierakstījies kā: "
+      login: Pierakstīties
+      logout: Izrakstīties
+      newsletter: "Paziņojumi par jaunumiem"
+      press: Presei
+      profile: Profils
+      suggestions: Ieteikumi
+      what_is_barrier_free: "Ko \"pieejams ar ratiņkrēslu\" nozīmē?"
+      what_is_wheelmap: "Kas ir wheelmap?"
+    searchbar:
+      add_place: "Pievienot jaunu vietu"
+      find: atrast
+      label: ~
+      placeholder: "piem., Sunset Boulevard L.A. or Brandenburg Gate Berlin"
+      title_add_place: "Pievieno jaunu vietu šajā pozīcijā!"
+    tagline: "Wheelmap logo\n"
+    title: "Atrodiet ar ratiņkrēslu pieejamas vietas"
+  helpers:
+    select:
+      prompt: "Lūdzu izvēlieties"
+    submit:
+      create: "izveidot %{model}"
+      submit: "saglabāt %{model}"
+      update: "atjaunot %{model}\n"
+  home:
+    index:
+      filter:
+        category: "Izvēlēties kategoriju:"
+        wheelchair: "Pieejams ar ratiņkrēslu?"
+      ie:
+        action:
+          ignore: Ignorēt
+          upgrade: "Atjaunot pārlūku"
+        warning:
+          headline: Atvainojiet!
+          message: "Šķiet Jūs lietojiet Internet Explorer. Wheelmap lietošanai ir nepieciešams tīmekļa standartiem atbilstošs interneta pārlūks. Lūdzu apsveriet iespēju lietot Firefox, Chrome, Safari vai Opera."
+      link:
+        node:
+          create: "Pievienot jaunu vietu"
+      popup:
+        form:
+          limited: "daļēji pieejams ar ratiņkrēslu"
+          ? "no"
+          : "nav pieejams ar ratiņkrēslu"
+          save: Atjaunot
+          unknown: "nezināms statuss"
+          ? "yes"
+          : "pieejams ar ratiņkrēslu"
+        help: "Pieejams ar ratiņkrēslu? (Palīdzība)"
+        more: vairāk...
+  how?: Kā?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Visas (%{count}) ratiņkrēslā ierobežoti pieejamās %{type} vietas %{city}"
+        ? "no"
+        :
+          headline: "Visas (%{count}) ar ratiņkrēslu nepieejamās %{type} vietas %{city}"
+        unknown:
+          headline: "Visas (%{count}) %{type} vietas ar vēl nezināmu pieejamības ar ratiņkrēsliem statusu %{city}"
+        ? "yes"
+        :
+          headline: "Visas (%{count}) ar ratiņkrēslu pieejamās %{type} vietas %{city}"
+  layouts:
+    application:
+      banner:
+        alt: "Sozialhelden.de projekts"
+  node:
+    address:
+      city: "%{city} %{postcode}"
+      street: " %{street} %{housenumber}"
+    tags:
+      phone: "Tālrunis:"
+      website: "Mājas lapa:"
+  nodes:
+    create:
+      flash:
+        not_successfull: "Ui, ievadītie dati bija vai nu nekorekti vai arī nepilnīgi"
+        successfull: "Paldies, jūsu ieraksts tika veiksmīgi saglabāts un drīz būs pieejams tiešsaistē. "
+    edit:
+      header:
+        title: "Labot vietu: %{node} | wheelmap.org"
+      link:
+        large_map: "&laquo; Atcelt"
+    errors:
+      default: "Kaut kas aizgāja griezi. Mēs saņēmām informāciju par šo kļūmi."
+      not_authorized: "Atvainojiet, autorizācija neizdevās"
+      not_available: "Atvainojiet, šī lapa šobrīd nav pieejama"
+      not_existent: "Atvainojiet, šī vieta vairs nav pieejama"
+      not_found: "Atvainojiet, lapa nav atrasta."
+      param_missing: "lūdzu norādiet terminu meklēšanai"
+    flash:
+      authorize_wheelmap: "Jums ir nepieciešams OpenStreetMap konts lai mainītu datus"
+    new:
+      header:
+        title: "Jauna vieta | wheelmap.org"
+      link:
+        large_map: "&laquo; Atcelt"
+    node:
+      link:
+        claim: "Vai tu šeit strādā?"
+        edit_node: "Labot vietu"
+        report_bug: "Ziņot par problēmu"
+    show:
+      header:
+        title: "Vieta: %{node} | wheelmap.org"
+      link:
+        back: atpakaļ
+        large_map: Palielināt
+        listing: "Visas '%{type}' veida vietas %{city}"
+      show-in-osm: "OpenStreetMap\n"
+    update:
+      flash:
+        not_successfull: "Ups, Jūsu ieraksts bija vai nu nekorekts vai arī nepilnīgs"
+        successfull: "Paldies, jūsu ieraksts tika veiksmīgi saglabāts un tūlīt būs pieejams tiešsaistē"
+    update_wheelchair:
+      successfull: "\"%{name}\" statuss ir izmainīts uz \"%{status} wheelchair accessible\". Izmaiņas drīz būs redzamas tiešsaistē."
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n\n"
+        precision: 2
+        separator: "."
+        significant: 0
+        strip_insignificant_zeros: 0
+        unit: Ls
+    format:
+      delimiter: "."
+      precision: 3
+      separator: "."
+      significant: 0
+      strip_insignificant_zeros: 0
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Miljards
+          million: miljons
+          quadrillion: Kvadriljons
+          thousand: tūkstotis
+          trillion: Triljons
+          unit: ~
+      format:
+        delimiter: ~
+        precision: 3
+        significant: atbilst
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u\n"
+        units:
+          byte:
+            one: Bits
+            other: baiti
+          gb: "GB\n"
+          kb: KB
+          mb: MB
+          tb: "TB\n"
+    percentage:
+      format:
+        delimiter: ","
+    precision:
+      format:
+        delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "Pirms radīt un mainīt vietas wheelmap.org, jums ir jāsavieno jūsu konts ar jūsu 'open street map' kontu."
+    callback:
+      notice: "Jūsu wheelmap konts tagad ir sasaistīts ar OpenStreetMap kontu %{user}."
+  or: vai
+  place:
+    one: "%{count} vieta"
+    other: "%{count} vietas"
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "Statuss: tiešsaistē"
+          grant: "Pieslēgties tūlīt"
+          not_connected: "Satuss: Nav tiešsaistē"
+          revoke: Atvienoties
+      headline: "Mainīt savu profilu"
+  search:
+    index:
+      search:
+        for: "Meklē \"%{q}\""
+        not_found: "Neviena vieta nav atrasta!"
+  splash:
+    countline: "%{count} vietas jau ir atzīmētas"
+    headline: "Ikviens var pievienot ar ratiņkrēsliem pieejamās vietas!"
+    start: Sākt
+    step1: "Klikšķiniet uz vietas, kuru ziniet"
+    step2: "Atzīmējiet to un nospiežiet saglabāt"
+    step3: "Tas arī viss! Reģistrācija nav nepieciešama"
+    what_is_wheelmap: "Kas ir wheelmap?"
+  statistics: Statistika
+  support:
+    array:
+      last_word_connector: un
+      sentence_connector: un
+      skip_last_comma: true
+      two_words_connector: un
+      words_connector: ","
+    select:
+      prompt: "Lūdzu izvēlieties"
+  time:
+    am: "no rīta"
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z\n"
+      long: "%B %d, %Y %H:%M\n"
+      short: "%d %b %H:%M\n"
+    pm: vakarā
+  user_sessions:
+    create:
+      activation:
+        notice: "Jūsu konts ir aktivizēts!"
+      error:
+        notice: "E-pasts un parole nesakrīt"
+      notice: "Izdevās pierakstīties!"
+    destroy:
+      notice: "Uz redzēšanos! "
+    new:
+      email: "E-pasta adrese"
+      login: Pierakstīties
+      login_with_twitter: "Pierakstīties ar Twitter"
+      password: Parole
+      remember_me: "Palikt piereģistrētam"
+  wheelchairstatus:
+    limited: "daļēji pieejams ar ratiņkrēslu"
+    ? "no"
+    : "Nav pieejams ar ratiņkrēslu"
+    unknown: "nezināms statuss"
+    ? "yes"
+    : "pieejams ar ratiņkrēslu"
+  wheelmap:
+    footer:
+      a_project_of: projekts
+      based_on: "Balstīts uz"
+      become_a_supporter: "Kļūsti par atbalstītāju"
+      main_supporter: "Galvenais atbalstītājs"
+    itunes:
+      alt: "AppStore Logo\n"
+      title: "Lejupielādējiet iPhone App tūlīt!"
+    logo:
+      alt: "Wheelmap Logo - atrodiet ar ratiņkrēslu pieejamas vietas"
+      title: "Wheelmap - atrodiet ar ratiņkrēslu pieejamas vietas"
+    what_is:
+      fully_accessible: "Ieeja bez pakāpieniem, visas istabas bez pakāpieniem, pieejamas labierīcības."
+      limited_accessible: "Ieejai ir pakāpiens (maks. augstums 7 cm), lielākā daļa istabu ir bez pakāpieniem, labierīcības nav pieejamas."
+      not_accessible: "Pie ieejas ir pakāpiens vai vairāki pakāpieni, istabas nav pieejamas"
+      unknown_accessible: "Palīdzi un atzīmē šīs vietas!"
+  will_paginate:
+    next_label: "Nākošais &#8594;"
+    page_entries_info:
+      multi_page: "Rāda %{from} - %{to} no %{count} %{model} kopumā"
+      multi_page_html: "Parāda  %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> no <b>%{count}</b> kopumā"
+      single_page:
+        one: "Rāda 1 %{model}\n"
+        other: "Parādīt visus %{count} %{model}"
+        zero: "%{model} netika atrasts"
+      single_page_html:
+        one: "Rāda <b>1</b> %{model}"
+        other: "Rāda <b>all&nbsp;%{count}</b> %{model}"
+        zero: "%{model} netika atrasts"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Iepriekšējais"

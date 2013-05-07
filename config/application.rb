@@ -16,7 +16,6 @@ module Wheelmap
 
     require 'float'
     require 'string'
-    require 'progress_bar'
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)

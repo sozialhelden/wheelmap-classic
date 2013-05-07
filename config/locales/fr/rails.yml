@@ -1,0 +1,53 @@
+---
+fr:
+  activerecord:
+    attributes:
+      user:
+        first_name: Prénom
+        last_name: "nom de famille"
+        privacy_policy: "règlementation de la protection de données"
+        terms: "conditions d'utilisation"
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: "doit être accepté"
+        blank: "champ obligatoire"
+        confirmation: "ne correspond pas à la confirmation"
+        empty: "champ obligatoire"
+        equal_to: "doit être égal à %{count}"
+        even: "doit être pair"
+        exclusion: "pas disponible"
+        greater_than: "doit être supérieur à %{count}"
+        greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
+        inclusion: "n'est pas dans la liste"
+        invalid: "est non valide"
+        less_than: "doit être plus petit que %{count}"
+        less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
+        not_a_number: "n'est pas un nombre"
+        odd: "doit être impair"
+        record_invalid: "La validation a échoué: %{errors}"
+        taken: "est déjà donné"
+        too_long: "est trop long (le maximum est %{count} caractères)"
+        too_short: "est trop court ( minimum %{count} caractères)"
+        wrong_length: "n'a pas la bonne longueur (doit comporter %{count} caractères)"
+      models:
+        user:
+          attributes:
+            email:
+              blank: "doit être complété en cas de ........ mot de pass"
+            privacy_policy:
+              accepted: "acceptation obligatoire"
+            terms:
+              accepted: "acceptation obligatoire"
+        user_session:
+          email: "Adresse mail"
+          password: "Mot de passe"
+          remember_me: "Rester connecté"
+      template:
+        body: "Merci de vérifier les champs suivants:"
+        header:
+          one: "Impossible d'enregistrer ce %{model} :  erreur"
+          other: "Impossible d'enregistrer ce %{model} : %{count} erreurs"
+    models:
+      user: utilisateur

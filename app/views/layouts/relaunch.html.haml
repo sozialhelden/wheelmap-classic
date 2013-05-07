@@ -1,0 +1,31 @@
+!!!
+<!--[if lt IE 7 ]> <html class="ie6" lang="#{I18n.locale}"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="#{I18n.locale}"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="#{I18n.locale}"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="#{I18n.locale}"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="" lang="#{I18n.locale}"> <!--<![endif]-->
+%head
+  = render :partial => 'relaunch/meta'
+  = content_for :meta
+
+  - if content_for? :head
+    = content_for :head
+  - else
+    %meta{:name => 'description', :content => t('header.meta.description')}
+    %title= "Wheelmap - #{t('header.title')}"
+
+  = include_stylesheets :relaunch, :media => 'screen, projection'
+  /[if lte IE 8]
+    = include_stylesheets 'relaunch.ie', :media => 'screen, projection'
+    = include_javascripts :modernizr
+
+%body
+  = render :partial => 'relaunch/header'
+  = render :partial => 'relaunch/toolbar'
+  = yield
+
+  = render :partial => 'relaunch/footer'
+  = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
+  = include_javascripts :relaunch
+  = content_for :javascript
+</html>

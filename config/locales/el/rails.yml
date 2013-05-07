@@ -1,0 +1,36 @@
+---
+el:
+  activerecord:
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: "Πρέπει να γίνει δεκτό"
+        blank: "Πρέπει να συμπληρωθεί"
+        confirmation: "Δεν αντιστοιχεί με την επιβεβαίωση"
+        empty: "Πρέπει να συμπληρωθεί"
+        equal_to: "Πρέπει να ισούται με %{count} "
+        even: "Πρέπει να είναι μονό"
+        exclusion: "Είναι δεσμευμένο"
+        greater_than: "Πρέπει να είναι μεγαλύτερο από %{count} "
+        greater_than_or_equal_to: "Πρέπει να είναι μεγαλύτερο ή ίσο με %{count} "
+        inclusion: "Δεν περιλαμβάνεται στον κατάλογο"
+        invalid: Άκυρο
+        less_than: "Πρέπει να είναι μικρότερο από %{count} "
+        less_than_or_equal_to: "Πρέπει να είναι κατώτερο ή ίση με %{count} "
+        not_a_number: "Δεν είναι αριθμός"
+        odd: "Πρέπει να είναι μονός αριθμός"
+        taken: "Έχει ήδη ληφθεί"
+        too_long: "Είναι πολύ μεγάλο (το μέγιστο μήκος είναι %{count} χαρακτήρες)"
+        too_short: "Είναι πολύ μικρό (το μικρότερο μήκος είναι %{count} χαρακτήρες)"
+        wrong_length: "Έχει λανθασμένο μήκος (πρέπει να είναι %{count} χαρακτήρες)"
+      models:
+        user_session:
+          email: "Email διεύθυνση"
+          password: "Κωδικός πρόσβασης"
+          remember_me: "Διατήρηση σύνδεσης"
+      template:
+        body: "Υπήρξαν προβλήματα στα εξής πεδία"
+        header:
+          one: "1 λάθος παρεμπόδισε αυτό το %{model} να αποθηκευθεί."
+          other: "%{count} λάθη εμπόδισαν αυτό το %{model} να αποθηκευθεί."

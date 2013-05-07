@@ -1,0 +1,53 @@
+---
+nl:
+  activerecord:
+    attributes:
+      user:
+        first_name: Geboortenaam
+        last_name: Achternaam
+        privacy_policy: "Privacy policy / Voorwaarden"
+        terms: Termen
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: "moet geaccepteerd worden"
+        blank: "Kan niet leeg zijn"
+        confirmation: "bevestiging past niet"
+        empty: "kan niet leeg zijn"
+        equal_to: "Moet gelijk zijn met %{count}"
+        even: "Moet gelijk zijn"
+        exclusion: "is gereserveerd"
+        greater_than: "moet groter zijn dan %{count}"
+        greater_than_or_equal_to: "moet groter zijn of gelijk met %{count}"
+        inclusion: "is niet inbegrepen in de lijst"
+        invalid: "is ongeldig"
+        less_than: "moet minder zijn dan %{count}"
+        less_than_or_equal_to: "moet minder dan of gelijk zijn met %{count}"
+        not_a_number: "is geen nummer"
+        odd: "moet apart zijn"
+        record_invalid: "Controle faalde: %{errors}"
+        taken: "wordt al gebruikt"
+        too_long: "is te lang (maximum is %{count} characters)"
+        too_short: "is te kort (minimum is %{count} characters)"
+        wrong_length: "lengte is fout (should be %{count} characters)"
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Kan niet leeg zijn als het wachtwoord gegeven is. "
+            privacy_policy:
+              accepted: "moet geaccepteerd worden"
+            terms:
+              accepted: "moet geaccepteerd worden"
+        user_session:
+          email: "E-Mail adres"
+          password: Wachtwoord
+          remember_me: "Ingeloggd blijven"
+      template:
+        body: "Er zijn problemen met de volgende velden:"
+        header:
+          one: "%{model} niet opgeslagen: 1 fout gevonden"
+          other: "%{model} niet opgeslagen: %{count} fouten gevonden"
+    models:
+      user: Gebruiker

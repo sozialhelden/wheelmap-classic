@@ -1,0 +1,47 @@
+---
+bg:
+  activerecord:
+    attributes:
+      user:
+        first_name: Име
+        last_name: Фамилия
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: "трябва да се потвърди"
+        blank: "не може да е без стойност"
+        confirmation: "не съответства на потвърждението"
+        empty: "не може да е празно"
+        equal_to: "трябва да има стойност, равна на %{count}"
+        even: "трябва да е нечетно"
+        exclusion: "съдържа предварително зададена стойност"
+        greater_than: "трябва да има стойност, по-голяма от %{count}"
+        greater_than_or_equal_to: "трябва да има стойност, по-голяма или равна на %{count}"
+        inclusion: "съдържа непредвидена стойност"
+        invalid: "съдържа невярна стойност"
+        less_than: "трябва да има стойност, по-малка от %{count}"
+        less_than_or_equal_to: "трябва да има стойност, по-голяма или равна на %{count}"
+        not_a_number: "не е число"
+        odd: "трябва да е четно"
+        record_invalid: "Имаше грешки: %{errors}"
+        taken: "вече съществува"
+        too_long: "е прекаленo дълго (не може да е повече от %{count} символа)"
+        too_short: "е прекалено късо (не може да бъде по-малко от %{count} символа)"
+        wrong_length: "е с грешна дължина (трябва да е с дължина, равна на %{count} символа)"
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Не може да бъде оставено празно, ако е дадена парола"
+        user_session:
+          email: E-mail-адрес
+          password: Парола
+          remember_me: "Остани включен."
+      template:
+        body: "Възникнаха проблеми със следните полета:"
+        header:
+          one: "1 грешка направи запазването на %{model} невъзможно"
+          other: "%{count} грешки направиха невъзможно запазването на %{model}:"
+    models:
+      user: Потребител

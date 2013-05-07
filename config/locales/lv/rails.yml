@@ -1,0 +1,37 @@
+---
+lv:
+  activerecord:
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: Jāapstiprina
+        blank: "nevar palikt neaizpildīts"
+        confirmation: "neatbilst apstiprinājumam"
+        empty: "nevar būt tukšs"
+        equal_to: "jābūt vienādam ar %{count}"
+        even: "jābūt pāra skaitlim"
+        exclusion: "ir rezervēts"
+        greater_than: "ir jābūt lielākam par  %{count}"
+        greater_than_or_equal_to: "Ir jābūt lielākam vai vienādam ar  %{count}"
+        inclusion: "nav iekļauts sarakstā"
+        invalid: nederīgs
+        less_than: "vēŗtībai jābūt mazākai par %{count}"
+        less_than_or_equal_to: "Ir jābūt mazākam vai vienādam ar %{count}"
+        not_a_number: "nav skaitlis"
+        odd: "jābūt nepāra vērtībai"
+        record_invalid: "Apstiprināšana neizdevās: %{errors}"
+        taken: "jau ir aizņemts"
+        too_long: "Ir par garu (maksimums %{count} zīmes)"
+        too_short: "ir par īsu (minimums ir %{count} zīmes)"
+        wrong_length: "garums ir nepareizs (jābūt %{count} zīmēm)"
+      models:
+        user_session:
+          email: "E-pasta adrese"
+          password: Parole
+          remember_me: "Palikt piereģistrētam"
+      template:
+        body: "Radās sarežģījumi ar sekojošiem laukiem:"
+        header:
+          one: "1 kļūda neļāva saglabāt %{model}"
+          other: "%{count} kļūdas liedza saglabāt %{model}"
