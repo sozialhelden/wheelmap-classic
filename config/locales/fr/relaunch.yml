@@ -1,2 +1,20 @@
 ---
-fr: ~
+fr:
+  header:
+    navigation:
+      about_wheelmap: "concernant Wheelmap"
+      choose_language: "choix de la langue"
+      contact: contact
+      map: carte
+      projects: projets
+    toolbar:
+      categories: catégories
+  home:
+    index:
+      overlay:
+        button: "Ok, on y va!"
+        categories: "filtrer selon catégories"
+        filter: "filtrer les résultats sur la carte selon l'accessibilité en fauteuil"
+        headline: "Grâce à Wheelmap.org tu peux trouver et marquer des lieux accessibles en fauteuil - à travers le monde et gratuitement. C'est facile:"
+        lookup: "trouver directement un lieu"
+        secondary_headline: "le système \"feu rouge\" pour marquer l'accessibilité"

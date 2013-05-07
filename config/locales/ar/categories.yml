@@ -28,6 +28,8 @@ ar:
         motel: "نُزل "
       education:
         college: كلية
+        driving_school: |-
+            مدرسة تعليم القيادة
         kindergarten: "روضة أطفال"
         library: مكتبة
         museum: متحف
@@ -39,6 +41,8 @@ ar:
         cafe: مقهى
         drinking_water: "ماء للشرب"
         fast_food: "وجبات سريعة"
+        ice_cream: |-
+            محل الآيسكريم
         pub: حانة
         restaurant: مطعم
       government:
@@ -48,6 +52,8 @@ ar:
         public_building: "مبنى عام"
         townhall: "مبنى البلدية"
       health:
+        dentist: |-
+            طبيب أسنان
         doctors: أطباء
         hearing_aids: "تاجر أدوات سمعية"
         hospital: مستشفى
@@ -58,6 +64,8 @@ ar:
       leisure:
         arena: ميدان
         brothel: "ماخور\"بيت دعارة\""
+        casino: "\n\n\n\
+            ملهى "
         cinema: سينما
         community_center: "مركز اجتماعي"
         gallery: المعرض
@@ -69,6 +77,10 @@ ar:
         zoo: "حديقة الحيوانات"
       misc:
         company: شركة(مكتب)
+        estate_agent: |-
+            وكيل عقاري
+        insurance: |-
+            تأمين
         lawyer: محامي
         place_of_worship: "مكان للعبادة"
         toilets: "دورات المياه"
@@ -104,6 +116,8 @@ ar:
       shopping:
         alcohol: "مشروبات كحولية"
         bakery: مخبز
+        beauty: |-
+            صالون تجميل
         beverages: مشروبات
         bicycle: "متجر الدراجات"
         books: كتب
@@ -113,28 +127,52 @@ ar:
         chemist: صيدلي
         clothes: ملابس
         computer: كمبيوتر
+        confectionery: |-
+            محل حلويات
         convenience: راحة
+        deli: |-
+            متجر بيع الأغذية المعلبة
         department_store: "متجر شامل"
         doityourself: "متجر الخردوات"
         dry_cleaning: "التنظيف الجاف"
         electronics: "أجهزة كهربائية"
+        fabric: "\n\
+            محل الأقمشة\n\n"
+        farm_shop: |-
+            متجر تابع لمزرعة
         florist: "بائع الزهور"
         furniture: أثاث
         garden_centre: "مركز الحديقة"
+        gift: |-
+            محل هدايا
         hairdresser: "صالون تصفيف الشعر"
         hardware: أجهزة
+        jewelry: |-
+            مجوهرات
         kiosk: كشك
         laundry: "مغسلة  ملابس"
         mall: "مركز تسوق"
         optician: "محل النظارات"
+        organic: "\n\n\
+            محل للمنتجات العضوية\n\n\n"
+        outdoor: |
+            متجر لوازم الرحلات
+        pet: |-
+            متجر الحيوانات الأليفة
         photo: صورة
         second_hand: "متجر البضائع المستعملة"
         shoes: أحذية
         sports: رياضة
         stationery: قرطاسية
         supermarket: سوبرماركت
+        toys: |-
+            محل ألعاب
+        travel_agency: |-
+            وكالة سفر
         video: متجرتأجيرالڤيديو
       sport:
+        pitch: |-
+            ساحة رياضية
         sports_centre: نادي
         stadium: ملعب
         swimming: سباحة
