@@ -1,6 +1,6 @@
 #header
   #logo
-    = link_to root_path, :title => t('wheelmap.logo.title') do
+    = link_to '/', :title => t('wheelmap.logo.title') do
       = image_tag "wm_logo_#{I18n.locale}.png", :size => '300x85', :alt => t('wheelmap.logo.alt')
   %nav.links
     - if user_signed_in?

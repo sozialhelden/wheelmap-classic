@@ -8,13 +8,9 @@
           %span.icon-bar
           %span.icon-bar
 
-
         -# Using / explicitly to end up at the wordpress landing page
         =link_to('/', :class => "logo") do
           %span= t('header.title')
-
-
-
 
         .btn-toolbar.pull-right{:style => 'padding-right:10px'}
           .btn-group
@@ -22,11 +18,14 @@
               %i.icon-plus.icon-white
             = link_to t('header.searchbar.add_place'), new_node_path, :class => ['btn', 'btn-small', 'hidden-phone', 'hidden-tablet']
 
-
-          = link_to new_user_session_path, :class => ['btn', 'btn-small'], :style => 'margin: 10px 10px 0px' do
-            %i.icon-user
-            %span.hidden-phone= t('header.navigation.login')
-
+          - if user_signed_in?
+            = link_to edit_user_path(current_user), :class => ['btn', 'btn-small'], :style => 'margin: 10px 10px 0px' do
+              %i.icon-user
+              %span.hidden-phone=t('header.navigation.profile')
+          - else
+            = link_to new_user_session_path, :class => ['btn', 'btn-small'], :style => 'margin: 10px 10px 0px' do
+              %i.icon-user
+              %span.hidden-phone=t('header.navigation.login')
 
           %select.selectpicker.pull-right.language-select{:onchange => 'location.href=this.options[this.selectedIndex].value', :title => "\f0ac", :'data-style' => "btn-small"}
             %i
