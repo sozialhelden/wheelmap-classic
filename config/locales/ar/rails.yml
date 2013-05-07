@@ -5,6 +5,10 @@ ar:
       user:
         first_name: "الإسم الأول"
         last_name: "الإسم الأخير"
+        privacy_policy: |-
+            سياسة الخصوصية
+        terms: |-
+            الشروط
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -34,6 +38,12 @@ ar:
           attributes:
             email:
               blank: "أدخل كلمة المرور"
+            privacy_policy:
+              accepted: |-
+                  لابد من القبول
+            terms:
+              accepted: |-
+                  لابد من القبول
         user_session:
           email: "عنوان البريد الالكتروني"
           password: "كلمة المرور"

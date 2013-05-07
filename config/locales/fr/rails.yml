@@ -5,6 +5,8 @@ fr:
       user:
         first_name: Prénom
         last_name: "nom de famille"
+        privacy_policy: "règlementation de la protection de données"
+        terms: "conditions d'utilisation"
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -34,6 +36,10 @@ fr:
           attributes:
             email:
               blank: "doit être complété en cas de ........ mot de pass"
+            privacy_policy:
+              accepted: "acceptation obligatoire"
+            terms:
+              accepted: "acceptation obligatoire"
         user_session:
           email: "Adresse mail"
           password: "Mot de passe"

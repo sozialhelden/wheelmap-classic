@@ -87,6 +87,7 @@ fr:
         no_osm_account: "Pas chez OpenStreetMap?"
         osm_promo_text: "La Wheelmap est basée sur la cartographie de OpenStreetMap (OSM). L'OSM est une mappemonde libre de droits, développée par des personnes comme vous. Une Wikipedia pour cartes géographiques. Pour pouvoir traiter des lieux ou d'ajouter de nouveaux lieux, il est nécessaire de posséder un compte utilisateur OSM et d'être connecté avec celui-ci ici."
         promo_text_thank_you: "Merci pour votre aide!"
+        sign_in_with: "se connecter avec"
         sign_up_with_osm: "enregistrez-vous ici"
         wheelmap_promo_text: "Grâce à vos connaissances des endroits accessibles en fauteuil, vous permettez aux personnes à mobilité réduite de pouvoir mieux organisez leur vie de tous les jours. De plus, les informations concernant les différents endroits sur l'OSM (OpenStreetMap) augmentent."
       signed_in: "Connecté avec succès."

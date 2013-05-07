@@ -2,7 +2,7 @@
 fr:
   poi:
     category:
-      accommodation: Logement
+      accommodation: hébergement
       education: Education
       food: Repas
       government: "Administrations & ambassades"
@@ -21,14 +21,15 @@ fr:
         bed_and_breakfast: "Chambre d'hôtes"
         camp_site: Camping
         caravan_site: Camping
-        chalet: Chalet
+        chalet: "gîte de vacances"
         guest_house: Auberge
         hostel: Auberge
         hotel: Hôtel
         motel: Motel
       education:
         college: Faculté
-        kindergarten: "Ecole maternelle"
+        driving_school: "école de conduite"
+        kindergarten: halte-garderie
         library: Bibliothèque
         museum: Musée
         school: Ecole
@@ -36,18 +37,21 @@ fr:
       food:
         bar: Bar
         biergarten: "Brasserie en plein air"
-        cafe: Café
+        cafe: "salon de thé"
         drinking_water: "Eau potable"
         fast_food: "Restauration rapide"
+        ice_cream: "salon de thé/marchand de glace"
         pub: Bistro
         restaurant: Restaurant
       government:
         courthouse: "Palais de Justice"
         embassy: Ambassade
+        government: administration
         police: Police
         public_building: "Edifice public"
-        townhall: "Salle des fêtes / salle polyvalente"
+        townhall: mairie
       health:
+        dentist: dentiste
         doctors: Médecin
         hearing_aids: "Audioprothésiste "
         hospital: Hôpital
@@ -58,6 +62,7 @@ fr:
       leisure:
         arena: Stade
         brothel: "Maison close"
+        casino: casino
         cinema: Cinéma
         community_center: "Centre municipal"
         gallery: Galerie
@@ -69,6 +74,8 @@ fr:
         zoo: Zoo
       misc:
         company: Entreprise
+        estate_agent: "agence immobilière"
+        insurance: assurance
         lawyer: Avocat
         place_of_worship: "Lieu de culte"
         toilets: "Toilettes publics"
@@ -104,6 +111,7 @@ fr:
       shopping:
         alcohol: "Cave à vins et spiritueux"
         bakery: Boulangerie/Pâtisserie
+        beauty: "institut de beauté"
         beverages: Boissons
         bicycle: "magasin de vélos"
         books: Librairie
@@ -113,28 +121,39 @@ fr:
         chemist: droguerie
         clothes: Vêtements
         computer: Ordinateur
-        convenience: Supérette
+        confectionery: "magasin de bonbons"
+        convenience: "magasin avec ouverture tardive"
+        deli: "épicerie fine"
         department_store: "Grand magasin"
         doityourself: "Magasin de bricolage"
         dry_cleaning: "Nettoyage à sec"
         electronics: Électronique
+        fabric: "magasin de tissus"
+        farm_shop: "vente directe à la ferme"
         florist: Fleuriste
         furniture: "Magasin de meubles"
         garden_centre: Jardinerie
+        gift: "magasin de souvenirs"
         hairdresser: Coiffeur
         hardware: Quincaillerie
+        jewelry: bijoutier
         kiosk: Kiosque
         laundry: Blanchisserie
         mall: "Centre Commercial"
         optician: Opticien
+        organic: "magasin bio"
+        pet: animalerie
         photo: Photo
         second_hand: Friperie
         shoes: "Magasin de chaussures"
         sports: "Magasin de sports"
         stationery: Papeterie
         supermarket: Supermarché
+        toys: "magasin de jouets"
+        travel_agency: "agence de voyage"
         video: vidéothèque
       sport:
+        pitch: "terrain de sport"
         sports_centre: "salle de fitness"
         stadium: Stade
         swimming: "Piscine en plein air"
