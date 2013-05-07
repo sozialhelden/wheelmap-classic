@@ -31,7 +31,8 @@ Languages = {
   'tlh'   => 'tlhIngan Hol',
   'tr'    => 'Türkçe',
   'uk'    => 'Український',
-  'zh'    =>  '中文'
+  'zh'    =>  '中文',
+  'zh-tw' =>  '中文'
 }
 
 Amenities = {
