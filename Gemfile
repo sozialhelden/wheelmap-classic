@@ -6,10 +6,11 @@ group :default do
   gem 'activerecord-import', '<0.3.0', :require => false
   gem 'oauth'
   gem 'devise'
-  gem 'compass', '0.10.6'
+  gem 'compass'
   gem 'redgreengrid', :git => 'git@github.com:christoph-buente/redgreengrid.git'
-  gem 'haml', "3.1.4"
-  gem 'sass', "3.1.12"
+  gem 'haml'
+  gem 'sass'
+  gem 'bootstrap-sass'
   gem 'geoip'
   gem 'formtastic', '1.2.4'
   gem 'delayed_job'
@@ -42,6 +43,7 @@ group :default do
   # gem 'rosemary', :path => '../rosemary'
   gem 'librato-metrics'
   gem 'librato-rails'
+  gem 'jquery-rails'
   gem 'system_timer' # Optional for librato dependency faraday
   gem 'multipart-post'
   gem 'activeadmin'
@@ -53,6 +55,7 @@ group :default do
   gem 'flash_cookie_session'
   gem 'exifr'
   gem 'awesome_nested_set'
+  gem 'i18n-js'
 end
 
 group :test, :development do

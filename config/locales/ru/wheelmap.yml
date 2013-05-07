@@ -1,0 +1,391 @@
+---
+ru:
+  application:
+    require_no_user:
+      notice: "Вы уже зарегистрированны"
+    require_user:
+      notice: "Вы должны зарегистрироваться чтобы увидеть эту страницу"
+  breadcrumbs:
+    node:
+      create: "Добавить новое место"
+      edit: "Изменить место"
+    root: wheelmap
+  common:
+    close: закрыть
+    skip: пропускать
+  errors:
+    dynamic_format: "%{message} "
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "должен быть принят"
+      already_confirmed: "уже подтвержден"
+      blank: "должен быть заполнен"
+      confirmation: "не соответствует подтверждению"
+      empty: "должен быть заполнен"
+      equal_to: "должен быть точно %{count} "
+      even: "должен быть четным"
+      exclusion: зарезервированно
+      expired: "истек срок, пожалуйста, запросите новый"
+      greater_than: "должен быть больше чем %{count}"
+      greater_than_or_equal_to: "должен быть больше или равен чем %{count}"
+      inclusion: "недействительное значение"
+      invalid: "недействительное значение"
+      less_than: "должен быть меньше чем %{count} "
+      less_than_or_equal_to: "должен быть меньше или равен чем %{count} "
+      not_a_number: "Не является числом"
+      not_an_integer: "Должно быть целым"
+      not_found: "Не найдено"
+      not_locked: "Не была заблокирована"
+      not_saved:
+        one: "Ошибка сохранения данных %{resource}:"
+        other: "%{count} ошибка, запрещено для сохранения %{resource}:"
+      odd: "Должен иметь нечетное значение"
+      taken: "уже был использован"
+      too_long: "слишком длинное значение (должно быть не больше чем %{count} знаков)"
+      too_short: "слишком короткое значение (должно быть не меньше, чем %{count}  знаков)"
+      wrong_length: "не действительная длина значения (должно быть %{count}  знаков)"
+    template:
+      body: "Были проблемы со следующими полями:"
+      header:
+        one: "1 ошибка - действие запрещено %{model} , подождите пока сохранится"
+        other: "%{count} Ошибка, это запрещено%{model} сохраняется"
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} был успешно создан"
+      destroy:
+        alert: "%{resource_name} не могут быть удалены"
+        notice: "%{resource_name} был успешно удален"
+      update:
+        notice: "%{resource_name} был успешно обновлен"
+  form:
+    show_fully_accessible_places: "доступно для людей с инвалидностью"
+    show_limited_accessible_places: "частичный доступ для людей с инвалидностью"
+    show_places_without_status: "неизвестный статус"
+    show_unaccessible_places: "не доступно для людей на инвалидных колясках"
+  formtastic:
+    hints:
+      email: "Мы относимся к Вашему адресу конфиденциально, без отправления спама. Обещаем!"
+      lat: "Переместите маркер на карту "
+      osm_username: "Еще не зарегистрированны? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\"> Создать Openstreetmap аккаунт</a> "
+      password: "(оставьте поле пустым если Вы не хотите изменять значение)"
+      phone: "например:  +38 044 594 99 99      "
+      website: "например: http://www.example.com"
+    labels:
+      category: "Категория:"
+      centralkey: "Центральная клавиша:"
+      city: "Город:"
+      create: "Создать место"
+      email: "Адрес эл. почты"
+      finish: конец
+      housenumber: "Номер:"
+      lat: Широта
+      lon: Долгота
+      name: "Название:"
+      osm_password: "пароль для OSM"
+      osm_username: "логин для OSM"
+      password: Пароль
+      password_confirmation: "Повторите пароль"
+      phone: "Телефон:"
+      postcode: "Индекс:"
+      reset: Сброс
+      save: Сохранить
+      street: "Улица:"
+      type: "Тип:"
+      website: "Интернет страница:"
+      wheelchair: "Доступно ли для людей с инвалидностью?"
+      wheelchair_description: "Прокомментируйте доступность:"
+    titles:
+      basic: "Основные данные"
+      optional: "Больше информации <span class=\"addition\">(все поля являются необязательными)</span> "
+  global:
+    form_validation_error: "Обратите, пожалуйста, внимание на список ошибок внизу"
+  header:
+    meta:
+      description: "Найдите места, доступные для людей с инвалидностью - wheelmap.org "
+      homepage: "Домашняя страница"
+      keywords: "найти мето с доступом для людей на инвалидных колясках"
+      search: Поиск
+    navigation:
+      blog: Блог
+      feedback: Отзыв
+      home: Старт
+      how_to_add_a_place: "Как добавлять новые места?"
+      imprint: "Обратная связь"
+      logged_in_as: "Вы вошли как:"
+      login: Войти
+      logout: Выход
+      newsletter: "Подписаться на обновления"
+      press: Пресса
+      profile: Профиль
+      suggestions: Предложения
+      what_is_barrier_free: "Что значит \"доступ для человека на инвалидной коляске\"?"
+      what_is_wheelmap: "Что такое wheelmap?"
+    searchbar:
+      add_place: "Добавить другое место"
+      find: Найти
+      label: ~
+      placeholder: "т.е. бульваре Сансет в Лос-Анджелесе или Бранденбургских ворот в Берлине"
+      title_add_place: "Добавить новое место в этой позиции сейчас!"
+    tagline: "Логотип Wheelmap"
+    title: "Wheelmap - поиск доступных мест для людей с инвалидностью"
+  helpers:
+    select:
+      prompt: "Пожалуйста, выберите"
+    submit:
+      create: "Создать %{model}"
+      submit: "Сохранить %{model}"
+      update: "Обновление %{model}"
+  home:
+    index:
+      filter:
+        category: "Выберите категорию"
+        deselect_all: "Отменить все"
+        select_all: "Выбрать все"
+        wheelchair: "Доступно ли для людей на инвалидной коляске?"
+      ie:
+        action:
+          ignore: Отклонено
+          upgrade: "Обновление браузера"
+        warning:
+          headline: "Приносим свои извинения!"
+          message: "Вы, похоже, используете Internet Explorer. Wheelmap требуетс соответствия стандартам браузера для корректной работы. Пожалуйста, попробуйте использовать Firefox, Chrome, Safari или Opera."
+      link:
+        node:
+          create: "Добавить новое место"
+      popup:
+        form:
+          limited: "частичный доступ для людей на инвалидных колясках"
+          ? "no"
+          : "Нет доступа для людей на инвалидных колясках"
+          save: обновление
+          unknown: "Статус неизвесный"
+          ? "yes"
+          : "Доступно для людей на инвалидной коляске"
+        help: "Доступ для людей на инвалидных колясках? (Справка)"
+        more: "Подробней ..."
+  how?: Как?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Ограниченния для людей на инвалидных колясках%{type} в %{city} (%{count})"
+        ? "no"
+        :
+          headline: "Места, адаптированные для людей на инвалидных колясках, отсутствуют %{type} в %{city} (%{count})"
+        unknown:
+          headline: "Все %{type} в %{city} с  неопределенным  статусом для для людей на инвалидных  колясках(%{count})"
+        ? "yes"
+        :
+          headline: "Все места адаптированы для людей на инвалидных коляках %{type} в %{city} (%{count})"
+  layouts:
+    application:
+      banner:
+        alt: "Проект Sozialhelden.de"
+  node:
+    address:
+      city: "%{city} %{postcode} "
+      street: "%{housenumber} %{street}"
+    tags:
+      phone: "Телефон:"
+      website: "Вебсайт:"
+  nodes:
+    create:
+      flash:
+        not_successfull: "К сожалению, введенная Вами информация неполная или некорректная"
+        successfull: "Спасибо, ваша заявка была успешно сохранена и будет выполнена в ближайшее время."
+    edit:
+      header:
+        title: "Изменить место:%{node} | wheelmap.org"
+      link:
+        large_map: "&laquo; Отмена"
+    errors:
+      default: "Что-то пошло не так. Мы были поинформированы об проблеме."
+      not_authorized: "К сожалению, аутентификация не удалась"
+      not_available: "Извините, эта страница временно недоступна."
+      not_existent: "Извините, но место больше не доступно."
+      not_found: "Страница не найдена"
+      param_missing: "Пожалуйста, предоставьте задачу для поиска"
+    flash:
+      authorize_wheelmap: "Вы должны иметь аккаунт на OpenStreetMap для изменения данных"
+    new:
+      header:
+        title: "Новое место | wheelmap.org"
+      link:
+        large_map: "&laquo; Отмена"
+    node:
+      link:
+        claim: "Вы работаете здесь?"
+        edit_node: "Изменить место"
+        report_bug: "Сообщить о проблеме"
+    show:
+      header:
+        title: "Место: %{node} | wheelmap.org"
+      link:
+        back: Назад
+        large_map: Увеличить
+        listing: "Все места типа %{type}' в %{city}"
+      more_data_from: "Существует больше данных для этого месте, проверяются:"
+      show-in-osm: OpenStreetMap
+    update:
+      flash:
+        not_successfull: "К сожалению, введенная Вами информация неверная или неполная"
+        successfull: "Спасибо, ваша заявка была успешно сохранена и будет выполнена в ближайшее время."
+    update_wheelchair:
+      successfull: "Статус \"%{name}\" был изменен на \"%{status} и в ближайшее время будет обновлен."
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%n %u"
+        precision: 2
+        separator: "."
+        significant: 0
+        strip_insignificant_zeros: 0
+        unit: доллар
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: 0
+      strip_insignificant_zeros: 0
+    human:
+      decimal_units:
+        format: "%n %u "
+        units:
+          billion: Миллиард
+          million: Миллион
+          quadrillion: Квадрильон
+          thousand: тысяча
+          trillion: Трильйон
+          unit: ~
+      format:
+        delimiter: ~
+        precision: 3
+        significant: Верно
+        strip_insignificant_zeros: Верно
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: байт
+            other: байта
+          gb: ГБ
+          kb: КБ
+          mb: МБ
+          tb: ТВ
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "Вам необходимо подключить/создать совй аккаунт с учетом Вашего аккаунта на  'open street map' , прежде чем Вы сможете сдобавлять новые места на wheelmap.org."
+    callback:
+      notice: "Ваш wheelmap аккаунт подключены к аккаунту OpenStreetMap %{user}."
+  or: или
+  place:
+    one: "%{count}  место"
+    other: "%{count} место"
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "Статус: подключенный"
+          grant: Соединить
+          not_connected: "Статус: не подключено"
+          revoke: Отключено
+      headline: "Изменить профиль"
+  search:
+    index:
+      search:
+        for: "Искать для \"%{q}\""
+        not_found: "Нет мест, которые можно найти!"
+  splash:
+    countline: "%{count} Места уже были отмечены"
+    headline: "Каждый может добавить места адаптированные для людей на инвалидных колясках!"
+    start: Старт
+    step1: "Нажмите на место, которое вы знаете"
+    step2: "Отметить, и нажать кнопку для сохранения"
+    step3: "Вот и все! Нет необходимости регистрации"
+    what_is_wheelmap: "Что такое wheelmap?"
+  statistics: Статистика
+  support:
+    array:
+      last_word_connector: " и "
+      sentence_connector: и
+      skip_last_comma: правда
+      two_words_connector: " и "
+      words_connector: ", "
+    select:
+      prompt: "Пожалуйста, выберите"
+  time:
+    am: утра
+    formats:
+      default: "%a, %d %b %Y, %H:%M:%S %z"
+      long: "%d %B %Y, %H:%M"
+      short: "%d %b, %H:%M"
+    pm: вечера
+  user_sessions:
+    create:
+      activation:
+        notice: "Ваш аккаунт уже активный!"
+      error:
+        notice: "Email и пароль не совпадают."
+      notice: "Вы вошли!"
+    destroy:
+      notice: "Пока, до скорого возвращения!"
+    new:
+      email: "Электронная почта"
+      login: Войти
+      login_with_twitter: "Войти в Twitter"
+      password: Пароль
+      remember_me: "Запомнить меня"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Добро пожаловать к wheelmap"
+        set_password_for_mobile: "У вас есть смартфон? Пожалуйста, задайте пароль для того, чтобы использовать Wheelmap на ходу в повседневной жизни с помощью iPhone или Android."
+        text: "Как мы можем связаться с вами? Вы можете изменить эту информацию позже в своем профиле."
+  wheelchairstatus:
+    limited: "Частичный доступ для людей на инвалидных колясках"
+    ? "no"
+    : "Без адаптации для людей на инвалидных колясках"
+    unknown: "Неизвестный статус"
+    ? "yes"
+    : "Доступно для людей на инвалидной коляске"
+  wheelmap:
+    footer:
+      a_project_of: Проект
+      based_on: "Основан на"
+      become_a_supporter: "Стать сопровождающим"
+      main_supporter: "Главная поддержка"
+    itunes:
+      alt: "Логотип AppStore"
+      title: "Скачать iPhone App сейчас!"
+    logo:
+      alt: "Логотип Wheelmap - найти места, адаптированные для людей на инвалидных колясках"
+      title: "Wheelmap - найти места адаптированные для людей на инвалидных колясках"
+    what_is:
+      fully_accessible: "<em> Доступный: </ EM> вход без ступенек, все помещения и комнаты без ступенек, адаптированный туалет в общественных местах"
+      limited_accessible: "<em> Ограниченный: </ EM> на входе 1 ступенька (максимальная высота 7 см), большинство комнат и помещений без ступенек, туалет не адаптирован"
+      not_accessible: "<em> Не доступный: </ EM> на входе 1 высокая или несколько ступенек, помещения и комнаты не адаптированы"
+      unknown_accessible: "<em> Не определен: </ EM> Помоги обозначить уровень доступности места!"
+  will_paginate:
+    next_label: "Следующий &#8594;"
+    page_entries_info:
+      multi_page: "Отображение %{model} %{from} - %{to} of %{count} в общей сложности"
+      multi_page_html: "Показывать %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> з <b>%{count}</b> в целом"
+      single_page:
+        one: "Показано 1%{model}"
+        other: "Отображать все %{count} %{model}"
+        zero: "Не найдено %{model}"
+      single_page_html:
+        one: "Отображать <b>1</b> %{model}"
+        other: "Отображать <b>all&nbsp;%{count}</b> %{model}"
+        zero: "Не найдено %{model}"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Предыдущий"

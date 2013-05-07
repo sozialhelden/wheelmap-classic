@@ -1,0 +1,37 @@
+---
+tlh:
+  activerecord:
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: lajnISlu'
+        blank: chImlaHbe'
+        confirmation: "rapbe' chaw' mI'"
+        empty: chImlaHbe'
+        equal_to: "%{count} rapnIS"
+        even: "cha'logh boqHa'eghnISlaH mI'"
+        exclusion: ghajlu'
+        greater_than: "tIn law' %{count} tIn puS 'e' teHnIS."
+        greater_than_or_equal_to: "tIn law' %{count} tIn puS 'e' teHnIS pagh %{count} rap."
+        inclusion: "tetlhDaq SaHbe'"
+        invalid: lughbe'
+        less_than: "mach law' %{count} mach puS 'e' teHnIS."
+        less_than_or_equal_to: "mach law' %{count} mach puS 'e' teHnIS pagh %{count} rap."
+        not_a_number: "mI' 'oHbe'"
+        odd: "cha'logh boqHa'eghnISlaHbe' mI'"
+        record_invalid: "'ollu'taHvIS luj: %{errors}"
+        taken: ghajlu'
+        too_long: "tlhoy tIq (%{count} pIqaDmey 'oH 'aqroS'e')"
+        too_short: "tlhoy run (%{count} pIqaDmey 'oH 'rav'e')"
+        wrong_length: "chuq muj 'oH (%{count} pIqaDmey 'oHnIS)"
+      models:
+        user_session:
+          email: "jabbI'ID ngu'wI'"
+          password: "pegh mu'"
+          remember_me: "'eltaH"
+      template:
+        body: "Qaghmey ngaS permeyvam:"
+        header:
+          one: "qonpu' %{model}vam 'e' bot wa' Qagh"
+          other: "qonpu' %{model}vam 'e' bot %{count} Qaghmey"

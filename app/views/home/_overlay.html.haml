@@ -1,0 +1,29 @@
+.overlay-wrapper
+  .overlay
+    .header
+      .close-btn &#10060;
+      %h1=t('home.index.overlay.headline')
+    .example-toolbar
+      .tip.lookup=t('home.index.overlay.lookup')
+      .tip.categories=t('home.index.overlay.categories')
+      .tip.filter=t('home.index.overlay.filter').html_safe
+      =image_tag 'overlay-example-toolbar.jpg'
+    %h2=t('home.index.overlay.secondary_headline')
+    %ul
+      %li.green
+        =image_tag "overlay-bsp_green.png"
+        %h3=t('home.index.popup.form.yes')
+        %p=t('wheelmap.what_is.fully_accessible')
+      %li.orange
+        =image_tag "overlay-bsp_orange.png"
+        %h3=t('home.index.popup.form.limited')
+        %p=t('wheelmap.what_is.limited_accessible')
+      %li.red
+        =image_tag "overlay-bsp_red.png"
+        %h3=t('home.index.popup.form.no')
+        %p=t('wheelmap.what_is.not_accessible')
+      %li.grey
+        =image_tag "overlay-bsp_grey.png"
+        %h3=t('home.index.popup.form.unknown')
+        %p=t('wheelmap.what_is.unknown_accessible')
+    %span.go=t('home.index.overlay.button')

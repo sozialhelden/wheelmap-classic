@@ -1,5 +1,8 @@
 /*global  window, jQuery, $, OpenLayers, language, UserVoice, uservoiceOptions, _gaq*/
 /*jslint devel: true, browser: true, maxerr: 200, indent: 2, sloppy: true, nomen: true */
+
+jQuery.migrateMute = true;
+
 jQuery.parseQuery = function(qs,options) {
   var q = (typeof qs === 'string'?qs:window.location.search), o = {'f':function(v){return unescape(v).replace(/\+/g,' ');}}, options = (typeof qs === 'object' && typeof options === 'undefined')?qs:options, o = jQuery.extend({}, o, options), params = {};
   jQuery.each(q.match(/^\??(.*)$/)[1].split('&'),function(i,p){

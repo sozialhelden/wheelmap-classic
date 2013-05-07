@@ -1,0 +1,388 @@
+---
+nb:
+  application:
+    require_no_user:
+      notice: "Du er allerede logget inn"
+    require_user:
+      notice: "Du må være innlogget for å se denne siden."
+  breadcrumbs:
+    node:
+      create: "Legg til nytt sted"
+      edit: "Rediger stedet"
+    root: wheelmap
+  common:
+    close: lukk
+    skip: "Hopp over"
+  errors:
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "må være akseptert"
+      already_confirmed: "er allerede bekreftet"
+      blank: "kan ikke være blank"
+      confirmation: "passer ikke bekreftelsen"
+      empty: "må være utfylt"
+      equal_to: "må være lik %{count}"
+      even: "må være partall"
+      exclusion: "er reservert"
+      expired: "Utgått, vennligst be om ny"
+      greater_than: "må være større enn %{count}"
+      greater_than_or_equal_to: "må være større enn eller lik %{count}"
+      inclusion: "ikke akseptert verdi"
+      invalid: "er ugyldig"
+      less_than: "må være mindre enn %{count}"
+      less_than_or_equal_to: "må være mindre enn eller lik %{count}"
+      not_a_number: "er ikke et tall"
+      not_an_integer: "Må være heltall"
+      not_found: "ikke funnet"
+      not_locked: "var ikke låst"
+      not_saved:
+        one: "En feil gjorde at %{resource} ikke kunne lagres:"
+        other: "%{count} feil gjorde at %{resource} ikke kunne lagres:"
+      odd: "må være oddetall"
+      taken: "er allerede opptatt"
+      too_long: "er for lang (maksimum %{count} tegn)"
+      too_short: "er for kort (minimum %{count} tegn)"
+      wrong_length: "er av feil lengde (maksimum %{count} tegn)"
+    template:
+      body: "Det oppstod problemer i følgende felt:"
+      header:
+        one: "Kunne ikke lagre %{model} på grunn av én feil."
+        other: "Kunne ikke lagre %{model} på grunn av %{count} feil."
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} er opprettet"
+      destroy:
+        alert: "%{resource_name} kunne ikke fjernes"
+        notice: "%{resource_name} er nå slettet"
+      update:
+        notice: "%{resource_name} var velykket oppdatert"
+  form:
+    show_fully_accessible_places: Rullestoltilgjengelig
+    show_limited_accessible_places: "Delvis rullestoltilgjengelig"
+    show_places_without_status: "Ukjent status"
+    show_unaccessible_places: "Ikke rullestoltilgjenglig"
+  formtastic:
+    hints:
+      email: "Vi behandler adressen din konfidensielt, ingen søppelpost. Vi lover!"
+      lat: "Flytt markøren på kartet til riktig sted"
+      osm_username: "Fortsatt ikke medlem? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Opprett en OpenStreetMap-konto nå</a>\n"
+      password: "(La den stå tom, hvis du ikke vil endre den)"
+      phone: "For eksempel +47 12345678"
+      website: "For eksempel: http://www.example.com"
+    labels:
+      category: "Kategori:"
+      centralkey: "Sentral tast:"
+      city: "By:"
+      create: "Legg til sted"
+      email: Epost
+      finish: Mål
+      housenumber: "Nummer:"
+      lat: Breddegrad
+      lon: Lengdegrad
+      name: "Navn:"
+      osm_password: "OSM passord"
+      osm_username: "OSM kontonavn"
+      password: Passord
+      password_confirmation: "Gjenta passord"
+      phone: "Telefon:"
+      postcode: "Postnummer:"
+      reset: Nullstil
+      save: Lagre
+      street: "Gate:"
+      type: "Type:"
+      website: "Webside:"
+      wheelchair: Rullestoltilgjenglighet?
+      wheelchair_description: "Kommentar om tilgjengelighet:"
+    titles:
+      basic: "Generell data"
+      optional: "Mer informasjon <span class=\"addition\">(alle felter er valgfrie)</span>"
+  global:
+    form_validation_error: "Vennligst legg merke til feilene nedenfor"
+  header:
+    meta:
+      description: "Finn rullestoltilgjengelige steder - wheelmap.org"
+      homepage: Hjemmeside
+      keywords: "Rullestoltilgjenglige steder finn søk merk"
+      search: Søk
+    navigation:
+      blog: Blogg
+      feedback: Tilbakemelding
+      home: Start
+      how_to_add_a_place: "Hvordan legger jeg til steder?"
+      imprint: Kontakt
+      logged_in_as: "Logget på som:"
+      login: "Logg in"
+      logout: "Logg ut"
+      newsletter: Nyhetsbrev
+      press: Presse
+      suggestions: Forslag
+      what_is_barrier_free: "Hva betyr \"rullestoltilgjengelig\"?"
+      what_is_wheelmap: "Hva er wheelmap?"
+    searchbar:
+      add_place: "Legg til nytt sted"
+      find: finn
+      label: ~
+      placeholder: "Eksempel Sunset Boulevard L.A. eller Brandenburg Gate Berlin"
+      title_add_place: "Legg til nytt sted her nå!"
+    tagline: "Wheelmap logo"
+    title: "Finn rullestoltilgjengelige steder"
+  helpers:
+    select:
+      prompt: "Vennligst velg"
+    submit:
+      create: "Lag %{model}"
+      submit: "Lagre %{model}"
+      update: "Oppdater %{model}"
+  home:
+    index:
+      filter:
+        category: "Velg kategori"
+        wheelchair: Rullestoltilgjengelig?
+      ie:
+        action:
+          ignore: Overse
+          upgrade: "Oppdater nettleser"
+        warning:
+          headline: "Vi beklager!"
+          message: "Det ser ut som du benytter Internet Explorer. Wheelmap krever at du bruker en nettleser som følger bestemte standarder for å fungere ordentlig. Vurder å benytt deg av Firefox, Chrome, Safari eller Opera."
+      link:
+        node:
+          create: "Legg til nytt sted"
+      popup:
+        form:
+          limited: "Delevis rullestoltilgjengelig"
+          ? "no"
+          : "Ikke rullestoltilgjengelig"
+          save: Oppdater
+          unknown: "Ukjent status"
+          ? "yes"
+          : rullestoltilgjenglig
+        help: "Rullestoltilgjengelig? (hjelp)"
+        more: Mer...
+  how?: Hvordan?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Alle begrensede rullestoltilgjengelige %{type} i %{city} (%{count})\n"
+        ? "no"
+        :
+          headline: "Alle utilgjengelige %{type} i %{city} (%{count})"
+        unknown:
+          headline: "Alle %{type} i %{city} med ukjent rullestol status (%{count})"
+        ? "yes"
+        :
+          headline: "Alle rullestoltilgjenglige %{type} i %{city} (%{count})"
+  layouts:
+    application:
+      banner:
+        alt: "Et prosjekt av Sozialhelden.de"
+  node:
+    address:
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
+    tags:
+      phone: "Telefon:"
+      website: "Webside:"
+  nodes:
+    create:
+      flash:
+        not_successfull: "Oops, ditt bidrag er enten feil eller ufullstendig"
+        successfull: "Tusen takk, ditt bidrag har blitt lagret og vil snart være tilgjenglig."
+    edit:
+      header:
+        title: "Rediger sted: %{node} | wheelmap.org"
+      link:
+        large_map: "&laquo; Avbryt"
+    errors:
+      default: "Oops, noe gikk galt. Vi har fått melding om saken"
+      not_authorized: "Beklager, pålogging feilet"
+      not_available: "Beklager, denne siden er midlertidig ikke tilgjenglig."
+      not_existent: "Beklager, men dette stedet er ikke lenger tilgjengelig."
+      not_found: "Beklager, finner ikke siden"
+      param_missing: "Vennligst fyll ut et søkekriterium"
+    flash:
+      authorize_wheelmap: "Du trenger en OpenStreetMap-konto for å endre data."
+    new:
+      header:
+        title: "Nytt sted | wheelmap.org"
+      link:
+        large_map: "&laquo; Avbryt"
+    node:
+      link:
+        claim: "Arbeider du her?"
+        edit_node: "Rediger sted"
+        report_bug: "Rapporter et problem"
+    show:
+      header:
+        title: "Sted: %{node} | wheelmap.org"
+      link:
+        back: tilbake
+        large_map: Forstørr
+        listing: "Alle steder av typen '%{type}' i %{city}"
+      more_data_from: "Det finnes mer data om dette stedet, kontrollert av:"
+      show-in-osm: OpenStreetMap
+    update:
+      flash:
+        not_successfull: "Oops, utfyllingen din var enten feil eller ufullstendig"
+        successfull: "Tusen takk, ditt bidrag har blitt lagret og vil snart ligge på nettet."
+    update_wheelchair:
+      successfull: "Statusen for \"%{name}\" har blitt endret til \"%{status}\" og vil snart ligge på nettet."
+  number:
+    currency:
+      format:
+        delimiter: " ,"
+        format: "%n %u"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: 0
+        unit: kr
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: 0
+      strip_insignificant_zeros: 0
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Milliard
+          million: Million
+          quadrillion: kvadrillion
+          thousand: tusen
+          trillion: Billion
+          unit: ~
+      format:
+        delimiter: " "
+        precision: 3
+        significant: sant
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: kB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "Du må koble sammen kontoen din med 'open street map'-kontoen før du kan lage eller endre steder på wheelmap.org"
+    callback:
+      notice: "Din wheelmap-konto er nå koblet sammen med OpenStreetMap-kontoen %{user}"
+  or: eller
+  place:
+    one: "%{count} plasser"
+    other: "%{count} steder"
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "Status: Tilkoblet"
+          grant: "Koble til nå"
+          not_connected: "Status: Ikke tilkoblet"
+          revoke: Frakoblet
+      headline: "Rediger profilen din"
+  search:
+    index:
+      search:
+        for: "Søker etter \"%{q}\""
+        not_found: "Ingen steder funnet!"
+  splash:
+    countline: "%{count} steder har allerede blitt merket"
+    headline: "Alle kan legge til et rullestoltilgjengelig sted!"
+    start: Start
+    step1: "Klikk på et sted du kjenner"
+    step2: "Merk den og klikk lagre"
+    step3: "Det var alt. Ingen registrering nødvendig"
+    what_is_wheelmap: "Hva er wheelmap?"
+  statistics: Statistikk
+  support:
+    array:
+      last_word_connector: " og "
+      sentence_connector: og
+      skip_last_comma: sant
+      two_words_connector: " og "
+      words_connector: ", "
+    select:
+      prompt: "Vennligst velg"
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+  user_sessions:
+    create:
+      activation:
+        notice: "Kontoen din er nå aktivert!"
+      error:
+        notice: "Epost og passord passer ikke sammen"
+      notice: "Du er inne!"
+    destroy:
+      notice: "Hadet, kom snart tilbake"
+    new:
+      email: Epostadresse
+      login: "Logg inn"
+      login_with_twitter: "Logg på med Twitter"
+      password: Passord
+      remember_me: "Forbli innlogget"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Velkommen til wheelmap"
+        set_password_for_mobile: "Har du en smarttelefon? Venligst lag deg et passord for å kunne ta med deg Wheelmap på din iPhone eller Android-telefon."
+        text: "Hvordan kan vi få kontakt med deg? Du kan endre denne informasjonen i profilen din senere."
+  wheelchairstatus:
+    limited: "Delevis rullestoltilgjenglig"
+    ? "no"
+    : "ikke rullestoltilgjengelig"
+    unknown: "Ukjent status"
+    ? "yes"
+    : rullestoltilgjengelig
+  wheelmap:
+    footer:
+      a_project_of: "Et prosjekt laget av"
+      based_on: "Basert på"
+      become_a_supporter: "Bli en sponsor"
+      main_supporter: Hovedsponsor
+    itunes:
+      alt: "AppStore Logo"
+      title: "Last ned iPhone-app nå!"
+    logo:
+      alt: "Wheelmap Logo - finn rullestoltilgjengelige steder"
+      title: "Wheelmap - finn rullestoltilgjengelige steder"
+    what_is:
+      fully_accessible: "Inngang uten trinn, alle rom uten trinn, tilgjenglig toalett hvis forventet på et sted"
+      limited_accessible: "Inngangen har et trinn (maks. høyde 7cm), de fleste rom er uten trinn, toalettene er ikke tilgjengelige."
+      not_accessible: "Inngang har kant eller flere trappetrinn, rommene er ikke tilgjengelige"
+      unknown_accessible: "Hjelp ved å merke stedet!"
+  will_paginate:
+    next_label: "Neste &#8594;"
+    page_entries_info:
+      multi_page: "Viser %{model} %{from} - %{to} av %{count} totalt"
+      multi_page_html: "Viser %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> av <b>%{count}</b> totalt"
+      single_page:
+        one: "Viser 1 %{model}"
+        other: "Viser alle %{count} %{model}"
+        zero: "Ingen %{model} funnet"
+      single_page_html:
+        one: "Viser <b>1</b> %{model}"
+        other: "Viser <b>alle&nbsp;%{count}</b> %{model}"
+        zero: "Ingen %{model} funnet"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Forrige"

@@ -1,0 +1,178 @@
+---
+nl:
+  poi:
+    category:
+      accommodation: Accomodatie
+      education: Educatie
+      food: Voedsel
+      government: Overheid
+      health: Gezondheid
+      leisure: "Vrije tijd"
+      misc: Overige
+      money_post: "Bank & Post"
+      public_transfer: "Openbaar vervoer"
+      shopping: Winkelen
+      sport: Sport
+      tourism: Toerisme
+      unknown: Onbekend
+    name:
+      accommodation:
+        beach_resort: "Strand hotel"
+        bed_and_breakfast: "Bed en ontbijt"
+        camp_site: Kampeerplaats
+        caravan_site: Kampeerplaats
+        chalet: Berghut
+        guest_house: Gasthuis
+        hostel: Hostel
+        hotel: Hotel
+        motel: Motel
+      education:
+        college: Hogeschool/universiteit
+        driving_school: Rijschool
+        kindergarten: Kleuterschool
+        library: bibliotheek
+        museum: Museum
+        school: School
+        university: Universiteit
+      food:
+        bar: Bar
+        biergarten: Biergarten
+        cafe: "Café "
+        drinking_water: Drinkwater
+        fast_food: "Fast Food"
+        ice_cream: Ijssalon
+        pub: Kroeg
+        restaurant: Restaurant
+      government:
+        courthouse: "Het paleis van justitie"
+        embassy: Ambassade
+        government: Overheidskantoor
+        police: Politie
+        public_building: "Openbaar gebouw"
+        townhall: Stadshal
+      health:
+        dentist: Tandarts
+        doctors: Artsen
+        hearing_aids: "Audicien (gehoorapperaat winkel)"
+        hospital: Ziekenhuis
+        medical_supply: "Medische verzorging"
+        pharmacy: Apotheek
+        social_facility: "Sociale voorziening"
+        veterinary: Dierenarts
+      leisure:
+        arena: Arena
+        brothel: Bordeel
+        casino: Casino
+        cinema: bioscoop
+        community_center: Wijkcentrum
+        gallery: Galerij
+        nightclub: Nachtclub
+        playground: Speelplaats
+        sauna: Sauna
+        stripclub: Stripclub
+        theatre: Theater
+        zoo: Dierentuin
+      misc:
+        company: "Bedrijf (zetel)"
+        estate_agent: Makelaar
+        insurance: Verzekering
+        lawyer: Advocaat
+        place_of_worship: "Kerk, religieuze plaats"
+        toilets: Toiletten
+      money_post:
+        atm: Pinautomaat
+        bank: Bank
+        bureau_de_change: Wisselkantor
+        post_box: Brievenbus
+        post_office: Postkantoor
+      public_transfer:
+        aerodrome: Vliegveld
+        bicycle_parking: "Fiets parkeerplaats"
+        bicycle_rental: "Fiets verhuur"
+        boatyard: Werft
+        bus_station: Bushalte
+        bus_stop: Bushalte
+        cable_car: Kabelbaan
+        car_rental: "Auto verhuur"
+        car_sharing: "Car sharing / Auto verhuren en delen"
+        chair_lift: Stoeltjeslift
+        ferry: Veerboot
+        ferry_terminal: "Veerboot haven"
+        fuel: Tankstation
+        halt: Bushalte
+        light_rail: Sprinter
+        parking: Parkeren
+        parking_aisle: Parkeerplaats
+        platform: Perron
+        station: Metro
+        subway_entrance: "Metro ingang"
+        terminal: "Vliegveld terminal"
+        tram_stop: Tramhalte
+      shopping:
+        alcohol: Spiritualia
+        bakery: Bakkerij
+        beauty: Schoonheidssalon
+        beverages: Dranken
+        bicycle: Fietswinkel
+        books: Boeken
+        butcher: Slager
+        car_repair: Autogarage
+        car_shop: "Auto winkel"
+        chemist: Apotheek
+        clothes: Kleren
+        computer: Computer
+        confectionery: "Zoetwaren winkel"
+        convenience: Commoditeit
+        deli: Delicatessen
+        department_store: Afdelingswinkel
+        doityourself: "Doe het zelf"
+        dry_cleaning: "Stomerij "
+        electronics: Elektronica
+        fabric: "Stoffen winkel"
+        farm_shop: "Groenten winkel"
+        florist: Bloemenbinder
+        furniture: Meubels
+        garden_centre: "Tuin center"
+        gift: "Cadeau winkel"
+        hairdresser: Kapper
+        hardware: Hardware
+        jewelry: Juwelier
+        kiosk: Kiosk
+        laundry: Wasserij
+        mall: Winkelcentrum
+        optician: Opticien
+        organic: "Organische winkel"
+        outdoor: "Buitensport winkel"
+        pet: "Huisdier winkel"
+        photo: Foto
+        second_hand: Tweedehands
+        shoes: Schoenen
+        sports: Sport
+        stationery: Kantoorbenodigheden
+        supermarket: Supermarkt
+        toys: Speelgoed
+        travel_agency: Reisbureau
+        video: Videotheek
+      sport:
+        pitch: "Sport velden"
+        sports_centre: "Sport centrum"
+        stadium: Stadion
+        swimming: Zwemmen
+        swimming_pool: Zwembad
+      tourism:
+        archaeological_site: "Archeologische kant "
+        arts_centre: "Kunst huis"
+        artwork: Kunstwerk
+        attraction: Attractie
+        battlefield: Slagveld
+        beach: Strand
+        beacon: Vuurtoren
+        castle: kasteel
+        cave_entrance: "Holte ingang"
+        information: "VVV Toeristen informatie"
+        memorial: Monument
+        theme_park: Attractiepark
+        tower: Toren
+        viewpoint: Uitkijkpunt
+      unknown:
+        unknown: Onbekend

@@ -1,0 +1,312 @@
+---
+tr:
+  application:
+    require_no_user:
+      notice: "Sayfaya kayıtlısınız"
+    require_user:
+      notice: "Bu sayfayı görmek icin yeni bir oturum açın."
+  breadcrumbs:
+    node:
+      create: "yeni bir yer/alan ekleyiniz"
+      edit: "yeri/ alanı şekilendiriniz"
+    root: wheelmap
+  common:
+    close: kapatınız
+  errors:
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "kabul edilmeli"
+      already_confirmed: "tasdiklendi, lütfen kayıt olmayı deneyin\n"
+      blank: "dosyalanması gerekir"
+      confirmation: "onaylamaya uymuyor"
+      empty: "doldurulması gerekiyor"
+      equal_to: "tam olarak %{count} olmalı"
+      even: "eşit olması gerekir"
+      exclusion: ayırtılmış
+      greater_than: "%{count} dan yüksek olmalı"
+      greater_than_or_equal_to: "%{count} dan daha yüksek veya ayni olmalı"
+      inclusion: "geçersiz bir değer"
+      invalid: geçersiz
+      less_than: "%{count} dan daha eksik olmalı"
+      less_than_or_equal_to: "%{count} dan daha alçak veya aynı olması gerekir"
+      not_a_number: "bu bir numara değildir"
+      not_an_integer: "Tamsayı olması gerekir"
+      not_found: bulunamadı
+      not_locked: "Kilitli değildi"
+      not_saved:
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
+      odd: "tuhaf olmalı"
+      taken: "başkası tarafından alınmış "
+      too_long: "çok uzun ( %{count} dan fazla işaret olmamalı}"
+      too_short: "çok kısa ( %{count} dan daha eksik işaret olmamalı)"
+      wrong_length: "yanlış uzunluk ( tam olarak %{count} kadar işaret olmalı)"
+    template:
+      body: "Aşağıdaki alanlarda problem var:"
+      header:
+        one: "1 error prohibited this %{model} from being saved"
+        other: "%{count} errors prohibited this %{model} from being saved"
+  form:
+    show_fully_accessible_places: "tekerlekli sandalye ile ulaşılır"
+    show_limited_accessible_places: "kısmen tekerlekli sandalye ile ulaşılır"
+    show_places_without_status: "belirsiz statü"
+    show_unaccessible_places: "tekerlekli sandalye için ulaşılır değil"
+  formtastic:
+    hints:
+      lat: "Işareti haritanın üzerinde doğru yere ulaşana kadar oynatın."
+      osm_username: "Henüz üye değilmisiniz? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an Openstreetmap account now</a>"
+      password: "(değistirmek istemiyorsanız, boş bırakın)"
+      phone: "Örneğin: +49 30 123456-78"
+      website: "Örnegin: http://www.örnek.com"
+    labels:
+      category: "Tabaka:"
+      city: Şehir
+      create: "mekan/alan oluştur"
+      email: E-Posta
+      housenumber: "No:"
+      lat: Enlem
+      lon: Boylam
+      name: Isim
+      osm_password: "OSM Parola"
+      osm_username: "OSM hesap ismi"
+      password: Parola
+      password_confirmation: "Parolayi tekrarlayınız"
+      phone: "Telefon:"
+      postcode: "Posta Kodu"
+      save: Kaydet
+      street: "Sokak:"
+      type: "Tip: "
+      website: "Internet sitesi"
+      wheelchair: "Tekerlekli Sandalye erişilirliği? "
+      wheelchair_description: "Erişilirlik yorumu:"
+    titles:
+      basic: "Ana Veri:"
+      optional: "Daha fazla bilgi <karış sınıfı=\"toplama\"> (tüm alanlar isteğe bağli)</karış>"
+  global:
+    form_validation_error: " Lütfen aşağıda kote edilmiş hataları not alın."
+  header:
+    meta:
+      description: "Tekerlekli sandalye ile erişilir alanlar ve mekanlar bul - wheelmap.org"
+      homepage: "Ana Sayfa"
+      keywords: "Tekerlekli Sandalye ile erişilir alanlar ve mekanlar bul ara işaretle"
+      search: Ara
+    navigation:
+      blog: Blog
+      feedback: Geribildirim
+      home: Başlat
+      how_to_add_a_place: "Yeni mekan/alan nasıl eklenir?"
+      imprint: Künye
+      logged_in_as: "- olarak kayıtlı kal: "
+      login: "Oturum aç"
+      logout: "Oturumu kapat"
+      press: Basın
+      profile: Profil
+      suggestions: Öneriler
+      what_is_barrier_free: "\"Tekerleki sandalye ile ulasilir\" ne demek?"
+      what_is_wheelmap: "Wheelmap nedir?"
+    searchbar:
+      add_place: "Başka bir mekan/alan ekle"
+      find: Bul
+      placeholder: "mesela Sunset Boulevard L.A. veya Brandenburger Tor Berlin"
+      title_add_place: "Şimdi bu pozisyona yeni bir alan veya mekan ekle!"
+    tagline: "Wheelmap logo"
+    title: "Tekerlekli sandalye için ulaşılır yerler bul"
+  helpers:
+    select:
+      prompt: "Lütfen seçiniz"
+    submit:
+      create: "%{model} geliştir"
+      submit: "%{model} kaydet"
+      update: "%{model} güncelleştir"
+  home:
+    index:
+      filter:
+        category: "Tabaka:"
+        wheelchair: "Tekerlekli sandalye için ulaşılırmı?"
+      link:
+        node:
+          create: "Yeni bir yer ekle"
+      popup:
+        form:
+          limited: "kısmen tekerlekli sandalye ile ulaşılır"
+          ? "no"
+          : "tekerlekli sandalye için ulaşılır değil"
+          save: "Değişiklikeri kaydedin"
+          unknown: "belirsiz statü"
+          ? "yes"
+          : "tekerlekli sandalye ile ulaşılır"
+        help: "Tekerlekli sandalye için ulaşılırmı? (Yardım)"
+        more: "daha fazla..."
+  layouts:
+    application:
+      banner:
+        alt: "Bir Sozialhelden.de Projesi"
+  node:
+    address:
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
+    tags:
+      phone: "Telefon:"
+      website: "Internet Sitesi"
+  nodes:
+    create:
+      flash:
+        not_successfull: "Ooops, verileriniz yanlış veya yetersizdi"
+        successfull: "Teşekkür ederiz, bildirileriniz basarili bir şekilde kaydedildi ve kısa sürede internet sitesinde sunulacak."
+    edit:
+      header:
+        title: "Alan veya mekan düzenle: %{node} | wheelmap.org"
+      link:
+        large_map: "&laquo; iptal et"
+    errors:
+      default: "Oops, birşeyeler yanlış gidiyor. Fakat bu konuda bilgilendirildik!"
+      not_authorized: "Üzgünüz, resmi tasdik başarılı değildi"
+      not_available: "Üzgünüz, bu sayfa geçici bir süre için mevcut değildir. "
+      not_existent: "Üzgünüz, bu alan veya mekan artık mevcut değildir."
+      not_found: "Üzgünüz, sayfa bulunamadı."
+      param_missing: "Lütfen aradığınız terimi yazın."
+    flash:
+      authorize_wheelmap: "Verileri değiştirebilmek için OpenStreetMap hesabınız olması gerekir."
+    new:
+      header:
+        title: "Yeni alan veya mekan | wheelmap.org"
+      link:
+        large_map: "&laquo; Iptal et"
+    node:
+      link:
+        claim: ~
+        edit_node: "Alan veya Mekanı düzenle"
+        report_bug: "Sorun bildir "
+    show:
+      header:
+        title: "Alan/Mekan: %{node} | wheelmap.org"
+      link:
+        large_map: Genişlet
+    update:
+      flash:
+        not_successfull: "Oops, verileriniz yanlış veya eksik."
+        successfull: "Teşekkür ederiz, tesciliniz başarılı bir şekilde kayıtlanmıştır ve kısa bir süre sonra online olacak."
+    update_wheelchair:
+      successfull: "\"%{name}\"statüsü artık \"%{status} tekerlekli sandalya için ulaşılır\" olarak değiştirilmiştir ve kisa süre sonra online olucak. "
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: 0
+        strip_insignificant_zeros: 0
+        unit: TL
+    format:
+      delimiter: "."
+      precision: 3
+      separator: ","
+      significant: 0
+      strip_insignificant_zeros: 0
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Milyar
+          million: Milyon
+          quadrillion: Katrilyon
+          thousand: Bin
+          trillion: Trilyon
+      format:
+        delimiter: "."
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: "."
+    precision:
+      format:
+        delimiter: "."
+  oauth:
+    application:
+      connect:
+        headline: "Wheelmap.org. da alan veya mekanları değiştirmek için önce hesabınızı OpenStreetMap hesabınız ile bağlamanız gerekir. "
+    callback:
+      notice: "%{user} wheelmap hesabınız şimdi OpenStreetMap hesabınız ile bağlanmıştır."
+  or: veya
+  place:
+    one: "%{count} Yer ve Mekan"
+    other: "%{count} Yer ve Mekanlar"
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "Statü: bağlantı var"
+          grant: "Şimdi bağlan"
+          not_connected: "Statü: Bağlantı yok"
+          revoke: "Bağlantıyı kesmek"
+      headline: "Profilinizi düzenleyin"
+  search:
+    index:
+      search:
+        for: "\"%{q}\" araniyor"
+        not_found: "Yer bulunamadi!"
+  statistics: Istatistik
+  support:
+    array:
+      last_word_connector: " ve "
+      sentence_connector: ve
+      skip_last_comma: true
+      two_words_connector: " ve "
+      words_connector: ", "
+    select:
+      prompt: "Lütfen seçiniz"
+  time:
+    am: "öğleden önce"
+    formats:
+      default: "%a %d.%b.%y %H:%M"
+      long: "%e %B %Y, %A, %H:%M"
+      short: "%e %B, %H:%M"
+    pm: "öğleden sonra"
+  user_sessions:
+    create:
+      activation:
+        notice: "Hesabınız şimdi aktive edildi!"
+      error:
+        notice: "E-Posta ve parola birbirine uymuyor"
+      notice: "Oturum açtınız!"
+    destroy:
+      notice: "Hoşçakalın,yine gelin!"
+    new:
+      email: "E-Posta adresi"
+      login: "Oturum aç"
+      login_with_twitter: "Twitter ile oturum aç"
+      password: Parola
+      remember_me: "Kayıtlı kal"
+  wheelchairstatus:
+    limited: "Kısmen tekerlekli sandalye ile ulaşılır"
+    ? "no"
+    : "Tekerlekli sandalye ile ulaşılmaz"
+    unknown: "Tekerlekli sandalye erişilirliği belirsiz"
+    ? "yes"
+    : "Tamamen tekerlekli sandalye ile ulaşılır"
+  wheelmap:
+    itunes:
+      alt: "AppStore Logo"
+      title: "iPhone App'i şimdi indirin!"
+    logo:
+      alt: "Wheelmap Logo - tekerlekli sandalye ile ulaşılır yerler bulun"
+      title: "Wheelmap - tekerlekli sandalye ile ulaşılır yerler bulun"
+    what_is:
+      fully_accessible: "Giriş basamağı 7 santimetre den yüksek değil; tüm mevkiler tekerlekli sandalye kullanıcılar tarafından istisnasız ulasılır; engelliler tualeti mevcut "
+      limited_accessible: "Girişdeki basamak 7 santimetre den yüksek değil; en önemli mevkiler tekerlekli sandalye kullanıcılar tarafından ulaşılabilir. "
+      not_accessible: "Girişdeki basamak 7 santimetre den yüksek; veya girişde basamak var; veya en önemli mevkiler tekerlekli sandalye kullanıcılar için ulaşılamaz."
+      unknown_accessible: "Tekerlekli sandalye statüsü belirsiz"

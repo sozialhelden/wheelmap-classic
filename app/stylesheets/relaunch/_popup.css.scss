@@ -1,0 +1,87 @@
+
+.leaflet-popup-content-wrapper {
+  background: #FFF;
+  padding: 0;
+  border:none;
+  overflow: hidden;
+  width: 260px;
+  @include border-radius(4px);
+  .leaflet-popup-content {
+    margin: 0px;
+    .header {
+      width: 90%;
+      height: auto;
+      overflow: hidden;
+      padding: 10px 5% 3px 5%;
+      float: left;
+      border-bottom: 1px solid #DDD;
+      @include background(linear-gradient(top, #FEFEFE, #EAEAEA));
+      @include filter-gradient(#FEFEFE, #EAEAEA, vertical);
+      h2 {
+        font-size:16px;
+        line-height: 20px;
+        margin: 0;
+        padding-left: 30px;
+        padding-right: 15px;
+        background-position: center left;
+        background-repeat: no-repeat;
+      }
+      address {
+        margin: 4px 30px 0 0;
+        float: left;
+      }
+    }
+    .bubble-ctn {
+      float: left;
+      .more {
+        padding: 0px 6px;
+        overflow: hidden;
+        position: absolute;
+        top: 10px;
+        right: 8px;
+        color: #555;
+      }
+      h3 {
+        margin: 0 0 4px 0;
+        line-height:20px;
+      }
+      ol {
+        list-style-type: none;
+        margin: 5px 10px 0 10px;
+        padding-bottom: 20px;
+        li {
+          width: 240px;
+          display: block;
+          margin: 0 0 4px 0;
+          padding:0;
+          @include border-radius(4px);
+          &.yes {
+            color: $green;
+          }
+          &.limited {
+            color: #F1BD56;
+          }
+          &.no {
+            color: #E5002A;
+          }
+          &.unknown {
+            color: #555;
+          }
+          input[type=radio] {
+            float:left;
+            margin-right: 10px;
+          }
+          input[type=submit] {
+            float: right;
+          }
+        }
+      }
+    }
+  }
+}
+.leaflet-popup-tip {
+	background-color: rgb(255,255,255)!important;
+	width: 8px!important;
+	height: 8px!important;
+	margin: -6px auto 0!important;
+}

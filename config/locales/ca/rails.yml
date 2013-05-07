@@ -1,0 +1,48 @@
+---
+ca:
+  activerecord:
+    attributes:
+      user:
+        first_name: "Nom de pila"
+        last_name: Cognom
+        privacy_policy: "Política de privacitat"
+        terms: Termes
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: "cal que s'accepti"
+        blank: "No pot estar en blanc"
+        empty: "no pot estar buit"
+        equal_to: "ha de ser igual a %{count}"
+        even: "ha de ser parell"
+        exclusion: "està reservat"
+        greater_than: "ha de ser més gran que %{count}"
+        greater_than_or_equal_to: "ha de ser més gran o igual que %{count}"
+        inclusion: "no està inclòs a la llista"
+        invalid: "no és vàlid"
+        less_than: "ha de ser més petit que %{count}"
+        less_than_or_equal_to: "ha de ser més petit o igual a %{count}"
+        not_a_number: "no és un nombre"
+        odd: "ha de ser senar"
+        record_invalid: "Error de validació: %{errors}"
+        taken: "ja s'ha fet"
+        too_long: "és massa llarg (el màxim és de %{count} caràcters)"
+        too_short: "és massa curt (el mínim són %{count} caràcters)"
+        wrong_length: "és una llargària incorrecte (hauria de ser de %{count} caràcters)"
+      models:
+        user:
+          attributes:
+            email:
+              blank: "no pot ser buit si s'ha determinat una contrasenya"
+            privacy_policy:
+              accepted: "s'ha d'acceptar"
+            terms:
+              accepted: "s'ha d'acceptar"
+        user_session:
+          email: "Adreça de correu electrònic"
+          password: Contrasenya
+      template:
+        body: "Van haver-hi problemes amb els següents camps:"
+    models:
+      user: Usuari

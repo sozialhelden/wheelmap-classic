@@ -1,0 +1,411 @@
+---
+hi:
+  application:
+    require_no_user:
+      notice: "आप पहले से ही लॅाग इन हैं..."
+    require_user:
+      notice: "इस पेज को देखने के लिए लॅाग इन करें"
+  breadcrumbs:
+    node:
+      create: "नई जगह शामिल करें"
+      edit: "जगह संपादित करें, जगह बदलें"
+    root: ्व्हीलमैप
+  common:
+    close: बंद
+    skip: स्किप
+  errors:
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "स्वीकार किया जाना जरूरी"
+      already_confirmed: "पुष्टी पहले ही हो चुकी है "
+      blank: "खाली नहीं रह सकता है"
+      confirmation: "पुष्टिकरण मेल नहीं खाता"
+      empty: "रिक्त नहीं रह सकता है"
+      equal_to: "%{count} के लिए बराबर होना चाहिए"
+      even: "सम होना चाहिए"
+      exclusion: "आरक्षित है"
+      expired: "समय सीमा समाप्त, कृपया नए के लिए अनुरोध कीजिए, \n\
+          एक्स्पायर्ड, कृपया नए के लिए अर्जी कीजिए। "
+      greater_than: "%{count} से अधिक होना चाहिए"
+      greater_than_or_equal_to: "%{count} से बड़ा या बराबर होना आवश्यक है"
+      inclusion: "सूची में शामिल नहीं है"
+      invalid: "अवैध है"
+      less_than: "%{count} से कम होना चाहिए"
+      less_than_or_equal_to: "%{count} से कम या बराबर होना आवश्यक है"
+      not_a_number: "कोई संख्या नहीं है"
+      not_an_integer: "एक पूर्णांक होना चाहिए"
+      not_found: "नहीं मिला"
+      not_locked: "बंद नहीं था"
+      not_saved:
+        one: "एक गलती/त्रुटी की वजह से सेव हई हुआ %{resource}:"
+        other: "%{resource} सेव करने के लिए %{count} ग़लतियां मान्य नहीं "
+      odd: "विसम होना चाहिए"
+      taken: "पहले ही ले लिया गया है"
+      too_long: "अत्यधिक लंबा है (अधिकतम %{count} वर्ण हैं)"
+      too_short: "अत्यधिक छोटा है (न्यूनतम %{count} वर्ण हैं)"
+      wrong_length: "गलत लंबाई है (%{count} वर्ण युक्त होना चाहिए)"
+    template:
+      body: "निम्नलिखित क्षेत्रों के साथ समस्या थी:"
+      header:
+        one: "इस %{model} को सहेजे जाना एक त्रुटि के कारण नहीं हुआ"
+        other: "इस %{model} को सहेजे जाना %{count} त्रुटि के कारण नहीं हुआ"
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} सफलतापूर्वक बना"
+      destroy:
+        alert: "%{resource_name} हटाया नहीं जा सका"
+        notice: "%{resource_name} सफलतापूर्वक हटाया गया"
+      update:
+        notice: "%{resource_name} सफलतापूर्वक अपडेट हुआ"
+    photos:
+      destroy:
+        notice: ~
+  form:
+    show_fully_accessible_places: "व्हीलचेयर सुलभ "
+    show_limited_accessible_places: "आंशिक तौर पर व्हीलचेयर सुलभ\n"
+    show_places_without_status: "अज्ञात स्थिति"
+    show_unaccessible_places: "व्हीलचेयर के लिए सुलभ नहीं"
+  formtastic:
+    hints:
+      email: "आपका पता गोपनीय रखा जाएगा, कोई स्पैम नहीं । ये हमारा वायदा है!"
+      lat: "मार्कर को नक्शे पर हिलाकर सही जगह पर लगाएं "
+      osm_username: "अभी सदस्य नहीं हैं? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>"
+      password: "(अगर बदलना नहीं है तो खाली छोड़िए)"
+      phone: "उदाहरण के लिए: +49 30 123456-78"
+      website: "जैसे कि: http://www.example.com"
+    labels:
+      category: श्रेणी
+      centralkey: "मुख्य चाबी, सेंट्रल की"
+      city: "शहर:"
+      create: "जगह बनाएं "
+      email: ईमेल
+      finish: "खत्म, समाप्त, अंत"
+      housenumber: "नहीं:"
+      lat: अक्षांश
+      lon: "देशांतर रेखा"
+      name: "नाम:"
+      osm_password: "ओपनस्ट्रीटमैप का पासवर्ड"
+      osm_username: "ओपनस्ट्रीटमैप के खाते का नाम"
+      password: पासवर्ड
+      password_confirmation: "पासवर्ड दोहराएं"
+      phone: "दूरभाष, टेलीफोन"
+      postcode: "पिन कोड"
+      reset: "रीसेट करें"
+      save: "सेव, बचाएं"
+      street: गली
+      type: ~
+      website: वेबसाइट
+      wheelchair: |-
+          व्हीलचेयर के लिए बाधा रहित,
+          व्हीलचेयर सुलभ
+      wheelchair_description: "शारीरिक रूप से विकलांग लोगों के लिए सुविधाओं के बारे में टिप्पणीः "
+    titles:
+      basic: "बुनियादी डेटा"
+      optional: "अधिक जानकारी <span class=\"addition\">(सभी क्षेत्र वैकल्पिक हैं)</span>"
+  global:
+    form_validation_error: "नीचे दीं त्रुटियों को नोट कीजिए"
+  header:
+    meta:
+      description: "वहीलचेयर सुलभ जगह खोजें - wheelmap.org"
+      homepage: "होम पेज, मुख्य पृष्ठ\n"
+      keywords: "व्हीलचेयर सुलभ जगहों के लिए खोज का निशान"
+      search: "खोजें, ढूंढें"
+    navigation:
+      blog: ब्लॅाग
+      feedback: "राय, प्रतिक्रिया, फीडबैक "
+      home: "शुरू करें, प्रारंभ"
+      how_to_add_a_place: "और स्थान कैसे जोड़े जाएं?"
+      imprint: छाप
+      logged_in_as: "... के तौर पर लॅाग इन हैं। "
+      login: "लॅाग इन "
+      logout: "लॅाग आउट "
+      newsletter: "न्यूज़लैटर, संदेश पत्र, सामाचार पत्र "
+      press: दबाएं
+      profile: ~
+      suggestions: "सुझाव\n"
+      what_is_barrier_free: "\"व्हीलचेयर सुलभ\" का मतलब क्या है?"
+      what_is_wheelmap: "व्हीलमैप क्या है?"
+    searchbar:
+      add_place: "कोई और जगह शामिल करें"
+      find: ढूंढो
+      label: ~
+      placeholder: ~
+      title_add_place: "इस स्थान पर नई जगह अंकित करें!"
+    tagline: "वहीलमैप का लोगो, वहीलमैप का चिन्ह"
+    title: "सभी वहीलचेयर सुलभ स्थान खोजें"
+  helpers:
+    select:
+      prompt: "कृपया चुनें"
+    submit:
+      create: "%{model} बनाएँ"
+      submit: "%{model} सौंपें"
+      update: "%{model} अद्यतन"
+  home:
+    index:
+      filter:
+        category: "श्रेणी चुनिए "
+        deselect_all: ~
+        select_all: ~
+        wheelchair: "व्हीलचेयर सुलभ?"
+      ie:
+        action:
+          ignore: "उपेक्षा, ध्यान न दें"
+          upgrade: "ब्राउसर अपडेट करें"
+        warning:
+          headline: "माफ कीजिए!"
+          message: "लगता है आप इंटरनेट एक्सप्लोरर इस्तेमाल कर रहे हैं। व्हीलमेप के लिए मानक के अनुरूप ब्राउसर चाहिए। कृपया फायरफॅाक्स, क्रोम, सफारी या ओपेरा को इस्तेमाल करने की सोचें। "
+      link:
+        node:
+          create: "नई जगह जोड़िए"
+      popup:
+        form:
+          limited: "आंशिक रूप से व्हीलचेयर सुलभ"
+          ? "no"
+          : "वहीलचेयर सुलभ नहीं, व्हीलचेयर के लिए बाधाएं हैं"
+          save: "अपडेट, नया ताजा"
+          unknown: "स्थिति अज्ञात"
+          ? "yes"
+          : "व्हीलचेयर सुलभ "
+        help: "व्हीलचेयर सुलभ"
+        more: "और भी..."
+  how?: कैसे
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "%{city} (%{count}) में सभी आंशिक तौर पर व्हीलचेयर सुलभ स्थान %{type}  "
+        ? "no"
+        :
+          headline: ~
+        unknown:
+          headline: "सभी %{type} इन %{city} में व्हीलचेयर के लिए बाधा रहित रास्ते होने की जानकारी नहीं है।  (%{count})"
+        ? "yes"
+        :
+          headline: " %{city} (%{count}) में %{type} सभी व्हीलचेयर सुलभ स्थान "
+  layouts:
+    application:
+      banner:
+        alt: "यह प्रोजेक्ट Sozialhelden.de द्वारा किया गया है। "
+  node:
+    address:
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
+    tags:
+      phone: "फोन, दूर्भाष"
+      website: "वेबसाइट:"
+  nodes:
+    create:
+      flash:
+        not_successfull: "अरे! इनपुट ग़लत या अधूरा था"
+        successfull: "धन्यवाद, आपका सबमिशन सफलतापूर्वक सेव हुआ और जल्द ही अॅानलाइन होगा। "
+    edit:
+      header:
+        title: "जगह संपादित करें: %{node} | wheelmap.org"
+      link:
+        large_map: ~
+    errors:
+      default: "कुछ गलती हुई। हमें इस समस्या के बारे में जानकारी है"
+      not_authorized: "माफ कीजिए, पुष्टीकरण असफल रहा"
+      not_available: |-
+          माफ कीजिए, यह पेज अस्थाई रूप से उपलब्ध
+          नहीं है
+      not_existent: "माफ कीजिए, यह जगह अब उपलब्ध नहीं है। "
+      not_found: "माफ़ कीजिए, पेज नहीं मिला।"
+      param_missing: "खोज के लिए शब्द दें"
+    flash:
+      authorize_wheelmap: |-
+          डेटा बदलने के लिए आपको ओपनस्ट्रीटमैप
+          खाता चाहिए
+    new:
+      header:
+        title: "नई जगह । wheelmp.org"
+      link:
+        large_map: ~
+    node:
+      link:
+        claim: "आप यहां काम करते हैं?"
+        edit_node: "जगह संपादित कीजिए"
+        report_bug: "समस्या की रिपोर्ट कीजिए"
+    show:
+      header:
+        title: "जगह: %{node} | wheelmap.org"
+      link:
+        back: "वापस, पीछे"
+        large_map: "बड़ा करें"
+        listing: ~
+        upload: ~
+      more_data_from: "के लिए और भी डेटा है, जांचकर्ता ः"
+      show-in-osm: ओपनस्ट्रीटमैप
+    update:
+      flash:
+        not_successfull: "अरे! आपका इनपुट गलत या अधूरा था"
+        successfull: "धन्यवाद, आपका सबमिशन सफलतापूर्वक सेव हुआ और कुछ ही देर में अॅानलाइन होगा। "
+    update_wheelchair:
+      successfull: "इस \"%{name}\" कि स्थिति बदलकर \"%{status}\" कर दी गई है और जल्द ही अॅानलाइन होगी।"
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: ₹
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: अरब
+          million: "दस करोड़"
+          quadrillion: "करोड़ शंख"
+          thousand: हज़ार
+          trillion: खरब
+          unit: ~
+      format:
+        delimiter: ~
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "wheelmap.org पर कुछ बनाने या बदलने से पहले आपको अपना खाता ओपनस्ट्रीटमैप खाते से जोड़ना होगा"
+    callback:
+      notice: "आपका व्हीलमैप खाता अब ओपनस्ट्रीटमैप खाते से कनेक्टिड है %{user}."
+  or: "या , अथवा"
+  place:
+    one: "%{count} जगह"
+    other: "%{count} जगह"
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "स्थिति:कनेक्टेड"
+          grant: "अब कनेक्ट करें"
+          not_connected: "स्थिति: कनेक्टेड नहीं"
+          revoke: डिसकनेक्ट
+      headline: "अपनी रूपरेखा बदलें, अपना प्रोफाइल बदलें"
+  search:
+    index:
+      search:
+        for: " \"%{q}\" की खोज"
+        not_found: "कोई जगह नहीं मिली!"
+  splash:
+    countline: "%{count} जगहें पहले ही अंकित की जा चुकी हैं। "
+    headline: "व्हीलचेयर सुलभ जगह सभी जोड़ सकते हैं।  "
+    start: "शुरू, शुरुआत, प्रारंभ "
+    step1: "जानी हुई जगह पर क्लिक करें"
+    step2: "अंकित कर के सेव करें"
+    step3: "बस! रेजिस्ट्रेशन की आवश्यक्ता नहीं"
+    what_is_wheelmap: "व्हीलमैप क्या है"
+  statistics: आंकड़ें
+  support:
+    array:
+      last_word_connector: "और "
+      sentence_connector: और
+      skip_last_comma: true
+      two_words_connector: " और "
+      words_connector: ", "
+    select:
+      prompt: "कृपया चुनें"
+  time:
+    am: पूर्वाह्न
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: अपराह्न
+  user_sessions:
+    create:
+      activation:
+        notice: "आपका खाता अब सक्रिय है!"
+      error:
+        notice: "ईमेल और पासवर्ड मेल नहीं खाते"
+      notice: "आप अंदर पहुंच गए हैं!"
+    destroy:
+      notice: "टाटा! जल्द लैटियेगा!"
+    new:
+      email: "ईमेल का पता"
+      login: "लॅाग इन "
+      login_with_twitter: "ट्विटर से लॅाग इन करें "
+      password: पासवर्ड
+      remember_me: "लॅाग इन रहें "
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "व्हीलमैप में आपका स्वागत है"
+        set_password_for_mobile: "क्या आपके पास स्मार्टफन है? अगर हाँ, तो आईफओन और ऐंड्रॅाइड फोन पर व्हीलमैप इस्तेमाल करने के लिए पासवर्ड निर्धारित करें। "
+        text: "आपसे कैसे संपर्क करें? यह जानकारी\n\
+            आप बाद में भी बदल सकते हैं। "
+    edit:
+      headline:
+        your_images: ~
+  wheelchairstatus:
+    limited: "आंशिक तौर पर व्हीलचेयर सुलभ "
+    ? "no"
+    : "व्हीलचेयर के लिए सुलभ नहीं"
+    unknown: "स्थिति अज्ञात"
+    ? "yes"
+    : "व्हीलचेयर सुलभ "
+  wheelmap:
+    footer:
+      a_project_of: "इस प्रोजेकट के जनक "
+      based_on: "पर आधारित"
+      become_a_supporter: "समर्थक बनिए"
+      main_supporter: "मुख्य समर्थक"
+    itunes:
+      alt: ~
+      title: "आईफोन ऐप्लीकेशन आभी डाउनलोड करें!"
+    logo:
+      alt: "व्हीलमैप लोगो - वहीलचेयर सुलभ स्थान खोजें"
+      title: "व्हीलमैप - व्हीलचेयर सुलभ स्थान ढूंढें"
+    what_is:
+      fully_accessible: ~
+      limited_accessible: |-
+          प्रवेश पर एक सीढी (अधिक्तम
+          ऊंचाई ७ सेमी), अधिकांश कमरे बगैर सीढी के,
+          शौचालय पहुंचने में बाधा
+      not_accessible: |-
+          प्रवेश पर कई या ऊंची सीढियां,
+          कमरे विकलांगों के लिए सुलभ नहीं।
+      unknown_accessible: ~
+  will_paginate:
+    next_label: "अगला &#8594;"
+    page_entries_info:
+      multi_page: "कुल %{count} में से %{model} %{from} - %{to} प्रदर्शित"
+      multi_page_html: "कुल  <b>%{count} में से %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b>  </b> प्रदर्शित "
+      single_page:
+        one: "प्रदर्शित १ 1 %{model}"
+        other: "सभी %{count} %{model} दर्शित हैं। "
+        zero: "कोई %{model} नहीं मिला"
+      single_page_html:
+        one: "दर्शित <b>1</b> %{model}"
+        other: "प्रदर्शित <b>all&nbsp;%{count}</b> %{model}"
+        zero: "कोई %{model} नहीं मिला"
+    page_gap: ~
+    previous_label: "&#8592; पिछला"

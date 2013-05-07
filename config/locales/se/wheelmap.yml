@@ -1,0 +1,402 @@
+---
+se:
+  application:
+    require_no_user:
+      notice: "Du är redan inloggad"
+    require_user:
+      notice: "Du måste vara inloggad för att se denna sida"
+  breadcrumbs:
+    node:
+      create: "Lägg till ny plats"
+      edit: "Ändra plats"
+    root: wheelmap
+  common:
+    close: stäng
+    skip: "hoppa över"
+  errors:
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "måste accepteras"
+      already_confirmed: "är redan validerad, prova att logga in"
+      blank: "måste fyllas i"
+      confirmation: "måste vara samma som det upprepade"
+      empty: "måste vara ifyllt"
+      equal_to: "måste vara exakt %{count}"
+      even: "måste vara jämnt"
+      exclusion: "är reserverat"
+      expired: "utgånget, ansök om ett nytt"
+      greater_than: "måste vara större än %{count}"
+      greater_than_or_equal_to: "måste vara större eller lika med %{count}"
+      inclusion: "inte ett giltigt värde"
+      invalid: "inte giltig"
+      less_than: "måste vara mindre än %{count}"
+      less_than_or_equal_to: "måste vara mindre eller lika med %{count}"
+      not_a_number: "är inte ett nummer"
+      not_an_integer: "måste vara ett heltal"
+      not_found: "hittades inte"
+      not_locked: "var inte låst"
+      not_saved:
+        one: "Ett fel hindrade denna %{resource} från att sparas:"
+        other: "%{count} fel hindrade denna %{resource} från att sparas:"
+      odd: "måste vara udda"
+      taken: "är redan upptaget"
+      too_long: "är för långt (får inte vara mer än %{count} bokstäver)"
+      too_short: "är för kort (får inte vara mindre än %{count} bokstäver)"
+      wrong_length: "är av fel längd (borde vara %{count} bokstäver)"
+    template:
+      body: "Det var problem med följande fält:"
+      header:
+        one: "Ett fel hindrade denna %{model} från att sparas"
+        other: "%{count} fel hindrade denna %{model} från att sparas"
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} har skapats."
+      destroy:
+        alert: "%{resource_name} kunde inte tas bort."
+        notice: "%{resource_name} är borttagen."
+      update:
+        notice: "%{resource_name} har uppdaterats."
+    photos:
+      destroy:
+        notice: "Bilden har tagits bort"
+  form:
+    show_fully_accessible_places: Rullstolstillgänglig
+    show_limited_accessible_places: "begränsat rullstolstillgänglig"
+    show_places_without_status: "okänd status"
+    show_unaccessible_places: "ej rullstolstillgänglig"
+  formtastic:
+    hints:
+      email: "Vi lovar att behandla din e-postadress konfidentiellt. Inget spam!"
+      lat: "Flytta markören på kartan till korrekt position"
+      osm_username: "Ännu ej medlem?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Skapa ett Openstreetmap konto nu</a>"
+      password: "(lämnas tomt, om du inte vill ändra det)"
+      phone: "Till exempel: +46 40 123 45 67"
+      website: "Till exempel: http://www.example.se"
+    labels:
+      category: "Kategori:"
+      centralkey: "Huvudnyckel:"
+      city: "Ort:"
+      create: "Skapa plats"
+      email: E-post
+      finish: Avsluta
+      housenumber: "Nummer:"
+      lat: Latitud
+      lon: Longitud
+      name: "Namn:"
+      osm_password: "OSM lösenord"
+      osm_username: "OSM konto namn"
+      password: Lösenord
+      password_confirmation: "Upprepa lösenord"
+      phone: "Telefon:"
+      postcode: "Postnummer:"
+      privacy_policy: "Jag accepterar punkterna 1 och 2 i villkoren för \"data privacy\"."
+      reset: Återställ
+      save: Spara
+      street: "Gata:"
+      terms: "Jag godkänner reglerna för användning"
+      type: "Typ:"
+      website: "Webbplats:"
+      wheelchair: Rullstolstillgänglighet?
+      wheelchair_description: "Tillgänglighetskommentar:"
+    titles:
+      basic: "Grundläggande data"
+      optional: "Mer information <span class=\"addition\">(alla fält är frivilliga)</span>"
+  global:
+    form_validation_error: "Dessa fel uppstod."
+  header:
+    meta:
+      description: "Hitta rullstolstillgängliga platser - wheelmap.org"
+      homepage: Hemsida
+      keywords: "rullstolstillgängliga platser hitta sök lägg till"
+      search: Sök
+    navigation:
+      blog: Blogg
+      feedback: Återkoppling
+      home: Start
+      how_to_add_a_place: "Hur lägger jag till platser?"
+      imprint: Om
+      logged_in_as: "Inloggad som:"
+      login: "Logga in"
+      logout: "Logga ut"
+      newsletter: Nyhetsbrev
+      press: Press
+      profile: Profil
+      suggestions: Förslag
+      what_is_barrier_free: "Vad betyder \"rullstolstillgänglig\"?"
+      what_is_wheelmap: "Vad är wheelmap?"
+    searchbar:
+      add_place: "Lägg till en plats"
+      find: Hitta
+      label: " "
+      placeholder: "t ex Sunset Boulevard L.A. eller Drottningholms slott, Stockholm"
+      title_add_place: "Lägg till en ny plats på denna position!"
+    tagline: "Wheelmap logo"
+    title: "Hitta rullstolstillgängliga platser"
+  helpers:
+    select:
+      prompt: Välj
+    submit:
+      create: "Skapa %{model}"
+      submit: "spara %{model}"
+      update: "Ändra %{model}"
+  home:
+    index:
+      filter:
+        category: "Välj kategori:"
+        deselect_all: "Välj ingen"
+        select_all: "Välj alla"
+        wheelchair: Rullstolstillgänglig?
+      ie:
+        action:
+          ignore: Ignorera
+          upgrade: "Uppdatera webbläsaren"
+        warning:
+          headline: Tyvärr!
+          message: "Du verkar använda Internet Explorer. Wheelmap behöver en webbläsare som följer standarderna för att fungera rätt. Vänligen använd Firefox, Chrome, Safari eller Opera"
+      link:
+        node:
+          create: "Lägg till ny plats"
+      popup:
+        form:
+          limited: "begränsat rullstolstillgänglig"
+          ? "no"
+          : "ej rullstolstillgänglig"
+          save: Update
+          unknown: "okänd status"
+          ? "yes"
+          : "fullt rullstolstillgänglig"
+        help: "Rullstolstillgänglig? (Hjälp)"
+        more: "mera ..."
+  how?: Hur?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Alla begränsat rullstolstillgängliga %{type} i %{city} (%{count})"
+        ? "no"
+        :
+          headline: "Alla ej rullstolstillgängliga %{type} i %{city} (%{count})"
+        unknown:
+          headline: "Alla %{type} i %{city} med okänd rullstolstillgänglighet (%{count})"
+        ? "yes"
+        :
+          headline: "Alla rullstolstillgängliga %{type} i %{city} (%{count})"
+  layouts:
+    application:
+      banner:
+        alt: "Ett projekt av Sozialhelden.de"
+  node:
+    address:
+      city: "%{postcode} %{city}"
+      street: "%{housenumber} %{street}"
+    tags:
+      phone: "Telefon:"
+      website: "Webbsida:"
+  nodes:
+    create:
+      flash:
+        not_successfull: "Ojdå, formuläret är antingen felaktigt eller ofullständigt ifyllt."
+        successfull: "Tack, ditt förslag är sparat och kommer snart att synas."
+    edit:
+      header:
+        title: "Ändra plats: %{node} | wheelmap.org"
+      link:
+        large_map: "&laquo; Avbryt"
+    errors:
+      default: "Ojdå, något blev fel, men vi har blivit informerade om det!"
+      not_authorized: "Tyvärr, inloggningen misslyckades"
+      not_available: "Tyvärr, denna sida kan just nu inte visas."
+      not_existent: "Tyvärr, denna plats finns inte längre."
+      not_found: "Tyvärr, denna sida hittades inte."
+      param_missing: "Ange ett sökuttryck."
+    flash:
+      authorize_wheelmap: "Du behöver ett OpenStreetMap-konto för att ändra."
+    new:
+      header:
+        title: "Ny plats | wheelmap.org"
+      link:
+        large_map: "&laquo; Avbryt"
+    node:
+      link:
+        claim: "Arbetar du här?"
+        edit_node: "Ändra plats"
+        report_bug: "Rapportera ett problem"
+    show:
+      header:
+        title: "Plats: %{node} | wheelmap.org"
+      link:
+        back: tillbaka
+        large_map: Förstora
+        listing: "Alla platser av typen '%{type} i %{city}"
+        upload: "Ladda upp bild"
+      more_data_from: "Det finns mera information om denna plats, kollad av:"
+      show-in-osm: OpenStreetMap
+    update:
+      flash:
+        not_successfull: "Ojdå, du skrev antingen fel eller har du inte fyllt i allt."
+        successfull: "Tack! Ditt förslag är sparat och kommer snart att vara tillgängligt."
+    update_wheelchair:
+      successfull: "Statusen för \"%{name}\" har blivit ändrat till \"%{status}\" och kommer snart att synas."
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%n %u"
+        precision: 2
+        separator: "."
+        significant: 0
+        strip_insignificant_zeros: 0
+        unit: kr
+    format:
+      delimiter: ","
+      precision: 2
+      separator: ","
+      significant: 0
+      strip_insignificant_zeros: 0
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Miljard
+          million: Miljon
+          quadrillion: Kvadriljon
+          thousand: Tusen
+          trillion: Trillion
+          unit: "\"\""
+      format:
+        delimiter: "\"\""
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: "\"\""
+    precision:
+      format:
+        delimiter: "\"\""
+  oauth:
+    application:
+      connect:
+        headline: "Du måste koppla ditt konto till ditt OpenStreetMap-konto innan du kan skapa eller ändra platser på wheelmap.org."
+    callback:
+      notice: "Ditt wheelmap konto är nu kopplat till OpenStreetMap kontot %{user}."
+  or: eller
+  place:
+    one: "%{count} plats"
+    other: "%{count} platser"
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "Status: kopplad"
+          grant: "Koppla nu"
+          not_connected: "Status: frånkopplad"
+          revoke: "Koppla ifrån"
+      headline: "Ändra din profil"
+  search:
+    index:
+      search:
+        for: "Söker efter \"%{q}\""
+        not_found: "Inga platser hittades!"
+  splash:
+    countline: "%{count} platser har redan markerats."
+    headline: "Alla kan lägga till rullstolstillgängliga platser!"
+    start: Starta
+    step1: "Klicka på en plats som du känner till"
+    step2: "Markera den och klicka därefter på spara"
+    step3: "Klart! Ingen registrering behövs"
+    what_is_wheelmap: "Vad är wheelmap?"
+  statistics: Statistik
+  support:
+    array:
+      last_word_connector: och
+      sentence_connector: och
+      skip_last_comma: true
+      two_words_connector: och
+      words_connector: ","
+    select:
+      prompt: Välj
+  time:
+    am: am
+    formats:
+      default: "%a, %e %b %Y %H:%M:%S %z"
+      long: "%e %B %Y %H:%M"
+      short: "%e %b %H:%M"
+    pm: pm
+  user_sessions:
+    create:
+      activation:
+        notice: "Ditt konto är nu aktiverat!"
+      error:
+        notice: "E-post eller lösenord felaktigt."
+      notice: "Du är inne!"
+    destroy:
+      notice: "Hejdå, kom tillbaka snart!"
+    new:
+      email: E-postadress
+      login: "Logga in"
+      login_with_twitter: "Logga in med hjälp av Twitter"
+      password: Lösenord
+      remember_me: "Kom ihåg mig"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Du är nästan klar! Avsluta din ansökan om Wheelmapkonto här:"
+        set_password_for_mobile: |-
+            Du är nu klar med din registrering hos OpenStreetMap-
+            Ange nu en e-postadress och lösenord för ditt Wheelmapkonto och därefter är allt klart. Du behöver ange denna e-postadress och lösenord när du loggar in på Wheelmap-appen för iPhone eller Android.
+        text: "Hur kan vi kontakta dig? Du kan senare ändra denna information i din profil."
+    edit:
+      headline:
+        your_images: "Dina uppladdade bilder"
+  wheelchairstatus:
+    limited: "begränsat rullstolstillgänglig"
+    ? "no"
+    : "ej rullstolstillgänglig"
+    unknown: "rullstolstillgänglighet okänd"
+    ? "yes"
+    : "fullt rullstolstillgänglig"
+  wheelmap:
+    footer:
+      a_project_of: "Ett projekt från"
+      based_on: "Baserad på"
+      become_a_supporter: "Bli en sponsor"
+      main_supporter: Huvudsponsor
+    itunes:
+      alt: "AppStore Logo"
+      title: "Hämta för iPhone!"
+    logo:
+      alt: "Wheelmap Logo - Hitta rullstolstillgängliga platser"
+      title: "Wheelmap - Hitta rullstolstillgängliga platser"
+    what_is:
+      fully_accessible: "Ingången har ingen kant eller tröskel, alla rum utan trappsteg, tillgänglig hk-toalett finns"
+      limited_accessible: "Ingångens tröskel är inte högre än 7 cm, de flesta rummen är tillgängliga, ingen tillgänglig toalett"
+      not_accessible: "Ingångens kant eller tröskel är högre än 7 cm eller så har den trappsteg. Rummen är inte tillgängliga"
+      unknown_accessible: "Hjälp till att markera platser !"
+  will_paginate:
+    next_label: "Nästa &#8594;"
+    page_entries_info:
+      multi_page: "Visar %{model} %{from} - %{to] av totalt %{count}"
+      multi_page_html: "Visar %{model} <b>%{from]&nbsp;-&nbsp;%{to}</b> av <b>%{count}</b> totalt"
+      single_page:
+        one: "Visar 1 %{model}"
+        other: "Visar alla %{count} %{model}"
+        zero: "Ingen %{model} hittad"
+      single_page_html:
+        one: "Visar <b>1<b> %{model}"
+        other: "Visar <b>alla&nbsp,%{count}</b> %{model}"
+        zero: "Ingen %{model} hittad"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Föregående"

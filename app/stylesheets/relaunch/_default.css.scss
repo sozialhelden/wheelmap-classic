@@ -1,0 +1,58 @@
+html,body {
+  margin:0;
+  padding:0;
+  height:100%; /* braucht es fÃ¼r die min-height des Containers */
+}
+
+body {
+  width: 100%;
+  font-family: $helvetica;
+  margin: 0;
+  padding: 0;
+}
+
+/* @group Allgemein ================================================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+::-moz-selection, ::selection {
+  background: #999;
+  color: #fff;
+  text-shadow: none;
+}
+
+/* @end */
+
+p {
+  font-size: 12px;
+  line-height: 20px;
+  float: left;
+}
+
+.content {
+  width: 100%;
+  max-width: 95%;
+  margin: auto;
+}
+.mobile {
+	display: none;
+}
+
+
+@media screen and (max-width:760px) {
+	.mobile {
+		display: block;
+	}
+	.desktop {
+		display: none;
+	}
+}
+

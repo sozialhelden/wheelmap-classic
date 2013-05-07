@@ -1,0 +1,53 @@
+---
+da:
+  activerecord:
+    attributes:
+      user:
+        first_name: Fornavn
+        last_name: Efternavn
+        privacy_policy: "Privatlivs politik"
+        terms: Betingelser
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: "skal accepteres"
+        blank: "skal udfyldes"
+        confirmation: "stemmer ikke overens med bekræftelse"
+        empty: "må ikke udelades"
+        equal_to: "skal være lig med %{count}"
+        even: "skal være lige"
+        exclusion: "er reserveret"
+        greater_than: "skal være større end %{count}"
+        greater_than_or_equal_to: "skal være større end eller lig med %{count}"
+        inclusion: "er ikke i listen"
+        invalid: "er ikke gyldig"
+        less_than: "skal være mindre end %{count}"
+        less_than_or_equal_to: "skal være mindre end eller lig med %{count}"
+        not_a_number: "er ikke et tal"
+        odd: "skal være ulige"
+        record_invalid: "Validering fejlede: %{errors}"
+        taken: "er allerede brugt"
+        too_long: "er for langt (maksimum %{count} tegn)"
+        too_short: "er for kort (minimum %{count} tegn)"
+        wrong_length: "har forkert længde (skulle være %{count} tegn)"
+      models:
+        user:
+          attributes:
+            email:
+              blank: "Dette felt kan ikke være blankt når der er adgangskode"
+            privacy_policy:
+              accepted: "skal accepteres"
+            terms:
+              accepted: "skal accepteres"
+        user_session:
+          email: E-mail-adresse
+          password: Adgangskode
+          remember_me: "Forbliv logget inde"
+      template:
+        body: "Der var problemer med følgende felter:"
+        header:
+          one: "En fejl forhindrede %{model} i at blive gemt"
+          other: "%{count} fejl forhindrede %{model} i at blive gemt"
+    models:
+      user: Bruger

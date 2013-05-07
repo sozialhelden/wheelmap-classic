@@ -1,0 +1,37 @@
+---
+tr:
+  activerecord:
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: "kabul edilmeli"
+        blank: doldurulmalı
+        confirmation: "teyidiyle uyuşmamakta"
+        empty: doldurulmalı
+        equal_to: "tam olarak %{count} olmalı"
+        even: "çift olmalı"
+        exclusion: kullanılamaz
+        greater_than: "%{count} sayısından büyük olmalı"
+        greater_than_or_equal_to: "%{count} sayısına eşit veya büyük olmalı"
+        inclusion: "kabul edilen bir kelime değil"
+        invalid: geçersiz
+        less_than: "%{count} sayısından küçük olmalı"
+        less_than_or_equal_to: "%{count} sayısına eşit veya küçük olmalı"
+        not_a_number: "geçerli bir sayı değil"
+        odd: "tek olmalı"
+        record_invalid: "%{errors}: Onaylama başarılı değildi"
+        taken: "hali hazırda kullanılmakta"
+        too_long: "çok uzun (en fazla %{count} karakter)"
+        too_short: "çok kısa (en az %{count} karakter)"
+        wrong_length: "yanlış uzunlukta (tam olarak %{count} karakter olmalı)"
+      models:
+        user_session:
+          email: E-Posta-Adres
+          password: Parola
+          remember_me: "Kayıtlı kal"
+      template:
+        body: "Lütfen aşağıdaki hataları düzeltiniz:"
+        header:
+          one: "%{model} girişi kaydedilemedi: 1 hata."
+          other: "%{model} girişi kadedilemedi: %{count} hata."

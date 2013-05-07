@@ -1,0 +1,400 @@
+---
+sk:
+  application:
+    require_no_user:
+      notice: "Už ste prihlásený..."
+    require_user:
+      notice: "Musíte byť prihlásený aby ste videli túto stránku."
+  breadcrumbs:
+    node:
+      create: "Pridať nové miesto"
+      edit: "Upraviť miesto"
+    root: wheelmap
+  common:
+    close: zavrieť
+    skip: preskočiť
+  errors:
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "musí byť potvrdené"
+      already_confirmed: "bol už potvrdený, skúste sa prihlásiť"
+      blank: "je povinná položka"
+      confirmation: "nebolo potvrdené"
+      empty: "nesmie byť prázdny/e"
+      equal_to: "sa musí rovnať %{count}"
+      even: "musí byť párne číslo"
+      exclusion: "je vyhradené pre iný účel"
+      expired: "expiroval, prosím, vyžiadajte si nový"
+      greater_than: "musí byť väčšie ako %{count}"
+      greater_than_or_equal_to: "musí byť väčšie alebo rovné %{count}"
+      inclusion: "nie je v zozname povolených hodnôt"
+      invalid: "nie je platná hodnota"
+      less_than: "musí byť menšie ako %{count}"
+      less_than_or_equal_to: "musí byť menšie alebo rovné %{count}"
+      not_a_number: "nie je číslo"
+      not_an_integer: "musí byť celé číslo"
+      not_found: nenájdeny
+      not_locked: "nebol uzamknutý"
+      not_saved:
+        one: "%{resource} nebol uložený kôli chybe:"
+        other: "%{resource} nebol uložený kôli %{count} chybám:"
+      odd: "musí byť nepárne číslo"
+      taken: "ste už použili"
+      too_long: "je príliš dlhá/ý (max. %{count} znakov)"
+      too_short: "je príliš krátky/a (min. %{count} znakov)"
+      wrong_length: "nemá správnu dĺžku (očakáva sa %{count} znakov)"
+    template:
+      body: "Nasledujúce polia obsahujú chybne vyplnené údaje:"
+      header:
+        one: "Pri ukladaní objektu %{model} došlo k chybám a nebolo ho možné uložiť"
+        other: "Pri ukladaní objektu %{model} došlo k %{count} chybám a nebolo ho možné uložiť"
+  flash:
+    actions:
+      create:
+        notice: "Úspešné vytvorenie - %{resource_name}"
+      destroy:
+        alert: "%{resource_name} sa nepodarilo odstrániť"
+        notice: "%{resource_name} už neexistuje\n"
+      update:
+        notice: "Úspešne ste zmenili %{resource_name}"
+    photos:
+      destroy:
+        notice: "Obrázok bol úspešne zmazaný"
+  form:
+    show_fully_accessible_places: "Prístupné pre vozíčkarov"
+    show_limited_accessible_places: "čiastočne prístupne pre vozíčkarov"
+    show_places_without_status: "neznámy stav"
+    show_unaccessible_places: "neprístupné vozíčkarom"
+  formtastic:
+    hints:
+      email: "Vaša adresa je u nás v bezpečí - žiaden spam. Sľubujeme!"
+      lat: "Pohnite značkou na mape aby ste opravili polohu"
+      osm_username: "Nie ste ešte členom? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Vytvorte si účet na OpenStreetMap</a>"
+      password: "(nechajte prázdne ak nechcete zmeniť)"
+      phone: "Napríklad: +421 123 456789"
+      website: "Napríklad: http://www.example.com"
+    labels:
+      category: "Kategória:"
+      centralkey: "Spoločný kľúč:"
+      city: "Mesto:"
+      create: "Vytvoriť miesto"
+      email: E-Mail
+      finish: Dokončiť
+      housenumber: "Číslo:"
+      lat: "Zemepisná šírka"
+      lon: "Zemepisná dĺžka"
+      name: "Meno:"
+      osm_password: "OSM heslo"
+      osm_username: "Prihlasovacie meno do OSM"
+      password: Heslo
+      password_confirmation: "Zopakujte heslo"
+      phone: "Telefón:"
+      postcode: "Smerovacie číslo:"
+      privacy_policy: "Súhlasím s paragrafmi 1 a 2 súhlasu o spracovaní osobných údajov."
+      reset: Obnoviť
+      save: Uložiť
+      street: "Ulica:"
+      terms: "Súhlasím s podmienkami použitia."
+      type: "Typ:"
+      website: "Stránka:"
+      wheelchair: "Prístupnosť pre vozíčkarov?"
+      wheelchair_description: "Poznámka k prístupnosti:"
+    titles:
+      basic: "Základné údaje"
+      optional: "Ďalšie informácie <span class=\"addition\">(všetky položky sú voliteľné)</span>"
+  global:
+    form_validation_error: "Došlo k následujúcim chybám"
+  header:
+    meta:
+      description: "Nájdite miesta prístupné pre vozíčkarov - wheelmap.org"
+      homepage: "Domovská stránka"
+      keywords: "miesta prístupné pre vozíčkarov hľadať označovať"
+      search: Hľadať
+    navigation:
+      blog: Blog
+      feedback: "Spätná väzba"
+      home: Štart
+      how_to_add_a_place: "Ako pridám miesta?"
+      imprint: Impresum
+      logged_in_as: "Prihlásený ako:"
+      login: "Prihlásiť sa"
+      logout: "Odhlásiť sa"
+      newsletter: Spravodaj
+      press: Tlač
+      profile: Profil
+      suggestions: Návrhy
+      what_is_barrier_free: "Čo to znamená \"prístupné pre vozíčkarov\"?"
+      what_is_wheelmap: "Čo je to wheelmap?"
+    searchbar:
+      add_place: "Pridať ďalšie"
+      find: Nájsť
+      label: ~
+      placeholder: "napr. \"Prvá budova Matice slovenskej Martin\" alebo \"Grasalkovičov palác Bratislava\""
+      title_add_place: "Pridajte sem nové miesto!"
+    tagline: "Logo Wheelmap"
+    title: "Nájdite miesta prístupné vozíčkarom"
+  helpers:
+    select:
+      prompt: "Prosím vyberte si"
+    submit:
+      create: "Vytvoriť %{model}"
+      submit: "Uložiť %{model}"
+      update: "Aktualizovať %{model}"
+  home:
+    index:
+      filter:
+        category: "Vyberte kategóriu"
+        deselect_all: "Skryť všetko"
+        select_all: "Zobraziť všetko"
+        wheelchair: "Prístupné pre vozíčkarov?"
+      ie:
+        action:
+          ignore: Ingnorovať
+          upgrade: "Aktualizovať prehliadač"
+        warning:
+          headline: "Ospravedlňujeme sa!"
+          message: "Zdá sa že používate Internet Explorer. Wheelmap potrebuje prehliadač, ktorý zodpovedá normám. Prosím zvážte použitie niektorého z nasledovných: Firefox, Chrome, Safari alebo Opera."
+      link:
+        node:
+          create: "Pridať nové miesto"
+      popup:
+        form:
+          limited: "čiastočne prístupné pre vozíčkarov"
+          ? "no"
+          : "neprístupné vozíčkarom"
+          save: Aktualizovať
+          unknown: "neznámy stav"
+          ? "yes"
+          : "prístupné pre vozíčkarov"
+        help: "Prístupné pre vozíčkarov? (Pomoc)"
+        more: "viac ..."
+  how?: Ako?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Všetky %{type} s obmedzeným prístupom pre vozíčkarov v %{city} (%{count})"
+        ? "no"
+        :
+          headline: "Všetky %{type} neprístupné pre vozíčkarov v %{city} (%{count})"
+        unknown:
+          headline: "Všetky %{type} v meste %{city} s neznámou dostupnosťou pre vozíčkarov (%{count})\n"
+        ? "yes"
+        :
+          headline: "Všetky %{type} prístupné pre vozíčkarov v %{city} (%{count})"
+  layouts:
+    application:
+      banner:
+        alt: "Projekt od Sozialhelden.de"
+  node:
+    address:
+      city: "%{postcode} %{city}"
+      street: "%{street} %{housenumber}"
+    tags:
+      phone: "Telefón:"
+      website: "Stránka:"
+  nodes:
+    create:
+      flash:
+        not_successfull: "Ajaj, vaše zadanie bolo buď nesprávne alebo neúplné"
+        successfull: "Ďakujeme, váš príspevok bol uložený a čoskoro bude zobrazený na mape."
+    edit:
+      header:
+        title: "Upraviť miesto: %{node} | wheelmap.org"
+      link:
+        large_map: "&laquo; Zrušiť"
+    errors:
+      default: "Niečo sa nepodarilo. Problém bol zaznamenaný"
+      not_authorized: "Prihlásenie bolo neúspešné"
+      not_available: "Ospravedlňujeme sa, táto stránka je dočasne nedostupná."
+      not_existent: "Prepáčte, ale toto miesto už nie je dostupné."
+      not_found: "Prepáčte, stránka sa nenašla."
+      param_missing: "Prosím zadajte hľadaný výraz"
+    flash:
+      authorize_wheelmap: "Aby ste mohli meniť údaje potrebujete OpenStreetMsp účet"
+    new:
+      header:
+        title: "Nové miesto | wheelmap.org"
+      link:
+        large_map: "&laquo; Zrušiť"
+    node:
+      link:
+        claim: "Pracujete tu?"
+        edit_node: "Zmeniť miesto"
+        report_bug: "Nahláste problém"
+    show:
+      header:
+        title: "Miesto: %{node} | wheelmap.org"
+      link:
+        back: späť
+        large_map: Zväčšiť
+        listing: "Všetky miesta typu  '%{type}' v %{city}"
+        upload: "Nahrať obrázok"
+      more_data_from: "O tomto mieste je viac údajov, skontroloval:"
+      show-in-osm: OpenStreetMap
+    update:
+      flash:
+        not_successfull: "Zadali ste neúplné alebo nesprávne údaje"
+        successfull: "Ďakujeme. Váš príspevok bol uložený a čoskoro bude online."
+    update_wheelchair:
+      successfull: "Stav pre \"%{name}\" sa zmenil na \"%{status}\" a čoskoro bude prihlásený."
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: €
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Miliarda
+          million: Milión
+          quadrillion: Biliarda
+          thousand: Tisíc
+          trillion: Bilión
+          unit: ~
+      format:
+        delimiter: ~
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: B
+            other: B
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: " "
+    precision:
+      format:
+        delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "Aby ste mohli vytvárať alebo meniť miesta na wheelmap.org musíte si prepojiť svoj účet s OpenStreetMap účtom."
+    callback:
+      notice: "Váš účet na wheelmap je teraz prepojený s účtom %{user} na OpenStreetMap."
+  or: alebo
+  place:
+    one: "%{count} miesto"
+    other: "%{count} miest\n"
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "Stav: pripojený"
+          grant: Spojiť
+          not_connected: "Stav: Nepripojený"
+          revoke: Odpojiť
+      headline: "Upravte svoj účet"
+  search:
+    index:
+      search:
+        for: "Vyhľadávanie pre \"%{q}\""
+        not_found: "Nepodarilo sa nájsť žiadne miesta!"
+  splash:
+    countline: "%{count} miest už je označených."
+    headline: "Každý môže pridávať miesta prístupné pre vozíčkarov!"
+    start: Štart
+    step1: "Kliknite na miesto ktoré poznáte"
+    step2: "Označte to a dajte uložiť"
+    step3: "A je to! Registráciu nie je potreba"
+    what_is_wheelmap: "Čo to je wheelmap?"
+  statistics: Štatistiky
+  support:
+    array:
+      last_word_connector: " a "
+      sentence_connector: a
+      skip_last_comma: ano
+      two_words_connector: " a "
+      words_connector: ", "
+    select:
+      prompt: "Prosím vyberte"
+  time:
+    am: dopoludnia
+    formats:
+      default: "%a %d. %B %Y %H:%M %z"
+      long: "%A %d. %B %Y %H:%M"
+      short: "%d.%m. %H:%M"
+    pm: popoludní
+  user_sessions:
+    create:
+      activation:
+        notice: "Váš účet bol aktivovaný!"
+      error:
+        notice: "Email a heslo sa nezhodujú."
+      notice: Úspech!
+    destroy:
+      notice: "Dovidenia, zase sa vráťte. "
+    new:
+      email: "Emailová adresa"
+      login: "Prihlásiť sa"
+      login_with_twitter: "Prihláste sa cez Twitter"
+      password: Heslo
+      remember_me: "Ostať prihlásený"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Vitajte na wheelmap"
+        set_password_for_mobile: "Máte smartphone? Určite si heslo aby ste mohli Wheelmap používať aj na cestách vo vašom iPhone alebo telefóne s Androidom."
+        text: "Ako vás môžeme kontaktovať? Tieto údaje môžete kedykoľvek zmeniť na svojom profile."
+    edit:
+      headline:
+        your_images: "Vaše obrázky"
+  wheelchairstatus:
+    limited: "čiastočne prístupné pre vozíčkarov"
+    ? "no"
+    : "neprístupné vozíčkarom"
+    unknown: "neznámy stav"
+    ? "yes"
+    : "prístupné pre vozíčkarov"
+  wheelmap:
+    footer:
+      a_project_of: "Projekt od"
+      based_on: "Založené na"
+      become_a_supporter: "Podporte nás"
+      main_supporter: "Hlavný podporovateľ"
+    itunes:
+      alt: "Logo AppStore"
+      title: "Stiahnite si aplikáciu pre iPhone!"
+    logo:
+      alt: "Logo Wheelmap - nájdite miesta prístupné vozíčkarom"
+      title: "Wheelmap - nájdite miesta prístupné pre vozíčkarov"
+    what_is:
+      fully_accessible: "Vstup je bez schodov, všetky miestnosti sú bez schodov, záchod je prístupný ak je na danom mieste obvyklý"
+      limited_accessible: "Vstup má schod (max. výška 7cm), väčšina miestností je bez schodov, záchod nie je prístupný"
+      not_accessible: "Na vstupe je vysoký schod alebo niekoľko schodov, izby sú nedostupné\n"
+      unknown_accessible: "Pomôžte označením miest!"
+  will_paginate:
+    next_label: "Ďalej &#8594;"
+    page_entries_info:
+      multi_page: "Zobrazujem %{model} %{from} - %{to} z celkového počtu %{count}"
+      multi_page_html: "Zobrazujem %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> z celkového počtu <b>%{count}</b>\n"
+      single_page:
+        one: "Zobrazujem 1 %{model}"
+        other: "Zobrazujem všetkých %{count} %{model}"
+        zero: "%{model} nebol nájdený"
+      single_page_html:
+        one: "Zobrazujem <b>1</b> %{model}"
+        other: "Zobrazené <b>všetkých&nbsp;%{count}</b> %{model}"
+        zero: "%{model} sa nenašlo\n"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Predchádzajúci"

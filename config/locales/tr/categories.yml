@@ -1,0 +1,139 @@
+---
+tr:
+  poi:
+    category:
+      accommodation: "Konaklama Yeri"
+      education: Eğitim
+      food: Yiyecek
+      government: "Resmi Daire ve Büyük Elçilikler"
+      leisure: "Boş Vakit"
+      misc: "Diğer Şeyler"
+      money_post: "Banka & Paramatik; Posta "
+      public_transfer: Trafik/Ulaşım
+      shopping: Alışveriş
+      sport: Spor
+      tourism: Turizm
+      unknown: Belirsiz
+    name:
+      accommodation:
+        beach_resort: "Plaj Oteli"
+        bed_and_breakfast: "Kahvaltı veren Pansiyon "
+        camp_site: "Kamping Meydanı"
+        caravan_site: "Karavan Parkı"
+        chalet: Bungalov
+        guest_house: Pansiyon
+        hostel: "Öğrenci Yurdu"
+        hotel: Otel
+        motel: Motel
+      education:
+        college: Yüksekokul
+        kindergarten: "anaokulu/ yuva"
+        library: Kütüphane
+        museum: Müze
+        school: Okul
+        university: Üniversite
+      food:
+        bar: Bar
+        biergarten: "Bira bahçesi"
+        cafe: "Cafe Bar"
+        drinking_water: "Içme Suyu"
+        fast_food: "Fast Food"
+        pub: Birahane
+        restaurant: Lokanta
+      government:
+        courthouse: Adliye
+        embassy: Elçilik
+        public_building: "Resmi Bina"
+        townhall: "Belediye Binası"
+      health:
+        doctors: Doktor
+        hospital: Hastane
+        pharmacy: Eczane
+        veterinary: Veteriner
+      leisure:
+        arena: Arena
+        cinema: Sinema
+        gallery: Galeri
+        nightclub: "Gece Kulübü"
+        sauna: Sauna
+        theatre: Tiyatro
+        zoo: "Hayvanat Bahçesi"
+      misc:
+        place_of_worship: "Ibadet Yeri"
+        toilets: Tuvalet
+      money_post:
+        atm: ATM/Paramatik
+        bank: Banka
+        bureau_de_change: "Döviz bürosu"
+        post_box: "Posta Kutusu"
+        post_office: Postane
+      public_transfer:
+        aerodrome: Havaalanı
+        bicycle_parking: "Bisiklet park yeri"
+        bicycle_rental: "Bisiklet kirası"
+        boatyard: Tersana
+        bus_station: "Otobüs garajı, Otogar, Terminal"
+        bus_stop: "Otobüs durağı"
+        cable_car: Teleferik
+        car_rental: "Araba Kirası"
+        car_sharing: "Otomobil paylaşımı"
+        chair_lift: "Koltuklu teleferik"
+        ferry: Feribot
+        ferry_terminal: "Feribot terminalı"
+        fuel: "Benzin Istasyonu"
+        halt: Durak
+        light_rail: Tramvay
+        parking: Otopark
+        parking_aisle: "Otopark geçiti"
+        platform: Platform
+        station: Metro
+        subway_entrance: "Metro girişi"
+        terminal: "Havalimanı terminalı"
+        tram_stop: "Tramvay durağı"
+      shopping:
+        alcohol: "Alkollü içki"
+        bakery: Fırın
+        beverages: Içecekler
+        bicycle: "Bisiklet dükkanı"
+        books: Kitapcı
+        butcher: Kasap
+        clothes: Giyisi
+        computer: Bilgisayar
+        convenience: Kolaylık
+        department_store: "Büyük mağaza"
+        doityourself: "Kendi işini kendin yap"
+        dry_cleaning: "Kuru temizleme"
+        electronics: Elektronik
+        florist: Çiçekçi
+        furniture: "Mobilya dükkanı"
+        garden_centre: "Bahçivan dükkanı"
+        hairdresser: Kuaför
+        hardware: Hırdavat
+        kiosk: "Satış Kulübesi"
+        laundry: Çamaşirhane
+        mall: "Alışveriş merkezi"
+        optician: Gözlükçü
+        shoes: Ayakkabı
+        supermarket: Süpermarket
+      sport:
+        sports_centre: "Spor mekezi"
+        stadium: Stadyum/Stat
+        swimming: Yüzme
+        swimming_pool: "Yüzme Havuzu"
+      tourism:
+        archaeological_site: "Arkeolojik Yer"
+        arts_centre: "Kültür merkezi"
+        artwork: "Sanat eseri"
+        attraction: Atraksiyon
+        battlefield: "Savaş Meydanı"
+        beach: Kumsal
+        beacon: "Fener Kulesi"
+        castle: Hisar/Kale/Şato
+        cave_entrance: "Mağara Girişi"
+        information: "Turist bilgisi"
+        memorial: Anıt
+        theme_park: "Eğlence parkı"
+        tower: Kale/Kule
+        viewpoint: "Durulan yer"
+      unknown:
+        unknown: Belirsiz

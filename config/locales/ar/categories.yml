@@ -1,0 +1,196 @@
+---
+ar:
+  poi:
+    category:
+      accommodation: التوافق
+      education: تعليم
+      food: طعام
+      government: حكومة
+      health: صحة
+      leisure: استراحة
+      misc: متفرقات
+      money_post: "البريد البنكي"
+      public_transfer: "مواصلات عامة"
+      shopping: تسوق
+      sport: رياضة
+      tourism: سياحة
+      unknown: "غير معروف"
+    name:
+      accommodation:
+        beach_resort: "فندق على الشاطئ"
+        bed_and_breakfast: "فندق للمبيت والإفطار"
+        camp_site: "موقع للتخييم"
+        caravan_site: "موقع العربة\"كاراڨان\""
+        chalet: شاليه
+        guest_house: "بيت الضيافة"
+        hostel: فندق
+        hotel: فندق
+        motel: "نُزل "
+      education:
+        college: كلية
+        driving_school: |-
+            مدرسة تعليم القيادة
+        kindergarten: "روضة أطفال"
+        library: مكتبة
+        museum: متحف
+        school: مدرسة
+        university: جامعة
+      food:
+        bar: "بار، مشرب"
+        biergarten: "مكان عام للجلوس"
+        cafe: مقهى
+        drinking_water: "ماء للشرب"
+        fast_food: "وجبات سريعة"
+        ice_cream: |-
+            محل الآيسكريم
+        pub: حانة
+        restaurant: مطعم
+      government:
+        courthouse: المحكمة
+        embassy: سفارة
+        police: الشرطة
+        public_building: "مبنى عام"
+        townhall: "مبنى البلدية"
+      health:
+        dentist: |-
+            طبيب أسنان
+        doctors: أطباء
+        hearing_aids: "تاجر أدوات سمعية"
+        hospital: مستشفى
+        medical_supply: "مستلزمات طبية"
+        pharmacy: صيدلية
+        social_facility: "مرافق اجتماعية"
+        veterinary: "طبيب بيطري"
+      leisure:
+        arena: ميدان
+        brothel: "ماخور\"بيت دعارة\""
+        casino: "\n\n\n\
+            ملهى "
+        cinema: سينما
+        community_center: "مركز اجتماعي"
+        gallery: المعرض
+        nightclub: "ملهى ليلي"
+        playground: "ساحة لعب"
+        sauna: "حمام البخار"
+        stripclub: "نادي تعري"
+        theatre: مسرح
+        zoo: "حديقة الحيوانات"
+      misc:
+        company: شركة(مكتب)
+        estate_agent: |-
+            وكيل عقاري
+        insurance: |-
+            تأمين
+        lawyer: محامي
+        place_of_worship: "مكان للعبادة"
+        toilets: "دورات المياه"
+      money_post:
+        atm: "مكينة الصرف الآلي"
+        bank: بنك
+        bureau_de_change: "صرافة نقود"
+        post_box: "صندوق البريد"
+        post_office: "مكتب البريد"
+      public_transfer:
+        aerodrome: مطار
+        bicycle_parking: "موقف للدراجات الهوائية"
+        bicycle_rental: "لتأجير الدراجات الهوائية"
+        boatyard: "مرسى القوارب"
+        bus_station: "محطة الأوتوبيس"
+        bus_stop: "موقف أوتوبيس"
+        cable_car: "عربة كهربائية"
+        car_rental: "تأجير السيارات"
+        car_sharing: "سيارة للمشاركة"
+        chair_lift: "الكرسي لليسار"
+        ferry: "معبر مائي"
+        ferry_terminal: "محطة عبور مائي"
+        fuel: "محطة للغاز"
+        halt: موقف
+        light_rail: "القطارات الخفيفة"
+        parking: "مواقف السيارات"
+        parking_aisle: "رصيف إيقاف السيارات"
+        platform: رصيف
+        station: "قطارات الأنفاق"
+        subway_entrance: "مدخل المترو"
+        terminal: المطار
+        tram_stop: "موقف عربات الترام"
+      shopping:
+        alcohol: "مشروبات كحولية"
+        bakery: مخبز
+        beauty: |-
+            صالون تجميل
+        beverages: مشروبات
+        bicycle: "متجر الدراجات"
+        books: كتب
+        butcher: الجزار
+        car_repair: "لإصلاح السيارات"
+        car_shop: "متجر السيارات"
+        chemist: صيدلي
+        clothes: ملابس
+        computer: كمبيوتر
+        confectionery: |-
+            محل حلويات
+        convenience: راحة
+        deli: |-
+            متجر بيع الأغذية المعلبة
+        department_store: "متجر شامل"
+        doityourself: "متجر الخردوات"
+        dry_cleaning: "التنظيف الجاف"
+        electronics: "أجهزة كهربائية"
+        fabric: "\n\
+            محل الأقمشة\n\n"
+        farm_shop: |-
+            متجر تابع لمزرعة
+        florist: "بائع الزهور"
+        furniture: أثاث
+        garden_centre: "مركز الحديقة"
+        gift: |-
+            محل هدايا
+        hairdresser: "صالون تصفيف الشعر"
+        hardware: أجهزة
+        jewelry: |-
+            مجوهرات
+        kiosk: كشك
+        laundry: "مغسلة  ملابس"
+        mall: "مركز تسوق"
+        optician: "محل النظارات"
+        organic: "\n\n\
+            محل للمنتجات العضوية\n\n\n"
+        outdoor: |
+            متجر لوازم الرحلات
+        pet: |-
+            متجر الحيوانات الأليفة
+        photo: صورة
+        second_hand: "متجر البضائع المستعملة"
+        shoes: أحذية
+        sports: رياضة
+        stationery: قرطاسية
+        supermarket: سوبرماركت
+        toys: |-
+            محل ألعاب
+        travel_agency: |-
+            وكالة سفر
+        video: متجرتأجيرالڤيديو
+      sport:
+        pitch: |-
+            ساحة رياضية
+        sports_centre: نادي
+        stadium: ملعب
+        swimming: سباحة
+        swimming_pool: "بركة سباحة"
+      tourism:
+        archaeological_site: "موقع أثري"
+        arts_centre: "مركز الفنون"
+        artwork: "عمل فني"
+        attraction: "موقع جاذب للسياح"
+        battlefield: "ساحة معركة"
+        beach: الشاطئ
+        beacon: منارة
+        castle: قصر
+        cave_entrance: "مدخل الكهف"
+        information: "معلومات للسائح"
+        memorial: "نصب تذكاري"
+        theme_park: "حديقة الألعاب المائية"
+        tower: برج
+        viewpoint: "نقطة عرض"
+      unknown:
+        unknown: "غير معروف"

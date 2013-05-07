@@ -15,7 +15,11 @@ Wheelmap::Application.routes.draw do
   filter :locale
   RoutingFilter::Locale.include_default_locale = false
 
-  root :to => 'home#index'
+  scope "map" do
+    root :to => 'home#index'
+  end
+
+
 
   devise_for :users, :skip => [:sessions],
                      :controllers => {
@@ -43,8 +47,6 @@ Wheelmap::Application.routes.draw do
   resources :oauth, :only => [] do
     get :register_osm, :on => :collection
   end
-
-  resources :client_applications
 
   match 'abingo(/:action(/:id))', :to => 'abingo_dashboard', :as => :abingo
 
@@ -135,4 +137,5 @@ Wheelmap::Application.routes.draw do
   match "/ziemlich-beste-freunde",  :to => redirect("http://blog.wheelmap.org/zbf")
   match "/goeslondon",              :to => redirect("http://blog.wheelmap.org/mitmachen/goes-london/")
   match "/goes-london",             :to => redirect("http://blog.wheelmap.org/mitmachen/goes-london/")
+  match '/',                        :to => redirect("/map")
 end

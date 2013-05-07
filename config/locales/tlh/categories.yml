@@ -1,0 +1,134 @@
+---
+tlh:
+  poi:
+    category:
+      accommodation: ma'taHghach
+      education: ghojmoHghach
+      food: Sop
+      government: qum
+      leisure: tIvtaHghach
+      misc: latlh
+      money_post: "Huch QumwI' je Suy"
+      public_transfer: Qay
+      shopping: Suymey
+      sport: Qujmey
+      tourism: SuchwI'
+      unknown: Sovbe'ghach
+    name:
+      accommodation:
+        beach_resort: "bIQ'a' HeHDaq mebpa'mey"
+        bed_and_breakfast: "QongDaq nIQ je"
+        camp_site: "raQ Daq"
+        caravan_site: "rutlhmey ghajbogh juH Daq"
+        chalet: juH'a'
+        guest_house: "meb qach"
+        hostel: "mebpa'mey qutlh"
+        hotel: mebpa'mey
+        motel: mebpa'Hommey
+      education:
+        college: "'ampaS"
+        kindergarten: "puq DuSaQ"
+        library: "paq qach"
+        museum: "Doch ngo'meH Daq"
+        school: DuSaQ
+        university: DuSaQ'a'
+      food:
+        bar: tach
+        biergarten: "HIq tlhutlhmeH Hur Daq"
+        cafe: "SopmeH DaqHom"
+        drinking_water: "bIQ tlhutlhbogh"
+        fast_food: "moD Soj"
+        pub: tach
+        restaurant: Qe'
+      government:
+        courthouse: "chut qach"
+        embassy: rIvSo'
+        public_building: "wo' qach"
+        townhall: "veng vaS"
+      leisure:
+        arena: "SuvmeH Daq"
+        cinema: "vIHbogh much Daq"
+        gallery: "nagh beQ qach"
+        nightclub: "mI'meH qach"
+        sauna: "chebmey ghurHa'meH tuj lo'bogh Daq"
+        theatre: "much qach"
+        zoo: "HaDI'baH qach"
+      misc:
+        place_of_worship: ghIn
+        toilets: puchpa'mey
+      money_post:
+        atm: "Huch nobwI'"
+        bank: "Huch Suy"
+        bureau_de_change: "Huch choHmeH Daq"
+        post_box: "QIn ngeHmeH ngaSwI'"
+        post_office: "QIn ngeHmeH Daq"
+      public_transfer:
+        aerodrome: "muD Duj juH"
+        bicycle_parking: "cha' rutlh lupwI' leSmeH Daq"
+        bicycle_rental: "cha' rutlh lupwI' ngIpmeH Daq"
+        boatyard: "bIQDuj Daq"
+        bus_station: "lupwI' waw'"
+        bus_stop: "lupwI' mevmeH Daq"
+        cable_car: lupwI'
+        car_rental: "loS rutlh lupwI' ngIpmeH Daq"
+        car_sharing: "loS rutlh lupwI'Daq quS ngIpmeH Daq"
+        chair_lift: "quS qengwI'"
+        ferry: bIQDuj'a'
+        ferry_terminal: "bIQDuj'a' tIJmeH Daq"
+        fuel: "nIn SuqmeH Daq"
+        halt: mev
+        light_rail: lupwI'Hom
+        parking: "loS rutlh lupwI' leSmeH Daq"
+        parking_aisle: "loS rutlh lupwI' leSmeH tlhegh"
+        platform: "lupwI'Hom tIjmeH Daq"
+        station: "wutlh lupwI'"
+        subway_entrance: "wutlh lupwI' DIn"
+        terminal: "muD Duj tIjmeH Daq"
+        tram_stop: "lupwI' tIjmeH Daq"
+      shopping:
+        alcohol: "HIq Suy"
+        bakery: "tIr ngogh Suy"
+        beverages: "HIvje' Suy"
+        bicycle: "cha' rutlh DujHom Suy"
+        books: paqmey
+        butcher: "Ha'DIbaH Suy"
+        clothes: "Sut Suy"
+        computer: De'wI'
+        convenience: "HochHom Suy"
+        department_store: "Doch law' Suy"
+        doityourself: bIta''egh
+        dry_cleaning: "Say'wI' QaD"
+        electronics: "'ul lo'bogh Doch Suy"
+        florist: "poch Suy"
+        furniture: "quS QongDaq je Suy"
+        garden_centre: "poch Suy"
+        hairdresser: "jIb Say'moHmeH"
+        hardware: "chenmoHwI' jan Suy"
+        kiosk: SuyHom
+        laundry: "Sut Say'moHmeH "
+        mall: Suy'a'
+        optician: "mIn Qel"
+        shoes: waqmey
+        supermarket: "Sop Suy'a'"
+      sport:
+        sports_centre: "Quj QujmeH Daq"
+        stadium: "Quj bejmeH Daq"
+        swimming: "bIQ Quj"
+        swimming_pool: "bIQ Quj Daq"
+      tourism:
+        archaeological_site: "Daq tIQ"
+        arts_centre: "nagh beQ qach"
+        artwork: "nagh beQ"
+        attraction: "Doch leghbogh SuchwI'"
+        battlefield: che'ron
+        beach: "bIQ'a' HeH"
+        beacon: "wovmoHwI' qach"
+        castle: waw'
+        cave_entrance: "DIS lojmIt"
+        information: "SuchwI' De'"
+        memorial: "SuvwI' qawwI'"
+        theme_park: "Qujmey Daq"
+        tower: chalqach
+        viewpoint: "Hatlh leghmeH Daq"
+      unknown:
+        unknown: "pagh pong"

@@ -1,0 +1,178 @@
+---
+se:
+  poi:
+    category:
+      accommodation: Boende
+      education: Utbildning
+      food: "Mat & Dryck"
+      government: Myndighet
+      health: "Hälsa & Sjukvård"
+      leisure: "Fritid & Kultur"
+      misc: Blandat
+      money_post: "Bank & Post"
+      public_transfer: Trafik
+      shopping: Shopping
+      sport: Idrott
+      tourism: Turism
+      unknown: Okänt
+    name:
+      accommodation:
+        beach_resort: Strandhotell
+        bed_and_breakfast: "Bed & breakfast\n"
+        camp_site: Campingplats
+        caravan_site: Husvagnsplats
+        chalet: Stuga
+        guest_house: Värdshus
+        hostel: Vandrarhem
+        hotel: Hotell
+        motel: Motell
+      education:
+        college: Högskola
+        driving_school: Trafikskola
+        kindergarten: Förskola
+        library: Bibliotek
+        museum: Museum
+        school: Skola
+        university: Universitet
+      food:
+        bar: Bar
+        biergarten: Biergarten
+        cafe: Café
+        drinking_water: Dricksvatten
+        fast_food: Snabbmat
+        ice_cream: Glassbar
+        pub: Pub
+        restaurant: Restaurang
+      government:
+        courthouse: Domstol
+        embassy: Ambassad
+        government: Servicekontor
+        police: Polis
+        public_building: "Publik byggnad"
+        townhall: Stadshus
+      health:
+        dentist: Tandläkare
+        doctors: Läkare
+        hearing_aids: Hörcentral
+        hospital: Sjukhus
+        medical_supply: "Medicinsk utr."
+        pharmacy: Apotek
+        social_facility: Socialkontor
+        veterinary: Veterinär
+      leisure:
+        arena: Arena
+        brothel: Bordell
+        casino: Casino
+        cinema: Bio
+        community_center: Allaktivitetshus
+        gallery: Galleri
+        nightclub: Nattklubb
+        playground: Lekplats
+        sauna: Bastu
+        stripclub: Stripklubb
+        theatre: Teater
+        zoo: Zoo
+      misc:
+        company: Företagskontor
+        estate_agent: Fastighetsmäklare
+        insurance: Försäkringar
+        lawyer: Advokat
+        place_of_worship: "Religiös plats"
+        toilets: Toalett
+      money_post:
+        atm: Bankomat
+        bank: Bank
+        bureau_de_change: Växelkontor
+        post_box: Postlåda
+        post_office: Postkontor
+      public_transfer:
+        aerodrome: Flygplats
+        bicycle_parking: Cykelparkering
+        bicycle_rental: Cykeluthyrning
+        boatyard: Båtvarv
+        bus_station: Busstation
+        bus_stop: Busshållplats
+        cable_car: Linbana
+        car_rental: Biluthyrning
+        car_sharing: Samåkning
+        chair_lift: Stolslift
+        ferry: Färja
+        ferry_terminal: Färjeterminal
+        fuel: Bensinstation
+        halt: Hållplats
+        light_rail: Spårväg
+        parking: Parkering
+        parking_aisle: "Väg på parkeringsplats"
+        platform: Plattform
+        station: Tunnelbana
+        subway_entrance: Tunnelbaneingång
+        terminal: Flygplats-terminal
+        tram_stop: Spårvagnshållplats
+      shopping:
+        alcohol: Alkohol
+        bakery: Bageri
+        beauty: Skönhetssalong
+        beverages: Drycker
+        bicycle: Cykelaffär
+        books: Böcker
+        butcher: Köttaffär
+        car_repair: Bilverkstad
+        car_shop: Bilförsäljning
+        chemist: Kosmetika
+        clothes: Kläder
+        computer: Datorer
+        confectionery: Godisaffär
+        convenience: Närbutik
+        deli: Delikatesser
+        department_store: Varuhus
+        doityourself: "Gör det själv"
+        dry_cleaning: Kemtvätt
+        electronics: Elektronik
+        fabric: Bygghandel
+        farm_shop: Lantbruksutrustning
+        florist: Blomsteraffär
+        furniture: Möbler
+        garden_centre: Plantskola
+        gift: Presentbutik
+        hairdresser: Frisör
+        hardware: Järnhandel
+        jewelry: Smycken
+        kiosk: Kiosk
+        laundry: Tvätt
+        mall: Köpcentrum
+        optician: Optiker
+        organic: Hälsokost
+        outdoor: Friluftsutrustning
+        pet: Djurbutik
+        photo: Foto
+        second_hand: Begagnat
+        shoes: Skor
+        sports: Sport
+        stationery: Kontorsmateriel
+        supermarket: Livsmedel
+        toys: Leksaker
+        travel_agency: Resebyrå
+        video: Videouthyrning
+      sport:
+        pitch: Idrottsplats
+        sports_centre: Sportcenter
+        stadium: Idrottsarena
+        swimming: Bad
+        swimming_pool: Simbassäng
+      tourism:
+        archaeological_site: "Arkeologisk plats"
+        arts_centre: Kulturcenter
+        artwork: Konstverk
+        attraction: Attraktion
+        battlefield: Slagfält
+        beach: Strand
+        beacon: Fyr
+        castle: Slott
+        cave_entrance: Gruvingång
+        information: Turistinformation
+        memorial: Minnesplats
+        theme_park: Nöjespark
+        tower: Torn
+        viewpoint: Utsiktsplats
+      unknown:
+        unknown: Okänt

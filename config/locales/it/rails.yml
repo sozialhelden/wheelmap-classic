@@ -1,0 +1,37 @@
+---
+it:
+  activerecord:
+    errors:
+      full_messages:
+        format: "%{attribute}%{message}"
+      messages:
+        accepted: "deve essere accettato"
+        blank: "non può essere lasciato in bianco"
+        confirmation: "non coincide con la conferma"
+        empty: "non può essere vuoto"
+        equal_to: "deve essere uguale a %{count}"
+        even: "deve essere pari"
+        exclusion: "è riservato"
+        greater_than: "deve essere superiore a %{count}"
+        greater_than_or_equal_to: "deve essere superiore o uguale a %{count}"
+        inclusion: "non è incluso nella lista"
+        invalid: "non è valido"
+        less_than: "deve essere meno di %{count}"
+        less_than_or_equal_to: "deve essere meno o uguale a %{count}"
+        not_a_number: "non è un numero"
+        odd: "deve essere dispari"
+        record_invalid: "Validazione fallita: %{errors}"
+        taken: "è già in uso"
+        too_long: "è troppo lungo (il massimo è %{count} caratteri)"
+        too_short: "è troppo corto (il minimo è %{count} caratteri)"
+        wrong_length: "è della lunghezza sbagliata (deve essere di %{count} caratteri)"
+      models:
+        user_session:
+          email: "Indirizzo e-mail"
+          password: Password
+          remember_me: "Resta collegato"
+      template:
+        body: "Sono stati riscontrati dei problemi nei seguenti campi:"
+        header:
+          one: "Un errore ha impedito il salvataggio di questo %{model}"
+          other: "Non può essere salvato questo %{model}: %{count} errori."

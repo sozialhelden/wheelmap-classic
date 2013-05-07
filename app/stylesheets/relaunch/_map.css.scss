@@ -1,0 +1,62 @@
+section#map {
+  position: absolute;
+  top: $headerHeight + $toolbarHeight;
+  bottom: $footerHeight + 2;
+  left: 0;
+  width: 100%;
+  background: #E8E0D8;
+  z-index: 50;
+  @media screen and (max-width:$breakTablet) {
+      top: $headerHeight;
+      bottom: $toolbarHeight;
+  } 
+}
+
+.leaflet-marker-icon, .leaflet-div-icon, .leaflet-clickable, .leaflet-zoom-animated-div-icon {
+  border: 0px solid red !important;
+}
+
+.leaflet-popup{
+  padding: 10px;
+  @include border-radius(2px);
+}
+
+.leaflet-marker-icon {
+
+  background: transparent url('/images/marker-sprites.png') no-repeat;
+
+  @include if-min-resolution(1.3) {
+    background: transparent url('/images/marker-sprites@2x.png') no-repeat;
+    background-size: 29px 128px;
+  }
+
+  &.wheelchair_hidden {
+    display: none;
+  }
+
+  &.category_hidden {
+    display: none;
+  }
+
+  &.yes{
+    background-position: 0 0;
+    width: 29px;
+    height: 32px;
+  }
+  &.limited{
+    background-position: 0 -32px;
+    width: 29px;
+    height: 32px;
+  }
+  &.no{
+    background-position: 0 -64px;
+    width: 29px;
+    height: 32px;
+  }
+  &.unknown{
+    background-position: 0 -96px;
+    width: 29px;
+    height: 32px;
+  }
+
+}

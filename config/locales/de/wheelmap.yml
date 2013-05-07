@@ -1,0 +1,402 @@
+---
+de:
+  application:
+    require_no_user:
+      notice: "Du bist bereits eingeloggt…"
+    require_user:
+      notice: "Du musst dich anmelden, um diese Seite zu sehen."
+  breadcrumbs:
+    node:
+      create: "Neuen Ort anlegen"
+      edit: "Ort bearbeiten"
+    root: wheelmap-Karte
+  common:
+    close: schließen
+    skip: Überspringen
+  errors:
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "muss akzeptiert werden"
+      already_confirmed: "wurde bereits bestätigt"
+      blank: "muss ausgefüllt werden"
+      confirmation: "stimmt nicht mit der Bestätigung überein"
+      empty: "muss ausgefüllt werden"
+      equal_to: "muss genau %{count} sein"
+      even: "muss gerade sein"
+      exclusion: "ist nicht verfügbar"
+      expired: "ist abgelaufen, bitte neu anfordern"
+      greater_than: "muss größer als %{count} sein"
+      greater_than_or_equal_to: "muss größer oder gleich %{count} sein"
+      inclusion: "ist kein gültiger Wert"
+      invalid: "ist nicht gültig"
+      less_than: "muss kleiner als %{count} sein"
+      less_than_or_equal_to: "muss kleiner oder gleich %{count} sein"
+      not_a_number: "ist keine Zahl"
+      not_an_integer: "muss eine Zahl sein"
+      not_found: "nicht gefunden"
+      not_locked: "war nicht gesperrt"
+      not_saved:
+        one: "Ein Fehler hat das Speichern von %{resource} verweigert:"
+        other: "%{count} Fehler: %{resource} verweigerte das Speichern:"
+      odd: "muss ungerade sein"
+      taken: "ist bereits vergeben"
+      too_long: "ist zu lang (nicht mehr als %{count} Zeichen)"
+      too_short: "ist zu kurz (nicht weniger als %{count} Zeichen)"
+      wrong_length: "hat die falsche Länge (muss genau %{count} Zeichen haben)"
+    template:
+      body: "Bitte überprüfen Sie die folgenden Felder:"
+      header:
+        one: "Konnte dieses %{model}-Objekt nicht speichern, da Fehler auftrat."
+        other: "Konnte dieses %{model}-Objekt nicht speichern, da %{count} Fehler auftraten."
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} wurde erfolgreich angelegt."
+      destroy:
+        alert: "%{resource_name} konnte nicht entfernt werden."
+        notice: "%{resource_name} wurde erfolgreich entfernt."
+      update:
+        notice: "%{resource_name} wurde erfolgreich aktualisiert."
+    photos:
+      destroy:
+        notice: "Bild wurde erfolgreich entfernt."
+  form:
+    show_fully_accessible_places: Ja
+    show_limited_accessible_places: Teilweise
+    show_places_without_status: "unbekannter Status"
+    show_unaccessible_places: "nicht rollstuhlgerecht"
+  formtastic:
+    hints:
+      email: "Wir behandeln Deine Adresse vertraulich, kein Spam. Versprochen!"
+      lat: "Bewegen Sie den Marker auf der Karte"
+      osm_username: "Noch nicht Mitglied? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Openstreetmap Benutzerkonto anlegen</a>"
+      password: "(leer lassen, wenn du es nicht ändern möchtest)"
+      phone: "Beispiel: +49 30 123456-78"
+      website: "Beispiel: http://www.example.com"
+    labels:
+      category: "Kategorie:"
+      centralkey: "Zentralschlüssel:"
+      city: "Ort:"
+      create: "Ort anlegen"
+      email: E-Mail
+      finish: Fertigstellen
+      housenumber: "Nr:"
+      lat: Breitengrad
+      lon: Längengrad
+      name: "Name:"
+      osm_password: OSM-Passwort
+      osm_username: OSM-Mitgliedsname
+      password: Passwort
+      password_confirmation: "Passwort wiederholen"
+      phone: "Telefon:"
+      postcode: "PLZ:"
+      privacy_policy: "Ich stimme Ziffer 1 und 2 der Datenschutzbestimmungen zu."
+      reset: Reset
+      save: Speichern
+      street: "Straße:"
+      terms: "Ich stimme den Nutzungsbedingungen zu."
+      type: "Typ:"
+      website: "Webseite:"
+      wheelchair: Rollstuhlgerecht?
+      wheelchair_description: "Info zu Barrierefreiheit:"
+    titles:
+      basic: Basisdaten
+      optional: "Mehr Infos <span class=\"addition\">(alle Felder sind optional)</span>"
+  global:
+    form_validation_error: "Bitte beachte die unten angezeigten Fehlermeldungen."
+  header:
+    meta:
+      description: "Stufen hier, Treppen da oder keine Behindertentoiletten - dank Wheelmap wissen Sie jetzt im Vorhinein, ob ein Museum, eine Kino oder das nächste Restaurant rollstuhlgerecht sind."
+      homepage: Startseite
+      keywords: "rollstuhl gerechte Orte finden suchen markieren"
+      search: Suche
+    navigation:
+      blog: News
+      feedback: Feedback
+      home: Start
+      how_to_add_a_place: "Wie trage ich Orte ein?"
+      imprint: Impressum
+      logged_in_as: "Eingeloggt als:"
+      login: Login
+      logout: Logout
+      newsletter: Newsletter
+      press: Presse
+      profile: Profil
+      suggestions: Anregungen
+      what_is_barrier_free: "Was bedeutet „rollstuhlgerecht“?"
+      what_is_wheelmap: "Was ist Wheelmap?"
+    searchbar:
+      add_place: "Ort hinzufügen"
+      find: Finden
+      label: ~
+      placeholder: "Nach Ort suchen"
+      title_add_place: "Jetzt einen neuen Ort an dieser Stelle hinzufügen"
+    tagline: "Wheelmap logo"
+    title: "Rollstuhlgerechte Orte finden"
+  helpers:
+    select:
+      prompt: "Bitte auswählen"
+    submit:
+      create: "%{model} anlegen"
+      submit: "%{model} speichern"
+      update: "%{model} aktualisieren"
+  home:
+    index:
+      filter:
+        category: "Kategorie wählen"
+        deselect_all: "Alle deaktivieren"
+        select_all: "Alle auswählen"
+        wheelchair: Rollstuhlgerecht?
+      ie:
+        action:
+          ignore: Ignorieren
+          upgrade: "Browser aktualisieren"
+        warning:
+          headline: Entschuldigung!
+          message: "Offenbar verwendest Du Internet Explorer. Wheelmap benötigt einen standard-konformen Browser, um korrekt zu funktionieren. Bitte verwende Firefox, Chrome, Safari oder Opera."
+      link:
+        node:
+          create: "Neuen Ort anlegen"
+      popup:
+        form:
+          limited: "Teilweise rollstuhlgerecht"
+          ? "no"
+          : "Nicht rollstuhlgerecht"
+          save: Speichern
+          unknown: "Unbekannter Status"
+          ? "yes"
+          : "Voll Rollstuhlgerecht"
+        help: "Rollstuhlgerecht? (Hilfe)"
+        more: "mehr ..."
+  how?: Wie?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Alle rollstuhlgerechten %{type} in %{city} (%{count})"
+        ? "no"
+        :
+          headline: "Alle nicht rollstuhlgerechten %{type} in %{city} (%{count})"
+        unknown:
+          headline: "Alle %{type} in %{city} mit unbekanntem Rollstuhlstatus (%{count})"
+        ? "yes"
+        :
+          headline: "Alle rollstuhlgerechten %{type} in %{city} (%{count})"
+  layouts:
+    application:
+      banner:
+        alt: "Ein Projekt der Sozialhelden.de"
+  node:
+    address:
+      city: "%{postcode} %{city}"
+      street: "%{street} %{housenumber}"
+    tags:
+      phone: "Telefon:"
+      website: "Website:"
+  nodes:
+    create:
+      flash:
+        not_successfull: "Oops, die Angaben sind noch unvollständig oder inkorrekt."
+        successfull: "Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert."
+    edit:
+      header:
+        title: "Ort bearbeiten: %{node} | wheelmap.org"
+      link:
+        large_map: "&laquo; Abbrechen"
+    errors:
+      default: "Oops, das ist was schief gegangen. Wir wurden aber darüber informiert!"
+      not_authorized: "Authentifizierung fehlgeschlagen"
+      not_available: "Leider steht diese Seite zur Zeit nicht zur Verfügung"
+      not_existent: "Leider ist dieser Ort nicht mehr da"
+      not_found: "Leider konnte die Seite nicht gefunden werden"
+      param_missing: "Bitte einen Suchbegriff eingeben."
+    flash:
+      authorize_wheelmap: "Um Daten zu ändern benötigst Du einen OpenStreetMap Account."
+    new:
+      header:
+        title: "Neuer Ort | wheelmap.org"
+      link:
+        large_map: "&laquo; Abbrechen"
+    node:
+      link:
+        claim: "Du arbeitest hier?"
+        edit_node: "Ort bearbeiten"
+        report_bug: "Problem melden"
+    show:
+      header:
+        title: "Ort: %{node} | wheelmap.org"
+      link:
+        back: zurück
+        large_map: "Ansicht vergrößern"
+        listing: "Alle Orte vom Typ '%{type}' in %{city}"
+        upload: "Bild hochladen"
+      more_data_from: "Zu diesem Ort gibt es weitere Daten, qualifiziert von:"
+      show-in-osm: "in Openstreetmap anzeigen"
+    update:
+      flash:
+        not_successfull: "Oops, die Angaben sind noch unvollständig oder inkorrekt."
+        successfull: "Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert."
+    update_wheelchair:
+      successfull: "Der Status des Ortes \"%{name}\" wurde in \"%{status}\" geändert und wird demnächst aktualisiert."
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: 0
+        strip_insignificant_zeros: 0
+        unit: €
+    format:
+      delimiter: "."
+      precision: 2
+      separator: ","
+      significant: 0
+      strip_insignificant_zeros: 0
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Milliarde
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Tausend
+          trillion: Trillion
+          unit: ~
+      format:
+        delimiter: ~
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ~
+    precision:
+      format:
+        delimiter: ~
+  oauth:
+    application:
+      connect:
+        headline: "Bevor du auf wheelmap.org Orte bearbeiten bzw. anlegen kannst, musst du dein Benutzerkonto mit Openstreetmap verbinden."
+    callback:
+      notice: "Dein Benutzerkonto wurde erfoglreich mit dem OpenStreetMap-Benutzerkonto von '%{user}' verbunden."
+  or: oder
+  place:
+    one: "%{count} Ort"
+    other: "%{count} Orte"
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "Status: verbunden"
+          grant: "Jetzt verbinden"
+          not_connected: "Status: nicht verbunden"
+          revoke: "Verbindung aufheben"
+      headline: "Dein Profil bearbeiten"
+  search:
+    index:
+      search:
+        for: "Suche nach \"%{q}\""
+        not_found: "Es wurden keine Orte gefunden!"
+  splash:
+    countline: "%{count} Orte wurden schon markiert."
+    headline: "Jeder kann rollstuhlgerechte Orte eintragen!"
+    start: Start
+    step1: "Klicke auf einen Ort, den du kennst."
+    step2: "Markiere ihn und klicke auf \"speichern\"."
+    step3: "Fertig! Keine Registrierung nötig!"
+    what_is_wheelmap: "Was ist Wheelmap?"
+  statistics: Statistik
+  support:
+    array:
+      last_word_connector: ", und"
+      sentence_connector: und
+      skip_last_comma: true
+      two_words_connector: " und "
+      words_connector: ","
+    select:
+      prompt: "Bitte auswählen"
+  time:
+    am: vormittags
+    formats:
+      default: "%A, %e. %B %Y, %H:%M Uhr"
+      long: "%A, %e. %B %Y, %H:%M Uhr"
+      short: "%e. %B, %H:%M Uhr"
+    pm: nachmittags
+  user_sessions:
+    create:
+      activation:
+        notice: "Dein Benutzerkonto ist nun freigeschaltet!"
+      error:
+        notice: "E-Mail-Adresse und Passwort passen nicht zueinander."
+      notice: "Du bist jetzt drin!"
+    destroy:
+      notice: "Tschüss, bis bald!"
+    new:
+      email: "E-mail Adresse"
+      login: "Log in"
+      login_with_twitter: "Mit Twitter einloggen"
+      password: Passwort
+      remember_me: "Eingeloggt bleiben"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Fast geschafft! Jetzt noch den Wheelmap-Account fertigstellen:"
+        set_password_for_mobile: |-
+            Du hast Dich erfolgreich bei OpenStreetMap angemeldet.
+            Wähle jetzt noch die Email-Adresse und das Passwort für Deinen Wheelmap-Account aus. Du brauchst diese Email-Adresse und das Passwort, um dich in der Wheelmap-App für iPhone und Android einloggen zu können.
+        text: "Du bist nun erfolgreich registriert. Wie können wir dich in Zukunft über wichtige Neuigkeiten rund um die Wheelmap informieren?"
+    edit:
+      headline:
+        your_images: "Deine hochgeladenen Bilder"
+  wheelchairstatus:
+    limited: "teilweise rollstuhlgerecht"
+    ? "no"
+    : "Nicht rollstuhlgerecht"
+    unknown: "Unbekannter Status"
+    ? "yes"
+    : "Voll Rollstuhlgerecht"
+  wheelmap:
+    footer:
+      a_project_of: "Ein Projekt der"
+      based_on: "Basiert auf"
+      become_a_supporter: "Förderer werden"
+      main_supporter: Hauptförderer
+    itunes:
+      alt: "AppStore Logo"
+      title: "Jetzt iPhone App herunterladen!"
+    logo:
+      alt: "Wheelmap Logo - Rollstuhlgerechte Orte finden"
+      title: "Wheelmap - Rollstuhlgerechte Orte finden"
+    what_is:
+      fully_accessible: "Eingang stufenlos, alle Räume stufenlos, mit behindertengerechtem WC, falls ortsüblich."
+      limited_accessible: "Eingang max 1 Stufe (7cm hoch), die wichtigsten Räume stufenlos, WC egal."
+      not_accessible: "Eingang hat höhere oder mehrere Stufen, Räume nicht erreichbar."
+      unknown_accessible: "Hilf mit und markiere diese Orte!"
+  will_paginate:
+    next_label: "Vor &#8594;"
+    page_entries_info:
+      multi_page: "Zeige %{model} %{from} - %{to} von %{count} insgesamt "
+      multi_page_html: "Zeige %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> von <b>%{count}</b> insgesamt"
+      single_page:
+        one: "Zeige 1 %{model}"
+        other: "Zeige alle %{count} %{model} "
+        zero: "Nicht %{model} gefunden"
+      single_page_html:
+        one: "Zeige <b>1</b> %{model} "
+        other: "Zeige <b>all&nbsp;%{count}</b> %{model} "
+        zero: "Nicht %{model} gefunden "
+    page_gap: " &hellip; "
+    previous_label: "&#8592; Zurück"
