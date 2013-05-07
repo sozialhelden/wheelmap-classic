@@ -91,9 +91,11 @@ fr:
       password_confirmation: "Répéter le mot de passe"
       phone: "Téléphone:"
       postcode: "Code postal:"
+      privacy_policy: "J'accepte l'alinéa 1 et 2 de la règlementation de protection de données"
       reset: Reset
       save: Sauvegarder
       street: "Rue:"
+      terms: "J'accepte les conditions d'utilisation"
       type: "Type:"
       website: "Site web:"
       wheelchair: "Accessible en fauteuil roulant?"
@@ -351,8 +353,8 @@ fr:
   users:
     after_signup_edit:
       welcome:
-        headline: "C'est presque fini!"
-        set_password_for_mobile: "Tu possèdes un Smartphone? Crée ici ton mot de passe pour pouvoir utiliser la Wheelmap également sur ton iPhone ou sur ton smartphone androïde."
+        headline: "C'est presque fini! Reste à compléter le compte Wheelmap"
+        set_password_for_mobile: "Tu t'es enrestré avecsuccès chez OpenStreetMap.Choisis encore l'adresse mail et le mot de pass pour ton compte Wheelmap. Tu as besoin de cette adresse mail et du mot de pass pour te connecter sur l'application Wheelmap pour iPhone et Androide."
         text: "Vous vous êtes connectez avec succès. A l'avenir, comment pouvons nous vous informer des nouveautés de Wheelmap?"
     edit:
       headline:
