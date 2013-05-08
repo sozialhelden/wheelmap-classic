@@ -138,7 +138,7 @@
         '_http_accept'                        : 'application/javascript'
       };
       $('input#photo_image').uploadify({
-        'swf'               : '/uploadify.swf',
+        'swf'               : '#{image_path("uploadify.swf")}',
         'uploader'          : $('input#photo_image').attr('rel'),
         'fileObjName'       : 'photo[image]',
         'fileTypeExts'      : '*.png;*.jpg;*.gif;*.jpeg',
