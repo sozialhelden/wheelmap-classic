@@ -132,6 +132,16 @@
 - if user_signed_in?
   - content_for :javascript do
     :javascript
+      $('#thumbs a').lightBox({
+        fixedNavigation: true,
+        imageLoading:  '#{image_path("lightbox-ico-loading.gif")}',
+        imageBtnClose: '#{image_path("lightbox-btn-close.gif")}',
+        imageBtnPrev:  '#{image_path("lightbox-btn-prev.gif")}',
+        imageBtnNext:  '#{image_path("lightbox-btn-next.gif")}',
+        imageBlank:    '#{image_path("lightbox-blank.gif")}',
+        txtOf: '/'
+      });
+
       var upload_params = {
         '#{key}'                              : '#{cookies[key]}',
         '#{request_forgery_protection_token}' : '#{form_authenticity_token}',
