@@ -44,6 +44,7 @@ map.on('movestart', function(e) {
   if (zoomed === true || padded_bounds !== null && !padded_bounds.contains(map.getBounds())) {
     $.cookie('last_lat', map.getCenter().lat, { expires: 7, path: '/'});
     $.cookie('last_lon', map.getCenter().lng, { expires: 7, path: '/'});
+    update_permalink('.createlink');
     requestNodes(e.target.getBounds());
     padded_bounds = null;
     zoomed = false;
@@ -52,6 +53,7 @@ map.on('movestart', function(e) {
   zoomed = true;
 }).on('zoomend', function(e){
   $.cookie('last_zoom', map.getZoom(), { expires: 7, path: '/'});
+  update_permalink('.createlink');
 }).on('popupopen', function(e) {
   window.node_id = e.popup._source.feature.properties.id.toString();
   var wheelchair_class = e.popup._source.feature.properties.wheelchair;
@@ -64,6 +66,10 @@ map.on('movestart', function(e) {
 }).on('popupclose', function(e){
    window.node_id = null;
 });
+
+function update_permalink(selector) {
+  $(selector).attr('href', window.location.origin  + '/nodes/new?' + jQuery.param({lat: map.getCenter().lat,lon: map.getCenter().lng,zoom: 17}));
+}
 
 function requestNodes(bounds) {
   geojson_layer.fire('data:loading');

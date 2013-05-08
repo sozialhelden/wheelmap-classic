@@ -2,8 +2,8 @@ $(document).ready(function() {
 
   I18n.defaultLocale = 'de';
   I18n.locale = $('html').attr('lang');
-  
-  
+
+
   $(['yes', 'no', 'limited', 'unknown']).each(function(index, item){
     if ($.cookie('filter_'+item)) {
       $('.status-filter button.'+item).addClass('active');
@@ -29,12 +29,12 @@ $(document).ready(function() {
   $('.status-filter button').click(function() {
     $('.popover').fadeOut(300);
   })
-  
+
   if (!$.cookie('_wheelmap_first_time_visitor')) {
     $('.overlay-wrapper').addClass('show-overlay');
     $.cookie('_wheelmap_first_time_visitor', true, { expires: 1000 });
   }
-  
+
   $('.show-overlay').fadeIn(1200);
   $('.lookup').delay(1500).fadeIn(400);
   $('.filter').delay(3500).fadeIn(400);
@@ -78,6 +78,7 @@ $(document).ready(function() {
     });
   }
 
+  update_permalink('.createlink');
   requestNodes(map.getBounds());
 
 });
