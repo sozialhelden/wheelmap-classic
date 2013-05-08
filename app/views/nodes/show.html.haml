@@ -139,7 +139,7 @@
       };
       $('input#photo_image').uploadify({
         'swf'               : '#{image_path("uploadify.swf")}',
-        'uploader'          : $('input#photo_image').attr('rel'),
+        'uploader'          : '#{node_photos_url(@node)}',
         'fileObjName'       : 'photo[image]',
         'fileTypeExts'      : '*.png;*.jpg;*.gif;*.jpeg',
         'fileSizeLimit'     : '4MB',
