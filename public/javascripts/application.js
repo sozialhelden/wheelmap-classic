@@ -211,7 +211,7 @@ function placesStyle() {
       strokeDashstyle: "solid",
       pointRadius: "${radius}",
       cursor: "pointer",
-      externalGraphic: "${marker}",
+      externalGraphic: "http://asset0.wheelmap.org/marker/undefined.png",
       graphicWidth: 32,
       graphicHeight: 37,
       graphicXOffset: -16,
