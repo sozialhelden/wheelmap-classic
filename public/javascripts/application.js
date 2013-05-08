@@ -699,15 +699,6 @@ $(function () {
     map.getControlsByClass('OpenLayers.Control.KeyboardDefaults')[0].activate();
   });
 
-  $('#thumbs a').lightBox({
-    fixedNavigation: true,
-    imageLoading:  '/images/spinner.gif',
-    imageBtnClose: '/images/lightbox-btn-close.gif',
-    imageBtnPrev:  '/images/lightbox-btn-prev.gif',
-    imageBtnNext:  '/images/lightbox-btn-next.gif',
-    txtOf: '/'
-  });
-
   if (getURLParameter('q') != 'null' && $('#search').val() == '') {
       $('#search').val(getURLParameter('q'));
   }
