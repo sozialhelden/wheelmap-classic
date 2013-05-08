@@ -86,7 +86,7 @@
   -# TODO reebable photo feature
   - if user_signed_in?
     - if current_user.terms?
-      = semantic_form_for [@node, Photo.new], :url => node_photos_path(@node), :html => { :multipart => true } do |form|
+      = semantic_form_for [@node, Photo.new], :url => node_photos_url(@node), :html => { :multipart => true } do |form|
         = form.file_field :image, :rel => node_photos_path(@node)
     - else
       = link_to t('nodes.show.link.upload'), terms_path, :class => 'button'
@@ -154,11 +154,11 @@
           $('#thumbs ul').append(data);
           $('#thumbs a').lightBox({
             fixedNavigation: true,
-            imageLoading:  '/images/spinner.gif',
-            imageBtnClose: '/images/lightbox-btn-close.gif',
-            imageBtnPrev:  '/images/lightbox-btn-prev.gif',
-            imageBtnNext:  '/images/lightbox-btn-next.gif',
-            imageBlank:    '/images/lightbox-blank.gif',
+            imageLoading:  '#{image_path("spinner.gif")}',
+            imageBtnClose: '#{image_path("lightbox-btn-close.gif")}',
+            imageBtnPrev:  '#{image_path("lightbox-btn-prev.gif")}',
+            imageBtnNext:  '#{image_path("lightbox-btn-next.gif")}',
+            imageBlank:    '#{image_path("lightbox-blank.gif")}',
             txtOf: '/'
           });
         }
