@@ -1,7 +1,7 @@
 %script{:type => "text/x-handlebars-template", :id => "cardTemplate"}
   .olFramedCloudPopupContent{:id => 'featurePopup_content_{id}'}
     .header
-      %h2{:style => "background-image:url('/icons/{icon}.png')"} {name}
+      %h2{:style => "background-image:url(\'#{image_path('/icons/{icon}.png')}\')"} {name}
       %address {address}
     .bubble-ctn
       = form_tag "/nodes/{id}/update_wheelchair.js", :method => 'put', :remote => true, :'data-type' => :json, :class => "update_form formtastic", :id => "wheelchair_update_form" do
