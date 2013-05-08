@@ -68,7 +68,7 @@ map.on('movestart', function(e) {
 });
 
 function update_permalink(selector) {
-  $(selector).attr('href', window.location.origin  + '/nodes/new?' + jQuery.param({lat: map.getCenter().lat,lon: map.getCenter().lng,zoom: 17}));
+  $(selector).attr('href', '/nodes/new?' + jQuery.param({lat: map.getCenter().lat,lon: map.getCenter().lng,zoom: 17}));
 }
 
 function requestNodes(bounds) {
