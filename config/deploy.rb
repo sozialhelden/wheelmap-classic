@@ -29,12 +29,16 @@ before 'deploy',              'safety_check'
 before 'deploy:migrations',   'safety_check'
 
 after  'deploy:setup',        'deploy:create_shared_config'
+
 after  'deploy:update_code',  'deploy:generate_assets'
 after  'deploy:update_code',  'deploy:symlink_configs'
 
-after  'deploy',              'deploy:remove_all_unfinished_locales'
+before 'deploy:restart',      'deploy:remove_all_unfinished_locales'
+before 'deploy:start',        'deploy:remove_all_unfinished_locales'
+
 after  'deploy',              'deploy:cache:clear'
 after  'deploy:migrations',   'deploy:cache:clear'
+
 after  'deploy',              'deploy:notifiy_metrics'
 after  'deploy:migrations',   'deploy:notifiy_metrics'
 
