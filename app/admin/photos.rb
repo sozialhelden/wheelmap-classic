@@ -16,7 +16,7 @@ ActiveAdmin.register Photo do
   index do
     column :id
     column :image do |photo|
-      link_to(image_tag(photo.image.url(:thumb_iphone).to_s), photo.image.url)
+      link_to(image_tag(photo.image.url(:thumb_iphone).to_s), image_path(photo.image.url.to_s))
     end
     column :user
     column :poi
