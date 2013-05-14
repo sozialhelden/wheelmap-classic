@@ -22,7 +22,7 @@
             %span{:'data-value' => 'yes'}
 
 
-        %select.selectpicker.show-menu-arrow.category-filter{:size => 5, :multiple => 'multiple', :title => t('header.toolbar.categories', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), :'data-style' => "btn-info", :'data-selected-text-format' => "count"}
+        %select.selectpicker.show-menu-arrow.category-filter{:size => 5, :multiple => 'multiple', :title => t('header.toolbar.categories', :default => :en), :'data-style' => "btn-info", :'data-selected-text-format' => "count"}
           - Category.all.sort_by(&:localized_name).each do |category|
             %option{ :value => category.identifier }= category.localized_name
   = render_flash
