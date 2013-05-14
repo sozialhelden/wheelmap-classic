@@ -19,8 +19,6 @@ Wheelmap::Application.routes.draw do
     root :to => 'home#index'
   end
 
-
-
   devise_for :users, :skip => [:sessions],
                      :controllers => {
                        :confirmations      => 'confirmations',
@@ -137,5 +135,5 @@ Wheelmap::Application.routes.draw do
   match "/ziemlich-beste-freunde",  :to => redirect("http://blog.wheelmap.org/zbf")
   match "/goeslondon",              :to => redirect("http://blog.wheelmap.org/mitmachen/goes-london/")
   match "/goes-london",             :to => redirect("http://blog.wheelmap.org/mitmachen/goes-london/")
-  match '/',                        :to => redirect("/map")
+  match '/',                        :to => redirect("/map"), :as => 'roooot'
 end
