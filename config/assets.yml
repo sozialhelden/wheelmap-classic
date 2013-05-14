@@ -43,6 +43,7 @@ javascripts:
     - public/javascripts/translations.js
     - public/javascripts/spin.js
     - public/javascripts/leaflet.js
+    - public/javascripts/leaflet.locate.js
     - public/javascripts/leaflet.spin.js
     - public/javascripts/map.js
     - public/javascripts/function.js
