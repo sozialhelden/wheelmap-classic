@@ -23,6 +23,7 @@ L.tileLayer('http://{s}.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y
 
 }).addTo(map);
 map.attributionControl.setPrefix('');
+L.control.locate().addTo(map);
 
 var geojson_layer = L.geoJson(null).addTo(map);
 
@@ -72,7 +73,7 @@ function update_permalink(selector) {
 }
 
 function requestNodes(bounds) {
-  geojson_layer.fire('data:loading');
+  map.spin(true);
   $.ajax(
     {
       type: 'GET',
@@ -92,7 +93,7 @@ function requestNodes(bounds) {
         alert('Unable to get node data');
       },
       complete: function(res) {
-        geojson_layer.fire('data:loaded');
+        map.spin(false);
       }
   });
 }
