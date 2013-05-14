@@ -18,3 +18,8 @@ en:
         headline: "Mark and find wheelchair accessible places with Wheelmap.org - worldwide and for free. It’s easy:"
         lookup: "Search for a specific place"
         secondary_headline: "Our traffic light system to mark the wheelchair accessibility of public places:"
+  nodes:
+    new:
+      form:
+        legend: "Location of the place"
+        location: "Please click on the map and place the marker at the exact position."
