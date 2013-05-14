@@ -15,10 +15,9 @@
     - if @node.errors[:type].present?
       %p.inline-errors
         = @node.errors[:type].to_sentence
-= form.inputs :name => "Lage des Ortes", :legend => "foo" do
+= form.inputs :name => t('nodes.new.form.legend') do
   - if @node.new_record?
-    .form-info
-      Bitte klicke auf der Karte an die Stelle, wo sich der Ort befindet!
+    .form-info=t('nodes.new.form.location')
 
   = form.input :lon, :input_html =>{:readonly => 'readonly', :value => @node.lon}, :as => :numeric, :required => true
   = form.input :lat, :input_html =>{:readonly => 'readonly', :value => @node.lat}, :as => :numeric, :hint => false
