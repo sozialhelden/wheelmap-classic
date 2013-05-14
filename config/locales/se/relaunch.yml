@@ -18,3 +18,7 @@ se:
         headline: "Markera och hitta rullstolstillgängliga platser med hjälp av Wheelmap.org - världsomfattande och gratis. Det är lätt:"
         lookup: "Sök en speciell plats"
         secondary_headline: "Vårt \"trafikljussystem\" för att markera rullstolstillgängligheten hos allmänna platser:"
+  nodes:
+    new:
+      form:
+        location: "Positionera den aktuella platsen genom att klicka i kartan!"
