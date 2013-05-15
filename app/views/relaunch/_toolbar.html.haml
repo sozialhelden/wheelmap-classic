@@ -3,22 +3,22 @@
   - cache("#{I18n.locale}/relaunch/_toolbar.html.haml'}", :expires_in => 1.hour) do
     .content
       .btn-toolbar.center
-        %button.btn.btn-searchbar
+        %button.btn.btn-info.btn-searchbar
           %i.icon-search.icon-white
         %form.navbar-form{:action =>"/search", :method => "GET", :style => 'display:inline-block;margin-bottom:0'}
           .input-append{:style => 'margin:0 10px'}
             %input#search{:type => "text", :name => "q", :value => params[:q].present? ? params[:q] : nil, :autocomplete => "off", :placeholder => t('header.searchbar.placeholder')}
-            %button.btn{:type => "submit", :value => t('header.searchbar.find')}
+            %button.btn.btn-info{:type => "submit", :value => t('header.searchbar.find')}
               %i.icon-search.icon-white
 
         .btn-group.status-filter(data-toggle="buttons-checkbox")
-          %button.btn.yes{:name => t('home.index.popup.form.yes'), :'data-value' => 'yes', :'data-toggle' => "popover", :'data-container' => "button.yes", :'data-content' =>  t('wheelmap.what_is.fully_accessible'), :'data-original-title' => t('home.index.popup.form.yes') }
+          %button.btn.btn-info.yes{:name => t('home.index.popup.form.yes'), :'data-value' => 'yes', :'data-toggle' => "popover", :'data-container' => "button.yes", :'data-content' =>  t('wheelmap.what_is.fully_accessible'), :'data-original-title' => t('home.index.popup.form.yes') }
             %span{:'data-value' => 'yes'}
-          %button.btn.limited{:name => t('home.index.popup.form.limited'), :'data-value' => 'limited', :'data-toggle' => "popover", :'data-container' => "button.limited", :'data-content' =>  t('wheelmap.what_is.limited_accessible'), :'data-original-title' => t('home.index.popup.form.limited') }
+          %button.btn.btn-info.limited{:name => t('home.index.popup.form.limited'), :'data-value' => 'limited', :'data-toggle' => "popover", :'data-container' => "button.limited", :'data-content' =>  t('wheelmap.what_is.limited_accessible'), :'data-original-title' => t('home.index.popup.form.limited') }
             %span{:'data-value' => 'yes'}
-          %button.btn.no{:name => t('home.index.popup.form.no'), :'data-value' => 'no', :'data-toggle' => "popover", :'data-container' => "button.no", :'data-content' => t('wheelmap.what_is.not_accessible'), :'data-original-title' => t('home.index.popup.form.no') }
+          %button.btn.btn-info.no{:name => t('home.index.popup.form.no'), :'data-value' => 'no', :'data-toggle' => "popover", :'data-container' => "button.no", :'data-content' => t('wheelmap.what_is.not_accessible'), :'data-original-title' => t('home.index.popup.form.no') }
             %span{:'data-value' => 'yes'}
-          %button.btn.unknown{:name => t('home.index.popup.form.unknown'), :'data-value' => 'unknown', :'data-toggle' => "popover", :'data-container' => "button.unknown", :'data-content' => t('wheelmap.what_is.unknown_accessible'), :'data-original-title' => t('home.index.popup.form.unknown') }
+          %button.btn.btn-info.unknown{:name => t('home.index.popup.form.unknown'), :'data-value' => 'unknown', :'data-toggle' => "popover", :'data-container' => "button.unknown", :'data-content' => t('wheelmap.what_is.unknown_accessible'), :'data-original-title' => t('home.index.popup.form.unknown') }
             %span{:'data-value' => 'yes'}
 
 
