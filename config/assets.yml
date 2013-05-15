@@ -45,6 +45,7 @@ javascripts:
     - public/javascripts/leaflet.js
     - public/javascripts/leaflet.locate.js
     - public/javascripts/leaflet.spin.js
+    - public/javascripts/leaflet.permalink.js
     - public/javascripts/map.js
     - public/javascripts/function.js
 
