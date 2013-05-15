@@ -61,8 +61,14 @@ map.on('movestart', function(e) {
   $('#featurePopup_content_' + window.node_id + ' .' + wheelchair_class + ' input').prop('checked',true);
   $('.update_form').bind('ajax:success', function(xhr, data, status){
     $('<div class="notification active notice"><span>'+ data.message + '</span></div>').insertAfter('#toolbar .content').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
+    if (window._gaq) {
+      _gaq.push(['_trackEvent', 'Data', 'Tag', data.wheelchair]);
+    }
   }).bind('ajax:error', function(xhr, data, status){
     $('<div class="notification active error"><span>'+ data.message + '</span></div>').insertAfter('#toolbar .content').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
+    if (window._gaq) {
+      _gaq.push(['_trackEvent', 'Data', 'Tag', 'failed']);
+    }
   });
 }).on('popupclose', function(e){
    window.node_id = null;
@@ -90,7 +96,7 @@ function requestNodes(bounds) {
         parseResponse(result)
       },
       error: function (req, status, error) {
-        alert('Unable to get node data');
+        $('<div class="notification active error"><span>'+ error + '</span></div>').insertAfter('#toolbar .content').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
       },
       complete: function(res) {
         map.spin(false);
