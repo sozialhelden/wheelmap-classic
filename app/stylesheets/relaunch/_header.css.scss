@@ -61,7 +61,7 @@ header {
     .btn-add,
     .btn-add:hover {
       background-color: #87b346;
-      @include background(linear-gradient(top, rgb(150, 193, 78), rgb(121, 165, 62)));
+      @include background(linear-gradient(top, #96c14e, #79a53e));
       @include filter-gradient(#96c14e, #79a53e, vertical);
     }
     .btn-add {
