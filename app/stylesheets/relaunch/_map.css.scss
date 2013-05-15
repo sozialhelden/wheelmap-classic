@@ -9,7 +9,7 @@ section#map {
   @media screen and (max-width:$breakTablet) {
       top: $headerHeight;
       bottom: $toolbarHeight;
-  } 
+  }
 }
 
 .leaflet-marker-icon, .leaflet-div-icon, .leaflet-clickable, .leaflet-zoom-animated-div-icon {
@@ -61,31 +61,41 @@ section#map {
 
 }
 .leaflet-bar-part-single {
-	-webkit-border-radius: 4px 4px 4px 4px;
-	        border-radius: 4px 4px 4px 4px;
-	border-bottom: none;
+  -webkit-border-radius: 4px 4px 4px 4px;
+          border-radius: 4px 4px 4px 4px;
+  border-bottom: none;
 }
 
 .leaflet-touch .leaflet-bar-part-single {
-	-webkit-border-radius: 7px 7px 7px 7px;
-	        border-radius: 7px 7px 7px 7px;
-	border-bottom: none;
+  -webkit-border-radius: 7px 7px 7px 7px;
+          border-radius: 7px 7px 7px 7px;
+  border-bottom: none;
 }
+.leaflet-control-locate {
 
-.leaflet-control-locate a {
-	background-image: url(/images/locate_btn.png);
-	@include if-min-resolution(1.3) {
-	  background: transparent url('/images/locate_btn@2x.png') no-repeat;
-	}
-}
+  a {
+    background-image: url('/images/locate_btn.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: rgba(255,255,255,0.8);
 
-.leaflet-control-locate.requesting a {
-    background-image: url(/images/spinner_locate.gif);
-}
+    &:hover {
+      background-color: #FFF;
+    };
 
-.leaflet-control-locate.active a {
+    @include if-min-resolution(1.3) {
+      background-image: url('/images/locate_btn@2x.png');
+    }
+  }
+
+  &.requesting a {
+    background-image: url('/images/spinner_locate.gif');
+  }
+
+  &.active a {
     background-image: url(/images/locate_btn_active.png);
     @include if-min-resolution(1.3) {
-      background: transparent url('/images/locate_btn_active@2x.png') no-repeat;
+      background-image: url('/images/locate_btn_active@2x.png');
     }
+  }
 }
