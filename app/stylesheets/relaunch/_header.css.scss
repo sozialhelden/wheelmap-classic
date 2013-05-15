@@ -58,12 +58,6 @@ header {
         display: none;
       }
     }
-    .btn-add,
-    .btn-add:hover {
-      background-color: #87b346;
-      @include background(linear-gradient(top, #96c14e, #79a53e));
-      @include filter-gradient(#96c14e, #79a53e, vertical);
-    }
     .btn-add {
       @media screen and (max-width:1024px) {
         @include border-radius(3px);

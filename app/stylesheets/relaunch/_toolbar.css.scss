@@ -24,8 +24,6 @@
     margin-top: -2px;
   }
   .btn, .btn:hover {
-    @include background(linear-gradient(top, rgb(108, 133, 157), rgb(77, 100, 122)));
-    @include filter-gradient(#6c859d, #4d647a, vertical);
     border: 1px solid #000;
     background-position: 0;
     @include box-shadow(0px 1px 0px #566D82, inset 0px 1px 0px #8298aa, inset 0px 1px 0px #8298AA);
@@ -35,8 +33,6 @@
     @include box-shadow(0px 1px 0px #566D82, inset 0 10px 20px rgba(48, 66, 81, 0.30));
   }
   .btn.active {
-    @include background(linear-gradient(bottom, rgb(108, 133, 157), rgb(77, 100, 122)));
-    @include filter-gradient(#4d647a, #6c859d, vertical);
     & span {
       @include opacity(0.5);
     }
@@ -190,7 +186,7 @@
             background-color: #f4f4f4;
             @include background-image(linear-gradient(top, #E5002A, #B93028));
             @include filter-gradient(#E5002A, #B93028, vertical);
-      
+
             text-indent: 0px;
             font-size: 10px;
             line-height: 18px;
@@ -261,6 +257,8 @@
   }
   .popover {
     width: 180px;
+    color: #333333;
+    @include text-shadow(none);
   }
   .content {
     @media screen and (max-width:640px) {
