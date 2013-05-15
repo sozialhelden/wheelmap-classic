@@ -2,7 +2,6 @@
   position: fixed;
   z-index: 100;
   pointer-events: none;
-  top: none;
   bottom: 32px;
 
   @media screen and (max-width:$breakTablet) {
