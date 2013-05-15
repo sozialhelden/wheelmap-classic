@@ -24,6 +24,7 @@ L.tileLayer('http://{s}.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y
 }).addTo(map);
 map.attributionControl.setPrefix('');
 L.control.locate().addTo(map);
+map.addControl(new L.Control.Permalink({text: 'Permalink'}));
 
 var geojson_layer = L.geoJson(null).addTo(map);
 
