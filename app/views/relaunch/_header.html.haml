@@ -16,14 +16,14 @@
           .btn-group
             = link_to new_node_path, :class => ['btn', 'btn-add', 'btn-small', 'createlink'], :title =>  t('header.searchbar.add_place') do
               %i.icon-plus.icon-white
-            = link_to t('header.searchbar.add_place'), new_node_path, :class => ['btn', 'btn-small', 'createlink', 'hidden-phone', 'hidden-tablet']
+            = link_to t('header.searchbar.add_place'), new_node_path, :class => ['btn', 'btn-small', 'createlink', 'hidden-phone', 'hidden-tablet'], :title =>  t('header.searchbar.add_place') 
 
           - if user_signed_in?
             = link_to edit_user_path(current_user), :class => ['btn', 'btn-small'], :style => 'margin: 10px 10px 0px' do
               %i.icon-user
               %span.hidden-phone=t('header.navigation.profile')
           - else
-            = link_to new_user_session_path, :class => ['btn', 'btn-small'], :style => 'margin: 10px 10px 0px' do
+            = link_to new_user_session_path, :class => ['btn', 'btn-small'], :title =>  t('header.navigation.login'), :style => 'margin: 10px 10px 0px' do
               %i.icon-user
               %span.hidden-phone=t('header.navigation.login')
 
