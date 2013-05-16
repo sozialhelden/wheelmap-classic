@@ -13,7 +13,7 @@ config/open_street_map.yml
 config/metrics.yml
 public/*/cache/*
 public/assets
-public/sitemap_*
+public/sitemap*
 public/system/sitemap*
 public/system/uploads*
 vendor/bundle

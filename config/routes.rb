@@ -17,6 +17,7 @@ Wheelmap::Application.routes.draw do
 
   scope "map" do
     root :to => 'home#index'
+    match '/:region_id/:node_type_id/wheelchair/:wheelchair' => 'landing_pages#index'
   end
 
   devise_for :users, :skip => [:sessions],
@@ -74,8 +75,6 @@ Wheelmap::Application.routes.draw do
   end
 
   resources :user, :only => :new # Fake route for redirection to OSM register page
-
-  match '/:region_id/:node_type_id/wheelchair/:wheelchair' => 'landing_pages#index'
 
   match '/api' => 'api/api#index'
 
