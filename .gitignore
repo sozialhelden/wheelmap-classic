@@ -1,5 +1,6 @@
 .DS_Store
 .bundle
+.idea
 db/*.sqlite3
 db/data/*.csv
 db/data/*.sql
