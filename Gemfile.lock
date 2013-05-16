@@ -124,7 +124,7 @@ GEM
     delayed_job_active_record (0.3.3)
       activerecord (>= 2.1.0, < 4)
       delayed_job (~> 3.0)
-    devise (1.5.3)
+    devise (1.5.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
       warden (~> 1.1)
@@ -392,7 +392,7 @@ DEPENDENCIES
   database_cleaner
   delayed_job
   delayed_job_active_record
-  devise
+  devise (= 1.5.4)
   exifr
   factory_girl_rails (= 1.6.0)
   fastercsv
