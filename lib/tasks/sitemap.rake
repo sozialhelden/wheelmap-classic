@@ -11,7 +11,11 @@ namespace :sitemap do
                           :document_root => Rails.root.join('public'),
                           :document_path => '/',
                           :gzip => true,
-                          :partial_update => false
+                          :partial_update => false,
+                          :ping_google => Rails.env.production?,
+                          :ping_bing => Rails.env.production?,
+                          :ping_ask => Rails.env.production?,
+                          :ping_yandex => Rails.env.production?
                        ) do
       # Add a static page
       add '/map'
