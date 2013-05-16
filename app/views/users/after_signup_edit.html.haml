@@ -16,6 +16,6 @@
     = form.buttons do
       %ol
         %li.commit
-          %input.small.update#user_submit{:name => 'commit', :type => 'submit', :value => t('formtastic.labels.finish'), :style => 'display:inline'}
+          %input.small.update#user_submit{:name => 'commit', :type => 'submit', :value => t('formtastic.labels.finish'), :style => 'display:inline', :'data-confirm' => t('devise.confirmations.send_instructions')}
           = link_to t('common.skip'), after_sign_in_path_for(:user), :style => 'display: inline; position: relative;left:200px'
 
