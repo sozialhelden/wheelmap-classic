@@ -4,7 +4,7 @@
   position: absolute;
   z-index: 1999;
   background: rgba(40,	54, 69, 0.8);
-  display: none;
+//  display: none;
 }
 .overlay {
   width: 700px;
@@ -19,6 +19,10 @@
   background-position: 0 219px;
   @include box-shadow(0 0 10px #333);
   @include border-radius(3px);
+  @media screen and (max-height:650px) {
+    margin-top: -270px;
+    background-position: 0 180px;
+  }
   @media screen and (max-width:700px) {
     width: 98%;
     height: 98%;
@@ -30,7 +34,7 @@
   }
   .header {
     width: 100%;
-    height: 200px;
+    height: auto;
     float: left;
     @include background(linear-gradient(top, rgb(255, 255, 255), rgb(237, 236, 234)));
     @include filter-gradient(#ffffff, #edecea, vertical);
@@ -62,6 +66,10 @@
     font-size: 16px;
     line-height: 24px;
     font-weight: normal;
+    @media screen and (max-height:650px) {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
     @media screen and (max-width:700px) {
       background-size: 170px;
       font-size: 12px;
@@ -161,6 +169,10 @@
       img {
         width: 80%;
         margin: 0px 10%;
+        @media screen and (max-height:650px) {
+          width: 50%;
+          margin: 0 25%;
+        }
       }
       h3 {
         width: 100%;
@@ -172,6 +184,9 @@
       p {
         padding: 0 5%;
         float: left;
+        @media screen and (max-height:650px) {
+          line-height: 18px;
+        }
         @media screen and (max-width:700px) {
           display: none;
         }
@@ -216,6 +231,10 @@
 
     @include border-radius(8px);
     border: 1px solid #333;
+    @media screen and (max-height:650px) {
+      font-size: 17px;
+      padding: 10px 0;
+    }
     @media screen and (max-width:700px) {
       font-size: 12px;
       padding: 10px 0px;
