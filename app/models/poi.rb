@@ -211,17 +211,8 @@ class Poi < ActiveRecord::Base
     errors.add(:tags, 'Invalid type') unless NodeType.valid_type?(self.tags)
   end
 
-  def category_id
-    self.node_type.category_id
-  end
-
   def category_for_node
-    Amenities.each do |category, groups|
-      groups.each do |group|
-        return category if group.include?(type)
-      end
-    end
-    nil
+    category.try(:identifier).try(:to_sym)
   end
 
 
