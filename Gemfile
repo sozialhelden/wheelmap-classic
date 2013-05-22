@@ -73,16 +73,16 @@ group :test do
   gem 'webmock', :require => nil
   gem 'factory_girl_rails', "1.6.0"
   gem "capybara", "1.1.1"  # on mac, you need sudo port install libffi
-  gem 'cucumber', "1.2.1"
-  gem 'cucumber-rails'
+  gem 'cucumber', "1.2.1", :require => false
+  gem 'cucumber-rails', :require => false
   gem 'rspec', "2.12.0"
-  gem 'autotest'
+  gem 'autotest', :require => false
   gem 'nokogiri'
-  gem 'pickle'
-  gem 'launchy'
-  gem 'database_cleaner'
+  gem 'pickle', :require => false
+  gem 'launchy', :require => false
+  gem 'database_cleaner', :require => false
   gem 'shoulda-matchers'
-  gem 'syntax'
+  gem 'syntax', :require => false
 end
 
 group :deployment do
