@@ -10,9 +10,47 @@ namespace :assets do
     end
   end
 
+  desc 'Fix icon names'
+  task :fix_image_names do
+    src = ENV['src'] || '/Users/christoph/Downloads/wheelmapicons2/'
+    mapping = {
+      :parkinggarage => :parking,
+      :beergarden => :biergarten,
+      :movierental => :cinema,
+      :laterne => :lantern,
+      :stripclub2 => :stripclub,
+      :chemistry => :chemist,
+      :schreibwaren_web => :stationery,
+      :carrepair => :car_repair
+    }
+    mapping.each do |old_name, new_name|
+      puts "checking: #{old_name} => #{new_name}"
+      system <<-EOT
+      for i in `find #{src} -type f -name "#{old_name}.png"`
+      do
+        folder_name=`dirname $i`;
+        base_name=`basename $i`;
+        mv $folder_name/$base_name $folder_name/#{new_name}.png;
+      done
+      EOT
+    end
+  end
+
   desc 'Resize icons from map icon set.'
-  task :resize_icons do
-    # puts "convert #{marker} -gravity south -crop 22x22+0+0 -strip #{Rails.root.join('public', 'marker', wheelchair, basename)}"
+  task :resize_icons => :environment do
+
+    src = ENV['src'] || '/Users/christoph/Downloads/wheelmapicons2/'
+    NodeType.all.each do |node_type|
+      name = File.basename(node_type.icon, '.png')
+      puts "Processing #{node_type.icon}"
+      system <<-EOT
+      convert #{src}icons/#{node_type.icon} -strip -gravity SOUTH -crop 22x22+0+0 #{Rails.root.join('public', 'icons', node_type.icon)};
+      convert #{src}icons/#{node_type.icon} -strip -gravity SOUTH -crop 22x22+0+0 -scale 44x44+0+0 #{Rails.root.join('public', 'icons', name)}@2x.png;
+      convert #{src}icons_white/#{node_type.icon} -strip -gravity SOUTH -crop 22x22+0+0 #{Rails.root.join('public', 'icons_white', node_type.icon)};
+      convert #{src}icons_white/#{node_type.icon} -strip -gravity SOUTH -crop 22x22+0+0 -scale 44x44+0+0 #{Rails.root.join('public', 'icons_white', name)}@2x.png;
+      EOT
+    end
+
   end
 
   desc 'Resize marker from map icon set.'
