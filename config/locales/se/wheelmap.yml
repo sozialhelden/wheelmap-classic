@@ -112,7 +112,7 @@ se:
       keywords: "rullstolstillgängliga platser hitta sök lägg till"
       search: Sök
     navigation:
-      blog: Blogg
+      blog: Nyheter
       feedback: Återkoppling
       home: Start
       how_to_add_a_place: "Hur lägger jag till platser?"
@@ -130,7 +130,7 @@ se:
       add_place: "Lägg till en plats"
       find: Hitta
       label: " "
-      placeholder: "t ex Sunset Boulevard L.A. eller Drottningholms slott, Stockholm"
+      placeholder: "Sök en plats"
       title_add_place: "Lägg till en ny plats på denna position!"
     tagline: "Wheelmap logo"
     title: "Hitta rullstolstillgängliga platser"

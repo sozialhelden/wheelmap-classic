@@ -22,12 +22,14 @@ bg:
         camp_site: "Къмпинг за палатки"
         caravan_site: "Къмпинг за каравани"
         chalet: Хижа
+        dormitory: Общежитие
         guest_house: "Къща за гости"
         hostel: Хостел
         hotel: Хотел
         motel: Мотел
       education:
         college: ВУЗ
+        driving_school: "Шофьорски курсове"
         kindergarten: "Детска градина"
         library: Библиотека
         museum: Музей
@@ -39,15 +41,18 @@ bg:
         cafe: Кафе
         drinking_water: "Питейна вода"
         fast_food: "Бързо хранене"
+        ice_cream: "Сладоледена къща"
         pub: Бар
         restaurant: Ресторант
       government:
         courthouse: "Съдебна палата"
         embassy: Посолство
+        government: "Държавна институция"
         police: Полиция
         public_building: "Обществена сграда"
         townhall: Кметство
       health:
+        dentist: Зъболекар
         doctors: "Медицински център"
         hearing_aids: "Магазин за слухови апарати"
         hospital: Болница
@@ -58,6 +63,7 @@ bg:
       leisure:
         arena: Арена
         brothel: "Публичен дом"
+        casino: Казино
         cinema: Кино
         community_center: "Общински център"
         gallery: Галерия
@@ -69,6 +75,8 @@ bg:
         zoo: "Зоологическа градина"
       misc:
         company: "Фирма (офис)"
+        estate_agent: "Агенция за недвижими имоти"
+        insurance: Застраховки
         lawyer: Адвокат
         place_of_worship: "Място за поклонение"
         toilets: Тоалетни
@@ -104,6 +112,7 @@ bg:
       shopping:
         alcohol: "Магазин за спиртни напитки"
         bakery: Фурна
+        beauty: "Салон за красота"
         beverages: Напитки
         bicycle: "Магазин за колела"
         books: Книги
@@ -113,28 +122,40 @@ bg:
         chemist: Дрогерия
         clothes: Дрехи
         computer: Компютър
+        confectionery: "Магазин за сладкиши"
         convenience: "Малък магазин"
+        deli: Деликатеси
         department_store: "Търговски комплекс"
         doityourself: "Направи си сам"
         dry_cleaning: "Химическо чистене"
         electronics: Електроника
+        fabric: "Магазин за платове"
+        farm_shop: "Магазин за регионално производство"
         florist: Цветар
         furniture: Мебели
         garden_centre: "Градински център"
+        gift: "Магазин за подаръци"
         hairdresser: Фризьор
         hardware: "Магазин за влакчета"
+        jewelry: Бижутерия
         kiosk: Будка
         laundry: "Обществена пералня"
         mall: Мол
         optician: Оптика
+        organic: "Био магазин"
+        outdoor: "Туристическа екипировка"
+        pet: "Зоо магазин"
         photo: Снимка
         second_hand: "Second hand мода"
         shoes: Обувки
         sports: Спорт
         stationery: "Канцеларски принадлежности"
         supermarket: Супермаркет
+        toys: Играчки
+        travel_agency: "Туристическа агенция"
         video: Видеотека
       sport:
+        pitch: "Спортно игрище"
         sports_centre: "Спортен център"
         stadium: Стадион
         swimming: Плуване

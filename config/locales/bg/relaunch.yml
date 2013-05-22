@@ -1,2 +1,25 @@
 ---
-bg: ~
+bg:
+  header:
+    navigation:
+      about_wheelmap: "За Wheelmap"
+      choose_language: "Избери език"
+      contact: Контакт
+      map: Карта
+      projects: "Включи се"
+    toolbar:
+      categories: Категории
+  home:
+    index:
+      overlay:
+        button: "OK, тръгваме!"
+        categories: "Филтрирай места по категории"
+        filter: "Филтрирай места по достъпност за инвалидни колички"
+        headline: "Маркирай и намирай места, достъпни за инвалидни колички с Wheelmap.org - безплатно и в цял свят. Лесно е:"
+        lookup: "Търси определено място"
+        secondary_headline: "Нашата система за отбелязване на места, достъпни за инвалидни колички:"
+  nodes:
+    new:
+      form:
+        legend: Местоположение
+        location: "Моля кликни на картата и сложи маркера на точната позиция."
