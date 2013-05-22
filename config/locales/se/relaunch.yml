@@ -21,4 +21,5 @@ se:
   nodes:
     new:
       form:
+        legend: "Platsens läge"
         location: "Positionera den aktuella platsen genom att klicka i kartan!"

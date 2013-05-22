@@ -130,7 +130,7 @@ en:
       add_place: "Add another place"
       find: Find
       label: ~
-      placeholder: "i.e. Sunset Boulevard L.A. or Brandenburg Gate Berlin"
+      placeholder: "Search for a place"
       title_add_place: "Add a new place at this position now!"
     tagline: "Wheelmap logo"
     title: "find wheelchair accessible places"

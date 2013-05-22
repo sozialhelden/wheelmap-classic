@@ -91,9 +91,11 @@ bg:
       password_confirmation: "Повтори паролата"
       phone: "Телефон:"
       postcode: "Пощенски код:"
+      privacy_policy: "Приемам параграф 1 и 2 от декларацията за поверителност на личните данни."
       reset: Нулирай
       save: Запази
       street: "Улица:"
+      terms: "Приемам условията за ползване."
       type: "Вид:"
       website: "Уебсайт:"
       wheelchair: "Достъп за инвалидни колички?"
@@ -110,7 +112,7 @@ bg:
       keywords: "достъпни за инвалидни колички места търси намери маркирай"
       search: Търси
     navigation:
-      blog: Блог
+      blog: Новини
       feedback: "Обратна връзка"
       home: Начало
       how_to_add_a_place: "Как се добавят места?"
@@ -126,12 +128,12 @@ bg:
       what_is_wheelmap: "Какво е wheelmap?"
     searchbar:
       add_place: "Добави ново място"
-      find: намери
+      find: Намери
       label: ~
-      placeholder: "например Sunset Boulevard L.A. или Бранденбургската врата, Берлин"
+      placeholder: "Търси място"
       title_add_place: "Добави ново място на тази позиция сега!"
     tagline: "Лого на Wheelmap"
-    title: "Wheelmap - намери места, достъпни за инвалидни колички"
+    title: "намери места, достъпни за инвалидни колички"
   helpers:
     select:
       prompt: "Моля избери"
@@ -351,8 +353,8 @@ bg:
   users:
     after_signup_edit:
       welcome:
-        headline: "Добре дошъл на wheelmap"
-        set_password_for_mobile: "Имаш ли смартфон? Моля, избери парола, за да използваш Wheelmap по време на движение с твоя iPhone или Android телефон."
+        headline: "Почти готово! Довърши регистрацията си за Wheelmap акаунт тук:"
+        set_password_for_mobile: "Ти завърши регистрацията си в Open Street Map. Сега избери и-мейл адрес и парола за своя Wheelmap акаунт и готово! Този и-мейл и паролата ще ти трябват, за да използваш Wheelmap апликацията за iPhone и Android."
         text: "Как можем да се свържем с теб? По-късно можеш да промениш тази информация в профила си."
     edit:
       headline:
@@ -380,7 +382,7 @@ bg:
       fully_accessible: "Входът е без стъпала, всички помещения са без стъпала, тоалетната е пригодена за инвалидни колички."
       limited_accessible: "Входът има стъпало (макс. 7см), повечето помещения са без стъпала, тоалетната е недостъпна."
       not_accessible: "На входа има високи или повече стъпала, помещенията са недостъпни."
-      unknown_accessible: "Помогни и маркирай места!"
+      unknown_accessible: "Помогни, като маркираш места!"
   will_paginate:
     next_label: "Напред &#8594;"
     page_entries_info:

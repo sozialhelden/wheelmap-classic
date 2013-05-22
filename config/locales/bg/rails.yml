@@ -5,6 +5,8 @@ bg:
       user:
         first_name: Име
         last_name: Фамилия
+        privacy_policy: "Декларация за поверителност"
+        terms: Условия
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -34,6 +36,10 @@ bg:
           attributes:
             email:
               blank: "Не може да бъде оставено празно, ако е дадена парола"
+            privacy_policy:
+              accepted: "трябва да бъдат приети"
+            terms:
+              accepted: "трябва да бъдат приети"
         user_session:
           email: E-mail-адрес
           password: Парола
