@@ -1,5 +1,6 @@
 class Region < ActiveRecord::Base
   has_many    :pois
+  has_many    :photos, :through => :pois
 
   validates :name, :grenze, :presence => true
 
