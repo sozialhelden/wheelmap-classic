@@ -29,6 +29,9 @@ ActiveAdmin.register Region do
       end
       row :id
       row :name
+      row :photos do
+        link_to("#{r.photos.count} Photos", admin_region_photos_path(r))
+      end
       row :depth
       row :pois_total do
         span(number_with_delimiter(r.pois_of_children.count))

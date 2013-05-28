@@ -1,6 +1,7 @@
 ActiveAdmin.register Photo do
   belongs_to :poi,  :optional => true
   belongs_to :user, :optional => true
+  belongs_to :region, :optional => true
 
   filter :user_id, :as => :numeric
   filter :poi_id, :as => :numeric
