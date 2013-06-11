@@ -8,7 +8,10 @@ de:
       map: Karte
       projects: Projekte
     toolbar:
-      categories: Kategorien
+      categories:
+        title: Kategorien
+        all: Alle
+        none: Keine
   home:
     index:
       overlay:
