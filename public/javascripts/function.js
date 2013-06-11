@@ -5,11 +5,13 @@ $(document).ready(function () {
 
   var $statusFilterButtons = $('.status-filter button'),
     $categoryFilter = $('.category-filter'),
-    $categoryFilterFilters;
+    filterCookie = false;
 
   $(['yes', 'no', 'limited', 'unknown']).each(function (index, item) {
-    if ($.cookie('filter_' + item))
+    if ($.cookie('filter_' + item)) {
+      filterCookie = true;
       $statusFilterButtons.filter('.' + item).removeClass('active');
+    }
   });
 
   $categoryFilter.find('option').each(function () {
@@ -26,7 +28,17 @@ $(document).ready(function () {
     placement: getPopoverPlacement
   }).click(function () {
       $('.popover').fadeOut(300);
-    })
+    });
+
+  $statusFilterButtons.click(function(event) {
+    if (filterCookie)
+      return;
+
+    filterCookie = true;
+    event.stopPropagation();
+    $statusFilterButtons.not(this).removeClass('active');
+    $statusFilterButtons.trigger('change');
+  });
 
   if (!$.cookie('_wheelmap_first_time_visitor')) {
     $('.overlay-wrapper').addClass('show-overlay');
