@@ -6,6 +6,9 @@ Wheelmap::Application.routes.draw do
     resources :pois do
       resources :photos
     end
+    resources :users do
+      resources :photos
+    end
   end
 
   devise_for :admin_users, ActiveAdmin::Devise.config
