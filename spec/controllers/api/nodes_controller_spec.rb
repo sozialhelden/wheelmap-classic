@@ -105,6 +105,7 @@ describe Api::NodesController do
         response.status.should eql 202
         response.body.should =~ /OK/
       }.should change(Delayed::Job, :count).by(1)
+      Delayed::Job.last.handler.should =~ /chris@tucker.org/
     end
 
     it "should not accept update wheelchair status for later processing if params are invalid" do
@@ -130,6 +131,7 @@ describe Api::NodesController do
 
     before :each do
       @wheelmap_visitor = Factory.create(:authorized_user, :email => 'visitor@wheelmap.org')
+      @user = Factory.create(:authorized_user, :email => 'chris@tucker.org')
       Poi.delete_all
       @node = Factory.create(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
     end
@@ -141,6 +143,7 @@ describe Api::NodesController do
 
     before :each do
       @wheelmap_visitor = Factory.create(:authorized_user, :email => 'visitor@wheelmap.org')
+      @user = Factory.create(:authorized_user, :email => 'chris@tucker.org')
       Poi.delete_all
       @node = Factory.create(:poi, :osm_id => (Factory.next(:version) * -1), :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
     end
