@@ -2,7 +2,6 @@ $(document).ready(function() {
 
   I18n.defaultLocale = 'de';
   I18n.locale = $('html').attr('lang');
-  
 
   $(['yes', 'no', 'limited', 'unknown']).each(function(index, item){
     if ($.cookie('filter_'+item)) {
@@ -44,6 +43,18 @@ $(document).ready(function() {
   $('.btn-searchbar').click(function() {
     $('.navbar-form').toggleClass('active');
   });
+
+  Flash.transferFromCookies();
+  Flash.writeDataTo('error', $('#error_div_id span'), function() {
+    $('#error_div_id').addClass('active')
+  });
+  Flash.writeDataTo('alert', $('#alert_div_id span'), function() {
+    $('#alert_div_id').addClass('active')
+  });
+  Flash.writeDataTo('notice', $('#notice_div_id span'), function() {
+    $('#notice_div_id').addClass('active')
+  });
+
   $('.notification.active').slideDown(500).delay(8000).slideUp(400, function() { $(this).remove()});
 
   $('.close-btn, .go').click(function() {

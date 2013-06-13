@@ -17,6 +17,7 @@ javascripts:
     - public/javascripts/json2.js
     - public/javascripts/filter_settings.js
     - public/javascripts/splash.js
+    - public/javascripts/flash.js
     - public/javascripts/application.js
 
   relaunch:
@@ -39,6 +40,7 @@ javascripts:
     - public/javascripts/fastclick.js
     - public/javascripts/jquery.parsequery.js
     - public/javascripts/jquery.cookies.js
+    - public/javascripts/flash.js
     - public/javascripts/i18n.js
     - public/javascripts/translations.js
     - public/javascripts/spin.js
