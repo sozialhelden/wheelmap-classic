@@ -728,3 +728,9 @@ function initGeoData() {
 function $w(string) {
   return string.split(' ');
 }
+
+Flash.transferFromCookies();
+Flash.writeDataTo('error', $('#error'));
+Flash.writeDataTo('alert', $('#alert'));
+Flash.writeDataTo('notice', $('#notice'));
+

@@ -53,6 +53,7 @@ group :default do
   gem 'carrierwave_backgrounder', '0.0.9'
   gem 'rmagick'
   gem 'flash_cookie_session'
+  gem 'cacheable_flash'
   gem 'exifr'
   gem 'awesome_nested_set'
   gem 'i18n-js'

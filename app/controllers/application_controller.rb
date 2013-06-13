@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include CacheableFlash
   protect_from_forgery
 
   helper :all
