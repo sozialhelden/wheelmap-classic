@@ -39,6 +39,7 @@ javascripts:
     - public/javascripts/fastclick.js
     - public/javascripts/jquery.parsequery.js
     - public/javascripts/jquery.cookies.js
+    - public/javascripts/flash.js
     - public/javascripts/i18n.js
     - public/javascripts/translations.js
     - public/javascripts/spin.js

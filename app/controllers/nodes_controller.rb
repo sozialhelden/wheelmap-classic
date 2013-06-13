@@ -1,4 +1,5 @@
 class NodesController < ApplicationController
+  include CacheableFlash
   require 'float'
   require 'yajl'
   include ActionView::Helpers::CacheHelper

@@ -57,12 +57,7 @@ module ApplicationHelper
   def render_flash
     html = ''
     [:notice,:error,:alert].each do |type|
-      unless flash[type].blank?
-        html << "<div class='notification active #{type}'>"
-        html << "<span>"
-        html << flash[type]
-        html << "</span></div>"
-      end
+      html << "<div class='notification #{type}' id='#{type}_div_id' style='display:none'><span></span></div>"
     end
     html.html_safe
   end
