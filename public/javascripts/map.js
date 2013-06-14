@@ -138,7 +138,7 @@ function parseResponse(data) {
   var new_geojson_layer = new L.GeoJSON(data, {
     pointToLayer: function (feature, latlng) {
       var classesToAdd = [feature.properties.wheelchair, feature.properties.category]
-      $('.status-filter button.active').each(function() {
+      $('.status-filter button:not(.active)').each(function() {
         var filter_class = $(this).attr('data-value');
         if ( feature.properties.wheelchair === filter_class ) {
           classesToAdd.push('wheelchair_hidden');
@@ -178,26 +178,26 @@ function parseResponse(data) {
   }
 }
 
-$('.status-filter').find('button').button();
-$('.status-filter button').each(function(i) {
-  $(this).on('change', function(e) {
-    var target = $(e.target);
-    if (target.is('button')) {
-      // OK
-    } else {
-      target = target.parents('button');
-    }
-    var filter_class = target.attr('data-value');
+$('.status-filter').find('button').button()
+  .each(function() {
+    $(this).on('change', function(e) {
+      var target = $(e.target), filter_class;
 
-    if (target.hasClass('active')) {
-      $('.leaflet-marker-icon.' + filter_class).addClass('wheelchair_hidden');
-      $.cookie('filter_'+filter_class, '1', { expires: 7, path: '/'});
-    } else {
-      $.removeCookie('filter_'+filter_class);
-      $('.leaflet-marker-icon.' + filter_class).removeClass('wheelchair_hidden');
-    }
+      if (!target.is('button')) {
+        target = target.parents('button');
+      }
+
+      filter_class = target.attr('data-value');
+
+      if (!target.hasClass('active')) {
+        $('.leaflet-marker-icon.' + filter_class).addClass('wheelchair_hidden');
+        $.cookie('filter_' + filter_class, '1', { expires: 7, path: '/'});
+      } else {
+        $.removeCookie('filter_' + filter_class);
+        $('.leaflet-marker-icon.' + filter_class).removeClass('wheelchair_hidden');
+      }
+    });
   });
-});
 
 $('.category-filter').on('change', function(e){
   $(e.target).find('option').each(function(i) {

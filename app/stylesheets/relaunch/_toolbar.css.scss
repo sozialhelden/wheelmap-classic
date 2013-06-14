@@ -23,15 +23,16 @@
     margin: auto;
     margin-top: -2px;
   }
-  .btn, .btn:hover {
+  .btn {
     border: 1px solid #000;
     background-position: 0;
-    @include box-shadow(0px 1px 0px #566D82, inset 0px 1px 0px #8298aa, inset 0px 1px 0px #8298AA);
+    @include box-shadow(0px 1px 0px #566D82, inset 0px 1px 0px #8298aa, inset 0px 1px 0px #aa000a);
+
+    &:hover {
+      @include box-shadow(0px 1px 0px #566D82, inset 0 10px 20px rgba(48, 66, 81, 0.30));
+    }
   }
 
-  .btn:hover {
-    @include box-shadow(0px 1px 0px #566D82, inset 0 10px 20px rgba(48, 66, 81, 0.30));
-  }
   .btn.active {
     & span {
       @include opacity(0.5);
@@ -73,26 +74,42 @@
       height: 36px;
     }
   }
+
   .status-filter {
     margin: 0 6px;
+
     .btn {
       width: 46px;
       height: 36px;
       float: none;
       padding: 0;
+
       span {
         width: 21px;
         height: 24px;
         margin: 2px 0 0 12px;
         float: left;
+        @include opacity(0.5);
+      }
+
+      &.active,
+      &.active:hover {
+        @include box-shadow(0px 1px 0px #566D82, inset 0px 1px 3px rgba(black, 0.15), inset 0 -5px 10px rgba(black, 0.1));
+
+        span {
+          @include opacity(1);
+        }
+      }
+
+      &:first-child {
+        @include border-radius(3px 0 0 3px);
+      }
+
+      &:last-child {
+        @include border-radius(0 3px 3px 0);
       }
     }
-    .btn:first-child {
-       @include border-radius(3px 0 0 3px);
-    }
-    .btn:last-child {
-      @include border-radius(0 3px 3px 0);
-    }
+
     .yes {
       span {
         background: url('/images/toolbar_marker_yes.png') no-repeat;
