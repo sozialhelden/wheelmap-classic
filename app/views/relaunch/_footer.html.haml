@@ -8,8 +8,8 @@
             %tr
               %td
                 =image_tag('/images/mini_marker.png', :size => '28x17', :title => "#{t('wheelchairstatus.yes')}:#{Poi.fully_accessible.count}\n#{t('wheelchairstatus.limited')}:#{Poi.limited_accessible.count}\n#{t('wheelchairstatus.no')}:#{Poi.not_accessible.count}")
-              %td{:style => "background: url('http://asset1.wheelmap.org/images/bubble.png?1362741213') no-repeat left center;background-position: 0px 0px"} &nbsp;
-              %td{:style => "padding-right: 5px;background: url('http://asset1.wheelmap.org/images/bubble.png?1362741213') no-repeat 100% 0px"}=Poi.tagged.count
+              %td{:style => "background: url(\'#{image_path('bubble.png')}\') no-repeat left center;background-position: 0px 0px"} &nbsp;
+              %td{:style => "padding-right: 5px;background: url(\'#{image_path('bubble.png')}\') no-repeat 100% 0px"}=Poi.tagged.count
         %li=link_to "Tweet", "http://twitter.com/share", :class => "twitter-share-button", :style => 'display:none', 'data-lang' => I18n.locale, 'data-counturl' => roooot_url, 'data-related' => 'wheelmap,sozialhelden', 'data-hashtags' => 'wheelmap'
         :javascript
           !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
