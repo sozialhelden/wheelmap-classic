@@ -112,7 +112,7 @@ sk:
       keywords: "miesta prístupné pre vozíčkarov hľadať označovať"
       search: Hľadať
     navigation:
-      blog: Blog
+      blog: Novinky
       feedback: "Spätná väzba"
       home: Štart
       how_to_add_a_place: "Ako pridám miesta?"
@@ -130,7 +130,7 @@ sk:
       add_place: "Pridať ďalšie"
       find: Nájsť
       label: ~
-      placeholder: "napr. \"Prvá budova Matice slovenskej Martin\" alebo \"Grasalkovičov palác Bratislava\""
+      placeholder: "Hľadajte miesta"
       title_add_place: "Pridajte sem nové miesto!"
     tagline: "Logo Wheelmap"
     title: "Nájdite miesta prístupné vozíčkarom"
@@ -285,7 +285,7 @@ sk:
         delimiter: " "
     precision:
       format:
-        delimiter: ~
+        delimiter: " "
   oauth:
     application:
       connect:
@@ -353,8 +353,10 @@ sk:
   users:
     after_signup_edit:
       welcome:
-        headline: "Vitajte na wheelmap"
-        set_password_for_mobile: "Máte smartphone? Určite si heslo aby ste mohli Wheelmap používať aj na cestách vo vašom iPhone alebo telefóne s Androidom."
+        headline: "Už je to takmer hotové! Tu dokončite prihlásenie:"
+        set_password_for_mobile: |-
+            Dokončili ste vašu registráciu u OpenStreetMap.
+            Ešte si zvoľte email a heslo pre váš Wheelmap účet a je hotovo! Tie budete potrebovať na prihlásenie do Wheelmap aplikácie pre váš iPhone alebo telefón s Androidom.
         text: "Ako vás môžeme kontaktovať? Tieto údaje môžete kedykoľvek zmeniť na svojom profile."
     edit:
       headline:

@@ -3,21 +3,32 @@ cs:
   poi:
     category:
       accommodation: Ubytování
+      education: Vzdělávání
+      food: Jídlo
       government: Vláda
       health: Zdraví
+      leisure: "Volný čas"
       misc: Různé
       money_post: Finančnictví
       public_transfer: "Veřejná doprava"
+      shopping: Nákupy
       sport: Sport
       tourism: Cestování
+      unknown: Neznámé
     name:
       accommodation:
+        beach_resort: "Plážový hotel"
+        bed_and_breakfast: "Nocleh se snídaní"
         camp_site: Kemp
+        caravan_site: "Autokemp pro obytné přívěsy"
         chalet: "Horská chata"
+        dormitory: Koleje
+        guest_house: Penzion
         hostel: Hostel
         hotel: Hotel
         motel: Motel
       education:
+        college: "Vysoká škola"
         driving_school: Autoškola
         kindergarten: Školka
         museum: Muzeum
@@ -26,86 +37,141 @@ cs:
       food:
         bar: Bar
         biergarten: Zahrádka
+        cafe: Kafe
         drinking_water: "Pitná voda"
         fast_food: "Rychlé občerstvení"
         ice_cream: Zmrzlina
+        pub: Hospoda
+        restaurant: Restaurace
       government:
+        courthouse: Soud
         embassy: Velvyslanectví
         government: "Vládní agentura"
         police: Policie
         public_building: "Veřejná budova"
+        townhall: Radnice
       health:
         dentist: Zubař
+        doctors: Doktor
+        hearing_aids: "Dodavatel naslouchacích pomůcek"
+        hospital: Nemocnice
         medical_supply: "Medicínské vybavení"
         pharmacy: Lékárna
         social_facility: "Společenské zázemí"
         veterinary: Veterinář
       leisure:
+        arena: Stadion
+        brothel: Nevěstinec
         casino: Kasino
         cinema: Kino
+        community_center: "Komunitní centrum"
+        gallery: Galerie
         nightclub: "Noční klub"
         playground: Hřiště
         sauna: Sauna
+        stripclub: "Strip club"
         theatre: Divadlo
+        zoo: Zoo
       misc:
+        company: "Společnost (Kancelář)"
         estate_agent: "Realitní kancelář"
+        insurance: Pojištění
         lawyer: Právník
+        place_of_worship: Svatyně
         toilets: Toalety
       money_post:
         atm: Bankomat
         bank: Banka
         bureau_de_change: Směnárna
         post_box: "Poštovná schránka"
+        post_office: Pošta
       public_transfer:
+        aerodrome: Letiště
+        bicycle_parking: "Stojan na kola"
+        bicycle_rental: "Půjčovna kol"
+        boatyard: Loděnice
         bus_station: "Autobusová stanice"
+        bus_stop: "Zastávka autobusu"
         cable_car: Lanovka
+        car_rental: "Půjčovna automobilů"
         car_sharing: "Sdílení automobilů"
+        chair_lift: "Sedačková lanovka"
+        ferry: Trajekt
+        ferry_terminal: "Nástupiśtě na trajekt"
+        fuel: "Benzínová pumpa"
+        halt: Zastávka
+        light_rail: "Rýchlodražna tramvaj"
+        parking: Parkování
         parking_aisle: "Parkovací ulička"
         platform: Nástupiště
+        station: Nádraží
         subway_entrance: "Vchod do metra"
         terminal: "Letištní terminál"
         tram_stop: "Zastávka tramvaje"
       shopping:
         alcohol: Alkohol
+        bakery: Pekárna
         beauty: "Salon krásy"
         beverages: Nápoje
         bicycle: Kola
         books: Knihy
+        butcher: Řeznictví
         car_repair: Autoservis
         car_shop: Automobily
         chemist: Lékárna
+        clothes: Oblečení
+        computer: Počítače
         confectionery: Cukrárna
         convenience: Příslušenství
+        deli: Delikatesy
         department_store: "Obchodní dům"
+        doityourself: "Kutilské potřeby"
+        dry_cleaning: Čistírna
         electronics: Elektronika
         fabric: Textil
         farm_shop: "Farmářský obchod"
         florist: Květinářství
         furniture: Nábytek
+        garden_centre: "Zahradní centrum"
+        gift: Suvenýry
         hairdresser: Kadeřnictví
         hardware: Železářství
         jewelry: Klenotnictví
         kiosk: Stánek
         laundry: Prádelna
+        mall: "Nákupní středisko"
         optician: Optika
+        organic: "Organické výrobky"
         outdoor: "Outdoorové vybavení"
         pet: Zverimex
         photo: Fotky
         second_hand: "Second hand"
         shoes: Boty
         sports: Sporty
+        stationery: Papírnictví
         supermarket: Supermarket
         toys: Hračky
         travel_agency: "Cestovní kancelář"
+        video: Videopůjčovna
       sport:
         pitch: Hřiště
         sports_centre: "Sportovní centrum"
         stadium: Stadion
+        swimming: Plavání
         swimming_pool: "Plavecký bazen"
       tourism:
+        archaeological_site: "Archeologické naleziště"
         arts_centre: "Kulturní centrum"
+        artwork: Umění
+        attraction: Atrakce
+        battlefield: Bojiště
+        beach: Pláž
+        beacon: Maják
+        castle: Hrad
         cave_entrance: "Vstup do jeskyně"
         information: "Turistické informace"
+        memorial: Památník
+        theme_park: "Zábavný park"
         tower: Věž
         viewpoint: Rozhled
       unknown:

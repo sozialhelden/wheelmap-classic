@@ -3,16 +3,22 @@ cs:
   devise:
     confirmations:
       confirmed: "Váš účet byl úspěšně potvrzen."
+      link: "Nedostali jste instrukce pro potvrzení?"
       send_instructions: "Za několik minut obdržíte email s instrukcemi k potvrzení vašeho účtu."
       send_paranoid_instructions: "Jestli váš účet u nás existuje obdržíte email s instrukcemi jak ho potvrdit."
     destroy:
       confirm: "Jste si jistí?"
+      headline: "Smazat účet"
+      link: Smazat
     edit:
       form:
         labels:
           current_password: "Současné heslo <i>(potřebujeme ověřit vaše změny)</i>"
+          email: Email
           password: "Heslo <i>(nechte prázdné jestli ho nechcete měnit)</i>"
           password_confirmation: "Znovu zadejte heslo"
+        submit: "Uložit změny"
+      headline: "Změnit účet"
     failure:
       already_authenticated: "Přihlášení již proběhlo."
       inactive: "Váš účet ještě nebyl aktivován."
@@ -30,22 +36,31 @@ cs:
         subject: "Instrukce k nastavení nového hesla"
       unlock_instructions:
         subject: "Instrukce k odemknutí účtu"
+    mandatory: "* Povinné"
     omniauth_callbacks:
       failure: "Není možné autorizovat z %{kind}, protože: \"%{reason}\"."
+      permission_missing: "Nepřidělili jste potřebné oprávnění."
       success: "Úspěšná autorizace z účtu %{kind}."
     password_recovery:
       form:
+        labels:
+          email: Email
         submit: "Obnovit heslo"
       headline: "Zapomněli jste heslo?"
     password_reset:
       email:
         comment: "Jestli jste nežádali o obnovení hesla tak tento email ignorujte. <br/> Vaše heslo bude změněné jenom jestli kliknete na odkaz nahoře a nastavíte si heslo nové."
+        headline: "Vítejte %{email}"
         link: "Změnit heslo"
         text: "Dostali jsme požadavek na změnu vašeho hesla. Jestli jste to byli vy klikněte na následující odkaz - jinak toto ignorujte!"
       form:
         labels:
+          password: "Nové heslo"
           password_confirmation: "Zopakujte heslo"
+        submit: "Obnovit heslo"
+      headline: "Obnovit heslo"
     passwords:
+      link: "Zapomněli jste heslo?"
       send_instructions: "Za několik minut obdržíte email s instrukcemi k nastavení nového hesla."
       send_paranoid_instructions: "Jestli váš účet existuje, během pár minut obdržíte email s instrukcemi jak si obnovit heslo"
       updated: "Vaše heslo bylo úspěšně změněno. Nyní jste přihlášen(a)."
@@ -64,12 +79,15 @@ cs:
       inactive: "Váš účet ještě nebyl aktivován."
       invalid: "Nesprávný email nebo heslo."
       invalid_token: "Neplatný ověřovací symbol."
+      link: "Přihlásit se"
       locked: "Váš účet je zablokovaný"
       new:
         no_osm_account: "Nemáte účet u OpenStreetMap?"
         osm_promo_text: "Wheelmap využívá informace z OpenStreetMap (OSM). OpenStreetMap je volná celosvětová mapa, vytvářená lidmi jako vy. Je to jako Wikipedie pro mapy. Aby jste mohli upravovat místa nebo vytvářet nové, potřebujete u OpenStreetMap mít účet a musíte být přihlášení."
         promo_text_thank_you: "Děkujeme za vaší podporu!"
+        sign_in_with: "Přihlašte se pomocí %{kind}"
         sign_up_with_osm: "Zaregistrujte se."
+        wheelmap_promo_text: "Svými znalostmi o ???? přístupných pro vozíčkáře můžete pomoct lidem s fyzickým postižením lépe si zorganizovat každodenní život. Též se tak přidávají další data do OpenStreetMaps."
       signed_in: "Přihlášení úspěšné."
       signed_out: "Odhlášení úspěšné."
       timeout: "Vaše přihlášení vypršelo, prosím přihlašte se znova."
@@ -78,19 +96,28 @@ cs:
     sign_in:
       form:
         labels:
+          email: Email
+          password: Heslo
           remember_me: "Zůstat přihlášený?"
         submit: "Přihlásit se"
+      headline: "Přihlásit se"
+    sign_out:
+      headline: "Odhlásit se"
     sign_up:
       email:
         confirm_my_account: "Potvrdit svůj účet"
         please_confirm: "Váš účet potvrdíte následujícím odkazem:"
+        welcome: "Vítejte %{email}!"
       form:
         labels:
           email: Email
+          password: Heslo
+          password_confirmation: "Znovu zadejte heslo"
           wants_newsletter: "Ano, informujte mne o novinkách na wheelmap - ne častěji než jednou měsíčně"
         submit: "Vytvořit účet"
       headline: "Vytvořit účet"
     unlocks:
       link: "Neobdrželi jste instrukce na odblokování?"
       send_instructions: "Za několik minut obdržíte email s instrukcemi, jak odemknout svůj účet."
+      send_paranoid_instructions: "Jestli váš účet existuje, obdržíte během několika minut instrukce jak ho odemknout"
       unlocked: "Váš účet byl úspěšně odemknut. Nyní jste přihlášen(a)."

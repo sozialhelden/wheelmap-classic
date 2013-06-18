@@ -102,7 +102,7 @@ sk:
         submit: "Prihlásiť sa"
       headline: "Prihlásiť sa"
     sign_out:
-      headline: Odhlásiť
+      headline: "Odhlásiť sa"
     sign_up:
       email:
         confirm_my_account: "Potvrdiť svoj účet"
