@@ -1,4 +1,5 @@
 require 'spec_helper'
+require "cacheable_flash/test_helpers"
 
 class UpdateJob < ActiveRecord::Base
   set_table_name 'delayed_jobs'
@@ -13,7 +14,7 @@ class UpdateAttributeJob <ActiveRecord::Base
 end
 
 describe NodesController do
-
+  include CacheableFlash::TestHelpers
 
   fixtures :node_types
 
@@ -168,6 +169,7 @@ describe NodesController do
          lambda{
             put(:update, :id => 84644746, :node => {:wheelchair => 'yes', :name => 'A nice place', :type => 'cafe'})
             response.code.should == '302'
+            flash_cookie["notice"].should == "Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert."
           }.should change(UpdateJob, :count).by(1)
           response.should redirect_to(node_path(84644746))
       end
@@ -220,6 +222,7 @@ describe NodesController do
                :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant', :city=>"",
                :housenumber=>"", :postcode=>"", :wheelchair_description=>"", :street=>"",:phone=>"", :website=>""}})
           response.code.should == '302'
+          flash_cookie["notice"].should == "Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert."
         }.should change(CreateJob, :count).by(1)
       end
 
