@@ -1,5 +1,5 @@
 ---
-se:
+sv:
   application:
     require_no_user:
       notice: "Du är redan inloggad"
