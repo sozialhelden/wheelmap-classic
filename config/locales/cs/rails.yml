@@ -4,8 +4,12 @@ cs:
     attributes:
       user:
         first_name: "Křestní jméno"
+        last_name: Příjmení
+        privacy_policy: "Ochrana soukromí"
         terms: Podmínky
     errors:
+      full_messages:
+        format: "%{attribute} %{message}"
       messages:
         accepted: "musí být potvrzeno"
         blank: "je povinná položka"
@@ -30,12 +34,20 @@ cs:
       models:
         user:
           attributes:
+            email:
+              blank: "nemůže být prázdné když je zadané heslo"
+            privacy_policy:
+              accepted: "musí být přijato"
             terms:
               accepted: "musí být přijaté"
         user_session:
+          email: "Emailová adresa"
+          password: Heslo
           remember_me: "Zůstaňte přihlášení"
       template:
         body: "Následující pole obsahují chybně vyplněné údaje: "
         header:
           one: "Při ukládání objektu %{model} došlo k chybám a nebylo jej možné uložit"
           other: "Při ukládání objektu %{model} došlo ke %{count} chybám a nebylo možné jej uložit"
+    models:
+      user: Uživatel

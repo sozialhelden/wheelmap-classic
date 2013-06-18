@@ -22,6 +22,7 @@ sk:
         camp_site: Kemping
         caravan_site: "Autokemping pre obytné prívesy"
         chalet: "Horská chata"
+        dormitory: Internát
         guest_house: Penzión
         hostel: Hostel
         hotel: Hotel
@@ -104,7 +105,7 @@ sk:
         parking: Parkovanie
         parking_aisle: "Parkovacia ulička"
         platform: Nástupište
-        station: Metro
+        station: Stanica
         subway_entrance: "Vchod do metra"
         terminal: "Letiskový terminál"
         tram_stop: "Zastávka električky"
@@ -120,7 +121,7 @@ sk:
         car_shop: Automobily
         chemist: Lekáreň
         clothes: Oblečenie
-        computer: Počítač
+        computer: Počítače
         confectionery: Cukráreň
         convenience: Príslušenstvo
         deli: Delikatesy

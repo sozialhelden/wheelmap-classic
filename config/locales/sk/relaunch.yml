@@ -1,2 +1,25 @@
 ---
-sk: ~
+sk:
+  header:
+    navigation:
+      about_wheelmap: "O Wheelmap"
+      choose_language: "Zvoľte jazyk"
+      contact: Kontakt
+      map: Mapa
+      projects: "Zapojte sa"
+    toolbar:
+      categories: Kategórie
+  home:
+    index:
+      overlay:
+        button: "Dobre, poďme na to!"
+        categories: "Filtrovať miesta podľa kategórií"
+        filter: "Filtrovať miesta podľa prístupnosti"
+        headline: "Označujte a hľadajte miesta prístupné pre vozíčkarov na Wheelmap.org - na celom svete a zadarmo. Je to jednoduché:"
+        lookup: "Hľadať konkrétne miesto"
+        secondary_headline: "Náš semaforový systém na označenie prístupnosti verejných objektov pre vozíčkarov:"
+  nodes:
+    new:
+      form:
+        legend: "Poloha objektu"
+        location: "Prosím kliknite na mapu a umiestnite značku na presnú polohu."
