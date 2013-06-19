@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class UserMailer < ActionMailer::Base
   default :from => "noreply@wheelmap.org"
 

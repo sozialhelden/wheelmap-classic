@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'spec_helper'
 describe Poi do
   fixtures :node_types
