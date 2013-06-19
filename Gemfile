@@ -44,7 +44,7 @@ group :default do
   gem 'librato-metrics'
   gem 'librato-rails'
   gem 'jquery-rails'
-  gem 'system_timer' # Optional for librato dependency faraday
+#  gem 'system_timer' # Optional for librato dependency faraday
   gem 'multipart-post'
   gem 'activeadmin'
   gem 'kaminari'
@@ -67,7 +67,6 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'guard-cucumber', "1.2.2"
-  gem 'ruby-debug'
 end
 
 group :test do
@@ -75,7 +74,7 @@ group :test do
   gem 'factory_girl_rails', "1.6.0"
   gem "capybara", "1.1.1"  # on mac, you need sudo port install libffi
   gem 'cucumber', "1.2.1"
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'rspec', "2.12.0"
   gem 'autotest'
   gem 'nokogiri'
