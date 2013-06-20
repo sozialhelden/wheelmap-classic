@@ -46,6 +46,9 @@ Wheelmap::Application.routes.draw do
   resources :node_types, :only => :index
   resources :search, :only => :index
   resources :feeds, :only => :index
+  resources :oauth, :only => [] do
+    get :register_osm, :on => :collection
+  end
 
   match 'abingo(/:action(/:id))', :to => 'abingo_dashboard', :as => :abingo
 
