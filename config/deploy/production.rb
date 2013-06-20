@@ -22,7 +22,7 @@ set :port, 22022
 set :deploy_to, "/var/apps/wheelmap/production"
 
 set :default_environment, {
-  'PATH' => '/opt/ruby-enterprise/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games'
+  'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games'
 }
 
 # >>>>>>>>>>>>>>>>>>>>>> VIRTUAL SERVER
