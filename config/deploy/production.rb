@@ -1,8 +1,9 @@
 set :rails_env, :production
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> All the same
-require "whenever/capistrano"
+set :whenever_command, "bundle exec whenever"
 set :whenever_environment, :production
+require "whenever/capistrano"
 
 # Delayed Job
 require "delayed/recipes"
@@ -22,7 +23,7 @@ set :port, 22022
 set :deploy_to, "/var/apps/wheelmap/production"
 
 set :default_environment, {
-  'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games'
+  'PATH' => '/opt/ruby-enterprise/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games'
 }
 
 # >>>>>>>>>>>>>>>>>>>>>> VIRTUAL SERVER
