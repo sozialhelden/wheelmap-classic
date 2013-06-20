@@ -47,6 +47,7 @@ Wheelmap::Application.routes.draw do
   resources :search, :only => :index
   resources :feeds, :only => :index
   resources :oauth, :only => [] do
+    # LEAVE THIS IN HERE, CAUSE iphone 2 depends on this URL
     get :register_osm, :on => :collection
   end
 
