@@ -124,6 +124,12 @@ class Poi < ActiveRecord::Base
                     #{right} #{top}, #{left} #{top}, \
                     #{left} #{bottom}))'), pois.geom)" } }
 
+  #scope :within_bbox, lambda {|left, bottom, right, top|{
+  #  :conditions => "ST_Within(pois.geom, GeometryFromText('POLYGON(( \
+  #                  #{left} #{bottom}, #{right} #{bottom}, \
+  #                  #{right} #{top}, #{left} #{top}, \
+  #                  #{left} #{bottom}))'))" } }
+
   def self.bbox(bounding_box_string)
     left, bottom, right, top = bounding_box_string.split(',').map(&:to_f)
     self.within_bbox(left, bottom, right, top)
