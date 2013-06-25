@@ -60,10 +60,10 @@ CREATE TABLE active_admin_comments (
 
 
 --
--- Name: admin_notes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- Name: active_admin_comments_id_seq; Type: SEQUENCE; Schema: public; Owner: -
 --
 
-CREATE SEQUENCE admin_notes_id_seq
+CREATE SEQUENCE active_admin_comments_id_seq
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -72,10 +72,10 @@ CREATE SEQUENCE admin_notes_id_seq
 
 
 --
--- Name: admin_notes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- Name: active_admin_comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE admin_notes_id_seq OWNED BY active_admin_comments.id;
+ALTER SEQUENCE active_admin_comments_id_seq OWNED BY active_admin_comments.id;
 
 
 --
@@ -440,9 +440,9 @@ CREATE TABLE pois (
     status integer DEFAULT 8 NOT NULL,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    geom geometry(Point) NOT NULL,
     node_type_id bigint,
-    region_id bigint
+    region_id bigint,
+    geom geometry(Point) NOT NULL
 );
 
 
@@ -553,12 +553,12 @@ CREATE TABLE regions (
     name character varying(255),
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    grenze geometry NOT NULL,
     parent_id bigint,
     admin_level integer,
     lft integer,
     rgt integer,
-    depth integer
+    depth integer,
+    grenze geometry NOT NULL
 );
 
 
@@ -632,8 +632,8 @@ CREATE TABLE users (
     id bigint NOT NULL,
     oauth_token character varying(255),
     oauth_secret character varying(255),
-    email character varying(255) DEFAULT NULL::character varying,
-    encrypted_password character varying(255) DEFAULT NULL::character varying,
+    email character varying(255),
+    encrypted_password character varying(255),
     password_salt character varying(255) DEFAULT ''::character varying NOT NULL,
     remember_token character varying(255),
     remember_created_at timestamp without time zone,
@@ -690,7 +690,7 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY active_admin_comments ALTER COLUMN id SET DEFAULT nextval('admin_notes_id_seq'::regclass);
+ALTER TABLE ONLY active_admin_comments ALTER COLUMN id SET DEFAULT nextval('active_admin_comments_id_seq'::regclass);
 
 
 --
@@ -807,11 +807,11 @@ COPY spatial_ref_sys (srid, auth_name, auth_srid, srtext, proj4text) FROM stdin;
 
 
 --
--- Name: admin_notes_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: active_admin_comments_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
 ALTER TABLE ONLY active_admin_comments
-    ADD CONSTRAINT admin_notes_pkey PRIMARY KEY (id);
+    ADD CONSTRAINT active_admin_comments_pkey PRIMARY KEY (id);
 
 
 --
@@ -1141,96 +1141,6 @@ CREATE RULE geometry_columns_update AS ON UPDATE TO geometry_columns DO INSTEAD 
 -- PostgreSQL database dump complete
 --
 
-INSERT INTO schema_migrations (version) VALUES ('20110107131649');
-
-INSERT INTO schema_migrations (version) VALUES ('20110114163727');
-
-INSERT INTO schema_migrations (version) VALUES ('20110427101005');
-
-INSERT INTO schema_migrations (version) VALUES ('20110504111051');
-
-INSERT INTO schema_migrations (version) VALUES ('20110513152131');
-
-INSERT INTO schema_migrations (version) VALUES ('20110716131537');
-
-INSERT INTO schema_migrations (version) VALUES ('20110716140738');
-
-INSERT INTO schema_migrations (version) VALUES ('20110717073922');
-
-INSERT INTO schema_migrations (version) VALUES ('20110801135556');
-
-INSERT INTO schema_migrations (version) VALUES ('20111001183641');
-
-INSERT INTO schema_migrations (version) VALUES ('20111011120103');
-
-INSERT INTO schema_migrations (version) VALUES ('20111011145011');
-
-INSERT INTO schema_migrations (version) VALUES ('20111017092328');
-
-INSERT INTO schema_migrations (version) VALUES ('20111018102230');
-
-INSERT INTO schema_migrations (version) VALUES ('20111024103455');
-
-INSERT INTO schema_migrations (version) VALUES ('20111101122153');
-
-INSERT INTO schema_migrations (version) VALUES ('20111115120452');
-
-INSERT INTO schema_migrations (version) VALUES ('20120119150643');
-
-INSERT INTO schema_migrations (version) VALUES ('20120120143510');
-
-INSERT INTO schema_migrations (version) VALUES ('20120202134608');
-
-INSERT INTO schema_migrations (version) VALUES ('20120203121324');
-
-INSERT INTO schema_migrations (version) VALUES ('20120413133645');
-
-INSERT INTO schema_migrations (version) VALUES ('20120418164644');
-
-INSERT INTO schema_migrations (version) VALUES ('20120425085200');
-
-INSERT INTO schema_migrations (version) VALUES ('20120425104911');
-
-INSERT INTO schema_migrations (version) VALUES ('20120427102536');
-
-INSERT INTO schema_migrations (version) VALUES ('20120427103805');
-
-INSERT INTO schema_migrations (version) VALUES ('20120525115535');
-
-INSERT INTO schema_migrations (version) VALUES ('20120711130327');
-
-INSERT INTO schema_migrations (version) VALUES ('20120802105205');
-
-INSERT INTO schema_migrations (version) VALUES ('20121018171714');
-
-INSERT INTO schema_migrations (version) VALUES ('20121101130728');
-
-INSERT INTO schema_migrations (version) VALUES ('20121101140003');
-
-INSERT INTO schema_migrations (version) VALUES ('20121101150011');
-
-INSERT INTO schema_migrations (version) VALUES ('20121101150012');
-
-INSERT INTO schema_migrations (version) VALUES ('20121101150013');
-
-INSERT INTO schema_migrations (version) VALUES ('20121106102638');
-
-INSERT INTO schema_migrations (version) VALUES ('20121106115711');
-
-INSERT INTO schema_migrations (version) VALUES ('20121107153445');
-
-INSERT INTO schema_migrations (version) VALUES ('20121113125237');
-
-INSERT INTO schema_migrations (version) VALUES ('20121128105658');
-
-INSERT INTO schema_migrations (version) VALUES ('20121219120846');
-
-INSERT INTO schema_migrations (version) VALUES ('20130108144233');
-
-INSERT INTO schema_migrations (version) VALUES ('20130117143229');
-
-INSERT INTO schema_migrations (version) VALUES ('20130122193813');
-
-INSERT INTO schema_migrations (version) VALUES ('20130214133154');
-
 INSERT INTO schema_migrations (version) VALUES ('20130228153529');
+
+INSERT INTO schema_migrations (version) VALUES ('20130625150954');
