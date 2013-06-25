@@ -90,7 +90,7 @@ class PlanetReader
       id = attributes['id'].to_i
       if (id > 0) then
         @poi = {:osm_id => id,
-                :geom => Point.from_x_y(attributes['lon'].to_f, attributes['lat'].to_f).as_wkt,
+                :geom => Point.from_x_y(attributes['lon'].to_f, attributes['lat'].to_f, 4326).as_ewkt,
                 :version => attributes['version'].to_i,
                 :tags => {},
                 :created_at => Time.now,
@@ -104,7 +104,7 @@ class PlanetReader
         # update way "-id-10000000" in osm
         # puts "Process: it's from a way: #{(id + 10000000).abs}"
         @poi = {:osm_id => (id + 10000000),
-                :geom => Point.from_x_y(attributes['lon'].to_f, attributes['lat'].to_f),
+                :geom => Point.from_x_y(attributes['lon'].to_f, attributes['lat'].to_f, 4326).as_ewkt,
                 :version => attributes['version'].to_i,
                 :tags => {},
                 :created_at => Time.now,

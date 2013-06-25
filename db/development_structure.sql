@@ -38,6 +38,43 @@ COMMENT ON EXTENSION postgis IS 'PostGIS geometry, geography, and raster spatial
 
 SET search_path = public, pg_catalog;
 
+--
+-- Name: upsert_pois_sel_osm_id_set_created_at_a_geom_a_node_t949850915(bigint, character varying, geometry, bigint, bigint, integer, text, character varying, integer); Type: FUNCTION; Schema: public; Owner: -
+--
+
+CREATE FUNCTION upsert_pois_sel_osm_id_set_created_at_a_geom_a_node_t949850915(osm_id_sel bigint, created_at_set character varying, geom_set geometry, node_type_id_set bigint, osm_id_set bigint, status_set integer, tags_set text, updated_at_set character varying, version_set integer) RETURNS void
+    LANGUAGE plpgsql
+    AS $$
+          DECLARE
+            first_try INTEGER := 1;
+          BEGIN
+            LOOP
+              -- first try to update the key
+              UPDATE "pois" SET "geom" = "geom_set", "node_type_id" = "node_type_id_set", "osm_id" = "osm_id_set", "status" = "status_set", "tags" = "tags_set", "updated_at" = CAST("updated_at_set" AS timestamp without time zone), "version" = "version_set"
+                WHERE "osm_id" = "osm_id_sel";
+              IF found THEN
+                RETURN;
+              END IF;
+              -- not there, so try to insert the key
+              -- if someone else inserts the same key concurrently,
+              -- we could get a unique-key failure
+              BEGIN
+                INSERT INTO "pois"("created_at", "geom", "node_type_id", "osm_id", "status", "tags", "updated_at", "version") VALUES (CAST("created_at_set" AS timestamp without time zone), "geom_set", "node_type_id_set", "osm_id_set", "status_set", "tags_set", CAST("updated_at_set" AS timestamp without time zone), "version_set");
+                RETURN;
+              EXCEPTION WHEN unique_violation THEN
+                -- seamusabshere 9/20/12 only retry once
+                IF (first_try = 1) THEN
+                  first_try := 0;
+                ELSE
+                  RETURN;
+                END IF;
+                -- Do nothing, and loop to try the UPDATE again.
+              END;
+            END LOOP;
+          END;
+          $$;
+
+
 SET default_tablespace = '';
 
 SET default_with_oids = false;
