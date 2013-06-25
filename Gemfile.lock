@@ -231,7 +231,6 @@ GEM
     multi_json (1.7.2)
     multi_xml (0.5.3)
     multipart-post (1.1.5)
-    mysql2 (0.2.18)
     net-scp (1.1.1)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -255,6 +254,7 @@ GEM
     pdf-writer (1.1.8)
       color (>= 1.4.0)
       transaction-simple (~> 1.3)
+    pg (0.15.1)
     pickle (0.4.11)
       cucumber (>= 0.8)
       rake
@@ -413,11 +413,11 @@ DEPENDENCIES
   libxml-ruby
   memcache-client
   multipart-post
-  mysql2 (< 0.3.0)
   newrelic_rpm
   nokogiri
   oauth
   omniauth-osm
+  pg
   pickle
   rails (= 3.0.20)
   rake
