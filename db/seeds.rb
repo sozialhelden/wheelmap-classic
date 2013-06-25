@@ -7,7 +7,8 @@
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
 Category.delete_all
-Category.connection.execute('ALTER TABLE categories AUTO_INCREMENT=1')
+# MySQL: ActiveRecord::Base.connection.execute('ALTER TABLE categories AUTO_INCREMENT=1')
+ActiveRecord::Base.connection.execute('ALTER SEQUENCE categories_id_seq RESTART WITH 1')
 
 categories = Category.create([
   {:id => 1,  :identifier => :public_transfer},
@@ -25,7 +26,9 @@ categories = Category.create([
 ])
 
 NodeType.delete_all
-NodeType.connection.execute('ALTER TABLE node_types AUTO_INCREMENT=1')
+# MySQL: ActiveRecord::Base.connection.execute('ALTER TABLE node_types AUTO_INCREMENT=1')
+ActiveRecord::Base.connection.execute('ALTER SEQUENCE node_types_id_seq RESTART WITH 1')
+
 
 public_transfer = Category.find_by_identifier('public_transfer')
 node_types = NodeType.create([
@@ -189,7 +192,9 @@ node_types = NodeType.create([
 ])
 
 Region.delete_all
-Region.connection.execute('ALTER TABLE regions AUTO_INCREMENT=1')
+# MySQL: ActiveRecord::Base.connection.execute('ALTER TABLE regions AUTO_INCREMENT=1')
+ActiveRecord::Base.connection.execute('ALTER SEQUENCE regions_id_seq RESTART WITH 1')
+
 
 f = File.new "#{Rails.root}/db/data/polygons.sql"
 while statements = f.gets("\n") do
