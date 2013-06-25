@@ -4,6 +4,7 @@ group :default do
   gem 'rails', '3.0.20'
   gem 'pg'
   gem 'activerecord-import', '<0.3.0', :require => false
+  gem 'upsert'
   gem 'oauth'
   gem 'devise', '1.5.4'
   gem 'compass'
