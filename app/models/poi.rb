@@ -130,7 +130,7 @@ class Poi < ActiveRecord::Base
 
   # Postgres/Postgis:
   scope :within_bbox, lambda {|left, bottom, right, top|{
-    :conditions => "ST_Within(pois.geom, ST_GeometryFromText('POLYGON(( \
+    :conditions => "ST_Within(pois.geom, ST_GeometryFromText('SRID=4326;POLYGON(( \
                     #{left} #{bottom}, #{right} #{bottom}, \
                     #{right} #{top}, #{left} #{top}, \
                     #{left} #{bottom}))'))" } }
@@ -157,7 +157,7 @@ class Poi < ActiveRecord::Base
   end
 
   def lat=(value)
-    self.geom ||= Point.from_x_y(0.0,0.0)
+    self.geom ||= Point.from_x_y(0.0,0.0,4326)
     self.geom.y = value
   end
 
@@ -166,7 +166,7 @@ class Poi < ActiveRecord::Base
   end
 
   def lon=(value)
-    self.geom ||= Point.from_x_y(0.0,0.0)
+    self.geom ||= Point.from_x_y(0.0,0.0,4326)
     self.geom.x = value
   end
 
