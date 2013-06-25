@@ -107,8 +107,13 @@ class Poi < ActiveRecord::Base
   scope :unknown_accessibility, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:unknown]}
   scope :tagged, :conditions => ['status < ?', WHEELCHAIR_STATUS_VALUES[:unknown]]
   scope :with_status, lambda {|status| {:conditions => {:status => status}}}
-  #scope :search,      lambda {|search| {:conditions => ['tags LIKE ?', "%#{search}%"]}}
-  scope :search,      lambda {|search| {:conditions => ['MATCH (tags) AGAINST  (? IN BOOLEAN MODE)', escape_search_string(search)]}}
+
+  # Generic:
+  # scope :search,      lambda {|search| {:conditions => ['tags LIKE ?', "%#{search}%"]}}
+  # MYSQL:
+  # scope :search,      lambda {|search| {:conditions => ['MATCH (tags) AGAINST  (? IN BOOLEAN MODE)', escape_search_string(search)]}}
+  # Postgres:
+  scope :search,      lambda {|search| {:conditions => ['(to_tsvector(tags) @@ to_tsquery(?))', escape_search_string(search)]}}
 
   scope :with_node_type, :conditions => 'node_type_id IS NOT NULL'
   scope :without_node_type, :conditions => 'node_type_id IS NULL'
@@ -117,18 +122,19 @@ class Poi < ActiveRecord::Base
   scope :has_photo, :joins => :photos
   scope :within_region, lambda {|region| {:conditions => {:region_id => region.id}}}
 
-
-  scope :within_bbox, lambda {|left, bottom, right, top|{
-    :conditions => "MBRContains(GeomFromText('POLYGON(( \
-                    #{left} #{bottom}, #{right} #{bottom}, \
-                    #{right} #{top}, #{left} #{top}, \
-                    #{left} #{bottom}))'), pois.geom)" } }
-
+  # MYSQL
   #scope :within_bbox, lambda {|left, bottom, right, top|{
-  #  :conditions => "ST_Within(pois.geom, GeometryFromText('POLYGON(( \
+  #  :conditions => "MBRContains(GeomFromText('POLYGON(( \
   #                  #{left} #{bottom}, #{right} #{bottom}, \
   #                  #{right} #{top}, #{left} #{top}, \
-  #                  #{left} #{bottom}))'))" } }
+  #                  #{left} #{bottom}))'), pois.geom)" } }
+
+  # Postgres/Postgis:
+  scope :within_bbox, lambda {|left, bottom, right, top|{
+    :conditions => "ST_Within(pois.geom, ST_GeometryFromText('POLYGON(( \
+                    #{left} #{bottom}, #{right} #{bottom}, \
+                    #{right} #{top}, #{left} #{top}, \
+                    #{left} #{bottom}))'))" } }
 
   def self.bbox(bounding_box_string)
     left, bottom, right, top = bounding_box_string.split(',').map(&:to_f)
