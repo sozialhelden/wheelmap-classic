@@ -45,7 +45,9 @@ class InitialSchema < ActiveRecord::Migration
 
     add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
-    create_table "pois", :primary_key => "osm_id", :options => "ENGINE=MyISAM", :id => false, :force => true do |t|
+    # MySQL:
+    # create_table "pois", :primary_key => "osm_id", :options => "ENGINE=MyISAM", :id => false, :force => true do |t|
+    create_table "pois", :primary_key => "osm_id", :id => false, :force => true do |t|
       t.integer  "osm_id",                                   :null => false, :key => false 
       t.integer  "version",                                  :null => false
       t.text     "tags",                                     :null => false
