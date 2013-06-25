@@ -116,7 +116,6 @@ class Poi < ActiveRecord::Base
   scope :has_provider, :joins => :provided_pois
   scope :within_region, lambda {|region| {:conditions => {:region_id => region.id}}}
 
-  scope :select_distance, lambda {|lat,lon| {:select => "*,haversine(geom,#{lat},#{lon}) as distance"}}
 
   scope :within_bbox, lambda {|left, bottom, right, top|{
     :conditions => "MBRContains(GeomFromText('POLYGON(( \
