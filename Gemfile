@@ -36,7 +36,7 @@ group :default do
   gem 'big_sitemap' #, :git => 'git@github.com:sozialhelden/big_sitemap.git'
   gem 'unicorn'
   gem 'rgeo'
-  gem 'spatial_adapter'
+  gem 'activerecord-postgis-adapter'
   gem 'friendly_id', '~>3.3.1' # upgrade to 4.x takes more effort.
   gem 'will_paginate'
   gem 'omniauth-osm'

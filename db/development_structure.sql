@@ -8,34 +8,6 @@ SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
 
---
--- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
---
-
-CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
-
-
---
--- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: -
---
-
-COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
-
-
---
--- Name: postgis; Type: EXTENSION; Schema: -; Owner: -
---
-
-CREATE EXTENSION IF NOT EXISTS postgis WITH SCHEMA public;
-
-
---
--- Name: EXTENSION postgis; Type: COMMENT; Schema: -; Owner: -
---
-
-COMMENT ON EXTENSION postgis IS 'PostGIS geometry, geography, and raster spatial types and functions';
-
-
 SET search_path = public, pg_catalog;
 
 --
@@ -479,7 +451,7 @@ CREATE TABLE pois (
     updated_at timestamp without time zone,
     node_type_id bigint,
     region_id bigint,
-    geom geometry(Point) NOT NULL
+    geom geometry(Point)
 );
 
 
@@ -595,7 +567,7 @@ CREATE TABLE regions (
     lft integer,
     rgt integer,
     depth integer,
-    grenze geometry NOT NULL
+    grenze geometry
 );
 
 
@@ -833,14 +805,6 @@ ALTER TABLE ONLY slugs ALTER COLUMN id SET DEFAULT nextval('slugs_id_seq'::regcl
 --
 
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
-
-
---
--- Data for Name: spatial_ref_sys; Type: TABLE DATA; Schema: public; Owner: -
---
-
-COPY spatial_ref_sys (srid, auth_name, auth_srid, srtext, proj4text) FROM stdin;
-\.
 
 
 --
@@ -1178,6 +1142,3 @@ CREATE RULE geometry_columns_update AS ON UPDATE TO geometry_columns DO INSTEAD 
 -- PostgreSQL database dump complete
 --
 
-INSERT INTO schema_migrations (version) VALUES ('20130228153529');
-
-INSERT INTO schema_migrations (version) VALUES ('20130625150954');
