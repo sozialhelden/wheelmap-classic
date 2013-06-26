@@ -313,6 +313,7 @@ GEM
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
       rspec-mocks (~> 2.12.0)
+    ruby-prof (0.13.0)
     rubyzip (0.9.9)
     ruport (1.6.3)
       fastercsv
@@ -430,6 +431,7 @@ DEPENDENCIES
   routing-filter
   rspec (= 2.12.0)
   rspec-rails (= 2.12.0)
+  ruby-prof
   ruport
   sass
   shoulda-matchers
