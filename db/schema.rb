@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228153529) do
+ActiveRecord::Schema.define(:version => 20130625150954) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :limit => 8, :null => false
@@ -169,15 +169,15 @@ ActiveRecord::Schema.define(:version => 20130228153529) do
   end
 
   create_table "pois", :id => false, :force => true do |t|
-    t.integer  "osm_id",       :limit => 8,                  :null => false
-    t.integer  "version",                                    :null => false
-    t.text     "tags",                                       :null => false
-    t.integer  "status",                      :default => 8, :null => false
+    t.integer  "osm_id",       :limit => 8,                                         :null => false
+    t.integer  "version",                                                           :null => false
+    t.text     "tags",                                                              :null => false
+    t.integer  "status",                                             :default => 8, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.point    "geom",         :limit => nil,                :null => false, :srid => 0
     t.integer  "node_type_id", :limit => 8
     t.integer  "region_id",    :limit => 8
+    t.spatial  "geom",         :limit => {:srid=>0, :type=>"point"}
   end
 
   add_index "pois", ["geom"], :name => "index_pois_on_geom", :spatial => true
@@ -209,7 +209,7 @@ ActiveRecord::Schema.define(:version => 20130228153529) do
     t.text     "node_attributes"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.point    "geom",            :limit => nil, :srid => 0
+    t.spatial  "geom",            :limit => {:srid=>0, :type=>"point"}
   end
 
   add_index "queued_nodes", ["geom"], :name => "index_queued_nodes_on_geom", :spatial => true
@@ -218,12 +218,12 @@ ActiveRecord::Schema.define(:version => 20130228153529) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.geometry "grenze",      :limit => nil, :null => false, :srid => 0
     t.integer  "parent_id",   :limit => 8
     t.integer  "admin_level"
     t.integer  "lft"
     t.integer  "rgt"
     t.integer  "depth"
+    t.spatial  "grenze",      :limit => {:srid=>0, :type=>"geometry"}
   end
 
   create_table "slugs", :force => true do |t|
