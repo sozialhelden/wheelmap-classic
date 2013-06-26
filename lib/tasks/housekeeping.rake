@@ -1,23 +1,5 @@
 namespace :housekeeping do
 
-  desc 'Remove queued nodes from osm file'
-  task :remove_queued_nodes => :environment do
-    file = ENV['file']
-    raise "Run rake housekeeping:remove_queued_nodes file=<yourfile>" unless file
-    File.open(file, 'r') do |f|
-      while line = f.readline do
-        next unless line =~ /<node/
-        id="-5703"
-        queued_node_id = line.gsub(/^.*?id=\"-(\d+)\".*?$/, '\1')
-        queued_node = QueuedNode.find(queued_node_id) rescue nil
-        if queued_node
-          puts "Delete node with id #{queued_node_id}"
-          queued_node.delete
-        end
-      end
-    end
-  end
-
   desc 'Determine node type for nodes without node type'
   task :calculate_node_type => :environment do
     lowest_id = Poi.lowest_id
