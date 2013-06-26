@@ -50,7 +50,7 @@ class PlanetReader
   def create_pois(min_amount=500)
     if @to_be_created.size >= min_amount
       db_config_hash = ActiveRecord::Base.configurations[Rails.env]
-      connection = PG.connect(:dbname => db_config_hash['database'], :user => db_config_hash['username'], :password => db_config_hash['password'])
+      connection = PG.connect(:dbname => db_config_hash['database'], :user => db_config_hash['username'], :password => db_config_hash['password'], :host => db_config_hash['host'])
       table_name = Poi.table_name
 
       Upsert.batch(connection, table_name) do |upsert|
