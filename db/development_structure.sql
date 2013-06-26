@@ -521,39 +521,6 @@ ALTER SEQUENCE providers_id_seq OWNED BY providers.id;
 
 
 --
--- Name: queued_nodes; Type: TABLE; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE TABLE queued_nodes (
-    id bigint NOT NULL,
-    user_id integer,
-    node_attributes text,
-    created_at timestamp without time zone,
-    updated_at timestamp without time zone,
-    geom geometry(Point)
-);
-
-
---
--- Name: queued_nodes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
---
-
-CREATE SEQUENCE queued_nodes_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
---
--- Name: queued_nodes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
---
-
-ALTER SEQUENCE queued_nodes_id_seq OWNED BY queued_nodes.id;
-
-
---
 -- Name: regions; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -783,13 +750,6 @@ ALTER TABLE ONLY providers ALTER COLUMN id SET DEFAULT nextval('providers_id_seq
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY queued_nodes ALTER COLUMN id SET DEFAULT nextval('queued_nodes_id_seq'::regclass);
-
-
---
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
---
-
 ALTER TABLE ONLY regions ALTER COLUMN id SET DEFAULT nextval('regions_id_seq'::regclass);
 
 
@@ -901,14 +861,6 @@ ALTER TABLE ONLY provided_pois
 
 ALTER TABLE ONLY providers
     ADD CONSTRAINT providers_pkey PRIMARY KEY (id);
-
-
---
--- Name: queued_nodes_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
---
-
-ALTER TABLE ONLY queued_nodes
-    ADD CONSTRAINT queued_nodes_pkey PRIMARY KEY (id);
 
 
 --
@@ -1066,13 +1018,6 @@ CREATE INDEX index_pois_on_tags ON pois USING btree (tags);
 --
 
 CREATE UNIQUE INDEX index_provided_pois_on_provider_id_and_poi_id ON provided_pois USING btree (provider_id, poi_id);
-
-
---
--- Name: index_queued_nodes_on_geom; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE INDEX index_queued_nodes_on_geom ON queued_nodes USING gist (geom);
 
 
 --
