@@ -204,16 +204,6 @@ ActiveRecord::Schema.define(:version => 20130625150954) do
     t.datetime "updated_at"
   end
 
-  create_table "queued_nodes", :force => true do |t|
-    t.integer  "user_id"
-    t.text     "node_attributes"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.spatial  "geom",            :limit => {:srid=>0, :type=>"point"}
-  end
-
-  add_index "queued_nodes", ["geom"], :name => "index_queued_nodes_on_geom", :spatial => true
-
   create_table "regions", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
