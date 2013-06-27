@@ -5,7 +5,7 @@ GIT
     redgreengrid (0.3.1)
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     GeoRuby (1.3.4)
     POpen4 (0.1.4)
