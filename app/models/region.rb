@@ -41,7 +41,7 @@ class Region < ActiveRecord::Base
     wkt_string = File.open(wkt_file_name).first.strip
 
     region = Region.new(:name => region_name, :parent_id => parent.try(:id), :grenze => wkt_string)
-    region.grenze = Polygon.from_ewkt(wkt_string)
+    region.grenze = wkt_string
     region.save!
     region
   end
