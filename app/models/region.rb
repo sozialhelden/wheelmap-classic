@@ -14,6 +14,9 @@ class Region < ActiveRecord::Base
 
   attr_protected :lft, :rgt
 
+  GEO_FACTORY = RGeo::Cartesian.factory
+  set_rgeo_factory_for_column(:grenze, GEO_FACTORY)
+
   scope :parent_id, lambda {|parent_id| { :conditions => { :parent_id => parent_id }}}
   scope :depth, lambda { |depth| where(:depth => depth) }
 
