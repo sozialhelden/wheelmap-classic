@@ -19,8 +19,12 @@ ActiveAdmin.register Photo do
     column :image do |photo|
       link_to(image_tag(photo.image.url(:thumb_iphone).to_s), image_path(photo.image.url.to_s))
     end
-    column :user
-    column :poi
+    column :user do |photo|
+      link_to(photo.user.id, admin_user_path(photo.user))
+    end
+    column :poi do |photo|
+      link_to(photo.poi.headline, admin_poi_path(photo.poi))
+    end
     column :taken_at
     column :created_at
     default_actions

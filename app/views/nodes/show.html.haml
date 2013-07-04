@@ -75,7 +75,7 @@
       - @node.provided_pois.each do |p|
         %tr
           %th= "#{p.provider.name}:"
-          %td= link_to(t("wheelchairstatus.#{p.wheelchair}"), p.url, :target => '_blank', :class => :external) if p.url.present?
+          %td= link_to_if(p.url.present?, t("wheelchairstatus.#{p.wheelchair}"), p.url, :target => '_blank', :class => :external)
 
   #thumbs
     %ul.thumbs.noscript

@@ -92,7 +92,7 @@ class ApplicationController < ActionController::Base
   end
 
   def wheelmap_visitor
-    User.find_by_email('visitor@wheelmap.org')
+    User.wheelmap_visitor
   end
 
   def mobile_app?
