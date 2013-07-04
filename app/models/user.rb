@@ -110,6 +110,10 @@ class User < ActiveRecord::Base
     user = User.where(:email => email).first
     user if user && user.valid_password?(password)
   end
+  
+  def self.wheelmap_visitor
+    find_by_email('visitor@wheelmap.org')
+  end
 
   def inactive_message
     I18n.t('devise.failure.unconfirmed')
