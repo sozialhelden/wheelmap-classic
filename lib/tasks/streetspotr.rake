@@ -1,6 +1,18 @@
 require 'faster_csv'
 namespace :streetspotr do
   
+  desc 'Upload provider entries to openstreetmap unless present'
+  task :upload => :environment do
+    provider = Provider.find_or_create_by_name('Streetspotr')
+    updating_user = User.wheelmap_visitor
+    provider.provided_pois.each do |pp|
+      node = pp.poi
+      if node.wheelchair == 'unknown'
+        UpdateTagsJob.enqueue(node.osm_id.abs, node.osm_type, { 'wheelchair' => pp.wheelchair }, updating_user, 'tag_website')
+      end
+    end
+  end
+  
   task :check do
     csv_file = ENV['file']
     raise "Usage: bundle exec rake streetspotr:import file=<your_csv_file" unless csv_file
@@ -14,7 +26,6 @@ namespace :streetspotr do
       hash[id] << w unless hash[id].include?(w)
     end
     hash.keys.each do |id|
-#      puts "#{id}: #{hash[id].size}"
       puts "#{id} #{hash[id].inspect} => #{minimal_status(hash[id])}"
     end
   end
@@ -71,10 +82,8 @@ namespace :streetspotr do
   def photo(node, row)
     photo_url = row[18]
     photo_caption = row[19]
-    puts "SET URL: '#{photo_url}'"
     new_photo = node.photos.build
     new_photo.remote_image_url = photo_url
-    puts "SET CAPTION: '#{photo_caption}'"
     new_photo.caption = photo_caption unless photo_caption.blank?
     new_photo.user = User.wheelmap_visitor
     new_photo
