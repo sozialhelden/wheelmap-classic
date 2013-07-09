@@ -4,3 +4,10 @@
 # User-Agent: *
 # Disallow: /
 Sitemap: http://wheelmap.org/sitemap_index.xml.gz
+Sitemap: http://wheelmap.org/category-sitemap.xml
+Sitemap: http://wheelmap.org/faq_category-sitemap.xml
+Sitemap: http://wheelmap.org/gallery-sitemap.xml
+Sitemap: http://wheelmap.org/page-sitemap.xml
+Sitemap: http://wheelmap.org/post-sitemap.xml
+Sitemap: http://wheelmap.org/qa_faqs-sitemap.xml
+
