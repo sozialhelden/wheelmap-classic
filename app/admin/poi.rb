@@ -6,6 +6,7 @@ ActiveAdmin.register Poi do
   scope :not_accessible
   scope :unknown_accessibility
   scope :has_provider
+  scope :has_photo
 
   filter :node_type, :as => :select, :collection => proc { NodeType.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort }
   filter :region, :as => :select, :collection => proc { Region.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort }
@@ -53,7 +54,7 @@ ActiveAdmin.register Poi do
     column :lat
     column :lon
     column :region
-    column :photos do |poi|
+    column :photos, :sortable => true do |poi|
       link_to "Photos", admin_poi_photos_path(poi) if poi.photos.size > 0
     end
     default_actions
