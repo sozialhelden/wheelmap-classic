@@ -14,7 +14,7 @@ namespace :sitemap do
                           :partial_update => false,
                           :ping_google => Rails.env.production?,
                           :ping_bing => Rails.env.production?,
-                          :ping_ask => Rails.env.production?,
+                          :ping_ask => false,
                           :ping_yandex => Rails.env.production?
                        ) do
       # Add a static page
