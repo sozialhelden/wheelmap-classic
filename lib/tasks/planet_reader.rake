@@ -186,10 +186,12 @@ namespace :osm do
           FileUtils.cp CHANGE_FILE, MERGED_FILE, :verbose => true, :preserve => true
         end
 
+        # SHAPE: Comment out
         # get_new_shape_replication_files
 
         if File.exists?(SHAPE_FILE) && File.size(SHAPE_FILE) > 150
           puts "INFO: merging #{MERGED_FILE} with #{SHAPE_FILE}"
+          # SHAPE: Comment out
           # merge_shape_replication_files
         else
           puts "INFO: No changes in shape files."
@@ -198,6 +200,7 @@ namespace :osm do
         ENV['file'] = MERGED_FILE
         if Rake::Task["osm:import"].invoke
           remove_merged_file
+          # SHAPE: Comment out
           # remove_shape_replication_file
         end
 
