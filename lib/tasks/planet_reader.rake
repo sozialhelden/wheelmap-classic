@@ -36,7 +36,7 @@ def ensure_state_file_exists
     puts "OK: #{STATE_FILE} already exists."
   else
     STDERR.puts "ERROR: #{STATE_FILE} is missing!"
-    STDERR.puts "       Go to http://planet.openstreetmap.org/minute-replicate/000/ and find the corresponding"
+    STDERR.puts "       Go to http://planet.openstreetmap.org/replication/minute/000/ and find the corresponding"
     STDERR.puts "       state file for the imported planet.dump"
   end
 end
@@ -186,11 +186,13 @@ namespace :osm do
           FileUtils.cp CHANGE_FILE, MERGED_FILE, :verbose => true, :preserve => true
         end
 
-        get_new_shape_replication_files
+        # SHAPE: Comment out
+        # get_new_shape_replication_files
 
         if File.exists?(SHAPE_FILE) && File.size(SHAPE_FILE) > 150
           puts "INFO: merging #{MERGED_FILE} with #{SHAPE_FILE}"
-          merge_shape_replication_files
+          # SHAPE: Comment out
+          # merge_shape_replication_files
         else
           puts "INFO: No changes in shape files."
         end
@@ -198,7 +200,8 @@ namespace :osm do
         ENV['file'] = MERGED_FILE
         if Rake::Task["osm:import"].invoke
           remove_merged_file
-          remove_shape_replication_file
+          # SHAPE: Comment out
+          # remove_shape_replication_file
         end
 
       rescue Exception => e

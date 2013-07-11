@@ -2,8 +2,7 @@
 
 require 'rubygems'
 require 'libxml'
-require "activerecord-import/base"
-ActiveRecord::Import.require_adapter('mysql2')
+require 'upsert'
 
 class PlanetReader
 
@@ -50,7 +49,17 @@ class PlanetReader
 
   def create_pois(min_amount=500)
     if @to_be_created.size >= min_amount
-      Poi.import @columns, @to_be_created, :validate => false, :on_duplicate_key_update => @columns_without_create, :timestamps => false
+      db_config_hash = ActiveRecord::Base.configurations[Rails.env]
+      connection = PG.connect(:dbname => db_config_hash['database'], :user => db_config_hash['username'], :password => db_config_hash['password'], :host => db_config_hash['host'])
+      table_name = Poi.table_name
+
+      Upsert.batch(connection, table_name) do |upsert|
+        @to_be_created.each do |poi_hash|
+          poi_hash[:tags] = poi_hash[:tags].to_yaml
+          upsert.row({:osm_id => poi_hash[:osm_id]}, poi_hash)
+        end
+      end
+
       @to_be_created = []
     end
   end
@@ -81,7 +90,7 @@ class PlanetReader
       id = attributes['id'].to_i
       if (id > 0) then
         @poi = {:osm_id => id,
-                :geom => Point.from_x_y(attributes['lon'].to_f, attributes['lat'].to_f),
+                :geom => latlon_as_wkt(attributes),
                 :version => attributes['version'].to_i,
                 :tags => {},
                 :created_at => Time.now,
@@ -95,7 +104,7 @@ class PlanetReader
         # update way "-id-10000000" in osm
         # puts "Process: it's from a way: #{(id + 10000000).abs}"
         @poi = {:osm_id => (id + 10000000),
-                :geom => Point.from_x_y(attributes['lon'].to_f, attributes['lat'].to_f),
+                :geom => latlon_as_wkt(attributes),
                 :version => attributes['version'].to_i,
                 :tags => {},
                 :created_at => Time.now,
@@ -115,6 +124,10 @@ class PlanetReader
     else
       # ignore all other nodes
     end
+  end
+
+  def latlon_as_wkt(attributes)
+    "POINT(#{attributes['lon']} #{attributes['lat']})"
   end
 
   # Callback-Methode des XML-Parsers.
@@ -183,7 +196,7 @@ class PlanetReader
       # Purer input aus einem Planet Dump.
       # Stumpf einfach alles in die DB hauen!
       if valid?
-        @to_be_created << @columns.map{|c| @poi[c]}
+        @to_be_created << @poi.slice(*@columns)
         create_pois
       end
 
@@ -192,7 +205,7 @@ class PlanetReader
       # importiert, wenn sie interessant sind.
       if valid?
         # Der Node ist valide und kann neu angelegt werden.
-        @to_be_created << @columns.map{|c| @poi[c]}
+        @to_be_created << @poi.slice(*@columns)
         create_pois
       else
         # Der Node ist nicht valide. Falls er schon im System ist, muss er entfernt werden.
@@ -210,7 +223,7 @@ class PlanetReader
         # probieren den Save, und wenn der nicht geht, probieren wir
         # den Update.
         @poi[:region_id] = nil
-        @to_be_created << @columns.map{|c| @poi[c]}
+        @to_be_created << @poi.slice(*@columns)
         create_pois
       else
 

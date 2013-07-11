@@ -142,7 +142,7 @@ describe NodesController do
           put(:update_wheelchair, :id => 1234, :wheelchair => 'yes')
           response.code.should == '200'
         }.should change(UpdateAttributeJob, :count).by(1)
-        Delayed::Job.last.handler.should =~ /id: #{@another_user.id}/
+        Delayed::Job.last.handler.should =~ /id: \W#{@another_user.id}\W/
       end
     end
   end

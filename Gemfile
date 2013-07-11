@@ -2,8 +2,9 @@ source 'https://rubygems.org'
 
 group :default do
   gem 'rails', '3.0.20'
-  gem 'mysql2', '<0.3.0'
+  gem 'pg'
   gem 'activerecord-import', '<0.3.0', :require => false
+  gem 'upsert'
   gem 'oauth'
   gem 'devise', '1.5.4'
   gem 'compass'
@@ -35,7 +36,7 @@ group :default do
   gem 'big_sitemap' #, :git => 'git@github.com:sozialhelden/big_sitemap.git'
   gem 'unicorn'
   gem 'rgeo'
-  gem 'spatial_adapter'
+  gem 'activerecord-postgis-adapter'
   gem 'friendly_id', '~>3.3.1' # upgrade to 4.x takes more effort.
   gem 'will_paginate'
   gem 'omniauth-osm'
@@ -67,6 +68,7 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'guard-cucumber', "1.2.2"
+  gem 'ruby-prof'
 end
 
 group :test do

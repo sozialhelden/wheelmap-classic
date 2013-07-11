@@ -41,6 +41,10 @@ class Poi < ActiveRecord::Base
   validates_length_of :wheelchair_description, :maximum => 255
   validates_presence_of :lat, :lon, :message => "Bitte in der Karte klicken!"
 
+
+  GEO_FACTORY = RGeo::Cartesian.factory
+  set_rgeo_factory_for_column(:geom, GEO_FACTORY)
+
   serialize :tags
 
   acts_as_api
@@ -107,8 +111,13 @@ class Poi < ActiveRecord::Base
   scope :unknown_accessibility, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:unknown]}
   scope :tagged, :conditions => ['status < ?', WHEELCHAIR_STATUS_VALUES[:unknown]]
   scope :with_status, lambda {|status| {:conditions => {:status => status}}}
-  #scope :search,      lambda {|search| {:conditions => ['tags LIKE ?', "%#{search}%"]}}
-  scope :search,      lambda {|search| {:conditions => ['MATCH (tags) AGAINST  (? IN BOOLEAN MODE)', escape_search_string(search)]}}
+
+  # Generic:
+  # scope :search,      lambda {|search| {:conditions => ['tags LIKE ?', "%#{search}%"]}}
+  # MYSQL:
+  # scope :search,      lambda {|search| {:conditions => ['MATCH (tags) AGAINST  (? IN BOOLEAN MODE)', escape_search_string(search)]}}
+  # Postgres:
+  scope :search,      lambda {|search| {:conditions => ['(to_tsvector(tags) @@ to_tsquery(?))', escape_search_string(search)]}}
 
   scope :with_node_type, :conditions => 'node_type_id IS NOT NULL'
   scope :without_node_type, :conditions => 'node_type_id IS NULL'
@@ -117,19 +126,19 @@ class Poi < ActiveRecord::Base
   scope :has_photo, :joins => :photos
   scope :within_region, lambda {|region| {:conditions => {:region_id => region.id}}}
 
-  scope :select_distance, lambda {|lat,lon| {:select => "*,haversine(geom,#{lat},#{lon}) as distance"}}
-
-  scope :within_bbox, lambda {|left, bottom, right, top|{
-    :conditions => "MBRContains(GeomFromText('POLYGON(( \
-                    #{left} #{bottom}, #{right} #{bottom}, \
-                    #{right} #{top}, #{left} #{top}, \
-                    #{left} #{bottom}))'), pois.geom)" } }
-
+  # MYSQL
   #scope :within_bbox, lambda {|left, bottom, right, top|{
-  #  :conditions => "ST_Within(pois.geom, GeometryFromText('POLYGON(( \
+  #  :conditions => "MBRContains(GeomFromText('POLYGON(( \
   #                  #{left} #{bottom}, #{right} #{bottom}, \
   #                  #{right} #{top}, #{left} #{top}, \
-  #                  #{left} #{bottom}))'))" } }
+  #                  #{left} #{bottom}))'), pois.geom)" } }
+
+  # Postgres/Postgis:
+  scope :within_bbox, lambda {|left, bottom, right, top|{
+    :conditions => "ST_Within(pois.geom, ST_GeometryFromText('POLYGON(( \
+                    #{left} #{bottom}, #{right} #{bottom}, \
+                    #{right} #{top}, #{left} #{top}, \
+                    #{left} #{bottom}))'))" } }
 
   def self.bbox(bounding_box_string)
     left, bottom, right, top = bounding_box_string.split(',').map(&:to_f)
@@ -149,21 +158,23 @@ class Poi < ActiveRecord::Base
   end
 
   def lat
-    self.geom.lat if self.geom
+    self.geom.y  if self.geom
   end
 
   def lat=(value)
-    self.geom ||= Point.from_x_y(0.0,0.0)
-    self.geom.y = value
+    self.geom = GEO_FACTORY.point(lon || 0, value.to_f)
   end
 
   def lon
-    self.geom.lon if self.geom
+    self.geom.x if self.geom
   end
 
   def lon=(value)
-    self.geom ||= Point.from_x_y(0.0,0.0)
-    self.geom.x = value
+    self.geom = GEO_FACTORY.point(value.to_f, lat || 0)
+  end
+
+  def geom
+    read_attribute(:geom) || GEO_FACTORY.point(0,0)
   end
 
   def tags

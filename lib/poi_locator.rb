@@ -40,8 +40,7 @@ class PoiLocator
 
             # loop over all polygons and check them with "contains?" method
             @index[idx].each do |region|
-              point = @factory.parse_wkb(poi.geom.as_wkb)
-              if region[:geometry].contains?(point)
+              if region[:geometry].contains?(poi.geom)
                 poi_regions[region[:id]] = [] if poi_regions[region[:id]].nil?
                 poi_regions[region[:id]] << poi.osm_id
                 # region_id = region[:id]
@@ -112,7 +111,7 @@ class PoiLocator
     Region.parent_id(parent_id).each do |db_region|
       r = Hash.new
 
-      r[:geometry]   = @factory.parse_wkb(db_region.grenze.as_wkb)
+      r[:geometry]   = db_region.grenze
       r[:id]         = db_region.id
       r[:name]       = db_region.name
       rr.push(r)
