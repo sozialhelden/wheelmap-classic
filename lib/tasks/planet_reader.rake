@@ -36,7 +36,7 @@ def ensure_state_file_exists
     puts "OK: #{STATE_FILE} already exists."
   else
     STDERR.puts "ERROR: #{STATE_FILE} is missing!"
-    STDERR.puts "       Go to http://planet.openstreetmap.org/minute-replicate/000/ and find the corresponding"
+    STDERR.puts "       Go to http://planet.openstreetmap.org/replication/minute/000/ and find the corresponding"
     STDERR.puts "       state file for the imported planet.dump"
   end
 end
