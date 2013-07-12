@@ -8,6 +8,7 @@ class Poi < ActiveRecord::Base
   include ActionView::Helpers::AssetTagHelper
   include PopupHelper
   include NewRelic::Agent::MethodTracer
+  include PgSearch
 
   # osm_id ist der Primaerschluessel
   set_primary_key :osm_id
@@ -117,7 +118,7 @@ class Poi < ActiveRecord::Base
   # MYSQL:
   # scope :search,      lambda {|search| {:conditions => ['MATCH (tags) AGAINST  (? IN BOOLEAN MODE)', escape_search_string(search)]}}
   # Postgres:
-  scope :search,      lambda {|search| {:conditions => ['(to_tsvector(tags) @@ to_tsquery(?))', escape_search_string(search)]}}
+  pg_search_scope :search, :against => :tags
 
   scope :with_node_type, :conditions => 'node_type_id IS NOT NULL'
   scope :without_node_type, :conditions => 'node_type_id IS NULL'

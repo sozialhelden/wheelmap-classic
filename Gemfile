@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 group :default do
   gem 'rails', '3.0.20'
   gem 'pg'
+  gem 'pg_search', "~> 0.5.7"
   gem 'activerecord-import', '<0.3.0', :require => false
   gem 'upsert'
   gem 'orderedhash'

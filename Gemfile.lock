@@ -257,6 +257,9 @@ GEM
       color (>= 1.4.0)
       transaction-simple (~> 1.3)
     pg (0.15.1)
+    pg_search (0.5.7)
+      activerecord (>= 3)
+      activesupport (>= 3)
     pickle (0.4.11)
       cucumber (>= 0.8)
       rake
@@ -425,6 +428,7 @@ DEPENDENCIES
   omniauth-osm
   orderedhash
   pg
+  pg_search (~> 0.5.7)
   pickle
   rails (= 3.0.20)
   rake
