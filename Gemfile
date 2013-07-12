@@ -5,6 +5,7 @@ group :default do
   gem 'pg'
   gem 'activerecord-import', '<0.3.0', :require => false
   gem 'upsert'
+  gem 'orderedhash'
   gem 'oauth'
   gem 'devise', '1.5.4'
   gem 'compass'
