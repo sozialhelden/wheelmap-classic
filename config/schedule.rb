@@ -24,6 +24,6 @@ every '12 * * * *' do
   rake "poi:locate",    :environment => :production
 end
 
-every '*/5 * * * *' do
+every '*/30 * * * *' do
   rake "report:hourly", :environment => :production
 end
