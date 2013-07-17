@@ -713,16 +713,10 @@ $(function () {
 function initGeoData() {
   // set global variables
   q = $.parseQuery()
-  lat  = q.lat  || $.cookie('last_lat') //|| GeoCache.latlon(request.remote_addr).first};
-  lon  = q.lon  || $.cookie('last_lon') //|| GeoCache.latlon(request.remote_addr).last};
+  lat  = q.lat  || $.cookie('last_lat') || $.cookie('geoip_lat') || 52.51;
+  lon  = q.lon  || $.cookie('last_lon') || $.cookie('geoip_lon') || 13.40;
   zoom = q.zoom || $.cookie('last_zoom') || 14;
   window.node_id = q.node_id
-
-  if(!(lat && lon)) {
-    // on demand insert JS
-    lat = geoip_latitude();
-    lon = geoip_longitude();
-  }
 }
 
 function $w(string) {

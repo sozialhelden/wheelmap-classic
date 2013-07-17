@@ -12,12 +12,19 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_abingo_identity
 
+  before_filter :set_geoip_cookie
+
   before_filter :store_iphone_stats, :if => [:get_request?, :mobile_app?]
 
   rescue_from Errno::ETIMEDOUT, :with => :timeout
   rescue_from Timeout::Error,   :with => :timeout
 
   protected
+
+  def set_geoip_cookie
+    cookies['geoip_lat'] = request.headers["HTTP_GEOIP_LATITUDE"]
+    cookies['geoip_lon'] = request.headers["HTTP_GEOIP_LONGITUDE"]
+  end
 
   def set_abingo_identity
     if user_is_a_bot?
