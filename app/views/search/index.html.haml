@@ -1,10 +1,28 @@
-%h2
-  =h t('.search.for', :q => params[:q])
+.ticker
+  = t('.results.ticker', :count => @result.length)
+
 - unless @result.empty?
-  %ul#searchresult
-    - @result.each do |entry|
-      %li
-        = link_to "#{entry['display_name']}", root_path(:a => :b, :lat => entry['lat'], :lon => entry['lon'], :zoom => 17, :q => params[:q], :node_id => entry['osm_type'] == 'way' ? (entry['osm_id'].to_i * -1) : entry['osm_id'])
+  %ul#search-results.unstyled
+    = render :partial => 'entry', :collection => @result
 - else
-  %p
-    =t('.search.not_found')
+  #search-no-results
+    %h4=t('.no-results.headline', :query => params[:q])
+
+    .row-fluid
+      .span5
+        %p=t('.no-results.try_this.intro')
+
+        %ul
+          %li=t('.no-results.try_this.spell_check').html_safe
+          %li=t('.no-results.try_this.address').html_safe
+
+      .span7
+        .alert.alert-info
+          %i.icon-info-sign
+          %p
+            =t('.no-results.hint.info')
+            %br
+            =t('.no-results.hint.example').html_safe
+            %br
+            =t('.no-results.hint.work_in_progress')
+

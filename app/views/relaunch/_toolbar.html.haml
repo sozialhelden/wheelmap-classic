@@ -5,11 +5,7 @@
       .btn-toolbar.center
         %button.btn.btn-info.btn-searchbar
           %i.icon-search.icon-white
-        %form.navbar-form{:action =>"/search", :method => "GET", :style => 'display:inline-block;margin-bottom:0'}
-          .input-append{:style => 'margin:0 10px'}
-            %input#search{:type => "text", :name => "q", :value => params[:q].present? ? params[:q] : nil, :autocomplete => "off", :placeholder => t('header.searchbar.placeholder')}
-            %button.btn.btn-info{:type => "submit", :value => t('header.searchbar.find')}
-              %i.icon-search.icon-white
+        = render :partial => 'relaunch/toolbar_search_form'
 
         .btn-group.status-filter(data-toggle="buttons-checkbox")
           %button.btn.active.btn-info.yes{:name => t('home.index.popup.form.yes'), :'data-value' => 'yes', :'data-toggle' => "popover", :'data-container' => "button.yes", :'data-content' =>  t('wheelmap.what_is.fully_accessible'), :'data-original-title' => t('home.index.popup.form.yes') }

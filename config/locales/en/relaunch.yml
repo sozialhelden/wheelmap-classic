@@ -23,3 +23,24 @@ en:
       form:
         legend: "Location of the place"
         location: "Please click on the map and place the marker at the exact position."
+  search:
+    index:
+      no-results:
+        headline: "Wir konnten leider keinen Ort mit dem Namen \"%{query}\" finden."
+        hint:
+          example: "<strong>Beispiel:</strong> Berlin, Deutschland"
+          info: "Unsere Suche versteht bisher leider nur genauere Adressen und Namen"
+          work_in_progress: "Wir arbeiten daran, dass du bald noch einfacher und intuitiver Orte finden kannst."
+        try_this:
+          address: "Gib eine <strong>genauere Adresse</strong> ein."
+          intro: "Versuch doch mal Folgendes:"
+          spell_check: "Überprüfe die <strong>Schreibweise</strong> deiner Eingabe."
+      results:
+        ticker:
+          one: "1 Ergebnis:"
+          other: "%{count} Ergebnisse:"
+          zero: "0 Ergebnisse:"
+    timeout:
+      headline: "Oh, our fault"
+      info: "Unser Suchdienst war kurzzeitig nicht verfügbar."
+      repeat_search: "Suche wiederholen"

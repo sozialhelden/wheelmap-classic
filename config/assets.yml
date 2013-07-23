@@ -51,6 +51,28 @@ javascripts:
     - public/javascripts/map.js
     - public/javascripts/function.js
 
+  search:
+    - public/javascripts/jquery.js
+    - public/javascripts/jquery_ujs.js
+    - public/javascripts/bootstrap/bootstrap-transition.js
+    # - public/javascripts/bootstrap/bootstrap-affix.js
+    # - public/javascripts/bootstrap/bootstrap-alert.js
+    - public/javascripts/bootstrap/bootstrap-button.js
+    # - public/javascripts/bootstrap/bootstrap-carousel.js
+    - public/javascripts/bootstrap/bootstrap-collapse.js
+    - public/javascripts/bootstrap/bootstrap-dropdown.js
+    - public/javascripts/bootstrap/bootstrap-modal.js
+    # - public/javascripts/bootstrap/bootstrap-scrollspy.js
+    # - public/javascripts/bootstrap/bootstrap-tab.js
+    - public/javascripts/bootstrap/bootstrap-tooltip.js
+    - public/javascripts/bootstrap/bootstrap-popover.js
+    - public/javascripts/bootstrap/bootstrap-select.js
+    # - public/javascripts/bootstrap/bootstrap-typeahead.js
+    - public/javascripts/fastclick.js
+    - public/javascripts/jquery.cookies.js
+    - public/javascripts/flash.js
+    - public/javascripts/function.js
+
   modernizr:
     - public/javascripts/modernizr.js
 

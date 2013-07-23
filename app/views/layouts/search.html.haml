@@ -1,0 +1,12 @@
+- content_for :content do
+  #container
+    #search
+      .content
+        = render :partial => 'form'
+
+        .results
+          =yield
+- content_for :javascript do
+  = include_javascripts :search
+
+= render :template => "layouts/relaunch"

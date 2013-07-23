@@ -1,0 +1,8 @@
+%li
+  %a.clearfix{:href => root_path(:a => :b, :lat => entry['lat'], :lon => entry['lon'], :zoom => 17, :q => params[:q], :node_id => entry['osm_type'] == 'way' ? (entry['osm_id'].to_i * -1) : entry['osm_id'])}
+    - entry['display_name'].split(', ').each_with_index do |part, index|
+      %span{:class => index == 0 ? 'strong' : nil}
+        = index > 0 ? ' ‹ ' : nil
+        = part
+
+    %i.icon-chevron-right.pull-right
