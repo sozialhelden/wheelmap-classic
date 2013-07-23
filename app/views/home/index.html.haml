@@ -1,4 +1,8 @@
+= render :partial => 'relaunch/toolbar'
 %section#map
   =link_to "MapBox", "http://mapbox.com/about/maps/", :target => "_blank", :id => "mapbox_logo"
 = render :partial => 'relaunch/popup_template'
 = render :partial => 'overlay'
+
+- content_for :javascript do
+  = include_javascripts :relaunch
