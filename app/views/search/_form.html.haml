@@ -1,0 +1,7 @@
+%form.navbar-form{:action =>"/search", :method => "GET"}
+  .input-append
+    %input.search-input#search{:type => "text", :name => "q", :value => params[:q].present? ? params[:q] : nil, :autocomplete => "off", :placeholder => t('header.searchbar.placeholder')}
+    %button.btn.btn-info{:type => "submit"}
+      %i.icon-search.icon-white
+      %span.hidden-phone
+        = t('header.searchbar.find')

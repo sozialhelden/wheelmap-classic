@@ -21,12 +21,11 @@
 
 %body
   = render :partial => 'relaunch/header'
-  = render :partial => 'relaunch/toolbar'
-  = yield
+  = content_for?(:content) ? yield(:content) : yield
 
   = render :partial => 'relaunch/footer'
   = render :partial => 'shared/google_tracking'
   = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
-  = include_javascripts :relaunch
+
   = content_for :javascript
 </html>

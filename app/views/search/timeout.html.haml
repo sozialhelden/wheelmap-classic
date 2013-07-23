@@ -1,0 +1,12 @@
+.ticker
+  = t('search.index.results.ticker', :count => 0)
+
+#search-timeout
+  %h4=t('.headline')
+  %p=t('.info')
+
+  %form{:action =>'/search', :method => 'GET'}
+    %input{:type => 'hidden', :name => 'q', :value => params[:q].present? ? params[:q] : nil}
+    %button.btn.btn-info.btn-large{:type => 'submit'}
+      %i.icon-search.icon-white
+      =t('.repeat_search')
