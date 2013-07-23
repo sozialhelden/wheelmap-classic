@@ -21,8 +21,7 @@
 
 %body
   = render :partial => 'relaunch/header'
-  = render :partial => 'relaunch/toolbar'
-  = yield
+  = content_for?(:content) ? yield(:content) : yield
 
   = render :partial => 'relaunch/footer'
   = render :partial => 'shared/google_tracking'

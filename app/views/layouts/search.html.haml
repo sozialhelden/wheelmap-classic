@@ -1,0 +1,10 @@
+- content_for :content do
+  #container
+    #search
+      .content
+        = render :partial => 'form'
+
+        .results
+          =yield
+
+= render :template => "layouts/relaunch"
