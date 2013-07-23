@@ -15,3 +15,7 @@ Given /^there are no CreateJobs$/ do
   end
   CreateJob.destroy_all
 end
+
+Given /^PENDING/ do
+  pending
+end

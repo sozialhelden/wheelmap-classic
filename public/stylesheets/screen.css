@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* line 1, ../../app/stylesheets/vendor/_map.sass */
 html, body {
   height: 100%;
@@ -112,59 +111,59 @@ a:hover {
   background-color: #eeeeff;
 }
 
-/* line 1, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 1, ../../vendor/bundle/ruby/1.9.1/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 a, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, p, pre, span, th, td {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
 }
 
-/* line 6, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 6, ../../vendor/bundle/ruby/1.9.1/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 10, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 10, ../../vendor/bundle/ruby/1.9.1/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 fieldset, img {
   border: 0;
 }
 
-/* line 13, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 13, ../../vendor/bundle/ruby/1.9.1/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 address, em, th {
   font-style: normal;
   font-weight: normal;
 }
 
-/* line 17, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 17, ../../vendor/bundle/ruby/1.9.1/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 li {
   list-style: none;
 }
 
-/* line 20, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 20, ../../vendor/bundle/ruby/1.9.1/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 th {
   font-style: normal;
   text-align: left;
 }
 
-/* line 24, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 24, ../../vendor/bundle/ruby/1.9.1/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 h1, h2, h3, h4, h5, h6, small {
   font-size: 100%;
 }
 
-/* line 27, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 27, ../../vendor/bundle/ruby/1.9.1/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 input, textarea, select {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
 }
 
-/* line 33, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 33, ../../vendor/bundle/ruby/1.9.1/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 .msie input, .msie textarea, .msie select {
   font-size: 100%;
 }
 
-/* line 36, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
+/* line 36, ../../vendor/bundle/ruby/1.9.1/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_reset.sass */
 header, section, article, aside, footer, time {
   display: block;
 }
@@ -221,7 +220,7 @@ h1 {
   line-height: 40px;
   position: relative;
 }
-/* line 3, ../../vendor/bundle/ruby/1.8/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_browser_support.sass */
+/* line 3, ../../vendor/bundle/ruby/1.9.1/bundler/gems/redgreengrid-730825cbb3e5/sass/redgreengrid/_browser_support.sass */
 .presto h1 {
   bottom: 1px;
 }
