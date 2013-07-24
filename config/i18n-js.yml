@@ -17,5 +17,5 @@
 # like this:
 #
 translations:
-  - file: "public/javascripts/translations.js"
+  - file: "app/assets/javascripts/translations.js"
     only: "*.poi.name"
