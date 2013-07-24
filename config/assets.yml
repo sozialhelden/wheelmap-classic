@@ -69,7 +69,7 @@ stylesheets:
   relaunch:
     - public/stylesheets/relaunch.css
 
-  relaunch.ie:
+  relaunch_ie:
     - public/stylesheets/leaflet/leaflet.ie.css
 
   node:

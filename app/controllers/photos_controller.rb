@@ -20,7 +20,9 @@ class PhotosController < ApplicationController
   end
 
   def destroy
-    destroy! { :back }
+    destroy! do |fmt|
+      fmt.html { redirect_to :back }
+    end
   end
 
   protected
