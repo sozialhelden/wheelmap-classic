@@ -7,7 +7,7 @@
           %tbody
             %tr
               %td
-                =image_tag('/images/mini_marker.png', :size => '28x17', :title => "#{t('wheelchairstatus.yes')}:#{Poi.fully_accessible.count}\n#{t('wheelchairstatus.limited')}:#{Poi.limited_accessible.count}\n#{t('wheelchairstatus.no')}:#{Poi.not_accessible.count}")
+                =image_tag('mini_marker.png', :size => '28x17', :title => "#{t('wheelchairstatus.yes')}:#{Poi.fully_accessible.count}\n#{t('wheelchairstatus.limited')}:#{Poi.limited_accessible.count}\n#{t('wheelchairstatus.no')}:#{Poi.not_accessible.count}")
               %td{:style => "background: url(\'#{image_path('bubble.png')}\') no-repeat left center;background-position: 0px 0px"} &nbsp;
               %td{:style => "padding-right: 5px;background: url(\'#{image_path('bubble.png')}\') no-repeat 100% 0px"}=Poi.tagged.count
         %li=link_to "Tweet", "http://twitter.com/share", :class => "twitter-share-button", :style => 'display:none', 'data-lang' => I18n.locale, 'data-counturl' => roooot_url, 'data-related' => 'wheelmap,sozialhelden', 'data-hashtags' => 'wheelmap'
