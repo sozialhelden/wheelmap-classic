@@ -14,10 +14,11 @@
     %meta{:name => 'description', :content => t('header.meta.description')}
     %title= "Wheelmap - #{t('header.title')}"
 
-  = include_stylesheets :relaunch, :media => 'screen, projection'
+  = stylesheet_link_tag :relaunch, :media => 'screen, projection'
   /[if lte IE 8]
-    = include_stylesheets 'relaunch.ie', :media => 'screen, projection'
-    = include_javascripts :modernizr
+    = stylesheet_link_tag 'relaunch.ie', :media => 'screen, projection'
+    = javascript_include_tag :modernizr
+  = csrf_meta_tag
 
 %body
   = render :partial => 'relaunch/header'
@@ -27,6 +28,6 @@
   = render :partial => 'relaunch/footer'
   = render :partial => 'shared/google_tracking'
   = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
-  = include_javascripts :relaunch
+  = javascript_include_tag :relaunch
   = content_for :javascript
 </html>

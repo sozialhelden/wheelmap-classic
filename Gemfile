@@ -1,19 +1,17 @@
 source 'https://rubygems.org'
 
 group :default do
-  gem 'rails', '3.0.20'
-  gem 'mysql2', '<0.3.0'
+  gem 'rails', '3.1.12'
+  gem 'mysql2'
   gem 'activerecord-import', '<0.3.0', :require => false
   gem 'rgeo'
   gem 'rgeo-activerecord'
   gem 'activerecord-mysql2spatial-adapter'
   gem 'oauth'
-  gem 'devise', '1.5.4'
-  gem 'compass'
+  gem 'devise'
+  gem 'devise-encryptable'
   gem 'redgreengrid', :git => 'git@github.com:christoph-buente/redgreengrid.git'
   gem 'haml'
-  gem 'sass'
-  gem 'bootstrap-sass'
   gem 'geoip'
   gem 'formtastic', '1.2.4'
   gem 'delayed_job'
@@ -27,15 +25,14 @@ group :default do
   gem 'acts_as_api'
   gem 'inherited_resources'
   gem 'has_scope'
-#  gem 'mapfish'
   gem 'rake'
   gem 'yajl-ruby'
   gem 'ya2yaml'
   gem 'fastercsv'
   gem 'ruport'
   gem 'memcache-client'
-  gem 'jammit'
-  gem 'big_sitemap' #, :git => 'git@github.com:sozialhelden/big_sitemap.git'
+  # gem 'jammit'
+  gem 'big_sitemap'
   gem 'unicorn'
   gem 'friendly_id', '~>3.3.1' # upgrade to 4.x takes more effort.
   gem 'will_paginate'
@@ -44,10 +41,11 @@ group :default do
   # gem 'rosemary', :path => '../rosemary'
   gem 'librato-metrics'
   gem 'librato-rails'
-  gem 'jquery-rails'
 #  gem 'system_timer' # Optional for librato dependency faraday
   gem 'multipart-post'
+  gem 'sass-rails' # goes here instead of group assets because activeadmin uses it in the initializer
   gem 'activeadmin'
+  gem 'meta_search'
   gem 'kaminari'
   gem 'carrierwave'
   gem 'carrierwave-meta'
@@ -60,8 +58,18 @@ group :default do
   gem 'i18n-js'
 end
 
+group :assets do
+  gem 'jquery-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+  gem 'compass'
+  gem 'compass-colors'
+  gem 'compass-rails'
+  gem 'bootstrap-sass'
+end
+
 group :test, :development do
-  gem 'rspec-rails', "2.12.0"
+  gem 'rspec-rails'
   gem 'spork'
   gem 'rb-fsevent'
   gem 'guard'
@@ -84,6 +92,10 @@ group :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'syntax'
+end
+
+group :production do
+  gem 'therubyracer'
 end
 
 group :deployment do
