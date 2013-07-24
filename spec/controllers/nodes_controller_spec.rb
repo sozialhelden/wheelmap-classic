@@ -40,7 +40,7 @@ describe NodesController do
     end
 
     it "should show node view" do
-      Poi.should_receive(:find).with(123).and_return(node)
+      Poi.should_receive(:find).with('123').and_return(node)
       get(:show, :id => 123)
       assigns(:node).should eql(node)
       response.should be_success
