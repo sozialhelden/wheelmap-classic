@@ -1,4 +1,4 @@
-require 'spec_helper'
+  require 'spec_helper'
 
 describe Api::NodesController do
 
@@ -202,7 +202,7 @@ describe Api::NodesController do
       @user.oauth_secret = :a_secret
       @user.save!
 
-      Poi.should_receive(:find).with(@node.id).and_return(@node)
+      Poi.should_receive(:find).with("#{@node.id}").and_return(@node)
       @node.should_receive(:valid?).and_return(false)
       lambda {
         put(:update, {:id => @node.id, :api_key => @user.authentication_token})
@@ -258,7 +258,7 @@ describe Api::NodesController do
       @user.save!
       # Ways are the same as Nodes but with negative id
       @node.osm_id = (@node.osm_id * -1)
-      Poi.should_receive(:find).with(@node.osm_id).and_return @node
+      Poi.should_receive(:find).with("#{@node.osm_id}").and_return @node
       lambda {
         put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
         response.status.should eql 202
