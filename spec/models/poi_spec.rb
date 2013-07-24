@@ -13,6 +13,15 @@ describe Poi do
     it { should have_many(:providers).through(:provided_pois) }
   end
 
+  context "initialization" do
+    it "should accept strings for lat/lon" do
+      p = Poi.new lat: "13.5", lon: "54.3"
+      p.lat.should == "13.5".to_f
+      p.lon.should == "54.3".to_f
+      p.geom.should == Poi.rgeo_factory_for_column(:geom).point("54.3".to_f, "13.5".to_f)
+    end
+  end
+
   describe 'validations' do
     subject { Factory.build(:poi) }
     it { should be_valid }

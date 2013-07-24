@@ -31,7 +31,7 @@ Feature: Create a new node via website
     And I press "Ort anlegen"
     Then I should be on the home page
 
-    And a create node job has been enqueued with lat: "54.1", lon: "13.9" and tags
+    And a create node job has been enqueued with lat: 54.1, lon: 13.9 and tags
       | name                   | Hotel Recklinghausen            |
       | amenity                | bar                             |
       | wheelchair             | yes                             |
