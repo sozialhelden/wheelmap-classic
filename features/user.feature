@@ -22,6 +22,7 @@ Feature: User feature
     When I fill in "Passwort" with "new_password"
     And I fill in "Passwort wiederholen" with "new_password"
     And I press "Speichern"
+    And PENDING: make cached flash testable
     Then I should see "Benutzer wurde erfolgreich aktualisiert."
     And I should be on the last user's edit page
 
@@ -31,6 +32,7 @@ Feature: User feature
     When I fill in "E-Mail" with "peter@wheelmap.org"
     And I press "Speichern"
     Then 1 email should be delivered to "peter@wheelmap.org"
+    And PENDING: make cached flash testable
     And I should see "Du bekommst in wenigen Minuten eine E-Mail mit einem Link"
 
   @omniauth_test
@@ -54,6 +56,7 @@ Feature: User feature
     And I fill in "Passwort" with "somehighlysecretpassword"
     And I fill in "Passwort wiederholen" with "somehighlysecretpassword"
     And I press "Fertigstellen"
+    And PENDING: make cached flash testable
     And I should see "Email muss ausgefüllt werden"
 
 
@@ -66,6 +69,7 @@ Feature: User feature
     When I am on the last user's after signup edit page
     When I fill in "E-Mail" with "peter@wheelmap.org"
     And I press "Fertigstellen"
+    And PENDING: make cached flash testable
     And I should see "Password muss ausgefüllt werden"
 
 
@@ -75,4 +79,5 @@ Feature: User feature
     When I am on the new user password page
     When I fill in "E-Mail" with "horst@wheelmap.org"
     And I press "Passwort neu setzen"
+    And PENDING: make cached flash testable
     And I should see "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Passwort neu setzen kannst."
