@@ -16,7 +16,7 @@
 
     = content_for :javascript_constants
 
-    = include_stylesheets :screen, :media => 'screen, projection'
+    = stylesheet_link_tag :screen, :media => 'screen, projection'
 
     = render :partial => 'shared/mixpanel_tracking'
 
@@ -34,7 +34,7 @@
 
     = render :partial => 'shared/google_tracking'
 
-    = include_javascripts :default, :media => 'screen, projection'
+    = javascript_include_tag :default, :media => 'screen, projection'
 
     = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
 
