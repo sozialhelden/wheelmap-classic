@@ -30,7 +30,6 @@ before 'deploy:migrations',   'safety_check'
 
 after  'deploy:setup',        'deploy:create_shared_config'
 
-after  'deploy:update_code',  'deploy:generate_assets'
 after  'deploy:update_code',  'deploy:symlink_configs'
 
 before 'deploy:restart',      'deploy:remove_all_unfinished_locales'
@@ -177,11 +176,6 @@ namespace :deploy do
     system(cmd)
   end
 
-  task :generate_assets, :roles => :web do
-    send(:run, "cd #{release_path} && RAILS_ENV=#{rails_env} bundle exec jammit config/assets.yml")
-  end
-
-
 end
 
 task :log do
@@ -209,6 +203,9 @@ end
 set :stages,        %w(staging production)
 set :default_stage, "staging"
 require 'capistrano/ext/multistage'
+
+# Precompile assets
+load 'deploy/assets'
 
 # have builder check and install gems after each update_code
 require 'bundler/capistrano'
