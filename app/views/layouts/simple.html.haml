@@ -14,7 +14,7 @@
 
     = content_for :javascript_constants
 
-    = include_stylesheets :node, :media => 'screen, projection'
+    = stylesheet_link_tag :node, :media => 'screen, projection'
 
   %body(class=browser_class)
     = render :partial => '/shared/header'
@@ -27,7 +27,7 @@
 
     = render :partial => 'shared/google_tracking'
 
-    = include_javascripts :default
+    = javascript_include_tag :default
 
     = content_for :javascript
 

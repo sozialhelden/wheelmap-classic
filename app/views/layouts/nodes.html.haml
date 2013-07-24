@@ -16,7 +16,7 @@
 
     = content_for :javascript_constants
 
-    = include_stylesheets :node, :media => 'screen, projection'
+    = stylesheet_link_tag :node, :media => 'screen, projection'
 
     = render :partial => 'shared/mixpanel_tracking'
 
@@ -31,7 +31,7 @@
 
     = render :partial => 'shared/google_tracking'
 
-    = include_javascripts :default, :media => 'screen, projection'
+    = javascript_include_tag :default, :media => 'screen, projection'
 
     = content_for :javascript
 
