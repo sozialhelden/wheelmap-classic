@@ -4,6 +4,9 @@ group :default do
   gem 'rails', '3.0.20'
   gem 'mysql2', '<0.3.0'
   gem 'activerecord-import', '<0.3.0', :require => false
+  gem 'rgeo'
+  gem 'rgeo-activerecord'
+  gem 'activerecord-mysql2spatial-adapter'
   gem 'oauth'
   gem 'devise', '1.5.4'
   gem 'compass'
@@ -34,8 +37,6 @@ group :default do
   gem 'jammit'
   gem 'big_sitemap' #, :git => 'git@github.com:sozialhelden/big_sitemap.git'
   gem 'unicorn'
-  gem 'rgeo'
-  gem 'spatial_adapter'
   gem 'friendly_id', '~>3.3.1' # upgrade to 4.x takes more effort.
   gem 'will_paginate'
   gem 'omniauth-osm'
