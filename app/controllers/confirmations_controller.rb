@@ -8,7 +8,7 @@ class ConfirmationsController < Devise::ConfirmationsController
       flash[:view] = '/registrations/confirmed'
       sign_in_and_redirect(resource_name, resource)
     else
-      render_with_scope :new
+      render :new
     end
   end
 end
