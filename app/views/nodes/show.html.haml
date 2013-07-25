@@ -119,9 +119,9 @@
 
 - content_for :javascript_constants do
   :javascript
-    var lon = #{escape_once(@node.lon)};
-    var lat = #{escape_once(@node.lat)};
-    var zoom = #{escape_once(params[:zoom] || 18)};
+    var lon = #{@node.lon};
+    var lat = #{@node.lat};
+    var zoom = #{params[:zoom] || 18};
     #{var_language};
 
 - key = Rails.application.config.session_options[:key]
@@ -177,11 +177,11 @@
 - content_for :javascript do
   :javascript
     drawmap(defaultControls('minimap'), 'minimap');
-    jumpTo(#{escape_once(@node.lon)}, #{escape_once(@node.lat)}, 18);
-    createDraggableLayer(placesStyle(),#{escape_once(@node.lon)}, #{escape_once(@node.lat)});
+    jumpTo(#{@node.lon}, #{@node.lat}, 18);
+    createDraggableLayer(placesStyle(),#{@node.lon}, #{@node.lat});
 
 
-    var point = new google.maps.LatLng(#{escape_once(@node.lat)}, #{escape_once(@node.lon)});
+    var point = new google.maps.LatLng(#{@node.lat}, #{@node.lon});
     var panorama = new google.maps.StreetViewPanorama(document.getElementById("streetview"));
     var sv = new google.maps.StreetViewService();
 
@@ -195,8 +195,8 @@
         panorama.setPano(data.location.pano);
         var lat1 = data.location.latLng.lat();
         var lon1 = data.location.latLng.lng();
-        var lat2 = #{escape_once(@node.lat)};
-        var lon2 = #{escape_once(@node.lon)};
+        var lat2 = #{@node.lat};
+        var lon2 = #{@node.lon};
         var pi = Math.PI;
         var tc1 = (Math.atan2(Math.sin(lon1-lon2)*Math.cos(lat2),Math.cos(lat1)*Math.sin(lat2)-Math.sin(lat1)*Math.cos(lat2)*Math.cos(lon1-lon2)) % (Math.PI * 2));
         var heading = (Math.round(tc1 * 180 / Math.PI) + 360) % 360;

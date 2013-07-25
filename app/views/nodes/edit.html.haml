@@ -15,9 +15,9 @@
 
 - content_for :javascript_constants do
   :javascript
-    var lon = #{escape_once(@node.lon)};
-    var lat = #{escape_once(@node.lat)};
-    var zoom = #{escape_once(params[:zoom] || 18)};
+    var lon = #{@node.lon};
+    var lat = #{@node.lat};
+    var zoom = #{params[:zoom] || 18};
     #{var_language};
 
 - key = Rails.application.config.session_options[:key]
