@@ -15,16 +15,16 @@
 
 - content_for :javascript_constants do
   :javascript
-    var lon = #{escape_once(@node.lon)};
-    var lat = #{escape_once(@node.lat)};
-    var zoom = #{escape_once(params[:zoom] || 18)};
+    var lon = #{@node.lon};
+    var lat = #{@node.lat};
+    var zoom = #{params[:zoom] || 18};
     #{var_language};
 
 - key = Rails.application.config.session_options[:key]
 - content_for :javascript do
   :javascript
     drawmap(defaultControls('minimap'), 'minimap');
-    jumpTo(#{escape_once(@node.lon)}, #{escape_once(@node.lat)}, 18);
-    createDraggableLayer(placesStyle(),#{escape_once(@node.lon)}, #{escape_once(@node.lat)});
+    jumpTo(#{@node.lon}, #{@node.lat}, 18);
+    createDraggableLayer(placesStyle(),#{@node.lon}, #{@node.lat});
 
 
