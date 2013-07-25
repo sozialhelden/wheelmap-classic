@@ -161,7 +161,7 @@ class Poi < ActiveRecord::Base
   end
 
   def lat=(value)
-    self.geom = GEO_FACTORY.point(lon || 0, value.to_f)
+    self.geom = GEO_FACTORY.point(lon || 0.0, value.to_f)
   end
 
   def lon
@@ -169,11 +169,11 @@ class Poi < ActiveRecord::Base
   end
 
   def lon=(value)
-    self.geom = GEO_FACTORY.point(value.to_f, lat || 0)
+    self.geom = GEO_FACTORY.point(value.to_f, lat || 0.0)
   end
 
   def geom
-    read_attribute(:geom) || GEO_FACTORY.point(0,0)
+    read_attribute(:geom) || GEO_FACTORY.point(0.0,0.0)
   end
 
   def tags
@@ -305,7 +305,7 @@ class Poi < ActiveRecord::Base
   def to_geojson(options={})
     {
         :type       => 'Feature',
-        :geometry   => { :type => 'Point', :coordinates  => [ self.lon, self.lat ] },
+        :geometry   => { :type => 'Point', :coordinates  => [ self.lon.to_f, self.lat.to_f ] },
         :properties => { 'name'       => name,
                          'address'    => address || '',
                          'wheelchair' => wheelchair,
