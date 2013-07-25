@@ -61,7 +61,7 @@ private
   def check_for_search_term
     if params[:q].blank?
       @message = I18n.t('nodes.errors.param_missing', :param => 'q')
-      render :action => 'shared/error', :status => 406
+      render :template => 'shared/error', :status => 406, :format => request.format
     end
   end
 
