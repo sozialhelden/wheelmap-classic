@@ -1,7 +1,10 @@
 #header
   #logo
     = link_to '/', :title => t('wheelmap.logo.title') do
-      = image_tag "wm_logo_#{I18n.locale}.png", :size => '300x85', :alt => t('wheelmap.logo.alt')
+      - if Rails.application.assets.find_asset "wm_logo_#{I18n.locale}.png"
+        = image_tag "wm_logo_#{I18n.locale}.png", :size => '300x85', :alt => t('wheelmap.logo.alt')
+      - else
+        = image_tag "wm_logo_en.png", :size => '300x85', :alt => t('wheelmap.logo.alt')
   %nav.links
     - if user_signed_in?
       = link_to t('header.navigation.profile'), edit_user_path(current_user)
