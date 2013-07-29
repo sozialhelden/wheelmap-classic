@@ -10,16 +10,16 @@ FactoryGirl.define do
     n
   end
 
-  factory :poi do |p|
-    p.osm_id {FactoryGirl.generate :version}
-    p.lat 52.0
-    p.lon 13.4
-    p.version
-    p.tags { Hash.new()}
-    p.name 'name'
-    p.type 'bar'
-    p.wheelchair 'yes'
-    p.association :node_type
-    p.association :region
+  factory :poi do
+    osm_id {FactoryGirl.generate :version}
+    lat 52.0
+    lon 13.4
+    version
+    tags { Hash.new()}
+    name 'name'
+    type 'bar'
+    wheelchair 'yes'
+    association :node_type
+    association :region
   end
 end

@@ -85,9 +85,8 @@ describe Api::PhotosController do
     end
 
     it "is not possible to upload images for a user" do
-      lambda {
-        post(:create, :url => api_user_photos_path, :api_key => user.authentication_token, :photo => {:image => fixture_file_upload('/placeholder.jpg')})
-      }.should raise_error ActionController::RoutingError
+      post(:create, :url => api_user_photos_path, :api_key => user.authentication_token, :photo => {:image => fixture_file_upload('/placeholder.jpg')})
+      response.status.should eql 400
     end
   end
 

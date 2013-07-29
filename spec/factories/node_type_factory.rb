@@ -1,9 +1,9 @@
 FactoryGirl.define do
-  factory :node_type do |f|
-    f.identifier 'bar'
-    f.icon '/images/icons/glass.png'
-    f.association :category
-    f.osm_key 'amenity'
-    f.osm_value 'bar'
+  factory :node_type do
+    identifier 'bar'
+    icon '/images/icons/glass.png'
+    association :category
+    osm_key 'amenity'
+    osm_value 'bar'
   end
 end

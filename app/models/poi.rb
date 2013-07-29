@@ -10,7 +10,7 @@ class Poi < ActiveRecord::Base
   include NewRelic::Agent::MethodTracer
 
   # osm_id ist der Primaerschluessel
-  set_primary_key :osm_id
+  self.primary_key = "osm_id"
 
   has_many :provided_pois
   has_many :providers, :through => :provided_pois
