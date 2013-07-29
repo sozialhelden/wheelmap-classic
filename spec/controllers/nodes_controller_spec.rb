@@ -24,8 +24,8 @@ describe NodesController do
 
     # default visitor user
     @base_url = "#{OpenStreetMapConfig.oauth_site}/api/0.6"
-    @default_user = Factory.create(:user, :email => 'visitor@wheelmap.org', :oauth_token =>'token', :oauth_secret => 'secret')
-    @another_user = Factory.create(:user, :email => 'test@rspec.org', :oauth_token =>'token', :oauth_secret => 'secret')
+    @default_user = FactoryGirl.create(:user, :email => 'visitor@wheelmap.org', :oauth_token =>'token', :oauth_secret => 'secret')
+    @another_user = FactoryGirl.create(:user, :email => 'test@rspec.org', :oauth_token =>'token', :oauth_secret => 'secret')
   end
 
   describe "action show" do
@@ -36,7 +36,7 @@ describe NodesController do
     end
 
     let :node do
-      Factory.build(:poi)
+      FactoryGirl.build(:poi)
     end
 
     it "should show node view" do
@@ -57,7 +57,7 @@ describe NodesController do
   describe "action edit" do
 
     let :node do
-      Factory.build(:poi)
+      FactoryGirl.build(:poi)
     end
 
     before(:each) do
@@ -110,7 +110,7 @@ describe NodesController do
   describe "action update wheelchair" do
 
     before :each do
-      @poi = Factory.create(:poi, :osm_id => 1234)
+      @poi = FactoryGirl.create(:poi, :osm_id => 1234)
     end
 
     describe "as anonymous user" do
@@ -154,7 +154,7 @@ describe NodesController do
     end
 
     let! :poi do
-      Factory(:poi, :osm_id => 84644746)
+      FactoryGirl.create(:poi, :osm_id => 84644746)
     end
 
     describe "signed_in" do
@@ -247,13 +247,13 @@ describe NodesController do
       end
 
       it "should update node if node is a way" do
-        p = Factory(:poi, :osm_id => -28)
+        p = FactoryGirl.create(:poi, :osm_id => -28)
         response = post(:update, :id => -28, :node => { :name => "foo" })
         response.code.should == '302'
       end
 
       it "should allow editing node if node is a way" do
-        p = Factory(:poi, :osm_id => -28)
+        p = FactoryGirl.create(:poi, :osm_id => -28)
         response = get(:edit, :id => -28)
         response.code.should == '200'
       end
@@ -286,7 +286,7 @@ describe NodesController do
     before(:each) do
       Poi.destroy_all
       NodeType.destroy_all
-      @bar_node = Factory(:poi, :tags => {'wheelchair:description' => 'Bitte klingeln.', 'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
+      @bar_node = FactoryGirl.create(:poi, :tags => {'wheelchair:description' => 'Bitte klingeln.', 'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
       @bar_node.tags['amenity'] = 'bar'
       @bar_node.type = 'bar'
       @bar_node.save!

@@ -5,15 +5,15 @@ describe PhotosController do
   include Devise::TestHelpers
 
   let :user do
-    Factory.create(:user, :email => 'test@rspec.org', :oauth_token =>'token', :oauth_secret => 'secret')
+    FactoryGirl.create(:user, :email => 'test@rspec.org', :oauth_token =>'token', :oauth_secret => 'secret')
   end
 
   let :another_user do
-    Factory.create(:user, :email => 'another@rspec.org', :oauth_token =>'token', :oauth_secret => 'secret')
+    FactoryGirl.create(:user, :email => 'another@rspec.org', :oauth_token =>'token', :oauth_secret => 'secret')
   end
 
   let :poi do
-    Factory.create(:poi)
+    FactoryGirl.create(:poi)
   end
 
   let :file do
@@ -47,7 +47,7 @@ describe PhotosController do
   context 'destroy photos' do
 
     let :photo do
-      Factory.create(:photo, :image => file, :user => user, :poi => poi)
+      FactoryGirl.create(:photo, :image => file, :user => user, :poi => poi)
     end
 
     before :each do

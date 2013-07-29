@@ -5,7 +5,7 @@ describe Api::CategoriesController do
   render_views
 
   let :user do
-    Factory.create(:user)
+    FactoryGirl.create(:user)
   end
 
   before :all do
@@ -15,9 +15,9 @@ describe Api::CategoriesController do
   describe 'index action' do
 
     before :each do
-      @category = Factory.create(:category)
-      Factory.create(:category, :identifier => 'education')
-      @node_type = Factory.create(:node_type, :category => @category)
+      @category = FactoryGirl.create(:category)
+      FactoryGirl.create(:category, :identifier => 'education')
+      @node_type = FactoryGirl.create(:node_type, :category => @category)
       @categories = Category.all
       @categories.should_not be_empty
     end
@@ -37,7 +37,7 @@ describe Api::CategoriesController do
       describe 'not accepted' do
 
         let :user do
-          Factory.create(:user, :terms => false)
+          FactoryGirl.create(:user, :terms => false)
         end
 
         it "should not save tracking parameter" do
