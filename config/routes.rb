@@ -1,18 +1,5 @@
 Wheelmap::Application.routes.draw do
 
-  ActiveAdmin.routes(self)
-
-  namespace :admin do
-    resources :pois do
-      resources :photos
-    end
-    resources :users do
-      resources :photos
-    end
-  end
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
   match '/ping' => 'ping#index'
 
   filter :locale
@@ -137,4 +124,18 @@ Wheelmap::Application.routes.draw do
   match "/goeslondon",              :to => redirect("http://blog.wheelmap.org/mitmachen/goes-london/")
   match "/goes-london",             :to => redirect("http://blog.wheelmap.org/mitmachen/goes-london/")
   match '/',                        :to => redirect("/map"), :as => 'roooot'
+
+  ActiveAdmin.routes(self)
+
+  namespace :admin do
+    resources :pois do
+      resources :photos
+    end
+    resources :users do
+      resources :photos
+    end
+  end
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
 end

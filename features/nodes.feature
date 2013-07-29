@@ -20,9 +20,8 @@ Feature: Find, update and create nodes via API
 
   Scenario: I want to see a back link to the root page
     When I am on the last poi's page
-    Then I should see "zurück"
     When I follow "zurück"
-    Then I should be on the root page
+    Then I should be on the home page
 
   Scenario: I want to see a link to provider's detail page
     When I am on the last poi's page
