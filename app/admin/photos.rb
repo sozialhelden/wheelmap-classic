@@ -23,11 +23,15 @@ ActiveAdmin.register Photo do
       link_to(photo.user.id, admin_user_path(photo.user))
     end
     column :poi do |photo|
-      span do
-        [
-          link_to(photo.poi.headline, admin_poi_path(photo.poi)),
-          link_to('Map', node_path(photo.poi))
-        ].join(',<br/>').html_safe
+      if photo.poi.present?
+        span do
+          [
+            link_to(photo.poi.headline, admin_poi_path(photo.poi)),
+            link_to('Map', node_path(photo.poi))
+          ].join(',<br/>').html_safe
+        end
+      else
+        "MISSING"
       end
     end
     column :taken_at
