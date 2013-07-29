@@ -1,11 +1,11 @@
 # encoding: UTF-8
 include ActionDispatch::TestProcess
 FactoryGirl.define do
-  factory :photo do |p|
+  factory :photo do
 
-    p.caption ''
-    p.image fixture_file_upload('spec/fixtures/placeholder.jpg')
-    p.association :user
-    p.association :poi
+    caption ''
+    image { fixture_file_upload('spec/fixtures/placeholder.jpg') }
+    association :user
+    association :poi
   end
 end

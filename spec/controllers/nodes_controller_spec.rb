@@ -3,15 +3,15 @@ require 'spec_helper'
 require "cacheable_flash/test_helpers"
 
 class UpdateJob < ActiveRecord::Base
-  set_table_name 'delayed_jobs'
+  self.table_name = 'delayed_jobs'
 end
 
 class CreateJob < ActiveRecord::Base
-  set_table_name 'delayed_jobs'
+  self.table_name = 'delayed_jobs'
 end
 
 class UpdateAttributeJob <ActiveRecord::Base
-  set_table_name 'delayed_jobs'
+  self.table_name = 'delayed_jobs'
 end
 
 describe NodesController do

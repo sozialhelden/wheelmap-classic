@@ -21,6 +21,9 @@ Wheelmap::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
+  # Raise exception on mass assignment protection for Active Record models
+  config.active_record.mass_assignment_sanitizer = :strict
+
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default_url_options = { :host => '0.0.0.0:3000' }
@@ -43,5 +46,10 @@ Wheelmap::Application.configure do
   config.assets.debug = true
 
   config.assets.digest = false
+
+  # Log the query plan for queries taking more than this (works
+  # with SQLite, MySQL, and PostgreSQL)
+  config.active_record.auto_explain_threshold_in_seconds = 2.0
+
 end
 

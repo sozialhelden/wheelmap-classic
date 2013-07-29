@@ -32,7 +32,6 @@ class NodeType < ActiveRecord::Base
   alias_method :name, :localized_name
 
   class << self
-    extend ActiveSupport::Memoizable
 
     def combination
       keys = NodeType.all.map(&:osm_key)
@@ -56,7 +55,6 @@ class NodeType < ActiveRecord::Base
       end
       @@combination
     end
-    memoize :combination if Rails.env.production? || Rails.env.staging?
 
     def valid_combination?(key, value)
       find_by_osm_key_and_osm_value(key, value) || find_by_alt_osm_key_and_alt_osm_value(key, value)
