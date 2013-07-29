@@ -5,7 +5,7 @@ describe Poi do
 
 
   let! :node_type do
-    Factory.create(:node_type, :osm_key => :shop, :osm_value => :alcohol, :identifier => :alcohol)
+    FactoryGirl.create(:node_type, :osm_key => :shop, :osm_value => :alcohol, :identifier => :alcohol)
   end
 
   describe 'associations' do
@@ -23,7 +23,7 @@ describe Poi do
   end
 
   describe 'validations' do
-    subject { Factory.build(:poi) }
+    subject { FactoryGirl.build(:poi) }
     it { should be_valid }
 
     it "should validate presence of name for new node" do
@@ -49,7 +49,7 @@ describe Poi do
   end
 
   context 'osm stuff' do
-    subject { Factory.build(:poi, :tags => { 'wheelchair' => 'yes', 'street' => "Sesame street" }) }
+    subject { FactoryGirl.build(:poi, :tags => { 'wheelchair' => 'yes', 'street' => "Sesame street" }) }
 
     it 'osm_type identifies types properly' do
       Poi.new(:osm_id => 1).osm_type.should eq('node')
@@ -83,13 +83,13 @@ describe Poi do
     Poi::DELEGATED_ADDR_ATTRIBUTES.each do |attr|
 
       it "has virtual getter for address tag #{attr}" do
-        p = Factory.build(:poi)
+        p = FactoryGirl.build(:poi)
         p.tags["addr:#{attr}"] = "horst"
         p.send(attr).should == "horst"
       end
 
       it "has virtual setter for address tag #{attr}" do
-        p = Factory.build(:poi)
+        p = FactoryGirl.build(:poi)
         p.send "#{attr}=", "horst"
         p.tags["addr:#{attr}"].should == "horst"
       end
@@ -102,14 +102,14 @@ describe Poi do
 
     names.each do |attr|
       it "has virtual getters for #{attr}" do
-        p = Factory.build(:poi)
+        p = FactoryGirl.build(:poi)
 
         p.tags["#{attr}"] = "horst"
         p.send(attr).should == "horst"
       end
 
       it "has virtual setters for #{attr}" do
-        p = Factory.build(:poi)
+        p = FactoryGirl.build(:poi)
         p.send "#{attr}=", "horst"
         p.tags["#{attr}"].should == "horst"
       end
@@ -122,7 +122,7 @@ describe Poi do
 
       REQUIRED_KEYS.each do |name|
         it "has key and value '#{name}'" do
-          p = Factory.create(:poi)
+          p = FactoryGirl.create(:poi)
           attributes = p.as_api_response(:osm)
           attributes[name].should_not be_blank
         end
@@ -139,7 +139,7 @@ describe Poi do
           :website => "http://foo.bar.com"
         }
 
-        p = Factory.create(:poi, h)
+        p = FactoryGirl.create(:poi, h)
         attributes = p.as_api_response(:osm).as_json
 
         tags = attributes['tag']
@@ -159,7 +159,7 @@ describe Poi do
           :version => 7
         }
 
-        p = Factory.create(:poi, h)
+        p = FactoryGirl.create(:poi, h)
         attributes = p.as_api_response(:osm).as_json
 
         tags = attributes['tag']

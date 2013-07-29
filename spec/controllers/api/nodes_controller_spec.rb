@@ -7,13 +7,13 @@ describe Api::NodesController do
 
   before :each do
     User.delete_all
-    @user = Factory.create(:user)
+    @user = FactoryGirl.create(:user)
   end
 
   describe 'index action' do
     before :each do
       Poi.delete_all
-      @nodes = [Factory.create(:poi, :osm_id => 1, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'}), Factory.create(:poi, :osm_id => 2, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})]
+      @nodes = [FactoryGirl.create(:poi, :osm_id => 1, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'}), FactoryGirl.create(:poi, :osm_id => 2, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})]
     end
 
     describe 'format json' do
@@ -130,10 +130,10 @@ describe Api::NodesController do
   describe 'as a node' do
 
     before :each do
-      @wheelmap_visitor = Factory.create(:authorized_user, :email => 'visitor@wheelmap.org')
-      @user = Factory.create(:authorized_user, :email => 'chris@tucker.org')
+      @wheelmap_visitor = FactoryGirl.create(:authorized_user, :email => 'visitor@wheelmap.org')
+      @user = FactoryGirl.create(:authorized_user, :email => 'chris@tucker.org')
       Poi.delete_all
-      @node = Factory.create(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
+      @node = FactoryGirl.create(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
     end
 
     it_behaves_like "update_wheelchair"
@@ -142,10 +142,10 @@ describe Api::NodesController do
   describe 'as a way' do
 
     before :each do
-      @wheelmap_visitor = Factory.create(:authorized_user, :email => 'visitor@wheelmap.org')
-      @user = Factory.create(:authorized_user, :email => 'chris@tucker.org')
+      @wheelmap_visitor = FactoryGirl.create(:authorized_user, :email => 'visitor@wheelmap.org')
+      @user = FactoryGirl.create(:authorized_user, :email => 'chris@tucker.org')
       Poi.delete_all
-      @node = Factory.create(:poi, :osm_id => (Factory.next(:version) * -1), :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
+      @node = FactoryGirl.create(:poi, :osm_id => (FactoryGirl.generate(:version) * -1), :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
     end
 
     it_behaves_like "update_wheelchair"
@@ -183,7 +183,7 @@ describe Api::NodesController do
 
   describe 'update action' do
     before :each do
-      @node = Factory.create(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
+      @node = FactoryGirl.create(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
     end
 
     it "access should be denied if api key is missing" do
