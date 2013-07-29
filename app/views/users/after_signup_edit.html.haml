@@ -13,7 +13,7 @@
       = form.input :password, :hint => false, :required => true, :label_html => {:class => :small }, :error_class => ['inline-errors', 'small']
       = form.input :password_confirmation, :hint => false, :required => true, :label_html => {:class => :small }, :error_class => ['inline-errors', 'small']
 
-    = form.buttons do
+    = form.actions do
       %ol
         %li.commit
           %input.small.update#user_submit{:name => 'commit', :type => 'submit', :value => t('formtastic.labels.finish'), :style => 'display:inline', :'data-confirm' => t('devise.confirmations.send_instructions')}

@@ -1,8 +1,8 @@
-= semantic_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
+= semantic_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |form|
   = devise_error_messages!
-  = f.inputs :name => t('devise.confirmations.link') do
-    = f.input :email, :hint => false
+  = form.inputs :name => t('devise.confirmations.link') do
+    = form.input :email, :hint => false
 
-  = f.buttons do
-    = f.commit_button "Resend confirmation instructions"
+  = form.actions do
+    = form.action :submit, :label => "Resend confirmation instructions"
 = render :partial => "devise/shared/links"

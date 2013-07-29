@@ -3,8 +3,8 @@
 
   = semantic_form_for @user do |form|
     = form.inputs :name => t('devise.sign_up.form.labels.email') do
-      = form.input :first_name
-      = form.input :last_name
+      = form.input :first_name, :label => t('activerecord.attributes.user.first_name')
+      = form.input :last_name, :label => t('activerecord.attributes.user.last_name')
       = form.input :email
       = form.input :wants_newsletter, :input_html => {:class => 'newsletter'}, :label => t('devise.sign_up.form.labels.wants_newsletter')
 
@@ -13,8 +13,8 @@
       = form.input :password, :hint => false
       = form.input :password_confirmation, :hint => t('formtastic.hints.password')
 
-    = form.buttons do
-      = form.commit_button t('formtastic.labels.save')
+    = form.actions do
+      = form.action :submit, :label => t('formtastic.labels.save')
 
   -# TODO Renebale user photos
   %hr
@@ -31,15 +31,15 @@
       = form.inputs :name => 'API'do
         = form.input :authentication_token, :input_html => {:readonly => :readonly}
 
-      = form.buttons do
-        = form.commit_button t('formtastic.labels.reset')
+      = form.actions do
+        = form.action :submit, :label => t('formtastic.labels.reset')
 
 
   %hr
   = semantic_form_for :user, :url => user_registration_path, :html => {:method => 'delete'} do |form|
     = form.inputs :name => t('devise.destroy.headline') do
-      = form.buttons do
-        = form.submit t('devise.destroy.link'), :onclick => "if(!confirm('#{t('devise.destroy.confirm')}')){ return false; }"
+      = form.actions do
+        = form.action :submit, :label => t('devise.destroy.link'), :onclick => "if(!confirm('#{t('devise.destroy.confirm')}')){ return false; }"
 
   -# TODO Renebale user photos
   %hr
