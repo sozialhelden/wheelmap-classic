@@ -5,7 +5,10 @@
   %meta{:name => 'language', :content => I18n.locale}
   - RELEASE_INFO.each do |k,v|
     %meta{:name => k, :content => v}
-  =render_og_metadata(:type => 'website', :title => "Wheelmap.org", :url => root_url, :description => t('header.title'), :image => image_path("wm_logo_#{I18n.locale}.png"), :locale => I18n.locale)
+  - if Rails.application.assets.find_asset "wm_logo_#{I18n.locale}.png"
+    =render_og_metadata(:type => 'website', :title => "Wheelmap.org", :url => root_url, :description => t('header.title'), :image => image_path("wm_logo_#{I18n.locale}.png"), :locale => I18n.locale)
+  - else
+    =render_og_metadata(:type => 'website', :title => "Wheelmap.org", :url => root_url, :description => t('header.title'), :image => image_path("wm_logo_en.png"), :locale => I18n.locale)
 
   - unless Rails.env.production?
     %meta{:name => 'robots', :content => 'noindex, nofollow'}
