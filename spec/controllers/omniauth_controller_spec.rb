@@ -47,7 +47,7 @@ describe OmniauthCallbacksController do
   context "known user" do
 
     before do
-      Factory.create(:user, :osm_id => 174, :confirmed_at => 1.day.ago)
+      FactoryGirl.create(:user, :osm_id => 174, :confirmed_at => 1.day.ago)
     end
 
     it "does not create a new user" do

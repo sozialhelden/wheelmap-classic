@@ -3,7 +3,7 @@ require 'spec_helper'
 describe PhotoUploader do
 
   let :photo do
-    @photo ||= Factory.create(:photo, :process_image_upload => true)
+    @photo ||= FactoryGirl.create(:photo, :process_image_upload => true)
   end
 
   before do

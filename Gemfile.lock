@@ -156,10 +156,10 @@ GEM
     execjs (1.4.0)
       multi_json (~> 1.0)
     exifr (1.1.3)
-    factory_girl (2.5.2)
-      activesupport (>= 2.3.9)
-    factory_girl_rails (1.6.0)
-      factory_girl (~> 2.5.0)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
     faraday (0.8.4)
       multipart-post (~> 1.1)
@@ -432,7 +432,7 @@ DEPENDENCIES
   devise
   devise-encryptable
   exifr
-  factory_girl_rails (= 1.6.0)
+  factory_girl_rails
   fastercsv
   flash_cookie_session
   formtastic (= 2.2.1)

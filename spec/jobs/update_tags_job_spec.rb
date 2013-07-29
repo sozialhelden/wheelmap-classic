@@ -7,9 +7,9 @@ describe UpdateTagsJob do
     User.delete_all
   end
 
-  let(:poi)       { Factory.create(:poi, :lat => 52.0, :lon => 13.0) }
+  let(:poi)       { FactoryGirl.create(:poi, :lat => 52.0, :lon => 13.0) }
   let(:node)      { Rosemary::Node.new(poi.to_osm_attributes) }
-  let(:user)      { Factory(:authorized_user) }
+  let(:user)      { FactoryGirl.create(:authorized_user) }
   let(:changeset) { Rosemary::Changeset.new(:id => 12345) }
   let(:unedited_node) { Rosemary::Node.new(:tags => { 'addr:housenumber' => 10 }) }
 

@@ -5,7 +5,7 @@ describe Api::ApiController do
   render_views
 
   let :user do
-    Factory.create(:user)
+    FactoryGirl.create(:user)
   end
 
   before :all do
