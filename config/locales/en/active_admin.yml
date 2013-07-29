@@ -3,7 +3,7 @@ en:
     dashboard: Dashboard
     dashboard_welcome:
       welcome: "Welcome to Active Admin. This is the default dashboard page."
-      call_to_action: "To add dashboard sections, checkout 'app/admin/dashboards.rb'"
+      call_to_action: "To add dashboard sections, checkout 'app/admin/dashboard.rb'"
     view: "View"
     edit: "Edit"
     delete: "Delete"
@@ -29,6 +29,7 @@ en:
     less_than: "Less Than"
     main_content: "Please implement %{model}#main_content to display content."
     logout: "Logout"
+    powered_by: "Powered by %{active_admin} %{version}"
     sidebars:
       filters: "Filters"
     pagination:
@@ -75,6 +76,16 @@ en:
       change_password:
         title: "Change your password"
         submit: "Change my password"
+      unlock:
+        title: "Resend unlock instructions"
+        submit: "Resend unlock instructions"
       links:
         sign_in: "Sign in"
         forgot_your_password: "Forgot your password?"
+    access_denied:
+      message: "You are not authorized to perform this action."
+    index_list:
+      table: "Table"
+      block: "List"
+      grid: "Grid"
+      blog: "Blog"
