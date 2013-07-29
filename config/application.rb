@@ -57,6 +57,12 @@ module Wheelmap
     # Precompile additional assets
     config.assets.precompile += %w( .svg .eot .woff .ttf )
 
+    # Add the flash path
+    config.assets.paths << Rails.root.join('app', 'assets', 'flash')
+
+    # Precompile additional assets
+    config.assets.precompile += %w( .swf )
+
     # Needed for the ActiveAdmin's manifest assets.
     config.assets.precompile += ['active_admin.css', 'active_admin.js']
 
