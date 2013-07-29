@@ -10,25 +10,12 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_ab_tester
 
-  before_filter :set_abingo_identity
-
   before_filter :store_iphone_stats, :if => [:get_request?, :mobile_app?]
 
   rescue_from Errno::ETIMEDOUT, :with => :timeout
   rescue_from Timeout::Error,   :with => :timeout
 
   protected
-
-  def set_abingo_identity
-    if user_is_a_bot?
-        Abingo.identity = "robot"
-    elsif (user_signed_in? rescue false)
-      Abingo.identity = current_user.id
-    else
-      session[:abingo_identity] ||= rand(10 ** 10)
-      Abingo.identity = session[:abingo_identity]
-    end
-  end
 
   def user_is_a_bot?
     @bot ||= !(request.user_agent =~ /\b(Baidu|Gigabot|Googlebot|libwww-perl|lwp-trivial|msnbot|SiteUptime|Slurp|WordPress|Yodao|ZIBB|ZyBorg)\b/i).nil?
