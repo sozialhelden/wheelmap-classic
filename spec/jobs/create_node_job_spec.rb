@@ -6,7 +6,7 @@ describe CreateNodeJob do
     User.delete_all
   end
 
-  let(:user)      { Factory(:authorized_user) }
+  let(:user)      { FactoryGirl.create(:authorized_user) }
   let(:changeset) { Rosemary::Changeset.new(:id => 12345, :open? => true) }
 
   subject {
@@ -42,7 +42,7 @@ describe CreateNodeJob do
   end
 
   it "does not increment counter if terms not accepted" do
-    user = Factory.create(:authorized_user, :terms => false)
+    user = FactoryGirl.create(:authorized_user, :terms => false)
     job = CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'yes', 'amenity' => 'bar', 'name' => 'White horse' }, user, 'create_iphone')
     api = mock(:find_or_create_open_changeset => changeset)
     Rosemary::Api.should_receive(:new).and_return(api)

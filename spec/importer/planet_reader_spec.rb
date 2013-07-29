@@ -50,8 +50,8 @@ XML
 describe PlanetReader do
 
   before :each do
-    @category = Factory.create(:category, :identifier => 'food')
-    @node_type = Factory.create(:node_type, :osm_key => 'amenity', :osm_value => 'restaurant', :category => @category)
+    @category = FactoryGirl.create(:category, :identifier => 'food')
+    @node_type = FactoryGirl.create(:node_type, :osm_key => 'amenity', :osm_value => 'restaurant', :category => @category)
     Poi.delete_all
   end
 

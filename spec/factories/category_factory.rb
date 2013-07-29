@@ -1,3 +1,5 @@
-Factory.define :category do |f|
-  f.identifier 'food'
+FactoryGirl.define do
+  factory :category do
+    identifier 'food'
+  end
 end

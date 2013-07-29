@@ -3,13 +3,13 @@ require 'spec_helper'
 describe User do
 
   subject do
-    Factory.create(:user)
+    FactoryGirl.create(:user)
   end
 
   context "validations" do
 
     subject do
-      Factory(:user, :email => "foo@bar.org", :password => "secret", :password_confirmation => "secret")
+      FactoryGirl.create(:user, :email => "foo@bar.org", :password => "secret", :password_confirmation => "secret")
     end
 
     it { should be_valid }
@@ -45,7 +45,7 @@ describe User do
 
 
     it "should not be valid with password but no email" do
-      @user = Factory.build(:user, :email => nil, :password => 'password')
+      @user = FactoryGirl.build(:user, :email => nil, :password => 'password')
       @user.should_not be_valid
       @user.should have(1).error_on(:email)
     end
@@ -59,7 +59,7 @@ describe User do
   end
 
   it "should revoke the oauth credentials" do
-    @user = Factory.create(:authorized_user)
+    @user = FactoryGirl.create(:authorized_user)
     @user.revoke_oauth_credentials
     @user.reload
     @user.oauth_token.should be_nil
@@ -69,7 +69,7 @@ describe User do
   context "confirmation" do
 
     subject do
-      Factory.create(:user, :email => 'horst@wheelmap.de')
+      FactoryGirl.create(:user, :email => 'horst@wheelmap.de')
     end
 
     before do
@@ -77,7 +77,7 @@ describe User do
     end
 
     it "should not send confirmation instructions on create" do
-      @user = Factory.create(:user, :email => 'horst@wheelmap.de')
+      @user = FactoryGirl.create(:user, :email => 'horst@wheelmap.de')
       ActionMailer::Base.deliveries.size.should eql 0
     end
 
@@ -125,7 +125,7 @@ describe User do
   context "authentication" do
 
     subject do
-      @user = Factory.create(:user, :email => "foo@bar.org", :password => "secret", :password_confirmation => "secret")
+      @user = FactoryGirl.create(:user, :email => "foo@bar.org", :password => "secret", :password_confirmation => "secret")
     end
 
     it "should succeed with an existing user and a valid password" do
@@ -144,7 +144,7 @@ describe User do
   context "validations" do
 
     subject do
-      Factory(:user, :email => "foo@bar.org", :password => "secret", :password_confirmation => "secret")
+      FactoryGirl.create(:user, :email => "foo@bar.org", :password => "secret", :password_confirmation => "secret")
     end
 
     it "should not be possible to save a user with a short password" do
@@ -161,7 +161,7 @@ describe User do
     end
 
     subject do
-      Factory(:user)
+      FactoryGirl.create(:user)
     end
 
     it "should send email after destroy" do
@@ -173,7 +173,7 @@ describe User do
   context "methods" do
 
     subject do
-      Factory.build(:user)
+      FactoryGirl.build(:user)
     end
 
     it "should show first and last name when given" do

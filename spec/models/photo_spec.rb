@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Photo do
 
-  subject { Factory.build :photo }
+  subject { FactoryGirl.build :photo }
 
   it "should create a valid photo" do
     subject.should be_valid

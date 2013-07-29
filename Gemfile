@@ -80,7 +80,7 @@ end
 
 group :test do
   gem 'webmock', :require => nil
-  gem 'factory_girl_rails', "1.6.0"
+  gem 'factory_girl_rails'
   gem "capybara", "1.1.1"  # on mac, you need sudo port install libffi
   gem 'cucumber', "1.2.1"
   gem 'cucumber-rails', :require => false

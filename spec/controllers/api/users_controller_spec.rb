@@ -5,7 +5,7 @@ describe Api::UsersController do
 
   before(:each) do
     User.destroy_all
-    @user = Factory.create(:user, :email => 'email@wheelmap.org',
+    @user = FactoryGirl.create(:user, :email => 'email@wheelmap.org',
                                           :password => 'password',
                                           :password_confirmation => 'password',
                                           :oauth_token => 'a_token',
