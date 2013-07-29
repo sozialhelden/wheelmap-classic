@@ -25,7 +25,7 @@ ActiveAdmin.register Photo do
     column :poi do |photo|
       span do
         [
-          link_to(photo.poi.headline, admin_poi_path(photo.poi)),
+          link_to(photo.poi.try(:headline), admin_poi_path(photo.poi)),
           link_to('Map', node_path(photo.poi))
         ].join(',<br/>').html_safe
       end
