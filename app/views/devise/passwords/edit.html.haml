@@ -3,8 +3,8 @@
     = form.hidden_field :reset_password_token
     = form.input :password, :label => t('devise.password_reset.form.labels.password')
     = form.input :password_confirmation, :label => t('devise.password_reset.form.labels.password_confirmation')
-  = form.buttons do
-    = form.commit_button t('devise.password_reset.form.submit')
+  = form.actions do
+    = form.action :submit, :label => t('devise.password_reset.form.submit')
     %p.hint= t('devise.mandatory')
 
 = render :partial => "devise/shared/links"

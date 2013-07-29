@@ -27,8 +27,8 @@
         %li.checkbox-optional
           = form.check_box :remember_me
           = form.label :remember_me, t('devise.sign_in.form.labels.remember_me')
-    = form.buttons do
-      = form.commit_button t('devise.sign_in.form.submit')
+    = form.actions do
+      = form.action :submit, :label => t('devise.sign_in.form.submit')
       %p.hint= t('devise.mandatory')
 
   %p

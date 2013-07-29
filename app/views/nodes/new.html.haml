@@ -7,8 +7,8 @@
     = hidden_field_tag "zoom", params[:zoom]
     = render :partial => 'inputs', :object => @node, :locals => {:form => form}
 
-    = form.buttons do
-      = form.commit_button t('formtastic.labels.create')
+    = form.actions do
+      = form.action :submit, :label => t('formtastic.labels.create')
       %p.hint= t('devise.mandatory')
 
 - content_for :head do
