@@ -7,22 +7,22 @@ describe Api::PhotosController do
   end
 
   let :user do
-    Factory.create(:user)
+    FactoryGirl.create(:user)
   end
 
   let :poi do
-    Factory.create(:poi)
+    FactoryGirl.create(:poi)
   end
 
   let :photo do
-    Factory.create(:photo, :user => user, :poi => poi)
+    FactoryGirl.create(:photo, :user => user, :poi => poi)
   end
 
   context 'index action' do
 
     before :each do
       3.times do
-        Factory.create(:photo, :user => user, :poi => poi)
+        FactoryGirl.create(:photo, :user => user, :poi => poi)
       end
     end
 
@@ -97,7 +97,7 @@ describe Api::PhotosController do
     end
 
     let :another_photo do
-      Factory.create(:photo)
+      FactoryGirl.create(:photo)
     end
 
     it "is possible to delete images for a given node" do

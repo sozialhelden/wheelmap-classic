@@ -3,7 +3,7 @@ require 'spec_helper'
 describe ProvidedPoi do
 
   subject do
-    Factory.build(:provided_poi)
+    FactoryGirl.build(:provided_poi)
   end
 
   it { should be_valid }

@@ -6,15 +6,15 @@ describe Api::NodeTypesController do
 
   before :all do
     User.delete_all
-    @user = Factory.create(:user)
+    @user = FactoryGirl.create(:user)
   end
 
   describe 'index action' do
 
     before :each do
-      @category = Factory.create(:category)
-      Factory.create(:category, :identifier => 'education')
-      @node_type = Factory.create(:node_type, :category => @category)
+      @category = FactoryGirl.create(:category)
+      FactoryGirl.create(:category, :identifier => 'education')
+      @node_type = FactoryGirl.create(:node_type, :category => @category)
       @categories = Category.all
       @categories.should_not be_empty
     end
