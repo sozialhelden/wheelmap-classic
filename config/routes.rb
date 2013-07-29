@@ -51,8 +51,6 @@ Wheelmap::Application.routes.draw do
     get :register_osm, :on => :collection
   end
 
-  match 'abingo(/:action(/:id))', :to => 'abingo_dashboard', :as => :abingo
-
   resources :nodes, :except => :destroy do
     member do
       put :update_wheelchair
