@@ -8,5 +8,5 @@
   %iframe{:align => 'center', :src => 'http://blog.wheelmap.org/was-ist-wheelmap/privacy/', :width => '100%', :height => '300', :frameborder => '0', :seamless => 'seamless'}
 
   = form.input :privacy_policy
-  = form.buttons do
-    = form.commit_button t('formtastic.labels.save')
+  = form.actions do
+    = form.action :submit, :label => t('formtastic.labels.save')
