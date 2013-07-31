@@ -60,7 +60,7 @@ describe OmniauthCallbacksController do
 
     it "redirects to after_sign_in_path" do
       get :osm
-      response.should redirect_to '/'
+      response.should redirect_to '/map'
     end
   end
 
