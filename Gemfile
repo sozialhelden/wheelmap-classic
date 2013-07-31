@@ -44,7 +44,7 @@ group :default do
 #  gem 'system_timer' # Optional for librato dependency faraday
   gem 'multipart-post'
   gem 'sass-rails' # goes here instead of group assets because activeadmin uses it in the initializer
-  gem 'activeadmin'
+  gem 'activeadmin', '0.5.1'
   gem 'meta_search'
   gem 'kaminari'
   gem 'carrierwave'
