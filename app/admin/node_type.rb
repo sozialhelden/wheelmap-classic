@@ -19,6 +19,7 @@ ActiveAdmin.register NodeType do
   end
 
   index do
+    selectable_column
     column :id
     column :icon do |node_type|
       image_tag("/icons/#{node_type.icon}")
