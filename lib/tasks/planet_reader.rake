@@ -142,9 +142,12 @@ namespace :osm do
 
   desc 'Import POI Data from STDIN'
   task :import => :environment do
-    puts "Reading vom STDIN. Please pipe some data in: bzcat planet.osm.bz2 | rake osm:import"
+    puts "Reading vom STDIN. Please pipe some data in: bzcat planet.osm.bz2 | rake osm:import FULL=1 CREATE_TABLE=1 SWAP_TABLE=1"
     file = ENV['file']
-    p = PlanetReader.new(file || STDIN)
+    full_dump = ENV['FULL'].present?
+    create_table = ENV['CREATE_TABLE'].present?
+    swap_table = ENV['SWAP_TABLE'].present?
+    p = PlanetReader.new(file || STDIN, full_dump, create_table, swap_table)
     p.load()
   end
 

@@ -4,14 +4,23 @@ require 'rubygems'
 require 'libxml'
 require "activerecord-import/base"
 ActiveRecord::Import.require_adapter('mysql2')
-
 class PlanetReader
 
   include LibXML::XML::SaxParser::Callbacks
 
   # Konstruktor.
   #
-  def initialize(stream_or_file=STDIN)
+  def initialize(stream_or_file=STDIN, full=false, create_table=false, swap_table=false)
+    @full = full
+    @create = create_table
+    @swap = swap_table
+    if @create
+      ActiveRecord::Base.connection.execute "DROP TABLE IF EXISTS tmp_pois"
+      ActiveRecord::Base.connection.execute "CREATE TABLE tmp_pois LIKE pois"
+    end
+    if @full
+      Poi.set_table_name "tmp_pois"
+    end
     @start_time = Time.now
     @processed = 0
     @parser = stream_or_file.is_a?(String) ? LibXML::XML::SaxParser.file(stream_or_file) : LibXML::XML::SaxParser.io(stream_or_file)
@@ -43,6 +52,10 @@ class PlanetReader
       create_pois(1)
       flush_pois(1)
       sleep 1
+      if @full && @swap
+        ActiveRecord::Base.connection.execute "RENAME TABLE pois TO old_pois, tmp_pois TO pois"
+        ActiveRecord::Base.connection.execute "DROP TABLE old_pois"
+      end
       @duration = (Time.now - @start_time).to_i
       puts "\nINFO: Processed #{@processed} nodes in #{@duration}s ~= #{@processed/@duration}/s" unless Rails.env.test?
     end
