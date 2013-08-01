@@ -28,16 +28,19 @@ $(document).ready(function () {
     placement: getPopoverPlacement
   }).click(function () {
       $('.popover').fadeOut(300);
-    });
+  });
 
+  // Activate clicked status filter, deactivate others (but only at first time clicked)
   $statusFilterButtons.click(function(event) {
-    if (filterCookie)
+    event.stopPropagation();
+
+    if (filterCookie) {
+      $(this).toggleClass('active').trigger('change');
       return;
+    }
 
     filterCookie = true;
-    event.stopPropagation();
-    $statusFilterButtons.not(this).removeClass('active');
-    $statusFilterButtons.trigger('change');
+    $statusFilterButtons.not(this).removeClass('active').trigger('change');
   });
 
   if (!$.cookie('_wheelmap_first_time_visitor')) {

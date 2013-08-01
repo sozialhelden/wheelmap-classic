@@ -178,25 +178,19 @@ function parseResponse(data) {
   }
 }
 
-$('.status-filter').find('button').button()
-  .each(function() {
-    $(this).on('change', function(e) {
-      var target = $(e.target), filter_class;
+$('.status-filter button').button()
+  .on('change', function(e) {
+    var $this = $(this), filter_class;
 
-      if (!target.is('button')) {
-        target = target.parents('button');
-      }
+    filter_class = $this.attr('data-value');
 
-      filter_class = target.attr('data-value');
-
-      if (!target.hasClass('active')) {
-        $('.leaflet-marker-icon.' + filter_class).addClass('wheelchair_hidden');
-        $.cookie('filter_' + filter_class, '1', { expires: 7, path: '/'});
-      } else {
-        $.removeCookie('filter_' + filter_class);
-        $('.leaflet-marker-icon.' + filter_class).removeClass('wheelchair_hidden');
-      }
-    });
+    if (!$this.hasClass('active')) {
+      $('.leaflet-marker-icon.' + filter_class).addClass('wheelchair_hidden');
+      $.cookie('filter_' + filter_class, '1', { expires: 7, path: '/'});
+    } else {
+      $('.leaflet-marker-icon.' + filter_class).removeClass('wheelchair_hidden');
+      $.removeCookie('filter_' + filter_class);
+    }
   });
 
 $('.category-filter').on('change', function(e){
