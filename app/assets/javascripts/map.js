@@ -213,6 +213,7 @@ var $statusFilterButtons = $('.status-filter button'),
   $categoryFilter = $('.category-filter'),
   filterCookie = false;
 
+
 $(['yes', 'no', 'limited', 'unknown']).each(function (index, item) {
   if ($.cookie('filter_' + item)) {
     filterCookie = true;
@@ -235,13 +236,15 @@ $statusFilterButtons.popover({
   });
 
 $statusFilterButtons.click(function(event) {
-  if (filterCookie)
+  event.stopPropagation();
+
+  if (filterCookie) {
+    $(this).toggleClass('active').trigger('change');
     return;
+  }
 
   filterCookie = true;
-  event.stopPropagation();
-  $statusFilterButtons.not(this).removeClass('active');
-  $statusFilterButtons.trigger('change');
+  $statusFilterButtons.not(this).removeClass('active').trigger('change');
 });
 
 $('.btn-searchbar').click(function () {
