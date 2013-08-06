@@ -12,6 +12,7 @@ it:
     root: wheelmap
   common:
     close: chiudi
+    skip: salta
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -57,6 +58,9 @@ it:
         notice: "%{resource_name} è stato cancellato con successo"
       update:
         notice: "%{resource_name} è stato aggiornato."
+    photos:
+      destroy:
+        notice: "Imagine cancellato con successo"
   form:
     show_fully_accessible_places: "Accessibile in sedia a rotelle"
     show_limited_accessible_places: "parzialmente accessibile in sedia a rotelle"
@@ -75,6 +79,7 @@ it:
       city: "Città:"
       create: "Crea luogo"
       email: E-mail
+      finish: Finito
       housenumber: "Numero:"
       lat: Latitudine
       lon: Longitudine
@@ -85,9 +90,11 @@ it:
       password_confirmation: "Ripeti la password"
       phone: "Telefono:"
       postcode: "CAP:"
+      privacy_policy: "Accetto numero 1 e 2 delle regole della privacy."
       reset: Azzera
       save: Salva
       street: "Via:"
+      terms: "Acetto gli termini del sito."
       type: "Tipo:"
       website: "Sito Web:"
       wheelchair: "Accessibilità per sedie a rotelle?"
@@ -222,6 +229,8 @@ it:
         back: Indietro
         large_map: Allarga
         listing: "Tutti i luoghi '%{type}' in %{city} "
+        upload: "Carica imagine"
+      more_data_from: "Ci sono più informazioni su quest'luogho, controllato da:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -340,6 +349,15 @@ it:
       login_with_twitter: "Collegati con Twitter"
       password: Password
       remember_me: "Resta collegato"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Sei quasi finito! Finisci la iscrizione per il tuo account qui:"
+        set_password_for_mobile: "Hai completato la tua registrazione con OpenStreetMap. Adesso scegli una email e una parola per il tuo account su Wheelmap, e poi sarai a posto! Hai bisogno della email e della parola per accedere ai app per iPhone o Android."
+        text: "Come possiamo raggiungerti? Puoi modificare questa informazione anche dopo nell tuo profilo."
+    edit:
+      headline:
+        your_images: "I tuoi imagini caricati"
   wheelchairstatus:
     limited: "parzialmente accessibile in sedia a rotelle"
     ? "no"

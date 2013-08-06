@@ -18,3 +18,8 @@ zh-tw:
         headline: "透過 Wheelmap.org 標示和尋找輪椅無障礙空間 - 全球化而免費。這並不困難："
         lookup: 搜尋特定地點
         secondary_headline: 我們以類似「紅綠燈」的方式標示公共空間的輪椅無障礙程度：
+  nodes:
+    new:
+      form:
+        legend: 地點的位置
+        location: 請點選地圖並標誌在確切的位置。

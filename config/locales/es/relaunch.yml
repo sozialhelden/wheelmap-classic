@@ -1,8 +1,25 @@
 ---
 es:
+  header:
+    navigation:
+      about_wheelmap: "Sobre Wheelmap"
+      choose_language: "Elija idioma"
+      contact: Contacto
+      map: Mapa
+      projects: Implícate
+    toolbar:
+      categories: Categorías
   home:
     index:
       overlay:
-        filter: "Filtrar lugares por accesibilidad de sillas de ruedas"
-        headline: "Marcar y encontrar lugares accesibles a sillas de ruedas con Wheelmap.org - internacional y gratuito. Es fácil:"
+        button: "OK, vamos!"
+        categories: "Filtrar lugares por categorías"
+        filter: "Filtrar lugares por accesibilidad en silla de ruedas"
+        headline: "Marca y encuentra lugares accesibles en sillas de ruedas con Wheelmap.org - internacional y gratuito. Es fácil:"
         lookup: "Buscar un lugar específico"
+        secondary_headline: "Nuestro semáforo para marcar la accesibilidad en silla de ruedas de los lugares públicos:"
+  nodes:
+    new:
+      form:
+        legend: "Localización del sitio"
+        location: "Por favor, haga click en el mapa y sitúe el marcador en la posición exacta."
