@@ -7,6 +7,6 @@
         .results
           =yield
 - content_for :javascript do
-  = include_javascripts :search
+  = javascript_include_tag :search
 
 = render :template => "layouts/relaunch"
