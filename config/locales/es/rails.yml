@@ -3,7 +3,10 @@ es:
   activerecord:
     attributes:
       user:
+        first_name: "Nombre proporcionado"
         last_name: Apellido
+        privacy_policy: "Política de privacidad"
+        terms: Términos
     errors:
       full_messages:
         format: "%{attribute} %{message}"
@@ -29,6 +32,14 @@ es:
         too_short: "es demasiado corto (mínimo %{count} caracteres)"
         wrong_length: "no tiene la longitud correcta (deben ser %{count} caracteres)"
       models:
+        user:
+          attributes:
+            email:
+              blank: "no puede dejarse en blanco si ha introducido una contraseña"
+            privacy_policy:
+              accepted: "debe ser aceptado"
+            terms:
+              accepted: "debe ser aceptado"
         user_session:
           email: "Dirección de correo electrónico"
           password: Contraseña

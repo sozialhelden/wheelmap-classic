@@ -22,12 +22,14 @@ es:
         camp_site: Campo
         caravan_site: "Zona de caravanas"
         chalet: Chalet
+        dormitory: Dormitorio
         guest_house: "Casa de huéspedes"
         hostel: Hostal
         hotel: Hotel
         motel: Motel
       education:
         college: Universidad
+        driving_school: Autoescuela
         kindergarten: "Jardín de infancia"
         library: Biblioteca
         museum: Museo
@@ -47,17 +49,22 @@ es:
         public_building: "Edificio público"
         townhall: Ayuntamiento
       health:
+        dentist: Dentista
         doctors: Médicos
         hospital: Hospital
+        medical_supply: "Suministros Médicos"
         pharmacy: Farmacia
         veterinary: Veterinario
       leisure:
         arena: Estadio
+        brothel: Burdel
+        casino: Casino
         cinema: Cine
         community_center: "Centro cívico"
         gallery: Galería
         nightclub: Discoteca
         sauna: Sauna
+        stripclub: "Club de striptease"
         theatre: Teatro
         zoo: Zoo
       misc:
@@ -106,7 +113,9 @@ es:
         chemist: Farmacia
         clothes: Ropa
         computer: Ordenadores
+        confectionery: Bombonería
         convenience: Comodidad
+        deli: Delicatessen
         department_store: Almacén
         doityourself: "Hazlo tú mismo"
         dry_cleaning: Tintorería
@@ -120,9 +129,11 @@ es:
         laundry: Lavandería
         mall: "Centro comercial"
         optician: Ópica
+        photo: Foto
         second_hand: "Segunda mano"
         shoes: Zapatos
         sports: Deportes
+        stationery: Papelería
         supermarket: Supermercado
         video: Videoclub
       sport:

@@ -1,6 +1,12 @@
 ---
 it:
   activerecord:
+    attributes:
+      user:
+        first_name: Nome
+        last_name: Cognome
+        privacy_policy: "Regole sulla privacy"
+        terms: Condizioni
     errors:
       full_messages:
         format: "%{attribute}%{message}"
@@ -26,6 +32,14 @@ it:
         too_short: "è troppo corto (il minimo è %{count} caratteri)"
         wrong_length: "è della lunghezza sbagliata (deve essere di %{count} caratteri)"
       models:
+        user:
+          attributes:
+            email:
+              blank: "non può essere vuoto qunado una parola è stata inserita"
+            privacy_policy:
+              accepted: "deve essere accetato"
+            terms:
+              accepted: "deve essere accetato"
         user_session:
           email: "Indirizzo e-mail"
           password: Password
@@ -35,3 +49,5 @@ it:
         header:
           one: "Un errore ha impedito il salvataggio di questo %{model}"
           other: "Non può essere salvato questo %{model}: %{count} errori."
+    models:
+      user: Utente

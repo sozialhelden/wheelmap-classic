@@ -1,2 +1,25 @@
 ---
-it: ~
+it:
+  header:
+    navigation:
+      about_wheelmap: "Su di Wheelmap"
+      choose_language: "Scegli la lingua"
+      contact: Contatto
+      map: Mappa
+      projects: Partecipa
+    toolbar:
+      categories: Categorie
+  home:
+    index:
+      overlay:
+        button: "Allora, andiamo!"
+        categories: "Filtro per categorie"
+        filter: "Filtro per accessibilità in sedia a rotelle"
+        headline: "Evidenzia e trova luoghi accessibili in sedia a rotelle su Wheelmap.org - in tutto il mondo e gratis. È facile:"
+        lookup: "Cerca un luogho specifico"
+        secondary_headline: "Il nostro \"semaphoro\" per segnare l'accessibilità dei luoghi pubblici per sedie a rotelle:"
+  nodes:
+    new:
+      form:
+        legend: "Posizione del luogo "
+        location: "Clicci sulla mappa e metti lo segno sulla posizione esatta."

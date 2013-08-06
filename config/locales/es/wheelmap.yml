@@ -12,6 +12,7 @@ es:
     root: Mapa
   common:
     close: Cerrar
+    skip: saltar
   errors:
     format: "%{attribute} %{message}"
     messages:
@@ -53,13 +54,17 @@ es:
         alert: "%{resource_name} no se puede borrar"
       update:
         notice: "%{resource_name} se ha actualizado satisfactoriamente"
+    photos:
+      destroy:
+        notice: "La imagen ha sido borrada."
   form:
     show_fully_accessible_places: "accesible en silla de ruedas"
-    show_limited_accessible_places: "acceso medio en silla de ruedas"
+    show_limited_accessible_places: "parcialmente accesible en silla de ruedas"
     show_places_without_status: "se desconoce el estado"
-    show_unaccessible_places: "sin acceso en silla de ruedas"
+    show_unaccessible_places: "no es accesible en silla de ruedas"
   formtastic:
     hints:
+      email: "Trataremos su dirección de forma confidencial, sin enviar correo basura. Lo prometemos!"
       lat: "Mueva la marca en el mapa a su correcta posición"
       osm_username: "¿Todavía no eres un miembro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\"> Cree una cuenta OpenStreetMap ahora</a>"
       password: "(dejar vacío, si no quiere cambiarlo)"
@@ -70,6 +75,7 @@ es:
       city: "Ciudad:"
       create: "Crear sitio"
       email: "Correo electrónico"
+      finish: Finalizar
       housenumber: "No:"
       lat: Latitud
       lon: Longitud
@@ -80,9 +86,11 @@ es:
       password_confirmation: "Repetir contraseña"
       phone: "Teléfono:"
       postcode: "Código Postal:"
+      privacy_policy: "Acepto los párrafos 1 y 2 del acuerdo de privacidad de datos."
       reset: Reiniciar
       save: Guardar
       street: "Calle:"
+      terms: "Acepto los términos de uso"
       type: "Tipo:"
       website: "Página web:"
       wheelchair: "¿Acceso en silla de ruedas?"
@@ -94,7 +102,7 @@ es:
     form_validation_error: "Por favor, tome nota de los siguientes errores."
   header:
     meta:
-      description: "Encuentre sitios con acceso en silla de ruedas - wheelmap.org"
+      description: "Encuentra sitios accesibles en silla de ruedas - wheelmap.org"
       homepage: "Página principal"
       keywords: "sitios con acceso en silla de ruedas, encuentra el sitio"
       search: Buscar
@@ -133,7 +141,7 @@ es:
         category: "Elegir Categoría:"
         deselect_all: "Deseleccionar todo"
         select_all: "Seleccionar todo"
-        wheelchair: "¿Accesible a silla de ruedas?"
+        wheelchair: "¿Accesible en silla de ruedas?"
       ie:
         action:
           upgrade: "Actualizar navegador"
@@ -145,7 +153,7 @@ es:
           create: "Agregar un nuevo sitio"
       popup:
         form:
-          limited: "acceso medio en silla de ruedas"
+          limited: "parcialmente accesible en silla de ruedas"
           ? "no"
           : "sin acceso en silla de ruedas"
           save: Guardar
@@ -154,6 +162,7 @@ es:
           : "accesible en silla de ruedas"
         help: "¿Acceso en silla de ruedas? (Ayuda)"
         more: "más ..."
+  how?: Cómo?
   landing_pages:
     index:
       wheelchair:
@@ -161,10 +170,10 @@ es:
         :
           headline: "Todos los %{type} no accesibles en %{city} (%{count})"
         unknown:
-          headline: "Todos %{type} en %{city} con estado de silla de ruedas desconocido (%{count})"
+          headline: "Todos %{type} en %{city} con accesibilidad en silla de ruedas desconocida (%{count})"
         ? "yes"
         :
-          headline: "Todos los %{type} accesibles en %{city} (%{count})"
+          headline: "Todos los %{type} accesibles en silla de ruedas en %{city} (%{count})"
   layouts:
     application:
       banner:
@@ -204,7 +213,7 @@ es:
       link:
         claim: "¿Trabaja usted aquí?"
         edit_node: "Editar sitio"
-        report_bug: "Report a problem"
+        report_bug: "Informar de un problema"
     show:
       header:
         title: "Sitio: %{node} | wheelmap.org"
@@ -237,13 +246,15 @@ es:
       decimal_units:
         units:
           billion: Billón
+          million: Millón
+          quadrillion: Cuatrillón
           thousand: Mil
           unit: ~
       format:
         delimiter: ~
         precision: 3
-        significant: true
-        strip_insignificant_zeros: true
+        significant: verdadero
+        strip_insignificant_zeros: verdadero
       storage_units:
         format: "%n %u"
         units:
@@ -289,6 +300,7 @@ es:
     headline: "Todo el mundo puede añadir lugares accesible para sillas de ruedas!"
     start: Comenzar
     step1: "Haz click en un sitio que conozcas"
+    step2: "Marque y pulse Grabar"
     step3: "¡Eso es! No hace falta registrarse."
     what_is_wheelmap: "¿Qué es Wheelmap?"
   statistics: Estadísticas
@@ -296,6 +308,7 @@ es:
     array:
       last_word_connector: ", y"
       sentence_connector: "y"
+      skip_last_comma: verdadero
       two_words_connector: "y"
       words_connector: ","
     select:
@@ -310,7 +323,7 @@ es:
   user_sessions:
     create:
       activation:
-        notice: "¡Su cuenta está activada ahroa!"
+        notice: "¡Su cuenta está activada ahora!"
       error:
         notice: "El correo y la contraseña no coinciden."
       notice: "Estás conectado"
@@ -326,6 +339,7 @@ es:
     after_signup_edit:
       welcome:
         headline: "Bienvenido a Wheelmap\n"
+        set_password_for_mobile: "Has completado tu registro en OpenStreetMap. Ahora elige una dirección de correo electrónico y una contraseña para tu cuenta WheelMap y ya estará todo listo! Necesitarás esta dirección de correo electrónico y esta contraseña para entrar en la app de Wheelmap de Iphone o Android"
         text: "¿Cómo podemos ponernos en contacto contigo? Puedes cambiar esta información más tarde en tu perfil."
   wheelchairstatus:
     limited: "parcialmente accesible en silla de ruedas"
@@ -333,17 +347,18 @@ es:
     : "No es accesible en silla de ruedas"
     unknown: "acceso en silla de ruedas desconocido"
     ? "yes"
-    : "acceso en silla de ruedas completo"
+    : "accesible en silla de ruedas"
   wheelmap:
     footer:
       a_project_of: "Un proyecto de"
       based_on: "Basado en"
+      main_supporter: "Colaborador principal"
     itunes:
       alt: "AppStore Logo"
       title: "¡Descargar la aplicación de iPhone ahora!"
     logo:
-      alt: "Wheelmap Logo - buscar zonas con acceso"
-      title: "Wheelmap - buscar zonas con acceso"
+      alt: "Wheelmap Logo - busca lugares accesibles en silla de ruedas"
+      title: "Wheelmap - busca lugares accesibles en silla de ruedas"
     what_is:
       fully_accessible: "Acceso liso, sin peldaños; todas las localidades tienen acceso y circulación para silla de ruedas (sin excepción); baños disponibles para personas con discapacidad"
       limited_accessible: "Acceso no superior a 7 cm; circulaciones accesibles a los recintos más importantes para usuarios en silla de ruedas"
@@ -351,11 +366,12 @@ es:
       unknown_accessible: "Ayuda y marcar los lugares!"
   will_paginate:
     page_entries_info:
-      multi_page: "Mostrar %{model} %{from} - %{to} de %{count} en total"
+      multi_page: "Mostrando %{model} %{from} - %{to} de %{count} en total"
       multi_page_html: "Mostrar %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> en total"
       single_page:
         one: "Mostrar 1 %{model}"
-        zero: "No se ha encontrdo %{model}"
+        other: "Mostrando %{count} %{model}"
+        zero: "No se ha encontrado %{model}"
       single_page_html:
         one: "Mostrando <b>1</b> %{model}"
     previous_label: Anterior
