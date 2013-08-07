@@ -34,3 +34,8 @@
   -ms-interpolation-mode: bicubic;
   ::-moz-selection { }
 }
+
+@mixin headline-gradient() {
+  background-color: $darkBlue;
+  @include background-image(linear-gradient(top, lighten($darkBlue, 10%), $darkBlue));
+}

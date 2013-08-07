@@ -1,7 +1,48 @@
 #node {
-  & > header {
-    h1 {
+  .content {
+    background-color: lighten($yellowGray, 56%);
+  }
 
+  header {
+    color: $grayLighter;
+    @include headline-gradient();
+    @include text-shadow(0px 1px 0px #000000);
+    padding: 10px 20px 15px 20px;
+    position: relative; // For close page button
+
+    * {
+      margin: 0;
+    }
+
+    h1 {
+      color: $white;
+      font-size: $fontSizeHeadline;
+    }
+
+    .breadcrumbs {
+      font-size: $fontSizeMini;
+      margin-bottom: 10px;
+
+      li {
+        float: left;
+        padding-right: $fontSizeMini;
+      }
+    }
+
+    .close {
+      @include appearance(none);
+      background: none;
+      border: none;
+      color: $grayLighter;
+      position: absolute;
+      top: 5px;
+      right: 15px;
+      padding: 5px;
+      @include transition-property(color);
+    }
+
+    .close:hover {
+      color: $white;
     }
   }
 }
