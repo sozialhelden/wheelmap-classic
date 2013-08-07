@@ -1,0 +1,21 @@
+[main]
+host = https://www.transifex.com
+
+[wheelmap-website.wheelmapyml]
+file_filter = config/locales/<lang>/wheelmap.yml
+source_file = config/locales/en/wheelmap.yml
+source_lang = en
+type = YAML
+
+[wheelmap-website.relaunchyml]
+file_filter = config/locales/<lang>/relaunch.yml
+source_file = config/locales/en/relaunch.yml
+source_lang = en
+type = YAML
+
+[wheelmap-website.categoriesyml]
+file_filter = config/locales/<lang>/categories.yml
+source_file = config/locales/en/categories.yml
+source_lang = en
+type = YAML
+
