@@ -1,5 +1,13 @@
+@import "relaunch/bootstrap_variables";
+
+// Layout
+// -------------------------
 $headerHeight: 50px;
 $toolbarHeight: 52px;
 $footerHeight: 30px;
 $breakTablet: 767px;
 $breakPhone: 420px;
+
+// Component sizing
+// -------------------------
+$fontSizeHeadline: $baseFontSize * 2;

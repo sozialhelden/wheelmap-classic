@@ -4,11 +4,11 @@
   position: absolute;
   top: $headerHeight;
   border-top: 1px solid #FFF;
-  background-color: #334557;
   z-index: 100;
-  @include background-image(linear-gradient(top, rgb(64, 87, 109), rgb(38, 51, 65)));
+  @include headline-gradient();
   @include filter-gradient(rgb(64, 87, 109), rgb(38, 51, 65), vertical);
   @include box-shadow(0px 0px 10px #444, inset 0px 2px 6px #000);
+
   @media screen and (max-width: $breakTablet) {
     position: fixed;
     top: auto;

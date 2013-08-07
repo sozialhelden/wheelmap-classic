@@ -1,7 +1,7 @@
 #search {
   .navbar-form {
     padding: 21px;
-    @include background(linear-gradient(-180deg, $yellowGrayLight 0%, $yellowGray 100%));
+    @include background(linear-gradient(-180deg, lighten($yellowGray, 58%) 0%, lighten($yellowGray, 48%) 100%));
     @include box-sizing(border-box);
     @include box-shadow(inset 0px 1px 0px 0px #F3F2F0, inset 0px -1px 0px 0px #A8A9AA);
 
@@ -63,9 +63,15 @@
   padding: 10px;
 
   li {
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid $grayLighter;
+    padding-top: 5px;
+    margin-top: 5px;
+    border-top: 1px solid $grayLighter;
+
+    &:first-child {
+      padding-top: 0;
+      margin-top: 0;
+      border-top: 0;
+    }
   }
 
   a {
@@ -81,7 +87,7 @@
 
     &:hover {
       @include border-radius(3px);
-      background-color: $yellowGrayLight;
+      background-color: lighten($yellowGray, 60%);
       padding: 10px 9px;
       border: 1px solid lighten($grayLight, 20%);
     }
@@ -99,7 +105,7 @@
   .alert-info {
     font-size: 12px;
     border-radius: 2px;
-    background-color: $yellowGrayLighter;
+    background-color: lighten($yellowGray, 15%);
     border: 1px solid $grayLight;
     display: table;
     padding: 5px 10px;
