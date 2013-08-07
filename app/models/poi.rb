@@ -286,6 +286,12 @@ class Poi < ActiveRecord::Base
     [render_street(self),render_city(self)].compact.join(', ')
   end
 
+  def breadcrumbs
+    [self.tags['addr:city'],
+     I18n.t("poi.category.#{self.category.identifier}"),
+     I18n.t("poi.name.#{self.category.identifier}.#{self.type}")].compact
+  end
+
   def state
     'yes'
   end
