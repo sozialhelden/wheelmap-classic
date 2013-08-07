@@ -1,11 +1,12 @@
 %header
-  .breadcrumbs
-  %h1=@node.name
+  %ol.breadcrumbs.unstyled.clearfix
+    = list_of(@node.breadcrumbs) do |i|
+      = i
+  %h1= @node.headline
   %address
-    - if @node.tags['addr:street']
-      =@node.tags['addr:street']
-      = succeed ',' do
-        - if @node.tags['addr:housenumber']
-          =@node.tags['addr:housenumber']
-    =@node.tags['addr:postcode']
-    =@node.tags['addr:city']
+    = @node.address
+
+  %button.close
+    %i.icon-remove
+
+%aside
