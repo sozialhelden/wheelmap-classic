@@ -19,7 +19,7 @@ namespace :region do
   task :create_world => :environment do
     region = Region.find_or_initialize_by_name('World')
     region.parent_id = nil
-    region.grenze = Polygon.from_ewkt('POLYGON((-180.0 -90.0, 180.0 -90.0, 180.0 90.0, -180.0 90.0, -180.0 -90.0))')
+    region.grenze = 'POLYGON((-180.0 -90.0, 180.0 -90.0, 180.0 90.0, -180.0 90.0, -180.0 -90.0))'
     region.save!
     region.move_to_root
   end
@@ -56,10 +56,8 @@ namespace :region do
 
         # update geo-shape in case it changed.
         wkt_string = File.open(wkt_file_name).first.strip
-        # For some reason INSERT Statement with geomFromWKB inserts null value.
-        Region.where(:id => imported_region.id).update_all("grenze = GeomFromText('#{wkt_string}')")
-        # imported_region.grenze = Polygon.from_ewkt(wkt_string)
-        # imported_region.save
+        imported_region.grenze = wkt_string
+        imported_region.save
       else
         imported_region = Region.from_wkt_file(wkt_file_name, parent)
       end

@@ -14,6 +14,9 @@ class Region < ActiveRecord::Base
 
   attr_protected :lft, :rgt
 
+  GEO_FACTORY = RGeo::Cartesian.factory
+  set_rgeo_factory_for_column(:grenze, GEO_FACTORY)
+
   scope :parent_id, lambda {|parent_id| { :conditions => { :parent_id => parent_id }}}
   scope :depth, lambda { |depth| where(:depth => depth) }
 
@@ -44,7 +47,7 @@ class Region < ActiveRecord::Base
     wkt_string = File.open(wkt_file_name).first.strip
 
     region = Region.new(:name => region_name, :parent_id => parent.try(:id), :grenze => wkt_string)
-    region.grenze = Polygon.from_ewkt(wkt_string)
+    region.grenze = wkt_string
     region.save!
     region
   end
