@@ -27,7 +27,7 @@ def ensure_configuration_file_exists
     puts "OK: #{config_file} already exists."
   else
     puts "OK: creating #{config_file}"
-    system "#{OSMOSIS_BIN} --rrii workingDirectory=#{RAILS_ROOT}/#{WORKING_DIR}"
+    system "#{OSMOSIS_BIN} --rrii workingDirectory=#{Rails.root}/#{WORKING_DIR}"
   end
 end
 
@@ -57,7 +57,7 @@ end
 
 def get_new_replication_file
   puts "INFO: Fetching node changes."
-  system "#{OSMOSIS_BIN} --rri workingDirectory=#{RAILS_ROOT}/#{WORKING_DIR} --simc --wxc #{CHANGE_FILE}"
+  system "#{OSMOSIS_BIN} --rri workingDirectory=#{Rails.root}/#{WORKING_DIR} --simc --wxc #{CHANGE_FILE}"
 end
 
 def get_new_shape_replication_files
