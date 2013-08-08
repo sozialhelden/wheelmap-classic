@@ -292,7 +292,7 @@ class Poi < ActiveRecord::Base
   def breadcrumbs
     [self.tags['addr:city'],
      I18n.t("poi.category.#{self.category.identifier}"),
-     I18n.t("poi.name.#{self.category.identifier}.#{self.type}")].compact
+     I18n.t("poi.name.#{self.category.identifier}.#{self.node_type.identifier}")].compact
   end
 
   def state
