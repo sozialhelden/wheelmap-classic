@@ -76,6 +76,13 @@
         %tr
           %th= "#{p.provider.name}:"
           %td= link_to_if(p.url.present?, t("wheelchairstatus.#{p.wheelchair}"), p.url, :target => '_blank', :class => :external)
+  %h6 Similar Pois
+  %table#similar_nodes{:class => "#{dom_class(@node)}"}
+    %tbody
+      - @node.sorted_similar_pois[0..5].each do |s|
+        %tr
+          %th=link_to s.headline, node_path(s)
+          %td= "#{@node.distance_to_in_meter(s).round}m"
 
   #thumbs
     %ul.thumbs.noscript
