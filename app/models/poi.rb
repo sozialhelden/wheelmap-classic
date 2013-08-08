@@ -126,7 +126,6 @@ class Poi < ActiveRecord::Base
   scope :has_photo, :joins => :photos
   scope :within_region, lambda {|region| {:conditions => {:region_id => region.id}}}
 
-
   scope :within_bbox, lambda {|left, bottom, right, top|{
     :conditions => "MBRContains(GeomFromText('POLYGON(( \
                     #{left} #{bottom}, #{right} #{bottom}, \
@@ -365,6 +364,28 @@ class Poi < ActiveRecord::Base
 
   def osm_type
     self.way? ? 'way' : 'node'
+  end
+
+  def distance_to(other_poi)
+    self.geom.distance(other_poi.geom).abs
+  end
+
+  def distance_to_in_meter(other_poi)
+    meters_per_degrees_latitude * distance_to(other_poi)
+  end
+
+  def similar_pois
+    # Find pois within 2km range, that have same wheelchair status and are of the same type.
+    bbox = Bbox.new(lon,lat,lon,lat)
+    bbox.widen_by_meters(2000)
+    Poi.where('osm_id <> ?', self.osm_id).where(:status => self.status).where(:node_type_id => self.node_type_id).within_bbox(bbox.west, bbox.south, bbox.east, bbox.north).limit(100)
+  end
+
+  def sorted_similar_pois
+    # Sort by distance
+    similar_pois.sort do |a,b|
+      self.distance_to(a) <=> self.distance_to(b)
+    end
   end
 
   def self.distance_search(search_string, bbox, limit=200)
