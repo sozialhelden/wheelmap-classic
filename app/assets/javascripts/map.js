@@ -251,10 +251,6 @@ $('.btn-searchbar').click(function () {
   $('.navbar-form').toggleClass('active');
 });
 
-$('.notification.active').slideDown(500).delay(8000).slideUp(400, function () {
-  $(this).remove()
-});
-
 function getPopoverPlacement() {
   if (window.innerWidth < 767) {
     return 'top';
