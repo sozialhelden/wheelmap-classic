@@ -26,21 +26,21 @@ en:
   search:
     index:
       no-results:
-        headline: "Wir konnten leider keinen Ort mit dem Namen \"%{query}\" finden."
+        headline: "We could not find a place called \"%{query}\"."
         hint:
-          example: "<strong>Beispiel:</strong> Berlin, Deutschland"
-          info: "Unsere Suche versteht bisher leider nur genauere Adressen und Namen"
-          work_in_progress: "Wir arbeiten daran, dass du bald noch einfacher und intuitiver Orte finden kannst."
+          example: "<strong>Example:</strong> London, United Kingdom"
+          info: "Our search service can needs more detailed name or address information to work properly."
+          work_in_progress: "We work hard to make searching for places much easier and more intuitive."
         try_this:
-          address: "Gib eine <strong>genauere Adresse</strong> ein."
-          intro: "Versuch doch mal Folgendes:"
-          spell_check: "Überprüfe die <strong>Schreibweise</strong> deiner Eingabe."
+          address: "Please provide more <strong>address details</strong>."
+          intro: "Try this:"
+          spell_check: "Check the <strong>spelling</strong> of your input."
       results:
         ticker:
-          one: "1 Ergebnis:"
-          other: "%{count} Ergebnisse:"
-          zero: "0 Ergebnisse:"
+          one: "1 result:"
+          other: "%{count} results:"
+          zero: "0 results:"
     timeout:
       headline: "Oh, our fault"
-      info: "Unser Suchdienst war kurzzeitig nicht verfügbar."
-      repeat_search: "Suche wiederholen"
+      info: "Our search service was temporarily not available."
+      repeat_search: "Retry search"
