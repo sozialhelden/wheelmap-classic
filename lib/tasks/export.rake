@@ -24,10 +24,7 @@ namespace :export do
     raise "Run rake export:filter_region_nodes REGION=berlin" unless region_name
     region = Region.find(region_name)
 
-    factory = RGeo::Cartesian.factory
-    grenze = factory.parse_wkb(region.grenze.as_wkb)
-    bounding_box = RGeo::Cartesian::BoundingBox.new(factory)
-    bounding_box.add(grenze)
+    bounding_box = RGeo::Cartesian::BoundingBox.create_from_geometry(region.grenze)
 
     csv_string = FasterCSV.generate(:force_quotes => true) do |csv_out|
       FCSV(STDIN, :force_quotes => true, :headers => true) do |csv_in|

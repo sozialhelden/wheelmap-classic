@@ -31,10 +31,7 @@ class Region < ActiveRecord::Base
 
   # Array with bounding coordinates left, bottom, right, top
   def bounding_box
-    geofactory = RGeo::Cartesian.factory
-    bounding_box = RGeo::Cartesian::BoundingBox.new(geofactory)
-    polygon = geofactory.parse_wkb(self.grenze.as_wkb)
-    bounding_box.add(polygon)
+    bounding_box = RGeo::Cartesian::BoundingBox.BoundingBox.create_from_geometry(self.grenze)
     # left, bottom, right, top
     [bounding_box.min_x, bounding_box.min_y, bounding_box.max_x, bounding_box.max_y]
   end
