@@ -9,7 +9,7 @@ class PoiLocator
 
   def initialize(parent_id = nil)
     @parent_id = parent_id
-    @factory = RGeo::Geos::FactoryGirl.create(:wkb_parser => :geos)
+    @factory = RGeo::Geos::Factory.create(:wkb_parser => :geos)
     raise "No geos support installt. Make sure libgeos is installed and rgeo gem has native bindings" if @factory.nil?
     @regions = load_regions(@parent_id)
     @index = generate_index
