@@ -233,7 +233,8 @@
       right: 0px;
       left: auto;
       border-radius: 3px;
-      padding: 5px 0 0 0;
+      margin-bottom: 5px;
+      padding: 0;
       @media screen and (max-width: $breakPhone) {
         height: 240px;
         -webkit-overflow-scrolling: touch;
@@ -248,12 +249,53 @@
             @include background(linear-gradient(top, rgb(107, 132, 155), rgb(77, 100, 122)));
             @include filter-gradient(#6b849b, #4d647a, vertical);
           }
-          &:last-child a {
-            border: none;
-          }
+
           i {
             margin-top: 3px;
           }
+        }
+
+        &.filter {
+          border-top: 1px solid #A9A9A9;
+          @include border-bottom-radius(1px);
+          padding: 5px;
+
+          @include background-image(linear-gradient(-180deg, #E0DFD9 0%, #CCCAC1 100%));
+
+          /*background-image: -o-linear-gradient(-90deg, #E0DFD9 0%, #E0DFD9 100%);
+          background-image: -moz-linear-gradient(-90deg, #E0DFD9 0%, #CCCAC1 100%);
+          background-image: -webkit-linear-gradient(-90deg, #E0DFD9 0%, #CCCAC1 100%);
+          background-image: -ms-linear-gradient(-90deg, #E0DFD9 0%, #CCCAC1 100%);
+          background-image: linear-gradient(-180deg, #E0DFD9 0%, #CCCAC1 100%);*/
+
+          .btn {
+            color: #49473E;
+            width: 26px;
+            height: 26px;
+            margin-left: 5px;
+            border: 1px solid #6B6969;
+            padding: 0;
+            line-height: 26px;
+
+            background-color: #CCCAC1;
+
+            border-radius: 3px;
+            border: 1px solid #6B6969;
+
+            @include background-image(linear-gradient(-180deg, #E0DFD9 0%, #CDCBC2 100%), linear-gradient(-180deg, rgba(139,139,139,0.10) 0%, rgba(26,26,26,0.10) 100%));
+            @include box-shadow(0px 1px 0px 0px #F3F2F0, inset 0px 1px 0px 0px #F3F2F0);
+
+            &:hover {
+              @include box-shadow(0px 1px 0px 0px #F3F2F0);
+            }
+
+            &:active {
+              @include box-shadow(0px 1px 0px 0px #F3F2F0, inset 0px 2px 4px 0px rgba(0,0,0,0.20));
+            }
+          }
+        }
+        &:first-child a {
+          border-top: 0;
         }
       }
     }
@@ -275,8 +317,8 @@
     }
   }
   .bootstrap-select.btn-group.show-menu-arrow .dropdown-menu {
-    overflow-x: scroll !important;
-    overflow-y: none !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
   }
 
   select.category-filter {
