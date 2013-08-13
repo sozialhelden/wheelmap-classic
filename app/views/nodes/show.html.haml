@@ -54,14 +54,14 @@
       = tag_line @node, 'addr:postcode', :label_key => t('formtastic.labels.postcode'), :itemprop => 'postalCode'
       = tag_line @node, 'addr:city', :label_key => t('formtastic.labels.city'), :itemprop => 'addressLocality'
 
-    - if @node.tags['website']
+    - if @node.website
       %tr
         %th=t('formtastic.labels.website')
         %td
-          - if url = URI.parse(@node.tags['website']) rescue nil
+          - if url = URI.parse(@node.website_with_protocol) rescue nil
             %a{:href => url.to_s.html_safe, :rel => 'nofollow', :target => '_blank'}>=url.to_s.html_safe
           - else
-            = @node.tags['website']
+            = @node.website
 
     =tag_line( @node,'phone', :itemprop => 'telephone' )
     =tag_line(@node,'centralkey')

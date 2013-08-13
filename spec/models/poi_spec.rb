@@ -212,6 +212,15 @@ describe Poi do
     end
   end
 
+  context "url" do
+
+    subject { FactoryGirl.build(:poi, :website => 'www.example.com') }
+
+    it "should provide absolute url with protocol" do
+      subject.website_with_protocol.should eql "http://www.example.com"
+    end
+  end
+
   context "similar pois" do
 
     subject { FactoryGirl.create(:poi, :node_type => node_type, :lat => 51.5, :lon => 13.4, :tags => { 'wheelchair' => 'yes', 'street' => "Sesame street" }) }

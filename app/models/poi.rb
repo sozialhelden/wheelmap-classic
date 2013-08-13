@@ -261,6 +261,10 @@ class Poi < ActiveRecord::Base
     tags['website']
   end
 
+  def website_with_protocol
+    website && (website.starts_with?('http') ? website : "http://#{website}")
+  end
+
   def phone
     tags['phone']
   end
