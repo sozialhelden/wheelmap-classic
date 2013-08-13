@@ -49,7 +49,7 @@ group :default do
   gem 'kaminari'
   gem 'carrierwave'
   gem 'carrierwave-meta'
-  gem 'carrierwave_backgrounder', '0.0.9'
+  gem 'carrierwave_backgrounder'
   gem 'rmagick'
   gem 'flash_cookie_session'
   gem 'cacheable_flash'
