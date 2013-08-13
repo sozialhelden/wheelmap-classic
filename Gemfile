@@ -18,7 +18,7 @@ group :default do
   gem 'delayed_job_active_record'
   gem 'daemons'
   gem 'libxml-ruby'
-  gem 'hoptoad_notifier'
+  gem 'airbrake'
   gem 'whenever', :require => false
   gem "routing-filter"
   gem 'newrelic_rpm'

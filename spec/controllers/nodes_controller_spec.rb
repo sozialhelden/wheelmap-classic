@@ -68,7 +68,7 @@ describe NodesController do
      @full_url = "#{@base_url}/node/16581933"
     end
 
-    it "should send Hoptoad message in case OpenStreetMap Node was not found" do
+    it "should send Airbrake message in case OpenStreetMap Node was not found" do
       stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/16581933").to_return(:status => 404, :body => "Not found", :headers => {})
 
       get(:edit, :id => 16581933)

@@ -51,7 +51,7 @@ class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client, :source)
   end
 
   def error(job, e)
-    HoptoadNotifier.notify(e, :action => 'perform',
+    Airbrake.notify(e, :action => 'perform',
                               :component => 'CreateNodeJob',
                               :parameters => {
                                 :node => node.inspect,
