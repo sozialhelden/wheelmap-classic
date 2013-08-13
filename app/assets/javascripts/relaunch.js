@@ -31,3 +31,4 @@
 //
 //= require map
 //= require function
+//= require custom-select

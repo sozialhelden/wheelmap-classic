@@ -1,6 +1,33 @@
 $(document).ready(function () {
 
   $('.selectpicker').selectpicker();
+  $categoryFilter.customSelect();
+
+  function createFilter() {
+    var $listItem = $('<li class="filter clearfix"></li>'),
+      $buttonNone = $('<button class="btn pull-right"><i class="icon-check-empty"></i></button>'),
+      $buttonAll = $('<button class="btn pull-right"><i class="icon-check"></i></button>');
+
+    $buttonAll.click(function(e) {
+      e.stopPropagation();
+
+      $categoryFilter.find('option').prop('selected', true).attr('selected', 'selected');
+      $categoryFilter.trigger('change');
+    });
+
+    $buttonNone.click(function(e) {
+      e.stopPropagation();
+
+      $categoryFilter.find('option').prop('selected', false).removeAttr('selected');
+      $categoryFilter.trigger('change');
+    });
+
+    $listItem.append($buttonNone).append($buttonAll);
+
+    return $listItem;
+  }
+
+  $('.category-filter .dropdown-menu').append(createFilter());
 
   if (!$.cookie('_wheelmap_first_time_visitor')) {
     $('.overlay-wrapper').addClass('show-overlay');
