@@ -211,4 +211,5 @@ load 'deploy/assets'
 require 'bundler/capistrano'
 set :bundle_without, [:development, :test, :metrics, :deployment]
 
-require 'hoptoad_notifier/capistrano'
+require './config/boot'
+require 'airbrake/capistrano'

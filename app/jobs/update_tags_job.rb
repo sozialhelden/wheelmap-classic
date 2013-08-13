@@ -45,7 +45,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
     rescue Rosemary::Conflict => conflict
       logger.info "IGNORE: #{type}:#{element_id} nothing has changed!"
       # These changes have already been made, so dismiss this update!
-      HoptoadNotifier.notify(conflict, :component => 'UpdateTagsJob#perform', :parameters => {:user => user.inspect, :element => element.inspect, :client => client})
+      Airbrake.notify(conflict, :component => 'UpdateTagsJob#perform', :parameters => {:user => user.inspect, :element => element.inspect, :client => client})
     end
   end
 
@@ -68,7 +68,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
 
   def error(job, e)
     logger.error "ERROR: "
-    HoptoadNotifier.notify(e, :action => 'perform',
+    Airbrake.notify(e, :action => 'perform',
                               :component => 'UpdateTagsJob',
                               :parameters => {
                                 :user => user.inspect,
