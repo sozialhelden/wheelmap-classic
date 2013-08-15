@@ -53,7 +53,7 @@
   - if (similar_pois = @node.sorted_similar_pois[0..5]).length > 0
     #node-similar-locations
       %h2
-        Ähnliche Orte
+        = "Ähnliche Orte: " + t("poi.name.#{@node.category.identifier}.#{@node.node_type.identifier}")
 
       %ul.unstyled
         - similar_pois.each do |s|
