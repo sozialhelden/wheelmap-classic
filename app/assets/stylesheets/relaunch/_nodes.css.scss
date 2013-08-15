@@ -89,18 +89,42 @@
   li {
     padding: $fontSizeLarge / 2;
     padding-left: $fontSizeLarge * 2.5;
+  }
 
-    i[class^='icon'] {
-      color: lighten($yellowGray, 30%);
-      position: absolute;
-      left: $fontSizeLarge * 0.6;
-      font-size: $fontSizeLarge;
-      vertical-align: middle;
-      line-height: $baseFontSize + $fontSizeLarge / 2;
-    }
+  i[class^='icon'] {
+    color: lighten($yellowGray, 30%);
+    position: absolute;
+    left: $fontSizeLarge * 0.6;
+    font-size: $fontSizeLarge;
+    vertical-align: middle;
+    line-height: $baseFontSize + $fontSizeLarge / 2;
   }
 }
 
 #node-similar-locations {
+  ul {
+    font-size: $fontSizeSmall;
+  }
 
+  li {
+    padding: $baseFontSize / 2;
+    padding-left: $baseFontSize * 1.5;
+    line-height: $baseFontSize;
+  }
+
+  .wheelchair {
+    border: 1px solid $black;
+    width: $fontSizeSmall;
+    height: $fontSizeSmall;
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    @include border-radius(3px);
+  }
+
+  .distance {
+    font-size: $fontSizeMini;
+    display: block;
+    color: lighten($yellowGray, 30%);
+  }
 }
