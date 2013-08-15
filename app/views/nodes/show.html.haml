@@ -50,7 +50,7 @@
             %i.icon-external-link
             = link_to URI.parse(@node.tags['website']).host, @node.tags['website'], {:target => '_blank'}
 
-  - if (similar_pois = @node.sorted_similar_pois).length > 0
+  - if (similar_pois = @node.sorted_similar_pois[0..5]).length > 0
     #node-similar-locations
       %h2
         Ähnliche Orte
