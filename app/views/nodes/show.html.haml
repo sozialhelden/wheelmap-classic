@@ -33,28 +33,32 @@
           %i.icon-map-marker
           = @node.address
 
-    %h2
-      Kontaktdaten
-    %ul.unstyled
-      %li
-        %i.icon-phone
-        030 12345081231
-      %li
-        %i.icon-envelope
-        %a
-          mail@kreativhaus-berlin-lorem.de
-      %li
-        %i.icon-external-link
-        %a
-          kreativhaus-berlin-lorem.de
+    - if @node.tags['phone'] || @node.tags['email'] || @node.tags['website']
+      %h2
+        Kontaktdaten
+      %ul.unstyled
+        - if @node.tags['phone']
+          %li
+            %i.icon-phone
+            = @node.tags['phone']
+        - if @node.tags['email']
+          %li
+            %i.icon-envelope
+            = mail_to @node.tags['email']
+        - if @node.tags['website']
+          %li
+            %i.icon-external-link
+            = link_to URI.parse(@node.tags['website']).host, @node.tags['website'], {:target => '_blank'}
 
-  #node-similar-locations
-    %h2
-      Ähnliche Orte
+  - if (similar_pois = @node.sorted_similar_pois).length > 0
+    #node-similar-locations
+      %h2
+        Ähnliche Orte
 
-    %ul.unstyled
-      - @node.sorted_similar_pois[0..5].each do |s|
-        %li
-          - link_to s.headline, node_path(s)
-          %span.distance.pull-right
-            - "#{@node.distance_to_in_meter(s).round}m"
+      %ul.unstyled
+        - similar_pois.each do |s|
+          %li
+            %span{:class => "wheelchair wheelchair-#{s.wheelchair}"}
+            = link_to s.headline, node_path(s)
+            %span.distance
+              = "#{@node.distance_to_in_meter(s).round}m"
