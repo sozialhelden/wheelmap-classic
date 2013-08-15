@@ -39,3 +39,8 @@
   background-color: $darkBlue;
   @include background-image(linear-gradient(top, lighten($darkBlue, 10%), $darkBlue));
 }
+
+@mixin wheelchair($color) {
+  border: 1px solid darken($color, 25%);
+  @include background-image(linear-gradient(top, $color, darken($color, 10%)));
+}

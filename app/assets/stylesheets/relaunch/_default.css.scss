@@ -50,3 +50,14 @@ body {
 	}
 }
 
+.wheelchair-yes {
+  @include wheelchair($wheelchairYes);
+}
+
+.wheelchair-limited {
+  @include wheelchair($wheelchairLimited);
+}
+
+.wheelchair-no {
+  @include wheelchair($wheelchairNo);
+}
