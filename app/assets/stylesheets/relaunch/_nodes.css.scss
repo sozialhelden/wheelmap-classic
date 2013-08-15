@@ -1,6 +1,11 @@
+@import "bootstrap/mixins";
+
 #node {
   .content {
-    background-color: lighten($yellowGray, 56%);
+    @include clearfix();
+    position: relative;
+    color: $yellowGray;
+    background-color: lighten($orangeGray, 7%);
   }
 
   header {
@@ -20,6 +25,7 @@
     }
 
     .breadcrumbs {
+      @include clearfix();
       font-size: $fontSizeMini;
       margin-bottom: 10px;
 
@@ -43,6 +49,54 @@
 
     .close:hover {
       color: $white;
+    }
+  }
+
+  aside {
+    width: $nodeAside;
+    @include box-sizing(border-box);
+    padding: 15px;
+    border-left: 1px solid darken($orangeGray, 7%);
+    height: 100%;
+
+    .btn {
+      height: 34px;
+      @include buttonBackground(lighten($orangeGray, 5%), darken($orangeGray, 7%), darken($orangeGray, 60%), 0 1px 1px rgba(255,255,255,.75));
+    }
+
+    .btn-edit {
+      font-weight: bold;
+    }
+
+    address {
+      margin-top: 20px;
+    }
+
+    h2 {
+      font-size: $baseFontSize;
+      font-weight: normal;
+      line-height: $baseLineHeight;
+    }
+
+    ul {
+      background-color: darken($white, 1%);
+      border: 1px solid darken($orangeGray, 7%);
+      @include border-radius(3px);
+      margin-bottom: 20px;
+
+      li {
+        padding: $fontSizeLarge / 2;
+        padding-left: $fontSizeLarge * 2.5;
+      }
+
+      i[class^='icon'] {
+        color: lighten($yellowGray, 30%);
+        position: absolute;
+        left: $fontSizeLarge * 0.6;
+        font-size: $fontSizeLarge;
+        vertical-align: middle;
+        line-height: $baseFontSize + $fontSizeLarge / 2;
+      }
     }
   }
 }
