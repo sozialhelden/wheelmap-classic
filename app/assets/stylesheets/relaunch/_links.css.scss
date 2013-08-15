@@ -4,7 +4,7 @@ a {
   text-decoration: none;
   cursor: pointer;
   @include transition-property(color);
-  @include transition-duration(0.25s);
+  @include transition-duration(0.05s);
 
   &:hover,
   &:visited {
