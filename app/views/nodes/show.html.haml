@@ -10,45 +10,101 @@
   %button.close
     %i.icon-remove
 
-%aside.pull-right
-  %button.btn.btn-edit
-    %i.icon-pencil
-    bearbeiten
-
-  %button.btn
-    %i.icon-share
-
-  .btn-group.pull-right
-    %button.btn
-      %i.icon-warning-sign
-    %button.btn
-      %span.caret
-
-  %address#node-address
-    - if @node.address?
+%section#node-main
+  #node-status.row-fluid
+    .span6
       %h2
-        Adresse
-      %ul.unstyled
-        %li
-          %i.icon-map-marker
-          = @node.address
+        Rollstuhlgerechtigkeit:
+      .btn-group.dropdown.dropdown-toggle
+        %button.btn.wheelchair-yes{'data-toggle' => 'dropdown'}
+          Voll Rollstuhlgerecht
+          %a.icon-question-sign
+          %i.icon-caret-down.pull-right
+        %ul.dropdown-menu{'role' => 'menu'}
+          %li
+            %a
+              Test
 
-    - if @node.tags['phone'] || @node.tags['email'] || @node.tags['website']
+    .span6
       %h2
-        Kontaktdaten
-      %ul.unstyled
-        - if @node.tags['phone']
+        Rollstuhlgerechtes WC:
+      .btn-group.dropdown.dropdown-toggle
+        %button.btn.wheelchair-yes{'data-toggle' => 'dropdown'}
+          WC vorhanden
+          %a.icon-question-sign
+          %i.icon-caret-down.pull-right
+        %ul.dropdown-menu{'role' => 'menu'}
           %li
-            %i.icon-phone
-            = @node.tags['phone']
-        - if @node.tags['email']
+            %a
+              Test
+
+  #node-photos
+    %h2
+      Fotos von diesem Ort:
+    %ul.row-fluid.unstyled
+      -# = list_of(@node.photos.reject{|photo| photo.new_record?}) do |photo|
+        = link_to_photo photo
+      %li.span3
+        %img.img-polaroid
+      %li.span3
+        %img.img-polaroid
+      %li.span3
+        %img.img-polaroid
+      %li.span3
+        %img.img-polaroid
+
+  - if @node.tags['note']
+    #node-note
+      %h2
+        Nutzerkommentar:
+
+      %p
+        = @node.tags['note']
+
+  #node-streetview
+
+%aside
+  #node-edit
+    %button.btn
+      %i.icon-pencil
+      %span.visible-desktop
+        bearbeiten
+
+    %button.btn
+      %i.icon-share
+
+    .btn-group.pull-right
+      %button.btn
+        %i.icon-bolt
+      %button.btn
+        %span.caret
+
+  - if @node.address? || @node.tags['phone'] || @node.tags['email'] || @node.tags['website']
+    %address
+      - if @node.address?
+        %h2
+          Adresse:
+        %ul.unstyled
           %li
-            %i.icon-envelope
-            = mail_to @node.tags['email']
-        - if @node.tags['website']
-          %li
-            %i.icon-external-link
-            = link_to URI.parse(@node.tags['website']).host, @node.tags['website'], {:target => '_blank'}
+            %i.icon-map-marker
+            = @node.address
+
+      - if @node.tags['phone'] || @node.tags['email'] || @node.tags['website']
+        %h2
+          Kontaktdaten:
+        %ul.unstyled
+          - if @node.tags['phone']
+            %li
+              %i.icon-phone
+              = @node.tags['phone']
+          - if @node.tags['email']
+            %li
+              %i.icon-envelope
+              = mail_to @node.tags['email']
+          - if @node.tags['website']
+            %li
+              %i.icon-external-link
+              = link_to URI.parse(@node.tags['website']).host, @node.tags['website'], {:target => '_blank'}
 
   - if (similar_pois = @node.sorted_similar_pois[0..5]).length > 0
     #node-similar-locations
@@ -62,3 +118,12 @@
             = link_to s.headline, node_path(s)
             %span.distance
               = "#{@node.distance_to_in_meter(s).round}m"
+
+.bg
+
+- content_for :head do
+  %title= t('.header.title', :node => @node.headline)
+  %meta{ :name => 'description', :content => t('header.meta.description')}
+
+  %meta{ :name => "DCTERMS.license", :scheme => "DCTERMS.URI", :content => "http://www.openstreetmap.org/copyright/en"}
+  %meta{ :name => "DCTERMS.rightsHolder", :content => "OpenStreetMap Foundation" }

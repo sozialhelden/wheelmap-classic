@@ -7,8 +7,13 @@ $toolbarHeight: 52px;
 $footerHeight: 30px;
 $breakTablet: 767px;
 $breakPhone: 420px;
-$nodeAside: 280px;
+$containerWidth: 882px;
+$nodeAsideWidth: 280px;
 
 // Component sizing
 // -------------------------
 $fontSizeHeadline: $baseFontSize * 2;
+
+// Transitions
+// -------------------------
+$linkTransitionDuration: .05s;

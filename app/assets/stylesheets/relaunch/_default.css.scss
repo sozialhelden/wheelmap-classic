@@ -61,3 +61,7 @@ body {
 .wheelchair-no {
   @include wheelchair($wheelchairNo);
 }
+
+.wheelchair-unknown {
+  @include wheelchair(lighten($black, 70%));
+}

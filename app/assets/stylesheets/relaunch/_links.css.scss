@@ -4,7 +4,7 @@ a {
   text-decoration: none;
   cursor: pointer;
   @include transition-property(color);
-  @include transition-duration(0.05s);
+  @include transition-duration($linkTransitionDuration);
 
   &:hover,
   &:visited {
