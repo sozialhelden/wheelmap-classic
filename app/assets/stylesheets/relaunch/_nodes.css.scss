@@ -1,11 +1,31 @@
 @import "bootstrap/mixins";
 
+$boderColor: darken($orangeGray, 5%);
+
 #node {
   .content {
     @include clearfix();
     position: relative;
     color: $yellowGray;
     background-color: lighten($orangeGray, 7%);
+
+    .bg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      border-right: 1px solid $boderColor;
+      width: percentage(($containerWidth - $nodeAsideWidth) / $containerWidth);
+      background-color: $white;
+      z-index: 0;
+    }
+  }
+
+  h2 {
+    font-size: $baseFontSize;
+    font-weight: normal;
+    line-height: $baseLineHeight;
+    margin: 0;
+    margin-bottom: 10px;
   }
 
   header {
@@ -14,6 +34,7 @@
     @include text-shadow(0px 1px 0px #000000);
     padding: 10px 20px 15px 20px;
     position: relative; // For close page button
+    z-index: 1;
 
     * {
       margin: 0;
@@ -53,51 +74,44 @@
   }
 
   aside {
-    width: $nodeAside;
     @include box-sizing(border-box);
     padding: 15px;
-    border-left: 1px solid darken($orangeGray, 7%);
-    height: 100%;
+    width: percentage($nodeAsideWidth / $containerWidth);
+    float: left;
+    position: relative;
+    z-index: 1;
 
-    .btn {
-      height: 34px;
-      @include buttonBackground(lighten($orangeGray, 5%), darken($orangeGray, 7%), darken($orangeGray, 60%), 0 1px 1px rgba(255,255,255,.75));
-    }
+    address {
+      ul {
+        background-color: darken($white, 1%);
+        border: 1px solid darken($orangeGray, 7%);
+        @include border-radius(3px);
+        margin-bottom: 20px;
+        overflow: hidden;
+      }
 
-    .btn-edit {
-      font-weight: bold;
-    }
+      li {
+        padding: $fontSizeLarge / 2;
+        padding-left: $fontSizeLarge * 2;
+      }
 
-    h2 {
-      font-size: $baseFontSize;
-      font-weight: normal;
-      line-height: $baseLineHeight;
+      [class^='icon-'] {
+        color: lighten($yellowGray, 30%);
+        position: absolute;
+        left: $fontSizeLarge * 0.4;
+        font-size: 1.3em;
+        line-height: $baseFontSize + $fontSizeLarge / 2;
+      }
     }
   }
 }
 
-#node-address {
-  margin-top: 20px;
-
-  ul {
-    background-color: darken($white, 1%);
-    border: 1px solid darken($orangeGray, 7%);
-    @include border-radius(3px);
+#node-edit {
+  .btn {
     margin-bottom: 20px;
-  }
-
-  li {
-    padding: $fontSizeLarge / 2;
-    padding-left: $fontSizeLarge * 2.5;
-  }
-
-  i[class^='icon'] {
-    color: lighten($yellowGray, 30%);
-    position: absolute;
-    left: $fontSizeLarge * 0.6;
-    font-size: $fontSizeLarge;
-    vertical-align: middle;
-    line-height: $baseFontSize + $fontSizeLarge / 2;
+    height: 34px;
+    @include buttonBackground(lighten($orangeGray, 5%), darken($orangeGray, 7%), darken($orangeGray, 60%), 0 1px 1px rgba(255,255,255,.75));
+    font-weight: bold;
   }
 }
 
@@ -116,7 +130,6 @@
     width: $fontSizeSmall;
     height: $fontSizeSmall;
     position: absolute;
-    display: inline-block;
     left: 0;
     @include border-radius(3px);
   }
@@ -125,5 +138,81 @@
     font-size: $fontSizeMini;
     display: block;
     color: lighten($yellowGray, 30%);
+  }
+}
+
+#node-main {
+  @include box-sizing(border-box);
+  float: left;
+  position: relative;
+  z-index: 1;
+  width: percentage(($containerWidth - $nodeAsideWidth) / $containerWidth);
+}
+
+#node-status {
+  background-color: lighten($orangeGray, 1%);
+  @include box-sizing(border-box);
+  border-bottom: 1px solid $boderColor;
+  padding: 15px;
+
+  .btn-group {
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    height: 42px;
+    min-width: 225px;
+    max-width: 100%;
+    text-align: left;
+
+    [class*="icon-"] {
+      vertical-align: middle;
+    }
+
+    .icon-question-sign {
+      padding-left: 5px;
+      font-size: 1.2em;
+      opacity: .6;
+      color: white;
+      @include transition-property(opacity);
+      @include transition-duration($linkTransitionDuration);
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .icon-caret-down {
+      line-height: 20px;
+    }
+  }
+}
+
+#node-photos {
+  border-bottom: 1px solid $boderColor;
+  background-color: lighten($orangeGray, 10%);
+  padding: 15px;
+  padding-bottom: 0;
+
+  li {
+    padding-bottom: 15px;
+  }
+
+  img {
+    @include box-sizing(border-box);
+    width: 100%;
+    height: 50px;
+    background-color: $white;
+  }
+}
+
+#node-note {
+  padding: 15px;
+
+  p {
+    padding: 15px;
+    border: 1px solid darken($white, 12%);
+    background-color: darken($white, 2%);
+    @include border-radius(3px);
   }
 }
