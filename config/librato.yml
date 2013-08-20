@@ -1,0 +1,5 @@
+development:
+  user: christoph@sozialhelden.de
+  token: ***REMOVED***
+  prefix: 'development'
+  log_level: 'debug'
