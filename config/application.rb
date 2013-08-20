@@ -66,7 +66,7 @@ module Wheelmap
     # Needed for the ActiveAdmin's manifest assets.
     config.assets.precompile += ['active_admin.css', 'active_admin.js']
 
-    config.assets.precompile += %w( relaunch.css relaunch_ie.css screen.css node.css relaunch.js ie.js modernizr.js default.js search.js )
+    config.assets.precompile += %w( relaunch.css relaunch_ie.css screen.css node.css relaunch.js ie.js modernizr.js default.js search.js nodes.js)
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
