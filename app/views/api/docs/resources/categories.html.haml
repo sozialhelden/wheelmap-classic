@@ -1,7 +1,7 @@
 #api_docs
 
   = render :partial => 'api/docs/resource_links'
-  
+
   %h2 Resource Category
   %article.doc-block
     .resource
@@ -36,14 +36,14 @@
                 %td per_page
                 %td integer
                 %td For pagination, how many results to return per page. Default is 200. Max is 500.
-              
-                
+
+
           %h4 Example request:
           %pre http://wheelmap.org/api/categories?api_key=api_key&locale=en&page=2&per_page=5
-                
-    
+
+
 
   %h2#representations Representations
   %article.doc-block
     %h3#categories_representation_json Example categories representation. (application/json)
-    %pre=render :partial => 'categories.json'
+    %pre=render :file => 'api/docs/resources/_categories.json'
