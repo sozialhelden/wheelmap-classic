@@ -111,7 +111,7 @@
 
   %h3 Standard Response Format
   %p Each API response is wrapped in a standard structure that holds the results of the API call, plus metadata about the request:
-  %pre= render :partial => 'api/docs/standard_response.json'
+  %pre= render :file => 'api/docs/_standard_response.json'
 
   %h3 JSONP Data
   %p The Data is returned using JSON, but the return value is wrapped in a JavaScript method call. The first argument to the method is the result of the API call, the second is the API Response Code. This makes it easy to check, if the call was successfull, or not.
