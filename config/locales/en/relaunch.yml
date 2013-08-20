@@ -6,7 +6,7 @@ en:
       choose_language: "Choose language"
       contact: Contact
       map: Map
-      projects: "Get engaged"
+      projects: "Get involved"
     toolbar:
       categories: Categories
   home:
@@ -26,11 +26,11 @@ en:
   search:
     index:
       no-results:
-        headline: "We could not find a place called \"%{query}\"."
+        headline: "Sorry, we could’t find a place called \"%{query}\"."
         hint:
           example: "<strong>Example:</strong> London, United Kingdom"
-          info: "Our search service can needs more detailed name or address information to work properly."
-          work_in_progress: "We work hard to make searching for places much easier and more intuitive."
+          info: "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!"
+          work_in_progress: "We work hard to make searching for places easier and more intuitive in the future."
         try_this:
           address: "Please provide more <strong>address details</strong>."
           intro: "Try this:"

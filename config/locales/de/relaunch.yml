@@ -28,10 +28,10 @@ de:
         headline: "Wir konnten leider keinen Ort mit dem Namen \"%{query}\" finden."
         hint:
           example: "<strong>Beispiel:</strong> Berlin, Deutschland"
-          info: "Unsere Suche versteht bisher leider nur genauere Adressen und Namen"
+          info: "Unser Suchdienst kann nur nach Adressen und Namen suchen. Ortstypen wie z.B. \"Restaurant\" oder \"Kino\" können über die Suche nicht gefunden werden. Gib deswegen bitte entweder den Namen des Ortes ein oder die Adresse (z.B. Straße oder Stadt)."
           work_in_progress: "Wir arbeiten daran, dass du bald noch einfacher und intuitiver Orte finden kannst."
         try_this:
-          address: "Gib eine <strong>genauere Adresse</strong> ein."
+          address: "Gib bitte eine <strong>genauere Adresse</strong> ein."
           intro: "Versuch doch mal Folgendes:"
           spell_check: "Überprüfe die <strong>Schreibweise</strong> deiner Eingabe."
       results:
