@@ -1,7 +1,7 @@
 #api_docs
 
   = render :partial => 'api/docs/resource_links'
-  
+
   %h2 Resource NodeType
   %article.doc-block
     .resource
@@ -17,7 +17,7 @@
         %span.optional{:title => 'optional'}> ?locale
         %span.optional{:title => 'optional'}> &page
         %span.optional{:title => 'optional'}> &per_page
-        
+
       %h6 Methods
       .methods
         .method
@@ -44,19 +44,19 @@
                 %td per_page
                 %td integer
                 %td For pagination, how many results to return per page. Default is 200. Max is 500.
-              
-                
+
+
           %h4 Example request:
           %pre
             http://wheelmap.org/api/node_types?api_key=api_key&per_page=6
-            
+
           %h4 This resource can also be nested within categories.
           %pre
             http://wheelmap.org/api/categories/1/node_types?api_key=api_key&per_page=6
-                
-    
+
+
 
   %h2#representations Representations
   %article.doc-block
     %h3#node_types_representation_json Example node types representation. (application/json)
-    %pre=render :partial => 'node_types.json'
+    %pre=render :file => 'api/docs/resources/_node_types.json'

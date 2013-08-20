@@ -1,5 +1,5 @@
 #api_docs
- 
+
   %p This is the Wheelmap API root url. It can be used to discover all available resources.
   = render :partial => 'api/docs/resource_links'
 
@@ -14,4 +14,4 @@
           %h4 Example request:
           %pre http://wheelmap.org/api?api_key=api_key
           %h4#root_representation_json Example root representation. (application/json)
-          %pre=render :partial => 'root.json'
+          %pre=render :file => 'api/docs/resources/_root.json'
