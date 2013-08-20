@@ -1,3 +1,5 @@
+require 'open-uri'
+
 namespace :region do
 
   desc 'Create bounding box from region'
@@ -13,6 +15,31 @@ namespace :region do
       Poi.update_all('region_id = NULL', ['osm_id IN (?)', batch.map(&:osm_id)])
     end
 
+  end
+
+  desc 'Read from CSV File'
+  task :from_file => :environment do
+    file = ENV['FILE']
+    raise "Usage: bundle exec rake region:from_file FILE=regions.csv" unless file
+    File.open(file, "r") do |infile|
+      while (line = infile.gets)
+        line = line.gsub(/\n/,'')
+        state,region,id = line.split(',')
+        region = region.gsub(/ /,'_')
+
+        wkt_file = Rails.root.join('db','data','wkt','Europe','Germany',state,"#{region}.wkt")
+        next if File.exists? wkt_file
+
+        uri = "http://osm102.openstreetmap.fr/~jocelyn/polygons/get_wkt.py?id=#{id}&params=0"
+        wkt = URI.parse(uri).read # string representation is the response body
+
+        directory = Rails.root.join('db','data','wkt','Europe','Germany',state)
+        FileUtils.mkdir_p directory
+        File.open(wkt_file,'w') do |out|
+          out.write wkt.gsub(/^SRID=4326;/,'')
+        end
+      end
+    end
   end
 
   desc 'Create a region for the hole world'
