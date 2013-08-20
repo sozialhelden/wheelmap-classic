@@ -36,7 +36,7 @@
   %h2#representations Representations
   %article.doc-block
     %h3#locales_representation_json Example locales representation. (application/json)
-    %pre=render :partial => 'users.json'
+    %pre=render :file => 'api/docs/resources/_users.json'
     .resource
       %h3
         ="/api/users/accept_terms"
@@ -76,4 +76,4 @@
   %h2#representations Representations
   %article.doc-block
     %h3#locales_representation_json Example locales representation. (application/json)
-    %pre=render :partial => 'users.json'
+    %pre=render :file => 'api/docs/resources/_users.json'
