@@ -61,7 +61,8 @@
       %p
         = @node.tags['note']
 
-  #node-streetview
+  #node-streetview.row-fluid
+    .span12= image_tag("http://maps.googleapis.com/maps/api/streetview?size=570x320&location=#{@node.lat},#{@node.lon}&sensor=false", size:'570x320', alt: "Streetview: #{@node.headline}")
 
 %aside
   #node-edit
