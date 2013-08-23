@@ -3,22 +3,8 @@
 $boderColor: darken($orangeGray, 5%);
 
 #node {
-  .content {
-    @include clearfix();
-    position: relative;
-    color: $yellowGray;
-    background-color: lighten($orangeGray, 7%);
-
-    .bg {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      border-right: 1px solid $boderColor;
-      width: percentage(($containerWidth - $nodeAsideWidth) / $containerWidth);
-      background-color: $white;
-      z-index: 0;
-    }
-  }
+  background-color: $white;
+  margin-top: 20px;
 
   h2 {
     font-size: $baseFontSize;
@@ -28,81 +14,88 @@ $boderColor: darken($orangeGray, 5%);
     margin-bottom: 10px;
   }
 
-  header {
-    color: $grayLighter;
-    @include headline-gradient();
-    @include text-shadow(0px 1px 0px #000000);
-    padding: 10px 20px 15px 20px;
-    position: relative; // For close page button
+  .inner-content {
+    position: relative;
     z-index: 1;
+  }
 
-    * {
-      margin: 0;
+  @include grid-fluid(100% / $gridColumns, 0);
+}
+
+#node-aside {
+  padding: 15px;
+  background-color: lighten($orangeGray, 7%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  address {
+    ul {
+      background-color: darken($white, 1%);
+      border: 1px solid darken($orangeGray, 7%);
+      @include border-radius(3px);
+      margin-bottom: 20px;
+      overflow: hidden;
     }
 
-    h1 {
-      color: $white;
-      font-size: $fontSizeHeadline;
+    li {
+      padding: $fontSizeLarge / 2;
+      padding-left: $fontSizeLarge * 2;
     }
 
-    .breadcrumbs {
-      @include clearfix();
-      font-size: $fontSizeMini;
-      margin-bottom: 10px;
-
-      li {
-        float: left;
-        padding-right: $fontSizeMini;
-      }
-    }
-
-    .close {
-      @include appearance(none);
-      background: none;
-      border: none;
-      color: $grayLighter;
+    [class^='icon-'] {
+      color: lighten($yellowGray, 30%);
       position: absolute;
-      top: 5px;
-      right: 15px;
-      padding: 5px;
-      @include transition-property(color);
+      left: $fontSizeLarge * 0.4;
+      font-size: 1.3em;
+      line-height: $baseFontSize + $fontSizeLarge / 2;
     }
+  }
+}
 
-    .close:hover {
-      color: $white;
+#node-header {
+  color: $grayLighter;
+  @include headline-gradient();
+  @include text-shadow(0px 1px 0px #000000);
+  padding: 10px 20px 15px 20px;
+  position: relative; // For close page button
+  z-index: 1;
+
+  * {
+    margin: 0;
+  }
+
+  h1 {
+    color: $white;
+    font-size: $fontSizeHeadline;
+  }
+
+  .breadcrumbs {
+    @include clearfix();
+    font-size: $fontSizeMini;
+    margin-bottom: 10px;
+
+    li {
+      float: left;
+      padding-right: $fontSizeMini;
     }
   }
 
-  aside {
-    @include box-sizing(border-box);
-    padding: 15px;
-    width: percentage($nodeAsideWidth / $containerWidth);
-    float: left;
-    position: relative;
-    z-index: 1;
+  .close {
+    @include appearance(none);
+    background: none;
+    border: none;
+    color: $grayLighter;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    padding: 5px;
+    @include transition-property(color);
+  }
 
-    address {
-      ul {
-        background-color: darken($white, 1%);
-        border: 1px solid darken($orangeGray, 7%);
-        @include border-radius(3px);
-        margin-bottom: 20px;
-        overflow: hidden;
-      }
-
-      li {
-        padding: $fontSizeLarge / 2;
-        padding-left: $fontSizeLarge * 2;
-      }
-
-      [class^='icon-'] {
-        color: lighten($yellowGray, 30%);
-        position: absolute;
-        left: $fontSizeLarge * 0.4;
-        font-size: 1.3em;
-        line-height: $baseFontSize + $fontSizeLarge / 2;
-      }
-    }
+  .close:hover {
+    color: $white;
   }
 }
 
@@ -141,23 +134,11 @@ $boderColor: darken($orangeGray, 5%);
   }
 }
 
-#node-main {
-  @include box-sizing(border-box);
-  float: left;
-  position: relative;
-  z-index: 1;
-  width: percentage(($containerWidth - $nodeAsideWidth) / $containerWidth);
-}
-
 #node-status {
   background-color: lighten($orangeGray, 1%);
   @include box-sizing(border-box);
   border-bottom: 1px solid $boderColor;
   padding: 15px;
-
-  .btn-group {
-    margin-bottom: 10px;
-  }
 
   .btn {
     height: 42px;
@@ -183,7 +164,7 @@ $boderColor: darken($orangeGray, 5%);
     }
 
     .icon-caret-down {
-      line-height: 20px;
+      line-height: inherit;
     }
   }
 }
@@ -194,16 +175,14 @@ $boderColor: darken($orangeGray, 5%);
   padding: 15px;
   padding-bottom: 0;
 
-  li {
-    padding-bottom: 15px;
-  }
-
   img {
     @include box-sizing(border-box);
     width: 100%;
     height: 50px;
     background-color: $white;
   }
+
+  @include grid-fluid((100% - 2.25% * ($gridColumns - 1)) / $gridColumns, 2.25%);
 }
 
 #node-streetview {
@@ -211,8 +190,6 @@ $boderColor: darken($orangeGray, 5%);
 }
 
 #node-note {
-
-
   p {
     padding: 15px;
     border: 1px solid darken($white, 12%);
