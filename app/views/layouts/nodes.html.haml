@@ -1,8 +1,5 @@
 - content_for :content do
-  #container
-    #node
-      .content
-        =yield
+  =yield
 
 - content_for :javascript do
   = javascript_include_tag :nodes
@@ -10,4 +7,4 @@
 - content_for :stylesheet do
   = stylesheet_link_tag :nodes
 
-= render :template => "layouts/relaunch"
+= render :template => "layouts/basic"

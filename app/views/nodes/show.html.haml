@@ -1,130 +1,121 @@
-%header
-  %ol.breadcrumbs.unstyled
-    = list_of(@node.breadcrumbs) do |i|
-      = i
-  %h1= @node.headline
-  - if @node.address?
-    %address
-      = @node.address
+#node.container
+  %header#node-header
+    %ol.breadcrumbs.unstyled
+      = list_of(@node.breadcrumbs) do |i|
+        = i
+    %h1= @node.headline
+    - if @node.address?
+      %address
+        = @node.address
 
-  %button.close
-    %i.icon-remove
+    %button.close
+      %i.icon-remove
 
-%section#node-main
-  #node-status.row-fluid
-    .span6
-      %h2
-        Rollstuhlgerechtigkeit:
-      .btn-group.dropdown.dropdown-toggle
-        %button.btn.wheelchair-yes{'data-toggle' => 'dropdown'}
-          Voll Rollstuhlgerecht
-          %a.icon-question-sign
-          %i.icon-caret-down.pull-right
-        %ul.dropdown-menu{'role' => 'menu'}
-          %li
-            %a
-              Test
+  .inner-content.row-fluid
+    .span8
+      #node-status.row-fluid
+        .dropdown.span6
+          %h2
+            Rollstuhlgerechtigkeit:
+          %button.dropdown-toggle.btn.wheelchair-yes{'data-toggle' => 'dropdown'}
+            Voll Rollstuhlgerecht
+            %a.icon-question-sign
+            %i.icon-caret-down.pull-right
+          %ul.dropdown-menu{'role' => 'menu'}
+            %li
+              %a
+                Test
 
-    .span6
-      %h2
-        Rollstuhlgerechtes WC:
-      .btn-group.dropdown.dropdown-toggle
-        %button.btn.wheelchair-yes{'data-toggle' => 'dropdown'}
-          WC vorhanden
-          %a.icon-question-sign
-          %i.icon-caret-down.pull-right
-        %ul.dropdown-menu{'role' => 'menu'}
-          %li
-            %a
-              Test
+        .dropdown.span6
+          %h2
+            Rollstuhlgerechtes WC:
+          %button.dropdown-toggle.btn.wheelchair-yes{'data-toggle' => 'dropdown'}
+            WC vorhanden
+            %a.icon-question-sign
+            %i.icon-caret-down.pull-right
+          %ul.dropdown-menu{'role' => 'menu'}
+            %li
+              %a
+                Test
 
-  #node-photos
-    %h2
-      Fotos von diesem Ort:
-    %ul.row-fluid.unstyled
-      -# = list_of(@node.photos.reject{|photo| photo.new_record?}) do |photo|
-        = link_to_photo photo
-      %li.span3
-        %img.img-polaroid
-      %li.span3
-        %img.img-polaroid
-      %li.span3
-        %img.img-polaroid
-      %li.span3
-        %img.img-polaroid
-
-  - if @node.tags['note']
-    #node-note
-      %h2
-        Nutzerkommentar:
-
-      %p
-        = @node.tags['note']
-
-  #node-streetview.row-fluid
-    .span12= image_tag("http://maps.googleapis.com/maps/api/streetview?size=570x320&location=#{@node.lat},#{@node.lon}&sensor=false", size:'570x320', alt: "Streetview: #{@node.headline}")
-
-%aside
-  #node-edit
-    %button.btn
-      %i.icon-pencil
-      %span.visible-desktop
-        bearbeiten
-
-    %button.btn
-      %i.icon-share
-
-    .btn-group.pull-right
-      %button.btn
-        %i.icon-bolt
-      %button.btn
-        %span.caret
-
-  - if @node.address? || @node.tags['phone'] || @node.tags['email'] || @node.tags['website']
-    %address
-      - if @node.address?
+      #node-photos
         %h2
-          Adresse:
-        %ul.unstyled
-          %li
-            %i.icon-map-marker
-            = @node.address
+          Fotos von diesem Ort:
+        %ul.row-fluid.unstyled
+          -# = list_of(@node.photos.reject{|photo| photo.new_record?}) do |photo|
+            = link_to_photo photo
+          %li.span3
+            %img.img-polaroid
+          %li.span3
+            %img.img-polaroid
+          %li.span3
+            %img.img-polaroid
+          %li.span3
+            %img.img-polaroid
 
-      - if @node.tags['phone'] || @node.tags['email'] || @node.tags['website']
-        %h2
-          Kontaktdaten:
-        %ul.unstyled
-          - if @node.tags['phone']
-            %li
-              %i.icon-phone
-              = @node.tags['phone']
-          - if @node.tags['email']
-            %li
-              %i.icon-envelope
-              = mail_to @node.tags['email']
-          - if @node.tags['website']
-            %li
-              %i.icon-external-link
-              = link_to URI.parse(@node.tags['website']).host, @node.tags['website'], {:target => '_blank'}
+      - if @node.tags['note']
+        #node-note
+          %h2
+            Nutzerkommentar:
 
-  - if (similar_pois = @node.sorted_similar_pois[0..5]).length > 0
-    #node-similar-locations
-      %h2
-        = "Ähnliche Orte: " + t("poi.name.#{@node.category.identifier}.#{@node.node_type.identifier}")
+          %p
+            = @node.tags['note']
 
-      %ul.unstyled
-        - similar_pois.each do |s|
-          %li
-            %span{:class => "wheelchair wheelchair-#{s.wheelchair}"}
-            = link_to s.headline, node_path(s)
-            %span.distance
-              = "#{@node.distance_to_in_meter(s).round}m"
+      -#node-streetview.row-fluid
+        -#.span12= image_tag("http://maps.googleapis.com/maps/api/streetview?size=570x320&location=#{@node.lat},#{@node.lon}&sensor=false", size:'570x320', alt: "Streetview: #{@node.headline}")
 
-.bg
+    %aside#node-aside.span4
+      #node-edit
+        %button.btn
+          %i.icon-pencil
+          %span.visible-desktop
+            bearbeiten
 
-- content_for :head do
-  %title= t('.header.title', :node => @node.headline)
-  %meta{ :name => 'description', :content => t('header.meta.description')}
+        %button.btn
+          %i.icon-share
 
-  %meta{ :name => "DCTERMS.license", :scheme => "DCTERMS.URI", :content => "http://www.openstreetmap.org/copyright/en"}
-  %meta{ :name => "DCTERMS.rightsHolder", :content => "OpenStreetMap Foundation" }
+        .btn-group.pull-right
+          %button.btn
+            %i.icon-bolt
+          %button.btn
+            %span.caret
+
+      - if @node.address? || @node.tags['phone'] || @node.tags['email'] || @node.tags['website']
+        %address
+          - if @node.address?
+            %h2
+              Adresse:
+            %ul.unstyled
+              %li
+                %i.icon-map-marker
+                = @node.address
+
+          - if @node.tags['phone'] || @node.tags['email'] || @node.tags['website']
+            %h2
+              Kontaktdaten:
+            %ul.unstyled
+              - if @node.tags['phone']
+                %li
+                  %i.icon-phone
+                  = @node.tags['phone']
+              - if @node.tags['email']
+                %li
+                  %i.icon-envelope
+                  = mail_to @node.tags['email']
+              - if @node.tags['website']
+                %li
+                  %i.icon-external-link
+                  = link_to URI.parse(@node.tags['website']).host, @node.tags['website'], {:target => '_blank'}
+
+      - if (similar_pois = @node.sorted_similar_pois[0..5]).length > 0
+        #node-similar-locations
+          %h2
+            = "Ähnliche Orte: " + t("poi.name.#{@node.category.identifier}.#{@node.node_type.identifier}")
+
+          %ul.unstyled
+            - similar_pois.each do |s|
+              %li
+                %span{:class => "wheelchair wheelchair-#{s.wheelchair}"}
+                = link_to s.headline, node_path(s)
+                %span.distance
+                  = "#{@node.distance_to_in_meter(s).round}m"
