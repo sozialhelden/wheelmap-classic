@@ -4,7 +4,6 @@ $boderColor: darken($orangeGray, 5%);
 
 #node {
   background-color: $white;
-  margin-top: 20px;
   @include box-shadow(0 0 10px rgba($black, .75));
   overflow: hidden; // needed for the full height sidebar hack (aside)
 
@@ -17,6 +16,13 @@ $boderColor: darken($orangeGray, 5%);
   }
 
   @include grid-fluid(100% / $gridColumns, 0);
+
+  @media (max-width: 767px) {
+    & > .row-fluid > [class*="span"] {
+      float: none;
+      width: 100%;
+    }
+  }
 }
 
 #node-header {
@@ -131,24 +137,33 @@ $boderColor: darken($orangeGray, 5%);
   }
 }
 
-#node-content > div {
+#node-content > section {
   padding: 15px;
 }
 
 #node-status {
+  padding-top: 0 !important;
   background-color: lighten($orangeGray, 1%);
   @include box-sizing(border-box);
   border-bottom: 1px solid $boderColor;
+
+  h2 {
+    margin-top: 15px;
+  }
 
   [class*="icon-"] {
     vertical-align: middle;
     line-height: inherit;
   }
 
+  .btn,
+  .dropdown-menu {
+    width: 80%;
+    min-width: 250px;
+  }
+
   .btn {
     height: 42px;
-    min-width: 225px;
-    max-width: 100%;
     text-align: left;
 
     .icon-question-sign {
@@ -171,9 +186,7 @@ $boderColor: darken($orangeGray, 5%);
 
   .dropdown-menu {
     @include border-radius(3px);
-    @include border-top-left-radius(0);
-    min-width: 250px;
-    width: 90%;
+    @include border-top-radius(0);
 
     a {
       line-height: 30px;
@@ -215,6 +228,18 @@ $boderColor: darken($orangeGray, 5%);
       }
     }
   }
+
+  @media (max-width: 580px), (min-width: 768px) and (max-width: 979px) {
+    .dropdown {
+      float: none !important;
+      width: 100% !important;
+    }
+
+    .btn,
+    .dropdown-menu {
+      width: 100%;
+    }
+  }
 }
 
 #node-photos {
@@ -243,3 +268,4 @@ $boderColor: darken($orangeGray, 5%);
     @include border-radius(3px);
   }
 }
+
