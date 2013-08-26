@@ -6,6 +6,7 @@ $boderColor: darken($orangeGray, 5%);
   background-color: $white;
   margin-top: 20px;
   @include box-shadow(0 0 10px rgba($black, .75));
+  overflow: hidden; // needed for the full height sidebar hack (aside)
 
   h2 {
     font-size: $baseFontSize;
@@ -16,15 +17,6 @@ $boderColor: darken($orangeGray, 5%);
   }
 
   @include grid-fluid(100% / $gridColumns, 0);
-
-  .same-height {
-    overflow: hidden;
-
-    & > [class*="span"] {
-      padding-bottom: 10000px;
-      margin-bottom: -10000px;
-    }
-  }
 }
 
 #node-header {
@@ -76,6 +68,9 @@ $boderColor: darken($orangeGray, 5%);
   padding: 15px;
   background-color: lighten($orangeGray, 7%);
   border-left: 1px solid $boderColor;
+  // Hack for having a full height sidebar
+  padding-bottom: 10000px;
+  margin-bottom: -10000px;
 
   address {
     ul {
