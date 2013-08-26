@@ -3,42 +3,36 @@ require 'delayed_job'
 
 class DelayedJobPlugin < Delayed::Plugin
 
-  def initialize
-    @metrics = Librato::Rails
-  end
-
   callbacks do |lifecycle|
 
-    lifecycle.before(:invoke_job) do |job, *args, &block|
-      Rails.logger.warn "BEFORE INVOKE"
-      @metrics.increment "delayed_job.total", :sporadic => true
+    lifecycle.after(:enqueue) do |job, &block|
+      Rails.logger.warn("enqueue")
+      raise("enqueue")
+      Librato::Rails.increment "delayed_job.total", :sporadic => true
     end
 
-    lifecycle.around(:invoke_job) do |job, *args, &block|
-      @metrics.check_worker
-      @metrics.timing "delayed_job.time" do
-        Rails.logger.warn "DURING INVOKE"
+    lifecycle.around(:perform) do |job, *args, &block|
+      Librato::Rails.timing "delayed_job.time" do
         # Forward the call to the next callback in the callback chain
         block.call(job, *args)
       end
+      Rails.logger.warn("perform")
     end
 
-    lifecycle.after(:invoke_job) do |job, *args, &block|
-      Rails.logger.warn "DURING INVOKE"
-      @metrics.flush
+    lifecycle.after(:perform) do |job, &block|
+      Librato::Rails.increment "delayed_job.success", :sporadic => true
+      Rails.logger.warn("success")
     end
 
-    lifecycle.after(:perform) do |job, *args, &block|
-      Rails.logger.warn "AFTER PERFORM"
-      @metrics.increment "delayed_job.success"
+    lifecycle.after(:error) do |job, &block|
+      Librato::Rails.increment "delayed_job.error", :sporadic => true
+      Rails.logger.warn("error")
     end
 
-    lifecycle.after(:error) do |job, *args, &block|
-      Rails.logger.warn "AFTER ERROR"
-      @metrics.increment "delayed_job.error"
+    lifecycle.after(:execute) do |worker|
+      Librato::Rails.flush
+      Rails.logger.warn("flush")
     end
-
-
 
   end
 end
