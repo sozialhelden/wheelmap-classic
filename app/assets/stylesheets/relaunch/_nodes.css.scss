@@ -5,6 +5,7 @@ $boderColor: darken($orangeGray, 5%);
 #node {
   background-color: $white;
   margin-top: 20px;
+  @include box-shadow(0 0 10px rgba($black, .75));
 
   h2 {
     font-size: $baseFontSize;
@@ -14,42 +15,14 @@ $boderColor: darken($orangeGray, 5%);
     margin-bottom: 10px;
   }
 
-  .inner-content {
-    position: relative;
-    z-index: 1;
-  }
-
   @include grid-fluid(100% / $gridColumns, 0);
-}
 
-#node-aside {
-  padding: 15px;
-  background-color: lighten($orangeGray, 7%);
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  .same-height {
+    overflow: hidden;
 
-  address {
-    ul {
-      background-color: darken($white, 1%);
-      border: 1px solid darken($orangeGray, 7%);
-      @include border-radius(3px);
-      margin-bottom: 20px;
-      overflow: hidden;
-    }
-
-    li {
-      padding: $fontSizeLarge / 2;
-      padding-left: $fontSizeLarge * 2;
-    }
-
-    [class^='icon-'] {
-      color: lighten($yellowGray, 30%);
-      position: absolute;
-      left: $fontSizeLarge * 0.4;
-      font-size: 1.3em;
-      line-height: $baseFontSize + $fontSizeLarge / 2;
+    & > [class*="span"] {
+      padding-bottom: 10000px;
+      margin-bottom: -10000px;
     }
   }
 }
@@ -99,6 +72,35 @@ $boderColor: darken($orangeGray, 5%);
   }
 }
 
+#node-aside {
+  padding: 15px;
+  background-color: lighten($orangeGray, 7%);
+  border-left: 1px solid $boderColor;
+
+  address {
+    ul {
+      background-color: darken($white, 1%);
+      border: 1px solid darken($orangeGray, 7%);
+      @include border-radius(3px);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    li {
+      padding: $fontSizeLarge / 2;
+      padding-left: $fontSizeLarge * 2;
+    }
+
+    [class^='icon-'] {
+      color: lighten($yellowGray, 30%);
+      position: absolute;
+      left: $fontSizeLarge * 0.4;
+      font-size: 1.3em;
+      line-height: $baseFontSize + $fontSizeLarge / 2;
+    }
+  }
+}
+
 #node-edit {
   .btn {
     margin-bottom: 20px;
@@ -134,11 +136,14 @@ $boderColor: darken($orangeGray, 5%);
   }
 }
 
+#node-content > div {
+  padding: 15px;
+}
+
 #node-status {
   background-color: lighten($orangeGray, 1%);
   @include box-sizing(border-box);
   border-bottom: 1px solid $boderColor;
-  padding: 15px;
 
   .btn {
     height: 42px;
@@ -170,10 +175,10 @@ $boderColor: darken($orangeGray, 5%);
 }
 
 #node-photos {
+  $node-photos-grid-gutter: 2.25%;
+
   border-bottom: 1px solid $boderColor;
   background-color: lighten($orangeGray, 10%);
-  padding: 15px;
-  padding-bottom: 0;
 
   img {
     @include box-sizing(border-box);
@@ -182,14 +187,12 @@ $boderColor: darken($orangeGray, 5%);
     background-color: $white;
   }
 
-  @include grid-fluid((100% - 2.25% * ($gridColumns - 1)) / $gridColumns, 2.25%);
-}
-
-#node-streetview {
-  padding: 15px;
+  @include grid-fluid((100% - $node-photos-grid-gutter * ($gridColumns - 1)) / $gridColumns, $node-photos-grid-gutter);
 }
 
 #node-note {
+  padding: 0;
+
   p {
     padding: 15px;
     border: 1px solid darken($white, 12%);
