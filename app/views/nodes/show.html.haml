@@ -24,19 +24,43 @@
           %ul.dropdown-menu{'role' => 'menu'}
             %li
               %a
-                Test
+                %span.wm-checkbox.wheelchair-yes.checked
+                  %i.icon-ok
+                Voll Rollstuhlgerecht
+                %i.icon-question-sign.pull-right
+            %li
+              %a
+                %span.wm-checkbox.wheelchair-limited
+                  %i.icon-ok
+                Teilweise Rollstuhlgerecht
+                %i.icon-question-sign.pull-right
+            %li
+              %a
+                %span.wm-checkbox.wheelchair-no
+                  %i.icon-ok
+                Nicht Rollstuhlgerecht
+                %i.icon-question-sign.pull-right
 
         .dropdown.span6
           %h2
             Rollstuhlgerechtes WC:
           %button.dropdown-toggle.btn.wheelchair-yes{'data-toggle' => 'dropdown'}
-            WC vorhanden
+            WC rollstuhlgerecht
             %a.icon-question-sign
             %i.icon-caret-down.pull-right
           %ul.dropdown-menu{'role' => 'menu'}
             %li
               %a
-                Test
+                %span.wm-checkbox.wheelchair-yes.checked
+                  %i.icon-ok
+                WC rollstuhlgerecht
+                %i.icon-question-sign.pull-right
+            %li
+              %a
+                %span.wm-checkbox.wheelchair-no
+                  %i.icon-ok
+                WC nicht rollstuhlgerecht
+                %i.icon-question-sign.pull-right
 
       #node-photos
         %h2

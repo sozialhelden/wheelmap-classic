@@ -145,15 +145,16 @@ $boderColor: darken($orangeGray, 5%);
   @include box-sizing(border-box);
   border-bottom: 1px solid $boderColor;
 
+  [class*="icon-"] {
+    vertical-align: middle;
+    line-height: inherit;
+  }
+
   .btn {
     height: 42px;
     min-width: 225px;
     max-width: 100%;
     text-align: left;
-
-    [class*="icon-"] {
-      vertical-align: middle;
-    }
 
     .icon-question-sign {
       padding-left: 5px;
@@ -167,9 +168,56 @@ $boderColor: darken($orangeGray, 5%);
         opacity: 1;
       }
     }
+  }
 
-    .icon-caret-down {
-      line-height: inherit;
+  .open .btn {
+    @include border-bottom-radius(0);
+  }
+
+  .dropdown-menu {
+    @include border-radius(3px);
+    @include border-top-left-radius(0);
+    min-width: 250px;
+    width: 90%;
+
+    a {
+      line-height: 30px;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      .icon-question-sign {
+        opacity: .5;
+      }
+    }
+
+    .wm-checkbox {
+      height: 25px;
+      width: 25px;
+      vertical-align: 0em;
+      display: inline-block;
+      @include border-radius(3px);
+      @include box-shadow(inset 0 1px 0 rgba($white, 0.5), 0 1px 1px rgba($black, 0.1));
+      margin-right: 5px;
+
+      i {
+        width: 17px;
+        height: 17px;
+        line-height: 17px;
+        display: block;
+        margin: 3px;
+        border: inherit;
+        @include border-radius(3px);
+        color: $black;
+        background-color: $white;
+        @include text-shadow(none);
+        @include box-shadow(0 1px 0 rgba($white, 0.5), inset 0 1px 2px rgba($black, 0.2));
+        overflow: hidden;
+        text-indent: -5000px; // Hide check icon
+      }
+
+      &.checked i {
+        text-indent: 0px;
+      }
     }
   }
 }
