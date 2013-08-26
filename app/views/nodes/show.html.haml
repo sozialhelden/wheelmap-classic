@@ -1,4 +1,4 @@
-#node.container
+%article#node.container
   %header#node-header
     %ol.breadcrumbs.unstyled
       = list_of(@node.breadcrumbs) do |i|
@@ -13,7 +13,7 @@
 
   .row-fluid
     %section#node-content.span8
-      #node-status.row-fluid
+      %section#node-status.row-fluid
         .dropdown.span6
           %h2
             Rollstuhlgerechtigkeit:
@@ -62,7 +62,7 @@
                 WC nicht rollstuhlgerecht
                 %i.icon-question-sign.pull-right
 
-      #node-photos
+      %section#node-photos
         %h2
           Fotos von diesem Ort:
         %ul.row-fluid.unstyled
@@ -88,11 +88,11 @@
       -#node-streetview.row-fluid
         -#.span12= image_tag("http://maps.googleapis.com/maps/api/streetview?size=570x320&location=#{@node.lat},#{@node.lon}&sensor=false", size:'570x320', alt: "Streetview: #{@node.headline}")
 
-    %aside#node-aside.span4
-      #node-edit
+    %section#node-aside.span4
+      %section#node-edit
         %button.btn
           %i.icon-pencil
-          %span.visible-desktop
+          %span.visible-desktop.visible-phone
             bearbeiten
 
         %button.btn
@@ -132,7 +132,7 @@
                   = link_to URI.parse(@node.tags['website']).host, @node.tags['website'], {:target => '_blank'}
 
       - if (similar_pois = @node.sorted_similar_pois[0..5]).length > 0
-        #node-similar-locations
+        %section#node-similar-locations
           %h2
             = "Ähnliche Orte: " + t("poi.name.#{@node.category.identifier}.#{@node.node_type.identifier}")
 
