@@ -26,6 +26,13 @@ module NavigationHelpers
     when /the sign_up page/
       '/users/sign_up'
 
+    when /the after sign_up page/
+      user = User.last
+      "/users/#{user.to_param}/after_signup_edit"
+
+    when /the callback page/
+      '/users/auth/osm/callback'
+
     when /the registration page/
       arguments = CGI.escape("/oauth/authorize?oauth_token=#{session[:request_token].token}")
       "http://api06.dev.openstreetmap.org/user/new?referer=#{arguments}&locale=#{I18n.locale}"
