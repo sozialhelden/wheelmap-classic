@@ -22,5 +22,5 @@
 (function() {
   var $container = $('#node');
 
-  $container.find('[data-toggle="tooltip"]').tooltip();
+  $container.find('[data-toggle="popover"]').popover();
 })(jQuery);

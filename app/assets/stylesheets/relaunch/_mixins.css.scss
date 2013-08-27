@@ -36,14 +36,22 @@
 }
 
 @mixin headline-gradient() {
-  background-color: $darkBlue;
-  @include background-image(linear-gradient(top, lighten($darkBlue, 10%), $darkBlue));
+  background-color: $dark-blue;
+  @include background-image(linear-gradient(top, lighten($dark-blue, 10%), $dark-blue));
 }
 
-@mixin wheelchair($color) {
-  @include buttonBackground($color, darken($color, 10%), darken($color, 20%), 0 1px 1px rgba(255,255,255,.75));
-  color: $white !important;
-  font-weight: bold;
-  @include text-shadow(0 1px 0 darken($color, 23%));
-  border: 1px solid darken($color, 23%);
+@mixin wheelchair($status, $color, $text-shadow: 0 1px 0 darken($color, 23%)) {
+  .wheelchair-#{$status} {
+    @include buttonBackground($color, darken($color, 10%), $white, $text-shadow);
+    font-weight: bold;
+    border: 1px solid darken($color, 23%);
+  }
+
+  .popover-wheelchair-#{$status} {
+    .popover-title {
+      background-color: darken($color, 5%);
+      color: $white;
+      @include text-shadow($text-shadow);
+    }
+  }
 }
