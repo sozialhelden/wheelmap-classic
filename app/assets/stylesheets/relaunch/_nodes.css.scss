@@ -15,6 +15,15 @@ $boderColor: darken($orangeGray, 5%);
     margin-bottom: 10px;
   }
 
+  .icon-question-sign {
+    @include transition-property(opacity);
+    @include transition-duration($linkTransitionDuration);
+
+    &:hover {
+      opacity: 1 !important;
+    }
+  }
+
   @include grid-fluid(100% / $gridColumns, 0);
 
   @media (max-width: 767px) {
@@ -170,12 +179,10 @@ $boderColor: darken($orangeGray, 5%);
       font-size: 1.2em;
       opacity: .6;
       color: white;
-      @include transition-property(opacity);
-      @include transition-duration($linkTransitionDuration);
+    }
 
-      &:hover {
-        opacity: 1;
-      }
+    .tooltip {
+      font-weight: normal;
     }
   }
 
