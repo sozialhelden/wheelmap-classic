@@ -50,18 +50,7 @@ body {
 	}
 }
 
-.wheelchair-yes {
-  @include wheelchair($wheelchairYes);
-}
-
-.wheelchair-limited {
-  @include wheelchair($wheelchairLimited);
-}
-
-.wheelchair-no {
-  @include wheelchair($wheelchairNo);
-}
-
-.wheelchair-unknown {
-  @include wheelchair(lighten($black, 70%));
-}
+@include wheelchair(yes, $wheelchair-yes);
+@include wheelchair(limited, $wheelchair-limited);
+@include wheelchair(no, $wheelchair-no);
+@include wheelchair(unknown, $wheelchair-unknown);

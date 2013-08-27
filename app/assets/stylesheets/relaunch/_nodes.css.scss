@@ -1,6 +1,6 @@
 @import "bootstrap/mixins";
 
-$boderColor: darken($orangeGray, 5%);
+$boderColor: darken($orange-gray, 5%);
 
 #node {
   background-color: $white;
@@ -81,7 +81,7 @@ $boderColor: darken($orangeGray, 5%);
 
 #node-aside {
   padding: 15px;
-  background-color: lighten($orangeGray, 7%);
+  background-color: lighten($orange-gray, 7%);
   border-left: 1px solid $boderColor;
   // Hack for having a full height sidebar
   padding-bottom: 10000px;
@@ -90,7 +90,7 @@ $boderColor: darken($orangeGray, 5%);
   address {
     ul {
       background-color: darken($white, 1%);
-      border: 1px solid darken($orangeGray, 7%);
+      border: 1px solid darken($orange-gray, 7%);
       @include border-radius(3px);
       margin-bottom: 20px;
       overflow: hidden;
@@ -102,7 +102,7 @@ $boderColor: darken($orangeGray, 5%);
     }
 
     [class^='icon-'] {
-      color: lighten($yellowGray, 30%);
+      color: lighten($yellow-gray, 30%);
       position: absolute;
       left: $fontSizeLarge * 0.4;
       font-size: 1.3em;
@@ -115,7 +115,7 @@ $boderColor: darken($orangeGray, 5%);
   .btn {
     margin-bottom: 20px;
     height: 34px;
-    @include buttonBackground(lighten($orangeGray, 5%), darken($orangeGray, 7%), darken($orangeGray, 60%), 0 1px 1px rgba(255,255,255,.75));
+    @include buttonBackground(lighten($orange-gray, 5%), darken($orange-gray, 7%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
     font-weight: bold;
   }
 }
@@ -142,7 +142,7 @@ $boderColor: darken($orangeGray, 5%);
   .distance {
     font-size: $fontSizeMini;
     display: block;
-    color: lighten($yellowGray, 30%);
+    color: lighten($yellow-gray, 30%);
   }
 }
 
@@ -152,7 +152,7 @@ $boderColor: darken($orangeGray, 5%);
 
 #node-status {
   padding-top: 0 !important;
-  background-color: lighten($orangeGray, 1%);
+  background-color: lighten($orange-gray, 1%);
   @include box-sizing(border-box);
   border-bottom: 1px solid $boderColor;
 
@@ -162,6 +162,12 @@ $boderColor: darken($orangeGray, 5%);
 
   [class*="icon-"] {
     line-height: inherit;
+  }
+
+  .popover {
+    font-weight: normal;
+    color: $black;
+    @include text-shadow(none);
   }
 
   .btn,
@@ -179,10 +185,6 @@ $boderColor: darken($orangeGray, 5%);
       font-size: 1.2em;
       opacity: .6;
       color: white;
-    }
-
-    .tooltip {
-      font-weight: normal;
     }
   }
 
@@ -256,7 +258,7 @@ $boderColor: darken($orangeGray, 5%);
   $node-photos-grid-gutter: 2.25%;
 
   border-bottom: 1px solid $boderColor;
-  background-color: lighten($orangeGray, 10%);
+  background-color: lighten($orange-gray, 10%);
 
   img {
     @include box-sizing(border-box);
