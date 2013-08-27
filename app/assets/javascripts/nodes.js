@@ -18,4 +18,9 @@
 //= require bootstrap-select
 //
 //= require flash.js
-//= require function
+
+(function() {
+  var $container = $('#node');
+
+  $container.find('[data-toggle="tooltip"]').tooltip();
+})(jQuery);
