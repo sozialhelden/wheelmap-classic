@@ -85,8 +85,11 @@
           %p
             = @node.tags['note']
 
-      -#node-streetview.row-fluid
-        -#.span12= image_tag("http://maps.googleapis.com/maps/api/streetview?size=570x320&location=#{@node.lat},#{@node.lon}&sensor=false", size:'570x320', alt: "Streetview: #{@node.headline}")
+      %section#node-streetview
+        %h2
+          Streetview:
+        %ul.row-fluid.unstyled
+          %li.span10= image_tag("http://maps.googleapis.com/maps/api/streetview?size=625x416&location=#{@node.lat},#{@node.lon}&sensor=false", alt: "Streetview: #{@node.headline}", size: '625x416')
 
     %section#node-aside.span4
       %section#node-edit
