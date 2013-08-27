@@ -12,7 +12,7 @@
       %i.icon-remove
 
   .row-fluid
-    %section#node-content.span8
+    %section#node-content.node-wrapper.span8
       %section#node-status.row-fluid
         .dropdown.span6
           %h2
@@ -78,7 +78,7 @@
             = image_tag('overlay-bsp_green.png', class: 'img-polaroid')
 
       - if @node.tags['note']
-        #node-note
+        %section#node-note
           %h2
             Nutzerkommentar:
 
@@ -88,10 +88,9 @@
       %section#node-streetview
         %h2
           Streetview:
-        %ul.row-fluid.unstyled
-          %li.span10= image_tag("http://maps.googleapis.com/maps/api/streetview?size=625x416&location=#{@node.lat},#{@node.lon}&sensor=false", alt: "Streetview: #{@node.headline}", size: '625x416')
+        = image_tag("http://maps.googleapis.com/maps/api/streetview?size=625x416&location=#{@node.lat},#{@node.lon}&sensor=false", alt: "Streetview: #{@node.headline}")
 
-    %section#node-aside.span4
+    %section#node-aside.span4.node-wrapper
       %section#node-edit
         %button.btn
           %i.icon-pencil

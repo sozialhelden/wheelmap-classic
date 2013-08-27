@@ -18,9 +18,9 @@ $boderColor: darken($orangeGray, 5%);
   @include grid-fluid(100% / $gridColumns, 0);
 
   @media (max-width: 767px) {
-    & > .row-fluid > [class*="span"] {
-      float: none;
-      width: 100%;
+    .node-wrapper {
+      float: none !important;
+      width: 100% !important;
     }
   }
 }
@@ -254,7 +254,6 @@ $boderColor: darken($orangeGray, 5%);
   img {
     @include box-sizing(border-box);
     width: 100%;
-    height: 50px;
     background-color: $white;
   }
 
@@ -272,3 +271,6 @@ $boderColor: darken($orangeGray, 5%);
   }
 }
 
+#node-streetview img {
+  width: 100%;
+}
