@@ -69,13 +69,13 @@
           -# = list_of(@node.photos.reject{|photo| photo.new_record?}) do |photo|
             = link_to_photo photo
           %li.span3
-            %img.img-polaroid
+            = image_tag('overlay-bsp_green.png', class: 'img-polaroid')
           %li.span3
-            %img.img-polaroid
+            = image_tag('overlay-bsp_green.png', class: 'img-polaroid')
           %li.span3
-            %img.img-polaroid
+            = image_tag('overlay-bsp_green.png', class: 'img-polaroid')
           %li.span3
-            %img.img-polaroid
+            = image_tag('overlay-bsp_green.png', class: 'img-polaroid')
 
       - if @node.tags['note']
         #node-note
