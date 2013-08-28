@@ -30,7 +30,7 @@
         - if node_edit.tags['phone']
           %li
             %i.icon-phone
-            = node_edit.tags['phone']
+            %span{itemprop:'telephone'}= node_edit.tags['phone']
         - if node_edit.tags['email']
           %li
             %i.icon-envelope
@@ -38,4 +38,4 @@
         - if node_edit.tags['website']
           %li
             %i.icon-external-link
-            = link_to URI.parse(node_edit.tags['website']).host, node_edit.tags['website'], {:target => '_blank'}
+            = link_to URI.parse(node_edit.tags['website']).host, node_edit.tags['website'], {:target => '_blank', itemprop: 'url', itemtype: 'http://schema.org/URL'}
