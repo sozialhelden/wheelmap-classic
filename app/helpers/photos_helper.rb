@@ -12,7 +12,7 @@ module PhotosHelper
   def link_to_photo(photo)
     photo = Photo.new if photo.image_processing?
     link_name = image_path(photo.image.url(:gallery).to_s)
-    link_to link_name, :class => :thumb, :name => photo.id do
+    link_to link_name, :class => :thumb, :name => photo.id, :'data-lightbox' => 'gallery', :title => photo.caption do
       photo_tag(photo)
     end
   end
