@@ -1,4 +1,4 @@
-%article#node.container
+%article#node.container{itemscope:'', itemtype: 'http://schema.org/Place'}
   = render partial: 'node_header', object: @node
 
   .row-fluid
@@ -11,4 +11,5 @@
     %section#node-aside.span4.node-wrapper
       = render partial: 'node_edit', object: @node
       = render partial: 'node_similar', object: @node
+      %small.pull-right.bottom="License: ODbL OpenStreetMap"
 
