@@ -2,10 +2,13 @@
   %ol.breadcrumbs.unstyled
     = list_of(node_header.breadcrumbs) do |i|
       = i
-  %h1= node_header.headline
+  %h1{itemprop: 'name'}= node_header.headline
   - if node_header.address?
     %address
       = node_header.address
+  %span{itemscope: '', itemprop: 'geo', itemtype: 'http://schema.org/GeoCoordinates'}
+    %meta{itemprop: 'latitude', content: node_header.lat}
+    %meta{itemprop: 'longitude', content: node_header.lon}
 
   %button.close
     %i.icon-remove
