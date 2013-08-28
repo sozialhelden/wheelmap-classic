@@ -286,6 +286,16 @@ $boderColor: darken($orange-gray, 5%);
   }
 }
 
-#node-streetview img {
-  width: 100%;
+#node-map {
+  padding-bottom: 15px;
+
+  img {
+    border: 1px solid $boderColor;
+  }
+}
+
+#node-streetview, #node-map {
+  img {
+    width: 100%;
+  }
 }
