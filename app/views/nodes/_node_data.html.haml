@@ -1,0 +1,27 @@
+%section#node-data
+  - if node_data.address? || node_data.tags['phone'] || node_data.tags['email'] || node_data.tags['website']
+    %address
+      - if node_data.address?
+        %h2
+          Adresse:
+        %ul.unstyled
+          %li
+            %i.icon-map-marker
+            = node_data.address
+
+      - if node_data.tags['phone'] || node_data.tags['email'] || node_data.tags['website']
+        %h2
+          Kontaktdaten:
+        %ul.unstyled
+          - if node_data.tags['phone']
+            %li
+              %i.icon-phone
+              %span{itemprop:'telephone'}= node_data.tags['phone']
+          - if node_data.tags['email']
+            %li
+              %i.icon-envelope
+              = mail_to node_data.tags['email']
+          - if node_data.tags['website']
+            %li
+              %i.icon-external-link
+              = link_to URI.parse(node_data.tags['website']).host, node_data.tags['website'], {:target => '_blank', itemprop: 'url', itemtype: 'http://schema.org/URL'}
