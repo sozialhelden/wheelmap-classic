@@ -5,10 +5,14 @@
     -# = list_of(node_photos.photos.reject{|photo| photo.new_record?}) do |photo|
       = link_to_photo photo
     %li.span3
-      = image_tag('overlay-bsp_green.png', class: 'img-polaroid')
+      = link_to image_path('overlay-bsp_green.png'), :'data-toggle' => "lightbox" do
+        = image_tag('overlay-bsp_green.png', class: 'img-polaroid')
     %li.span3
-      = image_tag('overlay-bsp_green.png', class: 'img-polaroid')
+      = link_to image_path('overlay-bsp_orange.png') do
+        = image_tag('overlay-bsp_orange.png', class: 'img-polaroid')
     %li.span3
-      = image_tag('overlay-bsp_green.png', class: 'img-polaroid')
+      = link_to image_path('overlay-bsp_red.png') do
+        = image_tag('overlay-bsp_red.png', class: 'img-polaroid')
     %li.span3
-      = image_tag('overlay-bsp_green.png', class: 'img-polaroid')
+      = link_to image_path('overlay-bsp_grey.png') do
+        = image_tag('overlay-bsp_grey.png', class: 'img-polaroid')
