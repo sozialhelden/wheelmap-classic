@@ -9,6 +9,7 @@
       = render partial: 'node_streetview', object: @node
 
     %section#node-aside.span4.node-wrapper
+      = render partial: 'node_map', object: @node
       = render partial: 'node_edit', object: @node
       = render partial: 'node_similar', object: @node
       %small.pull-right.bottom="License: ODbL OpenStreetMap"
