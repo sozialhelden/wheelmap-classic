@@ -1,0 +1,11 @@
+%header#node-header
+  %ol.breadcrumbs.unstyled
+    = list_of(node_header.breadcrumbs) do |i|
+      = i
+  %h1= node_header.headline
+  - if node_header.address?
+    %address
+      = node_header.address
+
+  %button.close
+    %i.icon-remove

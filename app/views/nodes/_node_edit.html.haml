@@ -1,0 +1,41 @@
+%section#node-edit
+  %button.btn
+    %i.icon-pencil
+    %span.visible-desktop.visible-phone
+      bearbeiten
+
+  %button.btn
+    %i.icon-share
+
+  .btn-group.pull-right
+    %button.btn
+      %i.icon-bolt
+    %button.btn
+      %span.caret
+
+- if node_edit.address? || node_edit.tags['phone'] || node_edit.tags['email'] || node_edit.tags['website']
+  %address
+    - if node_edit.address?
+      %h2
+        Adresse:
+      %ul.unstyled
+        %li
+          %i.icon-map-marker
+          = node_edit.address
+
+    - if node_edit.tags['phone'] || node_edit.tags['email'] || node_edit.tags['website']
+      %h2
+        Kontaktdaten:
+      %ul.unstyled
+        - if node_edit.tags['phone']
+          %li
+            %i.icon-phone
+            = node_edit.tags['phone']
+        - if node_edit.tags['email']
+          %li
+            %i.icon-envelope
+            = mail_to node_edit.tags['email']
+        - if node_edit.tags['website']
+          %li
+            %i.icon-external-link
+            = link_to URI.parse(node_edit.tags['website']).host, node_edit.tags['website'], {:target => '_blank'}
