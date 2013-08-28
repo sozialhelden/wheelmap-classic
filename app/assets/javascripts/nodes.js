@@ -20,7 +20,15 @@
 //= require flash.js
 
 (function() {
-  var $container = $('#node');
+  var $container = $('#node'),
+    switchPlacement = 200;
 
-  $container.find('[data-toggle="popover"]').popover();
+  $container.find('[data-toggle="popover"]').popover({
+    placement: function(popover, element) {
+      var $element = $(element),
+        delta = $(window).width() - ($element.width() + $element.offset().left);
+
+      return delta >= switchPlacement ? 'right' : 'left';
+    }
+  });
 })(jQuery);

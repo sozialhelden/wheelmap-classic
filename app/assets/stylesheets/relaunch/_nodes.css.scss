@@ -31,6 +31,10 @@ $boderColor: darken($orange-gray, 5%);
       float: none !important;
       width: 100% !important;
     }
+
+    .popover {
+      width: 180px;
+    }
   }
 }
 
