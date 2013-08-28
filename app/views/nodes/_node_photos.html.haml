@@ -1,0 +1,14 @@
+%section#node-photos
+  %h2
+    Fotos von diesem Ort:
+  %ul.row-fluid.unstyled
+    -# = list_of(node_photos.photos.reject{|photo| photo.new_record?}) do |photo|
+      = link_to_photo photo
+    %li.span3
+      = image_tag('overlay-bsp_green.png', class: 'img-polaroid')
+    %li.span3
+      = image_tag('overlay-bsp_green.png', class: 'img-polaroid')
+    %li.span3
+      = image_tag('overlay-bsp_green.png', class: 'img-polaroid')
+    %li.span3
+      = image_tag('overlay-bsp_green.png', class: 'img-polaroid')

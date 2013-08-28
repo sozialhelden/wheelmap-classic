@@ -1,0 +1,12 @@
+- if (similar_pois = node_similar.sorted_similar_pois[0..5]).length > 0
+  %section#node-similar-locations
+    %h2
+      = "Ähnliche Orte: " + t("poi.name.#{node_similar.category.identifier}.#{node_similar.node_type.identifier}")
+
+    %ul.unstyled
+      - similar_pois.each do |s|
+        %li
+          %span{:class => "wheelchair wheelchair-#{s.wheelchair}"}
+          = link_to s.headline, node_path(s)
+          %span.distance
+            = "#{node_similar.distance_to_in_meter(s).round}m"
