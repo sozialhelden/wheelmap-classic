@@ -31,4 +31,22 @@
       return delta >= switchPlacement ? 'right' : 'left';
     }
   });
+
+
+
+  $(document)
+    // Don't close dropdown when accordion togglers are clicked
+    .on('click.dropdown', '[data-toggle="collapse"]', function(e) { e.stopPropagation(); })
+    // Close all collapse elements, if dropdown was closed
+    .on('click.dropdown', '[data-toggle="dropdown"]', function(e) {
+      var $parent = $(this).parent('.dropdown'),
+        $collapse;
+
+      if (!$parent.hasClass('open')) {
+        $parent.find('.collapse.in').collapse('hide').each(function() {
+          // Must set this flag to false to don't stop collapse trigger next time
+          $(this).data('collapse').transitioning = false;
+        });
+      }
+    });
 })(jQuery);

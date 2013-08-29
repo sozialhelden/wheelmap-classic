@@ -7,8 +7,26 @@
   %button.btn
     %i.icon-share
 
-  .btn-group.pull-right
-    %button.btn
+  #node-report.dropdown.pull-right
+    %button.dropdown-toggle.btn{:'data-toggle' => 'dropdown'}
       %i.icon-bolt
-    %button.btn
       %span.caret
+
+    #node-report-accordion.accordion.dropdown-accordion
+      .accordion-group
+        %a.collapsed.accordion-toggle{:href => '#node-report-1', :'data-toggle' => 'collapse', :'data-parent' => '#node-report-accordion'}
+          Die Daten stimmen nicht
+        #node-report-1.collapse
+          Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.
+
+      .accordion-group
+        %a.collapsed.accordion-toggle{:href => '#node-report-2', :'data-toggle' => 'collapse', :'data-parent' => '#node-report-accordion'}
+          Der Ort ist falsch makiert
+        #node-report-2.collapse
+          Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.
+
+      .accordion-group
+        %a.collapsed.accordion-toggle{:href => '#node-report-3', :'data-toggle' => 'collapse', :'data-parent' => '#node-report-accordion'}
+          Ich bin mit der Gesamtsituation unzufrieden
+        #node-report-3.collapse
+          Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.
