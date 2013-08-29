@@ -54,3 +54,27 @@ body {
 @include wheelchair(limited, $wheelchair-limited);
 @include wheelchair(no, $wheelchair-no);
 @include wheelchair(unknown, $wheelchair-unknown);
+
+.dropdown-accordion {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none; // display: block on open
+  float: left;
+  min-width: 160px;
+  margin: 2px 0 0;
+  background-color: $dropdownBackground;
+  border: 1px solid $dropdownBorder;
+  z-index: $zindexDropdown;
+  @include border-radius(3px);
+  @include box-shadow(0 5px 10px rgba(0,0,0,.2));
+}
+
+.open > .dropdown-accordion {
+  display: block;
+}
+
+.pull-right > .dropdown-accordion {
+  right: 0;
+  left: auto;
+}

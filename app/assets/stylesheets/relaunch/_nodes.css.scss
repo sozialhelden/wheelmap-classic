@@ -116,8 +116,9 @@ $boderColor: darken($orange-gray, 5%);
 }
 
 #node-edit {
+  padding-bottom: 20px;
+
   .btn {
-    margin-bottom: 20px;
     height: 34px;
     @include buttonBackground(lighten($orange-gray, 5%), darken($orange-gray, 7%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
     font-weight: bold;
@@ -257,6 +258,12 @@ $boderColor: darken($orange-gray, 5%);
     .dropdown-menu {
       width: 100%;
     }
+  }
+}
+
+#node-report {
+  .caret {
+    margin-left: 7px;
   }
 }
 
