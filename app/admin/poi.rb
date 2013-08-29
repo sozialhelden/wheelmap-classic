@@ -23,8 +23,8 @@ ActiveAdmin.register Poi do
       super
     end
 
-    def setup_pagination_for_csv
-      @per_page = 80 if request.format == 'text/csv'
+    def max_csv_records
+      100
     end
 
   end
