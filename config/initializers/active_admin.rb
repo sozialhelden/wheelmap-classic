@@ -148,5 +148,5 @@ ActiveAdmin.setup do |config|
   # config.csv_column_separator = ','
   #
   # Set the CSV builder options (default is {})
-  # config.csv_options = {}
+  config.csv_options = { :force_quotes => true }
 end
