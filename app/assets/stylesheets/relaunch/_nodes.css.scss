@@ -59,10 +59,21 @@ $boderColor: darken($orange-gray, 5%);
     @include clearfix();
     font-size: $fontSizeMini;
     margin-bottom: 10px;
+    opacity: .75;
 
     li {
       float: left;
-      padding-right: $fontSizeMini;
+      padding-right: 3px;
+
+      .icon-angle-right {
+        line-height: 20px;
+        font-size: $fontSizeLarge;
+        float: left;
+      }
+
+      &:first-child .icon-angle-right {
+        display: none;
+      }
     }
   }
 
