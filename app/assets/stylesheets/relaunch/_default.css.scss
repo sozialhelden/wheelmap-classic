@@ -55,6 +55,11 @@ body {
 @include wheelchair(no, $wheelchair-no);
 @include wheelchair(unknown, $wheelchair-unknown);
 
+.dropdown-menu {
+  @include border-radius(3px);
+  @include box-sizing(border-box);
+}
+
 .dropdown-accordion {
   position: absolute;
   top: 100%;

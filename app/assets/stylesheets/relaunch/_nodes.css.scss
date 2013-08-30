@@ -211,9 +211,7 @@ $boderColor: darken($orange-gray, 5%);
   }
 
   .dropdown-menu {
-    @include border-radius(3px);
     @include border-top-radius(0);
-    @include box-sizing(border-box);
 
     a {
       line-height: 25px;
@@ -332,6 +330,38 @@ $boderColor: darken($orange-gray, 5%);
     padding: 7px 10px;
     background: #F4F4F4;
     @include box-shadow(inset 0px 2px 2px 0px rgba($black, 0.10));
+  }
+}
+
+#node-share {
+  .dropdown-menu {
+    font-size: $fontSizeSmall;
+    min-width: 120px;
+    padding: 3px 0;
+  }
+
+  a {
+    padding: 2px 8px;
+
+    &:hover i {
+      color: white;
+    }
+  }
+
+  i {
+    width: 14px;
+  }
+
+  .icon-twitter {
+    color: #00aced;
+  }
+
+  .icon-facebook {
+    color: #3B5998;
+  }
+
+  .icon-envelope-alt {
+    font-size: .9em;
   }
 }
 
