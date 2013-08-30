@@ -1,6 +1,7 @@
 %header#node-header
   %ol.breadcrumbs.unstyled
     = list_of(node_header.breadcrumbs) do |i|
+      %i.icon-angle-right
       = i
   %h1{itemprop: 'name'}= node_header.headline
   - if node_header.address?
