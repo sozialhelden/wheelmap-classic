@@ -2,26 +2,26 @@
   .dropdown.span6
     %h2
       Rollstuhlgerechtigkeit:
-    %a.dropdown-toggle.btn.wheelchair-yes{'data-toggle' => 'dropdown'}
+    %a{'data-toggle' => 'dropdown', 'class' => "dropdown-toggle btn wheelchair-#{@node.wheelchair}"}
       Voll Rollstuhlgerecht
       %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => 'Test', 'data-trigger' => 'hover'}
       %i.icon-caret-down.pull-right
     %ul.dropdown-menu{'role' => 'menu'}
       %li
         %a.popover-wheelchair-yes
-          %span.wm-checkbox.wheelchair-yes.checked
+          %span{'class' => 'wm-checkbox wheelchair-yes ' + (@node.wheelchair == 'yes' ? 'checked' : '')}
             %i.icon-ok
           Voll Rollstuhlgerecht
           %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => 'Test', 'data-trigger' => 'hover'}
       %li
         %a.popover-wheelchair-limited
-          %span.wm-checkbox.wheelchair-limited
+          %span{'class' => 'wm-checkbox wheelchair-limited ' + (@node.wheelchair == 'limited' ? 'checked' : '')}
             %i.icon-ok
           Teilweise Rollstuhlgerecht
           %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => 'Test', 'data-trigger' => 'hover'}
       %li
         %a.popover-wheelchair-no
-          %span.wm-checkbox.wheelchair-no
+          %span{'class' => 'wm-checkbox wheelchair-no ' + (@node.wheelchair == 'no' ? 'checked' : '')}
             %i.icon-ok
           Nicht Rollstuhlgerecht
           %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => 'Test', 'data-trigger' => 'hover'}
