@@ -363,14 +363,26 @@ $boderColor: darken($orange-gray, 5%);
 
 #node-map {
   padding-bottom: 15px;
+  @include clearfix();
 
-  img {
-    border: 1px solid $boderColor;
+  .map {
+    .leaflet-marker-icon {
+      left: 50%;
+      margin-left: -14px;
+      top: 50%;
+      margin-top: -32px;
+    }
+  }
+
+  small {
+    font-size: $fontSizeMini;
+    opacity: .5;
   }
 }
 
 #node-streetview, #node-map {
   img {
     width: 100%;
+    @include box-sizing(border-box);
   }
 }
