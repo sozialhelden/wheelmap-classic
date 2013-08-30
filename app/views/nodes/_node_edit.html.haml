@@ -4,10 +4,24 @@
     %span.visible-desktop.visible-phone
       bearbeiten
 
-  %button.btn
-    %i.icon-share
+  #node-share.btn-group.dropdown
+    %button.dropdown-toggle.btn{:'data-toggle' => 'dropdown'}
+      %i.icon-share
 
-  #node-report.dropdown.pull-right
+    %ul.dropdown-menu{role: 'menu'}
+      %li
+        %a
+          %i.icon-twitter
+          Twitter
+        %a
+          %i.icon-facebook
+          Facebook
+        %a
+          %i.icon-envelope-alt
+          E-Mail
+
+
+  #node-report.btn-group.dropdown.pull-right
     %button.dropdown-toggle.btn{:'data-toggle' => 'dropdown'}
       %i.icon-bolt
       %span.caret
