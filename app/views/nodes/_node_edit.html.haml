@@ -17,12 +17,12 @@
         Gibt es ein Problem mit diesem Ort?
 
         .pull-right
-          %button.btn.btn-mini
-            FAQ
-          %button.btn.btn-mini
+          = link_to('FAQ', 'http://wheelmap.org/about/faqs/', class: 'btn btn-mini', target: '_blank')
+          = link_to('mailto:bugs@wheelmap.org', class: 'btn btn-mini') do
             %i.icon-envelope-alt
+
       .accordion-group
-        %a.collapsed.accordion-toggle{:href => '#node-report-1', :'data-toggle' => 'collapse', :'data-parent' => '#node-report-accordion'}
+        %a.collapsed.accordion-toggle{href: '#node-report-1', :'data-toggle' => 'collapse', :'data-parent' => '#node-report-accordion'}
           Die Daten stimmen nicht
           %i.icon-chevron-up.pull-right
         #node-report-1.collapse
@@ -30,7 +30,7 @@
             Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.
 
       .accordion-group
-        %a.collapsed.accordion-toggle{:href => '#node-report-2', :'data-toggle' => 'collapse', :'data-parent' => '#node-report-accordion'}
+        %a.collapsed.accordion-toggle{href: '#node-report-2', :'data-toggle' => 'collapse', :'data-parent' => '#node-report-accordion'}
           Der Ort ist falsch makiert
           %i.icon-chevron-up.pull-right
         #node-report-2.collapse
@@ -38,7 +38,7 @@
             Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.
 
       .accordion-group
-        %a.collapsed.accordion-toggle{:href => '#node-report-3', :'data-toggle' => 'collapse', :'data-parent' => '#node-report-accordion'}
+        %a.collapsed.accordion-toggle{href: '#node-report-3', :'data-toggle' => 'collapse', 'data-parent' => '#node-report-accordion'}
           Ich bin mit der Gesamtsituation unzufrieden
           %i.icon-chevron-up.pull-right
         #node-report-3.collapse

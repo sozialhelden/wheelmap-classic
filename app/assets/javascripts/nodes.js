@@ -34,7 +34,7 @@
 
   $(document)
     // Don't close dropdown when accordion togglers are clicked
-    .on('click.dropdown', '[data-toggle="collapse"], button', function(e) { e.stopPropagation(); })
+    .on('click.dropdown', '[data-toggle="collapse"]', function(e) { e.stopPropagation(); })
     // Close all collapse elements, if dropdown was closed
     .on('click.dropdown', '[data-toggle="dropdown"]', function(e) {
       var $parent = $(this).parent('.dropdown');
@@ -54,4 +54,7 @@
 
     $trigger[e.type == 'show' ? 'removeClass' : 'addClass']('collapsed');
   });
+
+  // Keep the report dropdown open
+  $('#node-report-accordion').find('.btn').click(function(e) { e.stopPropagation(); })
 })(jQuery);

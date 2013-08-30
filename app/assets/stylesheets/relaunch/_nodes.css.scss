@@ -303,8 +303,8 @@ $boderColor: darken($orange-gray, 5%);
 
     .btn {
       @include buttonBackground(#828282, #535353, #D2D2D2);
-      line-height: 1em;
-      height: 22px;
+      line-height: 20px;
+      height: 20px;
       vertical-align: middle;
       border-color: #393939;
     }
