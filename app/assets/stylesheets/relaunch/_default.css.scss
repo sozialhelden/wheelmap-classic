@@ -61,13 +61,14 @@ body {
   left: 0;
   display: none; // display: block on open
   float: left;
-  min-width: 160px;
+  min-width: 200px;
   margin: 2px 0 0;
   background-color: $dropdownBackground;
   border: 1px solid $dropdownBorder;
   z-index: $zindexDropdown;
   @include border-radius(3px);
   @include box-shadow(0 5px 10px rgba(0,0,0,.2));
+  @include box-sizing(border-box);
 }
 
 .open > .dropdown-accordion {

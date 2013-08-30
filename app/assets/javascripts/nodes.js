@@ -32,15 +32,12 @@
     }
   });
 
-
-
   $(document)
     // Don't close dropdown when accordion togglers are clicked
-    .on('click.dropdown', '[data-toggle="collapse"]', function(e) { e.stopPropagation(); })
+    .on('click.dropdown', '[data-toggle="collapse"], button', function(e) { e.stopPropagation(); })
     // Close all collapse elements, if dropdown was closed
     .on('click.dropdown', '[data-toggle="dropdown"]', function(e) {
-      var $parent = $(this).parent('.dropdown'),
-        $collapse;
+      var $parent = $(this).parent('.dropdown');
 
       if (!$parent.hasClass('open')) {
         $parent.find('.collapse.in').collapse('hide').each(function() {
@@ -49,4 +46,12 @@
         });
       }
     });
+
+  // Fix bug where collapsed class is not added
+  $('.collapse').on('show hide', function(e) {
+    var id = '#' + $(this).attr('id'),
+      $trigger = $('[data-parent="' + id + '"], [href="' + id + '"]');
+
+    $trigger[e.type == 'show' ? 'removeClass' : 'addClass']('collapsed');
+  });
 })(jQuery);
