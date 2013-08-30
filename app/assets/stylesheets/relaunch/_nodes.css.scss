@@ -330,6 +330,7 @@ $boderColor: darken($orange-gray, 5%);
     padding: 7px 10px;
     background: #F4F4F4;
     @include box-shadow(inset 0px 2px 2px 0px rgba($black, 0.10));
+    white-space: normal;
   }
 }
 
