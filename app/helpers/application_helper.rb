@@ -118,4 +118,24 @@ module ApplicationHelper
       "http://wheelmap.org/newsletter-2/"
     end
   end
+
+  def mailme_to(email_address, name = nil, html_options = {}, &block)
+
+    raise "mailme_to: Use native mail_to method with Rails 4.0 and later." if Rails.version.starts_with?("4.")
+
+    email_address = ERB::Util.html_escape(email_address)
+
+    html_options, name = name, nil if block_given?
+    html_options = (html_options || {}).stringify_keys
+
+    extras = %w{ cc bcc body subject }.map { |item|
+     option = html_options.delete(item) || next
+     "#{item}=#{Rack::Utils.escape_path(option)}"
+    }.compact
+    extras = extras.empty? ? '' : '?' + ERB::Util.html_escape(extras.join('&'))
+
+    html_options["href"] = "mailto:#{email_address}#{extras}".html_safe
+
+    content_tag(:a, name || email_address.html_safe, html_options, &block)
+  end
 end
