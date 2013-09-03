@@ -54,4 +54,6 @@
           %i.icon-facebook
           Facebook
       %li
-        =mail_to(nil, content_tag(:i, '', class: 'icon-envelope-alt') + ' E-Mail', body: t('nodes.show.share.text', name: node_edit.name) + " (#{request.url})")
+        =mailme_to(nil, body: t('nodes.show.share.text', name: node_edit.name) + " (#{request.url})") do
+          %i.icon-envelope-alt
+          E-Mail
