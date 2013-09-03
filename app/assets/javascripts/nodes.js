@@ -57,4 +57,17 @@
 
   // Keep the report dropdown open
   $('#node-report-accordion').find('.btn').click(function(e) { e.stopPropagation(); })
+
+  $('#custom-tweet-button').click(function(event) {
+    var windowWidth = 600,
+        windowHeight = 400,
+        windowLeft, windowTop;
+
+    event.preventDefault();
+
+    windowLeft = (screen.width / 2) - (windowWidth / 2);
+    windowTop = (screen.height / 2) - (windowHeight / 2);
+
+    window.open(this.href, 'twitter_share', 'width=' + windowWidth + ',height=' + windowHeight + ',left=' + windowLeft + ',top=' + windowTop);
+  });
 })(jQuery);
