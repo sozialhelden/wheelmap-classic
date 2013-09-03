@@ -6,7 +6,7 @@ en:
       choose_language: "Choose language"
       contact: Contact
       map: Map
-      projects: "Get engaged"
+      projects: Projects
     toolbar:
       categories: Categories
   home:
@@ -23,6 +23,11 @@ en:
       form:
         legend: "Location of the place"
         location: "Please click on the map and place the marker at the exact position."
+    show:
+      share:
+        twitter: Twitter
+        facebook: Facebook
+        text: "I've found this place on Wheelmap.org: %{name}"
   search:
     index:
       no-results:
