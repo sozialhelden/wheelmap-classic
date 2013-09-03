@@ -8,8 +8,7 @@
       %header
         .pull-right
           = link_to('FAQ', 'http://wheelmap.org/about/faqs/', class: 'btn btn-mini', target: '_blank')
-          = link_to('mailto:bugs@wheelmap.org', class: 'btn btn-mini') do
-            %i.icon-envelope-alt
+          = mail_to('bugs@wheelmap.org', content_tag(:i, '', class: 'icon-envelope-alt'), class: 'btn btn-mini', encode: 'javascript')
         Gibt es ein Problem mit diesem Ort?
 
       .accordion-group
