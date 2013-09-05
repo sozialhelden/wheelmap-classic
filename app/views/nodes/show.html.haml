@@ -16,5 +16,5 @@
 
 
 - content_for :meta do
-  = render_og_metadata(title: @node.name, street_address: render_street(@node), postal_code: @node.postcode, locality: @node.city, phone_number: @node.phone, website: @node.website)
+  = render_og_metadata(title: @node.name, type: 'place', street_address: render_street(@node), postal_code: @node.postcode, locality: @node.city, phone_number: @node.phone, website: @node.website, updated_time: @node.update_at.to_i)
   = render_og_locationdata(latitude: @node.lat, longitude: @node.lon)
