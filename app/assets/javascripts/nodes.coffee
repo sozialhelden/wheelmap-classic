@@ -10,7 +10,8 @@
 #= require bootstrap-popover
 #= require bootstrap-select
 #
-#= require flash.js
+#= require flash
+#= require dropzone
 
 $container = $("#node")
 switchPlacement = 200
@@ -56,3 +57,33 @@ $('[data-toggle="share"]').click (e) ->
 
   e.preventDefault()
   openSharePopup this.href, data.name, data.width, data.height
+
+
+$dropzone = $('#node-photo-dropzone');
+$dropzoneClickable = $dropzone.find('[data-toggle="dropzone"]')
+
+if $dropzoneClickable.length > 0
+  $dropzonePreviewContainer = $dropzone.find('ul')
+  $dropzoneAlert = $dropzone.find('.alert');
+
+  new Dropzone $dropzone[0],
+    previewsContainer: $dropzonePreviewContainer[0]
+    clickable: $dropzoneClickable.toArray()
+    acceptedFiles: 'image/*'
+    maxFilesize: 1 #MB
+    thumbnailWidth: 180
+    thumbnailHeight: 180
+    previewTemplate: '<li class="dz-preview-file"><a data-full-image-link><img class="img-polaroid" data-dz-thumbnail /><span class="uploadprogress" data-dz-uploadprogress /></a></li>'
+    addedfile: (file) ->
+      $previewTemplate = $(@.options.previewTemplate)
+      $dropzoneClickable.closest('li').before($previewTemplate);
+
+      file.previewElement = $previewTemplate[0]
+    complete: (file) ->
+      # Add some how the link to the uploaded image (API?) for displaying it in the gallery (search for elements with [data-full-image-link])
+    error: (file, message) ->
+      $dropzone.addClass('error')
+      $dropzoneAlert.text(file.name + ': ' + message);
+
+  $dropzoneClickable.click (e) ->
+    e.preventDefault()

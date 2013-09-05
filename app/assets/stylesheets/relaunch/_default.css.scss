@@ -56,7 +56,7 @@ body {
 @include wheelchair(unknown, $wheelchair-unknown);
 
 .dropdown-menu {
-  @include border-radius(3px);
+  @include border-radius($borderRadiusSmall);
   @include box-sizing(border-box);
 }
 
