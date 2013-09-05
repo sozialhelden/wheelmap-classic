@@ -25,7 +25,7 @@
   - RELEASE_INFO.each do |k,v|
     %meta{:name => k, :content => v}
 
-  =render_og_metadata(:type => 'website', :title => "Wheelmap.org", :url => root_url, :description => t('header.title'), :image => image_path("bg_logo.png"), :locale => I18n.locale)
+  =render_og_metadata(:type => 'website', :title => "Wheelmap.org", :url => request.url, :description => t('header.title'), :image => image_path("bg_logo.png"), :locale => I18n.locale, :'locale:alternate' => (I18n.available_locales - [I18n.locale]))
 
   - if Rails.env.production?
     %meta{:name => 'robots', :content => 'follow index'}

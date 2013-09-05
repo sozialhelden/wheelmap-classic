@@ -14,3 +14,7 @@
       = render partial: 'node_data', object: @node
       = render partial: 'node_similar', object: @node
 
+
+- content_for :meta do
+  = render_og_metadata(title: @node.name, street_address: render_street(@node), postal_code: @node.postcode, locality: @node.city, phone_number: @node.phone, website: @node.website)
+  = render_og_locationdata(latitude: @node.lat, longitude: @node.lon)
