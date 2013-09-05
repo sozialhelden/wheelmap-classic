@@ -6,7 +6,8 @@ module ApplicationHelper
     html = ''
     options.reverse_merge({
       :site_name => 'Wheelmap.org',
-      :type => 'website'
+      :type => 'website',
+      :url => request.url
     }).reject{|key,value|
       value.blank?
     }.each{|key, value|
