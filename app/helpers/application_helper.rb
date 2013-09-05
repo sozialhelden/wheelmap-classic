@@ -5,7 +5,8 @@ module ApplicationHelper
   def render_og_metadata(options = {})
     html = ''
     options.reverse_merge({
-      :site_name => 'wheelmap.org'
+      :site_name => 'Wheelmap.org',
+      :type => 'website'
     }).reject{|key,value|
       value.blank?
     }.each{|key, value|
