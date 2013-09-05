@@ -1,24 +1,16 @@
 %section#node-photos
   %h2
     Fotos von diesem Ort:
-  =form_tag(nil, { id: 'node-photo-dropzone' }) do
+  =semantic_form_for([@node, Photo.new], url: node_photos_url(@node), html: { id: 'node-photo-dropzone', multipart: true }) do |form|
     #node-photo-dropzone-error.alert.alert-error
     %ul
-      -# = list_of(node_photos.photos.reject{|photo| photo.new_record?}) do |photo|
-        = link_to_photo photo
-      %li
-        = link_to image_path('overlay-bsp_green.png'), :'data-toggle' => "lightbox" do
-          = image_tag('overlay-bsp_green.png', class: 'img-polaroid')
-      %li
-        = link_to image_path('overlay-bsp_orange.png') do
-          = image_tag('overlay-bsp_orange.png', class: 'img-polaroid')
-      %li
-        = link_to image_path('overlay-bsp_red.png') do
-          = image_tag('overlay-bsp_red.png', class: 'img-polaroid')
-      %li
-        = link_to image_path('overlay-bsp_grey.png') do
-          = image_tag('overlay-bsp_grey.png', class: 'img-polaroid')
+      = list_of(node_photos.photos.reject{|photo| photo.new_record?}) do |photo|
+        = link_to image_path(photo.image.url(:gallery).to_s), :'data-toggle' => "lightbox" do
+          = image_tag photo.image.url(:gallery_preview), class: 'img-polaroid', width: 180, height: 180
       %li.clickable
-        = link_to (user_signed_in? ? (current_user.terms? ? nil : terms_path) : new_user_session_path), :'data-toggle' => user_signed_in? && current_user.terms? ? 'dropzone' : '' do
+        = link_to (user_signed_in? ? (current_user.terms? ? nil : terms_path) : new_user_session_path), class: 'add', :'data-toggle' => user_signed_in? && current_user.terms? ? 'dropzone' : '' do
           %i.icon-camera
-          = t('nodes.show.link.upload')
+          hinzufügen
+        = link_to nil, class: 'upload wheelchair-yes fade' do
+          %i.icon-cloud-upload
+          hochladen
