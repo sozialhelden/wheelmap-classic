@@ -374,7 +374,6 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
 #node-photos {
   border-bottom: 1px solid $boder_color;
   background-color: lighten($orange-gray, 10%);
-  padding-bottom: 0 !important;
 
   img {
     @include box-sizing(border-box);
@@ -387,6 +386,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     list-style: none;
     margin: 0;
     margin-left: -$node-photos-gutter;
+    margin-bottom: -$node-photos-gutter;
   }
 
   li {
@@ -427,33 +427,36 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
       @include border-radius($borderRadiusSmall);
       @include transition-property(all);
       @include transition-duration(0.1s);
-      @include text-shadow(0 1px rgba($white, 0.75));
-      border: 1px solid darken($orange-gray, 10%);
+      @include text-shadow(0 1px rgba($white, 0.5));
       position: absolute;
       display: block;
       top: 0;
       bottom: 0;
-      color: darken($orange-gray, 25%);
-      background-color: lighten($orange-gray, 5%);
       text-align: center;
       padding-top: 50%;
-      opacity: 0.6;
       font-weight: bold;
 
-      &:hover {
-        opacity: 1;
-      }
-
-      &:active {
-        @include box-shadow(inset 0 3px 3px rgba(darken($orange-gray, 5%), 0.75));
-      }
-
-      .icon-camera {
+      i[class^="icon"] {
         font-size: 2em;
         margin: 0 auto;
         margin-top: -.75em;
 
         display: block;
+      }
+
+      &.add {
+        border: 1px solid darken($orange-gray, 10%);
+        color: darken($orange-gray, 25%);
+        background-color: lighten($orange-gray, 5%);
+      }
+
+      &.upload {
+        color: darken($wheelchair-yes, 40%);
+        display: none;
+
+        &.in {
+          display: block;
+        }
       }
     }
 
