@@ -2,7 +2,7 @@
   %h2
     Karte:
   .map
-    = image_tag("http://api.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/#{node_map.lon},#{node_map.lat},17/359x239.png64", class: 'img-polaroid')
+    = image_tag("http://api.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/#{node_map.lon},#{node_map.lat},17/359x239.png64", class: 'img-polaroid', width: 359, height: 239)
     %div{class: "leaflet-marker-icon public_transfer #{@node.wheelchair}"}
       .icon{id: @node.icon}
   %small.pull-right.bottom="License: ODbL OpenStreetMap"
