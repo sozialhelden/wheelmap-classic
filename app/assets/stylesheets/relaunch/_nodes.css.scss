@@ -1,6 +1,10 @@
 @import "bootstrap/mixins";
 
-$boderColor: darken($orange-gray, 5%);
+$boder_color: darken($orange-gray, 5%);
+
+$node-photos-gutter: 2.25%;
+$node-photos-columns: 4;
+$node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-photos-columns;
 
 #node {
   background-color: $white;
@@ -97,7 +101,7 @@ $boderColor: darken($orange-gray, 5%);
 #node-aside {
   padding: 15px;
   background-color: lighten($orange-gray, 7%);
-  border-left: 1px solid $boderColor;
+  border-left: 1px solid $boder_color;
   // Hack for having a full height sidebar
   padding-bottom: 10000px;
   margin-bottom: -10000px;
@@ -170,7 +174,7 @@ $boderColor: darken($orange-gray, 5%);
   padding-top: 0 !important;
   background-color: lighten($orange-gray, 1%);
   @include box-sizing(border-box);
-  border-bottom: 1px solid $boderColor;
+  border-bottom: 1px solid $boder_color;
 
   h2 {
     margin-top: 15px;
@@ -368,10 +372,9 @@ $boderColor: darken($orange-gray, 5%);
 }
 
 #node-photos {
-  $node-photos-grid-gutter: 2.25%;
-
-  border-bottom: 1px solid $boderColor;
+  border-bottom: 1px solid $boder_color;
   background-color: lighten($orange-gray, 10%);
+  padding-bottom: 0 !important;
 
   img {
     @include box-sizing(border-box);
@@ -379,7 +382,107 @@ $boderColor: darken($orange-gray, 5%);
     background-color: $white;
   }
 
-  @include grid-fluid((100% - $node-photos-grid-gutter * ($gridColumns - 1)) / $gridColumns, $node-photos-grid-gutter);
+  ul {
+    @include clearfix();
+    list-style: none;
+    margin: 0;
+    margin-left: -$node-photos-gutter;
+  }
+
+  li {
+    @include box-sizing(border-box);
+    float: left;
+    width: $node-photos-width;
+    margin: 0 0 $node-photos-gutter $node-photos-gutter;
+  }
+}
+
+#node-photo-dropzone {
+  margin: 0;
+
+  li {
+    a {
+      background-color: $white;
+      position: relative;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    img {
+      background-color: transparent;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .clickable {
+    position: relative;
+    // Needed for height = width
+    height: 0;
+    padding-bottom: $node-photos-width;
+
+    a {
+      @include box-sizing(border-box);
+      @include border-radius($borderRadiusSmall);
+      @include transition-property(all);
+      @include transition-duration(0.1s);
+      @include text-shadow(0 1px rgba($white, 0.75));
+      border: 1px solid darken($orange-gray, 10%);
+      position: absolute;
+      display: block;
+      top: 0;
+      bottom: 0;
+      color: darken($orange-gray, 25%);
+      background-color: lighten($orange-gray, 5%);
+      text-align: center;
+      padding-top: 50%;
+      opacity: 0.6;
+      font-weight: bold;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:active {
+        @include box-shadow(inset 0 3px 3px rgba(darken($orange-gray, 5%), 0.75));
+      }
+
+      .icon-camera {
+        font-size: 2em;
+        margin: 0 auto;
+        margin-top: -.75em;
+
+        display: block;
+      }
+    }
+
+    @media(max-width: 580px), (min-width: 768px) and (max-width: 979px) {
+      a {
+        font-size: $fontSizeSmall;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .uploadprogress {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $wheelchair-yes;
+  }
+
+  .alert {
+    display: none;
+  }
+
+  &.error {
+    .alert {
+      display: block;
+    }
+  }
 }
 
 #node-note {
