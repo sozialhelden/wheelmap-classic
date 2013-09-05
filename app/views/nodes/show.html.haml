@@ -14,7 +14,6 @@
       = render partial: 'node_data', object: @node
       = render partial: 'node_similar', object: @node
 
-
 - content_for :meta do
-  = render_og_metadata(title: @node.name, type: 'place', street_address: render_street(@node), postal_code: @node.postcode, locality: @node.city, phone_number: @node.phone, website: @node.website, updated_time: @node.updated_at.to_i, url: node_url(@node))
+  = render_og_metadata(title: @node.name, :description => t('header.title'), type: 'place', street_address: render_street(@node), postal_code: @node.postcode, locality: @node.city, phone_number: @node.phone, website: @node.website, updated_time: @node.updated_at.to_i, url: node_url(@node), :locale => I18n.locale, :'locale:alternate' => (I18n.available_locales - [I18n.locale]), image: image_path("bg_logo.png"))
   = render_og_locationdata(latitude: @node.lat, longitude: @node.lon)
