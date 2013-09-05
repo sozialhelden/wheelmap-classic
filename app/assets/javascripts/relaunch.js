@@ -17,6 +17,7 @@
 //= require bootstrap-modal
 //= require bootstrap-tooltip
 //= require bootstrap-popover
+//= require bootstrap-alert
 //= require bootstrap-select
 //
 //= require flash.js

@@ -2,7 +2,6 @@
   %h2
     Fotos von diesem Ort:
   =semantic_form_for([@node, Photo.new], url: node_photos_url(@node), html: { id: 'node-photo-dropzone', multipart: true }) do |form|
-    #node-photo-dropzone-error.alert.alert-error
     %ul
       = list_of(node_photos.photos.reject{|photo| photo.new_record?}) do |photo|
         = link_to image_path(photo.image.url(:gallery).to_s), :'data-toggle' => "lightbox" do

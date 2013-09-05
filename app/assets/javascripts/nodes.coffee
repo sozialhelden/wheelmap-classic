@@ -8,6 +8,7 @@
 #= require bootstrap-modal
 #= require bootstrap-tooltip
 #= require bootstrap-popover
+#= require bootstrap-alert
 #= require bootstrap-select
 #
 #= require flash
@@ -63,42 +64,41 @@ $('[data-toggle="share"]').click (e) ->
 $dropzone = $('#node-photo-dropzone');
 $dropzoneClickable = $dropzone.find('[data-toggle="dropzone"]')
 
+createErrorElement = () ->
+  $('<div class="alert alert-error fade in"><a class="close" data-dismiss="alert">&times;</a></div>').prependTo($dropzone)
+
 if $dropzoneClickable.length > 0
   $dropzonePreviewContainer = $dropzone.find('ul')
-  $dropzoneAlert = $dropzone.find('.alert')
-  $dropzoneSubmit = $dropzone.find('a.upload')
 
-  dropzone = new Dropzone $dropzone[0],
+  new Dropzone $dropzone[0],
     previewsContainer: $dropzonePreviewContainer[0]
     clickable: $dropzoneClickable.toArray()
     acceptedFiles: 'image/*'
     maxFilesize: 1 #MB
     thumbnailWidth: 180
     thumbnailHeight: 180
-    previewTemplate: '<li class="dz-preview-file"><a data-full-image-link><img class="img-polaroid" data-dz-thumbnail /><span class="uploadprogress fade in" data-dz-uploadprogress /></a></li>',
-    autoProcessQueue: false
+    previewTemplate: '<li class="dz-preview-file fade"><a data-full-image-link><img class="img-polaroid" data-dz-thumbnail /><span class="uploadprogress fade in" data-dz-uploadprogress /></a></li>',
     paramName: 'photo[image]'
-    init: () ->
-      $dropzoneSubmit.click (e) ->
-        dropzone.processQueue()
     addedfile: (file) ->
-      $previewTemplate = $(@.options.previewTemplate)
-      $dropzoneClickable.closest('li').before($previewTemplate)
-      $dropzoneSubmit.addClass('in')
+      $previewElement = $(@.options.previewTemplate)
+      $dropzoneClickable.closest('li').before($previewElement)
+      $previewElement.addClass('in');
 
-      file.previewElement = $previewTemplate[0]
+      file.previewElement = $previewElement[0]
     complete: (file) ->
-      $dropzoneSubmit.removeClass('in')
       $(file.previewElement).find('[data-dz-uploadprogress]').removeClass('in')
       # Add some how the link to the uploaded image (API?) for displaying it in the gallery (search for elements with [data-full-image-link])
     error: (file, message) ->
-      $dropzone.addClass('error')
-      $dropzoneAlert.text(file.name + ': ' + message)
+      $previewElement = $(file.previewElement);
 
-      $(file.previewElement).remove()
+      $errorElement = createErrorElement().append('<strong>' + file.name + ':</strong> ' + message)
+
+      $errorElement.on 'close', () ->
+        $previewElement.removeClass('in')
+      $errorElement.on 'closed', () ->
+        $previewElement.remove()
+
+      $previewElement.addClass('error')
 
   $dropzoneClickable.click (e) ->
-    e.preventDefault()
-
-  $dropzoneSubmit.click (e) ->
     e.preventDefault()
