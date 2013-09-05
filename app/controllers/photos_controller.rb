@@ -18,7 +18,7 @@ class PhotosController < ApplicationController
     @photo.save!
 
     respond_to do |wants|
-      wants.json{ render status: 200, json: { url: @photo.image } }
+      wants.json{ render status: 200, json: { url: @photo.image.url } }
     end
   end
 
