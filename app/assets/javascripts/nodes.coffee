@@ -85,9 +85,11 @@ if $dropzoneClickable.length > 0
       $previewElement.addClass('in');
 
       file.previewElement = $previewElement[0]
-    complete: (file) ->
-      $(file.previewElement).find('[data-dz-uploadprogress]').removeClass('in')
-      # Add some how the link to the uploaded image (API?) for displaying it in the gallery (search for elements with [data-full-image-link])
+    success: (file, response) ->
+      $previewElement = $(file.previewElement);
+
+      $previewElement.find('[data-dz-uploadprogress]').removeClass('in')
+      $previewElement.find('[data-full-image-link]').attr('href', response.url);
     error: (file, message) ->
       $previewElement = $(file.previewElement);
 
