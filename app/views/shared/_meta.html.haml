@@ -8,7 +8,7 @@
   - if Rails.application.assets.find_asset "wm_logo_#{I18n.locale}.png"
     =render_og_metadata(:type => 'website', :title => "Wheelmap.org", :url => root_url, :description => t('header.title'), :image => image_path("wm_logo_#{I18n.locale}.png"), :locale => I18n.locale)
   - else
-    =render_og_metadata(:url => request.url, :description => t('header.title'), :image => image_path("wm_logo_en.png"), :locale => I18n.locale, :'locale:alternate' => (I18n.available_locales - [I18n.locale]))
+    =render_og_metadata(:description => t('header.title'), :image => image_path("wm_logo_en.png"), :locale => I18n.locale, :'locale:alternate' => (I18n.available_locales - [I18n.locale]))
 
   - unless Rails.env.production?
     %meta{:name => 'robots', :content => 'noindex, nofollow'}
