@@ -12,19 +12,19 @@
           %span{'class' => 'wm-checkbox wheelchair-yes ' + (@node.wheelchair == 'yes' ? 'checked' : '')}
             %i.icon-ok
           = t("home.index.popup.form.yes")
-          %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => 'Test', 'data-trigger' => 'hover'}
+          %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => t('wheelmap.what_is.fully_accessible'), 'data-trigger' => 'hover'}
       %li
         %a.popover-wheelchair-limited
           %span{'class' => 'wm-checkbox wheelchair-limited ' + (@node.wheelchair == 'limited' ? 'checked' : '')}
             %i.icon-ok
           = t("home.index.popup.form.limited")
-          %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => 'Test', 'data-trigger' => 'hover'}
+          %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => t('wheelmap.what_is.limited_accessible'), 'data-trigger' => 'hover'}
       %li
         %a.popover-wheelchair-no
           %span{'class' => 'wm-checkbox wheelchair-no ' + (@node.wheelchair == 'no' ? 'checked' : '')}
             %i.icon-ok
           = t("home.index.popup.form.no")
-          %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => 'Test', 'data-trigger' => 'hover'}
+          %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => t('wheelmap.what_is.not_accessible'), 'data-trigger' => 'hover'}
 
   .dropdown.span6
     %h2
