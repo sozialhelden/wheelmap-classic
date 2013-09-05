@@ -82,15 +82,12 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 
   .close {
-    @include appearance(none);
-    background: none;
-    border: none;
     color: $grayLighter;
     position: absolute;
     top: 5px;
     right: 15px;
     padding: 5px;
-    @include transition-property(color);
+    font-weight: normal;
   }
 
   .close:hover {
@@ -394,6 +391,12 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     float: left;
     width: $node-photos-width;
     margin: 0 0 $node-photos-gutter $node-photos-gutter;
+    background-color: $white;
+
+    &.error img {
+      border-color: $errorText;
+      background-color: $errorBackground;
+    }
   }
 }
 
@@ -402,7 +405,6 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
 
   li {
     a {
-      background-color: $white;
       position: relative;
       display: block;
       height: 100%;
@@ -478,13 +480,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 
   .alert {
-    display: none;
-  }
-
-  &.error {
-    .alert {
-      display: block;
-    }
+    margin-bottom: 15px;
   }
 }
 
