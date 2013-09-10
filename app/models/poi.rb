@@ -240,6 +240,18 @@ class Poi < ActiveRecord::Base
     nil
   end
 
+  def node_type_name
+    node_type.try(:name)
+  end
+
+  def category_name
+    category.try(:name)
+  end
+
+  def region_name
+    region.try(:name)
+  end
+
 
   def name
     tags['name']
