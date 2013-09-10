@@ -1,7 +1,6 @@
 %section#node-status.row-fluid
   .dropdown.span6
-    %h2
-      Rollstuhlgerechtigkeit:
+    %h2=t('.wheelchair_accessibility')
     %a{'data-toggle' => 'dropdown', 'class' => "dropdown-toggle btn wheelchair-#{@node.wheelchair}"}
       = t("home.index.popup.form.#{@node.wheelchair}")
       %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => 'Test', 'data-trigger' => 'hover'}
@@ -27,8 +26,7 @@
           %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => t('wheelmap.what_is.not_accessible'), 'data-trigger' => 'hover'}
 
   .dropdown.span6
-    %h2
-      Rollstuhlgerechtes WC:
+    %h2=t('.accessible_toilet')
     %a.dropdown-toggle.btn.wheelchair-yes{'data-toggle' => 'dropdown'}
       WC rollstuhlgerecht
       %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => 'Test', 'data-trigger' => 'hover'}

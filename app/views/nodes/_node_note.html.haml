@@ -1,7 +1,5 @@
 - if node_note.tags['note']
   %section#node-note
-    %h2
-      Nutzerkommentar:
-
+    %h2=t('.comment')
     %p
       = node_note.tags['note']
