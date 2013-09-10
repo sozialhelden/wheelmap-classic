@@ -1,6 +1,5 @@
 %section#node-photos
-  %h2
-    Fotos von diesem Ort:
+  %h2=t('.photos_of_this_place')
   =semantic_form_for([@node, Photo.new], url: node_photos_url(@node), html: { id: 'node-photo-dropzone', multipart: true }) do |form|
     %ul
       = list_of(node_photos.photos.reject{|photo| photo.new_record?}) do |photo|
@@ -9,7 +8,7 @@
       %li.clickable
         = link_to (user_signed_in? ? (current_user.terms? ? nil : terms_path) : new_user_session_path), class: 'add', :'data-toggle' => user_signed_in? && current_user.terms? ? 'dropzone' : '' do
           %i.icon-camera
-          hinzufügen
+          =t('.add')
         = link_to nil, class: 'upload wheelchair-yes fade' do
           %i.icon-cloud-upload
-          hochladen
+          =t('.upload')

@@ -1,8 +1,6 @@
 - if (similar_pois = node_similar.sorted_similar_pois[0..5]).length > 0
   %section#node-similar-locations
-    %h2
-      = "Ähnliche Orte: " + t("poi.name.#{node_similar.category.identifier}.#{node_similar.node_type.identifier}")
-
+    %h2=t('.similar', name: node_similar.node_type.name)
     %ul.unstyled
       - similar_pois.each do |s|
         %li

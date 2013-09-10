@@ -2,16 +2,14 @@
   - if node_data.address? || node_data.tags['phone'] || node_data.tags['email'] || node_data.tags['website']
     %address
       - if node_data.address?
-        %h2
-          Adresse:
+        %h2=t('.address')
         %ul.unstyled
           %li
             %i.icon-map-marker
             = node_data.address
 
       - if node_data.tags['phone'] || node_data.tags['email'] || node_data.tags['website']
-        %h2
-          Kontaktdaten:
+        %h2=t('.contact_details')
         %ul.unstyled
           - if node_data.tags['phone']
             %li

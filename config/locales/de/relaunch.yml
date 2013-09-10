@@ -22,6 +22,26 @@ de:
       form:
         legend: "Lage des Ortes"
         location: "Bitte klicke auf der Karte an die Stelle, wo sich der Ort befindet!"
+    node_data:
+      address: "Adresse:"
+      contact_details: "Kontaktdaten:"
+    node_edit:
+      edit: "Bearbeiten"
+    node_map:
+      map: "Karte:"
+    node_note:
+      comment: "Nutzerkommentar:"
+    node_photos:
+      add: "hinzufügen"
+      photos_of_this_place: "Fotos von diesem Ort:"
+      upload: "hochladen"
+    node_similar:
+      similar: "Ähnliche Orte: %{name}"
+    node_status:
+      wheelchair_accessibility: "Rollstuhlgerechtigkeit:"
+      accessible_toilet: "Rollstuhlgerechtes WC:"
+    node_streetview:
+      streetview: "Strassenansicht:"
     show:
       share:
         twitter: Twitter

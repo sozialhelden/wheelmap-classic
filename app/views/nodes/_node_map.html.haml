@@ -1,6 +1,5 @@
 %section#node-map
-  %h2
-    Karte:
+  %h2=t('.map')
   .map
     = image_tag("http://api.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/#{node_map.lon},#{node_map.lat},17/359x239.png64", class: 'img-polaroid', width: 359, height: 239)
     %div{class: "leaflet-marker-icon public_transfer #{@node.wheelchair}"}
