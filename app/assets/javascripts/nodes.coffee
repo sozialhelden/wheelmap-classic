@@ -74,7 +74,7 @@ if $dropzoneClickable.length > 0
     previewsContainer: $dropzonePreviewContainer[0]
     clickable: $dropzoneClickable.toArray()
     acceptedFiles: 'image/*'
-    maxFilesize: 1 #MB
+    maxFilesize: 6 #MB
     thumbnailWidth: 180
     thumbnailHeight: 180
     previewTemplate: '<li class="dz-preview-file fade"><a data-full-image-link><img class="img-polaroid" data-dz-thumbnail /><span class="uploadprogress fade in" data-dz-uploadprogress /></a></li>',
