@@ -131,7 +131,6 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   padding-bottom: 20px;
 
   .btn {
-    height: 34px;
     @include buttonBackground(lighten($orange-gray, 5%), darken($orange-gray, 7%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
     font-weight: bold;
   }
