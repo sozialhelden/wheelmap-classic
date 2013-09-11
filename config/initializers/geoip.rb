@@ -1,9 +1,13 @@
 require 'geoip'
 
 class GeoCache
-  
+
   cattr_reader :geo_lite_city
-  @@geo_lite_city = GeoIP.new('tmp/GeoLiteCity.dat') rescue nil
+  if Rails.env.development?
+    @@geo_lite_city = GeoIP.new('tmp/GeoLiteCity.dat') rescue nil
+  else
+    @@geo_lite_city = GeoIP.new('/usr/share/GeoIP/GeoLiteCity.dat') rescue nil
+  end
 
   def self.latlon(ip_address)
     res = geo_lite_city.city(ip_address) rescue nil
