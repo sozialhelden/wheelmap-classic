@@ -5,6 +5,7 @@ class NodesController < ApplicationController
   include ActionView::Helpers::AssetTagHelper
   include NewRelic::Agent::MethodTracer
 
+  layout :determine_layout
 
   skip_before_filter :verify_authenticity_token
 
@@ -119,6 +120,15 @@ class NodesController < ApplicationController
 
   # Before filter
   protected
+
+  def determine_layout
+    case action_name
+    when "edit"
+      "legacy"
+    else
+      "nodes"
+    end
+  end
 
   def load_and_instantiate_nodes
     @places
