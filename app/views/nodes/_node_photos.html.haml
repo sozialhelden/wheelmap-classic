@@ -6,6 +6,7 @@
         = link_to image_path(photo.image.url(:gallery).to_s), :'data-toggle' => "lightbox" do
           = image_tag photo.image.url(:gallery_preview), class: 'img-polaroid', width: 180, height: 180
       %li.clickable
+        = form.file_field :image, :rel => node_photos_path(@node)
         = link_to (user_signed_in? ? (current_user.terms? ? nil : terms_path) : new_user_session_path), class: 'add', :'data-toggle' => user_signed_in? && current_user.terms? ? 'dropzone' : '' do
           %i.icon-camera
           =t('.add')

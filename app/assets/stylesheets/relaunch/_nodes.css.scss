@@ -446,12 +446,14 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
       }
 
       &.add {
+        z-index: 1;
         border: 1px solid darken($orange-gray, 10%);
         color: darken($orange-gray, 25%);
         background-color: lighten($orange-gray, 5%);
       }
 
       &.upload {
+        z-index: 3;
         color: darken($wheelchair-yes, 40%);
         display: none;
 
@@ -466,6 +468,19 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
         font-size: $fontSizeSmall;
         font-weight: normal;
       }
+    }
+
+    // Fallback
+    input[type="file"] {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 2;
+      display: none;
+      top: 0;
+      bottom: 0;
+      @include opacity(0);
+      cursor: pointer;
     }
   }
 

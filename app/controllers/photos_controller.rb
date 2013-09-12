@@ -19,6 +19,7 @@ class PhotosController < ApplicationController
 
     respond_to do |wants|
       wants.json{ render status: 200, json: { url: @photo.image.url } }
+      wants.html{ redirect_to node_path(@photo.poi) }
     end
   end
 
