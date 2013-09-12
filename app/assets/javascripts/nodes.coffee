@@ -70,6 +70,9 @@ createErrorElement = () ->
 if $dropzoneClickable.length > 0
   $dropzonePreviewContainer = $dropzone.find('ul')
 
+  $dropzoneClickable.click (e) ->
+    e.preventDefault()
+
   new Dropzone $dropzone[0],
     previewsContainer: $dropzonePreviewContainer[0]
     clickable: $dropzoneClickable.toArray()
@@ -79,6 +82,7 @@ if $dropzoneClickable.length > 0
     thumbnailHeight: 180
     previewTemplate: '<li class="dz-preview-file fade"><a data-full-image-link><img class="img-polaroid" data-dz-thumbnail /><span class="uploadprogress fade in" data-dz-uploadprogress /></a></li>',
     paramName: 'photo[image]'
+    forceFallback: true
     addedfile: (file) ->
       $previewElement = $(@.options.previewTemplate)
       $dropzoneClickable.closest('li').before($previewElement)
@@ -101,6 +105,14 @@ if $dropzoneClickable.length > 0
         $previewElement.remove()
 
       $previewElement.addClass('error')
+    fallback: () ->
+      $container = $dropzoneClickable.parent()
+      $submit = $container.find('.upload')
+      $fallback = $container.find('input[type="file"]')
 
-  $dropzoneClickable.click (e) ->
-    e.preventDefault()
+      $fallback.show().change () ->
+        $submit.addClass('in');
+
+      $submit.click (e) ->
+        e.preventDefault()
+        $fallback.closest('form').submit()
