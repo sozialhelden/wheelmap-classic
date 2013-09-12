@@ -81,3 +81,16 @@ Feature: User feature
     And I press "Passwort neu setzen"
     And PENDING: make cached flash testable
     And I should see "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Passwort neu setzen kannst."
+
+  @omniauth_test
+  Scenario: I set my email after signup without any prior email and get an welcome email
+  Given there are no users
+  And a user "horst" exists with email: "", confirmed_at: "10.10.1999", osm_id: "174"
+  And I am logged in
+  When I am on the last user's after signup edit page
+  And I fill in "E-Mail" with "peter@wheelmap.org"
+  And I fill in "Passwort" with "new_password"
+  And I fill in "Passwort wiederholen" with "new_password"
+  And I press "Fertigstellen"
+  Then 2 email should be delivered to "peter@wheelmap.org"
+
