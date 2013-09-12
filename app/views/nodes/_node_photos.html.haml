@@ -3,7 +3,7 @@
   =semantic_form_for([@node, Photo.new], url: node_photos_url(@node), html: { id: 'node-photo-dropzone', multipart: true }) do |form|
     %ul
       = list_of(node_photos.photos.reject{|photo| photo.new_record?}) do |photo|
-        = link_to image_path(photo.image.url(:gallery).to_s), :'data-toggle' => "lightbox" do
+        = link_to image_path(photo.image.url(:gallery).to_s), :'data-toggle' => 'magnific-popup', :'data-gallery' => 'node' do
           = image_tag photo.image.url(:gallery_preview), class: 'img-polaroid', width: 180, height: 180
       %li.clickable
         - if user_signed_in? and current_user.terms?

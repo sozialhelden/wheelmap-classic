@@ -12,6 +12,7 @@
 #= require bootstrap-select
 #
 #= require flash
+#= require jquery/jquery.magnific-popup.js
 #= require dropzone
 
 $container = $("#node")
@@ -61,17 +62,36 @@ $('[data-toggle="share"]').click (e) ->
   openSharePopup this.href, data.name, data.width, data.height
 
 
+togglePopup = (e) ->
+  e.preventDefault()
+
+  $this = $(@)
+  options = $.extend({}, $this.data())
+  index = 0
+
+  if options.gallery?
+    $items = $("[data-gallery=\"#{options.gallery}\"]")
+    options.items = $.map $items, (item, index) ->
+      { index: index, src: $(item).attr('href'), type: 'image', parsed: true }
+    index = $items.index($this)
+    options.gallery = { enabled: true }
+
+  $.magnificPopup.open(options, index)
+
+$('[data-toggle="magnific-popup"]').click(togglePopup)
+
+
 $dropzone = $('#node-photo-dropzone');
 $dropzoneClickable = $dropzone.find('[data-toggle="dropzone"]')
-
-createErrorElement = () ->
-  $('<div class="alert alert-error fade in"><a class="close" data-dismiss="alert">&times;</a></div>').prependTo($dropzone)
 
 if $dropzoneClickable.length > 0
   $dropzonePreviewContainer = $dropzone.find('ul')
 
   $dropzoneClickable.click (e) ->
     e.preventDefault()
+
+  createErrorElement = () ->
+    $('<div class="alert alert-error fade in"><a class="close" data-dismiss="alert">&times;</a></div>').prependTo($dropzone)
 
   new Dropzone $dropzone[0],
     previewsContainer: $dropzonePreviewContainer[0]
@@ -80,7 +100,7 @@ if $dropzoneClickable.length > 0
     maxFilesize: 6 #MB
     thumbnailWidth: 180
     thumbnailHeight: 180
-    previewTemplate: '<li class="dz-preview-file fade"><a data-full-image-link><img class="img-polaroid" data-dz-thumbnail /><span class="uploadprogress fade in" data-dz-uploadprogress /></a></li>',
+    previewTemplate: '<li class="dz-preview-file fade"><a data-full-image-link data-toggle="magnific-popup" data-gallery="node"><img class="img-polaroid" data-dz-thumbnail /><span class="uploadprogress fade in" data-dz-uploadprogress /></a></li>',
     paramName: 'photo[image]'
     addedfile: (file) ->
       $previewElement = $(@.options.previewTemplate)
@@ -92,7 +112,8 @@ if $dropzoneClickable.length > 0
       $previewElement = $(file.previewElement);
 
       $previewElement.find('[data-dz-uploadprogress]').removeClass('in')
-      $previewElement.find('[data-full-image-link]').attr('href', response.url);
+      $previewElement.find('[data-full-image-link]').attr('href', response.url).click(togglePopup)
+
     error: (file, message) ->
       $previewElement = $(file.previewElement);
 
