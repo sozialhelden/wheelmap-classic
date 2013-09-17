@@ -91,15 +91,22 @@ $('[data-toggle="status"]').click (e) ->
   $this = $(@)
   data = $this.data()
 
-  post =
+  post_params =
     _method: 'PUT'
     wheelchair: data.status
 
-  post[csrfParam] = csrfToken
+  post_params[csrfParam] = csrfToken
 
-  $.post data.url, post, (data) ->
-    console.log(data)
-
+  $.post data.url,
+    post_params,
+    (data) ->
+      $('.dropdown.wheelchair .dropdown-toggle').removeClass (i, j) ->
+        j.match(/wheelchair-\w+/g).join(' ')
+      .addClass('wheelchair-' + data['wheelchair'])
+      $('.dropdown .wm-checkbox').removeClass 'checked'
+      $('.wm-checkbox.wheelchair-' + data['wheelchair']).addClass 'checked'
+      $('#node-status').prepend('<div class="alert alert-success fade in"><a class="close" data-dismiss="alert">×</a>' + data['message'] + '</div>')
+    , 'json' # DataType
 
 $dropzone = $('#node-photo-dropzone');
 $dropzoneClickable = $dropzone.find('[data-toggle="dropzone"]')
