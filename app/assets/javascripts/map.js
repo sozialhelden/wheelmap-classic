@@ -47,8 +47,8 @@ map.on('movestart', function(e) {
 }).on('moveend', function(e) {
   // Ignore moving of the map if panned just 40% of the visible mapc
   if (zoomed === true || padded_bounds !== null && !padded_bounds.contains(map.getBounds())) {
-    $.cookie('last_lat', map.getCenter().lat, { expires: 7, path: '/'});
-    $.cookie('last_lon', map.getCenter().lng, { expires: 7, path: '/'});
+    $.cookie('last_lat', map.getCenter().lat, { expires: 7, path: '/' });
+    $.cookie('last_lon', map.getCenter().lng, { expires: 7, path: '/' });
     update_permalink('.createlink');
     requestNodes(e.target.getBounds());
     padded_bounds = null;
@@ -57,7 +57,7 @@ map.on('movestart', function(e) {
 }).on('zoomstart', function(e){
   zoomed = true;
 }).on('zoomend', function(e){
-  $.cookie('last_zoom', map.getZoom(), { expires: 7, path: '/'});
+  $.cookie('last_zoom', map.getZoom(), { expires: 7, path: '/' });
   update_permalink('.createlink');
 }).on('popupopen', function(e) {
   window.node_id = e.popup._source.feature.properties.id.toString();
@@ -189,10 +189,10 @@ $('.status-filter button').button()
 
     if (!$this.hasClass('active')) {
       $('.leaflet-marker-icon.' + filter_class).addClass('wheelchair_hidden');
-      $.cookie('filter_' + filter_class, '1', { expires: 7, path: '/'});
+      $.cookie('filter_' + filter_class, '1', { expires: 7, path: '/' });
     } else {
       $('.leaflet-marker-icon.' + filter_class).removeClass('wheelchair_hidden');
-      $.removeCookie('filter_' + filter_class);
+      $.removeCookie('filter_' + filter_class, { path: '/' });
     }
   });
 
@@ -201,9 +201,9 @@ $('.category-filter').on('change', function(e){
     var filter_class = $(this).val();
     if ( $(this).is(':selected') ) {
       $('.leaflet-marker-icon.' + filter_class).removeClass('category_hidden');
-      $.removeCookie('filter_'+filter_class);
+      $.removeCookie('filter_'+filter_class, { path: '/' });
     } else {
-      $.cookie('filter_'+filter_class, '1', { expires: 7, path: '/'});
+      $.cookie('filter_'+filter_class, '1', { expires: 7, path: '/' });
       $('.leaflet-marker-icon.' + filter_class).addClass('category_hidden');
     }
   })
