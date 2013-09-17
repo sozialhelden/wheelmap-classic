@@ -1,5 +1,5 @@
 %section#node-status.row-fluid
-  .dropdown.span6
+  .dropdown.span6.wheelchair
     %h2=t('.wheelchair_accessibility')
     %a{'data-toggle' => 'dropdown', 'class' => "dropdown-toggle btn wheelchair-#{@node.wheelchair}"}
       = t("home.index.popup.form.#{@node.wheelchair}")
@@ -25,7 +25,7 @@
           = t("home.index.popup.form.no")
           %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => t('wheelmap.what_is.not_accessible'), 'data-trigger' => 'hover'}
 
-  .dropdown.span6
+  .dropdown.span6.toilet
     %h2=t('.accessible_toilet')
     %a.dropdown-toggle.btn.wheelchair-yes{'data-toggle' => 'dropdown'}
       WC rollstuhlgerecht
