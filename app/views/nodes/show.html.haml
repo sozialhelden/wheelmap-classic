@@ -15,7 +15,7 @@
       = render partial: 'node_similar', object: @node
 
 - content_for :meta do
-  = render_og_metadata(title: @node.name, :description => t('header.title'), type: 'place', url: node_url(@node), image: image_path("bg_logo.png"))
+  = render_og_metadata(title: @node.name, description: t('header.title'), type: 'place', url: node_url(@node), image: image_path('wheely_big.jpg'))
   = render_og_locationdata(latitude: @node.lat, longitude: @node.lon)
 
 - content_for :head do
