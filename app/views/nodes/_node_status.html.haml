@@ -7,19 +7,19 @@
       %i.icon-caret-down.pull-right
     %ul.dropdown-menu{'role' => 'menu'}
       %li
-        %a.popover-wheelchair-yes
+        %a.popover-wheelchair-yes{:'data-toggle' => 'status', :'data-status' => 'yes', :'data-url' =>  update_wheelchair_node_url(@node, :format => :js) }
           %span{'class' => 'wm-checkbox wheelchair-yes ' + (@node.wheelchair == 'yes' ? 'checked' : '')}
             %i.icon-ok
           = t("home.index.popup.form.yes")
           %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => t('wheelmap.what_is.fully_accessible'), 'data-trigger' => 'hover'}
       %li
-        %a.popover-wheelchair-limited
+        %a.popover-wheelchair-limited{:'data-toggle' => 'status', :'data-status' => 'limited', :'data-url' =>  update_wheelchair_node_url(@node, :format => :js) }
           %span{'class' => 'wm-checkbox wheelchair-limited ' + (@node.wheelchair == 'limited' ? 'checked' : '')}
             %i.icon-ok
           = t("home.index.popup.form.limited")
           %i.icon-question-sign{'data-toggle' => 'popover', 'title' => 'Rollstuhlgerechtigkeit', 'data-content' => t('wheelmap.what_is.limited_accessible'), 'data-trigger' => 'hover'}
       %li
-        %a.popover-wheelchair-no
+        %a.popover-wheelchair-no{:'data-toggle' => 'status', :'data-status' => 'no', :'data-url' =>  update_wheelchair_node_url(@node, :format => :js) }
           %span{'class' => 'wm-checkbox wheelchair-no ' + (@node.wheelchair == 'no' ? 'checked' : '')}
             %i.icon-ok
           = t("home.index.popup.form.no")
