@@ -81,6 +81,26 @@ togglePopup = (e) ->
 $('[data-toggle="magnific-popup"]').click(togglePopup)
 
 
+csrfParam = $('meta[name="csrf-param"]').attr('content')
+csrfToken = $('meta[name="csrf-token"]').attr('content')
+
+# Status update
+$('[data-toggle="status"]').click (e) ->
+  e.preventDefault();
+
+  $this = $(@)
+  data = $this.data()
+
+  post =
+    _method: 'PUT'
+    wheelchair: data.status
+
+  post[csrfParam] = csrfToken
+
+  $.post data.url, post, (data) ->
+    console.log(data)
+
+
 $dropzone = $('#node-photo-dropzone');
 $dropzoneClickable = $dropzone.find('[data-toggle="dropzone"]')
 
