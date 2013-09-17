@@ -92,6 +92,7 @@ group :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'syntax'
+  gem 'email_spec'
 end
 
 group :production do

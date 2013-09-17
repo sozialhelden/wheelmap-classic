@@ -10,4 +10,12 @@ class UserMailer < ActionMailer::Base
         )
   end
 
+  def welcome(user)
+    locale = I18n.locale == :de ? :de : :en
+    @email = user.email
+    mail( :to => @email,
+          :subject => (locale == :de ? "Willkommen bei wheelmap.org" : "Welcome to wheelmap.org"),
+          :template_name => "welcome_#{locale}"
+        )
+  end
 end
