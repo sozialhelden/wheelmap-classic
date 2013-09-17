@@ -13,6 +13,12 @@ Given /^I am logged in with email: "([^"]*)", password: "([^"]*)"$/ do |email, p
   visit '/users/auth/osm/callback'
 end
 
+Given /^I am logged in$/ do
+  visit new_user_session_path
+  visit '/users/auth/osm'
+  visit '/users/auth/osm/callback'
+end
+
 Given /^I sign up/ do
   visit new_user_session_path
   visit '/users/auth/osm'

@@ -55,6 +55,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
       flash[:notice] = t('devise.confirmations.send_instructions') if @user.email.present?
+      # Send welcome email if user set an email for the first time.
+      if @user.email_provided_for_the_first_time?
+        UserMailer.welcome(@user).deliver
+      end
       redirect_to after_sign_in_path_for(:user)
     else
       flash.now[:alert] = @user.errors.full_messages.to_sentence

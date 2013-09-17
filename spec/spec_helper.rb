@@ -36,6 +36,8 @@ Spork.prefork do
       DatabaseCleaner.clean_with(:truncation)
     end
 
+    config.include EmailSpec::Helpers
+    config.include EmailSpec::Matchers
     config.include Devise::TestHelpers, :type => :controller
     config.include FactoryGirl::Syntax::Methods
     config.include CarrierWave::Test::Matchers
