@@ -21,7 +21,7 @@ var map = L.map('map', {
 L.tileLayer('http://{s}.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.png256', {
   maxZoom: 19,
   minZoom: 2,
-  attribution: 'Data: ODbL <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Map Icons: CC-By-SA <a href="http://mapicons.nicolasmollet.com/">Nicolas Mollet</a>',
+  attribution: 'Data: <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap contributors</a>, Icons: CC-By-SA <a href="http://mapicons.nicolasmollet.com/">Nicolas Mollet</a>',
   detectRetina: true
 
 }).addTo(map);
