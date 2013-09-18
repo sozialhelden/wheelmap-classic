@@ -173,7 +173,7 @@ describe User do
   context "methods" do
 
     subject do
-      FactoryGirl.build(:user)
+      FactoryGirl.build(:user, email: nil)
     end
 
     it "should show first and last name when given" do
@@ -198,6 +198,20 @@ describe User do
       subject.full_name.should eql 123
     end
 
+    it "should be true that user provided email for the first time" do
+      subject.update_attributes(email: 'horst@example.com')
+      subject.email_provided_for_the_first_time?.should be_true
+    end
+
+    it "should not be true that user provided email for the first time" do
+      subject.update_attributes(email: '')
+      subject.email_provided_for_the_first_time?.should be_false
+    end
+
+    it "should not be true that user provided email for the first time" do
+      subject.update_attributes(first_name: 'Heinrich')
+      subject.email_provided_for_the_first_time?.should be_false
+    end
 
   end
 end
