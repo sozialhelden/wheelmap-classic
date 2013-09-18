@@ -10,30 +10,14 @@
           = link_to('FAQ', 'http://wheelmap.org/about/faqs/', class: 'btn btn-mini', target: '_blank')
           = mail_to('bugs@wheelmap.org', content_tag(:i, '', class: 'icon-envelope-alt'), class: 'btn btn-mini', encode: 'javascript')
         Gibt es ein Problem mit diesem Ort?
-
-      .accordion-group
-        %a.collapsed.accordion-toggle{href: '#node-report-1', :'data-toggle' => 'collapse', :'data-parent' => '#node-report-accordion'}
-          %i.icon-chevron-up.pull-right
-          Die Daten stimmen nicht
-        #node-report-1.collapse
-          .accordion-inner
-            Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.
-
-      .accordion-group
-        %a.collapsed.accordion-toggle{href: '#node-report-2', :'data-toggle' => 'collapse', :'data-parent' => '#node-report-accordion'}
-          %i.icon-chevron-up.pull-right
-          Der Ort ist falsch makiert
-        #node-report-2.collapse
-          .accordion-inner
-            Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.
-
-      .accordion-group
-        %a.collapsed.accordion-toggle{href: '#node-report-3', :'data-toggle' => 'collapse', 'data-parent' => '#node-report-accordion'}
-          %i.icon-chevron-up.pull-right
-          Ich bin mit der Gesamtsituation unzufrieden
-        #node-report-3.collapse
-          .accordion-inner
-            Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte.
+      - 3.times do |i|
+        .accordion-group
+          %a.collapsed.accordion-toggle{href: "#node-report-#{i}", :'data-toggle' => 'collapse', :'data-parent' => '#node-report-accordion'}
+            %i.icon-chevron-up.pull-right
+            = t('faq.questions')[i]
+          .collapse{id: "node-report-#{i}"}
+            .accordion-inner
+              =t("faq.answers")[i]
 
   = link_to edit_node_path(node_edit), class: 'btn' do
     %i.icon-pencil
