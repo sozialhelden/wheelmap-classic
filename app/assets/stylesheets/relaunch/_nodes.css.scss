@@ -187,7 +187,8 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 
   .btn,
-  .dropdown-menu {
+  .dropdown-menu,
+  .alert {
     width: 80%;
     min-width: 250px;
   }
@@ -204,10 +205,6 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
       opacity: .6;
       color: white;
     }
-  }
-
-  .open .btn {
-    @include border-bottom-radius(0);
   }
 
   .dropdown-menu {
@@ -257,6 +254,21 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     }
   }
 
+  .alert {
+    @include box-sizing(border-box);
+    margin-bottom: 10px;
+    border-color: lighten($successText, 40%);
+  }
+
+  .submit {
+    @include buttonBackground(lighten($orange-gray, 10%), lighten($orange-gray, 5%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
+    text-align: center;
+    font-weight: bold;
+    border-color: darken($orange-gray, 20%);
+    margin-top: 10px;
+    display: none;
+  }
+
   @media (max-width: 580px), (min-width: 768px) and (max-width: 979px) {
     .dropdown {
       float: none !important;
@@ -264,7 +276,8 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     }
 
     .btn,
-    .dropdown-menu {
+    .dropdown-menu,
+    .alert {
       width: 100%;
     }
   }

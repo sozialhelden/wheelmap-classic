@@ -17,11 +17,17 @@
 
 $container = $("#node")
 switchPlacement = 200
-$container.find("[data-toggle=\"popover\"]").popover
-  placement: (popover, element) ->
-    $element = $(element)
-    delta = $(window).width() - ($element.width() + $element.offset().left)
-    (if delta >= switchPlacement then "right" else "left")
+$container.find("[data-toggle=\"popover\"]").each ->
+  $this = $(@)
+  $this.popover
+    title: () ->
+      return $this.data('title')
+    content: () ->
+      return $this.data('content')
+    placement: (popover, element) ->
+      $element = $(element)
+      delta = $(window).width() - ($element.width() + $element.offset().left)
+      (if delta >= switchPlacement then "right" else "left")
 
 
 $(document).on("click.dropdown", "[data-toggle=\"collapse\"]", (e) ->
@@ -78,11 +84,13 @@ togglePopup = (e) ->
 
   $.magnificPopup.open(options, index)
 
+
 $('[data-toggle="magnific-popup"]').click(togglePopup)
 
 
-csrfParam = $('meta[name="csrf-param"]').attr('content')
-csrfToken = $('meta[name="csrf-token"]').attr('content')
+createAlertElement = (type) ->
+  $("<div class='alert alert-#{type} fade in'><a class='close' data-dismiss='alert'>&times;</a></div>")
+
 
 # Status update
 $('[data-toggle="status"]').click (e) ->
@@ -90,23 +98,60 @@ $('[data-toggle="status"]').click (e) ->
 
   $this = $(@)
   data = $this.data()
+  # Needed for having status and help texts of the choosen accessibility
+  statusTexts = $this.find('[data-toggle="popover"]').data()
 
-  post_params =
+  $dropdown = $this.closest('.dropdown')
+
+  $dropdown.find('.alert').alert('close')
+
+  $checkboxes = $dropdown.find('[role="menu"] .wm-checkbox')
+  $checkboxes.removeClass('checked')
+
+  $checkboxes.filter('.wheelchair-' + data.status).addClass('checked')
+
+  $buttonDropdown = $dropdown.find('[data-toggle="dropdown"]')
+  $buttonDropdown.removeClass (i, j) ->
+    j.match(/wheelchair-\w+/g).join(' ')
+  $buttonDropdown.addClass('wheelchair-' + data.status)
+  $buttonDropdown.find('.text').text(statusTexts.title)
+
+  $buttonDropdown.find('[data-toggle="popover"]').data
+    title: statusTexts.title
+    content: statusTexts.content
+
+  $buttonSubmit = $dropdown.find('[data-toggle="status-submit"]')
+  $buttonSubmit.data('status', data.status).show()
+
+csrfParam = $('meta[name="csrf-param"]').attr('content')
+csrfToken = $('meta[name="csrf-token"]').attr('content')
+
+$('[data-toggle="status-submit"]').click (e) ->
+  e.preventDefault()
+
+  $this = $(@)
+  data = $this.data()
+
+  if (!data.status?)
+    return
+
+  post =
     _method: 'PUT'
     wheelchair: data.status
 
-  post_params[csrfParam] = csrfToken
+  post[csrfParam] = csrfToken
 
   $.post data.url,
-    post_params,
+    post,
     (data) ->
-      $('.dropdown.wheelchair .dropdown-toggle').removeClass (i, j) ->
-        j.match(/wheelchair-\w+/g).join(' ')
-      .addClass('wheelchair-' + data['wheelchair'])
-      $('.dropdown .wm-checkbox').removeClass 'checked'
-      $('.wm-checkbox.wheelchair-' + data['wheelchair']).addClass 'checked'
-      $('#node-status').prepend('<div class="alert alert-success fade in"><a class="close" data-dismiss="alert">×</a>' + data['message'] + '</div>')
+      $alert = createAlertElement('success')
+      $alert.append(data.message)
+      $this.closest('.dropdown').find('[data-toggle="dropdown"]').before($alert)
+
+      $this.hide()
+      $this.data('status', null)
     , 'json' # DataType
+
 
 $dropzone = $('#node-photo-dropzone');
 $dropzoneClickable = $dropzone.find('[data-toggle="dropzone"]')
@@ -116,9 +161,6 @@ if $dropzoneClickable.length > 0
 
   $dropzoneClickable.click (e) ->
     e.preventDefault()
-
-  createErrorElement = () ->
-    $('<div class="alert alert-error fade in"><a class="close" data-dismiss="alert">&times;</a></div>').prependTo($dropzone)
 
   new Dropzone $dropzone[0],
     previewsContainer: $dropzonePreviewContainer[0]
@@ -144,7 +186,7 @@ if $dropzoneClickable.length > 0
     error: (file, message) ->
       $previewElement = $(file.previewElement);
 
-      $errorElement = createErrorElement().append('<strong>' + file.name + ':</strong> ' + message)
+      $errorElement = createAlertElement('error').prependTo($dropzone).append('<strong>' + file.name + ':</strong> ' + message)
 
       $errorElement.on 'close', () ->
         $previewElement.removeClass('in')
