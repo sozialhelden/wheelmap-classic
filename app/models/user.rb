@@ -110,7 +110,7 @@ class User < ActiveRecord::Base
     user = User.where(:email => email).first
     user if user && user.valid_password?(password)
   end
-  
+
   def self.wheelmap_visitor
     find_by_email('visitor@wheelmap.org')
   end
@@ -164,6 +164,10 @@ class User < ActiveRecord::Base
 
   def first_time?
     @first_time == '1'
+  end
+
+  def email_provided_for_the_first_time?
+    previous_changes.has_key?(:email) && previous_changes[:email].first.blank? && email.present?
   end
 
 end
