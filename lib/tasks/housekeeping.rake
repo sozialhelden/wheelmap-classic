@@ -85,4 +85,23 @@ namespace :housekeeping do
       FileUtils.rm_rf(directory, :verbose => true) unless WHITELIST.include?(File.basename(directory))
     end
   end
+
+
+  desc "Create a wheelmap visitor user account"
+  task :create_wheelmap_visitor => :environment do
+    w = User.find_or_initialize_by_email('visitor@wheelmap.org')
+    w.password                      = 'extremelylongandunsecurepassword'
+    w.password_confirmation         = 'extremelylongandunsecurepassword'
+    w.wants_newsletter            ||= false
+    w.oauth_token                 ||= "token"
+    w.oauth_secret                ||= "secret"
+    w.first_name                  ||= "Wheelmap"
+    w.last_name                   ||= "Visitor"
+    w.terms                         = true
+    w.accepted_at                 ||= Time.now
+    w.privacy_policy                = true
+    w.privacy_policy_accepted_at  ||= Time.now
+    w.save!
+  end
+
 end
