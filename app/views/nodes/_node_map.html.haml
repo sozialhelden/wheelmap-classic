@@ -1,7 +1,8 @@
 %section#node-map
   %h2=t('.map')
   .map
-    = image_tag("http://api.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/#{node_map.lon},#{node_map.lat},17/359x239.png64", class: 'img-polaroid', width: 359, height: 239)
+    = link_to root_path(lat: @node.lat, lon: @node.lon, node_id: @node.osm_id, zoom: 17), title: '' do
+      = image_tag("http://api.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/#{node_map.lon},#{node_map.lat},17/359x239.png64", class: 'img-polaroid', size: '359x239')
     %div{class: "leaflet-marker-icon public_transfer #{@node.wheelchair}"}
       .icon{id: @node.icon}
-  %small.pull-right.bottom="License: ODbL OpenStreetMap"
+  %small.pull-right.bottom= link_to "© OpenStreetMap contributors", I18n.locale == :de ? "http://www.openstreetmap.org/copyright" : "http://www.openstreetmap.org/copyright/en"
