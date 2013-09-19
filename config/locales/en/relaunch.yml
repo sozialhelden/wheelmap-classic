@@ -3,13 +3,13 @@ en:
   faq:
     answers:
       0: "You can always change the marking of a place yourself. Just choose the right marking and \"Save\" - done!"
-      1: "As a logged in user you can add / correct all the the details of a place. Click on \"Edit\" and correct or add information in the mask."
+      1: "As a logged in user you can add / correct all the details of a place. Click on \"Edit\" and correct or add information in the mask."
       2: "You can add further information (e.g. \"This place has a mobile ramp\") in the comment section. Click on \"Edit\" and \"Add comment\"."
     headline: "Is there a problem with this place?"
     questions:
       0: "The marking is wrong."
-      1: "The details of the place are incorrect or missing"
-      2: "I have more information about this place"
+      1: "The details of the place are incorrect or missing."
+      2: "I have more information about this place."
   header:
     navigation:
       about_wheelmap: "About Wheelmap"

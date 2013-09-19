@@ -8,7 +8,7 @@ de:
     questions:
       0: "Die Markierung ist falsch."
       1: "Angaben zum Ort sind falsch bzw. fehlen."
-      2: "Ich habe mehr Informationen zum Ort"
+      2: "Ich habe mehr Informationen zum Ort."
   header:
     navigation:
       about_wheelmap: "Über Wheelmap"
