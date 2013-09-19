@@ -4,6 +4,7 @@ de:
       0: "Du kannst die Markierung jederzeit selbst ändern. Einfach die richtige Markierung wählen und \"Speichern\" - fertig!"
       1: "Als angemeldeter Nutzer kannst du alle Angaben zu einem Ort selbst ändern. Klicke auf \"Bearbeiten\" und korrigiere oder ergänze die Angaben."
       2: "Du kannst zusätzliche Informationen (z.B. \"Dieser Ort hat eine Rampe\") als Hinweis hinterlassen. Klicke auf \"Bearbeiten\" und \"Kommentar verfassen\"."
+    headline: "Gibt es ein Problem mit diesem Ort?"
     questions:
       0: "Die Markierung ist falsch."
       1: "Angaben zum Ort sind falsch bzw. fehlen."
