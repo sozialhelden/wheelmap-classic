@@ -41,9 +41,9 @@ de:
     node_note:
       comment: "Nutzerkommentar:"
     node_photos:
-      add: "hinzufügen"
+      add: "Hinzufügen"
       photos_of_this_place: "Fotos von diesem Ort:"
-      upload: "hochladen"
+      upload: "Hochladen"
     node_similar:
       similar: "Ähnliche Orte: %{name}"
     node_status:

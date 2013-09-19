@@ -42,9 +42,9 @@ en:
     node_note:
       comment: "Comment:"
     node_photos:
-      add: "add"
+      add: "Add"
       photos_of_this_place: "Photos of this place:"
-      upload: "upload"
+      upload: "Upload"
     node_similar:
       similar: "Similar places: %{name}"
     node_status:
