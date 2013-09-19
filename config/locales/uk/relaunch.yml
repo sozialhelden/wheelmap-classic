@@ -1,2 +1,7 @@
----
-uk: ~
+uk:
+  header:
+    navigation:
+      map: Карта
+  nodes:
+    node_edit:
+      edit: "Редагувати"

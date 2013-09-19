@@ -1,4 +1,3 @@
----
 da:
   header:
     navigation:
@@ -6,7 +5,7 @@ da:
       choose_language: "Vælg sprog"
       contact: Kontakt
       map: Kort
-      projects: "Bliv engageret"
+      projects: Projekter
     toolbar:
       categories: kategorier
   home:
@@ -18,3 +17,54 @@ da:
         headline: "Markerer og find kørestolstilgængelige steder med Wheelmap.org - verden over og helt gratis. Det er nemt:"
         lookup: "Søg efter et bestemt sted"
         secondary_headline: "Vores trafiklys system til at markerer kørestolstilgængelighed for offentlige steder:"
+  nodes:
+    new:
+      form:
+        legend: "Lokalitet for stedet"
+        location: "Klik på kortet og placerer markøren på den præcise position."
+    node_data:
+      address: "Adresse:"
+      contact_details: "Kontaktoplysninger:"
+    node_edit:
+      edit: "Ret"
+    node_map:
+      map: "Kort:"
+    node_note:
+      comment: "Kommentar:"
+    node_photos:
+      add: "tilføj"
+      photos_of_this_place: "Fotografier af dette sted:"
+      upload: "upload"
+    node_similar:
+      similar: "Lignende steder: %{name}"
+    node_status:
+      wheelchair_accessibility: "Kørestolstilgængeligt:"
+      accessible_toilet: "Kørestolstilgængeligt toilet:"
+    node_streetview:
+      streetview: "Gadevisning:"
+    show:
+      share:
+        twitter: Twitter
+        facebook: Facebook
+        text: "Jeg har fundet dette sted på  Wheelmap.org: %{name}"
+  search:
+    index:
+      no-results:
+        headline: "Vi beklager meget, men vi kan ikke finde et sted ved navn  \"%{query}\"."
+        hint:
+          example: "<strong>Eksempel</strong> London, United Kingdom"
+          info: "Vores søgeservice virker kun med navn eller adresseoplysninger. Søg kun efter navnet på et sted eller adressen, fx gadenavn og/eller byen. Søgning efter typen af stederne fx restaurant eller biograf vil ikke virke!"
+          work_in_progress: "Vi arbejder hårdt på at gøre søgninger efter steder lettere og mere intuitivt."
+        try_this:
+          address: "Indsæt flere <strong>adresseoplysninger</strong>."
+          intro: "Prøv dette:"
+          spell_check: "Tjek <strong>stavningen</strong> af dit søgeord."
+      results:
+        ticker:
+          one: "1 resultat:"
+          other: "%{count} resultater:"
+          zero: "0 resultater:"
+    timeout:
+      headline: "Åh undskyld vores fejl"
+      info: "Vores søgeservice var midlertidigt nede."
+      repeat_search: "Prøv søgningen igen"

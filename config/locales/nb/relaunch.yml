@@ -1,4 +1,3 @@
----
 nb:
   header:
     navigation:
@@ -18,3 +17,6 @@ nb:
         headline: "Merk og finn rullestol tilgjenglige steder med Wheelmap.org - verdenrundt helt gratis. Det er enkelt"
         lookup: "Søk etter et bestemt sted"
         secondary_headline: "Vårt trafikk lys system for å merke rullestol tiljgenligheten av offentlig steder"
+  nodes:
+    node_edit:
+      edit: "Rediger"

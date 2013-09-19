@@ -1,4 +1,3 @@
----
 fr:
   header:
     navigation:
@@ -18,3 +17,10 @@ fr:
         headline: "Grâce à Wheelmap.org tu peux trouver et marquer des lieux accessibles en fauteuil - à travers le monde et gratuitement. C'est facile:"
         lookup: "trouver directement un lieu"
         secondary_headline: "le système \"feu rouge\" pour marquer l'accessibilité"
+  nodes:
+    node_edit:
+      edit: "traiter"
+    show:
+      share:
+        twitter: Twitter
+        facebook: Facebook
