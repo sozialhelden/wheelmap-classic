@@ -1,13 +1,13 @@
 de:
   faq:
     answers:
-      0: "Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte."
-      1: "Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte."
-      2: "Weit hinten, hinter den Wortbergen, fern der Länder Vokalien und Konsonantien leben die Blindtexte."
+      0: "Du kannst die Markierung jederzeit selbst ändern. Einfach die richtige Markierung wählen und \"Speichern\" - fertig!"
+      1: "Als angemeldeter Nutzer kannst du alle Angaben zu einem Ort selbst ändern. Klicke auf \"Bearbeiten\" und korrigiere oder ergänze die Angaben."
+      2: "Du kannst zusätzliche Informationen (z.B. \"Dieser Ort hat eine Rampe\") als Hinweis hinterlassen. Klicke auf \"Bearbeiten\" und \"Kommentar verfassen\"."
     questions:
-      0: Die Daten stimmen nicht
-      1: Der Ort ist falsch makiert
-      2: Ich bin mit der Gesamtsituation unzufrieden
+      0: "Die Markierung ist falsch."
+      1: "Angaben zum Ort sind falsch bzw. fehlen."
+      2: "Ich habe mehr Informationen zum Ort"
   header:
     navigation:
       about_wheelmap: "Über Wheelmap"
