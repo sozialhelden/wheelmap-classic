@@ -1,0 +1,19 @@
+#node-report.btn-group.dropdown.pull-right
+  %button.dropdown-toggle.btn{:'data-toggle' => 'dropdown'}
+    %i.icon-bolt
+    %span.caret
+
+  #node-report-accordion.dropdown-accordion
+    %header
+      .pull-right
+        = link_to('FAQ', 'http://wheelmap.org/about/faqs/', class: 'btn btn-mini', target: '_blank')
+        = mail_to('bugs@wheelmap.org', content_tag(:i, '', class: 'icon-envelope-alt'), class: 'btn btn-mini', encode: 'javascript')
+      = t('faq.headline')
+    - t('faq.questions').size.times do |i|
+      .accordion-group
+        %a.collapsed.accordion-toggle{href: "#node-report-#{i}", :'data-toggle' => 'collapse', :'data-parent' => '#node-report-accordion'}
+          %i.icon-chevron-up.pull-right
+          = t('faq.questions')[i]
+        .collapse{id: "node-report-#{i}"}
+          .accordion-inner
+            =t("faq.answers")[i]
