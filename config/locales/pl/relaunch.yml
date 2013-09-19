@@ -1,2 +1,7 @@
----
-pl: ~
+pl:
+  header:
+    navigation:
+      map: Mapa
+  nodes:
+    node_edit:
+      edit: "Zmień"

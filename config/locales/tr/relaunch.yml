@@ -1,2 +1,41 @@
----
-tr: ~
+tr:
+  header:
+    navigation:
+      about_wheelmap: "Wheelmap Hakkında"
+      choose_language: "Dil seçin"
+      contact: İletişim
+      map: Harita
+    toolbar:
+      categories: Kategoriler
+  home:
+    index:
+      overlay:
+        button: "Pekala, gidelim!"
+        categories: "Yerleri kategorilere göre filtrele"
+        filter: "Yerleri tekerlekli sandalye erişilebilirliğine göre filtrele"
+        headline: "Tekerlekli sandalye erişilebilirliği olan yerleri Wheelmap.org ile işaretleyin ve bulun - dünya çapında ve ücretsiz. Oldukça kolay:"
+        lookup: "Özel bir yeri ara"
+        secondary_headline: "Halka açık alanlarda tekerlekli sandalye erişilebilirliğini işaretlemek için trafik ışığı sistemimiz:"
+  nodes:
+    new:
+      form:
+        legend: "Yerin konumu"
+        location: "Lütfen haritaya tıklayın ve işaretçiyi doğru noktaya yerleştirin."
+  search:
+    index:
+      no-results:
+        hint:
+          example: "<strong>Örnek:</strong>  Londra, Birleşik Krallık"
+        try_this:
+          address: "Lütfen <strong>adresi detaylandırın</strong>."
+          intro: "Bunu deneyin:"
+          spell_check: "Girdinizin <strong>imlasını</strong> kontrol edin."
+      results:
+        ticker:
+          one: "1 sonuç:"
+          other: "%{count} sonuç:"
+          zero: "0 sonuç:"
+    timeout:
+      headline: "Ah, bizim hatamız"
+      info: "Arama hizmetimiz geçici olarak devredışı."
+      repeat_search: "Yeniden ara"

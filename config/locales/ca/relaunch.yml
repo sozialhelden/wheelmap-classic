@@ -1,2 +1,35 @@
----
-ca: ~
+ca:
+  header:
+    navigation:
+      about_wheelmap: "Sobre Wheelmap"
+      choose_language: "Triar idioma"
+      contact: Contactar
+      map: Mapa
+    toolbar:
+      categories: Categories
+  home:
+    index:
+      overlay:
+        button: "'Nem-hi!"
+        categories: "Filtra llocs per categories"
+        filter: "Filtrar llocs per accessibilitat per cadira de rodes"
+        lookup: "Cercar un lloc determinat"
+  nodes:
+    new:
+      form:
+        legend: "Localització del lloc"
+    node_edit:
+      edit: "Edita"
+  search:
+    index:
+      no-results:
+        try_this:
+          intro: "Prova això:"
+      results:
+        ticker:
+          one: "1 resultat:"
+          other: "%{count} resultats:"
+          zero: "0 resultats:"
+    timeout:
+      headline: "Ups, error nostre"
+      repeat_search: "Reiniciar la rerca"

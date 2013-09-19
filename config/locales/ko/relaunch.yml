@@ -1,2 +1,11 @@
----
-ko: ~
+ko:
+  header:
+    navigation:
+      map: 지도
+  nodes:
+    node_edit:
+      edit: "편집"
+    show:
+      share:
+        twitter: 트위터
+        facebook: 페이스북
