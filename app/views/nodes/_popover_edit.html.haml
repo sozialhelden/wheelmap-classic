@@ -1,0 +1,9 @@
+%section#node-edit
+  = render partial: 'node_faq'
+
+  .btn-group
+    = link_to 'Details', node_path(popover_edit), class: 'btn'
+    = link_to edit_node_path(popover_edit), class: 'btn' do
+      %i.icon-pencil
+
+  = render partial: 'node_share', object: popover_edit
