@@ -54,6 +54,10 @@ de:
     node_streetview:
       streetview: "Strassenansicht:"
     show:
+      header:
+        meta:
+          description: "Finde auf Wheelmap.org heraus, ob der Ort rollstuhlgerecht ist. Oder füge Informationen und Bilder zu dem Ort hinzu."
+          title: "Dieser Ort ist auf Wheelmap.org: %{name}"
       share:
         twitter: Twitter
         facebook: Facebook

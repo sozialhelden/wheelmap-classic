@@ -19,4 +19,5 @@
   = render_og_locationdata(latitude: @node.lat, longitude: @node.lon)
 
 - content_for :head do
-  %title= [@node.name, @node.node_type_name, @node.category_name, @node.region_name, "Wheelmap"].compact.join(' | ')
+  %title=t('nodes.show.header.meta.title', name: [@node.name, @node.node_type_name, @node.category_name, @node.region_name].compact.join(', '))
+  %meta{:name => 'description', :content => t('nodes.show.header.meta.description')}
