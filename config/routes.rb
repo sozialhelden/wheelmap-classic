@@ -55,6 +55,7 @@ Wheelmap::Application.routes.draw do
     member do
       put :update_wheelchair
       get :claim
+      get :popover
     end
     # TODO reenable photo routes
     resources :photos, :only => [:create, :destroy]

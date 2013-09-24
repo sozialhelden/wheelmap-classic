@@ -118,6 +118,10 @@ class NodesController < ApplicationController
   def claim
   end
 
+  def popover
+    @node = Poi.find(params[:id])
+  end
+
   # Before filter
   protected
 
