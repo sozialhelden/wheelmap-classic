@@ -2,7 +2,7 @@
   = render partial: 'node_faq'
 
   .btn-group
-    = link_to 'Details', node_path(popover_edit), class: 'btn'
+    = link_to t('nodes.node_edit.details'), node_path(popover_edit), class: 'btn'
     = link_to edit_node_path(popover_edit), class: 'btn' do
       %i.icon-pencil
 

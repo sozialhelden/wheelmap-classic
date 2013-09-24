@@ -20,4 +20,10 @@ module NodesHelper
   def accesibility(node)
     WHEELCHAIR_ACCESIBILITY[node.wheelchair]
   end
+
+  def render_address(node)
+    if node.address?
+      content_tag :address, node.address
+    end
+  end
 end
