@@ -1,0 +1,15 @@
+%header#node-header
+  %h1{itemprop: 'name'}= popover_header.headline
+  - if popover_header.address?
+    %address
+      = popover_header.address
+  %span{itemscope: '', itemprop: 'geo', itemtype: 'http://schema.org/GeoCoordinates'}
+    %meta{itemprop: 'latitude', content: popover_header.lat}
+    %meta{itemprop: 'longitude', content: popover_header.lon}
+
+  %button.close
+    ×
+  %ol.breadcrumbs.unstyled
+    = list_of(popover_header.breadcrumbs) do |i|
+      %i.icon-angle-right
+      = i
