@@ -1,6 +1,6 @@
 %section#node-status.row-fluid
   .dropdown.span6.wheelchair
-    %h3=t('.wheelchair_accessibility')
+    %h3=t('nodes.node_status.wheelchair_accessibility')
     %div
       %a{:'data-toggle' => 'dropdown', class: "dropdown-toggle btn wheelchair-#{@node.wheelchair}", :'data-status' => @node.wheelchair}
         %span.text= t("home.index.popup.form.#{@node.wheelchair}")
