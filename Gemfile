@@ -56,6 +56,7 @@ group :default do
   gem 'exifr'
   gem 'awesome_nested_set'
   gem 'i18n-js'
+  gem 'font-awesome-rails'
 end
 
 group :assets do
