@@ -55,6 +55,10 @@ en:
     node_streetview:
       streetview: "Streetview:"
     show:
+      header:
+        meta:
+          description: "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place."
+          title: "This place is on Wheelmap.org: %{name}"
       share:
         twitter: Twitter
         facebook: Facebook
