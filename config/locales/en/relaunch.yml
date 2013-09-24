@@ -37,6 +37,7 @@ en:
       address: "Address:"
       contact_details: "Contact details:"
     node_edit:
+      details: "Details"
       edit: "Edit"
     node_map:
       map: "Map:"

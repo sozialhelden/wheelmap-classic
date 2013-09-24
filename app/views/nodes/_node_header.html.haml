@@ -1,15 +1,6 @@
 %header#node-header
-  %ol.breadcrumbs.unstyled
-    = list_of(node_header.breadcrumbs) do |i|
-      %i.icon-angle-right
-      = i
+  = render partial: 'node_breadcrumbs', object: node_header
   %h1{itemprop: 'name'}= node_header.headline
-  - if node_header.address?
-    %address
-      = node_header.address
-  %span{itemscope: '', itemprop: 'geo', itemtype: 'http://schema.org/GeoCoordinates'}
-    %meta{itemprop: 'latitude', content: node_header.lat}
-    %meta{itemprop: 'longitude', content: node_header.lon}
-
-  %button.close
-    ×
+  = render_address(node_header)
+  = render partial: 'node_geocoordinates', object: node_header
+  = close_button

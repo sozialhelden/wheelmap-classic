@@ -36,6 +36,7 @@ de:
       address: "Adresse:"
       contact_details: "Kontaktdaten:"
     node_edit:
+      details: "Details"
       edit: "Bearbeiten"
     node_map:
       map: "Karte:"

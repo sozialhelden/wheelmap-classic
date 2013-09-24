@@ -1,6 +1,10 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
 
+  def close_button
+    content_tag(:button, '×', class: :close)
+  end
+
   # Renders OpenGraph Meta tags for the given option to help facebook parse the website.
   def render_og_metadata(options = {})
     html = ''
