@@ -8,6 +8,7 @@
 //= require jquery_ujs
 //= require jquery/jquery.parsequery.js
 //= require jquery/jquery.cookies.js
+//= require handlebars
 
 //
 //= require bootstrap-transition
@@ -31,5 +32,6 @@
 //= require leaflet/leaflet.permalink
 //
 //= require map
+//= require nodes
 //= require function
 //= require custom-select
