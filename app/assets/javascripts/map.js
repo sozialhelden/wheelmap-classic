@@ -9,6 +9,7 @@ var padded_bounds = null;
 
 I18n.defaultLocale = 'de';
 I18n.locale = $('html').attr('lang');
+I18n.fallbacks = true;
 
 initGeoData();
 
@@ -113,6 +114,8 @@ function onEachFeature(feature, layer) {
   if (feature.properties.name === null) {
     feature.properties.name = I18n.t("poi.name."+feature.properties.category+"."+ feature.properties.type)
   }
+  feature.properties.status_text = I18n.t('wheelchairstatus.' + feature.properties.wheelchair);
+  feature.properties.status_description = I18n.t('wheelmap.what_is.' + feature.properties.accesibility);
   var popup_html = template(feature.properties);
   var popup = layer.bindPopup(popup_html, { closeButton: false });
 

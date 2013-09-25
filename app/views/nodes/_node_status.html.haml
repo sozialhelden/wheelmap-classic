@@ -4,7 +4,7 @@
     %div
       %a{:'data-toggle' => 'dropdown', class: "dropdown-toggle btn wheelchair-#{@node.wheelchair}", :'data-status' => @node.wheelchair}
         %span.text= t("home.index.popup.form.#{@node.wheelchair}")
-        %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.#{@node.wheelchair}"), 'data-content' => t("wheelmap.what_is.#{accesibility(@node)}"), 'data-trigger' => 'hover'}
+        %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.#{@node.wheelchair}"), 'data-content' => t("wheelmap.what_is.#{@node.accesibility}"), 'data-trigger' => 'hover'}
         %i.icon-caret-down.pull-right
       %ul.dropdown-menu{'role' => 'menu'}
         %li
