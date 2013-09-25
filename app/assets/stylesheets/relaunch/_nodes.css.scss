@@ -301,15 +301,15 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     margin-top: 5px;
     padding: 5px;
     text-align: right;
-    border-top: 1px solid darken($orange-gray, 10%);
+    border-top: 1px solid darken($orange-gray, 5%);
     background-color: lighten($orange-gray, 10%);
 
     .btn {
-      @include buttonBackground(lighten($orange-gray, 10%), lighten($orange-gray, 5%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
+      @include buttonBackground(lighten($orange-gray, 5%), darken($orange-gray, 5%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
       text-align: center;
       font-weight: bold;
       border-color: darken($orange-gray, 20%);
-      }
+    }
   }
 
   @media (max-width: 580px), (min-width: 768px) and (max-width: 979px) {
