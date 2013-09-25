@@ -73,6 +73,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
         line-height: 20px;
         font-size: $fontSizeLarge;
         float: left;
+        padding: 0 7px 0 5px;
       }
 
       &:first-child .icon-angle-right {
@@ -245,6 +246,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
         @include text-shadow(none);
         @include box-shadow(0 1px 0 rgba($white, 0.5), inset 0 1px 2px rgba($black, 0.2));
         overflow: hidden;
+        text-align: center;
         text-indent: -5000px; // Hide check icon
       }
 
@@ -363,20 +365,12 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     }
   }
 
-  i {
-    width: 14px;
-  }
-
   .icon-twitter {
     color: #00aced;
   }
 
   .icon-facebook {
     color: #3B5998;
-  }
-
-  .icon-envelope-alt {
-    font-size: .9em;
   }
 }
 
