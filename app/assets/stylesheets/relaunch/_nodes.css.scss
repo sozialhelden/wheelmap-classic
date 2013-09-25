@@ -187,14 +187,14 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     @include text-shadow(none);
   }
 
-  .btn,
+  .dropdown-toggle,
   .dropdown-menu,
   .alert {
     width: 80%;
     min-width: 250px;
   }
 
-  .btn {
+  .dropdown-toggle {
     height: 40px;
     text-align: left;
     line-height: 30px;
@@ -263,12 +263,20 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 
   .submit {
-    @include buttonBackground(lighten($orange-gray, 10%), lighten($orange-gray, 5%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
-    text-align: center;
-    font-weight: bold;
-    border-color: darken($orange-gray, 20%);
-    margin-top: 10px;
-    display: none;
+    @include border-bottom-radius(3px);
+    margin-bottom: -5px;
+    margin-top: 5px;
+    padding: 5px;
+    text-align: right;
+    border-top: 1px solid darken($orange-gray, 10%);
+    background-color: lighten($orange-gray, 10%);
+
+    .btn {
+      @include buttonBackground(lighten($orange-gray, 10%), lighten($orange-gray, 5%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
+      text-align: center;
+      font-weight: bold;
+      border-color: darken($orange-gray, 20%);
+      }
   }
 
   @media (max-width: 580px), (min-width: 768px) and (max-width: 979px) {
@@ -277,7 +285,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
       width: 100% !important;
     }
 
-    .btn,
+    .dropdown-toggle,
     .dropdown-menu,
     .alert {
       width: 100%;

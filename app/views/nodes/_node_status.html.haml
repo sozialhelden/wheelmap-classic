@@ -25,10 +25,11 @@
               %i.icon-ok
             = t("home.index.popup.form.no")
             %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.no"), 'data-content' => t('wheelmap.what_is.not_accessible'), 'data-trigger' => 'hover'}
-    %button.submit.btn{:'data-toggle' => 'status-submit', :'data-url' =>  update_wheelchair_node_url(@node, :format => :js)}
-      =t('formtastic.labels.save')
+        %li.submit
+          %button.btn{:'data-toggle' => 'status-submit', :'data-url' => update_wheelchair_node_url(@node, :format => :js), disabled: 'disabled'}
+            =t('formtastic.labels.save')
 
-  .dropdown.span6.toilet
+  -#.dropdown.span6.toilet
     %h2=t('.accessible_toilet')
     %div
       %a.dropdown-toggle.btn.wheelchair-yes{'data-toggle' => 'dropdown'}

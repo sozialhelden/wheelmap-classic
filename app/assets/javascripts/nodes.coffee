@@ -94,7 +94,8 @@ createAlertElement = (type) ->
 
 # Status update
 $('[data-toggle="status"]').click (e) ->
-  e.preventDefault();
+  e.preventDefault()
+  e.stopPropagation() # stop propagation to the dropdown close event
 
   $this = $(@)
   data = $this.data()
@@ -121,7 +122,7 @@ $('[data-toggle="status"]').click (e) ->
     content: statusTexts.content
 
   $buttonSubmit = $dropdown.find('[data-toggle="status-submit"]')
-  $buttonSubmit.data('status', data.status).show()
+  $buttonSubmit.data('status', data.status).prop('disabled', false)
 
 csrfParam = $('meta[name="csrf-param"]').attr('content')
 csrfToken = $('meta[name="csrf-token"]').attr('content')
@@ -148,7 +149,7 @@ $('[data-toggle="status-submit"]').click (e) ->
       $alert.append(data.message)
       $this.closest('.dropdown').find('[data-toggle="dropdown"]').before($alert)
 
-      $this.hide()
+      $this.prop('disabled', true)
       $this.data('status', null)
     , 'json' # DataType
 
