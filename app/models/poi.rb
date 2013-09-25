@@ -496,6 +496,10 @@ class Poi < ActiveRecord::Base
     escaped_search_string
   end
 
+  def accesibility
+    WHEELCHAIR_ACCESIBILITY[wheelchair]
+  end
+
   protected
 
   # Dummy methods to generate full image paths
@@ -507,10 +511,6 @@ class Poi < ActiveRecord::Base
   # Dummy methods to generate full image paths
   def controller
     ''
-  end
-
-  def accesibility
-    WHEELCHAIR_ACCESIBILITY[wheelchair]
   end
 
 end
