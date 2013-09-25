@@ -1,0 +1,14 @@
+#node-share.btn-group.dropdown
+  %button.dropdown-toggle.btn{:'data-toggle' => 'dropdown'}
+    %i.icon-share
+
+  %ul.dropdown-menu{role: 'menu'}
+    %li
+      %a{href: "http://twitter.com/share?related=wheelmap,sozialhelden&hashtags=wheelmap&lang=#{I18n.locale}&text=#{t('nodes.show.share.text', name: '{{name}}')}&dnt=true&url=#{request.scheme}%3A%2F%2F#{request.host}%2Fnodes%2F{{id}}", :'data-toggle' => 'share', :'data-name' => 'twitter', target: '_blank' }
+        =fa_icon 'twitter', text: t('nodes.show.share.twitter')
+    %li
+      %a{href: "http://www.facebook.com/sharer/sharer.php?s=100&p%5Burl%5D=#{request.scheme}%3A%2F%2F#{request.host}%2Fnodes%2F{{id}}", :'data-toggle' => 'share', :'data-name' => 'facebook', target: '_blank'}
+        = fa_icon 'facebook', text: t('nodes.show.share.facebook')
+    %li
+      =mailme_to(nil, body: t('nodes.show.share.text', name: '{{name}}') + " (#{request.scheme}://#{request.host}/nodes/{{id}})") do
+        = fa_icon 'envelope-alt', text: 'E-Mail'

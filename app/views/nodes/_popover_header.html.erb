@@ -1,0 +1,10 @@
+<header id="node-header">
+  <h1 itemprop="name">{{headline}}</h1>
+  {{#if address}}
+    <address>{{address}}</address>
+  {{/if}}
+  <%= render partial: 'nodes/node_geocoordinates' %>
+
+  <%= close_button %>
+  <%= render partial: 'nodes/popover_breadcrumbs' %>
+</header>

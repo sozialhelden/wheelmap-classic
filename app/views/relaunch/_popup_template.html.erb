@@ -1,0 +1,12 @@
+<script type="text/x-handlebars-template" id="popupTemplate">
+  <article id="node-popover">
+    <%= render partial: 'nodes/popover_header' %>
+
+    <div class="row-fluid">
+      <section id="node-content" class="node-wrapper span12">
+        <%= render partial: 'nodes/popover_status', object: @node %>
+        <%= render partial: 'nodes/popover_edit' %>
+      </section>
+    </div>
+  </article>
+</script>

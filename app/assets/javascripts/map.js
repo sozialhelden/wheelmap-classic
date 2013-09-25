@@ -1,4 +1,5 @@
-var source = $("#cardTemplate").html();
+var source = $("#popupTemplate").html();
+var template = Handlebars.compile(source);
 
 var lat = 52.50521;
 var lon = 13.4231;
@@ -112,7 +113,7 @@ function onEachFeature(feature, layer) {
   if (feature.properties.name === null) {
     feature.properties.name = I18n.t("poi.name."+feature.properties.category+"."+ feature.properties.type)
   }
-  var popup_html = L.Util.template(source, feature.properties);
+  var popup_html = template(feature.properties);
   var popup = layer.bindPopup(popup_html, { closeButton: false });
 
   // Save the popup to be opened later on

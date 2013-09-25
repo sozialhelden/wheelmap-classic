@@ -7,7 +7,7 @@
     %header
       .pull-right
         = link_to('FAQ', 'http://wheelmap.org/about/faqs/', class: 'btn btn-mini', target: '_blank')
-        = mail_to('bugs@wheelmap.org', content_tag(:i, '', class: 'icon-envelope-alt'), class: 'btn btn-mini', encode: 'javascript')
+        = mail_to('bugs@wheelmap.org', content_tag(:i, '', class: 'icon-envelope-alt'), class: 'btn btn-mini', encode: :hex)
       = t('faq.headline')
     - t('faq.questions').size.times do |i|
       .accordion-group
