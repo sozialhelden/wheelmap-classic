@@ -18,4 +18,4 @@
 #
 translations:
   - file: "app/assets/javascripts/translations.js"
-    only: "*.poi.name"
+    only: ["*.wheelmap.what_is", "*.wheelchairstatus", "*.poi.name"]

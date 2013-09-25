@@ -3,27 +3,17 @@
     %h3=t('nodes.node_status.wheelchair_accessibility')
     %div
       %a{:'data-toggle' => 'dropdown', class: "dropdown-toggle btn wheelchair-{{wheelchair}}", :'data-status' => '{{wheelchair}}'}
-        %span.text= t("home.index.popup.form.{{wheelchair}}")
-        %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.{{wheelchair}}"), 'data-content' => t("wheelmap.what_is.{{wheelchair}}"), 'data-trigger' => 'hover'}
+        %span.text= '{{status_text}}'
+        %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => '{{status_text}}', 'data-content' => '{{status_description}}', 'data-trigger' => 'hover'}
         %i.icon-caret-down.pull-right
       %ul.dropdown-menu{'role' => 'menu'}
-        %li
-          %a.popover-wheelchair-yes{:'data-toggle' => 'status', :'data-status' => 'yes' }
-            %span{'class' => 'wm-checkbox wheelchair-yes'}
-              %i.icon-ok
-            = t("home.index.popup.form.yes")
-            %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.yes"), 'data-content' => t('wheelmap.what_is.fully_accessible'), 'data-trigger' => 'hover'}
-        %li
-          %a.popover-wheelchair-limited{:'data-toggle' => 'status', :'data-status' => 'limited' }
-            %span{'class' => 'wm-checkbox wheelchair-limited'}
-              %i.icon-ok
-            = t("home.index.popup.form.limited")
-            %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.limited"), 'data-content' => t('wheelmap.what_is.limited_accessible'), 'data-trigger' => 'hover'}
-        %li
-          %a.popover-wheelchair-no{:'data-toggle' => 'status', :'data-status' => 'no' }
-            %span{'class' => 'wm-checkbox wheelchair-no'}
-              %i.icon-ok
-            = t("home.index.popup.form.no")
-            %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.no"), 'data-content' => t('wheelmap.what_is.not_accessible'), 'data-trigger' => 'hover'}
+        - %w{yes limited no}.each do |status|
+          %li
+            %a.popover-wheelchair-yes{:'data-toggle' => 'status', :'data-status' => status }
+              %span{'class' => "wm-checkbox wheelchair-#{status}"}
+                %i.icon-ok
+              = t("home.index.popup.form.#{status}")
+              %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.#{status}"), 'data-content' => t('wheelmap.what_is.fully_accessible'), 'data-trigger' => 'hover'}
+
     %button.submit.btn{:'data-toggle' => 'status-submit', :'data-url' =>  '/nodes/{{id}}/update_wheelchair.js'}
       =t('formtastic.labels.save')

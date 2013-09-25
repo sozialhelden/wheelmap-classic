@@ -28,6 +28,7 @@ class Poi < ActiveRecord::Base
   self.include_root_in_json = false
 
   WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
+  WHEELCHAIR_ACCESIBILITY  = {'yes' => 'fully_accessible', 'limited' => 'limited_accessible', 'no' => 'not_accessible', 'unknown' => 'unknown_accessible'}
 
   belongs_to :region, :touch => false
   belongs_to :node_type, :touch => false, :include => :category
@@ -331,17 +332,17 @@ class Poi < ActiveRecord::Base
     {
         :type       => 'Feature',
         :geometry   => { :type => 'Point', :coordinates  => [ self.lon.to_f, self.lat.to_f ] },
-        :properties => { 'name'       => name,
-                         'headline'   => headline,
-                         'lat'        => lat,
-                         'lon'        => lon,
-                         'breadcrumbs'=> breadcrumbs,
-                         'address'    => address || '',
-                         'wheelchair' => wheelchair,
-                         'id'         => osm_id,
-                         'type'       => node_type.try(:identifier) || '',
-                         'category'   => category.try(:identifier) || '',
-                         'icon'       => icon
+        :properties => { 'name'               => name,
+                         'lat'                => lat,
+                         'lon'                => lon,
+                         'breadcrumbs'        => breadcrumbs,
+                         'address'            => address || '',
+                         'wheelchair'         => wheelchair,
+                         'accesibility'       => accesibility,
+                         'id'                 => osm_id,
+                         'type'               => node_type.try(:identifier) || '',
+                         'category'           => category.try(:identifier) || '',
+                         'icon'               => icon
                        }
     }
   end
@@ -506,6 +507,10 @@ class Poi < ActiveRecord::Base
   # Dummy methods to generate full image paths
   def controller
     ''
+  end
+
+  def accesibility
+    WHEELCHAIR_ACCESIBILITY[wheelchair]
   end
 
 end
