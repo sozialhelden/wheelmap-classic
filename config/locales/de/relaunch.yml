@@ -49,8 +49,9 @@ de:
     node_similar:
       similar: "Ähnliche Orte: %{name}"
     node_status:
-      wheelchair_accessibility: "Rollstuhlgerechtigkeit:"
       accessible_toilet: "Rollstuhlgerechtes WC:"
+      premium: "%{name} sagt: dieser Ort ist"
+      wheelchair_accessibility: "Rollstuhlgerechtigkeit:"
     node_streetview:
       streetview: "Strassenansicht:"
     show:

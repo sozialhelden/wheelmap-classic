@@ -50,8 +50,9 @@ en:
     node_similar:
       similar: "Similar places: %{name}"
     node_status:
-      wheelchair_accessibility: "Wheelchair accessibility:"
       accessible_toilet: "Wheelchair accessible toilet:"
+      premium: "%{name} says: this place is"
+      wheelchair_accessibility: "Wheelchair accessibility:"
     node_streetview:
       streetview: "Streetview:"
     show:
