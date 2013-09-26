@@ -43,9 +43,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
 }
 
 #node-header {
-  color: $grayLighter;
   @include headline-gradient();
-  @include text-shadow(0px 1px 0px #000000);
   padding: 10px 20px 15px 20px;
   position: relative; // For close page button
   z-index: 1;
@@ -57,20 +55,23 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   h1 {
     color: $white;
     font-size: $fontSizeHeadline;
+    @include text-shadow(0px 1px 0px #000000);
   }
 
   .breadcrumbs {
     @include clearfix();
+    @include text-shadow(0px 1px 0px rgba($black, 0.75));
     font-size: $fontSizeMini;
     margin-bottom: 10px;
-    opacity: .75;
+    color: rgba($grayLighter, 0.75);
 
     li {
       float: left;
       padding-right: 3px;
+      line-height: 24px;
 
       .icon-angle-right {
-        line-height: 20px;
+        line-height: inherit;
         font-size: $fontSizeLarge;
         float: left;
         padding: 0 7px 0 5px;
@@ -82,17 +83,64 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     }
   }
 
-  .close {
-    color: $grayLighter;
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    padding: 5px;
-    font-weight: normal;
+  .btn {
+    @include buttonBackground($dark-blue, darken($dark-blue, 10%), rgba($white, 0.75), 0 1px 1px rgba($black, .75));
+    @include box-shadow(none);
+    border: 1px solid darken($dark-blue, 10%);
+    font-size: $fontSizeMini;
+    line-height: 22px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
-  .close:hover {
-    color: $white;
+  .back {
+    float: left;
+    margin-right: 15px;
+    border-left: 0;
+    position: relative;
+    padding-left: 9px;
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      height: 50%;
+      width: 7px;
+      border-left: 1px solid darken($dark-blue, 10%);
+    }
+
+    &:before {
+      @include transform(skew(-35deg, 0));
+      @include background-image(linear-gradient(top, $dark-blue, darken($dark-blue, 5%)));
+      top: -1px;
+      border-top: 1px solid darken($dark-blue, 10%);
+    }
+
+    &:after {
+      @include transform(skew(35deg, 0));
+      @include background-image(linear-gradient(top, darken($dark-blue, 5%), darken($dark-blue, 10%)));
+      bottom: -1px;
+      border-bottom: 1px solid darken($dark-blue, 10%);
+    }
+
+    &:hover {
+      &:after,
+      &:before {
+        background-image: none;
+        background-color: darken($dark-blue, 10%);
+      }
+    }
+  }
+
+  .close {
+    @include opacity(100);
+    float: right;
+    width: 25px;
+    padding-left: 0;
+    padding-right: 1px; // Fix positing
+    text-align: center;
+    font-size: $baseFontSize;
   }
 }
 

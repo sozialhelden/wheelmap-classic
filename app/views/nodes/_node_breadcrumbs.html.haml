@@ -1,3 +1,8 @@
-%ol.breadcrumbs.unstyled
-  = list_of(node_breadcrumbs.breadcrumbs) do |i|
-    =fa_icon 'angle-right', text: i
+.breadcrumbs
+  =link_to root_path(lat: @node.lat, lon: @node.lon, node_id: @node.osm_id, zoom: cookies[:last_zoom]), class: 'btn back' do
+    Zurück zur Karte
+  =link_to root_path(lat: @node.lat, lon: @node.lon, node_id: @node.osm_id, zoom: cookies[:last_zoom]), class: 'btn close' do
+    = fa_icon "remove"
+  %ol.unstyled
+    = list_of(node_breadcrumbs.breadcrumbs) do |i|
+      =fa_icon 'angle-right', text: i
