@@ -180,7 +180,6 @@ GEM
     friendly_id (3.3.3.0)
       babosa (~> 0.3.0)
     fssm (0.2.10)
-    geoip (1.2.1)
     gherkin (2.11.5)
       json (>= 1.4.6)
     guard (1.6.1)
@@ -442,7 +441,6 @@ DEPENDENCIES
   font-awesome-rails
   formtastic (= 2.2.1)
   friendly_id (~> 3.3.1)
-  geoip
   guard
   guard-cucumber (= 1.2.2)
   guard-rspec

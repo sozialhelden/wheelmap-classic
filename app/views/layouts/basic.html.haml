@@ -25,6 +25,5 @@
   = content_for?(:content) ? yield(:content) : yield
 
   = render :partial => 'shared/google_tracking'
-  = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
   = content_for :javascript
 </html>
