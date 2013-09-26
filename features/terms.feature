@@ -16,14 +16,14 @@ Feature: User must accept terms
   Scenario: I must accept terms before uploading pictures
     And I am logged in with email: "editor@wheelmap.org", password: "123456"
     And I am on the last poi's page
-    And I follow "Bild hochladen"
+    And I follow "Hinzufügen"
     Then I should be on the terms page
 
   @omniauth_test
   Scenario: I must accept terms before editing nodes
     And I am logged in with email: "editor@wheelmap.org", password: "123456"
     And I am on the last poi's page
-    And I follow "Ort bearbeiten"
+    And I follow "Bearbeiten"
     Then I should be on the terms page
     And I check "Ich stimme den Nutzungsbedingungen zu."
     And I uncheck "Ich stimme Ziffer 1 und 2 der Datenschutzbestimmungen zu."
@@ -34,7 +34,7 @@ Feature: User must accept terms
   Scenario: I must accept privacy before editing nodes
     And I am logged in with email: "editor@wheelmap.org", password: "123456"
     And I am on the last poi's page
-    And I follow "Ort bearbeiten"
+    And I follow "Bearbeiten"
     Then I should be on the terms page
     And I uncheck "Ich stimme den Nutzungsbedingungen zu."
     And I check "Ich stimme Ziffer 1 und 2 der Datenschutzbestimmungen zu."
@@ -45,7 +45,7 @@ Feature: User must accept terms
   Scenario: I must accept terms and privacy before editing nodes
     And I am logged in with email: "editor@wheelmap.org", password: "123456"
     And I am on the last poi's page
-    And I follow "Ort bearbeiten"
+    And I follow "Bearbeiten"
     Then I should be on the terms page
     And I check "Ich stimme den Nutzungsbedingungen zu."
     And I check "Ich stimme Ziffer 1 und 2 der Datenschutzbestimmungen zu."

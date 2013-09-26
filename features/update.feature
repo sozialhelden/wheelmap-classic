@@ -15,7 +15,7 @@ Feature: Find, update and create nodes via API
     And user "editor" should be app_authorized
     And I am logged in with email: "editor@wheelmap.org", password: "123456"
     And I am on that poi's page
-    When I follow "Ort bearbeiten"
+    When I follow "Bearbeiten"
     When I fill in the following:
       | Straße   | Hühnerpfad           |
       | Nr       | 99                   |
