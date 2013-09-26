@@ -12,7 +12,7 @@ Feature: Find, update and create nodes via API
 
   Scenario: I want to see a decent title on the poi detail page
     When I am on the last poi's page
-    Then I should see "Ort: name | wheelmap.org" within "title"
+    Then I should see "Dieser Ort ist auf Wheelmap.org: name, Bar, Essen & Trinken, Berlin" within "title"
 
   Scenario: I want to see a link to a landing page on the poi detail page
     When I am on the last poi's page
