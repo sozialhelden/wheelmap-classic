@@ -16,9 +16,9 @@
 
 - content_for :javascript_constants do
   :javascript
-    var lat  = #{params[:lat]} || $.cookie('last_lat') || $.cookie('geoip_lat') || 52.5167;
-    var lon  = #{params[:lon]} || $.cookie('last_lon') || $.cookie('geoip_lon') || 13.4000;
-    var zoom = #{params[:zoom] || 18};
+    var lat  = #{params[:lat]  || cookies['last_lat']  || cookies['geoip_lat'] || 52.5167 };
+    var lon  = #{params[:lon]  || cookies['last_lon']  || cookies['geoip_lon'] || 13.4000 };
+    var zoom = #{params[:zoom] || cookies['last_zoom'] || 16};
     #{var_language};
 
 - content_for :javascript do
