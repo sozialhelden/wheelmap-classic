@@ -189,7 +189,8 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
 
   .dropdown-toggle,
   .dropdown-menu,
-  .alert {
+  .alert,
+  .premium {
     width: 80%;
     min-width: 250px;
   }
@@ -260,6 +261,38 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     @include box-sizing(border-box);
     margin-bottom: 10px;
     border-color: lighten($successText, 40%);
+  }
+
+  .premium {
+    padding: 8px 35px 8px 14px;
+    margin: 10px 0px;
+    background: #EEEDE8;
+    border: 1px solid #D7D2C5;
+
+    @include box-sizing(border-box);
+    @include border-radius(3px);
+    @include box-shadow(0px 1px 0px 0px rgba(255,254,254,0.39));
+
+    a {
+      text-decoration: underline;
+      color: $gray;
+    }
+
+    .icon-stack {
+      height: 1.7em;
+    }
+
+    .yes {
+      color: $wheelchair-yes;
+    }
+
+    .no {
+      color: $wheelchair-no;
+    }
+
+    .limited {
+      color: $wheelchair-limited;
+    }
   }
 
   .submit {

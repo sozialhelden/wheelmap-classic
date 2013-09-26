@@ -18,6 +18,14 @@
         %li.submit
           %button.btn{:'data-toggle' => 'status-submit', :'data-url' => update_wheelchair_node_url(node_status, :format => :js), disabled: 'disabled'}
             =t('formtastic.labels.save')
+      - node_status.provided_pois.each do |premium|
+        %p.premium
+          = fa_stacked_icon "ok", base: "comment-alt"
+          %span
+            = t('.premium', name: premium.provider.name)
+            %span{class: premium.wheelchair}
+              = t("wheelchairstatus.#{premium.wheelchair}") + '.'
+            = link_to('Mehr Infos', premium.url, target: '_blank', rel: 'no-follow') if premium.url
 
   -#.dropdown.span6.toilet
     %h2=t('.accessible_toilet')
