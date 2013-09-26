@@ -12,7 +12,6 @@ group :default do
   gem 'devise-encryptable'
   gem 'redgreengrid', :git => 'git@github.com:christoph-buente/redgreengrid.git'
   gem 'haml'
-  gem 'geoip'
   gem 'formtastic', '2.2.1'
   gem 'delayed_job'
   gem 'delayed_job_active_record'
