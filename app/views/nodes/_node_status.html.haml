@@ -1,31 +1,33 @@
-%section#node-status.row-fluid
-  .dropdown.span6.wheelchair
-    %h2=t('.wheelchair_accessibility')
-    %div
-      %a{:'data-toggle' => 'dropdown', class: "dropdown-toggle btn wheelchair-#{node_status.wheelchair}", :'data-status' => node_status.wheelchair}
-        %span.text= t("home.index.popup.form.#{node_status.wheelchair}")
-        %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.#{node_status.wheelchair}"), 'data-content' => t("wheelmap.what_is.#{node_status.accesibility}"), 'data-trigger' => 'hover'}
-        = fa_icon('caret-down', class: 'pull-right')
-      %ul.dropdown-menu{'role' => 'menu'}
-        - %w{yes limited no}.each do |status|
-          %li
-            %a{class: "popover-wheelchair-#{status}", :'data-toggle' => 'status', :'data-status' => status }
-              %span.wm-checkbox{'class' => ["wheelchair-#{status}", (node_status.wheelchair == status ? 'checked' : nil)]}
-                %i.icon-ok
-              = t("home.index.popup.form.#{status}")
-              %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.#{status}"), 'data-content' => t("wheelmap.what_is.#{node_status.accesibility}"), 'data-trigger' => 'hover'}
+%section#node-status
+  .row-fluid
+    .dropdown.span6.wheelchair
+      %h2=t('.wheelchair_accessibility')
+      %div
+        %a{:'data-toggle' => 'dropdown', class: "dropdown-toggle btn wheelchair-#{node_status.wheelchair}", :'data-status' => node_status.wheelchair}
+          %span.text= t("home.index.popup.form.#{node_status.wheelchair}")
+          %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.#{node_status.wheelchair}"), 'data-content' => t("wheelmap.what_is.#{node_status.accesibility}"), 'data-trigger' => 'hover'}
+          = fa_icon('caret-down', class: 'pull-right')
+        %ul.dropdown-menu{'role' => 'menu'}
+          - %w{yes limited no}.each do |status|
+            %li
+              %a{class: "popover-wheelchair-#{status}", :'data-toggle' => 'status', :'data-status' => status }
+                %span.wm-checkbox{'class' => ["wheelchair-#{status}", (node_status.wheelchair == status ? 'checked' : nil)]}
+                  %i.icon-ok
+                = t("home.index.popup.form.#{status}")
+                %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.#{status}"), 'data-content' => t("wheelmap.what_is.#{node_status.accesibility}"), 'data-trigger' => 'hover'}
 
-        %li.submit
-          %button.btn{:'data-toggle' => 'status-submit', :'data-url' => update_wheelchair_node_url(node_status, :format => :js), disabled: 'disabled'}
-            =t('formtastic.labels.save')
+          %li.submit
+            %button.btn{:'data-toggle' => 'status-submit', :'data-url' => update_wheelchair_node_url(node_status, :format => :js), disabled: 'disabled'}
+              =t('formtastic.labels.save')
+  .row-fluid
+    .span6
       - node_status.provided_pois.each do |premium|
-        %p.premium
+        .premium
           = fa_stacked_icon "ok", base: "comment-alt"
-          %span
-            = t('.premium', name: premium.provider.name)
-            %span{class: premium.wheelchair}
-              = t("wheelchairstatus.#{premium.wheelchair}") + '.'
-            = link_to('Mehr Infos', premium.url, target: '_blank', rel: 'no-follow') if premium.url
+          = t('.premium', name: premium.provider.name)
+          %span{class: premium.wheelchair}
+            = t("wheelchairstatus.#{premium.wheelchair}") + '.'
+          = link_to('Mehr Infos', premium.url, target: '_blank', rel: 'no-follow') if premium.url
 
   -#.dropdown.span6.toilet
     %h2=t('.accessible_toilet')

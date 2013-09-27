@@ -229,7 +229,8 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     margin-top: 15px;
   }
 
-  [class*="icon-"] {
+  .icon-caret-down,
+  .icon-question-sign {
     line-height: inherit;
   }
 
@@ -316,22 +317,37 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 
   .premium {
-    padding: 8px 35px 8px 14px;
-    margin: 10px 0px;
-    background: #EEEDE8;
-    border: 1px solid #D7D2C5;
+    position: relative;
+    font-size: $fontSizeSmall;
+    padding: 8px 12px 6px 41px;
+    margin-top: 10px;
+    background-color: lighten($orange-gray, 6%);
+    border: 1px solid darken($orange-gray, 10%);
+    line-height: $fontSizeSmall * 1.45;
+    color: darken($orange-gray, 35%);
 
     @include box-sizing(border-box);
     @include border-radius(3px);
-    @include box-shadow(0px 1px 0px 0px rgba(255,254,254,0.39));
+    @include box-shadow(0px 1px 0px 0px rgba($white,0.5));
+    @include text-shadow(0px 1px 0px rgba($white,0.5));
 
     a {
       text-decoration: underline;
-      color: $gray;
+      color: inherit;
     }
 
     .icon-stack {
-      height: 1.5em;
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      margin-top: -1em;
+      line-height: 2em;
+      font-size: inherit;
+
+      .icon-ok {
+        @include box-sizing(border-box);
+        padding-top: 1px;
+      }
     }
 
     .yes {
