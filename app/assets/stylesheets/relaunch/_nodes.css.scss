@@ -142,6 +142,10 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     text-align: center;
     font-size: $baseFontSize;
   }
+
+  address {
+    color: $grayLighter;
+  }
 }
 
 #node-aside {
