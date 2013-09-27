@@ -35,10 +35,11 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
       float: none !important;
       width: 100% !important;
     }
+  }
 
-    .popover {
-      width: 180px;
-    }
+  .popover {
+    width: 180px;
+    line-height: $baseLineHeight;
   }
 }
 
@@ -381,14 +382,15 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 
   @media (max-width: 580px), (min-width: 768px) and (max-width: 979px) {
-    .dropdown {
+    .span6 {
       float: none !important;
       width: 100% !important;
     }
 
     .dropdown-toggle,
     .dropdown-menu,
-    .alert {
+    .alert,
+    .premium {
       width: 100%;
     }
   }
