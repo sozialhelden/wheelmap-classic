@@ -13,10 +13,10 @@
 #
 #= require flash
 #= require jquery/jquery.magnific-popup.js
+#= require responsive-popover
 #= require dropzone
 
 $container = $("#node")
-switchPlacement = 200
 $container.find("[data-toggle=\"popover\"]").each ->
   $this = $(@)
   $this.popover
@@ -24,10 +24,6 @@ $container.find("[data-toggle=\"popover\"]").each ->
       return $this.data('title')
     content: () ->
       return $this.data('content')
-    placement: (popover, element) ->
-      $element = $(element)
-      delta = $(window).width() - ($element.width() + $element.offset().left)
-      (if delta >= switchPlacement then "right" else "left")
 
 
 $(document).on("click.dropdown", "[data-toggle=\"collapse\"]", (e) ->
