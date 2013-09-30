@@ -69,6 +69,7 @@ class Poi < ActiveRecord::Base
     t.add :node_type, :template => :id
     t.add :lat
     t.add :lon
+    t.add :icon
     t.add :id
     t.add :category, :template => :id
     t.add :street

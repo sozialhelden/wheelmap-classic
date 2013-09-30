@@ -33,6 +33,7 @@ class NodesController < ApplicationController
 
     respond_to do |wants|
       wants.js{ render :json => @places.as_api_response(:iphone) }
+      wants.json{ render :status => 200, :json => @places.as_api_response(:simple) }
       wants.geojson do
         render :file => "#{Rails.root}/app/views/nodes/index.geojson.erb", :content_type => "application/json; subtype=geojson; charset=utf-8"
       end
