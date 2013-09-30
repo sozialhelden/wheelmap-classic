@@ -51,5 +51,7 @@ Wheelmap::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 2.0
 
+  config.ember.variant = :development
+
 end
 
