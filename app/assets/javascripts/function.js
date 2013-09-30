@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+  var $categoryFilter = $('.category-filter');
   $('.selectpicker').selectpicker();
   $categoryFilter.customSelect();
 

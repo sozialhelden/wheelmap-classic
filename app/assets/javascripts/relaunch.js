@@ -4,11 +4,9 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
-//= require jquery
 //= require jquery_ujs
 //= require jquery/jquery.parsequery.js
 //= require jquery/jquery.cookies.js
-//= require handlebars
 
 //
 //= require bootstrap-transition
@@ -26,12 +24,9 @@
 //= require translations.js
 //= require spin
 //
-//= require leaflet/leaflet
 //= require leaflet/leaflet.locate
 //= require leaflet/leaflet.spin
 //= require leaflet/leaflet.permalink
 //
-//= require map
-//= require nodes
 //= require function
 //= require custom-select
