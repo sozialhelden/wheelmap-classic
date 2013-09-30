@@ -16,14 +16,14 @@ Wheelmap.IndexRoute = Ember.Route.extend
     @controllerFor('map').setProperties(properties)
 
   actions:
-    reloadNodes: (bounds)->
+    updateNodes: (bounds)->
       mapController = @controllerFor('map')
 
       mapController.set('isLoading', true)
 
-      setTimeout(() ->
+      @store.findQuery('node', bbox: bounds.toBBoxString()).then (nodes)->
+        mapController.set('content', nodes)
         mapController.set('isLoading', false)
-      , 2000)
 
     permalink: ()->
       Ember.run.sync() # Needed for having all parameters up to date

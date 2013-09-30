@@ -1,6 +1,6 @@
 Wheelmap = @Wheelmap
 
-Wheelmap.MapController = Ember.Controller.extend
+Wheelmap.MapController = Ember.ArrayController.extend
   boundsRatioBuffer: 0.3
   previousBounds: null
   center: null
@@ -14,7 +14,7 @@ Wheelmap.MapController = Ember.Controller.extend
       center: new L.LatLng(52.50521, 13.4231)
       zoom: 12
 
-    if $.cookie('last_lat')? and $.cookie('last_lng')?
+    if $.cookie('last_lat')? and $.cookie('last_lon')?
       properties.center = new L.LatLng($.cookie('last_lat'), $.cookie('last_lng'))
 
     if $.cookie('last_zoom')?
@@ -37,7 +37,7 @@ Wheelmap.MapController = Ember.Controller.extend
         return
 
       @send('permalink')
-      @send('reloadNodes', bounds)
+      @send('updateNodes', bounds)
 
     moving: (isMoving, bounds)->
       if isMoving # Only reload when moving is finished
@@ -52,4 +52,4 @@ Wheelmap.MapController = Ember.Controller.extend
         if paddedBounds.contains(bounds)
           return
 
-      @send('reloadNodes', bounds)
+      @send('updateNodes', bounds)
