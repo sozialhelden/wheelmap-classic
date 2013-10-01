@@ -19,8 +19,8 @@
   - if @node.new_record?
     .form-info=t('nodes.new.form.location')
 
-  = form.input :lon, :input_html =>{:readonly => 'readonly', :value => @node.lon}, :as => :number, :required => true
-  = form.input :lat, :input_html =>{:readonly => 'readonly', :value => @node.lat}, :as => :number, :hint => false
+  = form.input :lon, :input_html =>{:readonly => 'readonly', :value => @node.lon }
+  = form.input :lat, :input_html =>{:readonly => 'readonly', :value => @node.lat }, :hint => false
   - unless @node.new_record? # !is_new?
     .form-info
       Dieser Ort ist nicht korrekt?
