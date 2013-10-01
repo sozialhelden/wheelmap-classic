@@ -4,7 +4,7 @@
 
 #accessibility
   = semantic_form_for @node, :as => :node, :url => {:controller => 'nodes', :action => 'create'} do |form|
-    = hidden_field_tag "zoom", params[:zoom]
+    = hidden_field_tag "zoom", params[:zoom] || 18
     = render :partial => 'inputs', :object => @node, :locals => {:form => form}
 
     = form.actions do
