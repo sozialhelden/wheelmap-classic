@@ -25,6 +25,7 @@ en:
         less_than: "must be less than %{count}"
         less_than_or_equal_to: "must be less than or equal to %{count}"
         not_a_number: "is not a number"
+        not_equal_to: "must not be equal to %{count}"
         odd: "must be odd"
         record_invalid: "Validation failed: %{errors}"
         taken: "has already been taken"
