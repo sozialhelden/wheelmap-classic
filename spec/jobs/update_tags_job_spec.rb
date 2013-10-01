@@ -191,4 +191,30 @@ describe UpdateTagsJob do
     user.reload.changeset_id.should == changeset.id
   end
 
+  context "unknown value" do
+
+    let(:wheelchair_node) { Rosemary::Node.new(:tags => { 'addr:housenumber' => 10 }) }
+
+    it "does not update wheelchair tag" do
+      wheelchair_node.add_tags( 'wheelchair' => 'yes')
+      wheelchair_node.tags["wheelchair"].should eql 'yes'
+
+      job = UpdateTagsJob.enqueue(1, 'node', { 'wheelchair' => 'unknown', 'addr:housenumber' => 99 }, user, 'update_iphone')
+
+      api = mock(:find_or_create_open_changeset => changeset)
+
+      Rosemary::Api.should_receive(:new).and_return(api)
+      api.should_receive(:find_element).and_return(wheelchair_node)
+      api.should_receive(:save) do |node, _|
+        node.tags['wheelchair'].should eql 'yes'
+      end
+      successes, failures = Delayed::Worker.new.work_off
+      successes.should eql 1
+      failures.should eql 0
+
+    end
+
+
+  end
+
 end
