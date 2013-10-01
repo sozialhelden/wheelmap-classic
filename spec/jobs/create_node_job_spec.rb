@@ -81,4 +81,32 @@ describe CreateNodeJob do
     user.reload.changeset_id.should == changeset.id
   end
 
+  context "unknown value" do
+
+    subject {
+      CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'unknown', 'amenity' => 'bar', 'name' => 'White horse' }, user, 'create_iphone')
+    }
+
+    it "does not save wheelchair tag" do
+
+      api = mock(:find_or_create_open_changeset => changeset)
+      Rosemary::Api.should_receive(:new).and_return(api)
+
+      api.should_receive(:create) do |node, _|
+        node.lat.should eql 52.4
+        node.lon.should eql 13.0
+        node.tags['wheelchair'].should be_nil
+        node.tags['amenity'].should eq 'bar'
+        node.tags['name'].should eq 'White horse'
+      end
+      job = subject
+      successes, failures = Delayed::Worker.new.work_off
+      successes.should eql 1
+      failures.should eql 0
+    end
+
+
+  end
+
+
 end
