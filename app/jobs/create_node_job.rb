@@ -6,6 +6,9 @@ class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client, :source)
     # Do not enqeue job if not in production or test environment
     return unless Rails.env.production? || Rails.env.test?
 
+    # Remove wheelchair tag if value is "unknown"
+    tags.delete("wheelchair") if tags["wheelchair"] == 'unknown'
+
     client = Rosemary::OauthClient.new(user.access_token)
     new(lat, lon, tags, user, client, source).tap do |job|
       Delayed::Job.enqueue(job)

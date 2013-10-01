@@ -5,6 +5,9 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
     # Do not enqeue job if not in production or test environment
     return unless Rails.env.production? || Rails.env.test?
 
+    # Remove wheelchair tag if value is "unknown"
+    tags.delete("wheelchair") if tags["wheelchair"] == 'unknown'
+
     client = Rosemary::OauthClient.new(user.access_token)
     new(element_id, type, tags, user, client, source).tap do |job|
       Delayed::Job.enqueue(job)
