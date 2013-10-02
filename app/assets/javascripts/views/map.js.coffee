@@ -14,25 +14,67 @@ Wheelmap.TileLayer = EmberLeaflet.TileLayer.extend
     detectRetina: true
 
 Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend EmberLeaflet.PopupMixin,
+  view: null
+
+  popupOptions:
+    offset: L.point(0, -20)
+
   popupContent: (()->
-    template = Ember.TEMPLATES['map-popup']
-    template(@get('content'))
+    if !@view?
+      @view = @get('parentLayer').createChildView('map-popup')
+      @view.set('context', @get('content'))
+      @view.createElement()
+
+    @view.get('element')
   ).property()
 
-  _newLayer: ()->
-    new L.Marker @get('location'),
-      icon: L.divIcon
-        iconSize: [29, 32]
-        iconAnchor: [15, 30]
-        popupAnchor: [0, -8]
-        className: 'wm-' + @get('content.wheelchair') + ' wm-' + @get('content.category.identifier')
-        html: '<div class="wm-icon wm-icon-' + @get('content.icon') + '"></div>'
-      title: @get('content.name')
+  willCreateLayer: ()->
+    @set 'options',
+      icon: new Wheelmap.MapIcon(@)
       riseOnHover: true
+
+  visibilityChanged: (()->
+    @get('$icon').toggleClass('hide', @get('content.isVisible'))
+  ).observes('content.isVisible')
 
 Wheelmap.MarkerCollectionLayer = EmberLeaflet.MarkerCollectionLayer.extend
   contentBinding: 'controller'
   itemLayerClass: Wheelmap.MarkerLayer
+
+Wheelmap.MapIcon = L.Icon.extend
+  options: {}
+
+  initialize: (markerLayer, options)->
+    L.Icon.prototype.initialize.call(@, options)
+
+    @markerLayer = markerLayer
+
+  createIcon: ()->
+    @view = @markerLayer.get('parentLayer').createChildView('map-marker')
+    @view.set('context', @markerLayer.get('content'))
+    @view.createElement()
+
+    @view.get('element')
+
+Wheelmap.MapMarkerView = Ember.View.extend
+  templateName: 'map-marker'
+  classNames: ['leaflet-marker-icon', 'leaflet-clickable', 'leaflet-zoom-animated']
+  classNameBindings: ['wheelchairClass']
+  attributeBindings: ['title']
+
+  title: Ember.computed.alias('context.name')
+  isVisible: Ember.computed.alias('context.isVisible')
+
+  wheelchairClass: (()->
+    'marker-wheelchair-' + @get('context.wheelchair')
+  ).property('context.wheelchair')
+
+  iconClass: (()->
+    'marker-icon-' + @get('context.icon')
+  ).property('context.icon')
+
+Wheelmap.MapPopupView = Ember.View.extend
+  templateName: 'map-popup'
 
 Wheelmap.SpinMixin = Ember.Mixin.create
   spinner: null,
@@ -61,21 +103,31 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
 
   didInsertElement: ()->
     Ember.run.sync() # Needed for bindings to controller
+
     @_super()
 
-  layerChanged: (()->
+  bounds: ((key, bounds)->
     layer = @get('layer')
 
-    if layer?
-      @get('controller').send('updateNodes', layer.getBounds())
+    if !layer?
+      return
+
+    if bounds?
+      layer.fitBounds(bounds)
+
+    layer.getBounds()
+  ).property()
+
+  layerChanged: (()->
+    @get('controller').send('layerChanged', @get('layer'))
   ).observes('layer')
 
   zooming: (()->
-    @get('controller').send('zooming', @get('isZooming'), @get('layer').getBounds())
+    @get('controller').send('zooming', @get('isZooming'), @get('bounds'))
   ).observes('isZooming')
 
   moving: (()->
-    @get('controller').send('moving', @get('isMoving'), @get('layer').getBounds())
+    @get('controller').send('moving', @get('isMoving'), @get('bounds'))
   ).observes('isMoving')
 
   loading: (()->

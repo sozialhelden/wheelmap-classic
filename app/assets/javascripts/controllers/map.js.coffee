@@ -1,12 +1,10 @@
 Wheelmap = @Wheelmap
 
 Wheelmap.MapController = Ember.ArrayController.extend
-  boundsRatioBuffer: 0.3
-  previousBounds: null
+  itemController: 'node'
   center: null
   zoom: null
   startNode: null
-  nodes: []
   isLoading: false
 
   init: ()->
@@ -31,25 +29,3 @@ Wheelmap.MapController = Ember.ArrayController.extend
     $.cookie('last_zoom', zoom)
   ).observes('center', 'zoom')
 
-  actions:
-    zooming: (isZooming, bounds)->
-      if isZooming # Only reload when zooming is finished
-        return
-
-      @send('permalink')
-      @send('updateNodes', bounds)
-
-    moving: (isMoving, bounds)->
-      if isMoving # Only reload when moving is finished
-        @previousBounds = bounds
-        return
-
-      @send('permalink')
-
-      if @previousBounds?
-        paddedBounds = @previousBounds.pad(@boundsRatioBuffer)
-
-        if paddedBounds.contains(bounds)
-          return
-
-      @send('updateNodes', bounds)
