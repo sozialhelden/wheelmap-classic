@@ -1,6 +1,9 @@
 Wheelmap = @Wheelmap
 
 Wheelmap.IndexRoute = Ember.Route.extend
+  boundsRatioBuffer: 0.3
+  previousBounds: null
+
   setupController: (controller, model, queryParams)->
     properties = {}
 
@@ -16,10 +19,36 @@ Wheelmap.IndexRoute = Ember.Route.extend
     @controllerFor('map').setProperties(properties)
 
   actions:
+    zooming: (isZooming, bounds)->
+      if isZooming # Only reload when zooming is finished
+        return
+
+      @send('permalink')
+      @send('updateNodes', bounds)
+
+    moving: (isMoving, bounds)->
+      if isMoving # Only reload when moving is finished
+        return
+
+      @send('permalink')
+
+      if @previousBounds?
+        paddedBounds = @previousBounds.pad(@boundsRatioBuffer)
+
+        if paddedBounds.contains(bounds)
+          return
+
+      @send('updateNodes', bounds)
+
+    layerChanged: (layer)->
+      if layer?
+        @send('updateNodes', layer.getBounds())
+
     updateNodes: (bounds)->
       mapController = @controllerFor('map')
 
       mapController.set('isLoading', true)
+      @previousBounds = bounds
 
       @store.findQuery('node', bbox: bounds.toBBoxString()).then (nodes)->
         mapController.set('content', nodes)

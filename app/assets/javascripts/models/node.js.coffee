@@ -7,6 +7,8 @@ attr = DS.attr
   icon: attr()
   wheelchair: attr()
   category: attr()
+  address: attr()
+  breadcrumbs: attr()
 
   location: (()->
     new L.LatLng(@get('lat'), @get('lon'))
