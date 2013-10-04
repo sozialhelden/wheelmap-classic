@@ -38,6 +38,7 @@ Wheelmap.IndexRoute = Ember.Route.extend
         if paddedBounds.contains(bounds)
           return
 
+      @previousBounds = bounds
       @send('updateNodes', bounds)
 
     layerChanged: (layer)->
@@ -48,7 +49,6 @@ Wheelmap.IndexRoute = Ember.Route.extend
       mapController = @controllerFor('map')
 
       mapController.set('isLoading', true)
-      @previousBounds = bounds
 
       @store.findQuery('node', bbox: bounds.toBBoxString()).then (nodes)->
         mapController.set('content', nodes)
