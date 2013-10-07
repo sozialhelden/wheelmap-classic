@@ -44,6 +44,11 @@ class NodesController < ApplicationController
   def show
     @node = Poi.find(params[:id])
     @node.photos.build if @node.photos.blank?
+
+    respond_to do |wants|
+      wants.json{ render :status => 200, :json => { :node => @node.as_api_response(:simple) } }
+      wants.html
+    end
   end
 
   def edit

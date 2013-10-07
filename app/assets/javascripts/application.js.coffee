@@ -1,7 +1,7 @@
 #= require handlebars
 #= require ember
 #= require ember-data
-#= require leaflet/leaflet
+#= require leaflet/leaflet-src
 #= require leaflet/leaflet.locate
 #= require spin
 #= require ember-leaflet
