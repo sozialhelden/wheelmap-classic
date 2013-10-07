@@ -3,6 +3,7 @@ Wheelmap = @Wheelmap
 Wheelmap.IndexRoute = Ember.Route.extend
   boundsRatioBuffer: 0.41
   _previousBounds: null
+  _nodeRequestCounter: 0 # stop overlapping requests
 
   setupController: (controller, model, queryParams)->
     properties = {}
@@ -48,16 +49,21 @@ Wheelmap.IndexRoute = Ember.Route.extend
         @send('updateNodes', bounds)
 
     updateNodes: (bounds)->
-      mapController = @controllerFor('map')
-      @_previousBounds = bounds
+      self = @
+      currentRequestCount = ++self._nodeRequestCounter
+      self._previousBounds = bounds
 
+      mapController = @controllerFor('map')
       mapController.set('isLoading', true)
 
       @store.findQuery('node', bbox: bounds.toBBoxString()).then (nodes)->
+        if currentRequestCount != self._nodeRequestCounter
+          return
+
         mapController.clear()
         mapController.addObjects(nodes)
-
         mapController.set('isLoading', false)
+        self._nodeRequestCounter = 0
 
     popping: ()->
       @send('permalink')
