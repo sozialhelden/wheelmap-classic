@@ -1,6 +1,6 @@
 //= require jquery
 //= require jquery_ujs
-//= require jquery/jquery-migrate-1.1.1
+//= require jquery/jquery-migrate
 //= require jquery/jquery.tools
 //= require jquery/jquery.blockUI
 //= require jquery/jquery.uploadify
