@@ -454,7 +454,6 @@ DEPENDENCIES
   devise-encryptable
   email_spec
   ember-rails
-  ember-source
   exifr
   factory_girl_rails
   fastercsv
