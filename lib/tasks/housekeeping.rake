@@ -104,4 +104,15 @@ namespace :housekeeping do
     w.save!
   end
 
+  desc "Remove all shapes aka building shapes from db."
+  task :remove_shapes => :environment do
+    Poi.where('osm_id < 0').select(:osm_id).find_in_batches(start: Poi.lowest_id) do |batch|
+      poi_ids = batch.map(&:osm_id)
+      Poi.delete_all(:osm_id => poi_ids)
+      sleep 0.1
+      putc '.'
+      STDOUT.flush
+    end
+  end
+
 end
