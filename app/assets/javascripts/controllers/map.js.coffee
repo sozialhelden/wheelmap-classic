@@ -25,9 +25,9 @@ Wheelmap.MapController = Ember.ArrayController.extend
   mapChanged: (()->
     center = @get('center')
 
-    $.cookie('last_lat', center.lat)
-    $.cookie('last_lng', center.lng)
-    $.cookie('last_zoom', @get('zoom'))
+    $.cookie('last_lat', center.lat, { path: '/' } )
+    $.cookie('last_lng', center.lng, { path: '/' } )
+    $.cookie('last_zoom', @get('zoom'), { path: '/' })
   ).observes('center', 'zoom')
 
   poppingNode: ((key, nodeId)->
