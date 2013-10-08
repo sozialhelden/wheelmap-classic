@@ -1,4 +1,5 @@
 #= require jquery
+#= require jquery/jquery-migrate
 #= require handlebars
 #= require ember
 #= require ember-data
