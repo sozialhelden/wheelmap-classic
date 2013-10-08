@@ -100,6 +100,19 @@ class Poi < ActiveRecord::Base
     t.add :category_for_node, :as => :category
   end
 
+  api_accessible :map do |t|
+    t.add :id
+    t.add :name
+    t.add :lat
+    t.add :lon
+    t.add :breadcrumbs
+    t.add :address
+    t.add :wheelchair
+    t.add lambda{|poi| poi.category.try(:identifier)  }, :as => :category
+    t.add lambda{|poi| poi.node_type.try(:identifier)  }, :as => :type
+    t.add :icon
+  end
+
   before_save :set_status
   before_save :set_version
   before_save :set_node_type
