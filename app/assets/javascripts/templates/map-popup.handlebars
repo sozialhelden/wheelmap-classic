@@ -1,16 +1,20 @@
-<article class="node-popover">
-    <header>
-        <h1 itemprop="name">{{name}}</h1>
-        {{#if address}}
-            <address>{{address}}</address>
-        {{/if}}
+<article id="node-popover">
+  <header id="node-header"
+    <h1 itemprop="name">{{name}}</h1>
+    {{#if address}}
+      <address>{{address}}</address>
+    {{/if}}
 
-        <ol class="breadcrumbs unstyled">
-            {{#each breadcrumbs}}
-                <li>
-                    {{this}}
-                </li>
-            {{/each}}
-        </ol>
-    </header>
+    <ol class="breadcrumbs unstyled">
+      {{#each breadcrumbs}}
+        <li>
+          {{this}}
+        </li>
+      {{/each}}
+    </ol>
+  </header>
+  <div class="row-fluid">
+    <section id="node-content" class="node-wrapper span12">
+    </section>
+  </div>
 </article>
