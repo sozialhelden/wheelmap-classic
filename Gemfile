@@ -60,8 +60,7 @@ group :default do
 end
 
 group :assets do
-  gem 'jquery-rails'
-  gem 'jquery-ui-rails'
+  gem 'jquery-rails', '2.3.0'
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'compass'
