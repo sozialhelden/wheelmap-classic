@@ -1,7 +1,7 @@
 %section#node-map
   %h2=t('.map')
   .map
-    = link_to root_path(lat: @node.lat, lon: @node.lon, node_id: @node.osm_id, zoom: cookies[:last_zoom]), title: '' do
+    =link_to root_path(anchor: "/?" + {lat: @node.lat, lon: @node.lon, node_id: @node.osm_id, zoom:   cookies[:last_zoom]}.to_param), title: '' do
       = image_tag("http://api.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/#{node_map.lon},#{node_map.lat},17/359x239.png64", class: 'img-polaroid', size: '359x239')
     %div{class: "leaflet-marker-icon public_transfer #{@node.wheelchair}"}
       .icon{id: @node.icon}
