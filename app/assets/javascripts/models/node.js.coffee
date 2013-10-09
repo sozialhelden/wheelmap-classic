@@ -41,4 +41,8 @@ attr = DS.attr
     '/nodes/' + @get('osm_id') + '/edit'
   ).property('osm_id')
 
+  update_path:(()->
+    '/nodes/' + @get('osm_id') + '/update_wheelchair.js'
+  ).property('osm_id')
+
 @Wheelmap.NodeAdapter = DS.RESTAdapter.extend()

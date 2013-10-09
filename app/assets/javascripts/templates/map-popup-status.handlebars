@@ -38,7 +38,7 @@
         </a>
       </li>
     </ul>
-    <button class="submit btn" data-toggle="status-submit" data-url="/nodes/{{id}}/update_wheelchair.js">
+    <button class="submit btn" data-toggle="status-submit" {{ bind-attr data-url="update_path" }}>
       {{ t "formtastic.labels.save" }}
     </button>
   </div>
