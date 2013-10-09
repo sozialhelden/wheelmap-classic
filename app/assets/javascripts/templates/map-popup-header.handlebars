@@ -1,0 +1,13 @@
+{{! header }}
+<header id="node-header">
+  <h1 itemprop="name">{{headline}}</h1>
+  {{#if address}}
+    <address>{{address}}</address>
+  {{/if}}
+
+  <ol class="breadcrumbs unstyled">
+    {{#each breadcrumbs}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ol>
+</header>

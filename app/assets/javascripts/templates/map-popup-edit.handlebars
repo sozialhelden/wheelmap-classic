@@ -1,0 +1,15 @@
+<section id="node-edit">
+  {{partial map-popup-faq}}
+
+  <div class="btn-group">
+    <a {{bind-attr href="show_path"}} class="btn">
+      {{ t 'nodes.node_edit.details' }}
+    </a>
+
+    <a {{bind-attr href="edit_path"}} class="btn">
+      <i class="icon-pencil"></i>
+    </a>
+  </div>
+
+  {{partial map-popup-share}}
+</section>

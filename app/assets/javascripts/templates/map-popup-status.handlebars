@@ -1,0 +1,45 @@
+{{! status }}
+<section id="node-status" class="row-fluid">
+  <div class="dropdown span6 wheelchair">
+    <h3>{{t 'nodes.node_status.wheelchair_accessibility'}}</h3>
+    <div>
+      <a data-toggle="dropdown", class="dropdown-toggle btn" {{bind-attr class="wheelchair"}} {{ bind-attr data-status="wheelchair" }}>
+        <span class="text">{{statusText}}</span>
+        <i class="icon-question-sign" data-toggle="popover" {{bind-attr data-title="statusText"}} {{bind-attr data-content="statusDescription"}}, data-trigger="hover"></i>
+        <i class="icon-caret-down pull-right" ></i>
+      </a>
+    </div>
+    <ul class="dropdown-menu" role="menu">
+      <li>
+        <a class="popover-wheelchair-yes" data-toggle="status" data-status="status">
+          <span class="wm-checkbox wheelchair-yes">
+            <i class="icon-ok" ></i>
+          </span>
+          {{ t "home.index.popup.form.yes" }}
+          <i class="icon-question-sign" ></i>
+        </a>
+      </li>
+      <li>
+        <a class="popover-wheelchair-limited" data-toggle="status" data-status="status">
+          <span class="wm-checkbox wheelchair-limited">
+            <i class="icon-ok" ></i>
+          </span>
+          {{ t "home.index.popup.form.limited" }}
+          <i class="icon-question-sign" ></i>
+        </a>
+      </li>
+      <li>
+        <a class="popover-wheelchair-no" data-toggle="status" data-status="status">
+          <span class="wm-checkbox wheelchair-no">
+            <i class="icon-ok" ></i>
+          </span>
+          {{ t "home.index.popup.form.no" }}
+          <i class="icon-question-sign" ></i>
+        </a>
+      </li>
+    </ul>
+    <button class="submit btn" data-toggle="status-submit" data-url="/nodes/{{id}}/update_wheelchair.js">
+      {{ t "formtastic.labels.save" }}
+    </button>
+  </div>
+</section>
