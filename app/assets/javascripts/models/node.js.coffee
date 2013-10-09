@@ -1,6 +1,7 @@
 attr = DS.attr
 
 @Wheelmap.Node = DS.Model.extend
+  osm_id: attr()
   lat: attr()
   lon: attr()
   name: attr()
@@ -27,5 +28,17 @@ attr = DS.attr
   headline: (()->
     @get('name') || I18n.t("poi.name." + @get('category') + "." + @get('type'))
   ).property('name', 'type','category')
+
+  status: (()->
+    ['yes', 'limited', 'no']
+  )
+
+  show_path: (()->
+    '/nodes/' + @get('osm_id')
+  ).property('osm_id')
+
+  edit_path: (()->
+    '/nodes/' + @get('osm_id') + '/edit'
+  ).property('osm_id')
 
 @Wheelmap.NodeAdapter = DS.RESTAdapter.extend()
