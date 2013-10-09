@@ -22,8 +22,15 @@
   = csrf_meta_tag
 
 %body
-  = content_for?(:content) ? yield(:content) : yield
+  = render :partial => 'relaunch/header'
 
+  - if content_for?(:content)
+    %div#content_wrapper
+      = yield(:content)
+  - else
+    = yield
+
+  = render :partial => 'relaunch/footer'
   = render :partial => 'shared/google_tracking'
   = content_for :javascript
 </html>
