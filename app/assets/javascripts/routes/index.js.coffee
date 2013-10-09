@@ -9,8 +9,8 @@ Wheelmap.IndexRoute = Ember.Route.extend
     properties = {}
     mapController = @controllerFor('map')
 
-    if queryParams.lat? && queryParams.lng?
-      properties.center = new L.LatLng(queryParams.lat, queryParams.lng)
+    if queryParams.lat? && queryParams.lon?
+      properties.center = new L.LatLng(queryParams.lat, queryParams.lon)
 
     if queryParams.zoom?
       properties.zoom = parseInt(queryParams.zoom, 10)
@@ -78,7 +78,7 @@ Wheelmap.IndexRoute = Ember.Route.extend
 
       queryParams.zoom = mapController.get('zoom')
       queryParams.lat = center.lat
-      queryParams.lng = center.lng
+      queryParams.lon = center.lng
 
       queryParams.node_id = mapController.get('poppingNode.id')
 
