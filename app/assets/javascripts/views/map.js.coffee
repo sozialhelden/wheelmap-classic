@@ -33,32 +33,34 @@ Wheelmap.TileLayer = EmberLeaflet.TileLayer.extend
 Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
   isPoppingBinding: 'content.isPopping'
 
+  popup: (()->
+    L.popup(@get('popupOptions'), @get('layer'))
+  ).property('layer')
+
   popupView: (()->
-    view = @createView('map-popup')
-    Ember.View.states.inDOM.enter(view) # We need to do this manually, otherwise ember will prevent propagation of events important for leaflet
-    view
-  ).property()
+    @createView('map-popup')
+  ).property('content')
+
+  markerView: (()->
+    @createView('map-marker')
+  ).property('content')
 
   popupOptions:
-    offset: L.point(0, -20)
+    offset: [0, -20]
 
   popupContent: (()->
     view = @get('popupView')
+    Ember.View.states.inDOM.enter(view) # We need to do this manually, otherwise ember will prevent propagation of events important for leaflet
     view.createElement()
     view.get('element')
-  ).property()
+  ).property('popupView')
 
   willCreateLayer: ()->
-    markerView = @createView('map-marker')
+    markerView = @get('markerView')
 
     @set 'options',
       icon: new Wheelmap.MapIcon(markerView)
       riseOnHover: true
-
-  createView: (name)->
-    viewClass = @get('parentLayer').container.lookupFactory('view:' + name)
-    viewClass.create
-      controller: @get('content')
 
   willDestroyLayer: ()->
     @get('layer').closePopup()
@@ -68,26 +70,27 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
     layer = @get('layer')
 
     if layer?
-      layer.bindPopup(@get('popupContent'), @get('popupOptions'))
+      layer.bindPopup(@get('popup'), @get('popupOptions'))
 
-      layer.on('popupopen', @onPopupOpen, @)
-      layer.on('popupclose', @onPopupClose, @)
+      layer.on('popupopen', @didOpenPopup, @)
+      layer.on('popupclose', @didClosePopup, @)
   ).observes('layer')
 
   removeEventListeners: (()->
     layer = @get('layer')
 
     if layer?
-      layer.off('popupopen', @onPopupOpen, @)
-      layer.off('popupclose', @onPopupClose, @)
+      layer.off('popupopen', @didOpenPopup, @)
+      layer.off('popupclose', @didClosePopup, @)
 
       layer.unbindPopup()
   ).observesBefore('layer')
 
-  onPopupOpen: (event)->
+  didOpenPopup: (event)->
+    @get('popup').setContent(@get('popupContent'))
     @set('isPopping', true)
 
-  onPopupClose: (event)->
+  didClosePopup: (event)->
     @set('isPopping', false)
 
   isPoppingChanged: (()->
@@ -101,6 +104,10 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
 
     @get('content').send('popping', @get('isPopping'))
   ).observes('isPopping')
+
+  createView: (name)->
+    @get('parentLayer').container.lookupFactory('view:' + name).create
+      controller: @get('content')
 
 Wheelmap.MarkerCollectionLayer = EmberLeaflet.MarkerCollectionLayer.extend
   contentBinding: 'controller'
