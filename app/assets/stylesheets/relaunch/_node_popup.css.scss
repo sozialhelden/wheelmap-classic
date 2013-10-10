@@ -150,19 +150,18 @@
 .node-popup-buttons {
   margin-top: 12px;
 
-  .btn-group {
+  & > .btn-group {
     margin-left: 0;
 
-    &.open .btn {
+    & > .btn {
+      @include buttonBackground($orange-gray, darken($orange-gray, 15%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
+      font-weight: bold;
+    }
+
+    &.open > .btn {
       background-color: darken($orange-gray, 15%);
     }
   }
-
-  .btn {
-    @include buttonBackground($orange-gray, darken($orange-gray, 15%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
-    font-weight: bold;
-  }
-
 }
 
 .node-popup-share {
