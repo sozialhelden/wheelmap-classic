@@ -157,6 +157,10 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   padding-bottom: 10000px;
   margin-bottom: -10000px;
 
+  li {
+    position: relative;
+  }
+
   address {
     ul {
       background-color: darken($white, 1%);
@@ -174,7 +178,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     [class^='icon-'] {
       color: lighten($yellow-gray, 30%);
       position: absolute;
-      left: $fontSizeLarge * 0.4;
+      left: $fontSizeSmall;
       font-size: 1.3em;
       line-height: $baseFontSize + $fontSizeLarge / 2;
     }
@@ -640,6 +644,8 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   @include clearfix();
 
   .map {
+    position: relative;
+
     .leaflet-marker-icon {
       left: 50%;
       margin-left: -14px;
