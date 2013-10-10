@@ -1,7 +1,7 @@
 Ember.Handlebars.registerHelper 't', (args..., options)->
-  keywords = options.data.keywords
+  self = @
 
   keys = args.map (name)->
-    if keywords[name] then keywords[name] else name
+    Ember.Handlebars.get(self, name, options) ? name
 
-  I18n.translate(keys.join('.'), options)
+  I18n.translate(keys.join('.'), options.hash)

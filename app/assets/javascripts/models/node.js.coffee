@@ -29,15 +29,15 @@ attr = DS.attr
     @get('name') || I18n.t("poi.name." + @get('category') + "." + @get('type'))
   ).property('name', 'type','category')
 
-  show_path: (()->
+  showPath: (()->
     '/nodes/' + @get('osm_id')
   ).property('osm_id')
 
-  edit_path: (()->
+  editPath: (()->
     '/nodes/' + @get('osm_id') + '/edit'
   ).property('osm_id')
 
-  update_path:(()->
+  updatePath:(()->
     '/nodes/' + @get('osm_id') + '/update_wheelchair.js'
   ).property('osm_id')
 
