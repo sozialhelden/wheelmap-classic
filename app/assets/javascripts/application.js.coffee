@@ -1,5 +1,6 @@
 #= require jquery
 #= require jquery/jquery-migrate
+#= require i18n.js
 #= require custom-bootstrap.js.coffee
 #= require handlebars
 #= require ember
@@ -10,6 +11,10 @@
 #= require ember-leaflet
 #= require_self
 #= require wheelmap
+
+I18n.defaultLocale = 'de';
+I18n.locale = $('html').attr('lang');
+I18n.fallbacks = true;
 
 Ember.FEATURES["query-params"] = true
 
