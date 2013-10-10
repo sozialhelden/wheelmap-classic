@@ -23,8 +23,9 @@ sv:
         legend: "Platsens läge"
         location: "Positionera den aktuella platsen genom att klicka i kartan!"
     node_edit:
+      details: "Detaljer"
       edit: "Ändra"
     show:
       share:
-        twitter: Twitter
         facebook: Facebook
+        twitter: Twitter

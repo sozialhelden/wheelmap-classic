@@ -4,4 +4,5 @@ ru:
       map: карта
   nodes:
     node_edit:
+      details: "детали"
       edit: "редактировать"

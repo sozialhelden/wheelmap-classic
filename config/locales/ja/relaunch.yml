@@ -26,6 +26,7 @@ ja:
       address: "住所:"
       contact_details: "連絡先詳細:"
     node_edit:
+      details: "詳細"
       edit: "編集"
     node_map:
       map: "地図:"
@@ -38,15 +39,15 @@ ja:
     node_similar:
       similar: "類似の場所: %{name}"
     node_status:
-      wheelchair_accessibility: "車椅子のアクセシビリティ:"
       accessible_toilet: "トイレへの車椅子アクセシビリティ:"
+      wheelchair_accessibility: "車椅子のアクセシビリティ:"
     node_streetview:
       streetview: "ストリートビュー:"
     show:
       share:
-        twitter: Twitter
         facebook: Facebook
         text: "Wheelmap.org でこんな場所がありました: %{name}"
+        twitter: Twitter
   search:
     index:
       no-results:

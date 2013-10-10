@@ -1,4 +1,3 @@
----
 da:
   poi:
     category:
@@ -17,18 +16,19 @@ da:
       unknown: Ukendt
     name:
       accommodation:
-        beach_resort: Strandhotel
+        beach_resort: "Strandhotel"
         bed_and_breakfast: "Bed and breakfast"
-        camp_site: Campingplads
-        caravan_site: Caravancamping
+        camp_site: "Campingplads"
+        caravan_site: "Caravancamping"
         chalet: Chalet
-        guest_house: Gæstehus
+        dormitory: Kollegium
+        guest_house: "Gæstehus"
         hostel: Vandrehjem
         hotel: Hotel
         motel: Motel
       education:
         college: Gymnasium
-        driving_school: Køreskole
+        driving_school: "Køreskole"
         kindergarten: Børnehave
         library: Bibliotek
         museum: Museum
@@ -38,9 +38,9 @@ da:
         bar: Bar
         biergarten: Ølhave
         cafe: Cafe
-        drinking_water: Drikkevand
+        drinking_water: "Drikkevand"
         fast_food: "Fast Food"
-        ice_cream: Isbutik
+        ice_cream: "Isbutik"
         pub: Værtshus
         restaurant: Restaurant
       government:
@@ -53,18 +53,18 @@ da:
       health:
         dentist: Tandlæge
         doctors: Læge
-        hearing_aids: Høreapparatforhandler
+        hearing_aids: "Høreapparatforhandler"
         hospital: Hospital
-        medical_supply: Håndkøbsmedicin
-        pharmacy: " Apotek"
-        social_facility: Plejehjem
+        medical_supply: "Håndkøbsmedicin"
+        pharmacy: ' Apotek'
+        social_facility: "Plejehjem"
         veterinary: Dyrlæge
       leisure:
         arena: Sportsarena
         brothel: Bordel
         casino: Kasino
         cinema: Biograf
-        community_center: Borgerhus
+        community_center: "Borgerhus"
         gallery: Galleri
         nightclub: Natklub
         playground: Legeplads
@@ -74,7 +74,7 @@ da:
         zoo: Zoo
       misc:
         company: "Firma (kontor)"
-        estate_agent: Ejendomsmægler
+        estate_agent: "Ejendomsmægler"
         insurance: Forsikringsselskab
         lawyer: Advokat
         place_of_worship: "Religiøs tilbedelsessted"
@@ -82,97 +82,97 @@ da:
       money_post:
         atm: Pengeautomat
         bank: Bank
-        bureau_de_change: Valutaveksling
-        post_box: Postkasse
-        post_office: Postkontor
+        bureau_de_change: "Valutaveksling"
+        post_box: "Postkasse"
+        post_office: "Postkontor"
       public_transfer:
         aerodrome: Lufthavn
-        bicycle_parking: Cykelparkering
-        bicycle_rental: Cykeludlejning
+        bicycle_parking: "Cykelparkering"
+        bicycle_rental: "Cykeludlejning"
         boatyard: Lystbådehavn
-        bus_station: Busstation
-        bus_stop: Busstop
-        cable_car: Svævebane
-        car_rental: Biludlejning
-        car_sharing: Delebil
-        chair_lift: Stolelift
+        bus_station: "Busstation"
+        bus_stop: "Busstop"
+        cable_car: "Svævebane"
+        car_rental: "Biludlejning"
+        car_sharing: "Delebil"
+        chair_lift: "Stolelift"
         ferry: Færge
-        ferry_terminal: Færgeterminal
-        fuel: Tankstation
+        ferry_terminal: "Færgeterminal"
+        fuel: "Tankstation"
         halt: Trinbræt
-        light_rail: Letbane
+        light_rail: "Letbane"
         parking: Parkering
-        parking_aisle: Parkeringsvej
+        parking_aisle: "Parkeringsvej"
         platform: Platform
-        station: Undergrundsbane
+        station: "Undergrundsbane"
         subway_entrance: "Undergrundsbane indgang"
-        terminal: Lufthavnsterminal
-        tram_stop: Sporvognsstop
+        terminal: "Lufthavnsterminal"
+        tram_stop: "Sporvognsstop"
       shopping:
         alcohol: Vinhandler
         bakery: Bager
-        beauty: Skønhedssalon
+        beauty: "Skønhedssalon"
         beverages: Drikkevarer
-        bicycle: Cykelforhandler
+        bicycle: "Cykelforhandler"
         books: Boghandler
         butcher: Slagter
-        car_repair: Bilværksted
-        car_shop: Biludstyrsbutik
+        car_repair: "Bilværksted"
+        car_shop: "Biludstyrsbutik"
         chemist: Materialist
         clothes: Tøjbutik
         computer: Computerbutik
-        confectionery: Slikbutik
+        confectionery: "Slikbutik"
         convenience: Minimarked
         deli: Deli
-        department_store: Stormagasin
-        doityourself: Byggemarked
-        dry_cleaning: Tøjenseri
+        department_store: "Stormagasin"
+        doityourself: "Byggemarked"
+        dry_cleaning: "Tøjenseri"
         electronics: Elektronikbutik
-        fabric: Stofbutik
-        farm_shop: Gårdbutik
+        fabric: "Stofbutik"
+        farm_shop: "Gårdbutik"
         florist: Blomsterhandler
         furniture: Møbelhandler
-        garden_centre: Havecenter
-        gift: Gavebutik
+        garden_centre: "Havecenter"
+        gift: "Gavebutik"
         hairdresser: Frisør
         hardware: Værktøjsbutik
         jewelry: Smykkeforretning
         kiosk: Kiosk
         laundry: Vaskeri
-        mall: Indkøbscenter
+        mall: "Indkøbscenter"
         optician: Optiker
         organic: "Økologisk butik"
-        outdoor: Friluftudstyrsbutik
-        pet: Dyreforhandler
+        outdoor: "Friluftudstyrsbutik"
+        pet: "Dyreforhandler"
         photo: Foto
-        second_hand: Genbrugsbutik
+        second_hand: "Genbrugsbutik"
         shoes: Skobutik
         sports: Sportsforretninger
         stationery: Papirartikler
         supermarket: Supermarked
         toys: Legetøj
-        travel_agency: Rejsebureau
-        video: Videoudlejning
+        travel_agency: "Rejsebureau"
+        video: "Videoudlejning"
       sport:
-        pitch: Sportsplads
-        sports_centre: Sportscenter
+        pitch: "Sportsplads"
+        sports_centre: "Sportscenter"
         stadium: Stadion
         swimming: Svømming
-        swimming_pool: Svømmepool
+        swimming_pool: "Svømmepool"
       tourism:
         archaeological_site: "Arkæologisk sted"
-        arts_centre: Kunstcenter
+        arts_centre: "Kunstcenter"
         artwork: Kunstværk
         attraction: Attraktion
         battlefield: Slagmark
         beach: Strand
         beacon: Fyrtårn
         castle: Slot
-        cave_entrance: Huleindgang
-        information: Turistinformation
+        cave_entrance: "Huleindgang"
+        information: "Turistinformation"
         memorial: Mindesmærke
-        theme_park: Forlystelsespark
+        theme_park: "Forlystelsespark"
         tower: Tårn
-        viewpoint: Udsigtspunkt
+        viewpoint: "Udsigtspunkt"
       unknown:
         unknown: Ukendt

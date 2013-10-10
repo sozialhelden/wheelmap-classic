@@ -19,4 +19,5 @@ nb:
         secondary_headline: "Vårt trafikk lys system for å merke rullestol tiljgenligheten av offentlig steder"
   nodes:
     node_edit:
+      details: "Detaljer"
       edit: "Rediger"

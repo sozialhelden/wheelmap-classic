@@ -4,4 +4,5 @@ uk:
       map: Карта
   nodes:
     node_edit:
+      details: "деталі"
       edit: "Редагувати"

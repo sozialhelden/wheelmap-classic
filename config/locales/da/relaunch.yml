@@ -1,4 +1,14 @@
 da:
+  faq:
+    answers:
+      0: "Du kan altid ændre markeringen af et sted selv. Vælg højre markering og \"Gem\" færdig!"
+      1: "Når du er logget på som bruger kan du tilføje/rette i alle detaljerne for et sted. Klik på \"Redigerer\" og ret eller tilføj information i feltet."
+      2: "Du kan tilføje yderligere information. (fx \"Det sted har en mobil rampe\") i kommentarfeltet. Klik på \"Rediger\" og \"Tilføj kommentar\"."
+    headline: "Er der et problem med dette sted?"
+    questions:
+      0: "Denne markering er forkert."
+      1: "Detaljerne for dette sted er forkerte eller mangler."
+      2: "Jeg har mere information om dette sted."
   header:
     navigation:
       about_wheelmap: "Om Wheelmap"
@@ -26,27 +36,28 @@ da:
       address: "Adresse:"
       contact_details: "Kontaktoplysninger:"
     node_edit:
+      details: "Detaljer"
       edit: "Ret"
     node_map:
       map: "Kort:"
     node_note:
       comment: "Kommentar:"
     node_photos:
-      add: "tilføj"
+      add: "Tilføj"
       photos_of_this_place: "Fotografier af dette sted:"
-      upload: "upload"
+      upload: "Upload"
     node_similar:
       similar: "Lignende steder: %{name}"
     node_status:
-      wheelchair_accessibility: "Kørestolstilgængeligt:"
       accessible_toilet: "Kørestolstilgængeligt toilet:"
+      wheelchair_accessibility: "Kørestolstilgængeligt:"
     node_streetview:
       streetview: "Gadevisning:"
     show:
       share:
-        twitter: Twitter
         facebook: Facebook
         text: "Jeg har fundet dette sted på  Wheelmap.org: %{name}"
+        twitter: Twitter
   search:
     index:
       no-results:

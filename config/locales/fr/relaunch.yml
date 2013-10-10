@@ -19,8 +19,9 @@ fr:
         secondary_headline: "le système \"feu rouge\" pour marquer l'accessibilité"
   nodes:
     node_edit:
+      details: "Détails"
       edit: "traiter"
     show:
       share:
-        twitter: Twitter
         facebook: Facebook
+        twitter: Twitter

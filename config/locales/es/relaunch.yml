@@ -23,11 +23,12 @@ es:
         legend: "Localización del sitio"
         location: "Por favor, haga click en el mapa y sitúe el marcador en la posición exacta."
     node_edit:
+      details: "Detalles"
       edit: "Editar"
     show:
       share:
-        twitter: Twitter
         facebook: Facebook
+        twitter: Twitter
   search:
     index:
       no-results:
