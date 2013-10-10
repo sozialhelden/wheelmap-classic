@@ -1,7 +1,10 @@
 .node-popup {
   font-size: $fontSizeSmall;
-  width: 288px;
-  @include border-radius(2px);
+  width: $nodePopupWidth;
+
+  .leaflet-popup-content-wrapper {
+    @include border-radius(3px);
+  }
 
   .leaflet-popup-tip {
     background-color: darken($orange-gray, 5%);
@@ -60,11 +63,10 @@
 .node-popup-content {
   @include background-image(linear-gradient(-180deg, lighten($orange-gray, 7%) 60%, darken($orange-gray, 5%) 100%));
   @include border-bottom-radius(3px);
+  padding: 12px;
 }
 
 .node-popup-status {
-  padding: 12px;
-
   h3 {
     font-size: inherit;
     line-height: inherit;
@@ -142,5 +144,111 @@
         text-indent: 0px;
       }
     }
+  }
+}
+
+.node-popup-buttons {
+  margin-top: 12px;
+
+  & > .btn-group {
+    margin-left: 0;
+
+    & > .btn {
+      @include buttonBackground($orange-gray, darken($orange-gray, 15%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
+      font-weight: bold;
+    }
+
+    &.open > .btn {
+      background-color: darken($orange-gray, 15%);
+    }
+  }
+}
+
+.node-popup-share {
+  .dropdown-menu {
+    font-size: $fontSizeSmall;
+    min-width: 120px;
+    padding: 3px 0;
+
+    a {
+      padding: 2px 8px;
+
+      &:hover i {
+        color: white;
+      }
+    }
+  }
+
+  .icon-twitter {
+    color: #00aced;
+  }
+
+  .icon-facebook {
+    color: #3B5998;
+  }
+}
+
+.node-popup-report {
+  .btn .caret {
+    margin-left: 7px;
+  }
+}
+
+.node-popup-report-accordion {
+  width: 320px;
+  font-size: $fontSizeSmall;
+  border: none;
+  color: #505050;
+
+  header {
+    @include background-image(linear-gradient(top, #B0B0B0 0%, #7A7A7A 100%));
+    @include box-shadow(inset 0px 1px 0px 0px rgba($white, 0.25));
+    @include box-sizing(border-box);
+    @include border-top-radius(3px);
+    border: 1px solid #6C5C5C;
+    line-height: 26px;
+    height: 30px;
+    font-weight: bold;
+    @include text-shadow(0px 1px 0px $black);
+    color: $white;
+    padding: 3px 5px 1px 10px;
+
+    .pull-right {
+      line-height: 22px;
+    }
+
+    .btn {
+      @include buttonBackground(#828282, #535353, #D2D2D2);
+      line-height: 20px;
+      height: 20px;
+      vertical-align: middle;
+      border-color: #393939;
+    }
+  }
+
+  .accordion-toggle {
+    padding: 0px 10px;
+    line-height: 30px;
+    display: block;
+    border-top: 1px solid #E5E5E5;
+    color: inherit;
+    text-decoration: none;
+
+    .icon-chevron-up {
+      line-height: inherit;
+      font-size: .9em;
+      opacity: .5;
+    }
+
+    &.collapsed .icon-chevron-up {
+      @include transform(rotate(180deg));
+    }
+  }
+
+  .accordion-inner {
+    padding: 7px 10px;
+    background: #F4F4F4;
+    @include box-shadow(inset 0px 2px 2px 0px rgba($black, 0.10));
+    white-space: normal;
   }
 }
