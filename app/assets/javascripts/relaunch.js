@@ -20,9 +20,7 @@
 //= require bootstrap-select
 //
 //= require flash.js
-//= require i18n.js
 //= require translations.js
-//= require spin
 //
 //= require leaflet/leaflet.locate
 //= require leaflet/leaflet.spin
