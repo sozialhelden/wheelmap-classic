@@ -1,4 +1,3 @@
----
 it:
   poi:
     category:
@@ -7,9 +6,9 @@ it:
       food: Alimenti
       government: Governo
       health: Salute
-      leisure: "Tempo Libero"
+      leisure: Tempo Libero
       misc: Altro
-      money_post: Bancoposta
+      money_post: "Bancoposta"
       public_transfer: "Mezzi pubblici"
       shopping: Shopping
       sport: Sport
@@ -19,9 +18,9 @@ it:
       accommodation:
         beach_resort: "Albergo sulla spiaggia"
         bed_and_breakfast: "Bed and breakfast"
-        camp_site: Campeggio
+        camp_site: "Campeggio"
         caravan_site: "Area caravan e camper"
-        chalet: "Casetta turistica"
+        chalet: Casetta turistica
         dormitory: Dormitorio
         guest_house: "Affittacamere, Pensione"
         hostel: Ostello
@@ -29,19 +28,19 @@ it:
         motel: Motel
       education:
         college: College
-        driving_school: Autoscuola
-        kindergarten: "Scuola d'infanzia"
+        driving_school: "Autoscuola"
+        kindergarten: Scuola d'infanzia
         library: Biblioteca
         museum: Museo
         school: Scuola
         university: Università
       food:
-        bar: "American bar"
-        biergarten: "Birreria all'aperto"
+        bar: American bar
+        biergarten: Birreria all'aperto
         cafe: Bar
         drinking_water: "Acqua potabile"
         fast_food: "Fast food"
-        ice_cream: Gelateria
+        ice_cream: "Gelateria"
         pub: Pub
         restaurant: Ristorante
       government:
@@ -59,18 +58,18 @@ it:
         medical_supply: "Rifornimento sanitario"
         pharmacy: Farmacia
         social_facility: "Servizi sociali"
-        veterinary: "Ambulatorio Veterinario"
+        veterinary: Ambulatorio Veterinario
       leisure:
         arena: Arena
         brothel: Casinò
         casino: Casinò
         cinema: Cinema
         community_center: "Centro Comunitario"
-        gallery: "Galleria d'arte"
-        nightclub: "Night club"
-        playground: "Parco giochi"
+        gallery: Galleria d'arte
+        nightclub: Night club
+        playground: Parco giochi
         sauna: Sauna
-        stripclub: "Strip club"
+        stripclub: Strip club
         theatre: Teatro
         zoo: Zoo
       misc:
@@ -79,7 +78,7 @@ it:
         insurance: Assicurazione
         lawyer: Avvocato
         place_of_worship: "Luogo di culto"
-        toilets: "Bagno pubblico"
+        toilets: Bagno pubblico
       money_post:
         atm: Bancomat
         bank: Banca
@@ -90,45 +89,45 @@ it:
         aerodrome: Aeroporto
         bicycle_parking: "Parcheggio per biciclette"
         bicycle_rental: "Noleggio biciclette"
-        boatyard: "Cantiere navale"
+        boatyard: Cantiere navale
         bus_station: "Stazione degli autobus"
         bus_stop: "Fermata dell'autobus"
-        cable_car: Funivia
+        cable_car: "Funivia"
         car_rental: " Autonoleggio "
         car_sharing: "Parcheggio auto condivise"
-        chair_lift: Seggiovia
+        chair_lift: "Seggiovia"
         ferry: Traghetto
         ferry_terminal: "Terminal traghetti"
         fuel: "Distributore di benzina"
-        halt: "Stazione non presidiata"
-        light_rail: Ferrovia
+        halt: Stazione non presidiata
+        light_rail: "Ferrovia"
         parking: Parcheggio
         parking_aisle: "Corsia di sosta"
         platform: Binario
-        station: Metropolitana
+        station: "Metropolitana"
         subway_entrance: "Ingresso della Metropolitana"
         terminal: "Terminal dell'aeroporto"
         tram_stop: "Fermata del tram"
       shopping:
-        alcohol: "Bevande alcoliche"
+        alcohol: Bevande alcoliche
         bakery: Panetteria
         beauty: "Salone di Belleza"
         beverages: Bevande
         bicycle: "Negozio di biciclette"
         books: Libreria
         butcher: Macelleria
-        car_repair: Autofficina
-        car_shop: Autoconcessionaria
+        car_repair: "Autofficina"
+        car_shop: "Autoconcessionaria"
         chemist: Farmacia
         clothes: Abbigliamento
-        computer: "Negozio di computers"
-        confectionery: Dolci
+        computer: Negozio di computers
+        confectionery: "Dolci"
         convenience: Minimarket
         deli: Deli
         department_store: "Grande magazzino"
         doityourself: "Fai da te"
-        dry_cleaning: Lavanderia
-        electronics: "Negozio d'elettronica"
+        dry_cleaning: "Lavanderia"
+        electronics: Negozio d'elettronica
         fabric: "Negozio di Tessuti"
         farm_shop: "Negozio di una Fattoria"
         florist: Fiorista
@@ -159,13 +158,13 @@ it:
         sports_centre: "Centro sportivo"
         stadium: Stadio
         swimming: Nuoto
-        swimming_pool: Piscina
+        swimming_pool: "Piscina"
       tourism:
         archaeological_site: "Sito archeologico"
         arts_centre: "Centro d'arte"
-        artwork: "Opera d'arte"
-        attraction: "Attrazione turistica"
-        battlefield: "Campo di battaglia"
+        artwork: Opera d'arte
+        attraction: Attrazione turistica
+        battlefield: Campo di battaglia
         beach: Spiaggia
         beacon: Faro
         castle: Castello
@@ -174,6 +173,6 @@ it:
         memorial: Memoriale
         theme_park: "Parco divertimenti"
         tower: Torre
-        viewpoint: Belvedere
+        viewpoint: "Belvedere"
       unknown:
         unknown: Sconosciuto

@@ -1,4 +1,3 @@
----
 is:
   application:
     require_no_user:
@@ -57,9 +56,9 @@ is:
       update:
         notice: "%{resource_name} var uppfært án vandræða."
   form:
-    show_fully_accessible_places: Hjólastólaaðgengi
+    show_fully_accessible_places: "Hjólastólaaðgengi"
     show_limited_accessible_places: "Eitthvað hjólastólaaðgengi"
-    show_places_without_status: Óvitað
+    show_places_without_status: "Óvitað"
     show_unaccessible_places: "Ekkert hjólastólaaðgengi"
   formtastic:
     hints:
@@ -88,7 +87,7 @@ is:
       street: "Gata: "
       type: "Týpa:"
       website: "Vefsíða:"
-      wheelchair: Hjólastólaaðgengilegt?
+      wheelchair: "Hjólastólaaðgengilegt?"
       wheelchair_description: "Athugasemd um aðgengi:"
     titles:
       basic: "Helstu gögn"
@@ -98,7 +97,7 @@ is:
   header:
     meta:
       description: "Leitaðu uppi aðgengilega staði - wheelmap.org"
-      homepage: Heim
+      homepage: "Heim"
       keywords: "hjólastóll aðgengi staðir finna leita merkja"
       search: Leita
     navigation:
@@ -108,8 +107,8 @@ is:
       how_to_add_a_place: "Hvernig bæti ég við stöðum?"
       imprint: Upplýsingar
       logged_in_as: "Innskráður sem:"
-      login: Innskráning
-      logout: Útskráning
+      login: "Innskráning"
+      logout: "Útskráning"
       press: Press
       profile: Prófílnum
       suggestions: Uppástungur
@@ -134,13 +133,13 @@ is:
     index:
       filter:
         category: "Flokkur:"
-        wheelchair: Hjólastólaaðgengilegt?
+        wheelchair: "Hjólastólaaðgengilegt?"
       ie:
         action:
           ignore: Hunsa
           upgrade: "Uppfæra vafra"
         warning:
-          headline: Afsakið!
+          headline: "Afsakið!"
           message: "Þú virðist vera að nota Internet Explorer. Wheelmap þarf á öðrum vafra að halda til að virka betur. Vinsamlegast notaðu Firefox, Chrome, Safari eða Opera"
       link:
         node:
@@ -148,12 +147,10 @@ is:
       popup:
         form:
           limited: "að hluta til hjólastólaaðgengilegt"
-          ? "no"
-          : "ekki hjólastólaaðgengilegt"
+          'no': "ekki hjólastólaaðgengilegt"
           save: vista
           unknown: "óvituð staða"
-          ? "yes"
-          : hjólastólaaðgengilegt
+          'yes': "hjólastólaaðgengilegt"
         help: "Hjólastólaaðgengilegt? (Hjálp)"
         more: "meiri ..."
   layouts:
@@ -268,7 +265,10 @@ is:
       search:
         for: "Leita að \"%{q}\" "
         not_found: "Engir staðir fundust!"
-  statistics: "Tölfræðilegar upplýsingar"
+  splash:
+    start: Byrja
+    what_is_wheelmap: "Hvað er wheelmap?"
+  statistics: Tölfræðilegar upplýsingar
   support:
     array:
       last_word_connector: " og "
@@ -278,12 +278,12 @@ is:
     select:
       prompt: "Vinsamlegast veldu"
   time:
-    am: "fyrir hádegi"
+    am: fyrir hádegi
     formats:
       default: "%A %e. %B %Y kl. %H:%M"
       long: "%A %e. %B %Y kl. %H:%M"
       short: "%e. %B kl. %H:%M"
-    pm: "eftir hádegi"
+    pm: eftir hádegi
   user_sessions:
     create:
       activation:
@@ -294,18 +294,16 @@ is:
     destroy:
       notice: "Bless, komdu aftur fljótlega!"
     new:
-      email: Tölvupóstur
-      login: Innskráning
+      email: "Tölvupóstur"
+      login: "Innskráning"
       login_with_twitter: "Innskráning með Twitter"
       password: Lykilorð
       remember_me: "Vera innskráður"
   wheelchairstatus:
     limited: "eitthvað hjólastólaaðgengi"
-    ? "no"
-    : "ekkert hjólastólaaðgengi"
+    'no': "ekkert hjólastólaaðgengi"
     unknown: "hjólastólaaðgengi ekki vitað"
-    ? "yes"
-    : "algjörlega hjólastólaaðgengilegt"
+    'yes': "algjörlega hjólastólaaðgengilegt"
   wheelmap:
     itunes:
       alt: "AppStore Logo"

@@ -1,4 +1,3 @@
----
 nl:
   application:
     require_no_user:
@@ -90,7 +89,7 @@ nl:
       password: Wachtwoord
       password_confirmation: "Herhaal wachtwoord"
       phone: "Telefoon:"
-      postcode: Postcode
+      postcode: "Postcode"
       privacy_policy: "Ik accepteer paragraaf 1 en 2 van het privacy overeenkomst."
       reset: Resetten
       save: Opslaan
@@ -116,10 +115,10 @@ nl:
       feedback: Feedback
       home: Start
       how_to_add_a_place: "Hoe kan ik plaatsen toevoegen?"
-      imprint: "Colofon "
+      imprint: 'Colofon '
       logged_in_as: "Aangemeld als:"
-      login: Inloggen
-      logout: Uitloggen
+      login: "Inloggen"
+      logout: "Uitloggen"
       newsletter: Nieuwsbrief
       press: Pers
       profile: Profiel
@@ -161,27 +160,23 @@ nl:
       popup:
         form:
           limited: "deels rolstoel toegankelijk"
-          ? "no"
-          : "niet rolstoel toegangelijk"
+          'no': "niet rolstoel toegangelijk"
           save: Actualiseren
           unknown: "onbekende status"
-          ? "yes"
-          : "rolstoel toegankelijk"
+          'yes': "rolstoel toegankelijk"
         help: "rolstoel toegankelijk? (Hulp)"
-        more: meer...
+        more: "meer..."
   how?: Hoe?
   landing_pages:
     index:
       wheelchair:
         limit:
           headline: "Beperkt rolstoel toegangelijk %{type} in %{city} (%{count})"
-        ? "no"
-        :
+        'no':
           headline: "Alles niet-rolstoel toegankelijk %{type} in %{city} (%{count})"
         unknown:
           headline: "All %{type} in %{city} met onbekende rolstoel status (%{count})"
-        ? "yes"
-        :
+        'yes':
           headline: "Compleet rolstoel toegankelijk %{type} in %{city} (%{count})"
   layouts:
     application:
@@ -193,7 +188,7 @@ nl:
       street: "%{housenumber} %{street}\n"
     tags:
       phone: "Telefoon:"
-      website: Internetpagina
+      website: "Internetpagina"
   nodes:
     create:
       flash:
@@ -217,7 +212,7 @@ nl:
       header:
         title: "Nieuwe plaats | wheelmap.org"
       link:
-        large_map: Annuleren
+        large_map: "Annuleren"
     node:
       link:
         claim: "Werk je hier?"
@@ -321,10 +316,9 @@ nl:
   statistics: Statistieken
   support:
     array:
-      last_word_connector: en
+      last_word_connector: "en"
       sentence_connector: en
-      skip_last_comma: true
-      two_words_connector: en
+      two_words_connector: "en"
       words_connector: ", "
     select:
       prompt: "Alsjeblieft kies"
@@ -334,7 +328,7 @@ nl:
       default: "%a %d %b %Y %H:%M:%S %Z"
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
-    pm: "'s middags"
+    pm: "s middags"
   user_sessions:
     create:
       activation:
@@ -354,20 +348,16 @@ nl:
     after_signup_edit:
       welcome:
         headline: "Je bent er bijna! Beëindigen je registratie voor je Wheelmap account hier:"
-        set_password_for_mobile: |-
-            Je registratie bij OpenStreetMap is geslaagd.
-            Kies nu je email adres en je wachtwoord voor je Wheelmap account en dan ben je erbij! Je hebt deze email adres en het wachtword nodig om bij de Wheelmap app for iPone of Android in te loggen.
+        set_password_for_mobile: "Je registratie bij OpenStreetMap is geslaagd.\nKies nu je email adres en je wachtwoord voor je Wheelmap account en dan ben je erbij! Je hebt deze email adres en het wachtword nodig om bij de Wheelmap app for iPone of Android in te loggen."
         text: "Hoe kunnen wij contact met je opnemen? Je kan deze informatie later in je profiel veranderen."
     edit:
       headline:
         your_images: "Jouw geupload beelden"
   wheelchairstatus:
     limited: "deels rolstoel toegankelijk"
-    ? "no"
-    : "niet rolstoel toegankelijk"
+    'no': "niet rolstoel toegankelijk"
     unknown: "onbekende status"
-    ? "yes"
-    : "rolstoel toegankelijk"
+    'yes': "rolstoel toegankelijk"
   wheelmap:
     footer:
       a_project_of: "Een project van"

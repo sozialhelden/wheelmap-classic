@@ -1,4 +1,3 @@
----
 es:
   poi:
     category:
@@ -9,7 +8,7 @@ es:
       health: Salud
       leisure: Entretenimiento
       misc: Variado
-      money_post: Banco
+      money_post: "Banco"
       public_transfer: "Transportes públicos"
       shopping: Compras
       sport: Deportes
@@ -19,7 +18,7 @@ es:
       accommodation:
         beach_resort: "Hotel de playa"
         bed_and_breakfast: "Dormir y desayuno"
-        camp_site: Campo
+        camp_site: "Campo"
         caravan_site: "Zona de caravanas"
         chalet: Chalet
         dormitory: Dormitorio
@@ -29,8 +28,8 @@ es:
         motel: Motel
       education:
         college: Universidad
-        driving_school: Autoescuela
-        kindergarten: "Jardín de infancia"
+        driving_school: "Autoescuela"
+        kindergarten: Jardín de infancia
         library: Biblioteca
         museum: Museo
         school: Colegio
@@ -64,7 +63,7 @@ es:
         gallery: Galería
         nightclub: Discoteca
         sauna: Sauna
-        stripclub: "Club de striptease"
+        stripclub: Club de striptease
         theatre: Teatro
         zoo: Zoo
       misc:
@@ -76,7 +75,7 @@ es:
         atm: ATM
         bank: Banco
         bureau_de_change: "Cambio de moneda"
-        post_box: Buzón
+        post_box: "Buzón"
         post_office: "Oficina de correos"
       public_transfer:
         aerodrome: Aeropuerto
@@ -85,19 +84,19 @@ es:
         boatyard: Astillero
         bus_station: "Estación de autobús"
         bus_stop: "Parada de autobús"
-        cable_car: Teleférico
+        cable_car: "Teleférico"
         car_rental: "Alquiler de coches"
         car_sharing: "Compartir coches"
-        chair_lift: Telesilla
+        chair_lift: "Telesilla"
         ferry: Ferry
         ferry_terminal: "Terminal de Ferry"
-        fuel: Gasolinera
+        fuel: "Gasolinera"
         halt: Apeadero
         light_rail: "Tren urbano"
         parking: Parking
         parking_aisle: "Parking lateral"
         platform: Plataforma
-        station: Metro
+        station: "Metro"
         subway_entrance: "Entrada de metro"
         terminal: "Terminal del aeropuerto"
         tram_stop: "Parada de tranvía"
@@ -109,16 +108,16 @@ es:
         books: Libros
         butcher: Carnicería
         car_repair: "Taller de coches\n"
-        car_shop: Concesionario
+        car_shop: "Concesionario"
         chemist: Farmacia
         clothes: Ropa
         computer: Ordenadores
-        confectionery: Bombonería
+        confectionery: "Bombonería"
         convenience: Comodidad
         deli: Delicatessen
-        department_store: Almacén
+        department_store: "Almacén"
         doityourself: "Hazlo tú mismo"
-        dry_cleaning: Tintorería
+        dry_cleaning: "Tintorería"
         electronics: Electrónicos
         florist: Floristería
         furniture: Muebles
@@ -135,18 +134,18 @@ es:
         sports: Deportes
         stationery: Papelería
         supermarket: Supermercado
-        video: Videoclub
+        video: "Videoclub"
       sport:
         sports_centre: "Centro de deportes"
         stadium: Estadio
         swimming: Natación
-        swimming_pool: Piscinas
+        swimming_pool: "Piscinas"
       tourism:
         archaeological_site: "Sitio arqueológico"
         arts_centre: "Centro de artes"
-        artwork: "Material gráfico"
+        artwork: Material gráfico
         attraction: Atracciones
-        battlefield: "Campo de batalla"
+        battlefield: Campo de batalla
         beach: Playa
         beacon: Faro
         castle: Castillo

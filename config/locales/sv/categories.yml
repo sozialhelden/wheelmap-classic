@@ -1,35 +1,34 @@
----
 sv:
   poi:
     category:
       accommodation: Boende
       education: Utbildning
-      food: "Mat & Dryck"
+      food: Mat & Dryck
       government: Myndighet
-      health: "Hälsa & Sjukvård"
-      leisure: "Fritid & Kultur"
+      health: Hälsa & Sjukvård
+      leisure: Fritid & Kultur
       misc: Blandat
       money_post: "Bank & Post"
-      public_transfer: Trafik
+      public_transfer: "Trafik"
       shopping: Shopping
       sport: Idrott
       tourism: Turism
       unknown: Okänt
     name:
       accommodation:
-        beach_resort: Strandhotell
+        beach_resort: "Strandhotell"
         bed_and_breakfast: "Bed & breakfast\n"
-        camp_site: Campingplats
-        caravan_site: Husvagnsplats
+        camp_site: "Campingplats"
+        caravan_site: "Husvagnsplats"
         chalet: Stuga
         dormitory: Studenthem
-        guest_house: Värdshus
+        guest_house: "Värdshus"
         hostel: Vandrarhem
         hotel: Hotell
         motel: Motell
       education:
         college: Högskola
-        driving_school: Trafikskola
+        driving_school: "Trafikskola"
         kindergarten: Förskola
         library: Bibliotek
         museum: Museum
@@ -39,33 +38,33 @@ sv:
         bar: Bar
         biergarten: Biergarten
         cafe: Café
-        drinking_water: Dricksvatten
-        fast_food: Snabbmat
-        ice_cream: Glassbar
+        drinking_water: "Dricksvatten"
+        fast_food: "Snabbmat"
+        ice_cream: "Glassbar"
         pub: Pub
         restaurant: Restaurang
       government:
         courthouse: Domstol
         embassy: Ambassad
-        government: Servicekontor
+        government: "Servicekontor"
         police: Polis
         public_building: "Publik byggnad"
         townhall: Stadshus
       health:
         dentist: Tandläkare
         doctors: Läkare
-        hearing_aids: Hörcentral
+        hearing_aids: "Hörcentral"
         hospital: Sjukhus
         medical_supply: "Medicinsk utr."
         pharmacy: Apotek
-        social_facility: Socialkontor
+        social_facility: "Socialkontor"
         veterinary: Veterinär
       leisure:
         arena: Arena
         brothel: Bordell
         casino: Casino
         cinema: Bio
-        community_center: Allaktivitetshus
+        community_center: "Allaktivitetshus"
         gallery: Galleri
         nightclub: Nattklubb
         playground: Lekplats
@@ -74,8 +73,8 @@ sv:
         theatre: Teater
         zoo: Zoo
       misc:
-        company: Företagskontor
-        estate_agent: Fastighetsmäklare
+        company: "Företagskontor"
+        estate_agent: "Fastighetsmäklare"
         insurance: Försäkringar
         lawyer: Advokat
         place_of_worship: "Religiös plats"
@@ -83,97 +82,97 @@ sv:
       money_post:
         atm: Bankomat
         bank: Bank
-        bureau_de_change: Växelkontor
-        post_box: Postlåda
-        post_office: Postkontor
+        bureau_de_change: "Växelkontor"
+        post_box: "Postlåda"
+        post_office: "Postkontor"
       public_transfer:
         aerodrome: Flygplats
-        bicycle_parking: Cykelparkering
-        bicycle_rental: Cykeluthyrning
+        bicycle_parking: "Cykelparkering"
+        bicycle_rental: "Cykeluthyrning"
         boatyard: Båtvarv
-        bus_station: Busstation
-        bus_stop: Busshållplats
-        cable_car: Linbana
-        car_rental: Biluthyrning
-        car_sharing: Samåkning
-        chair_lift: Stolslift
+        bus_station: "Busstation"
+        bus_stop: "Busshållplats"
+        cable_car: "Linbana"
+        car_rental: "Biluthyrning"
+        car_sharing: "Samåkning"
+        chair_lift: "Stolslift"
         ferry: Färja
-        ferry_terminal: Färjeterminal
-        fuel: Bensinstation
+        ferry_terminal: "Färjeterminal"
+        fuel: "Bensinstation"
         halt: Hållplats
-        light_rail: Spårväg
+        light_rail: "Spårväg"
         parking: Parkering
         parking_aisle: "Väg på parkeringsplats"
         platform: Plattform
-        station: Tunnelbana
-        subway_entrance: Tunnelbaneingång
-        terminal: Flygplats-terminal
-        tram_stop: Spårvagnshållplats
+        station: "Tunnelbana"
+        subway_entrance: "Tunnelbaneingång"
+        terminal: "Flygplats-terminal"
+        tram_stop: "Spårvagnshållplats"
       shopping:
         alcohol: Alkohol
         bakery: Bageri
-        beauty: Skönhetssalong
+        beauty: "Skönhetssalong"
         beverages: Drycker
-        bicycle: Cykelaffär
+        bicycle: "Cykelaffär"
         books: Böcker
         butcher: Köttaffär
-        car_repair: Bilverkstad
-        car_shop: Bilförsäljning
+        car_repair: "Bilverkstad"
+        car_shop: "Bilförsäljning"
         chemist: Kosmetika
         clothes: Kläder
         computer: Datorer
-        confectionery: Godisaffär
+        confectionery: "Godisaffär"
         convenience: Närbutik
         deli: Delikatesser
-        department_store: Varuhus
+        department_store: "Varuhus"
         doityourself: "Gör det själv"
-        dry_cleaning: Kemtvätt
+        dry_cleaning: "Kemtvätt"
         electronics: Elektronik
-        fabric: Bygghandel
-        farm_shop: Lantbruksutrustning
+        fabric: "Bygghandel"
+        farm_shop: "Lantbruksutrustning"
         florist: Blomsteraffär
         furniture: Möbler
-        garden_centre: Plantskola
-        gift: Presentbutik
+        garden_centre: "Plantskola"
+        gift: "Presentbutik"
         hairdresser: Frisör
         hardware: Järnhandel
         jewelry: Smycken
         kiosk: Kiosk
         laundry: Tvätt
-        mall: Köpcentrum
+        mall: "Köpcentrum"
         optician: Optiker
-        organic: Hälsokost
-        outdoor: Friluftsutrustning
-        pet: Djurbutik
+        organic: "Hälsokost"
+        outdoor: "Friluftsutrustning"
+        pet: "Djurbutik"
         photo: Foto
-        second_hand: Begagnat
+        second_hand: "Begagnat"
         shoes: Skor
         sports: Sport
         stationery: Kontorsmateriel
         supermarket: Livsmedel
         toys: Leksaker
-        travel_agency: Resebyrå
-        video: Videouthyrning
+        travel_agency: "Resebyrå"
+        video: "Videouthyrning"
       sport:
-        pitch: Idrottsplats
-        sports_centre: Sportcenter
+        pitch: "Idrottsplats"
+        sports_centre: "Sportcenter"
         stadium: Idrottsarena
         swimming: Bad
-        swimming_pool: Simbassäng
+        swimming_pool: "Simbassäng"
       tourism:
         archaeological_site: "Arkeologisk plats"
-        arts_centre: Kulturcenter
+        arts_centre: "Kulturcenter"
         artwork: Konstverk
         attraction: Attraktion
         battlefield: Slagfält
         beach: Strand
         beacon: Fyr
         castle: Slott
-        cave_entrance: Gruvingång
-        information: Turistinformation
+        cave_entrance: "Gruvingång"
+        information: "Turistinformation"
         memorial: Minnesplats
-        theme_park: Nöjespark
+        theme_park: "Nöjespark"
         tower: Torn
-        viewpoint: Utsiktsplats
+        viewpoint: "Utsiktsplats"
       unknown:
         unknown: Okänt
