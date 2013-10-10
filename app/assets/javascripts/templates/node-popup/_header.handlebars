@@ -1,13 +1,13 @@
 {{! header }}
-<header id="node-header">
-  <h1 itemprop="name">{{headline}}</h1>
+<header class="node-popup-header">
+  <h2 itemprop="name">{{headline}}</h2>
   {{#if address}}
     <address>{{address}}</address>
   {{/if}}
 
   <ol class="breadcrumbs unstyled">
     {{#each breadcrumbs}}
-      <li>{{this}}</li>
+      <li><i class="icon-angle-right"></i>{{this}}</li>
     {{/each}}
   </ol>
 </header>

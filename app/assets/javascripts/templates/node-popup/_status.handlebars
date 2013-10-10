@@ -1,0 +1,20 @@
+{{! status }}
+<h3>{{ t 'nodes.node_status.wheelchair_accessibility' }}</h3>
+<div class="dropdown">
+    <a data-toggle="dropdown" {{ bind-attr class=":dropdown-toggle :btn view.wheelchairClass" }} {{ bind-attr data-status="wheelchair" }}>
+        <span class="text">{{ statusText }}</span>
+        <i class="icon-question-sign" data-toggle="popover" {{ bind-attr data-title="statusText" }} {{ bind-attr data-content="statusDescription" }} data-trigger="hover"></i>
+        <i class="icon-caret-down pull-right" ></i>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+        {{#each status in view.WHEELCHAIR_STATUSES }}
+        <li>
+            <a data-toggle="status" data-status="status">
+                {{ wheelchair-checkbox wheelchair=status status=wheelchair }}
+                {{ t 'home.index.popup.form' status }}
+                <i class="icon-question-sign"></i>
+            </a>
+        </li>
+        {{/each }}
+    </ul>
+</div>

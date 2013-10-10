@@ -29,10 +29,6 @@ attr = DS.attr
     @get('name') || I18n.t("poi.name." + @get('category') + "." + @get('type'))
   ).property('name', 'type','category')
 
-  status: (()->
-    ['yes', 'limited', 'no']
-  )
-
   show_path: (()->
     '/nodes/' + @get('osm_id')
   ).property('osm_id')

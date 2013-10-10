@@ -1,0 +1,146 @@
+.node-popup {
+  font-size: $fontSizeSmall;
+  width: 288px;
+  @include border-radius(2px);
+
+  .leaflet-popup-tip {
+    background-color: darken($orange-gray, 5%);
+  }
+
+  a.leaflet-popup-close-button {
+    top: 3px;
+    right: 2px;
+    padding: 7px;
+    @include text-shadow(0px 1px 3px rgba($black, 0.25));
+  }
+}
+
+.node-popup-header {
+  @include headline-gradient();
+  @include border-top-radius(3px);
+  @include text-shadow(0px 1px 3px rgba($black, 0.5));
+  padding: 12px 12px 10px 12px;
+  color: $white;
+
+  h2,
+  address,
+  .breadcrumbs {
+    margin: 0;
+  }
+
+  h2 {
+    font-size: $fontSizeLarge;
+    line-height: $baseLineHeight * 1.2;
+  }
+
+  .breadcrumbs {
+    @include clearfix();
+    opacity: 0.5;
+
+    li {
+      float: left;
+      padding-right: 3px;
+      font-size: $fontSizeMini;
+      //line-height: $baseLineHeight;
+
+      .icon-angle-right {
+        line-height: inherit;
+        font-size: $fontSizeLarge;
+        float: left;
+        padding: 0 7px 0 5px;
+      }
+
+      &:first-of-type .icon-angle-right {
+        display: none;
+      }
+    }
+  }
+}
+
+.node-popup-content {
+  @include background-image(linear-gradient(-180deg, lighten($orange-gray, 7%) 60%, darken($orange-gray, 5%) 100%));
+  @include border-bottom-radius(3px);
+}
+
+.node-popup-status {
+  padding: 12px;
+
+  h3 {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0 0 7px 0;
+  }
+
+  .icon-caret-down,
+  .icon-question-sign {
+    line-height: inherit;
+  }
+
+  .btn,
+  .dropdown-menu {
+    width: 100%;
+  }
+
+  .btn {
+    @include box-sizing(border-box);
+    color: white;
+    height: 40px;
+    text-align: left;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 40px;
+
+    .icon-question-sign {
+      padding-left: 5px;
+    }
+  }
+
+  .dropdown-menu {
+    @include border-top-radius(0);
+
+    a {
+      line-height: 25px;
+      padding: 5px 10px;
+
+      .icon-question-sign {
+        opacity: .5;
+        font-size: $baseFontSize;
+        // Needed for firefox floating bug
+        position: absolute;
+        right: 10px;
+      }
+    }
+
+    .wm-checkbox {
+      height: 25px;
+      width: 25px;
+      line-height: inherit;
+      vertical-align: middle;
+      display: inline-block;
+      @include border-radius(3px);
+      @include box-shadow(inset 0 1px 0 rgba($white, 0.5), 0 1px 1px rgba($black, 0.1));
+      margin-right: 5px;
+
+      i {
+        width: 17px;
+        height: 17px;
+        line-height: 17px;
+        display: block;
+        margin: 3px;
+        border: inherit;
+        @include border-radius(3px);
+        color: $black;
+        background-color: $white;
+        @include text-shadow(none);
+        @include box-shadow(0 1px 0 rgba($white, 0.5), inset 0 1px 2px rgba($black, 0.2));
+        overflow: hidden;
+        text-align: center;
+        text-indent: -5000px; // Hide check icon
+      }
+
+      &.checked i {
+        text-indent: 0px;
+      }
+    }
+  }
+}

@@ -1,5 +1,3 @@
-Wheelmap = @Wheelmap
-
 Wheelmap.LocateMixin = Ember.Mixin.create
   _createLayer: ()->
     @_super()
@@ -38,7 +36,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
   ).property('layer')
 
   popupView: (()->
-    @createView('map-popup')
+    @createView('node-popup')
   ).property('content')
 
   markerView: (()->
@@ -46,12 +44,13 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
   ).property('content')
 
   popupOptions:
+    className: 'node-popup'
     offset: [0, -20]
 
   popupContent: (()->
     view = @get('popupView')
-    Ember.View.states.inDOM.enter(view) # We need to do this manually, otherwise ember will prevent propagation of events important for leaflet
     view.createElement()
+    Wheelmap.ViewHelper.enterDom(view)
     view.get('element')
   ).property('popupView')
 
@@ -65,6 +64,10 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
   willDestroyLayer: ()->
     @get('layer').closePopup()
     @get('popupView').remove()
+
+  didDestroyLayer: ()->
+    Wheelmap.ViewHelper.exitDom(@get('markerView'))
+    Wheelmap.ViewHelper.exitDom(@get('popupView'))
 
   addEventListeners: (()->
     layer = @get('layer')
@@ -123,9 +126,11 @@ Wheelmap.MapIcon = L.Icon.extend
     @view = view
 
   createIcon: ()->
-    @view.createElement()
-    Ember.View.states.inDOM.enter(@view)
-    @view.get('element')
+    view = @view
+
+    view.createElement()
+    Wheelmap.ViewHelper.enterDom(view)
+    view.get('element')
 
 Wheelmap.MapMarkerView = Ember.View.extend
   templateName: 'map-marker'
@@ -143,9 +148,6 @@ Wheelmap.MapMarkerView = Ember.View.extend
   iconClass: (()->
     'marker-icon-' + @get('context.icon')
   ).property('context.icon')
-
-Wheelmap.MapPopupView = Ember.View.extend
-  templateName: 'map-popup'
 
 Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.SpinMixin,
   childLayers: [ Wheelmap.TileLayer, Wheelmap.MarkerCollectionLayer ]
