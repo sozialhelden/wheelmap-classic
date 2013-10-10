@@ -12,3 +12,10 @@ $document.on 'click.dropdown', '[data-toggle="dropdown"]', (e)->
     $parent.find('.collapse.in').collapse('hide').each ->
       # Must set this flag to false to don't stop collapse trigger next time
       $(this).data('collapse').transitioning = false
+
+$document.on 'show hide', '.collapse', (e)->
+  # Add collapsed class to toggler (wheelmap custom hack)
+  # Need the toggler to be next to the collapsable element (e.g. via accoridon-group)
+  # @TODO Find a way to be more flexible here!
+  $trigger = $(@).prev('[data-toggle="collapse"]')
+  $trigger[(if e.type is 'show' then 'removeClass' else 'addClass')]('collapsed')
