@@ -1,4 +1,3 @@
----
 tlh:
   application:
     require_no_user:
@@ -16,29 +15,29 @@ tlh:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: lajnIS
+      accepted: "lajnIS"
       already_confirmed: "chaw'lu'pu'. bI'el 'e' yInID. "
-      blank: chImlaHbe'
-      confirmation: rurbe'
-      empty: chImlaHbe'
+      blank: "chImlaHbe'"
+      confirmation: "rurbe'"
+      empty: "chImlaHbe'"
       equal_to: "rapnIS %{count}"
       even: "cha'logh boqHa'eghnISlaH mI'"
-      exclusion: chaw'be'
+      exclusion: "chaw'be'"
       greater_than: "tIn law' %{count} tIn puS 'e' teHnIS."
       greater_than_or_equal_to: "tIn law' %{count} tIn puS 'e' teHnIS pagh %{count} rap."
       inclusion: "muj De'"
-      invalid: muj
+      invalid: "muj"
       less_than: "mach law' %{count} mach puS 'e' teHnIS."
       less_than_or_equal_to: "mach law' %{count} mach puS 'e' teHnIS pagh %{count} rap."
       not_a_number: "oHbe' mI''e"
       not_an_integer: "mI' naQ 'oHnIS"
-      not_found: Sambe'
-      not_locked: ngaQbe'
+      not_found: "Sambe'"
+      not_locked: "ngaQbe'"
       not_saved:
         one: "%{resource} qonlu'pu' 'e' bot Qagh:"
         other: "%{resource} qonlu'pu' 'e' bot %{count} Qaghmey:"
       odd: "cha'logh boqHa'eghnISlaHbe' mI'"
-      taken: ghajlu'
+      taken: "ghajlu'"
       too_long: "tlhoy tIq (%{count} pIqaDmey 'oH 'aqroS'e')"
       too_short: "tlhoy run (%{count} pIqaDmey 'oH 'rav'e')"
       wrong_length: "latlh mu'mey ghajnIS (%{count} mu'mey ghajnIS)"
@@ -63,14 +62,14 @@ tlh:
       category: "Segh:"
       city: "veng:"
       create: "Daq chen"
-      email: " jabbI'ID"
+      email: ' jabbI''ID'
       housenumber: "ghobe':"
       lat: Latitude
       lon: Longitude
       name: "pong:"
       osm_password: "OSM pegh mu'"
       osm_username: "OSM ta pong"
-      password: "pegh mu'"
+      password: pegh mu'
       password_confirmation: "pegh mu' yIghItlhqa'"
       phone: "QumwI:"
       postcode: "Daq ngoq:"
@@ -96,12 +95,12 @@ tlh:
       feedback: qechmey
       home: tagh
       how_to_add_a_place: "chay' Daqmey vIchel?"
-      imprint: "nubop De'"
+      imprint: nubop De'
       logged_in_as: "'elpu': "
       login: "'el"
-      logout: mej
+      logout: "mej"
       press: Press
-      suggestions: "vay' chup"
+      suggestions: vay' chup
       what_is_barrier_free: "\"rutlhquS chawbogh Daq'e'\" DaQIjlaH'a'?"
       what_is_wheelmap: "nuq 'oH wheelmap'e'?"
     searchbar:
@@ -113,7 +112,7 @@ tlh:
     title: "RutlhquS chawbogh Daq'e' Sam"
   helpers:
     select:
-      prompt: yIwIv
+      prompt: "yIwIv"
     submit:
       create: "%{model} chenmoH"
       submit: "%{model} qon"
@@ -129,12 +128,10 @@ tlh:
       popup:
         form:
           limited: "loQ naw'laH rutlhquS"
-          ? "no"
-          : "naw'laHbe' rutlhquS"
+          'no': "naw'laHbe' rutlhquS"
           save: qon
           unknown: "Suvbe'bogh Dotlh"
-          ? "yes"
-          : "naw'laH rutlhquS"
+          'yes': "naw'laH rutlhquS"
         help: "naw'laH'a' rutlhquS? (QaH)"
         more: "latlh ..."
   layouts:
@@ -163,7 +160,7 @@ tlh:
       not_authorized: "Qagh. chaw'be'."
       not_available: "Daqvam tu'be'lu' 'ach ru'."
       not_existent: "Daqvam tu'be'lu'."
-      not_found: SamlaHbe'.
+      not_found: "SamlaHbe'."
       param_missing: "mu' nejbogh yIghItlh"
     flash:
       authorize_wheelmap: "De' choHmeH OpenStreetMap ta DaSuqnIS. "
@@ -174,7 +171,6 @@ tlh:
         large_map: "&laquo; qIl"
     node:
       link:
-        claim: ~
         edit_node: "Daq choH"
         report_bug: "Report a problem"
     show:
@@ -193,31 +189,20 @@ tlh:
       format:
         delimiter: "."
         format: "%u%n"
-        precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: $
     format:
       delimiter: ","
-      precision: 3
       separator: "."
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
         units:
-          billion: "SaD 'uy'"
-          million: "'uy'"
-          quadrillion: "SaD 'uy' 'uy'"
+          billion: SaD 'uy'
+          million: '''uy'''
+          quadrillion: SaD 'uy' 'uy'
           thousand: SaD
-          trillion: "'uy' 'uy'"
-      format:
-        delimiter: "."
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
+          trillion: '''uy'' ''uy'''
       storage_units:
         format: "%n %u"
         units:
@@ -228,12 +213,6 @@ tlh:
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: "."
-    precision:
-      format:
-        delimiter: "."
   oauth:
     application:
       connect:
@@ -258,16 +237,18 @@ tlh:
       search:
         for: "\"%{q}\" nejtaH"
         not_found: "pagh Daq tu'lu'!"
+  splash:
+    start: tagh
+    what_is_wheelmap: "nuq 'oH wheelmap'e'?"
   statistics: De'
   support:
     array:
       last_word_connector: ", 'ej"
-      sentence_connector: "'ej"
-      skip_last_comma: true
+      sentence_connector: '''ej'
       two_words_connector: "'ej"
       words_connector: ","
     select:
-      prompt: yIwIv
+      prompt: "yIwIv"
   time:
     am: pem
     formats:
@@ -281,22 +262,20 @@ tlh:
         notice: "DaH chu' ta'lIj!"
       error:
         notice: "repbe' pegh mu' jabbI'ID jabbI'ID SoQ je."
-      notice: bI'el!
+      notice: "bI'el!"
     destroy:
       notice: "tugh yIchegh!"
     new:
       email: "jabbI'ID ngu'wI'"
       login: "'el"
       login_with_twitter: "Twitter lo'taHvIS yI'el"
-      password: "pegh mu'"
+      password: pegh mu'
       remember_me: "'eltaH"
   wheelchairstatus:
     limited: "loQ naw'laH rutlhquS"
-    ? "no"
-    : "naw'laHbe' rutlhquS"
+    'no': "naw'laHbe' rutlhquS"
     unknown: "rutlhquS chaw Daq 'e' Sovbe'lu' "
-    ? "yes"
-    : "naw'laHbej rutlhquS"
+    'yes': "naw'laHbej rutlhquS"
   wheelmap:
     itunes:
       alt: "AppStore Degh"

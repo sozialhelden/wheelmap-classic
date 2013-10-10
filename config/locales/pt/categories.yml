@@ -1,9 +1,8 @@
----
 pt:
   poi:
     category:
-      accommodation: "Acomodação "
-      education: "Ecucação "
+      accommodation: 'Acomodação '
+      education: 'Ecucação '
       food: Comida
       government: Governo
       leisure: Prazer
@@ -18,7 +17,7 @@ pt:
       accommodation:
         beach_resort: "Hotel Praia"
         bed_and_breakfast: "Bed and Breakfast"
-        camp_site: Acampamento
+        camp_site: "Acampamento"
         caravan_site: "Sitio de caravana"
         chalet: Chalet
         guest_house: "Guest House"
@@ -27,14 +26,14 @@ pt:
         motel: Motel
       education:
         college: Colégio
-        kindergarten: "Jardim escola"
+        kindergarten: Jardim escola
         library: Biblioteca
         museum: Museu
         school: Escola
         university: Universidade
       food:
         bar: Bar
-        biergarten: "Bar de cerveja"
+        biergarten: Bar de cerveja
         cafe: café
         drinking_water: "Agua potável"
         fast_food: "Fast food"
@@ -53,39 +52,39 @@ pt:
         arena: Arena
         cinema: Cinema
         gallery: Galeria
-        nightclub: "Clube Nocturno"
+        nightclub: Clube Nocturno
         sauna: Sauna
         theatre: Teatro
         zoo: Zoológico
       misc:
         place_of_worship: "Lugar de oração "
-        toilets: "Casa de banho"
+        toilets: Casa de banho
       money_post:
-        atm: "Caixa Multibanco"
+        atm: Caixa Multibanco
         bank: Banco
         bureau_de_change: "Loja de Cambio"
         post_box: "Caixa de Correio"
-        post_office: Correios
+        post_office: "Correios"
       public_transfer:
         aerodrome: Aeroporto
         bicycle_parking: "Parque para bicicletas"
         bicycle_rental: "Aluguer de bicicletas"
-        boatyard: "Lugar onde barcos são construídos e guardados "
+        boatyard: 'Lugar onde barcos são construídos e guardados '
         bus_station: "Estação de Autocarros"
         bus_stop: "Estação de Autocarros"
-        cable_car: Teleférico
+        cable_car: "Teleférico"
         car_rental: "Aluguer de carros"
         car_sharing: "Car sharing"
-        chair_lift: Elevador
+        chair_lift: "Elevador"
         ferry: Ferry
         ferry_terminal: "Terminal Ferry"
         fuel: "Bomba de gasolina"
-        halt: "Estação "
-        light_rail: Metro
-        parking: "Parque de estacionamento"
+        halt: 'Estação '
+        light_rail: "Metro"
+        parking: Parque de estacionamento
         parking_aisle: "Lugar de estacionamento"
         platform: Plataforma
-        station: Metro
+        station: "Metro"
         subway_entrance: "Entrada do Metro "
         terminal: "Terminal de Aeroporto "
         tram_stop: "Estação de eléctrico"
@@ -118,13 +117,13 @@ pt:
         sports_centre: "Centro de desporto"
         stadium: Estádio
         swimming: Nadar
-        swimming_pool: Piscina
+        swimming_pool: "Piscina"
       tourism:
         archaeological_site: "Local arqueológico"
         arts_centre: "centro de artes"
-        artwork: "Obra de arte"
+        artwork: Obra de arte
         attraction: Atracção
-        battlefield: "Campo de batalha"
+        battlefield: Campo de batalha
         beach: Praia
         beacon: Farol
         castle: castelo

@@ -1,16 +1,15 @@
----
 fr:
   poi:
     category:
       accommodation: hébergement
       education: Education
       food: Repas
-      government: "Administrations & ambassades"
+      government: Administrations & ambassades
       health: Santé
       leisure: Loisirs
       misc: Autres
       money_post: "Banque & Poste "
-      public_transfer: Circulation
+      public_transfer: "Circulation"
       shopping: Shopping
       sport: Sports
       tourism: Tourisme
@@ -19,10 +18,10 @@ fr:
       accommodation:
         beach_resort: "Hôtel près de la plage"
         bed_and_breakfast: "Chambre d'hôtes"
-        camp_site: Camping
-        caravan_site: Camping
-        chalet: "gîte de vacances"
-        guest_house: Auberge
+        camp_site: "Camping"
+        caravan_site: "Camping"
+        chalet: gîte de vacances
+        guest_house: "Auberge"
         hostel: Auberge
         hotel: Hôtel
         motel: Motel
@@ -36,17 +35,17 @@ fr:
         university: Université
       food:
         bar: Bar
-        biergarten: "Brasserie en plein air"
-        cafe: "salon de thé"
+        biergarten: Brasserie en plein air
+        cafe: salon de thé
         drinking_water: "Eau potable"
         fast_food: "Restauration rapide"
         ice_cream: "salon de thé/marchand de glace"
         pub: Bistro
         restaurant: Restaurant
       government:
-        courthouse: "Palais de Justice"
+        courthouse: Palais de Justice
         embassy: Ambassade
-        government: administration
+        government: "administration"
         police: Police
         public_building: "Edifice public"
         townhall: mairie
@@ -61,26 +60,26 @@ fr:
         veterinary: Vétérinaire
       leisure:
         arena: Stade
-        brothel: "Maison close"
+        brothel: Maison close
         casino: casino
         cinema: Cinéma
         community_center: "Centre municipal"
         gallery: Galerie
-        nightclub: "Boîte de nuit"
-        playground: "aire de jeux"
+        nightclub: Boîte de nuit
+        playground: aire de jeux
         sauna: Sauna
-        stripclub: "Club de striptease"
+        stripclub: Club de striptease
         theatre: Théâtre
         zoo: Zoo
       misc:
-        company: Entreprise
+        company: "Entreprise"
         estate_agent: "agence immobilière"
         insurance: assurance
         lawyer: Avocat
         place_of_worship: "Lieu de culte"
-        toilets: "Toilettes publics"
+        toilets: Toilettes publics
       money_post:
-        atm: "Distributeur automatique"
+        atm: Distributeur automatique
         bank: Banque
         bureau_de_change: "Bureau de change "
         post_box: "Boîte aux lettres"
@@ -92,10 +91,10 @@ fr:
         boatyard: Port
         bus_station: "arrêt de bus"
         bus_stop: "Arrêt de bus "
-        cable_car: Télécabine
+        cable_car: "Télécabine"
         car_rental: "Location de voitures"
-        car_sharing: Covoiturage
-        chair_lift: Télésiège
+        car_sharing: "Covoiturage"
+        chair_lift: "Télésiège"
         ferry: Ferry/Bac
         ferry_terminal: "Gare maritime;"
         fuel: "Station service"
@@ -103,27 +102,27 @@ fr:
         light_rail: "Transport urbain sur rail"
         parking: Stationnement/parking
         parking_aisle: "voie de circulation sur parking"
-        platform: "Quai de gare"
+        platform: Quai de gare
         station: "Gare féroviaire"
         subway_entrance: "Entrée du métro"
-        terminal: Aéroport
+        terminal: "Aéroport"
         tram_stop: "Arrêt de tram"
       shopping:
-        alcohol: "Cave à vins et spiritueux"
+        alcohol: Cave à vins et spiritueux
         bakery: Boulangerie/Pâtisserie
         beauty: "institut de beauté"
         beverages: Boissons
         bicycle: "magasin de vélos"
         books: Librairie
         butcher: Boucherie
-        car_repair: Garage
-        car_shop: Concessionaire
+        car_repair: "Garage"
+        car_shop: "Concessionaire"
         chemist: droguerie
         clothes: Vêtements
         computer: Ordinateur
         confectionery: "magasin de bonbons"
-        convenience: "magasin avec ouverture tardive"
-        deli: "épicerie fine"
+        convenience: magasin avec ouverture tardive
+        deli: épicerie fine
         department_store: "Grand magasin"
         doityourself: "Magasin de bricolage"
         dry_cleaning: "Nettoyage à sec"
@@ -131,8 +130,8 @@ fr:
         fabric: "magasin de tissus"
         farm_shop: "vente directe à la ferme"
         florist: Fleuriste
-        furniture: "Magasin de meubles"
-        garden_centre: Jardinerie
+        furniture: Magasin de meubles
+        garden_centre: "Jardinerie"
         gift: "magasin de souvenirs"
         hairdresser: Coiffeur
         hardware: Quincaillerie
@@ -142,28 +141,28 @@ fr:
         mall: "Centre Commercial"
         optician: Opticien
         organic: "magasin bio"
-        pet: animalerie
+        pet: "animalerie"
         photo: Photo
-        second_hand: Friperie
-        shoes: "Magasin de chaussures"
-        sports: "Magasin de sports"
+        second_hand: "Friperie"
+        shoes: Magasin de chaussures
+        sports: Magasin de sports
         stationery: Papeterie
         supermarket: Supermarché
-        toys: "magasin de jouets"
+        toys: magasin de jouets
         travel_agency: "agence de voyage"
-        video: vidéothèque
+        video: "vidéothèque"
       sport:
         pitch: "terrain de sport"
         sports_centre: "salle de fitness"
         stadium: Stade
-        swimming: "Piscine en plein air"
-        swimming_pool: Piscine
+        swimming: Piscine en plein air
+        swimming_pool: "Piscine"
       tourism:
         archaeological_site: "Site archéologique"
         arts_centre: "Centre des arts"
-        artwork: "œuvre d'art "
+        artwork: 'œuvre d''art '
         attraction: Attraction
-        battlefield: "Champ de bataille"
+        battlefield: Champ de bataille
         beach: Plage
         beacon: Phare
         castle: Château

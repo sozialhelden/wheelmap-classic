@@ -1,4 +1,3 @@
----
 nb:
   application:
     require_no_user:
@@ -12,7 +11,7 @@ nb:
     root: wheelmap
   common:
     close: lukk
-    skip: "Hopp over"
+    skip: Hopp over
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -59,7 +58,7 @@ nb:
       update:
         notice: "%{resource_name} var velykket oppdatert"
   form:
-    show_fully_accessible_places: Rullestoltilgjengelig
+    show_fully_accessible_places: "Rullestoltilgjengelig"
     show_limited_accessible_places: "Delvis rullestoltilgjengelig"
     show_places_without_status: "Ukjent status"
     show_unaccessible_places: "Ikke rullestoltilgjenglig"
@@ -93,7 +92,7 @@ nb:
       street: "Gate:"
       type: "Type:"
       website: "Webside:"
-      wheelchair: Rullestoltilgjenglighet?
+      wheelchair: "Rullestoltilgjenglighet?"
       wheelchair_description: "Kommentar om tilgjengelighet:"
     titles:
       basic: "Generell data"
@@ -103,7 +102,7 @@ nb:
   header:
     meta:
       description: "Finn rullestoltilgjengelige steder - wheelmap.org"
-      homepage: Hjemmeside
+      homepage: "Hjemmeside"
       keywords: "Rullestoltilgjenglige steder finn søk merk"
       search: Søk
     navigation:
@@ -139,7 +138,7 @@ nb:
     index:
       filter:
         category: "Velg kategori"
-        wheelchair: Rullestoltilgjengelig?
+        wheelchair: "Rullestoltilgjengelig?"
       ie:
         action:
           ignore: Overse
@@ -153,27 +152,23 @@ nb:
       popup:
         form:
           limited: "Delevis rullestoltilgjengelig"
-          ? "no"
-          : "Ikke rullestoltilgjengelig"
+          'no': "Ikke rullestoltilgjengelig"
           save: Oppdater
           unknown: "Ukjent status"
-          ? "yes"
-          : rullestoltilgjenglig
+          'yes': "rullestoltilgjenglig"
         help: "Rullestoltilgjengelig? (hjelp)"
-        more: Mer...
+        more: "Mer..."
   how?: Hvordan?
   landing_pages:
     index:
       wheelchair:
         limit:
           headline: "Alle begrensede rullestoltilgjengelige %{type} i %{city} (%{count})\n"
-        ? "no"
-        :
+        'no':
           headline: "Alle utilgjengelige %{type} i %{city} (%{count})"
         unknown:
           headline: "Alle %{type} i %{city} med ukjent rullestol status (%{count})"
-        ? "yes"
-        :
+        'yes':
           headline: "Alle rullestoltilgjenglige %{type} i %{city} (%{count})"
   layouts:
     application:
@@ -336,7 +331,7 @@ nb:
     destroy:
       notice: "Hadet, kom snart tilbake"
     new:
-      email: Epostadresse
+      email: "Epostadresse"
       login: "Logg inn"
       login_with_twitter: "Logg på med Twitter"
       password: Passord
@@ -349,17 +344,15 @@ nb:
         text: "Hvordan kan vi få kontakt med deg? Du kan endre denne informasjonen i profilen din senere."
   wheelchairstatus:
     limited: "Delevis rullestoltilgjenglig"
-    ? "no"
-    : "ikke rullestoltilgjengelig"
+    'no': "ikke rullestoltilgjengelig"
     unknown: "Ukjent status"
-    ? "yes"
-    : rullestoltilgjengelig
+    'yes': "rullestoltilgjengelig"
   wheelmap:
     footer:
       a_project_of: "Et prosjekt laget av"
       based_on: "Basert på"
       become_a_supporter: "Bli en sponsor"
-      main_supporter: Hovedsponsor
+      main_supporter: "Hovedsponsor"
     itunes:
       alt: "AppStore Logo"
       title: "Last ned iPhone-app nå!"

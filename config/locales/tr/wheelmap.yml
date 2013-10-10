@@ -1,4 +1,3 @@
----
 tr:
   application:
     require_no_user:
@@ -12,6 +11,7 @@ tr:
     root: wheelmap
   common:
     close: kapatınız
+    skip: atla
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -23,16 +23,17 @@ tr:
       empty: "doldurulması gerekiyor"
       equal_to: "tam olarak %{count} olmalı"
       even: "eşit olması gerekir"
-      exclusion: ayırtılmış
+      exclusion: "ayırtılmış"
+      expired: "süresi dolmuş, lütfen yeni bir tane isteyin"
       greater_than: "%{count} dan yüksek olmalı"
       greater_than_or_equal_to: "%{count} dan daha yüksek veya ayni olmalı"
       inclusion: "geçersiz bir değer"
-      invalid: geçersiz
+      invalid: "geçersiz"
       less_than: "%{count} dan daha eksik olmalı"
       less_than_or_equal_to: "%{count} dan daha alçak veya aynı olması gerekir"
       not_a_number: "bu bir numara değildir"
       not_an_integer: "Tamsayı olması gerekir"
-      not_found: bulunamadı
+      not_found: "bulunamadı"
       not_locked: "Kilitli değildi"
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
@@ -47,6 +48,18 @@ tr:
       header:
         one: "1 error prohibited this %{model} from being saved"
         other: "%{count} errors prohibited this %{model} from being saved"
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} başarıyla oluşturuldu."
+      destroy:
+        alert: "%{resource_name} silinemiyor"
+        notice: "%{resource_name} başarıyla silindi"
+      update:
+        notice: "%{resource_name} başarıyla güncellendi"
+    photos:
+      destroy:
+        notice: "Görsel başarıyla silindi"
   form:
     show_fully_accessible_places: "tekerlekli sandalye ile ulaşılır"
     show_limited_accessible_places: "kısmen tekerlekli sandalye ile ulaşılır"
@@ -54,6 +67,7 @@ tr:
     show_unaccessible_places: "tekerlekli sandalye için ulaşılır değil"
   formtastic:
     hints:
+      email: "Adresinize olması gerektiği gibi davranıyoruz, spam yok. Söz veriyoruz!"
       lat: "Işareti haritanın üzerinde doğru yere ulaşana kadar oynatın."
       osm_username: "Henüz üye değilmisiniz? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an Openstreetmap account now</a>"
       password: "(değistirmek istemiyorsanız, boş bırakın)"
@@ -61,21 +75,25 @@ tr:
       website: "Örnegin: http://www.örnek.com"
     labels:
       category: "Tabaka:"
-      city: Şehir
+      city: "Şehir"
       create: "mekan/alan oluştur"
       email: E-Posta
+      finish: Bitir
       housenumber: "No:"
       lat: Enlem
       lon: Boylam
-      name: Isim
+      name: "Isim"
       osm_password: "OSM Parola"
       osm_username: "OSM hesap ismi"
       password: Parola
       password_confirmation: "Parolayi tekrarlayınız"
       phone: "Telefon:"
       postcode: "Posta Kodu"
+      privacy_policy: "Veri güvenliği anlaşmasının 1. ve 2. paragrafını kabul ediyorum."
+      reset: Sıfırla
       save: Kaydet
       street: "Sokak:"
+      terms: "Kullanım koşullarını kabul ediyorum."
       type: "Tip: "
       website: "Internet sitesi"
       wheelchair: "Tekerlekli Sandalye erişilirliği? "
@@ -100,6 +118,7 @@ tr:
       logged_in_as: "- olarak kayıtlı kal: "
       login: "Oturum aç"
       logout: "Oturumu kapat"
+      newsletter: Haberler
       press: Basın
       profile: Profil
       suggestions: Öneriler
@@ -123,21 +142,29 @@ tr:
     index:
       filter:
         category: "Tabaka:"
+        deselect_all: "Tümünün işaretini kaldır"
+        select_all: "Tümünü işaretle"
         wheelchair: "Tekerlekli sandalye için ulaşılırmı?"
+      ie:
+        action:
+          ignore: Yoksay
+          upgrade: "Tarayıcıyı Güncelle"
+        warning:
+          headline: "Özür dileriz!"
+          message: "Internet Explorer kullanıyorsunuz gibi görünüyor. Wheelmap düzgün çalışmak için standartlara uygun bir tarayıcıya ihtiyaç duyar. Lütfen Firefox, Chrome, Safari veya Opera kullanmayı düşünün."
       link:
         node:
           create: "Yeni bir yer ekle"
       popup:
         form:
           limited: "kısmen tekerlekli sandalye ile ulaşılır"
-          ? "no"
-          : "tekerlekli sandalye için ulaşılır değil"
-          save: "Değişiklikeri kaydedin"
+          'no': "tekerlekli sandalye için ulaşılır değil"
+          save: Değişiklikeri kaydedin
           unknown: "belirsiz statü"
-          ? "yes"
-          : "tekerlekli sandalye ile ulaşılır"
+          'yes': "tekerlekli sandalye ile ulaşılır"
         help: "Tekerlekli sandalye için ulaşılırmı? (Yardım)"
         more: "daha fazla..."
+  how?: Nasıl?
   layouts:
     application:
       banner:
@@ -175,14 +202,16 @@ tr:
         large_map: "&laquo; Iptal et"
     node:
       link:
-        claim: ~
+        claim: "Burada mı çalışıyorsunuz?"
         edit_node: "Alan veya Mekanı düzenle"
         report_bug: "Sorun bildir "
     show:
       header:
         title: "Alan/Mekan: %{node} | wheelmap.org"
       link:
+        back: geri
         large_map: Genişlet
+        upload: "Görsel yükleyin"
     update:
       flash:
         not_successfull: "Oops, verileriniz yanlış veya eksik."
@@ -252,13 +281,21 @@ tr:
           connected: "Statü: bağlantı var"
           grant: "Şimdi bağlan"
           not_connected: "Statü: Bağlantı yok"
-          revoke: "Bağlantıyı kesmek"
+          revoke: Bağlantıyı kesmek
       headline: "Profilinizi düzenleyin"
   search:
     index:
       search:
         for: "\"%{q}\" araniyor"
         not_found: "Yer bulunamadi!"
+  splash:
+    countline: "%{count} yer zaten işaretlendi."
+    headline: "Herkes tekerlekli sandalye erişilebilirliği olan yerleri işaretleyebilir!"
+    start: Başlat
+    step1: "Bildiğiniz bir yere tıklayın"
+    step2: "İşaretleyin ve kaydete tıklayın"
+    step3: "İşte bu! Kaydolmak gerekmiyor"
+    what_is_wheelmap: "Wheelmap nedir?"
   statistics: Istatistik
   support:
     array:
@@ -270,12 +307,12 @@ tr:
     select:
       prompt: "Lütfen seçiniz"
   time:
-    am: "öğleden önce"
+    am: öğleden önce
     formats:
       default: "%a %d.%b.%y %H:%M"
       long: "%e %B %Y, %A, %H:%M"
       short: "%e %B, %H:%M"
-    pm: "öğleden sonra"
+    pm: öğleden sonra
   user_sessions:
     create:
       activation:
@@ -291,14 +328,24 @@ tr:
       login_with_twitter: "Twitter ile oturum aç"
       password: Parola
       remember_me: "Kayıtlı kal"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Neredeyse oldu! Wheelmap hesabınızın kaydını bitirin:"
+        set_password_for_mobile: "OpenStreetMap kaydınızı tamamladınız.\nŞimdi Wheelmap hesabınız için bir e-posta adresi ve şifre seçin, bundan sonra kullanmaya hazır olacaksınız! Bu e-posta adresi ve şifreye iPhone ve Android'deki Wheelmap uygulamasına giriş yaparken ihtiyacınız olacak."
+        text: "Sizinle nasıl iletişime geçebiliriz? Bu bilgiyi daha sonra profilinizinden değiştirebilirsiniz."
+    edit:
+      headline:
+        your_images: "Yüklenmiş görselleriniz."
   wheelchairstatus:
     limited: "Kısmen tekerlekli sandalye ile ulaşılır"
-    ? "no"
-    : "Tekerlekli sandalye ile ulaşılmaz"
+    'no': "Tekerlekli sandalye ile ulaşılmaz"
     unknown: "Tekerlekli sandalye erişilirliği belirsiz"
-    ? "yes"
-    : "Tamamen tekerlekli sandalye ile ulaşılır"
+    'yes': "Tamamen tekerlekli sandalye ile ulaşılır"
   wheelmap:
+    footer:
+      become_a_supporter: "Bir destekçi olun"
+      main_supporter: "Ana destekçi"
     itunes:
       alt: "AppStore Logo"
       title: "iPhone App'i şimdi indirin!"
@@ -310,3 +357,15 @@ tr:
       limited_accessible: "Girişdeki basamak 7 santimetre den yüksek değil; en önemli mevkiler tekerlekli sandalye kullanıcılar tarafından ulaşılabilir. "
       not_accessible: "Girişdeki basamak 7 santimetre den yüksek; veya girişde basamak var; veya en önemli mevkiler tekerlekli sandalye kullanıcılar için ulaşılamaz."
       unknown_accessible: "Tekerlekli sandalye statüsü belirsiz"
+  will_paginate:
+    next_label: "Sonraki &#8594;"
+    page_entries_info:
+      single_page:
+        one: "1 %{model} gösteriliyor"
+        other: "Tüm %{count} %{model} gösteriliyor"
+        zero: "%{model} bulunamadı"
+      single_page_html:
+        one: "<b>1</b> %{model} gösteriliyor"
+        other: "<b>all&nbsp;%{count}</b> %{model} gösteriliyor"
+        zero: "%{model} bulunamadı"
+    previous_label: "&#8592; Önceki"

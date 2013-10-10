@@ -1,14 +1,13 @@
----
 zh:
   application:
     require_no_user:
-      notice: 您已经登录...
+      notice: "您已经登录..."
     require_user:
-      notice: 要浏览此页必须登录
+      notice: "要浏览此页必须登录"
   breadcrumbs:
     node:
-      create: 添加新的位置
-      edit: 编辑地点
+      create: "添加新的位置"
+      edit: "编辑地点"
     root: 轮椅通行地图
   common:
     close: 关闭
@@ -16,38 +15,32 @@ zh:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: 已被接受
-      already_confirmed: 已经确认
-      blank: 已填充
-      confirmation: 没有进行匹配确认
-      empty: 已填充
+      accepted: "已被接受"
+      already_confirmed: "已经确认"
+      blank: "已填充"
+      confirmation: "没有进行匹配确认"
+      empty: "已填充"
       equal_to: "必须准确%{count}"
-      even: 必须平坦
-      exclusion: 已预定
-      expired: 您已过期，请重新申请
+      even: "必须平坦"
+      exclusion: "已预定"
+      expired: "您已过期，请重新申请"
       greater_than: "必须大于%{count}"
       greater_than_or_equal_to: "必须大于或等于%{count}"
-      inclusion: 无效数值
-      invalid: 无效
+      inclusion: "无效数值"
+      invalid: "无效"
       less_than: "必须少于%{count}"
       less_than_or_equal_to: "必须低于或等于%{count}"
-      not_a_number: 不是一个数字
-      not_an_integer: 必须是整数
-      not_found: 没有找到
-      not_locked: 未锁定
-      not_saved:
-        one: "因为1个错误导致此%{resource}保存失败:"
-        other: "因为%{count}个错误导致此%{resource}保存失败:"
-      odd: 必须为单数
-      taken: 已经被使用
+      not_a_number: "不是一个数字"
+      not_an_integer: "必须是整数"
+      not_found: "没有找到"
+      not_locked: "未锁定"
+      odd: "必须为单数"
+      taken: "已经被使用"
       too_long: "太长(不能长于 %{count} 字符)"
       too_short: "太短(不少于%{count} 字符)"
       wrong_length: "长度非法（必须为 %{count} 个字符）"
     template:
-      body: 以下区域出现了问题：
-      header:
-        one: "%{model}在保留时由于一个错误被禁止"
-        other: "%{count}保留时由于以下错误被禁止%{model}"
+      body: "以下区域出现了问题："
   flash:
     actions:
       create:
@@ -58,75 +51,75 @@ zh:
       update:
         notice: "%{resource_name}已成功更新"
   form:
-    show_fully_accessible_places: 轮椅通道
-    show_limited_accessible_places: 部分轮椅通道
-    show_places_without_status: 未知状态
-    show_unaccessible_places: 非轮椅通道
+    show_fully_accessible_places: "轮椅通道"
+    show_limited_accessible_places: "部分轮椅通道"
+    show_places_without_status: "未知状态"
+    show_unaccessible_places: "非轮椅通道"
   formtastic:
     hints:
-      lat: 将地图上的标记移动到正确位置
+      lat: "将地图上的标记移动到正确位置"
       osm_username: "还不是会员？<a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">马上建立OpenStreetMap帐户"
-      password: （如果您不想改变请保留空白）
+      password: "（如果您不想改变请保留空白）"
       phone: "例如：+49 30 123456-78"
       website: "例如：http://www.example.com"
     labels:
-      category: 目录：
-      city: 城市：
-      create: 创建地点
+      category: "目录："
+      city: "城市："
+      create: "创建地点"
       email: 电子邮件
       finish: 完成
-      housenumber: 没有：
+      housenumber: "没有："
       lat: 纬度
       lon: 经度
-      name: 姓名：
-      osm_password: OSM密码
-      osm_username: OSM帐户名
+      name: "姓名："
+      osm_password: "OSM密码"
+      osm_username: "OSM帐户名"
       password: 密码
-      password_confirmation: 重复密码
-      phone: 电话
-      postcode: 邮政编码
+      password_confirmation: "重复密码"
+      phone: "电话"
+      postcode: "邮政编码"
       reset: 重置
       save: 保存
-      street: 街道：
-      type: 种类：
-      website: 网页
-      wheelchair: 轮椅可通过？
-      wheelchair_description: 无障碍说明：
+      street: "街道："
+      type: "种类："
+      website: "网页"
+      wheelchair: "轮椅可通过？"
+      wheelchair_description: "无障碍说明："
     titles:
-      basic: 基本数据
+      basic: "基本数据"
       optional: "更多信息<span class=\"addition\">(all fields are optional)</span>"
   global:
-    form_validation_error: 请注意下面表单上的错误
+    form_validation_error: "请注意下面表单上的错误"
   header:
     meta:
-      description: 找到轮椅通道位置－wheelmap.org
-      homepage: 主页
-      keywords: 寻找轮椅通道地点的标志
+      description: "找到轮椅通道位置－wheelmap.org"
+      homepage: "主页"
+      keywords: "寻找轮椅通道地点的标志"
       search: 搜索
     navigation:
       blog: 博客
       feedback: 反馈
       home: 开始
-      how_to_add_a_place: 我怎样添加位置
+      how_to_add_a_place: "我怎样添加位置"
       imprint: 版本说明
-      logged_in_as: 以：登录
-      login: 登录
-      logout: 注销
+      logged_in_as: "以：登录"
+      login: "登录"
+      logout: "注销"
       newsletter: 简讯
       press: 出版物
       suggestions: 建议
-      what_is_barrier_free: “轮椅通道”是什么意思
-      what_is_wheelmap: 什么是wheelmap?
+      what_is_barrier_free: "“轮椅通道”是什么意思"
+      what_is_wheelmap: "什么是wheelmap?"
     searchbar:
-      add_place: 添加另外的地点
+      add_place: "添加另外的地点"
       find: 找到
-      placeholder: 诸如洛杉矶大道的日落或者勃兰登堡的大门柏林
-      title_add_place: 现在在这个位置添加新的地点
-    tagline: 轮椅地图标志
-    title: Wheelmap－找到轮椅通道
+      placeholder: "诸如洛杉矶大道的日落或者勃兰登堡的大门柏林"
+      title_add_place: "现在在这个位置添加新的地点"
+    tagline: "轮椅地图标志"
+    title: "Wheelmap－找到轮椅通道"
   helpers:
     select:
-      prompt: 请选择
+      prompt: "请选择"
     submit:
       create: "新增%{model}"
       submit: "储存%{model}"
@@ -134,73 +127,69 @@ zh:
   home:
     index:
       filter:
-        category: 选择目录
-        wheelchair: 轮椅通道？
+        category: "选择目录"
+        wheelchair: "轮椅通道？"
       ie:
         action:
           ignore: 忽略
-          upgrade: 更新浏览器
+          upgrade: "更新浏览器"
         warning:
-          headline: 我们很抱歉！
+          headline: "我们很抱歉！"
           message: "您使用的是Internet Explorer.Wheelmap要求使用标准-兼容的浏览器才能正常显示。请考虑使用Firefox, Chrome, Safari or Opera等其它浏览器。"
       link:
         node:
-          create: 添加新地点
+          create: "添加新地点"
       popup:
         form:
-          limited: 部分轮椅通道可用
-          ? "no"
-          : 非轮椅通道
+          limited: "部分轮椅通道可用"
+          'no': "非轮椅通道"
           save: 更新
-          unknown: 未知状态
-          ? "yes"
-          : 轮椅通道
-        help: 轮椅可通过？（帮助）
-        more: 更多...
+          unknown: "未知状态"
+          'yes': "轮椅通道"
+        help: "轮椅可通过？（帮助）"
+        more: "更多..."
   how?: 怎么样
   landing_pages:
     index:
       wheelchair:
         limit:
           headline: "所有被限制的轮椅通道%{type} in %{city} (%{count})"
-        ? "no"
-        :
+        'no':
           headline: "所有非轮椅通道%{type} in %{city} (%{count})"
         unknown:
           headline: "所有%{type} in %{city} 轮椅的未知状态(%{count})"
-        ? "yes"
-        :
+        'yes':
           headline: "所有轮椅通道%{type} in %{city} (%{count})"
   layouts:
     application:
       banner:
-        alt: Sozialhelden.de的方案
+        alt: "Sozialhelden.de的方案"
   node:
     address:
       city: "%{city} %{postcode}"
       street: "%{housenumber} %{street}"
     tags:
-      phone: 电话：
-      website: 网页
+      phone: "电话："
+      website: "网页"
   nodes:
     create:
       flash:
-        not_successfull: 出错啦，您的输入不正确或不完整
-        successfull: 谢谢，您提交的信息已成功保留并很快会在线显示
+        not_successfull: "出错啦，您的输入不正确或不完整"
+        successfull: "谢谢，您提交的信息已成功保留并很快会在线显示"
     edit:
       header:
         title: "编辑地点：%{node} | wheelmap.org"
       link:
         large_map: "&laquo;取消"
     errors:
-      default: 有错误发生。我们已报告这个问题
-      not_authorized: 抱歉，验证失败
-      not_available: 抱歉，此页暂时不可用
-      not_existent: 抱歉，此地点已无效
-      not_found: 抱歉，没有找到页面
-      param_missing: 请提供搜索项目
+      default: "有错误发生。我们已报告这个问题"
+      not_authorized: "抱歉，验证失败"
+      not_available: "抱歉，此页暂时不可用"
+      not_existent: "抱歉，此地点已无效"
+      not_found: "抱歉，没有找到页面"
+      param_missing: "请提供搜索项目"
     flash:
-      authorize_wheelmap: 您需要一个OpenStreetMap帐户来修改数据
+      authorize_wheelmap: "您需要一个OpenStreetMap帐户来修改数据"
     new:
       header:
         title: "新地点| wheelmap.org"
@@ -208,9 +197,9 @@ zh:
         large_map: "&laquo;取消"
     node:
       link:
-        claim: 您在这儿工作吗？
-        edit_node: 编辑位置
-        report_bug: 报告一个问题
+        claim: "您在这儿工作吗？"
+        edit_node: "编辑位置"
+        report_bug: "报告一个问题"
     show:
       header:
         title: "地点：%{node} | wheelmap.org"
@@ -221,8 +210,8 @@ zh:
       show-in-osm: OpenStreetMap
     update:
       flash:
-        not_successfull: 出错啦，您的输入不正确或者不完整
-        successfull: 谢谢，您提交的申请已成功保留并很快会在线显示。
+        not_successfull: "出错啦，您的输入不正确或者不完整"
+        successfull: "谢谢，您提交的申请已成功保留并很快会在线显示。"
     update_wheelchair:
       successfull: "\"%{name}\"的状态已更改为\"%{status}轮椅通道\"并即刻在线"
   number:
@@ -238,9 +227,9 @@ zh:
     format:
       delimiter: ","
       precision: 3
-      separator: 点
       significant: false
       strip_insignificant_zeros: false
+      separator: "点"
     human:
       decimal_units:
         format: "%n %u"
@@ -286,24 +275,24 @@ zh:
     edit:
       application:
         oauth:
-          connected: 状态：已连接
-          grant: 现在连接
-          not_connected: 状态：未连接
+          connected: "状态：已连接"
+          grant: "现在连接"
+          not_connected: "状态：未连接"
           revoke: 断开连接
-      headline: 编辑个人资料
+      headline: "编辑个人资料"
   search:
     index:
       search:
         for: "搜索\"%{q}\""
-        not_found: 没有找到位置
+        not_found: "没有找到位置"
   splash:
     countline: "%{count}地点已被标记"
-    headline: 任何人都可以添加轮椅通道地点
+    headline: "任何人都可以添加轮椅通道地点"
     start: 开始
-    step1: 请点击您知道的地点
-    step2: 标记并点击保留
-    step3: 就是这样！无需注册
-    what_is_wheelmap: 什么是wheelmap?
+    step1: "请点击您知道的地点"
+    step2: "标记并点击保留"
+    step3: "就是这样！无需注册"
+    what_is_wheelmap: "什么是wheelmap?"
   statistics: 统计
   support:
     array:
@@ -313,7 +302,7 @@ zh:
       two_words_connector: " 和 "
       words_connector: ", "
     select:
-      prompt: 请选择
+      prompt: "请选择"
   time:
     am: 上午
     formats:
@@ -324,42 +313,40 @@ zh:
   user_sessions:
     create:
       activation:
-        notice: 您的帐户已被激活
+        notice: "您的帐户已被激活"
       error:
-        notice: 邮箱地址和密码不符合
-      notice: 您已登入
+        notice: "邮箱地址和密码不符合"
+      notice: "您已登入"
     destroy:
-      notice: 再见，快点回来啊！
+      notice: "再见，快点回来啊！"
     new:
-      email: 电子邮件地址
-      login: 登录
-      login_with_twitter: 使用推特登录
+      email: "电子邮件地址"
+      login: "登录"
+      login_with_twitter: "使用推特登录"
       password: 密码
-      remember_me: 保留登录状态
+      remember_me: "保留登录状态"
   wheelchairstatus:
-    limited: 部分轮椅通道可用
-    ? "no"
-    : 非轮椅通道
-    unknown: 未知状态
-    ? "yes"
-    : 轮椅通道
+    limited: "部分轮椅通道可用"
+    'no': "非轮椅通道"
+    unknown: "未知状态"
+    'yes': "轮椅通道"
   wheelmap:
     footer:
       a_project_of: "...的项目"
-      based_on: 基于
-      become_a_supporter: 成为赞助者
-      main_supporter: 主要支持者
+      based_on: "基于"
+      become_a_supporter: "成为赞助者"
+      main_supporter: "主要支持者"
     itunes:
-      alt: 应用商店标志
-      title: 现在下载iPhone应用软件
+      alt: "应用商店标志"
+      title: "现在下载iPhone应用软件"
     logo:
       alt: "Wheelmap 标志－找到轮椅通道的地点"
       title: "Wheelmap 标志－找到轮椅通道的地点"
     what_is:
-      fully_accessible: 入口没有台阶，所有房间没有台阶，厕所可通过
-      limited_accessible: 入口有台阶（最高7厘米），大部分房间没有台阶。厕所不能通过
-      not_accessible: 入口很快到达，房间不能通过
-      unknown_accessible: 标记地点帮助
+      fully_accessible: "入口没有台阶，所有房间没有台阶，厕所可通过"
+      limited_accessible: "入口有台阶（最高7厘米），大部分房间没有台阶。厕所不能通过"
+      not_accessible: "入口很快到达，房间不能通过"
+      unknown_accessible: "标记地点帮助"
   will_paginate:
     next_label: "往后&#8594;"
     page_entries_info:
@@ -373,5 +360,5 @@ zh:
         one: "显示<b>1</b> %{model}"
         other: "显示<b>all&nbsp;%{count}</b> %{model}"
         zero: "没找到%{model}"
-    page_gap: 取hellip变量地址
+    page_gap: "取hellip变量地址"
     previous_label: "&#8592;往前"

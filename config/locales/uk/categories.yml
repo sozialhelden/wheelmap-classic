@@ -1,13 +1,12 @@
----
 uk:
   poi:
     category:
       accommodation: Апартаменти
       education: Освіта
       food: Їжа
-      government: "Державні установи"
+      government: Державні установи
       health: Здоров'я
-      leisure: "Вільний час"
+      leisure: Вільний час
       misc: Різне
       money_post: "Відділення банку"
       public_transfer: "Громадський транспорт"
@@ -19,7 +18,7 @@ uk:
       accommodation:
         beach_resort: "Пляж готелю"
         bed_and_breakfast: "Ліжко та сніданок. Готель"
-        camp_site: Турбаза
+        camp_site: "Турбаза"
         caravan_site: "Наметовій табір"
         chalet: Шале
         guest_house: "Гостьовий будинок"
@@ -28,21 +27,21 @@ uk:
         motel: Мотель
       education:
         college: Коледж
-        kindergarten: "Дитячий садок"
+        kindergarten: Дитячий садок
         library: Бібліотека
         museum: Музей
         school: Школа
         university: Університет
       food:
         bar: Бар
-        biergarten: "Паб під відкритим небом"
+        biergarten: Паб під відкритим небом
         cafe: Кафе
         drinking_water: "Питна вода"
-        fast_food: ФастФуд
+        fast_food: "ФастФуд"
         pub: Паб
         restaurant: Ресторан
       government:
-        courthouse: "Дім правосуддя/Суд"
+        courthouse: Дім правосуддя/Суд
         embassy: Посольство
         police: Поліція
         public_building: "Громадський заклад"
@@ -51,7 +50,7 @@ uk:
         doctors: Лікарі
         hearing_aids: "Продаж слухових апаратів"
         hospital: Лікарня
-        medical_supply: Медикаменти
+        medical_supply: "Медикаменти"
         pharmacy: Аптека
         social_facility: "Соціальний об'єкт"
         veterinary: Ветеринар
@@ -61,8 +60,8 @@ uk:
         cinema: Кінотеатр
         community_center: "Общинний центр"
         gallery: Галерея
-        nightclub: "Нічний клуб"
-        playground: "Дитячий майданчик"
+        nightclub: Нічний клуб
+        playground: Дитячий майданчик
         sauna: Сауна
         stripclub: Стрип-клуб
         theatre: Театр
@@ -79,10 +78,10 @@ uk:
         post_box: "Поштова скринька"
         post_office: "Поштове відділення"
       public_transfer:
-        aerodrome: "Аеропорт\n"
+        aerodrome: "Аеропорт"
         bicycle_parking: "Парковка для велосипедів"
         bicycle_rental: "Оренда велосипедів"
-        boatyard: "шлюпочна майстерня"
+        boatyard: шлюпочна майстерня
         bus_station: "Автобусна зупинка"
         bus_stop: "Автобусна зупинка"
         cable_car: "Канатна дорога"
@@ -91,13 +90,13 @@ uk:
         chair_lift: "Підйомник для крісла"
         ferry: Пором
         ferry_terminal: "Термінал порому"
-        fuel: Автозаправка
+        fuel: "Автозаправка"
         halt: Зупинити
-        light_rail: поручні
+        light_rail: "поручні"
         parking: Парковка
         parking_aisle: "Вхід на парковку"
         platform: Платформа
-        station: Метро
+        station: "Метро"
         subway_entrance: "Вхід в метро"
         terminal: "Термінал аеропорту"
         tram_stop: "Трамвайна зупинка"
@@ -107,22 +106,22 @@ uk:
         beverages: Напої
         bicycle: "Магазин велосипедів"
         books: Книги
-        butcher: "М'ясна лавка"
+        butcher: М'ясна лавка
         car_repair: "Ремонт автомобілів"
-        car_shop: Автосалон
+        car_shop: "Автосалон"
         chemist: Фармацевт
         clothes: Одяг
         computer: Комп'ютер
         convenience: Зручність
-        department_store: Універмаг
+        department_store: "Універмаг"
         doityourself: "Зроби сам"
-        dry_cleaning: Хімчистка
+        dry_cleaning: "Хімчистка"
         electronics: Електроніка
         florist: Флорист
         furniture: Меблі
         garden_centre: "Садовий центр"
         hairdresser: Перукар
-        hardware: "Жорсткий диск"
+        hardware: Жорсткий диск
         kiosk: Кіоск
         laundry: Пральня
         mall: "Торговий центр"
@@ -131,28 +130,28 @@ uk:
         second_hand: "Інший бік"
         shoes: Взуття
         sports: Спорт
-        stationery: "Канцелярські товари"
+        stationery: Канцелярські товари
         supermarket: Супермаркет
-        video: Відеопрокат
+        video: "Відеопрокат"
       sport:
-        sports_centre: СпортЦентр
+        sports_centre: "СпортЦентр"
         stadium: Стадіон
         swimming: Плавання
-        swimming_pool: Басейн
+        swimming_pool: "Басейн"
       tourism:
         archaeological_site: "Археологічний сайт"
         arts_centre: "Арт центр"
         artwork: Мистецтво
         attraction: Атракціони
-        battlefield: "Поле бою"
+        battlefield: Поле бою
         beach: Пляж
         beacon: Маяк
         castle: Замок
-        cave_entrance: Вхід
+        cave_entrance: "Вхід"
         information: "Інформація для туристів"
         memorial: Пам'ятник
         theme_park: "Парк розваг"
         tower: Вежа
-        viewpoint: "Точка зору\n"
+        viewpoint: "Точка зору"
       unknown:
         unknown: Невідомий

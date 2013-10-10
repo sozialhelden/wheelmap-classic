@@ -1,13 +1,12 @@
----
 nb:
   poi:
     category:
       accommodation: Overnatting
       education: Utdanning
-      food: "Mat & drikke"
+      food: Mat & drikke
       government: Myndighetene
       health: Helsehjelp
-      leisure: "Kultur & Fritid"
+      leisure: Kultur & Fritid
       misc: Diverse
       money_post: "Bank / post"
       public_transfer: "Offentlig transport"
@@ -17,12 +16,12 @@ nb:
       unknown: Ukjent
     name:
       accommodation:
-        beach_resort: Strandhotell
+        beach_resort: "Strandhotell"
         bed_and_breakfast: "Bed and breakfast"
-        camp_site: Leirplass
-        caravan_site: Campingvognsted
+        camp_site: "Leirplass"
+        caravan_site: "Campingvognsted"
         chalet: Hytte
-        guest_house: Gjestehus
+        guest_house: "Gjestehus"
         hostel: Herberge
         hotel: Hotell
         motel: Motel
@@ -37,8 +36,8 @@ nb:
         bar: Pub
         biergarten: Uteservering
         cafe: Kafe
-        drinking_water: Drikkevann
-        fast_food: Gatekjøkken
+        drinking_water: "Drikkevann"
+        fast_food: "Gatekjøkken"
         pub: Pub
         restaurant: Restaurant
       government:
@@ -49,17 +48,17 @@ nb:
         townhall: Rådhus
       health:
         doctors: Leger
-        hearing_aids: Høreapparatforhandler
+        hearing_aids: "Høreapparatforhandler"
         hospital: Sykehus
-        medical_supply: Apotek
+        medical_supply: "Apotek"
         pharmacy: Apotek
-        social_facility: Fellesområde
+        social_facility: "Fellesområde"
         veterinary: Vetrinær
       leisure:
         arena: Arena
         brothel: Bordell
         cinema: Kino
-        community_center: Samfunnshus
+        community_center: "Samfunnshus"
         gallery: Galleri
         nightclub: Nattklubb
         playground: Lekeplass
@@ -75,73 +74,73 @@ nb:
       money_post:
         atm: Minibank
         bank: Bank
-        bureau_de_change: Valutakontor
-        post_box: Postboks
-        post_office: Postkontor
+        bureau_de_change: "Valutakontor"
+        post_box: "Postboks"
+        post_office: "Postkontor"
       public_transfer:
         aerodrome: Flyplass
-        bicycle_parking: Sykkelparkering
-        bicycle_rental: Sykkelutleie
+        bicycle_parking: "Sykkelparkering"
+        bicycle_rental: "Sykkelutleie"
         boatyard: Kai
-        bus_station: Bussstasjon
-        bus_stop: Bussholdeplass
-        cable_car: Taubane
-        car_rental: Bilutleie
+        bus_station: "Bussstasjon"
+        bus_stop: "Bussholdeplass"
+        cable_car: "Taubane"
+        car_rental: "Bilutleie"
         car_sharing: "Bil deling"
         chair_lift: "Trappeheis / løfteplattform"
         ferry: Ferge
-        ferry_terminal: Fergeterminal
-        fuel: Bensinstasjon
+        ferry_terminal: "Fergeterminal"
+        fuel: "Bensinstasjon"
         halt: Stop
-        light_rail: Bybane
+        light_rail: "Bybane"
         parking: Parkering
-        parking_aisle: Parkeringsplass
+        parking_aisle: "Parkeringsplass"
         platform: Plattform
-        station: T-bane
+        station: "T-bane"
         subway_entrance: "Inngang t-bane"
         terminal: "Flyplass terminal"
-        tram_stop: Trikkestop
+        tram_stop: "Trikkestop"
       shopping:
         alcohol: Brennevin
         bakery: Bakeri
         beverages: Forfriskninger
-        bicycle: Sykkelbutikk
+        bicycle: "Sykkelbutikk"
         books: Bøker
         butcher: Slakter
-        car_repair: Bilverksted
-        car_shop: Bilbutikk
+        car_repair: "Bilverksted"
+        car_shop: "Bilbutikk"
         chemist: Kjemiker
         clothes: Klær
         computer: Datamaskin
         convenience: Nærbutikk
-        department_store: Varemagasin
+        department_store: "Varemagasin"
         doityourself: "Gjør det selv"
-        dry_cleaning: Renseri
+        dry_cleaning: "Renseri"
         electronics: Elektronikk
         florist: Blomsterbutikk
         furniture: Møbler
-        garden_centre: Hagesenter
+        garden_centre: "Hagesenter"
         hairdresser: Frisør
         hardware: Jernvare
         kiosk: Kiosk
         laundry: Vask
-        mall: Kjøpesenter
+        mall: "Kjøpesenter"
         optician: Optiker
         photo: Foto
-        second_hand: Brukt
+        second_hand: "Brukt"
         shoes: Sko
         sports: Sport
         stationery: Skrivesaker
         supermarket: Dagligvare
-        video: Videoutleie
+        video: "Videoutleie"
       sport:
-        sports_centre: Sportssenter
+        sports_centre: "Sportssenter"
         stadium: Stadion
         swimming: Svømming
-        swimming_pool: Svømmebasseng
+        swimming_pool: "Svømmebasseng"
       tourism:
         archaeological_site: "Arkeologisk utgravning"
-        arts_centre: Kunstsenter
+        arts_centre: "Kunstsenter"
         artwork: Kunst
         attraction: Attraksjon
         battlefield: Slagmark
@@ -149,10 +148,10 @@ nb:
         beacon: Fyr
         castle: Borg
         cave_entrance: "Inngang til grotte"
-        information: Turistinformasjon
+        information: "Turistinformasjon"
         memorial: Minnesmerke
-        theme_park: Fornøyelsespark
+        theme_park: "Fornøyelsespark"
         tower: Tårn
-        viewpoint: Utsiktspunkt
+        viewpoint: "Utsiktspunkt"
       unknown:
         unknown: Ukjent

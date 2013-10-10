@@ -1,4 +1,3 @@
----
 pl:
   application:
     require_no_user:
@@ -28,7 +27,7 @@ pl:
       greater_than: "musi być większe niż %{count}"
       greater_than_or_equal_to: "musi być większy lub równy %{count}"
       inclusion: "wartość nieważna "
-      invalid: nieważny
+      invalid: "nieważny"
       less_than: "musi wynosić mniej niż %{count}"
       less_than_or_equal_to: "musi być mniejsze niż lub równe %{count}"
       not_a_number: "nie jest liczbą"
@@ -74,8 +73,8 @@ pl:
       email: E-mail
       finish: Koniec
       housenumber: "Nr:"
-      lat: "Szerokość geograficzna"
-      lon: "Długość geograficzna"
+      lat: Szerokość geograficzna
+      lon: Długość geograficzna
       name: "Nazwisko:"
       osm_password: "Hasło w OSM"
       osm_username: "nazwa konta w OSM"
@@ -106,12 +105,12 @@ pl:
       feedback: Feedback
       home: Start
       how_to_add_a_place: "Jak dodać nowe miejsce?"
-      imprint: "Stopka redakcyjna"
+      imprint: Stopka redakcyjna
       logged_in_as: "Zalogowany jako:"
       login: "Zaloguj się"
       logout: "Wyloguj się"
       newsletter: Newsletter
-      press: "Dla mediów"
+      press: Dla mediów
       profile: Profil
       suggestions: Sugestie
       what_is_barrier_free: "Co to znaczy \"dostępne dla osób na wózkach\"?"
@@ -126,7 +125,7 @@ pl:
     title: "Znajdź miejsca dostępne dla osób na wózkach"
   helpers:
     select:
-      prompt: Wybierz
+      prompt: "Wybierz"
     submit:
       create: "stwórz %{model}"
       submit: "zachowaj %{model}"
@@ -143,7 +142,7 @@ pl:
           ignore: Ignoruj
           upgrade: "Zaktualizuj przegladarkę"
         warning:
-          headline: Przepraszamy!
+          headline: "Przepraszamy!"
           message: "Wygląda na to, że używasz Internet Explorera. Aby poprawnie funkcjonować, Wheelmap potrzebuje przeglądarki, która obsługuje wszystkie standardy. Wejdź na stronę za pomocą następujących przeglądarek: Firefox, Chrome, Safari lub Opera."
       link:
         node:
@@ -151,12 +150,10 @@ pl:
       popup:
         form:
           limited: "częściowo dostępne dla osób na wózkach"
-          ? "no"
-          : "niedostępne dla osób na wózkach"
+          'no': "niedostępne dla osób na wózkach"
           save: Aktualizuj
           unknown: "status nieznany"
-          ? "yes"
-          : "dostępne dla osób na wózkach"
+          'yes': "dostępne dla osób na wózkach"
         help: "Dostępne dla osób na wózkach? (Pomoc)"
         more: "więcej ..."
   how?: Jak?
@@ -165,13 +162,11 @@ pl:
       wheelchair:
         limit:
           headline: "Wszystkie miejsca dostępne dla osób na wózkach w ograniczonym zakresie %{type} w %{city} (%{count})"
-        ? "no"
-        :
+        'no':
           headline: "Wszystkie niedostępne dla osób na wózkach %{type} w %{city} (%{count})"
         unknown:
           headline: "Wszystkie %{type} w %{city} z nieznanym statusem dostępności dla osób na wózkach (%{count})"
-        ? "yes"
-        :
+        'yes':
           headline: "Wszystkie dostępne dla osób na wózkach %{type} w %{city} (%{count})"
   layouts:
     application:
@@ -314,12 +309,12 @@ pl:
     select:
       prompt: "Proszę wybrać"
   time:
-    am: "przed południem"
+    am: przed południem
     formats:
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
-    pm: "po południu"
+    pm: po południu
   user_sessions:
     create:
       activation:
@@ -342,11 +337,9 @@ pl:
         text: "Jak możemy się z Tobą skontaktować? Tę informację będziesz mógł później edytować."
   wheelchairstatus:
     limited: "częściowo dostępne dla osób na wózkach"
-    ? "no"
-    : "niedostępne dla osób na wózkach"
+    'no': "niedostępne dla osób na wózkach"
     unknown: "status nieznany"
-    ? "yes"
-    : "dostępne dla osób na wózkach"
+    'yes': "dostępne dla osób na wózkach"
   wheelmap:
     footer:
       a_project_of: "Projekt przygotowany przez"
