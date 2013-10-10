@@ -1,4 +1,3 @@
----
 sk:
   application:
     require_no_user:
@@ -34,11 +33,12 @@ sk:
       less_than_or_equal_to: "musí byť menšie alebo rovné %{count}"
       not_a_number: "nie je číslo"
       not_an_integer: "musí byť celé číslo"
-      not_found: nenájdeny
+      not_found: "nenájdeny"
       not_locked: "nebol uzamknutý"
       not_saved:
-        one: "%{resource} nebol uložený kôli chybe:"
-        other: "%{resource} nebol uložený kôli %{count} chybám:"
+        one: "%{count} chyba zabránila uloženiu %{resource}:"
+        few: "%{count} chyby zabránili uloženiu %{resource}:"
+        other: "%{count} chýb zabránilo uloženiu %{resource}:"
       odd: "musí byť nepárne číslo"
       taken: "ste už použili"
       too_long: "je príliš dlhá/ý (max. %{count} znakov)"
@@ -47,8 +47,9 @@ sk:
     template:
       body: "Nasledujúce polia obsahujú chybne vyplnené údaje:"
       header:
-        one: "Pri ukladaní objektu %{model} došlo k chybám a nebolo ho možné uložiť"
-        other: "Pri ukladaní objektu %{model} došlo k %{count} chybám a nebolo ho možné uložiť"
+        one: "%{count} chyba zabránila uloženiu %{model}:"
+        few: "%{count} chyby zabránili uloženiu %{model}:"
+        other: "%{count} chýb zabránilo uloženiu %{model}:"
   flash:
     actions:
       create:
@@ -82,8 +83,8 @@ sk:
       email: E-Mail
       finish: Dokončiť
       housenumber: "Číslo:"
-      lat: "Zemepisná šírka"
-      lon: "Zemepisná dĺžka"
+      lat: Zemepisná šírka
+      lon: Zemepisná dĺžka
       name: "Meno:"
       osm_password: "OSM heslo"
       osm_username: "Prihlasovacie meno do OSM"
@@ -113,7 +114,7 @@ sk:
       search: Hľadať
     navigation:
       blog: Novinky
-      feedback: "Spätná väzba"
+      feedback: Spätná väzba
       home: Štart
       how_to_add_a_place: "Ako pridám miesta?"
       imprint: Impresum
@@ -161,12 +162,10 @@ sk:
       popup:
         form:
           limited: "čiastočne prístupné pre vozíčkarov"
-          ? "no"
-          : "neprístupné vozíčkarom"
+          'no': "neprístupné vozíčkarom"
           save: Aktualizovať
           unknown: "neznámy stav"
-          ? "yes"
-          : "prístupné pre vozíčkarov"
+          'yes': "prístupné pre vozíčkarov"
         help: "Prístupné pre vozíčkarov? (Pomoc)"
         more: "viac ..."
   how?: Ako?
@@ -175,13 +174,11 @@ sk:
       wheelchair:
         limit:
           headline: "Všetky %{type} s obmedzeným prístupom pre vozíčkarov v %{city} (%{count})"
-        ? "no"
-        :
+        'no':
           headline: "Všetky %{type} neprístupné pre vozíčkarov v %{city} (%{count})"
         unknown:
           headline: "Všetky %{type} v meste %{city} s neznámou dostupnosťou pre vozíčkarov (%{count})\n"
-        ? "yes"
-        :
+        'yes':
           headline: "Všetky %{type} prístupné pre vozíčkarov v %{city} (%{count})"
   layouts:
     application:
@@ -274,8 +271,9 @@ sk:
         format: "%n %u"
         units:
           byte:
-            one: B
-            other: B
+            one: Bajt
+            few: Bajty
+            other: Bajtov
           gb: GB
           kb: KB
           mb: MB
@@ -295,13 +293,14 @@ sk:
   or: alebo
   place:
     one: "%{count} miesto"
-    other: "%{count} miest\n"
+    few: "%{count} miesta"
+    other: "%{count} miest"
   profile:
     edit:
       application:
         oauth:
           connected: "Stav: pripojený"
-          grant: Spojiť
+          grant: "Spojiť"
           not_connected: "Stav: Nepripojený"
           revoke: Odpojiť
       headline: "Upravte svoj účet"
@@ -341,7 +340,7 @@ sk:
         notice: "Váš účet bol aktivovaný!"
       error:
         notice: "Email a heslo sa nezhodujú."
-      notice: Úspech!
+      notice: "Úspech!"
     destroy:
       notice: "Dovidenia, zase sa vráťte. "
     new:
@@ -354,20 +353,16 @@ sk:
     after_signup_edit:
       welcome:
         headline: "Už je to takmer hotové! Tu dokončite prihlásenie:"
-        set_password_for_mobile: |-
-            Dokončili ste vašu registráciu u OpenStreetMap.
-            Ešte si zvoľte email a heslo pre váš Wheelmap účet a je hotovo! Tie budete potrebovať na prihlásenie do Wheelmap aplikácie pre váš iPhone alebo telefón s Androidom.
+        set_password_for_mobile: "Dokončili ste vašu registráciu u OpenStreetMap.\nEšte si zvoľte email a heslo pre váš Wheelmap účet a je hotovo! Tie budete potrebovať na prihlásenie do Wheelmap aplikácie pre váš iPhone alebo telefón s Androidom."
         text: "Ako vás môžeme kontaktovať? Tieto údaje môžete kedykoľvek zmeniť na svojom profile."
     edit:
       headline:
         your_images: "Vaše obrázky"
   wheelchairstatus:
     limited: "čiastočne prístupné pre vozíčkarov"
-    ? "no"
-    : "neprístupné vozíčkarom"
+    'no': "neprístupné vozíčkarom"
     unknown: "neznámy stav"
-    ? "yes"
-    : "prístupné pre vozíčkarov"
+    'yes': "prístupné pre vozíčkarov"
   wheelmap:
     footer:
       a_project_of: "Projekt od"

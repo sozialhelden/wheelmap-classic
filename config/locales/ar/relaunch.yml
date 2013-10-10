@@ -19,8 +19,9 @@ ar:
         secondary_headline: "نظام الإشارات الخاص بنا للكراسي المتحركة في الأماكن العامة:"
   nodes:
     node_edit:
+      details: "\n\nتفاصيل"
       edit: "\n\nتحرير"
     show:
       share:
-        twitter: تويتر
         facebook: فيس بوك
+        twitter: تويتر

@@ -4,8 +4,9 @@ ko:
       map: 지도
   nodes:
     node_edit:
+      details: "자세히"
       edit: "편집"
     show:
       share:
-        twitter: 트위터
         facebook: 페이스북
+        twitter: 트위터
