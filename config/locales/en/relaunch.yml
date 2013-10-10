@@ -61,9 +61,10 @@ en:
           description: "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place."
           title: "This place is on Wheelmap.org: %{name}"
       share:
-        twitter: Twitter
+        email: "E-mail"
         facebook: Facebook
         text: "I've found this place on Wheelmap.org: %{name}"
+        twitter: Twitter
   search:
     index:
       no-results:

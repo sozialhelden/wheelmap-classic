@@ -11,4 +11,4 @@
         =fa_icon('facebook fixed-width', text: t('nodes.show.share.facebook'))
     %li
       =mailme_to(nil, body: t('nodes.show.share.text', name: node_share.name) + " (#{node_url(node_share)})") do
-        =fa_icon('envelope-alt fixed-width', text: 'E-Mail')
+        =fa_icon('envelope-alt fixed-width', text: t('nodes.show.share.email'))

@@ -4,8 +4,8 @@
   </button>
 
   <ul class="dropdown-menu" role="menu">
-    <li>
-      {{ twitter-share name=name lang=I18n.locale osm_id=osm_id }}
-    </li>
+    <li>{{ twitter-share osm_id=osm_id name=name lang=I18n.locale }}</li>
+    <li>{{ facebook-share osm_id=osm_id }}</li>
+    <li>{{ email-share osm_id=osm_id name=name }}</li>
   </ul>
 </div>
