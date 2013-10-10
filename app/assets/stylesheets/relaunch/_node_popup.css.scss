@@ -150,6 +150,7 @@
 .node-popup-buttons {
   margin-top: 12px;
 
+  // Nesting is needed for seperate styling of buttons in popup and report dropdown
   & > .btn-group {
     margin-left: 0;
 
