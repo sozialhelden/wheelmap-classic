@@ -3,7 +3,7 @@ Wheelmap.NodePopupView = Ember.View.extend
   classNames: ['node-popup-content-wrapper']
 
 Wheelmap.NodePopupStatusDropdownView = Ember.View.extend
-  templateName: 'node-popup/_status'
+  templateName: 'node-popup-status'
   tagName: 'section'
   classNames: ['node-popup-status']
   WHEELCHAIR_STATUSES: ['yes', 'limited', 'no']

@@ -8,13 +8,13 @@
     </a>
     <ul class="dropdown-menu" role="menu">
         {{#each status in view.WHEELCHAIR_STATUSES }}
-        <li>
-            <a data-toggle="status" data-status="status">
-                {{ wheelchair-checkbox wheelchair=status status=wheelchair }}
-                {{ t 'home.index.popup.form' status }}
-                <i class="icon-question-sign"></i>
-            </a>
-        </li>
+            <li>
+                <a data-toggle="status" data-status="status">
+                    {{ wheelchair-checkbox wheelchair=status status=wheelchair }}
+                    {{ t 'home.index.popup.form' status }}
+                    <i class="icon-question-sign"></i>
+                </a>
+            </li>
         {{/each }}
     </ul>
 </div>
