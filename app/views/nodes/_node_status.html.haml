@@ -3,15 +3,15 @@
     .dropdown.span6.wheelchair
       %h2=t('.wheelchair_accessibility')
       %div
-        %a{:'data-toggle' => 'dropdown', class: "dropdown-toggle btn wheelchair-#{node_status.wheelchair}", :'data-status' => node_status.wheelchair}
+        %a{:'data-toggle' => 'dropdown', class: "dropdown-toggle btn wheelchair #{node_status.wheelchair}", :'data-status' => node_status.wheelchair}
           %span.text= t("home.index.popup.form.#{node_status.wheelchair}")
           %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.#{node_status.wheelchair}"), 'data-content' => t("wheelmap.what_is.#{node_status.accesibility}"), 'data-trigger' => 'hover'}
           = fa_icon('caret-down', class: 'pull-right')
         %ul.dropdown-menu{'role' => 'menu'}
           - %w{yes limited no}.each do |status|
             %li
-              %a{class: "popover-wheelchair-#{status}", :'data-toggle' => 'status', :'data-status' => status }
-                %span.wm-checkbox{'class' => ["wheelchair-#{status}", (node_status.wheelchair == status ? 'checked' : nil)]}
+              %a{class: "popover-wheelchair #{status}", :'data-toggle' => 'status', :'data-status' => status }
+                %span.wm-checkbox{'class' => ["wheelchair #{status}", (node_status.wheelchair == status ? 'checked' : nil)]}
                   %i.icon-ok
                 = t("home.index.popup.form.#{status}")
                 %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.#{status}"), 'data-content' => t("wheelmap.what_is.#{node_status.accesibility}"), 'data-trigger' => 'hover'}

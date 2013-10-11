@@ -41,8 +41,4 @@ Wheelmap.Node = DS.Model.extend
     '/nodes/' + @get('osm_id') + '/update_wheelchair.js'
   ).property('osm_id')
 
-  wheelchairClass: (()->
-    'wheelchair-' + @get('wheelchair')
-  ).property('wheelchair')
-
 Wheelmap.NodeAdapter = DS.RESTAdapter.extend()

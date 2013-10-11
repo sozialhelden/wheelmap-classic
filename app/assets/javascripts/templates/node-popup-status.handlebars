@@ -1,10 +1,10 @@
 {{! status }}
 <h3>{{ t 'nodes.node_status.wheelchair_accessibility' }}</h3>
 {{#if isUnknown }}
-    <ul>
+    <ul class="unstyled">
         {{#each status in view.WHEELCHAIR_STATUSES }}
             <li>
-                <a {{ action 'setWheelchair' status }}>
+                <a {{ action 'setWheelchair' status }} {{ bind-attr class=":btn :wheelchair status" }}>
                     {{ wheelchair-checkbox wheelchair=status status=wheelchair }}
                     {{ t 'home.index.popup.form' status }}
                     <i class="icon-question-sign"></i>
@@ -14,7 +14,7 @@
     </ul>
 {{else}}
     <div class="dropdown">
-        <a data-toggle="dropdown" {{ bind-attr class=":dropdown-toggle :btn wheelchairClass" }}>
+        <a data-toggle="dropdown" {{ bind-attr class=":dropdown-toggle :btn :wheelchair wheelchair" }}>
             {{ statusText }}
             <i class="icon-question-sign" data-toggle="popover" {{ bind-attr data-title="statusText" }} {{ bind-attr data-content="statusDescription" }} data-trigger="hover"></i>
             <i class="icon-caret-down pull-right" ></i>
@@ -23,7 +23,7 @@
             {{#each status in view.WHEELCHAIR_STATUSES }}
                 <li>
                     <a {{ action 'setWheelchair' status }}>
-                        {{ wheelchair-checkbox wheelchair=status status=wheelchair }}
+                        {{ wheelchair-checkbox wheelchair=status status=wheelchair classNameBindings=":wheelchair" }}
                         {{ t 'home.index.popup.form' status }}
                         <i class="icon-question-sign"></i>
                     </a>
