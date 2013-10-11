@@ -1,6 +1,6 @@
 attr = DS.attr
 
-@Wheelmap.Node = DS.Model.extend
+Wheelmap.Node = DS.Model.extend
   osm_id: attr()
   lat: attr()
   lon: attr()
@@ -41,4 +41,8 @@ attr = DS.attr
     '/nodes/' + @get('osm_id') + '/update_wheelchair.js'
   ).property('osm_id')
 
-@Wheelmap.NodeAdapter = DS.RESTAdapter.extend()
+  wheelchairClass: (()->
+    'wheelchair-' + @get('wheelchair')
+  ).property('wheelchair')
+
+Wheelmap.NodeAdapter = DS.RESTAdapter.extend()

@@ -8,6 +8,18 @@ Wheelmap.NodePopupStatusDropdownView = Ember.View.extend
   classNames: ['node-popup-status']
   WHEELCHAIR_STATUSES: ['yes', 'limited', 'no']
 
-  wheelchairClass: (()->
-    'wheelchair-' + @get('context.wheelchair')
-  ).property('wheelchair')
+  $dropdown: (()->
+    Ember.$(@get('element')).find('.dropdown-toggle')
+  ).property()
+
+  closeDropdown: (()->
+    $dropdown = @get('$dropdown')
+
+    # Close dropdown when new wheelchair status is saved (old wheelchair status is set to null)
+    unless @get('context.oldWheelchair')? or $dropdown.hasClass('open')
+      $dropdown.dropdown('toggle')
+  ).observes('context.oldWheelchair')
+
+  click: (event)->
+    if Ember.$(event.target).closest('.dropdown-menu').length > 0
+      event.stopPropagation()
