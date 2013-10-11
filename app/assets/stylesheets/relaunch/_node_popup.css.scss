@@ -188,6 +188,7 @@
   .wm-checkbox {
     border: inherit;
     vertical-align: -2px;
+    @include box-shadow(0 1px 0 rgba($white, 0.5));
   }
 
   .btn.wheelchair {
