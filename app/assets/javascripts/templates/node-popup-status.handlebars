@@ -1,7 +1,7 @@
 {{! status }}
 <h3>{{ t 'nodes.node_status.wheelchair_accessibility' }}</h3>
 {{#if isUnknown }}
-    <ul class="unstyled">
+    <ul class="unstyled node-popup-status-is-unknown">
         {{#each status in view.WHEELCHAIR_STATUSES }}
             <li>
                 <a {{ action 'setWheelchair' status }} {{ bind-attr class=":btn :wheelchair status" }}>
