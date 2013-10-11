@@ -4,7 +4,7 @@
     %ul.unstyled
       - similar_pois.each do |s|
         %li
-          %span{:class => "wheelchair wheelchair-#{s.wheelchair}"}
+          %span{:class => "wheelchair #{s.wheelchair}"}
           = link_to s.headline, node_path(s)
           %span.distance
             = "#{node_similar.distance_to_in_meter(s).round}m"
