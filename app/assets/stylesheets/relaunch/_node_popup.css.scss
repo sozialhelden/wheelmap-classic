@@ -79,12 +79,12 @@
     line-height: inherit;
   }
 
-  .btn,
+  .dropdown-toggle,
   .dropdown-menu {
     width: 100%;
   }
 
-  .btn {
+  .dropdown-toggle {
     @include box-sizing(border-box);
     color: white;
     height: 40px;
@@ -143,6 +143,23 @@
 
       &.checked i {
         text-indent: 0px;
+      }
+    }
+
+    .submit {
+      @include border-bottom-radius(3px);
+      margin-bottom: -5px;
+      margin-top: 5px;
+      padding: 5px;
+      text-align: right;
+      border-top: 1px solid darken($orange-gray, 5%);
+      background-color: lighten($orange-gray, 10%);
+
+      .btn {
+        @include buttonBackground(lighten($orange-gray, 5%), darken($orange-gray, 5%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
+        text-align: center;
+        font-weight: bold;
+        border-color: darken($orange-gray, 20%);
       }
     }
   }

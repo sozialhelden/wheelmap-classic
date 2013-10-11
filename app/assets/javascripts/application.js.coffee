@@ -12,9 +12,9 @@
 #= require_self
 #= require wheelmap
 
-I18n.defaultLocale = 'de';
-I18n.locale = $('html').attr('lang');
-I18n.fallbacks = true;
+I18n.defaultLocale = 'de'
+I18n.locale = $('html').attr('lang')
+I18n.fallbacks = true
 
 Ember.FEATURES["query-params"] = true
 

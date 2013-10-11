@@ -1,5 +1,3 @@
-Wheelmap = @Wheelmap
-
 Wheelmap.MapController = Ember.ArrayController.extend
   itemController: 'node'
   center: null
