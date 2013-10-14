@@ -26,6 +26,19 @@ Wheelmap.NodeController = Ember.ObjectController.extend
     '/nodes/' + @get('osm_id') + '/update_wheelchair.js'
   ).property('osm_id')
 
+  popupClosed: (()->
+    # Reset if popup was closed and new wheelchair status was not saved
+    if @get('isPopping')
+      return
+
+    @resetStatus()
+  ).observes('isPopping')
+
+  resetStatus: ()->
+    if @get('oldWheelchair')?
+      @set('wheelchair', @get('oldWheelchair'))
+      @get('oldWheelchair', null)
+
   actions:
     setWheelchair: (wheelchair)->
       unless @get('isPosting')
@@ -50,12 +63,12 @@ Wheelmap.NodeController = Ember.ObjectController.extend
         dataType: 'json'
 
       promise.done (response)->
+        self.set('oldWheelchair', null)
         self.get('controllers.flash-messages').pushMessage('notice', response.message)
 
       promise.fail ()->
-        self.set('wheelchair', self.get('oldWheelchair'))
+        @resetStatus()
         self.get('controllers.flash-messages').pushMessage('error', response.message)
 
       promise.always ()->
-        self.set('oldWheelchair', null)
         self.set('isPosting', false)
