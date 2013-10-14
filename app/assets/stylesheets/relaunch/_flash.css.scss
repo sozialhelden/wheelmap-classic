@@ -1,25 +1,39 @@
-.notification {
-  width: 98%;
-  padding: 10px 2%;
-  margin-top: -2px;
-  float: left;
+.flash-wrapper {
+  @include box-sizing(border-box);
+  position: absolute;
+  width: 100%;
+  top: $headerHeight + $toolbarHeight;
+  left: 0;
+  z-index: 100;
+}
 
+.flash {
+  @include border-radius(0px);
+  @include text-shadow(0px 1px 3px rgba($black, 0.4));
+  padding: 10px 20px;
   text-align: center;
   color: #FFF;
-  text-shadow: 0 0 20px #48642F;
+  border: none;
+
+  &.fade {
+    @include transition(opacity 0.25s);
+  }
+
   &.notice {
-    background-color: #7EA940;
-    background-color: rgba(125, 169, 64, 0.96);
-    border-bottom: 1px solid #48642F;
+    background-color: $wheelchair-yes;
+    background-color: rgba($wheelchair-yes, 0.75);
+    border-bottom: 1px solid darken($wheelchair-yes, 20%);
   }
+
   &.alert {
-    background-color: #7EA940;
-    background-color: rgba(125, 169, 64, 0.96);
-    border-bottom: 1px solid #48642F;
+    background-color: $wheelchair-limited;
+    background-color: rgba($wheelchair-limited, 0.75);
+    border-bottom: 1px solid darken($wheelchair-limited, 20%);
   }
+
   &.error {
-    background-color: #D11B2E;
-    background-color: rgba(215, 6, 6, 0.96);
-    border-bottom: 1px solid #93060A;
+    background-color: $wheelchair-no;
+    background-color: rgba($wheelchair-no, 0.75);
+    border-bottom: 1px solid darken($wheelchair-no, 20%);
   }
 }

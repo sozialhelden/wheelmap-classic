@@ -1,4 +1,5 @@
 Wheelmap.NodeController = Ember.ObjectController.extend
+  needs: ['flash-messages']
   isPopping: false
   isVisible: true
   isPosting: false
@@ -48,13 +49,13 @@ Wheelmap.NodeController = Ember.ObjectController.extend
         data: data
         dataType: 'json'
 
-      promise.done ->
-        console.log('Saved!')
+      promise.done (response)->
+        self.get('controllers.flash-messages').pushMessage('notice', response.message)
 
-      promise.fail ->
+      promise.fail ()->
         self.set('wheelchair', self.get('oldWheelchair'))
-        console.log('Failed!')
+        self.get('controllers.flash-messages').pushMessage('error', response.message)
 
-      promise.always ->
+      promise.always ()->
         self.set('oldWheelchair', null)
         self.set('isPosting', false)

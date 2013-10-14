@@ -1,6 +1,8 @@
 #= require jquery
 #= require jquery/jquery-migrate
+#= require jquery/jquery.cookies.js
 #= require i18n.js
+#= require bootstrap
 #= require custom-bootstrap.js.coffee
 #= require handlebars
 #= require ember
@@ -17,6 +19,17 @@ I18n.locale = $('html').attr('lang')
 I18n.fallbacks = true
 
 Ember.FEATURES["query-params"] = true
+
+Ember.Application.reopen
+  # Transition end event
+  customEvents: (()->
+    customEvents = {}
+
+    if $.support.transition?
+      customEvents[$.support.transition.end] = 'transitionEnd'
+
+    customEvents
+  ).property()
 
 Wheelmap = @Wheelmap = Ember.Application.create
   #LOG_TRANSITIONS: true
