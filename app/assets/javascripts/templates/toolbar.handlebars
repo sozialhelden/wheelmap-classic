@@ -1,0 +1,12 @@
+<div class="btn-toolbar">
+    <button class="btn btn-info btn-searchbar">
+        <i class="icon-search icon-light"></i>
+    </button>
+
+    <div class="btn-group status-filter">
+        {{ view Wheelmap.ToolbarFilterButtonView wheelchair='yes' }}
+        {{ view Wheelmap.ToolbarFilterButtonView wheelchair='limited' }}
+        {{ view Wheelmap.ToolbarFilterButtonView wheelchair='no' }}
+        {{ view Wheelmap.ToolbarFilterButtonView wheelchair='unknown' }}
+    </div>
+</div>

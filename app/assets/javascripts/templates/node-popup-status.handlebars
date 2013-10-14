@@ -2,7 +2,7 @@
 <h3>{{ t 'nodes.node_status.wheelchair_accessibility' }}</h3>
 {{#if isUnknown }}
     <ul class="unstyled node-popup-status-is-unknown">
-        {{#each status in view.WHEELCHAIR_STATUSES }}
+        {{#each status in Wheelmap.Node.WHEELCHAIR_STATUSES }}
             <li>
                 <a {{ action 'setWheelchair' status }} {{ bind-attr class=":btn :wheelchair status" }}>
                     {{ wheelchair-checkbox wheelchair=status status=wheelchair }}
@@ -20,7 +20,7 @@
             <i class="icon-caret-down pull-right" ></i>
         </a>
         <ul class="dropdown-menu" role="menu">
-            {{#each status in view.WHEELCHAIR_STATUSES }}
+            {{#each status in Wheelmap.Node.WHEELCHAIR_STATUSES }}
                 <li>
                     <a {{ action 'setWheelchair' status }}>
                         {{ wheelchair-checkbox wheelchair=status status=wheelchair classNameBindings=":wheelchair" }}
