@@ -7,19 +7,17 @@ Wheelmap.FlashMessageView = Ember.View.extend
 
   didInsertElement: ()->
     self = @
-    delay = @get('content.message').split(' ').compact().length / 0.00333333333
-    setTimeout (()-> self.set('fadeIn', true)), 0
-    setTimeout (()-> self.remove()), delay
-
-  destroyElement: ()->
-    unless @get('fadeIn')
-      @_super()
-    else
-      @set('fadeIn', false)
+    setTimeout (()-> self.toggleProperty('fadeIn')), 0
+    setTimeout (()-> self.toggleProperty('fadeIn')), @get('delay')
 
   transitionEnd: (event)->
+    # @TODO Use event informations instead?
     unless @get('fadeIn')
-      @destroyElement()
+      @get('controller').send('removed', @get('content'))
+
+  delay: (()->
+    @get('content.message').split(' ').compact().length / 0.00333333333 # based on 200 WpM
+  ).property('content.message')
 
 Wheelmap.FlashMessagesView = Ember.CollectionView.extend
   classNames: ['flash-wrapper']
