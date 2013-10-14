@@ -8,7 +8,7 @@ Wheelmap.NodeController = Ember.ObjectController.extend
 
   isUnknown: (()->
     @get('oldWheelchair') == 'unknown' or @get('wheelchair') == 'unknown'
-  ).property('wheelchair')
+  ).property('oldWheelchair', 'wheelchair')
 
   wheelchairSubmit: (()->
     @get('oldWheelchair')? and @get('wheelchair') != @get('oldWheelchair') and !@get('isPosting')
@@ -27,7 +27,8 @@ Wheelmap.NodeController = Ember.ObjectController.extend
 
   actions:
     setWheelchair: (wheelchair)->
-      @set('wheelchair', wheelchair)
+      unless @get('isPosting')
+        @set('wheelchair', wheelchair)
 
     saveWheelchair: (wheelchair)->
       self = @
