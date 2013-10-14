@@ -6,7 +6,6 @@ Wheelmap.NodePopupStatusDropdownView = Ember.View.extend
   templateName: 'node-popup-status'
   tagName: 'section'
   classNames: ['node-popup-status']
-  WHEELCHAIR_STATUSES: ['yes', 'limited', 'no']
 
   $dropdown: (()->
     Ember.$(@get('element')).find('.dropdown-toggle')

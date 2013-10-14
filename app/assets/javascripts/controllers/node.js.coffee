@@ -72,3 +72,6 @@ Wheelmap.NodeController = Ember.ObjectController.extend
 
       promise.always ()->
         self.set('isPosting', false)
+
+Wheelmap.Node.reopenClass
+  WHEELCHAIR_STATUSES: ['yes', 'limited', 'no']

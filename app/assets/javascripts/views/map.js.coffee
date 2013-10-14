@@ -113,7 +113,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
       controller: @get('content')
 
 Wheelmap.MarkerCollectionLayer = EmberLeaflet.MarkerCollectionLayer.extend
-  contentBinding: 'controller'
+  contentBinding: 'controller.filteredNode'
   itemLayerClass: Wheelmap.MarkerLayer
 
 Wheelmap.MapIcon = L.Icon.extend
