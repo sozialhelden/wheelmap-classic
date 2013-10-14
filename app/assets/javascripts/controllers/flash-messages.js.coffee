@@ -4,6 +4,10 @@ Wheelmap.FlashMessagesController = Ember.ArrayController.extend
       type: type
       message: message
 
+  actions:
+    removed: (message)->
+      @removeObject(message)
+
 Wheelmap.FlashMessage = Ember.Object.extend
   type: 'notice'
   message: null
