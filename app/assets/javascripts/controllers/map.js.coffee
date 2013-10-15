@@ -1,10 +1,11 @@
 Wheelmap.MapController = Ember.ArrayController.extend
+  needs: 'toolbar'
   itemController: 'node'
   center: null
   zoom: null
   isLoading: false
   _poppingNodeId: null # id needed for post setting popping node
-  statusFilters: ['yes', 'limited', 'no', 'unknown']
+  statusFiltersBinding: 'controllers.toolbar.statusFilters'
 
   init: ()->
     @_super()
@@ -60,11 +61,9 @@ Wheelmap.MapController = Ember.ArrayController.extend
       @set('poppingNode', @_poppingNodeId)
   ).observes('@each')
 
-  filteredNode: (()->
-    statusFilters = @get('statusFilters')
+  filterNodes: (()->
+    self = @
 
-    console.log(statusFilters)
-
-    @filter (node)->
-      statusFilters.contains(node.get('wheelchair'))
-  ).property('@each', 'statusFilters.@each')
+    @forEach (node)->
+      node.set('isVisible', self.get('statusFilters').contains(node.get('wheelchair')))
+  ).observes('@each', '@each.wheelchair', 'statusFilters.@each')

@@ -1,2 +1,7 @@
 Wheelmap.ToolbarController = Ember.Controller.extend
-  needs: 'map'
+  statusFilters: null
+
+  init: ()->
+    @_super()
+
+    @set('statusFilters', ['yes', 'limited', 'no', 'unknown'])
