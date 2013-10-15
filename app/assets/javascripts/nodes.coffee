@@ -105,12 +105,12 @@ $('[data-toggle="status"]').click (e) ->
   $checkboxes = $dropdown.find('[role="menu"] .wm-checkbox')
   $checkboxes.removeClass('checked')
 
-  $checkboxes.filter('.wheelchair-' + data.status).addClass('checked')
+  $checkboxes.filter('.' + data.status).addClass('checked')
 
   $buttonDropdown = $dropdown.find('[data-toggle="dropdown"]')
   $buttonDropdown.removeClass (i, j) ->
-    j.match(/wheelchair-\w+/g).join(' ')
-  $buttonDropdown.addClass('wheelchair-' + data.status)
+    j.match(/yes|no|limited/g).join(' ')
+  $buttonDropdown.addClass(data.status)
   $buttonDropdown.find('.text').text(statusTexts.title)
 
   $buttonDropdown.find('[data-toggle="popover"]').data
