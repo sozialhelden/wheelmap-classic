@@ -6,7 +6,6 @@ Wheelmap.IndexRoute = Ember.Route.extend
   setupController: (controller, model, queryParams)->
     properties = {}
     mapController = @controllerFor('map')
-    toolbarController = @controllerFor('toolbar')
 
     if queryParams.lat? && queryParams.lon?
       properties.center = new L.LatLng(queryParams.lat, queryParams.lon)
@@ -20,7 +19,12 @@ Wheelmap.IndexRoute = Ember.Route.extend
       mapController.set('poppingNode', queryParams.node_id)
 
     if queryParams.status?
-      toolbarController.set('statusFilters', queryParams.status.split(','))
+      statusFilters = []
+
+      if queryParams.status isnt true
+        statusFilters = queryParams.status.split(',')
+
+      @controllerFor('toolbar').set('statusFilters', statusFilters)
 
   actions:
     zooming: (isZooming, bounds)->
@@ -88,6 +92,6 @@ Wheelmap.IndexRoute = Ember.Route.extend
       queryParams.lon = center.lng
 
       queryParams.node_id = mapController.get('poppingNode.id')
-      queryParams.status = if statusFilters.length < 4 then statusFilters else null
+      queryParams.status = if statusFilters.length < 4 then statusFilters else undefined
 
       @replaceWith('index', queryParams: queryParams)
