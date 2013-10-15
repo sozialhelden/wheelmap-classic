@@ -1,7 +1,11 @@
 Wheelmap.ToolbarController = Ember.Controller.extend
-  statusFilters: null
+  statusFilters: ['yes', 'limited', 'no', 'unknown']
 
-  init: ()->
-    @_super()
+  actions:
+    toggleFilter: (wheelchair)->
+      statusFilters = @get('statusFilters')
 
-    @set('statusFilters', ['yes', 'limited', 'no', 'unknown'])
+      if statusFilters.contains(wheelchair)
+        statusFilters.removeObject(wheelchair)
+      else
+        statusFilters.addObject(wheelchair)
