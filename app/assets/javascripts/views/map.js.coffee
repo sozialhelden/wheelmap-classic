@@ -96,6 +96,11 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
   didClosePopup: (event)->
     @set('isPopping', false)
 
+  visibilityDidChange: (()->
+    unless @get('content.isVisible')
+      @get('layer').closePopup()
+  ).observes('content.isVisible')
+
   isPoppingChanged: (()->
     layer = @get('layer')
 
