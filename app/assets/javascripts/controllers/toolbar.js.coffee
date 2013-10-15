@@ -4,6 +4,12 @@ Wheelmap.ToolbarController = Ember.Controller.extend
   map: Ember.computed.alias('controllers.map')
   _extraFilter: false # Flag for executing special status filter behavior only once
 
+  init: ()->
+    @_super()
+
+    if $.cookie('last_status_filters')
+      @set('statusFilters', JSON.parse($.cookie('last_status_filters')))
+
   actions:
     toggleFilter: (wheelchair)->
       statusFilters = @get('statusFilters')
@@ -19,9 +25,13 @@ Wheelmap.ToolbarController = Ember.Controller.extend
         else
           statusFilters.addObject(wheelchair)
 
+  statusFiltersDidChange: (()->
+    $.cookie('last_status_filters', JSON.stringify(@get('statusFilters')))
+  ).observes('statusFilters.@each')
+
   filterNodes: (()->
     self = @
 
     @get('map').forEach (node)->
       node.set('isVisible', self.get('statusFilters').contains(node.get('wheelchair')))
-  ).observes('map.@each', 'map.@each.wheelchair', 'statusFilters.@each')
+  ).observes('map.@each.wheelchair', 'statusFilters.@each')
