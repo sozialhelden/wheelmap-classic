@@ -2,11 +2,11 @@ Wheelmap.ToolbarView = Ember.View.extend
   elementId: 'toolbar'
   templateName: 'toolbar'
 
-Wheelmap.ToolbarFilterButtonView = Ember.Component.extend
+Wheelmap.ToolbarFilterButtonView = Ember.View.extend
   tagName: 'button'
   classNameBindings: [':btn', 'isActive:active', ':btn-info', 'wheelchair']
   wheelchair: null
-  statusFiltersBinding: 'controller.statusFilter'
+  statusFiltersBinding: 'controller.statusFilters'
   template: Ember.Handlebars.compile('<span></span>')
 
   isActive: ((key, value)->
@@ -17,10 +17,13 @@ Wheelmap.ToolbarFilterButtonView = Ember.Component.extend
         @get('statusFilters').addObject(wheelchair)
       else
         @get('statusFilters').removeObject(wheelchair)
+
+      console.log(@get('statusFilters'))
+
       return value
 
     @get('statusFilters').contains(wheelchair)
-  ).property('wheelchair', 'statusFilters')
+  ).property('wheelchair', 'statusFilters.@each')
 
   click: (event)->
     @toggleProperty('isActive')
