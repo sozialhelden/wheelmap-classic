@@ -9,7 +9,7 @@ $(function() {
 
     // calculate left edge so it is centered
     var left = (0.5 - (width / 2)/($(window).width())) * 100 + '%';
-    if (!$('#splash').is(':empty')){
+    if ($('#splash').length > 0 ){
       $.blockUI({
         message: $("#splash"),
         css: {
