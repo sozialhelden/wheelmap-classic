@@ -1,5 +1,3 @@
-Wheelmap = @Wheelmap
-
 Wheelmap.IndexRoute = Ember.Route.extend
   boundsRatioBuffer: 0.41
   _previousBounds: null
@@ -8,6 +6,7 @@ Wheelmap.IndexRoute = Ember.Route.extend
   setupController: (controller, model, queryParams)->
     properties = {}
     mapController = @controllerFor('map')
+    toolbarController = @controllerFor('toolbar')
 
     if queryParams.lat? && queryParams.lon?
       properties.center = new L.LatLng(queryParams.lat, queryParams.lon)
@@ -19,6 +18,9 @@ Wheelmap.IndexRoute = Ember.Route.extend
 
     if queryParams.node_id?
       mapController.set('poppingNode', queryParams.node_id)
+
+    if queryParams.status?
+      toolbarController.set('statusFilters', queryParams.status.split(','))
 
   actions:
     zooming: (isZooming, bounds)->
@@ -68,18 +70,24 @@ Wheelmap.IndexRoute = Ember.Route.extend
     popping: ()->
       @send('permalink')
 
+    toggleFilter: ()->
+      @send('permalink')
+
     permalink: ()->
       Ember.run.sync() # Needed for having all parameters up to date
 
       queryParams = {}
 
       mapController = @controllerFor('map')
+      toolbarController = @controllerFor('toolbar')
       center = mapController.get('center')
+      statusFilters = toolbarController.get('statusFilters')
 
       queryParams.zoom = mapController.get('zoom')
       queryParams.lat = center.lat
       queryParams.lon = center.lng
 
       queryParams.node_id = mapController.get('poppingNode.id')
+      queryParams.status = if statusFilters.length < 4 then statusFilters else null
 
       @replaceWith('index', queryParams: queryParams)
