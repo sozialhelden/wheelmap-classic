@@ -62,6 +62,7 @@ class Poi < ActiveRecord::Base
     end
   end
 
+  # Please do not edit, this is the current stable API JSON representation!!!
   api_accessible :simple do |t|
     t.add :name
     t.add :wheelchair
@@ -69,7 +70,6 @@ class Poi < ActiveRecord::Base
     t.add :node_type, :template => :id
     t.add :lat
     t.add :lon
-    t.add :icon
     t.add :id
     t.add :category, :template => :id
     t.add :street
