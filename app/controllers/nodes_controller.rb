@@ -32,7 +32,7 @@ class NodesController < ApplicationController
     @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.limit(@limit) if @left
 
     respond_to do |wants|
-      wants.js{ render :json => @places.as_api_response(:iphone) }
+      wants.js{   render :json => @places.as_api_response(:iphone).to_json }
       wants.json{ render :json => @places.as_api_response(:map) }
       wants.geojson do
         render :file => "#{Rails.root}/app/views/nodes/index.geojson.erb", :content_type => "application/json; subtype=geojson; charset=utf-8"
