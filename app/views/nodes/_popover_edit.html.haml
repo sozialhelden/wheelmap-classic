@@ -1,8 +1,0 @@
-%section#node-edit
-  = render partial: 'nodes/node_faq'
-
-  .btn-group
-    = link_to t('nodes.node_edit.details'), '/nodes/{{id}}', class: 'btn'
-    = link_to fa_icon('pencil'), '/nodes/{{id}}/edit', class: 'btn'
-
-  = render partial: 'nodes/popover_share'
