@@ -1,6 +1,6 @@
 .breadcrumbs
   = link_to root_path(anchor: "/?" + {lat: @node.lat, lon: @node.lon, node_id: @node.osm_id, zoom: cookies[:last_zoom]}.to_param), class: 'btn back' do
-    Zurück zur Karte
+    =t('nodes.show.link.back')
   %ol.unstyled
     = list_of(node_breadcrumbs.breadcrumbs) do |i|
       =fa_icon 'angle-right', text: i
