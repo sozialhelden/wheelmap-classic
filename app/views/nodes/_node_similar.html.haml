@@ -1,5 +1,5 @@
-- if (similar_pois = node_similar.sorted_similar_pois[0..5]).length > 0
-  %section#node-similar-locations
+%section#node-similar-locations
+  - if (similar_pois = node_similar.sorted_similar_pois[0..5]).length > 0
     %h2=t('.similar', name: node_similar.node_type.name)
     %ul.unstyled
       - similar_pois.each do |s|
@@ -8,3 +8,4 @@
           = link_to s.headline, node_path(s)
           %span.distance
             = "#{node_similar.distance_to_in_meter(s).round}m"
+= link_to_landing_page(t("nodes.show.link.listing", :type => @node.node_type.localized_name, :city => @node.region.name), @node.region, @node.wheelchair, @node.node_type, :class => 'right') if @node.region
