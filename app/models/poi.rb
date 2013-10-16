@@ -88,6 +88,7 @@ class Poi < ActiveRecord::Base
     t.add :version
   end
 
+  # Please do not edit, this is the legacy API JSON for the first iphone version!!!
   api_accessible :iphone do |t|
     t.add :icon, :if => :icon
     t.add :id
