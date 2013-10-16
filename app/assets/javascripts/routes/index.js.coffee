@@ -13,6 +13,9 @@ Wheelmap.IndexRoute = Ember.Route.extend
     if queryParams.zoom?
       properties.zoom = parseInt(queryParams.zoom, 10)
 
+    if queryParams.q?
+      properties.searchString = queryParams.q
+
     mapController.setProperties(properties)
 
     if queryParams.node_id?
@@ -90,6 +93,7 @@ Wheelmap.IndexRoute = Ember.Route.extend
       queryParams.zoom = mapController.get('zoom')
       queryParams.lat = center.lat
       queryParams.lon = center.lng
+      queryParams.q   = mapController.get('searchString')
 
       queryParams.node_id = mapController.get('poppingNode.id')
       queryParams.status = if statusFilters.length < 4 then statusFilters else undefined

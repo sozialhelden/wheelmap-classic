@@ -369,34 +369,32 @@
 
 @media screen and (max-width: 640px) {
   #toolbar {
-    .content {
-      .btn-searchbar {
-        display: inline;
-        padding: 7px 2px;
-        width: 45px;
-        margin-left: 1%;
+    .btn-searchbar {
+      display: inline;
+      padding: 7px 2px;
+      width: 45px;
+      margin-left: 1%;
+    }
+    form.navbar-form {
+      width: 98%;
+      padding: 10px 1% 10px 1%;
+      position: fixed;
+      top: 50px;
+      left: 0px;
+      background: #333;
+      display: none !important;
+
+      &.active {
+        display: block !important;
       }
-      form.navbar-form {
-        width: 98%;
-        padding: 10px 1% 10px 1%;
-        position: fixed;
-        top: 50px;
-        left: 0px;
-        background: #333;
-        display: none !important;
+      .input-append {
+        margin: 0 !important;
+        width: 100% !important;
 
-        &.active {
-          display: block !important;
-        }
-        .input-append {
-          margin: 0 !important;
-          width: 100% !important;
-
-          input {
+        input {
+          width: 80%;
+          &:focus {
             width: 80%;
-            &:focus {
-              width: 80%;
-            }
           }
         }
       }
