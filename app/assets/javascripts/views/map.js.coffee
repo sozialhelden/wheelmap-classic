@@ -94,9 +94,10 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
     @set('isPopping', true)
 
     Ember.run.once ()->
-      popupView.createElement()
-      Wheelmap.ViewHelper.enterDom(popupView)
-      popup.setContent(popupView.get('element'))
+      #popupView.createElement()
+      #Wheelmap.ViewHelper.enterDom(popupView)
+      #popup.setContent(popupView.get('element'))
+      popupView.appendTo(popup._contentNode)
 
     Ember.run.once ()->
       popup._adjustPan()
@@ -106,7 +107,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
 
     Ember.run.once ()->
       popupView.remove()
-      Wheelmap.ViewHelper.exitDom(popupView)
+     # Wheelmap.ViewHelper.exitDom(popupView)
 
   didClosePopup: (event)->
     @set('isPopping', false)
