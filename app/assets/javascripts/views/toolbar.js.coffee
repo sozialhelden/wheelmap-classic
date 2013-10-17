@@ -13,4 +13,4 @@ Wheelmap.ToolbarFilterButtonView = Ember.View.extend
   ).property('wheelchair', 'controller.statusFilters.@each')
 
   click: (event)->
-    @get('controller').send('toggleFilter', @get('wheelchair'))
+    @get('controller').send('toggleStatusFilter', @get('wheelchair'))

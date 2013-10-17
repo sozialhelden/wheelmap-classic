@@ -30,6 +30,11 @@ Wheelmap.IndexRoute = Ember.Route.extend
 
       toolbarController.set('statusFilters', statusFilters)
 
+  model: (params, queryParams)->
+    toolbarController = @controllerFor('toolbar')
+    toolbarController.set('content', @store.findAll('category'))
+    return
+
   actions:
     zooming: (isZooming, bounds)->
       if isZooming # Only reload when zooming is finished
@@ -78,8 +83,12 @@ Wheelmap.IndexRoute = Ember.Route.extend
     popping: ()->
       @send('permalink')
 
-    toggleFilter: ()->
+    toggleStatusFilter: ()->
       @send('permalink')
+
+    toggleIsActive: ()->
+      @send('permalink')
+
 
     permalink: ()->
       Ember.run.sync() # Needed for having all parameters up to date
@@ -90,6 +99,7 @@ Wheelmap.IndexRoute = Ember.Route.extend
       toolbarController = @controllerFor('toolbar')
       center = mapController.get('center')
       statusFilters = toolbarController.get('statusFilters')
+      categoriesFilters = toolbarController.get('activeCategories').mapBy('identifier')
 
       queryParams.zoom = mapController.get('zoom')
       queryParams.lat = center.lat
@@ -97,6 +107,12 @@ Wheelmap.IndexRoute = Ember.Route.extend
       queryParams.q   = mapController.get('searchString')
 
       queryParams.node_id = mapController.get('poppingNode.id')
-      queryParams.status = if statusFilters.length < 4 then statusFilters else undefined
+      if statusFilters.length < 4
+        queryParams.status = statusFilters
+
+      if toolbarController.get('length') < categoriesFilters.length
+        queryParams.categories = categoriesFilters
+
+
 
       @replaceWith('index', queryParams: queryParams)
