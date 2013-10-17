@@ -6,9 +6,17 @@ $node-photos-gutter: 2.25%;
 $node-photos-columns: 4;
 $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-photos-columns;
 
+#node-wrapper {
+  padding: $headerHeight + 20px 0 $footerHeight + 20px 0;
+
+  .flash-wrapper {
+    top: $headerHeight;
+  }
+}
+
 #node {
   background-color: $white;
-  @include box-shadow(0 0 10px rgba($black, .75));
+  @include box-shadow(0 2px 10px rgba($black, .5));
   overflow: hidden; // needed for the full height sidebar hack (aside)
 
   h2 {
@@ -313,12 +321,6 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
         text-indent: 0px;
       }
     }
-  }
-
-  .alert {
-    @include box-sizing(border-box);
-    margin-bottom: 10px;
-    border-color: lighten($successText, 40%);
   }
 
   .premium {

@@ -83,10 +83,18 @@ togglePopup = (e) ->
 
 $('[data-toggle="magnific-popup"]').click(togglePopup)
 
+$flashWrapper = $('.flash-wrapper')
 
-createAlertElement = (type) ->
-  $("<div class='alert alert-#{type} fade in'><a class='close' data-dismiss='alert'>&times;</a></div>")
+addFlashMessage = (type, message) ->
+  $message = $("<div class='flash fade'></div>").addClass(type).html(message)
+  $flashWrapper.append($message)
 
+  delay = message.split(' ').length / 0.00333333333 # based on 200 WpM
+
+  setTimeout (()-> $message.addClass('in')), 0
+  setTimeout (()-> $message.removeClass('in')), delay
+
+  $message
 
 # Status update
 $('[data-toggle="status"]').click (e) ->
@@ -141,9 +149,7 @@ $('[data-toggle="status-submit"]').click (e) ->
   $.post data.url,
     post,
     (data) ->
-      $alert = createAlertElement('success')
-      $alert.append(data.message)
-      $this.closest('.dropdown').find('[data-toggle="dropdown"]').before($alert)
+      addFlashMessage('notice', data.message)
 
       $this.prop('disabled', true)
       $this.data('status', null)
@@ -182,13 +188,14 @@ if $dropzoneClickable.length > 0
 
     error: (file, message) ->
       $previewElement = $(file.previewElement);
+      $errorElement = addFlashMessage('error', '<strong>' + file.name + ':</strong> ' + message)
 
-      $errorElement = createAlertElement('error').prependTo($dropzone).append('<strong>' + file.name + ':</strong> ' + message)
+      if $.support.transition
+        $errorElement.on $.support.transition.end, ()->
+          $previewElement.removeClass('in')
 
-      $errorElement.on 'close', () ->
-        $previewElement.removeClass('in')
-      $errorElement.on 'closed', () ->
-        $previewElement.remove()
+        $previewElement.on $.support.transition.end, ()->
+          $previewElement.remove()
 
       $previewElement.addClass('error')
     fallback: () ->
