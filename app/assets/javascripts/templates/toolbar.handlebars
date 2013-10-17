@@ -14,4 +14,19 @@
     {{ view Wheelmap.ToolbarFilterButtonView wheelchair='no' }}
     {{ view Wheelmap.ToolbarFilterButtonView wheelchair='unknown' }}
   </div>
+  <div class="btn-group bootstrap-select show-menu-arrow category-filter show-tick">
+    <button class="btn dropdown-toggle clearfix btn-info" data-toggle="dropdown"><span class="icon-tags"></span><span class="filter-option pull-left"><span class="counter">12</span> Kategorien</span>&nbsp;<span class="caret"></span></button>
+      <ul class="dropdown-menu" role="menu" style="max-height: 446px; overflow-y: auto; min-height: 78px;">
+        {{#each }}
+          <li {{ bind-attr class="isActive:selected" }}>
+            <a {{ action toggleIsActive}}>
+              <span class="pull-left">
+                {{ t 'poi.category' identifier }}
+              </span>
+              <i class="icon-ok pull-right check-mark"></i>
+            </a>
+          </li>
+        {{/each}}
+    </ul>
+  </div>
 </div>
