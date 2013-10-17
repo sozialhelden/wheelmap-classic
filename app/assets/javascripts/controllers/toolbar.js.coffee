@@ -1,19 +1,34 @@
 Wheelmap.ToolbarController = Ember.ArrayController.extend
-  needs: 'map'
-  statusFilters: ['yes', 'limited', 'no', 'unknown']
-
-  searchString: null,
   _extraFilter: false # Flag for executing special status filter behavior only once
-
+  needs: 'map'
+  statusFilters: null
+  searchString: null
   itemController: 'category'
+  statusFilters: null
+
+  activeCategories: ((key, categories)->
+    @filterBy('isActive')
+  ).property('@each.isActive')
 
   init: ()->
     @_super()
 
+    properties =
+      statusFilters: ['yes', 'limited', 'no', 'unknown']
+
     if $.cookie('last_status_filters')
-      @set('statusFilters', JSON.parse($.cookie('last_status_filters')))
+      properties.statusFilters = Ember.A(JSON.parse($.cookie('last_status_filters')))
+
+    @setProperties(properties)
+
+  allActive: (()->
+    console.log(@everyBy('isActive'))
+    @everyBy('isActive')
+  ).property('@each.isActive')
 
   actions:
+    toggleAllIsActive: ()->
+      @setEach('isActive', !@get('allActive'))
 
     toggleStatusFilter: (wheelchair)->
       statusFilters = @get('statusFilters')
@@ -34,15 +49,8 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
     $.cookie('last_status_filters', JSON.stringify(@get('statusFilters')))
   ).observes('statusFilters.@each')
 
-
   categoryFiltersDidChange: (()->
-
   ).observes('@each.isActive')
-
-  activeCategories: (()->
-    @filter (category) ->
-      category.get('isActive')
-  ).property('@each.isActive')
 
   filterNodes: (()->
     self = @
@@ -52,4 +60,4 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
     @get('controllers.map').forEach (node)->
       visible = filters.contains(node.get('wheelchair')) and categories.contains(node.get('category'))
       node.set('isVisible', visible)
-  ).observes('controllers.map.@each.wheelchair', 'statusFilters.@each', 'activeCategories.@each')
+  ).observes('controllers.map.@each.wheelchair', 'statusFilters.@each', 'activeCategories')

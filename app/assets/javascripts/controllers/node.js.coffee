@@ -1,6 +1,5 @@
 Wheelmap.NodeController = Ember.ObjectController.extend
   needs: ['flash-messages']
-  isPopping: false
   isVisible: true
   isPosting: false
   oldWheelchair: null
@@ -26,20 +25,19 @@ Wheelmap.NodeController = Ember.ObjectController.extend
     '/nodes/' + @get('osm_id') + '/update_wheelchair.js'
   ).property('osm_id')
 
-  popupClosed: (()->
-    # Reset if popup was closed and new wheelchair status was not saved
-    if @get('isPopping')
-      return
-
-    @resetStatus()
-  ).observes('isPopping')
-
   resetStatus: ()->
-    if @get('oldWheelchair')?
-      @set('wheelchair', @get('oldWheelchair'))
+    oldWheelchair = @get('oldWheelchair')
+
+    if oldWheelchair?
+      @set('wheelchair', oldWheelchair)
       @get('oldWheelchair', null)
 
   actions:
+    popupOpened: Ember.K
+
+    popupClosed: ()->
+      @resetStatus()
+
     setWheelchair: (wheelchair)->
       unless @get('isPosting')
         @set('wheelchair', wheelchair)
