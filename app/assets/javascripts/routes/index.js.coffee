@@ -4,9 +4,11 @@ Wheelmap.IndexRoute = Ember.Route.extend
   _nodeRequestCounter: 0 # stop overlapping requests
 
   setupController: (controller, model, queryParams)->
+    @setupMapController(@controllerFor('map'), queryParams)
+    @setupToolbarController(@controllerFor('toolbar'), queryParams)
+
+  setupMapController: (controller, queryParams)->
     properties = {}
-    mapController = @controllerFor('map')
-    toolbarController = @controllerFor('toolbar')
 
     if queryParams.lat? && queryParams.lon?
       properties.center = new L.LatLng(queryParams.lat, queryParams.lon)
@@ -14,13 +16,13 @@ Wheelmap.IndexRoute = Ember.Route.extend
     if queryParams.zoom?
       properties.zoom = parseInt(queryParams.zoom, 10)
 
-    mapController.setProperties(properties)
+    controller.setProperties(properties)
 
-    if queryParams.node_id?
-      mapController.set('poppingNode', queryParams.node_id)
+  setupToolbarController: (controller, queryParams)->
+    properties = {}
 
     if queryParams.q?
-      toolbarController.set('searchString', queryParams.q)
+      properties.searchString = queryParams.q
 
     if queryParams.status?
       statusFilters = []
@@ -28,12 +30,18 @@ Wheelmap.IndexRoute = Ember.Route.extend
       if queryParams.status isnt true
         statusFilters = queryParams.status.split(',')
 
-      toolbarController.set('statusFilters', statusFilters)
+      properties.statusFilters = statusFilters
 
-  model: (params, queryParams)->
-    toolbarController = @controllerFor('toolbar')
-    toolbarController.set('content', @store.findAll('category'))
-    return
+    controller.setProperties(properties)
+
+    @store.findAll('category').then (categories)->
+      controller.set('content', categories)
+
+      if queryParams.categories?
+        activeCategoryIdentifiers = queryParams.categories.split(',')
+
+        controller.forEach (category) ->
+          category.set('isActive', activeCategoryIdentifiers.contains(category.get('identifier')))
 
   actions:
     zooming: (isZooming, bounds)->
@@ -69,6 +77,7 @@ Wheelmap.IndexRoute = Ember.Route.extend
       self._previousBounds = bounds
 
       mapController = @controllerFor('map')
+      queryParams = @get('queryParams')
       mapController.set('isLoading', true)
 
       @store.findQuery('node', bbox: bounds.toBBoxString()).then (nodes)->
@@ -78,9 +87,16 @@ Wheelmap.IndexRoute = Ember.Route.extend
         mapController.clear()
         mapController.addObjects(nodes)
         mapController.set('isLoading', false)
+
+        if queryParams.node_id?
+          mapController.set('poppingNode', mapController.findBy('id', queryParams.node_id))
+
         self._nodeRequestCounter = 0
 
-    popping: ()->
+    popupOpened: ()->
+      @send('permalink')
+
+    popupClosed: ()->
       @send('permalink')
 
     toggleStatusFilter: ()->
@@ -89,30 +105,33 @@ Wheelmap.IndexRoute = Ember.Route.extend
     toggleIsActive: ()->
       @send('permalink')
 
-
     permalink: ()->
-      Ember.run.sync() # Needed for having all parameters up to date
-
-      queryParams = {}
+      # Create permalink when every is in sync
+      Ember.run.sync()
 
       mapController = @controllerFor('map')
       toolbarController = @controllerFor('toolbar')
+
+      queryParams = {}
+
       center = mapController.get('center')
+      poppingNode = mapController.get('poppingNode')
       statusFilters = toolbarController.get('statusFilters')
+      searchString = toolbarController.get('searchString')
       categoriesFilters = toolbarController.get('activeCategories').mapBy('identifier')
 
       queryParams.zoom = mapController.get('zoom')
       queryParams.lat = center.lat
       queryParams.lon = center.lng
-      queryParams.q   = mapController.get('searchString')
 
-      queryParams.node_id = mapController.get('poppingNode.id')
-      if statusFilters.length < 4
-        queryParams.status = statusFilters
+      if searchString?
+        queryParams.q = searchString
 
-      if toolbarController.get('length') < categoriesFilters.length
-        queryParams.categories = categoriesFilters
-
-
+      queryParams.node_id = poppingNode?.get('id')
+      queryParams.status = if statusFilters.length < 4 then statusFilters.join(',') else null
+      queryParams.categories =
+        if toolbarController.get('length') > categoriesFilters.length
+        then categoriesFilters.join(',')
+        else null
 
       @replaceWith('index', queryParams: queryParams)

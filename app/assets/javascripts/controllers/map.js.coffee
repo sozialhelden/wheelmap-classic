@@ -4,7 +4,7 @@ Wheelmap.MapController = Ember.ArrayController.extend
   center: null
   zoom: null
   isLoading: false
-  _poppingNodeId: null # id needed for post setting popping node
+  poppingNode: null
 
   init: ()->
     @_super()
@@ -29,33 +29,13 @@ Wheelmap.MapController = Ember.ArrayController.extend
     $.cookie('last_zoom', @get('zoom'), { path: '/' })
   ).observes('center', 'zoom')
 
-  poppingNode: ((key, nodeId)->
-    poppingNode = @findBy('isPopping') || null
+  actions:
+    popupClosed: (node)->
+      @set('poppingNode', null)
+      node.send('popupClosed')
+      return true
 
-    if arguments.length > 1
-      newPoppingNode = null
-
-      if nodeId?
-        newPoppingNode = @findBy('id', nodeId) || null
-        @_poppingNodeId = nodeId
-
-        if newPoppingNode?
-          @_poppingNodeId = null
-
-          if newPoppingNode is poppingNode
-            return poppingNode
-
-          newPoppingNode.set('isPopping', true)
-
-      if poppingNode?
-        poppingNode.set('isPopping', false)
-
-      return newPoppingNode
-
-    return poppingNode
-  ).property('@each.isPopping')
-
-  contentChanged: (()->
-    if @_poppingNodeId?
-      @set('poppingNode', @_poppingNodeId)
-  ).observes('@each')
+    popupOpened: (node)->
+      @set('poppingNode', node)
+      node.send('popupOpened')
+      return true

@@ -192,6 +192,7 @@ if $dropzoneClickable.length > 0
 
       if $.support.transition
         $errorElement.on $.support.transition.end, ()->
+          $errorElement.remove()
           $previewElement.removeClass('in')
 
         $previewElement.on $.support.transition.end, ()->

@@ -29,8 +29,6 @@ Wheelmap.TileLayer = EmberLeaflet.TileLayer.extend
     detectRetina: true
 
 Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
-  isPoppingBinding: 'content.isPopping'
-
   popup: (()->
     self = @
     popup = L.popup(@get('popupOptions'), @get('layer'))
@@ -78,7 +76,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
     Wheelmap.ViewHelper.exitDom(@get('markerView'))
 
   addPopup: (()->
-    layer = @get('layer')?.bindPopup(@get('popup'), @get('popupOptions'))
+    @get('layer')?.bindPopup(@get('popup'), @get('popupOptions'))
   ).observes('layer')
 
   removePopup: (()->
@@ -88,42 +86,36 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
   willOpenPopup: Ember.K
 
   didOpenPopup: (event)->
+    @get('controller').send('popupOpened', @get('content'))
+
     popup = @get('popup')
     popupView = @get('popupView')
-
-    @set('isPopping', true)
 
     Ember.run.once ()->
       # @TODO remove this ugly hacks (eg. enterDom, exitDom) and find a way to better extend leaflet here
       popupView.append() # Create it now, move it later
       Ember.run.scheduleOnce 'render', popupView, '_insertElement', ()->
         $(popupView.get('element')).appendTo(popup._contentNode)
-
-    Ember.run.once ()->
-      popup._adjustPan()
+        popup._adjustPan()
 
   willClosePopup: ()->
     @get('popupView').remove()
 
   didClosePopup: (event)->
-    @set('isPopping', false)
+    @get('controller').send('popupClosed', @get('content'))
 
   visibilityDidChange: (()->
     unless @get('content.isVisible')
       @get('layer').closePopup()
   ).observes('content.isVisible')
 
-  isPoppingChanged: (()->
-    layer = @get('layer')
-
-    if layer?
-      if @get('isPopping')
-        layer.openPopup()
-      else
-        layer.closePopup()
-
-    @get('content').send('popping', @get('isPopping'))
-  ).observes('isPopping')
+  poppingNodeDidChange: (()->
+    # @TODO Solution with better performance? Now it is called for every marker ...
+    if @get('controller.poppingNode.id') is @get('content.id')
+      @get('layer').openPopup()
+    else
+      @get('layer').closePopup()
+  ).observes('controller.poppingNode.id', 'content.id')
 
   createView: (name)->
     @get('parentLayer').container.lookupFactory('view:' + name).create

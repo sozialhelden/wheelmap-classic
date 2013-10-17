@@ -248,6 +248,8 @@
       border-radius: 3px;
       margin-bottom: 5px;
       padding: 0;
+      width: 200px;
+
       @media screen and (max-width: $breakPhone) {
         height: 240px;
         -webkit-overflow-scrolling: touch;
