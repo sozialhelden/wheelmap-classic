@@ -1,6 +1,7 @@
 Wheelmap.ToolbarController = Ember.Controller.extend
   needs: 'map'
   statusFilters: ['yes', 'limited', 'no', 'unknown']
+  searchString: null,
   _extraFilter: false # Flag for executing special status filter behavior only once
 
   init: ()->

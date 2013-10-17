@@ -4,7 +4,7 @@ Wheelmap.SearchbarView = Ember.TextField.extend
   classNames: ['search-input']
   elementId: "search"
   valueBinding: 'controller.searchString'
-  attributeBindings: ['autocomplete', 'name', 'placeholder']
+  attributeBindings: ['autocomplete', 'name', 'placeholder', 'value']
 
   placeholder: (()->
     I18n.t('header.searchbar.placeholder')
