@@ -32,7 +32,24 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
   isPoppingBinding: 'content.isPopping'
 
   popup: (()->
-    L.popup(@get('popupOptions'), @get('layer'))
+    self = @
+    popup = L.popup(@get('popupOptions'), @get('layer'))
+    oldOnAdd = popup.onAdd
+    oldOnRemove = popup.onRemove
+
+    # @TODO find a better way to add events here
+
+    popup.onAdd = ()->
+      self.willOpenPopup(@)
+      oldOnAdd.apply(@, arguments)
+      self.didOpenPopup(@)
+
+    popup.onRemove = ()->
+      self.willClosePopup(@)
+      oldOnRemove.apply(@, arguments)
+      self.didClosePopup(@)
+
+    popup
   ).property('layer')
 
   popupView: (()->
@@ -47,13 +64,6 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
     className: 'node-popup'
     offset: [0, -20]
 
-  popupContent: (()->
-    view = @get('popupView')
-    view.createElement()
-    Wheelmap.ViewHelper.enterDom(view)
-    view.get('element')
-  ).property('popupView')
-
   willCreateLayer: ()->
     markerView = @get('markerView')
 
@@ -63,35 +73,40 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
 
   willDestroyLayer: ()->
     @get('layer').closePopup()
-    @get('popupView').remove()
 
   didDestroyLayer: ()->
     Wheelmap.ViewHelper.exitDom(@get('markerView'))
-    Wheelmap.ViewHelper.exitDom(@get('popupView'))
 
-  addEventListeners: (()->
-    layer = @get('layer')
-
-    if layer?
-      layer.bindPopup(@get('popup'), @get('popupOptions'))
-
-      layer.on('popupopen', @didOpenPopup, @)
-      layer.on('popupclose', @didClosePopup, @)
+  addPopup: (()->
+    layer = @get('layer')?.bindPopup(@get('popup'), @get('popupOptions'))
   ).observes('layer')
 
-  removeEventListeners: (()->
-    layer = @get('layer')
-
-    if layer?
-      layer.off('popupopen', @didOpenPopup, @)
-      layer.off('popupclose', @didClosePopup, @)
-
-      layer.unbindPopup()
+  removePopup: (()->
+    @get('layer')?.unbindPopup()
   ).observesBefore('layer')
 
+  willOpenPopup: Ember.K
+
   didOpenPopup: (event)->
-    @get('popup').setContent(@get('popupContent'))
+    popup = @get('popup')
+    popupView = @get('popupView')
+
     @set('isPopping', true)
+
+    Ember.run.once ()->
+      popupView.createElement()
+      Wheelmap.ViewHelper.enterDom(popupView)
+      popup.setContent(popupView.get('element'))
+
+    Ember.run.once ()->
+      popup._adjustPan()
+
+  willClosePopup: ()->
+    popupView = @get('popupView')
+
+    Ember.run.once ()->
+      popupView.remove()
+      Wheelmap.ViewHelper.exitDom(popupView)
 
   didClosePopup: (event)->
     @set('isPopping', false)
