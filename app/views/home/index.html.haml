@@ -4,3 +4,6 @@
 - content_for :javascript do
   = javascript_include_tag 'app'
   = javascript_include_tag "i18n/#{I18n.locale}"
+
+  :javascript
+    var categories_list = #{render_json_list}
