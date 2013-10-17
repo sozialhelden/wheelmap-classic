@@ -60,4 +60,4 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
     @get('controllers.map').forEach (node)->
       visible = filters.contains(node.get('wheelchair')) and categories.contains(node.get('category'))
       node.set('isVisible', visible)
-  ).observes('controllers.map.@each.wheelchair', 'statusFilters.@each', 'activeCategories')
+  ).observes('controllers.map.@each', 'statusFilters.@each', 'activeCategories')
