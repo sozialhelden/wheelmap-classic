@@ -1,18 +1,21 @@
-%article#node.container{itemscope:'', itemtype: 'http://schema.org/Place'}
-  = render partial: 'node_header', object: @node
+#node-wrapper{style: "background-image: url(http://api.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/#{@node.lon},#{@node.lat},17/640x640.png64)"}
+  = render partial: 'node_flash'
 
-  .row-fluid
-    %section#node-content.node-wrapper.span8
-      = render partial: 'node_status', object: @node
-      = render partial: 'node_photos', object: @node
-      = render partial: 'node_note', object: @node
-      = render partial: 'node_streetview', object: @node
+  %article#node.container{itemscope:'', itemtype: 'http://schema.org/Place'}
+    = render partial: 'node_header', object: @node
 
-    %section#node-aside.span4.node-wrapper
-      = render partial: 'node_edit', object: @node
-      = render partial: 'node_map', object: @node
-      = render partial: 'node_data', object: @node
-      = render partial: 'node_similar', object: @node
+    .row-fluid
+      %section#node-content.node-wrapper.span8
+        = render partial: 'node_status', object: @node
+        = render partial: 'node_photos', object: @node
+        = render partial: 'node_note', object: @node
+        = render partial: 'node_streetview', object: @node
+
+      %section#node-aside.span4.node-wrapper
+        = render partial: 'node_edit', object: @node
+        = render partial: 'node_map', object: @node
+        = render partial: 'node_data', object: @node
+        = render partial: 'node_similar', object: @node
 
 - content_for :meta do
   = render_og_metadata(title: @node.name, description: t('header.title'), type: 'place', url: node_url(@node), image: image_path('wheely_big.jpg'))

@@ -1,16 +1,23 @@
-#wheelmap .leaflet-container {
-  position: absolute;
-  top: $headerHeight + $toolbarHeight;
-  bottom: $footerHeight + 2;
-  left: 0;
-  width: 100%;
-  background: #E8E0D8;
-  z-index: 50;
-  @media screen and (max-width:$breakTablet) {
+#wheelmap {
+  .leaflet-container {
+    position: absolute;
+    top: $headerHeight + $toolbarHeight;
+    bottom: $footerHeight + 2;
+    left: 0;
+    width: 100%;
+    background: #E8E0D8;
+    z-index: 50;
+    @media screen and (max-width:$breakTablet) {
       top: $headerHeight;
       bottom: $toolbarHeight;
+    }
+  }
+
+  .flash-wrapper {
+    top: $headerHeight + $toolbarHeight;
   }
 }
+
 
 #mapbox_logo {
   position:absolute;

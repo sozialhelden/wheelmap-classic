@@ -2,7 +2,6 @@
   @include box-sizing(border-box);
   position: absolute;
   width: 100%;
-  top: $headerHeight + $toolbarHeight;
   left: 0;
   z-index: 100;
 
