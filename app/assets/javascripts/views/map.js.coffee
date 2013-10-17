@@ -94,10 +94,10 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
     @set('isPopping', true)
 
     Ember.run.once ()->
-      #popupView.createElement()
-      #Wheelmap.ViewHelper.enterDom(popupView)
-      #popup.setContent(popupView.get('element'))
-      popupView.appendTo(popup._contentNode)
+      # @TODO remove this ugly hacks (eg. enterDom, exitDom) and find a way to better extend leaflet here
+      popupView.append() # Create it now, move it later
+      Ember.run.scheduleOnce 'render', popupView, '_insertElement', ()->
+        $(popupView.get('element')).appendTo(popup._contentNode)
 
     Ember.run.once ()->
       popup._adjustPan()
@@ -107,7 +107,6 @@ Wheelmap.MarkerLayer = EmberLeaflet.MarkerLayer.extend
 
     Ember.run.once ()->
       popupView.remove()
-     # Wheelmap.ViewHelper.exitDom(popupView)
 
   didClosePopup: (event)->
     @set('isPopping', false)
