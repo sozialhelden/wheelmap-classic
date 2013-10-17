@@ -3,7 +3,10 @@
 #= require jquery/jquery.cookies.js
 #= require i18n.js
 #= require bootstrap
+#= require bootstrap-select
+#= require function
 #= require custom-bootstrap.js.coffee
+#= require function
 #= require handlebars
 #= require ember
 #= require ember-data
