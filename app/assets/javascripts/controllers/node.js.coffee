@@ -44,7 +44,7 @@ Wheelmap.NodeController = Ember.ObjectController.extend
       unless @get('isPosting')
         @set('wheelchair', wheelchair)
 
-    saveWheelchair: (wheelchair)->
+    saveWheelchair: ()->
       self = @
 
       unless self.get('wheelchairSubmit')
@@ -66,7 +66,7 @@ Wheelmap.NodeController = Ember.ObjectController.extend
         self.set('oldWheelchair', null)
         self.get('controllers.flash-messages').pushMessage('notice', response.message)
 
-      promise.fail ()->
+      promise.fail (response)->
         @resetStatus()
         self.get('controllers.flash-messages').pushMessage('error', response.message)
 

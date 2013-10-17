@@ -174,9 +174,36 @@
       }
     }
   }
+
+  .tooltip {
+    position: relative;
+    width: 96%;
+    margin: 4px auto 0 auto;
+    padding: 0;
+    padding-top: 5px;
+    opacity: 1;
+
+    .tooltip-arrow {
+      border-bottom-color: $dark-blue;
+    }
+  }
+
+  .tooltip-inner {
+    max-width: none;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: darken($dark-blue, 5%);
+    @include background-image(linear-gradient(top, $dark-blue, darken($dark-blue, 5%)));
+    text-align: left;
+    padding: 8px 10px;
+  }
 }
 
 .node-popup-status-is-unknown {
+  ul {
+    margin-bottom: 0;
+  }
+
   li {
     margin-top: 3px;
 
@@ -195,6 +222,12 @@
     height: 35px;
     line-height: 35px;
     padding-left: 7px;
+  }
+
+  .btn.node-popup-status-submit {
+    height: 35px;
+    margin-top: 12px;
+    width: 100%;
   }
 }
 
