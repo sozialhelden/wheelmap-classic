@@ -41,7 +41,7 @@
 }
 
 @mixin wheelchair($status, $color, $text-shadow: 0 1px 0 darken($color, 23%)) {
-  .popover-wheelchair.#{$status} {
+  .#{$status} {
     .popover-title {
       background-color: darken($color, 5%);
       color: $white;
@@ -50,8 +50,6 @@
   }
 
   .wheelchair.#{$status} {
-    @extend .popover-wheelchair.#{$status};
-
     @include buttonBackground($color, darken($color, 10%), $white, $text-shadow);
     font-weight: bold;
     border: 1px solid darken($color, 23%);

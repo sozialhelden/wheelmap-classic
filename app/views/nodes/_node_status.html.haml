@@ -10,7 +10,7 @@
         %ul.dropdown-menu{'role' => 'menu'}
           - %w{yes limited no}.each do |status|
             %li
-              %a{class: "popover-wheelchair #{status}", :'data-toggle' => 'status', :'data-status' => status }
+              %a{class: "#{status}", :'data-toggle' => 'status', :'data-status' => status }
                 %span.wm-checkbox{'class' => ["wheelchair #{status}", (node_status.wheelchair == status ? 'checked' : nil)]}
                   %i.icon-ok
                 = t("home.index.popup.form.#{status}")
