@@ -4,7 +4,6 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
   statusFilters: null
   searchString: null
   itemController: 'category'
-  statusFilters: null
 
   activeCategories: ((key, categories)->
     @filterBy('isActive')
@@ -22,7 +21,6 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
     @setProperties(properties)
 
   allActive: (()->
-    console.log(@everyBy('isActive'))
     @everyBy('isActive')
   ).property('@each.isActive')
 
