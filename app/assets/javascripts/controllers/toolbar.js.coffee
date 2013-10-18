@@ -16,7 +16,12 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
       statusFilters: ['yes', 'limited', 'no', 'unknown']
 
     if $.cookie('last_status_filters')
-      properties.statusFilters = Ember.A(JSON.parse($.cookie('last_status_filters')))
+      try
+        properties.statusFilters = Ember.A(JSON.parse($.cookie('last_status_filters')))
+      catch e
+        # Catch JSON syntax errors in invalid cookie value
+        unless e instanceof SyntaxError
+          throw e
 
     @setProperties(properties)
 
@@ -29,6 +34,7 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
       @setEach('isActive', !@get('allActive'))
 
     toggleStatusFilter: (wheelchair)->
+      console.log(arguments)
       statusFilters = @get('statusFilters')
 
       if !@_extraFilter && statusFilters.length == 4
