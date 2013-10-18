@@ -10,7 +10,6 @@ Wheelmap.Node = DS.Model.extend
   category: attr()
   address: attr()
   breadcrumbs: attr()
-  accesibility: attr()
   type: attr()
 
   location: (()->
@@ -20,10 +19,6 @@ Wheelmap.Node = DS.Model.extend
   statusText: (()->
     I18n.t('wheelchairstatus.' + @get('wheelchair'));
   ).property('wheelchair')
-
-  statusDescription: (()->
-    I18n.t('wheelmap.what_is.' + @get('accesibility'));
-  ).property('accesibility')
 
   headline: (()->
     @get('name') || I18n.t("poi.name." + @get('category') + "." + @get('type'))

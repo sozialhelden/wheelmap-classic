@@ -57,7 +57,6 @@ module Api::Poi
       t.add :breadcrumbs
       t.add :address
       t.add :wheelchair
-      t.add :accesibility
       t.add lambda{|poi| poi.category.try(:identifier)  }, :as => :category
       t.add lambda{|poi| poi.node_type.try(:identifier)  }, :as => :type
       t.add :icon
