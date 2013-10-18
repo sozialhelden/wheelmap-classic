@@ -9,10 +9,10 @@
         </div>
     </form>
     <div class="btn-group status-filter">
-        {{ view Wheelmap.ToolbarFilterButtonView wheelchair='yes' }}
-        {{ view Wheelmap.ToolbarFilterButtonView wheelchair='limited' }}
-        {{ view Wheelmap.ToolbarFilterButtonView wheelchair='no' }}
-        {{ view Wheelmap.ToolbarFilterButtonView wheelchair='unknown' }}
+        {{ status-filter-button activeFilters=statusFilters wheelchair='yes' didClick="toggleStatusFilter" }}
+        {{ status-filter-button activeFilters=statusFilters wheelchair='limited' didClick="toggleStatusFilter" }}
+        {{ status-filter-button activeFilters=statusFilters wheelchair='no' didClick="toggleStatusFilter" }}
+        {{ status-filter-button activeFilters=statusFilters wheelchair='unknown' didClick="toggleStatusFilter" }}
     </div>
     <div class="btn-group bootstrap-select show-menu-arrow category-filter show-tick">
         <button class="btn dropdown-toggle clearfix btn-info" data-toggle="dropdown"><span

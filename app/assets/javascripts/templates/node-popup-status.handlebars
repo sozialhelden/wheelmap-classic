@@ -34,7 +34,7 @@
         <ul class="dropdown-menu" role="menu">
             {{#each status in Wheelmap.Node.WHEELCHAIR_STATUSES }}
                 <li>
-                    <a {{ action 'setWheelchair' status }} {{ bind-attr class="status" }}>
+                    <a {{ action 'setWheelchair' status }}>
                         {{ wheelchair-checkbox wheelchair=status status=wheelchair classNameBindings=":wheelchair" }}
                         {{ t 'home.index.popup.form' status }}
                         {{ wheelchair-popover tagName="i" classNames="icon-question-sign" wheelchair=status }}

@@ -1,22 +1,36 @@
 Wheelmap.PopoverComponent = Ember.Component.extend
-  title: null
-  content: null
-  options: {}
+  popover: null
+  popoverTitle: null
+  popoverContent: null
+  popoverOptions: {}
 
   didInsertElement: ()->
     self = @
-    options = Ember.$.extend {}, self.get('options'),
+    options = Ember.$.extend {}, self.get('popoverOptions'),
       title: () ->
-        self.get('title')
+        self.get('popoverTitle')
       content: () ->
-        self.get('content')
+        self.get('popoverContent')
 
     self.$().popover(options)
 
 Wheelmap.WheelchairPopoverComponent = Wheelmap.PopoverComponent.extend
   wheelchair: null
-  options:
+  popoverOptions:
     trigger: 'hover'
+
+  didInsertElement: ()->
+    @_super()
+    @toggleWheelchairClass()
+
+  toggleWheelchairClass: (()->
+    # Add class yes, no, limited, unknown for styling popover
+    wheelchair = @get('wheelchair')
+    popover = @$().data('popover')
+
+    if wheelchair? and popover?
+      popover.tip().toggleClass(wheelchair)
+  ).observesBefore('wheelchair').observes('wheelchair')
 
   accessibility: (()->
     accessibilities =
@@ -28,11 +42,11 @@ Wheelmap.WheelchairPopoverComponent = Wheelmap.PopoverComponent.extend
     accessibilities[@get('wheelchair')] + '_accessible'
   ).property('wheelchair')
 
-  title: (()->
+  popoverTitle: (()->
     I18n.t("home.index.popup.form." + @get('wheelchair'))
   ).property('wheelchair')
 
-  content: (()->
+  popoverContent: (()->
     I18n.t("wheelmap.what_is." + @get('accessibility'))
   ).property('accessibility')
 
