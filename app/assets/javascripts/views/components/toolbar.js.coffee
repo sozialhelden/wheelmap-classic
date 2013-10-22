@@ -7,7 +7,8 @@ Wheelmap.StatusFilterButtonComponent = Wheelmap.WheelchairPopoverComponent.exten
 
   popoverOptions:
     trigger: 'hover'
-    placement: 'bottom'
+    placement: () ->
+      if window.innerWidth <= 767 then 'top' else 'bottom'
     delay: { show: 400 }
     container: '#toolbar .status-filter' # Need for not having little spaces between status buttons
 
