@@ -105,6 +105,9 @@ Wheelmap.IndexRoute = Ember.Route.extend
     toggleIsActive: ()->
       @send('permalink')
 
+    toggleAllIsActive: ()->
+      @send('permalink')
+
     permalink: ()->
       # Create permalink when every is in sync
       Ember.run.sync()
