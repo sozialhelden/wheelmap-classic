@@ -32,9 +32,9 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
   actions:
     toggleAllIsActive: ()->
       @setEach('isActive', !@get('allActive'))
+      true
 
     toggleStatusFilter: (wheelchair)->
-      console.log(arguments)
       statusFilters = @get('statusFilters')
 
       if !@_extraFilter && statusFilters.length == 4
