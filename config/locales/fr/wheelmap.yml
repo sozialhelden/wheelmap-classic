@@ -129,7 +129,7 @@ fr:
       add_place: "Ajouter un lieu"
       find: trouver
       label: ~
-      placeholder: "par exemple Sunset Boulevard L.A. ou Porte de Brandenbourg à Berlin"
+      placeholder: "Chercher un endroit"
       title_add_place: "Ajoutez un nouveau lieu à cet endroit"
     tagline: "Wheelmap logo"
     title: "Où aller en  fauteuil roulant? "
@@ -205,7 +205,7 @@ fr:
       not_available: "Désolé, cette page est temporairement indisponible."
       not_existent: "Désolé, ce lieu n'est plus disponible."
       not_found: "Désolé, page introuvable."
-      param_missing: "Entrer une recherche"
+      param_missing: "Entrez une recherche"
     flash:
       authorize_wheelmap: "Vous avez besoin d'un compte sur OpenStreetMap pour modifier des données."
     new:
