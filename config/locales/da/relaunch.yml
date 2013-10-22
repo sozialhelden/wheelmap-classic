@@ -50,11 +50,17 @@ da:
       similar: "Lignende steder: %{name}"
     node_status:
       accessible_toilet: "Kørestolstilgængeligt toilet:"
+      premium: "%{name}  siger: dette sted er"
       wheelchair_accessibility: "Kørestolstilgængeligt:"
     node_streetview:
       streetview: "Gadevisning:"
     show:
+      header:
+        meta:
+          description: "Find ud af om dette sted er kørestoltilgængeligt på Wheelmap.org. Eller tilføj mere information eller et foto for dette sted."
+          title: "Dette sted er på Wheelmap.org: %{name}"
       share:
+        email: "E-mail-adresse"
         facebook: Facebook
         text: "Jeg har fundet dette sted på  Wheelmap.org: %{name}"
         twitter: Twitter
