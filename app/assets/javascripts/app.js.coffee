@@ -4,7 +4,6 @@
 #= require i18n.js
 #= require bootstrap
 #= require bootstrap-select
-#= require function
 #= require custom-bootstrap.js.coffee
 #= require function
 #= require handlebars
