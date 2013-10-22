@@ -132,9 +132,10 @@
     @include border-top-radius(0);
 
     a {
+      @include box-sizing(border-box);
       line-height: 25px;
       padding: 5px 10px;
-      width: 215px;
+      width: 100%;
       overflow: hidden;
 
       .icon-question-sign {
