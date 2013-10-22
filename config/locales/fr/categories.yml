@@ -21,6 +21,7 @@ fr:
         camp_site: "Camping"
         caravan_site: "Camping"
         chalet: gîte de vacances
+        dormitory: Dortoir
         guest_house: "Auberge"
         hostel: Auberge
         hotel: Hôtel
@@ -141,6 +142,7 @@ fr:
         mall: "Centre Commercial"
         optician: Opticien
         organic: "magasin bio"
+        outdoor: "Magasin pour des activités de plein air"
         pet: "animalerie"
         photo: Photo
         second_hand: "Friperie"

@@ -51,8 +51,11 @@ ja:
   search:
     index:
       no-results:
+        headline: "\"%{query}\" という名前の場所はありませんでした。"
         hint:
           example: "<strong>例:</strong> 英国, ロンドン"
+          info: "検索精度を向上させるため、より詳細な名称と住所の情報を必要としています。"
+          work_in_progress: "より簡単に、より直感的に場所を検索できるよう、私達はがんばります。"
         try_this:
           address: "<strong>住所情報</strong> をより詳しく追記してみましょう。"
           intro: "もしかして:"
