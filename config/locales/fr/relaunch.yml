@@ -1,9 +1,9 @@
 fr:
   faq:
     answers:
-      0: "Vous pouvez toujours modifier le marquage d'un endroit vous-même. Il vous suffit de choisir le bon marquage et Enregistrez - Voilà !"
+      0: "Vous pouvez toujours modifier le marquage d'un endroit vous-même. Il vous suffit de choisir le bon marquage et enregistrez - voilà !"
       1: "En tant qu'utilisateur connecté, vous pouvez ajouter/corriger toutes les informations d'un endroit. Cliquez sur « Modifier » pour corriger ou ajouter des informations dans le masque."
-      2: "Vous pouvez ajouter d'autres informations (ex. : Cet endroit possède une rampe dans la rubrique Commentaire. Cliquez sur « Modifier » et « Ajouter un commentaire »."
+      2: "Vous pouvez ajouter d'autres informations (ex. : Cet endroit possède une rampe dans la rubrique commentaire. Cliquez sur « Modifier » et « Ajouter un commentaire »."
     headline: "Y a-t-il un problème avec cet endroit ?"
     questions:
       0: "Le marquage est erroné."
@@ -15,7 +15,7 @@ fr:
       choose_language: "choix de la langue"
       contact: contact
       map: carte
-      projects: projets
+      projects: Projets
     toolbar:
       categories: catégories
   home:
@@ -37,7 +37,7 @@ fr:
       contact_details: "Coordonnées :"
     node_edit:
       details: "Détails"
-      edit: "traiter"
+      edit: "Traiter"
     node_map:
       map: "Carte :"
     node_note:
