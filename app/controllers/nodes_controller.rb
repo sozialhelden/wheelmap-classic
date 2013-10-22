@@ -29,7 +29,7 @@ class NodesController < ApplicationController
     normalize_bbox if params[:bbox]
     @limit = params[:limit].try(:to_i) || 300
 
-    @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.limit(@limit) if @left
+    @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.including_region.limit(@limit) if @left
 
     respond_to do |wants|
       wants.js{   render :json => @places.as_api_response(:iphone).to_json }

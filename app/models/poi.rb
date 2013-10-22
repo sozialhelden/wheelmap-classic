@@ -80,6 +80,7 @@ class Poi < ActiveRecord::Base
   scope :with_node_type, :conditions => 'node_type_id IS NOT NULL'
   scope :without_node_type, :conditions => 'node_type_id IS NULL'
   scope :including_category, :include => :category
+  scope :including_region, :include => :region
   scope :has_provider, :joins => :provided_pois
   scope :has_photo, :joins => :photos
   scope :within_region, lambda {|region| {:conditions => {:region_id => region.id}}}

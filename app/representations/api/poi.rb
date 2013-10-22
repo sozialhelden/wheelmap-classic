@@ -4,8 +4,8 @@ module Api::Poi
   included do
 
     def around_api_response(api_template)
-      custom_cache_key = "api_response_#{self.cache_key}_#{api_template.to_s}"
-      Rails.cache.fetch(custom_cache_key, :expires_in => 1.day) do
+      custom_cache_key = "api_response_#{I18n.locale}_#{self.cache_key}_#{api_template.to_s}"
+      Rails.cache.fetch(custom_cache_key, :expires_in => 1.hour) do
         yield
       end
     end
@@ -54,9 +54,9 @@ module Api::Poi
       t.add :name
       t.add :lat
       t.add :lon
-      t.add :breadcrumbs
       t.add :address
       t.add :wheelchair
+      t.add lambda{|poi| poi.region.try(:name)  }, :as => :region
       t.add lambda{|poi| poi.category.try(:identifier)  }, :as => :category
       t.add lambda{|poi| poi.node_type.try(:identifier)  }, :as => :type
       t.add :icon
