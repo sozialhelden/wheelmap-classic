@@ -203,7 +203,6 @@
 
   .tooltip-inner {
     max-width: none;
-    width: 100%;
     box-sizing: border-box;
     background-color: darken($dark-blue, 5%);
     @include background-image(linear-gradient(top, $dark-blue, darken($dark-blue, 5%)));
