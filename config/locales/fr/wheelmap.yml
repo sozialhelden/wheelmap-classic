@@ -159,11 +159,11 @@ fr:
           create: "Ajouter un nouveau lieu"
       popup:
         form:
-          limited: "partiellement accessible en fauteuil roulant"
-          'no': "Non accessible en fauteuil roulant"
+          limited: "partiellement accessible"
+          'no': "non-accessible"
           save: Sauvegarder
           unknown: "statut inconnu"
-          'yes': "entièrement accessible en fauteuil roulant"
+          'yes': "entièrement accessible"
         help: "Accessible en fauteuil roulant? (Aide)"
         more: "davantage ..."
   how?: Comment?

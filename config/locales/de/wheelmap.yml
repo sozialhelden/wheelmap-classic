@@ -163,7 +163,7 @@ de:
           'no': "Nicht rollstuhlgerecht"
           save: Speichern
           unknown: "Unbekannter Status"
-          'yes': "Voll Rollstuhlgerecht"
+          'yes': "Voll rollstuhlgerecht"
         help: "Rollstuhlgerecht? (Hilfe)"
         more: "mehr ..."
   how?: Wie?
