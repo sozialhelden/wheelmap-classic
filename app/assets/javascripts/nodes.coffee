@@ -131,6 +131,8 @@ $('[data-toggle="status"]').click (e) ->
 csrfParam = $('meta[name="csrf-param"]').attr('content')
 csrfToken = $('meta[name="csrf-token"]').attr('content')
 
+$('.selectpicker').selectpicker();
+
 $('[data-toggle="status-submit"]').click (e) ->
   e.preventDefault()
 
