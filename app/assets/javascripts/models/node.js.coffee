@@ -9,7 +9,7 @@ Wheelmap.Node = DS.Model.extend
   wheelchair: attr()
   category: attr()
   address: attr()
-  breadcrumbs: attr()
+  region: attr()
   type: attr()
 
   location: (()->
@@ -23,6 +23,14 @@ Wheelmap.Node = DS.Model.extend
   headline: (()->
     @get('name') || I18n.t("poi.name." + @get('category') + "." + @get('type'))
   ).property('name', 'type','category')
+
+  breadcrumbs: (()->
+    [
+      @get('region'),
+      I18n.t("poi.category." + @get('category')),
+      I18n.t("poi.name." + @get('category') + "." + @get('type'))
+    ]
+  ).property('type','category')
 
   showPath: (()->
     '/nodes/' + @get('osm_id')
