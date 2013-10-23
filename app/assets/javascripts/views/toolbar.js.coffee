@@ -2,6 +2,13 @@ Wheelmap.ToolbarView = Ember.View.extend
   elementId: 'toolbar'
   templateName: 'toolbar'
 
+  addToggleSearchbar: (()->
+    $searchbar = @$('.searchbar-form')
+
+    @$('.btn-toggle-searchbar').click ()->
+      $searchbar.toggleClass('active');
+  ).on('didInsertElement')
+
   categoryButton: (()->
     activeCategories = @get('controller.activeCategories')
     length = activeCategories.get('length')

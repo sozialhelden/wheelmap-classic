@@ -1,8 +1,8 @@
 <div class="btn-toolbar">
-    <form action="/search" class="navbar-form" method="GET">
-        <button class="btn btn-info btn-searchbar">
-            <i class="icon-search icon-light"></i>
-        </button>
+    <button class="btn btn-info btn-toggle-searchbar">
+        <i class="icon-search icon-light"></i>
+    </button>
+    <form action="/search" class="searchbar-form" method="GET">
         <div class="input-append">
             {{ view Wheelmap.SearchbarView }}
             {{ view Wheelmap.SearchbarButtonView }}

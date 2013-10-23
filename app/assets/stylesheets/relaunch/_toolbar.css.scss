@@ -36,7 +36,7 @@
     }
   }
 
-  .btn-searchbar {
+  .btn-toggle-searchbar {
     display: none;
   }
 
@@ -85,7 +85,7 @@
     }
   }
 
-  .navbar-form {
+  .searchbar-form {
     display: inline-block;
     margin-bottom: 0;
 
@@ -375,33 +375,33 @@
 
 @media screen and (max-width: 640px) {
   #toolbar {
-    .btn-searchbar {
-      display: inline;
+    .btn-toggle-searchbar {
+      display: inline-block;
       padding: 7px 2px;
       width: 45px;
       margin-left: 1%;
     }
-    form.navbar-form {
-      width: 98%;
+
+    .searchbar-form {
+      width: 100%;
       padding: 10px 1% 10px 1%;
       position: fixed;
       top: 50px;
       left: 0px;
       background: #333;
-      display: none !important;
+      display: none;
 
       &.active {
-        display: block !important;
+        display: block;
       }
-      .input-append {
-        margin: 0 !important;
-        width: 100% !important;
 
-        input {
-          width: 80%;
-          &:focus {
-            width: 80%;
-          }
+      .input-append {
+        margin: 0 auto;
+        width: 100%;
+
+        input,
+        input:focus {
+          width: 100%;
         }
       }
     }
