@@ -16,7 +16,11 @@ class PhotosController < ApplicationController
     @photo.poi = Poi.find(params[:node_id])
     @photo.user = current_user
     @photo.save!
-    render :partial => 'photo', :object => @photo
+
+    respond_to do |wants|
+      wants.json{ render status: 200, json: { url: @photo.image.url } }
+      wants.html{ redirect_to node_path(@photo.poi) }
+    end
   end
 
   def destroy

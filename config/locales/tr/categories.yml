@@ -1,15 +1,15 @@
----
 tr:
   poi:
     category:
-      accommodation: "Konaklama Yeri"
+      accommodation: Konaklama Yeri
       education: Eğitim
       food: Yiyecek
-      government: "Resmi Daire ve Büyük Elçilikler"
-      leisure: "Boş Vakit"
-      misc: "Diğer Şeyler"
+      government: Resmi Daire ve Büyük Elçilikler
+      health: Sağlık
+      leisure: Boş Vakit
+      misc: Diğer Şeyler
       money_post: "Banka & Paramatik; Posta "
-      public_transfer: Trafik/Ulaşım
+      public_transfer: "Trafik/Ulaşım"
       shopping: Alışveriş
       sport: Spor
       tourism: Turizm
@@ -21,44 +21,62 @@ tr:
         camp_site: "Kamping Meydanı"
         caravan_site: "Karavan Parkı"
         chalet: Bungalov
-        guest_house: Pansiyon
-        hostel: "Öğrenci Yurdu"
+        dormitory: Yurt
+        guest_house: "Pansiyon"
+        hostel: Öğrenci Yurdu
         hotel: Otel
         motel: Motel
       education:
         college: Yüksekokul
-        kindergarten: "anaokulu/ yuva"
+        driving_school: "Sürücü Kursu"
+        kindergarten: anaokulu/ yuva
         library: Kütüphane
         museum: Müze
         school: Okul
         university: Üniversite
       food:
         bar: Bar
-        biergarten: "Bira bahçesi"
-        cafe: "Cafe Bar"
+        biergarten: Bira bahçesi
+        cafe: Cafe Bar
         drinking_water: "Içme Suyu"
         fast_food: "Fast Food"
+        ice_cream: "Dondurmacı"
         pub: Birahane
         restaurant: Lokanta
       government:
         courthouse: Adliye
         embassy: Elçilik
+        government: "Devlet dairesi"
+        police: Polis
         public_building: "Resmi Bina"
-        townhall: "Belediye Binası"
+        townhall: Belediye Binası
       health:
+        dentist: Dişçi
         doctors: Doktor
+        hearing_aids: "İşitme cihazı satıcısı"
         hospital: Hastane
+        medical_supply: "Tıbbi malzemeler"
         pharmacy: Eczane
+        social_facility: "Sosyal tesis"
         veterinary: Veteriner
       leisure:
         arena: Arena
+        brothel: Genelev
+        casino: Kumarhane
         cinema: Sinema
+        community_center: "Sosyal Merkez"
         gallery: Galeri
-        nightclub: "Gece Kulübü"
+        nightclub: Gece Kulübü
+        playground: Çocuk Parkı
         sauna: Sauna
+        stripclub: Striptiz Kulübü
         theatre: Tiyatro
-        zoo: "Hayvanat Bahçesi"
+        zoo: Hayvanat Bahçesi
       misc:
+        company: "Şirket (Ofis)"
+        estate_agent: "Emlakçı"
+        insurance: Sigorta
+        lawyer: Avukat
         place_of_worship: "Ibadet Yeri"
         toilets: Tuvalet
       money_post:
@@ -66,7 +84,7 @@ tr:
         bank: Banka
         bureau_de_change: "Döviz bürosu"
         post_box: "Posta Kutusu"
-        post_office: Postane
+        post_office: "Postane"
       public_transfer:
         aerodrome: Havaalanı
         bicycle_parking: "Bisiklet park yeri"
@@ -74,7 +92,7 @@ tr:
         boatyard: Tersana
         bus_station: "Otobüs garajı, Otogar, Terminal"
         bus_stop: "Otobüs durağı"
-        cable_car: Teleferik
+        cable_car: "Teleferik"
         car_rental: "Araba Kirası"
         car_sharing: "Otomobil paylaşımı"
         chair_lift: "Koltuklu teleferik"
@@ -82,40 +100,61 @@ tr:
         ferry_terminal: "Feribot terminalı"
         fuel: "Benzin Istasyonu"
         halt: Durak
-        light_rail: Tramvay
+        light_rail: "Tramvay"
         parking: Otopark
         parking_aisle: "Otopark geçiti"
         platform: Platform
-        station: Metro
+        station: "Metro"
         subway_entrance: "Metro girişi"
         terminal: "Havalimanı terminalı"
         tram_stop: "Tramvay durağı"
       shopping:
-        alcohol: "Alkollü içki"
+        alcohol: Alkollü içki
         bakery: Fırın
+        beauty: "Güzellik salonu"
         beverages: Içecekler
         bicycle: "Bisiklet dükkanı"
         books: Kitapcı
         butcher: Kasap
+        car_repair: "Araba tamircisi"
+        car_shop: "Araba galerisi"
+        chemist: Kimyacı
         clothes: Giyisi
         computer: Bilgisayar
+        confectionery: "Şekerlemeci"
         convenience: Kolaylık
+        deli: Mezeci
         department_store: "Büyük mağaza"
         doityourself: "Kendi işini kendin yap"
         dry_cleaning: "Kuru temizleme"
         electronics: Elektronik
+        fabric: "Kumaş dükkanı"
+        farm_shop: "Tarım dükkanı"
         florist: Çiçekçi
-        furniture: "Mobilya dükkanı"
+        furniture: Mobilya dükkanı
         garden_centre: "Bahçivan dükkanı"
+        gift: "Hediyelikçi"
         hairdresser: Kuaför
         hardware: Hırdavat
-        kiosk: "Satış Kulübesi"
+        jewelry: Kuyumcu
+        kiosk: Satış Kulübesi
         laundry: Çamaşirhane
         mall: "Alışveriş merkezi"
         optician: Gözlükçü
+        organic: "Organik ürün dükkanı"
+        outdoor: "Açıkhava malzemeleri"
+        pet: "Pet shop"
+        photo: Fotoğrafçı
+        second_hand: "İkinci el"
         shoes: Ayakkabı
+        sports: Spor
+        stationery: Kırtasiye
         supermarket: Süpermarket
+        toys: Oyuncak
+        travel_agency: "Seyahat acentası"
+        video: "Video kiralama dükkanı"
       sport:
+        pitch: "Spor alanı"
         sports_centre: "Spor mekezi"
         stadium: Stadyum/Stat
         swimming: Yüzme
@@ -123,11 +162,11 @@ tr:
       tourism:
         archaeological_site: "Arkeolojik Yer"
         arts_centre: "Kültür merkezi"
-        artwork: "Sanat eseri"
+        artwork: Sanat eseri
         attraction: Atraksiyon
-        battlefield: "Savaş Meydanı"
+        battlefield: Savaş Meydanı
         beach: Kumsal
-        beacon: "Fener Kulesi"
+        beacon: Fener Kulesi
         castle: Hisar/Kale/Şato
         cave_entrance: "Mağara Girişi"
         information: "Turist bilgisi"

@@ -1,4 +1,3 @@
----
 sk:
   header:
     navigation:
@@ -23,3 +22,26 @@ sk:
       form:
         legend: "Poloha objektu"
         location: "Prosím kliknite na mapu a umiestnite značku na presnú polohu."
+    node_edit:
+      edit: "Upraviť"
+  search:
+    index:
+      no-results:
+        headline: "Prepáčte ale nenašli sme miesto s názvom \"%{query}\"."
+        hint:
+          example: "<strong>Príklad:</strong> London, United Kingdom"
+          info: "Naše vyhľadávanie funguje len s názvom a/alebo s adresou. Preto prosím keď niečo hľadáte tak zadajte buď názov alebo adresu tohoto miesta. Vyhľadávanie podľa typu miesta napr. reštaurácia alebo kino nefunguje."
+          work_in_progress: "Usilovne pracujeme na tom aby bolo vyhľadávanie miest v budúcnosti ešte jednoduchšie a intuitívnejšie."
+        try_this:
+          address: "Prosím zadajte <strong>konkrétnejšiu adresu</strong>."
+          intro: "Skúste toto:"
+          spell_check: "Skontrolujte či ste text zadali správne."
+      results:
+        ticker:
+          one: "1 výsledok:"
+          other: "%{count} výsledkov:"
+          zero: "0 výsledkov:"
+    timeout:
+      headline: "Uh, naša chyba"
+      info: "Naše vyhľadávanie bolo dočasne nedostupné."
+      repeat_search: "Hľadať znova"

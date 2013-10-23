@@ -1,4 +1,3 @@
----
 cs:
   header:
     navigation:
@@ -23,3 +22,24 @@ cs:
       form:
         legend: "Poloha objektu"
         location: "Prosím klikněte na mapu a umístěte značku na přesné místo"
+  search:
+    index:
+      no-results:
+        headline: "Promiňte, nenašli jsme místo s názvem \"%{query}\"."
+        hint:
+          example: "<strong>Příklad:</strong> London, United Kingdom"
+          info: "Naše vyhledávaní pracuje pouze s názvem nebo adresou místa. Proto prosím hledejte pouze podle názvu nebo adresy. Vyhledávaní podle typu místa, napr. restaurace nebo kino, nebude fungovat!"
+          work_in_progress: "Snažíme se aby bulo vyhledávaní v budoucnosti ještě jednodušší a intuitivnější."
+        try_this:
+          address: "Prosím zadejte více informací o adrese."
+          intro: "Zkuste tohle:"
+          spell_check: "Zkontrolujte zadaný text."
+      results:
+        ticker:
+          one: "1 výsledek:"
+          other: "%{count} výsledků:"
+          zero: "0 výsledků:"
+    timeout:
+      headline: "Oh, naše chyba"
+      info: "Vyhledávání bylo dočasně nedostupné."
+      repeat_search: "Hledat znovu"

@@ -1,27 +1,26 @@
----
 is:
   poi:
     category:
       accommodation: Gisting
       education: Menntun
       food: Matur
-      government: "Opinberar stofnanir"
+      government: Opinberar stofnanir
       leisure: Frístundir
       misc: Annað
       money_post: "Banki & póstur"
-      public_transfer: Almenningssamgöngur
+      public_transfer: "Almenningssamgöngur"
       shopping: Verslun
       sport: Íþróttir
       tourism: Ferðamennska
-      unknown: "Ekki vitað"
+      unknown: Ekki vitað
     name:
       accommodation:
-        beach_resort: Strandarhótel
+        beach_resort: "Strandarhótel"
         bed_and_breakfast: "Hótel með morgunmat"
-        camp_site: Tjaldsvæði
+        camp_site: "Tjaldsvæði"
         caravan_site: "Tjaldsvæði fyrir hjólhýsi"
         chalet: Kofar
-        guest_house: Gistihús
+        guest_house: "Gistihús"
         hostel: Hostel
         hotel: Hótel
         motel: Mótel
@@ -36,8 +35,8 @@ is:
         bar: Skemmtistaður
         biergarten: Bjórgarður
         cafe: Kaffihús
-        drinking_water: Drykkjarvatn
-        fast_food: Skyndibiti
+        drinking_water: "Drykkjarvatn"
+        fast_food: "Skyndibiti"
         pub: Pöbb
         restaurant: Veitingahús
       government:
@@ -59,72 +58,72 @@ is:
         theatre: Leikhús
         zoo: Dýragarður
       misc:
-        place_of_worship: Bænahús
+        place_of_worship: "Bænahús"
         toilets: Klósett
       money_post:
         atm: Hraðbanki
         bank: Banki
-        bureau_de_change: Skiptimynt
-        post_box: Pósthólf
-        post_office: Póstur
+        bureau_de_change: "Skiptimynt"
+        post_box: "Pósthólf"
+        post_office: "Póstur"
       public_transfer:
         aerodrome: Flugvöllur
-        bicycle_parking: Reiðhjólastæði
-        bicycle_rental: Reiðhjólaleiga
+        bicycle_parking: "Reiðhjólastæði"
+        bicycle_rental: "Reiðhjólaleiga"
         boatyard: Bryggja
-        bus_station: Rútustöð
-        bus_stop: Strætó
-        cable_car: Dráttarbílar
-        car_rental: Bílaleiga
+        bus_station: "Rútustöð"
+        bus_stop: "Strætó"
+        cable_car: "Dráttarbílar"
+        car_rental: "Bílaleiga"
         car_sharing: "Deila bíl"
-        chair_lift: Skíðalyfta
+        chair_lift: "Skíðalyfta"
         ferry: Ferja
         ferry_terminal: "Biðstöð fyrir ferju"
-        fuel: Bensínstöð
+        fuel: "Bensínstöð"
         halt: Biðstöð
-        light_rail: Innanbæjarlest
+        light_rail: "Innanbæjarlest"
         parking: Bílastæði
-        parking_aisle: Bílastæðaröð
+        parking_aisle: "Bílastæðaröð"
         platform: Stæði
-        station: Neðanjarðarlest
+        station: "Neðanjarðarlest"
         subway_entrance: "Inngangur að neðanjarðarlest"
         terminal: "Biðstöð á flugvelli"
-        tram_stop: Lestavagnastopp
+        tram_stop: "Lestavagnastopp"
       shopping:
         alcohol: Áfengi
         bakery: Bakarí
         beverages: Drykkir
-        bicycle: Hjólreiðaverslun
+        bicycle: "Hjólreiðaverslun"
         books: Bækur
         butcher: Slátrari
         clothes: Föt
         computer: Tölvur
         convenience: Þægindi
-        department_store: Sérvöruverslun
-        doityourself: Sjálfshjálparverslun
-        dry_cleaning: Efnalaug
+        department_store: "Sérvöruverslun"
+        doityourself: "Sjálfshjálparverslun"
+        dry_cleaning: "Efnalaug"
         electronics: Raftæki
         florist: Blómabúð
         furniture: Húsgögn
-        garden_centre: Garðar
+        garden_centre: "Garðar"
         hairdresser: Hársnyrting
         hardware: Byggingavörur
         kiosk: Söluturn
         laundry: Þvottahús
-        mall: Verslunarkeðjur
+        mall: "Verslunarkeðjur"
         optician: Gleraugnaverslun
         shoes: Skór
         supermarket: Matarverslun
       sport:
-        sports_centre: Íþróttabúð
+        sports_centre: "Íþróttabúð"
         stadium: Íþróttavellir
         swimming: Sund
-        swimming_pool: Sundlaug
+        swimming_pool: "Sundlaug"
       tourism:
-        archaeological_site: Fornleifastaður
-        arts_centre: Listamiðstöðvar
+        archaeological_site: "Fornleifastaður"
+        arts_centre: "Listamiðstöðvar"
         artwork: List
-        attraction: "Merkilegt að sjá"
+        attraction: Merkilegt að sjá
         battlefield: Stríðssvæði
         beach: Strönd
         beacon: Viti
@@ -132,8 +131,8 @@ is:
         cave_entrance: "Hella inngangur"
         information: "Upplýsingar fyrir ferðamenn"
         memorial: Minnisvarði
-        theme_park: Þemagarður
+        theme_park: "Þemagarður"
         tower: Turn
-        viewpoint: Útsýnispallur
+        viewpoint: "Útsýnispallur"
       unknown:
-        unknown: "Ekki vitað"
+        unknown: Ekki vitað

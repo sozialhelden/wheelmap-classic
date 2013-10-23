@@ -1,19 +1,21 @@
 a {
-  font-size: 12px;
-  color: #333;
+  font-size: inherit;
+  color: $blueDark;
   text-decoration: none;
+  cursor: pointer;
+  @include transition-property(color);
+  @include transition-duration($link-transition-duration);
+
+  &:hover,
   &:visited {
-    font-size: 12px;
-    color: #333;
-    text-decoration: none;
-  }
-  &:hover {
-    color: #F00;
+    color: darken($blueDark, 20%);
     text-decoration: inherit;
   }
-  &:active {
-    color: #444;
+
+  &:visited {
+    color: darken($blueDark, 30%);
   }
+
   &:focus {
     outline: none;
   }

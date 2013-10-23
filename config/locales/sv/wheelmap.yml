@@ -1,4 +1,3 @@
----
 sv:
   application:
     require_no_user:
@@ -12,7 +11,7 @@ sv:
     root: wheelmap
   common:
     close: stäng
-    skip: "hoppa över"
+    skip: hoppa över
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -62,7 +61,7 @@ sv:
       destroy:
         notice: "Bilden har tagits bort"
   form:
-    show_fully_accessible_places: Rullstolstillgänglig
+    show_fully_accessible_places: "Rullstolstillgänglig"
     show_limited_accessible_places: "begränsat rullstolstillgänglig"
     show_places_without_status: "okänd status"
     show_unaccessible_places: "ej rullstolstillgänglig"
@@ -98,7 +97,7 @@ sv:
       terms: "Jag godkänner reglerna för användning"
       type: "Typ:"
       website: "Webbplats:"
-      wheelchair: Rullstolstillgänglighet?
+      wheelchair: "Rullstolstillgänglighet?"
       wheelchair_description: "Tillgänglighetskommentar:"
     titles:
       basic: "Grundläggande data"
@@ -108,7 +107,7 @@ sv:
   header:
     meta:
       description: "Hitta rullstolstillgängliga platser - wheelmap.org"
-      homepage: Hemsida
+      homepage: "Hemsida"
       keywords: "rullstolstillgängliga platser hitta sök lägg till"
       search: Sök
     navigation:
@@ -136,7 +135,7 @@ sv:
     title: "Hitta rullstolstillgängliga platser"
   helpers:
     select:
-      prompt: Välj
+      prompt: "Välj"
     submit:
       create: "Skapa %{model}"
       submit: "spara %{model}"
@@ -147,13 +146,13 @@ sv:
         category: "Välj kategori:"
         deselect_all: "Välj ingen"
         select_all: "Välj alla"
-        wheelchair: Rullstolstillgänglig?
+        wheelchair: "Rullstolstillgänglig?"
       ie:
         action:
           ignore: Ignorera
           upgrade: "Uppdatera webbläsaren"
         warning:
-          headline: Tyvärr!
+          headline: "Tyvärr!"
           message: "Du verkar använda Internet Explorer. Wheelmap behöver en webbläsare som följer standarderna för att fungera rätt. Vänligen använd Firefox, Chrome, Safari eller Opera"
       link:
         node:
@@ -161,12 +160,10 @@ sv:
       popup:
         form:
           limited: "begränsat rullstolstillgänglig"
-          ? "no"
-          : "ej rullstolstillgänglig"
+          'no': "ej rullstolstillgänglig"
           save: Update
           unknown: "okänd status"
-          ? "yes"
-          : "fullt rullstolstillgänglig"
+          'yes': "fullt rullstolstillgänglig"
         help: "Rullstolstillgänglig? (Hjälp)"
         more: "mera ..."
   how?: Hur?
@@ -175,13 +172,11 @@ sv:
       wheelchair:
         limit:
           headline: "Alla begränsat rullstolstillgängliga %{type} i %{city} (%{count})"
-        ? "no"
-        :
+        'no':
           headline: "Alla ej rullstolstillgängliga %{type} i %{city} (%{count})"
         unknown:
           headline: "Alla %{type} i %{city} med okänd rullstolstillgänglighet (%{count})"
-        ? "yes"
-        :
+        'yes':
           headline: "Alla rullstolstillgängliga %{type} i %{city} (%{count})"
   layouts:
     application:
@@ -303,7 +298,7 @@ sv:
           connected: "Status: kopplad"
           grant: "Koppla nu"
           not_connected: "Status: frånkopplad"
-          revoke: "Koppla ifrån"
+          revoke: Koppla ifrån
       headline: "Ändra din profil"
   search:
     index:
@@ -321,13 +316,12 @@ sv:
   statistics: Statistik
   support:
     array:
-      last_word_connector: och
+      last_word_connector: "och"
       sentence_connector: och
-      skip_last_comma: true
-      two_words_connector: och
+      two_words_connector: "och"
       words_connector: ","
     select:
-      prompt: Välj
+      prompt: "Välj"
   time:
     am: am
     formats:
@@ -345,7 +339,7 @@ sv:
     destroy:
       notice: "Hejdå, kom tillbaka snart!"
     new:
-      email: E-postadress
+      email: "E-postadress"
       login: "Logga in"
       login_with_twitter: "Logga in med hjälp av Twitter"
       password: Lösenord
@@ -354,26 +348,22 @@ sv:
     after_signup_edit:
       welcome:
         headline: "Du är nästan klar! Avsluta din ansökan om Wheelmapkonto här:"
-        set_password_for_mobile: |-
-            Du är nu klar med din registrering hos OpenStreetMap-
-            Ange nu en e-postadress och lösenord för ditt Wheelmapkonto och därefter är allt klart. Du behöver ange denna e-postadress och lösenord när du loggar in på Wheelmap-appen för iPhone eller Android.
+        set_password_for_mobile: "Du är nu klar med din registrering hos OpenStreetMap-\nAnge nu en e-postadress och lösenord för ditt Wheelmapkonto och därefter är allt klart. Du behöver ange denna e-postadress och lösenord när du loggar in på Wheelmap-appen för iPhone eller Android."
         text: "Hur kan vi kontakta dig? Du kan senare ändra denna information i din profil."
     edit:
       headline:
         your_images: "Dina uppladdade bilder"
   wheelchairstatus:
     limited: "begränsat rullstolstillgänglig"
-    ? "no"
-    : "ej rullstolstillgänglig"
+    'no': "ej rullstolstillgänglig"
     unknown: "rullstolstillgänglighet okänd"
-    ? "yes"
-    : "fullt rullstolstillgänglig"
+    'yes': "fullt rullstolstillgänglig"
   wheelmap:
     footer:
       a_project_of: "Ett projekt från"
       based_on: "Baserad på"
       become_a_supporter: "Bli en sponsor"
-      main_supporter: Huvudsponsor
+      main_supporter: "Huvudsponsor"
     itunes:
       alt: "AppStore Logo"
       title: "Hämta för iPhone!"

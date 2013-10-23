@@ -1,11 +1,21 @@
 de:
+  faq:
+    answers:
+      0: "Du kannst die Markierung jederzeit selbst ändern. Einfach die richtige Markierung wählen und \"Speichern\" - fertig!"
+      1: "Als angemeldeter Nutzer kannst du alle Angaben zu einem Ort selbst ändern. Klicke auf \"Bearbeiten\" und korrigiere oder ergänze die Angaben."
+      2: "Du kannst zusätzliche Informationen (z.B. \"Dieser Ort hat eine Rampe\") als Hinweis hinterlassen. Klicke auf \"Bearbeiten\" und \"Kommentar verfassen\"."
+    headline: "Gibt es ein Problem mit diesem Ort?"
+    questions:
+      0: "Die Markierung ist falsch."
+      1: "Angaben zum Ort sind falsch bzw. fehlen."
+      2: "Ich habe mehr Informationen zum Ort."
   header:
     navigation:
       about_wheelmap: "Über Wheelmap"
       choose_language: "Sprache wählen"
       contact: Kontakt
       map: Karte
-      projects: "Projekte"
+      projects: Projekte
     toolbar:
       categories: Kategorien
   home:
@@ -22,6 +32,38 @@ de:
       form:
         legend: "Lage des Ortes"
         location: "Bitte klicke auf der Karte an die Stelle, wo sich der Ort befindet!"
+    node_data:
+      address: "Adresse:"
+      contact_details: "Kontaktdaten:"
+    node_edit:
+      details: "Details"
+      edit: "Bearbeiten"
+    node_map:
+      map: "Karte:"
+    node_note:
+      comment: "Nutzerkommentar:"
+    node_photos:
+      add: "Hinzufügen"
+      photos_of_this_place: "Fotos von diesem Ort:"
+      upload: "Hochladen"
+    node_similar:
+      similar: "Ähnliche Orte: %{name}"
+    node_status:
+      accessible_toilet: "Rollstuhlgerechtes WC:"
+      premium: "%{name} sagt: dieser Ort ist"
+      wheelchair_accessibility: "Rollstuhlgerechtigkeit:"
+    node_streetview:
+      streetview: "Strassenansicht:"
+    show:
+      header:
+        meta:
+          description: "Finde auf Wheelmap.org heraus, ob der Ort rollstuhlgerecht ist. Oder füge Informationen und Bilder zu dem Ort hinzu."
+          title: "Dieser Ort ist auf Wheelmap.org: %{name}"
+      share:
+        email: "E-Mail"
+        facebook: Facebook
+        text: "Ich habe folgenden Ort auf Wheelmap.org gefunden: %{name}"
+        twitter: Twitter
   search:
     index:
       no-results:

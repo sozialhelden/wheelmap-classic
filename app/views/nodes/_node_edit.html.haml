@@ -1,0 +1,8 @@
+%section#node-edit
+  = render partial: 'node_faq'
+
+  = link_to edit_node_path(node_edit), class: 'btn' do
+    %i.icon-pencil
+    %span.visible-desktop.visible-phone=t('.edit')
+
+  = render partial: 'node_share', object: node_edit

@@ -1,4 +1,3 @@
----
 fr:
   application:
     require_no_user:
@@ -29,7 +28,7 @@ fr:
       greater_than: "doit être plus que %{count} "
       greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
       inclusion: "valeur non-valide"
-      invalid: non-valide
+      invalid: "non-valide"
       less_than: "doit être plus petit que %{count} "
       less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
       not_a_number: "n' est pas un nombre"
@@ -87,7 +86,7 @@ fr:
       name: "Nom:"
       osm_password: "Mot de passe sur OSM"
       osm_username: "Nom d'utilisateur sur OSM"
-      password: "Mot de passe"
+      password: Mot de passe
       password_confirmation: "Répéter le mot de passe"
       phone: "Téléphone:"
       postcode: "Code postal:"
@@ -116,10 +115,10 @@ fr:
       feedback: Commentaire
       home: Accueuil
       how_to_add_a_place: "Comment peut-on ajouter des lieux?"
-      imprint: "Mentions légales"
+      imprint: Mentions légales
       logged_in_as: "Connecté sous le nom de"
-      login: Connecter
-      logout: Déconnecter
+      login: "Connecter"
+      logout: "Déconnecter"
       newsletter: bulletin
       press: Presse
       profile: Profil
@@ -130,7 +129,7 @@ fr:
       add_place: "Ajouter un lieu"
       find: trouver
       label: ~
-      placeholder: "par exemple Sunset Boulevard L.A. ou Porte de Brandenbourg à Berlin"
+      placeholder: "Chercher un endroit"
       title_add_place: "Ajoutez un nouveau lieu à cet endroit"
     tagline: "Wheelmap logo"
     title: "Où aller en  fauteuil roulant? "
@@ -160,13 +159,11 @@ fr:
           create: "Ajouter un nouveau lieu"
       popup:
         form:
-          limited: "partiellement accessible en fauteuil roulant"
-          ? "no"
-          : "Non accessible en fauteuil roulant"
+          limited: "partiellement accessible"
+          'no': "non-accessible"
           save: Sauvegarder
           unknown: "statut inconnu"
-          ? "yes"
-          : "entièrement accessible en fauteuil roulant"
+          'yes': "entièrement accessible"
         help: "Accessible en fauteuil roulant? (Aide)"
         more: "davantage ..."
   how?: Comment?
@@ -175,13 +172,11 @@ fr:
       wheelchair:
         limit:
           headline: "Tous (ou toutes)  les %{type} accessible en fauteuil roulant à %{city} (%{count})"
-        ? "no"
-        :
+        'no':
           headline: "Tous (ou toutes) %{type}  non accessibles en fauteuil roulant à %{city} (%{count})"
         unknown:
           headline: "Tous (ou toutes) %{type} à  %{city}  avec statut d'accessibilité inconnu"
-        ? "yes"
-        :
+        'yes':
           headline: "Tous (ou toutes) les %{type} accessible en fauteuil à %{city} (%{count})"
   layouts:
     application:
@@ -210,7 +205,7 @@ fr:
       not_available: "Désolé, cette page est temporairement indisponible."
       not_existent: "Désolé, ce lieu n'est plus disponible."
       not_found: "Désolé, page introuvable."
-      param_missing: "Entrer une recherche"
+      param_missing: "Entrez une recherche"
     flash:
       authorize_wheelmap: "Vous avez besoin d'un compte sur OpenStreetMap pour modifier des données."
     new:
@@ -232,7 +227,7 @@ fr:
         listing: "Tous les endroits du type %{type} dans %{city}"
         upload: "télécharger la photo"
       more_data_from: "Il existe d'autres données concernant ce lieu, confirmeés par"
-      show-in-osm: "indiquer sur Openstreetpmap"
+      show-in-osm: indiquer sur Openstreetpmap
     update:
       flash:
         not_successfull: "Oups, votre entrée était incorrecte ou incomplète."
@@ -276,8 +271,8 @@ fr:
           byte:
             one: octet
             other: octets
-          gb: "GB "
-          kb: "KB "
+          gb: 'GB '
+          kb: 'KB '
           mb: MB
           tb: TB
     percentage:
@@ -301,7 +296,7 @@ fr:
       application:
         oauth:
           connected: "Statut: connecté"
-          grant: Connecter
+          grant: "Connecter"
           not_connected: "Statut: Non-connecté"
           revoke: Déconnecter
       headline: "Modifier votre profil"
@@ -324,31 +319,31 @@ fr:
       last_word_connector: ", et"
       sentence_connector: et
       skip_last_comma: true
-      two_words_connector: et
+      two_words_connector: "et"
       words_connector: ","
     select:
       prompt: "Choisissez s.v.p."
   time:
-    am: "du matin"
+    am: du matin
     formats:
       default: "%d %B %Y %H:%M:%S montre / heure "
       long: "%A %d %B %Y %H:%M"
       short: "%d %b %H:%M"
-    pm: "dans l'après-midi"
+    pm: dans l'après-midi
   user_sessions:
     create:
       activation:
         notice: "Votre compte est maintenant activé!"
       error:
         notice: "L'adresse mail et le mot de passe ne correspondent pas."
-      notice: Connecté!
+      notice: "Connecté!"
     destroy:
       notice: "Au revoir, à bientôt!"
     new:
       email: "Adresse e-mail"
-      login: Connecter
+      login: "Connecter"
       login_with_twitter: "Connecter sur Twitter"
-      password: "Mot de passe"
+      password: Mot de passe
       remember_me: "Rester connecté"
   users:
     after_signup_edit:
@@ -361,11 +356,9 @@ fr:
         your_images: "vos photos téléchargées"
   wheelchairstatus:
     limited: "partiellement accessible en  fauteuil roulant"
-    ? "no"
-    : "pas accessible en fauteuil roulant"
+    'no': "pas accessible en fauteuil roulant"
     unknown: "statut de l'accessibilité inconnu"
-    ? "yes"
-    : "Entièrement accessible en fauteuil roulant."
+    'yes': "Entièrement accessible en fauteuil roulant."
   wheelmap:
     footer:
       a_project_of: "Un projet de"
@@ -384,9 +377,7 @@ fr:
       not_accessible: "La hauteur de la marche à l'entrée est supérieur à  7cm ; ou il y a plusieurs marches à  l'entrée; ou les endroits les plus importants ne sont pas accessibles en fauteuil roulant"
       unknown_accessible: "aide nous à classer ce lieu"
   will_paginate:
-    next_label: |-
-        avant &#8594; Zeit
-        devant &#8594; Ort
+    next_label: "avant &#8594; Zeit\ndevant &#8594; Ort"
     page_entries_info:
       multi_page: "Indique %{model} %{from} -%{to} de %{count} total"
       multi_page_html: "Indique  %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> von <b>%{count}</b> total"
@@ -399,4 +390,4 @@ fr:
         other: "Indique <b>all&nbsp;%{count}</b> %{model}"
         zero: "%{model} pas trouvé"
     page_gap: "&hellip;"
-    previous_label: retour
+    previous_label: "retour"

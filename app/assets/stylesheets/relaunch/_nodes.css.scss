@@ -1,0 +1,670 @@
+@import "bootstrap/mixins";
+
+$boder_color: darken($orange-gray, 5%);
+
+$node-photos-gutter: 2.25%;
+$node-photos-columns: 4;
+$node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-photos-columns;
+
+#node-wrapper {
+  padding: $headerHeight + 20px 0 $footerHeight + 20px 0;
+
+  .flash-wrapper {
+    top: $headerHeight;
+  }
+}
+
+#node {
+  background-color: $white;
+  @include box-shadow(0 2px 10px rgba($black, .5));
+  overflow: hidden; // needed for the full height sidebar hack (aside)
+
+  h2 {
+    font-size: $baseFontSize;
+    font-weight: normal;
+    line-height: $baseLineHeight;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .icon-question-sign {
+    @include transition-property(opacity);
+    @include transition-duration($link-transition-duration);
+
+    &:hover {
+      opacity: 1 !important;
+    }
+  }
+
+  @include grid-fluid(100% / $gridColumns, 0);
+
+  @media (max-width: 767px) {
+    .node-wrapper {
+      float: none !important;
+      width: 100% !important;
+    }
+  }
+
+  .popover {
+    width: 180px;
+    line-height: $baseLineHeight;
+  }
+}
+
+#node-header {
+  @include headline-gradient();
+  padding: 10px 20px 15px 20px;
+  position: relative; // For close page button
+  z-index: 1;
+
+  * {
+    margin: 0;
+  }
+
+  h1 {
+    color: $white;
+    font-size: $fontSizeHeadline;
+    @include text-shadow(0px 1px 0px #000000);
+  }
+
+  .breadcrumbs {
+    @include clearfix();
+    @include text-shadow(0px 1px 0px rgba($black, 0.75));
+    font-size: $fontSizeMini;
+    margin-bottom: 10px;
+    color: rgba($grayLighter, 0.75);
+
+    li {
+      float: left;
+      padding-right: 3px;
+      line-height: 24px;
+
+      .icon-angle-right {
+        line-height: inherit;
+        font-size: $fontSizeLarge;
+        float: left;
+        padding: 0 7px 0 5px;
+      }
+
+      &:first-child .icon-angle-right {
+        display: none;
+      }
+    }
+  }
+
+  .btn {
+    @include buttonBackground($dark-blue, darken($dark-blue, 10%), rgba($white, 0.75), 0 1px 1px rgba($black, .75));
+    @include box-shadow(none);
+    border: 1px solid darken($dark-blue, 10%);
+    font-size: $fontSizeMini;
+    line-height: 22px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .back {
+    float: left;
+    margin-right: 15px;
+    border-left: 0;
+    position: relative;
+    padding-left: 9px;
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      height: 50%;
+      width: 7px;
+      border-left: 1px solid darken($dark-blue, 10%);
+    }
+
+    &:before {
+      @include transform(skew(-35deg, 0));
+      @include background-image(linear-gradient(top, $dark-blue, darken($dark-blue, 5%)));
+      top: -1px;
+      border-top: 1px solid darken($dark-blue, 10%);
+    }
+
+    &:after {
+      @include transform(skew(35deg, 0));
+      @include background-image(linear-gradient(top, darken($dark-blue, 5%), darken($dark-blue, 10%)));
+      bottom: -1px;
+      border-bottom: 1px solid darken($dark-blue, 10%);
+    }
+
+    &:hover {
+      &:after,
+      &:before {
+        background-image: none;
+        background-color: darken($dark-blue, 10%);
+      }
+    }
+  }
+
+  .close {
+    @include opacity(100);
+    float: right;
+    width: 25px;
+    padding-left: 0;
+    padding-right: 1px; // Fix positing
+    text-align: center;
+    font-size: $baseFontSize;
+  }
+
+  address {
+    color: $grayLighter;
+  }
+}
+
+#node-aside {
+  padding: 15px;
+  background-color: lighten($orange-gray, 7%);
+  border-left: 1px solid $boder_color;
+  // Hack for having a full height sidebar
+  padding-bottom: 10000px;
+  margin-bottom: -10000px;
+
+  li {
+    position: relative;
+  }
+
+  address {
+    ul {
+      background-color: darken($white, 1%);
+      border: 1px solid darken($orange-gray, 7%);
+      @include border-radius(3px);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    li {
+      padding: $fontSizeLarge / 2;
+      padding-left: $fontSizeLarge * 2;
+    }
+
+    [class^='icon-'] {
+      color: lighten($yellow-gray, 30%);
+      position: absolute;
+      left: $fontSizeSmall;
+      font-size: 1.3em;
+      line-height: $baseFontSize + $fontSizeLarge / 2;
+    }
+  }
+}
+
+#node-edit {
+  padding-bottom: 20px;
+
+  .btn {
+    @include buttonBackground(lighten($orange-gray, 5%), darken($orange-gray, 7%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
+    font-weight: bold;
+  }
+}
+
+#node-similar-locations {
+  ul {
+    font-size: $fontSizeSmall;
+  }
+
+  li {
+    padding: $baseFontSize / 2;
+    padding-left: $baseFontSize * 1.5;
+    line-height: $baseFontSize;
+  }
+
+  .wheelchair {
+    width: $fontSizeSmall;
+    height: $fontSizeSmall;
+    position: absolute;
+    left: 0;
+    @include border-radius(3px);
+  }
+
+  .distance {
+    font-size: $fontSizeMini;
+    display: block;
+    color: lighten($yellow-gray, 30%);
+  }
+}
+
+#node-content > section {
+  padding: 15px;
+}
+
+#node-status {
+  padding-top: 0 !important;
+  background-color: lighten($orange-gray, 1%);
+  @include box-sizing(border-box);
+  border-bottom: 1px solid $boder_color;
+
+  h2 {
+    margin-top: 15px;
+  }
+
+  .icon-caret-down,
+  .icon-question-sign {
+    line-height: inherit;
+  }
+
+  .popover {
+    font-weight: normal;
+    color: $black;
+    @include text-shadow(none);
+  }
+
+  .dropdown-toggle,
+  .dropdown-menu,
+  .alert,
+  .premium {
+    width: 80%;
+    min-width: 250px;
+  }
+
+  .dropdown-toggle {
+    height: 40px;
+    text-align: left;
+    line-height: 30px;
+    @include box-sizing(border-box);
+
+    .icon-question-sign {
+      padding-left: 5px;
+      font-size: 1.2em;
+      opacity: .6;
+      color: white;
+    }
+  }
+
+  .dropdown-menu {
+    @include border-top-radius(0);
+
+    a {
+      line-height: 25px;
+      padding: 5px 10px;
+
+      .icon-question-sign {
+        opacity: .5;
+        // Needed for firefox floating bug
+        position: absolute;
+        right: 10px;
+      }
+    }
+
+    .wm-checkbox {
+      height: 25px;
+      width: 25px;
+      line-height: inherit;
+      vertical-align: middle;
+      display: inline-block;
+      @include border-radius(3px);
+      @include box-shadow(inset 0 1px 0 rgba($white, 0.5), 0 1px 1px rgba($black, 0.1));
+      margin-right: 5px;
+
+      i {
+        width: 17px;
+        height: 17px;
+        line-height: 17px;
+        display: block;
+        margin: 3px;
+        border: inherit;
+        @include border-radius(3px);
+        color: $black;
+        background-color: $white;
+        @include text-shadow(none);
+        @include box-shadow(0 1px 0 rgba($white, 0.5), inset 0 1px 2px rgba($black, 0.2));
+        overflow: hidden;
+        text-align: center;
+        text-indent: -5000px; // Hide check icon
+      }
+
+      &.checked i {
+        text-indent: 0px;
+      }
+    }
+  }
+
+  .premium {
+    position: relative;
+    font-size: $fontSizeSmall;
+    padding: 8px 12px 6px 41px;
+    margin-top: 10px;
+    background-color: lighten($orange-gray, 6%);
+    border: 1px solid darken($orange-gray, 10%);
+    line-height: $fontSizeSmall * 1.45;
+    color: darken($orange-gray, 35%);
+
+    @include box-sizing(border-box);
+    @include border-radius(3px);
+    @include box-shadow(0px 1px 0px 0px rgba($white,0.5));
+    @include text-shadow(0px 1px 0px rgba($white,0.5));
+
+    a {
+      text-decoration: underline;
+      color: inherit;
+    }
+
+    .icon-stack {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      margin-top: -1em;
+      line-height: 2em;
+      font-size: inherit;
+
+      .icon-ok {
+        @include box-sizing(border-box);
+        padding-top: 1px;
+      }
+    }
+
+    .yes {
+      color: $wheelchair-yes;
+    }
+
+    .no {
+      color: $wheelchair-no;
+    }
+
+    .limited {
+      color: $wheelchair-limited;
+    }
+  }
+
+  .submit {
+    @include border-bottom-radius(3px);
+    margin-bottom: -5px;
+    margin-top: 5px;
+    padding: 5px;
+    text-align: right;
+    border-top: 1px solid darken($orange-gray, 5%);
+    background-color: lighten($orange-gray, 10%);
+
+    .btn {
+      @include buttonBackground(lighten($orange-gray, 5%), darken($orange-gray, 5%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
+      text-align: center;
+      font-weight: bold;
+      border-color: darken($orange-gray, 20%);
+    }
+  }
+
+  @media (max-width: 580px), (min-width: 768px) and (max-width: 979px) {
+    .span6 {
+      float: none !important;
+      width: 100% !important;
+    }
+
+    .dropdown-toggle,
+    .dropdown-menu,
+    .alert,
+    .premium {
+      width: 100%;
+    }
+  }
+}
+
+#node-report {
+  .caret {
+    margin-left: 7px;
+  }
+}
+
+#node-report-accordion {
+  width: 320px;
+  font-size: $fontSizeSmall;
+  border: none;
+  color: #505050;
+
+  header {
+    @include background-image(linear-gradient(top, #B0B0B0 0%, #7A7A7A 100%));
+    @include box-shadow(inset 0px 1px 0px 0px rgba($white, 0.25));
+    @include box-sizing(border-box);
+    @include border-top-radius(3px);
+    border: 1px solid #6C5C5C;
+    line-height: 26px;
+    height: 30px;
+    font-weight: bold;
+    @include text-shadow(0px 1px 0px $black);
+    color: $white;
+    padding: 3px 5px 1px 10px;
+
+    .pull-right {
+      line-height: 22px;
+    }
+
+    .btn {
+      @include buttonBackground(#828282, #535353, #D2D2D2);
+      line-height: 20px;
+      height: 20px;
+      vertical-align: middle;
+      border-color: #393939;
+    }
+  }
+
+  .accordion-toggle {
+    padding: 0px 10px;
+    line-height: 30px;
+    display: block;
+    border-top: 1px solid #E5E5E5;
+    color: inherit;
+    text-decoration: none;
+
+    .icon-chevron-up {
+      line-height: inherit;
+      font-size: .9em;
+      opacity: .5;
+    }
+
+    &.collapsed .icon-chevron-up {
+      @include transform(rotate(180deg));
+    }
+  }
+
+  .accordion-inner {
+    padding: 7px 10px;
+    background: #F4F4F4;
+    @include box-shadow(inset 0px 2px 2px 0px rgba($black, 0.10));
+    white-space: normal;
+  }
+}
+
+#node-share {
+  .dropdown-menu {
+    font-size: $fontSizeSmall;
+    min-width: 120px;
+    padding: 3px 0;
+  }
+
+  a {
+    padding: 2px 8px;
+
+    &:hover i {
+      color: white;
+    }
+  }
+
+  .icon-twitter {
+    color: #00aced;
+  }
+
+  .icon-facebook {
+    color: #3B5998;
+  }
+}
+
+#node-photos {
+  border-bottom: 1px solid $boder_color;
+  background-color: lighten($orange-gray, 10%);
+
+  img {
+    @include box-sizing(border-box);
+    width: 100%;
+    background-color: $white;
+  }
+
+  ul {
+    @include clearfix();
+    list-style: none;
+    margin: 0;
+    margin-left: -$node-photos-gutter;
+    margin-bottom: -$node-photos-gutter;
+  }
+
+  li {
+    @include box-sizing(border-box);
+    float: left;
+    width: $node-photos-width;
+    margin: 0 0 $node-photos-gutter $node-photos-gutter;
+    background-color: $white;
+
+    &.error img {
+      border-color: $errorText;
+      background-color: $errorBackground;
+    }
+  }
+}
+
+#node-photo-dropzone {
+  margin: 0;
+
+  li {
+    a {
+      position: relative;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    img {
+      background-color: transparent;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .clickable {
+    position: relative;
+    // Needed for height = width
+    height: 0;
+    padding-bottom: $node-photos-width;
+
+    a {
+      @include box-sizing(border-box);
+      @include border-radius($borderRadiusSmall);
+      @include transition-property(all);
+      @include transition-duration(0.1s);
+      @include text-shadow(0 1px rgba($white, 0.5));
+      position: absolute;
+      display: block;
+      top: 0;
+      bottom: 0;
+      text-align: center;
+      padding-top: 50%;
+      font-weight: bold;
+
+      i[class^="icon"] {
+        font-size: 2em;
+        margin: 0 auto;
+        margin-top: -.75em;
+
+        display: block;
+      }
+
+      &.add {
+        z-index: 1;
+        border: 1px solid darken($orange-gray, 10%);
+        color: darken($orange-gray, 25%);
+        background-color: lighten($orange-gray, 5%);
+      }
+
+      &.upload {
+        z-index: 3;
+        color: darken($wheelchair-yes, 40%);
+        display: none;
+
+        &.in {
+          display: block;
+        }
+      }
+    }
+
+    @media(max-width: 580px), (min-width: 768px) and (max-width: 979px) {
+      a {
+        font-size: $fontSizeSmall;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .uploadprogress {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: $wheelchair-yes;
+  }
+
+  .alert {
+    margin-bottom: 15px;
+  }
+
+  // Fallback
+  .fallback {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    display: none;
+
+    input {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      @include opacity(0);
+      cursor: pointer;
+    }
+  }
+}
+
+#node-note {
+  padding: 0;
+
+  p {
+    padding: 15px;
+    border: 1px solid darken($white, 12%);
+    background-color: darken($white, 2%);
+    @include border-radius(3px);
+  }
+}
+
+#node-map {
+  padding-bottom: 15px;
+  @include clearfix();
+
+  .map {
+    position: relative;
+
+    .leaflet-marker-icon {
+      left: 50%;
+      margin-left: -14px;
+      top: 50%;
+      margin-top: -32px;
+    }
+  }
+
+  small {
+    font-size: $fontSizeMini;
+    opacity: .5;
+  }
+}
+
+#node-streetview, #node-map {
+  img {
+    width: 100%;
+    @include box-sizing(border-box);
+  }
+}

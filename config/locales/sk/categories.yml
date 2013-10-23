@@ -1,4 +1,3 @@
----
 sk:
   poi:
     category:
@@ -7,9 +6,9 @@ sk:
       food: Jedlo
       government: Vláda
       health: Zdravie
-      leisure: "Voľný čas"
+      leisure: Voľný čas
       misc: Rôzne
-      money_post: Finančníctvo
+      money_post: "Finančníctvo"
       public_transfer: "Verejná doprava"
       shopping: Nákupy
       sport: Šport
@@ -19,17 +18,17 @@ sk:
       accommodation:
         beach_resort: "Plážový hotel"
         bed_and_breakfast: "Nocľah s raňajkami"
-        camp_site: Kemping
+        camp_site: "Kemping"
         caravan_site: "Autokemping pre obytné prívesy"
-        chalet: "Horská chata"
+        chalet: Horská chata
         dormitory: Internát
-        guest_house: Penzión
+        guest_house: "Penzión"
         hostel: Hostel
         hotel: Hotel
         motel: Motel
       education:
-        college: "Vysoká škola"
-        driving_school: Autoškola
+        college: Vysoká škola
+        driving_school: "Autoškola"
         kindergarten: Škôlka
         library: Knižnica
         museum: Múzeum
@@ -41,11 +40,11 @@ sk:
         cafe: Kaviareň
         drinking_water: "Pitná voda"
         fast_food: "Rýchle občerstvenie"
-        ice_cream: Zmrzlina
+        ice_cream: "Zmrzlina"
         pub: Krčma
         restaurant: Reštaurácia
       government:
-        courthouse: "Budova súdu"
+        courthouse: Budova súdu
         embassy: Veľvyslanectvo
         government: "Vládna agentúra"
         police: Polícia
@@ -67,10 +66,10 @@ sk:
         cinema: Kino
         community_center: "Komunitné centrum"
         gallery: Galéria
-        nightclub: "Nočný klub"
+        nightclub: Nočný klub
         playground: Ihrisko
         sauna: Sauna
-        stripclub: "Strip club"
+        stripclub: Strip club
         theatre: Divadlo
         zoo: Zoo
       misc:
@@ -78,14 +77,14 @@ sk:
         estate_agent: "Realitná kancelária"
         insurance: Poistenie
         lawyer: Právnik
-        place_of_worship: Svätyňa
+        place_of_worship: "Svätyňa"
         toilets: Toalety
       money_post:
         atm: Bankomat
         bank: Banka
-        bureau_de_change: Zmenáreň
+        bureau_de_change: "Zmenáreň"
         post_box: "Poštovná schránka"
-        post_office: Pošta
+        post_office: "Pošta"
       public_transfer:
         aerodrome: Letisko
         bicycle_parking: "Stojan na bicykle"
@@ -93,7 +92,7 @@ sk:
         boatyard: Lodenica
         bus_station: "Autobusová stanica"
         bus_stop: "Zastávka autobusu"
-        cable_car: Lanovka
+        cable_car: "Lanovka"
         car_rental: "Požičovňa automobilov"
         car_sharing: "Zdieľanie automobilov"
         chair_lift: "Sedačková lanovka"
@@ -105,7 +104,7 @@ sk:
         parking: Parkovanie
         parking_aisle: "Parkovacia ulička"
         platform: Nástupište
-        station: Stanica
+        station: "Stanica"
         subway_entrance: "Vchod do metra"
         terminal: "Letiskový terminál"
         tram_stop: "Zastávka električky"
@@ -114,27 +113,27 @@ sk:
         bakery: Pekáreň
         beauty: "Salón krásy"
         beverages: Nápoje
-        bicycle: Bicykle
+        bicycle: "Bicykle"
         books: Knihy
         butcher: Mäsiarstvo
-        car_repair: Autoservis
-        car_shop: Automobily
+        car_repair: "Autoservis"
+        car_shop: "Automobily"
         chemist: Lekáreň
         clothes: Oblečenie
         computer: Počítače
-        confectionery: Cukráreň
+        confectionery: "Cukráreň"
         convenience: Príslušenstvo
         deli: Delikatesy
         department_store: "Obchodný dom"
         doityourself: "Kutilské potreby"
-        dry_cleaning: Čistiareň
+        dry_cleaning: "Čistiareň"
         electronics: Elektronika
-        fabric: Textil
+        fabric: "Textil"
         farm_shop: "Farmársky obchod"
         florist: Kvetinárstvo
         furniture: Nábytok
         garden_centre: "Záhradné centrum"
-        gift: Suveníry
+        gift: "Suveníry"
         hairdresser: Kaderníctvo
         hardware: Železiarstvo
         jewelry: Klenotníctvo
@@ -144,7 +143,7 @@ sk:
         optician: Optik
         organic: "Organické výrobky"
         outdoor: "Outdoorové vybavenie"
-        pet: Zverimex
+        pet: "Zverimex"
         photo: Fotky
         second_hand: "Second hand"
         shoes: Topánky
@@ -153,9 +152,9 @@ sk:
         supermarket: Supermarket
         toys: Hračky
         travel_agency: "Cestovná kancelária"
-        video: Videopožičovňa
+        video: "Videopožičovňa"
       sport:
-        pitch: Ihrisko
+        pitch: "Ihrisko"
         sports_centre: "Športové centrum"
         stadium: Štadión
         swimming: Plávanie
@@ -174,6 +173,6 @@ sk:
         memorial: Pamätník
         theme_park: "Zábavný park"
         tower: Veža
-        viewpoint: Výhľad
+        viewpoint: "Výhľad"
       unknown:
         unknown: Neznáme

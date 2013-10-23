@@ -17,7 +17,7 @@ if GC.respond_to?(:copy_on_write_friendly=)
   GC.copy_on_write_friendly = true
 end
 
-timeout (env == 'production' ? 120 : 30)
+timeout (env == 'production' ? 300 : 30)
 
 # This is where we specify the socket.
 # We will point the upstream Nginx module to this socket later on

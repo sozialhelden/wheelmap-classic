@@ -1,10 +1,9 @@
----
 lv:
   poi:
     category:
-      accommodation: "Apmešanās vietas"
+      accommodation: Apmešanās vietas
       education: Izglītība
-      food: "Sabiedriskā ēdināšana"
+      food: Sabiedriskā ēdināšana
       government: Valdība
       health: Veselība
       leisure: Atpūta
@@ -18,24 +17,24 @@ lv:
     name:
       accommodation:
         beach_resort: "Pludmales viesnīca"
-        bed_and_breakfast: B&B
+        bed_and_breakfast: "B&B"
         camp_site: "Nometnes vieta"
         caravan_site: "Treileru kempings"
-        chalet: "Kempinga mājiņas"
+        chalet: Kempinga mājiņas
         guest_house: "Viesu māja"
         hostel: Hostelis
         hotel: Viesnīca
         motel: Motelis
       education:
         college: Koledža
-        kindergarten: "Bērnu dārzs"
+        kindergarten: Bērnu dārzs
         library: Bibliotēka
         museum: Muzejs
         school: Skola
         university: Universitāte
       food:
         bar: Bārs
-        biergarten: "Alus dārzs"
+        biergarten: Alus dārzs
         cafe: Kafejnīca
         drinking_water: "Dzeramais ūdens"
         fast_food: "Ātrā ēdināšana"
@@ -54,7 +53,7 @@ lv:
         medical_supply: "Medicīnas preces"
         pharmacy: Aptieka
         social_facility: "Sociālā iestāde"
-        veterinary: "veterinārā klīnika"
+        veterinary: veterinārā klīnika
       leisure:
         arena: Arēna
         brothel: Bordelis
@@ -62,14 +61,14 @@ lv:
         community_center: "Bērnu un jauniešu centrs"
         gallery: Galerija
         nightclub: Naktsklubs
-        playground: "Rotaļu laukums"
+        playground: Rotaļu laukums
         sauna: Pirts
-        stripclub: "Striptīza klubs"
+        stripclub: Striptīza klubs
         theatre: Teātris
-        zoo: "Zooloģiskais dārzs"
+        zoo: Zooloģiskais dārzs
       misc:
         company: "Uzņēmums (birojs)"
-        lawyer: "Juridiskie pakalpojumi"
+        lawyer: Juridiskie pakalpojumi
         place_of_worship: "Reliģisks objekts"
         toilets: Labierīcības
       money_post:
@@ -88,16 +87,16 @@ lv:
         cable_car: "Trosu dzelzceļš"
         car_rental: "Auto noma"
         car_sharing: "Auto koplietošana"
-        chair_lift: Pacēlājs
+        chair_lift: "Pacēlājs"
         ferry: Prāmis
         ferry_terminal: "Prāmju piestātne"
         fuel: "Degvielas uzpildes stacija"
         halt: Pietura
         light_rail: "Pilsētas vilciens"
-        parking: "Auto stāvvieta"
+        parking: Auto stāvvieta
         parking_aisle: "auto stāvvieta"
         platform: Platforma
-        station: Metro
+        station: "Metro"
         subway_entrance: "Ieeja metro"
         terminal: "Lidostas terminālis"
         tram_stop: "Tramvaja pietura"
@@ -107,24 +106,24 @@ lv:
         beverages: Dzērieni
         bicycle: "Velosipēdu veikals"
         books: Grāmatas
-        butcher: "Gaļas veikals"
+        butcher: Gaļas veikals
         car_repair: "Auto remonts"
         car_shop: "Auto veikals"
         chemist: Aptieka
         clothes: Apģērbs
         computer: Datori
-        convenience: "Dažādas preces"
-        department_store: Universālveikals
+        convenience: Dažādas preces
+        department_store: "Universālveikals"
         doityourself: "mājai & dārzam"
         dry_cleaning: "Ķīmiskā tīrītava"
         electronics: Elektronika
         florist: Florists
         furniture: Mēbeles
-        garden_centre: Apzaļumošana
+        garden_centre: "Apzaļumošana"
         hairdresser: Frizieris
-        hardware: "Saimniecības preces"
+        hardware: Saimniecības preces
         kiosk: Kiosks
-        laundry: "Veļas mazgātuve"
+        laundry: Veļas mazgātuve
         mall: "Iepirkšanās centrs"
         optician: optiķis
         photo: Foto
@@ -138,13 +137,13 @@ lv:
         sports_centre: "Sporta centrs"
         stadium: Stadions
         swimming: Peldēšana
-        swimming_pool: Peldbaseins
+        swimming_pool: "Peldbaseins"
       tourism:
         archaeological_site: "Arheoloģisko izrakumu vieta"
         arts_centre: "Mākslas centrs"
-        artwork: "Mākslas darbs"
-        attraction: "Ievērojama vieta"
-        battlefield: "Kaujas lauks"
+        artwork: Mākslas darbs
+        attraction: Ievērojama vieta
+        battlefield: Kaujas lauks
         beach: Pludmale
         beacon: Bāka
         castle: Pils

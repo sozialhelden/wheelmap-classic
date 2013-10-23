@@ -1,4 +1,3 @@
----
 cs:
   application:
     require_no_user:
@@ -7,9 +6,12 @@ cs:
       notice: "Musíte se přihlásit aby jste viděli tuto stránku."
   breadcrumbs:
     node:
+      create: "Přidat místo"
       edit: "Upravit místo"
+    root: wheelmap
   common:
     close: zavřít
+    skip: přeskočit
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -30,11 +32,12 @@ cs:
       less_than_or_equal_to: "musí být méně nebo rovno %{count}"
       not_a_number: "není číslo"
       not_an_integer: "musí být celé číslo"
-      not_found: nenalezen
+      not_found: "nenalezen"
       not_locked: "nebyl uzamčen"
       not_saved:
-        one: "%{resource} nebyl uložen kvůli chybě:"
-        other: "%{resource} nebyl uložen kvůli %{count} chybám:"
+        one: "%{count} chyba zabránila uložení %{resource}:"
+        few: "%{count} chyby zabránily uložení %{resource}:"
+        other: "%{count} chyb zabránilo uložení %{resource}:"
       odd: "musí být liché číslo"
       taken: "již databáze obsahuje"
       too_long: "je příliš dlouhý/á/é (max. %{count} znaků)"
@@ -43,8 +46,9 @@ cs:
     template:
       body: "Následující pole obsahují chybně vyplněné údaje: "
       header:
-        one: "Při ukládání objektu %{model} došlo k chybám a nebylo jej možné uložit"
-        other: "Při ukládání objektu %{model} došlo ke %{count} chybám a nebylo možné jej uložit"
+        one: "%{count} chyba zabránila uložení %{resource}:"
+        few: "%{count} chyby zabránily uložení %{resource}:"
+        other: "%{count} chyb zabránilo uložení %{resource}:"
   flash:
     actions:
       create:
@@ -54,27 +58,52 @@ cs:
         notice: "%{resource_name} již neexistuje"
       update:
         notice: "Úspěšně jste změnili %{resource_name}"
+    photos:
+      destroy:
+        notice: "Obrázek byl úspěšně smazaný"
   form:
+    show_fully_accessible_places: "Přístupné pro vozíčkáře"
     show_limited_accessible_places: "částečně přístupné pro vozíčkáře"
     show_places_without_status: "neznámý stav"
     show_unaccessible_places: "nepřístupné pro vozíčkáře"
   formtastic:
     hints:
       email: "Vaše adresa je u nás v bezpečí - žádný spam. Slibujeme!"
+      lat: "Posuňte značku na mapě aby jste opravili polohu"
+      password: "(nechte prázdné když nechcete změnit)"
+      phone: "Například: +49 30 123456-78"
+      website: "Například: http://www.example.com"
     labels:
+      category: "Kategorie:"
       centralkey: "Společný klíč:"
-      lon: "Zeměpisná délka"
+      city: "Město:"
+      create: "Vytvořit místo"
+      email: E-Mail
+      finish: Dokončit
+      housenumber: "Číslo:"
+      lat: Zeměpisná šířka
+      lon: Zeměpisná délka
+      name: "Jméno:"
+      osm_password: "OSM heslo"
+      osm_username: "OSM účet"
+      password: Heslo
       password_confirmation: "Zopakujte heslo"
+      phone: "Telefon:"
       postcode: "Směrovací číslo:"
+      privacy_policy: "Souhlasím s paragrafy 1 a 2 ochrany osobních údajů."
       reset: Obnovit
       save: Uložit
       street: "Ulice:"
+      terms: "Souhlasím s podmínkami použití."
       type: "Typ:"
+      website: "Stránka:"
       wheelchair: "Přístupnost pro vozíčkáře?"
       wheelchair_description: "Poznámka k přístupnosti:"
     titles:
       basic: "Základní údaje"
       optional: "Více informací <span class=\"addition\">(všechny položky jsou povinné)</span>"
+  global:
+    form_validation_error: "Došlo k následujícím chybám"
   header:
     meta:
       description: "Nalezněte místa přístupné pro vozíčkáře - wheelmap.org"
@@ -82,14 +111,23 @@ cs:
       keywords: "místa přístupné pro vozíčkáře hledat označovat"
       search: Hledat
     navigation:
-      feedback: "Zpětná vazba"
+      blog: Novinky
+      feedback: Zpětná vazba
+      home: Start
       how_to_add_a_place: "Jak přidám místa?"
       imprint: Impresum
+      logged_in_as: "Přihlášen jako:"
       login: "Přihlásit se"
       logout: "Odhlásit se"
+      press: Tisk
+      profile: Profil
+      suggestions: Návrhy
+      what_is_barrier_free: "Co to znamená \"přístupné pro vozíčkáře\"?"
       what_is_wheelmap: "Co je to wheelpmap?"
     searchbar:
+      add_place: "Přidat další místo"
       find: Najít
+      placeholder: "Hledat místo"
       title_add_place: "Přidejte sem nové místo!"
     tagline: "Logo Wheelmap"
   helpers:
@@ -103,6 +141,7 @@ cs:
     index:
       filter:
         category: "Vyberte kategorii"
+        deselect_all: "Odznačit vše"
         select_all: "Označit vše"
       ie:
         action:
@@ -111,13 +150,18 @@ cs:
         warning:
           headline: "Omlouváme se!"
           message: "Zda se, že používáte Internet Explorer. Wheelmap potřebuje prohlížeč, který odpovídá normám. Prosím zvažte použití některého z následujících prohlížečů: Firefox, Chrome, Safari nebo Opera."
+      link:
+        node:
+          create: "Přidat místo"
       popup:
         form:
           limited: "částečně přístupné pro vozíčkáře"
+          'no': "nepřístupné pro vozíčkáře"
+          save: Aktualizovat
           unknown: "neznámý status"
-          ? "yes"
-          : "přístupné pro vozíčkáře"
+          'yes': "přístupné pro vozíčkáře"
         help: "Přístupné pro vozíčkáře? (Pomoc)"
+        more: "více ..."
   how?: Jak?
   landing_pages:
     index:
@@ -131,11 +175,17 @@ cs:
       city: "%{city} %{postcode}"
     tags:
       phone: "Telefon:"
+      website: "Stránka:"
   nodes:
     create:
       flash:
         not_successfull: "Jeje, vaše zadání bylo nesprávné nebo neúplné"
         successfull: "Děkujeme, váš příspěvek byl uložený a brzy bude zobrazený na mapě."
+    edit:
+      header:
+        title: "Upravit místo: %{node} | wheelmap.org"
+      link:
+        large_map: "&laquo; Zrušit\n"
     errors:
       not_authorized: "Přihlášení bylo neúspěšné"
       not_available: "Omlouváme se, tahle stránka je dočasně nedostupná."
@@ -146,17 +196,21 @@ cs:
         large_map: "&laquo; Zrušit\n"
     node:
       link:
+        edit_node: "Upravit místo"
         report_bug: "Nahlaste problém"
     show:
       header:
         title: "Místo: %{node} | wheelmap.org\n"
       link:
         back: zpět
+        large_map: Zvětšit
         upload: "Nahrát obrázek"
       more_data_from: "O tomhle místě je více údajů, zkontroloval:"
+      show-in-osm: OpenStreetMap
     update:
       flash:
         not_successfull: "Zadali jste neúplné nebo nesprávné heslo"
+        successfull: "Děkujeme, váš příspěvek byl uložený a brzy bude zobrazený na mapě."
     update_wheelchair:
       successfull: "Stav pro \"%{name}\" byl změněný na \"%{status}\" a brzy bude online."
   number:
@@ -194,8 +248,9 @@ cs:
         format: "%n %u"
         units:
           byte:
-            one: B
-            other: B
+            one: Bajt
+            few: Bajty
+            other: Bajtů
           gb: GB
           kb: KB
           mb: MB
@@ -213,11 +268,17 @@ cs:
     callback:
       notice: "Váš wheelmap účet je teď propojený s OpenStreetMap účtem uživatele %{user}."
   or: nebo
+  place:
+    one: "%{count} místo"
+    few: "%{count} místa"
+    other: "%{count} míst"
   profile:
     edit:
       application:
         oauth:
           connected: "Stav: připojený"
+          grant: "Připojit se"
+          not_connected: "Stav: Nepřipojeno"
           revoke: Odpojit
       headline: "Upravte svůj účet"
   search:
@@ -227,6 +288,8 @@ cs:
   splash:
     start: Start
     step2: "Označte to a dejte uložit"
+    what_is_wheelmap: "Co je to wheelpmap?"
+  statistics: Statistiky
   support:
     array:
       last_word_connector: " a "
@@ -257,13 +320,15 @@ cs:
         your_images: "Vaše obrázky"
   wheelchairstatus:
     limited: "částečně přístupné pro vozíčkáře"
+    'no': "nepřístupné pro vozíčkáře"
     unknown: "neznámý stav"
-    ? "yes"
-    : "přístupné pro vozíčkáře"
+    'yes': "přístupné pro vozíčkáře"
   wheelmap:
     footer:
+      a_project_of: "Projekt od"
       based_on: "Založeno na"
     itunes:
+      alt: "Logo AppStore"
       title: "Stáhněte si aplikaci pro iPhone!"
   will_paginate:
     page_entries_info:
@@ -271,6 +336,7 @@ cs:
       single_page:
         one: "Zobrazuji 1 %{model}"
         other: "Zobrazuji všech %{count} %{model}"
+        zero: "%{model} nenalezeno"
       single_page_html:
         zero: "%{model} nenalezeno"
     page_gap: "&hellip;"

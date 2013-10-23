@@ -1,20 +1,71 @@
----
 ja:
   header:
     navigation:
       about_wheelmap: "Wheelmap について"
-      choose_language: 言語を選択
+      choose_language: "言語を選択"
       contact: 連絡先
       map: 地図
-      projects: 参加する
+      projects: プロジェクト
     toolbar:
       categories: カテゴリ
   home:
     index:
       overlay:
-        button: OK、さあ始めよう！
-        categories: 場所をカテゴリでフィルター
-        filter: 車椅子のアクセシビリティで場所をフィルター
+        button: "OK、さあ始めよう！"
+        categories: "場所をカテゴリでフィルター"
+        filter: "車椅子のアクセシビリティで場所をフィルター"
         headline: "Wheelmao.org で車椅子で行ける場所を探してマークしよう - 世界のどこでも無料。とても簡単です。"
-        lookup: 指定した場所を探す
-        secondary_headline: 公共の場所での車椅子のアクセシビリティをマークする自分たちの交通信号システム
+        lookup: "指定した場所を探す"
+        secondary_headline: "公共の場所での車椅子のアクセシビリティをマークする自分たちの交通信号システム"
+  nodes:
+    new:
+      form:
+        legend: "場所の位置座標"
+        location: "地図をクリックして、マーカーを正しい位置に調整してください。"
+    node_data:
+      address: "住所:"
+      contact_details: "連絡先詳細:"
+    node_edit:
+      details: "詳細"
+      edit: "編集"
+    node_map:
+      map: "地図:"
+    node_note:
+      comment: "コメント:"
+    node_photos:
+      add: "追加"
+      photos_of_this_place: "この場所の写真:"
+      upload: "アップロード"
+    node_similar:
+      similar: "類似の場所: %{name}"
+    node_status:
+      accessible_toilet: "トイレへの車椅子アクセシビリティ:"
+      wheelchair_accessibility: "車椅子のアクセシビリティ:"
+    node_streetview:
+      streetview: "ストリートビュー:"
+    show:
+      share:
+        facebook: Facebook
+        text: "Wheelmap.org でこんな場所がありました: %{name}"
+        twitter: Twitter
+  search:
+    index:
+      no-results:
+        headline: "\"%{query}\" という名前の場所はありませんでした。"
+        hint:
+          example: "<strong>例:</strong> 英国, ロンドン"
+          info: "検索精度を向上させるため、より詳細な名称と住所の情報を必要としています。"
+          work_in_progress: "より簡単に、より直感的に場所を検索できるよう、私達はがんばります。"
+        try_this:
+          address: "<strong>住所情報</strong> をより詳しく追記してみましょう。"
+          intro: "もしかして:"
+          spell_check: "<strong>誤字</strong>が無いか、確認してください。"
+      results:
+        ticker:
+          one: "結果 1 件:"
+          other: "結果 &{count} 件:"
+          zero: "結果 0 件:"
+    timeout:
+      headline: "こちらの間違いです。すみません。"
+      info: "検索機能が一時的に利用できない状態です。"
+      repeat_search: "もう一度検索を実行"

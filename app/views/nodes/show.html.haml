@@ -1,204 +1,26 @@
-#map_wrapper
-  #minimap
-  = link_to t('.link.large_map'), root_path(:locale => I18n.locale, :lat => @node.lat, :lon => @node.lon, :zoom => 18), :class => 'magnify', :id => 'show-on-large-map'
+#node-wrapper{style: "background-image: url(http://api.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/#{@node.lon},#{@node.lat},17/640x640.png64)"}
+  = render partial: 'node_flash'
 
-= link_to t('.link.back'), root_path(:locale => I18n.locale, :lat => @node.lat, :lon => @node.lon, :zoom => 18)
-%div{ :itemscope => '', :itemtype => "http://schema.org/Place" }
-  %h1{ :itemprop => "name" }
-    =@node.name
-  %br
-  %span{ :itemprop => :geo, :itemscope => '', :itemtype => "http://schema.org/GeoCoordinates" }
-    %meta{ :itemprop => 'latitude', :content => @node.lat }
-    %meta{ :itemprop => 'longitude', :content => @node.lon }
+  %article#node.container{itemscope:'', itemtype: 'http://schema.org/Place'}
+    = render partial: 'node_header', object: @node
 
-  = render :partial => 'nodes/node', :object => @node
+    .row-fluid
+      %section#node-content.node-wrapper.span8
+        = render partial: 'node_status', object: @node
+        = render partial: 'node_photos', object: @node
+        = render partial: 'node_note', object: @node
+        = render partial: 'node_streetview', object: @node
 
-  %table#accessibility{:class => "#{dom_class(@node)}"}
-    %tbody
-      %tr
+      %section#node-aside.span4.node-wrapper
+        = render partial: 'node_edit', object: @node
+        = render partial: 'node_map', object: @node
+        = render partial: 'node_data', object: @node
+        = render partial: 'node_similar', object: @node
 
-        %th=t('formtastic.labels.wheelchair')
-        %td= t("wheelchairstatus.#{@node.wheelchair}")
-
-
-      -if @node.wheelchair_description
-        %tr
-          %th=t('formtastic.labels.wheelchair_description')
-          %td{ :colspan => 2, :itemprop => 'description' }= @node.wheelchair_description
-
-      %tr
-        %th=t('formtastic.labels.category')
-
-        - @node.category.identifier
-        %td{:class => @node.category.identifier}
-          - if @node.category
-            = t("poi.category.#{@node.category.identifier}")
-          - else
-            &nbsp;
-
-      %tr
-        %th=t('formtastic.labels.type')
-        %td
-          - if @node.type
-            = t("poi.name.#{@node.category.identifier}.#{@node.type}")
-          -else
-            &nbsp;
-    %tbody{ :itemprop => :address, :itemscope => '', :itemtype => "http://schema.org/PostalAddress" }
-      - if @node.tags['addr:street'] || @node.tags['addr:housenumber']
-        %tr
-          %th=t('formtastic.labels.street')
-          %td{ :itemprop => "streetAddress" }
-            =@node.tags['addr:street']
-            =@node.tags['addr:housenumber'] || '&nbsp;'
-
-      = tag_line @node, 'addr:postcode', :label_key => t('formtastic.labels.postcode'), :itemprop => 'postalCode'
-      = tag_line @node, 'addr:city', :label_key => t('formtastic.labels.city'), :itemprop => 'addressLocality'
-
-    - if @node.website
-      %tr
-        %th=t('formtastic.labels.website')
-        %td
-          - if url = URI.parse(@node.website_with_protocol) rescue nil
-            %a{:href => url.to_s.html_safe, :rel => 'nofollow', :target => '_blank'}>=url.to_s.html_safe
-          - else
-            = @node.website
-
-    =tag_line( @node,'phone', :itemprop => 'telephone' )
-    =tag_line(@node,'centralkey')
-
-
-  - unless @node.provided_pois.empty?
-    %br
-    %br
-    %h2= t('.more_data_from')
-    %table#provider{:class => "#{dom_class(@node)}"}
-      - @node.provided_pois.each do |p|
-        %tr
-          %th= "#{p.provider.name}:"
-          %td= link_to_if(p.url.present?, t("wheelchairstatus.#{p.wheelchair}"), p.url, :target => '_blank', :class => :external)
-  %h6 Similar Pois
-  %table#similar_nodes{:class => "#{dom_class(@node)}"}
-    %tbody
-      - @node.sorted_similar_pois[0..5].each do |s|
-        %tr
-          %th=link_to s.headline, node_path(s)
-          %td= "#{@node.distance_to_in_meter(s).round}m"
-
-  #thumbs
-    %ul.thumbs.noscript
-      -# TODO reebable photo feature
-      = render :partial => 'photos/photo', :collection => @node.photos.reject{|p| p.new_record?}
-  .clear
-
-  -# TODO reebable photo feature
-  - if user_signed_in?
-    - if current_user.terms?
-      = semantic_form_for [@node, Photo.new], :url => node_photos_url(@node), :html => { :multipart => true } do |form|
-        = form.file_field :image, :rel => node_photos_path(@node)
-    - else
-      = link_to t('nodes.show.link.upload'), terms_path, :class => 'button'
-  - else
-    = link_to t('nodes.show.link.upload'), new_user_session_path, :class => 'button'
-
-
-  =javascript_include_tag "http://maps.google.com/maps/api/js?sensor=false"
-
-  .clear
-
-
-
-  %hr
-  %h2 Google Streetview:
-
-  %div#streetview{:style => "overflow: hidden; margin-bottom: 10px; width: 980px; height: 250px;"}
-    %p#streetview_info
-
-  .node-footer
-    = link_to t('.show-in-osm'), "http://www.openstreetmap.org/edit?lat=#{@node.lat}&lon=#{@node.lon}&zoom=20", :target => :blank
-    = link_to_landing_page(t(".link.listing", :type => @node.node_type.localized_name, :city => @node.region.name), @node.region, @node.wheelchair, @node.node_type, :class => 'right') if @node.region
+- content_for :meta do
+  = render_og_metadata(title: @node.name, description: t('header.title'), type: 'place', url: node_url(@node), image: image_path('wheely_big.jpg'))
+  = render_og_locationdata(latitude: @node.lat, longitude: @node.lon)
 
 - content_for :head do
-  %title= t('.header.title', :node => @node.headline)
-  %meta{ :name => 'description', :content => t('header.meta.description')}
-
-  %meta{ :name => "DCTERMS.license", :scheme => "DCTERMS.URI", :content => "http://www.openstreetmap.org/copyright/en"}
-  %meta{ :name => "DCTERMS.rightsHolder", :content => "OpenStreetMap Foundation" }
-
-- content_for :javascript_constants do
-  :javascript
-    var lon = #{@node.lon};
-    var lat = #{@node.lat};
-    var zoom = #{params[:zoom] || 18};
-    #{var_language};
-
-- key = Rails.application.config.session_options[:key]
-- content_for :javascript do
-  = render :partial => 'shared/google_event_tracking'
-  = render :partial => 'shared/google_view_tracking'
-
-- if user_signed_in?
-  - content_for :javascript do
-    :javascript
-
-      var upload_params = {
-        '#{key}'                              : '#{cookies[key]}',
-        '#{request_forgery_protection_token}' : '#{form_authenticity_token}',
-        '_http_accept'                        : 'application/javascript'
-      };
-      $('input#photo_image').uploadify({
-        'swf'               : '#{asset_path("uploadify.swf")}',
-        'uploader'          : '#{node_photos_url(@node)}',
-        'fileObjName'       : 'photo[image]',
-        'fileTypeExts'      : '*.png;*.jpg;*.gif;*.jpeg',
-        'fileSizeLimit'     : '4MB',
-        'multi'             : true,
-        'formData'          : upload_params,
-        'auto'              : true,
-        'buttonText'        : '#{I18n.t("nodes.show.link.upload")}',
-        'removeTimeout'     : 1,
-        'progressData'      : 'percentage',
-        'buttonClass'       : 'button',
-        'onUploadSuccess'   : function(response, data) {
-          $('#thumbs ul').append(data);
-        }
-      });
-
-- content_for :javascript do
-  :javascript
-    drawmap(defaultControls('minimap'), 'minimap');
-    jumpTo(#{@node.lon}, #{@node.lat}, 18);
-    createDraggableLayer(placesStyle(),#{@node.lon}, #{@node.lat});
-
-
-    var point = new google.maps.LatLng(#{@node.lat}, #{@node.lon});
-    var panorama = new google.maps.StreetViewPanorama(document.getElementById("streetview"));
-    var sv = new google.maps.StreetViewService();
-
-    sv.getPanoramaByLocation(point, 100, checkNearestStreetView);
-
-    function checkNearestStreetView(data, status) {
-      if (status == google.maps.StreetViewStatus.OK) {
-
-      // Calculate heading:
-      // tc1=mod(atan2(sin(lon1-lon2)*cos(lat2),cos(lat1)*sin(lat2)-sin(lat1)*cos(lat2)*cos(lon1-lon2)), 2*pi)
-        panorama.setPano(data.location.pano);
-        var lat1 = data.location.latLng.lat();
-        var lon1 = data.location.latLng.lng();
-        var lat2 = #{@node.lat};
-        var lon2 = #{@node.lon};
-        var pi = Math.PI;
-        var tc1 = (Math.atan2(Math.sin(lon1-lon2)*Math.cos(lat2),Math.cos(lat1)*Math.sin(lat2)-Math.sin(lat1)*Math.cos(lat2)*Math.cos(lon1-lon2)) % (Math.PI * 2));
-        var heading = (Math.round(tc1 * 180 / Math.PI) + 360) % 360;
-
-        panorama.setPov({
-          heading: heading,
-          pitch: 0,
-          zoom: 1
-        });
-        panorama.setVisible(true);
-      } else {
-        panorama.setVisible(false);
-        $("#streetview").attr('style', 'height: 30px;');
-        $("#streetview_info").text('Ist für diesen Ort leider nicht verfügbar');
-      }
-    }
+  %title=t('nodes.show.header.meta.title', name: [@node.name, @node.node_type_name, @node.category_name, @node.region_name].compact.join(', '))
+  %meta{:name => 'description', :content => t('nodes.show.header.meta.description')}

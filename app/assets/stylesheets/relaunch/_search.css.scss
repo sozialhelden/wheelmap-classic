@@ -1,34 +1,7 @@
-body {
-  background-color: #F8F6F4;
-}
-
-header {
-  position: relative;
-}
-
-#container {
-  background: url('container_bg.png') repeat-x 0 52px;
-  display: block;
-  padding-bottom: $footerHeight + 10px;
-  padding-top: $headerHeight;
-
-  .content {
-    margin-top: 15px;
-    width: 100%;
-    background-color: white;
-    min-height: 300px;
-    @include box-shadow(0px 0px 4px 0px rgba(0,0,0,0.40));
-
-    @media screen and (min-width: $breakTablet) {
-      width: 882px;
-    }
-  }
-}
-
 #search {
   .navbar-form {
     padding: 21px;
-    @include background(linear-gradient(-180deg, $yellowGrayLight 0%, $yellowGray 100%));
+    @include background(linear-gradient(-180deg, lighten($yellow-gray, 58%) 0%, lighten($yellow-gray, 48%) 100%));
     @include box-sizing(border-box);
     @include box-shadow(inset 0px 1px 0px 0px #F3F2F0, inset 0px -1px 0px 0px #A8A9AA);
 
@@ -72,14 +45,14 @@ header {
     .ticker {
       @include box-shadow(inset 0px -1px 0px 0px #A8A9AA, 0px 2px 4px 0px rgba(0,0,0,0.10));
 
-      background-color: $darkBlueLight;
+      background-color: $dark-blue-light;
       padding: 0 20px;
       line-height: 38px;
-      color: $darkBlue;
+      color: $dark-blue;
     }
 
     h4 {
-      color: $darkBlue;
+      color: $dark-blue;
       margin-bottom: 20px;
     }
   }
@@ -90,9 +63,15 @@ header {
   padding: 10px;
 
   li {
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid $grayLighter;
+    padding-top: 5px;
+    margin-top: 5px;
+    border-top: 1px solid $grayLighter;
+
+    &:first-child {
+      padding-top: 0;
+      margin-top: 0;
+      border-top: 0;
+    }
   }
 
   a {
@@ -108,9 +87,9 @@ header {
 
     &:hover {
       @include border-radius(3px);
-      background-color: $yellowGrayLight;
+      background-color: lighten($yellow-gray, 60%);
       padding: 10px 9px;
-      border: 1px solid lighten($grayLight, 20%);
+      border: 1px solid lighten($grayLight, 25%);
     }
 
     i {
@@ -126,7 +105,7 @@ header {
   .alert-info {
     font-size: 12px;
     border-radius: 2px;
-    background-color: $yellowGrayLighter;
+    background-color: lighten($yellow-gray, 60%);
     border: 1px solid $grayLight;
     display: table;
     padding: 5px 10px;
@@ -138,7 +117,7 @@ header {
     i {
       line-height: 20px;
       font-size: $fontSizeLarge;
-      color: $darkBlue;
+      color: $dark-blue;
       width: 20px;
     }
   }

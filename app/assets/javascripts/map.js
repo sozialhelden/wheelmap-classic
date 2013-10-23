@@ -1,4 +1,5 @@
-var source = $("#cardTemplate").html();
+var source = $("#popupTemplate").html();
+var template = Handlebars.compile(source);
 
 var lat = 52.50521;
 var lon = 13.4231;
@@ -8,6 +9,7 @@ var padded_bounds = null;
 
 I18n.defaultLocale = 'de';
 I18n.locale = $('html').attr('lang');
+I18n.fallbacks = true;
 
 initGeoData();
 
@@ -21,7 +23,7 @@ var map = L.map('map', {
 L.tileLayer('http://{s}.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.png256', {
   maxZoom: 19,
   minZoom: 2,
-  attribution: 'Data: ODbL <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Map Icons: CC-By-SA <a href="http://mapicons.nicolasmollet.com/">Nicolas Mollet</a>',
+  attribution: 'Data: <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap contributors</a>, Icons: CC-By-SA <a href="http://mapicons.nicolasmollet.com/">Nicolas Mollet</a>',
   detectRetina: true
 
 }).addTo(map);
@@ -112,7 +114,9 @@ function onEachFeature(feature, layer) {
   if (feature.properties.name === null) {
     feature.properties.name = I18n.t("poi.name."+feature.properties.category+"."+ feature.properties.type)
   }
-  var popup_html = L.Util.template(source, feature.properties);
+  feature.properties.status_text = I18n.t('wheelchairstatus.' + feature.properties.wheelchair);
+  feature.properties.status_description = I18n.t('wheelmap.what_is.' + feature.properties.accesibility);
+  var popup_html = template(feature.properties);
   var popup = layer.bindPopup(popup_html, { closeButton: false });
 
   // Save the popup to be opened later on
@@ -123,19 +127,12 @@ function onEachFeature(feature, layer) {
 
 function initGeoData() {
   // set global variables
-  q = $.parseQuery();
-  lat  = q.lat  || $.cookie('last_lat');
-  lon  = q.lon  || $.cookie('last_lon');
+  q = $.parseQuery()
+  lat  = q.lat  || $.cookie('last_lat') || $.cookie('geoip_lat') || 52.5167;
+  lon  = q.lon  || $.cookie('last_lon') || $.cookie('geoip_lon') || 13.4000;
   zoom = q.zoom || $.cookie('last_zoom') || 14;
   window.node_id = q.node_id
-
-  if(!(lat && lon)) {
-    // on demand insert JS
-    lat = geoip_latitude();
-    lon = geoip_longitude();
-  }
 }
-
 
 function parseResponse(data) {
   var new_geojson_layer = new L.GeoJSON(data, {

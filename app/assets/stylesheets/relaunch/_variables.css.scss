@@ -1,5 +1,20 @@
-$headerHeight: 50px;
+@import "relaunch/bootstrap_variables";
+
+// Layout
+// -------------------------
+$headerHeight: 51px;
 $toolbarHeight: 52px;
 $footerHeight: 30px;
 $breakTablet: 767px;
 $breakPhone: 420px;
+$containerWidth: 882px;
+$nodeAsideWidth: 280px;
+$nodePopupWidth: 288px;
+
+// Component sizing
+// -------------------------
+$fontSizeHeadline: $baseFontSize * 2;
+
+// Transitions
+// -------------------------
+$link-transition-duration: .05s;

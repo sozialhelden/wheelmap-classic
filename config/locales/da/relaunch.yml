@@ -1,12 +1,21 @@
----
 da:
+  faq:
+    answers:
+      0: "Du kan altid ændre markeringen af et sted selv. Vælg højre markering og \"Gem\" færdig!"
+      1: "Når du er logget på som bruger kan du tilføje/rette i alle detaljerne for et sted. Klik på \"Redigerer\" og ret eller tilføj information i feltet."
+      2: "Du kan tilføje yderligere information. (fx \"Det sted har en mobil rampe\") i kommentarfeltet. Klik på \"Rediger\" og \"Tilføj kommentar\"."
+    headline: "Er der et problem med dette sted?"
+    questions:
+      0: "Denne markering er forkert."
+      1: "Detaljerne for dette sted er forkerte eller mangler."
+      2: "Jeg har mere information om dette sted."
   header:
     navigation:
       about_wheelmap: "Om Wheelmap"
       choose_language: "Vælg sprog"
       contact: Kontakt
       map: Kort
-      projects: "Bliv engageret"
+      projects: Projekter
     toolbar:
       categories: kategorier
   home:
@@ -18,3 +27,61 @@ da:
         headline: "Markerer og find kørestolstilgængelige steder med Wheelmap.org - verden over og helt gratis. Det er nemt:"
         lookup: "Søg efter et bestemt sted"
         secondary_headline: "Vores trafiklys system til at markerer kørestolstilgængelighed for offentlige steder:"
+  nodes:
+    new:
+      form:
+        legend: "Lokalitet for stedet"
+        location: "Klik på kortet og placerer markøren på den præcise position."
+    node_data:
+      address: "Adresse:"
+      contact_details: "Kontaktoplysninger:"
+    node_edit:
+      details: "Detaljer"
+      edit: "Ret"
+    node_map:
+      map: "Kort:"
+    node_note:
+      comment: "Kommentar:"
+    node_photos:
+      add: "Tilføj"
+      photos_of_this_place: "Fotografier af dette sted:"
+      upload: "Upload"
+    node_similar:
+      similar: "Lignende steder: %{name}"
+    node_status:
+      accessible_toilet: "Kørestolstilgængeligt toilet:"
+      premium: "%{name}  siger: dette sted er"
+      wheelchair_accessibility: "Kørestolstilgængeligt:"
+    node_streetview:
+      streetview: "Gadevisning:"
+    show:
+      header:
+        meta:
+          description: "Find ud af om dette sted er kørestoltilgængeligt på Wheelmap.org. Eller tilføj mere information eller et foto for dette sted."
+          title: "Dette sted er på Wheelmap.org: %{name}"
+      share:
+        email: "E-mail-adresse"
+        facebook: Facebook
+        text: "Jeg har fundet dette sted på  Wheelmap.org: %{name}"
+        twitter: Twitter
+  search:
+    index:
+      no-results:
+        headline: "Vi beklager meget, men vi kan ikke finde et sted ved navn  \"%{query}\"."
+        hint:
+          example: "<strong>Eksempel</strong> London, United Kingdom"
+          info: "Vores søgeservice virker kun med navn eller adresseoplysninger. Søg kun efter navnet på et sted eller adressen, fx gadenavn og/eller byen. Søgning efter typen af stederne fx restaurant eller biograf vil ikke virke!"
+          work_in_progress: "Vi arbejder hårdt på at gøre søgninger efter steder lettere og mere intuitivt."
+        try_this:
+          address: "Indsæt flere <strong>adresseoplysninger</strong>."
+          intro: "Prøv dette:"
+          spell_check: "Tjek <strong>stavningen</strong> af dit søgeord."
+      results:
+        ticker:
+          one: "1 resultat:"
+          other: "%{count} resultater:"
+          zero: "0 resultater:"
+    timeout:
+      headline: "Åh undskyld vores fejl"
+      info: "Vores søgeservice var midlertidigt nede."
+      repeat_search: "Prøv søgningen igen"

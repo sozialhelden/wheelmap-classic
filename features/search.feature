@@ -10,5 +10,6 @@ Feature: Search
 
   Scenario: simple search
     Given I am on the home page
+    And PENDING: search field is rendered with ember.js
     And I search for "Herborn"
     Then I should be on the search result page

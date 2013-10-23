@@ -14,4 +14,10 @@ module NodesHelper
       end
     end
   end
+
+  def render_address(node)
+    if node.address?
+      content_tag :address, node.address
+    end
+  end
 end

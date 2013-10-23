@@ -15,6 +15,7 @@
     %title= "Wheelmap - #{t('header.title')}"
 
   = stylesheet_link_tag :relaunch, :media => 'screen, projection'
+  = content_for :stylesheet
   /[if lte IE 8]
     = stylesheet_link_tag 'relaunch_ie', :media => 'screen, projection'
     = javascript_include_tag :modernizr
@@ -26,6 +27,5 @@
 
   = render :partial => 'relaunch/footer'
   = render :partial => 'shared/google_tracking'
-  = javascript_include_tag 'http://j.maxmind.com/app/geoip.js'
   = content_for :javascript
 </html>

@@ -75,6 +75,16 @@ class PhotoUploader < CarrierWave::Uploader::Base
     end
   end
 
+  version :gallery_preview do
+    process :effectively_resize_to_fill => [180, 180]
+    process :convert => 'jpg'
+    process :store_meta
+
+    def full_filename(for_file = model.image.file)
+      "gallery_preview.jpg"
+    end
+  end
+
   version :gallery_iphone do
     process :effectively_resize_to_limit => [480, 320]
     process :convert => 'jpg'

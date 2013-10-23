@@ -11,15 +11,16 @@ body {
   padding: 0;
 }
 
+
 /* @group Allgemein ================================================================================= */
 
 * {
   margin: 0;
   padding: 0;
-  position: relative;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
   &:focus {
     outline: none;
-    border: none;
   }
 }
 
@@ -50,3 +51,37 @@ body {
 	}
 }
 
+@include wheelchair(yes, $wheelchair-yes);
+@include wheelchair(limited, $wheelchair-limited);
+@include wheelchair(no, $wheelchair-no);
+@include wheelchair(unknown, $wheelchair-unknown);
+
+.dropdown-menu {
+  @include border-radius($borderRadiusSmall);
+  @include box-sizing(border-box);
+}
+
+.dropdown-accordion {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none; // display: block on open
+  float: left;
+  min-width: 200px;
+  margin: 2px 0 0;
+  background-color: $dropdownBackground;
+  border: 1px solid $dropdownBorder;
+  z-index: $zindexDropdown;
+  @include border-radius(3px);
+  @include box-shadow(0 5px 10px rgba(0,0,0,.2));
+  @include box-sizing(border-box);
+}
+
+.open > .dropdown-accordion {
+  display: block;
+}
+
+.pull-right > .dropdown-accordion {
+  right: 0;
+  left: auto;
+}

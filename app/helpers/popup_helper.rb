@@ -2,13 +2,13 @@ module PopupHelper
     
   def render_street(node)
     if node.tags['addr:street']
-      I18n.t('node.address.street', :street => node.tags['addr:street'], :housenumber => node.tags['addr:housenumber'])
+      I18n.t('node.address.street', :street => node.tags['addr:street'], :housenumber => node.tags['addr:housenumber']).strip
     end
   end
   
   def render_city(node)
     if node.tags['addr:city']
-      I18n.t('node.address.city', :postcode => node.tags['addr:postcode'], :city => node.tags['addr:city'])
+      I18n.t('node.address.city', :postcode => node.tags['addr:postcode'], :city => node.tags['addr:city']).strip
     end
   end
   

@@ -1,0 +1,36 @@
+!!!
+<!--[if lt IE 7 ]> <html class="ie6" lang="#{I18n.locale}"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="#{I18n.locale}"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="#{I18n.locale}"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="#{I18n.locale}"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="" lang="#{I18n.locale}"> <!--<![endif]-->
+%head
+  = render :partial => 'relaunch/meta'
+  = content_for :meta
+
+  - if content_for? :head
+    = content_for :head
+  - else
+    %meta{:name => 'description', :content => t('header.meta.description')}
+    %title= "Wheelmap - #{t('header.title')}"
+
+  = stylesheet_link_tag :relaunch, :media => 'screen, projection'
+  = content_for :stylesheet
+  /[if lte IE 8]
+    = stylesheet_link_tag 'relaunch_ie', :media => 'screen, projection'
+    = javascript_include_tag :modernizr
+  = csrf_meta_tag
+
+%body
+  = render :partial => 'relaunch/header'
+
+  - if content_for?(:content)
+    %div#content_wrapper
+      = yield(:content)
+  - else
+    = yield
+
+  = render :partial => 'relaunch/footer'
+  = render :partial => 'shared/google_tracking'
+  = content_for :javascript
+</html>

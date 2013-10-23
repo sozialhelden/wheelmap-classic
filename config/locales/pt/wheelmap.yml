@@ -190,12 +190,13 @@ pt:
       strip_insignificant_zeros: 0
     human:
       decimal_units:
+        format: "%n %u"
         units:
-          billion: "Bilhão "
-          million: "Milhão "
+          billion: "Bilhão"
+          million: "Milhão"
           quadrillion: Quatrilhão
           thousand: Mil
-          trillion: "Trilhão "
+          trillion: "Trilhão"
           unit: ~
       format:
         delimiter: ~
@@ -226,13 +227,16 @@ pt:
           connected: "Estado: Ligado"
           grant: "Ligar agora"
           not_connected: "Estado: Desligado"
-          revoke: "Desligar "
+          revoke: 'Desligar '
       headline: "Editar o seu profil"
   search:
     index:
       search:
         for: "Procurando \"%{q}"
         not_found: "Não foi possível encontrar um lugar"
+  splash:
+    start: Iniciar
+    what_is_wheelmap: "O que é o wheelmap?"
   statistics: Estatísticas
   support:
     array:
@@ -260,18 +264,16 @@ pt:
     destroy:
       notice: "Adeus, até breve!"
     new:
-      email: E-Mail
+      email: "E-Mail"
       login: "Log in"
       login_with_twitter: "Log in com Twitter"
-      password: "Palavra passe"
+      password: Palavra passe
       remember_me: "Mantenha-se connectado"
   wheelchairstatus:
     limited: "parcial acesibilidade a cadeira de rodas"
-    ? "no"
-    : "sem acessibilidade a cadeira de rodas"
+    'no': "sem acessibilidade a cadeira de rodas"
     unknown: "acessibilidade a cadeira de rodas desconhecida"
-    ? "yes"
-    : "Completa acessibilidade a cadeira de rodas"
+    'yes': "Completa acessibilidade a cadeira de rodas"
   wheelmap:
     itunes:
       alt: "AppStore Logo"

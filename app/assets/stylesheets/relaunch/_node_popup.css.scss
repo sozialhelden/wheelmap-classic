@@ -1,0 +1,354 @@
+.node-popup {
+  font-size: $fontSizeSmall;
+  width: $nodePopupWidth;
+  padding: 12px;
+
+  .leaflet-popup-content-wrapper {
+    @include border-radius(3px);
+  }
+
+  .leaflet-popup-tip {
+    background-color: darken($orange-gray, 5%);
+  }
+
+  a.leaflet-popup-close-button {
+    top: 15px;
+    right: 14px;
+    padding: 7px;
+    @include text-shadow(0px 1px 3px rgba($black, 0.25));
+  }
+}
+
+.node-popup-header {
+  @include headline-gradient();
+  @include border-top-radius(3px);
+  @include text-shadow(0px 1px 3px rgba($black, 0.5));
+  padding: 12px 12px 10px 12px;
+  color: $white;
+
+  h2,
+  address,
+  .breadcrumbs {
+    margin: 0;
+  }
+
+  h2 {
+    font-size: $fontSizeLarge;
+    line-height: $baseLineHeight * 1.2;
+  }
+
+  .breadcrumbs {
+    @include clearfix();
+    opacity: 0.5;
+
+    li {
+      float: left;
+      padding-right: 3px;
+      font-size: $fontSizeMini;
+      //line-height: $baseLineHeight;
+
+      .icon-angle-right {
+        line-height: inherit;
+        font-size: $fontSizeLarge;
+        float: left;
+        padding: 0 7px 0 5px;
+      }
+
+      &:first-of-type .icon-angle-right {
+        display: none;
+      }
+    }
+  }
+}
+
+.node-popup-content {
+  @include background-image(linear-gradient(-180deg, lighten($orange-gray, 7%) 60%, darken($orange-gray, 5%) 100%));
+  @include border-bottom-radius(3px);
+  padding: 12px;
+}
+
+.node-popup-status {
+  & > h3 {
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0 0 7px 0;
+  }
+
+  .wm-checkbox {
+    line-height: inherit;
+    display: inline-block;
+    @include border-radius(3px);
+    margin-right: 5px;
+
+    i {
+      width: 17px;
+      height: 17px;
+      line-height: 17px;
+      display: block;
+      color: $black;
+      @include border-radius(inherit);
+      background-color: $white;
+      @include text-shadow(none);
+      @include box-shadow(inset 0 1px 2px rgba($black, 0.2));
+      overflow: hidden;
+      text-align: center;
+      text-indent: -5000px; // Hide check icon
+    }
+
+    &.checked i {
+      text-indent: 0px;
+    }
+  }
+
+  .icon-caret-down,
+  .icon-question-sign {
+    line-height: inherit;
+  }
+
+  .btn.wheelchair,
+  .dropdown-menu {
+    width: 100%;
+  }
+
+  .btn.wheelchair {
+    @include box-sizing(border-box);
+    text-align: left;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .icon-question-sign {
+      padding-left: 5px;
+    }
+  }
+
+  .dropdown {
+    .btn.wheelchair {
+      height: 40px;
+      line-height: 40px;
+    }
+  }
+
+  .dropdown-menu {
+    @include border-top-radius(0);
+
+    a {
+      @include box-sizing(border-box);
+      line-height: 25px;
+      padding: 5px 10px;
+      width: 100%;
+      overflow: hidden;
+
+      .icon-question-sign {
+        opacity: .5;
+        font-size: $baseFontSize;
+        // Needed for firefox floating bug
+        position: absolute;
+        right: 10px;
+      }
+    }
+
+    .wm-checkbox {
+      height: 25px;
+      width: 25px;
+      vertical-align: middle;
+      @include box-shadow(inset 0 1px 0 rgba($white, 0.5), 0 1px 1px rgba($black, 0.1));
+
+      i {
+        margin: 3px;
+        border: inherit;
+        @include box-shadow(0 1px 0 rgba($white, 0.5), inset 0 1px 2px rgba($black, 0.2));
+      }
+    }
+
+    .submit {
+      @include border-bottom-radius(3px);
+      margin-bottom: -5px;
+      margin-top: 5px;
+      padding: 5px;
+      text-align: right;
+      border-top: 1px solid darken($orange-gray, 5%);
+      background-color: lighten($orange-gray, 10%);
+
+      .btn {
+        @include buttonBackground(lighten($orange-gray, 5%), darken($orange-gray, 5%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
+        text-align: center;
+        font-weight: bold;
+        border-color: darken($orange-gray, 20%);
+      }
+    }
+  }
+
+  .popover {
+    width: 180px;
+    line-height: $baseLineHeight;
+  }
+
+  .popover-content {
+    color: $textColor;
+    font-weight: normal;
+    @include text-shadow(none);
+    font-size: $fontSizeSmall;
+  }
+
+  .tooltip {
+    position: relative;
+    width: 96%;
+    margin: 4px auto 0 auto;
+    padding: 0;
+    padding-top: 5px;
+    opacity: 1;
+    z-index: 1;
+
+    .tooltip-arrow {
+      border-bottom-color: $dark-blue;
+    }
+  }
+
+  .tooltip-inner {
+    max-width: none;
+    box-sizing: border-box;
+    background-color: darken($dark-blue, 5%);
+    @include background-image(linear-gradient(top, $dark-blue, darken($dark-blue, 5%)));
+    text-align: left;
+    padding: 8px 10px;
+  }
+}
+
+.node-popup-status-is-unknown {
+  ul {
+    margin-bottom: 0;
+  }
+
+  li {
+    margin-top: 3px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .wm-checkbox {
+    border: inherit;
+    vertical-align: -2px;
+    @include box-shadow(0 1px 0 rgba($white, 0.5));
+  }
+
+  .btn.wheelchair {
+    height: 35px;
+    line-height: 35px;
+    padding-left: 7px;
+  }
+
+  .btn.node-popup-status-submit {
+    height: 35px;
+    margin-top: 12px;
+    width: 100%;
+  }
+}
+
+.node-popup-buttons {
+  margin-top: 12px;
+
+  // Nesting is needed for seperate styling of buttons in popup and report dropdown
+  & > .btn-group {
+    margin-left: 0;
+
+    & > .btn {
+      @include buttonBackground($orange-gray, darken($orange-gray, 15%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
+      font-weight: bold;
+    }
+
+    &.open > .btn {
+      background-color: darken($orange-gray, 15%);
+    }
+  }
+}
+
+.node-popup-share {
+  .dropdown-menu {
+    font-size: $fontSizeSmall;
+    min-width: 120px;
+    padding: 3px 0;
+
+    a {
+      padding: 2px 8px;
+
+      &:hover i {
+        color: white;
+      }
+    }
+  }
+
+  .icon-twitter {
+    color: #00aced;
+  }
+
+  .icon-facebook {
+    color: #3B5998;
+  }
+}
+
+.node-popup-report {
+  .btn .caret {
+    margin-left: 7px;
+  }
+}
+
+.node-popup-report-accordion {
+  width: 320px;
+  font-size: $fontSizeSmall;
+  border: none;
+  color: #505050;
+
+  header {
+    @include background-image(linear-gradient(top, #B0B0B0 0%, #7A7A7A 100%));
+    @include box-shadow(inset 0px 1px 0px 0px rgba($white, 0.25));
+    @include box-sizing(border-box);
+    @include border-top-radius(3px);
+    border: 1px solid #6C5C5C;
+    line-height: 26px;
+    height: 30px;
+    font-weight: bold;
+    @include text-shadow(0px 1px 0px $black);
+    color: $white;
+    padding: 3px 5px 1px 10px;
+
+    .pull-right {
+      line-height: 22px;
+    }
+
+    .btn {
+      @include buttonBackground(#828282, #535353, #D2D2D2);
+      line-height: 20px;
+      height: 20px;
+      vertical-align: middle;
+      border-color: #393939;
+    }
+  }
+
+  .accordion-toggle {
+    padding: 0px 10px;
+    line-height: 30px;
+    display: block;
+    border-top: 1px solid #E5E5E5;
+    color: inherit;
+    text-decoration: none;
+
+    .icon-chevron-up {
+      line-height: inherit;
+      font-size: .9em;
+      opacity: .5;
+    }
+
+    &.collapsed .icon-chevron-up {
+      @include transform(rotate(180deg));
+    }
+  }
+
+  .accordion-inner {
+    padding: 7px 10px;
+    background: #F4F4F4;
+    @include box-shadow(inset 0px 2px 2px 0px rgba($black, 0.10));
+    white-space: normal;
+  }
+}
