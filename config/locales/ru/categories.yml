@@ -1,11 +1,10 @@
----
 ru:
   poi:
     category:
       accommodation: Проживание
       education: Образование
       food: Питание
-      government: "Государственные учреждения"
+      government: Государственные учреждения
       health: Здоровье
       leisure: Досуг
       misc: Разное
@@ -19,7 +18,7 @@ ru:
       accommodation:
         beach_resort: "Пляж отеля"
         bed_and_breakfast: "Аренда жилья"
-        camp_site: Турбаза
+        camp_site: "Турбаза"
         caravan_site: "Палаточный лагерь"
         chalet: Шале
         guest_house: "Гостевой дом"
@@ -28,41 +27,41 @@ ru:
         motel: Мотель
       education:
         college: Коледж
-        kindergarten: "Детский сад"
+        kindergarten: Детский сад
         library: Библиотека
         museum: Музей
         school: Школа
         university: Университет
       food:
         bar: Бар
-        biergarten: "Паб под открытим небом"
+        biergarten: Паб под открытим небом
         cafe: Кафе
         drinking_water: "Питьевая вода"
         fast_food: "Фаст фуд"
         pub: Паб
         restaurant: Ресторан
       government:
-        courthouse: "Здание суда"
+        courthouse: Здание суда
         embassy: Посольство
         police: Полиция
         public_building: "Общественное здание"
-        townhall: "Здание городской администрации"
+        townhall: Здание городской администрации
       health:
         doctors: Доктор
         hearing_aids: "Продажа слуховых аппаратов"
         hospital: Больница
-        medical_supply: Медикаменты
+        medical_supply: "Медикаменты"
         pharmacy: Аптека
         social_facility: "Социальный центр"
         veterinary: Ветеринар
       leisure:
         arena: Площадь
-        brothel: "Публичный дом"
+        brothel: Публичный дом
         cinema: Кинотеатр
         community_center: "Общинный центр"
         gallery: Галерея
-        nightclub: "Ночной клуб"
-        playground: "Детская площадка"
+        nightclub: Ночной клуб
+        playground: Детская площадка
         sauna: Сауна
         stripclub: Стрипклуб
         theatre: Театр
@@ -75,7 +74,7 @@ ru:
       money_post:
         atm: Банкомат
         bank: Банк
-        bureau_de_change: Обменник
+        bureau_de_change: "Обменник"
         post_box: "Почтовый ящик"
         post_office: "Почтовое отделение"
       public_transfer:
@@ -87,36 +86,36 @@ ru:
         bus_stop: "Автобусная остановка"
         cable_car: "Канатная дорога"
         car_rental: "Прокат автомобилей"
-        car_sharing: Автообмен
+        car_sharing: "Автообмен"
         chair_lift: "Кресельный подъемник"
         ferry: Паром
         ferry_terminal: "Терминал парома"
-        fuel: Автозаправка
+        fuel: "Автозаправка"
         halt: Остановка
-        light_rail: перила
+        light_rail: "перила"
         parking: Парковка
         parking_aisle: "Проход на парковку"
         platform: Платформа
-        station: Подземка
+        station: "Подземка"
         subway_entrance: "Вход в метро"
         terminal: "Терминал аеропорта"
         tram_stop: "Трамвайная остановка"
       shopping:
-        alcohol: "Спиртные напитки"
+        alcohol: Спиртные напитки
         bakery: Кондитерская
         beverages: Напитки
         bicycle: "Велосипедний магазин"
         books: Книги
-        butcher: "Мясная лавка"
-        car_repair: Автосервис
-        car_shop: Автосалон
+        butcher: Мясная лавка
+        car_repair: "Автосервис"
+        car_shop: "Автосалон"
         chemist: Аптекарь
         clothes: Одежда
         computer: Компьютер
         convenience: Удобства
-        department_store: Универмаг
+        department_store: "Универмаг"
         doityourself: "Сделай сам"
-        dry_cleaning: Химчистка
+        dry_cleaning: "Химчистка"
         electronics: Электроника
         florist: Флорист
         furniture: Мебель
@@ -131,24 +130,24 @@ ru:
         second_hand: "Секонд Хенд"
         shoes: Обувь
         sports: Спорт
-        stationery: "Канцелярские товары"
+        stationery: Канцелярские товары
         supermarket: Супермаркет
-        video: Видеопрокат
+        video: "Видеопрокат"
       sport:
-        sports_centre: Спортзал
+        sports_centre: "Спортзал"
         stadium: Стадион
         swimming: Плаванье
-        swimming_pool: Бассейн
+        swimming_pool: "Бассейн"
       tourism:
         archaeological_site: "Археологические раскопки"
         arts_centre: "Арт центр"
-        artwork: "Произведение искусства"
+        artwork: Произведение искусства
         attraction: Аттракцион
-        battlefield: "Поле боя"
+        battlefield: Поле боя
         beach: Пляж
-        beacon: "Лайтхаус\n"
+        beacon: Лайтхаус
         castle: Церковь
-        cave_entrance: Вход
+        cave_entrance: "Вход"
         information: "Информация для туристов"
         memorial: Памятник
         theme_park: "Парк развлечений"

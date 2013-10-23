@@ -15,7 +15,7 @@
         .btn-toolbar.pull-right{:style => 'padding-right:10px'}
           .btn-group
             = link_to new_node_path, :class => ['btn', 'btn-success', 'btn-small', 'createlink'], :title =>  t('header.searchbar.add_place'), :rel => 'nofollow' do
-              %i.icon-plus.icon-white
+              = fa_icon("plus light")
             = link_to t('header.searchbar.add_place'), new_node_path, :class => ['btn', 'btn-small', 'createlink', 'hidden-phone', 'hidden-tablet'], :title =>  t('header.searchbar.add_place'), :rel => 'nofollow'
 
           - if user_signed_in?
@@ -27,7 +27,7 @@
               %i.icon-user
               %span.hidden-phone=t('header.navigation.login')
 
-          %select.selectpicker.pull-right.language-select{:onchange => 'location.href=this.options[this.selectedIndex].value', :title => "\f0ac", :'data-style' => "btn-small"}
+          %select.selectpicker.pull-right.language-select{:onchange => 'location.href=this.options[this.selectedIndex].value + window.location.hash', :title => "\f0ac", :'data-style' => "btn-small"}
             %i
             %optgroup{:label => I18n.t('header.navigation.choose_language'), :class => 'icon-globe'}
               - I18n.available_locales.map(&:to_s).sort.each do |locale|

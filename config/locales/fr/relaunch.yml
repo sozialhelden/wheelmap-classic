@@ -1,12 +1,21 @@
----
 fr:
+  faq:
+    answers:
+      0: "Vous pouvez toujours modifier le marquage d'un endroit vous-même. Il vous suffit de choisir le bon marquage et enregistrez - voilà !"
+      1: "En tant qu'utilisateur connecté, vous pouvez ajouter/corriger toutes les informations d'un endroit. Cliquez sur « Modifier » pour corriger ou ajouter des informations dans le masque."
+      2: "Vous pouvez ajouter d'autres informations (ex. : Cet endroit possède une rampe dans la rubrique commentaire. Cliquez sur « Modifier » et « Ajouter un commentaire »."
+    headline: "Y a-t-il un problème avec cet endroit ?"
+    questions:
+      0: "Le marquage est erroné."
+      1: "Les détails de cet endroit sont incorrects ou incomplets."
+      2: "J'ai d'autres informations sur cet endroit."
   header:
     navigation:
       about_wheelmap: "concernant Wheelmap"
       choose_language: "choix de la langue"
       contact: contact
       map: carte
-      projects: projets
+      projects: Projets
     toolbar:
       categories: catégories
   home:
@@ -18,3 +27,61 @@ fr:
         headline: "Grâce à Wheelmap.org tu peux trouver et marquer des lieux accessibles en fauteuil - à travers le monde et gratuitement. C'est facile:"
         lookup: "trouver directement un lieu"
         secondary_headline: "le système \"feu rouge\" pour marquer l'accessibilité"
+  nodes:
+    new:
+      form:
+        legend: "Emplacement de l'endroit"
+        location: "Veuillez cliquer sur la carte et placer le marqueur à l'emplacement exact."
+    node_data:
+      address: "Adresse :"
+      contact_details: "Coordonnées :"
+    node_edit:
+      details: "Détails"
+      edit: "Traiter"
+    node_map:
+      map: "Carte :"
+    node_note:
+      comment: "Commentaire :"
+    node_photos:
+      add: "Ajouter"
+      photos_of_this_place: "Photos de cet endroit :"
+      upload: "Charger"
+    node_similar:
+      similar: "Endroits similaires : %{name}"
+    node_status:
+      accessible_toilet: "Toilettes accessibles en fauteuil roulant :"
+      premium: "%{name} dit : cet endroit est"
+      wheelchair_accessibility: "Accessibilité en fauteuil roulant :"
+    node_streetview:
+      streetview: "Streetview :"
+    show:
+      header:
+        meta:
+          description: "Découvrez si cet endroit est accessible en fauteuil roulant sur Wheelmap.org. Ou ajoutez des informations et des photos à cet endroit."
+          title: "Cet endroit se trouve sur Wheelmap.org : %{name}"
+      share:
+        email: "E-mail :"
+        facebook: Facebook
+        text: "J'ai trouvé cet endroit sur Wheelmap.org : %{name}"
+        twitter: Twitter
+  search:
+    index:
+      no-results:
+        headline: "Désolés, nous n'avons pas trouvé d'endroit appelé « %{query} »."
+        hint:
+          example: "<strong>Exemple :</strong> Londres, au Royaume-Uni"
+          info: "Notre service de recherche fonctionne uniquement à partir d'un nom et/ou d'une adresse. Veuillez donc rechercher le nom de l'endroit ou une adresse (ex. : nom de la rue et/ou ville). La recherche d'un type d'endroit (ex. : restaurant ou cinéma) ne fonctionne pas !"
+          work_in_progress: "Nous travaillons d'arrache-pied pour chercher des endroits plus faciles et plus intuitifs dans le futur."
+        try_this:
+          address: "Veuillez fournir plus d'<strong>informations concernant l'adresse</strong>."
+          intro: "Essayez ça :"
+          spell_check: "Vérifiez l'<strong>orthographe</strong> de ce que vous avez entré."
+      results:
+        ticker:
+          one: "1 résultat :"
+          other: "%{count} résultats :"
+          zero: "0 résultat :"
+    timeout:
+      headline: "Oh, au temps pour nous"
+      info: "Notre service de recherche était temporairement indisponible."
+      repeat_search: "Réessayer la recherche"

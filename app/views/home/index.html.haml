@@ -1,8 +1,9 @@
-= render :partial => 'relaunch/toolbar'
-%section#map
-  =link_to "MapBox", "http://mapbox.com/about/maps/", :target => "_blank", :id => "mapbox_logo"
-= render :partial => 'relaunch/popup_template'
+#wheelmap
 = render :partial => 'overlay'
 
 - content_for :javascript do
-  = javascript_include_tag :relaunch
+  = javascript_include_tag 'app'
+  = javascript_include_tag "i18n/#{I18n.locale}"
+
+  :javascript
+    Wheelmap.Category.FIXTURES = #{render_json_list};

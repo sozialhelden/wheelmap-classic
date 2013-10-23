@@ -6,17 +6,7 @@ class Category < ActiveRecord::Base
   validates :identifier, :presence => true
 
   acts_as_api
-
-  api_accessible :simple do |template|
-    template.add :id
-    template.add :identifier
-    template.add :localized_name
-  end
-
-  api_accessible :id do |template|
-    template.add :id
-    template.add :identifier
-  end
+  include Api::Category
 
   def localized_name
     I18n.t("poi.category.#{identifier}")

@@ -1,0 +1,38 @@
+<div class="btn-toolbar">
+    <button class="btn btn-info btn-toggle-searchbar">
+        <i class="icon-search icon-light"></i>
+    </button>
+    <form action="/search" class="searchbar-form" method="GET">
+        <div class="input-append">
+            {{ view Wheelmap.SearchbarView }}
+            {{ view Wheelmap.SearchbarButtonView }}
+        </div>
+    </form>
+    <div class="btn-group status-filter">
+        {{ status-filter-button activeFilters=statusFilters wheelchair='yes' didClick="toggleStatusFilter" }}
+        {{ status-filter-button activeFilters=statusFilters wheelchair='limited' didClick="toggleStatusFilter" }}
+        {{ status-filter-button activeFilters=statusFilters wheelchair='no' didClick="toggleStatusFilter" }}
+        {{ status-filter-button activeFilters=statusFilters wheelchair='unknown' didClick="toggleStatusFilter" }}
+    </div>
+    <div class="btn-group bootstrap-select show-menu-arrow category-filter show-tick">
+        <button class="btn dropdown-toggle clearfix btn-info" data-toggle="dropdown"><span
+                class="icon-tags"></span><span class="filter-option pull-left">{{#if activeCategories.length }}<span
+                class="counter">{{ activeCategories.length }}</span>{{/if}} {{ view.categoryButton }}</span>&nbsp;<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            {{#each}}
+                <li {{ bind-attr class="isActive:selected" }}>
+                    <a {{ action toggleIsActive }}>
+                        <span class="pull-left">
+                            {{ t 'poi.category' identifier }}
+                        </span>
+                        <i class="icon-ok pull-right check-mark"></i>
+                    </a>
+                </li>
+            {{/each}}
+            <li class="filter clearfix">
+                <button class="btn pull-right" {{ action toggleAllIsActive }}><i {{ bind-attr class="allActive:icon-check-empty:icon-check" }}></i></button>
+            </li>
+        </ul>
+    </div>
+</div>

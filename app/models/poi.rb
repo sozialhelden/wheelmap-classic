@@ -28,6 +28,7 @@ class Poi < ActiveRecord::Base
   self.include_root_in_json = false
 
   WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
+  WHEELCHAIR_ACCESIBILITY  = {'yes' => 'fully_accessible', 'limited' => 'limited_accessible', 'no' => 'not_accessible', 'unknown' => 'unknown_accessible'}
 
   belongs_to :region, :touch => false
   belongs_to :node_type, :touch => false, :include => :category
@@ -53,50 +54,7 @@ class Poi < ActiveRecord::Base
   serialize :tags
 
   acts_as_api
-
-  def around_api_response(api_template)
-    custom_cache_key = "api_response_#{self.cache_key}_#{api_template.to_s}"
-    Rails.cache.fetch(custom_cache_key, :expires_in => 1.day) do
-      yield
-    end
-  end
-
-  api_accessible :simple do |t|
-    t.add :name
-    t.add :wheelchair
-    t.add :wheelchair_description
-    t.add :node_type, :template => :id
-    t.add :lat
-    t.add :lon
-    t.add :id
-    t.add :category, :template => :id
-    t.add :street
-    t.add :housenumber
-    t.add :city
-    t.add :postcode
-    t.add :website
-    t.add :phone
-  end
-
-  api_accessible :osm do |t|
-    t.add lambda { |poi| poi.osm_id.abs }, :as => :id
-    t.add :lat
-    t.add :lon
-    t.add :tags, :as => :tag
-    t.add :version
-  end
-
-  api_accessible :iphone do |t|
-    t.add :icon, :if => :icon
-    t.add :id
-    t.add :lat
-    t.add :lon
-    t.add :name
-    t.add :tags_without_blank_values, :as => :tags
-    t.add :type
-    t.add :wheelchair
-    t.add :category_for_node, :as => :category
-  end
+  include Api::Poi
 
   before_save :set_status
   before_save :set_version
@@ -122,6 +80,7 @@ class Poi < ActiveRecord::Base
   scope :with_node_type, :conditions => 'node_type_id IS NOT NULL'
   scope :without_node_type, :conditions => 'node_type_id IS NULL'
   scope :including_category, :include => :category
+  scope :including_region, :include => :region
   scope :has_provider, :joins => :provided_pois
   scope :has_photo, :joins => :photos
   scope :within_region, lambda {|region| {:conditions => {:region_id => region.id}}}
@@ -240,6 +199,18 @@ class Poi < ActiveRecord::Base
     nil
   end
 
+  def node_type_name
+    node_type.try(:name)
+  end
+
+  def category_name
+    category.try(:name)
+  end
+
+  def region_name
+    region.try(:name)
+  end
+
 
   def name
     tags['name']
@@ -289,6 +260,16 @@ class Poi < ActiveRecord::Base
     [render_street(self),render_city(self)].compact.join(', ')
   end
 
+  def address?
+    self.tags['addr:street'] || self.tags['addr:city']
+  end
+
+  def breadcrumbs
+    [self.tags['addr:city'],
+     I18n.t("poi.category.#{self.category.identifier}"),
+     I18n.t("poi.name.#{self.category.identifier}.#{self.node_type.identifier}")].compact
+  end
+
   def state
     'yes'
   end
@@ -309,13 +290,17 @@ class Poi < ActiveRecord::Base
     {
         :type       => 'Feature',
         :geometry   => { :type => 'Point', :coordinates  => [ self.lon.to_f, self.lat.to_f ] },
-        :properties => { 'name'       => name,
-                         'address'    => address || '',
-                         'wheelchair' => wheelchair,
-                         'id'         => osm_id,
-                         'type'       => node_type.try(:identifier) || '',
-                         'category'   => category.try(:identifier) || '',
-                         'icon'       => icon
+        :properties => { 'name'               => name,
+                         'lat'                => lat,
+                         'lon'                => lon,
+                         'breadcrumbs'        => breadcrumbs,
+                         'address'            => address || '',
+                         'wheelchair'         => wheelchair,
+                         'accesibility'       => accesibility,
+                         'id'                 => osm_id,
+                         'type'               => node_type.try(:identifier) || '',
+                         'category'           => category.try(:identifier) || '',
+                         'icon'               => icon
                        }
     }
   end
@@ -467,6 +452,10 @@ class Poi < ActiveRecord::Base
       end
     end
     escaped_search_string
+  end
+
+  def accesibility
+    WHEELCHAIR_ACCESIBILITY[wheelchair]
   end
 
   protected

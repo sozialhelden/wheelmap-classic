@@ -1,2 +1,8 @@
----
-ru: ~
+ru:
+  header:
+    navigation:
+      map: карта
+  nodes:
+    node_edit:
+      details: "детали"
+      edit: "редактировать"

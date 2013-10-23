@@ -12,7 +12,6 @@ group :default do
   gem 'devise-encryptable'
   gem 'redgreengrid', :git => 'git@github.com:christoph-buente/redgreengrid.git'
   gem 'haml'
-  gem 'geoip'
   gem 'formtastic', '2.2.1'
   gem 'delayed_job'
   gem 'delayed_job_active_record'
@@ -56,10 +55,12 @@ group :default do
   gem 'exifr'
   gem 'awesome_nested_set'
   gem 'i18n-js'
+  gem 'font-awesome-rails'
+  gem 'ember-rails'
 end
 
 group :assets do
-  gem 'jquery-rails'
+  gem 'jquery-rails', '2.3.0'
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'compass'

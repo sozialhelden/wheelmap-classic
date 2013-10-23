@@ -1,0 +1,51 @@
+{{! status }}
+<h3>{{ t 'nodes.node_status.wheelchair_accessibility' }}</h3>
+{{#if isUnknown }}
+    <div class="node-popup-status-is-unknown">
+        <ul class="unstyled">
+            {{#each status in Wheelmap.Node.WHEELCHAIR_STATUSES }}
+                <li>
+                    <a {{ action 'setWheelchair' status }} {{ bind-attr class=":btn :wheelchair status" }}>
+                        {{ wheelchair-checkbox wheelchair=status status=wheelchair }}
+                        {{ t 'home.index.popup.form' status }}
+                        {{ wheelchair-popover tagName="i" classNames="icon-question-sign" wheelchair=status }}
+                    </a>
+                </li>
+            {{/each }}
+        </ul>
+        {{#if wheelchairSubmit }}
+            <button class="btn node-popup-status-submit" {{ action 'saveWheelchair' }}>{{ t "formtastic.labels.save" }}</button>
+        {{else}}
+            <div class="tooltip bottom in">
+                <div class="tooltip-arrow"></div>
+                <div class="tooltip-inner">
+                  {{ t 'wheelmap.what_is.unknown_accessible' }}
+                </div>
+            </div>
+        {{/if}}
+    </div>
+{{else}}
+    <div class="dropdown">
+        <a data-toggle="dropdown" {{ bind-attr class=":dropdown-toggle :btn :wheelchair wheelchair" }}>
+            {{ statusText }}
+            {{ wheelchair-popover tagName="i" classNames="icon-question-sign" wheelchairBinding="wheelchair" }}
+            <i class="icon-caret-down pull-right"></i>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+            {{#each status in Wheelmap.Node.WHEELCHAIR_STATUSES }}
+                <li>
+                    <a {{ action 'setWheelchair' status }}>
+                        {{ wheelchair-checkbox wheelchair=status status=wheelchair classNameBindings=":wheelchair" }}
+                        {{ t 'home.index.popup.form' status }}
+                        {{ wheelchair-popover tagName="i" classNames="icon-question-sign" wheelchair=status }}
+                    </a>
+                </li>
+            {{/each }}
+            <li class="submit">
+                <button class="btn node-popup-status-submit" {{ bind-attr disabled="disableWheelchairSubmit" }} {{ action 'saveWheelchair' }}>
+                    {{ t "formtastic.labels.save" }}
+                </button>
+            </li>
+        </ul>
+    </div>
+{{/if }}

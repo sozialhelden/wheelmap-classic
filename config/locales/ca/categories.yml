@@ -1,38 +1,47 @@
----
 ca:
   poi:
     category:
       accommodation: Allotjament
       education: Educació
+      food: Menjar
       government: Govern
       health: Salut
       leisure: Oci
       misc: Miscel·lània
+      money_post: "Banc"
+      public_transfer: "Transferència pública"
+      shopping: Botigues
       sport: Esports
       tourism: Turisme
       unknown: Desconegut
     name:
       accommodation:
+        beach_resort: "Hotel de platja"
+        bed_and_breakfast: "Mitja pensió"
         camp_site: "Zona d'acampada/Càmping"
         caravan_site: "Zona d'acampada de caravanes"
-        chalet: "Casa rural"
-        guest_house: Pensió
+        chalet: Casa rural
+        dormitory: Dormir
+        guest_house: "Pensió"
         hostel: Hostal/alberg
         hotel: Hotel
         motel: Motel
       education:
-        driving_school: Autoescola
-        kindergarten: "Llar d'infants"
+        college: Residència
+        driving_school: "Autoescola"
+        kindergarten: Llar d'infants
         library: Biblioteca
         museum: Museu
         school: Escola
         university: Universitat
       food:
         bar: Bar
+        biergarten: Bar amb terrassa
         cafe: Cafè
         drinking_water: "Font per beure"
         fast_food: "Menjar ràpid"
-        ice_cream: Gelateria
+        ice_cream: "Gelateria"
+        pub: Pub
         restaurant: Restaurant
       government:
         courthouse: Jutjat
@@ -43,7 +52,7 @@ ca:
         townhall: Ajuntament
       health:
         dentist: Dentista
-        doctors: "Centre mèdic"
+        doctors: Centre mèdic
         hearing_aids: "Aparells auditius"
         hospital: Hospital
         medical_supply: "Subministraments mèdics"
@@ -51,44 +60,47 @@ ca:
         social_facility: "Serveis socials"
         veterinary: Veterinari
       leisure:
+        arena: Estadi
         brothel: Prostíbul
         casino: Casino
         cinema: Cinema
         community_center: "Centre comunitari"
         gallery: Galeria
         nightclub: Discoteca
-        playground: "Parc infantil"
+        playground: Parc infantil
         sauna: Sauna
-        stripclub: "Club d'striptease"
+        stripclub: Club d'striptease
         theatre: Teatre
         zoo: Zoo
       misc:
         company: "Companyia (oficina)"
-        estate_agent: Immobiliària
-        insurance: "Corredoria d'assegurances"
-        lawyer: "Despatx d'advocats"
+        estate_agent: "Immobiliària"
+        insurance: Corredoria d'assegurances
+        lawyer: Despatx d'advocats
         place_of_worship: "Lloc de culte"
         toilets: Lavabos
       money_post:
-        atm: "Caixer automàtic"
+        atm: Caixer automàtic
         bank: Banc
         bureau_de_change: "Casa de canvi"
-        post_box: Bústia
+        post_box: "Bústia"
         post_office: "Oficina de correus"
       public_transfer:
         aerodrome: Aeroport
         bicycle_parking: "Pàrquing de bicicletes"
         bicycle_rental: "Lloguer de bicicletes"
+        boatyard: Amarrador
         bus_station: "Estació d'autobusos"
         bus_stop: "Parada d'autobús"
         cable_car: "Telefèric (amb cabina tancada)"
         car_rental: "Lloguer de cotxes"
         car_sharing: "Lloc per compartir cotxe"
-        chair_lift: Telecadira
+        chair_lift: "Telecadira"
         ferry: Ferri
         ferry_terminal: "Terminal de ferri"
-        fuel: Gasolinera
+        fuel: "Gasolinera"
         halt: Baixador
+        light_rail: "Metro lleuger"
         parking: Pàrquing
         parking_aisle: "Zona d'aparcaments"
         platform: Andana/marquesina
@@ -98,28 +110,29 @@ ca:
         tram_stop: "Parada de tramvia"
       shopping:
         alcohol: Licors
-        bakery: "Forn i pastisseria"
+        bakery: Forn i pastisseria
         beauty: "Saló de bellesa"
         beverages: Begudes
         bicycle: "Bicicletes i accessoris"
         books: Llibreria
         butcher: Carnisseria
         car_repair: "Taller de cotxes"
+        car_shop: "Concessionari de cotxes"
         chemist: Farmàcia
         clothes: Roba
         computer: Informàtica
-        confectionery: Llaminadures
-        convenience: "Queviures/petit súper"
+        confectionery: "Llaminadures"
+        convenience: Queviures/petit súper
         deli: Delicadeses
         department_store: "Gran magatzem"
-        doityourself: Bricolatge
-        dry_cleaning: Tintoreria
+        doityourself: "Bricolatge"
+        dry_cleaning: "Tintoreria"
         electronics: Electrònica
-        fabric: Teleria
+        fabric: "Teleria"
         farm_shop: "Productes de granja"
         florist: Floristeria
         furniture: Mobles
-        garden_centre: Planter/viver
+        garden_centre: "Planter/viver"
         gift: "Botiga de regals"
         hairdresser: Perruqueria
         hardware: Ferreteria
@@ -128,6 +141,7 @@ ca:
         laundry: Bugaderia
         mall: "Centre comercial"
         optician: Òptica
+        organic: "Botiga naturista"
         outdoor: "Articles d'esport a l'aire lliure"
         pet: "Botiga per mascotes"
         photo: Fotografia
@@ -138,23 +152,23 @@ ca:
         supermarket: Supermercat
         toys: Joguines
         travel_agency: "Agència de viatges"
-        video: Videoclub
+        video: "Videoclub"
       sport:
         pitch: "Camp d'esports"
-        sports_centre: Poliesportiu
+        sports_centre: "Poliesportiu"
         stadium: Estadi
         swimming: Natació
-        swimming_pool: Piscina
+        swimming_pool: "Piscina"
       tourism:
         archaeological_site: "Espai arqueològic"
         arts_centre: "Centre d'arts"
-        artwork: "Obra d'art"
-        attraction: "Atracció turística"
-        battlefield: "Antic camp de batalla"
+        artwork: Obra d'art
+        attraction: Atracció turística
+        battlefield: Antic camp de batalla
         beach: Platja
         beacon: Far
         castle: Castell
-        cave_entrance: Cova
+        cave_entrance: "Cova"
         information: "Oficina de turisme"
         memorial: Monument
         theme_park: "Parc temàtic"

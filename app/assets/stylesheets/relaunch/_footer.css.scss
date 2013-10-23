@@ -7,7 +7,9 @@
   background: #EDECEA;
   border-top: 1px solid #FFF;
   box-shadow: 0px -1px 3px #999999;
-  @media screen and (max-width:760px) {
+  z-index: 10;
+
+  @media screen and (max-width: 760px) {
     display: none;
   }
   ul {
@@ -52,7 +54,7 @@
   td {
     padding: 2px 2px;
     color: gray;
-    font-family: "HelveticaNeue","Helvetica","Swiss 721","Arial","sans-serif";
+    font-family: "HelveticaNeue", "Helvetica", "Swiss 721", "Arial", "sans-serif";
     line-height: 18px;
     height: 18px;
   }
@@ -65,14 +67,15 @@
     background: url(/images/bubble-left.png) no-repeat -5px center;
   }
 }
-@media screen and (max-width:760px) {
+
+@media screen and (max-width: 760px) {
   .social {
-  	display:none;
+    display: none;
   }
   .credits li {
-  	border-right:none;
+    border-right: none;
   }
   .credits span {
-  	display:none;
+    display: none;
   }
 }

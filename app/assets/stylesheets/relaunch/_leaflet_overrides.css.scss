@@ -8,3 +8,49 @@
     bottom: 53px;
   }
 }
+
+.leaflet-popup-content-wrapper {
+  padding: 0;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+}
+
+.leaflet-bar-part-single {
+  @include border-radius(4px);
+  border-bottom: none;
+}
+
+.leaflet-touch .leaflet-bar-part-single {
+  @include border-radius(7px);
+  border-bottom: none;
+}
+
+.leaflet-control-locate {
+  a {
+    background-image: url('locate_btn.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: rgba(255,255,255,0.8);
+
+    &:hover {
+      background-color: #FFF;
+    };
+
+    @include if-min-resolution(1.3) {
+      background-image: url('locate_btn@2x.png');
+    }
+  }
+
+  &.requesting a {
+    background-image: url('spinner_locate.gif');
+  }
+
+  &.active a {
+    background-image: url(locate_btn_active.png);
+    @include if-min-resolution(1.3) {
+      background-image: url('locate_btn_active@2x.png');
+    }
+  }
+}

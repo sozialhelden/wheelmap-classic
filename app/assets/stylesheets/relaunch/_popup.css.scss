@@ -1,8 +1,7 @@
-
 .leaflet-popup-content-wrapper {
   background: #FFF;
   padding: 0;
-  border:none;
+  border: none;
   overflow: hidden;
   width: 260px;
   @include border-radius(4px);
@@ -18,7 +17,7 @@
       @include background(linear-gradient(top, #FEFEFE, #EAEAEA));
       @include filter-gradient(#FEFEFE, #EAEAEA, vertical);
       h2 {
-        font-size:16px;
+        font-size: 16px;
         line-height: 20px;
         margin: 0;
         padding-left: 30px;
@@ -43,7 +42,8 @@
       }
       h3 {
         margin: 0 0 4px 0;
-        line-height:20px;
+        line-height: 20px;
+        font-size: $baseFontSize;
       }
       ol {
         list-style-type: none;
@@ -53,7 +53,7 @@
           width: 240px;
           display: block;
           margin: 0 0 4px 0;
-          padding:0;
+          padding: 0;
           @include border-radius(4px);
           &.yes {
             color: $green;
@@ -68,7 +68,7 @@
             color: #555;
           }
           input[type=radio] {
-            float:left;
+            float: left;
             margin-right: 10px;
           }
           input[type=submit] {
@@ -79,9 +79,10 @@
     }
   }
 }
+
 .leaflet-popup-tip {
-	background-color: rgb(255,255,255)!important;
-	width: 8px!important;
-	height: 8px!important;
-	margin: -6px auto 0!important;
+  background-color: rgb(255, 255, 255) !important;
+  width: 8px !important;
+  height: 8px !important;
+  margin: -6px auto 0 !important;
 }

@@ -1,7 +1,7 @@
 class LandingPagesController < ApplicationController
   include InheritedResources::DSL
 
-  layout 'nodes'
+  layout 'legacy'
 
   before_filter :load_region, :load_status, :load_type
 

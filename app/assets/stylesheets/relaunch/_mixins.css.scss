@@ -34,3 +34,24 @@
   -ms-interpolation-mode: bicubic;
   ::-moz-selection { }
 }
+
+@mixin headline-gradient() {
+  background-color: $dark-blue;
+  @include background-image(linear-gradient(top, lighten($dark-blue, 10%), $dark-blue));
+}
+
+@mixin wheelchair($status, $color, $text-shadow: 0 1px 0 darken($color, 23%)) {
+  .#{$status} {
+    .popover-title {
+      background-color: darken($color, 5%);
+      color: $white;
+      @include text-shadow($text-shadow);
+    }
+  }
+
+  .wheelchair.#{$status} {
+    @include buttonBackground($color, darken($color, 10%), $white, $text-shadow);
+    font-weight: bold;
+    border: 1px solid darken($color, 23%);
+  }
+}

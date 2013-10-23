@@ -1,14 +1,13 @@
----
 ja:
   application:
     require_no_user:
       notice: "あなたはログイン済です ..."
     require_user:
-      notice: このページはログインしてから閲覧してください
+      notice: "このページはログインしてから閲覧してください"
   breadcrumbs:
     node:
-      create: 新しい場所を追加
-      edit: 場所を編集
+      create: "新しい場所を追加"
+      edit: "場所を編集"
     root: wheelmap
   common:
     close: 閉じる
@@ -17,38 +16,32 @@ ja:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: 承認してください
-      already_confirmed: は既に確認済みです
-      blank: 値を入力してください
-      confirmation: 確認が一致しません
-      empty: 値を入力してください
+      accepted: "承認してください"
+      already_confirmed: "は既に確認済みです"
+      blank: "値を入力してください"
+      confirmation: "確認が一致しません"
+      empty: "値を入力してください"
       equal_to: "正確に%{count} でなければなりません"
-      even: 偶数でなければなりません
-      exclusion: 使用されていません
-      expired: 有効期限が切れています、新しくリクエストしてください
+      even: "偶数でなければなりません"
+      exclusion: "使用されていません"
+      expired: "有効期限が切れています、新しくリクエストしてください"
       greater_than: "%{count}より大きくなければなりません"
       greater_than_or_equal_to: "%{count}以上でなければなりません"
-      inclusion: 値が正しくありません
-      invalid: 正しくありません
+      inclusion: "値が正しくありません"
+      invalid: "正しくありません"
       less_than: "%{count} より小さくなければなりません"
       less_than_or_equal_to: "%{count} 以下でなければなりません"
-      not_a_number: は数字ではありません
-      not_an_integer: 整数でなければなりません
-      not_found: は見つかりませんでした
-      not_locked: ロックされませんでした
-      not_saved:
-        one: "エラーが発生し、 %{resource} を保存できませんでした:"
-        other: "%{count} 件のエラーがあり、 %{resource} を保存できませんでした:"
-      odd: 奇数でなければなりません
-      taken: 既に取得されています
+      not_a_number: "は数字ではありません"
+      not_an_integer: "整数でなければなりません"
+      not_found: "は見つかりませんでした"
+      not_locked: "ロックされませんでした"
+      odd: "奇数でなければなりません"
+      taken: "既に取得されています"
       too_long: "が長すぎます(%{count} 文字より多すぎてはいけません)"
       too_short: "が短かすぎます(%{count} 文字より少なすぎてはいけません)"
       wrong_length: "長さが間違っています（正確に%{count}文字にしてください）"
     template:
-      body: 次の項目で問題がありました：
-      header:
-        one: "1件のエラーがあり、この %{model}は保存されませんでした"
-        other: "%{count}件のエラーがあり、この %{model} は保存できませんでした"
+      body: "次の項目で問題がありました："
   flash:
     actions:
       create:
@@ -60,83 +53,82 @@ ja:
         notice: "%{resource_name} は更新されました"
     photos:
       destroy:
-        notice: 画像は削除されました。
+        notice: "画像は削除されました。"
   form:
-    show_fully_accessible_places: 車椅子可
-    show_limited_accessible_places: 車椅子一部可
-    show_places_without_status: 不明な状態
-    show_unaccessible_places: 車椅子不可
+    show_fully_accessible_places: "車椅子可"
+    show_limited_accessible_places: "車椅子一部可"
+    show_places_without_status: "不明な状態"
+    show_unaccessible_places: "車椅子不可"
   formtastic:
     hints:
-      email: あなたの住所は厳重に取扱い、スパムメールを送ったりしないことをお約束します！
-      lat: 地図上のマーカーを正しい位置に移動
+      email: "あなたの住所は厳重に取扱い、スパムメールを送ったりしないことをお約束します！"
+      lat: "地図上のマーカーを正しい位置に移動"
       osm_username: "まだメンバーではありませんか？<a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">今すぐOpenstreetmap のアカウントを作成</a> "
-      password: (変更しない場合は空白のまま)
+      password: "(変更しない場合は空白のまま)"
       phone: "例: +49 30 123456-78"
       website: "例: http://www.example.com"
     labels:
       category: "カテゴリ:"
-      centralkey: 中央キー：
+      centralkey: "中央キー："
       city: "都市:"
-      create: 場所を作成
+      create: "場所を作成"
       email: Eメール
       finish: 終了
       housenumber: "番地:"
       lat: 緯度
       lon: 経度
       name: "名前:"
-      osm_password: OSMパスワード
-      osm_username: OSMアカウント
+      osm_password: "OSMパスワード"
+      osm_username: "OSMアカウント"
       password: パスワード
-      password_confirmation: パスワード再入力
+      password_confirmation: "パスワード再入力"
       phone: "電話:"
       postcode: "郵便番号:"
-      privacy_policy: データプライバシー同意書の1節と2節に同意します。
+      privacy_policy: "データプライバシー同意書の1節と2節に同意します。"
       reset: リセット
       save: 保存
-      street: 住所
-      terms: 利用条件に同意します。
+      street: "住所"
+      terms: "利用条件に同意します。"
       type: "タイプ:"
-      website: ウェブサイト
-      wheelchair: 車椅子のアクセシビリティは？
+      website: "ウェブサイト"
+      wheelchair: "車椅子のアクセシビリティは？"
       wheelchair_description: "アクセシビリティについてのコメント:"
     titles:
-      basic: 基本データ
+      basic: "基本データ"
       optional: "詳細情報 <span class=\"addition\">(全ての項目はオプションです)</span> "
   global:
-    form_validation_error: 下記に挙げられたエラーに注意してください。
+    form_validation_error: "下記に挙げられたエラーに注意してください。"
   header:
     meta:
       description: "車椅子で行ける場所を見つけよう - wheelmap.org"
-      homepage: ホームページ
-      keywords: 車椅子で行ける場所を見つけよう検索マーク
+      homepage: "ホームページ"
+      keywords: "車椅子で行ける場所を見つけよう検索マーク"
       search: 検索
     navigation:
       blog: ブログ
       feedback: ご意見
       home: 開始
-      how_to_add_a_place: 場所の追加方法は？
+      how_to_add_a_place: "場所の追加方法は？"
       imprint: クレジット
       logged_in_as: "次のアカウントでログイン:"
-      login: ログイン
-      logout: ログアウト
+      login: "ログイン"
+      logout: "ログアウト"
       newsletter: ニュースレター
       press: プレス
       profile: プロフィール
       suggestions: 提案
       what_is_barrier_free: "\"車椅子で行ける(アクセシブル)\"とは？"
-      what_is_wheelmap: wheelmapとは？
+      what_is_wheelmap: "wheelmapとは？"
     searchbar:
-      add_place: 別の場所を追加
+      add_place: "別の場所を追加"
       find: 探す
-      label: ~
-      placeholder: 場所を探す
-      title_add_place: 今すぐこの位置に新しい場所を追加！
+      placeholder: "場所を探す"
+      title_add_place: "今すぐこの位置に新しい場所を追加！"
     tagline: "Wheelmap ロゴ"
     title: "Wheelmap - 車椅子で行ける場所を見つけよう "
   helpers:
     select:
-      prompt: 選んでください
+      prompt: "選んでください"
     submit:
       create: "%{model} を作成"
       submit: "%{model} を保存"
@@ -145,28 +137,26 @@ ja:
     index:
       filter:
         category: "カテゴリ:"
-        deselect_all: すべての選択を解除
-        select_all: すべてを選択
-        wheelchair: 車椅子で行けますか？
+        deselect_all: "すべての選択を解除"
+        select_all: "すべてを選択"
+        wheelchair: "車椅子で行けますか？"
       ie:
         action:
           ignore: 無視
-          upgrade: ブラウザを更新
+          upgrade: "ブラウザを更新"
         warning:
-          headline: ごめんなさい！
+          headline: "ごめんなさい！"
           message: "Internet Explorerをお使いのようですね。Wheelmapを正しく使うには標準的な動作をするブラウザが必要です。Firefox, Chrome, Safari または Opera をお使いください。"
       link:
         node:
-          create: 新しい場所を追加
+          create: "新しい場所を追加"
       popup:
         form:
-          limited: 車椅子一部可
-          ? "no"
-          : 車椅子不可
+          limited: "車椅子一部可"
+          'no': "車椅子不可"
           save: 保存
-          unknown: 不明
-          ? "yes"
-          : 車椅子可
+          unknown: "不明"
+          'yes': "車椅子可"
         help: "車椅子で行けますか？ (ヘルプ)"
         more: "詳細 ..."
   how?: やり方は？
@@ -175,44 +165,42 @@ ja:
       wheelchair:
         limit:
           headline: "%{city} 内の、全ての制限付きの車椅子通行可能な %{type} (%{count}件)"
-        ? "no"
-        :
+        'no':
           headline: "%{city}内の全ての車椅子以外の通行 %{type} (%{count}件)"
         unknown:
           headline: "%{city} 内の全 %{type} の不明な車椅子の状態 (%{count}件)"
-        ? "yes"
-        :
+        'yes':
           headline: "%{city} 内の通行可能な %{type}  (%{count}件)"
   layouts:
     application:
       banner:
-        alt: Sozialhelden.deによるプロジェクト
+        alt: "Sozialhelden.deによるプロジェクト"
   node:
     address:
       city: "%{city} %{postcode}"
       street: "%{street} %{housenumber}"
     tags:
       phone: "電話:"
-      website: ウェブサイト
+      website: "ウェブサイト"
   nodes:
     create:
       flash:
-        not_successfull: おっと、入力内容が正しくないか不完全です。
-        successfull: ありがとうございます、送信内容は保存されました。しばらく経ってからオンラインに反映されます。
+        not_successfull: "おっと、入力内容が正しくないか不完全です。"
+        successfull: "ありがとうございます、送信内容は保存されました。しばらく経ってからオンラインに反映されます。"
     edit:
       header:
         title: "場所を編集: %{node} | wheelmap.org "
       link:
         large_map: "&laquo; キャンセル"
     errors:
-      default: おっと、何かがおかしいようです。この問題については連絡を受け付けました
-      not_authorized: 申し訳ありません、認証に失敗しました
-      not_available: 申し訳ありません、このページは一時的に利用できません。
-      not_existent: 申し訳ありません、この場所は既に利用できなくなっています。
-      not_found: 申し訳ありません、ページが見つかりません。
-      param_missing: 検索する言葉を入れてください。
+      default: "おっと、何かがおかしいようです。この問題については連絡を受け付けました"
+      not_authorized: "申し訳ありません、認証に失敗しました"
+      not_available: "申し訳ありません、このページは一時的に利用できません。"
+      not_existent: "申し訳ありません、この場所は既に利用できなくなっています。"
+      not_found: "申し訳ありません、ページが見つかりません。"
+      param_missing: "検索する言葉を入れてください。"
     flash:
-      authorize_wheelmap: データを変更するにはOpenStreetMapのアカウントが必要です。
+      authorize_wheelmap: "データを変更するにはOpenStreetMapのアカウントが必要です。"
     new:
       header:
         title: "新しい場所 | wheelmap.org"
@@ -220,9 +208,9 @@ ja:
         large_map: "&laquo; キャンセル"
     node:
       link:
-        claim: あなたはここで働いていますか？
-        edit_node: 場所を編集
-        report_bug: 問題を報告
+        claim: "あなたはここで働いていますか？"
+        edit_node: "場所を編集"
+        report_bug: "問題を報告"
     show:
       header:
         title: "場所: %{node} | wheelmap.org "
@@ -230,13 +218,13 @@ ja:
         back: 戻る
         large_map: 拡大
         listing: "%{city} 内のtyp '%{type}' の全ての場所"
-        upload: 画像をアップロード
-      more_data_from: この場所のはもっとデータがあります、チェック：
+        upload: "画像をアップロード"
+      more_data_from: "この場所のはもっとデータがあります、チェック："
       show-in-osm: OpenStreetMap
     update:
       flash:
-        not_successfull: おっと、入力内容が正しくないか不完全です。
-        successfull: ありがとうございます、送信内容は保存されました。しばらく経ってからオンラインに反映されます。
+        not_successfull: "おっと、入力内容が正しくないか不完全です。"
+        successfull: "ありがとうございます、送信内容は保存されました。しばらく経ってからオンラインに反映されます。"
     update_wheelchair:
       successfull: "\"%{name}\" のステータスは \"%{status} \" に変更されました。しばらくたったらオンラインで表示されます。"
   number:
@@ -289,7 +277,7 @@ ja:
   oauth:
     application:
       connect:
-        headline: あなたのアカウントをOpenStreetMapアカウントと連携させるとwheelmap.orgで場所を作成したり変更したりすることができます。
+        headline: "あなたのアカウントをOpenStreetMapアカウントと連携させるとwheelmap.orgで場所を作成したり変更したりすることができます。"
     callback:
       notice: "あなたのwheelmapアカウントは現在OpenStreetMapアカウント%{user}と連携しています。"
   or: or
@@ -301,22 +289,22 @@ ja:
       application:
         oauth:
           connected: "状態: 接続済"
-          grant: 今すぐ接続
+          grant: "今すぐ接続"
           not_connected: "状態: 未接続"
           revoke: 切断
-      headline: プロフィールを編集
+      headline: "プロフィールを編集"
   search:
     index:
       search:
         for: "\"%{q}\" を検索中"
-        not_found: 場所が見つかりません！
+        not_found: "場所が見つかりません！"
   splash:
     countline: "%{count} 件の場所が既にマークされています"
-    headline: 誰でも車椅子で行ける場所を追加できます！
+    headline: "誰でも車椅子で行ける場所を追加できます！"
     start: 開始
-    step1: 知っている場所をクリック
-    step2: マークして保存をクリック
-    step3: そうです！登録不要です。
+    step1: "知っている場所をクリック"
+    step2: "マークして保存をクリック"
+    step3: "そうです！登録不要です。"
     what_is_wheelmap: "Wheelmap とは？"
   statistics: 統計
   support:
@@ -327,7 +315,7 @@ ja:
       two_words_connector: "and "
       words_connector: ","
     select:
-      prompt: 選んでください
+      prompt: "選んでください"
   time:
     am: am
     formats:
@@ -338,53 +326,49 @@ ja:
   user_sessions:
     create:
       activation:
-        notice: あなたのアカウントは有効化されました！
+        notice: "あなたのアカウントは有効化されました！"
       error:
-        notice: Eメールとパスワードが一致しません。
-      notice: 入っています！
+        notice: "Eメールとパスワードが一致しません。"
+      notice: "入っています！"
     destroy:
-      notice: さよなら、またお越しください！
+      notice: "さよなら、またお越しください！"
     new:
-      email: Eメールアドレス
-      login: ログイン
-      login_with_twitter: Twitterでログイン
+      email: "Eメールアドレス"
+      login: "ログイン"
+      login_with_twitter: "Twitterでログイン"
       password: パスワード
-      remember_me: ログインを保持する
+      remember_me: "ログインを保持する"
   users:
     after_signup_edit:
       welcome:
-        headline: ほぼ終了です！Wheelmapアカウントのサインアップはここで終わりです。
-        set_password_for_mobile: |-
-            OpenStreetMap への登録が完了しました。
-            あなたのwheelmap アカウント用のメールアドレスとパスワードを選んだら設定完了です！iPhoneまたはAndroid 向けのWheelmapアプリにログインする時にこのメールアドレスとパスワードが必要になります。
-        text: あなたと連絡を取るにはどうしたら良いですか？この情報はあとからあなたのプロファイル欄で変更できます。
+        headline: "ほぼ終了です！Wheelmapアカウントのサインアップはここで終わりです。"
+        set_password_for_mobile: "OpenStreetMap への登録が完了しました。\nあなたのwheelmap アカウント用のメールアドレスとパスワードを選んだら設定完了です！iPhoneまたはAndroid 向けのWheelmapアプリにログインする時にこのメールアドレスとパスワードが必要になります。"
+        text: "あなたと連絡を取るにはどうしたら良いですか？この情報はあとからあなたのプロファイル欄で変更できます。"
     edit:
       headline:
-        your_images: あなたのアップロード画像
+        your_images: "あなたのアップロード画像"
   wheelchairstatus:
-    limited: 車椅子利用一部可
-    ? "no"
-    : 車椅子利用不可
-    unknown: 車椅子利用不明
-    ? "yes"
-    : 完全に車椅子利用可
+    limited: "車椅子利用一部可"
+    'no': "車椅子利用不可"
+    unknown: "車椅子利用不明"
+    'yes': "完全に車椅子利用可"
   wheelmap:
     footer:
-      a_project_of: プロジェクト運営：
-      based_on: ベース地図：
-      become_a_supporter: サポーターになる
-      main_supporter: 主なサポーター
+      a_project_of: "プロジェクト運営："
+      based_on: "ベース地図："
+      become_a_supporter: "サポーターになる"
+      main_supporter: "主なサポーター"
     itunes:
-      alt: AppStoreロゴ
+      alt: "AppStoreロゴ"
       title: "今すぐiPhone Appをダウンロード！"
     logo:
       alt: "Wheelmap ロゴ - 車椅子で行ける場所を見つけよう"
       title: "Wheelmap - 車椅子で行ける場所を見つけよう"
     what_is:
-      fully_accessible: 入口には段差が無い、全ての部屋に段差が無い、車椅子で無理なくトイレに行ける
-      limited_accessible: 入口に段差がある(最大でも高さ7cmまで)、たいていの部屋には段差が無い、車椅子でトイレに行けない
-      not_accessible: 入口の段差が高いか複数あり、部屋に入れない
-      unknown_accessible: 場所をマークして手助けしてください！
+      fully_accessible: "入口には段差が無い、全ての部屋に段差が無い、車椅子で無理なくトイレに行ける"
+      limited_accessible: "入口に段差がある(最大でも高さ7cmまで)、たいていの部屋には段差が無い、車椅子でトイレに行けない"
+      not_accessible: "入口の段差が高いか複数あり、部屋に入れない"
+      unknown_accessible: "場所をマークして手助けしてください！"
   will_paginate:
     next_label: "次へ &#8594"
     page_entries_info:

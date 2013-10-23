@@ -1,0 +1,11 @@
+<div class="node-popup-share btn-group dropdown">
+  <button class="dropdown-toggle btn" data-toggle="dropdown">
+    <i class="icon-share"></i>
+  </button>
+
+  <ul class="dropdown-menu" role="menu">
+    <li>{{ twitter-share osmId=osm_id name=headline lang=I18n.locale }}</li>
+    <li>{{ facebook-share osmId=osm_id }}</li>
+    <li>{{ email-share osmId=osm_id name=headline }}</li>
+  </ul>
+</div>

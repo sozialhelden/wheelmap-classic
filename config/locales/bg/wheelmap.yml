@@ -1,4 +1,3 @@
----
 bg:
   application:
     require_no_user:
@@ -113,13 +112,13 @@ bg:
       search: Търси
     navigation:
       blog: Новини
-      feedback: "Обратна връзка"
+      feedback: Обратна връзка
       home: Начало
       how_to_add_a_place: "Как се добавят места?"
       imprint: Контакт
       logged_in_as: "Регистриран като:"
-      login: Вход
-      logout: Изход
+      login: "Вход"
+      logout: "Изход"
       newsletter: Newsletter
       press: Преса
       profile: Профил
@@ -161,27 +160,23 @@ bg:
       popup:
         form:
           limited: "отчасти достъпно за инвалидни колички"
-          ? "no"
-          : "недостъпно за инвалидни колички"
+          'no': "недостъпно за инвалидни колички"
           save: Актуализация
           unknown: "неизвестен статус"
-          ? "yes"
-          : "достъпно за инвалидни колички"
+          'yes': "достъпно за инвалидни колички"
         help: "Достъпно за инвалидни колички? (Помощ)"
-        more: повече...
+        more: "повече..."
   how?: Как?
   landing_pages:
     index:
       wheelchair:
         limit:
           headline: "Всички %{type} с ограничен достъп в %{city} (%{count})"
-        ? "no"
-        :
+        'no':
           headline: "Всички недостъпни за инвалидни колички %{type} в %{city} (%{count})"
         unknown:
           headline: "Всички %{type} в %{city} с неизвестен достъп за инвалидни колички (%{count})"
-        ? "yes"
-        :
+        'yes':
           headline: "Всички достъпни за инвалидни колички %{type} в %{city} (%{count})"
   layouts:
     application:
@@ -329,7 +324,7 @@ bg:
     select:
       prompt: "Моля отбележи"
   time:
-    am: "преди обяд"
+    am: преди обяд
     formats:
       default: "%a, %d %b %Y, %H:%M:%S %z"
       long: "%d %B %Y, %H:%M"
@@ -346,7 +341,7 @@ bg:
       notice: "Чао, до скоро!"
     new:
       email: "E-mail адрес"
-      login: Вход
+      login: "Вход"
       login_with_twitter: "Влез с Twitter."
       password: Парола
       remember_me: "Запомни ме"
@@ -361,11 +356,9 @@ bg:
         your_images: "Твоите качени снимки"
   wheelchairstatus:
     limited: "отчасти достъпно за инвалидни колички"
-    ? "no"
-    : "недостъпно за инвалидни колички"
+    'no': "недостъпно за инвалидни колички"
     unknown: "неизвестен статус"
-    ? "yes"
-    : "достъпно за инвалидни колички"
+    'yes': "достъпно за инвалидни колички"
   wheelmap:
     footer:
       a_project_of: "Проект на"

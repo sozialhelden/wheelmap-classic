@@ -1,4 +1,3 @@
----
 da:
   application:
     require_no_user:
@@ -12,7 +11,7 @@ da:
     root: wheelmap
   common:
     close: luk
-    skip: "Spring over"
+    skip: Spring over
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -62,7 +61,7 @@ da:
       destroy:
         notice: "Billedet blev slettet"
   form:
-    show_fully_accessible_places: kørestolstilgængeligt
+    show_fully_accessible_places: "kørestolstilgængeligt"
     show_limited_accessible_places: "delvis kørestolstilgængeligt"
     show_places_without_status: "ukendt status"
     show_unaccessible_places: "ikke kørestolstilgængeligt"
@@ -81,7 +80,7 @@ da:
       create: "Opret sted"
       email: E-mail
       finish: Færdig
-      housenumber: Nr.
+      housenumber: "Nr."
       lat: Breddegrad
       lon: Længdegrad
       name: "Navn:"
@@ -101,14 +100,14 @@ da:
       wheelchair: " Kørestolstilgængeligt?"
       wheelchair_description: "Tilgængeligheds kommentar:"
     titles:
-      basic: Basisinformation
+      basic: "Basisinformation"
       optional: "Mere information <span class=\"addition\">(alle felter er valgfrit)</span>"
   global:
     form_validation_error: "Bemærk fejllisten nedenfor"
   header:
     meta:
       description: "Find kørestolstilgængelige steder - wheelmap.org"
-      homepage: Hjemmeside
+      homepage: "Hjemmeside"
       keywords: "kørestolstilgængelige steder find søgemarkering"
       search: Søg
     navigation:
@@ -118,10 +117,10 @@ da:
       how_to_add_a_place: "Hvordan tilføjer jeg steder?"
       imprint: Om
       logged_in_as: "Logget ind som:"
-      login: Login
+      login: "Login"
       logout: "Log ud"
       newsletter: Nyhedsbrev
-      press: "Tryk på"
+      press: Tryk på
       profile: Profil
       suggestions: Forslag
       what_is_barrier_free: "Hvad betyder \"kørestolstilgængeligt\"?"
@@ -136,7 +135,7 @@ da:
     title: "Find kørestolstilgængelige steder"
   helpers:
     select:
-      prompt: Vælg...
+      prompt: "Vælg..."
     submit:
       create: "Opret %{model}"
       submit: "Gem %{model}"
@@ -147,7 +146,7 @@ da:
         category: "Vælg kategori"
         deselect_all: "Fravælg alle"
         select_all: "Vælg alle"
-        wheelchair: Kørestolstilgængeligt?
+        wheelchair: "Kørestolstilgængeligt?"
       ie:
         action:
           ignore: Ignorer
@@ -161,12 +160,10 @@ da:
       popup:
         form:
           limited: "delvis kørestolstilgængeligt"
-          ? "no"
-          : "Ikke kørestolstilgængeligt"
+          'no': "Ikke kørestolstilgængeligt"
           save: Gem
           unknown: "ukendt status"
-          ? "yes"
-          : "Fuldt kørestoltilgængeligt"
+          'yes': "Fuldt kørestoltilgængeligt"
         help: "Kørestolstilgængeligt? (Hjælp)"
         more: "mere ..."
   how?: Hvordan?
@@ -175,13 +172,11 @@ da:
       wheelchair:
         limit:
           headline: "Alle begrænset kørestolstilgængelige steder %{type} i %{city} (%{count})"
-        ? "no"
-        :
+        'no':
           headline: "Alle ikke kørestolstilgængelige steder %{type} i %{city} (%{count})"
         unknown:
           headline: "Alle %{type} i %{city} med ukendt kørestolstilgængeligs status (%{count})"
-        ? "yes"
-        :
+        'yes':
           headline: "Alle kørestolstilgængelige steder %{type} i %{city} (%{count})"
   layouts:
     application:
@@ -327,7 +322,7 @@ da:
       two_words_connector: " og "
       words_connector: ", "
     select:
-      prompt: Vælg
+      prompt: "Vælg"
   time:
     am: am
     formats:
@@ -345,8 +340,8 @@ da:
     destroy:
       notice: "Farvel, kom snart igen!"
     new:
-      email: E-mail-adresse
-      login: Login
+      email: "E-mail-adresse"
+      login: "Login"
       login_with_twitter: "Login med Twitter"
       password: Adgangskode
       remember_me: "Forbliv logget ind"
@@ -354,26 +349,22 @@ da:
     after_signup_edit:
       welcome:
         headline: "Du er næsten der! Afslut oprettelsen af din Wheelmap konto her:"
-        set_password_for_mobile: |-
-            Du har nu afsluttet din registering med OpenStreetMap.
-            Vælg nu en e-mail adresse og en adgangskode til din Wheelmap konto og dernæst er du helt færdig! Du behøver denne e-mail adresse og adgangskode for at logge ind på Wheelmap app til iPhone eller Android.
+        set_password_for_mobile: "Du har nu afsluttet din registering med OpenStreetMap.\nVælg nu en e-mail adresse og en adgangskode til din Wheelmap konto og dernæst er du helt færdig! Du behøver denne e-mail adresse og adgangskode for at logge ind på Wheelmap app til iPhone eller Android."
         text: "Hvordan kan vi komme i kontakt med dig? Du kan altid ændre dette her senere i din profil."
     edit:
       headline:
         your_images: "Dine oploadede billeder"
   wheelchairstatus:
     limited: "delvis kørestolstilgængeligt"
-    ? "no"
-    : "Ikke kørestolstilgængeligt"
+    'no': "Ikke kørestolstilgængeligt"
     unknown: "kørestolstilgængeligt ukendt status"
-    ? "yes"
-    : "Fuldt kørestoltilgængeligt"
+    'yes': "Fuldt kørestoltilgængeligt"
   wheelmap:
     footer:
       a_project_of: "Et projekt fra"
       based_on: "Baseret på"
       become_a_supporter: "Bliv en støtter"
-      main_supporter: Hovedstøtter
+      main_supporter: "Hovedstøtter"
     itunes:
       alt: "AppStore logo"
       title: "Download iPhone App!"

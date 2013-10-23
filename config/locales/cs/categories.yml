@@ -1,4 +1,3 @@
----
 cs:
   poi:
     category:
@@ -7,9 +6,9 @@ cs:
       food: Jídlo
       government: Vláda
       health: Zdraví
-      leisure: "Volný čas"
+      leisure: Volný čas
       misc: Různé
-      money_post: Finančnictví
+      money_post: "Finančnictví"
       public_transfer: "Veřejná doprava"
       shopping: Nákupy
       sport: Sport
@@ -19,18 +18,19 @@ cs:
       accommodation:
         beach_resort: "Plážový hotel"
         bed_and_breakfast: "Nocleh se snídaní"
-        camp_site: Kemp
+        camp_site: "Kemp"
         caravan_site: "Autokemp pro obytné přívěsy"
-        chalet: "Horská chata"
+        chalet: Horská chata
         dormitory: Koleje
-        guest_house: Penzion
+        guest_house: "Penzion"
         hostel: Hostel
         hotel: Hotel
         motel: Motel
       education:
-        college: "Vysoká škola"
-        driving_school: Autoškola
+        college: Vysoká škola
+        driving_school: "Autoškola"
         kindergarten: Školka
+        library: Knihovna
         museum: Muzeum
         school: Škola
         university: Univerzita
@@ -40,7 +40,7 @@ cs:
         cafe: Kafe
         drinking_water: "Pitná voda"
         fast_food: "Rychlé občerstvení"
-        ice_cream: Zmrzlina
+        ice_cream: "Zmrzlina"
         pub: Hospoda
         restaurant: Restaurace
       government:
@@ -66,10 +66,10 @@ cs:
         cinema: Kino
         community_center: "Komunitní centrum"
         gallery: Galerie
-        nightclub: "Noční klub"
+        nightclub: Noční klub
         playground: Hřiště
         sauna: Sauna
-        stripclub: "Strip club"
+        stripclub: Strip club
         theatre: Divadlo
         zoo: Zoo
       misc:
@@ -77,14 +77,14 @@ cs:
         estate_agent: "Realitní kancelář"
         insurance: Pojištění
         lawyer: Právník
-        place_of_worship: Svatyně
+        place_of_worship: "Svatyně"
         toilets: Toalety
       money_post:
         atm: Bankomat
         bank: Banka
-        bureau_de_change: Směnárna
+        bureau_de_change: "Směnárna"
         post_box: "Poštovná schránka"
-        post_office: Pošta
+        post_office: "Pošta"
       public_transfer:
         aerodrome: Letiště
         bicycle_parking: "Stojan na kola"
@@ -92,7 +92,7 @@ cs:
         boatyard: Loděnice
         bus_station: "Autobusová stanice"
         bus_stop: "Zastávka autobusu"
-        cable_car: Lanovka
+        cable_car: "Lanovka"
         car_rental: "Půjčovna automobilů"
         car_sharing: "Sdílení automobilů"
         chair_lift: "Sedačková lanovka"
@@ -104,7 +104,7 @@ cs:
         parking: Parkování
         parking_aisle: "Parkovací ulička"
         platform: Nástupiště
-        station: Nádraží
+        station: "Nádraží"
         subway_entrance: "Vchod do metra"
         terminal: "Letištní terminál"
         tram_stop: "Zastávka tramvaje"
@@ -113,27 +113,27 @@ cs:
         bakery: Pekárna
         beauty: "Salon krásy"
         beverages: Nápoje
-        bicycle: Kola
+        bicycle: "Kola"
         books: Knihy
         butcher: Řeznictví
-        car_repair: Autoservis
-        car_shop: Automobily
+        car_repair: "Autoservis"
+        car_shop: "Automobily"
         chemist: Lékárna
         clothes: Oblečení
         computer: Počítače
-        confectionery: Cukrárna
+        confectionery: "Cukrárna"
         convenience: Příslušenství
         deli: Delikatesy
         department_store: "Obchodní dům"
         doityourself: "Kutilské potřeby"
-        dry_cleaning: Čistírna
+        dry_cleaning: "Čistírna"
         electronics: Elektronika
-        fabric: Textil
+        fabric: "Textil"
         farm_shop: "Farmářský obchod"
         florist: Květinářství
         furniture: Nábytek
         garden_centre: "Zahradní centrum"
-        gift: Suvenýry
+        gift: "Suvenýry"
         hairdresser: Kadeřnictví
         hardware: Železářství
         jewelry: Klenotnictví
@@ -143,7 +143,7 @@ cs:
         optician: Optika
         organic: "Organické výrobky"
         outdoor: "Outdoorové vybavení"
-        pet: Zverimex
+        pet: "Zverimex"
         photo: Fotky
         second_hand: "Second hand"
         shoes: Boty
@@ -152,9 +152,9 @@ cs:
         supermarket: Supermarket
         toys: Hračky
         travel_agency: "Cestovní kancelář"
-        video: Videopůjčovna
+        video: "Videopůjčovna"
       sport:
-        pitch: Hřiště
+        pitch: "Hřiště"
         sports_centre: "Sportovní centrum"
         stadium: Stadion
         swimming: Plavání
@@ -173,6 +173,6 @@ cs:
         memorial: Památník
         theme_park: "Zábavný park"
         tower: Věž
-        viewpoint: Rozhled
+        viewpoint: "Rozhled"
       unknown:
         unknown: Neznámé

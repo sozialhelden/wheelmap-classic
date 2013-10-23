@@ -1,4 +1,3 @@
----
 it:
   application:
     require_no_user:
@@ -115,12 +114,12 @@ it:
       feedback: Feedback
       home: Inizia
       how_to_add_a_place: "Come faccio ad aggiungere luoghi?"
-      imprint: "Informazione legale"
+      imprint: Informazione legale
       logged_in_as: "Collegato come:"
-      login: Accedi
-      logout: Esci
+      login: "Accedi"
+      logout: "Esci"
       newsletter: Newsletter
-      press: "Articoli di giornale"
+      press: Articoli di giornale
       profile: Profilo
       suggestions: Suggerimenti
       what_is_barrier_free: "Cosa significa \"accessibile in sedia a rotelle\"?"
@@ -135,7 +134,7 @@ it:
     title: "Trova luoghi accessibili in sedia a rotelle"
   helpers:
     select:
-      prompt: Scegli
+      prompt: "Scegli"
     submit:
       create: "Crea %{model}"
       submit: "Salva %{model}"
@@ -160,12 +159,10 @@ it:
       popup:
         form:
           limited: "parzialmente accessibile in sedia a rotelle"
-          ? "no"
-          : "non accessibile in sedia a rotelle"
+          'no': "non accessibile in sedia a rotelle"
           save: Aggiorna
           unknown: "stato sconosciuto"
-          ? "yes"
-          : "accessibile in sedia a rotelle"
+          'yes': "accessibile in sedia a rotelle"
         help: "Accessibile in sedia a rotelle? (Aiuto)"
         more: "più ..."
   how?: Come?
@@ -174,13 +171,11 @@ it:
       wheelchair:
         limit:
           headline: "Luoghi parzialmente accessibili in sedia a rotelle %{type} in %{city} (%{count})"
-        ? "no"
-        :
+        'no':
           headline: "Non accessibili in sedia a rotelle %{type} in %{city} (%{count})"
         unknown:
           headline: "%{type} in %{city} con stato di accessibilità in sedia a rotelle sconosciuto (%{count})"
-        ? "yes"
-        :
+        'yes':
           headline: "Accessibili in sedia a rotelle %{type} in %{city} (%{count})\n"
   layouts:
     application:
@@ -345,7 +340,7 @@ it:
       notice: "Ciao, ritorna presto!"
     new:
       email: "Indirizzo e-mail"
-      login: Entra
+      login: "Entra"
       login_with_twitter: "Collegati con Twitter"
       password: Password
       remember_me: "Resta collegato"
@@ -360,11 +355,9 @@ it:
         your_images: "I tuoi imagini caricati"
   wheelchairstatus:
     limited: "parzialmente accessibile in sedia a rotelle"
-    ? "no"
-    : "non accessibile in sedia a rotelle"
+    'no': "non accessibile in sedia a rotelle"
     unknown: "Accessibilità in sedia a rotelle sconosciuta "
-    ? "yes"
-    : "completamente accessibile in sedia a rotelle"
+    'yes': "completamente accessibile in sedia a rotelle"
   wheelmap:
     footer:
       a_project_of: "Un progetto di"

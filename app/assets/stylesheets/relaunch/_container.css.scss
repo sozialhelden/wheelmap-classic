@@ -1,0 +1,18 @@
+#container {
+  background: url('container_bg.png') repeat-x 0 52px;
+  display: block;
+  padding-bottom: $footerHeight + 10px;
+  padding-top: $headerHeight;
+
+  .content {
+    margin-top: 15px;
+    width: 100%;
+    background-color: white;
+    min-height: 300px;
+    @include box-shadow(0px 0px 4px 0px rgba(0,0,0,0.40));
+
+    @media screen and (min-width: $breakTablet) {
+      width: $containerWidth;
+    }
+  }
+}
