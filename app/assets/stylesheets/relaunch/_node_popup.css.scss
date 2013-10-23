@@ -262,6 +262,11 @@
       background-color: darken($orange-gray, 15%);
     }
   }
+
+  a.details {
+    max-width: 90px;
+    overflow: hidden;
+  }
 }
 
 .node-popup-share {
