@@ -48,13 +48,21 @@ namespace :housekeeping do
   desc 'Recalculate image meta information'
   task :recalculate_image_versions => :environment do
     Photo.find_each do |photo|
-      photo.image.recreate_versions!
+      photo.process_image_upload = true
+      begin
+        photo.image.recreate_versions!
+        photo.save
+      rescue
+        # something went wrong, maybe original file is missin
+        Rails.logger.warn "Could not regenerate thumbnails for Photo ID: #{photo.id}!!!"
+      end
     end
   end
 
   desc 'Recalculate image meta information'
   task :recalculate_image_meta => :environment do
     Photo.find_each do |photo|
+      photo.process_image_upload = true
       photo.image.store_meta
       photo.image.versions.map(&:first).each do |version|
         photo.image.send(version).store_meta
