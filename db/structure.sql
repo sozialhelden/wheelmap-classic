@@ -140,11 +140,12 @@ CREATE TABLE `photos` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `caption` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `image` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `image_processing` tinyint(1) DEFAULT NULL,
   `poi_id` bigint(20) DEFAULT NULL,
   `user_id` bigint(20) DEFAULT NULL,
   `taken_at` datetime DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
+  `image_processing` tinyint(1) DEFAULT NULL,
+  `image_tmp` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `image_width` int(11) DEFAULT NULL,
   `image_height` int(11) DEFAULT NULL,
   `image_gallery_ipad_retina_width` int(11) DEFAULT NULL,
@@ -163,9 +164,10 @@ CREATE TABLE `photos` (
   `image_gallery_ipad_height` int(11) DEFAULT NULL,
   `image_gallery_width` int(11) DEFAULT NULL,
   `image_gallery_height` int(11) DEFAULT NULL,
-  `image_tmp` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `image_gallery_preview_width` int(11) DEFAULT NULL,
+  `image_gallery_preview_height` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=147 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `pois` (
   `osm_id` bigint(20) NOT NULL,
@@ -383,3 +385,7 @@ INSERT INTO schema_migrations (version) VALUES ('20130122193813');
 INSERT INTO schema_migrations (version) VALUES ('20130214133154');
 
 INSERT INTO schema_migrations (version) VALUES ('20130228153529');
+
+INSERT INTO schema_migrations (version) VALUES ('20130905140446');
+
+INSERT INTO schema_migrations (version) VALUES ('20131024143040');
