@@ -2,6 +2,20 @@ Wheelmap.ToolbarView = Ember.View.extend
   elementId: 'toolbar'
   templateName: 'toolbar'
 
+  init: ()->
+    @_super()
+
+  didInsertElement: ()->
+    $(window).on 'resize.toolbar', @adjustCategoryFilter
+    @adjustCategoryFilter()
+
+  didRemoveElement: ()->
+    $(window).off 'resize.toolbar'
+
+  adjustCategoryFilter: ()->
+    # @TODO We need a better place for this!
+    @$('.category-filter').toggleClass('dropup', $(window).width() < 767)
+
   addToggleSearchbar: (()->
     $searchbar = @$('.searchbar-form')
 
