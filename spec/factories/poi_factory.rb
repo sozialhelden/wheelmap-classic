@@ -19,6 +19,7 @@ FactoryGirl.define do
     name 'name'
     type 'bar'
     wheelchair 'yes'
+    wheelchair_description 'Yes, we have a ramp.'
     association :node_type
     association :region
   end

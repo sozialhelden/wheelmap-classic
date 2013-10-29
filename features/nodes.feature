@@ -27,3 +27,7 @@ Feature: Find, update and create nodes via API
     When I am on the last poi's page
     Then I should see "Stiftung Gesundheit"
     And I should see "Voll Rollstuhlgerecht"
+
+  Scenario: I want to see a wheelchair description
+    When I am on the last poi's page
+    Then I should see "Yes, we have a ramp."
