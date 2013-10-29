@@ -2,6 +2,8 @@ pl:
   header:
     navigation:
       map: Mapa
+    toolbar:
+      categories: Kategoria
   nodes:
     node_edit:
       edit: "Zmień"
