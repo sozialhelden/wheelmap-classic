@@ -63,6 +63,7 @@ Wheelmap.NodeController = Ember.ObjectController.extend
       promise.done (response)->
         self.set('oldWheelchair', null)
         self.get('controllers.flash-messages').pushMessage('notice', response.message)
+        # TODO: Sent event to Google Analytics
 
       promise.fail (response)->
         @resetStatus()
