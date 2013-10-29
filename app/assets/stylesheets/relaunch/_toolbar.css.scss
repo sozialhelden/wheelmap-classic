@@ -10,7 +10,6 @@
 
   @media screen and (max-width: $breakTablet) {
     position: fixed;
-    top: auto;
     left: 0px;
     bottom: 0px;
     @include box-shadow(none);
