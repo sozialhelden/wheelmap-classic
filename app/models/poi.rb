@@ -367,7 +367,7 @@ class Poi < ActiveRecord::Base
     # Find pois within 2km range, that have same wheelchair status and are of the same type.
     bbox = Bbox.new(lon,lat,lon,lat)
     bbox.widen_by_meters(2000)
-    Poi.where('osm_id <> ?', self.osm_id).where(:status => self.status).where(:node_type_id => self.node_type_id).within_bbox(bbox.west, bbox.south, bbox.east, bbox.north).limit(100)
+    Poi.where('osm_id <> ?', self.osm_id).where('status <= ?', self.status).where(:node_type_id => self.node_type_id).within_bbox(bbox.west, bbox.south, bbox.east, bbox.north).limit(100)
   end
 
   def sorted_similar_pois
