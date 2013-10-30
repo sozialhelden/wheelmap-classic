@@ -6,6 +6,7 @@
 #= require bootstrap-select
 #= require custom-bootstrap.js.coffee
 #= require function
+#= require map-overlay.js
 #= require handlebars
 #= require ember
 #= require ember-data
