@@ -1,6 +1,7 @@
 #= require jquery
 #= require jquery_ujs
 #= require jquery/jquery.cookies.js
+#= require i18n.js
 #= require bootstrap-transition
 #= require bootstrap-button
 #= require bootstrap-collapse
@@ -15,6 +16,10 @@
 #= require jquery/jquery.magnific-popup.js
 #= require responsive-popover
 #= require dropzone
+
+I18n.defaultLocale = 'de'
+I18n.locale = $('html').attr('lang')
+I18n.fallbacks = true
 
 $container = $("#node")
 $container.find("[data-toggle=\"popover\"]").each ->
@@ -132,6 +137,8 @@ csrfParam = $('meta[name="csrf-param"]').attr('content')
 csrfToken = $('meta[name="csrf-token"]').attr('content')
 
 $('.selectpicker').selectpicker();
+
+$('#allianz').show() if I18n.locale == 'de' and $('article#node').data('category') == 'sport';
 
 $('[data-toggle="status-submit"]').click (e) ->
   e.preventDefault()
