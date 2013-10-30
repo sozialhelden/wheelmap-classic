@@ -46,8 +46,8 @@ class NodesController < ApplicationController
     @node.photos.build if @node.photos.blank?
 
     respond_to do |wants|
-      wants.json{ render :status => 200, :json => { :node => @node.as_api_response(:simple) } }
       wants.html
+      wants.json{ render :status => 200, :json => { :node => @node.as_api_response(:simple) } }
     end
   end
 
