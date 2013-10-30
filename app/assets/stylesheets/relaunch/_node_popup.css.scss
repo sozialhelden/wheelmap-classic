@@ -20,11 +20,8 @@
 }
 
 .node-popup-header {
-  @include headline-gradient();
   @include border-top-radius(3px);
-  @include text-shadow(0px 1px 3px rgba($black, 0.5));
   padding: 12px 12px 10px 12px;
-  color: $white;
 
   h2,
   address,
@@ -35,29 +32,6 @@
   h2 {
     font-size: $fontSizeLarge;
     line-height: $baseLineHeight * 1.2;
-  }
-
-  .breadcrumbs {
-    @include clearfix();
-    opacity: 0.5;
-
-    li {
-      float: left;
-      padding-right: 3px;
-      font-size: $fontSizeMini;
-      //line-height: $baseLineHeight;
-
-      .icon-angle-right {
-        line-height: inherit;
-        font-size: $fontSizeLarge;
-        float: left;
-        padding: 0 7px 0 5px;
-      }
-
-      &:first-of-type .icon-angle-right {
-        display: none;
-      }
-    }
   }
 }
 
