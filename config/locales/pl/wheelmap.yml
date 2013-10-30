@@ -14,6 +14,7 @@ pl:
     skip: pomiń
   errors:
     dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
     messages:
       accepted: "należy potwierdzić"
       already_confirmed: "zostało już potwierdzone"
@@ -35,6 +36,7 @@ pl:
       not_found: "nie został odnaleziony"
       not_saved:
         other: "%{count} błędy uniemożliwiły zachowanie %{resource}:"
+      not_locked: "nie został zablokowany"
       odd: "musi być nieparzyste"
       taken: "jest już zajęte"
       too_long: "jest za długie (nie więcej niż %{count} znaków)"
@@ -54,6 +56,9 @@ pl:
         notice: "%{resource_name} został usunięty"
       update:
         notice: "%{resource_name} został pomyślnie uaktualniony"
+    photos:
+      destroy:
+        notice: "Obraz został usunięty"
   form:
     show_fully_accessible_places: "dostępne dla osób na wózkach"
     show_limited_accessible_places: "częściowo dostępne dla osób na wózkach"
@@ -61,6 +66,7 @@ pl:
     show_unaccessible_places: "niedostępne dla osób na wózkach"
   formtastic:
     hints:
+      email: "Możesz nam zaufać, nie przesyłamy żadnego spamu!"
       lat: "Przesuń znacznik na mapie w poprawne miejsce"
       osm_username: "Nie jesteś jeszcze członkiem? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Utwórz konto w serwisie Openstreetmap teraz</a>"
       password: "(zostaw to pole puste, jeśli nie chcesz go zmieniać)"
@@ -68,6 +74,7 @@ pl:
       website: "Na przykład: http://www.example.com"
     labels:
       category: "Kategoria:"
+      centralkey: "Klucz uniwersalny:"
       city: "Miasto:"
       create: "Utwórz miejsce"
       email: E-mail
@@ -82,9 +89,11 @@ pl:
       password_confirmation: "Powtórz hasło"
       phone: "Telefon:"
       postcode: "Kod pocztowy:"
+      privacy_policy: "Akceptuję paragraf 1 i 2 Polityki Ochrony Prywatności"
       reset: Resetuj
       save: Zachowaj
       street: "Ulica:"
+      terms: "Akceptuję Politykę"
       type: "Typ:"
       website: "Strona www:"
       wheelchair: "Dostępność dla osób na wózkach?"
@@ -215,6 +224,7 @@ pl:
         back: wróć
         large_map: Powiększ
         listing: "Wszystkie miejsca typu '%{type}' w %{city}"
+        upload: "Dodaj obraz"
       more_data_from: "Istnieje więcej informacji o tym miejscu, sprawdzonych przez:"
       show-in-osm: OpenStreetMap
     update:
@@ -258,8 +268,13 @@ pl:
         format: "%n %u"
         units:
           byte:
+            few: bajtów
             one: bajt
-            other: bajty
+            other: bajtów
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
     percentage:
       format:
         delimiter: ~
@@ -275,7 +290,8 @@ pl:
   or: lub
   place:
     one: "%{count} miejsce"
-    other: "%{count} miejsc(a)"
+    few: "%{count} miejsc"
+    other: "%{count} miejsc"
   profile:
     edit:
       application:
@@ -334,7 +350,11 @@ pl:
     after_signup_edit:
       welcome:
         headline: "Witaj w wheelmap!"
+        set_password_for_mobile: "Zakończyłeś rejestrację w OpenStreetMap.\nTeraz wybierz swój adres emailowy oraz hasło do logowania na Wheelmap i gotowe! Będziesz potrzebował tych samych danych- adres emailowy wraz z hasłem \naby zalogować się w Wheelmap app dla iPhone i Android."
         text: "Jak możemy się z Tobą skontaktować? Tę informację będziesz mógł później edytować."
+    edit:
+      headline:
+        your_images: "twoje załadowane obrazy"
   wheelchairstatus:
     limited: "częściowo dostępne dla osób na wózkach"
     'no': "niedostępne dla osób na wózkach"

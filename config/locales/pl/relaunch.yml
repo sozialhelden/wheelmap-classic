@@ -1,9 +1,87 @@
 pl:
+  faq:
+    answers:
+      0: "Możesz zawsze zmienić zaznaczenie twoich miejsc. Wybierz tylko prawy przycisk, \n\"zapisz\" i gotowe!"
+      1: "Jako zalogowany użytkownik możesz dodawać / poprawiać informacje o miejscu.\nKliknij \"Zmień\" i dodaj albo popraw."
+      2: "Możesz dodać dodatkowe informacje (np. \"To miejsce posiada mobilną rampę\") w komentarzach sekcji. Naciśnij \"Edytuj\" i \"dodaj komentarz\""
+    headline: "Czy można napotkać jakieś trudności w tym miejscu?"
+    questions:
+      0: "To zaznaczenie jest niepoprawne."
+      1: "Szczegóły miejsca są niepoprawne lub ich brak."
+      2: "Posiadam więcej informacji o tym miejscu."
   header:
     navigation:
+      about_wheelmap: "O Wheelmap"
+      choose_language: "Wybierz język"
+      contact: Kontakt
       map: Mapa
+      projects: Nasze projekty
     toolbar:
       categories: Kategoria
+  home:
+    index:
+      overlay:
+        button: "Zaczynamy!"
+        categories: "Filtruj miejsca poprzez kategorie"
+        filter: "Filtruj miejsca poprzez dostępność dla poruszających się na wózku inwalidzkim"
+        headline: "Zaznacz i wyszukaj na mapie Wheelmap.org  miejsca przystosowane dla poruszających się na wózku inwalidzkim. To proste:"
+        lookup: "wyszukiwanie poprzez miejsce szczególne"
+        secondary_headline: "Nasz system kolorów opisuje przystosowanie dla poruszających się na wózku inwalidzkim:"
   nodes:
+    new:
+      form:
+        legend: "lokalizacja miejsca"
+        location: "Kliknij miejsce na mapie aby zaznaczyć pozycję"
+    node_data:
+      address: "Adres:"
+      contact_details: "Dane kontaktowe:"
     node_edit:
+      details: "Szczegóły"
       edit: "Zmień"
+    node_map:
+      map: "Mapa:"
+    node_note:
+      comment: "Komentarze:"
+    node_photos:
+      add: "Dodaj"
+      photos_of_this_place: "Obrazy dla tego miejsca"
+      upload: "Załaduj"
+    node_similar:
+      similar: "podobne miejsca %{name}"
+    node_status:
+      accessible_toilet: "toalety dostosowane dla niepełnosprawnych na wózku inwalidzkim:"
+      premium: "%{name} mówi: to miejsce jest"
+      wheelchair_accessibility: "dostępność dla poruszających się na wózku inwalidzkim:"
+    node_streetview:
+      streetview: "Widok ulicy:"
+    show:
+      header:
+        meta:
+          description: "Sprawdź na mapie Wheelmap.org czy to miejsce jest przystosowane dla poruszających się na wózku inwalidzkim albo dodaj inne informacje lub obrazy."
+          title: "To miejsce znajduje się na mapie Wheelmap.org: %{name}"
+      share:
+        email: "e-mail"
+        facebook: Facebook
+        text: "Znaleziono to miejsce na mapie Wheelmap.org: %{name}"
+        twitter: Twitter
+  search:
+    index:
+      no-results:
+        headline: "Przykro nam, nie mogliśmy znaleźć \"%{query}"
+        hint:
+          example: "<strong> przykład:</strong> London, United Kingdom"
+          info: "Nasza wyszukiwarka wyszukuje miejsca poprzez nazwę lub dane adresowe. \nWpisz proszę nazwę wyszukiwanego miejsca lub adres np. nazwę ulicy albo miasta.\nWyszukiwanie poprzez kategorie t.j. restauracje albo kina jest niemożliwe!"
+          work_in_progress: "Pracujemy nad tym aby ulepszyć wyszukiwanie miejsc i uczynić je bardziej intuicyjnym."
+        try_this:
+          address: "Proszę wprowadź więcej <strong> danych adresowych</strong>."
+          intro: "Spróbuj tak:"
+          spell_check: "Sprawdź <strong>poprawność literowania</strong> twojego wpisu"
+      results:
+        ticker:
+          one: "1 wynik:"
+          other: "%{count} wyników:"
+          zero: "0 wyników"
+    timeout:
+      headline: "Ups, to nasza wina"
+      info: "Usługa wyszukiwania była tymczasowo niedostępna"
+      repeat_search: "ponów wyszukiwanie"

@@ -53,7 +53,7 @@ de:
       premium: "%{name} sagt: dieser Ort ist"
       wheelchair_accessibility: "Rollstuhlgerechtigkeit:"
     node_streetview:
-      streetview: "Strassenansicht:"
+      streetview: "Straßenansicht:"
     show:
       header:
         meta:

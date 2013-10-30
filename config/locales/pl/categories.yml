@@ -21,12 +21,14 @@ pl:
         camp_site: "Pole kempingowe"
         caravan_site: "Kemping"
         chalet: Domek wypoczynkowy
+        dormitory: Akademik
         guest_house: "Pensjonat"
         hostel: Hostel
         hotel: Hotel
         motel: Motel
       education:
         college: Szkoła wyższa
+        driving_school: "Szkoła Nauki Jazdy"
         kindergarten: Przedszkole
         library: Biblioteka
         museum: Muzeum
@@ -38,15 +40,18 @@ pl:
         cafe: Kawiarnia
         drinking_water: "Ujęcie wody pitnej"
         fast_food: "Fast food"
+        ice_cream: "Lodziarnia"
         pub: Pub
         restaurant: Restauracja
       government:
         courthouse: Sąd
         embassy: Ambasada
+        government: "Agencja rządowa"
         police: Policja
         public_building: "Budynek użyteczności publicznej"
         townhall: Ratusz
       health:
+        dentist: Stomatolog
         doctors: Lekarz
         hearing_aids: "Sklep z aparatami słuchowymi"
         hospital: Szpital
@@ -57,6 +62,7 @@ pl:
       leisure:
         arena: Hala sportowa
         brothel: Agencja towarzyska
+        casino: Kasyno
         cinema: Kino
         community_center: "Dom kultury"
         gallery: Galeria
@@ -68,6 +74,8 @@ pl:
         zoo: Zoo
       misc:
         company: "Firma (Biuro)"
+        estate_agent: "Biuro Nieruchomości"
+        insurance: Agencja ubezpieczeniowa
         lawyer: Kancelaria prawna
         place_of_worship: "Miejsce kultu"
         toilets: Toaleta
@@ -103,6 +111,7 @@ pl:
       shopping:
         alcohol: Sklep monopolowy
         bakery: Piekarnia
+        beauty: "Kosmetyczka"
         beverages: Sklep z napojami
         bicycle: "Sklep rowerowy"
         books: Księgarnia
@@ -112,28 +121,40 @@ pl:
         chemist: Apteka
         clothes: Sklep z ubraniami
         computer: Komputer
+        confectionery: "Cukiernia"
         convenience: Sklep
+        deli: Delikatesy
         department_store: "Dom towarowy"
         doityourself: "Zrób to sam"
         dry_cleaning: "Pralnia chemiczna"
         electronics: Sklep ze sprzętem RTV
+        fabric: "Sklep z tkaninami"
+        farm_shop: "Żywność ekologiczna"
         florist: Kwiaciarnia
         furniture: Sklep z meblami
         garden_centre: "Sklep ogrodniczy"
+        gift: "Sklep z prezentami"
         hairdresser: Fryzjer
         hardware: Hardware
+        jewelry: Jubiler
         kiosk: Kiosk
         laundry: Pralnia
         mall: "Centrum handlowe"
         optician: Optyk
+        organic: "Sklep z artykułami organicznymi"
+        outdoor: "Sklep z odzieżą sportową "
+        pet: "Sklep zoologiczny"
         photo: Zdjęcie
         second_hand: "Sklep z używaną odzieżą"
         shoes: Sklep z obuwiem
         sports: Sport
         stationery: Sklep z artykułami biurowymi
         supermarket: Supermarket
+        toys: Zabawki
+        travel_agency: "Biuro podróży"
         video: "Wypożyczalnia video / płyt DVD"
       sport:
+        pitch: "boisko sportowe"
         sports_centre: "Ośrodek sportowy"
         stadium: Stadion
         swimming: Kąpielisko
