@@ -3,9 +3,26 @@
   height: 100%;
   position: absolute;
   z-index: 1999;
-  background: rgba(40,	54, 69, 0.8);
+  background: rgba(40, 54, 69, 0.8);
   display: none;
+
+  &.fade {
+    opacity: 0;
+    @include transition(opacity 0.4s);
+
+    &.in {
+      opacity: 1;
+
+      .lookup,
+      .filter,
+      .categories,
+      .go {
+        opacity: 1;
+      }
+    }
+  }
 }
+
 .overlay {
   width: 700px;
   height: auto;
@@ -19,11 +36,13 @@
   background-position: 0 219px;
   @include box-shadow(0 0 10px #333);
   @include border-radius(3px);
-  @media screen and (max-height:650px) {
+
+  @media screen and (max-height: 650px) {
     margin-top: -270px;
     background-position: 0 180px;
   }
-  @media screen and (max-width:700px) {
+
+  @media screen and (max-width: 700px) {
     width: 98%;
     height: 98%;
     left: 1%;
@@ -32,6 +51,7 @@
     background-position: 0 50px;
     @include border-radius(0px);
   }
+
   .header {
     width: 100%;
     height: auto;
@@ -39,11 +59,12 @@
     @include background(linear-gradient(top, rgb(255, 255, 255), rgb(237, 236, 234)));
     @include filter-gradient(#ffffff, #edecea, vertical);
     @include border-radius(3px 3px 0 0);
-    @media screen and (max-width:700px) {
+    @media screen and (max-width: 700px) {
       height: auto;
-      @include box-shadow (0 0 8px #333);
+      @include box-shadow(0 0 8px #333);
     }
   }
+
   .close-btn {
     float: right;
     font-family: 'EntypoRegular', sans-serif;
@@ -54,6 +75,7 @@
     cursor: pointer;
     @include border-radius(4px);
   }
+
   h1 {
     width: 90%;
     float: left;
@@ -66,11 +88,11 @@
     font-size: 16px;
     line-height: 24px;
     font-weight: normal;
-    @media screen and (max-height:650px) {
+    @media screen and (max-height: 650px) {
       font-size: 12px;
       margin-bottom: 10px;
     }
-    @media screen and (max-width:700px) {
+    @media screen and (max-width: 700px) {
       background-size: 170px;
       font-size: 12px;
       line-height: 18px;
@@ -78,6 +100,7 @@
       margin: -10px 0 0 0;
     }
   }
+
   h2 {
     width: 90%;
     float: left;
@@ -89,12 +112,13 @@
     line-height: 20px;
     font-weight: bold;
     color: #273543;
-    @media screen and (max-width:700px) {
+    @media screen and (max-width: 700px) {
       padding-top: 10px;
       font-size: 14px;
       line-height: 18px;
     }
   }
+
   .example-toolbar {
     width: 100%;
     height: 50px;
@@ -102,7 +126,7 @@
     position: relative;
     @include background-image(linear-gradient(top, rgb(64, 87, 109), rgb(38, 51, 65)));
     @include filter-gradient(rgb(64, 87, 109), rgb(38, 51, 65), vertical);
-    @media screen and (max-width:700px) {
+    @media screen and (max-width: 700px) {
       display: none;
     }
     img {
@@ -113,19 +137,21 @@
       margin-left: -250px;
       z-index: 100;
     }
+
     .tip {
+      @include transition(opacity 0.4s);
       width: auto;
       position: absolute;
       left: 50%;
       color: #333;
       background: #FFF;
       padding: 4px 10px;
-      display: none;
+      opacity: 0;
 
       font-size: 12px;
       line-height: 18px;
 
-      @include box-shadow (0 0 4px #333);
+      @include box-shadow(0 0 4px #333);
       @include border-radius(3px);
       &:after {
         position: absolute;
@@ -137,18 +163,21 @@
         content: "";
       }
       &.lookup {
+        @include transition-delay(1.5s);
         max-width: 100px;
         z-index: 200;
         margin-left: -200px;
         bottom: 40px;
       }
       &.filter {
+        @include transition-delay(3s);
         max-width: 130px;
         z-index: 200;
         margin-left: -44px;
         bottom: 40px;
       }
       &.categories {
+        @include transition-delay(4.5s);
         max-width: 100px;
         bottom: 40px;
         z-index: 200;
@@ -176,7 +205,7 @@
       img {
         width: 80%;
         margin: 0px 10%;
-        @media screen and (max-height:650px) {
+        @media screen and (max-height: 650px) {
           width: 50%;
           margin: 0 25%;
         }
@@ -191,10 +220,10 @@
       p {
         padding: 0 5%;
         float: left;
-        @media screen and (max-height:650px) {
+        @media screen and (max-height: 650px) {
           line-height: 18px;
         }
-        @media screen and (max-width:700px) {
+        @media screen and (max-width: 700px) {
           display: none;
         }
       }
@@ -220,12 +249,14 @@
       }
     }
   }
-  button.go {
+
+  .go {
+    @include transition(opacity 0.4s false 7s);
     width: 50%;
     padding: 20px 0px;
     margin: 0 25%;
     float: left;
-    display: none;
+    opacity: 0;
     cursor: pointer;
 
     font-size: 20px;
@@ -238,11 +269,11 @@
 
     @include border-radius(8px);
     border: 1px solid #333;
-    @media screen and (max-height:650px) {
+    @media screen and (max-height: 650px) {
       font-size: 17px;
       padding: 10px 0;
     }
-    @media screen and (max-width:700px) {
+    @media screen and (max-width: 700px) {
       font-size: 12px;
       padding: 10px 0px;
       margin-top: 5px;
