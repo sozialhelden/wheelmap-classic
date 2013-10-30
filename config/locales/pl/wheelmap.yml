@@ -34,9 +34,12 @@ pl:
       not_a_number: "nie jest liczbą"
       not_an_integer: "musi być liczbą całkowitą"
       not_found: "nie został odnaleziony"
-      not_saved:
-        other: "%{count} błędy uniemożliwiły zachowanie %{resource}:"
       not_locked: "nie został zablokowany"
+      not_saved:
+        one: "błąd nie pozwolił zapisać %{resource}: "
+        few: "%{count} błędy nie pozwoliły zapisać %{resource}:"
+        many: "Insert here"
+        other: "%{count} błędów nie pozwoliło zapisać %{resource}:"
       odd: "musi być nieparzyste"
       taken: "jest już zajęte"
       too_long: "jest za długie (nie więcej niż %{count} znaków)"
@@ -45,8 +48,10 @@ pl:
     template:
       body: "Nastąpiły problemy z następującymi polami:"
       header:
-        one: "1 błąd uniemożliwił zachowanie tego %{model} "
-        other: "%{count} błędy uniemożliwiły zachowanie tego %{model}"
+        one: "Obiekt %{model} nie został zapisany, wystąpił błąd "
+        few: "Obiekt %{model} nie został zapisany, wystąpiły %{count} błędy"
+        many: "Insert here"
+        other: "Obiekt %{model} nie został zapisany, wystąpiły %{count} błędy"
   flash:
     actions:
       create:
@@ -268,8 +273,8 @@ pl:
         format: "%n %u"
         units:
           byte:
-            few: bajtów
             one: bajt
+            few: bajtów
             other: bajtów
           gb: GB
           kb: KB
@@ -380,10 +385,14 @@ pl:
   will_paginate:
     next_label: "Następny &#8594;"
     page_entries_info:
+      multi_page: "Wyświetl %{model} %{from} - %{to} of %{count} ogółem"
+      multi_page_html: "Wyświetl %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> ogółem"
       single_page:
         one: "Wyświetlanie 1 %{model}"
+        other: "Wyświetl wszystkie %{count} %{model}"
         zero: "%{model} nie odnaleziony"
       single_page_html:
+        one: "Wyświetl <b>1</b> %{model}"
         other: "Wyświetlanie <b>all&nbsp;%{count}</b> %{model}"
         zero: "Nie odnaleziono %{model} "
     page_gap: "&hellip;"
