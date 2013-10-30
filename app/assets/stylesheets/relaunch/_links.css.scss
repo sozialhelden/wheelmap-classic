@@ -1,6 +1,5 @@
 a {
   font-size: inherit;
-  color: $blueDark;
   text-decoration: none;
   cursor: pointer;
   @include transition-property(color);
@@ -8,12 +7,7 @@ a {
 
   &:hover,
   &:visited {
-    color: darken($blueDark, 20%);
     text-decoration: inherit;
-  }
-
-  &:visited {
-    color: darken($blueDark, 30%);
   }
 
   &:focus {

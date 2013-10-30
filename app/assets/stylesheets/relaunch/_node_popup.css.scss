@@ -21,7 +21,11 @@
 
 .node-popup-header {
   @include border-top-radius(3px);
-  padding: 12px 12px 10px 12px;
+
+  a {
+    display: block;
+    padding: 12px 12px 10px 12px;
+  }
 
   h2,
   address,
