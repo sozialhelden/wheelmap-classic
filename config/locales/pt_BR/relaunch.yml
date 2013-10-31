@@ -1,0 +1,50 @@
+pt_BR:
+  header:
+    navigation:
+      about_wheelmap: "Sobre Wheelmap"
+      choose_language: "Escolher idioma"
+      contact: Contato
+      map: Mapa
+      projects: 'Projetos:'
+    toolbar:
+      categories: Categorias
+  home:
+    index:
+      overlay:
+        categories: "Filtrar lugares por categoria"
+        filter: "Filtrar lugares por acessibilidade"
+  nodes:
+    node_data:
+      address: "Endereço:"
+    node_edit:
+      details: "Detalhes"
+      edit: "Editar"
+    node_map:
+      map: "Mapa:"
+    node_note:
+      comment: "Comentário:"
+    node_photos:
+      photos_of_this_place: "Fotos deste lugar:"
+      upload: "Transferência"
+    node_similar:
+      similar: "Lugares parecidos: %{name}"
+    node_status:
+      wheelchair_accessibility: "Acessibilidade a cadeirantes:"
+    node_streetview:
+      streetview: "Vista de rua:"
+    show:
+      share:
+        facebook: Facebook
+        twitter: Twitter
+  search:
+    index:
+      no-results:
+        try_this:
+          intro: "Tente isso:"
+      results:
+        ticker:
+          one: "1 resultado:"
+          other: "%{count} resultados:"
+          zero: "0 resultados:"
+    timeout:
+      headline: "Oh, nossa culpa"

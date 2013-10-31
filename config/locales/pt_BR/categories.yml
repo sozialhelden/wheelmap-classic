@@ -1,10 +1,9 @@
----
-pt-BR:
+pt_BR:
   poi:
     category:
-      accommodation: "Acomodação "
-      education: "Educação "
-      food: "Comidas & Bebidas"
+      accommodation: 'Acomodação '
+      education: 'Educação '
+      food: Comidas & Bebidas
       government: Governo
       health: Saúde
       leisure: Lazer
@@ -17,16 +16,19 @@ pt-BR:
       unknown: Desconhecido
     name:
       accommodation:
-        bed_and_breakfast: Pensão
-        camp_site: Acampamento
+        beach_resort: "Hotel de praia"
+        bed_and_breakfast: "Pensão"
+        camp_site: "Acampamento"
         caravan_site: "Acampamento de treiler"
         chalet: Chalet
-        guest_house: Albergue
+        dormitory: Moradia
+        guest_house: "Albergue"
         hostel: Hostel
         hotel: Hotel
-        motel: "Hotel de rodovia"
+        motel: Hotel de rodovia
       education:
         college: Colégio
+        driving_school: "Autoescola"
         kindergarten: Creche
         library: Biblioteca
         museum: Museu
@@ -34,10 +36,11 @@ pt-BR:
         university: Universidade
       food:
         bar: Bar
-        biergarten: "Cervejaria ao ar livre"
+        biergarten: Cervejaria ao ar livre
         cafe: Café
         drinking_water: "Agua potável"
-        fast_food: Lanchonete
+        fast_food: "Lanchonete"
+        ice_cream: "Sorveteria"
         pub: Pub
         restaurant: Restaurante
       government:
@@ -47,6 +50,7 @@ pt-BR:
         public_building: "Prédio público"
         townhall: Prefeitura
       health:
+        dentist: Dentista
         doctors: Médicos
         hearing_aids: "Loja de aparelhos auditivos"
         hospital: Hospital
@@ -55,31 +59,36 @@ pt-BR:
         social_facility: "Instituição social"
         veterinary: Veterinário
       leisure:
+        arena: Arena
         brothel: Bordel
+        casino: Cassino
         cinema: Cinema
         community_center: "Centro comunitário"
-        gallery: "Galeria de arte"
-        nightclub: "Casa noturna"
-        playground: "Área recreacional"
+        gallery: Galeria de arte
+        nightclub: Casa noturna
+        playground: Área recreacional
         sauna: Sauna
-        stripclub: "clube de strip-tease"
+        stripclub: clube de strip-tease
         theatre: Teatro
         zoo: Zoológico
       misc:
-        company: Empresa
+        company: "Empresa"
+        estate_agent: "Imobiliária"
+        insurance: Seguradora
         lawyer: Advogado
         place_of_worship: "Lugar de Adoração"
-        toilets: "Banheiros públicos"
+        toilets: Banheiros públicos
       money_post:
-        atm: "Caixa eletrônico"
+        atm: Caixa eletrônico
         bank: Banco
         bureau_de_change: "Loja de Câmbio"
         post_box: "Caixa de Correio"
         post_office: "Agência de Correios"
       public_transfer:
         aerodrome: Aeroporto
-        bicycle_parking: Bicicletário
+        bicycle_parking: "Bicicletário"
         bicycle_rental: "Aluguel de bicicletas"
+        boatyard: Estaleiro
         bus_station: "Ponto de ônibus"
         bus_stop: "Ponto de ônibus"
         cable_car: "Teleférico de cabine"
@@ -94,13 +103,14 @@ pt-BR:
         parking: Estacionamento
         parking_aisle: "Corredor de estacionamento"
         platform: Plataforma
-        station: Metrô
+        station: "Metrô"
         subway_entrance: "Entrada do Metrô"
         terminal: "Terminal de Aeroporto "
         tram_stop: "Parada de bonde"
       shopping:
-        alcohol: "Bebidas alcoólicas"
+        alcohol: Bebidas alcoólicas
         bakery: Padaria
+        beauty: "Salão de beleza"
         beverages: Bebidas
         bicycle: "Loja de bicicletas"
         books: Livraria
@@ -110,38 +120,46 @@ pt-BR:
         chemist: Drogaria
         clothes: Roupa
         computer: Computadores
-        convenience: "Loja de Conveniência"
+        confectionery: "Confeitaria"
+        convenience: Loja de Conveniência
+        deli: Delicatessen
         department_store: "Loja de Departamentos"
         doityourself: "Loja de ferragens"
         dry_cleaning: "Lavanderia a seco"
-        electronics: "Loja de Eletrônicos"
+        electronics: Loja de Eletrônicos
         florist: Florista
         furniture: Móveis
         garden_centre: "Centro de jardinagem"
         hairdresser: Cabeleireiro
-        hardware: "Utensílios e Ferramentas"
+        hardware: Utensílios e Ferramentas
+        jewelry: Joalharia
         kiosk: Quiosque
         laundry: Lavandaria
         mall: "Shopping Center"
         optician: Ótica
-        photo: "Loja de fotografia"
-        second_hand: Brechó
+        organic: "Loja orgânica"
+        outdoor: "Equipamento Outdoor"
+        pet: "Pet shop"
+        photo: Loja de fotografia
+        second_hand: "Brechó"
         shoes: Sapataria
-        sports: "Produtos esportivos"
+        sports: Produtos esportivos
         stationery: Papelaria
         supermarket: Supermercado
-        video: Locadora
+        toys: Brinquedos
+        travel_agency: "Agência de viagens"
+        video: "Locadora"
       sport:
         sports_centre: "Centro esportivo"
         stadium: Estádio
         swimming: Natação
-        swimming_pool: Piscina
+        swimming_pool: "Piscina"
       tourism:
         archaeological_site: "Local arqueológico"
         arts_centre: "Centro de artes"
-        artwork: "Obra de arte"
+        artwork: Obra de arte
         attraction: Atracção
-        battlefield: "Campo de batalha"
+        battlefield: Campo de batalha
         beach: Praia
         beacon: Farol
         castle: Castelo
@@ -150,6 +168,6 @@ pt-BR:
         memorial: Memorial
         theme_park: "Parque temático"
         tower: Torre
-        viewpoint: Mirante
+        viewpoint: "Mirante"
       unknown:
         unknown: Desconhecido
