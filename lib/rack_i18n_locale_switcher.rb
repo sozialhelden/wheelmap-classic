@@ -44,7 +44,7 @@ module Rack
     end
 
     def extract_locale_from_path(request)
-      if request.path_info =~ /\/([a-z]{2}-[a-zA-Z]{2})($|\/)/
+      if request.path_info =~ /\/([a-z]{2}_[a-zA-Z]{2})($|\/)/
         $1 if is_available?($1)
       elsif request.path_info =~ /^\/([a-z]{2,3})($|\/)/
         $1 if is_available?($1)
@@ -71,7 +71,7 @@ module Rack
           l += ';q=1.0' unless l =~ /;q=\d+\.\d+$/
           l.split(';q=')
         }.first
-        locale = symbolize_locale(lang.first.split("-").first)
+        locale = symbolize_locale(lang.first.split("_").first)
       else
         locale = nil
       end

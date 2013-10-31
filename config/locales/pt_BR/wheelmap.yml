@@ -1,5 +1,4 @@
----
-pt-BR:
+pt_BR:
   application:
     require_no_user:
       notice: "Já está conectado à sua conta"
@@ -58,9 +57,12 @@ pt-BR:
         notice: "%{resource_name} foi excluido com sucesso."
       update:
         notice: "%{resource_name} foi atualizado com sucesso."
+    photos:
+      destroy:
+        notice: "Imagem removida com sucesso"
   form:
     show_fully_accessible_places: "Acessível a cadeirantes"
-    show_limited_accessible_places: Parcialmente
+    show_limited_accessible_places: "Parcialmente"
     show_places_without_status: "Status desconhecido"
     show_unaccessible_places: "não acessível a cadeirantes"
   formtastic:
@@ -88,9 +90,11 @@ pt-BR:
       password_confirmation: "Repetir senha"
       phone: "Telefone:"
       postcode: "CEP:"
+      privacy_policy: "Aceito parágrafos 1 e 2 do acordo de privacidade de dados"
       reset: Recomeçar
       save: Salvar
       street: "Rua:"
+      terms: "Aceito os termos de uso."
       type: "Tipo:"
       website: "Website:"
       wheelchair: "Acessível a cadeirantes?"
@@ -113,10 +117,11 @@ pt-BR:
       how_to_add_a_place: "Como adicionar lugares?"
       imprint: Contato
       logged_in_as: "Conectado como:"
-      login: Entrar
-      logout: Sair
+      login: "Entrar"
+      logout: "Sair"
       newsletter: Newsletter
       press: Imprensa
+      profile: Perfis
       suggestions: Sugestões
       what_is_barrier_free: "Qual o significado de \"acessível a cadeirantes\"?"
       what_is_wheelmap: "O que é o Wheelmap?"
@@ -147,7 +152,7 @@ pt-BR:
           ignore: Ignorar
           upgrade: "Atualizar browser"
         warning:
-          headline: Desculpe!
+          headline: "Desculpe!"
           message: "Aparentemente você está usando Internet Explorer.  Wheelmap precisa dum browser compatível com o padrão para funcionar. Por favor, use Firefox, Chrome, Safari ou Opera."
       link:
         node:
@@ -155,12 +160,10 @@ pt-BR:
       popup:
         form:
           limited: "Parcialmente acessível"
-          ? "no"
-          : "Não acessível a cadeirantes"
+          'no': "Não acessível a cadeirantes"
           save: Salvar
           unknown: "Status desconhecido"
-          ? "yes"
-          : "Completamente acessível"
+          'yes': "Completamente acessível"
         help: "Acessível a cadeirantes? (Ajuda)"
         more: "mais ..."
   how?: Como?
@@ -169,13 +172,11 @@ pt-BR:
       wheelchair:
         limit:
           headline: "Todos os %{type} acessíveis em %{city} (%{count})"
-        ? "no"
-        :
+        'no':
           headline: "Todos os %{type} não acessíveis em %{city} (%{count})"
         unknown:
           headline: "Todos os %{type} em %{city} com acessibilidade desconhecida (%{count})"
-        ? "yes"
-        :
+        'yes':
           headline: "Todos os %{type} acessíveis a cadeirantes em %{city} (%{count})"
   layouts:
     application:
@@ -224,8 +225,9 @@ pt-BR:
         back: Voltar
         large_map: Aumentar
         listing: "Todos os lugares do tipo '%{type}' em %{city}"
+        upload: "Transferir imagem"
       more_data_from: "Não existem mais dados sobre este lugar, qualificado por:"
-      show-in-osm: "mostrar em Openstreetmap"
+      show-in-osm: mostrar em Openstreetmap
     update:
       flash:
         not_successfull: "Oops, os dados ainda são incompletos ou incorretos."
@@ -252,11 +254,11 @@ pt-BR:
       decimal_units:
         format: "%n %u"
         units:
-          billion: "Bilhão "
-          million: "Milhão "
+          billion: 'Bilhão'
+          million: 'Milhão'
           quadrillion: Quatrilhão
           thousand: Mil
-          trillion: "Trilhão "
+          trillion: 'Trilhão'
           unit: ~
       format:
         delimiter: ~
@@ -296,7 +298,7 @@ pt-BR:
           connected: "Estatus: Conectado"
           grant: "Ligar agora"
           not_connected: "Status: não conectado"
-          revoke: "Desligar "
+          revoke: 'Desligar'
       headline: "Editar o seu perfil"
   search:
     index:
@@ -322,12 +324,12 @@ pt-BR:
     select:
       prompt: "Por favor selecione"
   time:
-    am: "da manhã"
+    am: da manhã
     formats:
       default: "%A, %d de %B de %Y, %H:%M"
       long: "%A, %d de %B de %Y, %H:%M"
       short: "%d/%m, %H:%M"
-    pm: "de tarde"
+    pm: de tarde
   user_sessions:
     create:
       activation:
@@ -338,8 +340,8 @@ pt-BR:
     destroy:
       notice: "Até breve!"
     new:
-      email: E-mail
-      login: Entrar
+      email: "E-mail"
+      login: "Entrar"
       login_with_twitter: "Conecte-se pelo Twitter"
       password: Senha
       remember_me: "Mantenha-se connectado"
@@ -349,13 +351,14 @@ pt-BR:
         headline: "Quase pronto!"
         set_password_for_mobile: "Você tem um smartphone? Então defina uma senha aqui para usar o wheelmap no seu iPhone ou celular Android."
         text: "Você se registrou com sucesso. Nos lhe informaremos sobre notícias importantes acerca do Wheelmap."
+    edit:
+      headline:
+        your_images: "Suas imagens"
   wheelchairstatus:
     limited: "Parcialmente acessível a cadeirantes"
-    ? "no"
-    : "Não acessível a cadeirantes"
+    'no': "Não acessível a cadeirantes"
     unknown: "Sem informações sobre acessibilidade"
-    ? "yes"
-    : "Completamente acessível a cadeirantes"
+    'yes': "Completamente acessível a cadeirantes"
   wheelmap:
     footer:
       a_project_of: "Um projeto de"
