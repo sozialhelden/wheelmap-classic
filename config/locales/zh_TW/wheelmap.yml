@@ -1,14 +1,13 @@
----
-zh-TW:
+zh_TW:
   application:
     require_no_user:
-      notice: 您已經登入...
+      notice: "您已經登入..."
     require_user:
-      notice: 您必須登入才能瀏覽這個頁面。
+      notice: "您必須登入才能瀏覽這個頁面。"
   breadcrumbs:
     node:
-      create: 新增地點
-      edit: 編輯地點
+      create: "新增地點"
+      edit: "編輯地點"
     root: wheelmap
   common:
     close: 關閉
@@ -17,38 +16,38 @@ zh-TW:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: 必須被接受
-      already_confirmed: 已確認
-      blank: 必須填寫
-      confirmation: 與確認值不符合
-      empty: 必須填寫
+      accepted: "必須被接受"
+      already_confirmed: "已確認"
+      blank: "必須填寫"
+      confirmation: "與確認值不符合"
+      empty: "必須填寫"
       equal_to: "必須確實為%{count}"
-      even: 必須是偶數
-      exclusion: 被保留
-      expired: 已經過期，請重新申請
+      even: "必須是偶數"
+      exclusion: "被保留"
+      expired: "已經過期，請重新申請"
       greater_than: "必須大於 %{count}"
       greater_than_or_equal_to: "必須大於或等於 %{count}"
-      inclusion: 無效數值
-      invalid: 無效
+      inclusion: "無效數值"
+      invalid: "無效"
       less_than: "必須小於 %{count}"
       less_than_or_equal_to: "必須少於或等於 %{count}"
-      not_a_number: 不是數字
-      not_an_integer: 必須是整數
-      not_found: 没有找到
-      not_locked: 沒有被鎖定
       not_saved:
         one: "因為1個錯誤導致此 %{resource} 存檔失敗："
         other: "因為 %{count} 個錯誤導致此 %{resource} 存檔失敗："
-      odd: 必須為奇數
-      taken: 已被使用
+      not_a_number: "不是數字"
+      not_an_integer: "必須是整數"
+      not_found: "没有找到"
+      not_locked: "沒有被鎖定"
+      odd: "必須為奇數"
+      taken: "已被使用"
       too_long: "太長 (不能長於 %{count} 字元)"
       too_short: "太短 (不能短於 %{count} 字元)"
       wrong_length: "長度不符 (必須為 %{count} 個字元) "
     template:
-      body: 以下欄位出現問題：
       header:
         one: "因為一個錯誤導致 %{model} 無法存檔"
         other: "%{count} 個錯誤導致此 %{model} 存檔失敗。"
+      body: "以下欄位出現問題："
   flash:
     actions:
       create:
@@ -60,82 +59,81 @@ zh-TW:
         notice: "%{resource_name} 已成功更新"
     photos:
       destroy:
-        notice: 成功刪除圖片
+        notice: "成功刪除圖片"
   form:
-    show_fully_accessible_places: 輪椅無障礙
-    show_limited_accessible_places: 部分輪椅無障礙
-    show_places_without_status: 未知狀態
-    show_unaccessible_places: 非輪椅無障礙
+    show_fully_accessible_places: "輪椅無障礙"
+    show_limited_accessible_places: "部分輪椅無障礙"
+    show_places_without_status: "未知狀態"
+    show_unaccessible_places: "非輪椅無障礙"
   formtastic:
     hints:
-      email: 我們會保密您的地址，不會寄垃圾信件給您。保證！
-      lat: 將圖示移動到地圖上正確位置
+      email: "我們會保密您的地址，不會寄垃圾信件給您。保證！"
+      lat: "將圖示移動到地圖上正確位置"
       osm_username: "還不是會員嗎？ <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">現在就申請 OpenStreetMap 的會員 </a>"
-      password: (如果你不想更動，請保持空白)
+      password: "(如果你不想更動，請保持空白)"
       phone: "例如：+886 6 1234567-8"
       website: "例如：http://www.example.com"
     labels:
-      category: 分類：
-      city: 城市：
-      create: 新增地點
+      category: "分類："
+      city: "城市："
+      create: "新增地點"
       email: 電子郵件
       finish: 完成
-      housenumber: 門牌號碼：
+      housenumber: "門牌號碼："
       lat: 緯度
       lon: 經度
-      name: 名字：
+      name: "名字："
       osm_password: "OpenStreetMap 的密碼"
       osm_username: "OSM 帳號"
-      password: "密碼 "
-      password_confirmation: 重複密碼
-      phone: 電話：
-      postcode: 郵遞區號：
-      privacy_policy: 我接受數據隱私協議的第1及第2段
+      password: '密碼 '
+      password_confirmation: "重複密碼"
+      phone: "電話："
+      postcode: "郵遞區號："
+      privacy_policy: "我接受數據隱私協議的第1及第2段"
       reset: 重設
       save: 存檔
-      street: 街道：
-      terms: 我接受此使用條款
-      type: 種類：
-      website: 網站：
-      wheelchair: 輪椅無障礙？
-      wheelchair_description: 無障礙說明：
+      street: "街道："
+      terms: "我接受此使用條款"
+      type: "種類："
+      website: "網站："
+      wheelchair: "輪椅無障礙？"
+      wheelchair_description: "無障礙說明："
     titles:
-      basic: 基本資料
+      basic: "基本資料"
       optional: "更多資訊 <span class=\"addition\">(all fields are optional)</span>"
   global:
-    form_validation_error: 請注意下列錯誤
+    form_validation_error: "請注意下列錯誤"
   header:
     meta:
-      description: 尋找輪椅無障礙空間－wheelmap.org
-      homepage: 首頁
-      keywords: 尋找輪椅無障礙空間的標誌
+      description: "尋找輪椅無障礙空間－wheelmap.org"
+      homepage: "首頁"
+      keywords: "尋找輪椅無障礙空間的標誌"
       search: 搜尋
     navigation:
       blog: 部落格
       feedback: 回饋
       home: 開始
-      how_to_add_a_place: 如何新增地點？
+      how_to_add_a_place: "如何新增地點？"
       imprint: 聯繫我們
-      logged_in_as: 登入以
-      login: 登入
-      logout: 登出
+      logged_in_as: "登入以"
+      login: "登入"
+      logout: "登出"
       newsletter: 電子報
       press: 文宣
       profile: 檔案
       suggestions: 建議
-      what_is_barrier_free: 「輪椅無障礙」是什麼意思？
+      what_is_barrier_free: "「輪椅無障礙」是什麼意思？"
       what_is_wheelmap: "Wheelmap 是什麼?"
     searchbar:
-      add_place: 新增下一個地點
+      add_place: "新增下一個地點"
       find: 搜尋
-      label: " "
-      placeholder: 例如：洛杉磯的日落大道或是柏林的布蘭登堡門
-      title_add_place: 在這個位置新增地點
+      placeholder: "例如：洛杉磯的日落大道或是柏林的布蘭登堡門"
+      title_add_place: "在這個位置新增地點"
     tagline: "Wheelmap logo"
     title: "Wheelmap - 尋找輪椅無障礙空間"
   helpers:
     select:
-      prompt: 請選擇
+      prompt: "請選擇"
     submit:
       create: "新增 %{model}"
       submit: "儲存 %{model}"
@@ -143,44 +141,40 @@ zh-TW:
   home:
     index:
       filter:
-        category: 選擇分類
-        deselect_all: 全部取消選擇
-        select_all: 全部選擇
-        wheelchair: 輪椅無障礙？
+        category: "選擇分類"
+        deselect_all: "全部取消選擇"
+        select_all: "全部選擇"
+        wheelchair: "輪椅無障礙？"
       ie:
         action:
           ignore: 忽略
-          upgrade: 更新瀏覽器
+          upgrade: "更新瀏覽器"
         warning:
-          headline: 我們很抱歉！
+          headline: "我們很抱歉！"
           message: "您現在使用的是 Internet Explorer。Wheelmap 需要與標準相容的瀏覽器才能正常顯示。請考慮使用 Firefox、Chrome、Safari 或 Opera 等其它瀏覽器。"
       link:
         node:
-          create: 新增地點
+          create: "新增地點"
       popup:
         form:
-          limited: 部分輪椅無障礙
-          ? "no"
-          : 非輪椅無障礙
+          limited: "部分輪椅無障礙"
+          'no': "非輪椅無障礙"
           save: 更新
-          unknown: 未知狀態
-          ? "yes"
-          : 輪椅無障礙
-        help: 輪椅無障礙？(說明)
-        more: 更多...
+          unknown: "未知狀態"
+          'yes': "輪椅無障礙"
+        help: "輪椅無障礙？(說明)"
+        more: "更多..."
   how?: 如何？
   landing_pages:
     index:
       wheelchair:
         limit:
           headline: "%{city} 的所有部分輪椅無障礙%{type} (%{count})"
-        ? "no"
-        :
+        'no':
           headline: "%{city} 的所有非輪椅無障礙 %{type} (%{count})"
         unknown:
           headline: "%{city} 的所有輪椅無障礙環境不確定的 %{type} (%{count})"
-        ? "yes"
-        :
+        'yes':
           headline: "%{city} 中所有輪椅無障礙的 %{type} (%{count})"
   layouts:
     application:
@@ -191,25 +185,25 @@ zh-TW:
       city: "%{city} %{postcode}"
       street: "%{street} %{housenumber}"
     tags:
-      phone: 電話：
-      website: 網站：
+      phone: "電話："
+      website: "網站："
   nodes:
     create:
       flash:
-        not_successfull: 唉呀！您輸入的資訊不正確或不完整
-        successfull: 謝謝，您提供的資訊已成功存檔並很快會在線上顯示。
+        not_successfull: "唉呀！您輸入的資訊不正確或不完整"
+        successfull: "謝謝，您提供的資訊已成功存檔並很快會在線上顯示。"
     edit:
       header:
         title: "編輯地點：%{node} | wheelmap.org"
       link:
         large_map: "&laquo; 取消"
     errors:
-      default: 唉呀！有錯誤發生。我們已回報這個問題
-      not_authorized: 抱歉，認證失敗
-      not_available: 抱歉，這個頁面暫時不能使用。
-      not_existent: 抱歉，這個地點已經失效了
-      not_found: 抱歉，没有找到頁面
-      param_missing: 請輸入搜尋關鍵字
+      default: "唉呀！有錯誤發生。我們已回報這個問題"
+      not_authorized: "抱歉，認證失敗"
+      not_available: "抱歉，這個頁面暫時不能使用。"
+      not_existent: "抱歉，這個地點已經失效了"
+      not_found: "抱歉，没有找到頁面"
+      param_missing: "請輸入搜尋關鍵字"
     flash:
       authorize_wheelmap: "您需要一個 OpenStreetMap 帳號以修改資料"
     new:
@@ -219,9 +213,9 @@ zh-TW:
         large_map: "&laquo; 取消"
     node:
       link:
-        claim: 您在這裡工作嗎？
-        edit_node: 編輯地點
-        report_bug: 回報一個問題
+        claim: "您在這裡工作嗎？"
+        edit_node: "編輯地點"
+        report_bug: "回報一個問題"
     show:
       header:
         title: "地點： %{node} | wheelmap.org"
@@ -229,13 +223,13 @@ zh-TW:
         back: 回上一頁
         large_map: 放大
         listing: "在 %{city} 的所有 '%{type}' "
-        upload: 上傳圖片
-      more_data_from: 這裡有更多關於這個地點的資訊，經確認：
+        upload: "上傳圖片"
+      more_data_from: "這裡有更多關於這個地點的資訊，經確認："
       show-in-osm: OpenStreetMap
     update:
       flash:
-        not_successfull: 唉呀！您輸入的資訊不正確或不完整
-        successfull: 謝謝，您提供的資訊已成功存檔並很快會在線上顯示。
+        not_successfull: "唉呀！您輸入的資訊不正確或不完整"
+        successfull: "謝謝，您提供的資訊已成功存檔並很快會在線上顯示。"
     update_wheelchair:
       successfull: "\"%{name}\"的狀態已更改為\"%{status}\"，並很快在線上顯示。"
   number:
@@ -299,34 +293,33 @@ zh-TW:
     edit:
       application:
         oauth:
-          connected: 狀態：已連結
-          grant: 現在就連結
-          not_connected: 狀態：未連結
+          connected: "狀態：已連結"
+          grant: "現在就連結"
+          not_connected: "狀態：未連結"
           revoke: 中斷連結
-      headline: 編輯你的個人檔案
+      headline: "編輯你的個人檔案"
   search:
     index:
       search:
         for: "搜尋 \"%{q}\""
-        not_found: 没有找到地點!
+        not_found: "没有找到地點!"
   splash:
     countline: "%{count} 個地點已被標記"
-    headline: 每個人都可以新增輪椅無障礙空間！
+    headline: "每個人都可以新增輪椅無障礙空間！"
     start: 開始
-    step1: 點選一個您知道的地點
-    step2: 標示然後點選存檔
-    step3: 就這樣！免註冊
+    step1: "點選一個您知道的地點"
+    step2: "標示然後點選存檔"
+    step3: "就這樣！免註冊"
     what_is_wheelmap: "Wheelmap 是什麼？"
   statistics: 統計
   support:
     array:
-      last_word_connector: 和
+      last_word_connector: "和"
       sentence_connector: 和
-      skip_last_comma: true
-      two_words_connector: 和
+      two_words_connector: "和"
       words_connector: ", "
     select:
-      prompt: 請選擇
+      prompt: "請選擇"
   time:
     am: 早上
     formats:
@@ -337,51 +330,49 @@ zh-TW:
   user_sessions:
     create:
       activation:
-        notice: 您的帳號已被啟動
+        notice: "您的帳號已被啟動"
       error:
-        notice: 電子信箱和密碼不相符
-      notice: 您已登入！
+        notice: "電子信箱和密碼不相符"
+      notice: "您已登入！"
     destroy:
-      notice: 再見，歡迎再度光臨！
+      notice: "再見，歡迎再度光臨！"
     new:
       email: "E-mail 帳號"
-      login: 登入
+      login: "登入"
       login_with_twitter: "透過 Twitter 登入"
       password: 密碼
-      remember_me: 保持登入狀態
+      remember_me: "保持登入狀態"
   users:
     after_signup_edit:
       welcome:
         headline: "歡迎光臨 Wheelmap"
         set_password_for_mobile: "你有智慧型手機嗎？請建立一個密碼以便在 iPhone 或 Android 手機上操作 Wheelmap。"
-        text: 我們要如何和您聯繫？您可以在之後修改您的個人檔案。
+        text: "我們要如何和您聯繫？您可以在之後修改您的個人檔案。"
     edit:
       headline:
-        your_images: 你上傳的影像
+        your_images: "你上傳的影像"
   wheelchairstatus:
-    limited: 部分輪椅無障礙
-    ? "no"
-    : 非輪椅無障礙
-    unknown: 未知狀態
-    ? "yes"
-    : 輪椅無障礙
+    limited: "部分輪椅無障礙"
+    'no': "非輪椅無障礙"
+    unknown: "未知狀態"
+    'yes': "輪椅無障礙"
   wheelmap:
     footer:
       a_project_of: "一個專案 by "
-      based_on: 基於
-      become_a_supporter: 成為支持者
-      main_supporter: 主要支持者
+      based_on: "基於"
+      become_a_supporter: "成為支持者"
+      main_supporter: "主要支持者"
     itunes:
       alt: "AppStore Logo"
       title: "現在就下載 iPhone App！"
     logo:
       alt: "Wheelmap logo－尋找輪椅無障礙空間"
-      title: Wheelmap－尋找輪椅無障礙空間
+      title: "Wheelmap－尋找輪椅無障礙空間"
     what_is:
-      fully_accessible: 入口沒有台階，所有房間都沒有台階，廁所無障礙
+      fully_accessible: "入口沒有台階，所有房間都沒有台階，廁所無障礙"
       limited_accessible: "入口有一階台階 (最高 7 公分)，大部分房間沒有台階，無法以輪椅進入廁所"
-      not_accessible: 入口有階梯，房間不能以輪椅進入
-      unknown_accessible: 請幫忙標記
+      not_accessible: "入口有階梯，房間不能以輪椅進入"
+      unknown_accessible: "請幫忙標記"
   will_paginate:
     next_label: "往後 &#8594;"
     page_entries_info:

@@ -1,0 +1,44 @@
+zh_TW:
+  header:
+    navigation:
+      about_wheelmap: "關於 Wheelmap"
+      choose_language: "選擇語言"
+      contact: 聯繫我們
+      map: 地圖
+      projects: 參與這個專案
+    toolbar:
+      categories: 分類
+  home:
+    index:
+      overlay:
+        button: "OK，走吧"
+        categories: "篩選地點的種類"
+        filter: "篩選地點的輪椅無障礙程度"
+        headline: "透過 Wheelmap.org 標示和尋找輪椅無障礙空間 - 全球化而免費。這並不困難："
+        lookup: "搜尋特定地點"
+        secondary_headline: "我們以類似「紅綠燈」的方式標示公共空間的輪椅無障礙程度："
+  nodes:
+    new:
+      form:
+        legend: "地點的位置"
+        location: "請點選地圖並標誌在確切的位置。"
+    node_edit:
+      details: "細節"
+      edit: "編輯"
+    node_photos:
+      add: "新增"
+    show:
+      share:
+        facebook: Facebook
+        twitter: Twitter
+  search:
+    index:
+      no-results:
+        hint:
+          example: "<strong>範例:</strong> 英國倫敦"
+        try_this:
+          intro: "試試這個:"
+      results:
+        ticker:
+          one: "1個結果："
+          other: "%{count} 個結果："

@@ -1,5 +1,4 @@
----
-zh-TW:
+zh_TW:
   poi:
     category:
       accommodation: 住宿
@@ -9,27 +8,27 @@ zh-TW:
       health: 醫療
       leisure: 休閒
       misc: 其他
-      money_post: 銀行/郵局
-      public_transfer: 大眾運輸
+      money_post: "銀行/郵局"
+      public_transfer: "大眾運輸"
       shopping: 購物
       sport: 運動
       tourism: 觀光
       unknown: 未知
     name:
       accommodation:
-        beach_resort: 海灘飯店
-        bed_and_breakfast: 住宿和早餐
-        camp_site: 露營區
-        caravan_site: 篷車露營地
+        beach_resort: "海灘飯店"
+        bed_and_breakfast: "住宿和早餐"
+        camp_site: "露營區"
+        caravan_site: "篷車露營地"
         chalet: 農舍
         dormitory: 宿舍
-        guest_house: 民宿
+        guest_house: "民宿"
         hostel: 青年旅館
         hotel: 旅館
         motel: 汽車旅館
       education:
         college: 學院
-        driving_school: 駕駛訓練班
+        driving_school: "駕駛訓練班"
         kindergarten: 幼稚園
         library: 圖書館
         museum: 博物館
@@ -39,33 +38,33 @@ zh-TW:
         bar: 酒吧
         biergarten: 啤酒花園
         cafe: 咖啡
-        drinking_water: 飲用水
-        fast_food: 速食
-        ice_cream: 冰淇淋店
+        drinking_water: "飲用水"
+        fast_food: "速食"
+        ice_cream: "冰淇淋店"
         pub: Pub
         restaurant: 餐廳
       government:
         courthouse: 法院
         embassy: 大使館
-        government: 政府部門
+        government: "政府部門"
         police: 警察局
-        public_building: 公共建築
+        public_building: "公共建築"
         townhall: 市政廳
       health:
         dentist: 牙醫
         doctors: 診所
-        hearing_aids: 助聽器
+        hearing_aids: "助聽器"
         hospital: 醫院
-        medical_supply: 醫療用品
+        medical_supply: "醫療用品"
         pharmacy: 藥局
-        social_facility: 社會機構
+        social_facility: "社會機構"
         veterinary: 獸醫
       leisure:
         arena: 巨蛋
         brothel: 妓院
         casino: 賭場
         cinema: 電影院
-        community_center: 社區活動中心
+        community_center: "社區活動中心"
         gallery: 畫廊
         nightclub: 夜總會
         playground: 遊樂器材
@@ -75,105 +74,105 @@ zh-TW:
         zoo: 動物園
       misc:
         company: "公司行號 (辦公室)"
-        estate_agent: 房地產仲介
+        estate_agent: "房地產仲介"
         insurance: 保險
         lawyer: 律師
-        place_of_worship: 宗教場所
+        place_of_worship: "宗教場所"
         toilets: 廁所
       money_post:
         atm: 自動櫃員機
         bank: 銀行
-        bureau_de_change: 換匯處
-        post_box: 郵筒
-        post_office: 郵局
+        bureau_de_change: "換匯處"
+        post_box: "郵筒"
+        post_office: "郵局"
       public_transfer:
         aerodrome: 機場
-        bicycle_parking: 自行車停車場
-        bicycle_rental: 自行車出租
+        bicycle_parking: "自行車停車場"
+        bicycle_rental: "自行車出租"
         boatyard: 船屋
-        bus_station: 公車站
-        bus_stop: 公車站
-        cable_car: 纜車
-        car_rental: 租車
-        car_sharing: 共乘
-        chair_lift: 升降椅
+        bus_station: "公車站"
+        bus_stop: "公車站"
+        cable_car: "纜車"
+        car_rental: "租車"
+        car_sharing: "共乘"
+        chair_lift: "升降椅"
         ferry: 渡船頭
-        ferry_terminal: 渡船碼頭
-        fuel: 加油站
+        ferry_terminal: "渡船碼頭"
+        fuel: "加油站"
         halt: 停靠站
-        light_rail: 輕軌
+        light_rail: "輕軌"
         parking: 停車場
-        parking_aisle: 停車場車道
+        parking_aisle: "停車場車道"
         platform: 月台
-        station: 火車站
-        subway_entrance: 捷運出口
-        terminal: 機場航廈
-        tram_stop: 電車站
+        station: "火車站"
+        subway_entrance: "捷運出口"
+        terminal: "機場航廈"
+        tram_stop: "電車站"
       shopping:
         alcohol: 酒
         bakery: 烘焙坊
-        beauty: 美容店
+        beauty: "美容店"
         beverages: 飲料
-        bicycle: 自行車店
+        bicycle: "自行車店"
         books: 書店
         butcher: 肉店
-        car_repair: 汽車維修
-        car_shop: 車行
+        car_repair: "汽車維修"
+        car_shop: "車行"
         chemist: 藥局
         clothes: 服飾
         computer: 電腦店
-        confectionery: 點心店
+        confectionery: "點心店"
         convenience: 便利商店
         deli: 熟食店
-        department_store: 百貨公司
-        doityourself: DIY
-        dry_cleaning: 乾洗
+        department_store: "百貨公司"
+        doityourself: "DIY"
+        dry_cleaning: "乾洗"
         electronics: 電子產品
-        fabric: 布店
-        farm_shop: 農產品
+        fabric: "布店"
+        farm_shop: "農產品"
         florist: 花店
         furniture: 家具
-        garden_centre: 園藝
-        gift: 禮品店
+        garden_centre: "園藝"
+        gift: "禮品店"
         hairdresser: 髮型師
         hardware: 五金行
         jewelry: 珠寶銀樓
         kiosk: 書報亭
         laundry: 洗衣店
-        mall: 購物中心
+        mall: "購物中心"
         optician: 驗光師/眼鏡行
-        organic: 有機商店
-        outdoor: 戶外用品
-        pet: 寵物店
+        organic: "有機商店"
+        outdoor: "戶外用品"
+        pet: "寵物店"
         photo: 相館
-        second_hand: 二手店
+        second_hand: "二手店"
         shoes: 鞋店
         sports: 運動
         stationery: 文具店
         supermarket: 超級市場
         toys: 玩具店
-        travel_agency: 旅行社
-        video: 影片出租店
+        travel_agency: "旅行社"
+        video: "影片出租店"
       sport:
-        pitch: 操場
-        sports_centre: 體育中心
+        pitch: "操場"
+        sports_centre: "體育中心"
         stadium: 體育場
         swimming: 游泳
-        swimming_pool: 游泳池
+        swimming_pool: "游泳池"
       tourism:
-        archaeological_site: 考古遺跡
-        arts_centre: 藝術中心
+        archaeological_site: "考古遺跡"
+        arts_centre: "藝術中心"
         artwork: 藝術品
         attraction: 景點
         battlefield: 古戰場
         beach: 海灘
         beacon: 燈塔
         castle: 城堡/城池
-        cave_entrance: 洞口
-        information: 旅客資訊站
+        cave_entrance: "洞口"
+        information: "旅客資訊站"
         memorial: 紀念館
-        theme_park: 主題公園
+        theme_park: "主題公園"
         tower: 塔
-        viewpoint: 觀景台
+        viewpoint: "觀景台"
       unknown:
         unknown: 未知
