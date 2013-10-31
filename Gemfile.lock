@@ -78,7 +78,12 @@ GEM
       execjs
       handlebars-source
     bcrypt-ruby (3.1.1)
+    better_errors (1.0.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
     big_sitemap (1.1.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (2.3.2.1)
       sass (~> 3.2)
     bourbon (3.1.8)
@@ -148,6 +153,7 @@ GEM
       nokogiri (>= 1.5.0)
     daemons (1.1.9)
     database_cleaner (0.9.1)
+    debug_inspector (0.0.2)
     delayed_job (3.0.5)
       activesupport (~> 3.0)
     delayed_job_active_record (0.4.4)
@@ -430,7 +436,9 @@ DEPENDENCIES
   airbrake
   autotest
   awesome_nested_set
+  better_errors
   big_sitemap
+  binding_of_caller
   bootstrap-sass
   cacheable_flash
   capistrano
