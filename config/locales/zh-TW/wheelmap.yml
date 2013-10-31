@@ -1,5 +1,5 @@
 ---
-zh-tw:
+zh-TW:
   application:
     require_no_user:
       notice: 您已經登入...

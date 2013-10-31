@@ -1,5 +1,5 @@
 ---
-pt-br:
+pt-BR:
   devise:
     confirmations:
       confirmed: "Seu e-mail foi confirmado com sucesso."
