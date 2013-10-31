@@ -83,7 +83,7 @@ module Rack
     end
 
     def symbolize_locale(locale)
-      is_present?(locale) ?  locale.to_s.downcase.to_sym : locale
+      is_present?(locale) ?  locale.to_s.to_sym : locale
     end
 
   end

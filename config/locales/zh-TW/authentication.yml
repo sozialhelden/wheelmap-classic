@@ -1,5 +1,5 @@
 ---
-zh-tw:
+zh-TW:
   devise:
     confirmations:
       confirmed: "您的 email 成功地確認了。"

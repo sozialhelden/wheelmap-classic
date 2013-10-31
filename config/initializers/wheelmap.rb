@@ -9,7 +9,6 @@ Languages = {
   'cs'    => 'Čeština',
   'da'    => 'Danske',
   'de'    => 'Deutsch',
-  'de-CH' => 'Schwitzerdütsch',
   'el'    => 'Ελληνικά',
   'en'    => 'English',
   'es'    => 'Español',
@@ -24,7 +23,7 @@ Languages = {
   'nl'    => 'Nederlands',
   'pl'    => 'Polski',
   'pt'    => 'Português',
-  'pt-br' => 'Português do Brasil',
+  'pt-BR' => 'Português do Brasil',
   'ru'    => 'Русский',
   'sv'    => 'Svenska',
   'sk'    => 'Slovenčina',
@@ -32,7 +31,7 @@ Languages = {
   'tr'    => 'Türkçe',
   'uk'    => 'Український',
   'zh'    =>  '中文',
-  'zh-tw' =>  '中文'
+  'zh-TW' =>  '中文'
 }
 
 Amenities = {

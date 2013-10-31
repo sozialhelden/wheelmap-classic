@@ -1,5 +1,5 @@
 ---
-pt-br:
+pt-BR:
   application:
     require_no_user:
       notice: "Já está conectado à sua conta"

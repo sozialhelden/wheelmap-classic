@@ -88,7 +88,7 @@ namespace :housekeeping do
 
   desc "Remove all unfinished translations"
   task :remove_all_unfinished_locales do
-    WHITELIST = %w(ar bg da de el en es fr is it ja ko lv pl pt-br ru sv sk tlh tr zh-tw)
+    WHITELIST = %w(ar bg da de el en es fr is it ja ko lv pl pt-BR ru sv sk tlh tr zh-TW)
     Dir.glob(Rails.root.join('config', 'locales', '*')).each do |directory|
       FileUtils.rm_rf(directory, :verbose => true) unless WHITELIST.include?(File.basename(directory))
     end
