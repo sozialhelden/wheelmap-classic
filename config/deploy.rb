@@ -32,9 +32,6 @@ after  'deploy:setup',        'deploy:create_shared_config'
 
 after  'deploy:update_code',  'deploy:symlink_configs'
 
-before 'deploy:restart',      'deploy:remove_all_unfinished_locales'
-before 'deploy:start',        'deploy:remove_all_unfinished_locales'
-
 after  'deploy',              'deploy:cache:clear'
 after  'deploy:migrations',   'deploy:cache:clear'
 
@@ -148,19 +145,6 @@ namespace :deploy do
 
   task :create_release_info do
     run "gitrev=`cat #{current_path}/REVISION`; echo \"release_name: #{release_name}\\nbranch: #{branch}\\ngit_sha: $gitrev\" > #{current_path}/RELEASE_INFO"
-  end
-
-  task :remove_all_unfinished_locales do
-    if rails_env.to_sym == :production
-      run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake housekeeping:remove_all_unfinished_locales"
-      run "find #{shared_path}/bundle -type f -path \"*/active_admin/locales/*.yml\" ! -iname \"en.yml\" ! -iname \"de.yml\" -delete"
-      # run "find #{shared_path}/bundle -name 'pt-BR.yml' -delete"
-      # run "find #{shared_path}/bundle -name 'zh_cn.yml' -delete"
-      # run "find #{shared_path}/bundle -name 'sv-SE.yml' -delete"
-      # run "find #{shared_path}/bundle -name 'cs.yml' -delete"
-    else
-      puts "This task only runs in production env."
-    end
   end
 
   namespace :cache do
