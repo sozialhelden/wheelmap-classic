@@ -31,7 +31,7 @@ Languages = {
   'tr'    => 'Türkçe',
   'uk'    => 'Український',
   'zh'    =>  '中文',
-  'zh-TW' =>  '中文'
+  'zh_TW' =>  '中文'
 }
 
 Amenities = {
