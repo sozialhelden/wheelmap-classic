@@ -77,8 +77,6 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'guard-cucumber', "1.2.2"
-  gem 'better_errors'
-  gem 'binding_of_caller'
 end
 
 group :test do
