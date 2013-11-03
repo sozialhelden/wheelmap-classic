@@ -17,6 +17,14 @@ if GC.respond_to?(:copy_on_write_friendly=)
   GC.copy_on_write_friendly = true
 end
 
+# https://newrelic.com/docs/ruby/ruby-gc-instrumentation
+if GC.respond_to?(:enable_stats)
+  GC.enable_stats
+end
+if defined?(GC::Profiler) and GC::Profiler.respond_to?(:enable)
+  GC::Profiler.enable
+end
+
 timeout (env == 'production' ? 300 : 30)
 
 # This is where we specify the socket.
