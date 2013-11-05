@@ -84,7 +84,12 @@ namespace :region do
         # update geo-shape in case it changed.
         wkt_string = File.open(wkt_file_name).first.strip
         imported_region.grenze = wkt_string
-        imported_region.save
+        begin
+          imported_region.save
+        rescue
+          STDERR.puts "ERROR saving #{imported_region.name}!!!"
+          imported_region
+        end
       else
         imported_region = Region.from_wkt_file(wkt_file_name, parent)
       end
