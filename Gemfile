@@ -27,7 +27,6 @@ group :default do
   gem 'rake'
   gem 'yajl-ruby'
   gem 'ya2yaml'
-  gem 'fastercsv'
   gem 'ruport'
   gem 'memcache-client'
   # gem 'jammit'

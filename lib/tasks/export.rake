@@ -9,7 +9,7 @@ namespace :export do
     category = Category.find_by_identifier(category_name)
     raise "Category #{category_name} not found!" unless category
     csv_string = ""
-    csv_string = FasterCSV.generate(:force_quotes => true) do |csv|
+    csv_string = CSV.generate(:force_quotes => true) do |csv|
       csv << ["osm_id", "lat", "lon", "Rollstuhlstatus", "Kommentar", "name", "Typ", "Strasse", "Hausnummer", "PLZ", "Stadt", "Telefon", "URL"]
       category.pois.find_each do |poi|
         csv << [poi.osm_id, poi.lat, poi.lon, poi.wheelchair, poi.wheelchair_description, poi.name, poi.node_type.try(:localized_name), poi.street, poi.housenumber, poi.postcode, poi.city, poi.phone, poi.website]
@@ -26,7 +26,7 @@ namespace :export do
 
     bounding_box = RGeo::Cartesian::BoundingBox.create_from_geometry(region.grenze)
 
-    csv_string = FasterCSV.generate(:force_quotes => true) do |csv_out|
+    csv_string = CSV.generate(:force_quotes => true) do |csv_out|
       FCSV(STDIN, :force_quotes => true, :headers => true) do |csv_in|
         csv_out << ["osm_id", "lat", "lon", "Rollstuhlstatus", "Kommentar", "name", "Typ", "Strasse", "Hausnummer", "PLZ", "Stadt", "Telefon", "URL"]
         csv_in.each do |row|
@@ -61,7 +61,7 @@ namespace :export do
   desc 'Export Categories and NodeTypes'
   task :categories => :environment do
     csv_string = ""
-    csv_string = FasterCSV.generate(:force_quotes => true) do |csv|
+    csv_string = CSV.generate(:force_quotes => true) do |csv|
       csv << ["wheelmap-Kategorien", "wheelmap-Typen", "OSM Key", "OSM Value"]
       Category.all.each do |category|
         category.node_types.each do |node_type|
@@ -98,7 +98,7 @@ namespace :export do
   desc 'Export Categories and NodeTypes'
   task :sorted_categories => :environment do
     csv_string = ""
-    csv_string = FasterCSV.generate(:force_quotes => true) do |csv|
+    csv_string = CSV.generate(:force_quotes => true) do |csv|
       csv << ["wheelmap-Kategorien", "wheelmap-Typen", "OSM Key", "OSM Value"]
       Category.all.sort_by{|c| I18n.t("poi.category.#{c.identifier}")}.each do |category|
         category.node_types.sort_by{|n| I18n.t("poi.name.#{category.identifier}.#{n.identifier}")}.each do |node_type|

@@ -1,4 +1,3 @@
-require 'faster_csv'
 namespace :streetspotr do
   
   desc 'Upload provider entries to openstreetmap unless present'
@@ -18,7 +17,7 @@ namespace :streetspotr do
     raise "Usage: bundle exec rake streetspotr:import file=<your_csv_file" unless csv_file
 
     hash = {}
-    FasterCSV.foreach(csv_file, :headers => false) do |row|
+    CSV.foreach(csv_file, :headers => false) do |row|
       id = row[1]
       next if id.blank?
       w = wheelchair(step(row), toilet(row), indoor(row))
@@ -37,7 +36,7 @@ namespace :streetspotr do
     poi = nil
     user = User.find_by_email()
     provider = Provider.find_or_create_by_name('Streetspotr')
-    FasterCSV.foreach(csv_file, :headers => false) do |row|
+    CSV.foreach(csv_file, :headers => false) do |row|
       osm_id = row[1]
       if osm_id.blank?
         next unless poi
