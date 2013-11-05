@@ -1,5 +1,5 @@
 namespace :streetspotr do
-  
+
   desc 'Upload provider entries to openstreetmap unless present'
   task :upload => :environment do
     provider = Provider.find_or_create_by_name('Streetspotr')
@@ -11,7 +11,7 @@ namespace :streetspotr do
       end
     end
   end
-  
+
   task :check do
     csv_file = ENV['file']
     raise "Usage: bundle exec rake streetspotr:import file=<your_csv_file" unless csv_file
@@ -28,7 +28,7 @@ namespace :streetspotr do
       puts "#{id} #{hash[id].inspect} => #{minimal_status(hash[id])}"
     end
   end
-  
+
   desc 'Import data from StreetSpotr'
   task :import => :environment do
     csv_file = ENV['file']
@@ -61,23 +61,23 @@ namespace :streetspotr do
         p.save
         sleep 0.1
       end
-    end   
-      
-    
+    end
+
+
   end
-  
+
   def step(row)
     row[20] == 'Ja' ? true : false
   end
-  
+
   def toilet(row)
     row[21] == 'Ja' ? true : false
   end
-  
+
   def indoor(row)
     row[22] == 'Ja' ? true : false
   end
-  
+
   def photo(node, row)
     photo_url = row[18]
     photo_caption = row[19]
@@ -87,15 +87,15 @@ namespace :streetspotr do
     new_photo.user = User.wheelmap_visitor
     new_photo
   end
-  
+
   def minimal_status(stati)
     return 'no' if stati.include?('no')
     return 'limited' if stati.include?('limited')
     return stati.first
   end
-  
+
   def wheelchair(step, toilet, indoor)
-    if step 
+    if step
       return 'no'
     else
       if toilet
