@@ -286,7 +286,8 @@ describe NodesController do
     before(:each) do
       Poi.destroy_all
       NodeType.destroy_all
-      @bar_node = FactoryGirl.create(:poi, :tags => {'wheelchair:description' => 'Bitte klingeln.', 'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
+      @bar_node = FactoryGirl.create(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
+      @bar_node.tags['wheelchair:description'] = 'Bitte klingeln.'
       @bar_node.tags['amenity'] = 'bar'
       @bar_node.type = 'bar'
       @bar_node.save!
