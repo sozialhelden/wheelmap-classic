@@ -22,4 +22,4 @@
           - if node_data.tags['website']
             %li
               %i.icon-external-link
-              = link_to URI.parse(node_data.website_with_protocol).host, node_data.website_with_protocol, {:target => '_blank', itemprop: 'url', itemtype: 'http://schema.org/URL'}
+              = link_to node_data.website_with_protocol, node_data.website_with_protocol, {:target => '_blank', itemprop: 'url', itemtype: 'http://schema.org/URL'}
