@@ -110,13 +110,18 @@ namespace :export do
   end
 
   desc 'Export nodes from OSM XML file'
-  task :from_osm => :environment do
-    puts "Reading vom STDIN. Please pipe some data in or use infile parameter: bzcat planet.osm.bz2 | rake export:from_osm outfile=germany.csv"
-    infile  = ENV['infile']  || STDIN
-    outfile = ENV['outfile'] || 'wheelmap.csv'
+  task :for_yellow_pages => :environment do
+    puts "Usage: rake export:from_osm outfile=germany.csv"
+    outfile = ENV['outfile'] || 'germany.csv'
 
-    p = CsvExporter.new(infile, outfile)
-    p.load()
+    csv_string = CSV.open(outfile, "wb", :force_quotes => true) do |csv|
+      csv << ["OSM ID", "OSM TYPE", "Name", "Kategorie", "Rollstuhlstatus", "lat", "lon", "Strasse", "Hausnummer", "Stadt", "Postleitzahl"]
+      Region.find('Germany').pois_of_children.including_category.find_each(start: Poi.lowest_id) do |poi|
+        csv << [poi.id, poi.node_type.localized_name, poi.name, poi.category.localized_name, poi.wheelchair, poi.lat, poi.lon, poi.street, poi.housenumber, poi.city, poi.postcode]
+        putc '.'
+        STDOUT.flush
+      end
+    end
   end
 
 end
