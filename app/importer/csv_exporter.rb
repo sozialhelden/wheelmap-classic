@@ -14,7 +14,7 @@ class CsvExporter
     @processed = 0
     @parser = instream_or_infile.is_a?(String) ? LibXML::XML::SaxParser.file(instream_or_infile) : LibXML::XML::SaxParser.io(instream_or_infile)
     @parser.callbacks = self
-    @output = FasterCSV.open(outfile, 'w', :force_quotes => true)
+    @output = CSV.open(outfile, 'w', :force_quotes => true)
     @output << ["OSM ID", "OSM TYPE", "Name", "Kategorie", "Rollstuhlstatus", "lat", "lon", "Strasse", "Hausnummer", "Stadt", "Postleitzahl"]
   end
 

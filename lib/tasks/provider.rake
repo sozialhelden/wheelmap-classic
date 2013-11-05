@@ -6,7 +6,7 @@ namespace :provider do
     raise "Use bundle exec rake provider:import file=<file_name> provider=<provider_name>" if !file_name || !provider_name
     provider = Provider.find_or_create_by_name(provider_name)
     headers = [:OSM_Id, :OSM_Type, :OSM_Name, :OSM_Kategorie, :OSM_Rollstuhlstatus, :OSM_Latitude, :OSM_Longitude, :OSM_Strasse, :OSM_Hausnummer, :OSM_Stadt, :OSM_Plz, :AA_Direktlink, :AA_Ampel]
-    FasterCSV.foreach(file_name, :force_quotes => true, :headers => headers) do |row|
+    CSV.foreach(file_name, :force_quotes => true, :headers => headers) do |row|
       poi_id = find_poi_id(row)
       poi = Poi.find(poi_id) rescue nil
       next unless poi
@@ -28,7 +28,7 @@ namespace :provider do
     puts changeset.id
 
     headers = [:OSM_Id, :OSM_Type, :OSM_Name, :OSM_Kategorie, :OSM_Rollstuhlstatus, :OSM_Latitude, :OSM_Longitude, :OSM_Strasse, :OSM_Hausnummer, :OSM_Stadt, :OSM_Plz, :AA_Direktlink, :AA_Ampel]
-    FasterCSV.foreach(file_name, :force_quotes => true, :headers => headers) do |row|
+    CSV.foreach(file_name, :force_quotes => true, :headers => headers) do |row|
       next if row[:OSM_Id] == 'OSM_Id'
       poi_id = find_poi_id(row)
       begin

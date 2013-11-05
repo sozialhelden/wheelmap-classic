@@ -457,7 +457,6 @@ DEPENDENCIES
   ember-rails
   exifr
   factory_girl_rails
-  fastercsv
   flash_cookie_session
   font-awesome-rails
   formtastic (= 2.2.1)
