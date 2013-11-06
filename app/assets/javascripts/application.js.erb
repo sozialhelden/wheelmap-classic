@@ -1,4 +1,4 @@
-/*global  window, jQuery, $, OpenLayers, language, UserVoice, uservoiceOptions, _gaq*/
+/*global  window, jQuery, $, OpenLayers, language, _gaq*/
 /*jslint devel: true, browser: true, maxerr: 200, indent: 2, sloppy: true, nomen: true */
 
 jQuery.migrateMute = true;
@@ -620,10 +620,6 @@ function getURLParameter(name) {
 }
 
 $(function () {
-  $('#feedback_link').click(function () {
-    UserVoice.Popin.show(uservoiceOptions);
-    return false;
-  });
   $('a[data=show]').live('click', function () {
     $(this).parent().fadeIn();
     return false;
