@@ -54,17 +54,18 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
   ).observes('statusFilters.@each')
 
   categoryFiltersDidChange: (()->
+    categories = @get('activeCategories').mapBy('identifier')
+    if I18n.locale == 'de' and categories.length == 1 and categories[0] == 'sport'
+      $('#allianz').show()
+    else
+      $('#allianz').hide()
+
   ).observes('@each.isActive')
 
   filterNodes: (()->
     self = @
     filters = self.get('statusFilters')
     categories = self.get('activeCategories').mapBy('identifier')
-
-    if I18n.locale == 'de' and categories.length == 1 and categories[0] == 'sport'
-      $('#allianz').show()
-    else
-      $('#allianz').hide()
 
     @get('controllers.map').forEach (node)->
       visible = filters.contains(node.get('wheelchair')) and categories.contains(node.get('category'))
