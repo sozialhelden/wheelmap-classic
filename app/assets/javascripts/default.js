@@ -9,7 +9,6 @@
 //= require openlayers_i18n
 //= require osm
 //= require cookie
-//= require uservoice
 //= require json2
 //= require filter_settings
 //= require splash
