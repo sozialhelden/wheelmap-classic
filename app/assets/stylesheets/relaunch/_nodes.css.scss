@@ -467,6 +467,10 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   .icon-facebook {
     color: #3B5998;
   }
+
+  .btn-group {
+    margin-right: 5px;
+  }
 }
 
 #node-photos {
