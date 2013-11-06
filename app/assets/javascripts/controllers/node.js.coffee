@@ -47,7 +47,7 @@ Wheelmap.NodeController = Ember.ObjectController.extend
 
       unless self.get('wheelchairSubmit')
         return
-        
+
       data =
         _method: 'PUT'
         wheelchair: self.get('wheelchair')
@@ -61,11 +61,14 @@ Wheelmap.NodeController = Ember.ObjectController.extend
         dataType: 'json'
 
       promise.done (response)->
+        # Track this event, when google analytics is active (Production)
+        _gaq.push ["_trackEvent", "Data", "Tag", self.get("wheelchair")]  if _gaq?
         self.set('oldWheelchair', null)
         self.get('controllers.flash-messages').pushMessage('notice', response.message)
-        # TODO: Sent event to Google Analytics
 
       promise.fail (response)->
+        # Track this event as failed, when google analytics is active (Production)
+        _gaq.push ["_trackEvent", "Data", "Tag", "failed"]  if _gaq?
         @resetStatus()
         self.get('controllers.flash-messages').pushMessage('error', response.message)
 
