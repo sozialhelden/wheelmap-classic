@@ -47,7 +47,7 @@ pl:
       photos_of_this_place: "Obrazy dla tego miejsca"
       upload: "Załaduj"
     node_similar:
-      similar: "podobne miejsca %{name}"
+      similar: "podobne miejsca: %{name}"
     node_status:
       accessible_toilet: "toalety dostosowane dla niepełnosprawnych na wózku inwalidzkim:"
       premium: "%{name} mówi: to miejsce jest"
@@ -67,13 +67,13 @@ pl:
   search:
     index:
       no-results:
-        headline: "Przykro nam, nie mogliśmy znaleźć \"%{query}"
+        headline: "Przykro nam, nie mogliśmy znaleźć \"%{query}\"."
         hint:
-          example: "<strong> przykład:</strong> London, United Kingdom"
+          example: "<strong>przykład:</strong> London, United Kingdom"
           info: "Nasza wyszukiwarka wyszukuje miejsca poprzez nazwę lub dane adresowe. \nWpisz proszę nazwę wyszukiwanego miejsca lub adres np. nazwę ulicy albo miasta.\nWyszukiwanie poprzez kategorie t.j. restauracje albo kina jest niemożliwe!"
           work_in_progress: "Pracujemy nad tym aby ulepszyć wyszukiwanie miejsc i uczynić je bardziej intuicyjnym."
         try_this:
-          address: "Proszę wprowadź więcej <strong> danych adresowych</strong>."
+          address: "Proszę wprowadź więcej <strong>danych adresowych</strong>."
           intro: "Spróbuj tak:"
           spell_check: "Sprawdź <strong>poprawność literowania</strong> twojego wpisu"
       results:
