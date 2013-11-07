@@ -38,7 +38,6 @@ pl:
       not_saved:
         one: "błąd nie pozwolił zapisać %{resource}: "
         few: "%{count} błędy nie pozwoliły zapisać %{resource}:"
-        many: "Insert here"
         other: "%{count} błędów nie pozwoliło zapisać %{resource}:"
       odd: "musi być nieparzyste"
       taken: "jest już zajęte"
@@ -50,7 +49,6 @@ pl:
       header:
         one: "Obiekt %{model} nie został zapisany, wystąpił błąd "
         few: "Obiekt %{model} nie został zapisany, wystąpiły %{count} błędy"
-        many: "Insert here"
         other: "Obiekt %{model} nie został zapisany, wystąpiły %{count} błędy"
   flash:
     actions:
