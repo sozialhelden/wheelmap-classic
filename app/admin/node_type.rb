@@ -1,4 +1,5 @@
 ActiveAdmin.register NodeType do
+  belongs_to :category,  :optional => true
 
   filter :category, :as => :select, :collection => proc { Category.all.inject([]){|memo,r| memo << [r.name, r.id]; memo} }
   filter :identifier
@@ -8,15 +9,6 @@ ActiveAdmin.register NodeType do
   filter :alt_osm_value
   filter :created_at
   filter :updated_at
-
-
-  controller do
-    def update
-      region = resource
-      region.update_attributes(params[:node_type])
-      super
-    end
-  end
 
   index do
     selectable_column
@@ -34,5 +26,23 @@ ActiveAdmin.register NodeType do
     end
     default_actions
   end
+
+  form do |f|
+    f.inputs do
+      f.input :category, as: :select, collection: Category.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort
+      f.input :identifier
+      f.input :icon
+    end
+    f.inputs "OpenStreetMap" do
+      f.input :osm_key
+      f.input :osm_value
+
+      f.input :alt_osm_key
+      f.input :alt_osm_value
+
+    end
+    f.buttons
+  end
+
 
 end

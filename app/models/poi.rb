@@ -73,9 +73,9 @@ class Poi < ActiveRecord::Base
   scope :limited_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:limited]}
   scope :unknown_accessibility, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:unknown]}
   scope :tagged, :conditions => ['status < ?', WHEELCHAIR_STATUS_VALUES[:unknown]]
-  scope :with_status, lambda {|status| {:conditions => {:status => status}}}
-  #scope :search,      lambda {|search| {:conditions => ['tags LIKE ?', "%#{search}%"]}}
-  scope :search,      lambda {|search| {:conditions => ['MATCH (tags) AGAINST  (? IN BOOLEAN MODE)', escape_search_string(search)]}}
+  scope :with_status,  lambda {|status| {:conditions => {:status => status}}}
+  #scope :search,       lambda {|search| {:conditions => ['tags LIKE ?', "%#{search}%"]}}
+  scope :search_scope, lambda {|search| {:conditions => ['MATCH (tags) AGAINST  (? IN BOOLEAN MODE)', escape_search_string(search)]}}
 
   scope :with_node_type, :conditions => 'node_type_id IS NOT NULL'
   scope :without_node_type, :conditions => 'node_type_id IS NULL'
@@ -384,11 +384,11 @@ class Poi < ActiveRecord::Base
     max_box = Bbox.max
     # Increase the bounding box as long enough nodes are found or it covers the whole world
     while @node_ids.size <= limit and @bbox.within?(max_box) do
-      found_node_ids = self.select(:osm_id).search(search_string).within_bbox(@bbox.west, @bbox.south, @bbox.east, @bbox.north).map(&:id)
+      found_node_ids = self.select(:osm_id).search_scope(search_string).within_bbox(@bbox.west, @bbox.south, @bbox.east, @bbox.north).map(&:id)
       @node_ids = found_node_ids
       @bbox.widen_by_percent(100)
     end
-    search(search_string).within_bbox(@bbox.west, @bbox.south, @bbox.east, @bbox.north)
+    search_scope(search_string).within_bbox(@bbox.west, @bbox.south, @bbox.east, @bbox.north)
   end
 
   def bounding_box(distance = 20)

@@ -10,7 +10,10 @@ ActiveAdmin.register Category do
     end
   end
 
+  filter :identifier
+
   index do
+    selectable_column
     column :id
     column :identifier
     column :name, :sortable => false

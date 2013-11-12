@@ -6,7 +6,7 @@ class NodeType < ActiveRecord::Base
   has_many :pois, :dependent => :destroy
   belongs_to :category, :touch => false
 
-  validates :identifier, :presence => true
+  validates :identifier, :category_id, :category, :icon, :presence => true
   validates :category_id, :presence => true
 
   acts_as_api
