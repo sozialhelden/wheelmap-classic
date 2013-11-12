@@ -1,5 +1,9 @@
 ActiveAdmin.register Poi do
   belongs_to :region, :optional => true
+  belongs_to :node_type, :optional => true
+
+  actions :index, :show
+
 
   scope :fully_accessible
   scope :limited_accessible
@@ -8,9 +12,9 @@ ActiveAdmin.register Poi do
   scope :has_provider
   scope :has_photo
 
+  filter :category, :as => :select, :collection => proc { Category.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort }
   filter :node_type, :as => :select, :collection => proc { NodeType.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort }
   filter :region, :as => :select, :collection => proc { Region.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort }
-  filter :category, :as => :select, :collection => proc { Category.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort }
   filter :version
   filter :tags
   filter :created_at
@@ -44,7 +48,9 @@ ActiveAdmin.register Poi do
     column :osm_id do |poi|
       link_to poi.osm_id, node_path(poi)
     end
-    column :wheelchair
+    column :wheelchair do |poi|
+      status_tag(poi.wheelchair, :class => poi.wheelchair)
+    end
     column :version
     column :name
     column :node_type
@@ -82,12 +88,4 @@ ActiveAdmin.register Poi do
 
     active_admin_comments
   end
-
-  form do |f|
-    f.inputs do
-      f.input :name
-    end
-    f.buttons
-  end
-
 end

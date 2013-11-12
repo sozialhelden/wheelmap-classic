@@ -28,7 +28,7 @@ class Api::NodesController < Api::ApiController
     if params[:bbox]
       @nodes = end_of_association_chain.paginate(:page => params[:page], :per_page => params[:per_page]).distance_search(params[:q], params[:bbox], params[:page])
     else
-      @nodes = end_of_association_chain.search(params[:q]).paginate(:page => params[:page], :per_page => params[:per_page])
+      @nodes = end_of_association_chain.search_scope(params[:q]).paginate(:page => params[:page], :per_page => params[:per_page])
     end
     respond_to do |format|
       format.xml      {render_for_api :simple, :xml  => @nodes, :root => :nodes, :meta => meta}
