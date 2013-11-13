@@ -39,4 +39,17 @@ ActiveAdmin.register Photo do
     column :created_at
     default_actions
   end
+
+  form html: { multipart: true } do |f|
+    f.inputs do
+      f.input :poi_id
+      f.input :user_id
+    end
+    f.inputs do
+      f.input :image
+      f.input :caption
+      f.input :taken_at, as: :datetime
+    end
+    f.buttons
+  end
 end
