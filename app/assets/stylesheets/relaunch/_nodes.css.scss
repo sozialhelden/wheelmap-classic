@@ -246,10 +246,19 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     @include box-sizing(border-box);
 
     .icon-question-sign {
-      padding-left: 5px;
+      padding-left: 12px;
       font-size: 1.2em;
       opacity: .6;
       color: white;
+    }
+
+    .text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 80%;
+      display: inline-block;
+      @include box-sizing(border-box);
     }
   }
 
