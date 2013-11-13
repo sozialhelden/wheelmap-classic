@@ -1,1 +1,5 @@
-<div {{bind-attr class=":marker-icon view.iconClass"}}></div>
+{{#if sponsored}}
+  <img  {{bind-attr src=sponsor}} width="22" height="22" style="margin: 3px 4px;"/>
+{{else}}
+  <div {{bind-attr class=":marker-icon view.iconClass"}}></div>
+{{/if}}

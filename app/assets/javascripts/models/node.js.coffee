@@ -6,6 +6,7 @@ Wheelmap.Node = DS.Model.extend
   lon: attr()
   name: attr()
   icon: attr()
+  sponsor: attr()
   wheelchair: attr()
   category: attr()
   address: attr()
@@ -43,5 +44,9 @@ Wheelmap.Node = DS.Model.extend
   updatePath:(()->
     '/nodes/' + @get('osm_id') + '/update_wheelchair.js'
   ).property('osm_id')
+
+  sponsored:(()->
+    @get('sponsor')?
+  ).property('sponsor')
 
 Wheelmap.NodeAdapter = DS.RESTAdapter.extend()
