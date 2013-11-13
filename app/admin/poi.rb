@@ -85,7 +85,5 @@ ActiveAdmin.register Poi do
         link_to "Photos", admin_poi_photos_path(poi)
       end
     end
-
-    active_admin_comments
   end
 end
