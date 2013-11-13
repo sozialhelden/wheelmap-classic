@@ -56,11 +56,6 @@
       @include transition(all 0.3s ease-in-out);
     }
 
-    :focus {
-      width: 200px;
-      background: #FFF;
-    }
-
     ::-webkit-input-placeholder {
       color: #2D3D4D;
     }
