@@ -1,5 +1,5 @@
 #container {
-  background: url('container_bg.png') repeat-x 0 52px;
+  background: url('container_bg.png') repeat-x 0 $headerHeight;
   display: block;
   padding-bottom: $footerHeight + 10px;
   padding-top: $headerHeight;
