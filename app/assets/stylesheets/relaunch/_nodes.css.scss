@@ -246,10 +246,19 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     @include box-sizing(border-box);
 
     .icon-question-sign {
-      padding-left: 5px;
+      padding-left: 10px;
       font-size: 1.2em;
       opacity: .6;
       color: white;
+    }
+
+    .text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 81%;
+      display: inline-block;
+      @include box-sizing(border-box);
     }
   }
 
@@ -257,6 +266,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     @include border-top-radius(0);
 
     a {
+      @extend .clearfix;
       line-height: 25px;
       padding: 5px 10px;
 
@@ -265,6 +275,15 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
         // Needed for firefox floating bug
         position: absolute;
         right: 10px;
+      }
+
+      .text {
+        white-space: nowrap;
+        width: 79%;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
       }
     }
 
