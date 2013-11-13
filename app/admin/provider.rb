@@ -13,7 +13,7 @@ ActiveAdmin.register Provider do
   form html: { multipart: true } do |f|
     f.inputs do
       f.input :name
-      f.input :logo
+      f.input :logo, hint: 'Das Logo muss exakt 44x44 Pixel gross sein.'
     end
     f.buttons
   end
