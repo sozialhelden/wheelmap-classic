@@ -60,9 +60,14 @@ private
 
   def check_for_search_term
     if params[:q].blank?
-      @query = DEFAULT_PARAMS.reverse_merge({:'accept-language' => I18n.locale, :q => ''})
-      @result = []
-      render :template => 'search/index', :status => 406, :format => request.format
+      if request.format == 'html'
+        @query = DEFAULT_PARAMS.reverse_merge({:'accept-language' => I18n.locale, :q => ''})
+        @result = []
+        render :template => 'search/index', :status => 406
+      else
+        @message = I18n.t('nodes.errors.param_missing', :param => 'q')
+        render :template => 'shared/error', :status => 406, :format => request.format
+      end
     end
   end
 
