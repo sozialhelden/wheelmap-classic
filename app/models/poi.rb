@@ -81,6 +81,7 @@ class Poi < ActiveRecord::Base
   scope :without_node_type, :conditions => 'node_type_id IS NULL'
   scope :including_category, :include => :category
   scope :including_region, :include => :region
+  scope :including_providers, :include => { :provided_pois => :provider }
   scope :has_provider, :joins => :provided_pois
   scope :has_photo, :joins => :photos
   scope :within_region, lambda {|region| {:conditions => {:region_id => region.id}}}
@@ -275,6 +276,17 @@ class Poi < ActiveRecord::Base
 
   def icon
     node_type.try(:icon).to_s.gsub(/\.png$/,'')
+  end
+
+  def sponsored?
+    provided_pois.count > 0
+  end
+
+  def sponsor
+    providers.each do |p|
+      logo = p.logo.try(:url, 'iphone')
+      return logo unless logo.nil?
+    end
   end
 
   def to_geojson(options={})

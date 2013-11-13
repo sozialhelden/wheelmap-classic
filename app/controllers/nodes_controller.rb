@@ -30,7 +30,7 @@ class NodesController < ApplicationController
     normalize_bbox if params[:bbox]
     @limit = params[:limit].try(:to_i) || 300
 
-    @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.including_region.limit(@limit) if @left
+    @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.including_region.including_providers.limit(@limit) if @left
 
     # If a node_id is given and could be found, make sure it is included in the collection
     if @custom_node && !@places.map(&:osm_id).include?(params[:node_id])

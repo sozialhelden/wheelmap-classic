@@ -10,5 +10,11 @@ ActiveAdmin.register Provider do
     default_actions
   end
 
-
+  form html: { multipart: true } do |f|
+    f.inputs do
+      f.input :name
+      f.input :logo
+    end
+    f.buttons
+  end
 end
