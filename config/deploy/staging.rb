@@ -1,4 +1,5 @@
 set :rails_env, :staging
+set :branch, ENV['BRANCH'] || "master"
 
 # Delayed Job
 require "delayed/recipes"
