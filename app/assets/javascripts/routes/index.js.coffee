@@ -80,7 +80,8 @@ Wheelmap.IndexRoute = Ember.Route.extend
       queryParams = @get('queryParams')
       mapController.set('isLoading', true)
 
-      @store.findQuery('node', bbox: bounds.toBBoxString()).then (nodes)->
+      custom_node = queryParams.node_id if queryParams.node_id?
+      @store.findQuery('node', { bbox: bounds.toBBoxString(), node_id: custom_node }).then (nodes)->
         if currentRequestCount != self._nodeRequestCounter
           return
 
