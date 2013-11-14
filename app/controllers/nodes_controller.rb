@@ -17,6 +17,7 @@ class NodesController < ApplicationController
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
   before_filter :check_bbox_param,                :only => :index
+  before_filter :load_custom_node,                :only => :index
 
   # Manually compress geojson output
   after_filter :compress,                         :only => :index, :if => lambda {|c| c.request.format.try(:geojson?)}
@@ -30,6 +31,11 @@ class NodesController < ApplicationController
     @limit = params[:limit].try(:to_i) || 300
 
     @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.including_region.limit(@limit) if @left
+
+    # If a node_id is given and could be found, make sure it is included in the collection
+    if @custom_node && !@places.map(&:osm_id).include?(params[:node_id])
+      @places << @custom_node
+    end
 
     respond_to do |wants|
       wants.js{   render :json => @places.as_api_response(:iphone).to_json }
@@ -130,6 +136,13 @@ class NodesController < ApplicationController
 
   # Before filter
   protected
+
+  # If a node_id is given additionally, make sure it is loaded
+  def load_custom_node
+    if !params[:node_id].blank?
+      @custom_node = Poi.find(params[:node_id]) rescue nil
+    end
+  end
 
   def determine_layout
     case action_name
