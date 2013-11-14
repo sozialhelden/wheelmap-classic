@@ -1,4 +1,5 @@
 set :rails_env, :production
+set :branch, ENV['BRANCH'] || "production"
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> All the same
 set :whenever_command, "bundle exec whenever"
