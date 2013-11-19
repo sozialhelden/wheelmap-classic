@@ -1,4 +1,14 @@
 ja:
+  faq:
+    answers:
+      0: "あなたが設定したマーキングはいつでも変更できます。正しいマーキングを選んで\"Save\"を押せば完了です！"
+      1: "ユーザとしてログインを行うと、場所についてのすべての情報に対して追加や編集ができるようになります。\"Edit\"を押して、欄の中に表示されている情報の追加や修正を行ってください。"
+      2: "コメント部分には、より詳細な情報を書くことができます(例: \"持ち運び型ランプあり\") \"Edit\"を押した後、\"Add comment\"を押してください。"
+    headline: "事実と異なる情報がありますか？"
+    questions:
+      0: "マーキングが間違っています。"
+      1: "詳細情報に間違いが含まれています。"
+      2: "この場所をより詳しく知っています。"
   header:
     navigation:
       about_wheelmap: "Wheelmap について"
@@ -24,7 +34,7 @@ ja:
         location: "地図をクリックして、マーカーを正しい位置に調整してください。"
     node_data:
       address: "住所:"
-      contact_details: "連絡先詳細:"
+      contact_details: "詳しい連絡先:"
     node_edit:
       details: "詳細"
       edit: "編集"
@@ -37,14 +47,20 @@ ja:
       photos_of_this_place: "この場所の写真:"
       upload: "アップロード"
     node_similar:
-      similar: "類似の場所: %{name}"
+      similar: "ここに似た場所: %{name}"
     node_status:
       accessible_toilet: "トイレへの車椅子アクセシビリティ:"
+      premium: "%{name} によればこの場所は"
       wheelchair_accessibility: "車椅子のアクセシビリティ:"
     node_streetview:
       streetview: "ストリートビュー:"
     show:
+      header:
+        meta:
+          description: "Wheelmap.orgのなかで車椅子のアクセシビリティ情報が登録されているかどうかを確認してみてください。もしまだ情報が少ない場合、より詳しい情報や写真を追加してみましょう。"
+          title: "Wheelmap.orgでの登録名称: %{name}"
       share:
+        email: "E-mail"
         facebook: Facebook
         text: "Wheelmap.org でこんな場所がありました: %{name}"
         twitter: Twitter
@@ -54,12 +70,12 @@ ja:
         headline: "\"%{query}\" という名前の場所はありませんでした。"
         hint:
           example: "<strong>例:</strong> 英国, ロンドン"
-          info: "検索精度を向上させるため、より詳細な名称と住所の情報を必要としています。"
-          work_in_progress: "より簡単に、より直感的に場所を検索できるよう、私達はがんばります。"
+          info: "このサイトの検索機能は、場所の名称や住所情報を元に行っています。そのため、検索の際には対象の場所の名称、あるいは住所(例: ストリートの名前や市町村の名前)を入力して検索をしてください。レストランや映画館、といった場所の種類を元にした検索は行なうことができませんのでご注意ください。"
+          work_in_progress: "より簡単に、より直感的に場所を検索できるよう、私たちはがんばります。"
         try_this:
-          address: "<strong>住所情報</strong> をより詳しく追記してみましょう。"
+          address: "より詳細な<strong>住所情報</strong> を登録してみましょう。"
           intro: "もしかして:"
-          spell_check: "<strong>誤字</strong>が無いか、確認してください。"
+          spell_check: "<strong>誤字脱字</strong>が無いか、確認してください。"
       results:
         ticker:
           one: "結果 1 件:"
@@ -68,4 +84,4 @@ ja:
     timeout:
       headline: "こちらの間違いです。すみません。"
       info: "検索機能が一時的に利用できない状態です。"
-      repeat_search: "もう一度検索を実行"
+      repeat_search: "検索を再実行"

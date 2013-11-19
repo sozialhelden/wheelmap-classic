@@ -67,6 +67,7 @@ it:
     show_unaccessible_places: "non accessibile in sedia a rotelle"
   formtastic:
     hints:
+      email: "Wheelmap.org tratta i tuoi dati in modo confidenziale; nessuno spam. Promesso!"
       lat: "Sposta l'indicatore sulla mappa nella posizione coretta"
       osm_username: "Non sei ancora un membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Crea ora un account su Openstreetmap</a> "
       password: "(lascia vuoto se non vuoi cambiarlo)"

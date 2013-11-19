@@ -20,7 +20,7 @@ lv:
       already_confirmed: "jau ir apstiprināts"
       blank: "ir jāaizpilda"
       confirmation: "Neatbilst apstiprinājumam"
-      empty: jāaizpilda
+      empty: "jāaizpilda"
       equal_to: "Jābūt precīzi %{count}"
       even: "vērtībai jābūt pāra skaitlim"
       exclusion: "ir rezervēts"
@@ -93,7 +93,7 @@ lv:
       wheelchair: "Pieejamība ar ratiņkrēslu?"
       wheelchair_description: "Komentārs par pieejamību"
     titles:
-      basic: Pamatdati
+      basic: "Pamatdati"
       optional: "Vairāk informācijas <span class=\"addition\">(all fields are optional)</span>"
   global:
     form_validation_error: "Lūdzu ņemiet vērā zemāk uzskaitītās kļūdas"
@@ -108,11 +108,11 @@ lv:
       feedback: Atsauksmes
       home: Sākt
       how_to_add_a_place: "Ka es varu pievienot vietas?"
-      imprint: "Par mums"
+      imprint: Par mums
       logged_in_as: "Pierakstījies kā: "
-      login: Pierakstīties
-      logout: Izrakstīties
-      newsletter: "Paziņojumi par jaunumiem"
+      login: "Pierakstīties"
+      logout: "Izrakstīties"
+      newsletter: Paziņojumi par jaunumiem
       press: Presei
       profile: Profils
       suggestions: Ieteikumi
@@ -143,7 +143,7 @@ lv:
           ignore: Ignorēt
           upgrade: "Atjaunot pārlūku"
         warning:
-          headline: Atvainojiet!
+          headline: "Atvainojiet!"
           message: "Šķiet Jūs lietojiet Internet Explorer. Wheelmap lietošanai ir nepieciešams tīmekļa standartiem atbilstošs interneta pārlūks. Lūdzu apsveriet iespēju lietot Firefox, Chrome, Safari vai Opera."
       link:
         node:
@@ -151,27 +151,23 @@ lv:
       popup:
         form:
           limited: "daļēji pieejams ar ratiņkrēslu"
-          ? "no"
-          : "nav pieejams ar ratiņkrēslu"
+          'no': "nav pieejams ar ratiņkrēslu"
           save: Atjaunot
           unknown: "nezināms statuss"
-          ? "yes"
-          : "pieejams ar ratiņkrēslu"
+          'yes': "pieejams ar ratiņkrēslu"
         help: "Pieejams ar ratiņkrēslu? (Palīdzība)"
-        more: vairāk...
+        more: "vairāk..."
   how?: Kā?
   landing_pages:
     index:
       wheelchair:
         limit:
           headline: "Visas (%{count}) ratiņkrēslā ierobežoti pieejamās %{type} vietas %{city}"
-        ? "no"
-        :
+        'no':
           headline: "Visas (%{count}) ar ratiņkrēslu nepieejamās %{type} vietas %{city}"
         unknown:
           headline: "Visas (%{count}) %{type} vietas ar vēl nezināmu pieejamības ar ratiņkrēsliem statusu %{city}"
-        ? "yes"
-        :
+        'yes':
           headline: "Visas (%{count}) ar ratiņkrēslu pieejamās %{type} vietas %{city}"
   layouts:
     application:
@@ -220,7 +216,9 @@ lv:
         back: atpakaļ
         large_map: Palielināt
         listing: "Visas '%{type}' veida vietas %{city}"
-      show-in-osm: "OpenStreetMap\n"
+      show-in-osm: 'OpenStreetMap
+
+        '
     update:
       flash:
         not_successfull: "Ups, Jūsu ieraksts bija vai nu nekorekts vai arī nepilnīgs"
@@ -309,15 +307,14 @@ lv:
   statistics: Statistika
   support:
     array:
-      last_word_connector: un
+      last_word_connector: "un"
       sentence_connector: un
-      skip_last_comma: true
-      two_words_connector: un
+      two_words_connector: "un"
       words_connector: ","
     select:
       prompt: "Lūdzu izvēlieties"
   time:
-    am: "no rīta"
+    am: no rīta
     formats:
       default: "%a, %d %b %Y %H:%M:%S %z\n"
       long: "%B %d, %Y %H:%M\n"
@@ -334,20 +331,18 @@ lv:
       notice: "Uz redzēšanos! "
     new:
       email: "E-pasta adrese"
-      login: Pierakstīties
+      login: "Pierakstīties"
       login_with_twitter: "Pierakstīties ar Twitter"
       password: Parole
       remember_me: "Palikt piereģistrētam"
   wheelchairstatus:
     limited: "daļēji pieejams ar ratiņkrēslu"
-    ? "no"
-    : "Nav pieejams ar ratiņkrēslu"
+    'no': "Nav pieejams ar ratiņkrēslu"
     unknown: "nezināms statuss"
-    ? "yes"
-    : "pieejams ar ratiņkrēslu"
+    'yes': "pieejams ar ratiņkrēslu"
   wheelmap:
     footer:
-      a_project_of: projekts
+      a_project_of: "projekts"
       based_on: "Balstīts uz"
       become_a_supporter: "Kļūsti par atbalstītāju"
       main_supporter: "Galvenais atbalstītājs"

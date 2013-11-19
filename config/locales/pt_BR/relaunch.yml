@@ -1,4 +1,14 @@
 pt_BR:
+  faq:
+    answers:
+      0: "Você sempre pode mudar a marcação dum lugar. Simplesmente escolhe a classificação certa e \"Salvar\" - pronto!"
+      1: "Como usuário logado você pode acrescentar / corrigir detalhes dum lugar. Clique em \"Editar\" em corrija ou acrescente informações."
+      2: "Você pode acrescentar mais informações (por exemplo, \"Este lugar possui uma rampa móvel\") na seção de comentários. Clique em \"Editar\" e \"Adicionar comentário\"."
+    headline: "Tem algum problema com este lugar?"
+    questions:
+      0: "A marcação está errada."
+      1: "Os detalhes do lugar estão incorretos ou faltam."
+      2: "Tenho mais informações sobre este lugar."
   header:
     navigation:
       about_wheelmap: "Sobre Wheelmap"
@@ -11,11 +21,20 @@ pt_BR:
   home:
     index:
       overlay:
+        button: "Vamos lá!"
         categories: "Filtrar lugares por categoria"
         filter: "Filtrar lugares por acessibilidade"
+        headline: "Marque e encontre lugares acessíveis a cadeirantes com Wheelmap.org - no mundo tudo e de graça. É simples:"
+        lookup: "Buscar um lugar específico"
+        secondary_headline: "Nosso sistema de semáforo para indicar a acessibilidade de lugares públicos:"
   nodes:
+    new:
+      form:
+        legend: "Localização do lugar"
+        location: "Por favor, clique no mapa e coloque o marcador na posição exata."
     node_data:
       address: "Endereço:"
+      contact_details: "Contato:"
     node_edit:
       details: "Detalhes"
       edit: "Editar"
@@ -24,23 +43,39 @@ pt_BR:
     node_note:
       comment: "Comentário:"
     node_photos:
+      add: "Adicionar"
       photos_of_this_place: "Fotos deste lugar:"
       upload: "Transferência"
     node_similar:
       similar: "Lugares parecidos: %{name}"
     node_status:
+      accessible_toilet: "Banheiro acessível:"
+      premium: "%{name} diz: este lugar é"
       wheelchair_accessibility: "Acessibilidade a cadeirantes:"
     node_streetview:
       streetview: "Vista de rua:"
     show:
+      header:
+        meta:
+          description: "Saiba se um lugar é acessível a cadeirantes pelo Wheelmap.org. Ou acrescente mais informações e fotos ao lugar."
+          title: "Este lugar está em Wheelmap.org: %{name}"
       share:
+        email: "E-mail"
         facebook: Facebook
+        text: "Encontrei este lugar em Wheelmap.org: %{name}"
         twitter: Twitter
   search:
     index:
       no-results:
+        headline: "Desculpe, não conseguimos achar um lugar \"%{query}\"."
+        hint:
+          example: "<strong>Exemplo:</strong> São Paulo, Brasil"
+          info: "Nosso serviço de busca funciona somente com nome e/ou informações de endereço. Portanto, ou procure pelo nome do lugar ou por um endereço, por exemplo, nome de rua e/ou cidade. Buscar pelo tipo dum lugar, por exemplo restaurante ou cinema, não funciona."
+          work_in_progress: "Trabalhamos duro para tornar buscar lugares mais fácil e mais intuitivo no futuro."
         try_this:
+          address: "Por favor, forneça mais <strong>detalhes de endereço</strong>."
           intro: "Tente isso:"
+          spell_check: "Verifique a <strong>ortografia</strong>."
       results:
         ticker:
           one: "1 resultado:"
@@ -48,3 +83,5 @@ pt_BR:
           zero: "0 resultados:"
     timeout:
       headline: "Oh, nossa culpa"
+      info: "Nosso sistema de busca estava temporariamente indisponível."
+      repeat_search: "Nova busca"
