@@ -7,6 +7,7 @@ Spork.prefork do
   require 'factory_girl'
   require 'webmock/rspec'
   require 'carrierwave/test/matchers'
+  require 'database_cleaner'
 
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
