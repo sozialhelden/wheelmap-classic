@@ -6,6 +6,9 @@ require 'spork'
 Spork.prefork do
   require 'cucumber/rails'
   require 'webmock/cucumber'
+  require 'carrierwave/test/matchers'
+  require 'database_cleaner'
+  require 'pickle'
 
   # Capybara defaults to XPath selectors rather than Webrat's default of CSS3. In
   # order to ease the transition to Capybara we set the default here. If you'd
