@@ -74,21 +74,10 @@ namespace :export do
 
   desc 'Export Categories and NodeTypes'
   task :node_type_fixture => :environment do
-    # Category.all.each do |category|
-    #   category.node_types.each do |node_type|
-    #     puts "#{category.identifier}_#{node_type.identifier}:"
-    #     puts "  osm_key: #{node_type.osm_key}"
-    #     puts "  osm_value: #{node_type.osm_value}"
-    #     puts
-    #   end
-    # end
-
-    Tags.keys.each do |tag|
-      key = Tags[tag]
-      value = tag
-      puts "tag_#{tag}:"
-      puts "  osm_key: #{key}"
-      puts "  osm_value: #{value}"
+    NodeType.order('osm_value ASC').all.each do |n|
+      puts "tag_#{n.identifier}:"
+      puts "  osm_key: #{n.osm_key}"
+      puts "  osm_value: #{n.osm_value}"
       puts
     end
 
@@ -122,6 +111,14 @@ namespace :export do
         STDOUT.flush
       end
     end
+  end
+
+  task :tags => :environment do
+    puts "Tags = {"
+    NodeType.order('osm_value ASC').all.each do |n|
+      puts "  :#{n.osm_value} => :#{n.osm_key},"
+    end
+    puts "}"
   end
 
 end
