@@ -61,6 +61,7 @@ ca:
   formtastic:
     hints:
       email: "Us garantim que tractarem la seva adreça de manera confidencial i no hi rebrà spam."
+      lat: "Moveu el marcador del mapa a la posició correcta"
       osm_username: "Encara no en sou membre? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Creeu-vos ara un compte a OpenStreetMap</a>"
       password: "(deixeu-ho en blanc si no voleu canviar-la)"
       phone: "Per exemple: +34 93 1234567"
@@ -313,6 +314,8 @@ ca:
     create:
       activation:
         notice: "Ara s'ha activat el vostre compte."
+      error:
+        notice: "L'adreça o la contrasenya no coincideixen."
       notice: "Ja hi ets."
     destroy:
       notice: "Adéu, torna aviat."
@@ -326,6 +329,7 @@ ca:
     after_signup_edit:
       welcome:
         headline: ~
+        set_password_for_mobile: "Heu finalitzat el registre a l'OpenStreetmap.\nAra indiqueu una adreça de correu i una contrasenya per al compte Wheelmap i, aleshores, haureu acabat! Necessiteu aquesta adreça de correu i la contrasenya per iniciar sessió a l'aplicació Wheelmap de l'iPhone o l'Android."
     edit:
       headline:
         your_images: "Imatges que heu penjat"

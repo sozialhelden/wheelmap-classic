@@ -9,7 +9,7 @@ pt:
     node:
       create: "Adicionar um novo lugar"
       edit: "Editar um lugar"
-    root: "ê ã õ  ç"
+    root: ê ã õ  ç
   common:
     close: fechar
   errors:
@@ -78,14 +78,14 @@ pt:
       name: "Nome:"
       osm_password: "OSM palavra passe"
       osm_username: "OSM nome da conta"
-      password: "Palavra passe"
+      password: Palavra passe
       password_confirmation: "Repita a palavra passe"
       phone: "Telefone:"
       postcode: "código postal:"
       save: Guardar
       street: "Rua:"
-      type: Tipo
-      website: Website
+      type: "Tipo"
+      website: "Website"
       wheelchair: "Acessibilidade para cadeira de rodas?"
       wheelchair_description: "Comentário sobre a acessibilidade: "
     titles:
@@ -96,7 +96,7 @@ pt:
   header:
     meta:
       description: "encontrar lugares acessíveis a cadeira de rodas - wheelmap.org"
-      homepage: Homepage
+      homepage: "Homepage"
       keywords: "lugares acessíveis a cadeira de rodas procurar indicador de procura"
       search: Procurar
     navigation:
@@ -106,8 +106,8 @@ pt:
       how_to_add_a_place: "Como adicionar lugares?"
       imprint: Imprimir
       logged_in_as: "Registrado como:"
-      login: Entrar
-      logout: Sair
+      login: "Entrar"
+      logout: "Sair"
       press: Imprensa
       suggestions: Sugestões
       what_is_barrier_free: "Qual o significado de \"acessível a cadeira de rodas\"?"
@@ -135,6 +135,12 @@ pt:
       link:
         node:
           create: "Adicionar um novo lugar"
+      popup:
+        form:
+          limited: "parcial acesibilidade a cadeira de rodas"
+          'no': "sem acessibilidade a cadeira de rodas"
+          unknown: "acessibilidade a cadeira de rodas desconhecida"
+          'yes': "Completa acessibilidade a cadeira de rodas"
   layouts:
     application:
       banner:
@@ -192,8 +198,8 @@ pt:
       decimal_units:
         format: "%n %u"
         units:
-          billion: "Bilhão"
-          million: "Milhão"
+          billion: Bilhão
+          million: Milhão
           quadrillion: Quatrilhão
           thousand: Mil
           trillion: "Trilhão"

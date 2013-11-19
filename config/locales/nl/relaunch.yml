@@ -1,11 +1,15 @@
 nl:
+  faq:
+    answers:
+      0: "U kunt altijd de markering van een plaats zelf veranderen. Kies gewoon de juiste markering en \"Save\" - klaar!"
+      2: "U kunt meer informatie (bvb \"Deze plaats heeft een mobiele helling\") in de commentaar sectie toevoegen. Klik op \"Edit\" en \"add comment\""
   header:
     navigation:
       about_wheelmap: "Over Wheelmap"
       choose_language: "Kies de taal"
       contact: Contact
       map: Plattegrond
-      projects: "Start ermee"
+      projects: Projecten
     toolbar:
       categories: Categorieën
   home:
@@ -17,3 +21,48 @@ nl:
         headline: "Markeer en vind rolstoel toegankelijke plaatsen met Wheelmap.org - wereldwijd en gratis. Het is makkelijk:"
         lookup: "Zoek een speciale plaats"
         secondary_headline: "Ons stoplicht systeem om de rolstoel toegankelijke openbare ruimtes te markeren:"
+  nodes:
+    new:
+      form:
+        legend: "locatie"
+    node_data:
+      address: "adres"
+      contact_details: "contactgegevens"
+    node_edit:
+      edit: "Redigeren"
+    node_map:
+      map: "Plattegrond"
+    node_note:
+      comment: "Commentaar"
+    node_photos:
+      photos_of_this_place: "Fotos van deze plaats:"
+    node_status:
+      accessible_toilet: "rolstoeltoegankelijk toilet"
+      wheelchair_accessibility: "Rolstoel toegangelijk?"
+    node_streetview:
+      streetview: "Streetview:"
+    show:
+      share:
+        email: "E-mail"
+        facebook: Facebook
+        text: "Ik heb dit plaats gevonden op Wheelmap.org: %{name}"
+        twitter: Twitter
+  search:
+    index:
+      no-results:
+        headline: "Sorry, we hebben het plaats \"%{query}\" niet gevonden."
+        hint:
+          example: "<strong>bijvoorbeeld:</strong> London, United Kingdom"
+        try_this:
+          address: "Geef a.u.b. meer <strong>address details</strong>."
+          intro: "Probeer dit"
+          spell_check: "Controleer a.u.b. de  <strong>spelling</strong> van je text"
+      results:
+        ticker:
+          one: "1 resultaat"
+          other: "%{count} resultaat:"
+          zero: "0 resultaten"
+    timeout:
+      headline: "sorry, werkt niet"
+      info: "Onze zoekdienst was tijdelijk buiten werk"
+      repeat_search: "Herhaal de zoekopdracht"

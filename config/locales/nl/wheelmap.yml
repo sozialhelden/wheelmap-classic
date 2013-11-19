@@ -150,7 +150,7 @@ nl:
       ie:
         action:
           ignore: Negeren
-          upgrade: "actualiseer Broswer"
+          upgrade: "Actualiseer Browser"
         warning:
           headline: "Wij excuseren!"
           message: "Je gebruikt blijkbaar Internet Explorer. Wheelmap heeft een standart-passend browser nodig om optimaal te werken. Alsjeblieft gebruik Firefox, Chrome, Safari or Opera"
@@ -328,7 +328,7 @@ nl:
       default: "%a %d %b %Y %H:%M:%S %Z"
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
-    pm: "s middags"
+    pm: s middags
   user_sessions:
     create:
       activation:

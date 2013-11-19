@@ -46,6 +46,7 @@ pt_BR:
       government:
         courthouse: Tribunal
         embassy: Embaixada
+        government: "Agência governamental"
         police: Polícia
         public_building: "Prédio público"
         townhall: Prefeitura
@@ -127,9 +128,12 @@ pt_BR:
         doityourself: "Loja de ferragens"
         dry_cleaning: "Lavanderia a seco"
         electronics: Loja de Eletrônicos
+        fabric: "Lojas de tecidos"
+        farm_shop: "Loja de fazenda"
         florist: Florista
         furniture: Móveis
         garden_centre: "Centro de jardinagem"
+        gift: "Loja de presentes"
         hairdresser: Cabeleireiro
         hardware: Utensílios e Ferramentas
         jewelry: Joalharia
@@ -150,6 +154,7 @@ pt_BR:
         travel_agency: "Agência de viagens"
         video: "Locadora"
       sport:
+        pitch: "Quadra de esporte"
         sports_centre: "Centro esportivo"
         stadium: Estádio
         swimming: Natação
