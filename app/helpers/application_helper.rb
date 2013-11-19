@@ -45,15 +45,6 @@ module ApplicationHelper
     end
   end
 
-  def category_for_node(type)
-    Amenities.each do |category, groups|
-      groups.each do |group|
-        return category if group.keys.include?(type.to_sym)
-      end
-    end
-    nil
-  end
-
   def var_language
     "var language = \"#{I18n.locale.to_s.gsub(/(-[a-z]{2})/){ $1.upcase unless $1.nil?}}\""
   end
