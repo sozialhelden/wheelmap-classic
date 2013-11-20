@@ -21,12 +21,14 @@ ko:
         camp_site: "캠핑장"
         caravan_site: "캠핑카 야영지"
         chalet: 별장
+        dormitory: 기숙사
         guest_house: "게스트하우스"
         hostel: 유스호스텔
         hotel: 호텔
         motel: 모텔
       education:
         college: 단과대학
+        driving_school: "자동차 운전 학원"
         kindergarten: 유치원
         library: 도서관
         museum: 박물관
@@ -38,15 +40,18 @@ ko:
         cafe: 카페
         drinking_water: "식수대"
         fast_food: "패스트푸드"
+        ice_cream: "아이스크림 상점"
         pub: 선술집
         restaurant: 식당
       government:
         courthouse: 법원
         embassy: 대사관
+        government: "정부 기관"
         police: 경찰서
         public_building: "공공기관"
         townhall: 읍면동 사무소
       health:
+        dentist: 치과 의원
         doctors: 의료진
         hearing_aids: "보청기판매점"
         hospital: 병원
@@ -57,6 +62,7 @@ ko:
       leisure:
         arena: 경기장
         brothel: 성매매업소
+        casino: 카지노
         cinema: 영화관
         community_center: "시민회관"
         gallery: 갤러리
@@ -68,6 +74,8 @@ ko:
         zoo: 동물원
       misc:
         company: "회사(사무실)"
+        estate_agent: "부동산 중개인"
+        insurance: 보험 대리점
         lawyer: 변호사
         place_of_worship: "기도원"
         toilets: 화장실
@@ -103,6 +111,7 @@ ko:
       shopping:
         alcohol: 술집
         bakery: 빵집
+        beauty: "미용실"
         beverages: 음료가게
         bicycle: "자전거가게"
         books: 서점
@@ -112,28 +121,40 @@ ko:
         chemist: 약국
         clothes: 옷가게
         computer: 컴퓨터상점
+        confectionery: "과자점"
         convenience: 편의시설
+        deli: 조제 식품점
         department_store: "백화점"
         doityourself: "스스로 할 수 있음"
         dry_cleaning: "세탁소"
         electronics: 전자제품
+        fabric: "직물 상점"
+        farm_shop: "농장 상점"
         florist: 꽃집
         furniture: 가구점
         garden_centre: "가든센터"
+        gift: "선물 가게"
         hairdresser: 미용실
         hardware: 하드웨어
+        jewelry: 보석점
         kiosk: 간이매점
         laundry: 세탁소
         mall: "쇼핑센터"
         optician: 안경점
+        organic: "유기농 식품점"
+        outdoor: "야외활동 용품점"
+        pet: "애완동물 가게"
         photo: 사진관
         second_hand: "중고품가게"
         shoes: 신발가게
         sports: 스포츠
         stationery: 문구점
         supermarket: 슈퍼마켓
+        toys: 장난감 상점
+        travel_agency: "여행사"
         video: "비디오대여점"
       sport:
+        pitch: "운동장"
         sports_centre: "스포츠 센터"
         stadium: 경기장
         swimming: 수영

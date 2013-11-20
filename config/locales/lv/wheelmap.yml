@@ -1,4 +1,3 @@
----
 lv:
   application:
     require_no_user:
@@ -9,11 +8,11 @@ lv:
     node:
       create: "Pievienot jaunu vietu"
       edit: "Labot vietu"
-    root: "wheelmap\n"
+    root: "wheelmap"
   common:
     close: aizvērt
   errors:
-    dynamic_format: "%{message}\n"
+    dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
       accepted: "Ir jābūt akceptētam"
@@ -85,7 +84,7 @@ lv:
       password_confirmation: "Atkārtot paroli"
       phone: "Tālrunis:"
       postcode: "pasta indekss:"
-      reset: "Reset\n"
+      reset: "Reset"
       save: Saglabāt
       street: "Iela:"
       type: "Veids:"
@@ -124,7 +123,7 @@ lv:
       label: ~
       placeholder: "piem., Sunset Boulevard L.A. or Brandenburg Gate Berlin"
       title_add_place: "Pievieno jaunu vietu šajā pozīcijā!"
-    tagline: "Wheelmap logo\n"
+    tagline: "Wheelmap logo"
     title: "Atrodiet ar ratiņkrēslu pieejamas vietas"
   helpers:
     select:
@@ -132,7 +131,7 @@ lv:
     submit:
       create: "izveidot %{model}"
       submit: "saglabāt %{model}"
-      update: "atjaunot %{model}\n"
+      update: "atjaunot %{model}"
   home:
     index:
       filter:
@@ -229,8 +228,8 @@ lv:
     currency:
       format:
         delimiter: ","
-        format: "%u%n\n"
         precision: 2
+        format: "%u%n"
         separator: "."
         significant: 0
         strip_insignificant_zeros: 0
@@ -257,15 +256,15 @@ lv:
         significant: atbilst
         strip_insignificant_zeros: true
       storage_units:
-        format: "%n %u\n"
+        format: "%n %u"
         units:
           byte:
             one: Bits
             other: baiti
-          gb: "GB\n"
+          gb: GB
           kb: KB
           mb: MB
-          tb: "TB\n"
+          tb: TB
     percentage:
       format:
         delimiter: ","
@@ -316,9 +315,9 @@ lv:
   time:
     am: no rīta
     formats:
-      default: "%a, %d %b %Y %H:%M:%S %z\n"
-      long: "%B %d, %Y %H:%M\n"
-      short: "%d %b %H:%M\n"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
     pm: vakarā
   user_sessions:
     create:
@@ -347,7 +346,7 @@ lv:
       become_a_supporter: "Kļūsti par atbalstītāju"
       main_supporter: "Galvenais atbalstītājs"
     itunes:
-      alt: "AppStore Logo\n"
+      alt: "AppStore Logo"
       title: "Lejupielādējiet iPhone App tūlīt!"
     logo:
       alt: "Wheelmap Logo - atrodiet ar ratiņkrēslu pieejamas vietas"

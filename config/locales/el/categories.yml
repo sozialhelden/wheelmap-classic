@@ -5,6 +5,7 @@ el:
       education: Εκπαίδευση
       food: Τρόφιμα
       government: Κυβέρνηση
+      health: Υγεία
       leisure: Ψυχαγωγία
       misc: Διάφορα
       money_post: "Τράπεζα και Ταχυδρομείο"
@@ -20,12 +21,14 @@ el:
         camp_site: "Κάμπινγκ"
         caravan_site: "Τοποθεσία κατάλληλη για τροχόσπιτα"
         chalet: Σαλέ
+        dormitory: Κοιτώνας
         guest_house: "Ξενώνας"
         hostel: Hostel
         hotel: Ξενοδοχείο
         motel: Μοτέλ
       education:
         college: Κολέγιο
+        driving_school: "Σχολή οδήγησης"
         kindergarten: Νηπιαγωγείο
         library: Βιβλιοθήκη
         museum: Μουσείο
@@ -37,27 +40,43 @@ el:
         cafe: Καφετέρια
         drinking_water: "Πόσιμο νερό"
         fast_food: "Ταχυφαγεία"
+        ice_cream: "Αίθουσα παγωτού"
         pub: Πάμπ
         restaurant: Εστιατόριο
       government:
         courthouse: Δικαστήριο
         embassy: Πρεσβεία
+        government: "Κυβερνητική υπηρεσία"
+        police: Αστυνομία
         public_building: "Δημόσια κτήρια"
         townhall: Δημαρχείο
       health:
+        dentist: Οδοντίατρος
         doctors: Γιατροί
+        hearing_aids: "Αντιπρόσωπος ακουστικών βαρηκοΐας"
         hospital: Νοσοκομείο
+        medical_supply: "Ιατρικές προμύθειες"
         pharmacy: Φαρμακείο
+        social_facility: "Κοινωνική εγκατάσταση"
         veterinary: Κτηνίατρος
       leisure:
         arena: Αρένα
+        brothel: Οίκος ανοχής
+        casino: Καζίνο
         cinema: Κινηματογράφος
+        community_center: "Κοινοτικό Κέντρο"
         gallery: Πινακοθήκη
         nightclub: Νυχτερινό κέντρο διασκέδασης
+        playground: Παιδική χαρά
         sauna: Σάουνα
+        stripclub: Στριπ Κλαμπ
         theatre: Θέατρο
         zoo: Ζωολογικός κήπος
       misc:
+        company: "Επιχείρηση"
+        estate_agent: "Κτηματομεσίτης"
+        insurance: Ασφάλεια
+        lawyer: Δικηγόρος
         place_of_worship: "Τόπος λατρείας"
         toilets: Αποχωρητήριο
       money_post:
@@ -92,29 +111,50 @@ el:
       shopping:
         alcohol: Οινοπνευματώδη ποτά
         bakery: Φούρνος
+        beauty: "Ινστιτούτο αισθητικής"
         beverages: Ποτά
         bicycle: "Κατάστημα ποδηλάτων"
         books: Βιβλία
         butcher: Κρεοπωλείο
+        car_repair: "Συνεργείο αυτοκινήτου"
+        car_shop: "Κατάστημα αυτοκινήτων"
+        chemist: Φαρμακοποιός
         clothes: Ρούχα
         computer: Υπολογιστές
+        confectionery: "Ψιλικατζίδικο"
         convenience: Kατάστημα με προϊόντα ευρύτατης κατανάλωσης
+        deli: Ντελικατέσεν
         department_store: "Πολυκατάστημα"
         doityourself: "Do it yourself"
         dry_cleaning: "Στεγνοκαθαριστήρια"
         electronics: Καταστήματα Ηλεκτρικών και Ηλεκτρονικών
+        fabric: "Κατάστημα υφασμάτων"
+        farm_shop: "Οπωροπωλείο"
         florist: Ανθοπωλείο
         furniture: Έπιπλα
         garden_centre: "Ανθοκομικό κέντρο"
+        gift: "Κατάστημα δώρων"
         hairdresser: Κομμωτήρια
         hardware: Kατάστημα σιδηρικών
+        jewelry: Κοσμήματα
         kiosk: Περίπτερο
         laundry: Kαθαριστήριο, πλυντήριο-σιδερωτήριο
         mall: "Eμπορικά κέντρα"
         optician: "Οπτικός"
+        organic: "Κατάστημα βιολογικών προϊόντων"
+        outdoor: "Εξωτερική παροχή"
+        pet: "Pet shop"
+        photo: Φωτογραφία
+        second_hand: "Μεταχειρισμένα"
         shoes: Υποδήματα
+        sports: Αθλήματα
+        stationery: Γραφική ύλη
         supermarket: Σουπερμάρκετ
+        toys: Παιχνίδια
+        travel_agency: "Ταξιδιωτικό γραφείο"
+        video: "Κατάστημα ενοικίασης βίντεο"
       sport:
+        pitch: "Αθλητικός τομέας"
         sports_centre: "Αθλητικά κέντρα"
         stadium: Στάδιον
         swimming: Κολύμπι

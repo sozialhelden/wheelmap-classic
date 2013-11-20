@@ -1,70 +1,66 @@
----
 hi:
   poi:
     category:
-      accommodation: "रहने की जगह "
-      education: "शिक्षा, विद्या, पढ़ाई"
-      food: "खाना, भोजन"
+      accommodation: "रहने की जगह"
+      education: शिक्षा, विद्या, पढ़ाई
+      food: खाना, भोजन
       government: सरकार
       health: स्वास्थ
-      leisure: "अवकाश, मस्ती"
-      misc: "विविध, वगैरह"
+      leisure: अवकाश, मस्ती
+      misc: विविध, वगैरह
       money_post: "बैंक पोस्ट"
       public_transfer: "सार्वजनिक हस्तांतरण\n"
-      shopping: "शॅापिंग, खरीददारी"
+      shopping: शॅापिंग, खरीददारी
       sport: खेल
       tourism: पर्यटन
       unknown: अज्ञात
     name:
       accommodation:
-        beach_resort: "समुद्र तट पर होटल, बीच पर होटल "
+        beach_resort: "समुद्र तट पर होटल, बीच पर होटल"
         bed_and_breakfast: "बेड एंड ब्रेकफ़ास्ट, रहने की व्यवस्था और नाश्ता भी"
         camp_site: "कैंप स्थल, शिविर स्थल"
-        caravan_site: "कारवां स्थल "
-        chalet: ~
+        caravan_site: "कारवां स्थल"
         guest_house: "गेस्ट हाउस, अतिथि आराम ग्रह"
-        hostel: "छात्रावास, हॅास्टल"
-        hotel: "होटल, आराम ग्रह"
+        hostel: छात्रावास, हॅास्टल
+        hotel: होटल, आराम ग्रह
         motel: मोटेल
       education:
         college: कॅालेज
         kindergarten: बालवाड़ी
         library: पुस्तकालय
         museum: संग्रहालय
-        school: "पाठशाला, विद्यालय, स्कूल"
+        school: पाठशाला, विद्यालय, स्कूल
         university: विश्वविद्यालय
       food:
-        bar: "मदिरालय, बार, मैखाना\n"
-        biergarten: "बियर उद्यान"
+        bar: "मदिरालय, बार, मैखाना"
+        biergarten: बियर उद्यान
         cafe: कैफे
         drinking_water: "पीने का पानी"
         fast_food: "फास्ट फूड"
         pub: पब
-        restaurant: "रेस्तरां, रेस्टोरेंट"
+        restaurant: रेस्तरां, रेस्टोरेंट
       government:
         courthouse: अदालत
         embassy: दूतावास
         police: पुलिस
         public_building: "सार्वजनिक बिल्डिंग"
-        townhall: "टाउन हॉल"
+        townhall: टाउन हॉल
       health:
-        doctors: "चिकित्सक, डॅाक्टर "
-        hearing_aids: |-
-            हियरिंग एड डीलर,
-            सुनने वाली मशीन के डीलर
+        doctors: "चिकित्सक, डॅाक्टर"
+        hearing_aids: "हियरिंग एड डीलर,\nसुनने वाली मशीन के डीलर"
         hospital: अस्पताल
         medical_supply: "चिकित्सा का सामान"
-        pharmacy: "दवाई की दुकान"
+        pharmacy: दवाई की दुकान
         social_facility: "सार्वजनिक सुविधा"
-        veterinary: "जानवरों का डॅाक्टर"
+        veterinary: जानवरों का डॅाक्टर
       leisure:
-        arena: "अखाड़ा, मैदान"
-        brothel: "रण्डी खाना, कोठा, "
-        cinema: "सिनेमा, "
+        arena: अखाड़ा, मैदान
+        brothel: "रण्डी खाना, कोठा,"
+        cinema: "सिनेमा,"
         community_center: "सामुदायिक केन्द्र"
         gallery: गैलरी
         nightclub: नाइटक्लब
-        playground: " खेल का मैदान"
+        playground: "खेल का मैदान"
         sauna: सॅाना
         stripclub: स्ट्रिपक्लब
         theatre: थिएटर
@@ -73,33 +69,32 @@ hi:
         company: "कंपनी (दफ्तर)"
         lawyer: वकील
         place_of_worship: "प्रार्थना की जगह"
-        toilets: "शौचालय, संडास"
+        toilets: शौचालय, संडास
       money_post:
         atm: एटीएम
-        bank: "बैंक "
+        bank: "बैंक"
         bureau_de_change: "मुद्रा विनिमय, मुद्रा बदलने की जगह"
         post_box: "पोस्ट बॅाक्स"
         post_office: "पोस्ट अॅाफिस"
       public_transfer:
-        aerodrome: "हवाई अड्डा "
-        bicycle_parking: "साइकिल पार्किंग "
+        aerodrome: "हवाई अड्डा"
+        bicycle_parking: "साइकिल पार्किंग"
         bicycle_rental: "साइकल किराए पर"
-        boatyard: "नावों का यार्ड"
+        boatyard: नावों का यार्ड
         bus_station: "बस अड्डा"
         bus_stop: "बस स्टॅाप"
         cable_car: "केबल कार"
         car_rental: "कार किराए पर"
         car_sharing: "साझा कार"
         chair_lift: "चेयर लिफ्ट"
-        ferry: "नौका, नाव"
+        ferry: नौका, नाव
         ferry_terminal: "नौका टर्मिनल"
-        fuel: पेट्रोलपंप
+        fuel: "पेट्रोलपंप"
         halt: रुको
-        light_rail: ~
         parking: पार्किंग
         parking_aisle: "पार्किंग आइल"
         platform: प्लैटफॅार्म
-        station: सबवे
+        station: "सबवे"
         subway_entrance: "सबवे प्रवेश"
         terminal: "हवाई अड्डा"
         tram_stop: "ट्राम स्टौप"
@@ -108,34 +103,34 @@ hi:
         bakery: बेकरी
         beverages: पेय
         bicycle: " सायकल की दुकान"
-        books: "किताबें, पुस्तकें"
+        books: किताबें, पुस्तकें
         butcher: कसाई
-        car_repair: "कार की मरम्मत "
+        car_repair: "कार की मरम्मत"
         car_shop: " कार की दुकान"
-        chemist: "केमिस्ट, दवाई की दुकान"
-        clothes: "कपड़े, वस्त्र"
+        chemist: केमिस्ट, दवाई की दुकान
+        clothes: कपड़े, वस्त्र
         computer: कंप्यूटर
         convenience: सुविधा
         department_store: "डिपार्टमेंट स्टोर"
         doityourself: "खुद कीजिए"
         dry_cleaning: "ड्राई क्लीनिंग"
         electronics: इलेक्ट्रॅानिक्स
-        florist: "फूलों की दुकान"
+        florist: फूलों की दुकान
         furniture: फर्नीचर
-        garden_centre: "बगीचे के बीच "
+        garden_centre: "बगीचे के बीच"
         hairdresser: नाई
         hardware: हार्डवेयर
-        kiosk: "गुमटी, गाडा, खोमचा"
+        kiosk: गुमटी, गाडा, खोमचा
         laundry: धोबी
-        mall: "शॅापिंग सेंटर "
-        optician: "चश्मा बनाने वाला, ऐनक बनाने वाला"
-        photo: "फोटो, तसवीर"
+        mall: "शॅापिंग सेंटर"
+        optician: चश्मा बनाने वाला, ऐनक बनाने वाला
+        photo: फोटो, तसवीर
         second_hand: "इस्तेमाल किया हुआ"
         shoes: जूते
         sports: खेल
-        stationery: "स्टेश्नरी, लिखने का सामान"
-        supermarket: "सुपरमार्किट "
-        video: "वीडियो किराए पर "
+        stationery: स्टेश्नरी, लिखने का सामान
+        supermarket: "सुपरमार्किट"
+        video: "वीडियो किराए पर"
       sport:
         sports_centre: "स्पोर्ट सेंटर, क्रीडा केंद्र"
         stadium: स्टेडियम
@@ -146,15 +141,15 @@ hi:
         arts_centre: "कला केंद्र"
         artwork: चित्रकला
         attraction: आकर्षण
-        battlefield: "युद्धक्षेत्र, रणभूमि"
-        beach: "समुद्र तट, बीच "
-        beacon: "लाईट हाउस, प्रकाश स्तम्भ"
-        castle: "महल, किला"
-        cave_entrance: "गुफा प्रवेश  "
+        battlefield: युद्धक्षेत्र, रणभूमि
+        beach: "समुद्र तट, बीच"
+        beacon: लाईट हाउस, प्रकाश स्तम्भ
+        castle: महल, किला
+        cave_entrance: "गुफा प्रवेश "
         information: "पर्यटन जानकारी"
         memorial: स्मारक
         theme_park: "थीम पार्क"
         tower: टावर
-        viewpoint: दृष्टिकोण
+        viewpoint: "दृष्टिकोण"
       unknown:
         unknown: अज्ञात

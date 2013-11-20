@@ -21,12 +21,14 @@ ru:
         camp_site: "Турбаза"
         caravan_site: "Палаточный лагерь"
         chalet: Шале
+        dormitory: Общежитие
         guest_house: "Гостевой дом"
         hostel: Общежитие
         hotel: Отель
         motel: Мотель
       education:
         college: Коледж
+        driving_school: "Автошкола"
         kindergarten: Детский сад
         library: Библиотека
         museum: Музей
@@ -38,15 +40,18 @@ ru:
         cafe: Кафе
         drinking_water: "Питьевая вода"
         fast_food: "Фаст фуд"
+        ice_cream: "Кафе-мороженое"
         pub: Паб
         restaurant: Ресторан
       government:
         courthouse: Здание суда
         embassy: Посольство
+        government: "Правительственное учреждение"
         police: Полиция
         public_building: "Общественное здание"
         townhall: Здание городской администрации
       health:
+        dentist: Стоматолог
         doctors: Доктор
         hearing_aids: "Продажа слуховых аппаратов"
         hospital: Больница
@@ -57,6 +62,7 @@ ru:
       leisure:
         arena: Площадь
         brothel: Публичный дом
+        casino: Казино
         cinema: Кинотеатр
         community_center: "Общинный центр"
         gallery: Галерея
@@ -68,6 +74,8 @@ ru:
         zoo: Зоопарк
       misc:
         company: "Компания (офис)"
+        estate_agent: "Агент по недвижимости"
+        insurance: Страхование
         lawyer: Юрист
         place_of_worship: "Место поклонения"
         toilets: Туалет
@@ -103,6 +111,7 @@ ru:
       shopping:
         alcohol: Спиртные напитки
         bakery: Кондитерская
+        beauty: "Салон красоты"
         beverages: Напитки
         bicycle: "Велосипедний магазин"
         books: Книги
@@ -112,28 +121,40 @@ ru:
         chemist: Аптекарь
         clothes: Одежда
         computer: Компьютер
+        confectionery: "Магазин сладостей"
         convenience: Удобства
+        deli: Гастроном
         department_store: "Универмаг"
         doityourself: "Сделай сам"
         dry_cleaning: "Химчистка"
         electronics: Электроника
+        fabric: "Магазин тканей"
+        farm_shop: "Магазин фермерских продуктов"
         florist: Флорист
         furniture: Мебель
         garden_centre: "Садовый центр"
+        gift: "Магазин \"Подарки\""
         hairdresser: Парикмахер
         hardware: Аппаратура
+        jewelry: Ювелирные изделия
         kiosk: Магазин
         laundry: Прачечная
         mall: "Торговый центр"
         optician: Оптика
+        organic: "Магазин экологических продуктов"
+        outdoor: "Товары для активного отдыха"
+        pet: "Зоомагазин"
         photo: Фото
         second_hand: "Секонд Хенд"
         shoes: Обувь
         sports: Спорт
         stationery: Канцелярские товары
         supermarket: Супермаркет
+        toys: Игрушки
+        travel_agency: "Туристическое агентство"
         video: "Видеопрокат"
       sport:
+        pitch: "Спортплощадка"
         sports_centre: "Спортзал"
         stadium: Стадион
         swimming: Плаванье
@@ -145,7 +166,9 @@ ru:
         attraction: Аттракцион
         battlefield: Поле боя
         beach: Пляж
-        beacon: Лайтхаус
+        beacon: 'Лайтхаус
+
+          '
         castle: Церковь
         cave_entrance: "Вход"
         information: "Информация для туристов"

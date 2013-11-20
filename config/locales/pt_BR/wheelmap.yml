@@ -254,11 +254,11 @@ pt_BR:
       decimal_units:
         format: "%n %u"
         units:
-          billion: 'Bilhão'
-          million: 'Milhão'
+          billion: Bilhão
+          million: Milhão
           quadrillion: Quatrilhão
           thousand: Mil
-          trillion: 'Trilhão'
+          trillion: Trilhão
           unit: ~
       format:
         delimiter: ~
