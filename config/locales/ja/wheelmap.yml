@@ -35,6 +35,8 @@ ja:
       not_an_integer: "整数でなければなりません"
       not_found: "は見つかりませんでした"
       not_locked: "ロックされませんでした"
+      not_saved:
+        other: "%{resource} の保存時に %{count} 個のエラーが発生しました:"
       odd: "奇数でなければなりません"
       taken: "既に取得されています"
       too_long: "が長すぎます(%{count} 文字より多すぎてはいけません)"
@@ -42,6 +44,8 @@ ja:
       wrong_length: "長さが間違っています（正確に%{count}文字にしてください）"
     template:
       body: "次の項目で問題がありました："
+      header:
+        other: "%{count} 個のエラーが発生したため %{model} を保存できません"
   flash:
     actions:
       create:
@@ -251,7 +255,7 @@ ja:
           million: 百万
           quadrillion: 千兆
           thousand: 千
-          trillion: "1 兆"
+          trillion: 1 兆
           unit: ~
       format:
         delimiter: ~
@@ -263,7 +267,7 @@ ja:
         units:
           byte:
             one: バイト
-            other: バイト
+            other: Bytes
           gb: GB
           kb: KB
           mb: MB
@@ -283,7 +287,7 @@ ja:
   or: or
   place:
     one: "%{count} 件の場所"
-    other: "%{count} 件の場所"
+    other: "%{count} 個の場所"
   profile:
     edit:
       application:

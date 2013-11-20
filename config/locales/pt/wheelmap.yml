@@ -202,7 +202,7 @@ pt:
           million: Milhão
           quadrillion: Quatrilhão
           thousand: Mil
-          trillion: "Trilhão"
+          trillion: Trilhão
           unit: ~
       format:
         delimiter: ~

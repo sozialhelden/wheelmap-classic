@@ -40,19 +40,24 @@ es:
         cafe: Cafe
         drinking_water: "Agua potable"
         fast_food: "Comida rápida"
+        ice_cream: "Heladería"
         pub: Pub
         restaurant: Restaurante
       government:
         courthouse: Juzgado
         embassy: Embajada
+        government: "Agencia gubernamental"
+        police: Policía
         public_building: "Edificio público"
         townhall: Ayuntamiento
       health:
         dentist: Dentista
         doctors: Médicos
+        hearing_aids: "Distribuidor de audífonos"
         hospital: Hospital
         medical_supply: "Suministros Médicos"
         pharmacy: Farmacia
+        social_facility: "Instalaciones sociales"
         veterinary: Veterinario
       leisure:
         arena: Estadio
@@ -62,12 +67,15 @@ es:
         community_center: "Centro cívico"
         gallery: Galería
         nightclub: Discoteca
+        playground: Área de juegos
         sauna: Sauna
         stripclub: Club de striptease
         theatre: Teatro
         zoo: Zoo
       misc:
         company: "Empresa (oficinas)"
+        estate_agent: "Agente inmobiliario"
+        insurance: Seguros
         lawyer: Abogado
         place_of_worship: "Zona religiosa"
         toilets: Sanitarios
@@ -103,6 +111,7 @@ es:
       shopping:
         alcohol: Licor
         bakery: Panadería
+        beauty: "Salón de belleza"
         beverages: Bebidas
         bicycle: "Tienda de bicicletas"
         books: Libros
@@ -119,23 +128,33 @@ es:
         doityourself: "Hazlo tú mismo"
         dry_cleaning: "Tintorería"
         electronics: Electrónicos
+        fabric: "Tienda de telas"
+        farm_shop: "Granja"
         florist: Floristería
         furniture: Muebles
         garden_centre: "Centro de jardinería"
+        gift: "Tienda de regalos"
         hairdresser: Peluquería
         hardware: Hardware
+        jewelry: Joyas
         kiosk: Kiosko
         laundry: Lavandería
         mall: "Centro comercial"
         optician: Ópica
+        organic: "Tienda ecológica"
+        outdoor: "Suministros al aire libre"
+        pet: "Tiendas de mascotas"
         photo: Foto
         second_hand: "Segunda mano"
         shoes: Zapatos
         sports: Deportes
         stationery: Papelería
         supermarket: Supermercado
+        toys: Juguetes
+        travel_agency: "Agencia de viajes"
         video: "Videoclub"
       sport:
+        pitch: "Campo deportivo"
         sports_centre: "Centro de deportes"
         stadium: Estadio
         swimming: Natación
