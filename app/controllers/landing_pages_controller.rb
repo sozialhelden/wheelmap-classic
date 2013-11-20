@@ -6,7 +6,7 @@ class LandingPagesController < ApplicationController
   before_filter :load_region, :load_status, :load_type
 
   def index
-    @nodes = @node_type.pois.including_category.with_status(@status).within_region(@region).paginate(:page => params[:page], :per_page => 100)
+    @nodes = @node_type.pois.including_category.with_status(@status).within_region(@region).paginate(:page => params[:page], :per_page => 10)
   end
 
   def load_region
