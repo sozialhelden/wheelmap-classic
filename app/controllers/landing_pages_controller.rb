@@ -9,6 +9,8 @@ class LandingPagesController < ApplicationController
     @nodes = @node_type.pois.including_category.with_status(@status).within_region(@region).paginate(:page => params[:page], :per_page => 10)
   end
 
+  protected
+
   def load_region
     @region = Region.find params[:region_id] rescue nil
     @message = "Could not find region #{params[:region_id]}"
