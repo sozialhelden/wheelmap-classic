@@ -78,7 +78,7 @@ uk:
         post_box: "Поштова скринька"
         post_office: "Поштове відділення"
       public_transfer:
-        aerodrome: "Аеропорт"
+        aerodrome: Аеропорт
         bicycle_parking: "Парковка для велосипедів"
         bicycle_rental: "Оренда велосипедів"
         boatyard: шлюпочна майстерня
