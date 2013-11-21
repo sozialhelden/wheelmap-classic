@@ -1,7 +1,7 @@
 hi:
   poi:
     category:
-      accommodation: "रहने की जगह"
+      accommodation: रहने की जगह
       education: शिक्षा, विद्या, पढ़ाई
       food: खाना, भोजन
       government: सरकार
@@ -32,7 +32,7 @@ hi:
         school: पाठशाला, विद्यालय, स्कूल
         university: विश्वविद्यालय
       food:
-        bar: "मदिरालय, बार, मैखाना"
+        bar: मदिरालय, बार, मैखाना
         biergarten: बियर उद्यान
         cafe: कैफे
         drinking_water: "पीने का पानी"
@@ -46,7 +46,7 @@ hi:
         public_building: "सार्वजनिक बिल्डिंग"
         townhall: टाउन हॉल
       health:
-        doctors: "चिकित्सक, डॅाक्टर"
+        doctors: चिकित्सक, डॅाक्टर
         hearing_aids: "हियरिंग एड डीलर,\nसुनने वाली मशीन के डीलर"
         hospital: अस्पताल
         medical_supply: "चिकित्सा का सामान"
@@ -55,12 +55,12 @@ hi:
         veterinary: जानवरों का डॅाक्टर
       leisure:
         arena: अखाड़ा, मैदान
-        brothel: "रण्डी खाना, कोठा,"
-        cinema: "सिनेमा,"
+        brothel: रण्डी खाना, कोठा,
+        cinema: सिनेमा,
         community_center: "सामुदायिक केन्द्र"
         gallery: गैलरी
         nightclub: नाइटक्लब
-        playground: "खेल का मैदान"
+        playground: खेल का मैदान
         sauna: सॅाना
         stripclub: स्ट्रिपक्लब
         theatre: थिएटर
@@ -72,12 +72,12 @@ hi:
         toilets: शौचालय, संडास
       money_post:
         atm: एटीएम
-        bank: "बैंक"
+        bank: बैंक
         bureau_de_change: "मुद्रा विनिमय, मुद्रा बदलने की जगह"
         post_box: "पोस्ट बॅाक्स"
         post_office: "पोस्ट अॅाफिस"
       public_transfer:
-        aerodrome: "हवाई अड्डा"
+        aerodrome: हवाई अड्डा
         bicycle_parking: "साइकिल पार्किंग"
         bicycle_rental: "साइकल किराए पर"
         boatyard: नावों का यार्ड
@@ -129,7 +129,7 @@ hi:
         shoes: जूते
         sports: खेल
         stationery: स्टेश्नरी, लिखने का सामान
-        supermarket: "सुपरमार्किट"
+        supermarket: सुपरमार्किट
         video: "वीडियो किराए पर"
       sport:
         sports_centre: "स्पोर्ट सेंटर, क्रीडा केंद्र"
@@ -142,7 +142,7 @@ hi:
         artwork: चित्रकला
         attraction: आकर्षण
         battlefield: युद्धक्षेत्र, रणभूमि
-        beach: "समुद्र तट, बीच"
+        beach: समुद्र तट, बीच
         beacon: लाईट हाउस, प्रकाश स्तम्भ
         castle: महल, किला
         cave_entrance: "गुफा प्रवेश "
