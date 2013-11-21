@@ -1,11 +1,21 @@
 sk:
+  faq:
+    answers:
+      0: "Sami môžete kedykoľvek zmeniť označenie miesta. Jednoducho vyberte správne označenie a dajte \"Uložiť\" - hotovo!"
+      1: "Ako prihlásený užívateľ môžete pridávať/opravovať všetky detaily miesta. Kliknite na \"Zmeniť\" a opravte alebo pridajte informácie."
+      2: "Môžete pridať aj ďalšie informácie (napríklad: \"Majú tu mobilnú rampu\") v komentároch. Kliknite na \"Zmeniť\" a \"Pridať komentár\"."
+    headline: "Je s týmto miestom nejaký problém?"
+    questions:
+      0: "Označenie je nesprávne."
+      1: "Údaje o mieste sú nesprávne alebo chýbajú."
+      2: "Mám o tomto mieste viac informácií."
   header:
     navigation:
       about_wheelmap: "O Wheelmap"
       choose_language: "Zvoľte jazyk"
       contact: Kontakt
       map: Mapa
-      projects: "Zapojte sa"
+      projects: Projekty
     toolbar:
       categories: Kategórie
   home:
@@ -22,8 +32,38 @@ sk:
       form:
         legend: "Poloha objektu"
         location: "Prosím kliknite na mapu a umiestnite značku na presnú polohu."
+    node_data:
+      address: "Adresa:"
+      contact_details: "Kontaktné údaje:"
     node_edit:
-      edit: "Upraviť"
+      details: "Detaily"
+      edit: "Zmeniť"
+    node_map:
+      map: "Mapa:"
+    node_note:
+      comment: "Komentár:"
+    node_photos:
+      add: "Pridať"
+      photos_of_this_place: "Fotky tohto miesta:"
+      upload: "Nahrať"
+    node_similar:
+      similar: "Podobné miesta: %{name}"
+    node_status:
+      accessible_toilet: "Toaleta prístupná pre vozíčkarov:"
+      premium: "%{name} hovorí: toto miesto je"
+      wheelchair_accessibility: "Prístupnosť na vozíčku:"
+    node_streetview:
+      streetview: "Streetview:"
+    show:
+      header:
+        meta:
+          description: "Zistite či je toto miesto prístupné pre vozíčkarov na Wheelmap.org. Alebo pridajte k miestu ďalšie informácie a fotky."
+          title: "Toto miesto je na Wheelmap.org: ${name}"
+      share:
+        email: "E-mail"
+        facebook: Facebook
+        text: "Našiel som toto miesto na Wheelmap.org: %{name}"
+        twitter: Twitter
   search:
     index:
       no-results:

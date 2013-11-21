@@ -5,7 +5,7 @@ cs:
       choose_language: "Zvolte jazyk"
       contact: Kontakt
       map: Mapa
-      projects: "Zapojte se"
+      projects: Zapojte se
     toolbar:
       categories: Kategorie
   home:
@@ -22,6 +22,29 @@ cs:
       form:
         legend: "Poloha objektu"
         location: "Prosím klikněte na mapu a umístěte značku na přesné místo"
+    node_data:
+      address: "Adresa:"
+      contact_details: "Kontakní údaje:"
+    node_edit:
+      edit: "Změnit"
+    node_map:
+      map: "Mapa:"
+    node_note:
+      comment: "Komentář:"
+    node_photos:
+      photos_of_this_place: "Fotky tohoto místa:"
+    node_similar:
+      similar: "Podobné místa:  %{name}"
+    node_status:
+      accessible_toilet: "Toaleta přístupná pro vozíčkáře:"
+      wheelchair_accessibility: "Přístupnost pro vozíčkáře:"
+    node_streetview:
+      streetview: "Streetview:"
+    show:
+      share:
+        facebook: Facebook
+        text: "Tohle místo jsem našel na Wheelmap.org: %{name}"
+        twitter: Twitter
   search:
     index:
       no-results:
