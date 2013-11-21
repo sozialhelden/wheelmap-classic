@@ -1,11 +1,21 @@
 sv:
+  faq:
+    answers:
+      0: "Du kan alltid ändra betyget på en plats själv. Välj bara rätt betyg och \"Spara\" - klart!"
+      1: "Som en inloggad användare kan du lägga till / korrigera all information om en plats. Klicka på \"Redigera\" och korrigera eller lägg till information i masken."
+      2: "Du kan lägga till ytterligare information (t.ex. \"Den här platsen har en rörlig ramp\") i sektionen för kommentarer. Klicka på \"Redigera\" och \"Lägg till kommentar\"."
+    headline: "Är det något problem med den här platsen?"
+    questions:
+      0: "Betyget är fel."
+      1: "Informationen om platsen är fel eller saknas."
+      2: "Jag har mer information om den här platsen"
   header:
     navigation:
       about_wheelmap: "Om Wheelmap"
       choose_language: "Välj språk"
       contact: Kontakt
       map: Karta
-      projects: "Engagera dig"
+      projects: Projekt
     toolbar:
       categories: Kategorier
   home:
@@ -22,10 +32,56 @@ sv:
       form:
         legend: "Platsens läge"
         location: "Positionera den aktuella platsen genom att klicka i kartan!"
+    node_data:
+      address: "Adress:"
+      contact_details: "Kontaktinformation:"
     node_edit:
       details: "Detaljer"
       edit: "Ändra"
+    node_map:
+      map: "Karta:"
+    node_note:
+      comment: "Kommentar:"
+    node_photos:
+      add: "Lägg till"
+      photos_of_this_place: "Fotografier på den här platsen:"
+      upload: "Överföring"
+    node_similar:
+      similar: "Liknande platser: %{name}"
+    node_status:
+      accessible_toilet: "Rullstolstillgänglig toalett:"
+      premium: "%{name} säger: den här platsen är"
+      wheelchair_accessibility: "Rullstolstillgänglighet:"
+    node_streetview:
+      streetview: "Gatuutsikt:"
     show:
+      header:
+        meta:
+          description: "Få reda på om den här platsen är rullstolstillgänglig på Wheelmao.org. Eller lägg till ytterligare information och fotografier till platsen."
+          title: "Den här platsen finns på Wheelmap.org: %{name}"
       share:
+        email: "E-post"
         facebook: Facebook
+        text: "Jag har hittat den här platsen på Wheelmap.org: %{name}"
         twitter: Twitter
+  search:
+    index:
+      no-results:
+        headline: "Tyvärr kunde vi inte hitta en plats vid namn \"%{query}\"."
+        hint:
+          example: "<strong>Exempel:</strong> London, Storbritannien"
+          info: "Vår söktjänst fungerar bara med namn -och/eller adressinformation. Var därför vänlig och sök efter platsens namn eller en adress, t.ex. gatunamn och/eller stad. Det fungerar inte att söka efter en sorts plats, t.ex. restaurang eller bio!"
+          work_in_progress: "Vi arbetar hårt för att göra det lättare och mer intuitivt att söka efter platser i framtiden."
+        try_this:
+          address: "Vänligen ge mer <strong>information om adressen</strong>."
+          intro: "Prova det här:"
+          spell_check: "Kolla <strong>stavningen</strong> på ditt bidrag."
+      results:
+        ticker:
+          one: "1 resultat:"
+          other: "%{count} resultat:"
+          zero: "0 resultat:"
+    timeout:
+      headline: "Oj, vårt fel"
+      info: "Vår söktjänst var tillfälligt otillgänglig."
+      repeat_search: "Sök igen"
