@@ -27,3 +27,7 @@ end
 every '*/30 * * * *' do
   rake "report:hourly", :environment => :production
 end
+
+# every :day, :at => '0:20am', :environment => :production do
+#   rake "db:backup"
+# end

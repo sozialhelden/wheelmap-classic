@@ -57,6 +57,7 @@ group :default do
   gem 'font-awesome-rails'
   gem 'ember-rails'
   gem 'rack-statsd'
+  gem 'backup'
 end
 
 group :assets do
