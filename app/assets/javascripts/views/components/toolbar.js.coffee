@@ -5,6 +5,9 @@ Wheelmap.StatusFilterButtonComponent = Wheelmap.WheelchairPopoverComponent.exten
   activeFilters: null
   template: Ember.Handlebars.compile('<span></span>')
 
+  init: ()->
+    @_super()
+
   popoverOptions:
     trigger: 'hover'
     placement: () ->

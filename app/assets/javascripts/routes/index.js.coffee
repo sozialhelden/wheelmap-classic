@@ -1,7 +1,5 @@
 Wheelmap.IndexRoute = Ember.Route.extend
   boundsRatioBuffer: 0.41
-  _previousBounds: null
-  _nodeRequestCounter: 0 # stop overlapping requests
 
   setupController: (controller, model, queryParams)->
     @setupMapController(@controllerFor('map'), queryParams)
@@ -22,17 +20,15 @@ Wheelmap.IndexRoute = Ember.Route.extend
     properties = {}
 
     if queryParams.q?
-      properties.searchString = queryParams.q
+      properties.set('searchString', queryParams.q)
 
     if queryParams.status?
-      statusFilters = []
+      statusFilters = controller.get('statusFilters')
 
       if queryParams.status isnt true
-        statusFilters = queryParams.status.split(',')
-
-      properties.statusFilters = statusFilters
-
-    controller.setProperties(properties)
+        statusFilters.replace(0, statusFilters.get('length'), queryParams.status.split(','))
+      else
+        statusFilters.clear()
 
     @store.findAll('category').then (categories)->
       controller.set('content', categories)
@@ -49,50 +45,13 @@ Wheelmap.IndexRoute = Ember.Route.extend
         return
 
       @send('permalink')
-      @send('updateNodes', bounds)
+      #@send('updateNodes', bounds)
 
     moving: (isMoving, bounds)->
       if isMoving # Only reload when moving is finished
         return
 
       @send('permalink')
-
-      if @_previousBounds?
-        paddedBounds = @_previousBounds.pad(@boundsRatioBuffer)
-
-        if paddedBounds.contains(bounds)
-          return
-
-      @send('updateNodes', bounds)
-
-    layerChanged: (layer)->
-      if layer?
-        bounds = layer.getBounds()
-
-        @send('updateNodes', bounds)
-
-    updateNodes: (bounds)->
-      self = @
-      currentRequestCount = ++self._nodeRequestCounter
-      self._previousBounds = bounds
-
-      mapController = @controllerFor('map')
-      queryParams = @get('queryParams')
-      mapController.set('isLoading', true)
-
-      custom_node = queryParams.node_id if queryParams.node_id?
-      @store.findQuery('node', { bbox: bounds.toBBoxString(), node_id: custom_node }).then (nodes)->
-        if currentRequestCount != self._nodeRequestCounter
-          return
-
-        mapController.clear()
-        mapController.addObjects(nodes)
-        mapController.set('isLoading', false)
-
-        if queryParams.node_id?
-          mapController.set('poppingNode', mapController.findBy('id', queryParams.node_id))
-
-        self._nodeRequestCounter = 0
 
     popupOpened: ()->
       @send('permalink')
@@ -103,10 +62,10 @@ Wheelmap.IndexRoute = Ember.Route.extend
     toggleStatusFilter: ()->
       @send('permalink')
 
-    toggleIsActive: ()->
+    toggleCategoryIsActive: ()->
       @send('permalink')
 
-    toggleAllIsActive: ()->
+    toggleAllCategoriesAreActive: ()->
       @send('permalink')
 
     permalink: ()->
@@ -132,10 +91,17 @@ Wheelmap.IndexRoute = Ember.Route.extend
         queryParams.q = searchString
 
       queryParams.node_id = poppingNode?.get('id')
-      queryParams.status = if statusFilters.length < 4 then statusFilters.join(',') else null
+
+      queryParams.status = false
+
+      if statusFilters.length == 0
+        queryParams.status = true
+      else if statusFilters.length < 4
+        queryParams.status = statusFilters.join(',')
+
       queryParams.categories =
         if toolbarController.get('length') > categoriesFilters.length
         then categoriesFilters.join(',')
-        else null
+        else false
 
-      @replaceWith('index', queryParams: queryParams)
+      @transitionTo('index', queryParams: queryParams)
