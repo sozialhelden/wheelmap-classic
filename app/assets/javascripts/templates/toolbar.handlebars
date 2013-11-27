@@ -22,7 +22,7 @@
         <ul class="dropdown-menu" role="menu">
             {{#each}}
                 <li {{ bind-attr class="isActive:selected" }}>
-                    <a {{ action toggleIsActive }}>
+                    <a {{ action toggleCategoryIsActive }}>
                         <span class="pull-left">
                             {{ t 'poi.category' identifier }}
                         </span>
@@ -31,7 +31,7 @@
                 </li>
             {{/each}}
             <li class="filter clearfix">
-                <button class="btn pull-right" {{ action toggleAllIsActive }}><i {{ bind-attr class="allActive:icon-check-empty:icon-check" }}></i></button>
+                <button class="btn pull-right" {{ action toggleAllCategoriesAreActive }}><i {{ bind-attr class="allCategoriesAreActive:icon-check-empty:icon-check" }}></i></button>
             </li>
         </ul>
     </div>
