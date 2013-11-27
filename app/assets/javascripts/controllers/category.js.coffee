@@ -2,6 +2,6 @@ Wheelmap.CategoryController = Ember.ObjectController.extend
   isActive: true
 
   actions:
-    toggleIsActive: ->
+    toggleCategoryIsActive: ->
       @toggleProperty('isActive')
       true

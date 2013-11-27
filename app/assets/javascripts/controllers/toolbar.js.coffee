@@ -5,47 +5,54 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
   searchString: null
   itemController: 'category'
 
-  activeCategories: ((key, categories)->
-    @filterBy('isActive')
-  ).property('@each.isActive')
-
   init: ()->
     @_super()
 
-    properties =
-      statusFilters: ['yes', 'limited', 'no', 'unknown']
+    statusFilters = ['yes', 'limited', 'no', 'unknown']
+    lastStatusFilters = $.cookie('last_status_filters')
 
-    if $.cookie('last_status_filters')
+    if lastStatusFilters
       try
-        properties.statusFilters = Ember.A(JSON.parse($.cookie('last_status_filters')))
+        statusFilters = JSON.parse(lastStatusFilters)
       catch e
         # Catch JSON syntax errors in invalid cookie value
         unless e instanceof SyntaxError
           throw e
 
-    @setProperties(properties)
+    @set('statusFilters', statusFilters)
 
-  allActive: (()->
+  ###
+  # Property containing all active categories
+  ###
+  activeCategories: (()->
+    @filterBy('isActive')
+  ).property('@each.isActive')
+
+  ###
+  # Returns true if all categories are active
+  ###
+  allCategoriesAreActive: (()->
     @everyBy('isActive')
   ).property('@each.isActive')
 
   actions:
-    toggleAllIsActive: ()->
-      @setEach('isActive', !@get('allActive'))
+    toggleAllCategoriesAreActive: ()->
+      @setEach('isActive', !@get('allCategoriesAreActive'))
       true
 
+    ###
+    # Extra logic if all status filters are set and one is clicked:
+    # deactivate the other filters (only on very first toggle)
+    ###
     toggleStatusFilter: (wheelchair)->
       statusFilters = @get('statusFilters')
 
       if !@_extraFilter && statusFilters.length == 4
-        # Extra logic if all status filters are set and one is clicked: deactivate the other filters
-        statusFilters.clear()
-        statusFilters.addObject(wheelchair)
+        statusFilters.replace(0, statusFilters.get('length'), [wheelchair])
+      else if statusFilters.contains(wheelchair)
+        statusFilters.removeObject(wheelchair)
       else
-        if statusFilters.contains(wheelchair)
-          statusFilters.removeObject(wheelchair)
-        else
-          statusFilters.addObject(wheelchair)
+        statusFilters.addObject(wheelchair)
 
       @_extraFilter = true
 
@@ -59,15 +66,4 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
       $('#allianz').show()
     else
       $('#allianz').hide()
-
   ).observes('@each.isActive')
-
-  filterNodes: (()->
-    self = @
-    filters = self.get('statusFilters')
-    categories = self.get('activeCategories').mapBy('identifier')
-
-    @get('controllers.map').forEach (node)->
-      visible = filters.contains(node.get('wheelchair')) and categories.contains(node.get('category'))
-      node.set('isVisible', visible)
-  ).observes('controllers.map.@each', 'statusFilters.@each', 'activeCategories')
