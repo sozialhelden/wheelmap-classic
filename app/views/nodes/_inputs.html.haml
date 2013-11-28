@@ -2,7 +2,7 @@
   = form.input :name, :required => @node.new_record?
 
   %li.select.required#node-wheelchair-input
-    =label_tag('node-wheelchair', link_to(t('formtastic.labels.wheelchair'), 'http://blog.wheelmap.org/was-ist-wheelmap/was-bedeutet-barrierefrei', :target => '_blank') + '*')
+    =label_tag('node-wheelchair', link_to(t('formtastic.labels.wheelchair'), I18n.locale == :de ? 'http://wheelmap.org/about/mappen/' : 'http://wheelmap.org/en/about/how-to-map/', :target => '_blank') + '*')
     %select#node-wheelchair{:name => 'node[wheelchair]'}
       = render :partial => 'options_for_wheelchair', :object => inputs.wheelchair
 
