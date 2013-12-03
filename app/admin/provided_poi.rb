@@ -6,7 +6,7 @@ ActiveAdmin.register ProvidedPoi do
   belongs_to :poi, :optional => true
 
   filter :provider, as: :select, collection: proc { Provider.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort}
-  filter :wheelchair, as: :select, collection: proc { Poi::WHEELCHAIR_STATUS_VALUES.map{|k,v| [t("wheelchairstatus.#{k}"),k]}}
+  filter :wheelchair, as: :select, collection: proc { Poi::WHEELCHAIR_STATUS_VALUES.map{|k,v| [ I18n.t("wheelchairstatus.#{k}"),k]}}
   filter :url
 
 
@@ -27,7 +27,7 @@ ActiveAdmin.register ProvidedPoi do
     f.inputs do
       f.input :poi_id
       f.input :provider, as: :select, collection: Provider.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort
-      f.input :wheelchair, as: :select, collection: Poi::WHEELCHAIR_STATUS_VALUES.map{|k,v| [t("wheelchairstatus.#{k}"),k]}
+      f.input :wheelchair, as: :select, collection: Poi::WHEELCHAIR_STATUS_VALUES.map{|k,v| [I18n.t("wheelchairstatus.#{k}"),k]}
       f.input :url
     end
     f.buttons
