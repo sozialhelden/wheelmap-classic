@@ -16,7 +16,7 @@ ActiveAdmin.register ProvidedPoi do
      status_tag(p.wheelchair, :class => p.wheelchair)
    end
    column :poi do |p|
-     link_to p.poi_id, admin_poi_path(p.poi)
+     link_to(p.poi_id, admin_poi_path(p.poi_id))
    end
    column :provider
    column :url
