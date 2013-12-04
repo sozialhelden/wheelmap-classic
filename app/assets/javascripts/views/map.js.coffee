@@ -28,19 +28,86 @@ Wheelmap.TileLayer = EmberLeaflet.TileLayer.extend
     attribution: 'Data: <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap contributors</a>, Icons: CC-By-SA <a href="http://mapicons.nicolasmollet.com/">Nicolas Mollet</a>'
     detectRetina: true
 
-Wheelmap.MarkerLayer = EmberLeaflet.ContainerLayer.extend EmberLeaflet.BoundsMixin,
-  mapControllerBinding: 'parentLayer.controller'
+Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
+  BOUNDS_CONTAINS_BUFFER: 0.41
+
+  mapBinding: 'parentLayer'
+  mapControllerBinding: 'map.controller'
   toolbarControllerBinding: 'mapController.controllers.toolbar'
-  isVirtual: true
+  lastLoadedBounds: null
+
+  geoJSONLayer: (()->
+    new L.GeoJSON null,
+      pointToLayer: $.proxy(@.pointToLayer, @)
+  ).property()
 
   statusFilterDidChange: (()->
-  ).observes('toolbarController.statusFilters.@each')
+    @filterLayers()
+  ).observes('toolbarController.activeStatusFilters.@each')
 
   categoriesDidChange: (()->
+    @filterLayers()
   ).observes('toolbarController.activeCategories.@each')
 
+  filterLayers: ()->
+    Ember.run.debounce(@, '_filterLayers', 200)
+
+  boundsDidChange: (()->
+    Ember.run.debounce(@, 'requestData', @get('map.bounds'), 100)
+  ).observes('map.bounds')
+
+  zoomDidChange: (()->
+    # When zooming reset last loaded bounds, to load nodes in any case
+    @lastLoadedBounds = null
+  ).observes('map.zoom')
+
+  requestData: (bounds)->
+    that = @
+
+    if that.lastLoadedBounds? and that.lastLoadedBounds.contains(bounds)
+      # Does it move far enough?
+      return
+
+    map = that.get('map')
+    map.set('isLoading', true)
+
+    request = $.ajax '/nodes.geojson',
+      data:
+        bbox: bounds.toBBoxString()
+
+    request.then (data)->
+      Ember.run.once(that, 'replaceData', data)
+
+      @lastLoadedBounds = bounds.pad(that.BOUNDS_CONTAINS_BUFFER)
+      map.set('isLoading', false)
+
+  replaceData: (data)->
+    geoJSONLayer = @get('geoJSONLayer')
+    geoJSONLayer.clearLayers()
+    geoJSONLayer.addData(data)
+
+  pointToLayer: (featureData, latlng)->
+    return Wheelmap.MarkerLayer.createLayer(featureData, latlng)
+
   _newLayer: ()->
-    # Implement Geojson Request
+    @get('geoJSONLayer')
+
+  _filterLayers: ()->
+    console.log(@get('geoJSONLayer'))
+
+
+Wheelmap.MarkerLayer.reopenClass
+  createLayer: (featureData, latlng)->
+    markerClassName = 'marker-wheelchair-' + featureData.properties.wheelchair
+    iconClassName = 'marker-icon marker-icon-' + featureData.properties.icon
+
+    new L.Marker latlng,
+      icon: new L.DivIcon
+        iconSize: null
+        iconAnchor: null
+        popupAnchor: null
+        className: markerClassName
+        html: "<div class=\"#{iconClassName}\"></div>"
 
 Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.SpinMixin,
   childLayers: [ Wheelmap.TileLayer, Wheelmap.MarkerLayer ]
@@ -69,18 +136,18 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
     layer.getBounds()
   ).property().volatile()
 
-  layerChanged: (()->
-    #@get('controller').send('layerChanged', @get('layer'))
+  boundsChanging: (()->
+    if @get('isMoving') or @get('isZooming')
+      return
+
+    @notifyPropertyChange('bounds')
+    @get('controller').send('boundsChanging', @get('bounds'))
+  ).observes('isMoving', 'isZooming')
+
+  layerDidChange: (()->
+    @boundsChanging()
   ).observes('layer')
 
-  zooming: (()->
-    @get('controller').send('zooming', @get('isZooming'), @get('bounds'))
-  ).observes('isZooming')
-
-  moving: (()->
-    @get('controller').send('moving', @get('isMoving'), @get('bounds'))
-  ).observes('isMoving')
-
   loading: (()->
-    @spin(@get('controller.isLoading'))
-  ).observes('controller.isLoading')
+    @spin(@get('isLoading'))
+  ).observes('isLoading')
