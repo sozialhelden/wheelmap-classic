@@ -81,7 +81,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     request.then (data)->
       Ember.run.once(that, 'replaceData', data)
 
-      @lastLoadedBounds = bounds.pad(that.BOUNDS_CONTAINS_BUFFER)
+      that.lastLoadedBounds = bounds.pad(that.BOUNDS_CONTAINS_BUFFER)
       map.set('isLoading', false)
 
   replaceData: (data)->
