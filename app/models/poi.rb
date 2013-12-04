@@ -281,17 +281,12 @@ class Poi < ActiveRecord::Base
     {
         :type       => 'Feature',
         :geometry   => { :type => 'Point', :coordinates  => [ self.lon.to_f, self.lat.to_f ] },
-        :properties => { 'name'               => name,
-                         'lat'                => lat,
-                         'lon'                => lon,
-                         'breadcrumbs'        => breadcrumbs,
-                         'address'            => address || '',
-                         'wheelchair'         => wheelchair,
-                         'accesibility'       => accesibility,
-                         'id'                 => osm_id,
-                         'type'               => node_type.try(:identifier) || '',
-                         'category'           => category.try(:identifier) || '',
-                         'icon'               => icon
+        :properties => { 'lat'        => lat,
+                         'lon'        => lon,
+                         'wheelchair' => wheelchair,
+                         'id'         => osm_id,
+                         'category'   => category.try(:identifier) || '',
+                         'icon'       => icon
                        }
     }
   end
