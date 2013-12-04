@@ -1,7 +1,5 @@
 # For more information see: http://emberjs.com/guides/routing/
 
 @Wheelmap.Router.map ()->
-  @resource 'index', path: '/', queryParams: ['lat', 'lon', 'zoom', 'node_id', 'status', 'q', 'categories']
-
-# index route showing map (no map route because, we need it more than once)
-# route returns models filtered by bounding box of map view ... how to?
+  @resource 'index', path: '/', queryParams: Wheelmap.MapRoute.DEFAULT_QUERY_PARAMS
+  @resource 'popup', path: '/popup/:node_id', queryParams: Wheelmap.MapRoute.DEFAULT_QUERY_PARAMS
