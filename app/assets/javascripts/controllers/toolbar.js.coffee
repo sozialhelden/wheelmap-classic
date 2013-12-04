@@ -36,8 +36,13 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
     statusFilters = @get('statusFilters')
 
     if arguments.length > 1
-      statusFilters.forEach (statusFilter)->
-        statusFilter.set('isActive', newStatusFilters.contains(statusFilter.get('key')))
+      return statusFilters.filter (statusFilter)->
+        isActive = newStatusFilters.contains(statusFilter.get('key'))
+
+        if isActive isnt statusFilter.get('isActive')
+          statusFilter.set('isActive', isActive)
+
+        return isActive
 
     statusFilters.filterBy('isActive')
   ).property('statusFilters.@each.isActive')
