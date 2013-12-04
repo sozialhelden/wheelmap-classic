@@ -59,12 +59,14 @@ Wheelmap.MapController = Ember.ArrayController.extend
       then categoriesFilters.join(',')
       else false
 
+    return queryParams
+
   _permalink: ()->
     @replaceRoute(queryParams: @_generateQueryParams())
 
   actions:
-    openPopup: ()->
-      @replaceRoute('popup')
+    openPopup: (nodeId)->
+      @replaceRoute('popup', nodeId)
 
     boundsChanged: (bounds)->
       @send('permalink')
