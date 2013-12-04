@@ -60,7 +60,7 @@ Wheelmap.MapController = Ember.ArrayController.extend
       then categoriesFilters.join(',')
       else false
 
-    @replaceRoute('index', queryParams: queryParams)
+    @replaceRoute(queryParams: queryParams)
 
   actions:
     popupClosed: (node)->
