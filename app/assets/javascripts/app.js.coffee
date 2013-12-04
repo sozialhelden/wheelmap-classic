@@ -10,9 +10,9 @@
 #= require handlebars
 #= require ember
 #= require ember-data
+#= require spin
 #= require leaflet/leaflet-src
 #= require leaflet/leaflet.locate
-#= require spin
 #= require ember-leaflet
 #= require_self
 #= require wheelmap

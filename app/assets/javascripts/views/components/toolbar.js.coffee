@@ -16,7 +16,7 @@ Wheelmap.StatusFilterButtonComponent = Wheelmap.WheelchairPopoverComponent.exten
     container: '#toolbar .status-filter' # Need for not having little spaces between status buttons
 
   isActive: (()->
-    @get('activeFilters').contains(@get('wheelchair'))
+    @get('activeFilters').findBy('key', @get('wheelchair'))?
   ).property('wheelchair', 'activeFilters.@each')
 
   click: (event)->
