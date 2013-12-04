@@ -102,7 +102,14 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     @filterLayers()
 
   pointToLayer: (featureData, latlng)->
-    return Wheelmap.MarkerLayer.createLayer(featureData, latlng)
+    layer = Wheelmap.MarkerLayer.createLayer(featureData, latlng)
+
+    layer.on 'click', $.proxy(@onMarkerClick, @)
+
+    return layer
+
+  onMarkerClick: (event)->
+    @get('mapController').send('openPopup', event.target.feature.properties.id)
 
   _newLayer: ()->
     @get('geoJSONLayer')
@@ -170,7 +177,7 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
       return
 
     @notifyPropertyChange('bounds')
-    @get('controller').send('boundsChanging', @get('bounds'))
+    @get('controller').send('boundsChanged', @get('bounds'))
   ).observes('isMoving', 'isZooming')
 
   loading: (()->
