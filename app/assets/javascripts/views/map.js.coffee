@@ -35,6 +35,8 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   mapControllerBinding: 'map.controller'
   toolbarControllerBinding: 'mapController.controllers.toolbar'
   lastLoadedBounds: null
+  lastActiveStatusFilters: null
+  lastActiveCategories: null
 
   geoJSONLayer: (()->
     new L.GeoJSON null,
@@ -42,10 +44,18 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   ).property()
 
   statusFilterDidChange: (()->
+    if Ember.compare(@lastActiveStatusFilters, @get('toolbarController.activeStatusFilters')) is 0
+      return
+
+    @lastActiveStatusFilters = @get('toolbarController.activeStatusFilters')
     @filterLayers()
   ).observes('toolbarController.activeStatusFilters.@each')
 
   categoriesDidChange: (()->
+    if Ember.compare(@lastActiveCategories, @get('toolbarController.activeCategories')) is 0
+      return
+
+    @lastActiveCategories = @get('toolbarController.activeCategories')
     @filterLayers()
   ).observes('toolbarController.activeCategories.@each')
 
@@ -99,7 +109,9 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
 
   _filterLayers: ()->
     layers = @get('geoJSONLayer').getLayers()
-    length = layers.length
+
+    if layers.length == 0
+      return
 
     activeStatusFilters = @get('toolbarController.activeStatusFilters').getEach('key')
     activeCategories = @get('toolbarController.activeCategories').getEach('identifier')
@@ -109,6 +121,8 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
       visible = activeStatusFilters.contains(properties.wheelchair) and activeCategories.contains(properties.category)
 
       $(layer._icon).toggle(visible)
+
+    return
 
 Wheelmap.MarkerLayer.reopenClass
   createLayer: (featureData, latlng)->
