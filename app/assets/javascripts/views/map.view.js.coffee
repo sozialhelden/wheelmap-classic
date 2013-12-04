@@ -29,8 +29,6 @@ Wheelmap.TileLayer = EmberLeaflet.TileLayer.extend
     detectRetina: true
 
 Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
-  BOUNDS_CONTAINS_BUFFER: 0.41
-
   mapBinding: 'parentLayer'
   mapControllerBinding: 'map.controller'
   toolbarControllerBinding: 'mapController.controllers.toolbar'
@@ -91,7 +89,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     request.then (data)->
       Ember.run.once(that, 'replaceData', data)
 
-      that.lastLoadedBounds = bounds.pad(that.BOUNDS_CONTAINS_BUFFER)
+      that.lastLoadedBounds = bounds.pad(Wheelmap.MarkerLayer.BOUNDS_CONTAINS_BUFFER)
       map.set('isLoading', false)
 
   replaceData: (data)->
@@ -132,6 +130,8 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     return
 
 Wheelmap.MarkerLayer.reopenClass
+  BOUNDS_CONTAINS_BUFFER: 0.41
+
   createLayer: (featureData, latlng)->
     markerClassName = 'marker-wheelchair-' + featureData.properties.wheelchair
     iconClassName = 'marker-icon marker-icon-' + featureData.properties.icon
