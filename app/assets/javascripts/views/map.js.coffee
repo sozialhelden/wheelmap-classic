@@ -50,16 +50,19 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   ).observes('toolbarController.activeCategories.@each')
 
   filterLayers: ()->
-    Ember.run.debounce(@, '_filterLayers', 200)
+    @_filterLayers()
 
   boundsDidChange: (()->
-    Ember.run.debounce(@, 'requestData', @get('map.bounds'), 100)
+    Ember.run.debounce(@, 'requestData', @get('map.bounds'), 200)
   ).observes('map.bounds')
 
   zoomDidChange: (()->
     # When zooming reset last loaded bounds, to load nodes in any case
     @lastLoadedBounds = null
   ).observes('map.zoom')
+
+  didCreateLayer: ()->
+    @boundsDidChange()
 
   requestData: (bounds)->
     that = @
@@ -86,6 +89,8 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     geoJSONLayer.clearLayers()
     geoJSONLayer.addData(data)
 
+    @filterLayers()
+
   pointToLayer: (featureData, latlng)->
     return Wheelmap.MarkerLayer.createLayer(featureData, latlng)
 
@@ -93,8 +98,17 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     @get('geoJSONLayer')
 
   _filterLayers: ()->
-    console.log(@get('geoJSONLayer'))
+    layers = @get('geoJSONLayer').getLayers()
+    length = layers.length
 
+    activeStatusFilters = @get('toolbarController.activeStatusFilters').getEach('key')
+    activeCategories = @get('toolbarController.activeCategories').getEach('identifier')
+
+    for layer in layers
+      properties = layer.feature.properties
+      visible = activeStatusFilters.contains(properties.wheelchair) and activeCategories.contains(properties.category)
+
+      $(layer._icon).toggle(visible)
 
 Wheelmap.MarkerLayer.reopenClass
   createLayer: (featureData, latlng)->
@@ -102,6 +116,7 @@ Wheelmap.MarkerLayer.reopenClass
     iconClassName = 'marker-icon marker-icon-' + featureData.properties.icon
 
     new L.Marker latlng,
+      riseOnHover: true
       icon: new L.DivIcon
         iconSize: null
         iconAnchor: null
@@ -143,10 +158,6 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
     @notifyPropertyChange('bounds')
     @get('controller').send('boundsChanging', @get('bounds'))
   ).observes('isMoving', 'isZooming')
-
-  layerDidChange: (()->
-    @boundsChanging()
-  ).observes('layer')
 
   loading: (()->
     @spin(@get('isLoading'))
