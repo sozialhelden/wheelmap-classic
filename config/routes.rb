@@ -42,6 +42,7 @@ Wheelmap::Application.routes.draw do
 
   # TODO reenable feature terms
   resources :terms, :only => :index
+  resources :addresses, :only => :index
 
   resources :node_types, :only => :index
   resources :search, :only => :index
