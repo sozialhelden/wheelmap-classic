@@ -8,18 +8,22 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
   init: ()->
     @_super()
 
-    statusFilters = ['yes', 'limited', 'no', 'unknown']
+    @set 'statusFilters', [
+      Ember.Object.create({ key: 'yes', isActive: true })
+      Ember.Object.create({ key: 'limited', isActive: true })
+      Ember.Object.create({ key: 'no', isActive: true })
+      Ember.Object.create({ key: 'unknown', isActive: true })
+    ]
+
     lastStatusFilters = $.cookie('last_status_filters')
 
     if lastStatusFilters
       try
-        statusFilters = JSON.parse(lastStatusFilters)
+        @set('activeStatusFilters', JSON.parse(lastStatusFilters))
       catch e
         # Catch JSON syntax errors in invalid cookie value
         unless e instanceof SyntaxError
           throw e
-
-    @set('statusFilters', statusFilters)
 
   ###
   # Property containing all active categories
@@ -28,17 +32,43 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
     @filterBy('isActive')
   ).property('@each.isActive')
 
+  activeStatusFilters: ((key, newStatusFilters)->
+    statusFilters = @get('statusFilters')
+
+    if arguments.length > 1
+      statusFilters.forEach (statusFilter)->
+        statusFilter.set('isActive', newStatusFilters.contains(statusFilter.get('key')))
+
+    statusFilters.filterBy('isActive')
+  ).property('statusFilters.@each.isActive')
+
   ###
   # Returns true if all categories are active
   ###
   allCategoriesAreActive: (()->
     @everyBy('isActive')
-  ).property('@each.isActive')
+  ).property('activeCategories')
+
+  activeStatusFiltersDidChange: (()->
+    $.cookie('last_status_filters', JSON.stringify(@get('activeStatusFilters').getEach('key')))
+
+    @get('controllers.map').send('permalink')
+  ).observes('activeStatusFilters')
+
+  categoryFiltersDidChange: (()->
+    categories = @get('activeCategories').mapBy('identifier')
+
+    if I18n.locale == 'de' and categories.length == 1 and categories[0] == 'sport'
+      $('#allianz').show()
+    else
+      $('#allianz').hide()
+
+    @get('controllers.map').send('permalink')
+  ).observes('activeCategories')
 
   actions:
     toggleAllCategoriesAreActive: ()->
       @setEach('isActive', !@get('allCategoriesAreActive'))
-      true
 
     ###
     # Extra logic if all status filters are set and one is clicked:
@@ -46,24 +76,17 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
     ###
     toggleStatusFilter: (wheelchair)->
       statusFilters = @get('statusFilters')
+      statusFilter = statusFilters.findBy('key', wheelchair)
 
-      if !@_extraFilter && statusFilters.length == 4
-        statusFilters.replace(0, statusFilters.get('length'), [wheelchair])
-      else if statusFilters.contains(wheelchair)
-        statusFilters.removeObject(wheelchair)
+      unless statusFilter?
+        return
+
+      if !@_extraFilter && @get('activeStatusFilters').length == 4
+        statusFilters.setEach('isActive', false)
+        statusFilter.set('isActive', true)
       else
-        statusFilters.addObject(wheelchair)
+        statusFilter.toggleProperty('isActive')
 
       @_extraFilter = true
 
-  statusFiltersDidChange: (()->
-    $.cookie('last_status_filters', JSON.stringify(@get('statusFilters')))
-  ).observes('statusFilters.@each')
-
-  categoryFiltersDidChange: (()->
-    categories = @get('activeCategories').mapBy('identifier')
-    if I18n.locale == 'de' and categories.length == 1 and categories[0] == 'sport'
-      $('#allianz').show()
-    else
-      $('#allianz').hide()
-  ).observes('@each.isActive')
+      return
