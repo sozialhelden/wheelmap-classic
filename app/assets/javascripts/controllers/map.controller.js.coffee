@@ -3,7 +3,6 @@ Wheelmap.MapController = Ember.ArrayController.extend
   itemController: 'node'
   center: null
   zoom: null
-  poppingNode: null
 
   init: ()->
     @_super()
@@ -28,7 +27,7 @@ Wheelmap.MapController = Ember.ArrayController.extend
     $.cookie('last_zoom', @get('zoom'), { path: '/' })
   ).observes('center', 'zoom')
 
-  _permalink: ()->
+  _generateQueryParams: ()->
     toolbarController = @get('controllers.toolbar')
 
     queryParams = {}
@@ -60,20 +59,14 @@ Wheelmap.MapController = Ember.ArrayController.extend
       then categoriesFilters.join(',')
       else false
 
-    @replaceRoute(queryParams: queryParams)
+  _permalink: ()->
+    @replaceRoute(queryParams: @_generateQueryParams())
 
   actions:
-    popupClosed: (node)->
-      @set('poppingNode', null)
-      node.send('popupClosed')
-      @send('permalink')
+    openPopup: ()->
+      @replaceRoute('popup')
 
-    popupOpened: (node)->
-      @set('poppingNode', node)
-      node.send('popupOpened')
-      @send('permalink')
-
-    boundsChanging: (bounds)->
+    boundsChanged: (bounds)->
       @send('permalink')
 
     permalink: ()->
