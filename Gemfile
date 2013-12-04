@@ -58,6 +58,7 @@ group :default do
   gem 'ember-rails'
   gem 'rack-statsd'
   gem 'backup'
+  gem 'geocoder'
 end
 
 group :assets do

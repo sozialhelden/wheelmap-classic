@@ -1,0 +1,5 @@
+= semantic_form_for Address.new, :url => import_csv_admin_addresses_path, :html => {:multipart => true} do |form|
+  = form.inputs do
+    = form.input :csv_file, :as => :file
+
+  = form.button 'Upload'
