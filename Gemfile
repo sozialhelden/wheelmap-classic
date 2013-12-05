@@ -56,7 +56,6 @@ group :default do
   gem 'i18n-js'
   gem 'font-awesome-rails'
   gem 'ember-rails'
-  gem 'rack-statsd'
   gem 'backup'
   gem 'geocoder'
 end
