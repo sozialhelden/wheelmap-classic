@@ -28,7 +28,7 @@
           = t('.premium', name: premium.provider.name)
           %span{class: premium.wheelchair}
             = t("wheelchairstatus.#{premium.wheelchair}") + '.'
-          = link_to('Mehr Infos', premium.url, target: '_blank', rel: 'no-follow') if premium.url
+          = link_to('Mehr Infos', premium.url, target: '_blank', rel: 'no-follow') unless premium.url.blank?
 
   -#.dropdown.span6.toilet
     %h2=t('.accessible_toilet')
