@@ -284,7 +284,7 @@ class Poi < ActiveRecord::Base
 
   def sponsor
     providers.each do |p|
-      logo = p.logo.try(:url, 'iphone')
+      logo = image_path(p.logo.try(:url, 'iphone'))
       return logo unless logo.nil?
     end
   end
