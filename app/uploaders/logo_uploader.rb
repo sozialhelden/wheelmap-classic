@@ -27,7 +27,7 @@ class LogoUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process :effectively_resize_to_fill => [22, 22, format = 'png', quality = 100]
+  process :convert => 'png'
   #
   # def scale(width, height)
   #   # do something
@@ -35,7 +35,7 @@ class LogoUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version "iphone" do
-    process :effectively_resize_to_fill => [44, 44, format = 'png', quality = 100]
+    process :effectively_resize_to_limit => [44, 44, 'png', 100]
 
     def full_filename(for_file = model.image.file)
       "#{model.name.parameterize}@2x.png"
