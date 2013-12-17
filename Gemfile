@@ -58,6 +58,7 @@ group :default do
   gem 'ember-rails'
   gem 'backup'
   gem 'geocoder'
+  gem 'ruby-progressbar'
 end
 
 group :assets do
