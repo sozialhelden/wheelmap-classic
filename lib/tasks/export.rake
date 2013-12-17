@@ -98,17 +98,18 @@ namespace :export do
     puts csv_string
   end
 
-  desc 'Export nodes from OSM XML file'
+  desc 'Export nodes from OSM CSV file'
   task :for_yellow_pages => :environment do
     puts "Usage: rake export:from_osm outfile=germany.csv"
     outfile = ENV['outfile'] || 'germany.csv'
 
     csv_string = CSV.open(outfile, "wb", :force_quotes => true) do |csv|
       csv << ["OSM ID", "OSM TYPE", "Name", "Kategorie", "Rollstuhlstatus", "lat", "lon", "Strasse", "Hausnummer", "Stadt", "Postleitzahl"]
+      total_count = Region.find('Germany').pois_of_children.count
+      progressbar = ProgressBar.create(:total => total_count, :format => '%a |%b>%i|')
       Region.find('Germany').pois_of_children.including_category.find_each(start: Poi.lowest_id) do |poi|
         csv << [poi.id, poi.node_type.localized_name, poi.name, poi.category.localized_name, poi.wheelchair, poi.lat, poi.lon, poi.street, poi.housenumber, poi.city, poi.postcode]
-        putc '.'
-        STDOUT.flush
+        progressbar.increment
       end
     end
   end
