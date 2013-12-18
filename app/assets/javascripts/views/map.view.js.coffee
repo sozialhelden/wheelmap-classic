@@ -211,14 +211,16 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
       return
 
     marker = @getLayer(poppingNode.get('id'))
-    options =
-      wheelchair: poppingNode.get('wheelchair')
-      icon: poppingNode.get('icon')
 
-    icon = Wheelmap.MarkerLayer.createIcon(options)
+    if marker?
+      options =
+        wheelchair: poppingNode.get('wheelchair')
+        icon: poppingNode.get('icon')
 
-    $.extend(marker.feature.properties, options)
-    marker.setIcon(icon)
+      icon = Wheelmap.MarkerLayer.createIcon(options)
+
+      $.extend(marker.feature.properties, options)
+      marker.setIcon(icon)
   ).observes('poppingNode.wheelchair')
 
 Wheelmap.MarkerLayer.reopenClass
