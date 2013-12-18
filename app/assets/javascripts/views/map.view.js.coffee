@@ -71,6 +71,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
         bbox: bounds.toBBoxString()
 
     request.then (data)->
+      Ember.run.once(that, 'closePopup')
       Ember.run.once(that, 'replaceData', data)
 
       that.lastLoadedBounds = bounds.pad(Wheelmap.MarkerLayer.BOUNDS_CONTAINS_BUFFER)
