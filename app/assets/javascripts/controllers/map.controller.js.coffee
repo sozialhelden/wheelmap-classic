@@ -3,6 +3,7 @@ Wheelmap.MapController = Ember.ArrayController.extend
   itemController: 'node'
   center: null
   zoom: null
+  poppingNode: null
 
   init: ()->
     @_super()
@@ -45,8 +46,6 @@ Wheelmap.MapController = Ember.ArrayController.extend
     if searchString?
       queryParams.q = searchString
 
-    queryParams.node_id = poppingNode?.get('id')
-
     queryParams.status = false
 
     if statusFilters.length == 0
@@ -59,14 +58,17 @@ Wheelmap.MapController = Ember.ArrayController.extend
       then categoriesFilters.join(',')
       else false
 
-    return queryParams
+    queryParams
 
   _permalink: ()->
     @replaceRoute(queryParams: @_generateQueryParams())
 
   actions:
     openPopup: (nodeId)->
-      @replaceRoute('popup', nodeId)
+      @transitionToRoute('popup', nodeId)
+
+    closePopup: ()->
+      @transitionToRoute('index')
 
     boundsChanged: (bounds)->
       @send('permalink')

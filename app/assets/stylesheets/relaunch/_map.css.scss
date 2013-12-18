@@ -18,7 +18,6 @@
   }
 }
 
-
 #mapbox_logo {
   position:absolute;
   left:5px;
@@ -36,4 +35,8 @@
   @media screen and (max-width:$breakPhone) {
     bottom: 13px
   }
+}
+
+.popup-wrapper {
+  display: none;
 }

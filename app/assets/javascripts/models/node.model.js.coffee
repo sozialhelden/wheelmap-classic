@@ -26,10 +26,12 @@ Wheelmap.Node = DS.Model.extend
   ).property('name', 'type','category')
 
   breadcrumbs: (()->
+    category = @get('category.identifier')
+
     [
       @get('region'),
-      I18n.t("poi.category." + @get('category')),
-      I18n.t("poi.name." + @get('category') + "." + @get('type'))
+      I18n.t("poi.category." + category),
+      I18n.t("poi.name." + category + "." + @get('type'))
     ]
   ).property('type','category')
 
