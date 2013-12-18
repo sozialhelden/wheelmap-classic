@@ -1,6 +1,6 @@
 Wheelmap.NodePopupView = Ember.View.extend
   templateName: 'node-popup'
-  classNames: ['node-popup-content-wrapper']
+  classNames: ['node-popup-view']
 
   aboutFaqLink: (()->
     if I18n.locale == 'de' then 'http://wheelmap.org/about/faqs/' else 'http://wheelmap.org/en/faqs/'

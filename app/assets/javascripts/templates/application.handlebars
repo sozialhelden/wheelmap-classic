@@ -1,5 +1,9 @@
 {{ render toolbar }}
 {{ render flash-messages }}
 {{ render map }}
+
 {{ outlet }}
-{{ outlet popup }}
+
+<div class="popup-wrapper">
+    {{ outlet popup }}
+</div>
