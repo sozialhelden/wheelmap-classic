@@ -11,6 +11,14 @@ Wheelmap.Node = DS.Model.extend
   address: attr()
   region: attr()
   type: attr()
+  oldWheelchair: null
+
+  wheelchairWillChange: (()->
+    oldWheelchair = @get('oldWheelchair')
+
+    unless oldWheelchair?
+      @set('oldWheelchair', @get('wheelchair'))
+  ).observesBefore('wheelchair')
 
   location: (()->
     new L.LatLng(@get('lat'), @get('lon'))
