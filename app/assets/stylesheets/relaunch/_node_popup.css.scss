@@ -1,19 +1,18 @@
 .node-popup {
   font-size: $fontSizeSmall;
   width: $nodePopupWidth;
-  padding: 12px;
-
-  .leaflet-popup-content-wrapper {
-    @include border-radius(3px);
-  }
 
   .leaflet-popup-tip {
     background-color: darken($orange-gray, 5%);
   }
 
+  .leaflet-popup-content-wrapper {
+    @include border-radius(3px);
+  }
+
   a.leaflet-popup-close-button {
-    top: 15px;
-    right: 14px;
+    top: 0;
+    right: 0;
     padding: 7px;
     @include text-shadow(0px 1px 3px rgba($black, 0.25));
   }
