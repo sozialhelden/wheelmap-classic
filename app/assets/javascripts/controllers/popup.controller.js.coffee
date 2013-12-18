@@ -3,7 +3,6 @@
 Wheelmap.PopupController = Wheelmap.NodeController.extend
   needs: ['flash-messages', 'map']
   isPosting: false
-  oldWheelchair: null
 
   disableWheelchairSubmit: Ember.computed.not('wheelchairSubmit')
 
@@ -25,13 +24,6 @@ Wheelmap.PopupController = Wheelmap.NodeController.extend
     if oldWheelchair?
       @set('wheelchair', oldWheelchair)
       @get('oldWheelchair', null)
-
-  wheelchairWillChange: (()->
-    oldWheelchair = @get('oldWheelchair')
-
-    unless oldWheelchair?
-      @set('oldWheelchair', @get('wheelchair'))
-  ).observesBefore('wheelchair')
 
   actions:
     close: ()->
