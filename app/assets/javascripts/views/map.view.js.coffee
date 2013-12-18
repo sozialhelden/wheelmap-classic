@@ -38,6 +38,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   lastActiveStatusFilters: null
   lastActiveCategories: null
   $nodeView: null
+  $nodeViewPrev: null
 
   geoJSONLayer: (()->
     new L.GeoJSON null,
@@ -80,7 +81,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     geoJSONLayer.clearLayers()
     geoJSONLayer.addData(data)
 
-    @togglePopup()
+    @openPopup()
     @filterLayers()
 
   pointToLayer: (featureData, latlng)->
@@ -95,54 +96,60 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     else
       mapController.send('closePopup')
 
-  togglePopup: (()->
-    Ember.run.scheduleOnce('afterRender', @, @_togglePopup)
+  openPopup: (()->
+    poppingNode = @get('poppingNode')
+
+    if poppingNode?
+      Ember.run.scheduleOnce('afterRender', @, @_openPopup, poppingNode.get('id'))
+      Ember.run.scheduleOnce('afterRender', poppingNode, 'send', 'opened')
   ).observes('poppingNode.id')
+
+  closePopup: (()->
+    poppingNode = @get('poppingNode')
+
+    if poppingNode?
+      @_closePopup(poppingNode.get('id'))
+      poppingNode.send('closed')
+      @filterLayers()
+  ).observesBefore('poppingNode.id')
 
   getLayer: (nodeId)->
     @get('geoJSONLayer').getLayers().findBy('feature.properties.id', parseInt(nodeId, 10))
 
-  _togglePopup: ()->
-    poppingNode = @get('poppingNode')
-
-    if poppingNode?
-      @_openPopup()
-    else
-      @_closePopup()
-
-  _openPopup: ()->
+  _openPopup: (nodeId)->
     map = @get('map.layer')
-    poppingNode = @get('poppingNode')
+    marker = @getLayer(nodeId)
 
-    if poppingNode?
-      marker = @getLayer(poppingNode.get('id'))
+    if marker?
+      marker.setZIndexOffset(marker.options.riseOffset)
+
       @$nodeView = $('.node-popup-view')
+      @$nodeViewPrev = @$nodeView.prev()
 
-      if marker?
-        map.openPopup @$nodeView[0], marker.getLatLng(),
-          className: 'node-popup'
-          offset: [0, -25]
-          closeOnClick: false
-          closeButton: false
+      map.openPopup @$nodeView[0], marker.getLatLng(),
+        className: 'node-popup'
+        offset: [0, -24]
+        closeOnClick: false
+        closeButton: false
 
-        poppingNode.send('opened')
-
-  _closePopup: ()->
+  _closePopup: (nodeId)->
     map = @get('map.layer')
-    map.closePopup()
+    marker = @getLayer(nodeId)
 
-    @get('poppingNode')?.send('closed')
+    if marker?
+      marker.setZIndexOffset(0)
 
-    Ember.run.once(@, 'filterLayers')
+      @$nodeViewPrev.after(@$nodeView)
+      @$nodeView = null
+      @$nodeViewPrev = null
+
+      map.closePopup()
 
   _onClick: (event)->
     nodeId = null
 
-    # Marker was clicked
-    unless event.target instanceof L.Map
+    if event.target instanceof L.Marker
       nodeId = event.target.feature.properties.id
-    else
-      @_closePopup()
 
     @sendPopupAction(nodeId)
 
