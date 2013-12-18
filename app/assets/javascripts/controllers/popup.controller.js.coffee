@@ -1,7 +1,7 @@
 #= require controllers/node.controller
 
 Wheelmap.PopupController = Wheelmap.NodeController.extend
-  needs: ['flash-messages']
+  needs: ['flash-messages', 'map']
   isPosting: false
   oldWheelchair: null
 
@@ -15,16 +15,9 @@ Wheelmap.PopupController = Wheelmap.NodeController.extend
     @get('oldWheelchair')? and @get('wheelchair') != @get('oldWheelchair') and !@get('isPosting')
   ).property('wheelchair', 'oldWheelchair', 'isPosting')
 
-  wheelchairWillChange: (()->
-    oldWheelchair = @get('oldWheelchair')
-
-    unless oldWheelchair?
-      @set('oldWheelchair', @get('wheelchair'))
-  ).observesBefore('wheelchair')
-
   wheelchairUri: (()->
-    '/nodes/' + @get('osm_id') + '/update_wheelchair.js'
-  ).property('osm_id')
+    '/nodes/' + @get('id') + '/update_wheelchair.js'
+  ).property('id')
 
   resetStatus: ()->
     oldWheelchair = @get('oldWheelchair')
@@ -33,11 +26,22 @@ Wheelmap.PopupController = Wheelmap.NodeController.extend
       @set('wheelchair', oldWheelchair)
       @get('oldWheelchair', null)
 
+  wheelchairWillChange: (()->
+    oldWheelchair = @get('oldWheelchair')
+
+    unless oldWheelchair?
+      @set('oldWheelchair', @get('wheelchair'))
+  ).observesBefore('wheelchair')
+
   actions:
+    close: ()->
+      @get('controllers.map').send('closePopup')
+
     opened: Ember.K
 
     closed: ()->
       @resetStatus()
+      @set('isPosting', false)
 
     setWheelchair: (wheelchair)->
       unless @get('isPosting')
