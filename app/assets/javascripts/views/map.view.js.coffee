@@ -1,3 +1,4 @@
+
 Wheelmap.LocateMixin = Ember.Mixin.create
   _createLayer: ()->
     @_super()
@@ -32,45 +33,27 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   mapBinding: 'parentLayer'
   mapControllerBinding: 'map.controller'
   toolbarControllerBinding: 'mapController.controllers.toolbar'
+  poppingNodeBinding: 'mapController.poppingNode'
   lastLoadedBounds: null
   lastActiveStatusFilters: null
   lastActiveCategories: null
+  $nodeView: null
 
   geoJSONLayer: (()->
     new L.GeoJSON null,
       pointToLayer: $.proxy(@.pointToLayer, @)
   ).property()
 
-  statusFilterDidChange: (()->
-    if Ember.compare(@lastActiveStatusFilters, @get('toolbarController.activeStatusFilters')) is 0
-      return
-
-    @lastActiveStatusFilters = @get('toolbarController.activeStatusFilters')
-    @filterLayers()
-  ).observes('toolbarController.activeStatusFilters.@each')
-
-  categoriesDidChange: (()->
-    if Ember.compare(@lastActiveCategories, @get('toolbarController.activeCategories')) is 0
-      return
-
-    @lastActiveCategories = @get('toolbarController.activeCategories')
-    @filterLayers()
-  ).observes('toolbarController.activeCategories.@each')
-
   filterLayers: ()->
     @_filterLayers()
 
-  boundsDidChange: (()->
-    Ember.run.debounce(@, 'requestData', @get('map.bounds'), 200)
-  ).observes('map.bounds')
-
-  zoomDidChange: (()->
-    # When zooming reset last loaded bounds, to load nodes in any case
-    @lastLoadedBounds = null
-  ).observes('map.zoom')
-
   didCreateLayer: ()->
-    @boundsDidChange()
+    @_boundsDidChange()
+
+    map = @get('map.layer')
+
+    if map?
+      map.on('click', @_onClick, @)
 
   requestData: (bounds)->
     that = @
@@ -97,17 +80,71 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     geoJSONLayer.clearLayers()
     geoJSONLayer.addData(data)
 
+    @togglePopup()
     @filterLayers()
 
   pointToLayer: (featureData, latlng)->
-    layer = Wheelmap.MarkerLayer.createLayer(featureData, latlng)
+    layer = Wheelmap.MarkerLayer.createLayer(latlng, featureData.properties)
+    layer.on('click', @_onClick, @)
 
-    layer.on 'click', $.proxy(@onMarkerClick, @)
+  sendPopupAction: (nodeId)->
+    mapController = @get('mapController')
 
-    return layer
+    if nodeId?
+      mapController.send('openPopup', nodeId)
+    else
+      mapController.send('closePopup')
 
-  onMarkerClick: (event)->
-    @get('mapController').send('openPopup', event.target.feature.properties.id)
+  togglePopup: (()->
+    Ember.run.scheduleOnce('afterRender', @, @_togglePopup)
+  ).observes('poppingNode.id')
+
+  getLayer: (nodeId)->
+    @get('geoJSONLayer').getLayers().findBy('feature.properties.id', parseInt(nodeId, 10))
+
+  _togglePopup: ()->
+    poppingNode = @get('poppingNode')
+
+    if poppingNode?
+      @_openPopup()
+    else
+      @_closePopup()
+
+  _openPopup: ()->
+    map = @get('map.layer')
+    poppingNode = @get('poppingNode')
+
+    if poppingNode?
+      marker = @getLayer(poppingNode.get('id'))
+      @$nodeView = $('.node-popup-view')
+
+      if marker?
+        map.openPopup @$nodeView[0], marker.getLatLng(),
+          className: 'node-popup'
+          offset: [0, -25]
+          closeOnClick: false
+          closeButton: false
+
+        poppingNode.send('opened')
+
+  _closePopup: ()->
+    map = @get('map.layer')
+    map.closePopup()
+
+    @get('poppingNode')?.send('closed')
+
+    Ember.run.once(@, 'filterLayers')
+
+  _onClick: (event)->
+    nodeId = null
+
+    # Marker was clicked
+    unless event.target instanceof L.Map
+      nodeId = event.target.feature.properties.id
+    else
+      @_closePopup()
+
+    @sendPopupAction(nodeId)
 
   _newLayer: ()->
     @get('geoJSONLayer')
@@ -120,30 +157,77 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
 
     activeStatusFilters = @get('toolbarController.activeStatusFilters').getEach('key')
     activeCategories = @get('toolbarController.activeCategories').getEach('identifier')
+    poppingNode = @get('poppingNode')
 
     for layer in layers
       properties = layer.feature.properties
-      visible = activeStatusFilters.contains(properties.wheelchair) and activeCategories.contains(properties.category)
+      visible = activeStatusFilters.contains(properties.wheelchair) and
+        activeCategories.contains(properties.category)
+
+      if poppingNode? and properties.id is parseInt(poppingNode.get('id'), 10)
+        visible = true
 
       $(layer._icon).toggle(visible)
 
     return
 
+  _statusFilterDidChange: (()->
+    if Ember.compare(@lastActiveStatusFilters, @get('toolbarController.activeStatusFilters')) is 0
+      return
+
+    @lastActiveStatusFilters = @get('toolbarController.activeStatusFilters')
+    @filterLayers()
+  ).observes('toolbarController.activeStatusFilters.@each')
+
+  _categoriesDidChange: (()->
+    if Ember.compare(@lastActiveCategories, @get('toolbarController.activeCategories')) is 0
+      return
+
+    @lastActiveCategories = @get('toolbarController.activeCategories')
+    @filterLayers()
+  ).observes('toolbarController.activeCategories.@each')
+
+  _boundsDidChange: (()->
+    Ember.run.debounce(@, 'requestData', @get('map.bounds'), 200)
+  ).observes('map.bounds')
+
+  _zoomDidChange: (()->
+    # When zooming reset last loaded bounds to load nodes in any case
+    @lastLoadedBounds = null
+  ).observes('map.zoom')
+
+  _poppingNodeWheelchairDidChange: (()->
+    poppingNode = @get('poppingNode')
+
+    unless poppingNode?
+      return
+
+    marker = @getLayer(poppingNode.get('id'))
+    icon = Wheelmap.MarkerLayer.createIcon
+      wheelchair: poppingNode.get('wheelchair')
+      icon: poppingNode.get('icon')
+
+    marker.setIcon(icon)
+  ).observes('poppingNode.wheelchair')
+
 Wheelmap.MarkerLayer.reopenClass
   BOUNDS_CONTAINS_BUFFER: 0.41
 
-  createLayer: (featureData, latlng)->
-    markerClassName = 'marker-wheelchair-' + featureData.properties.wheelchair
-    iconClassName = 'marker-icon marker-icon-' + featureData.properties.icon
-
+  createLayer: (latlng, options)->
     new L.Marker latlng,
       riseOnHover: true
-      icon: new L.DivIcon
-        iconSize: null
-        iconAnchor: null
-        popupAnchor: null
-        className: markerClassName
-        html: "<div class=\"#{iconClassName}\"></div>"
+      icon: Wheelmap.MarkerLayer.createIcon(options)
+
+  createIcon: (options)->
+    markerClassName = 'marker-wheelchair-' + options.wheelchair
+    iconClassName = 'marker-icon marker-icon-' + options.icon
+
+    new L.DivIcon
+      iconSize: null
+      iconAnchor: null
+      popupAnchor: null
+      className: markerClassName
+      html: "<div class=\"#{iconClassName}\"></div>"
 
 Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.SpinMixin,
   childLayers: [ Wheelmap.TileLayer, Wheelmap.MarkerLayer ]
