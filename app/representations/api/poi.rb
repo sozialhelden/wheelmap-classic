@@ -20,6 +20,8 @@ module Api::Poi
       t.add :lon
       t.add :id
       t.add :category, :template => :id
+      t.add :icon
+      t.add :type
       t.add :street
       t.add :housenumber
       t.add :city
