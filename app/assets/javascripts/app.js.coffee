@@ -35,8 +35,13 @@ Ember.Application.reopen
   ).property()
 
 Wheelmap = @Wheelmap = Ember.Application.create
-  #LOG_TRANSITIONS: true
+  # LOG_TRANSITIONS: true
   rootElement: '#wheelmap'
+
+DS.RESTAdapter.reopen
+  buildURL: (type, id)->
+    # Needed for not having wrong cached urls
+    @_super(type, id) + '.json'
 
 Wheelmap.Router.reopen
   rootURL: '/map/'
