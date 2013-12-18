@@ -1,7 +1,6 @@
 attr = DS.attr
 
 Wheelmap.Node = DS.Model.extend
-  osm_id: attr()
   lat: attr()
   lon: attr()
   name: attr()
@@ -22,8 +21,8 @@ Wheelmap.Node = DS.Model.extend
   ).property('wheelchair')
 
   headline: (()->
-    @get('name') || I18n.t("poi.name." + @get('category') + "." + @get('type'))
-  ).property('name', 'type','category')
+    @get('name') || I18n.t("poi.name." + @get('category.identifier') + "." + @get('type'))
+  ).property('name', 'type','category.identifier')
 
   breadcrumbs: (()->
     category = @get('category.identifier')
@@ -33,19 +32,19 @@ Wheelmap.Node = DS.Model.extend
       I18n.t("poi.category." + category),
       I18n.t("poi.name." + category + "." + @get('type'))
     ]
-  ).property('type','category')
+  ).property('type','category.identifier')
 
   showPath: (()->
-    '/nodes/' + @get('osm_id')
-  ).property('osm_id')
+    '/nodes/' + @get('id')
+  ).property('id')
 
   editPath: (()->
-    '/nodes/' + @get('osm_id') + '/edit'
-  ).property('osm_id')
+    '/nodes/' + @get('id') + '/edit'
+  ).property('id')
 
   updatePath:(()->
-    '/nodes/' + @get('osm_id') + '/update_wheelchair.js'
-  ).property('osm_id')
+    '/nodes/' + @get('id') + '/update_wheelchair.js'
+  ).property('id')
 
   sponsored:(()->
     @get('sponsor')?
