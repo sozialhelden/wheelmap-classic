@@ -110,7 +110,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     if poppingNode?
       @_closePopup(poppingNode.get('id'))
       poppingNode.send('closed')
-      @filterLayers()
+      Ember.run.once(@, @filterLayers)
   ).observesBefore('poppingNode.id')
 
   getLayer: (nodeId)->
@@ -210,10 +210,13 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
       return
 
     marker = @getLayer(poppingNode.get('id'))
-    icon = Wheelmap.MarkerLayer.createIcon
+    options =
       wheelchair: poppingNode.get('wheelchair')
       icon: poppingNode.get('icon')
 
+    icon = Wheelmap.MarkerLayer.createIcon(options)
+
+    $.extend(marker.feature.properties, options)
     marker.setIcon(icon)
   ).observes('poppingNode.wheelchair')
 
