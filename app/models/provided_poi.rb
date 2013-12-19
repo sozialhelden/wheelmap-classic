@@ -4,6 +4,7 @@ class ProvidedPoi < ActiveRecord::Base
 
   validates :poi, :poi_id, :provider, :provider_id, presence: true
   validates_uniqueness_of :poi_id, :scope => :provider_id
-  validates_presence_of :wheelchair
+
+  scope :with_wheelchair, where("wheelchair > ''")
 
 end
