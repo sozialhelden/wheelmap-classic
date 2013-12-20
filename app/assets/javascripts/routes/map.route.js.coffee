@@ -20,7 +20,7 @@ Wheelmap.MapRoute = Ember.Route.extend
     properties = {}
 
     if queryParams.q?
-      properties.searchString = queryParams.q
+      properties.searchString = decodeURIComponent(queryParams.q).replace(/\+/, ' ')
 
     if queryParams.status?
       statusFilters = []
