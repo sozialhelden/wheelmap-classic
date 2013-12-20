@@ -39,6 +39,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   lastActiveCategories: null
   $nodeView: null
   $nodeViewPrev: null
+  popupNodeId: null
 
   geoJSONLayer: (()->
     new L.GeoJSON null,
@@ -71,7 +72,6 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
         bbox: bounds.toBBoxString()
 
     request.then (data)->
-      Ember.run.once(that, 'closePopup')
       Ember.run.once(that, 'replaceData', data)
 
       that.lastLoadedBounds = bounds.pad(Wheelmap.MarkerLayer.BOUNDS_CONTAINS_BUFFER)
@@ -93,6 +93,8 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     mapController = @get('mapController')
 
     if nodeId?
+      # @TODO add this only for mobile devices with lower bandwidth
+      # @get('map').set('isLoading', true)
       mapController.send('openPopup', nodeId)
     else
       mapController.send('closePopup')
@@ -101,7 +103,19 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     poppingNode = @get('poppingNode')
 
     if poppingNode?
-      Ember.run.scheduleOnce('afterRender', @, @_openPopup, poppingNode.get('id'))
+      nodeId = poppingNode.get('id')
+
+      if @popupNodeId == nodeId
+        unless @getLayer(poppingNode.get('id'))?
+          # There is no marker with this id so reset url
+          @sendPopupAction(null, true)
+
+        return
+
+      @popupNodeId = nodeId
+      Ember.run.scheduleOnce('afterRender', @, @_openPopup, nodeId)
+      # @TODO add this only for mobile devices with lower bandwidth
+      # Ember.run.scheduleOnce('afterRender', @get('map'), 'set', 'isLoading', false)
       Ember.run.scheduleOnce('afterRender', poppingNode, 'send', 'opened')
   ).observes('poppingNode.id')
 
@@ -110,6 +124,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
 
     if poppingNode?
       @_closePopup(poppingNode.get('id'))
+      @popupNodeId = null
       poppingNode.send('closed')
       Ember.run.once(@, @filterLayers)
   ).observesBefore('poppingNode.id')
@@ -117,34 +132,41 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   getLayer: (nodeId)->
     @get('geoJSONLayer').getLayers().findBy('feature.properties.id', parseInt(nodeId, 10))
 
-  _openPopup: (nodeId)->
-    map = @get('map.layer')
-    marker = @getLayer(nodeId)
-
-    if marker?
-      marker.setZIndexOffset(marker.options.riseOffset)
-
+  getViewElement: ()->
+    unless @$nodeView?
       @$nodeView = $('.node-popup-view')
       @$nodeViewPrev = @$nodeView.prev()
 
-      map.openPopup @$nodeView[0], marker.getLatLng(),
-        className: 'node-popup'
-        offset: [0, -24]
-        closeOnClick: false
-        closeButton: false
+    @$nodeView[0]
 
-  _closePopup: (nodeId)->
-    map = @get('map.layer')
-    marker = @getLayer(nodeId)
-
-    if marker?
-      marker.setZIndexOffset(0)
-
+  resetViewElement: ()->
+    if @$nodeView? and @$nodeViewPrev?
       @$nodeViewPrev.after(@$nodeView)
+
       @$nodeView = null
       @$nodeViewPrev = null
 
-      map.closePopup()
+  _openPopup: (nodeId)->
+    marker = @getLayer(nodeId)
+
+    unless marker?
+      return
+
+    map = @get('map.layer')
+
+    marker.setZIndexOffset(marker.options.riseOffset)
+    viewElement = @getViewElement()
+
+    map.openPopup viewElement, marker.getLatLng(),
+      className: 'node-popup'
+      offset: [0, -24]
+      closeOnClick: false
+      closeButton: false
+
+  _closePopup: (nodeId)->
+    @getLayer(nodeId)?.setZIndexOffset(0)
+    @resetViewElement()
+    @get('map.layer').closePopup()
 
   _onClick: (event)->
     nodeId = null
@@ -227,6 +249,12 @@ Wheelmap.MarkerLayer.reopenClass
   BOUNDS_CONTAINS_BUFFER: 0.41
 
   createLayer: (latlng, options)->
+    if latlng instanceof Wheelmap.PopupController
+      options = latlng.getProperties('wheelchair', 'icon')
+      latlng = latlng.get('location')
+
+      console.log(options, latlng)
+
     new L.Marker latlng,
       riseOnHover: true
       icon: Wheelmap.MarkerLayer.createIcon(options)
