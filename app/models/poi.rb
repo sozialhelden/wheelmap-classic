@@ -279,7 +279,7 @@ class Poi < ActiveRecord::Base
   end
 
   def sponsored?
-    provided_pois.count > 0
+    !sponsor.blank? && provided_pois.count > 0
   end
 
   def sponsor
