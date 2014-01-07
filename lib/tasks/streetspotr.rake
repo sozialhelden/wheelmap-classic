@@ -12,6 +12,7 @@ namespace :streetspotr do
     end
   end
 
+  desc 'Check data from StreetSpotr'
   task :check do
     csv_file = ENV['file']
     raise "Usage: bundle exec rake streetspotr:import file=<your_csv_file" unless csv_file
@@ -34,9 +35,8 @@ namespace :streetspotr do
     csv_file = ENV['file']
     raise "Usage: bundle exec rake streetspotr:import file=<your_csv_file" unless csv_file
     poi = nil
-    user = User.find_by_email()
     provider = Provider.find_or_create_by_name('Streetspotr')
-    CSV.foreach(csv_file, :headers => false) do |row|
+    CSV.foreach(csv_file, :headers => true, :col_sep => ';' ) do |row|
       osm_id = row[1]
       if osm_id.blank?
         next unless poi
@@ -55,7 +55,6 @@ namespace :streetspotr do
         provided_poi = ProvidedPoi.find_or_initialize_by_poi_id_and_provider_id(poi.id, provider.id)
         puts "SET WHEELCHAIR: '#{status}'"
         provided_poi.wheelchair = minimal_status([provided_poi.wheelchair, status].compact.uniq)
-        puts provided_poi.inspect
         provided_poi.save
         p = photo(poi, row)
         p.save
