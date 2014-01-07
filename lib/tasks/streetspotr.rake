@@ -61,20 +61,18 @@ namespace :streetspotr do
         sleep 0.1
       end
     end
-
-
   end
 
   def step(row)
-    row[20] == 'Ja' ? true : false
+    row[20].strip.downcase == 'ja' ? true : false
   end
 
   def toilet(row)
-    row[21] == 'Ja' ? true : false
+    row[21].strip.downcase == 'ja' ? true : false
   end
 
   def indoor(row)
-    row[22] == 'Ja' ? true : false
+    row[22].strip.downcase == 'ja' ? true : false
   end
 
   def photo(node, row)
