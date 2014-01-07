@@ -36,8 +36,9 @@ namespace :streetspotr do
     raise "Usage: bundle exec rake streetspotr:import file=<your_csv_file" unless csv_file
     poi = nil
     provider = Provider.find_or_create_by_name('Streetspotr')
-    CSV.foreach(csv_file, :headers => true, :col_sep => ';' ) do |row|
-      osm_id = row[1]
+    CSV.foreach(csv_file, :headers => true, :header_converters => :symbol ,:col_sep => ';' ) do |row|
+      # puts row.inspect
+      osm_id = row[:refid]
       if osm_id.blank?
         next unless poi
         # Just the image to process!!
@@ -46,14 +47,14 @@ namespace :streetspotr do
         sleep 0.1
       else
         # Find the poi
-        puts ">>>>>>>>>>>>>>>>> #{osm_id.to_i}"
+        # puts ">>>>>>>>>>>>>>>>> #{osm_id.to_i}"
         poi = Poi.find(osm_id.to_i) rescue nil
         next unless poi
 
         # Set Node attributes
         status = wheelchair(step(row), toilet(row), indoor(row))
         provided_poi = ProvidedPoi.find_or_initialize_by_poi_id_and_provider_id(poi.id, provider.id)
-        puts "SET WHEELCHAIR: '#{status}'"
+        # puts "SET WHEELCHAIR: '#{status}'"
         provided_poi.wheelchair = minimal_status([provided_poi.wheelchair, status].compact.uniq)
         provided_poi.save
         p = photo(poi, row)
@@ -64,20 +65,20 @@ namespace :streetspotr do
   end
 
   def step(row)
-    row[20].strip.downcase == 'ja' ? true : false
+    row[:step].strip.downcase == 'ja' ? true : false
   end
 
   def toilet(row)
-    row[21].strip.downcase == 'ja' ? true : false
+    row[:toilet].strip.downcase == 'ja' ? true : false
   end
 
   def indoor(row)
-    row[22].strip.downcase == 'ja' ? true : false
+    row[:indoor].strip.downcase == 'ja' ? true : false
   end
 
   def photo(node, row)
-    photo_url = row[18]
-    photo_caption = row[19]
+    photo_url = row[:photo_url]
+    photo_caption = row[:photo_caption]
     new_photo = node.photos.build
     new_photo.remote_image_url = photo_url
     new_photo.caption = photo_caption unless photo_caption.blank?
@@ -92,18 +93,22 @@ namespace :streetspotr do
   end
 
   def wheelchair(step, toilet, indoor)
+    s = nil
     if step
-      return 'no'
+      s = 'no'
     else
       if toilet
         if indoor
-          return 'yes'
+          s = 'yes'
         else
-          return 'limited'
+          s = 'limited'
         end
       else
-        return 'limited'
+        s = 'limited'
       end
     end
+
+    puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} => #{s}"
+    s
   end
 end
