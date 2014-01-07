@@ -11,7 +11,9 @@ ActiveAdmin.register ProvidedPoi do
 
 
   index do
-   column :id
+   column :id do |p|
+     link_to p.id, node_path(p.poi_id), target: '_blank'
+   end
    column :wheelchair do |p|
      status_tag(p.wheelchair, :class => p.wheelchair)
    end
