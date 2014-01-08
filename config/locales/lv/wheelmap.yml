@@ -56,6 +56,9 @@ lv:
         notice: "%{resource_name} tika veiksmīgi izdzēsts"
       update:
         notice: "%{resource_name} tika veiksmīgi atjaunots"
+    photos:
+      destroy:
+        notice: "Attēls tika veiksmīgi izdzēsts"
   form:
     show_fully_accessible_places: "pieejams ar ratiņkrēslu"
     show_limited_accessible_places: "daļēji pieejams ar ratiņkrēslu"
@@ -63,6 +66,7 @@ lv:
     show_unaccessible_places: "Nav pieejams ar ratiņkrēslu"
   formtastic:
     hints:
+      email: "Jūsu adrese būs konfidenciāla informācija, nekāda spama. Apsolam!"
       lat: "Pārvietojiet atzīmi uz pareizo vietu kartē "
       osm_username: "Neesi reģistrējies? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>"
       password: "(atstājiet tukšu, ja nevēlaties mainīt)"
@@ -74,6 +78,7 @@ lv:
       city: "Pilsēta:"
       create: "Izveidot vietu"
       email: E-pasts
+      finish: Beigas
       housenumber: "Nr.:"
       lat: garums
       lon: garums
@@ -84,9 +89,11 @@ lv:
       password_confirmation: "Atkārtot paroli"
       phone: "Tālrunis:"
       postcode: "pasta indekss:"
-      reset: "Reset"
+      privacy_policy: "Es piekrītu 1. un 2. privātuma vienošanās daļai."
+      reset: Reset
       save: Saglabāt
       street: "Iela:"
+      terms: "Es piekrītu lietošanas noteikumiem"
       type: "Veids:"
       website: "Mājas lapa:"
       wheelchair: "Pieejamība ar ratiņkrēslu?"
@@ -136,6 +143,8 @@ lv:
     index:
       filter:
         category: "Izvēlēties kategoriju:"
+        deselect_all: "Neizvēlēties visu"
+        select_all: "Izvēlēties visu"
         wheelchair: "Pieejams ar ratiņkrēslu?"
       ie:
         action:
@@ -215,6 +224,8 @@ lv:
         back: atpakaļ
         large_map: Palielināt
         listing: "Visas '%{type}' veida vietas %{city}"
+        upload: "Augšupuzlādēt attēlu"
+      more_data_from: "Par šo vietu ir pieejami papildus dati, pārliecinājās: "
       show-in-osm: 'OpenStreetMap
 
         '
@@ -334,6 +345,10 @@ lv:
       login_with_twitter: "Pierakstīties ar Twitter"
       password: Parole
       remember_me: "Palikt piereģistrētam"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Gandrīz galā! Pabeidziet izveidot Wheelmap kontu šeit:"
   wheelchairstatus:
     limited: "daļēji pieejams ar ratiņkrēslu"
     'no': "Nav pieejams ar ratiņkrēslu"
