@@ -70,6 +70,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     request = $.ajax '/nodes.geojson',
       data:
         bbox: bounds.toBBoxString()
+        node_id: @get('poppingNode.id')
 
     request.then (data)->
       Ember.run.once(that, 'replaceData', data)
