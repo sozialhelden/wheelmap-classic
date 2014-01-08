@@ -242,12 +242,6 @@ Wheelmap.MarkerLayer.reopenClass
   BOUNDS_CONTAINS_BUFFER: 0.41
 
   createLayer: (latlng, options)->
-    if latlng instanceof Wheelmap.PopupController
-      options = latlng.getProperties('wheelchair', 'icon')
-      latlng = latlng.get('location')
-
-      console.log(options, latlng)
-
     new L.Marker latlng,
       riseOnHover: true
       icon: Wheelmap.MarkerLayer.createIcon(options)
