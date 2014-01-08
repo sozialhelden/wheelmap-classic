@@ -119,13 +119,37 @@ namespace :export do
     puts "Usage: rake export:for_stiftung_gesundheit outfile=germany.csv"
     outfile = ENV['outfile'] || 'germany.csv'
 
+    Geocoder.configure(
+      # geocoding service (see below for supported options):
+      :lookup => :nominatim,
+      # geocoding service request timeout, in seconds (default 3):
+      :timeout => 15,
+      # set default units to kilometers:
+      :units => :km,
+      # use current locale
+      :language => I18n.locale,
+      # Make sure to tell the service, who is calling
+      :http_headers => {
+        "User-Agent" => "Wheelmap v1.0, (http://wheelmap.org)"
+      }
+    )
+
     csv_string = CSV.open(outfile, "wb", :force_quotes => true) do |csv|
-      csv << ["OSM_Id","OSM_Type","OSM_Name","OSM_Kategorie","OSM_Rollstuhlstatus","OSM_Latitude","OSM_Longitude","OSM_Strasse","OSM_Hausnummer","OSM_Stadt","OSM_Plz"]
+      csv << ["OSM_Id","OSM_Type","OSM_Name","OSM_Rollstuhlstatus","OSM_Latitude","OSM_Longitude","OSM_Strasse","OSM_Hausnummer","OSM_Stadt","OSM_Plz"]
       node_types = Category.find_by_identifier(:health).try(:node_types).map(&:id)
       total_count = Region.find('Germany').pois_of_children.where(node_type_id: node_types).count
       progressbar = ProgressBar.create(:total => total_count, :format => '%a |%b>%i|')
-      Region.find('Germany').pois_of_children.including_category.where(node_type_id: node_types ).find_each(start: Poi.lowest_id) do |poi|
-        csv << [poi.id, poi.node_type.localized_name, poi.name, poi.category.localized_name, poi.wheelchair, poi.lat, poi.lon, poi.street, poi.housenumber, poi.city, poi.postcode]
+      Region.find('Germany').pois_of_children.where(node_type_id: node_types ).find_each(start: Poi.lowest_id) do |poi|
+        if poi.street.blank? or poi.housenumber.blank? or poi.city.blank? or poi.postcode.blank?
+          if result = Geocoder.search("#{poi.lat},#{poi.lon}").try(:first)
+            poi.street = result.street if poi.street.blank?
+            poi.housenumber = result.house_number if poi.housenumber.blank?
+            poi.city = result.city if poi.city.blank?
+            poi.postcode = result.postal_code if poi.postcode.blank?
+          end
+          sleep 1
+        end
+        csv << [poi.id, poi.node_type.localized_name, poi.name, poi.wheelchair, poi.lat, poi.lon, poi.street, poi.housenumber, poi.city, poi.postcode]
         progressbar.increment
       end
     end
