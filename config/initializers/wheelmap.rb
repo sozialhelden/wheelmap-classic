@@ -25,6 +25,7 @@ Languages = {
   'pt'    => 'Português',
   'pt_BR' => 'Português do Brasil',
   'ru'    => 'Русский',
+  'sq_AL' => 'Shqiptar',
   'sv'    => 'Svenska',
   'sk'    => 'Slovenčina',
   'tlh'   => 'tlhIngan Hol',
