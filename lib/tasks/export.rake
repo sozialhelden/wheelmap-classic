@@ -98,9 +98,9 @@ namespace :export do
     puts csv_string
   end
 
-  desc 'Export nodes from OSM CSV file'
+  desc 'Export nodes for yellow pages'
   task :for_yellow_pages => :environment do
-    puts "Usage: rake export:from_osm outfile=germany.csv"
+    puts "Usage: rake export:for_yellow_pages outfile=germany.csv"
     outfile = ENV['outfile'] || 'germany.csv'
 
     csv_string = CSV.open(outfile, "wb", :force_quotes => true) do |csv|
@@ -113,6 +113,25 @@ namespace :export do
       end
     end
   end
+
+  desc 'Export nodes for stiftung gesundheit'
+  task :for_stiftung_gesundheit => :environment do
+    puts "Usage: rake export:for_stiftung_gesundheit outfile=germany.csv"
+    outfile = ENV['outfile'] || 'germany.csv'
+
+    csv_string = CSV.open(outfile, "wb", :force_quotes => true) do |csv|
+      csv << ["OSM_Id","OSM_Type","OSM_Name","OSM_Kategorie","OSM_Rollstuhlstatus","OSM_Latitude","OSM_Longitude","OSM_Strasse","OSM_Hausnummer","OSM_Stadt","OSM_Plz"]
+      node_types = Category.find_by_identifier(:health).try(:node_types).map(&:id)
+      total_count = Region.find('Germany').pois_of_children.where(node_type_id: node_types).count
+      progressbar = ProgressBar.create(:total => total_count, :format => '%a |%b>%i|')
+      Region.find('Germany').pois_of_children.including_category.where(node_type_id: node_types ).find_each(start: Poi.lowest_id) do |poi|
+        csv << [poi.id, poi.node_type.localized_name, poi.name, poi.category.localized_name, poi.wheelchair, poi.lat, poi.lon, poi.street, poi.housenumber, poi.city, poi.postcode]
+        progressbar.increment
+      end
+    end
+
+  end
+
 
   task :tags => :environment do
     puts "Tags = {"
