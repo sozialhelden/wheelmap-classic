@@ -105,14 +105,6 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     if poppingNode?
       nodeId = poppingNode.get('id')
 
-      if @popupNodeId == nodeId
-        unless @getLayer(poppingNode.get('id'))?
-          # There is no marker with this id so reset url
-          @sendPopupAction(null, true)
-
-        return
-
-      @popupNodeId = nodeId
       Ember.run.scheduleOnce('afterRender', @, @_openPopup, nodeId)
       # @TODO add this only for mobile devices with lower bandwidth
       # Ember.run.scheduleOnce('afterRender', @get('map'), 'set', 'isLoading', false)
