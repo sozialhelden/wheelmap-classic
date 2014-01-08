@@ -10,7 +10,7 @@ Wheelmap.MapController = Ember.ArrayController.extend
 
     properties =
       center: new L.LatLng(52.50521, 13.4231)
-      zoom: 12
+      zoom: 14
 
     if $.cookie('last_lat')? && $.cookie('last_lon')?
       properties.center = L.latLng($.cookie('last_lat'), $.cookie('last_lon'))
