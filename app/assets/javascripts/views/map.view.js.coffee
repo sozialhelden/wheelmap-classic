@@ -278,6 +278,8 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
 
     @_super()
 
+    @get('layer')?.attributionControl.setPrefix('');
+
   bounds: ((key, bounds)->
     layer = @get('layer')
 
