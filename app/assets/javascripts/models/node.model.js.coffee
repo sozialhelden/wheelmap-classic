@@ -29,18 +29,18 @@ Wheelmap.Node = DS.Model.extend
   ).property('wheelchair')
 
   headline: (()->
-    @get('name') || I18n.t("poi.name." + @get('category.identifier') + "." + @get('type'))
-  ).property('name', 'type','category.identifier')
+    @get('name') || I18n.t("poi.name." + @get('category') + "." + @get('type'))
+  ).property('name', 'type','category')
 
   breadcrumbs: (()->
-    category = @get('category.identifier')
+    category = @get('category')
 
     [
       @get('region'),
       I18n.t("poi.category." + category),
       I18n.t("poi.name." + category + "." + @get('type'))
     ]
-  ).property('type','category.identifier')
+  ).property('type','category')
 
   showPath: (()->
     '/nodes/' + @get('id')
