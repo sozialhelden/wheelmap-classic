@@ -184,7 +184,7 @@ sq_AL:
   node:
     address:
       city: "%{city} %{postcode}"
-      street: "%{hosenomber} %{street}"
+      street: "%{housenumber} %{street}"
     tags:
       phone: "Telefon:"
       website: "Website:"
