@@ -1,0 +1,178 @@
+sq_AL:
+  poi:
+    category:
+      accommodation: Akomodim
+      education: Edukim
+      food: Ushqim
+      government: Qeveri
+      health: Shëndet
+      leisure: Kohë e lirë
+      misc: Muzikë
+      money_post: "Bankë"
+      public_transfer: "Transfertë publike"
+      shopping: Blerje
+      sport: Sport
+      tourism: Turizëm
+      unknown: I papërcaktuar
+    name:
+      accommodation:
+        beach_resort: "Hotel plazhi"
+        bed_and_breakfast: "Shtrat dhe mëngjes"
+        camp_site: "Vend për kamp"
+        caravan_site: "Vend për karavan"
+        chalet: Shtëpizë
+        dormitory: Fjetore
+        guest_house: "Shtëpi mikpritëse"
+        hostel: Bujtinë
+        hotel: Hotel
+        motel: Motel
+      education:
+        college: Kolegj
+        driving_school: "Autoshkollë"
+        kindergarten: Çerdhe
+        library: Bibliotekë
+        museum: Muze
+        school: Shkollë
+        university: Universitet
+      food:
+        bar: Pijetore
+        biergarten: Birrari në të hapur
+        cafe: Kafene
+        drinking_water: "Ujë i pijshëm"
+        fast_food: "Fast food"
+        ice_cream: "Akullore"
+        pub: Pab
+        restaurant: Restorant
+      government:
+        courthouse: Gjykatë
+        embassy: Ambasadë
+        government: "Agjenci qeveritare"
+        police: Polici
+        public_building: "Godinë publike"
+        townhall: Bashkia e qytetit
+      health:
+        dentist: Dentist
+        doctors: Doktor
+        hearing_aids: "Dyqan për pajisje dëgjimi"
+        hospital: Spital
+        medical_supply: "Vegla mjeksore"
+        pharmacy: Farmaci
+        social_facility: "Objekt shoqëror"
+        veterinary: Veterinar
+      leisure:
+        arena: Arenë
+        brothel: Shtëpi publike
+        casino: Kazino
+        cinema: Kinema
+        community_center: "Qendër kulturore"
+        gallery: Galeri
+        nightclub: Klub nate
+        playground: Shesh lojrash
+        sauna: Sauna
+        stripclub: Klub striptrize
+        theatre: Teatër
+        zoo: Kopsht zoologjik
+      misc:
+        company: "Kompani (Zyrë)"
+        estate_agent: "Agjent imobilar"
+        insurance: Zyrë sigurimi
+        lawyer: Avokat
+        place_of_worship: "Vend adhurimi"
+        toilets: Tualete
+      money_post:
+        atm: ATM
+        bank: Bankë
+        bureau_de_change: "Zyrë këmbimi valutor"
+        post_box: "Kuti postare"
+        post_office: "Zyrë postare"
+      public_transfer:
+        aerodrome: Aeroport
+        bicycle_parking: "Parking për biçikleta"
+        bicycle_rental: "Biçikletë me qira"
+        boatyard: Kantier detar
+        bus_station: "Stacion autobusi"
+        bus_stop: "Qëndrim autobusi"
+        cable_car: "Teleferik"
+        car_rental: "Makinë me qira"
+        car_sharing: "Car sharing"
+        chair_lift: "Ngritje karrigieje"
+        ferry: Traget
+        ferry_terminal: "Terminal tragetesh"
+        fuel: "Pikë karburanti"
+        halt: Ndal
+        light_rail: "Tramvaj"
+        parking: Parking
+        parking_aisle: "Parking aisle"
+        platform: Platformë
+        station: "Stacion treni"
+        subway_entrance: "Hyrja në metro"
+        terminal: "Terminal aeroporti"
+        tram_stop: "Qendrim tramvaji"
+      shopping:
+        alcohol: Pije alkolike
+        bakery: Dyqan buke
+        beauty: "Sallon bukurie"
+        beverages: Pije alkoolike
+        bicycle: "Dyqan biçikletash"
+        books: Libra
+        butcher: Mishshitës
+        car_repair: "Riparim makine"
+        car_shop: "Dyqan makinash"
+        chemist: Farmaci
+        clothes: Dyqan rrobash
+        computer: Dyqan kompjuterash
+        confectionery: "Dyqan ëmbëlsirash"
+        convenience: Dyqan i vogël
+        deli: Ushqime të zgjedhura
+        department_store: "Qendër tregtare"
+        doityourself: "Bëje vet"
+        dry_cleaning: "Pastrim kimik"
+        electronics: Elektronike
+        fabric: "Dyqan pëlhurash"
+        farm_shop: "Dyqan ferme"
+        florist: Luleshitës
+        furniture: Mobilje
+        garden_centre: "Qendër kopshti"
+        gift: "Suvenir"
+        hairdresser: Floktar
+        hardware: Harduer
+        jewelry: Stoli
+        kiosk: Kiosk
+        laundry: Lavandari
+        mall: "Qendër tregtare"
+        optician: Dyqan syzesh optike
+        organic: "Dyqan organik"
+        outdoor: "Furnizim në natyrë"
+        pet: "Dyqan kafshësh shtëpie"
+        photo: Foto
+        second_hand: "Të dorës së dytë"
+        shoes: Këpucë
+        sports: Sporte
+        stationery: Kancelari
+        supermarket: Supermarket
+        toys: Lojra
+        travel_agency: "Agjenci udhëtimi"
+        video: "Dyqan i vidjosh me qira"
+      sport:
+        pitch: "Fushë sportive"
+        sports_centre: "Qendër sportive"
+        stadium: Stadium
+        swimming: Not
+        swimming_pool: "Pishinë"
+      tourism:
+        archaeological_site: "Zonë arkeologjike"
+        arts_centre: "Qendër artesh"
+        artwork: Vepër arti
+        attraction: Pikë turistike
+        battlefield: Fushë beteje
+        beach: Plazh
+        beacon: Far
+        castle: Kështjellë
+        cave_entrance: "Hyrje shpelle"
+        information: "Informacion turistik"
+        memorial: Memorial
+        theme_park: "Park lojrash"
+        tower: Kullë
+        viewpoint: "Pikë vështrimi"
+      unknown:
+        unknown: I papërcaktuar
