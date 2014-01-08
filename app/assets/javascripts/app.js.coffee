@@ -45,20 +45,3 @@ DS.RESTAdapter.reopen
 
 Wheelmap.Router.reopen
   rootURL: '/map/'
-
-Wheelmap.ViewHelper =
-  getViews: (view)->
-    views = [view]
-
-    view.get('childViews').forEach (view)->
-      views.pushObjects(Wheelmap.ViewHelper.getViews(view))
-
-    return views
-
-  enterDom: (view)->
-    Wheelmap.ViewHelper.getViews(view).forEach (view)->
-      Ember.View.states.inDOM.enter(view)
-
-  exitDom: (view)->
-    Wheelmap.ViewHelper.getViews(view).forEach (view)->
-      Ember.View.states.inDOM.exit(view)
