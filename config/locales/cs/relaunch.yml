@@ -1,4 +1,14 @@
 cs:
+  faq:
+    answers:
+      0: "Kdykoliv můžete sami změnit označení místa. Jednoduše zvolte správné označení a dejte \"Uložit\" - hotovo!"
+      1: "Jako přihlášený uživatel můžete přidávat / opravovat všechny údaje o místě. Klikněte na \"Změnit\" a upravte nebo přidejte informaci do pole."
+      2: "V sekci komentářů můžete přidat další informace (např. \"Toto místo má plošinu pro vozíčkáře\"). Klikněte na \"Změnit\" a pak na \"Přidat komentář\"."
+    headline: "Je s tímto místem nějaký problém?"
+    questions:
+      0: "Označení je špatně."
+      1: "Podrobnosti o tomto místě jsou nesprávné nebo chybějící."
+      2: "O tomto místě mám více informací."
   header:
     navigation:
       about_wheelmap: "O Wheelmap"
@@ -26,22 +36,31 @@ cs:
       address: "Adresa:"
       contact_details: "Kontakní údaje:"
     node_edit:
+      details: "Detaily"
       edit: "Změnit"
     node_map:
       map: "Mapa:"
     node_note:
       comment: "Komentář:"
     node_photos:
+      add: "Přidat"
       photos_of_this_place: "Fotky tohoto místa:"
+      upload: "Nahrát"
     node_similar:
       similar: "Podobné místa:  %{name}"
     node_status:
       accessible_toilet: "Toaleta přístupná pro vozíčkáře:"
+      premium: "%{name} říká: toto místo je"
       wheelchair_accessibility: "Přístupnost pro vozíčkáře:"
     node_streetview:
       streetview: "Streetview:"
     show:
+      header:
+        meta:
+          description: "Na Wheelmap.org zjistíte, jestli je toto místo přístupné pro vozíčkáře. Také můžete přidat další informace a fotky k danému místu."
+          title: "Tohle místo je na Wheelmap.org: %{name}"
       share:
+        email: "E-mail"
         facebook: Facebook
         text: "Tohle místo jsem našel na Wheelmap.org: %{name}"
         twitter: Twitter

@@ -298,7 +298,7 @@ pt_BR:
           connected: "Estatus: Conectado"
           grant: "Ligar agora"
           not_connected: "Status: não conectado"
-          revoke: 'Desligar'
+          revoke: Desligar
       headline: "Editar o seu perfil"
   search:
     index:
