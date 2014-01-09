@@ -298,7 +298,8 @@ class Poi < ActiveRecord::Base
                          'wheelchair' => wheelchair,
                          'id'         => osm_id,
                          'category'   => category.try(:identifier) || '',
-                         'icon'       => icon
+                         'icon'       => icon,
+                         'sponsor'    => sponsored? ? sponsor : nil
                        }
     }
   end
