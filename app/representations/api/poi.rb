@@ -62,6 +62,7 @@ module Api::Poi
       t.add lambda{|poi| poi.category.try(:identifier)  }, :as => :category
       t.add lambda{|poi| poi.node_type.try(:identifier)  }, :as => :type
       t.add :icon
+      t.add :sponsor, if: :sponsored?
     end
   end
 end
