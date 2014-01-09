@@ -55,6 +55,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     map = @get('map.layer')
 
     if map?
+      # Needed for starting own popup opening process when marker were clicked
       map.on('click', @_onClick, @)
 
   requestData: (bounds)->
@@ -105,6 +106,12 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
 
     if poppingNode?
       nodeId = poppingNode.get('id')
+
+      if @popupNodeId is nodeId
+        # Node popup allready open
+        return
+
+      @popupNodeId = nodeId
 
       Ember.run.scheduleOnce('afterRender', @, @_openPopup, nodeId)
       # @TODO add this only for mobile devices with lower bandwidth
