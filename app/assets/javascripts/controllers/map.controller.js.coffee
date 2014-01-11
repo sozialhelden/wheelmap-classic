@@ -3,6 +3,7 @@ Wheelmap.MapController = Ember.ArrayController.extend
   itemController: 'node'
   center: null
   zoom: null
+  bbox: null
   poppingNode: null
 
   init: ()->
@@ -57,6 +58,8 @@ Wheelmap.MapController = Ember.ArrayController.extend
       if toolbarController.get('length') > categoriesFilters.length
       then categoriesFilters.join(',')
       else false
+
+    queryParams.bbox = null
 
     queryParams
 

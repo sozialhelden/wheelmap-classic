@@ -14,6 +14,12 @@ Wheelmap.MapRoute = Ember.Route.extend
     if queryParams.zoom?
       properties.zoom = parseInt(queryParams.zoom, 10)
 
+    if queryParams.bbox?
+      bbox = queryParams.bbox.split(',')
+
+      if bbox.length == 4
+        properties.bbox = L.latLngBounds(L.latLng(bbox[0], bbox[2]), L.latLng(bbox[1], bbox[3]))
+
     controller.setProperties(properties)
 
   setupToolbarController: (controller, queryParams)->
@@ -42,4 +48,4 @@ Wheelmap.MapRoute = Ember.Route.extend
           category.set('isActive', activeCategoryIdentifiers.contains(category.get('identifier')))
 
 Wheelmap.MapRoute.reopenClass
-  DEFAULT_QUERY_PARAMS: ['lat', 'lon', 'zoom', 'status', 'q', 'categories']
+  DEFAULT_QUERY_PARAMS: ['bbox', 'lat', 'lon', 'zoom', 'status', 'q', 'categories']
