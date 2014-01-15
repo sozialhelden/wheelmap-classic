@@ -14,3 +14,4 @@ Wheelmap.PopupRoute = Wheelmap.MapRoute.extend
 
     @render 'node-popup',
       controller: controller
+      outlet: 'map-popup'
