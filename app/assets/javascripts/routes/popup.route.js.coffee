@@ -15,6 +15,7 @@ Wheelmap.PopupRoute = Wheelmap.MapRoute.extend
     @controllerFor('map').set('poppingNode', controller)
 
   renderTemplate: (controller, model)->
+    @_super(controller, model)
+
     @render 'node-popup',
-      outlet: 'popup',
       controller: controller
