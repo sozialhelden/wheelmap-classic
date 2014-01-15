@@ -247,6 +247,7 @@ Wheelmap.MarkerLayer.reopenClass
 
   createLayer: (latlng, options)->
     new L.Marker latlng,
+      title: options.name
       riseOnHover: true
       icon: Wheelmap.MarkerLayer.createIcon(options)
 
@@ -258,7 +259,7 @@ Wheelmap.MarkerLayer.reopenClass
       iconClassName = 'marker-icon marker-icon-' + options.icon
       html = "<div class=\"#{iconClassName}\"></div>"
     else
-      html = "<img class=\"marker-sponsor-image\" src=\"#{options.sponsor}\" />"
+      html = "<img class=\"marker-sponsor-image\" src=\"#{options.sponsor}\" alt=\"#{options.name}\" />"
 
     new L.DivIcon
       iconSize: null
