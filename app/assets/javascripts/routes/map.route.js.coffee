@@ -47,5 +47,9 @@ Wheelmap.MapRoute = Ember.Route.extend
         controller.forEach (category) ->
           category.set('isActive', activeCategoryIdentifiers.contains(category.get('identifier')))
 
+  renderTemplate: (controller, model)->
+    @render 'index',
+      outlet: 'map'
+
 Wheelmap.MapRoute.reopenClass
   DEFAULT_QUERY_PARAMS: ['bbox', 'lat', 'lon', 'zoom', 'status', 'q', 'categories']

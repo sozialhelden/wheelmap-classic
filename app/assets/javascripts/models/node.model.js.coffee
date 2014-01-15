@@ -30,7 +30,7 @@ Wheelmap.Node = DS.Model.extend
 
   headline: (()->
     @get('name') || I18n.t("poi.name." + @get('category') + "." + @get('type'))
-  ).property('name', 'type','category')
+  ).property('name', 'type', 'category')
 
   breadcrumbs: (()->
     category = @get('category')

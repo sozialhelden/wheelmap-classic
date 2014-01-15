@@ -145,7 +145,7 @@ class NodesController < ApplicationController
 
   def determine_layout
     case action_name
-    when "edit", "new", "create"
+    when "new", "create"
       "legacy"
     else
       "nodes"
