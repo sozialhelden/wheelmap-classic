@@ -296,12 +296,11 @@ class Poi < ActiveRecord::Base
     {
         :type       => 'Feature',
         :geometry   => { :type => 'Point', :coordinates  => [ self.lon.to_f, self.lat.to_f ] },
-        :properties => { 'lat'        => lat,
-                         'lon'        => lon,
-                         'wheelchair' => wheelchair,
+        :properties => { 'wheelchair' => wheelchair,
                          'id'         => osm_id,
                          'category'   => category.try(:identifier) || '',
                          'icon'       => icon,
+                         'name'       => name,
                          'sponsor'    => sponsored? ? sponsor : nil
                        }
     }
