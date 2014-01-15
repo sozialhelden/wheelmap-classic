@@ -5,7 +5,7 @@
       = image_tag("http://api.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/#{node_map.lon},#{node_map.lat},17/359x239.png64", class: 'img-polaroid', size: '359x239')
     %div{class: "leaflet-marker-icon public_transfer marker-wheelchair-#{@node.wheelchair}"}
       - if @node.sponsored?
-        = image_tag(@node.sponsor, size: '22x22')
+        = image_tag(@node.sponsor, class: 'marker-sponsor-image')
       - else
         .marker-icon{class: "marker-icon-#{@node.icon}"}
   %small.pull-right.bottom= link_to "© OpenStreetMap contributors", I18n.locale == :de ? "http://www.openstreetmap.org/copyright" : "http://www.openstreetmap.org/copyright/en"
