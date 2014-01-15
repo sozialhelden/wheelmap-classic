@@ -18,10 +18,10 @@ Wheelmap.NodePopupStatusDropdownView = Ember.View.extend
   closeDropdown: (()->
     $dropdown = @get('$dropdown')
 
-    # Close dropdown when new wheelchair status is saved (old wheelchair status is set to null)
-    if !@get('controller.oldWheelchair')? and $dropdown.hasClass('open')
-      $dropdown.dropdown('toggle')
-  ).observes('controller.oldWheelchair')
+    # Close dropdown when new wheelchair status is saved
+    if !@get('controller.isPosting') and $dropdown.closest('.dropdown').hasClass('open')
+      $dropdown.trigger('click.dropdown.data-api')
+  ).observes('controller.isPosting')
 
   click: (event)->
     if Ember.$(event.target).closest('.dropdown-menu').length > 0
