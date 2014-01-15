@@ -54,8 +54,4 @@ Wheelmap.Node = DS.Model.extend
     '/nodes/' + @get('id') + '/update_wheelchair.js'
   ).property('id')
 
-  sponsored:(()->
-    @get('sponsor')?
-  ).property('sponsor')
-
 Wheelmap.NodeAdapter = DS.RESTAdapter.extend()

@@ -235,10 +235,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     marker = @getLayer(poppingNode.get('id'))
 
     if marker?
-      options =
-        wheelchair: poppingNode.get('wheelchair')
-        icon: poppingNode.get('icon')
-
+      options = poppingNode.getProperties('wheelchair', 'icon', 'sponsor')
       icon = Wheelmap.MarkerLayer.createIcon(options)
 
       $.extend(marker.feature.properties, options)
@@ -255,14 +252,20 @@ Wheelmap.MarkerLayer.reopenClass
 
   createIcon: (options)->
     markerClassName = 'marker-wheelchair-' + options.wheelchair
-    iconClassName = 'marker-icon marker-icon-' + options.icon
+    html = ''
+
+    unless options.sponsor?
+      iconClassName = 'marker-icon marker-icon-' + options.icon
+      html = "<div class=\"#{iconClassName}\"></div>"
+    else
+      html = "<img class=\"marker-sponsor-image\" src=\"#{options.sponsor}\" />"
 
     new L.DivIcon
       iconSize: null
       iconAnchor: null
       popupAnchor: null
       className: markerClassName
-      html: "<div class=\"#{iconClassName}\"></div>"
+      html: html
 
 Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.SpinMixin,
   childLayers: [ Wheelmap.TileLayer, Wheelmap.MarkerLayer ]
