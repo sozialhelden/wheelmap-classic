@@ -669,3 +669,11 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     @include box-sizing(border-box);
   }
 }
+
+.fake-map {
+  position: absolute;
+  width: 100%;
+  top: $headerHeight;
+  bottom: $footerHeight;
+  background: center center;
+}
