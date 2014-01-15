@@ -1,4 +1,4 @@
-Wheelmap.FakeMapRoute = Ember.ObjectController.extend
+Wheelmap.FakeMapRoute = Ember.Route.extend
   renderTemplate: (controller, model)->
     @_super(controller, model)
     

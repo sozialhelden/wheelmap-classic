@@ -3,7 +3,5 @@
       {{ t 'nodes.node_edit.details' }}
     </a>
 
-    <a {{bind-attr href=editPath }} class="btn edit">
-      <i class="icon-pencil"></i>
-    </a>
+    {{#link-to 'nodes.edit' this class='btn edit' }}<i class="icon-pencil"></i>{{/link-to}}
 </div>
