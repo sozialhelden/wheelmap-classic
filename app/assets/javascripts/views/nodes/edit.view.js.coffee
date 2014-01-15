@@ -1,0 +1,1 @@
+Wheelmap.NodesEditView = Ember.View.extend()
