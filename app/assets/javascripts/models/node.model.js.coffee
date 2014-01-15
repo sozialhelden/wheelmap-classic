@@ -55,3 +55,6 @@ Wheelmap.Node = DS.Model.extend
   ).property('id')
 
 Wheelmap.NodeAdapter = DS.RESTAdapter.extend()
+
+Wheelmap.Node.reopenClass
+  WHEELCHAIR_STATUSES: ['yes', 'limited', 'no']
