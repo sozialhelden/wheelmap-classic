@@ -1,6 +1,6 @@
-#= require controllers/node.controller
+#= require controllers/nodes.controller
 
-Wheelmap.PopupController = Wheelmap.NodeController.extend
+Wheelmap.PopupController = Wheelmap.NodesController.extend
   needs: ['flash-messages', 'map']
   isPosting: false
 
