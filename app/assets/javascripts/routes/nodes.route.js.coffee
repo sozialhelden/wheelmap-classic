@@ -1,0 +1,1 @@
+Wheelmap.NodesEditRoute = Wheelmap.FakeMapRoute.extend()
