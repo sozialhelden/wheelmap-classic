@@ -2,7 +2,7 @@ class SearchController < ApplicationController
 
   URL = "http://nominatim.openstreetmap.org/search"
   # URL = "http://open.mapquestapi.com/nominatim/v1/search"
-  DEFAULT_PARAMS = {:limit => 10, :osm_type => 'N', :email => 'info@wheelmap.org', :dedupe => '1'}
+  DEFAULT_PARAMS = {:limit => 10, :email => 'info@wheelmap.org', :dedupe => '1'}
   USERAGENT = "Wheelmap v1.0, (http://wheelmap.org)"
 
   TIMEOUT = 1
