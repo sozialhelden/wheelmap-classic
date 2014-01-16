@@ -6,7 +6,7 @@ $node-photos-gutter: 2.25%;
 $node-photos-columns: 4;
 $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-photos-columns;
 
-#node-wrapper {
+.node-wrapper {
   padding: $headerHeight + 20px 0 $footerHeight + 20px 0;
   position: relative;
   z-index: 2;
@@ -16,7 +16,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
-#node {
+.node-container {
   background-color: $white;
   @include box-shadow(0 2px 10px rgba($black, .5));
   overflow: hidden; // needed for the full height sidebar hack (aside)
@@ -25,8 +25,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     font-size: $baseFontSize;
     font-weight: normal;
     line-height: $baseLineHeight;
-    margin: 0;
-    margin-bottom: 10px;
+    margin: 15px 0 10px 0;
   }
 
   .icon-question-sign {
@@ -53,7 +52,11 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
-#node-header {
+.node-content > section {
+  padding: 15px;
+}
+
+.node-header {
   @include headline-gradient();
   padding: 10px 20px 15px 20px;
   position: relative; // For close page button
@@ -137,7 +140,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
-#node-aside {
+.node-aside {
   padding: 15px;
   background-color: lighten($orange-gray, 7%);
   border-left: 1px solid $boder_color;
@@ -173,7 +176,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
-#node-edit {
+.node-edit {
   padding-bottom: 20px;
 
   .btn {
@@ -182,7 +185,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
-#node-similar-locations {
+.node-similar-locations {
   ul {
     font-size: $fontSizeSmall;
   }
@@ -208,119 +211,11 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
-#node-content > section {
-  padding: 15px;
-}
-
-#node-status {
+.node-status {
   padding-top: 0 !important;
   background-color: lighten($orange-gray, 1%);
   @include box-sizing(border-box);
   border-bottom: 1px solid $boder_color;
-
-  h2 {
-    margin-top: 15px;
-  }
-
-  .icon-caret-down,
-  .icon-question-sign {
-    line-height: inherit;
-  }
-
-  .popover {
-    font-weight: normal;
-    color: $black;
-    @include text-shadow(none);
-  }
-
-  .dropdown-toggle,
-  .dropdown-menu,
-  .alert,
-  .premium {
-    width: 80%;
-    min-width: 250px;
-  }
-
-  .dropdown-toggle {
-    height: 40px;
-    text-align: left;
-    line-height: 30px;
-    @include box-sizing(border-box);
-
-    .icon-question-sign {
-      padding-left: 10px;
-      font-size: 1.2em;
-      opacity: .6;
-      color: white;
-    }
-
-    .text {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 81%;
-      display: inline-block;
-      @include box-sizing(border-box);
-    }
-  }
-
-  .dropdown-menu {
-    @include border-top-radius(0);
-
-    a {
-      @extend .clearfix;
-      line-height: 25px;
-      padding: 5px 10px;
-
-      .icon-question-sign {
-        opacity: .5;
-        // Needed for firefox floating bug
-        position: absolute;
-        right: 10px;
-      }
-
-      .text {
-        white-space: nowrap;
-        width: 79%;
-        display: inline-block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        vertical-align: middle;
-      }
-    }
-
-    .wm-checkbox {
-      height: 25px;
-      width: 25px;
-      line-height: inherit;
-      vertical-align: middle;
-      display: inline-block;
-      @include border-radius(3px);
-      @include box-shadow(inset 0 1px 0 rgba($white, 0.5), 0 1px 1px rgba($black, 0.1));
-      margin-right: 5px;
-
-      i {
-        width: 17px;
-        height: 17px;
-        line-height: 17px;
-        display: block;
-        margin: 3px;
-        border: inherit;
-        @include border-radius(3px);
-        color: $black;
-        background-color: $white;
-        @include text-shadow(none);
-        @include box-shadow(0 1px 0 rgba($white, 0.5), inset 0 1px 2px rgba($black, 0.2));
-        overflow: hidden;
-        text-align: center;
-        text-indent: -5000px; // Hide check icon
-      }
-
-      &.checked i {
-        text-indent: 0px;
-      }
-    }
-  }
 
   .premium {
     position: relative;
@@ -369,23 +264,6 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     }
   }
 
-  .submit {
-    @include border-bottom-radius(3px);
-    margin-bottom: -5px;
-    margin-top: 5px;
-    padding: 5px;
-    text-align: right;
-    border-top: 1px solid darken($orange-gray, 5%);
-    background-color: lighten($orange-gray, 10%);
-
-    .btn {
-      @include buttonBackground(lighten($orange-gray, 5%), darken($orange-gray, 5%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
-      text-align: center;
-      font-weight: bold;
-      border-color: darken($orange-gray, 20%);
-    }
-  }
-
   @media (max-width: 580px), (min-width: 768px) and (max-width: 979px) {
     .span6 {
       float: none !important;
@@ -401,13 +279,153 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
-#node-report {
+.node-status-dropdown {
+
+  .wm-checkbox {
+    line-height: inherit;
+    display: inline-block;
+    @include border-radius(3px);
+    margin-right: 5px;
+
+    i {
+      width: 17px;
+      height: 17px;
+      line-height: 17px;
+      display: block;
+      color: $black;
+      @include border-radius(inherit);
+      background-color: $white;
+      @include text-shadow(none);
+      @include box-shadow(inset 0 1px 2px rgba($black, 0.2));
+      overflow: hidden;
+      text-align: center;
+      text-indent: -5000px; // Hide check icon
+    }
+
+    &.checked i {
+      text-indent: 0px;
+    }
+  }
+
+  .icon-caret-down,
+  .icon-question-sign {
+    line-height: inherit;
+  }
+
+  .btn.wheelchair,
+  .dropdown-menu {
+    width: 100%;
+  }
+
+  .btn.wheelchair {
+    @include box-sizing(border-box);
+    text-align: left;
+
+    .icon-question-sign {
+      padding-left: 5px;
+    }
+  }
+
+  .dropdown {
+    .btn.wheelchair {
+      height: 40px;
+      line-height: 30px;
+    }
+  }
+
+  .dropdown-menu {
+    @include border-top-radius(0);
+
+    a {
+      @include box-sizing(border-box);
+      line-height: 25px;
+      padding: 5px 10px;
+      width: 100%;
+      overflow: hidden;
+
+      .icon-question-sign {
+        opacity: .5;
+        font-size: $baseFontSize;
+        // Needed for firefox floating bug
+        position: absolute;
+        right: 10px;
+      }
+    }
+
+    .wm-checkbox {
+      height: 25px;
+      width: 25px;
+      vertical-align: middle;
+      @include box-shadow(inset 0 1px 0 rgba($white, 0.5), 0 1px 1px rgba($black, 0.1));
+
+      i {
+        margin: 3px;
+        border: inherit;
+        @include box-shadow(0 1px 0 rgba($white, 0.5), inset 0 1px 2px rgba($black, 0.2));
+      }
+    }
+
+    .submit {
+      @include border-bottom-radius(3px);
+      margin-bottom: -5px;
+      margin-top: 5px;
+      padding: 5px;
+      text-align: right;
+      border-top: 1px solid darken($orange-gray, 5%);
+      background-color: lighten($orange-gray, 10%);
+
+      .btn {
+        @include buttonBackground(lighten($orange-gray, 5%), darken($orange-gray, 5%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
+        text-align: center;
+        font-weight: bold;
+        border-color: darken($orange-gray, 20%);
+      }
+    }
+  }
+
+  .popover {
+    width: 180px;
+    line-height: $baseLineHeight;
+  }
+
+  .popover-content {
+    color: $textColor;
+    font-weight: normal;
+    @include text-shadow(none);
+    font-size: $fontSizeSmall;
+  }
+
+  .tooltip {
+    position: relative;
+    width: 96%;
+    margin: 4px auto 0 auto;
+    padding: 0;
+    padding-top: 5px;
+    opacity: 1;
+    z-index: 1;
+
+    .tooltip-arrow {
+      border-bottom-color: $dark-blue;
+    }
+  }
+
+  .tooltip-inner {
+    max-width: none;
+    box-sizing: border-box;
+    background-color: darken($dark-blue, 5%);
+    @include background-image(linear-gradient(top, $dark-blue, darken($dark-blue, 5%)));
+    text-align: left;
+    padding: 8px 10px;
+  }
+}
+
+.node-report {
   .caret {
     margin-left: 7px;
   }
 }
 
-#node-report-accordion {
+.node-report-accordion {
   width: 320px;
   font-size: $fontSizeSmall;
   border: none;
@@ -466,7 +484,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
-#node-share {
+.node-share {
   .dropdown-menu {
     font-size: $fontSizeSmall;
     min-width: 120px;
@@ -494,7 +512,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
-#node-photos {
+.node-photos {
   border-bottom: 1px solid $boder_color;
   background-color: lighten($orange-gray, 10%);
 
@@ -526,7 +544,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
-#node-photo-dropzone {
+.node-photo-dropzone {
   margin: 0;
 
   li {
@@ -633,7 +651,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
-#node-note {
+.node-note {
   padding: 0;
 
   p {
@@ -644,7 +662,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
-#node-map {
+.node-map {
   padding-bottom: 15px;
   @include clearfix();
 
@@ -665,7 +683,8 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
-#node-streetview, #node-map {
+.node-streetview,
+.node-map {
   img {
     width: 100%;
     @include box-sizing(border-box);
