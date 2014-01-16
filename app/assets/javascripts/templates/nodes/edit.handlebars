@@ -1,6 +1,6 @@
-<div id="node-wrapper">
-    <article class="container" id="node">
-        <header class="headline-gradient" id="node-header">
+<div class="node-wrapper">
+    <article class="container node-container">
+        <header class="headline-gradient node-header">
             <div class="breadcrumbs">
                 <a {{action backToMap}} class="btn back">{{t 'nodes.show.link.back' }}</a>
                 <ol class="unstyled">
@@ -10,16 +10,16 @@
                 </ol>
                 <a {{action backToMap}} class="btn close"><i class="icon-remove"></i></a>
             </div>
-            <h1 itemprop="name">{{name}}</h1>
+            <h1 itemprop="name">{{headline}}</h1>
             {{#if address}}
                 <address>{{address}}</address>
             {{/if}}
         </header>
         <div class="row-fluid">
-            <section class="node-wrapper span8" id="node-content">
-                <section id="node-status">
+            <section class="span8 node-content">
+                <section class="node-status">
                     <div class="row-fluid">
-                        <div class="span6 wheelchair">
+                        <div class="span6">
                             <h2>{{t 'nodes.node_status.wheelchair_accessibility' }}</h2>
 
                             {{view Wheelmap.NodePopupStatusDropdownView }}
@@ -27,19 +27,16 @@
                     </div>
                 </section>
             </section>
-            <section class="span4 node-wrapper" id="node-aside">
-                <section id="node-map">
+            <section class="span4 node-aside">
+                <section class="node-map">
                     <h2>{{t 'nodes.edit.map' }}</h2>
 
                     <div class="map">
-                        <a href="/map#/?lat=52.534853&amp;lon=13.4970453&amp;node_id=1030067022&amp;zoom=17"
-                           title=""><img alt="359x239" class="img-polaroid" height="239"
-                                         src="http://api.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/13.4970453,52.534853,17/359x239.png64"
-                                         width="359">
+                        <a {{action backToMap}}><img class="img-polaroid" {{ bind-attr src="view.mapImage" alt="headline" }}>
                         </a>
 
-                        <div class="leaflet-marker-icon public_transfer marker-wheelchair-yes">
-                            <div class="marker-icon marker-icon-bank"></div>
+                        <div {{bind-attr class=':leaflet-marker-icon view.markerWheelchairClass' }}>
+                            <div {{bind-attr class=':marker-icon view.markerIconClass' }}></div>
                         </div>
                     </div>
                     <small class="pull-right bottom"><a href="http://www.openstreetmap.org/copyright">© OpenStreetMap
