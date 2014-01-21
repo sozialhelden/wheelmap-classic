@@ -51,6 +51,13 @@ ActiveAdmin.register Poi do
     column :housenumber
     column :postcode
     column :city
+    column :wheelchair
+    column :type do |poi|
+      poi.node_type.try(:identifier)
+    end
+    column :category do |poi|
+      poi.category.try(:identifier)
+    end
   end
 
   index do
