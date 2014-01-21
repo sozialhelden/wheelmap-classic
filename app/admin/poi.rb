@@ -21,10 +21,19 @@ ActiveAdmin.register Poi do
   filter :updated_at
 
   controller do
+
+    before_filter :set_per_page, :only => :index, :if => Proc.new { |controller| controller.request.format == 'text/csv' }
+
     def update
       region = resource
       region.update_attributes(params[:poi])
       super
+    end
+
+    private
+
+    def set_per_page
+      @per_page = params[:per_page].blank? ? max_csv_records : params[:per_page].to_i
     end
 
     def max_csv_records
@@ -33,7 +42,7 @@ ActiveAdmin.register Poi do
 
   end
 
-  csv do
+  csv :force_quotes => true do
     column :id
     column :name
     column :lat
