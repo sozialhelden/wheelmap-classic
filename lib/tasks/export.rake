@@ -100,14 +100,15 @@ namespace :export do
 
   desc 'Export nodes for yellow pages'
   task :for_yellow_pages => :environment do
-    puts "Usage: rake export:for_yellow_pages outfile=germany.csv"
-    outfile = ENV['outfile'] || 'germany.csv'
+    puts "Usage: rake export:for_yellow_pages region=Germany outfile=germany.csv"
+    region_name = ENV['region'] || 'Germany'
+    outfile = ENV['outfile'] || "#{region_name.downcase}.csv"
 
     csv_string = CSV.open(outfile, "wb", :force_quotes => true) do |csv|
       csv << ["OSM ID", "OSM TYPE", "Name", "Kategorie", "Rollstuhlstatus", "lat", "lon", "Strasse", "Hausnummer", "Stadt", "Postleitzahl"]
-      total_count = Region.find('Germany').pois_of_children.count
+      total_count = Region.find(region_name).pois_of_children.count
       progressbar = ProgressBar.create(:total => total_count, :format => '%a |%b>%i|')
-      Region.find('Germany').pois_of_children.including_category.find_each(start: Poi.lowest_id) do |poi|
+      Region.find(region_name).pois_of_children.including_category.find_each(start: Poi.lowest_id) do |poi|
         csv << [poi.id, poi.node_type.localized_name, poi.name, poi.category.localized_name, poi.wheelchair, poi.lat, poi.lon, poi.street, poi.housenumber, poi.city, poi.postcode]
         progressbar.increment
       end
