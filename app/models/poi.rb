@@ -259,6 +259,15 @@ class Poi < ActiveRecord::Base
     self.tags['addr:street'] || self.tags['addr:city']
   end
 
+  def addressdetails
+    {
+      street: self.tags['addr:street'],
+      housenumber: self.tags['addr:housenumber'],
+      postcode: self.tags['addr:postcode'],
+      city: self.tags['addr:city']
+    }
+  end
+
   def breadcrumbs
     [self.tags['addr:city'],
      I18n.t("poi.category.#{self.category.identifier}"),
