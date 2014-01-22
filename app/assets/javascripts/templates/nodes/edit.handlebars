@@ -26,10 +26,92 @@
                         </div>
                     </div>
                 </section>
+                <form method="post" class="node-form form-horizontal">
+
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label" for="name">Name</label>
+                            <div class="controls controls-row">
+                                {{input value=name placeholder="Name" class="span12" name="name" }}
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="category">Typ</label>
+                            <div class="controls controls-row">
+                                {{custom-select class="span6" name="category" }}
+                                {{custom-select class="span6" name="type" }}
+                                {{!<div class="custom-select span6">
+                                    <select name="typ">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                    <i class="icon-caret-down pull-right"></i>
+                                </div>}}
+
+                                {{!<div class="custom-select span6">
+                                    <select>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                    <i class="icon-caret-down"></i>
+                                </div>}}
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label" for="street">Adresse</label>
+                            <div class="controls controls-row">
+                                <input type="text" id="street" class="span10" placeholder="Straße">
+                                <input type="text" id="nbr" class="span2" placeholder="Hausnr.">
+                            </div>
+                            <div class="controls controls-row">
+                                <input type="text" id="plz" class="span3" placeholder="Posteitzahl">
+                                <input type="text" id="place" class="span9" placeholder="Ort">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label" for="www">Webseite</label>
+                            <div class="controls controls-row">
+                                <input type="text" id="www" class="span12" placeholder="Webseite">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" for="phone">Telefon</label>
+                            <div class="controls controls-row">
+                                <input type="text" id="phone" class="span12" placeholder="Telefon">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <div class="control-group">
+                            <label class="control-label" for="note">Hinweis</label>
+                            <div class="controls controls-row">
+                                <textarea id="note" rows="3" class="span12" placeholder="Hinweis / Zusatzinfo / Kommentar"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary pull-right">Speichern</button>
+                        <button {{action backToMap}} type="button" class="btn pull-left wheelmap-btn">Abbrechen</button>
+                    </div>
+                </form>
             </section>
             <section class="span4 node-aside">
                 <section class="node-map">
-                    <h2>{{t 'nodes.edit.map' }}</h2>
+                    <h2>{{t 'nodes.node_map.map' }}</h2>
 
                     <div class="map">
                         <a {{action backToMap}}><img class="img-polaroid" {{ bind-attr src="view.mapImage" alt="headline" }}>
