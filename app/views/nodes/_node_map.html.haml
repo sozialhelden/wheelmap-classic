@@ -1,4 +1,4 @@
-%section#node-map
+%section.node-map
   %h2=t('.map')
   .map
     =link_to root_path(anchor: "/?" + {lat: @node.lat, lon: @node.lon, node_id: @node.osm_id, zoom:   cookies[:last_zoom] || 17 }.to_param), title: '' do

@@ -1,6 +1,6 @@
 @import "bootstrap/mixins";
 
-$boder_color: darken($orange-gray, 5%);
+$border-color: darken($orange-gray, 5%);
 
 $node-photos-gutter: 2.25%;
 $node-photos-columns: 4;
@@ -25,7 +25,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     font-size: $baseFontSize;
     font-weight: normal;
     line-height: $baseLineHeight;
-    margin: 15px 0 10px 0;
+    margin: 0 0 10px 0;
   }
 
   .icon-question-sign {
@@ -36,8 +36,6 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
       opacity: 1 !important;
     }
   }
-
-  @include grid-fluid(100% / $gridColumns, 0);
 
   @media (max-width: 767px) {
     .node-wrapper {
@@ -50,10 +48,6 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     width: 180px;
     line-height: $baseLineHeight;
   }
-}
-
-.node-content > section {
-  padding: 15px;
 }
 
 .node-header {
@@ -140,13 +134,25 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
+.node-content {
+  // Overwrite gutter of bootstraps fluid grid
+  width: 70% !important;
+
+  & > section {
+    padding: 20px;
+  }
+}
+
 .node-aside {
-  padding: 15px;
-  background-color: lighten($orange-gray, 7%);
-  border-left: 1px solid $boder_color;
+  padding: 20px;
+  background-color: #E9E8E4;
+  border-left: 1px solid $border-color;
   // Hack for having a full height sidebar
   padding-bottom: 10000px;
   margin-bottom: -10000px;
+  // Overwrite gutter of bootstraps fluid grid
+  margin-left: 0 !important;
+  width: 30% !important;
 
   li {
     position: relative;
@@ -173,6 +179,18 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
       font-size: 1.3em;
       line-height: $baseFontSize + $fontSizeLarge / 2;
     }
+  }
+}
+
+@media (max-width: 767px) {
+  .node-content,
+  .node-aside {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  .node-aside {
+    border-top: 1px solid $border-color;
   }
 }
 
@@ -212,10 +230,10 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
 }
 
 .node-status {
-  padding-top: 0 !important;
+  /*padding-top: 0 !important;*/
   background-color: lighten($orange-gray, 1%);
   @include box-sizing(border-box);
-  border-bottom: 1px solid $boder_color;
+  border-bottom: 1px solid $border-color;
 
   .premium {
     position: relative;
@@ -513,7 +531,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
 }
 
 .node-photos {
-  border-bottom: 1px solid $boder_color;
+  border-bottom: 1px solid $border-color;
   background-color: lighten($orange-gray, 10%);
 
   img {
@@ -683,6 +701,10 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
+.node-streetview {
+  @include clearfix();
+}
+
 .node-streetview,
 .node-map {
   img {
@@ -691,12 +713,131 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
+.node-form {
+  background-color: #F1F0EC;
+  padding: 20px;
+  margin: 0;
+
+  .control-group {
+    margin-bottom: 12px;
+  }
+
+  .control-label {
+    text-align: left;
+    width: 120px;
+
+    &:after {
+      content: ':';
+    }
+  }
+
+  .controls {
+    margin-left: 120px;
+
+    & + .controls {
+      margin-top: 12px;
+    }
+  }
+
+  fieldset {
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid #C4C2B7;
+  }
+
+  .control-label {
+    line-height: $baseLineHeight + 4px;
+  }
+
+  textarea,
+  input[type="text"] {
+    border-color: #A39D97;
+    @include box-shadow(0px 1px 0px 0px rgba(white, 0.4), inset 0px 1px 1px 0px rgba(black, 0.2));
+    padding: 4px 8px;
+
+    &:focus {
+      border-color: #3A87AD;
+      @include box-shadow(0px 0px 3px 0px rgba(57,135,173,0.60));
+    }
+  }
+
+  input[type="text"] {
+    height: 34px;
+    line-height: $baseLineHeight + 4px;
+  }
+
+  .custom-select {
+    border: 1px solid #A39D97;
+    @include box-shadow(0px 1px 0px 0px rgba(white, 0.4));
+    @include border-radius(2px);
+    @include appearance(none);
+    background: #D9D2CA;
+    @include background-image(linear-gradient(top, rgba(255,255,255,0.16) 0%, rgba(0,0,0,0.10) 100%));
+    @include box-shadow(0px 1px 0px 0px rgba(white, 0.4));
+    @include text-shadow(0px 1px 0px white);
+    position: relative;
+
+    select {
+      @include appearance(none);
+      padding: 4px 8px;
+      height: 34px;
+      line-height: $baseLineHeight + 4px;
+      width: 100%;
+      background: transparent;
+      border: 0;
+      padding-right: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    i {
+      position: absolute;
+      z-index: 1;
+      right: 10px;
+      top: 7px;
+      line-height: $baseLineHeight;
+    }
+  }
+
+  .form-actions {
+    padding: 0;
+    border: 0;
+    background: none;
+
+    button {
+      width: 140px;
+
+      &[type="submit"] {
+        @include headline-gradient();
+        @include box-shadow(inset 0px 1px 0px 0px rgba(white, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05));
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .controls-row [class*="span"] + [class*="span"] {
+      margin-left: 0;
+    }
+
+    .controls {
+      margin-left: 0;
+
+      [class*="span"] + [class*="span"] {
+        margin-top: 12px;
+      }
+    }
+
+    .form-actions button {
+      width: auto;
+    }
+  }
+}
+
 .fake-map {
-  position: absolute;
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 100%;
   min-height: 100%;
-  top: $headerHeight;
-  bottom: $footerHeight;
-  z-index: 1;
+  height: auto;
 }
