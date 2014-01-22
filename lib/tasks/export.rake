@@ -105,11 +105,11 @@ namespace :export do
     outfile = ENV['outfile'] || "#{region_name.downcase}.csv"
 
     csv_string = CSV.open(outfile, "wb", :force_quotes => true) do |csv|
-      csv << ["OSM ID", "OSM TYPE", "Name", "Kategorie", "Rollstuhlstatus", "lat", "lon", "Strasse", "Hausnummer", "Stadt", "Postleitzahl"]
+      csv << ["OSM ID", "OSM TYPE", "Name", "Kategorie", "Rollstuhlstatus", "lat", "lon", "Strasse", "Hausnummer", "Stadt", "Postleitzahl", "Telefon", "Webseite"]
       total_count = Region.find(region_name).pois_of_children.count
       progressbar = ProgressBar.create(:total => total_count, :format => '%a |%b>%i|')
       Region.find(region_name).pois_of_children.including_category.find_each(start: Poi.lowest_id) do |poi|
-        csv << [poi.id, poi.node_type.localized_name, poi.name, poi.category.localized_name, poi.wheelchair, poi.lat, poi.lon, poi.street, poi.housenumber, poi.city, poi.postcode]
+        csv << [poi.id, poi.node_type.localized_name, poi.name, poi.category.localized_name, poi.wheelchair, poi.lat, poi.lon, poi.street, poi.housenumber, poi.city, poi.postcode, poi.phone, poi.website]
         progressbar.increment
       end
     end
