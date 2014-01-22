@@ -40,27 +40,6 @@
                             <div class="controls controls-row">
                                 {{custom-select class="span6" name="category" }}
                                 {{custom-select class="span6" name="type" }}
-                                {{!<div class="custom-select span6">
-                                    <select name="typ">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                    <i class="icon-caret-down pull-right"></i>
-                                </div>}}
-
-                                {{!<div class="custom-select span6">
-                                    <select>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                    <i class="icon-caret-down"></i>
-                                </div>}}
                             </div>
                         </div>
                     </fieldset>
@@ -69,12 +48,12 @@
                         <div class="control-group">
                             <label class="control-label" for="street">Adresse</label>
                             <div class="controls controls-row">
-                                <input type="text" id="street" class="span10" placeholder="Straße">
-                                <input type="text" id="nbr" class="span2" placeholder="Hausnr.">
+                                {{input value=addr.street placeholder="Straße" class="span10" name="street" }}
+                                {{input value=addr.housenumber placeholder="Hausnr." class="span2" name="housenumber" }}
                             </div>
                             <div class="controls controls-row">
-                                <input type="text" id="plz" class="span3" placeholder="Posteitzahl">
-                                <input type="text" id="place" class="span9" placeholder="Ort">
+                                {{input value=addr.postcode placeholder="Posteitzahl" class="span3" name="postcode" }}
+                                {{input value=addr.city placeholder="Ort" class="span9" name="city" }}
                             </div>
                         </div>
                     </fieldset>
