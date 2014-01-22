@@ -1,4 +1,4 @@
-%section#node-streetview
+%section.node-streetview
   %h2=t('.streetview')
   = image_tag("http://maps.googleapis.com/maps/api/streetview?size=640x426&location=#{node_streetview.lat},#{node_streetview.lon}&sensor=false", alt: "Streetview: #{node_streetview.headline}")
   %small.pull-right
