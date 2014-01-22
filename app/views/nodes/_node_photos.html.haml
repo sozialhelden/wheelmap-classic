@@ -1,6 +1,6 @@
-%section#node-photos
+%section.node-photos
   %h2=t('.photos_of_this_place')
-  =semantic_form_for([@node, Photo.new], url: node_photos_url(@node), html: { id: 'node-photo-dropzone', multipart: true }) do |form|
+  =semantic_form_for([@node, Photo.new], url: node_photos_url(@node), html: { class: 'node-photo-dropzone', id: 'node-photo-dropzone', multipart: true }) do |form|
     %ul
       = list_of(node_photos.photos.reject{|photo| photo.new_record?}) do |photo|
         = link_to image_path(photo.image.url(:gallery).to_s), :'data-toggle' => 'magnific-popup', :'data-gallery' => 'node' do
