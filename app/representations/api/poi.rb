@@ -54,7 +54,7 @@ module Api::Poi
       t.add :name
       t.add :lat
       t.add :lon
-      t.add :address
+      t.add :addressdetails, :as => :addr
       t.add :wheelchair
       t.add lambda{|poi| poi.region.try(:name)  }, :as => :region
       t.add lambda{|poi| poi.category.try(:identifier)  }, :as => :category

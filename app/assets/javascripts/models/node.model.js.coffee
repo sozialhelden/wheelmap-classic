@@ -8,7 +8,7 @@ Wheelmap.Node = DS.Model.extend
   sponsor: attr()
   wheelchair: attr()
   category: attr()
-  address: attr()
+  addr: attr()
   region: attr()
   type: attr()
   oldWheelchair: null
@@ -50,9 +50,22 @@ Wheelmap.Node = DS.Model.extend
     '/nodes/' + @get('id') + '/edit'
   ).property('id')
 
-  updatePath:(()->
+  updatePath: (()->
     '/nodes/' + @get('id') + '/update_wheelchair.js'
   ).property('id')
+
+  address: (()->
+    address = ''
+    addr = @get('addr')
+
+    if addr.street? and addr.housenumber?
+      address += I18n.t('node.address.street', street: addr.street, housenumber: addr.housenumber)
+
+    if addr.city? and addr.postcode?
+      address += ' ' + I18n.t('node.address.city', postcode: addr.postcode, city: addr.city)
+
+    address
+  ).property('addr.street', 'addr.housenumber', 'addr.postcode', 'addr.city')
 
 Wheelmap.NodeAdapter = DS.RESTAdapter.extend()
 
