@@ -1,8 +1,8 @@
-%section#node-status
+%section.node-status
   .row-fluid
-    .dropdown.span6.wheelchair
+    .span6.node-status-dropdown
       %h2=t('.wheelchair_accessibility')
-      %div
+      %div.dropdown
         %a{:'data-toggle' => 'dropdown', class: "dropdown-toggle btn wheelchair #{node_status.wheelchair}", :'data-status' => node_status.wheelchair}
           %span.pull-left.text= t("home.index.popup.form.#{node_status.wheelchair}")
           %i.pull-left.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.#{node_status.wheelchair}"), 'data-content' => t("wheelmap.what_is.#{node_status.accesibility}"), 'data-trigger' => 'hover'}

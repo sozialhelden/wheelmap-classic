@@ -1,17 +1,17 @@
-#node-wrapper{style: "background-image: url(http://api.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/#{@node.lon},#{@node.lat},17/640x640.png64)"}
+.node-wrapper{style: "background-image: url(http://api.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/#{@node.lon},#{@node.lat},17/640x640.png64)"}
   = render partial: 'node_flash'
 
-  %article#node.container{ itemscope:'', itemtype: 'http://schema.org/Place', :'data-category' => @node.category.try(:identifier) }
+  %article.container.node-container{ itemscope:'', itemtype: 'http://schema.org/Place', :'data-category' => @node.category.try(:identifier) }
     = render partial: 'node_header', object: @node
 
     .row-fluid
-      %section#node-content.node-wrapper.span8
+      %section.node-content.span8
         = render partial: 'node_status', object: @node
         = render partial: 'node_photos', object: @node
         = render partial: 'node_note', object: @node
         = render partial: 'node_streetview', object: @node
 
-      %section#node-aside.span4.node-wrapper
+      %section.node-aside.span4
         = render partial: 'node_edit', object: @node
         = render partial: 'node_map', object: @node
         = render partial: 'node_data', object: @node

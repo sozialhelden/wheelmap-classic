@@ -9,6 +9,7 @@ body {
   font-family: $helvetica;
   margin: 0;
   padding: 0;
+  color: #5C554E;
 }
 
 
@@ -122,4 +123,8 @@ body {
       }
     }
   }
+}
+
+.wheelmap-btn {
+  @include buttonBackground($orange-gray, darken($orange-gray, 15%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
 }
