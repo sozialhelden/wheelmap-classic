@@ -10,20 +10,7 @@ class NodeType < ActiveRecord::Base
   validates :category_id, :presence => true
 
   acts_as_api
-
-  api_accessible :simple do |template|
-    template.add :id
-    template.add :identifier
-    template.add :category_id
-    template.add :category, :template => :id
-    template.add :localized_name
-    template.add :icon
-  end
-
-  api_accessible :id do |template|
-    template.add :id
-    template.add :identifier
-  end
+  include Api::NodeType
 
   def localized_name(count=1)
     I18n.t("poi.name.#{category.identifier}.#{identifier}", :count => count)

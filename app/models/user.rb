@@ -34,18 +34,7 @@ class User < ActiveRecord::Base
   has_many :photos
 
   acts_as_api
-
-  api_accessible :simple do |t|
-    t.add :id
-    t.add :email
-  end
-
-  api_accessible :api_simple do |t|
-    t.add :id
-    t.add :authentication_token, :as => :api_key
-    t.add :terms?, :as => :terms_accepted
-    t.add :privacy_policy?, :as => :privacy_accepted
-  end
+  include Api::User
 
   def send_email_confirmation
     return if self.email.blank?
