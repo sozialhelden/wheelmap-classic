@@ -69,6 +69,19 @@ describe Api::NodesController do
         node['wheelchair'].should eql 'yes'
       end
 
+      it "should not contain more attributes than specified in API docs" do
+        get(:index, :api_key => @user.authentication_token)
+        response.should be_success
+        json = JSON.parse(response.body)
+        attribute_whitelist = %w{id lat lon node_type category name wheelchair wheelchair_description city street housenumber postcode website phone}
+        json['nodes'].each do |node|
+          left_over = node.reject do |key,value|
+            attribute_whitelist.include? key
+          end
+          left_over.should be_empty
+        end
+      end
+
     end
 
     describe 'format xml' do
