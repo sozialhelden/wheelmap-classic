@@ -1,17 +1,5 @@
 namespace :streetspotr do
 
-  desc 'Upload provider entries to openstreetmap unless present'
-  task :upload => :environment do
-    provider = Provider.find_or_create_by_name('Streetspotr')
-    updating_user = User.wheelmap_visitor
-    provider.provided_pois.each do |pp|
-      node = pp.poi
-      if node.try(:wheelchair) == 'unknown'
-        UpdateTagsJob.enqueue(node.osm_id.abs, node.osm_type, { 'wheelchair' => pp.wheelchair }, updating_user, 'tag_website')
-      end
-    end
-  end
-
   desc 'Check data from StreetSpotr'
   task :check do
     csv_file = ENV['file']
