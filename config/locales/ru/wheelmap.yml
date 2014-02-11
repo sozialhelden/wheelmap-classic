@@ -1,7 +1,7 @@
 ru:
   application:
     require_no_user:
-      notice: "Вы уже зарегистрированны"
+      notice: "Вы уже зарегистрированы"
     require_user:
       notice: "Вы должны зарегистрироваться чтобы увидеть эту страницу"
   breadcrumbs:
@@ -11,24 +11,24 @@ ru:
     root: wheelmap
   common:
     close: закрыть
-    skip: пропускать
+    skip: пропустить
   errors:
     dynamic_format: "%{message} "
     format: "%{attribute} %{message}"
     messages:
       accepted: "должен быть принят"
       already_confirmed: "уже подтвержден"
-      blank: "должен быть заполнен"
+      blank: "необходимо заполнить"
       confirmation: "не соответствует подтверждению"
-      empty: "должен быть заполнен"
+      empty: "необходимо заполнить"
       equal_to: "должен быть точно %{count} "
       even: "должен быть четным"
-      exclusion: "зарезервированно"
+      exclusion: "зарезервировано"
       expired: "истек срок, пожалуйста, запросите новый"
       greater_than: "должен быть больше чем %{count}"
       greater_than_or_equal_to: "должен быть больше или равен чем %{count}"
       inclusion: "недействительное значение"
-      invalid: "недействительное значение"
+      invalid: "недействительно"
       less_than: "должен быть меньше чем %{count} "
       less_than_or_equal_to: "должен быть меньше или равен чем %{count} "
       not_a_number: "Не является числом"
@@ -36,8 +36,9 @@ ru:
       not_found: "Не найдено"
       not_locked: "Не была заблокирована"
       not_saved:
-        one: "Ошибка сохранения данных %{resource}:"
-        other: "%{count} ошибка, запрещено для сохранения %{resource}:"
+        one: "%{count} ошибка мешает сохранению %{resource}:"
+        few: "%{count} ошибки мешают сохранению %{resource}:"
+        other: "%{count} ошибки мешают сохранению %{resource}:"
       odd: "Должен иметь нечетное значение"
       taken: "уже был использован"
       too_long: "слишком длинное значение (должно быть не больше чем %{count} знаков)"
@@ -46,8 +47,9 @@ ru:
     template:
       body: "Были проблемы со следующими полями:"
       header:
-        one: "1 ошибка - действие запрещено %{model} , подождите пока сохранится"
-        other: "%{count} Ошибка, это запрещено%{model} сохраняется"
+        one: "1 ошибка мешает сохранению этой %{model}"
+        few: "%{count} ошибки мешают сохранению этой %{model}"
+        other: "%{count} ошибки мешает сохранению этой %{model}"
   flash:
     actions:
       create:
@@ -57,15 +59,18 @@ ru:
         notice: "%{resource_name} был успешно удален"
       update:
         notice: "%{resource_name} был успешно обновлен"
+    photos:
+      destroy:
+        notice: "Изображение успешно удалено"
   form:
-    show_fully_accessible_places: "доступно для людей с инвалидностью"
-    show_limited_accessible_places: "частичный доступ для людей с инвалидностью"
+    show_fully_accessible_places: "доступно на кресле-коляске"
+    show_limited_accessible_places: "частично доступно на кресле-коляске"
     show_places_without_status: "неизвестный статус"
-    show_unaccessible_places: "не доступно для людей на инвалидных колясках"
+    show_unaccessible_places: "не доступно на кресле-коляске"
   formtastic:
     hints:
       email: "Мы относимся к Вашему адресу конфиденциально, без отправления спама. Обещаем!"
-      lat: "Переместите маркер на карту "
+      lat: "Нажмите на карту и поместите маркер в точную позицию."
       osm_username: "Еще не зарегистрированны? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\"> Создать Openstreetmap аккаунт</a> "
       password: "(оставьте поле пустым если Вы не хотите изменять значение)"
       phone: "например:  +38 044 594 99 99      "
@@ -87,12 +92,14 @@ ru:
       password_confirmation: "Повторите пароль"
       phone: "Телефон:"
       postcode: "Индекс:"
+      privacy_policy: "Я принимаю параграфы 1 и 2 соглашения о конфиденциальности данных."
       reset: Сброс
       save: Сохранить
       street: "Улица:"
+      terms: "Я принимаю правила пользования."
       type: "Тип:"
       website: "Интернет страница:"
-      wheelchair: "Доступно ли для людей с инвалидностью?"
+      wheelchair: "Доступно ли на кресле-коляске?"
       wheelchair_description: "Прокомментируйте доступность:"
     titles:
       basic: "Основные данные"
@@ -101,9 +108,9 @@ ru:
     form_validation_error: "Обратите, пожалуйста, внимание на список ошибок внизу"
   header:
     meta:
-      description: "Найдите места, доступные для людей с инвалидностью - wheelmap.org "
+      description: "Найдите места, доступные на кресле-коляске - wheelmap.org "
       homepage: "Домашняя страница"
-      keywords: "найти мето с доступом для людей на инвалидных колясках"
+      keywords: "поиск мест, доступных на кресле-коляске"
       search: Поиск
     navigation:
       blog: Блог
@@ -118,16 +125,15 @@ ru:
       press: Пресса
       profile: Профиль
       suggestions: Предложения
-      what_is_barrier_free: "Что значит \"доступ для человека на инвалидной коляске\"?"
+      what_is_barrier_free: "Что значит \"доступно на кресле-коляске\"?"
       what_is_wheelmap: "Что такое wheelmap?"
     searchbar:
       add_place: "Добавить другое место"
       find: Найти
-      label: ~
       placeholder: "т.е. бульваре Сансет в Лос-Анджелесе или Бранденбургских ворот в Берлине"
       title_add_place: "Добавить новое место в этой позиции сейчас!"
     tagline: "Логотип Wheelmap"
-    title: "Wheelmap - поиск доступных мест для людей с инвалидностью"
+    title: "Wheelmap - поиск мест, доступных на кресле-коляске "
   helpers:
     select:
       prompt: "Пожалуйста, выберите"
@@ -141,7 +147,7 @@ ru:
         category: "Выберите категорию"
         deselect_all: "Отменить все"
         select_all: "Выбрать все"
-        wheelchair: "Доступно ли для людей на инвалидной коляске?"
+        wheelchair: "Доступно ли для колясочников?"
       ie:
         action:
           ignore: Отклонено
@@ -154,23 +160,23 @@ ru:
           create: "Добавить новое место"
       popup:
         form:
-          limited: "частичный доступ для людей на инвалидных колясках"
-          'no': "Нет доступа для людей на инвалидных колясках"
+          limited: "частично доступно на кресле-коляске"
+          'no': "не доступно на кресле-коляске"
           save: обновление
           unknown: "Статус неизвесный"
-          'yes': "Доступно для людей на инвалидной коляске"
-        help: "Доступ для людей на инвалидных колясках? (Справка)"
+          'yes': "доступно на кресле-коляске"
+        help: "Доступно ли на кресле-коляске? (Справка)"
         more: "Подробней ..."
   how?: Как?
   landing_pages:
     index:
       wheelchair:
         limit:
-          headline: "Ограниченния для людей на инвалидных колясках%{type} в %{city} (%{count})"
+          headline: "Все места с ограниченным доступом для колясочников%{type} в %{city} (%{count})"
         'no':
-          headline: "Места, адаптированные для людей на инвалидных колясках, отсутствуют %{type} в %{city} (%{count})"
+          headline: "Все недоступные для колясочников %{type} в %{city} (%{count})"
         unknown:
-          headline: "Все %{type} в %{city} с  неопределенным  статусом для для людей на инвалидных  колясках(%{count})"
+          headline: "Все %{type} в %{city} с  неопределенным  статусом для для колясочников(%{count})"
         'yes':
           headline: "Все места адаптированы для людей на инвалидных коляках %{type} в %{city} (%{count})"
   layouts:
@@ -220,6 +226,7 @@ ru:
         back: Назад
         large_map: Увеличить
         listing: "Все места типа %{type}' в %{city}"
+        upload: "Загрузить изображение"
       more_data_from: "Существует больше данных для этого месте, проверяются:"
       show-in-osm: OpenStreetMap
     update:
@@ -233,17 +240,11 @@ ru:
       format:
         delimiter: ","
         format: "%n %u"
-        precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: доллар
     format:
       delimiter: ","
-      precision: 3
       separator: "."
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u "
@@ -253,28 +254,17 @@ ru:
           quadrillion: Квадрильон
           thousand: тысяча
           trillion: Трильйон
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 3
-        significant: Верно
-        strip_insignificant_zeros: Верно
       storage_units:
         format: "%n %u"
         units:
           byte:
-            one: байт
-            other: байта
+            one: Байт
+            few: Байта
+            other: Б
           gb: ГБ
           kb: КБ
           mb: МБ
           tb: ТВ
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -283,8 +273,9 @@ ru:
       notice: "Ваш wheelmap аккаунт подключены к аккаунту OpenStreetMap %{user}."
   or: или
   place:
-    one: "%{count}  место"
-    other: "%{count} место"
+    one: "%{count} место"
+    few: "%{count} места"
+    other: "%{count} мест"
   profile:
     edit:
       application:
@@ -312,7 +303,6 @@ ru:
     array:
       last_word_connector: " и "
       sentence_connector: и
-      skip_last_comma: правда
       two_words_connector: " и "
       words_connector: ", "
     select:
@@ -327,7 +317,7 @@ ru:
   user_sessions:
     create:
       activation:
-        notice: "Ваш аккаунт уже активный!"
+        notice: "Ваш аккаунт уже активирован!"
       error:
         notice: "Email и пароль не совпадают."
       notice: "Вы вошли!"
@@ -345,6 +335,9 @@ ru:
         headline: "Добро пожаловать к wheelmap"
         set_password_for_mobile: "У вас есть смартфон? Пожалуйста, задайте пароль для того, чтобы использовать Wheelmap на ходу в повседневной жизни с помощью iPhone или Android."
         text: "Как мы можем связаться с вами? Вы можете изменить эту информацию позже в своем профиле."
+    edit:
+      headline:
+        your_images: "Загруженные Вами изображения"
   wheelchairstatus:
     limited: "Частичный доступ для людей на инвалидных колясках"
     'no': "Без адаптации для людей на инвалидных колясках"
@@ -363,10 +356,10 @@ ru:
       alt: "Логотип Wheelmap - найти места, адаптированные для людей на инвалидных колясках"
       title: "Wheelmap - найти места адаптированные для людей на инвалидных колясках"
     what_is:
-      fully_accessible: "<em> Доступный: </ EM> вход без ступенек, все помещения и комнаты без ступенек, адаптированный туалет в общественных местах"
+      fully_accessible: "Доступный: вход без ступенек, все помещения и комнаты без ступенек, адаптированный туалет в общественных местах"
       limited_accessible: "<em> Ограниченный: </ EM> на входе 1 ступенька (максимальная высота 7 см), большинство комнат и помещений без ступенек, туалет не адаптирован"
       not_accessible: "<em> Не доступный: </ EM> на входе 1 высокая или несколько ступенек, помещения и комнаты не адаптированы"
-      unknown_accessible: "<em> Не определен: </ EM> Помоги обозначить уровень доступности места!"
+      unknown_accessible: "Помоги обозначить уровень доступности места!"
   will_paginate:
     next_label: "Следующий &#8594;"
     page_entries_info:
