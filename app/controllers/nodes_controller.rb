@@ -52,7 +52,7 @@ class NodesController < ApplicationController
 
     respond_to do |wants|
       wants.html
-      wants.json{ render :status => 200, :json => { :node => @node.as_api_response(:map) } }
+      wants.json{ render :status => 200, :json => { :node => @node.as_api_response(:ember) } }
     end
   end
 

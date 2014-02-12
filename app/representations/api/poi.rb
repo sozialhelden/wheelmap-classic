@@ -49,18 +49,20 @@ module Api::Poi
       t.add :category_for_node, :as => :category
     end
 
-    api_accessible :map do |t|
+    api_accessible :ember do |t|
       t.add :id
       t.add :name
       t.add :lat
       t.add :lon
       t.add :addressdetails, :as => :addr
       t.add :wheelchair
+      t.add :wheelchair_description, :as => :note
       t.add lambda{|poi| poi.region.try(:name)  }, :as => :region
-      t.add lambda{|poi| poi.category.try(:identifier)  }, :as => :category
-      t.add lambda{|poi| poi.node_type.try(:identifier)  }, :as => :type
+      t.add lambda{|poi| poi.node_type.try(:id)  }, :as => :type
       t.add :icon
       t.add :sponsor, if: :sponsored?
+      t.add :website
+      t.add :phone
     end
   end
 end
