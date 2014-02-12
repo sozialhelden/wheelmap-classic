@@ -38,8 +38,7 @@
                         <div class="control-group">
                             <label class="control-label" for="category">Typ</label>
                             <div class="controls controls-row">
-                                {{custom-select class="span6" name="category" }}
-                                {{custom-select class="span6" name="type" }}
+                                {{view Ember.Select class="span6" viewName="select" contentBinding="categories" optionLabelPath="model.name" }}
                             </div>
                         </div>
                     </fieldset>
@@ -60,15 +59,15 @@
 
                     <fieldset>
                         <div class="control-group">
-                            <label class="control-label" for="www">Webseite</label>
+                            <label class="control-label" for="website">Webseite</label>
                             <div class="controls controls-row">
-                                <input type="text" id="www" class="span12" placeholder="Webseite">
+                                {{input value=website placeholder="Webseite" class="span12" name="website" }}
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="phone">Telefon</label>
                             <div class="controls controls-row">
-                                <input type="text" id="phone" class="span12" placeholder="Telefon">
+                                {{input value=phone placeholder="phone" class="span12" name="phone" }}
                             </div>
                         </div>
                     </fieldset>
@@ -77,7 +76,7 @@
                         <div class="control-group">
                             <label class="control-label" for="note">Hinweis</label>
                             <div class="controls controls-row">
-                                <textarea id="note" rows="3" class="span12" placeholder="Hinweis / Zusatzinfo / Kommentar"></textarea>
+                                {{textarea value=note rows="3" class="span12" placeholder="Hinweis / Zusatzinfo / Kommentar" name="note"}}
                             </div>
                         </div>
                     </fieldset>

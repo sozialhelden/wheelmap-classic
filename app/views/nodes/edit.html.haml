@@ -8,13 +8,6 @@
   %title=t('.header.title', :node => @node.name)
   %meta{:name => 'description', :content => t('nodes.show.header.meta.description')}
 
-- content_for :javascript do
-  = javascript_include_tag 'app'
-  = javascript_include_tag "i18n/#{I18n.locale}"
-
-  :javascript
-    Wheelmap.Category.FIXTURES = #{render_json_list};
-
 -#
   #map_wrapper
     #minimap
