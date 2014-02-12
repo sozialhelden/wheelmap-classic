@@ -1,6 +1,8 @@
 Wheelmap.NodesController = Ember.ObjectController.extend()
 
 Wheelmap.NodesEditController = Wheelmap.NodesController.extend
+  categories: []
+
   actions:
     # Go back to map (use history, when not empty, or index/map route)
     backToMap: ()->

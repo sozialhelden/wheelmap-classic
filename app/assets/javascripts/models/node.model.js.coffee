@@ -7,10 +7,12 @@ Wheelmap.Node = DS.Model.extend
   icon: attr()
   sponsor: attr()
   wheelchair: attr()
-  category: attr()
   addr: attr()
   region: attr()
-  type: attr()
+  type: DS.belongsTo('node-type')
+  note: attr()
+  website: attr()
+  phone: attr()
   oldWheelchair: null
 
   wheelchairWillChange: (()->
@@ -29,18 +31,18 @@ Wheelmap.Node = DS.Model.extend
   ).property('wheelchair')
 
   headline: (()->
-    @get('name') || I18n.t("poi.name." + @get('category') + "." + @get('type'))
-  ).property('name', 'type', 'category')
+    @get('name') || @get('type.name')
+  ).property('name', 'type.name')
 
   breadcrumbs: (()->
-    category = @get('category')
+    category = @get('type.category.identifier')
 
     [
       @get('region'),
-      I18n.t("poi.category." + category),
-      I18n.t("poi.name." + category + "." + @get('type'))
+      @get('type.category.name'),
+      @get('type.name')
     ]
-  ).property('type','category')
+  ).property('region', 'type.name','type.category.name')
 
   showPath: (()->
     '/nodes/' + @get('id')
@@ -55,16 +57,16 @@ Wheelmap.Node = DS.Model.extend
   ).property('id')
 
   address: (()->
-    address = ''
+    address = []
     addr = @get('addr')
 
     if addr.street? and addr.housenumber?
-      address += I18n.t('node.address.street', street: addr.street, housenumber: addr.housenumber)
+      address.push I18n.t('node.address.street', addr).trim()
 
     if addr.city? and addr.postcode?
-      address += ' ' + I18n.t('node.address.city', postcode: addr.postcode, city: addr.city)
+      address.push I18n.t('node.address.city', addr).trim()
 
-    address
+    address.join(', ')
   ).property('addr.street', 'addr.housenumber', 'addr.postcode', 'addr.city')
 
 Wheelmap.NodeAdapter = DS.RESTAdapter.extend()
