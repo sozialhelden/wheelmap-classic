@@ -15,5 +15,10 @@ module Api::NodeType
       template.add :id
       template.add :identifier
     end
+    
+    api_accessible :ember do |template|
+      template.add :id
+      template.add :identifier
+    end
   end
 end
