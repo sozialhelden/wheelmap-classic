@@ -59,7 +59,7 @@ module Api::Poi
       t.add :wheelchair_description, :as => :note
       t.add lambda{|poi| poi.region.try(:name)  }, :as => :region
       t.add lambda{|poi| poi.node_type.try(:id)  }, :as => :type
-      t.add :icon
+      t.add lambda{|poi| poi.category.try(:id)  }, :as => :category
       t.add :sponsor, if: :sponsored?
       t.add :website
       t.add :phone

@@ -1,7 +1,8 @@
 attr = DS.attr
 
 Wheelmap.Category = DS.Model.extend
-  nodeTypes: DS.hasMany('nodeType')
+  node_types: DS.hasMany 'node_type',
+    async: true
   identifier: attr()
 
   name: (->
