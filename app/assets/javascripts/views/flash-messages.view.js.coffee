@@ -1,14 +1,11 @@
 Wheelmap.FlashMessageView = Ember.View.extend
-  template: Ember.Handlebars.compile('{{ message }}')
-  classNameBindings: [':flash', 'type', ':fade', 'fadeIn:in']
-  typeBinding: 'content.type'
-  contextBinding: 'content'
+  template: Ember.Handlebars.compile('{{ view.content.message }}')
+  classNameBindings: [':flash', 'content.type', ':fade', 'fadeIn:in']
   fadeIn: false
 
   didInsertElement: ()->
-    self = @
-    setTimeout (()-> self.toggleProperty('fadeIn')), 0
-    setTimeout (()-> self.toggleProperty('fadeIn')), @get('delay')
+    Ember.run.next @, 'toggleProperty', 'fadeIn'
+    Ember.run.later @, 'toggleProperty', 'fadeIn', @get('delay')
 
   transitionEnd: (event)->
     # @TODO Use event informations instead?
