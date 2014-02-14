@@ -19,6 +19,8 @@ module Api::NodeType
     api_accessible :ember do |template|
       template.add :id
       template.add :identifier
+      template.add :category_id, as: :category
+      template.add lambda{|node_type| node_type.try(:icon).to_s.gsub(/\.png$/,'')  }, as: :icon
     end
   end
 end
