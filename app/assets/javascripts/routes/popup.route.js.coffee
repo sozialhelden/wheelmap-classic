@@ -15,3 +15,9 @@ Wheelmap.PopupRoute = Wheelmap.MapRoute.extend
     @render 'node-popup',
       controller: controller
       outlet: 'map-popup'
+
+  actions:
+    willTransition: (transition)->
+      @controllerFor('popup').resetStatus()
+
+      return true
