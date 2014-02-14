@@ -4,7 +4,6 @@ Wheelmap.Node = DS.Model.extend
   lat: attr()
   lon: attr()
   name: attr()
-  icon: attr()
   sponsor: attr()
   wheelchair: attr()
   addr: attr()
@@ -68,6 +67,8 @@ Wheelmap.Node = DS.Model.extend
 
     address.join(', ')
   ).property('addr.street', 'addr.housenumber', 'addr.postcode', 'addr.city')
+
+  icon: Ember.computed.alias('type.icon')
 
 Wheelmap.NodeAdapter = DS.RESTAdapter.extend()
 
