@@ -52,7 +52,13 @@ class NodesController < ApplicationController
 
     respond_to do |wants|
       wants.html
-      wants.json{ render :status => 200, :json => { :node => @node.as_api_response(:ember) } }
+      wants.json{
+        render :status => 200, :json => {
+          node: @node.as_api_response(:ember),
+          #node_type: @node.node_type.as_api_response(:ember),
+          #category: @node.category.as_api_response(:ember)
+        }
+      }
     end
   end
 
@@ -80,6 +86,7 @@ class NodesController < ApplicationController
 
       respond_to do |wants|
         wants.js   { render :text => 'OK' }
+        wants.json { redirect_to node_path(@node) }
 
         wants.html {
           flash[:track]  = "'Data', 'Update', '#{@node.wheelchair}'"
@@ -90,6 +97,7 @@ class NodesController < ApplicationController
     else
       respond_to do |wants|
         wants.js   { render :text => 'FAIL', :status => 406 }
+        wants.json { render json: { error: @node.errors }.to_json, status: 406 }
 
         wants.html {
           flash[:alert] = I18n.t('nodes.update.flash.not_successfull')
