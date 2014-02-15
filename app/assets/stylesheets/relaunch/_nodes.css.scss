@@ -7,7 +7,7 @@ $node-photos-columns: 4;
 $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-photos-columns;
 
 .node-wrapper {
-  padding: $headerHeight + 20px 0 $footerHeight + 20px 0;
+  padding: 20px 0;
   position: relative;
   z-index: 2;
 
