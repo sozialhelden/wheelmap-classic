@@ -27,7 +27,6 @@ Wheelmap.NodeSharePopupMixin = Ember.Mixin.create
     window.open(@get('href'), @toString(), 'width=' + @get('popupWidth') + ',height=' + @get('popupHeight') + ',left=' + left + ',top=' + top)
 
 Wheelmap.EmailShareComponent = Wheelmap.NodeShareComponent.extend
-  templateName: 'email-share'
 
   href: (()->
     "mailto:?body=" +
@@ -36,7 +35,6 @@ Wheelmap.EmailShareComponent = Wheelmap.NodeShareComponent.extend
   ).property('sharedText', 'sharedUri')
 
 Wheelmap.TwitterShareComponent = Wheelmap.NodeShareComponent.extend Wheelmap.NodeSharePopupMixin,
-  templateName: 'twitter-share'
   lang: null
 
   href: (()->
@@ -53,8 +51,6 @@ Wheelmap.TwitterShareComponent = Wheelmap.NodeShareComponent.extend Wheelmap.Nod
   ).property('name')
 
 Wheelmap.FacebookShareComponent = Wheelmap.NodeShareComponent.extend Wheelmap.NodeSharePopupMixin,
-  templateName: 'facebook-share'
-
   href: (()->
     "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=" +
     @get('sharedUri')

@@ -5,7 +5,21 @@ class CategoriesController < ApplicationController
 
   def index
     index! do |format|
-      format.json { render json: { categories: @categories.as_api_response(:ember) }.to_json }
+      format.json {
+        render json: {
+          categories: @categories.as_api_response(:ember)
+        }
+      }
+    end
+  end
+
+  def show
+    show! do |format|
+      format.json {
+        render json: {
+          category: @category.as_api_response(:ember)
+        }
+      }
     end
   end
 end

@@ -40,7 +40,14 @@
                         <div class="control-group">
                             <label class="control-label" for="category">Typ</label>
                             <div class="controls controls-row">
-                                {{view Ember.Select class="span6" viewName="select" contentBinding="categories" optionLabelPath="model.name" }}
+                                <div class="custom-select span6">
+                                    {{view Ember.Select viewName="select" promptI18n="models.category.prompt" contentBinding="sortedCategories" optionLabelPath="content.name" selectionBinding="category" }}
+                                    <i class="icon-caret-down pull-right"></i>
+                                </div>
+                                <div {{bind-attr class=":custom-select :span6 showNodeTypeSelect::hide" }}>
+                                    {{view Ember.Select viewName="select" promptI18n="models.node_type.prompt" contentBinding="sortedNodeTypes" optionLabelPath="content.name" selectionBinding="nodeType" }}
+                                    <i class="icon-caret-down pull-right"></i>
+                                </div>
                             </div>
                         </div>
                     </fieldset>

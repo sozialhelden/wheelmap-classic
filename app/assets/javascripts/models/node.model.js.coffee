@@ -40,7 +40,7 @@ Wheelmap.Node = DS.Model.extend
       @get('region'),
       @get('type.category.name'),
       @get('type.name')
-    ]
+    ].compact()
   ).property('region', 'type.name','type.category.name')
 
   showPath: (()->
@@ -68,9 +68,9 @@ Wheelmap.Node = DS.Model.extend
     address.join(', ')
   ).property('addr.street', 'addr.housenumber', 'addr.postcode', 'addr.city')
 
-  icon: Ember.computed.alias('type.icon')
+  icon: Ember.computed.readOnly('type.icon')
 
-Wheelmap.NodeAdapter = DS.RESTAdapter.extend()
+Wheelmap.NodeAdapter = DS.ActiveModelAdapter.extend()
 
 Wheelmap.Node.reopenClass
   WHEELCHAIR_STATUSES: ['yes', 'limited', 'no']

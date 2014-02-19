@@ -97,7 +97,7 @@ class NodesController < ApplicationController
     else
       respond_to do |wants|
         wants.js   { render :text => 'FAIL', :status => 406 }
-        wants.json { render json: { error: @node.errors }.to_json, status: 406 }
+        wants.json { render json: { errors: @node.errors }.to_json, status: 406 }
 
         wants.html {
           flash[:alert] = I18n.t('nodes.update.flash.not_successfull')
