@@ -1,7 +1,7 @@
 #= require routes/map.route
 
 Wheelmap.IndexRoute = Wheelmap.MapRoute.extend
-  setupMapController: (controller, queryParams)->
-    @_super(controller, queryParams)
+  setupController: (controller, model)->
+    @_super(controller, model)
 
-    controller.set('poppingNode', null)
+    @controllerFor('map').set('poppingNode', null)
