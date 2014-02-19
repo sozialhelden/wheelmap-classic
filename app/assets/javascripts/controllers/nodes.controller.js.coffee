@@ -60,10 +60,32 @@ Wheelmap.WheelchairSubmit = Ember.Mixin.create
 Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.WheelchairSubmit,
   needs: ['flash-messages']
   categories: []
+  category: Ember.computed.oneWay('nodeType.category')
+
+  sortedCategories: (->
+    Ember.ArrayProxy.createWithMixins Ember.SortableMixin,
+      sortProperties: ['name']
+      content: @get('categories')
+  ).property('categories')
+
+  sortedNodeTypes: (->
+    Ember.ArrayProxy.createWithMixins Ember.SortableMixin,
+      sortProperties: ['name'],
+      content: @get('category.node_types')
+  ).property('category.node_types')
+
+  showNodeTypeSelect: Ember.computed.notEmpty('category')
+
+  categoryDidChange: (->
+    category = @get('category')
+
+    if category? and category isnt @get('nodeType.category')
+      @set('nodeType', null)
+  ).observes('category')
 
   actions:
     # Go back to map (use history, when not empty, or index/map route)
-    backToMap: ()->
+    backToMap: ->
       if window.history.length > 0
         window.history.go(-1)
       else
@@ -74,3 +96,18 @@ Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.Wheelcha
 
     wheelchairSaveFail: (response)->
       @get('controllers.flash-messages').pushMessage('error', response.message)
+
+    save: ->
+      that = @
+      model = that.get('content')
+      promise = model.save()
+
+      fulfill = ->
+        that.get('controllers.flash-messages').pushMessage('notice', I18n.t('nodes.update.flash.successfull'))
+        that.transitionTo('nodes.show', model)
+
+      reject = (xhr)->
+        that.get('controllers.flash-messages').pushMessage('error', I18n.t('nodes.update.flash.not_successfull'))
+        that.set('errors', xhr.responseJSON.errors)
+
+      promise.then(fulfill, reject)

@@ -1,55 +1,9 @@
 Wheelmap.MapRoute = Ember.Route.extend
-  setupController: (controller, model, queryParams)->
-    @_super(controller, model, queryParams)
+  setupController: (controller, model)->
+    @_super(controller, model)
 
-    @setupMapController(@controllerFor('map'), queryParams)
-    @setupToolbarController(@controllerFor('toolbar'), queryParams)
-
-  setupMapController: (controller, queryParams)->
-    properties = {}
-
-    if queryParams.lat? && queryParams.lon?
-      properties.center = new L.LatLng(queryParams.lat, queryParams.lon)
-
-    if queryParams.zoom?
-      properties.zoom = parseInt(queryParams.zoom, 10)
-
-    if queryParams.bbox?
-      bbox = queryParams.bbox.split(',')
-
-      if bbox.length == 4
-        properties.bbox = L.latLngBounds(L.latLng(bbox[0], bbox[2]), L.latLng(bbox[1], bbox[3]))
-
-    controller.setProperties(properties)
-
-  setupToolbarController: (controller, queryParams)->
-    properties = {}
-
-    if queryParams.q?
-      properties.searchString = decodeURIComponent(queryParams.q).replace(/\+/, ' ')
-
-    if queryParams.status?
-      statusFilters = []
-
-      if queryParams.status isnt true
-        statusFilters = queryParams.status.split(',')
-
-      properties.activeStatusFilters = statusFilters
-
-    controller.setProperties(properties)
-
-    @store.findAll('category').then (categories)->
-      controller.set('content', categories)
-
-      if queryParams.categories?
-        activeCategoryIdentifiers = queryParams.categories.split(',')
-
-        controller.forEach (category) ->
-          category.set('isActive', activeCategoryIdentifiers.contains(category.get('identifier')))
+    @controllerFor('toolbar').set('content', @store.findAll('category'))
 
   renderTemplate: (controller, model)->
     @render 'index',
       outlet: 'map'
-
-Wheelmap.MapRoute.reopenClass
-  DEFAULT_QUERY_PARAMS: ['bbox', 'lat', 'lon', 'zoom', 'status', 'q', 'categories']
