@@ -1,3 +1,4 @@
+#= require env
 #= require jquery
 #= require jquery/jquery-migrate
 #= require jquery/jquery.cookies.js
@@ -20,8 +21,6 @@
 I18n.defaultLocale = 'de'
 I18n.locale = $('html').attr('lang')
 I18n.fallbacks = true
-
-Ember.FEATURES["query-params"] = true
 
 Ember.Application.reopen
   # Transition end event

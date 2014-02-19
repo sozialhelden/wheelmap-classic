@@ -1,11 +1,11 @@
 #= require routes/map.route
 
 Wheelmap.PopupRoute = Wheelmap.MapRoute.extend
-  model: (params, queryParams)->
+  model: (params)->
     @get('store').find('node', params.node_id)
 
-  setupController: (controller, model, queryParams)->
-    @_super(controller, model, queryParams)
+  setupController: (controller, model)->
+    @_super(controller, model)
 
     @controllerFor('map').set('poppingNode', controller)
 
