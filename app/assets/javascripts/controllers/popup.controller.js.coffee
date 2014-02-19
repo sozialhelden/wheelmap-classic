@@ -1,7 +1,8 @@
 #= require controllers/nodes.controller
+#= require controllers/map.controller
 
-Wheelmap.PopupController = Wheelmap.NodesController.extend Wheelmap.WheelchairSubmit,
-  needs: ['flash-messages', 'map']
+Wheelmap.PopupController = Wheelmap.NodesController.extend Wheelmap.WheelchairSubmit, Wheelmap.MapSessionControllerMixin,
+  needs: ['flash-messages']
 
   resetStatus: ()->
     oldWheelchair = @get('oldWheelchair')

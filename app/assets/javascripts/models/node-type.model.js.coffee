@@ -9,4 +9,7 @@ Wheelmap.NodeType = DS.Model.extend
     I18n.t("poi.name." + @get('category.identifier') + "." + @get('identifier'))
   ).property('category.identifier', 'identifier')
 
-Wheelmap.NodeTypeAdapter = DS.RESTAdapter.extend()
+Wheelmap.NodeTypeAdapter = DS.RESTAdapter.extend
+  pathForType: (type)->
+    decamelized = Ember.String.decamelize(type);
+    Ember.String.pluralize(decamelized);

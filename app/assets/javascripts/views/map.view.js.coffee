@@ -218,8 +218,16 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   ).observes('toolbarController.activeCategories.@each')
 
   _boundsDidChange: (()->
-    Ember.run.debounce(@, 'requestData', @get('map.bounds'), 200)
-  ).observes('map.bounds')
+    if @get('map.isMoving') or @get('map.isZooming')
+      return
+
+    layer = @get('map.layer')
+
+    unless layer?
+      return
+
+    Ember.run.debounce(@, 'requestData', layer.getBounds(), 200)
+  ).observes('map.isMoving', 'map.isZooming', 'map.layer')
 
   _zoomDidChange: (()->
     # When zooming reset last loaded bounds to load nodes in any case
@@ -275,40 +283,42 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
 
   openedPopup: null
 
-  centerBinding: 'controller.center'
-  zoomBinding: 'controller.zoom'
+  center: Ember.computed.oneWay('controller.center')
+  zoom: Ember.computed.oneWay('controller.zoom')
 
   didInsertElement: ()->
     Ember.run.sync() # Needed for bindings to controller
 
     @_super()
-
     @get('layer')?.attributionControl.setPrefix('')
+
+  bboxDidChange: (->
+    layer = @get('layer')
+
+    unless layer?
+      return
 
     bbox = @get('controller.bbox')
 
     if bbox?
-      @set('bounds', bbox)
+      layer.fitBounds(bbox)
+  ).observes('controller.bbox', 'layer')
 
-  bounds: ((key, bounds)->
-    layer = @get('layer')
-
-    if !layer?
+  isMovingDidChange: (->
+    if @get('isMoving')
       return
 
-    if arguments.length > 1
-      layer.fitBounds(bounds)
+    controller = @get('controller')
+    controller.set('center', @get('center'))
+  ).observes('isMoving')
 
-    layer.getBounds()
-  ).property().volatile()
-
-  boundsChanging: (()->
-    if @get('isMoving') or @get('isZooming')
+  isZoomingDidChange: (->
+    if @get('isZooming')
       return
 
-    @notifyPropertyChange('bounds')
-    @get('controller').send('boundsChanged', @get('bounds'))
-  ).observes('isMoving', 'isZooming')
+    controller = @get('controller')
+    controller.set('zoom', @get('zoom'))
+  ).observes('isZooming')
 
   loading: (()->
     @spin(@get('isLoading'))
