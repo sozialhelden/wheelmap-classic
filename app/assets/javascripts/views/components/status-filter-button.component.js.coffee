@@ -3,7 +3,6 @@ Wheelmap.StatusFilterButtonComponent = Wheelmap.WheelchairPopoverComponent.exten
   classNameBindings: [':btn', 'isActive:active', ':btn-info', 'wheelchair']
   wheelchair: null
   activeFilters: null
-  template: Ember.Handlebars.compile('<span></span>')
 
   init: ()->
     @_super()
@@ -23,5 +22,3 @@ Wheelmap.StatusFilterButtonComponent = Wheelmap.WheelchairPopoverComponent.exten
     event.preventDefault();
 
     @sendAction('didClick', @get('wheelchair'))
-
-Ember.Handlebars.helper('status-filter-button', Wheelmap.StatusFilterButtonComponent)

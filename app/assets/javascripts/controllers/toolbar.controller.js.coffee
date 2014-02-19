@@ -1,46 +1,44 @@
 Wheelmap.ToolbarController = Ember.ArrayController.extend
   _extraFilter: false # Flag for executing special status filter behavior only once
-  needs: 'map'
+  needs: ['index', 'map']
   statusFilters: null
   searchString: null
   itemController: 'category'
+  sortProperties: ['name']
 
   init: ()->
     @_super()
 
-    @set 'statusFilters', [
+    statusFilters = [
       Ember.Object.create({ key: 'yes', isActive: true })
       Ember.Object.create({ key: 'limited', isActive: true })
       Ember.Object.create({ key: 'no', isActive: true })
       Ember.Object.create({ key: 'unknown', isActive: true })
     ]
 
-    lastStatusFilters = $.cookie('last_status_filters')
-
-    if lastStatusFilters
-      try
-        @set('activeStatusFilters', JSON.parse(lastStatusFilters))
-      catch e
-        # Catch JSON syntax errors in invalid cookie value
-        unless e instanceof SyntaxError
-          throw e
+    @set 'statusFilters', statusFilters
 
   ###
   # Property containing all active categories
   ###
-  activeCategories: (()->
+  activeCategories: ((key, activeCategories)->
+    if activeCategories?
+      return @filter (category)->
+        isActive = activeCategories.contains(category)
+        category.set('isActive', isActive)
+
+        return isActive
+
     @filterBy('isActive')
   ).property('@each.isActive')
 
-  activeStatusFilters: ((key, newStatusFilters)->
+  activeStatusFilters: ((key, activeStatusFilters)->
     statusFilters = @get('statusFilters')
 
-    if arguments.length > 1
+    if activeStatusFilters?
       return statusFilters.filter (statusFilter)->
-        isActive = newStatusFilters.contains(statusFilter.get('key'))
-
-        if isActive isnt statusFilter.get('isActive')
-          statusFilter.set('isActive', isActive)
+        isActive = activeStatusFilters.contains(statusFilter)
+        statusFilter.set('isActive', isActive)
 
         return isActive
 
@@ -54,26 +52,22 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
     @everyBy('isActive')
   ).property('activeCategories')
 
-  activeStatusFiltersDidChange: (()->
-    $.cookie('last_status_filters', JSON.stringify(@get('activeStatusFilters').getEach('key')))
-
-    @get('controllers.map').send('permalink')
-  ).observes('activeStatusFilters')
-
   categoryFiltersDidChange: (()->
-    categories = @get('activeCategories').mapBy('identifier')
+    categories = @get('activeCategories').getEach('identifier')
 
     if I18n.locale == 'de' and categories.length == 1 and categories[0] == 'sport'
       $('#allianz').show()
     else
       $('#allianz').hide()
-
-    @get('controllers.map').send('permalink')
   ).observes('activeCategories')
 
   actions:
+    toggleCategoryIsActive: ->
+      @get('controllers.index').send('transitionToActiveCategories')
+
     toggleAllCategoriesAreActive: ()->
       @setEach('isActive', !@get('allCategoriesAreActive'))
+      @get('controllers.index').send('transitionToActiveCategories')
 
     ###
     # Extra logic if all status filters are set and one is clicked:
@@ -93,5 +87,6 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
         statusFilter.toggleProperty('isActive')
 
       @_extraFilter = true
+      @get('controllers.index').send('transitionToActiveStatusFilter')
 
       return
