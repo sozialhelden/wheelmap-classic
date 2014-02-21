@@ -6,10 +6,13 @@ Wheelmap.Node = DS.Model.extend
   name: attr()
   sponsor: attr()
   wheelchair: attr()
-  addr: attr()
+  street: attr()
+  housenumber: attr()
+  postcode: attr()
+  city: attr()
   region: attr()
-  type: DS.belongsTo('node-type')
-  note: attr()
+  type: DS.belongsTo('node_type')
+  wheelchair_description: attr()
   website: attr()
   phone: attr()
   oldWheelchair: null
@@ -57,7 +60,7 @@ Wheelmap.Node = DS.Model.extend
 
   address: (()->
     address = []
-    addr = @get('addr')
+    addr = @getProperties('street', 'housenumber', 'city', 'postcode')
 
     if addr.street? and addr.housenumber?
       address.push I18n.t('node.address.street', addr).trim()
@@ -66,11 +69,22 @@ Wheelmap.Node = DS.Model.extend
       address.push I18n.t('node.address.city', addr).trim()
 
     address.join(', ')
-  ).property('addr.street', 'addr.housenumber', 'addr.postcode', 'addr.city')
+  ).property('street', 'housenumber', 'postcode', 'city')
 
   icon: Ember.computed.readOnly('type.icon')
 
 Wheelmap.NodeAdapter = DS.ActiveModelAdapter.extend()
+
+Wheelmap.NodeSerializer = DS.ActiveModelSerializer.extend
+  serialize: () ->
+    json = @_super.apply(@, arguments)
+
+    delete json.region
+
+    json.type = json.type_id
+    delete json.type_id
+
+    json
 
 Wheelmap.Node.reopenClass
   WHEELCHAIR_STATUSES: ['yes', 'limited', 'no']
