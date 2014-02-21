@@ -31,63 +31,75 @@
                 <form method="post" class="node-form form-horizontal">
 
                     <fieldset>
-                        <div class="control-group">
-                            <label class="control-label" for="name">Name</label>
+                        {{#control-group label='activerecord.attributes.poi.name' labelFor='name'}}
                             <div class="controls controls-row">
-                                {{input value=name placeholder="Name" class="span12" name="name" }}
+                                {{view Ember.TextField value=name placeholderI18n="activerecord.attributes.poi.name" class="span12" name="name"}}
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="category">Typ</label>
+                        {{/control-group }}
+                        {{#control-group label='activerecord.attributes.poi.type' labelFor='category'}}
                             <div class="controls controls-row">
-                                <div class="custom-select span6">
-                                    {{view Ember.Select viewName="select" promptI18n="models.category.prompt" contentBinding="sortedCategories" optionLabelPath="content.name" selectionBinding="category" }}
-                                    <i class="icon-caret-down pull-right"></i>
-                                </div>
-                                <div {{bind-attr class=":custom-select :span6 showNodeTypeSelect::hide" }}>
-                                    {{view Ember.Select viewName="select" promptI18n="models.node_type.prompt" contentBinding="sortedNodeTypes" optionLabelPath="content.name" selectionBinding="nodeType" }}
-                                    <i class="icon-caret-down pull-right"></i>
-                                </div>
+                                {{#control-error errors=errors.category class="span6"}}
+                                    <div class="custom-select">
+                                        {{view Ember.Select viewName="select" promptI18n="models.category.prompt" contentBinding="sortedCategories" optionLabelPath="content.name" selectionBinding="category"}}
+                                        <i class="icon-caret-down pull-right"></i>
+                                    </div>
+                                {{/control-error}}
+                                {{#control-error errors=errors.node_type classNameBindings=":span6 showNodeTypeSelect::hide"}}
+                                    <div class="custom-select">
+                                        {{view Ember.Select viewName="select" promptI18n="models.node_type.prompt" contentBinding="sortedNodeTypes" optionLabelPath="content.name" selectionBinding="type"}}
+                                        <i class="icon-caret-down pull-right"></i>
+                                    </div>
+                                {{/control-error}}
                             </div>
-                        </div>
+                        {{/control-group }}
                     </fieldset>
 
                     <fieldset>
-                        <div class="control-group">
-                            <label class="control-label" for="street">Adresse</label>
+                        {{#control-group label='activerecord.attributes.poi.address' labelFor='street'}}
                             <div class="controls controls-row">
-                                {{input value=addr.street placeholder="Straße" class="span10" name="street" }}
-                                {{input value=addr.housenumber placeholder="Hausnr." class="span2" name="housenumber" }}
+                                {{#control-error errors=errors.street class="span10"}}
+                                    {{view Ember.TextField value=street placeholderI18n="activerecord.attributes.poi.address_street" class="span12" name="street"}}
+                                {{/control-error}}
+                                {{#control-error errors=errors.housenumber class="span2"}}
+                                    {{view Ember.TextField value=housenumber placeholderI18n="activerecord.attributes.poi.address_housenumber" class="span12" name="housenumber"}}
+                                {{/control-error}}
                             </div>
                             <div class="controls controls-row">
-                                {{input value=addr.postcode placeholder="Posteitzahl" class="span3" name="postcode" }}
-                                {{input value=addr.city placeholder="Ort" class="span9" name="city" }}
+                                {{#control-error errors=errors.postcode class="span3"}}
+                                    {{view Ember.TextField value=postcode placeholderI18n="activerecord.attributes.poi.address_postcode" class="span12" name="postcode"}}
+                                {{/control-error}}
+                                {{#control-error errors=errors.city class="span9"}}
+                                    {{view Ember.TextField value=city placeholderI18n="activerecord.attributes.poi.address_city" class="span12" name="city"}}
+                                {{/control-error}}
                             </div>
-                        </div>
+                        {{/control-group }}
                     </fieldset>
 
                     <fieldset>
-                        <div class="control-group">
-                            <label class="control-label" for="website">Webseite</label>
+                        {{#control-group label='activerecord.attributes.poi.website' labelFor='website'}}
                             <div class="controls controls-row">
-                                {{input value=website placeholder="Webseite" class="span12" name="website" }}
+                                {{#control-error errors=errors.website class="span12"}}
+                                    {{view Ember.TextField value=website placeholderI18n="activerecord.attributes.poi.website" class="span12" name="website"}}
+                                {{/control-error}}
                             </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="phone">Telefon</label>
+                        {{/control-group}}
+                        {{#control-group label='activerecord.attributes.poi.phone' labelFor='phone'}}
                             <div class="controls controls-row">
-                                {{input value=phone placeholder="phone" class="span12" name="phone" }}
+                                {{#control-error errors=errors.phone class="span12"}}
+                                    {{view Ember.TextField value=phone placeholderI18n="activerecord.attributes.poi.phone" class="span12" name="phone"}}
+                                {{/control-error}}
                             </div>
-                        </div>
+                        {{/control-group}}
                     </fieldset>
 
                     <fieldset>
-                        <div class="control-group">
-                            <label class="control-label" for="note">Hinweis</label>
+                        {{#control-group label='activerecord.attributes.poi.note' labelFor='note'}}
                             <div class="controls controls-row">
-                                {{textarea value=note rows="3" class="span12" placeholder="Hinweis / Zusatzinfo / Kommentar" name="note"}}
+                                {{#control-error errors=errors.wheelchair_description class="span12"}}
+                                    {{view Ember.TextArea value=wheelchair_description rows="3" class="span12" placeholderI18n="activerecord.attributes.poi.note" name="note"}}
+                                {{/control-error}}
                             </div>
-                        </div>
+                        {{/control-group}}
                     </fieldset>
 
                     <div class="form-actions">

@@ -52,13 +52,7 @@ class NodesController < ApplicationController
 
     respond_to do |wants|
       wants.html
-      wants.json{
-        render :status => 200, :json => {
-          node: @node.as_api_response(:ember),
-          #node_type: @node.node_type.as_api_response(:ember),
-          #category: @node.category.as_api_response(:ember)
-        }
-      }
+      wants.json{ render_node_json }
     end
   end
 
@@ -86,7 +80,7 @@ class NodesController < ApplicationController
 
       respond_to do |wants|
         wants.js   { render :text => 'OK' }
-        wants.json { redirect_to node_path(@node) }
+        wants.json { render_node_json }
 
         wants.html {
           flash[:track]  = "'Data', 'Update', '#{@node.wheelchair}'"
@@ -97,7 +91,7 @@ class NodesController < ApplicationController
     else
       respond_to do |wants|
         wants.js   { render :text => 'FAIL', :status => 406 }
-        wants.json { render json: { errors: @node.errors }.to_json, status: 406 }
+        wants.json { render json: { errors: @node.errors }, status: 406 }
 
         wants.html {
           flash[:alert] = I18n.t('nodes.update.flash.not_successfull')
@@ -216,6 +210,13 @@ class NodesController < ApplicationController
 
   def check_create_params
     render( :text => 'Params missing', :status => 406 ) if params[:node].blank?
+  end
+
+  def render_node_json
+    render :status => 200, :json => {
+        node: @node.as_api_response(:ember),
+        node_types: [@node.node_type.as_api_response(:ember)]
+    }
   end
 
   def source(prefix='tag')
