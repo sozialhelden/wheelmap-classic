@@ -750,7 +750,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 
   textarea,
-  input[type="text"] {
+  input {
     border-color: #A39D97;
     @include box-shadow(0px 1px 0px 0px rgba(white, 0.4), inset 0px 1px 1px 0px rgba(black, 0.2));
     padding: 4px 8px;
@@ -829,6 +829,21 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
 
     .form-actions button {
       width: auto;
+    }
+  }
+
+  .error {
+    textarea,
+    input {
+      color: #b94a48;
+      border-color: #b94a48;
+      @include box-shadow(0px 0px 3px 0px rgba(#b94a48,0.60));
+    }
+
+    & > ul {
+      @extend .text-error;
+      margin-bottom: 0;
+      margin-top: 10px;
     }
   }
 }

@@ -54,11 +54,14 @@ module Api::Poi
       t.add :name
       t.add :lat
       t.add :lon
-      t.add :addressdetails, :as => :addr
+      t.add :street
+      t.add :housenumber
+      t.add :postcode
+      t.add :city
       t.add :wheelchair
-      t.add :wheelchair_description, :as => :note
+      t.add :wheelchair_description
       t.add lambda{|poi| poi.region.try(:name)  }, :as => :region
-      t.add :node_type_id
+      t.add :node_type_id, :as => :type_id
       t.add lambda{|poi| poi.category.try(:id)  }, :as => :category_id
       t.add :sponsor, if: :sponsored?
       t.add :website
