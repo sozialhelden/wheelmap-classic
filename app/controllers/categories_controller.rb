@@ -17,7 +17,8 @@ class CategoriesController < ApplicationController
     show! do |format|
       format.json {
         render json: {
-          category: @category.as_api_response(:ember)
+          category: @category.as_api_response(:ember),
+          node_types: @category.node_types.as_api_response(:ember)
         }
       }
     end
