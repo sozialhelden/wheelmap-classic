@@ -1,0 +1,9 @@
+{{yield}}
+
+{{#if errors}}
+    <ul class="unstyled">
+        {{#each errors}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
+{{/if}}
