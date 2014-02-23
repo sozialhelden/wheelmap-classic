@@ -706,9 +706,10 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     clear: both;
     font-size: $fontSizeSmall;
     color: #71777C;
-    background-color: #D8D8D8;
+    background: #D8D8D8 image-url("node-map-info.png") no-repeat 10px 10px;
     border: 1px solid #B7B7B7;
     padding: 8px 10px;
+    padding-left: 39px;
     margin-top: 30px;
 
     .tip-container {
