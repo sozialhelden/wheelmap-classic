@@ -78,8 +78,8 @@ ru:
           spell_check: "Проверьте <strong>орфографию</strong> вашего текста."
       results:
         ticker:
-          one: "%{count} результат:"
-          few: "%{count} результатов:"
+          one: "1 результат:"
+          few: "%{count} результата:"
           other: "%{count} результатов:"
     timeout:
       headline: "Ой, наша ошибка"

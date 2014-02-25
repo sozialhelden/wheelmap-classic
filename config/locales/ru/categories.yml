@@ -46,7 +46,7 @@ ru:
       government:
         courthouse: Здание суда
         embassy: Посольство
-        government: "Правительственное учреждение"
+        government: "Государственное учреждение"
         police: Полиция
         public_building: "Общественное здание"
         townhall: Здание городской администрации
@@ -150,7 +150,7 @@ ru:
         sports: Спорт
         stationery: Канцелярские товары
         supermarket: Супермаркет
-        toys: Игрушки
+        toys: Магазин игрушек
         travel_agency: "Туристическое агентство"
         video: "Видеопрокат"
       sport:
