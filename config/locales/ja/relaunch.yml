@@ -80,7 +80,6 @@ ja:
         ticker:
           one: "結果 1 件:"
           other: "結果 &{count} 件:"
-          zero: "結果 0 件:"
     timeout:
       headline: "こちらの間違いです。すみません。"
       info: "検索機能が一時的に利用できない状態です。"

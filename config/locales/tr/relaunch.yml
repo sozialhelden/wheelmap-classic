@@ -32,9 +32,8 @@ tr:
           spell_check: "Girdinizin <strong>imlasını</strong> kontrol edin."
       results:
         ticker:
-          one: "1 sonuç:"
+          one: "%{count} sonuç:"
           other: "%{count} sonuç:"
-          zero: "0 sonuç:"
     timeout:
       headline: "Ah, bizim hatamız"
       info: "Arama hizmetimiz geçici olarak devredışı."

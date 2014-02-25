@@ -78,9 +78,8 @@ de:
           spell_check: "Überprüfe die <strong>Schreibweise</strong> deiner Eingabe."
       results:
         ticker:
-          one: "1 Ergebnis:"
+          one: "%{count} Ergebnis:"
           other: "%{count} Ergebnisse:"
-          zero: "0 Ergebnisse:"
     timeout:
       headline: "Oh, unser Fehler"
       info: "Unser Suchdienst war kurzzeitig nicht verfügbar."

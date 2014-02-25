@@ -78,9 +78,8 @@ sv:
           spell_check: "Kolla <strong>stavningen</strong> på ditt bidrag."
       results:
         ticker:
-          one: "1 resultat:"
+          one: "%{count} resultat:"
           other: "%{count} resultat:"
-          zero: "0 resultat:"
     timeout:
       headline: "Oj, vårt fel"
       info: "Vår söktjänst var tillfälligt otillgänglig."

@@ -78,9 +78,8 @@ cs:
           spell_check: "Zkontrolujte zadaný text."
       results:
         ticker:
-          one: "1 výsledek:"
+          one: "%{count} výsledek:"
           other: "%{count} výsledků:"
-          zero: "0 výsledků:"
     timeout:
       headline: "Oh, naše chyba"
       info: "Vyhledávání bylo dočasně nedostupné."

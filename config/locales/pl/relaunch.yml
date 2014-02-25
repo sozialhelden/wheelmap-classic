@@ -78,9 +78,8 @@ pl:
           spell_check: "Sprawdź <strong>poprawność literowania</strong> twojego wpisu"
       results:
         ticker:
-          one: "1 wynik:"
+          one: "%{count} wynik:"
           other: "%{count} wyników:"
-          zero: "0 wyników"
     timeout:
       headline: "Ups, to nasza wina"
       info: "Usługa wyszukiwania była tymczasowo niedostępna"

@@ -78,9 +78,8 @@ pt_BR:
           spell_check: "Verifique a <strong>ortografia</strong>."
       results:
         ticker:
-          one: "1 resultado:"
+          one: "%{count} resultado:"
           other: "%{count} resultados:"
-          zero: "0 resultados:"
     timeout:
       headline: "Oh, nossa culpa"
       info: "Nosso sistema de busca estava temporariamente indisponível."

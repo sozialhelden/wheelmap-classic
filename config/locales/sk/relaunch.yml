@@ -78,9 +78,8 @@ sk:
           spell_check: "Skontrolujte či ste text zadali správne."
       results:
         ticker:
-          one: "1 výsledok:"
+          one: "%{count} výsledok:"
           other: "%{count} výsledkov:"
-          zero: "0 výsledkov:"
     timeout:
       headline: "Uh, naša chyba"
       info: "Naše vyhľadávanie bolo dočasne nedostupné."

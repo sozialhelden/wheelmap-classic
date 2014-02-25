@@ -27,9 +27,8 @@ ca:
           intro: "Prova això:"
       results:
         ticker:
-          one: "1 resultat:"
+          one: "%{count} resultat:"
           other: "%{count} resultats:"
-          zero: "0 resultats:"
     timeout:
       headline: "Ups, error nostre"
       repeat_search: "Reiniciar la rerca"

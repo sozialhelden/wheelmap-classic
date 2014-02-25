@@ -43,9 +43,8 @@ es:
           spell_check: "Revise la <strong>ortografía</strong> de su entrada"
       results:
         ticker:
-          one: "1 resultado:"
+          one: "%{count} resultado:"
           other: "%{count} resultados:"
-          zero: "0 resultados:"
     timeout:
       headline: "Oh, fallo nuestro"
       info: "Nuestro servicio de búsqueda estuvo no disponible"
