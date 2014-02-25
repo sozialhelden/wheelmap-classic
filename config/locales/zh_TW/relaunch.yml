@@ -1,4 +1,12 @@
 zh_TW:
+  faq:
+    answers:
+      1: "登入後，你可以新增/修改所有地點的細節。請點選 \"編輯\" 並在空格修改或新增資訊。"
+    headline: "這個地點有什麼不對嗎?"
+    questions:
+      0: "這個標示是錯的。"
+      1: "關於這個地點的敘述不正確或有缺漏。"
+      2: "我有關於這個地點的更多資訊。"
   header:
     navigation:
       about_wheelmap: "關於 Wheelmap"
@@ -22,23 +30,53 @@ zh_TW:
       form:
         legend: "地點的位置"
         location: "請點選地圖並標誌在確切的位置。"
+    node_data:
+      address: "地址:"
+      contact_details: "聯絡方式: "
     node_edit:
       details: "細節"
       edit: "編輯"
+    node_map:
+      map: "地圖:"
+    node_note:
+      comment: "註解:"
     node_photos:
       add: "新增"
+      photos_of_this_place: "這個地點的照片: "
+      upload: "上傳"
+    node_similar:
+      similar: "類似的地點: %{name}"
+    node_status:
+      accessible_toilet: "無障礙廁所: "
+      premium: "%{name} 說: 這個地點"
+      wheelchair_accessibility: "輪椅無障礙: "
+    node_streetview:
+      streetview: "街景:"
     show:
+      header:
+        meta:
+          description: "透過 Wheelmap.org 尋找輪椅無障礙的地點，或是為這些地點添加資訊和照片。"
+          title: "這個場所有登錄在 Wheelmap.org: %{name}"
       share:
+        email: "E-mail"
         facebook: Facebook
+        text: "我在 Wheelmap.org 上找到這個地點: %{name}"
         twitter: Twitter
   search:
     index:
       no-results:
+        headline: "抱歉，我們找不到名叫 \"%{query}\" 的地點。"
         hint:
           example: "<strong>範例:</strong> 英國倫敦"
         try_this:
+          address: "請提供更 <strong>詳細的地址</strong>."
           intro: "試試這個:"
       results:
         ticker:
-          one: "1個結果："
+          one: "%{count}個結果："
           other: "%{count} 個結果："
+          spell_check: "請確認你輸入的 <strong>拼字</strong>。"
+    timeout:
+      headline: "喔! 我們出了點狀況"
+      info: "我們的搜尋服務目前暫停。"
+      repeat_search: "重試搜尋"

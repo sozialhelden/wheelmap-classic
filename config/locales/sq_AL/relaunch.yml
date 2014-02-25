@@ -3,10 +3,10 @@ sq_AL:
     answers:
       0: "Ju mundeni gjithnjë të ndryshoni personalisht shenjimin e një vendi. Vetëm zgjidh shenjimin e saktë dhe \"Ruaj\" - u krye!"
       1: "Si një përdorues i identifikuar ju mund të shtoni/korrigjoni të gjithë detajet e një vendi. Klikoni mbi \"Redakto\" dhe korrigjoni ose shtoni informacion në zonën përkatëse."
-      2: "You mund të shtoni informacion të mëtejshëm (p.sh. \"Ky vend ka një platëformë të pjerrët të lëvizshme\") në seksionin e komentit. Kliko mbi \"Redakto\" dhe \"Shto koment\"."
+      2: "Ju mund të shtoni informacion të mëtejshëm (p.sh. \"Ky vend ka një platëformë të pjerrët të lëvizshme\") në seksionin e komentit. Kliko mbi \"Redakto\" dhe \"Shto koment\"."
     headline: "A ka ndonjë problem me këtë vend?"
     questions:
-      0: "Shenjimmi është gabim."
+      0: "Shenjimi është gabim."
       1: "Detajet e këtij vendi janë jo korrekte ose mungojnë."
       2: "Unë kam më shumë informacion për këtë vend."
   header:
@@ -23,10 +23,10 @@ sq_AL:
       overlay:
         button: "Ok, le të fillojmë!"
         categories: "Filtro vendet sipas katagorisë"
-        filter: "Filtro sipas aksesimit në karrigeve me rrota"
+        filter: "Filtro vende sipas aksesueshmërisë në karrigeve me rrota"
         headline: "Shëno dhe gjej vendet me e aksesueshme në karrige me rrota me Wheelmap.org - në gjithë botën dhe falas. Është e thjeshtë:"
         lookup: "Kërko për një vend të veçantë"
-        secondary_headline: "Sistemi jonë i semaforit për të shënuar vendet publike të aksesueshme për karriget me rrota"
+        secondary_headline: "Sistemi jonë i semaforit për të shënuar aksesueshmërinë në karrige me rrota të vendeve publike:"
   nodes:
     new:
       form:
@@ -51,7 +51,7 @@ sq_AL:
     node_status:
       accessible_toilet: "Tualet i aksesueshëm për karrige me rrota"
       premium: "%{name} thotë: ky vend është "
-      wheelchair_accessibility: "E aksesueshme në karrige me rrota"
+      wheelchair_accessibility: "Aksesueshmëria në karrige me rrota"
     node_streetview:
       streetview: "Streetview:"
     show:
@@ -78,9 +78,8 @@ sq_AL:
           spell_check: "Kontrollo <strong>drejtshkrimin</strong> e informacionit tuaj të futur."
       results:
         ticker:
-          one: "1 rezultat:"
+          one: "%{count} rezultat:"
           other: "%{count} rezultate:"
-          zero: "0 rezultate:"
     timeout:
       headline: "Oh, gabimi jonë"
       info: "Shërbimi jonë i kërkimit ishte përkohësisht jo i disponueshëm."

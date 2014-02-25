@@ -78,9 +78,8 @@ da:
           spell_check: "Tjek <strong>stavningen</strong> af dit søgeord."
       results:
         ticker:
-          one: "1 resultat:"
+          one: "%{count} resultat:"
           other: "%{count} resultater:"
-          zero: "0 resultater:"
     timeout:
       headline: "Åh undskyld vores fejl"
       info: "Vores søgeservice var midlertidigt nede."

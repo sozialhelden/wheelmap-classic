@@ -59,9 +59,8 @@ nl:
           spell_check: "Controleer a.u.b. de  <strong>spelling</strong> van je text"
       results:
         ticker:
-          one: "1 resultaat"
+          one: "%{count} resultaat"
           other: "%{count} resultaat:"
-          zero: "0 resultaten"
     timeout:
       headline: "sorry, werkt niet"
       info: "Onze zoekdienst was tijdelijk buiten werk"

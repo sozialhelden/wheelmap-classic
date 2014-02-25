@@ -78,9 +78,8 @@ it:
           spell_check: "Controlla di aver scritto correttamente."
       results:
         ticker:
-          one: "1 risultato:"
+          one: "%{count} risultato:"
           other: "%{count} risultati:"
-          zero: "0 risultati:"
     timeout:
       headline: "Oh, errore nostro"
       info: "Il servizio di ricerca non è al momento disponibile."

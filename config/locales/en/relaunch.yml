@@ -79,7 +79,7 @@ en:
           spell_check: "Check the <strong>spelling</strong> of your input."
       results:
         ticker:
-          one: "1 result:"
+          one: "%{count} result:"
           other: "%{count} results:"
     timeout:
       headline: "Oh, our fault"
