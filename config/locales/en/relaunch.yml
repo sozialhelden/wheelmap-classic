@@ -81,7 +81,6 @@ en:
         ticker:
           one: "1 result:"
           other: "%{count} results:"
-          zero: "0 results:"
     timeout:
       headline: "Oh, our fault"
       info: "Our search service was temporarily not available."
