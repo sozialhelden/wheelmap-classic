@@ -4,12 +4,12 @@ ru:
       accommodation: Проживание
       education: Образование
       food: Питание
-      government: Государственные учреждения
+      government: Гос. учреждения
       health: Здоровье
       leisure: Досуг
       misc: Разное
       money_post: "Отделение банка"
-      public_transfer: "Общественный транспорт"
+      public_transfer: "Общ. транспорт"
       shopping: Шопинг
       sport: Спорт
       tourism: Туризм
@@ -23,11 +23,11 @@ ru:
         chalet: Шале
         dormitory: Общежитие
         guest_house: "Гостевой дом"
-        hostel: Общежитие
+        hostel: Хостел
         hotel: Отель
         motel: Мотель
       education:
-        college: Коледж
+        college: Колледж
         driving_school: "Автошкола"
         kindergarten: Детский сад
         library: Библиотека
@@ -44,7 +44,7 @@ ru:
         pub: Паб
         restaurant: Ресторан
       government:
-        courthouse: Здание суда
+        courthouse: Суд
         embassy: Посольство
         government: "Государственное учреждение"
         police: Полиция
@@ -82,14 +82,14 @@ ru:
       money_post:
         atm: Банкомат
         bank: Банк
-        bureau_de_change: "Обменник"
+        bureau_de_change: "Обмен валюты"
         post_box: "Почтовый ящик"
         post_office: "Почтовое отделение"
       public_transfer:
         aerodrome: Аэропорт
-        bicycle_parking: "Парковка для велосипеда"
+        bicycle_parking: "Велопарковка"
         bicycle_rental: "Прокат велосипедов"
-        boatyard: Катеры
+        boatyard: Лодочная мастерская
         bus_station: "Автобусная станция"
         bus_stop: "Автобусная остановка"
         cable_car: "Канатная дорога"
@@ -100,13 +100,13 @@ ru:
         ferry_terminal: "Терминал парома"
         fuel: "Автозаправка"
         halt: Остановка
-        light_rail: "перила"
+        light_rail: "Легкорельсовый транспорт"
         parking: Парковка
         parking_aisle: "Проход на парковку"
         platform: Платформа
-        station: "Подземка"
+        station: "Железнодорожный вокзал"
         subway_entrance: "Вход в метро"
-        terminal: "Терминал аеропорта"
+        terminal: "Терминал аэропорта"
         tram_stop: "Трамвайная остановка"
       shopping:
         alcohol: Спиртные напитки
@@ -137,7 +137,7 @@ ru:
         hairdresser: Парикмахер
         hardware: Аппаратура
         jewelry: Ювелирные изделия
-        kiosk: Магазин
+        kiosk: Киоск
         laundry: Прачечная
         mall: "Торговый центр"
         optician: Оптика
@@ -166,11 +166,9 @@ ru:
         attraction: Аттракцион
         battlefield: Поле боя
         beach: Пляж
-        beacon: 'Лайтхаус
-
-          '
-        castle: Церковь
-        cave_entrance: "Вход"
+        beacon: Маяк
+        castle: Замок
+        cave_entrance: "Вход в пещеру"
         information: "Информация для туристов"
         memorial: Памятник
         theme_park: "Парк развлечений"
