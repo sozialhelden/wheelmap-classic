@@ -64,9 +64,9 @@ ru:
         notice: "Изображение успешно удалено"
   form:
     show_fully_accessible_places: "доступно на кресле-коляске"
-    show_limited_accessible_places: "частично доступно на кресле-коляске"
+    show_limited_accessible_places: "частично доступно"
     show_places_without_status: "неизвестный статус"
-    show_unaccessible_places: "не доступно на кресле-коляске"
+    show_unaccessible_places: "не доступно"
   formtastic:
     hints:
       email: "Мы сохраним ваш адрес в секрете и не будем отправлять на него спам. Обещаем!"
@@ -160,8 +160,8 @@ ru:
           create: "Добавить новое место"
       popup:
         form:
-          limited: "частично доступно на кресле-коляске"
-          'no': "не доступно на кресле-коляске"
+          limited: "частично доступно"
+          'no': "не доступно"
           save: обновление
           unknown: "Статус неизвестен"
           'yes': "доступно на кресле-коляске"
@@ -339,8 +339,8 @@ ru:
       headline:
         your_images: "Загруженные Вами изображения"
   wheelchairstatus:
-    limited: "Частичный доступ на кресле-коляске"
-    'no': "Не доступно на кресле-коляске"
+    limited: "Частично доступо"
+    'no': "Не доступно"
     unknown: "Неизвестный статус"
     'yes': "Доступно на кресле-коляске"
   wheelmap:
