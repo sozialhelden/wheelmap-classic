@@ -14,7 +14,7 @@ ActiveAdmin.register Poi do
 
   filter :category, :as => :select, :collection => proc { Category.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort }
   filter :node_type, :as => :select, :collection => proc { NodeType.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort }
-  filter :region, :as => :select, :collection => proc { Region.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort }
+  filter :region, :as => :select, :collection => proc { options_for_select(nested_set_options(Region) {|i| "#{'-' * i.level} #{i.name}" } ) }
   filter :version
   filter :tags
   filter :created_at
