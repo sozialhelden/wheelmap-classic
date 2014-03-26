@@ -81,7 +81,7 @@ Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.Wheelcha
     category = @get('category')
 
     if category? and category isnt @get('type.category')
-      @set('type', null)
+      @set('type', @get('sortedNodeTypes.firstObject'))
   ).observes('category')
 
   actions:
