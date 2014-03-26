@@ -63,7 +63,7 @@ Wheelmap::Application.routes.draw do
 
   resources :regions, :only => [:index, :show], :constraints => { :format => 'kml' }
 
-  resources :categories, only: :index
+  resources :categories, only: [:index, :show]
   resources :node_types, only: [:index, :show]
 
   resources :users, :as => 'profile', :path => '/profile'
