@@ -29,3 +29,6 @@ Ember.Handlebars.registerHelper 't', (args..., options)->
     Ember.Handlebars.get(self, name, options) ? name
 
   I18n.translate(keys.join('.'), options.hash)
+
+Ember.View.reopen(Wheelmap.TranslateableAttributes)
+
