@@ -71,6 +71,7 @@ Wheelmap::Application.routes.draw do
     collection do
       post :authenticate
       get :newsletter
+      get :signed_in
     end
     member do
       post :reset_token
