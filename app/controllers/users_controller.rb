@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   skip_before_filter :verify_authenticity_token, :only => :authenticate
 
-  before_filter :authenticate_user!,        :except => :authenticate
+  before_filter :authenticate_user!,        :except => [:authenticate, :signed_in]
   before_filter :authenticate_mobile_user,  :only => :authenticate
   before_filter :authenticate_mobile_app,   :only => :authenticate
   before_filter :require_owner, :only => [:edit, :update, :reset_token, :after_signup_edit, :after_signup_update, :terms]
@@ -46,6 +46,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def signed_in
+    render :json => (current_user ? true : false).to_json, :status => 200
+  end
 
   def after_signup_edit
     @user ||= current_user
