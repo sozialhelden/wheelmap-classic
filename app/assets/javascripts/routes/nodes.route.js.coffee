@@ -1,4 +1,7 @@
 Wheelmap.NodesEditRoute = Wheelmap.FakeMapRoute.extend
+  beforeModel: (transition)->
+    transition.send('authenticate', transition)
+
   model: (params)->
     @modelFor('nodes')
 
