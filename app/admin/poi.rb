@@ -37,7 +37,7 @@ ActiveAdmin.register Poi do
     end
 
     def max_csv_records
-      100
+      500
     end
 
   end
