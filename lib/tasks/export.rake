@@ -157,6 +157,48 @@ namespace :export do
 
   end
 
+  desc 'Export nodes for streetspotr'
+  task :for_streetspotr => :environment do
+    region_names    = ENV['REGION'].split(',')
+    category_names  = ENV['CATEGORIES'].split(',')
+    limit           = ENV['LIMIT'].to_i
+    raise "Usage: rake export:for_streetspotr REGIONs=Berlin,Leipzig CATEGORIES=shopping,leisure" unless region_names && category_names && limit
+
+    regions = []
+    region_names.each do |region_name|
+      regions << Region.find_by_name(region_name)
+    end
+
+    categories = []
+    category_names.each do |category_name|
+      categories << Category.find_by_identifier(category_name)
+    end
+
+    CSV.open("streetspotr.csv", "wb", :force_quotes => true) do |csv|
+      csv << ["Id","Name","Lat","Lon","Street","Housenumber","Postcode","City","Wheelchair","Type","Category"]
+      regions.each do |region|
+        categories.each do |category|
+          Poi.where(region_id: region).where(node_type_id: category.node_types).order('version DESC').limit(limit).each do |poi|
+            csv <<
+              [
+                poi.id,
+                poi.name,
+                poi.lat,
+                poi.lon,
+                poi.street,
+                poi.housenumber,
+                poi.postcode,
+                poi.city,
+                poi.wheelchair,
+                poi.node_type.identifier,
+                poi.category.identifier
+              ]
+          end
+        end
+      end
+    end
+  end
+
 
   task :tags => :environment do
     puts "Tags = {"
