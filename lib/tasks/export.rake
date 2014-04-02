@@ -104,7 +104,7 @@ namespace :export do
     region_name = ENV['region'] || 'Germany'
     outfile = ENV['outfile'] || "#{region_name.downcase}.csv"
 
-    csv_string = CSV.open(outfile, "wb", :force_quotes => true) do |csv|
+    CSV.open(outfile, "wb", :force_quotes => true) do |csv|
       csv << ["OSM ID", "OSM TYPE", "Name", "Kategorie", "Rollstuhlstatus", "lat", "lon", "Strasse", "Hausnummer", "Stadt", "Postleitzahl", "Telefon", "Webseite"]
       total_count = Region.find(region_name).pois_of_children.count
       progressbar = ProgressBar.create(:total => total_count, :format => '%a |%b>%i|')
@@ -135,7 +135,7 @@ namespace :export do
       }
     )
 
-    csv_string = CSV.open(outfile, "wb", :force_quotes => true) do |csv|
+    CSV.open(outfile, "wb", :force_quotes => true) do |csv|
       csv << ["OSM_Id","OSM_Type","OSM_Name","OSM_Rollstuhlstatus","OSM_Latitude","OSM_Longitude","OSM_Strasse","OSM_Hausnummer","OSM_Stadt","OSM_Plz"]
       node_types = Category.find_by_identifier(:health).try(:node_types).map(&:id)
       total_count = Region.find('Germany').pois_of_children.where(node_type_id: node_types).count
