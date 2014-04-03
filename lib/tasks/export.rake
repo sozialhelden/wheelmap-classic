@@ -159,9 +159,9 @@ namespace :export do
 
   desc 'Export nodes for streetspotr'
   task :for_streetspotr => :environment do
-    region_names    = ENV['REGION'].split(',')
-    category_names  = ENV['CATEGORIES'].split(',')
-    limit           = ENV['LIMIT'].to_i
+    region_names    = ENV['REGION'].split(',')      rescue nil
+    category_names  = ENV['CATEGORIES'].split(',')  rescue nil
+    limit           = ENV['LIMIT'].to_i             rescue nil
     raise "Usage: rake export:for_streetspotr REGIONs=Berlin,Leipzig CATEGORIES=shopping,leisure" unless region_names && category_names && limit
 
     regions = []
@@ -178,7 +178,7 @@ namespace :export do
       csv << ["Id","Name","Lat","Lon","Street","Housenumber","Postcode","City","Wheelchair","Type","Category"]
       regions.each do |region|
         categories.each do |category|
-          Poi.where(region_id: region).where(node_type_id: category.node_types).order('version DESC').limit(limit).each do |poi|
+          Poi.unknown_accessibility.where(region_id: region).where(node_type_id: category.node_types).order('version DESC').limit(limit).each do |poi|
             csv <<
               [
                 poi.id,
