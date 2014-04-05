@@ -57,7 +57,8 @@ class NodesController < ApplicationController
   end
 
   def edit
-    @node ||= Poi.find(params[:id])
+    node ||= Poi.find(params[:id])
+    redirect_to root_path + '#/nodes/' + node.id.to_s + '/edit'
   end
 
   def update_wheelchair
@@ -92,11 +93,6 @@ class NodesController < ApplicationController
       respond_to do |wants|
         wants.js   { render :text => 'FAIL', :status => 406 }
         wants.json { render json: { errors: @node.errors }, status: 406 }
-
-        wants.html {
-          flash[:alert] = I18n.t('nodes.update.flash.not_successfull')
-          render :action => :edit
-        }
       end
     end
   end

@@ -1,21 +1,22 @@
-.node-wrapper{style: "background-image: url(http://api.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/#{@node.lon},#{@node.lat},17/640x640.png64)"}
-  = render partial: 'node_flash'
+%div#wheelmap
+  .node-wrapper{style: "background-image: url(http://api.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/#{@node.lon},#{@node.lat},17/640x640.png64)"}
+    = render partial: 'node_flash'
 
-  %article.container.node-container{ itemscope:'', itemtype: 'http://schema.org/Place', :'data-category' => @node.category.try(:identifier) }
-    = render partial: 'node_header', object: @node
+    %article.container.node-container{ itemscope:'', itemtype: 'http://schema.org/Place', :'data-category' => @node.category.try(:identifier) }
+      = render partial: 'node_header', object: @node
 
-    .row-fluid
-      %section.node-content.span8
-        = render partial: 'node_status', object: @node
-        = render partial: 'node_photos', object: @node
-        = render partial: 'node_note', object: @node
-        = render partial: 'node_streetview', object: @node
+      .row-fluid
+        %section.node-content.span8
+          = render partial: 'node_status', object: @node
+          = render partial: 'node_photos', object: @node
+          = render partial: 'node_note', object: @node
+          = render partial: 'node_streetview', object: @node
 
-      %section.node-aside.span4
-        = render partial: 'node_edit', object: @node
-        = render partial: 'node_map', object: @node
-        = render partial: 'node_data', object: @node
-        = render partial: 'node_similar', object: @node
+        %section.node-aside.span4
+          = render partial: 'node_edit', object: @node
+          = render partial: 'node_map', object: @node
+          = render partial: 'node_data', object: @node
+          = render partial: 'node_similar', object: @node
 
 - content_for :meta do
   = render_og_metadata(title: @node.name, description: t('header.title'), type: 'place', url: node_url(@node), image: image_path('wheely_big.jpg'))
