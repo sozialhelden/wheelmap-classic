@@ -1,7 +1,7 @@
 %section.node-edit
   = render partial: 'node_faq'
 
-  = link_to edit_node_path(node_edit), class: 'btn' do
+  = link_to '/map#/nodes/' + node_edit.id.to_s + '/edit', class: 'btn' do
     %i.icon-pencil
     %span.visible-desktop.visible-phone=t('.edit')
 
