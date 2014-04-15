@@ -1,8 +1,20 @@
+---
 uk:
   header:
     navigation:
       map: Карта
   nodes:
     node_edit:
-      details: "деталі"
-      edit: "Редагувати"
+      details: деталі
+      edit: Редагувати
+  activerecord:
+    attributes:
+      poi:
+        name: Ім'я
+        type: Тип
+        website: Веб-сайт
+        phone: Телефон
+        address_street: Вулиця
+        address_housenumber: Ні
+        address_postcode: Поштовий індекс
+        address_city: Місто

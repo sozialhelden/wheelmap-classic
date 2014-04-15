@@ -1,1 +1,13 @@
-el: {}
+---
+el:
+  activerecord:
+    attributes:
+      poi:
+        name: Name
+        type: Τύπος
+        website: Ιστοσελίδα
+        phone: Τηλέφωνο
+        address_street: Οδός
+        address_housenumber: Αριθμός οικίας
+        address_postcode: Ταχυδρομικός κώδικας
+        address_city: Πόλη

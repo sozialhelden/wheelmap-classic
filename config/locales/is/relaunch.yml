@@ -1,1 +1,13 @@
-is: {}
+---
+is:
+  activerecord:
+    attributes:
+      poi:
+        name: Nafn
+        type: Týpa
+        website: Vefsíða
+        phone: Sími
+        address_street: Gata
+        address_housenumber: Nei
+        address_postcode: Póstfang
+        address_city: Borg
