@@ -1,5 +1,18 @@
 ---
 en:
+  activerecord:
+    attributes:
+      poi:
+        name: Name
+        type: Type
+        address: Address
+        website: Website
+        phone: Phone
+        note: Note
+        address_street: Street
+        address_housenumber: Housenumber
+        address_postcode: Postcode
+        address_city: City
   faq:
     answers:
       0: "You can always change the marking of a place yourself. Just choose the right marking and \"Save\" - done!"
