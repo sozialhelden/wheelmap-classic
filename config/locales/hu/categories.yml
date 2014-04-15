@@ -1,0 +1,178 @@
+hu:
+  poi:
+    category:
+      accommodation: Szállás
+      education: Oktatás
+      food: Étel
+      government: Hivatali
+      health: Egészségügyi
+      leisure: Szabadidő
+      misc: Egyéb
+      money_post: "Bank"
+      public_transfer: "Tömegközlekedés"
+      shopping: Bevásárlás
+      sport: Sport
+      tourism: Turizmus
+      unknown: Ismeretlen
+    name:
+      accommodation:
+        beach_resort: "Tengerparti szálloda"
+        bed_and_breakfast: "Szállás és reggeli"
+        camp_site: "Kemping"
+        caravan_site: "Lakókocsis kemping"
+        chalet: Nyaraló
+        dormitory: Bentlakás
+        guest_house: "Vendégház"
+        hostel: Hostel
+        hotel: Szálloda
+        motel: Motel
+      education:
+        college: Kollégium
+        driving_school: "Autós iskola"
+        kindergarten: Óvoda
+        library: Könyvtár
+        museum: Múzeum
+        school: Iskola
+        university: Egyetem
+      food:
+        bar: Bár
+        biergarten: Sörkert
+        cafe: Kávézó
+        drinking_water: "Ivóvíz"
+        fast_food: "Gyorsétterem"
+        ice_cream: "Fagyizó"
+        pub: Kocsma
+        restaurant: Étterem
+      government:
+        courthouse: Bíróság
+        embassy: Követség
+        government: "Kormányhivatal"
+        police: Rendőrség
+        public_building: "Középület"
+        townhall: Városháza
+      health:
+        dentist: Fogorvos
+        doctors: Orvosi ellátás
+        hearing_aids: "Hallókészülék kereskedő"
+        hospital: Kórház
+        medical_supply: "Orvosi eszközök"
+        pharmacy: Gyógyszertár
+        social_facility: "Szociális létesítmény"
+        veterinary: Állatorvos
+      leisure:
+        arena: Aréna
+        brothel: Bordély
+        casino: Kaszinó
+        cinema: Mozi
+        community_center: "Közösségi központ"
+        gallery: Galléria
+        nightclub: Szórakozóhely
+        playground: Játszótér
+        sauna: Szauna
+        stripclub: Sztriptízbár
+        theatre: Színház
+        zoo: Állatkert
+      misc:
+        company: "Cég (Iroda)"
+        estate_agent: "Ingatlan ügynökség"
+        insurance: Biztosító
+        lawyer: Ügyvéd
+        place_of_worship: "Vallási hely"
+        toilets: Toalett
+      money_post:
+        atm: Bankautomata ATM
+        bank: Bank
+        bureau_de_change: "Valutaváltó"
+        post_box: "Postaláda"
+        post_office: "Postahivatal"
+      public_transfer:
+        aerodrome: Reptér
+        bicycle_parking: "Bicikli parkoló"
+        bicycle_rental: "Bicikli kölcsönző"
+        boatyard: Hajójavító műhely
+        bus_station: "Buszmegálló"
+        bus_stop: "Busz stop"
+        cable_car: "Libegő"
+        car_rental: "Autókölcsönző"
+        car_sharing: "Közös autóhasználat"
+        chair_lift: "Felvonó"
+        ferry: Komp
+        ferry_terminal: "Komp kikötő"
+        fuel: "Benzinkút"
+        halt: Megálló
+        light_rail: "Vasút"
+        parking: Parkoló
+        parking_aisle: "Parkoló út"
+        platform: Peron
+        station: "Pályaudvar"
+        subway_entrance: "Metrólejáró"
+        terminal: "Reptéri terminál"
+        tram_stop: "Villamosmegálló"
+      shopping:
+        alcohol: Szeszes italok
+        bakery: Pékség
+        beauty: "Szépségszalon"
+        beverages: Italbolt
+        bicycle: "Bicikli bolt"
+        books: Könyvesbolt
+        butcher: Hentes
+        car_repair: "Autószervíz"
+        car_shop: "Autóbolt"
+        chemist: Gyógyszertár
+        clothes: Ruhabolt
+        computer: Számítógép
+        confectionery: "Édességbolt"
+        convenience: WC
+        deli: Csemegebolt
+        department_store: "Áruház"
+        doityourself: "Barkácsbolt"
+        dry_cleaning: "Ruhatisztító"
+        electronics: Elektronikai szaküzlet
+        fabric: "Anyagbolt"
+        farm_shop: "Agro bolt"
+        florist: Virágüzlet
+        furniture: Bútorüzlet
+        garden_centre: "Kertészeti szaküzlet"
+        gift: "Ajándékbolt"
+        hairdresser: Fodrászat
+        hardware: Számítógép szaküzlet
+        jewelry: Ékszerészet
+        kiosk: Kioszk
+        laundry: Mosoda
+        mall: "Bevásárló központ"
+        optician: Optikus
+        organic: "Biobolt"
+        outdoor: "Túrabolt"
+        pet: "Kisállatkereskedés"
+        photo: Fényképész
+        second_hand: "Túrkáló"
+        shoes: Cipőbolt
+        sports: Sportárúház
+        stationery: Irodaszerek
+        supermarket: Szupermárket
+        toys: Játékbolt
+        travel_agency: "Utazási iroda"
+        video: "Videokölcsönző"
+      sport:
+        pitch: "Sportpálya"
+        sports_centre: "Sportközpont"
+        stadium: Stadion
+        swimming: Uszoda
+        swimming_pool: "Uszoda"
+      tourism:
+        archaeological_site: "Régészeti lelőhely"
+        arts_centre: "Művészeti központ"
+        artwork: Műtárgyak
+        attraction: Látványosság
+        battlefield: Harcmező
+        beach: Tengerpart
+        beacon: Világítótorony
+        castle: Kastély
+        cave_entrance: "Barlang bejárat"
+        information: "Turisztikai információ"
+        memorial: Emlékmű
+        theme_park: "Vidámpark"
+        tower: Torony
+        viewpoint: "Kilátó"
+      unknown:
+        unknown: Ismeretlen
