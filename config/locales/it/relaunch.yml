@@ -51,7 +51,7 @@ it:
     node_status:
       accessible_toilet: "Bagno accessibile con sedia a rotelle:"
       premium: "%{name} dice: Questo posto é"
-      wheelchair_accessibility: "Accesibilità con sedia a rotelle:"
+      wheelchair_accessibility: "Accessibilità con sedia a rotelle:"
     node_streetview:
       streetview: "Streetview:"
     show:
