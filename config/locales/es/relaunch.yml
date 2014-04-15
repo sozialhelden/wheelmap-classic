@@ -1,8 +1,9 @@
+---
 es:
   header:
     navigation:
-      about_wheelmap: "Sobre Wheelmap"
-      choose_language: "Elija idioma"
+      about_wheelmap: Sobre Wheelmap
+      choose_language: Elija idioma
       contact: Contacto
       map: Mapa
       projects: Implícate
@@ -11,20 +12,23 @@ es:
   home:
     index:
       overlay:
-        button: "OK, vamos!"
-        categories: "Filtrar lugares por categorías"
-        filter: "Filtrar lugares por accesibilidad en silla de ruedas"
-        headline: "Marca y encuentra lugares accesibles en sillas de ruedas con Wheelmap.org - internacional y gratuito. Es fácil:"
-        lookup: "Buscar un lugar específico"
-        secondary_headline: "Nuestro semáforo para marcar la accesibilidad en silla de ruedas de los lugares públicos:"
+        button: OK, vamos!
+        categories: Filtrar lugares por categorías
+        filter: Filtrar lugares por accesibilidad en silla de ruedas
+        headline: 'Marca y encuentra lugares accesibles en sillas de ruedas con Wheelmap.org
+          - internacional y gratuito. Es fácil:'
+        lookup: Buscar un lugar específico
+        secondary_headline: 'Nuestro semáforo para marcar la accesibilidad en silla
+          de ruedas de los lugares públicos:'
   nodes:
     new:
       form:
-        legend: "Localización del sitio"
-        location: "Por favor, haga click en el mapa y sitúe el marcador en la posición exacta."
+        legend: Localización del sitio
+        location: Por favor, haga click en el mapa y sitúe el marcador en la posición
+          exacta.
     node_edit:
-      details: "Detalles"
-      edit: "Editar"
+      details: Detalles
+      edit: Editar
     show:
       share:
         facebook: Facebook
@@ -32,20 +36,35 @@ es:
   search:
     index:
       no-results:
-        headline: "Lo siento, no pudimos encontrar ningún lugar llamado \"%{query}\"."
+        headline: Lo siento, no pudimos encontrar ningún lugar llamado "%{query}".
         hint:
-          example: "<strong>Ejemplo:</strong> Londres, Reino Unido"
-          info: "Nuestro servicio de búsqueda solo funciona con información de nombre y/o dirección. Por favor, repita la búsqueda por el nombre del lugar o una dirección, por ejemplo, el nombre de la calle y/o la ciudad. Buscar por un tipo de lugar, como un restaurante o un cine no funcionará!"
-          work_in_progress: "Trabajamos duramente para hacer cada vez más fácil e intuitiva la búsqueda por lugares. "
+          example: <strong>Ejemplo:</strong> Londres, Reino Unido
+          info: Nuestro servicio de búsqueda solo funciona con información de nombre
+            y/o dirección. Por favor, repita la búsqueda por el nombre del lugar o
+            una dirección, por ejemplo, el nombre de la calle y/o la ciudad. Buscar
+            por un tipo de lugar, como un restaurante o un cine no funcionará!
+          work_in_progress: 'Trabajamos duramente para hacer cada vez más fácil e
+            intuitiva la búsqueda por lugares. '
         try_this:
-          address: "Por favor, proporcione más <strong>detalles de la dirección</strong>."
-          intro: "Pruebe esto:"
-          spell_check: "Revise la <strong>ortografía</strong> de su entrada"
+          address: Por favor, proporcione más <strong>detalles de la dirección</strong>.
+          intro: 'Pruebe esto:'
+          spell_check: Revise la <strong>ortografía</strong> de su entrada
       results:
         ticker:
-          one: "%{count} resultado:"
-          other: "%{count} resultados:"
+          one: '%{count} resultado:'
+          other: '%{count} resultados:'
     timeout:
-      headline: "Oh, fallo nuestro"
-      info: "Nuestro servicio de búsqueda estuvo no disponible"
-      repeat_search: "Reintentar la búsqueda"
+      headline: Oh, fallo nuestro
+      info: Nuestro servicio de búsqueda estuvo no disponible
+      repeat_search: Reintentar la búsqueda
+  activerecord:
+    attributes:
+      poi:
+        name: Nombre
+        type: Tipo
+        website: Página web
+        phone: Teléfono
+        address_street: Calle
+        address_housenumber: 'No'
+        address_postcode: Código Postal
+        address_city: Ciudad

@@ -15,18 +15,21 @@ en:
         address_city: City
   faq:
     answers:
-      0: "You can always change the marking of a place yourself. Just choose the right marking and \"Save\" - done!"
-      1: "As a logged in user you can add / correct all the details of a place. Click on \"Edit\" and correct or add information in the mask."
-      2: "You can add further information (e.g. \"This place has a mobile ramp\") in the comment section. Click on \"Edit\" and \"Add comment\"."
-    headline: "Is there a problem with this place?"
+      0: You can always change the marking of a place yourself. Just choose the right
+        marking and "Save" - done!
+      1: As a logged in user you can add / correct all the details of a place. Click
+        on "Edit" and correct or add information in the mask.
+      2: You can add further information (e.g. "This place has a mobile ramp") in
+        the comment section. Click on "Edit" and "Add comment".
+    headline: Is there a problem with this place?
     questions:
-      0: "The marking is wrong."
-      1: "The details of the place are incorrect or missing."
-      2: "I have more information about this place."
+      0: The marking is wrong.
+      1: The details of the place are incorrect or missing.
+      2: I have more information about this place.
   header:
     navigation:
-      about_wheelmap: "About Wheelmap"
-      choose_language: "Choose language"
+      about_wheelmap: About Wheelmap
+      choose_language: Choose language
       contact: Contact
       map: Map
       projects: Projects
@@ -35,66 +38,73 @@ en:
   home:
     index:
       overlay:
-        button: "Okay, let’s go!"
-        categories: "Filter places by categories"
-        filter: "Filter places by wheelchair accessibility"
-        headline: "Mark and find wheelchair accessible places with Wheelmap.org - worldwide and for free. It’s easy:"
-        lookup: "Search for a specific place"
-        secondary_headline: "Our traffic light system to mark the wheelchair accessibility of public places:"
+        button: Okay, let’s go!
+        categories: Filter places by categories
+        filter: Filter places by wheelchair accessibility
+        headline: 'Mark and find wheelchair accessible places with Wheelmap.org -
+          worldwide and for free. It’s easy:'
+        lookup: Search for a specific place
+        secondary_headline: 'Our traffic light system to mark the wheelchair accessibility
+          of public places:'
   nodes:
     new:
       form:
-        legend: "Location of the place"
-        location: "Please click on the map and place the marker at the exact position."
+        legend: Location of the place
+        location: Please click on the map and place the marker at the exact position.
     node_data:
-      address: "Address:"
-      contact_details: "Contact details:"
+      address: 'Address:'
+      contact_details: 'Contact details:'
     node_edit:
-      details: "Details"
-      edit: "Edit"
+      details: Details
+      edit: Edit
     node_map:
-      map: "Map:"
+      map: 'Map:'
     node_note:
-      comment: "Comment:"
+      comment: 'Comment:'
     node_photos:
-      add: "Add"
-      photos_of_this_place: "Photos of this place:"
-      upload: "Upload"
+      add: Add
+      photos_of_this_place: 'Photos of this place:'
+      upload: Upload
     node_similar:
-      similar: "Similar places: %{name}"
+      similar: 'Similar places: %{name}'
     node_status:
-      accessible_toilet: "Wheelchair accessible toilet:"
-      premium: "%{name} says: this place is"
-      wheelchair_accessibility: "Wheelchair accessibility:"
+      accessible_toilet: 'Wheelchair accessible toilet:'
+      premium: '%{name} says: this place is'
+      wheelchair_accessibility: 'Wheelchair accessibility:'
     node_streetview:
-      streetview: "Streetview:"
+      streetview: 'Streetview:'
     show:
       header:
         meta:
-          description: "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place."
-          title: "This place is on Wheelmap.org: %{name}"
+          description: Find out if this place is wheelchair accessible on Wheelmap.org.
+            Or add further information and photos to the place.
+          title: 'This place is on Wheelmap.org: %{name}'
       share:
-        email: "E-mail"
+        email: E-mail
         facebook: Facebook
-        text: "I've found this place on Wheelmap.org: %{name}"
+        text: 'I''ve found this place on Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
       no-results:
-        headline: "Sorry, we could’t find a place called \"%{query}\"."
+        headline: Sorry, we could’t find a place called "%{query}".
         hint:
-          example: "<strong>Example:</strong> London, United Kingdom"
-          info: "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!"
-          work_in_progress: "We work hard to make searching for places easier and more intuitive in the future."
+          example: <strong>Example:</strong> London, United Kingdom
+          info: Our search service only works with name and/or address information.
+            Hence, please either search for the name of the place or an address, e.g.
+            street name and/or city. Searching for a type of place, e.g. restaurant
+            or cinema, does not work!
+          work_in_progress: We work hard to make searching for places easier and more
+            intuitive in the future.
         try_this:
-          address: "Please provide more <strong>address details</strong>."
-          intro: "Try this:"
-          spell_check: "Check the <strong>spelling</strong> of your input."
+          address: Please provide more <strong>address details</strong>.
+          intro: 'Try this:'
+          spell_check: Check the <strong>spelling</strong> of your input.
       results:
         ticker:
-          one: "%{count} result:"
-          other: "%{count} results:"
+          one: '%{count} result:'
+          other: '%{count} results:'
     timeout:
-      headline: "Oh, our fault"
-      info: "Our search service was temporarily not available."
-      repeat_search: "Retry search"
+      headline: Oh, our fault
+      info: Our search service was temporarily not available.
+      repeat_search: Retry search
