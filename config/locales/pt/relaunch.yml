@@ -1,1 +1,13 @@
-pt: {}
+---
+pt:
+  activerecord:
+    attributes:
+      poi:
+        name: Nome
+        type: Tipo
+        website: Website
+        phone: Telefone
+        address_street: Rua
+        address_housenumber: Nr
+        address_postcode: código postal
+        address_city: Cidade
