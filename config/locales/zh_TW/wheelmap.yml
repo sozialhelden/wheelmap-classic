@@ -75,6 +75,7 @@ zh_TW:
       website: "例如：http://www.example.com"
     labels:
       category: "分類："
+      centralkey: "Central key:"
       city: "城市："
       create: "新增地點"
       email: 電子郵件

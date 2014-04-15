@@ -97,7 +97,7 @@ sq_AL:
       terms: "Unë pranoj kushtet e përdorimit."
       type: "Lloji:"
       website: "Website:"
-      wheelchair: "E aksesueshme në karrige me rrota?"
+      wheelchair: "Aksesueshmëria në karrige me rrota?"
       wheelchair_description: "Koment mbi aksesueshmërinë:"
     titles:
       basic: "Të thëna bazë"
@@ -115,12 +115,12 @@ sq_AL:
       feedback: Reagim
       home: Fillo
       how_to_add_a_place: "Si të shtoj vende?"
-      imprint: Ngulit
+      imprint: Imprint
       logged_in_as: "I identifikuar si:"
       login: "Identifikohu"
       logout: "Dil"
       newsletter: Fletushkë
-      press: Shtyp
+      press: Shtypi
       profile: Profil
       suggestions: Sugjerime
       what_is_barrier_free: "Çfarë do të thotë \"e aksesueshme në karrige me rrota\"?"
