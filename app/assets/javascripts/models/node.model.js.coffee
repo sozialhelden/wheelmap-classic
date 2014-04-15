@@ -58,6 +58,10 @@ Wheelmap.Node = DS.Model.extend
     '/nodes/' + @get('id') + '/update_wheelchair.js'
   ).property('id')
 
+  popupPath: (()->
+    '/popup/' + @get('id')
+  ).property('id')
+
   address: (()->
     address = []
     addr = @getProperties('street', 'housenumber', 'city', 'postcode')
