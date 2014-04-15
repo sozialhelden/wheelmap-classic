@@ -1,8 +1,9 @@
+---
 ca:
   header:
     navigation:
-      about_wheelmap: "Sobre Wheelmap"
-      choose_language: "Triar idioma"
+      about_wheelmap: Sobre Wheelmap
+      choose_language: Triar idioma
       contact: Contactar
       map: Mapa
     toolbar:
@@ -10,25 +11,36 @@ ca:
   home:
     index:
       overlay:
-        button: "'Nem-hi!"
-        categories: "Filtra llocs per categories"
-        filter: "Filtrar llocs per accessibilitat per cadira de rodes"
-        lookup: "Cercar un lloc determinat"
+        button: '''Nem-hi!'
+        categories: Filtra llocs per categories
+        filter: Filtrar llocs per accessibilitat per cadira de rodes
+        lookup: Cercar un lloc determinat
   nodes:
     new:
       form:
-        legend: "Localització del lloc"
+        legend: Localització del lloc
     node_edit:
-      edit: "Edita"
+      edit: Edita
   search:
     index:
       no-results:
         try_this:
-          intro: "Prova això:"
+          intro: 'Prova això:'
       results:
         ticker:
-          one: "%{count} resultat:"
-          other: "%{count} resultats:"
+          one: '%{count} resultat:'
+          other: '%{count} resultats:'
     timeout:
-      headline: "Ups, error nostre"
-      repeat_search: "Reiniciar la rerca"
+      headline: Ups, error nostre
+      repeat_search: Reiniciar la rerca
+  activerecord:
+    attributes:
+      poi:
+        name: Nom
+        type: Tipus
+        website: Pàgina web
+        phone: Telèfon
+        address_street: Carrer
+        address_housenumber: Núm
+        address_postcode: Codi postal
+        address_city: Ciutat
