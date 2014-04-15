@@ -1,12 +1,15 @@
+---
 nl:
   faq:
     answers:
-      0: "U kunt altijd de markering van een plaats zelf veranderen. Kies gewoon de juiste markering en \"Save\" - klaar!"
-      2: "U kunt meer informatie (bvb \"Deze plaats heeft een mobiele helling\") in de commentaar sectie toevoegen. Klik op \"Edit\" en \"add comment\""
+      0: U kunt altijd de markering van een plaats zelf veranderen. Kies gewoon de
+        juiste markering en "Save" - klaar!
+      2: U kunt meer informatie (bvb "Deze plaats heeft een mobiele helling") in de
+        commentaar sectie toevoegen. Klik op "Edit" en "add comment"
   header:
     navigation:
-      about_wheelmap: "Over Wheelmap"
-      choose_language: "Kies de taal"
+      about_wheelmap: Over Wheelmap
+      choose_language: Kies de taal
       contact: Contact
       map: Plattegrond
       projects: Projecten
@@ -15,53 +18,66 @@ nl:
   home:
     index:
       overlay:
-        button: "Oké laat ons beginnen."
-        categories: "Selecteer plaatsen via de categorieën"
-        filter: "Selecteer plaatsen met de Wheelchair toegang"
-        headline: "Markeer en vind rolstoel toegankelijke plaatsen met Wheelmap.org - wereldwijd en gratis. Het is makkelijk:"
-        lookup: "Zoek een speciale plaats"
-        secondary_headline: "Ons stoplicht systeem om de rolstoel toegankelijke openbare ruimtes te markeren:"
+        button: Oké laat ons beginnen.
+        categories: Selecteer plaatsen via de categorieën
+        filter: Selecteer plaatsen met de Wheelchair toegang
+        headline: 'Markeer en vind rolstoel toegankelijke plaatsen met Wheelmap.org
+          - wereldwijd en gratis. Het is makkelijk:'
+        lookup: Zoek een speciale plaats
+        secondary_headline: 'Ons stoplicht systeem om de rolstoel toegankelijke openbare
+          ruimtes te markeren:'
   nodes:
     new:
       form:
-        legend: "locatie"
+        legend: locatie
     node_data:
-      address: "adres"
-      contact_details: "contactgegevens"
+      address: adres
+      contact_details: contactgegevens
     node_edit:
-      edit: "Redigeren"
+      edit: Redigeren
     node_map:
-      map: "Plattegrond"
+      map: Plattegrond
     node_note:
-      comment: "Commentaar"
+      comment: Commentaar
     node_photos:
-      photos_of_this_place: "Fotos van deze plaats:"
+      photos_of_this_place: 'Fotos van deze plaats:'
     node_status:
-      accessible_toilet: "rolstoeltoegankelijk toilet"
-      wheelchair_accessibility: "Rolstoel toegangelijk?"
+      accessible_toilet: rolstoeltoegankelijk toilet
+      wheelchair_accessibility: Rolstoel toegangelijk?
     node_streetview:
-      streetview: "Streetview:"
+      streetview: 'Streetview:'
     show:
       share:
-        email: "E-mail"
+        email: E-mail
         facebook: Facebook
-        text: "Ik heb dit plaats gevonden op Wheelmap.org: %{name}"
+        text: 'Ik heb dit plaats gevonden op Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
       no-results:
-        headline: "Sorry, we hebben het plaats \"%{query}\" niet gevonden."
+        headline: Sorry, we hebben het plaats "%{query}" niet gevonden.
         hint:
-          example: "<strong>bijvoorbeeld:</strong> London, United Kingdom"
+          example: <strong>bijvoorbeeld:</strong> London, United Kingdom
         try_this:
-          address: "Geef a.u.b. meer <strong>address details</strong>."
-          intro: "Probeer dit"
-          spell_check: "Controleer a.u.b. de  <strong>spelling</strong> van je text"
+          address: Geef a.u.b. meer <strong>address details</strong>.
+          intro: Probeer dit
+          spell_check: Controleer a.u.b. de  <strong>spelling</strong> van je text
       results:
         ticker:
-          one: "%{count} resultaat"
-          other: "%{count} resultaat:"
+          one: '%{count} resultaat'
+          other: '%{count} resultaat:'
     timeout:
-      headline: "sorry, werkt niet"
-      info: "Onze zoekdienst was tijdelijk buiten werk"
-      repeat_search: "Herhaal de zoekopdracht"
+      headline: sorry, werkt niet
+      info: Onze zoekdienst was tijdelijk buiten werk
+      repeat_search: Herhaal de zoekopdracht
+  activerecord:
+    attributes:
+      poi:
+        name: Naam
+        type: Invullen
+        website: Internetpagina
+        phone: Telefoon
+        address_street: Straat
+        address_housenumber: Nee
+        address_postcode: Postcode
+        address_city: Stad
