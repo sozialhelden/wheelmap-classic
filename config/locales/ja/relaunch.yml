@@ -1,18 +1,19 @@
+---
 ja:
   faq:
     answers:
-      0: "あなたが設定したマーキングはいつでも変更できます。正しいマーキングを選んで\"Save\"を押せば完了です！"
-      1: "ユーザとしてログインを行うと、場所についてのすべての情報に対して追加や編集ができるようになります。\"Edit\"を押して、欄の中に表示されている情報の追加や修正を行ってください。"
-      2: "コメント部分には、より詳細な情報を書くことができます(例: \"持ち運び型ランプあり\") \"Edit\"を押した後、\"Add comment\"を押してください。"
-    headline: "事実と異なる情報がありますか？"
+      0: あなたが設定したマーキングはいつでも変更できます。正しいマーキングを選んで"Save"を押せば完了です！
+      1: ユーザとしてログインを行うと、場所についてのすべての情報に対して追加や編集ができるようになります。"Edit"を押して、欄の中に表示されている情報の追加や修正を行ってください。
+      2: 'コメント部分には、より詳細な情報を書くことができます(例: "持ち運び型ランプあり") "Edit"を押した後、"Add comment"を押してください。'
+    headline: 事実と異なる情報がありますか？
     questions:
-      0: "マーキングが間違っています。"
-      1: "詳細情報に間違いが含まれています。"
-      2: "この場所をより詳しく知っています。"
+      0: マーキングが間違っています。
+      1: 詳細情報に間違いが含まれています。
+      2: この場所をより詳しく知っています。
   header:
     navigation:
-      about_wheelmap: "Wheelmap について"
-      choose_language: "言語を選択"
+      about_wheelmap: Wheelmap について
+      choose_language: 言語を選択
       contact: 連絡先
       map: 地図
       projects: プロジェクト
@@ -21,66 +22,77 @@ ja:
   home:
     index:
       overlay:
-        button: "OK、さあ始めよう！"
-        categories: "場所をカテゴリでフィルター"
-        filter: "車椅子のアクセシビリティで場所をフィルター"
-        headline: "Wheelmao.org で車椅子で行ける場所を探してマークしよう - 世界のどこでも無料。とても簡単です。"
-        lookup: "指定した場所を探す"
-        secondary_headline: "公共の場所での車椅子のアクセシビリティをマークする自分たちの交通信号システム"
+        button: OK、さあ始めよう！
+        categories: 場所をカテゴリでフィルター
+        filter: 車椅子のアクセシビリティで場所をフィルター
+        headline: Wheelmao.org で車椅子で行ける場所を探してマークしよう - 世界のどこでも無料。とても簡単です。
+        lookup: 指定した場所を探す
+        secondary_headline: 公共の場所での車椅子のアクセシビリティをマークする自分たちの交通信号システム
   nodes:
     new:
       form:
-        legend: "場所の位置座標"
-        location: "地図をクリックして、マーカーを正しい位置に調整してください。"
+        legend: 場所の位置座標
+        location: 地図をクリックして、マーカーを正しい位置に調整してください。
     node_data:
-      address: "住所:"
-      contact_details: "詳しい連絡先:"
+      address: '住所:'
+      contact_details: '詳しい連絡先:'
     node_edit:
-      details: "詳細"
-      edit: "編集"
+      details: 詳細
+      edit: 編集
     node_map:
-      map: "地図:"
+      map: '地図:'
     node_note:
-      comment: "コメント:"
+      comment: 'コメント:'
     node_photos:
-      add: "追加"
-      photos_of_this_place: "この場所の写真:"
-      upload: "アップロード"
+      add: 追加
+      photos_of_this_place: 'この場所の写真:'
+      upload: アップロード
     node_similar:
-      similar: "ここに似た場所: %{name}"
+      similar: 'ここに似た場所: %{name}'
     node_status:
-      accessible_toilet: "トイレへの車椅子アクセシビリティ:"
-      premium: "%{name} によればこの場所は"
-      wheelchair_accessibility: "車椅子のアクセシビリティ:"
+      accessible_toilet: 'トイレへの車椅子アクセシビリティ:'
+      premium: '%{name} によればこの場所は'
+      wheelchair_accessibility: '車椅子のアクセシビリティ:'
     node_streetview:
-      streetview: "ストリートビュー:"
+      streetview: 'ストリートビュー:'
     show:
       header:
         meta:
-          description: "Wheelmap.orgのなかで車椅子のアクセシビリティ情報が登録されているかどうかを確認してみてください。もしまだ情報が少ない場合、より詳しい情報や写真を追加してみましょう。"
-          title: "Wheelmap.orgでの登録名称: %{name}"
+          description: Wheelmap.orgのなかで車椅子のアクセシビリティ情報が登録されているかどうかを確認してみてください。もしまだ情報が少ない場合、より詳しい情報や写真を追加してみましょう。
+          title: 'Wheelmap.orgでの登録名称: %{name}'
       share:
-        email: "E-mail"
+        email: E-mail
         facebook: Facebook
-        text: "Wheelmap.org でこんな場所がありました: %{name}"
+        text: 'Wheelmap.org でこんな場所がありました: %{name}'
         twitter: Twitter
   search:
     index:
       no-results:
-        headline: "\"%{query}\" という名前の場所はありませんでした。"
+        headline: '"%{query}" という名前の場所はありませんでした。'
         hint:
-          example: "<strong>例:</strong> 英国, ロンドン"
-          info: "このサイトの検索機能は、場所の名称や住所情報を元に行っています。そのため、検索の際には対象の場所の名称、あるいは住所(例: ストリートの名前や市町村の名前)を入力して検索をしてください。レストランや映画館、といった場所の種類を元にした検索は行なうことができませんのでご注意ください。"
-          work_in_progress: "より簡単に、より直感的に場所を検索できるよう、私たちはがんばります。"
+          example: <strong>例:</strong> 英国, ロンドン
+          info: 'このサイトの検索機能は、場所の名称や住所情報を元に行っています。そのため、検索の際には対象の場所の名称、あるいは住所(例: ストリートの名前や市町村の名前)を入力して検索をしてください。レストランや映画館、といった場所の種類を元にした検索は行なうことができませんのでご注意ください。'
+          work_in_progress: より簡単に、より直感的に場所を検索できるよう、私たちはがんばります。
         try_this:
-          address: "より詳細な<strong>住所情報</strong> を登録してみましょう。"
-          intro: "もしかして:"
-          spell_check: "<strong>誤字脱字</strong>が無いか、確認してください。"
+          address: より詳細な<strong>住所情報</strong> を登録してみましょう。
+          intro: 'もしかして:'
+          spell_check: <strong>誤字脱字</strong>が無いか、確認してください。
       results:
         ticker:
-          one: "結果 1 件:"
-          other: "結果 &{count} 件:"
+          one: '結果 1 件:'
+          other: '結果 &{count} 件:'
     timeout:
-      headline: "こちらの間違いです。すみません。"
-      info: "検索機能が一時的に利用できない状態です。"
-      repeat_search: "検索を再実行"
+      headline: こちらの間違いです。すみません。
+      info: 検索機能が一時的に利用できない状態です。
+      repeat_search: 検索を再実行
+  activerecord:
+    attributes:
+      poi:
+        name: 名前
+        type: タイプ
+        website: ウェブサイト
+        phone: 電話
+        address_street: 住所
+        address_housenumber: 番地
+        address_postcode: 郵便番号
+        address_city: 都市

@@ -1,1 +1,13 @@
-tlh: {}
+---
+tlh:
+  activerecord:
+    attributes:
+      poi:
+        name: pong
+        type: Segh
+        website: juHDaq
+        phone: QumwI
+        address_street: He
+        address_housenumber: ghobe
+        address_postcode: Daq ngoq
+        address_city: veng

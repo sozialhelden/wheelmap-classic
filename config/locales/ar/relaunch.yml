@@ -1,8 +1,9 @@
+---
 ar:
   header:
     navigation:
-      about_wheelmap: "حول ويل ماب"
-      choose_language: "إختر اللغة"
+      about_wheelmap: حول ويل ماب
+      choose_language: إختر اللغة
       contact: للإتصال
       map: خريطة
       projects: شارك
@@ -11,17 +12,30 @@ ar:
   home:
     index:
       overlay:
-        button: "حسنا ، للنطلق!"
-        categories: "تصنيف الأماكن"
-        filter: "تحديد الأماكن بحسب إمكانية وصول الكرسي المتحرك"
-        headline: "ضع العلامات و ابحث عن الأماكن التي يمكن الوصول إليها بالكرسي المتحرك مع  Wheelmap.org\nمجانا - و في أي مكان حول العالم :"
-        lookup: "ابحث عن مكان محدد"
-        secondary_headline: "نظام الإشارات الخاص بنا للكراسي المتحركة في الأماكن العامة:"
+        button: حسنا ، للنطلق!
+        categories: تصنيف الأماكن
+        filter: تحديد الأماكن بحسب إمكانية وصول الكرسي المتحرك
+        headline: |-
+          ضع العلامات و ابحث عن الأماكن التي يمكن الوصول إليها بالكرسي المتحرك مع  Wheelmap.org
+          مجانا - و في أي مكان حول العالم :
+        lookup: ابحث عن مكان محدد
+        secondary_headline: 'نظام الإشارات الخاص بنا للكراسي المتحركة في الأماكن العامة:'
   nodes:
     node_edit:
-      details: "تفاصيل"
-      edit: "تحرير"
+      details: تفاصيل
+      edit: تحرير
     show:
       share:
         facebook: فيس بوك
         twitter: تويتر
+  activerecord:
+    attributes:
+      poi:
+        name: الإسم
+        type: النوع
+        website: موقع
+        phone: رقم الهاتف
+        address_street: شارع
+        address_housenumber: الرقم
+        address_postcode: الرمز البريدي
+        address_city: المدينة
