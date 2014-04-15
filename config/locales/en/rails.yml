@@ -7,6 +7,17 @@ en:
         last_name: "Last name"
         privacy_policy: "Privacy policy"
         terms: Terms
+      poi:
+        name: Name
+        type: Type
+        address: Address
+        website: Website
+        phone: Phone
+        note: Note
+        address_street: Street
+        address_housenumber: Housenumber
+        address_postcode: Postcode
+        address_city: City
     errors:
       full_messages:
         format: "%{attribute} %{message}"
