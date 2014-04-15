@@ -1,4 +1,17 @@
 de:
+  activerecord:
+    attributes:
+      poi:
+        name: Name
+        type: Typ
+        address: Addresse
+        website: Webseite
+        phone: Telefon
+        note: Hinweise
+        address_street: Straße
+        address_housenumber: Hausnummer
+        address_postcode: Postleitzahl
+        address_city: Stadt
   faq:
     answers:
       0: "Du kannst die Markierung jederzeit selbst ändern. Einfach die richtige Markierung wählen und \"Speichern\" - fertig!"
