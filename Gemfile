@@ -98,7 +98,7 @@ group :test do
   gem 'email_spec'
 end
 
-group :production do
+group :production, :vagrant do
   gem 'therubyracer'
 end
 
