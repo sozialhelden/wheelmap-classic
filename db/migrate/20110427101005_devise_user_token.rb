@@ -1,7 +1,7 @@
 class DeviseUserToken < ActiveRecord::Migration
   def self.up
     change_table(:users) do |t|
-      t.token_authenticatable
+      t.column :authentication_token, :string
     end
 
     add_index :users, :authentication_token, :unique => true
