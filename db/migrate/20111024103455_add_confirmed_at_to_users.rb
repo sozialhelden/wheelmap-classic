@@ -1,8 +1,8 @@
 class AddConfirmedAtToUsers < ActiveRecord::Migration
   def self.up
-    change_table :users do |t|
-      t.confirmable
-    end
+    add_column :users, :confirmed_at, :datetime
+    add_column :users, :confirmation_sent_at, :datetime
+    add_column :users, :confirmation_token, :string
   end
 
   def self.down
