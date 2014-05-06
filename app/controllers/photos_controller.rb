@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
   # Include Inherited Resources behaviour
   inherit_resources
 
-  actions :create, :destroy
+  actions :index, :create, :destroy, :show
 
   optional_belongs_to :node, :parent_class => Poi
 
@@ -26,6 +26,20 @@ class PhotosController < ApplicationController
   def destroy
     destroy! do |fmt|
       fmt.html { redirect_to :back }
+    end
+  end
+
+  def index
+    photos = Photo.find(params[:ids])
+
+    respond_to do |format|
+      format.json { render json: { photos: photos.as_api_response(:ember) } }
+    end
+  end
+
+  def show
+    show! do |format|
+      format.json{ render json: { photo: resource.as_api_response(:ember) } }
     end
   end
 

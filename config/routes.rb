@@ -65,6 +65,7 @@ Wheelmap::Application.routes.draw do
 
   resources :categories, only: [:index, :show]
   resources :node_types, only: [:index, :show]
+  resources :photos, only: [:index, :show]
 
   resources :users, :as => 'profile', :path => '/profile'
   resources :users do
