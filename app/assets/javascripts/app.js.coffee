@@ -15,6 +15,9 @@
 #= require leaflet/leaflet-src
 #= require leaflet/leaflet.locate
 #= require ember-leaflet
+#= require jquery/jquery.magnific-popup.js
+#= require responsive-popover
+#= require dropzone
 #= require_self
 #= require wheelmap
 
