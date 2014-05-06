@@ -101,11 +101,13 @@ Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.Wheelcha
       promise = model.save()
 
       fulfill = (node)->
-        console.log(node.get('type'))
         that.get('controllers.flash-messages').pushMessage('notice', I18n.t('nodes.update.flash.successfull'))
         window.location.href = '/nodes/' + node.get('id')
 
       reject = (xhr)->
+        if xhr instanceof Error
+          throw xhr
+
         that.get('controllers.flash-messages').pushMessage('error', I18n.t('nodes.update.flash.not_successfull'))
         that.set('errors', xhr.responseJSON.errors)
 
