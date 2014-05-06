@@ -15,5 +15,11 @@ module Api::Photo
       t.add :image_versions, :as => :images
     end
 
+    api_accessible :ember do |t|
+      t.add :id
+      t.add lambda{|photo| photo.image.gallery.url  }, :as => :image
+      t.add lambda{|photo| photo.image.gallery_preview.url  }, :as => :preview
+    end
+
   end
 end

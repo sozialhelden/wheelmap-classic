@@ -210,8 +210,8 @@ class NodesController < ApplicationController
 
   def render_node_json
     render :status => 200, :json => {
-        node: @node.as_api_response(:ember),
-        node_types: [@node.node_type.as_api_response(:ember)]
+      node: @node.as_api_response(:ember),
+      node_types: [@node.node_type.as_api_response(:ember)]
     }
   end
 
