@@ -51,6 +51,10 @@ Wheelmap.Node = DS.Model.extend
     '/nodes/' + @get('id')
   ).property('id')
 
+  photoUploadPath: (->
+    @get('showPath') + '/photos'
+  ).property('showPath')
+
   editPath: (()->
     '/nodes/' + @get('id') + '/edit'
   ).property('id')
