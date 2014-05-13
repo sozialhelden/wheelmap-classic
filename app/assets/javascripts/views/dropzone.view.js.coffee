@@ -1,5 +1,4 @@
-Wheelmap.NodeDropzoneComponent = Ember.Component.extend
-  classNames: 'dropzone'
+Wheelmap.NodeDropzoneView = Ember.View.extend
   acceptedFiles: 'image/*'
   paramName: 'photo[image]'
   maxFilesize: 6 #MB
@@ -15,7 +14,7 @@ Wheelmap.NodeDropzoneComponent = Ember.Component.extend
     options = @getProperties(optionsProperties)
 
     for key, option of options
-      if option is undefined
+      if option is undefined or key is 'init' # Do not override init function
         delete options[key]
 
     dropzone = new Dropzone(@get('element'), options)
@@ -72,18 +71,8 @@ Wheelmap.NodeDropzoneComponent = Ember.Component.extend
   ).property()
 
   onError: (file, message) ->
-    $previewElement = $(file.previewElement);
-    $errorElement = addFlashMessage('error', '<strong>' + file.name + ':</strong> ' + message)
-
-    if $.support.transition
-      $errorElement.on $.support.transition.end, ()->
-        $errorElement.remove()
-        $previewElement.removeClass('in')
-
-      $previewElement.on $.support.transition.end, ()->
-        $previewElement.remove()
-
-    $previewElement.addClass('error')
+    $(file.previewElement).addClass('error')
+    @get('controller').send('error', file.name + ': ' + message.error)
 
   error: (->
     $.proxy(@onError, @)
@@ -109,4 +98,11 @@ Wheelmap.NodeDropzoneComponent = Ember.Component.extend
     $.proxy(@placeFallback, @)
   ).property()
 
-Ember.Handlebars.helper('node-dropzone', Wheelmap.NodeDropzoneComponent)
+  params: (->
+    params = {}
+    # Grap the CSRF param to authenticate when upload
+    params[$('meta[name="csrf-param"]').attr('content')] = $('meta[name="csrf-token"]').attr('content')
+    return params
+  ).property()
+
+Ember.Handlebars.helper('node-dropzone', Wheelmap.NodeDropzoneView)
