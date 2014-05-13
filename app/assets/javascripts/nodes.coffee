@@ -183,6 +183,7 @@ if $dropzoneClickable.length > 0
     thumbnailHeight: 180
     previewTemplate: '<li class="dz-preview-file fade"><a data-full-image-link data-toggle="magnific-popup" data-gallery="node"><img class="img-polaroid" data-dz-thumbnail /><span class="uploadprogress fade in" data-dz-uploadprogress /></a></li>',
     paramName: 'photo[image]'
+
     addedfile: (file) ->
       $previewElement = $(@.options.previewTemplate)
       $dropzoneClickable.closest('li').before($previewElement)

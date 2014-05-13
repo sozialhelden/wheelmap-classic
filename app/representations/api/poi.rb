@@ -66,6 +66,7 @@ module Api::Poi
       t.add :sponsor, if: :sponsored?
       t.add :website
       t.add :phone
+      t.add lambda{|poi| poi.photos.map(&:id).compact  }, :as => :photo_ids
     end
   end
 end
