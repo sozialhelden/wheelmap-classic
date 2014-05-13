@@ -57,7 +57,7 @@ Wheelmap.WheelchairSubmit = Ember.Mixin.create
     wheelchairSaveDone: Ember.K
     wheelchairSaveFail: Ember.K
 
-Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.WheelchairSubmit,
+Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.WheelchairSubmit, Ember.Evented,
   errors: []
   needs: ['flash-messages']
   categories: []
@@ -98,20 +98,26 @@ Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.Wheelcha
     save: ->
       that = @
       model = that.get('content')
-      promise = model.save()
 
-      fulfill = (node)->
+      # Wrap the model save action into a promise so we can call async stuff before we actually save the model
+      # More about promises: http://emberjs.com/api/classes/Ember.RSVP.Promise.html
+      # TODO find a way to have more save listeners, at the moment the first listener calling resolve stops the event
+      promise = new Ember.RSVP.Promise (resolve, reject)->
+        that.trigger('save', resolve, reject)
+
+      promise.then ->
+        model.save()
+
+      promise.then ->
         that.get('controllers.flash-messages').pushMessage('notice', I18n.t('nodes.update.flash.successfull'))
-        window.location.href = '/nodes/' + node.get('id')
+        window.location.href = '/nodes/' + model.get('id')
 
-      reject = (xhr)->
+      promise.catch (xhr)->
         if xhr instanceof Error
           throw xhr
 
         that.get('controllers.flash-messages').pushMessage('error', I18n.t('nodes.update.flash.not_successfull'))
         that.set('errors', xhr.responseJSON.errors)
-
-      promise.then(fulfill).catch(reject)
 
     error: (message)->
       @get('controllers.flash-messages').pushMessage('error', message)
