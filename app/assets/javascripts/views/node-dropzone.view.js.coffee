@@ -5,6 +5,7 @@ Wheelmap.NodeDropzoneView = Ember.View.extend
   thumbnailWidth: 180
   thumbnailHeight: 180
   dropzone: null
+  autoProcessQueue: false
 
   initDropzone: (->
     that = @
@@ -29,6 +30,15 @@ Wheelmap.NodeDropzoneView = Ember.View.extend
       dropzone.on event, eventProxy(event)
 
     @set('dropzone', dropzone)
+
+    @get('controller').on 'save', (resolve, reject)->
+      dropzone.once 'queuecomplete', ->
+        resolve()
+
+      dropzone.once 'error', (file, errorMessage, xhr)->
+        reject(xhr)
+
+      dropzone.processQueue()
   ).on('didInsertElement')
 
   clickable: (->
