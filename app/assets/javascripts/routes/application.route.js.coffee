@@ -10,7 +10,7 @@ Wheelmap.ApplicationRoute = Ember.Route.extend
       $.cookie('sign_url', null)
       window.location.hash = signUrl
 
-  events:
+  actions:
     authenticate: (transition)->
       self = @
 
