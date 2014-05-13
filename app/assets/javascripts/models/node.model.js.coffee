@@ -12,7 +12,7 @@ Wheelmap.Node = DS.Model.extend
   city: attr()
   region: attr()
   type: DS.belongsTo('node_type')
-  photos: DS.hasMany('photo')
+  photos: DS.hasMany('photo', async: true)
   wheelchair_description: attr()
   website: attr()
   phone: attr()
