@@ -103,6 +103,9 @@ Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.Wheelcha
       # More about promises: http://emberjs.com/api/classes/Ember.RSVP.Promise.html
       # TODO find a way to have more save listeners, at the moment the first listener calling resolve stops the event
       promise = new Ember.RSVP.Promise (resolve, reject)->
+        that.one 'save', ->
+          resolve()
+        
         that.trigger('save', resolve, reject)
 
       promise.then ->
