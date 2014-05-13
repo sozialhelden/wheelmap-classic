@@ -105,7 +105,7 @@ Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.Wheelcha
       promise = new Ember.RSVP.Promise (resolve, reject)->
         that.one 'save', ->
           resolve()
-        
+
         that.trigger('save', resolve, reject)
 
       promise.then ->
