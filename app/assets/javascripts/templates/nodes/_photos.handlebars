@@ -3,7 +3,7 @@
 
     {{#node-dropzone classNames='node-photo-dropzone' url=photoUploadPath}}
         <ul>
-            {{#each photos }}
+            {{#each photos}}
                 <li>
                     <a {{bind-attr href=this.image }} data-toggle="magnific-popup" data-gallery="node">
                         <img {{bind-attr src=this.preview }} class="img-polaroid">

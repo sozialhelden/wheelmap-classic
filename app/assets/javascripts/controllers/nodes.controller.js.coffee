@@ -112,3 +112,6 @@ Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.Wheelcha
         that.set('errors', xhr.responseJSON.errors)
 
       promise.then(fulfill).catch(reject)
+
+    error: (message)->
+      @get('controllers.flash-messages').pushMessage('error', message)
