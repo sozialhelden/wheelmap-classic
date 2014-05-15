@@ -11,6 +11,7 @@ class SearchController < ApplicationController
 
   rescue_from Timeout::Error,     :with => :timeout
   rescue_from SocketError,        :with => :timeout
+  rescue_from Net::ReadTimeout,   :with => :timeout
 
   def index
     @search_url   = URI.parse(URL)
