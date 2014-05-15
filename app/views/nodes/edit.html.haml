@@ -28,3 +28,5 @@
     createDraggableLayer(placesStyle(),#{@node.lon}, #{@node.lat});
 
 
+- content_for :robots do
+  %meta{:name => 'robots', :content => 'noindex, nofollow'}
