@@ -6,6 +6,15 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <html class="" lang="#{I18n.locale}"> <!--<![endif]-->
 %head
   = render :partial => 'relaunch/meta'
+
+  - if content_for? :robotos
+    = content_for :robotos
+  - else
+    - if Rails.env.production?
+      %meta{:name => 'robots', :content => 'follow index'}
+    - else
+      %meta{:name => 'robots', :content => 'noindex, nofollow'}
+
   = content_for :meta
 
   - if content_for? :head
