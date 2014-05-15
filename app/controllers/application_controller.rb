@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from Errno::ETIMEDOUT, :with => :timeout
   rescue_from Timeout::Error,   :with => :timeout
+  rescue_from Net::ReadTimeout, :with => :timeout
 
   protected
 
