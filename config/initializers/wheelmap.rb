@@ -74,6 +74,7 @@ Tags = {
   :clothes => :shop,
   :college => :amenity,
   :community_centre => :amenity,
+  :community_center => :amenity,
   :company => :office,
   :computer => :shop,
   :confectionery => :shop,

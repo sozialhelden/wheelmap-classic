@@ -149,6 +149,8 @@ tag_college:
 tag_community_center:
   osm_key: amenity
   osm_value: community_centre
+  alt_osm_key: amenity
+  alt_osm_value: community_center
 
 tag_company:
   osm_key: office
