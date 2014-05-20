@@ -89,15 +89,17 @@ Wheelmap.Node = DS.Model.extend
 Wheelmap.NodeAdapter = DS.ActiveModelAdapter.extend()
 
 Wheelmap.NodeSerializer = DS.ActiveModelSerializer.extend
-  serialize: () ->
-    json = @_super.apply(@, arguments)
+  serialize: (node, options) ->
+    json = @_super(node, options)
 
     delete json.region
-
-    json.type = json.type_id
     delete json.type_id
 
-    json
+    # Needed for legacy features of the backend
+    # @TODO Fix backend
+    json.type = node.get('type.identifier')
+
+    return json
 
 Wheelmap.Node.reopenClass
   WHEELCHAIR_STATUSES: ['yes', 'limited', 'no']
