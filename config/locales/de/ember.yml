@@ -6,6 +6,17 @@ de:
       prompt: "Wähle einen Typ"
     node:
       info_edit_position: "So wie auf der Karte oben würde der Ort auf der Wheelmap aussehen. Sollte der Marker nicht an der richtigen Stelle sitzen, kannst du ihn <a href=\"%{url}\">auf der OpenStreetMap neu positionieren.</a>"
+      mail:
+        subject: "[Wheelmap] Problem mit %{headline}"
+        body: "(Bitte schreibe nur in Englisch oder Deutsch.)
+
+
+        Hi Sozialhelden,
+
+        etwas ist falsch mit dem Ort: %{url}
+
+
+        Das Problem ist:"
   actions:
     send: Absenden
     save: Speichern
