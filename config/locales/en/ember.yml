@@ -5,7 +5,7 @@ en:
     node_type:
       prompt: "Choose a type"
     node:
-      info_edit_position: "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can change its position on the OpenStreetMap."
+      info_edit_position: "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>"
   actions:
     send: Send
     save: Save

@@ -5,7 +5,7 @@ de:
     node_type:
       prompt: "Wähle einen Typ"
     node:
-      info_edit_position: "So wie auf der Karte oben würde der Ort auf der Wheelmap aussehen. Sollte der Marker nicht an der richtigen Stelle sitzen, kannst du ihn auf der OpenStreetMap neu positionieren."
+      info_edit_position: "So wie auf der Karte oben würde der Ort auf der Wheelmap aussehen. Sollte der Marker nicht an der richtigen Stelle sitzen, kannst du ihn <a href=\"%{url}\">auf der OpenStreetMap neu positionieren.</a>"
   actions:
     send: Absenden
     save: Speichern

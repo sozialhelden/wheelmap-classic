@@ -67,6 +67,10 @@ Wheelmap.Node = DS.Model.extend
     '/popup/' + @get('id')
   ).property('id')
 
+  openStreetMapURI: (()->
+    'http://www.openstreetmap.org/node/' + @get('id')
+  ).property('id')
+
   address: (()->
     address = []
     addr = @getProperties('street', 'housenumber', 'city', 'postcode')
