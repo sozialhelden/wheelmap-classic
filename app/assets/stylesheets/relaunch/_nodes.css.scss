@@ -716,6 +716,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
       height: 11px;
       position: absolute;
       top: -11px;
+      left: 0;
       width: 100%;
       overflow: hidden;
     }
