@@ -56,15 +56,16 @@ Wheelmap.Node = DS.Model.extend
   ).property('showPath')
 
   editPath: (()->
-    '/nodes/' + @get('id') + '/edit'
+    localePath = ''
+
+    if I18n.defaultLocale != I18n.locale
+      localePath = '/' + I18n.locale
+
+    localePath + '/nodes/' + @get('id') + '/edit'
   ).property('id')
 
   updatePath: (()->
     '/nodes/' + @get('id') + '/update_wheelchair.js'
-  ).property('id')
-
-  popupPath: (()->
-    '/popup/' + @get('id')
   ).property('id')
 
   openStreetMapURI: (()->
