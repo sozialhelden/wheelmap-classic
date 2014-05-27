@@ -57,8 +57,7 @@ class NodesController < ApplicationController
   end
 
   def edit
-    node ||= Poi.find(params[:id])
-    redirect_to root_path + '#/nodes/' + node.id.to_s + '/edit'
+    redirect_to root_path, anchor: "/nodes/#{params[:id]}/edit"
   end
 
   def update_wheelchair
