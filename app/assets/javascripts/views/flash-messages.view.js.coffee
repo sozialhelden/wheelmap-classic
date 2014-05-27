@@ -13,7 +13,7 @@ Wheelmap.FlashMessageView = Ember.View.extend
       @get('controller').send('removed', @get('content'))
 
   delay: (()->
-    @get('content.message').split(' ').compact().length / 0.00333333333 # based on 200 WpM
+    @get('content.message').split(' ').compact().length / 0.001 # based on 200 WpM
   ).property('content.message')
 
 Wheelmap.FlashMessagesView = Ember.CollectionView.extend
