@@ -13,6 +13,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     else
       set_flash_message :notice, :success, :kind => 'OpenStreetMap'
       track_page_view '/registrations/successful'
+      flash[:notice] = "YEAH: Successfull login via OpenStreetMap"
       redirect_to after_signup_edit_user_path(user)
     end
     sign_in user
@@ -20,6 +21,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def failure
     logger.error "Could not log you in with OpenStreetMap: #{(params[:message] || failure_message)}"
+    flash[:alert] = "ERROR: #{(params[:message] || failure_message)}"
     set_flash_message :alert, :failure, :kind => 'OpenStreetMap', :reason => (params[:message] || failure_message)
     redirect_to after_omniauth_failure_path_for(:user)
   end
