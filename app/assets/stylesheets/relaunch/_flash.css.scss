@@ -23,16 +23,19 @@
   }
 
   &.notice {
+    background-color: $wheelchair-yes;
     background-color: rgba($wheelchair-yes, 0.75);
     border-bottom: 1px solid darken($wheelchair-yes, 20%);
   }
 
   &.alert {
+    background-color: $wheelchair-limited;
     background-color: rgba($wheelchair-limited, 0.75);
     border-bottom: 1px solid darken($wheelchair-limited, 20%);
   }
 
   &.error {
+    background-color: $wheelchair-no;
     background-color: rgba($wheelchair-no, 0.75);
     border-bottom: 1px solid darken($wheelchair-no, 20%);
   }
