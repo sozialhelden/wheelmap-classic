@@ -3,8 +3,9 @@ Wheelmap.ApplicationRoute = Ember.Route.extend
 
   beforeModel: (transition)->
     signUrl = $.cookie('sign_url')
+    data = JSON.parse $.cookie("flash")
 
-    if signUrl?
+    if signUrl? && !data.error && !data.alert && !data.notice
       transition.abort()
 
       $.cookie('sign_url', null)
