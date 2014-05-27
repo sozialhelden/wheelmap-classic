@@ -12,7 +12,7 @@
     }, 0);
 
     $overlayWrapper.find('.close-btn, .go').click(function () {
-      if ($.support.transition.end) {
+      if ($.support.transition && $.support.transition.end) {
         $overlayWrapper.one($.support.transition.end, function() {
           $overlayWrapper.hide();
         });
