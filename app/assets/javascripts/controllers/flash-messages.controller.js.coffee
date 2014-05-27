@@ -1,4 +1,17 @@
 Wheelmap.FlashMessagesController = Ember.ArrayController.extend
+  init: (args...)->
+    @_super.apply(@, args)
+
+    data = JSON.parse $.cookie("flash")
+
+    types = ['alert', 'notice', 'error', 'success'];
+
+    for type in types
+      if (data[type])
+        @pushMessage(type, data[type]);
+
+    $.cookie('flash', null, path: '/');
+
   pushMessage: (type, message)->
     @pushObject Wheelmap.FlashMessage.create
       type: type
