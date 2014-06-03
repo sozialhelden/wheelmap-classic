@@ -99,21 +99,21 @@ Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.Wheelcha
       that = @
       model = that.get('content')
 
-      # Wrap the model save action into a promise so we can call async stuff before we actually save the model
-      # More about promises: http://emberjs.com/api/classes/Ember.RSVP.Promise.html
-      # TODO find a way to have more save listeners, at the moment the first listener calling resolve stops the event
-      promise = new Ember.RSVP.Promise (resolve, reject)->
-        that.one 'save', ->
-          resolve()
-
-        that.trigger('save', resolve, reject)
-
-      promise.then ->
-        model.save()
+      promise = model.save()
+      that.set('errors', [])
 
       promise.then ->
         that.get('controllers.flash-messages').pushMessage('notice', I18n.t('nodes.update.flash.successfull'))
-        window.location.href = '/nodes/' + model.get('id')
+
+        # Wrap the model saved event into a promise so we can call async stuff before we actually redirect to the model page
+        # Used e.g. for calling the photo upload queue after submitting the new node model
+        # More about promises: http://emberjs.com/api/classes/Ember.RSVP.Promise.html
+        savedPromise = new Ember.RSVP.Promise (resolve, reject)->
+          that.trigger('saved', resolve, reject)
+
+        savedPromise.then ->
+          # Redirect to the node detail page (legacy, rails), when save was called
+          window.location.href = '/nodes/' + model.get('id')
 
       promise.catch (xhr)->
         if xhr instanceof Error

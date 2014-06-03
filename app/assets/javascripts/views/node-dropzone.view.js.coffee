@@ -31,7 +31,11 @@ Wheelmap.NodeDropzoneView = Ember.View.extend
 
     @set('dropzone', dropzone)
 
-    @get('controller').on 'save', (resolve, reject)->
+    @get('controller').on 'saved', (resolve, reject)->
+      if dropzone.getQueuedFiles().length is 0
+        resolve()
+        return
+
       dropzone.once 'queuecomplete', ->
         resolve()
 
