@@ -100,16 +100,15 @@ Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.Wheelcha
       model = that.get('content')
 
       promise = model.save()
-      that.set('errors', [])
 
       promise.then ->
-        that.get('controllers.flash-messages').pushMessage('notice', I18n.t('nodes.update.flash.successfull'))
         that.set('errors', []) # Remove old error messages
 
         # Wrap the model saved event into a promise so we can call async stuff before we actually redirect to the model page
         # Used e.g. for calling the photo upload queue after submitting the new node model
         # More about promises: http://emberjs.com/api/classes/Ember.RSVP.Promise.html
         savedPromise = new Ember.RSVP.Promise (resolve, reject)->
+          that.get('controllers.flash-messages').pushMessage('notice', I18n.t('nodes.update.flash.successfull'))
           that.trigger('saved', resolve, reject)
 
         savedPromise.then ->
