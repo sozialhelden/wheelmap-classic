@@ -56,9 +56,9 @@ it:
     node_similar:
       similar: 'Posti simili: %{name}'
     node_status:
-      accessible_toilet: "Bagno accessibile con sedia a rotelle:"
-      premium: "%{name} dice: Questo posto é"
-      wheelchair_accessibility: "Accessibilità con sedia a rotelle:"
+      accessible_toilet: 'Bagno accessibile con sedia a rotelle:'
+      premium: '%{name} dice: Questo posto é'
+      wheelchair_accessibility: 'Accessibilità con sedia a rotelle:'
     node_streetview:
       streetview: 'Streetview:'
     show:
