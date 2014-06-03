@@ -104,6 +104,7 @@ Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.Wheelcha
 
       promise.then ->
         that.get('controllers.flash-messages').pushMessage('notice', I18n.t('nodes.update.flash.successfull'))
+        that.set('errors', []) # Remove old error messages
 
         # Wrap the model saved event into a promise so we can call async stuff before we actually redirect to the model page
         # Used e.g. for calling the photo upload queue after submitting the new node model
