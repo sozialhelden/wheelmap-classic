@@ -196,9 +196,10 @@
   .category-filter {
     width: 150px;
 
-    .btn {
+    & > .btn {
       width: 150px;
       @include border-radius(3px);
+      overflow: visible; // Needed for IE for showing the filter counter correctly
     }
 
     .icon-tags {
@@ -226,10 +227,9 @@
         @include border-radius(100px);
         border: 2px solid #FFF;
         @include box-shadow(0 0 5px #111);
-        background-color: #f4f4f4;
+        background-color: #E5002A;
         @include background-image(linear-gradient(top, #E5002A, #B93028));
-        @include filter-gradient(#E5002A, #B93028, vertical);
-
+        background-image: -ms(linear-gradient(top, #E5002A, #B93028));
         text-indent: 0px;
         font-size: 10px;
         line-height: 18px;
