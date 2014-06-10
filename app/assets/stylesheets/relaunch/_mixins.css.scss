@@ -38,7 +38,7 @@
 @mixin headline-gradient() {
   background-color: $dark-blue;
   @include filter-gradient(lighten($dark-blue, 10%), $dark-blue, vertical);
-  @include background-image(linear-gradient(top, lighten($dark-blue, 10%), $dark-blue));
+  @include background-image(linear-gradient(lighten($dark-blue, 10%), $dark-blue));
 }
 
 @mixin wheelchair($status, $color, $text-shadow: 0 1px 0 darken($color, 23%)) {
