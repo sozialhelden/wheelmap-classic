@@ -102,14 +102,14 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
 
     &:before {
       @include transform(skew(-35deg, 0));
-      @include background-image(linear-gradient(top, $dark-blue, darken($dark-blue, 5%)));
+      @include background-image(linear-gradient($dark-blue, darken($dark-blue, 5%)));
       top: -1px;
       border-top: 1px solid darken($dark-blue, 10%);
     }
 
     &:after {
       @include transform(skew(35deg, 0));
-      @include background-image(linear-gradient(top, darken($dark-blue, 5%), darken($dark-blue, 10%)));
+      @include background-image(linear-gradient(darken($dark-blue, 5%), darken($dark-blue, 10%)));
       bottom: -1px;
       border-bottom: 1px solid darken($dark-blue, 10%);
     }
@@ -749,6 +749,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
+// @TODO This need to be set for every simliar forms not only for node edit
 .node-form {
   background-color: #F1F0EC;
   padding: 20px;
@@ -799,7 +800,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
 
   input[type="text"] {
     height: 34px;
-    line-height: $baseLineHeight + 4px;
+    line-height: 26px;
   }
 
   .custom-select {
@@ -807,8 +808,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     @include box-shadow(0px 1px 0px 0px rgba(white, 0.4));
     @include border-radius(2px);
     @include appearance(none);
-    background: #D9D2CA;
-    @include background-image(linear-gradient(top, rgba(255,255,255,0.16) 0%, rgba(0,0,0,0.10) 100%));
+    @include background-image(linear-gradient(rgba(255,255,255,0.16) 0%, rgba(0,0,0,0.10) 100%));
     @include box-shadow(0px 1px 0px 0px rgba(white, 0.4));
     @include text-shadow(0px 1px 0px white);
     position: relative;
