@@ -14,9 +14,9 @@
 
         .btn-toolbar.pull-right{:style => 'padding-right:10px'}
           .btn-group
-            = link_to new_node_path, :class => ['btn', 'btn-success', 'btn-small', 'createlink'], :title =>  t('header.searchbar.add_place'), :rel => 'nofollow' do
+            = link_to new_node_path, :class => ['btn', 'btn-success', 'btn-small', 'btn-add'], :title =>  t('header.searchbar.add_place'), :rel => 'nofollow' do
               = fa_icon("plus light")
-            = link_to t('header.searchbar.add_place'), new_node_path, :class => ['btn', 'btn-small', 'createlink', 'hidden-phone', 'hidden-tablet'], :title =>  t('header.searchbar.add_place'), :rel => 'nofollow'
+            = link_to t('header.searchbar.add_place'), new_node_path, :class => ['btn', 'btn-small', 'hidden-phone', 'hidden-tablet'], :title =>  t('header.searchbar.add_place'), :rel => 'nofollow'
 
           - if user_signed_in?
             = link_to edit_user_path(current_user), :class => ['btn', 'btn-small'], :style => 'margin: 10px 10px 0px' do
