@@ -60,6 +60,7 @@
       color: #555;
       padding: 2px 10px 1px 10px;
       background-position: 0;
+
       .icon-tags {
         display: none;
       }
@@ -67,9 +68,6 @@
     .btn-add {
       @media screen and (max-width:1024px) {
         @include border-radius(3px);
-      }
-      :hover {
-        background-position: 0;
       }
     }
   }
