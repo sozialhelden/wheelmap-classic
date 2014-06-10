@@ -112,6 +112,9 @@ Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.Wheelcha
           that.trigger('saved', resolve, reject)
 
         savedPromise.then ->
+          # Google Track Event update data
+          _gaq.push ["_trackEvent", "Data", "Update", self.get("wheelchair")]  if _gaq?
+
           # Redirect to the node detail page (legacy, rails), when save was called
           window.location.href = '/nodes/' + model.get('id')
 
