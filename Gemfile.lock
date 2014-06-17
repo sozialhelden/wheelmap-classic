@@ -508,7 +508,7 @@ DEPENDENCIES
   shoulda-matchers
   spork
   syntax
-  therubyracer (= 0.12.1)
+  therubyracer
   uglifier
   unicorn
   webmock
