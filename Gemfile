@@ -99,7 +99,7 @@ group :test do
 end
 
 group :production, :vagrant do
-  gem 'therubyracer', '0.12.1'
+  gem 'therubyracer'
 end
 
 group :deployment do
