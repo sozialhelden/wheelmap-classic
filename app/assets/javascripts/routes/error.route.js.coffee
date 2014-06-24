@@ -1,8 +1,7 @@
 Wheelmap.ErrorRoute = Ember.Route.extend
   setupController: (controller, model)->
     try
-      response = JSON.parse(model.responseText)
-      @controllerFor('flash-messages').pushMessage('error', response.message)
+      @controllerFor('flash-messages').pushMessage('error', model.responseJSON.message)
     catch e
       return
 
