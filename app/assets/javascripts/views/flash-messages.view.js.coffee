@@ -4,8 +4,8 @@ Wheelmap.FlashMessageView = Ember.View.extend
   fadeIn: false
 
   didInsertElement: ()->
-    Ember.run.next @, 'toggleProperty', 'fadeIn'
-    Ember.run.later @, 'toggleProperty', 'fadeIn', @get('delay')
+    @set('fadeIn', true)
+    Ember.run.later @, 'set', 'fadeIn', false, @get('delay')
 
   transitionEnd: (event)->
     # @TODO Use event informations instead?
