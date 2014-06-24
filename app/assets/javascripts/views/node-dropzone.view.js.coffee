@@ -45,6 +45,26 @@ Wheelmap.NodeDropzoneView = Ember.View.extend
       dropzone.processQueue()
   ).on('didInsertElement')
 
+  initMagnifiPopup: (->
+    togglePopup = (e) ->
+      e.preventDefault()
+
+      $this = $(@)
+      options = $.extend({}, $this.data())
+      index = 0
+
+      if options.gallery?
+        $items = $("[data-gallery=\"#{options.gallery}\"]")
+        options.items = $.map $items, (item, index) ->
+          { index: index, src: $(item).attr('href'), type: 'image', parsed: true }
+        index = $items.index($this)
+        options.gallery = { enabled: true }
+
+      $.magnificPopup.open(options, index)
+
+    @$().on('click', '[data-toggle="magnific-popup"]', togglePopup)
+  ).on('didInsertElement')
+
   clickable: (->
     @get('$clickable').toArray()
   ).property('$clickable')
@@ -77,8 +97,6 @@ Wheelmap.NodeDropzoneView = Ember.View.extend
     $previewElement = $(file.previewElement);
 
     $previewElement.find('[data-dz-uploadprogress]').removeClass('in')
-    # We need this for the magnific popup I think
-    # $previewElement.find('[data-full-image-link]').attr('href', response.url).click(togglePopup)
 
   success: (->
     $.proxy(@removeUploadProgress, @)
