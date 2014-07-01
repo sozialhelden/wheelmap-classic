@@ -147,7 +147,8 @@ Tags = {
   :sports_centre => :leisure,
   :stadium => :leisure,
   :station => :railway,
-  :station => :aerialway,
+  # Comment out, as these tags have same key
+  # :station => :aerialway,
   :stationery => :shop,
   :stripclub => :amenity,
   :subway_entrance => :railway,
