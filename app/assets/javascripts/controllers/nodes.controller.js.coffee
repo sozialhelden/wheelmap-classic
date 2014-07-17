@@ -22,37 +22,37 @@ Wheelmap.WheelchairSubmit = Ember.Mixin.create
         @set('wheelchair', wheelchair)
 
     saveWheelchair: ()->
-      self = @
+      that = @
 
-      unless self.get('wheelchairSubmit')
+      unless that.get('wheelchairSubmit')
         return
 
       data =
         _method: 'PUT'
-        wheelchair: self.get('wheelchair')
+        wheelchair: that.get('wheelchair')
 
-      self.set('isPosting', true)
+      that.set('isPosting', true)
 
       promise = Ember.$.ajax
         type: 'POST'
-        url: self.get('wheelchairUri')
+        url: that.get('wheelchairUri')
         data: data
         dataType: 'json'
 
       promise.done (response)->
         # Track this event, when google analytics is active (Production)
-        _gaq.push ["_trackEvent", "Data", "Tag", self.get("wheelchair")]  if _gaq?
-        self.set('oldWheelchair', null)
-        self.send('wheelchairSaveDone', response)
+        _gaq.push ["_trackEvent", "Data", "Tag", that.get("wheelchair")] if _gaq?
+        that.set('oldWheelchair', null)
+        that.send('wheelchairSaveDone', response)
 
       promise.fail (response)->
         # Track this event as failed, when google analytics is active (Production)
         _gaq.push ["_trackEvent", "Data", "Tag", "failed"]  if _gaq?
         @resetStatus()
-        self.send('wheelchairSaveFail', response)
+        that.send('wheelchairSaveFail', response)
 
       promise.always ()->
-        self.set('isPosting', false)
+        that.set('isPosting', false)
 
     wheelchairSaveDone: Ember.K
     wheelchairSaveFail: Ember.K
@@ -113,7 +113,7 @@ Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.Wheelcha
 
         savedPromise.then ->
           # Google Track Event update data
-          _gaq.push ["_trackEvent", "Data", "Update", self.get("wheelchair")]  if _gaq?
+          _gaq.push ["_trackEvent", "Data", "Update", that.get("wheelchair")] if _gaq?
 
           # Redirect to the node detail page (legacy, rails), when save was called
           window.location.href = '/nodes/' + model.get('id')
