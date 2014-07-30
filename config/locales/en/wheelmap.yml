@@ -68,7 +68,7 @@ en:
     show_unaccessible_places: "not wheelchair accessible"
   formtastic:
     hints:
-      email: "We treat your address confidential, no spam. Promise!"
+      email: "We treat your address confidentially, no spam. Promise!"
       lat: "Move the marker on the map to the correct position"
       osm_username: "Not a member yet? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>"
       password: "(leave empty if you don't want to change it)"
