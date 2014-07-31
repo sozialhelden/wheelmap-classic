@@ -87,7 +87,7 @@ en:
   search:
     index:
       no-results:
-        headline: Sorry, we could’t find a place called "%{query}".
+        headline: Sorry, we couldn’t find a place called "%{query}".
         hint:
           example: <strong>Example:</strong> London, United Kingdom
           info: Our search service only works with name and/or address information.
