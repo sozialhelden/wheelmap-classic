@@ -1,7 +1,7 @@
 hu:
   application:
     require_no_user:
-      notice: "Már be vagy jelentkezve"
+      notice: "Már be vagy jelentkezve..."
     require_user:
       notice: "Be kell jelentkezned, hogy láthasd az oldal tartalmát."
   breadcrumbs:
@@ -19,16 +19,16 @@ hu:
       accepted: "el kell fogadni"
       already_confirmed: "már megerősítésre került"
       blank: "ki kell tölteni"
-      confirmation: "Nincs egyezés"
+      confirmation: "nem egyezik meg a visszaigazolással"
       empty: "ki kell tölteni"
-      equal_to: "pontosan egyeznie kell %{count}"
+      equal_to: "pontosan ennyi legyen: %{count}"
       even: "páros szám legyen"
       exclusion: "foglalt"
-      expired: "lejárt, kérem kérjen egy újat"
+      expired: "lejárt, kérjük kérj egy újat"
       greater_than: "nagyobb kell legyen, mint %{count}"
       greater_than_or_equal_to: "nagyobb vagy egyenlő kell legyen, mint %{count}"
-      inclusion: "nem reális érték"
-      invalid: "nem érvényes"
+      inclusion: "érvénytelen érték"
+      invalid: "érvénytelen"
       less_than: "kisebb kell legyen, mint %{count}"
       less_than_or_equal_to: "kisebb vagy egyenlő kell legyen, mint %{count}"
       not_a_number: "nem szám"
@@ -36,77 +36,77 @@ hu:
       not_found: "nem található"
       not_locked: "nem volt lezárva"
       not_saved:
-        one: "Egy hiba akadályozta a mentést %{resource}:"
-        other: "%{count} hiba akadályozta a mentést %{resource}:"
+        one: "Egy hiba megakadályozza %{resource} mentését:"
+        other: "%{count} hiba akadályozza %{resource} mentését:"
       odd: "páratlannak szám legyen"
       taken: "már foglalt"
-      too_long: "túl hosszú (nem több, mint %{count} karakter)"
-      too_short: "túl rövid (nem kevesebb, mint %{count} karakter)"
+      too_long: "túl hosszú (ne legyen több, mint %{count} karakter)"
+      too_short: "túl rövid (ne legyen kevesebb, mint %{count} karakter)"
       wrong_length: "hiba a hosszúsággal (%{count} karakter kéne legyen)"
     template:
       body: "Problémák adódtak a következő mezőkkel:"
       header:
-        one: "1 hiba megakadályozta a %{model} mentését"
-        other: "%{count} a hibák megakadályozzák a %{model} mentését"
+        one: "Egy hiba megakadályozza %{model} mentését"
+        other: "%{count} a hiba megakadályozza %{model} mentését"
   flash:
     actions:
       create:
         notice: "%{resource_name} sikeresen létrejött"
       destroy:
         alert: "%{resource_name} nem eltávolítható"
-        notice: "%{resource_name} sikeresen törlödött"
+        notice: "%{resource_name} sikeresen törölve lett"
       update:
-        notice: "%{resource_name} sikeresen lett frissítve"
+        notice: "%{resource_name} sikeresen frissítve lett"
     photos:
       destroy:
-        notice: "A kép sikeresen törlödött"
+        notice: "A kép sikeresen törölve lett"
   form:
     show_fully_accessible_places: "Kerekesszékkel akadálymentes"
-    show_limited_accessible_places: "Kerekesszékkel részlegesen akadálymentes"
+    show_limited_accessible_places: "Kerekesszékkel részben akadálymentes"
     show_places_without_status: "ismeretlen státusz"
     show_unaccessible_places: "Kerekesszékkel nem akadálymentes"
   formtastic:
     hints:
-      email: "Bizalmasan kezeljük az adatait, nincs spam. Ígérjük!"
-      lat: "Helyezze a jelölőt a térképre és korrigálja a pozíciót"
-      osm_username: "Még nem tag? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Készítsen OpenStreetMap fiókot most</a>"
-      password: "(hagyja üresen a mezőt, ha nem akarja megváltoztatni)"
-      phone: "Például: +49 30 123456-78"
+      email: "Bizalmasan kezeljük a címedet. Semmi spam, becsszó!"
+      lat: "Mozgasd a jelölőt a térképen és helyes pozicióra"
+      osm_username: "Még nem vagy tag? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Készítsd el OpenStreetMap fiókod most</a>"
+      password: "(hagyd üresen a mezőt, ha nem akarod megváltoztatni)"
+      phone: "Például: +36 30 234-5678"
       website: "Például: http://www.example.com"
     labels:
       category: "Kategória:"
-      centralkey: "Central key"
+      centralkey: "Központi kulcs:"
       city: "Település:"
-      create: "Hozzon létre új pontot"
+      create: "Hely hozzáadása"
       email: E-mail
       finish: Kész
-      housenumber: "Házszám:"
+      housenumber: "Hsz.:"
       lat: Szélesség
       lon: Hosszúság
       name: "Név:"
       osm_password: "OSM jelszó"
-      osm_username: "OSM felhasználó név"
+      osm_username: "OSM felhasználónév"
       password: Jelszó
-      password_confirmation: "Jelszó ismétlése"
+      password_confirmation: "Jelszó megerősítése"
       phone: "Telefon:"
-      postcode: "Postakód:"
-      privacy_policy: "Elfogadom az 1. és 2. paragrafust az adatvédelmi nyilatkozatban."
+      postcode: "Irányítószám:"
+      privacy_policy: "Elfogadom az adatvédelmi nyilatkozat 1. és 2. paragrafusait.."
       reset: Újrakezd
       save: Mentés
       street: "Utca:"
-      terms: "Elfogadom a felhasználási feltételeket."
+      terms: "Elfogadom a felhasználói feltételeket."
       type: "Típus:"
       website: "Webcím:"
-      wheelchair: "Kerekesszékkel is akadálymentes?"
-      wheelchair_description: "Hozzászólás:"
+      wheelchair: "Kerekesszékkel akadálymentes?"
+      wheelchair_description: "Megjegyzés az akadálymentességről:"
     titles:
       basic: "Alapadat"
-      optional: "Még több információ <span class=\"addition\">(mindegyik mező opcionális)</span>"
+      optional: "További információ <span class=\"addition\">(mindegyik mező opcionális)</span>"
   global:
-    form_validation_error: "Kérjük vegye figyelembe az alábbi hibálat"
+    form_validation_error: "Kérjük, nézd át az alábbi hibákat"
   header:
     meta:
-      description: "Találjon kerekesszékkel is akadálymentes helyeket - wheelmap.org"
+      description: "Találj kerekesszékkel is akadálymentes helyeket - wheelmap.org"
       homepage: "Kezdőlap"
       keywords: "kerekesszék akadálymentes hely talál keres bejelölés"
       search: Keresés
@@ -114,8 +114,8 @@ hu:
       blog: Hírek
       feedback: Visszajelzés
       home: Indítás
-      how_to_add_a_place: "Hogyan hozhatok létre egy új pontot?"
-      imprint: Navigáció
+      how_to_add_a_place: "Hogyan adhatok hozzá egy új helyet?"
+      imprint: Impresszum
       logged_in_as: "Bejelentkezve, mint"
       login: "Bejelentkezés"
       logout: "Kijelentkezés"
@@ -123,46 +123,46 @@ hu:
       press: Sajtó
       profile: Profil
       suggestions: Javaslatok
-      what_is_barrier_free: "Mit jelent a \"kerekes székel is akadálymentes\"?"
+      what_is_barrier_free: "Mit jelent a \"kerekesszékkel akadálymentes\"?"
       what_is_wheelmap: "Mi a wheelmap?"
     searchbar:
-      add_place: "Másik pont hozzáadása"
+      add_place: "Újabb hely hozzáadása"
       find: Keres
       placeholder: "Hely keresése"
-      title_add_place: "Keressen egy új helyet ebben a pozícióban most!"
-    tagline: "Wheelmap logo"
-    title: "Találj kerekesszékkel is elérhető helyeket"
+      title_add_place: "Adj hozzá egy új helyet ezen a ponton most!"
+    tagline: "Wheelmap embléma"
+    title: "Keress kerekesszékkel is elérhető helyeket"
   helpers:
     select:
-      prompt: "Kérlek válassz"
+      prompt: "Kérjük, válassz"
     submit:
-      create: "létrehoz %{model}"
-      submit: "ment %{model}"
-      update: "frissít %{model}"
+      create: "%{model} létrehozása"
+      submit: "%{model} mentése"
+      update: "%{model} frissítése"
   home:
     index:
       filter:
-        category: "Válasszon kategóriát"
-        deselect_all: "Összes kijelölés megszüntetése"
-        select_all: "Összes kijelölés"
-        wheelchair: "Kerekesszékkel is akadálymentes?"
+        category: "Válassz kategóriát"
+        deselect_all: "Minden kijelölés megszüntetése"
+        select_all: "Mindent kijelöl"
+        wheelchair: "Kerekesszékkel akadálymentes?"
       ie:
         action:
           ignore: Mellőz
           upgrade: "Böngésző frissítése"
         warning:
           headline: "Elnézést kérünk!"
-          message: "Ön Internet Explorert használ. A Wheelmap egy szabványos-kompatibilis böngészőt igényel a jobb működés érdekében. Kérjük fontolja meg a Firefox, Chrome, Safari vagy Opera használatát."
+          message: "Úgy tűnik, Internet Explorert használsz. A Wheelmap egy szabványokat követő böngészőt igényel a helyes működéshez. Kérjük, fontold meg a Firefox, Chrome, Safari vagy Opera használatát."
       link:
         node:
           create: "Új hely hozzáadása"
       popup:
         form:
-          limited: "Kerekesszékkel részlegesen akadálymentes"
-          'no': "Kerekesszékkel nem akadálymentes"
+          limited: "kerekesszékkel részben akadálymentes"
+          'no': "kerekesszékkel nem akadálymentes"
           save: Frissítés
           unknown: "ismeretlen státusz"
-          'yes': "Kerekesszékkel akadálymentes"
+          'yes': "kerekesszékkel akadálymentes"
         help: "Ez kerekesszékkel akadálymentes? (Segítség)"
         more: "több ..."
   how?: Hogyan?
@@ -170,17 +170,17 @@ hu:
     index:
       wheelchair:
         limit:
-          headline: "Összes részlegesen kerekesszékkel is akadálymentes %{type} %{city}en/én/on (%{count})"
+          headline: "Minden kerekesszékkel részben akadálymentes %{type} itt: %{city}: (%{count})"
         'no':
-          headline: "Összes kerekesszékkel nem akadálymentes %{type} %{city}en/én/on (%{count})"
+          headline: "Minden kerekesszékkel nem akadálymentes %{type} itt: %{city} (%{count})"
         unknown:
-          headline: "Összes ismeretlen státuszú %{type} %{city}en/én/on (%{count})"
+          headline: "Minden ismeretlen státuszú %{type} itt: %{city} (%{count})"
         'yes':
-          headline: "Összes kerekesszékkel is akadálymentes %{type} %{city}en/én/on (%{count})"
+          headline: "Minden kerekesszékkel is akadálymentes %{type} itt: %{city} (%{count})"
   layouts:
     application:
       banner:
-        alt: "Egy projekt a Sozialhelden.de jóvoltából"
+        alt: "A Sozialhelden.de projektje"
   node:
     address:
       city: "%{city} %{postcode}"
@@ -191,31 +191,31 @@ hu:
   nodes:
     create:
       flash:
-        not_successfull: "Hupsz, a beírt szöveg helytelen vagy nem teljes"
-        successfull: "Köszönjük, a változtatásodat sikeresen lementettük és hamarosan online lesznek."
+        not_successfull: "Hppsz, a beírt szöveg helytelen vagy nem teljes"
+        successfull: "Köszönjük, a változtatásodat sikeresen elmentettük és hamarosan online lesznek."
     edit:
       header:
-        title: "Pont modosítása: %{node} | wheelmap.org"
+        title: "Hely modosítása: %{node} | wheelmap.org"
       link:
-        large_map: "&laquo; Elvetés"
+        large_map: "&laquo; Mégsem"
     errors:
-      default: "Hupsz, hiba történt. Már dolgozunk a problémán"
+      default: "Hopsz, hiba történt. Már dolgozunk a problémán"
       not_authorized: "Sajnáljuk, sikertelen bejelentkezés"
       not_available: "Sajnáljuk, az oldal átmenetileg nem elérhető."
       not_existent: "Sajnáljuk, ez a hely már nem elérhető."
       not_found: "Sajnáljuk, az oldal nem található."
-      param_missing: "Kérem adjon meg egy kifejezést"
+      param_missing: "Kérjük, adj meg egy kifejezést"
     flash:
-      authorize_wheelmap: "Szüksége van egy OpenStreetMap fiókra, hogy módosítsa az adatot"
+      authorize_wheelmap: "Az adatok módosításához szükséged van egy OpenStreetMap fiókra."
     new:
       header:
         title: "Új hely | wheelmap.org"
       link:
-        large_map: "&laquo; Mellőzés"
+        large_map: "&laquo; Mégsem"
     node:
       link:
         claim: "Itt dolgozol?"
-        edit_node: "Pont szerkesztése"
+        edit_node: "Hely szerkesztése"
         report_bug: "Hiba jelentése"
     show:
       header:
@@ -223,16 +223,16 @@ hu:
       link:
         back: vissza
         large_map: Nagyít
-        listing: "Összes '%{type}' a %{city}-on/en/én"
+        listing: "Összes '%{type}' típusú hely itt: %{city}"
         upload: "Kép feltöltése"
-      more_data_from: "Több információ is van az adatról, ellenőrizze őket:"
+      more_data_from: "Több információ is van a helyről, ellenőrizte:"
       show-in-osm: OpenStreetMap
     update:
       flash:
-        not_successfull: "Hupsz, a beírt szöveg helytelen vagy nem teljes"
+        not_successfull: "Hopsz, a beírt szöveg helytelen vagy nem teljes"
         successfull: "Köszönjük, a változtatásodat sikeresen lementettük és hamarosan online lesznek. "
     update_wheelchair:
-      successfull: "A \"%{name}\" állapota megváltozott: \"%{status}\" és hamarosan megjelenik az oldalon."
+      successfull: "A \"%{name}\" állapota erre változott: \"%{status}\" és hamarosan megjelenik az oldalon."
   number:
     currency:
       format:
@@ -257,7 +257,7 @@ hu:
         units:
           byte:
             one: Byte
-            other: Bytes
+            other: Byte
           gb: GB
           kb: KB
           mb: MB
@@ -265,44 +265,44 @@ hu:
   oauth:
     application:
       connect:
-        headline: "Csatlakoznod kell az 'open street map' fiókodhoz előbb, hogy módosítani tudd a wheelmap.org adatbázisát."
+        headline: "Csatlakoznod kell az OpenStreetMap fiókoddal mielőtt módosítani tudod a wheelmap.org adatbázisát."
     callback:
-      notice: "A wheelmap felhasználód csatlakozott az OpenStreetMap %{user} fiókjához."
+      notice: "A Wheelmap felhasználód csatlakozott az OpenStreetMap %{user} fiókjához."
   or: vagy
   place:
     one: "%{count} hely"
-    other: "%{count} helyek"
+    other: "%{count} hely"
   profile:
     edit:
       application:
         oauth:
           connected: "Állapot: csatlakozva"
-          grant: "Csatlakozzon most"
+          grant: "Csatlakozz most"
           not_connected: "Állapot: nincs csatlakozva"
-          revoke: Kikapcsol
+          revoke: Szétkapcsol
       headline: "Profil szerkesztése"
   search:
     index:
       search:
-        for: "Keresse a \"%{q}\""
+        for: "\"%{q}\" keresése"
         not_found: "Nem találhatóak helyek!"
   splash:
     countline: "%{count} hely már be van jelölve."
-    headline: "Akárki tud kerekesszékkel is akadálymentes pontokat hozzáadni!"
+    headline: "Bárki tud kerekesszékkel is akadálymentes helyeket hozzáadni!"
     start: Indítás
     step1: "Kattints egy helyre, amit ismersz"
     step2: "Jelöld be és kattints a mentésre"
-    step3: "Ennyi! Nem szükséges regisztráció"
+    step3: "Ennyi! Nincs szükség regisztrációra"
     what_is_wheelmap: "Mi a wheelmap?"
   statistics: Statisztika
   support:
     array:
       last_word_connector: "és"
       sentence_connector: és
-      two_words_connector: "s"
+      two_words_connector: "és"
       words_connector: ","
     select:
-      prompt: "Kérem válasszon"
+      prompt: "Kérjük, válassz"
   time:
     am: de
     formats:
@@ -313,7 +313,7 @@ hu:
   user_sessions:
     create:
       activation:
-        notice: "A felhasználód mostmár aktív!"
+        notice: "A felhasználód mostantól aktív!"
       error:
         notice: "Az e-mail cím és jelszó nem egyezik."
       notice: "Bent vagy!"
@@ -322,15 +322,15 @@ hu:
     new:
       email: "E-mail cím"
       login: "Bejelentkezés"
-      login_with_twitter: "Bejelentkezés Twitterről"
+      login_with_twitter: "Bejelentkezés Twitterrel"
       password: Jelszó
-      remember_me: "Maradjon bejelentkezve"
+      remember_me: "Maradjak bejelentkezve"
   users:
     after_signup_edit:
       welcome:
-        headline: "Majdnem készen van! Fejezze be a Wheelmap-fiók regisztrációját itt:"
-        set_password_for_mobile: "Befejezte a regisztrációt az OpenStreetMap oldalon.\nMost válasszon egy e-mailt és jelszót a Wheelmap fiókjához és kész is van! Szüksége lesz erre az e-mail címre és jelszóra, hogy belépjen a Wheelmap applikációba iPhone-ról vagy Androidról. "
-        text: "Hogyan maradhatunk kapcsolatban Önnel? Ezt az információt késöbb is megváltoztathatja a profilján."
+        headline: "Majdnem készen vagy! Fejezd be a Wheelmap-fiók regisztrációját itt:"
+        set_password_for_mobile: "Befejezted a regisztrációt az OpenStreetMap oldalon.\nMost válassz egy e-mailt és jelszót a Wheelmap fiókodhoz és kész is vagy! Szükséged lesz erre az e-mail címre és jelszóra, hogy belépj az iPhone-os vagy az Androidos Wheelmap alkalmazásba. "
+        text: "Hogyan maradhatunk kapcsolatban veled? Ezt az információt késöbb is megváltoztathatod a profilodban."
     edit:
       headline:
         your_images: "Felöltött képeid"
@@ -341,33 +341,33 @@ hu:
     'yes': "kerekesszékkel akadálymentes"
   wheelmap:
     footer:
-      a_project_of: "Megálmodó:"
-      based_on: "Alapozva"
+      a_project_of: "A projekt megvalósítója: "
+      based_on: "Alapok: "
       become_a_supporter: "Legyél támogató "
       main_supporter: "Főtámogató"
     itunes:
       alt: "AppStore Logo"
-      title: "Töltse le az iPhone App-ot most!"
+      title: "Töltsd le az iPhone alkalmazást most!"
     logo:
-      alt: "Wheelmap logo - keressen kerekesszékkel is akadálymentes helyeket"
-      title: "Wheelmap - keress kerekesszékkel is elérhető helyeket"
+      alt: "Wheelmap logo - keress kerekesszékkel is akadálymentes helyeket"
+      title: "Wheelmap - keress kerekesszékkel is akadálymentes helyeket"
     what_is:
-      fully_accessible: "A bejárat és az összes helyiség szintkülönbség nélküli, a mosdó is akadálymentes, ha szükséges"
-      limited_accessible: "Rendelkezik küszöbbel (max. 7 cm), a legtöbb helyiség küszöbbel, a mosdó nem akadálymentes"
-      not_accessible: "A bejárat rendelkezik küszöbbel vagy több lépcsőfokkal, a benti helyiségek sem akadálymentesek"
+      fully_accessible: "A bejárat és az összes helyiség szintkülönbség nélküli, a mosdó is akadálymentes, ha van"
+      limited_accessible: "A bejáratnál (legfeljebb 7 cm magas) lépcső, a legtöbb helyiség lépcső és küszöb nélküli, a mosdó nem akadálymentes"
+      not_accessible: "A bejáratnál magas vagy több lépcsőfok, a benti helyiségek sem akadálymentesek"
       unknown_accessible: "Segíts a helyek bejelölésében!"
   will_paginate:
     next_label: "Következő &#8594;"
     page_entries_info:
-      multi_page: "Megjelenítés %{model} %{from} - %{to} %{count} összesen"
-      multi_page_html: "Megjelenítés %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> <b>%{count}</b> összesen"
+      multi_page: "%{model} %{from} - %{to} megjelenítve (összesen %{count})"
+      multi_page_html: "%{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> megjelenítve (összesen <b>%{count}</b>)"
       single_page:
-        one: "Megjelenítés 1 %{model}"
-        other: "Összes megjelenítés %{count} %{model}"
-        zero: "Nincs találat %{model}"
+        one: "1 %{model} megjelenítve"
+        other: "Mind a %{count} %{model} mejelenítve"
+        zero: "Nincs találat erre: %{model}"
       single_page_html:
-        one: "Megjelenítés <b>1</b> %{model}"
-        other: "Megjelenítés <b>all&nbsp;%{count}</b> %{model}"
-        zero: "Nincs találat %{model}"
+        one: "<b>1</b> %{model} megjelenítve"
+        other: "<b>Mind&nbsp;a&nbsp;%{count}</b> %{model} megjelenítve"
+        zero: "Nincs találat erre: %{model}"
     page_gap: "&hellip;"
     previous_label: "&#8592; Előző"
