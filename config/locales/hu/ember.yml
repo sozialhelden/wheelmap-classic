@@ -1,0 +1,22 @@
+hu:
+  models:
+    category:
+      prompt: "Válassz egy kategóriát"
+    node_type:
+      prompt: "Válassz egy típust"
+    node:
+      info_edit_position: "A hely a fenti módon fog megjelenni a Wheelmapen. Ha a jelölő nem a megfelelő ponton van, <a href=\"%{url}\">megváltoztathatod a helyzetét az OpenStreetMap-en.</a>"
+      mail:
+        subject: "[Wheelmap] Probléma a következővel: %{headline}"
+        body: "(Kérünk, hogy csak angol vagy német nyelven írj.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:"
+  actions:
+    send: Küldés
+    save: Mentés
+    cancel: Mégsem
+  errors:
+    models:
+      node:
+        website:
+          invalid: "Érvénytelen a weboldal címe."
+        phone:
+          invalid: "Érvénytelen telefonszám. A következő formátumban kell lennie: +36 30 2345678"

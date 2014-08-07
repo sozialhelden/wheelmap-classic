@@ -1,25 +1,34 @@
----
 hu:
+  activerecord:
+    attributes:
+      poi:
+        name: Név
+        type: Típus
+        address: Cím
+        website: Honlap
+        phone: Telefon
+        note: Megjegyzés
+        address_street: Utca
+        address_housenumber: Házszám
+        address_postcode: Irányítószám
+        address_city: Város
   faq:
     answers:
-      0: Bármikor megváltoztathatja egy pont besorolását. Csak válassza ki a megfelelő
-        jelzést és kattintson a "Mentés" gombra - Kész is!
-      1: Bejelentkezett felhasználóként hozzá tud adni vagy javítani tudja egy pont
-        adatait. Kattintson a "Szerkesztés" gombra és javítsa a hiányzó adatokat.
-      2: További információkat is hozzá tud adni (pl. "Ez a hely mobil rámpával rendelkezik")
-        a hozzászólás résznél. Kattintson a "Szerkesztés" gombra és "Új hozzászólás".
+      0: Bármikor megváltoztathatod egy hely besorolását. Csak válaszd ki a megfelelő színjelzést és kattints a "Mentés" gombra - Kész is!
+      1: Bejelentkezett felhasználóként egy hely bármelyik adatát megadhatod vagy kijavíthatod. Kattints a "Szerkesztés" gombra és javítsd vagy pótold az adatokat a szövegmezőben.
+      2: További információkat is hozzá tudsz adni (pl. "Ez a hely mobil rámpával rendelkezik") a hozzászólás résznél. Kattints a "Szerkesztés", majd az "Új hozzászólás" gombokra.
     headline: Probléma van ezzel a hellyel?
     questions:
       0: Rossz besorolás.
-      1: A pont adatai helytelenek vgy hiányoznak.
+      1: A hely adatai helytelenek vagy hiányoznak.
       2: Több információval rendelkezem erről a helyről.
   header:
     navigation:
       about_wheelmap: A Wheelmapről
-      choose_language: Válasszon nyelvet!
+      choose_language: Válassz nyelvet!
       contact: Elérhetőség
       map: Térkép
-      projects: Kezdeményezések
+      projects: Projektek
     toolbar:
       categories: Kategóriák
   home:
@@ -28,43 +37,40 @@ hu:
         button: Rendben, mehet!
         categories: Szűrés kategóriák szerint
         filter: Szűrés kerekesszékkel is használható helyek szerint
-        headline: Találja meg és jelölje be az akadálymentes helyeket a Wheelmap.org
-          segítségével - Bármerre, ingyen. Tényleg egyszerű.
-        lookup: Keressen megadott helyen
-        secondary_headline: Piktogramjaink segítségével könnyen megkülönböztethetőek
-          a szolgáltatások akadálymentességük szerint
+        headline: 'Találd meg és jelöld be az akadálymentes helyeket a Wheelmap.org segítségével - Világszerte, ingyen. Ilyen egyszerű:'
+        lookup: Keress rá egy helyre
+        secondary_headline: 'Piktogramjaink segítségével a helyek akadálymentességük szerint könnyen megkülönböztethetőek:'
   nodes:
     new:
       form:
-        legend: Egy pont helyzete
-        location: Kattintson a térképre és helyezze a jelölőt a pontos pozícióra
+        legend: A hely elhelyezkedése
+        location: Kattints a térképre és helyezd a jelölőt a pontos pozícióra.
     node_data:
       address: 'Cím:'
-      contact_details: Kapcsolat adatai
+      contact_details: 'Elérhetőségek:'
     node_edit:
       details: Részletek
       edit: Szerkesztés
     node_map:
       map: 'Térkép:'
     node_note:
-      comment: 'Hozzászólás:'
+      comment: 'Megjegyzés:'
     node_photos:
       add: Hozzáad
-      photos_of_this_place: 'Fénykép a helyről:'
+      photos_of_this_place: 'Fényképek a helyről:'
       upload: Feltöltés
     node_similar:
       similar: 'Hasonló helyek: %{name}'
     node_status:
       accessible_toilet: 'Kerekesszékkel is használható mosdó:'
-      premium: '%{name} állítja: ez a hely'
+      premium: '%{name} szerint ez a hely'
       wheelchair_accessibility: 'Kereksszékkel is akadálymentes:'
     node_streetview:
       streetview: 'Utcanézet:'
     show:
       header:
         meta:
-          description: Derítse ki, hogy ez a hely a Wheelmap.org-on is kerekesszékkel
-            akadálymentes-e. Csatoljon képet vagy egyéb információkat a ponthoz.
+          description: Derítsd ki a Wheelmap.org-on, hogy ez a hely kerekesszékkel akadálymentes-e, vagy egészítsd ki további információkkal és képekkel.
           title: 'Ez a hely rajta van a Wheelmap.org honlapon:  %{name}'
       share:
         email: E-mail
@@ -74,34 +80,20 @@ hu:
   search:
     index:
       no-results:
-        headline: Sajnáljuk, de nem találtuk meg a "%{query}" pontot.
+        headline: Sajnáljuk, de nem találtunk "%{query}" nevű helyet.
         hint:
-          example: <strong>Példa:</strong> London, Egyesült Királyság
-          info: Keresőmotorunk csak név és/vagy cím szerint működik. Ezért kérjük
-            a keresésnél adja meg a hely pontos nevét vagy címét, pl. utcanév és/vagy
-            város. Típus szerinti keresésre nincs lehetőség! pl. mozi vagy étterem.
-          work_in_progress: Keményen dolgozunk, hogy a keresést könnyebbé tegyük és
-            még intuitívabb legyen a jövőben.
+          example: <strong>Példa:</strong> Budapest, Magyarország
+          info: Keresőszolgáltatásunk csak név és/vagy cím alapján keres. Kérjük, a keresésnél ezért a hely pontos nevét vagy címét (pl. utcanév és/vagy város) add meg. A kereső nem ad találatot olyan általános megnevezésekre, mint pl. "étterem" vagy "mozi"!
+          work_in_progress: Keményen dolgozunk, hogy a keresést könnyebben és ösztönösebben használhatóvá tegyük a jövőben.
         try_this:
-          address: Kérem pontosítsa <strong>a címet</strong>.
-          intro: 'Próbálja ezt:'
-          spell_check: Ellenőrizze <strong>a helyesírási</strong> hibákat.
+          address: Kérjük, pontosítsd <strong>a címet</strong>.
+          intro: 'Próbáld ezt:'
+          spell_check: Ellenőrizd <strong>a helyesírási hibákat</strong> a beírt szövegben.
       results:
         ticker:
           one: '%{count} eredmény:'
-          other: '%{count} eredmények:'
+          other: '%{count} eredmény:'
     timeout:
-      headline: Oh, a mi hibánk
-      info: A keresési funkciónk átmenetileg nem elérhető.
-      repeat_search: Próbálja újra a keresést
-  activerecord:
-    attributes:
-      poi:
-        name: Név
-        type: Típus
-        website: Webcím
-        phone: Telefon
-        address_street: Utca
-        address_housenumber: Házszám
-        address_postcode: Postakód
-        address_city: Település
+      headline: Ó, a mi hibánk
+      info: A keresési funkciónk átmenetileg nem volt elérhető.
+      repeat_search: Próbáld újra
