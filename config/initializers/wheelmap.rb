@@ -14,6 +14,7 @@ Languages = {
   'es'    => 'Español',
   'fr'    => 'Français',
   'hi'    => 'हिन्दी',
+  'hu'    => 'Magyar',
   'is'    => 'Íslenska',
   'it'    => 'Italiano',
   'ja'    => '日本',
