@@ -5,7 +5,7 @@ I18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
 I18n.default_locale = :de
 if Rails.env.production?
   # Use only whitelisted locales for production
-  I18n.available_locales = [:ar, :bg, :da, :de, :el, :en, :es, :fr, :is, :it, :ja, :ko, :lv, :pl, :pt_BR, :ru, :sk, :sv, :tlh, :tr, :zh_TW]
+  I18n.available_locales = [:ar, :bg, :da, :de, :el, :en, :es, :fr, :hu, :is, :it, :ja, :ko, :lv, :pl, :pt_BR, :ru, :sk, :sv, :tlh, :tr, :zh_TW]
 #  raise I18n.available_locales.inspect
 else
   # Use all locales that we have translations when not in production
