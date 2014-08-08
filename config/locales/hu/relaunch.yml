@@ -16,7 +16,7 @@ hu:
     answers:
       0: Bármikor megváltoztathatod egy hely besorolását. Csak válaszd ki a megfelelő színjelzést és kattints a "Mentés" gombra - Kész is!
       1: Bejelentkezett felhasználóként egy hely bármelyik adatát megadhatod vagy kijavíthatod. Kattints a "Szerkesztés" gombra és javítsd vagy pótold az adatokat a szövegmezőben.
-      2: További információkat is hozzá tudsz adni (pl. "Ez a hely mobil rámpával rendelkezik") a hozzászólás résznél. Kattints a "Szerkesztés", majd az "Új hozzászólás" gombokra.
+      2: További adatokat (pl. "Ez a hely mobil rámpával rendelkezik") a hozzászólásként tudsz hozzáadni. Kattints a "Szerkesztés", majd az "Új hozzászólás" gombokra.
     headline: Probléma van ezzel a hellyel?
     questions:
       0: Rossz besorolás.
@@ -35,11 +35,11 @@ hu:
     index:
       overlay:
         button: Rendben, mehet!
-        categories: Szűrés kategóriák szerint
-        filter: Szűrés kerekesszékkel is használható helyek szerint
+        categories: Szűrj kategóriák szerint
+        filter: Szűrj az akadálymentesség szerint
         headline: 'Találd meg és jelöld be az akadálymentes helyeket a Wheelmap.org segítségével - Világszerte, ingyen. Ilyen egyszerű:'
         lookup: Keress rá egy helyre
-        secondary_headline: 'Piktogramjaink segítségével a helyek akadálymentességük szerint könnyen megkülönböztethetőek:'
+        secondary_headline: 'Jelzőlámpáink színei jelzik a helyek akadálymentességét:'
   nodes:
     new:
       form:
@@ -64,14 +64,14 @@ hu:
     node_status:
       accessible_toilet: 'Kerekesszékkel is használható mosdó:'
       premium: '%{name} szerint ez a hely'
-      wheelchair_accessibility: 'Kereksszékkel is akadálymentes:'
+      wheelchair_accessibility: 'Kerekesszékes akadálymentesség:'
     node_streetview:
       streetview: 'Utcanézet:'
     show:
       header:
         meta:
           description: Derítsd ki a Wheelmap.org-on, hogy ez a hely kerekesszékkel akadálymentes-e, vagy egészítsd ki további információkkal és képekkel.
-          title: 'Ez a hely rajta van a Wheelmap.org honlapon:  %{name}'
+          title: '%{name} a Wheelmap.org-on '
       share:
         email: E-mail
         facebook: Facebook
@@ -87,7 +87,7 @@ hu:
           work_in_progress: Keményen dolgozunk, hogy a keresést könnyebben és ösztönösebben használhatóvá tegyük a jövőben.
         try_this:
           address: Kérjük, pontosítsd <strong>a címet</strong>.
-          intro: 'Próbáld ezt:'
+          intro: 'Próbáld így:'
           spell_check: Ellenőrizd <strong>a helyesírási hibákat</strong> a beírt szövegben.
       results:
         ticker:
