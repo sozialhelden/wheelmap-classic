@@ -1,4 +1,3 @@
----
 ko:
   devise:
     confirmations:
@@ -31,7 +30,7 @@ ko:
     mailer:
       confirmation_instructions:
         landing_page: "당신에게 전송된 이메일에 있는 링크를 클릭해주세요. 만약 메일이 보이지 않는다면 스팸메일함을 확인해주시고, 그래도 메일이 도착하지 않았다면 다시 회원가입을 시도해주세요."
-        subject: 확인단계
+        subject: "확인단계"
       reset_password_instructions:
         subject: "비밀번호 재설정 단계"
       unlock_instructions:
@@ -67,18 +66,18 @@ ko:
     registrations:
       destroyed: "안녕히 가세요! 당신의 계정이 성공적으로 취소되었습니다. 또 다시 뵐 수 있길 바랍니다"
       inactive_signed_up: "당신은 성공적으로 가입되었습니다. 하지만 %{reason} 때문에 당신은 로그인 할 수 없습니다"
-      link: 회원가입
+      link: "회원가입"
       reasons:
         inactive: 휴면상태
         locked: 잠김
-        unconfirmed: "확인되지 않음"
+        unconfirmed: 확인되지 않음
       signed_up: "가입이 완료되었습니다. 만약 계정이 활성화되면 당신의 이메일로 확인메일이 전송됩니다"
       updated: "당신의 계정정보가 업데이트 되었습니다"
     sessions:
       inactive: "당신의 계정은 아직 활성화되지 않았습니다"
       invalid: "잘못된 이메일 또는 비밀번호 입니다"
       invalid_token: "잘못된 인증코드 입니다"
-      link: 로그인
+      link: "로그인"
       locked: "당신의 계정이 잠겨 있습니다"
       signed_in: "로그인에 성공했습니다"
       signed_out: "로그아웃에 성공했습니다"
@@ -91,10 +90,10 @@ ko:
           email: 이메일
           password: 비밀번호
           remember_me: "로그인 상태유지"
-        submit: 로그인
-      headline: 로그인
+        submit: "로그인"
+      headline: "로그인"
     sign_out:
-      headline: 로그아웃
+      headline: "로그아웃"
     sign_up:
       email:
         confirm_my_account: "내 계정 확인하기"
@@ -106,8 +105,8 @@ ko:
           password: 비밀번호
           password_confirmation: "비밀번호 재입력"
           wants_newsletter: "wheelmap에 관한 최신 정보를 이메일로 전해 받겠습니다. (월 1회 가량 발송됩니다.)"
-        submit: 회원가입
-      headline: 회원가입
+        submit: "회원가입"
+      headline: "회원가입"
     unlocks:
       link: "계정잠금 해제에 관한 안내를 받지 못했습니까?"
       send_instructions: "몇 분 뒤 당신의 이메일로 계정잠금 해제에 관한 이메일이 도착할 것입니다"

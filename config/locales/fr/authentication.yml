@@ -1,4 +1,3 @@
----
 fr:
   devise:
     confirmations:
@@ -52,9 +51,7 @@ fr:
         comment: "Si vous n'avez pas demandé de changer votre mot de passe, ignorez cet e-mail s.v.p. <br/>Votre mot de passe ne sera pas changé sauf si vous cliquez sur ce lien et que vous le remplacez par un nouveau mot de passe."
         headline: "Bienvenue %{email} "
         link: "Changer le mot de passe"
-        text: |-
-            Quelqu'un a demandé de changer votre mot passe, s'il s'agissait de vous-même, vous pouvez le changer en cliquant sur le lien suivant:
-            Dans le cas contraire merci de l'ignorer.
+        text: "Quelqu'un a demandé de changer votre mot passe, s'il s'agissait de vous-même, vous pouvez le changer en cliquant sur le lien suivant:\nDans le cas contraire merci de l'ignorer."
       form:
         labels:
           password: "Nouveau mot de passe"
@@ -70,18 +67,18 @@ fr:
     registrations:
       destroyed: "Votre compte a été supprimé avec succès. Nous espérons vous revoir bientôt."
       inactive_signed_up: "Vous vous êtes enregistré avec succès mais nous ne pouvons pas vous connecter. Raison: \"%{reason}\""
-      link: Enregistrer
+      link: "Enregistrer"
       reasons:
-        inactive: "non actif"
+        inactive: non actif
         locked: bloqué
-        unconfirmed: "non confirmé"
+        unconfirmed: non confirmé
       signed_up: "Votre inscription était couronnée de succès. Dès l'activation de votre compte vous recevrez un mail de confirmation à votre adresse mail. "
       updated: "Vous avez actualisé votre compte utilisateur avec succès."
     sessions:
       inactive: "Votre compte n'était pas encore activé. Pour l'activation, merci de cliquer sur le lien que nous avons envoyé par mail. "
       invalid: "L'adresse mail ou le mot de passe ne sont pas valides."
       invalid_token: "Jeton d'authentification incorrect. Merci de supprimer les cookies dans votre navigateur et essayez encore une fois."
-      link: S'identifier
+      link: "S'identifier"
       locked: "Votre compte est fermé."
       new:
         no_osm_account: "Pas chez OpenStreetMap?"
@@ -99,12 +96,12 @@ fr:
       form:
         labels:
           email: E-mail
-          password: "Mot de passe"
+          password: Mot de passe
           remember_me: "Rester connecté?"
-        submit: Connecter
-      headline: Connexion
+        submit: "Connecter"
+      headline: "Connexion"
     sign_out:
-      headline: Déconnexion
+      headline: "Déconnexion"
     sign_up:
       email:
         confirm_my_account: "Confirmer mon compte"
@@ -113,11 +110,11 @@ fr:
       form:
         labels:
           email: E-mail
-          password: "Mot de passe"
+          password: Mot de passe
           password_confirmation: "Répéter le mot de passe"
           wants_newsletter: "Oui, tenez-moi au courant des nouveautés sur Wheelmap. (Pas plus d'une fois par mois.)"
-        submit: S'inscrire
-      headline: S'inscrire
+        submit: "S'inscrire"
+      headline: "S'inscrire"
     unlocks:
       link: "Vous n'avez pas reçu les instructions pour débloquer votre compte?"
       send_instructions: "Dans quelques minutes vous allez recevoir un mail avec des instructions pour déverrouiller votre compte."

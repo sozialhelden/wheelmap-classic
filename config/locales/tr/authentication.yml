@@ -1,4 +1,3 @@
----
 tr:
   devise:
     confirmations:
@@ -62,7 +61,7 @@ tr:
     registrations:
       destroyed: "Hoşçakalın! Hesabınız başarılı bir şekilde iptal edilmiştir. Umariz sizi daha sonra tekrar görürüz."
       inactive_signed_up: "Başarılı bir şekilde kaydoldunuz. Fakat biz sizi kayda alamadık, çünkü hesabınız %{reason}.  "
-      link: Kaydol
+      link: "Kaydol"
       signed_up: "Başarılı bir şekilde kaydoldunuz. Kayd etkinleştirildi ise size e-pota ile bunun onayı ilettildi. "
       updated: "Hesabınızı başarılı bir şekilde güncelleştirdiniz. "
     sessions:
@@ -92,8 +91,8 @@ tr:
           email: E-Posta
           password: Parola
           password_confirmation: "Parolayı tekrarla"
-        submit: Kaydol
-      headline: Kaydol
+        submit: "Kaydol"
+      headline: "Kaydol"
     unlocks:
       link: "Kilidi açmak için talimatları almadınızmı?"
       send_instructions: "Bir kaç dakika içerisinde nasıl hesabınızın kilidini açabileceğinize dahil e-posta ile talimatlar alacaksınız."

@@ -1,4 +1,3 @@
----
 sk:
   devise:
     confirmations:
@@ -9,7 +8,7 @@ sk:
     destroy:
       confirm: "Ste si istý?"
       headline: "Zmazať účet"
-      link: Zmazať
+      link: "Zmazať"
     edit:
       form:
         labels:

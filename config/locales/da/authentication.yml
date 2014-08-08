@@ -1,4 +1,3 @@
----
 da:
   devise:
     confirmations:
@@ -31,7 +30,7 @@ da:
     mailer:
       confirmation_instructions:
         landing_page: "Klik venligst på linket vi lige har sendt til din e-mail. Hvis du ikke har modtaget en e-mail fra os, så tjek først i spam mail mappen, hvis der intet er der, så prøv registreringssiden igen."
-        subject: Bekræftigelsesinstrukser
+        subject: "Bekræftigelsesinstrukser"
       reset_password_instructions:
         subject: "Nulstil adgangskodeinstrukser"
       unlock_instructions:
@@ -79,7 +78,7 @@ da:
       inactive: "Din konto er endnu ikke blevet aktiveret"
       invalid: "Ugyldig e-mail eller adgangskode."
       invalid_token: "Ugyldig autorisation token"
-      link: Login
+      link: "Login"
       locked: "Din konto er låst"
       new:
         no_osm_account: "Ingen OpenStreetMap konto?"
@@ -99,8 +98,8 @@ da:
           email: E-mail
           password: Adgangskode
           remember_me: "Forbliv logget ind?"
-        submit: Login
-      headline: Login
+        submit: "Login"
+      headline: "Login"
     sign_out:
       headline: "Log af"
     sign_up:

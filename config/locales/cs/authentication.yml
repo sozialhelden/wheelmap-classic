@@ -1,4 +1,3 @@
----
 cs:
   devise:
     confirmations:
@@ -9,7 +8,7 @@ cs:
     destroy:
       confirm: "Jste si jistí?"
       headline: "Smazat účet"
-      link: Smazat
+      link: "Smazat"
     edit:
       form:
         labels:
@@ -70,7 +69,7 @@ cs:
       inactive_signed_up: "Registrace byla úspěšná. Nicméně, nemůžete se přihlásit, protože: \"%{reason}\"."
       link: "Vytvořit účet"
       reasons:
-        inactive: "Váš účet ještě nebyl aktivován."
+        inactive: Váš účet ještě nebyl aktivován.
         locked: zamčeno
         unconfirmed: nepotvrzené
       signed_up: "Vítejte! Registrace byla úspěšná."

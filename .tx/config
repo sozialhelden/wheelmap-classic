@@ -24,3 +24,9 @@ file_filter = config/locales/<lang>/ember.yml
 source_file = config/locales/en/ember.yml
 source_lang = en
 type = YAML
+
+[wheelmap-website.authenticationyml]
+file_filter = config/locales/<lang>/authentication.yml
+source_file = config/locales/en/authentication.yml
+source_lang = en
+type = YAML

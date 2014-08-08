@@ -1,5 +1,4 @@
----
-pt-BR:
+pt_BR:
   devise:
     confirmations:
       confirmed: "Seu e-mail foi confirmado com sucesso."
@@ -23,7 +22,7 @@ pt-BR:
       already_authenticated: "Você já está conectado."
       inactive: "A sua conta ainda não foi ativada."
       invalid: "Palavra passe ou Email inválido. "
-      invalid_token: d
+      invalid_token: "d"
       locked: "A sua conta está bloqueada."
       timeout: "A sua sess"
       unauthenticated: "Voçê precisa se conectar ou registrar parar continuar.  "
@@ -72,14 +71,14 @@ pt-BR:
       reasons:
         inactive: inativo
         locked: bloqueado
-        unconfirmed: "não confirmado"
+        unconfirmed: não confirmado
       signed_up: "Conta criada com sucesso."
       updated: "Sua conta foi atualizada."
     sessions:
       inactive: "A sua conta ainda não foi confirmada. Para confirmá-la clique no link que mandamos por e-mail."
       invalid: "E-mail ou senha inválida "
       invalid_token: "Código de autentificação inválido."
-      link: Entrar
+      link: "Entrar"
       locked: "A sua conta está bloqueada."
       new:
         no_osm_account: "Nenhuma conta em OpenStreetMap?"
@@ -89,7 +88,7 @@ pt-BR:
         sign_up_with_osm: "Registre-se aqui."
         wheelmap_promo_text: "Com seus conhecimentos de lugares acessíveis você contribui para um melhor dia-a-dia de pessoas com deficiências físicas. Ao mesmo tempo aumentam as informações no OSM."
       signed_in: "Entrou na conta com sucesso"
-      signed_out: Desconectado.
+      signed_out: "Desconectado."
       timeout: "A sua sessão expirou, por favor entre novamente."
       unauthenticated: "Por favor conecte-se ou registre-se novamente para continuar."
       unconfirmed: "Tem de confirmar a sua conta antes de continuar"
@@ -97,12 +96,12 @@ pt-BR:
       form:
         labels:
           email: E-mail
-          password: "Palavra passe"
+          password: Palavra passe
           remember_me: "Deseja se manter conectado?"
-        submit: Entrar
-      headline: Entrar
+        submit: "Entrar"
+      headline: "Entrar"
     sign_out:
-      headline: Sair
+      headline: "Sair"
     sign_up:
       email:
         confirm_my_account: "Confirmar minha conta."
@@ -114,8 +113,8 @@ pt-BR:
           password: Senha
           password_confirmation: "Repetir senha"
           wants_newsletter: "Sim, mantenha-me informado sobre wheelmap. (Mas por favor não mais que uma vez por mês.)"
-        submit: Registrar-se
-      headline: Registrar-se
+        submit: "Registrar-se"
+      headline: "Registrar-se"
     unlocks:
       link: "Não recebeu instruções para desbloquear a sua conta?"
       send_instructions: "Dentro de alguns minutos receberá um e-mail com instruções para desbloquear a sua conta."

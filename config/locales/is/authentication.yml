@@ -1,4 +1,3 @@
----
 is:
   devise:
     confirmations:
@@ -62,14 +61,14 @@ is:
     registrations:
       destroyed: "Bless! Aðganginum þínum hefur verið lokað. Vonandi sjáumst við aftur."
       inactive_signed_up: "Þú hefur verið skráður. Hinsvegar gátum við ekki skráð þig inn því aðgangurinn þinn er %{reason}."
-      link: Innskráning
+      link: "Innskráning"
       signed_up: "Þú hefur innskráð þig. Ef valið færðu staðfestingu í tölvupósti"
       updated: "Þú hefur uppfært aðganginn þinn"
     sessions:
       inactive: "Aðgangurinn þinn hefur ekki verið staðfestur."
       invalid: "Rangt tölvupóstfang eða lykilorð."
       invalid_token: "Ógilt auðkenningartákn"
-      link: Innskráning
+      link: "Innskráning"
       locked: "Aðgangurinn þinn er læstur."
       signed_in: "Innskráning tókst."
       signed_out: "Útskráning tókst."
@@ -82,10 +81,10 @@ is:
           email: Tölvupóstur
           password: Lykilorð
           remember_me: "haldast innskráður?"
-        submit: Innskráning
-      headline: Innskráning
+        submit: "Innskráning"
+      headline: "Innskráning"
     sign_out:
-      headline: Útskrá
+      headline: "Útskrá"
     sign_up:
       form:
         labels:
