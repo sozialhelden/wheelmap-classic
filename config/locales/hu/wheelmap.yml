@@ -61,10 +61,10 @@ hu:
       destroy:
         notice: "A kép sikeresen törölve lett"
   form:
-    show_fully_accessible_places: "Kerekesszékkel akadálymentes"
-    show_limited_accessible_places: "Kerekesszékkel részben akadálymentes"
+    show_fully_accessible_places: "akadálymentes"
+    show_limited_accessible_places: "részben akadálymentes"
     show_places_without_status: "ismeretlen státusz"
-    show_unaccessible_places: "Kerekesszékkel nem akadálymentes"
+    show_unaccessible_places: "nem akadálymentes"
   formtastic:
     hints:
       email: "Bizalmasan kezeljük a címedet. Semmi spam, becsszó!"
@@ -126,7 +126,7 @@ hu:
       what_is_barrier_free: "Mit jelent a \"kerekesszékkel akadálymentes\"?"
       what_is_wheelmap: "Mi a wheelmap?"
     searchbar:
-      add_place: "Újabb hely hozzáadása"
+      add_place: "Új hely felvitele"
       find: Keres
       placeholder: "Hely keresése"
       title_add_place: "Adj hozzá egy új helyet ezen a ponton most!"
@@ -158,12 +158,12 @@ hu:
           create: "Új hely hozzáadása"
       popup:
         form:
-          limited: "kerekesszékkel részben akadálymentes"
-          'no': "kerekesszékkel nem akadálymentes"
+          limited: "részben akadálymentes"
+          'no': "nem akadálymentes"
           save: Frissítés
           unknown: "ismeretlen státusz"
-          'yes': "kerekesszékkel akadálymentes"
-        help: "Ez kerekesszékkel akadálymentes? (Segítség)"
+          'yes': "akadálymentes"
+        help: "Kerekesszékkel akadálymentes? (Segítség)"
         more: "több ..."
   how?: Hogyan?
   landing_pages:
@@ -335,16 +335,16 @@ hu:
       headline:
         your_images: "Felöltött képeid"
   wheelchairstatus:
-    limited: "kereksszékkel részben akadálymentes"
-    'no': "kerekesszékkel nem akadálymentes"
+    limited: "részben akadálymentes"
+    'no': "nem akadálymentes"
     unknown: "ismeretlen státusz"
-    'yes': "kerekesszékkel akadálymentes"
+    'yes': "akadálymentes"
   wheelmap:
     footer:
       a_project_of: "A projekt megvalósítója: "
       based_on: "Alapok: "
       become_a_supporter: "Legyél támogató "
-      main_supporter: "Főtámogató"
+      main_supporter: "Fő támogatónk"
     itunes:
       alt: "AppStore Logo"
       title: "Töltsd le az iPhone alkalmazást most!"
@@ -353,9 +353,9 @@ hu:
       title: "Wheelmap - keress kerekesszékkel is akadálymentes helyeket"
     what_is:
       fully_accessible: "A bejárat és az összes helyiség szintkülönbség nélküli, a mosdó is akadálymentes, ha van"
-      limited_accessible: "A bejáratnál (legfeljebb 7 cm magas) lépcső, a legtöbb helyiség lépcső és küszöb nélküli, a mosdó nem akadálymentes"
+      limited_accessible: "A bejáratnál egy lépcsőfok (max. 7 cm magas), a legtöbb helyiség lépcső nélküli, a mosdó nem akadálymentes"
       not_accessible: "A bejáratnál magas vagy több lépcsőfok, a benti helyiségek sem akadálymentesek"
-      unknown_accessible: "Segíts a helyek bejelölésében!"
+      unknown_accessible: "Segíts a helyek jellemzésével!"
   will_paginate:
     next_label: "Következő &#8594;"
     page_entries_info:
