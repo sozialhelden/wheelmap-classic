@@ -1,4 +1,3 @@
----
 it:
   devise:
     confirmations:
@@ -68,18 +67,18 @@ it:
     registrations:
       destroyed: "Ciao! Il tuo account è stato cancellato. Speriamo di rivederti presto."
       inactive_signed_up: "Sei stato registrato con successo, ma non possiamo farti accedere perché il tuo account è %{reason}."
-      link: Registrati
+      link: "Registrati"
       reasons:
-        inactive: "non attivo"
+        inactive: non attivo
         locked: bloccato
-        unconfirmed: "non confermato"
+        unconfirmed: non confermato
       signed_up: "Sei stato registrato con successo. Verrà inviata al tuo indirizzo e-mail una e-mail di conferma."
       updated: "Il tuo account è stato aggiornato."
     sessions:
       inactive: "Il tuo account non è ancora attivo."
       invalid: "Indirizzo e-mail o password non validi."
       invalid_token: "Token di autenticazione non valido."
-      link: Registrati
+      link: "Registrati"
       locked: "Il tuo account è bloccato."
       new:
         no_osm_account: "Non hai un account su OpenStreetMap?"
@@ -98,10 +97,10 @@ it:
           email: E-mail
           password: Password
           remember_me: "Resti collegato?"
-        submit: Accedi
-      headline: Accedi
+        submit: "Accedi"
+      headline: "Accedi"
     sign_out:
-      headline: Esci
+      headline: "Esci"
     sign_up:
       email:
         confirm_my_account: "Conferma il tuo account"
@@ -113,8 +112,8 @@ it:
           password: Password
           password_confirmation: "Ripeti la password"
           wants_newsletter: "Sì, tenetemi aggiornato su wheelmap - ma non più di una volta al mese. "
-        submit: Registrati
-      headline: Registrati
+        submit: "Registrati"
+      headline: "Registrati"
     unlocks:
       link: "No hai ricevuto le istruzioni per sbloccare?"
       send_instructions: "Riceverai una e-mail contente le istruzioni su come sbloccare in pochi minuti il tuo account."

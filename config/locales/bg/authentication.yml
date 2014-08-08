@@ -1,4 +1,3 @@
----
 bg:
   devise:
     confirmations:
@@ -68,7 +67,7 @@ bg:
     registrations:
       destroyed: "Чао! Твоят акаунт беше успешно отменен. Надяваме се да те видим отново скоро."
       inactive_signed_up: "Регистрацията ти е успешна, но имаше проблем с влизането. Причина: \"%{reason}\""
-      link: Регистрация
+      link: "Регистрация"
       reasons:
         inactive: неактивен
         locked: заключено
@@ -79,7 +78,7 @@ bg:
       inactive: "Твоят акаунт още не е активиран."
       invalid: "Невалиден и-мейл или парола."
       invalid_token: "Невалиден код за активиране."
-      link: Вход
+      link: "Вход"
       locked: "Твоят акаунт е блокиран."
       new:
         no_osm_account: "Нямаш регистрация в OpenStreetMap?"
@@ -98,11 +97,11 @@ bg:
         labels:
           email: Email
           password: Парола
-          remember_me: Запомняне?
-        submit: Вход
-      headline: Вход
+          remember_me: "Запомняне?"
+        submit: "Вход"
+      headline: "Вход"
     sign_out:
-      headline: Изход
+      headline: "Изход"
     sign_up:
       email:
         confirm_my_account: "Потвърди акаунта"
@@ -114,8 +113,8 @@ bg:
           password: Парола
           password_confirmation: "Повтори паролата"
           wants_newsletter: "Да, информирайте ме относно wheelmap - но моля, не повече от веднъж месечно."
-        submit: Регистрация
-      headline: Регистрация
+        submit: "Регистрация"
+      headline: "Регистрация"
     unlocks:
       link: "Не получи инструкции за отключване?"
       send_instructions: "Ще получиш и-мейл с интрукции как да отблокираш акаунта си до няколко минути."

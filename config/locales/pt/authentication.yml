@@ -1,4 +1,3 @@
----
 pt:
   devise:
     confirmations:
@@ -21,7 +20,7 @@ pt:
     failure:
       inactive: "A sua conta ainda nao foi activada."
       invalid: "Palavra passe ou Email inválido. "
-      invalid_token: d
+      invalid_token: "d"
       locked: "A sua conta está bloqueada."
       timeout: "A sua sess"
       unauthenticated: "Voçê tem de se registrar antes de poder continuar.  "
@@ -79,20 +78,20 @@ pt:
       form:
         labels:
           email: E-mail
-          password: "Palavra passe"
+          password: Palavra passe
           remember_me: "manter-se ligado à sua conta"
-        submit: entrar
-      headline: Entrar
+        submit: "entrar"
+      headline: "Entrar"
     sign_out:
-      headline: Sair
+      headline: "Sair"
     sign_up:
       form:
         labels:
           email: E-mail
-          password: "Palavra passe"
+          password: Palavra passe
           password_confirmation: "Repita a palavra passe"
-        submit: Registrar-se
-      headline: Registrar-se
+        submit: "Registrar-se"
+      headline: "Registrar-se"
     unlocks:
       link: "Não recebeu instruções para desbloquear a sua conta?"
       send_instructions: "Receberá dentro de minutos um mail com intruções de como desbloquear a sua conta."

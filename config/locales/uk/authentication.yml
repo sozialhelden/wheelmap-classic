@@ -1,4 +1,3 @@
----
 uk:
   devise:
     confirmations:
@@ -14,7 +13,7 @@ uk:
       form:
         labels:
           current_password: "Поточний  пароль <i>(він потрібен для підтвердження змін) </і>"
-          email: "Електронна пошта"
+          email: Електронна пошта
           password: "пароль <i>(залишити порожнім, якщо ви не хочете змінити) </i>"
           password_confirmation: "Повторіть пароль"
         submit: "Зберегти зміни"
@@ -44,7 +43,7 @@ uk:
     password_recovery:
       form:
         labels:
-          email: "електоронна адреса"
+          email: електоронна адреса
         submit: "Скинути пароль"
       headline: "Забули пароль?"
     password_reset:
@@ -68,18 +67,18 @@ uk:
     registrations:
       destroyed: "До побачення! Ваш обліковий запис було успішно закрито. Сподіваємось незабаром побачитись з Вами знову."
       inactive_signed_up: "Ви успішно зареєструвалися. Але, Ви не можете увійти з причини %{reason}."
-      link: Зареєструватися
+      link: "Зареєструватися"
       reasons:
-        inactive: "не активний"
+        inactive: не активний
         locked: заблоковано
-        unconfirmed: "не підтверджено"
+        unconfirmed: не підтверджено
       signed_up: "Вітаємо! Ви успішно зареєструвалися."
       updated: "Ви успішно оновили свій обліковий запис."
     sessions:
       inactive: "Ваш профіль ще не активовано"
       invalid: "Невірне ім'я користувача або пароль."
       invalid_token: "Неприпустимий маркер аутентифікації"
-      link: Увійти
+      link: "Увійти"
       locked: "Ваш профіль заблоковано"
       new:
         no_osm_account: "Немає аккаунту на OpenStreetMap?"
@@ -96,13 +95,13 @@ uk:
     sign_in:
       form:
         labels:
-          email: "Електронна адреса"
+          email: Електронна адреса
           password: Пароль
           remember_me: "Залишатись в системі?"
-        submit: Увійти
-      headline: Увійти
+        submit: "Увійти"
+      headline: "Увійти"
     sign_out:
-      headline: Вийти
+      headline: "Вийти"
     sign_up:
       email:
         confirm_my_account: "Підтвердіть свій аккаунт"
@@ -110,12 +109,12 @@ uk:
         welcome: "Ласкаво просимо %{email}!"
       form:
         labels:
-          email: "Електронна адреса"
+          email: Електронна адреса
           password: Пароль
           password_confirmation: "Повторіть пароль"
           wants_newsletter: "Так, тримайте мене в курсі wheelmap - але, будь ласка, не частіше одного разу на місяць."
-        submit: Зареєструватися
-      headline: Зареєструватися
+        submit: "Зареєструватися"
+      headline: "Зареєструватися"
     unlocks:
       link: "Не отримали розблокування інструкції?"
       send_instructions: "На Ваш email надіслано інструкції з розблокування."

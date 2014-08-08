@@ -1,4 +1,3 @@
----
 de:
   devise:
     confirmations:
@@ -68,7 +67,7 @@ de:
     registrations:
       destroyed: "Dein Benutzerkonto wurde efolgreich gelöscht."
       inactive_signed_up: "Anmeldung erfolgreich. Aber wir konnten dich nicht einloggen. Grund: \"%{reason}\""
-      link: Registrieren
+      link: "Registrieren"
       reasons:
         inactive: inaktiv
         locked: gesperrt
@@ -79,7 +78,7 @@ de:
       inactive: "Dein Benutzerkonto wurde noch nicht bestätigt. Um es zu Bestätigen klicke bitte auf den Link, den wir dir per E-Mail geschickt haben."
       invalid: "Ungültige E-Mail oder Passwort."
       invalid_token: "Ungültiger Authentizitätstoken. Bitte lösche die Cookies in deinem Browser und versuche es noch einmal."
-      link: Login
+      link: "Login"
       locked: "Dein Benutzerkonto ist gesperrt."
       new:
         no_osm_account: "Nicht bei OpenStreetMap?"
@@ -99,10 +98,10 @@ de:
           email: E-Mail
           password: Passwort
           remember_me: "Eingeloggt bleiben?"
-        submit: Login
-      headline: Login
+        submit: "Login"
+      headline: "Login"
     sign_out:
-      headline: Logout
+      headline: "Logout"
     sign_up:
       email:
         confirm_my_account: "Mein Benutzerkonto bestätigen."
@@ -114,8 +113,8 @@ de:
           password: Passwort
           password_confirmation: "Passwort wiederholen"
           wants_newsletter: "Ja, haltet mich über wheelmap auf dem laufenden. (Aber bitte nicht öfter als einmal im Monat.)"
-        submit: Registrieren
-      headline: Registrieren
+        submit: "Registrieren"
+      headline: "Registrieren"
     unlocks:
       link: "Keine Anleitung zum Entsperren deines Benutzerkontos bekommen?"
       send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto entsperren kannst."

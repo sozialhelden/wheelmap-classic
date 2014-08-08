@@ -1,4 +1,3 @@
----
 sv:
   devise:
     confirmations:
@@ -31,7 +30,7 @@ sv:
     mailer:
       confirmation_instructions:
         landing_page: "Klicka på länken som vi nyss skickade till din e-postadress. Om du inte får något e-postmeddelande från oss så kontrollera att det inte har hamnat i din mapp för skräppost. Om det inte finns så gå tillbaka till registreringssidan och gör ett nytt försök."
-        subject: Valideringsinstruktioner
+        subject: "Valideringsinstruktioner"
       reset_password_instructions:
         subject: "Instruktioner för att återställa lösenord"
       unlock_instructions:
@@ -68,11 +67,11 @@ sv:
     registrations:
       destroyed: "Hej då! Ditt konto är nu avslutat. Hoppas vi ses igen snart."
       inactive_signed_up: "Du har lyckats registrera dig men vi kunde inte logga in dig. Orsak: %{reason}"
-      link: Registrera
+      link: "Registrera"
       reasons:
-        inactive: "ej aktiv"
+        inactive: ej aktiv
         locked: låst
-        unconfirmed: "ej bekräftad"
+        unconfirmed: ej bekräftad
       signed_up: "Du är nu registrerad. Om valt, så kommer validering via e-post att ske."
       updated: "Din kontoinformation är uppdaterad."
     sessions:
@@ -88,8 +87,8 @@ sv:
         sign_in_with: "Logga in med %{kind}"
         sign_up_with_osm: "Registrera dig nu"
         wheelmap_promo_text: "Med din kännedom om rullstolstillgängliga platser hjälper du personer med funktionsnedsättningar att lättare planera sitt vardagsliv. Dessutom blir OpenStreetMap mer detaljerad."
-      signed_in: Inloggad.
-      signed_out: Utloggad.
+      signed_in: "Inloggad."
+      signed_out: "Utloggad."
       timeout: "Din session har avslutats, logga in för att fortsätta."
       unauthenticated: "Du måste logga på eller registrera dig innan du kan fortsätta."
       unconfirmed: "Du måste verifiera ditt konto innan du kan fortsätta."
@@ -114,7 +113,7 @@ sv:
           password: Lösenord
           password_confirmation: "Upprepa lösenord"
           wants_newsletter: "Ja, håll mig informerad om Wheelmap. (Men inte mer än en gång i månaden)"
-        submit: Registrera
+        submit: "Registrera"
       headline: "Registrera dig"
     unlocks:
       link: "Mottog du inte upplåsningsinstruktioner?"

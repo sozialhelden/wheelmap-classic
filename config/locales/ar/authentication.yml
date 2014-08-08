@@ -1,4 +1,3 @@
----
 ar:
   devise:
     confirmations:
@@ -14,7 +13,7 @@ ar:
       form:
         labels:
           current_password: "<i>(we need it to confirm your changes)</i> كلمة المرور الحالية "
-          email: "بريد الكتروني"
+          email: بريد الكتروني
           password: " كلمة المرور  <i>(أبقه فارغا اذا كنت لاتريد التعديل)<i/>"
           password_confirmation: "إعادة كلمة المرور"
         submit: "حفظ التعديلات"
@@ -44,7 +43,7 @@ ar:
     password_recovery:
       form:
         labels:
-          email: "البريد الإكتروني"
+          email: البريد الإكتروني
         submit: "إعادة تعيين كلمة المرور "
       headline: "نسيت كلمة السر ؟"
     password_reset:
@@ -70,16 +69,16 @@ ar:
       inactive_signed_up: "\"%{reason}\" لقد تم اشتراكك بنجاح،لكن لايمكن تسجيل الدخول بسبب :"
       link: "التسجيل "
       reasons:
-        inactive: "غير نشط"
+        inactive: غير نشط
         locked: مقفل
-        unconfirmed: "غير مؤكد"
+        unconfirmed: غير مؤكد
       signed_up: "تم التسجيل بنجاح ، ستجد رابط التنشيط على بريدك الإلكتروني"
       updated: "تم تحديث حسابك بنجاح."
     sessions:
       inactive: "لم يتم تنشيط حسابك بعد"
       invalid: "البريد الالكتروني أوكلمة المرور غير صالحة"
       invalid_token: "خطأ،المصادقة لم تتم"
-      link: التسجيل
+      link: "التسجيل"
       locked: "حسابك مغلق"
       new:
         no_osm_account: "لايوجد حساب على \"أوبن ستريت ماب\"؟"
@@ -96,8 +95,8 @@ ar:
     sign_in:
       form:
         labels:
-          email: "بريد الكتروني"
-          password: "كلمة المرور"
+          email: بريد الكتروني
+          password: كلمة المرور
           remember_me: "هل تريد البقاء متصلا؟"
         submit: "تسجيل الدخول"
       headline: "تسجيل الدخول"
@@ -110,12 +109,12 @@ ar:
         welcome: "%{email}! مرحبا"
       form:
         labels:
-          email: "بريد الكتروني"
-          password: "كلمة المرور"
+          email: بريد الكتروني
+          password: كلمة المرور
           password_confirmation: "إعادة كلمة المرور"
           wants_newsletter: "نعم ، أبقني غلى اطلاع بآخر المستجدات في wheelmap , نشرة واحدة شهريا ستكون كافية."
-        submit: التسجيل
-      headline: التسجيل
+        submit: "التسجيل"
+      headline: "التسجيل"
     unlocks:
       link: "لم تتلق تعليمات فتح القفل ؟ "
       send_instructions: "سوف تتلقى رسالة بريد إلكتروني مع تعليمات حول كيفية إعادة فتح حسابك في بضع دقائق."

@@ -1,4 +1,3 @@
----
 nl:
   devise:
     confirmations:
@@ -68,7 +67,7 @@ nl:
     registrations:
       destroyed: "Tot ziens! Jouw account werd succesvol verwijderd. Wij hopen jou ooit weer te zien. "
       inactive_signed_up: "Je hebt succesvol aangemeld. Maar wij kunnen jou niet inloggen. Reden: \"%{reason}\""
-      link: Aanmelden
+      link: "Aanmelden"
       reasons:
         inactive: inactief
         locked: geblokkeerd
@@ -79,7 +78,7 @@ nl:
       inactive: "Jouw account is nog niet geactiveerd."
       invalid: "Ongeldig email of wachtwoord."
       invalid_token: "Ongeldig authentificatie bewijs."
-      link: Aanmelden
+      link: "Aanmelden"
       locked: "Jouw account is geblokkeerd."
       new:
         no_osm_account: "Geen OpenStreetMap account?"
@@ -99,10 +98,10 @@ nl:
           email: Email
           password: Wachtwoord
           remember_me: "Aangemeld blijven?"
-        submit: Inloggen
-      headline: Inloggen
+        submit: "Inloggen"
+      headline: "Inloggen"
     sign_out:
-      headline: Uitloggen
+      headline: "Uitloggen"
     sign_up:
       email:
         confirm_my_account: "Bevestig mijn account"
@@ -114,8 +113,8 @@ nl:
           password: Wachtwoord
           password_confirmation: "Herhaal wachtwoord"
           wants_newsletter: "Ja, informeer mij over wheelmap. (Maar alsjeblieft niet meer dan een keer per maand.)"
-        submit: Aanmelden
-      headline: Aanmelden
+        submit: "Aanmelden"
+      headline: "Aanmelden"
     unlocks:
       link: "Geen instructie voor het vrijgeven ontvangen?"
       send_instructions: "Je zal over een paar minuten een e-mail met de instructie ontvangen, hoe je je account vrij kan geven. "

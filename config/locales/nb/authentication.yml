@@ -1,4 +1,3 @@
----
 nb:
   devise:
     confirmations:
@@ -68,7 +67,7 @@ nb:
     registrations:
       destroyed: "Farvel. Din konto er nå slettet. Velkommen igjen."
       inactive_signed_up: "Din registrering var vellykket, men vi kunne ikke logge deg inn. Årsak: \"%{reason}\"."
-      link: Registrer
+      link: "Registrer"
       reasons:
         inactive: inaktiv
         locked: Låst
@@ -114,8 +113,8 @@ nb:
           password: Passord
           password_confirmation: "Gjenta passord"
           wants_newsletter: "Vennligst hold meg oppdatert om wheelmap - men ikke mer enn engang pr. måned."
-        submit: Registrer
-      headline: Registrer
+        submit: "Registrer"
+      headline: "Registrer"
     unlocks:
       link: "Mottok du ikke instruksjoner for gjenåpning?"
       send_instructions: "Du vil i løpet av få minutter motta en epost med instruksjoner om hvordan gjenåpne din konto."

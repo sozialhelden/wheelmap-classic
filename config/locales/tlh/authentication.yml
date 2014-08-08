@@ -1,4 +1,3 @@
----
 tlh:
   devise:
     confirmations:
@@ -6,7 +5,7 @@ tlh:
       link: "talIj Da'ol 'e' ghojmoHbogh QIn DaHevbe''a'?"
       send_instructions: "tugh jabbI'ID DaHev. talIj Da'ol 'e' ghojmoH."
     destroy:
-      confirm: bIbej'a'?
+      confirm: "bIbej'a'?"
       headline: "ta' Qaw''a'?"
       link: "DaH ta' Qaw'!"
     edit:
@@ -16,7 +15,7 @@ tlh:
           email: jabbI'ID
           password: "mu' pegh <i>(DachoH DaneHbe'chugh pagh yIghItlh!)</i>"
           password_confirmation: "pegh mu' yIghItlhqa'"
-        submit: qon
+        submit: "qon"
       headline: "ta' choH"
     failure:
       inactive: "wej chu' ta'lIj."
@@ -62,7 +61,7 @@ tlh:
     registrations:
       destroyed: "ta'lIj qIllu'. tugh bIchegh 'e' wItul."
       inactive_signed_up: "Qapla' 'ach %{reason}mo' pI'ellaHbe'moH."
-      link: muv
+      link: "muv"
       signed_up: "Qapla', jumuv. 'olmeH tugh jabbI'DI' DaHev."
       updated: "talIjDaq qonpu' De' chu'."
     sessions:
@@ -80,20 +79,20 @@ tlh:
       form:
         labels:
           email: jabbI'ID
-          password: "pegh mu'"
+          password: pegh mu'
           remember_me: "'eltaH'a'?"
         submit: "'el"
       headline: "'el"
     sign_out:
-      headline: mej
+      headline: "mej"
     sign_up:
       form:
         labels:
           email: jabbI'ID
-          password: "pegh mu'"
+          password: pegh mu'
           password_confirmation: "pegh mu' yIghItlhqa'"
-        submit: muv
-      headline: muv
+        submit: "muv"
+      headline: "muv"
     unlocks:
       link: "'olmeH jabbI'DI' DaHevbe''a'?"
       send_instructions: "tugh jabbI'ID DaHev. talIj DangaQHa' 'e' ghojmoH."
