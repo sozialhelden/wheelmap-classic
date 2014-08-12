@@ -7,8 +7,8 @@
 %head
   = render :partial => 'relaunch/meta'
 
-  - if content_for? :robotos
-    = content_for :robotos
+  - if content_for? :robots
+    = content_for :robots
   - else
     - if Rails.env.production?
       %meta{:name => 'robots', :content => 'follow index'}
