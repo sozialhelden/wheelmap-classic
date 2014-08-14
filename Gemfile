@@ -52,7 +52,7 @@ group :default do
   gem 'flash_cookie_session'
   gem 'cacheable_flash'
   gem 'exifr'
-  gem 'awesome_nested_set'
+  gem 'awesome_nested_set', '<3.0'
   gem 'i18n-js'
   gem 'font-awesome-rails'
   gem 'ember-rails'
