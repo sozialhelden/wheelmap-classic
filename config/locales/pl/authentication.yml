@@ -4,7 +4,7 @@ pl:
       confirmed: "Twój adres email został potwierdzony."
       link: "Nie otrzymałeś instrukcji potwierdzenia?"
       send_instructions: "Za chwilę otrzymasz wiadomość z linkiem do potwierdzenia Twojego adresu email."
-      send_paranoid_instructions: "Jeżeli Twoje konto istnieje, za chwilę otrzymasz email z instrukcją jak zatwierdzić Twoje konto."
+      send_paranoid_instructions: "Jeżeli poprawnie założyłeś konto, za chwilę otrzymasz wiadomość z instrukcją potwierdzenia."
     destroy:
       confirm: "Jesteś pewien?"
       headline: "Usuń konto"
@@ -16,7 +16,7 @@ pl:
           email: E-mail
           password: "Hasło <i>(zostaw to pole puste, jeśli nie chcesz go zmieniać)</i>"
           password_confirmation: "Powtórz hasło"
-        submit: "Zachowaj zmiany"
+        submit: "Zapisz zmiany"
       headline: "Edytuj konto"
     failure:
       already_authenticated: "Jesteś już zalogowany."
@@ -29,8 +29,8 @@ pl:
       unconfirmed: "Aby kontynuować, potwierdź konto."
     mailer:
       confirmation_instructions:
-        landing_page: "Kliknij link, który przesłaliśmy na Twój adres mailowy. Jeżeli nie otrzymałeś od nas maila, upewnij się, czy nie znajduje się w folderze wiadomościach spam. Jeżeli nadal nie możesz go znaleźć, spróbuj jeszcze raz."
-        subject: "Instrukcja aktywacji konta"
+        landing_page: "Kliknij link, który przesłaliśmy na Twój adres mailowy. Jeżeli nie otrzymałeś od nas maila, upewnij się, czy nie znajduje się w folderze wiadomości spam. Jeżeli nadal nie możesz go znaleźć, spróbuj zarejestrować się ponownie."
+        subject: "Jeszcze tylko jeden krok do aktywacji twojego konta"
       reset_password_instructions:
         subject: "Instrukcja ustawienia nowego hasła"
       unlock_instructions:
@@ -62,14 +62,15 @@ pl:
       link: "Zapomniałeś hasła?"
       send_instructions: "Za chwilę instrukcja zmiany hasła zostanie wysłana na podany adres email."
       send_paranoid_instructions: "Jeżeli Twoje konto już istnieje, za kilka minut otrzymasz maila z instrukcją jak zresetować Twoje hasło."
-      updated: "Hasło zostało pomyślnie zmienione, jesteś zalogowany."
+      updated: "Hasło zostało pomyślnie zmienione, jesteś teraz zalogowany."
       updated_not_active: "Twoje hasło zostało zmienione"
     registrations:
       destroyed: "Konto zostało usunięte. Mamy nadzieję że wkrótce powrócisz."
-      inactive_signed_up: "Rejestracja zakończyła się pomyślnie. Nie zostałeś jednak zalogowany, ponieważ konto jest %{reason}."
+      inactive_signed_up: "Rejestracja zakończyła się pomyślnie. Nie zostałeś jednak zalogowany z powodu %{reason}."
       link: "Zarejestruj się"
       reasons:
-        inactive: nieaktywny
+        inactive: nieaktywne
+        locked: zablokowane
         unconfirmed: niepotwierdzone
       signed_up: "Witaj! Rejestracja zakończyła się sukcesem. Potwierdzenie zostało wysłane na Twój email."
       updated: "Konto zostało pomyślnie zaktualizowane."
@@ -85,7 +86,7 @@ pl:
         promo_text_thank_you: "Dziękujemy z Twoje wsparcie!"
         sign_in_with: "Zaloguj się za pomocą %{kind}"
         sign_up_with_osm: "Zarejestruj się."
-        wheelmap_promo_text: "Swoją wiedzą o miejscach dostępnych dla osób na wózkach pomagasz ludziom z fizycznymi ograniczeniami lepiej zorganizować ich codzienne życie. Oprócz tego,  OpenStreetMap staje się coraz bogatszy w detale."
+        wheelmap_promo_text: "Swoją wiedzą o miejscach dostępnych dla osób na wózkach inwalidzkich pomagasz ludziom z fizycznymi ograniczeniami lepiej zorganizować ich codzienne życie. Dodatkowo OpenStreetMap staje się coraz bogatszy w detale."
       signed_in: "Zalogowano pomyślnie."
       signed_out: "Wylogowano pomyślnie."
       timeout: "Sesja wygasła, aby kontynuować zaloguj się ponownie."
@@ -118,4 +119,4 @@ pl:
       link: "Nie otrzymałeś instrukcji odblokowania?"
       send_instructions: "Wkrótce powinieneś otrzymać email z instrukcją, jak odblokować swoje konto."
       send_paranoid_instructions: "Jeśli twoje konto istnieje, za kilka minut otrzymasz email z instrukcją, jak je odblokować."
-      unlocked: "Twoje konto zostało odblokowane. Jesteś zalogowany."
+      unlocked: "Twoje konto zostało odblokowane. Jesteś teraz zalogowany."
