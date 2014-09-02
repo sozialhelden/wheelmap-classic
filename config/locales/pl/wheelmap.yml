@@ -130,7 +130,6 @@ pl:
     searchbar:
       add_place: "Dodaj kolejne miejsce"
       find: znajdź
-      label: ~
       placeholder: "np. Sunset Boulevard L.A. lub Brandenburg Gate Berlin"
       title_add_place: "Dodaj nowe miejsce dla tej pozycji!"
     tagline: "Logo wheelmap"
@@ -241,17 +240,11 @@ pl:
       format:
         delimiter: " ,"
         format: "%u %n"
-        precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: PLN
     format:
       delimiter: ","
-      precision: 3
       separator: "."
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -261,12 +254,6 @@ pl:
           quadrillion: Kwadrylion
           thousand: Tysiąc
           trillion: Trylion
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 3
-        significant: prawda
-        strip_insignificant_zeros: prawda
       storage_units:
         format: "%n %u"
         units:
@@ -278,12 +265,6 @@ pl:
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -322,7 +303,6 @@ pl:
     array:
       last_word_connector: " oraz "
       sentence_connector: i
-      skip_last_comma: prawda
       two_words_connector: " i "
       words_connector: ", "
     select:

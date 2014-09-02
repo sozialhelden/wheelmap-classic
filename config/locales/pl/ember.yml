@@ -1,0 +1,22 @@
+pl:
+  models:
+    category:
+      prompt: "Wybierz kategorię"
+    node_type:
+      prompt: "Wybierz typ"
+    node:
+      info_edit_position: "Miejsce pojawi się na Wheelmap tak jak powyżej. Jeśli znacznik nie jest umieszczony w poprawnym miejscu, możesz <a href=\"%{url}\">zmienić jego pozycję na OpenStreetMap.</a>"
+      mail:
+        subject: "[Wheelmap] Problem z %{headline}"
+        body: "(Proszę użyj jedynie języka angielskiego lub niemieckiego)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:"
+  actions:
+    send: Wyślij
+    save: Zapisz
+    cancel: Anuluj
+  errors:
+    models:
+      node:
+        website:
+          invalid: "Adres strony www jest niepoprawny."
+        phone:
+          invalid: "Numer telefonu jest niepoprawny. Musi on być w następującym formacie: +49 30 234567"

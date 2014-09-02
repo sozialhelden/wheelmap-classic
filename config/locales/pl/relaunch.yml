@@ -1,14 +1,24 @@
----
 pl:
+  activerecord:
+    attributes:
+      poi:
+        name: Nazwa
+        type: Typ
+        address: Adres
+        website: Strona www
+        phone: Telefon
+        note: Notatka
+        address_street: Ulica
+        address_housenumber: Numer domu
+        address_postcode: Kod pocztowy
+        address_city: Miasto
   faq:
     answers:
-      0: "Możesz zawsze zmienić zaznaczenie twoich miejsc. Wybierz tylko prawy przycisk,
-        \n\"zapisz\" i gotowe!"
-      1: |-
-        Jako zalogowany użytkownik możesz dodawać / poprawiać informacje o miejscu.
-        Kliknij "Zmień" i dodaj albo popraw.
-      2: Możesz dodać dodatkowe informacje (np. "To miejsce posiada mobilną rampę")
-        w komentarzach sekcji. Naciśnij "Edytuj" i "dodaj komentarz"
+      0: "Możesz zawsze zmienić zaznaczenie twoich miejsc. Wybierz tylko prawy przycisk, \n\"zapisz\" i gotowe!"
+      1: 'Jako zalogowany użytkownik możesz dodawać / poprawiać informacje o miejscu.
+
+        Kliknij "Zmień" i dodaj albo popraw.'
+      2: Możesz dodać dodatkowe informacje (np. "To miejsce posiada mobilną rampę") w komentarzach sekcji. Naciśnij "Edytuj" i "dodaj komentarz"
     headline: Czy można napotkać jakieś trudności w tym miejscu?
     questions:
       0: To zaznaczenie jest niepoprawne.
@@ -28,13 +38,10 @@ pl:
       overlay:
         button: Zaczynamy!
         categories: Filtruj miejsca poprzez kategorie
-        filter: Filtruj miejsca poprzez dostępność dla poruszających się na wózku
-          inwalidzkim
-        headline: 'Zaznacz i wyszukaj na mapie Wheelmap.org  miejsca przystosowane
-          dla poruszających się na wózku inwalidzkim. To proste:'
+        filter: Filtruj miejsca poprzez dostępność dla poruszających się na wózku inwalidzkim
+        headline: 'Zaznacz i wyszukaj na mapie Wheelmap.org  miejsca przystosowane dla poruszających się na wózku inwalidzkim. To proste:'
         lookup: wyszukiwanie poprzez miejsce szczególne
-        secondary_headline: 'Nasz system kolorów opisuje przystosowanie dla poruszających
-          się na wózku inwalidzkim:'
+        secondary_headline: 'Nasz system kolorów opisuje przystosowanie dla poruszających się na wózku inwalidzkim:'
   nodes:
     new:
       form:
@@ -52,7 +59,7 @@ pl:
       comment: 'Komentarze:'
     node_photos:
       add: Dodaj
-      photos_of_this_place: Obrazy dla tego miejsca
+      photos_of_this_place: 'Obrazy dla tego miejsca'
       upload: Załaduj
     node_similar:
       similar: 'podobne miejsca: %{name}'
@@ -65,9 +72,7 @@ pl:
     show:
       header:
         meta:
-          description: Sprawdź na mapie Wheelmap.org czy to miejsce jest przystosowane
-            dla poruszających się na wózku inwalidzkim albo dodaj inne informacje
-            lub obrazy.
+          description: Sprawdź na mapie Wheelmap.org czy to miejsce jest przystosowane dla poruszających się na wózku inwalidzkim albo dodaj inne informacje lub obrazy.
           title: 'To miejsce znajduje się na mapie Wheelmap.org: %{name}'
       share:
         email: e-mail
@@ -80,12 +85,8 @@ pl:
         headline: Przykro nam, nie mogliśmy znaleźć "%{query}".
         hint:
           example: <strong>przykład:</strong> London, United Kingdom
-          info: "Nasza wyszukiwarka wyszukuje miejsca poprzez nazwę lub dane adresowe.
-            \nWpisz proszę nazwę wyszukiwanego miejsca lub adres np. nazwę ulicy albo
-            miasta.\nWyszukiwanie poprzez kategorie t.j. restauracje albo kina jest
-            niemożliwe!"
-          work_in_progress: Pracujemy nad tym aby ulepszyć wyszukiwanie miejsc i uczynić
-            je bardziej intuicyjnym.
+          info: "Nasza wyszukiwarka wyszukuje miejsca poprzez nazwę lub dane adresowe. \nWpisz proszę nazwę wyszukiwanego miejsca lub adres np. nazwę ulicy albo miasta.\nWyszukiwanie poprzez kategorie t.j. restauracje albo kina jest niemożliwe!"
+          work_in_progress: Pracujemy nad tym aby ulepszyć wyszukiwanie miejsc i uczynić je bardziej intuicyjnym.
         try_this:
           address: Proszę wprowadź więcej <strong>danych adresowych</strong>.
           intro: 'Spróbuj tak:'
@@ -93,19 +94,9 @@ pl:
       results:
         ticker:
           one: '%{count} wynik:'
+          few: '%{count} wyników:'
           other: '%{count} wyników:'
     timeout:
       headline: Ups, to nasza wina
       info: Usługa wyszukiwania była tymczasowo niedostępna
       repeat_search: ponów wyszukiwanie
-  activerecord:
-    attributes:
-      poi:
-        name: Nazwisko
-        type: Typ
-        website: Strona www
-        phone: Telefon
-        address_street: Ulica
-        address_housenumber: Nr
-        address_postcode: Kod pocztowy
-        address_city: Miasto
