@@ -207,16 +207,6 @@ CREATE TABLE `providers` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `queued_nodes` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `node_attributes` text COLLATE utf8_unicode_ci,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  `geom` point NOT NULL,
-  PRIMARY KEY (`id`),
-  SPATIAL KEY `index_queued_nodes_on_geom` (`geom`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `regions` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
