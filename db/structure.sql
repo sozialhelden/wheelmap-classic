@@ -17,10 +17,9 @@ CREATE TABLE `active_admin_comments` (
 CREATE TABLE `admin_users` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `encrypted_password` varchar(128) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `encrypted_password` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `reset_password_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `reset_password_sent_at` datetime DEFAULT NULL,
-  `remember_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `remember_created_at` datetime DEFAULT NULL,
   `sign_in_count` int(11) DEFAULT '0',
   `current_sign_in_at` datetime DEFAULT NULL,
@@ -30,8 +29,9 @@ CREATE TABLE `admin_users` (
   `confirmation_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `confirmed_at` datetime DEFAULT NULL,
   `confirmation_sent_at` datetime DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
+  `unconfirmed_email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_admin_users_on_email` (`email`),
   UNIQUE KEY `index_admin_users_on_reset_password_token` (`reset_password_token`),
@@ -184,6 +184,7 @@ CREATE TABLE `pois` (
   KEY `index_pois_on_status` (`status`),
   KEY `index_pois_on_node_type_id_and_osm_id` (`node_type_id`,`osm_id`),
   KEY `index_pois_on_region_id` (`region_id`),
+  KEY `index_pois_on_node_type_id_and_osm_id_and_status` (`node_type_id`,`status`,`osm_id`),
   FULLTEXT KEY `fulltext_index_pois_on_tags` (`tags`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -204,6 +205,7 @@ CREATE TABLE `providers` (
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
+  `logo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -282,100 +284,4 @@ CREATE TABLE `users` (
   KEY `index_users_on_wants_newsletter` (`wants_newsletter`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO schema_migrations (version) VALUES ('20110107131649');
-
-INSERT INTO schema_migrations (version) VALUES ('20110114163727');
-
-INSERT INTO schema_migrations (version) VALUES ('20110427101005');
-
-INSERT INTO schema_migrations (version) VALUES ('20110504111051');
-
-INSERT INTO schema_migrations (version) VALUES ('20110513152131');
-
-INSERT INTO schema_migrations (version) VALUES ('20110716131537');
-
-INSERT INTO schema_migrations (version) VALUES ('20110716140738');
-
-INSERT INTO schema_migrations (version) VALUES ('20110717073922');
-
-INSERT INTO schema_migrations (version) VALUES ('20110801135556');
-
-INSERT INTO schema_migrations (version) VALUES ('20111001183641');
-
-INSERT INTO schema_migrations (version) VALUES ('20111011120103');
-
-INSERT INTO schema_migrations (version) VALUES ('20111011145011');
-
-INSERT INTO schema_migrations (version) VALUES ('20111017092328');
-
-INSERT INTO schema_migrations (version) VALUES ('20111018102230');
-
-INSERT INTO schema_migrations (version) VALUES ('20111024103455');
-
-INSERT INTO schema_migrations (version) VALUES ('20111101122153');
-
-INSERT INTO schema_migrations (version) VALUES ('20111115120452');
-
-INSERT INTO schema_migrations (version) VALUES ('20120119150643');
-
-INSERT INTO schema_migrations (version) VALUES ('20120120143510');
-
-INSERT INTO schema_migrations (version) VALUES ('20120202134608');
-
-INSERT INTO schema_migrations (version) VALUES ('20120203121324');
-
-INSERT INTO schema_migrations (version) VALUES ('20120413133645');
-
-INSERT INTO schema_migrations (version) VALUES ('20120418164644');
-
-INSERT INTO schema_migrations (version) VALUES ('20120425085200');
-
-INSERT INTO schema_migrations (version) VALUES ('20120425104911');
-
-INSERT INTO schema_migrations (version) VALUES ('20120427102536');
-
-INSERT INTO schema_migrations (version) VALUES ('20120427103805');
-
-INSERT INTO schema_migrations (version) VALUES ('20120525115535');
-
-INSERT INTO schema_migrations (version) VALUES ('20120711130327');
-
-INSERT INTO schema_migrations (version) VALUES ('20120802105205');
-
-INSERT INTO schema_migrations (version) VALUES ('20121018171714');
-
-INSERT INTO schema_migrations (version) VALUES ('20121101130728');
-
-INSERT INTO schema_migrations (version) VALUES ('20121101140003');
-
-INSERT INTO schema_migrations (version) VALUES ('20121101150011');
-
-INSERT INTO schema_migrations (version) VALUES ('20121101150012');
-
-INSERT INTO schema_migrations (version) VALUES ('20121101150013');
-
-INSERT INTO schema_migrations (version) VALUES ('20121106102638');
-
-INSERT INTO schema_migrations (version) VALUES ('20121106115711');
-
-INSERT INTO schema_migrations (version) VALUES ('20121107153445');
-
-INSERT INTO schema_migrations (version) VALUES ('20121113125237');
-
-INSERT INTO schema_migrations (version) VALUES ('20121128105658');
-
-INSERT INTO schema_migrations (version) VALUES ('20121219120846');
-
-INSERT INTO schema_migrations (version) VALUES ('20130108144233');
-
-INSERT INTO schema_migrations (version) VALUES ('20130117143229');
-
-INSERT INTO schema_migrations (version) VALUES ('20130122193813');
-
-INSERT INTO schema_migrations (version) VALUES ('20130214133154');
-
-INSERT INTO schema_migrations (version) VALUES ('20130228153529');
-
-INSERT INTO schema_migrations (version) VALUES ('20130905140446');
-
-INSERT INTO schema_migrations (version) VALUES ('20131024143040');
+INSERT INTO schema_migrations (version) VALUES ('20140904102249');
