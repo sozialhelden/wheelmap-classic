@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228153529) do
+ActiveRecord::Schema.define(:version => 20140814144629) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :limit => 8, :null => false
@@ -29,13 +29,12 @@ ActiveRecord::Schema.define(:version => 20130228153529) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
 
   create_table "admin_users", :force => true do |t|
-    t.string   "email",                                 :default => "", :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.string   "remember_token"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                         :default => 0
+    t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -43,8 +42,9 @@ ActiveRecord::Schema.define(:version => 20130228153529) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "unconfirmed_email"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
   add_index "admin_users", ["confirmation_token"], :name => "index_admin_users_on_confirmation_token", :unique => true
@@ -142,11 +142,12 @@ ActiveRecord::Schema.define(:version => 20130228153529) do
   create_table "photos", :force => true do |t|
     t.string   "caption"
     t.string   "image"
-    t.boolean  "image_processing"
     t.integer  "poi_id",                             :limit => 8
     t.integer  "user_id",                            :limit => 8
     t.datetime "taken_at"
     t.datetime "created_at"
+    t.boolean  "image_processing"
+    t.string   "image_tmp"
     t.integer  "image_width"
     t.integer  "image_height"
     t.integer  "image_gallery_ipad_retina_width"
@@ -165,7 +166,8 @@ ActiveRecord::Schema.define(:version => 20130228153529) do
     t.integer  "image_gallery_ipad_height"
     t.integer  "image_gallery_width"
     t.integer  "image_gallery_height"
-    t.string   "image_tmp"
+    t.integer  "image_gallery_preview_width"
+    t.integer  "image_gallery_preview_height"
   end
 
   create_table "pois", :id => false, :force => true do |t|
@@ -182,6 +184,7 @@ ActiveRecord::Schema.define(:version => 20130228153529) do
 
   add_index "pois", ["geom"], :name => "index_pois_on_geom", :spatial => true
   add_index "pois", ["node_type_id", "osm_id"], :name => "index_pois_on_node_type_id_and_osm_id"
+  add_index "pois", ["node_type_id", "status", "osm_id"], :name => "index_pois_on_node_type_id_and_osm_id_and_status"
   add_index "pois", ["osm_id"], :name => "index_pois_on_osm_id", :unique => true
   add_index "pois", ["region_id"], :name => "index_pois_on_region_id"
   add_index "pois", ["status"], :name => "index_pois_on_status"
@@ -202,6 +205,7 @@ ActiveRecord::Schema.define(:version => 20130228153529) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "logo"
   end
 
   create_table "queued_nodes", :force => true do |t|
