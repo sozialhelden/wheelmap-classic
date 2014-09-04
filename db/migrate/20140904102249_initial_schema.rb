@@ -157,7 +157,7 @@ class InitialSchema < ActiveRecord::Migration
       t.integer  "image_gallery_preview_height"
     end
 
-    create_table "pois", :id => false, :force => true do |t|
+    create_table "pois", :id => false, :force => true, :options => 'ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci' do |t|
       t.integer  "osm_id",       :limit => 8,                               :null => false
       t.integer  "version",                                                 :null => false
       t.text     "tags",                                                    :null => false
@@ -175,7 +175,7 @@ class InitialSchema < ActiveRecord::Migration
     add_index "pois", ["osm_id"], :name => "index_pois_on_osm_id", :unique => true
     add_index "pois", ["region_id"], :name => "index_pois_on_region_id"
     add_index "pois", ["status"], :name => "index_pois_on_status"
-    add_index "pois", ["tags"], :name => "fulltext_index_pois_on_tags"
+    execute "CREATE FULLTEXT INDEX fulltext_index_pois_on_tags ON pois (tags)"
 
     create_table "provided_pois", :force => true do |t|
       t.integer  "poi_id",      :limit => 8, :null => false
