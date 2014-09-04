@@ -10,7 +10,7 @@ group :default do
   gem 'oauth'
   gem 'devise'
   gem 'devise-encryptable'
-  gem 'redgreengrid', :git => 'git@github.com:christoph-buente/redgreengrid.git'
+  gem 'redgreengrid', :git => 'https://github.com/christoph-buente/redgreengrid.git'
   gem 'haml'
   gem 'formtastic', '2.2.1'
   gem 'delayed_job'

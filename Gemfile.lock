@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:christoph-buente/redgreengrid.git
+  remote: https://github.com/christoph-buente/redgreengrid.git
   revision: 59d13cd12d58a6ff42ec78f806b6792e4f2a30b9
   specs:
     redgreengrid (0.3.1)
