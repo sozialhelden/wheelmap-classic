@@ -1,0 +1,4 @@
+gmail_username: "gmail_user"
+gmail_password: "gmail_password"
+secret_token: "a_super_secret_token"
+airbrake_api_key: "airbrake_api_key"

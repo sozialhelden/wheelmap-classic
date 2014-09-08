@@ -138,7 +138,7 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/tmp/var #{release_path}/tmp/var"
     run "ln -nfs #{shared_path}/tmp/cache #{release_path}/tmp/cache"
 
-    %w(database.yml open_street_map.yml metrics.yml librato.yml).each do |file|
+    %w(database.yml open_street_map.yml metrics.yml librato.yml application.yml).each do |file|
       run "ln -nfs #{shared_path}/config/#{file} #{release_path}/config/#{file}"
     end
   end
