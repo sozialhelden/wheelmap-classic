@@ -67,8 +67,9 @@ Wheelmap::Application.configure do
     :port           => 25,
     :domain         => 'wheelmap.org',
     :authentication => :login,
-    :user_name      => 'noreply@wheelmap.org',
-    :password       => '***REMOVED***'
+    :user_name      => ENV['gmail_user'],
+    :password       => ENV['gmail_password']
+
   }
 
   # Enable threaded mode

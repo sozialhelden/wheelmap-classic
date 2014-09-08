@@ -59,6 +59,7 @@ group :default do
   gem 'backup'
   gem 'geocoder'
   gem 'ruby-progressbar'
+  gem 'figaro'
 end
 
 group :assets do
