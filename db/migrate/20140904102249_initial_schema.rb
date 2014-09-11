@@ -38,18 +38,6 @@ class InitialSchema < ActiveRecord::Migration
     add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
     add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
-    create_table "alternatives" do |t|
-      t.integer "experiment_id", :limit => 8
-      t.string  "content"
-      t.string  "lookup",        :limit => 32
-      t.integer "weight",                      :default => 1
-      t.integer "participants",                :default => 0
-      t.integer "conversions",                 :default => 0
-    end
-
-    add_index "alternatives", ["experiment_id"], :name => "index_alternatives_on_experiment_id"
-    add_index "alternatives", ["lookup"], :name => "index_alternatives_on_lookup"
-
     create_table "categories" do |t|
       t.string   "identifier"
       t.datetime "created_at"
@@ -96,17 +84,6 @@ class InitialSchema < ActiveRecord::Migration
     create_table "experiments" do |t|
       t.string   "test_name"
       t.string   "status"
-      t.datetime "created_at"
-      t.datetime "updated_at"
-    end
-
-    add_index "experiments", ["test_name"], :name => "index_experiments_on_test_name"
-
-    create_table "iphone_counters" do |t|
-      t.string   "install_id"
-      t.string   "device_version"
-      t.string   "app_version"
-      t.string   "os_version"
       t.datetime "created_at"
       t.datetime "updated_at"
     end
