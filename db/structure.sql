@@ -284,4 +284,4 @@ CREATE TABLE `users` (
   KEY `index_users_on_wants_newsletter` (`wants_newsletter`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO schema_migrations (version) VALUES ('20140904102249');
+INSERT INTO schema_migrations (version) VALUES ('20110107131649');
