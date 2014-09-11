@@ -1,6 +1,6 @@
 class InitialSchema < ActiveRecord::Migration
   def up
-    create_table "active_admin_comments", :force => true do |t|
+    create_table "active_admin_comments" do |t|
       t.integer  "resource_id",   :limit => 8, :null => false
       t.string   "resource_type",              :null => false
       t.integer  "author_id",     :limit => 8
@@ -15,7 +15,7 @@ class InitialSchema < ActiveRecord::Migration
     add_index "active_admin_comments", ["namespace"], :name => "index_active_admin_comments_on_namespace"
     add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
 
-    create_table "admin_users", :force => true do |t|
+    create_table "admin_users" do |t|
       t.string   "email",                  :default => "", :null => false
       t.string   "encrypted_password",     :default => "", :null => false
       t.string   "reset_password_token"
@@ -38,7 +38,7 @@ class InitialSchema < ActiveRecord::Migration
     add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
     add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
-    create_table "alternatives", :force => true do |t|
+    create_table "alternatives" do |t|
       t.integer "experiment_id", :limit => 8
       t.string  "content"
       t.string  "lookup",        :limit => 32
@@ -50,13 +50,13 @@ class InitialSchema < ActiveRecord::Migration
     add_index "alternatives", ["experiment_id"], :name => "index_alternatives_on_experiment_id"
     add_index "alternatives", ["lookup"], :name => "index_alternatives_on_lookup"
 
-    create_table "categories", :force => true do |t|
+    create_table "categories" do |t|
       t.string   "identifier"
       t.datetime "created_at"
       t.datetime "updated_at"
     end
 
-    create_table "counters", :force => true do |t|
+    create_table "counters" do |t|
       t.date     "counter_date"
       t.integer  "tag_website",    :default => 0
       t.integer  "tag_iphone",     :default => 0
@@ -74,7 +74,7 @@ class InitialSchema < ActiveRecord::Migration
       t.integer  "search_android", :default => 0
     end
 
-    create_table "delayed_jobs", :force => true do |t|
+    create_table "delayed_jobs" do |t|
       t.integer  "priority",         :default => 0
       t.integer  "attempts",         :default => 0
       t.text     "handler"
@@ -93,7 +93,7 @@ class InitialSchema < ActiveRecord::Migration
 
     add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
-    create_table "experiments", :force => true do |t|
+    create_table "experiments" do |t|
       t.string   "test_name"
       t.string   "status"
       t.datetime "created_at"
@@ -102,7 +102,7 @@ class InitialSchema < ActiveRecord::Migration
 
     add_index "experiments", ["test_name"], :name => "index_experiments_on_test_name"
 
-    create_table "iphone_counters", :force => true do |t|
+    create_table "iphone_counters" do |t|
       t.string   "install_id"
       t.string   "device_version"
       t.string   "app_version"
@@ -111,7 +111,7 @@ class InitialSchema < ActiveRecord::Migration
       t.datetime "updated_at"
     end
 
-    create_table "node_types", :force => true do |t|
+    create_table "node_types" do |t|
       t.integer  "category_id",   :limit => 8
       t.string   "identifier"
       t.string   "osm_key"
@@ -126,7 +126,7 @@ class InitialSchema < ActiveRecord::Migration
     add_index "node_types", ["id", "category_id"], :name => "index_node_types_on_id_and_category_id"
     add_index "node_types", ["osm_key", "osm_value"], :name => "index_node_types_on_osm_key_and_osm_value"
 
-    create_table "photos", :force => true do |t|
+    create_table "photos" do |t|
       t.string   "caption"
       t.string   "image"
       t.integer  "poi_id",                             :limit => 8
@@ -157,7 +157,7 @@ class InitialSchema < ActiveRecord::Migration
       t.integer  "image_gallery_preview_height"
     end
 
-    create_table "pois", :id => false, :force => true, :options => 'ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci' do |t|
+    create_table "pois", :id => false, :options => 'ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci' do |t|
       t.integer  "osm_id",       :limit => 8,                               :null => false
       t.integer  "version",                                                 :null => false
       t.text     "tags",                                                    :null => false
@@ -177,7 +177,7 @@ class InitialSchema < ActiveRecord::Migration
     add_index "pois", ["status"], :name => "index_pois_on_status"
     execute "CREATE FULLTEXT INDEX fulltext_index_pois_on_tags ON pois (tags)"
 
-    create_table "provided_pois", :force => true do |t|
+    create_table "provided_pois" do |t|
       t.integer  "poi_id",      :limit => 8, :null => false
       t.integer  "provider_id", :limit => 8, :null => false
       t.string   "wheelchair"
@@ -188,14 +188,14 @@ class InitialSchema < ActiveRecord::Migration
 
     add_index "provided_pois", ["provider_id", "poi_id"], :name => "index_provided_pois_on_provider_id_and_poi_id", :unique => true
 
-    create_table "providers", :force => true do |t|
+    create_table "providers" do |t|
       t.string   "name"
       t.datetime "created_at"
       t.datetime "updated_at"
       t.string   "logo"
     end
 
-    create_table "regions", :force => true do |t|
+    create_table "regions" do |t|
       t.string   "name"
       t.spatial  "grenze",      :limit => {:type=>"geometry"}, :null => false
       t.datetime "created_at"
@@ -207,7 +207,7 @@ class InitialSchema < ActiveRecord::Migration
       t.integer  "depth"
     end
 
-    create_table "slugs", :force => true do |t|
+    create_table "slugs" do |t|
       t.string   "name"
       t.integer  "sluggable_id",   :limit => 8
       t.integer  "sequence",                     :default => 1, :null => false
@@ -219,7 +219,7 @@ class InitialSchema < ActiveRecord::Migration
     add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
     add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
-    create_table "users", :force => true do |t|
+    create_table "users" do |t|
       t.string   "oauth_token"
       t.string   "oauth_secret"
       t.string   "email"
