@@ -101,10 +101,6 @@ class Poi < ActiveRecord::Base
   #                  #{right} #{top}, #{left} #{top}, \
   #                  #{left} #{bottom}))'))" } }
 
-  def self.with_associations
-    order('pois.created_at').including_category.eager_load(:providers).eager_load(:region).eager_load(:node_type)
-  end
-
   def self.bbox(bounding_box_string)
     left, bottom, right, top = bounding_box_string.split(',').map(&:to_f)
     self.within_bbox(left, bottom, right, top)
