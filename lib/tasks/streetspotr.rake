@@ -6,15 +6,16 @@ namespace :streetspotr do
     raise "Usage: bundle exec rake streetspotr:import file=<your_csv_file" unless csv_file
 
     hash = {}
-    CSV.foreach(csv_file, :headers => false) do |row|
-      id = row[1]
+    i = 0
+    CSV.foreach(csv_file, headers: true, :header_converters => :symbol) do |row|
+      id = row[:refid]
       next if id.blank?
       w = wheelchair(step(row), toilet(row), indoor(row))
-      hash[id] ||= []
-      hash[id] << w unless hash[id].include?(w)
-    end
-    hash.keys.each do |id|
-      puts "#{id} #{hash[id].inspect} => #{minimal_status(hash[id])}"
+      hash[i] ||= []
+      hash[i] << step(row)
+      hash[i] << toilet(row)
+      hash[i] << indoor(row)
+      i += 1
     end
   end
 
@@ -53,15 +54,15 @@ namespace :streetspotr do
   end
 
   def step(row)
-    row[:step].strip.downcase == 'ja' ? true : false
+    row[:step].to_s.strip.downcase == 'ja' ? true : false
   end
 
   def toilet(row)
-    row[:toilet].strip.downcase == 'ja' ? true : false
+    row[:toilet].to_s.strip.downcase == 'ja' ? true : false
   end
 
   def indoor(row)
-    row[:indoor].strip.downcase == 'ja' ? true : false
+    row[:indoor].to_s.strip.downcase == 'ja' ? true : false
   end
 
   def photo(node, row)
