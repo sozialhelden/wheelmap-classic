@@ -1,11 +1,13 @@
 
 = semantic_form_for current_user, :url => terms_user_path(current_user) do |form|
 
-  %iframe{:align => 'center', :src => 'http://blog.wheelmap.org/was-ist-wheelmap/terms/', :width => '100%', :height => '300', :frameborder => '1', :seamless => 'seamless'}
+  - terms_blog_url = I18n.locale == :de ? 'http://wheelmap.org/impressum/nutzungsbedingungen/' : 'http://wheelmap.org/en/imprint/terms-of-use/'
+  %iframe{:align => 'center', :src => terms_blog_url, :width => '100%', :height => '300', :frameborder => '0', :seamless => 'seamless'}
 
   = form.input :terms
 
-  %iframe{:align => 'center', :src => 'http://blog.wheelmap.org/was-ist-wheelmap/privacy/', :width => '100%', :height => '300', :frameborder => '0', :seamless => 'seamless'}
+  - privacy_blog_url = I18n.locale == :de ? 'http://wheelmap.org/impressum/datenschutzerklarung/' : 'http://wheelmap.org/en/imprint/privacy/'
+  %iframe{:align => 'center', :src => privacy_blog_url, :width => '100%', :height => '300', :frameborder => '0', :seamless => 'seamless'}
 
   = form.input :privacy_policy
   = form.actions do
