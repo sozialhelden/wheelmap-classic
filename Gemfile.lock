@@ -256,7 +256,7 @@ GEM
     librato-rails (0.10.1)
       librato-rack (~> 0.4.2)
       rails (>= 3.0)
-    libv8 (3.16.14.3)
+    libv8 (3.16.14.7)
     libwebsocket (0.1.7.1)
       addressable
       websocket

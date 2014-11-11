@@ -280,6 +280,7 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
   childLayers: [ Wheelmap.TileLayer, Wheelmap.MarkerLayer ]
   options:
     trackResize: true
+    maxZoom: 19
 
   openedPopup: null
 
