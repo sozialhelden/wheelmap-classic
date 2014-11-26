@@ -1,27 +1,58 @@
-set :rails_env, :production
-set :branch, ENV['BRANCH'] || "production"
+# Settings for delayed job
+set :delayed_job_server_role, :worker
+set :delayed_job_args, "-p wheelmap_production"
+set :rails_env, "production" #added for delayed job
 
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> All the same
-set :whenever_command, "bundle exec whenever"
-set :whenever_environment, :production
-require "whenever/capistrano"
+set :stage, :production
+set :deploy_to, "/var/apps/#{fetch(:application)}/#{fetch(:stage)}"
 
-# Delayed Job
-require "delayed/recipes"
-before "delayed_job:stop", "delayed_job:unmonitor"
-before "deploy:restart", "delayed_job:stop"
-after  "deploy:restart", "delayed_job:start"
-after  "delayed_job:start", "delayed_job:monitor"
+set :branch, :production
+set :rev, proc { `git rev-parse --short #{fetch(:branch)}`.chomp }
 
-after "deploy:stop",  "delayed_job:stop"
-after "deploy:start", "delayed_job:start"
+# Simple Role Syntax
+# ==================
+# Supports bulk-adding hosts to roles, the primary server in each group
+# is considered to be the first unless any hosts have the primary
+# property set.  Don't declare `role :all`, it's a meta role.
 
-role :web, "176.9.63.170"                          # Your HTTP server, Apache/etc
-role :app, "176.9.63.170"                          # This may be the same as your `Web` server
-role :db,  "176.9.63.170", :primary => true        # This is where Rails migrations will run
-set :port, 22022
-set :deploy_to, "/var/apps/wheelmap/production"
+role :app,    %w{176.9.63.170}
+role :web,    %w{176.9.63.170}
+role :db,     %w{176.9.63.170}
+role :worker, %w{176.9.63.170}
 
-set :default_environment, {
-  'PATH' => '/opt/rbenv/shims:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games'
+# Extended Server Syntax
+# ======================
+# This can be used to drop a more detailed server definition into the
+# server list. The second argument is a, or duck-types, Hash and is
+# used to set extended properties on the server.
+
+server '176.9.63.170', user: 'rails', roles: %w{web app db worker}, port: 22022
+
+
+# Custom SSH Options
+# ==================
+# You may pass any option but keep in mind that net/ssh understands a
+# limited set of options, consult[net/ssh documentation](http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start).
+#
+# Global options
+# --------------
+set :ssh_options, {
+  keys: %w(~/.ssh/wheelmap_rsa),
+  forward_agent: true,
+  config: true,
+  port: 22022
+  # auth_methods: %w(password)
 }
+#
+# And/or per server (overrides global)
+# ------------------------------------
+# server 'example.com',
+#   user: 'user_name',
+#   roles: %w{web app},
+#   ssh_options: {
+#     user: 'user_name', # overrides user setting above
+#     keys: %w(/home/user_name/.ssh/id_rsa),
+#     forward_agent: false,
+#     auth_methods: %w(publickey password)
+#     # password: 'please use keys'
+#   }
