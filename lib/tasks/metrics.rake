@@ -20,14 +20,14 @@ namespace :metrics do
 
   task :deploy => :environment do
     branch = ENV['BRANCH'] || master
-    branch_hash =  `git rev-parse --short #{branch}`
+    rev = ENV['REV'] || `git rev-parse --short #{branch}`
     start_time = ENV['START_TIME'] || Time.now
     end_time = ENV['END_TIME'] || Time.now
     source = ENV['SOURCE'] || 'staging'
-    Librato::Metrics.annotate :deployments, "deployed #{branch_hash}",
+    Librato::Metrics.annotate :deployments, "deployed #{rev}",
                               :start_time => start_time.to_i,
                               :end_time => end_time.to_i,
                               :source => source,
-                              :description => "Deployed '#{branch}' branch with hash '#{branch_hash}' to #{source} environment."
+                              :description => "Deployed '#{branch}' branch with hash '#{rev}' to #{source} environment."
   end
 end

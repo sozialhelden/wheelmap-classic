@@ -1,199 +1,99 @@
-require 'capistrano/maintenance'
+# config valid only for Capistrano 3.1
+lock '3.2.1'
+set :start_time, Time.now.to_i
 
-set :application, "wheelmap"
-set :repository,  "git@github.com:sozialhelden/wheelmap.git"
+set :application, 'wheelmap'
+set :repo_url, 'git@github.com:sozialhelden/wheelmap.git'
 
-set :branch, ENV['BRANCH'] || ((rails_env.to_sym == :production) ? "production" : "master")
+# Default value for :scm is :git
+ set :scm, :git
 
-set :start_time, Time.now
+set :deploytag_time_format, "%Y.%m.%d-%H.%M.%S"
 
-set :use_sudo, false
+# Default value for :format is :pretty
+set :format, :pretty
 
-set :scm, :git
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+# Default value for :log_level is :debug
+set :log_level, :debug
 
-set :deploy_via, :remote_cache
-set :git_shallow_clone, 1
+# Default value for :pty is false
+set :pty, true
 
-set :default_run_options, :pty => true # or else you'll get "sorry, you must have a tty to run sudo"
+# Default value for :linked_files is []
+set :linked_files, %w{ config/database.yml config/open_street_map.yml config/metrics.yml config/librato.yml config/application.yml}
 
-set :ssh_options, :keys => [ File.expand_path("~/.ssh/wheelmap_rsa") ], :forward_agent => true
+# Default value for :bundle_without is %w{development test}.join(' ')
+set :bundle_without, %w{ development test metrics deployment }.join(' ')
 
-set :user, 'rails'
+# Default value for :bundle_jobs is: nil
+set :bundle_jobs, 4
 
-# If you are using Passenger mod_rails uncomment this:
-# if you're still using the script/reapear helper you will need
-# these http://github.com/rails/irs_process_scripts
+# Default value for linked_dirs is []
+# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{ log tmp/var tmp/osmosis-working-dir tmp/cache tmp/sockets tmp/pids vendor/bundle public/system }
 
-before 'deploy',              'safety_check'
-before 'deploy:migrations',   'safety_check'
+set :rbenv_type, :system # :user or :system, depends on your rbenv setup
+set :rbenv_ruby, '2.1.2'
+set :rbenv_custom_path, '/opt/rbenv'
 
-after  'deploy:setup',        'deploy:create_shared_config'
+# Default value for default_env is {}
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-after  'deploy:update_code',  'deploy:symlink_configs'
-
-after  'deploy',              'deploy:cache:clear'
-after  'deploy:migrations',   'deploy:cache:clear'
-
-after  'deploy',              'deploy:notifiy_metrics'
-after  'deploy:migrations',   'deploy:notifiy_metrics'
-
-task :safety_check do
-  if rails_env.to_sym == :production
-    c = CLI.ui.ask "This will deploy branch '#{branch}' to production. Ok Y/N?"
-    exit unless c.downcase == 'y'
-  end
-end
-
-namespace :delayed_job do
-  desc 'Start monitoring the delayed job process'
-  task :monitor do
-    sudo "/usr/bin/monit monitor delayed_job" rescue nil
-  end
-
-  desc 'Stop monitoring the delayed job process'
-  task :unmonitor do
-    sudo "/usr/bin/monit unmonitor delayed_job" rescue nil
-  end
-
-end
-
-namespace :unicorn do
-  desc "Zero-downtime restart of Unicorn"
-  task :restart, :except => { :no_release => true } do
-    sudo "/etc/init.d/unicorn_#{rails_env} upgrade"
-  end
-
-  desc "Start unicorn"
-  task :start, :except => { :no_release => true } do
-    sudo "/etc/init.d/unicorn_#{rails_env} start"
-  end
-
-  desc "Stop unicorn"
-  task :stop, :except => { :no_release => true } do
-    sudo "/etc/init.d/unicorn_#{rails_env} stop"
-  end
-  after "deploy:restart", "unicorn:restart"
-  after "deploy:start", "unicorn:start"
-  after "deploy:stop", "unicorn:stop"
-  after "deploy:create_symlink", "deploy:create_release_info"
-end
+# Default value for keep_releases is 5
+set :keep_releases, 5
 
 namespace :deploy do
-  after  "deploy:create_symlink", "deploy:git:push_deploy_tag"
-  after  "deploy:create_symlink", "deploy:newrelic:notify_deployment"
-  before "deploy:cleanup", "deploy:git:cleanup_deploy_tag"
 
-  namespace :git do
-
-    desc "Place release tag into Git and push it to server."
-    task :push_deploy_tag do
-      user = `git config --get user.name`
-      email = `git config --get user.email`
-
-      puts `git tag #{rails_env}_#{release_name} #{revision} -m "Deployed by #{user} <#{email}>"`
-      puts `git push --tags`
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      # Your restart mechanism here, for example:
+      # execute :touch, release_path.join('tmp/restart.txt')
+      sudo "/etc/init.d/unicorn_#{fetch(:stage)} upgrade"
     end
+  end
 
-    desc "Place release tag into Git and push it to server."
-    task :cleanup_deploy_tag do
-      count = fetch(:keep_releases, 5).to_i
-      if count >= releases.length
-        logger.important "no old release tags to clean up"
-      else
-        logger.info "keeping #{count} of #{releases.length} release tags"
+  desc 'Stopp application'
+  task :stop do
+    on roles(:app), in: :sequence, wait: 5 do
+      sudo "/etc/init.d/unicorn_#{fetch(:stage)} stop"
+    end
+  end
 
-        tags = (releases - releases.last(count)).map { |release| "#{rails_env}_#{release}" }
+  desc 'Start application'
+  task :start do
+    on roles(:app), in: :sequence, wait: 5 do
+      sudo "/etc/init.d/unicorn_#{fetch(:stage)} start"
+    end
+  end
 
-        tags.each do |tag|
-          `git push origin :refs/tags/#{tag}`
+  before :publishing, 'delayed_job:stop'
+  after  :publishing, 'delayed_job:start'
+
+  before :stop,  'delayed_job:stop'
+  after  :start, 'delayed_job:start'
+
+  after  :publishing, :restart
+
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+        within release_path do
+          with rails_env: fetch(:stage) do
+            execute :rake, 'cache:clear'
+          end
+        end
+    end
+  end
+
+  after :finished, :notify_deployment do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      within release_path do
+        with rails_env: fetch(:stage), branch: fetch(:branch), start_time: fetch(:start_time), source: fetch(:stage), rev: fetch(:rev) do
+          execute :rake, 'metrics:deploy'
         end
       end
     end
   end
 
-  namespace :newrelic do
-    task :notify_deployment do
-      if rails_env.to_sym == :production
-        system 'curl -H "x-api-key:***REMOVED***" -d "deployment[app_name]=Wheelmap" https://api.newrelic.com/deployments.xml'
-      end
-    end
-  end
-
-  task :start do ; end
-  task :stop do ; end
-  task :restart do; end
-
-  task :create_shared_config do
-    run "mkdir -p #{shared_path}/config/"
-    run "mkdir -p #{shared_path}/tmp/var"
-    run "mkdir -p #{shared_path}/tmp/osmosis-working-dir"
-    run "mkdir -p #{shared_path}/tmp/cache"
-
-    run "touch #{shared_path}/config/database.yml"
-  end
-
-  task :symlink_configs do
-    run "ln -nfs #{shared_path}/tmp/osmosis-working-dir #{release_path}/tmp/osmosis-working-dir"
-    run "ln -nfs #{shared_path}/tmp/var #{release_path}/tmp/var"
-    run "ln -nfs #{shared_path}/tmp/cache #{release_path}/tmp/cache"
-
-    %w(database.yml open_street_map.yml metrics.yml librato.yml application.yml).each do |file|
-      run "ln -nfs #{shared_path}/config/#{file} #{release_path}/config/#{file}"
-    end
-  end
-
-  task :create_release_info do
-    run "gitrev=`cat #{current_path}/REVISION`; echo \"release_name: #{release_name}\\nbranch: #{branch}\\ngit_sha: $gitrev\" > #{current_path}/RELEASE_INFO"
-  end
-
-  namespace :cache do
-    task :clear do
-      run "cd #{current_path} && RAILS_ENV=#{rails_env} bundle exec rake cache:clear"
-      run "rm -fr #{current_path}/public/api"
-    end
-  end
-
-  task :notifiy_metrics do
-    cmd = "bundle exec rake metrics:deploy BRANCH=#{branch} START_TIME=#{start_time.to_i} SOURCE=#{rails_env}"
-    puts cmd
-    system(cmd)
-  end
-
 end
-
-task :log do
-  run "tail -f #{deploy_to}/current/log/#{stage}.log"
-end
-
-task :sh do
-  user = ENV['USER_NAME'] if ENV['USER_NAME']
-  user_option = user ? "-l #{user}" : ""
-  cmd = "ssh #{user_option} -t #{roles[:app].servers.first} -p 22022 'cd #{deploy_to}/current; bash -l'"
-  puts cmd
-  system(cmd)
-end
-
-task :console do
-  cmd = "ssh -l #{user} -t #{roles[:app].servers.first} -p 22022 'cd #{deploy_to}/current; bash -l -c \"bundle exec rails c #{stage}\"'"
-  puts cmd
-  system(cmd)
-end
-
-task :c do
-  console
-end
-
-set :stages,        %w(staging production)
-set :default_stage, "staging"
-require 'capistrano/ext/multistage'
-
-# Precompile assets
-load 'deploy/assets'
-
-# have builder check and install gems after each update_code
-require 'bundler/capistrano'
-set :bundle_without, [:development, :test, :metrics, :deployment]
-
-require './config/boot'
-require 'airbrake/capistrano'

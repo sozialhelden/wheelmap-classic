@@ -103,8 +103,10 @@ group :production, :vagrant do
   gem 'therubyracer'
 end
 
-group :deployment do
-  gem 'capistrano'
-  gem 'capistrano-maintenance'
-  gem 'capistrano-ext'
+group :development do
+  gem 'capistrano',       '>= 3.1.0'
+  gem 'capistrano-rails',                   require: false
+  gem 'capistrano-rbenv',                   require: false
+  gem 'capistrano-bundler',                 require: false
+  gem 'capistrano-deploytags', '~> 1.0.0',  require: false
 end
