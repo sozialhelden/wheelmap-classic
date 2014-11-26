@@ -1,111 +1,99 @@
----
 fr:
+  activerecord:
+    attributes:
+      poi:
+        name: Nom
+        type: Type
+        address: Adresse
+        website: Site Web
+        phone: Téléphone
+        note: Note
+        address_street: Rue
+        address_housenumber: Numéro civique
+        address_postcode: Code postal
+        address_city: Ville
   faq:
     answers:
-      0: Vous pouvez toujours modifier le marquage d'un endroit vous-même. Il vous
-        suffit de choisir le bon marquage et enregistrez - voilà !
-      1: En tant qu'utilisateur connecté, vous pouvez ajouter/corriger toutes les
-        informations d'un endroit. Cliquez sur « Modifier » pour corriger ou ajouter
-        des informations dans le masque.
-      2: 'Vous pouvez ajouter d''autres informations (ex. : Cet endroit possède une
-        rampe dans la rubrique commentaire. Cliquez sur « Modifier » et « Ajouter
-        un commentaire ».'
-    headline: Y a-t-il un problème avec cet endroit ?
+      0: Vous pouvez toujours modifier le marquage d'un lieu vous-même. Choisissez juste le bon marquage et enregistrez - voilà !
+      1: En tant qu'utilisateur connecté, vous pouvez ajouter/corriger toutes les informations d'un lieu. Cliquez sur « Modifier » pour corriger ou ajouter des informations dans le masque.
+      2: 'Vous pouvez ajouter d''autres informations (p. ex. : « Ce lieu a une rampe mobile ») dans la rubrique commentaire. Cliquez sur « Modifier » et « Ajouter un commentaire ».'
+    headline: Y a-t-il un problème avec ce lieu ?
     questions:
       0: Le marquage est erroné.
-      1: Les détails de cet endroit sont incorrects ou incomplets.
-      2: J'ai d'autres informations sur cet endroit.
+      1: Les détails de ce lieu sont incorrects ou manquants.
+      2: J'ai d'autres informations sur ce lieu.
   header:
     navigation:
-      about_wheelmap: concernant Wheelmap
-      choose_language: choix de la langue
-      contact: contact
-      map: carte
+      about_wheelmap: À propos de Wheelmap
+      choose_language: Choisir une langue
+      contact: Contact
+      map: Carte
       projects: Projets
     toolbar:
-      categories: catégories
+      categories: Catégories
   home:
     index:
       overlay:
-        button: Ok, on y va!
-        categories: filtrer selon catégories
-        filter: filtrer les résultats sur la carte selon l'accessibilité en fauteuil
-        headline: 'Grâce à Wheelmap.org tu peux trouver et marquer des lieux accessibles
-          en fauteuil - à travers le monde et gratuitement. C''est facile:'
-        lookup: trouver directement un lieu
-        secondary_headline: le système "feu rouge" pour marquer l'accessibilité
+        button: Ok, on y va !
+        categories: Filtrer les lieux par catégories
+        filter: Filtrer les lieux selon l'accessibilité en fauteuil roulant
+        headline: 'Marquer et trouver des lieux accessibles en fauteuil roulant grâce à Wheelmap.org - à travers le monde et gratuitement. C''est facile :'
+        lookup: Chercher un lieu spécifique
+        secondary_headline: 'Notre système de feux de circulation pour marquer l''accessibilité en fauteuil roulant des lieux publics :'
   nodes:
     new:
       form:
-        legend: Emplacement de l'endroit
-        location: Veuillez cliquer sur la carte et placer le marqueur à l'emplacement
-          exact.
+        legend: Emplacement du lieu
+        location: Veuillez cliquer sur la carte et placer le marqueur à l'emplacement exact.
     node_data:
       address: 'Adresse :'
       contact_details: 'Coordonnées :'
     node_edit:
       details: Détails
-      edit: Traiter
+      edit: Modifier
     node_map:
       map: 'Carte :'
     node_note:
       comment: 'Commentaire :'
     node_photos:
       add: Ajouter
-      photos_of_this_place: 'Photos de cet endroit :'
-      upload: Charger
+      photos_of_this_place: 'Photos de ce lieu :'
+      upload: Téléverser
     node_similar:
-      similar: 'Endroits similaires : %{name}'
+      similar: 'Lieux similaires : %{name}'
     node_status:
       accessible_toilet: 'Toilettes accessibles en fauteuil roulant :'
       premium: '%{name} dit : cet endroit est'
       wheelchair_accessibility: 'Accessibilité en fauteuil roulant :'
     node_streetview:
-      streetview: 'Streetview :'
+      streetview: 'Vue de la rue :'
     show:
       header:
         meta:
-          description: Découvrez si cet endroit est accessible en fauteuil roulant
-            sur Wheelmap.org. Ou ajoutez des informations et des photos à cet endroit.
-          title: 'Cet endroit se trouve sur Wheelmap.org : %{name}'
+          description: Découvrez si ce lieu est accessible en fauteuil roulant sur Wheelmap.org. Ou ajoutez des informations et des photos à ce lieu.
+          title: 'Ce lieu se trouve sur Wheelmap.org : %{name}'
       share:
-        email: 'E-mail :'
+        email: 'Courriel :'
         facebook: Facebook
-        text: 'J''ai trouvé cet endroit sur Wheelmap.org : %{name}'
+        text: 'J''ai trouvé ce lieu sur Wheelmap.org : %{name}'
         twitter: Twitter
   search:
     index:
       no-results:
-        headline: Désolés, nous n'avons pas trouvé d'endroit appelé « %{query} ».
+        headline: Désolé, nous n'avons pas pu trouver d'endroit appelé « %{query} ».
         hint:
-          example: <strong>Exemple :</strong> Londres, au Royaume-Uni
-          info: 'Notre service de recherche fonctionne uniquement à partir d''un nom
-            et/ou d''une adresse. Veuillez donc rechercher le nom de l''endroit ou
-            une adresse (ex. : nom de la rue et/ou ville). La recherche d''un type
-            d''endroit (ex. : restaurant ou cinéma) ne fonctionne pas !'
-          work_in_progress: Nous travaillons d'arrache-pied pour chercher des endroits
-            plus faciles et plus intuitifs dans le futur.
+          example: <strong>Exemple :</strong> Londres, Royaume-Uni
+          info: Notre service de recherche ne fonctionne qu'avec un nom et/ou une adresse. Par conséquent, veuillez donc rechercher soit le nom du lieu, soit une adresse, p. ex. nom de la rue et/ou ville. La recherche d'un type de lieu, p. ex. restaurant ou cinéma,  ne fonctionne pas !
+          work_in_progress: Nous travaillons fort afin de rendre la recherche de lieux encore plus facile et plus intuitive dans le futur.
         try_this:
           address: Veuillez fournir plus d'<strong>informations concernant l'adresse</strong>.
-          intro: 'Essayez ça :'
-          spell_check: Vérifiez l'<strong>orthographe</strong> de ce que vous avez
-            entré.
+          intro: 'Essayez ceci :'
+          spell_check: Vérifiez l'<strong>orthographe</strong> de votre saisie.
       results:
         ticker:
           one: '%{count} résultat :'
           other: '%{count} résultats :'
     timeout:
-      headline: Oh, au temps pour nous
+      headline: Oh, notre faute
       info: Notre service de recherche était temporairement indisponible.
-      repeat_search: Réessayer la recherche
-  activerecord:
-    attributes:
-      poi:
-        name: Nom
-        type: Type
-        website: Site web
-        phone: Téléphone
-        address_street: Rue
-        address_housenumber: Numéro
-        address_postcode: Code postal
-        address_city: Ville
+      repeat_search: Ressayer la recherche

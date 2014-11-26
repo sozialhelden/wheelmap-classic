@@ -1,239 +1,238 @@
 fr:
   application:
     require_no_user:
-      notice: "Vous êtes déjà connecté."
+      notice: "Vous êtes déjà connecté..."
     require_user:
-      notice: "Il faut être connecté pour regarder cette page."
+      notice: "Vous devez être connecté pour voir cette page."
   breadcrumbs:
     node:
-      create: "Ajouter nouveau lieu"
-      edit: "Modifier lieu"
+      create: "Ajouter un nouveau lieu"
+      edit: "Modifier un lieu"
     root: wheelmap
   common:
     close: fermer
     skip: passer
   errors:
-    dynamic_format: "%{message} "
-    format: "%{attribute} %{message} "
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
     messages:
       accepted: "doit être accepté"
-      already_confirmed: "était déjà confirmé, veuillez essayer de vous connecter"
-      blank: "champ obligatoire"
+      already_confirmed: "a déjà été confirmé"
+      blank: "doit être rempli"
       confirmation: "ne correspond pas à la confirmation"
       empty: "doit être rempli"
       equal_to: "doit être exactement %{count}"
       even: "doit être pair"
-      exclusion: "n'est pas disponible"
-      expired: "expiré, merci de redemander"
-      greater_than: "doit être plus que %{count} "
+      exclusion: "est réservé"
+      expired: "expiré, veuillez en demander un nouveau"
+      greater_than: "doit être supérieur à %{count}"
       greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
-      inclusion: "valeur non-valide"
-      invalid: "non-valide"
-      less_than: "doit être plus petit que %{count} "
+      inclusion: "n'est pas une valeur valide"
+      invalid: "invalide"
+      less_than: "doit être inférieur à %{count} "
       less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
-      not_a_number: "n' est pas un nombre"
-      not_an_integer: "doit être un nombre entier"
-      not_found: "pas trouvé"
-      not_locked: "n'était pas fermé"
+      not_a_number: "n'est pas un nombre"
+      not_an_integer: "doit être un entier"
+      not_found: "est introuvable"
+      not_locked: "n'était pas verrouillé"
       not_saved:
-        one: "Une erreur a empêché la sauvegarde de %{resource} "
-        other: "%{count} erreur: %{resource} sauvegarde refusée"
+        one: "Une erreur a empêché l'enregistrement de %{resource} :"
+        other: "%{count} erreurs ont empêché l'enregistrement de %{resource} :"
       odd: "doit être impair"
       taken: "est déjà utilisé"
-      too_long: "est trop long (pas plus de %{count} caractères) "
+      too_long: "est trop long (pas plus de %{count} caractères)"
       too_short: "est trop court (pas moins de %{count} caractères)"
-      wrong_length: "ne fait pas la bonne longueur (doit comporter %{count} caractères)"
+      wrong_length: "n'a pas la bonne longueur (devrait avoir %{count} caractères)"
     template:
-      body: "Merci de vérifier les champs suivants:"
+      body: "Il y avaient des problèmes avec les champs suivants :"
       header:
-        one: "Erreur, impossible de sauvegarder l'objet %{model}"
-        other: "Ne pouvait pas sauvegarder cet objet %{model} suite à des erreurs %{count}"
+        one: "Une erreur a empêché l'enregistrement de %{model}"
+        other: "%{count} erreurs ont empêché l'enregistrement de %{model} "
   flash:
     actions:
       create:
-        notice: "%{resource_name} était créé avec succès. "
+        notice: "%{resource_name} a été créé avec succès"
       destroy:
-        alert: "%{resource_name} ne pouvait pas être détruit."
-        notice: "%{resource_name} était détruit avec succès."
+        alert: "%{resource_name} n'a pas pu être enlevé"
+        notice: "%{resource_name} a été détruit avec succès"
       update:
-        notice: "%{resource_name} était actualisé avec succès."
+        notice: "%{resource_name} a été mis à jour avec succès"
     photos:
       destroy:
-        notice: "La photo a été supprimée avec succès."
+        notice: "L'image a été supprimée avec succès"
   form:
-    show_fully_accessible_places: "oui, accessible en fauteuil roulant"
+    show_fully_accessible_places: "Accessible en fauteuil roulant"
     show_limited_accessible_places: "partiellement accessible en fauteuil roulant"
-    show_places_without_status: "statut inconnu"
-    show_unaccessible_places: "pas accessible en fauteuil roulant"
+    show_places_without_status: "état inconnu"
+    show_unaccessible_places: "non accessible en fauteuil roulant"
   formtastic:
     hints:
-      email: "Nous vous certifions de ne pas divulguer votre adresse, pas de spam. Promis!"
-      lat: "Pointez le marqueur à la position correcte sur le plan"
-      osm_username: "Vous n'êtes pas encore membre?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Vous pouvez vous inscrire sur Openstreetmap ici</a> "
-      password: "(ne pas remplir, si vous ne voulez pas le modifier)"
-      phone: "Par exemple:  +49 30 123456-78      "
-      website: "Par exemple: http://www.example.com "
+      email: "Nous traitons votre adresse confidentiellement, pas de pourriel. Promis !"
+      lat: "Déplacez sur la carte le marqueur à la bonne position"
+      osm_username: "Pas encore membre ?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Créez un compte Openstreetmap maintenant</a>"
+      password: "(laissez vide si vous ne voulez pas le modifier)"
+      phone: "Par exemple :  +49 30 123456-78      "
+      website: "Par exemple : http://www.exemple.com "
     labels:
-      category: "Catégorie:"
-      centralkey: "clé centrale"
-      city: "Ville:"
+      category: "Catégorie :"
+      centralkey: "Clef centrale :"
+      city: "Ville :"
       create: "Créer un lieu"
-      email: E-mail
-      finish: terminer
-      housenumber: "Numéro:"
+      email: Courriel
+      finish: Terminer
+      housenumber: "Numéro :"
       lat: Latitude
       lon: Longitude
-      name: "Nom:"
-      osm_password: "Mot de passe sur OSM"
-      osm_username: "Nom d'utilisateur sur OSM"
+      name: "Nom :"
+      osm_password: "Mot de passe OSM"
+      osm_username: "Nom d'utilisateur OSM"
       password: Mot de passe
       password_confirmation: "Répéter le mot de passe"
-      phone: "Téléphone:"
-      postcode: "Code postal:"
-      privacy_policy: "J'accepte l'alinéa 1 et 2 de la règlementation de protection de données"
-      reset: Reset
-      save: Sauvegarder
-      street: "Rue:"
-      terms: "J'accepte les conditions d'utilisation"
-      type: "Type:"
-      website: "Site web:"
-      wheelchair: "Accessible en fauteuil roulant?"
-      wheelchair_description: "Commentaire d'accessibilité:"
+      phone: "Téléphone :"
+      postcode: "Code postal :"
+      privacy_policy: "J'accepte les paragraphes 1 et 2 de la convention de confidentialité des données."
+      reset: Réinitialiser
+      save: Enregistrer
+      street: "Rue :"
+      terms: "J'accepte les conditions générales d'utilisation."
+      type: "Type :"
+      website: "Site Web :"
+      wheelchair: "Accessibilité en fauteuil roulant ?"
+      wheelchair_description: "Commentaire sur l'accessibilité :"
     titles:
-      basic: "Données élémentaires "
-      optional: "Plus d' informations <span class=\"addition\">(tous les champs sont optionnels)</span>"
+      basic: "Données de base"
+      optional: "Plus d'informations <span class=\"addition\">(tous les champs sont optionnels)</span>"
   global:
-    form_validation_error: "Voir les erreurs indiquées ci-dessous."
+    form_validation_error: "Veuillez consulter les erreurs indiquées ci-dessous"
   header:
     meta:
-      description: "Des marches, des escaliers ou pas de WC handicapé - grâce à Wheelmap vous saurez à l'avance si un musée, un cinéma ou le restaurant le plus proche sont accessibles en fauteuil roulant. "
+      description: "Trouvez des lieux accessibles en fauteuil roulant - wheelmap.org"
       homepage: "Page d'accueil"
-      keywords: "lieux accessibles en fauteuil roulant trouver chercher marquer"
-      search: Récherche
+      keywords: "fauteuil roulant accessibles lieux trouver chercher marquer"
+      search: Recherche
     navigation:
-      blog: Blog
-      feedback: Commentaire
-      home: Accueuil
-      how_to_add_a_place: "Comment peut-on ajouter des lieux?"
+      blog: Nouvelles
+      feedback: Commentaires
+      home: Démarrer
+      how_to_add_a_place: "Comment ajouter des lieux ?"
       imprint: Mentions légales
-      logged_in_as: "Connecté sous le nom de"
-      login: "Connecter"
-      logout: "Déconnecter"
-      newsletter: bulletin
+      logged_in_as: "Connecté en tant que :"
+      login: "Connexion"
+      logout: "Déconnexion"
+      newsletter: Lettre d'information
       press: Presse
       profile: Profil
       suggestions: Suggestions
-      what_is_barrier_free: "Que veut dire \"accessible en fauteuil roulant\""
-      what_is_wheelmap: "Qu' est-ce que 'wheelmap'?"
+      what_is_barrier_free: "Que veut dire « accessible en fauteuil roulant » ?"
+      what_is_wheelmap: " Wheelmap, qu'est-ce que c'est ?"
     searchbar:
-      add_place: "Ajouter un lieu"
-      find: trouver
-      label: ~
-      placeholder: "Chercher un endroit"
-      title_add_place: "Ajoutez un nouveau lieu à cet endroit"
-    tagline: "Wheelmap logo"
-    title: "Où aller en  fauteuil roulant? "
+      add_place: "Ajouter un autre lieu"
+      find: Trouver
+      placeholder: "Chercher un lieu"
+      title_add_place: "Ajouter un nouveau lieu à cet endroit maintenant !"
+    tagline: "Logo Wheelmap"
+    title: "trouver des lieux accessibles en fauteuil roulant"
   helpers:
     select:
       prompt: "Veuillez choisir"
     submit:
-      create: "Créer %{model} "
-      submit: "Sauvegarder %{model} "
-      update: "Actualiser %{model} "
+      create: "créer %{model} "
+      submit: "enregistrer %{model} "
+      update: "mettre à jour %{model}"
   home:
     index:
       filter:
-        category: "Catégorie:"
-        deselect_all: "Désélectionner tout"
-        select_all: "Sélectionnez tous les"
-        wheelchair: "Accessible en fauteuil roulant?"
+        category: "Choisir une catégorie :"
+        deselect_all: "Tout désélectionner"
+        select_all: "Tout sélectionner"
+        wheelchair: "Accessible en fauteuil roulant ?"
       ie:
         action:
-          ignore: ignorer
-          upgrade: "actualiser le navigateur"
+          ignore: Ignorer
+          upgrade: "Mettre le navigateur à jour"
         warning:
-          headline: "Avec toutes nos excuses! "
-          message: "Apparemment , tu utilises Internet Explorer. Wheelmap nécessite un navigateur ............. pour fonctionner correctement. Merci d'utiliser Firefox, Chrome, Safari ou Opera."
+          headline: "Nous sommes désolés ! "
+          message: "Vous semblez utiliser Internet Explorer. Wheelmap exige un navigateur répondant aux standards pour fonctionner correctement. Veuillez prendre en considération l'utilisation de Firefox, de Chrome, de Safari ou d'Opera."
       link:
         node:
           create: "Ajouter un nouveau lieu"
       popup:
         form:
-          limited: "partiellement accessible"
-          'no': "non-accessible"
-          save: Sauvegarder
-          unknown: "statut inconnu"
-          'yes': "entièrement accessible"
-        help: "Accessible en fauteuil roulant? (Aide)"
-        more: "davantage ..."
-  how?: Comment?
+          limited: "partiellement accessible en fauteuil roulant"
+          'no': "non-accessible en fauteuil roulant"
+          save: Mettre à jour
+          unknown: "état inconnu"
+          'yes': "accessible en fauteuil roulant"
+        help: "Accessible en fauteuil roulant ? (aide)"
+        more: "davantage.."
+  how?: Comment ?
   landing_pages:
     index:
       wheelchair:
         limit:
-          headline: "Tous (ou toutes)  les %{type} accessible en fauteuil roulant à %{city} (%{count})"
+          headline: "Les %{type} à accès limité en fauteuil roulant à %{city} (%{count})"
         'no':
-          headline: "Tous (ou toutes) %{type}  non accessibles en fauteuil roulant à %{city} (%{count})"
+          headline: "Les %{type} non accessibles en fauteuil roulant à %{city} (%{count})"
         unknown:
-          headline: "Tous (ou toutes) %{type} à  %{city}  avec statut d'accessibilité inconnu"
+          headline: "Les %{type} de %{city} dont l'état d'accessibilité est inconnu  (%{count})"
         'yes':
-          headline: "Tous (ou toutes) les %{type} accessible en fauteuil à %{city} (%{count})"
+          headline: "Les %{type} accessibles en fauteuil roulant à %{city} (%{count})"
   layouts:
     application:
       banner:
-        alt: "Un projet de Sozialhelden.de"
+        alt: "Un projet par Sozialhelden.de"
   node:
     address:
-      city: "%{postcode} %{city} "
+      city: "%{city} %{postcode}"
       street: "%{housenumber} %{street} "
     tags:
-      phone: "Téléphone: "
-      website: "Site web:"
+      phone: "Téléphone : "
+      website: "Site Web :"
   nodes:
     create:
       flash:
-        not_successfull: "Oups, votre entrée était incorrecte ou incomplète."
-        successfull: "Merci beaucoup, votre entrée a été sauvegardée et sera publiée bientôt."
+        not_successfull: "Désolé, votre saisie était erronée ou incomplète."
+        successfull: "Merci, votre envoi a été enregistré avec succès et sera en ligne sous peu."
     edit:
       header:
-        title: "traiter lieu: %{node} | wheelmap.org "
+        title: "Modifier le lieu : %{node} | wheelmap.org "
       link:
-        large_map: "&laquo; Annuler"
+        large_map: "&laquo ; Annuler"
     errors:
-      default: "Oups, il y a eu une erreur. Nous l'avons remarqué.  "
-      not_authorized: "Désolé, échec de l'authentification."
-      not_available: "Désolé, cette page est temporairement indisponible."
+      default: "Désolé, une erreur est survenue et nous a été signalée"
+      not_authorized: "Échec lors de l'authentification."
+      not_available: "Désolé, cette page n'est temporairement pas disponible."
       not_existent: "Désolé, ce lieu n'est plus disponible."
       not_found: "Désolé, page introuvable."
-      param_missing: "Entrez une recherche"
+      param_missing: "Veuillez fournir un terme d'interrogation"
     flash:
-      authorize_wheelmap: "Vous avez besoin d'un compte sur OpenStreetMap pour modifier des données."
+      authorize_wheelmap: "Il vous faut un compte OpenStreetMap pour modifier les données"
     new:
       header:
-        title: "Nouveau lieu | wheelmap.org "
+        title: "Nouveau lieu | wheelmap.org"
       link:
         large_map: "&laquo; Annuler"
     node:
       link:
-        claim: "Vous travaillez ici?"
-        edit_node: "Editer lieu"
+        claim: "Travaillez-vous ici ?"
+        edit_node: "Modifier le lieu"
         report_bug: "Signaler un problème"
     show:
       header:
-        title: "Lieu: %{node} | wheelmap.org "
+        title: "Lieu : %{node} | wheelmap.org "
       link:
         back: retour
         large_map: Agrandir
-        listing: "Tous les endroits du type %{type} dans %{city}"
-        upload: "télécharger la photo"
-      more_data_from: "Il existe d'autres données concernant ce lieu, confirmeés par"
-      show-in-osm: indiquer sur Openstreetpmap
+        listing: "Tous les lieux de type %{type} à %{city}"
+        upload: "Téléverser l'image"
+      more_data_from: "Il y a d'autres données pour ce lieu, vérifié par :"
+      show-in-osm: OpenStreetMap
     update:
       flash:
-        not_successfull: "Oups, votre entrée était incorrecte ou incomplète."
-        successfull: "Merci, votre entrée a été sauvegardée avec succès et sera publiée bientôt."
+        not_successfull: "Désolé, votre entrée était erronée ou incomplète"
+        successfull: "Merci, votre envoi a été enregistré avec succès et sera en ligne sous peu."
     update_wheelchair:
-      successfull: "Le statut du lieu \"%{name} a été modifié en : %{status} et sera actualisé prochainement"
+      successfull: "L'état de « %{name} » a été modifié à « %{status} » et sera en ligne sous peu."
   number:
     currency:
       format:
@@ -257,7 +256,7 @@ fr:
           billion: milliard
           million: million
           quadrillion: quadrillion
-          thousand: mille
+          thousand: Mille
           trillion: trillion
           unit: ~
       format:
@@ -284,9 +283,9 @@ fr:
   oauth:
     application:
       connect:
-        headline: "Vous devez connecter votre compte à votre compte d'OpenStreetMap si vous voulez ajouter ou modifier des lieux sur wheelmap.org."
+        headline: "Vous devez connecter votre compte à votre compte « OpenStreetMap » avant de pouvoir créer ou modifier des lieux sur wheelmap.org."
     callback:
-      notice: "Votre compte de wheelmap est maintenant connecté à votre compte d'OpenStreetMap %{user}."
+      notice: "Votre compte Wheelmap est maintenant connecté à votre compte %{user} sur OpenStreetMap."
   or: ou
   place:
     one: "%{count} lieu"
@@ -295,99 +294,99 @@ fr:
     edit:
       application:
         oauth:
-          connected: "Statut: connecté"
-          grant: "Connecter"
-          not_connected: "Statut: Non-connecté"
-          revoke: Déconnecter
+          connected: "État : connecté"
+          grant: "Se connecter maintenant"
+          not_connected: "État : non connecté"
+          revoke: Se déconnecter
       headline: "Modifier votre profil"
   search:
     index:
       search:
-        for: "Rechercher \"%{q}\" "
-        not_found: "Aucun résultat!"
+        for: "Rechercher « %{q} » "
+        not_found: "Aucun lieu n'a été trouvé !"
   splash:
-    countline: "Les %{count} lieux ont déjà été marqué."
-    headline: "Tout le monde peut ajouter des endroits accessibles en fauteuil roulant!"
-    start: start
-    step1: "Cliquez sur un lieu que vous connaissez."
-    step2: "Indiquez le et cliquez sur \"sauvegarder\""
-    step3: "Terminé. Inutile d'enregistrer!"
-    what_is_wheelmap: "Qu'est-ce que Wheelmap?"
-  statistics: Statistique
+    countline: "%{count} lieux ont déjà été marqués."
+    headline: "Tout le monde peut ajouter des lieux accessibles en fauteuil roulant !"
+    start: Démarrer
+    step1: "Cliquez sur un lieu que vous connaissez"
+    step2: "Marquez le et cliquez sur enregistrer"
+    step3: "C'est tout ! Aucune inscription nécessaire"
+    what_is_wheelmap: "Qu'est-ce que Wheelmap ?"
+  statistics: Statistiques
   support:
     array:
-      last_word_connector: ", et"
+      last_word_connector: "et"
       sentence_connector: et
       skip_last_comma: true
       two_words_connector: "et"
       words_connector: ","
     select:
-      prompt: "Choisissez s.v.p."
+      prompt: "Veuillez choisir"
   time:
-    am: du matin
+    am: avant midi
     formats:
-      default: "%d %B %Y %H:%M:%S montre / heure "
-      long: "%A %d %B %Y %H:%M"
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
-    pm: dans l'après-midi
+    pm: après-midi
   user_sessions:
     create:
       activation:
-        notice: "Votre compte est maintenant activé!"
+        notice: "Votre compte est maintenant activé !"
       error:
-        notice: "L'adresse mail et le mot de passe ne correspondent pas."
-      notice: "Connecté!"
+        notice: "L'adresse courriel et le mot de passe ne correspondent pas."
+      notice: "Vous êtes connecté !"
     destroy:
-      notice: "Au revoir, à bientôt!"
+      notice: "Au revoir, revenez bientôt !"
     new:
-      email: "Adresse e-mail"
-      login: "Connecter"
-      login_with_twitter: "Connecter sur Twitter"
+      email: "Adresse courriel"
+      login: "Connexion"
+      login_with_twitter: "Se connecter avec Twitter"
       password: Mot de passe
       remember_me: "Rester connecté"
   users:
     after_signup_edit:
       welcome:
-        headline: "C'est presque fini! Reste à compléter le compte Wheelmap"
-        set_password_for_mobile: "Tu t'es enrestré avecsuccès chez OpenStreetMap.Choisis encore l'adresse mail et le mot de pass pour ton compte Wheelmap. Tu as besoin de cette adresse mail et du mot de pass pour te connecter sur l'application Wheelmap pour iPhone et Androide."
-        text: "Vous vous êtes connectez avec succès. A l'avenir, comment pouvons nous vous informer des nouveautés de Wheelmap?"
+        headline: "Vous y êtes presque ! Complétez ici votre inscription à votre compte Wheelmap :"
+        set_password_for_mobile: "Vous avez terminé votre inscription à OpenStreetMap.\nChoisissez maintenant une adresse courriel et un mot de passe pour votre compte Wheelmap et tout sera prêt ! Vous aurez besoin de cette adresse courriel et de ce mot de passe pour vous connecter à l'appli Wheelmap pour iPhone ou Android."
+        text: "Comment pouvons-nous vous joindre ? Vous pourrez changer cette information ultérieurement dans votre profil."
     edit:
       headline:
-        your_images: "vos photos téléchargées"
+        your_images: "Vos images téléversées"
   wheelchairstatus:
-    limited: "partiellement accessible en  fauteuil roulant"
-    'no': "pas accessible en fauteuil roulant"
-    unknown: "statut de l'accessibilité inconnu"
-    'yes': "Entièrement accessible en fauteuil roulant."
+    limited: "partiellement accessible en fauteuil roulant"
+    'no': "non accessible en fauteuil roulant"
+    unknown: "état inconnu"
+    'yes': "accessible en fauteuil roulant"
   wheelmap:
     footer:
-      a_project_of: "Un projet de"
+      a_project_of: "Un projet par"
       based_on: "Basé sur"
-      become_a_supporter: "Devenir sponsor"
-      main_supporter: "Sponsor principal"
+      become_a_supporter: "Soutenez Wheelmap"
+      main_supporter: "Partisans principaux"
     itunes:
-      alt: "AppStore Logo "
-      title: "Vous pouvez télécharger maintenant l'application pour l'iPhone!"
+      alt: "Logo App Store"
+      title: "Télécharger l'appli pour iPhone maintenant !"
     logo:
-      alt: "Wheelmap Logo - où aller en fauteuil roulant?"
-      title: "Wheelmap - où aller en fauteuil roulant?"
+      alt: "Logo Wheelmap - trouver des lieux accessibles en fauteuil roulant"
+      title: "Wheelmap - trouver des lieux accessibles en fauteuil roulant"
     what_is:
-      fully_accessible: "Entrée de plain pied; tous les endroits sont accessibles en fauteuil roulant, toilettes handicapés disponibles en fonction de l'endroit."
-      limited_accessible: "La hauteur de la marche à  l'entrée ne dépasse pas 7cm; les endroits les plus importants sont accessibles en fauteuil roulant, WC sans importance."
-      not_accessible: "La hauteur de la marche à l'entrée est supérieur à  7cm ; ou il y a plusieurs marches à  l'entrée; ou les endroits les plus importants ne sont pas accessibles en fauteuil roulant"
-      unknown_accessible: "aide nous à classer ce lieu"
+      fully_accessible: "Aucune marche, ni à l'entrée, ni dans les pièces, toilettes accessibles si habituel pour un tel lieu"
+      limited_accessible: "L'entrée à une marche (hauteur max. 7 cm/2,7''), la plupart des pièces n'en ont pas, les toilettes ne sont pas accessibles"
+      not_accessible: "L'entrée a des marches (hautes), les pièces ne sont pas accessibles"
+      unknown_accessible: "Aidez-nous en marquant les lieux !"
   will_paginate:
-    next_label: "avant &#8594; Zeit\ndevant &#8594; Ort"
+    next_label: "Suivant &#8594;"
     page_entries_info:
-      multi_page: "Indique %{model} %{from} -%{to} de %{count} total"
-      multi_page_html: "Indique  %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> von <b>%{count}</b> total"
+      multi_page: "Affichant %{model} %{from} -%{to} de %{count} au total"
+      multi_page_html: "Affichant %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> au total"
       single_page:
-        one: "Indique 1 %{model}"
-        other: "Indique tous %{count} %{model}"
+        one: "Affichant 1 %{model}"
+        other: "Affichant tous les %{count} %{model}"
         zero: "%{model} introuvable"
       single_page_html:
-        one: "montre <b>1</b>%{model}"
-        other: "Indique <b>all&nbsp;%{count}</b> %{model}"
-        zero: "%{model} pas trouvé"
+        one: "Affichant <b>1</b> %{model}"
+        other: "Affichant <b>all&nbsp;%{count}</b> %{model}"
+        zero: "%{model} introuvable"
     page_gap: "&hellip;"
-    previous_label: "retour"
+    previous_label: "&#8592; Précédent"
