@@ -66,6 +66,7 @@ group :assets do
   gem 'jquery-rails', '2.3.0'
   gem 'coffee-rails'
   gem 'uglifier'
+  gem 'turbo-sprockets-rails3'
   gem 'compass'
   gem 'compass-colors'
   gem 'compass-rails'
