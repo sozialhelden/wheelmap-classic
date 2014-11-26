@@ -6,9 +6,9 @@ set :application, 'wheelmap'
 set :repo_url, 'git@github.com:sozialhelden/wheelmap.git'
 
 # Default value for :scm is :git
- set :scm, :git
+set :scm, :git
 
-set :deploytag_time_format, "%Y.%m.%d-%H.%M.%S"
+set :deploytag_time_format, "%Y%m%d%H%M%S"
 
 # Default value for :format is :pretty
 set :format, :pretty
