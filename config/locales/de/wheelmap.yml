@@ -8,7 +8,7 @@ de:
     node:
       create: "Neuen Ort anlegen"
       edit: "Ort bearbeiten"
-    root: wheelmap-Karte
+    root: Wheelmap-Karte
   common:
     close: schließen
     skip: Überspringen
