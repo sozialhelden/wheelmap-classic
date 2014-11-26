@@ -30,7 +30,7 @@ set :bundle_jobs, 4
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-set :linked_dirs, %w{ log tmp/var tmp/osmosis-working-dir tmp/cache tmp/sockets tmp/pids vendor/bundle public/system }
+set :linked_dirs, %w{ log tmp/var tmp/osmosis-working-dir tmp/cache tmp/sockets tmp/pids vendor/bundle public/system public/assets }
 
 set :rbenv_type, :system # :user or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.1.2'
