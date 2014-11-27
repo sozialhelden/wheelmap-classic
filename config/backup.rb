@@ -58,13 +58,13 @@ Backup::Model.new(:my_backup, 'Database backup of wheelmap.org') do
   #   mail.on_warning           = true
   #   mail.on_failure           = true
   #
-  #   mail.from                 = 'noreply@wheelmap.org'
-  #   mail.to                   = "christoph@sozialhelden.de"
-  #   mail.address              = 'mail.wheelmap.org'
+  #   mail.from                 = ''
+  #   mail.to                   = ''
+  #   mail.address              = ''
   #   mail.port                 = 25
-  #   mail.domain               = 'wheelmap.org'
-  #   mail.user_name            = 'noreply@wheelmap.org'
-  #   mail.password             = '***REMOVED***'
+  #   mail.domain               = ''
+  #   mail.user_name            = ''
+  #   mail.password             = ''
   #   mail.authentication       = "plain"
   #   mail.encryption           = :starttls
   # end
