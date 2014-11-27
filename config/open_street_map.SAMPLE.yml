@@ -1,20 +1,12 @@
-production:
-  user: osm_username
-  password: osm_password
-  oauth_secret: ''
-  oauth_key: ''
-  oauth_site: 'http://www.openstreetmap.org'
-  xapi_site: 'http://www.informationfreeway.org'
-
 development:
   user: osm_username
   password: osm_password
-  oauth_secret: '***REMOVED***'
-  oauth_key: '***REMOVED***'
-  # oauth_site: 'http://api06.dev.openstreetmap.org'
-  oauth_site: 'http://www.openstreetmap.org'
+  oauth_secret: '17UAT3a4n3xLCgvu7GZC37v9cY47jXszoNw9lL9w7I'
+  oauth_key: '1uMcFjkJIlpFRHx7Y05Q'
+  oauth_site: 'http://api06.dev.openstreetmap.org'
+  # oauth_site: 'http://www.openstreetmap.org'
   xapi_site: 'http://www.informationfreeway.org'
-  
+
 test:
   user: osm_username
   password: osm_password
@@ -23,8 +15,8 @@ test:
   oauth_site: 'http://api06.dev.openstreetmap.org'
 
 cucumber:
-  user: schmerzbereiter
-  password: ***REMOVED***
+  user: osm_username
+  password: osm_password
   oauth_secret: ''
   oauth_key: ''
   oauth_site: 'http://api06.dev.openstreetmap.org'
