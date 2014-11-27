@@ -7,7 +7,7 @@
  * http://www.gnu.org/licenses/gpl.html
  *
  */
-/*global  window, jQuery, $, OpenLayers, language, UserVoice*/
+/*global  window, jQuery, $, language, UserVoice*/
 jQuery.cookie = function (key, value, options) {
 
     // key and at least value given, set cookie...
