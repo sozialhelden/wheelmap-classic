@@ -8,7 +8,8 @@ set :deploy_to, "/var/apps/#{fetch(:application)}/#{fetch(:stage)}"
 
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 set :rev, proc { `git rev-parse --short #{fetch(:branch)}`.chomp }
-set :port, 22022
+
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
 # Simple Role Syntax
 # ==================
