@@ -50,32 +50,6 @@ $(function () {
     $(this).parent().fadeOut();
     return false;
   });
-  $('.minimize').live('click', function () {
-    $(this).parent('div').animate({ left: '-360px'}, 'fast', 'swing', function () {
-      $(this).children('.minimize').addClass('maximize').removeClass('minimize');
-      $.cookie('minimized_filter', true);
-      if (window._gaq) {
-        _gaq.push(['_trackEvent', 'Filter', 'collapse']);
-      }
-    });
-    return false;
-  });
-
-  $('.maximize').live('click', function () {
-    $(this).parent('div').animate({ left: '0px'}, 'fast', 'swing', function () {
-      $(this).children('.maximize').addClass('minimize').removeClass('maximize');
-      $.cookie('minimized_filter', false);
-      if (window._gaq) {
-        _gaq.push(['_trackEvent', 'Filter', 'expand']);
-      }
-    });
-    return false;
-  });
-
-  if ($.cookie('minimized_filter') === 'true') {
-    $('#sidebar').addClass('minimized')
-    $('#sidebar').children('.minimize').addClass('maximize').removeClass('minimize');
-  }
 
   $('input.filter').change(function () {
     if ($(this).is(':checked')) {

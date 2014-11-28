@@ -37,7 +37,7 @@ var standort = L.icon({
   iconSize:     [1, 1],
   iconAnchor:   [7, 2],
   popupAnchor:  [10, 20],
-  iconUrl: '/images/location.png'
+  iconUrl: '/assets/location.png'
 });
 
 
