@@ -1,5 +1,17 @@
----
 ja:
+  activerecord:
+    attributes:
+      poi:
+        name: 名前
+        type: 種別
+        address: 住所
+        website: ウェブサイト
+        phone: 電話番号
+        note: ノート
+        address_street: 住所(Street)
+        address_housenumber: 番地
+        address_postcode: 郵便番号
+        address_city: 都道府県
   faq:
     answers:
       0: あなたが設定したマーキングはいつでも変更できます。正しいマーキングを選んで"Save"を押せば完了です！
@@ -25,9 +37,9 @@ ja:
         button: OK、さあ始めよう！
         categories: 場所をカテゴリでフィルター
         filter: 車椅子のアクセシビリティで場所をフィルター
-        headline: Wheelmao.org で車椅子で行ける場所を探してマークしよう - 世界のどこでも無料。とても簡単です。
+        headline: 'Wheelmao.org で車椅子で行ける場所を探してマークしよう - 世界のどこでも無料。とても簡単です。'
         lookup: 指定した場所を探す
-        secondary_headline: 公共の場所での車椅子のアクセシビリティをマークする自分たちの交通信号システム
+        secondary_headline: '公共の場所での車椅子のアクセシビリティをマークする自分たちの交通信号システム'
   nodes:
     new:
       form:
@@ -79,20 +91,8 @@ ja:
           spell_check: <strong>誤字脱字</strong>が無いか、確認してください。
       results:
         ticker:
-          one: '結果 1 件:'
-          other: '結果 &{count} 件:'
+          other: '%{count} 結果:'
     timeout:
       headline: こちらの間違いです。すみません。
       info: 検索機能が一時的に利用できない状態です。
       repeat_search: 検索を再実行
-  activerecord:
-    attributes:
-      poi:
-        name: 名前
-        type: タイプ
-        website: ウェブサイト
-        phone: 電話
-        address_street: 住所
-        address_housenumber: 番地
-        address_postcode: 郵便番号
-        address_city: 都市

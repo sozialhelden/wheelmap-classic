@@ -1,0 +1,22 @@
+ja:
+  models:
+    category:
+      prompt: "カテゴリーを選択してください"
+    node_type:
+      prompt: "タイプを選択してください"
+    node:
+      info_edit_position: "上記のように、Wheekmap上で位置が表示されるでしょう。もし、マーカーが違った場所にあれば、OpenStreetMap上で <a href=\"%{url}\">を変更することができます</a>"
+      mail:
+        subject: "[Wheelmap]  %{headline} で問題が生じています"
+        body: "(英語かドイツ語でお知らせください)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:"
+  actions:
+    send: 送信する
+    save: 保存
+    cancel: キャンセル
+  errors:
+    models:
+      node:
+        website:
+          invalid: "このURLは無効です"
+        phone:
+          invalid: "電話番号が正しくありません、記述はこのようにしてください +49 30 234567"
