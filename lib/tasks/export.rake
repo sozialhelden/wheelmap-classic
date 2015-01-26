@@ -157,6 +157,16 @@ namespace :export do
 
   end
 
+  desc 'Export nodes for tb guide gesundheit'
+  task :for_tb_guide => :environment do
+    headers = ["Id","Name","Lat","Lon","Street","Housenumber","Postcode","City"]
+    CSV.open("tb_guide.csv", "wb", force_quotes: true, headers: headers) do |csv|
+      Region.find('Berlin').pois_of_children.find_each(start: Poi.lowest_id) do |poi|
+        csv << [poi.id, poi.name, poi.lat, poi.lon, poi.street, poi.housenumber, poi.postcode, poi.city]
+      end
+    end
+  end
+
   desc 'Export nodes for streetspotr'
   task :for_streetspotr => :environment do
     region_names    = ENV['REGION'].split(',')      rescue nil
