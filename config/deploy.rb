@@ -5,6 +5,9 @@ set :start_time, Time.now.to_i
 set :application, 'wheelmap'
 set :repo_url, 'git@github.com:sozialhelden/wheelmap.git'
 
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+set :whenever_command_environment_variables, "RAILS_ENV"=> fetch(:stage)
+
 # Default value for :scm is :git
 set :scm, :git
 

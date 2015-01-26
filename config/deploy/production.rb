@@ -9,8 +9,6 @@ set :deploy_to, "/var/apps/#{fetch(:application)}/#{fetch(:stage)}"
 set :branch, :production
 set :rev, proc { `git rev-parse --short #{fetch(:branch)}`.chomp }
 
-set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
-
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary server in each group
