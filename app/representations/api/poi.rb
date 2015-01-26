@@ -15,6 +15,7 @@ module Api::Poi
       t.add :name
       t.add :wheelchair
       t.add :wheelchair_description
+      t.add :wheelchair_toilet
       t.add :node_type, :template => :id
       t.add :lat
       t.add :lon
@@ -60,6 +61,7 @@ module Api::Poi
       t.add :city
       t.add :wheelchair
       t.add :wheelchair_description
+      t.add :wheelchair_toilet
       t.add lambda{|poi| poi.region.try(:name)  }, :as => :region
       t.add :node_type_id, :as => :type_id
       t.add lambda{|poi| poi.category.try(:id)  }, :as => :category_id
