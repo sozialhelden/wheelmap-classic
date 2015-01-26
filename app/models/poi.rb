@@ -22,7 +22,7 @@ class Poi < ActiveRecord::Base
 
 
   attr_accessible :name, :type, :geom, :version, :wheelchair, :wheelchair_description, :created_at, :updated_at, :status
-  attr_accessible :lat, :lon, :id, :tags, :osm_id, :name, :node_type_id, :website, :phone, :photos_attributes
+  attr_accessible :lat, :lon, :id, :tags, :osm_id, :name, :node_type_id, :website, :phone, :photos_attributes, :toilet
   attr_accessible *DELEGATED_ADDR_ATTRIBUTES
 
   self.include_root_in_json = false
@@ -223,16 +223,16 @@ class Poi < ActiveRecord::Base
     self.tags['wheelchair'] = value
   end
 
-  def website
-    tags['website']
-  end
-
   def website_with_protocol
     website && (website.starts_with?('http') ? website : "http://#{website}")
   end
 
-  def phone
-    tags['phone']
+  def wheelchair_toilet
+    tags['toilets:wheelchair'] ||= 'unknown'
+  end
+
+  def wheelchair_toilet=(value)
+    tags['toilets:wheelchair'] = value
   end
 
   def wheelchair_description
