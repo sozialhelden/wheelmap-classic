@@ -116,6 +116,22 @@ describe Poi do
     end
   end
 
+  context "toilet tag based attributes" do
+
+    it "has virtual getters for wheelchair_toilet" do
+      p = FactoryGirl.build(:poi)
+
+      p.tags["toilets:wheelchair"] = "yes"
+      p.send(:wheelchair_toilet).should == "yes"
+    end
+
+    it "has virtual setters for toilet" do
+      p = FactoryGirl.build(:poi)
+      p.send "wheelchair_toilet=", "yes"
+      p.tags["toilets:wheelchair"].should == "yes"
+    end
+  end
+
   context "json rendering" do
     context "for osm" do
       REQUIRED_KEYS = [:id, :lat, :lon]
