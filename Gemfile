@@ -60,6 +60,7 @@ group :default do
   gem 'geocoder'
   gem 'ruby-progressbar'
   gem 'figaro'
+  gem 'strong_parameters'
 end
 
 group :assets do
