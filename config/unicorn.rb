@@ -2,7 +2,7 @@
 # Set environment to development unless something else is specified
 env = ENV["RAILS_ENV"] || "staging"
 
-worker_processes (env == 'production' ? 8 : 1)
+worker_processes (env == 'production' ? 9 : 1)
 base_dir = "/var/apps/wheelmap/#{env}/current"
 shared_path = "/var/apps/wheelmap/#{env}/shared"
 working_directory base_dir
