@@ -73,7 +73,7 @@ describe Api::NodesController do
         get(:index, :api_key => @user.authentication_token)
         response.should be_success
         json = JSON.parse(response.body)
-        attribute_whitelist = %w{id lat lon node_type category name wheelchair wheelchair_description city street housenumber postcode website phone}
+        attribute_whitelist = %w{id lat lon node_type category name wheelchair wheelchair_description wheelchair_toilet city street housenumber postcode website phone}
         json['nodes'].each do |node|
           left_over = node.reject do |key,value|
             attribute_whitelist.include? key
@@ -140,6 +140,48 @@ describe Api::NodesController do
     end
   end
 
+  shared_examples "update_toilet" do
+
+    it "access should be denied if api key is missing" do
+      put(:update_toilet, {:id => @node.id, :name => 'Something new'})
+      response.status.should eql 401
+    end
+
+    it "should accept update toilet status for later processing if params are valid" do
+      lambda {
+        put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'no', :api_key => @user.authentication_token})
+        response.status.should eql 202
+        response.body.should =~ /OK/
+      }.should change(Delayed::Job, :count).by(1)
+      Delayed::Job.last.handler.should =~ /chris@tucker.org/
+    end
+
+    it "should not accept update toilet status for later processing if params are invalid" do
+      lambda {
+        put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'invalid', :api_key => @user.authentication_token})
+        response.status.should eql 406
+      }.should change(Delayed::Job, :count).by(0)
+    end
+
+    it "should not accept update toilet status for later processing if params are missing" do
+      lambda {
+        put(:update_toilet, {:id => @node.id, :api_key => @user.authentication_token})
+        response.status.should eql 406
+      }.should change(Delayed::Job, :count).by(0)
+    end
+
+    it "should compose source from user agent" do
+      put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'yes', :api_key => @user.authentication_token})
+      assigns(:source).should eql 'tag_android'
+    end
+
+    it "should compose source from user agent" do
+      request.env['HTTP_USER_AGENT'] = 'Wheelmap iOS/1.2.4'
+      put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'yes', :api_key => @user.authentication_token})
+      assigns(:source).should eql 'tag_iphone'
+    end
+  end
+
   describe 'as a node' do
 
     before :each do
@@ -150,6 +192,7 @@ describe Api::NodesController do
     end
 
     it_behaves_like "update_wheelchair"
+    it_behaves_like "update_toilet"
   end
 
   describe 'as a way' do
@@ -162,6 +205,7 @@ describe Api::NodesController do
     end
 
     it_behaves_like "update_wheelchair"
+    it_behaves_like "update_toilet"
   end
 
   describe 'search action' do

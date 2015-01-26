@@ -10,10 +10,23 @@ class Api::NodesController < Api::ApiController
 
   # Make sure user authenticates itself using an api_key
   before_filter :authenticate_application!, :only => [:update, :create]
-  before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
 
   has_scope :bbox, :except => :search # we handle this manually
   has_scope :wheelchair, :except => :update
+
+  rescue_from ActionController::UnpermittedValue do |e|
+    respond_to do |wants|
+      wants.json{ render :json => {:error => "Param #{e.key} must be one of the following values: #{e.allowed_values.inspect}"}.to_json, :status => 406 }
+      wants.xml{  render :xml  => {:error => "Param #{e.key} must be one of the following values: #{e.allowed_values.inspect}"}.to_xml,  :status => 406 }
+    end
+  end
+
+  rescue_from ActionController::ParameterMissing do |e|
+    respond_to do |wants|
+      wants.json{ render :json => {:error => "Param #{e.param} is missing"}.to_json, :status => 406 }
+      wants.xml{  render :xml  => {:error => "Param #{e.param} is missing"}.to_xml,  :status => 406 }
+    end
+  end
 
   def index
     index! do |format|
@@ -93,8 +106,17 @@ class Api::NodesController < Api::ApiController
   def update_wheelchair
     node = Poi.find(params[:id])
     updating_user = (user_signed_in? && current_user.app_authorized?) ? current_user : wheelmap_visitor
-    UpdateTagsJob.enqueue(node.osm_id.abs, node.osm_type, { 'wheelchair' => params[:wheelchair] }, updating_user, source('tag'))
+    UpdateTagsJob.enqueue(node.osm_id.abs, node.osm_type, { 'wheelchair' => wheelchair_param }, updating_user, source('tag'))
+    respond_to do |wants|
+      wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
+      wants.xml{  render :xml  => {:message => 'OK'}.to_xml,  :status => 202 }
+    end
+  end
 
+  def update_toilet
+    node = Poi.find(params[:id])
+    updating_user = (user_signed_in? && current_user.app_authorized?) ? current_user : wheelmap_visitor
+    UpdateTagsJob.enqueue(node.osm_id.abs, node.osm_type, { 'wheelchair_toilet' => toilet_param }, updating_user, source('tag'))
     respond_to do |wants|
       wants.json{ render :json => {:message => 'OK'}.to_json, :status => 202 }
       wants.xml{  render :xml  => {:message => 'OK'}.to_xml,  :status => 202 }
@@ -137,10 +159,28 @@ class Api::NodesController < Api::ApiController
     end if params[:id].to_i < 0 # Way ids are negative
   end
 
-  def check_update_wheelchair_params
-    respond_to do |wants|
-      wants.json{ render :json => {:error => 'Param wheelchair must be one of the following values: [yes, no, limited, unknown]'}.to_json, :status => 406 }
-      wants.xml{  render :xml  => {:error => 'Param wheelchair must be one of the following values: [yes, no, limited, unknown]'}.to_xml,  :status => 406 }
-    end if params[:wheelchair].blank? || ! Poi::WHEELCHAIR_STATUS_VALUES.keys.include?(params[:wheelchair].to_sym)
+  def wheelchair_param
+    key = :wheelchair
+    allowed_values = Poi::WHEELCHAIR_STATUS_VALUES.keys
+    params.require(key)
+    value = params.permit(key).fetch(key)
+    if allowed_values.include?(value.to_sym)
+      value
+    else
+      raise ActionController::UnpermittedValue.new(key, value, allowed_values)
+    end
+
+  end
+
+  def toilet_param
+    key = :wheelchair_toilet
+    allowed_values = [:yes, :no]
+    params.require(key)
+    value = params.permit(key).fetch(key)
+    if allowed_values.include?(value.to_sym)
+      value
+    else
+      raise ActionController::UnpermittedValue.new(key, value, allowed_values)
+    end
   end
 end

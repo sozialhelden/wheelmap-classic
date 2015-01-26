@@ -1,3 +1,15 @@
+class ActionController::UnpermittedValue < IndexError
+  attr_reader :key, :value, :allowed_values
+
+  def initialize(key, value, allowed_values)
+    @key            = key
+    @value          = value
+    @allowed_values = allowed_values
+    super("found unpermitted value for paramter #{key}: #{value} must be one of #{allowed_values.join(", ")}")
+  end
+end
+
+
 class Api::ApiController < ApplicationController
 
   # Include Inherited Resources behaviour
