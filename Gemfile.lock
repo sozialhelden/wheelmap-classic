@@ -400,6 +400,11 @@ GEM
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     stackable_flash (0.0.7)
+    strong_parameters (0.2.3)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
+      activesupport (~> 3.0)
+      railties (~> 3.0)
     syntax (1.0.0)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
@@ -520,6 +525,7 @@ DEPENDENCIES
   sass-rails
   shoulda-matchers
   spork
+  strong_parameters
   syntax
   therubyracer
   turbo-sprockets-rails3
