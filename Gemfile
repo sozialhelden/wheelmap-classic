@@ -61,6 +61,7 @@ group :default do
   gem 'ruby-progressbar'
   gem 'figaro'
   gem 'strong_parameters'
+  gem 'apipie-rails'
 end
 
 group :assets do
