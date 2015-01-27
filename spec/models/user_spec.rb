@@ -194,8 +194,8 @@ describe User do
     end
 
     it "should show id if name is mising" do
-      subject.id = 123
-      subject.full_name.should eql 123
+      subject.osm_id = 123
+      subject.full_name.should eql "123"
     end
 
     it "should be true that user provided email for the first time" do
