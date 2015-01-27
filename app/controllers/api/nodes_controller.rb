@@ -28,6 +28,52 @@ class Api::NodesController < Api::ApiController
     end
   end
 
+  resource_description do
+    short 'Nodes. A node is a geolocation defined by latitude and longitude.'
+    error :code => 401, :desc => "Authorization Required", meta: { message: "Authentication failed or was not provided. Verify that you have sent valid credentials via an api_key parameter. A 'Www-Authenticate' challenge header will be sent with this type of error response." }
+    formats ['json', 'jsonp', 'xml']
+    param :api_key, String, desc: "You personal API key. Sign up for an account at http://wheelmap.org/users/sign_in", required: true
+  end
+
+  def_param_group :node do
+    param :name, String, required: true, desc: "The node's name."
+    param :type, Integer, required: true, desc: "The node's type, must be one of the available node_type ids"
+    param :lat, Float, required: true, desc: "The node's latitude in degrees."
+    param :lon, Float, required: true, desc: "The node's longitude in degrees."
+    param :wheelchair, %w{ yes limited no unknown }, desc: "The node's wheelchair status."
+    param :wheelchair_description, String
+    param :wheelchair_toilet, %w{ yes no }, desc: "The node's wheelchair toilet status."
+    param :street, String
+    param :housenumber, String
+    param :city, String
+    param :postcode, String
+    param :website, String
+    param :phone, String
+  end
+
+  def_param_group :pagination do
+    param :page, Integer,     required: false, desc: 'For pagination, what page of the results you are on. Default is 1.'
+    param :per_page, Integer, required: false, desc: 'For pagination, how many results to return per page. Default is 200. Max is 500.'
+  end
+
+  def_param_group :filters do
+    param :bbox, Array, of: Float, required: false, desc: "Filter nodes by a bounding box as comma separated float numbers wich are longitude, latitude values in degrees.\nFor example bbox=13.4,52.0,13.5,52.1", meta: { order: "west,south,east,north" }
+    param :wheelchair, %w{ yes limited no unknown }, required: false, desc: 'Filter nodes by a wheelchair status.'
+  end
+
+  def_param_group :scopes do
+    param :category_id, Integer, required: false, desc: 'Filter nodes by a category, identified by category id.'
+    param :node_type_id, Integer, required: false, desc: 'Filter nodes by a node type, identified by node type id.'
+  end
+
+  def_param_group :collection do
+    param_group :filters
+    param_group :scopes
+    param_group :pagination
+  end
+
+  api :GET, '/nodes', "Retrieve a optionally scoped collection of nodes"
+  param_group :collection
   def index
     index! do |format|
       format.xml      {render_for_api :simple, :xml  => @nodes, :root => :nodes, :meta => meta}
@@ -36,6 +82,8 @@ class Api::NodesController < Api::ApiController
     end
   end
 
+  api :GET, '/nodes/search', "Search for nodes by name and other attributes."
+  param_group :collection
   def search
     # If bounding box is given: use distance search
     if params[:bbox]
@@ -50,6 +98,8 @@ class Api::NodesController < Api::ApiController
     Counter.increment(source('search'))
   end
 
+  api :GET, '/nodes/:id', 'Show an existing node.'
+  param_group :filters
   def show
     show! do |format|
       format.xml    {render_for_api :simple, :xml  => @node, :root => :node}
@@ -57,6 +107,11 @@ class Api::NodesController < Api::ApiController
     end
   end
 
+  api :PUT, "/nodes/:id", "Update an existing node."
+  param :id, Fixnum, required: true, desc: "Node's id you want to update"
+  param_group :node
+  error :code => 400, :desc => "Bad Request ", meta: { message: "The server could not understand your request. Verify that request parameters (and content, if any) are valid." }
+  error :code => 406, :desc => "Not Acceptable ", meta: { message: "Either a parameter is missing or has a wrong value." }
   def update
     @node = resource
     @node.attributes = params
@@ -76,6 +131,9 @@ class Api::NodesController < Api::ApiController
     end
   end
 
+  api :POST, "/nodes", "Create a new node."
+  param_group :node
+  error :code => 400, :desc => "Bad Request ", meta: { message: "The server could not understand your request. Verify that request parameters (and content, if any) are valid." }
   def create
     unwanted_keys = %w(action controller page per_page format)
     node_attributes = params.dup.delete_if { |k,v| unwanted_keys.include? k }
@@ -103,6 +161,10 @@ class Api::NodesController < Api::ApiController
     end
   end
 
+  api :PUT, "/nodes/:id/update_wheelchair", "Update wheelchair status for a given node"
+  param :wheelchair, %w{ yes limited no }, required: true, desc: "The node's wheelchair status."
+  error :code => 404, :desc => "Not Found", meta: { message: "The resource that you requested does not exist. Verify that any object id provided is valid." }
+  error :code => 406, :desc => "Not Acceptable", meta: { message: "Either a parameter is missing or has a wrong value." }
   def update_wheelchair
     node = Poi.find(params[:id])
     updating_user = (user_signed_in? && current_user.app_authorized?) ? current_user : wheelmap_visitor
@@ -113,6 +175,10 @@ class Api::NodesController < Api::ApiController
     end
   end
 
+  api :PUT, "/nodes/:id/update_toilet", "Update toilet status for a given node"
+  param :wheelchair_toilet, %w{ yes no }, required: true, desc: "The node's wheelchair toilet status."
+  error :code => 404, :desc => "Not Found", meta: { message: "The resource that you requested does not exist. Verify that any object id provided is valid." }
+  error :code => 406, :desc => "Not Acceptable", meta: { message: "Either a parameter is missing or has a wrong value." }
   def update_toilet
     node = Poi.find(params[:id])
     updating_user = (user_signed_in? && current_user.app_authorized?) ? current_user : wheelmap_visitor
@@ -169,7 +235,6 @@ class Api::NodesController < Api::ApiController
     else
       raise ActionController::UnpermittedValue.new(key, value, allowed_values)
     end
-
   end
 
   def toilet_param
@@ -183,4 +248,5 @@ class Api::NodesController < Api::ApiController
       raise ActionController::UnpermittedValue.new(key, value, allowed_values)
     end
   end
+
 end

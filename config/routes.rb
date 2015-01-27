@@ -1,5 +1,7 @@
 Wheelmap::Application.routes.draw do
 
+  apipie
+
   match '/ping' => 'ping#index'
 
   ActiveAdmin.routes(self)
@@ -55,6 +57,7 @@ Wheelmap::Application.routes.draw do
   resources :nodes, :except => :destroy do
     member do
       put :update_wheelchair
+      put :update_toilet
       get :claim
     end
     # TODO reenable photo routes
