@@ -1,7 +1,7 @@
 #= require jquery
 #= require jquery_ujs
 #= require jquery/jquery.cookies.js
-#= require i18n.js
+#= require i18n/translations
 #= require bootstrap-transition
 #= require bootstrap-button
 #= require bootstrap-collapse
@@ -17,9 +17,9 @@
 #= require responsive-popover
 #= require dropzone
 
-I18n.defaultLocale = 'de'
-I18n.locale = $('html').attr('lang')
+I18n.defaultLocale = "en"
 I18n.fallbacks = true
+I18n.locale = $('html').attr('lang')
 
 $container = $("#node")
 $container.find("[data-toggle=\"popover\"]").each ->
