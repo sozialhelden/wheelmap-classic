@@ -99,6 +99,7 @@ de:
       website: "Webseite:"
       wheelchair: "Rollstuhlgerecht?"
       wheelchair_description: "Info zu Barrierefreiheit:"
+      wheelchair_toilet: "Rollstuhltoilette:"
     titles:
       basic: "Basisdaten"
       optional: "Mehr Infos <span class=\"addition\">(alle Felder sind optional)</span>"

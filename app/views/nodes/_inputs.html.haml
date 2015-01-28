@@ -1,13 +1,11 @@
 = form.inputs :name => t('formtastic.titles.basic'), :id => 'basic' do
   = form.input :name, :required => @node.new_record?
 
-  %li.select.required#node-wheelchair-input
-    =label_tag('node-wheelchair', link_to(t('formtastic.labels.wheelchair'), I18n.locale == :de ? 'http://wheelmap.org/about/mappen/' : 'http://wheelmap.org/en/about/how-to-map/', :target => '_blank') + '*')
-    %select#node-wheelchair{:name => 'node[wheelchair]'}
-      = render :partial => 'options_for_wheelchair', :object => inputs.wheelchair
+  = form.input :wheelchair, required: true, as: :select, collection: options_for_wheelchair(inputs.wheelchair), prompt: 'nothing', label: link_to(t('formtastic.labels.wheelchair'), I18n.locale == :de ? 'http://wheelmap.org/about/mappen/' : 'http://wheelmap.org/en/about/how-to-map/')
+
+  = form.input :wheelchair_toilet, required: false, as: :select, collection: options_for_select([['Ja', 'yes'], ['Nein', 'no'], ['Unbekannt', 'unknown', :disabled => true]], inputs.wheelchair_toilet), prompt: 'nothing'
 
   = form.input :wheelchair_description, :required => false
-
   %li.select.required#node-type-input{:class => @node.errors[:type].present? ? 'error' : ''}
     = form.label :type, :required => true
     %select#node_type{:name => 'node[type]'}
