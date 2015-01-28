@@ -20,4 +20,12 @@ module NodesHelper
       content_tag :address, node.address
     end
   end
+
+  def options_for_wheelchair(wheelchair_status)
+    stati = []
+    Poi::WHEELCHAIR_STATUS_VALUES.keys.each do |wheelchairstatus|
+      stati << [I18n.t("wheelchairstatus.#{wheelchairstatus}"), wheelchairstatus, class: "wheelchairstatus_#{wheelchair_status}", label: I18n.t("wheelchairstatus.#{wheelchairstatus}") ]
+    end
+    options_for_select(stati, wheelchair_status)
+  end
 end
