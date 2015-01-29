@@ -179,12 +179,15 @@ CREATE TABLE `pois` (
   `updated_at` datetime DEFAULT NULL,
   `node_type_id` bigint(20) DEFAULT NULL,
   `region_id` bigint(20) DEFAULT NULL,
+  `toilet` tinyint(1) DEFAULT NULL,
   UNIQUE KEY `index_pois_on_osm_id` (`osm_id`),
   SPATIAL KEY `index_pois_on_geom` (`geom`),
   KEY `index_pois_on_status` (`status`),
   KEY `index_pois_on_node_type_id_and_osm_id` (`node_type_id`,`osm_id`),
   KEY `index_pois_on_region_id` (`region_id`),
   KEY `index_pois_on_node_type_id_and_osm_id_and_status` (`node_type_id`,`status`,`osm_id`),
+  KEY `index_pois_on_node_type_id_and_status_and_toilet` (`node_type_id`,`status`),
+  KEY `index_pois_on_toilet_and_status` (`toilet`,`status`),
   FULLTEXT KEY `fulltext_index_pois_on_tags` (`tags`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 

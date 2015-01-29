@@ -25,7 +25,7 @@ class PlanetReader
     @processed = 0
     @parser = stream_or_file.is_a?(String) ? LibXML::XML::SaxParser.file(stream_or_file) : LibXML::XML::SaxParser.io(stream_or_file)
     @parser.callbacks = self
-    @columns = [:osm_id, :version, :tags, :geom, :status, :created_at , :updated_at, :node_type_id, :region_id]
+    @columns = [:osm_id, :version, :tags, :geom, :status, :created_at , :updated_at, :node_type_id, :region_id, :toilet]
     @columns_without_create = @columns - [:created_at]
     @to_be_created = []
     @to_be_deleted = []
@@ -195,6 +195,17 @@ class PlanetReader
     end
 
     return unless @poi[:status]
+
+    toilet = @poi[:tags]['toilets:wheelchair']
+    case toilet.try(:downcase)
+    when 'yes', 'true', '1'
+      @poi[:toilet] = true
+    when 'no', 'false', '0'
+      @poi[:toilet] = false
+    else
+      @poi[:toilet] = nil
+    end
+
     if !@osmchange
       # Neue POIs aus *.osm
       # Purer input aus einem Planet Dump.

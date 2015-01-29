@@ -29,6 +29,7 @@ class Poi < ActiveRecord::Base
 
   WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
   WHEELCHAIR_ACCESIBILITY  = {'yes' => 'fully_accessible', 'limited' => 'limited_accessible', 'no' => 'not_accessible', 'unknown' => 'unknown_accessible'}
+  WHEELCHAIR_TOILET_VALUES = {:yes => true, :no => false}
 
   belongs_to :region, :touch => false
   belongs_to :node_type, :touch => false, :include => :category
@@ -74,6 +75,7 @@ class Poi < ActiveRecord::Base
   scope :unknown_accessibility, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:unknown]}
   scope :tagged, :conditions => ['status < ?', WHEELCHAIR_STATUS_VALUES[:unknown]]
   scope :with_status,  lambda {|status| {:conditions => {:status => status}}}
+  scope :with_toilet,  lambda {|toilet| {:conditions => {:toilet => toilet}}}
   #scope :search,       lambda {|search| {:conditions => ['tags LIKE ?', "%#{search}%"]}}
   scope :search_scope, lambda {|search| {:conditions => ['MATCH (tags) AGAINST  (? IN BOOLEAN MODE)', escape_search_string(search)]}}
 
@@ -108,6 +110,10 @@ class Poi < ActiveRecord::Base
 
   def self.wheelchair(stat)
     self.with_status(WHEELCHAIR_STATUS_VALUES[stat.to_sym])
+  end
+
+  def self.toilet(stat)
+    self.with_toilet(WHEELCHAIR_TOILET_VALUES[stat.to_sym])
   end
 
   def self.lowest_id

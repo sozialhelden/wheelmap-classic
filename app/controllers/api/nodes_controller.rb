@@ -13,6 +13,7 @@ class Api::NodesController < Api::ApiController
 
   has_scope :bbox, :except => :search # we handle this manually
   has_scope :wheelchair, :except => :update
+  has_scope :toilet, :except => :update
 
   rescue_from ActionController::UnpermittedValue do |e|
     respond_to do |wants|
@@ -59,6 +60,7 @@ class Api::NodesController < Api::ApiController
   def_param_group :filters do
     param :bbox, Array, of: Float, required: false, desc: "Filter nodes by a bounding box as comma separated float numbers wich are longitude, latitude values in degrees.\nFor example bbox=13.4,52.0,13.5,52.1", meta: { order: "west,south,east,north" }
     param :wheelchair, %w{ yes limited no unknown }, required: false, desc: 'Filter nodes by a wheelchair status.'
+    param :toilet, %w{ yes no }, required: false, desc: 'Filter nodes by a toilet status.'
   end
 
   def_param_group :scopes do
@@ -162,7 +164,7 @@ class Api::NodesController < Api::ApiController
   end
 
   api :PUT, "/nodes/:id/update_wheelchair", "Update wheelchair status for a given node"
-  param :wheelchair, %w{ yes limited no }, required: true, desc: "The node's wheelchair status."
+  param :wheelchair, Poi::WHEELCHAIR_STATUS_VALUES.keys, required: true, desc: "The node's wheelchair status."
   error :code => 404, :desc => "Not Found", meta: { message: "The resource that you requested does not exist. Verify that any object id provided is valid." }
   error :code => 406, :desc => "Not Acceptable", meta: { message: "Either a parameter is missing or has a wrong value." }
   def update_wheelchair
@@ -176,7 +178,7 @@ class Api::NodesController < Api::ApiController
   end
 
   api :PUT, "/nodes/:id/update_toilet", "Update toilet status for a given node"
-  param :wheelchair_toilet, %w{ yes no }, required: true, desc: "The node's wheelchair toilet status."
+  param :wheelchair_toilet, Poi::WHEELCHAIR_TOILET_VALUES.keys, required: true, desc: "The node's wheelchair toilet status."
   error :code => 404, :desc => "Not Found", meta: { message: "The resource that you requested does not exist. Verify that any object id provided is valid." }
   error :code => 406, :desc => "Not Acceptable", meta: { message: "Either a parameter is missing or has a wrong value." }
   def update_toilet
@@ -239,7 +241,7 @@ class Api::NodesController < Api::ApiController
 
   def toilet_param
     key = :wheelchair_toilet
-    allowed_values = [:yes, :no]
+    allowed_values = Poi::WHEELCHAIR_TOILET_VALUES.keys
     params.require(key)
     value = params.permit(key).fetch(key)
     if allowed_values.include?(value.to_sym)
