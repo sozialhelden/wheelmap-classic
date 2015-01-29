@@ -2,7 +2,7 @@
 #= require jquery
 #= require jquery/jquery-migrate
 #= require jquery/jquery.cookies.js
-#= require i18n/translations
+#= require i18n.js
 #= require bootstrap
 #= require bootstrap-select
 #= require custom-bootstrap.js.coffee
@@ -21,9 +21,9 @@
 #= require_self
 #= require wheelmap
 
-I18n.defaultLocale = "en"
-I18n.fallbacks = true
+I18n.defaultLocale = 'de'
 I18n.locale = $('html').attr('lang')
+I18n.fallbacks = true
 
 Ember.Application.reopen
   # Transition end event
