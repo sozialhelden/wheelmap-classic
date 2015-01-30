@@ -6,7 +6,7 @@ set :rails_env, "staging" #added for delayed job
 set :stage, :staging
 set :deploy_to, "/var/apps/#{fetch(:application)}/#{fetch(:stage)}"
 
-set :branch, ENV['BRANCH'] || master
+set :branch, ENV['BRANCH'] || 'master'
 set :rev, proc { `git rev-parse --short #{fetch(:branch)}`.chomp }
 
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
