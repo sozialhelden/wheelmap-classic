@@ -20,7 +20,7 @@ I18n.defaultLocale = 'en'
 I18n.locale = $('html').attr('lang')
 I18n.fallbacks = true
 
-$container = $("#node")
+$container = $(".node-status")
 $container.find("[data-toggle=\"popover\"]").each ->
   $this = $(@)
   $this.popover
