@@ -122,7 +122,7 @@ $('[data-toggle="status"]').click (e) ->
 
   $buttonDropdown = $dropdown.find('[data-toggle="dropdown"]')
   $buttonDropdown.removeClass (i, j) ->
-    j.match(/yes|no|limited/g).join(' ')
+    j.match(/yes|no|limited|unknown/g).join(' ')
   $buttonDropdown.addClass(data.status)
   $buttonDropdown.find('.text').text(statusTexts.title)
 
@@ -151,8 +151,8 @@ $('[data-toggle="status-submit"]').click (e) ->
 
   post =
     _method: 'PUT'
-    wheelchair: data.status
 
+  post[data.property] = data.status
   post[csrfParam] = csrfToken
 
   $.post data.url,
