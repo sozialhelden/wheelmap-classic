@@ -6,6 +6,7 @@ Wheelmap.Node = DS.Model.extend
   name: attr()
   sponsor: attr()
   wheelchair: attr()
+  wheelchairToilet: attr()
   street: attr()
   housenumber: attr()
   postcode: attr()
@@ -17,6 +18,8 @@ Wheelmap.Node = DS.Model.extend
   website: attr()
   phone: attr()
   oldWheelchair: null
+  oldToilet: null
+  toilet: Ember.computed.alias('wheelchairToilet')
 
   wheelchairWillChange: (()->
     oldWheelchair = @get('oldWheelchair')
@@ -24,6 +27,15 @@ Wheelmap.Node = DS.Model.extend
     unless oldWheelchair?
       @set('oldWheelchair', @get('wheelchair'))
   ).observesBefore('wheelchair')
+
+  toiletWillChange: (()->
+    oldToilet = @get('oldToilet')
+
+    console.log(@get('toilet'))
+
+    unless oldToilet?
+      @set('oldToilet', @get('toilet'))
+  ).observesBefore('toilet')
 
   location: (()->
     new L.LatLng(@get('lat'), @get('lon'))
@@ -100,3 +112,4 @@ Wheelmap.NodeSerializer = DS.ActiveModelSerializer.extend
 
 Wheelmap.Node.reopenClass
   WHEELCHAIR_STATUSES: ['yes', 'limited', 'no']
+  WHEELCHAIR_TOILET_STATUSES: ['yes', 'no']
