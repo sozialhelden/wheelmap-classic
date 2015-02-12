@@ -4,6 +4,10 @@
     <h3>{{ t 'nodes.node_status.wheelchair_accessibility' }}</h3>
     {{ view Wheelmap.NodePopupStatusDropdownView }}
 
+    {{#unless isUnknown}}
+        {{ view Wheelmap.NodePopupStatusDropdownView templateName="nodes/_status-toilet-dropdown" }}
+    {{/unless}}
+
     <div class="node-popup-buttons">
         {{ partial 'node-popup/edit' }}
         {{ partial 'node-popup/share' }}
