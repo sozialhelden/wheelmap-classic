@@ -20,6 +20,10 @@
   .wheelmap-btn {
     color: darken($orange-gray, 60%);
   }
+
+  .node-status-dropdown {
+    margin-top: 7px;
+  }
 }
 
 .node-popup-header {
@@ -50,7 +54,7 @@
   h3 {
     font-size: inherit;
     line-height: inherit;
-    margin: 0 0 7px 0;
+    margin: 0;
   }
 }
 
