@@ -11,6 +11,14 @@ Wheelmap.PopupController = Wheelmap.NodesController.extend Wheelmap.WheelchairSu
       @set('wheelchair', oldWheelchair)
       @get('oldWheelchair', null)
 
+    oldToilet = @get('oldToilet')
+
+    if (oldToilet?)
+      @set('toilet', oldToilet)
+      @get('oldToilet', null)
+
+    return
+
   actions:
     close: ()->
       @get('controllers.map').send('closePopup')
@@ -21,8 +29,8 @@ Wheelmap.PopupController = Wheelmap.NodesController.extend Wheelmap.WheelchairSu
       #@resetStatus()
       @set('isPosting', false)
 
-    wheelchairSaveDone: (response)->
+    statusSaveDone: (response)->
       @get('controllers.flash-messages').pushMessage('notice', response.message)
 
-    wheelchairSaveFail: (response)->
+    statusSaveFail: (response)->
       @get('controllers.flash-messages').pushMessage('error', response.message)
