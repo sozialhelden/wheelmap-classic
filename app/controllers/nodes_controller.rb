@@ -29,6 +29,8 @@ class NodesController < ApplicationController
   def index
     normalize_bbox if params[:bbox]
     @limit = params[:limit].try(:to_i) || 300
+    # Allow max 1000 Pois per request.
+    @limit = [@limit, 1000].min
 
     @places = Poi.within_bbox(@left, @bottom, @right, @top).including_category.including_region.including_providers.limit(@limit) if @left
 
