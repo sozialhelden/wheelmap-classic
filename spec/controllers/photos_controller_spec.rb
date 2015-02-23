@@ -37,7 +37,7 @@ describe PhotosController do
       end
       it "is allowed to upload photos" do
         lambda {
-          post(:create, :photo => { :image => file }, :node_id => poi.id)
+          post(:create, :photo => { :image => file }, :node_id => poi.id, format: :json)
           response.code.should eql "200"
         }.should change(Photo, :count).by(1)
       end

@@ -68,13 +68,6 @@ describe NodesController do
      @full_url = "#{@base_url}/node/16581933"
     end
 
-    it "should send Airbrake message in case OpenStreetMap Node was not found" do
-      stub_request(:get, "http://api06.dev.openstreetmap.org/api/0.6/node/16581933").to_return(:status => 404, :body => "Not found", :headers => {})
-
-      get(:edit, :id => 16581933)
-      response.code.should == '404'
-    end
-
     # TODO reenable feature terms
     it "should redirect user to EULA page if terms and privacy policy was not accepted" do
       @another_user.update_attributes(:terms => false, :privacy_policy => false)
@@ -94,7 +87,7 @@ describe NodesController do
       @another_user.update_attributes(:terms => false, :privacy_policy => true)
       get(:edit, :id => 16581933)
 
-      response.code.should == '302'
+      expect(response).to redirect_to terms_path
     end
 
     it "should not redirect user if terms and privacy policy were accepted" do
@@ -102,7 +95,7 @@ describe NodesController do
       node.save!
       get(:edit, :id => node.osm_id)
 
-      response.code.should == '200'
+      expect(response).to redirect_to root_path(anchor: "/nodes/#{node.osm_id}/edit")
     end
 
   end
@@ -255,7 +248,7 @@ describe NodesController do
       it "should allow editing node if node is a way" do
         p = FactoryGirl.create(:poi, :osm_id => -28)
         response = get(:edit, :id => -28)
-        response.code.should == '200'
+        expect(response).to redirect_to root_path(anchor: "/nodes/-28/edit")
       end
 
       it "should redirect if app is not connected" do
