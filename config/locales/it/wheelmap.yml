@@ -317,8 +317,8 @@ it:
   support:
     array:
       last_word_connector: "e "
-      sentence_connector: and
       skip_last_comma: vero
+      sentence_connector: e
       two_words_connector: " e "
       words_connector: ", "
     select:

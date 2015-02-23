@@ -3,76 +3,81 @@ uk:
     require_no_user:
       notice: "Ви увійшли в систему ..."
     require_user:
-      notice: "Ви маєте зараєструватись, щоб переглянути цю сторінку."
+      notice: "Ви маєте зареєструватись, щоб переглянути цю сторінку."
   breadcrumbs:
     node:
       create: "Додати нове місце"
       edit: "Змінити місце"
     root: wheelmap
   common:
-    close: Закрито
-    skip: Пропускати
+    close: закрити
+    skip: пропустити
   errors:
-    dynamic_format: "% {message}"
+    dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
       accepted: "має бути прийнятий"
-      already_confirmed: "вже було підтверджено, спробуйте увійти"
+      already_confirmed: "вже було підтверджено"
       blank: "не може бути пустим"
       confirmation: "не збігається з підтвердженням"
       empty: "не може бути порожнім"
       equal_to: "має дорівнювати %{count}"
       even: "має бути парним"
-      exclusion: "Зарезервовано"
-      expired: "Прострочено, створіть новий запит"
+      exclusion: "зарезервовано"
+      expired: "прострочено, будь ласка, створіть новий запит"
       greater_than: "має бути більше ніж %{count}"
       greater_than_or_equal_to: "має бути більше або дорівнювати %{count}"
-      inclusion: "не включено до переліку"
+      inclusion: "недійсне значення"
       invalid: "недійсний"
       less_than: "має бути менше ніж %{count}"
       less_than_or_equal_to: "має бути менше або дорівнювати %{count}"
-      not_a_number: "не число"
-      not_an_integer: "не є цілим числом"
+      not_a_number: "не є числом"
+      not_an_integer: "має бути цілим числом"
       not_found: "не знайдено"
       not_locked: "не було заблоковано"
       not_saved:
-        one: "Виникла помилка, через яку неможливо зберегти зміни  %{resource}:"
-        other: "%{count} Виникли помилки, через які неможніливо збереження даних %{resource}:"
+        one: "Помилка завадила зберегти %{resource}:"
+        few: "%{count} помилки завадили зберегти %{resource}:"
+        other: "%{count} помилок завадили зберегти %{resource}:"
       odd: "має бути непарним"
       taken: "вже зайнятий"
-      too_long: "Занадто довгий (не більше% {count} символів)"
-      too_short: "занадто короткий (не менше% {count} символів)"
-      wrong_length: "має неправильну довжину (має бути% {count} символів)"
+      too_long: "занадто довгий (не більше% {count} символів)"
+      too_short: "занадто короткий (не менше %{count} символів)"
+      wrong_length: "має неправильну довжину (має бути %{count} символів)"
     template:
       body: "Помилки виявлено в таких полях:"
       header:
-        one: "Одна помилка %{model} не збережена"
-        other: "%{model} не збережено через %{count} помилки"
+        one: "1 помилка завадила зберегти %{model}"
+        few: "%{count} помилки завадили зберегти %{model}"
+        other: "%{count} помилок завадили зберегти %{model}"
   flash:
     actions:
       create:
-        notice: "%{resource_name} був успішно створений"
+        notice: "Створено %{resource_name}"
       destroy:
-        alert: "%{resource_name} не можуть бути видалені "
-        notice: "%{resource_name} був успішно видалений"
+        alert: "Не вдалось видалити %{resource_name}"
+        notice: "%{resource_name} видалено"
       update:
-        notice: "%{resource_name} був успішно оновлений"
+        notice: "%{resource_name} оновлено"
+    photos:
+      destroy:
+        notice: "Зображення успішно видалено"
   form:
-    show_fully_accessible_places: "Інвалідний візок"
-    show_limited_accessible_places: "Частковий доступ для людей на інвалідних візках"
-    show_places_without_status: "Невідомий статус"
-    show_unaccessible_places: "Не адаптовано для людей на інвалідних візках"
+    show_fully_accessible_places: "Доступне для людей на інвалідних візках"
+    show_limited_accessible_places: "частково доступне"
+    show_places_without_status: "невідомий статус"
+    show_unaccessible_places: "не адаптовано для людей на інвалідних візках"
   formtastic:
     hints:
-      email: "Ми гарантуємо конфіденційність вашої електоронної адреси."
+      email: "Ми гарантуємо конфіденційність вашої електронної адреси. Обіцяємо, ніякого спаму."
       lat: "Перемістіть маркер на карті у правильне положення"
-      osm_username: "Ще не зареєстровані? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>"
-      password: "(Залишити порожнім, якщо ви не хочете його зінити)"
-      phone: "Наприклад: +49 30 123456-78"
+      osm_username: "Ще не зареєстровані? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Створіть обліковий запис на OpenStreetMap</a>"
+      password: "(Залиште порожнім, якщо не хочете змінювати)"
+      phone: "Наприклад: +38 044 1234567"
       website: "Наприклад: http://www.example.com"
     labels:
       category: "Категорія:"
-      centralkey: "Центральна клавіша"
+      centralkey: "Центральний ключ:"
       city: "Місто:"
       create: "Створити місце"
       email: Електронна адреса
@@ -80,42 +85,45 @@ uk:
       housenumber: "Ні:"
       lat: Широта
       lon: Довгота
-      name: "Ім'я:"
-      osm_password: "OSM пароль"
-      osm_username: "OSM ім'я аккаунту"
+      name: "Назва:"
+      osm_password: "пароль OSM"
+      osm_username: "Ім'я облікового запису на OSM"
       password: Пароль
       password_confirmation: "Повторіть пароль"
       phone: "Телефон"
       postcode: "Поштовий індекс:"
-      reset: Перезапис
+      privacy_policy: "Я приймаю умови параграфів 1 та 2 угоди про конфіденційність даних."
+      reset: Скинути
       save: Зберегти
       street: "Вулиця:"
+      terms: "Я приймаю умови використання."
       type: "Тип:"
-      website: "Веб-сайт:"
-      wheelchair: "Чи доступно для  людей на інвалідних віках?"
-      wheelchair_description: "Доступність коментування:"
+      website: "Веб-сторінка:"
+      wheelchair: "Чи доступно для людей на інвалідних візках?"
+      wheelchair_description: "Коментар про доступність:"
     titles:
       basic: "Основні дані"
-      optional: "Більш детальна інформація <span class=\"addition\"> (всі поля є обов'язковими) </ span>"
+      optional: "Більш детальна інформація <span class=\"addition\">(всі поля - необов’язкові)</ span>"
   global:
-    form_validation_error: "Будь-ласка, зверніть увагу на помилки перераховані нижче"
+    form_validation_error: "Будь-ласка, зверніть увагу на помилки, перераховані нижче"
   header:
     meta:
       description: "Знайти місця адаптовані для людей з інвалідністю - wheelmap.org"
-      homepage: "Домашня сторінка:"
-      keywords: "Пошук місць, адаптованих для людей з інвалідними візками"
+      homepage: "Головна"
+      keywords: "пошук місць доступних для людей на інвалідних візках"
       search: Пошук
     navigation:
-      blog: Блог
+      blog: Новини
       feedback: Відгуки
       home: Старт
       how_to_add_a_place: "Як я можу додати місця?"
-      imprint: Зворотній зв'язок
+      imprint: Імпринт
       logged_in_as: "Ви увійшли як:"
       login: "Увійти"
       logout: "Вихід"
-      newsletter: Інформаційне повідомлення
+      newsletter: Інформаційний бюлетень
       press: Преса
+      profile: Профіль
       suggestions: Пропозиції
       what_is_barrier_free: "Що означає \"доступ для людей на інвалідних візках\"?"
       what_is_wheelmap: "Що таке wheelmap?"
@@ -123,55 +131,55 @@ uk:
       add_place: "Додати інше місце"
       find: Знайти
       label: ~
-      placeholder: "тобто бульвар Сансет в Лос-Анджелесі або Бранденбурзьких воріт у Берліні"
-      title_add_place: "Додати нове місце в цій позиції!"
-    tagline: "Лготип Wheelmap"
-    title: "Wheelmap - знаходить місця для людей з інвалідністю"
+      placeholder: "Шукати місце"
+      title_add_place: "Додати тут нове місце."
+    tagline: "Логотип Wheelmap"
+    title: "пошук місць з доступом для людей на інвалідних візках"
   helpers:
     select:
       prompt: "Оберіть: "
     submit:
-      create: "Створити %{model}"
-      submit: "Зберегти %{model}"
-      update: "Зберегти %{model}"
+      create: "cтворити %{model}"
+      submit: "зберегти %{model}"
+      update: "оновити %{model}"
   home:
     index:
       filter:
         category: "Оберіть категорію"
-        deselect_all: "Скасувати всі"
+        deselect_all: "Скасувати вибір"
         select_all: "Вибрати всі"
-        wheelchair: "Чи адаптовано для людей на інвалідних візках?"
+        wheelchair: "Чи доступно для людей на інвалідних візках?"
       ie:
         action:
-          ignore: Відхилено
-          upgrade: "Оновлення браузера"
+          ignore: Ігнорувати
+          upgrade: "Оновлення переглядача"
         warning:
-          headline: "Приносимо свої вибачення!"
-          message: "Ви, напевне, використовуєте Internet Explorer. Wheelmap потрібна відповідність стандартам браузера для коректної роботи. Будь ласка, спробуйте використати Firefox, Chrome, Safari або Opera."
+          headline: "Вибачте!"
+          message: "Ви, схоже, використовуєте Internet Explorer. Wheelmap потрібен переглядач, що відповідає стандартам для коректної роботи. Будь ласка, подумайте про використання Firefox, Chrome, Safari або Opera."
       link:
         node:
           create: "Додати нове місце"
       popup:
         form:
-          limited: "Частковий доступ для людей на інвалідних візках"
-          'no': "Не адаптоване для людей на інвалідних візках"
+          limited: "частковий доступ"
+          'no': "недоступне"
           save: Оновлення
-          unknown: "Невідомий статус"
-          'yes': "Інвалідний візок"
-        help: "Чи є доступн для людей на інвалідних візках? (Довідка)"
-        more: "Детальніше ..."
+          unknown: "статус невідомий"
+          'yes': "доступне для людей на інвалідних візках"
+        help: "Чи є доступ для людей на інвалідних візках? (Довідка)"
+        more: "детальніше ..."
   how?: Як?
   landing_pages:
     index:
       wheelchair:
         limit:
-          headline: "Всі місця обмежені для людей на інвалідних візках %{type} в %{city} (%{count})"
+          headline: "Усі місця типу \"%{type}\" з обмеженим доступом у місті %{city} (%{count})"
         'no':
-          headline: "Немає місць адаптованих для людей на інвалідних візках %{type} в %{city} (%{count})"
+          headline: "Усі недоступні місця типу \"%{type}\" у місті %{city} (%{count})"
         unknown:
-          headline: "Всі % {type} в % {city} з невідомим статусом для людей з інвалідними візками (% {count})"
+          headline: "Усі місця типу \"%{type}\" у місті %{city} з невідомим статусом (%{count})"
         'yes':
-          headline: "Все адаптоване  для людей на інвалідних візках %{type} в %{city} (%{count})"
+          headline: "Усі місця типу \"%{type}\" з доступом для людей на інвалідних візках у місті %{city} (%{count})"
   layouts:
     application:
       banner:
@@ -182,31 +190,31 @@ uk:
       street: "%{housenumber} %{street}"
     tags:
       phone: "Телефон:"
-      website: "Вебсайт:"
+      website: "Веб-сторінка:"
   nodes:
     create:
       flash:
-        not_successfull: "На жаль, введена Вами інформація не вірна або не повна"
-        successfull: "Спасибі, Ваша заявка була успішно збережена і буде виконана найближчим часом."
+        not_successfull: "На жаль, введена Вами інформація неправильна або неповна"
+        successfull: "Дякуємо, Ваше доповнення збережено і найближчим часом з’явиться на карті."
     edit:
       header:
-        title: "змінити місце:%{node} | wheelmap.org"
+        title: "Змінити місце: %{node} | wheelmap.org"
       link:
-        large_map: "Скасування"
+        large_map: "&laquo; Скасувати"
     errors:
       default: "Щось пішло не так. Ми були поінформовані про цю проблему"
       not_authorized: "На жаль, аутентифікація не вдалася"
       not_available: "Вибачте, ця сторінка тимчасово недоступна."
-      not_existent: "Вибачте, це місце більше не доступне"
+      not_existent: "Вибачте, цієї точки більше не існує на карті."
       not_found: "Сторінку не знайдено"
-      param_missing: "Знайдіть, будь-ласка"
+      param_missing: "Будь ласка, введіть пошуковий запит"
     flash:
-      authorize_wheelmap: "Для зміни даних вам необхідний аккаунт в OpenStreetMap"
+      authorize_wheelmap: "Для зміни даних вам необхідно мати обліковий запис OpenStreetMap"
     new:
       header:
-        title: "Нове місце| wheelmap.org"
+        title: "Нове місце | wheelmap.org"
       link:
-        large_map: "Скасування"
+        large_map: "&laquo; Скасувати"
     node:
       link:
         claim: "Ви працюєте тут?"
@@ -218,37 +226,38 @@ uk:
       link:
         back: назад
         large_map: Збільшити
-        listing: "Всі місця за типами '% {type}' в % {city} "
+        listing: "Усі місця типу \"%{type}\" у місті %{city}"
+        upload: "Вивантажити зображення"
       more_data_from: "Існує більше даних для цього місця, перевіряються:"
       show-in-osm: OpenStreetMap
     update:
       flash:
-        not_successfull: "На жаль, введені Вами дані  були або невірними або неповними"
-        successfull: "Спасибі, ваша заявка була успішно збережена і буде виконана найближчим часом."
+        not_successfull: "На жаль, введені Вами дані були неправильними або неповними"
+        successfull: "Дякуємо, Ваше доповнення збережено і найближчим часом з’явиться на карті."
     update_wheelchair:
-      successfull: "Статус для \"%{name}\" було змінено на \"%{status}\" та буде відображено найближчим часом."
+      successfull: "Статус \"%{name}\" було змінено на \"%{status}\" та буде оновлений на карті найближчим часом."
   number:
     currency:
       format:
-        delimiter: ","
+        delimiter: " "
         format: "%n %u"
         precision: 2
-        separator: "."
         significant: 0
         strip_insignificant_zeros: 0
-        unit: грн.
+        separator: ","
+        unit: ₴
     format:
-      delimiter: " ,"
       precision: 3
-      separator: ",."
       significant: 0
       strip_insignificant_zeros: 0
+      delimiter: " "
+      separator: ","
     human:
       decimal_units:
         format: "%n %u"
         units:
           billion: Мільярд
-          million: мільйон
+          million: Мільйон
           quadrillion: Квадрільон
           thousand: Тисяча
           trillion: Трильйон
@@ -262,8 +271,9 @@ uk:
         format: "%n %u"
         units:
           byte:
-            one: байт
-            other: байти
+            one: Байт
+            few: Байти
+            other: Байт
           gb: ГБ
           kb: КБ
           mb: МБ
@@ -277,13 +287,14 @@ uk:
   oauth:
     application:
       connect:
-        headline: "Вам необхідно підключити ваш профіль з урахуванням реєстрації на 'open street map' для того, щоб додавати нові місця на wheelmap.org."
+        headline: "Вам необхідно підключити ваш обліковий запис OpenStreetMap щоб додавати нові місця на wheelmap.org."
     callback:
-      notice: "Ваш wheelmap аккаунт підключено до аккаунту OpenStreetMap %{user}."
-  or: чи
+      notice: "Ваш обліковий запис wheelmap підключено до облікового запису OpenStreetMap %{user}."
+  or: або
   place:
-    one: "% {count} місце"
-    other: "%{count} місце"
+    one: "%{count} місце"
+    few: "%{count} місця"
+    other: "%{count} місць"
   profile:
     edit:
       application:
@@ -299,12 +310,12 @@ uk:
         for: "Пошук \"%{q}\""
         not_found: "Жодного місця не знайдено"
   splash:
-    countline: "%{count} місця вже були відзначені."
-    headline: "Кожен може додати місця, що адаптовані для людей на інвалідних візках."
+    countline: "%{count} місця вже були позначені."
+    headline: "Кожен може додати місця, доступні для людей на інвалідних візках."
     start: Старт
-    step1: "Клікніть на місце, яке ви знаєте"
-    step2: "Відзначити його і натисніть кнопку Зберегти"
-    step3: "От і все! Жодні реєстрації не потрібні"
+    step1: "Натисніть на місце, яке ви знаєте"
+    step2: "Виберіть його статус і натисніть Зберегти"
+    step3: "І все! Реєстрація не потрібна"
     what_is_wheelmap: "Що таке wheelmap?"
   statistics: Статистика
   support:
@@ -326,58 +337,61 @@ uk:
   user_sessions:
     create:
       activation:
-        notice: "Ваш профіль буде активовано зараз!"
+        notice: "Ваш обліковий запис активовано!"
       error:
-        notice: "Електронна пошта та пароль не збігаються."
+        notice: "Електронна пошта чи пароль недійсні."
       notice: "Ви увійшли!"
     destroy:
-      notice: "Бувай, до скорого повернення!"
+      notice: "Бувай, заходь ще!"
     new:
       email: "Адреса електронної пошти"
       login: "Увійти"
-      login_with_twitter: "Увійти в Twitter"
+      login_with_twitter: "Увійти через Twitter"
       password: Пароль
       remember_me: "Запам'ятати мене"
   users:
     after_signup_edit:
       welcome:
-        headline: "Запрошуємо до wheelmap"
-        set_password_for_mobile: "У вас є смартфон? Будь ласка, задайте пароль для того, щоб використовувати Wheelmap на ходу в повсякденному житті за допомогою iPhone або Android."
+        headline: "Майже все. Завершіть реєстрацію облікового запису Wheelmap тут:"
+        set_password_for_mobile: "Реєстрацію на OpenStreetMap завершено.\nТепер виберіть електронну пошту і пароль для облікового запису Wheelmap і все. Вони вам знадобляться для використання Wheelmap на Android чи iPhone."
         text: "Як ми можемо зв'язатися з вами? Ви можете змінити цю інформацію пізніше в своєму профілі."
+    edit:
+      headline:
+        your_images: "Ваші вивантажені зображення"
   wheelchairstatus:
-    limited: "Частковий доступ для людей на інвалідних візках"
-    'no': "Не адаптоване для людей на інвалідних візках"
-    unknown: "Невідомий статус"
-    'yes': "Інвалідний візок"
+    limited: "частковий доступ для людей на інвалідних візках"
+    'no': "недоступне для людей на інвалідних візках"
+    unknown: "невідомий статус"
+    'yes': "доступне для людей на інвалідних візках"
   wheelmap:
     footer:
       a_project_of: "Проект"
       based_on: "На основі"
-      become_a_supporter: "Отримати допомогу"
-      main_supporter: "Головна підтримка"
+      become_a_supporter: "Стати спонсором"
+      main_supporter: "Головний спонсор"
     itunes:
       alt: "Логотип AppStore"
-      title: "Завантажити iPhone App зараз!"
+      title: "Завантажуйте iPhone App!"
     logo:
-      alt: "Wheelmap Логотип - знайди місця, адаптовані для людей на інвалідних візках"
-      title: "Wheelmap - знайти місця, що доступні для людей на інвалідних візках"
+      alt: "Логотип Wheelmap - пошук місць, доступних для людей на інвалідних візках"
+      title: "Wheelmap - пошук місць, що доступні для людей на інвалідних візках"
     what_is:
-      fully_accessible: "<em> Є доступ: </ EM> вхід без сходинок, всі приміщення та кімнати без сходинок, адаптований туалет в загальних місцях"
-      limited_accessible: "при вході сходи (максимальна висота 7 см), більшість кімнат та приміщень без сходинок, туалет не адаптований."
-      not_accessible: "вхід має круті сходи, приміщення та кімнати не адаптовані"
-      unknown_accessible: "допоможи відзначити статус доступу місць для людей на інвалідних візках!"
+      fully_accessible: "Вхід без сходинок, всі приміщення без сходинок, адаптований туалет, якщо є"
+      limited_accessible: "При вході сходинка не вище 7 см, більшість приміщень без сходинок, туалет не адаптований"
+      not_accessible: "Круті сходи на вході, приміщення недоступні"
+      unknown_accessible: "Допоможіть позначити доступність місць!"
   will_paginate:
-    next_label: "Наступний &#8594;"
+    next_label: "Далі &#8594;"
     page_entries_info:
-      multi_page: "Відображення %{model} %{from} - %{to} of %{count} в цілому"
-      multi_page_html: "Показувати %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> з <b>%{count}</b> в цілому"
+      multi_page: "Показано %{model} %{from} - %{to} з %{count} загалом"
+      multi_page_html: "Показано %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> з <b>%{count}</b> загалом"
       single_page:
-        one: "Показано 1% {model}"
-        other: "Показати все %{count} %{model}"
-        zero: "Не %{model} знайдено"
+        one: "Показано 1 %{model}"
+        other: "Показано усі %{count} %{model}"
+        zero: "%{model} не знайдено"
       single_page_html:
-        one: "відображення <b>1</b> %{model}"
-        other: "Показати <b>all&nbsp;%{count}</b> %{model}"
-        zero: "Не %{model} знайдено"
+        one: "Показано <b>1</b> %{model}"
+        other: "Показано <b>усі&nbsp;%{count}</b> %{model}"
+        zero: "%{model} не знайдено"
     page_gap: "&hellip;"
-    previous_label: "&#8592; Попередній"
+    previous_label: "&#8592; Назад"

@@ -8,9 +8,10 @@ lv:
     node:
       create: "Pievienot jaunu vietu"
       edit: "Labot vietu"
-    root: "wheelmap"
+    root: wheelmap
   common:
     close: aizvērt
+    skip: izlaist
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"

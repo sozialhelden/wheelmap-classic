@@ -31,13 +31,13 @@ zh_TW:
       invalid: "無效"
       less_than: "必須小於 %{count}"
       less_than_or_equal_to: "必須少於或等於 %{count}"
-      not_saved:
-        one: "因為1個錯誤導致此 %{resource} 存檔失敗："
-        other: "因為 %{count} 個錯誤導致此 %{resource} 存檔失敗："
       not_a_number: "不是數字"
       not_an_integer: "必須是整數"
       not_found: "没有找到"
       not_locked: "沒有被鎖定"
+      not_saved:
+        one: "因為1個錯誤導致此 %{resource} 存檔失敗："
+        other: "因為 %{count} 個錯誤導致此 %{resource} 存檔失敗："
       odd: "必須為奇數"
       taken: "已被使用"
       too_long: "太長 (不能長於 %{count} 字元)"

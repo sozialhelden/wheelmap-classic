@@ -64,9 +64,9 @@ ru:
         notice: "Изображение успешно удалено"
   form:
     show_fully_accessible_places: "доступно на кресле-коляске"
-    show_limited_accessible_places: "частично доступно"
+    show_limited_accessible_places: "частично доступно "
     show_places_without_status: "неизвестный статус"
-    show_unaccessible_places: "не доступно"
+    show_unaccessible_places: "не доступно "
   formtastic:
     hints:
       email: "Мы сохраним ваш адрес в секрете и не будем отправлять на него спам. Обещаем!"
@@ -161,7 +161,7 @@ ru:
       popup:
         form:
           limited: "частично доступно"
-          'no': "не доступно"
+          'no': "не доступно "
           save: обновление
           unknown: "Статус неизвестен"
           'yes': "доступно на кресле-коляске"

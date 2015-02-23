@@ -270,10 +270,10 @@ fr:
           byte:
             one: octet
             other: octets
-          gb: 'GB '
-          kb: 'KB '
-          mb: MB
-          tb: TB
+          gb: Go
+          kb: Ko
+          mb: Mo
+          tb: To
     percentage:
       format:
         delimiter: ~
