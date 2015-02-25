@@ -22,7 +22,7 @@ Wheelmap.SpinMixin = Ember.Mixin.create
         @spinner = null
 
 Wheelmap.TileLayer = EmberLeaflet.TileLayer.extend
-  tileUrl: 'http://{s}.tiles.mapbox.com/v3/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.png256'
+  tileUrl: 'http://{s}.tiles.mapbox.com/v4/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.png64?access_token=pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g'
   options:
     maxZoom: 19
     minZoom: 2
