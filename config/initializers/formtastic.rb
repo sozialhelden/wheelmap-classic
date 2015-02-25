@@ -42,8 +42,8 @@ Formtastic::FormBuilder.required_string = "*"
 # Formtastic uses the following classes as default for hints, inline_errors and error list
 
 # If you override the class here, please ensure to override it in your stylesheets as well
-# Formtastic::FormBuilder.default_hint_class = "inline-hints"
-# Formtastic::FormBuilder.default_inline_error_class = "inline-errors"
+Formtastic::FormBuilder.default_hint_class = "inline-hints"
+Formtastic::FormBuilder.default_inline_error_class = "inline-errors"
 # Formtastic::FormBuilder.default_error_list_class = "errors"
 
 # Set the method to call on label text to transform or format it for human-friendly

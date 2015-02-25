@@ -7,11 +7,11 @@
         %label.small{:style => 'margin-bottom:40px'} &nbsp;
         %p= t('.welcome.set_password_for_mobile')
 
-      = form.input :email, :required => true, :hint => true, :hint_class => [:small, 'inline-hints'], :label_html => {:class => :small }, :error_class => ['inline-errors', 'small']
+      = form.input :email, hint: true, required: true
       = form.input :first_time, :as => :hidden, :input_html => { :value => @user.encrypted_password.blank? ? '1' : '0' }
     = form.inputs do
-      = form.input :password, :hint => false, :required => true, :label_html => {:class => :small }, :error_class => ['inline-errors', 'small']
-      = form.input :password_confirmation, :hint => false, :required => true, :label_html => {:class => :small }, :error_class => ['inline-errors', 'small']
+      = form.input :password, hint: false, required: true
+      = form.input :password_confirmation, hint: false, required: true
 
     = form.actions do
       %ol
