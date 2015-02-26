@@ -282,7 +282,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     }
   }
 
-  @media (max-width: 580px), (min-width: 768px) and (max-width: 979px) {
+  @media (max-width: 979px) {
     .span6 {
       float: none;
       width: 100%;
