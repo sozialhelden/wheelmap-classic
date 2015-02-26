@@ -6,7 +6,7 @@
                 <li>
                     <a {{ action 'setWheelchair' status }} {{ bind-attr class=":btn :wheelchair status" }}>
                         {{ wheelchair-checkbox wheelchair=status status=wheelchair }}
-                        {{ t 'home.index.popup.form' status }}
+                        {{ t 'wheelchairstatus' status }}
                         {{ wheelchair-popover tagName="i" classNames="icon-question-sign" wheelchair=status }}
                     </a>
                 </li>
@@ -35,7 +35,7 @@
                 <li>
                     <a {{ action 'setWheelchair' status }}>
                         {{ wheelchair-checkbox wheelchair=status status=wheelchair classNameBindings=":wheelchair" }}
-                        {{ t 'home.index.popup.form' status }}
+                        {{ t 'wheelchairstatus' status }}
                         {{ wheelchair-popover tagName="i" classNames="icon-question-sign" wheelchair=status }}
                     </a>
                 </li>
