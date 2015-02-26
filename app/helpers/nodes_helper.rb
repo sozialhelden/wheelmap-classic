@@ -28,4 +28,12 @@ module NodesHelper
     end
     options_for_select(stati, wheelchair_status)
   end
+
+  def options_for_toilet(toilet_status)
+    stati = []
+    Poi::WHEELCHAIR_TOILET_VALUES.keys.each do |toiletstatus|
+      stati << [I18n.t("toiletstatus.#{toiletstatus}"), toiletstatus, class: "wheelchairstatus_#{toilet_status}", label: I18n.t("toiletstatus.#{toiletstatus}") ]
+    end
+    options_for_select(stati, toilet_status)
+  end
 end

@@ -29,7 +29,7 @@ class Poi < ActiveRecord::Base
 
   WHEELCHAIR_STATUS_VALUES = {:yes => 1, :limited => 2, :no => 4, :unknown => 8}
   WHEELCHAIR_ACCESIBILITY  = {'yes' => 'fully_accessible', 'limited' => 'limited_accessible', 'no' => 'not_accessible', 'unknown' => 'unknown_accessible'}
-  WHEELCHAIR_TOILET_VALUES = {:yes => true, :no => false}
+  WHEELCHAIR_TOILET_VALUES = {:yes => true, :no => false, :unknown => nil}
 
   belongs_to :region, :touch => false
   belongs_to :node_type, :touch => false, :include => :category
