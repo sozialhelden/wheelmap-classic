@@ -331,6 +331,10 @@ de:
       long: "%A, %e. %B %Y, %H:%M Uhr"
       short: "%e. %B, %H:%M Uhr"
     pm: nachmittags
+  toiletstatus:
+    'no': "Kein Rollstuhlgerechtes WC"
+    unknown: "Unbekannter Status"
+    'yes': "Rollstuhlgerechtes WC"
   user_sessions:
     create:
       activation:

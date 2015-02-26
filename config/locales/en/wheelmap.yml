@@ -336,6 +336,10 @@ en:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+  toiletstatus:
+    'no': "no wheelchair accessible bathroom"
+    unknown: "unknown status"
+    'yes': "wheelchair accessible bathroom"
   user_sessions:
     create:
       activation:

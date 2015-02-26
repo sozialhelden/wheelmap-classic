@@ -5,8 +5,8 @@ de:
       poi:
         name: Name
         type: Typ
-        address: Addresse
-        website: Webseite
+        address: Adresse
+        website: Website
         phone: Telefon
         note: Hinweise
         address_street: Straße
@@ -15,12 +15,9 @@ de:
         address_city: Stadt
   faq:
     answers:
-      0: Du kannst die Markierung jederzeit selbst ändern. Einfach die richtige Markierung
-        wählen und "Speichern" - fertig!
-      1: Als angemeldeter Nutzer kannst du alle Angaben zu einem Ort selbst ändern.
-        Klicke auf "Bearbeiten" und korrigiere oder ergänze die Angaben.
-      2: Du kannst zusätzliche Informationen (z.B. "Dieser Ort hat eine Rampe") als
-        Hinweis hinterlassen. Klicke auf "Bearbeiten" und "Kommentar verfassen".
+      0: Du kannst die Markierung jederzeit selbst ändern. Einfach die richtige Markierung wählen und "Speichern" - fertig!
+      1: Als angemeldeter Nutzer kannst du alle Angaben zu einem Ort selbst ändern. Klicke auf "Bearbeiten" und korrigiere oder ergänze die Angaben.
+      2: Du kannst zusätzliche Informationen (z.B. "Dieser Ort hat eine Rampe") als Hinweis hinterlassen. Klicke auf "Bearbeiten" und "Kommentar verfassen".
     headline: Gibt es ein Problem mit diesem Ort?
     questions:
       0: Die Markierung ist falsch.
@@ -41,8 +38,7 @@ de:
         button: Okay, los geht's!
         categories: Kategorien filtern
         filter: Ergebnisse auf der Karte nach Rollstuhlgerechtigkeit filtern
-        headline: 'Mit Wheelmap.org kannst Du rollstuhlgerechte Orte finden und markieren
-          - weltweit und kostenlos. So einfach gehts:'
+        headline: 'Mit Wheelmap.org kannst Du rollstuhlgerechte Orte finden und markieren - weltweit und kostenlos. So einfach gehts:'
         lookup: Direkt Orte finden
         secondary_headline: 'Das Ampelsystem zum Markieren der Rollstuhlgerechtigkeit:'
   nodes:
@@ -75,8 +71,7 @@ de:
     show:
       header:
         meta:
-          description: Finde auf Wheelmap.org heraus, ob der Ort rollstuhlgerecht
-            ist. Oder füge Informationen und Bilder zu dem Ort hinzu.
+          description: Finde auf Wheelmap.org heraus, ob der Ort rollstuhlgerecht ist. Oder füge Informationen und Bilder zu dem Ort hinzu.
           title: 'Dieser Ort ist auf Wheelmap.org: %{name}'
       share:
         email: E-Mail
@@ -89,12 +84,8 @@ de:
         headline: Wir konnten leider keinen Ort mit dem Namen "%{query}" finden.
         hint:
           example: <strong>Beispiel:</strong> Berlin, Deutschland
-          info: Unser Suchdienst kann nur nach Adressen und Namen suchen. Ortstypen
-            wie z.B. "Restaurant" oder "Kino" können über die Suche nicht gefunden
-            werden. Gib deswegen bitte entweder den Namen des Ortes ein oder die Adresse
-            (z.B. Straße oder Stadt).
-          work_in_progress: Wir arbeiten daran, dass du bald noch einfacher und intuitiver
-            Orte finden kannst.
+          info: Unser Suchdienst kann nur nach Adressen und Namen suchen. Ortstypen wie z.B. "Restaurant" oder "Kino" können über die Suche nicht gefunden werden. Gib deswegen bitte entweder den Namen des Ortes ein oder die Adresse (z.B. Straße oder Stadt).
+          work_in_progress: Wir arbeiten daran, dass du bald noch einfacher und intuitiver Orte finden kannst.
         try_this:
           address: Gib bitte eine <strong>genauere Adresse</strong> ein.
           intro: 'Versuch doch mal Folgendes:'
