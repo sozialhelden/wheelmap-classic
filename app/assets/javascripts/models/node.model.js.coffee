@@ -31,8 +31,6 @@ Wheelmap.Node = DS.Model.extend
   toiletWillChange: (()->
     oldToilet = @get('oldToilet')
 
-    console.log(@get('toilet'))
-
     unless oldToilet?
       @set('oldToilet', @get('toilet'))
   ).observesBefore('toilet')
@@ -42,8 +40,12 @@ Wheelmap.Node = DS.Model.extend
   ).property('lat', 'lon')
 
   statusText: (()->
-    I18n.t('wheelchairstatus.' + @get('wheelchair'));
+    I18n.t('home.index.popup.form.' + @get('wheelchair'));
   ).property('wheelchair')
+
+  toiletText: (()->
+    I18n.t('home.index.popup.form.' + @get('wheelchairToilet'));
+  ).property('wheelchairToilet')
 
   headline: (()->
     @get('name') || @get('type.name')
