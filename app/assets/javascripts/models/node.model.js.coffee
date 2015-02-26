@@ -40,11 +40,11 @@ Wheelmap.Node = DS.Model.extend
   ).property('lat', 'lon')
 
   statusText: (()->
-    I18n.t('home.index.popup.form.' + @get('wheelchair'));
+    I18n.t('wheelchairstatus.' + @get('wheelchair'));
   ).property('wheelchair')
 
   toiletText: (()->
-    I18n.t('home.index.popup.form.' + @get('wheelchairToilet'));
+    I18n.t('toiletstatus.' + @get('wheelchairToilet'));
   ).property('wheelchairToilet')
 
   headline: (()->
