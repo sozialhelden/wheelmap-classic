@@ -1,7 +1,7 @@
 %section.node-status
+  %h2=t('.wheelchair_accessibility')
   .row-fluid
     .span6.node-status-dropdown
-      %h2=t('.wheelchair_accessibility')
       .dropdown
         %a{:'data-toggle' => 'dropdown', class: "dropdown-toggle btn wheelchair #{node_status.wheelchair}", :'data-status' => node_status.wheelchair}
           %span.pull-left.text= t("wheelchairstatus.#{node_status.wheelchair}")
@@ -21,7 +21,6 @@
               =t('formtastic.labels.save')
 
     .span6.node-status-dropdown
-      %h2=t('.accessible_toilet')
       .dropdown
         %a{:'data-toggle' => 'dropdown', class: "dropdown-toggle btn wheelchair #{node_status.wheelchair_toilet}", :'data-status' => node_status.wheelchair_toilet}
           %span.pull-left.text= t("toiletstatus.#{node_status.wheelchair_toilet}")
