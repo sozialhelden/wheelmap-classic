@@ -1,8 +1,8 @@
-<div class="btn-toolbar">
-    <button class="btn btn-info btn-toggle-searchbar">
+<div class="toolbar-content">
+    <button class="btn btn-info toolbar-toggle-searchbar" data-toggle="searchbar" data-target=".toolbar-searchbar-form">
         <i class="icon-search icon-light"></i>
     </button>
-    <form action="/search" class="searchbar-form" method="GET">
+    <form action="/search" class="toolbar-searchbar-form" method="GET">
         <div class="input-append">
             {{ view Wheelmap.SearchbarView }}
             {{ view Wheelmap.SearchbarButtonView }}
@@ -21,6 +21,7 @@
         </button>
         <ul class="dropdown-menu" role="menu">
             {{#each}}
+                {{}}
                 <li {{ bind-attr class="isActive:selected" }}>
                     <a {{ action toggleCategoryIsActive }}>
                         <span class="pull-left">

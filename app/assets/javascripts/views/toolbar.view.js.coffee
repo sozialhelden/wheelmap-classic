@@ -1,5 +1,5 @@
 Wheelmap.ToolbarView = Ember.View.extend
-  elementId: 'toolbar'
+  classNames: 'toolbar'
   templateName: 'toolbar'
 
   init: ()->
@@ -17,10 +17,10 @@ Wheelmap.ToolbarView = Ember.View.extend
     @$('.category-filter').toggleClass('dropup', $(window).width() < 767)
 
   addToggleSearchbar: (()->
-    $searchbar = @$('.searchbar-form')
+    toolbarView = @
 
-    @$('.btn-toggle-searchbar').click ()->
-      $searchbar.toggleClass('active');
+    toolbarView.$('[data-toggle="searchbar"]').click ->
+      toolbarView.$($(@).data('target')).toggleClass('active');
   ).on('didInsertElement')
 
   categoryButton: (()->
