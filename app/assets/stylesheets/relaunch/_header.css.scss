@@ -119,10 +119,6 @@ div.language-select {
     li:last-child a {
       border:none;
     }
-    > li > a:hover {
-      @include background(linear-gradient(top, rgb(107, 132, 155), rgb(77, 100, 122)));
-      @include filter-gradient(#96c14e, #4d647a, vertical);
-    }
     dt {
       font-size:12px;
       padding: 2px 0 0 9px!important;
