@@ -5,7 +5,7 @@
       .dropdown
         %a{:'data-toggle' => 'dropdown', class: "dropdown-toggle btn wheelchair #{node_status.wheelchair}", :'data-status' => node_status.wheelchair}
           %span.pull-left.text= t("wheelchairstatus.#{node_status.wheelchair}")
-          %i.pull-left.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.#{node_status.wheelchair}"), 'data-content' => t("wheelmap.what_is.#{node_status.accesibility}"), 'data-trigger' => 'hover'}
+          %i.pull-left.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("wheelchairstatus.#{node_status.wheelchair}"), 'data-content' => t("wheelmap.what_is.#{node_status.accesibility}"), 'data-trigger' => 'hover'}
           = fa_icon('caret-down', class: 'pull-right')
         %ul.dropdown-menu{'role' => 'menu'}
           - %w{yes limited no}.each do |status|
@@ -14,7 +14,7 @@
                 %span.wm-checkbox{'class' => ["wheelchair #{status}", (node_status.wheelchair == status ? 'checked' : nil)]}
                   %i.icon-ok
                 %span.text= t("wheelchairstatus.#{status}")
-                %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.#{status}"), 'data-content' => t("wheelmap.what_is.#{node_status.accesibility}"), 'data-trigger' => 'hover'}
+                %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("wheelchairstatus.#{status}"), 'data-content' => t("wheelmap.what_is.#{node_status.accesibility}"), 'data-trigger' => 'hover'}
 
           %li.submit
             %button.btn{:'data-toggle' => 'status-submit', :'data-url' => update_wheelchair_node_url(node_status, :format => :js), :'data-property' => 'wheelchair', disabled: 'disabled'}
@@ -25,7 +25,7 @@
       .dropdown
         %a{:'data-toggle' => 'dropdown', class: "dropdown-toggle btn wheelchair #{node_status.wheelchair_toilet}", :'data-status' => node_status.wheelchair_toilet}
           %span.pull-left.text= t("toiletstatus.#{node_status.wheelchair_toilet}")
-          %i.pull-left.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.#{node_status.wheelchair_toilet}"), 'data-content' => t("wheelmap.what_is.#{node_status.accesibility}"), 'data-trigger' => 'hover'}
+          %i.pull-left.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("toiletstatus.#{node_status.wheelchair_toilet}"), 'data-content' => t("wheelmap.what_is.#{node_status.accesibility}"), 'data-trigger' => 'hover'}
           = fa_icon('caret-down', class: 'pull-right')
         %ul.dropdown-menu{'role' => 'menu'}
           - %w{yes no}.each do |status|
@@ -34,7 +34,7 @@
                 %span.wm-checkbox{'class' => ["wheelchair #{status}", (node_status.wheelchair_toilet == status ? 'checked' : nil)]}
                   %i.icon-ok
                 %span.text= t("toiletstatus.#{status}")
-                %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("home.index.popup.form.#{status}"), 'data-content' => t("wheelmap.what_is.#{node_status.accesibility}"), 'data-trigger' => 'hover'}
+                %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("toiletstatus.#{status}"), 'data-content' => t("wheelmap.what_is.#{node_status.accesibility}"), 'data-trigger' => 'hover'}
 
           %li.submit
             %button.btn{:'data-toggle' => 'status-submit', :'data-url' => update_toilet_node_url(node_status, :format => :js), :'data-property' => 'toilet', disabled: 'disabled'}
