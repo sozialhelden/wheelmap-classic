@@ -1,4 +1,4 @@
-#toolbar {
+.toolbar {
   width: 100%;
   height: $toolbarHeight;
   position: absolute;
@@ -11,14 +11,14 @@
   @media screen and (max-width: $breakTablet) {
     position: absolute;
     top: auto;
-    left: 0px;
-    bottom: 0px;
+    left: 0;
+    bottom: 0;
     @include box-shadow(none);
     background-color: #334557;
     border-top: 1px solid #273442;
   }
 
-  .btn-toolbar {
+  &-content {
     @include box-sizing(border-box);
     margin: 0;
     text-align: center;
@@ -37,7 +37,7 @@
     }
   }
 
-  .btn-toggle-searchbar {
+  &-toggle-searchbar {
     display: none;
   }
 
@@ -75,13 +75,7 @@
     }
   }
 
-  .btn-toolbar {
-    .btn-search {
-      height: 36px;
-    }
-  }
-
-  .searchbar-form {
+  &-searchbar-form {
     display: inline-block;
     margin-bottom: 0;
 
@@ -241,7 +235,7 @@
     }
 
     .dropdown-menu {
-      right: 0px;
+      right: 0;
       left: auto;
       border-radius: 3px;
       margin-bottom: 5px;
@@ -253,6 +247,16 @@
         -webkit-overflow-scrolling: touch;
       }
 
+      &:before {
+        left: auto !important;
+        right: 9px;
+      }
+
+      &:after {
+        left: auto !important;
+        right: 10px;
+      }
+
       li {
         width: auto;
 
@@ -260,10 +264,11 @@
           padding: 6px 10px 5px 10px;
           border-bottom: 1px solid #F0F0F0;
           font-size: 13px;
-          &:hover {
+
+          /*&:hover {
             @include background(linear-gradient(top, rgb(107, 132, 155), rgb(77, 100, 122)));
             @include filter-gradient(#6b849b, #4d647a, vertical);
-          }
+          }*/
 
           i {
             margin-top: 3px;
@@ -309,10 +314,6 @@
             }
           }
         }
-
-        &:first-child a {
-          border-top: 0;
-        }
       }
     }
 
@@ -335,10 +336,10 @@
     }
   }
 
-  .bootstrap-select.btn-group.show-menu-arrow .dropdown-menu {
+  /*.bootstrap-select.btn-group.show-menu-arrow .dropdown-menu {
     overflow-x: hidden !important;
     overflow-y: auto !important;
-  }
+  }*/
 
   select.category-filter {
     height: 36px;
@@ -368,12 +369,12 @@
 }
 
 @media screen and (max-width: 640px) {
-  #toolbar {
-    .btn-toggle-searchbar {
+  .toolbar {
+    &-toggle-searchbar {
       display: inline-block;
     }
 
-    .searchbar-form {
+    &-searchbar-form {
       @include box-sizing(border-box);
       @include headline-gradient();
       @include box-shadow(0px 0px 10px #444, inset 0px 2px 3px rgba(#000, 0.75));
@@ -381,25 +382,22 @@
       padding: 10px;
       position: fixed;
       top: 50px;
-      left: 0px;
+      left: 0;
       display: none;
 
       &.active {
         display: block;
       }
 
-      .input-append,
-      input {
-        @include box-sizing(border-box);
-        margin: 0;
-        height: 36px;
+      .input-append {
         width: 100%;
-      }
+        margin: 0;
 
-      input {
-        @include border-right-radius(3px);
-
-        &:focus {
+        input {
+          @include border-right-radius(3px);
+          @include box-sizing(border-box);
+          margin: 0;
+          height: 36px;
           width: 100%;
         }
       }
@@ -412,7 +410,7 @@
 }
 
 .ie9, .ie8, .ie7 {
-  #toolbar {
+  .toolbar {
     z-index: auto;
     .counter {
       display: none;
