@@ -128,3 +128,23 @@ body {
 .wheelmap-btn {
   @include buttonBackground($orange-gray, darken($orange-gray, 15%), darken($orange-gray, 60%), 0 1px 1px rgba(255,255,255,.75));
 }
+
+.bootstrap-select {
+  &.btn-group.show-menu-arrow .dropdown-menu {
+    &:after,
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.dropdown-menu {
+  > li > a {
+    @include transition(none);
+
+    &:hover {
+      @include background(linear-gradient(top, rgb(107, 132, 155), rgb(77, 100, 122)));
+      @include filter-gradient(#6b849b, #4d647a, vertical);
+    }
+  }
+}
