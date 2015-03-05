@@ -14,18 +14,28 @@
         {{status-filter-button activeFilters=activeStatusFilters wheelchair='no' didClick="toggleStatusFilter" }}
         {{status-filter-button activeFilters=activeStatusFilters wheelchair='unknown' didClick="toggleStatusFilter" }}
     </div>
+    <div class="btn-group bootstrap-select show-menu-arrow toilet-filter show-tick yes no unknown">
+        <button class="btn dropdown-toggle btn-info" data-toggle="dropdown">
+            WC
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li>Test</li>
+            <li>Test</li>
+        </ul>
+    </div>
     <div class="btn-group bootstrap-select show-menu-arrow category-filter show-tick">
-        <button class="btn dropdown-toggle clearfix btn-info" data-toggle="dropdown"><span
-                class="icon-tags"></span><span class="filter-option pull-left">{{#if activeCategories.length }}<span
-                class="counter">{{ activeCategories.length }}</span>{{/if}} {{ view.categoryButton }}</span>&nbsp;<span class="caret"></span>
+        <button class="btn dropdown-toggle clearfix btn-info" data-toggle="dropdown">
+            <span class="icon-tags"></span>
+            <span class="filter-option pull-left">{{ view.categoryButton }}</span>
+            <span class="caret"></span>
+            {{#if activeCategories.length }}<span class="counter">{{ activeCategories.length }}</span>{{/if}}
         </button>
         <ul class="dropdown-menu" role="menu">
             {{#each}}
                 <li {{ bind-attr class="isActive:selected" }}>
                     <a {{ action toggleCategoryIsActive }}>
-                        <span class="pull-left">
-                            {{ t 'poi.category' identifier }}
-                        </span>
+                        {{ t 'poi.category' identifier }}
                         <i class="icon-ok pull-right check-mark"></i>
                     </a>
                 </li>
