@@ -39,6 +39,7 @@
 
   &-toggle-searchbar {
     display: none;
+    margin-right: 5px;
   }
 
   .input-append {
@@ -85,8 +86,6 @@
   }
 
   .status-filter {
-    margin: 0 6px;
-
     .btn {
       width: 46px;
       float: none;
@@ -194,44 +193,43 @@
       width: 150px;
       @include border-radius(3px);
       overflow: visible; // Needed for IE for showing the filter counter correctly
+      text-align: left;
     }
 
     .icon-tags {
       display: none;
+      padding-left: 4px;
+    }
 
-      @media screen and (max-width: $breakPhone) {
-        display: inline;
+    @media screen and (max-width: $breakPhone) {
+      .icon-tags {
+        display: inline-block;
+      }
+
+      .filter-option {
+        display: none;
       }
     }
 
-    .filter-option {
-      overflow: visible;
-      left: 9px;
-
-      @media screen and (max-width: $breakPhone) {
-        text-indent: -9999999px;
-      }
-
-      .counter {
-        position: absolute;
-        width: 18px;
-        height: 18px;
-        top: -13px;
-        right: -34px;
-        @include border-radius(100px);
-        border: 2px solid #FFF;
-        @include box-shadow(0 0 5px #111);
-        background-color: #E5002A;
-        @include background-image(linear-gradient(top, #E5002A, #B93028));
-        background-image: -ms(linear-gradient(top, #E5002A, #B93028));
-        text-indent: 0px;
-        font-size: 10px;
-        line-height: 18px;
-        font-weight: bold;
-        text-align: center;
-        color: #FFF;
-        text-shadow: 0 1px 0 #000;
-      }
+    .counter {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      top: -6px;
+      right: -9px;
+      @include border-radius(100px);
+      border: 2px solid #FFF;
+      @include box-shadow(0 0 5px #111);
+      background-color: #E5002A;
+      @include background-image(linear-gradient(top, #E5002A, #B93028));
+      background-image: -ms(linear-gradient(top, #E5002A, #B93028));
+      text-indent: 0px;
+      font-size: 10px;
+      line-height: 18px;
+      font-weight: bold;
+      text-align: center;
+      color: #FFF;
+      text-shadow: 0 1px 0 #000;
     }
 
     .dropdown-menu {
@@ -243,6 +241,7 @@
       width: 200px;
 
       @media screen and (max-width: $breakPhone) {
+        overflow: auto;
         height: 240px;
         -webkit-overflow-scrolling: touch;
       }
@@ -264,10 +263,6 @@
           padding: 6px 10px 5px 10px;
           border-bottom: 1px solid #F0F0F0;
           font-size: 13px;
-
-          i {
-            margin-top: 3px;
-          }
         }
 
         &.filter {
@@ -288,12 +283,9 @@
             width: 26px;
             height: 26px;
             margin-left: 5px;
-            border: 1px solid #6B6969;
             padding: 0;
             line-height: 26px;
-
             background-color: #CCCAC1;
-
             border-radius: 3px;
             border: 1px solid #6B6969;
 
@@ -315,12 +307,6 @@
     @media screen and (max-width: $breakPhone) {
       width: auto;
 
-      span.filter-option {
-        @media screen and (max-width: 410px) {
-          font-size: 20px;
-        }
-      }
-
       .btn {
         width: 55px;
         padding: 4px 12px 4px 6px;
@@ -331,11 +317,6 @@
     }
   }
 
-  /*.bootstrap-select.btn-group.show-menu-arrow .dropdown-menu {
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
-  }*/
-
   select.category-filter {
     height: 36px;
     margin: 0;
@@ -344,6 +325,41 @@
     border: 1px solid #000;
     color: white;
     padding: 10px;
+  }
+
+  .toilet-filter {
+    width: 51px;
+    position: relative;
+
+    .btn {
+      padding: 0;
+      padding-right: 7px; // Would be nice, if we have a variable from the default bootstrap here.
+      width: 51px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    &.yes:before {
+      @extend %status-indicator;
+      background-color: $wheelchair-yes;
+      border-color: darken($wheelchair-yes, 40%) !important; // Why do we need an important here? Bug?
+      margin-left: -9px;
+    }
+
+    &.no:after {
+      @extend %status-indicator;
+      background-color: $wheelchair-no;
+      border-color: darken($wheelchair-no, 30%) !important; // Why do we need an important here? Bug?
+      margin-left: -2px;
+    }
+
+    &.unknown .btn:after {
+      @extend %status-indicator;
+      background-color: $wheelchair-unknown;
+      border-color: darken($wheelchair-unknown, 50%) !important; // Why do we need an important here? Bug?
+      margin-left: 5px;
+      margin-bottom: -1px; // Pull down one pixel because of the border of the button.
+    }
   }
 
   .popover {
@@ -402,6 +418,20 @@
       }
     }
   }
+}
+
+%status-indicator {
+  @include border-radius(2px);
+  @include box-sizing(border-box);
+  @include box-shadow(0 1px rgba(white, .3));
+  content: '';
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  border: 1px solid;
+  z-index: 100;
 }
 
 .ie9, .ie8, .ie7 {
