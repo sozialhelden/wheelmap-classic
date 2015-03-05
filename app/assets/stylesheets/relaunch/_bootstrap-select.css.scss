@@ -1,3 +1,29 @@
+.bootstrap-select {
+  text-align: left;
+
+  .caret {
+    float: right;
+  }
+
+  // We need to override the pull-right class here, which bootstrap-select adds automatically.
+  span.pull-left {
+    float: none;
+  }
+
+  .check-mark {
+    line-height: inherit;
+    display: none;
+  }
+
+  .selected .check-mark {
+    display: block;
+  }
+}
+
+/*
+
+Keep this for easy copying old, missing stuff. Can be deleted, when toilet-tag branch is finally merged and deployed.
+
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -133,4 +159,4 @@ bootstrap-select.btn-group .dropdown-menu li > a {
       content: '';
     }
   }
-}
+}*/
