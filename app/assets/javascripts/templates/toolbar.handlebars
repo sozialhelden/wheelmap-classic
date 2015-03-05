@@ -8,13 +8,19 @@
             {{ view Wheelmap.SearchbarButtonView }}
         </div>
     </form>
-    <div class="btn-group status-filter">
+    <div {{ bind-attr class=":btn-group :bootstrap-select :toolbar-status-filter-btn :show-menu-arrow isStatusYes:yes isStatusNo:no isStatusLimited:limited isStatusUnknown:unknown" }}>
+        <button class="btn dropdown-toggle btn-info" data-toggle="dropdown">
+            <i class="toolbar-status-filter-btn-icon"></i>
+            <span class="caret"></span>
+        </button>
+    </div>
+    <div class="btn-group toolbar-status-filter">
         {{status-filter-button activeFilters=activeStatusFilters wheelchair='yes' didClick="toggleStatusFilter" }}
         {{status-filter-button activeFilters=activeStatusFilters wheelchair='limited' didClick="toggleStatusFilter" }}
         {{status-filter-button activeFilters=activeStatusFilters wheelchair='no' didClick="toggleStatusFilter" }}
         {{status-filter-button activeFilters=activeStatusFilters wheelchair='unknown' didClick="toggleStatusFilter" }}
     </div>
-    <div class="btn-group bootstrap-select show-menu-arrow toilet-filter show-tick yes no unknown">
+    <div {{ bind-attr class=":btn-group :bootstrap-select :toolbar-toilet-filter :show-menu-arrow isToiletYes:yes isToiletNo:no isToiletUnknown:unknown" }}>
         <button class="btn dropdown-toggle btn-info" data-toggle="dropdown">
             WC
             <span class="caret"></span>
@@ -24,7 +30,7 @@
             <li>Test</li>
         </ul>
     </div>
-    <div class="btn-group bootstrap-select show-menu-arrow category-filter show-tick">
+    <div class="btn-group bootstrap-select show-menu-arrow toolbar-category-filter show-tick">
         <button class="btn dropdown-toggle clearfix btn-info" data-toggle="dropdown">
             <span class="icon-tags"></span>
             <span class="filter-option pull-left">{{ view.categoryButton }}</span>

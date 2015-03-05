@@ -85,20 +85,11 @@
     }
   }
 
-  .status-filter {
+  &-status-filter {
     .btn {
       width: 46px;
       float: none;
       padding: 0;
-
-      span {
-        width: 21px;
-        height: 24px;
-        margin: 2px 0 0 12px;
-        float: left;
-        @include opacity(0.5);
-
-      }
 
       .popover-title {
         color: #FFF;
@@ -109,84 +100,133 @@
       &.active,
       &.active:hover {
         @include box-shadow(0px 1px 0px #566D82, inset 0px 1px 3px rgba(black, 0.15), inset 0 -5px 10px rgba(black, 0.1));
-
-        span {
-          @include opacity(1);
-          @include if-min-resolution(1.3) {
-            background-size: 100%;
-          }
-        }
       }
 
       &:first-child {
-        @include border-radius(3px 0 0 3px);
+        @include border-left-radius(3px);
       }
 
       &:last-child {
-        @include border-radius(0 3px 3px 0);
+        @include border-right-radius(3px);
       }
     }
 
-    .yes {
-      span {
-        background: url('toolbar_marker_yes.png') no-repeat;
+    &-icon {
+      width: 21px;
+      height: 24px;
+      margin: 2px 0 0 12px;
+      float: left;
+      @include opacity(0.5);
+      background-repeat: no-repeat;
+      background-size: 100%;
 
-        @include if-min-resolution(1.3) {
+      .active & {
+        @include opacity(1);
+      }
+
+      &--yes {
+        background-image: url('toolbar_marker_yes.png');
+
+        .popover-title {
+          background-color: $wheelchair-yes;
+        }
+      }
+
+      &--limited {
+        background-image: url('toolbar_marker_limited.png');
+
+        .popover-title {
+          background-color: $wheelchair-limited;
+        }
+      }
+
+      &--no {
+        background-image: url('toolbar_marker_no.png');
+
+        .popover-title {
+          background-color: $wheelchair-limited;
+        }
+      }
+
+      &--unknown {
+        background-image: url('toolbar_marker_unknown.png');
+
+        .popover-title {
+          background-color: $wheelchair-unknown;
+        }
+      }
+
+      @include if-min-resolution(1.3) {
+        &--yes {
           background-image: url(toolbar_marker_yes@2x.png);
-          background-size: 100%;
         }
-      }
 
-      .popover-title {
-        background-color: $wheelchair-yes;
-      }
-    }
-
-    .limited {
-      span {
-        background: url('toolbar_marker_limited.png') no-repeat;
-
-        @include if-min-resolution(1.3) {
+        &--limited {
           background-image: url(toolbar_marker_limited@2x.png);
-          background-size: 100%;
         }
-      }
 
-      .popover-title {
-        background-color: $wheelchair-limited;
-      }
-    }
-    .no {
-      span {
-        background: url('toolbar_marker_no.png') no-repeat;
-
-        @include if-min-resolution(1.3) {
+        &--no {
           background-image: url(toolbar_marker_no@2x.png);
-          background-size: 100%;
         }
-      }
 
-      .popover-title {
-        background-color: $wheelchair-no;
-      }
-    }
-    .unknown {
-      span {
-        background: url('toolbar_marker_unknown.png') no-repeat;
-
-        @include if-min-resolution(1.3) {
+        &--unknown {
           background-image: url(toolbar_marker_unknown@2x.png);
-          background-size: 100%;
         }
-      }
-
-      .popover-title {
-        background-color: $wheelchair-unknown;
       }
     }
   }
 
-  .category-filter {
+  &-status-filter-btn {
+    display: none;
+    @extend %status-button;
+
+    .btn {
+      padding: 0 7px 0 0;
+    }
+
+    &-icon {
+      background: url('toolbar_marker_icon.png') no-repeat;
+      background-size: 100%;
+      width: image_width('toolbar_marker_icon.png');
+      height: image_height('toolbar_marker_icon.png');
+      display: inline-block;
+      margin-top: 1px; // Cosmetic surgery
+
+      @include if-min-resolution(1.3) {
+        background-image: url('toolbar_marker_icon@2x.png');
+      }
+    }
+
+    &.yes:before {
+      margin-left: -13px;
+    }
+
+    &.limited .btn:before {
+      margin-left: -6px;
+      margin-bottom: -1px; // Pull down one pixel because of the border of the button.
+    }
+
+    &.no:after {
+      margin-left: 1px;
+    }
+
+    &.unknown .btn:after {
+      margin-left: 7px;
+      margin-bottom: -1px; // Pull down one pixel because of the border of the button.
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    &-status-filter {
+      display: none;
+    }
+
+    &-status-filter-btn {
+      display: inline-block;
+    }
+  }
+
+  &-category-filter {
     width: 150px;
 
     & > .btn {
@@ -317,46 +357,18 @@
     }
   }
 
-  select.category-filter {
-    height: 36px;
-    margin: 0;
-    @include background(linear-gradient(top, rgb(108, 133, 157), rgb(77, 100, 122)));
-    @include filter-gradient(#6c859d, #4d647a, vertical);
-    border: 1px solid #000;
-    color: white;
-    padding: 10px;
-  }
-
-  .toilet-filter {
-    width: 51px;
-    position: relative;
-
-    .btn {
-      padding: 0;
-      padding-right: 7px; // Would be nice, if we have a variable from the default bootstrap here.
-      width: 51px;
-      font-size: 12px;
-      font-weight: 500;
-    }
+  &-toilet-filter {
+    @extend %status-button;
 
     &.yes:before {
-      @extend %status-indicator;
-      background-color: $wheelchair-yes;
-      border-color: darken($wheelchair-yes, 40%) !important; // Why do we need an important here? Bug?
       margin-left: -9px;
     }
 
     &.no:after {
-      @extend %status-indicator;
-      background-color: $wheelchair-no;
-      border-color: darken($wheelchair-no, 30%) !important; // Why do we need an important here? Bug?
       margin-left: -2px;
     }
 
     &.unknown .btn:after {
-      @extend %status-indicator;
-      background-color: $wheelchair-unknown;
-      border-color: darken($wheelchair-unknown, 50%) !important; // Why do we need an important here? Bug?
       margin-left: 5px;
       margin-bottom: -1px; // Pull down one pixel because of the border of the button.
     }
@@ -368,7 +380,7 @@
     @include text-shadow(none);
   }
 
-  .content {
+  /*.content {
     @media screen and (max-width: 640px) {
       width: 410px;
     }
@@ -376,7 +388,7 @@
     @media screen and (max-width: 410px) {
       width: 303px;
     }
-  }
+  }*/
 }
 
 @media screen and (max-width: 640px) {
@@ -417,6 +429,43 @@
         display: none;
       }
     }
+  }
+}
+
+%status-button {
+  width: 51px;
+  position: relative;
+
+  .btn {
+    padding: 0;
+    padding-right: 7px; // Would be nice, if we have a variable from the default bootstrap here.
+    width: 51px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  &.yes:before {
+    @extend %status-indicator;
+    background-color: $wheelchair-yes;
+    border-color: darken($wheelchair-yes, 40%) !important; // Why do we need an important here? Bug?
+  }
+
+  &.no:after {
+    @extend %status-indicator;
+    background-color: $wheelchair-no;
+    border-color: darken($wheelchair-no, 30%) !important; // Why do we need an important here? Bug?
+  }
+
+  &.limited .btn:before {
+    @extend %status-indicator;
+    background-color: $wheelchair-limited;
+    border-color: darken($wheelchair-limited, 50%) !important; // Why do we need an important here? Bug?
+  }
+
+  &.unknown .btn:after {
+    @extend %status-indicator;
+    background-color: $wheelchair-unknown;
+    border-color: darken($wheelchair-unknown, 50%) !important; // Why do we need an important here? Bug?
   }
 }
 
