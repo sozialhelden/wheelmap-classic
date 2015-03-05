@@ -18,6 +18,10 @@ Wheelmap.StatusFilterButtonComponent = Wheelmap.WheelchairPopoverComponent.exten
     @get('activeFilters').findBy('key', @get('wheelchair'))?
   ).property('wheelchair', 'activeFilters.@each')
 
+  wheelchairClass: (()->
+    'toolbar-status-filter-icon--' + @get('wheelchair')
+  ).property('wheelchair')
+
   click: (event)->
     event.preventDefault();
 

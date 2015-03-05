@@ -1,6 +1,6 @@
 Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
   needs: ['toolbar', 'map']
-  queryParams: ['status', 'categories', 'q', 'bbox', 'lat', 'lon', 'zoom']
+  queryParams: ['status', 'categories', 'q', 'bbox', 'lat', 'lon', 'zoom', 'toilet']
   
   latBinding: 'controllers.map.lat'
   lonBinding: 'controllers.map.lon'
@@ -9,9 +9,11 @@ Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
   bbox: null
 
   status: Ember.computed.defaultTo('lastStatusFilters')
+  toilet: Ember.computed.defaultTo('lastToiletFilters')
   categories: Ember.computed.defaultTo('lastCategoryFilters')
 
   lastStatusFilters: Ember.aliasMethod('retrieveCookieValue')
+  lastToiletFilters: Ember.aliasMethod('retrieveCookieValue')
   lastCategoryFilters: Ember.aliasMethod('retrieveCookieValue')
 
   retrieveCookieValue: ((key, value)->
@@ -51,6 +53,16 @@ Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
 
     @set('lastCategoryFilters', lastCategoryFilters)
   ).observes('controllers.toolbar.activeCategories')
+  
+  activeToiletFiltersDidChange: (->
+    lastToiletFilters = null
+    activeToiletFilters = @get('controllers.toolbar.activeToiletFilters')
+
+    if activeToiletFilters.get('length') isnt @get('controllers.toolbar.activeToiletFilters.length')
+      lastToiletFilters = JSON.stringify(activeToiletFilters.getEach('key'))
+
+    @set('lastStatusFilters', lastToiletFilters)
+  ).observes('controllers.toolbar.activeToiletFilters')
 
   queryCategoriesDidChange: (->
     queryCategories = @get('categories')
@@ -93,6 +105,27 @@ Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
     @set('controllers.toolbar.activeStatusFilters', activeStatusFilters)
   ).observes('controllers.toolbar.statusFilters.@each', 'status')
 
+  queryToiletDidChange: (->
+    queryToilet = @get('toilet')
+    toiletFilters = @get('controllers.toolbar.toiletFilters')
+
+    console.log(queryToilet)
+
+    actuveToiletFilters = do ->
+      unless queryToilet?
+        return toiletFilters
+
+      if queryToilet is true
+        return []
+
+      keys = queryToilet.split(Wheelmap.MapSessionControllerMixin.SEPERATOR)
+
+      toiletFilters.filter (status)->
+        keys.contains(status.get('key'))
+
+    @set('controllers.toolbar.activeToiletFilters', actuveToiletFilters)
+  ).observes('controllers.toolbar.toiletFilters.@each', 'toilet')
+
   queryBboxDidChange: (->
     bbox = @get('bbox')
 
@@ -129,6 +162,17 @@ Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
       this.transitionToRoute
         queryParams:
           status: queryStatusFilters
+
+    transitionToActiveToiletFilter: ->
+      activeToiletFilters = @get('controllers.toolbar.activeToiletFilters')
+      queryToiletFilters = null
+
+      if activeToiletFilters.get('length') isnt @get('controllers.toolbar.toiletFilters.length')
+        queryToiletFilters = activeToiletFilters.getEach('key').join(Wheelmap.MapSessionControllerMixin.SEPERATOR)
+
+      this.transitionToRoute
+        queryParams:
+          status: queryToiletFilters
 
 Wheelmap.MapSessionControllerMixin.SEPERATOR = '.'
 
