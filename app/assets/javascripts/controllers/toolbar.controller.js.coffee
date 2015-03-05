@@ -2,6 +2,7 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
   _extraFilter: false # Flag for executing special status filter behavior only once
   needs: ['index', 'map']
   statusFilters: null
+  toiletFilter: null
   searchString: null
   itemController: 'category'
   sortProperties: ['name']
@@ -16,7 +17,16 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
       Ember.Object.create({ key: 'unknown', isActive: true })
     ]
 
-    @set 'statusFilters', statusFilters
+    toiletFilter = [
+      Ember.Object.create({ key: 'yes', isActive: true })
+      Ember.Object.create({ key: 'no', isActive: true })
+      Ember.Object.create({ key: 'unknown', isActive: true })
+    ]
+
+    @set('statusFilters', statusFilters)
+    @set('toiletFilter', toiletFilter)
+
+    return
 
   ###
   # Property containing all active categories
@@ -44,6 +54,47 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
 
     statusFilters.filterBy('isActive')
   ).property('statusFilters.@each.isActive')
+
+  activeToiletFilters: ((key, activeToiletFilters)->
+    toiletFilters = @get('statusFilters')
+
+    if activeToiletFilters?
+      return toiletFilters.filter (toiletFilter)->
+        isActive = activeToiletFilters.contains(toiletFilter)
+        toiletFilter.set('isActive', isActive)
+
+        return isActive
+
+    toiletFilters.filterBy('isActive')
+  ).property('statusFilters.@each.isActive')
+
+  isStatusYes: (->
+    @get('activeStatusFilters').findBy('key', 'yes')?.get('isActive')
+  ).property('activeStatusFilters')
+
+  isStatusLimited: (->
+    @get('activeStatusFilters').findBy('key', 'limited')?.get('isActive')
+  ).property('activeStatusFilters')
+
+  isStatusNo: (->
+    @get('activeStatusFilters').findBy('key', 'no')?.get('isActive')
+  ).property('activeStatusFilters')
+
+  isStatusUnknown: (->
+    @get('activeStatusFilters').findBy('key', 'unknown')?.get('isActive')
+  ).property('activeStatusFilters')
+
+  isToiletYes: (->
+    @get('activeToiletFilters').findBy('key', 'yes')?.get('isActive')
+  ).property('activeToiletFilters')
+
+  isToiletNo: (->
+    @get('activeToiletFilters').findBy('key', 'no')?.get('isActive')
+  ).property('activeToiletFilters')
+
+  isToiletUnknown: (->
+    @get('activeToiletFilters').findBy('key', 'unknown')?.get('isActive')
+  ).property('activeToiletFilters')
 
   ###
   # Returns true if all categories are active
