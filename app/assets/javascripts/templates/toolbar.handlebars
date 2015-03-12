@@ -8,11 +8,37 @@
             {{ view Wheelmap.SearchbarButtonView }}
         </div>
     </form>
-    <div {{ bind-attr class=":btn-group :bootstrap-select :toolbar-status-filter-btn :show-menu-arrow isStatusYes:yes isStatusNo:no isStatusLimited:limited isStatusUnknown:unknown" }}>
+    <div {{ bind-attr class=":btn-group :bootstrap-select :toolbar-filter-dropdown :toolbar-status-filter-btn :show-menu-arrow isStatusYes:yes isStatusNo:no isStatusLimited:limited isStatusUnknown:unknown" }}>
         <button class="btn dropdown-toggle btn-info" data-toggle="dropdown">
             <i class="toolbar-status-filter-btn-icon"></i>
             <span class="caret"></span>
         </button>
+        <ul class="dropdown-menu" role="menu">
+            <li {{ bind-attr class="isStatusYes:selected :toolbar-filter-dropdown-button :yes" }}>
+                <a {{ action toggleStatusFilter 'yes' }}>
+                    {{ t 'wheelchairstatus.yes' }}
+                    <i class="icon-ok pull-right check-mark"></i>
+                </a>
+            </li>
+            <li {{ bind-attr class="isStatusLimited:selected :toolbar-filter-dropdown-button :limited" }}>
+                <a {{ action toggleStatusFilter 'limited' }}>
+                    {{ t 'wheelchairstatus.limited' }}
+                    <i class="icon-ok pull-right check-mark"></i>
+                </a>
+            </li>
+            <li {{ bind-attr class="isStatusNo:selected :toolbar-filter-dropdown-button :no" }}>
+                <a {{ action toggleStatusFilter 'no' }}>
+                    {{ t 'wheelchairstatus.no' }}
+                    <i class="icon-ok pull-right check-mark"></i>
+                </a>
+            </li>
+            <li {{ bind-attr class="isStatusUnknown:selected :toolbar-filter-dropdown-button :unknown" }}>
+                <a {{ action toggleStatusFilter 'unknown' }}>
+                    {{ t 'wheelchairstatus.unknown' }}
+                    <i class="icon-ok pull-right check-mark"></i>
+                </a>
+            </li>
+        </ul>
     </div>
     <div class="btn-group toolbar-status-filter">
         {{status-filter-button activeFilters=activeStatusFilters wheelchair='yes' didClick="toggleStatusFilter" }}
@@ -20,25 +46,25 @@
         {{status-filter-button activeFilters=activeStatusFilters wheelchair='no' didClick="toggleStatusFilter" }}
         {{status-filter-button activeFilters=activeStatusFilters wheelchair='unknown' didClick="toggleStatusFilter" }}
     </div>
-    <div {{ bind-attr class=":btn-group :bootstrap-select :toolbar-toilet-filter :show-menu-arrow isToiletYes:yes isToiletNo:no isToiletUnknown:unknown" }}>
+    <div {{ bind-attr class=":btn-group :bootstrap-select :toolbar-filter-dropdown :toolbar-toilet-filter :show-menu-arrow isToiletYes:yes isToiletNo:no isToiletUnknown:unknown" }}>
         <button class="btn dropdown-toggle btn-info" data-toggle="dropdown">
             WC
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
-            <li {{ bind-attr class="isToiletYes:selected :toolbar-toilet-filter-button :yes" }}>
+            <li {{ bind-attr class="isToiletYes:selected :toolbar-filter-dropdown-button :yes" }}>
                 <a {{ action toggleToiletFilter 'yes' }}>
                     {{ t 'toiletstatus.yes' }}
                     <i class="icon-ok pull-right check-mark"></i>
                 </a>
             </li>
-            <li {{ bind-attr class="isToiletNo:selected :toolbar-toilet-filter-button :no" }}>
+            <li {{ bind-attr class="isToiletNo:selected :toolbar-filter-dropdown-button :no" }}>
                 <a {{ action toggleToiletFilter 'no' }}>
                     {{ t 'toiletstatus.no' }}
                     <i class="icon-ok pull-right check-mark"></i>
                 </a>
             </li>
-            <li {{ bind-attr class="isToiletUnknown:selected :toolbar-toilet-filter-button :unknown" }}>
+            <li {{ bind-attr class="isToiletUnknown:selected :toolbar-filter-dropdown-button :unknown" }}>
                 <a {{ action toggleToiletFilter 'unknown' }}>
                     {{ t 'toiletstatus.unknown' }}
                     <i class="icon-ok pull-right check-mark"></i>

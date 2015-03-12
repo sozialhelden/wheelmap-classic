@@ -197,22 +197,20 @@
       }
     }
 
-    &.yes:before {
-      margin-left: -13px;
+    &.yes .caret:before {
+      margin-left: -11px;
     }
 
     &.limited .btn:before {
-      margin-left: -6px;
-      margin-bottom: -1px; // Pull down one pixel because of the border of the button.
+      margin-left: -4px;
     }
 
-    &.no:after {
-      margin-left: 1px;
+    &.no .caret:after {
+      margin-left: 3px;
     }
 
     &.unknown .btn:after {
-      margin-left: 7px;
-      margin-bottom: -1px; // Pull down one pixel because of the border of the button.
+      margin-left: 9px;
     }
   }
 
@@ -359,22 +357,24 @@
   }
 
   &-toilet-filter {
-    $toilet-filter-status: yes, no, unknown;
-
     @extend %status-button;
 
-    &.yes:before {
+    &.yes .caret:before {
       margin-left: -9px;
     }
 
-    &.no:after {
+    &.no .caret:after {
       margin-left: -2px;
     }
 
     &.unknown .btn:after {
       margin-left: 5px;
-      margin-bottom: -1px; // Pull down one pixel because of the border of the button.
+      //margin-bottom: -1px; // Pull down one pixel because of the border of the button.
     }
+  }
+
+  &-filter-dropdown {
+    $toilet-filter-status: yes, no, limited, unknown;
 
     &-button {
       > a:before {
@@ -417,6 +417,17 @@
         > a {
           padding: 8px 10px;
         }
+      }
+    }
+
+    @media screen and (max-width: $breakPhone) {
+      position: static;
+
+      .dropdown-menu {
+        left: 50%;
+        right: auto;
+        margin-left: -125px;
+        bottom: 48px;
       }
     }
   }
@@ -481,7 +492,7 @@
 
 %status-button {
   width: 51px;
-  position: relative;
+  // position: relative;
 
   .btn {
     padding: 0;
@@ -489,15 +500,16 @@
     width: 51px;
     font-size: 12px;
     font-weight: 500;
+    position: relative;
   }
 
-  &.yes:before {
+  &.yes .caret:before {
     @extend %status-indicator;
     background-color: $wheelchair-yes;
     border-color: darken($wheelchair-yes, 40%) !important; // Why do we need an important here? Bug?
   }
 
-  &.no:after {
+  &.no .caret:after {
     @extend %status-indicator;
     background-color: $wheelchair-no;
     border-color: darken($wheelchair-no, 30%) !important; // Why do we need an important here? Bug?
@@ -524,7 +536,7 @@
   width: 4px;
   height: 4px;
   position: absolute;
-  bottom: 5px;
+  bottom: 4px;
   left: 50%;
   border: 1px solid;
   z-index: 100;
