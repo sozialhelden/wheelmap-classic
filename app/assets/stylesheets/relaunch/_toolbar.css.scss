@@ -420,7 +420,7 @@
       }
     }
 
-    @media screen and (max-width: $breakPhone) {
+    @media screen and (max-width: 500px) {
       position: static;
 
       .dropdown-menu {
