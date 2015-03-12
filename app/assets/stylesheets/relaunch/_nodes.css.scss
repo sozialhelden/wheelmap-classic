@@ -887,8 +887,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
       @include box-shadow(0px 0px 3px 0px rgba(#b94a48,0.60));
     }
 
-    .error {
-      @extend .text-error;
+    & > ul {
       margin-bottom: 0;
       margin-top: 10px;
     }
