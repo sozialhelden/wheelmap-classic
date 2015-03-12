@@ -170,7 +170,7 @@ Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
 
       this.transitionToRoute
         queryParams:
-          status: queryToiletFilters
+          toilet: queryToiletFilters
 
 Wheelmap.MapSessionControllerMixin.SEPERATOR = '.'
 

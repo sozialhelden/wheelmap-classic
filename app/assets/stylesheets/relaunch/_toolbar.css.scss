@@ -350,6 +350,7 @@
       .btn {
         width: 55px;
         padding: 4px 12px 4px 6px;
+
         .caret {
           right: 7px;
         }
@@ -358,6 +359,8 @@
   }
 
   &-toilet-filter {
+    $toilet-filter-status: yes, no, unknown;
+
     @extend %status-button;
 
     &.yes:before {
@@ -371,6 +374,50 @@
     &.unknown .btn:after {
       margin-left: 5px;
       margin-bottom: -1px; // Pull down one pixel because of the border of the button.
+    }
+
+    &-button {
+      > a:before {
+        content: '';
+        width: 18px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin-right: 4px;
+      }
+
+      @each $status in $toilet-filter-status {
+        &.#{$status} > a:before {
+          background-image: image-url("toolbar_marker_#{$status}_white.png");
+        }
+      }
+
+      @include if-min-resolution(1.3) {
+        @each $status in $toilet-filter-status {
+          &.#{$status} > a:before {
+            background-image: image-url("toolbar_marker_#{$status}_white@2x.png");
+          }
+        }
+      }
+    }
+
+    .dropdown-menu {
+      left: auto;
+      right: 0;
+      padding: 0;
+      width: 250px;
+
+      & > li {
+        &:not(:first-child) {
+          border-top: 1px solid #F0F0F0;
+        }
+
+        > a {
+          padding: 8px 10px;
+        }
+      }
     }
   }
 

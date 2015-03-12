@@ -26,8 +26,24 @@
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
-            <li>Test</li>
-            <li>Test</li>
+            <li {{ bind-attr class="isToiletYes:selected :toolbar-toilet-filter-button :yes" }}>
+                <a {{ action toggleToiletFilter 'yes' }}>
+                    {{ t 'toiletstatus.yes' }}
+                    <i class="icon-ok pull-right check-mark"></i>
+                </a>
+            </li>
+            <li {{ bind-attr class="isToiletNo:selected :toolbar-toilet-filter-button :no" }}>
+                <a {{ action toggleToiletFilter 'no' }}>
+                    {{ t 'toiletstatus.no' }}
+                    <i class="icon-ok pull-right check-mark"></i>
+                </a>
+            </li>
+            <li {{ bind-attr class="isToiletUnknown:selected :toolbar-toilet-filter-button :unknown" }}>
+                <a {{ action toggleToiletFilter 'unknown' }}>
+                    {{ t 'toiletstatus.unknown' }}
+                    <i class="icon-ok pull-right check-mark"></i>
+                </a>
+            </li>
         </ul>
     </div>
     <div class="btn-group bootstrap-select show-menu-arrow toolbar-category-filter show-tick">
