@@ -14,7 +14,7 @@ Wheelmap.PopupController = Wheelmap.NodesController.extend Wheelmap.WheelchairSu
     oldToilet = @get('oldToilet')
 
     if (oldToilet?)
-      @set('toilet', oldToilet)
+      @set('wheelchairToilet', oldToilet)
       @get('oldToilet', null)
 
     return

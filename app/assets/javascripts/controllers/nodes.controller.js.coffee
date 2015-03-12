@@ -14,8 +14,8 @@ Wheelmap.WheelchairSubmit = Ember.Mixin.create
   ).property('wheelchair', 'oldWheelchair', 'isPosting')
 
   toiletSubmit: (()->
-    @get('oldToilet')? and @get('toilet') != @get('oldToilet') and !@get('isPosting')
-  ).property('toilet', 'oldToilet', 'isPosting')
+    @get('oldToilet')? and @get('wheelchairToilet') != @get('oldToilet') and !@get('isPosting')
+  ).property('wheelchairToilet', 'oldToilet', 'isPosting')
 
   wheelchairUri: (()->
     '/nodes/' + @get('id') + '/update_wheelchair.js'
@@ -32,7 +32,7 @@ Wheelmap.WheelchairSubmit = Ember.Mixin.create
 
     setToilet: (toilet)->
       unless @get('isPosting')
-        @set('toilet', toilet)
+        @set('wheelchairToilet', toilet)
 
     saveWheelchair: ()->
       that = @
@@ -75,7 +75,7 @@ Wheelmap.WheelchairSubmit = Ember.Mixin.create
 
       data =
         _method: 'PUT'
-        toilet: that.get('toilet')
+        toilet: that.get('wheelchairToilet')
 
       that.set('isPosting', true)
 
@@ -87,7 +87,7 @@ Wheelmap.WheelchairSubmit = Ember.Mixin.create
 
       promise.done (response)->
         # Track this event, when google analytics is active (Production)
-        _gaq.push ["_trackEvent", "Data", "Tag", that.get("toilet")] if _gaq?
+        _gaq.push ["_trackEvent", "Data", "Tag", that.get("wheelchairToilet")] if _gaq?
         that.set('oldToilet', null)
         that.send('statusSaveDone', response)
 
