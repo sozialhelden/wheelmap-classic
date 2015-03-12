@@ -36,6 +36,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   poppingNodeBinding: 'mapController.poppingNode'
   lastLoadedBounds: null
   lastActiveStatusFilters: null
+  lastActiveToiletFilters: null
   lastActiveCategories: null
   $nodeView: null
   $nodeViewPrev: null
@@ -186,12 +187,14 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
       return
 
     activeStatusFilters = @get('toolbarController.activeStatusFilters').getEach('key')
+    activeToiletFilters = @get('toolbarController.activeToiletFilters').getEach('key')
     activeCategories = @get('toolbarController.activeCategories').getEach('identifier')
     poppingNode = @get('poppingNode')
 
     for layer in layers
       properties = layer.feature.properties
       visible = activeStatusFilters.contains(properties.wheelchair) and
+        activeToiletFilters.contains(properties.wheelchair_toilet) and
         activeCategories.contains(properties.category)
 
       if poppingNode? and properties.id is parseInt(poppingNode.get('id'), 10)
@@ -208,6 +211,14 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     @lastActiveStatusFilters = @get('toolbarController.activeStatusFilters')
     @filterLayers()
   ).observes('toolbarController.activeStatusFilters.@each')
+
+  _toiletFilterDidChange: (()->
+    if Ember.compare(@lastActiveToiletFilters, @get('toolbarController.activeToiletFilters')) is 0
+      return
+
+    @lastActiveToiletFilters = @get('toolbarController.activeToiletFilters')
+    @filterLayers()
+  ).observes('toolbarController.activeToiletFilters.@each')
 
   _categoriesDidChange: (()->
     if Ember.compare(@lastActiveCategories, @get('toolbarController.activeCategories')) is 0

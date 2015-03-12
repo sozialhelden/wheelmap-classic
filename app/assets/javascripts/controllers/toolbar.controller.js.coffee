@@ -141,3 +141,9 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
       @get('controllers.index').send('transitionToActiveStatusFilter')
 
       return
+
+    toggleToiletFilter: (toilet)->
+      @get('toiletFilters').findBy('key', toilet).toggleProperty('isActive')
+      @get('controllers.index').send('transitionToActiveToiletFilter')
+
+      return
