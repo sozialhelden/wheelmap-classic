@@ -883,7 +883,8 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     }
 
     & > ul {
-      @extend .text-error;
+      // Make problems while deploying. Is this gone?
+      // @extend .text-error !optional;
       margin-bottom: 0;
       margin-top: 10px;
     }
