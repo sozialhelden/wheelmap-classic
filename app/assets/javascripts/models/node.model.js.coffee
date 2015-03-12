@@ -19,7 +19,6 @@ Wheelmap.Node = DS.Model.extend
   phone: attr()
   oldWheelchair: null
   oldToilet: null
-  toilet: Ember.computed.alias('wheelchairToilet')
 
   wheelchairWillChange: (()->
     oldWheelchair = @get('oldWheelchair')
@@ -32,8 +31,8 @@ Wheelmap.Node = DS.Model.extend
     oldToilet = @get('oldToilet')
 
     unless oldToilet?
-      @set('oldToilet', @get('toilet'))
-  ).observesBefore('toilet')
+      @set('oldToilet', @get('wheelchairToilet'))
+  ).observesBefore('wheelchairToilet')
 
   location: (()->
     new L.LatLng(@get('lat'), @get('lon'))

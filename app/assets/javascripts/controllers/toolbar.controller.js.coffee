@@ -2,7 +2,7 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
   _extraFilter: false # Flag for executing special status filter behavior only once
   needs: ['index', 'map']
   statusFilters: null
-  toiletFilter: null
+  toiletFilters: null
   searchString: null
   itemController: 'category'
   sortProperties: ['name']
@@ -17,14 +17,14 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
       Ember.Object.create({ key: 'unknown', isActive: true })
     ]
 
-    toiletFilter = [
+    toiletFilters = [
       Ember.Object.create({ key: 'yes', isActive: true })
       Ember.Object.create({ key: 'no', isActive: true })
       Ember.Object.create({ key: 'unknown', isActive: true })
     ]
 
     @set('statusFilters', statusFilters)
-    @set('toiletFilter', toiletFilter)
+    @set('toiletFilters', toiletFilters)
 
     return
 
@@ -56,7 +56,7 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
   ).property('statusFilters.@each.isActive')
 
   activeToiletFilters: ((key, activeToiletFilters)->
-    toiletFilters = @get('statusFilters')
+    toiletFilters = @get('toiletFilters')
 
     if activeToiletFilters?
       return toiletFilters.filter (toiletFilter)->
@@ -66,7 +66,7 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
         return isActive
 
     toiletFilters.filterBy('isActive')
-  ).property('statusFilters.@each.isActive')
+  ).property('toiletFilters.@each.isActive')
 
   isStatusYes: (->
     @get('activeStatusFilters').findBy('key', 'yes')?.get('isActive')

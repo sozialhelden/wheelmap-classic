@@ -1,15 +1,15 @@
 {{! toilet-status }}
 <div class="dropdown">
-    <a data-toggle="dropdown" {{ bind-attr class=":dropdown-toggle :btn :wheelchair toilet" }}>
+    <a data-toggle="dropdown" {{ bind-attr class=":dropdown-toggle :btn :wheelchair wheelchairToilet" }}>
         {{ toiletText }}
-        {{ wheelchair-popover tagName="i" classNames="icon-question-sign" wheelchairBinding="toilet" }}
+        {{ wheelchair-popover tagName="i" classNames="icon-question-sign" wheelchairBinding="wheelchairToilet" }}
         <i class="icon-caret-down pull-right"></i>
     </a>
     <ul class="dropdown-menu" role="menu">
         {{#each status in Wheelmap.Node.WHEELCHAIR_TOILET_STATUSES }}
             <li>
                 <a {{ action 'setToilet' status }}>
-                    {{ wheelchair-checkbox wheelchair=status status=toilet classNameBindings=":wheelchair" }}
+                    {{ wheelchair-checkbox wheelchair=status status=wheelchairToilet classNameBindings=":wheelchair" }}
                     {{ t 'toiletstatus' status }}
                     {{ wheelchair-popover tagName="i" classNames="icon-question-sign" wheelchair=status }}
                 </a>

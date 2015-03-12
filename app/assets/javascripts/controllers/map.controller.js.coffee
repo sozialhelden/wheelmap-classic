@@ -44,7 +44,7 @@ Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
     @set('lastStatusFilters', lastStatusFilters)
   ).observes('controllers.toolbar.activeStatusFilters')
 
-  activeCategoryFiltersDidChange: (->
+  activeCategoriesDidChange: (->
     lastCategoryFilters = null
     activeCategoryFilters = @get('controllers.toolbar.activeCategories')
 
@@ -58,10 +58,10 @@ Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
     lastToiletFilters = null
     activeToiletFilters = @get('controllers.toolbar.activeToiletFilters')
 
-    if activeToiletFilters.get('length') isnt @get('controllers.toolbar.activeToiletFilters.length')
+    if activeToiletFilters.get('length') isnt @get('controllers.toolbar.toiletFilters.length')
       lastToiletFilters = JSON.stringify(activeToiletFilters.getEach('key'))
 
-    @set('lastStatusFilters', lastToiletFilters)
+    @set('lastToiletFilters', lastToiletFilters)
   ).observes('controllers.toolbar.activeToiletFilters')
 
   queryCategoriesDidChange: (->
@@ -108,8 +108,6 @@ Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
   queryToiletDidChange: (->
     queryToilet = @get('toilet')
     toiletFilters = @get('controllers.toolbar.toiletFilters')
-
-    console.log(queryToilet)
 
     actuveToiletFilters = do ->
       unless queryToilet?
