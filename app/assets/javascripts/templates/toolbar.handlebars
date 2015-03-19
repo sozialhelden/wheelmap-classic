@@ -16,26 +16,26 @@
         <ul class="dropdown-menu" role="menu">
             <li {{ bind-attr class="isStatusYes:selected :toolbar-filter-dropdown-button :yes" }}>
                 <a {{ action toggleStatusFilter 'yes' }}>
-                    {{ t 'wheelchairstatus.yes' }}
                     <i class="icon-ok pull-right check-mark"></i>
+                    <span>{{ t 'wheelchairstatus.yes' }}</span>
                 </a>
             </li>
             <li {{ bind-attr class="isStatusLimited:selected :toolbar-filter-dropdown-button :limited" }}>
                 <a {{ action toggleStatusFilter 'limited' }}>
-                    {{ t 'wheelchairstatus.limited' }}
                     <i class="icon-ok pull-right check-mark"></i>
+                    <span>{{ t 'wheelchairstatus.limited' }}</span>
                 </a>
             </li>
             <li {{ bind-attr class="isStatusNo:selected :toolbar-filter-dropdown-button :no" }}>
                 <a {{ action toggleStatusFilter 'no' }}>
-                    {{ t 'wheelchairstatus.no' }}
                     <i class="icon-ok pull-right check-mark"></i>
+                    <span>{{ t 'wheelchairstatus.no' }}</span>
                 </a>
             </li>
             <li {{ bind-attr class="isStatusUnknown:selected :toolbar-filter-dropdown-button :unknown" }}>
                 <a {{ action toggleStatusFilter 'unknown' }}>
-                    {{ t 'wheelchairstatus.unknown' }}
                     <i class="icon-ok pull-right check-mark"></i>
+                    <span>{{ t 'wheelchairstatus.unknown' }}</span>
                 </a>
             </li>
         </ul>
@@ -54,20 +54,20 @@
         <ul class="dropdown-menu" role="menu">
             <li {{ bind-attr class="isToiletYes:selected :toolbar-filter-dropdown-button :yes" }}>
                 <a {{ action toggleToiletFilter 'yes' }}>
-                    {{ t 'toiletstatus.yes' }}
                     <i class="icon-ok pull-right check-mark"></i>
+                    <span>{{ t 'toiletstatus.yes' }}</span>
                 </a>
             </li>
             <li {{ bind-attr class="isToiletNo:selected :toolbar-filter-dropdown-button :no" }}>
                 <a {{ action toggleToiletFilter 'no' }}>
-                    {{ t 'toiletstatus.no' }}
                     <i class="icon-ok pull-right check-mark"></i>
+                    <span>{{ t 'toiletstatus.no' }}</span>
                 </a>
             </li>
             <li {{ bind-attr class="isToiletUnknown:selected :toolbar-filter-dropdown-button :unknown" }}>
                 <a {{ action toggleToiletFilter 'unknown' }}>
-                    {{ t 'toiletstatus.unknown' }}
                     <i class="icon-ok pull-right check-mark"></i>
+                    <span>{{ t 'toiletstatus.unknown' }}</span>
                 </a>
             </li>
         </ul>
