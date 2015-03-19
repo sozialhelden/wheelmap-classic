@@ -1,0 +1,39 @@
+lt:
+  devise:
+    confirmations:
+      confirmed: "Jūsų el. pašto adresas buvo sėkmingai patvirtintas."
+    edit:
+      form:
+        labels:
+          current_password: "Dabartinis slaptažodis <i>(reikalingas, kad patvirtinti pakeitimus)</i>"
+          password_confirmation: "Pakartokite slaptažodį"
+    failure:
+      locked: "Jūsų paskyra yra užrakinta"
+    mandatory: "* Būtina"
+    password_recovery:
+      headline: "Pamiršote Slaptažodį?"
+    password_reset:
+      email:
+        headline: "Sveiki %{email}"
+      form:
+        labels:
+          password: "Naujas slaptažodis"
+          password_confirmation: "Pakartokite slaptažodį"
+    passwords:
+      link: "Pamiršote slaptažodį?"
+      updated_not_active: "Jūsų slaptažodis buvo sėkmingai pakeistas"
+    sessions:
+      locked: "Jūsų paskyra yra užrakinta"
+    sign_in:
+      form:
+        labels:
+          password: Slaptažodis
+        submit: "Prisijungti"
+      headline: "Prisijungti"
+    sign_up:
+      email:
+        welcome: "Sveiki atvykę %{email}!"
+      form:
+        labels:
+          password: Slaptažodis
+          password_confirmation: "Pakartokite slaptažodį"

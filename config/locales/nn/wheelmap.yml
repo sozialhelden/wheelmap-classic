@@ -1,0 +1,4 @@
+nn:
+  formtastic:
+    labels:
+      save: Lagra

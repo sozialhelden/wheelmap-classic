@@ -1,0 +1,9 @@
+nn:
+  activerecord:
+    attributes:
+      poi:
+        name: Namn
+        type: Type
+        address: Adresse
+        website: Nettstad
+        phone: Telefon

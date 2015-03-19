@@ -1,0 +1,162 @@
+lt:
+  application:
+    require_no_user:
+      notice: "Jūs jau esate prisijungę..."
+    require_user:
+      notice: "Norėdami matyti šį puslapį, privalote prisijungti."
+  breadcrumbs:
+    node:
+      create: "Pridėti naują vietą"
+      edit: "Keisti vietą"
+    root: wheelmap
+  common:
+    close: uždaryti
+    skip: praleisti
+  errors:
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
+  flash:
+    photos:
+      destroy:
+        notice: "Paveikslas buvo sėkmingai ištrintas"
+  form:
+    show_places_without_status: "nežinoma būsena"
+  formtastic:
+    hints:
+      email: "Mes konfidencialiai elgiamės su jūsų adresu, jokio brukalo. Pažadame!"
+      website: "Pavyzdžiui: http://www.example.com"
+    labels:
+      category: "Kategorija:"
+      lat: Platuma
+      lon: Ilguma
+      osm_password: "OSM slaptažodis"
+      osm_username: "OSM paskyros vardas"
+      password: Slaptažodis
+      password_confirmation: "Pakartokite slaptažodį"
+      phone: "Telefonas:"
+      postcode: "Pašto kodas:"
+      street: "Gatvė:"
+      website: "Svetainė:"
+    titles:
+      optional: "Daugiau informacijos <span class=\"addition\">(visi laukai yra nebūtini)</span>"
+  header:
+    meta:
+      homepage: "Pradžios puslapis"
+    navigation:
+      blog: Naujienos
+      feedback: Atsiliepimai
+      login: "Prisijungti"
+      newsletter: Naujienlaiškis
+      profile: Profilis
+      what_is_wheelmap: "Kas yra wheelmap?"
+    searchbar:
+      add_place: "Pridėti kitą vietą"
+      find: Rasti
+      placeholder: "Ieškoti vietą"
+    tagline: "Wheelmap logotipas"
+  home:
+    index:
+      link:
+        node:
+          create: "Pridėti naują vietą"
+      popup:
+        form:
+          unknown: "nežinoma būsena"
+        more: "daugiau ..."
+  how?: Kaip?
+  layouts:
+    application:
+      banner:
+        alt: "Sozialhelden.de projektas"
+  node:
+    address:
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
+    tags:
+      phone: "Telefonas:"
+      website: "Svetainė:"
+  nodes:
+    edit:
+      link:
+        large_map: "&laquo; Atšaukti"
+    errors:
+      not_available: "Atleiskite, šis puslapis laikinai neprieinamas."
+      not_existent: "Atleiskite, ši vieta daugiau nebeprieinama."
+      not_found: "Atleiskite, puslapis nerastas."
+    flash:
+      authorize_wheelmap: "Norėdami modifikuoti duomenis, jūs privalote turėti OpenStreetMap paskyrą"
+    new:
+      header:
+        title: "Nauja vieta | wheelmap.org"
+      link:
+        large_map: "&laquo; Atšaukti"
+    node:
+      link:
+        claim: "Ar jūs čia dirbate?"
+        edit_node: "Keisti vietą"
+        report_bug: "Pranešti apie problemą"
+    show:
+      link:
+        upload: "Išsiųsti paveikslą"
+      show-in-osm: OpenStreetMap
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        separator: "."
+        unit: $
+    format:
+      delimiter: ","
+      separator: "."
+    human:
+      decimal_units:
+        format: "%n %u"
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Baitas
+            few: Baitai
+            other: Baitų
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+  oauth:
+    callback:
+      notice: "Jūsų wheelmap paskyra dabar yra susieta su OpenStreetMap %{user} paskyra."
+  splash:
+    step1: "Spustelėkite ant jums žinomos vietos"
+    what_is_wheelmap: "Kas yra wheelmap?"
+  statistics: Statistika
+  support:
+    array:
+      last_word_connector: "ir"
+      sentence_connector: ir
+      two_words_connector: "ir"
+      words_connector: ","
+  toiletstatus:
+    unknown: "nežinoma būsena"
+  user_sessions:
+    create:
+      error:
+        notice: "El. paštas ir slaptažodis neatitinka."
+    new:
+      login: "Prisijungti"
+      password: Slaptažodis
+  users:
+    after_signup_edit:
+      welcome:
+        set_password_for_mobile: "Jūs užbaigėte savo registraciją su OpenStreetMap.\nDabar, pasirinkite el. pašto adresą ir slaptažodį savo Wheelmap paskyrai ir tuomet, viskas bus paruošta! Šis el. pašto adresas ir slaptažodis jums reikalingi, norint prisijungti prie Wheelmap programos, besinaudojant iPhone ar Android."
+        text: "Kaip mes galime su jumis susisiekti? Vėliau, šią informaciją galite pakeisti savo profilyje."
+    edit:
+      headline:
+        your_images: "Jūsų išsiųsti paveikslai"
+  wheelchairstatus:
+    unknown: "nežinoma būsena"
+  wheelmap:
+    itunes:
+      alt: "AppStore Logotipas"
+    what_is:
+      unknown_accessible: "Padėkite žymėdami vietas!"

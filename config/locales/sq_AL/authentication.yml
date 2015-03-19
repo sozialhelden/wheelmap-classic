@@ -1,0 +1,32 @@
+sq_AL:
+  devise:
+    edit:
+      form:
+        labels:
+          email: Email
+          password_confirmation: "Përsërit fjalëkalimin"
+    password_recovery:
+      form:
+        labels:
+          email: Email
+    password_reset:
+      form:
+        labels:
+          password_confirmation: "Përsërit fjalëkalimin"
+    passwords:
+      link: "Harruat fjalëkalimin?"
+    sign_in:
+      form:
+        labels:
+          email: Email
+          password: Fjalëkalim
+        submit: "Identifikohu"
+      headline: "Identifikohu"
+    sign_out:
+      headline: "Dil"
+    sign_up:
+      form:
+        labels:
+          email: Email
+          password: Fjalëkalim
+          password_confirmation: "Përsërit fjalëkalimin"

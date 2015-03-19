@@ -1,0 +1,4 @@
+fi:
+  actions:
+    save: Tallenna
+    cancel: Peruuta

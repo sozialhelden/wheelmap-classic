@@ -67,7 +67,6 @@ sq_AL:
     show_unaccessible_places: "jo karrige me rrota të aksesueshme"
   formtastic:
     hints:
-      email: "E trajtojmë adresën tuaj në mënyrë konfidenciale, s'ka spam. Ju premtojmë!"
       lat: "Lëvize shenjuesin mbi hartë te vendi i saktë"
       osm_username: "Nuk jeni pjestarë ende? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Krijo një llogari OpenStreetMap tani</a>"
       password: "(lëre bosh nëse nuk dëshironi ta ndryshoni)"
@@ -310,6 +309,8 @@ sq_AL:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+  toiletstatus:
+    unknown: "status i papërcaktuar"
   user_sessions:
     create:
       activation:

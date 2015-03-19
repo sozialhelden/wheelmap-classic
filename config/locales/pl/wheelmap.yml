@@ -314,6 +314,8 @@ pl:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: po południu
+  toiletstatus:
+    unknown: "status nieznany"
   user_sessions:
     create:
       activation:

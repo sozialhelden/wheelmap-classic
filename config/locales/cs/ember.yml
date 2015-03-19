@@ -1,0 +1,21 @@
+cs:
+  models:
+    category:
+      prompt: "Zvolte kategorii"
+    node_type:
+      prompt: "Zvolte typ"
+    node:
+      mail:
+        subject: "[Wheelmap] Problém s %{headline}"
+        body: "(Pište prosím pouze anglicky nebo německy). \n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:"
+  actions:
+    send: Odeslat
+    save: Uložit
+    cancel: Zrušit
+  errors:
+    models:
+      node:
+        website:
+          invalid: "Neplatná adresa webové stránky."
+        phone:
+          invalid: "Neplatné telefonní číslo. Číslo musí mít následující formát: +49 30 234567"

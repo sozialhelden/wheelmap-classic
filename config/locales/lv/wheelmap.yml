@@ -35,9 +35,6 @@ lv:
       not_an_integer: "jābūt veselam skaitlim"
       not_found: "netika atrasts"
       not_locked: "netika bloķēts"
-      not_saved:
-        one: "%{resource} netika saglabāts kļūdas dēļ: "
-        other: "%{count} kļūdas neļāva saglabāt %{resource}:"
       odd: "jābūt nepāra vērtībai"
       taken: "jau ir aizņemts"
       too_long: "ir par garu (ne vairāk kā %{count} zīmes)"
@@ -45,9 +42,6 @@ lv:
       wrong_length: "garums ir nepareizs (jābūt %{count} zīmēm)"
     template:
       body: "Ar sekojošiem laukiem radās problēmas:"
-      header:
-        one: "1 kļūda neļāva saglabāt %{model} "
-        other: "%{count} kļūdas neļāva saglabāt šo %{model}"
   flash:
     actions:
       create:
@@ -67,7 +61,6 @@ lv:
     show_unaccessible_places: "Nav pieejams ar ratiņkrēslu"
   formtastic:
     hints:
-      email: "Jūsu adrese būs konfidenciāla informācija, nekāda spama. Apsolam!"
       lat: "Pārvietojiet atzīmi uz pareizo vietu kartē "
       osm_username: "Neesi reģistrējies? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>"
       password: "(atstājiet tukšu, ja nevēlaties mainīt)"
@@ -128,7 +121,6 @@ lv:
     searchbar:
       add_place: "Pievienot jaunu vietu"
       find: atrast
-      label: ~
       placeholder: "piem., Sunset Boulevard L.A. or Brandenburg Gate Berlin"
       title_add_place: "Pievieno jaunu vietu šajā pozīcijā!"
     tagline: "Wheelmap logo"
@@ -240,18 +232,12 @@ lv:
     currency:
       format:
         delimiter: ","
-        precision: 2
         format: "%u%n"
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: Ls
     format:
       delimiter: "."
-      precision: 3
       separator: "."
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -261,28 +247,13 @@ lv:
           quadrillion: Kvadriljons
           thousand: tūkstotis
           trillion: Triljons
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 3
-        significant: atbilst
-        strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
         units:
-          byte:
-            one: Bits
-            other: baiti
           gb: GB
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ","
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -290,9 +261,6 @@ lv:
     callback:
       notice: "Jūsu wheelmap konts tagad ir sasaistīts ar OpenStreetMap kontu %{user}."
   or: vai
-  place:
-    one: "%{count} vieta"
-    other: "%{count} vietas"
   profile:
     edit:
       application:
@@ -331,6 +299,8 @@ lv:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: vakarā
+  toiletstatus:
+    unknown: "nezināms statuss"
   user_sessions:
     create:
       activation:
@@ -377,13 +347,5 @@ lv:
     page_entries_info:
       multi_page: "Rāda %{from} - %{to} no %{count} %{model} kopumā"
       multi_page_html: "Parāda  %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> no <b>%{count}</b> kopumā"
-      single_page:
-        one: "Rāda 1 %{model}\n"
-        other: "Parādīt visus %{count} %{model}"
-        zero: "%{model} netika atrasts"
-      single_page_html:
-        one: "Rāda <b>1</b> %{model}"
-        other: "Rāda <b>all&nbsp;%{count}</b> %{model}"
-        zero: "%{model} netika atrasts"
     page_gap: "&hellip;"
     previous_label: "&#8592; Iepriekšējais"

@@ -1,0 +1,65 @@
+lt:
+  poi:
+    category:
+      food: Maistas
+      health: Sveikata
+      leisure: Laisvalaikis
+      sport: Sportas
+      tourism: Turizmas
+      unknown: Nežinoma
+    name:
+      accommodation:
+        hotel: Viešbutis
+      education:
+        kindergarten: Vaikų darželis
+        library: Biblioteka
+        museum: Muziejus
+        school: Mokykla
+        university: Universitetas
+      food:
+        bar: Baras
+        cafe: Kavinė
+        drinking_water: "Geriamas vanduo"
+        restaurant: Restoranas
+      government:
+        embassy: Ambasada
+        police: Policija
+      health:
+        hospital: Ligoninė
+      leisure:
+        casino: Kazino
+        cinema: Kinas
+        nightclub: Naktinis klubas
+        playground: Žaidimų aikštelė
+        theatre: Teatras
+        zoo: Zoologijos sodas
+      misc:
+        insurance: Draudimas
+        lawyer: Advokatas
+      money_post:
+        atm: Bankomatas
+        bank: Bankas
+      public_transfer:
+        aerodrome: Oro uostas
+        bicycle_rental: "Dviračių nuoma"
+        bus_station: "Autobusų stotis"
+        bus_stop: "Stotelė"
+        ferry: Keltas
+        station: "Geležinkelio stotis"
+        tram_stop: "Tramvajaus stotelė"
+      shopping:
+        books: Knygos
+        clothes: Drabužiai
+        computer: Kompiuteris
+        dry_cleaning: "Sausas valymas"
+        electronics: Elektronika
+        gift: "Dovanų parduotuvė"
+        hardware: Aparatinė Įranga
+        mall: "Prekybos centras"
+        toys: Žaislai
+      sport:
+        swimming_pool: "Baseinas"
+      tourism:
+        beach: Paplūdimys
+      unknown:
+        unknown: Nežinoma

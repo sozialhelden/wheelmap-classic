@@ -6,27 +6,29 @@ uk:
       food: Їжа
       government: Державні установи
       health: Здоров'я
-      leisure: Вільний час
+      leisure: Дозвілля
       misc: Різне
-      money_post: "Відділення банку"
+      money_post: "Банки"
       public_transfer: "Громадський транспорт"
-      shopping: Шопінг
+      shopping: Магазини
       sport: Спорт
       tourism: Туризм
-      unknown: Невідомий
+      unknown: Категорію не вказано
     name:
       accommodation:
-        beach_resort: "Пляж готелю"
-        bed_and_breakfast: "Ліжко та сніданок. Готель"
-        camp_site: "Турбаза"
-        caravan_site: "Наметовій табір"
+        beach_resort: "Готель з пляжами"
+        bed_and_breakfast: "Готель. Ночівля й сніданок"
+        camp_site: "Місце для табору"
+        caravan_site: "Стоянка житлових трейлерів"
         chalet: Шале
+        dormitory: Гуртожиток
         guest_house: "Гостьовий будинок"
-        hostel: Гуртожиток
+        hostel: Хостел
         hotel: Готель
         motel: Мотель
       education:
-        college: Коледж
+        college: Коледж/Технікум
+        driving_school: "Автошкола"
         kindergarten: Дитячий садок
         library: Бібліотека
         museum: Музей
@@ -37,28 +39,32 @@ uk:
         biergarten: Паб під відкритим небом
         cafe: Кафе
         drinking_water: "Питна вода"
-        fast_food: "ФастФуд"
+        fast_food: "Фастфуд"
+        ice_cream: "Морозиво"
         pub: Паб
         restaurant: Ресторан
       government:
-        courthouse: Дім правосуддя/Суд
+        courthouse: Суд
         embassy: Посольство
-        police: Поліція
+        government: "Урядова організація"
+        police: Поліція/Міліція
         public_building: "Громадський заклад"
         townhall: Мерія
       health:
+        dentist: Дантист
         doctors: Лікарі
         hearing_aids: "Продаж слухових апаратів"
         hospital: Лікарня
         medical_supply: "Медикаменти"
         pharmacy: Аптека
-        social_facility: "Соціальний об'єкт"
+        social_facility: "Соціальний центр"
         veterinary: Ветеринар
       leisure:
         arena: Арена
         brothel: Бордель
+        casino: Казино
         cinema: Кінотеатр
-        community_center: "Общинний центр"
+        community_center: "Громадський центр / Приймальня"
         gallery: Галерея
         nightclub: Нічний клуб
         playground: Дитячий майданчик
@@ -68,8 +74,10 @@ uk:
         zoo: Зоопарк
       misc:
         company: "Компанія (офіс)"
+        estate_agent: "Агентство нерухомості"
+        insurance: Страхування
         lawyer: Адвокат/Юрист
-        place_of_worship: "Місце для роботи"
+        place_of_worship: "Місце поклоніння"
         toilets: Туалет
       money_post:
         atm: Банкомат
@@ -79,79 +87,92 @@ uk:
         post_office: "Поштове відділення"
       public_transfer:
         aerodrome: Аеропорт
-        bicycle_parking: "Парковка для велосипедів"
+        bicycle_parking: "Паркування для велосипедів"
         bicycle_rental: "Оренда велосипедів"
-        boatyard: шлюпочна майстерня
-        bus_station: "Автобусна зупинка"
+        boatyard: Корабельня
+        bus_station: "Автобусна станція"
         bus_stop: "Автобусна зупинка"
-        cable_car: "Канатна дорога"
+        cable_car: "Фунікулер"
         car_rental: "Прокат автомобілів"
-        car_sharing: "Обмін авто"
-        chair_lift: "Підйомник для крісла"
+        car_sharing: "Короткотермінова оренда авто"
+        chair_lift: "Крісельний підйомник"
         ferry: Пором
         ferry_terminal: "Термінал порому"
-        fuel: "Автозаправка"
-        halt: Зупинити
-        light_rail: "поручні"
-        parking: Парковка
-        parking_aisle: "Вхід на парковку"
+        fuel: "АЗС"
+        halt: Залізнична зупинка
+        light_rail: "Швидкісний трамвай"
+        parking: Автостоянка
+        parking_aisle: "Проїзд на автостоянку"
         platform: Платформа
-        station: "Метро"
+        station: "Залізнична станція"
         subway_entrance: "Вхід в метро"
         terminal: "Термінал аеропорту"
         tram_stop: "Трамвайна зупинка"
       shopping:
-        alcohol: Лікер
-        bakery: Кодитерська
+        alcohol: Алкоголь
+        bakery: Хліб
+        beauty: "Салон краси"
         beverages: Напої
         bicycle: "Магазин велосипедів"
-        books: Книги
-        butcher: М'ясна лавка
-        car_repair: "Ремонт автомобілів"
+        books: Книгарня
+        butcher: М'ясний
+        car_repair: "СТО"
         car_shop: "Автосалон"
         chemist: Фармацевт
         clothes: Одяг
-        computer: Комп'ютер
-        convenience: Зручність
-        department_store: "Універмаг"
+        computer: Комп'ютерний
+        confectionery: "Кондитерська"
+        convenience: Міні-маркет
+        deli: Делікатеси
+        department_store: "Промтовари"
         doityourself: "Зроби сам"
         dry_cleaning: "Хімчистка"
         electronics: Електроніка
+        fabric: "Тканини"
+        farm_shop: "Фермерський"
         florist: Флорист
         furniture: Меблі
         garden_centre: "Садовий центр"
+        gift: "Подарунки"
         hairdresser: Перукар
-        hardware: Жорсткий диск
+        hardware: Господарський магазин
+        jewelry: Ювелірні вироби
         kiosk: Кіоск
         laundry: Пральня
         mall: "Торговий центр"
         optician: Оптика
+        organic: "Натуральні харчові продукти"
+        outdoor: "Туристичний"
+        pet: "Зоомагазин"
         photo: Фото
-        second_hand: "Інший бік"
+        second_hand: "Вживані речі"
         shoes: Взуття
-        sports: Спорт
+        sports: Спортивний магазин
         stationery: Канцелярські товари
         supermarket: Супермаркет
+        toys: Іграшки
+        travel_agency: "Туристичне агентство"
         video: "Відеопрокат"
       sport:
-        sports_centre: "СпортЦентр"
+        pitch: "Спортивне поле"
+        sports_centre: "Спортивний центр"
         stadium: Стадіон
         swimming: Плавання
         swimming_pool: "Басейн"
       tourism:
-        archaeological_site: "Археологічний сайт"
-        arts_centre: "Арт центр"
-        artwork: Мистецтво
-        attraction: Атракціони
+        archaeological_site: "Пам’ятка археології"
+        arts_centre: "Мистецький центр"
+        artwork: Витвір мистецтва
+        attraction: Пам’ятка
         battlefield: Поле бою
         beach: Пляж
         beacon: Маяк
         castle: Замок
-        cave_entrance: "Вхід"
+        cave_entrance: "Вхід в печеру"
         information: "Інформація для туристів"
         memorial: Пам'ятник
         theme_park: "Парк розваг"
         tower: Вежа
-        viewpoint: "Точка зору"
+        viewpoint: "Оглядовий майданчик"
       unknown:
-        unknown: Невідомий
+        unknown: Категорію не вказано

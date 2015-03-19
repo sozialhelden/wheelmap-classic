@@ -35,9 +35,6 @@ ar:
       not_an_integer: "يجب أن يكون صحيحا"
       not_found: "لا يوجد"
       not_locked: "لم يكن مغلق"
-      not_saved:
-        one: "%{resource}: خطأ واحد يمنع من الحفظ"
-        other: "%{count} خطأ يمنع من الحفظ %{resource}::"
       odd: "يجب أن يكون فردي"
       taken: "غير متوفر (مستخدم)"
       too_long: "%{count} characters) أطول من اللازم (الحد الأقصى هو)"
@@ -45,9 +42,6 @@ ar:
       wrong_length: "%{count} الطول غير مناسب (يجب أن يكون)"
     template:
       body: "يرجى التحقق من الحقول التالية:"
-      header:
-        one: "%{model} ليس بالامكان حفظ  خطأ واحد."
-        other: "%{count} ليس بالامكان الحفظ %{model}"
   flash:
     actions:
       create:
@@ -67,7 +61,6 @@ ar:
     show_unaccessible_places: "غير ممكن الوصول بالكرسي المتحرك"
   formtastic:
     hints:
-      email: "المعلومات الشخصية تحظى بسرية تامة"
       lat: "حرك المؤشر على الخريطة لتصحيح موقع"
       osm_username: "<a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a> غير مشترك في \"أوبن ستريت ماب\" بادر بالتسجيل الآن  ؟"
       password: "في حال لم ترغب بالتغيير، أبقه فارغاً"
@@ -128,7 +121,6 @@ ar:
     searchbar:
       add_place: "أضف مكاناً آخر"
       find: بحث
-      label: ~
       placeholder: "سن سيت بوليڨارد، لوس أنجلوس  أو  براندن بيرڠ ،برلين"
       title_add_place: "أضف مكاناً جديداً في هذا الموقع الآن!"
     tagline: "شعار ويل ماب"
@@ -239,17 +231,11 @@ ar:
       format:
         delimiter: ","
         format: "%u%n"
-        precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: $
     format:
       delimiter: ","
-      precision: 3
       separator: "."
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -259,28 +245,13 @@ ar:
           quadrillion: الكدريليون رقم
           thousand: ألف
           trillion: تريليون
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 3
-        significant: صحيح
-        strip_insignificant_zeros: صحيح
       storage_units:
         format: "%n %u"
         units:
-          byte:
-            one: بايت
-            other: بايت
           gb: GB
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -288,9 +259,6 @@ ar:
     callback:
       notice: "%{user} حسابك في \"ويل ماب\" مرتبط بحسابك في\" أوبن ستريت ماب \""
   or: أو
-  place:
-    one: "%{count} مكان"
-    other: "%{count} أماكن "
   profile:
     edit:
       application:
@@ -318,7 +286,6 @@ ar:
     array:
       last_word_connector: ", و "
       sentence_connector: و
-      skip_last_comma: صحيح
       two_words_connector: " و "
       words_connector: ", "
     select:
@@ -330,6 +297,8 @@ ar:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: مساء
+  toiletstatus:
+    unknown: "حالة غير معروفة"
   user_sessions:
     create:
       activation:

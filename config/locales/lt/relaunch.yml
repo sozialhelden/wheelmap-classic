@@ -1,0 +1,69 @@
+lt:
+  activerecord:
+    attributes:
+      poi:
+        address: Adresas
+        website: Svetainė
+        phone: Telefonas
+        address_street: Gatvė
+        address_housenumber: Namo numeris
+        address_postcode: Pašto kodas
+        address_city: Miestas
+  faq:
+    answers:
+      0: Jūs visuomet galite keisti vietos žymėjimą patys. Tiesiog pasirinkite tinkamą žymėjimą ir spauskite "Išsaugoti" - atlikta!
+      2: Jūs galite pridėti tolimesnę informaciją (pvz., "Šioje vietoje yra mobili rampa") komentarų sekcijoje. Spauskite "Keisti" ir "Pridėti komentarą".
+    headline: Ar yra problemų su šia vieta?
+    questions:
+      0: Neteisingas žymėjimas.
+      1: Vietos detalės yra neteisingos arba jų visai nėra.
+      2: Aš turiu daugiau informacijos apie šią vietą.
+  header:
+    navigation:
+      about_wheelmap: Apie Wheelmap
+      choose_language: Pasirinkti kalbą
+      contact: Kontaktai
+      map: Žemėlapis
+      projects: Projektai
+    toolbar:
+      categories: Kategorijos
+  home:
+    index:
+      overlay:
+        categories: Filtruoti vietas pagal kategorijas
+  nodes:
+    node_data:
+      address: 'Adresas:'
+    node_edit:
+      edit: Keisti
+    node_map:
+      map: 'Žemėlapis:'
+    node_note:
+      comment: 'Komentarai:'
+    node_photos:
+      add: Pridėti
+      photos_of_this_place: 'Šios vietos nuotraukos:'
+      upload: Išsiųsti
+    node_similar:
+      similar: 'Panašios vietos: %{name}'
+    node_streetview:
+      streetview: 'Gatvės vaizdas:'
+    show:
+      share:
+        facebook: Facebook
+        text: 'Aš radau šią vietą puslapyje Wheelmap.org: %{name}'
+        twitter: Twitter
+  search:
+    index:
+      no-results:
+        headline: Atleiskite, mums nepavyko rasti vietos pavadinimu "%{query}".
+        hint:
+          example: <strong>Pavyzdys:</strong> London, United Kingdom
+      results:
+        ticker:
+          one: '%{count} rezultatas:'
+          few: '%{count} rezultatai:'
+          other: '%{count} rezultatų:'
+    timeout:
+      headline: Oi, mūsų kaltė
+      info: Mūsų paieškos tarnyba buvo laikinai neprieinama.

@@ -57,9 +57,6 @@ hi:
         notice: "%{resource_name} सफलतापूर्वक हटाया गया"
       update:
         notice: "%{resource_name} सफलतापूर्वक अपडेट हुआ"
-    photos:
-      destroy:
-        notice: ~
   form:
     show_fully_accessible_places: "व्हीलचेयर सुलभ "
     show_limited_accessible_places: "आंशिक तौर पर व्हीलचेयर सुलभ\n"
@@ -67,7 +64,6 @@ hi:
     show_unaccessible_places: "व्हीलचेयर के लिए सुलभ नहीं"
   formtastic:
     hints:
-      email: "आपका पता गोपनीय रखा जाएगा, कोई स्पैम नहीं । ये हमारा वायदा है!"
       lat: "मार्कर को नक्शे पर हिलाकर सही जगह पर लगाएं "
       osm_username: "अभी सदस्य नहीं हैं? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>"
       password: "(अगर बदलना नहीं है तो खाली छोड़िए)"
@@ -118,7 +114,6 @@ hi:
       logout: "लॅाग आउट "
       newsletter: 'न्यूज़लैटर, संदेश पत्र, सामाचार पत्र '
       press: दबाएं
-      profile: ~
       suggestions: 'सुझाव
 
         '
@@ -127,8 +122,6 @@ hi:
     searchbar:
       add_place: "कोई और जगह शामिल करें"
       find: ढूंढो
-      label: ~
-      placeholder: ~
       title_add_place: "इस स्थान पर नई जगह अंकित करें!"
     tagline: "वहीलमैप का लोगो, वहीलमैप का चिन्ह"
     title: "सभी वहीलचेयर सुलभ स्थान खोजें"
@@ -143,8 +136,6 @@ hi:
     index:
       filter:
         category: "श्रेणी चुनिए "
-        deselect_all: ~
-        select_all: ~
         wheelchair: "व्हीलचेयर सुलभ?"
       ie:
         action:
@@ -171,9 +162,6 @@ hi:
       wheelchair:
         limit:
           headline: "%{city} (%{count}) में सभी आंशिक तौर पर व्हीलचेयर सुलभ स्थान %{type}  "
-        ? "no"
-        :
-          headline: ~
         unknown:
           headline: "सभी %{type} इन %{city} में व्हीलचेयर के लिए बाधा रहित रास्ते होने की जानकारी नहीं है।  (%{count})"
         'yes':
@@ -197,8 +185,6 @@ hi:
     edit:
       header:
         title: "जगह संपादित करें: %{node} | wheelmap.org"
-      link:
-        large_map: ~
     errors:
       default: "कुछ गलती हुई। हमें इस समस्या के बारे में जानकारी है"
       not_authorized: "माफ कीजिए, पुष्टीकरण असफल रहा"
@@ -211,8 +197,6 @@ hi:
     new:
       header:
         title: "नई जगह । wheelmp.org"
-      link:
-        large_map: ~
     node:
       link:
         claim: "आप यहां काम करते हैं?"
@@ -222,8 +206,6 @@ hi:
       header:
         title: "जगह: %{node} | wheelmap.org"
       link:
-        listing: ~
-        upload: ~
         back: वापस, पीछे
         large_map: बड़ा करें
       more_data_from: "के लिए और भी डेटा है, जांचकर्ता ः"
@@ -239,17 +221,11 @@ hi:
       format:
         delimiter: ","
         format: "%u%n"
-        precision: 2
         separator: "."
-        significant: false
-        strip_insignificant_zeros: false
         unit: ₹
     format:
       delimiter: ","
-      precision: 3
       separator: "."
-      significant: false
-      strip_insignificant_zeros: false
     human:
       decimal_units:
         format: "%n %u"
@@ -259,12 +235,6 @@ hi:
           quadrillion: करोड़ शंख
           thousand: हज़ार
           trillion: खरब
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
         units:
@@ -275,12 +245,6 @@ hi:
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -318,7 +282,6 @@ hi:
     array:
       last_word_connector: "और "
       sentence_connector: और
-      skip_last_comma: true
       two_words_connector: " और "
       words_connector: ", "
     select:
@@ -330,6 +293,8 @@ hi:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: अपराह्न
+  toiletstatus:
+    unknown: "स्थिति अज्ञात"
   user_sessions:
     create:
       activation:
@@ -350,9 +315,6 @@ hi:
       welcome:
         headline: "व्हीलमैप में आपका स्वागत है"
         set_password_for_mobile: "क्या आपके पास स्मार्टफन है? अगर हाँ, तो आईफओन और ऐंड्रॅाइड फोन पर व्हीलमैप इस्तेमाल करने के लिए पासवर्ड निर्धारित करें। "
-    edit:
-      headline:
-        your_images: ~
         text: "आपसे कैसे संपर्क करें? यह जानकारी\nआप बाद में भी बदल सकते हैं। "
   wheelchairstatus:
     limited: "आंशिक तौर पर व्हीलचेयर सुलभ "
@@ -366,13 +328,11 @@ hi:
       become_a_supporter: "समर्थक बनिए"
       main_supporter: "मुख्य समर्थक"
     itunes:
-      alt: ~
       title: "आईफोन ऐप्लीकेशन आभी डाउनलोड करें!"
     logo:
       alt: "व्हीलमैप लोगो - वहीलचेयर सुलभ स्थान खोजें"
       title: "व्हीलमैप - व्हीलचेयर सुलभ स्थान ढूंढें"
     what_is:
-      fully_accessible: ~
       limited_accessible: "प्रवेश पर एक सीढी (अधिक्तम\nऊंचाई ७ सेमी), अधिकांश कमरे बगैर सीढी के,\nशौचालय पहुंचने में बाधा"
       not_accessible: "प्रवेश पर कई या ऊंची सीढियां,\nकमरे विकलांगों के लिए सुलभ नहीं।"
   will_paginate:
@@ -388,5 +348,4 @@ hi:
         one: "दर्शित <b>1</b> %{model}"
         other: "प्रदर्शित <b>all&nbsp;%{count}</b> %{model}"
         zero: "कोई %{model} नहीं मिला"
-    page_gap: ~
     previous_label: "&#8592; पिछला"

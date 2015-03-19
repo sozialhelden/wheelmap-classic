@@ -67,7 +67,6 @@ da:
     show_unaccessible_places: "ikke kørestolstilgængeligt"
   formtastic:
     hints:
-      email: "Vi behandler din adresse fortroligt og vil aldrig udsende spam!"
       lat: "Flyt markøren på kortet til den korrekte position"
       osm_username: "Ikke medlem endnu?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Opret en Openstreetmap konto nu</a>"
       password: "(efterlad feltet tomt, hvis du ikke ønsker at ændre dette)"
@@ -128,7 +127,6 @@ da:
     searchbar:
       add_place: "Tilføj endnu et sted"
       find: Find
-      label: ~
       placeholder: "Søg efter et sted"
       title_add_place: "Tilføj et nyt sted på denne position nu!"
     tagline: "Wheelmap logo"
@@ -239,17 +237,11 @@ da:
       format:
         delimiter: ","
         format: "%u %n"
-        precision: 2
         separator: ","
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: DKK
     format:
       delimiter: "."
-      precision: 3
       separator: ","
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -259,12 +251,6 @@ da:
           quadrillion: Billiard
           thousand: Tusind
           trillion: Billion
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 3
-        significant: sandt
-        strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
         units:
@@ -275,12 +261,6 @@ da:
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -318,7 +298,6 @@ da:
     array:
       last_word_connector: " og "
       sentence_connector: og
-      skip_last_comma: sandt
       two_words_connector: " og "
       words_connector: ", "
     select:
@@ -330,6 +309,8 @@ da:
       long: "%A, %e. %B %Y, %H:%M"
       short: "%e. %b %Y, %H:%M"
     pm: pm
+  toiletstatus:
+    unknown: "kørestolstilgængeligt ukendt status"
   user_sessions:
     create:
       activation:

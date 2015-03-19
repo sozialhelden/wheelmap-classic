@@ -1,0 +1,22 @@
+fi:
+  devise:
+    edit:
+      form:
+        labels:
+          email: Sähköposti
+    password_recovery:
+      form:
+        labels:
+          email: Sähköposti
+    passwords:
+      link: "Unohditko salasanasi?"
+    sign_in:
+      form:
+        labels:
+          email: Sähköposti
+          password: Salasana
+    sign_up:
+      form:
+        labels:
+          email: Sähköposti
+          password: Salasana

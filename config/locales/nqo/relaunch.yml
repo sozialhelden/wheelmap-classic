@@ -1,0 +1,25 @@
+nqo:
+  header:
+    navigation:
+      choose_language: ߞߊ߲ ߡߊߝߊ߬ߟߋ߲߬
+      contact: ߡߊ߬ߛߐ߬ߘߐ߲߬ߕߊ
+      map: ߔߊ߬ߔߘߊ
+      projects: ߘߊߞߎ߲ ߠߎ߬
+    toolbar:
+      categories: ߦߌߟߊߡߊ ߟߎ߬
+  home:
+    index:
+      overlay:
+        button: ߊ߬ߥߊ߬߸ ߊ߲ ߕߊ߯߹
+        categories: ߦߌߟߊ ߟߎ߬ ߛߍ߲ߛߍ߲߫ ߦߌߟߡߊ ߟߎ߬ ߟߊ߫
+        lookup: ߦߙߐ߫ ߘߊ߲߬ߣߊߕߍ߰ߣߍ߲ ߘߏ߫ ߢߌߣߌ߲߫
+  nodes:
+    new:
+      form:
+        legend: ߦߙߐ ߦߌߟߦߊߟߌ
+        location: ߛߐ߲߬ߞߌ߲߬ߠߌ߲ ߞߍ߫ ߔߊ߬ߔߘߊ ߞߊ߲߬ ߖߊ߰ߣߌ߲߬ ߦߋ߫ ߓߊ߲߫ ߞߊ߬ ߢߊߣߐ߮ ߓߌ߬ߟߊ߬ ߦߙߐ߫ ߟߊߓߐߕߊ ߦߙߐ ߘߐ߫
+  search:
+    index:
+      no-results:
+        hint:
+          example: <strong>ߟߊߒߡߊ߫ ߘߐ:</strong>ߡߊ߬ߟߌ߸ ߓߡߊ߬ߞߏ߬

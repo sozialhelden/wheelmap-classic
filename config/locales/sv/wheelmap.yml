@@ -67,7 +67,6 @@ sv:
     show_unaccessible_places: "ej rullstolstillgänglig"
   formtastic:
     hints:
-      email: "Vi lovar att behandla din e-postadress konfidentiellt. Inget spam!"
       lat: "Flytta markören på kartan till korrekt position"
       osm_username: "Ännu ej medlem?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Skapa ett Openstreetmap konto nu</a>"
       password: "(lämnas tomt, om du inte vill ändra det)"
@@ -128,7 +127,6 @@ sv:
     searchbar:
       add_place: "Lägg till en plats"
       find: Hitta
-      label: " "
       placeholder: "Sök en plats"
       title_add_place: "Lägg till en ny plats på denna position!"
     tagline: "Wheelmap logo"
@@ -239,17 +237,11 @@ sv:
       format:
         delimiter: ","
         format: "%n %u"
-        precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: kr
     format:
       delimiter: ","
-      precision: 2
       separator: ","
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -259,12 +251,6 @@ sv:
           quadrillion: Kvadriljon
           thousand: Tusen
           trillion: Trillion
-          unit: "\"\""
-      format:
-        delimiter: "\"\""
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
         units:
@@ -275,12 +261,6 @@ sv:
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: "\"\""
-    precision:
-      format:
-        delimiter: "\"\""
   oauth:
     application:
       connect:
@@ -329,6 +309,8 @@ sv:
       long: "%e %B %Y %H:%M"
       short: "%e %b %H:%M"
     pm: pm
+  toiletstatus:
+    unknown: "rullstolstillgänglighet okänd"
   user_sessions:
     create:
       activation:
