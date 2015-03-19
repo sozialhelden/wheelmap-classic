@@ -381,11 +381,12 @@
         content: '';
         width: 20px;
         height: 23px;
-        display: inline-block;
+        display: block;
         vertical-align: middle;
         background-size: 100%;
         background-repeat: no-repeat;
-        margin-right: 4px;
+        margin-right: 8px;
+        float: left;
       }
 
       @each $status in $toilet-filter-status {
@@ -416,6 +417,11 @@
 
         > a {
           padding: 8px 10px;
+
+          > span {
+            @include text-overflow();
+            display: block;
+          }
         }
       }
     }
