@@ -1,0 +1,98 @@
+pt_PT:
+  activerecord:
+    attributes:
+      poi:
+        name: Nome
+        type: Tipo
+        address: Endereço
+        website: Sítio da Internet
+        phone: Telefone
+        note: Nota
+        address_street: Rua
+        address_housenumber: Número de porta
+        address_postcode: Código Postal
+        address_city: Cidade
+  faq:
+    answers:
+      0: Pode sempre altear o marcador de um lugar por si. Escolha apenas o marcador correto e "Guardar".
+      1: Enquanto um utilizador, pode adicionar / corrigir todos os detalhes de um lugar. Clique em "Editar" e corrija ou adicione a informação na janela.
+      2: Pode adicionar mais informação (ex. "Este lugar tem rampa") na secção dos comentários. Clique em "Editar" e "Adicionar comentário".
+    headline: Há algum problema com este lugar?
+    questions:
+      0: Marcação errada.
+      1: Não existem informações do lugar ou estão incorretas.
+      2: Tenho mais informação sobre este lugar.
+  header:
+    navigation:
+      about_wheelmap: Sobre o Wheelmap
+      choose_language: Escolher língua
+      contact: Contacto
+      map: Mapa
+      projects: Projetos
+    toolbar:
+      categories: Categorias
+  home:
+    index:
+      overlay:
+        button: Ok, vamos!
+        categories: Filtrar lugares por categorias
+        filter: Filtrar lugares por acessibilidade a cadeiras de rodas
+        headline: 'Encontrar e marcar lugares acessíveis a pessoas de cadeiras de rodas com Wheelmap.org - em todo o mundo e sem custos. É fácil:'
+        lookup: Pesquisar um lugar específico
+        secondary_headline: 'Sistema luminoso para indicar a acessibilidade de lugares públicos: '
+  nodes:
+    new:
+      form:
+        legend: Localização do lugar
+        location: Por favor clique no mapa e coloque o marcado na posição exata.
+    node_data:
+      address: 'Morada:'
+      contact_details: 'Detalhes do contato:'
+    node_edit:
+      details: Detalhes
+      edit: Editar
+    node_map:
+      map: 'Mapa:'
+    node_note:
+      comment: 'Adicionar comentário:'
+    node_photos:
+      add: Adicionar
+      photos_of_this_place: 'Fotografias deste lugar:'
+      upload: Upload
+    node_similar:
+      similar: 'Lugares semelhantes: %{name}'
+    node_status:
+      accessible_toilet: 'WC acessível a cadeiras de rodas:'
+      premium: '%{name} diz: este lugar é'
+      wheelchair_accessibility: 'Acessibilidade a cadeiras de rodas:'
+    node_streetview:
+      streetview: 'Streetview:'
+    show:
+      header:
+        meta:
+          description: Confirme se este lugar é acessível a cadeiras de rodas em Wheelmap.org. Ou adicione mais informações e fotografias do lugar.
+          title: 'Este sítio no Wheelmap.org: %{name}'
+      share:
+        email: E-mail
+        facebook: Facebook
+        text: 'Encontrei isto em Wheelmap.org: %{name}'
+        twitter: Twitter
+  search:
+    index:
+      no-results:
+        hint:
+          example: <strong>Exemplo:</strong> Londres, Reino Unido
+          info: A nossa pesquisa só funciona com a informação do nome e/ou endereço. Desta forma, preencha um dos campos para o nome do lugar ou o endereço (por ex., nome da rua e/ou cidade). A pesquina pelo tipo de lugar (ex. restaurante ou cinema), não funciona!
+          work_in_progress: Tentamos veemente tornar a pesquisa de lugares mais fácil e intuitiva no futuro.
+        try_this:
+          address: Por favor, forneça mais <strong>detalhes do endereço</strong>.
+          intro: 'Tente isto:'
+          spell_check: Confirme o <strong>texto</strong> inserido.
+      results:
+        ticker:
+          one: '%{count} resultado:'
+          other: '%{count} resultados:'
+    timeout:
+      headline: Desculpe, enganou-se.
+      info: O nosso serviço de pesquisa está temporariamente indisponível.
+      repeat_search: Volte a tentar

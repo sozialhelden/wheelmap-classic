@@ -1,0 +1,178 @@
+pt_PT:
+  poi:
+    category:
+      accommodation: Alojamento
+      education: Educação
+      food: Restauração
+      government: Governamental
+      health: Saúde
+      leisure: Lazer
+      misc: Outros
+      money_post: "Banco"
+      public_transfer: "Transportes públicos"
+      shopping: Lojas
+      sport: Desporto
+      tourism: Turismo
+      unknown: Local desconhecido
+    name:
+      accommodation:
+        beach_resort: "Praia concessionada"
+        bed_and_breakfast: "Bed and breakfast"
+        camp_site: "Campismo"
+        caravan_site: "Parque de caravanas"
+        chalet: Chalet
+        dormitory: Dormitório
+        guest_house: "Casa de hóspedes"
+        hostel: Hostel
+        hotel: Hotel
+        motel: Motel
+      education:
+        college: Colégio
+        driving_school: "Escola de condução"
+        kindergarten: Infantário
+        library: Biblioteca
+        museum: Museu
+        school: Escola
+        university: Universidade
+      food:
+        bar: Bar
+        biergarten: Cervejaria ao ar livre
+        cafe: Café
+        drinking_water: "Água potável"
+        fast_food: "Fast Food"
+        ice_cream: "Gelataria"
+        pub: Pub
+        restaurant: Restaurante
+      government:
+        courthouse: Tribunal
+        embassy: Embaixada
+        government: "Agência governamental"
+        police: Polícia
+        public_building: "Edifício público"
+        townhall: Câmara Municipal
+      health:
+        dentist: Dentista
+        doctors: Médicos
+        hearing_aids: "Loja de aparelhos auditivos"
+        hospital: Hospital
+        medical_supply: "Equipamentos médicos"
+        pharmacy: Farmácia
+        social_facility: "Centro social"
+        veterinary: Veterinário
+      leisure:
+        arena: Estádio
+        brothel: Casa de prostituição
+        casino: Casino
+        cinema: Cinema
+        community_center: "Centro comunitário"
+        gallery: Galeria
+        nightclub: Discoteca
+        playground: Parque infantil
+        sauna: Sauna
+        stripclub: Bar de strip
+        theatre: Teatro
+        zoo: Jardim zoológico
+      misc:
+        company: "Escritório (empresa)"
+        estate_agent: "Agência imobiliária"
+        insurance: Seguradora
+        lawyer: Advogado
+        place_of_worship: "Local de culto"
+        toilets: WC
+      money_post:
+        atm: Multibanco
+        bank: Banco
+        bureau_de_change: "Casa de câmbio"
+        post_box: "Marco de correio"
+        post_office: "Correios"
+      public_transfer:
+        aerodrome: Aeroporto
+        bicycle_parking: "Estacionamento de biclicletas"
+        bicycle_rental: "Aluguer de bicicletas"
+        boatyard: Estaleiro
+        bus_station: "Terminal rodoviário"
+        bus_stop: "Paragem de autocarros"
+        cable_car: "Teleférico"
+        car_rental: "Rent-a-car"
+        car_sharing: "Partilha de carros"
+        chair_lift: "Telecadeira"
+        ferry: Ferry
+        ferry_terminal: "Cais de ferry"
+        fuel: "Bomba de gasolina"
+        halt: Apeadeiro
+        light_rail: "Metro ligeiro"
+        parking: Estacionamento
+        parking_aisle: "Lugar de estacionamento"
+        platform: Cais
+        station: "Estação de comboios"
+        subway_entrance: "Entrada de metro"
+        terminal: "Terminal de aeroporto"
+        tram_stop: "Paragem de elétrico"
+      shopping:
+        alcohol: Licor
+        bakery: Padaria
+        beauty: "Salão de beleza"
+        beverages: Bebidas
+        bicycle: "Loja de bicicletas"
+        books: Livros
+        butcher: Talho
+        car_repair: "Oficina automóvel"
+        car_shop: "Stand automóvel"
+        chemist: Ervanária
+        clothes: Loja de roupa
+        computer: Loja de informática
+        confectionery: "Loja de doces"
+        convenience: Loja de conveniência
+        deli: Loja gourmet
+        department_store: "Armazéns (lojas)"
+        doityourself: "Bricolage"
+        dry_cleaning: "Limpeza a seco"
+        electronics: Electrónica
+        fabric: "Loja de confeções"
+        farm_shop: "Loja do produtor"
+        florist: Florista
+        furniture: Mobiliário
+        garden_centre: "Centro de jardinagem"
+        gift: "Loja de recordações"
+        hairdresser: Cabeleireiro
+        hardware: Drogaria
+        jewelry: Ourivesaria
+        kiosk: Quisque
+        laundry: Lavandaria
+        mall: "Centro comercial"
+        optician: Óptica
+        organic: "Loja de produtos biológicos"
+        outdoor: "Produtos de atividades ao ar livre"
+        pet: "Loja de animais"
+        photo: Loja de fotografia
+        second_hand: "Cash converter"
+        shoes: Sapataria
+        sports: Loja de desporto
+        stationery: Material de escritório
+        supermarket: Supermercado
+        toys: Loja de brinquedos
+        travel_agency: "Agência de viagens"
+        video: "Clube de vídeo"
+      sport:
+        pitch: "Campo desportivo"
+        sports_centre: "Centro desportivo"
+        stadium: Estádio
+        swimming: Natação
+        swimming_pool: "Piscina"
+      tourism:
+        archaeological_site: "Sítio arqueológico"
+        arts_centre: "Centro de arte"
+        artwork: Estátua
+        attraction: Atração
+        battlefield: Campo de batalha
+        beach: Praia
+        beacon: Farol
+        castle: Castelo
+        cave_entrance: "Gruta"
+        information: "Informação turística"
+        memorial: Memorial
+        theme_park: "Parque temático"
+        tower: Torre
+        viewpoint: "Miradouro"
+      unknown:
+        unknown: Local desconhecido

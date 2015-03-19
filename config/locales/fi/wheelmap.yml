@@ -1,0 +1,13 @@
+fi:
+  formtastic:
+    labels:
+      password: Salasana
+      privacy_policy: "Hyväksyn tietosuojasopimuksen pykälät 1 ja 2."
+      save: Tallenna
+      terms: "Hyväksyn käyttöehdot"
+  header:
+    meta:
+      search: Haku
+  user_sessions:
+    new:
+      password: Salasana

@@ -1,0 +1,32 @@
+pt_PT:
+  devise:
+    edit:
+      form:
+        labels:
+          email: E-mail
+          password_confirmation: "Repetir password"
+    password_recovery:
+      form:
+        labels:
+          email: E-mail
+    password_reset:
+      form:
+        labels:
+          password_confirmation: "Repetir password"
+    passwords:
+      link: "Esqueceu palavra-passe?"
+    sign_in:
+      form:
+        labels:
+          email: E-mail
+          password: Palavra-chave
+        submit: "Ligar"
+      headline: "Ligar"
+    sign_out:
+      headline: "Desligar"
+    sign_up:
+      form:
+        labels:
+          email: E-mail
+          password: Palavra-chave
+          password_confirmation: "Repetir password"

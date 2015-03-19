@@ -1,0 +1,78 @@
+fi:
+  poi:
+    category:
+      education: Sivistys
+      leisure: Vapaa-aika
+      shopping: Ostos
+      sport: Urheilu
+      tourism: Matkailu
+    name:
+      accommodation:
+        chalet: Alppimaja
+        hostel: Hostelli
+        hotel: Hotelli
+        motel: Motelli
+      education:
+        college: Oppilaitos
+        kindergarten: Päiväkoti
+        library: Kirjasto
+        museum: Museo
+        school: Oppilaitos
+        university: Yliopisto
+      food:
+        bar: Baari
+        fast_food: "Pikaruoka"
+        pub: Pubi
+        restaurant: Ravintola
+      government:
+        courthouse: Oikeustalo
+        townhall: Kaupungintalo
+      health:
+        hospital: Sairaala
+        pharmacy: Apteekki
+        veterinary: Eläinlääkäri
+      leisure:
+        arena: Areena
+        cinema: Elokuvateatteri
+        gallery: Galleria
+        nightclub: Yökerho
+        theatre: Teatteri
+        zoo: Eläintarha
+      misc:
+        toilets: Vessat
+      money_post:
+        atm: Pankkiautomaatti
+        bank: Pankki
+      public_transfer:
+        boatyard: Telakka
+        ferry: Autolautta
+        halt: Seisake
+        parking: Pysäköinti
+        platform: Laituri
+      shopping:
+        bakery: Leipomo
+        beverages: Juotavaa
+        books: Kirjoja
+        butcher: Lihakauppa
+        clothes: Vaatteita
+        computer: Tietokone
+        electronics: Elektroniikka
+        florist: Kukkakauppa
+        furniture: Huonekaluja
+        hairdresser: Kampaamo
+        hardware: Työkaluja
+        kiosk: Kioski
+        optician: Optikko
+        shoes: Kenkiä
+        supermarket: Supermarketti
+      sport:
+        stadium: Stadion
+        swimming: Uinti
+      tourism:
+        artwork: Taideteos
+        attraction: Nähtävyys
+        battlefield: Taistelutanner
+        beach: Ranta
+        castle: Linnoitus
+        memorial: Muistomerkki
+        tower: Torni

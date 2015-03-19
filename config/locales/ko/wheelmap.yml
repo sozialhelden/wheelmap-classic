@@ -34,9 +34,6 @@ ko:
       not_an_integer: "반드시 정수여야 합니다"
       not_found: "찾을 수 없습니다"
       not_locked: "잠겨 있지 않습니다"
-      not_saved:
-        one: "%{resource} 저장 중 1개의 에러가 발생했습니다"
-        other: "%{resource} 저장 중 %{count}개의 에러가 발생했습니다"
       odd: "홀수여야 합니다"
       taken: "이미 사용되고 있습니다"
       too_long: "은(는) 너무 깁니다 (%{count} 글자 초과 안됨)"
@@ -44,9 +41,6 @@ ko:
       wrong_length: "은(는) 잘못된 길이 입니다 (%{count} 글자여야 합니다)"
     template:
       body: "다음 필드에 문제가 발생했습니다 :"
-      header:
-        one: "%{model} 저장 중 1개의 에러가 발생했습니다"
-        other: "%{model} 저장 중 %{count}개의 에러가 발생했습니다"
   flash:
     actions:
       create:
@@ -119,7 +113,6 @@ ko:
     searchbar:
       add_place: "다른 장소 등록"
       find: 찾기
-      label: ~
       placeholder: "즉 샌프란시스코 선셋 대로 또는 베를린의 브란덴부르크문"
       title_add_place: "지금 이 위치에 새로운 장소를 추가하세요!"
     tagline: "Wheelmap 로고"
@@ -228,17 +221,11 @@ ko:
       format:
         delimiter: ","
         format: "%u%n "
-        precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: $
     format:
       delimiter: ","
-      precision: 2
       separator: "."
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -248,28 +235,13 @@ ko:
           quadrillion: 천조
           thousand: 천
           trillion: 조
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
         units:
-          byte:
-            one: Byte
-            other: Bytes
           gb: GB
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -277,9 +249,6 @@ ko:
     callback:
       notice: "당신의 wheelmap 계정은 현재 OpenStreetMap 계정 %{user}과 연결되어 있습니다"
   or: 또는
-  place:
-    one: "%{count} 장소"
-    other: "%{count} 장소"
   profile:
     edit:
       application:
@@ -318,6 +287,8 @@ ko:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: 오후
+  toiletstatus:
+    unknown: "휠체어 접근여부 알 수 없음"
   user_sessions:
     create:
       activation:

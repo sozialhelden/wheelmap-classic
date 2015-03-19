@@ -1,0 +1,10 @@
+zh_TW:
+  models:
+    category:
+      prompt: "選擇分類"
+    node_type:
+      prompt: "選擇種類"
+  actions:
+    send: 送出
+    save: 存檔
+    cancel: 取消

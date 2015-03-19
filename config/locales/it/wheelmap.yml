@@ -67,7 +67,6 @@ it:
     show_unaccessible_places: "non accessibile in sedia a rotelle"
   formtastic:
     hints:
-      email: "Wheelmap.org tratta i tuoi dati in modo confidenziale; nessuno spam. Promesso!"
       lat: "Sposta l'indicatore sulla mappa nella posizione coretta"
       osm_username: "Non sei ancora un membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Crea ora un account su Openstreetmap</a> "
       password: "(lascia vuoto se non vuoi cambiarlo)"
@@ -128,7 +127,6 @@ it:
     searchbar:
       add_place: "Aggiungi un altro luogo"
       find: ricerca
-      label: ~
       placeholder: "p.e. Sunset Boulevard L.A. or Brandenburg Gate Berlin"
       title_add_place: "Aggiungi ora un luogo a questo posizione!"
     tagline: "Wheelmap logo"
@@ -239,17 +237,11 @@ it:
       format:
         delimiter: ","
         format: "%n %u"
-        precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: €
     format:
       delimiter: "."
-      precision: 3
       separator: "."
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -259,12 +251,6 @@ it:
           quadrillion: Quadrilione
           thousand: Mille
           trillion: Trilione
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 3
-        significant: vero
-        strip_insignificant_zeros: vero
       storage_units:
         format: "%n %u"
         units:
@@ -275,12 +261,6 @@ it:
           kb: Kb
           mb: Mb
           tb: Tb
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -317,7 +297,6 @@ it:
   support:
     array:
       last_word_connector: "e "
-      skip_last_comma: vero
       sentence_connector: e
       two_words_connector: " e "
       words_connector: ", "
@@ -330,6 +309,8 @@ it:
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+  toiletstatus:
+    unknown: "Accessibilità in sedia a rotelle sconosciuta "
   user_sessions:
     create:
       activation:

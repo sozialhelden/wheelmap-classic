@@ -233,17 +233,11 @@ cs:
       format:
         delimiter: " "
         format: "%n %u"
-        precision: 2
         separator: ","
-        significant: false
-        strip_insignificant_zeros: false
         unit: Kč
     format:
       delimiter: ","
-      precision: 3
       separator: "."
-      significant: false
-      strip_insignificant_zeros: false
     human:
       decimal_units:
         format: "%n %u"
@@ -253,12 +247,6 @@ cs:
           quadrillion: Kvadrilion
           thousand: Tisíc
           trillion: Bilion
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 1
-        significant: false
-        strip_insignificant_zeros: false
       storage_units:
         format: "%n %u"
         units:
@@ -270,12 +258,6 @@ cs:
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -312,7 +294,6 @@ cs:
     array:
       last_word_connector: " a "
       sentence_connector: a
-      skip_last_comma: ano
       two_words_connector: " a "
       words_connector: ", "
     select:
@@ -324,6 +305,8 @@ cs:
       long: "%A %d. %B %Y %H:%M"
       short: "%d. %m. %H:%M"
     pm: pm
+  toiletstatus:
+    unknown: "neznámý stav"
   user_sessions:
     create:
       activation:

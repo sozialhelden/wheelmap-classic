@@ -1,0 +1,22 @@
+uk:
+  models:
+    category:
+      prompt: "Оберіть категорію"
+    node_type:
+      prompt: "Оберіть тип"
+    node:
+      info_edit_position: " Місце з’явиться на Wheelmap таким, як показано вище. Якщо маркер не на потрібній точці, Ви можете <a href=\"%{url}\">виправити його розміщення на OpenStreetMap.</a>"
+      mail:
+        subject: "[Wheelmap] Проблема з %{headline}"
+        body: "(Будь ласка, пишіть англійською або німецькою.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:"
+  actions:
+    send: Надіслати
+    save: Зберегти
+    cancel: Скасувати
+  errors:
+    models:
+      node:
+        website:
+          invalid: "Адреса веб-сторінки недійсна."
+        phone:
+          invalid: "Телефонний номер недійсний. Він повинен бути у такому форматі: +38 044 1234567"

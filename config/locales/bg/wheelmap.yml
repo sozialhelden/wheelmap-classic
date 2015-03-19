@@ -67,7 +67,6 @@ bg:
     show_unaccessible_places: "недостъпно за инвалидни колички"
   formtastic:
     hints:
-      email: "Ние се грижим за поверителната информация, без спам. Обещаваме!"
       lat: "Премести маркера на картата на правилната позиция"
       osm_username: "Още не си член? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Създай OpenStreetMap акаунт сега</a>"
       password: "(остави празно, ако не искаш промяна)"
@@ -128,7 +127,6 @@ bg:
     searchbar:
       add_place: "Добави ново място"
       find: Намери
-      label: ~
       placeholder: "Търси място"
       title_add_place: "Добави ново място на тази позиция сега!"
     tagline: "Лого на Wheelmap"
@@ -239,17 +237,11 @@ bg:
       format:
         delimiter: " ,"
         format: "%n %u"
-        precision: 2
         separator: ","
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: лв.
     format:
       delimiter: ","
-      precision: 3
       separator: ","
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -259,12 +251,6 @@ bg:
           quadrillion: Квадрилион
           thousand: Хиляда
           trillion: Трилион
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 3
-        significant: вярно
-        strip_insignificant_zeros: вярно
       storage_units:
         format: "%n %u"
         units:
@@ -275,12 +261,6 @@ bg:
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -318,7 +298,6 @@ bg:
     array:
       last_word_connector: " и "
       sentence_connector: и
-      skip_last_comma: true
       two_words_connector: " и "
       words_connector: ", "
     select:
@@ -330,6 +309,8 @@ bg:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: следобед
+  toiletstatus:
+    unknown: "неизвестен статус"
   user_sessions:
     create:
       activation:

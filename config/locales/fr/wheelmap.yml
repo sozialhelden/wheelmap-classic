@@ -99,6 +99,7 @@ fr:
       website: "Site Web :"
       wheelchair: "Accessibilité en fauteuil roulant ?"
       wheelchair_description: "Commentaire sur l'accessibilité :"
+      wheelchair_toilet: "Les toilettes en fauteuil roulant : "
     titles:
       basic: "Données de base"
       optional: "Plus d'informations <span class=\"addition\">(tous les champs sont optionnels)</span>"
@@ -238,17 +239,11 @@ fr:
       format:
         delimiter: ","
         format: "%n %u"
-        precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
-        unit: €
+        unit: $
     format:
       delimiter: ","
-      precision: 3
       separator: "."
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u "
@@ -258,12 +253,6 @@ fr:
           quadrillion: quadrillion
           thousand: Mille
           trillion: trillion
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
         units:
@@ -274,12 +263,6 @@ fr:
           kb: Ko
           mb: Mo
           tb: To
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -317,7 +300,6 @@ fr:
     array:
       last_word_connector: "et"
       sentence_connector: et
-      skip_last_comma: true
       two_words_connector: "et"
       words_connector: ","
     select:
@@ -325,10 +307,12 @@ fr:
   time:
     am: avant midi
     formats:
-      default: "%a, %d %b %Y %H:%M:%S %z"
-      long: "%B %d, %Y %H:%M"
+      default: "%a %d %b %Y %H:%M:%S %z"
+      long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
     pm: après-midi
+  toiletstatus:
+    unknown: "état inconnu"
   user_sessions:
     create:
       activation:

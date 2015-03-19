@@ -1,0 +1,12 @@
+lt:
+  models:
+    node:
+      mail:
+        body: "(Prašome rašyti tik Anglų arba Vokiečių kalba.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:"
+  actions:
+    cancel: Atšaukti
+  errors:
+    models:
+      node:
+        website:
+          invalid: "Neteisingas svetainės adresas."

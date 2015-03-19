@@ -1,0 +1,9 @@
+ro:
+  activerecord:
+    attributes:
+      poi:
+        name: Nume
+        type: Tip
+        address: Adresa
+        website: Website
+        phone: Telefon

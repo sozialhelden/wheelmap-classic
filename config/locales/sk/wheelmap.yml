@@ -69,7 +69,6 @@ sk:
     show_unaccessible_places: "neprístupné vozíčkarom"
   formtastic:
     hints:
-      email: "Vaša adresa je u nás v bezpečí - žiaden spam. Sľubujeme!"
       lat: "Pohnite značkou na mape aby ste opravili polohu"
       osm_username: "Nie ste ešte členom? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Vytvorte si účet na OpenStreetMap</a>"
       password: "(nechajte prázdne ak nechcete zmeniť)"
@@ -130,7 +129,6 @@ sk:
     searchbar:
       add_place: "Pridať ďalšie"
       find: Nájsť
-      label: ~
       placeholder: "Hľadajte miesta"
       title_add_place: "Pridajte sem nové miesto!"
     tagline: "Logo Wheelmap"
@@ -241,17 +239,11 @@ sk:
       format:
         delimiter: " "
         format: "%n %u"
-        precision: 2
         separator: ","
-        significant: false
-        strip_insignificant_zeros: false
         unit: €
     format:
       delimiter: " "
-      precision: 3
       separator: ","
-      significant: false
-      strip_insignificant_zeros: false
     human:
       decimal_units:
         format: "%n %u"
@@ -261,12 +253,6 @@ sk:
           quadrillion: Biliarda
           thousand: Tisíc
           trillion: Bilión
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 1
-        significant: false
-        strip_insignificant_zeros: false
       storage_units:
         format: "%n %u"
         units:
@@ -278,12 +264,6 @@ sk:
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: " "
-    precision:
-      format:
-        delimiter: " "
   oauth:
     application:
       connect:
@@ -322,7 +302,6 @@ sk:
     array:
       last_word_connector: " a "
       sentence_connector: a
-      skip_last_comma: ano
       two_words_connector: " a "
       words_connector: ", "
     select:
@@ -334,6 +313,8 @@ sk:
       long: "%A %d. %B %Y %H:%M"
       short: "%d.%m. %H:%M"
     pm: popoludní
+  toiletstatus:
+    unknown: "neznámy stav"
   user_sessions:
     create:
       activation:

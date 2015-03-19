@@ -67,7 +67,6 @@ nl:
     show_unaccessible_places: "niet rolstoel toegankelijk"
   formtastic:
     hints:
-      email: "Wij behandelen je gegevens veilig, geen spam. Beloofd!"
       lat: "Beweeg de marker op de kaart in de correcte positie"
       osm_username: "Nog geen lid op dit moment? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Maak nu een Openstreetmap account</a>\n"
       password: "(laat dit leeg als je het niet wil veranderen )"
@@ -128,7 +127,6 @@ nl:
     searchbar:
       add_place: "Voeg een andere plaats toe"
       find: Vind
-      label: ~
       placeholder: "Bijvoorbeeld Sunset Boulevard L.A. of Brandenburg Gate Berlin"
       title_add_place: "Voeg nu een nieuwe plaats op deze positie toe!"
     tagline: "Wheelmap logo"
@@ -239,17 +237,11 @@ nl:
       format:
         delimiter: ","
         format: "%u%n"
-        precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: $
     format:
       delimiter: ","
-      precision: 3
       separator: "."
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u\n"
@@ -259,12 +251,6 @@ nl:
           quadrillion: Biljard
           thousand: Duizend
           trillion: Triljoen
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 1
-        significant: waar
-        strip_insignificant_zeros: 0
       storage_units:
         format: "%n %u"
         units:
@@ -275,12 +261,6 @@ nl:
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -329,6 +309,8 @@ nl:
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
     pm: s middags
+  toiletstatus:
+    unknown: "onbekende status"
   user_sessions:
     create:
       activation:

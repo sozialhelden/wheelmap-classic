@@ -219,16 +219,10 @@ zh:
       format:
         delimiter: ","
         format: "%u %n"
-        precision: 2
         separator: "."
-        significant: false
-        strip_insignificant_zeros: false
         unit: CN¥
     format:
       delimiter: ","
-      precision: 3
-      significant: false
-      strip_insignificant_zeros: false
       separator: "点"
     human:
       decimal_units:
@@ -239,28 +233,13 @@ zh:
           quadrillion: 千兆
           thousand: 千
           trillion: 兆
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 1
-        significant: 真实
-        strip_insignificant_zeros: 真实的
       storage_units:
         format: "%n %u"
         units:
-          byte:
-            one: Byte
-            other: 字节
           gb: GB
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -268,9 +247,6 @@ zh:
     callback:
       notice: "您的wheelmap帐户现在已连接到OpenStreetMap帐户%{user}."
   or: 或者
-  place:
-    one: "%{count}地点"
-    other: "%{count}位置"
   profile:
     edit:
       application:
@@ -298,7 +274,6 @@ zh:
     array:
       last_word_connector: "和 "
       sentence_connector: 和
-      skip_last_comma: 真实的
       two_words_connector: " 和 "
       words_connector: ", "
     select:
@@ -310,6 +285,8 @@ zh:
       long: "%Y年%b%d日 %H:%M"
       short: "%b%d日 %H:%M"
     pm: 下午
+  toiletstatus:
+    unknown: "未知状态"
   user_sessions:
     create:
       activation:

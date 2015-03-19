@@ -36,18 +36,16 @@ zh_TW:
       not_found: "没有找到"
       not_locked: "沒有被鎖定"
       not_saved:
-        one: "因為1個錯誤導致此 %{resource} 存檔失敗："
-        other: "因為 %{count} 個錯誤導致此 %{resource} 存檔失敗："
+        other: "%{count} 個錯誤讓儲存 %{resource} 失敗: "
       odd: "必須為奇數"
       taken: "已被使用"
       too_long: "太長 (不能長於 %{count} 字元)"
       too_short: "太短 (不能短於 %{count} 字元)"
       wrong_length: "長度不符 (必須為 %{count} 個字元) "
     template:
-      header:
-        one: "因為一個錯誤導致 %{model} 無法存檔"
-        other: "%{count} 個錯誤導致此 %{model} 存檔失敗。"
       body: "以下欄位出現問題："
+      header:
+        other: "%{count} 個錯誤讓 %{model} 儲存失敗"
   flash:
     actions:
       create:
@@ -67,7 +65,6 @@ zh_TW:
     show_unaccessible_places: "非輪椅無障礙"
   formtastic:
     hints:
-      email: "我們會保密您的地址，不會寄垃圾信件給您。保證！"
       lat: "將圖示移動到地圖上正確位置"
       osm_username: "還不是會員嗎？ <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">現在就申請 OpenStreetMap 的會員 </a>"
       password: "(如果你不想更動，請保持空白)"
@@ -238,17 +235,11 @@ zh_TW:
       format:
         delimiter: ","
         format: "%u%n"
-        precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: $
     format:
       delimiter: ","
-      precision: 3
       separator: "."
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -258,28 +249,15 @@ zh_TW:
           quadrillion: 千兆
           thousand: 千
           trillion: 兆
-          unit: " "
-      format:
-        delimiter: " "
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
         units:
           byte:
-            one: Byte
             other: Bytes
           gb: GB
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -288,7 +266,6 @@ zh_TW:
       notice: "您的 Wheelmap 帳號現在已連接到 OpenStreetMap 帳號 %{user}"
   or: 或
   place:
-    one: "%{count} 地點"
     other: "%{count} 個地點"
   profile:
     edit:
@@ -328,6 +305,8 @@ zh_TW:
       long: "%Y - %B -%d %H:%M"
       short: "%d %b %H:%M"
     pm: 下午
+  toiletstatus:
+    unknown: "未知狀態"
   user_sessions:
     create:
       activation:

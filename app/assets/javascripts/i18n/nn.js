@@ -1,0 +1,2 @@
+var I18n = I18n || {};
+I18n.translations = {"nn":{"actions":{"save":"Lagra","cancel":"Avbryt"},"activerecord":{"attributes":{"poi":{"name":"Namn","type":"Type","address":"Adresse","website":"Nettstad","phone":"Telefon"}}},"formtastic":{"labels":{"save":"Lagra"}}}};
