@@ -1,0 +1,4 @@
+ro:
+  formtastic:
+    labels:
+      save: Salvare

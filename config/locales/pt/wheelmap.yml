@@ -1,4 +1,3 @@
----
 pt:
   application:
     require_no_user:
@@ -115,7 +114,6 @@ pt:
     searchbar:
       add_place: "Adicionar outro lugar"
       find: encontrar
-      label: ~
       placeholder: "p. Ex. Sunset Boulevard L.A. ou o Portão de Brandenburgo"
       title_add_place: "Adicionar um novo lugar nesta posição agora!"
     tagline: "Lógotipo do Wheelmap"
@@ -168,7 +166,6 @@ pt:
         title: "Novo lugar | wheelmap.org"
     node:
       link:
-        claim: ~
         edit_node: "Editar lugar"
         report_bug: "Report a problem"
     show:
@@ -183,17 +180,11 @@ pt:
       format:
         delimiter: "."
         format: "%u%n"
-        precision: 2
         separator: ","
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: €
     format:
       delimiter: "."
-      precision: 3
       separator: ","
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -203,12 +194,6 @@ pt:
           quadrillion: Quatrilhão
           thousand: Mil
           trillion: Trilhão
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
         units:
@@ -219,12 +204,6 @@ pt:
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   or: ou
   profile:
     edit:
@@ -248,7 +227,6 @@ pt:
     array:
       last_word_connector: ", e"
       sentence_connector: e
-      skip_last_comma: true
       two_words_connector: " e "
       words_connector: ", "
     select:
@@ -260,6 +238,8 @@ pt:
       long: "%A, %d de %B de %Y, %H:%Mh"
       short: "%d/%m, %H:%M hs"
     pm: pm
+  toiletstatus:
+    unknown: "acessibilidade a cadeira de rodas desconhecida"
   user_sessions:
     create:
       activation:

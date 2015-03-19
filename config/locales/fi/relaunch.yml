@@ -1,0 +1,21 @@
+fi:
+  activerecord:
+    attributes:
+      poi:
+        name: Nimi
+        address: Osoite
+        website: Nettisivu
+        phone: Puhelin
+        address_street: Katu
+        address_city: Kaupunki
+  header:
+    navigation:
+      map: Kartta
+  nodes:
+    node_edit:
+      details: Yksityiskohdat
+      edit: Muokkaa
+    show:
+      share:
+        facebook: Facebook
+        twitter: Twitter

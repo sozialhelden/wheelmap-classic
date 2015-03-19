@@ -67,7 +67,6 @@ pt_BR:
     show_unaccessible_places: "não acessível a cadeirantes"
   formtastic:
     hints:
-      email: "Mantemos seu endereço confidencial. Nenhum lixo eletrônico, garantido!"
       lat: "Coloque o indicador no mapa na posição certa"
       osm_username: "Ainda não é membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Criar uma conta Openstreetmap</a>"
       password: "(deixar em branco se não quiser modificar) "
@@ -128,7 +127,6 @@ pt_BR:
     searchbar:
       add_place: "Adicionar outro lugar"
       find: Encontrar
-      label: ~
       placeholder: "exemplos: 'Brasília', 'Av. Paulista, São Paulo'"
       title_add_place: "Adicionar um novo lugar nesta posição agora!"
     tagline: "Logotipo do Wheelmap"
@@ -239,17 +237,11 @@ pt_BR:
       format:
         delimiter: "."
         format: "%u%n"
-        precision: 2
         separator: ","
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: €
     format:
       delimiter: "."
-      precision: 3
       separator: ","
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -259,12 +251,6 @@ pt_BR:
           quadrillion: Quatrilhão
           thousand: Mil
           trillion: Trilhão
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
         units:
@@ -275,12 +261,6 @@ pt_BR:
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -318,7 +298,6 @@ pt_BR:
     array:
       last_word_connector: ", e"
       sentence_connector: e
-      skip_last_comma: true
       two_words_connector: " e "
       words_connector: ", "
     select:
@@ -330,6 +309,8 @@ pt_BR:
       long: "%A, %d de %B de %Y, %H:%M"
       short: "%d/%m, %H:%M"
     pm: de tarde
+  toiletstatus:
+    unknown: "Sem informações sobre acessibilidade"
   user_sessions:
     create:
       activation:

@@ -1,0 +1,13 @@
+nl:
+  models:
+    category:
+      prompt: "Kies een categorie"
+  actions:
+    send: Verzenden
+    save: Opslaan
+    cancel: Annuleren
+  errors:
+    models:
+      node:
+        phone:
+          invalid: "Het telefoonnummer is niet geldig. Het moet de volgende vorm hebben: +49 30 234567"

@@ -1,0 +1,4 @@
+nn:
+  actions:
+    save: Lagra
+    cancel: Avbryt

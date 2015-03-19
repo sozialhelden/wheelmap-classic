@@ -1,0 +1,374 @@
+pt_PT:
+  application:
+    require_no_user:
+      notice: "Já está ligado..."
+    require_user:
+      notice: "Deve fazer login para ver esta página."
+  breadcrumbs:
+    node:
+      create: "Adicionar novo lugar"
+      edit: "Editar lugar"
+    root: wheelmap
+  common:
+    close: fechar
+    skip: saltar
+  errors:
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "terá de ser aceite"
+      already_confirmed: "confirmado"
+      blank: "preenchimento obrigatório"
+      confirmation: "a confirmação não corresponde"
+      empty: "preenchimento obrigatório."
+      equal_to: "deve ter exatamente %{count}"
+      even: "deve ser plural"
+      exclusion: "Reservado"
+      expired: "Expirou, por favor faça um novo pedido"
+      greater_than: "deve ser superior a %{count}"
+      greater_than_or_equal_to: "deve ser superior ou igual a %{count}"
+      inclusion: "não é um valor válido"
+      invalid: "inválido"
+      less_than: "deve ter menos de %{count}"
+      less_than_or_equal_to: "deve ser inferior ou igual a %{count}"
+      not_a_number: "não é um número"
+      not_an_integer: "deve ser um número inteiro"
+      not_found: "não encontrado"
+      not_locked: "não foi bloqueado"
+      not_saved:
+        one: "Um erro impossibilitou guardar %{resource}:"
+        other: "%{count} erros impossibilitaram guardar %{resource}:"
+      odd: "deve ser singular"
+      taken: "Já existe"
+      too_long: "Demasiado longo (não pode ter mais de %{count} caracteres)"
+      too_short: "Demasiado curto (não pode ter mais de %{count} caracteres)"
+      wrong_length: "Tamanho errado (deve ter %{count} caracteres)"
+    template:
+      body: "Registaram-se problemas com os seguintes campos:"
+      header:
+        one: "1 erro impossibilitou o registo de %{model}"
+        other: "%{count} erros impossibilitaram o registo de %{model} "
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} foi criado com sucesso"
+      destroy:
+        alert: "%{resource_name} não pode ser removido"
+        notice: "%{resource_name} foi removido com sucesso"
+      update:
+        notice: "%{resource_name} foi atualizado com sucesso"
+    photos:
+      destroy:
+        notice: "Imagem removida com sucesso"
+  form:
+    show_fully_accessible_places: "Acessível a cadeiras de rodas"
+    show_limited_accessible_places: "parcialmente acessível a cadeiras de rodas"
+    show_places_without_status: "estado desconhecido"
+    show_unaccessible_places: "não acessível a cadeiras de rodas"
+  formtastic:
+    hints:
+      lat: "Mova o marcado no mapa para a posição correta"
+      osm_username: "Ainda não é membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Crie uma conta OpenStreetMap agora</a>"
+      password: "(deixe em branco se não pretende alterar)"
+      phone: "Por exemplo: +49 30 123456-78"
+      website: "Por exemplo: http://www.example.com"
+    labels:
+      category: "Categoria:"
+      centralkey: "Chave central:"
+      city: "Cidade:"
+      create: "Criar lugar"
+      email: E-mail
+      finish: Terminar
+      housenumber: "Não:"
+      lat: Latitude
+      lon: Longitude
+      name: "Nome:"
+      osm_password: "Password OSM "
+      osm_username: "Nome de conta OSM "
+      password: Palavra-passe
+      password_confirmation: "Repetir password"
+      phone: "Telefone:"
+      postcode: "Código postal:"
+      privacy_policy: "Eu aceito os parágrafos 1 e 2 do acordo de privacidade."
+      reset: Reset
+      save: Gravar
+      street: "Rua:"
+      terms: "Aceito as condições de uso."
+      type: "Tipo:"
+      website: "Página internet:"
+      wheelchair: "Acessível a cadeiras de rodas?"
+      wheelchair_description: "Comentário à acessibilidade:"
+    titles:
+      basic: "Dados básicos"
+      optional: "Mais informação  <span class=\"addition\">(todos os campos são opcionais)</span>"
+  global:
+    form_validation_error: "Por favor reveja os erros listados abaixo"
+  header:
+    meta:
+      description: "Encontrar lugares acessíveis a cadeiras de rodas - wheelmap.org"
+      homepage: "Página inicial"
+      keywords: "encontrar marcador de locais acessíveis a cadeiras de rodas"
+      search: Pesquisar
+    navigation:
+      blog: Notícias
+      feedback: Feedback
+      home: Começar
+      how_to_add_a_place: "Como posso adicionar lugares?"
+      imprint: Imprimir
+      logged_in_as: "Ligado como:"
+      login: "Ligar"
+      logout: "Desligar"
+      newsletter: Newsletter
+      press: Imprensa
+      profile: Perfil
+      suggestions: Sugestões
+      what_is_barrier_free: "O que significa \"acessível a cadeiras de rodas\"?"
+      what_is_wheelmap: "O que é um wheelmap?"
+    searchbar:
+      add_place: "Adicionar outro lugar"
+      find: Encontrar
+      placeholder: "Pesquisar outro lugar"
+      title_add_place: "Adicionar um novo lugar a esta posição agora!"
+    tagline: "Logo Wheelmap "
+    title: "encontrar lugares acessíveis a cadeiras de rodas"
+  helpers:
+    select:
+      prompt: "Por favor escolha"
+    submit:
+      create: "criar %{model}"
+      submit: "guardar %{model}"
+      update: "atualizar %{model}"
+  home:
+    index:
+      filter:
+        category: "Escolha a categoria"
+        deselect_all: "Remover seleção"
+        select_all: "Selecionar todos"
+        wheelchair: "Acessível a cadeiras de rosas?"
+      ie:
+        action:
+          ignore: Ignorar
+          upgrade: "Atualizar página"
+        warning:
+          headline: "Pedimos desculpa!"
+          message: "Parece estar a usar o Internet Explorer. O Wheelmap exige outro browser para funcionar corretamente, por favor considere utiliza Firefox, Chrome, Safari ou Opera."
+      link:
+        node:
+          create: "Adicionar novo lugar"
+      popup:
+        form:
+          limited: "parcialmente acessível a cadeiras de rodas"
+          'no': "não acessível a cadeiras de rodas"
+          save: Atualizar
+          unknown: "estado desconhecido"
+          'yes': "acessível a cadeiras de rodas"
+        help: "Acessível a cadeiras de rodas? (Ajuda)"
+        more: "mais..."
+  how?: Como?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Todos os locais  %{type} com acesso limitado a cadeiras de rodas em %{city} (%{count})"
+        'no':
+          headline: "Todos os locais  %{type} não acessíveis a cadeiras de rodas em %{city} (%{count})"
+        unknown:
+          headline: "Todos os %{type} em %{city}  com acessibilidade a cadeiras de rodas desconhecida (%{count})"
+        'yes':
+          headline: "Todos os locais  %{type} acessíveis a cadeiras de rodas em %{city} (%{count})"
+  layouts:
+    application:
+      banner:
+        alt: "Um projeto de Sozialhelden.de"
+  node:
+    address:
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
+    tags:
+      phone: "Telefone:"
+      website: "Página internet:"
+  nodes:
+    create:
+      flash:
+        not_successfull: "Desculpe, a sua introdução estava incorreta ou incompleta"
+        successfull: "Obrigado, a sua submissão foi guardade com sucesso e estará online em breve."
+    edit:
+      header:
+        title: "Editar lugar: %{node} | wheelmap.org"
+      link:
+        large_map: "&laquo; Cancelar"
+    errors:
+      default: "Desculpa, algo correu mal. Fomo informados desta situação."
+      not_authorized: "Desculpe, falha na autentificação"
+      not_available: "Pedimos desculpa, página temporariamente indisponível."
+      not_existent: "Pedimos desculpa, o lugar já não se encontra indisponível."
+      not_found: "Desculpe, página não encontrada."
+      param_missing: "Por favor indique uma palavra de pesquisa"
+    flash:
+      authorize_wheelmap: "Precisa de ter uma conta OpenStreetMap a modificar dados"
+    new:
+      header:
+        title: "Lugar novo  | wheelmap.org"
+      link:
+        large_map: "&laquo; Cancelar"
+    node:
+      link:
+        claim: "Trabalha aqui?"
+        edit_node: "Editar lugar"
+        report_bug: "Reportar um problema"
+    show:
+      header:
+        title: "Lugar: %{node} | wheelmap.org"
+      link:
+        back: voltar
+        large_map: Aumentar
+        listing: "Todos os lugares do tipo '%{type}' em %{city}"
+        upload: "Carregar imagem"
+      more_data_from: "Há mais dados para este lugar, confirmado por:"
+      show-in-osm: OpenStreetMap
+    update:
+      flash:
+        not_successfull: "Desculpe, a sua introdução estava incorreta ou incompleta"
+        successfull: "Obrigado, a sua submissão foi guardada com sucesso e estará online em breve."
+    update_wheelchair:
+      successfull: "O estado para \"%{name}\" foi modificado para \"%{status}\" e estará online em breve."
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        separator: "."
+        unit: $
+    format:
+      delimiter: ","
+      separator: "."
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Bilião
+          million: Milhão
+          quadrillion: Quadrilião
+          thousand: Milhar
+          trillion: Trilião
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+  oauth:
+    application:
+      connect:
+        headline: "Precisa de ligar esta conta com a conta  'open street map' antes de poder criar ou modificar lugares em wheelmap.org."
+    callback:
+      notice: "A sua conta wheelmap está agora ligado à conta %{user} do OpenStreetMap ."
+  or: ou
+  place:
+    one: "%{count} lugar"
+    other: "%{count} lugares"
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "Estado: ligado"
+          grant: "Ligar agora"
+          not_connected: "Estado: Não ligado"
+          revoke: Desligar
+      headline: "Editar perfil"
+  search:
+    index:
+      search:
+        for: "A pesquisar \"%{q}\""
+        not_found: "Não foram encontrados lugares!"
+  splash:
+    countline: "%{count} lugares que já foram marcados."
+    headline: "Qualquer um pode adicionar lugares acessíveis a cadeiras de rodas!"
+    start: Começar
+    step1: "Clique num lugar que conheça"
+    step2: "Marque-o e clique guardar"
+    step3: "É isto! Não é preciso registo"
+    what_is_wheelmap: "O que é um Wheelmap?"
+  statistics: Estatísticas
+  support:
+    array:
+      last_word_connector: "e"
+      sentence_connector: e
+      two_words_connector: "e"
+      words_connector: ","
+    select:
+      prompt: "Por favor selecione"
+  time:
+    am: A.M.
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: P.M.
+  toiletstatus:
+    unknown: "estado desconhecido"
+  user_sessions:
+    create:
+      activation:
+        notice: "A sua conta está ativa!"
+      error:
+        notice: "O e-mail e a password não correspondem."
+      notice: "Está ligado!"
+    destroy:
+      notice: "Adeus, volte em breve!"
+    new:
+      email: "Endereço de e-mail"
+      login: "Ligar"
+      login_with_twitter: "Ligar com o Twitter"
+      password: Palavra-passe
+      remember_me: "Permanecer ligado"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Está quase! Termine o registo da sua conta Wheelmap aqui:"
+        set_password_for_mobile: "Completou o seu registo com OpenStreetMap.\nAgora escolha um endreço de e-mail e passwor para a sua conta Wheelmap e estará concluído! Precisa deste endereço de e-mail e a password para se ligar nas aplicações Wheelmap para iPhone ou Android."
+        text: "Como é que o podemos contactar? Pode editar esta informação mais tarde no seu perfil."
+    edit:
+      headline:
+        your_images: "As suas imagens carregadas"
+  wheelchairstatus:
+    limited: "parcialmente acessível a cadeiras de rodas"
+    'no': "não acessível a cadeiras de rodas"
+    unknown: "estado desconhecido"
+    'yes': "acessível a cadeiras de rodas"
+  wheelmap:
+    footer:
+      a_project_of: "Um projeto de"
+      based_on: "Baseado em"
+      become_a_supporter: "Torne-se num patrocinador"
+      main_supporter: "Patrocinador principal"
+    itunes:
+      alt: "AppStore Logo"
+      title: "Faça o download da iPhone App agora!"
+    logo:
+      alt: "Wheelmap Logo - encontre lugares acessíveis a cadeiras de rodas"
+      title: "Wheelmap - encontre lugares acessíveis a cadeiras de rodas"
+    what_is:
+      fully_accessible: "Entrada e todos os espaços sem degraus, se houver WC é acessível."
+      limited_accessible: "Entrada com degrau (altura máxima 7 cm), nenhum dos espaços tem degraus, WC não acessível"
+      not_accessible: "Entrada inclinada ou com vários degraus, espaços não acessíveis."
+      unknown_accessible: "Ajude a marcar lugares!"
+  will_paginate:
+    next_label: "Próximo &#8594;"
+    page_entries_info:
+      multi_page: "A apresentar %{model} %{from} - %{to} de %{count} no total"
+      multi_page_html: "A apresentar %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> no total"
+      single_page:
+        one: "A apresentar 1 %{model}"
+        other: "A apresentar todos os %{count} %{model}"
+        zero: "%{model} não encontrado"
+      single_page_html:
+        one: "A apresentar <b>1</b> %{model}"
+        other: "A apresentar <b>all&nbsp;%{count}</b> %{model}"
+        zero: "%{model} não encontrado"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Anterior"

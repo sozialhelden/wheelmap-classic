@@ -97,6 +97,7 @@ ja:
       website: "ウェブサイト"
       wheelchair: "車椅子のアクセシビリティは？"
       wheelchair_description: "アクセシビリティについてのコメント:"
+      wheelchair_toilet: "車椅子用浴室"
     titles:
       basic: "基本データ"
       optional: "詳細情報 <span class=\"addition\">(全ての項目はオプションです)</span> "
@@ -236,17 +237,11 @@ ja:
       format:
         delimiter: ","
         format: "%u%n"
-        precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: $
     format:
       delimiter: ", "
-      precision: 3
       separator: "."
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -256,28 +251,15 @@ ja:
           quadrillion: 千兆
           thousand: 千
           trillion: 1 兆
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
         units:
           byte:
-            one: バイト
             other: Bytes
           gb: GB
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -286,7 +268,6 @@ ja:
       notice: "あなたのwheelmapアカウントは現在OpenStreetMapアカウント%{user}と連携しています。"
   or: or
   place:
-    one: "%{count} 件の場所"
     other: "%{count} 個の場所"
   profile:
     edit:
@@ -315,7 +296,6 @@ ja:
     array:
       last_word_connector: ", and"
       sentence_connector: かつ
-      skip_last_comma: true
       two_words_connector: "and "
       words_connector: ","
     select:
@@ -327,6 +307,10 @@ ja:
       long: "%B %d, %Y %H:%M "
       short: "%d %b %H:%M"
     pm: pm
+  toiletstatus:
+    'no': "車椅子で利用不可能な浴室"
+    unknown: "車椅子利用不明"
+    'yes': "車椅子で利用可能な浴室"
   user_sessions:
     create:
       activation:

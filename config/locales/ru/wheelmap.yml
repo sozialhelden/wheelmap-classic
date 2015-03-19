@@ -314,6 +314,8 @@ ru:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: вечера
+  toiletstatus:
+    unknown: "Статус неизвестен"
   user_sessions:
     create:
       activation:

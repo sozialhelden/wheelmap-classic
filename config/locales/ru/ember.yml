@@ -1,0 +1,22 @@
+ru:
+  models:
+    category:
+      prompt: "Выберите категорию"
+    node_type:
+      prompt: "Выберите тип"
+    node:
+      info_edit_position: "Место появится на Wheelmap, как это показано выше. Если маркер установлен некорректно, вы можете  <a href=\"%{url}\">изменить его положение на OpenStreetMap.</a>"
+      mail:
+        subject: "[Wheelmap] Problem with %{headline}"
+        body: "(Пожалуйста, пишите по-английски или по-немецки.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:"
+  actions:
+    send: Отправить
+    save: Сохранить
+    cancel: Отменить
+  errors:
+    models:
+      node:
+        website:
+          invalid: "Неверный формат адреса сайта."
+        phone:
+          invalid: "Неверный формат телефонного номера. Он должен иметь следующий вид: +49 30 234567"

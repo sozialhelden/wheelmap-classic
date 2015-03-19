@@ -163,7 +163,6 @@ el:
         large_map: "&laquo; Ακύρωση"
     node:
       link:
-        claim: ~
         edit_node: "Επεξεργαστείτε τοποθεσία"
         report_bug: "Report a problem"
     show:
@@ -180,17 +179,11 @@ el:
       format:
         delimiter: ","
         format: "%n %u"
-        precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: €
     format:
       delimiter: ","
-      precision: 3
       separator: "."
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -200,10 +193,6 @@ el:
           quadrillion: Τετρακισεκατομμύρια
           thousand: Χιλιάδες
           trillion: Τρισεκατομμύρια
-      format:
-        precision: 1
-        significant: true
-        strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
         units:
@@ -246,7 +235,6 @@ el:
     array:
       last_word_connector: "και"
       sentence_connector: και
-      skip_last_comma: true
       two_words_connector: "και"
       words_connector: ","
     select:
@@ -258,6 +246,8 @@ el:
       long: "%A %d %B %Y %H:%M:%S %Z"
       short: "%d %b %H:%M"
     pm: απόγευμα
+  toiletstatus:
+    unknown: "Άγνωστη η προσβασιμότητα με αναπηρική καρέκλα"
   user_sessions:
     create:
       activation:

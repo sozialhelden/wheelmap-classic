@@ -1,13 +1,44 @@
----
 el:
   activerecord:
     attributes:
       poi:
-        name: Name
+        name: Όνομα
         type: Τύπος
+        address: Διεύθυνση
         website: Ιστοσελίδα
         phone: Τηλέφωνο
+        note: Σημείωση
         address_street: Οδός
-        address_housenumber: Αριθμός οικίας
-        address_postcode: Ταχυδρομικός κώδικας
+        address_housenumber: Αριθμός σπιτιού
+        address_postcode: Ταχυδρομικός τομέας
         address_city: Πόλη
+  faq:
+    headline: Υπάρχει πρόβλημα με αυτήν την περιοχή;
+  header:
+    navigation:
+      about_wheelmap: Σχετικά με το Wheelmap
+      choose_language: Επιλογή γλώσσας
+      contact: Επικοινωνία
+      map: Χάρτης
+      projects: Έργα
+    toolbar:
+      categories: Κατηγορίες
+  nodes:
+    node_data:
+      address: 'Διεύθυνση:'
+      contact_details: 'Πληροφορίες επικοινωνίας:'
+    node_edit:
+      details: Λεπτομέρειες
+      edit: Επεξεργασία
+    node_map:
+      map: 'Χάρτης:'
+    node_note:
+      comment: 'Σχόλιο:'
+    node_photos:
+      add: Προσθήκη
+      photos_of_this_place: 'Φωτογραφίες της περιοχής:'
+      upload: Αποστολή
+    show:
+      share:
+        facebook: Facebook
+        twitter: Twitter

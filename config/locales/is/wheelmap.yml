@@ -117,7 +117,6 @@ is:
     searchbar:
       add_place: "Bæta við öðrum stað"
       find: finna
-      label: Leit
       placeholder: "t.d. Árbæjarsafn eða Ráðhús Reykjavíkur"
       title_add_place: "Bæta við nýju stað á þessari staðsetningu strax!"
     tagline: "Wheelmap logo"
@@ -190,7 +189,6 @@ is:
         large_map: "&laquo; Hætta við"
     node:
       link:
-        claim: ~
         edit_node: "Breyta stað"
         report_bug: "Tilkynntu villu"
     show:
@@ -209,17 +207,11 @@ is:
       format:
         delimiter: ","
         format: "%u %n"
-        precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: kr.
     format:
       delimiter: "."
-      precision: 3
       separator: ","
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -229,8 +221,6 @@ is:
           quadrillion: Skrilljón
           thousand: Þúsund
           trillion: Trilljón
-      format:
-        precision: 1
       storage_units:
         format: "%n %u"
         units:
@@ -284,6 +274,8 @@ is:
       long: "%A %e. %B %Y kl. %H:%M"
       short: "%e. %B kl. %H:%M"
     pm: eftir hádegi
+  toiletstatus:
+    unknown: "hjólastólaaðgengi ekki vitað"
   user_sessions:
     create:
       activation:

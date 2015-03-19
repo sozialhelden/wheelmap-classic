@@ -60,7 +60,6 @@ ca:
     show_unaccessible_places: "no accessible amb cadira de rodes"
   formtastic:
     hints:
-      email: "Us garantim que tractarem la seva adreça de manera confidencial i no hi rebrà spam."
       lat: "Moveu el marcador del mapa a la posició correcta"
       osm_username: "Encara no en sou membre? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Creeu-vos ara un compte a OpenStreetMap</a>"
       password: "(deixeu-ho en blanc si no voleu canviar-la)"
@@ -118,7 +117,6 @@ ca:
     searchbar:
       add_place: "Afegeix un altre lloc"
       find: Cerca
-      label: ~
       placeholder: "Cerca un lloc"
       title_add_place: "Afegeix un lloc nou en aquesta posició"
     tagline: "Logotip de Wheelmap"
@@ -222,17 +220,11 @@ ca:
       format:
         delimiter: ","
         format: "%u%n"
-        precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: $
     format:
       delimiter: ","
-      precision: 3
       separator: "."
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -242,10 +234,6 @@ ca:
           quadrillion: Quadrilió
           thousand: Mil
           trillion: Trilió
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 3
       storage_units:
         format: "%n %u"
         units:
@@ -256,12 +244,6 @@ ca:
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -310,6 +292,8 @@ ca:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+  toiletstatus:
+    unknown: "estat desconegut"
   user_sessions:
     create:
       activation:
@@ -328,7 +312,6 @@ ca:
   users:
     after_signup_edit:
       welcome:
-        headline: ~
         set_password_for_mobile: "Heu finalitzat el registre a l'OpenStreetmap.\nAra indiqueu una adreça de correu i una contrasenya per al compte Wheelmap i, aleshores, haureu acabat! Necessiteu aquesta adreça de correu i la contrasenya per iniciar sessió a l'aplicació Wheelmap de l'iPhone o l'Android."
     edit:
       headline:

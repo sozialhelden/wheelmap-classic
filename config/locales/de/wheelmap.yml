@@ -67,7 +67,6 @@ de:
     show_unaccessible_places: "nicht rollstuhlgerecht"
   formtastic:
     hints:
-      email: "Wir behandeln Deine Adresse vertraulich, kein Spam. Versprochen!"
       lat: "Bewegen Sie den Marker auf der Karte"
       osm_username: "Noch nicht Mitglied? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Openstreetmap Benutzerkonto anlegen</a>"
       password: "(leer lassen, wenn du es nicht ändern möchtest)"
@@ -99,7 +98,7 @@ de:
       website: "Webseite:"
       wheelchair: "Rollstuhlgerecht?"
       wheelchair_description: "Info zu Barrierefreiheit:"
-      wheelchair_toilet: "Rollstuhltoilette:"
+      wheelchair_toilet: "Rollstuhltoilette"
     titles:
       basic: "Basisdaten"
       optional: "Mehr Infos <span class=\"addition\">(alle Felder sind optional)</span>"
@@ -129,7 +128,6 @@ de:
     searchbar:
       add_place: "Ort hinzufügen"
       find: Finden
-      label: ~
       placeholder: "Nach Ort suchen"
       title_add_place: "Jetzt einen neuen Ort an dieser Stelle hinzufügen"
     tagline: "Wheelmap logo"
@@ -240,17 +238,11 @@ de:
       format:
         delimiter: "."
         format: "%n %u"
-        precision: 2
         separator: ","
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: €
     format:
       delimiter: "."
-      precision: 2
       separator: ","
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -260,12 +252,6 @@ de:
           quadrillion: Quadrillion
           thousand: Tausend
           trillion: Trillion
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
         units:
@@ -276,12 +262,6 @@ de:
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -319,7 +299,6 @@ de:
     array:
       last_word_connector: ", und"
       sentence_connector: und
-      skip_last_comma: true
       two_words_connector: " und "
       words_connector: ","
     select:
@@ -360,7 +339,7 @@ de:
       headline:
         your_images: "Deine hochgeladenen Bilder"
   wheelchairstatus:
-    limited: "teilweise rollstuhlgerecht"
+    limited: "Teilweise rollstuhlgerecht"
     'no': "Nicht rollstuhlgerecht"
     unknown: "Unbekannter Status"
     'yes': "Voll Rollstuhlgerecht"
@@ -377,8 +356,8 @@ de:
       alt: "Wheelmap Logo - Rollstuhlgerechte Orte finden"
       title: "Wheelmap - Rollstuhlgerechte Orte finden"
     what_is:
-      fully_accessible: "Eingang stufenlos, alle Räume stufenlos, mit behindertengerechtem WC, falls ortsüblich."
-      limited_accessible: "Eingang max 1 Stufe (7cm hoch), die wichtigsten Räume stufenlos, WC egal."
+      fully_accessible: "Eingang stufenlos, alle Räume stufenlos erreichbar."
+      limited_accessible: "Eingang max 1 Stufe (7cm hoch), die wichtigsten Räume stufenlos erreichbar."
       not_accessible: "Eingang hat höhere oder mehrere Stufen, Räume nicht erreichbar."
       unknown_accessible: "Hilf mit und markiere diese Orte!"
   will_paginate:

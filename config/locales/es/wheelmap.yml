@@ -238,17 +238,11 @@ es:
       format:
         delimiter: ","
         format: "%u%n"
-        precision: 2
         separator: "-"
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: $
     format:
       delimiter: ","
-      precision: 3
       separator: "-"
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -258,12 +252,6 @@ es:
           quadrillion: Trillón
           thousand: Mil
           trillion: Billón
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 3
-        significant: verdadero
-        strip_insignificant_zeros: verdadero
       storage_units:
         format: "%n %u"
         units:
@@ -274,12 +262,6 @@ es:
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
@@ -316,7 +298,6 @@ es:
   support:
     array:
       last_word_connector: ", y"
-      skip_last_comma: verdadero
       sentence_connector: y
       two_words_connector: "y"
       words_connector: ","
@@ -329,6 +310,8 @@ es:
       long: "%d de %B, %Y %H:%M"
       short: "%b de %d %H:%M"
     pm: pm
+  toiletstatus:
+    unknown: "estado desconocido"
   user_sessions:
     create:
       activation:
