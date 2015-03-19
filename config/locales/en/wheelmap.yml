@@ -337,9 +337,9 @@ en:
       short: "%d %b %H:%M"
     pm: pm
   toiletstatus:
-    'no': "no wheelchair accessible bathroom"
-    unknown: "unknown status"
-    'yes': "wheelchair accessible bathroom"
+    'no': "No wheelchair accessible toilet"
+    unknown: "Toilet status unknown"
+    'yes': "Wheelchair accessible toilet"
   user_sessions:
     create:
       activation:
