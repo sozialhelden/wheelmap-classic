@@ -312,7 +312,7 @@ de:
     pm: nachmittags
   toiletstatus:
     'no': "Kein Rollstuhlgerechtes WC"
-    unknown: "Unbekannter Status"
+    unknown: "WC Status unbekannt"
     'yes': "Rollstuhlgerechtes WC"
   user_sessions:
     create:
