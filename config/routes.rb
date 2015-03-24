@@ -83,6 +83,7 @@ Wheelmap::Application.routes.draw do
       put  :after_signup_update
       put :terms
     end
+    resources :photos, :only => [:create, :destroy]
   end
 
   resources :user, :only => :new # Fake route for redirection to OSM register page

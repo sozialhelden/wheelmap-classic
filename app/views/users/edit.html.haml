@@ -1,46 +1,76 @@
-#user_form
-  %h1{:style => 'margin-bottom:30px'}=t('profile.edit.headline')
+.tabbable.tabs-left{style: 'padding:10px;'}
+  %ul.nav.nav-tabs#profile_tabs
+    %li.active
+      = link_to 'Overview', '#overview', 'data-toggle' => 'tab'
 
-  = semantic_form_for @user do |form|
-    = form.inputs :name => t('devise.sign_up.form.labels.email') do
-      = form.input :first_name, :label => t('activerecord.attributes.user.first_name')
-      = form.input :last_name, :label => t('activerecord.attributes.user.last_name')
-      = form.input :email
-      = form.input :wants_newsletter, :input_html => {:class => 'newsletter'}, :label => t('devise.sign_up.form.labels.wants_newsletter')
+    %li
+      = link_to 'Images', '#images', 'data-toggle' => 'tab'
 
-
-    = form.inputs :name => t('devise.sign_up.form.labels.password') do
-      = form.input :password, :hint => false
-      = form.input :password_confirmation, :hint => t('formtastic.hints.password')
-
-    = form.actions do
-      = form.action :submit, :label => t('formtastic.labels.save')
-
-  -# TODO Renebale user photos
-  %hr
-  %h2= t('.headline.your_images')
-  #thumbs_private
-    %ul.thumbs.noscript
-      = render :partial => 'photos/photo', :collection => @user.photos
-  .clear
+    %li
+      = link_to 'Account', '#account', 'data-toggle' => 'tab'
 
 
-  - if @user.authentication_token
-    %hr
-    = semantic_form_for :user, :url => reset_token_user_path(@user), :method => :post do |form|
-      = form.inputs :name => 'API'do
-        = form.input :authentication_token, :input_html => {:readonly => :readonly}
+  .tab-content
+    .tab-pane.active#overview
+      %h1 Willkommen auf deinem Profil
 
-      = form.actions do
-        = form.action :submit, :label => t('formtastic.labels.reset')
+      = link_to 'Account Einstellungen', '#account', 'data-toggle' => 'tab', 'onclick' => 'sdsd'
+    .tab-pane#account
+
+      #user_form
+        %h1{:style => 'margin-bottom:30px'}=t('profile.edit.headline')
 
 
-  %hr
-  = semantic_form_for :user, :url => user_registration_path, :html => {:method => 'delete'} do |form|
-    = form.inputs :name => t('devise.destroy.headline') do
-      = form.actions do
-        = form.action :submit, :label => t('devise.destroy.link'), :onclick => "if(!confirm('#{t('devise.destroy.confirm')}')){ return false; }"
+        = semantic_form_for @user, html: { class: 'form-horizontal', id: "edit_user"} do |form|
+          = form.inputs :name => 'Deine Benutzerdaten' do
+            = form.input :first_name, :label => t('activerecord.attributes.user.first_name')
+            = form.input :last_name, :label => t('activerecord.attributes.user.last_name')
+            = form.input :email
 
-  -# TODO Renebale user photos
-  %hr
-  =link_to 'Terms', terms_path
+          = form.inputs :name => t('devise.sign_up.form.labels.password') do
+            = form.input :password, :hint => false
+            = form.input :password_confirmation, :hint => t('formtastic.hints.password')
+
+          = form.actions do
+            = form.action :submit, label: t('formtastic.labels.save')
+
+
+
+        - if @user.authentication_token
+          = semantic_form_for :user, :url => reset_token_user_path(@user), :method => :post do |form|
+            = form.inputs :name => 'API'do
+              = form.input :authentication_token, :input_html => {:readonly => :readonly}
+
+            = form.actions do
+              = form.action :submit, :label => t('formtastic.labels.reset')
+
+
+        = semantic_form_for :user, :url => user_registration_path, :html => {:method => 'delete'} do |form|
+          = form.inputs :name => t('devise.destroy.headline') do
+            = form.actions do
+              = form.action :submit, :label => t('devise.destroy.link'), :onclick => "if(!confirm('#{t('devise.destroy.confirm')}')){ return false; }"
+
+        -# TODO Renebale user photos
+        %hr
+        =link_to 'Terms', terms_path
+    .tab-pane#images
+      %h1= t('.headline.your_images')
+      #thumbs_private2
+        %ul.thumbnails
+          - @user.photos.in_groups_of(4, false).each do |group|
+            - group.each do |photo|
+              %li.span3{style: 'margin-left:20px;'}
+                - link_name = image_path(photo.image.url(:gallery).to_s)
+                = link_to link_name, :class => :thumbnail, :name => photo.id, :'data-lightbox' => 'gallery' do
+                  =image_tag(photo.image.url(:thumb_iphone_retina).to_s, 'data-src' => 'holder.js/160x112','alt' => photo.id, :width => '160', :height => '112', :style => 'width: 160px;height: 112px;')
+                = button_to "&times;".html_safe, user_photo_path(current_user, photo), :confirm => t('devise.destroy.confirm'), :method => :delete, :class => [:delete, :btn, :'pull-right'], :title => t('devise.destroy.link'), :style => 'position:relative; top:-35px;left: -5px'
+
+
+- content_for :javascript do
+  = javascript_include_tag :search
+  :javascript
+    $('#profile_tabs a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    })
+

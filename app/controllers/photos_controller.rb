@@ -6,6 +6,7 @@ class PhotosController < ApplicationController
   actions :index, :create, :destroy, :show
 
   optional_belongs_to :node, :parent_class => Poi
+  optional_belongs_to :user
 
   before_filter :authenticate_user!
 

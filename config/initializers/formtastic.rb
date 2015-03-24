@@ -71,6 +71,7 @@ Formtastic::FormBuilder.i18n_lookups_by_default = true
 # You can add custom inputs or override parts of Formtastic by subclassing Formtastic::FormBuilder and
 # specifying that class here.  Defaults to Formtastic::FormBuilder.
 # Formtastic::Helpers::FormHelper.builder = MyCustomBuilder
+Formtastic::Helpers::FormHelper.builder = FormtasticBootstrap::FormBuilder
 
 # You can opt-in to Formtastic's use of the HTML5 `required` attribute on `<input>`, `<select>`
 # and `<textarea>` tags by setting this to false (defaults to true).

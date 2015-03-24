@@ -7,6 +7,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery/jquery.cookies.js
+//= require jquery/jquery.lightbox
 //
 //= require bootstrap-transition
 //= require bootstrap-button
@@ -16,6 +17,7 @@
 //= require bootstrap-tooltip
 //= require bootstrap-popover
 //= require bootstrap-select
+//= require bootstrap-tab
 //
 //= require flash.js
 //= require function

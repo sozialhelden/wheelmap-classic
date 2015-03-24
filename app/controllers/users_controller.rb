@@ -13,6 +13,8 @@ class UsersController < ApplicationController
 
   rescue_from OAuth::Unauthorized, :with => :unauthorized
 
+  layout :determine_layout
+
   def index
     @user = current_user
   end
@@ -144,4 +146,16 @@ class UsersController < ApplicationController
       params[:user].delete(:password_confirmation)
     end
   end
+
+  protected
+
+  def determine_layout
+    case action_name
+    when "edit"
+      "users"
+    else
+      "legacy"
+    end
+  end
+
 end

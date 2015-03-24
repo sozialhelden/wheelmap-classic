@@ -1,13 +1,9 @@
 - content_for :content do
   #container
     #search
-      .content
-        = render :partial => 'search/form'
-
-        .results
+      .content.row-fluid
+        .span12
           =yield
-- content_for :javascript do
-  = javascript_include_tag :search
 
 - content_for :stylesheet do
   = stylesheet_link_tag :search
