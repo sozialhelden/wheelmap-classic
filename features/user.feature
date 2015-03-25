@@ -37,7 +37,7 @@ Feature: User feature
 
   @omniauth_test
   Scenario: I set my email after signup with existing password
-    When I am on the last user's after signup edit page
+    When I am on the profile after signup edit page
     When I fill in "E-Mail" with "peter@wheelmap.org"
     And I fill in "Passwort" with ""
     And I fill in "Passwort wiederholen" with ""
@@ -51,7 +51,7 @@ Feature: User feature
     And a user "horst2" exists with email: "horst2@wheelmap.org", password: "", password_confirmation: "", confirmed_at: "10.10.1999", osm_id: "174"
     And I am logged in with email: "horst@wheelmap.org", password: ""
 
-    When I am on the last user's after signup edit page
+    When I am on the profile after signup edit page
     When I fill in "E-Mail" with ""
     And I fill in "Passwort" with "somehighlysecretpassword"
     And I fill in "Passwort wiederholen" with "somehighlysecretpassword"
@@ -66,7 +66,7 @@ Feature: User feature
     And a user "horst2" exists with email: "horst2@wheelmap.org", confirmed_at: "10.10.1999", osm_id: "174"
     And I am logged in with email: "horst@wheelmap.org", password: "s"
 
-    When I am on the last user's after signup edit page
+    When I am on the profile after signup edit page
     When I fill in "E-Mail" with "peter@wheelmap.org"
     And I press "Fertigstellen"
     And PENDING: make cached flash testable
@@ -87,7 +87,7 @@ Feature: User feature
   Given there are no users
   And a user "horst" exists with email: "", confirmed_at: "10.10.1999", osm_id: "174"
   And I am logged in
-  When I am on the last user's after signup edit page
+  When I am on the profile after signup edit page
   And I fill in "E-Mail" with "peter@wheelmap.org"
   And I fill in "Passwort" with "new_password"
   And I fill in "Passwort wiederholen" with "new_password"

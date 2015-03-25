@@ -3,7 +3,7 @@ class OauthMailer < ActionMailer::Base
 
   def osm_reconnect(user)
     @user = user
-    @url  = edit_user_url(user)
+    @url  = edit_profile_url
     mail( :to => user.email,
           :reply_to => "andi@wheelmap.org",
           :subject => "Reminder: Konto zwischen Wheelmap.org und OpenStreetMap neu verbinden"
@@ -13,7 +13,7 @@ class OauthMailer < ActionMailer::Base
 
   def osm_sign_up(user)
     @user = user
-    @url  = edit_user_url(user)
+    @url  = edit_profile_url
     mail( :to => user.email,
           :reply_to => "andi@wheelmap.org",
           :subject => "Jetzt die Wheelmap mit dem OpenStreetMap-Account nutzen"

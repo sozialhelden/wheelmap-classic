@@ -78,9 +78,9 @@ describe OmniauthCallbacksController do
 
     it_behaves_like "any authorized user"
 
-    it "redirects to after_signup_edit_user_path" do
+    it "redirects to after_signup_edit_profil_path" do
       get :osm
-      response.should redirect_to after_signup_edit_user_url(User.first)
+      response.should redirect_to after_signup_edit_profile_url
     end
   end
 

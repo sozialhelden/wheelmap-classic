@@ -1,7 +1,7 @@
 #user_form
   %h2{:style => 'font-size: 22px'}=t('.welcome.headline')
 
-  = semantic_form_for @user, :url => after_signup_update_user_path(@user), :method => :put, :html => {:novalidate => '', :class => 'after_signup_edit'} do |form|
+  = semantic_form_for @user, :url => after_signup_update_profile_path, :method => :put, :html => {:novalidate => '', :class => 'after_signup_edit'} do |form|
     = form.inputs do
       %li.optional{:style => 'width:660px'}
         %label.small{:style => 'margin-bottom:40px'} &nbsp;

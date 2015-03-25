@@ -26,7 +26,8 @@ class PhotosController < ApplicationController
 
   def destroy
     destroy! do |fmt|
-      fmt.html { redirect_to :back }
+      back_url = request.referer || profile_photo_path
+      fmt.html { redirect_to back_url }
     end
   end
 

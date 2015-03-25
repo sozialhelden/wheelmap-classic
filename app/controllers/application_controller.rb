@@ -57,12 +57,12 @@ class ApplicationController < ActionController::Base
   def authenticate_application!
     unless current_user.app_authorized?
       if mobile_app?
-        render :json => {:id => current_user.id, :message => 'Application needs to be authorized', :url => edit_user_url(current_user)}.to_json, :status => 403
+        render :json => {:id => current_user.id, :message => 'Application needs to be authorized', :url => edit_profile_url}.to_json, :status => 403
       else
         respond_to do |format|
           format.html{
             flash[:alert] = I18n.t('nodes.flash.authorize_wheelmap')
-            redirect_to edit_user_path(current_user)
+            redirect_to edit_profile_path
           }
           format.json{render_exception(Exception.new(I18n.t('nodes.flash.authorize_wheelmap')), 403)}
           format.xml{render_exception(Exception.new(I18n.t('nodes.flash.authorize_wheelmap')), 403)}
@@ -73,7 +73,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if params[:controller] =~ /registration/
-      edit_profile_path(current_user.id)
+      edit_profile_path
     else
       super
     end
@@ -134,7 +134,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_mobile_app
     unless @user.app_authorized?
-      render :json => {:id => @user.id, :message => 'Application needs to be authorized', :url => edit_user_url(@user)}.to_json, :status => 403
+      render :json => {:id => @user.id, :message => 'Application needs to be authorized', :url => edit_profile_url}.to_json, :status => 403
     end
   end
 

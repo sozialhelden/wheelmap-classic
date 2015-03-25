@@ -27,8 +27,10 @@ module NavigationHelpers
       '/users/sign_up'
 
     when /the after sign_up page/
-      user = User.last
-      "/users/#{user.to_param}/after_signup_edit"
+      "/profile/after_signup_edit"
+
+    when /the profile after signup edit page/
+      "/profile/after_signup_edit"
 
     when /the callback page/
       '/users/auth/osm/callback'
@@ -66,7 +68,7 @@ module NavigationHelpers
 
     when /the last user's edit page/
       user = User.last
-      "/profile/#{user.to_param}/edit"
+      "/profile/edit"
 
     when /^#{capture_model}(?:'s)? page$/                           # eg. the forum's page
       r =  $1.gsub(/poi/, 'node')

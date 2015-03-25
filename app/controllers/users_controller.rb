@@ -41,7 +41,7 @@ class UsersController < ApplicationController
       flash[:notice] = t('flash.actions.update.notice', :resource_name => User.model_name.human)
       flash[:notice] = t('devise.confirmations.send_instructions') if email_changed
       sign_in(@user, :bypass => true)
-      redirect_to edit_profile_path(@user.id)
+      redirect_to edit_profile_path
     else
       flash.now[:alert] = @user.errors.full_messages.to_sentence
       render :action => 'edit'
@@ -57,8 +57,8 @@ class UsersController < ApplicationController
   end
 
   def after_signup_update
-    @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
+    @user = current_user
       flash[:notice] = t('devise.confirmations.send_instructions') if @user.email.present?
       # Send welcome email if user set an email for the first time.
       if @user.email_provided_for_the_first_time?
@@ -107,7 +107,7 @@ class UsersController < ApplicationController
 
   def reset_token
     current_user.reset_authentication_token! if current_user.authentication_token
-    redirect_to edit_profile_path(current_user.id)
+    redirect_to edit_profile_path
     return
   end
 
@@ -120,7 +120,7 @@ class UsersController < ApplicationController
       when 'after_signup_edit', 'after_signup_update'
         redirect_to after_signup_edit_user_path(current_user)
       else
-        redirect_to edit_user_path(current_user)
+        redirect_to edit_profile_path
       end
     end
   end

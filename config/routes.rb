@@ -70,12 +70,13 @@ Wheelmap::Application.routes.draw do
   resources :node_types, only: [:index, :show]
   resources :photos, only: [:index, :show]
 
-  resources :users, :as => 'profile', :path => '/profile'
-  resources :users do
+  resource :users, :as => 'profile', :path => '/profile' do
+    resources :photos, :only => [:create, :destroy]
     collection do
       post :authenticate
       get :newsletter
       get :signed_in
+      get :photos
     end
     member do
       post :reset_token
@@ -83,7 +84,6 @@ Wheelmap::Application.routes.draw do
       put  :after_signup_update
       put :terms
     end
-    resources :photos, :only => [:create, :destroy]
   end
 
   resources :user, :only => :new # Fake route for redirection to OSM register page
