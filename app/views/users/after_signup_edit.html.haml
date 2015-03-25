@@ -1,11 +1,9 @@
-#user_form
+#user_form{:style => 'padding:10px'}
   %h2{:style => 'font-size: 22px'}=t('.welcome.headline')
 
-  = semantic_form_for @user, :url => after_signup_update_profile_path, :method => :put, :html => {:novalidate => '', :class => 'after_signup_edit'} do |form|
+  = semantic_form_for @user, :url => after_signup_update_profile_path, :method => :put, :html => {:novalidate => '', :class => 'after_signup_edit form-horizontal', :id =>'edit_user' } do |form|
     = form.inputs do
-      %li.optional{:style => 'width:660px'}
-        %label.small{:style => 'margin-bottom:40px'} &nbsp;
-        %p= t('.welcome.set_password_for_mobile')
+      %p= t('.welcome.set_password_for_mobile')
 
       = form.input :email, hint: true, required: true
       = form.input :first_time, :as => :hidden, :input_html => { :value => @user.encrypted_password.blank? ? '1' : '0' }
@@ -14,8 +12,6 @@
       = form.input :password_confirmation, hint: false, required: true
 
     = form.actions do
-      %ol
-        %li.commit
-          %input.small.update#user_submit{:name => 'commit', :type => 'submit', :value => t('formtastic.labels.finish'), :style => 'display:inline', :'data-confirm' => t('devise.confirmations.send_instructions')}
-          = link_to t('common.skip'), after_sign_in_path_for(:user), :style => 'display: inline; position: relative;left:200px'
+      %input.small.update.btn#user_submit{:name => 'commit', :type => 'submit', :value => t('formtastic.labels.finish'), :style => 'display:inline', :'data-confirm' => t('devise.confirmations.send_instructions')}
+      = link_to t('common.skip'), after_sign_in_path_for(:user), class: 'pull-right'
 
