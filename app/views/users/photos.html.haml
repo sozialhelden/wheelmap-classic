@@ -5,8 +5,5 @@
       %ul.thumbnails
         - @user.photos.each do |photo|
           %li.span3{style: 'margin-left:20px;'}
-            - link_name = image_path(photo.image.url(:gallery).to_s)
-            = link_to link_name, :class => :thumbnail, :name => photo.id, :'data-lightbox' => 'gallery' do
-              =image_tag(photo.image.url(:thumb_iphone_retina).to_s, 'data-src' => 'holder.js/160x112','alt' => photo.id, :width => '160', :height => '112', :style => 'width: 160px;height: 112px;')
-            = button_to "&times;".html_safe, profile_photo_path(photo), :confirm => t('devise.destroy.confirm'), :method => :delete, :class => [:delete, :btn, :'pull-right'], :title => t('devise.destroy.link'), :style => 'position:relative; top:-35px;left: -5px'
+            = link_to_photo(photo)
 

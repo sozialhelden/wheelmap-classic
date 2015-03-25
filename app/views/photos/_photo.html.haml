@@ -1,4 +1,0 @@
-%li
-  = link_to_photo photo
-  - if user_signed_in? && current_user == photo.user
-    = button_to "&times;".html_safe, node_photo_path(photo.poi_id, photo), :confirm => t('devise.destroy.confirm'), :method => :delete, :class => :delete, :title => t('devise.destroy.link')
