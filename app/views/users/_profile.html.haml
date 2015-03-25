@@ -1,17 +1,12 @@
 %nav.sidebar.span2
-  .tabbable.tabs-left{style: 'padding:10px;'}
-    %ul.nav.nav-tabs#profile_tabs
-      %li{class: action_name == 'show' ? :active : nil}
-        = link_to 'Overview', profile_path, 'id' => 'overview'
+  .tabbable.tabs-left.hidden-phone{style: 'padding:10px;'}
+    = render partial: 'tabs'
 
-      %li{class: action_name == 'photos' ? :active : nil}
-        = link_to 'Images', profile_photos_path, 'id' => 'images'
-
-      %li{class: action_name == 'edit' || action_name == 'update' ? :active : nil}
-        = link_to 'Account', edit_profile_path, 'id' => 'profile'
+  .tabbable.tabs-bottom.visible-phone{style: 'padding:10px;'}
+    = render partial: 'tabs'
 
 .more-content.span10
-  .tab-content
+  .tab-content{style: 'padding-right:40px;'}
     = yield
 
 - content_for :javascript do
