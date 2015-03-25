@@ -69,8 +69,8 @@ module ApplicationHelper
   # Flash message for new layout.
   def render_flash
     html = ''
-    [:notice,:error,:alert].each do |type|
-      html << "<div class='notification #{type}' id='#{type}_div_id' style='display:none'><span></span></div>"
+    [:notice,:error,:alert, :success].each do |type|
+      html << "<div class='notification #{type}' id='#{type}_div_id' style='display:none'><span>#{flash[type]}</span></div>"
     end
     html.html_safe
   end

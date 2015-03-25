@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!,        :except => [:authenticate, :signed_in]
   before_filter :authenticate_mobile_user,  :only => :authenticate
   before_filter :authenticate_mobile_app,   :only => :authenticate
-  before_filter :require_owner, :only => [:edit, :update, :reset_token, :after_signup_edit, :after_signup_update, :terms]
 
   before_filter :remove_password_from_params_if_blank, :only => :update
 
@@ -13,9 +12,7 @@ class UsersController < ApplicationController
 
   rescue_from OAuth::Unauthorized, :with => :unauthorized
 
-  layout :determine_layout
-
-  def index
+  def show
     @user = current_user
   end
 
@@ -30,12 +27,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def update
-    @user = User.find(params[:id])
-    @user.attributes = params[:user]
+    @user = current_user
+    @user.attributes = user_params
     email_changed = @user.email_changed?
     if @user.save
       flash[:notice] = t('flash.actions.update.notice', :resource_name => User.model_name.human)
@@ -48,6 +45,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def photos
+    @user = current_user
+  end
+
   def signed_in
     render :json => (current_user ? true : false).to_json, :status => 200
   end
@@ -57,8 +58,8 @@ class UsersController < ApplicationController
   end
 
   def after_signup_update
-    if @user.update_attributes(params[:user])
     @user = current_user
+    if @user.update_attributes(user_params)
       flash[:notice] = t('devise.confirmations.send_instructions') if @user.email.present?
       # Send welcome email if user set an email for the first time.
       if @user.email_provided_for_the_first_time?
@@ -133,29 +134,24 @@ class UsersController < ApplicationController
 
   def authenticate_mobile_app
     unless @user.app_authorized?
-      render :json => {:id => @user.id, :message => 'Application needs to be authorized', :url => edit_user_url(@user)}.to_json, :status => 403
+      render :json => {:id => @user.id, :message => 'Application needs to be authorized', :url => edit_profile_url}.to_json, :status => 403
     end
   end
 
   def remove_password_from_params_if_blank
-    if params[:user][:password].blank?
+    if user_params[:password].blank?
       params[:user].delete(:password)
     end
 
-    if params[:user][:password_confirmation].blank?
+    if user_params[:password_confirmation].blank?
       params[:user].delete(:password_confirmation)
     end
   end
 
   protected
 
-  def determine_layout
-    case action_name
-    when "edit"
-      "users"
-    else
-      "legacy"
-    end
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
 
 end
