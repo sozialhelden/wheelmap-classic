@@ -47,6 +47,7 @@ class UsersController < ApplicationController
 
   def photos
     @user = current_user
+    @photos = @user.photos.page(params[:page]).per_page(18)
   end
 
   def signed_in

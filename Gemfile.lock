@@ -255,6 +255,9 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kaminari-i18n (0.2.0)
+      kaminari
+      rails
     kgio (2.9.2)
     launchy (2.1.2)
       addressable (~> 2.3)
@@ -504,6 +507,7 @@ DEPENDENCIES
   inherited_resources
   jquery-rails (= 2.3.0)
   kaminari
+  kaminari-i18n
   launchy
   librato-metrics
   librato-rails

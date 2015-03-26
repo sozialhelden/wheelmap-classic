@@ -46,6 +46,7 @@ group :default do
   gem 'activeadmin', '0.6.2'
   gem 'meta_search'
   gem 'kaminari'
+  gem 'kaminari-i18n'
   gem 'carrierwave'
   gem 'carrierwave-meta'
   gem 'carrierwave_backgrounder'
