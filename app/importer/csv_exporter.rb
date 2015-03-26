@@ -2,6 +2,7 @@
 
 require 'rubygems'
 require 'libxml'
+require 'htmlentities'
 
 class CsvExporter
 
@@ -12,10 +13,11 @@ class CsvExporter
   def initialize(instream_or_infile=STDIN, outfile='wheelmap.csv' )
     @start_time = Time.now
     @processed = 0
-    @parser = instream_or_infile.is_a?(String) ? LibXML::XML::SaxParser.file(instream_or_infile) : LibXML::XML::SaxParser.io(instream_or_infile)
+    @parser = instream_or_infile.is_a?(String) ? LibXML::XML::SaxParser.file(instream_or_infile) : LibXML::XML::SaxParser.io(instream_or_infile, encoding: XML::Encoding::UTF_8)
     @parser.callbacks = self
     @output = CSV.open(outfile, 'w', :force_quotes => true)
     @output << ["OSM ID", "OSM TYPE", "Name", "Kategorie", "Rollstuhlstatus", "lat", "lon", "Strasse", "Hausnummer", "Stadt", "Postleitzahl"]
+    @decoder = HTMLEntities.new(:expanded)
   end
 
   def values
@@ -48,11 +50,8 @@ class CsvExporter
     case element
     when 'tag'
       k = attributes['k']
-      v = attributes['v']
       # Eliminate utf-encoded HTML Entitiy for & => &amp; or &#38;
-      if @poi && (k == 'website' || k == 'name')
-        v = v.gsub(/&#38;|&amp;/, '&')
-      end
+      v = @decoder.decode(attributes['v'])
       @poi[:tags][k.to_sym] = v if @poi
     when 'node', 'way'
       @poi = {  :id   => attributes['id'],

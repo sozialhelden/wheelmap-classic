@@ -3,6 +3,8 @@
 require 'rubygems'
 require 'libxml'
 require "activerecord-import/base"
+require 'htmlentities'
+
 ActiveRecord::Import.require_adapter('mysql2')
 class PlanetReader
 
@@ -23,13 +25,14 @@ class PlanetReader
     end
     @start_time = Time.now
     @processed = 0
-    @parser = stream_or_file.is_a?(String) ? LibXML::XML::SaxParser.file(stream_or_file) : LibXML::XML::SaxParser.io(stream_or_file)
+    @parser = stream_or_file.is_a?(String) ? LibXML::XML::SaxParser.file(stream_or_file) : LibXML::XML::SaxParser.io(stream_or_file, encoding: XML::Encoding::UTF_8)
     @parser.callbacks = self
     @columns = [:osm_id, :version, :tags, :geom, :status, :created_at , :updated_at, :node_type_id, :region_id, :toilet]
     @columns_without_create = @columns - [:created_at]
     @to_be_created = []
     @to_be_deleted = []
     @combination = NodeType.combination
+    @decoder = HTMLEntities.new(:expanded)
   end
 
   def values
@@ -81,15 +84,11 @@ class PlanetReader
     case element
     when 'tag'
       k = attributes['k']
-      v = attributes['v']
       # Eliminate utf-encoded HTML Entitiy for & => &amp; or &#38;
-      if @poi && (k == 'website' || k == 'name')
-        v = v.gsub(/&#38;|&amp;/, '&')
-      end
+      v = @decoder.decode(attributes['v'])
       @poi[:tags][k] = v if @poi
       @poi[:node_type_id] ||= @combination[k.to_s][v.to_s] rescue nil
     when 'node'
-      #puts attributes.inspect
       @poi = nil
       id = attributes['id'].to_i
       if (id > 0) then
