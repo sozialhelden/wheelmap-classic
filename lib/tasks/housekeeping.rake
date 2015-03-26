@@ -1,3 +1,4 @@
+require 'htmlentities'
 namespace :housekeeping do
 
   desc 'Remove queued nodes from osm file'
@@ -71,15 +72,31 @@ namespace :housekeeping do
     end
   end
 
-  desc 'Eliminate &#38; encodings from name and website'
-  task :eliminate_ampersand => :environment do
+  desc 'Eliminate html entities from tag values'
+  task :eliminate_html_entities => :environment do
+    @decoder = HTMLEntities.new(:expanded)
+    changed = false
     Poi.find_in_batches do |batch|
-      batch.each do |node|
-        old_name = node.tags['name']
-        node.name = old_name.gsub(/&#38;|&amp;/, '&') if old_name
-        old_website = node.tags['website']
-        node.tags['website'] = old_website.gsub(/&#38;|&amp;/, '&') if old_website
-        node.save(:validate => false) if node.tags['name'] != old_name || node.tags['website'] != old_website
+      Poi.transaction do
+        batch.each do |node|
+          old_tags = node.tags.dup
+          changed = false
+          node.tags.each do |k,v|
+            old_value = v
+            new_value = @decoder.decode(v)
+            node.tags[k] = new_value
+            changed ||= (old_value != new_value)
+          end
+          if changed
+            # puts ">>>>>>>>>>>>>>>>>>>>>>>"
+            # puts "CHANGED node #{node.osm_id} FROM:"
+            # puts old_tags.to_yaml
+            # puts "TO:"
+            # puts node.tags.to_yaml
+            # puts "<<<<<<<<<<<<<<<<<<<<<<<"
+            Poi.where(osm_id: node.osm_id).update_all(tags: node.tags.to_yaml)
+          end
+        end
       end
       putc '.'
       STDOUT.flush

@@ -245,6 +245,7 @@ GEM
     has_scope (0.5.1)
     hashie (1.2.0)
     hike (1.2.3)
+    htmlentities (4.3.3)
     httparty (0.11.0)
       multi_json (~> 1.0)
       multi_xml (>= 0.5.2)
@@ -508,6 +509,7 @@ DEPENDENCIES
   guard-spork
   haml
   has_scope
+  htmlentities
   i18n-js
   inherited_resources
   jquery-rails (= 2.3.0)

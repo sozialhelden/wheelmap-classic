@@ -62,6 +62,7 @@ group :default do
   gem 'figaro'
   gem 'strong_parameters'
   gem 'apipie-rails'
+  gem 'htmlentities', require: false
 end
 
 group :assets do
