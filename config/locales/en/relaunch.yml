@@ -108,3 +108,18 @@ en:
       headline: Oh, our fault
       info: Our search service was temporarily not available.
       repeat_search: Retry search
+  users:
+    profile:
+      explanation_text: "This is a simple text that will explain what users see here ..."
+      greeting:
+        anonymously: Hello you
+        personalized: Hello %{name}
+      headline:
+        edit_profile: Edit profile
+        overview: Your Account
+        your_photos: Your photos
+    tabs:
+      account: Account
+      images: Images
+      overview: Overview
+

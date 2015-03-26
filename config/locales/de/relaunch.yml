@@ -98,3 +98,19 @@ de:
       headline: Oh, unser Fehler
       info: Unser Suchdienst war kurzzeitig nicht verfügbar.
       repeat_search: Suche wiederholen
+  users:
+    profile:
+      explanation_text: "Das ist ein Erklärbärtext, was benutzer hier sehen ..."
+      greeting:
+        anonymously: Hallo du
+        personalized: Hallo %{name}
+      headline:
+        edit_profile: Profil bearbeiten
+        overview: Dein Konto
+        your_photos: Deine Photos
+
+    tabs:
+      account: Konto
+      images: Bilder
+      overview: Überblick
+

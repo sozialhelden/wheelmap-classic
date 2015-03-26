@@ -1,22 +1,17 @@
 = render layout: 'profile' do
 
   .tab-pane.active#overview
-    %h1 Willkommen auf deinem Profil
+    %p=t('.explanation_text')
 
-    = link_to 'Account Einstellungen', profile_path, 'data-toggle' => 'tab', 'onclick' => 'sdsd'
+    %h3=t('.headline.overview')
 
-
-    %h2
-      Deine Photos
-      %span.pull-right.addition
-        =link_to "bearbeiten", photos_profile_path
-
-    #thumbs_private2
-      %ul.thumbnails
-        - @user.photos.limit(3).each do |photo|
-          %li.span3{style: 'margin-left:20px;'}
-            - link_name = image_path(photo.image.url(:gallery).to_s)
-            = link_to link_name, :class => :thumbnail, :name => photo.id, :'data-lightbox' => 'gallery' do
-              =image_tag(photo.image.url(:thumb_iphone_retina).to_s, 'data-src' => 'holder.js/160x112','alt' => photo.id, :width => '160', :height => '112', :style => 'width: 160px;height: 112px;')
-
-
+    Du hast
+    %ul
+      %li
+        = "#{@user.tag_counter} Orte markiert"
+      %li
+        = "#{@user.create_counter} Orte hinzugefügt"
+      %li
+        = "#{@user.edit_counter} Orte bearbeitet"
+      %li
+        = "#{@user.photos.count} Photos hochgeladen."

@@ -1,7 +1,7 @@
 = render layout: 'profile' do
   .tab-pane.active#profile
     #user_form
-      %h1{:style => 'margin-bottom:30px'}=t('profile.edit.headline')
+      %h1{:style => 'margin-bottom:30px'}=t('.headline.edit_profile')
 
 
       = semantic_form_for @user, url: profile_path, html: { class: 'form-horizontal', id: "edit_user"} do |form|

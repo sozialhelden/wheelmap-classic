@@ -1,9 +1,9 @@
 %ul.nav.nav-tabs#profile_tabs
   %li{class: action_name == 'show' ? :active : nil}
-    = link_to 'Overview', profile_path, 'id' => 'overview'
+    = link_to t('.overview'), profile_path, 'id' => 'overview'
 
   %li{class: action_name == 'photos' ? :active : nil}
-    = link_to 'Images', profile_photos_path, 'id' => 'images'
+    = link_to t('.images'), profile_photos_path, 'id' => 'images'
 
   %li{class: action_name == 'edit' || action_name == 'update' ? :active : nil}
-    = link_to 'Account', edit_profile_path, 'id' => 'profile'
+    = link_to t('.account'), edit_profile_path, 'id' => 'profile'

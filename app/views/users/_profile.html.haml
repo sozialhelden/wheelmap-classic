@@ -1,13 +1,23 @@
-%nav.sidebar.span2
-  .tabbable.tabs-left.hidden-phone{style: 'padding:10px;'}
-    = render partial: 'tabs'
+.content
+  .row-fluid
+    .span12{style:"background:  url(http://api.tiles.mapbox.com/v4/sozialhelden.map-iqt6py1k/13.388986587524414,52.51699126638161,15/1280x100.jpg70?access_token=pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g) no-repeat center top;opacity: 0.8"}
+      %header#subheader
+        %h1
+          - if @user.first_name.present?
+            = link_to t('.greeting.personalized', name: @user.first_name), edit_profile_path
+          - else
+            = link_to t('.greeting.anonymously'), edit_profile_path
+  .row-fluid
+    %nav.sidebar.span2
+      .tabbable.tabs-left.hidden-phone{style: 'padding:10px;'}
+        = render partial: 'tabs'
 
-  .tabbable.tabs-bottom.visible-phone{style: 'padding:10px;'}
-    = render partial: 'tabs'
+      .tabbable.tabs-bottom.visible-phone{style: 'padding:10px;'}
+        = render partial: 'tabs'
 
-.more-content.span10
-  .tab-content{style: 'padding-right:40px;'}
-    = yield
+    .more-content.span10
+      .tab-content{style: 'padding-right:40px;'}
+        = yield
 
 - content_for :javascript do
   = javascript_include_tag :search

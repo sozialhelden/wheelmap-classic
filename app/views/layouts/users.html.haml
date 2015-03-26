@@ -4,9 +4,7 @@
       .span9.offset4
         = render_flash
     #search
-      .content.row-fluid
-        .span12
-          =yield
+      =yield
 
 - content_for :stylesheet do
   = stylesheet_link_tag :search
