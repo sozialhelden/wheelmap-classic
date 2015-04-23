@@ -51,3 +51,14 @@ Wheelmap.WheelchairPopoverComponent = Wheelmap.PopoverComponent.extend
   ).property('accessibility')
 
 Ember.Handlebars.helper('wheelchair-popover', Wheelmap.WheelchairPopoverComponent)
+
+Wheelmap.ToiletPopoverComponent = Wheelmap.WheelchairPopoverComponent.extend
+  popoverTitle: (()->
+    I18n.t("toiletstatus." + @get('wheelchair'))
+  ).property('wheelchair')
+
+  popoverContent: (()->
+    I18n.t("toiletstatus.what_is." + @get('wheelchair'))
+  ).property('wheelchair')
+
+Ember.Handlebars.helper('toilet-popover', Wheelmap.ToiletPopoverComponent)
