@@ -9,7 +9,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
 .node-wrapper {
   padding: 20px 0;
   position: relative;
-  z-index: 2;
+  z-index: 0;
 
   .flash-wrapper {
     top: $headerHeight;
