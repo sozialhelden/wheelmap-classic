@@ -20,11 +20,15 @@
         <div class="row-fluid">
             <section class="span8 node-content">
                 <section class="node-status">
+                    <h2>{{t 'nodes.node_status.wheelchair_accessibility' }}</h2>
                     <div class="row-fluid">
                         <div class="span6">
-                            <h2>{{t 'nodes.node_status.wheelchair_accessibility' }}</h2>
-
                             {{view Wheelmap.NodePopupStatusDropdownView }}
+                        </div>
+                        <div class="span6">
+                            {{#unless isUnknown}}
+                                {{ view Wheelmap.NodePopupStatusDropdownView templateName="nodes/_status-toilet-dropdown" }}
+                            {{/unless}}
                         </div>
                     </div>
                 </section>
