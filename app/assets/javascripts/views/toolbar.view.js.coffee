@@ -9,6 +9,10 @@ Wheelmap.ToolbarView = Ember.View.extend
     $(window).on 'resize.toolbar', @adjustFilters
     @adjustFilters()
 
+    @$('[data-popup]').popover()
+
+    return
+
   didRemoveElement: ()->
     $(window).off 'resize.toolbar'
 
@@ -32,6 +36,36 @@ Wheelmap.ToolbarView = Ember.View.extend
     else
       I18n.t('header.toolbar.categories')
   ).property('controller.activeCategories.length')
+
+  whatIsToiletTitle: (status)->
+    I18n.t("toiletstatus.#{status}")
+
+  whatIsToiletYesTitle: (()->
+    @whatIsToiletTitle('yes')
+  ).property()
+
+  whatIsToiletNoTitle: (()->
+    @whatIsToiletTitle('no')
+  ).property()
+
+  whatIsToiletUnknownTitle: (()->
+    @whatIsToiletTitle('unknown')
+  ).property()
+
+  whatIsToiletTitleContent: (status)->
+    I18n.t("toiletstatus.what_is.#{status}")
+
+  whatIsToiletYesContent: (()->
+    @whatIsToiletTitleContent('yes')
+  ).property()
+
+  whatIsToiletNoContent: (()->
+    @whatIsToiletTitleContent('no')
+  ).property()
+
+  whatIsToiletUnknownContent: (()->
+    @whatIsToiletTitleContent('unknown')
+  ).property()
 
   click: (event)->
     # Stop propagation of click on the dropdown menu

@@ -340,6 +340,10 @@ en:
     'no': "No wheelchair accessible toilet"
     unknown: "Toilet status unknown"
     'yes': "Wheelchair accessible toilet"
+    what_is:
+      'no': "Doorway's inner width min. 90 cm, clear space min. 150 x 150 cm, wheelchair-height toilet seat, folding grab rails and accessible hand basin."
+      'yes': "Doorway's inner width min. 90 cm, clear space min. 150 x 150 cm, wheelchair-height toilet seat, folding grab rails and accessible hand basin."
+      unknown: "Help by marking the toilet status!"
   user_sessions:
     create:
       activation:
