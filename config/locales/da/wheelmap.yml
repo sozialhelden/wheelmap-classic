@@ -309,8 +309,6 @@ da:
       long: "%A, %e. %B %Y, %H:%M"
       short: "%e. %b %Y, %H:%M"
     pm: pm
-  toiletstatus:
-    unknown: "kørestolstilgængeligt ukendt status"
   user_sessions:
     create:
       activation:

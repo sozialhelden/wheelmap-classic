@@ -294,8 +294,6 @@ tr:
       long: "%e %B %Y, %A, %H:%M"
       short: "%e %B, %H:%M"
     pm: öğleden sonra
-  toiletstatus:
-    unknown: "Tekerlekli sandalye erişilirliği belirsiz"
   user_sessions:
     create:
       activation:

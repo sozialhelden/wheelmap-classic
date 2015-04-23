@@ -311,8 +311,6 @@ fr:
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
     pm: après-midi
-  toiletstatus:
-    unknown: "état inconnu"
   user_sessions:
     create:
       activation:

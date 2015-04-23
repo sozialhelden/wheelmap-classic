@@ -293,8 +293,6 @@ hi:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: अपराह्न
-  toiletstatus:
-    unknown: "स्थिति अज्ञात"
   user_sessions:
     create:
       activation:

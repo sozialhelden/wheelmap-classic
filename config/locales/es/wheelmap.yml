@@ -310,8 +310,6 @@ es:
       long: "%d de %B, %Y %H:%M"
       short: "%b de %d %H:%M"
     pm: pm
-  toiletstatus:
-    unknown: "estado desconocido"
   user_sessions:
     create:
       activation:

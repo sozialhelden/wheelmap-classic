@@ -8,6 +8,8 @@ de:
         website: Website
         phone: Telefon
         address_street: Straße
+        address_housenumber: Hausnummer
+        address_postcode: Postleitzahl
         address_city: Stadt
   faq:
     answers:
@@ -77,6 +79,7 @@ de:
   search:
     index:
       no-results:
+        headline: Sorry, wir konnten keinen Ort namens "%{query}" finden.
         hint:
           example: <strong>Beispiel:</strong> Berlin, Deutschland
           info: Unser Suchdienst kann nur nach Adressen und Namen suchen. Ortstypen wie z.B. "Restaurant" oder "Kino" können über die Suche nicht gefunden werden. Gib deswegen bitte entweder den Namen des Ortes ein oder die Adresse (z.B. Straße oder Stadt).

@@ -1,4 +1,5 @@
 fi:
   actions:
+    send: Lähetä
     save: Tallenna
     cancel: Peruuta

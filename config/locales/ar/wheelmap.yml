@@ -297,8 +297,6 @@ ar:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: مساء
-  toiletstatus:
-    unknown: "حالة غير معروفة"
   user_sessions:
     create:
       activation:

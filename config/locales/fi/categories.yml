@@ -21,6 +21,7 @@ fi:
         university: Yliopisto
       food:
         bar: Baari
+        drinking_water: "Vesipiste"
         fast_food: "Pikaruoka"
         pub: Pubi
         restaurant: Ravintola
@@ -36,6 +37,7 @@ fi:
         cinema: Elokuvateatteri
         gallery: Galleria
         nightclub: Yökerho
+        sauna: Sauna
         theatre: Teatteri
         zoo: Eläintarha
       misc:

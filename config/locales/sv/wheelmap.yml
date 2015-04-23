@@ -309,8 +309,6 @@ sv:
       long: "%e %B %Y %H:%M"
       short: "%e %b %H:%M"
     pm: pm
-  toiletstatus:
-    unknown: "rullstolstillgänglighet okänd"
   user_sessions:
     create:
       activation:

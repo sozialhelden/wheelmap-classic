@@ -67,6 +67,7 @@ de:
     show_unaccessible_places: "nicht rollstuhlgerecht"
   formtastic:
     hints:
+      email: "Wir behandeln Deine Adresse vertraulich, versprochen. Kein Spam!"
       lat: "Bewegen Sie den Marker auf der Karte"
       osm_username: "Noch nicht Mitglied? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Openstreetmap Benutzerkonto anlegen</a>"
       password: "(leer lassen, wenn du es nicht ändern möchtest)"
@@ -312,8 +313,12 @@ de:
     pm: nachmittags
   toiletstatus:
     'no': "Kein Rollstuhlgerechtes WC"
-    unknown: "WC Status unbekannt"
+    unknown: "Status WC unbekannt"
     'yes': "Rollstuhlgerechtes WC"
+    what_is:
+      'no': "Durchgangsbreite Tür mind. 90 cm, Bewegungsflächen mind. 150 cm × 150 cm, WC-Becken mit größerer Sitzhöhe, Stützklappgriffe o.ä., unterfahrbares Waschbecken."
+      'yes': "Durchgangsbreite Tür mind. 90 cm, Bewegungsflächen mind. 150 cm × 150 cm, WC-Becken mit größerer Sitzhöhe, Stützklappgriffe o.ä., unterfahrbares Waschbecken."
+      unknown: "Hilf mit und markiere den Toiletten-Status!"
   user_sessions:
     create:
       activation:

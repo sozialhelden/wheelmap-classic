@@ -238,8 +238,6 @@ pt:
       long: "%A, %d de %B de %Y, %H:%Mh"
       short: "%d/%m, %H:%M hs"
     pm: pm
-  toiletstatus:
-    unknown: "acessibilidade a cadeira de rodas desconhecida"
   user_sessions:
     create:
       activation:

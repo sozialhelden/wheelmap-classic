@@ -274,8 +274,6 @@ is:
       long: "%A %e. %B %Y kl. %H:%M"
       short: "%e. %B kl. %H:%M"
     pm: eftir hádegi
-  toiletstatus:
-    unknown: "hjólastólaaðgengi ekki vitað"
   user_sessions:
     create:
       activation:

@@ -309,8 +309,6 @@ pt_PT:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: P.M.
-  toiletstatus:
-    unknown: "estado desconhecido"
   user_sessions:
     create:
       activation:

@@ -2,9 +2,11 @@ lt:
   activerecord:
     attributes:
       poi:
+        type: Tipas
         address: Adresas
         website: Svetainė
         phone: Telefonas
+        note: Pastaba
         address_street: Gatvė
         address_housenumber: Namo numeris
         address_postcode: Pašto kodas
@@ -34,7 +36,9 @@ lt:
   nodes:
     node_data:
       address: 'Adresas:'
+      contact_details: 'Kontaktiniai duomenys:'
     node_edit:
+      details: Išsamiau
       edit: Keisti
     node_map:
       map: 'Žemėlapis:'
@@ -46,12 +50,14 @@ lt:
       upload: Išsiųsti
     node_similar:
       similar: 'Panašios vietos: %{name}'
+    node_status:
+      premium: '%{name} sako: ši vieta yra'
     node_streetview:
       streetview: 'Gatvės vaizdas:'
     show:
       share:
         facebook: Facebook
-        text: 'Aš radau šią vietą puslapyje Wheelmap.org: %{name}'
+        text: 'Radau šią vietą puslapyje Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -59,6 +65,11 @@ lt:
         headline: Atleiskite, mums nepavyko rasti vietos pavadinimu "%{query}".
         hint:
           example: <strong>Pavyzdys:</strong> London, United Kingdom
+          info: Mūsų paieškos tarnyba veikia tik su pavadinimo ir/arba adreso informacija. Dėl to, prašome ieškoti arba pagal vietos pavadinimą, arba pagal jos adresą, pvz., gatvės pavadinimas ir/arba miestas. Vietos tipo paieška, pvz., restoranas ar kinas, neveikia!
+          work_in_progress: Mes sunkiai dirbame, norėdami ateityje padaryti vietų paiešką lengvesnę bei intuityvesnę.
+        try_this:
+          address: Prašome pateikti <strong>išsamesnį adresą</strong>.
+          spell_check: Patikrinkite savo įvesties <strong>rašybą</strong>.
       results:
         ticker:
           one: '%{count} rezultatas:'

@@ -309,8 +309,6 @@ sq_AL:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
-  toiletstatus:
-    unknown: "status i papërcaktuar"
   user_sessions:
     create:
       activation:
