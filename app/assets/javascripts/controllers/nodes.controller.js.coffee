@@ -135,10 +135,10 @@ Wheelmap.NodesEditController = Wheelmap.NodesController.extend Wheelmap.Wheelcha
     backToMap: ->
       @transitionToRoute('popup', @get('id'))
 
-    wheelchairSaveDone: (response)->
+    statusSaveDone: (response)->
       @get('controllers.flash-messages').pushMessage('notice', response.message)
 
-    wheelchairSaveFail: (response)->
+    statusSaveFail: (response)->
       @get('controllers.flash-messages').pushMessage('error', response.message)
 
     save: ->
