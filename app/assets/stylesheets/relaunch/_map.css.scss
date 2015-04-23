@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     background: #E8E0D8;
-    z-index: 50;
+    z-index: 0;
 
     @media screen and (max-width:$breakTablet) {
       top: $headerHeight;
