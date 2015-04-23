@@ -305,8 +305,6 @@ cs:
       long: "%A %d. %B %Y %H:%M"
       short: "%d. %m. %H:%M"
     pm: pm
-  toiletstatus:
-    unknown: "neznámý stav"
   user_sessions:
     create:
       activation:

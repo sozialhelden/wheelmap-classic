@@ -310,8 +310,6 @@ hu:
       long: "%Y %B %d %H:%M"
       short: "%b %d %H:%M"
     pm: du
-  toiletstatus:
-    unknown: "ismeretlen státusz"
   user_sessions:
     create:
       activation:

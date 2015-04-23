@@ -308,9 +308,9 @@ ja:
       short: "%d %b %H:%M"
     pm: pm
   toiletstatus:
-    'no': "車椅子で利用不可能な浴室"
-    unknown: "車椅子利用不明"
-    'yes': "車椅子で利用可能な浴室"
+    'no': "車椅子で利用不可のトイレ"
+    unknown: "車椅子での利用可能か不明のトイレ"
+    'yes': "車椅子で利用可能のトイレ"
   user_sessions:
     create:
       activation:

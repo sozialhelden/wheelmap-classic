@@ -15,6 +15,8 @@ lt:
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
+    messages:
+      not_a_number: "nėra skaičius"
   flash:
     photos:
       destroy:
@@ -24,9 +26,12 @@ lt:
   formtastic:
     hints:
       email: "Mes konfidencialiai elgiamės su jūsų adresu, jokio brukalo. Pažadame!"
+      osm_username: "Dar nesate narys? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Susikurkite OpenStreetMap paskyrą dabar</a>"
       website: "Pavyzdžiui: http://www.example.com"
     labels:
       category: "Kategorija:"
+      city: "Miestas:"
+      finish: Užbaigti
       lat: Platuma
       lon: Ilguma
       osm_password: "OSM slaptažodis"
@@ -35,7 +40,9 @@ lt:
       password_confirmation: "Pakartokite slaptažodį"
       phone: "Telefonas:"
       postcode: "Pašto kodas:"
+      save: Išsaugoti
       street: "Gatvė:"
+      type: "Tipas:"
       website: "Svetainė:"
     titles:
       optional: "Daugiau informacijos <span class=\"addition\">(visi laukai yra nebūtini)</span>"
@@ -46,6 +53,7 @@ lt:
       blog: Naujienos
       feedback: Atsiliepimai
       login: "Prisijungti"
+      logout: "Atsijungti"
       newsletter: Naujienlaiškis
       profile: Profilis
       what_is_wheelmap: "Kas yra wheelmap?"
@@ -61,6 +69,7 @@ lt:
           create: "Pridėti naują vietą"
       popup:
         form:
+          save: Atnaujinti
           unknown: "nežinoma būsena"
         more: "daugiau ..."
   how?: Kaip?
@@ -80,6 +89,8 @@ lt:
       link:
         large_map: "&laquo; Atšaukti"
     errors:
+      default: "Oi, įvyko kažkas netikėto. Mums pranešta apie šią problemą"
+      not_authorized: "Atleiskite, tapatybės nustatymas nepavyko"
       not_available: "Atleiskite, šis puslapis laikinai neprieinamas."
       not_existent: "Atleiskite, ši vieta daugiau nebeprieinama."
       not_found: "Atleiskite, puslapis nerastas."
@@ -96,6 +107,8 @@ lt:
         edit_node: "Keisti vietą"
         report_bug: "Pranešti apie problemą"
     show:
+      header:
+        title: "Vieta: %{node} | wheelmap.org"
       link:
         upload: "Išsiųsti paveikslą"
       show-in-osm: OpenStreetMap
@@ -136,8 +149,6 @@ lt:
       sentence_connector: ir
       two_words_connector: "ir"
       words_connector: ","
-  toiletstatus:
-    unknown: "nežinoma būsena"
   user_sessions:
     create:
       error:
@@ -156,7 +167,9 @@ lt:
   wheelchairstatus:
     unknown: "nežinoma būsena"
   wheelmap:
+    footer:
+      main_supporter: "Pagrindinis remėjas"
     itunes:
       alt: "AppStore Logotipas"
     what_is:
-      unknown_accessible: "Padėkite žymėdami vietas!"
+      unknown_accessible: "Padėkite, žymėdami vietas!"

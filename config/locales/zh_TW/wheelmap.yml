@@ -305,8 +305,6 @@ zh_TW:
       long: "%Y - %B -%d %H:%M"
       short: "%d %b %H:%M"
     pm: 下午
-  toiletstatus:
-    unknown: "未知狀態"
   user_sessions:
     create:
       activation:

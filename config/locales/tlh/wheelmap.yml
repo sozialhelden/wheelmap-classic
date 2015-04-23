@@ -256,8 +256,6 @@ tlh:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: ram
-  toiletstatus:
-    unknown: "rutlhquS chaw Daq 'e' Sovbe'lu' "
   user_sessions:
     create:
       activation:

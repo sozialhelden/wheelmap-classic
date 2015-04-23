@@ -285,8 +285,6 @@ zh:
       long: "%Y年%b%d日 %H:%M"
       short: "%b%d日 %H:%M"
     pm: 下午
-  toiletstatus:
-    unknown: "未知状态"
   user_sessions:
     create:
       activation:

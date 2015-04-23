@@ -1,13 +1,32 @@
 fi:
+  breadcrumbs:
+    node:
+      create: "Lisää uusi paikka"
+  common:
+    close: Sulje
+  form:
+    show_unaccessible_places: "Ei saavutettavissa pyörätuolilla"
   formtastic:
     labels:
+      city: "Kaupunki"
       password: Salasana
       privacy_policy: "Hyväksyn tietosuojasopimuksen pykälät 1 ja 2."
       save: Tallenna
+      street: "Katu:"
       terms: "Hyväksyn käyttöehdot"
   header:
     meta:
       search: Haku
+  home:
+    index:
+      link:
+        node:
+          create: "Lisää uusi paikka"
+      popup:
+        form:
+          'no': "Ei saavutettavissa pyörätuolilla"
   user_sessions:
     new:
       password: Salasana
+  wheelchairstatus:
+    'no': "Ei saavutettavissa pyörätuolilla"

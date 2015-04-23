@@ -313,8 +313,6 @@ sk:
       long: "%A %d. %B %Y %H:%M"
       short: "%d.%m. %H:%M"
     pm: popoludní
-  toiletstatus:
-    unknown: "neznámy stav"
   user_sessions:
     create:
       activation:

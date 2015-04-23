@@ -309,8 +309,6 @@ pt_BR:
       long: "%A, %d de %B de %Y, %H:%M"
       short: "%d/%m, %H:%M"
     pm: de tarde
-  toiletstatus:
-    unknown: "Sem informações sobre acessibilidade"
   user_sessions:
     create:
       activation:

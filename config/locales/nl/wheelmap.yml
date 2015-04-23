@@ -309,8 +309,6 @@ nl:
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
     pm: s middags
-  toiletstatus:
-    unknown: "onbekende status"
   user_sessions:
     create:
       activation:

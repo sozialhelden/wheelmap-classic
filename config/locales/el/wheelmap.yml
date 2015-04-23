@@ -11,6 +11,7 @@ el:
     root: wheelmap
   common:
     close: Κλείσιμο
+    skip: παραληψη
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message} "
@@ -23,6 +24,7 @@ el:
       equal_to: "Πρέπει να είναι ακριβώς %{count}"
       even: "Πρέπει να είναι μονό"
       exclusion: "Είναι δεσμευμένο"
+      expired: "έληξε, ζητήστε ένα νέο"
       greater_than: "Πρέπει να είναι μεγαλύτερο από %{count} "
       greater_than_or_equal_to: "Πρέπει να είναι μεγαλύτερο ή ίσο με %{count} "
       inclusion: "Mη αποδεκτή τιμή"
@@ -30,7 +32,12 @@ el:
       less_than: "Πρέπει να είναι μικρότερο από %{count} "
       less_than_or_equal_to: "Πρέπει να είναι κατώτερο ή ίση με %{count} "
       not_a_number: "Δεν είναι αριθμός"
+      not_an_integer: "θα πρέπει να είναι ένας ακέραιος αριθμός"
       not_found: "Δεν βρέθηκε"
+      not_locked: "δεν ήταν κλειδωμένο"
+      not_saved:
+        one: "% {count} σφάλμα απαγορεύονται να αποθηκεύσετε έναν %{πόρο}:"
+        other: "% {count} σφάλματα απαγορεύονται να αποθηκεύσετε έναν %{πόρο}:"
       odd: "Πρέπει να είναι μονός αριθμός"
       taken: "Τό όνομα χρήστη, υπάρχει ήδη"
       too_long: "Είναι πολύ μεγάλο (το μέγιστο μήκος είναι %{count} χαρακτήρες)"
@@ -38,6 +45,21 @@ el:
       wrong_length: "Έχει λανθασμένο μήκος (πρέπει να είναι %{count} χαρακτήρες)"
     template:
       body: "Υπήρξαν προβλήματα με τα εξής πεδία"
+      header:
+        one: "%{count} σφάλμα απαγορεύει αυτό %{μοντέλο} να σωθεί"
+        other: "%{count} σφάλματα απαγορεύουν αυτό %{μοντέλο} να σωθεί"
+  flash:
+    actions:
+      create:
+        notice: "% {resource_name} δημιουργήθηκε επιτυχώς"
+      destroy:
+        alert: "%{resource_name} δεν μπορεσε να αφαιρεθει"
+        notice: "%{resource_name} έχει διαγραφεί επιτυχώς"
+      update:
+        notice: "%{resource_name} ενημερώθηκε επιτυχώς"
+    photos:
+      destroy:
+        notice: "Εικόνα έχει διαγραφεί επιτυχώς"
   form:
     show_fully_accessible_places: "Κατάλληλο για αναπηρική καρέκλα"
     show_limited_accessible_places: "Εν μέρη προσβάσιμο με αναπηρική καρέκλα"
@@ -45,6 +67,7 @@ el:
     show_unaccessible_places: "Ακατάλληλο για αναπηρική καρέκλα"
   formtastic:
     hints:
+      email: "Αντιμετωπίζουμε τη διεύθυνσή σας εμπιστευτικά, όχι σαν spam. Υπόσχεση!"
       lat: "Mετακινήστε στον χάρτη το σημαιάκι επισήμανσης στην σωστή τοποθεσία"
       osm_username: "Δεν είστε ακόμη μέλος?? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Δημιουργήστε έναν λογαριασμό Openstreetmap τώρα.</a> "
       password: "(αφήστε κενό,εάν δεν θέλετε να το αλλάξετε)"
@@ -52,24 +75,31 @@ el:
       website: "Για παράδειγμα: http://www.example.com "
     labels:
       category: "Κατηγορία:"
+      centralkey: "Κεντρικό κλειδί:"
       city: "Πόλη:"
       create: "Δημιουργήστε τοποθεσία"
       email: Email
+      finish: Τέλος
       housenumber: "Αριθμός οικίας:"
       lat: Γεωγραφικό πλάτος
       lon: Γεωγραφικό μήκος
+      name: "Ονομα:"
       osm_password: "ΟSM κώδικας"
       osm_username: "ΟSM όνομα λογαριαμού"
       password: Κωδικός πρόσβασης
       password_confirmation: "Επαναλάβετε τον κωδικό πρόσβασης"
       phone: "Τηλέφωνο:"
       postcode: "Ταχυδρομικός κώδικας:"
+      privacy_policy: "Δέχομαι τις παραγράφους 1 και 2 της συμφωνίας προστασίας των προσωπικών δεδομένων."
+      reset: Επαναφορά
       save: Αποθήκευση
       street: "Οδός:"
+      terms: "Αποδέχομαι τους όρους χρήσης."
       type: "Τύπος:"
       website: "Ιστοσελίδα:"
       wheelchair: "Πρόσβαση με αναπηρική καρέκλα?"
       wheelchair_description: "Σχόλια σχετικά με την προσβασιμότητα:"
+      wheelchair_toilet: "Wheelchair Μπάνιο:"
     titles:
       basic: "Βασικά δεδομένα"
       optional: "Περισσότερες πληροφορίες <span class=\"addition\">(all fields are optional)</span> "
@@ -90,6 +120,7 @@ el:
       logged_in_as: "Συνδεδεμένος ώς:"
       login: "Σύνδεση"
       logout: "Αποσύνδεση"
+      newsletter: Ενημερωτικό Δελτίο
       press: Press
       profile: προφίλ
       suggestions: Προτάσεις
@@ -113,7 +144,16 @@ el:
     index:
       filter:
         category: "Κατηγορία:"
+        deselect_all: "Αποεπιλογή όλων"
+        select_all: "Επιλογή όλων"
         wheelchair: "Δυνατότητα πρόσβασης με αναπηρική καρέκλα (Τί σημαίνει;)"
+      ie:
+        action:
+          ignore: Παράβλεψη
+          upgrade: "Ενημέρωση προγράμματος περιήγησης"
+        warning:
+          headline: "Ζητάμε συγνώμη!"
+          message: "Φαίνεται πως χρησιμοποιήτε τον Internet Explorer. Το Wheelmap απαιτεί αλλα προγράμματα περιήγησης για να λειτουργήσει σωστά. Παρακαλώ εξετάστε τη χρήση του Firefox, Chrome, Safari ή Opera."
       link:
         node:
           create: "Πρόσθεσε νέα τοποθεσία"
@@ -126,6 +166,18 @@ el:
           'yes': "Κατάλληλο για αναπηρική καρέκλα"
         help: "Δυνατότητα πρόσβασης με αναπηρική καρέκλα"
         more: "περισσότερα ..."
+  how?: Πώς;
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "Όλες οι περιορισμένες δυνατότητες πρόσβασης αναπηρικών αμαξιδίων % {τύπος} σε % {πόλη} (%{count})"
+        'no':
+          headline: "Όλες οι μη-προσβάσιμες θεσεις με αναπηρική καρέκλα % {τύπος}σε% {πόλη} (% {count})"
+        unknown:
+          headline: "Όλοι% {} τύπος σε% {} πόλη με άγνωστη κατάσταση αναπηρικό καροτσάκι (% {count})"
+        'yes':
+          headline: "Όλοι προσβάσιμο από αναπηρικά αμαξίδια% {} τύπος σε% {} πόλη (% {count})"
   layouts:
     application:
       banner:
@@ -163,17 +215,25 @@ el:
         large_map: "&laquo; Ακύρωση"
     node:
       link:
+        claim: "Έχετε εργαστεί εδώ;"
         edit_node: "Επεξεργαστείτε τοποθεσία"
         report_bug: "Report a problem"
     show:
       header:
         title: "Τοποθεσία:%{node} | wheelmap.org "
       link:
+        back: πίσω
         large_map: Μεγέθυνση
+        listing: "Όλα τα σημεία του τύπου '% {} τύπος »σε% {} πόλη"
+        upload: "Μεταφόρτωση εικόνας"
+      more_data_from: "Υπάρχουν περισσότερα στοιχεία για αυτόν τον τόπο, να ελέγχεται από:"
+      show-in-osm: OpenStreetMap
     update:
       flash:
         not_successfull: "Η εισαγωγή δεδομένων ήταν εσφαλμένη ή μη ολοκληρωμένη."
         successfull: "Ευχαριστούμε, η υποβολή του αιτήματος σας αποθηκεύτηκε επιτυχώς και θα είναι online σύντομα."
+    update_wheelchair:
+      successfull: "Η κατάσταση για το \"% {name}\" έχει αλλάξει σε \"% {} κατάσταση\" και θα είναι έτοιμη σύντομα."
   number:
     currency:
       format:
@@ -228,7 +288,12 @@ el:
         for: "Αναζήτηση για \"%{q}\""
         not_found: "Δεν βρέθηκαν τοποθεσίες!"
   splash:
+    countline: "%{count} θέσεις έχουν ήδη επισημανθεί."
+    headline: "Ο καθένας μπορεί να προσθέσει μέρη που προσβάσιμα με αναπηρικό καροτσάκι!"
     start: Έναρξη
+    step1: "Κάντε κλικ σε ένα μέρος που γνωρίζετε"
+    step2: "Σημειώστε το και κάντε κλικ στο Αποθήκευση"
+    step3: "Αυτό είναι! Δεν είναι απαραίτητη η εγγραφή"
     what_is_wheelmap: "Τι είναι το wheelmap?"
   statistics: Στατιστικά
   support:
@@ -247,7 +312,9 @@ el:
       short: "%d %b %H:%M"
     pm: απόγευμα
   toiletstatus:
-    unknown: "Άγνωστη η προσβασιμότητα με αναπηρική καρέκλα"
+    'no': "Καμία προσβάσιμη από αναπηρικά αμαξίδια τουαλέτα"
+    unknown: "Κατάσταση τουαλέτας άγνωστη"
+    'yes': "Πρόσβαση για αναπηρικά αμαξίδια τουαλέτα"
   user_sessions:
     create:
       activation:
@@ -263,12 +330,26 @@ el:
       login_with_twitter: "Συνδεθείτε μέσω Τwitter"
       password: Κωδικός πρόσβασης
       remember_me: "Διατήρηση σύνδεσης"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "Είστε σχεδόν εκεί! Ολοκληρώστε την εγγραφη σας για τον Wheelmap λογαριασμό εδώ:"
+        set_password_for_mobile: "Έχετε ολοκληρώσει την εγγραφή σας στο OpenStreetMap.\nΤώρα επιλέξτε μια διεύθυνση email και τον κωδικό πρόσβασης για τον λογαριασμού σας στο Wheelmap και, στη συνέχεια, είστε έτοιμοι! Χρειάζεστε αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου και τον κωδικό πρόσβασης για να συνδεθείτε στην εφαρμογή Wheelmap για το iPhone ή Android."
+        text: "Πώς μπορούμε να έρθουμε σε επαφή μαζί σας; Μπορείτε να αλλάξετε αυτές τις πληροφορίες αργότερα στο προφίλ σας."
+    edit:
+      headline:
+        your_images: "Οι μεταφορτωμενες εικόνες σας"
   wheelchairstatus:
     limited: "Έν μέρη προσβάσιμο με αναπηρική καρέκλα"
     'no': "Μη προσβάσιμο με αναπηρική καρέκλα"
     unknown: "Άγνωστη η προσβασιμότητα με αναπηρική καρέκλα"
     'yes': "Πλήρης προσβασιμότητα με αναπηρική καρέκλα"
   wheelmap:
+    footer:
+      a_project_of: "Μια πρωτοβουλία απο"
+      based_on: "Βασίζεται σε"
+      become_a_supporter: "Γίνετε υποστηρικτής"
+      main_supporter: "Βασικός υποστηρικτής"
     itunes:
       alt: "AppStore Logo"
       title: "Κατεβάστε το iPhone App τώρα!"
@@ -280,3 +361,18 @@ el:
       limited_accessible: "Η είσοδος δεν είναι υψηλότερη των 7 εκατοστών;  οι περισσότερες τοποθεσίες είναι προσβάσιμες με αναπηρική καρέκλα"
       not_accessible: "Η είσοδος ή ένα σκαλοπάτι είναι υψηλότερο των 7 εκατοστών;  οι περισσότερες τοποθεσίες δεν είναι προσβάσιμες με αναπηρική καρέκλα"
       unknown_accessible: "Η θέση wheelchair είναι άγνωστη"
+  will_paginate:
+    next_label: "Επόμενος &#8594;"
+    page_entries_info:
+      multi_page: "Εμφάνιση% {μοντέλο} {%} από - {%} για να από% {count} στο σύνολο"
+      multi_page_html: "Εμφάνιση% {μοντέλο} <b>% {} από & nbsp? - & Nbsp? {%} για να </ b> <b>% {count} </ b> στο σύνολο"
+      single_page:
+        one: "Εμφάνιση 1% {} μοντέλο"
+        other: "Εμφάνιση όλων% {count} {%} μοντέλο"
+        zero: "Κανένα% {} μοντέλο βρέθηκε"
+      single_page_html:
+        one: "Εμφάνιση <b> 1 </ b>% {} μοντέλο"
+        other: "Εμφάνιση <b> όλων & nbsp?% {Count} </ b>% {} μοντέλο"
+        zero: "Κανένα% {} μοντέλο βρέθηκε"
+    page_gap: "βοήθεια"
+    previous_label: "&#8592; Προηγούμενος"

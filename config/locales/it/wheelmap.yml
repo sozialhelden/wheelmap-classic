@@ -309,8 +309,6 @@ it:
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
-  toiletstatus:
-    unknown: "Accessibilità in sedia a rotelle sconosciuta "
   user_sessions:
     create:
       activation:

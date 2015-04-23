@@ -309,8 +309,6 @@ bg:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: следобед
-  toiletstatus:
-    unknown: "неизвестен статус"
   user_sessions:
     create:
       activation:

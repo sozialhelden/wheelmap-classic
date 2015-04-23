@@ -300,8 +300,6 @@ nb:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
-  toiletstatus:
-    unknown: "Ukjent status"
   user_sessions:
     create:
       activation:
