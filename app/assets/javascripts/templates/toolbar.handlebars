@@ -55,21 +55,21 @@
             <li {{ bind-attr class="isToiletYes:selected :toolbar-filter-dropdown-button :yes" }}>
                 <a {{ action toggleToiletFilter 'yes' }}>
                     <i class="icon-ok pull-right check-mark"></i>
-                    <i class="icon-question-sign pull-right" data-popup data-trigger="hover" data-placement="bottom" {{ bind-attr title="view.whatIsToiletYesTitle" data-content="view.whatIsToiletYesContent" }}></i>
+                    <i class="icon-question-sign pull-right" data-popover data-trigger="hover" {{ bind-attr title="view.whatIsToiletYesTitle" data-content="view.whatIsToiletYesContent" }}></i>
                     <span>{{ t 'toiletstatus.yes' }}</span>
                 </a>
             </li>
             <li {{ bind-attr class="isToiletNo:selected :toolbar-filter-dropdown-button :no" }}>
                 <a {{ action toggleToiletFilter 'no' }}>
                     <i class="icon-ok pull-right check-mark"></i>
-                    <i class="icon-question-sign pull-right" data-popup data-trigger="hover" data-placement="bottom" {{ bind-attr title="view.whatIsToiletNoTitle" data-content="view.whatIsToiletNoContent" }}></i>
+                    <i class="icon-question-sign pull-right" data-popover data-trigger="hover" {{ bind-attr title="view.whatIsToiletNoTitle" data-content="view.whatIsToiletNoContent" }}></i>
                     <span>{{ t 'toiletstatus.no' }}</span>
                 </a>
             </li>
             <li {{ bind-attr class="isToiletUnknown:selected :toolbar-filter-dropdown-button :unknown" }}>
                 <a {{ action toggleToiletFilter 'unknown' }}>
                     <i class="icon-ok pull-right check-mark"></i>
-                    <i class="icon-question-sign pull-right" data-popup data-trigger="hover" data-placement="bottom" {{ bind-attr title="view.whatIsToiletUnknownTitle" data-content="view.whatIsToiletUnknownContent" }}></i>
+                    <i class="icon-question-sign pull-right" data-popover data-trigger="hover" {{ bind-attr title="view.whatIsToiletUnknownTitle" data-content="view.whatIsToiletUnknownContent" }}></i>
                     <span>{{ t 'toiletstatus.unknown' }}</span>
                 </a>
             </li>

@@ -9,7 +9,17 @@ Wheelmap.ToolbarView = Ember.View.extend
     $(window).on 'resize.toolbar', @adjustFilters
     @adjustFilters()
 
-    @$('[data-popup]').popover()
+    $popovers = @$('[data-popover]')
+
+    adjustPopovers = ->
+      $popovers.popover
+        placement: if $(window).width() < 767 then 'top' else 'bottom'
+
+    adjustPopovers()
+
+    $(window).on 'resize.toolbar.popover', ->
+      $popovers.popover('destroy')
+      adjustPopovers()
 
     return
 
