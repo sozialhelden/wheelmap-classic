@@ -1,50 +1,90 @@
----
 es:
+  activerecord:
+    attributes:
+      poi:
+        name: Nombre
+        type: Tipo
+        address: Dirección
+        website: Sitio web
+        phone: Teléfono
+        note: Nota
+        address_street: Calle
+        address_housenumber: Número
+        address_postcode: Código postal
+        address_city: Ciudad
+  faq:
+    answers:
+      0: Siempre puedes cambiar el marcador de un lugar tú mismo. Solo debes seleccionar el marcador correcto y "Guardar" - ¡listo!
+      1: Si ingresas como usuario puedes agregar o corregir todos los detalles de un lugar. Haz clic en "Editar" y corrige o agrega información en la máscara.
+      2: Puedes agregar más información (ej. "Este lugar tiene una rampa móvil") y la sección de comentarios. Haz clic en "Editar" y "Agregar comentario".
+    headline: ¿Hay un problema con este lugar?
+    questions:
+      0: El marcador es erróneo.
+      1: Los detalles del lugar son incorrectos o faltan.
+      2: Tengo más información acerca de este lugar.
   header:
     navigation:
-      about_wheelmap: Sobre Wheelmap
+      about_wheelmap: Acerca de Wheelmap
       choose_language: Elija idioma
       contact: Contacto
       map: Mapa
-      projects: Implícate
+      projects: Proyectos
     toolbar:
       categories: Categorías
   home:
     index:
       overlay:
-        button: OK, vamos!
+        button: OK, ¡Vamos!
         categories: Filtrar lugares por categorías
         filter: Filtrar lugares por accesibilidad en silla de ruedas
-        headline: 'Marca y encuentra lugares accesibles en sillas de ruedas con Wheelmap.org
-          - internacional y gratuito. Es fácil:'
+        headline: 'Marca y encuentra lugares accesibles en sillas de ruedas con Wheelmap.org - internacional y gratuito. Es fácil:'
         lookup: Buscar un lugar específico
-        secondary_headline: 'Nuestro semáforo para marcar la accesibilidad en silla
-          de ruedas de los lugares públicos:'
+        secondary_headline: 'Nuestro semáforo para marcar la accesibilidad en silla de ruedas de los lugares públicos:'
   nodes:
     new:
       form:
-        legend: Localización del sitio
-        location: Por favor, haga click en el mapa y sitúe el marcador en la posición
-          exacta.
+        legend: Ubicación del sitio
+        location: Por favor, haz clic en el mapa y sitúa el marcador en la posición exacta.
+    node_data:
+      address: 'Dirección:'
+      contact_details: 'Detalles de contacto:'
     node_edit:
       details: Detalles
       edit: Editar
+    node_map:
+      map: 'Mapa:'
+    node_note:
+      comment: 'Comentario:'
+    node_photos:
+      add: Agregar
+      photos_of_this_place: 'Fotos de este lugar:'
+      upload: Subir
+    node_similar:
+      similar: 'Lugares similares: %{name}'
+    node_status:
+      accessible_toilet: 'Baño accesible para silla de ruedas:'
+      premium: '%{name} dice: este lugar es'
+      wheelchair_accessibility: 'Accesibilidad para silla de ruedas:'
+    node_streetview:
+      streetview: 'Vista de la calle:'
     show:
+      header:
+        meta:
+          description: Averigua si este lugar es accesible para silla de ruedas en Wheelmap.org. O agrega más información y fotos al lugar.
+          title: 'Este lugar está en Wheelmap.org: %{name}'
       share:
+        email: Correo electrónico
         facebook: Facebook
+        text: 'He encontrado este lugar en Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
       no-results:
-        headline: Lo siento, no pudimos encontrar ningún lugar llamado "%{query}".
+        headline: Disculpa, no pudimos encontrar un lugar llamado "%{query}".
         hint:
           example: <strong>Ejemplo:</strong> Londres, Reino Unido
-          info: Nuestro servicio de búsqueda solo funciona con información de nombre
-            y/o dirección. Por favor, repita la búsqueda por el nombre del lugar o
-            una dirección, por ejemplo, el nombre de la calle y/o la ciudad. Buscar
-            por un tipo de lugar, como un restaurante o un cine no funcionará!
-          work_in_progress: 'Trabajamos duramente para hacer cada vez más fácil e
-            intuitiva la búsqueda por lugares. '
+          info: 'Nuestra búsqueda solo funciona con información del lugar o su dirección. Por favor haz una búsqueda en esos términos, ej: nombre de la calle y/o ciudad. Buscar un tipo de lugar, ej. restaurante o cine, ¡no funcionará!'
+          work_in_progress: Trabajamos mucho para hacerla búsqueda de lugares cada vez más fácil e intuitiva.
         try_this:
           address: Por favor, proporcione más <strong>detalles de la dirección</strong>.
           intro: 'Pruebe esto:'
@@ -57,14 +97,3 @@ es:
       headline: Oh, fallo nuestro
       info: Nuestro servicio de búsqueda estuvo no disponible
       repeat_search: Reintentar la búsqueda
-  activerecord:
-    attributes:
-      poi:
-        name: Nombre
-        type: Tipo
-        website: Página web
-        phone: Teléfono
-        address_street: Calle
-        address_housenumber: 'No'
-        address_postcode: Código Postal
-        address_city: Ciudad
