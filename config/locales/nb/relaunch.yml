@@ -1,5 +1,14 @@
----
 nb:
+  activerecord:
+    attributes:
+      poi:
+        name: Navn
+        type: Type
+        address: Adresse
+        website: Nettside
+        phone: Telefon
+        address_street: Gate
+        address_city: By
   header:
     navigation:
       about_wheelmap: Om Wheelmap
@@ -15,23 +24,10 @@ nb:
         button: Okay, sett igang
         categories: Filtrer steder etter kategorier
         filter: Filtrer sider etter tilgjenglighet
-        headline: Merk og finn rullestol tilgjenglige steder med Wheelmap.org - verdenrundt
-          helt gratis. Det er enkelt
+        headline: 'Merk og finn rullestol tilgjenglige steder med Wheelmap.org - verdenrundt helt gratis. Det er enkelt'
         lookup: Søk etter et bestemt sted
-        secondary_headline: Vårt trafikk lys system for å merke rullestol tiljgenligheten
-          av offentlig steder
+        secondary_headline: 'Vårt trafikk lys system for å merke rullestol tiljgenligheten av offentlig steder'
   nodes:
     node_edit:
       details: Detaljer
       edit: Rediger
-  activerecord:
-    attributes:
-      poi:
-        name: Navn
-        type: Type
-        website: Webside
-        phone: Telefon
-        address_street: Gate
-        address_housenumber: Nummer
-        address_postcode: Postnummer
-        address_city: By

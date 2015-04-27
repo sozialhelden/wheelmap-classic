@@ -77,11 +77,8 @@ sk:
         headline: Prepáčte ale nenašli sme miesto s názvom "%{query}".
         hint:
           example: <strong>Príklad:</strong> London, United Kingdom
-          info: Naše vyhľadávanie funguje len s názvom a/alebo s adresou. Preto prosím
-            keď niečo hľadáte tak zadajte buď názov alebo adresu tohoto miesta. Vyhľadávanie
-            podľa typu miesta napr. reštaurácia alebo kino nefunguje.
-          work_in_progress: Usilovne pracujeme na tom aby bolo vyhľadávanie miest
-            v budúcnosti ešte jednoduchšie a intuitívnejšie.
+          info: Naše vyhľadávanie funguje len s názvom a/alebo s adresou. Preto prosím keď niečo hľadáte tak zadajte buď názov alebo adresu tohoto miesta. Vyhľadávanie podľa typu miesta napr. reštaurácia alebo kino nefunguje.
+          work_in_progress: Usilovne pracujeme na tom aby bolo vyhľadávanie miest v budúcnosti ešte jednoduchšie a intuitívnejšie.
         try_this:
           address: Prosím zadajte <strong>konkrétnejšiu adresu</strong>.
           intro: 'Skúste toto:'

@@ -35,10 +35,10 @@ hu:
     index:
       overlay:
         button: Rendben, mehet!
-        categories: Szűrj kategóriák szerint
-        filter: Szűrj az akadálymentesség szerint
+        categories: Kategóriák szerinti szűrés
+        filter: Akadálymentesség szerinti szűrés
         headline: 'Találd meg és jelöld be az akadálymentes helyeket a Wheelmap.org segítségével - Világszerte, ingyen. Ilyen egyszerű:'
-        lookup: Keress rá egy helyre
+        lookup: Keresés név vagy cím szerint
         secondary_headline: 'Jelzőlámpáink színei jelzik a helyek akadálymentességét:'
   nodes:
     new:
@@ -83,7 +83,7 @@ hu:
         headline: Sajnáljuk, de nem találtunk "%{query}" nevű helyet.
         hint:
           example: <strong>Példa:</strong> Budapest, Magyarország
-          info: Keresőszolgáltatásunk csak név és/vagy cím alapján keres. Kérjük, a keresésnél ezért a hely pontos nevét vagy címét (pl. utcanév és/vagy város) add meg. A kereső nem ad találatot olyan általános megnevezésekre, mint pl. "étterem" vagy "mozi"!
+          info: Keresőszolgáltatásunk csak név és/vagy cím alapján keres. Kérjük, a keresésnél ezért a hely pontos nevét vagy címét (pl. utcanév és/vagy város) adja meg. A kereső nem ad találatot olyan általános megnevezésekre, mint pl. étterem vagy mozi!
           work_in_progress: Keményen dolgozunk, hogy a keresést könnyebben és ösztönösebben használhatóvá tegyük a jövőben.
         try_this:
           address: Kérjük, pontosítsd <strong>a címet</strong>.

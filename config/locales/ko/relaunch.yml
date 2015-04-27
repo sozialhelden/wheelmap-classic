@@ -1,5 +1,14 @@
----
 ko:
+  activerecord:
+    attributes:
+      poi:
+        name: 장소명
+        type: 유형
+        address: 주소
+        website: 홈페이지
+        phone: 전화번호
+        address_street: 도로명
+        address_city: 시/도
   header:
     navigation:
       map: 지도
@@ -11,14 +20,3 @@ ko:
       share:
         facebook: 페이스북
         twitter: 트위터
-  activerecord:
-    attributes:
-      poi:
-        name: 이름
-        type: 유형
-        website: 웹사이트
-        phone: 전화번호
-        address_street: 도로명
-        address_housenumber: 'No'
-        address_postcode: 우편번호
-        address_city: 도시

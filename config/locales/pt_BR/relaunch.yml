@@ -1,13 +1,9 @@
----
 pt_BR:
   faq:
     answers:
-      0: Você sempre pode mudar a marcação dum lugar. Simplesmente escolhe a classificação
-        certa e "Salvar" - pronto!
-      1: Como usuário logado você pode acrescentar / corrigir detalhes dum lugar.
-        Clique em "Editar" em corrija ou acrescente informações.
-      2: Você pode acrescentar mais informações (por exemplo, "Este lugar possui uma
-        rampa móvel") na seção de comentários. Clique em "Editar" e "Adicionar comentário".
+      0: Você sempre pode mudar a marcação dum lugar. Simplesmente escolhe a classificação certa e "Salvar" - pronto!
+      1: Como usuário logado você pode acrescentar / corrigir detalhes dum lugar. Clique em "Editar" em corrija ou acrescente informações.
+      2: Você pode acrescentar mais informações (por exemplo, "Este lugar possui uma rampa móvel") na seção de comentários. Clique em "Editar" e "Adicionar comentário".
     headline: Tem algum problema com este lugar?
     questions:
       0: A marcação está errada.
@@ -28,11 +24,9 @@ pt_BR:
         button: Vamos lá!
         categories: Filtrar lugares por categoria
         filter: Filtrar lugares por acessibilidade
-        headline: 'Marque e encontre lugares acessíveis a cadeirantes com Wheelmap.org
-          - no mundo tudo e de graça. É simples:'
+        headline: 'Marque e encontre lugares acessíveis a cadeirantes com Wheelmap.org - no mundo tudo e de graça. É simples:'
         lookup: Buscar um lugar específico
-        secondary_headline: 'Nosso sistema de semáforo para indicar a acessibilidade
-          de lugares públicos:'
+        secondary_headline: 'Nosso sistema de semáforo para indicar a acessibilidade de lugares públicos:'
   nodes:
     new:
       form:
@@ -63,8 +57,7 @@ pt_BR:
     show:
       header:
         meta:
-          description: Saiba se um lugar é acessível a cadeirantes pelo Wheelmap.org.
-            Ou acrescente mais informações e fotos ao lugar.
+          description: Saiba se um lugar é acessível a cadeirantes pelo Wheelmap.org. Ou acrescente mais informações e fotos ao lugar.
           title: 'Este lugar está em Wheelmap.org: %{name}'
       share:
         email: E-mail
@@ -74,15 +67,10 @@ pt_BR:
   search:
     index:
       no-results:
-        headline: Desculpe, não conseguimos achar um lugar "%{query}".
         hint:
           example: <strong>Exemplo:</strong> São Paulo, Brasil
-          info: Nosso serviço de busca funciona somente com nome e/ou informações
-            de endereço. Portanto, ou procure pelo nome do lugar ou por um endereço,
-            por exemplo, nome de rua e/ou cidade. Buscar pelo tipo dum lugar, por
-            exemplo restaurante ou cinema, não funciona.
-          work_in_progress: Trabalhamos duro para tornar buscar lugares mais fácil
-            e mais intuitivo no futuro.
+          info: Nosso serviço de busca funciona somente com nome e/ou informações de endereço. Portanto, ou procure pelo nome do lugar ou por um endereço, por exemplo, nome de rua e/ou cidade. Buscar pelo tipo dum lugar, por exemplo restaurante ou cinema, não funciona.
+          work_in_progress: Trabalhamos duro para tornar buscar lugares mais fácil e mais intuitivo no futuro.
         try_this:
           address: Por favor, forneça mais <strong>detalhes de endereço</strong>.
           intro: 'Tente isso:'

@@ -1,13 +1,22 @@
----
 cs:
+  activerecord:
+    attributes:
+      poi:
+        name: Název
+        type: Typ
+        address: Adresa
+        website: Stránka
+        phone: Telefon
+        note: Poznámka
+        address_street: Ulice
+        address_housenumber: Číslo domu
+        address_postcode: PSČ
+        address_city: Město
   faq:
     answers:
-      0: Kdykoliv můžete sami změnit označení místa. Jednoduše zvolte správné označení
-        a dejte "Uložit" - hotovo!
-      1: Jako přihlášený uživatel můžete přidávat / opravovat všechny údaje o místě.
-        Klikněte na "Změnit" a upravte nebo přidejte informaci do pole.
-      2: V sekci komentářů můžete přidat další informace (např. "Toto místo má plošinu
-        pro vozíčkáře"). Klikněte na "Změnit" a pak na "Přidat komentář".
+      0: Kdykoliv můžete sami změnit označení místa. Jednoduše zvolte správné označení a dejte "Uložit" - hotovo!
+      1: Jako přihlášený uživatel můžete přidávat / opravovat všechny údaje o místě. Klikněte na "Změnit" a upravte nebo přidejte informaci do pole.
+      2: V sekci komentářů můžete přidat další informace (např. "Toto místo má plošinu pro vozíčkáře"). Klikněte na "Změnit" a pak na "Přidat komentář".
     headline: Je s tímto místem nějaký problém?
     questions:
       0: Označení je špatně.
@@ -28,11 +37,9 @@ cs:
         button: Dobře, pojďme na to!
         categories: Filtrovat místa podle kategorií
         filter: Filtrovat místa podle přístupnosti
-        headline: 'Označujte a hledejte místa přístupné pro vozíčkáře na Wheelmap.org
-          - na celém světe a zdarma. Je to jednoduché:'
+        headline: 'Označujte a hledejte místa přístupné pro vozíčkáře na Wheelmap.org - na celém světe a zdarma. Je to jednoduché:'
         lookup: Hledat konkrétní místo
-        secondary_headline: 'Náš semaforový systém pro označení přístupnosti objektů
-          pro vozíčkáře:'
+        secondary_headline: 'Náš semaforový systém pro označení přístupnosti objektů pro vozíčkáře:'
   nodes:
     new:
       form:
@@ -63,8 +70,7 @@ cs:
     show:
       header:
         meta:
-          description: Na Wheelmap.org zjistíte, jestli je toto místo přístupné pro
-            vozíčkáře. Také můžete přidat další informace a fotky k danému místu.
+          description: Na Wheelmap.org zjistíte, jestli je toto místo přístupné pro vozíčkáře. Také můžete přidat další informace a fotky k danému místu.
           title: 'Tohle místo je na Wheelmap.org: %{name}'
       share:
         email: E-mail
@@ -74,14 +80,11 @@ cs:
   search:
     index:
       no-results:
-        headline: Promiňte, nenašli jsme místo s názvem "%{query}".
+        headline: Je nám líto, ale nemohli jsme najít místo s názvem "%{query}".
         hint:
           example: <strong>Příklad:</strong> London, United Kingdom
-          info: Naše vyhledávaní pracuje pouze s názvem nebo adresou místa. Proto
-            prosím hledejte pouze podle názvu nebo adresy. Vyhledávaní podle typu
-            místa, napr. restaurace nebo kino, nebude fungovat!
-          work_in_progress: Snažíme se aby bulo vyhledávaní v budoucnosti ještě jednodušší
-            a intuitivnější.
+          info: Naše vyhledávaní pracuje pouze s názvem nebo adresou místa. Proto prosím hledejte pouze podle názvu nebo adresy. Vyhledávaní podle typu místa, napr. restaurace nebo kino, nebude fungovat!
+          work_in_progress: Snažíme se aby bulo vyhledávaní v budoucnosti ještě jednodušší a intuitivnější.
         try_this:
           address: Prosím zadejte více informací o adrese.
           intro: 'Zkuste tohle:'
@@ -89,19 +92,9 @@ cs:
       results:
         ticker:
           one: '%{count} výsledek:'
+          few: '%{count} výsledků:'
           other: '%{count} výsledků:'
     timeout:
       headline: Oh, naše chyba
       info: Vyhledávání bylo dočasně nedostupné.
       repeat_search: Hledat znovu
-  activerecord:
-    attributes:
-      poi:
-        name: Jméno
-        type: Typ
-        website: Stránka
-        phone: Telefon
-        address_street: Ulice
-        address_housenumber: Číslo
-        address_postcode: Směrovací číslo
-        address_city: Město

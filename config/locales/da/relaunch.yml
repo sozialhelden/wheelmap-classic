@@ -1,13 +1,19 @@
----
 da:
+  activerecord:
+    attributes:
+      poi:
+        name: Navn
+        type: Type
+        address: Adresse
+        website: Hjemmeside
+        phone: Telefon
+        address_street: Vejnavn
+        address_city: By
   faq:
     answers:
-      0: Du kan altid ændre markeringen af et sted selv. Vælg højre markering og "Gem"
-        færdig!
-      1: Når du er logget på som bruger kan du tilføje/rette i alle detaljerne for
-        et sted. Klik på "Redigerer" og ret eller tilføj information i feltet.
-      2: Du kan tilføje yderligere information. (fx "Det sted har en mobil rampe")
-        i kommentarfeltet. Klik på "Rediger" og "Tilføj kommentar".
+      0: Du kan altid ændre markeringen af et sted selv. Vælg højre markering og "Gem" færdig!
+      1: Når du er logget på som bruger kan du tilføje/rette i alle detaljerne for et sted. Klik på "Redigerer" og ret eller tilføj information i feltet.
+      2: Du kan tilføje yderligere information. (fx "Det sted har en mobil rampe") i kommentarfeltet. Klik på "Rediger" og "Tilføj kommentar".
     headline: Er der et problem med dette sted?
     questions:
       0: Denne markering er forkert.
@@ -28,11 +34,9 @@ da:
         button: Okay, lad os komme igang!
         categories: Filtrer steder efter kategorier
         filter: Filtrer steder efter kørestolstilgængelig
-        headline: 'Markerer og find kørestolstilgængelige steder med Wheelmap.org
-          - verden over og helt gratis. Det er nemt:'
+        headline: 'Markerer og find kørestolstilgængelige steder med Wheelmap.org - verden over og helt gratis. Det er nemt:'
         lookup: Søg efter et bestemt sted
-        secondary_headline: 'Vores trafiklys system til at markerer kørestolstilgængelighed
-          for offentlige steder:'
+        secondary_headline: 'Vores trafiklys system til at markerer kørestolstilgængelighed for offentlige steder:'
   nodes:
     new:
       form:
@@ -63,8 +67,7 @@ da:
     show:
       header:
         meta:
-          description: Find ud af om dette sted er kørestoltilgængeligt på Wheelmap.org.
-            Eller tilføj mere information eller et foto for dette sted.
+          description: Find ud af om dette sted er kørestoltilgængeligt på Wheelmap.org. Eller tilføj mere information eller et foto for dette sted.
           title: 'Dette sted er på Wheelmap.org: %{name}'
       share:
         email: E-mail-adresse
@@ -74,14 +77,10 @@ da:
   search:
     index:
       no-results:
-        headline: Vi beklager meget, men vi kan ikke finde et sted ved navn  "%{query}".
         hint:
           example: <strong>Eksempel</strong> London, United Kingdom
-          info: Vores søgeservice virker kun med navn eller adresseoplysninger. Søg
-            kun efter navnet på et sted eller adressen, fx gadenavn og/eller byen.
-            Søgning efter typen af stederne fx restaurant eller biograf vil ikke virke!
-          work_in_progress: Vi arbejder hårdt på at gøre søgninger efter steder lettere
-            og mere intuitivt.
+          info: Vores søgeservice virker kun med navn eller adresseoplysninger. Søg kun efter navnet på et sted eller adressen, fx gadenavn og/eller byen. Søgning efter typen af stederne fx restaurant eller biograf vil ikke virke!
+          work_in_progress: Vi arbejder hårdt på at gøre søgninger efter steder lettere og mere intuitivt.
         try_this:
           address: Indsæt flere <strong>adresseoplysninger</strong>.
           intro: 'Prøv dette:'
@@ -94,14 +93,3 @@ da:
       headline: Åh undskyld vores fejl
       info: Vores søgeservice var midlertidigt nede.
       repeat_search: Prøv søgningen igen
-  activerecord:
-    attributes:
-      poi:
-        name: Navn
-        type: Type
-        website: Hjemmeside
-        phone: Telefon
-        address_street: Vej
-        address_housenumber: Nr
-        address_postcode: Postnummer
-        address_city: By

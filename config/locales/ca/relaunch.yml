@@ -1,5 +1,14 @@
----
 ca:
+  activerecord:
+    attributes:
+      poi:
+        name: Nom
+        type: Tipus
+        address: Adreça
+        website: Pàgina web
+        phone: Telèfon
+        address_street: Carrer
+        address_city: Ciutat
   header:
     navigation:
       about_wheelmap: Sobre Wheelmap
@@ -33,14 +42,3 @@ ca:
     timeout:
       headline: Ups, error nostre
       repeat_search: Reiniciar la rerca
-  activerecord:
-    attributes:
-      poi:
-        name: Nom
-        type: Tipus
-        website: Pàgina web
-        phone: Telèfon
-        address_street: Carrer
-        address_housenumber: Núm
-        address_postcode: Codi postal
-        address_city: Ciutat

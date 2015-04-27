@@ -1,14 +1,19 @@
----
 it:
+  activerecord:
+    attributes:
+      poi:
+        name: Nome
+        type: Tipo
+        address: Indirizzo
+        website: Sito web
+        phone: Telefono
+        address_street: Via
+        address_city: Città
   faq:
     answers:
-      0: Puoi sempre modificare la "qualifica" del posto. Scegli la "qualifica" corretta
-        e premi "Salva" - fatto!
-      1: Come utente registrato puoi aggiungere/modificare tutti i dettagli del posto.
-        Clicca su "Modifica" e correggi o aggiungi le informazioni richieste.
-      2: 'Puoi aggiungere ulteriori informazioni (per esempio: "Questo posto ha una
-        rampa mobile") nella sezione "commenti". Clicca su "Modifica" e "Aggiungi
-        commento".'
+      0: Puoi sempre modificare la "qualifica" del posto. Scegli la "qualifica" corretta e premi "Salva" - fatto!
+      1: Come utente registrato puoi aggiungere/modificare tutti i dettagli del posto. Clicca su "Modifica" e correggi o aggiungi le informazioni richieste.
+      2: 'Puoi aggiungere ulteriori informazioni (per esempio: "Questo posto ha una rampa mobile") nella sezione "commenti". Clicca su "Modifica" e "Aggiungi commento".'
     headline: C´é un problema con questo posto?
     questions:
       0: La "qualfica" é sbagliata.
@@ -29,11 +34,9 @@ it:
         button: Allora, andiamo!
         categories: Filtrare i luoghi a seconda della categoria
         filter: Filtrare i luoghi a seconda dell'accessibilità
-        headline: 'Evidenzia e trova luoghi accessibili con sedia a rotelle su Wheelmap.org
-          - in tutto il mondo e gratis. È facile:'
+        headline: 'Evidenzia e trova luoghi accessibili con sedia a rotelle su Wheelmap.org - in tutto il mondo e gratis. È facile:'
         lookup: Cerca un luogo specifico
-        secondary_headline: 'Il nostro "semaforo" per segnare l''accessibilità dei
-          luoghi pubblici per sedie a rotelle:'
+        secondary_headline: 'Il nostro "semaforo" per segnare l''accessibilità dei luoghi pubblici per sedie a rotelle:'
   nodes:
     new:
       form:
@@ -64,8 +67,7 @@ it:
     show:
       header:
         meta:
-          description: Scopri se questo posto é accessibile con la sedia a rotelle
-            su Wheelmap.org. O aggiungi ulteriori informazioni e foto sul posto.
+          description: Scopri se questo posto é accessibile con la sedia a rotelle su Wheelmap.org. O aggiungi ulteriori informazioni e foto sul posto.
           title: 'Questo posto é su Wheelmap.org: %{name}'
       share:
         email: E-mail
@@ -75,15 +77,10 @@ it:
   search:
     index:
       no-results:
-        headline: Scusate, non siamo riusciti a trovare un posto chiamato "%{query}".
         hint:
           example: <strong>Esempio:</strong> Londra, Regno Unito
-          info: Il servizio di ricerca funziona solo con infarmazioni su nome e/o
-            indirizzo. Allora inserire un nome del posto o un indirizzo, per esempio
-            il nome della strada e/o della città. La ricerca per tipo, per esempio
-            ristorante o cinema, non funziona!
-          work_in_progress: 'Stiamo lavorando per rendere la ricerca più facile ed
-            efficiente per il futuro. '
+          info: Il servizio di ricerca funziona solo con infarmazioni su nome e/o indirizzo. Allora inserire un nome del posto o un indirizzo, per esempio il nome della strada e/o della città. La ricerca per tipo, per esempio ristorante o cinema, non funziona!
+          work_in_progress: 'Stiamo lavorando per rendere la ricerca più facile ed efficiente per il futuro. '
         try_this:
           address: Per favore inserire maggiori <strong>dettagli sull'indirizzo</strong>.
           intro: 'Prova questo:'
@@ -96,14 +93,3 @@ it:
       headline: Oh, errore nostro
       info: Il servizio di ricerca non è al momento disponibile.
       repeat_search: Riprova la ricerca
-  activerecord:
-    attributes:
-      poi:
-        name: Nome
-        type: Tipo
-        website: Sito Web
-        phone: Telefono
-        address_street: Via
-        address_housenumber: Numero
-        address_postcode: CAP
-        address_city: Città

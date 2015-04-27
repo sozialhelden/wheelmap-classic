@@ -1,15 +1,19 @@
----
 sq_AL:
+  activerecord:
+    attributes:
+      poi:
+        name: Emër
+        type: Lloj
+        address: Adresë
+        website: Website
+        phone: Telefon
+        address_street: Rrugë
+        address_city: Qytet
   faq:
     answers:
-      0: Ju mundeni gjithnjë të ndryshoni personalisht shenjimin e një vendi. Vetëm
-        zgjidh shenjimin e saktë dhe "Ruaj" - u krye!
-      1: Si një përdorues i identifikuar ju mund të shtoni/korrigjoni të gjithë detajet
-        e një vendi. Klikoni mbi "Redakto" dhe korrigjoni ose shtoni informacion në
-        zonën përkatëse.
-      2: Ju mund të shtoni informacion të mëtejshëm (p.sh. "Ky vend ka një platëformë
-        të pjerrët të lëvizshme") në seksionin e komentit. Kliko mbi "Redakto" dhe
-        "Shto koment".
+      0: Ju mundeni gjithnjë të ndryshoni personalisht shenjimin e një vendi. Vetëm zgjidh shenjimin e saktë dhe "Ruaj" - u krye!
+      1: Si një përdorues i identifikuar ju mund të shtoni/korrigjoni të gjithë detajet e një vendi. Klikoni mbi "Redakto" dhe korrigjoni ose shtoni informacion në zonën përkatëse.
+      2: Ju mund të shtoni informacion të mëtejshëm (p.sh. "Ky vend ka një platëformë të pjerrët të lëvizshme") në seksionin e komentit. Kliko mbi "Redakto" dhe "Shto koment".
     headline: A ka ndonjë problem me këtë vend?
     questions:
       0: Shenjimi është gabim.
@@ -30,11 +34,9 @@ sq_AL:
         button: Ok, le të fillojmë!
         categories: Filtro vendet sipas katagorisë
         filter: Filtro vende sipas aksesueshmërisë në karrigeve me rrota
-        headline: 'Shëno dhe gjej vendet me e aksesueshme në karrige me rrota me Wheelmap.org
-          - në gjithë botën dhe falas. Është e thjeshtë:'
+        headline: 'Shëno dhe gjej vendet me e aksesueshme në karrige me rrota me Wheelmap.org - në gjithë botën dhe falas. Është e thjeshtë:'
         lookup: Kërko për një vend të veçantë
-        secondary_headline: 'Sistemi jonë i semaforit për të shënuar aksesueshmërinë
-          në karrige me rrota të vendeve publike:'
+        secondary_headline: 'Sistemi jonë i semaforit për të shënuar aksesueshmërinë në karrige me rrota të vendeve publike:'
   nodes:
     new:
       form:
@@ -57,16 +59,15 @@ sq_AL:
     node_similar:
       similar: 'Vende të ngjashëm: %{name}'
     node_status:
-      accessible_toilet: Tualet i aksesueshëm për karrige me rrota
+      accessible_toilet: 'Tualet i aksesueshëm për karrige me rrota'
       premium: '%{name} thotë: ky vend është '
-      wheelchair_accessibility: Aksesueshmëria në karrige me rrota
+      wheelchair_accessibility: 'Aksesueshmëria në karrige me rrota'
     node_streetview:
       streetview: 'Streetview:'
     show:
       header:
         meta:
-          description: Zbulo nëse ky vend është i aksesueshëm në karrige me rrota
-            në Wheelmap.org. Ose shto informacion të mëtejshëm dhe foto të vendit.
+          description: Zbulo nëse ky vend është i aksesueshëm në karrige me rrota në Wheelmap.org. Ose shto informacion të mëtejshëm dhe foto të vendit.
           title: 'Ky vend është në Wheelmap.org: %{name}'
       share:
         email: E-mail
@@ -76,20 +77,14 @@ sq_AL:
   search:
     index:
       no-results:
-        headline: Na vjen keq, nuk mundëm të gjenim një vend të quajtur "%{query}".
         hint:
           example: <strong>Shembull:</strong> Londër, Mbretëria e Bashkuar
-          info: Shërbimi jonë i kërkimit punon vetëm me emra dhe/ose informacion adrese.
-            Prandaj, ju lutem ose kërkoni për emrin e vendit ose një adresë, p.sh.
-            emër rruge dhe/ose qyteti. Të kërkuarit për një tip vendi, p.sh. resorant
-            ose kinema, nuk jep rezultat!
-          work_in_progress: Ne punojmë fort për ta bërë kërkimin për vendet më të
-            lehtë dhe më intuituv në të ardhmen.
+          info: Shërbimi jonë i kërkimit punon vetëm me emra dhe/ose informacion adrese. Prandaj, ju lutem ose kërkoni për emrin e vendit ose një adresë, p.sh. emër rruge dhe/ose qyteti. Të kërkuarit për një tip vendi, p.sh. resorant ose kinema, nuk jep rezultat!
+          work_in_progress: Ne punojmë fort për ta bërë kërkimin për vendet më të lehtë dhe më intuituv në të ardhmen.
         try_this:
           address: Ju lutem jepni më shumë <strong>detaje të ardesës</strong>
           intro: 'Provoni këtë:'
-          spell_check: Kontrollo <strong>drejtshkrimin</strong> e informacionit tuaj
-            të futur.
+          spell_check: Kontrollo <strong>drejtshkrimin</strong> e informacionit tuaj të futur.
       results:
         ticker:
           one: '%{count} rezultat:'
@@ -98,14 +93,3 @@ sq_AL:
       headline: Oh, gabimi jonë
       info: Shërbimi jonë i kërkimit ishte përkohësisht jo i disponueshëm.
       repeat_search: Riprovo kërkimin
-  activerecord:
-    attributes:
-      poi:
-        name: Emër
-        type: Lloji
-        website: Website
-        phone: Telefon
-        address_street: Rruga
-        address_housenumber: Jo
-        address_postcode: Kodi postar
-        address_city: Qytet

@@ -1,5 +1,14 @@
----
 tr:
+  activerecord:
+    attributes:
+      poi:
+        name: İsim
+        type: Tip
+        address: Adres
+        website: Internet Sitesi
+        phone: Telefon
+        address_street: Sokak
+        address_city: Şehir
   header:
     navigation:
       about_wheelmap: Wheelmap Hakkında
@@ -14,16 +23,16 @@ tr:
         button: Pekala, gidelim!
         categories: Yerleri kategorilere göre filtrele
         filter: Yerleri tekerlekli sandalye erişilebilirliğine göre filtrele
-        headline: 'Tekerlekli sandalye erişilebilirliği olan yerleri Wheelmap.org
-          ile işaretleyin ve bulun - dünya çapında ve ücretsiz. Oldukça kolay:'
+        headline: 'Tekerlekli sandalye erişilebilirliği olan yerleri Wheelmap.org ile işaretleyin ve bulun - dünya çapında ve ücretsiz. Oldukça kolay:'
         lookup: Özel bir yeri ara
-        secondary_headline: 'Halka açık alanlarda tekerlekli sandalye erişilebilirliğini
-          işaretlemek için trafik ışığı sistemimiz:'
+        secondary_headline: 'Halka açık alanlarda tekerlekli sandalye erişilebilirliğini işaretlemek için trafik ışığı sistemimiz:'
   nodes:
     new:
       form:
         legend: Yerin konumu
         location: Lütfen haritaya tıklayın ve işaretçiyi doğru noktaya yerleştirin.
+    node_edit:
+      edit: Düzenle
   search:
     index:
       no-results:
@@ -41,14 +50,3 @@ tr:
       headline: Ah, bizim hatamız
       info: Arama hizmetimiz geçici olarak devredışı.
       repeat_search: Yeniden ara
-  activerecord:
-    attributes:
-      poi:
-        name: Isim
-        type: Tip
-        website: Internet sitesi
-        phone: Telefon
-        address_street: Sokak
-        address_housenumber: 'No'
-        address_postcode: Posta Kodu
-        address_city: Şehir
