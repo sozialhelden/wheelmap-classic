@@ -20,6 +20,20 @@
   .wheelmap-btn {
     color: darken($orange-gray, 60%);
   }
+
+  .node-status-dropdown {
+    margin-top: 7px;
+  }
+
+  // Show popup content view if it's a child element of .node-popup
+  .node-popup-view {
+    display: block;
+  }
+}
+
+// Hide popup content view if it's not placed inside a node popup
+.node-popup-view {
+  display: none;
 }
 
 .node-popup-header {
