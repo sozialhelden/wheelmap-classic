@@ -53,7 +53,7 @@ group :default do
   gem 'cacheable_flash'
   gem 'exifr'
   gem 'awesome_nested_set', '<3.0'
-  gem 'i18n-js'
+  gem 'i18n-js', '~> 3.0.0.rc9'
   gem 'font-awesome-rails'
   gem 'ember-rails'
   gem 'backup'
