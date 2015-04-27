@@ -17,7 +17,7 @@
 #= require responsive-popover
 #= require dropzone
 
-I18n.defaultLocale = 'de'
+I18n.defaultLocale = 'en'
 I18n.locale = $('html').attr('lang')
 I18n.fallbacks = true
 

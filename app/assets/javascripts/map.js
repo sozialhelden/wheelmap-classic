@@ -7,7 +7,7 @@ var zoom = 12;
 var zoomed = false;
 var padded_bounds = null;
 
-I18n.defaultLocale = 'de';
+I18n.defaultLocale = 'en';
 I18n.locale = $('html').attr('lang');
 I18n.fallbacks = true;
 
