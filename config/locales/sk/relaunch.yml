@@ -1,13 +1,19 @@
----
 sk:
+  activerecord:
+    attributes:
+      poi:
+        name: Meno
+        type: Typ
+        address: Adresa
+        website: Webovská stránka
+        phone: Telefón
+        address_street: Ulica
+        address_city: Mesto
   faq:
     answers:
-      0: Sami môžete kedykoľvek zmeniť označenie miesta. Jednoducho vyberte správne
-        označenie a dajte "Uložiť" - hotovo!
-      1: Ako prihlásený užívateľ môžete pridávať/opravovať všetky detaily miesta.
-        Kliknite na "Zmeniť" a opravte alebo pridajte informácie.
-      2: 'Môžete pridať aj ďalšie informácie (napríklad: "Majú tu mobilnú rampu")
-        v komentároch. Kliknite na "Zmeniť" a "Pridať komentár".'
+      0: Sami môžete kedykoľvek zmeniť označenie miesta. Jednoducho vyberte správne označenie a dajte "Uložiť" - hotovo!
+      1: Ako prihlásený užívateľ môžete pridávať/opravovať všetky detaily miesta. Kliknite na "Zmeniť" a opravte alebo pridajte informácie.
+      2: 'Môžete pridať aj ďalšie informácie (napríklad: "Majú tu mobilnú rampu") v komentároch. Kliknite na "Zmeniť" a "Pridať komentár".'
     headline: Je s týmto miestom nejaký problém?
     questions:
       0: Označenie je nesprávne.
@@ -28,11 +34,9 @@ sk:
         button: Dobre, poďme na to!
         categories: Filtrovať miesta podľa kategórií
         filter: Filtrovať miesta podľa prístupnosti
-        headline: 'Označujte a hľadajte miesta prístupné pre vozíčkarov na Wheelmap.org
-          - na celom svete a zadarmo. Je to jednoduché:'
+        headline: 'Označujte a hľadajte miesta prístupné pre vozíčkarov na Wheelmap.org - na celom svete a zadarmo. Je to jednoduché:'
         lookup: Hľadať konkrétne miesto
-        secondary_headline: 'Náš semaforový systém na označenie prístupnosti verejných
-          objektov pre vozíčkarov:'
+        secondary_headline: 'Náš semaforový systém na označenie prístupnosti verejných objektov pre vozíčkarov:'
   nodes:
     new:
       form:
@@ -63,8 +67,7 @@ sk:
     show:
       header:
         meta:
-          description: Zistite či je toto miesto prístupné pre vozíčkarov na Wheelmap.org.
-            Alebo pridajte k miestu ďalšie informácie a fotky.
+          description: Zistite či je toto miesto prístupné pre vozíčkarov na Wheelmap.org. Alebo pridajte k miestu ďalšie informácie a fotky.
           title: 'Toto miesto je na Wheelmap.org: ${name}'
       share:
         email: E-mail
@@ -91,14 +94,3 @@ sk:
       headline: Uh, naša chyba
       info: Naše vyhľadávanie bolo dočasne nedostupné.
       repeat_search: Hľadať znova
-  activerecord:
-    attributes:
-      poi:
-        name: Meno
-        type: Typ
-        website: Stránka
-        phone: Telefón
-        address_street: Ulica
-        address_housenumber: Číslo
-        address_postcode: Smerovacie číslo
-        address_city: Mesto

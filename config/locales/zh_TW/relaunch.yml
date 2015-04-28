@@ -1,5 +1,15 @@
----
 zh_TW:
+  activerecord:
+    attributes:
+      poi:
+        name: 名字
+        type: 種類
+        address: 地址
+        website: 網站
+        phone: 電話
+        address_housenumber: 門牌號碼
+        address_postcode: 郵遞區號
+        address_city: 城市
   faq:
     answers:
       1: 登入後，你可以新增/修改所有地點的細節。請點選 "編輯" 並在空格修改或新增資訊。
@@ -23,9 +33,9 @@ zh_TW:
         button: OK，走吧
         categories: 篩選地點的種類
         filter: 篩選地點的輪椅無障礙程度
-        headline: 透過 Wheelmap.org 標示和尋找輪椅無障礙空間 - 全球化而免費。這並不困難：
+        headline: '透過 Wheelmap.org 標示和尋找輪椅無障礙空間 - 全球化而免費。這並不困難：'
         lookup: 搜尋特定地點
-        secondary_headline: 我們以類似「紅綠燈」的方式標示公共空間的輪椅無障礙程度：
+        secondary_headline: '我們以類似「紅綠燈」的方式標示公共空間的輪椅無障礙程度：'
   nodes:
     new:
       form:
@@ -81,14 +91,3 @@ zh_TW:
       headline: 喔! 我們出了點狀況
       info: 我們的搜尋服務目前暫停。
       repeat_search: 重試搜尋
-  activerecord:
-    attributes:
-      poi:
-        name: 名字
-        type: 種類
-        website: 網站
-        phone: 電話
-        address_street: 街道
-        address_housenumber: 門牌號碼
-        address_postcode: 郵遞區號
-        address_city: 城市

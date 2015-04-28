@@ -84,7 +84,7 @@ hu:
         no_osm_account: "Nincs OpenStreetMap fiókod?"
         osm_promo_text: "A Wheelmap az OpenStreetMaptől (OSM) származó térképadatokon alapul. Az OpenStreetMap egy szabad világtérkép, amit hozzád hasonló emberek szerkesztenek. Olyan ez, mint egy térkép-Wikipédia. Ahhoz, hogy a helyeket szerkeszthesd vagy újakat hozhass létre, szükséged van egy OpenStreetMap fiókra és be kell jelentkezned vele."
         promo_text_thank_you: "Köszönjük szépen a támogatásodat!"
-        sign_in_with: "Belépés ezzel: %{kind}"
+        sign_in_with: "Belépés ezzel: %{kind} "
         sign_up_with_osm: "Regisztrálj most."
         wheelmap_promo_text: "A helyek kerekesszékes akadálymentességéről szóló tudásoddal segítesz a mozgáskorlátozott embereknek a mindennapi életük megszervezésében. Ezen felül pedig az OpenStreetMap is újjabb részletekkel gazdagodik."
       signed_in: "Sikeres bejelentkezés"

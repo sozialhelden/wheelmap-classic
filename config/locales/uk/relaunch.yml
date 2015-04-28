@@ -1,20 +1,100 @@
----
 uk:
-  header:
-    navigation:
-      map: Карта
-  nodes:
-    node_edit:
-      details: деталі
-      edit: Редагувати
   activerecord:
     attributes:
       poi:
-        name: Ім'я
+        name: Назва
         type: Тип
-        website: Веб-сайт
+        address: Адреса
+        website: Веб-сторінка
         phone: Телефон
+        note: Примітка
         address_street: Вулиця
-        address_housenumber: Ні
+        address_housenumber: Номер будинку
         address_postcode: Поштовий індекс
         address_city: Місто
+  faq:
+    answers:
+      0: Ви завжди можете змінити доступність місця самі. Просто виберіть відповідний варіант і натисніть "Зберегти".
+      1: Ви, як зареєстрований користувач, можете додавати чи змінювати інформацію про місця. Натисніть "Змінити" і виправте чи додайте інформацію.
+      2: Ви можете надати додаткову інформацію (наприклад "Це місце має пандус") у коментарях. Натисніть на "Змінити" і "Додати коментар".
+    headline: З цим місцем проблема?
+    questions:
+      0: Доступність вказана неправильно
+      1: Опис цього місця неточний чи відсутній.
+      2: Я маю додаткову інформацію про це місце.
+  header:
+    navigation:
+      about_wheelmap: Про Wheelmap
+      choose_language: Змінити мову
+      contact: Контакт
+      map: Карта
+      projects: Проекти
+    toolbar:
+      categories: Категорії
+  home:
+    index:
+      overlay:
+        button: Гаразд, поїхали!
+        categories: Фільтрувати місця за категоріями
+        filter: Фільтрувати місця за доступністю
+        headline: 'Позначайте та знаходьте місця з доступом для людей на інвалідних візках на Wheelmap.org по всьому світу безкоштовно. Це просто:'
+        lookup: Шукати конкретне місце
+        secondary_headline: 'Доступність громадських місць позначається кольорами світлофора:'
+  nodes:
+    new:
+      form:
+        legend: Розташування місця
+        location: Натисніть на карту і розмістіть маркер на розташуванні місця.
+    node_data:
+      address: 'Адреса:'
+      contact_details: 'Контактні дані:'
+    node_edit:
+      details: Опис
+      edit: Змінити
+    node_map:
+      map: 'Карта:'
+    node_note:
+      comment: 'Коментар:'
+    node_photos:
+      add: Додати
+      photos_of_this_place: 'Фотографії цього місця:'
+      upload: Вивантажити
+    node_similar:
+      similar: 'Схожі місця: %{name}'
+    node_status:
+      accessible_toilet: 'Доступний туалет:'
+      premium: '%{name} каже: це місце'
+      wheelchair_accessibility: 'Доступність для людей на інвалідному візку:'
+    node_streetview:
+      streetview: 'Перегляд вулиці:'
+    show:
+      header:
+        meta:
+          description: Дізнайтесь, чи доступне це місце для людей на інвалідних візках на Wheelmap.org. Або надайте додаткову інформацію та фотографії місця.
+          title: 'Це місце є на Wheelmap.org: %{name}'
+      share:
+        email: Електронна пошта
+        facebook: Facebook
+        text: 'Знайшлось на Wheelmap.org: %{name}'
+        twitter: Twitter
+  search:
+    index:
+      no-results:
+        headline: Вибачте, нам не вдалось знайти "%{query}".
+        hint:
+          example: <strong>Приклад:</strong> Київ, Україна
+          info: Наша система пошуку працює лише з назвами і адресами місць. Отже, будь ласка, шукайте або за назвою або за адресою, наприклад вулицею чи містом. Пошук за типом місця, наприклад ресторану чи кінотеатру, не працює.
+          work_in_progress: Ми активно працюємо над вдосконаленням пошуку у майбутньому.
+        try_this:
+          address: Будь ласка, додайте більше <strong>відомостей про адресу</strong>.
+          intro: 'Спробуйте наступне:'
+          spell_check: Перевірте <strong>написання</strong> введених слів.
+      results:
+        ticker:
+          one: '%{count} результат:'
+          few: '%{count} результата:'
+          other: '%{count} результатів:'
+    timeout:
+      headline: У нас проблема, вибачте.
+      info: Наша система пошуку була тимчасово недоступна.
+      repeat_search: Спробувати пошукати ще раз

@@ -1,15 +1,16 @@
----
 el:
   activerecord:
     attributes:
       poi:
-        name: Name
+        name: Όνομα
         type: Τύπος
+        address: Διεύθυνση
         website: Ιστοσελίδα
         phone: Τηλέφωνο
+        note: Σημείωση
         address_street: Οδός
-        address_housenumber: Αριθμός οικίας
-        address_postcode: Ταχυδρομικός κώδικας
+        address_housenumber: Αριθμός σπιτιού
+        address_postcode: Ταχυδρομικός τομέας
         address_city: Πόλη
   faq:
     answers:
