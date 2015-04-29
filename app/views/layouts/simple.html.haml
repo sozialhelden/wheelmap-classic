@@ -1,7 +1,7 @@
 !!!
 %html(lang="#{I18n.locale}")
   %head
-    = render :partial => 'shared/meta'
+    = render :partial => 'relaunch/meta'
 
     - if content_for?(:head)
       = content_for(:head)
@@ -17,13 +17,13 @@
     = stylesheet_link_tag :node, :media => 'screen, projection'
 
   %body(class=browser_class)
-    = render :partial => '/shared/header'
+    = render :partial => 'relaunch/header'
     #content
       = show_flash
       = yield
 
     #footer.fixed
-      = render :partial => 'shared/footer'
+      = render :partial => 'relaunch/footer'
 
     = render :partial => 'shared/google_tracking'
 
