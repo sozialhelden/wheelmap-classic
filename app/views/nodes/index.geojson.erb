@@ -1,5 +1,13 @@
-<%= generate_json({
-    :type => 'FeatureCollection',
-    :bbox => [@left, @bottom, @right, @top],
-    :features => prepare_nodes }).html_safe
-%>
+<%- if FeatureSwitch.clustering_enabled? && @sum > 50  -%>
+  <%= generate_json({
+      :type => 'Point',
+      :coordinates => middle_point,
+      :properties => { :type => "cluster", :data => generate_graph_data } }).html_safe
+  %>
+<%- else -%>
+  <%= generate_json({
+      :type => 'FeatureCollection',
+      :bbox => [@left, @bottom, @right, @top],
+      :features => prepare_nodes }).html_safe
+  %>
+<%- end -%>
