@@ -1,35 +1,25 @@
-.promo_box
-  %h2=t('devise.sign_in.headline')
-  %p.osm= t('.osm_promo_text')
-  %p.wheelmap= t('.wheelmap_promo_text')
-  %p
-    %em= t('.promo_text_thank_you')
-.login_box
+#container
+  .row
+    .span9.offset4
+      = render_flash
 
-  .image_block
-    = link_to '/users/auth/osm' do
-      = image_tag('openstreetmap_logo.png')
+  .content-wrap
+    .content
+      .login.clearfix
+        .promo_box
+          %h2=t('devise.sign_in.headline')
+          %p.osm= t('.osm_promo_text')
+          %p.wheelmap= t('.wheelmap_promo_text')
+          %p
+            %em= t('.promo_text_thank_you')
+        .login_box
 
-    =link_to t('.sign_in_with', :kind => 'OpenstreetMap'), user_omniauth_authorize_path(:osm), :class => 'button'
+          .image_block
+            = link_to '/users/auth/osm' do
+              = image_tag('openstreetmap_logo.png')
 
-  %p
-    =t('.no_osm_account')
-    = link_to t('.sign_up_with_osm'), register_osm_oauth_index_url
-.clearFix
+            =link_to t('.sign_in_with', :kind => 'OpenstreetMap'), user_omniauth_authorize_path(:osm), :class => 'button'
 
-.hidden
-  = semantic_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |form|
-    = form.inputs :name => t('devise.sign_in.headline') do
-      = form.input :email, :label => t('devise.sign_in.form.labels.email')
-      = form.input :password, :label => t('devise.sign_in.form.labels.password'), :hint => false
-
-      - if devise_mapping.rememberable?
-        %li.checkbox-optional
-          = form.check_box :remember_me
-          = form.label :remember_me, t('devise.sign_in.form.labels.remember_me')
-    = form.actions do
-      = form.action :submit, :label => t('devise.sign_in.form.submit')
-      %p.hint= t('devise.mandatory')
-
-  %p
-    = render :partial => "devise/shared/links"
+          %p
+            =t('.no_osm_account')
+            = link_to t('.sign_up_with_osm'), register_osm_oauth_index_url

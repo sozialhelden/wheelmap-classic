@@ -75,7 +75,7 @@ module Wheelmap
     config.assets.version = '1.0'
 
     config.to_prepare do
-      Devise::SessionsController.layout "simple"
+      Devise::SessionsController.layout "relaunch"
     end
 
   end
