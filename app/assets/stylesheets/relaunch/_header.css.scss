@@ -18,9 +18,9 @@
     border-bottom: 1px solid $navbarBorder;
 
     .btn-navbar {
-       height: 10px;
-       padding: 5px 10px 8px;
-     }
+      height: 10px;
+      padding: 5px 10px 8px;
+    }
   }
 
   .logo {
@@ -39,7 +39,7 @@
     font-size: 11px;
     font-weight: bold;
     color: #999;
-    @media screen and (max-width:500px) {
+    @media screen and (max-width: 500px) {
       width: 27px;
     }
     span {
@@ -47,9 +47,8 @@
       position: absolute;
       top: 25px;
       left: 27px;
-
       font-weight: normal;
-      @media screen and (max-width:550px) {
+      @media screen and (max-width: 550px) {
         display: none;
       }
     }
@@ -66,7 +65,7 @@
       }
     }
     .btn-add {
-      @media screen and (max-width:1024px) {
+      @media screen and (max-width: 1024px) {
         @include border-radius(3px);
       }
     }
@@ -77,7 +76,6 @@
 }
 
 select.language-select {
-
   width: 120px;
   height: 26px;
   margin-top: 10px;
@@ -85,62 +83,64 @@ select.language-select {
   @include appearance(none);
   line-height: 16px;
   &:focus {
-    @include highlight(rgba(0,0,0,0));
+    @include highlight(rgba(0, 0, 0, 0));
   }
-  @media screen and (max-width:767px) {
+  @media screen and (max-width: 767px) {
     max-width: 50px;
   }
 }
+
 div.language-select {
   .btn {
     @include border-radius(2px);
     max-width: 120px;
     color: #333;
     &:focus {
-      @include highlight(rgba(0,0,0,0));
+      @include highlight(rgba(0, 0, 0, 0));
     }
     i {
       margin-right: 4px;
     }
   }
-  @media screen and (max-width:767px) {
-   .btn {
+  @media screen and (max-width: 767px) {
+    .btn {
       max-width: 50px;
     }
   }
   .dropdown-menu {
-    height:400px;
+    height: 400px;
     border-radius: 3px;
     padding: 5px 0 0 0;
     > li > a {
-      padding: 1px 10px 1px 10px!important;
+      padding: 1px 10px 1px 10px !important;
       font-size: 11px;
     }
     li:last-child a {
-      border:none;
+      border: none;
     }
     > li > a:hover {
       @include background(linear-gradient(top, rgb(107, 132, 155), rgb(77, 100, 122)));
       @include filter-gradient(#96c14e, #4d647a, vertical);
     }
     dt {
-      font-size:12px;
-      padding: 2px 0 0 9px!important;
+      font-size: 12px;
+      padding: 2px 0 0 9px !important;
     }
- }
+  }
 }
+
 nav {
   .nav-collapse {
     width: auto;
     position: absolute;
     left: 50%;
     margin-left: -240px;
-    @media screen and (max-width:980px) {
+    @media screen and (max-width: 980px) {
       position: relative;
       margin-left: 0px;
       left: auto;
     }
-    .list-wrapper{
+    .list-wrapper {
       text-align: center;
       float: left;
       margin-left: 10px;
@@ -173,10 +173,47 @@ nav {
 }
 
 #subheader {
+  // @todo subheader background-url shoud be dynamically overriden inline in Ruby for every user
+  background: transparent no-repeat center top url('http://api.tiles.mapbox.com/v4/sozialhelden.map-iqt6py1k/13.388986587524414,52.51699126638161,15/1280x100.jpg70?access_token=pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g');
+  background-size: cover;
   height: 75px;
   padding: 20px;
+  position: relative;
+  color: #fff;
 
-  h1 a{
-    color: #5C554E;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $dark-blue;
+    opacity: .8;
+    z-index: 0;
   }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    margin: 0;
+
+    a {
+      color: #ffffff;
+      line-height: 75px;
+    }
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 75px;
+  }
+}
+
+.headline{
+  margin-bottom: 30px;
 }
