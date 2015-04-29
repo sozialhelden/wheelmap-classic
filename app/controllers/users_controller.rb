@@ -8,8 +8,6 @@ class UsersController < ApplicationController
 
   before_filter :remove_password_from_params_if_blank, :only => :update
 
-  before_filter :authenticate_admin!, :only => :newsletter
-
   rescue_from OAuth::Unauthorized, :with => :unauthorized
 
   def show
@@ -17,13 +15,7 @@ class UsersController < ApplicationController
   end
 
   def newsletter
-    newsletter = FasterCSV.generate(:encoding => 'u', :col_sep => ',') do |csv|
-      csv << ["Email","Newsletter"]
-      User.order('wants_newsletter ASC, email ASC').each do |user|
-        csv << [user.email, user.wants_newsletter? ? 'Ja' : 'Nein' ]
-      end
-    end
-    send_data(newsletter, :filename => "newsletter_#{Date.today.strftime('%Y_%m_%d')}.csv", :type => :csv, :encoding => 'utf8')
+    @user = current_user
   end
 
   def edit
