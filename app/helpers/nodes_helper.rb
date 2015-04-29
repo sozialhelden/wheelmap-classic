@@ -28,4 +28,20 @@ module NodesHelper
     end
     options_for_select(stati, wheelchair_status)
   end
+
+  def tile2bbox(x, y, zoom)
+    north, west = tile2latlon(x, y, zoom)
+    south, east = tile2latlon(x + 1, y + 1, zoom)
+
+    [west, north, east, south].join(',')
+  end
+
+  def tile2latlon(xtile, ytile, zoom)
+    n = 2.0 ** zoom
+    lon_deg = xtile / n * 360.0 - 180.0
+    lat_rad = Math::atan(Math::sinh(Math::PI * (1 - 2 * ytile / n)))
+    lat_deg = 180.0 * (lat_rad / Math::PI)
+    [lat_deg, lon_deg]
+  end
+
 end
