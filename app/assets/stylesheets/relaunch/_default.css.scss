@@ -1,7 +1,7 @@
-html,body {
-  margin:0;
-  padding:0;
-  height:100%; /* braucht es fÃ¼r die min-height des Containers */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* braucht es für die min-height des Containers */
 }
 
 body {
@@ -18,7 +18,7 @@ body {
 * {
   margin: 0;
   padding: 0;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   &:focus {
     outline: none;
@@ -38,18 +38,18 @@ body {
   max-width: 95%;
   margin: auto;
 }
+
 .mobile {
-	display: none;
+  display: none;
 }
 
-
-@media screen and (max-width:760px) {
-	.mobile {
-		display: block;
-	}
-	.desktop {
-		display: none;
-	}
+@media screen and (max-width: 760px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
 }
 
 @include wheelchair(yes, $wheelchair-yes);
@@ -74,7 +74,7 @@ body {
   border: 1px solid $dropdownBorder;
   z-index: $zindexDropdown;
   @include border-radius(3px);
-  @include box-shadow(0 5px 10px rgba(0,0,0,.2));
+  @include box-shadow(0 5px 10px rgba(0, 0, 0, .2));
   @include box-sizing(border-box);
 }
 
