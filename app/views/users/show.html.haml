@@ -1,17 +1,21 @@
 = render layout: 'profile' do
 
   .tab-pane.active#overview
+    %h4=t('.headline.overview')
+
     %p=t('.explanation_text')
 
-    %h3=t('.headline.overview')
+    %h5 Du hast
 
-    Du hast
-    %ul
-      %li
-        = "#{@user.tag_counter} Orte markiert"
-      %li
-        = "#{@user.create_counter} Orte hinzugefügt"
-      %li
-        = "#{@user.edit_counter} Orte bearbeitet"
-      %li
-        = "#{@user.photos.count} Photos hochgeladen."
+    .row-fluid
+      %div
+        .span6
+          = "#{@user.tag_counter} Orte markiert"
+        .span6
+          = "#{@user.create_counter} Orte hinzugefügt"
+
+      %div
+        .span6
+          = "#{@user.edit_counter} Orte bearbeitet"
+        .span6
+          = "#{@user.photos.count} Photos hochgeladen."

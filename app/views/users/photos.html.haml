@@ -5,9 +5,9 @@
       - unless @photos.empty?
         %ul.thumbnails
           - @photos.each do |photo|
-            %li.span3{style: 'margin-left:20px;'}
+            %li.span3{style: 'margin-left:10px;'}
               = link_to_photo(photo)
         .center
           = paginate @photos
       - else
-        %p Lad deine ersten Photos hoch
+        %p Lade deine ersten Photos hoch
