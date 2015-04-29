@@ -1,14 +1,20 @@
+#container
+  .content
+    = semantic_form_for current_user, :url => terms_profile_path do |form|
 
-= semantic_form_for current_user, :url => terms_profile_path do |form|
+      - terms_blog_url = I18n.locale == :de ? 'http://wheelmap.org/impressum/nutzungsbedingungen/' : 'http://wheelmap.org/en/imprint/terms-of-use/'
+      %iframe{:align => 'center', :src => terms_blog_url, :width => '100%', :height => '300', :frameborder => '0', :seamless => 'seamless'}
 
-  - terms_blog_url = I18n.locale == :de ? 'http://wheelmap.org/impressum/nutzungsbedingungen/' : 'http://wheelmap.org/en/imprint/terms-of-use/'
-  %iframe{:align => 'center', :src => terms_blog_url, :width => '100%', :height => '300', :frameborder => '0', :seamless => 'seamless'}
+      .row-fluid
+        .span11.offset1.mt10
+          = form.input :terms
 
-  = form.input :terms
+      .mt30
+        - privacy_blog_url = I18n.locale == :de ? 'http://wheelmap.org/impressum/datenschutzerklarung/' : 'http://wheelmap.org/en/imprint/privacy/'
+        %iframe{:align => 'center', :src => privacy_blog_url, :width => '100%', :height => '300', :frameborder => '0', :seamless => 'seamless'}
 
-  - privacy_blog_url = I18n.locale == :de ? 'http://wheelmap.org/impressum/datenschutzerklarung/' : 'http://wheelmap.org/en/imprint/privacy/'
-  %iframe{:align => 'center', :src => privacy_blog_url, :width => '100%', :height => '300', :frameborder => '0', :seamless => 'seamless'}
-
-  = form.input :privacy_policy
-  = form.actions do
-    = form.action :submit, :label => t('formtastic.labels.save')
+      .row-fluid
+        .span11.offset1.mt10
+          = form.input :privacy_policy
+      = form.actions do
+        = form.action :submit, :label => t('formtastic.labels.save')

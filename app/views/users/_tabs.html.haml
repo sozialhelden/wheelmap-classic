@@ -5,5 +5,8 @@
   %li{class: action_name == 'photos' ? :active : nil}
     = link_to t('.images'), profile_photos_path, 'id' => 'images'
 
+  %li{class: action_name == 'newsletter' ? :active : nil}
+    = link_to t('.newsletter'), newsletter_profile_path,'id' => 'newsletter'
+
   %li{class: action_name == 'edit' || action_name == 'update' ? :active : nil}
     = link_to t('.account'), edit_profile_path, 'id' => 'profile'

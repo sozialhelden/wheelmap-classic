@@ -1,0 +1,16 @@
+= render layout: 'profile' do
+
+  .tab-pane.active#overview
+    %h4=t('.newsletter')
+
+    /%p=t('.newsletter_text')
+    %p
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate
+
+    %form{:method => 'POST', :action => 'users/newsletter'}
+      .row-fluid
+        %span{:class => 'span1'}
+          %input{:type => 'checkbox', :value => '1'}
+        .span10
+          =t('Newsletter abonnieren (1x im Monat)')
+

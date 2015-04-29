@@ -1,0 +1,13 @@
+.nodes-new {
+  .inputs-wrapper {
+    @extend .row-fluid;
+  }
+  fieldset.inputs {
+    @extend .span6;
+    float: left;
+
+    > * {
+      padding : 10px;
+    }
+  }
+}

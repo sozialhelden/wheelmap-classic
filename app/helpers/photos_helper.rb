@@ -11,7 +11,11 @@ module PhotosHelper
   end
 
   def delete_button(photo)
-    button_to("&times;".html_safe, profile_photo_path(photo), :confirm => t('devise.destroy.confirm'), :method => :delete, :class => [:delete, :btn, :'pull-right'], :title => t('devise.destroy.link'), :style => 'position:relative; top:-35px;left: -5px')
+    button_to("&times;".html_safe, profile_photo_path(photo), :confirm => t('devise.destroy.confirm'), :method => :delete, :class => [:btn, :'pull-right'], :title => t('devise.destroy.link'), :style => 'position:relative; top:-35px;left: -5px')
+  end
+
+  def info_button(photo)
+    button_to("&times;".html_safe, profile_photo_path(photo), :method => '', :class => [:btn, :'pull-right'], :title => 'Imageinformation',  :style => 'position:relative; top:-55px;left: -5px')
   end
 
   def link_to_photo(photo)
@@ -22,6 +26,7 @@ module PhotosHelper
       photo_tag(photo, :thumb_iphone_retina)
     end
     html << delete_button(photo)
+    html << info_button(photo)
     html.html_safe
   end
 end
