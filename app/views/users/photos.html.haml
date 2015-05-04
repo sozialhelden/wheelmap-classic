@@ -5,7 +5,7 @@
   .tab-pane.active
     .user-photos
       - unless @photos.empty?
-        .user-photo-thumbnails
+        .user-photo-thumbnails.clearfix
           - @photos.each do |photo|
             .user-photo-thumbnail
               = link_to_photo(photo)

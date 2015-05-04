@@ -1,12 +1,20 @@
-%ul.nav.nav-tabs#profile_tabs
+%ul
   %li{class: action_name == 'show' ? :active : nil}
-    = link_to t('.overview'), profile_path, 'id' => 'overview'
+    = link_to profile_path do
+      %i.icon-large.icon-list-alt
+      =t('.overview')
 
   %li{class: action_name == 'photos' ? :active : nil}
-    = link_to t('.images'), profile_photos_path, 'id' => 'images'
+    = link_to profile_photos_path do
+      %i.icon-large.icon-picture
+      =t('.pictures')
 
   %li{class: action_name == 'newsletter' ? :active : nil}
-    = link_to t('.newsletter'), newsletter_profile_path,'id' => 'newsletter'
+    = link_to newsletter_profile_path do
+      %i.icon-large.icon-envelope
+      =t('.newsletter')
 
   %li{class: action_name == 'edit' || action_name == 'update' ? :active : nil}
-    = link_to t('.account'), edit_profile_path, 'id' => 'profile'
+    = link_to edit_profile_path do
+      %i.icon-large.icon-user
+      =t('.profile')

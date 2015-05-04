@@ -1,5 +1,10 @@
 - content_for :user_headline do
-  %h2=t('.headline.overview')
+  %h2
+    - if @user.first_name.present?
+      = t('.greeting.personalized', name: @user.first_name)
+    - else
+      = t('.greeting.anonymously')
+
 
 = render layout: 'profile' do
   .tab-pane.active
