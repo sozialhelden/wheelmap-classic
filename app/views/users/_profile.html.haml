@@ -1,19 +1,11 @@
 .content.user
-  .row-fluid
-    .span12
-      %header.user-header
-        = yield :user_headline
-  .row-fluid
-    %nav.span2.user-nav
-      .tabbable.tabs-left.hidden-phone
-        = render partial: 'tabs'
-
-      .tabbable.tabs-bottom.visible-phone
-        = render partial: 'tabs'
-
-    .span10
-      .tab-content.user-content
-        = yield
+  %header.user-header
+    = yield :user_headline
+  .user-container
+    .user-nav.clearfix
+      = render partial: 'tabs'
+    .user-content
+      = yield
 
 - content_for :javascript do
   = javascript_include_tag :search

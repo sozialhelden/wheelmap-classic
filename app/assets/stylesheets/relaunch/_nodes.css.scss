@@ -145,7 +145,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
 
 .node-aside {
   padding: 20px;
-  background-color: #E9E8E4;
+  background-color: $sidebar-gray;
   border-left: 1px solid $border-color;
   // Hack for having a full height sidebar
   padding-bottom: 10000px;
