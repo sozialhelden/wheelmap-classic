@@ -14,7 +14,7 @@ module PhotosHelper
   def link_to_photo(photo)
     html = ''
     photo = Photo.new if photo.image_processing?
-    link_name = image_path(photo.image.url(:thumb_iphone_retina).to_s)
+    link_name = image_path(photo.image.url(:gallery_ipad).to_s)
     html << link_to(link_name, :class => :thumbnail, :name => photo.id, :'data-lightbox' => 'gallery', :title => photo.caption) do
       photo_tag(photo, :thumb_iphone_retina)
     end
