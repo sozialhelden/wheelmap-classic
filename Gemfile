@@ -44,7 +44,8 @@ group :default do
 #  gem 'system_timer' # Optional for librato dependency faraday
   gem 'multipart-post'
   gem 'sass-rails' # goes here instead of group assets because activeadmin uses it in the initializer
-  gem 'activeadmin', '0.6.2'
+  gem 'sass', '~>3.3' # >= 3.3 is needed for BEM syntax
+  gem 'activeadmin', '0.6.6'
   gem 'meta_search'
   gem 'kaminari'
   gem 'kaminari-i18n'

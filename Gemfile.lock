@@ -23,14 +23,14 @@ GEM
       sprockets (~> 2.2.1)
     active_model_serializers (0.8.1)
       activemodel (>= 3.0)
-    activeadmin (0.6.2)
+    activeadmin (0.6.6)
       arbre (~> 1.0)
       bourbon (>= 1.0.0, < 4)
       devise (>= 1.5.4, < 4)
       formtastic (~> 2.0)
       inherited_resources (~> 1.3)
       jquery-rails (>= 1.0.0, < 3)
-      kaminari (~> 0.13)
+      kaminari (~> 0.13, != 0.15.0)
       meta_search (~> 1.0)
       rails (>= 3.0.0, < 4)
       sass (~> 3.1)
@@ -64,7 +64,7 @@ GEM
       multi_json
     apipie-rails (0.3.1)
       json
-    arbre (1.0.1)
+    arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (3.0.3)
     autotest (4.4.6)
@@ -83,8 +83,8 @@ GEM
     big_sitemap (1.1.0)
     bootstrap-sass (2.3.2.1)
       sass (~> 3.2)
-    bourbon (3.1.8)
-      sass (>= 3.2.0)
+    bourbon (3.2.4)
+      sass (~> 3.2)
       thor
     builder (3.0.4)
     cacheable_flash (0.3.2)
@@ -260,7 +260,7 @@ GEM
     jquery-rails (2.3.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    json (1.8.1)
+    json (1.8.2)
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -297,7 +297,7 @@ GEM
       polyamorous (~> 0.5.0)
     method_source (0.8.1)
     mime-types (1.25.1)
-    multi_json (1.10.1)
+    multi_json (1.11.0)
     multi_xml (0.5.3)
     multipart-post (1.2.0)
     mysql2 (0.3.14)
@@ -335,7 +335,7 @@ GEM
       rack (>= 0.4)
     rack-ssl (1.3.4)
       rack
-    rack-test (0.6.2)
+    rack-test (0.6.3)
       rack (>= 1.0)
     rails (3.2.21)
       actionmailer (= 3.2.21)
@@ -467,7 +467,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activeadmin (= 0.6.2)
+  activeadmin (= 0.6.6)
   activerecord-import (< 0.3.0)
   activerecord-mysql2spatial-adapter
   acts_as_api
@@ -550,6 +550,7 @@ DEPENDENCIES
   rspec-rails
   ruby-progressbar
   ruport
+  sass (~> 3.3)
   sass-rails
   shoulda-matchers
   simple_form
