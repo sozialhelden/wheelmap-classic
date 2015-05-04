@@ -3,10 +3,7 @@ module PhotosHelper
   def photo_tag(photo, format = :thumb_iphone_retina)
     photo = Photo.new if photo.image_processing?
     image_tag(photo.image.url(format).to_s, :class => format,
-                                            :alt => photo.id,
-                                            :width => 160,
-                                            :height => 112,
-                                            :style  => "width:160px;height:112px;"
+                                            :alt => photo.id
                                             )
   end
 

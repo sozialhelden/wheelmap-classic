@@ -1,22 +1,18 @@
-.content.profile
+.content.user
   .row-fluid
     .span12
-      %header#subheader
-        %h1
-          - if @user.first_name.present?
-            = link_to t('.greeting.personalized', name: @user.first_name), edit_profile_path
-          - else
-            = link_to t('.greeting.anonymously'), edit_profile_path
+      %header.user-header
+        = yield :user_headline
   .row-fluid
-    %nav.sidebar.span2
-      .tabbable.tabs-left.hidden-phone{style: 'padding:10px;'}
+    %nav.span2.user-nav
+      .tabbable.tabs-left.hidden-phone
         = render partial: 'tabs'
 
-      .tabbable.tabs-bottom.visible-phone{style: 'padding:10px;'}
+      .tabbable.tabs-bottom.visible-phone
         = render partial: 'tabs'
 
-    .more-content.span10
-      .tab-content{style: 'padding-right:40px;'}
+    .span10
+      .tab-content.user-content
         = yield
 
 - content_for :javascript do
