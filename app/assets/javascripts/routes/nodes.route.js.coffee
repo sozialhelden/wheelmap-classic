@@ -22,7 +22,7 @@ Wheelmap.NodesEditRoute = Wheelmap.FakeMapRoute.extend
 
       transition.abort()
 
-      $.ajax('/users/signed_in').done (signedIn)->
+      $.ajax('/profile/signed_in').done (signedIn)->
         if signedIn
           self.signedIn = true;
           transition.retry()
