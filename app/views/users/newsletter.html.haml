@@ -1,8 +1,9 @@
+- content_for :user_headline do
+  %h2=t('.newsletter')
+
 = render layout: 'profile' do
 
-  .tab-pane.active#overview
-    %h4=t('.newsletter')
-
+  .tab-pane.active
     /%p=t('.newsletter_text')
     %p
       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate

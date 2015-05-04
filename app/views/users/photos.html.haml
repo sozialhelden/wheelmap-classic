@@ -1,11 +1,13 @@
+- content_for :user_headline do
+  %h2=t('.headline.your_photos')
+
 = render layout: 'profile' do
-  .tab-pane.active#images
-    %h1= t('.headline.your_photos')
-    #thumbs_private2
+  .tab-pane.active
+    .user-photos
       - unless @photos.empty?
-        %ul.thumbnails
+        .user-photo-thumbnails
           - @photos.each do |photo|
-            %li.span3{style: 'margin-left:10px;'}
+            .user-photo-thumbnail
               = link_to_photo(photo)
         .center
           = paginate @photos

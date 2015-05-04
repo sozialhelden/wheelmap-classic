@@ -1,8 +1,9 @@
-= render layout: 'profile' do
-  .tab-pane.active#profile
-    .user_form
-      %h2{:class => 'headline'}=t('.headline.edit_profile')
+- content_for :user_headline do
+  %h2.headline=t('.headline.edit_profile')
 
+= render layout: 'profile' do
+  .tab-pane.active
+    .user-form
       = semantic_form_for @user, url: profile_path, html: { class: 'form-horizontal', id: "edit_user"} do |form|
         = form.inputs :name => 'Deine Benutzerdaten' do
           = form.input :first_name, :label => t('activerecord.attributes.user.first_name'), :autofocus => true
