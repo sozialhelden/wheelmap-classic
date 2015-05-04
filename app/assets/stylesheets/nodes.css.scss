@@ -6,6 +6,12 @@
 
 @import "maginific-popup";
 
+// Needed to be extended in relaunch/nodes
+// @TODO Find a better place for this. When Ember is removed, nodes.css.scss can be merged back to relaunch.sass.
+.text-error          { color: $errorText; }
+a.text-error:hover,
+a.text-error:focus   { color: darken($errorText, 10%); }
+
 @import "relaunch/nodes";
 @import "relaunch/flash";
 @import "relaunch/share";
