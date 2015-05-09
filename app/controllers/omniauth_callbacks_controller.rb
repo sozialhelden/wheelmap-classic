@@ -7,14 +7,17 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     user = find_or_create_user
     user.update_oauth_credentials(request.env['omniauth.auth']['credentials'])
 
-    set_flash_message :notice, :success, :kind => 'OpenStreetMap'
-
-    if user.confirmed?
-      # OSM user already in wheelmap db
-      redirect_to after_sign_in_path_for(user)
+    if mobile_app?
+      redirect_to "wheelmap://success?token=#{user.authentication_token}&privacy_accepted=#{user.privacy_policy}&terms_accepted=#{user.terms}"#signed_in_token_users_path(user)
     else
-      track_page_view '/registrations/successful'
-      redirect_to after_signup_edit_user_path(user)
+      set_flash_message :notice, :success, :kind => 'OpenStreetMap'
+      if user.confirmed?
+        # OSM user already in wheelmap db
+        redirect_to after_sign_in_path_for(user)
+      else
+        track_page_view '/registrations/successful'
+        redirect_to after_signup_edit_user_path(user)
+      end
     end
     sign_in user
   end

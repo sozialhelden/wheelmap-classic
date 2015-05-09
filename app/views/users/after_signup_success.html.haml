@@ -1,0 +1,8 @@
+%h1
+= "Hello #{@user.email}"
+
+- if @user.oauth_authorized?
+  %p
+    You have successfully authorized wheelmap to use your osm account
+  %br
+= link_to 'Success', "wheelmap://success?token=#{@user.authentication_token}&email=#{@user.email}", class:'button'

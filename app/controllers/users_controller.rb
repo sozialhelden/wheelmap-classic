@@ -50,6 +50,11 @@ class UsersController < ApplicationController
     render :json => (current_user ? true : false).to_json, :status => 200
   end
 
+  def signed_in_token
+      @user = current_user
+      render :template => 'users/after_signup_success'
+  end
+
   def after_signup_edit
     @user ||= current_user
   end

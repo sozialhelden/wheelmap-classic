@@ -91,7 +91,7 @@ class ApplicationController < ActionController::Base
   end
 
   def mobile_app?
-    request.user_agent.start_with?('Wheelmap') rescue false
+    request.user_agent.start_with?('Wheelmap') || request.user_agent.start_with?('org.wheelmap.android') rescue false
   end
 
   def iphone?
@@ -153,21 +153,23 @@ class ApplicationController < ActionController::Base
   end
 
   def store_iphone_stats
-    @iphone_headers ||= request.env.inject({}) do |h, (k, v)|
-      if k =~ /^(HTTP|CONTENT)_/
-        h[k.sub(/^HTTP_/, '').dasherize.gsub(/([^\-]+)/) { $1.capitalize }] = v
+    if iphone?
+      @iphone_headers ||= request.env.inject({}) do |h, (k, v)|
+        if k =~ /^(HTTP|CONTENT)_/
+          h[k.sub(/^HTTP_/, '').dasherize.gsub(/([^\-]+)/) { $1.capitalize }] = v
+        end
+        h
       end
-      h
-    end
 
-    unless @iphone_headers.empty?
-      Rails.logger.info "iOS User Agent: '#{@iphone_headers['User-Agent']}'"
-      Rails.logger.info "iOS Install ID: '#{@iphone_headers['Install-Id']}'"
-      iphone_counter = IphoneCounter.find_or_initialize_by_install_id(@iphone_headers['Install-Id'])
-      iphone_counter.app_version    = @iphone_headers['User-Agent'].gsub(/\AWheelmap( iOS)?\/(\d+\.?\d?.?\d*)(\s|.|\z)*/, '\2')
-      iphone_counter.os_version     = @iphone_headers['Os-Version']
-      iphone_counter.device_version = @iphone_headers['Device-Model'].try(:gsub, /,/, '_')
-      iphone_counter.save if iphone_counter.new_record? or iphone_counter.changed?
+      unless @iphone_headers.empty?
+        Rails.logger.info "iOS User Agent: '#{@iphone_headers['User-Agent']}'"
+        Rails.logger.info "iOS Install ID: '#{@iphone_headers['Install-Id']}'"
+        iphone_counter = IphoneCounter.find_or_initialize_by_install_id(@iphone_headers['Install-Id'])
+        iphone_counter.app_version    = @iphone_headers['User-Agent'].gsub(/\AWheelmap( iOS)?\/(\d+\.?\d?.?\d*)(\s|.|\z)*/, '\2')
+        iphone_counter.os_version     = @iphone_headers['Os-Version']
+        iphone_counter.device_version = @iphone_headers['Device-Model'].try(:gsub, /,/, '_')
+        iphone_counter.save if iphone_counter.new_record? or iphone_counter.changed?
+      end
     end
   end
 

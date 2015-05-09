@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="Osmosis 0.39">
+  <node id="-3908" version="0" timestamp="Fri Feb 24 10:53:35 +0100 2012" uid="1" user="" lat="52.4735887" lon="13.4592232">
+    <tag k="name" v="Estrel Berlin"/>
+    <tag k="wheelchair" v="yes"/>
+    <tag k="addr:city" v="Berlin"/>
+    <tag k="addr:postcode" v="12057"/>
+    <tag k="addr:housenumber" v="225"/>
+    <tag k="tourism" v="hotel"/>
+    <tag k="addr:street" v="Sonnenallee "/>
+    <tag k="website" v="http://www.estrel.com"/>
+    <tag k="phone" v="+49 30 6831-0"/>
+  </node>
+  <node id="-3909" version="0" timestamp="Fri Feb 24 10:53:35 +0100 2012" uid="1" user="" lat="52.4736488" lon="13.4595472">
+    <tag k="name" v="Restaurant Portofino"/>
+    <tag k="wheelchair" v="yes"/>
+    <tag k="addr:city" v="Berlin"/>
+    <tag k="addr:postcode" v="12057"/>
+    <tag k="addr:housenumber" v="225"/>
+    <tag k="addr:street" v="Sonnenallee"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="website" v="http://www.estrel.com"/>
+    <tag k="phone" v="+49 30 6831-22640"/>
+  </node>
+  <node id="-3910" version="0" timestamp="Fri Feb 24 10:53:35 +0100 2012" uid="1" user="" lat="52.473516" lon="13.4593193">
+    <tag k="name" v="Restaurant Sanssouci"/>
+    <tag k="wheelchair" v="yes"/>
+    <tag k="addr:city" v="Berlin"/>
+    <tag k="addr:postcode" v="12057"/>
+    <tag k="addr:housenumber" v="225"/>
+    <tag k="addr:street" v="Sonnenallee"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="website" v="http://www.estrel.com"/>
+    <tag k="phone" v="+49 30 6831-22661"/>
+  </node>
+  <node id="-3911" version="0" timestamp="Fri Feb 24 10:53:35 +0100 2012" uid="1" user="" lat="52.4738141" lon="13.4596955">
+    <tag k="name" v="Restaurant Sun-Thai"/>
+    <tag k="wheelchair" v="yes"/>
+    <tag k="addr:city" v="Berlin"/>
+    <tag k="addr:postcode" v="12057"/>
+    <tag k="addr:housenumber" v="225"/>
+    <tag k="addr:street" v="Sonnenallee"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="website" v="http://www.estrel.com"/>
+    <tag k="phone" v="+49 30 6831-22630"/>
+  </node>
+  <node id="-3912" version="0" timestamp="Fri Feb 24 10:53:35 +0100 2012" uid="1" user="" lat="52.4733885" lon="13.4589865">
+    <tag k="name" v="Estrel Stube"/>
+    <tag k="wheelchair" v="yes"/>
+    <tag k="addr:city" v="Berlin"/>
+    <tag k="addr:postcode" v="12057"/>
+    <tag k="addr:housenumber" v="225"/>
+    <tag k="addr:street" v="Sonnenallee"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="website" v="http://www.estrel.com"/>
+    <tag k="phone" v="+49 30 6831-22680"/>
+  </node>
+  <node id="-3913" version="0" timestamp="Fri Feb 24 10:53:35 +0100 2012" uid="1" user="" lat="52.4749462" lon="13.4593106">
+    <tag k="name" v="Stars in Concert"/>
+    <tag k="wheelchair" v="yes"/>
+    <tag k="addr:city" v="Berlin"/>
+    <tag k="addr:postcode" v="12057"/>
+    <tag k="addr:housenumber" v="225"/>
+    <tag k="addr:street" v="Sonnenallee"/>
+    <tag k="amenity" v="theatre"/>
+    <tag k="website" v="http://www.stars-in-concert.de"/>
+    <tag k="phone" v="+49 30 6831-6831"/>
+  </node>
+  <node id="-4169" version="0" timestamp="Fri Feb 24 10:53:36 +0100 2012" uid="1" user="" lat="52.47298" lon="13.423534">
+    <tag k="name" v="Schillers"/>
+    <tag k="wheelchair" v="limited"/>
+    <tag k="amenity" v="cafe"/>
+  </node>
+  <node id="-5281" version="0" timestamp="Fri Feb 24 10:53:37 +0100 2012" uid="1" user="" lat="52.4917056" lon="13.4331328">
+    <tag k="name" v="Nansen"/>
+    <tag k="wheelchair" v="unknown"/>
+    <tag k="addr:city" v="Berlin"/>
+    <tag k="addr:street" v="Nansenstr."/>
+    <tag k="wheelchair:description" v="Toilette groß, rollstuhltauglich. Recht hohe Stufe am EIngang. "/>
+    <tag k="amenity" v="restaurant"/>
+  </node>
+  <node id="-5556" version="0" timestamp="Fri Feb 24 10:53:37 +0100 2012" uid="1" user="" lat="52.4791124" lon="13.4395737">
+    <tag k="name" v="Stadtbad Neukölln"/>
+    <tag k="wheelchair" v="limited"/>
+    <tag k="addr:city" v="Berlin"/>
+    <tag k="addr:postcode" v="12043"/>
+    <tag k="addr:housenumber" v="3"/>
+    <tag k="addr:street" v="Ganghoferstraße"/>
+    <tag k="wheelchair:description" v="Elektrisch öffnende Eingangstüren, Fahrstuhl (Schlüssel an der Kasse), Behindertendusche/WC, Hublift in der kleinen Halle, nicht alle Bereiche der Sauna sind mit dem Rollstuhl erreichbar, 2 Behindertenparkplätze"/>
+    <tag k="amenity" v="swimming_pool"/>
+    <tag k="website" v="http://www.berlinerbaederbetriebe.de/77.html"/>
+  </node>
+</osm>

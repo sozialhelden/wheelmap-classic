@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="Osmosis 0.39">
+  <node id="-4171" version="0" timestamp="Fri Feb 24 10:53:36 +0100 2012" uid="1" user="" lat="52.467218" lon="13.5108807">
+    <tag k="shop" v="bakery"/>
+    <tag k="name" v="Bäckerei Zwillinge"/>
+    <tag k="wheelchair" v="unknown"/>
+  </node>
+  <node id="-4172" version="0" timestamp="Fri Feb 24 10:53:36 +0100 2012" uid="1" user="" lat="52.4643053" lon="13.5114189">
+    <tag k="name" v="Bücher-Paradies (1-Euro-Buch-Laden)"/>
+    <tag k="wheelchair" v="unknown"/>
+    <tag k="amenity" v="bank"/>
+  </node>
+  <node id="-4361" version="0" timestamp="Fri Feb 24 10:53:36 +0100 2012" uid="1" user="" lat="52.459235" lon="13.5277804">
+    <tag k="name" v="novajura RechtsanwaltsRA"/>
+    <tag k="wheelchair" v="limited"/>
+    <tag k="addr:city" v="Berlin"/>
+    <tag k="addr:postcode" v="12459"/>
+    <tag k="addr:housenumber" v="11"/>
+    <tag k="addr:street" v="Rathenaustr. "/>
+    <tag k="wheelchair:description" v="Räume ebenerdig u rollstuhlgerecht; keine rollstuhlgeeignete Toilette"/>
+    <tag k="website" v="http://www.novajura.de"/>
+    <tag k="phone" v="+49 30 6807194-30"/>
+    <tag k="office" v="lawyer"/>
+  </node>
+  <node id="-5546" version="0" timestamp="Fri Feb 24 10:53:37 +0100 2012" uid="1" user="" lat="52.4600125" lon="13.5396367">
+    <tag k="name" v="Hallenbad Kleine Schwimmhalle Wuhlheide"/>
+    <tag k="wheelchair" v="yes"/>
+    <tag k="addr:city" v="Berlin"/>
+    <tag k="addr:postcode" v="12459"/>
+    <tag k="addr:housenumber" v="161"/>
+    <tag k="addr:street" v="An der Wuhlheide"/>
+    <tag k="amenity" v="swimming_pool"/>
+    <tag k="website" v="http://www.berlinerbaederbetriebe.de/100.html"/>
+  </node>
+</osm>
