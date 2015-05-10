@@ -1,0 +1,25 @@
+%div#wheelmap
+  .node-wrapper{style: "background-image: url(http://api.tiles.mapbox.com/v4/sozialhelden.map-iqt6py1k/#{@node.lon},#{@node.lat},17/1280x1280.jpg70?access_token=pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g)"}
+    = render partial: 'node_flash'
+
+    %article.container.node-container{ itemscope:'', itemtype: 'http://schema.org/Place', :'data-category' => @node.category.try(:identifier) }
+      = render partial: 'node_header', object: @node
+
+      .row-fluid
+        %section.node-content.span8
+          = render partial: 'node_status', object: @node
+          = render partial: 'node_photos', object: @node
+          = render partial: 'node_note', object: @node
+          = render partial: 'node_form', object: @node
+
+        %section.node-aside.span4
+          = render partial: 'node_map', object: @node
+          = render partial: 'node_info_box', object: @node
+
+- content_for :meta do
+  = render_og_metadata(title: @node.name, description: t('header.title'), type: 'place', url: node_url(@node), image: image_path('wheely_big.jpg'))
+  = render_og_locationdata(latitude: @node.lat, longitude: @node.lon)
+
+- content_for :head do
+  %title=t('nodes.show.header.meta.title', name: [@node.name, @node.node_type_name, @node.category_name, @node.region_name].compact.join(', '))
+  %meta{:name => 'description', :content => t('nodes.show.header.meta.description')}

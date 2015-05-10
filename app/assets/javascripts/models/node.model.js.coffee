@@ -68,10 +68,6 @@ Wheelmap.Node = DS.Model.extend
     '/nodes/' + @get('id') + '/update_wheelchair.js'
   ).property('id')
 
-  openStreetMapURI: (()->
-    'http://www.openstreetmap.org/node/' + @get('id')
-  ).property('id')
-
   address: (()->
     address = []
     addr = @getProperties('street', 'housenumber', 'city', 'postcode')
