@@ -3,5 +3,7 @@
       {{ t 'nodes.node_edit.details' }}
     </a>
 
-    {{#link-to 'nodes.edit' this class='btn edit wheelmap-btn' }}<i class="icon-pencil"></i>{{/link-to}}
+    <a {{ bind-attr href=editPath }} class="btn edit wheelmap-btn">
+        <i class="icon-pencil"></i>
+    </a>
 </div>
