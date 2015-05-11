@@ -7,14 +7,17 @@
         = form.input_field :name
 
     .control-group
-      = form.label :category, t('activerecord.attributes.poi.type'), class: 'control-label'
+      = form.label :category_for_node, t('activerecord.attributes.poi.type'), class: 'control-label'
       .controls.controls-row
         .span6
           .custom-select
-            = form.input_field :category
+            = form.input_field :category_for_node, collection: options_for_category
+            %i.icon-caret-down.pull-right
         .span6
           .custom-select
-            = form.input_field :type
+            -# @TODO Wait for simple_form to interpret collections like [label, value, { option_attribute: option_attribute_value }] correctly.
+            = select_tag 'node[node_type]', options_for_select(options_for_type, @node.node_type.identifier)
+            %i.icon-caret-down.pull-right
 
   %fieldset
 
