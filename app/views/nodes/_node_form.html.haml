@@ -5,13 +5,14 @@
       = form.label :name, class: 'control-label'
       .controls.controls-row{ class: @node.errors.include?(:name) ? 'has_error' : nil }
         = form.input_field :name
-
+        = form.error :name
     .control-group
       = form.label :category_for_node, t('activerecord.attributes.poi.type'), class: 'control-label'
       .controls.controls-row{ class: @node.errors.include?(:node_type_id) ? 'has_error' : nil }
         .custom-select
           = form.input_field :node_type_id, as: :grouped_select, collection: Category.all, group_method: :node_types
           %i.icon-caret-down.pull-right
+        = form.error :node_type_id
 
   %fieldset
 
@@ -20,13 +21,17 @@
       .controls.controls-row{ class: @node.errors.include?(:postcode) || @node.errors.include?(:city) ? 'has_error' : nil }
         .span10
           = form.input_field :street, placeholder: t('activerecord.attributes.poi.address_street')
+          = form.error :street
         .span2
           = form.input_field :housenumber, placeholder: t('activerecord.attributes.poi.address_housenumber')
+          = form.error :housenumber
       .controls.controls-row{ class: @node.errors.include?(:postcode) || @node.errors.include?(:city) ? 'has_error' : nil }
         .span3
           = form.input_field :postcode, placeholder: t('activerecord.attributes.poi.address_postcode')
+          = form.error :postcode
         .span9
           = form.input_field :city, placeholder: t('activerecord.attributes.poi.address_city')
+          = form.error :city
 
   %fieldset
 
@@ -39,6 +44,7 @@
       = form.label :phone, t('activerecord.attributes.poi.phone'), class: 'control-label'
       .controls.controls-row{ class: @node.errors.include?(:phone) ? 'has_error' : nil }
         = form.input_field :phone, placeholder: t('activerecord.attributes.poi.phone')
+        = form.error :phone
 
   %fieldset
 

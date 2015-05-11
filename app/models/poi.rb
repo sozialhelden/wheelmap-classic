@@ -40,6 +40,7 @@ class Poi < ActiveRecord::Base
   validates :name, presence: true, on: :create
   validates :wheelchair, :type, presence: true
   validates_format_of :website, with: /\A(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?\z/ix, :allow_blank => true, :message => I18n.t('errors.models.node.website.invalid')
+  validates_format_of :phone, with: /\A\+[0-9]+\s[0-9]+\s[0-9]+\z/, allow_blank: true, message: I18n.t('errors.models.node.phone.invalid')
   validates :wheelchair_description, length: { maximum: 255 }
   validates :lat, :lon, presence: true, :non_zero => { message: I18n.t('nodes.new.form.location') }
 
