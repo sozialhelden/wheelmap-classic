@@ -9,7 +9,6 @@
         %section.node-content.span8
           = render partial: 'node_status', object: @node
           = render partial: 'node_photos', object: @node
-          = render partial: 'node_note', object: @node
           = render partial: 'node_form', object: @node
 
         %section.node-aside.span4
@@ -22,4 +21,4 @@
 
 - content_for :head do
   %title=t('nodes.show.header.meta.title', name: [@node.name, @node.node_type_name, @node.category_name, @node.region_name].compact.join(', '))
-  %meta{:name => 'description', :content => t('nodes.show.header.meta.description')}
+  %meta{ :name => 'description', :content => t('nodes.show.header.meta.description') }

@@ -873,7 +873,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     }
   }
 
-  .error {
+  .has_error {
     textarea,
     input {
       color: #b94a48;
@@ -881,7 +881,7 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
       @include box-shadow(0px 0px 3px 0px rgba(#b94a48,0.60));
     }
 
-    & > ul {
+    .error {
       @extend .text-error;
       margin-bottom: 0;
       margin-top: 10px;

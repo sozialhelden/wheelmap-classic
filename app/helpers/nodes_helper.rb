@@ -28,30 +28,4 @@ module NodesHelper
     end
     options_for_select(stati, wheelchair_status)
   end
-
-  def options_for_category
-    categories = []
-
-    Category.all.each do |category|
-      categories << [I18n.t("poi.category.#{category.identifier}"), category.identifier]
-    end
-
-    categories.sort_by { |_, category| category[0] }
-  end
-
-  def options_for_type
-    types = []
-
-    Category.includes(:node_types).all.each do |category|
-      category.node_types.each do |node_type|
-        types << [
-            I18n.t("poi.name.#{category.identifier}.#{node_type.identifier}"),
-            node_type.identifier,
-            { :'data-category' => category.identifier }
-        ]
-      end
-    end
-
-    types.sort_by { |_, type| type[0] }
-  end
 end

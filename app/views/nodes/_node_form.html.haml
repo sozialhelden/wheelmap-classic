@@ -3,32 +3,26 @@
 
     .control-group
       = form.label :name, class: 'control-label'
-      .controls.controls-row
+      .controls.controls-row{ class: @node.errors.include?(:name) ? 'has_error' : nil }
         = form.input_field :name
 
     .control-group
       = form.label :category_for_node, t('activerecord.attributes.poi.type'), class: 'control-label'
-      .controls.controls-row
-        .span6
-          .custom-select
-            = form.input_field :category_for_node, collection: options_for_category
-            %i.icon-caret-down.pull-right
-        .span6
-          .custom-select
-            -# @TODO Wait for simple_form to interpret collections like [label, value, { option_attribute: option_attribute_value }] correctly.
-            = select_tag 'node[node_type]', options_for_select(options_for_type, @node.node_type.identifier)
-            %i.icon-caret-down.pull-right
+      .controls.controls-row{ class: @node.errors.include?(:node_type_id) ? 'has_error' : nil }
+        .custom-select
+          = form.input_field :node_type_id, as: :grouped_select, collection: Category.all, group_method: :node_types
+          %i.icon-caret-down.pull-right
 
   %fieldset
 
     .control-group
       = form.label :street, t('activerecord.attributes.poi.address'), class: 'control-label'
-      .controls.controls-row
+      .controls.controls-row{ class: @node.errors.include?(:postcode) || @node.errors.include?(:city) ? 'has_error' : nil }
         .span10
           = form.input_field :street, placeholder: t('activerecord.attributes.poi.address_street')
         .span2
           = form.input_field :housenumber, placeholder: t('activerecord.attributes.poi.address_housenumber')
-      .controls.controls-row
+      .controls.controls-row{ class: @node.errors.include?(:postcode) || @node.errors.include?(:city) ? 'has_error' : nil }
         .span3
           = form.input_field :postcode, placeholder: t('activerecord.attributes.poi.address_postcode')
         .span9
@@ -38,18 +32,19 @@
 
     .control-group
       = form.label :website, t('activerecord.attributes.poi.website'), class: 'control-label'
-      .controls.controls-row
+      .controls.controls-row{ class: @node.errors.include?(:website) ? 'has_error' : nil }
         = form.input_field :website, placeholder: t('activerecord.attributes.poi.website')
+        = form.error :website
     .control-group
       = form.label :phone, t('activerecord.attributes.poi.phone'), class: 'control-label'
-      .controls.controls-row
+      .controls.controls-row{ class: @node.errors.include?(:phone) ? 'has_error' : nil }
         = form.input_field :phone, placeholder: t('activerecord.attributes.poi.phone')
 
   %fieldset
 
     .control-group
       = form.label :wheelchair_description, t('activerecord.attributes.poi.note'), class: 'control-label'
-      .controls.controls-row
+      .controls.controls-row{ class: @node.errors.include?(:wheelchair_description) ? 'has_error' : nil }
         = form.input_field :wheelchair_description, placeholder: t('activerecord.attributes.poi.note'), as: :text, rows: 5, cols: nil
 
   .form-actions

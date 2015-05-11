@@ -12,7 +12,6 @@
 #= require bootstrap-alert
 #= require bootstrap-select
 #
-#= require flash
 #= require jquery/jquery.magnific-popup.js
 #= require responsive-popover
 #= require dropzone
@@ -94,12 +93,25 @@ addFlashMessage = (type, message) ->
   $message = $("<div class='flash fade'></div>").addClass(type).html(message)
   $flashWrapper.append($message)
 
-  delay = message.split(' ').length / 0.00333333333 # based on 200 WpM
+  delay = message.split(' ').length / 0.00333333333 + 0.5 # based on 200 WpM
 
   setTimeout (()-> $message.addClass('in')), 0
   setTimeout (()-> $message.removeClass('in')), delay
 
   $message
+
+showFlashMessags = ->
+  data = JSON.parse $.cookie("flash")
+
+  types = ['alert', 'notice', 'error', 'success']
+
+  for type in types
+    if (data[type])
+      addFlashMessage(type, data[type])
+
+  $.cookie('flash', null, path: '/')
+
+showFlashMessags()
 
 # Status update
 $('[data-toggle="status"]').click (e) ->
@@ -138,7 +150,7 @@ csrfToken = $('meta[name="csrf-token"]').attr('content')
 
 $('.selectpicker').selectpicker();
 
-$('#allianz').show() if I18n.locale == 'de' and $('article#node').data('category') == 'sport';
+$('#allianz').show() if I18n.locale == 'de' and $('article#node').data('category') == 'sport'
 
 $('[data-toggle="status-submit"]').click (e) ->
   e.preventDefault()

@@ -86,7 +86,7 @@ class NodesController < ApplicationController
 
   def update
     @node = Poi.find(params[:id])
-    @node.attributes = params[:node]
+    @node.attributes = node_params
     @node.photos.map(&:save) # save photos regardless if poi is valid
     if @node.valid?
       UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user, source('update'))
@@ -103,8 +103,13 @@ class NodesController < ApplicationController
       end
     else
       respond_to do |wants|
-        wants.js   { render :text => 'FAIL', :status => 406 }
+        wants.js   { render text: 'FAIL', status: 406 }
         wants.json { render json: { errors: @node.errors }, status: 406 }
+
+        wants.html {
+          flash[:error] = I18n.t('nodes.update.flash.not_successfull')
+          render action: :edit
+        }
       end
     end
   end
@@ -251,5 +256,11 @@ class NodesController < ApplicationController
 
   def controller
     self
+  end
+
+  private
+
+  def node_params
+    params.require(:node).permit(:name, :node_type_id, :street, :housenumber, :postcode, :city, :website, :phone, :wheelchair_description)
   end
 end
