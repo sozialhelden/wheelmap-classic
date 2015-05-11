@@ -1,1 +1,55 @@
-%form.node-form.form-horizontal
+= simple_form_for @node, as: :node, url: { controller: 'nodes', action: 'update', id: @node }, html: { method: :put, class: 'node-form form-horizontal' } do |form|
+  %fieldset
+
+    .control-group
+      = form.label :name, class: 'control-label'
+      .controls.controls-row
+        = form.input_field :name
+
+    .control-group
+      = form.label :category, t('activerecord.attributes.poi.type'), class: 'control-label'
+      .controls.controls-row
+        .span6
+          .custom-select
+            = form.input_field :category
+        .span6
+          .custom-select
+            = form.input_field :type
+
+  %fieldset
+
+    .control-group
+      = form.label :street, t('activerecord.attributes.poi.address'), class: 'control-label'
+      .controls.controls-row
+        .span10
+          = form.input_field :street, placeholder: t('activerecord.attributes.poi.address_street')
+        .span2
+          = form.input_field :housenumber, placeholder: t('activerecord.attributes.poi.address_housenumber')
+      .controls.controls-row
+        .span3
+          = form.input_field :postcode, placeholder: t('activerecord.attributes.poi.address_postcode')
+        .span9
+          = form.input_field :city, placeholder: t('activerecord.attributes.poi.address_city')
+
+  %fieldset
+
+    .control-group
+      = form.label :website, t('activerecord.attributes.poi.website'), class: 'control-label'
+      .controls.controls-row
+        = form.input_field :website, placeholder: t('activerecord.attributes.poi.website')
+    .control-group
+      = form.label :phone, t('activerecord.attributes.poi.phone'), class: 'control-label'
+      .controls.controls-row
+        = form.input_field :phone, placeholder: t('activerecord.attributes.poi.phone')
+
+  %fieldset
+
+    .control-group
+      = form.label :wheelchair_description, t('activerecord.attributes.poi.note'), class: 'control-label'
+      .controls.controls-row
+        = form.input_field :wheelchair_description, placeholder: t('activerecord.attributes.poi.note'), as: :text, rows: 5, cols: nil
+
+  .form-actions
+    %button.btn.btn-primary.pull-right{ type: :submit }
+      = t('actions.save')
+    = link_to t('actions.cancel'), node_path, id: @node.id, class: 'btn pull-left wheelmap-btn'

@@ -709,7 +709,9 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   color: #71777C;
   background: #D8D8D8 image-url("node-map-info.png") no-repeat 10px 10px;
   border: 1px solid #B7B7B7;
-  padding: 8px 10px 8px 39px;
+  padding: 8px 10px;
+  padding-left: 39px;
+  margin-top: 30px;
 
   &-tip-container {
     height: 11px;
@@ -789,6 +791,10 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     border-color: #A39D97;
     @include box-shadow(0px 1px 0px 0px rgba(white, 0.4), inset 0px 1px 1px 0px rgba(black, 0.2));
     padding: 4px 8px;
+    width: 100%;
+    max-width: 100%;
+    min-height: 30px;
+    box-sizing: border-box;
 
     &:focus {
       border-color: #3A87AD;
@@ -838,13 +844,15 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     border: 0;
     background: none;
 
-    button {
+    button,
+    a {
+      box-sizing: border-box;
       width: 140px;
+    }
 
-      &[type="submit"] {
-        @include headline-gradient();
-        @include box-shadow(inset 0px 1px 0px 0px rgba(white, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05));
-      }
+    button[type="submit"] {
+      @include headline-gradient();
+      @include box-shadow(inset 0px 1px 0px 0px rgba(white, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05));
     }
   }
 

@@ -14,6 +14,7 @@ group :default do
   gem 'haml'
   gem 'formtastic', '2.2.1'
   gem 'formtastic-bootstrap'
+  gem 'simple_form'
   gem 'delayed_job'
   gem 'delayed_job_active_record'
   gem 'daemons'
