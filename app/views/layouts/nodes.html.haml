@@ -1,7 +1,7 @@
-- content_for :content do
+-content_for :content do
   =yield
 
-- content_for :javascript do
-  = javascript_include_tag :nodes
+-content_for :javascript do
+  =javascript_include_tag :nodes
 
-= render :template => "layouts/basic"
+=render :template => "layouts/legacy"

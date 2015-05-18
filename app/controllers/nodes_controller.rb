@@ -6,7 +6,7 @@ class NodesController < ApplicationController
   include NewRelic::Agent::MethodTracer
   include NodesHelper
 
-  layout 'nodes'
+  layout :determine_layout
 
   skip_before_filter :verify_authenticity_token
 
@@ -171,6 +171,15 @@ class NodesController < ApplicationController
 
   # Before filter
   protected
+
+  def determine_layout
+    case action_name
+      when 'new', 'create'
+        'legacy'
+      else
+        'nodes'
+    end
+  end
 
   # If a node_id is given additionally, make sure it is loaded
   def load_custom_node
