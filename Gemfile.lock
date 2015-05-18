@@ -519,7 +519,6 @@ DEPENDENCIES
   has_scope
   htmlentities
   i18n (< 0.7.0)
-  htmlentities
   i18n-js (~> 3.0.0.rc9)
   inherited_resources
   jquery-rails (= 2.3.0)
