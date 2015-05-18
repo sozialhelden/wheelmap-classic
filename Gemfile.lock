@@ -514,6 +514,7 @@ DEPENDENCIES
   guard-spork
   haml
   has_scope
+  htmlentities
   i18n (< 0.7.0)
   i18n-js (~> 3.0.0.rc9)
   inherited_resources
