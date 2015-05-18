@@ -98,8 +98,35 @@ de:
       info: Unser Suchdienst war kurzzeitig nicht verfügbar.
       repeat_search: Suche wiederholen
 
-  profile:
-    newsletter:
-      title: Newsletter
-      text: Mit dem Wheelmap-Newsletter bleibst Du auf dem Laufenden. Keine Angst, wir spamen Dich nicht zu. Maximal ein Mal im Monat kriegst Du elektronische Post von uns.
-      label: Ja, haltet mich über wheelmap auf dem laufenden.
+  users:
+    profile:
+      newsletter:
+        title: Newsletter
+        text: Mit dem Wheelmap-Newsletter bleibst Du auf dem Laufenden. Keine Angst, wir spamen Dich nicht zu. Maximal ein Mal im Monat kriegst Du elektronische Post von uns.
+        label: Ja, haltet mich über wheelmap auf dem laufenden.
+      show:
+        title: Übersicht
+        text: Übersichts Text
+        greeting:
+          anonymously: Hallo Du
+          personalized: Hallo %{name}
+        overview:
+          text: Du hast
+          pois_marked:
+            one: '%{count} Ort markiert'
+            other: '%{count} Orte markiert'
+          pois_added:
+            one: '%{count} Ort hinzugefügt'
+            other: '%{count} Orte hinzugefügt'
+          pois_edited:
+            one: '%{count} Ort bearbeitet'
+            other: '%{count} Orte bearbeitet'
+          photos_uploaded:
+            one: '%{count} Bild hochgelanden'
+            other: '%{count} Bilder hochgelanden'
+      photos:
+        title: Bilder
+      edit:
+        title: Profil
+        legends:
+          user_data: Deine Benutzerdaten

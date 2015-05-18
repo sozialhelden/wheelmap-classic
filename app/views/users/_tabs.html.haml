@@ -2,19 +2,19 @@
   %li{class: action_name == 'show' ? :active : nil}
     = link_to profile_path do
       %i.icon-large.icon-list-alt
-      =t('.overview')
+      =t('users.profile.show.title')
 
   %li{class: action_name == 'photos' ? :active : nil}
     = link_to profile_photos_path do
       %i.icon-large.icon-picture
-      =t('.pictures')
+      =t('users.profile.photos.title')
 
   %li{class: action_name == 'newsletter' ? :active : nil}
     = link_to newsletter_profile_path do
       %i.icon-large.icon-envelope
-      =t('.newsletter')
+      =t('users.profile.newsletter.title')
 
   %li{class: action_name == 'edit' || action_name == 'update' ? :active : nil}
     = link_to edit_profile_path do
       %i.icon-large.icon-user
-      =t('.profile')
+      =t('users.profile.edit.title')

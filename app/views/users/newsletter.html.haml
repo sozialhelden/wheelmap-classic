@@ -1,12 +1,12 @@
 - content_for :user_headline do
-  %h2=t('profile.newsletter.title')
+  %h2=t('users.profile.newsletter.title')
 
 = render layout: 'profile' do
 
   .tab-pane.active.user-newsletter
     /%p=t('.newsletter_text')
     %p.user-newsletter-text
-      =t('profile.newsletter.text')
+      =t('users.profile.newsletter.text')
 
     :plain
       <div id="wufoo-m1bguls20yb7dj2"></div>

@@ -1,11 +1,11 @@
 - content_for :user_headline do
-  %h2.headline=t('.headline.edit_profile')
+  %h2.headline=t('users.profile.edit.title')
 
 = render layout: 'profile' do
   .tab-pane.active
     .user-form
       = semantic_form_for @user, url: profile_path, html: { class: 'form-horizontal', id: "edit_user"} do |form|
-        = form.inputs :name => 'Deine Benutzerdaten' do
+        = form.inputs :name => t('users.profile.edit.legends.user_data') do
           = form.input :first_name, :label => t('activerecord.attributes.user.first_name'), :autofocus => true
           = form.input :last_name, :label => t('activerecord.attributes.user.last_name')
           = form.input :email
@@ -19,7 +19,7 @@
 
       - if @user.authentication_token
         = semantic_form_for :user, :url => reset_token_profile_path, html: { class: 'form-horizontal'},  :method => :post do |form|
-          = form.inputs :name => 'API'do
+          = form.inputs :name => 'API' do
             = form.input :authentication_token, :input_html => {:readonly => :readonly, :disabled => :disabled}
 
           = form.actions do

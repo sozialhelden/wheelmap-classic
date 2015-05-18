@@ -1,26 +1,26 @@
 - content_for :user_headline do
   %h2
     - if @user.first_name.present?
-      = t('.greeting.personalized', name: @user.first_name)
+      = t('users.profile.show.greeting.personalized', name: @user.first_name)
     - else
-      = t('.greeting.anonymously')
+      = t('users.profile.show.greeting.anonymously')
 
 
 = render layout: 'profile' do
   .tab-pane.active
-    %p=t('.explanation_text')
+    %p=t('users.profile.show.text')
 
-    %h5 Du hast
+    %h5=t('users.profile.show.overview.text')
 
     .row-fluid
       %div
         .span6
-          = "#{@user.tag_counter} Orte markiert"
+          =t('users.profile.show.overview.pois_marked', count: @user.tag_counter)
         .span6
-          = "#{@user.create_counter} Orte hinzugefügt"
+          =t('users.profile.show.overview.pois_added', count: @user.create_counter)
 
       %div
         .span6
-          = "#{@user.edit_counter} Orte bearbeitet"
+          =t('users.profile.show.overview.pois_edited', count: @user.edit_counter)
         .span6
-          = "#{@user.photos.count} Photos hochgeladen."
+          =t('users.profile.show.overview.photos_uploaded', count: @user.photos.count)

@@ -108,18 +108,36 @@ en:
       headline: Oh, our fault
       info: Our search service was temporarily not available.
       repeat_search: Retry search
-  users:
-    profile:
-      explanation_text: "This is a simple text that will explain what users see here ..."
-      greeting:
-        anonymously: Hello you
-        personalized: Hello %{name}
-      headline:
-        edit_profile: Edit profile
-        overview: Your Account
-        your_photos: Your photos
-    tabs:
-      account: Account
-      images: Images
-      overview: Overview
 
+    users:
+      profile:
+        newsletter:
+          title: Newsletter
+          text: Mit dem Wheelmap-Newsletter bleibst Du auf dem Laufenden. Keine Angst, wir spamen Dich nicht zu. Maximal ein Mal im Monat kriegst Du elektronische Post von uns.
+          label: Ja, haltet mich über wheelmap auf dem laufenden.
+        show:
+          title: Übersicht
+          text: Übersichts Text
+          greeting:
+            anonymously: Hallo Du
+            personalized: Hallo %{name}
+          overview:
+            text: Du hast
+            pois_marked:
+              one: '%{count} Ort markiert'
+              other: '%{count} Orte markiert'
+            pois_added:
+              one: '%{count} Ort hinzugefügt'
+              other: '%{count} Orte hinzugefügt'
+            pois_edited:
+              one: '%{count} Ort bearbeitet'
+              other: '%{count} Orte bearbeitet'
+            photos_uploaded:
+              one: '%{count} Bild hochgelanden'
+              other: '%{count} Bilder hochgelanden'
+        photos:
+          title: Bilder
+        edit:
+          title: Profil
+          legends:
+            user_data: Deine Benutzerdaten
