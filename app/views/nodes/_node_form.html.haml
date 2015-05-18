@@ -38,12 +38,12 @@
     .control-group
       = form.label :website, t('activerecord.attributes.poi.website'), class: 'control-label'
       .controls.controls-row{ class: @node.errors.include?(:website) ? 'has_error' : nil }
-        = form.input_field :website, placeholder: t('activerecord.attributes.poi.website')
+        = form.input_field :website, placeholder: t('activerecord.attributes.poi.website'), pattern: '.*'
         = form.error :website
     .control-group
       = form.label :phone, t('activerecord.attributes.poi.phone'), class: 'control-label'
       .controls.controls-row{ class: @node.errors.include?(:phone) ? 'has_error' : nil }
-        = form.input_field :phone, placeholder: t('activerecord.attributes.poi.phone')
+        = form.input_field :phone, placeholder: t('activerecord.attributes.poi.phone'), pattern: '.*'
         = form.error :phone
 
   %fieldset
