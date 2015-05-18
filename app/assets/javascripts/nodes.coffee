@@ -96,7 +96,14 @@ addFlashMessage = (type, message) ->
   delay = message.split(' ').length / 0.00333333333 + 0.5 # based on 200 WpM
 
   setTimeout (()-> $message.addClass('in')), 0
-  setTimeout (()-> $message.removeClass('in')), delay
+  setTimeout (()->
+    $message.removeClass('in')
+
+    if ($.support.transition)
+      $message.one $.support.transition.end, -> $message.remove()
+    else
+      $message.remove()
+  ), delay
 
   $message
 
