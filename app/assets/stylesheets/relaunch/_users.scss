@@ -69,7 +69,7 @@
 
       a {
         line-height: $baseFontSize * 3;
-        padding: 0 $baseFontSize * 2;
+        padding: 0 $baseFontSize * 2 0 $baseFontSize;
         color: $yellow-gray;
         opacity: .5;
         text-decoration: none;
@@ -105,7 +105,7 @@
       }
 
       [class^="icon-"] {
-        width: $baseFontSize * 2;
+        width: $baseFontSize * 3;
         display: inline-block;
         text-align: center;
       }
