@@ -109,35 +109,35 @@ en:
       info: Our search service was temporarily not available.
       repeat_search: Retry search
 
-    users:
-      profile:
-        newsletter:
-          title: Newsletter
-          text: Mit dem Wheelmap-Newsletter bleibst Du auf dem Laufenden. Keine Angst, wir spamen Dich nicht zu. Maximal ein Mal im Monat kriegst Du elektronische Post von uns.
-          label: Ja, haltet mich über wheelmap auf dem laufenden.
-        show:
-          title: Übersicht
-          text: Übersichts Text
-          greeting:
-            anonymously: Hallo Du
-            personalized: Hallo %{name}
-          overview:
-            text: Du hast
-            pois_marked:
-              one: '%{count} Ort markiert'
-              other: '%{count} Orte markiert'
-            pois_added:
-              one: '%{count} Ort hinzugefügt'
-              other: '%{count} Orte hinzugefügt'
-            pois_edited:
-              one: '%{count} Ort bearbeitet'
-              other: '%{count} Orte bearbeitet'
-            photos_uploaded:
-              one: '%{count} Bild hochgelanden'
-              other: '%{count} Bilder hochgelanden'
-        photos:
-          title: Bilder
-        edit:
-          title: Profil
-          legends:
-            user_data: Deine Benutzerdaten
+  users:
+    profile:
+      newsletter:
+        title: Newsletter
+        text: Stay up to date with the newsletter from Wheelmap. No worries, we won't spam you. You'll hear from us once a month at most.
+        label: Yes, keep me updated about Wheelmap.
+      show:
+        title: Overview
+        text_html: "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team"
+        greeting:
+          anonymously: Hello there
+          personalized: Hello %{name}
+        overview:
+          text: You have
+          pois_marked:
+            one: 'marked %{count} place'
+            other: 'marked %{count} places'
+          pois_added:
+            one: 'added %{count} place'
+            other: 'added %{count} places'
+          pois_edited:
+            one: 'edited %{count} place'
+            other: 'edited %{count} placess'
+          photos_uploaded:
+            one: 'uploaded %{count} photo'
+            other: 'uploaded %{count} photos'
+      photos:
+        title: Photos
+      edit:
+        title: Profile
+        legends:
+          user_data: Your account information

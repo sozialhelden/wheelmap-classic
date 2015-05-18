@@ -103,10 +103,10 @@ de:
       newsletter:
         title: Newsletter
         text: Mit dem Wheelmap-Newsletter bleibst Du auf dem Laufenden. Keine Angst, wir spamen Dich nicht zu. Maximal ein Mal im Monat kriegst Du elektronische Post von uns.
-        label: Ja, haltet mich über wheelmap auf dem laufenden.
+        label: Ja, haltet mich über Wheelmap auf dem Laufenden.
       show:
         title: Übersicht
-        text: Übersichts Text
+        text_html: "Hallo,<br>\nherzlich Willkommen (zurück) bei Wheelmap.org!<br>\nWenn Du Dich mit Wheelmap.org noch vertrauter machen möchtest, kannst du z.B. im <a href=\"http://wheelmap.org/blog/\">Blog</a> stöbern oder die Antworten zu den <a href=\"http://wheelmap.org/about/faqs/\">Häufig gestellten Fragen</a> durchlesen. Unter <a href=\"http://wheelmap.org/projekte/\">Projekte</a> findest Du Anregungen, wie Du Dich lokal noch mehr einbringen kannst. Bleib in KontaktUm weiter mit uns in Kontakt zu bleiben, bestellst Du am besten den Newsletter und folgst uns auf <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> und <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Wir freuen uns darauf, mit Dir ins Gespräch zu kommen und Deine Meinung zu hören!<br>\nUnd jetzt viel Spaß beim Mappen!<br>\nDas Wheelmap-Team"
         greeting:
           anonymously: Hallo Du
           personalized: Hallo %{name}
