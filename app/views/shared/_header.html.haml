@@ -1,0 +1,32 @@
+#header
+  #logo
+    = link_to '/', :title => t('wheelmap.logo.title') do
+      - if Rails.application.assets.find_asset "wm_logo_#{I18n.locale}.png"
+        = image_tag "wm_logo_#{I18n.locale}.png", :size => '300x85', :alt => t('wheelmap.logo.alt')
+      - else
+        = image_tag "wm_logo_en.png", :size => '300x85', :alt => t('wheelmap.logo.alt')
+  %nav.links
+    - if user_signed_in?
+      = link_to t('header.navigation.profile'), edit_profile_path
+      = link_to t('devise.sign_out.headline'), destroy_user_session_path
+    - elsif admin_user_signed_in?
+      = link_to "ADMIN", admin_dashboard_path
+      = link_to t('devise.sign_out.headline'), destroy_admin_user_session_path
+    - else
+      = link_to t('devise.sign_in.headline'), new_user_session_path
+    = link_to t('header.navigation.what_is_wheelmap'), community_about_url
+    = link_to t('header.navigation.press'), community_press_url
+    = link_to t('header.navigation.imprint'), community_imprint_url
+    = link_to t('header.navigation.feedback'), 'http://wheelmap.uservoice.com/forums/31554-general', :id => 'feedback_link', :rel => 'nofollow'
+    = link_to t('header.navigation.newsletter'), community_newsletter_url, :id => 'newsletter_link', :rel => 'nofollow'
+    %select{:onchange => 'location.href=this.options[this.selectedIndex].value'}
+      - I18n.available_locales.map(&:to_s).sort.each do |locale|
+        %option{:value => url_for_locale(request.url, locale), :selected => (I18n.locale.to_s.downcase == locale.to_s.downcase)}=Languages[locale.to_s]
+  #searchbar
+    %form{:action => '/search', :class => 'formtastic'}
+      = text_field_tag :search, '', :placeholder => t('header.searchbar.placeholder'), :autocomplete => 'off', :value => params[:q] ? params[:q] : nil, :name => 'q'
+      %button(type="submit")= t('header.searchbar.find')
+      .or-add-place
+        .or= t('or')
+        = link_to t('header.searchbar.add_place'), new_node_path, :class => 'button add-place', :id => 'createlink', :title => t('header.searchbar.title_add_place'), :rel => 'nofollow'
+
