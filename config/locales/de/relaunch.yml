@@ -97,3 +97,9 @@ de:
       headline: Oh, unser Fehler
       info: Unser Suchdienst war kurzzeitig nicht verfügbar.
       repeat_search: Suche wiederholen
+
+  profile:
+    newsletter:
+      title: Newsletter
+      text: Mit dem Wheelmap-Newsletter bleibst Du auf dem Laufenden. Keine Angst, wir spamen Dich nicht zu. Maximal ein Mal im Monat kriegst Du elektronische Post von uns.
+      label: Ja, haltet mich über wheelmap auf dem laufenden.

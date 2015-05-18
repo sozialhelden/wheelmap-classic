@@ -1,18 +1,29 @@
 - content_for :user_headline do
-  %h2=t('.newsletter')
+  %h2=t('profile.newsletter.title')
 
 = render layout: 'profile' do
 
-  .tab-pane.active
+  .tab-pane.active.user-newsletter
     /%p=t('.newsletter_text')
-    %p
-      Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate
+    %p.user-newsletter-text
+      =t('profile.newsletter.text')
 
-    %form{:method => 'POST', :action => 'users/newsletter'}
-      %input{:type => 'checkbox', :value => '1'}
-      =t('Newsletter abonnieren (1x im Monat)')
-
-      %fieldset.form-actions
-        %input{type: 'submit', value: 'Speichern'}
-
-
+    :plain
+      <div id="wufoo-m1bguls20yb7dj2"></div>
+      <script type="text/javascript">var m1bguls20yb7dj2;(function(d, t) {
+        var s = d.createElement(t), options = {
+          'userName':'sozialhelden',
+          'formHash':'m1bguls20yb7dj2',
+          'autoResize':true,
+          'height':'342',
+          'async':true,
+          'host':'wufoo.com',
+          'header':'show',
+          'ssl':true
+        };
+        s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+        s.onload = s.onreadystatechange = function() {
+        var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+        try { m1bguls20yb7dj2 = new WufooForm();m1bguls20yb7dj2.initialize(options);m1bguls20yb7dj2.display(); } catch (e) {}};
+        var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+      })(document, 'script');</script>
