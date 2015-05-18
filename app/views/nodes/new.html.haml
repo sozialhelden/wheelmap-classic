@@ -1,18 +1,15 @@
-#container.nodes-new
-  .content
-    #map_wrapper
-      #minimap.create-node
-      = link_to t('.link.large_map'), root_path, :onclick => "location=permalink('#{root_path}');return false;", :class => 'hide', :id => 'show-on-large-map'
+#map_wrapper
+  #minimap.create-node
+  = link_to t('.link.large_map'), root_path, :onclick => "location=permalink('#{root_path}');return false;", :class => 'hide', :id => 'show-on-large-map'
 
-    #accessibility
-      = semantic_form_for @node, :as => :node, :url => {:controller => 'nodes', :action => 'create'} do |form|
-        = hidden_field_tag "zoom", params[:zoom] || 18
-        .inputs-wrapper
-          = render :partial => 'inputs', :object => @node, :locals => {:form => form}
+#accessibility
+  = semantic_form_for @node, :as => :node, :url => {:controller => 'nodes', :action => 'create'} do |form|
+    = hidden_field_tag "zoom", params[:zoom] || 18
+    = render :partial => 'inputs', :object => @node, :locals => {:form => form}
 
-        = form.actions do
-          = form.action :submit, :label => t('formtastic.labels.create')
-          %p.hint= t('devise.mandatory')
+    = form.actions do
+      = form.action :submit, :label => t('formtastic.labels.create')
+      %p.hint= t('devise.mandatory')
 
 - content_for :head do
   %title= t('.header.title')
