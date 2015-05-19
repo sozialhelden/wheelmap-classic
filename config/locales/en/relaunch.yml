@@ -137,6 +137,7 @@ en:
             other: 'uploaded %{count} photos'
       photos:
         title: Photos
+        empty: You haven't upload any photos yet.
       edit:
         title: Profile
         legends:

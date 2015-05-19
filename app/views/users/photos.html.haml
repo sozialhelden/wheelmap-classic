@@ -11,3 +11,6 @@
               = link_to_photo(photo)
         .center
           = paginate @photos
+      - else
+        .center
+          = t('users.profile.photos.empty')
