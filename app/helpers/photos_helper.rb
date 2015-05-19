@@ -18,7 +18,7 @@ module PhotosHelper
     html << link_to(link_name, :class => :thumbnail, :name => photo.id, :'data-lightbox' => 'gallery', :title => photo.caption) do
       photo_tag(photo, :thumb_iphone_retina)
     end
-    html << delete_button(photo)
+    html << delete_button(photo) unless photo.image_processing?
     html.html_safe
   end
 end
