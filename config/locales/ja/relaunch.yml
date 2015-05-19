@@ -96,3 +96,11 @@ ja:
       headline: こちらの間違いです。すみません。
       info: 検索機能が一時的に利用できない状態です。
       repeat_search: 検索を再実行
+  users:
+    profile:
+      newsletter:
+        title: ニュースレター
+      photos:
+        title: 写真
+      edit:
+        title: プロフィール

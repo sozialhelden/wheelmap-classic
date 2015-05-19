@@ -78,3 +78,9 @@ lt:
     timeout:
       headline: Oi, mūsų kaltė
       info: Mūsų paieškos tarnyba buvo laikinai neprieinama.
+  users:
+    profile:
+      newsletter:
+        title: Naujienlaiškis
+      edit:
+        title: Profilis

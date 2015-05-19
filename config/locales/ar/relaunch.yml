@@ -35,3 +35,11 @@ ar:
       share:
         facebook: فيس بوك
         twitter: تويتر
+  users:
+    profile:
+      newsletter:
+        title: أخبار الموقع
+      photos:
+        title: صور
+      edit:
+        title: الحساب

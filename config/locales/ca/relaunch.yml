@@ -42,3 +42,11 @@ ca:
     timeout:
       headline: Ups, error nostre
       repeat_search: Reiniciar la rerca
+  users:
+    profile:
+      newsletter:
+        title: Butlletí
+      photos:
+        title: Fotos
+      edit:
+        title: Perfil

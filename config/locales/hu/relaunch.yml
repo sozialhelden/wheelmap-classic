@@ -97,3 +97,11 @@ hu:
       headline: Ó, a mi hibánk
       info: A keresési funkciónk átmenetileg nem volt elérhető.
       repeat_search: Próbáld újra
+  users:
+    profile:
+      newsletter:
+        title: Hírlevél
+      photos:
+        title: Fotók
+      edit:
+        title: Profil

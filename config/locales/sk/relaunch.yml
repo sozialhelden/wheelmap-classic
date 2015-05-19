@@ -94,3 +94,11 @@ sk:
       headline: Uh, naša chyba
       info: Naše vyhľadávanie bolo dočasne nedostupné.
       repeat_search: Hľadať znova
+  users:
+    profile:
+      newsletter:
+        title: Spravodaj
+      photos:
+        title: Fotky
+      edit:
+        title: Profil

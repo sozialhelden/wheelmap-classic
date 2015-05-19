@@ -97,3 +97,11 @@ fr:
       headline: Oh, notre faute
       info: Notre service de recherche était temporairement indisponible.
       repeat_search: Ressayer la recherche
+  users:
+    profile:
+      newsletter:
+        title: Lettre d'information
+      photos:
+        title: album de photos
+      edit:
+        title: Profil

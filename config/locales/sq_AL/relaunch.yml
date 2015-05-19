@@ -93,3 +93,11 @@ sq_AL:
       headline: Oh, gabimi jonë
       info: Shërbimi jonë i kërkimit ishte përkohësisht jo i disponueshëm.
       repeat_search: Riprovo kërkimin
+  users:
+    profile:
+      newsletter:
+        title: Fletushkë
+      photos:
+        title: Foto
+      edit:
+        title: Profil

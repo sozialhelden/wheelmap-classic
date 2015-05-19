@@ -31,3 +31,7 @@ nb:
     node_edit:
       details: Detaljer
       edit: Rediger
+  users:
+    profile:
+      newsletter:
+        title: Nyhetsbrev

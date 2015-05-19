@@ -93,8 +93,17 @@ ru:
         ticker:
           one: '1 результат:'
           few: '%{count} результата:'
+          many: '%{count} результатов:'
           other: '%{count} результатов:'
     timeout:
       headline: Ой, наша ошибка
       info: 'К сожалению, поиск временно не доступнен '
       repeat_search: Повторить поиск
+  users:
+    profile:
+      newsletter:
+        title: Подписаться на обновления
+      photos:
+        title: Фото
+      edit:
+        title: Профиль

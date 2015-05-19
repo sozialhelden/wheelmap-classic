@@ -94,3 +94,9 @@ pt_BR:
         address_housenumber: N°
         address_postcode: CEP
         address_city: Cidade
+  users:
+    profile:
+      newsletter:
+        title: Newsletter
+      edit:
+        title: Perfis

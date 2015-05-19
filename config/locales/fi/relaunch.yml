@@ -22,3 +22,7 @@ fi:
       share:
         facebook: Facebook
         twitter: Twitter
+  users:
+    profile:
+      photos:
+        title: Kuvia

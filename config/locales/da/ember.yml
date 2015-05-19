@@ -1,4 +1,22 @@
 da:
+  models:
+    category:
+      prompt: "Vælg en kategori"
+    node_type:
+      prompt: "Vælg en type"
+    node:
+      info_edit_position: "Denne lokalitet vil blive vist på Wheelmap som vist ovenfor. Hvis markører ikke er korrekt så kan du  <a href=\"%{url}\">ændre positionen på OpenStreetMap.</a>"
+      mail:
+        subject: "[Wheelmap] Problem med %{headline}"
+        body: "(Skriv kun på engelsk eller tysk.)\n\nHej Sozialhelden,\nDer er noget galt med lokalitet: %{url\n\nProblemet er:"
   actions:
+    send: Send
     save: Gem
     cancel: Fortryd
+  errors:
+    models:
+      node:
+        website:
+          invalid: "Websidens adresse er ikke gyldig."
+        phone:
+          invalid: "Telefonnummeret er ikke gyldigt. Det skal have følgende format: +49 30 234567"

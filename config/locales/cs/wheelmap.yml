@@ -24,6 +24,7 @@ cs:
       equal_to: "musí být rovno %{count}"
       even: "musí být sudé číslo"
       exclusion: "je vyhrazeno pro jiný účel"
+      expired: "vypršel, prosím, požádejte si o nový"
       greater_than: "musí být větší než %{count}"
       greater_than_or_equal_to: "musí být větší nebo rovno %{count}"
       inclusion: "není v seznamu povolených hodnot"
@@ -100,6 +101,7 @@ cs:
       website: "Stránka:"
       wheelchair: "Přístupnost pro vozíčkáře?"
       wheelchair_description: "Poznámka k přístupnosti:"
+      wheelchair_toilet: "Bezbariérová koupelna:"
     titles:
       basic: "Základní údaje"
       optional: "Více informací <span class=\"addition\">(všechny položky jsou povinné)</span>"
@@ -172,8 +174,12 @@ cs:
       wheelchair:
         limit:
           headline: "Všechny %{type} s omezeným přístupem pro vozíčkáře v %{city} (%{count})"
+        'no':
+          headline: "Všechny nebezbariérové %{type} v %{city} (%{count})"
         unknown:
           headline: "Všechny %{type} ve městě %{city} s neznámou dostupností pro vozíčkáře (%{count})"
+        'yes':
+          headline: "Všechny bezbariérové přístupy %{type} v %{city} (%{count})"
   layouts:
     application:
       banner:
@@ -181,6 +187,7 @@ cs:
   node:
     address:
       city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
     tags:
       phone: "Telefon:"
       website: "Stránka:"
@@ -219,6 +226,7 @@ cs:
       link:
         back: zpět
         large_map: Zvětšit
+        listing: "Všechna místa typu '%{type}' v %{city}"
         upload: "Nahrát obrázek"
       more_data_from: "O tomhle místě je více údajů, zkontroloval:"
       show-in-osm: OpenStreetMap
@@ -281,8 +289,10 @@ cs:
   search:
     index:
       search:
+        for: "Vyhledávání \"%{q}\""
         not_found: "Nepovedlo se najít žádná místa!"
   splash:
+    countline: "%{count} míst, které již byly označeny."
     headline: "Každý může přidat bezbariérová ​​místa!"
     start: Start
     step1: "Klikněte na místo, které znáte"
@@ -305,12 +315,21 @@ cs:
       long: "%A %d. %B %Y %H:%M"
       short: "%d. %m. %H:%M"
     pm: pm
+  toiletstatus:
+    'no': "Bez bezbariérového přístupu na WC"
+    unknown: "Neznámý stav toalet."
+    'yes': "Bezbariérový přístup na WC"
+    what_is:
+      'no': "Vnitřní šířka dveřních otvorů je min. 90 cm, volný prostor min. 150 x 150 cm, bezbariérová výška WC sedátka, skládací úchyt zábradlí a přístupné umyvadlo."
+      'yes': "Vnitřní šířka dveřních otvorů je min. 90 cm, volný prostor min. 150 x 150 cm, bezbariérová výška WC sedátka, skládací úchyt zábradlí a přístupné umyvadlo."
+      unknown: "Pomozte s označením stavu WC!"
   user_sessions:
     create:
       activation:
         notice: "Váš účet je nyní aktivován!"
       error:
         notice: "E-mail a heslo se neshodují."
+      notice: "Úspěch!"
     destroy:
       notice: "Nashledanou, vraťe se brzy!"
     new:
@@ -324,6 +343,7 @@ cs:
       welcome:
         headline: "Vítejte na wheelmap"
         set_password_for_mobile: "Máte smartphone? Určete si heslo aby jste mohli Wheelmap používat i na cestách ve vašem iPhone nebo telefonu s Androidem."
+        text: "Jak vás můžeme kontaktovat? Tyto informace můžete později změnit ve vašem profilu."
     edit:
       headline:
         your_images: "Vaše obrázky"
@@ -337,6 +357,7 @@ cs:
       a_project_of: "Projekt od"
       based_on: "Založeno na"
       become_a_supporter: "Staňte se příznivcem"
+      main_supporter: "Hlavní zastánce"
     itunes:
       alt: "Logo AppStore"
       title: "Stáhněte si aplikaci pro iPhone!"
@@ -344,16 +365,22 @@ cs:
       alt: "Wheelmap Logo - najít bezbariérová ​​místa"
       title: "Wheelmap - najít bezbariérová ​​místa"
     what_is:
+      fully_accessible: "Vstup bez schodů, všechny pokoje bez schodů, přístupná toaleta, pokud je obvyklé v daném místě"
+      limited_accessible: "Vstup má schod (max. výška 7cm), většina pokojů je bez schodů, toaleta není přístupná"
+      not_accessible: "Vstup je strmý nebo má několik schodů, pokoje nejsou přístupné"
       unknown_accessible: "Pomozte s označením místa!"
   will_paginate:
     next_label: "Další &#8594;"
     page_entries_info:
       multi_page: "Zobrazuju %{model} %{from} - %{to} z celkového počtu %{count}"
+      multi_page_html: "Zobrazuji %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> z celkového počtu <b>%{count}</b>"
       single_page:
         one: "Zobrazuji 1 %{model}"
         other: "Zobrazuji všech %{count} %{model}"
         zero: "%{model} nenalezeno"
       single_page_html:
+        one: "Zobrazuji <b>1</b> %{model}"
+        other: "Zobrazuji <b>všech&nbsp;%{count}</b> %{model}"
         zero: "%{model} nenalezeno"
     page_gap: "&hellip;"
     previous_label: "&#8592; Předchozí"

@@ -67,6 +67,7 @@ da:
     show_unaccessible_places: "ikke kørestolstilgængeligt"
   formtastic:
     hints:
+      email: "Vi behandler din adresse fortroligt og vil aldrig udsende spam!"
       lat: "Flyt markøren på kortet til den korrekte position"
       osm_username: "Ikke medlem endnu?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Opret en Openstreetmap konto nu</a>"
       password: "(efterlad feltet tomt, hvis du ikke ønsker at ændre dette)"
@@ -98,6 +99,7 @@ da:
       website: "Hjemmeside:"
       wheelchair: " Kørestolstilgængeligt?"
       wheelchair_description: "Tilgængeligheds kommentar:"
+      wheelchair_toilet: "Kørestolsbruger badeværelse:"
     titles:
       basic: "Basisinformation"
       optional: "Mere information <span class=\"addition\">(alle felter er valgfrit)</span>"
@@ -309,6 +311,14 @@ da:
       long: "%A, %e. %B %Y, %H:%M"
       short: "%e. %b %Y, %H:%M"
     pm: pm
+  toiletstatus:
+    'no': "Ingen kørestolstilgængeligt toilet"
+    unknown: "Toilet status ukendt"
+    'yes': "Kørestolstilgængeligt toilet"
+    what_is:
+      'no': "Dørens indre bredde min. 90 cm,  frit område på min. 150x150 cm, kørestols-højde reguleret toiletsæde, klapsammenlige håndtag og tilgængelig håndvask. "
+      'yes': "Dørens indre bredde min. 90 cm,  frit område på min. 150x150 cm, kørestols-højde reguleret toiletsæde, klapsammenlige håndtag og tilgængelig håndvask. "
+      unknown: "Hjælp med at få angivet toiletstatus!"
   user_sessions:
     create:
       activation:

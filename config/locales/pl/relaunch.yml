@@ -100,3 +100,11 @@ pl:
       headline: Ups, to nasza wina
       info: Usługa wyszukiwania była tymczasowo niedostępna
       repeat_search: ponów wyszukiwanie
+  users:
+    profile:
+      newsletter:
+        title: Newsletter
+      photos:
+        title: Zdjęcia
+      edit:
+        title: Profil

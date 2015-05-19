@@ -1,4 +1,3 @@
----
 zh:
   activerecord:
     attributes:
@@ -11,3 +10,7 @@ zh:
         address_housenumber: 没有
         address_postcode: 邮政编码
         address_city: 城市
+  users:
+    profile:
+      newsletter:
+        title: 简讯

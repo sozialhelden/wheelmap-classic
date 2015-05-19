@@ -1,4 +1,3 @@
----
 is:
   activerecord:
     attributes:
@@ -11,3 +10,7 @@ is:
         address_housenumber: Nei
         address_postcode: Póstfang
         address_city: Borg
+  users:
+    profile:
+      edit:
+        title: Prófílnum

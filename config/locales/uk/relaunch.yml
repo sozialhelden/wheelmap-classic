@@ -98,3 +98,11 @@ uk:
       headline: У нас проблема, вибачте.
       info: Наша система пошуку була тимчасово недоступна.
       repeat_search: Спробувати пошукати ще раз
+  users:
+    profile:
+      newsletter:
+        title: Інформаційний бюлетень
+      photos:
+        title: Фото
+      edit:
+        title: Профіль

@@ -1,4 +1,3 @@
----
 hi:
   activerecord:
     attributes:
@@ -11,3 +10,7 @@ hi:
         address_housenumber: नहीं
         address_postcode: पिन कोड
         address_city: शहर
+  users:
+    profile:
+      newsletter:
+        title: 'न्यूज़लैटर, संदेश पत्र, सामाचार पत्र '

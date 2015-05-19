@@ -97,3 +97,11 @@ es:
       headline: Oh, fallo nuestro
       info: Nuestro servicio de búsqueda estuvo no disponible
       repeat_search: Reintentar la búsqueda
+  users:
+    profile:
+      newsletter:
+        title: Boletín de noticias
+      photos:
+        title: Fotos
+      edit:
+        title: Perfil

@@ -98,3 +98,11 @@ cs:
       headline: Oh, naše chyba
       info: Vyhledávání bylo dočasně nedostupné.
       repeat_search: Hledat znovu
+  users:
+    profile:
+      newsletter:
+        title: Novinky
+      photos:
+        title: Fotky
+      edit:
+        title: Profil

@@ -93,3 +93,11 @@ it:
       headline: Oh, errore nostro
       info: Il servizio di ricerca non è al momento disponibile.
       repeat_search: Riprova la ricerca
+  users:
+    profile:
+      newsletter:
+        title: Newsletter
+      photos:
+        title: Foto
+      edit:
+        title: Profilo

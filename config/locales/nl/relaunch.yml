@@ -80,3 +80,9 @@ nl:
       headline: sorry, werkt niet
       info: Onze zoekdienst was tijdelijk buiten werk
       repeat_search: Herhaal de zoekopdracht
+  users:
+    profile:
+      newsletter:
+        title: Nieuwsbrief
+      edit:
+        title: Profiel

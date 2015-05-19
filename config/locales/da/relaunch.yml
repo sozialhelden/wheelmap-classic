@@ -7,7 +7,10 @@ da:
         address: Adresse
         website: Hjemmeside
         phone: Telefon
+        note: Note
         address_street: Vejnavn
+        address_housenumber: Husnummer
+        address_postcode: Postnummer
         address_city: By
   faq:
     answers:
@@ -77,6 +80,7 @@ da:
   search:
     index:
       no-results:
+        headline: Vi beklager meget, men vi kan ikke finde et sted ved navn  "%{query}".
         hint:
           example: <strong>Eksempel</strong> London, United Kingdom
           info: Vores søgeservice virker kun med navn eller adresseoplysninger. Søg kun efter navnet på et sted eller adressen, fx gadenavn og/eller byen. Søgning efter typen af stederne fx restaurant eller biograf vil ikke virke!
@@ -93,3 +97,11 @@ da:
       headline: Åh undskyld vores fejl
       info: Vores søgeservice var midlertidigt nede.
       repeat_search: Prøv søgningen igen
+  users:
+    profile:
+      newsletter:
+        title: Nyhedsbrev
+      photos:
+        title: Fotos
+      edit:
+        title: Profil

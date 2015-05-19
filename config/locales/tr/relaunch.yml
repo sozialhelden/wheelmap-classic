@@ -50,3 +50,11 @@ tr:
       headline: Ah, bizim hatamız
       info: Arama hizmetimiz geçici olarak devredışı.
       repeat_search: Yeniden ara
+  users:
+    profile:
+      newsletter:
+        title: Haberler
+      photos:
+        title: Fotoğraflar
+      edit:
+        title: Profil

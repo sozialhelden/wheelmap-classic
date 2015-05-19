@@ -1,4 +1,3 @@
----
 lv:
   activerecord:
     attributes:
@@ -11,3 +10,9 @@ lv:
         address_housenumber: Nr
         address_postcode: pasta indekss
         address_city: Pilsēta
+  users:
+    profile:
+      newsletter:
+        title: Paziņojumi par jaunumiem
+      edit:
+        title: Profils

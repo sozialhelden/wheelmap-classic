@@ -95,3 +95,11 @@ bg:
       headline: Упс, наша грешка
       info: Съжаляваме, функцията за търсене е временно недостъпна
       repeat_search: Опитай търсенето отново
+  users:
+    profile:
+      newsletter:
+        title: Newsletter
+      photos:
+        title: Снимки
+      edit:
+        title: Профил

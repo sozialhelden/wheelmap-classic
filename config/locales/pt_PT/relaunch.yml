@@ -96,3 +96,11 @@ pt_PT:
       headline: Desculpe, enganou-se.
       info: O nosso serviço de pesquisa está temporariamente indisponível.
       repeat_search: Volte a tentar
+  users:
+    profile:
+      newsletter:
+        title: Newsletter
+      photos:
+        title: Fotografias
+      edit:
+        title: Perfil

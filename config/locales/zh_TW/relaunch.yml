@@ -91,3 +91,11 @@ zh_TW:
       headline: 喔! 我們出了點狀況
       info: 我們的搜尋服務目前暫停。
       repeat_search: 重試搜尋
+  users:
+    profile:
+      newsletter:
+        title: 電子報
+      photos:
+        title: 相館
+      edit:
+        title: 檔案

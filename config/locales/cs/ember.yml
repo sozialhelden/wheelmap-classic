@@ -5,6 +5,7 @@ cs:
     node_type:
       prompt: "Zvolte typ"
     node:
+      info_edit_position: "Poloha se zobrazí na Wheelmap, tak jak je uvedeno výše. Pokud značka není na správném místě, můžete <a href=\"%{url}\"> změnit pozici na OpenStreetMap. </a>"
       mail:
         subject: "[Wheelmap] Problém s %{headline}"
         body: "(Pište prosím pouze anglicky nebo německy). \n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:"

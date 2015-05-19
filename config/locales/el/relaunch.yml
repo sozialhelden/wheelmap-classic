@@ -97,3 +97,11 @@ el:
       headline: Αχ, δικό μας λάθος
       info: Η υπηρεσία αναζήτησης δεν ήταν διαθέσιμη προσωρινά.
       repeat_search: Επανάληψη αναζήτησης
+  users:
+    profile:
+      newsletter:
+        title: Ενημερωτικό Δελτίο
+      photos:
+        title: Φωτογραφίες
+      edit:
+        title: προφίλ

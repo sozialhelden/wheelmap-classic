@@ -93,3 +93,11 @@ sv:
       headline: Oj, vårt fel
       info: Vår söktjänst var tillfälligt otillgänglig.
       repeat_search: Sök igen
+  users:
+    profile:
+      newsletter:
+        title: Nyhetsbrev
+      photos:
+        title: Fotografier
+      edit:
+        title: Profil
