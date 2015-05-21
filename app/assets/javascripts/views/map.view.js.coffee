@@ -22,12 +22,14 @@ Wheelmap.SpinMixin = Ember.Mixin.create
         @spinner = null
 
 Wheelmap.TileLayer = EmberLeaflet.TileLayer.extend
-  tileUrl: 'http://{s}.tiles.mapbox.com/v4/sozialhelden.map-iqt6py1k/{z}/{x}/{y}.png64?access_token=pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g'
+  tileUrl: (()->
+    "http://{s}.tiles.mapbox.com/v4/sozialhelden.map-iqt6py1k/{z}/{x}/{y}#{'@2x' if L.Browser.retina}.png64?" +
+      "access_token=pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g"
+  ).property()
   options:
     maxZoom: 19
     minZoom: 2
     attribution: 'Data: <a href="http://www.openstreetmap.org/copyright">&copy; OpenStreetMap contributors</a>, Icons: CC-By-SA <a href="http://mapicons.nicolasmollet.com/">Nicolas Mollet</a>'
-    detectRetina: true
 
 Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   mapBinding: 'parentLayer'
