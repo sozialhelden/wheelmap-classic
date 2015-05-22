@@ -10,6 +10,7 @@ OSM_IMPORT = <<-XML
     <tag k="amenity" v="restaurant" />
     <tag k="cuisine" v="spanish" />
     <tag k="name" v="Mar &amp; Sol" />
+    <tag k="operator" v="Adolf Präg GmbH &amp; Co. KG"/>
     <tag k="wheelchair" v="yes" />
   </node>
 </osm>
@@ -65,6 +66,7 @@ describe PlanetReader do
     poi.status.should eql(1)
     poi.tags['addr:city'].should eql("Berlin")
     poi.tags['name'].should eql("Mar & Sol")
+    poi.tags['operator'].should eql "Adolf Präg GmbH & Co. KG"
     poi.tags['amenity'].should eql("restaurant")
     poi.tags['wheelchair'].should eql("yes")
   end

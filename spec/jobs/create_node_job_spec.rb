@@ -10,7 +10,7 @@ describe CreateNodeJob do
   let(:changeset) { Rosemary::Changeset.new(:id => 12345, :open? => true) }
 
   subject {
-    CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'yes', 'amenity' => 'bar', 'name' => 'White horse' }, user, 'create_iphone')
+    CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'yes', 'amenity' => 'bar', 'name' => 'White horse', 'operator' => 'Adolf Präg GmbH & Co. KG' }, user, 'create_iphone')
   }
 
   it "should create a Node" do
@@ -23,6 +23,7 @@ describe CreateNodeJob do
       node.tags['wheelchair'].should eq 'yes'
       node.tags['amenity'].should eq 'bar'
       node.tags['name'].should eq 'White horse'
+      node.tags['operator'].should eq 'Adolf Präg GmbH &amp; Co. KG'
     end
     job = subject
     successes, failures = Delayed::Worker.new.work_off

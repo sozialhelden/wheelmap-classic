@@ -1,3 +1,4 @@
+require 'htmlentities'
 class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client, :source)
 
   def self.enqueue(lat, lon, tags, user, source)
@@ -10,6 +11,11 @@ class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client, :source)
     tags.delete("wheelchair") if tags["wheelchair"] == 'unknown'
 
     client = Rosemary::OauthClient.new(user.access_token)
+
+    coder = HTMLEntities.new(:expanded)
+    tags.each do |k,v|
+      tags[k] = coder.encode(v)
+    end
     new(lat, lon, tags, user, client, source).tap do |job|
       Delayed::Job.enqueue(job)
     end
