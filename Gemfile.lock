@@ -368,7 +368,7 @@ GEM
       arel (>= 2.0.6)
       rgeo (>= 0.3.20)
     rmagick (2.13.2)
-    rosemary (0.3.12)
+    rosemary (0.4.3)
       activemodel (>= 3.0.20)
       builder (>= 2.1.2)
       httparty (>= 0.10.0)
