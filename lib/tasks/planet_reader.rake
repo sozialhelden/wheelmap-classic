@@ -7,7 +7,6 @@ MERGED_FILE="#{VAR_DIR}/merged.osc"
 SHAPE_FILE="#{VAR_DIR}/shapes.osc"
 STATE_FILE="#{WORKING_DIR}/state.txt"
 BACKUP_FILE="#{WORKING_DIR}/state.old"
-LOCKFILE="tmp/replicate.lock"
 DOWNLOAD_LOCK="#{WORKING_DIR}/download.lock"
 
 require 'rake'
@@ -38,12 +37,6 @@ def ensure_state_file_exists
     STDERR.puts "ERROR: #{STATE_FILE} is missing!"
     STDERR.puts "       Go to http://planet.openstreetmap.org/minute-replicate/000/ and find the corresponding"
     STDERR.puts "       state file for the imported planet.dump"
-  end
-end
-
-def ensure_lockfile_doesnt_exist
-  if File.exists? LOCKFILE
-    raise "Lockfile exists: #{LOCKFILE}"
   end
 end
 
@@ -78,14 +71,6 @@ def merge_shape_replication_files
   if File.exists? "#{MERGED_FILE}.new"
     FileUtils.mv "#{MERGED_FILE}.new", MERGED_FILE, :verbose => true
   end
-end
-
-def create_lock_file
-  FileUtils.touch LOCKFILE, :verbose => true
-end
-
-def remove_lock_file
-  FileUtils.rm_rf LOCKFILE, :verbose => true
 end
 
 def backup_state_file
@@ -168,11 +153,9 @@ namespace :osm do
     desc 'Sync current database with osm planet data'
     task :sync => :environment do
 
-      ensure_lockfile_doesnt_exist
       ensure_state_file_exists
 
       begin
-        create_lock_file
 
         backup_state_file
 
@@ -209,8 +192,6 @@ namespace :osm do
         STDERR.puts e.message
         STDERR.puts e.backtrace
         restore_state_file
-      ensure
-        remove_lock_file
       end
     end
   end
