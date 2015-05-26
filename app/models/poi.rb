@@ -58,9 +58,9 @@ class Poi < ActiveRecord::Base
   acts_as_api
   include Api::Poi
 
+  before_validation :update_node_type
   before_save :set_status
   before_save :set_version
-  before_save :set_node_type
   before_save :set_updated_at
 
   # Spezielle Find-Methode fuer den Zugriff auf alle POIs in einer
@@ -347,6 +347,21 @@ class Poi < ActiveRecord::Base
       self.status = WHEELCHAIR_STATUS_VALUES[:unknown]
     else
       self.status = WHEELCHAIR_STATUS_VALUES[wheelchair.to_sym]
+    end
+  end
+
+  def update_node_type
+    # Check if node type id changed
+    if changed_attributes["node_type_id"].present? &&
+       current_node_type = NodeType.find(changed_attributes["node_type_id"])
+      # remove corresponding tags from previous node_type
+      tags.reject! do |key,value|
+        key   == current_node_type.osm_key &&
+        value == current_node_type.osm_value
+      end
+    end
+    if node_type
+      tags[node_type.osm_key] = node_type.osm_value
     end
   end
 

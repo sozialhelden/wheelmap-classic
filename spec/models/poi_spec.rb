@@ -42,6 +42,7 @@ describe Poi do
     it "is not be valid without existing node type" do
       subject.tags = {'name' => 'a_name', 'wheelchair' => 'yes'}
       subject.type = :invalid
+      subject.node_type_id = nil
       subject.should_not be_valid
       subject.type = 'alcohol'
       subject.should be_valid

@@ -149,18 +149,22 @@ describe NodesController do
       FactoryGirl.create(:poi, :osm_id => 84644746)
     end
 
+    let! :node_type do
+      FactoryGirl.create(:node_type, osm_key: 'amenity', osm_value: 'restaurant', identifier: 'restaurant')
+    end
+
     describe "signed_in" do
 
       before(:each) do
         @another_user.should be_app_authorized
         sign_in @another_user
-
+        poi.tags['amenity'].should == 'bar'
       end
 
       it "should create UpdateJob for given node" do
         stub_request(:get, @full_url).to_return(:status => 200, :body => "#{Rails.root}/spec/fixtures/node.xml", :headers => { 'Content-Type' => 'text/xml'})
          lambda{
-            put(:update, :id => 84644746, :node => {:wheelchair => 'yes', :name => 'A nice place', :type => 'cafe'})
+            put(:update, :id => 84644746, :node => {:wheelchair => 'yes', :name => 'A nice place', :node_type_id => node_type.id })
             response.code.should == '302'
             flash_cookie["notice"].should == "Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert."
           }.should change(UpdateJob, :count).by(1)
@@ -170,13 +174,14 @@ describe NodesController do
       it "should have correct values for UpdateJob" do
         stub_request(:get, @full_url).to_return(:status => 200, :body => "#{Rails.root}/spec/fixtures/node.xml", :headers => { 'Content-Type' => 'text/xml'})
         lambda{
-          put(:update, :id => 84644746, :node => {:id => 84644746, :wheelchair => 'yes', :name => 'A nice place', :type => 'cafe'})
+          put(:update, :id => 84644746, :node => {:wheelchair => 'yes', :name => 'A nice place', :node_type_id => node_type.id })
         }.should change(UpdateJob, :count).by(1)
         response.should redirect_to(node_path(84644746))
         job = YAML.load(UpdateJob.last.handler)
         job.client.class.should == Rosemary::OauthClient
         job.element_id.should == 84644746
         job.tags['wheelchair'].should == 'yes'
+        job.tags['amenity'].should == 'restaurant'
       end
 
       it "should not update node if wheelchair is missing" do
