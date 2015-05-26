@@ -94,8 +94,7 @@ describe NodesController do
       @another_user.update_attributes(:terms => true, :privacy_policy => true)
       node.save!
       get(:edit, :id => node.osm_id)
-
-      expect(response).to redirect_to root_path(anchor: "/nodes/#{node.osm_id}/edit")
+      expect(response.code).to eql '200'
     end
 
   end
@@ -248,7 +247,7 @@ describe NodesController do
       it "should allow editing node if node is a way" do
         p = FactoryGirl.create(:poi, :osm_id => -28)
         response = get(:edit, :id => -28)
-        expect(response).to redirect_to root_path(anchor: "/nodes/-28/edit")
+        response.code.should == "200"
       end
 
       it "should redirect if app is not connected" do

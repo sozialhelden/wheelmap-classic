@@ -151,7 +151,7 @@ describe Poi do
           :housenumber => "99",
           :city => "Entenhausen",
           :postcode => "98976",
-          :phone => "0123456",
+          :phone => "+49 30 123456",
           :website => "http://foo.bar.com"
         }
 
