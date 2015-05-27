@@ -42,6 +42,9 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       if update_wheelchair?
         user.increment!(:tag_counter) if user.terms?
         update_poi!
+      # elsif update_toilet?
+      #   user.increment!(:toilet_counter) if user.terms?
+      #   update_poi!
       else
         user.increment!(:edit_counter) if user.terms?
       end
@@ -89,6 +92,11 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
     tags.keys == ['wheelchair']
   end
 
+  def update_toilet?
+    # Check if the job updates the wheelchair tag only
+    tags.keys == ['toilets:wheelchair']
+  end
+
   def update_poi!
     begin
       logger.info "SET poi to new wheelchair status: #{tags["wheelchair"]}"
@@ -96,6 +104,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       osm_id = osm_id * -1 if type == 'way'
       p = Poi.find osm_id
       p.wheelchair = tags["wheelchair"]
+      p.wheelchair_toilet = tags["toilets:wheelchair"]
       p.save(:validate => false)
     rescue Exception => e
       logger.error e.message
