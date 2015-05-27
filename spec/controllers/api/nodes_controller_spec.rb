@@ -172,13 +172,13 @@ describe Api::NodesController do
 
     it "should compose source from user agent" do
       put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'yes', :api_key => @user.authentication_token})
-      assigns(:source).should eql 'tag_android'
+      assigns(:source).should eql 'toilet_android'
     end
 
     it "should compose source from user agent" do
       request.env['HTTP_USER_AGENT'] = 'Wheelmap iOS/1.2.4'
       put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'yes', :api_key => @user.authentication_token})
-      assigns(:source).should eql 'tag_iphone'
+      assigns(:source).should eql 'toilet_iphone'
     end
   end
 
