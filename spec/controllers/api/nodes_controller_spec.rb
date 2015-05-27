@@ -292,6 +292,82 @@ describe Api::NodesController do
       }.should change(Delayed::Job, :count).by(1)
     end
 
+    it "should deny update when telephone number is misformatted" do
+      @user.oauth_token = :a_token
+      @user.oauth_secret = :a_secret
+      @user.save!
+
+      expect {
+        put(:update, {:id => @node.id,
+                      :lat => 52.0,
+                      :lon => 13.4,
+                      :type => 'bar',
+                      :name => 'Cocktails on the rocks',
+                      :wheelchair => 'no',
+                      :phone => '30 123456',
+                      :api_key => @user.authentication_token
+                     })
+         expect(response.status).to eql 400
+       }.to change(Delayed::Job, :count).by(0)
+
+    end
+    it "should accept update for telephone number" do
+      @user.oauth_token = :a_token
+      @user.oauth_secret = :a_secret
+      @user.save!
+
+      expect {
+        put(:update, {:id => @node.id,
+                      :lat => 52.0,
+                      :lon => 13.4,
+                      :type => 'bar',
+                      :name => 'Cocktails on the rocks',
+                      :wheelchair => 'no',
+                      :phone => '+49 30 123456',
+                      :api_key => @user.authentication_token
+                     })
+        expect(response.status).to eql 202
+      }.to change(Delayed::Job, :count).by(1)
+    end
+
+    it "should deny update when url is misformatted" do
+      @user.oauth_token = :a_token
+      @user.oauth_secret = :a_secret
+      @user.save!
+
+      expect {
+        put(:update, {:id => @node.id,
+                      :lat => 52.0,
+                      :lon => 13.4,
+                      :type => 'bar',
+                      :name => 'Cocktails on the rocks',
+                      :wheelchair => 'no',
+                      :website => 'www.google.de',
+                      :api_key => @user.authentication_token
+                     })
+         expect(response.status).to eql 400
+       }.to change(Delayed::Job, :count).by(0)
+
+    end
+    it "should accept update for url" do
+      @user.oauth_token = :a_token
+      @user.oauth_secret = :a_secret
+      @user.save!
+
+      expect {
+        put(:update, {:id => @node.id,
+                      :lat => 52.0,
+                      :lon => 13.4,
+                      :type => 'bar',
+                      :name => 'Cocktails on the rocks',
+                      :wheelchair => 'no',
+                      :website => 'http://www.ferienwohnungen-bad-urach.de',
+                      :api_key => @user.authentication_token
+                     })
+        expect(response.status).to eql 202
+      }.to change(Delayed::Job, :count).by(1)
+    end
+
     it "should compose source from user agent" do
       @user.oauth_token = :a_token
       @user.oauth_secret = :a_secret
