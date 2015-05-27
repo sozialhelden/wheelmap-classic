@@ -16,6 +16,8 @@ namespace :report do
     queue.add :user_with_oauth    => { :source => hostname, :measure_time => rounded_time, :value => User.where('oauth_token IS NOT NULL AND oauth_secret IS NOT NULL').count }
     queue.add :login_total        => { :source => hostname, :measure_time => rounded_time, :value => User.sum(:sign_in_count), :type => :counter }
 
+    colors = {'website' => '#4CA8D7', 'android' => '#79A600', 'iphone' => '#EEE'}
+
     if Counter.today.changed_within?(2)
       %w{ tag_website tag_iphone tag_android toilet_website toilet_iphone toilet_android update_website update_iphone update_android create_website create_iphone create_android search_website search_iphone search_android }.each do |attrib|
         queue.add attrib => { :source => hostname, :measure_time => rounded_time, :value => Counter.sum(attrib), :type => :counter }
@@ -85,23 +87,21 @@ namespace :report do
     end
     queue.submit unless queue.empty?
 
-    Region.find_each do |region|
-      %w{ yes no limited }.each do |status|
-        metric_name = "#{region.slug.name}_#{status}"
-
-        params = {
-          :attributes => {
-            :color => colors[status],
-            :display_units_long => 'Orte',
-            :display_units_short => 'Orte'
-          }
+    %w{ yes no limited }.each do |status|
+      region_names = Region.joins(:slug).pluck("slugs.name").map{|r| "#{r}_#{status}"}
+      params = {
+        :names => region_names,
+        :attributes => {
+          :color => colors[status],
+          :display_units_long => 'Orte',
+          :display_units_short => 'Orte'
         }
-        begin
-          Librato::Metrics.update metric_name, params
-          sleep 1
-        rescue Exception => e
-          STDERR.puts "Failed to update metric #{metric_name}"
-        end
+      }
+      begin
+        Librato::Metrics.update_metrics(params)
+        sleep 1
+      rescue Exception => e
+        STDERR.puts "Failed to update metrics"
       end
     end
   end
