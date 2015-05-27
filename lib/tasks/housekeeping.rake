@@ -133,13 +133,14 @@ namespace :housekeeping do
 
   desc 'Fix wrongly imported ampersand characters'
   task :fix_ampersand => :environment do
-    Poi.where("tags LIKE '%&#38;%'").find_each() do |poi|
+    ampersand = "&#38;"
+    Poi.where("tags LIKE '%#{ampersand}%'").find_each() do |poi|
       poi.tags.select do |key,value|
-        value.include?("&#38;")
+        value.include?(ampersand)
       end.each do |key,value|
-        poi.tags[key] = value.gsub("&#38;", "&")
+        poi.tags[key] = value.gsub(ampersand, "&")
       end
-      poi.save
+      poi.save(validate: false)
     end
   end
 
