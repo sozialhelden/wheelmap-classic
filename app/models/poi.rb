@@ -75,6 +75,9 @@ class Poi < ActiveRecord::Base
   scope :limited_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:limited]}
   scope :unknown_accessibility, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:unknown]}
   scope :tagged, :conditions => ['status < ?', WHEELCHAIR_STATUS_VALUES[:unknown]]
+  scope :toilet_yes, :conditions => {:toilet => true}
+  scope :toilet_no, :conditions => {:toilet => false}
+  scope :toilet_tagged, :conditions => "toilet IS NOT NULL"
   scope :with_status,  lambda {|status| {:conditions => {:status => status}}}
   scope :with_toilet,  lambda {|toilet| {:conditions => {:toilet => toilet}}}
   #scope :search,       lambda {|search| {:conditions => ['tags LIKE ?', "%#{search}%"]}}

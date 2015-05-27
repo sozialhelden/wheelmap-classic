@@ -11,6 +11,9 @@ namespace :report do
     queue.add :wheelchair_no      => { :source => hostname, :measure_time => rounded_time, :value => Poi.not_accessible.count     }
     queue.add :wheelchair_limited => { :source => hostname, :measure_time => rounded_time, :value => Poi.limited_accessible.count }
     queue.add :wheelchair_marked  => { :source => hostname, :measure_time => rounded_time, :value => Poi.tagged.count }
+    queue.add :toilet_yes         => { :source => hostname, :measure_time => rounded_time, :value => Poi.toilet_yes.count }
+    queue.add :toilet_no          => { :source => hostname, :measure_time => rounded_time, :value => Poi.toilet_no.count }
+    queue.add :toilet_total       => { :source => hostname, :measure_time => rounded_time, :value => Poi.toilet_tagged.count }
     queue.add :user_total         => { :source => hostname, :measure_time => rounded_time, :value => User.count }
     queue.add :user_with_osm_id   => { :source => hostname, :measure_time => rounded_time, :value => User.where('osm_id IS NOT NULL').count }
     queue.add :user_with_oauth    => { :source => hostname, :measure_time => rounded_time, :value => User.where('oauth_token IS NOT NULL AND oauth_secret IS NOT NULL').count }
