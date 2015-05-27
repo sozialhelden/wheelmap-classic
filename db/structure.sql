@@ -76,6 +76,9 @@ CREATE TABLE `counters` (
   `search_website` int(11) DEFAULT '0',
   `search_iphone` int(11) DEFAULT '0',
   `search_android` int(11) DEFAULT '0',
+  `toilet_website` int(11) DEFAULT '0',
+  `toilet_iphone` int(11) DEFAULT '0',
+  `toilet_android` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -281,6 +284,7 @@ CREATE TABLE `users` (
   `privacy_policy_accepted_at` datetime DEFAULT NULL,
   `reset_password_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `reset_password_sent_at` datetime DEFAULT NULL,
+  `toilet_counter` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_authentication_token` (`authentication_token`),
   KEY `index_users_on_oauth_token` (`oauth_token`),
@@ -288,3 +292,9 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO schema_migrations (version) VALUES ('20110107131649');
+
+INSERT INTO schema_migrations (version) VALUES ('20150129111045');
+
+INSERT INTO schema_migrations (version) VALUES ('20150527103420');
+
+INSERT INTO schema_migrations (version) VALUES ('20150527103620');

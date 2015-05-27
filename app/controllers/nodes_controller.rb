@@ -82,7 +82,7 @@ class NodesController < ApplicationController
   def update_toilet
     @node = Poi.find(params[:id])
     updating_user = (user_signed_in? && current_user.app_authorized?) ? current_user : wheelmap_visitor
-    UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, { 'toilets:wheelchair' => params[:toilet] }, updating_user, source('tag'))
+    UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, { 'toilets:wheelchair' => params[:toilet] }, updating_user, source('toilet'))
 
     respond_to do |wants|
       wants.js{ render :json => {:message => t('nodes.update_wheelchair.successfull', :status => t("toiletstatus.#{params[:toilet]}"), :name => @node.headline), :toilet => params[:toilet] }.to_json}

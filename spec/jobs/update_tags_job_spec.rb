@@ -92,7 +92,7 @@ describe UpdateTagsJob do
     Rosemary::Api.should_receive(:new).and_return(api)
     api.should_receive(:find_element).and_return(unedited_node)
     api.should_receive(:save) { |node, _| node.tags['addr:housenumber'].should eql 99 }
-    Counter.should_receive(:increment)
+    Counter.should_receive(:increment).with('update_iphone')
     User.any_instance.should_receive(:increment!).with(:edit_counter)
     successes, failures = Delayed::Worker.new.work_off
     successes.should eql 1

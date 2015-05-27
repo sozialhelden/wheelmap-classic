@@ -17,7 +17,7 @@ namespace :report do
     queue.add :login_total        => { :source => hostname, :measure_time => rounded_time, :value => User.sum(:sign_in_count), :type => :counter }
 
     if Counter.today.changed_within?(2)
-      %w{ tag_website tag_iphone tag_android update_website update_iphone update_android create_website create_iphone create_android search_website search_iphone search_android }.each do |attrib|
+      %w{ tag_website tag_iphone tag_android toilet_website toilet_iphone toilet_android update_website update_iphone update_android create_website create_iphone create_android search_website search_iphone search_android }.each do |attrib|
         queue.add attrib => { :source => hostname, :measure_time => rounded_time, :value => Counter.sum(attrib), :type => :counter }
       end
     end

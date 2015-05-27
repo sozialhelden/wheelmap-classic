@@ -42,9 +42,9 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       if update_wheelchair?
         user.increment!(:tag_counter) if user.terms?
         update_poi!
-      # elsif update_toilet?
-      #   user.increment!(:toilet_counter) if user.terms?
-      #   update_poi!
+      elsif update_toilet?
+        user.increment!(:toilet_counter) if user.terms?
+        update_poi!
       else
         user.increment!(:edit_counter) if user.terms?
       end
