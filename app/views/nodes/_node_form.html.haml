@@ -4,7 +4,7 @@
     .control-group
       = form.label :name
       .controls.controls-row
-        = form.input :name, label: false
+        = form.input :name, label: false, autofocus: true
     .control-group
       = form.label :node_type_id, t('activerecord.attributes.poi.type'), class: 'control-label'
       .controls.controls-row
