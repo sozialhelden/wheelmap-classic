@@ -1,18 +1,16 @@
-= simple_form_for @node, as: :node, url: { controller: 'nodes', action: 'update', id: @node }, html: { method: :put, class: 'node-form form-horizontal' } do |form|
+= simple_form_for @node, as: :node, url: { controller: 'nodes', action: 'update', id: @node }, html: { method: :put, class: 'node-form form-horizontal', novalidate: true } do |form|
   %fieldset
 
     .control-group
-      = form.label :name, class: 'control-label'
+      = form.label :name
       .controls.controls-row{ class: @node.errors.include?(:name) ? 'has_error' : nil }
-        = form.input_field :name
-        = form.error :name
+        = form.input :name, label: false
     .control-group
-      = form.label :category_for_node, t('activerecord.attributes.poi.type'), class: 'control-label'
+      = form.label :node_type_id, t('activerecord.attributes.poi.type'), class: 'control-label'
       .controls.controls-row{ class: @node.errors.include?(:node_type_id) ? 'has_error' : nil }
         .custom-select
-          = form.input_field :node_type_id, as: :grouped_select, collection: Category.all, group_method: :node_types
+          = form.input :node_type_id, as: :grouped_select, collection: Category.all, group_method: :node_types, prompt: false, label: false
           %i.icon-caret-down.pull-right
-        = form.error :node_type_id
 
   %fieldset
 
@@ -20,40 +18,33 @@
       = form.label :street, t('activerecord.attributes.poi.address'), class: 'control-label'
       .controls.controls-row{ class: @node.errors.include?(:postcode) || @node.errors.include?(:city) ? 'has_error' : nil }
         .span10
-          = form.input_field :street, placeholder: t('activerecord.attributes.poi.address_street')
-          = form.error :street
+          = form.input :street, placeholder: t('activerecord.attributes.poi.address_street'), label: false
         .span2
-          = form.input_field :housenumber, placeholder: t('activerecord.attributes.poi.address_housenumber')
-          = form.error :housenumber
+          = form.input :housenumber, placeholder: t('activerecord.attributes.poi.address_housenumber'), label: false
       .controls.controls-row{ class: @node.errors.include?(:postcode) || @node.errors.include?(:city) ? 'has_error' : nil }
         .span3
-          = form.input_field :postcode, placeholder: t('activerecord.attributes.poi.address_postcode')
-          = form.error :postcode
+          = form.input :postcode, placeholder: t('activerecord.attributes.poi.address_postcode'), label: false
         .span9
-          = form.input_field :city, placeholder: t('activerecord.attributes.poi.address_city')
-          = form.error :city
+          = form.input :city, placeholder: t('activerecord.attributes.poi.address_city'), label: false
 
   %fieldset
 
     .control-group
-      = form.label :website, t('activerecord.attributes.poi.website'), class: 'control-label'
+      = form.label :website
       .controls.controls-row{ class: @node.errors.include?(:website) ? 'has_error' : nil }
-        = form.input_field :website, placeholder: t('activerecord.attributes.poi.website'), pattern: '.*'
-        = form.error :website
+        = form.input :website, placeholder: t('activerecord.attributes.poi.website'), pattern: '^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$', label: false, as: :url
     .control-group
-      = form.label :phone, t('activerecord.attributes.poi.phone'), class: 'control-label'
+      = form.label :phone
       .controls.controls-row{ class: @node.errors.include?(:phone) ? 'has_error' : nil }
-        = form.input_field :phone, placeholder: t('activerecord.attributes.poi.phone'), pattern: '.*'
-        = form.error :phone
+        = form.input :phone, placeholder: t('activerecord.attributes.poi.phone'), label: false, input_html: { pattern: '^\+[0-9]+[\s-][0-9]+[\s-][0-9]+$' }
 
   %fieldset
 
     .control-group
       = form.label :wheelchair_description, t('activerecord.attributes.poi.note'), class: 'control-label'
       .controls.controls-row{ class: @node.errors.include?(:wheelchair_description) ? 'has_error' : nil }
-        = form.input_field :wheelchair_description, placeholder: t('activerecord.attributes.poi.note'), as: :text, rows: 5, cols: nil
+        = form.input :wheelchair_description, placeholder: t('activerecord.attributes.poi.note'), as: :text, input_html: { rows: 5, cols: nil }, label: false
 
   .form-actions
-    %button.btn.btn-primary.pull-right{ type: :submit }
-      = t('actions.save')
+    = form.button :button, t('actions.save'), class: 'btn-primary pull-right'
     = link_to t('actions.cancel'), node_path, id: @node.id, class: 'btn pull-left wheelmap-btn'
