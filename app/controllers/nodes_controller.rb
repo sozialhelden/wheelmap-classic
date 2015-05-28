@@ -95,7 +95,7 @@ class NodesController < ApplicationController
     @node.attributes = node_params
     @node.photos.map(&:save) # save photos regardless if poi is valid
     if @node.valid?
-      UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user, source('update'))
+      UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user, source('update'), @node.tags_to_be_deleted)
 
       respond_to do |wants|
         wants.js   { render :text => 'OK' }

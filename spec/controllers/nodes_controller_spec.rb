@@ -150,7 +150,7 @@ describe NodesController do
     end
 
     let! :node_type do
-      FactoryGirl.create(:node_type, osm_key: 'amenity', osm_value: 'restaurant', identifier: 'restaurant')
+      FactoryGirl.create(:node_type, osm_key: 'tourism', osm_value: 'hotel', identifier: 'hotel')
     end
 
     describe "signed_in" do
@@ -181,7 +181,8 @@ describe NodesController do
         job.client.class.should == Rosemary::OauthClient
         job.element_id.should == 84644746
         job.tags['wheelchair'].should == 'yes'
-        job.tags['amenity'].should == 'restaurant'
+        job.tags['tourism'].should == 'hotel'
+        job.tags['amenity'].should be_blank
       end
 
       it "should not update node if wheelchair is missing" do

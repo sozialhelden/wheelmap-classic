@@ -11,7 +11,7 @@ describe UpdateTagsJob do
   let(:node)      { Rosemary::Node.new(poi.to_osm_attributes) }
   let(:user)      { FactoryGirl.create(:authorized_user) }
   let(:changeset) { Rosemary::Changeset.new(:id => 12345) }
-  let(:unedited_node) { Rosemary::Node.new(:tags => { 'addr:housenumber' => 10 }) }
+  let(:unedited_node) { Rosemary::Node.new(:tag => { 'addr:housenumber' => 10, 'amenity' => 'pub' }) }
 
   subject { UpdateTagsJob.enqueue(poi.id.abs, 'node', { 'addr:housenumber' => 99 }, user, 'update_iphone') }
 
@@ -135,6 +135,20 @@ describe UpdateTagsJob do
     Counter.should_not_receive(:increment)
     User.any_instance.should_not_receive(:increment!)
     successes, failures = Delayed::Worker.new.work_off
+    successes.should eql 1
+    failures.should eql 0
+  end
+
+  it "deletes tags from unedited node" do
+    unedited_node.tags["addr:housenumber"].should_not be_blank
+    job = UpdateTagsJob.enqueue(poi.id.abs, 'node', { 'wheelchair' => 'no' }, user, 'update_iphone', {"amenity" => "pub"} )
+    api = mock(:find_or_create_open_changeset => changeset)
+    Rosemary::Api.should_receive(:new).and_return(api)
+    api.should_receive(:find_element).and_return(unedited_node)
+    api.should_receive(:save)
+    successes, failures = Delayed::Worker.new.work_off
+    #unedited_node.tags["amenity"].should be_blank
+
     successes.should eql 1
     failures.should eql 0
 

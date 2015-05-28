@@ -1,5 +1,5 @@
-class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :source)
-  def self.enqueue(element_id, type, tags, user, source)
+class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :source, :tags_to_delete)
+  def self.enqueue(element_id, type, tags, user, source, tags_to_delete={})
     raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
 
     # Do not enqeue job if not in production or test environment
@@ -9,7 +9,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
     tags.delete("wheelchair") if tags["wheelchair"] == 'unknown'
 
     client = Rosemary::OauthClient.new(user.access_token)
-    new(element_id, type, tags, user, client, source).tap do |job|
+    new(element_id, type, tags, user, client, source, tags_to_delete).tap do |job|
       Delayed::Job.enqueue(job)
     end
   end
@@ -25,6 +25,19 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
 
       element = element_to_compare.dup
       element.tags.merge!(tags)
+      tags_to_delete.each do |delete_key,delete_value|
+        element.tags.reject! do |key,value|
+          key == delete_key &&
+          value == delete_value
+        end
+      end
+
+      # This loop is only here to make tests fail, actually.
+      element.tags.each do |key,value|
+        tags_to_delete.each do |delete_key,delete_value|
+          raise "Tags to be deleted are still to be found." if element.tags.include?(delete_key) && element.tags[delete_key] == delete_value
+        end
+      end
 
       # Use spaceship operator for comparision:
       # as "element == element_to_compare" is false because of object_id

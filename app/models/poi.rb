@@ -353,14 +353,29 @@ class Poi < ActiveRecord::Base
     end
   end
 
+  def current_node_type
+    if changed_attributes["node_type_id"].present?
+      @current_node_type ||=  NodeType.find(changed_attributes["node_type_id"])
+    end
+  end
+
+  def tags_to_be_deleted
+    if current_node_type
+      {
+        current_node_type.osm_key => current_node_type.osm_value,
+        current_node_type.alt_osm_key =>current_node_type.alt_osm_value
+      }.select{|k,v| k.present? && v.present?}
+    else
+      {}
+    end
+  end
+
   def update_node_type
-    # Check if node type id changed
-    if changed_attributes["node_type_id"].present? &&
-       current_node_type = NodeType.find(changed_attributes["node_type_id"])
-      # remove corresponding tags from previous node_type
+    # remove corresponding tags from previous node_type
+    tags_to_be_deleted.each do |delete_key, delete_value|
       tags.reject! do |key,value|
-        key   == current_node_type.osm_key &&
-        value == current_node_type.osm_value
+        key   == delete_key &&
+        value == delete_value
       end
     end
     if node_type
