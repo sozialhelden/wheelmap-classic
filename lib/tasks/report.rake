@@ -94,11 +94,9 @@ namespace :report do
       region_names = Region.joins(:slug).pluck("slugs.name").map{|r| "#{r}_#{status}"}
       params = {
         :names => region_names,
-        :attributes => {
-          :color => colors[status],
-          :display_units_long => 'Orte',
-          :display_units_short => 'Orte'
-        }
+        :color => colors[status],
+        :display_units_long => 'Orte',
+        :display_units_short => 'Orte'
       }
       begin
         Librato::Metrics.update_metrics(params)
