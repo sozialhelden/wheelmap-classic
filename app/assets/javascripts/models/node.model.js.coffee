@@ -94,6 +94,16 @@ Wheelmap.Node = DS.Model.extend
     address.join(', ')
   ).property('street', 'housenumber', 'postcode', 'city')
 
+  bugsEmail: (()->
+    origin = window.location.protocol + '//' + window.location.host
+
+    href = 'bugs@wheelmap.org'
+    href += '?subject=' + encodeURIComponent(I18n.t('models.node.mail.subject', headline: this.get('headline')))
+    href += '&body=' + encodeURIComponent(I18n.t('models.node.mail.body', url: origin + this.get('editPath')))
+
+    'mailto:' + href
+  ).property('headline', 'editPath')
+
   icon: Ember.computed.readOnly('type.icon')
 
 Wheelmap.NodeAdapter = DS.ActiveModelAdapter.extend()
