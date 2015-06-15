@@ -1,4 +1,6 @@
 #header {
+  $btn-add-break: 1190px;
+
   width: 100%;
   height: $headerHeight;
   position: absolute;
@@ -65,13 +67,17 @@
       }
     }
     .btn-add {
-      @media screen and (max-width: 1024px) {
+      @media (max-width: $btn-add-break) {
         @include border-radius(3px);
       }
     }
   }
   .bootstrap-select {
     width: auto;
+  }
+
+  @media (max-width: $btn-add-break) {
+    .hidden-tablet { display: none !important; }
   }
 }
 
