@@ -266,7 +266,7 @@ class Poi < ActiveRecord::Base
   end
 
   def address?
-    !self.tags['addr:street'].present? || !self.tags['addr:city'].present?
+    self.tags['addr:street'].present? || self.tags['addr:city'].present?
   end
 
   def addressdetails
