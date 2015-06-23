@@ -89,10 +89,10 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'guard-cucumber', "1.2.2"
-  gem 'test-unit', '~> 3.0'
 end
 
 group :test do
+  gem 'test-unit', '~> 3.0'
   gem 'webmock', :require => nil
   gem 'factory_girl_rails'
   gem "capybara", "1.1.1"  # on mac, you need sudo port install libffi
