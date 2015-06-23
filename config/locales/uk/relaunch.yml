@@ -102,7 +102,35 @@ uk:
     profile:
       newsletter:
         title: Інформаційний бюлетень
+        text: Дізнавайтесь останні новини у бюлетні від Wheelmap. Не хвилюйтеся, ми не розсилаємо спам. Розсилка відбувається не частіше одного разу на місяць.
+        label: Так, надсилайте мені останні новини Wheelmap.
+      show:
+        title: Огляд
+        greeting:
+          anonymously: Вітаємо
+          personalized: Вітаємо, %{name}
+        overview:
+          text: У вас
+          pois_marked:
+            one: 'відмічено %{count} місце'
+            few: 'відмічено %{count} місця'
+            other: 'відмічено %{count} місць'
+          pois_added:
+            one: 'додано %{count} місце'
+            few: 'додано %{count} місця'
+            other: 'додано %{count} місць'
+          pois_edited:
+            one: 'змінено %{count} місце'
+            few: 'змінено %{count} місця'
+            other: 'змінено %{count} місць'
+          photos_uploaded:
+            one: 'вивантажено %{count} фотографію'
+            few: 'вивантажено %{count} фотографії'
+            other: 'вивантажено %{count} фотографій'
       photos:
         title: Фото
+        empty: Ви ще не вивантажили жодної фотографії.
       edit:
         title: Профіль
+        legends:
+          user_data: Інформація профілю

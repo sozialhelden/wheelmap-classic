@@ -101,7 +101,31 @@ da:
     profile:
       newsletter:
         title: Nyhedsbrev
+        text: Hold dig orienteret med nyhedsbrev fra Wheelmap. Ingen grund til bekymring vi ville ikke spamme dig. Du vil for det meste kun høre fra os en gang om måneden.
+        label: Ja tak, hold mig informeret om Wheelmap.
+      show:
+        title: Overblik
+        greeting:
+          anonymously: Hej derude
+          personalized: Hej %{name}
+        overview:
+          text: Du har
+          pois_marked:
+            one: 'markeret %{count} steder'
+            other: 'markeret %{count} steder'
+          pois_added:
+            one: 'tilføjet %{count}  steder'
+            other: 'tilføjet %{count}  steder'
+          pois_edited:
+            one: 'redigeret  %{count}  steder'
+            other: 'redigeret  %{count}  steder'
+          photos_uploaded:
+            one: 'uploadet %{count} billeder'
+            other: 'uploadet %{count} billeder'
       photos:
         title: Fotos
+        empty: Du har ikke oploadet nogle fotos endnu.
       edit:
         title: Profil
+        legends:
+          user_data: Din brugerkonto information

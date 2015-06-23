@@ -96,6 +96,7 @@ zh_TW:
       website: "網站："
       wheelchair: "輪椅無障礙？"
       wheelchair_description: "無障礙說明："
+      wheelchair_toilet: "無障礙浴室："
     titles:
       basic: "基本資料"
       optional: "更多資訊 <span class=\"addition\">(all fields are optional)</span>"
@@ -305,6 +306,12 @@ zh_TW:
       long: "%Y - %B -%d %H:%M"
       short: "%d %b %H:%M"
     pm: 下午
+  toiletstatus:
+    'no': "沒有輪椅無障礙廁所"
+    unknown: "廁所狀態不明"
+    'yes': "輪椅無障礙廁所"
+    what_is:
+      unknown: "請幫忙標記廁所的狀況!"
   user_sessions:
     create:
       activation:

@@ -31,7 +31,13 @@ nb:
     node_edit:
       details: Detaljer
       edit: Rediger
+    show:
+      share:
+        facebook: Facebook
+        twitter: Twitter
   users:
     profile:
       newsletter:
         title: Nyhetsbrev
+      photos:
+        title: Photos

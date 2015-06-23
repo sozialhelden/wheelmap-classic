@@ -7,6 +7,8 @@ zh_TW:
         address: 地址
         website: 網站
         phone: 電話
+        note: 筆記
+        address_street: 街道
         address_housenumber: 門牌號碼
         address_postcode: 郵遞區號
         address_city: 城市
@@ -82,11 +84,10 @@ zh_TW:
         try_this:
           address: 請提供更 <strong>詳細的地址</strong>.
           intro: '試試這個:'
+          spell_check: 請確認你輸入的 <strong>拼字</strong>。
       results:
         ticker:
-          one: '%{count}個結果：'
           other: '%{count} 個結果：'
-          spell_check: 請確認你輸入的 <strong>拼字</strong>。
     timeout:
       headline: 喔! 我們出了點狀況
       info: 我們的搜尋服務目前暫停。
@@ -95,7 +96,24 @@ zh_TW:
     profile:
       newsletter:
         title: 電子報
+      show:
+        title: 總覽
+        greeting:
+          personalized: 哈囉 %{name}
+        overview:
+          text: 你有
+          pois_marked:
+            other: '標記 %{count} 個地點'
+          pois_added:
+            other: '新增 %{count} 個地點'
+          pois_edited:
+            other: '編輯 %{count} 個地點'
+          photos_uploaded:
+            other: '上傳 %{count} 張照片'
       photos:
         title: 相館
+        empty: 你尚未上傳任何照片
       edit:
         title: 檔案
+        legends:
+          user_data: 您的帳號資訊

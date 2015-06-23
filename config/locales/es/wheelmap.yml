@@ -247,7 +247,7 @@ es:
       decimal_units:
         format: "%n %u"
         units:
-          billion: Millardo
+          billion: Billón
           million: Millón
           quadrillion: Trillón
           thousand: Mil

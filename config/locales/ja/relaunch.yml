@@ -100,7 +100,19 @@ ja:
     profile:
       newsletter:
         title: ニュースレター
+        text: Wheelmapからの最新ニュースレターをチェックしてください。多くても月に一号程度の発行をしますので、心配しなくても大丈夫です。
+        label: はい、Wheelmapに関する更新を維持します。
+      show:
+        title: 概要
+        greeting:
+          anonymously: こんにちは
+        overview:
+          pois_marked:
+            other: '%{count} 個の場所'
       photos:
         title: 写真
+        empty: 写真をアップロードしていません
       edit:
         title: プロフィール
+        legends:
+          user_data: あなたのアカウント情報
