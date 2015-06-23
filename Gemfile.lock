@@ -298,10 +298,11 @@ GEM
       polyamorous (~> 0.5.0)
     method_source (0.8.1)
     mime-types (1.25.1)
+    minitest (5.7.0)
     multi_json (1.11.1)
     multi_xml (0.5.3)
     multipart-post (2.0.0)
-    mysql2 (0.3.14)
+    mysql2 (0.3.18)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
@@ -534,6 +535,7 @@ DEPENDENCIES
   libxml-ruby
   memcache-client
   meta_search
+  minitest
   multipart-post
   mysql2
   newrelic_rpm
