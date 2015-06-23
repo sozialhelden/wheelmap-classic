@@ -36,7 +36,7 @@ set :bundle_jobs, 4
 set :linked_dirs, %w{ log tmp/var tmp/osmosis-working-dir tmp/cache tmp/sockets tmp/pids vendor/bundle public/system public/assets }
 
 set :rbenv_type, :system # :user or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.1.2'
+set :rbenv_ruby, '2.2.2'
 set :rbenv_custom_path, '/opt/rbenv'
 
 # Default value for default_env is {}

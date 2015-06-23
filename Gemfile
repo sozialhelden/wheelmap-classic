@@ -68,6 +68,7 @@ group :default do
   gem 'strong_parameters'
   gem 'apipie-rails'
   gem 'htmlentities', require: false
+  gem 'test-unit', '~> 3.0', require: false
 end
 
 group :assets do
@@ -92,7 +93,6 @@ group :test, :development do
 end
 
 group :test do
-  gem 'test-unit', '~> 3.0'
   gem 'webmock', :require => nil
   gem 'factory_girl_rails'
   gem "capybara", "1.1.1"  # on mac, you need sudo port install libffi
