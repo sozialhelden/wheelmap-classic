@@ -219,7 +219,7 @@ describe NodesController do
         lambda{
           post(:create, {:commit=>"Ort anlegen", :node => {:lat => '52.4', :lon => '13.9', :name => 'test name',
                :wheelchair => 'yes', :wheelchair_description => 'All good', :type => 'restaurant', :city=>"",
-               :housenumber=>"", :postcode=>"", :wheelchair_description=>"", :street=>"",:phone=>"", :website=>""}})
+               :housenumber=>"", :postcode=>"", :street=>"",:phone=>"", :website=>""}})
           response.code.should == '302'
           flash_cookie["notice"].should == "Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert."
         }.should change(CreateJob, :count).by(1)
