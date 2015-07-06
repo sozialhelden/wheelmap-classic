@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 group :default do
+  gem 'bundler', '>= 1.8.4'
   gem 'rails', '3.2.22'
   gem 'mysql2'
   gem 'activerecord-import', '<0.3.0', :require => false
@@ -79,7 +80,17 @@ group :assets do
   gem 'compass'
   gem 'compass-colors'
   gem 'compass-rails'
-  gem 'bootstrap-sass'
+  gem 'bootstrap-sass', '2.3.2.1'
+  gem 'react-rails', '~> 1.0'
+
+  source 'https://rails-assets.org' do
+    gem 'rails-assets-reflux'
+    gem 'rails-assets-react-router'
+    gem 'rails-assets-leaflet'
+    gem 'rails-assets-leaflet.locatecontrol'
+    gem 'rails-assets-lodash'
+    gem 'rails-assets-immutable'
+  end
 end
 
 group :test, :development do
