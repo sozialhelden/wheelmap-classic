@@ -32,11 +32,11 @@
     .control-group
       = form.label :website
       .controls.controls-row
-        = form.input :website, placeholder: t('activerecord.attributes.poi.website'), pattern: '^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$', label: false, as: :url
+        = form.input :website, placeholder: t('activerecord.attributes.poi.website'), pattern: '^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$', label: false, as: :url, hint: I18n.t('formtastic.hints.website')
     .control-group
       = form.label :phone
       .controls.controls-row
-        = form.input :phone, placeholder: t('activerecord.attributes.poi.phone'), label: false, input_html: { pattern: '^\+[0-9]+[\s-][0-9]+[\s-][0-9]+$' }
+        = form.input :phone, placeholder: t('activerecord.attributes.poi.phone'), label: false, input_html: { pattern: '^\+[0-9]+[\s-][0-9]+[\s-][0-9]+$' }, hint: I18n.t('formtastic.hints.phone')
 
   %fieldset
 

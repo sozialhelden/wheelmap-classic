@@ -890,9 +890,16 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     .error {
       color: #b94a48;
       margin-bottom: 0;
-      margin-top: 5px;
+      margin-top: 3px;
       display: block;
     }
+  }
+
+  .hint {
+    margin-bottom: 0;
+    margin-top: 3px;
+    color: #A39D97;
+    display: block;
   }
 }
 
