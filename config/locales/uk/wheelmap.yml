@@ -73,7 +73,6 @@ uk:
       lat: "Перемістіть маркер на карті у правильне положення"
       osm_username: "Ще не зареєстровані? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Створіть обліковий запис на OpenStreetMap</a>"
       password: "(Залиште порожнім, якщо не хочете змінювати)"
-      phone: "Наприклад: +38 044 1234567"
       website: "Наприклад: http://www.example.com"
     labels:
       category: "Категорія:"

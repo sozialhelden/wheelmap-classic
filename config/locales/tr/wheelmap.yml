@@ -70,7 +70,6 @@ tr:
       lat: "Işareti haritanın üzerinde doğru yere ulaşana kadar oynatın."
       osm_username: "Henüz üye değilmisiniz? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an Openstreetmap account now</a>"
       password: "(değistirmek istemiyorsanız, boş bırakın)"
-      phone: "Örneğin: +49 30 123456-78"
       website: "Örnegin: http://www.örnek.com"
     labels:
       category: "Tabaka:"

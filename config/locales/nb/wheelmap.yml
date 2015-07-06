@@ -67,7 +67,6 @@ nb:
       lat: "Flytt markøren på kartet til riktig sted"
       osm_username: "Fortsatt ikke medlem? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Opprett en OpenStreetMap-konto nå</a>\n"
       password: "(La den stå tom, hvis du ikke vil endre den)"
-      phone: "For eksempel +47 12345678"
       website: "For eksempel: http://www.example.com"
     labels:
       category: "Kategori:"
@@ -86,9 +85,11 @@ nb:
       password_confirmation: "Gjenta passord"
       phone: "Telefon:"
       postcode: "Postnummer:"
+      privacy_policy: "I accept paragraphs 1 and 2 of the data privacy agreement."
       reset: Nullstil
       save: Lagre
       street: "Gate:"
+      terms: "I accept the terms of use."
       type: "Type:"
       website: "Webside:"
       wheelchair: "Rullestoltilgjenglighet?"

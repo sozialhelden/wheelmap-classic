@@ -71,7 +71,6 @@ es:
       lat: "Mueve el marcador en el mapa a la posición correcta"
       osm_username: "¿Todavía no eres un miembro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\"> Crea una cuenta OpenStreetMap ahora</a>"
       password: "(dejar vacío si no quiere modificarlo)"
-      phone: "Por ejemplo: +49 30 123456-78"
       website: "Por ejemplo: http://www.example.com"
     labels:
       category: "Categoría:"

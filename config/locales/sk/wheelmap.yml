@@ -72,7 +72,6 @@ sk:
       lat: "Pohnite značkou na mape aby ste opravili polohu"
       osm_username: "Nie ste ešte členom? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Vytvorte si účet na OpenStreetMap</a>"
       password: "(nechajte prázdne ak nechcete zmeniť)"
-      phone: "Napríklad: +421 123 456789"
       website: "Napríklad: http://www.example.com"
     labels:
       category: "Kategória:"

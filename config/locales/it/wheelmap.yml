@@ -70,7 +70,6 @@ it:
       lat: "Sposta l'indicatore sulla mappa nella posizione coretta"
       osm_username: "Non sei ancora un membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Crea ora un account su Openstreetmap</a> "
       password: "(lascia vuoto se non vuoi cambiarlo)"
-      phone: "Per esempio: +39 050 12345-78"
       website: "Per esempio: http://www.example.com"
     labels:
       category: "Categoria:"

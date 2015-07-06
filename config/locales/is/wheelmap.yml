@@ -65,7 +65,6 @@ is:
       lat: "Færðu merkið á réttan stað á kortinu"
       osm_username: "Ekki meðlimur? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Fáðu þér Openstreetmap aðgang núna</a> "
       password: "(skildu eftir autt ef þú vilt ekki breyta)"
-      phone: "Dæmi: +354 5678910"
       website: "Dæmi: http://www.vefsida.is"
     labels:
       category: "Flokkur:"

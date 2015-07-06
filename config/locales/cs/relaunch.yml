@@ -102,7 +102,36 @@ cs:
     profile:
       newsletter:
         title: Novinky
+        text: Zůstaňte s námi ve spojení pomocí newsletteru. Nebojte se, spamovat vás nebudeme. Uslyšíte od nás maximálně jednou do měsíce.
+        label: Ano, posílejte mi novinky o Wheelmap.
+      show:
+        title: Přehled
+        text_html: "Vítejte (zpět) na Wheelmap.org! Jsme rádi, že jste na palubě! Jestli se chcete o Wheelmap.org dozvědět trochu víc, můžete si projít náš <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> nebo <a href=\"http://wheelmap.org/en/faqs/\">často kladené dotazy</a>. Nebo si přečtěte o lokálních <a href=\"http://wheelmap.org/en/get-engaged/\">projektech</a>, kterými můžete Wheelmap.org i vy podpořit.<br>\nZůstaňte ve spojení<br>\nPokud chcete dostávat pravidelně informace, můžete využít náš měsíční newsletter nebo se připojit na naši stránku na <a href=\"https://www.facebook.com/wheelmap\">Facebooku</a> či <a href=\"https://twitter.com/wheelmap\">Twitteru</a>. Těšíme se na vaše názory a rádi je s vámi prodiskutujeme!<br>\nPřejeme příjemné mapování!<br>\nVáš tým Wheelmap"
+        greeting:
+          anonymously: Vítejte
+          personalized: Vítejte, %{name}
+        overview:
+          text: Už jste
+          pois_marked:
+            one: 'označil/a %{count} místo'
+            few: 'označil/a %{count} místa'
+            other: 'označil/a %{count} míst'
+          pois_added:
+            one: 'přidal %{count} místo'
+            few: 'přidal %{count} místa'
+            other: 'přidal %{count} míst'
+          pois_edited:
+            one: 'upravil/a %{count} místo'
+            few: 'upravil/a %{count} místa'
+            other: 'upravil/a %{count} míst'
+          photos_uploaded:
+            one: 'nahrál/a %{count} fotku'
+            few: 'nahrál/a %{count} fotky'
+            other: 'nahrál/a %{count} fotek'
       photos:
         title: Fotky
+        empty: Zatím jste nenahrál/a žádné fotky.
       edit:
         title: Profil
+        legends:
+          user_data: Informace o vašem účtu

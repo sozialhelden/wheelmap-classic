@@ -70,7 +70,6 @@ bg:
       lat: "Премести маркера на картата на правилната позиция"
       osm_username: "Още не си член? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Създай OpenStreetMap акаунт сега</a>"
       password: "(остави празно, ако не искаш промяна)"
-      phone: "Например +49 30 123456-78"
       website: "Например:  http://www.example.com "
     labels:
       category: "Категория:"

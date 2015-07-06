@@ -40,10 +40,13 @@ lt:
       password_confirmation: "Pakartokite slaptažodį"
       phone: "Telefonas:"
       postcode: "Pašto kodas:"
+      privacy_policy: "Aš sutinku su duomenų konfidencialumo sutarties 1 ir 2 pastraipa."
       save: Išsaugoti
       street: "Gatvė:"
+      terms: "Aš sutinku su naudojimosi taisyklėmis."
       type: "Tipas:"
       website: "Svetainė:"
+      wheelchair: "Prieinamumas neįgaliųjų vežimėliais?"
     titles:
       optional: "Daugiau informacijos <span class=\"addition\">(visi laukai yra nebūtini)</span>"
   header:
@@ -52,10 +55,13 @@ lt:
     navigation:
       blog: Naujienos
       feedback: Atsiliepimai
+      logged_in_as: "Prisijungta kaip:"
       login: "Prisijungti"
       logout: "Atsijungti"
       newsletter: Naujienlaiškis
       profile: Profilis
+      suggestions: Pasiūlymai
+      what_is_barrier_free: "Ką reiškia \"prieinama neįgaliųjų vežimėliais\"?"
       what_is_wheelmap: "Kas yra wheelmap?"
     searchbar:
       add_place: "Pridėti kitą vietą"
@@ -64,6 +70,11 @@ lt:
     tagline: "Wheelmap logotipas"
   home:
     index:
+      filter:
+        wheelchair: "Prieinama neįgaliųjų vežimėliais?"
+      ie:
+        warning:
+          headline: "Atsiprašome!"
       link:
         node:
           create: "Pridėti naują vietą"
@@ -137,6 +148,9 @@ lt:
           mb: MB
           tb: TB
   oauth:
+    application:
+      connect:
+        headline: "Prieš tai, kai galėsite kurti ar redaguoti vietas puslapyje wheelmap.org, turite sujungti savo paskyrą su 'open street map' paskyra."
     callback:
       notice: "Jūsų wheelmap paskyra dabar yra susieta su OpenStreetMap %{user} paskyra."
   splash:
@@ -154,11 +168,13 @@ lt:
       error:
         notice: "El. paštas ir slaptažodis neatitinka."
     new:
+      email: "El. pašto adresas"
       login: "Prisijungti"
       password: Slaptažodis
   users:
     after_signup_edit:
       welcome:
+        headline: "Jūs beveik vietoje! Užbaikite prisiregistravimą prie savo Wheelmap paskyros čia:"
         set_password_for_mobile: "Jūs užbaigėte savo registraciją su OpenStreetMap.\nDabar, pasirinkite el. pašto adresą ir slaptažodį savo Wheelmap paskyrai ir tuomet, viskas bus paruošta! Šis el. pašto adresas ir slaptažodis jums reikalingi, norint prisijungti prie Wheelmap programos, besinaudojant iPhone ar Android."
         text: "Kaip mes galime su jumis susisiekti? Vėliau, šią informaciją galite pakeisti savo profilyje."
     edit:

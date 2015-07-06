@@ -70,7 +70,6 @@ sv:
       lat: "Flytta markören på kartan till korrekt position"
       osm_username: "Ännu ej medlem?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Skapa ett Openstreetmap konto nu</a>"
       password: "(lämnas tomt, om du inte vill ändra det)"
-      phone: "Till exempel: +46 40 123 45 67"
       website: "Till exempel: http://www.example.se"
     labels:
       category: "Kategori:"

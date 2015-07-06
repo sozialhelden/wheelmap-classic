@@ -64,7 +64,6 @@ lv:
       lat: "Pārvietojiet atzīmi uz pareizo vietu kartē "
       osm_username: "Neesi reģistrējies? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>"
       password: "(atstājiet tukšu, ja nevēlaties mainīt)"
-      phone: "Piemēram: +49 30 123456-78"
       website: "Piemēram: http://www.piemers.com"
     labels:
       category: "Kategorija:"

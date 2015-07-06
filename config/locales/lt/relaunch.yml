@@ -32,7 +32,12 @@ lt:
   home:
     index:
       overlay:
-        categories: Filtruoti vietas pagal kategorijas
+        button: Gerai, pirmyn!
+        categories: Filtruokite vietas pagal kategorijas
+        filter: Filtruokite vietas pagal prieinamumą neįgaliųjų vežimėliais
+        headline: 'Raskite ir žymėkite neįgaliųjų vežimėliais prieinamas vietas Wheelmap.org pagalba - visuotinai ir nemokamai. Tai lengva:'
+        lookup: Ieškokite konkrečios vietos
+        secondary_headline: 'Mūsų šviesoforo spalvų sistema, skirta neįgaliųjų vežimėliais prieinamų viešų vietų žymėjimui:'
   nodes:
     node_data:
       address: 'Adresas:'
@@ -51,7 +56,9 @@ lt:
     node_similar:
       similar: 'Panašios vietos: %{name}'
     node_status:
+      accessible_toilet: 'Neįgaliųjų vežimėliu prieinamas tualetas:'
       premium: '%{name} sako: ši vieta yra'
+      wheelchair_accessibility: 'Prieinamumas neįgaliųjų vežimėliais:'
     node_streetview:
       streetview: 'Gatvės vaizdas:'
     show:
@@ -82,5 +89,14 @@ lt:
     profile:
       newsletter:
         title: Naujienlaiškis
+      show:
+        title: Apžvalga
+        greeting:
+          personalized: Sveiki %{name}
+      photos:
+        title: Nuotraukos
+        empty: Jūs dar nesate įkėlę jokių nuotraukų.
       edit:
         title: Profilis
+        legends:
+          user_data: Jūsų paskyros informacija

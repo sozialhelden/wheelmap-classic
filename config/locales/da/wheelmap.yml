@@ -71,7 +71,6 @@ da:
       lat: "Flyt markøren på kortet til den korrekte position"
       osm_username: "Ikke medlem endnu?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Opret en Openstreetmap konto nu</a>"
       password: "(efterlad feltet tomt, hvis du ikke ønsker at ændre dette)"
-      phone: "For eksempel: +45 12345678"
       website: "For eksempel: http://www.example.com"
     labels:
       category: "Kategori:"

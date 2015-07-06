@@ -68,7 +68,6 @@ zh_TW:
       lat: "將圖示移動到地圖上正確位置"
       osm_username: "還不是會員嗎？ <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">現在就申請 OpenStreetMap 的會員 </a>"
       password: "(如果你不想更動，請保持空白)"
-      phone: "例如：+886 6 1234567-8"
       website: "例如：http://www.example.com"
     labels:
       category: "分類："

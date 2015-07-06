@@ -67,7 +67,6 @@ hi:
       lat: "मार्कर को नक्शे पर हिलाकर सही जगह पर लगाएं "
       osm_username: "अभी सदस्य नहीं हैं? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>"
       password: "(अगर बदलना नहीं है तो खाली छोड़िए)"
-      phone: "उदाहरण के लिए: +49 30 123456-78"
       website: "जैसे कि: http://www.example.com"
     labels:
       category: "श्रेणी"

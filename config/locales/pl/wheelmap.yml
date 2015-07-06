@@ -73,7 +73,6 @@ pl:
       lat: "Przesuń znacznik na mapie w poprawne miejsce"
       osm_username: "Nie jesteś jeszcze członkiem? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Utwórz konto w serwisie Openstreetmap teraz</a>"
       password: "(zostaw to pole puste, jeśli nie chcesz go zmieniać)"
-      phone: "Na przykład: +48 22 123456-78"
       website: "Na przykład: http://www.example.com"
     labels:
       category: "Kategoria:"

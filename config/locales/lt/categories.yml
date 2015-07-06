@@ -1,6 +1,7 @@
 lt:
   poi:
     category:
+      education: Švietimas
       food: Maistas
       health: Sveikata
       leisure: Laisvalaikis
@@ -9,8 +10,10 @@ lt:
       unknown: Nežinoma
     name:
       accommodation:
+        guest_house: "Svečių namai"
         hotel: Viešbutis
       education:
+        driving_school: "Vairavimo mokykla"
         kindergarten: Vaikų darželis
         library: Biblioteka
         museum: Muziejus
@@ -45,7 +48,9 @@ lt:
         bus_station: "Autobusų stotis"
         bus_stop: "Stotelė"
         ferry: Keltas
+        ferry_terminal: "Kelto terminalas"
         station: "Geležinkelio stotis"
+        terminal: "Oro uosto terminalas"
         tram_stop: "Tramvajaus stotelė"
       shopping:
         books: Knygos

@@ -64,7 +64,6 @@ ar:
       lat: "حرك المؤشر على الخريطة لتصحيح موقع"
       osm_username: "<a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a> غير مشترك في \"أوبن ستريت ماب\" بادر بالتسجيل الآن  ؟"
       password: "في حال لم ترغب بالتغيير، أبقه فارغاً"
-      phone: "+49 30 123456-78 على سبيل المثال: "
       website: "على سبيل المثال : http://www.example.com"
     labels:
       category: "الصنف :"

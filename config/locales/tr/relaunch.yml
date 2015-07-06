@@ -32,7 +32,12 @@ tr:
         legend: Yerin konumu
         location: Lütfen haritaya tıklayın ve işaretçiyi doğru noktaya yerleştirin.
     node_edit:
+      details: Ayrıntılar
       edit: Düzenle
+    show:
+      share:
+        facebook: Facebook
+        twitter: Twitter
   search:
     index:
       no-results:

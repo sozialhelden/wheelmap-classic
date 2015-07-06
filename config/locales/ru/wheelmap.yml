@@ -75,7 +75,6 @@ ru:
       lat: "Нажмите на карту и поместите маркер в точную позицию."
       osm_username: "Ещё не зарегистрированы? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\"> Создать аккаунт Openstreetmap</a> "
       password: "(оставьте поле пустым, если не хотите изменять значение)"
-      phone: "например:  +38 044 594 99 99      "
       website: "например: http://www.example.com"
     labels:
       category: "Категория:"

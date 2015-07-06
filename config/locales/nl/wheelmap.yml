@@ -70,7 +70,6 @@ nl:
       lat: "Beweeg de marker op de kaart in de correcte positie"
       osm_username: "Nog geen lid op dit moment? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Maak nu een Openstreetmap account</a>\n"
       password: "(laat dit leeg als je het niet wil veranderen )"
-      phone: "Bijvoorbeeld: +49 30 123456-78"
       website: "Bijvoorbeeld: http://www.voorbeeld.com"
     labels:
       category: "Categorie:"

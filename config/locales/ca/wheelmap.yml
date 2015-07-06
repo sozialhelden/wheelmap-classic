@@ -35,12 +35,19 @@ ca:
       not_an_integer: "ha de ser un nombre enter"
       not_found: "no s'ha trobat"
       not_locked: "no s'ha bloquejat"
+      not_saved:
+        one: "Un error ha impedit desar %{resource}:"
+        other: "%{count} errors han impedit desar %{resource}:"
       odd: "ha de ser senar"
       taken: "ja s'ha fet"
       too_long: "és massa llarg (no pot superar els %{count} caràcters)"
       too_short: "és massa curt (no pot tenir menys de %{count} caràcters)"
+      wrong_length: "és de llargada no correcta (ha de tenir %{count} caràcters)"
     template:
       body: "Va haver-hi problemes amb els següents camps:"
+      header:
+        one: "1 error ha impedit desar aquest %{model}"
+        other: "%{count} errors han impedit desar aquest %{model}"
   flash:
     actions:
       create:
@@ -60,10 +67,10 @@ ca:
     show_unaccessible_places: "no accessible amb cadira de rodes"
   formtastic:
     hints:
-      lat: "Moveu el marcador del mapa a la posició correcta"
+      email: "Tractarem de forma confidencial la teva adreça.No et farem spam. Promès."
+      lat: "Mou el marcador del mapa a la posició correcta"
       osm_username: "Encara no en sou membre? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Creeu-vos ara un compte a OpenStreetMap</a>"
       password: "(deixeu-ho en blanc si no voleu canviar-la)"
-      phone: "Per exemple: +34 93 1234567"
       website: "Per exemple: http://www.exemple.cat"
     labels:
       category: "Categoria:"
@@ -91,13 +98,17 @@ ca:
       website: "Pàgina web:"
       wheelchair: "Accessibilitat amb cadira de rodes?"
       wheelchair_description: "Comentari de l'accessibilitat:"
+      wheelchair_toilet: "Lavabo per cadira de rodes:"
     titles:
       basic: "Dades bàsiques"
       optional: "Més informació <span class=\"addition\">(tots els camps són opcionals)</span>"
+  global:
+    form_validation_error: "Tingues en compte els errors llistats sota"
   header:
     meta:
       description: "Troba llocs acessibles amb cadira de rodes - wheelmap.org"
       homepage: "Pàgina d'inici"
+      keywords: "marca de cerca de llocs accessibles amb cadira de rodes"
       search: Cerca
     navigation:
       blog: Bloc
@@ -117,7 +128,7 @@ ca:
     searchbar:
       add_place: "Afegeix un altre lloc"
       find: Cerca
-      placeholder: "Cerca un lloc"
+      placeholder: "Cercar un lloc"
       title_add_place: "Afegeix un lloc nou en aquesta posició"
     tagline: "Logotip de Wheelmap"
     title: "Troba llocs accessibles amb cadira de rodes"
@@ -158,6 +169,12 @@ ca:
   landing_pages:
     index:
       wheelchair:
+        limit:
+          headline: "Tot limitat a %{type}  amb accessibilitat amb cadira de rodes a %{city} (%{count})"
+        'no':
+          headline: "Tots els %{type} no accesibles amb cadira de rodes a %{city} (%{count})"
+        unknown:
+          headline: "Tots els %{type} amb estat desconegut sobre l'accessibilitat amb cadira de rodes a %{city} (%{count})"
         'yes':
           headline: "Llocs d'accessibilitat amb cadira de rodes %{type} a %{city} (%{count})"
   layouts:
@@ -182,6 +199,7 @@ ca:
       link:
         large_map: "&laquo; Cancel·la"
     errors:
+      default: "Ups.Alguna cosa no ha funcionat bé. Hem informat d'aquest problema"
       not_authorized: "Ha fallat l'autenticació"
       not_available: "Ho sentim, aquesta pàgina no està disponible temporalment."
       not_existent: "Aquest lloc ja no està disponible."
@@ -204,7 +222,7 @@ ca:
         title: "Lloc: %{node} | wheelmap.org"
       link:
         back: enrere
-        large_map: Amplia
+        large_map: Ampliar
         listing: "Tots els llocs del tipus '%{type}' a %{city}"
         upload: "Penja una imatge"
       more_data_from: "Hi ha més dades per aquest lloc, revisades per:"
@@ -284,7 +302,7 @@ ca:
       two_words_connector: "i"
       words_connector: ","
     select:
-      prompt: "Selecciona"
+      prompt: "Triar"
   time:
     am: am
     formats:
@@ -292,6 +310,14 @@ ca:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
+  toiletstatus:
+    'no': "Lavabo no accessible amb cadira de rodes"
+    unknown: "Lavabo de tipologia desconeguda"
+    'yes': "Lavabo amb accessibilitat amb cadira de rodes"
+    what_is:
+      'no': "Amplada mínima de 90 cm. de la porta interior,espai mínim de 150 x 150 cm, alçada del lavabo per a cadira de rodes, barres per agafar-se i pica accesible."
+      'yes': "Amplada mínima de 90 cm. de la porta interior,espai mínim de 150 x 150 cm, alçada del lavabo per a cadira de rodes, barres per agafar-se i pica accesible."
+      unknown: "Ajuda'ns descrivint l'estat del lavabo."
   user_sessions:
     create:
       activation:
@@ -310,7 +336,9 @@ ca:
   users:
     after_signup_edit:
       welcome:
-        set_password_for_mobile: "Heu finalitzat el registre a l'OpenStreetmap.\nAra indiqueu una adreça de correu i una contrasenya per al compte Wheelmap i, aleshores, haureu acabat! Necessiteu aquesta adreça de correu i la contrasenya per iniciar sessió a l'aplicació Wheelmap de l'iPhone o l'Android."
+        headline: "Ja estàs quasi.Acaba el registre pel teu compte Wheelmap aquí:"
+        set_password_for_mobile: "Ha finalitzat el registre a OpenStreetmap.\nAra indica una adreça de correu i una contrasenya per al compte Wheelmap i, aleshores, hauràs acabat. Necessites aquesta adreça de correu i la contrasenya per entrar amb l'aplicació Wheelmap de l'iPhone o l'Android."
+        text: "Com ens podem posar en contacte amb tu? Pots canviar aquesta informació més tard, al teu perfil."
     edit:
       headline:
         your_images: "Imatges que heu penjat"
@@ -333,12 +361,14 @@ ca:
       title: "Wheelmap - cerca llocs accessibles amb cadira de rodes"
     what_is:
       fully_accessible: "Entrada sense graons així com totes les habitacions sense excepció, com a mínim un lavabo és accessible "
+      limited_accessible: "L'entrada té un esglaó (d'una alçada màxima de 7 cm),  moltes habitacions sense escales , el lavabo no és accessible"
       not_accessible: "L'entrada té un o diversos graons, i les habitacions no són accessibles "
       unknown_accessible: "Ajuda'ns a marcar llocs "
   will_paginate:
     next_label: "Següent &#8594;"
     page_entries_info:
       multi_page: "S'està mostrant %{model} %{from} - %{to} de %{count} en total"
+      multi_page_html: "Mostrant %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de<b>%{count}</b> en total"
       single_page:
         one: "S'està mostrant 1 %{model}"
         other: "S'està visualitzant tots %{count} %{model}"

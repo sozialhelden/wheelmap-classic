@@ -70,7 +70,6 @@ sq_AL:
       lat: "Lëvize shenjuesin mbi hartë te vendi i saktë"
       osm_username: "Nuk jeni pjestarë ende? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Krijo një llogari OpenStreetMap tani</a>"
       password: "(lëre bosh nëse nuk dëshironi ta ndryshoni)"
-      phone: "Për shembull: +49 30 123456-78"
       website: "Për shembull: http://www.example.com"
     labels:
       category: "Kategori:"

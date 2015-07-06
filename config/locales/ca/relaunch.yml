@@ -7,14 +7,28 @@ ca:
         address: Adreça
         website: Pàgina web
         phone: Telèfon
+        note: Nota
         address_street: Carrer
+        address_housenumber: Número de portal
+        address_postcode: Codi postal
         address_city: Ciutat
+  faq:
+    answers:
+      0: Pots canviar el marcador d'un lloc tu mateix. Només cal que triïs el lloc correcte i "Desis"- fet!
+      1: Com a usuari pots afegir/corregir detalls d'un lloc. Clica a "Editar" i corregeix-lo o afegeix informació al lloc.
+      2: Pots afegir més informació (ex:" Aquest lloc té rampa mòbil") a la secció de comentaris.Clica a "Editar" i "Afegir comentari".
+    headline: Hi ha un problema amb aquest lloc?
+    questions:
+      0: El marcador és erroni.
+      1: Els detalls del lloc són incorrectes o falten.
+      2: Tinc molta informació del lloc.
   header:
     navigation:
       about_wheelmap: Sobre Wheelmap
       choose_language: Triar idioma
       contact: Contactar
       map: Mapa
+      projects: Projectes
     toolbar:
       categories: Categories
   home:
@@ -23,30 +37,96 @@ ca:
         button: '''Nem-hi!'
         categories: Filtra llocs per categories
         filter: Filtrar llocs per accessibilitat per cadira de rodes
+        headline: 'Marca i troba llocs accessibles per a cadira de rodes amb Wheelmap.org - a tot el món i de franc. És fàcil:'
         lookup: Cercar un lloc determinat
+        secondary_headline: 'El nostre sistema de semàfors marca l''accessibilitat amb cadira de rodes de llocs públics:'
   nodes:
     new:
       form:
         legend: Localització del lloc
+        location: Fes clic al mapa i posa un marcador a la posició exacta.
+    node_data:
+      address: 'Adreça:'
+      contact_details: 'Detalls del contacte:'
     node_edit:
-      edit: Edita
+      details: Detalls
+      edit: Editar
+    node_map:
+      map: 'Mapa:'
+    node_note:
+      comment: 'Comentari:'
+    node_photos:
+      add: 'Afegir:'
+      photos_of_this_place: 'Fotos d''aquest lloc:'
+      upload: Pujar
+    node_similar:
+      similar: 'Llocs similars: %{name}'
+    node_status:
+      accessible_toilet: 'Lavabo amb accessibilitat amb cadira de rodes'
+      premium: '%{name} diu: aquest lloc és'
+      wheelchair_accessibility: 'Accessibilitat amb cadira de rodes:'
+    node_streetview:
+      streetview: 'Vista de carrer'
+    show:
+      header:
+        meta:
+          description: Descobreix si aquest lloc és accessible amb cadira de rodes a Wheelmap.org. O afegeix-hi informació i fotos sobre el lloc.
+          title: 'Aquest lloc està a Wheelmap.org: %{name}'
+      share:
+        email: Correu-e
+        facebook: Facebook
+        text: 'He trobat aquest lloc a Wheelmap.org: %{name}'
+        twitter: Twitter
   search:
     index:
       no-results:
+        headline: No hem pogut trobar el lloc anomenat "%{query}".
+        hint:
+          example: <strong>Exemple:</strong> Barcelona, Catalunya
+          info: 'El nostre servei de cerca només funciona amb nom i/o adreça.Per tant cerca el nom, el carrer o la població.Cercar per tipus ex: restaurant o cinema no funciona.'
+          work_in_progress: Treballem molt per fer la cerca de llocs més senzilla i intuïtiva.
         try_this:
+          address: Dóna més <strong>detalls de l'adreça</strong>.
           intro: 'Prova això:'
+          spell_check: Comprova si <strong>has escrit correctament</strong> el lloc.
       results:
         ticker:
           one: '%{count} resultat:'
           other: '%{count} resultats:'
     timeout:
       headline: Ups, error nostre
-      repeat_search: Reiniciar la rerca
+      info: El nostre servei de cerca no està disponible.
+      repeat_search: Reiniciar la cerca
   users:
     profile:
       newsletter:
         title: Butlletí
+        text: Estigues actualitzat sobre Wheelmap. No et preocupis, no t'espamejarem. Com a molt ens llegiràs un cop per mes.
+        label: Sí, actualitza'm sobre Wheelmap.
+      show:
+        title: Resum
+        text_html: "Hola,<br>\n(Tornem a ser) els de Wheelmap.org! Estem feliços de tenir-te abord amb nosaltres.Pots llegir el nostre <a href=\"http://wheelmap.org/en/blog-2/\">blog</a> o <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> si vols conèixer una mica millor Wheelmap.org. O pots saber-ne més sobre els  <a href=\"http://wheelmap.org/en/get-engaged/\">projectes</a> que oferim a Wheelmap.org i com hi pots participar.<br>\nEstar en contacte<br>\nPer estar en contacte et pots subscriure al nostre butlletí mensual i seguir-nos a <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> i <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Volem saber la teva opinió i parlar amb tu!<br>\nI ara mapeja feliç!<br>\nEl teu equip Wheelmap"
+        greeting:
+          anonymously: Hola
+          personalized: Hola %{name}
+        overview:
+          text: Tens
+          pois_marked:
+            one: '%{count} lloc marcat'
+            other: '%{count} llocs marcats'
+          pois_added:
+            one: '%{count} lloc afegit'
+            other: '%{count} llocs afegits'
+          pois_edited:
+            one: '%{count} lloc editat'
+            other: '%{count} llocs editats'
+          photos_uploaded:
+            one: '%{count} foto pujada '
+            other: '%{count} fotos pujades '
       photos:
         title: Fotos
+        empty: No has pujat cap foto encara.
       edit:
         title: Perfil
+        legends:
+          user_data: Informació del teu compte

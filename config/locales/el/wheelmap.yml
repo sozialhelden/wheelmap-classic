@@ -71,7 +71,6 @@ el:
       lat: "Mετακινήστε στον χάρτη το σημαιάκι επισήμανσης στην σωστή τοποθεσία"
       osm_username: "Δεν είστε ακόμη μέλος?? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Δημιουργήστε έναν λογαριασμό Openstreetmap τώρα.</a> "
       password: "(αφήστε κενό,εάν δεν θέλετε να το αλλάξετε)"
-      phone: "Για παράδειγμα: +49 30 123456-78 "
       website: "Για παράδειγμα: http://www.example.com "
     labels:
       category: "Κατηγορία:"

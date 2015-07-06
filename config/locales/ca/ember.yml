@@ -1,4 +1,22 @@
 ca:
+  models:
+    category:
+      prompt: "Tria la categoria"
+    node_type:
+      prompt: "Tria un tipus"
+    node:
+      info_edit_position: "La localització apareixerà a Wheelmap com es mostra aquí sobre. Si el marcador no és al lloc correcte tu pots <a href=\"%{url}\">canviar la posició a OpenStreetMap.</a>"
+      mail:
+        subject: "[Wheelmap] Problema amb %{headline}"
+        body: "(Escriu només en anglès o alemany.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:"
   actions:
-    save: Desa
-    cancel: Cancel·la
+    send: Enviar
+    save: Desar
+    cancel: Cancel·lar
+  errors:
+    models:
+      node:
+        website:
+          invalid: "L'adreça web no és vàlida"
+        phone:
+          invalid: "El número de telèfon no és vàlid. Ha de tenir el següent format +34 67 734567"

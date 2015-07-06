@@ -71,7 +71,6 @@ hu:
       lat: "Mozgasd a jelölőt a térképen és helyes pozicióra"
       osm_username: "Még nem vagy tag? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Készítsd el OpenStreetMap fiókod most</a>"
       password: "(hagyd üresen a mezőt, ha nem akarod megváltoztatni)"
-      phone: "Például: +36 30 234-5678"
       website: "Például: http://www.example.com"
     labels:
       category: "Kategória:"

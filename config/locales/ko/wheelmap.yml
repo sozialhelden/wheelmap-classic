@@ -60,7 +60,6 @@ ko:
       lat: "지도 위의 정확한 위치로 표시 이동"
       osm_username: "아직 회원이 아니십니까? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">지금 Openstreetmap 계정을 만드세요</a>"
       password: "(내용변경을 원하지 않으시면, 입력창을 비워두세요)"
-      phone: "예제 : +49 30 123456-78 "
       website: "예제 : http://www.example.com"
     labels:
       category: "카테고리 :"
@@ -77,9 +76,11 @@ ko:
       password_confirmation: "비밀번호 재입력"
       phone: "전화번호 :"
       postcode: "우편번호 :"
+      privacy_policy: "I accept paragraphs 1 and 2 of the data privacy agreement."
       reset: 재설정
       save: 저장
       street: "도로명 :"
+      terms: "I accept the terms of use."
       type: "유형 :"
       website: "웹사이트 :"
       wheelchair: "휠체어 접근여부?"

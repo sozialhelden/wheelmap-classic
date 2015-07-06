@@ -60,7 +60,6 @@ zh:
       lat: "将地图上的标记移动到正确位置"
       osm_username: "还不是会员？<a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">马上建立OpenStreetMap帐户"
       password: "（如果您不想改变请保留空白）"
-      phone: "例如：+49 30 123456-78"
       website: "例如：http://www.example.com"
     labels:
       category: "目录："

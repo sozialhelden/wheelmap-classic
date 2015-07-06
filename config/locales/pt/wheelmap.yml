@@ -64,7 +64,6 @@ pt:
       lat: "Coloque o inicador que se encontra no mapa para a posição correcta "
       osm_username: "Ainda não é membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Criar uma conta Openstreetmp agora</a>"
       password: "(deixe em branco se não quiser mudar) "
-      phone: "p. ex. +351 21 6100453"
       website: "p. ex. http://www.example.com"
     labels:
       category: "Categoria:"

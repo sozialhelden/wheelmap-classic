@@ -73,7 +73,6 @@ cs:
       lat: "Posuňte značku na mapě aby jste opravili polohu"
       osm_username: "Ještě k nám nepatříte? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\"> Vytvořite si nyní účet na OpenStreetMap</a>"
       password: "(nechte prázdné když nechcete změnit)"
-      phone: "Například: +49 30 123456-78"
       website: "Například: http://www.example.com"
     labels:
       category: "Kategorie:"
