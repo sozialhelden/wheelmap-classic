@@ -5,6 +5,8 @@
   z-index: 1999;
   background: rgba(40, 54, 69, 0.8);
   display: none;
+  top: 0;
+  bottom: 0;
 
   &.fade {
     opacity: 0;
@@ -107,13 +109,12 @@
     padding: 25px 5% 0px 5%;
     text-align: center;
     margin: 0px;
-
     font-size: 18px;
     line-height: 20px;
     font-weight: bold;
     color: #273543;
+
     @media screen and (max-width: 700px) {
-      padding-top: 10px;
       font-size: 14px;
       line-height: 18px;
     }
@@ -194,22 +195,30 @@
 
   ul {
     width: 92%;
-    margin: 0;
     float: left;
     margin: 20px 4% 15px 4%;
+
     li {
       width: 23%;
+      margin: 0 1%;
       float: left;
       list-style: none;
-      margin: 0 1%;
+
+      @media screen and (max-width: 700px) {
+        width: 46%;
+        margin: 0 2% $baseFontSize / 2 2%;
+      }
+
       img {
         width: 80%;
-        margin: 0px 10%;
+        margin: 0 10%;
+
         @media screen and (max-height: 650px) {
           width: 50%;
           margin: 0 25%;
         }
       }
+
       h3 {
         width: 100%;
         float: left;
@@ -220,9 +229,11 @@
       p {
         padding: 0 5%;
         float: left;
+
         @media screen and (max-height: 650px) {
           line-height: 18px;
         }
+
         @media screen and (max-width: 700px) {
           display: none;
         }
