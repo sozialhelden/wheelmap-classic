@@ -9,9 +9,9 @@ CREATE TABLE `active_admin_comments` (
   `updated_at` datetime DEFAULT NULL,
   `namespace` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `index_admin_notes_on_resource_type_and_resource_id` (`resource_type`,`resource_id`),
+  KEY `index_active_admin_comments_on_author_type_and_author_id` (`author_type`,`author_id`),
   KEY `index_active_admin_comments_on_namespace` (`namespace`),
-  KEY `index_active_admin_comments_on_author_type_and_author_id` (`author_type`,`author_id`)
+  KEY `index_admin_notes_on_resource_type_and_resource_id` (`resource_type`,`resource_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `admin_users` (
@@ -34,21 +34,8 @@ CREATE TABLE `admin_users` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_admin_users_on_email` (`email`),
-  UNIQUE KEY `index_admin_users_on_reset_password_token` (`reset_password_token`),
-  UNIQUE KEY `index_admin_users_on_confirmation_token` (`confirmation_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-CREATE TABLE `alternatives` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `experiment_id` bigint(20) DEFAULT NULL,
-  `content` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lookup` varchar(32) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `weight` int(11) DEFAULT '1',
-  `participants` int(11) DEFAULT '0',
-  `conversions` int(11) DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `index_alternatives_on_experiment_id` (`experiment_id`),
-  KEY `index_alternatives_on_lookup` (`lookup`)
+  UNIQUE KEY `index_admin_users_on_confirmation_token` (`confirmation_token`),
+  UNIQUE KEY `index_admin_users_on_reset_password_token` (`reset_password_token`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `categories` (
@@ -106,18 +93,6 @@ CREATE TABLE `experiments` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `test_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `status` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `index_experiments_on_test_name` (`test_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-CREATE TABLE `iphone_counters` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `install_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `device_version` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `app_version` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `os_version` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -185,17 +160,16 @@ CREATE TABLE `pois` (
   `toilet` tinyint(1) DEFAULT NULL,
   UNIQUE KEY `index_pois_on_osm_id` (`osm_id`),
   SPATIAL KEY `index_pois_on_geom` (`geom`),
-  KEY `index_pois_on_status` (`status`),
   KEY `index_pois_on_node_type_id_and_osm_id` (`node_type_id`,`osm_id`),
-  KEY `index_pois_on_region_id` (`region_id`),
   KEY `index_pois_on_node_type_id_and_osm_id_and_status` (`node_type_id`,`status`,`osm_id`),
-  KEY `index_pois_on_node_type_id_and_status_and_toilet` (`node_type_id`,`status`),
+  KEY `index_pois_on_region_id` (`region_id`),
+  KEY `index_pois_on_status` (`status`),
   KEY `index_pois_on_toilet_and_status` (`toilet`,`status`),
   FULLTEXT KEY `fulltext_index_pois_on_tags` (`tags`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `provided_pois` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `poi_id` bigint(20) NOT NULL,
   `provider_id` bigint(20) NOT NULL,
   `wheelchair` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -214,7 +188,6 @@ CREATE TABLE `providers` (
   `logo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 
 CREATE TABLE `regions` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
