@@ -86,6 +86,5 @@ Wheelmap::Application.configure do
   config.active_support.deprecation = :notify
 
   config.ember.variant = :production
-  config.react.variant = :production
 
 end

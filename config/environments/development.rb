@@ -52,7 +52,6 @@ Wheelmap::Application.configure do
   config.active_record.auto_explain_threshold_in_seconds = 2.0
 
   config.ember.variant = :development
-  config.react.variant = :development
 
 end
 

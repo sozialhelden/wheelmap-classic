@@ -60,7 +60,7 @@ group :default do
   gem 'awesome_nested_set', '<3.0'
   gem 'i18n', '<0.7.0'
   gem 'i18n-js', '~> 3.0.0.rc9'
-  gem 'font-awesome-rails'
+  gem 'font-awesome-rails', '~> 3.2'
   gem 'ember-rails'
   gem 'backup'
   gem 'geocoder'
@@ -81,11 +81,12 @@ group :assets do
   gem 'compass-colors'
   gem 'compass-rails'
   gem 'bootstrap-sass', '2.3.2.1'
-  gem 'react-rails', '~> 1.0'
 
   source 'https://rails-assets.org' do
     gem 'rails-assets-reflux'
+    gem 'rails-assets-react'
     gem 'rails-assets-react-router'
+    gem 'rails-assets-react-bootstrap'
     gem 'rails-assets-leaflet'
     gem 'rails-assets-leaflet.locatecontrol'
     gem 'rails-assets-lodash'
