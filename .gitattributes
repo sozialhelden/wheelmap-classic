@@ -1,0 +1,1 @@
+db/data/wkt/**/*.wkt -diff
