@@ -1,8 +1,10 @@
-var CategoryActions = Reflux.createActions({
-  load: { asyncResult: true }
+Wheelmap.CategoryActions = Reflux.createActions({
+  load: { asyncResult: true },
+  toggle: {},
+  toggleAll: {}
 });
 
-CategoryActions.load.listen(function() {
+Wheelmap.CategoryActions.load.listen(function() {
   var action = this;
 
   $.get('/categories.json')

@@ -31,6 +31,7 @@
     background-position: 0;
     @include box-shadow(0px 1px 0px #566D82, inset 0px 1px 0px #8298aa, inset 0px 1px 0px #aa000a);
     height: 36px;
+    outline: none;
 
     &:hover {
       @include box-shadow(0px 1px 0px #566D82, inset 0 10px 20px rgba(48, 66, 81, 0.30));
@@ -299,8 +300,12 @@
 
         a {
           padding: 6px 10px 5px 10px;
-          border-bottom: 1px solid #F0F0F0;
+          border-top: 1px solid #F0F0F0;
           font-size: 13px;
+        }
+
+        &:first-child a {
+          border-top: none;
         }
 
         &.filter {

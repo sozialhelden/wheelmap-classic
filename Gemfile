@@ -80,16 +80,14 @@ group :assets do
   gem 'compass'
   gem 'compass-colors'
   gem 'compass-rails'
-  gem 'bootstrap-sass', '2.3.2.1'
+  gem 'bootstrap-sass', '~> 2.3'
 
   source 'https://rails-assets.org' do
     gem 'rails-assets-reflux'
     gem 'rails-assets-react'
     gem 'rails-assets-react-router'
-    gem 'rails-assets-react-bootstrap'
     gem 'rails-assets-leaflet'
     gem 'rails-assets-leaflet.locatecontrol'
-    gem 'rails-assets-lodash'
     gem 'rails-assets-immutable'
   end
 end
