@@ -301,13 +301,15 @@ class Poi < ActiveRecord::Base
   end
 
   def sponsored?
-    !sponsor.blank? && provided_pois.count > 0
+    !sponsor.blank? && provided_pois.any?
   end
 
   def sponsor
-    providers.each do |p|
-      logo = image_path(p.logo.try(:url, 'iphone'))
-      return logo unless logo.nil?
+    provided_pois.each do |provided_poi|
+      provided_poi.providers.each do |p|
+        logo = image_path(p.logo.try(:url, 'iphone'))
+        return logo unless logo.nil?
+      end
     end
   end
 
