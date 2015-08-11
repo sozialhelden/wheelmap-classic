@@ -16,7 +16,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
         redirect_to after_sign_in_path_for(user)
       else
         track_page_view '/registrations/successful'
-        redirect_to after_signup_edit_user_path(user)
+        redirect_to after_signup_edit_profile_path(user)
       end
     end
     sign_in user

@@ -117,7 +117,7 @@ class UsersController < ApplicationController
       flash[:alert] = t('devise.failure.invalid_token')
       case params[:action]
       when 'after_signup_edit', 'after_signup_update'
-        redirect_to after_signup_edit_user_path(current_user)
+        redirect_to after_signup_edit_profile_path(current_user)
       else
         redirect_to edit_profile_path
       end
