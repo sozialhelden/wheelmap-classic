@@ -6,8 +6,6 @@ class NodesController < ApplicationController
   include NewRelic::Agent::MethodTracer
   include NodesHelper
 
-  layout :determine_layout
-
   skip_before_filter :verify_authenticity_token
 
   before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update]
@@ -132,7 +130,16 @@ class NodesController < ApplicationController
   end
 
   def new
-    @node = Poi.new
+  end
+
+  def validate
+    node = Poi.new(params[:node])
+
+    if node.valid?
+      render json: {}, status: 200
+    else
+      render json: { errors: node.errors }, status: 422
+    end
   end
 
   def create
@@ -151,7 +158,7 @@ class NodesController < ApplicationController
         end
       end
     else
-      render :action => :new, :layers => 'BT', :lat => @node.lat, :lon => @node.lon, :zoom => (params[:zoom] || 18)
+      render :action => :new, status: 406
     end
   end
 
@@ -182,15 +189,6 @@ class NodesController < ApplicationController
 
   # Before filter
   protected
-
-  def determine_layout
-    case action_name
-      when 'new', 'create'
-        'legacy'
-      else
-        'nodes'
-    end
-  end
 
   # If a node_id is given additionally, make sure it is loaded
   def load_custom_node

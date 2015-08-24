@@ -58,7 +58,11 @@ Wheelmap::Application.routes.draw do
     get :register_osm, :on => :collection
   end
 
-  resources :nodes, :except => :destroy do
+  # For the new node widget frontend routing
+  get 'nodes/new/:section', to: 'nodes#new', as: :new_node_section
+  post 'nodes/validate', to: 'nodes#validate', as: :validate_node
+
+  resources :nodes, :except => [:destroy] do
     member do
       put :update_wheelchair
       put :update_toilet
@@ -107,7 +111,8 @@ Wheelmap::Application.routes.draw do
     end
 
     resources :assets,      :only => [:index]
-    resources :nodes,       :only  => [:index, :show, :update, :create] do
+    
+    resources :nodes,       :only => [:index, :show, :update, :create] do
       collection do
         get :search
         get :counts, :to => 'counter#index'
@@ -130,7 +135,7 @@ Wheelmap::Application.routes.draw do
     end
 
     resources :node_types, :only  => [:index, :show] do
-      resources :nodes,       :only  => [:index, :show] do
+      resources :nodes,    :only  => [:index, :show] do
         collection do
           get :search
         end

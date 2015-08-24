@@ -16,7 +16,10 @@ const bundler = browserify({
 
 gulp.task('browserify', function() {
   return bundler.bundle()
-    .on('error', gulpUtil.log)
+    .on('error', function(error) {
+      gulpUtil.log(error.toString());
+      this.emit('end');
+    })
     .pipe(source('components.js'))
     .pipe(gulp.dest('./app/assets/javascripts/dist'));
 });

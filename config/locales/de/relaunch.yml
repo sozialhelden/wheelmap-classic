@@ -47,8 +47,29 @@ de:
   nodes:
     new:
       form:
+        title: Ort anlegen
         legend: Lage des Ortes
         location: Bitte klicke auf der Karte an die Stelle, wo sich der Ort befindet!
+        section:
+          name_category:
+            name: Name & Kategorie
+            title: "Gib uns erste Informationen zu deinem neuen Ort:"
+          address:
+            name: Adresse
+            title: Wo liegt der Ort?
+          similar_nodes:
+            name: Ähnliche Orte
+            title: Ist es einer der folgenden Orte?
+            go_edit: Mit diesen Ort fortfahren
+            go_new: Es ist keiner der oben genannten Orte …
+          accessibility:
+            name: Rollstuhlgerechtigkeit
+            title: Informationen zur Rollstuhlgerechtigkeit
+          contact:
+            name: Kontakt
+            title: Weitere Kontaktmöglichkeiten
+          overview:
+            title: Alle Eingaben korrekt?
     node_data:
       address: 'Adresse:'
       contact_details: 'Kontaktdaten:'

@@ -1,0 +1,15 @@
+%section#node-add-contact.nodes-new-content-section.nodes-new-content-section--contact{'data-section': true}
+  %h2
+    Weitere Kontaktmöglichkeiten
+  .nodes-new-content-section-form
+    .control-group
+      = form.label :website
+      .controls.controls-row
+        = form.input :website, label: false
+    .control-group
+      = form.label :phone
+      .controls.controls-row
+        = form.input :phone, label: false
+  .form-actions
+    %button.btn.btn-primary.pull-right{type: :submit, 'data-trigger': :widget, 'data-target': '#node-add-overview'}
+      Weiter
