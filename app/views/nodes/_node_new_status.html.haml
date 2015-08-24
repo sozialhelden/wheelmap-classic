@@ -1,0 +1,43 @@
+%section#node-add-status.nodes-new-content-section.nodes-new-content-section--status{'data-section': true}
+  %h2
+    Informationen zur Rollstuhlgerechtigkeit
+  .nodes-new-content-section-form.nodes-new-content-section--status-status
+    .row-fluid
+      .span6.node-status-dropdown
+        .dropdown
+          %a{:'data-toggle' => 'dropdown', class: "dropdown-toggle btn wheelchair unknown", :'data-status' => 'unknown'}
+            %span.pull-left.text= t("wheelchairstatus.unknown")
+            %i.pull-left.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("wheelchairstatus.unknown"), 'data-content' => t("wheelmap.what_is.unknown"), 'data-trigger' => 'hover'}
+            = fa_icon('caret-down', class: 'pull-right')
+          %ul.dropdown-menu{'role' => 'menu'}
+            - %w{yes limited no}.each do |status|
+              %li
+                %a{class: "#{status}", :'data-toggle' => 'status', :'data-status' => status }
+                  %span.wm-checkbox{'class' => ["wheelchair #{status}"]}
+                    %i.icon-ok
+                  %span.text= t("wheelchairstatus.#{status}")
+                  %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("wheelchairstatus.#{status}"), 'data-content' => t("wheelmap.what_is.#{Poi::WHEELCHAIR_ACCESIBILITY[status]}"), 'data-trigger' => 'hover'}
+
+      .span6.node-status-dropdown
+        .dropdown
+          %a{:'data-toggle' => 'dropdown', class: "dropdown-toggle btn wheelchair unknown", :'data-status' => 'unknown'}
+            %span.pull-left.text= t("toiletstatus.unknown")
+            %i.pull-left.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("toiletstatus.unknown"), 'data-content' => t("toiletstatus.what_is.unknown"), 'data-trigger' => 'hover'}
+            = fa_icon('caret-down', class: 'pull-right')
+          %ul.dropdown-menu{'role' => 'menu'}
+            - %w{unknown yes no}.each do |status|
+              %li
+                %a{class: "#{status}", :'data-toggle' => 'status', :'data-status' => status }
+                  %span.wm-checkbox{'class' => ["wheelchair #{status}", ('unknown' == status ? 'checked' : nil)]}
+                    %i.icon-ok
+                  %span.text= t("toiletstatus.#{status}")
+                  %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("toiletstatus.#{status}"), 'data-content' => t("toiletstatus.what_is.#{status}"), 'data-trigger' => 'hover'}
+
+  .nodes-new-content-section-form
+    .control-group
+      = form.label :wheelchair_description, t('activerecord.attributes.poi.note'), class: 'control-label'
+      .controls.controls-row
+        = form.input :wheelchair_description, placeholder: t('activerecord.attributes.poi.note'), as: :text, input_html: { rows: 5, cols: nil }, label: false
+  .form-actions
+    %button.btn.btn-primary.pull-right{type: :submit, 'data-trigger': :widget, 'data-target': '#node-add-contact'}
+      Weiter
