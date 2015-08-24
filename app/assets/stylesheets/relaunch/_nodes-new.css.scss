@@ -1,0 +1,288 @@
+.nodes-new {
+  $headings-height: 45px;
+
+  &-header,
+  &-breadcrumbs a {
+    line-height: $headings-height;
+    padding: 0 $baseFontSize;
+  }
+
+  &-header {
+    @include background(linear-gradient(-180deg, lighten($yellow-gray, 58%) 0%, lighten($yellow-gray, 48%) 100%));
+    @include box-shadow(inset 0px 1px 0px 0px #F3F2F0, inset 0px -1px 0px 0px #A8A9AA);
+
+    .btn--back,
+    h1 {
+      display: inline-block;
+    }
+
+    h1 {
+      margin: 0;
+      padding-left: $baseFontSize / 2;
+      line-height: $baseFontSize;
+      font-size: $baseFontSize;
+    }
+
+    .btn--back {
+      $btn-height: 24px;
+
+      @include background(linear-gradient(-180deg, #DFDCDA 0%, #C0BEBB 100%));
+      @include box-shadow(0 1px 0 rgba(white, .5), inset 0 1px 0 0 rgba(white,0.35));
+      @include border-left-radius(0);
+      border: 1px solid #979797;
+      padding: 0 $baseFontSize / 2;
+      margin-left: $baseFontSize / 2 - 1px; // 1px = border
+      line-height: $btn-height;
+      font-size: $fontSizeSmall;
+      position: relative;
+
+      &:after {
+        $height: $btn-height / sqrt(3);
+        $width: $btn-height / 2;
+
+        @include background(linear-gradient(180deg - atan($height/$width) * (180deg / pi()), #DFDCDA 0%, #C0BEBB 100%));
+        border: solid #979797;
+        border-width: 0 0 1px 1px;
+        position: absolute;
+        transform: rotate(30deg) skewY(30deg);
+        margin: $height / -2 $width / -2 - 1px;
+        top: 50%;
+        left: 0;
+        width: $width;
+        height: $height;
+        content: '';
+      }
+    }
+  }
+
+  &-breadcrumbs {
+    background: #D9DEE3;
+    border-bottom: 1px solid #A8A9AA;
+    @include box-shadow(0 1px 5px 0 rgba(black, .1));
+
+    ul {
+      @include clearfix();
+      list-style-type: none;
+      margin: 0;
+    }
+
+    li {
+      float: left;
+    }
+
+    a {
+      display: block;
+      color: #404040;
+      cursor: default;
+
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    li:first-child a {
+      padding-left: $baseFontSize * 2;
+    }
+
+    ul.done a,
+    li.done a,
+    li.active a {
+      @include background(linear-gradient(#6B849C 0%, #4F667D 100%));
+      text-shadow: 0 1px 2px rgba(black, .5);
+      color: white;
+      cursor: pointer;
+    }
+
+    li.active a {
+      margin-right: $baseFontSize;
+      position: relative;
+
+      &:after {
+        $height: $headings-height / sqrt(3);
+        $width: $headings-height / 2;
+
+        @include background(linear-gradient(180deg - atan($height/$width) * (180deg / pi()), #6B849C 0%, #4F667D 100%));
+        position: absolute;
+        transform: rotate(30deg) skewY(30deg);
+        margin: $height / -2 $width / -2;
+        top: 50%;
+        right: 0;
+        width: $width;
+        height: $height;
+        content: '';
+      }
+    }
+
+    ul.done {
+      @include background(linear-gradient(#6B849C 0%, #4F667D 100%));
+    }
+  }
+
+  &-content {
+    .node-form {
+      padding: $baseFontSize $baseFontSize * 2;
+      background-color: transparent;
+
+      .controls {
+        margin-left: 0;
+      }
+
+      label + .controls {
+        margin-left: 120px;
+      }
+
+      .alert {
+        border: 0;
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+
+        &-info {
+          color: $grayLight;
+        }
+      }
+
+      .form-actions {
+        margin: $baseFontSize 0;
+      }
+    }
+
+    h2 {
+      font-weight: normal;
+      font-size: 18px;
+      margin: 0;
+      margin-bottom: $baseFontSize * .5;
+    }
+
+    h3 {
+      font-size: inherit;
+      line-height: inherit;
+      margin: 0;
+    }
+
+    &-section {
+      &-form {
+        border-top: 1px solid #EEEEEE;
+        border-bottom: 1px solid #EEEEEE;
+        padding: $baseFontSize * 2 0 $baseFontSize 0;
+        box-sizing: border-box;
+        position: relative;
+      }
+
+      &-form + &-form {
+        border-top: 0;
+      }
+
+      &--address {
+        &-map {
+          height: 400px;
+          background-color: $grayLight;
+        }
+
+        .alert {
+          position: absolute;
+          bottom: $baseFontSize;
+        }
+      }
+
+      &--address &-form {
+        height: 400px;
+        position: relative;
+      }
+
+      &--similar {
+        &-list {
+          list-style-type: none;
+          margin: 0;
+
+          li {
+            @include clearfix;
+            padding: $baseFontSize * 2 0;
+            color: $grayLight;
+            border-top: 1px solid #EEEEEE;
+
+            strong {
+              color: $gray;
+              font-weight: normal;
+              font-size: $fontSizeLarge;
+            }
+
+            a {
+              display: block;
+            }
+          }
+
+          li:first-child {
+            padding-top: 0;
+            border-top: 0;
+          }
+        }
+      }
+
+      &--similar &-form {
+        padding-bottom: 0;
+      }
+
+      &--status {
+        &-status {
+          padding-bottom: $baseFontSize * 2;
+        }
+      }
+
+      &--overview {
+        &-list {
+          @include clearfix;
+          margin-bottom: 0;
+
+          dt,
+          dd {
+            display: block;
+            float: left;
+            width: 150px;
+            margin-top: $baseFontSize / 2;
+          }
+
+          dt {
+            clear: left;
+            font-weight: normal;
+          }
+
+          .yes {
+            color: $wheelchair-yes;
+          }
+
+          .no {
+            color: $wheelchair-no;
+          }
+
+          .limited {
+            color: $wheelchair-limited;
+          }
+
+          .unknown {
+            color: $wheelchair-unknown;
+          }
+        }
+
+        &-edit {
+          position: absolute;
+          right: 0;
+          bottom: $baseFontSize;
+        }
+
+        &-map {
+          position: absolute;
+          right: 150px;
+          top: $baseFontSize;
+          bottom: $baseFontSize;
+          width: 250px;
+          background-color: $grayLight;
+        }
+
+        .nodes-new-content-section-form {
+          padding: $baseFontSize 0;
+        }
+      }
+    }
+  }
+}

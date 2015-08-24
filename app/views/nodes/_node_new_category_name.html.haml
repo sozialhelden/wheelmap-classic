@@ -1,0 +1,17 @@
+%section#node-add-name-category.nodes-new-content-section.nodes-new-content-section--name-category{'data-section': true}
+  %h2
+    Gib uns erste Informationen zu deinem neuen Ort:
+  .nodes-new-content-section-form
+    .control-group
+      = form.label :name, required: false
+      .controls.controls-row
+        = form.input :name, label: false, autofocus: true
+    .control-group
+      = form.label :node_type_id, t('activerecord.attributes.poi.type'), class: 'control-label'
+      .controls.controls-row
+        .custom-select
+          = form.input :node_type_id, as: :grouped_select, collection: Category.all, group_method: :node_types, label: false
+          %i.icon-caret-down.pull-right
+  .form-actions
+    %button.btn.btn-primary.pull-right{type: :submit, 'data-trigger': :widget, 'data-target': '#node-add-address'}
+      Weiter

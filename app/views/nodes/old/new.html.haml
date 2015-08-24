@@ -1,0 +1,29 @@
+#map_wrapper
+  #minimap.create-node
+  = link_to t('.link.large_map'), root_path, :onclick => "location=permalink('#{root_path}');return false;", :class => 'hide', :id => 'show-on-large-map'
+
+#accessibility
+  = semantic_form_for @node, :as => :node, :url => {:controller => 'nodes', :action => 'create'} do |form|
+    = hidden_field_tag "zoom", params[:zoom] || 18
+    = render :partial => 'inputs', :object => @node, :locals => {:form => form}
+
+    = form.actions do
+      = form.action :submit, :label => t('formtastic.labels.create')
+      %p.hint= t('devise.mandatory')
+
+- content_for :head do
+  %title= t('.header.title')
+
+- content_for :javascript_constants do
+  :javascript
+    var lat  = #{params[:lat]  || cookies['last_lat']  || cookies['geoip_lat'] || 52.5167 };
+    var lon  = #{params[:lon]  || cookies['last_lon']  || cookies['geoip_lon'] || 13.4000 };
+    var zoom = #{params[:zoom] || cookies['last_zoom'] || 16};
+    #{var_language};
+
+- content_for :javascript do
+  :javascript
+    drawmap(defaultControls('minimap'), 'minimap');
+    jumpTo(lon, lat, zoom);
+    createClickableLayer(placesStyle(), #{@node.lon.present? ? @node.lon : 'null' }, #{@node.lat.present? ? @node.lat : 'null' });
+
