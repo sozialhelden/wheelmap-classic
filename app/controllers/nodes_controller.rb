@@ -142,7 +142,7 @@ class NodesController < ApplicationController
       CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user, source('create'))
 
       respond_to do |wants|
-        wants.json{ render :status => 200, :json => {} } # iphone wants 200. nothing more.
+        wants.json { render :status => 200, :json => {} } # iphone wants 200. nothing more.
         wants.html do
           flash[:track]  = "'Data', 'Create', '#{@node.wheelchair}'"
           flash[:view] = '/nodes/created'
@@ -151,7 +151,10 @@ class NodesController < ApplicationController
         end
       end
     else
-      render :action => :new, :layers => 'BT', :lat => @node.lat, :lon => @node.lon, :zoom => (params[:zoom] || 18)
+      respond_to do |wants|
+        wants.json { render json: { errors: @node.errors }, status: 406 }
+      end
+      #render :action => :new, :layers => 'BT', :lat => @node.lat, :lon => @node.lon, :zoom => (params[:zoom] || 18)
     end
   end
 
@@ -185,7 +188,7 @@ class NodesController < ApplicationController
 
   def determine_layout
     case action_name
-      when 'new', 'create'
+      when 'create'
         'legacy'
       else
         'nodes'

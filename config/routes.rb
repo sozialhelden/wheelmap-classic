@@ -108,7 +108,8 @@ Wheelmap::Application.routes.draw do
     end
 
     resources :assets,      :only => [:index]
-    resources :nodes,       :only  => [:index, :show, :update, :create] do
+    
+    resources :nodes,       :only => [:index, :show, :update, :create] do
       collection do
         get :search
         get :counts, :to => 'counter#index'

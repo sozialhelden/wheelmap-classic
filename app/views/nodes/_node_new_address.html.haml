@@ -1,0 +1,25 @@
+%section#node-add-address.nodes-new-content-section.nodes-new-content-section--address{'data-section': true}
+  %h2
+    Wo liegt der Ort?
+  .row-fluid
+    .span6
+      .nodes-new-content-section-form
+        .control-group
+          .controls.controls-row{ class: @node.errors.include?(:postcode) || @node.errors.include?(:city) ? 'has_error' : nil }
+            .span3
+              = form.input :postcode, placeholder: t('activerecord.attributes.poi.address_postcode'), label: false
+            .span9
+              = form.input :city, placeholder: t('activerecord.attributes.poi.address_city'), label: false
+          .controls.controls-row{ class: @node.errors.include?(:postcode) || @node.errors.include?(:city) ? 'has_error' : nil }
+            .span10
+              = form.input :street, placeholder: t('activerecord.attributes.poi.address_street'), label: false
+            .span2
+              = form.input :housenumber, placeholder: t('activerecord.attributes.poi.address_housenumber'), label: false
+        .alert.alert-info
+          %i.icon-info-sign.icon-large
+          Du kannst den Marker auf der Karte auf die korrekte Position verschieben.
+    .span6
+      #node-add-address-map.nodes-new-content-section--address-map
+  .form-actions
+    %button.btn.btn-primary.pull-right{type: :submit, 'data-trigger': :widget, 'data-target': '#node-add-similar'}
+      Weiter
