@@ -3,6 +3,7 @@ Wheelmap::Application.routes.draw do
   apipie
 
   match '/ping' => 'ping#index'
+  #match '/nodes/new' => 'nodes#new', via: [:get, :post]
 
   #
   # The if statement here is workaround to ensure that users are able to do an initial migration
@@ -60,7 +61,15 @@ Wheelmap::Application.routes.draw do
     get :register_osm, :on => :collection
   end
 
-  resources :nodes, :except => :destroy do
+  resources :nodes, :except => [:destroy] do
+    collection do
+      post 'new/address', to: 'nodes#new'
+      post 'new/category_name', to: 'nodes#new'
+      post 'new/contact', to: 'nodes#new'
+      post 'new/similar', to: 'nodes#new'
+      post 'new/status', to: 'nodes#new'
+      post 'new/overview', to: 'nodes#new'
+    end
     member do
       put :update_wheelchair
       put :update_toilet

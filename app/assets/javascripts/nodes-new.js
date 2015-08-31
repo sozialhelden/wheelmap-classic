@@ -1,4 +1,4 @@
-$('[data-widget]').each(function() {
+/*$('[data-widget]').each(function() {
   var $parent = $(this),
     $sections = $parent.find('[data-section]'),
     sections = {};
@@ -105,4 +105,4 @@ $('[data-widget]').each(function() {
 
     return getSection($element.attr('href') || $element.data('target'));
   }
-});
+});*/

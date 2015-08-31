@@ -1,5 +1,5 @@
 #container
-  .nodes-new{'data-widget': true}
+  .nodes-new
     .content
       %header.nodes-new-header
         =link_to root_path, class: 'btn btn--back' do
@@ -7,28 +7,14 @@
         %h1
           Ort hinzufügen
       .nodes-new-breadcrumbs
-        %ul#nodes-add-breadcrumbs
-          %li
-            %a{href: '#node-add-name-category', 'data-trigger': :widget}
-              Name & Kategorie
-          %li
-            %a{href: '#node-add-address', 'data-trigger': :widget}
-              Adresse
-          %li
-            %a{href: '#node-add-similar', 'data-trigger': :widget}
-              Ähnliche Orte
-          %li
-            %a{href: '#node-add-status', 'data-trigger': :widget}
-              Rollstuhlgerechtigkeit
-          %li
-            %a{href: '#node-add-contact', 'data-trigger': :widget}
-              Kontakt
+        %ul{class: ('done' if @widget.active?(:overview))}
+          - for section in @widget.sections
+            - if section != :overview
+              %li{class: "#{('done' if @widget.done?(section))} #{('active' if @widget.active?(section))}"}
+                - #%a{href: (send("new_#{section}_nodes_path") if @widget.done?(section))}
+                %a
+                  = section
 
       .nodes-new-content
-        = simple_form_for @node, as: :node, url: { controller: 'nodes', action: 'create', id: @node }, html: { method: :post, class: 'node-form form-horizontal', novalidate: true } do |form|
-          = render partial: 'node_new_category_name', object: @node, locals: { form: form }
-          = render partial: 'node_new_address', object: @node, locals: { form: form }
-          = render partial: 'node_new_similar', object: @node, locals: { form: form }
-          = render partial: 'node_new_status', object: @node, locals: { form: form }
-          = render partial: 'node_new_contact', object: @node, locals: { form: form }
-          = render partial: 'node_new_overview', object: @node, locals: { form: form }
+        = simple_form_for @node, as: :node, url: (if !@widget.active?(:overview) then send("new_#{@widget.next}_nodes_path") else new_node_path end), html: { method: :post, class: 'node-form form-horizontal', novalidate: true } do |form|
+          = render partial: "node_new_#{@widget.active}", object: @node, locals: { form: form }

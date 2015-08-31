@@ -6,8 +6,6 @@ class NodesController < ApplicationController
   include NewRelic::Agent::MethodTracer
   include NodesHelper
 
-  layout :determine_layout
-
   skip_before_filter :verify_authenticity_token
 
   before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update]
@@ -132,7 +130,14 @@ class NodesController < ApplicationController
   end
 
   def new
-    @node = Poi.new
+    @node = Poi.new params[:node]
+    @widget = Widget.new [:category_name, :address, :similar, :status, :contact, :overview]
+
+    section = URI(request.original_url).path.split('/').last.to_sym
+
+    if @widget.has?(section)
+      @widget.activate(section)
+    end
   end
 
   def create
@@ -142,7 +147,7 @@ class NodesController < ApplicationController
       CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user, source('create'))
 
       respond_to do |wants|
-        wants.json { render :status => 200, :json => {} } # iphone wants 200. nothing more.
+        wants.json{ render :status => 200, :json => {} } # iphone wants 200. nothing more.
         wants.html do
           flash[:track]  = "'Data', 'Create', '#{@node.wheelchair}'"
           flash[:view] = '/nodes/created'
@@ -151,10 +156,7 @@ class NodesController < ApplicationController
         end
       end
     else
-      respond_to do |wants|
-        wants.json { render json: { errors: @node.errors }, status: 406 }
-      end
-      #render :action => :new, :layers => 'BT', :lat => @node.lat, :lon => @node.lon, :zoom => (params[:zoom] || 18)
+      render :action => :new, status: 406
     end
   end
 
@@ -185,15 +187,6 @@ class NodesController < ApplicationController
 
   # Before filter
   protected
-
-  def determine_layout
-    case action_name
-      when 'create'
-        'legacy'
-      else
-        'nodes'
-    end
-  end
 
   # If a node_id is given additionally, make sure it is loaded
   def load_custom_node
