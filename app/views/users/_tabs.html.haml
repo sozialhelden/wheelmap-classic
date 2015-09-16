@@ -18,3 +18,8 @@
     = link_to edit_profile_path do
       %i.icon-large.icon-user
       =t('users.profile.edit.title')
+
+  %li{class: action_name == 'widgets' ? :active : nil}
+    = link_to widgets_profile_path do
+      %i.icon-large.icon-map-marker
+      =t('users.profile.widget.title')

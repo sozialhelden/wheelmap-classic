@@ -32,6 +32,7 @@ class User < ActiveRecord::Base
   before_save :set_privacy_timestamp, :if => :privacy_policy? && :privacy_policy_changed?
 
   has_many :photos
+  has_one :widget
 
   acts_as_api
   include Api::User
