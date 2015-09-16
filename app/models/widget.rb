@@ -17,7 +17,7 @@ class Widget < ActiveRecord::Base
 
   def src
     #http://wheelmap.org/en/map#/?lat=52.505298303257234&lon=13.42218428850174&status=yes&toilet=yes&zoom=18
-    "/widget?zoom=18&lat=#{self.lat}&lon#{self.lon}&key=#{self.api_key}"
+    "/mapwidget?zoom=18&lat=#{self.lat}&lon#{self.lon}&key=#{self.api_key}"
   end
 
   def lat=(value)

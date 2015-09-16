@@ -14,7 +14,7 @@ describe WidgetsController do
   describe "embed" do
     context "with a valid token" do
       it "displays the widget" do
-        get :embed, :api_key => widget.user.authentication_token
+        get :embed, :key => widget.user.authentication_token
         expect(response).to be_success
         expect(assigns(:widget)).to be_true
       end
