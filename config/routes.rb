@@ -69,7 +69,8 @@ Wheelmap::Application.routes.draw do
   resources :categories, only: [:index, :show]
   resources :node_types, only: [:index, :show]
   resources :photos, only: [:index, :show]
-  resources :widgets, only: [:show, :update]
+  resources :widgets, only: [:update]
+  get 'mapwidget', :to => 'widgets#embed'
 
   resource :users, :as => 'profile', :path => '/profile' do
     resources :photos, :only => [:create, :destroy]

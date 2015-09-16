@@ -19,10 +19,10 @@
     .preview
       %h5
         = t('users.profile.widget.legend.preview')
-      %iframe{:width => "#{@widget.width}", :height => "#{@widget.height}", :src => "#{request.protocol}#{request.host}#{@widget.src}"}
+      %iframe{:width => "#{@widget.width}", :height => "#{@widget.height}", :src => "#{request.protocol}#{request.host_with_port}#{@widget.src}"}
 
     .user-widget-embedded
       %h5
         = t('users.profile.widget.legend.embed')
       %pre
-        = "<iframe src='#{request.protocol}#{request.host}#{@widget.src}'></iframe>"
+        = "<iframe src='#{request.protocol}#{request.host_with_port}#{@widget.src}'></iframe>"
