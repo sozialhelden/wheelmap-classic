@@ -23,7 +23,7 @@ describe Api::WidgetsController do
         get :show, api_key: user.authentication_token, id: widget
         expect(response).to be_success
         json = JSON.parse(response.body)
-        p json
+        #p json
       end
 
     end
@@ -37,7 +37,7 @@ describe Api::WidgetsController do
       it "responds with widget data in xml format" do
         get :show, :api_key => user.authentication_token, id: widget
         expect(response).to be_success
-        p Nokogiri::XML(response.body).to_s
+        #p Nokogiri::XML(response.body).to_s
       end
     end
 
