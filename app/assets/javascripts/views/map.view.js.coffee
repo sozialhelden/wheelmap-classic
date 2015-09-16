@@ -1,4 +1,3 @@
-
 Wheelmap.LocateMixin = Ember.Mixin.create
   _createLayer: ()->
     @_super()

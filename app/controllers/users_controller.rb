@@ -37,6 +37,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def widgets
+    @widget = current_user.widget || current_user.widget.create(:widget => Widget.new)
+  end
+
   def photos
     @user = current_user
     @photos = @user.photos.page(params[:page]).per_page(18)
