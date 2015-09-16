@@ -142,3 +142,10 @@ en:
         title: Profile
         legends:
           user_data: Your account information
+      widget:
+        title: Widget
+        legends:
+          settings: Settings
+          preview: Preview
+          embed: Embed this code
+          general: Create your own widget for use on your websites

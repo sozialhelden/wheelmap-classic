@@ -179,7 +179,7 @@ CREATE TABLE `pois` (
   `osm_id` bigint(20) NOT NULL,
   `version` int(11) NOT NULL,
   `tags` text COLLATE utf8_unicode_ci NOT NULL,
-  `geom` point NOT NULL,
+  `geom` geometry NOT NULL,
   `status` mediumint(9) NOT NULL DEFAULT '8',
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
