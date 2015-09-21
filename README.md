@@ -78,3 +78,7 @@ Finally startup a local rails server
     bundle exec rails server
 
 And visit the website in your browser: http://0.0.0.0:3000
+
+## License
+
+The Wheelmap Software is released under the [GNU Affero General Public License v3.0](/sozialhelden/wheelmap/blob/master/LICENSE).
