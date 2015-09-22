@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   end
 
   def widgets
-    @widget = current_user.widget || current_user.widget.create(:widget => Widget.new)
+    @widget = current_user.widget || current_user.widget = Widget.new
   end
 
   def photos
