@@ -33,4 +33,24 @@ describe UsersController do
     response.code.should == '400'
   end
 
+  context "widget" do
+    let(:user){
+      FactoryGirl.create(:user, :email => 'widget@wheelmap.org',
+                                            :password => 'password',
+                                            :password_confirmation => 'password',
+                                            :oauth_token => 'a_token',
+                                            :oauth_secret => 'a_secret')
+    }
+
+    before :each do
+      sign_in user
+    end
+
+    it "will be assigned to the current user" do
+      get :widgets
+      response.code.should == '200'
+      expect(assigns(:widget))
+    end
+
+  end
 end
