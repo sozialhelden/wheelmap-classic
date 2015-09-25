@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
 
   has_many :photos
   has_one :widget
+  has_and_belongs_to_many :providers
 
   acts_as_api
   include Api::User
