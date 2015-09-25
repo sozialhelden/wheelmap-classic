@@ -1,8 +1,5 @@
-!!!
-%html(lang="#{ I18n.locale }")
-  %head{ :profile => "http://dublincore.org/documents/dcq-html/" }
-    %link{ :rel => "schema.DC", :href => "http://purl.org/dc/elements/1.1/" }
-    %link{ :rel => "schema.DCTERMS", :href => "http://purl.org/dc/terms/" }
+#wheelmap
 
-    %body
-      = @widget.to_json
+- content_for :javascript do
+  = javascript_include_tag 'app'
+  = javascript_include_tag "i18n/#{I18n.locale}"

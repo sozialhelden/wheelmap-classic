@@ -24,6 +24,7 @@
     %title= "Wheelmap - #{t('header.title')}"
 
   = stylesheet_link_tag :relaunch, :media => 'screen, projection'
+  = stylesheet_link_tag :embed, :media => 'screen, projection'
   = content_for :stylesheet
   /[if lte IE 8]
     = stylesheet_link_tag 'relaunch_ie', :media => 'screen, projection'
@@ -31,14 +32,8 @@
   = csrf_meta_tag
 
 %body
-  = render :partial => 'relaunch/header'
+  = yield
 
-  - if content_for?(:content)
-    %div#content_wrapper
-      = yield(:content)
-  - else
-    = yield
-
-  = render :partial => 'relaunch/footer'
+  -#= render :partial => 'relaunch/footer'
   = render :partial => 'shared/google_tracking'
   = content_for :javascript
