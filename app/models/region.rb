@@ -1,14 +1,12 @@
 class Region < ActiveRecord::Base
+  extend FriendlyId
+
   has_many    :pois
   has_many    :photos, :through => :pois
 
   validates :name, :grenze, :presence => true
 
-  has_friendly_id :name,
-    :use_slug => true,
-    :approximate_ascii => true,
-    :ascii_approximation_options => :german,
-    :strip_non_ascii => true
+  friendly_id :name, :use => :slugged
 
   acts_as_nested_set
 

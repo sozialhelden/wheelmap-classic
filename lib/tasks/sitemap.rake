@@ -29,10 +29,10 @@ namespace :sitemap do
 
       Region.find_each do |region|
         NodeType.find_each do |node_type|
-          add("/map/#{region.slug.name}/#{node_type.identifier}/wheelchair/yes",     :change_frequency => 'daily', :priority => 1.0) if Poi.where(:node_type_id => node_type.id, :region_id => region.id, :status => 1).count > 0
-          add("/map/#{region.slug.name}/#{node_type.identifier}/wheelchair/no",      :change_frequency => 'daily', :priority => 1.0) if Poi.where(:node_type_id => node_type.id, :region_id => region.id, :status => 2).count > 0
-          add("/map/#{region.slug.name}/#{node_type.identifier}/wheelchair/limited", :change_frequency => 'daily', :priority => 1.0) if Poi.where(:node_type_id => node_type.id, :region_id => region.id, :status => 4).count > 0
-          add("/map/#{region.slug.name}/#{node_type.identifier}/wheelchair/unknown", :change_frequency => 'daily', :priority => 1.0) if Poi.where(:node_type_id => node_type.id, :region_id => region.id, :status => 8).count > 0
+          add("/map/#{region.slug}/#{node_type.identifier}/wheelchair/yes",     :change_frequency => 'daily', :priority => 1.0) if Poi.where(:node_type_id => node_type.id, :region_id => region.id, :status => 1).count > 0
+          add("/map/#{region.slug}/#{node_type.identifier}/wheelchair/no",      :change_frequency => 'daily', :priority => 1.0) if Poi.where(:node_type_id => node_type.id, :region_id => region.id, :status => 2).count > 0
+          add("/map/#{region.slug}/#{node_type.identifier}/wheelchair/limited", :change_frequency => 'daily', :priority => 1.0) if Poi.where(:node_type_id => node_type.id, :region_id => region.id, :status => 4).count > 0
+          add("/map/#{region.slug}/#{node_type.identifier}/wheelchair/unknown", :change_frequency => 'daily', :priority => 1.0) if Poi.where(:node_type_id => node_type.id, :region_id => region.id, :status => 8).count > 0
         end
       end
     end
