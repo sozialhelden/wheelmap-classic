@@ -4,7 +4,7 @@ class WidgetsController < ApplicationController
     api_key = params[:key] || request.headers["X-API-KEY"]
     if user = User.find_by_authentication_token(api_key)
         @widget = user.widget
-        render layout: false
+        render layout: 'embed'
     else
       head 404
     end
