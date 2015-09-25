@@ -37,7 +37,7 @@ class Widget < ActiveRecord::Base
   end
 
   def api_key
-    self.user.authentication_token
+    self.user.api_key
   end
 
   private
