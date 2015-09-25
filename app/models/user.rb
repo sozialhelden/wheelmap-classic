@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   validate :ensure_password_when_email_set, :if => :first_time?
 
   before_save :ensure_authentication_token
+  before_save :ensure_api_key
   after_destroy :notify_admins
 
   scope :wants_newsletter, where(:wants_newsletter => true)
@@ -101,6 +102,7 @@ class User < ActiveRecord::Base
     user if user && user.valid_password?(password)
   end
 
+
   def self.wheelmap_visitor
     find_by_email('visitor@wheelmap.org')
   end
@@ -161,4 +163,31 @@ class User < ActiveRecord::Base
     previous_changes.has_key?(:email) && previous_changes[:email].first.blank? && email.present?
   end
 
+  def ensure_authentication_token
+    if authentication_token.blank?
+      self.authentication_token = generate_authentication_token
+    end
+  end
+
+  def ensure_api_key
+    if api_key.blank?
+      self.api_key = generate_api_key
+    end
+  end
+
+  private
+
+  def generate_authentication_token
+    loop do
+      token = Devise.friendly_token
+      break token unless User.where(authentication_token: token).first
+    end
+  end
+
+  def generate_api_key
+    loop do
+      token = Devise.friendly_token
+      break token unless User.where(api_key: token).first
+    end
+  end
 end

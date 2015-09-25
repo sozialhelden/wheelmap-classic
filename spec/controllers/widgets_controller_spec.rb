@@ -3,7 +3,7 @@ require 'spec_helper'
 describe WidgetsController do
   include Devise::TestHelpers
 
-  let (:user) {
+  let(:user) {
     FactoryGirl.create(:user, :email => 'test@rspec.org', :oauth_token =>'token', :oauth_secret => 'secret')
   }
 
@@ -14,15 +14,23 @@ describe WidgetsController do
   describe "embed" do
     context "with a valid token" do
       it "displays the widget" do
-        get :embed, :key => widget.user.authentication_token
+        get :embed, :key => widget.user.api_key
         expect(response).to be_success
         expect(assigns(:widget)).to be_true
       end
     end
 
     context "with an invalid token" do
-      it "displays the widget" do
-        get :embed, :api_key => 'invalid'
+      it "cannot be found" do
+        get :embed, :key => 'invalid'
+        expect(response.status).to eq(404)
+        expect(assigns(:widget)).to be_false
+      end
+    end
+
+    context "with missing token" do
+      it "cannot be found" do
+        get :embed, :key => nil
         expect(response.status).to eq(404)
         expect(assigns(:widget)).to be_false
       end
