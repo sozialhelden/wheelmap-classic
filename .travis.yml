@@ -1,0 +1,17 @@
+language: ruby
+cache:
+- bundler
+sudo: false
+rvm:
+- 2.2.2
+services:
+- mysql
+before_script:
+- mysql -e 'create database wheelmap_test;'
+- mysql wheelmap_test < db/structure.sql
+branches:
+  only:
+  - master
+notifications:
+  email:
+  - developers@sozialhelden.de
