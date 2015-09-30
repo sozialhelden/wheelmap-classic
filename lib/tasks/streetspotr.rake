@@ -10,7 +10,7 @@ namespace :streetspotr do
     CSV.foreach(csv_file, headers: true, :header_converters => :symbol) do |row|
       id = row[:refid]
       next if id.blank?
-      w = wheelchair(step(row), toilet(row), indoor(row))
+      w = wheelchair_status(step(row), toilet(row), indoor(row))
       hash[i] ||= []
       hash[i] << step(row)
       hash[i] << toilet(row)
@@ -41,7 +41,7 @@ namespace :streetspotr do
         next unless poi
 
         # Set Node attributes
-        status = wheelchair(step(row), toilet(row), indoor(row))
+        status = wheelchair_status(step(row), toilet(row), indoor(row))
         provided_poi = ProvidedPoi.find_or_initialize_by_poi_id_and_provider_id(poi.id, provider.id)
         # puts "SET WHEELCHAIR: '#{status}'"
         provided_poi.wheelchair = minimal_status([provided_poi.wheelchair, status].compact.uniq)
@@ -81,7 +81,7 @@ namespace :streetspotr do
     return stati.first
   end
 
-  def wheelchair(step, toilet, indoor)
+  def wheelchair_status(step, toilet, indoor)
     s = nil
     if step
       s = 'no'
