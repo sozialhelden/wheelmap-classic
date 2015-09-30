@@ -200,7 +200,9 @@ CREATE TABLE `regions` (
   `lft` int(11) DEFAULT NULL,
   `rgt` int(11) DEFAULT NULL,
   `depth` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `slug` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `index_regions_on_slug` (`slug`)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `schema_migrations` (
