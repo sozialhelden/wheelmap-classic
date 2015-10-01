@@ -8,11 +8,6 @@ include Rake::DSL
 begin
   require "rspec/core/rake_task"
 
-  RSpec::Core::RakeTask.new(:spec)
-
-  desc 'Run all the specs'
-  task :default => :spec
-
   # Grab recently touched specs
   def recent_specs(touched_since)
     recent_specs = FileList['app/**/*'].map do |path|
