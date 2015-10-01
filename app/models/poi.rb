@@ -306,10 +306,8 @@ class Poi < ActiveRecord::Base
 
   def sponsor
     provided_pois.each do |provided_poi|
-      provided_poi.providers.each do |p|
-        logo = image_path(p.logo.try(:url, 'iphone'))
-        return logo unless logo.nil?
-      end
+      logo = image_path(provided_poi.try(:provider).try(:logo).try(:url, 'iphone'))
+      return logo if logo.present?
     end
   end
 
