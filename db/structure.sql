@@ -89,10 +89,12 @@ CREATE TABLE `delayed_jobs` (
   KEY `delayed_jobs_priority` (`priority`,`run_at`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE `experiments` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `test_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `status` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+CREATE TABLE `iphone_counters` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `install_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `device_version` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `app_version` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `os_version` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -169,7 +171,7 @@ CREATE TABLE `pois` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `provided_pois` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `poi_id` bigint(20) NOT NULL,
   `provider_id` bigint(20) NOT NULL,
   `wheelchair` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -275,3 +277,7 @@ INSERT INTO schema_migrations (version) VALUES ('20150527103420');
 INSERT INTO schema_migrations (version) VALUES ('20150527103620');
 
 INSERT INTO schema_migrations (version) VALUES ('20150925145451');
+
+INSERT INTO schema_migrations (version) VALUES ('20151001071651');
+
+INSERT INTO schema_migrations (version) VALUES ('20151001072109');
