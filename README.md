@@ -18,16 +18,16 @@ Then install the following required tools:
 
     brew install git wget
 
-#### Latest Ruby 2.1.2 via rbenv
+#### Latest Ruby 2.2.2 via rbenv
 
     brew install rbenv ruby-build
-    rbenv install 2.1.2
+    rbenv install 2.2.2
     echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
     echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 
 Restart your shell and install bundler:
 
-    rbenv global 2.1.2
+    rbenv global 2.2.2
     gem install bundler
     rbenv rehash
 
