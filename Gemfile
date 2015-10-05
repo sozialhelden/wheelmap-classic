@@ -81,6 +81,7 @@ group :assets do
   gem 'compass-rails'
   gem 'bootstrap-sass'
   gem 'browserify-rails'
+  gem 'react-rails', '~> 1.3.0'
 end
 
 group :test, :development do

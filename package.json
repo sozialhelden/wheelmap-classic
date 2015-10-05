@@ -3,7 +3,8 @@
   "dependencies": {
     "babelify": "^6.3.0",
     "browserify": "~> 10.2.4",
-    "browserify-incremental": "^3.0.1"
+    "browserify-incremental": "^3.0.1",
+    "react": "^0.14.0-rc1"
   },
   "license": "AGPL-3.0",
   "repository": {
