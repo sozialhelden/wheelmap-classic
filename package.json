@@ -1,5 +1,6 @@
 {
   "name": "wheelmap",
+  "private": true,
   "dependencies": {
     "babelify": "^6.3.0",
     "browserify": "~> 10.2.4",
