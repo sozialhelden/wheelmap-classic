@@ -88,6 +88,8 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'spork'
   gem 'rb-fsevent'
+  gem 'teaspoon-jasmine'
+  gem 'phantomjs'
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-spork'
