@@ -2,4 +2,4 @@
 //= require react
 //= require react_ujs
 
-let test = require('function');
+let test = require('./function');
