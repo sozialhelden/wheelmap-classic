@@ -22,8 +22,8 @@ Feature: Find, update and create nodes via API
       | node_postcode    | 11122                |
       | node_city        | Wienerwald           |
       | node_website     | http://wienerwald.de |
-      | node_phone       | 0800 wienerwald      |
-    And I press "Speichern"
+      | node_phone       | +49 800 123344       |
+    And I press "node_submit"
     And I am on that poi's page
     And an update tags job has been enqueued with element_id: 345, type: "node" and tags
       | addr:street      | Hühnerpfad           |
@@ -31,6 +31,6 @@ Feature: Find, update and create nodes via API
       | addr:city        | Wienerwald           |
       | addr:postcode    | 11122                |
       | website          | http://wienerwald.de |
-      | phone            | 0800 wienerwald      |
+      | phone            | +49 800 123344       |
       | foo              | bar                  |
 
