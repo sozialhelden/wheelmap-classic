@@ -78,5 +78,11 @@ module Wheelmap
       Devise::SessionsController.layout "relaunch"
     end
 
+    # Environments, in which to generate source maps
+    config.browserify_rails.source_map_environments << "development"
+
+    # Should the node_modules directory be evaluated for changes on page load
+    config.browserify_rails.evaluate_node_modules = true
+
   end
 end
