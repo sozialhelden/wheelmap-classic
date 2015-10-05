@@ -78,6 +78,9 @@ module Wheelmap
       Devise::SessionsController.layout "relaunch"
     end
 
+    # Command line options used when running browserify
+    config.browserify_rails.commandline_options = "-t babelify"
+
     # Environments, in which to generate source maps
     config.browserify_rails.source_map_environments << "development"
 
