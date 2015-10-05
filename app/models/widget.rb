@@ -37,6 +37,7 @@ class Widget < ActiveRecord::Base
   end
 
   def api_key
+    self.user.save
     self.user.api_key
   end
 
