@@ -45,6 +45,9 @@ module NavigationHelpers
     when /the search result page/
       '/search'
 
+    when /the profile terms page/
+      '/profile/terms'
+
     when /that poi's page/
       m = find_model("that poi")
       node_path(m)
