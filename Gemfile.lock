@@ -85,6 +85,8 @@ GEM
     bourbon (3.2.4)
       sass (~> 3.2)
       thor
+    browserify-rails (0.9.3)
+      sprockets (~> 2.2)
     builder (3.0.4)
     cacheable_flash (0.3.2)
       json
@@ -99,6 +101,8 @@ GEM
       sshkit (~> 1.2)
     capistrano-deploytags (1.0.2)
       capistrano (>= 3.2.0)
+    capistrano-npm (1.0.1)
+      capistrano (>= 3.0.0)
     capistrano-rails (1.1.2)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -483,10 +487,12 @@ DEPENDENCIES
   backup
   big_sitemap
   bootstrap-sass
+  browserify-rails
   cacheable_flash
   capistrano (>= 3.1.0)
   capistrano-bundler
   capistrano-deploytags (~> 1.0.0)
+  capistrano-npm
   capistrano-rails
   capistrano-rbenv
   capybara (= 1.1.1)
