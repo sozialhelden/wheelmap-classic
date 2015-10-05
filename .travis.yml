@@ -13,6 +13,9 @@ before_script:
 - cp config/open_street_map.SAMPLE.yml config/open_street_map.yml
 - cp config/newrelic.SAMPLE.yml config/newrelic.yml
 - cp config/application.yml.sample config/application.yml
+script:
+  - rake
+  - rake teaspoon
 notifications:
   email:
   - developers@sozialhelden.de
