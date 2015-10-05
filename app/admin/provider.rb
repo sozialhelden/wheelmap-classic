@@ -4,6 +4,12 @@ ActiveAdmin.register Provider do
 
   filter :name
 
+  action_item do
+    link_to upload_csv_admin_provided_pois_path do
+      icon( :'arrow_up') + "Upload CSV"
+    end
+  end
+
   index do
     column :id
     column :name
