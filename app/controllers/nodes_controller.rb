@@ -32,7 +32,7 @@ class NodesController < ApplicationController
   rescue_from Rosemary::Unavailable,        :with => :timeout
 
   def index
-    normalize_bbox if params[:bbox]
+    normalize_bbox unless params[:bbox].blank?
     @limit = params[:limit].try(:to_i) || 300
     # Allow max 1000 Pois per request.
     @limit = [@limit, 1000].min
