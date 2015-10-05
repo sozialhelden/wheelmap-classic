@@ -24,7 +24,7 @@ Feature: Create a new node via website
       | PLZ                      | 11122                           |
       | Ort                      | Wienerwald                      |
       | Webseite                 | http://wienerwald.de            |
-      | Telefon                  | 0800 wienerwald                 |
+      | Telefon                  | +49 800 123344                  |
 
     And I select "Voll Rollstuhlgerecht" from "Rollstuhlgerecht?"
     And I select "Bar" from "Typ"
@@ -41,5 +41,5 @@ Feature: Create a new node via website
       | addr:city              | Wienerwald                      |
       | addr:postcode          | 11122                           |
       | website                | http://wienerwald.de            |
-      | phone                  | 0800 wienerwald                 |
+      | phone                  | +49 800 123344                  |
 
