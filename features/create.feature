@@ -1,5 +1,5 @@
 Feature: Create a new node via website
-  In order to get new data for wheelmpa
+  In order to get new data for wheelmap
   As a registered user
   I want to be able to create a new poi
 
