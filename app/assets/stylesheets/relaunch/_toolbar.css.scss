@@ -539,6 +539,14 @@
     font-size: 12px;
     font-weight: 500;
     position: relative;
+    .corrector{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .caret{
+        margin: 2px 0 0 5px;
+      }
+    }
   }
 
   &.yes .caret:before {
