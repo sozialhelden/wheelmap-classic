@@ -28,7 +28,7 @@ Feature: User must accept terms
     And I check "Ich stimme den Nutzungsbedingungen zu."
     And I uncheck "Ich stimme Ziffer 1 und 2 der Datenschutzbestimmungen zu."
     And I press "Speichern"
-    Then I should be on that user's terms page
+    Then I should be on the profile terms page
 
   @omniauth_test
   Scenario: I must accept privacy before editing nodes
@@ -39,7 +39,7 @@ Feature: User must accept terms
     And I uncheck "Ich stimme den Nutzungsbedingungen zu."
     And I check "Ich stimme Ziffer 1 und 2 der Datenschutzbestimmungen zu."
     And I press "Speichern"
-    Then I should be on that user's terms page
+    Then I should be on the profile terms page
 
   @omniauth_test
   Scenario: I must accept terms and privacy before editing nodes

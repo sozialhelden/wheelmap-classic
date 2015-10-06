@@ -17,13 +17,13 @@ Feature: Find, update and create nodes via API
     And I am on that poi's page
     When I follow "Bearbeiten"
     When I fill in the following:
-      | Straße   | Hühnerpfad           |
-      | Nr       | 99                   |
-      | PLZ      | 11122                |
-      | Ort      | Wienerwald           |
-      | Webseite | http://wienerwald.de |
-      | Telefon  | 0800 wienerwald      |
-    And I press "Speichern"
+      | node_street      | Hühnerpfad           |
+      | node_housenumber | 99                   |
+      | node_postcode    | 11122                |
+      | node_city        | Wienerwald           |
+      | node_website     | http://wienerwald.de |
+      | node_phone       | +49 800 123344       |
+    And I press "node_submit"
     And I am on that poi's page
     And an update tags job has been enqueued with element_id: 345, type: "node" and tags
       | addr:street      | Hühnerpfad           |
@@ -31,6 +31,6 @@ Feature: Find, update and create nodes via API
       | addr:city        | Wienerwald           |
       | addr:postcode    | 11122                |
       | website          | http://wienerwald.de |
-      | phone            | 0800 wienerwald      |
+      | phone            | +49 800 123344       |
       | foo              | bar                  |
 
