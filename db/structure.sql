@@ -178,6 +178,7 @@ CREATE TABLE `provided_pois` (
   `url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
+  `wheelchair_toilet` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_provided_pois_on_provider_id_and_poi_id` (`provider_id`,`poi_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -281,3 +282,5 @@ INSERT INTO schema_migrations (version) VALUES ('20150925145451');
 INSERT INTO schema_migrations (version) VALUES ('20151001071651');
 
 INSERT INTO schema_migrations (version) VALUES ('20151001072109');
+
+INSERT INTO schema_migrations (version) VALUES ('20150923144011');

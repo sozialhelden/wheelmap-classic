@@ -1,0 +1,27 @@
+.flashes
+  #error_div_id.flash.flash_error{style: 'display:none;'}
+  #notice_div_id.flash.flash_notice{style: 'display:none;'}
+= javascript_include_tag 'jquery/jquery.cookies'
+= javascript_include_tag :flash
+
+.panel
+  %h3 Hinweis
+  .panel_contents
+    %p Hier bitte die Datei vom Poichecker CSV Export hochladen.
+
+= semantic_form_for ProvidedPoi.new, :url => import_csv_admin_provided_pois_path, :html => {:multipart => true, class: 'filter_form'} do |form|
+  = form.inputs  "Neue Premiumorte Hochladen", class: :inputs do
+    %ol
+      %li.select.input.required
+        = form.input :provider, collection: Hash[Provider.all.map{|b| [b.name,b.id]}]
+      %li.select.input.required
+        = form.input :csv_file, as: :file, required: true
+
+  = form.actions do
+    = form.submit 'Upload'
+
+:javascript
+  Flash.transferFromCookies();
+  Flash.writeDataTo('error', $('#error_div_id'));
+  Flash.writeDataTo('notice', $('#notice_div_id'));
+
