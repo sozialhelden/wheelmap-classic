@@ -93,7 +93,7 @@ CREATE TABLE `counters` (
   `toilet_iphone` int(11) DEFAULT '0',
   `toilet_android` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `delayed_jobs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -179,7 +179,7 @@ CREATE TABLE `pois` (
   `osm_id` bigint(20) NOT NULL,
   `version` int(11) NOT NULL,
   `tags` text COLLATE utf8_unicode_ci NOT NULL,
-  `geom` geometry NOT NULL,
+  `geom` point NOT NULL,
   `status` mediumint(9) NOT NULL DEFAULT '8',
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
@@ -437,6 +437,8 @@ INSERT INTO schema_migrations (version) VALUES ('20150527103620');
 
 INSERT INTO schema_migrations (version) VALUES ('20150910153713');
 
+INSERT INTO schema_migrations (version) VALUES ('20150923144011');
+
 INSERT INTO schema_migrations (version) VALUES ('20150925132242');
 
 INSERT INTO schema_migrations (version) VALUES ('20150925144503');
@@ -446,5 +448,3 @@ INSERT INTO schema_migrations (version) VALUES ('20150925145451');
 INSERT INTO schema_migrations (version) VALUES ('20151001071651');
 
 INSERT INTO schema_migrations (version) VALUES ('20151001072109');
-
-INSERT INTO schema_migrations (version) VALUES ('20150923144011');
