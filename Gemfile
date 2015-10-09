@@ -69,6 +69,7 @@ group :default do
   gem 'apipie-rails'
   gem 'htmlentities', require: false
   gem 'test-unit', '~> 3.0', require: false
+  gem 'browserify-rails'
 end
 
 group :assets do
@@ -80,7 +81,6 @@ group :assets do
   gem 'compass-colors'
   gem 'compass-rails'
   gem 'bootstrap-sass'
-  gem 'browserify-rails'
   gem 'react-rails', '~> 1.3.0'
 end
 
