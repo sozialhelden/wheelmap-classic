@@ -5,24 +5,29 @@
   .tab-pane.active
     %p
       =t('users.profile.widget.legends.general')
-    .user-form
-      = semantic_form_for @widget, url: { controller: 'widgets', action: 'update', id: @widget }, html: { class: 'form-horizontal', id: "edit_widget"} do |form|
-        = form.inputs :name => t('users.profile.widget.legend.settings') do
-          = form.input :width, :label => t('activerecord.attributes.widget.width')
-          = form.input :height, :label => t('activerecord.attributes.widget.height')
-          = form.input :provider, :collection => @widget.providers, :as => :select, :include_blank => t('activerecord.attributes.widget.provider.all')
-          = form.input :categories, :label => t('activerecord.attributes.widget.category')
 
-        = form.actions do
-          = form.action :submit, label: t('formtastic.labels.save')
+    =react_component('Widget', defaultWidth: @widget.width, defaultHeight: @widget.height)
 
-    .preview
-      %h5
-        = t('users.profile.widget.legend.preview')
-      %iframe{:width => "#{@widget.width}", :height => "#{@widget.height}", :src => embed_url(key: @widget.api_key, anchor: "/?zoom=18&lat=#{@widget.lat}&lon=#{@widget.lon}&show_categories=#{@widget.categories ? 1 : 0}")}
-
-    .user-widget-embedded
-      %h5
-        = t('users.profile.widget.legend.embed')
-      %pre
-        = "<iframe src='#{embed_url(key: @widget.api_key, anchor: "/?zoom=18&lat=#{@widget.lat}&lon=#{@widget.lon}&show_categories=#{@widget.categories ? 1 : 0}")}'></iframe>"
+    -# .user-form
+    -#   = semantic_form_for @widget, url: { controller: 'widgets', action: 'update', id: @widget }, html: { class: 'form-horizontal', id: "edit_widget"} do |form|
+    -#     = form.inputs :name => t('users.profile.widget.legend.settings') do
+    -#       = form.input :width, :label => t('activerecord.attributes.widget.width')
+    -#       = form.input :height, :label => t('activerecord.attributes.widget.height')
+    -#       = form.input :provider, :collection => @widget.providers, :as => :select, :include_blank => t('activerecord.attributes.widget.provider.all')
+    -#       = form.input :categories, :label => t('activerecord.attributes.widget.category')
+    -#
+    -#     = form.actions do
+    -#       = form.action :submit, label: t('formtastic.labels.save')
+    -#
+    -# .preview
+    -#   %h5
+    -#     = t('users.profile.widget.legend.preview')
+    -#   %iframe{:width => "#{@widget.width}", :height => "#{@widget.height}", :src => "#{request.protocol}#{request.host_with_port}#{@widget.src}"}
+    -#
+    -# .user-widget-embedded
+    -#   %h5
+    -#     = t('users.profile.widget.legend.embed')
+    -#   %pre
+    -#     = "<iframe src='#{request.protocol}#{request.host_with_port}#{@widget.src}'></iframe>"
+- content_for :javascript do
+  = javascript_include_tag 'components'
