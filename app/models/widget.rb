@@ -15,11 +15,6 @@ class Widget < ActiveRecord::Base
     ['provider1', 'provider2']
   end
 
-  def src
-    #http://wheelmap.org/en/map#/?lat=52.505298303257234&lon=13.42218428850174&status=yes&toilet=yes&zoom=18
-    "/mapwidget?zoom=18&lat=#{self.lat}&lon#{self.lon}&key=#{self.api_key}"
-  end
-
   def lat=(value)
     self.center = GEO_FACTORY.point(self.lon || 0.0, value.to_f)
   end
