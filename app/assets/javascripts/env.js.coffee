@@ -1,3 +1,4 @@
-@ENV =
-  FEATURES:
-    'query-params-new': true
+@ENV = @ENV || {}
+
+@ENV.FEATURES =
+  'query-params-new': true
