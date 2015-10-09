@@ -1,5 +1,7 @@
 #wheelmap
 
 - content_for :javascript do
+  %script
+    ENV = { EMBEDDED: true };
   = javascript_include_tag 'app'
   = javascript_include_tag "i18n/#{I18n.locale}"

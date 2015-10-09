@@ -1,4 +1,5 @@
 <div class="toolbar-content">
+    {{#unless showSearch}}
     <button class="btn btn-info toolbar-toggle-searchbar" data-toggle="searchbar" data-target=".toolbar-searchbar-form">
         <i class="icon-search icon-light"></i>
     </button>
@@ -8,6 +9,7 @@
             {{ view Wheelmap.SearchbarButtonView }}
         </div>
     </form>
+    {{/unless}}
     <div {{ bind-attr class=":btn-group :bootstrap-select :toolbar-filter-dropdown :toolbar-status-filter-btn :show-menu-arrow isStatusYes:yes isStatusNo:no isStatusLimited:limited isStatusUnknown:unknown" }}>
         <button class="btn dropdown-toggle btn-info" data-toggle="dropdown">
             <i class="toolbar-status-filter-btn-icon"></i>
