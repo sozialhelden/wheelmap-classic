@@ -1,11 +1,14 @@
 Wheelmap.ToolbarController = Ember.ArrayController.extend
   _extraFilter: false # Flag for executing special status filter behavior only once
+
   needs: ['index', 'map']
+
   statusFilters: null
   toiletFilters: null
   searchString: null
   itemController: 'category'
   sortProperties: ['name']
+  showCategories: true
 
   init: ()->
     @_super()
