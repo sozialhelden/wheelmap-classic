@@ -19,10 +19,10 @@
     .preview
       %h5
         = t('users.profile.widget.legend.preview')
-      %iframe{:width => "#{@widget.width}", :height => "#{@widget.height}", :src => embed_url(key: @widget.api_key, anchor: "/?zoom=18&lat=#{@widget.lat}&lon=#{@widget.lon}")}
+      %iframe{:width => "#{@widget.width}", :height => "#{@widget.height}", :src => embed_url(key: @widget.api_key, anchor: "/?zoom=18&lat=#{@widget.lat}&lon=#{@widget.lon}&show_categories=#{@widget.categories ? 1 : 0}")}
 
     .user-widget-embedded
       %h5
         = t('users.profile.widget.legend.embed')
       %pre
-        = "<iframe src='#{embed_url(key: @widget.api_key, anchor: "/?zoom=18&lat=#{@widget.lat}&lon=#{@widget.lon}")}'></iframe>"
+        = "<iframe src='#{embed_url(key: @widget.api_key, anchor: "/?zoom=18&lat=#{@widget.lat}&lon=#{@widget.lon}&show_categories=#{@widget.categories ? 1 : 0}")}'></iframe>"

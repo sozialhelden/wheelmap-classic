@@ -1,6 +1,8 @@
 Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
   needs: ['toolbar', 'map']
-  queryParams: ['status', 'categories', 'q', 'bbox', 'lat', 'lon', 'zoom', 'toilet']
+  queryParams: [
+    'status', 'categories', 'q', 'bbox', 'lat', 'lon', 'zoom', 'toilet', 'show_categories'
+  ]
   
   latBinding: 'controllers.map.lat'
   lonBinding: 'controllers.map.lon'
@@ -137,6 +139,10 @@ Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
 
     @set('bbox', null)
   ).observes('bbox')
+
+  queryShowChangesDidChange: (->
+    @set('controllers.toolbar.showCategories', !!parseInt(@get('show_categories'), 10));
+  ).observes('show_categories')
 
   actions:
     transitionToActiveCategories: ->
