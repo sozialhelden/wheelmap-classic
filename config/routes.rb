@@ -70,7 +70,7 @@ Wheelmap::Application.routes.draw do
   resources :node_types, only: [:index, :show]
   resources :photos, only: [:index, :show]
   resources :widgets, only: [:update]
-  get 'mapwidget', :to => 'widgets#embed'
+  get 'embed/:key', to: 'widgets#embed', as: :embed
 
   resource :users, :as => 'profile', :path => '/profile' do
     resources :photos, :only => [:create, :destroy]
