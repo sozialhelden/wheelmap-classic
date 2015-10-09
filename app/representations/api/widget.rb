@@ -10,7 +10,6 @@ module Api::Widget
       t.add :width
       t.add :lat
       t.add :lon
-      t.add :src
     end
 
   end
