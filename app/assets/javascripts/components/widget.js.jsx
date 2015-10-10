@@ -6,8 +6,9 @@ module.exports = React.createClass({
 
   getInitialState: function() {
     return {
-      width: this.props.defaultWidth,
-      height: this.props.defaultHeight
+      width:  this.props.defaultWidth,
+      height: this.props.defaultHeight,
+      src:    this.props.defaultSrc
     };
   },
 
@@ -28,9 +29,16 @@ module.exports = React.createClass({
           onWidthChange={this.onWidthChange}
           onHeightChange={this.onHeightChange}
           />
+        <WidgetPreview
+          width={this.state.width}
+          height={this.state.height}
+          src={this.state.src}
+          />
         <WidgetEmbed
           width={this.state.width}
-          height={this.state.height}/>
+          height={this.state.height}
+          src={this.state.src}
+        />
       </div>
     );
   }
