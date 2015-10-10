@@ -6,7 +6,7 @@
     %p
       =t('users.profile.widget.legends.general')
 
-    =react_component('Widget', defaultWidth: @widget.width, defaultHeight: @widget.height)
+    =react_component('Widget', defaultWidth: @widget.width, defaultHeight: @widget.height, defaultSrc: embed_src(@widget))
 
     -# .user-form
     -#   = semantic_form_for @widget, url: { controller: 'widgets', action: 'update', id: @widget }, html: { class: 'form-horizontal', id: "edit_widget"} do |form|
@@ -31,3 +31,5 @@
     -#     = "<iframe src='#{request.protocol}#{request.host_with_port}#{@widget.src}'></iframe>"
 - content_for :javascript do
   = javascript_include_tag 'components'
+  = javascript_include_tag "i18n"
+  = javascript_include_tag "i18n/#{I18n.locale}"
