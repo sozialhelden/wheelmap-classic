@@ -25,7 +25,7 @@ module.exports = React.createClass({
     return (
       <span>
         <span className={this.state.className}
-          title={this.state.title}>
+            title={this.state.title}>
           {this.state.translation}
         </span>
       </span>
