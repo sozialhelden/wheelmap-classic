@@ -1,6 +1,7 @@
 //= require react
 //= require react_ujs
 
+
 global.Translations   = require('./components/translations.js.jsx');
 
 global.PhotonFeatures = require('./components/photon.features.js.jsx');

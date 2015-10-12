@@ -7,8 +7,7 @@
     "browserify-incremental": "^3.0.1",
     "immutable": "^3.7.5",
     "mout": "^0.11.0",
-    "react": "^0.14.0-rc1",
-    "urijs": "^1.16.1"
+    "react": "^0.14.0-rc1"
   },
   "license": "AGPL-3.0",
   "repository": {

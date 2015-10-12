@@ -1,12 +1,11 @@
 class Api::WidgetsController < Api::ApiController
-
-  def show
-    @widget = current_user.widget
-    show! do |format|
-      # format.html { render :template => 'api/widgets/show' }
-      format.xml  {render_for_api :api_simple, :xml  => @widget}
-      format.json {render_for_api :api_simple, :json => @widget}
+  def update
+    @widget = Widget.find(params[:id])
+    if @widget.update_attributes(widget_params)
+      redirect_to widgets_profile_path
+    else
+      flash.now[:alert] = @user.errors.full_messages.to_sentence
+      redirect_to widgets_profile_path
     end
   end
-
 end

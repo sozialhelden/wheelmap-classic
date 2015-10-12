@@ -36,18 +36,4 @@ describe WidgetsController do
       end
     end
   end
-
-  describe "POST update" do
-    context "with a signed in user" do
-
-      before :each do
-        sign_in user
-      end
-
-      it "updates a widget" do
-        put :update, :id => widget.id, widget: FactoryGirl.build(:widget).attributes
-        expect(response).to redirect_to(widgets_profile_path)
-      end
-    end
-  end
 end

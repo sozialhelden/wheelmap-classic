@@ -4,18 +4,18 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    var featureNodes = this.props.items.map(function(feature, index) {
-      var p = feature.properties;
-      var point = feature.geometry.coordinates;
+    var featureNodes = this.props.items.map((feature, index) => {
+      var {properties, geometry} = feature;
+      var {coordinates} = geometry;
       return (
         <li key={index}
           onClick={this.handleClick.bind(this, index)}
           style={{background: this.props.selectedItem == index ? 'green':'white'}}
           >
-            {p.name}
+            {properties.name}
         </li>
       );
-    }.bind(this));
+    });
     return (
       <ul className="form-wrapper" style={{background: 'white', zIndex: 999 }}>
         {featureNodes}
