@@ -6,7 +6,7 @@
     %p
       =t('users.profile.widget.legends.general')
 
-    =react_component('Widget', defaultWidth: @widget.width, defaultHeight: @widget.height, defaultSrc: embed_src(@widget))
+    =react_component('Widget', defaultCategory: @widget.categories, defaultLon: @widget.lon, defaultLat: @widget.lat, defaultWidth: @widget.width, defaultHeight: @widget.height, defaultSrc: embed_url(:key => @widget.api_key), defaultResource: widgets_path(:id => @widget.id))
 
     -# .user-form
     -#   = semantic_form_for @widget, url: { controller: 'widgets', action: 'update', id: @widget }, html: { class: 'form-horizontal', id: "edit_widget"} do |form|

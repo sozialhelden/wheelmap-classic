@@ -8,11 +8,7 @@ class Widget < ActiveRecord::Base
 
   GEO_FACTORY = RGeo::Cartesian.factory
 
-  # Override to get the key in embed url helper.
-  # As we want to use the api_key to fetch the widget?
-  def to_param
-    "#{api_key}".parameterize
-  end
+  
 
   def lat=(value)
     self.center = GEO_FACTORY.point(self.lon || 0.0, value.to_f)
