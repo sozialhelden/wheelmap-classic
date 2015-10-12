@@ -1,10 +1,6 @@
 .bootstrap-select {
   text-align: left;
 
-  .caret {
-    float: right;
-  }
-
   // We need to override the pull-right class here, which bootstrap-select adds automatically.
   span.pull-left {
     float: none;

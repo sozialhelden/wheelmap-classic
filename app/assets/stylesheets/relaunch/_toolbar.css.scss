@@ -81,7 +81,7 @@
     margin-bottom: 0;
 
     .input-append {
-      margin: 0 10px;
+      margin: 0;
     }
   }
 
@@ -510,7 +510,6 @@
 
       .input-append {
         width: 100%;
-        margin: 0;
 
         input {
           @include border-right-radius(3px);
@@ -530,23 +529,14 @@
 
 %status-button {
   width: 51px;
-  // position: relative;
+  text-align: center;
 
   .btn {
     padding: 0;
-    padding-right: 7px; // Would be nice, if we have a variable from the default bootstrap here.
     width: 51px;
     font-size: 12px;
     font-weight: 500;
     position: relative;
-    .corrector{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .caret{
-        margin: 2px 0 0 5px;
-      }
-    }
   }
 
   &.yes .caret:before {
