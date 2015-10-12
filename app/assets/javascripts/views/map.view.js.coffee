@@ -293,6 +293,8 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
   options:
     trackResize: true
     maxZoom: 19
+    scrollWheelZoom: !Ember.ENV.EMBEDDED
+    touchZoom: !Ember.ENV.EMBEDDED
 
   openedPopup: null
 
