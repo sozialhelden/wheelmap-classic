@@ -11,6 +11,21 @@ describe WidgetsController do
     FactoryGirl.create(:widget, user: user)
   }
 
+  describe "POST #update" do
+    context "with a signed in user" do
+
+      before :each do
+        sign_in user
+        request.env['HTTP_ACCEPT'] = 'application/json'
+      end
+
+      it "updates a widget" do
+        put :update, :id => widget.id, widget: FactoryGirl.build(:widget).attributes
+        expect(response.status).to eq(200)
+      end
+    end
+  end
+
   describe "embed" do
     context "with a valid token" do
       it "displays the widget" do

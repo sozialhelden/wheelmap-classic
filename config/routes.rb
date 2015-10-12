@@ -66,10 +66,11 @@ Wheelmap::Application.routes.draw do
 
   resources :regions, :only => [:index, :show], :constraints => { :format => 'kml' }
 
-  resources :categories, only: [:index, :show]
-  resources :node_types, only: [:index, :show]
-  resources :photos, only: [:index, :show]
-  resources :widgets, only: [:update]
+  resources :categories,  only: [:index, :show]
+  resources :node_types,  only: [:index, :show]
+  resources :photos,      only: [:index, :show]
+
+  post 'widgets/:id', to: 'widgets#update', as: :widgets
   get 'embed/:key', to: 'widgets#embed', as: :embed
 
   resource :users, :as => 'profile', :path => '/profile' do
@@ -101,7 +102,6 @@ Wheelmap::Application.routes.draw do
     end
 
     resources :assets,      :only => [:index]
-
     resources :nodes,       :only  => [:index, :show, :update, :create] do
       collection do
         get :search
