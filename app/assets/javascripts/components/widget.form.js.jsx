@@ -1,19 +1,4 @@
 module.exports = React.createClass({
-  // propTypes: {
-  //   height: React.PropTypes.string,
-  //   width: React.PropTypes.string
-  // },
-
-  // getInitialState: function () {
-  //   return {
-  //     height: this.props.height,
-  //     width: this.props.width
-  //   };
-  // },
-
-  handleUpdate: function (widget) {
-    this.props.handleUpdate(widget);
-  },
 
   onWidthChange: function (e) {
     this.props.onWidthChange(e.target.value);
@@ -27,6 +12,12 @@ module.exports = React.createClass({
     this.props.onLocationChange(item);
   },
 
+  onCategoriesChange: function (field, e) {
+    this.props.onCategoriesChange(field, e);
+    // var nextState = {};
+    // nextState[field] = e.target.checked;
+    // this.setState(nextState);
+  },
   // TODO: generate these in template as well.
   // <div style={{margin: 0, padding: 0, display: 'inline'}}>
   // <input name="utf8" type="hidden" value="✓"/>
@@ -75,6 +66,20 @@ module.exports = React.createClass({
                   name="widget[height]" step="any" type="number"
                   value={this.props.height}
                   onChange={this.onHeightChange}/>
+              </span>
+            </div>
+            <div className="number input optional numeric stringish form-group"
+              id="widget_categories_input">
+              <label className=" control-label" htmlFor="widget_categories">
+                <Translations
+                  defaultKey={'users.profile.widget.categories'}>
+                </Translations>
+              </label>
+              <span className="form-wrapper">
+                <input className="form-control" id="widget_categories"
+                  name="widget[categories]" type="checkbox"
+                  checked={this.props.categories}
+                  onChange={this.onCategoriesChange.bind(this, 'categories')}/>
               </span>
             </div>
           </fieldset>
