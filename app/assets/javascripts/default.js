@@ -4,7 +4,6 @@
 //= require jquery/jquery.tools
 //= require jquery/jquery.blockUI
 //= require jquery/jquery.uploadify
-//= require jquery/jquery.lightbox
 //= require openlayers211
 //= require openlayers_i18n
 //= require osm
