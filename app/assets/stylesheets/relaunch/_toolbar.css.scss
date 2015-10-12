@@ -1,3 +1,13 @@
+@mixin toolbar-bottom() {
+  position: absolute;
+  top: auto;
+  left: 0;
+  bottom: 0;
+  @include box-shadow(none);
+  background-color: #334557;
+  border-top: 1px solid #273442;
+}
+
 .toolbar {
   width: 100%;
   height: $toolbarHeight;
@@ -9,13 +19,11 @@
   @include box-shadow(0px 0px 10px #444, inset 0px 2px 6px #000);
 
   @media screen and (max-width: $breakTablet) {
-    position: absolute;
-    top: auto;
-    left: 0;
-    bottom: 0;
-    @include box-shadow(none);
-    background-color: #334557;
-    border-top: 1px solid #273442;
+    @include toolbar-bottom;
+  }
+
+  .embedded & {
+    @include toolbar-bottom;
   }
 
   &-content {

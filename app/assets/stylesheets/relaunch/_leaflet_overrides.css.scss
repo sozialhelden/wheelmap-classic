@@ -1,14 +1,3 @@
-.leaflet-bottom {
-  position: fixed;
-  z-index: 100;
-  pointer-events: none;
-  bottom: 32px;
-
-  @media screen and (max-width:$breakTablet) {
-    bottom: 53px;
-  }
-}
-
 .leaflet-popup-content-wrapper {
   padding: 0;
 }

@@ -20,6 +20,10 @@
 #wheelmap {
   padding-top: $headerHeight;
   padding-bottom: $footerHeight;
+
+  &.embedded {
+    padding: 0;
+  }
 }
 
 .login{
