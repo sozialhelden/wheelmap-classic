@@ -4,27 +4,15 @@ module.exports = React.createClass({
   //   width: React.PropTypes.string
   // },
 
-  getInitialState: function () {
-    return {
-      height: this.props.height,
-      width: this.props.width
-    };
-  },
+  // getInitialState: function () {
+  //   return {
+  //     height: this.props.height,
+  //     width: this.props.width
+  //   };
+  // },
 
   handleUpdate: function (widget) {
-    console.log(this.state);
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      type: 'POST',
-      data: widget,
-      success: function(data) {
-        console.log(this.props.url, data);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
+    this.props.handleUpdate(widget);
   },
 
   onWidthChange: function (e) {
@@ -33,6 +21,10 @@ module.exports = React.createClass({
 
   onHeightChange: function (e) {
     this.props.onHeightChange(e.target.value);
+  },
+
+  onLocationChange: function (item) {
+    this.props.onLocationChange(item);
   },
 
   // TODO: generate these in template as well.
@@ -49,26 +41,20 @@ module.exports = React.createClass({
           <fieldset className="inputs">
             <legend>
               <Translations
-                defaultKey={'users.profile.widget.legend.settings'}>
+                defaultKey={'users.profile.widget.legends.settings'}>
               </Translations>
             </legend>
 
-            <div className="number input optional numeric stringish form-group"
-              id="widget_center_input">
-              <label className=" control-label" for="widget_center">
-                <Translations
-                  defaultKey={'activerecord.attributes.widget.center'}>
-                </Translations>
-              </label>
-              <Photon url={'http://photon.komoot.de/api/'}
-                lang={I18n.locale} limit={10}></Photon>
-            </div>
+
+            <Photon url={'http://photon.komoot.de/api/'}
+              lang={I18n.locale} limit={10}
+              onLocationChange={this.onLocationChange}></Photon>
 
             <div className="number input optional numeric stringish form-group"
               id="widget_width_input">
-              <label className=" control-label" for="widget_width">
+              <label className=" control-label" htmlFor="widget_width">
                 <Translations
-                  defaultKey={'activerecord.attributes.widget.width'}>
+                  defaultKey={'users.profile.widget.width'}>
                 </Translations>
               </label>
               <span className="form-wrapper">
@@ -79,9 +65,9 @@ module.exports = React.createClass({
             </div>
             <div className="number input optional numeric stringish form-group"
               id="widget_height_input">
-              <label className=" control-label" for="widget_height">
+              <label className=" control-label" htmlFor="widget_height">
                 <Translations
-                  defaultKey={'activerecord.attributes.widget.height'}>
+                  defaultKey={'users.profile.widget.height'}>
                 </Translations>
               </label>
               <span className="form-wrapper">
