@@ -1,3 +1,5 @@
+var debounce = require('mout/function/debounce');
+
 module.exports = React.createClass({
 
   getInitialState: function() {
@@ -13,7 +15,7 @@ module.exports = React.createClass({
       dataType: 'json',
       cache: false,
       data: {
-        q: search, //this.props.loc,
+        q: search,
         lang: this.props.lang,
         limit: this.props.limit
       },
@@ -29,6 +31,7 @@ module.exports = React.createClass({
 
   onLocationChange: function (item, index) {
     this.setState({selectedItem: index});
+    //var request = debounce(this.handleFeaturesRequest, 300);
     this.props.onLocationChange(item);
   },
 
@@ -37,7 +40,7 @@ module.exports = React.createClass({
       <div className="number input optional numeric stringish form-group"
         style={{position: 'relative'}}
         id="widget_center_input">
-        <label className=" control-label" for="widget_center">
+        <label className=" control-label" htmlFor="widget_center">
           <Translations
             defaultKey={'users.profile.widget.center'}>
           </Translations>

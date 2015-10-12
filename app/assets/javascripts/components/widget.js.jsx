@@ -1,13 +1,12 @@
+var setParam = require('mout/queryString/setParam');
+
 module.exports = React.createClass({
-  // propTypes: {
-  //   defaultWidth: React.PropTypes.number,
-  //   defaultHeight: React.PropTypes.number
-  // },
 
   getInitialState: function() {
     return {
       width:  this.props.defaultWidth,
       height: this.props.defaultHeight,
+      categories: true,
       src:    this.props.defaultSrc,
       resource: this.props.defaultResource
     };
@@ -18,7 +17,14 @@ module.exports = React.createClass({
       url: this.state.resource,
       dataType: 'json',
       type: 'POST',
-      data: widget,
+      data: {
+        widget: {
+          height: '',
+          width: '',
+          lat: '',
+          lon: ''
+        }
+      },
       success: function(data) {
         console.log(this.state.url, data);
       }.bind(this),
@@ -37,8 +43,11 @@ module.exports = React.createClass({
   },
 
   onLocationChange: function(item){
-    console.log(item);
-    //this.setState({src: src});
+    var src = this.state.src;
+    src = setParam(src, 'lat', item.geometry.coordinates[0]);
+    src = setParam(src, 'lon', item.geometry.coordinates[1]);
+    src = setParam(src, 'show_categories', this.state.category ? 1 : 0);
+    this.setState({src: src});
   },
 
   render: function () {
