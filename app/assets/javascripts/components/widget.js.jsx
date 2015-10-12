@@ -1,4 +1,5 @@
 var setParam = require('mout/queryString/setParam');
+var debounce = require('mout/function/debounce');
 
 module.exports = React.createClass({
 
@@ -6,23 +7,26 @@ module.exports = React.createClass({
     return {
       width:  this.props.defaultWidth,
       height: this.props.defaultHeight,
-      categories: true,
+      lat: this.props.defaultLat,
+      lon: this.props.defaultLon,
+      categories: this.props.defaultCategory,
       src:    this.props.defaultSrc,
       resource: this.props.defaultResource
     };
   },
 
-  onHandleUpdate: function (widget) {
+  handleUpdate: function () {
     $.ajax({
       url: this.state.resource,
       dataType: 'json',
       type: 'POST',
       data: {
         widget: {
-          height: '',
-          width: '',
-          lat: '',
-          lon: ''
+          height: this.state.height,
+          width: this.state.width,
+          lat: this.state.lat,
+          lon: this.state.lon,
+          categories: this.state.categories
         }
       },
       success: function(data) {
@@ -34,20 +38,31 @@ module.exports = React.createClass({
     });
   },
 
+  componentWillMount: function() {
+    this.debouncedUpdate = debounce(this.handleUpdate,300);
+  },
   onWidthChange: function(value) {
-    this.setState({width: value});
+    this.setState({width: value}, this.debouncedUpdate);
   },
 
   onHeightChange: function(value) {
-    this.setState({height: value});
+    this.setState({height: value}, this.debouncedUpdate);
   },
 
   onLocationChange: function(item){
-    var src = this.state.src;
-    src = setParam(src, 'lat', item.geometry.coordinates[0]);
-    src = setParam(src, 'lon', item.geometry.coordinates[1]);
-    src = setParam(src, 'show_categories', this.state.category ? 1 : 0);
-    this.setState({src: src});
+    // var src = this.state.src;
+    this.setState({lat: item.geometry.coordinates[0]}, this.debouncedUpdate);
+    this.setState({lon: item.geometry.coordinates[1]}, this.debouncedUpdate);
+    // // src = setParam(src, 'lat', item.geometry.coordinates[0]);
+    // // src = setParam(src, 'lon', item.geometry.coordinates[1]);
+    // // src = setParam(src, 'show_categories', this.state.category ? 1 : 0);
+    // // this.setState({src: src});
+  },
+
+  onCategoriesChange: function(field, e) {
+    var nextState = {};
+    nextState[field] = e.target.checked;
+    this.setState(nextState, this.debouncedUpdate);
   },
 
   render: function () {
@@ -56,10 +71,11 @@ module.exports = React.createClass({
         <WidgetForm
           width={this.state.width}
           height={this.state.height}
+          categories={this.state.categories}
           onWidthChange={this.onWidthChange}
           onHeightChange={this.onHeightChange}
-          onHandleUpdate={this.onHandleUpdate}
           onLocationChange={this.onLocationChange}
+          onCategoriesChange={this.onCategoriesChange}
           />
         <WidgetPreview
           width={this.state.width}

@@ -29,6 +29,10 @@ module.exports = React.createClass({
     });
   },
 
+  componentWillMount: function() {
+    this.debouncedFeatureRequest = debounce(this.handleFeaturesRequest,300);
+  },
+
   onLocationChange: function (item, index) {
     this.setState({selectedItem: index});
     //var request = debounce(this.handleFeaturesRequest, 300);
@@ -45,7 +49,7 @@ module.exports = React.createClass({
             defaultKey={'users.profile.widget.center'}>
           </Translations>
         </label>
-        <PhotonSearch onSearchUpdate={this.handleFeaturesRequest}></PhotonSearch>
+        <PhotonSearch onSearchUpdate={this.debouncedFeatureRequest}></PhotonSearch>
         <PhotonFeatures items={this.state.data}
           selectedItem={this.state.selectedItem}
           onSelection={this.onLocationChange}>
