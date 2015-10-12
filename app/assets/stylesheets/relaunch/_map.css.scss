@@ -14,6 +14,11 @@
     }
   }
 
+  &.embedded .leaflet-container {
+    top: 0;
+    bottom: $toolbarHeight;
+  }
+
   .flash-wrapper {
     top: 0px;
   }
