@@ -144,6 +144,9 @@ en:
           user_data: Your account information
       widget:
         title: Widget
+        height: height
+        width: width
+        center: center
         legends:
           settings: Settings
           preview: Preview
