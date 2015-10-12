@@ -7,7 +7,7 @@ Wheelmap.NodePopupView = Ember.View.extend
   ).property()
 
   linkTarget: (()->
-    if ENV.EMBEDDED then '_blank' else null
+    if Ember.ENV.EMBEDDED then '_blank' else null
   ).property()
 
 Wheelmap.NodePopupStatusDropdownView = Ember.View.extend
