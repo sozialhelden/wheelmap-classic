@@ -530,11 +530,10 @@
 
 %status-button {
   width: 51px;
-  // position: relative;
+  text-align: center;
 
   .btn {
     padding: 0;
-    padding-right: 7px; // Would be nice, if we have a variable from the default bootstrap here.
     width: 51px;
     font-size: 12px;
     font-weight: 500;
