@@ -1,9 +1,9 @@
 <div class="node-popup-edit btn-group">
-    <a {{ bind-attr href=showPath }} class="btn details wheelmap-btn">
+    <a {{ bind-attr href=showPath target=view.linkTarget }} class="btn details wheelmap-btn">
       {{ t 'nodes.node_edit.details' }}
     </a>
 
-    <a {{ bind-attr href=editPath }} class="btn edit wheelmap-btn">
+    <a {{ bind-attr href=editPath target=view.linkTarget }} class="btn edit wheelmap-btn">
         <i class="icon-pencil"></i>
     </a>
 </div>

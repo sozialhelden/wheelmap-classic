@@ -6,6 +6,10 @@ Wheelmap.NodePopupView = Ember.View.extend
     if I18n.locale == 'de' then 'http://wheelmap.org/about/faqs/' else 'http://wheelmap.org/en/faqs/'
   ).property()
 
+  linkTarget: (()->
+    if ENV.EMBEDDED then '_blank' else null
+  ).property()
+
 Wheelmap.NodePopupStatusDropdownView = Ember.View.extend
   templateName: 'nodes/_status-dropdown'
   tagName: 'section'
