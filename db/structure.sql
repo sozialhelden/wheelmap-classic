@@ -49,7 +49,7 @@ CREATE TABLE `admin_users` (
   UNIQUE KEY `index_admin_users_on_email` (`email`),
   UNIQUE KEY `index_admin_users_on_confirmation_token` (`confirmation_token`),
   UNIQUE KEY `index_admin_users_on_reset_password_token` (`reset_password_token`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `alternatives` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -113,7 +113,7 @@ CREATE TABLE `delayed_jobs` (
   `queue` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `delayed_jobs_priority` (`priority`,`run_at`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `iphone_counters` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -173,7 +173,7 @@ CREATE TABLE `photos` (
   `image_gallery_preview_width` int(11) DEFAULT NULL,
   `image_gallery_preview_height` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `pois` (
   `osm_id` bigint(20) NOT NULL,
@@ -207,7 +207,7 @@ CREATE TABLE `provided_pois` (
   `wheelchair_toilet` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_provided_pois_on_provider_id_and_poi_id` (`provider_id`,`poi_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `providers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -216,7 +216,7 @@ CREATE TABLE `providers` (
   `updated_at` datetime DEFAULT NULL,
   `logo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `providers_users` (
   `user_id` int(11) DEFAULT NULL,

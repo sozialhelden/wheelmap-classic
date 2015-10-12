@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   attr_accessor :first_time
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter, :first_name, :last_name, :osm_username, :terms, :privacy_policy, :first_time
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :wants_newsletter, :first_name, :last_name, :osm_username, :terms, :privacy_policy, :first_time, :provider_ids, :osm_id
 
   validates :password, :confirmation =>true
 
