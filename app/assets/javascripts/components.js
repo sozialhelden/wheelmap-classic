@@ -3,6 +3,7 @@
 
 
 global.Translations   = require('./components/translations.js.jsx');
+global.Dropdown       = require('./components/common.dropdown.js.jsx');
 
 global.PhotonFeatures = require('./components/photon.features.js.jsx');
 global.PhotonSearch   = require('./components/photon.search.js.jsx');

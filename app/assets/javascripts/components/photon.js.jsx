@@ -35,25 +35,26 @@ module.exports = React.createClass({
 
   onLocationChange: function (item, index) {
     this.setState({selectedItem: index});
-    //var request = debounce(this.handleFeaturesRequest, 300);
     this.props.onLocationChange(item);
   },
 
   render: function() {
     return (
       <div className="number input optional numeric stringish form-group"
-        style={{position: 'relative'}}
         id="widget_center_input">
-        <label className=" control-label" htmlFor="widget_center">
+        <label className="control-label" htmlFor="widget_center">
           <Translations
             defaultKey={'users.profile.widget.center'}>
           </Translations>
         </label>
-        <PhotonSearch onSearchUpdate={this.debouncedFeatureRequest}></PhotonSearch>
-        <PhotonFeatures items={this.state.data}
-          selectedItem={this.state.selectedItem}
-          onSelection={this.onLocationChange}>
-        </PhotonFeatures>
+        <div className="photon-search-wrapper">
+          <PhotonSearch onSearchUpdate={this.debouncedFeatureRequest}></PhotonSearch>
+          <PhotonFeatures items={this.state.data}
+            selectedItem={this.state.selectedItem}
+            onSelection={this.onLocationChange}
+            show={this.state.data.length > 0}>
+          </PhotonFeatures>
+        </div>
       </div>
     );
   }
