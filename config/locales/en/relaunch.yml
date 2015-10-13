@@ -148,6 +148,7 @@ en:
         width: width
         center: center
         categories: categories
+        providers: providers
         legends:
           settings: Settings
           preview: Preview
