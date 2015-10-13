@@ -11,7 +11,7 @@ class Widget < ActiveRecord::Base
   def providers
     self.user.providers
   end
-  
+
   def lat=(value)
     self.center = GEO_FACTORY.point(self.lon || 0.0, value.to_f)
   end
