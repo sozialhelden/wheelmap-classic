@@ -9,7 +9,7 @@ module.exports = React.createClass({
       height: this.props.defaultHeight,
       lat: this.props.defaultLat,
       lon: this.props.defaultLon,
-      providers: this.props.providers || [],
+      providers: this.props.defaultProviders || [],
       categories: this.props.defaultCategory,
       src:    this.props.defaultSrc,
       resource: this.props.defaultResource
@@ -51,13 +51,8 @@ module.exports = React.createClass({
   },
 
   onLocationChange: function(item){
-    // var src = this.state.src;
     this.setState({lat: item.geometry.coordinates[0]}, this.debouncedUpdate);
     this.setState({lon: item.geometry.coordinates[1]}, this.debouncedUpdate);
-    // // src = setParam(src, 'lat', item.geometry.coordinates[0]);
-    // // src = setParam(src, 'lon', item.geometry.coordinates[1]);
-    // // src = setParam(src, 'show_categories', this.state.category ? 1 : 0);
-    // // this.setState({src: src});
   },
 
   onCategoriesChange: function(field, e) {

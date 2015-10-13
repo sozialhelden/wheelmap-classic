@@ -7,7 +7,9 @@ module.exports = React.createClass({
   render: function () {
     var items = this.props.items.map((item, index) => {
       return (
-        <option key={index} value={item.name}
+        <option
+          key={index}
+          value={item.id}
           onClick={this.handleClick.bind(this, index)}>
             {item.name}
         </option>
@@ -16,10 +18,11 @@ module.exports = React.createClass({
 
     return (
       <span>
-        <select className="form-control provider-dropdown" id="widget_center"
-          onChange={this.onSearchUpdate}
-          >
-          {items}
+        <select
+          id="widget_center"
+          className="form-control provider-dropdown"
+          onChange={this.onSearchUpdate}>
+            {items}
         </select>
       </span>
     );

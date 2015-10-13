@@ -5,7 +5,8 @@ module.exports = React.createClass({
   getInitialState: function() {
     return {
       data: [],
-      selectedItem: -1
+      selectedItem: -1,
+      selection: ''
     };
   },
 
@@ -40,16 +41,22 @@ module.exports = React.createClass({
 
   render: function() {
     return (
-      <div className="number input optional numeric stringish form-group"
+      <div
+        className="number input optional numeric stringish form-group"
         id="widget_center_input">
-        <label className="control-label" htmlFor="widget_center">
+        <label
+          className="control-label"
+          htmlFor="widget_center">
           <Translations
             defaultKey={'users.profile.widget.center'}>
           </Translations>
         </label>
         <div className="photon-search-wrapper">
-          <PhotonSearch onSearchUpdate={this.debouncedFeatureRequest}></PhotonSearch>
-          <PhotonFeatures items={this.state.data}
+          <PhotonSearch
+            onSearchUpdate={this.debouncedFeatureRequest}>
+          </PhotonSearch>
+          <PhotonFeatures
+            items={this.state.data}
             selectedItem={this.state.selectedItem}
             onSelection={this.onLocationChange}
             show={this.state.data.length > 0}>

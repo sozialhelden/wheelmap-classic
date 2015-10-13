@@ -1,5 +1,6 @@
 FactoryGirl.define do
-  factory :provider do |p|
-    p.name 'A name'
+
+  factory :provider do
+    sequence(:name) { |n| "Provider_#{n}" }
   end
 end
