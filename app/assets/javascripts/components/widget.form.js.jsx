@@ -68,6 +68,17 @@ module.exports = React.createClass({
                   onChange={this.onHeightChange}/>
               </span>
             </div>
+
+            <div className="number input optional numeric stringish form-group"
+              id="widget_providers_input">
+              <label className=" control-label" htmlFor="widget_providers">
+                <Translations
+                  defaultKey={'users.profile.widget.providers'}>
+                </Translations>
+              </label>
+              <Dropdown items={this.props.providers}></Dropdown>
+            </div>
+
             <div className="number input optional numeric stringish form-group"
               id="widget_categories_input">
               <label className=" control-label" htmlFor="widget_categories">

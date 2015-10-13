@@ -9,6 +9,7 @@ module.exports = React.createClass({
       height: this.props.defaultHeight,
       lat: this.props.defaultLat,
       lon: this.props.defaultLon,
+      providers: this.props.providers || [],
       categories: this.props.defaultCategory,
       src:    this.props.defaultSrc,
       resource: this.props.defaultResource
@@ -67,11 +68,12 @@ module.exports = React.createClass({
 
   render: function () {
     return (
-      <div>
+      <div class="widget-panel">
         <WidgetForm
           width={this.state.width}
           height={this.state.height}
           categories={this.state.categories}
+          providers={this.state.providers}
           onWidthChange={this.onWidthChange}
           onHeightChange={this.onHeightChange}
           onLocationChange={this.onLocationChange}

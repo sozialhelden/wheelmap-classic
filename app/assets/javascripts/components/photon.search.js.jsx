@@ -6,9 +6,10 @@ module.exports = React.createClass({
 
   render: function () {
     return (
-      <span className="form-wrapper">
-        <input className="form-control" type="string" id="widget_center"
-          defaultValue={this.props.search} onChange={this.onSearchUpdate}/>
+      <span>
+        <input className="form-control" type="text" id="widget_center"
+          defaultValue={this.props.search} onChange={this.onSearchUpdate}
+          autoComplete="off"/>
       </span>
     );
   }

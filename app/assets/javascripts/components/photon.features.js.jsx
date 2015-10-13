@@ -1,4 +1,5 @@
 module.exports = React.createClass({
+
   handleClick: function (i) {
     this.props.onSelection(this.props.items[i], i);
   },
@@ -10,14 +11,15 @@ module.exports = React.createClass({
       return (
         <li key={index}
           onClick={this.handleClick.bind(this, index)}
-          style={{background: this.props.selectedItem == index ? 'green':'white'}}
+          style={{background: this.props.selectedItem == index ? '#d2d0c8':'white'}}
           >
             {properties.name}
         </li>
       );
     });
     return (
-      <ul className="form-wrapper" style={{background: 'white', zIndex: 999 }}>
+      <ul style={{
+          border: this.props.show ? '1px solid #ccc' : 0}}>
         {featureNodes}
       </ul>
     );
