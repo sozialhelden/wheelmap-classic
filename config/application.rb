@@ -87,5 +87,7 @@ module Wheelmap
     # Should the node_modules directory be evaluated for changes on page load
     config.browserify_rails.evaluate_node_modules = true
 
+    # configure browserify_rails to add commonJS directives in javascript specs
+    config.browserify_rails.paths << /spec\/javascripts\//
   end
 end

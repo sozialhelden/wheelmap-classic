@@ -1,4 +1,5 @@
 // Teaspoon includes some support files, but you can use anything from your own support path too.
+
 // require support/jasmine-jquery-1.7.0
 // require support/jasmine-jquery-2.0.0
 // require support/jasmine-jquery-2.1.0
@@ -7,7 +8,10 @@
 //
 // PhantomJS (Teaspoons default driver) doesn't have support for Function.prototype.bind, which has caused confusion.
 // Use this polyfill to avoid the confusion.
-//= require support/bind-poly
+
+// https://github.com/modeset/teaspoon/commit/c8bbd53b6aba34b0cc768f0b5cb8acbdbc45347e
+//= require support/phantomjs-shims.js
+
 //
 // You can require your own javascript files here. By default this will include everything in application, however you
 // may get better load performance if you require the specific files that are being used in the spec that tests them.
@@ -30,3 +34,8 @@
 // the configuration and use this file as a manifest.
 //
 // For more information: http://github.com/modeset/teaspoon
+
+
+
+//= require react
+//= require react_ujs

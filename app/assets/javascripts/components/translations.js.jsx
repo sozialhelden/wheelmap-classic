@@ -1,7 +1,10 @@
+import React, { PropTypes, Component } from 'react';
+
 module.exports = React.createClass({
-  // propTypes: {
-  //   locale: React.PropTypes.integer,
-  // },
+  propTypes: {
+    defaultKey: React.PropTypes.string,
+  },
+
   getInitialState: function() {
     return {
       className: 'translation_missing',

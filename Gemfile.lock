@@ -449,9 +449,9 @@ GEM
       activesupport (~> 3.0)
       railties (~> 3.0)
     syntax (1.0.0)
-    teaspoon (1.0.2)
+    teaspoon (1.1.1)
       railties (>= 3.2.5, < 5)
-    teaspoon-jasmine (2.2.0)
+    teaspoon-jasmine (2.3.4)
       teaspoon (>= 1.0.0)
     test-unit (3.1.2)
       power_assert
@@ -588,6 +588,7 @@ DEPENDENCIES
   spork
   strong_parameters
   syntax
+  teaspoon (= 1.1.1)
   teaspoon-jasmine
   test-unit (~> 3.0)
   therubyracer
