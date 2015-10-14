@@ -1,7 +1,6 @@
 //= require react
 //= require react_ujs
 
-
 global.Translations   = require('./components/translations.js.jsx');
 global.Dropdown       = require('./components/common.dropdown.js.jsx');
 

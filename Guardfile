@@ -34,3 +34,11 @@ guard 'cucumber', :cli => '--drb', :all_on_start => false, :all_after_pass => fa
   watch(%r{^features/support/.+$})          { 'features' }
   watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'features' }
 end
+
+# guard :teaspoon do
+#   # Implementation files
+#   watch(%r{app/assets/javascripts/(.+).js}) { |m| "#{m[1]}_spec" }
+#
+#   # Specs / Helpers
+#   watch(%r{spec/javascripts/(.*)})
+# end
