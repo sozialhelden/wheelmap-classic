@@ -12,14 +12,14 @@ module.exports = React.createClass({
         <li
           key={index}
           onClick={this.handleClick.bind(this, index)}
-          style={{background: this.props.selectedItem == index ? '#d2d0c8':'white'}}>
+          className={this.props.selectedItem == index ? 'selected' : null}>
             {properties.name}
         </li>
       );
     });
     return (
       <ul
-        style={{border: this.props.show ? '1px solid #ccc' : 0}}>
+        style={{display: this.props.show ? null : 'none'}}>
           {items}
       </ul>
     );
