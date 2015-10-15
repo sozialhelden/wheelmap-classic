@@ -1,11 +1,5 @@
 // Teaspoon includes some support files, but you can use anything from your own support path too.
 
-// require support/jasmine-jquery-1.7.0
-// require support/jasmine-jquery-2.0.0
-// require support/jasmine-jquery-2.1.0
-// require support/sinon
-// require support/your-support-file
-//
 // PhantomJS (Teaspoons default driver) doesn't have support for Function.prototype.bind, which has caused confusion.
 // Use this polyfill to avoid the confusion.
 
@@ -35,7 +29,17 @@
 //
 // For more information: http://github.com/modeset/teaspoon
 
+//= require 'components.js'
 
+// Configure some more testing goodies.
+var chai = require("chai");
+var sinon = require('sinon');
+var sinonChai = require("sinon-chai");
+chai.use(sinonChai);
 
-//= require react
-//= require react_ujs
+global.expect = chai.expect;
+global.sinon = sinon;
+
+global.React = require('react');
+global.ReactDOM = require('react-dom');
+global.TestUtils = require('react/addons').addons.TestUtils;
