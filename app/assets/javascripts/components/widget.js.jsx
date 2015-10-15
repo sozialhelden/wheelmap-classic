@@ -63,7 +63,7 @@ module.exports = React.createClass({
 
   render: function () {
     return (
-      <div class="widget-panel">
+      <div className="widget-panel">
         <WidgetForm
           width={this.state.width}
           height={this.state.height}

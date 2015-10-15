@@ -1,7 +1,7 @@
 module.exports = React.createClass({
 
-  handleClick: function(i, e){
-    this.props.onSelectedOption(e.target.value);
+  handleClick: function(i){
+    this.props.onSelection(this.props.items[i], i);
   },
 
   render: function () {

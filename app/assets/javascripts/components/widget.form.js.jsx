@@ -26,27 +26,27 @@ module.exports = React.createClass({
   render: function () {
     return (
       <div className="user-form">
-        <form accept-charset="UTF-8"
+        <form acceptCharset="UTF-8"
               className="form-horizontal formtastic widget"
-              id="edit_widget" novalidate="novalidate">
+              id="edit_widget" noValidate="novalidate">
           <fieldset className="inputs">
             <legend>
-              <Translations
-                defaultKey={'users.profile.widget.legends.settings'}>
-              </Translations>
+              <Translation
+                scope={'users.profile.widget.legends.settings'}>
+              </Translation>
             </legend>
 
 
             <Photon url={'http://photon.komoot.de/api/'}
-              lang={I18n.locale} limit={10}
+              lang={Translation.locale} limit={10}
               onLocationChange={this.onLocationChange}></Photon>
 
             <div className="number input optional numeric stringish form-group"
               id="widget_width_input">
               <label className=" control-label" htmlFor="widget_width">
-                <Translations
-                  defaultKey={'users.profile.widget.width'}>
-                </Translations>
+                <Translation
+                  scope={'users.profile.widget.width'}>
+                </Translation>
               </label>
               <span className="form-wrapper">
                 <input className="form-control" id="widget_width"
@@ -57,9 +57,9 @@ module.exports = React.createClass({
             <div className="number input optional numeric stringish form-group"
               id="widget_height_input">
               <label className=" control-label" htmlFor="widget_height">
-                <Translations
-                  defaultKey={'users.profile.widget.height'}>
-                </Translations>
+                <Translation
+                  scope={'users.profile.widget.height'}>
+                </Translation>
               </label>
               <span className="form-wrapper">
                 <input className="form-control" id="widget_height"
@@ -72,9 +72,9 @@ module.exports = React.createClass({
             <div className="number input optional numeric stringish form-group"
               id="widget_providers_input">
               <label className=" control-label" htmlFor="widget_providers">
-                <Translations
-                  defaultKey={'users.profile.widget.providers'}>
-                </Translations>
+                <Translation
+                  scope={'users.profile.widget.providers'}>
+                </Translation>
               </label>
               <Dropdown items={this.props.providers}></Dropdown>
             </div>
@@ -82,9 +82,9 @@ module.exports = React.createClass({
             <div className="number input optional numeric stringish form-group"
               id="widget_categories_input">
               <label className=" control-label" htmlFor="widget_categories">
-                <Translations
-                  defaultKey={'users.profile.widget.categories'}>
-                </Translations>
+                <Translation
+                  scope={'users.profile.widget.categories'}>
+                </Translation>
               </label>
               <span className="form-wrapper">
                 <input className="form-control" id="widget_categories"
