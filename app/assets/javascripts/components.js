@@ -1,11 +1,11 @@
 //= require react
 //= require react_ujs
 
-global.Translations   = require('./components/translations.js.jsx');
+global.Translation    = require('./components/common.i18n.js.jsx');
 global.Dropdown       = require('./components/common.dropdown.js.jsx');
+global.GeoJsonList    = require('./components/common.geojson.list.js.jsx');
+global.Search         = require('./components/common.search.js.jsx');
 
-global.PhotonFeatures = require('./components/photon.features.js.jsx');
-global.PhotonSearch   = require('./components/photon.search.js.jsx');
 global.Photon         = require('./components/photon.js.jsx');
 
 global.WidgetForm     = require('./components/widget.form.js.jsx');

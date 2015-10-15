@@ -47,20 +47,20 @@ module.exports = React.createClass({
         <label
           className="control-label"
           htmlFor="widget_center">
-          <Translations
-            defaultKey={'users.profile.widget.center'}>
-          </Translations>
+          <Translation
+            scope={'users.profile.widget.center'}>
+          </Translation>
         </label>
         <div className="photon-search-wrapper">
-          <PhotonSearch
+          <Search
             onSearchUpdate={this.debouncedFeatureRequest}>
-          </PhotonSearch>
-          <PhotonFeatures
+          </Search>
+          <GeoJsonList
             items={this.state.data}
             selectedItem={this.state.selectedItem}
             onSelection={this.onLocationChange}
             show={this.state.data.length > 0}>
-          </PhotonFeatures>
+          </GeoJsonList>
         </div>
       </div>
     );

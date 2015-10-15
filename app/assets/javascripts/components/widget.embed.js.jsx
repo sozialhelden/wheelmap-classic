@@ -1,14 +1,15 @@
 module.exports = React.createClass({
-  // propTypes: {
-  //   height: React.PropTypes.integer,
-  //   width: React.PropTypes.integer
-  // },
+  propTypes: {
+    height: React.PropTypes.number,
+    width: React.PropTypes.number,
+    src: React.PropTypes.string
+  },
 
   render: function () {
     return (
       <div className="user-widget-embedded">
         <h5>
-          <Translations defaultKey={'users.profile.widget.legends.embed'}></Translations>
+          <Translation scope={'users.profile.widget.legends.embed'}></Translation>
         </h5>
         <pre>
           {"<iframe width="  + this.props.width
