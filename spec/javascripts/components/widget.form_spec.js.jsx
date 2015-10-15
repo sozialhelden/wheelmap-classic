@@ -12,5 +12,4 @@ describe("React WidgetForm component", function() {
 
     expect(component).to.exist;
   });
-
 });

@@ -2,12 +2,37 @@ var debounce = require('mout/function/debounce');
 
 module.exports = React.createClass({
 
+  keys: {
+    up: 38,
+    down: 40,
+    enter: 13
+  },
+
   getInitialState: function() {
     return {
       data: [],
       selectedItem: -1,
       selection: ''
     };
+  },
+
+  handleKeyPress: function (e) {
+    console.log(e);
+    var key = e.which;
+    switch (key) {
+      case 38:
+        var idx = (this.state.selectedItem+this.state.data.length-1)%this.state.data.length;
+        this.setState({selectedItem: idx});
+        break;
+      case 40:
+        var idx = (this.state.selectedItem+1)%this.state.data.length;
+        this.setState({selectedItem: idx});
+        break;
+      case 13:
+        break;
+      default:
+        console.log('key not handled!');
+    }
   },
 
   handleFeaturesRequest: function (search) {
@@ -32,12 +57,18 @@ module.exports = React.createClass({
 
   componentWillMount: function() {
     this.debouncedFeatureRequest = debounce(this.handleFeaturesRequest,300);
+    this.debouncedHandleKeyPress = debounce(this.handleKeyPress, 300);
   },
 
   onLocationChange: function (item, index) {
-    this.setState({selectedItem: index});
+    this.setState({
+      selectedItem: index,
+      data: []
+    });
     this.props.onLocationChange(item);
   },
+
+
 
   render: function() {
     return (
@@ -53,6 +84,9 @@ module.exports = React.createClass({
         </label>
         <div className="photon-search-wrapper">
           <Search
+            onKeyDown={this.handleKeyPress}
+            onKeyPress={this.handleKeyPress}
+            onKeyUp={this.handleKeyPress}
             onSearchUpdate={this.debouncedFeatureRequest}>
           </Search>
           <GeoJsonList

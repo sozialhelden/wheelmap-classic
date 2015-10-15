@@ -1,3 +1,5 @@
+var debounce = require('mout/function/debounce');
+
 module.exports = React.createClass({
 
   onWidthChange: function (e) {
@@ -18,6 +20,7 @@ module.exports = React.createClass({
     // nextState[field] = e.target.checked;
     // this.setState(nextState);
   },
+  
   // TODO: generate these in template as well.
   // <div style={{margin: 0, padding: 0, display: 'inline'}}>
   // <input name="utf8" type="hidden" value="✓"/>

@@ -7,7 +7,7 @@ module.exports = React.createClass({
   render: function () {
     return (
       <span>
-        <input className="form-control" type="text" id="widget_center"
+        <input {...this.props} className="form-control" type="text" id="widget_center"
           defaultValue={this.props.search} onChange={this.onSearchUpdate}
           autoComplete="off"/>
       </span>
