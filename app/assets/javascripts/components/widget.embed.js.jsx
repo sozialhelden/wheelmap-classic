@@ -12,10 +12,10 @@ module.exports = React.createClass({
           <Translation scope={'users.profile.widget.legends.embed'}></Translation>
         </h5>
         <pre>
-          {"<iframe width="  + this.props.width
-            +     " height=" + this.props.height
-            +     " src="    + this.props.src
-            + "/>"}
+          {'<iframe width="'  + this.props.width
+            +     '" height="' + this.props.height
+            +     '" src="'    + this.props.src
+            + '"/>'}
         </pre>
       </div>
     );
