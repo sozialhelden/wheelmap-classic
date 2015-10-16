@@ -70,6 +70,7 @@ group :default do
   gem 'htmlentities', require: false
   gem 'test-unit', '~> 3.0', require: false
   gem 'browserify-rails'
+  gem 'react-rails', '~> 1.3.0'
 end
 
 group :assets do
@@ -81,7 +82,6 @@ group :assets do
   gem 'compass-colors'
   gem 'compass-rails'
   gem 'bootstrap-sass'
-  gem 'react-rails', '~> 1.3.0'
 end
 
 group :test, :development do
