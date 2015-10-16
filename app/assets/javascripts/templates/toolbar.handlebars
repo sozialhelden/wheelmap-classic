@@ -78,16 +78,16 @@
     <div class="btn-group bootstrap-select show-menu-arrow toolbar-category-filter show-tick">
         <button class="btn dropdown-toggle clearfix btn-info" data-toggle="dropdown">
             <span class="icon-tags"></span>
-            <span class="filter-option pull-left">{{ view.categoryButton }}</span>
-            <span class="caret"></span>
+            <span class="caret pull-right"></span>
+            <span class="filter-option">{{ view.categoryButton }}</span>
             {{#if activeCategories.length }}<span class="counter">{{ activeCategories.length }}</span>{{/if}}
         </button>
         <ul class="dropdown-menu" role="menu">
             {{#each}}
                 <li {{ bind-attr class="isActive:selected" }}>
                     <a {{ action toggleCategoryIsActive }}>
-                        {{ t 'poi.category' identifier }}
                         <i class="icon-ok pull-right check-mark"></i>
+                        {{ t 'poi.category' identifier }}
                     </a>
                 </li>
             {{/each}}
