@@ -51,7 +51,7 @@ module Wheelmap
     config.generators do |g|
       g.test_framework :rspec
     end
-    
+
     # Add the fonts path
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
@@ -69,7 +69,7 @@ module Wheelmap
 
     config.assets.precompile += %w( relaunch.css relaunch_ie.css screen.css node.css nodes.css search.css)
     config.assets.precompile += %w( relaunch.js ie.js modernizr.js default.js search.js nodes.js ember.js ember-data.js app.js test.js)
-    config.assets.precompile += %w( i18n/*.js components.js )
+    config.assets.precompile += %w( i18n.js i18n/*.js components.js )
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
