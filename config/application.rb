@@ -51,7 +51,7 @@ module Wheelmap
     config.generators do |g|
       g.test_framework :rspec
     end
-
+    
     # Add the fonts path
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
