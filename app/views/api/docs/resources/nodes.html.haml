@@ -283,6 +283,35 @@
         %h4#nodes_representation_json Example nodes representation. (application/json)
         %pre= {:message => 'OK'}.to_json
 
+    %hr
+    .resource
+      %h3
+        ="/api/nodes/{node_id}/update_toilet"
+    %h6 Methods
+    .methods
+      .method
+        %h4 PUT
+        %p Update the toilet status of an existing node.
+        %h6 request query parameter
+
+        %table
+          %thead
+            %tr
+              %th.param Parameter
+              %th.type Type
+              %th.desc Description
+          %tbody
+            %tr.odd
+              %td wheelchair_toilet*
+              %td string
+              %td The node's wheelchair_toilet status, must be one of [yes, no, unknown]
+
+        %h4 Example request:
+        %pre http://wheelmap.org/api/nodes/123/update_wheelchair?api_key=api_key&wheelchair_toilet=yes
+
+        %h4#nodes_representation_json Example nodes representation. (application/json)
+        %pre= {:message => 'OK'}.to_json
+
 
     %hr
     .resource
