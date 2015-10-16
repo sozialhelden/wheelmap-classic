@@ -70,7 +70,7 @@ group :default do
   gem 'htmlentities', require: false
   gem 'test-unit', '~> 3.0', require: false
   gem 'browserify-rails'
-  gem 'react-rails', '~> 1.3.0'
+  gem 'react-rails', :git => 'https://github.com/reactjs/react-rails.git'
 end
 
 group :assets do
