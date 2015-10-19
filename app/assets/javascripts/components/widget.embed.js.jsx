@@ -15,7 +15,7 @@ module.exports = React.createClass({
           {'<iframe width="'  + this.props.width
             +     '" height="' + this.props.height
             +     '" src="'    + this.props.src
-            + '"/>'}
+            + '"></iframe>'}
         </pre>
       </div>
     );
