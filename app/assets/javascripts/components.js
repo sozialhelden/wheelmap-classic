@@ -1,5 +1,6 @@
 //= require react
 //= require react_ujs
+//= require i18n.js
 
 global.Translation    = require('./components/common.i18n.js.jsx');
 global.Dropdown       = require('./components/common.dropdown.js.jsx');
