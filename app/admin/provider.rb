@@ -13,7 +13,7 @@ ActiveAdmin.register Provider do
   index do
     column :id
     column :name
-    default_actions
+    actions
   end
 
   form html: { multipart: true } do |f|

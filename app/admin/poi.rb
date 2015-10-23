@@ -1,5 +1,3 @@
-require 'active_admin_stream'
-
 ActiveAdmin.register Poi do
   belongs_to :region, :optional => true
   belongs_to :node_type, :optional => true
@@ -23,8 +21,8 @@ ActiveAdmin.register Poi do
   filter :updated_at
 
   controller do
-    include ActiveAdmin::CSVStream
-    #before_filter :set_per_page, :only => :index, :if => Proc.new { |controller| controller.request.format == 'text/csv' }
+
+    before_filter :set_per_page, :only => :index, :if => Proc.new { |controller| controller.request.format == 'text/csv' }
 
     def update
       region = resource
@@ -34,13 +32,13 @@ ActiveAdmin.register Poi do
 
     private
 
-    # def set_per_page
-    #   @per_page = params[:per_page].blank? ? max_csv_records : params[:per_page].to_i
-    # end
-    #
-    # def max_csv_records
-    #   500
-    # end
+    def set_per_page
+      @per_page = params[:per_page].blank? ? max_csv_records : params[:per_page].to_i
+    end
+
+    def max_csv_records
+      100_001
+    end
 
   end
 
@@ -81,7 +79,7 @@ ActiveAdmin.register Poi do
     column :photos, :sortable => true do |poi|
       link_to "Photos", admin_poi_photos_path(poi) if poi.photos.size > 0
     end
-    default_actions
+    actions
   end
 
   show :title => :headline do |poi|

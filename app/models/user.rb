@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  include Devise::Models::TokenAuthenticatable
+  #include Devise::Models::TokenAuthenticatable
   # Include default devise modules. Others available are:
   # :http_authenticatable, :token_authenticatable, :database_authenticatable, :confirmable, :lockable, :timeoutable and :activatable
   devise :database_authenticatable, :rememberable, :confirmable, :registerable, :recoverable,
@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   def send_email_confirmation
     return if self.email.blank?
     self.generate_confirmation_token if self.confirmation_token.nil?
-    self.devise_mailer.confirmation_instructions(self).deliver
+    self.devise_mailer.confirmation_instructions(self, self.confirmation_token).deliver
   end
 
   # TODO Renebale user tracking
@@ -160,4 +160,18 @@ class User < ActiveRecord::Base
     previous_changes.has_key?(:email) && previous_changes[:email].first.blank? && email.present?
   end
 
+  def ensure_authentication_token
+    if authentication_token.blank?
+      self.authentication_token = generate_authentication_token
+    end
+  end
+
+  private
+
+  def generate_authentication_token
+    loop do
+      token = Devise.friendly_token
+      break token unless User.where(authentication_token: token).first
+    end
+  end
 end

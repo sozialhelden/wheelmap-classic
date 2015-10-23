@@ -47,7 +47,7 @@ ActiveAdmin.register ProvidedPoi do
    end
    column :provider
    column :url
-   default_actions
+   actions
   end
 
   form do |f|
