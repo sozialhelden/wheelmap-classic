@@ -4,7 +4,7 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
   config.mailer_sender = "noreply@wheelmap.org"
-  config.secret_key = ENV["devise_secret_key"]
+  config.secret_key = ENV["secret_token"]
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
 
