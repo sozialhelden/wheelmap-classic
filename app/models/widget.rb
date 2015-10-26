@@ -1,10 +1,10 @@
 class Widget < ActiveRecord::Base
-  after_initialize :default_values
-
   belongs_to :user
 
   acts_as_api
   include Api::Widget
+
+  attr_accessible :lat, :lon, :width, :height, :categories, :provider_id
 
   GEO_FACTORY = RGeo::Cartesian.factory
 
@@ -13,7 +13,7 @@ class Widget < ActiveRecord::Base
   end
 
   def lat=(value)
-    self.center = GEO_FACTORY.point(self.lon || 0.0, value.to_f)
+    self.center = GEO_FACTORY.point(lon || 0.0, value.to_f)
   end
 
   def lat
@@ -21,7 +21,7 @@ class Widget < ActiveRecord::Base
   end
 
   def lon=(value)
-    self.center = GEO_FACTORY.point(value.to_f, self.lat || 0.0)
+    self.center = GEO_FACTORY.point(value.to_f, lat || 0.0)
   end
 
   def lon
@@ -32,11 +32,4 @@ class Widget < ActiveRecord::Base
     self.user.save
     self.user.api_key
   end
-
-  private
-
-  def default_values
-    self.center ||= GEO_FACTORY.point(0.0,0.0)
-  end
-
 end

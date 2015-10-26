@@ -1,22 +1,28 @@
 var setParam = require('mout/queryString/setParam');
 var debounce = require('mout/function/debounce');
 
+function buildSrc(src, lat, lon) {
+  return src + `#/?lat=${lat}&lon=${lon}`;
+}
+
 module.exports = React.createClass({
 
   getInitialState: function() {
     return {
-      width:  this.props.defaultWidth,
+      width: this.props.defaultWidth,
       height: this.props.defaultHeight,
       lat: this.props.defaultLat,
       lon: this.props.defaultLon,
       providers: this.props.defaultProviders || [],
       categories: this.props.defaultCategory,
-      src:    this.props.defaultSrc,
+      src: buildSrc(this.props.defaultSrc, this.props.defaultLat, this.props.defaultLon),
       resource: this.props.defaultResource
     };
   },
 
   handleUpdate: function () {
+    console.log(this.state);
+
     $.ajax({
       url: this.state.resource,
       dataType: 'json',
@@ -30,12 +36,13 @@ module.exports = React.createClass({
           categories: this.state.categories
         }
       },
-      success: function(data) {
-        console.log(this.state.url, data);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
+      success: () => {
+        // @TODO reload only when necessary
+        this.setState({ reload: (new Date).getTime() })
+      },
+      error: (xhr, status, err) => {
+        console.error(status, err.toString());
+      }
     });
   },
 
@@ -51,8 +58,10 @@ module.exports = React.createClass({
   },
 
   onLocationChange: function(item){
-    this.setState({lat: item.geometry.coordinates[0]}, this.debouncedUpdate);
-    this.setState({lon: item.geometry.coordinates[1]}, this.debouncedUpdate);
+    let [ lon, lat ] = item.geometry.coordinates,
+      src = buildSrc(this.props.defaultSrc, lat, lon);
+
+    this.setState({ lat, lon, src }, this.debouncedUpdate);
   },
 
   onCategoriesChange: function(field, e) {
@@ -75,6 +84,7 @@ module.exports = React.createClass({
           onCategoriesChange={this.onCategoriesChange}
           />
         <WidgetPreview
+          reload={this.state.reload}
           width={this.state.width}
           height={this.state.height}
           src={this.state.src}

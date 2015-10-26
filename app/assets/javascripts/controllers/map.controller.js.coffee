@@ -1,7 +1,8 @@
 Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
   needs: ['toolbar', 'map']
-  queryParams: ['status', 'categories', 'q', 'bbox', 'lat', 'lon', 'zoom', 'toilet', 'show_categories']
-  
+  queryParams: ['status', 'categories', 'q', 'bbox', 'lat', 'lon', 'zoom', 'toilet']
+
+  widget: Ember.ENV.WIDGET
   latBinding: 'controllers.map.lat'
   lonBinding: 'controllers.map.lon'
   zoomBinding: 'controllers.map.zoom'
@@ -138,14 +139,6 @@ Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
     @set('bbox', null)
   ).observes('bbox')
 
-  queryShowChangesDidChange: (->
-    showCategories = @get('show_categories');
-
-    showCategories = unless showCategories? then true else !!parseInt(showCategories)
-
-    @set('controllers.toolbar.showCategories', showCategories, 10)
-  ).observes('show_categories')
-
   actions:
     transitionToActiveCategories: ->
       activeCategories = @get('controllers.toolbar.activeCategories')
@@ -185,22 +178,7 @@ Wheelmap.MapSessionControllerMixin.SEPERATOR = '.'
 Wheelmap.MapController = Ember.Controller.extend
   needs: 'toolbar'
   poppingNode: null
-
-  init: ()->
-    @_super()
-
-    properties = {}
-
-    if $.cookie('last_lat')?
-      properties.lat = $.cookie('last_lat')
-
-    if $.cookie('last_lon')?
-      properties.lon = $.cookie('last_lon')
-
-    if $.cookie('last_zoom')?
-      properties.zoom = parseInt($.cookie('last_zoom'), 10)
-
-    @setProperties(properties)
+  widget: Ember.ENV.WIDGET
 
   defaultCenter: (->
     L.latLng(52.50521, 13.4231)
@@ -212,7 +190,32 @@ Wheelmap.MapController = Ember.Controller.extend
   latBinding: 'center.lat'
   lonBinding: 'center.lng'
 
+  init: ()->
+    @_super()
+
+    properties = @propertiesFromCookie()
+
+    @setProperties(properties)
+
+  propertiesFromCookie: ->
+    properties = {}
+
+    if $.cookie('last_lat')?
+      properties.lat = $.cookie('last_lat')
+
+    if $.cookie('last_lon')?
+      properties.lon = $.cookie('last_lon')
+
+    if $.cookie('last_zoom')?
+      properties.zoom = parseInt($.cookie('last_zoom'), 10)
+
+    properties
+
   mapViewDidChange: (()->
+    # Don't store the latlng and zoom in the cookie if we are in the embed layout
+    if @get('widget')?
+      return;
+
     center = @get('center')
 
     $.cookie('last_lat', center.lat, { path: '/' } )

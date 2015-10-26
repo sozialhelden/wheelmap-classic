@@ -17,14 +17,12 @@ module.exports = React.createClass({
     });
 
     return (
-      <span>
-        <select
-          id="widget_center"
-          className="form-control provider-dropdown"
-          onChange={this.onSearchUpdate}>
-            {items}
-        </select>
-      </span>
+      <select
+        id="widget_center"
+        className="form-control provider-dropdown"
+        onChange={this.onSearchUpdate}>
+        {items}
+      </select>
     );
 
   }

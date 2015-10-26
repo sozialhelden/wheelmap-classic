@@ -18,6 +18,11 @@ describe Widget do
       expect(widget.center).to eq(RGeo::Cartesian.factory.point(13, 50))
     end
 
+    it "updates spatial format correctly" do
+      widget.update_attributes(lat: 40, lon: 30)
+      expect(widget.center).to eq(RGeo::Cartesian.factory.point(30, 40))
+    end
+
   end
 
   describe "Widget#providers" do

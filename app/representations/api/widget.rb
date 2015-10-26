@@ -10,6 +10,8 @@ module Api::Widget
       t.add :width
       t.add :lat
       t.add :lon
+      t.add :user_id
+      t.add :categories
     end
 
   end

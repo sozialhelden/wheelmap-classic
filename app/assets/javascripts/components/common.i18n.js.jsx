@@ -1,43 +1,23 @@
 module.exports = React.createClass({
   propTypes: {
-    scope: React.PropTypes.string,
-    resolver: React.PropTypes.object
-  },
-
-  getInitialState: function() {
-    return {
-      className: 'translation_missing',
-      title:     'translation missing',
-      translation: ''
-    };
-  },
-
-
-  getTranslation: function () {
-    var text = this.resolver.t(this.props.scope);
-    if (!text && text.indexOf(this.props.defaultKey)){
-      this.setState({translation: text});
-    } else {
-      this.setState({
-        className: '',
-        title: '',
-        translation: text
-      });
-    }
-  },
-
-  componentDidMount: function (){
-    this.resolver = window.I18n;
-    this.getTranslation();
+    scope: React.PropTypes.string
   },
 
   render: function () {
+    var { scope } = this.props,
+      text = window.I18n.t(scope),
+      className, title, translation;
+
+    translation = text;
+
+    if (!text && text.indexOf(scope) > -1) {
+      translation = text;
+      className = 'translation_missing';
+      title = 'translation missing';
+    }
+
     return (
-      <span>
-        <span className={this.state.className} title={this.state.title}>
-          {this.state.translation}
-        </span>
-      </span>
+      <span className={className} title={title}>{translation}</span>
     );
   }
 });

@@ -6,17 +6,15 @@ module.exports = React.createClass({
   },
 
   render: function () {
+    let { width, height, src } = this.props,
+      code = `<iframe width="${width}" height="${height}" src="${src}"></iframe>`;
+
     return (
       <div className="user-widget-embedded">
         <h5>
-          <Translation scope={'users.profile.widget.legends.embed'}></Translation>
+          <Translation scope='users.profile.widget.legends.embed' />
         </h5>
-        <pre>
-          {'<iframe width="'  + this.props.width
-            +     '" height="' + this.props.height
-            +     '" src="'    + this.props.src
-            + '"></iframe>'}
-        </pre>
+        <pre>{code}</pre>
       </div>
     );
   }

@@ -8,8 +8,8 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
   searchString: null
   itemController: 'category'
   sortProperties: ['name']
-  showCategories: true
-  showSearch: !!Ember.ENV.EMBEDDED
+  showCategories: Ember.computed.bool('controllers.index.widget.show_categories')
+  showSearch: Ember.computed.bool('controllers.index.widget')
 
   init: ()->
     @_super()

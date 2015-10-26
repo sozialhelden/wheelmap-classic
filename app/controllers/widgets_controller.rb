@@ -13,8 +13,9 @@ class WidgetsController < ApplicationController
 
   def update
     @widget = Widget.find(params[:id])
+
     if @widget.update_attributes(widget_params)
-      render :json => @widget.to_json, :status => 200
+      render :json => @widget.as_api_response(:api_simple), :status => 200
     else
       flash.now[:alert] = @user.errors.full_messages.to_sentence
       head 400
@@ -24,7 +25,7 @@ class WidgetsController < ApplicationController
   protected
 
   def widget_params
-    params.require(:widget).permit(:lat, :lon, :height, :width, :categories)
+    params.require(:widget).permit(:lat, :lon, :height, :width, :categories, :provider_id)
   end
 
   def authenticate_with_api_key

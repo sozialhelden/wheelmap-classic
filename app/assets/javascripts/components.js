@@ -1,4 +1,5 @@
 //= require react
+//= require react-dom
 //= require react_ujs
 //= require i18n.js
 

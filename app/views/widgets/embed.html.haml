@@ -2,6 +2,6 @@
 
 - content_for :javascript do
   %script
-    ENV = { EMBEDDED: true };
+    ENV = { WIDGET: { show_categories: #{@widget.categories}#{if @widget.provider_id then ", provider_id: #{@widget.provider_id}" end} } };
   = javascript_include_tag 'app'
   = javascript_include_tag "i18n/#{I18n.locale}"

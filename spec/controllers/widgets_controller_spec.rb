@@ -20,8 +20,13 @@ describe WidgetsController do
       end
 
       it "updates a widget" do
-        put :update, :id => widget.id, widget: FactoryGirl.build(:widget).attributes
+        put :update, :id => widget.id, widget: { :lat => 50, :lon => 40 }
         expect(response.status).to eq(200)
+
+        response_body = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response_body[:lat]).to eq(50)
+        expect(response_body[:lon]).to eq(40)
       end
     end
   end

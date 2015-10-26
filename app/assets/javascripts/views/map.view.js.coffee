@@ -34,6 +34,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   mapBinding: 'parentLayer'
   mapControllerBinding: 'map.controller'
   toolbarControllerBinding: 'mapController.controllers.toolbar'
+  providerIdBinding: 'mapController.widget.provider_id'
   poppingNodeBinding: 'mapController.poppingNode'
   lastLoadedBounds: null
   lastActiveStatusFilters: null
@@ -74,6 +75,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
       data:
         bbox: bounds.toBBoxString()
         node_id: @get('poppingNode.id')
+        provider_id: @get('providerId')
 
     request.then (data)->
       Ember.run.once(that, 'replaceData', data)
@@ -293,8 +295,8 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
   options:
     trackResize: true
     maxZoom: 19
-    scrollWheelZoom: !Ember.ENV.EMBEDDED
-    touchZoom: !Ember.ENV.EMBEDDED
+    scrollWheelZoom: !Ember.ENV.WIDGET
+    touchZoom: !Ember.ENV.WIDGET
 
   openedPopup: null
 
