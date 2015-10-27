@@ -17,16 +17,20 @@ module.exports = React.createClass({
     this.props.onCategoriesChange(field, e);
   },
 
+  onProviderChange: function(event) {
+    this.props.onProviderChange(event.target.value);
+  },
+
   // TODO: generate these in template as well.
   // <div style={{margin: 0, padding: 0, display: 'inline'}}>
   // <input name="utf8" type="hidden" value="✓"/>
   // <input name="_method" type="hidden" value="put"/>
   // <input name="authenticity_token" type="hidden" value="ngHe6Fhv4/YgCQW/6Jh+seYArHZbGC2AoALgmk4dPko="/></div>
   render: function () {
-    let { providers } = this.props;
+    let { providers, providerId } = this.props;
 
     let providerOptions = providers.map(function(provider) {
-      return { value: provider.id, label: provider.name };
+      return { value: provider.id, label: provider.name, selected: providerId === provider.id };
     });
 
     return (
@@ -74,7 +78,7 @@ module.exports = React.createClass({
                 <Translation scope={'users.profile.widget.providers'}/>
               </label>
               <span className="form-wrapper">
-                <Select options={providerOptions} empty="" onChange={this.props.onProviderChange} className="form-control"/>
+                <Select options={providerOptions} empty="" value={providerId} onChange={this.onProviderChange.bind(this)} className="form-control"/>
               </span>
             </div>
 

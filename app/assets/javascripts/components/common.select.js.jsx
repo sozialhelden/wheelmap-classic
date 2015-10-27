@@ -3,7 +3,7 @@ module.exports = React.createClass({
     let { options, onChange, empty } = this.props;
 
     let items = options.map((item, index) => {
-      return <option key={index} value={item.value}>{item.label}</option>;
+      return <option key={index} {...item}>{item.label}</option>;
     });
 
     if (empty != null) items.unshift(<option>{empty}</option>);

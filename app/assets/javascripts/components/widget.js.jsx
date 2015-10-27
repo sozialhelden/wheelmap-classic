@@ -14,6 +14,7 @@ module.exports = React.createClass({
       lat: this.props.defaultLat,
       lon: this.props.defaultLon,
       providers: this.props.defaultProviders || [],
+      providerId: this.props.defaultProviderId,
       categories: this.props.defaultCategory,
       src: buildSrc(this.props.defaultSrc, this.props.defaultLat, this.props.defaultLon),
       resource: this.props.defaultResource
@@ -33,7 +34,8 @@ module.exports = React.createClass({
           width: this.state.width,
           lat: this.state.lat,
           lon: this.state.lon,
-          categories: this.state.categories
+          categories: this.state.categories,
+          provider_id: this.state.providerId
         }
       },
       success: () => {
@@ -70,6 +72,10 @@ module.exports = React.createClass({
     this.setState(nextState, this.debouncedUpdate);
   },
 
+  onProviderChange: function(providerId) {
+    this.setState({providerId}, this.debouncedUpdate);
+  },
+
   render: function () {
     return (
       <div className="widget-panel">
@@ -78,22 +84,21 @@ module.exports = React.createClass({
           height={this.state.height}
           categories={this.state.categories}
           providers={this.state.providers}
+          providerId={this.state.providerId}
           onWidthChange={this.onWidthChange}
           onHeightChange={this.onHeightChange}
           onLocationChange={this.onLocationChange}
           onCategoriesChange={this.onCategoriesChange}
-          />
+          onProviderChange={this.onProviderChange}/>
         <WidgetPreview
           reload={this.state.reload}
           width={this.state.width}
           height={this.state.height}
-          src={this.state.src}
-          />
+          src={this.state.src}/>
         <WidgetEmbed
           width={this.state.width}
           height={this.state.height}
-          src={this.state.src}
-        />
+          src={this.state.src}/>
       </div>
     );
   }
