@@ -12,11 +12,13 @@ module.exports = React.createClass({
     //src += '?' + new Date().getTime();
 
     return (
-      <div className="preview">
+      <div className="user-widget-preview">
         <h5>
           <Translation scope="users.profile.widget.legends.preview"></Translation>
         </h5>
-        <iframe ref="iframe" width={width} height={height} src={src} />
+        <div className="user-widget-preview-area">
+          <iframe className="user-widget-preview-frame" ref="iframe" width={width} height={height} src={src} />
+        </div>
       </div>
     );
   }

@@ -165,14 +165,23 @@
   }
 
   &-widget {
-    &-embedded {
-      pre {
-        border-style: solid;
-        border-color: gray;
-        border-width: 1px;
-        padding: 10px;
-        @include force-wrap();
+    &-preview {
+      &-area {
+        background-color: $grayLighter;
+        max-height: 500px;
+        overflow: auto;
       }
+
+      &-frame {
+        border: 1px solid $gray;
+        display: block;
+      }
+    }
+
+    &-embed-code {
+      background-color: $grayLighter;
+      padding: 10px;
+      @include force-wrap();
     }
 
     .Select {

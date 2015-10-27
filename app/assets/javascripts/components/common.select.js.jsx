@@ -1,30 +1,13 @@
 module.exports = React.createClass({
-
-  handleClick: function(i){
-    this.props.onSelection(this.props.items[i], i);
-  },
-
   render: function () {
-    var items = this.props.items.map((item, index) => {
-      return (
-        <option
-          key={index}
-          value={item.id}
-          onClick={this.handleClick.bind(this, index)}>
-            {item.name}
-        </option>
-      );
+    let { options, onChange, empty } = this.props;
+
+    let items = options.map((item, index) => {
+      return <option key={index} value={item.value}>{item.label}</option>;
     });
 
-    return (
-      <select
-        id="widget_center"
-        className="form-control provider-dropdown"
-        onChange={this.onSearchUpdate}>
-        {items}
-      </select>
-    );
+    if (empty != null) items.unshift(<option>{empty}</option>);
 
+    return <select id="widget_center" {...this.props}>{items}</select>;
   }
-
 });

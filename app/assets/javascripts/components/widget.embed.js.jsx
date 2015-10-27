@@ -10,11 +10,11 @@ module.exports = React.createClass({
       code = `<iframe width="${width}" height="${height}" src="${src}"></iframe>`;
 
     return (
-      <div className="user-widget-embedded">
+      <div className="user-widget-embed">
         <h5>
           <Translation scope='users.profile.widget.legends.embed' />
         </h5>
-        <pre>{code}</pre>
+        <pre className="user-widget-embed-code">{code}</pre>
       </div>
     );
   }

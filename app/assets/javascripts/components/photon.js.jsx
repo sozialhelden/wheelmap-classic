@@ -45,31 +45,11 @@ class Photon extends React.Component {
   }
 
   render() {
-    console.log(this.props.value);
-
     return (
-      <div className="form-group" id="widget_center_input">
-        <label className="control-label" htmlFor="widget_center">
-          <Translation scope={'users.profile.widget.center'}/>
-        </label>
-
-        <div className="form-wrapper">
-          <ReactSelect value={this.state.value} onChange={this.onSelectChange.bind(this)}
-                       asyncOptions={this.requestFeatures.bind(this)}
-                       autoload={false}
-                       clearable={false} />
-          {/*<Search
-           onKeyUp={this.handleKeyPress}
-           onSearchUpdate={this.debouncedFeatureRequest}>
-           </Search>
-           <GeoJsonList
-           items={this.state.data}
-           selectedItem={this.state.selectedItem}
-           onSelection={this.onLocationChange}
-           show={this.state.data.length > 0}>
-           </GeoJsonList>*/}
-        </div>
-      </div>
+      <ReactSelect value={this.state.value} onChange={this.onSelectChange.bind(this)}
+                   asyncOptions={this.requestFeatures.bind(this)}
+                   autoload={false}
+                   clearable={false} />
     );
   }
 }

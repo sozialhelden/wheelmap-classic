@@ -144,11 +144,12 @@ en:
           user_data: Your account information
       widget:
         title: Widget
-        height: height
-        width: width
-        center: center
-        categories: categories
-        providers: providers
+        height: Height
+        width: Width
+        center: Center
+        categories: Show Category Filter
+        providers: Providers
+        empty_provider: Select a Provider
         legends:
           settings: Settings
           preview: Preview
