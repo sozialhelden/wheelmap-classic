@@ -4,7 +4,7 @@ ActiveAdmin.register Provider do
 
   filter :name
 
-  action_item do
+  action_item :edit do
     link_to upload_csv_admin_provided_pois_path do
       fa_icon('arrow-up', text: "Upload CSV")
     end

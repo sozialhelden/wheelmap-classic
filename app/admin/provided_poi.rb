@@ -10,7 +10,7 @@ ActiveAdmin.register ProvidedPoi do
   filter :wheelchair, as: :select, collection: proc { Poi::WHEELCHAIR_STATUS_VALUES.map{|k,v| [ I18n.t("wheelchairstatus.#{k}"),k]}}
   filter :url
 
-  action_item do
+  action_item :edit do
     link_to upload_csv_admin_provided_pois_path do
       fa_icon('arrow-up', text: "Upload CSV")
     end

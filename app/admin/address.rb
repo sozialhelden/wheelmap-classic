@@ -1,13 +1,12 @@
 ActiveAdmin.register Address do
 
-  action_item :only => :index do
+  action_item :edit, :only => :index do
     link_to 'Upload CSV', :action => 'upload_csv'
   end
 
-  action_item :only => :index do
+  action_item :edit, :only => :index do
     link_to 'Download KML', '/addresses.kml'
   end
-
 
   collection_action :upload_csv do
     render "/admin/addresses/upload_csv"
