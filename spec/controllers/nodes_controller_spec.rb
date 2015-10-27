@@ -291,6 +291,9 @@ describe NodesController do
       Poi.delete_all
       request.env["HTTP_ACCEPT"] = 'application/json; subtype=geojson'
       @poi = FactoryGirl.create(:poi, :providers => [provider])
+      2.times {
+        FactoryGirl.create(:poi, :providers => [FactoryGirl.create(:provider)])
+      }
     end
 
     it "should render legacy json representation for iphone", :tag => 'fu' do
@@ -310,7 +313,7 @@ describe NodesController do
     end
 
     it "should render geojson representation of provided pois" do
-      get :index, { :format => 'geojson', :bbox => "12.0,51.0,14.0,53.0"}
+      get :index, { :format => 'geojson', :bbox => "12.0,51.0,14.0,53.0", :provider_id => provider.id}
       expect(response).to be_success
       expect(response.body).not_to be_empty
       feature_collection = ActiveSupport::JSON.decode(response.body)

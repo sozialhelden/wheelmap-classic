@@ -41,7 +41,11 @@ class NodesController < ApplicationController
     @sum = @count.length > 0 ? @count.values.reduce(:+) : @count.length
     @places = []
     unless FeatureSwitch.clustering_enabled? && @sum < 50
-      @places = Poi.within_bbox(@left,@bottom,@right,@top).including_category.including_region.including_providers.limit(@limit) if @left
+      @places = Poi.within_bbox(@left,@bottom,@right,@top)
+        .including_category
+        .including_region
+        .including_providers.limit(@limit) if @left
+
       # If a node_id is given and could be found, make sure it is included in the collection
       if @custom_node && !@places.map(&:osm_id).include?(params[:node_id])
         @places << @custom_node
@@ -191,7 +195,7 @@ class NodesController < ApplicationController
   end
 
   def load_and_instantiate_nodes
-    @places
+    params[:provider_id].present? ? @places.where(:providers => {:id => params[:provider_id]}) : @places
   end
   add_method_tracer :load_and_instantiate_nodes, "Custom/load_and_instantiate_nodes"
 
