@@ -6,7 +6,7 @@ module.exports = React.createClass({
     width: React.PropTypes.string,
     src: React.PropTypes.string
   },
-  
+
   onWidthChange: function (e) {
     this.props.onWidthChange(e.target.value);
   },
@@ -34,9 +34,7 @@ module.exports = React.createClass({
   render: function () {
     return (
       <div className="user-form">
-        <form acceptCharset="UTF-8"
-              className="form-horizontal formtastic widget"
-              id="edit_widget" noValidate="novalidate">
+        <form acceptCharset="UTF-8" className="form-horizontal formtastic widget" id="edit_widget" noValidate="novalidate">
           <fieldset className="inputs">
             <legend>
               <Translation scope={'users.profile.widget.legends.settings'}/>
@@ -46,12 +44,9 @@ module.exports = React.createClass({
               lang={Translation.locale} limit={10}
               onSelectLocation={this.onLocationChange}/>
 
-            <div className="number input optional numeric stringish form-group"
-              id="widget_width_input">
+            <div className="form-group" id="widget_width_input">
               <label className=" control-label" htmlFor="widget_width">
-                <Translation
-                  scope={'users.profile.widget.width'}>
-                </Translation>
+                <Translation scope={'users.profile.widget.width'}/>
               </label>
               <span className="form-wrapper">
                 <input className="form-control" id="widget_width"
@@ -59,12 +54,9 @@ module.exports = React.createClass({
                   value={this.props.width} onChange={this.onWidthChange}/>
               </span>
             </div>
-            <div className="number input optional numeric stringish form-group"
-              id="widget_height_input">
+            <div className="form-group" id="widget_height_input">
               <label className=" control-label" htmlFor="widget_height">
-                <Translation
-                  scope={'users.profile.widget.height'}>
-                </Translation>
+                <Translation scope={'users.profile.widget.height'}/>
               </label>
               <span className="form-wrapper">
                 <input className="form-control" id="widget_height"
@@ -74,22 +66,16 @@ module.exports = React.createClass({
               </span>
             </div>
 
-            <div className="number input optional numeric stringish form-group"
-              id="widget_providers_input">
+            <div className="form-group" id="widget_providers_input">
               <label className=" control-label" htmlFor="widget_providers">
-                <Translation
-                  scope={'users.profile.widget.providers'}>
-                </Translation>
+                <Translation scope={'users.profile.widget.providers'}/>
               </label>
               <Select items={this.props.providers}></Select>
             </div>
 
-            <div className="number input optional numeric stringish form-group"
-              id="widget_categories_input">
+            <div className="form-group" id="widget_categories_input">
               <label className=" control-label" htmlFor="widget_categories">
-                <Translation
-                  scope={'users.profile.widget.categories'}>
-                </Translation>
+                <Translation scope={'users.profile.widget.categories'}/>
               </label>
               <span className="form-wrapper">
                 <input className="form-control" id="widget_categories"

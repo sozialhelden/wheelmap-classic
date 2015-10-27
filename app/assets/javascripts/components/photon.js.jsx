@@ -48,12 +48,12 @@ class Photon extends React.Component {
     console.log(this.props.value);
 
     return (
-      <div className="number input optional numeric stringish form-group" id="widget_center_input">
+      <div className="form-group" id="widget_center_input">
         <label className="control-label" htmlFor="widget_center">
           <Translation scope={'users.profile.widget.center'}/>
         </label>
 
-        <div className="photon-search-wrapper">
+        <div className="form-wrapper">
           <ReactSelect value={this.state.value} onChange={this.onSelectChange.bind(this)}
                        asyncOptions={this.requestFeatures.bind(this)}
                        autoload={false}
