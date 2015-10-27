@@ -6,6 +6,8 @@ describe("React Translation component", function() {
       return key == 'existing.translation.key' ? "a valid translation" : "[missing \""+key+"\" translation]";
     }
   };
+  const shallowRenderer = TestUtils.createRenderer();
+
 
   window.I18n = mockResolver;
 
@@ -20,17 +22,23 @@ describe("React Translation component", function() {
   it("resolves translations", function() {
     var valid_key = 'existing.translation.key';
     component = TestUtils.renderIntoDocument(
-      <Translation resolver={mockResolver} scope={valid_key}/>
+      <Translation scope={valid_key}/>
     );
-    expect(component.state['translation']).to.equal('a valid translation');
+    var node = ReactDOM.findDOMNode(
+      TestUtils.findRenderedDOMComponentWithTag(component, 'span')
+    );
+    expect(node.innerHTML).to.equal('a valid translation');
   });
 
   it("notifies about missing translations", function() {
     var missing_key = 'missing.key';
     component = TestUtils.renderIntoDocument(
-      <Translation resolver={mockResolver} scope={missing_key}/>
+      <Translation scope={missing_key}/>
     );
-    expect(component.state['translation']).to.equal("[missing \""+missing_key+"\" translation]");
+    var node = ReactDOM.findDOMNode(
+      TestUtils.findRenderedDOMComponentWithTag(component, 'span')
+    );
+    expect(node.innerHTML).to.equal("[missing \""+missing_key+"\" translation]");
   });
 
 });
