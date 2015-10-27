@@ -67,7 +67,7 @@ module Wheelmap
     # Needed for the ActiveAdmin's manifest assets.
     config.assets.precompile += ['active_admin.css', 'active_admin.js']
 
-    config.assets.precompile += %w( relaunch.css relaunch_ie.css screen.css node.css nodes.css search.css)
+    config.assets.precompile += %w( relaunch.css relaunch_ie.css screen.css node.css nodes.css search.css react-select.css)
     config.assets.precompile += %w( relaunch.js ie.js modernizr.js default.js search.js nodes.js ember.js ember-data.js app.js test.js)
     config.assets.precompile += %w( i18n/*.js components.js )
 
