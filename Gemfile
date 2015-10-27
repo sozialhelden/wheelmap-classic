@@ -95,6 +95,7 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'guard-cucumber', "1.2.2"
+  gem 'pry'
 
 end
 

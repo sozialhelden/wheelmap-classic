@@ -572,6 +572,7 @@ DEPENDENCIES
   omniauth-osm
   phantomjs
   pickle
+  pry
   rails (= 3.2.22)
   rake
   rb-fsevent

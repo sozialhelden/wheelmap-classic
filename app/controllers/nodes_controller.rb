@@ -49,7 +49,9 @@ class NodesController < ApplicationController
     end
     respond_to do |wants|
       wants.js{ render :json => @places.as_api_response(:iphone).to_json }
-      wants.geojson{ render :content_type => "application/json; subtype=geojson; charset=utf-8" }
+      wants.geojson{
+        render :content_type => "application/json; subtype=geojson; charset=utf-8"
+      }
       wants.html{ redirect_to root_path }
     end
   end

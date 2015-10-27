@@ -20,7 +20,7 @@ describe NodesController do
   fixtures :node_types
 
   before(:each) do
-    Poi.delete_all
+    #Poi.delete_all
 
     # default visitor user
     @base_url = "#{OpenStreetMapConfig.oauth_site}/api/0.6"
@@ -102,13 +102,13 @@ describe NodesController do
   describe "action update wheelchair" do
 
     before :each do
-      @poi = FactoryGirl.create(:poi, :osm_id => 1234)
+      @poi = FactoryGirl.create(:poi)
     end
 
     describe "as anonymous user" do
       it "should create am UpdateWheelchairJob " do
         lambda {
-          put(:update_wheelchair, :id => 1234, :wheelchair => 'yes')
+          put(:update_wheelchair, :id => @poi.osm_id, :wheelchair => 'yes')
           response.code.should == '200'
         }.should change(UpdateAttributeJob, :count).by(1)
       end
@@ -131,7 +131,7 @@ describe NodesController do
 
       it "should create am UpdateWheelchairJob on behalf of signed in user" do
         lambda {
-          put(:update_wheelchair, :id => 1234, :wheelchair => 'yes')
+          put(:update_wheelchair, :id => @poi.osm_id, :wheelchair => 'yes')
           response.code.should == '200'
         }.should change(UpdateAttributeJob, :count).by(1)
         Delayed::Job.last.handler.should =~ /id: #{@another_user.id}/
@@ -146,7 +146,7 @@ describe NodesController do
     end
 
     let! :poi do
-      FactoryGirl.create(:poi, :osm_id => 84644746)
+      FactoryGirl.create(:poi)
     end
 
     let! :node_type do
@@ -164,22 +164,22 @@ describe NodesController do
       it "should create UpdateJob for given node" do
         stub_request(:get, @full_url).to_return(:status => 200, :body => "#{Rails.root}/spec/fixtures/node.xml", :headers => { 'Content-Type' => 'text/xml'})
          lambda{
-            put(:update, :id => 84644746, :node => {:wheelchair => 'yes', :name => 'A nice place', :node_type_id => node_type.id })
+            put(:update, :id => poi.osm_id, :node => {:wheelchair => 'yes', :name => 'A nice place', :node_type_id => node_type.id })
             response.code.should == '302'
             flash_cookie["notice"].should == "Vielen Dank, der Eintrag wurde gespeichert und wird demnächst aktualisiert."
           }.should change(UpdateJob, :count).by(1)
-          response.should redirect_to(node_path(84644746))
+          response.should redirect_to(node_path(poi))
       end
 
       it "should have correct values for UpdateJob" do
         stub_request(:get, @full_url).to_return(:status => 200, :body => "#{Rails.root}/spec/fixtures/node.xml", :headers => { 'Content-Type' => 'text/xml'})
         lambda{
-          put(:update, :id => 84644746, :node => {:wheelchair => 'yes', :name => 'A nice place', :node_type_id => node_type.id })
+          put(:update, :id => poi.osm_id, :node => {:wheelchair => 'yes', :name => 'A nice place', :node_type_id => node_type.id })
         }.should change(UpdateJob, :count).by(1)
-        response.should redirect_to(node_path(84644746))
+        response.should redirect_to(node_path(poi.osm_id))
         job = YAML.load(UpdateJob.last.handler)
         job.client.class.should == Rosemary::OauthClient
-        job.element_id.should == 84644746
+        job.element_id.should == poi.osm_id
         job.tags['wheelchair'].should == 'yes'
         job.tags['tourism'].should == 'hotel'
         job.tags['amenity'].should be_blank
@@ -239,19 +239,19 @@ describe NodesController do
       end
 
       it "should not create node if node is missing" do
-        response = post(:create, :id => 1234)
+        response = post(:create, :id => 'missing')
         response.code.should == '406'
         response.body.should == "Params missing"
       end
 
       it "should update node if node is a way" do
-        p = FactoryGirl.create(:poi, :osm_id => -28)
-        response = post(:update, :id => -28, :node => { :name => "foo" })
+        poi = FactoryGirl.create(:poi)
+        response = post(:update, :id => poi.osm_id, :node => { :name => "foo" })
         response.code.should == '302'
       end
 
       it "should allow editing node if node is a way" do
-        p = FactoryGirl.create(:poi, :osm_id => -28)
+        FactoryGirl.create(:poi, :osm_id => -28)
         response = get(:edit, :id => -28)
         response.code.should == "200"
       end
@@ -281,24 +281,24 @@ describe NodesController do
   end
 
   describe "action: index" do
+    render_views
+
+    let(:provider) {
+      FactoryGirl.create(:provider)
+    }
+
     before(:each) do
-      Poi.destroy_all
-      NodeType.destroy_all
-      @bar_node = FactoryGirl.create(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
-      @bar_node.tags['wheelchair:description'] = 'Bitte klingeln.'
-      @bar_node.tags['amenity'] = 'bar'
-      @bar_node.type = 'bar'
-      @bar_node.save!
-      @bar_node.reload
-      @bar_node.category.should_not be_nil
+      Poi.delete_all
+      request.env["HTTP_ACCEPT"] = 'application/json; subtype=geojson'
+      @poi = FactoryGirl.create(:poi, :providers => [provider])
     end
 
-    it "should render legacy json representation for iphone" do
-      response = get(:index, :format => 'js', :bbox => "12.0,51.0,14.0,53.0")
+    it "should render legacy json representation for iphone", :tag => 'fu' do
+      get(:index, :format => 'js', :bbox => "12.0,51.0,14.0,53.0")
       response.code.should == "200"
       response.body.should_not be_empty
       json = ActiveSupport::JSON.decode(response.body)
-      node = json.first
+      node = json.last
       node['category'].should_not be_blank
       node['id'].should_not be_blank
       node['lat'].should_not be_blank
@@ -306,8 +306,25 @@ describe NodesController do
       node['wheelchair'].should_not be_blank
       node['type'].should_not be_blank
       node['tags'].class.should eql Hash
-      node['tags']['wheelchair:description'].should eql "Bitte klingeln."
+      node['tags']['wheelchair:description'].should eql "Yes, we have a ramp."
     end
+
+    it "should render geojson representation of provided pois" do
+      get :index, { :format => 'geojson', :bbox => "12.0,51.0,14.0,53.0"}
+      expect(response).to be_success
+      expect(response.body).not_to be_empty
+      feature_collection = ActiveSupport::JSON.decode(response.body)
+      features = feature_collection['features']
+      features.each do |feature|
+        sponsor = feature['properties']['sponsor'].first
+        expect(sponsor['provider_id'].to_i).to eq(provider.id)
+        expect(sponsor['poi_id'].to_i).to eq(@poi.id)
+
+        expect(feature['properties']['category']).not_to be_blank
+        expect(feature['properties']['id']).not_to be_blank
+      end
+    end
+
   end
 
 end
