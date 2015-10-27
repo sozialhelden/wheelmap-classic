@@ -1,6 +1,6 @@
 module.exports = React.createClass({
   render: function () {
-    let { options, onChange, empty } = this.props;
+    let { options, empty } = this.props;
 
     let items = options.map((item, index) => {
       return <option key={index} {...item}>{item.label}</option>;

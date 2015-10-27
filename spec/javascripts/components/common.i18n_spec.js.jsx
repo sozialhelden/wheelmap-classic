@@ -1,4 +1,4 @@
-describe("React Translation component", function() {
+describe("React translation component", function() {
 
   var component = null;
   var mockResolver = {
@@ -21,24 +21,24 @@ describe("React Translation component", function() {
 
   it("resolves translations", function() {
     var valid_key = 'existing.translation.key';
+
     component = TestUtils.renderIntoDocument(
       <Translation scope={valid_key}/>
     );
-    var node = ReactDOM.findDOMNode(
-      TestUtils.findRenderedDOMComponentWithTag(component, 'span')
-    );
-    expect(node.innerHTML).to.equal('a valid translation');
+    
+    var node = ReactDOM.findDOMNode(component);
+    expect(node.textContent).to.equal('a valid translation');
   });
 
   it("notifies about missing translations", function() {
     var missing_key = 'missing.key';
+
     component = TestUtils.renderIntoDocument(
       <Translation scope={missing_key}/>
     );
-    var node = ReactDOM.findDOMNode(
-      TestUtils.findRenderedDOMComponentWithTag(component, 'span')
-    );
-    expect(node.innerHTML).to.equal("[missing \""+missing_key+"\" translation]");
+
+    var node = ReactDOM.findDOMNode(component);
+    expect(node.textContent).to.equal("[missing \""+missing_key+"\" translation]");
   });
 
 });
