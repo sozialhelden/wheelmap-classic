@@ -3,6 +3,10 @@ module.exports = React.createClass({
     scope: React.PropTypes.string
   },
 
+  shouldComponentUpdate: function() {
+    return false;
+  },
+
   render: function () {
     var { scope } = this.props,
       text = window.I18n.t(scope),

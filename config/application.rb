@@ -52,10 +52,6 @@ module Wheelmap
       g.test_framework :rspec
     end
 
-    # Add the react paths
-    config.assets.paths << Rails.root.join('node_modules', 'react', 'dist')
-    config.assets.paths << Rails.root.join('node_modules', 'react-dom', 'dist')
-
     # Add the fonts path
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 

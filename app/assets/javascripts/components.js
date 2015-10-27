@@ -1,12 +1,12 @@
-//= require react
-//= require react-dom
+//= require_self
 //= require react_ujs
 //= require i18n.js
 
+global.React          = require('react');
+global.ReactDOM       = require('react-dom');
+
 global.Translation    = require('./components/common.i18n.js.jsx');
-global.Dropdown       = require('./components/common.dropdown.js.jsx');
-global.GeoJsonList    = require('./components/common.geojson.list.js.jsx');
-global.Search         = require('./components/common.search.js.jsx');
+global.Select       = require('./components/common.select.js.jsx');
 
 global.Photon         = require('./components/photon.js.jsx');
 

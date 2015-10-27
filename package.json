@@ -10,6 +10,7 @@
     "mout": "^0.11.0",
     "react": "^0.14.0-rc1",
     "react-dom": "^0.14.0",
+    "react-select": "^0.8.2",
     "sinon": "^1.17.1",
     "sinon-chai": "^2.8.0"
   },

@@ -1,42 +1,28 @@
-var debounce = require('mout/function/debounce');
+var debounce = require('mout/function/debounce'),
+  find = require('mout/array/find'),
+  ReactSelect = require('react-select');
 
-module.exports = React.createClass({
+class Photon extends React.Component {
+  shouldComponentUpdate() {
+    return false;
+  }
 
-  keys: {
-    up: 38,
-    down: 40,
-    enter: 13
-  },
+  constructor(props) {
+    super(props);
 
-  getInitialState: function() {
-    return {
-      data: [],
-      selectedItem: -1,
-      selection: ''
+    this.featureRequest = null;
+
+    this.state = {
+      features: [],
+      options: []
     };
-  },
+  }
 
-  handleKeyPress: function (e) {
-    console.log(e);
-    var key = e.which;
-    switch (key) {
-      case 38:
-        var idx = (this.state.selectedItem+this.state.data.length-1)%this.state.data.length;
-        this.setState({selectedItem: idx});
-        break;
-      case 40:
-        var idx = (this.state.selectedItem+1)%this.state.data.length;
-        this.setState({selectedItem: idx});
-        break;
-      case 13:
-        break;
-      default:
-        console.log('key not handled!');
-    }
-  },
+  requestFeatures(search, callback) {
+    if (this.featureRequest != null)
+      this.featureRequest.abort();
 
-  handleFeaturesRequest: function (search) {
-    $.ajax({
+    this.featureRequest = $.ajax({
       url: this.props.url,
       dataType: 'json',
       cache: false,
@@ -45,58 +31,58 @@ module.exports = React.createClass({
         lang: this.props.lang,
         limit: this.props.limit
       },
-      success: function(data) {
-        this.setState({selectedItem: -1});
-        this.setState({data: data.features});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
+      success: (data) => {
+        let { features } = data;
+
+        callback(null, { options: Photon.getOptions(features) });
+      },
+      error: () => {}
     });
-  },
+  }
 
-  componentWillMount: function() {
-    this.debouncedFeatureRequest = debounce(this.handleFeaturesRequest,300);
-    this.debouncedHandleKeyPress = debounce(this.handleKeyPress, 300);
-  },
+  onSelectChange(feature, options) {
+    this.props.onSelectLocation(options[0].feature);
+  }
 
-  onLocationChange: function (item, index) {
-    this.setState({
-      selectedItem: index,
-      data: []
-    });
-    this.props.onLocationChange(item);
-  },
+  render() {
+    console.log(this.props.value);
 
-
-
-  render: function() {
     return (
-      <div
-        className="number input optional numeric stringish form-group"
-        id="widget_center_input">
-        <label
-          className="control-label"
-          htmlFor="widget_center">
-          <Translation
-            scope={'users.profile.widget.center'}>
-          </Translation>
+      <div className="number input optional numeric stringish form-group" id="widget_center_input">
+        <label className="control-label" htmlFor="widget_center">
+          <Translation scope={'users.profile.widget.center'}/>
         </label>
+
         <div className="photon-search-wrapper">
-          <Search
-            onKeyDown={this.handleKeyPress}
-            onKeyPress={this.handleKeyPress}
-            onKeyUp={this.handleKeyPress}
-            onSearchUpdate={this.debouncedFeatureRequest}>
-          </Search>
-          <GeoJsonList
-            items={this.state.data}
-            selectedItem={this.state.selectedItem}
-            onSelection={this.onLocationChange}
-            show={this.state.data.length > 0}>
-          </GeoJsonList>
+          <ReactSelect value={this.state.value} onChange={this.onSelectChange.bind(this)}
+                       asyncOptions={this.requestFeatures.bind(this)}
+                       autoload={false}
+                       clearable={false} />
+          {/*<Search
+           onKeyUp={this.handleKeyPress}
+           onSearchUpdate={this.debouncedFeatureRequest}>
+           </Search>
+           <GeoJsonList
+           items={this.state.data}
+           selectedItem={this.state.selectedItem}
+           onSelection={this.onLocationChange}
+           show={this.state.data.length > 0}>
+           </GeoJsonList>*/}
         </div>
       </div>
     );
   }
-});
+}
+
+Photon.getOptions = function(features) {
+  return features.map(feature => {
+    let { properties } = feature;
+
+    let street = [properties.street, properties.housenumber].filter(val => val).join(' '),
+      label = [street, properties.name, properties.state, properties.country].filter(val => val).join(', ');
+
+    return { value: properties.osm_id, label, feature };
+  });
+};
+
+module.exports = Photon;

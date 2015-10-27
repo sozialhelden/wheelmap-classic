@@ -39,15 +39,12 @@ module.exports = React.createClass({
               id="edit_widget" noValidate="novalidate">
           <fieldset className="inputs">
             <legend>
-              <Translation
-                scope={'users.profile.widget.legends.settings'}>
-              </Translation>
+              <Translation scope={'users.profile.widget.legends.settings'}/>
             </legend>
-
 
             <Photon url={'http://photon.komoot.de/api/'}
               lang={Translation.locale} limit={10}
-              onLocationChange={this.onLocationChange}></Photon>
+              onSelectLocation={this.onLocationChange}/>
 
             <div className="number input optional numeric stringish form-group"
               id="widget_width_input">
@@ -84,7 +81,7 @@ module.exports = React.createClass({
                   scope={'users.profile.widget.providers'}>
                 </Translation>
               </label>
-              <Dropdown items={this.props.providers}></Dropdown>
+              <Select items={this.props.providers}></Select>
             </div>
 
             <div className="number input optional numeric stringish form-group"
