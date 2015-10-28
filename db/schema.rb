@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151019120044) do
+ActiveRecord::Schema.define(:version => 20151028082753) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :limit => 8, :null => false
@@ -269,13 +269,14 @@ ActiveRecord::Schema.define(:version => 20151019120044) do
   add_index "users", ["wants_newsletter"], :name => "index_users_on_wants_newsletter"
 
   create_table "widgets", :force => true do |t|
-    t.spatial  "center",     :limit => {:type=>"point"}
+    t.spatial  "center",      :limit => {:type=>"point"}
     t.integer  "height"
     t.integer  "width"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "categories",                             :default => false
+    t.boolean  "categories",                              :default => false
     t.integer  "user_id"
+    t.integer  "provider_id"
   end
 
 end
