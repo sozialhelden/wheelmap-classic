@@ -18,7 +18,6 @@ before_script:
 - npm install --production --no-spin
 script:
   - rake
-  - rake teaspoon
 notifications:
   email:
   - developers@sozialhelden.de
