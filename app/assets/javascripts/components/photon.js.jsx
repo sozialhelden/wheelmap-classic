@@ -1,7 +1,7 @@
 var debounce = require('mout/function/debounce'),
   find = require('mout/array/find'),
   ReactSelect = require('react-select');
-
+  
 class Photon extends React.Component {
   shouldComponentUpdate() {
     return false;

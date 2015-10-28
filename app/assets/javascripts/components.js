@@ -1,8 +1,9 @@
 //= require_self
-//= require react_ujs
+// require react_ujs
 //= require i18n.js
 
 global.React          = require('react');
+global.TestUtils      = require('react/addons').addons.TestUtils;
 global.ReactDOM       = require('react-dom');
 
 global.Translation    = require('./components/common.i18n.js.jsx');

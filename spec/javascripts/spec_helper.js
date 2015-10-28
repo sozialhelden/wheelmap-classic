@@ -39,7 +39,3 @@ chai.use(sinonChai);
 
 global.expect = chai.expect;
 global.sinon = sinon;
-
-global.React = require('react');
-global.ReactDOM = require('react-dom');
-global.TestUtils = require('react/addons').addons.TestUtils;
