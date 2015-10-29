@@ -6,7 +6,7 @@ ActiveAdmin.register Provider do
 
   action_item :edit do
     link_to upload_csv_admin_provided_pois_path do
-      fa_icon('arrow-up', text: "Upload CSV")
+      fa_icon "arrow-up", text: "Upload CSV"
     end
   end
 
@@ -21,6 +21,6 @@ ActiveAdmin.register Provider do
       f.input :name
       f.input :logo, hint: 'Das Logo muss exakt 44x44 Pixel gross sein.'
     end
-    f.buttons
+    f.actions
   end
 end

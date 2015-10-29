@@ -44,6 +44,7 @@ group :default do
   gem 'sass-rails' # goes here instead of group assets because activeadmin uses it in the initializer
   gem 'sass', '~>3.3' # >= 3.3 is needed for BEM syntax
   gem 'activeadmin', '~> 1.0.0.pre2'
+  gem "font-awesome-rails"
   gem 'kaminari'
   gem 'kaminari-i18n'
   gem 'carrierwave'

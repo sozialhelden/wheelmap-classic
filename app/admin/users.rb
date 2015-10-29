@@ -72,6 +72,6 @@ ActiveAdmin.register User do
       f.input :osm_id, :label => 'OSM ID'
       f.input :osm_username, :label => 'OSM Username', :hint => false
     end
-    f.buttons
+    f.actions
   end
 end
