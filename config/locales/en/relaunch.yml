@@ -150,6 +150,7 @@ en:
         categories: Show Category Filter
         providers: Providers
         empty_provider: Select a Provider
+        empty_center: Search for center …
         legends:
           settings: Settings
           preview: Preview

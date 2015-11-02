@@ -49,7 +49,9 @@ class Photon extends React.Component {
       <ReactSelect value={this.state.value} onChange={this.onSelectChange.bind(this)}
                    asyncOptions={this.requestFeatures.bind(this)}
                    autoload={false}
-                   clearable={false} />
+                   clearable={false}
+                   placeholder={I18n.t('users.profile.widget.empty_center')}
+                   searchPromptText={I18n.t('users.profile.widget.empty_center')}/>
     );
   }
 }
