@@ -26,24 +26,28 @@ module.exports = React.createClass({
     };
   },
 
-  handleUpdate: function () {
+  componentDidUpdate: function(prevProps, prevState) {
+    this.debouncedUpdate(prevState);
+  },
+
+  handleUpdate: function (prevState) {
+    let { height, width, lat, lon, categories, providerId } = this.state;
+
     $.ajax({
       url: this.state.resource,
       dataType: 'json',
       type: 'POST',
       data: {
         widget: {
-          height: this.state.height,
-          width: this.state.width,
-          lat: this.state.lat,
-          lon: this.state.lon,
-          categories: this.state.categories,
-          provider_id: this.state.providerId
+          provider_id: providerId,
+          height, width, lat, lon, categories
         }
       },
       success: () => {
-        // @TODO reload only when necessary
-        this.setState({ reload: (new Date).getTime() })
+        if (prevState.lat !== lat || prevState.lon !== lon ||
+          prevState.categories !== categories || prevState.providerId !== providerId){
+          this.setState({ reload: (new Date).getTime() });
+        }
       },
       error: (xhr, status, err) => {
         console.error(status, err.toString());
@@ -52,30 +56,30 @@ module.exports = React.createClass({
   },
 
   componentWillMount: function() {
-    this.debouncedUpdate = debounce(this.handleUpdate,300);
+    this.debouncedUpdate = debounce(this.handleUpdate, 300);
   },
 
   onWidthChange: function(width) {
-    this.setState({ width }, this.debouncedUpdate);
+    this.setState({ width });
   },
 
   onHeightChange: function(height) {
-    this.setState({ height }, this.debouncedUpdate);
+    this.setState({ height });
   },
 
   onLocationChange: function(item){
     let [ lon, lat ] = item.geometry.coordinates,
       src = buildSrc(this.props.defaultSrc, lat, lon);
 
-    this.setState({ lat, lon, src }, this.debouncedUpdate);
+    this.setState({ lat, lon, src });
   },
 
   onCategoriesChange: function(categories) {
-    this.setState({ categories }, this.debouncedUpdate);
+    this.setState({ categories });
   },
 
   onProviderChange: function(providerId) {
-    this.setState({ providerId }, this.debouncedUpdate);
+    this.setState({ providerId });
   },
 
   render: function () {
