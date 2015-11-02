@@ -46,8 +46,8 @@ class Photon extends React.Component {
 
   render() {
     return (
-      <ReactSelect value={this.state.value} onChange={this.onSelectChange}
-                   asyncOptions={this.requestFeatures}
+      <ReactSelect value={this.state.value} onChange={this.onSelectChange.bind(this)}
+                   asyncOptions={this.requestFeatures.bind(this)}
                    autoload={false}
                    clearable={false} />
     );

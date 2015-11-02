@@ -53,6 +53,22 @@ module.exports = React.createClass({
       return {value: provider.id, label: provider.name, selected: providerId === provider.id};
     });
 
+    let providerSelect = null;
+
+    if (providerOptions.length > 0) {
+      providerSelect = (
+        <div className="form-group">
+          <label className="control-label" htmlFor="widget_providers">
+            <Translation scope={'users.profile.widget.providers'}/>
+          </label>
+          <div className="form-wrapper">
+            <Select options={providerOptions} empty={I18n.t('users.profile.widget.empty_provider')} value={providerId}
+                    onChange={this.onProviderChange} className="form-control"/>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div className="user-form">
         <form acceptCharset="UTF-8" className="form-horizontal formtastic widget" id="edit_widget"
@@ -92,15 +108,7 @@ module.exports = React.createClass({
               </span>
             </div>
 
-            <div className="form-group">
-              <label className="control-label" htmlFor="widget_providers">
-                <Translation scope={'users.profile.widget.providers'}/>
-              </label>
-              <span className="form-wrapper">
-                <Select options={providerOptions} empty="" value={providerId}
-                        onChange={this.onProviderChange} className="form-control"/>
-              </span>
-            </div>
+            {providerSelect}
 
             <div className="form-group">
               <label className="control-label" htmlFor="widget_categories">

@@ -6,7 +6,7 @@ module.exports = React.createClass({
       return <option key={index} {...item}>{item.label}</option>;
     });
 
-    if (empty != null) items.unshift(<option>{empty}</option>);
+    if (empty != null) items.unshift(<option value="">{empty}</option>);
 
     return <select id="widget_center" {...this.props}>{items}</select>;
   }
