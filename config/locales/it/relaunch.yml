@@ -16,7 +16,7 @@ it:
       2: 'Puoi aggiungere ulteriori informazioni (per esempio: "Questo posto ha una rampa mobile") nella sezione "commenti". Clicca su "Modifica" e "Aggiungi commento".'
     headline: C´é un problema con questo posto?
     questions:
-      0: La "qualfica" é sbagliata.
+      0: La "qualifica" é sbagliata.
       1: I dettagli del posto sono incorretti o mancanti.
       2: Ho maggiori informazioni su questo posto.
   header:
@@ -79,7 +79,7 @@ it:
       no-results:
         hint:
           example: <strong>Esempio:</strong> Londra, Regno Unito
-          info: Il servizio di ricerca funziona solo con infarmazioni su nome e/o indirizzo. Allora inserire un nome del posto o un indirizzo, per esempio il nome della strada e/o della città. La ricerca per tipo, per esempio ristorante o cinema, non funziona!
+          info: Il servizio di ricerca funziona solo con informazioni su nome e/o indirizzo. Allora inserire un nome del posto o un indirizzo, per esempio il nome della strada e/o della città. La ricerca per tipo, per esempio ristorante o cinema, non funziona!
           work_in_progress: 'Stiamo lavorando per rendere la ricerca più facile ed efficiente per il futuro. '
         try_this:
           address: Per favore inserire maggiori <strong>dettagli sull'indirizzo</strong>.
