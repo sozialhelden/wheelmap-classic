@@ -59,7 +59,7 @@ it:
         notice: "%{resource_name} è stato aggiornato."
     photos:
       destroy:
-        notice: "Imagine cancellato con successo"
+        notice: "Immagine cancellata con successo"
   form:
     show_fully_accessible_places: "Accessibile in sedia a rotelle"
     show_limited_accessible_places: "parzialmente accessibile in sedia a rotelle"
@@ -67,7 +67,7 @@ it:
     show_unaccessible_places: "non accessibile in sedia a rotelle"
   formtastic:
     hints:
-      lat: "Sposta l'indicatore sulla mappa nella posizione coretta"
+      lat: "Sposta l'indicatore sulla mappa nella posizione corretta"
       osm_username: "Non sei ancora un membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Crea ora un account su Openstreetmap</a> "
       password: "(lascia vuoto se non vuoi cambiarlo)"
       website: "Per esempio: http://www.example.com"
@@ -222,8 +222,8 @@ it:
         back: Indietro
         large_map: Allarga
         listing: "Tutti i luoghi '%{type}' in %{city} "
-        upload: "Carica imagine"
-      more_data_from: "Ci sono più informazioni su quest'luogho, controllato da:"
+        upload: "Carica immagine"
+      more_data_from: "Ci sono più informazioni su questo luogo, controllato da:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -269,7 +269,7 @@ it:
   or: o
   place:
     one: "%{count} luogo"
-    other: "%{count} loughi"
+    other: "%{count} luoghi"
   profile:
     edit:
       application:
@@ -331,7 +331,7 @@ it:
         text: "Come possiamo raggiungerti? Puoi modificare questa informazione anche dopo nell tuo profilo."
     edit:
       headline:
-        your_images: "I tuoi imagini caricati"
+        your_images: "Le tue immagini caricate"
   wheelchairstatus:
     limited: "parzialmente accessibile in sedia a rotelle"
     'no': "non accessibile in sedia a rotelle"
