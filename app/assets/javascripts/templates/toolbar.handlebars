@@ -1,5 +1,5 @@
 <div class="toolbar-content">
-    {{#unless showSearch}}
+    {{#if view.showSearch}}
     <button class="btn btn-info toolbar-toggle-searchbar" data-toggle="searchbar" data-target=".toolbar-searchbar-form">
         <i class="icon-search icon-light"></i>
     </button>
@@ -9,7 +9,7 @@
             {{ view Wheelmap.SearchbarButtonView }}
         </div>
     </form>
-    {{/unless}}
+    {{/if}}
     <div {{ bind-attr class=":btn-group :bootstrap-select :toolbar-filter-dropdown :toolbar-status-filter-btn :show-menu-arrow isStatusYes:yes isStatusNo:no isStatusLimited:limited isStatusUnknown:unknown" }}>
         <button class="btn dropdown-toggle btn-info" data-toggle="dropdown">
             <i class="toolbar-status-filter-btn-icon"></i>
@@ -77,7 +77,7 @@
             </li>
         </ul>
     </div>
-    {{#if showCategories}}
+    {{#if view.showCategories}}
     <div class="btn-group bootstrap-select show-menu-arrow toolbar-category-filter show-tick">
         <button class="btn dropdown-toggle clearfix btn-info" data-toggle="dropdown">
             <span class="icon-tags"></span>

@@ -4,11 +4,7 @@ class WidgetsController < ApplicationController
   before_filter :authenticate_with_api_key, :only => [:update, :embed]
 
   def embed
-    if @widget
-        render layout: 'embed'
-    else
-      head 404
-    end
+    render layout: 'embed'
   end
 
   def update

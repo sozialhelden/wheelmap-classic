@@ -5,6 +5,18 @@ Wheelmap.ToolbarView = Ember.View.extend
   init: ()->
     @_super()
 
+  linkTarget: (()->
+    if Ember.ENV.WIDGET? then '_blank' else null
+  ).property()
+
+  showCategories: (()->
+    if Ember.ENV.WIDGET? then Ember.ENV.WIDGET.show_categories else true
+  ).property()
+
+  showSearch: (()->
+    if Ember.ENV.WIDGET? then Ember.ENV.WIDGET.show_search else true
+  ).property()
+
   didInsertElement: ()->
     $(window).on 'resize.toolbar', @adjustFilters
     @adjustFilters()

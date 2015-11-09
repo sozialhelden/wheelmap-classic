@@ -71,7 +71,7 @@ Wheelmap::Application.routes.draw do
   resources :photos,      only: [:index, :show]
 
   post 'widgets/:id', to: 'widgets#update', as: :widgets
-  get 'embed/:key', to: 'widgets#embed', as: :embed
+  get 'embed(/:key)', to: 'widgets#embed', as: :embed
 
   resource :users, :as => 'profile', :path => '/profile' do
     resources :photos, :only => [:create, :destroy]

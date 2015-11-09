@@ -2,6 +2,6 @@
 
 - content_for :javascript do
   %script
-    ENV = { WIDGET: { show_categories: #{@widget.categories}#{if @widget.provider_id then ", provider_id: #{@widget.provider_id}" end} } };
+    = "ENV = { WIDGET: #{ActiveSupport::JSON.encode(widget_data(@widget))} }".html_safe;
   = javascript_include_tag 'app'
   = javascript_include_tag "i18n/#{I18n.locale}"
