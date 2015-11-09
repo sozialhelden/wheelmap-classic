@@ -41,8 +41,6 @@ class Photon extends React.Component {
   }
 
   onSelectChange(feature, options) {
-    console.log(options[0].feature);
-
     this.props.onSelectLocation(options[0].feature);
   }
 

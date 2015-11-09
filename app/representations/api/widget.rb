@@ -12,6 +12,7 @@ module Api::Widget
       t.add :lon
       t.add :user_id
       t.add :categories
+      t.add :bounding_box
     end
 
   end

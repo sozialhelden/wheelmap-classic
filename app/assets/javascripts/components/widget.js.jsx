@@ -1,13 +1,8 @@
 var setParam = require('mout/queryString/setParam');
 var debounce = require('mout/function/debounce');
 
-function buildSrc(src, latLon, boundingBox) {
-  if (boundingBox != null) return buildSrcFromBoundingBox(src, boundingBox);
-  else return buildSrcFromLatLon(src, latLon);
-}
-
 function buildSrcFromBoundingBox(src, boundingBox) {
-  return src + `#/?bbox=${boundingBox.join(',')}`;
+  return src + `#/?bbox=${boundingBox[1]},${boundingBox[3]},${boundingBox[0]},${boundingBox[2]}`;
 }
 
 function buildSrcFromLatLon(src, latLon) {
@@ -24,19 +19,26 @@ const MAX_HEIGHT = 800;
 module.exports = React.createClass({
 
   getInitialState: function() {
-    console.log(this.props);
+    let src = this.props.defaultSrc,
+      coordinates = [this.props.defaultLat, this.props.defaultLon],
+      boundingBox = this.props.defaultBoundingBox;
 
-    let coordinates = [this.props.defaultLat, this.props.defaultLon];
+    if (boundingBox != null)
+      src = buildSrcFromBoundingBox(src, boundingBox);
+    else {
+      src = buildSrcFromLatLon(src, coordinates);
+    }
 
     return {
       width: this.props.defaultWidth,
       height: this.props.defaultHeight,
       lat: this.props.defaultLat,
       lon: this.props.defaultLon,
+      boundingBox: this.props.defaultBoundingBox,
       providers: this.props.defaultProviders || [],
       providerId: this.props.defaultProviderId,
       categories: this.props.defaultCategory,
-      src: buildSrc(this.props.defaultSrc, coordinates, this.props.defaultBoundingBox),
+      src: src,
       resource: this.props.defaultResource
     };
   },
@@ -46,7 +48,9 @@ module.exports = React.createClass({
   },
 
   handleUpdate: function (prevState) {
-    let { height, width, lat, lon, categories, providerId } = this.state;
+    let { height, width, lat, lon, categories, providerId, boundingBox } = this.state;
+
+    console.log(boundingBox);
 
     $.ajax({
       url: this.state.resource,
@@ -55,12 +59,13 @@ module.exports = React.createClass({
       data: {
         widget: {
           provider_id: providerId,
+          bounding_box: boundingBox,
           height, width, lat, lon, categories
         }
       },
       success: () => {
-        if (prevState.lat !== lat || prevState.lon !== lon ||
-          prevState.categories !== categories || prevState.providerId !== providerId){
+        if (prevState.lat !== lat || prevState.lon !== lon || prevState.boundingBox !== boundingBox ||
+          prevState.categories !== categories || prevState.providerId !== providerId) {
           this.setState({ reload: (new Date).getTime() });
         }
       },
@@ -83,11 +88,17 @@ module.exports = React.createClass({
   },
 
   onLocationChange: function(item){
-    let bbox = item.properties.extent,
-      [ lon, lat ] = item.geometry.coordinates,
-      src = buildSrc(this.props.defaultSrc, [lat, lon], bbox);
+    let boundingBox = item.properties.extent,
+      [lon, lat] = item.geometry.coordinates,
+      src = this.props.defaultSrc;
 
-    this.setState({ lat, lon, src });
+    if (boundingBox != null)
+      src = buildSrcFromBoundingBox(src, boundingBox);
+    else {
+      src = buildSrcFromLatLon(src, [lat, lon]);
+    }
+
+    this.setState({ lat, lon, boundingBox, src });
   },
 
   onCategoriesChange: function(categories) {

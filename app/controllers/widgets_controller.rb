@@ -25,7 +25,7 @@ class WidgetsController < ApplicationController
   protected
 
   def widget_params
-    params.require(:widget).permit(:lat, :lon, :height, :width, :categories, :provider_id)
+    params.require(:widget).permit(:lat, :lon, :height, :width, :categories, :provider_id, :bounding_box => [])
   end
 
   def authenticate_with_api_key
