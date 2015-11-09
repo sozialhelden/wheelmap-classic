@@ -47,9 +47,8 @@ class Widget < ActiveRecord::Base
   end
 
   def default_values
-    self.width ||= 400
+    self.width ||= 500
     self.height ||= 400
-    self.lat ||= 52.50521
-    self.lon ||= 13.4231
+    self.center ||= GEO_FACTORY.point(13.4231, 52.50521)
   end
 end
