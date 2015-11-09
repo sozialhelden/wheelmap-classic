@@ -319,10 +319,7 @@ describe NodesController do
       feature_collection = ActiveSupport::JSON.decode(response.body)
       features = feature_collection['features']
       features.each do |feature|
-        sponsor = feature['properties']['sponsor'].first
-        expect(sponsor['provider_id'].to_i).to eq(provider.id)
-        expect(sponsor['poi_id'].to_i).to eq(@poi.id)
-
+        expect(feature['properties']['sponsor']).to be_blank
         expect(feature['properties']['category']).not_to be_blank
         expect(feature['properties']['id']).not_to be_blank
       end
