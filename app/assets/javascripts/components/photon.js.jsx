@@ -1,24 +1,20 @@
 var debounce = require('mout/function/debounce'),
   find = require('mout/array/find'),
   ReactSelect = require('react-select');
-  
-class Photon extends React.Component {
-  shouldComponentUpdate() {
+
+var Photon = React.createClass({
+  shouldComponentUpdate: function() {
     return false;
-  }
+  },
 
-  constructor(props) {
-    super(props);
-
-    this.featureRequest = null;
-
-    this.state = {
+  getInitialState: function() {
+    return {
       features: [],
       options: []
     };
-  }
+  },
 
-  requestFeatures(search, callback) {
+  requestFeatures: function(search, callback) {
     if (this.featureRequest != null)
       this.featureRequest.abort();
 
@@ -38,23 +34,23 @@ class Photon extends React.Component {
       },
       error: () => {}
     });
-  }
+  },
 
-  onSelectChange(feature, options) {
+  onSelectChange: function(feature, options) {
     this.props.onSelectLocation(options[0].feature);
-  }
+  },
 
-  render() {
+  render: function() {
     return (
-      <ReactSelect value={this.state.value} onChange={this.onSelectChange.bind(this)}
-                   asyncOptions={this.requestFeatures.bind(this)}
+      <ReactSelect value={this.state.value} onChange={this.onSelectChange}
+                   asyncOptions={this.requestFeatures}
                    autoload={false}
                    clearable={false}
                    placeholder={I18n.t('users.profile.widget.empty_center')}
                    searchPromptText={I18n.t('users.profile.widget.empty_center')}/>
     );
   }
-}
+});
 
 Photon.getOptions = function(features) {
   return features.map(feature => {
