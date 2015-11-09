@@ -1,6 +1,8 @@
 var setParam = require('mout/queryString/setParam');
 var debounce = require('mout/function/debounce');
 
+const DEFAULT_ZOOM = 16;
+
 function buildSrcFromBoundingBox(src, boundingBox) {
   return src + `#/?bbox=${boundingBox[1]},${boundingBox[3]},${boundingBox[0]},${boundingBox[2]}`;
 }
@@ -8,7 +10,7 @@ function buildSrcFromBoundingBox(src, boundingBox) {
 function buildSrcFromLatLon(src, latLon) {
   let [lat, lon] = latLon;
 
-  return src + `#/?lat=${lat}&lon=${lon}`;
+  return src + `#/?lat=${lat}&lon=${lon}&zoom=${DEFAULT_ZOOM}`;
 }
 
 const MIN_WIDTH = 300;
