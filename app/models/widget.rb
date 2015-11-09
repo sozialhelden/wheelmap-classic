@@ -1,4 +1,6 @@
 class Widget < ActiveRecord::Base
+  after_initialize :default_values
+
   belongs_to :user
 
   acts_as_api
@@ -42,5 +44,12 @@ class Widget < ActiveRecord::Base
   def api_key
     self.user.save
     self.user.api_key
+  end
+
+  def default_values
+    self.width ||= 400
+    self.height ||= 400
+    self.lat ||= 52.50521
+    self.lon ||= 13.4231
   end
 end
