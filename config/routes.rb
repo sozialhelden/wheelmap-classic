@@ -105,6 +105,7 @@ Wheelmap::Application.routes.draw do
       end
       member do
         put :update_wheelchair
+        put :update_toilet
       end
       resources :photos do
       end
