@@ -64,7 +64,7 @@ module.exports = React.createClass({
         }
       },
       success: () => {
-        if (prevState.lat !== lat || prevState.lon !== lon || prevState.boundingBox !== boundingBox ||
+        if (prevState.lat !== lat || prevState.lon !== lon ||
           prevState.categories !== categories || prevState.providerId !== providerId) {
           this.setState({ reload: (new Date).getTime() });
         }
