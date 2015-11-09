@@ -309,6 +309,7 @@ class Poi < ActiveRecord::Base
       logo = image_path(provided_poi.try(:provider).try(:logo).try(:url, 'iphone'))
       return logo if logo.present?
     end
+    nil
   end
 
   def to_geojson(options={})
