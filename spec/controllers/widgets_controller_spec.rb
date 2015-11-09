@@ -49,9 +49,9 @@ describe WidgetsController do
     end
 
     context "with missing token" do
-      it "cannot be found" do
+      it "displays the default layout" do
         get :embed, :key => nil
-        expect(response.status).to eq(404)
+        expect(response).to be_success
         expect(assigns(:widget)).to be_false
       end
     end
