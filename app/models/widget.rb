@@ -4,7 +4,7 @@ class Widget < ActiveRecord::Base
   acts_as_api
   include Api::Widget
 
-  attr_accessible :lat, :lon, :width, :height, :categories, :provider_id
+  attr_accessible :lat, :lon, :width, :height, :categories, :provider_id, :bounding_box
 
   GEO_FACTORY = RGeo::Cartesian.factory
 
@@ -26,6 +26,17 @@ class Widget < ActiveRecord::Base
 
   def lon
     self.center.x if self.center
+  end
+
+  def bounding_box
+    RGeo::Cartesian::BoundingBox(self.south_east, self.north_west) if self.south_east && self.north_west
+  end
+
+  def bounding_box=(value)
+    east, south, west, north = value.split(',').map(&:to_f)
+
+    self.south_east = GEO_FACTORY.point(east, south)
+    self.north_west = GEO_FACTORY.point(west, north)
   end
 
   def api_key

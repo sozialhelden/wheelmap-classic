@@ -310,7 +310,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `index_users_on_authentication_token` (`authentication_token`),
   KEY `index_users_on_oauth_token` (`oauth_token`),
   KEY `index_users_on_wants_newsletter` (`wants_newsletter`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `widgets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -322,17 +322,12 @@ CREATE TABLE `widgets` (
   `categories` tinyint(1) DEFAULT '0',
   `user_id` int(11) DEFAULT NULL,
   `provider_id` int(11) DEFAULT NULL,
-<<<<<<< HEAD
   `south_west` point DEFAULT NULL,
   `north_east` point DEFAULT NULL,
   `south_east` point DEFAULT NULL,
   `north_west` point DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-=======
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
->>>>>>> 6b8aabe... migrate provider_id
 
 INSERT INTO schema_migrations (version) VALUES ('20110107131649');
 
@@ -460,10 +455,6 @@ INSERT INTO schema_migrations (version) VALUES ('20151001072109');
 
 INSERT INTO schema_migrations (version) VALUES ('20151019120044');
 
-<<<<<<< HEAD
 INSERT INTO schema_migrations (version) VALUES ('20151028082753');
 
 INSERT INTO schema_migrations (version) VALUES ('20151102134652');
-=======
-INSERT INTO schema_migrations (version) VALUES ('20151028082753');
->>>>>>> 6b8aabe... migrate provider_id

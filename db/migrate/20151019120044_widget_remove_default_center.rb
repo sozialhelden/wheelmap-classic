@@ -1,5 +1,7 @@
 class WidgetRemoveDefaultCenter < ActiveRecord::Migration
   def change
-    change_column_null :widgets, :center, true
+    unless column_exists? :widgets, :bounding_box
+      add_column :widgets, :bounding_box, :integer
+    end
   end
 end

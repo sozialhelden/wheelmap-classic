@@ -1,7 +1,18 @@
 var setParam = require('mout/queryString/setParam');
 var debounce = require('mout/function/debounce');
 
-function buildSrc(src, lat, lon) {
+function buildSrc(src, latLon, boundingBox) {
+  if (boundingBox != null) return buildSrcFromBoundingBox(src, boundingBox);
+  else return buildSrcFromLatLon(src, latLon);
+}
+
+function buildSrcFromBoundingBox(src, boundingBox) {
+  return src + `#/?bbox=${boundingBox.join(',')}`;
+}
+
+function buildSrcFromLatLon(src, latLon) {
+  let [lat, lon] = latLon;
+
   return src + `#/?lat=${lat}&lon=${lon}`;
 }
 
@@ -13,6 +24,10 @@ const MAX_HEIGHT = 800;
 module.exports = React.createClass({
 
   getInitialState: function() {
+    console.log(this.props);
+
+    let coordinates = [this.props.defaultLat, this.props.defaultLon];
+
     return {
       width: this.props.defaultWidth,
       height: this.props.defaultHeight,
@@ -21,7 +36,7 @@ module.exports = React.createClass({
       providers: this.props.defaultProviders || [],
       providerId: this.props.defaultProviderId,
       categories: this.props.defaultCategory,
-      src: buildSrc(this.props.defaultSrc, this.props.defaultLat, this.props.defaultLon),
+      src: buildSrc(this.props.defaultSrc, coordinates, this.props.defaultBoundingBox),
       resource: this.props.defaultResource
     };
   },
@@ -68,8 +83,9 @@ module.exports = React.createClass({
   },
 
   onLocationChange: function(item){
-    let [ lon, lat ] = item.geometry.coordinates,
-      src = buildSrc(this.props.defaultSrc, lat, lon);
+    let bbox = item.properties.extent,
+      [ lon, lat ] = item.geometry.coordinates,
+      src = buildSrc(this.props.defaultSrc, [lat, lon], bbox);
 
     this.setState({ lat, lon, src });
   },
