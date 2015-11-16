@@ -184,9 +184,12 @@
       }
 
       &-code {
+        font-family: monospace;
         background-color: $grayLighter;
         padding: 10px;
         @include force-wrap();
+        width: 100%;
+        box-sizing: border-box;
       }
     }
 

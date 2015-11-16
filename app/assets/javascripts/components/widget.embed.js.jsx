@@ -14,7 +14,7 @@ module.exports = React.createClass({
         <h5>
           <Translation scope='users.profile.widget.legends.embed' />
         </h5>
-        <pre className="user-widget-embed-code">{code}</pre>
+        <textarea disabled rows="3" className="user-widget-embed-code">{code}</textarea>
         <p><Translation scope='users.profile.widget.legends.embed_explanation' /></p>
       </div>
     );
