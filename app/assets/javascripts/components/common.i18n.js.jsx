@@ -20,8 +20,12 @@ module.exports = React.createClass({
       title = 'translation missing';
     }
 
+    function createMarkup() {
+      return {__html: translation};
+    }
+
     return (
-      <span className={className} title={title}>{translation}</span>
+      <span className={className} title={title} dangerouslySetInnerHTML={createMarkup()}></span>
     );
   }
 });
