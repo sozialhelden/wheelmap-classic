@@ -3,7 +3,7 @@
     <button class="btn btn-info toolbar-toggle-searchbar" data-toggle="searchbar" data-target=".toolbar-searchbar-form">
         <i class="icon-search icon-light"></i>
     </button>
-    <form action="/search" class="toolbar-searchbar-form" method="GET">
+    <form action="/search" class="toolbar-searchbar-form" method="GET" {{ bind-attr target=view.searchFormTarget }}>
         <div class="input-append">
             {{ view Wheelmap.SearchbarView }}
             {{ view Wheelmap.SearchbarButtonView }}

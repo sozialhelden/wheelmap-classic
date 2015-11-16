@@ -5,7 +5,7 @@ Wheelmap.ToolbarView = Ember.View.extend
   init: ()->
     @_super()
 
-  linkTarget: (()->
+  searchFormTarget: (()->
     if Ember.ENV.WIDGET? then '_blank' else null
   ).property()
 
