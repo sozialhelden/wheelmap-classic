@@ -307,7 +307,33 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
     Ember.run.sync() # Needed for bindings to controller
 
     @_super()
+
     @get('layer')?.attributionControl.setPrefix('')
+    @addEmbedLink()
+
+  addEmbedLink: ->
+    layer = @get('layer')
+
+    unless layer? && Ember.ENV.WIDGET
+      return
+
+    embedLink = L.control(position: 'topright')
+
+    embedLink.onAdd = (map)->
+      control = L.DomUtil.create('div', 'leaflet-embed-link leaflet-bar')
+      link = L.DomUtil.create('a', '', control)
+      link.href = '#'
+      link.innerHTML = I18n.t('home.index.embed_link')
+      link.target = '_blank'
+
+      link.addEventListener 'click', (event)->
+        event.preventDefault()
+        url = window.location.origin + '/map' + window.location.hash
+        window.open(url, '_blank')
+
+      control
+
+    embedLink.addTo(layer)
 
   bboxDidChange: (->
     layer = @get('layer')

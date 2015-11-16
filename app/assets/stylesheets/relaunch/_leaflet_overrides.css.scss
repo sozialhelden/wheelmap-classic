@@ -43,3 +43,16 @@
     }
   }
 }
+
+.leaflet-embed-link {
+  a,
+  a:hover {
+    padding: 0 8px;
+    width: auto;
+    background-color: rgba(255,255,255,0.8);
+
+    &:hover {
+      background-color: #FFF;
+    }
+  }
+}
