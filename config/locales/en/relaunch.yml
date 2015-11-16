@@ -146,13 +146,14 @@ en:
         title: Widget
         height: Height
         width: Width
-        center: Center
-        categories: Show Category Filter
-        providers: Providers
-        empty_provider: Select a Provider
-        empty_center: Search for center …
+        center: Center of map
+        categories: Show category filter
+        providers: Provider
+        empty_provider: Choose a Provider
+        empty_center: Search for center of map …
         legends:
           settings: Settings
           preview: Preview
-          embed: Embed this code
+          embed: Embed code
+          embed_explanation: The specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above can be freely changed so that you can manually adjust the map segment (widget) for various locations.
           general: Create your own widget for use on your websites

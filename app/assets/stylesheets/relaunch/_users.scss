@@ -178,10 +178,16 @@
       }
     }
 
-    &-embed-code {
-      background-color: $grayLighter;
-      padding: 10px;
-      @include force-wrap();
+    &-embed {
+      & > p {
+        margin-top: 10px;
+      }
+
+      &-code {
+        background-color: $grayLighter;
+        padding: 10px;
+        @include force-wrap();
+      }
     }
 
     .Select {

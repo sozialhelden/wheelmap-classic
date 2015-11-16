@@ -15,6 +15,7 @@ module.exports = React.createClass({
           <Translation scope='users.profile.widget.legends.embed' />
         </h5>
         <pre className="user-widget-embed-code">{code}</pre>
+        <p><Translation scope='users.profile.widget.legends.embed_explanation' /></p>
       </div>
     );
   }
