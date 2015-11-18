@@ -75,6 +75,10 @@ And get some POI data into the database:
     wget http://download.geofabrik.de/europe/germany/berlin-latest.osm.bz2
     bzcat berlin-latest.osm.bz2 | bundle exec rake osm:import
 
+Install all node javascript dependencies:
+
+    npm install
+
 Finally startup a local rails server
 
     bundle exec rails server

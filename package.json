@@ -1,0 +1,16 @@
+{
+  "name": "wheelmap",
+  "dependencies": {
+    "babelify": "^6.3.0",
+    "browserify": "~> 10.2.4",
+    "browserify-incremental": "^3.0.1"
+  },
+  "license": "AGPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sozialhelden/wheelmap.git"
+  },
+  "engines": {
+    "node": ">= 4.1"
+  }
+}

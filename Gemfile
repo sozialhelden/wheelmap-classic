@@ -80,6 +80,7 @@ group :assets do
   gem 'compass-colors'
   gem 'compass-rails'
   gem 'bootstrap-sass'
+  gem 'browserify-rails'
 end
 
 group :test, :development do
@@ -120,4 +121,5 @@ group :development do
   gem 'capistrano-rbenv',                   require: false
   gem 'capistrano-bundler',                 require: false
   gem 'capistrano-deploytags', '~> 1.0.0',  require: false
+  gem 'capistrano-npm',                     require: false
 end
