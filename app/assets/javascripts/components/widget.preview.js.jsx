@@ -13,6 +13,7 @@ module.exports = React.createClass({
 
     return (
       <div className="user-widget-preview">
+        <h1>changed</h1>
         <h5>
           <Translation scope="users.profile.widget.legends.preview"></Translation>
         </h5>
