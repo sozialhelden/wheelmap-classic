@@ -15,6 +15,8 @@
 #= require jquery/jquery.magnific-popup.js
 #= require responsive-popover
 #= require dropzone
+#= require_self
+#= require nodes-new
 
 I18n.defaultLocale = 'en'
 I18n.locale = $('html').attr('lang')

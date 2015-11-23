@@ -114,7 +114,7 @@ module.exports = React.createClass({
   render: function () {
     return (
       <div className="widget-panel">
-        <WidgetForm
+        <EmbedWidgetForm
           defaultWidth={this.state.width}
           defaultHeight={this.state.height}
           minWidth={MIN_WIDTH}
@@ -129,12 +129,12 @@ module.exports = React.createClass({
           onLocationChange={this.onLocationChange}
           onCategoriesChange={this.onCategoriesChange}
           onProviderChange={this.onProviderChange}/>
-        <WidgetPreview
+        <EmbedWidgetPreview
           reload={this.state.reload}
           width={this.state.width}
           height={this.state.height}
           src={this.state.src}/>
-        <WidgetEmbed
+        <EmbedWidgetCode
           width={this.state.width}
           height={this.state.height}
           src={this.state.src}/>

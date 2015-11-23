@@ -807,7 +807,8 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     }
   }
 
-  input[type="text"] {
+  input[type="text"],
+  input[type="tel"] {
     height: 34px;
     line-height: 26px;
   }
@@ -911,3 +912,5 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   height: auto;
   z-index: -1
 }
+
+@import "nodes-new";
