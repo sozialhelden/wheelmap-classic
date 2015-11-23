@@ -1,6 +1,10 @@
 //= require react_ujs
 //= require i18n.js
 
+I18n.defaultLocale = 'en';
+I18n.locale = $('html').attr('lang');
+I18n.fallbacks = true;
+
 window.React          = require('react');
 window.TestUtils      = require('react/addons').addons.TestUtils;
 window.ReactDOM       = require('react-dom');
