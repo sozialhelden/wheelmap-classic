@@ -6,7 +6,7 @@
     %p
       =t('users.profile.widget.legends.general')
 
-    =react_component('Widget', defaultProviders: @widget.providers, defaultProviderId: @widget.provider_id, defaultCategory: @widget.categories, defaultLon: @widget.lon, defaultLat: @widget.lat, defaultBoundingBox: @widget.bounding_box, defaultWidth: @widget.width, defaultHeight: @widget.height, defaultSrc: embed_url(:key => @widget.api_key), defaultResource: widgets_path(:id => @widget.id))
+    =react_component('EmbedWidget', defaultProviders: @widget.providers, defaultProviderId: @widget.provider_id, defaultCategory: @widget.categories, defaultLon: @widget.lon, defaultLat: @widget.lat, defaultBoundingBox: @widget.bounding_box, defaultWidth: @widget.width, defaultHeight: @widget.height, defaultSrc: embed_url(:key => @widget.api_key), defaultResource: widgets_path(:id => @widget.id))
 
 
 - content_for :javascript do

@@ -125,14 +125,6 @@ class NodesController < ApplicationController
   end
 
   def new
-    @node = Poi.new params[:node]
-    @widget = Widget.new [:category_name, :address, :similar, :status, :contact, :overview]
-
-    section = URI(request.original_url).path.split('/').last.to_sym
-
-    if @widget.has?(section)
-      @widget.activate(section)
-    end
   end
 
   def create

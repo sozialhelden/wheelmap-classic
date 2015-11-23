@@ -1,3 +1,4 @@
+//= require jquery
 //= require components
 
 I18n.defaultLocale = 'en';
