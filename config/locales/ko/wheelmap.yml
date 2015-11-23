@@ -92,7 +92,6 @@ ko:
     form_validation_error: "아래 오류 내용들을 참조하시기 바랍니다"
   header:
     meta:
-      description: "휠체어 접근이 가능한 장소를 찾아보세요 - wheelmap.org"
       homepage: "홈페이지"
       keywords: "휠체어 접근가능 장소 표시"
       search: 검색

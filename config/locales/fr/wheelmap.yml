@@ -106,7 +106,6 @@ fr:
     form_validation_error: "Veuillez consulter les erreurs indiquées ci-dessous"
   header:
     meta:
-      description: "Trouvez des lieux accessibles en fauteuil roulant - wheelmap.org"
       homepage: "Page d'accueil"
       keywords: "fauteuil roulant accessibles lieux trouver chercher marquer"
       search: Recherche

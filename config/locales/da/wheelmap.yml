@@ -106,7 +106,6 @@ da:
     form_validation_error: "Bemærk fejllisten nedenfor"
   header:
     meta:
-      description: "Find kørestolstilgængelige steder - wheelmap.org"
       homepage: "Hjemmeside"
       keywords: "kørestolstilgængelige steder find søgemarkering"
       search: Søg

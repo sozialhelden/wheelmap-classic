@@ -8,6 +8,7 @@ nl:
         website: Website
         phone: Telefoon
         address_street: Straat
+        address_housenumber: Huisnummer
         address_city: Stad
   faq:
     answers:
@@ -84,5 +85,7 @@ nl:
     profile:
       newsletter:
         title: Nieuwsbrief
+      photos:
+        title: 'Foto''s '
       edit:
         title: Profiel

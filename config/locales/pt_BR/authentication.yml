@@ -3,16 +3,16 @@ pt_BR:
     confirmations:
       confirmed: "Seu e-mail foi confirmado com sucesso."
       link: "E-mail de confirmação não recebido?"
-      send_instructions: "Dentro de alguns minutos você receberá um e-mail com instruções como confirmar a sua conta."
-      send_paranoid_instructions: "Se seu e-mail está no nosso banco de dados, você vai receber um e-mail com instruções para confirmar sua conta em alguns minutos."
+      send_instructions: "Dentro de alguns minutos você receberá um e-mail com link de confirmação."
+      send_paranoid_instructions: "Se seu e-mail está em nosso banco de dados, você vai receber uma mensagem com instruções para confirmar a conta, dentro de alguns minutos."
     destroy:
       confirm: "Tem certeza?"
-      headline: "Apagar a conta."
+      headline: "Excluir a conta."
       link: "Apagar agora"
     edit:
       form:
         labels:
-          current_password: "Palavra passe actual <i> (precisamos do seguinte para confirmar a alteração) </i>"
+          current_password: "Senha atual <i>(necessária para confirmar as alterações)</i>"
           email: E-mail
           password: "Senha <i>(deixar em branco se não quiser mudar)</i>"
           password_confirmation: "Repetir senha"
@@ -21,15 +21,15 @@ pt_BR:
     failure:
       already_authenticated: "Você já está conectado."
       inactive: "A sua conta ainda não foi ativada."
-      invalid: "Palavra passe ou Email inválido. "
-      invalid_token: "d"
+      invalid: "Senha ou endereço de e-mail não confere. "
+      invalid_token: "Token de autenticação inválido"
       locked: "A sua conta está bloqueada."
-      timeout: "A sua sess"
-      unauthenticated: "Voçê precisa se conectar ou registrar parar continuar.  "
-      unconfirmed: "Por favor, confirme sua conta antes de continuar. Para este fim, mandamo-lhe um e-mail com um link. Se você não tiver o recebido, clique em \"E-mail de confirmação não recebido?\" no final desta página. "
+      timeout: "Sessão expirada. Por favor autentique-se novamente para continuar."
+      unauthenticated: "Você precisa autenticar-se (ou registrar-se) antes de continuar."
+      unconfirmed: "Por favor, confirme sua conta antes de continuar. Você deverá ter recebido um e-mail com o link de confirmação. Se não recebeu, clique em \"E-mail de confirmação não recebido?\", no final desta página."
     mailer:
       confirmation_instructions:
-        landing_page: "Por favor, clique no link que acabamos de mandar para seu e-mail. Se você não recebeu nenhum e-mail, também veja seu lixo eletrônico. Se este não estiver lá, você pode solicitar o e-mail novamente."
+        landing_page: "Por favor, clique no link que acabamos de mandar para seu e-mail. Se você não vê nenhum novo e-mail, não esqueça de checar o Lixo Eletrônico. Se não estiver lá, você pode solicitar novo envio."
         subject: "Mais um passo para ativar sua conta"
       reset_password_instructions:
         subject: "Instruções para redefinir a senha"
@@ -37,9 +37,9 @@ pt_BR:
         subject: "Instruções para desbloquear sua conta"
     mandatory: "* campo obrigatório"
     omniauth_callbacks:
-      failure: "não pôde ser confirmado de  %{kind} porque \"%{reason}"
-      permission_missing: "Você não nos deu os direitos necessários."
-      success: "Autorizado com sucesso com %{kind}"
+      failure: "A autenticação usando o %{kind} falhou. Erro: \"%{reason}\"."
+      permission_missing: "Você não nos concedeu os direitos necessários."
+      success: "Autenticado com sucesso usando o %{kind}."
     password_recovery:
       form:
         labels:
@@ -48,46 +48,46 @@ pt_BR:
       headline: "Esqueceu sua senha?"
     password_reset:
       email:
-        comment: "Se não pediu para alterar a sua senha, por favor ignore este e-mail <br/>. A sua senha não será alterada a não ser que clique no seguinte link."
-        headline: "Bem vindo %{email}"
-        link: "Mudar a palavra passe"
-        text: "Alguém pediu para alterar a sua palavra passe. Pode fazer essa alteração carregando no seguinte link: "
+        comment: "Se você não solicitou alteração de senha, apenas ignore este e-mail <br/>. Sua senha não será mudada a menos que você clique o link acima e configure uma nova."
+        headline: "Bem vindo, %{email}"
+        link: "Alterar minha senha"
+        text: "Alguém solicitou alteração da senha de sua conta. Caso tenha sido você, clique o link a seguir para continuar o procedimento (se não, ignore esta mensagem):"
       form:
         labels:
           password: "Nova senha"
           password_confirmation: "Repetir senha"
         submit: "Escolher nova senha"
-      headline: "Restabelecer a palavra passe"
+      headline: "Redefinir senha"
     passwords:
       link: "Esquececeu sua senha?"
-      send_instructions: "Dentro de alguns minutos receberá um e-mail com instruções para criar uma nova senha."
-      send_paranoid_instructions: "Se seu e-mail estiver no nosso banco de dados, você vai receber um e-mail com um link para redefinir sua senha."
+      send_instructions: "Dentro de alguns minutos você receberá um e-mail com instruções para criar uma nova senha."
+      send_paranoid_instructions: "Se uma conta existe associada a este endereço, você vai receber um e-mail com link para redefinição da sua senha."
       updated: "A sua senha foi alterada com sucesso. Está conectado(a) à sua conta."
       updated_not_active: "A sua senha foi modificada com sucesso."
     registrations:
-      destroyed: "A sua conta foi cancelada com sucesso."
-      inactive_signed_up: "Registrado com sucesso. Mas não conseguimos te conectar. Motivo: \"%{reason}\""
+      destroyed: "Até logo! A sua conta foi cancelada com sucesso, mas nós estaremos esperando você."
+      inactive_signed_up: "Você foi registrado com sucesso mas sua conta não pôde ser conectada. Motivo: \"%{reason}\""
       link: "Criar conta"
       reasons:
         inactive: inativo
         locked: bloqueado
         unconfirmed: não confirmado
-      signed_up: "Conta criada com sucesso."
+      signed_up: "Conta criada com sucesso. Um e-mail de confirmação foi enviado a você."
       updated: "Sua conta foi atualizada."
     sessions:
-      inactive: "A sua conta ainda não foi confirmada. Para confirmá-la clique no link que mandamos por e-mail."
-      invalid: "E-mail ou senha inválida "
-      invalid_token: "Código de autentificação inválido."
+      inactive: "A sua conta ainda não foi confirmada. Para confirmá-la, clique no link que mandamos a você por e-mail."
+      invalid: "Senha ou endereço de e-mail não confere. "
+      invalid_token: "Token de autenticação inválido"
       link: "Entrar"
       locked: "A sua conta está bloqueada."
       new:
-        no_osm_account: "Nenhuma conta em OpenStreetMap?"
-        osm_promo_text: "O Wheelmap é baseado em mapas do OpenStreetMap (OSM). OSM é um mapa do mundo criado por pessoas como você. Uma Wikipedia de mapas. Para editar lugares existentes ou criar novos lugares você precisa duma conta no OSM."
-        promo_text_thank_you: "Obrigado por sua ajuda!"
-        sign_in_with: "Conectar com %{kind}"
-        sign_up_with_osm: "Registre-se aqui."
-        wheelmap_promo_text: "Com seus conhecimentos de lugares acessíveis você contribui para um melhor dia-a-dia de pessoas com deficiências físicas. Ao mesmo tempo aumentam as informações no OSM."
-      signed_in: "Entrou na conta com sucesso"
+        no_osm_account: "Você não tem conta no OpenStreetMap?"
+        osm_promo_text: "O Wheelmap é baseado nos geodados da base de dados (OSM) do OpenStreetMap, um mapa gratuito do mundo, criado por pessoas como você. Uma Wikipédia de mapas. Para editar os lugares existentes, ou criar novos, você precisa de uma conta no OpenStreetMap, e deve estar autenticado com ela."
+        promo_text_thank_you: "Muito obrigado por sua ajuda!"
+        sign_in_with: "Conectar usando %{kind}"
+        sign_up_with_osm: "Registrar-se agora."
+        wheelmap_promo_text: "Com seus conhecimentos sobre a acessibilidade dos lugares, você ajuda pessoas com deficiência física a melhor organizarem o dia-a-dia delas. Além disso, o OpenStreetMap fica consideravelmente mais rico em detalhes."
+      signed_in: "Conectou a conta com sucesso"
       signed_out: "Desconectado."
       timeout: "A sua sessão expirou, por favor entre novamente."
       unauthenticated: "Por favor conecte-se ou registre-se novamente para continuar."
@@ -96,7 +96,7 @@ pt_BR:
       form:
         labels:
           email: E-mail
-          password: Palavra passe
+          password: Senha
           remember_me: "Deseja se manter conectado?"
         submit: "Entrar"
       headline: "Entrar"
@@ -105,18 +105,18 @@ pt_BR:
     sign_up:
       email:
         confirm_my_account: "Confirmar minha conta."
-        please_confirm: "Você pode confirmar seu e-mail clicando no seguinte link:"
-        welcome: "Bem-vindo %{email}!"
+        please_confirm: "Você pode confirmar a sua conta clicando no link a seguir:"
+        welcome: "Seja bem-vindo, %{email}!"
       form:
         labels:
           email: E-mail
           password: Senha
           password_confirmation: "Repetir senha"
-          wants_newsletter: "Sim, mantenha-me informado sobre wheelmap. (Mas por favor não mais que uma vez por mês.)"
+          wants_newsletter: "Sim, mantenha-me informado sobre o Wheelmap. Mas, por favor, não mais do que uma vez por mês."
         submit: "Registrar-se"
       headline: "Registrar-se"
     unlocks:
       link: "Não recebeu instruções para desbloquear a sua conta?"
-      send_instructions: "Dentro de alguns minutos receberá um e-mail com instruções para desbloquear a sua conta."
-      send_paranoid_instructions: "Se você já tem uma conta, vai receber um e-mail para desbloqueá-la em alguns minutos."
-      unlocked: "Sua conta foi ativada com sucesso. Está conectado(a) agora."
+      send_instructions: "Dentro de alguns minutos você receberá um e-mail com instruções para desbloquear a sua conta."
+      send_paranoid_instructions: "Se você já tem uma conta, dentro de alguns minutos receberá um e-mail com instruções sobre como desbloqueá-la."
+      unlocked: "Sua conta foi reativada com sucesso, e agora está conectada."

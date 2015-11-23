@@ -86,10 +86,6 @@ sk:
           address: Prosím zadajte <strong>konkrétnejšiu adresu</strong>.
           intro: 'Skúste toto:'
           spell_check: Skontrolujte či ste text zadali správne.
-      results:
-        ticker:
-          one: '%{count} výsledok:'
-          other: '%{count} výsledkov:'
     timeout:
       headline: Uh, naša chyba
       info: Naše vyhľadávanie bolo dočasne nedostupné.

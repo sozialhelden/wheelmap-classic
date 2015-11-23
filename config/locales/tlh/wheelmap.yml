@@ -85,7 +85,6 @@ tlh:
     form_validation_error: "bIngDaq Qagh yIlegh."
   header:
     meta:
-      description: "rutlhquS chawbogh Daq'e' Sam - wheelmap.org"
       homepage: "juH Daq"
       keywords: "rutlhquS naw' Daqmey Sam nej ghItlh"
       search: nej

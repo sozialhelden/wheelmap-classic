@@ -75,6 +75,7 @@ ru:
       lat: "Нажмите на карту и поместите маркер в точную позицию."
       osm_username: "Ещё не зарегистрированы? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\"> Создать аккаунт Openstreetmap</a> "
       password: "(оставьте поле пустым, если не хотите изменять значение)"
+      phone: "Например: +7 495 123 45 67"
       website: "например: http://www.example.com"
     labels:
       category: "Категория:"
@@ -110,7 +111,6 @@ ru:
     form_validation_error: "Обратите, пожалуйста, внимание на список ошибок внизу"
   header:
     meta:
-      description: "Найдите места, доступные на кресле-коляске - wheelmap.org "
       homepage: "Домашняя страница"
       keywords: "поиск мест, доступных на кресле-коляске"
       search: Поиск

@@ -18,6 +18,7 @@ tlh:
         submit: "qon"
       headline: "ta' choH"
     failure:
+      already_authenticated: "bIrarpu'. bIrarnISbe'qa' ..."
       inactive: "wej chu' ta'lIj."
       invalid: "muj pegh mu', jabI'ID ghap."
       invalid_token: "chaw' qab"

@@ -107,7 +107,6 @@ pl:
     form_validation_error: "Zobacz listę błędów poniżej."
   header:
     meta:
-      description: "Znajdź miejsca dostępne dla osób na wózkach - wheelmap.org"
       homepage: "Strona startowa"
       keywords: "znajdź szukaj zaznacz miejsca dostępne dla osób na wózkach"
       search: Szukaj

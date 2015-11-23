@@ -101,7 +101,6 @@ nb:
     form_validation_error: "Vennligst legg merke til feilene nedenfor"
   header:
     meta:
-      description: "Finn rullestoltilgjengelige steder - wheelmap.org"
       homepage: "Hjemmeside"
       keywords: "Rullestoltilgjenglige steder finn søk merk"
       search: Søk

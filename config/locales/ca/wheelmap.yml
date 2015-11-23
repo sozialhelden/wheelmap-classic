@@ -71,6 +71,7 @@ ca:
       lat: "Mou el marcador del mapa a la posició correcta"
       osm_username: "Encara no en sou membre? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Creeu-vos ara un compte a OpenStreetMap</a>"
       password: "(deixeu-ho en blanc si no voleu canviar-la)"
+      phone: "Per exemple: +493012345678"
       website: "Per exemple: http://www.exemple.cat"
     labels:
       category: "Categoria:"
@@ -106,7 +107,6 @@ ca:
     form_validation_error: "Tingues en compte els errors llistats sota"
   header:
     meta:
-      description: "Troba llocs acessibles amb cadira de rodes - wheelmap.org"
       homepage: "Pàgina d'inici"
       keywords: "marca de cerca de llocs accessibles amb cadira de rodes"
       search: Cerca

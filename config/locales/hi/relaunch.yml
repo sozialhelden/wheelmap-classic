@@ -1,15 +1,4 @@
 hi:
-  activerecord:
-    attributes:
-      poi:
-        name: नाम
-        type: Type
-        website: वेबसाइट
-        phone: दूरभाष, टेलीफोन
-        address_street: गली
-        address_housenumber: नहीं
-        address_postcode: पिन कोड
-        address_city: शहर
   users:
     profile:
       newsletter:

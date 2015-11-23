@@ -104,7 +104,6 @@ ja:
     form_validation_error: "下記に挙げられたエラーに注意してください。"
   header:
     meta:
-      description: "車椅子で行ける場所を見つけよう - wheelmap.org"
       homepage: "ホームページ"
       keywords: "車椅子で行ける場所を見つけよう検索マーク"
       search: 検索

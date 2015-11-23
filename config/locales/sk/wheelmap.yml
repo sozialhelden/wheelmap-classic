@@ -106,7 +106,6 @@ sk:
     form_validation_error: "Došlo k následujúcim chybám"
   header:
     meta:
-      description: "Nájdite miesta prístupné pre vozíčkarov - wheelmap.org"
       homepage: "Domovská stránka"
       keywords: "miesta prístupné pre vozíčkarov hľadať označovať"
       search: Hľadať

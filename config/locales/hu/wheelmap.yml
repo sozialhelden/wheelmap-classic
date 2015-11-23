@@ -105,7 +105,6 @@ hu:
     form_validation_error: "Kérjük, nézd át az alábbi hibákat"
   header:
     meta:
-      description: "Találj kerekesszékkel is akadálymentes helyeket - wheelmap.org"
       homepage: "Kezdőlap"
       keywords: "kerekesszék akadálymentes hely talál keres bejelölés"
       search: Keresés
@@ -309,6 +308,9 @@ hu:
       long: "%Y %B %d %H:%M"
       short: "%b %d %H:%M"
     pm: du
+  toiletstatus:
+    'no': "Nincs akadálymentesített mosdó"
+    'yes': "Akadálymentesített mosdó"
   user_sessions:
     create:
       activation:

@@ -98,7 +98,6 @@ ar:
     form_validation_error: "يرجى ملاحظة الأخطاء المذكورة"
   header:
     meta:
-      description: "ابحث عن أماكن يسهل الوصول إليها بالكرسي المتحرك - wheelmap.org"
       homepage: "الصفحة الرئيسية"
       keywords: "أماكن يسهل الوصول اليها بالكرسي المتحرك، أضف علامة بحث"
       search: بحث

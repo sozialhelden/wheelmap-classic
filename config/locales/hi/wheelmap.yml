@@ -98,7 +98,6 @@ hi:
     form_validation_error: "नीचे दीं त्रुटियों को नोट कीजिए"
   header:
     meta:
-      description: "वहीलचेयर सुलभ जगह खोजें - wheelmap.org"
       homepage: "होम पेज, मुख्य पृष्ठ\n"
       keywords: "व्हीलचेयर सुलभ जगहों के लिए खोज का निशान"
       search: खोजें, ढूंढें

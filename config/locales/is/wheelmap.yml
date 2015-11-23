@@ -95,7 +95,6 @@ is:
     form_validation_error: "Vinsamlegast skrifaðu villurnar sem eru hér fyrir neðan"
   header:
     meta:
-      description: "Leitaðu uppi aðgengilega staði - wheelmap.org"
       homepage: "Heim"
       keywords: "hjólastóll aðgengi staðir finna leita merkja"
       search: Leita

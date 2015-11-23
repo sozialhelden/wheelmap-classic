@@ -104,7 +104,6 @@ it:
     form_validation_error: "Vedi gli errori sotto"
   header:
     meta:
-      description: "Trova luoghi accessibili in sedia a rotelle - wheelmap.org"
       homepage: "Home page"
       keywords: "Ricerca luoghi accessibili in sedia a rotelle"
       search: Ricerca

@@ -71,6 +71,7 @@ es:
       lat: "Mueve el marcador en el mapa a la posición correcta"
       osm_username: "¿Todavía no eres un miembro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\"> Crea una cuenta OpenStreetMap ahora</a>"
       password: "(dejar vacío si no quiere modificarlo)"
+      phone: "Por ejemplo: +49 30 12345678"
       website: "Por ejemplo: http://www.example.com"
     labels:
       category: "Categoría:"
@@ -98,6 +99,7 @@ es:
       website: "Sitio web:"
       wheelchair: "¿Accesibilidad para silla de ruedas?"
       wheelchair_description: "Comentario sobre la accesibilidad:"
+      wheelchair_toilet: "Baño para silla de ruedas:"
     titles:
       basic: "Datos básicos"
       optional: "Más información <span class=\"addition\">(todos los campos son opcionales)</span>"
@@ -105,7 +107,6 @@ es:
     form_validation_error: "Por favor revisa los siguientes errores"
   header:
     meta:
-      description: "Encuentra sitios accesibles para silla de ruedas - wheelmap.org"
       homepage: "Página principal"
       keywords: "lugares accesibles silla de ruedas buscar marcadores pin"
       search: Buscar
@@ -309,6 +310,14 @@ es:
       long: "%d de %B, %Y %H:%M"
       short: "%b de %d %H:%M"
     pm: pm
+  toiletstatus:
+    'no': "Baño no accesible para silla de ruedas"
+    unknown: "Tipo de baño desconocido"
+    'yes': "Baño accesible para silla de ruedas"
+    what_is:
+      'no': "El ancho de la puerta es de un mínimo de 90 cm, hay un espacio mínimo de 150 x 150 cm, asiento de inodoro a la altura de una silla de ruedas, agarraderas plegables y lavatorio accesible."
+      'yes': "El ancho de la puerta es de un mínimo de 90 cm, hay un espacio mínimo de 150 x 150 cm, asiento de inodoro a la altura de una silla de ruedas, agarraderas plegables y lavatorio accesible."
+      unknown: "¡Ayuda marcando el tipo de baño!"
   user_sessions:
     create:
       activation:

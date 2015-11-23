@@ -65,9 +65,11 @@ zh_TW:
     show_unaccessible_places: "非輪椅無障礙"
   formtastic:
     hints:
+      email: "我們會好好保護你的電子郵件位址，保證不會有垃圾郵件！"
       lat: "將圖示移動到地圖上正確位置"
       osm_username: "還不是會員嗎？ <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">現在就申請 OpenStreetMap 的會員 </a>"
       password: "(如果你不想更動，請保持空白)"
+      phone: "例如：+49 30 12345678"
       website: "例如：http://www.example.com"
     labels:
       category: "分類："
@@ -103,7 +105,6 @@ zh_TW:
     form_validation_error: "請注意下列錯誤"
   header:
     meta:
-      description: "尋找輪椅無障礙空間－wheelmap.org"
       homepage: "首頁"
       keywords: "尋找輪椅無障礙空間的標誌"
       search: 搜尋
@@ -310,6 +311,8 @@ zh_TW:
     unknown: "廁所狀態不明"
     'yes': "輪椅無障礙廁所"
     what_is:
+      'no': "門的內徑最小寬度90公分，淨空最小150 x 150公分，有輪椅高度的廁所坐位，手把和洗手檯。"
+      'yes': "門的內徑最小寬度90公分，淨空最小150 x 150公分，有輪椅高度的廁所坐位，手把和洗手檯。"
       unknown: "請幫忙標記廁所的狀況!"
   user_sessions:
     create:

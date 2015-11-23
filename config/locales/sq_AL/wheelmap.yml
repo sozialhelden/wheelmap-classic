@@ -104,7 +104,6 @@ sq_AL:
     form_validation_error: "Ju lutem shënoni gabimet e listuar poshtë"
   header:
     meta:
-      description: "Gjej vende të aksesueshme në karrige me rrota - wheelmap.org"
       homepage: "Kryefaqja"
       keywords: "vende të aksesueshme në karrige me rrota gjej kërko shënjo"
       search: Kërko

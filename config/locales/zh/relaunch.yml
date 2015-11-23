@@ -1,15 +1,4 @@
 zh:
-  activerecord:
-    attributes:
-      poi:
-        name: 姓名
-        type: 种类
-        website: 网页
-        phone: 电话
-        address_street: 街道
-        address_housenumber: 没有
-        address_postcode: 邮政编码
-        address_city: 城市
   users:
     profile:
       newsletter:

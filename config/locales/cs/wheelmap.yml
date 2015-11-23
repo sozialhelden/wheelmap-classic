@@ -73,6 +73,7 @@ cs:
       lat: "Posuňte značku na mapě aby jste opravili polohu"
       osm_username: "Ještě k nám nepatříte? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\"> Vytvořite si nyní účet na OpenStreetMap</a>"
       password: "(nechte prázdné když nechcete změnit)"
+      phone: "Například: +49 30 12345678"
       website: "Například: http://www.example.com"
     labels:
       category: "Kategorie:"
@@ -108,7 +109,6 @@ cs:
     form_validation_error: "Došlo k následujícím chybám"
   header:
     meta:
-      description: "Nalezněte místa přístupné pro vozíčkáře - wheelmap.org"
       homepage: "Domovská stránka"
       keywords: "místa přístupné pro vozíčkáře hledat označovat"
       search: Hledat

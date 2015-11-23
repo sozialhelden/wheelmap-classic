@@ -98,7 +98,6 @@ lv:
     form_validation_error: "Lūdzu ņemiet vērā zemāk uzskaitītās kļūdas"
   header:
     meta:
-      description: "Atrast ar ratiņkrēslu pieejamas vietas - wheelmap.org"
       homepage: "Mājas lapa"
       keywords: "Ar ratiņkrēsliem pieejamas vietas meklēt atrast atzīmēt"
       search: Meklēt

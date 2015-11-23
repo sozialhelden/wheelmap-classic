@@ -3,12 +3,25 @@ ar:
     attributes:
       poi:
         name: الإسم
-        type: 'النوع'
-        address: 'العنوان'
+        type: '
+
+
+          النوع'
+        address: '
+
+          العنوان'
         website: موقع الكتروني
-        phone: 'الهاتف'
-        address_street: 'شارع'
-        address_city: 'المدينة'
+        phone: '
+
+          الهاتف'
+        address_street: '
+
+
+          شارع'
+        address_city: '
+
+
+          المدينة'
   header:
     navigation:
       about_wheelmap: حول ويل ماب
@@ -24,7 +37,9 @@ ar:
         button: حسنا ، للنطلق!
         categories: تصنيف الأماكن
         filter: تحديد الأماكن بحسب إمكانية وصول الكرسي المتحرك
-        headline: 'ضع العلامات و ابحث عن الأماكن التي يمكن الوصول إليها بالكرسي المتحرك مع  Wheelmap.org مجانا - و في أي مكان حول العالم :'
+        headline: 'ضع العلامات و ابحث عن الأماكن التي يمكن الوصول إليها بالكرسي المتحرك مع  Wheelmap.org
+
+          مجانا - و في أي مكان حول العالم :'
         lookup: ابحث عن مكان محدد
         secondary_headline: 'نظام الإشارات الخاص بنا للكراسي المتحركة في الأماكن العامة:'
   nodes:

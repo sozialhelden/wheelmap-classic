@@ -1,4 +1,17 @@
 pt_BR:
+  activerecord:
+    attributes:
+      poi:
+        name: Nome
+        type: Tipo
+        address: Endereço
+        website: Site
+        phone: Telefone
+        note: Nota
+        address_street: Rua
+        address_housenumber: Número da casa
+        address_postcode: CEP
+        address_city: Cidade
   faq:
     answers:
       0: Você sempre pode mudar a marcação dum lugar. Simplesmente escolhe a classificação certa e "Salvar" - pronto!
@@ -15,7 +28,7 @@ pt_BR:
       choose_language: Escolher idioma
       contact: Contato
       map: Mapa
-      projects: 'Projetos:'
+      projects: Projetos
     toolbar:
       categories: Categorias
   home:
@@ -67,6 +80,7 @@ pt_BR:
   search:
     index:
       no-results:
+        headline: Desculpe, não podíamos achar um lugar com o nome "%{query}".
         hint:
           example: <strong>Exemplo:</strong> São Paulo, Brasil
           info: Nosso serviço de busca funciona somente com nome e/ou informações de endereço. Portanto, ou procure pelo nome do lugar ou por um endereço, por exemplo, nome de rua e/ou cidade. Buscar pelo tipo dum lugar, por exemplo restaurante ou cinema, não funciona.
@@ -83,20 +97,35 @@ pt_BR:
       headline: Oh, nossa culpa
       info: Nosso sistema de busca estava temporariamente indisponível.
       repeat_search: Nova busca
-  activerecord:
-    attributes:
-      poi:
-        name: Nome
-        type: Tipo
-        website: Website
-        phone: Telefone
-        address_street: Rua
-        address_housenumber: N°
-        address_postcode: CEP
-        address_city: Cidade
   users:
     profile:
       newsletter:
         title: Newsletter
+        text: Fica informado com o Newsletter de Wheelmap. Não vamos te mandar spam. Você vai receber emails no máximo uma vez por mês.
+        label: 'Sim, informam-me sobre Wheelmap. '
+      show:
+        title: Visão geral
+        greeting:
+          anonymously: Olá!
+          personalized: Oi %{name}
+        overview:
+          text: Você tem
+          pois_marked:
+            one: '%{count} lugares marcados'
+            other: '%{count} lugares marcados'
+          pois_added:
+            one: '%{count} lugares adicionados'
+            other: '%{count} lugares adicionados'
+          pois_edited:
+            one: '%{count} lugares editados'
+            other: '%{count} lugares editados'
+          photos_uploaded:
+            one: '%{count} lugares transferidos'
+            other: '%{count} lugares carregados'
+      photos:
+        title: Fotos
+        empty: 'Você ainda não carregou uma foto. '
       edit:
         title: Perfis
+        legends:
+          user_data: Informação de sua conta

@@ -104,7 +104,6 @@ pt_PT:
     form_validation_error: "Por favor reveja os erros listados abaixo"
   header:
     meta:
-      description: "Encontrar lugares acessíveis a cadeiras de rodas - wheelmap.org"
       homepage: "Página inicial"
       keywords: "encontrar marcador de locais acessíveis a cadeiras de rodas"
       search: Pesquisar

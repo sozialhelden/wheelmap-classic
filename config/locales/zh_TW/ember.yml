@@ -4,6 +4,11 @@ zh_TW:
       prompt: "選擇分類"
     node_type:
       prompt: "選擇種類"
+    node:
+      info_edit_position: "如上述所說它的位置有出現在 Wheelmap 上，看到它的位置標記不對，你可以點 <a href=\"%{url}\"> 到開放街圖網站改變它的位置。"
+      mail:
+        subject: "[Wheelmap] %{headline} 的問題"
+        body: "(請你用英文或德文)\n\nHi Soziaheiden.\nsomething is wrong with location: %{url}\n\nThe problem is:"
   actions:
     send: 送出
     save: 存檔

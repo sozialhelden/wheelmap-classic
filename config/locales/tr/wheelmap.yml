@@ -103,7 +103,6 @@ tr:
     form_validation_error: " Lütfen aşağıda kote edilmiş hataları not alın."
   header:
     meta:
-      description: "Tekerlekli sandalye ile erişilir alanlar ve mekanlar bul - wheelmap.org"
       homepage: "Ana Sayfa"
       keywords: "Tekerlekli Sandalye ile erişilir alanlar ve mekanlar bul ara işaretle"
       search: Ara

@@ -79,7 +79,7 @@ nl:
       email: E-mail
       finish: Einde
       housenumber: "Nee:"
-      lat: Bewegingsvrijheid
+      lat: Breedtegraad
       lon: Lengtegraad
       name: "Naam:"
       osm_password: "OSM wachtwoord"
@@ -104,7 +104,6 @@ nl:
     form_validation_error: "Alsjeblieft let op de fouten in de onderstaande lijst"
   header:
     meta:
-      description: "Vind rolstoel toegankelijke plaatsen - wheelmap.org"
       homepage: "Startpagina / internetpagina"
       keywords: "rolstoel toegankelijk plaatsen vinden, zoek markering"
       search: Zoeken
@@ -220,7 +219,7 @@ nl:
         title: "Plaats:  %{node} | wheelmap.org"
       link:
         back: terug
-        large_map: Verruimen
+        large_map: Vergroten
         listing: "Alle vergelijkbare plaatsen '%{type}' in %{city}\n"
         upload: "Upload beeld"
       more_data_from: "Er is meer informatie over deze plaats, gecontroleerd door:"
@@ -302,12 +301,16 @@ nl:
     select:
       prompt: "Alsjeblieft kies"
   time:
-    am: ben
+    am: '''s ochtends'
     formats:
       default: "%a %d %b %Y %H:%M:%S %Z"
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
-    pm: s middags
+    pm: '''s middags'
+  toiletstatus:
+    'no': "WC niet rolstoeltoegankelijk"
+    unknown: "Status van de toilet is onbekend"
+    'yes': "Rolstoeltoegankelijk toilet"
   user_sessions:
     create:
       activation:
@@ -326,7 +329,7 @@ nl:
   users:
     after_signup_edit:
       welcome:
-        headline: "Je bent er bijna! Beëindigen je registratie voor je Wheelmap account hier:"
+        headline: "Je bent er bijna! Beëindig je registratie voor je Wheelmap account hier:"
         set_password_for_mobile: "Je registratie bij OpenStreetMap is geslaagd.\nKies nu je email adres en je wachtwoord voor je Wheelmap account en dan ben je erbij! Je hebt deze email adres en het wachtword nodig om bij de Wheelmap app for iPone of Android in te loggen."
         text: "Hoe kunnen wij contact met je opnemen? Je kan deze informatie later in je profiel veranderen."
     edit:
@@ -358,14 +361,14 @@ nl:
     next_label: "Volgende &#8594;"
     page_entries_info:
       multi_page: "Laat %{model} %{from} - %{to} of %{count} in het geheel zien"
-      multi_page_html: "Betoon %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in het geheel "
+      multi_page_html: "Toont %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in het geheel "
       single_page:
-        one: "Betoon 1 %{model}"
-        other: "Betoon alle %{count} %{model}"
-        zero: "Niet %{model} gevonden"
+        one: "Toont 1 %{model}"
+        other: "Toont alle %{count} %{model}"
+        zero: "Geen %{model} gevonden"
       single_page_html:
-        one: "Betoon  <b>1</b> %{model}"
-        other: "Betoon <b>all&nbsp;%{count}</b> %{model}"
-        zero: "Niet %{model} gevonden"
+        one: "Toont  <b>1</b> %{model}"
+        other: "Toont <b>all&nbsp;%{count}</b> %{model}"
+        zero: "Geen %{model} gevonden"
     page_gap: "&hellip;"
     previous_label: "&#8592; Volgende"

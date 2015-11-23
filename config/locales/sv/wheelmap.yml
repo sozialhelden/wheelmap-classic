@@ -104,7 +104,6 @@ sv:
     form_validation_error: "Dessa fel uppstod."
   header:
     meta:
-      description: "Hitta rullstolstillgängliga platser - wheelmap.org"
       homepage: "Hemsida"
       keywords: "rullstolstillgängliga platser hitta sök lägg till"
       search: Sök

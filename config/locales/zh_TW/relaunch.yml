@@ -96,9 +96,11 @@ zh_TW:
     profile:
       newsletter:
         title: 電子報
+        label: 是，我想收到 Wheelmap 的最新訊息。
       show:
         title: 總覽
         greeting:
+          anonymously: 嗨各位
           personalized: 哈囉 %{name}
         overview:
           text: 你有

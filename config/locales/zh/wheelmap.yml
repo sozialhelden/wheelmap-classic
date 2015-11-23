@@ -91,7 +91,6 @@ zh:
     form_validation_error: "请注意下面表单上的错误"
   header:
     meta:
-      description: "找到轮椅通道位置－wheelmap.org"
       homepage: "主页"
       keywords: "寻找轮椅通道地点的标志"
       search: 搜索

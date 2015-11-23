@@ -1,15 +1,4 @@
 lv:
-  activerecord:
-    attributes:
-      poi:
-        name: Vārds
-        type: Veids
-        website: Mājas lapa
-        phone: Tālrunis
-        address_street: Iela
-        address_housenumber: Nr
-        address_postcode: pasta indekss
-        address_city: Pilsēta
   users:
     profile:
       newsletter:

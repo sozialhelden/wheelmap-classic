@@ -67,9 +67,11 @@ pt_BR:
     show_unaccessible_places: "não acessível a cadeirantes"
   formtastic:
     hints:
+      email: "Trataremos seu e-mail com confidencialidade, não enviaremos SPAM. Prometemos!"
       lat: "Coloque o indicador no mapa na posição certa"
       osm_username: "Ainda não é membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Criar uma conta Openstreetmap</a>"
       password: "(deixar em branco se não quiser modificar) "
+      phone: "Por exemplo: +55 11 12345678"
       website: "Exemplo: http://www.example.com"
     labels:
       category: "Categoria:"
@@ -97,6 +99,7 @@ pt_BR:
       website: "Website:"
       wheelchair: "Acessível a cadeirantes?"
       wheelchair_description: "Comentário sobre a acessibilidade: "
+      wheelchair_toilet: "Sobre os banheiros:"
     titles:
       basic: "Dados básicos"
       optional: "Mais informações <span class=\"addition\">(todos os campos são opcionais)</span>"
@@ -104,7 +107,6 @@ pt_BR:
     form_validation_error: "Por favor veja os erros abaixo."
   header:
     meta:
-      description: "Degrau aqui, escadas ali ou sem banheiros adaptados - graças a Wheelmap você pode saber antes se um museu, um cinema ou um restaurante são acessíveis a cadeirantes."
       homepage: "Página principal"
       keywords: "lugares acessíveis a cadeirantes cadeira de rodas achar procurar marcar"
       search: Procurar
@@ -308,6 +310,14 @@ pt_BR:
       long: "%A, %d de %B de %Y, %H:%M"
       short: "%d/%m, %H:%M"
     pm: de tarde
+  toiletstatus:
+    'no': "Sem banheiro adaptado para cadeirantes"
+    unknown: "Não sei informar sobre os banheiros"
+    'yes': "Banheiro acessível a cadeirantes"
+    what_is:
+      'no': "A menor largura de porta é 90 cm, o menor vão livre tem 150 cm x 150 cm, a altura do vaso sanitário é compatível com cadeira de rodas, existem barras de apoio dobráveis, e o lavatório é acessível."
+      'yes': "A menor largura de porta é 90 cm, o menor vão livre tem 150 cm x 150 cm, a altura do vaso sanitário é compatível com cadeira de rodas, existem barras de apoio dobráveis, e o lavatório é acessível."
+      unknown: "Ajude adicionando informação sobre os banheiros!"
   user_sessions:
     create:
       activation:
