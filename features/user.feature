@@ -39,8 +39,6 @@ Feature: User feature
   Scenario: I set my email after signup with existing password
     When I am on the profile after signup edit page
     When I fill in "E-Mail" with "peter@wheelmap.org"
-    And I fill in "Passwort" with ""
-    And I fill in "Passwort wiederholen" with ""
     And I press "Fertigstellen"
     Then 1 email should be delivered to "peter@wheelmap.org"
 
@@ -53,24 +51,9 @@ Feature: User feature
 
     When I am on the profile after signup edit page
     When I fill in "E-Mail" with ""
-    And I fill in "Passwort" with "somehighlysecretpassword"
-    And I fill in "Passwort wiederholen" with "somehighlysecretpassword"
     And I press "Fertigstellen"
     And PENDING: make cached flash testable
     And I should see "Email muss ausgefüllt werden"
-
-
-  @omniauth_test
-  Scenario: I set my email after signup without any prior password
-    Given there are no users
-    And a user "horst2" exists with email: "horst2@wheelmap.org", confirmed_at: "10.10.1999", osm_id: "174"
-    And I am logged in with email: "horst@wheelmap.org", password: "s"
-
-    When I am on the profile after signup edit page
-    When I fill in "E-Mail" with "peter@wheelmap.org"
-    And I press "Fertigstellen"
-    And PENDING: make cached flash testable
-    And I should see "Password muss ausgefüllt werden"
 
 
   @omniauth_test
@@ -89,8 +72,6 @@ Feature: User feature
   And I am logged in
   When I am on the profile after signup edit page
   And I fill in "E-Mail" with "peter@wheelmap.org"
-  And I fill in "Passwort" with "new_password"
-  And I fill in "Passwort wiederholen" with "new_password"
   And I press "Fertigstellen"
   Then 2 email should be delivered to "peter@wheelmap.org"
 

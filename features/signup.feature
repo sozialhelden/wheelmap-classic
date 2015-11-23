@@ -25,8 +25,6 @@ Feature: Signup feature
     Then a user should exist
     When I go to the after sign_up page
     And I fill in "E-Mail" with "alana.engel.s@gmail.com"
-    And I fill in "Passwort" with "extremelysecurepassword"
-    And I fill in "Passwort wiederholen" with "extremelysecurepassword"
     And I press "Fertigstellen"
     Then I should be on the home page
     And a user should exist with email: "alana.engel.s@gmail.com"
