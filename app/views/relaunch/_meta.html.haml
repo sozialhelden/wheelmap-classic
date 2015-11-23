@@ -22,12 +22,6 @@
   %link{:rel => "apple-touch-startup-image", :media => "(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)", :href => "/assets/webapp/ipad_splashscreens_vertikal.png@2x"}
   %link{:rel => "apple-touch-startup-image", :media => "(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)", :href => "/assets/webapp/ipad_splashscreens_horizontal.png@2x"}
 
-  - image = image_path(Rails.application.assets.find_asset "wm_logo_#{I18n.locale}.png" ? "wm_logo_#{I18n.locale}.png" : "wm_logo_en.png")
-
-  =render_og_metadata(:title => "Wheelmap.org", :url => root_url, :description => t('header.title'), :image => image, :locale => I18n.locale)
-  =render_twitter_metadata(card: "summary", description: t('header.title'), title: "Wheelmap.org", site: "@wheelmap", domain: request.host, image: image, creator: "@wheelmap")
-
-
   - RELEASE_INFO.each do |k,v|
     %meta{:name => k, :content => v}
 

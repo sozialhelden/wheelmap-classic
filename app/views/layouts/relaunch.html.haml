@@ -15,7 +15,14 @@
     - else
       %meta{:name => 'robots', :content => 'noindex, nofollow'}
 
-  = content_for :meta
+  - if content_for? :meta
+    = content_for :meta
+  - else
+    - image = image_path(Rails.application.assets.find_asset "wm_logo_#{I18n.locale}.png" ? "wm_logo_#{I18n.locale}.png" : "wm_logo_en.png")
+
+    =render_og_metadata(:title => t('header.meta.title'), :url => root_url, :description => t('header.meta.description'), :image => image, :locale => I18n.locale)
+    =render_twitter_metadata(card: "summary", description: t('header.meta.description'), title: t('header.meta.title'), site: "@wheelmap", domain: request.host, image: image, creator: "@wheelmap")
+
 
   - if content_for? :head
     = content_for :head

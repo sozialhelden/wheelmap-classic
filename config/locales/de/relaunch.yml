@@ -31,6 +31,9 @@ de:
       projects: Projekte
     toolbar:
       categories: Kategorien
+    meta:
+      description: Die Online-Karte zum Suchen und Finden rollstuhlgerechter Orte. Ob Café, Kino, Supermarkt oder Buchladen - einfach auf Wheelmap nachschauen.
+      title: Wheelmap.org
   home:
     index:
       overlay:

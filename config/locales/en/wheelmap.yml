@@ -108,7 +108,6 @@ en:
     form_validation_error: "Please note the errors listed below"
   header:
     meta:
-      description: "Find wheelchair accessible places - wheelmap.org"
       homepage: "Home page"
       keywords: "wheelchair accessible places find search mark"
       search: Search

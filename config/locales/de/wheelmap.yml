@@ -107,7 +107,6 @@ de:
     form_validation_error: "Bitte beachte die unten angezeigten Fehlermeldungen."
   header:
     meta:
-      description: "Stufen hier, Treppen da oder keine Behindertentoiletten - dank Wheelmap wissen Sie jetzt im Vorhinein, ob ein Museum, eine Kino oder das nächste Restaurant rollstuhlgerecht sind."
       homepage: "Startseite"
       keywords: "rollstuhl gerechte Orte finden suchen markieren"
       search: Suche
