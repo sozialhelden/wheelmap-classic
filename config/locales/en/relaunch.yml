@@ -147,7 +147,7 @@ en:
         title: Widget
         height: Height
         width: Width
-        center: Center of map
+        center: Map area
         categories: Show category filter
         providers: Provider
         empty_provider: Choose a Provider
@@ -156,5 +156,5 @@ en:
           settings: Settings
           preview: Preview
           embed: Embed code
-          embed_explanation: The specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above can be freely changed so that you can manually adjust the map segment (widget) for various locations.
-          general: Create your own widget for use on your websites
+          embed_explanation: You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.
+          general: Create your own Wheelmap widget and embed it in your website or blog.
