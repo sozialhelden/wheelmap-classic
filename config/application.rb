@@ -69,7 +69,7 @@ module Wheelmap
 
     config.assets.precompile += %w( relaunch.css relaunch_ie.css screen.css node.css nodes.css search.css react-select.css)
     config.assets.precompile += %w( relaunch.js ie.js modernizr.js default.js search.js nodes.js ember.js ember-data.js app.js test.js)
-    config.assets.precompile += %w( i18n/*.js components.js )
+    config.assets.precompile += %w( i18n/*.js react-application.js )
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
