@@ -8,9 +8,9 @@ en:
       government: Government
       health: Health
       leisure: Leisure
-      misc: Misc
-      money_post: "Bank post"
-      public_transfer: "Public transfer"
+      misc: Miscellaneous
+      money_post: "Bank / Post office"
+      public_transfer: "Public transport"
       shopping: Shopping
       sport: Sport
       tourism: Tourism
@@ -50,10 +50,10 @@ en:
         government: "Government agency"
         police: Police
         public_building: "Public building"
-        townhall: Townhall
+        townhall: Town hall
       health:
         dentist: Dentist
-        doctors: Doctors
+        doctors: Doctor
         hearing_aids: "Hearing aid dealer"
         hospital: Hospital
         medical_supply: "Medical supplies"
@@ -65,7 +65,7 @@ en:
         brothel: Brothel
         casino: Casino
         cinema: Cinema
-        community_center: "Community Center"
+        community_center: "Community centre"
         gallery: Gallery
         nightclub: Nightclub
         playground: Playground
@@ -90,7 +90,7 @@ en:
         aerodrome: Airport
         bicycle_parking: "Bicycle parking"
         bicycle_rental: "Bicycle rental"
-        boatyard: Boatyard
+        boatyard: Boat yard
         bus_station: "Bus station"
         bus_stop: "Bus stop"
         cable_car: "Cable car"
@@ -119,7 +119,7 @@ en:
         butcher: Butcher
         car_repair: "Car repair"
         car_shop: "Car shop"
-        chemist: Chemist
+        chemist: Chemist / Drugstore
         clothes: Clothes
         computer: Computer
         confectionery: "Candy store"
@@ -133,7 +133,7 @@ en:
         farm_shop: "Farm shop"
         florist: Florist
         furniture: Furniture
-        garden_centre: "Garden center"
+        garden_centre: "Garden centre"
         gift: "Gift shop"
         hairdresser: Hairdresser
         hardware: Hardware

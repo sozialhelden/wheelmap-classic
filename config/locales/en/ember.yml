@@ -8,15 +8,7 @@ en:
       info_edit_position: "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>"
       mail:
         subject: "[Wheelmap] Problem with %{headline}"
-        body: "(Please only write in English or German.)
-
-
-        Hi Sozialhelden,
-
-        something is wrong with location: %{url}
-
-
-        The problem is:"
+        body: "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:"
   actions:
     send: Send
     save: Save

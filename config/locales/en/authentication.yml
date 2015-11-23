@@ -3,12 +3,12 @@ en:
   devise:
     confirmations:
       confirmed: "Your email address was successfully confirmed."
-      link: "Didn't receive confirmation instructions?"
+      link: "You didn't receive confirmation instructions?"
       send_instructions: "In a few minutes you will receive an email with a link to confirm your email address."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions how to confirm your account in a few minutes."
+      send_paranoid_instructions: "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
     destroy:
       confirm: "Are you sure?"
-      headline: "Delete Account"
+      headline: "Delete account"
       link: "Delete now"
     edit:
       form:
@@ -21,38 +21,38 @@ en:
       headline: "Edit account"
     failure:
       already_authenticated: "You are already signed in."
-      inactive: "Your account was not activated yet."
+      inactive: "Your account has not been activated yet."
       invalid: "Invalid email or password."
       invalid_token: "Invalid authentication token"
       locked: "Your account is locked"
-      timeout: "Your session expired, please sign in again to continue."
+      timeout: "Your session has expired, please sign in again to continue."
       unauthenticated: "You need to sign in or sign up before continuing"
       unconfirmed: "You need to confirm your account before continuing."
     mailer:
       confirmation_instructions:
-        landing_page: "Please click on the link that we just sent to your email address. If you do not receive an email from us please first check it is not hiding in your spam folder, if it is not there return to the sign up page and try again."
+        landing_page: "Please click on the link that we just sent to your email address. If you do not receive an email from us, please first check if it is not hiding in your spam folder. If it is not there return to the sign up page and try again."
         subject: "One more step to activate your account"
       reset_password_instructions:
         subject: "Reset password instructions"
       unlock_instructions:
-        subject: "Unlock Instructions"
+        subject: "Unlock instructions"
     mandatory: "* Required"
     omniauth_callbacks:
       failure: "Authorization with %{kind} failed. Error: \"%{reason}\". "
-      permission_missing: "You did not grant the required permissions."
+      permission_missing: "You did not grant the required permission."
       success: "Successfully logged in with %{kind}."
     password_recovery:
       form:
         labels:
           email: Email
         submit: "Reset password"
-      headline: "Forgot Password?"
+      headline: "Forgot password?"
     password_reset:
       email:
         comment: "If you did not request a password reset, just ignore this email.<br/>Your password won\\'t be changed unless you click on the link above and set a new password."
         headline: "Welcome %{email}"
         link: "Change my password"
-        text: "There was a request to change your password, if it was you click the following link - else ignore!"
+        text: "We received a request to change your password. If you sent the request, click the following link - otherwise ignore this!"
       form:
         labels:
           password: "New password"
@@ -61,8 +61,8 @@ en:
       headline: "Reset password"
     passwords:
       link: "Forgot password?"
-      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes"
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to reset your password in a few minutes"
+      send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes"
+      send_paranoid_instructions: "If your account exists, you will receive an email in a few minutes with instructions on how to reset your password"
       updated: "Your password was changed successfully, you are now logged in"
       updated_not_active: "Your password was changed successfully"
     registrations:
@@ -73,24 +73,24 @@ en:
         inactive: inactive
         locked: locked
         unconfirmed: unconfirmed
-      signed_up: "You have signed up successfully. A confirmation was sent to your e-mail."
+      signed_up: "You have signed up successfully. A you have been sent a confirmation email."
       updated: "You have updated your account successfully."
     sessions:
-      inactive: "Your account was not activated yet"
+      inactive: "Your account has not been activated yet"
       invalid: "Invalid email or password."
       invalid_token: "Invalid authentication token"
       link: "Sign in"
       locked: "Your account is locked"
       new:
         no_osm_account: "No OpenStreetMap account?"
-        osm_promo_text: "The wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must to be logged in with it."
+        osm_promo_text: "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it."
         promo_text_thank_you: "Thank you very much for your support!"
         sign_in_with: "Log in with %{kind}"
         sign_up_with_osm: "Register now."
-        wheelmap_promo_text: "With your knowledge about wheelchair accessible places you help people with physical impairments to better organize their everyday live. Furthermore the OpenStreetMap gets considerably richer in detail."
+        wheelmap_promo_text: "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
       signed_in: "Logged in successfully"
       signed_out: "You have signed out successfully"
-      timeout: "Your session expired, please sign in again to continue."
+      timeout: "Your session has expired, please sign in again to continue."
       unauthenticated: "You need to sign in or sign up before continuing"
       unconfirmed: "You need to confirm your account before continuing"
     sign_in:
@@ -113,11 +113,11 @@ en:
           email: Email
           password: Password
           password_confirmation: "Repeat password"
-          wants_newsletter: "Yes, keep me up to date about wheelmap - but please not more than once a month."
+          wants_newsletter: "Yes, keep me up to date about Wheelmap - but please not more than once a month."
         submit: "Sign up"
       headline: "Sign up"
     unlocks:
-      link: "Didn't receive unlock instructions?"
-      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes"
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock your account in a few minutes"
+      link: "You didn't receive unlock instructions?"
+      send_instructions: "You will receive an email in a few minutes with instructions on how to unlock your account"
+      send_paranoid_instructions: "If your account exists, you will receive an email in a few minutes with instructions on how to unlock your account"
       unlocked: "Your account was successfully unlocked. You are now signed in."

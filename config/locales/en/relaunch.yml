@@ -10,17 +10,14 @@ en:
         phone: Phone
         note: Note
         address_street: Street
-        address_housenumber: Housenumber
+        address_housenumber: House number
         address_postcode: Postcode
         address_city: City
   faq:
     answers:
-      0: You can always change the marking of a place yourself. Just choose the right
-        marking and "Save" - done!
-      1: As a logged in user you can add / correct all the details of a place. Click
-        on "Edit" and correct or add information in the mask.
-      2: You can add further information (e.g. "This place has a mobile ramp") in
-        the comment section. Click on "Edit" and "Add comment".
+      0: You can always change the marking of a place yourself. Just choose the right marking and "Save" - done!
+      1: As a logged in user you can add / correct all the details of a place. Click on "Edit" and correct or add information in the mask.
+      2: You can add further information (e.g. "This place has a mobile ramp") in the comment section. Click on "Edit" and "Add comment".
     headline: Is there a problem with this place?
     questions:
       0: The marking is wrong.
@@ -44,11 +41,9 @@ en:
         button: Okay, let’s go!
         categories: Filter places by categories
         filter: Filter places by wheelchair accessibility
-        headline: 'Mark and find wheelchair accessible places with Wheelmap.org -
-          worldwide and for free. It’s easy:'
+        headline: 'Mark and find wheelchair accessible places with Wheelmap.org - worldwide and for free. It’s easy:'
         lookup: Search for a specific place
-        secondary_headline: 'Our traffic light system to mark the wheelchair accessibility
-          of public places:'
+        secondary_headline: 'Our traffic light system to mark the wheelchair accessibility of public places:'
       embed_link: Show on Wheelmap.org
   nodes:
     new:
@@ -80,13 +75,12 @@ en:
     show:
       header:
         meta:
-          description: Find out if this place is wheelchair accessible on Wheelmap.org.
-            Or add further information and photos to the place.
+          description: Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.
           title: 'This place is on Wheelmap.org: %{name}'
       share:
-        email: E-mail
+        email: Email
         facebook: Facebook
-        text: 'I''ve found this place on Wheelmap.org: %{name}'
+        text: 'I found this place on Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -94,12 +88,8 @@ en:
         headline: Sorry, we couldn’t find a place called "%{query}".
         hint:
           example: <strong>Example:</strong> London, United Kingdom
-          info: Our search service only works with name and/or address information.
-            Hence, please either search for the name of the place or an address, e.g.
-            street name and/or city. Searching for a type of place, e.g. restaurant
-            or cinema, does not work!
-          work_in_progress: We work hard to make searching for places easier and more
-            intuitive in the future.
+          info: Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!
+          work_in_progress: We work hard to make searching for places easier and more intuitive in the future.
         try_this:
           address: Please provide more <strong>address details</strong>.
           intro: 'Try this:'
@@ -109,15 +99,14 @@ en:
           one: '%{count} result:'
           other: '%{count} results:'
     timeout:
-      headline: Oh, our fault
+      headline: Sorry, something went wrong
       info: Our search service was temporarily not available.
       repeat_search: Retry search
-
   users:
     profile:
       newsletter:
         title: Newsletter
-        text: Stay up to date with the newsletter from Wheelmap. No worries, we won't spam you. You'll hear from us once a month at most.
+        text: Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.
         label: Yes, keep me updated about Wheelmap.
       show:
         title: Overview
@@ -135,13 +124,13 @@ en:
             other: 'added %{count} places'
           pois_edited:
             one: 'edited %{count} place'
-            other: 'edited %{count} placess'
+            other: 'edited %{count} places'
           photos_uploaded:
             one: 'uploaded %{count} photo'
             other: 'uploaded %{count} photos'
       photos:
         title: Photos
-        empty: You haven't upload any photos yet.
+        empty: You haven't uploaded any photos yet.
       edit:
         title: Profile
         legends:

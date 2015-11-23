@@ -7,9 +7,9 @@ en:
       notice: "You must be logged in to see this page."
   breadcrumbs:
     node:
-      create: "Add new place"
+      create: "Add a new place"
       edit: "Edit place"
-    root: wheelmap
+    root: Wheelmap
   common:
     close: close
     skip: skip
@@ -17,21 +17,21 @@ en:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "has to be accepted"
+      accepted: "must be accepted"
       already_confirmed: "has already been confirmed"
-      blank: "has to be filled"
+      blank: "must be filled in"
       confirmation: "doesn't match confirmation"
-      empty: "has to be filled"
+      empty: "must be filled in"
       equal_to: "must be exactly %{count}"
-      even: "must be even"
+      even: "must be an even number"
       exclusion: "is reserved"
       expired: "expired, please request a new one"
       greater_than: "must be greater than %{count}"
-      greater_than_or_equal_to: "must be greater or equal than %{count}"
+      greater_than_or_equal_to: "must be greater than or equal to %{count}"
       inclusion: "not a valid value"
       invalid: "not valid"
       less_than: "must be less than %{count}"
-      less_than_or_equal_to: "must be lower or equal than %{count}"
+      less_than_or_equal_to: "must be less than or equal to %{count}"
       not_a_number: "is not a number"
       not_an_integer: "must be an integer"
       not_found: "was not found"
@@ -39,7 +39,7 @@ en:
       not_saved:
         one: "An error prohibited to save a %{resource}:"
         other: "%{count} errors prohibited to save a %{resource}:"
-      odd: "must be odd"
+      odd: "must be an odd number"
       taken: "has already been taken"
       too_long: "is too long (not more than %{count} characters)"
       too_short: "is too short (not less than %{count} characters)"
@@ -63,12 +63,12 @@ en:
         notice: "Image was successfully deleted"
   form:
     show_fully_accessible_places: "Wheelchair accessible"
-    show_limited_accessible_places: "partly wheelchair accessible"
-    show_places_without_status: "unknown status"
-    show_unaccessible_places: "not wheelchair accessible"
+    show_limited_accessible_places: "Partially wheelchair accessible"
+    show_places_without_status: "Unknown status"
+    show_unaccessible_places: "Not wheelchair accessible"
   formtastic:
     hints:
-      email: "We treat your address confidentially, no spam. Promise!"
+      email: "We treat your address confidentially. We promise not to send you spam!"
       lat: "Move the marker on the map to the correct position"
       osm_username: "Not a member yet? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>"
       password: "(leave empty if you don't want to change it)"
@@ -78,15 +78,15 @@ en:
       category: "Category:"
       centralkey: "Central key:"
       city: "City:"
-      create: "Create place"
-      email: E-Mail
+      create: "Create a place"
+      email: Email
       finish: Finish
       housenumber: "No:"
       lat: Latitude
       lon: Longitude
       name: "Name:"
-      osm_password: "OSM password"
-      osm_username: "OSM account name"
+      osm_password: "OpenStreetMap password"
+      osm_username: "OpenStreetMap account name"
       password: Password
       password_confirmation: "Repeat password"
       phone: "Telephone:"
@@ -100,7 +100,7 @@ en:
       website: "Website:"
       wheelchair: "Wheelchair accessibility?"
       wheelchair_description: "Accessibility comment:"
-      wheelchair_toilet: "Wheelchair bathroom:"
+      wheelchair_toilet: "Wheelchair accessible toilet:"
     titles:
       basic: "Basic data"
       optional: "More information <span class=\"addition\">(all fields are optional)</span>"
@@ -125,15 +125,14 @@ en:
       profile: Profile
       suggestions: Suggestions
       what_is_barrier_free: "What does \"wheelchair accessible\" mean?"
-      what_is_wheelmap: "What is wheelmap?"
+      what_is_wheelmap: "What is Wheelmap?"
     searchbar:
       add_place: "Add another place"
       find: Find
-      label: ~
       placeholder: "Search for a place"
       title_add_place: "Add a new place at this position now!"
     tagline: "Wheelmap logo"
-    title: "find wheelchair accessible places"
+    title: "Find wheelchair accessible places"
   helpers:
     select:
       prompt: "Please choose"
@@ -154,19 +153,17 @@ en:
           upgrade: "Update Browser"
         warning:
           headline: "We apologise!"
-          message: "You appear to use Internet Explorer. Wheelmap requires a standard-compliant browser to work properly. Please consider using Firefox, Chrome, Safari or Opera."
+          message: "You appear to be using Internet Explorer. Wheelmap requires a standards compliant browser to work properly. Please consider using Firefox, Chrome, Safari or Opera."
       link:
         node:
-          create: "Add new place"
+          create: "Add a new place"
       popup:
         form:
-          limited: "partially wheelchair accessible"
-          ? "no"
-          : "not wheelchair accessible"
+          limited: "Partially wheelchair accessible"
+          'no': "Not wheelchair accessible"
           save: Update
-          unknown: "unknown status"
-          ? "yes"
-          : "wheelchair accessible"
+          unknown: "Unknown status"
+          'yes': "Wheelchair accessible"
         help: "Wheelchair accessible? (Help)"
         more: "more ..."
   how?: How?
@@ -174,14 +171,12 @@ en:
     index:
       wheelchair:
         limit:
-          headline: "All limited wheelchair accessible %{type} in %{city} (%{count})"
-        ? "no"
-        :
-          headline: "All non-wheelchair accessible %{type} in %{city} (%{count})"
+          headline: "All partially wheelchair accessible %{type} in %{city} (%{count})"
+        'no':
+          headline: "All not wheelchair accessible %{type} in %{city} (%{count})"
         unknown:
           headline: "All %{type} in %{city} with unknown wheelchair status (%{count})"
-        ? "yes"
-        :
+        'yes':
           headline: "All wheelchair accessible %{type} in %{city} (%{count})"
   layouts:
     application:
@@ -205,7 +200,7 @@ en:
       link:
         large_map: "&laquo; Cancel"
     errors:
-      default: "Oops somethin went wrong. We have been informed about this issue"
+      default: "Oops something went wrong. We have been informed about this issue"
       not_authorized: "Sorry, authentication failed"
       not_available: "Sorry, this page is temporarily not available."
       not_existent: "Sorry, this place is not available anymore."
@@ -231,7 +226,7 @@ en:
         large_map: Enlarge
         listing: "All places of typ '%{type}' in %{city}"
         upload: "Upload image"
-      more_data_from: "There is more data for this place, checked by:"
+      more_data_from: "There is more information about this place, validated by:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -244,17 +239,11 @@ en:
       format:
         delimiter: ","
         format: "%u%n"
-        precision: 2
         separator: "."
-        significant: 0
-        strip_insignificant_zeros: 0
         unit: $
     format:
       delimiter: ","
-      precision: 3
       separator: "."
-      significant: 0
-      strip_insignificant_zeros: 0
     human:
       decimal_units:
         format: "%n %u"
@@ -264,12 +253,6 @@ en:
           quadrillion: Quadrillion
           thousand: Thousand
           trillion: Trillion
-          unit: ~
-      format:
-        delimiter: ~
-        precision: 3
-        significant: true
-        strip_insignificant_zeros: true
       storage_units:
         format: "%n %u"
         units:
@@ -280,18 +263,12 @@ en:
           kb: KB
           mb: MB
           tb: TB
-    percentage:
-      format:
-        delimiter: ~
-    precision:
-      format:
-        delimiter: ~
   oauth:
     application:
       connect:
-        headline: "You need to connect your account with your 'open street map' account before you can create or modify places on wheelmap.org."
+        headline: "You need to connect your account with your OpenStreetMap account before you can create or modify places on Wheelmap.org."
     callback:
-      notice: "Your wheelmap account is now connected to the OpenStreetMap account %{user}."
+      notice: "Your Wheelmap account is now connected to the OpenStreetMap account %{user}."
   or: or
   place:
     one: "%{count} place"
@@ -317,13 +294,12 @@ en:
     step1: "Click on a place you know"
     step2: "Mark it and click save"
     step3: "That's it! No registration necessary"
-    what_is_wheelmap: "What is wheelmap?"
+    what_is_wheelmap: "What is Wheelmap?"
   statistics: Statistics
   support:
     array:
       last_word_connector: " and "
       sentence_connector: and
-      skip_last_comma: true
       two_words_connector: " and "
       words_connector: ","
     select:
@@ -340,9 +316,9 @@ en:
     unknown: "Toilet status unknown"
     'yes': "Wheelchair accessible toilet"
     what_is:
-      'no': "Doorway's inner width min. 90 cm, clear space min. 150 x 150 cm, wheelchair-height toilet seat, folding grab rails and accessible hand basin."
-      'yes': "Doorway's inner width min. 90 cm, clear space min. 150 x 150 cm, wheelchair-height toilet seat, folding grab rails and accessible hand basin."
-      unknown: "Help by marking the toilet status!"
+      'no': "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
+      'yes': "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
+      unknown: "Help out by marking the toilet status!"
   user_sessions:
     create:
       activation:
@@ -353,7 +329,7 @@ en:
     destroy:
       notice: "Bye, come back soon!"
     new:
-      email: "E-mail address"
+      email: "Email address"
       login: "Log in"
       login_with_twitter: "Log in with Twitter"
       password: Password
@@ -362,19 +338,16 @@ en:
     after_signup_edit:
       welcome:
         headline: "You're almost there! Finish the sign up for your Wheelmap account here:"
-        set_password_for_mobile: "You've completed your registration with OpenStreetMap.\n\
-            Now choose an email address and password for your Wheelmap account and then you're all set! You need this email address and password to log in the Wheelmap app for iPhone or Android. "
+        set_password_for_mobile: "You've completed your registration with OpenStreetMap.\nNow choose an email address and password for your Wheelmap account and then you're all set! You need this email address and password to log in to the Wheelmap app for iPhone, Android or Windows Phone. "
         text: "How can we get in touch with you? You can change this information later in your profile."
     edit:
       headline:
         your_images: "Your uploaded images"
   wheelchairstatus:
-    limited: "partially wheelchair accessible"
-    ? "no"
-    : "not wheelchair accessible"
-    unknown: "unknown status"
-    ? "yes"
-    : "wheelchair accessible"
+    limited: "Partially wheelchair accessible"
+    'no': "Not wheelchair accessible"
+    unknown: "Unknown status"
+    'yes': "Wheelchair accessible"
   wheelmap:
     footer:
       a_project_of: "A project by"
@@ -389,9 +362,9 @@ en:
       title: "Wheelmap - find wheelchair accessible places"
     what_is:
       fully_accessible: "Entrance without steps, all rooms without steps, accessible toilet if customary in a place"
-      limited_accessible: "Entry has a step (max. height 7cm), most rooms are without steps, toilet is not accessible"
+      limited_accessible: "Entry has a step (max. height 7cm, 3 in), most rooms are without steps, toilet is not accessible"
       not_accessible: "Entry has steep or several steps, rooms are not accessible"
-      unknown_accessible: "Help by marking places!"
+      unknown_accessible: "Help out by marking places!"
   will_paginate:
     next_label: "Next &#8594;"
     page_entries_info:
