@@ -24,6 +24,7 @@ module ApplicationHelper
       end
     }
     html << tag(:meta, :property => "fb:app_id", :content => '289221174426029')
+    html << tag(:meta, :property => "fb:admins", :content => '534621246')
     html.html_safe
   end
 
@@ -34,6 +35,16 @@ module ApplicationHelper
     }.each do |key, value|
       html << tag(:meta, :property => "place:location:#{key}", :content => value) + "\n"
     end
+    html.html_safe
+  end
+
+  def render_twitter_metadata(options = {})
+    html = ''
+
+    options.each do |key, value|
+      html << tag(:meta, name: "twitter:#{key}", content: value) + "\n"
+    end
+
     html.html_safe
   end
 
