@@ -19,9 +19,8 @@
           = render partial: 'node_similar', object: @node
 
 - content_for :meta do
-  - image = image_path(Rails.application.assets.find_asset "wm_logo_#{I18n.locale}.png" ? "wm_logo_#{I18n.locale}.png" : "wm_logo_en.png")
-  = render_og_metadata(title: @node.name, description: t('header.meta.description'), type: 'place', url: node_url(@node), image: image)
-  = render_twitter_metadata(card: "summary", description: t('header.meta.description'), title: @node.name, site: "@wheelmap", domain: request.host, image: image, creator: "@wheelmap")
+  = render_og_metadata(title: @node.name, description: t('header.meta.description'), type: 'place', url: node_url(@node), image: image_path("wheely_big.jpg"))
+  = render_twitter_metadata(card: "summary", description: t('header.meta.description'), title: @node.name, site: "@wheelmap", domain: request.host, image: image_path("wheely_big.jpg"), creator: "@wheelmap")
   = render_og_locationdata(latitude: @node.lat, longitude: @node.lon)
 
 - content_for :head do
