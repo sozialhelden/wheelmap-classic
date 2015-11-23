@@ -2,12 +2,9 @@ sk:
   devise:
     confirmations:
       confirmed: "Váš účet bol úspešne overený."
-      link: "Neprišli vám inštrukcie pre potvrdenie? "
       send_instructions: "O niekoľko minút obdržíte email s inštrukciami ako potvrdiť vašu emailovú adresu."
-      send_paranoid_instructions: "Ak sa váš email nachádza v našej databáze, obdržíte email s inštrukciami ako potvrdiť váš účet."
     destroy:
       confirm: "Ste si istý?"
-      headline: "Zmazať účet"
       link: "Zmazať"
     edit:
       form:
@@ -20,25 +17,19 @@ sk:
       headline: "Zmeniť účet"
     failure:
       already_authenticated: "Už ste prihláseny."
-      inactive: "Váš účet ešte nebol aktivovaný."
       invalid: "Nesprávny email alebo heslo."
       invalid_token: "Nesprávny overovací symbol."
       locked: "Váš účet je  uzamknutý."
-      timeout: "Platnosť session vypršala, prosím prihláste sa znovu, potom môžete pokračovať."
       unauthenticated: "Musíte sa zaregistrovať alebo odhlásiť, potom možete pokračovať."
       unconfirmed: "Musíte potvrdiť svoj účet, potom možete pokračovať."
     mailer:
       confirmation_instructions:
-        landing_page: "Prosím kliknite na odkaz, ktorý sme vám poslali na vašu emailovú adresu. Ak od nás nedostanete email tak najprv skontrolujte či neskončil v spame. Ak tam nie je tak sa vráťte na stránku pre vytvorenie účtu a skúste znova."
         subject: "Potvrdzovacie inštrukcie."
       reset_password_instructions:
         subject: "Inštrukcie na obnovu hesla."
-      unlock_instructions:
-        subject: "Inštrukcie na odomknutie účtu."
     mandatory: "* Povinné"
     omniauth_callbacks:
       failure: "Nie je možné vás autorizovať z %{kind}, pretože %{reason}."
-      permission_missing: "Nepridelili ste potrebné oprávnenia."
       success: "Úspešná autorizácia z účtu %{kind}."
     password_recovery:
       form:
@@ -51,7 +42,6 @@ sk:
         comment: "Ak ste nežiadali o obnovenie hesla tak tento email ignorujte.<br/>Vaše heslo bude zmenené len ak kliknete na odkaz hore a nastavíte si heslo nové."
         headline: "Vitajte %{email}"
         link: "Zmeniť heslo"
-        text: "Dostali sme požiadavok na zmenu vašeho hesla. Ak ste to boli vy tak kliknite na nasledujúci odkaz - inak toto ignorujte!"
       form:
         labels:
           password: "Nové heslo"
@@ -60,8 +50,6 @@ sk:
       headline: "Obnoviť heslo"
     passwords:
       link: "Zabudli ste heslo?"
-      send_instructions: "O niekoľko minút obdržíte email s inštrukciami ako nastaviť nové heslo."
-      send_paranoid_instructions: "Ak váš účet existuje, behom pár minút obdržíte email s inštrukciami ako si obnoviť heslo"
       updated: "Vaše heslo bolo úspešne zmenené. Teraz ste prihláseny."
       updated_not_active: "Vaše heslo bolo úspešne zmenené."
     registrations:
@@ -72,24 +60,19 @@ sk:
         inactive: neaktívne
         locked: zamknuté
         unconfirmed: nepotvrdené
-      signed_up: "Vitajte! Registrácia bola úspešná."
       updated: "Úspešne ste si aktualizovali účet."
     sessions:
-      inactive: "Váš účet ešte nebol aktivovaný"
       invalid: "Nesprávny email alebo heslo."
       invalid_token: "Neplatný autentifikačný identifikátor"
       link: "Prihlásiť sa"
       locked: "Váš účet je uzamknutý"
       new:
         no_osm_account: "Nemáte účet u OpenStreetMap?"
-        osm_promo_text: "Wheelmap využíva informácie z OpenStreetMap (OSM). OpenStreetMap je voľná celosvetová mapa, vytváraná ľuďmi ako vy. Je to ako Wikipedia pre mapy. Aby ste mohli upravovať miesta alebo vytvárať nové, potrebujete u OpenStreetMap mať účet a musíte byť prihlásený.\n"
         promo_text_thank_you: "Ďakujeme za vašu podporu!"
         sign_in_with: "Prihláste sa pomocou %{kind}"
         sign_up_with_osm: "Registrujte sa."
-        wheelmap_promo_text: "Svojimi znalosťami o miestach prístupných pre vozíčkarov môžete pomôcť ľuďom s fyzickým postihnutím aby si lepšie zorganizovali každodenný život. Tiež sa tak pridávajú ďalšie detaily do OpenStreetMaps."
       signed_in: "Prihlásenie úspešné."
       signed_out: "Odhlásenie úspešné."
-      timeout: "Vaše prihlásenie vypršalo, prosím prihláste sa znova."
       unauthenticated: "Než budete môcť pokračovať musíte sa prihlásiť alebo si vytvoriť účet"
       unconfirmed: "Než budete môcť pokračovať musíte potvrdiť svoj účet."
     sign_in:
@@ -112,11 +95,7 @@ sk:
           email: Email
           password: Heslo
           password_confirmation: "Znovu zadajte heslo"
-          wants_newsletter: "Áno informujte ma o novinkách na wheelmap - nie častejšie než raz za mesiac"
         submit: "Vytvoriť účet"
       headline: "Vytvoriť účet"
     unlocks:
-      link: "Neprišiel vám návod na odblokovanie?"
-      send_instructions: "O niekoľko minút obdržíte email s inštrukciami ako odomknúť vaš účet."
-      send_paranoid_instructions: "Ak váš účet existuje, o niekoľko minút obdržíte email s inštrukciami ako ho odomknúť."
       unlocked: "Váš účet bol úspešne odomknutý. Teraz ste prihláseny"

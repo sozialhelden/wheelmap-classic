@@ -8,8 +8,6 @@ ja:
       health: 健康
       leisure: 娯楽
       misc: その他
-      money_post: "銀行 & 郵便局"
-      public_transfer: "公共輸送"
       shopping: 買い物
       sport: スポーツ
       tourism: 観光
@@ -49,10 +47,8 @@ ja:
         government: "政府機関"
         police: 警察
         public_building: "公共施設"
-        townhall: 市役所・役場
       health:
         dentist: 歯科医院
-        doctors: 診療所
         hearing_aids: "補聴器取扱店"
         hospital: 病院
         medical_supply: "医療用品"
@@ -64,7 +60,6 @@ ja:
         brothel: 風俗店
         casino: カジノ
         cinema: 映画館
-        community_center: "市民センター"
         gallery: ギャラリー
         nightclub: ナイトクラブ/ディスコ
         playground: 子どもの遊び場
@@ -89,7 +84,6 @@ ja:
         aerodrome: 空港
         bicycle_parking: "駐輪場"
         bicycle_rental: "レンタサイクル"
-        boatyard: ボート場
         bus_station: "バスターミナル"
         bus_stop: "バス停"
         cable_car: "ケーブルカー"
@@ -118,7 +112,6 @@ ja:
         butcher: 肉屋
         car_repair: "自動車修理店"
         car_shop: "自動車販売店"
-        chemist: 薬品店・化粧品店
         clothes: 衣料品店
         computer: パソコン店
         confectionery: "キャンディショップ"
@@ -132,7 +125,6 @@ ja:
         farm_shop: "野菜直売所"
         florist: 花屋
         furniture: 家具屋
-        garden_centre: "ガーデニング店"
         gift: "ギフトショップ"
         hairdresser: 美容院
         hardware: 金物屋

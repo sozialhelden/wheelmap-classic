@@ -75,9 +75,8 @@ pl:
           description: Sprawdź na mapie Wheelmap.org czy to miejsce jest przystosowane dla poruszających się na wózku inwalidzkim albo dodaj inne informacje lub obrazy.
           title: 'To miejsce znajduje się na mapie Wheelmap.org: %{name}'
       share:
-        email: e-mail
+        email: Email
         facebook: Facebook
-        text: 'Znaleziono to miejsce na mapie Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -97,7 +96,6 @@ pl:
           few: '%{count} wyników:'
           other: '%{count} wyników:'
     timeout:
-      headline: Ups, to nasza wina
       info: Usługa wyszukiwania była tymczasowo niedostępna
       repeat_search: ponów wyszukiwanie
   users:
@@ -108,3 +106,6 @@ pl:
         title: Zdjęcia
       edit:
         title: Profil
+      widget:
+        legends:
+          settings: Ustawienia

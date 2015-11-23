@@ -6,9 +6,8 @@ nb:
       notice: "Du må være innlogget for å se denne siden."
   breadcrumbs:
     node:
-      create: "Legg til nytt sted"
       edit: "Rediger stedet"
-    root: wheelmap
+    root: Wheelmap
   common:
     close: lukk
     skip: Hopp over
@@ -16,21 +15,15 @@ nb:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "må være akseptert"
       already_confirmed: "er allerede bekreftet"
-      blank: "kan ikke være blank"
       confirmation: "passer ikke bekreftelsen"
-      empty: "må være utfylt"
       equal_to: "må være lik %{count}"
-      even: "må være partall"
       exclusion: "er reservert"
       expired: "Utgått, vennligst be om ny"
       greater_than: "må være større enn %{count}"
-      greater_than_or_equal_to: "må være større enn eller lik %{count}"
       inclusion: "ikke akseptert verdi"
       invalid: "er ugyldig"
       less_than: "må være mindre enn %{count}"
-      less_than_or_equal_to: "må være mindre enn eller lik %{count}"
       not_a_number: "er ikke et tall"
       not_an_integer: "Må være heltall"
       not_found: "ikke funnet"
@@ -38,7 +31,6 @@ nb:
       not_saved:
         one: "En feil gjorde at %{resource} ikke kunne lagres:"
         other: "%{count} feil gjorde at %{resource} ikke kunne lagres:"
-      odd: "må være oddetall"
       taken: "er allerede opptatt"
       too_long: "er for lang (maksimum %{count} tegn)"
       too_short: "er for kort (minimum %{count} tegn)"
@@ -59,9 +51,7 @@ nb:
         notice: "%{resource_name} var velykket oppdatert"
   form:
     show_fully_accessible_places: "Rullestoltilgjengelig"
-    show_limited_accessible_places: "Delvis rullestoltilgjengelig"
-    show_places_without_status: "Ukjent status"
-    show_unaccessible_places: "Ikke rullestoltilgjenglig"
+    show_unaccessible_places: "Ingen rulletstoltilgjengeliget"
   formtastic:
     hints:
       lat: "Flytt markøren på kartet til riktig sted"
@@ -72,15 +62,12 @@ nb:
       category: "Kategori:"
       centralkey: "Sentral tast:"
       city: "By:"
-      create: "Legg til sted"
-      email: Epost
+      email: Email
       finish: Mål
       housenumber: "Nummer:"
       lat: Breddegrad
       lon: Lengdegrad
       name: "Navn:"
-      osm_password: "OSM passord"
-      osm_username: "OSM kontonavn"
       password: Passord
       password_confirmation: "Gjenta passord"
       phone: "Telefon:"
@@ -117,14 +104,12 @@ nb:
       press: Presse
       suggestions: Forslag
       what_is_barrier_free: "Hva betyr \"rullestoltilgjengelig\"?"
-      what_is_wheelmap: "Hva er wheelmap?"
     searchbar:
       add_place: "Legg til nytt sted"
       find: finn
       placeholder: "Eksempel Sunset Boulevard L.A. eller Brandenburg Gate Berlin"
       title_add_place: "Legg til nytt sted her nå!"
     tagline: "Wheelmap logo"
-    title: "Finn rullestoltilgjengelige steder"
   helpers:
     select:
       prompt: "Vennligst velg"
@@ -143,27 +128,17 @@ nb:
           upgrade: "Oppdater nettleser"
         warning:
           headline: "Vi beklager!"
-          message: "Det ser ut som du benytter Internet Explorer. Wheelmap krever at du bruker en nettleser som følger bestemte standarder for å fungere ordentlig. Vurder å benytt deg av Firefox, Chrome, Safari eller Opera."
-      link:
-        node:
-          create: "Legg til nytt sted"
       popup:
         form:
-          limited: "Delevis rullestoltilgjengelig"
-          'no': "Ikke rullestoltilgjengelig"
+          'no': "Ingen rulletstoltilgjengeliget"
           save: Oppdater
-          unknown: "Ukjent status"
-          'yes': "rullestoltilgjenglig"
+          'yes': "Rullestoltilgjengelig"
         help: "Rullestoltilgjengelig? (hjelp)"
         more: "Mer..."
   how?: Hvordan?
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "Alle begrensede rullestoltilgjengelige %{type} i %{city} (%{count})\n"
-        'no':
-          headline: "Alle utilgjengelige %{type} i %{city} (%{count})"
         unknown:
           headline: "Alle %{type} i %{city} med ukjent rullestol status (%{count})"
         'yes':
@@ -190,7 +165,6 @@ nb:
       link:
         large_map: "&laquo; Avbryt"
     errors:
-      default: "Oops, noe gikk galt. Vi har fått melding om saken"
       not_authorized: "Beklager, pålogging feilet"
       not_available: "Beklager, denne siden er midlertidig ikke tilgjenglig."
       not_existent: "Beklager, men dette stedet er ikke lenger tilgjengelig."
@@ -215,7 +189,6 @@ nb:
         back: tilbake
         large_map: Forstørr
         listing: "Alle steder av typen '%{type}' i %{city}"
-      more_data_from: "Det finnes mer data om dette stedet, kontrollert av:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -252,12 +225,6 @@ nb:
           kb: kB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "Du må koble sammen kontoen din med 'open street map'-kontoen før du kan lage eller endre steder på wheelmap.org"
-    callback:
-      notice: "Din wheelmap-konto er nå koblet sammen med OpenStreetMap-kontoen %{user}"
   or: eller
   place:
     one: "%{count} plasser"
@@ -283,7 +250,6 @@ nb:
     step1: "Klikk på et sted du kjenner"
     step2: "Merk den og klikk lagre"
     step3: "Det var alt. Ingen registrering nødvendig"
-    what_is_wheelmap: "Hva er wheelmap?"
   statistics: Statistikk
   support:
     array:
@@ -310,7 +276,6 @@ nb:
     destroy:
       notice: "Hadet, kom snart tilbake"
     new:
-      email: "Epostadresse"
       login: "Logg inn"
       login_with_twitter: "Logg på med Twitter"
       password: Passord
@@ -319,13 +284,10 @@ nb:
     after_signup_edit:
       welcome:
         headline: "Velkommen til wheelmap"
-        set_password_for_mobile: "Har du en smarttelefon? Venligst lag deg et passord for å kunne ta med deg Wheelmap på din iPhone eller Android-telefon."
         text: "Hvordan kan vi få kontakt med deg? Du kan endre denne informasjonen i profilen din senere."
   wheelchairstatus:
-    limited: "Delevis rullestoltilgjenglig"
-    'no': "ikke rullestoltilgjengelig"
-    unknown: "Ukjent status"
-    'yes': "rullestoltilgjengelig"
+    'no': "Ingen rulletstoltilgjengeliget"
+    'yes': "Rullestoltilgjengelig"
   wheelmap:
     footer:
       a_project_of: "Et prosjekt laget av"
@@ -340,9 +302,7 @@ nb:
       title: "Wheelmap - finn rullestoltilgjengelige steder"
     what_is:
       fully_accessible: "Inngang uten trinn, alle rom uten trinn, tilgjenglig toalett hvis forventet på et sted"
-      limited_accessible: "Inngangen har et trinn (maks. høyde 7cm), de fleste rom er uten trinn, toalettene er ikke tilgjengelige."
       not_accessible: "Inngang har kant eller flere trappetrinn, rommene er ikke tilgjengelige"
-      unknown_accessible: "Hjelp ved å merke stedet!"
   will_paginate:
     next_label: "Neste &#8594;"
     page_entries_info:

@@ -7,3 +7,13 @@ ro:
         address: Adresa
         website: Website
         phone: Telefon
+        address_housenumber: Numărul casei
+  nodes:
+    show:
+      share:
+        email: Email
+  users:
+    profile:
+      widget:
+        legends:
+          settings: Setări

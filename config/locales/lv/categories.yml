@@ -7,9 +7,6 @@ lv:
       government: Valdība
       health: Veselība
       leisure: Atpūta
-      misc: Dažādi
-      money_post: "Bankas filiāle"
-      public_transfer: "Sabiedriskais transports"
       shopping: Iepirkšanās
       sport: Sports
       tourism: Tūrisms
@@ -45,9 +42,7 @@ lv:
         embassy: Vēstniecība
         police: Policija
         public_building: "Publiska ēka"
-        townhall: Pašvaldība
       health:
-        doctors: Ārsts
         hearing_aids: "Dzirdes aparātu izplatītājs"
         hospital: Slimnīca
         medical_supply: "Medicīnas preces"
@@ -58,7 +53,6 @@ lv:
         arena: Arēna
         brothel: Bordelis
         cinema: Kinoteātris
-        community_center: "Bērnu un jauniešu centrs"
         gallery: Galerija
         nightclub: Naktsklubs
         playground: Rotaļu laukums
@@ -81,7 +75,6 @@ lv:
         aerodrome: Lidosta
         bicycle_parking: "Velosipēdu novietne"
         bicycle_rental: "Velosipēdu noma"
-        boatyard: Doki
         bus_station: "Autobusa pietura"
         bus_stop: "Autobusu pietura"
         cable_car: "Trosu dzelzceļš"
@@ -109,7 +102,6 @@ lv:
         butcher: Gaļas veikals
         car_repair: "Auto remonts"
         car_shop: "Auto veikals"
-        chemist: Aptieka
         clothes: Apģērbs
         computer: Datori
         convenience: Dažādas preces
@@ -119,7 +111,6 @@ lv:
         electronics: Elektronika
         florist: Florists
         furniture: Mēbeles
-        garden_centre: "Apzaļumošana"
         hairdresser: Frizieris
         hardware: Saimniecības preces
         kiosk: Kiosks

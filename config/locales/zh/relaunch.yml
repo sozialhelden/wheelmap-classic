@@ -1,4 +1,8 @@
 zh:
+  nodes:
+    show:
+      share:
+        email: 电子邮件
   users:
     profile:
       newsletter:

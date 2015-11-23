@@ -8,8 +8,6 @@ da:
       health: Sundhed
       leisure: Fritid
       misc: Diverse
-      money_post: "Bank post"
-      public_transfer: "Offentlig trafik"
       shopping: Shopping
       sport: Sport
       tourism: Turisme
@@ -49,10 +47,8 @@ da:
         government: "Statslig organisation"
         police: Politi
         public_building: "Offentlig bygning"
-        townhall: Rådhus
       health:
         dentist: Tandlæge
-        doctors: Læge
         hearing_aids: "Høreapparatforhandler"
         hospital: Hospital
         medical_supply: "Håndkøbsmedicin"
@@ -64,7 +60,6 @@ da:
         brothel: Bordel
         casino: Kasino
         cinema: Biograf
-        community_center: "Borgerhus"
         gallery: Galleri
         nightclub: Natklub
         playground: Legeplads
@@ -89,7 +84,6 @@ da:
         aerodrome: Lufthavn
         bicycle_parking: "Cykelparkering"
         bicycle_rental: "Cykeludlejning"
-        boatyard: Lystbådehavn
         bus_station: "Busstation"
         bus_stop: "Busstop"
         cable_car: "Svævebane"
@@ -118,7 +112,6 @@ da:
         butcher: Slagter
         car_repair: "Bilværksted"
         car_shop: "Biludstyrsbutik"
-        chemist: Materialist
         clothes: Tøjbutik
         computer: Computerbutik
         confectionery: "Slikbutik"
@@ -132,7 +125,6 @@ da:
         farm_shop: "Gårdbutik"
         florist: Blomsterhandler
         furniture: Møbelhandler
-        garden_centre: "Havecenter"
         gift: "Gavebutik"
         hairdresser: Frisør
         hardware: Værktøjsbutik

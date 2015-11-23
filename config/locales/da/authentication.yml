@@ -2,12 +2,9 @@ da:
   devise:
     confirmations:
       confirmed: "Din konto er nu aktiveret. Og du er nu logget ind."
-      link: "Ikke modtaget nogen bekræftigelseintrukser?"
       send_instructions: "I løbet af få minutter vil du modtage en e-mail med instrukser om aktivering af din konto."
-      send_paranoid_instructions: "Hvis din konto findes, så vil du modtage en e-mail i løbet af få minutter med instrukser hvordan du bekræfter din konto."
     destroy:
       confirm: "Er du sikker?"
-      headline: "Slet konto"
       link: "Slet nu"
     edit:
       form:
@@ -20,25 +17,19 @@ da:
       headline: "Ret konto"
     failure:
       already_authenticated: "Du er allerede logget på."
-      inactive: "Din konto er ikke arkiveret endnu."
       invalid: "E-mail eller adgangskode er ikke gyldig."
       invalid_token: "Ugyldig token til autorisering."
       locked: "Din konto er låst"
-      timeout: "Din session er udløbet. Log ind igen for at kunne fortsætte."
       unauthenticated: "Du skal logge ind eller oprette en konto for at kunne fortsætte"
       unconfirmed: "Du skal bekræfte din konto for at kunne fortsætte."
     mailer:
       confirmation_instructions:
-        landing_page: "Klik venligst på linket vi lige har sendt til din e-mail. Hvis du ikke har modtaget en e-mail fra os, så tjek først i spam mail mappen, hvis der intet er der, så prøv registreringssiden igen."
         subject: "Bekræftigelsesinstrukser"
       reset_password_instructions:
         subject: "Nulstil adgangskodeinstrukser"
-      unlock_instructions:
-        subject: "Åben låste instrukser"
     mandatory: "* Skal udfyldes"
     omniauth_callbacks:
       failure: "Kunne ikke autorisere dig fra %{kind} på grund af \"%{reason}\"."
-      permission_missing: "Du fik ikke de påkrævede tilladelser."
       success: "Succesfuld autorisation fra  %{kind} kontoen."
     password_recovery:
       form:
@@ -51,7 +42,6 @@ da:
         comment: "I tilfælde af du ikke har bestilt en nulstilling af adgangskoden, så se bort fra denne e-mail.<br/>Din adgangskode vil ikke blive ændret før du klikker på linket ovenfor og indstiller en ny adgangskode."
         headline: "Velkommen %{email}"
         link: "Ændre min adgangskode"
-        text: "Der blev lavet en forespørgsel om at ændre din adgangskode. Du kan ændre ved at klikke på det følgende link - ellers se bort fra denne her besked!"
       form:
         labels:
           password: "Ny adgangskode"
@@ -60,8 +50,6 @@ da:
       headline: "Nulstil adgangskode"
     passwords:
       link: "Glemt adgangskode?"
-      send_instructions: "Du vil i løbet af få minutter en modtage en e-mail med instrukser hvordan du laver  nulstilling af adgangskode."
-      send_paranoid_instructions: "Hvis din konto findes, så vil du modtage en e-mail i løbet af få minutter med instrukser hvordan du nulstiller din adgangskode"
       updated: "Din  adgangskode er nu ændret, og du er nu logget ind"
       updated_not_active: "Din adgangskode blev ændret med succes"
     registrations:
@@ -72,24 +60,19 @@ da:
         inactive: inaktiv
         locked: låst
         unconfirmed: ubekræftet
-      signed_up: "Din registrering er godkedt. En bekræftigelse er sendt til din e-mail."
       updated: "Din profil er opdateret."
     sessions:
-      inactive: "Din konto er endnu ikke blevet aktiveret"
       invalid: "Ugyldig e-mail eller adgangskode."
       invalid_token: "Ugyldig autorisation token"
       link: "Login"
       locked: "Din konto er låst"
       new:
         no_osm_account: "Ingen OpenStreetMap konto?"
-        osm_promo_text: "Wheelmap er baseret på geodata fra OpenStreetMap. OpenStreetMap er et verdensomspændende kort lavet af folk lige som dig. Det er som en Wikipedia for kort. For at rette eller lave nye steder skal du have oprettet en OpenStreeMap konto og samtidigt skal du være logget ind med denne konto."
         promo_text_thank_you: "Mange tak for din støtte!"
         sign_in_with: "Log ind med %{kind}"
         sign_up_with_osm: "Registrer nu."
-        wheelmap_promo_text: "Din lokale viden om kørestolstilgængelige steder hjælper fysisk handicappede til bedre at organisere deres hverdag. Samtidigt gør du også OpenStreetMap mere værdifuldt."
       signed_in: "Du er nu logget ind"
       signed_out: "Du er nu logget ud"
-      timeout: "Din loginsession er udløbet, login igen for at fortsætte."
       unauthenticated: "Du skal logge ind eller oprette en konto før du kan fortsætte"
       unconfirmed: "Du skal have bekræftet din konto før du kan fortsætte"
     sign_in:
@@ -112,11 +95,7 @@ da:
           email: E-mail
           password: Adgangskode
           password_confirmation: "Gentag adgangskode"
-          wants_newsletter: "Ja tak, lad mig blive løbende orienteret om wheelmap. Men ikke mere end en gang om måneden."
         submit: "Opret konto"
       headline: "Opret konto"
     unlocks:
-      link: "Ej modtaget nogen åben instrukser?"
-      send_instructions: "Om få minutter vil du modtage en email med instrukser om genåbning af din konto."
-      send_paranoid_instructions: "Hvis din konto findes, så vil du modtage en e-mail i løbet af få minutter med instrukser, hvordan du åbner din konto igen"
       unlocked: "Din konto er genåbnet og du er nu logget ind."

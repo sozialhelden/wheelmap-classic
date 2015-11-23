@@ -6,9 +6,7 @@ lv:
       notice: "Jums ir jāpierakstās lai redzētu šo lapu."
   breadcrumbs:
     node:
-      create: "Pievienot jaunu vietu"
       edit: "Labot vietu"
-    root: wheelmap
   common:
     close: aizvērt
     skip: izlaist
@@ -16,26 +14,19 @@ lv:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "Ir jābūt akceptētam"
       already_confirmed: "jau ir apstiprināts"
-      blank: "ir jāaizpilda"
       confirmation: "Neatbilst apstiprinājumam"
-      empty: "jāaizpilda"
       equal_to: "Jābūt precīzi %{count}"
-      even: "vērtībai jābūt pāra skaitlim"
       exclusion: "ir rezervēts"
       expired: "Izbeidzies derīgums, lūdzu pieprasiet jaunu"
       greater_than: "jābūt lielākam par %{count}"
-      greater_than_or_equal_to: "ir jābūt lielākam vai vienādam ar %{count}"
       inclusion: "nederīga vērtība"
       invalid: "nav derīgs"
       less_than: "jābūt mazāk nekā %{count}"
-      less_than_or_equal_to: "ir jābūt mazākam vai vienādam ar %{count}"
       not_a_number: "nav skaitlis"
       not_an_integer: "jābūt veselam skaitlim"
       not_found: "netika atrasts"
       not_locked: "netika bloķēts"
-      odd: "jābūt nepāra vērtībai"
       taken: "jau ir aizņemts"
       too_long: "ir par garu (ne vairāk kā %{count} zīmes)"
       too_short: "ir par īsu (ne mazāk kā %{count} zīmes)"
@@ -56,9 +47,6 @@ lv:
         notice: "Attēls tika veiksmīgi izdzēsts"
   form:
     show_fully_accessible_places: "pieejams ar ratiņkrēslu"
-    show_limited_accessible_places: "daļēji pieejams ar ratiņkrēslu"
-    show_places_without_status: "nezināms statuss"
-    show_unaccessible_places: "Nav pieejams ar ratiņkrēslu"
   formtastic:
     hints:
       lat: "Pārvietojiet atzīmi uz pareizo vietu kartē "
@@ -69,15 +57,12 @@ lv:
       category: "Kategorija:"
       centralkey: "Centrālā atslēga:"
       city: "Pilsēta:"
-      create: "Izveidot vietu"
       email: E-pasts
       finish: Beigas
       housenumber: "Nr.:"
       lat: garums
       lon: garums
       name: "Vārds:"
-      osm_password: "OSM parole"
-      osm_username: "OSM konts"
       password: Parole
       password_confirmation: "Atkārtot paroli"
       phone: "Tālrunis:"
@@ -115,14 +100,12 @@ lv:
       profile: Profils
       suggestions: Ieteikumi
       what_is_barrier_free: "Ko \"pieejams ar ratiņkrēslu\" nozīmē?"
-      what_is_wheelmap: "Kas ir wheelmap?"
     searchbar:
       add_place: "Pievienot jaunu vietu"
       find: atrast
       placeholder: "piem., Sunset Boulevard L.A. or Brandenburg Gate Berlin"
       title_add_place: "Pievieno jaunu vietu šajā pozīcijā!"
     tagline: "Wheelmap logo"
-    title: "Atrodiet ar ratiņkrēslu pieejamas vietas"
   helpers:
     select:
       prompt: "Lūdzu izvēlieties"
@@ -143,16 +126,9 @@ lv:
           upgrade: "Atjaunot pārlūku"
         warning:
           headline: "Atvainojiet!"
-          message: "Šķiet Jūs lietojiet Internet Explorer. Wheelmap lietošanai ir nepieciešams tīmekļa standartiem atbilstošs interneta pārlūks. Lūdzu apsveriet iespēju lietot Firefox, Chrome, Safari vai Opera."
-      link:
-        node:
-          create: "Pievienot jaunu vietu"
       popup:
         form:
-          limited: "daļēji pieejams ar ratiņkrēslu"
-          'no': "nav pieejams ar ratiņkrēslu"
           save: Atjaunot
-          unknown: "nezināms statuss"
           'yes': "pieejams ar ratiņkrēslu"
         help: "Pieejams ar ratiņkrēslu? (Palīdzība)"
         more: "vairāk..."
@@ -160,10 +136,6 @@ lv:
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "Visas (%{count}) ratiņkrēslā ierobežoti pieejamās %{type} vietas %{city}"
-        'no':
-          headline: "Visas (%{count}) ar ratiņkrēslu nepieejamās %{type} vietas %{city}"
         unknown:
           headline: "Visas (%{count}) %{type} vietas ar vēl nezināmu pieejamības ar ratiņkrēsliem statusu %{city}"
         'yes':
@@ -190,7 +162,6 @@ lv:
       link:
         large_map: "&laquo; Atcelt"
     errors:
-      default: "Kaut kas aizgāja griezi. Mēs saņēmām informāciju par šo kļūmi."
       not_authorized: "Atvainojiet, autorizācija neizdevās"
       not_available: "Atvainojiet, šī lapa šobrīd nav pieejama"
       not_existent: "Atvainojiet, šī vieta vairs nav pieejama"
@@ -216,7 +187,6 @@ lv:
         large_map: Palielināt
         listing: "Visas '%{type}' veida vietas %{city}"
         upload: "Augšupuzlādēt attēlu"
-      more_data_from: "Par šo vietu ir pieejami papildus dati, pārliecinājās: "
       show-in-osm: 'OpenStreetMap
 
         '
@@ -252,12 +222,6 @@ lv:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "Pirms radīt un mainīt vietas wheelmap.org, jums ir jāsavieno jūsu konts ar jūsu 'open street map' kontu."
-    callback:
-      notice: "Jūsu wheelmap konts tagad ir sasaistīts ar OpenStreetMap kontu %{user}."
   or: vai
   profile:
     edit:
@@ -280,7 +244,6 @@ lv:
     step1: "Klikšķiniet uz vietas, kuru ziniet"
     step2: "Atzīmējiet to un nospiežiet saglabāt"
     step3: "Tas arī viss! Reģistrācija nav nepieciešama"
-    what_is_wheelmap: "Kas ir wheelmap?"
   statistics: Statistika
   support:
     array:
@@ -307,7 +270,6 @@ lv:
     destroy:
       notice: "Uz redzēšanos! "
     new:
-      email: "E-pasta adrese"
       login: "Pierakstīties"
       login_with_twitter: "Pierakstīties ar Twitter"
       password: Parole
@@ -317,9 +279,6 @@ lv:
       welcome:
         headline: "Gandrīz galā! Pabeidziet izveidot Wheelmap kontu šeit:"
   wheelchairstatus:
-    limited: "daļēji pieejams ar ratiņkrēslu"
-    'no': "Nav pieejams ar ratiņkrēslu"
-    unknown: "nezināms statuss"
     'yes': "pieejams ar ratiņkrēslu"
   wheelmap:
     footer:
@@ -335,9 +294,7 @@ lv:
       title: "Wheelmap - atrodiet ar ratiņkrēslu pieejamas vietas"
     what_is:
       fully_accessible: "Ieeja bez pakāpieniem, visas istabas bez pakāpieniem, pieejamas labierīcības."
-      limited_accessible: "Ieejai ir pakāpiens (maks. augstums 7 cm), lielākā daļa istabu ir bez pakāpieniem, labierīcības nav pieejamas."
       not_accessible: "Pie ieejas ir pakāpiens vai vairāki pakāpieni, istabas nav pieejamas"
-      unknown_accessible: "Palīdzi un atzīmē šīs vietas!"
   will_paginate:
     next_label: "Nākošais &#8594;"
     page_entries_info:

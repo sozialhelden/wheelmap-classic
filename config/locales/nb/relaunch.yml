@@ -33,6 +33,7 @@ nb:
       edit: Rediger
     show:
       share:
+        email: Email
         facebook: Facebook
         twitter: Twitter
   users:
@@ -41,3 +42,6 @@ nb:
         title: Nyhetsbrev
       photos:
         title: Photos
+      widget:
+        legends:
+          settings: Innstillinger

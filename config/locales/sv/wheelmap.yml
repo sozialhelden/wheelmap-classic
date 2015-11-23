@@ -8,7 +8,6 @@ sv:
     node:
       create: "Lägg till ny plats"
       edit: "Ändra plats"
-    root: wheelmap
   common:
     close: stäng
     skip: hoppa över
@@ -16,21 +15,15 @@ sv:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "måste accepteras"
       already_confirmed: "är redan validerad, prova att logga in"
-      blank: "måste fyllas i"
       confirmation: "måste vara samma som det upprepade"
-      empty: "måste vara ifyllt"
       equal_to: "måste vara exakt %{count}"
-      even: "måste vara jämnt"
       exclusion: "är reserverat"
       expired: "utgånget, ansök om ett nytt"
       greater_than: "måste vara större än %{count}"
-      greater_than_or_equal_to: "måste vara större eller lika med %{count}"
       inclusion: "inte ett giltigt värde"
       invalid: "inte giltig"
       less_than: "måste vara mindre än %{count}"
-      less_than_or_equal_to: "måste vara mindre eller lika med %{count}"
       not_a_number: "är inte ett nummer"
       not_an_integer: "måste vara ett heltal"
       not_found: "hittades inte"
@@ -38,7 +31,6 @@ sv:
       not_saved:
         one: "Ett fel hindrade denna %{resource} från att sparas:"
         other: "%{count} fel hindrade denna %{resource} från att sparas:"
-      odd: "måste vara udda"
       taken: "är redan upptaget"
       too_long: "är för långt (får inte vara mer än %{count} bokstäver)"
       too_short: "är för kort (får inte vara mindre än %{count} bokstäver)"
@@ -62,9 +54,9 @@ sv:
         notice: "Bilden har tagits bort"
   form:
     show_fully_accessible_places: "Rullstolstillgänglig"
-    show_limited_accessible_places: "begränsat rullstolstillgänglig"
-    show_places_without_status: "okänd status"
-    show_unaccessible_places: "ej rullstolstillgänglig"
+    show_limited_accessible_places: "Delvis rullstolsanpassat"
+    show_places_without_status: "Okänd status"
+    show_unaccessible_places: "Ej rullstolstillgänglig"
   formtastic:
     hints:
       lat: "Flytta markören på kartan till korrekt position"
@@ -75,15 +67,12 @@ sv:
       category: "Kategori:"
       centralkey: "Huvudnyckel:"
       city: "Ort:"
-      create: "Skapa plats"
       email: E-post
       finish: Avsluta
       housenumber: "Nummer:"
       lat: Latitud
       lon: Longitud
       name: "Namn:"
-      osm_password: "OSM lösenord"
-      osm_username: "OSM konto namn"
       password: Lösenord
       password_confirmation: "Upprepa lösenord"
       phone: "Telefon:"
@@ -97,6 +86,7 @@ sv:
       website: "Webbplats:"
       wheelchair: "Rullstolstillgänglighet?"
       wheelchair_description: "Tillgänglighetskommentar:"
+      wheelchair_toilet: "Rullstolstillgänglig toalett:"
     titles:
       basic: "Grundläggande data"
       optional: "Mer information <span class=\"addition\">(alla fält är frivilliga)</span>"
@@ -121,14 +111,12 @@ sv:
       profile: Profil
       suggestions: Förslag
       what_is_barrier_free: "Vad betyder \"rullstolstillgänglig\"?"
-      what_is_wheelmap: "Vad är wheelmap?"
     searchbar:
       add_place: "Lägg till en plats"
       find: Hitta
       placeholder: "Sök en plats"
       title_add_place: "Lägg till en ny plats på denna position!"
     tagline: "Wheelmap logo"
-    title: "Hitta rullstolstillgängliga platser"
   helpers:
     select:
       prompt: "Välj"
@@ -149,27 +137,22 @@ sv:
           upgrade: "Uppdatera webbläsaren"
         warning:
           headline: "Tyvärr!"
-          message: "Du verkar använda Internet Explorer. Wheelmap behöver en webbläsare som följer standarderna för att fungera rätt. Vänligen använd Firefox, Chrome, Safari eller Opera"
       link:
         node:
           create: "Lägg till ny plats"
       popup:
         form:
-          limited: "begränsat rullstolstillgänglig"
-          'no': "ej rullstolstillgänglig"
+          limited: "Delvis rullstolsanpassat"
+          'no': "Ej rullstolstillgänglig"
           save: Update
-          unknown: "okänd status"
-          'yes': "fullt rullstolstillgänglig"
+          unknown: "Okänd status"
+          'yes': "Rullstolstillgänglig"
         help: "Rullstolstillgänglig? (Hjälp)"
         more: "mera ..."
   how?: Hur?
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "Alla begränsat rullstolstillgängliga %{type} i %{city} (%{count})"
-        'no':
-          headline: "Alla ej rullstolstillgängliga %{type} i %{city} (%{count})"
         unknown:
           headline: "Alla %{type} i %{city} med okänd rullstolstillgänglighet (%{count})"
         'yes':
@@ -196,7 +179,6 @@ sv:
       link:
         large_map: "&laquo; Avbryt"
     errors:
-      default: "Ojdå, något blev fel, men vi har blivit informerade om det!"
       not_authorized: "Tyvärr, inloggningen misslyckades"
       not_available: "Tyvärr, denna sida kan just nu inte visas."
       not_existent: "Tyvärr, denna plats finns inte längre."
@@ -222,7 +204,6 @@ sv:
         large_map: Förstora
         listing: "Alla platser av typen '%{type} i %{city}"
         upload: "Ladda upp bild"
-      more_data_from: "Det finns mera information om denna plats, kollad av:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -259,12 +240,6 @@ sv:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "Du måste koppla ditt konto till ditt OpenStreetMap-konto innan du kan skapa eller ändra platser på wheelmap.org."
-    callback:
-      notice: "Ditt wheelmap konto är nu kopplat till OpenStreetMap kontot %{user}."
   or: eller
   place:
     one: "%{count} plats"
@@ -290,7 +265,6 @@ sv:
     step1: "Klicka på en plats som du känner till"
     step2: "Markera den och klicka därefter på spara"
     step3: "Klart! Ingen registrering behövs"
-    what_is_wheelmap: "Vad är wheelmap?"
   statistics: Statistik
   support:
     array:
@@ -317,7 +291,6 @@ sv:
     destroy:
       notice: "Hejdå, kom tillbaka snart!"
     new:
-      email: "E-postadress"
       login: "Logga in"
       login_with_twitter: "Logga in med hjälp av Twitter"
       password: Lösenord
@@ -326,16 +299,15 @@ sv:
     after_signup_edit:
       welcome:
         headline: "Du är nästan klar! Avsluta din ansökan om Wheelmapkonto här:"
-        set_password_for_mobile: "Du är nu klar med din registrering hos OpenStreetMap-\nAnge nu en e-postadress och lösenord för ditt Wheelmapkonto och därefter är allt klart. Du behöver ange denna e-postadress och lösenord när du loggar in på Wheelmap-appen för iPhone eller Android."
         text: "Hur kan vi kontakta dig? Du kan senare ändra denna information i din profil."
     edit:
       headline:
         your_images: "Dina uppladdade bilder"
   wheelchairstatus:
-    limited: "begränsat rullstolstillgänglig"
-    'no': "ej rullstolstillgänglig"
-    unknown: "rullstolstillgänglighet okänd"
-    'yes': "fullt rullstolstillgänglig"
+    limited: "Delvis rullstolsanpassat"
+    'no': "Ej rullstolstillgänglig"
+    unknown: "Okänd status"
+    'yes': "Rullstolstillgänglig"
   wheelmap:
     footer:
       a_project_of: "Ett projekt från"
@@ -350,9 +322,8 @@ sv:
       title: "Wheelmap - Hitta rullstolstillgängliga platser"
     what_is:
       fully_accessible: "Ingången har ingen kant eller tröskel, alla rum utan trappsteg, tillgänglig hk-toalett finns"
-      limited_accessible: "Ingångens tröskel är inte högre än 7 cm, de flesta rummen är tillgängliga, ingen tillgänglig toalett"
       not_accessible: "Ingångens kant eller tröskel är högre än 7 cm eller så har den trappsteg. Rummen är inte tillgängliga"
-      unknown_accessible: "Hjälp till att markera platser !"
+      unknown_accessible: "Hjälp till genom att märka ut olika platser!"
   will_paginate:
     next_label: "Nästa &#8594;"
     page_entries_info:

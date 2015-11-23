@@ -1,1 +1,5 @@
-tlh: {}
+tlh:
+  nodes:
+    show:
+      share:
+        email: jabbI'ID

@@ -6,9 +6,7 @@ lt:
       notice: "Norėdami matyti šį puslapį, privalote prisijungti."
   breadcrumbs:
     node:
-      create: "Pridėti naują vietą"
       edit: "Keisti vietą"
-    root: wheelmap
   common:
     close: uždaryti
     skip: praleisti
@@ -21,11 +19,8 @@ lt:
     photos:
       destroy:
         notice: "Paveikslas buvo sėkmingai ištrintas"
-  form:
-    show_places_without_status: "nežinoma būsena"
   formtastic:
     hints:
-      email: "Mes konfidencialiai elgiamės su jūsų adresu, jokio brukalo. Pažadame!"
       osm_username: "Dar nesate narys? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Susikurkite OpenStreetMap paskyrą dabar</a>"
       website: "Pavyzdžiui: http://www.example.com"
     labels:
@@ -34,8 +29,6 @@ lt:
       finish: Užbaigti
       lat: Platuma
       lon: Ilguma
-      osm_password: "OSM slaptažodis"
-      osm_username: "OSM paskyros vardas"
       password: Slaptažodis
       password_confirmation: "Pakartokite slaptažodį"
       phone: "Telefonas:"
@@ -47,6 +40,7 @@ lt:
       type: "Tipas:"
       website: "Svetainė:"
       wheelchair: "Prieinamumas neįgaliųjų vežimėliais?"
+      wheelchair_toilet: "Neįgaliųjų vežimėliu prieinamas tualetas:"
     titles:
       optional: "Daugiau informacijos <span class=\"addition\">(visi laukai yra nebūtini)</span>"
   header:
@@ -62,7 +56,6 @@ lt:
       profile: Profilis
       suggestions: Pasiūlymai
       what_is_barrier_free: "Ką reiškia \"prieinama neįgaliųjų vežimėliais\"?"
-      what_is_wheelmap: "Kas yra wheelmap?"
     searchbar:
       add_place: "Pridėti kitą vietą"
       find: Rasti
@@ -75,13 +68,9 @@ lt:
       ie:
         warning:
           headline: "Atsiprašome!"
-      link:
-        node:
-          create: "Pridėti naują vietą"
       popup:
         form:
           save: Atnaujinti
-          unknown: "nežinoma būsena"
         more: "daugiau ..."
   how?: Kaip?
   layouts:
@@ -100,7 +89,6 @@ lt:
       link:
         large_map: "&laquo; Atšaukti"
     errors:
-      default: "Oi, įvyko kažkas netikėto. Mums pranešta apie šią problemą"
       not_authorized: "Atleiskite, tapatybės nustatymas nepavyko"
       not_available: "Atleiskite, šis puslapis laikinai neprieinamas."
       not_existent: "Atleiskite, ši vieta daugiau nebeprieinama."
@@ -147,15 +135,8 @@ lt:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "Prieš tai, kai galėsite kurti ar redaguoti vietas puslapyje wheelmap.org, turite sujungti savo paskyrą su 'open street map' paskyra."
-    callback:
-      notice: "Jūsų wheelmap paskyra dabar yra susieta su OpenStreetMap %{user} paskyra."
   splash:
     step1: "Spustelėkite ant jums žinomos vietos"
-    what_is_wheelmap: "Kas yra wheelmap?"
   statistics: Statistika
   support:
     array:
@@ -168,24 +149,18 @@ lt:
       error:
         notice: "El. paštas ir slaptažodis neatitinka."
     new:
-      email: "El. pašto adresas"
       login: "Prisijungti"
       password: Slaptažodis
   users:
     after_signup_edit:
       welcome:
         headline: "Jūs beveik vietoje! Užbaikite prisiregistravimą prie savo Wheelmap paskyros čia:"
-        set_password_for_mobile: "Jūs užbaigėte savo registraciją su OpenStreetMap.\nDabar, pasirinkite el. pašto adresą ir slaptažodį savo Wheelmap paskyrai ir tuomet, viskas bus paruošta! Šis el. pašto adresas ir slaptažodis jums reikalingi, norint prisijungti prie Wheelmap programos, besinaudojant iPhone ar Android."
         text: "Kaip mes galime su jumis susisiekti? Vėliau, šią informaciją galite pakeisti savo profilyje."
     edit:
       headline:
         your_images: "Jūsų išsiųsti paveikslai"
-  wheelchairstatus:
-    unknown: "nežinoma būsena"
   wheelmap:
     footer:
       main_supporter: "Pagrindinis remėjas"
     itunes:
       alt: "AppStore Logotipas"
-    what_is:
-      unknown_accessible: "Padėkite, žymėdami vietas!"

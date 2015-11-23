@@ -6,9 +6,8 @@ cs:
       notice: "Musíte se přihlásit aby jste viděli tuto stránku."
   breadcrumbs:
     node:
-      create: "Přidat místo"
       edit: "Upravit místo"
-    root: wheelmap
+    root: Wheelmap
   common:
     close: zavřít
     skip: přeskočit
@@ -16,21 +15,15 @@ cs:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "musí být potvrzeno"
       already_confirmed: "byl již potvrzen, prosím, zkuste se přihlásit"
-      blank: "je povinná položka"
       confirmation: "nebylo potvrzeno"
-      empty: "nesmí být prázdný/á/é"
       equal_to: "musí být rovno %{count}"
-      even: "musí být sudé číslo"
       exclusion: "je vyhrazeno pro jiný účel"
       expired: "vypršel, prosím, požádejte si o nový"
       greater_than: "musí být větší než %{count}"
-      greater_than_or_equal_to: "musí být větší nebo rovno %{count}"
       inclusion: "není v seznamu povolených hodnot"
       invalid: "není platná hodnota"
       less_than: "musí být méně než %{count}"
-      less_than_or_equal_to: "musí být méně nebo rovno %{count}"
       not_a_number: "není číslo"
       not_an_integer: "musí být celé číslo"
       not_found: "nenalezen"
@@ -39,7 +32,6 @@ cs:
         one: "%{count} chyba zabránila uložení %{resource}:"
         few: "%{count} chyby zabránily uložení %{resource}:"
         other: "%{count} chyb zabránilo uložení %{resource}:"
-      odd: "musí být liché číslo"
       taken: "již databáze obsahuje"
       too_long: "je příliš dlouhý/á/é (max. %{count} znaků)"
       too_short: "je příliš krátký/á/é (min. %{count} znaků)"
@@ -64,12 +56,11 @@ cs:
         notice: "Obrázek byl úspěšně smazaný"
   form:
     show_fully_accessible_places: "Přístupné pro vozíčkáře"
-    show_limited_accessible_places: "částečně přístupné pro vozíčkáře"
-    show_places_without_status: "neznámý stav"
-    show_unaccessible_places: "nepřístupné pro vozíčkáře"
+    show_limited_accessible_places: "Částečně bezbariérový přístup"
+    show_places_without_status: "Status neznámý"
+    show_unaccessible_places: "Není bezbariérový"
   formtastic:
     hints:
-      email: "Vaše adresa je u nás v bezpečí - žádný spam. Slibujeme!"
       lat: "Posuňte značku na mapě aby jste opravili polohu"
       osm_username: "Ještě k nám nepatříte? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\"> Vytvořite si nyní účet na OpenStreetMap</a>"
       password: "(nechte prázdné když nechcete změnit)"
@@ -79,15 +70,12 @@ cs:
       category: "Kategorie:"
       centralkey: "Společný klíč:"
       city: "Město:"
-      create: "Vytvořit místo"
-      email: E-Mail
+      email: Email
       finish: Dokončit
       housenumber: "Číslo:"
       lat: Zeměpisná šířka
       lon: Zeměpisná délka
       name: "Jméno:"
-      osm_password: "OSM heslo"
-      osm_username: "OSM účet"
       password: Heslo
       password_confirmation: "Zopakujte heslo"
       phone: "Telefon:"
@@ -101,7 +89,7 @@ cs:
       website: "Stránka:"
       wheelchair: "Přístupnost pro vozíčkáře?"
       wheelchair_description: "Poznámka k přístupnosti:"
-      wheelchair_toilet: "Bezbariérová koupelna:"
+      wheelchair_toilet: "Toaleta přístupná pro vozíčkáře:"
     titles:
       basic: "Základní údaje"
       optional: "Více informací <span class=\"addition\">(všechny položky jsou povinné)</span>"
@@ -126,14 +114,12 @@ cs:
       profile: Profil
       suggestions: Návrhy
       what_is_barrier_free: "Co to znamená \"přístupné pro vozíčkáře\"?"
-      what_is_wheelmap: "Co je to wheelpmap?"
     searchbar:
       add_place: "Přidat další místo"
       find: Najít
       placeholder: "Hledat místo"
       title_add_place: "Přidejte sem nové místo!"
     tagline: "Logo Wheelmap"
-    title: "najít bezbariérové ​​místa"
   helpers:
     select:
       prompt: "Prosím vyberte si"
@@ -154,27 +140,19 @@ cs:
           upgrade: "Aktualizovat prohlížeč"
         warning:
           headline: "Omlouváme se!"
-          message: "Zda se, že používáte Internet Explorer. Wheelmap potřebuje prohlížeč, který odpovídá normám. Prosím zvažte použití některého z následujících prohlížečů: Firefox, Chrome, Safari nebo Opera."
-      link:
-        node:
-          create: "Přidat místo"
       popup:
         form:
-          limited: "částečně přístupné pro vozíčkáře"
-          'no': "nepřístupné pro vozíčkáře"
+          limited: "Částečně bezbariérový přístup"
+          'no': "Není bezbariérový"
           save: Aktualizovat
-          unknown: "neznámý status"
-          'yes': "přístupné pro vozíčkáře"
+          unknown: "Status neznámý"
+          'yes': "Přístupné pro vozíčkáře"
         help: "Přístupné pro vozíčkáře? (Pomoc)"
         more: "více ..."
   how?: Jak?
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "Všechny %{type} s omezeným přístupem pro vozíčkáře v %{city} (%{count})"
-        'no':
-          headline: "Všechny nebezbariérové %{type} v %{city} (%{count})"
         unknown:
           headline: "Všechny %{type} ve městě %{city} s neznámou dostupností pro vozíčkáře (%{count})"
         'yes':
@@ -201,7 +179,6 @@ cs:
       link:
         large_map: "&laquo; Zrušit\n"
     errors:
-      default: "Jejda něco se pokazilo. Byli jsme o tomto problému informováni "
       not_authorized: "Přihlášení bylo neúspěšné"
       not_available: "Omlouváme se, tahle stránka je dočasně nedostupná."
       not_existent: "Omlouváme se, ale toto místo již není dostupné."
@@ -227,7 +204,6 @@ cs:
         large_map: Zvětšit
         listing: "Všechna místa typu '%{type}' v %{city}"
         upload: "Nahrát obrázek"
-      more_data_from: "O tomhle místě je více údajů, zkontroloval:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -265,12 +241,6 @@ cs:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "Aby jste mohli vytvářet nebo měnit místa na wheelmap.org musíte si propojit svůj účet s OpenStreetMap účtem."
-    callback:
-      notice: "Váš wheelmap účet je teď propojený s OpenStreetMap účtem uživatele %{user}."
   or: nebo
   place:
     one: "%{count} místo"
@@ -297,7 +267,6 @@ cs:
     step1: "Klikněte na místo, které znáte"
     step2: "Označte to a dejte uložit"
     step3: "To je ono! Žádná registrace není nutná"
-    what_is_wheelmap: "Co je to wheelpmap?"
   statistics: Statistiky
   support:
     array:
@@ -318,10 +287,6 @@ cs:
     'no': "Bez bezbariérového přístupu na WC"
     unknown: "Neznámý stav toalet."
     'yes': "Bezbariérový přístup na WC"
-    what_is:
-      'no': "Vnitřní šířka dveřních otvorů je min. 90 cm, volný prostor min. 150 x 150 cm, bezbariérová výška WC sedátka, skládací úchyt zábradlí a přístupné umyvadlo."
-      'yes': "Vnitřní šířka dveřních otvorů je min. 90 cm, volný prostor min. 150 x 150 cm, bezbariérová výška WC sedátka, skládací úchyt zábradlí a přístupné umyvadlo."
-      unknown: "Pomozte s označením stavu WC!"
   user_sessions:
     create:
       activation:
@@ -332,7 +297,6 @@ cs:
     destroy:
       notice: "Nashledanou, vraťe se brzy!"
     new:
-      email: "E-mailová adresa"
       login: "Přihlásit se"
       login_with_twitter: "Přihlašte se přes Twitter"
       password: Heslo
@@ -341,16 +305,15 @@ cs:
     after_signup_edit:
       welcome:
         headline: "Vítejte na wheelmap"
-        set_password_for_mobile: "Máte smartphone? Určete si heslo aby jste mohli Wheelmap používat i na cestách ve vašem iPhone nebo telefonu s Androidem."
         text: "Jak vás můžeme kontaktovat? Tyto informace můžete později změnit ve vašem profilu."
     edit:
       headline:
         your_images: "Vaše obrázky"
   wheelchairstatus:
-    limited: "částečně přístupné pro vozíčkáře"
-    'no': "nepřístupné pro vozíčkáře"
-    unknown: "neznámý stav"
-    'yes': "přístupné pro vozíčkáře"
+    limited: "Částečně bezbariérový přístup"
+    'no': "Není bezbariérový"
+    unknown: "Status neznámý"
+    'yes': "Přístupné pro vozíčkáře"
   wheelmap:
     footer:
       a_project_of: "Projekt od"
@@ -365,9 +328,7 @@ cs:
       title: "Wheelmap - najít bezbariérová ​​místa"
     what_is:
       fully_accessible: "Vstup bez schodů, všechny pokoje bez schodů, přístupná toaleta, pokud je obvyklé v daném místě"
-      limited_accessible: "Vstup má schod (max. výška 7cm), většina pokojů je bez schodů, toaleta není přístupná"
       not_accessible: "Vstup je strmý nebo má několik schodů, pokoje nejsou přístupné"
-      unknown_accessible: "Pomozte s označením místa!"
   will_paginate:
     next_label: "Další &#8594;"
     page_entries_info:

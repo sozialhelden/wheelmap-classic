@@ -6,28 +6,21 @@ pt:
       notice: "Tem de se ligar à sua conta para ver o conteúdo desta página."
   breadcrumbs:
     node:
-      create: "Adicionar um novo lugar"
+      create: "Adicionar um novo local"
       edit: "Editar um lugar"
-    root: ê ã õ  ç
   common:
     close: fechar
   errors:
     dynamic_format: "%{message}"
     messages:
-      accepted: "tem de ser aceite"
       already_confirmed: "já estava confirmado, por favor volte a registrar-se"
-      blank: "não pode estar em branco"
       confirmation: "não coincide com a confirmação"
-      empty: "não pode estar vazio"
       equal_to: "tem de ser igual a %{count}"
-      even: "tem de ser par"
       exclusion: "é reservado"
       greater_than: "tem de ser maior que %{count}"
-      greater_than_or_equal_to: "tem de ser maior ou igual a %{count}"
       inclusion: "não está incluído na lista"
       invalid: "é inválido"
       less_than: "tem de ser menor que %{count}"
-      less_than_or_equal_to: "tem de ser menor ou igual a %{count}"
       not_a_number: "não é um número"
       not_an_integer: "tem de ser um número integral"
       not_found: "não foi encontrado"
@@ -35,7 +28,6 @@ pt:
       not_saved:
         one: "Um erro impdiu que %{resource} fosse salvo:"
         other: "%{count} erros impediu que %{resource} fossem salvos :"
-      odd: "tem de ser ímpar"
       taken: "já pertence a outra pessoa"
       too_long: "é demasiado grande (o mínimo é de %{count} characters)"
       too_short: "é demasiado pequeno (o mínimo é de %{count} caracteres)"
@@ -56,9 +48,9 @@ pt:
         notice: "%{resource_name} foi actualizado com sucesso"
   form:
     show_fully_accessible_places: "acessível a cadeira de rodas"
-    show_limited_accessible_places: "parcialmente acessível a cadeira de rodas"
-    show_places_without_status: "estatuto desconhecido"
-    show_unaccessible_places: "não acessível a cadeira de rodas"
+    show_limited_accessible_places: "Parcialmente acessível por cadeira de rodas"
+    show_places_without_status: "Estado desconhecido"
+    show_unaccessible_places: "Sem acesso a cadeiras de rodas"
   formtastic:
     hints:
       lat: "Coloque o inicador que se encontra no mapa para a posição correcta "
@@ -68,14 +60,11 @@ pt:
     labels:
       category: "Categoria:"
       city: "Cidade:"
-      create: "Criar um lugar"
-      email: Mail
+      email: E-mail
       housenumber: "Nr:"
       lat: Latitude
       lon: Longitude
       name: "Nome:"
-      osm_password: "OSM palavra passe"
-      osm_username: "OSM nome da conta"
       password: Palavra passe
       password_confirmation: "Repita a palavra passe"
       phone: "Telefone:"
@@ -108,14 +97,12 @@ pt:
       press: Imprensa
       suggestions: Sugestões
       what_is_barrier_free: "Qual o significado de \"acessível a cadeira de rodas\"?"
-      what_is_wheelmap: "O que é o wheelmap?"
     searchbar:
       add_place: "Adicionar outro lugar"
       find: encontrar
       placeholder: "p. Ex. Sunset Boulevard L.A. ou o Portão de Brandenburgo"
       title_add_place: "Adicionar um novo lugar nesta posição agora!"
     tagline: "Lógotipo do Wheelmap"
-    title: "Encontre lugares acessivéis a cadeira de rodas"
   helpers:
     select:
       prompt: "Por favor seleccione"
@@ -130,13 +117,13 @@ pt:
         wheelchair: "Acessivel a cadeira de rodas? (O que significa isto?) "
       link:
         node:
-          create: "Adicionar um novo lugar"
+          create: "Adicionar um novo local"
       popup:
         form:
-          limited: "parcial acesibilidade a cadeira de rodas"
-          'no': "sem acessibilidade a cadeira de rodas"
-          unknown: "acessibilidade a cadeira de rodas desconhecida"
-          'yes': "Completa acessibilidade a cadeira de rodas"
+          limited: "Parcialmente acessível por cadeira de rodas"
+          'no': "Sem acesso a cadeiras de rodas"
+          unknown: "Estado desconhecido"
+          'yes': "acessível a cadeira de rodas"
   layouts:
     application:
       banner:
@@ -151,7 +138,6 @@ pt:
         not_successfull: "Oops, os dados introduzido estão incorrectos ou incompletos"
         successfull: "Muito obrigado, os dados submetidos foram guardados com sucesso e estarão online em breve. "
     errors:
-      default: "Oops, algo não correu bem. Nós já fomos informados sobre a situação. "
       not_authorized: "Desculpe, a autentificação falhou"
       not_available: "Desculpe, mas esta página não está de momento acessível"
       not_existent: "Desculpe, este lugar já não está mais acessível"
@@ -219,7 +205,6 @@ pt:
         not_found: "Não foi possível encontrar um lugar"
   splash:
     start: Iniciar
-    what_is_wheelmap: "O que é o wheelmap?"
   statistics: Estatísticas
   support:
     array:
@@ -246,16 +231,15 @@ pt:
     destroy:
       notice: "Adeus, até breve!"
     new:
-      email: "E-Mail"
       login: "Log in"
       login_with_twitter: "Log in com Twitter"
       password: Palavra passe
       remember_me: "Mantenha-se connectado"
   wheelchairstatus:
-    limited: "parcial acesibilidade a cadeira de rodas"
-    'no': "sem acessibilidade a cadeira de rodas"
-    unknown: "acessibilidade a cadeira de rodas desconhecida"
-    'yes': "Completa acessibilidade a cadeira de rodas"
+    limited: "Parcialmente acessível por cadeira de rodas"
+    'no': "Sem acesso a cadeiras de rodas"
+    unknown: "Estado desconhecido"
+    'yes': "acessível a cadeira de rodas"
   wheelmap:
     itunes:
       alt: "AppStore Logo"
@@ -265,6 +249,5 @@ pt:
       title: "Wheelmap - encontre lugares com acessibilidade para cadeira de rodas"
     what_is:
       fully_accessible: "O desnível na entrada não é superior a 7 cm; todas as localidades com acesso a cadeira de rodas (sem excepção); casa de banho para desabilitados "
-      limited_accessible: "O desnível na entrada não é superior a 7 cm; as localidades mais importantes acesso a cadeira de rodas "
       not_accessible: "O desnível na entrada não é superior a 7 cm; ou escadas na entrada; ou as mais importantes localidades sem acesso a cadeira de rodas"
-      unknown_accessible: "A acessibilidade a cadeira de rodas é desconhecida."
+      unknown_accessible: "Ajude, assinalando locais!"

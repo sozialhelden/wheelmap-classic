@@ -9,6 +9,7 @@ sq_AL:
       form:
         labels:
           email: Email
+      headline: "Harruat fjalëkalimin?"
     password_reset:
       form:
         labels:

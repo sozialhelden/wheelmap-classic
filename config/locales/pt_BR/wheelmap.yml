@@ -8,7 +8,6 @@ pt_BR:
     node:
       create: "Adicionar um novo lugar"
       edit: "Editar lugar"
-    root: wheelmap
   common:
     close: fechar
     skip: Pular
@@ -16,21 +15,15 @@ pt_BR:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "tem de ser aceito"
       already_confirmed: "já estava confirmado, por favor volte a registrar-se"
-      blank: "deve ser preenchido"
       confirmation: "não coincide com a confirmação"
-      empty: "não pode estar vazio"
       equal_to: "tem de ser igual a %{count}"
-      even: "tem de ser par"
       exclusion: "não está disponível"
       expired: "expirou, peça novamente"
       greater_than: "tem de ser maior que %{count}"
-      greater_than_or_equal_to: "tem de ser maior ou igual a %{count}"
       inclusion: "não é um valor válido"
       invalid: "é inválido"
       less_than: "tem de ser menor que %{count}"
-      less_than_or_equal_to: "tem de ser menor ou igual a %{count}"
       not_a_number: "não é um número"
       not_an_integer: "tem de ser um número integral"
       not_found: "não encontrado"
@@ -38,7 +31,6 @@ pt_BR:
       not_saved:
         one: "Um erro impdiu que %{resource} fosse salvo:"
         other: "%{count} erros impediram que %{resource} fosse salvo:"
-      odd: "tem de ser ímpar"
       taken: "já existe"
       too_long: "é demasiado grande (o máximo é de %{count} charateres)"
       too_short: "é demasiado curto. (O mínimo é de %{count} carateres.)"
@@ -62,12 +54,11 @@ pt_BR:
         notice: "Imagem removida com sucesso"
   form:
     show_fully_accessible_places: "Acessível a cadeirantes"
-    show_limited_accessible_places: "Parcialmente"
+    show_limited_accessible_places: "Parcialmente acessível a cadeira de rodas"
     show_places_without_status: "Status desconhecido"
-    show_unaccessible_places: "não acessível a cadeirantes"
+    show_unaccessible_places: "Não acessível para cadeira de rodas"
   formtastic:
     hints:
-      email: "Trataremos seu e-mail com confidencialidade, não enviaremos SPAM. Prometemos!"
       lat: "Coloque o indicador no mapa na posição certa"
       osm_username: "Ainda não é membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Criar uma conta Openstreetmap</a>"
       password: "(deixar em branco se não quiser modificar) "
@@ -77,15 +68,12 @@ pt_BR:
       category: "Categoria:"
       centralkey: "Chave central:"
       city: "Cidade:"
-      create: "Criar um lugar"
-      email: Mail
+      email: E-mail
       finish: Terminar
       housenumber: "N°:"
       lat: Latitude
       lon: Longitude
       name: "Nome:"
-      osm_password: "Senha OSM"
-      osm_username: "OSM nome da conta"
       password: Senha
       password_confirmation: "Repetir senha"
       phone: "Telefone:"
@@ -99,7 +87,7 @@ pt_BR:
       website: "Website:"
       wheelchair: "Acessível a cadeirantes?"
       wheelchair_description: "Comentário sobre a acessibilidade: "
-      wheelchair_toilet: "Sobre os banheiros:"
+      wheelchair_toilet: "Banheiro acessível:"
     titles:
       basic: "Dados básicos"
       optional: "Mais informações <span class=\"addition\">(todos os campos são opcionais)</span>"
@@ -124,14 +112,12 @@ pt_BR:
       profile: Perfis
       suggestions: Sugestões
       what_is_barrier_free: "Qual o significado de \"acessível a cadeirantes\"?"
-      what_is_wheelmap: "O que é o Wheelmap?"
     searchbar:
       add_place: "Adicionar outro lugar"
       find: Encontrar
       placeholder: "exemplos: 'Brasília', 'Av. Paulista, São Paulo'"
       title_add_place: "Adicionar um novo lugar nesta posição agora!"
     tagline: "Logotipo do Wheelmap"
-    title: "Encontre lugares acessíveis a cadeirantes"
   helpers:
     select:
       prompt: "Por favor selecione"
@@ -152,27 +138,22 @@ pt_BR:
           upgrade: "Atualizar browser"
         warning:
           headline: "Desculpe!"
-          message: "Aparentemente você está usando Internet Explorer.  Wheelmap precisa dum browser compatível com o padrão para funcionar. Por favor, use Firefox, Chrome, Safari ou Opera."
       link:
         node:
-          create: "Adicionar novo lugar"
+          create: "Adicionar um novo lugar"
       popup:
         form:
-          limited: "Parcialmente acessível"
-          'no': "Não acessível a cadeirantes"
+          limited: "Parcialmente acessível a cadeira de rodas"
+          'no': "Não acessível para cadeira de rodas"
           save: Salvar
           unknown: "Status desconhecido"
-          'yes': "Completamente acessível"
+          'yes': "Acessível a cadeirantes"
         help: "Acessível a cadeirantes? (Ajuda)"
         more: "mais ..."
   how?: Como?
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "Todos os %{type} acessíveis em %{city} (%{count})"
-        'no':
-          headline: "Todos os %{type} não acessíveis em %{city} (%{count})"
         unknown:
           headline: "Todos os %{type} em %{city} com acessibilidade desconhecida (%{count})"
         'yes':
@@ -199,7 +180,6 @@ pt_BR:
       link:
         large_map: "&laquo; Cancelar"
     errors:
-      default: "Oops, algo não correu bem. Nós já fomos informados sobre a situação. "
       not_authorized: "Desculpe, a autentificação falhou"
       not_available: "Desculpe, mas no momento esta página não está disponível"
       not_existent: "Desculpe, este lugar não existe mais"
@@ -225,7 +205,6 @@ pt_BR:
         large_map: Aumentar
         listing: "Todos os lugares do tipo '%{type}' em %{city}"
         upload: "Transferir imagem"
-      more_data_from: "Não existem mais dados sobre este lugar, qualificado por:"
       show-in-osm: mostrar em Openstreetmap
     update:
       flash:
@@ -262,12 +241,6 @@ pt_BR:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "Para editar ou adicionar lugares em wheelmap.org, você tem de conectar sua conta com Openstreetmap."
-    callback:
-      notice: "Sua conta foi conectada com sucesso com a conta OpenStreetMap de '%{user}'."
   or: ou
   place:
     one: "%{count} lugar"
@@ -293,7 +266,6 @@ pt_BR:
     step1: "Clique num lugar que você conhece."
     step2: "Marque-lo e clique em \"Salvar\""
     step3: "Pronto! Nenhum registro necessário!"
-    what_is_wheelmap: "O que é Wheelmap?"
   statistics: Estatísticas
   support:
     array:
@@ -314,10 +286,6 @@ pt_BR:
     'no': "Sem banheiro adaptado para cadeirantes"
     unknown: "Não sei informar sobre os banheiros"
     'yes': "Banheiro acessível a cadeirantes"
-    what_is:
-      'no': "A menor largura de porta é 90 cm, o menor vão livre tem 150 cm x 150 cm, a altura do vaso sanitário é compatível com cadeira de rodas, existem barras de apoio dobráveis, e o lavatório é acessível."
-      'yes': "A menor largura de porta é 90 cm, o menor vão livre tem 150 cm x 150 cm, a altura do vaso sanitário é compatível com cadeira de rodas, existem barras de apoio dobráveis, e o lavatório é acessível."
-      unknown: "Ajude adicionando informação sobre os banheiros!"
   user_sessions:
     create:
       activation:
@@ -328,7 +296,6 @@ pt_BR:
     destroy:
       notice: "Até breve!"
     new:
-      email: "E-mail"
       login: "Entrar"
       login_with_twitter: "Conecte-se pelo Twitter"
       password: Senha
@@ -337,16 +304,15 @@ pt_BR:
     after_signup_edit:
       welcome:
         headline: "Quase pronto!"
-        set_password_for_mobile: "Você tem um smartphone? Então defina uma senha aqui para usar o wheelmap no seu iPhone ou celular Android."
         text: "Você se registrou com sucesso. Nos lhe informaremos sobre notícias importantes acerca do Wheelmap."
     edit:
       headline:
         your_images: "Suas imagens"
   wheelchairstatus:
-    limited: "Parcialmente acessível a cadeirantes"
-    'no': "Não acessível a cadeirantes"
-    unknown: "Sem informações sobre acessibilidade"
-    'yes': "Completamente acessível a cadeirantes"
+    limited: "Parcialmente acessível a cadeira de rodas"
+    'no': "Não acessível para cadeira de rodas"
+    unknown: "Status desconhecido"
+    'yes': "Acessível a cadeirantes"
   wheelmap:
     footer:
       a_project_of: "Um projeto de"
@@ -361,9 +327,8 @@ pt_BR:
       title: "Wheelmap - Encontre lugares acessíveis a cadeirantes"
     what_is:
       fully_accessible: "Entrada e todos os ambientes sem degraus, com banheiro acessível se houver."
-      limited_accessible: "Desnível na entrada inferior a 7 cm; ambientes mais importantes acessíveis."
       not_accessible: "Entrada com degraus altos ou ambientes importantes não acessíveis."
-      unknown_accessible: "Ajude avaliando estes lugares!"
+      unknown_accessible: "Ajude marcando lugares!"
   will_paginate:
     next_label: "Próximo &#8594;"
     page_entries_info:

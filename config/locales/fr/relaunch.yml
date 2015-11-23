@@ -9,7 +9,7 @@ fr:
         phone: Téléphone
         note: Note
         address_street: Rue
-        address_housenumber: Numéro civique
+        address_housenumber: Numéro de maison
         address_postcode: Code postal
         address_city: Ville
   faq:
@@ -73,9 +73,8 @@ fr:
           description: Découvrez si ce lieu est accessible en fauteuil roulant sur Wheelmap.org. Ou ajoutez des informations et des photos à ce lieu.
           title: 'Ce lieu se trouve sur Wheelmap.org : %{name}'
       share:
-        email: 'Courriel :'
+        email: Courriel
         facebook: Facebook
-        text: 'J''ai trouvé ce lieu sur Wheelmap.org : %{name}'
         twitter: Twitter
   search:
     index:
@@ -94,7 +93,6 @@ fr:
           one: '%{count} résultat :'
           other: '%{count} résultats :'
     timeout:
-      headline: Oh, notre faute
       info: Notre service de recherche était temporairement indisponible.
       repeat_search: Ressayer la recherche
   users:
@@ -105,3 +103,6 @@ fr:
         title: album de photos
       edit:
         title: Profil
+      widget:
+        legends:
+          settings: Paramètres

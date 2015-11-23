@@ -73,9 +73,8 @@ ru:
           description: Узнайте, доступно ли это место для колясочников на Wheelmap.org. Или добавьте дополнительную информацию и фотографии места.
           title: 'Это место на Wheelmap.org: %{name}'
       share:
-        email: Эл. почта
+        email: Адрес электронной почты
         facebook: Facebook
-        text: 'Я нашел это место на Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -96,14 +95,12 @@ ru:
           many: '%{count} результатов:'
           other: '%{count} результатов:'
     timeout:
-      headline: Ой, наша ошибка
       info: 'К сожалению, поиск временно не доступнен '
       repeat_search: Повторить поиск
   users:
     profile:
       newsletter:
         title: Подписаться на обновления
-        text: Будьте в курсе с бюллетенем Wheelmap. Не беспокойтесь, мы не будем рассылать вам спам. Вы услышите от нас максимум раз в месяц.
         label: Да, держите меня в курсе о новостях Wheelmap.
       show:
         title: Обзор
@@ -123,11 +120,6 @@ ru:
             few: 'добавили %{count} места'
             many: 'добавили %{count} мест'
             other: 'добавили %{count} мест'
-          pois_edited:
-            one: 'отредактирвовали %{count} место'
-            few: 'отредактирвовали %{count} места'
-            many: 'отредактирвовали %{count} мест'
-            other: 'отредактирвовали %{count} мест'
           photos_uploaded:
             one: 'загрузили %{count} фото'
             few: 'загрузили %{count} фото'
@@ -135,8 +127,10 @@ ru:
             other: 'загрузили %{count} фото'
       photos:
         title: Фото
-        empty: Вы ещё не загружали фото.
       edit:
         title: Профиль
         legends:
           user_data: Информация о вашем аккаунте
+      widget:
+        legends:
+          settings: Настройки

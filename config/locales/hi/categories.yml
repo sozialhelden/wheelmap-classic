@@ -7,9 +7,6 @@ hi:
       government: सरकार
       health: स्वास्थ
       leisure: अवकाश, मस्ती
-      misc: विविध, वगैरह
-      money_post: "बैंक पोस्ट"
-      public_transfer: "सार्वजनिक हस्तांतरण\n"
       shopping: शॅापिंग, खरीददारी
       sport: खेल
       tourism: पर्यटन
@@ -44,9 +41,7 @@ hi:
         embassy: दूतावास
         police: पुलिस
         public_building: "सार्वजनिक बिल्डिंग"
-        townhall: टाउन हॉल
       health:
-        doctors: चिकित्सक, डॅाक्टर
         hearing_aids: "हियरिंग एड डीलर,\nसुनने वाली मशीन के डीलर"
         hospital: अस्पताल
         medical_supply: "चिकित्सा का सामान"
@@ -57,7 +52,6 @@ hi:
         arena: अखाड़ा, मैदान
         brothel: रण्डी खाना, कोठा,
         cinema: सिनेमा,
-        community_center: "सामुदायिक केन्द्र"
         gallery: गैलरी
         nightclub: नाइटक्लब
         playground: खेल का मैदान
@@ -80,7 +74,6 @@ hi:
         aerodrome: हवाई अड्डा
         bicycle_parking: "साइकिल पार्किंग"
         bicycle_rental: "साइकल किराए पर"
-        boatyard: नावों का यार्ड
         bus_station: "बस अड्डा"
         bus_stop: "बस स्टॅाप"
         cable_car: "केबल कार"
@@ -107,7 +100,6 @@ hi:
         butcher: कसाई
         car_repair: "कार की मरम्मत"
         car_shop: " कार की दुकान"
-        chemist: केमिस्ट, दवाई की दुकान
         clothes: कपड़े, वस्त्र
         computer: कंप्यूटर
         convenience: सुविधा
@@ -117,7 +109,6 @@ hi:
         electronics: इलेक्ट्रॅानिक्स
         florist: फूलों की दुकान
         furniture: फर्नीचर
-        garden_centre: "बगीचे के बीच"
         hairdresser: नाई
         hardware: हार्डवेयर
         kiosk: गुमटी, गाडा, खोमचा

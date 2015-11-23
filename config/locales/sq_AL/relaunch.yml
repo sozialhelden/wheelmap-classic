@@ -70,9 +70,8 @@ sq_AL:
           description: Zbulo nëse ky vend është i aksesueshëm në karrige me rrota në Wheelmap.org. Ose shto informacion të mëtejshëm dhe foto të vendit.
           title: 'Ky vend është në Wheelmap.org: %{name}'
       share:
-        email: E-mail
+        email: Email
         facebook: Facebook
-        text: 'E kam gjetur këtë vend në Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -90,7 +89,6 @@ sq_AL:
           one: '%{count} rezultat:'
           other: '%{count} rezultate:'
     timeout:
-      headline: Oh, gabimi jonë
       info: Shërbimi jonë i kërkimit ishte përkohësisht jo i disponueshëm.
       repeat_search: Riprovo kërkimin
   users:
@@ -101,3 +99,6 @@ sq_AL:
         title: Foto
       edit:
         title: Profil
+      widget:
+        legends:
+          settings: Rregullime

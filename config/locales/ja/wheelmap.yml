@@ -8,7 +8,7 @@ ja:
     node:
       create: "新しい場所を追加"
       edit: "場所を編集"
-    root: wheelmap
+    root: Wheelmap
   common:
     close: 閉じる
     skip: スキップ
@@ -16,28 +16,21 @@ ja:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "承認してください"
       already_confirmed: "は既に確認済みです"
-      blank: "値を入力してください"
       confirmation: "確認が一致しません"
-      empty: "値を入力してください"
       equal_to: "正確に%{count} でなければなりません"
-      even: "偶数でなければなりません"
       exclusion: "使用されていません"
       expired: "有効期限が切れています、新しくリクエストしてください"
       greater_than: "%{count}より大きくなければなりません"
-      greater_than_or_equal_to: "%{count}以上でなければなりません"
       inclusion: "値が正しくありません"
       invalid: "正しくありません"
       less_than: "%{count} より小さくなければなりません"
-      less_than_or_equal_to: "%{count} 以下でなければなりません"
       not_a_number: "は数字ではありません"
       not_an_integer: "整数でなければなりません"
       not_found: "は見つかりませんでした"
       not_locked: "ロックされませんでした"
       not_saved:
         other: "%{resource} の保存時に %{count} 個のエラーが発生しました:"
-      odd: "奇数でなければなりません"
       taken: "既に取得されています"
       too_long: "が長すぎます(%{count} 文字より多すぎてはいけません)"
       too_short: "が短かすぎます(%{count} 文字より少なすぎてはいけません)"
@@ -60,12 +53,11 @@ ja:
         notice: "画像は削除されました。"
   form:
     show_fully_accessible_places: "車椅子可"
-    show_limited_accessible_places: "車椅子一部可"
-    show_places_without_status: "不明な状態"
-    show_unaccessible_places: "車椅子不可"
+    show_limited_accessible_places: "部分的に車椅子でのアクセス可能です"
+    show_places_without_status: "不明なステータス"
+    show_unaccessible_places: "車椅子利用不可"
   formtastic:
     hints:
-      email: "あなたの住所は厳重に取扱い、スパムメールを送ったりしないことをお約束します！"
       lat: "地図上のマーカーを正しい位置に移動"
       osm_username: "まだメンバーではありませんか？<a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">今すぐOpenstreetmap のアカウントを作成</a> "
       password: "(変更しない場合は空白のまま)"
@@ -74,15 +66,12 @@ ja:
       category: "カテゴリ:"
       centralkey: "中央キー："
       city: "都市:"
-      create: "場所を作成"
       email: Eメール
       finish: 終了
       housenumber: "番地:"
       lat: 緯度
       lon: 経度
       name: "名前:"
-      osm_password: "OSMパスワード"
-      osm_username: "OSMアカウント"
       password: パスワード
       password_confirmation: "パスワード再入力"
       phone: "電話:"
@@ -96,7 +85,7 @@ ja:
       website: "ウェブサイト"
       wheelchair: "車椅子のアクセシビリティは？"
       wheelchair_description: "アクセシビリティについてのコメント:"
-      wheelchair_toilet: "車椅子用浴室"
+      wheelchair_toilet: "トイレへの車椅子アクセシビリティ:"
     titles:
       basic: "基本データ"
       optional: "詳細情報 <span class=\"addition\">(全ての項目はオプションです)</span> "
@@ -121,14 +110,12 @@ ja:
       profile: プロフィール
       suggestions: 提案
       what_is_barrier_free: "\"車椅子で行ける(アクセシブル)\"とは？"
-      what_is_wheelmap: "wheelmapとは？"
     searchbar:
       add_place: "別の場所を追加"
       find: 探す
       placeholder: "場所を探す"
       title_add_place: "今すぐこの位置に新しい場所を追加！"
     tagline: "Wheelmap ロゴ"
-    title: "Wheelmap - 車椅子で行ける場所を見つけよう "
   helpers:
     select:
       prompt: "選んでください"
@@ -149,27 +136,22 @@ ja:
           upgrade: "ブラウザを更新"
         warning:
           headline: "ごめんなさい！"
-          message: "Internet Explorerをお使いのようですね。Wheelmapを正しく使うには標準的な動作をするブラウザが必要です。Firefox, Chrome, Safari または Opera をお使いください。"
       link:
         node:
           create: "新しい場所を追加"
       popup:
         form:
-          limited: "車椅子一部可"
-          'no': "車椅子不可"
+          limited: "部分的に車椅子でのアクセス可能です"
+          'no': "車椅子利用不可"
           save: 保存
-          unknown: "不明"
-          'yes': "車椅子可"
+          unknown: "不明なステータス"
+          'yes': "車椅子通行可"
         help: "車椅子で行けますか？ (ヘルプ)"
         more: "詳細 ..."
   how?: やり方は？
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "%{city} 内の、全ての制限付きの車椅子通行可能な %{type} (%{count}件)"
-        'no':
-          headline: "%{city}内の全ての車椅子以外の通行 %{type} (%{count}件)"
         unknown:
           headline: "%{city} 内の全 %{type} の不明な車椅子の状態 (%{count}件)"
         'yes':
@@ -196,7 +178,6 @@ ja:
       link:
         large_map: "&laquo; キャンセル"
     errors:
-      default: "おっと、何かがおかしいようです。この問題については連絡を受け付けました"
       not_authorized: "申し訳ありません、認証に失敗しました"
       not_available: "申し訳ありません、このページは一時的に利用できません。"
       not_existent: "申し訳ありません、この場所は既に利用できなくなっています。"
@@ -222,7 +203,6 @@ ja:
         large_map: 拡大
         listing: "%{city} 内のtyp '%{type}' の全ての場所"
         upload: "画像をアップロード"
-      more_data_from: "この場所のはもっとデータがあります、チェック："
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -258,12 +238,6 @@ ja:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "あなたのアカウントをOpenStreetMapアカウントと連携させるとwheelmap.orgで場所を作成したり変更したりすることができます。"
-    callback:
-      notice: "あなたのwheelmapアカウントは現在OpenStreetMapアカウント%{user}と連携しています。"
   or: or
   place:
     other: "%{count} 個の場所"
@@ -288,7 +262,6 @@ ja:
     step1: "知っている場所をクリック"
     step2: "マークして保存をクリック"
     step3: "そうです！登録不要です。"
-    what_is_wheelmap: "Wheelmap とは？"
   statistics: 統計
   support:
     array:
@@ -309,10 +282,6 @@ ja:
     'no': "車椅子で利用不可のトイレ"
     unknown: "車椅子での利用可能か不明のトイレ"
     'yes': "車椅子で利用可能のトイレ"
-    what_is:
-      'no': "入口の内幅は少なくとも90cm、空きスペースは少なくとも150 X150 cm、車椅子の高さのトイレ、握り棒、手が届く手洗器"
-      'yes': "入口の内幅は少なくとも90cm、空きスペースは少なくとも150 X150 cm、車椅子の高さのトイレ、握り棒、手が届く手洗器"
-      unknown: "トイレの情報について教えてください！"
   user_sessions:
     create:
       activation:
@@ -323,7 +292,6 @@ ja:
     destroy:
       notice: "さよなら、またお越しください！"
     new:
-      email: "Eメールアドレス"
       login: "ログイン"
       login_with_twitter: "Twitterでログイン"
       password: パスワード
@@ -332,16 +300,15 @@ ja:
     after_signup_edit:
       welcome:
         headline: "ほぼ終了です！Wheelmapアカウントのサインアップはここで終わりです。"
-        set_password_for_mobile: "OpenStreetMap への登録が完了しました。\nあなたのwheelmap アカウント用のメールアドレスとパスワードを選んだら設定完了です！iPhoneまたはAndroid 向けのWheelmapアプリにログインする時にこのメールアドレスとパスワードが必要になります。"
         text: "あなたと連絡を取るにはどうしたら良いですか？この情報はあとからあなたのプロファイル欄で変更できます。"
     edit:
       headline:
         your_images: "あなたのアップロード画像"
   wheelchairstatus:
-    limited: "車椅子利用一部可"
+    limited: "部分的に車椅子でのアクセス可能です"
     'no': "車椅子利用不可"
-    unknown: "車椅子利用不明"
-    'yes': "完全に車椅子利用可"
+    unknown: "不明なステータス"
+    'yes': "車椅子通行可"
   wheelmap:
     footer:
       a_project_of: "プロジェクト運営："
@@ -356,9 +323,8 @@ ja:
       title: "Wheelmap - 車椅子で行ける場所を見つけよう"
     what_is:
       fully_accessible: "入口には段差が無い、全ての部屋に段差が無い、車椅子で無理なくトイレに行ける"
-      limited_accessible: "入口に段差がある(最大でも高さ7cmまで)、たいていの部屋には段差が無い、車椅子でトイレに行けない"
       not_accessible: "入口の段差が高いか複数あり、部屋に入れない"
-      unknown_accessible: "場所をマークして手助けしてください！"
+      unknown_accessible: "場所に印をつけることで助けてください。"
   will_paginate:
     next_label: "次へ &#8594"
     page_entries_info:

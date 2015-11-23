@@ -6,9 +6,9 @@ nl:
       notice: "Je moet inloggen om de pagina te zien."
   breadcrumbs:
     node:
-      create: "Voeg een nieuwe plaats toe"
+      create: "Een nieuwe locatie toevoegen"
       edit: "Bewerk plaats"
-    root: wheelmap
+    root: Wheelmap
   common:
     close: sluiten
     skip: Overslaan
@@ -16,21 +16,15 @@ nl:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "Moet geaccepteerd worden."
       already_confirmed: "Was al bevestigd, alsjeblieft probeer in te loggen."
-      blank: "Moet ingevuld worden"
       confirmation: "Past niet bij de bevestiging"
-      empty: "Moet ingevlud worden"
       equal_to: "Moet precies %{count} zijn"
-      even: "moet gelijk zijn"
       exclusion: "is gereserveerd"
       expired: "Is verlopen, alsjeblieft vraag een nieuwe aan"
       greater_than: "moet groter dan %{count} zijn"
-      greater_than_or_equal_to: "Moet groter of gelijk zijn dan %{count}"
       inclusion: "niet geldig waard"
       invalid: "niet geldig"
       less_than: "moet minder zijn dan %{count}"
-      less_than_or_equal_to: "moet minder zijn dan of gelijk zijn met %{count}"
       not_a_number: "is geen numer"
       not_an_integer: "moet een gehele getal zijn"
       not_found: "niet gevonden"
@@ -38,7 +32,6 @@ nl:
       not_saved:
         one: "Een fout verbied het opslaan van  %{resource}:"
         other: "%{count} fouten verbieden op te slaan %{resource}:"
-      odd: "moet oneven zijn"
       taken: "werd al volbracht"
       too_long: "is te lang (niet meer dan %{count} letters)\n"
       too_short: "is te kort (niet minder dan %{count} letters)\n"
@@ -62,9 +55,9 @@ nl:
         notice: "Beeld werd succesvol verwijderd"
   form:
     show_fully_accessible_places: "rolstoel toegankelijk"
-    show_limited_accessible_places: "deels rolstoel toegankelijk"
-    show_places_without_status: "onbekende status"
-    show_unaccessible_places: "niet rolstoel toegankelijk"
+    show_limited_accessible_places: "Gedeeltelijk rolstoeltoegankelijk"
+    show_places_without_status: "Onbekende status"
+    show_unaccessible_places: "Niet rolstoeltoegankelijk"
   formtastic:
     hints:
       lat: "Beweeg de marker op de kaart in de correcte positie"
@@ -75,15 +68,12 @@ nl:
       category: "Categorie:"
       centralkey: "Centrale sluitel"
       city: "Stad:"
-      create: "Creëer plaats"
       email: E-mail
       finish: Einde
       housenumber: "Nee:"
       lat: Breedtegraad
       lon: Lengtegraad
       name: "Naam:"
-      osm_password: "OSM wachtwoord"
-      osm_username: "OSM account naam"
       password: Wachtwoord
       password_confirmation: "Herhaal wachtwoord"
       phone: "Telefoon:"
@@ -97,6 +87,7 @@ nl:
       website: "Internetpagina:"
       wheelchair: "Rolstoel toegankelijkheid?"
       wheelchair_description: "Toegankelijkheid commentaar:"
+      wheelchair_toilet: "rolstoeltoegankelijk toilet"
     titles:
       basic: "Basic data"
       optional: "Meer informatie <span class=\"addition\">(all fields are optional)</span>"
@@ -121,14 +112,12 @@ nl:
       profile: Profiel
       suggestions: Adviezen
       what_is_barrier_free: "Wat betekend \"wheelchair accessible\"?"
-      what_is_wheelmap: "Wat is wheelmap?"
     searchbar:
       add_place: "Voeg een andere plaats toe"
       find: Vind
       placeholder: "Bijvoorbeeld Sunset Boulevard L.A. of Brandenburg Gate Berlin"
       title_add_place: "Voeg nu een nieuwe plaats op deze positie toe!"
     tagline: "Wheelmap logo"
-    title: "Vind rolstoel toegangelijke plaatsen"
   helpers:
     select:
       prompt: "Kies alsjeblieft"
@@ -149,27 +138,22 @@ nl:
           upgrade: "Actualiseer Browser"
         warning:
           headline: "Wij excuseren!"
-          message: "Je gebruikt blijkbaar Internet Explorer. Wheelmap heeft een standart-passend browser nodig om optimaal te werken. Alsjeblieft gebruik Firefox, Chrome, Safari or Opera"
       link:
         node:
-          create: "Voeg een nieuwe plaats toe"
+          create: "Een nieuwe locatie toevoegen"
       popup:
         form:
-          limited: "deels rolstoel toegankelijk"
-          'no': "niet rolstoel toegangelijk"
+          limited: "Gedeeltelijk rolstoeltoegankelijk"
+          'no': "Niet rolstoeltoegankelijk"
           save: Actualiseren
-          unknown: "onbekende status"
-          'yes': "rolstoel toegankelijk"
+          unknown: "Onbekende status"
+          'yes': "rolstoeltoegankelijk"
         help: "rolstoel toegankelijk? (Hulp)"
         more: "meer..."
   how?: Hoe?
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "Beperkt rolstoel toegangelijk %{type} in %{city} (%{count})"
-        'no':
-          headline: "Alles niet-rolstoel toegankelijk %{type} in %{city} (%{count})"
         unknown:
           headline: "All %{type} in %{city} met onbekende rolstoel status (%{count})"
         'yes':
@@ -196,7 +180,6 @@ nl:
       link:
         large_map: "&laquo; Annuleer"
     errors:
-      default: "Oops, er ging iets mis. Maar werden erover geïnformeerd!"
       not_authorized: "Excuus, authentificatie faalde"
       not_available: "Excuus, de pagina is tijdelijk niet beschikkbar."
       not_existent: "Excuus, de plaats is niet meer beschikbaar."
@@ -222,7 +205,6 @@ nl:
         large_map: Vergroten
         listing: "Alle vergelijkbare plaatsen '%{type}' in %{city}\n"
         upload: "Upload beeld"
-      more_data_from: "Er is meer informatie over deze plaats, gecontroleerd door:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -259,12 +241,6 @@ nl:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "Je moet je account met open street map verbinden, dan kan je plaatsen bij wheelmap.org toevoegen of veranderen. "
-    callback:
-      notice: "Jouw wheelmap account is nu verbonden met de OpenStreetMap account %{user}.\n"
   or: of
   place:
     one: "%{count} plaats"
@@ -290,7 +266,6 @@ nl:
     step1: "Klik op een plaats die je kent"
     step2: "Markeer het en klik op opslaan."
     step3: "Gelukt! Registreren is niet nodig."
-    what_is_wheelmap: "Wat is wheelmap?"
   statistics: Statistieken
   support:
     array:
@@ -321,7 +296,6 @@ nl:
     destroy:
       notice: "Tot zien en tot straks!"
     new:
-      email: "E-mail adres"
       login: "Log in"
       login_with_twitter: "Log in met Twitter"
       password: Wachtwoord
@@ -330,16 +304,15 @@ nl:
     after_signup_edit:
       welcome:
         headline: "Je bent er bijna! Beëindig je registratie voor je Wheelmap account hier:"
-        set_password_for_mobile: "Je registratie bij OpenStreetMap is geslaagd.\nKies nu je email adres en je wachtwoord voor je Wheelmap account en dan ben je erbij! Je hebt deze email adres en het wachtword nodig om bij de Wheelmap app for iPone of Android in te loggen."
         text: "Hoe kunnen wij contact met je opnemen? Je kan deze informatie later in je profiel veranderen."
     edit:
       headline:
         your_images: "Jouw geupload beelden"
   wheelchairstatus:
-    limited: "deels rolstoel toegankelijk"
-    'no': "niet rolstoel toegankelijk"
-    unknown: "onbekende status"
-    'yes': "rolstoel toegankelijk"
+    limited: "Gedeeltelijk rolstoeltoegankelijk"
+    'no': "Niet rolstoeltoegankelijk"
+    unknown: "Onbekende status"
+    'yes': "rolstoeltoegankelijk"
   wheelmap:
     footer:
       a_project_of: "Een project van"
@@ -354,9 +327,8 @@ nl:
       title: "Wheelmap - vind rolstoel toegangelijke plaatsen"
     what_is:
       fully_accessible: "Ingang drempelvrij, alle ruimtes drempelvrij, gehandicaptentoilet aanwezig  "
-      limited_accessible: "Ingang heeft een drempel (maximaal hoogte 7 cm), bijna alle kamers drempelvrij, toilet niet toegankelijk   "
       not_accessible: "Ingang heeft hoge of meerdere treden, kamers zijn niet toegankelijk"
-      unknown_accessible: "Hulp mee en markeer plaatsen!"
+      unknown_accessible: "Help mee en markeer locaties!"
   will_paginate:
     next_label: "Volgende &#8594;"
     page_entries_info:

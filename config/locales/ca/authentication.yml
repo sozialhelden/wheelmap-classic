@@ -2,12 +2,9 @@ ca:
   devise:
     confirmations:
       confirmed: "El teu correu electrònic s'ha confirmat correctament."
-      link: "No has rebut les instruccions de confirmació?"
       send_instructions: "Rebràs un correu en pocs minuts al correu electrònic que conté un enllaç de confirmació."
-      send_paranoid_instructions: "Si el teu compte existeix, de seguida rebràs un correu electrònic amb instruccions sobre com confirmar-lo."
     destroy:
       confirm: "Estàs segur?"
-      headline: "Esborrar compte"
       link: "Esborrar-lo ara"
     edit:
       form:
@@ -15,102 +12,90 @@ ca:
           current_password: "Contrasenya actual <i>(la necessitem per confirmar els canvis)</i>"
           email: Correu electrònic
           password: "Contrasenya <i>(deixa-ho en blanc si no vols canviar-la)</i>"
-          password_confirmation: "Repetiu la contrasenya"
-        submit: "Desa els canvis"
-      headline: "Edita el compte"
+          password_confirmation: "Repeteix la contrasenya"
+        submit: "Desar canvis"
+      headline: "Editar compte"
     failure:
-      already_authenticated: "Ja heu iniciat la sessió."
-      inactive: "El vostre compte encara no s'ha activat."
+      already_authenticated: "Ja has entrat."
       invalid: "Correu electrònic o contrasenya no vàlid"
       invalid_token: "Ha fallat l'autenticació"
-      locked: "El vostre compte està bloquejat"
-      timeout: "La vostra sessió ha vençut, si us plau inicieu-la altra vegada per poder continuar."
-      unauthenticated: "Necessiteu iniciar una sessió o registrar-vos abans de continuar"
-      unconfirmed: "Necessiteu confirmar el vostre compte abans de continuar."
+      locked: "El teu compte està bloquejat"
+      unauthenticated: "Necessites entrar o registrar-te abans de continuar"
+      unconfirmed: "Necessites confirmar el compte abans de continuar."
     mailer:
       confirmation_instructions:
-        landing_page: "Si us plau, feu clic a l'enllaç que us enviarem al vostre correu electrònic. Si no rebéssiu el nostre correu assegureu-vos primer de què no ha quedat amagat a la carpeta del correu brossa, si no és així, torneu a la pàgina de registre i proveu-ho altra vegada."
-        subject: "Un pas més per activar el vostre compte"
+        subject: "Un pas més per activar el compte"
       reset_password_instructions:
         subject: "Instruccions per reiniciar la contrasenya"
-      unlock_instructions:
-        subject: "Instruccions de desbloqueig"
     mandatory: "* Es requereix"
     omniauth_callbacks:
       failure: "L'autorització amb %{kind} ha fallat. Error: \"%{reason}\".\n"
-      permission_missing: "No tens els permisos necessaris"
-      success: "S'ha iniciat correctament la sessió amb %{kind}."
+      success: "Has entrat correctament amb %{kind}."
     password_recovery:
       form:
         labels:
           email: Correu electrònic
         submit: "Reinicia la contrasenya"
-      headline: "Heu oblidat la contrasenya?"
+      headline: "Has oblidat la contrasenya?"
     password_reset:
       email:
+        comment: "Si no has demanat un reinici de contrasenya ignora aquest missatge.<br/>La teva contrasenya no canviarà fins que no facis clic a l'enllaç de sobre i la canviïs tu."
         headline: "Benvingut %{email}"
-        link: "Canvia la contrasenya"
+        link: "Canviar contrasenya"
       form:
         labels:
           password: "Contrasenya nova"
-          password_confirmation: "Repetiu la contrasenya"
+          password_confirmation: "Repeteix la contrasenya"
         submit: "Reinicia la contrasenya"
       headline: "Reinicia la contrasenya"
     passwords:
-      link: "Heu oblidat la contrasenya?"
-      send_instructions: "Rebreu un correu amb les instruccions sobre com reiniciar la vostra contrasenya en pocs minuts"
-      send_paranoid_instructions: "Si el vostre compte existeix, rebreu un correu electrònic amb les instruccions per reiniciar la vostra contrasenya en pocs minuts"
-      updated: "La vostra contrasenya s'ha canviat correctament i ara heu iniciat la sessió"
-      updated_not_active: "La vostra contrasenya s'ha canviat correctament"
+      link: "Has oblidat la contrasenya?"
+      updated: "La teva contrasenya s'ha canviat correctament i ara has entrat"
+      updated_not_active: "La teva contrasenya s'ha canviat correctament"
     registrations:
+      destroyed: "Adéu. El compte s'ha cancel·lat correctament.Esperem tornar-te a veure aviat."
+      inactive_signed_up: "T'has registrat correctament però no pots entrar. Motiu: \"%{reason}\""
       link: "Registra't"
       reasons:
         inactive: inactiu
         locked: bloquejat
         unconfirmed: no confirmat
-      signed_up: "Us heu registrat correctament. Rebreu una confirmació per correu electrònic."
+      updated: "Has actualitzat el teu compte correctament."
     sessions:
-      inactive: "El vostre compte encara no s'ha activat"
-      invalid: "Correu electrònic o contrasenya no vàlid"
+      invalid: "Correu electrònic o contrasenya no vàlida"
       invalid_token: "Ha fallat l'autenticació"
-      link: "Inicia la sessió"
-      locked: "El vostre compte està bloquejat"
+      link: "Entra"
+      locked: "El teu compte està bloquejat"
       new:
-        no_osm_account: "No teniu compte a OpenStreetMap?"
-        osm_promo_text: "Wheelmap es basa en les dades geogràfiques d'OpenStreetMap (OSM).\nOpenStreetMap és un mapa lliure del món creat per gent com vós.\nSe l'anomena la Viquipèdia dels mapes. Per poder editar llocs o crear-ne de nous, us caldrà tenir un compte a OpenStreetMap i haureu d'iniciar-hi la sessió. "
-        promo_text_thank_you: "Moltes gràcies pel vostre suport!"
-        sign_in_with: "Inicia la sessió amb %{kind}"
-        sign_up_with_osm: "Registreu-vos ara."
-      signed_in: "Sessió iniciada correctament"
+        no_osm_account: "No tens compte a OpenStreetMap?"
+        promo_text_thank_you: "Moltes gràcies pel teu suport."
+        sign_in_with: "Entra amb %{kind}"
+        sign_up_with_osm: "Registra't ara"
+      signed_in: "Has entrat correctament"
       signed_out: "Has sortit correctament"
-      timeout: "La vostra sessió ha vençut, torneu a iniciar-la per continuar."
-      unauthenticated: "Cal que inicieu la sessió o us registreu abans de continuar"
-      unconfirmed: "Necessiteu confirmar el vostre compte abans de continuar"
+      unauthenticated: "Necessites entrar o registrar-te abans de continuar"
+      unconfirmed: "Necessites confirmar el compte abans de continuar."
     sign_in:
       form:
         labels:
           email: Correu electrònic
           password: Contrasenya
           remember_me: "Continua dins"
-        submit: "Inicia la sessió"
-      headline: "Inicieu la sessió"
+        submit: "Entrar"
+      headline: "Entrar"
     sign_out:
-      headline: "Finalitza la sessió"
+      headline: "Sortir"
     sign_up:
       email:
-        confirm_my_account: "Confirma el meu compte"
-        please_confirm: "Podeu confirmar el vostre compte a través del següent enllaç:"
+        confirm_my_account: "Confirmar el meu compte"
+        please_confirm: "Pots confirmar el compte a través del següent enllaç:"
         welcome: "Benvingut %{email}!"
       form:
         labels:
           email: Correu electrònic
           password: Contrasenya
           password_confirmation: "Repeteix la contrasenya"
-          wants_newsletter: "Sí, mantingueu-me informat de Wheelmap però, si us plau, no més d'una vegada al mes."
-        submit: "Registreu-vos"
-      headline: "Registreu-vos"
+        submit: "Registra't"
+      headline: "Registra't"
     unlocks:
-      link: "No vau rebre les instruccions de desbloqueig?"
-      send_instructions: "Rebreu un correu electrònic amb les instruccions sobre com desbloquejar el vostre compte en pocs minuts."
-      send_paranoid_instructions: "Si el vostre compte existeix, rebreu un correu amb les instruccions sobre com desbloquejar el vostre compte en pocs minuts"
-      unlocked: "El vostre compte ha estat desbloquejat correctament. Ara heu iniciat la sessió."
+      unlocked: "El compte ha estat desbloquejat correctament. Ara has entrat."

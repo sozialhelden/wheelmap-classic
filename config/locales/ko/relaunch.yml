@@ -18,6 +18,7 @@ ko:
       edit: 편집
     show:
       share:
+        email: 이메일
         facebook: 페이스북
         twitter: 트위터
   users:
@@ -28,3 +29,6 @@ ko:
         title: 사진첩
       edit:
         title: 프로필
+      widget:
+        legends:
+          settings: 설정

@@ -1,4 +1,8 @@
 lv:
+  nodes:
+    show:
+      share:
+        email: E-pasts
   users:
     profile:
       newsletter:

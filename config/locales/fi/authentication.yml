@@ -9,6 +9,7 @@ fi:
       form:
         labels:
           email: Sähköposti
+      headline: "Unohditko salasanasi?"
     passwords:
       link: "Unohditko salasanasi?"
     registrations:

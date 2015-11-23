@@ -6,9 +6,7 @@ pt:
       food: Comida
       government: Governo
       leisure: Prazer
-      misc: outros
-      money_post: "Banco & Correios"
-      public_transfer: "Trnsportes Públicos"
+      misc: Outros
       shopping: Shopping
       sport: Desporto
       tourism: Turismo
@@ -44,7 +42,6 @@ pt:
         embassy: Embaixada
         public_building: "Edificio público"
       health:
-        doctors: Doutores
         hospital: Hospital
         pharmacy: Farmácia
         veterinary: Veterenário
@@ -69,7 +66,6 @@ pt:
         aerodrome: Aeroporto
         bicycle_parking: "Parque para bicicletas"
         bicycle_rental: "Aluguer de bicicletas"
-        boatyard: 'Lugar onde barcos são construídos e guardados '
         bus_station: "Estação de Autocarros"
         bus_stop: "Estação de Autocarros"
         cable_car: "Teleférico"
@@ -104,7 +100,6 @@ pt:
         electronics: Eletrónica
         florist: Florista
         furniture: Móvéis
-        garden_centre: "Centro de jardinagem"
         hairdresser: Cabeleireiro
         hardware: Hardware
         kiosk: Quisque

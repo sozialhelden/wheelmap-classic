@@ -7,9 +7,6 @@ cs:
       government: Vláda
       health: Zdraví
       leisure: Volný čas
-      misc: Různé
-      money_post: "Finančnictví"
-      public_transfer: "Veřejná doprava"
       shopping: Nákupy
       sport: Sport
       tourism: Cestování
@@ -49,10 +46,8 @@ cs:
         government: "Vládní agentura"
         police: Policie
         public_building: "Veřejná budova"
-        townhall: Radnice
       health:
         dentist: Zubař
-        doctors: Doktor
         hearing_aids: "Dodavatel naslouchacích pomůcek"
         hospital: Nemocnice
         medical_supply: "Medicínské vybavení"
@@ -64,7 +59,6 @@ cs:
         brothel: Nevěstinec
         casino: Kasino
         cinema: Kino
-        community_center: "Komunitní centrum"
         gallery: Galerie
         nightclub: Noční klub
         playground: Hřiště
@@ -89,7 +83,6 @@ cs:
         aerodrome: Letiště
         bicycle_parking: "Stojan na kola"
         bicycle_rental: "Půjčovna kol"
-        boatyard: Loděnice
         bus_station: "Autobusová stanice"
         bus_stop: "Zastávka autobusu"
         cable_car: "Lanovka"
@@ -118,7 +111,6 @@ cs:
         butcher: Řeznictví
         car_repair: "Autoservis"
         car_shop: "Automobily"
-        chemist: Lékárna
         clothes: Oblečení
         computer: Počítače
         confectionery: "Cukrárna"
@@ -132,7 +124,6 @@ cs:
         farm_shop: "Farmářský obchod"
         florist: Květinářství
         furniture: Nábytek
-        garden_centre: "Zahradní centrum"
         gift: "Suvenýry"
         hairdresser: Kadeřnictví
         hardware: Železářství

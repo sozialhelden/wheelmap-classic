@@ -8,8 +8,6 @@ fr:
       health: Santé
       leisure: Loisirs
       misc: Divers
-      money_post: "Banque"
-      public_transfer: "Transport en commun"
       shopping: Magasinage
       sport: Sport
       tourism: Tourisme
@@ -49,10 +47,8 @@ fr:
         government: "Agence gouvernementale"
         police: Police
         public_building: "Bâtiment ouvert au public"
-        townhall: Hôtel de ville
       health:
         dentist: Dentiste
-        doctors: Médecin
         hearing_aids: "Audioprothésiste"
         hospital: Hôpital
         medical_supply: "Équipement médical"
@@ -64,7 +60,6 @@ fr:
         brothel: Maison close
         casino: casino
         cinema: Cinéma
-        community_center: "Centre communautaire"
         gallery: Galerie
         nightclub: Boîte de nuit
         playground: Terrain de jeu
@@ -89,7 +84,6 @@ fr:
         aerodrome: Aéroport
         bicycle_parking: "Stationnement à vélos"
         bicycle_rental: "Location de vélos"
-        boatyard: Chantier maritime
         bus_station: "Gare routière"
         bus_stop: "Arrêt de bus"
         cable_car: "Téléphérique"
@@ -118,7 +112,6 @@ fr:
         butcher: Boucherie
         car_repair: "Réparation auto"
         car_shop: "Concessionnaire auto"
-        chemist: Droguerie
         clothes: Vêtements
         computer: Ordinateur
         confectionery: "Magasin de bonbons"
@@ -132,7 +125,6 @@ fr:
         farm_shop: "Produits fermiers"
         florist: Fleuriste
         furniture: Ameublement
-        garden_centre: "Jardinerie"
         gift: "Boutique de cadeaux"
         hairdresser: Coiffeur
         hardware: Quincaillerie

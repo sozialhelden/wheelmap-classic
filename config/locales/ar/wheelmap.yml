@@ -6,7 +6,7 @@ ar:
       notice: "لابد أن تكون مسجلا لتشاهد هذه الصفحة"
   breadcrumbs:
     node:
-      create: "إضافة مكان جديد"
+      create: "إضافة مكان جديد "
       edit: "تعديل مكان"
     root: ويل ماب
   common:
@@ -16,26 +16,19 @@ ar:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "يجب أن تقبل"
       already_confirmed: "تم التأكيد بالفعل"
-      blank: "فارغ، يرجى ملء الحقل"
       confirmation: "غير متوافق مع التأكيد"
-      empty: " يرجى ملء الحقل"
       equal_to: " %{count} يجب أن يساوي "
-      even: "يجب أن يكون العدد زوجي"
       exclusion: "محجوز"
       expired: "انتهت الصلاحية، يرجى إعادة الطلب"
       greater_than: "%{count} يجب أن يكون أكبر من "
-      greater_than_or_equal_to: "%{count} يجب أن يكون أكبر من أو يساوي "
       inclusion: "ليس خيارا مقبولا"
       invalid: "غير صالح "
       less_than: "%{count} يجب أن يكون أصغر من "
-      less_than_or_equal_to: "%{count} يجب أن يكون أصغر من أو يساوي "
       not_a_number: "ليس رقما"
       not_an_integer: "يجب أن يكون صحيحا"
       not_found: "لا يوجد"
       not_locked: "لم يكن مغلق"
-      odd: "يجب أن يكون فردي"
       taken: "غير متوفر (مستخدم)"
       too_long: "%{count} characters) أطول من اللازم (الحد الأقصى هو)"
       too_short: "%{count} أقصر من اللازم (الحد الأدنى هو )"
@@ -56,9 +49,9 @@ ar:
         notice: "تم حذف الصورة بنجاح"
   form:
     show_fully_accessible_places: "سهولة الوصول بالكرسي المتحرك"
-    show_limited_accessible_places: "إمكانية الوصول بالكرسي المتحرك ليست سهلة تماما"
-    show_places_without_status: "الوضع غير معروف"
-    show_unaccessible_places: "غير ممكن الوصول بالكرسي المتحرك"
+    show_limited_accessible_places: "كرسي متحرك في المتناول جزئيا "
+    show_places_without_status: "حالة الكرسي غير معروفة"
+    show_unaccessible_places: "لايمكن وصول الكرسي المتحرك"
   formtastic:
     hints:
       lat: "حرك المؤشر على الخريطة لتصحيح موقع"
@@ -69,15 +62,12 @@ ar:
       category: "الصنف :"
       centralkey: "المفتاح المركزي"
       city: "المدينة :"
-      create: "أضف مكاناً"
-      email: البريد الإكتروني
+      email: بريد الكتروني
       finish: انتهى
       housenumber: "الرقم :"
       lat: خط العرض
       lon: خط الطول
       name: "الإسم :"
-      osm_password: "OSM كلمة المرور"
-      osm_username: "OSM إسم الحساب"
       password: كلمة المرور
       password_confirmation: "إعادة كلمة السر"
       phone: "رقم الهاتف :"
@@ -115,14 +105,12 @@ ar:
       profile: الحساب
       suggestions: الإقتراحات
       what_is_barrier_free: "ماذا تعني هذة الجملة \"إمكانية الوصول بالكرسي المتحرك\"؟"
-      what_is_wheelmap: "تعرف على ويل ماب ؟"
     searchbar:
       add_place: "أضف مكاناً آخر"
       find: بحث
       placeholder: "سن سيت بوليڨارد، لوس أنجلوس  أو  براندن بيرڠ ،برلين"
       title_add_place: "أضف مكاناً جديداً في هذا الموقع الآن!"
     tagline: "شعار ويل ماب"
-    title: "ويل ماب - جد أماكن يسهل الوصول إليها بالكرسي المتحرك"
   helpers:
     select:
       prompt: "اختر رجاء"
@@ -143,27 +131,22 @@ ar:
           upgrade: "تحديث المتصفح"
         warning:
           headline: "نعتذر !"
-          message: "يبدو أنك تستخدم انترنت اكسبلورر، يفضل استخدام متصفح آخر : فاير فوكس،كروم ،سفاري أو اوبرا ليتوافق مع \"ويل ماب\""
       link:
         node:
-          create: "أضف مكانا جديداً"
+          create: "إضافة مكان جديد "
       popup:
         form:
-          limited: "إمكانية الوصول جزئية للكرسي المتحرك"
-          'no': "لايمكن الوصول بالكرسي المتحرك"
+          limited: "كرسي متحرك في المتناول جزئيا "
+          'no': "لايمكن وصول الكرسي المتحرك"
           save: تحديث
-          unknown: "حالة غير معروفة"
-          'yes': "سهولة الوصول للكرسي المتحرك"
+          unknown: "حالة الكرسي غير معروفة"
+          'yes': "يمكن الوصول بالكرسي المتحرك"
         help: "هل وصول الكرسي المتحرك سهل؟ (بادر بتقديم المساعدة)"
         more: "المزيد..."
   how?: كيف ؟
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "%{type} in %{city} (%{count}) إمكانية الوصول بالكرسي المتحرك محدودة"
-        'no':
-          headline: " %{type} in %{city} (%{count}) الوصول بالكرسي المتحرك غير ممكن"
         unknown:
           headline: "(%{count})إمكانية الوصول بالكرسي المتحرك غير معلومة"
         'yes':
@@ -190,7 +173,6 @@ ar:
       link:
         large_map: "&laquo;  إلغاء"
     errors:
-      default: "خطأ في العملية، تم إرسال تنبيه بذلك"
       not_authorized: "عذرا، خطأ في المصادقة"
       not_available: "عفواً، هذه الصفحة غير متوفرة حالياً"
       not_existent: "عذرا،هذا المكان لم يعد موجودا"
@@ -216,7 +198,6 @@ ar:
         large_map: تكبير
         listing: "'%{type}' in %{city} جميع الأماكن "
         upload: "تحميل الصورة"
-      more_data_from: "هناك المزيد من المعلومات  عن هذا المكان :"
       show-in-osm: '"أوبن ستريت ماب"'
     update:
       flash:
@@ -250,12 +231,6 @@ ar:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "عليك أن تقوم بربط  حسابك في \"أوبن ستريت ماب\" مع حسابك في \"ويل ماب\"  لتتمكن من إضافة وتعديل الأماكن ."
-    callback:
-      notice: "%{user} حسابك في \"ويل ماب\" مرتبط بحسابك في\" أوبن ستريت ماب \""
   or: أو
   profile:
     edit:
@@ -278,7 +253,6 @@ ar:
     step1: "قم بالنقر على المكان المطلوب"
     step2: "قم بالتحديد ثم انقر اختيار حفظ"
     step3: "لايتطلب التسجيل"
-    what_is_wheelmap: "تعرف على ويل ماب ؟"
   statistics: إحصاءات
   support:
     array:
@@ -305,7 +279,6 @@ ar:
     destroy:
       notice: " إلى اللقاء"
     new:
-      email: "عنوان البريد الإلكتروني"
       login: "تسجيل الدخول"
       login_with_twitter: "الدخول عن طريق حساب تويتر"
       password: كلمة المرور
@@ -314,16 +287,15 @@ ar:
     after_signup_edit:
       welcome:
         headline: "مرحبا بك في ويل ماب "
-        set_password_for_mobile: "لديك هاتف ذكي؟ أدخل كلمة المرور ليكون\" ويل ماب\" معك أين ماكنت."
         text: "كيف يمكننا التواصل معك؟ يمكنك تغيير هذه المعلومات لاحقا في ملفك."
     edit:
       headline:
         your_images: "الصور التي قمت بتحميلها"
   wheelchairstatus:
-    limited: "الوصول ليس سهلا تماما للكرسي المتحرك"
-    'no': "غير ممكن الوصول بالكرسي المتحرك"
-    unknown: "حالة غير معروفة"
-    'yes': "يسهل الوصول بالكرسي المتحرك"
+    limited: "كرسي متحرك في المتناول جزئيا "
+    'no': "لايمكن وصول الكرسي المتحرك"
+    unknown: "حالة الكرسي غير معروفة"
+    'yes': "يمكن الوصول بالكرسي المتحرك"
   wheelmap:
     footer:
       a_project_of: "نفذ المشروع بواسطة"
@@ -338,9 +310,8 @@ ar:
       title: "ويل ماب - ابحث عن أماكن يسهل الوصول اليها بالكرسي المتحرك"
     what_is:
       fully_accessible: "مدخل سهل بلا درجات، جميع الغرف بلا درجات، وصول سهل لدورات المياه"
-      limited_accessible: "توجد عدة درجات في المدخل ( الارتفاع الأعلى ٧ سم)، معظم الغرف لايمكن الوصول اليها بالكرسي المتحرك وكذلك دورات المياه"
       not_accessible: "مدخل شديد الانحدار أو يتكون من عدة درجات، لايمكن الوصول للغرف"
-      unknown_accessible: "يمكنك تقديم المساعدة بإضافة المزيد من الأماكن "
+      unknown_accessible: "قم بالمساعدة بتحديد الأمكنة!"
   will_paginate:
     next_label: "&#8594; بعد"
     page_entries_info:

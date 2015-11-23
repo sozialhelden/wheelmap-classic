@@ -8,8 +8,6 @@ sv:
       health: Hälsa & Sjukvård
       leisure: Fritid & Kultur
       misc: Blandat
-      money_post: "Bank & Post"
-      public_transfer: "Trafik"
       shopping: Shopping
       sport: Idrott
       tourism: Turism
@@ -49,10 +47,8 @@ sv:
         government: "Servicekontor"
         police: Polis
         public_building: "Publik byggnad"
-        townhall: Stadshus
       health:
         dentist: Tandläkare
-        doctors: Läkare
         hearing_aids: "Hörcentral"
         hospital: Sjukhus
         medical_supply: "Medicinsk utr."
@@ -64,7 +60,6 @@ sv:
         brothel: Bordell
         casino: Casino
         cinema: Bio
-        community_center: "Allaktivitetshus"
         gallery: Galleri
         nightclub: Nattklubb
         playground: Lekplats
@@ -89,7 +84,6 @@ sv:
         aerodrome: Flygplats
         bicycle_parking: "Cykelparkering"
         bicycle_rental: "Cykeluthyrning"
-        boatyard: Båtvarv
         bus_station: "Busstation"
         bus_stop: "Busshållplats"
         cable_car: "Linbana"
@@ -118,7 +112,6 @@ sv:
         butcher: Köttaffär
         car_repair: "Bilverkstad"
         car_shop: "Bilförsäljning"
-        chemist: Kosmetika
         clothes: Kläder
         computer: Datorer
         confectionery: "Godisaffär"
@@ -132,7 +125,6 @@ sv:
         farm_shop: "Lantbruksutrustning"
         florist: Blomsteraffär
         furniture: Möbler
-        garden_centre: "Plantskola"
         gift: "Presentbutik"
         hairdresser: Frisör
         hardware: Järnhandel

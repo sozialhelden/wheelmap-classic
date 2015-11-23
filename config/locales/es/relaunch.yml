@@ -9,7 +9,7 @@ es:
         phone: Teléfono
         note: Nota
         address_street: Calle
-        address_housenumber: Número
+        address_housenumber: Número de casa
         address_postcode: Código postal
         address_city: Ciudad
   faq:
@@ -75,7 +75,6 @@ es:
       share:
         email: Correo electrónico
         facebook: Facebook
-        text: 'He encontrado este lugar en Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -94,7 +93,6 @@ es:
           one: '%{count} resultado:'
           other: '%{count} resultados:'
     timeout:
-      headline: Oh, fallo nuestro
       info: Nuestro servicio de búsqueda estuvo no disponible
       repeat_search: Reintentar la búsqueda
   users:
@@ -105,3 +103,6 @@ es:
         title: Fotos
       edit:
         title: Perfil
+      widget:
+        legends:
+          settings: Ajustes

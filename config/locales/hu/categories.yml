@@ -7,9 +7,7 @@ hu:
       government: Állami hivatal
       health: Egészségügy
       leisure: Szabadidő
-      misc: Egyéb
-      money_post: "Bank"
-      public_transfer: "Tömegközlekedés"
+      misc: Egyebek
       shopping: Bevásárlás
       sport: Sport
       tourism: Turisztika
@@ -49,10 +47,8 @@ hu:
         government: "Kormányhivatal"
         police: Rendőrség
         public_building: "Középület"
-        townhall: Városháza
       health:
         dentist: Fogorvos
-        doctors: Orvosi rendelő
         hearing_aids: "Hallókészülék kereskedő"
         hospital: Kórház
         medical_supply: "Orvosi eszközök"
@@ -64,7 +60,6 @@ hu:
         brothel: Bordély
         casino: Kaszinó
         cinema: Mozi
-        community_center: "Közösségi központ"
         gallery: Galléria
         nightclub: Éjszakai bár
         playground: Játszótér
@@ -89,7 +84,6 @@ hu:
         aerodrome: Reptér
         bicycle_parking: "Bicikliparkoló"
         bicycle_rental: "Biciklikölcsönző"
-        boatyard: Hajóhangár
         bus_station: "Buszállomás"
         bus_stop: "Buszmegálló"
         cable_car: "Nagykabinos drótkötélpálya"
@@ -118,7 +112,6 @@ hu:
         butcher: Hentes
         car_repair: "Autószervíz"
         car_shop: "Autóbolt"
-        chemist: Drogéria
         clothes: Ruhabolt
         computer: Számítógépbolt
         confectionery: "Édességbolt"
@@ -132,7 +125,6 @@ hu:
         farm_shop: "Termelői bolt"
         florist: Virágüzlet
         furniture: Bútorüzlet
-        garden_centre: "Kertészeti szaküzlet"
         gift: "Ajándékbolt"
         hairdresser: Fodrászat
         hardware: Háztartási bolt

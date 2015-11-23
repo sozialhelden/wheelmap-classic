@@ -7,9 +7,7 @@ pt_PT:
       government: Governamental
       health: Saúde
       leisure: Lazer
-      misc: Outros
-      money_post: "Banco"
-      public_transfer: "Transportes públicos"
+      misc: Miscelâneos
       shopping: Lojas
       sport: Desporto
       tourism: Turismo
@@ -49,10 +47,8 @@ pt_PT:
         government: "Agência governamental"
         police: Polícia
         public_building: "Edifício público"
-        townhall: Câmara Municipal
       health:
         dentist: Dentista
-        doctors: Médicos
         hearing_aids: "Loja de aparelhos auditivos"
         hospital: Hospital
         medical_supply: "Equipamentos médicos"
@@ -64,7 +60,6 @@ pt_PT:
         brothel: Casa de prostituição
         casino: Casino
         cinema: Cinema
-        community_center: "Centro comunitário"
         gallery: Galeria
         nightclub: Discoteca
         playground: Parque infantil
@@ -89,7 +84,6 @@ pt_PT:
         aerodrome: Aeroporto
         bicycle_parking: "Estacionamento de biclicletas"
         bicycle_rental: "Aluguer de bicicletas"
-        boatyard: Estaleiro
         bus_station: "Terminal rodoviário"
         bus_stop: "Paragem de autocarros"
         cable_car: "Teleférico"
@@ -118,7 +112,6 @@ pt_PT:
         butcher: Talho
         car_repair: "Oficina automóvel"
         car_shop: "Stand automóvel"
-        chemist: Ervanária
         clothes: Loja de roupa
         computer: Loja de informática
         confectionery: "Loja de doces"
@@ -132,7 +125,6 @@ pt_PT:
         farm_shop: "Loja do produtor"
         florist: Florista
         furniture: Mobiliário
-        garden_centre: "Centro de jardinagem"
         gift: "Loja de recordações"
         hairdresser: Cabeleireiro
         hardware: Drogaria

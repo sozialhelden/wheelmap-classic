@@ -8,8 +8,6 @@ nb:
       health: Helsehjelp
       leisure: Kultur & Fritid
       misc: Diverse
-      money_post: "Bank / post"
-      public_transfer: "Offentlig transport"
       shopping: Butikker
       sport: Sport
       tourism: Turisme
@@ -45,9 +43,7 @@ nb:
         embassy: Ambassade
         police: Politi
         public_building: "Offentlig byggning"
-        townhall: Rådhus
       health:
-        doctors: Leger
         hearing_aids: "Høreapparatforhandler"
         hospital: Sykehus
         medical_supply: "Apotek"
@@ -58,7 +54,6 @@ nb:
         arena: Arena
         brothel: Bordell
         cinema: Kino
-        community_center: "Samfunnshus"
         gallery: Galleri
         nightclub: Nattklubb
         playground: Lekeplass
@@ -81,7 +76,6 @@ nb:
         aerodrome: Flyplass
         bicycle_parking: "Sykkelparkering"
         bicycle_rental: "Sykkelutleie"
-        boatyard: Kai
         bus_station: "Bussstasjon"
         bus_stop: "Bussholdeplass"
         cable_car: "Taubane"
@@ -109,7 +103,6 @@ nb:
         butcher: Slakter
         car_repair: "Bilverksted"
         car_shop: "Bilbutikk"
-        chemist: Kjemiker
         clothes: Klær
         computer: Datamaskin
         convenience: Nærbutikk
@@ -119,7 +112,6 @@ nb:
         electronics: Elektronikk
         florist: Blomsterbutikk
         furniture: Møbler
-        garden_centre: "Hagesenter"
         hairdresser: Frisør
         hardware: Jernvare
         kiosk: Kiosk

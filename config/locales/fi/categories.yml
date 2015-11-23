@@ -3,6 +3,7 @@ fi:
     category:
       education: Sivistys
       leisure: Vapaa-aika
+      misc: Sekalaiset
       shopping: Ostos
       sport: Urheilu
       tourism: Matkailu
@@ -27,7 +28,6 @@ fi:
         restaurant: Ravintola
       government:
         courthouse: Oikeustalo
-        townhall: Kaupungintalo
       health:
         hospital: Sairaala
         pharmacy: Apteekki
@@ -46,7 +46,6 @@ fi:
         atm: Pankkiautomaatti
         bank: Pankki
       public_transfer:
-        boatyard: Telakka
         ferry: Autolautta
         halt: Seisake
         parking: Pysäköinti

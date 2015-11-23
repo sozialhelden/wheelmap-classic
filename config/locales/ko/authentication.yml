@@ -2,12 +2,9 @@ ko:
   devise:
     confirmations:
       confirmed: "당신의 계정이 성공적으로 확인되었습니다. 이제 로그인 되었습니다"
-      link: "계정확인에 관한 인증메일을 받지 못하셨습니까?"
       send_instructions: "당신은 몇 분 내에 계정확인에 관한 인증메일을 받게 될 것입니다"
-      send_paranoid_instructions: "만약 당신에게 계정이 있다면, 몇 분 내에 당신의 이메일로 계정안내 메일이 전송될 것입니다."
     destroy:
       confirm: "계속 진행하시겠습니까?"
-      headline: "계정 삭제"
       link: "지금 삭제"
     edit:
       form:
@@ -20,21 +17,16 @@ ko:
       headline: "계정정보 편집"
     failure:
       already_authenticated: "당신은 이미 가입되어 있습니다."
-      inactive: "당신의 계정은 아직 활성화되지 않았습니다"
       invalid: "잘못된 이메일 또는 비밀번호 입니다"
       invalid_token: "잘못된 인증코드 입니다"
       locked: "귀하의 계정이 잠겨 있습니다"
-      timeout: "세션이 만료되었습니다. 다시 로그인 해주세요"
       unauthenticated: "진행하려면 로그인 또는 회원가입이 필요합니다"
       unconfirmed: "진행하기 전에 당신의 계정을 확인해주시기 바랍니다"
     mailer:
       confirmation_instructions:
-        landing_page: "당신에게 전송된 이메일에 있는 링크를 클릭해주세요. 만약 메일이 보이지 않는다면 스팸메일함을 확인해주시고, 그래도 메일이 도착하지 않았다면 다시 회원가입을 시도해주세요."
         subject: "확인단계"
       reset_password_instructions:
         subject: "비밀번호 재설정 단계"
-      unlock_instructions:
-        subject: "잠금해제 단계"
     mandatory: "* 필수사항"
     omniauth_callbacks:
       failure: "%{kind}에서 \"%{reason}\"(으)로 인해 인증할 수 없습니다"
@@ -44,13 +36,12 @@ ko:
         labels:
           email: 이메일
         submit: "비밀번호 변경"
-      headline: "비밀번호를 잊으셨나요?"
+      headline: "Forgot password?"
     password_reset:
       email:
         comment: "비밀번호 변경을 요청한 적이 없다면, 이 메일은 무시하셔도 좋습니다<br/>당신의 비밀번호는 당신이 이 링크를 클릭해도 새로운 비밀번호로 변경되지 않습니다."
         headline: "%{email} 님 환영합니다"
         link: "내 비밀번호 변경"
-        text: "비밀번호 변경을 원하셨다면, 다음 링크를 클릭하세요 - 요청한 바가 없다면 무시하셔도 좋습니다."
       form:
         labels:
           password: "새 비밀번호"
@@ -59,8 +50,6 @@ ko:
       headline: "비밀번호 재설정"
     passwords:
       link: "비밀번호를 잊으셨나요?"
-      send_instructions: "비밀번호 재설정에 관한 안내메일이 몇 분 안에 도착할 것입니다"
-      send_paranoid_instructions: "만약 당신에게 계정이 있다면, 몇 분 내에 당신의 이메일로 계정 비밀번호 재설정에 관한 안내 메일이 전송될 것입니다."
       updated: "당신의 비밀번호가 성공적으로 변경되었습니다. 이제 로그인 하실 수 있습니다"
       updated_not_active: "당신의 비밀번호가 변경되었습니다."
     registrations:
@@ -71,17 +60,14 @@ ko:
         inactive: 휴면상태
         locked: 잠김
         unconfirmed: 확인되지 않음
-      signed_up: "가입이 완료되었습니다. 만약 계정이 활성화되면 당신의 이메일로 확인메일이 전송됩니다"
       updated: "당신의 계정정보가 업데이트 되었습니다"
     sessions:
-      inactive: "당신의 계정은 아직 활성화되지 않았습니다"
       invalid: "잘못된 이메일 또는 비밀번호 입니다"
       invalid_token: "잘못된 인증코드 입니다"
       link: "로그인"
       locked: "당신의 계정이 잠겨 있습니다"
       signed_in: "로그인에 성공했습니다"
       signed_out: "로그아웃에 성공했습니다"
-      timeout: "세션이 만료되었습니다. 다시 로그인 해주세요"
       unauthenticated: "진행하기 전에 회원가입을 하거나 로그인을 해야 합니다"
       unconfirmed: "진행하기 전에 당신의 계정을 확인해주시기 바랍니다"
     sign_in:
@@ -104,11 +90,7 @@ ko:
           email: 이메일
           password: 비밀번호
           password_confirmation: "비밀번호 재입력"
-          wants_newsletter: "wheelmap에 관한 최신 정보를 이메일로 전해 받겠습니다. (월 1회 가량 발송됩니다.)"
         submit: "회원가입"
       headline: "회원가입"
     unlocks:
-      link: "계정잠금 해제에 관한 안내를 받지 못했습니까?"
-      send_instructions: "몇 분 뒤 당신의 이메일로 계정잠금 해제에 관한 이메일이 도착할 것입니다"
-      send_paranoid_instructions: "만약 당신에게 계정이 있다면, 몇 분 내에 당신의 이메일로 계정 활성화에 관한 안내 메일이 전송될 것입니다."
       unlocked: "당신의 계정이 정상적으로 잠금해제 되었습니다. 이제 로그인 하실 수 있습니다"

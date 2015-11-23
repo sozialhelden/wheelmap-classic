@@ -6,29 +6,21 @@ tlh:
       notice: "Daq leghmeH bI'elnIS."
   breadcrumbs:
     node:
-      create: "Daq chu' chel"
       edit: "Daq De' choH"
-    root: wheelmap
   common:
     close: SoQmoH
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "lajnIS"
       already_confirmed: "chaw'lu'pu'. bI'el 'e' yInID. "
-      blank: "chImlaHbe'"
       confirmation: "rurbe'"
-      empty: "chImlaHbe'"
       equal_to: "rapnIS %{count}"
-      even: "cha'logh boqHa'eghnISlaH mI'"
       exclusion: "chaw'be'"
       greater_than: "tIn law' %{count} tIn puS 'e' teHnIS."
-      greater_than_or_equal_to: "tIn law' %{count} tIn puS 'e' teHnIS pagh %{count} rap."
       inclusion: "muj De'"
       invalid: "muj"
       less_than: "mach law' %{count} mach puS 'e' teHnIS."
-      less_than_or_equal_to: "mach law' %{count} mach puS 'e' teHnIS pagh %{count} rap."
       not_a_number: "oHbe' mI''e"
       not_an_integer: "mI' naQ 'oHnIS"
       not_found: "Sambe'"
@@ -36,7 +28,6 @@ tlh:
       not_saved:
         one: "%{resource} qonlu'pu' 'e' bot Qagh:"
         other: "%{resource} qonlu'pu' 'e' bot %{count} Qaghmey:"
-      odd: "cha'logh boqHa'eghnISlaHbe' mI'"
       taken: "ghajlu'"
       too_long: "tlhoy tIq (%{count} pIqaDmey 'oH 'aqroS'e')"
       too_short: "tlhoy run (%{count} pIqaDmey 'oH 'rav'e')"
@@ -48,9 +39,6 @@ tlh:
         other: "%{model} qonlu'pu' 'e' bot %{count} Qaghmey:"
   form:
     show_fully_accessible_places: "naw'laH rutlhquS"
-    show_limited_accessible_places: "loQ naw'laH rutlhquS "
-    show_places_without_status: "Suvbe'bogh Dotlh"
-    show_unaccessible_places: "naw'laHbe' rutlhquS"
   formtastic:
     hints:
       lat: "Daq lughDaq ghItlhwI' yIQay"
@@ -60,14 +48,11 @@ tlh:
     labels:
       category: "Segh:"
       city: "veng:"
-      create: "Daq chen"
-      email: ' jabbI''ID'
+      email: jabbI'ID
       housenumber: "ghobe':"
       lat: Latitude
       lon: Longitude
       name: "pong:"
-      osm_password: "OSM pegh mu'"
-      osm_username: "OSM ta pong"
       password: pegh mu'
       password_confirmation: "pegh mu' yIghItlhqa'"
       phone: "QumwI:"
@@ -100,14 +85,12 @@ tlh:
       press: Press
       suggestions: vay' chup
       what_is_barrier_free: "\"rutlhquS chawbogh Daq'e'\" DaQIjlaH'a'?"
-      what_is_wheelmap: "nuq 'oH wheelmap'e'?"
     searchbar:
       add_place: "latlh Daq chel"
       find: Sam
       placeholder: "i.e. Sunset Boulevard L.A. pagh Brandenburg Gate Berlin"
       title_add_place: "DaH DaqDaq Daq yIchel!"
     tagline: "Wheelmap Degh"
-    title: "RutlhquS chawbogh Daq'e' Sam"
   helpers:
     select:
       prompt: "yIwIv"
@@ -120,15 +103,9 @@ tlh:
       filter:
         category: "Segh:"
         wheelchair: "naw'laH'a' rutlhquS?"
-      link:
-        node:
-          create: "Daq chu' chel"
       popup:
         form:
-          limited: "loQ naw'laH rutlhquS"
-          'no': "naw'laHbe' rutlhquS"
           save: qon
-          unknown: "Suvbe'bogh Dotlh"
           'yes': "naw'laH rutlhquS"
         help: "naw'laH'a' rutlhquS? (QaH)"
         more: "latlh ..."
@@ -154,7 +131,6 @@ tlh:
       link:
         large_map: "&laquo; qIl"
     errors:
-      default: "va'! Qagh 'ach Qagh De' wIghaj."
       not_authorized: "Qagh. chaw'be'."
       not_available: "Daqvam tu'be'lu' 'ach ru'."
       not_existent: "Daqvam tu'be'lu'."
@@ -211,12 +187,6 @@ tlh:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "wheelmap.orgDaq Daq DachoHmeH Daq DachelmoH ta'lIj open street map ta'lIj je DarurnIS."
-    callback:
-      notice: "DaH ta'lIj %{user} open street map ta' je Darur."
   or: pagh
   place:
     one: "%{count} Daq"
@@ -237,7 +207,6 @@ tlh:
         not_found: "pagh Daq tu'lu'!"
   splash:
     start: tagh
-    what_is_wheelmap: "nuq 'oH wheelmap'e'?"
   statistics: De'
   support:
     array:
@@ -264,16 +233,12 @@ tlh:
     destroy:
       notice: "tugh yIchegh!"
     new:
-      email: "jabbI'ID ngu'wI'"
       login: "'el"
       login_with_twitter: "Twitter lo'taHvIS yI'el"
       password: pegh mu'
       remember_me: "'eltaH"
   wheelchairstatus:
-    limited: "loQ naw'laH rutlhquS"
-    'no': "naw'laHbe' rutlhquS"
-    unknown: "rutlhquS chaw Daq 'e' Sovbe'lu' "
-    'yes': "naw'laHbej rutlhquS"
+    'yes': "naw'laH rutlhquS"
   wheelmap:
     itunes:
       alt: "AppStore Degh"
@@ -283,6 +248,4 @@ tlh:
       title: "Wheelmap - rutlhquS chawbogh Daq'e' Sam"
     what_is:
       fully_accessible: "7cm jen law' letlh jen puS. Hoch Daqmeyvam naw'laHbej rutlhquS. puchpa''e' naw'laHbogh rutlhquS tu'lu'."
-      limited_accessible: "7cm jen law' letlh jen puS. HochHom Daqmeyvam potlh naw'laH rutlhquS."
       not_accessible: "letlh jen law' 7cm jen puS pagh letlh'a' tu'lu' pagh HochHom Daqmeyvam potlh naw'laHbe' rutlhquS."
-      unknown_accessible: "rutlhquS Dotlh Sovbe'lu'."

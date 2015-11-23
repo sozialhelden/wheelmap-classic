@@ -1,1 +1,4 @@
-ro: {}
+ro:
+  poi:
+    category:
+      misc: Altele

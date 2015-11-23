@@ -7,9 +7,7 @@ uk:
       government: Державні установи
       health: Здоров'я
       leisure: Дозвілля
-      misc: Різне
-      money_post: "Банки"
-      public_transfer: "Громадський транспорт"
+      misc: змішаний
       shopping: Магазини
       sport: Спорт
       tourism: Туризм
@@ -49,10 +47,8 @@ uk:
         government: "Урядова організація"
         police: Поліція/Міліція
         public_building: "Громадський заклад"
-        townhall: Мерія
       health:
         dentist: Дантист
-        doctors: Лікарі
         hearing_aids: "Продаж слухових апаратів"
         hospital: Лікарня
         medical_supply: "Медикаменти"
@@ -64,7 +60,6 @@ uk:
         brothel: Бордель
         casino: Казино
         cinema: Кінотеатр
-        community_center: "Громадський центр / Приймальня"
         gallery: Галерея
         nightclub: Нічний клуб
         playground: Дитячий майданчик
@@ -89,7 +84,6 @@ uk:
         aerodrome: Аеропорт
         bicycle_parking: "Паркування для велосипедів"
         bicycle_rental: "Оренда велосипедів"
-        boatyard: Корабельня
         bus_station: "Автобусна станція"
         bus_stop: "Автобусна зупинка"
         cable_car: "Фунікулер"
@@ -118,7 +112,6 @@ uk:
         butcher: М'ясний
         car_repair: "СТО"
         car_shop: "Автосалон"
-        chemist: Фармацевт
         clothes: Одяг
         computer: Комп'ютерний
         confectionery: "Кондитерська"
@@ -132,7 +125,6 @@ uk:
         farm_shop: "Фермерський"
         florist: Флорист
         furniture: Меблі
-        garden_centre: "Садовий центр"
         gift: "Подарунки"
         hairdresser: Перукар
         hardware: Господарський магазин

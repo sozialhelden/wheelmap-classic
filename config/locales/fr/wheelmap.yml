@@ -8,7 +8,7 @@ fr:
     node:
       create: "Ajouter un nouveau lieu"
       edit: "Modifier un lieu"
-    root: wheelmap
+    root: Wheelmap
   common:
     close: fermer
     skip: passer
@@ -16,21 +16,15 @@ fr:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "doit être accepté"
       already_confirmed: "a déjà été confirmé"
-      blank: "doit être rempli"
       confirmation: "ne correspond pas à la confirmation"
-      empty: "doit être rempli"
       equal_to: "doit être exactement %{count}"
-      even: "doit être pair"
       exclusion: "est réservé"
       expired: "expiré, veuillez en demander un nouveau"
       greater_than: "doit être supérieur à %{count}"
-      greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
       inclusion: "n'est pas une valeur valide"
       invalid: "invalide"
       less_than: "doit être inférieur à %{count} "
-      less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
       not_a_number: "n'est pas un nombre"
       not_an_integer: "doit être un entier"
       not_found: "est introuvable"
@@ -38,7 +32,6 @@ fr:
       not_saved:
         one: "Une erreur a empêché l'enregistrement de %{resource} :"
         other: "%{count} erreurs ont empêché l'enregistrement de %{resource} :"
-      odd: "doit être impair"
       taken: "est déjà utilisé"
       too_long: "est trop long (pas plus de %{count} caractères)"
       too_short: "est trop court (pas moins de %{count} caractères)"
@@ -62,12 +55,11 @@ fr:
         notice: "L'image a été supprimée avec succès"
   form:
     show_fully_accessible_places: "Accessible en fauteuil roulant"
-    show_limited_accessible_places: "partiellement accessible en fauteuil roulant"
-    show_places_without_status: "état inconnu"
-    show_unaccessible_places: "non accessible en fauteuil roulant"
+    show_limited_accessible_places: "Partiellement accessible en fauteuil roulant"
+    show_places_without_status: "Statut inconnu"
+    show_unaccessible_places: "Pas d'accès pour fauteuil roulant"
   formtastic:
     hints:
-      email: "Nous traitons votre adresse confidentiellement, pas de pourriel. Promis !"
       lat: "Déplacez sur la carte le marqueur à la bonne position"
       osm_username: "Pas encore membre ?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Créez un compte Openstreetmap maintenant</a>"
       password: "(laissez vide si vous ne voulez pas le modifier)"
@@ -76,15 +68,12 @@ fr:
       category: "Catégorie :"
       centralkey: "Clef centrale :"
       city: "Ville :"
-      create: "Créer un lieu"
       email: Courriel
       finish: Terminer
       housenumber: "Numéro :"
       lat: Latitude
       lon: Longitude
       name: "Nom :"
-      osm_password: "Mot de passe OSM"
-      osm_username: "Nom d'utilisateur OSM"
       password: Mot de passe
       password_confirmation: "Répéter le mot de passe"
       phone: "Téléphone :"
@@ -98,7 +87,7 @@ fr:
       website: "Site Web :"
       wheelchair: "Accessibilité en fauteuil roulant ?"
       wheelchair_description: "Commentaire sur l'accessibilité :"
-      wheelchair_toilet: "Les toilettes en fauteuil roulant : "
+      wheelchair_toilet: "Toilettes accessibles en fauteuil roulant :"
     titles:
       basic: "Données de base"
       optional: "Plus d'informations <span class=\"addition\">(tous les champs sont optionnels)</span>"
@@ -123,14 +112,12 @@ fr:
       profile: Profil
       suggestions: Suggestions
       what_is_barrier_free: "Que veut dire « accessible en fauteuil roulant » ?"
-      what_is_wheelmap: " Wheelmap, qu'est-ce que c'est ?"
     searchbar:
       add_place: "Ajouter un autre lieu"
       find: Trouver
       placeholder: "Chercher un lieu"
       title_add_place: "Ajouter un nouveau lieu à cet endroit maintenant !"
     tagline: "Logo Wheelmap"
-    title: "trouver des lieux accessibles en fauteuil roulant"
   helpers:
     select:
       prompt: "Veuillez choisir"
@@ -151,27 +138,22 @@ fr:
           upgrade: "Mettre le navigateur à jour"
         warning:
           headline: "Nous sommes désolés ! "
-          message: "Vous semblez utiliser Internet Explorer. Wheelmap exige un navigateur répondant aux standards pour fonctionner correctement. Veuillez prendre en considération l'utilisation de Firefox, de Chrome, de Safari ou d'Opera."
       link:
         node:
           create: "Ajouter un nouveau lieu"
       popup:
         form:
-          limited: "partiellement accessible en fauteuil roulant"
-          'no': "non-accessible en fauteuil roulant"
+          limited: "Partiellement accessible en fauteuil roulant"
+          'no': "Pas d'accès pour fauteuil roulant"
           save: Mettre à jour
-          unknown: "état inconnu"
-          'yes': "accessible en fauteuil roulant"
+          unknown: "Statut inconnu"
+          'yes': "Accessible en fauteuil roulant"
         help: "Accessible en fauteuil roulant ? (aide)"
         more: "davantage.."
   how?: Comment ?
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "Les %{type} à accès limité en fauteuil roulant à %{city} (%{count})"
-        'no':
-          headline: "Les %{type} non accessibles en fauteuil roulant à %{city} (%{count})"
         unknown:
           headline: "Les %{type} de %{city} dont l'état d'accessibilité est inconnu  (%{count})"
         'yes':
@@ -198,7 +180,6 @@ fr:
       link:
         large_map: "&laquo ; Annuler"
     errors:
-      default: "Désolé, une erreur est survenue et nous a été signalée"
       not_authorized: "Échec lors de l'authentification."
       not_available: "Désolé, cette page n'est temporairement pas disponible."
       not_existent: "Désolé, ce lieu n'est plus disponible."
@@ -224,7 +205,6 @@ fr:
         large_map: Agrandir
         listing: "Tous les lieux de type %{type} à %{city}"
         upload: "Téléverser l'image"
-      more_data_from: "Il y a d'autres données pour ce lieu, vérifié par :"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -261,12 +241,6 @@ fr:
           kb: Ko
           mb: Mo
           tb: To
-  oauth:
-    application:
-      connect:
-        headline: "Vous devez connecter votre compte à votre compte « OpenStreetMap » avant de pouvoir créer ou modifier des lieux sur wheelmap.org."
-    callback:
-      notice: "Votre compte Wheelmap est maintenant connecté à votre compte %{user} sur OpenStreetMap."
   or: ou
   place:
     one: "%{count} lieu"
@@ -292,7 +266,6 @@ fr:
     step1: "Cliquez sur un lieu que vous connaissez"
     step2: "Marquez le et cliquez sur enregistrer"
     step3: "C'est tout ! Aucune inscription nécessaire"
-    what_is_wheelmap: "Qu'est-ce que Wheelmap ?"
   statistics: Statistiques
   support:
     array:
@@ -319,7 +292,6 @@ fr:
     destroy:
       notice: "Au revoir, revenez bientôt !"
     new:
-      email: "Adresse courriel"
       login: "Connexion"
       login_with_twitter: "Se connecter avec Twitter"
       password: Mot de passe
@@ -328,16 +300,15 @@ fr:
     after_signup_edit:
       welcome:
         headline: "Vous y êtes presque ! Complétez ici votre inscription à votre compte Wheelmap :"
-        set_password_for_mobile: "Vous avez terminé votre inscription à OpenStreetMap.\nChoisissez maintenant une adresse courriel et un mot de passe pour votre compte Wheelmap et tout sera prêt ! Vous aurez besoin de cette adresse courriel et de ce mot de passe pour vous connecter à l'appli Wheelmap pour iPhone ou Android."
         text: "Comment pouvons-nous vous joindre ? Vous pourrez changer cette information ultérieurement dans votre profil."
     edit:
       headline:
         your_images: "Vos images téléversées"
   wheelchairstatus:
-    limited: "partiellement accessible en fauteuil roulant"
-    'no': "non accessible en fauteuil roulant"
-    unknown: "état inconnu"
-    'yes': "accessible en fauteuil roulant"
+    limited: "Partiellement accessible en fauteuil roulant"
+    'no': "Pas d'accès pour fauteuil roulant"
+    unknown: "Statut inconnu"
+    'yes': "Accessible en fauteuil roulant"
   wheelmap:
     footer:
       a_project_of: "Un projet par"
@@ -352,9 +323,8 @@ fr:
       title: "Wheelmap - trouver des lieux accessibles en fauteuil roulant"
     what_is:
       fully_accessible: "Aucune marche, ni à l'entrée, ni dans les pièces, toilettes accessibles si habituel pour un tel lieu"
-      limited_accessible: "L'entrée à une marche (hauteur max. 7 cm/2,7''), la plupart des pièces n'en ont pas, les toilettes ne sont pas accessibles"
       not_accessible: "L'entrée a des marches (hautes), les pièces ne sont pas accessibles"
-      unknown_accessible: "Aidez-nous en marquant les lieux !"
+      unknown_accessible: "Aidez en marquant des lieux !"
   will_paginate:
     next_label: "Suivant &#8594;"
     page_entries_info:

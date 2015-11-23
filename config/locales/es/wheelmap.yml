@@ -6,9 +6,9 @@ es:
       notice: "Tienes que ingresar para ver esta página"
   breadcrumbs:
     node:
-      create: "Agregar nuevo lugar"
+      create: "Añadir un nuevo lugar"
       edit: "Editar lugar"
-    root: Mapa
+    root: Wheelmap
   common:
     close: cerrar
     skip: saltear
@@ -16,21 +16,15 @@ es:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "tiene que ser aceptado"
       already_confirmed: "ya ha sido confirmado"
-      blank: "tiene que ser completado"
       confirmation: "no tiene confirmación"
-      empty: "tiene que ser completado"
       equal_to: "tiene que tener exactamente %{count}"
-      even: "debe ser par"
       exclusion: "está reservado"
       expired: "ha caducado, solicite una nueva."
       greater_than: "debe ser mayor que %{count}"
-      greater_than_or_equal_to: "tiene que ser mayor o igual a %{count}"
       inclusion: "no es un valor correcto"
       invalid: "no es válido"
       less_than: "tiene que ser menor que %{count}"
-      less_than_or_equal_to: "tiene que ser menor o igual que %{count}"
       not_a_number: "no es un número"
       not_an_integer: "tiene que ser un número entero"
       not_found: "no se ha encontrado"
@@ -38,7 +32,6 @@ es:
       not_saved:
         one: "Un error ha impedido que se guarde %{resource}:"
         other: "%{count} errores han impedido guardar un %{resource}:\n"
-      odd: "tiene que ser impar"
       taken: "ya ha sido tomado"
       too_long: "es demasiado largo (no más de %{count} caracteres)"
       too_short: "es demasiado corto (no menos de %{count} caracteres)"
@@ -62,12 +55,11 @@ es:
         notice: "La imagen ha sido borrada."
   form:
     show_fully_accessible_places: "Accesible en silla de ruedas"
-    show_limited_accessible_places: "parcialmente accesible en silla de ruedas"
-    show_places_without_status: "se desconoce el estado"
-    show_unaccessible_places: "no es accesible en silla de ruedas"
+    show_limited_accessible_places: "Parcialmente accesible para minusválidos"
+    show_places_without_status: "Estado desconocido"
+    show_unaccessible_places: "No accesible a sillas de ruedas"
   formtastic:
     hints:
-      email: "Tratamos tu dirección de forma confidencial, no enviamos spam. ¡Lo prometemos!"
       lat: "Mueve el marcador en el mapa a la posición correcta"
       osm_username: "¿Todavía no eres un miembro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\"> Crea una cuenta OpenStreetMap ahora</a>"
       password: "(dejar vacío si no quiere modificarlo)"
@@ -77,15 +69,12 @@ es:
       category: "Categoría:"
       centralkey: "Clave central:"
       city: "Ciudad:"
-      create: "Crear lugar"
       email: Correo electrónico
       finish: Finalizar
       housenumber: "No:"
       lat: Latitud
       lon: Longitud
       name: "Nombre:"
-      osm_password: "contraseña de OSM "
-      osm_username: "nombre de la cuenta de OSM "
       password: Contraseña
       password_confirmation: "Repetir contraseña"
       phone: "Teléfono:"
@@ -99,7 +88,7 @@ es:
       website: "Sitio web:"
       wheelchair: "¿Accesibilidad para silla de ruedas?"
       wheelchair_description: "Comentario sobre la accesibilidad:"
-      wheelchair_toilet: "Baño para silla de ruedas:"
+      wheelchair_toilet: "Baño accesible para silla de ruedas:"
     titles:
       basic: "Datos básicos"
       optional: "Más información <span class=\"addition\">(todos los campos son opcionales)</span>"
@@ -124,14 +113,12 @@ es:
       profile: Perfil
       suggestions: Sugerencias
       what_is_barrier_free: "¿Qué significa \"accesible para silla de ruedas\"?"
-      what_is_wheelmap: "¿Qué es Wheelmap?"
     searchbar:
       add_place: "Agregar otro lugar"
       find: Buscar
       placeholder: "Buscar un lugar"
       title_add_place: "¡Agrega ahora mismo otro nuevo lugar en esta posición!"
     tagline: "Logo del wheelmap"
-    title: "Buscar lugares accesibles para silla de ruedas"
   helpers:
     select:
       prompt: "Por favor elige"
@@ -152,27 +139,22 @@ es:
           upgrade: "Actualizar navegador"
         warning:
           headline: "¡Lo sentimos!"
-          message: "Parece que estás usando Internet Explorer. Para que Wheelmpa funcione correctamente es necesario que uses un navegador que tenga en cuenta los estandares. Puedes usar Firefox, Chrome, Safari u Opera."
       link:
         node:
-          create: "Agregar un nuevo lugar"
+          create: "Añadir un nuevo lugar"
       popup:
         form:
-          limited: "parcialmente accesible para silla de ruedas"
-          'no': "no es accesible para silla de ruedas"
+          limited: "Parcialmente accesible para minusválidos"
+          'no': "No accesible a sillas de ruedas"
           save: Actualizar
-          unknown: "estado desconocido"
-          'yes': "accesible para silla de ruedas"
+          unknown: "Estado desconocido"
+          'yes': "Accesible en silla de ruedas"
         help: "¿Accesible para silla de ruedas? (Ayuda)"
         more: "más ..."
   how?: ¿Cómo?
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "Todos los %{type} con acceso para silla de ruedas limitados en %{city} (%{count})"
-        'no':
-          headline: "Todos los %{type} no accesibles en %{city} (%{count})"
         unknown:
           headline: "Todos los %{type} en %{city} con accesibilidad en silla de ruedas desconocida (%{count})"
         'yes':
@@ -199,7 +181,6 @@ es:
       link:
         large_map: "&laquo; Cancelar"
     errors:
-      default: "Ups, algo no funcionó. Hemos sido informados del problema"
       not_authorized: "Disculpa, la autenticación ha fallado"
       not_available: "Disculpa, esta página no está disponible temporalmente."
       not_existent: "Disculpa, este lugar ya no está disponible."
@@ -225,7 +206,6 @@ es:
         large_map: Ampliar
         listing: "Todos los lugares de tipo '%{type}' en %{city}"
         upload: "Subir imagen"
-      more_data_from: "Hay más datos para este lugar, revisado por:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -262,12 +242,6 @@ es:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "Debes conectar tu cuenta de wheelmap con tu cuenta de OpenStreetMap antes de crear o modificar lugares en wheelmap.org."
-    callback:
-      notice: "Tu cuenta de wheelmap ahora está conectada con tu cuenta de OpenStreetMap %{user}."
   or: o
   place:
     one: "%{count} lugar"
@@ -293,7 +267,6 @@ es:
     step1: "Haz clic en un lugar que conozcas"
     step2: "Márcalo y pulsa guardar"
     step3: "¡Eso es! No hace falta registrarse."
-    what_is_wheelmap: "¿Qué es wheelmap?"
   statistics: Estadísticas
   support:
     array:
@@ -314,10 +287,6 @@ es:
     'no': "Baño no accesible para silla de ruedas"
     unknown: "Tipo de baño desconocido"
     'yes': "Baño accesible para silla de ruedas"
-    what_is:
-      'no': "El ancho de la puerta es de un mínimo de 90 cm, hay un espacio mínimo de 150 x 150 cm, asiento de inodoro a la altura de una silla de ruedas, agarraderas plegables y lavatorio accesible."
-      'yes': "El ancho de la puerta es de un mínimo de 90 cm, hay un espacio mínimo de 150 x 150 cm, asiento de inodoro a la altura de una silla de ruedas, agarraderas plegables y lavatorio accesible."
-      unknown: "¡Ayuda marcando el tipo de baño!"
   user_sessions:
     create:
       activation:
@@ -328,7 +297,6 @@ es:
     destroy:
       notice: "¡Adiós! ¡Vuelve pronto!"
     new:
-      email: "Dirección de correo"
       login: "Ingresar"
       login_with_twitter: "Ingresar con Twitter"
       password: Contraseña
@@ -337,16 +305,15 @@ es:
     after_signup_edit:
       welcome:
         headline: "¡Ya casi terminas! Finaliza el registro de tu cuenta de Wheelmap aquí:"
-        set_password_for_mobile: "Has completado tu registro en OpenStreetMap. Ahora elige una dirección de correo electrónico y una contraseña para tu cuenta Wheelmap y listo! Necesitarás esta dirección de correo electrónico y esta contraseña para entrar en la app de Wheelmap de iPhone o Android."
         text: "¿Cómo podemos ponernos en contacto contigo? Puedes cambiar esta información más tarde en tu perfil."
     edit:
       headline:
         your_images: "Tus imágenes subidas"
   wheelchairstatus:
-    limited: "parcialmente accesible para silla de ruedas"
-    'no': "No es accesible para silla de ruedas"
-    unknown: "estado desconocido"
-    'yes': "accesible para silla de ruedas"
+    limited: "Parcialmente accesible para minusválidos"
+    'no': "No accesible a sillas de ruedas"
+    unknown: "Estado desconocido"
+    'yes': "Accesible en silla de ruedas"
   wheelmap:
     footer:
       a_project_of: "Un proyecto de"
@@ -361,9 +328,8 @@ es:
       title: "Wheelmap - busca lugares accesibles para silla de ruedas"
     what_is:
       fully_accessible: "Entrada sin escalones, todos los ambientes sin escalones, baños accesibles para personas con discapacidad"
-      limited_accessible: "La entrada tiene un escalón (máximo 7 cm), la mayoría de los ambientes no tiene escalones, el baño no es accesible"
       not_accessible: "Entrada con desnivel o varios escalones, ambientes no son accesibles"
-      unknown_accessible: "¡Ayuda marcando lugares!"
+      unknown_accessible: "¡Ayude marcando sitios!"
   will_paginate:
     next_label: "Siguiente &#8594;"
     page_entries_info:

@@ -9,7 +9,6 @@ ca:
         phone: Telèfon
         note: Nota
         address_street: Carrer
-        address_housenumber: Número de portal
         address_postcode: Codi postal
         address_city: Ciutat
   faq:
@@ -73,9 +72,8 @@ ca:
           description: Descobreix si aquest lloc és accessible amb cadira de rodes a Wheelmap.org. O afegeix-hi informació i fotos sobre el lloc.
           title: 'Aquest lloc està a Wheelmap.org: %{name}'
       share:
-        email: Correu-e
+        email: Correu electrònic
         facebook: Facebook
-        text: 'He trobat aquest lloc a Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -94,14 +92,12 @@ ca:
           one: '%{count} resultat:'
           other: '%{count} resultats:'
     timeout:
-      headline: Ups, error nostre
       info: El nostre servei de cerca no està disponible.
       repeat_search: Reiniciar la cerca
   users:
     profile:
       newsletter:
         title: Butlletí
-        text: Estigues actualitzat sobre Wheelmap. No et preocupis, no t'espamejarem. Com a molt ens llegiràs un cop per mes.
         label: Sí, actualitza'm sobre Wheelmap.
       show:
         title: Resum
@@ -117,15 +113,11 @@ ca:
           pois_added:
             one: '%{count} lloc afegit'
             other: '%{count} llocs afegits'
-          pois_edited:
-            one: '%{count} lloc editat'
-            other: '%{count} llocs editats'
           photos_uploaded:
             one: '%{count} foto pujada '
             other: '%{count} fotos pujades '
       photos:
         title: Fotos
-        empty: No has pujat cap foto encara.
       edit:
         title: Perfil
         legends:

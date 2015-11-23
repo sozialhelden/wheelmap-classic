@@ -8,7 +8,7 @@ uk:
     node:
       create: "Додати нове місце"
       edit: "Змінити місце"
-    root: wheelmap
+    root: Wheelmap
   common:
     close: закрити
     skip: пропустити
@@ -16,21 +16,15 @@ uk:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "має бути прийнятий"
       already_confirmed: "вже було підтверджено"
-      blank: "не може бути пустим"
       confirmation: "не збігається з підтвердженням"
-      empty: "не може бути порожнім"
       equal_to: "має дорівнювати %{count}"
-      even: "має бути парним"
       exclusion: "зарезервовано"
       expired: "прострочено, будь ласка, створіть новий запит"
       greater_than: "має бути більше ніж %{count}"
-      greater_than_or_equal_to: "має бути більше або дорівнювати %{count}"
       inclusion: "недійсне значення"
       invalid: "недійсний"
       less_than: "має бути менше ніж %{count}"
-      less_than_or_equal_to: "має бути менше або дорівнювати %{count}"
       not_a_number: "не є числом"
       not_an_integer: "має бути цілим числом"
       not_found: "не знайдено"
@@ -39,7 +33,6 @@ uk:
         one: "Помилка завадила зберегти %{resource}:"
         few: "%{count} помилки завадили зберегти %{resource}:"
         other: "%{count} помилок завадили зберегти %{resource}:"
-      odd: "має бути непарним"
       taken: "вже зайнятий"
       too_long: "занадто довгий (не більше% {count} символів)"
       too_short: "занадто короткий (не менше %{count} символів)"
@@ -64,12 +57,11 @@ uk:
         notice: "Зображення успішно видалено"
   form:
     show_fully_accessible_places: "Доступне для людей на інвалідних візках"
-    show_limited_accessible_places: "частково доступне"
-    show_places_without_status: "невідомий статус"
-    show_unaccessible_places: "не адаптовано для людей на інвалідних візках"
+    show_limited_accessible_places: "З обмеженою зручністю для людей на інвалідних візках."
+    show_places_without_status: "Невідомий статус"
+    show_unaccessible_places: "Недоступно для інвалідних візків"
   formtastic:
     hints:
-      email: "Ми гарантуємо конфіденційність вашої електронної адреси. Обіцяємо, ніякого спаму."
       lat: "Перемістіть маркер на карті у правильне положення"
       osm_username: "Ще не зареєстровані? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Створіть обліковий запис на OpenStreetMap</a>"
       password: "(Залиште порожнім, якщо не хочете змінювати)"
@@ -78,15 +70,12 @@ uk:
       category: "Категорія:"
       centralkey: "Центральний ключ:"
       city: "Місто:"
-      create: "Створити місце"
-      email: Електронна адреса
+      email: Email
       finish: Завершити
       housenumber: "Ні:"
       lat: Широта
       lon: Довгота
       name: "Назва:"
-      osm_password: "пароль OSM"
-      osm_username: "Ім'я облікового запису на OSM"
       password: Пароль
       password_confirmation: "Повторіть пароль"
       phone: "Телефон"
@@ -100,6 +89,7 @@ uk:
       website: "Веб-сторінка:"
       wheelchair: "Чи доступно для людей на інвалідних візках?"
       wheelchair_description: "Коментар про доступність:"
+      wheelchair_toilet: "Доступний туалет:"
     titles:
       basic: "Основні дані"
       optional: "Більш детальна інформація <span class=\"addition\">(всі поля - необов’язкові)</ span>"
@@ -124,14 +114,12 @@ uk:
       profile: Профіль
       suggestions: Пропозиції
       what_is_barrier_free: "Що означає \"доступ для людей на інвалідних візках\"?"
-      what_is_wheelmap: "Що таке wheelmap?"
     searchbar:
       add_place: "Додати інше місце"
       find: Знайти
       placeholder: "Шукати місце"
       title_add_place: "Додати тут нове місце."
     tagline: "Логотип Wheelmap"
-    title: "пошук місць з доступом для людей на інвалідних візках"
   helpers:
     select:
       prompt: "Оберіть: "
@@ -152,27 +140,22 @@ uk:
           upgrade: "Оновлення переглядача"
         warning:
           headline: "Вибачте!"
-          message: "Ви, схоже, використовуєте Internet Explorer. Wheelmap потрібен переглядач, що відповідає стандартам для коректної роботи. Будь ласка, подумайте про використання Firefox, Chrome, Safari або Opera."
       link:
         node:
           create: "Додати нове місце"
       popup:
         form:
-          limited: "частковий доступ"
-          'no': "недоступне"
+          limited: "З обмеженою зручністю для людей на інвалідних візках."
+          'no': "Недоступно для інвалідних візків"
           save: Оновлення
-          unknown: "статус невідомий"
-          'yes': "доступне для людей на інвалідних візках"
+          unknown: "Невідомий статус"
+          'yes': "Доступне для людей на інвалідних візках"
         help: "Чи є доступ для людей на інвалідних візках? (Довідка)"
         more: "детальніше ..."
   how?: Як?
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "Усі місця типу \"%{type}\" з обмеженим доступом у місті %{city} (%{count})"
-        'no':
-          headline: "Усі недоступні місця типу \"%{type}\" у місті %{city} (%{count})"
         unknown:
           headline: "Усі місця типу \"%{type}\" у місті %{city} з невідомим статусом (%{count})"
         'yes':
@@ -199,7 +182,6 @@ uk:
       link:
         large_map: "&laquo; Скасувати"
     errors:
-      default: "Щось пішло не так. Ми були поінформовані про цю проблему"
       not_authorized: "На жаль, аутентифікація не вдалася"
       not_available: "Вибачте, ця сторінка тимчасово недоступна."
       not_existent: "Вибачте, цієї точки більше не існує на карті."
@@ -225,7 +207,6 @@ uk:
         large_map: Збільшити
         listing: "Усі місця типу \"%{type}\" у місті %{city}"
         upload: "Вивантажити зображення"
-      more_data_from: "Існує більше даних для цього місця, перевіряються:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -263,12 +244,6 @@ uk:
           kb: КБ
           mb: МБ
           tb: ТБ
-  oauth:
-    application:
-      connect:
-        headline: "Вам необхідно підключити ваш обліковий запис OpenStreetMap щоб додавати нові місця на wheelmap.org."
-    callback:
-      notice: "Ваш обліковий запис wheelmap підключено до облікового запису OpenStreetMap %{user}."
   or: або
   place:
     one: "%{count} місце"
@@ -295,7 +270,6 @@ uk:
     step1: "Натисніть на місце, яке ви знаєте"
     step2: "Виберіть його статус і натисніть Зберегти"
     step3: "І все! Реєстрація не потрібна"
-    what_is_wheelmap: "Що таке wheelmap?"
   statistics: Статистика
   support:
     array:
@@ -316,8 +290,6 @@ uk:
     'no': "Немає туалету, доступного для людей на візках"
     unknown: "Статус туалету невідомий"
     'yes': "Туалет доступний для людей на візках"
-    what_is:
-      unknown: "Допоможіть відмічаючи доступність туалетів!"
   user_sessions:
     create:
       activation:
@@ -328,7 +300,6 @@ uk:
     destroy:
       notice: "Бувай, заходь ще!"
     new:
-      email: "Адреса електронної пошти"
       login: "Увійти"
       login_with_twitter: "Увійти через Twitter"
       password: Пароль
@@ -337,16 +308,15 @@ uk:
     after_signup_edit:
       welcome:
         headline: "Майже все. Завершіть реєстрацію облікового запису Wheelmap тут:"
-        set_password_for_mobile: "Реєстрацію на OpenStreetMap завершено.\nТепер виберіть електронну пошту і пароль для облікового запису Wheelmap і все. Вони вам знадобляться для використання Wheelmap на Android чи iPhone."
         text: "Як ми можемо зв'язатися з вами? Ви можете змінити цю інформацію пізніше в своєму профілі."
     edit:
       headline:
         your_images: "Ваші вивантажені зображення"
   wheelchairstatus:
-    limited: "частковий доступ для людей на інвалідних візках"
-    'no': "недоступне для людей на інвалідних візках"
-    unknown: "невідомий статус"
-    'yes': "доступне для людей на інвалідних візках"
+    limited: "З обмеженою зручністю для людей на інвалідних візках."
+    'no': "Недоступно для інвалідних візків"
+    unknown: "Невідомий статус"
+    'yes': "Доступне для людей на інвалідних візках"
   wheelmap:
     footer:
       a_project_of: "Проект"
@@ -361,9 +331,8 @@ uk:
       title: "Wheelmap - пошук місць, що доступні для людей на інвалідних візках"
     what_is:
       fully_accessible: "Вхід без сходинок, всі приміщення без сходинок, адаптований туалет, якщо є"
-      limited_accessible: "При вході сходинка не вище 7 см, більшість приміщень без сходинок, туалет не адаптований"
       not_accessible: "Круті сходи на вході, приміщення недоступні"
-      unknown_accessible: "Допоможіть позначити доступність місць!"
+      unknown_accessible: "Допоможіть, позначивши місця!"
   will_paginate:
     next_label: "Далі &#8594;"
     page_entries_info:

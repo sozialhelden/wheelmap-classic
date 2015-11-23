@@ -6,9 +6,9 @@ de:
       notice: "Du musst dich anmelden, um diese Seite zu sehen."
   breadcrumbs:
     node:
-      create: "Neuen Ort anlegen"
+      create: "Neuen Ort hinzufügen"
       edit: "Ort bearbeiten"
-    root: Wheelmap-Karte
+    root: Wheelmap
   common:
     close: schließen
     skip: Überspringen
@@ -18,9 +18,9 @@ de:
     messages:
       accepted: "muss akzeptiert werden"
       already_confirmed: "wurde bereits bestätigt"
-      blank: "muss ausgefüllt werden"
+      blank: "muss ausgefüllt sein"
       confirmation: "stimmt nicht mit der Bestätigung überein"
-      empty: "muss ausgefüllt werden"
+      empty: "muss ausgefüllt sein"
       equal_to: "muss genau %{count} sein"
       even: "muss gerade sein"
       exclusion: "ist nicht verfügbar"
@@ -62,12 +62,12 @@ de:
         notice: "Bild wurde erfolgreich entfernt."
   form:
     show_fully_accessible_places: "Ja"
-    show_limited_accessible_places: "Teilweise"
-    show_places_without_status: "unbekannter Status"
-    show_unaccessible_places: "nicht rollstuhlgerecht"
+    show_limited_accessible_places: "Teilweise rollstuhlgerechtes WC"
+    show_places_without_status: "Status unbekannt"
+    show_unaccessible_places: "Nicht Rollstuhlgerecht"
   formtastic:
     hints:
-      email: "Wir behandeln Deine Adresse vertraulich, versprochen. Kein Spam!"
+      email: "Wir behandeln Deine Adresse vertraulich."
       lat: "Bewegen Sie den Marker auf der Karte"
       osm_username: "Noch nicht Mitglied? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Openstreetmap Benutzerkonto anlegen</a>"
       password: "(leer lassen, wenn du es nicht ändern möchtest)"
@@ -77,15 +77,15 @@ de:
       category: "Kategorie:"
       centralkey: "Zentralschlüssel:"
       city: "Ort:"
-      create: "Ort anlegen"
+      create: "Einen Ort anlegen"
       email: E-Mail
       finish: Fertigstellen
       housenumber: "Nr:"
       lat: Breitengrad
       lon: Längengrad
       name: "Name:"
-      osm_password: "OSM-Passwort"
-      osm_username: "OSM-Mitgliedsname"
+      osm_password: "OpenStreetMap Passwort"
+      osm_username: "OpenStreetMap Account Name"
       password: Passwort
       password_confirmation: "Passwort wiederholen"
       phone: "Telefon:"
@@ -99,7 +99,7 @@ de:
       website: "Webseite:"
       wheelchair: "Rollstuhlgerecht?"
       wheelchair_description: "Info zu Barrierefreiheit:"
-      wheelchair_toilet: "Rollstuhltoilette"
+      wheelchair_toilet: "Rollstuhlgerechtes WC:"
     titles:
       basic: "Basisdaten"
       optional: "Mehr Infos <span class=\"addition\">(alle Felder sind optional)</span>"
@@ -155,14 +155,14 @@ de:
           message: "Offenbar verwendest Du Internet Explorer. Wheelmap benötigt einen standard-konformen Browser, um korrekt zu funktionieren. Bitte verwende Firefox, Chrome, Safari oder Opera."
       link:
         node:
-          create: "Neuen Ort anlegen"
+          create: "Neuen Ort hinzufügen"
       popup:
         form:
-          limited: "Teilweise rollstuhlgerecht"
-          'no': "Nicht rollstuhlgerecht"
+          limited: "Teilweise rollstuhlgerechtes WC"
+          'no': "Nicht Rollstuhlgerecht"
           save: Speichern
-          unknown: "Unbekannter Status"
-          'yes': "Voll rollstuhlgerecht"
+          unknown: "Status unbekannt"
+          'yes': "Voll Rollstuhlgerecht"
         help: "Rollstuhlgerecht? (Hilfe)"
         more: "mehr ..."
   how?: Wie?
@@ -170,7 +170,7 @@ de:
     index:
       wheelchair:
         limit:
-          headline: "Alle rollstuhlgerechten %{type} in %{city} (%{count})"
+          headline: "Alle teilweise rollstuhlgerechten Orte %{type} in %{city} (%{count})"
         'no':
           headline: "Alle nicht rollstuhlgerechten %{type} in %{city} (%{count})"
         unknown:
@@ -265,7 +265,7 @@ de:
   oauth:
     application:
       connect:
-        headline: "Bevor du auf wheelmap.org Orte bearbeiten bzw. anlegen kannst, musst du dein Benutzerkonto mit Openstreetmap verbinden."
+        headline: "Bevor du auf wheelmap.org Orte bearbeiten bzw. anlegen kannst, musst du dein Benutzerkonto mit OpenStreetMap verbinden."
     callback:
       notice: "Dein Benutzerkonto wurde erfoglreich mit dem OpenStreetMap-Benutzerkonto von '%{user}' verbunden."
   or: oder
@@ -315,8 +315,8 @@ de:
     unknown: "Status WC unbekannt"
     'yes': "Rollstuhlgerechtes WC"
     what_is:
-      'no': "Durchgangsbreite Tür mind. 90 cm, Bewegungsflächen mind. 150 cm × 150 cm, WC-Becken mit größerer Sitzhöhe, Stützklappgriffe o.ä., unterfahrbares Waschbecken."
-      'yes': "Durchgangsbreite Tür mind. 90 cm, Bewegungsflächen mind. 150 cm × 150 cm, WC-Becken mit größerer Sitzhöhe, Stützklappgriffe o.ä., unterfahrbares Waschbecken."
+      'no': "Durchgangsbreite Tür mind. 90 cm (35 in), Bewegungsflächen mind. 150 cm × 150 cm (59 x59 in), WC-Becken mit größerer Sitzhöhe, Stützklappgriffe o.ä., unterfahrbares Waschbecken."
+      'yes': "Durchgangsbreite Tür mind. 90 cm (35 in), Bewegungsflächen mind. 150 cm × 150 cm (59 x59 in), WC-Becken mit größerer Sitzhöhe, Stützklappgriffe o.ä., unterfahrbares Waschbecken."
       unknown: "Hilf mit und markiere den Toiletten-Status!"
   user_sessions:
     create:
@@ -337,15 +337,15 @@ de:
     after_signup_edit:
       welcome:
         headline: "Fast geschafft! Jetzt noch den Wheelmap-Account fertigstellen:"
-        set_password_for_mobile: "Du hast Dich erfolgreich bei OpenStreetMap angemeldet.\nWähle jetzt noch die Email-Adresse und das Passwort für Deinen Wheelmap-Account aus. Du brauchst diese Email-Adresse und das Passwort, um dich in der Wheelmap-App für iPhone und Android einloggen zu können."
+        set_password_for_mobile: "Du hast Dich erfolgreich bei OpenStreetMap angemeldet.\nWähle jetzt noch die Email-Adresse und das Passwort für Deinen Wheelmap-Account aus. Du brauchst diese Email-Adresse und das Passwort, um dich in der Wheelmap-App für iPhone, Android und Windows10 einloggen zu können."
         text: "Du bist nun erfolgreich registriert. Wie können wir dich in Zukunft über wichtige Neuigkeiten rund um die Wheelmap informieren?"
     edit:
       headline:
         your_images: "Deine hochgeladenen Bilder"
   wheelchairstatus:
-    limited: "Teilweise rollstuhlgerecht"
-    'no': "Nicht rollstuhlgerecht"
-    unknown: "Unbekannter Status"
+    limited: "Teilweise rollstuhlgerechtes WC"
+    'no': "Nicht Rollstuhlgerecht"
+    unknown: "Status unbekannt"
     'yes': "Voll Rollstuhlgerecht"
   wheelmap:
     footer:
@@ -361,9 +361,9 @@ de:
       title: "Wheelmap - Rollstuhlgerechte Orte finden"
     what_is:
       fully_accessible: "Eingang stufenlos, alle Räume stufenlos erreichbar."
-      limited_accessible: "Eingang max 1 Stufe (7cm hoch), die wichtigsten Räume stufenlos erreichbar."
+      limited_accessible: "Eingang max 1 Stufe (max. 7cm hoch, 3 inches), die wichtigsten Räume stufenlos, WC nicht rollstuhlgerecht."
       not_accessible: "Eingang hat höhere oder mehrere Stufen, Räume nicht erreichbar."
-      unknown_accessible: "Hilf mit und markiere diese Orte!"
+      unknown_accessible: "Hilf mit und markiere den Toiletten-Status!"
   will_paginate:
     next_label: "Vor &#8594;"
     page_entries_info:

@@ -9,7 +9,6 @@ zh_TW:
         phone: 電話
         note: 筆記
         address_street: 街道
-        address_housenumber: 門牌號碼
         address_postcode: 郵遞區號
         address_city: 城市
   faq:
@@ -71,9 +70,8 @@ zh_TW:
           description: 透過 Wheelmap.org 尋找輪椅無障礙的地點，或是為這些地點添加資訊和照片。
           title: '這個場所有登錄在 Wheelmap.org: %{name}'
       share:
-        email: E-mail
+        email: 電子郵件
         facebook: Facebook
-        text: '我在 Wheelmap.org 上找到這個地點: %{name}'
         twitter: Twitter
   search:
     index:
@@ -89,7 +87,6 @@ zh_TW:
         ticker:
           other: '%{count} 個結果：'
     timeout:
-      headline: 喔! 我們出了點狀況
       info: 我們的搜尋服務目前暫停。
       repeat_search: 重試搜尋
   users:
@@ -108,14 +105,14 @@ zh_TW:
             other: '標記 %{count} 個地點'
           pois_added:
             other: '新增 %{count} 個地點'
-          pois_edited:
-            other: '編輯 %{count} 個地點'
           photos_uploaded:
             other: '上傳 %{count} 張照片'
       photos:
         title: 相館
-        empty: 你尚未上傳任何照片
       edit:
         title: 檔案
         legends:
           user_data: 您的帳號資訊
+      widget:
+        legends:
+          settings: 設定

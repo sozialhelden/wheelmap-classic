@@ -6,9 +6,6 @@ is:
       food: Matur
       government: Opinberar stofnanir
       leisure: Frístundir
-      misc: Annað
-      money_post: "Banki & póstur"
-      public_transfer: "Almenningssamgöngur"
       shopping: Verslun
       sport: Íþróttir
       tourism: Ferðamennska
@@ -43,9 +40,7 @@ is:
         courthouse: Réttarhús
         embassy: Sendiráð
         public_building: "Opinber bygging"
-        townhall: Ráðhús
       health:
-        doctors: Læknir
         hospital: Spítali
         pharmacy: Apótek
         veterinary: Dýralæknir
@@ -70,7 +65,6 @@ is:
         aerodrome: Flugvöllur
         bicycle_parking: "Reiðhjólastæði"
         bicycle_rental: "Reiðhjólaleiga"
-        boatyard: Bryggja
         bus_station: "Rútustöð"
         bus_stop: "Strætó"
         cable_car: "Dráttarbílar"
@@ -105,7 +99,6 @@ is:
         electronics: Raftæki
         florist: Blómabúð
         furniture: Húsgögn
-        garden_centre: "Garðar"
         hairdresser: Hársnyrting
         hardware: Byggingavörur
         kiosk: Söluturn

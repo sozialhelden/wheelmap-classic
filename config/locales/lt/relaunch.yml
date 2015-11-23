@@ -8,7 +8,6 @@ lt:
         phone: Telefonas
         note: Pastaba
         address_street: Gatvė
-        address_housenumber: Namo numeris
         address_postcode: Pašto kodas
         address_city: Miestas
   faq:
@@ -64,7 +63,6 @@ lt:
     show:
       share:
         facebook: Facebook
-        text: 'Radau šią vietą puslapyje Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -83,7 +81,6 @@ lt:
           few: '%{count} rezultatai:'
           other: '%{count} rezultatų:'
     timeout:
-      headline: Oi, mūsų kaltė
       info: Mūsų paieškos tarnyba buvo laikinai neprieinama.
   users:
     profile:
@@ -95,7 +92,6 @@ lt:
           personalized: Sveiki %{name}
       photos:
         title: Nuotraukos
-        empty: Jūs dar nesate įkėlę jokių nuotraukų.
       edit:
         title: Profilis
         legends:

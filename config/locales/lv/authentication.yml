@@ -2,12 +2,9 @@ lv:
   devise:
     confirmations:
       confirmed: "Jūsu konts tika veiksmīgi apstiprināts. Jūs esat pierakstījies."
-      link: "Nesaņēmāt instrukcijas apstiprināšanai?"
       send_instructions: "Pēc dažām minūtēm Jūs saņemsiet e-pastu ar instrukcijām, kā apstiprināt savu kontu."
-      send_paranoid_instructions: "Ja Jūsu konts eksistē, pēc dažām minūtēm saņemsiet e-pastu ar instrukcijām, kā apstiprināt kontu"
     destroy:
       confirm: "Vai esat pārliecināts?"
-      headline: "Dzēst kontu"
       link: "Izdzēst tūlīt"
     edit:
       form:
@@ -20,21 +17,16 @@ lv:
       headline: "Izmainīt kontu"
     failure:
       already_authenticated: "Jūs esat jau pierakstījies"
-      inactive: "Jūsu konts vēl nav aktivizēts"
       invalid: "Nederīgs e-pasts vai parole"
       invalid_token: "Nederīgs autorizācijas apliecinājums"
       locked: "Jūsu konts ir bloķēts"
-      timeout: "Jūsu sesija ir beigusies, lai turpinātu, lūdzu pierakstieties vēlreiz."
       unauthenticated: "Lai turpinātu, jums ir jāpierakstās vai jāizveido konts"
       unconfirmed: "Pirms turpiniet, jums ir jāapstiprina savs konts"
     mailer:
       confirmation_instructions:
-        landing_page: "Lūdzu sekojiet saitei, kuru tik tikko nosūtījām uz jūsu e-pasta adresi. Ja nesaņemat e-pastu, lūdzu vispirms pārbaudiet vai e-pasts neatrodās starp mēstulēm. Ja tur e-pasta nav, atgriežieties reģistrācijas lapā un mēģiniet vēlreiz."
         subject: "Vēl viens solis, lai aktivizētu jūsu kontu"
       reset_password_instructions:
         subject: "Paroles atjaunošanas instrukcijas"
-      unlock_instructions:
-        subject: "Atbloķēt instrukciju"
     mandatory: "* obligāts"
     omniauth_callbacks:
       failure: "Autorizācija ar %{kind} neizdevās. Kļūda: \"%{reason}\"."
@@ -50,7 +42,6 @@ lv:
         comment: "Ja Jūs nepieprasījāt paroles maiņu, vienkārši ignorējiet šo e-pastu.<br/>Jūsu parole tiks nomainīta tikai tad, ja uzklikšķināsiet uz augstākminētās saites un norādīsiet jauno paroli"
         headline: "Laipni lūdzam, %{email}!"
         link: "Nomainīt manu paroli"
-        text: "Jūsu paroli lūdza nomainīt - ja to vēlaties, spiediet uz saites, ja nē - ignorējiet!"
       form:
         labels:
           password: "Jauna parole"
@@ -59,8 +50,6 @@ lv:
       headline: "Atjaunot paroli"
     passwords:
       link: "Aizmirsāt paroli?"
-      send_instructions: "E-pastu ar instrukcijām kā atjaunot savu paroli saņemsiet pēc dažām minūtēm"
-      send_paranoid_instructions: "Ja Jūsu konts eksistē, pēc dažām minūtēm saņemsiet e-pastu ar instrukcijām, kā atjaunot paroli."
       updated: "Jūsu parole tika veiksmīgi nomainīta, tagad esat pierakstījies"
       updated_not_active: "Jūsu parole ir veiksmīgi nomainīta"
     registrations:
@@ -71,17 +60,14 @@ lv:
         inactive: neaktīvs
         locked: bloķēts
         unconfirmed: neapstiprināts
-      signed_up: "Jūs esat veiksmīgi piereģistrējies. Apstiprinājums tika nosūtīts uz jūsu e-pastu."
       updated: "Jūsu konts ir veiksmīgi atjaunots."
     sessions:
-      inactive: "Jūsu konts vēl nav aktivizēts"
       invalid: "Nederīgs e-pasts vai parole"
       invalid_token: "Nederīga autorizācijas atslēga"
       link: "Pierakstīties"
       locked: "Jūsu konts ir bloķēts"
       signed_in: "Pierakstīšanās izdevās"
       signed_out: "Jūs esat veiksmīgi izrakstījies"
-      timeout: "Jūsu sesija ir beigusies, lai turpinātu, lūdzu pierakstieties vēlreiz."
       unauthenticated: "Lai turpinātu, jums ir jāpierakstās vai jāizveido konts"
       unconfirmed: "Jums ir jāapstiprina savs konts pirms turpināt"
     sign_in:
@@ -104,11 +90,7 @@ lv:
           email: E-pasts
           password: Parole
           password_confirmation: "Atkārtojiet paroli"
-          wants_newsletter: "Jā, informējiet mani par wheelmap jaunumiem, bet lūdzu ne biežāk kā reizi mēnesī."
         submit: "Izveidot kontu"
       headline: "Pierakstīties"
     unlocks:
-      link: "Nesaņēmāt atbloķēšanas instrukcijas?"
-      send_instructions: "Pēc dažām minūtēm jūs saņemsiet e-pastu ar instrukcijām kā atbloķēt kontu"
-      send_paranoid_instructions: "Ja jūsu konts eksistē, pēc dažām minūtēm jūs saņemsiet e-pastu ar instrukcijām kā to atbloķēt"
       unlocked: "Jūsu konts tika veiksmīgi atbloķēts un esat veiksmīgi pierakstījies."

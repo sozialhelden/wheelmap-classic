@@ -7,9 +7,7 @@ nl:
       government: Overheid
       health: Gezondheid
       leisure: Vrije tijd
-      misc: Overige
-      money_post: "Bank & Post"
-      public_transfer: "Openbaar vervoer"
+      misc: Diversen
       shopping: Winkelen
       sport: Sport
       tourism: Toerisme
@@ -48,10 +46,8 @@ nl:
         government: "Overheidskantoor"
         police: Politie
         public_building: "Openbaar gebouw"
-        townhall: Stadshal
       health:
         dentist: Tandarts
-        doctors: Artsen
         hearing_aids: "Audicien (gehoorapperaat winkel)"
         hospital: Ziekenhuis
         medical_supply: "Medische verzorging"
@@ -63,7 +59,6 @@ nl:
         brothel: Bordeel
         casino: Casino
         cinema: bioscoop
-        community_center: "Wijkcentrum"
         gallery: Galerij
         nightclub: Nachtclub
         playground: Speelplaats
@@ -88,7 +83,6 @@ nl:
         aerodrome: Vliegveld
         bicycle_parking: "Fiets parkeerplaats"
         bicycle_rental: "Fiets verhuur"
-        boatyard: Werft
         bus_station: "Bushalte"
         bus_stop: "Bushalte"
         cable_car: "Kabelbaan"
@@ -117,7 +111,6 @@ nl:
         butcher: Slager
         car_repair: "Autogarage"
         car_shop: "Auto winkel"
-        chemist: Apotheek
         clothes: Kleren
         computer: Computer
         confectionery: "Zoetwaren winkel"
@@ -131,7 +124,6 @@ nl:
         farm_shop: "Groenten winkel"
         florist: Bloemenbinder
         furniture: Meubels
-        garden_centre: "Tuin center"
         gift: "Cadeau winkel"
         hairdresser: Kapper
         hardware: Hardware

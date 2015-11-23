@@ -9,7 +9,6 @@ pt_PT:
         phone: Telefone
         note: Nota
         address_street: Rua
-        address_housenumber: Número de porta
         address_postcode: Código Postal
         address_city: Cidade
   faq:
@@ -75,7 +74,6 @@ pt_PT:
       share:
         email: E-mail
         facebook: Facebook
-        text: 'Encontrei isto em Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -93,7 +91,6 @@ pt_PT:
           one: '%{count} resultado:'
           other: '%{count} resultados:'
     timeout:
-      headline: Desculpe, enganou-se.
       info: O nosso serviço de pesquisa está temporariamente indisponível.
       repeat_search: Volte a tentar
   users:
@@ -104,3 +101,6 @@ pt_PT:
         title: Fotografias
       edit:
         title: Perfil
+      widget:
+        legends:
+          settings: Definições

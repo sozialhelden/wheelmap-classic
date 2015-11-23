@@ -6,35 +6,26 @@ zh:
       notice: "要浏览此页必须登录"
   breadcrumbs:
     node:
-      create: "添加新的位置"
       edit: "编辑地点"
-    root: 轮椅通行地图
   common:
     close: 关闭
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "已被接受"
       already_confirmed: "已经确认"
-      blank: "已填充"
       confirmation: "没有进行匹配确认"
-      empty: "已填充"
       equal_to: "必须准确%{count}"
-      even: "必须平坦"
       exclusion: "已预定"
       expired: "您已过期，请重新申请"
       greater_than: "必须大于%{count}"
-      greater_than_or_equal_to: "必须大于或等于%{count}"
       inclusion: "无效数值"
       invalid: "无效"
       less_than: "必须少于%{count}"
-      less_than_or_equal_to: "必须低于或等于%{count}"
       not_a_number: "不是一个数字"
       not_an_integer: "必须是整数"
       not_found: "没有找到"
       not_locked: "未锁定"
-      odd: "必须为单数"
       taken: "已经被使用"
       too_long: "太长(不能长于 %{count} 字符)"
       too_short: "太短(不少于%{count} 字符)"
@@ -52,9 +43,9 @@ zh:
         notice: "%{resource_name}已成功更新"
   form:
     show_fully_accessible_places: "轮椅通道"
-    show_limited_accessible_places: "部分轮椅通道"
+    show_limited_accessible_places: "部分无障碍通行"
     show_places_without_status: "未知状态"
-    show_unaccessible_places: "非轮椅通道"
+    show_unaccessible_places: "不是轮椅专用通道"
   formtastic:
     hints:
       lat: "将地图上的标记移动到正确位置"
@@ -64,15 +55,12 @@ zh:
     labels:
       category: "目录："
       city: "城市："
-      create: "创建地点"
       email: 电子邮件
       finish: 完成
       housenumber: "没有："
       lat: 纬度
       lon: 经度
       name: "姓名："
-      osm_password: "OSM密码"
-      osm_username: "OSM帐户名"
       password: 密码
       password_confirmation: "重复密码"
       phone: "电话"
@@ -107,14 +95,12 @@ zh:
       press: 出版物
       suggestions: 建议
       what_is_barrier_free: "“轮椅通道”是什么意思"
-      what_is_wheelmap: "什么是wheelmap?"
     searchbar:
       add_place: "添加另外的地点"
       find: 找到
       placeholder: "诸如洛杉矶大道的日落或者勃兰登堡的大门柏林"
       title_add_place: "现在在这个位置添加新的地点"
     tagline: "轮椅地图标志"
-    title: "Wheelmap－找到轮椅通道"
   helpers:
     select:
       prompt: "请选择"
@@ -133,14 +119,10 @@ zh:
           upgrade: "更新浏览器"
         warning:
           headline: "我们很抱歉！"
-          message: "您使用的是Internet Explorer.Wheelmap要求使用标准-兼容的浏览器才能正常显示。请考虑使用Firefox, Chrome, Safari or Opera等其它浏览器。"
-      link:
-        node:
-          create: "添加新地点"
       popup:
         form:
-          limited: "部分轮椅通道可用"
-          'no': "非轮椅通道"
+          limited: "部分无障碍通行"
+          'no': "不是轮椅专用通道"
           save: 更新
           unknown: "未知状态"
           'yes': "轮椅通道"
@@ -150,10 +132,6 @@ zh:
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "所有被限制的轮椅通道%{type} in %{city} (%{count})"
-        'no':
-          headline: "所有非轮椅通道%{type} in %{city} (%{count})"
         unknown:
           headline: "所有%{type} in %{city} 轮椅的未知状态(%{count})"
         'yes':
@@ -180,7 +158,6 @@ zh:
       link:
         large_map: "&laquo;取消"
     errors:
-      default: "有错误发生。我们已报告这个问题"
       not_authorized: "抱歉，验证失败"
       not_available: "抱歉，此页暂时不可用"
       not_existent: "抱歉，此地点已无效"
@@ -238,12 +215,6 @@ zh:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "如果您要在wheelmap.org建立和更改位置，须先将您的帐户连接到'open street map'"
-    callback:
-      notice: "您的wheelmap帐户现在已连接到OpenStreetMap帐户%{user}."
   or: 或者
   profile:
     edit:
@@ -266,7 +237,6 @@ zh:
     step1: "请点击您知道的地点"
     step2: "标记并点击保留"
     step3: "就是这样！无需注册"
-    what_is_wheelmap: "什么是wheelmap?"
   statistics: 统计
   support:
     array:
@@ -293,14 +263,13 @@ zh:
     destroy:
       notice: "再见，快点回来啊！"
     new:
-      email: "电子邮件地址"
       login: "登录"
       login_with_twitter: "使用推特登录"
       password: 密码
       remember_me: "保留登录状态"
   wheelchairstatus:
-    limited: "部分轮椅通道可用"
-    'no': "非轮椅通道"
+    limited: "部分无障碍通行"
+    'no': "不是轮椅专用通道"
     unknown: "未知状态"
     'yes': "轮椅通道"
   wheelmap:
@@ -317,9 +286,7 @@ zh:
       title: "Wheelmap 标志－找到轮椅通道的地点"
     what_is:
       fully_accessible: "入口没有台阶，所有房间没有台阶，厕所可通过"
-      limited_accessible: "入口有台阶（最高7厘米），大部分房间没有台阶。厕所不能通过"
       not_accessible: "入口很快到达，房间不能通过"
-      unknown_accessible: "标记地点帮助"
   will_paginate:
     next_label: "往后&#8594;"
     page_entries_info:

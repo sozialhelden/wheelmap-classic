@@ -8,8 +8,6 @@ el:
       health: Υγεία
       leisure: Ψυχαγωγία
       misc: Διάφορα
-      money_post: "Τράπεζα και Ταχυδρομείο"
-      public_transfer: "Μέσα μαζικής μεταφοράς"
       shopping: Καταστήματα
       sport: Αθλητισμός
       tourism: Τουρισμός
@@ -49,10 +47,8 @@ el:
         government: "Κυβερνητική υπηρεσία"
         police: Αστυνομία
         public_building: "Δημόσια κτήρια"
-        townhall: Δημαρχείο
       health:
         dentist: Οδοντίατρος
-        doctors: Γιατροί
         hearing_aids: "Αντιπρόσωπος ακουστικών βαρηκοΐας"
         hospital: Νοσοκομείο
         medical_supply: "Ιατρικές προμύθειες"
@@ -64,7 +60,6 @@ el:
         brothel: Οίκος ανοχής
         casino: Καζίνο
         cinema: Κινηματογράφος
-        community_center: "Κοινοτικό Κέντρο"
         gallery: Πινακοθήκη
         nightclub: Νυχτερινό κέντρο διασκέδασης
         playground: Παιδική χαρά
@@ -89,7 +84,6 @@ el:
         aerodrome: Αεροδρόμιο
         bicycle_parking: "Χώρος στάθμευσης για ποδήλατα"
         bicycle_rental: "Ενοικίαση ποδηλάτων"
-        boatyard: Ναυπηγείο
         bus_station: "Σταθμός λεωφορείων"
         bus_stop: "Στάση λεωφορείου"
         cable_car: "Τελεφερίκ"
@@ -118,7 +112,6 @@ el:
         butcher: Κρεοπωλείο
         car_repair: "Συνεργείο αυτοκινήτου"
         car_shop: "Κατάστημα αυτοκινήτων"
-        chemist: Φαρμακοποιός
         clothes: Ρούχα
         computer: Υπολογιστές
         confectionery: "Ψιλικατζίδικο"
@@ -132,7 +125,6 @@ el:
         farm_shop: "Οπωροπωλείο"
         florist: Ανθοπωλείο
         furniture: Έπιπλα
-        garden_centre: "Ανθοκομικό κέντρο"
         gift: "Κατάστημα δώρων"
         hairdresser: Κομμωτήρια
         hardware: Kατάστημα σιδηρικών

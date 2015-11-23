@@ -9,7 +9,7 @@ ja:
         phone: 電話番号
         note: ノート
         address_street: 住所(Street)
-        address_housenumber: 番地
+        address_housenumber: 家の番号
         address_postcode: 郵便番号
         address_city: 都道府県
   faq:
@@ -73,9 +73,8 @@ ja:
           description: Wheelmap.orgのなかで車椅子のアクセシビリティ情報が登録されているかどうかを確認してみてください。もしまだ情報が少ない場合、より詳しい情報や写真を追加してみましょう。
           title: 'Wheelmap.orgでの登録名称: %{name}'
       share:
-        email: E-mail
+        email: Eメール
         facebook: Facebook
-        text: 'Wheelmap.org でこんな場所がありました: %{name}'
         twitter: Twitter
   search:
     index:
@@ -93,14 +92,12 @@ ja:
         ticker:
           other: '%{count} 結果:'
     timeout:
-      headline: こちらの間違いです。すみません。
       info: 検索機能が一時的に利用できない状態です。
       repeat_search: 検索を再実行
   users:
     profile:
       newsletter:
         title: ニュースレター
-        text: Wheelmapからの最新ニュースレターをチェックしてください。多くても月に一号程度の発行をしますので、心配しなくても大丈夫です。
         label: はい、Wheelmapに関する更新を維持します。
       show:
         title: 概要
@@ -111,8 +108,10 @@ ja:
             other: '%{count} 個の場所'
       photos:
         title: 写真
-        empty: 写真をアップロードしていません
       edit:
         title: プロフィール
         legends:
           user_data: あなたのアカウント情報
+      widget:
+        legends:
+          settings: 設定

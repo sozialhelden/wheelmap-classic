@@ -2,12 +2,9 @@ pl:
   devise:
     confirmations:
       confirmed: "Twój adres email został potwierdzony."
-      link: "Nie otrzymałeś instrukcji potwierdzenia?"
       send_instructions: "Za chwilę otrzymasz wiadomość z linkiem do potwierdzenia Twojego adresu email."
-      send_paranoid_instructions: "Jeżeli poprawnie założyłeś konto, za chwilę otrzymasz wiadomość z instrukcją potwierdzenia."
     destroy:
       confirm: "Jesteś pewien?"
-      headline: "Usuń konto"
       link: "Skasuj teraz"
     edit:
       form:
@@ -20,25 +17,19 @@ pl:
       headline: "Edytuj konto"
     failure:
       already_authenticated: "Jesteś już zalogowany."
-      inactive: "Konto nie zostało jeszcze aktywowane."
       invalid: "Niepoprawny adres email lub hasło."
       invalid_token: "Niepoprawny token."
       locked: "Twoje konto jest zablokowane."
-      timeout: "Sesja wygasła, aby kontynuować zaloguj się ponownie."
       unauthenticated: "Aby kontynuować, zaloguj lub zarejestruj się."
       unconfirmed: "Aby kontynuować, potwierdź konto."
     mailer:
       confirmation_instructions:
-        landing_page: "Kliknij link, który przesłaliśmy na Twój adres mailowy. Jeżeli nie otrzymałeś od nas maila, upewnij się, czy nie znajduje się w folderze wiadomości spam. Jeżeli nadal nie możesz go znaleźć, spróbuj zarejestrować się ponownie."
         subject: "Jeszcze tylko jeden krok do aktywacji twojego konta"
       reset_password_instructions:
         subject: "Instrukcja ustawienia nowego hasła"
-      unlock_instructions:
-        subject: "Instrukcja odblokowania konta"
     mandatory: "* Wymagane"
     omniauth_callbacks:
       failure: "Autoryzacja przy pomocy %{kind} nie powiodła się. Błąd: \"%{reason}\"."
-      permission_missing: "Nie udzieliłeś wymaganej zgody."
       success: "Poprawnie zalogowany z %{kind}."
     password_recovery:
       form:
@@ -51,7 +42,6 @@ pl:
         comment: "Jeżeli nie próbowałeś zmienić hasła, zignoruj ten e-mail.<br/>Twoje hasło nie zostanie zmienione, dopóki nie klikniesz w link powyżej i nie ustawisz nowego hasła."
         headline: "Witaj %{email}"
         link: "Zmień moje hasło"
-        text: "Ktoś zażądał zmiany Twojego hasła. Jeżeli byłeś to Ty, możesz to zrobić klikając ten link:"
       form:
         labels:
           password: "Nowe hasło"
@@ -60,8 +50,6 @@ pl:
       headline: "Ustaw nowe hasło"
     passwords:
       link: "Zapomniałeś hasła?"
-      send_instructions: "Za chwilę instrukcja zmiany hasła zostanie wysłana na podany adres email."
-      send_paranoid_instructions: "Jeżeli Twoje konto już istnieje, za kilka minut otrzymasz maila z instrukcją jak zresetować Twoje hasło."
       updated: "Hasło zostało pomyślnie zmienione, jesteś teraz zalogowany."
       updated_not_active: "Twoje hasło zostało zmienione"
     registrations:
@@ -72,24 +60,19 @@ pl:
         inactive: nieaktywne
         locked: zablokowane
         unconfirmed: niepotwierdzone
-      signed_up: "Witaj! Rejestracja zakończyła się sukcesem. Potwierdzenie zostało wysłane na Twój email."
       updated: "Konto zostało pomyślnie zaktualizowane."
     sessions:
-      inactive: "Twoje konto nie zostało jeszcze  aktywowane."
       invalid: "Niepoprawny adres e-mail lub hasło"
       invalid_token: "Nieprawidłowy token autoryzacji"
       link: "Zaloguj się"
       locked: "Twoje konto jest zablokowane"
       new:
         no_osm_account: "Nie masz konta w OpenStreetMap?"
-        osm_promo_text: "Wheelmap oparty jest na danych z  OpenStreetMap (OSM).  OpenStreetMap to bezpłatna ogólnoświatowa mapa, stworzona przez ludzi takich jak ty. Aby móc edytować miejsca lub tworzyć nowe, musisz mieć konto  OpenStreetMap i być zalogowanym przy jego pomocy."
         promo_text_thank_you: "Dziękujemy z Twoje wsparcie!"
         sign_in_with: "Zaloguj się za pomocą %{kind}"
         sign_up_with_osm: "Zarejestruj się."
-        wheelmap_promo_text: "Swoją wiedzą o miejscach dostępnych dla osób na wózkach inwalidzkich pomagasz ludziom z fizycznymi ograniczeniami lepiej zorganizować ich codzienne życie. Dodatkowo OpenStreetMap staje się coraz bogatszy w detale."
       signed_in: "Zalogowano pomyślnie."
       signed_out: "Wylogowano pomyślnie."
-      timeout: "Sesja wygasła, aby kontynuować zaloguj się ponownie."
       unauthenticated: "Aby kontynuować, zaloguj lub zarejestruj się."
       unconfirmed: "Aby kontynuować, potwierdź konto."
     sign_in:
@@ -112,11 +95,7 @@ pl:
           email: E-mail
           password: Hasło
           password_confirmation: "Powtórz hasło"
-          wants_newsletter: "Tak, chcę otrzymywać najnowsze informacje na temat wheelmap. (Ale nie częściej niż raz w miesiącu.)"
         submit: "Zarejestruj się"
       headline: "Zarejestruj się"
     unlocks:
-      link: "Nie otrzymałeś instrukcji odblokowania?"
-      send_instructions: "Wkrótce powinieneś otrzymać email z instrukcją, jak odblokować swoje konto."
-      send_paranoid_instructions: "Jeśli twoje konto istnieje, za kilka minut otrzymasz email z instrukcją, jak je odblokować."
       unlocked: "Twoje konto zostało odblokowane. Jesteś teraz zalogowany."

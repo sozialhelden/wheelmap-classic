@@ -2,11 +2,9 @@ pt:
   devise:
     confirmations:
       confirmed: "A sua conta está confirmada. Está agora ligado à sua conta."
-      link: "Não recebeu a confirmação com instruções?"
       send_instructions: "Receberá dentro de minutos um e-mail com intruções de como confirmar a sua conta."
     destroy:
       confirm: "Tem a certeza?"
-      headline: "Apagar a conta."
       link: "Apagar agora"
     edit:
       form:
@@ -18,11 +16,9 @@ pt:
         submit: "Gravar mudanças"
       headline: "Opções da conta"
     failure:
-      inactive: "A sua conta ainda nao foi activada."
       invalid: "Palavra passe ou Email inválido. "
       invalid_token: "d"
       locked: "A sua conta está bloqueada."
-      timeout: "A sua sess"
       unauthenticated: "Voçê tem de se registrar antes de poder continuar.  "
       unconfirmed: "Voçê tem de confirmar a sua conta antes de continuar."
     mailer:
@@ -30,8 +26,6 @@ pt:
         subject: "Confirmação das instruções"
       reset_password_instructions:
         subject: "Restabelecer as intruções sobre a palavra passe"
-      unlock_instructions:
-        subject: "Desbloquear as instruções  "
     mandatory: "* campo obrigatório"
     omniauth_callbacks:
       failure: "não pôde ser confirmado de  %{kind} porque \"%{reason}"
@@ -41,13 +35,12 @@ pt:
         labels:
           email: E-mail
         submit: "Restabelecer a sua palavra passe"
-      headline: "Esqueceu-se da palavra passe?"
+      headline: "Esqueceu-se da senha?"
     password_reset:
       email:
         comment: "Se não pediu para alterar a sua palavra passe, por favor ignore este mail <br/>. A sua palavra passe não será alterada a não ser que carregue no seguinte link."
         headline: "Bem vindo %{email}"
         link: "Mudar a palavra passe"
-        text: "Alguém pediu para alterar a sua palavra passe. Pode fazer essa alteração carregando no seguinte link: "
       form:
         labels:
           password: "Nova palavra passe"
@@ -56,22 +49,18 @@ pt:
       headline: "Restabelecer a palavra passe"
     passwords:
       link: "Esquececeu-se da palavra passe?"
-      send_instructions: "Dentro de minutos receberá um mail com as instruções de como restablecer a sua palavra passe"
       updated: "A sua palavra passe foi alterada con sucesso. Está agora ligado à sua conta."
     registrations:
       destroyed: "Adeus! A sua conta foi cancelada com sucesso. Até breve."
       link: "Criar conta"
-      signed_up: "Conta criada com sucesso. Uma confirmação foi mandada para o seu mail."
       updated: "A actualização da sua conta decorreu com sucesso"
     sessions:
-      inactive: "A sua conta ainda não foi activada"
       invalid: "E-mail ou palavra passe inválida "
       invalid_token: "Ficha de autentificação inválida"
       link: "Entrar na conta"
       locked: "A sua conta está bloqueada"
       signed_in: "Entrou na conta com sucesso"
       signed_out: "Saiu da conta com sucesso"
-      timeout: "A sua sessão expiou, por favor volte a entrar na sua conta para continuar."
       unauthenticated: "Tem de criar uma conta ou entrar na sua conta para continuar."
       unconfirmed: "Tem de confirmar a sua conta antes de continuar"
     sign_in:
@@ -93,6 +82,4 @@ pt:
         submit: "Registrar-se"
       headline: "Registrar-se"
     unlocks:
-      link: "Não recebeu instruções para desbloquear a sua conta?"
-      send_instructions: "Receberá dentro de minutos um mail com intruções de como desbloquear a sua conta."
       unlocked: "A sua conta foi desbloqueada com sucesso. Está agora ligado(a) à sua conta"

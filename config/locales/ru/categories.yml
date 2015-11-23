@@ -7,9 +7,7 @@ ru:
       government: Гос. учреждения
       health: Здоровье
       leisure: Досуг
-      misc: Разное
-      money_post: "Отделение банка"
-      public_transfer: "Общ. транспорт"
+      misc: Смешанное
       shopping: Шопинг
       sport: Спорт
       tourism: Туризм
@@ -49,10 +47,8 @@ ru:
         government: "Государственное учреждение"
         police: Полиция
         public_building: "Общественное здание"
-        townhall: Здание городской администрации
       health:
         dentist: Стоматолог
-        doctors: Доктор
         hearing_aids: "Продажа слуховых аппаратов"
         hospital: Больница
         medical_supply: "Медикаменты"
@@ -64,7 +60,6 @@ ru:
         brothel: Публичный дом
         casino: Казино
         cinema: Кинотеатр
-        community_center: "Общинный центр"
         gallery: Галерея
         nightclub: Ночной клуб
         playground: Детская площадка
@@ -89,7 +84,6 @@ ru:
         aerodrome: Аэропорт
         bicycle_parking: "Велопарковка"
         bicycle_rental: "Прокат велосипедов"
-        boatyard: Лодочная мастерская
         bus_station: "Автобусная станция"
         bus_stop: "Автобусная остановка"
         cable_car: "Канатная дорога"
@@ -118,7 +112,6 @@ ru:
         butcher: Мясная лавка
         car_repair: "Автосервис"
         car_shop: "Автосалон"
-        chemist: Аптекарь
         clothes: Одежда
         computer: Компьютер
         confectionery: "Магазин сладостей"
@@ -132,7 +125,6 @@ ru:
         farm_shop: "Магазин фермерских продуктов"
         florist: Флорист
         furniture: Мебель
-        garden_centre: "Садовый центр"
         gift: "Магазин \"Подарки\""
         hairdresser: Парикмахер
         hardware: Аппаратура

@@ -9,7 +9,7 @@ de:
         phone: Telefon
         note: Anmerkung
         address_street: Straße
-        address_housenumber: Hausnummer
+        address_housenumber: Nummer
         address_postcode: Postleitzahl
         address_city: Stadt
   faq:
@@ -31,6 +31,9 @@ de:
       projects: Projekte
     toolbar:
       categories: Kategorien
+    meta:
+      description: Wheelmap.org ist eine Onlinekarte zum Finden, Suchen und Markieren von rollstuhlgerechten Orten. Mach mit, indem du z.B. Bars, Restaurants, Kinos und Supermärkte markierst!
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -40,6 +43,7 @@ de:
         headline: 'Mit Wheelmap.org kannst Du rollstuhlgerechte Orte finden und markieren - weltweit und kostenlos. So einfach gehts:'
         lookup: Direkt Orte finden
         secondary_headline: 'Das Ampelsystem zum Markieren der Rollstuhlgerechtigkeit:'
+      embed_link: Auf Wheelmap.org anzeigen
   nodes:
     new:
       form:
@@ -75,7 +79,7 @@ de:
       share:
         email: E-Mail
         facebook: Facebook
-        text: 'Ich habe folgenden Ort auf Wheelmap.org gefunden: %{name}'
+        text: 'Ich habe diesen Ort auf Wheelmap gefunden: %{name}'
         twitter: Twitter
   search:
     index:
@@ -94,14 +98,14 @@ de:
           one: '%{count} Ergebnis:'
           other: '%{count} Ergebnisse:'
     timeout:
-      headline: Oh, unser Fehler
+      headline: Entschuldigung, da lief etwas schief
       info: Unser Suchdienst war kurzzeitig nicht verfügbar.
       repeat_search: Suche wiederholen
   users:
     profile:
       newsletter:
         title: Newsletter
-        text: Mit dem Wheelmap-Newsletter bleibst Du auf dem Laufenden. Keine Angst, wir spammen Dich nicht zu. Maximal ein Mal im Monat kriegst Du elektronische Post von uns.
+        text: Bleib auf dem Laufenden mit dem Wheelmap Newsletter.
         label: Ja, haltet mich über Wheelmap auf dem Laufenden.
       show:
         title: Übersicht
@@ -118,15 +122,30 @@ de:
             one: '%{count} Ort hinzugefügt'
             other: '%{count} Orte hinzugefügt'
           pois_edited:
-            one: '%{count} Ort bearbeitet'
-            other: '%{count} Orte bearbeitet'
+            one: '%{count} Ort editiert'
+            other: '%{count} Orte editiert'
           photos_uploaded:
             one: '%{count} Bild hochgelanden'
             other: '%{count} Bilder hochgelanden'
       photos:
         title: Fotoalbum
-        empty: Du hast noch keine Fotos hochgeladen.
+        empty: Du hast bisher keine Fotos hochgeladen.
       edit:
         title: Profil
         legends:
           user_data: Deine Benutzerdaten
+      widget:
+        title: Widget
+        height: Höhe
+        width: Breite
+        center: Kartenausschnitt
+        categories: Kategoriefilter anzeigen
+        providers: Anbieter
+        empty_provider: Anbieter wählen
+        empty_center: Kartenmitte suchen
+        legends:
+          settings: Einstellungen
+          preview: Vorschau
+          embed: Embed Code
+          embed_explanation: Du kannst Breitengrad (<code>lat</code>), Längengrad (<code>lon</code>) und Zoomlevel (<code>zoom</code>) manuell im Code ändern und damit den Kartenausschnitt (Widget) deinem Wunsch nach anpassen.
+          general: Erzeuge dein eigenes Wheelmap Widget und integriere es auf einer Webseite oder einem Blog.

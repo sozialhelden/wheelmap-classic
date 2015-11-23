@@ -8,6 +8,7 @@ it:
         website: Sito web
         phone: Telefono
         address_street: Via
+        address_housenumber: 'Numero della casa '
         address_city: Città
   faq:
     answers:
@@ -72,7 +73,6 @@ it:
       share:
         email: E-mail
         facebook: Facebook
-        text: 'Ho trovato questo posto su Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -90,7 +90,6 @@ it:
           one: '%{count} risultato:'
           other: '%{count} risultati:'
     timeout:
-      headline: Oh, errore nostro
       info: Il servizio di ricerca non è al momento disponibile.
       repeat_search: Riprova la ricerca
   users:
@@ -101,3 +100,6 @@ it:
         title: Foto
       edit:
         title: Profilo
+      widget:
+        legends:
+          settings: Impostazioni

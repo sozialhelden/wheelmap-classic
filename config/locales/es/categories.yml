@@ -7,9 +7,7 @@ es:
       government: Gobierno
       health: Salud
       leisure: Entretenimiento
-      misc: Variado
-      money_post: "Banco"
-      public_transfer: "Transportes públicos"
+      misc: Miscelánea
       shopping: Compras
       sport: Deportes
       tourism: Turismo
@@ -49,10 +47,8 @@ es:
         government: "Agencia gubernamental"
         police: Policía
         public_building: "Edificio público"
-        townhall: Ayuntamiento
       health:
         dentist: Dentista
-        doctors: Médicos
         hearing_aids: "Distribuidor de audífonos"
         hospital: Hospital
         medical_supply: "Suministros Médicos"
@@ -64,7 +60,6 @@ es:
         brothel: Burdel
         casino: Casino
         cinema: Cine
-        community_center: "Centro cívico"
         gallery: Galería
         nightclub: Discoteca
         playground: Área de juegos
@@ -89,7 +84,6 @@ es:
         aerodrome: Aeropuerto
         bicycle_parking: "Estacionamiento de bicicletas"
         bicycle_rental: "Alquiler de Bicicletas"
-        boatyard: Astillero
         bus_station: "Estación de autobús"
         bus_stop: "Parada de autobús"
         cable_car: "Teleférico"
@@ -118,7 +112,6 @@ es:
         butcher: Carnicería
         car_repair: "Taller de coches\n"
         car_shop: "Concesionario"
-        chemist: Farmacia
         clothes: Ropa
         computer: Ordenadores
         confectionery: "Bombonería"
@@ -132,7 +125,6 @@ es:
         farm_shop: "Granja"
         florist: Floristería
         furniture: Muebles
-        garden_centre: "Centro de jardinería"
         gift: "Tienda de regalos"
         hairdresser: Peluquería
         hardware: Hardware

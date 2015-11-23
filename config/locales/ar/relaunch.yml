@@ -18,6 +18,7 @@ ar:
 
 
           شارع'
+        address_housenumber: رقم المنزل
         address_city: '
 
 
@@ -48,6 +49,7 @@ ar:
       edit: تحرير
     show:
       share:
+        email: بريد الكتروني
         facebook: فيس بوك
         twitter: تويتر
   users:
@@ -58,3 +60,9 @@ ar:
         title: صور
       edit:
         title: الحساب
+      widget:
+        legends:
+          settings: '
+
+
+            الإعدادات'

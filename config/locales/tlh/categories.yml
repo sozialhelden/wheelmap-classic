@@ -6,9 +6,6 @@ tlh:
       food: Sop
       government: qum
       leisure: tIvtaHghach
-      misc: latlh
-      money_post: "Huch QumwI' je Suy"
-      public_transfer: "Qay"
       shopping: Suymey
       sport: Qujmey
       tourism: SuchwI'
@@ -43,7 +40,6 @@ tlh:
         courthouse: chut qach
         embassy: rIvSo'
         public_building: "wo' qach"
-        townhall: veng vaS
       leisure:
         arena: SuvmeH Daq
         cinema: vIHbogh much Daq
@@ -65,7 +61,6 @@ tlh:
         aerodrome: muD Duj juH
         bicycle_parking: "cha' rutlh lupwI' leSmeH Daq"
         bicycle_rental: "cha' rutlh lupwI' ngIpmeH Daq"
-        boatyard: bIQDuj Daq
         bus_station: "lupwI' waw'"
         bus_stop: "lupwI' mevmeH Daq"
         cable_car: "lupwI'"
@@ -100,7 +95,6 @@ tlh:
         electronics: '''ul lo''bogh Doch Suy'
         florist: poch Suy
         furniture: quS QongDaq je Suy
-        garden_centre: "poch Suy"
         hairdresser: jIb Say'moHmeH
         hardware: chenmoHwI' jan Suy
         kiosk: SuyHom

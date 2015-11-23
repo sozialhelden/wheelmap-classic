@@ -6,29 +6,21 @@ is:
       notice: "Þú verður að vera innskráður til að sjá þessa síðu"
   breadcrumbs:
     node:
-      create: "Bæta við nýjum stað"
       edit: "Breyta stað"
-    root: wheelmap
   common:
     close: loka
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "verður að staðfesta"
       already_confirmed: "nú þegar staðfestur, reyndu að skrá þig inn"
-      blank: "verður að fylla út"
       confirmation: "passar ekki við staðfestingu"
-      empty: "verður að fylla út"
       equal_to: "verður að vera nákvæmlega %{count} "
-      even: "verður að vera jafnt"
       exclusion: "er tekið frá"
       greater_than: "verður að vera stærri en %{count}"
-      greater_than_or_equal_to: "verður að vera stærri en eða jafnt %{count}"
       inclusion: "er ekki tekið gilt"
       invalid: "ekki gilt"
       less_than: "verður að vera minna en %{count}"
-      less_than_or_equal_to: "verður að vera minna en eða jafnt %{count}"
       not_a_number: "er ekki tala"
       not_an_integer: "verður að vera meira"
       not_found: "fannst ekki"
@@ -36,7 +28,6 @@ is:
       not_saved:
         one: "%{resource} er ekki vistað vegna einnar villu."
         other: "%{resource} ekki vistað vegna %{count} villna."
-      odd: "verður að vera stakt"
       taken: "hefur verið tekið"
       too_long: "er of langt (ekki fleiri en %{count} stafir)"
       too_short: "er of stutt (ekki minna en %{count} stafir)"
@@ -57,9 +48,6 @@ is:
         notice: "%{resource_name} var uppfært án vandræða."
   form:
     show_fully_accessible_places: "Hjólastólaaðgengi"
-    show_limited_accessible_places: "Eitthvað hjólastólaaðgengi"
-    show_places_without_status: "Óvitað"
-    show_unaccessible_places: "Ekkert hjólastólaaðgengi"
   formtastic:
     hints:
       lat: "Færðu merkið á réttan stað á kortinu"
@@ -69,14 +57,11 @@ is:
     labels:
       category: "Flokkur:"
       city: "Borg:"
-      create: "Búa til stað"
-      email: Tölvupóstur
+      email: Tölvupóstfang
       housenumber: "Nei:"
       lat: Breiddargráða
       lon: Lengdargráða
       name: "Nafn:"
-      osm_password: "OSM lykilorð"
-      osm_username: "OSM notendanafn"
       password: Lykilorð
       password_confirmation: "Lykilorð endurtekið"
       phone: "Sími:"
@@ -111,14 +96,12 @@ is:
       profile: Prófílnum
       suggestions: Uppástungur
       what_is_barrier_free: "Hvað þýðir \"hjólastólaaðgengilegt\"?"
-      what_is_wheelmap: "Hvað er wheelmap?"
     searchbar:
       add_place: "Bæta við öðrum stað"
       find: finna
       placeholder: "t.d. Árbæjarsafn eða Ráðhús Reykjavíkur"
       title_add_place: "Bæta við nýju stað á þessari staðsetningu strax!"
     tagline: "Wheelmap logo"
-    title: "Finndu staði aðgengilega hjólastólum"
   helpers:
     select:
       prompt: "Vinsamlega veldu"
@@ -137,17 +120,10 @@ is:
           upgrade: "Uppfæra vafra"
         warning:
           headline: "Afsakið!"
-          message: "Þú virðist vera að nota Internet Explorer. Wheelmap þarf á öðrum vafra að halda til að virka betur. Vinsamlegast notaðu Firefox, Chrome, Safari eða Opera"
-      link:
-        node:
-          create: "Bæta við nýjum stað"
       popup:
         form:
-          limited: "að hluta til hjólastólaaðgengilegt"
-          'no': "ekki hjólastólaaðgengilegt"
           save: vista
-          unknown: "óvituð staða"
-          'yes': "hjólastólaaðgengilegt"
+          'yes': "Hjólastólaaðgengi"
         help: "Hjólastólaaðgengilegt? (Hjálp)"
         more: "meiri ..."
   layouts:
@@ -172,7 +148,6 @@ is:
       link:
         large_map: "&laquo; Hætta við"
     errors:
-      default: "Úps, eitthvað fór úrskeiðis. En við höfum verið látin vita!"
       not_authorized: "Afsakið, auðkenning mistókst"
       not_available: "Afsakið, þessu síða er tímabundið niðri."
       not_existent: "Afsakið, þessi staður er ekki til lengur."
@@ -229,12 +204,6 @@ is:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "Þú verður að aðganginn þinn við open street map áður en þú getur búið til eða breytt stöðum á wheelmap.org"
-    callback:
-      notice: "Wheelmap aðgangurinn þinn er núna tengdur OpenStreetMap %{user}. "
   or: eða
   place:
     one: "%{count} staður"
@@ -255,7 +224,6 @@ is:
         not_found: "Engir staðir fundust!"
   splash:
     start: Byrja
-    what_is_wheelmap: "Hvað er wheelmap?"
   statistics: Tölfræðilegar upplýsingar
   support:
     array:
@@ -282,16 +250,12 @@ is:
     destroy:
       notice: "Bless, komdu aftur fljótlega!"
     new:
-      email: "Tölvupóstur"
       login: "Innskráning"
       login_with_twitter: "Innskráning með Twitter"
       password: Lykilorð
       remember_me: "Vera innskráður"
   wheelchairstatus:
-    limited: "eitthvað hjólastólaaðgengi"
-    'no': "ekkert hjólastólaaðgengi"
-    unknown: "hjólastólaaðgengi ekki vitað"
-    'yes': "algjörlega hjólastólaaðgengilegt"
+    'yes': "Hjólastólaaðgengi"
   wheelmap:
     itunes:
       alt: "AppStore Logo"
@@ -301,8 +265,6 @@ is:
       title: "Wheelmap - Finndu hjólastólaaðgengilega staði"
     what_is:
       fully_accessible: "Þröskuldurinn á innganginum er ekki hærri en 7 cm; allir staðir aðgengilegir fyrir hjólastólanotendur (undantekningarlaust); klósett fyrir fatlaða á svæðinu"
-      limited_accessible: "Þröskuldurinn á innganginum er ekki hærri en 7 cm; mikilvægustu staðirnir aðgengilegir fyrir hjólastólanotendur"
       not_accessible: "Þröskuldurinn á innganginum er hærri en 7 cm; eða stigi við inngang; mikilvægustu staðirnir eru ekki aðgengilegir fyrir hjólastólanotendur"
-      unknown_accessible: "Hjólastólaaðgengi ekki vitað"
   will_paginate:
     page_gap: "&hellip;"

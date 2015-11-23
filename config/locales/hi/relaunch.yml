@@ -1,4 +1,8 @@
 hi:
+  nodes:
+    show:
+      share:
+        email: ईमेल
   users:
     profile:
       newsletter:

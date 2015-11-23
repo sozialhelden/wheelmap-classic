@@ -2,12 +2,9 @@ hu:
   devise:
     confirmations:
       confirmed: "Az email-címedet sikeresen megerősítetted."
-      link: "Nem kaptad meg a megerősítési útmutatót?"
       send_instructions: "Néhány percen belül kapsz egy emailt, benne egy linkkel, mellyel megerősítheted a címed."
-      send_paranoid_instructions: "Ha  létezik a fiókod, hamarosan kapsz egy emailt arról, hogy hogyan erősítsd meg a regisztrációdat."
     destroy:
       confirm: "Biztos vagy benne?"
-      headline: "Fiók törlése"
       link: "Törlés most"
     edit:
       form:
@@ -20,25 +17,19 @@ hu:
       headline: "Fiók szerkesztése"
     failure:
       already_authenticated: "Már be vagy jelentkezve."
-      inactive: "A fiókod még nincs aktiválva."
       invalid: "Helytelen email vagy jelszó."
       invalid_token: "Érvénytelen azonosítási token"
       locked: "A fiókod zárolva van"
-      timeout: "Lejárt a munkameneted, kérjük jelentkezz be újra a folytatáshoz."
       unauthenticated: "A folytatáshoz jelentkezz be vagy regisztrálj"
       unconfirmed: "A folytatáshoz meg kell erősítened a regisztrációdat."
     mailer:
       confirmation_instructions:
-        landing_page: "Kérjük, nyisd meg a linket, amit emailben küldtünk. Ha nem kaptál tőlünk emailt, először nézd meg, nem bújt-e el a spam mappában, és ha ott sincs, akkor gyere ide vissza és próbáld újra."
         subject: "Egy utolsó lépés a fiókod aktiválásához"
       reset_password_instructions:
         subject: "Jelszó-visszaállítási útmutató"
-      unlock_instructions:
-        subject: "Feloldási útmutató"
     mandatory: "* Kötelező"
     omniauth_callbacks:
       failure: "Sikertelen azonosítás ezzel: %{kind}.  Hiba: \"%{reason}\". "
-      permission_missing: "Nem adtad meg a szükséges engedélyeket."
       success: "Sikeres bejelentkezés ezzel: %{kind}."
     password_recovery:
       form:
@@ -51,7 +42,6 @@ hu:
         comment: "Ha nem kérted a jelszavad helyreállítását, hagyd figyelmen kívül ezt az emailt.<br/>A jelszavad nem lesz megváltoztatva, csak akkor, ha megnyitod a fenti linket és beállítasz egy új jelszót."
         headline: "Üdv, %{email}"
         link: "Jelszavam megváltoztatása"
-        text: "Valaki a jelszavad visszaállítását kérte, ha te voltál az, kattints az alábbi linkre - ha nem, hagyd figyelmen kívül! "
       form:
         labels:
           password: "Új jelszó"
@@ -60,8 +50,6 @@ hu:
       headline: "Jelszó helyreállítása"
     passwords:
       link: "Elfelejtett jelszó?"
-      send_instructions: "Néhány percen belül kapsz emailben egy útmutatót a jelszavad visszaállításáról"
-      send_paranoid_instructions: "Ha létezik a fiókod, hamarosan kapsz egy emailt arról, hogy hogyan állíthatod vissza a jelszavadat"
       updated: "A jelszavadat sikeresen megváltoztattuk, be is vagy jelentkezve"
       updated_not_active: "A jelszavadat sikeresen megváltoztattuk"
     registrations:
@@ -72,24 +60,19 @@ hu:
         inactive: inaktív
         locked: zárolt
         unconfirmed: megerősítetlen
-      signed_up: "Sikeresen regisztráltál. Küldtünk egy megerősítést emailben."
       updated: "Sikeresen frissítetted a fiókodat."
     sessions:
-      inactive: "A fiókod még nincs aktiválva."
       invalid: "Helytelen email vagy jelszó."
       invalid_token: "Érvényletelen azonosítási token"
       link: "Bejelentkezés"
       locked: "A fiókod zárolva van"
       new:
         no_osm_account: "Nincs OpenStreetMap fiókod?"
-        osm_promo_text: "A Wheelmap az OpenStreetMaptől (OSM) származó térképadatokon alapul. Az OpenStreetMap egy szabad világtérkép, amit hozzád hasonló emberek szerkesztenek. Olyan ez, mint egy térkép-Wikipédia. Ahhoz, hogy a helyeket szerkeszthesd vagy újakat hozhass létre, szükséged van egy OpenStreetMap fiókra és be kell jelentkezned vele."
         promo_text_thank_you: "Köszönjük szépen a támogatásodat!"
         sign_in_with: "Belépés ezzel: %{kind} "
         sign_up_with_osm: "Regisztrálj most."
-        wheelmap_promo_text: "A helyek kerekesszékes akadálymentességéről szóló tudásoddal segítesz a mozgáskorlátozott embereknek a mindennapi életük megszervezésében. Ezen felül pedig az OpenStreetMap is újjabb részletekkel gazdagodik."
       signed_in: "Sikeres bejelentkezés"
       signed_out: "Sikeresen kijelentkeztél"
-      timeout: "Lejárt a munkameneted, kérjük jelentkezz be újra a folytatáshoz."
       unauthenticated: "A folytatáshoz jelentkezz be vagy regisztrálj"
       unconfirmed: "Meg kell erősítened a regisztrációd, mielőtt továbbléphetsz"
     sign_in:
@@ -112,11 +95,7 @@ hu:
           email: Email
           password: Jelszó
           password_confirmation: "Jelszó megerősítése"
-          wants_newsletter: "Igen, tájékoztassatok a Wheelmap újdonságairól - de havonta legfeljebb egyszer"
         submit: "Regisztráció"
       headline: "Regisztráció"
     unlocks:
-      link: "Nem kaptad meg a feloldási útmutatót?"
-      send_instructions: "Néhány percen belül kapsz egy emailt arról, hogy hogyan oldhatod fel a fiókod zárolását"
-      send_paranoid_instructions: "Ha a fiókod létezik, néhány percen belül kapsz egy útmutatót emailben arról, hogy hogyan oldhatod fel a fiókod zárolását"
       unlocked: "Sikeresen feloldottad a fiókod zárolását. Be vagy jelentkezve."

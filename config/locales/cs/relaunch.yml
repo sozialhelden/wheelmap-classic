@@ -9,7 +9,6 @@ cs:
         phone: Telefon
         note: Poznámka
         address_street: Ulice
-        address_housenumber: Číslo domu
         address_postcode: PSČ
         address_city: Město
   faq:
@@ -73,9 +72,8 @@ cs:
           description: Na Wheelmap.org zjistíte, jestli je toto místo přístupné pro vozíčkáře. Také můžete přidat další informace a fotky k danému místu.
           title: 'Tohle místo je na Wheelmap.org: %{name}'
       share:
-        email: E-mail
+        email: Email
         facebook: Facebook
-        text: 'Tohle místo jsem našel na Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -95,14 +93,12 @@ cs:
           few: '%{count} výsledků:'
           other: '%{count} výsledků:'
     timeout:
-      headline: Oh, naše chyba
       info: Vyhledávání bylo dočasně nedostupné.
       repeat_search: Hledat znovu
   users:
     profile:
       newsletter:
         title: Novinky
-        text: Zůstaňte s námi ve spojení pomocí newsletteru. Nebojte se, spamovat vás nebudeme. Uslyšíte od nás maximálně jednou do měsíce.
         label: Ano, posílejte mi novinky o Wheelmap.
       show:
         title: Přehled
@@ -120,17 +116,12 @@ cs:
             one: 'přidal %{count} místo'
             few: 'přidal %{count} místa'
             other: 'přidal %{count} míst'
-          pois_edited:
-            one: 'upravil/a %{count} místo'
-            few: 'upravil/a %{count} místa'
-            other: 'upravil/a %{count} míst'
           photos_uploaded:
             one: 'nahrál/a %{count} fotku'
             few: 'nahrál/a %{count} fotky'
             other: 'nahrál/a %{count} fotek'
       photos:
         title: Fotky
-        empty: Zatím jste nenahrál/a žádné fotky.
       edit:
         title: Profil
         legends:

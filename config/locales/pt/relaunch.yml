@@ -1,1 +1,14 @@
-pt: {}
+pt:
+  activerecord:
+    attributes:
+      poi:
+        address_housenumber: Número de casa
+  nodes:
+    show:
+      share:
+        email: E-mail
+  users:
+    profile:
+      widget:
+        legends:
+          settings: Definições

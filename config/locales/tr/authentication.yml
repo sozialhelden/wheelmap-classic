@@ -2,11 +2,9 @@ tr:
   devise:
     confirmations:
       confirmed: "hesab başarılı bir şekilde onaylandı. "
-      link: "onaylama icin talimat almadınızmı? "
       send_instructions: "Bir kaç dakika içerisinde e-posta ile hesabınızı nasıl onaylanması gerektiğine dair talimat alacaksınız. "
     destroy:
       confirm: "Emin misiniz?"
-      headline: "Hesabı sil"
       link: "Şimdi sil"
     edit:
       form:
@@ -18,11 +16,9 @@ tr:
         submit: "Değişiklikeri kaydedin"
       headline: "Hesabı yönet"
     failure:
-      inactive: "Hesabınız şu an etkinleştirilmemiştir. "
       invalid: "Geçersiz eposta adresi veya parola"
       invalid_token: "Geçersiz resmi tasdik belirli."
       locked: "Hesabınız şu an kilitli."
-      timeout: "Oturumunuzun süresi dolmştur. Devam etmek için lütfen tekrar kaydolun."
       unauthenticated: "Devam etmek için tekrar kaydolun."
       unconfirmed: "Devam etmeden önce hesabınızı onaylamanız gerekir."
     mailer:
@@ -30,8 +26,6 @@ tr:
         subject: "Onay talimatları"
       reset_password_instructions:
         subject: "parola talimatlarını sıfırla"
-      unlock_instructions:
-        subject: "talimatların kilidini ac"
     mandatory: "* zorunlu alan"
     omniauth_callbacks:
       failure: "%{kind} hesabınıza \"%{reason}\" dolayı yetki verilmemiştir."
@@ -41,13 +35,12 @@ tr:
         labels:
           email: E-Posta
         submit: "Parolayı sıfırla"
-      headline: "Parolayı unuttunuzmu?"
+      headline: "Şifreni mi unuttun?"
     password_reset:
       email:
         comment: "Parolanızı değiştirmek istemiyorsanız lütfen bu mesajı dikkate almayın <br> Parolanız bu linke tıklayana kadar değişmiyecektir. "
         headline: "Hoşgeldiniz %{email}"
         link: "Parolayı değistir"
-        text: "Üçüncü bir şahıs parolanızı değiştirmeye çalısmış. Parolanızı değiştirmek için buraya tıklayın. "
       form:
         labels:
           password: "Yeni parola"
@@ -56,23 +49,19 @@ tr:
       headline: "Parolayı sıfırla"
     passwords:
       link: "Parolayı unuttunuzmu?"
-      send_instructions: "Bir kaç saniye içerisinde parolanızı nasıl sıfırlıyabileceğinize dahil bir e-posta alacaksınız."
       updated: "Parolanız başarılı bir şekilde değişmiştir. Yeni bir oturum açtınız. "
     registrations:
       destroyed: "Hoşçakalın! Hesabınız başarılı bir şekilde iptal edilmiştir. Umariz sizi daha sonra tekrar görürüz."
       inactive_signed_up: "Başarılı bir şekilde kaydoldunuz. Fakat biz sizi kayda alamadık, çünkü hesabınız %{reason}.  "
       link: "Kaydol"
-      signed_up: "Başarılı bir şekilde kaydoldunuz. Kayd etkinleştirildi ise size e-pota ile bunun onayı ilettildi. "
       updated: "Hesabınızı başarılı bir şekilde güncelleştirdiniz. "
     sessions:
-      inactive: "Hesabınız şu an aktive edilmemiştir."
       invalid: "Geçersiz e-posta veya parola"
       invalid_token: "Geçersiz resmi tasdik belirtisi. "
       link: "Oturumu aç"
       locked: "Hesabınız kilitli."
       signed_in: "Oturum başarılı açıldı"
       signed_out: "Oturum basarılı kapandı "
-      timeout: "Oturumuz süresi doldu, devam etmek icin lütfen yeni bir oturum açınız.  "
       unauthenticated: "Devam etmek için oturum açmanız gerekir."
       unconfirmed: "Devam etmek için hesabınızı onaylayınız."
     sign_in:
@@ -94,6 +83,4 @@ tr:
         submit: "Kaydol"
       headline: "Kaydol"
     unlocks:
-      link: "Kilidi açmak için talimatları almadınızmı?"
-      send_instructions: "Bir kaç dakika içerisinde nasıl hesabınızın kilidini açabileceğinize dahil e-posta ile talimatlar alacaksınız."
       unlocked: "Hesabınızın kilidi başarılı bir şekilde açılmıstır. Şu an kayıtlısınız."

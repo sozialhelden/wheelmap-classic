@@ -1,1 +1,4 @@
-ro: {}
+ro:
+  devise:
+    password_recovery:
+      headline: "Ați uitat parola?"

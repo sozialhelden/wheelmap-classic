@@ -7,6 +7,7 @@ fi:
         website: Nettisivu
         phone: Puhelin
         address_street: Katu
+        address_housenumber: Talon numero
         address_postcode: Postinumero
         address_city: Kaupunki
   header:
@@ -20,9 +21,13 @@ fi:
       edit: Muokkaa
     show:
       share:
+        email: Sähköposti
         facebook: Facebook
         twitter: Twitter
   users:
     profile:
       photos:
         title: Kuvia
+      widget:
+        legends:
+          settings: Asetukset

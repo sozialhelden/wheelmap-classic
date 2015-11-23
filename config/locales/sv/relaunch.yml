@@ -8,6 +8,7 @@ sv:
         website: Webbplats
         phone: Telefon
         address_street: Gata
+        address_housenumber: Husnummer
         address_city: Ort
   faq:
     answers:
@@ -72,7 +73,6 @@ sv:
       share:
         email: E-post
         facebook: Facebook
-        text: 'Jag har hittat den här platsen på Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -90,7 +90,6 @@ sv:
           one: '%{count} resultat:'
           other: '%{count} resultat:'
     timeout:
-      headline: Oj, vårt fel
       info: Vår söktjänst var tillfälligt otillgänglig.
       repeat_search: Sök igen
   users:
@@ -101,3 +100,6 @@ sv:
         title: Fotografier
       edit:
         title: Profil
+      widget:
+        legends:
+          settings: Inställningar

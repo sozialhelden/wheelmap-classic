@@ -2,12 +2,9 @@ fr:
   devise:
     confirmations:
       confirmed: "Votre adresse courriel a été confirmée avec succès."
-      link: "Vous n'avez pas reçu d'instructions de confirmation ?"
       send_instructions: "Dans quelques minutes vous recevrez un courriel avec un lien pour confirmer votre adresse courriel."
-      send_paranoid_instructions: "Si votre compte existe, vous recevrez dans quelques minutes un courriel avec des instructions pour confirmer votre compte."
     destroy:
       confirm: "Êtes-vous certain ?"
-      headline: "Supprimer le compte"
       link: "Supprimer maintenant"
     edit:
       form:
@@ -20,25 +17,19 @@ fr:
       headline: "Modifier le compte"
     failure:
       already_authenticated: "Vous êtes déjà connecté."
-      inactive: "Votre compte n'a pas encore été activé."
       invalid: "Courriel ou mot de passe invalide."
       invalid_token: "Jeton d'authentification invalide"
       locked: "Votre compte est verrouillé"
-      timeout: "Votre session est expirée, veuillez vous reconnecter pour continuer."
       unauthenticated: "Vous devez vous connecter ou vous inscrire avant de continuer"
       unconfirmed: "Vous devez confirmer votre compte avant de continuer."
     mailer:
       confirmation_instructions:
-        landing_page: "Veuillez cliquer sur le lien que nous venons d'envoyer à votre adresse courriel. Si vous ne recevez pas notre courriel, veuillez d'abord vérifier s'il ne se cache pas dans votre dossier de pourriels. S'il ne s'y trouve pas, retournez à la page d'inscription et ressayez."
         subject: "Encore une étape pour activer votre compte"
       reset_password_instructions:
         subject: "Instructions de réinitialisation du mot de passe"
-      unlock_instructions:
-        subject: "Instructions de déverrouillage"
     mandatory: "* Exigé"
     omniauth_callbacks:
       failure: "Échec lors de l'autorisation avec %{kind} : « %{reason} »."
-      permission_missing: "Vous n'avez pas accordé les droits exigés."
       success: "Connecté avec succès avec %{kind}."
     password_recovery:
       form:
@@ -51,7 +42,6 @@ fr:
         comment: "Si vous n'avez pas demandé de réinitialisation de mot de passe, ignorez juste ce courriel.<br/>Votre mot de passe ne sera pas changé, sauf si vous cliquez sur le lien ci-dessus et que vous définissez un nouveau mot de passe."
         headline: "Bienvenue %{email}"
         link: "Changer mon mot de passe"
-        text: "Une demande a été faite pour changer votre mot passe. S'il s'agissait de vous, cliquez sur le lien suivant - autrement ignorez-la."
       form:
         labels:
           password: "Nouveau mot de passe"
@@ -60,8 +50,6 @@ fr:
       headline: "Réinitialiser le mot de passe"
     passwords:
       link: "Mot de passe oublié ?"
-      send_instructions: "Vous recevrez dans quelques minutes un courriel avec des instructions pour réinitialiser votre mot de passe"
-      send_paranoid_instructions: "Si votre compte existe, vous recevrez dans quelques minutes un courriel avec des instructions pour réinitialiser votre mot de passe"
       updated: "Votre mot de passe a été changé avec succès. Vous êtes maintenant connecté"
       updated_not_active: "Votre mot de passe a été changé avec succès"
     registrations:
@@ -72,24 +60,19 @@ fr:
         inactive: inactif
         locked: verrouillé
         unconfirmed: non confirmé
-      signed_up: "Vous vous êtes inscrit avec succès. Une confirmation vous a été envoyée par courriel."
       updated: "Vous avez mis votre compte à jour avec succès."
     sessions:
-      inactive: "Votre compte n'a pas encore été activé"
       invalid: "Courriel ou mot de passe invalide."
       invalid_token: "Jeton d'authentification invalide"
       link: "Connexion"
       locked: "Votre compte est verrouillé"
       new:
         no_osm_account: "Vous n'avez pas de compte OpenStreetMap ?"
-        osm_promo_text: "Wheelmap est basée sur des données géographiques d'OpenStreetMap (OSM). OpenStreetMap est une mappemonde libre et gratuite créée par des personnes comme vous. Une Wikipédia des cartes. Pour pouvoir modifier des lieux ou en ajouter de nouveaux, vous devez avoir un compte OpenStreetMap et y être connecté."
         promo_text_thank_you: "Merci beaucoup pour votre soutien !"
         sign_in_with: "Connexion avec %{kind}"
         sign_up_with_osm: "Inscrivez-vous maintenant."
-        wheelmap_promo_text: "Grâce à votre connaissance des endroits accessibles en fauteuil roulant, vous aidez les personnes à mobilité réduite à mieux organiser leur vie de tous les jours. De plus, OpenStreetMap s'enrichit considérablement en détails."
       signed_in: "Connecté avec succès"
       signed_out: "Vous vous êtes déconnecté avec succès"
-      timeout: "Votre session est expiré, veuillez vous reconnecter pour continuer."
       unauthenticated: "Vous devez vous connecter ou vous inscrire avant de continuer"
       unconfirmed: "Vous devez confirmer votre compte avant de continuer"
     sign_in:
@@ -112,11 +95,7 @@ fr:
           email: Courriel
           password: Mot de passe
           password_confirmation: "Répéter le mot de passe"
-          wants_newsletter: "Oui, tenez-moi au courant des nouveautés sur Wheelmap - mais pas plus d'une fois par mois."
         submit: "Inscription"
       headline: "Inscription"
     unlocks:
-      link: "Vous n'avez pas reçu les instructions de déverrouillage ?"
-      send_instructions: "Vous recevrez dans quelques minutes un courriel avec des instructions pour déverrouiller votre compte"
-      send_paranoid_instructions: "Si votre compte existe, vous recevrez dans quelques minutes un courriel avec des instructions pour déverrouiller votre compte"
       unlocked: "Votre compte a été déverrouillé avec succès. Vous êtes maintenant connecté."

@@ -62,7 +62,6 @@ nl:
       share:
         email: E-mail
         facebook: Facebook
-        text: 'Ik heb dit plaats gevonden op Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -78,7 +77,6 @@ nl:
           one: '%{count} resultaat'
           other: '%{count} resultaat:'
     timeout:
-      headline: sorry, werkt niet
       info: Onze zoekdienst was tijdelijk buiten werk
       repeat_search: Herhaal de zoekopdracht
   users:
@@ -89,3 +87,6 @@ nl:
         title: 'Foto''s '
       edit:
         title: Profiel
+      widget:
+        legends:
+          settings: Instellingen

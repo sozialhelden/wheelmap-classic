@@ -75,7 +75,6 @@ pt_BR:
       share:
         email: E-mail
         facebook: Facebook
-        text: 'Encontrei este lugar em Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -94,14 +93,12 @@ pt_BR:
           one: '%{count} resultado:'
           other: '%{count} resultados:'
     timeout:
-      headline: Oh, nossa culpa
       info: Nosso sistema de busca estava temporariamente indisponível.
       repeat_search: Nova busca
   users:
     profile:
       newsletter:
         title: Newsletter
-        text: Fica informado com o Newsletter de Wheelmap. Não vamos te mandar spam. Você vai receber emails no máximo uma vez por mês.
         label: 'Sim, informam-me sobre Wheelmap. '
       show:
         title: Visão geral
@@ -116,16 +113,15 @@ pt_BR:
           pois_added:
             one: '%{count} lugares adicionados'
             other: '%{count} lugares adicionados'
-          pois_edited:
-            one: '%{count} lugares editados'
-            other: '%{count} lugares editados'
           photos_uploaded:
             one: '%{count} lugares transferidos'
             other: '%{count} lugares carregados'
       photos:
         title: Fotos
-        empty: 'Você ainda não carregou uma foto. '
       edit:
         title: Perfis
         legends:
           user_data: Informação de sua conta
+      widget:
+        legends:
+          settings: Configurações

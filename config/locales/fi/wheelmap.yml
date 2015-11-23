@@ -2,13 +2,17 @@ fi:
   breadcrumbs:
     node:
       create: "Lisää uusi paikka"
+    root: Wheelmap
   common:
     close: Sulje
   form:
+    show_limited_accessible_places: "Osittain esteetön pääsy pyörätuolilla "
+    show_places_without_status: "Tuntematon status"
     show_unaccessible_places: "Ei saavutettavissa pyörätuolilla"
   formtastic:
     labels:
       city: "Kaupunki"
+      email: Sähköposti
       password: Salasana
       privacy_policy: "Hyväksyn tietosuojasopimuksen pykälät 1 ja 2."
       save: Tallenna
@@ -24,9 +28,18 @@ fi:
           create: "Lisää uusi paikka"
       popup:
         form:
+          limited: "Osittain esteetön pääsy pyörätuolilla "
           'no': "Ei saavutettavissa pyörätuolilla"
+          unknown: "Tuntematon status"
+          'yes': "Pääsy pyörätuolilla"
   user_sessions:
     new:
       password: Salasana
   wheelchairstatus:
+    limited: "Osittain esteetön pääsy pyörätuolilla "
     'no': "Ei saavutettavissa pyörätuolilla"
+    unknown: "Tuntematon status"
+    'yes': "Pääsy pyörätuolilla"
+  wheelmap:
+    what_is:
+      unknown_accessible: "Auta merkitsemällä paikkoja!"

@@ -8,8 +8,6 @@ bg:
       health: Здраве
       leisure: Отдих и свободно време
       misc: Разни
-      money_post: "Пощи и банки"
-      public_transfer: "Транспорт"
       shopping: Магазини
       sport: Спорт
       tourism: Туризъм
@@ -49,10 +47,8 @@ bg:
         government: "Държавна институция"
         police: Полиция
         public_building: "Обществена сграда"
-        townhall: Кметство
       health:
         dentist: Зъболекар
-        doctors: Медицински център
         hearing_aids: "Магазин за слухови апарати"
         hospital: Болница
         medical_supply: "Лекарства"
@@ -64,7 +60,6 @@ bg:
         brothel: Публичен дом
         casino: Казино
         cinema: Кино
-        community_center: "Общински център"
         gallery: Галерия
         nightclub: Нощен клуб
         playground: Площадка за игра
@@ -89,7 +84,6 @@ bg:
         aerodrome: Летище
         bicycle_parking: "Паркинг за велосипеди"
         bicycle_rental: "Колела под наем"
-        boatyard: Корабостроителница
         bus_station: "Автобусна спирка"
         bus_stop: "Автобусна спирка"
         cable_car: "Лифт"
@@ -118,7 +112,6 @@ bg:
         butcher: Месар
         car_repair: "Автомобилен сервиз"
         car_shop: "Автомобилна къща"
-        chemist: Дрогерия
         clothes: Дрехи
         computer: Компютър
         confectionery: "Магазин за сладкиши"
@@ -132,7 +125,6 @@ bg:
         farm_shop: "Магазин за регионално производство"
         florist: Цветар
         furniture: Мебели
-        garden_centre: "Градински център"
         gift: "Магазин за подаръци"
         hairdresser: Фризьор
         hardware: Магазин за влакчета

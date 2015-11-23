@@ -9,6 +9,7 @@ pt_PT:
       form:
         labels:
           email: E-mail
+      headline: "Esqueceu palavra-passe?"
     password_reset:
       form:
         labels:

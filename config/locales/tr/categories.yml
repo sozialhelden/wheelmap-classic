@@ -7,9 +7,7 @@ tr:
       government: Resmi Daire ve Büyük Elçilikler
       health: Sağlık
       leisure: Boş Vakit
-      misc: Diğer Şeyler
-      money_post: "Banka & Paramatik; Posta "
-      public_transfer: "Trafik/Ulaşım"
+      misc: Çeşitli
       shopping: Alışveriş
       sport: Spor
       tourism: Turizm
@@ -49,10 +47,8 @@ tr:
         government: "Devlet dairesi"
         police: Polis
         public_building: "Resmi Bina"
-        townhall: Belediye Binası
       health:
         dentist: Dişçi
-        doctors: Doktor
         hearing_aids: "İşitme cihazı satıcısı"
         hospital: Hastane
         medical_supply: "Tıbbi malzemeler"
@@ -64,7 +60,6 @@ tr:
         brothel: Genelev
         casino: Kumarhane
         cinema: Sinema
-        community_center: "Sosyal Merkez"
         gallery: Galeri
         nightclub: Gece Kulübü
         playground: Çocuk Parkı
@@ -89,7 +84,6 @@ tr:
         aerodrome: Havaalanı
         bicycle_parking: "Bisiklet park yeri"
         bicycle_rental: "Bisiklet kirası"
-        boatyard: Tersana
         bus_station: "Otobüs garajı, Otogar, Terminal"
         bus_stop: "Otobüs durağı"
         cable_car: "Teleferik"
@@ -118,7 +112,6 @@ tr:
         butcher: Kasap
         car_repair: "Araba tamircisi"
         car_shop: "Araba galerisi"
-        chemist: Kimyacı
         clothes: Giyisi
         computer: Bilgisayar
         confectionery: "Şekerlemeci"
@@ -132,7 +125,6 @@ tr:
         farm_shop: "Tarım dükkanı"
         florist: Çiçekçi
         furniture: Mobilya dükkanı
-        garden_centre: "Bahçivan dükkanı"
         gift: "Hediyelikçi"
         hairdresser: Kuaför
         hardware: Hırdavat

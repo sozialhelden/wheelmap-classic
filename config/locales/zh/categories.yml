@@ -7,9 +7,6 @@ zh:
       government: 政府
       health: 健康
       leisure: 休闲
-      misc: 其它
-      money_post: "邮政银行"
-      public_transfer: "公共交通"
       shopping: 购物
       sport: 体育
       tourism: 旅游
@@ -45,9 +42,7 @@ zh:
         embassy: 大使馆
         police: 警察
         public_building: "公共建筑"
-        townhall: 市政厅
       health:
-        doctors: 医生
         hearing_aids: "助听器经销商"
         hospital: 医院
         medical_supply: "医药用品"
@@ -58,7 +53,6 @@ zh:
         arena: 竞技场
         brothel: 妓院
         cinema: 影院
-        community_center: "社区中心"
         gallery: 展厅
         nightclub: 夜总会
         playground: 活动场所
@@ -81,7 +75,6 @@ zh:
         aerodrome: 机场
         bicycle_parking: "单车停放"
         bicycle_rental: "单车出租"
-        boatyard: 码头
         bus_station: "公共汽车站"
         bus_stop: "公共汽车站"
         cable_car: "缆车"
@@ -109,7 +102,6 @@ zh:
         butcher: 肉店
         car_repair: "汽车修理"
         car_shop: "车行"
-        chemist: 药店
         clothes: 服装
         computer: 电脑
         convenience: 方便
@@ -119,7 +111,6 @@ zh:
         electronics: 电子产品
         florist: 花店
         furniture: 家具
-        garden_centre: "园艺中心"
         hairdresser: 理发师
         hardware: 硬件
         kiosk: 书报亭

@@ -6,9 +6,9 @@ tr:
       notice: "Bu sayfayı görmek icin yeni bir oturum açın."
   breadcrumbs:
     node:
-      create: "yeni bir yer/alan ekleyiniz"
+      create: "Yeni bir yer ekle"
       edit: "yeri/ alanı şekilendiriniz"
-    root: wheelmap
+    root: Wheelmap
   common:
     close: kapatınız
     skip: atla
@@ -16,21 +16,15 @@ tr:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "kabul edilmeli"
       already_confirmed: "tasdiklendi, lütfen kayıt olmayı deneyin\n"
-      blank: "dosyalanması gerekir"
       confirmation: "onaylamaya uymuyor"
-      empty: "doldurulması gerekiyor"
       equal_to: "tam olarak %{count} olmalı"
-      even: "eşit olması gerekir"
       exclusion: "ayırtılmış"
       expired: "süresi dolmuş, lütfen yeni bir tane isteyin"
       greater_than: "%{count} dan yüksek olmalı"
-      greater_than_or_equal_to: "%{count} dan daha yüksek veya ayni olmalı"
       inclusion: "geçersiz bir değer"
       invalid: "geçersiz"
       less_than: "%{count} dan daha eksik olmalı"
-      less_than_or_equal_to: "%{count} dan daha alçak veya aynı olması gerekir"
       not_a_number: "bu bir numara değildir"
       not_an_integer: "Tamsayı olması gerekir"
       not_found: "bulunamadı"
@@ -38,7 +32,6 @@ tr:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
-      odd: "tuhaf olmalı"
       taken: "başkası tarafından alınmış "
       too_long: "çok uzun ( %{count} dan fazla işaret olmamalı}"
       too_short: "çok kısa ( %{count} dan daha eksik işaret olmamalı)"
@@ -62,9 +55,9 @@ tr:
         notice: "Görsel başarıyla silindi"
   form:
     show_fully_accessible_places: "tekerlekli sandalye ile ulaşılır"
-    show_limited_accessible_places: "kısmen tekerlekli sandalye ile ulaşılır"
-    show_places_without_status: "belirsiz statü"
-    show_unaccessible_places: "tekerlekli sandalye için ulaşılır değil"
+    show_limited_accessible_places: "Tekerlekli sandalyeyle kısmen erişilebilir"
+    show_places_without_status: "Bilinmeyen durum"
+    show_unaccessible_places: "Tekerlekli sandalye erişilebilirliği yok"
   formtastic:
     hints:
       lat: "Işareti haritanın üzerinde doğru yere ulaşana kadar oynatın."
@@ -74,15 +67,12 @@ tr:
     labels:
       category: "Tabaka:"
       city: "Şehir"
-      create: "mekan/alan oluştur"
-      email: E-Posta
+      email: E-posta
       finish: Bitir
       housenumber: "No:"
       lat: Enlem
       lon: Boylam
       name: "Isim"
-      osm_password: "OSM Parola"
-      osm_username: "OSM hesap ismi"
       password: Parola
       password_confirmation: "Parolayi tekrarlayınız"
       phone: "Telefon:"
@@ -120,14 +110,12 @@ tr:
       profile: Profil
       suggestions: Öneriler
       what_is_barrier_free: "\"Tekerleki sandalye ile ulasilir\" ne demek?"
-      what_is_wheelmap: "Wheelmap nedir?"
     searchbar:
       add_place: "Başka bir mekan/alan ekle"
       find: Bul
       placeholder: "mesela Sunset Boulevard L.A. veya Brandenburger Tor Berlin"
       title_add_place: "Şimdi bu pozisyona yeni bir alan veya mekan ekle!"
     tagline: "Wheelmap logo"
-    title: "Tekerlekli sandalye için ulaşılır yerler bul"
   helpers:
     select:
       prompt: "Lütfen seçiniz"
@@ -148,16 +136,15 @@ tr:
           upgrade: "Tarayıcıyı Güncelle"
         warning:
           headline: "Özür dileriz!"
-          message: "Internet Explorer kullanıyorsunuz gibi görünüyor. Wheelmap düzgün çalışmak için standartlara uygun bir tarayıcıya ihtiyaç duyar. Lütfen Firefox, Chrome, Safari veya Opera kullanmayı düşünün."
       link:
         node:
           create: "Yeni bir yer ekle"
       popup:
         form:
-          limited: "kısmen tekerlekli sandalye ile ulaşılır"
-          'no': "tekerlekli sandalye için ulaşılır değil"
+          limited: "Tekerlekli sandalyeyle kısmen erişilebilir"
+          'no': "Tekerlekli sandalye erişilebilirliği yok"
           save: Değişiklikeri kaydedin
-          unknown: "belirsiz statü"
+          unknown: "Bilinmeyen durum"
           'yes': "tekerlekli sandalye ile ulaşılır"
         help: "Tekerlekli sandalye için ulaşılırmı? (Yardım)"
         more: "daha fazla..."
@@ -184,7 +171,6 @@ tr:
       link:
         large_map: "&laquo; iptal et"
     errors:
-      default: "Oops, birşeyeler yanlış gidiyor. Fakat bu konuda bilgilendirildik!"
       not_authorized: "Üzgünüz, resmi tasdik başarılı değildi"
       not_available: "Üzgünüz, bu sayfa geçici bir süre için mevcut değildir. "
       not_existent: "Üzgünüz, bu alan veya mekan artık mevcut değildir."
@@ -244,12 +230,6 @@ tr:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "Wheelmap.org. da alan veya mekanları değiştirmek için önce hesabınızı OpenStreetMap hesabınız ile bağlamanız gerekir. "
-    callback:
-      notice: "%{user} wheelmap hesabınız şimdi OpenStreetMap hesabınız ile bağlanmıştır."
   or: veya
   place:
     one: "%{count} Yer ve Mekan"
@@ -275,7 +255,6 @@ tr:
     step1: "Bildiğiniz bir yere tıklayın"
     step2: "İşaretleyin ve kaydete tıklayın"
     step3: "İşte bu! Kaydolmak gerekmiyor"
-    what_is_wheelmap: "Wheelmap nedir?"
   statistics: Istatistik
   support:
     array:
@@ -302,7 +281,6 @@ tr:
     destroy:
       notice: "Hoşçakalın,yine gelin!"
     new:
-      email: "E-Posta adresi"
       login: "Oturum aç"
       login_with_twitter: "Twitter ile oturum aç"
       password: Parola
@@ -311,16 +289,15 @@ tr:
     after_signup_edit:
       welcome:
         headline: "Neredeyse oldu! Wheelmap hesabınızın kaydını bitirin:"
-        set_password_for_mobile: "OpenStreetMap kaydınızı tamamladınız.\nŞimdi Wheelmap hesabınız için bir e-posta adresi ve şifre seçin, bundan sonra kullanmaya hazır olacaksınız! Bu e-posta adresi ve şifreye iPhone ve Android'deki Wheelmap uygulamasına giriş yaparken ihtiyacınız olacak."
         text: "Sizinle nasıl iletişime geçebiliriz? Bu bilgiyi daha sonra profilinizinden değiştirebilirsiniz."
     edit:
       headline:
         your_images: "Yüklenmiş görselleriniz."
   wheelchairstatus:
-    limited: "Kısmen tekerlekli sandalye ile ulaşılır"
-    'no': "Tekerlekli sandalye ile ulaşılmaz"
-    unknown: "Tekerlekli sandalye erişilirliği belirsiz"
-    'yes': "Tamamen tekerlekli sandalye ile ulaşılır"
+    limited: "Tekerlekli sandalyeyle kısmen erişilebilir"
+    'no': "Tekerlekli sandalye erişilebilirliği yok"
+    unknown: "Bilinmeyen durum"
+    'yes': "tekerlekli sandalye ile ulaşılır"
   wheelmap:
     footer:
       become_a_supporter: "Bir destekçi olun"
@@ -333,9 +310,8 @@ tr:
       title: "Wheelmap - tekerlekli sandalye ile ulaşılır yerler bulun"
     what_is:
       fully_accessible: "Giriş basamağı 7 santimetre den yüksek değil; tüm mevkiler tekerlekli sandalye kullanıcılar tarafından istisnasız ulasılır; engelliler tualeti mevcut "
-      limited_accessible: "Girişdeki basamak 7 santimetre den yüksek değil; en önemli mevkiler tekerlekli sandalye kullanıcılar tarafından ulaşılabilir. "
       not_accessible: "Girişdeki basamak 7 santimetre den yüksek; veya girişde basamak var; veya en önemli mevkiler tekerlekli sandalye kullanıcılar için ulaşılamaz."
-      unknown_accessible: "Tekerlekli sandalye statüsü belirsiz"
+      unknown_accessible: "Yerleri işaretleyerek yardımda bulunun!"
   will_paginate:
     next_label: "Sonraki &#8594;"
     page_entries_info:

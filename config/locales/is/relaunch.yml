@@ -1,4 +1,8 @@
 is:
+  nodes:
+    show:
+      share:
+        email: Tölvupóstfang
   users:
     profile:
       edit:

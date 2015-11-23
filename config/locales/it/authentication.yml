@@ -2,12 +2,9 @@ it:
   devise:
     confirmations:
       confirmed: "Il tuo account è stato confermato con successo. Ora sei collegato."
-      link: "Non hai ricevuto le istruzioni per confermare il tuo account?"
       send_instructions: "Riceverai una e-mail contenente le istruzioni su come confermare in pochi minuti il tuo account."
-      send_paranoid_instructions: "Se il tuo account esiste, riceverai una e-mail contenente le istruzioni per confermare in pochi minuti il tuo account."
     destroy:
       confirm: "Sei sicuro?"
-      headline: "Cancella account"
       link: "Cancella adesso"
     edit:
       form:
@@ -20,25 +17,19 @@ it:
       headline: "Modifica account"
     failure:
       already_authenticated: "Ti sei già registrato."
-      inactive: "Il tuo account non è ancora attivo."
       invalid: "Indirizzo e-mail o password non validi."
       invalid_token: "Token di autenticazione non valido."
       locked: "Il tuo account è bloccato."
-      timeout: "La tua sessione è scaduta, per favore collegati nuovamente per continuare."
       unauthenticated: "Per continuare devi prima registrarti o collegarti."
       unconfirmed: "Per procedere devi prima confermare il tuo account."
     mailer:
       confirmation_instructions:
-        landing_page: "Clicca per favore sul link che ti abbiamo appena inviato per e-mail al tuo indirizzo. Se non dovessi ricevere la nostra e-mail, controlla prima di tutto che non sia archiviata nella cartella dello spam. Se non è presente neanche qui, ritorna alla pagina di iscrizione e riprova."
         subject: "Continua a seguire le istruzioni per attivare il tuo account"
       reset_password_instructions:
         subject: "Istruzioni per reimpostare la password"
-      unlock_instructions:
-        subject: "Istruzioni per sbloccare"
     mandatory: "* campo obbligatorio"
     omniauth_callbacks:
       failure: "Non posso autorizzarti con %{kind} perché \"%{reason}\"."
-      permission_missing: "No hai dato la autorizzazione."
       success: "Collegato con successo con %{kind}."
     password_recovery:
       form:
@@ -51,7 +42,6 @@ it:
         comment: "Se non hai chiesto di cambiare la password, ignora questa e-mail.<br/>La tua password non cambierà a meno che non clicchi sul link sopra e non registri una nuova password."
         headline: "Benvenuto %{email} "
         link: "Cambia la mia password"
-        text: "Qualcuno ha richiesto di cambiare la tua password. Se sei stato tu, clicca su questo link - oppure ignoralo!"
       form:
         labels:
           password: "Nuova password"
@@ -60,8 +50,6 @@ it:
       headline: "Reimposta la password"
     passwords:
       link: "Dimenticato la password?"
-      send_instructions: "Riceverai una e-mail contente le istruzioni su come reimpostare in pochi minuti la tua password."
-      send_paranoid_instructions: "Se il tuo account esiste, riceverai una e-mail contenente le istruzioni su come modificare in pochi minuti la tua password"
       updated: "La tua password è stata modificata con successo. Ora sei collegato."
       updated_not_active: "La tua password è stata modificata con successo"
     registrations:
@@ -72,23 +60,18 @@ it:
         inactive: non attivo
         locked: bloccato
         unconfirmed: non confermato
-      signed_up: "Sei stato registrato con successo. Verrà inviata al tuo indirizzo e-mail una e-mail di conferma."
       updated: "Il tuo account è stato aggiornato."
     sessions:
-      inactive: "Il tuo account non è ancora attivo."
       invalid: "Indirizzo e-mail o password non validi."
       invalid_token: "Token di autenticazione non valido."
       link: "Registrati"
       locked: "Il tuo account è bloccato."
       new:
         no_osm_account: "Non hai un account su OpenStreetMap?"
-        osm_promo_text: "Wheemap e basato su dati di OpenStreetMap (OSM). OSM è una mappa libera del mondo, creato da gente come te. È come una Wikipedia per mappe. Per modificare o aggiungere luoghi hai bisogno di un account su OpenStreetMap, e devi aver fatto il login con questo."
         promo_text_thank_you: "Grazie per il tuo aiuto!"
         sign_up_with_osm: "Regstrarti adesso."
-        wheelmap_promo_text: "Con la tua conoscenza dei luoghi raggiungibile in sedia a rotelle, gli handicappati possono meglio organizzare la loro vita. Inoltre, la OpenStreetMap diventa più dettagliato."
       signed_in: "Collegato con successo."
       signed_out: "Sei stato scollegato con successo."
-      timeout: "La tua sessione è scaduta, per favore collegati di nuovo per continuare."
       unauthenticated: "Per continuare devi prima registrarti o collegarti."
       unconfirmed: "Per procedere devi prima confermare il tuo account."
     sign_in:
@@ -111,11 +94,7 @@ it:
           email: E-mail
           password: Password
           password_confirmation: "Ripeti la password"
-          wants_newsletter: "Sì, tenetemi aggiornato su wheelmap - ma non più di una volta al mese. "
         submit: "Registrati"
       headline: "Registrati"
     unlocks:
-      link: "No hai ricevuto le istruzioni per sbloccare?"
-      send_instructions: "Riceverai una e-mail contente le istruzioni su come sbloccare in pochi minuti il tuo account."
-      send_paranoid_instructions: "Se il tuo account esiste, riceverai una e-mail contenente le istruzioni su come sbloccare in pochi minuti il tuo account"
       unlocked: "Il tuo account è stato sbloccato con successo. Ora sei collegato."

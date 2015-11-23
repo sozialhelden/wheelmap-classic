@@ -7,9 +7,7 @@ it:
       government: Governo
       health: Salute
       leisure: Tempo Libero
-      misc: Altro
-      money_post: "Bancoposta"
-      public_transfer: "Mezzi pubblici"
+      misc: Vari
       shopping: Shopping
       sport: Sport
       tourism: Turismo
@@ -49,10 +47,8 @@ it:
         government: "Agenzia del Governo"
         police: Polizia
         public_building: "Edificio pubblico"
-        townhall: Municipio
       health:
         dentist: Dentista
-        doctors: Medici
         hearing_aids: "Apparecchio per l'udito"
         hospital: Ospedale
         medical_supply: "Rifornimento sanitario"
@@ -64,7 +60,6 @@ it:
         brothel: Casinò
         casino: Casinò
         cinema: Cinema
-        community_center: "Centro Comunitario"
         gallery: Galleria d'arte
         nightclub: Night club
         playground: Parco giochi
@@ -89,7 +84,6 @@ it:
         aerodrome: Aeroporto
         bicycle_parking: "Parcheggio per biciclette"
         bicycle_rental: "Noleggio biciclette"
-        boatyard: Cantiere navale
         bus_station: "Stazione degli autobus"
         bus_stop: "Fermata dell'autobus"
         cable_car: "Funivia"
@@ -118,7 +112,6 @@ it:
         butcher: Macelleria
         car_repair: "Autofficina"
         car_shop: "Autoconcessionaria"
-        chemist: Farmacia
         clothes: Abbigliamento
         computer: Negozio di computers
         confectionery: "Dolci"
@@ -132,7 +125,6 @@ it:
         farm_shop: "Negozio di una Fattoria"
         florist: Fiorista
         furniture: Arredamento
-        garden_centre: "Centro per il giardinaggio"
         gift: "Negozio di Articoli da Regalo "
         hairdresser: Parrucchiere
         hardware: Ferramenta

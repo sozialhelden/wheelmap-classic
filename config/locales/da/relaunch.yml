@@ -73,9 +73,8 @@ da:
           description: Find ud af om dette sted er kørestoltilgængeligt på Wheelmap.org. Eller tilføj mere information eller et foto for dette sted.
           title: 'Dette sted er på Wheelmap.org: %{name}'
       share:
-        email: E-mail-adresse
+        email: E-mail
         facebook: Facebook
-        text: 'Jeg har fundet dette sted på  Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -94,14 +93,12 @@ da:
           one: '%{count} resultat:'
           other: '%{count} resultater:'
     timeout:
-      headline: Åh undskyld vores fejl
       info: Vores søgeservice var midlertidigt nede.
       repeat_search: Prøv søgningen igen
   users:
     profile:
       newsletter:
         title: Nyhedsbrev
-        text: Hold dig orienteret med nyhedsbrev fra Wheelmap. Ingen grund til bekymring vi ville ikke spamme dig. Du vil for det meste kun høre fra os en gang om måneden.
         label: Ja tak, hold mig informeret om Wheelmap.
       show:
         title: Overblik
@@ -116,16 +113,15 @@ da:
           pois_added:
             one: 'tilføjet %{count}  steder'
             other: 'tilføjet %{count}  steder'
-          pois_edited:
-            one: 'redigeret  %{count}  steder'
-            other: 'redigeret  %{count}  steder'
           photos_uploaded:
             one: 'uploadet %{count} billeder'
             other: 'uploadet %{count} billeder'
       photos:
         title: Fotos
-        empty: Du har ikke oploadet nogle fotos endnu.
       edit:
         title: Profil
         legends:
           user_data: Din brugerkonto information
+      widget:
+        legends:
+          settings: Indstillinger

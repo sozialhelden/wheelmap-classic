@@ -8,8 +8,6 @@ sk:
       health: Zdravie
       leisure: Voľný čas
       misc: Rôzne
-      money_post: "Finančníctvo"
-      public_transfer: "Verejná doprava"
       shopping: Nákupy
       sport: Šport
       tourism: Cestovanie
@@ -49,10 +47,8 @@ sk:
         government: "Vládna agentúra"
         police: Polícia
         public_building: "Verejná budova"
-        townhall: Radnica
       health:
         dentist: Zubár
-        doctors: Doktor
         hearing_aids: "Dodavateľ načúvacích prístrojov"
         hospital: Nemocnica
         medical_supply: "Medicínske vybavenie"
@@ -64,7 +60,6 @@ sk:
         brothel: Nevestinec
         casino: Kasíno
         cinema: Kino
-        community_center: "Komunitné centrum"
         gallery: Galéria
         nightclub: Nočný klub
         playground: Ihrisko
@@ -89,7 +84,6 @@ sk:
         aerodrome: Letisko
         bicycle_parking: "Stojan na bicykle"
         bicycle_rental: "Požičovňa bicyklov"
-        boatyard: Lodenica
         bus_station: "Autobusová stanica"
         bus_stop: "Zastávka autobusu"
         cable_car: "Lanovka"
@@ -118,7 +112,6 @@ sk:
         butcher: Mäsiarstvo
         car_repair: "Autoservis"
         car_shop: "Automobily"
-        chemist: Lekáreň
         clothes: Oblečenie
         computer: Počítače
         confectionery: "Cukráreň"
@@ -132,7 +125,6 @@ sk:
         farm_shop: "Farmársky obchod"
         florist: Kvetinárstvo
         furniture: Nábytok
-        garden_centre: "Záhradné centrum"
         gift: "Suveníry"
         hairdresser: Kaderníctvo
         hardware: Železiarstvo

@@ -8,6 +8,7 @@ tr:
         website: Internet Sitesi
         phone: Telefon
         address_street: Sokak
+        address_housenumber: Ev numarası
         address_city: Şehir
   header:
     navigation:
@@ -36,6 +37,7 @@ tr:
       edit: Düzenle
     show:
       share:
+        email: E-posta
         facebook: Facebook
         twitter: Twitter
   search:
@@ -52,7 +54,6 @@ tr:
           one: '%{count} sonuç:'
           other: '%{count} sonuç:'
     timeout:
-      headline: Ah, bizim hatamız
       info: Arama hizmetimiz geçici olarak devredışı.
       repeat_search: Yeniden ara
   users:
@@ -63,3 +64,6 @@ tr:
         title: Fotoğraflar
       edit:
         title: Profil
+      widget:
+        legends:
+          settings: Ayarlar

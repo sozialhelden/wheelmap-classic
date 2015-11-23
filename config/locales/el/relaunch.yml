@@ -73,9 +73,8 @@ el:
           description: Μάθετε αν ο τόπος αυτός είναι προσβάσιμος από αναπηρικά αμαξίδια στο Wheelmap.org. Ή προσθέστε περισσότερες πληροφορίες και φωτογραφίες για τον τόπο.
           title: 'Αυτός ο τόπος είναι στο Wheelmap.org: %{name}'
       share:
-        email: E-mail
+        email: Email
         facebook: Facebook
-        text: 'Βρήκα αυτό τον τόπο στο Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -94,7 +93,6 @@ el:
           one: '%{count} αποτελέσμα:'
           other: '%{count} αποτελέσματα:'
     timeout:
-      headline: Αχ, δικό μας λάθος
       info: Η υπηρεσία αναζήτησης δεν ήταν διαθέσιμη προσωρινά.
       repeat_search: Επανάληψη αναζήτησης
   users:
@@ -105,3 +103,6 @@ el:
         title: Φωτογραφίες
       edit:
         title: προφίλ
+      widget:
+        legends:
+          settings: 'Ρυθμίσεις '

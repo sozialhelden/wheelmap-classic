@@ -2,12 +2,9 @@ zh:
   devise:
     confirmations:
       confirmed: "您的帐号已经确认，您现在已登录."
-      link: "没有收到确认信息？"
       send_instructions: "几分钟后，您将收到确认帐号的电子邮件."
-      send_paranoid_instructions: "如果您的邮箱存在于我们的数据库中，您将收到一封确认账号的邮件."
     destroy:
       confirm: "您确定吗？"
-      headline: "删除帐户"
       link: "现在删除"
     edit:
       form:
@@ -20,21 +17,16 @@ zh:
       headline: "编辑帐户"
     failure:
       already_authenticated: "您已经登录."
-      inactive: "您还没有激活帐户."
       invalid: "邮箱或密码错误"
       invalid_token: "认证码无效."
       locked: "您的帐号已被锁定."
-      timeout: "您已登录超时，请重新登录."
       unauthenticated: "继续操作前请注册或者登录."
       unconfirmed: "继续操作前请先确认您的帐号."
     mailer:
       confirmation_instructions:
-        landing_page: "请在我们发给您的邮件里点击其中的链接。如果您没看到邮件请先检查垃圾邮件夹，如果仍然没有的话，请返回注册页面重试一次。"
         subject: "还有一步激活您的帐户"
       reset_password_instructions:
         subject: "重置密码信息"
-      unlock_instructions:
-        subject: "解锁信息"
     mandatory: "*必须的"
     omniauth_callbacks:
       failure: "因为%{reason}，所以您无法从%{kind}获得授权."
@@ -50,7 +42,6 @@ zh:
         comment: "如果您没有申请密码重置，请忽略此邮件<br/>除非点击上述链接并设置新密码，否则您的密码不会更改"
         headline: "欢迎%{email}"
         link: "更换我的密码"
-        text: "如果您点击了以下链接，要求更改密码－否则请忽略"
       form:
         labels:
           password: "新密码"
@@ -59,8 +50,6 @@ zh:
       headline: "重置密码"
     passwords:
       link: "忘记密码？"
-      send_instructions: "几分钟后，您将收到重置密码的电子邮件."
-      send_paranoid_instructions: "如果您的邮箱存在于我们的数据库中，您将收到一封找回密码的邮件."
       updated: "您的密码已修改成功，您现在已登录."
       updated_not_active: "您的密码已修改成功."
     registrations:
@@ -71,10 +60,8 @@ zh:
         inactive: 未激活
         locked: 已锁定
         unconfirmed: 未确认
-      signed_up: "欢迎您！您已注册成功."
       updated: "帐号资料更新成功."
     sessions:
-      inactive: "您的帐户还没有激活"
       invalid: "无效的邮箱或密码"
       invalid_token: "无效的身份证明"
       link: "登录"
@@ -83,7 +70,6 @@ zh:
         no_osm_account: "沒有 OpenStreetMap 的帳號嗎？"
       signed_in: "登录成功."
       signed_out: "退出成功."
-      timeout: "您的有效期已过，请重新登录并继续操作"
       unauthenticated: "在继续操作前您必须登录或注册"
       unconfirmed: "在继续下一步之前您需要确认您的帐户"
     sign_in:
@@ -106,11 +92,7 @@ zh:
           email: 电子邮件
           password: 密码
           password_confirmation: "重复密码"
-          wants_newsletter: "是，保持wheelmap即时更新，－但是每月不超过一次"
         submit: "注册"
       headline: "注册"
     unlocks:
-      link: "没有收到解锁说明？"
-      send_instructions: "几分钟后，您将收到一封解锁帐号的邮件."
-      send_paranoid_instructions: "如果您的邮箱存在于我们的数据库中，您将收到一封解锁账号的邮件."
       unlocked: "您的帐号已成功解锁，您现在已登录."

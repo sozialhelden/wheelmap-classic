@@ -6,9 +6,9 @@ it:
       notice: "Devi collegarti per vedere questa pagina."
   breadcrumbs:
     node:
-      create: "Aggiungi un nuovo luogo"
+      create: "Aggiungi nuovo luogo"
       edit: "Modifica luogo"
-    root: wheelmap
+    root: Wheelmap
   common:
     close: chiudi
     skip: salta
@@ -16,21 +16,15 @@ it:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "devi essere accettato"
       already_confirmed: "è già confermato, prova ad accedere."
-      blank: "non può essere lasciato in bianco"
       confirmation: "non coincide con la conferma"
-      empty: "non può essere lasciato in bianco"
       equal_to: "deve essere uguale a %{count}"
-      even: "deve essere pari"
       exclusion: "è riservato"
       expired: "scaduto, per favore richiedine un altro"
       greater_than: "deve essere superiore a %{count}"
-      greater_than_or_equal_to: "deve essere superiore o uguale a %{count}"
       inclusion: "non è incluso nella lista"
       invalid: "non è valido"
       less_than: "deve essere meno di %{count}"
-      less_than_or_equal_to: "deve essere meno o uguale a %{count}"
       not_a_number: "non è un numero"
       not_an_integer: "Deve esser un numero intero."
       not_found: "non trovato"
@@ -38,7 +32,6 @@ it:
       not_saved:
         one: "Un errore ha impedito il salvataggio di %{resource}:"
         other: "%{count} errori hanno impedito di salvare: %{resource}"
-      odd: "deve essere dispari"
       taken: "è già in uso"
       too_long: "è troppo lungo (il massimo %{count} caratteri)"
       too_short: "è troppo corto (il minimo è %{count} caratteri)"
@@ -62,9 +55,9 @@ it:
         notice: "Imagine cancellato con successo"
   form:
     show_fully_accessible_places: "Accessibile in sedia a rotelle"
-    show_limited_accessible_places: "parzialmente accessibile in sedia a rotelle"
-    show_places_without_status: "stato sconosciuto"
-    show_unaccessible_places: "non accessibile in sedia a rotelle"
+    show_limited_accessible_places: "Parzialmente accessibile con sedia a rotelle"
+    show_places_without_status: "Stato non conosciuto"
+    show_unaccessible_places: "Non accessibile con sedia a rotelle"
   formtastic:
     hints:
       lat: "Sposta l'indicatore sulla mappa nella posizione coretta"
@@ -75,15 +68,12 @@ it:
       category: "Categoria:"
       centralkey: "Tasto centrale:"
       city: "Città:"
-      create: "Crea luogo"
       email: E-mail
       finish: Finito
       housenumber: "Numero:"
       lat: Latitudine
       lon: Longitudine
       name: "Nome:"
-      osm_password: "Password OSM"
-      osm_username: "Nome del account OSM"
       password: Password
       password_confirmation: "Ripeti la password"
       phone: "Telefono:"
@@ -97,6 +87,7 @@ it:
       website: "Sito Web:"
       wheelchair: "Accessibilità per sedie a rotelle?"
       wheelchair_description: "Commento sull'accessibilità:"
+      wheelchair_toilet: "Bagno accessibile con sedia a rotelle:"
     titles:
       basic: "Dati fondamentali:"
       optional: "Più dati <span class=\"addition\">(tutti campi sono opzionali)</span> "
@@ -121,14 +112,12 @@ it:
       profile: Profilo
       suggestions: Suggerimenti
       what_is_barrier_free: "Cosa significa \"accessibile in sedia a rotelle\"?"
-      what_is_wheelmap: "Che cos'è wheelmap?"
     searchbar:
       add_place: "Aggiungi un altro luogo"
       find: ricerca
       placeholder: "p.e. Sunset Boulevard L.A. or Brandenburg Gate Berlin"
       title_add_place: "Aggiungi ora un luogo a questo posizione!"
     tagline: "Wheelmap logo"
-    title: "Trova luoghi accessibili in sedia a rotelle"
   helpers:
     select:
       prompt: "Scegli"
@@ -149,27 +138,22 @@ it:
           upgrade: "Aggiorna Browser"
         warning:
           headline: "Siamo spiacenti!"
-          message: "Sembra che stai usando una vecchia versione di Internet Explorer con cui Wheelmap funziona male. Ti consigliamo di usare Firefox, Chrome, Opera, Safari o un altro browser più recente."
       link:
         node:
           create: "Aggiungi nuovo luogo"
       popup:
         form:
-          limited: "parzialmente accessibile in sedia a rotelle"
-          'no': "non accessibile in sedia a rotelle"
+          limited: "Parzialmente accessibile con sedia a rotelle"
+          'no': "Non accessibile con sedia a rotelle"
           save: Aggiorna
-          unknown: "stato sconosciuto"
-          'yes': "accessibile in sedia a rotelle"
+          unknown: "Stato non conosciuto"
+          'yes': "Accessibile con sedia a rotelle "
         help: "Accessibile in sedia a rotelle? (Aiuto)"
         more: "più ..."
   how?: Come?
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "Luoghi parzialmente accessibili in sedia a rotelle %{type} in %{city} (%{count})"
-        'no':
-          headline: "Non accessibili in sedia a rotelle %{type} in %{city} (%{count})"
         unknown:
           headline: "%{type} in %{city} con stato di accessibilità in sedia a rotelle sconosciuto (%{count})"
         'yes':
@@ -196,7 +180,6 @@ it:
       link:
         large_map: "&laquo; Annulla "
     errors:
-      default: "Oops, qualcosa è andato storto.. Ma ne siamo al corrente."
       not_authorized: "Scusa, autenticazione fallita"
       not_available: "Scusa, la pagina è momentaneamente non disponibile"
       not_existent: "Scusa, ma questo luogo non è più disponibile"
@@ -222,7 +205,6 @@ it:
         large_map: Allarga
         listing: "Tutti i luoghi '%{type}' in %{city} "
         upload: "Carica imagine"
-      more_data_from: "Ci sono più informazioni su quest'luogho, controllato da:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -259,12 +241,6 @@ it:
           kb: Kb
           mb: Mb
           tb: Tb
-  oauth:
-    application:
-      connect:
-        headline: "Per creare o modificare luoghi su wheelmap.org, devi prima collegare il tuo account con quello di \"open street map\"."
-    callback:
-      notice: "Il tuo account di wheelmap è stato collegato all'account %{user} di OpenStreetMap."
   or: o
   place:
     one: "%{count} luogo"
@@ -290,7 +266,6 @@ it:
     step1: "Clicca su un luogo che conosci"
     step2: "Selezionalo e clicca su salva"
     step3: "Ed è fatta! Non è necessaria la registrazione"
-    what_is_wheelmap: "Che cos'è wheelmap?"
   statistics: Statistiche
   support:
     array:
@@ -317,7 +292,6 @@ it:
     destroy:
       notice: "Ciao, ritorna presto!"
     new:
-      email: "Indirizzo e-mail"
       login: "Entra"
       login_with_twitter: "Collegati con Twitter"
       password: Password
@@ -326,16 +300,15 @@ it:
     after_signup_edit:
       welcome:
         headline: "Sei quasi finito! Finisci la iscrizione per il tuo account qui:"
-        set_password_for_mobile: "Hai completato la tua registrazione con OpenStreetMap. Adesso scegli una email e una parola per il tuo account su Wheelmap, e poi sarai a posto! Hai bisogno della email e della parola per accedere ai app per iPhone o Android."
         text: "Come possiamo raggiungerti? Puoi modificare questa informazione anche dopo nell tuo profilo."
     edit:
       headline:
         your_images: "I tuoi imagini caricati"
   wheelchairstatus:
-    limited: "parzialmente accessibile in sedia a rotelle"
-    'no': "non accessibile in sedia a rotelle"
-    unknown: "Accessibilità in sedia a rotelle sconosciuta "
-    'yes': "completamente accessibile in sedia a rotelle"
+    limited: "Parzialmente accessibile con sedia a rotelle"
+    'no': "Non accessibile con sedia a rotelle"
+    unknown: "Stato non conosciuto"
+    'yes': "Accessibile con sedia a rotelle "
   wheelmap:
     footer:
       a_project_of: "Un progetto di"
@@ -350,9 +323,8 @@ it:
       title: "Wheelmap - trova luoghi accessibili in sedia a rotelle"
     what_is:
       fully_accessible: "L'ingresso non ha gradini; tutte le sale (senza eccezione) sono raggiungibili in sedia a rotelle; un bagno per disabili è disponibile"
-      limited_accessible: "L'ingresso non ha un gradino più alto di 7 cm; le sale prinicipali non hanno scalini, il bagno non è accessibile in sedia a rotelle"
       not_accessible: "L'ingresso ha diversi scalini o uno scalino più alto di 7 cm e le sale non sono raggiungibili in sedia a rotelle"
-      unknown_accessible: "Aiutaci contrassegnando i luoghi!"
+      unknown_accessible: "Aiuta dando un voto ai luoghi! "
   will_paginate:
     next_label: "Successivo &#8594;"
     page_entries_info:

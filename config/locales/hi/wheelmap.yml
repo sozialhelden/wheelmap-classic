@@ -6,9 +6,7 @@ hi:
       notice: "इस पेज को देखने के लिए लॅाग इन करें"
   breadcrumbs:
     node:
-      create: "नई जगह शामिल करें"
       edit: "जगह संपादित करें, जगह बदलें"
-    root: ्व्हीलमैप
   common:
     close: बंद
     skip: स्किप
@@ -16,21 +14,15 @@ hi:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "स्वीकार किया जाना जरूरी"
       already_confirmed: "पुष्टी पहले ही हो चुकी है "
-      blank: "खाली नहीं रह सकता है"
       confirmation: "पुष्टिकरण मेल नहीं खाता"
-      empty: "रिक्त नहीं रह सकता है"
       equal_to: "%{count} के लिए बराबर होना चाहिए"
-      even: "सम होना चाहिए"
       exclusion: "आरक्षित है"
       expired: "समय सीमा समाप्त, कृपया नए के लिए अनुरोध कीजिए, \nएक्स्पायर्ड, कृपया नए के लिए अर्जी कीजिए। "
       greater_than: "%{count} से अधिक होना चाहिए"
-      greater_than_or_equal_to: "%{count} से बड़ा या बराबर होना आवश्यक है"
       inclusion: "सूची में शामिल नहीं है"
       invalid: "अवैध है"
       less_than: "%{count} से कम होना चाहिए"
-      less_than_or_equal_to: "%{count} से कम या बराबर होना आवश्यक है"
       not_a_number: "कोई संख्या नहीं है"
       not_an_integer: "एक पूर्णांक होना चाहिए"
       not_found: "नहीं मिला"
@@ -38,7 +30,6 @@ hi:
       not_saved:
         one: "एक गलती/त्रुटी की वजह से सेव हई हुआ %{resource}:"
         other: "%{resource} सेव करने के लिए %{count} ग़लतियां मान्य नहीं "
-      odd: "विसम होना चाहिए"
       taken: "पहले ही ले लिया गया है"
       too_long: "अत्यधिक लंबा है (अधिकतम %{count} वर्ण हैं)"
       too_short: "अत्यधिक छोटा है (न्यूनतम %{count} वर्ण हैं)"
@@ -59,9 +50,6 @@ hi:
         notice: "%{resource_name} सफलतापूर्वक अपडेट हुआ"
   form:
     show_fully_accessible_places: "व्हीलचेयर सुलभ "
-    show_limited_accessible_places: "आंशिक तौर पर व्हीलचेयर सुलभ\n"
-    show_places_without_status: "अज्ञात स्थिति"
-    show_unaccessible_places: "व्हीलचेयर के लिए सुलभ नहीं"
   formtastic:
     hints:
       lat: "मार्कर को नक्शे पर हिलाकर सही जगह पर लगाएं "
@@ -72,15 +60,12 @@ hi:
       category: "श्रेणी"
       centralkey: "मुख्य चाबी, सेंट्रल की"
       city: "शहर:"
-      create: "जगह बनाएं "
       email: ईमेल
       finish: खत्म, समाप्त, अंत
       housenumber: "नहीं:"
       lat: अक्षांश
       lon: देशांतर रेखा
       name: "नाम:"
-      osm_password: "ओपनस्ट्रीटमैप का पासवर्ड"
-      osm_username: "ओपनस्ट्रीटमैप के खाते का नाम"
       password: पासवर्ड
       password_confirmation: "पासवर्ड दोहराएं"
       phone: "दूरभाष, टेलीफोन"
@@ -116,13 +101,11 @@ hi:
 
         '
       what_is_barrier_free: "\"व्हीलचेयर सुलभ\" का मतलब क्या है?"
-      what_is_wheelmap: "व्हीलमैप क्या है?"
     searchbar:
       add_place: "कोई और जगह शामिल करें"
       find: ढूंढो
       title_add_place: "इस स्थान पर नई जगह अंकित करें!"
     tagline: "वहीलमैप का लोगो, वहीलमैप का चिन्ह"
-    title: "सभी वहीलचेयर सुलभ स्थान खोजें"
   helpers:
     select:
       prompt: "कृपया चुनें"
@@ -141,16 +124,9 @@ hi:
           upgrade: "ब्राउसर अपडेट करें"
         warning:
           headline: "माफ कीजिए!"
-          message: "लगता है आप इंटरनेट एक्सप्लोरर इस्तेमाल कर रहे हैं। व्हीलमेप के लिए मानक के अनुरूप ब्राउसर चाहिए। कृपया फायरफॅाक्स, क्रोम, सफारी या ओपेरा को इस्तेमाल करने की सोचें। "
-      link:
-        node:
-          create: "नई जगह जोड़िए"
       popup:
         form:
-          limited: "आंशिक रूप से व्हीलचेयर सुलभ"
-          'no': "वहीलचेयर सुलभ नहीं, व्हीलचेयर के लिए बाधाएं हैं"
           save: अपडेट, नया ताजा
-          unknown: "स्थिति अज्ञात"
           'yes': "व्हीलचेयर सुलभ "
         help: "व्हीलचेयर सुलभ"
         more: "और भी..."
@@ -158,8 +134,6 @@ hi:
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "%{city} (%{count}) में सभी आंशिक तौर पर व्हीलचेयर सुलभ स्थान %{type}  "
         unknown:
           headline: "सभी %{type} इन %{city} में व्हीलचेयर के लिए बाधा रहित रास्ते होने की जानकारी नहीं है।  (%{count})"
         'yes':
@@ -184,7 +158,6 @@ hi:
       header:
         title: "जगह संपादित करें: %{node} | wheelmap.org"
     errors:
-      default: "कुछ गलती हुई। हमें इस समस्या के बारे में जानकारी है"
       not_authorized: "माफ कीजिए, पुष्टीकरण असफल रहा"
       not_available: "माफ कीजिए, यह पेज अस्थाई रूप से उपलब्ध\nनहीं है"
       not_existent: "माफ कीजिए, यह जगह अब उपलब्ध नहीं है। "
@@ -206,7 +179,6 @@ hi:
       link:
         back: वापस, पीछे
         large_map: बड़ा करें
-      more_data_from: "के लिए और भी डेटा है, जांचकर्ता ः"
       show-in-osm: ओपनस्ट्रीटमैप
     update:
       flash:
@@ -243,12 +215,6 @@ hi:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "wheelmap.org पर कुछ बनाने या बदलने से पहले आपको अपना खाता ओपनस्ट्रीटमैप खाते से जोड़ना होगा"
-    callback:
-      notice: "आपका व्हीलमैप खाता अब ओपनस्ट्रीटमैप खाते से कनेक्टिड है %{user}."
   or: या , अथवा
   place:
     one: "%{count} जगह"
@@ -274,7 +240,6 @@ hi:
     step1: "जानी हुई जगह पर क्लिक करें"
     step2: "अंकित कर के सेव करें"
     step3: "बस! रेजिस्ट्रेशन की आवश्यक्ता नहीं"
-    what_is_wheelmap: "व्हीलमैप क्या है"
   statistics: आंकड़ें
   support:
     array:
@@ -301,7 +266,6 @@ hi:
     destroy:
       notice: "टाटा! जल्द लैटियेगा!"
     new:
-      email: "ईमेल का पता"
       login: "लॅाग इन "
       login_with_twitter: "ट्विटर से लॅाग इन करें "
       password: पासवर्ड
@@ -310,12 +274,8 @@ hi:
     after_signup_edit:
       welcome:
         headline: "व्हीलमैप में आपका स्वागत है"
-        set_password_for_mobile: "क्या आपके पास स्मार्टफन है? अगर हाँ, तो आईफओन और ऐंड्रॅाइड फोन पर व्हीलमैप इस्तेमाल करने के लिए पासवर्ड निर्धारित करें। "
         text: "आपसे कैसे संपर्क करें? यह जानकारी\nआप बाद में भी बदल सकते हैं। "
   wheelchairstatus:
-    limited: "आंशिक तौर पर व्हीलचेयर सुलभ "
-    'no': "व्हीलचेयर के लिए सुलभ नहीं"
-    unknown: "स्थिति अज्ञात"
     'yes': "व्हीलचेयर सुलभ "
   wheelmap:
     footer:
@@ -329,7 +289,6 @@ hi:
       alt: "व्हीलमैप लोगो - वहीलचेयर सुलभ स्थान खोजें"
       title: "व्हीलमैप - व्हीलचेयर सुलभ स्थान ढूंढें"
     what_is:
-      limited_accessible: "प्रवेश पर एक सीढी (अधिक्तम\nऊंचाई ७ सेमी), अधिकांश कमरे बगैर सीढी के,\nशौचालय पहुंचने में बाधा"
       not_accessible: "प्रवेश पर कई या ऊंची सीढियां,\nकमरे विकलांगों के लिए सुलभ नहीं।"
   will_paginate:
     next_label: "अगला &#8594;"

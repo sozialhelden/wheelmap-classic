@@ -2,12 +2,12 @@ de:
   devise:
     confirmations:
       confirmed: "Dein E-Mail-Adresse wurde erfolgreich bestätigt."
-      link: "Keine Bestätigungsmail bekommen?"
+      link: "Du hast keine Bestätigung mit Instruktionen erhalten?"
       send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit einem Link, um deine E-Mail-Adresse zu bestätigen."
-      send_paranoid_instructions: "Wenn Deine E-Mail-Adresse in unserer Datenbank ist, wirst Du eine E-mail mit Anweisungen zur Bestätigung Deines Kontos in wenigen Minuten erhalten."
+      send_paranoid_instructions: "Wenn dein Account existiert, erhältst du in einigen Minuten eine E-Mail mit einer Anleitung zur Bestätigung deines Accounts."
     destroy:
       confirm: "Bist du dir sicher?"
-      headline: "Benutzerkonto löschen"
+      headline: "Account löschen"
       link: "Jetzt löschen"
     edit:
       form:
@@ -20,16 +20,16 @@ de:
       headline: "Benutzerkonto verwalten"
     failure:
       already_authenticated: "Du bist bereits angemeldet."
-      inactive: "Dein Konto wurde noch nicht aktiviert."
+      inactive: "Dein Account wurde bisher nicht aktiviert."
       invalid: "Ungültige Email oder ungültiges Kennwort."
       invalid_token: "Ungültiger Authentifizierungstoken."
       locked: "Dein Konto ist gesperrt."
-      timeout: "Deine Sitzung ist abgelaufen! Um fortzufahren, melde dich bitte erneut an."
+      timeout: "Deine Sitzung ist abgelaufen, bitte melde dich erneut an."
       unauthenticated: "Du musst dich anmelden oder registrieren um fortzufahren."
       unconfirmed: "NEU: Bitte bestätige einmalig dein Konto um fortzufahren. Dazu haben wir Dir eine E-Mail mit einem Link geschickt. Falls du diese nicht vorliegen hast hast, klicke bitte am Ende der Seite auf 'Keine Bestätigungsmail bekommen'."
     mailer:
       confirmation_instructions:
-        landing_page: "Bitte klicke auf den Link, den wir Dir gerade an Deine E-Mail Adresse geschickt haben. Solltest Du keine E-Mail bekommen haben, so prüfe bitte auch deinen Spam-Ordner. Wenn sie dort auch nicht ist, dann kannst Du Dir die E-Mail erneut zusenden lassen."
+        landing_page: "Bitte klicke auf den Link, den wir dir gerade an deine E-Mail Adresse gesendet haben. Falls du keine E-Mail erhalten hast, schaue bitte in deinem Spam-Ordner nach. Wenn sie dort nicht ist, wiederhole bitte den Anmeldevorgang."
         subject: "Noch einen Schritt zur Aktivierung deines Benutzerkontos"
       reset_password_instructions:
         subject: "Anleitung zum Neu setzen deines Passworts"
@@ -38,7 +38,7 @@ de:
     mandatory: "* Pflichtfeld"
     omniauth_callbacks:
       failure: "Authorisierung mit %{kind} fehlgeschlagen. Fehler: \"%{reason}\". "
-      permission_missing: "Du hast uns nicht die benötigten Rechte eingeräumt."
+      permission_missing: "Du hast nicht die erforderlichen Berechtigungen erteilt."
       success: "Erfolgreich authorisiert mit %{kind}."
     password_recovery:
       form:
@@ -51,7 +51,7 @@ de:
         comment: "Solltest du diese Anfrage nicht gestellt haben, ignoriere diese E-Mail einfach.<br/>Dein Passwort wird nicht geändert, bis du auf den oben angegebenen Link klickst und ein neues Passwort setzt."
         headline: "Willkommen %{email}"
         link: "Mein Passwort ändern"
-        text: "Jemand hat angefragt, dein Passwort zu ändern. Falls du es warst, kannst du Dein Passwort ändern, indem du folgenden Link anklickst - falls nicht, bitte ignorieren:"
+        text: "Wir erhielten eine Anfrage zum Ändern deines Passworts. Wenn du das warst, bestätige dies bitte per Klick auf folgenden Link - andernfalls ignoriere dies bitte."
       form:
         labels:
           password: "Neues Passwort"
@@ -60,8 +60,8 @@ de:
       headline: "Passwort zurücksetzen"
     passwords:
       link: "Passwort vergessen?"
-      send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Passwort neu setzen kannst."
-      send_paranoid_instructions: "Wenn Deine E-Mail-Adresse in unserer Datenbank ist, wirst Du eine E-mail mit einem Link zum Rücksetzen des Passwortes erhalten."
+      send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto entsperren kannst."
+      send_paranoid_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Passwort neu setzen kannst."
       updated: "Dein Passwort wurde erfolgreich geändert. Du bist nun angemeldet."
       updated_not_active: "Dein Passwort wurde erfolgreich geändert."
     registrations:
@@ -72,21 +72,21 @@ de:
         inactive: inaktiv
         locked: gesperrt
         unconfirmed: unbestätigt
-      signed_up: "Deine Registrierung war erfolgreich."
+      signed_up: "Deine Anmeldung war erfolgreich. Eine Bestätigungsmail erhältst du in Kürze."
       updated: "Dein Benutzerkonto wurde aktualisiert."
     sessions:
-      inactive: "Dein Benutzerkonto wurde noch nicht bestätigt. Um es zu Bestätigen klicke bitte auf den Link, den wir dir per E-Mail geschickt haben."
+      inactive: "Dein Benutzerkonto wurde noch nicht aktiviert."
       invalid: "Ungültige E-Mail oder Passwort."
       invalid_token: "Ungültiger Authentizitätstoken. Bitte lösche die Cookies in deinem Browser und versuche es noch einmal."
       link: "Login"
       locked: "Dein Benutzerkonto ist gesperrt."
       new:
         no_osm_account: "Nicht bei OpenStreetMap?"
-        osm_promo_text: "Die Wheelmap basiert auf dem Kartenmaterial der OpenStreetMap (OSM). Die OSM ist eine freie editierbare Weltkarte, die von Menschen wie dir erstellt wird. Eine Wikipedia für Karten. Damit du bestehende Orte bearbeiten oder neue Orte anlegen kannst, musst du bei der OSM einen Benutzerkonto haben und mit diesem hier eingeloggt sein."
+        osm_promo_text: "Wheelmap basiert auf den Geodaten von OpenStreetMap (OSM). OpenStreetMap ist eine freie und weltweite Karte. Sie ist wie die Wikipedia für Karte. Um Orte ändern oder neue anlegen zu können, benötigst du einen OpenStreetMap Account, mit dem du eingeloggt sein musst."
         promo_text_thank_you: "Vielen Dank für deine Unterstützung!"
         sign_in_with: "Einloggen mit %{kind}"
         sign_up_with_osm: "Registriere dich hier."
-        wheelmap_promo_text: "Mit deinem Wissen über rollstuhlgerechte Orte leistest du einen Beitrag dazu, dass Menschen mit Mobilitätseinschränkungen ihren Alltag besser planen können. Zudem werden die Ortsinformationen in der OSM umfangreicher."
+        wheelmap_promo_text: "Mit deinem Wissen über rollstuhlgerechte Orte kannst du helfen, dass mobilitätseingeschränkte Menschen ihren Tag planbarer gestalten können. Außerdem werden so die Daten der OpenStreetMap detailreicher."
       signed_in: "Login erfolgreich."
       signed_out: "Logout erfolgreich."
       timeout: "Deine Sitzung ist abgelaufen, bitte melde dich erneut an."
@@ -112,11 +112,11 @@ de:
           email: E-Mail
           password: Passwort
           password_confirmation: "Passwort wiederholen"
-          wants_newsletter: "Ja, haltet mich über wheelmap auf dem laufenden. (Aber bitte nicht öfter als einmal im Monat.)"
+          wants_newsletter: "Ja, haltet mich über Wheelmap auf dem Laufenden."
         submit: "Registrieren"
       headline: "Registrieren"
     unlocks:
-      link: "Keine Anleitung zum Entsperren deines Benutzerkontos bekommen?"
+      link: "Du hast keine Bestätigung mit Instruktionen erhalten?"
       send_instructions: "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Benutzerkonto entsperren kannst."
-      send_paranoid_instructions: "Wenn Dein Konto vorhanden ist, wirst Du in wenigen Minuten eine E-Mail erhalten mit Anweisungen, wie man es wieder entsperrt. "
+      send_paranoid_instructions: "Wenn dein Account existiert, erhältst du in einigen Minuten eine E-Mail mit einer Anleitung zum Entsperren deines Accounts."
       unlocked: "Dein Benutzerkonto wirde erfolgreich entsperrt. Du bist jetzt eingeloggt."

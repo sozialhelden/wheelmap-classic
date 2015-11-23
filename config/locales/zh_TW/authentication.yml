@@ -2,12 +2,9 @@ zh_TW:
   devise:
     confirmations:
       confirmed: "您的 email 成功地確認了。"
-      link: "沒有收到驗證碼？"
       send_instructions: "幾分鐘之後，您的將會收到電子郵件以供驗證。"
-      send_paranoid_instructions: "如果您的帳號存在，幾分鐘後您將會收到一封驗證信。"
     destroy:
       confirm: "你確定嗎？"
-      headline: "刪除帳號"
       link: "現在刪除"
     edit:
       form:
@@ -20,25 +17,19 @@ zh_TW:
       headline: "編輯帳號"
     failure:
       already_authenticated: "您已經登入"
-      inactive: "您還沒有啟動帳號。"
       invalid: "無效的電子信箱或密碼"
       invalid_token: "認證失敗"
       locked: "您的帳號被鎖定了"
-      timeout: "您的登入已經逾時，請重新登入以繼續操作。"
       unauthenticated: "您必須登入或註冊帳號才能繼續"
       unconfirmed: "您必須確認您的帳號以繼續操作。"
     mailer:
       confirmation_instructions:
-        landing_page: "請在我們發給你的確認信中點取連結。如果您沒有收到，請先檢查垃圾郵件箱；若仍沒有，請至註冊頁面再試一次。"
         subject: "再一個步驟就能啟動您的帳號。"
       reset_password_instructions:
         subject: "重設密碼"
-      unlock_instructions:
-        subject: "解鎖碼"
     mandatory: "* 必須的"
     omniauth_callbacks:
       failure: "因為 %{reason}，所以您無法透過 %{kind} 登入。"
-      permission_missing: "您沒有被授予權限。"
       success: "成功的透過 %{kind} 登入。"
     password_recovery:
       form:
@@ -51,7 +42,6 @@ zh_TW:
         comment: "如果您沒有申請重設密碼，請忽略此郵件<br/>除非點選以上連結並設定心密碼，您的密碼不會被更改。"
         headline: "歡迎 %{email}"
         link: "更改我的密碼"
-        text: "剛剛我們收到了對您的帳號重設密碼的要求，如果是您本人的話，請點選下列連結 - 如果不是您，請忽略本信件。"
       form:
         labels:
           password: "新密碼"
@@ -60,8 +50,6 @@ zh_TW:
       headline: "重設密碼"
     passwords:
       link: "忘記密碼？"
-      send_instructions: "幾分鐘後，您將會收到重設密碼的電子郵件。"
-      send_paranoid_instructions: "如果您的帳號存在，幾分鐘後您將會收到一封重設密碼驗證信。"
       updated: "您的密碼修改成功，您現在已經登入了。"
       updated_not_active: "您已成功修改密碼。"
     registrations:
@@ -72,24 +60,19 @@ zh_TW:
         inactive: 未啟動
         locked: 已鎖定
         unconfirmed: 未確認
-      signed_up: "您已經註冊成功。將會寄出確認電子郵件。"
       updated: "您已經成功更新您的帳號。"
     sessions:
-      inactive: "您的帳號尚未啓用"
       invalid: "無效的 email 或密碼。"
       invalid_token: "認證失敗"
       link: "登入"
       locked: "您的帳號已被凍結"
       new:
         no_osm_account: "還沒有 OpenStreetMap 的帳號嗎？"
-        osm_promo_text: "Wheelmap 奠基於 OpenStreetMap (OSM) 的地理資訊。OpenStreetMap 是自由的世界地圖，由像您這樣的人們所貢獻，就像地圖界的維基百科。若欲編輯或新增地點，您需要擁有並登入一個 OpenStreetMap 帳號。"
         promo_text_thank_you: "非常感謝您的貢獻！"
         sign_in_with: "透過 %{kind} 方式登入"
         sign_up_with_osm: "現在就註冊。"
-        wheelmap_promo_text: "因為你貢獻輪椅無障礙空間的資訊，身障朋友可以更有效的規劃自己每一天的生活。附帶一提，OpenStreetMap 提供更豐富的細節。"
       signed_in: "成功登入"
       signed_out: "您已經成功登出了。"
-      timeout: "您的登入已經逾時，請重新登入以繼續操作。"
       unauthenticated: "您必須登入或註冊以繼續操作。"
       unconfirmed: "您必須確認您的帳號以繼續操作"
     sign_in:
@@ -112,11 +95,7 @@ zh_TW:
           email: 電子郵件
           password: 密碼
           password_confirmation: "確認密碼"
-          wants_newsletter: "是的，我要追蹤 Wheelmap 的消息－但是一個月不超過一次。"
         submit: "註冊帳號"
       headline: "註冊"
     unlocks:
-      link: "沒有收到解鎖文件？"
-      send_instructions: "幾分鐘後，您將收到一封解鎖帳號的信件。"
-      send_paranoid_instructions: "如果您的帳號存在，幾分鐘後您將會收到一封解鎖驗證信。"
       unlocked: "您的帳號已經成功解鎖。您現在已經登入。"

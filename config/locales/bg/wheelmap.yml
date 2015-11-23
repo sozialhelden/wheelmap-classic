@@ -6,9 +6,9 @@ bg:
       notice: "Трябва да се регистрираш, за да видиш тази страница."
   breadcrumbs:
     node:
-      create: "Добави ново място"
+      create: "Добавяне на ново място"
       edit: "Редактирай място"
-    root: wheelmap
+    root: Wheelmap
   common:
     close: затвори
     skip: пропусни
@@ -16,21 +16,15 @@ bg:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "трябва да се потвърди"
       already_confirmed: "вече е потвърден"
-      blank: "не може да е празно"
       confirmation: "не съответства на потвърждението"
-      empty: "не може да е празно"
       equal_to: "трябва да има стойност, равна на %{count}"
-      even: "трябва да е нечетно"
       exclusion: "съдържа предварително зададена стойност"
       expired: "Невалидно, моля заяви ново"
       greater_than: "трябва да има стойност, по-голяма от %{count}"
-      greater_than_or_equal_to: "трябва да има стойност, по-голяма или равна на %{count}"
       inclusion: "съдържа непредвидена стойност"
       invalid: "съдържа невярна стойност"
       less_than: "трябва да има стойност, по-малка от %{count}"
-      less_than_or_equal_to: "трябва да има стойност, по-голяма или равна на %{count}"
       not_a_number: "не е число"
       not_an_integer: "трябва да бъде число"
       not_found: "не беше намерен"
@@ -38,7 +32,6 @@ bg:
       not_saved:
         one: "Заради грешка не можа да бъде запазен %{resource}:"
         other: "%{count} грешки направиха невъзможно запазването на %{resource}:"
-      odd: "трябва да е четно"
       taken: "вече е заето"
       too_long: "е прекаленo дълго (не може да е повече от %{count} символа)"
       too_short: "е прекалено късо (не може да бъде по-малко от %{count} символа)"
@@ -62,7 +55,7 @@ bg:
         notice: "Снимката беше изтрита успешно"
   form:
     show_fully_accessible_places: "достъпно за инвалидни колички"
-    show_limited_accessible_places: "отчасти достъпно за инвалидни колички"
+    show_limited_accessible_places: "Частичнo достъпнo за инвалидни колички"
     show_places_without_status: "Неизвестен статус"
     show_unaccessible_places: "недостъпно за инвалидни колички"
   formtastic:
@@ -75,15 +68,12 @@ bg:
       category: "Категория:"
       centralkey: "Централен код:"
       city: "Град:"
-      create: "Създай място"
       email: Email
       finish: Готово
       housenumber: "Номер:"
       lat: Ширина
       lon: Дължина
       name: "Име:"
-      osm_password: "OSM парола"
-      osm_username: "OSM акаунт"
       password: Парола
       password_confirmation: "Повтори паролата"
       phone: "Телефон:"
@@ -97,6 +87,7 @@ bg:
       website: "Уебсайт:"
       wheelchair: "Достъп за инвалидни колички?"
       wheelchair_description: "Коментар относно достъпа:"
+      wheelchair_toilet: "Тоалетна, достъпна за инвалидни колички:"
     titles:
       basic: "Основни данни"
       optional: "Повече информация <span class=\"addition\">(всички полета са по желание)</span>"
@@ -121,14 +112,12 @@ bg:
       profile: Профил
       suggestions: Предложения
       what_is_barrier_free: "Какво значи \"достъпно за инвалидни колички\"?"
-      what_is_wheelmap: "Какво е wheelmap?"
     searchbar:
       add_place: "Добави ново място"
       find: Намери
       placeholder: "Търси място"
       title_add_place: "Добави ново място на тази позиция сега!"
     tagline: "Лого на Wheelmap"
-    title: "намери места, достъпни за инвалидни колички"
   helpers:
     select:
       prompt: "Моля избери"
@@ -149,16 +138,15 @@ bg:
           upgrade: "Актуализирай браузъра"
         warning:
           headline: "Извиняваме се!"
-          message: "Изглежда използваш Internet Explorer. Wheelmap се нуждае от стандартен съвместим браузър, за да работи правилно. Моля, използвай Firefox, Chrome, Safari или Opera."
       link:
         node:
-          create: "Добави ново място"
+          create: "Добавяне на ново място"
       popup:
         form:
-          limited: "отчасти достъпно за инвалидни колички"
+          limited: "Частичнo достъпнo за инвалидни колички"
           'no': "недостъпно за инвалидни колички"
           save: Актуализация
-          unknown: "неизвестен статус"
+          unknown: "Неизвестен статус"
           'yes': "достъпно за инвалидни колички"
         help: "Достъпно за инвалидни колички? (Помощ)"
         more: "повече..."
@@ -166,10 +154,6 @@ bg:
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "Всички %{type} с ограничен достъп в %{city} (%{count})"
-        'no':
-          headline: "Всички недостъпни за инвалидни колички %{type} в %{city} (%{count})"
         unknown:
           headline: "Всички %{type} в %{city} с неизвестен достъп за инвалидни колички (%{count})"
         'yes':
@@ -196,7 +180,6 @@ bg:
       link:
         large_map: "&laquo; Отказ"
     errors:
-      default: "Грешка, нещо се обърка. Информирани сме за проблема"
       not_authorized: "Съжаляваме, удостоверяването не беше успешно."
       not_available: "Съжаляваме, тази страница временно е недостъпна."
       not_existent: "За съжаление, това място вече не е на разположение."
@@ -222,7 +205,6 @@ bg:
         large_map: Увеличи
         listing: "Всички видове '%{type}' в %{city}"
         upload: "Качи снимка"
-      more_data_from: "Има повече данни за това място, предоставени от:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -259,12 +241,6 @@ bg:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "Трябва да свържеш твоя акаунт с акаунта си в Open Street Map, за да можеш да създаваш или редактираш места на wheelmap.org."
-    callback:
-      notice: "Твоят wheelmap акаунт е свързан с акаунта в OpenStreetMap %{user}."
   or: или
   place:
     one: "%{count} места"
@@ -290,7 +266,6 @@ bg:
     step1: "Кликни върху познато място"
     step2: "Маркирай и натисни \"запази\"."
     step3: "Това е! Не е необходима регистрация."
-    what_is_wheelmap: "Какво е wheelmap?"
   statistics: Статистики
   support:
     array:
@@ -317,7 +292,6 @@ bg:
     destroy:
       notice: "Чао, до скоро!"
     new:
-      email: "E-mail адрес"
       login: "Вход"
       login_with_twitter: "Влез с Twitter."
       password: Парола
@@ -326,15 +300,14 @@ bg:
     after_signup_edit:
       welcome:
         headline: "Почти готово! Довърши регистрацията си за Wheelmap акаунт тук:"
-        set_password_for_mobile: "Ти завърши регистрацията си в Open Street Map. Сега избери и-мейл адрес и парола за своя Wheelmap акаунт и готово! Този и-мейл и паролата ще ти трябват, за да използваш Wheelmap апликацията за iPhone и Android."
         text: "Как можем да се свържем с теб? По-късно можеш да промениш тази информация в профила си."
     edit:
       headline:
         your_images: "Твоите качени снимки"
   wheelchairstatus:
-    limited: "отчасти достъпно за инвалидни колички"
+    limited: "Частичнo достъпнo за инвалидни колички"
     'no': "недостъпно за инвалидни колички"
-    unknown: "неизвестен статус"
+    unknown: "Неизвестен статус"
     'yes': "достъпно за инвалидни колички"
   wheelmap:
     footer:
@@ -350,9 +323,8 @@ bg:
       title: "Wheelmap - намери места, достъпни за инвалидни колички"
     what_is:
       fully_accessible: "Входът е без стъпала, всички помещения са без стъпала, тоалетната е пригодена за инвалидни колички."
-      limited_accessible: "Входът има стъпало (макс. 7см), повечето помещения са без стъпала, тоалетната е недостъпна."
       not_accessible: "На входа има високи или повече стъпала, помещенията са недостъпни."
-      unknown_accessible: "Помогни, като маркираш места!"
+      unknown_accessible: "Помогнете, като маркирате места!"
   will_paginate:
     next_label: "Напред &#8594;"
     page_entries_info:

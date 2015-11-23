@@ -8,6 +8,7 @@ sk:
         website: Webovská stránka
         phone: Telefón
         address_street: Ulica
+        address_housenumber: Číslo domu
         address_city: Mesto
   faq:
     answers:
@@ -72,7 +73,6 @@ sk:
       share:
         email: E-mail
         facebook: Facebook
-        text: 'Našiel som toto miesto na Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -87,7 +87,6 @@ sk:
           intro: 'Skúste toto:'
           spell_check: Skontrolujte či ste text zadali správne.
     timeout:
-      headline: Uh, naša chyba
       info: Naše vyhľadávanie bolo dočasne nedostupné.
       repeat_search: Hľadať znova
   users:
@@ -98,3 +97,6 @@ sk:
         title: Fotky
       edit:
         title: Profil
+      widget:
+        legends:
+          settings: Nastavenia

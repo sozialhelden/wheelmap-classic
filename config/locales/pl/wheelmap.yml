@@ -8,7 +8,7 @@ pl:
     node:
       create: "Dodaj nowe miejsce"
       edit: "Edytuj miejsce"
-    root: wheelmap
+    root: Wheelmap
   common:
     close: zamknij
     skip: pomiń
@@ -16,21 +16,15 @@ pl:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "należy potwierdzić"
       already_confirmed: "zostało już potwierdzone"
-      blank: "należy uzupełnić"
       confirmation: "nie można potwierdzić"
-      empty: "należy uzupełnić"
       equal_to: "musi wynosić dokładnie %{count}"
-      even: "musi być równe"
       exclusion: "jest zarezerwowany"
       expired: "utrata ważności, poproś o nowy"
       greater_than: "musi być większe niż %{count}"
-      greater_than_or_equal_to: "musi być większy lub równy %{count}"
       inclusion: "wartość nieważna "
       invalid: "nieważny"
       less_than: "musi wynosić mniej niż %{count}"
-      less_than_or_equal_to: "musi być mniejsze niż lub równe %{count}"
       not_a_number: "nie jest liczbą"
       not_an_integer: "musi być liczbą całkowitą"
       not_found: "nie został odnaleziony"
@@ -39,7 +33,6 @@ pl:
         one: "błąd nie pozwolił zapisać %{resource}: "
         few: "%{count} błędy nie pozwoliły zapisać %{resource}:"
         other: "%{count} błędów nie pozwoliło zapisać %{resource}:"
-      odd: "musi być nieparzyste"
       taken: "jest już zajęte"
       too_long: "jest za długie (nie więcej niż %{count} znaków)"
       too_short: "jest za krótkie (nie mniej niż %{count} znaków)"
@@ -64,12 +57,11 @@ pl:
         notice: "Obraz został usunięty"
   form:
     show_fully_accessible_places: "dostępne dla osób na wózkach"
-    show_limited_accessible_places: "częściowo dostępne dla osób na wózkach"
-    show_places_without_status: "Status nieznany"
-    show_unaccessible_places: "niedostępne dla osób na wózkach"
+    show_limited_accessible_places: "Ograniczony dostęp dla wózków"
+    show_places_without_status: "Nieznany status"
+    show_unaccessible_places: "Niedostępne dla osób na wózkach"
   formtastic:
     hints:
-      email: "Możesz nam zaufać, nie przesyłamy żadnego spamu!"
       lat: "Przesuń znacznik na mapie w poprawne miejsce"
       osm_username: "Nie jesteś jeszcze członkiem? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Utwórz konto w serwisie Openstreetmap teraz</a>"
       password: "(zostaw to pole puste, jeśli nie chcesz go zmieniać)"
@@ -78,15 +70,12 @@ pl:
       category: "Kategoria:"
       centralkey: "Klucz uniwersalny:"
       city: "Miasto:"
-      create: "Utwórz miejsce"
-      email: E-mail
+      email: Email
       finish: Koniec
       housenumber: "Nr:"
       lat: Szerokość geograficzna
       lon: Długość geograficzna
       name: "Nazwisko:"
-      osm_password: "Hasło w OSM"
-      osm_username: "nazwa konta w OSM"
       password: Hasło
       password_confirmation: "Powtórz hasło"
       phone: "Telefon:"
@@ -100,6 +89,7 @@ pl:
       website: "Strona www:"
       wheelchair: "Dostępność dla osób na wózkach?"
       wheelchair_description: "Komentarz dostępności:"
+      wheelchair_toilet: "toalety dostosowane dla niepełnosprawnych na wózku inwalidzkim:"
     titles:
       basic: "Podstawowe dane"
       optional: "Więcej informacji <span class=\"addition\">(wszystkie pola są nieobowiązkowe)</span>"
@@ -124,14 +114,12 @@ pl:
       profile: Profil
       suggestions: Sugestie
       what_is_barrier_free: "Co to znaczy \"dostępne dla osób na wózkach\"?"
-      what_is_wheelmap: "Co to jest wheelmap?"
     searchbar:
       add_place: "Dodaj kolejne miejsce"
       find: znajdź
       placeholder: "np. Sunset Boulevard L.A. lub Brandenburg Gate Berlin"
       title_add_place: "Dodaj nowe miejsce dla tej pozycji!"
     tagline: "Logo wheelmap"
-    title: "Znajdź miejsca dostępne dla osób na wózkach"
   helpers:
     select:
       prompt: "Wybierz"
@@ -152,27 +140,22 @@ pl:
           upgrade: "Zaktualizuj przegladarkę"
         warning:
           headline: "Przepraszamy!"
-          message: "Wygląda na to, że używasz Internet Explorera. Aby poprawnie funkcjonować, Wheelmap potrzebuje przeglądarki, która obsługuje wszystkie standardy. Wejdź na stronę za pomocą następujących przeglądarek: Firefox, Chrome, Safari lub Opera."
       link:
         node:
           create: "Dodaj nowe miejsce"
       popup:
         form:
-          limited: "częściowo dostępne dla osób na wózkach"
-          'no': "niedostępne dla osób na wózkach"
+          limited: "Ograniczony dostęp dla wózków"
+          'no': "Niedostępne dla osób na wózkach"
           save: Aktualizuj
-          unknown: "status nieznany"
-          'yes': "dostępne dla osób na wózkach"
+          unknown: "Nieznany status"
+          'yes': "Dostępne"
         help: "Dostępne dla osób na wózkach? (Pomoc)"
         more: "więcej ..."
   how?: Jak?
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "Wszystkie miejsca dostępne dla osób na wózkach w ograniczonym zakresie %{type} w %{city} (%{count})"
-        'no':
-          headline: "Wszystkie niedostępne dla osób na wózkach %{type} w %{city} (%{count})"
         unknown:
           headline: "Wszystkie %{type} w %{city} z nieznanym statusem dostępności dla osób na wózkach (%{count})"
         'yes':
@@ -199,7 +182,6 @@ pl:
       link:
         large_map: "&laquo; Anuluj"
     errors:
-      default: "Nastąpił błąd. Zostaliśmy poinformowani o tym problemie."
       not_authorized: "Przepraszamy, autoryzacja nie powiodła się"
       not_available: "Przepraszamy, strona jest chwilowo niedostępna"
       not_existent: "Przepraszamy, to miejsce nie jest już dostępne."
@@ -225,7 +207,6 @@ pl:
         large_map: Powiększ
         listing: "Wszystkie miejsca typu '%{type}' w %{city}"
         upload: "Dodaj obraz"
-      more_data_from: "Istnieje więcej informacji o tym miejscu, sprawdzonych przez:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -263,12 +244,6 @@ pl:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "Aby tworzyć lub edytować miejsca na wheelmap.org, musisz połączyć Twoje konto z kontem w serwisie open street map."
-    callback:
-      notice: "Twoje konto w serwisie wheelmap jest już połączone z kontem w serwisie OpenStreetMap %{user}."
   or: lub
   place:
     one: "%{count} miejsce"
@@ -295,7 +270,6 @@ pl:
     step1: "Kliknij miejsce, które znasz"
     step2: "Zaznacz i kliknij \"zachowaj\""
     step3: "Rejestracja nie jest potrzebna."
-    what_is_wheelmap: "Co to jest wheelmap?"
   statistics: Statystyki
   support:
     array:
@@ -322,7 +296,6 @@ pl:
     destroy:
       notice: "Do zobaczenia, wróć tutaj wkrótce!"
     new:
-      email: "Adres e-mail"
       login: "Zaloguj się"
       login_with_twitter: "Zaloguj się kontem z Twittera"
       password: Hasło
@@ -331,16 +304,15 @@ pl:
     after_signup_edit:
       welcome:
         headline: "Witaj w wheelmap!"
-        set_password_for_mobile: "Zakończyłeś rejestrację w OpenStreetMap.\nTeraz wybierz swój adres emailowy oraz hasło do logowania na Wheelmap i gotowe! Będziesz potrzebował tych samych danych- adres emailowy wraz z hasłem \naby zalogować się w Wheelmap app dla iPhone i Android."
         text: "Jak możemy się z Tobą skontaktować? Tę informację będziesz mógł później edytować."
     edit:
       headline:
         your_images: "twoje załadowane obrazy"
   wheelchairstatus:
-    limited: "częściowo dostępne dla osób na wózkach"
-    'no': "niedostępne dla osób na wózkach"
-    unknown: "status nieznany"
-    'yes': "dostępne dla osób na wózkach"
+    limited: "Ograniczony dostęp dla wózków"
+    'no': "Niedostępne dla osób na wózkach"
+    unknown: "Nieznany status"
+    'yes': "Dostępne"
   wheelmap:
     footer:
       a_project_of: "Projekt przygotowany przez"
@@ -355,9 +327,8 @@ pl:
       title: "Wheelmap - znajdź miejsca dostępne dla osób na wózkach"
     what_is:
       fully_accessible: "Wejście bez stopni, wszystkie pomieszczenia bez stopni, toaleta dostępna"
-      limited_accessible: "Wejście ma stopień (do 7 cm), większość pomieszczeń bez stopni, toaleta niedostępna"
       not_accessible: "Wejście ma wysoki stopień lub kilka stopni, pomieszczenia są niedostępne"
-      unknown_accessible: "Pomóż nam i zaznacz miejsca na mapie!"
+      unknown_accessible: "Pomóż nam zaznaczając miejsca!"
   will_paginate:
     next_label: "Następny &#8594;"
     page_entries_info:

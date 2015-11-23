@@ -10,6 +10,7 @@ bg:
           '
         phone: Телефон
         address_street: Улица
+        address_housenumber: Номер на къщата
         address_city: Град
   faq:
     answers:
@@ -74,7 +75,6 @@ bg:
       share:
         email: Email
         facebook: Facebook
-        text: 'Намерих това място на Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -92,7 +92,6 @@ bg:
           one: '%{count} резултат:'
           other: '%{count} резултата:'
     timeout:
-      headline: Упс, наша грешка
       info: Съжаляваме, функцията за търсене е временно недостъпна
       repeat_search: Опитай търсенето отново
   users:
@@ -103,3 +102,6 @@ bg:
         title: Снимки
       edit:
         title: Профил
+      widget:
+        legends:
+          settings: Настройки

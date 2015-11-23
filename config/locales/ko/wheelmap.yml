@@ -6,35 +6,27 @@ ko:
       notice: "이 페이지를 보려면 로그인을 해야 합니다"
   breadcrumbs:
     node:
-      create: "새로운 장소등록"
       edit: "장소 수정"
-    root: wheelmap
+    root: Wheelmap
   common:
     close: 닫기
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message} "
     messages:
-      accepted: "승인해주세요"
       already_confirmed: "이미 확인되었습니다. 로그인을 시도해보세요"
-      blank: "내용을 입력해야 합니다"
       confirmation: "내용이 일치하지 않습니다"
-      empty: "내용을 입력해야 합니다"
       equal_to: "반드시 %{count}이어야 합니다"
-      even: "짝수여야 합니다"
       exclusion: "은(는) 예약되었습니다"
       expired: "만료되었습니다. 새로운 것을 요청하세요."
       greater_than: "반드시 %{count} 보다 커야 합니다"
-      greater_than_or_equal_to: "반드시 %{count} 이상이어야 합니다"
       inclusion: "올바른 값이 아닙니다"
       invalid: "확실하지 않습니다"
       less_than: "반드시 %{count} 보다 작아야 합니다"
-      less_than_or_equal_to: "반드시 %{count} 이하여야 합니다"
       not_a_number: "숫자가 아닙니다"
       not_an_integer: "반드시 정수여야 합니다"
       not_found: "찾을 수 없습니다"
       not_locked: "잠겨 있지 않습니다"
-      odd: "홀수여야 합니다"
       taken: "이미 사용되고 있습니다"
       too_long: "은(는) 너무 깁니다 (%{count} 글자 초과 안됨)"
       too_short: "은(는) 너무 짧습니다 (%{count} 글자 미만 안됨)"
@@ -52,8 +44,6 @@ ko:
         notice: "%{resource_name}이(가) 성공적으로 업데이트 되었습니다"
   form:
     show_fully_accessible_places: "네"
-    show_limited_accessible_places: "휠체어 부분적 접근가능"
-    show_places_without_status: "알 수 없는 상태"
     show_unaccessible_places: "휠체어 접근불가"
   formtastic:
     hints:
@@ -64,14 +54,11 @@ ko:
     labels:
       category: "카테고리 :"
       city: "도시 :"
-      create: "장소생성"
       email: 이메일
       housenumber: "No :"
       lat: 위도
       lon: 경도
       name: "이름 :"
-      osm_password: "OSM 비밀번호"
-      osm_username: "OSM 계정이름"
       password: 비밀번호
       password_confirmation: "비밀번호 재입력"
       phone: "전화번호 :"
@@ -109,14 +96,12 @@ ko:
       profile: 프로필
       suggestions: 제안
       what_is_barrier_free: "\"휠체어 접근가능\"은 무슨 뜻인가요?"
-      what_is_wheelmap: "Wheelmap이 뭔가요?"
     searchbar:
       add_place: "다른 장소 등록"
       find: 찾기
       placeholder: "즉 샌프란시스코 선셋 대로 또는 베를린의 브란덴부르크문"
       title_add_place: "지금 이 위치에 새로운 장소를 추가하세요!"
     tagline: "Wheelmap 로고"
-    title: "Wheelmap - 휠체어 접근가능 장소찾기"
   helpers:
     select:
       prompt: "선택해주세요"
@@ -137,16 +122,10 @@ ko:
           upgrade: "브라우저 업데이트"
         warning:
           headline: "죄송합니다!"
-          message: "당신은 인터넷 익스플로러를 사용하고 있는 것 같습니다. Wheelmap 서비스의 안정적 구동에 보다 적절한 브라우저가 필요합니다. 파이어폭스, 크롬, 사파리 또는 오페라 브라우저를 사용해주세요."
-      link:
-        node:
-          create: "새로운 장소 등록"
       popup:
         form:
-          limited: "부분적으로 휠체어 이용 가능"
           'no': "휠체어 접근불가"
           save: 업데이트
-          unknown: "알 수 없는 상태"
           'yes': "휠체어 접근가능"
         help: "휠체어 접근성? (도움말)"
         more: "자세히 ..."
@@ -154,10 +133,6 @@ ko:
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "%{city}에 휠체어 접근이 불가능한 %{type} (%{count})"
-        'no':
-          headline: "%{city}에 휠체어 없이 이용이 가능한 %{type} (%{count})"
         unknown:
           headline: "%{city}에 휠체어 접근가능성을 알 수 없는 모든 %{type} (%{count})"
         'yes':
@@ -184,7 +159,6 @@ ko:
       link:
         large_map: "&laquo; 취소"
     errors:
-      default: "그것은 잘못된 현상입니다. 그러나 우리는 이미 그 내용을 보고 받았습니다"
       not_authorized: "죄송합니다, 인증에 실패했습니다"
       not_available: "죄송합니다, 이 페이지는 일시적으로 이용할 수 없습니다"
       not_existent: "죄송합니다, 이 장소는 더 이상 사용할 수 없습니다"
@@ -242,12 +216,6 @@ ko:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "당신의 계정을 OpenStreetMap과 연계시키면, wheelmap.org에서 새로운 장소를 생성하거나 수정할 수 있습니다."
-    callback:
-      notice: "당신의 wheelmap 계정은 현재 OpenStreetMap 계정 %{user}과 연결되어 있습니다"
   or: 또는
   profile:
     edit:
@@ -270,7 +238,6 @@ ko:
     step1: "당신이 알고 있는 장소를 클릭하세요"
     step2: "표시하고 클릭해 내용을 저장하세요."
     step3: "내용이 맞습니다. 새로 등록할 필요가 없습니다."
-    what_is_wheelmap: "Wheelmap이 뭔가요?"
   statistics: 통계
   support:
     array:
@@ -297,16 +264,13 @@ ko:
     destroy:
       notice: "안녕히 가세요, 또 방문해주세요!"
     new:
-      email: "이메일 주소"
       login: "로그인"
       login_with_twitter: "트위터 로그인"
       password: 비밀번호
       remember_me: "로그인 상태유지"
   wheelchairstatus:
-    limited: "부분적으로 휠체어 이용 가능"
-    'no': "휠체어 이용불가"
-    unknown: "휠체어 접근여부 알 수 없음"
-    'yes': "휠체어가 접근가능"
+    'no': "휠체어 접근불가"
+    'yes': "휠체어 접근가능"
   wheelmap:
     footer:
       a_project_of: "프로젝트"
@@ -321,9 +285,7 @@ ko:
       title: "Wheelmap - 휠체어 접근가능 장소찾기"
     what_is:
       fully_accessible: "접근가능 : 입구에 7cm 미만의 계단이 있습니다; 모든 위치에 휠체어 이용자가 도달할 수 있습니다(예외 없음); 장애인용 화장실을 사용할 수 있습니다"
-      limited_accessible: "접근정도 : 입구에 7cm 미만의 계단이 있습니다; 반드시 도달해야 할 위치에 휠체어 이용자가 진입할 수 있습니다."
       not_accessible: "입구가 심한게 경사져 있거나 여러 계단이 있습니다, 실내에 진입할 수 없습니다."
-      unknown_accessible: "이 장소에 대한 정보를 올려주세요!"
   will_paginate:
     next_label: "다음 &#8594;"
     page_entries_info:

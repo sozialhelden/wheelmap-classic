@@ -8,7 +8,7 @@ de:
       health: Gesundheit
       leisure: Freizeit
       misc: Sonstiges
-      money_post: "Bank & Post"
+      money_post: "Bank / Post"
       public_transfer: "Verkehr"
       shopping: Einkaufen
       sport: Sport
@@ -64,7 +64,7 @@ de:
         brothel: Bordell
         casino: Spielcasino
         cinema: Kino
-        community_center: "Stadthalle/Gemeindezentrum"
+        community_center: "Stadthalle / Gemeindezentrum"
         gallery: Galerie
         nightclub: Nachtclub
         playground: Spielplatz
@@ -132,7 +132,7 @@ de:
         farm_shop: "Hofladen"
         florist: Blumengeschäft
         furniture: Möbelhaus
-        garden_centre: "Garten-Center"
+        garden_centre: "Garden Center"
         gift: "Souvenir-/Geschenkartikelladen"
         hairdresser: Friseur
         hardware: Eisenwarenladen

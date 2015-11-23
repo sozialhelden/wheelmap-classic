@@ -1,4 +1,32 @@
 ro:
+  breadcrumbs:
+    node:
+      create: "Adăugare loc nou"
+    root: Wheelmap
+  form:
+    show_limited_accessible_places: "Parțial accesibil în scaun cu rotile"
+    show_places_without_status: "Stare necunoscută"
+    show_unaccessible_places: "Inaccesibil în scaun cu rotile"
   formtastic:
     labels:
+      email: Email
       save: Salvare
+  home:
+    index:
+      link:
+        node:
+          create: "Adăugare loc nou"
+      popup:
+        form:
+          limited: "Parțial accesibil în scaun cu rotile"
+          'no': "Inaccesibil în scaun cu rotile"
+          unknown: "Stare necunoscută"
+          'yes': "Accesibil cu scaunul rulant"
+  wheelchairstatus:
+    limited: "Parțial accesibil în scaun cu rotile"
+    'no': "Inaccesibil în scaun cu rotile"
+    unknown: "Stare necunoscută"
+    'yes': "Accesibil cu scaunul rulant"
+  wheelmap:
+    what_is:
+      unknown_accessible: "Ajutați prin marcarea locurilor!"

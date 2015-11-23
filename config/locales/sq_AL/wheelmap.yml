@@ -6,9 +6,8 @@ sq_AL:
       notice: "Ju duhet të jeni të identifikuar për të parë këtë faqe."
   breadcrumbs:
     node:
-      create: "Shto vend të ri"
       edit: "Redakto vend"
-    root: wheelmap
+    root: Wheelmap
   common:
     close: mbyll
     skip: kapërce
@@ -16,21 +15,15 @@ sq_AL:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "duhet të pranohet"
       already_confirmed: "është konfirmuar tanimë"
-      blank: "duhet të mbushet"
       confirmation: "nuk përputhet konfirmimi"
-      empty: "duhet të mbushet"
       equal_to: "duhet të jetë saktësisht %{count}"
-      even: "duhet të jetë edhe"
       exclusion: "është rezervuar"
       expired: "ka skaduar, ju lutemi kërkoni një të ri"
       greater_than: "duhet të jetë më i madh se %{count}"
-      greater_than_or_equal_to: "duhet të jetë më i madh ose i barabartë me %{count}"
       inclusion: "jo një vlerë e vlefshme"
       invalid: "jo e vlefshme"
       less_than: "duhet të jetë më e vogël se %{count}"
-      less_than_or_equal_to: "duhet të jetë më e vogël ose e barabartë me %{count}"
       not_a_number: "nuk është një numër"
       not_an_integer: "duhet të jetë një numër i plotë"
       not_found: "nuk u gjet"
@@ -38,7 +31,6 @@ sq_AL:
       not_saved:
         one: "Një gabim nuk lejoi të ruhej një %{resource}:"
         other: "%{count} gabime nuk lejuan të ruhej një %{resource}:"
-      odd: "duhet të jetë tek"
       taken: "është marrë tashmë"
       too_long: "është shumë i gjatë (jo më shumë se %{count} karaktere)"
       too_short: "është shumë i shkrurtër (jo më i vogël se %{count} karaktere)"
@@ -62,9 +54,7 @@ sq_AL:
         notice: "Imazhi u fshi me sukses"
   form:
     show_fully_accessible_places: "E aksesueshme në karrige me rrota"
-    show_limited_accessible_places: "karrige me rrota pjesërisht të aksesueshme"
-    show_places_without_status: "status i papërcaktuar"
-    show_unaccessible_places: "jo karrige me rrota të aksesueshme"
+    show_unaccessible_places: "E pa aksesueshme në karrige me rrota"
   formtastic:
     hints:
       lat: "Lëvize shenjuesin mbi hartë te vendi i saktë"
@@ -75,15 +65,12 @@ sq_AL:
       category: "Kategori:"
       centralkey: "Çelës qendror"
       city: "Qytet:"
-      create: "Krijo vend"
-      email: E-mail
+      email: Email
       finish: Përfundo
       housenumber: "Jo:"
       lat: Gjerësi
       lon: Gjatësi
       name: "Emër:"
-      osm_password: "Fjalëkalimi OSM"
-      osm_username: "Emri i llogarisë OSM"
       password: Fjalëkalim
       password_confirmation: "Përsërit fjalëkalimin"
       phone: "Telefon:"
@@ -97,6 +84,7 @@ sq_AL:
       website: "Website:"
       wheelchair: "Aksesueshmëria në karrige me rrota?"
       wheelchair_description: "Koment mbi aksesueshmërinë:"
+      wheelchair_toilet: "Tualet i aksesueshëm për karrige me rrota"
     titles:
       basic: "Të thëna bazë"
       optional: "Më shumë informacion <spam class=\"addition\">(të gjitha fushat janë me zgjedhje)</span>"
@@ -121,14 +109,12 @@ sq_AL:
       profile: Profil
       suggestions: Sugjerime
       what_is_barrier_free: "Çfarë do të thotë \"e aksesueshme në karrige me rrota\"?"
-      what_is_wheelmap: "Çfarë është wheelmap?"
     searchbar:
       add_place: "Shto një vend tjetër"
       find: Gjej
       placeholder: "Kërko për një vend"
       title_add_place: "Shto një vend në këtë pozicion tani!"
     tagline: "Wheelmap logo"
-    title: "gjej vendet e aksesueshme në karrige me rrota"
   helpers:
     select:
       prompt: "Ju lutem zgjidhni"
@@ -149,27 +135,17 @@ sq_AL:
           upgrade: "Përditëso Shfletuesin"
         warning:
           headline: "Ju kërkojmë ndjesë!"
-          message: "Ju duket se përdorni Internet Explorer. Wheelmap kërkon një shfletues standard i përputhshëm për të punuar siç duhet. Ju lutem konsideroni Firefox, Chrome, Safari apo Opera."
-      link:
-        node:
-          create: "Shto vend të ri"
       popup:
         form:
-          limited: "pjesërisht e aksesueshme në karrige me rrota"
-          'no': "jo e aksesueshme në karrige me rrota"
+          'no': "E pa aksesueshme në karrige me rrota"
           save: Përditëso
-          unknown: "status i papërcaktuar"
-          'yes': "e aksesueshme në karrige me rrota"
+          'yes': "E aksesueshme në karrige me rrota"
         help: "E aksesueshme në karrige me rrota? (Ndihmë)"
         more: "më shumë..."
   how?: Si?
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "Të kushtëzuara të gjitha të aksesueshme në karrige me rrota %{type} në %{city} (%{count})"
-        'no':
-          headline: "Të gjitha jo të aksesueshme në karrige me rrota %{type} në %{city} (%{count})"
         unknown:
           headline: "Të gjitha %{type} në %{city} me status të papërcaktuar për karrige me rrota (%{count})"
         'yes':
@@ -196,7 +172,6 @@ sq_AL:
       link:
         large_map: "&laquo; Anullo"
     errors:
-      default: "Uups diçka ishte gabim. Ne jemi i informuar për këtë çështje"
       not_authorized: "Na vjen keq, vërtetimi dështoi"
       not_available: "Na vjen keq, kjo faqe është përkohësisht jo e disponueshme."
       not_existent: "Na vjen keq, ky vend nuk është i disponueshëm më."
@@ -222,7 +197,6 @@ sq_AL:
         large_map: Zmadho
         listing: "Të gjithë vendet e '%{type}' në %{city}"
         upload: "Ngarko imazh"
-      more_data_from: "Ka më shumë të dhëna për këtë vend, të verifikuara nga:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -259,12 +233,6 @@ sq_AL:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "Ju keni nevojë të lidhni llogarinë tuaj me llogarinë tuaj 'open street map' përpara se të mund të krijoni apo të modifikoni vende në wheelmap.org."
-    callback:
-      notice: "Llogaria juaj wheelmap është tani e lidhur me llogarinë OpenStreetMap %{user}."
   or: ose
   place:
     one: "%{count} vend"
@@ -290,7 +258,6 @@ sq_AL:
     step1: "Kliko mbi një vend që ju njehni"
     step2: "Shënoje dhe kliko ruaj"
     step3: "Kjo ishte! Nuk është i nevojshëm regjistimi"
-    what_is_wheelmap: "Çfarë është wheelmap?"
   statistics: Statistikat
   support:
     array:
@@ -317,7 +284,6 @@ sq_AL:
     destroy:
       notice: "Pafshim, kthehuni së shpejti!"
     new:
-      email: "Adresa e-mail"
       login: "Identifikohu"
       login_with_twitter: "Identifikohu me Twitter"
       password: Fjalëkalim
@@ -326,16 +292,13 @@ sq_AL:
     after_signup_edit:
       welcome:
         headline: "Pothuajse ia dolët! Përfundoni regjistrimin për llogarinë tuaj Wheelmap këtu:"
-        set_password_for_mobile: "Ju keni përfunduar regjistrimin tuaj me Open StreetMap.\nTani zgjidhni një adresë emaili dhe fjalëkalim për llogarinë tuaj Wheelmap dhe pastaj jeni në rregull! Ju duhet kjo adresë emaili dhe fjalëkalim për t'u identifikuar në aplikacionin Wheelmap për IPhone apo Android."
         text: "Si mundemi ne të mbajmë lidhje me ju? Ju mund të ndryshoni këtë informacion më vonë në profilin tuaj."
     edit:
       headline:
         your_images: "Imazhet tuaja të ngarkuara"
   wheelchairstatus:
-    limited: "pjesërisht e aksesueshme në karrige me rrota"
-    'no': "jo karrige me rrota të aksesueshme"
-    unknown: "status i papërcaktuar"
-    'yes': "e aksesueshme në karrige me rrota"
+    'no': "E pa aksesueshme në karrige me rrota"
+    'yes': "E aksesueshme në karrige me rrota"
   wheelmap:
     footer:
       a_project_of: "Një projekt nga"
@@ -350,9 +313,7 @@ sq_AL:
       title: "Wheelmap - gjej vendet e aksesueshme në karrige me rrota"
     what_is:
       fully_accessible: "Hyrje pa shkallë, të gjitha dhomat pa shkallë dhe tualet i aksesueshëm nëse jeni klient i zakonshëm në një vend"
-      limited_accessible: "Hyrja ka një shkallë (lartësia maks. 7cm), shumica e dhomave janë pa shkallë, tualetet jo të disponueshme"
       not_accessible: "Hyrja ka rrëpirë ose disa shkallë, dhomat janë jo të aksesueshme"
-      unknown_accessible: "Ndihmo duke shënuar vende!"
   will_paginate:
     next_label: "Tjetri &#8594;"
     page_entries_info:

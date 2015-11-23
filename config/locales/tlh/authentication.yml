@@ -2,11 +2,9 @@ tlh:
   devise:
     confirmations:
       confirmed: "talIj 'ollu'. bI'elpu'. "
-      link: "talIj Da'ol 'e' ghojmoHbogh QIn DaHevbe''a'?"
       send_instructions: "tugh jabbI'ID DaHev. talIj Da'ol 'e' ghojmoH."
     destroy:
       confirm: "bIbej'a'?"
-      headline: "ta' Qaw''a'?"
       link: "DaH ta' Qaw'!"
     edit:
       form:
@@ -19,11 +17,9 @@ tlh:
       headline: "ta' choH"
     failure:
       already_authenticated: "bIrarpu'. bIrarnISbe'qa' ..."
-      inactive: "wej chu' ta'lIj."
       invalid: "muj pegh mu', jabI'ID ghap."
       invalid_token: "chaw' qab"
       locked: "ngaQ ta'lIj."
-      timeout: "Heghpu' chabHommey, yI'elqa'."
       unauthenticated: "taHmeH yI'el pagh yImuv."
       unconfirmed: "taHmeH ta'lIj Dachu'nIS."
     mailer:
@@ -31,8 +27,6 @@ tlh:
         subject: "talIj Da'ol 'e' ghojmoH QInvam."
       reset_password_instructions:
         subject: "pegh mu' vIcherqa' 'e' HIghojmoH."
-      unlock_instructions:
-        subject: "talIj Da'ngaQHa'moH 'e' ghojmoH QIn."
     mandatory: "* wIpoQ"
     omniauth_callbacks:
       failure: "\"%{reason}\"mo' %{kind}vo' qachaw'laHbe'."
@@ -48,7 +42,6 @@ tlh:
         comment: "mu'lIj pegh DachoH DaneHbe'chugh QInvam yIbuSHa'.<br/>mu'lIj pegh choHbe'lu' 'ach DachoHlaH bIngDaq mu'mey Da'uychugh. "
         headline: "%{email}"
         link: "pegh mu' choH"
-        text: "mu'lIj pegh choHlu' neHlu'. DachoH DaneHchugh, bIngDaq mu'mey yI'uy:"
       form:
         labels:
           password: "pegh mu' chu'"
@@ -57,23 +50,19 @@ tlh:
       headline: "pegh mu' cherqa'"
     passwords:
       link: "pegh mu' DalIj'a'?"
-      send_instructions: "tugh jabbI'ID DaHev. pegh mu' DachoH 'e' ghojmoH."
       updated: "Qapla', pegh mu' DachoHta'. DaH bI'elpu'."
     registrations:
       destroyed: "ta'lIj qIllu'. tugh bIchegh 'e' wItul."
       inactive_signed_up: "Qapla' 'ach %{reason}mo' pI'ellaHbe'moH."
       link: "muv"
-      signed_up: "Qapla', jumuv. 'olmeH tugh jabbI'DI' DaHev."
       updated: "talIjDaq qonpu' De' chu'."
     sessions:
-      inactive: "wej Qap ta'lIj."
       invalid: "muj jabbI'ID ngu'wI'lIj pegh mu'lIj ghap."
       invalid_token: "chaw' qab"
       link: "'el"
       locked: "ngaQ talIj"
       signed_in: "Qapla', bI'elpu'."
       signed_out: "Qapla', bImejpu'"
-      timeout: "rIn poHlIj, yI'elqa'!"
       unauthenticated: "jItaHpa', bI'elnIS pagh bImuvnIS."
       unconfirmed: "bItaHpa' talIj Da'ol."
     sign_in:
@@ -95,6 +84,4 @@ tlh:
         submit: "muv"
       headline: "muv"
     unlocks:
-      link: "'olmeH jabbI'DI' DaHevbe''a'?"
-      send_instructions: "tugh jabbI'ID DaHev. talIj DangaQHa' 'e' ghojmoH."
       unlocked: "ngaQHa' talIj. bI'elpu'. "

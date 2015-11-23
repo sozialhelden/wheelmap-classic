@@ -7,9 +7,7 @@ sq_AL:
       government: Qeveri
       health: Shëndet
       leisure: Kohë e lirë
-      misc: Muzikë
-      money_post: "Bankë"
-      public_transfer: "Transport publik"
+      misc: I llojllojshëm
       shopping: Blerje
       sport: Sport
       tourism: Turizëm
@@ -49,10 +47,8 @@ sq_AL:
         government: "Agjenci qeveritare"
         police: Polici
         public_building: "Godinë publike"
-        townhall: Bashkia e qytetit
       health:
         dentist: Dentist
-        doctors: Doktor
         hearing_aids: "Dyqan për pajisje dëgjimi"
         hospital: Spital
         medical_supply: "Vegla mjeksore"
@@ -64,7 +60,6 @@ sq_AL:
         brothel: Shtëpi publike
         casino: Kazino
         cinema: Kinema
-        community_center: "Qendër kulturore"
         gallery: Galeri
         nightclub: Klub nate
         playground: Shesh lojrash
@@ -89,7 +84,6 @@ sq_AL:
         aerodrome: Aeroport
         bicycle_parking: "Parking për biçikleta"
         bicycle_rental: "Biçikletë me qira"
-        boatyard: Kantier detar
         bus_station: "Stacion autobusi"
         bus_stop: "Qëndrim autobusi"
         cable_car: "Teleferik"
@@ -118,7 +112,6 @@ sq_AL:
         butcher: Mishshitës
         car_repair: "Riparim makine"
         car_shop: "Dyqan makinash"
-        chemist: Farmaci
         clothes: Dyqan rrobash
         computer: Dyqan kompjuterash
         confectionery: "Dyqan ëmbëlsirash"
@@ -132,7 +125,6 @@ sq_AL:
         farm_shop: "Dyqan ferme"
         florist: Luleshitës
         furniture: Mobilje
-        garden_centre: "Qendër kopshti"
         gift: "Suvenir"
         hairdresser: Floktar
         hardware: Harduer

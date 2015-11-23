@@ -6,9 +6,9 @@ da:
       notice: "Du skal være logget på for at se denne side."
   breadcrumbs:
     node:
-      create: "Tilføj nyt sted"
+      create: "Tilføj et nyt sted"
       edit: "Ret sted"
-    root: wheelmap
+    root: Wheelmap
   common:
     close: luk
     skip: Spring over
@@ -16,21 +16,15 @@ da:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "skal accepteres"
       already_confirmed: "var allerede bekræftet, prøv at logge ind"
-      blank: "skal udfyldes"
       confirmation: "stemmer ikke overens med bekræftelse"
-      empty: "må ikke udelades"
       equal_to: "skal være lig med %{count}"
-      even: "skal være lige"
       exclusion: "er reserveret"
       expired: "udløbet, bed venligst om en ny"
       greater_than: "skal være større end %{count}"
-      greater_than_or_equal_to: "skal være større end eller lig med %{count}"
       inclusion: "er ikke en gyldig værdi"
       invalid: "er ikke gyldig"
       less_than: "skal være mindre end %{count}"
-      less_than_or_equal_to: "skal være mindre end eller lig med %{count}"
       not_a_number: "er ikke et tal"
       not_an_integer: "er ikke et heltal"
       not_found: "ikke fundet"
@@ -38,7 +32,6 @@ da:
       not_saved:
         one: "1 fejl gjorde at denne %{resource} ikke kunne gemmes being:"
         other: "%{count} fejl gjorde at denne %{resource} ikke kunne gemmes:"
-      odd: "skal være ulige"
       taken: "er allerede blevet taget"
       too_long: "er for langt (maksimum %{count} tegn)"
       too_short: "er for kort (minimum %{count} tegn)"
@@ -62,12 +55,11 @@ da:
         notice: "Billedet blev slettet"
   form:
     show_fully_accessible_places: "kørestolstilgængeligt"
-    show_limited_accessible_places: "delvis kørestolstilgængeligt"
-    show_places_without_status: "ukendt status"
-    show_unaccessible_places: "ikke kørestolstilgængeligt"
+    show_limited_accessible_places: "Delvist kørestolstilgængelig"
+    show_places_without_status: "Ukendt status"
+    show_unaccessible_places: "Ikke kørestolstilgængeligt"
   formtastic:
     hints:
-      email: "Vi behandler din adresse fortroligt og vil aldrig udsende spam!"
       lat: "Flyt markøren på kortet til den korrekte position"
       osm_username: "Ikke medlem endnu?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Opret en Openstreetmap konto nu</a>"
       password: "(efterlad feltet tomt, hvis du ikke ønsker at ændre dette)"
@@ -76,15 +68,12 @@ da:
       category: "Kategori:"
       centralkey: "Centralnøgle:"
       city: "By:"
-      create: "Opret sted"
       email: E-mail
       finish: Færdig
       housenumber: "Nr."
       lat: Breddegrad
       lon: Længdegrad
       name: "Navn:"
-      osm_password: "OSM adgangskode"
-      osm_username: "OSM kontonavn"
       password: Adgangskode
       password_confirmation: "Gentag adgangskode"
       phone: "Telefon:"
@@ -98,7 +87,7 @@ da:
       website: "Hjemmeside:"
       wheelchair: " Kørestolstilgængeligt?"
       wheelchair_description: "Tilgængeligheds kommentar:"
-      wheelchair_toilet: "Kørestolsbruger badeværelse:"
+      wheelchair_toilet: "Kørestolstilgængeligt toilet:"
     titles:
       basic: "Basisinformation"
       optional: "Mere information <span class=\"addition\">(alle felter er valgfrit)</span>"
@@ -123,14 +112,12 @@ da:
       profile: Profil
       suggestions: Forslag
       what_is_barrier_free: "Hvad betyder \"kørestolstilgængeligt\"?"
-      what_is_wheelmap: "Hvad er wheelmap?"
     searchbar:
       add_place: "Tilføj endnu et sted"
       find: Find
       placeholder: "Søg efter et sted"
       title_add_place: "Tilføj et nyt sted på denne position nu!"
     tagline: "Wheelmap logo"
-    title: "Find kørestolstilgængelige steder"
   helpers:
     select:
       prompt: "Vælg..."
@@ -151,27 +138,22 @@ da:
           upgrade: "Opdaterer browser"
         warning:
           headline: "Vi undskylder meget!"
-          message: "Det ser ud til at du bruger Internet Explorer. Wheelmap behøver en browser der bedre kan håndtere webstandarder. Overvej at bruge  fx Firefox, Chrome, Safari eller Opera."
       link:
         node:
-          create: "Tilføj nyt sted"
+          create: "Tilføj et nyt sted"
       popup:
         form:
-          limited: "delvis kørestolstilgængeligt"
+          limited: "Delvist kørestolstilgængelig"
           'no': "Ikke kørestolstilgængeligt"
           save: Gem
-          unknown: "ukendt status"
-          'yes': "Fuldt kørestoltilgængeligt"
+          unknown: "Ukendt status"
+          'yes': "Kørestolstilgængeligt"
         help: "Kørestolstilgængeligt? (Hjælp)"
         more: "mere ..."
   how?: Hvordan?
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "Alle begrænset kørestolstilgængelige steder %{type} i %{city} (%{count})"
-        'no':
-          headline: "Alle ikke kørestolstilgængelige steder %{type} i %{city} (%{count})"
         unknown:
           headline: "Alle %{type} i %{city} med ukendt kørestolstilgængeligs status (%{count})"
         'yes':
@@ -198,7 +180,6 @@ da:
       link:
         large_map: "&laquo; Fortryd"
     errors:
-      default: "Ups, et eller andet gik galt. Vi er blevet informeret om dette!"
       not_authorized: "Undskyld, men autorisationen fejlede"
       not_available: "Undskylder meget, men denne side er midlertidig ikke tilgængelig."
       not_existent: "Undskylder meget, dette sted findes ikke mere."
@@ -224,7 +205,6 @@ da:
         large_map: Forstør
         listing: "Alle steder af  kategoren '%{type}' i %{city}"
         upload: "Opload billede"
-      more_data_from: "Der er mere information for dette sted, tjekket af:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -261,12 +241,6 @@ da:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "Du skal forbinde din konto med din OpenStreetMap konto før du kan oprette eller modificere steder på wheelmap.org."
-    callback:
-      notice: "Din wheelmap konto er nu forbundet med OpenStreetMap kontoen %{user}."
   or: eller
   place:
     one: "%{count} sted"
@@ -292,7 +266,6 @@ da:
     step1: "Klik på et sted du kender"
     step2: "Markerer den og klik gem"
     step3: "Det var det hele! Ingen registering er nødvendig"
-    what_is_wheelmap: "Hvad er wheelmap?"
   statistics: Statistik
   support:
     array:
@@ -313,10 +286,6 @@ da:
     'no': "Ingen kørestolstilgængeligt toilet"
     unknown: "Toilet status ukendt"
     'yes': "Kørestolstilgængeligt toilet"
-    what_is:
-      'no': "Dørens indre bredde min. 90 cm,  frit område på min. 150x150 cm, kørestols-højde reguleret toiletsæde, klapsammenlige håndtag og tilgængelig håndvask. "
-      'yes': "Dørens indre bredde min. 90 cm,  frit område på min. 150x150 cm, kørestols-højde reguleret toiletsæde, klapsammenlige håndtag og tilgængelig håndvask. "
-      unknown: "Hjælp med at få angivet toiletstatus!"
   user_sessions:
     create:
       activation:
@@ -327,7 +296,6 @@ da:
     destroy:
       notice: "Farvel, kom snart igen!"
     new:
-      email: "E-mail-adresse"
       login: "Login"
       login_with_twitter: "Login med Twitter"
       password: Adgangskode
@@ -336,16 +304,15 @@ da:
     after_signup_edit:
       welcome:
         headline: "Du er næsten der! Afslut oprettelsen af din Wheelmap konto her:"
-        set_password_for_mobile: "Du har nu afsluttet din registering med OpenStreetMap.\nVælg nu en e-mail adresse og en adgangskode til din Wheelmap konto og dernæst er du helt færdig! Du behøver denne e-mail adresse og adgangskode for at logge ind på Wheelmap app til iPhone eller Android."
         text: "Hvordan kan vi komme i kontakt med dig? Du kan altid ændre dette her senere i din profil."
     edit:
       headline:
         your_images: "Dine oploadede billeder"
   wheelchairstatus:
-    limited: "delvis kørestolstilgængeligt"
+    limited: "Delvist kørestolstilgængelig"
     'no': "Ikke kørestolstilgængeligt"
-    unknown: "kørestolstilgængeligt ukendt status"
-    'yes': "Fuldt kørestoltilgængeligt"
+    unknown: "Ukendt status"
+    'yes': "Kørestolstilgængeligt"
   wheelmap:
     footer:
       a_project_of: "Et projekt fra"
@@ -360,9 +327,8 @@ da:
       title: "Wheelmap - find kørestolstilgængelige steder"
     what_is:
       fully_accessible: "Ingen trapper ved indgang, alle rum ingen trapper, handicaptoilet\n"
-      limited_accessible: "Indgang har et trin (max. højde 7 cm), de fleste rum har ingen trin, ingen handicaptoilet"
       not_accessible: "Indgangen har et trin eller flere trin, de forskellige rum er ikke tilgængelige"
-      unknown_accessible: "Hjælp med at få stedet markeret!"
+      unknown_accessible: "Hjælp ved at markere steder!"
   will_paginate:
     next_label: "Næste &#8594;"
     page_entries_info:

@@ -2,11 +2,9 @@ is:
   devise:
     confirmations:
       confirmed: "Aðgangurinn hefur verið staðfestur. Þú ert núna skráður inn"
-      link: "Fékkstu ekki staðfestinga leiðbeiningar?"
       send_instructions: "Þú munt fá tölvupóst með upplýsingar hvernig þú staðfestir aðganginn þinn eftir nokkrar mínútur"
     destroy:
       confirm: "Ertu viss?"
-      headline: "Eyða aðgangi"
       link: "Eyða núna"
     edit:
       form:
@@ -18,11 +16,9 @@ is:
         submit: "Vista breytingar"
       headline: "Stjórna aðgangi"
     failure:
-      inactive: "Aðgangurinn þinn hefur ekki enn verið virktur."
       invalid: "Rangt tölvupóstfang eða lykilorð."
       invalid_token: "Rangur kóði til að virkja."
       locked: "Aðgangurinn þinn er læstur."
-      timeout: "Tíminn er runninn út, vinsamlegast skráðu þig aftur inn til að halda áfram."
       unauthenticated: "Þú þarft að skrá þig inn til að geta haldið áfram."
       unconfirmed: "Þú þarft að staðfesta aðganginn þinn til að halda áfram."
     mailer:
@@ -30,8 +26,6 @@ is:
         subject: "Staðfestinga upplýsingar"
       reset_password_instructions:
         subject: "Leiðbeiningar um endursetningu lykilorðs"
-      unlock_instructions:
-        subject: "Aflæsa upplýsingum"
     mandatory: "* verður að velja"
     omniauth_callbacks:
       failure: "Gat ekki gefið þér aðgang frá %{kind} af því að \"%{reason}\"."
@@ -41,13 +35,12 @@ is:
         labels:
           email: Tölvupóstur
         submit: "Endursetja lykilorð"
-      headline: "Gleymt lykilorð?"
+      headline: "Gleymdirðu lykilorði?"
     password_reset:
       email:
         comment: "Ef þú baðst ekki um að breyta lykilorðinu þínu þá vinsamlegast hunsið þennan póst<br/>Lykilorðið þitt mun ekki breytast nema þú smellir á þennan tengil."
         headline: "Velkominn %{email} "
         link: "Breyta lykilorði"
-        text: "Einhver bað um breytingu á lykilorði. Þú getur gert það með því að smella á þennan tengil:"
       form:
         labels:
           password: "Nýtt lykilorð"
@@ -56,23 +49,19 @@ is:
       headline: "Endursetja lykilorð"
     passwords:
       link: "Gleymdirðu lykilorði?"
-      send_instructions: "Þú munt fá tölvupóst með upplýsingar hvernig þú endursetur aðganginn þinn eftir nokkrar mínútur"
       updated: "Lykilorðinu þínu var breytt. Þú ert núna skráður inn"
     registrations:
       destroyed: "Bless! Aðganginum þínum hefur verið lokað. Vonandi sjáumst við aftur."
       inactive_signed_up: "Þú hefur verið skráður. Hinsvegar gátum við ekki skráð þig inn því aðgangurinn þinn er %{reason}."
       link: "Innskráning"
-      signed_up: "Þú hefur innskráð þig. Ef valið færðu staðfestingu í tölvupósti"
       updated: "Þú hefur uppfært aðganginn þinn"
     sessions:
-      inactive: "Aðgangurinn þinn hefur ekki verið staðfestur."
       invalid: "Rangt tölvupóstfang eða lykilorð."
       invalid_token: "Ógilt auðkenningartákn"
       link: "Innskráning"
       locked: "Aðgangurinn þinn er læstur."
       signed_in: "Innskráning tókst."
       signed_out: "Útskráning tókst."
-      timeout: "Tíminn er runninn út, vinsamlegast skráðu þig aftur inn til að halda áfram."
       unauthenticated: "Þú þarft að innskrá eða nýskrá þig til að halda áfram."
       unconfirmed: "Þú verður að staðfesta aðganginn þinn áður en þú heldur áfram."
     sign_in:
@@ -91,10 +80,7 @@ is:
           email: Tölvupóstfang
           password: Lykilorð
           password_confirmation: "Lykilorð aftur"
-          wants_newsletter: "Já takk, skráið mig á póstlista wheelmap. (En ekki senda meira en einn póst á mánuði.)"
         submit: "Skrá sig"
       headline: "Skrá sig"
     unlocks:
-      link: "Fékkstu ekki leiðbeiningar til að aflæsa?"
-      send_instructions: "Þú munt fá tölvupóst með leiðbeiningum hvernig þú aflæsir aðganginn þinn eftir örfáar mínútur"
       unlocked: "Aðganginum þínum hefur verið ólæst. Þú ert núna innskráður."

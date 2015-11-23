@@ -7,9 +7,6 @@ zh_TW:
       government: 政府
       health: 醫療
       leisure: 休閒
-      misc: 其他
-      money_post: "銀行/郵局"
-      public_transfer: "大眾運輸"
       shopping: 購物
       sport: 運動
       tourism: 觀光
@@ -49,10 +46,8 @@ zh_TW:
         government: "政府部門"
         police: 警察局
         public_building: "公共建築"
-        townhall: 市政廳
       health:
         dentist: 牙醫
-        doctors: 診所
         hearing_aids: "助聽器"
         hospital: 醫院
         medical_supply: "醫療用品"
@@ -64,7 +59,6 @@ zh_TW:
         brothel: 妓院
         casino: 賭場
         cinema: 電影院
-        community_center: "社區活動中心"
         gallery: 畫廊
         nightclub: 夜總會
         playground: 遊樂器材
@@ -89,7 +83,6 @@ zh_TW:
         aerodrome: 機場
         bicycle_parking: "自行車停車場"
         bicycle_rental: "自行車出租"
-        boatyard: 船屋
         bus_station: "公車站"
         bus_stop: "公車站"
         cable_car: "纜車"
@@ -118,7 +111,6 @@ zh_TW:
         butcher: 肉店
         car_repair: "汽車維修"
         car_shop: "車行"
-        chemist: 藥局
         clothes: 服飾
         computer: 電腦店
         confectionery: "點心店"
@@ -132,7 +124,6 @@ zh_TW:
         farm_shop: "農產品"
         florist: 花店
         furniture: 家具
-        garden_centre: "園藝"
         gift: "禮品店"
         hairdresser: 髮型師
         hardware: 五金行

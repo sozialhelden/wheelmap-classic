@@ -2,12 +2,9 @@ nl:
   devise:
     confirmations:
       confirmed: "Jouw account is succesvol bevestigd. Je bent nu aangemeld."
-      link: "Heb je de bevestiging instructie niet ontvangen?"
       send_instructions: "Je zal een email met de instructie voor jouw account bevestiging ontvangen. Dat duurt maar een paar minuten."
-      send_paranoid_instructions: "Als je e-mail adres in onze databank staat, dan ontvang je een e-mail met de instructie \"Hoe het bevestigen van jouw account in een paar minuut gaat\"."
     destroy:
       confirm: "Ben je zeker?"
-      headline: "Account verwijderen"
       link: "Nu verwijderen"
     edit:
       form:
@@ -20,25 +17,19 @@ nl:
       headline: "Bewerk account"
     failure:
       already_authenticated: "Je bent al aangemeld."
-      inactive: "Jouw account is nog niet geactiveerd."
       invalid: "Fout email of wachtwoord"
       invalid_token: "Ongeldig authentificatie bewijs."
       locked: "Jouw account is gesloten."
-      timeout: "Jouw sessie is afgelopen, alsjeblieft log weer in om door te gaan."
       unauthenticated: "Je moet aangemeld zijn of aanmelden om door te gaan. "
       unconfirmed: "Je moet jouw account bevestigen voordat je doorgaat."
     mailer:
       confirmation_instructions:
-        landing_page: "Alsjeblieft klik op de link wat wij naar jouw e-mail adres gestuurd hebben. Als je geen e-mail van ons hebt ontvangen dan kijk of die niet in de spam map is. Als je de e-mail niet kan vinden kan je de aanvraag nog een keer sturen."
         subject: "Een stap nog om jouw account te activeren"
       reset_password_instructions:
         subject: "Reset wachtwoord aanwijzing."
-      unlock_instructions:
-        subject: "Open instructies"
     mandatory: "* nodig"
     omniauth_callbacks:
       failure: "Autorisatie met  %{kind} mislukte. Fout: \"%{reason}\"."
-      permission_missing: "Je hebt de benodigde toestemming niet ingewilligd."
       success: "Succesvol goedgekeurd van %{kind} account"
     password_recovery:
       form:
@@ -51,7 +42,6 @@ nl:
         comment: "Als je geen wachtwoord aangevraagd hebt dan kan je deze mail negeren.<br/>Jouw wachtwoordwordt niet veranderd tot dat je op de bovenstaande link klikt en een nieuw wachtwoord invuld."
         headline: "Welkom %{email}"
         link: "Verander mijn wachtwoord"
-        text: "Iemand heeft aangevraagd om jouw wachtwoord te veranderen. Je kan dat doen doordat je om de volgende link klikt:"
       form:
         labels:
           password: "Nieuw wachtwoord"
@@ -60,8 +50,6 @@ nl:
       headline: "Reset wachtwoord"
     passwords:
       link: "Wachtwoord vergeten?"
-      send_instructions: "Je zal een email met de instructie \"hoe annuleer ik mijn wachtwoord in een paar minuten\" ontvangen. "
-      send_paranoid_instructions: "Als jou e-mail bestaat in ons databank, zal je een wachtwoord herstel link in de e-mail ontvangen."
       updated: "Jouw wachtwoord is succesvol veranderd. Je bent nu ingeloggd."
       updated_not_active: "Jouw wachtwoord is succesvol veranderd."
     registrations:
@@ -72,24 +60,19 @@ nl:
         inactive: inactief
         locked: geblokkeerd
         unconfirmed: onbevestigd
-      signed_up: "Je bent succesvol ingeschreven. Als het niet mogelijk is, wij hebben een bevestiging naar jouw e-mail gestuurd."
       updated: "Jouw account is succesvol geactualiseerd."
     sessions:
-      inactive: "Jouw account is nog niet geactiveerd."
       invalid: "Ongeldig email of wachtwoord."
       invalid_token: "Ongeldig authentificatie bewijs."
       link: "Aanmelden"
       locked: "Jouw account is geblokkeerd."
       new:
         no_osm_account: "Geen OpenStreetMap account?"
-        osm_promo_text: "Deze wheelmap is gebaseerd op de geodata van OpenStreetMap (OSM). OpenStreetMap is een vrije wereldmap, gemaakt door mensen als jij. Het is zoals Wikipedia voor plattegronden. Om plaatsen te veranderen of nieuwe in te voegen heb je een OpenStreetMap account nodig en moet je er ingeloggd zijn."
         promo_text_thank_you: "Dank je wel voor je ondersteuning!"
         sign_in_with: "Log in met %{kind}"
         sign_up_with_osm: "Registreer je nu."
-        wheelmap_promo_text: "Met jouw kennis over rolstoel toegankelijke plaatsen kan je mensen met fysieke beperkingen helpen om het dagelijkse leven beter te organiseren. Bovendien wordt de OpenStreetMap prezieser door nieuwe details.  "
       signed_in: "Succesvol aangemeld."
       signed_out: "Succesvol uitgelogd."
-      timeout: "Jouw sessie is afgelopen, alsjeblieft log in om door te gaan."
       unauthenticated: "Je moet aanmelden voordat je doorgaat."
       unconfirmed: "Je moet jouw account bevestigen voordat je doorgaat."
     sign_in:
@@ -112,11 +95,7 @@ nl:
           email: Email
           password: Wachtwoord
           password_confirmation: "Herhaal wachtwoord"
-          wants_newsletter: "Ja, informeer mij over wheelmap. (Maar alsjeblieft niet meer dan een keer per maand.)"
         submit: "Aanmelden"
       headline: "Aanmelden"
     unlocks:
-      link: "Geen instructie voor het vrijgeven ontvangen?"
-      send_instructions: "Je zal over een paar minuten een e-mail met de instructie ontvangen, hoe je je account vrij kan geven. "
-      send_paranoid_instructions: "Als je account existeerd, dan ontvang je een mail met de  instructie, hoe je je account in een paar minuten vrij kan geven. "
       unlocked: "Jouw account werd succesvol vrijgegeven. Je bent nu ingeloggd."

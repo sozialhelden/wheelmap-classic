@@ -2,12 +2,9 @@ ja:
   devise:
     confirmations:
       confirmed: "あなたのアカウントは確認できました。現在サイインしています。"
-      link: "確認手順を受け取っていない？"
       send_instructions: "数分であなたのアカウントを確認する手順がメールで届きます。"
-      send_paranoid_instructions: "もしあなたのアカウントがあれば、あなたのアカウントの確認手順が書かれたメールが数分で届きます。"
     destroy:
       confirm: "本当によろしいですか？"
-      headline: "アカウントを削除"
       link: "今すぐ削除"
     edit:
       form:
@@ -20,25 +17,19 @@ ja:
       headline: "アカウント管理"
     failure:
       already_authenticated: "あなたはサインイン済です。"
-      inactive: "あなたのアカウントはまだ有効化されていません。"
       invalid: "メールアドレスかパスワードが違います。"
       invalid_token: "認証トークンが違います。"
       locked: "あなたのアカウントはロックされました。"
-      timeout: "セッションの有効期限が切れています、サイインして続けてください。"
       unauthenticated: "続けるにはログインか登録が必要です。"
       unconfirmed: "続ける前にアカウントを確認してください。"
     mailer:
       confirmation_instructions:
-        landing_page: "先ほどあなたのメールアドレスにお送りしたメールのリンクをクリックしてください。メールが届かない場合は、まずスパムフォルダーを探してください、もしそこになければサインアップページに戻ってやり直してください。"
         subject: "確認手順"
       reset_password_instructions:
         subject: "パスワードリセット手順"
-      unlock_instructions:
-        subject: "ロック解除手順"
     mandatory: "* 必須項目"
     omniauth_callbacks:
       failure: "%{kind} での認証に失敗。エラー: \"%{reason}\"。"
-      permission_missing: "あなたは必要な許可を承認していません"
       success: "%{kind} でログインしました"
     password_recovery:
       form:
@@ -51,7 +42,6 @@ ja:
         comment: "あなたがパスワード変更を要求した記憶が無い場合は、このメールは無視してください<br/>あなたのパスワードはこのリンクをクリックしなければ変更されません。"
         headline: "ようこそ %{email} さん"
         link: "パスワードを変更"
-        text: "あなたのパスワード変更要求がありました。あなたのものであれば次のリンクをクリックして変更できます。そうでなければ無視してください！"
       form:
         labels:
           password: "新しいパスワード"
@@ -60,8 +50,6 @@ ja:
       headline: "パスワードをリセット"
     passwords:
       link: "パスワードを忘れた？"
-      send_instructions: "数分でパスワードのリセット手順が書かれたメールが届きます。"
-      send_paranoid_instructions: "アカウントがあれば、パスワードのリセット手順を書いたメールが数分で届きます。"
       updated: "あなたのパスワードは変更されました。現在サイインしています。"
       updated_not_active: "パスワードが変更されました"
     registrations:
@@ -72,24 +60,19 @@ ja:
         inactive: 無効
         locked: ロック済
         unconfirmed: 未確認
-      signed_up: "サインアップが完了しました。あなたのメールアドレス宛てに確認メールが送信されました。"
       updated: "あなたのアカウントは更新されました。"
     sessions:
-      inactive: "あなたのアカウントはまだ有効化されていません。"
       invalid: "Eメールまたはパスワードが違います。"
       invalid_token: "不正な認証トークン。"
       link: "サインイン"
       locked: "あなたのアカウントはロックされました。"
       new:
         no_osm_account: "OpenStreetMap のアカウントを持っていませんか？"
-        osm_promo_text: "Wheelmap はOpenStreetMap(OSM) の地理データをベースにしています。OpenStreetMap はフリーな世界規模の地図で、あなたのような普通の人が作成しています。地図のWikipediaのようなものです。場所を編集したり、新しく作成する場合には、OpenStreetMapのアカウントが必要で、それを使ってログインしなければなりません。"
         promo_text_thank_you: "あなたのサポートに感謝します！"
         sign_in_with: " %{kind} でログイン"
         sign_up_with_osm: "今すぐ登録。"
-        wheelmap_promo_text: "車椅子で行ける場所についてのあなたの知識で、身体的な障害のある人が日々の生活をより良く組み立てることができます。さらには、OpenStreetMap にも詳細な情報が増えることになります。"
       signed_in: "サイインインしました。"
       signed_out: "サインアウトしました。"
-      timeout: "セッション有効期限切れです。もう一度サイインしてから続けてください。"
       unauthenticated: "サイインインまたはサインアップして続けてください。"
       unconfirmed: "アカウントを確認してから続けてください。"
     sign_in:
@@ -112,11 +95,7 @@ ja:
           email: Eメール
           password: パスワード
           password_confirmation: "パスワード再入力"
-          wants_newsletter: "はい、wheelmapの最新情報を送ってください。（ただし月１回）"
         submit: "登録"
       headline: "登録"
     unlocks:
-      link: "アンロック手順が届きませんでしたか？"
-      send_instructions: "数分でアカウントのアンロック手順を書いたメールが届きます。"
-      send_paranoid_instructions: "アカウントがあれば、アカウントのロック解除手順を書いたメールが数分で届きます。"
       unlocked: "アカウントはアンロックされました。あなたは現在サイインしています。"

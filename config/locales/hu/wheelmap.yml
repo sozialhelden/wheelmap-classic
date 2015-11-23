@@ -8,7 +8,7 @@ hu:
     node:
       create: "Új hely hozzáadása"
       edit: "Hely módosítása"
-    root: wheelmap
+    root: Wheelmap
   common:
     close: bezár
     skip: kihagy
@@ -16,21 +16,15 @@ hu:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "el kell fogadni"
       already_confirmed: "már megerősítésre került"
-      blank: "ki kell tölteni"
       confirmation: "nem egyezik meg a visszaigazolással"
-      empty: "ki kell tölteni"
       equal_to: "pontosan ennyi legyen: %{count}"
-      even: "páros szám legyen"
       exclusion: "foglalt"
       expired: "lejárt, kérjük kérj egy újat"
       greater_than: "nagyobb kell legyen, mint %{count}"
-      greater_than_or_equal_to: "nagyobb vagy egyenlő kell legyen, mint %{count}"
       inclusion: "érvénytelen érték"
       invalid: "érvénytelen"
       less_than: "kisebb kell legyen, mint %{count}"
-      less_than_or_equal_to: "kisebb vagy egyenlő kell legyen, mint %{count}"
       not_a_number: "nem egy szám"
       not_an_integer: "egész szám kell legyen"
       not_found: "nem található"
@@ -38,7 +32,6 @@ hu:
       not_saved:
         one: "Egy hiba megakadályozza %{resource} mentését:"
         other: "%{count} hiba akadályozza %{resource} mentését:"
-      odd: "páratlannak szám legyen"
       taken: "már foglalt"
       too_long: "túl hosszú (ne legyen több, mint %{count} karakter)"
       too_short: "túl rövid (ne legyen kevesebb, mint %{count} karakter)"
@@ -62,12 +55,11 @@ hu:
         notice: "A kép sikeresen törölve lett"
   form:
     show_fully_accessible_places: "akadálymentes"
-    show_limited_accessible_places: "részben akadálymentes"
-    show_places_without_status: "ismeretlen státusz"
-    show_unaccessible_places: "nem akadálymentes"
+    show_limited_accessible_places: "Részben akadálymentesített"
+    show_places_without_status: "Ismeretlen állapot"
+    show_unaccessible_places: "Kerekesszékkel nem akadálymentes"
   formtastic:
     hints:
-      email: "Bizalmasan kezeljük a címedet. Semmi spam, becsszó!"
       lat: "Mozgasd a jelölőt a térképen és helyes pozicióra"
       osm_username: "Még nem vagy tag? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Készítsd el OpenStreetMap fiókod most</a>"
       password: "(hagyd üresen a mezőt, ha nem akarod megváltoztatni)"
@@ -76,15 +68,12 @@ hu:
       category: "Kategória:"
       centralkey: "Központi kulcs:"
       city: "Település:"
-      create: "Hely hozzáadása"
-      email: E-mail
+      email: Email
       finish: Kész
       housenumber: "Hsz.:"
       lat: Szélesség
       lon: Hosszúság
       name: "Név:"
-      osm_password: "OSM jelszó"
-      osm_username: "OSM felhasználónév"
       password: Jelszó
       password_confirmation: "Jelszó megerősítése"
       phone: "Telefon:"
@@ -98,6 +87,7 @@ hu:
       website: "Webcím:"
       wheelchair: "Kerekesszékkel akadálymentes?"
       wheelchair_description: "Megjegyzés az akadálymentességről:"
+      wheelchair_toilet: "Kerekesszékkel is használható mosdó:"
     titles:
       basic: "Alapadat"
       optional: "További információ <span class=\"addition\">(mindegyik mező opcionális)</span>"
@@ -122,14 +112,12 @@ hu:
       profile: Profil
       suggestions: Javaslatok
       what_is_barrier_free: "Mit jelent a \"kerekesszékkel akadálymentes\"?"
-      what_is_wheelmap: "Mi a wheelmap?"
     searchbar:
       add_place: "Új hely felvétele"
       find: Keres
       placeholder: "Hely keresése"
       title_add_place: "Adj hozzá egy új helyet ezen a ponton most!"
     tagline: "Wheelmap embléma"
-    title: "Keress kerekesszékkel is elérhető helyeket"
   helpers:
     select:
       prompt: "Kérjük, válassz"
@@ -150,16 +138,15 @@ hu:
           upgrade: "Böngésző frissítése"
         warning:
           headline: "Elnézést kérünk!"
-          message: "Úgy tűnik, Internet Explorert használsz. A Wheelmap egy szabványokat követő böngészőt igényel a helyes működéshez. Kérjük, fontold meg a Firefox, Chrome, Safari vagy Opera használatát."
       link:
         node:
           create: "Új hely hozzáadása"
       popup:
         form:
-          limited: "részben akadálymentes"
-          'no': "nem akadálymentes"
+          limited: "Részben akadálymentesített"
+          'no': "Kerekesszékkel nem akadálymentes"
           save: Frissítés
-          unknown: "ismeretlen státusz"
+          unknown: "Ismeretlen állapot"
           'yes': "akadálymentes"
         help: "Kerekesszékkel akadálymentes? (Segítség)"
         more: "több ..."
@@ -167,10 +154,6 @@ hu:
   landing_pages:
     index:
       wheelchair:
-        limit:
-          headline: "Minden kerekesszékkel részben akadálymentes %{type} itt: %{city}: (%{count})"
-        'no':
-          headline: "Minden kerekesszékkel nem akadálymentes %{type} itt: %{city} (%{count})"
         unknown:
           headline: "Minden ismeretlen státuszú %{type} itt: %{city} (%{count})"
         'yes':
@@ -197,7 +180,6 @@ hu:
       link:
         large_map: "&laquo; Mégsem"
     errors:
-      default: "Hopsz, hiba történt. Már dolgozunk a problémán"
       not_authorized: "Sajnáljuk, sikertelen bejelentkezés"
       not_available: "Sajnáljuk, az oldal átmenetileg nem elérhető."
       not_existent: "Sajnáljuk, ez a hely már nem elérhető."
@@ -223,7 +205,6 @@ hu:
         large_map: Nagyít
         listing: "Összes '%{type}' típusú hely itt: %{city}"
         upload: "Kép feltöltése"
-      more_data_from: "Több információ is van a helyről, ellenőrizte:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -260,12 +241,6 @@ hu:
           kb: KB
           mb: MB
           tb: TB
-  oauth:
-    application:
-      connect:
-        headline: "Csatlakoznod kell az OpenStreetMap fiókoddal mielőtt módosítani tudod a wheelmap.org adatbázisát."
-    callback:
-      notice: "A Wheelmap felhasználód csatlakozott az OpenStreetMap %{user} fiókjához."
   or: vagy
   place:
     one: "%{count} hely"
@@ -291,7 +266,6 @@ hu:
     step1: "Kattints egy helyre, amit ismersz"
     step2: "Jelöld be és kattints a mentésre"
     step3: "Ennyi! Nincs szükség regisztrációra"
-    what_is_wheelmap: "Mi a wheelmap?"
   statistics: Statisztika
   support:
     array:
@@ -321,7 +295,6 @@ hu:
     destroy:
       notice: "Viszlát! Várunk vissza!"
     new:
-      email: "E-mail cím"
       login: "Bejelentkezés"
       login_with_twitter: "Bejelentkezés Twitterrel"
       password: Jelszó
@@ -330,15 +303,14 @@ hu:
     after_signup_edit:
       welcome:
         headline: "Majdnem készen vagy! Fejezd be a Wheelmap-fiók regisztrációját itt:"
-        set_password_for_mobile: "Befejezted a regisztrációt az OpenStreetMap oldalon.\nMost válassz egy e-mailt és jelszót a Wheelmap fiókodhoz és kész is vagy! Szükséged lesz erre az e-mail címre és jelszóra, hogy belépj az iPhone-os vagy az Androidos Wheelmap alkalmazásba. "
         text: "Hogyan maradhatunk kapcsolatban veled? Ezt az információt késöbb is megváltoztathatod a profilodban."
     edit:
       headline:
         your_images: "Felöltött képeid"
   wheelchairstatus:
-    limited: "részben akadálymentes"
-    'no': "nem akadálymentes"
-    unknown: "ismeretlen státusz"
+    limited: "Részben akadálymentesített"
+    'no': "Kerekesszékkel nem akadálymentes"
+    unknown: "Ismeretlen állapot"
     'yes': "akadálymentes"
   wheelmap:
     footer:
@@ -354,9 +326,8 @@ hu:
       title: "Wheelmap - keress kerekesszékkel is akadálymentes helyeket"
     what_is:
       fully_accessible: "A bejárat és az összes helyiség szintkülönbség nélküli, a mosdó is akadálymentes, ha van"
-      limited_accessible: "A bejárat rendelkezik küszöbbel (max. 7 cm magas), a legtöbb helyiség lépcső nélküli, a mosdó nem akadálymentes"
       not_accessible: "A bejáratnál meredek vagy több lépcsőfok van, a benti helyiségek sem akadálymentesek"
-      unknown_accessible: "Segíts a helyek jellemzésével!"
+      unknown_accessible: "Segíts te is a helyek bejelölésével!"
   will_paginate:
     next_label: "Következő &#8594;"
     page_entries_info:

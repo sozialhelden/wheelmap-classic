@@ -16,10 +16,8 @@ lt:
       headline: "Redaguoti paskyrą"
     failure:
       already_authenticated: "Jūs jau esate prisijungę."
-      inactive: "Jūsų paskyra dar nebuvo aktyvuota."
       invalid: "Neteisingas el. pašto adresas ar slaptažodis."
       locked: "Jūsų paskyra yra užrakinta"
-      timeout: "Baigėsi jūsų seansui skirtas laikas, norėdami tęsti, prisjunkite dar kartą."
       unauthenticated: "Norėdami tęsti, turite prisijungti arba užsiregistruoti"
       unconfirmed: "Prieš tęsiant, jums reikia patvirtinti savo paskyrą."
     mandatory: "* Būtina"
@@ -27,11 +25,10 @@ lt:
       failure: "Tapatybės nustatymas per %{kind} nepavyko. Klaida: \"%{reason}\". "
       success: "Sėkmingai prisijungta per %{kind}."
     password_recovery:
-      headline: "Pamiršote Slaptažodį?"
+      headline: "Pamiršote slaptažodį?"
     password_reset:
       email:
         headline: "Sveiki %{email}"
-        text: "Buvo gauta užklausa, kad norite pasikeisti slaptažodį, jei tai padarėte jūs, spustelėkite sekančią nuorodą - kitu atveju, nekreipkite į tai dėmesio!"
       form:
         labels:
           password: "Naujas slaptažodis"
@@ -42,14 +39,12 @@ lt:
     registrations:
       updated: "Jūs sėkmingai atnaujinote savo paskyrą."
     sessions:
-      inactive: "Jūsų paskyra dar nebuvo aktyvuota"
       invalid: "Neteisingas el. pašto adresas ar slaptažodis."
       link: "Prisijungti"
       locked: "Jūsų paskyra yra užrakinta"
       new:
         no_osm_account: "Neturite OpenStreetMap paskyros?"
         promo_text_thank_you: "Ačiū labai už jūsų palaikymą!"
-      timeout: "Baigėsi jūsų seansui skirtas laikas, norėdami tęsti, prisjunkite dar kartą."
       unauthenticated: "Norėdami tęsti, turite prisijungti arba užsiregistruoti"
       unconfirmed: "Prieš tęsiant, jums reikia patvirtinti savo paskyrą."
     sign_in:
@@ -69,5 +64,3 @@ lt:
         labels:
           password: Slaptažodis
           password_confirmation: "Pakartokite slaptažodį"
-    unlocks:
-      send_instructions: "Po kelių minučių, jūs gausite laišką su nurodymais kaip atrakinti savo paskyrą."

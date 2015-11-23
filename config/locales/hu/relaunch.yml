@@ -73,9 +73,8 @@ hu:
           description: Derítsd ki a Wheelmap.org-on, hogy ez a hely kerekesszékkel akadálymentes-e, vagy egészítsd ki további információkkal és képekkel.
           title: '%{name} a Wheelmap.org-on '
       share:
-        email: E-mail
+        email: Email
         facebook: Facebook
-        text: 'Ezt a helyet találtam a Wheelmap.org oldalon: %{name}'
         twitter: Twitter
   search:
     index:
@@ -94,7 +93,6 @@ hu:
           one: '%{count} eredmény:'
           other: '%{count} eredmény:'
     timeout:
-      headline: Ó, a mi hibánk
       info: A keresési funkciónk átmenetileg nem volt elérhető.
       repeat_search: Próbáld újra
   users:
@@ -105,3 +103,6 @@ hu:
         title: Fotók
       edit:
         title: Profil
+      widget:
+        legends:
+          settings: Beállítások
