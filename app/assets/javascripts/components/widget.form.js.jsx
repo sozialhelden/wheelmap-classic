@@ -83,7 +83,7 @@ module.exports = React.createClass({
                 <Translation scope={'users.profile.widget.center'}/>
               </label>
               <span className="form-wrapper">
-                <Photon url={'http://photon.komoot.de/api/'} lang={Translation.locale} limit={10}
+                <Photon url={'http://photon.komoot.de/api/'} lang={I18n.locale} limit={10}
                         onSelectLocation={this.onLocationChange}/>
               </span>
             </div>
