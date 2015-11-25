@@ -52,8 +52,6 @@ module.exports = React.createClass({
   handleUpdate: function (prevState) {
     let { height, width, lat, lon, categories, providerId, boundingBox } = this.state;
 
-    console.log(boundingBox);
-
     $.ajax({
       url: this.state.resource,
       dataType: 'json',
@@ -66,7 +64,7 @@ module.exports = React.createClass({
         }
       },
       success: () => {
-        if (prevState.lat !== lat || prevState.lon !== lon ||
+        if (prevState.lat !== lat || prevState.lon !== lon || prevState.boundingBox !== boundingBox ||
           prevState.categories !== categories || prevState.providerId !== providerId) {
           this.setState({ reload: (new Date).getTime() });
         }
