@@ -291,7 +291,7 @@ GEM
       activesupport (>= 3.0)
       librato-rack (~> 0.4.2)
       railties (>= 3.0)
-    libv8 (3.16.14.7)
+    libv8 (3.16.14.13)
     libxml-ruby (2.8.0)
     listen (0.7.1)
     lumberjack (1.0.2)
