@@ -105,6 +105,7 @@ Wheelmap::Application.routes.draw do
     resources :nodes,       :only  => [:index, :show, :update, :create] do
       collection do
         get :search
+        get :counts, :to => 'counter#index'
       end
       member do
         put :update_wheelchair
