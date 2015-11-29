@@ -45,7 +45,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   popupNodeId: null
 
   geoJSONLayer: (()->
-    tileUrl = '/nodes.geojson?z={z}&x={x}&y={y}&limit=10';
+    tileUrl = '/nodes.geojson?z={z}&x={x}&y={y}&limit=20';
 
     providerId = @get('providerId')
 
