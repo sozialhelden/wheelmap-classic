@@ -14,6 +14,7 @@
 #= require spin
 #= require leaflet/leaflet-src
 #= require leaflet/leaflet.locate
+#= require leaflet/geojsontiles
 #= require ember-leaflet
 #= require jquery/jquery.magnific-popup.js
 #= require responsive-popover

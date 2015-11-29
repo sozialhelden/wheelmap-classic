@@ -45,51 +45,34 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   popupNodeId: null
 
   geoJSONLayer: (()->
-    new L.GeoJSON null,
-      pointToLayer: $.proxy(@.pointToLayer, @)
+    tileUrl = '/nodes.geojson?z={z}&x={x}&y={y}&limit=10';
+
+    providerId = @get('providerId')
+
+    if providerId?
+      tileUrl += '&' + providerId;
+
+    that = @
+
+    options =
+      unloadInvisibleTiles: true
+      pointToLayer: $.proxy(@pointToLayer, @)
+
+    tileLayer = new GeoJSONTileLayer(tileUrl, options)
+
+    tileLayer.on 'tileload', (event) ->
+      that.filterLayers(event.tile.layer.getLayers());
+      that.openPopup();
   ).property()
 
-  filterLayers: ()->
-    @_filterLayers()
-
   didCreateLayer: ()->
-    @_boundsDidChange()
-
     map = @get('map.layer')
 
     if map?
       # Needed for starting own popup opening process when marker were clicked
       map.on('click', @_onClick, @)
 
-  requestData: (bounds)->
-    that = @
-
-    if that.lastLoadedBounds? and that.lastLoadedBounds.contains(bounds)
-      # Does it move far enough?
-      return
-
-    map = that.get('map')
-    map.set('isLoading', true)
-
-    request = $.ajax '/nodes.geojson',
-      data:
-        bbox: bounds.toBBoxString()
-        node_id: @get('poppingNode.id')
-        provider_id: @get('providerId')
-
-    request.then (data)->
-      Ember.run.once(that, 'replaceData', data)
-
-      that.lastLoadedBounds = bounds.pad(Wheelmap.MarkerLayer.BOUNDS_CONTAINS_BUFFER)
-      map.set('isLoading', false)
-
-  replaceData: (data)->
-    geoJSONLayer = @get('geoJSONLayer')
-    geoJSONLayer.clearLayers()
-    geoJSONLayer.addData(data)
-
-    @openPopup()
-    @filterLayers()
+    return
 
   pointToLayer: (featureData, latlng)->
     layer = Wheelmap.MarkerLayer.createLayer(latlng, featureData.properties)
@@ -130,7 +113,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
       @_closePopup(poppingNode.get('id'))
       @popupNodeId = null
       poppingNode.send('closed')
-      Ember.run.once(@, @filterLayers)
+      Ember.run.once(@, @filterLayers, @get('geoJSONLayer').getLayers())
   ).observesBefore('poppingNode.id')
 
   getLayer: (nodeId)->
@@ -183,9 +166,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   _newLayer: ()->
     @get('geoJSONLayer')
 
-  _filterLayers: ()->
-    layers = @get('geoJSONLayer').getLayers()
-
+  filterLayers: (layers)->
     if layers.length == 0
       return
 
@@ -212,7 +193,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
       return
 
     @lastActiveStatusFilters = @get('toolbarController.activeStatusFilters')
-    @filterLayers()
+    @filterLayers(@get('geoJSONLayer').getLayers())
   ).observes('toolbarController.activeStatusFilters.@each')
 
   _toiletFilterDidChange: (()->
@@ -220,7 +201,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
       return
 
     @lastActiveToiletFilters = @get('toolbarController.activeToiletFilters')
-    @filterLayers()
+    @filterLayers(@get('geoJSONLayer').getLayers())
   ).observes('toolbarController.activeToiletFilters.@each')
 
   _categoriesDidChange: (()->
@@ -228,25 +209,8 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
       return
 
     @lastActiveCategories = @get('toolbarController.activeCategories')
-    @filterLayers()
+    @filterLayers(@get('geoJSONLayer').getLayers())
   ).observes('toolbarController.activeCategories.@each')
-
-  _boundsDidChange: (()->
-    if @get('map.isMoving') or @get('map.isZooming')
-      return
-
-    layer = @get('map.layer')
-
-    unless layer?
-      return
-
-    Ember.run.debounce(@, 'requestData', layer.getBounds(), 200)
-  ).observes('map.isMoving', 'map.isZooming', 'map.layer')
-
-  _zoomDidChange: (()->
-    # When zooming reset last loaded bounds to load nodes in any case
-    @lastLoadedBounds = null
-  ).observes('map.zoom')
 
   _poppingNodeWheelchairDidChange: (()->
     poppingNode = @get('poppingNode')
