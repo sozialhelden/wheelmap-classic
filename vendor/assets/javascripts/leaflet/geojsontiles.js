@@ -37,6 +37,7 @@ var GeoJSONTileLayer = L.TileLayer.extend({
     var tile = this._tiles[key];
 
     tile.request.abort();
+    this.fire('tileunload', { tile: tile });
 
     if (tile.layer != null)
       this._layerGroup.removeLayer(tile.layer);
@@ -59,6 +60,11 @@ var GeoJSONTileLayer = L.TileLayer.extend({
 
     var url = this.getTileUrl(tilePoint),
       layer = this;
+
+    this.fire('tileloadstart', {
+      tile: tile,
+      url: url
+    });
 
     tile.request = $.ajax(url)
       .success(function(data) {

@@ -19,6 +19,7 @@ Wheelmap.SpinMixin = Ember.Mixin.create
       if @spinning <= 0 and @spinner?
         @spinner.stop()
         @spinner = null
+        @spinning = 0
 
 Wheelmap.TileLayer = EmberLeaflet.TileLayer.extend
   tileUrl: (()->
@@ -53,6 +54,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
       tileUrl += '&' + providerId;
 
     that = @
+    map = @get('map')
 
     options =
       maxZoom: 19
@@ -62,9 +64,16 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
 
     tileLayer = new GeoJSONTileLayer(tileUrl, options)
 
+    tileLayer.on 'tileloadstart', ->
+      map.spin(true)
+
     tileLayer.on 'tileload', (event) ->
-      that.filterLayers(event.tile.layer.getLayers());
-      that.openPopup();
+      that.filterLayers(event.tile.layer.getLayers())
+      that.openPopup()
+      map.spin(false)
+
+    tileLayer.on 'tileunload', ->
+      map.spin(false)
   ).property()
 
   didCreateLayer: ()->
@@ -328,7 +337,3 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
     controller = @get('controller')
     controller.set('zoom', @get('zoom'))
   ).observes('isZooming')
-
-  loading: (()->
-    @spin(@get('isLoading'))
-  ).observes('isLoading')
