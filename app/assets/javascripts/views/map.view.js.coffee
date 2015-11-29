@@ -55,6 +55,8 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
     that = @
 
     options =
+      maxZoom: 19
+      minZoom: 2
       unloadInvisibleTiles: true
       pointToLayer: $.proxy(@pointToLayer, @)
 
