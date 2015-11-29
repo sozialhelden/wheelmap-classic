@@ -2,18 +2,15 @@ var GeoJSONTileLayer = L.TileLayer.extend({
   initialize: function() {
     L.TileLayer.prototype.initialize.apply(this, arguments);
 
-    this._requests = [];
     this._layerGroup = L.layerGroup();
   },
 
   _reset: function () {
-    L.TileLayer.prototype._reset.apply(this, arguments);
-
-    for (var i = 0; i < this._requests.length; i++) {
-      this._requests[i].abort();
+    for (var key in this._tiles) {
+      this._tiles[key].request.abort();
     }
 
-    this._requests = [];
+    L.TileLayer.prototype._reset.apply(this, arguments);
 
     this._layerGroup.clearLayers();
   },
@@ -39,6 +36,8 @@ var GeoJSONTileLayer = L.TileLayer.extend({
   _removeTile: function(key) {
     var tile = this._tiles[key];
 
+    tile.request.abort();
+
     if (tile.layer != null)
       this._layerGroup.removeLayer(tile.layer);
 
@@ -61,7 +60,7 @@ var GeoJSONTileLayer = L.TileLayer.extend({
     var url = this.getTileUrl(tilePoint),
       layer = this;
 
-    var jxhr = $.ajax(url)
+    tile.request = $.ajax(url)
       .success(function(data) {
         tile.layer = new L.GeoJSON(data, layer.options);
 
@@ -70,8 +69,6 @@ var GeoJSONTileLayer = L.TileLayer.extend({
       .fail(function() {
         layer._tileOnError(tile, url);
       });
-
-    this._requests.push(jxhr);
   },
 
   _tileOnLoad: function (tile, url) {
