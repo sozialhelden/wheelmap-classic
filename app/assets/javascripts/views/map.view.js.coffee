@@ -72,8 +72,9 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
       that.openPopup()
       map.spin(false)
 
-    tileLayer.on 'tileunload', ->
-      map.spin(false)
+    tileLayer.on 'tileunload', (event)->
+      # Stop spinning only if tile request was aborted (map moved or zoomed)
+      map.spin(false) if event.tile.request.readyState != 4
   ).property()
 
   didCreateLayer: ()->
