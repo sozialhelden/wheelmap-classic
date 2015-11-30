@@ -284,9 +284,6 @@ zh:
     logo:
       alt: "Wheelmap 标志－找到轮椅通道的地点"
       title: "Wheelmap 标志－找到轮椅通道的地点"
-    what_is:
-      fully_accessible: "入口没有台阶，所有房间没有台阶，厕所可通过"
-      not_accessible: "入口很快到达，房间不能通过"
   will_paginate:
     next_label: "往后&#8594;"
     page_entries_info:

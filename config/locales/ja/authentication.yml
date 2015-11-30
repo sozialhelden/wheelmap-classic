@@ -2,9 +2,12 @@ ja:
   devise:
     confirmations:
       confirmed: "あなたのアカウントは確認できました。現在サイインしています。"
+      link: "確認メールが届きませんか？"
       send_instructions: "数分であなたのアカウントを確認する手順がメールで届きます。"
+      send_paranoid_instructions: "もしあなたのアカウントが存在していれば、数分後にあなたのアカウントを確認するメールが届くでしょう"
     destroy:
       confirm: "本当によろしいですか？"
+      headline: "アカウントを削除する"
       link: "今すぐ削除"
     edit:
       form:
@@ -17,6 +20,7 @@ ja:
       headline: "アカウント管理"
     failure:
       already_authenticated: "あなたはサインイン済です。"
+      inactive: "あなたのアカウントはまだ有効になっていません"
       invalid: "メールアドレスかパスワードが違います。"
       invalid_token: "認証トークンが違います。"
       locked: "あなたのアカウントはロックされました。"

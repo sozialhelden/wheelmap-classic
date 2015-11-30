@@ -311,9 +311,6 @@ sq_AL:
     logo:
       alt: "Logo e Wheelmap - gjej vendet e aksesueshme në karrige me rrota"
       title: "Wheelmap - gjej vendet e aksesueshme në karrige me rrota"
-    what_is:
-      fully_accessible: "Hyrje pa shkallë, të gjitha dhomat pa shkallë dhe tualet i aksesueshëm nëse jeni klient i zakonshëm në një vend"
-      not_accessible: "Hyrja ka rrëpirë ose disa shkallë, dhomat janë jo të aksesueshme"
   will_paginate:
     next_label: "Tjetri &#8594;"
     page_entries_info:

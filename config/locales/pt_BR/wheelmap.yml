@@ -326,8 +326,6 @@ pt_BR:
       alt: "Wheelmap Logotipo - Encontre lugares acessíveis a cadeirantes"
       title: "Wheelmap - Encontre lugares acessíveis a cadeirantes"
     what_is:
-      fully_accessible: "Entrada e todos os ambientes sem degraus, com banheiro acessível se houver."
-      not_accessible: "Entrada com degraus altos ou ambientes importantes não acessíveis."
       unknown_accessible: "Ajude marcando lugares!"
   will_paginate:
     next_label: "Próximo &#8594;"

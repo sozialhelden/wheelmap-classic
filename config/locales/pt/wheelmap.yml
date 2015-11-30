@@ -248,6 +248,4 @@ pt:
       alt: "Wheelmap Logo - encontre lugares com acessibilidade para cadeira de rodas"
       title: "Wheelmap - encontre lugares com acessibilidade para cadeira de rodas"
     what_is:
-      fully_accessible: "O desnível na entrada não é superior a 7 cm; todas as localidades com acesso a cadeira de rodas (sem excepção); casa de banho para desabilitados "
-      not_accessible: "O desnível na entrada não é superior a 7 cm; ou escadas na entrada; ou as mais importantes localidades sem acesso a cadeira de rodas"
       unknown_accessible: "Ajude, assinalando locais!"

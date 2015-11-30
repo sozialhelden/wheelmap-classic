@@ -311,9 +311,6 @@ pt_PT:
     logo:
       alt: "Wheelmap Logo - encontre lugares acessíveis a cadeiras de rodas"
       title: "Wheelmap - encontre lugares acessíveis a cadeiras de rodas"
-    what_is:
-      fully_accessible: "Entrada e todos os espaços sem degraus, se houver WC é acessível."
-      not_accessible: "Entrada inclinada ou com vários degraus, espaços não acessíveis."
   will_paginate:
     next_label: "Próximo &#8594;"
     page_entries_info:

@@ -325,8 +325,6 @@ hu:
       alt: "Wheelmap logo - keress kerekesszékkel is akadálymentes helyeket"
       title: "Wheelmap - keress kerekesszékkel is akadálymentes helyeket"
     what_is:
-      fully_accessible: "A bejárat és az összes helyiség szintkülönbség nélküli, a mosdó is akadálymentes, ha van"
-      not_accessible: "A bejáratnál meredek vagy több lépcsőfok van, a benti helyiségek sem akadálymentesek"
       unknown_accessible: "Segíts te is a helyek bejelölésével!"
   will_paginate:
     next_label: "Következő &#8594;"

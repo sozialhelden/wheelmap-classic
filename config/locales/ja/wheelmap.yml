@@ -322,8 +322,6 @@ ja:
       alt: "Wheelmap ロゴ - 車椅子で行ける場所を見つけよう"
       title: "Wheelmap - 車椅子で行ける場所を見つけよう"
     what_is:
-      fully_accessible: "入口には段差が無い、全ての部屋に段差が無い、車椅子で無理なくトイレに行ける"
-      not_accessible: "入口の段差が高いか複数あり、部屋に入れない"
       unknown_accessible: "場所に印をつけることで助けてください。"
   will_paginate:
     next_label: "次へ &#8594"

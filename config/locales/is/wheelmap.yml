@@ -263,8 +263,5 @@ is:
     logo:
       alt: "Wheelmap Logo - Finndu hjólastólaaðgengilega staði"
       title: "Wheelmap - Finndu hjólastólaaðgengilega staði"
-    what_is:
-      fully_accessible: "Þröskuldurinn á innganginum er ekki hærri en 7 cm; allir staðir aðgengilegir fyrir hjólastólanotendur (undantekningarlaust); klósett fyrir fatlaða á svæðinu"
-      not_accessible: "Þröskuldurinn á innganginum er hærri en 7 cm; eða stigi við inngang; mikilvægustu staðirnir eru ekki aðgengilegir fyrir hjólastólanotendur"
   will_paginate:
     page_gap: "&hellip;"

@@ -326,8 +326,6 @@ nl:
       alt: "Wheelmap logo - vind rolstoel toegangelijke plaatsen"
       title: "Wheelmap - vind rolstoel toegangelijke plaatsen"
     what_is:
-      fully_accessible: "Ingang drempelvrij, alle ruimtes drempelvrij, gehandicaptentoilet aanwezig  "
-      not_accessible: "Ingang heeft hoge of meerdere treden, kamers zijn niet toegankelijk"
       unknown_accessible: "Help mee en markeer locaties!"
   will_paginate:
     next_label: "Volgende &#8594;"

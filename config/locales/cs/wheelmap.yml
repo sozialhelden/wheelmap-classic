@@ -326,9 +326,6 @@ cs:
     logo:
       alt: "Wheelmap Logo - najít bezbariérová ​​místa"
       title: "Wheelmap - najít bezbariérová ​​místa"
-    what_is:
-      fully_accessible: "Vstup bez schodů, všechny pokoje bez schodů, přístupná toaleta, pokud je obvyklé v daném místě"
-      not_accessible: "Vstup je strmý nebo má několik schodů, pokoje nejsou přístupné"
   will_paginate:
     next_label: "Další &#8594;"
     page_entries_info:

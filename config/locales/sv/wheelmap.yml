@@ -321,8 +321,6 @@ sv:
       alt: "Wheelmap Logo - Hitta rullstolstillgängliga platser"
       title: "Wheelmap - Hitta rullstolstillgängliga platser"
     what_is:
-      fully_accessible: "Ingången har ingen kant eller tröskel, alla rum utan trappsteg, tillgänglig hk-toalett finns"
-      not_accessible: "Ingångens kant eller tröskel är högre än 7 cm eller så har den trappsteg. Rummen är inte tillgängliga"
       unknown_accessible: "Hjälp till genom att märka ut olika platser!"
   will_paginate:
     next_label: "Nästa &#8594;"

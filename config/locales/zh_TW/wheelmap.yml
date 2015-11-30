@@ -312,9 +312,6 @@ zh_TW:
     logo:
       alt: "Wheelmap logo－尋找輪椅無障礙空間"
       title: "Wheelmap－尋找輪椅無障礙空間"
-    what_is:
-      fully_accessible: "入口沒有台階，所有房間都沒有台階，廁所無障礙"
-      not_accessible: "入口有階梯，房間不能以輪椅進入"
   will_paginate:
     next_label: "往後 &#8594;"
     page_entries_info:

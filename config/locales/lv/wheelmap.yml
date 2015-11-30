@@ -292,9 +292,6 @@ lv:
     logo:
       alt: "Wheelmap Logo - atrodiet ar ratiņkrēslu pieejamas vietas"
       title: "Wheelmap - atrodiet ar ratiņkrēslu pieejamas vietas"
-    what_is:
-      fully_accessible: "Ieeja bez pakāpieniem, visas istabas bez pakāpieniem, pieejamas labierīcības."
-      not_accessible: "Pie ieejas ir pakāpiens vai vairāki pakāpieni, istabas nav pieejamas"
   will_paginate:
     next_label: "Nākošais &#8594;"
     page_entries_info:

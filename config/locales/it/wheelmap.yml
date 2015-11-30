@@ -52,7 +52,7 @@ it:
         notice: "%{resource_name} è stato aggiornato."
     photos:
       destroy:
-        notice: "Imagine cancellato con successo"
+        notice: "Immagine cancellata con successo"
   form:
     show_fully_accessible_places: "Accessibile in sedia a rotelle"
     show_limited_accessible_places: "Parzialmente accessibile con sedia a rotelle"
@@ -60,7 +60,7 @@ it:
     show_unaccessible_places: "Non accessibile con sedia a rotelle"
   formtastic:
     hints:
-      lat: "Sposta l'indicatore sulla mappa nella posizione coretta"
+      lat: "Sposta l'indicatore sulla mappa nella posizione corretta"
       osm_username: "Non sei ancora un membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Crea ora un account su Openstreetmap</a> "
       password: "(lascia vuoto se non vuoi cambiarlo)"
       website: "Per esempio: http://www.example.com"
@@ -204,7 +204,7 @@ it:
         back: Indietro
         large_map: Allarga
         listing: "Tutti i luoghi '%{type}' in %{city} "
-        upload: "Carica imagine"
+        upload: "Carica immagine"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -244,7 +244,7 @@ it:
   or: o
   place:
     one: "%{count} luogo"
-    other: "%{count} loughi"
+    other: "%{count} luoghi"
   profile:
     edit:
       application:
@@ -303,7 +303,7 @@ it:
         text: "Come possiamo raggiungerti? Puoi modificare questa informazione anche dopo nell tuo profilo."
     edit:
       headline:
-        your_images: "I tuoi imagini caricati"
+        your_images: "Le tue immagini caricate"
   wheelchairstatus:
     limited: "Parzialmente accessibile con sedia a rotelle"
     'no': "Non accessibile con sedia a rotelle"
@@ -322,8 +322,6 @@ it:
       alt: "Logo Wheelmap - trova luoghi accessibili in sedia a rotelle"
       title: "Wheelmap - trova luoghi accessibili in sedia a rotelle"
     what_is:
-      fully_accessible: "L'ingresso non ha gradini; tutte le sale (senza eccezione) sono raggiungibili in sedia a rotelle; un bagno per disabili è disponibile"
-      not_accessible: "L'ingresso ha diversi scalini o uno scalino più alto di 7 cm e le sale non sono raggiungibili in sedia a rotelle"
       unknown_accessible: "Aiuta dando un voto ai luoghi! "
   will_paginate:
     next_label: "Successivo &#8594;"

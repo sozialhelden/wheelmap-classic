@@ -309,8 +309,6 @@ tr:
       alt: "Wheelmap Logo - tekerlekli sandalye ile ulaşılır yerler bulun"
       title: "Wheelmap - tekerlekli sandalye ile ulaşılır yerler bulun"
     what_is:
-      fully_accessible: "Giriş basamağı 7 santimetre den yüksek değil; tüm mevkiler tekerlekli sandalye kullanıcılar tarafından istisnasız ulasılır; engelliler tualeti mevcut "
-      not_accessible: "Girişdeki basamak 7 santimetre den yüksek; veya girişde basamak var; veya en önemli mevkiler tekerlekli sandalye kullanıcılar için ulaşılamaz."
       unknown_accessible: "Yerleri işaretleyerek yardımda bulunun!"
   will_paginate:
     next_label: "Sonraki &#8594;"

@@ -316,9 +316,6 @@ ca:
     logo:
       alt: "Logotip de Wheelmap - cerca llocs accessibles amb cadira de rodes"
       title: "Wheelmap - cerca llocs accessibles amb cadira de rodes"
-    what_is:
-      fully_accessible: "Entrada sense graons així com totes les habitacions sense excepció, com a mínim un lavabo és accessible "
-      not_accessible: "L'entrada té un o diversos graons, i les habitacions no són accessibles "
   will_paginate:
     next_label: "Següent &#8594;"
     page_entries_info:

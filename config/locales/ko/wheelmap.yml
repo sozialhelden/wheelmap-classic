@@ -283,9 +283,6 @@ ko:
     logo:
       alt: "Wheelmap 로고 - 휠체어 접근가능 장소찾기"
       title: "Wheelmap - 휠체어 접근가능 장소찾기"
-    what_is:
-      fully_accessible: "접근가능 : 입구에 7cm 미만의 계단이 있습니다; 모든 위치에 휠체어 이용자가 도달할 수 있습니다(예외 없음); 장애인용 화장실을 사용할 수 있습니다"
-      not_accessible: "입구가 심한게 경사져 있거나 여러 계단이 있습니다, 실내에 진입할 수 없습니다."
   will_paginate:
     next_label: "다음 &#8594;"
     page_entries_info:

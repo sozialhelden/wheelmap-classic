@@ -31,6 +31,9 @@ ja:
       projects: プロジェクト
     toolbar:
       categories: カテゴリ
+    meta:
+      description: Wheelmap.orgは車椅子でアクセス可能な場所を探したり入力したりできるオンラインマップです。公共施設、バー、レストランや映画館、スーパーマーケットについて利用可否をマークしてぜひご参加ください
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -40,6 +43,7 @@ ja:
         headline: 'Wheelmao.org で車椅子で行ける場所を探してマークしよう - 世界のどこでも無料。とても簡単です。'
         lookup: 指定した場所を探す
         secondary_headline: '公共の場所での車椅子のアクセシビリティをマークする自分たちの交通信号システム'
+      embed_link: Wheelmap.orgで見る
   nodes:
     new:
       form:
@@ -75,6 +79,7 @@ ja:
       share:
         email: Eメール
         facebook: Facebook
+        text: 'この場所をWheelmap.orgで見つけました！ %{name}'
         twitter: Twitter
   search:
     index:
@@ -92,17 +97,20 @@ ja:
         ticker:
           other: '%{count} 結果:'
     timeout:
+      headline: こちらの間違いです。すみません。
       info: 検索機能が一時的に利用できない状態です。
       repeat_search: 検索を再実行
   users:
     profile:
       newsletter:
         title: ニュースレター
+        text: Wheelmapからの最新ニュースレターをチェックしてください。多くても月に一号程度の発行をしますので、心配しなくても大丈夫です。
         label: はい、Wheelmapに関する更新を維持します。
       show:
         title: 概要
         greeting:
           anonymously: こんにちは
+          personalized: こんにちわ！ %{name}
         overview:
           pois_marked:
             other: '%{count} 個の場所'
