@@ -309,6 +309,9 @@ tr:
       alt: "Wheelmap Logo - tekerlekli sandalye ile ulaşılır yerler bulun"
       title: "Wheelmap - tekerlekli sandalye ile ulaşılır yerler bulun"
     what_is:
+      fully_accessible: "Girişte merdiven yok, tüm odalar merdivensiz."
+      limited_accessible: "Girişte max. yüksekliği 7cm (3 inç) olan bir merdiven var. Çoğu odalar merdivensiz."
+      not_accessible: "Girişte bir veya birkaç basamak var, odalar erişilebilir değil."
       unknown_accessible: "Yerleri işaretleyerek yardımda bulunun!"
   will_paginate:
     next_label: "Sonraki &#8594;"

@@ -326,6 +326,10 @@ cs:
     logo:
       alt: "Wheelmap Logo - najít bezbariérová ​​místa"
       title: "Wheelmap - najít bezbariérová ​​místa"
+    what_is:
+      fully_accessible: "Vstup bez schodů, všechny místnosti bez schodů."
+      limited_accessible: "Vstup má jeden schod s max. výškou 7 cm (3 palce), většina místností je bez schodů."
+      not_accessible: "Vstup má jeden schod nebo několik schodů, místnosti nejsou přístupné."
   will_paginate:
     next_label: "Další &#8594;"
     page_entries_info:

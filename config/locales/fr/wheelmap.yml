@@ -322,6 +322,9 @@ fr:
       alt: "Logo Wheelmap - trouver des lieux accessibles en fauteuil roulant"
       title: "Wheelmap - trouver des lieux accessibles en fauteuil roulant"
     what_is:
+      fully_accessible: "Entrée sans marches, toutes les pièces sans marches ."
+      limited_accessible: "L'entrée a une marche d'une hauteur max. de 7 cm (3 in), la plupart des pièces sont sans marches."
+      not_accessible: "L'entrée a une ou plusieurs marches, les pièces ne sont pas accessibles."
       unknown_accessible: "Aidez en marquant des lieux !"
   will_paginate:
     next_label: "Suivant &#8594;"

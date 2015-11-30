@@ -325,6 +325,9 @@ hu:
       alt: "Wheelmap logo - keress kerekesszékkel is akadálymentes helyeket"
       title: "Wheelmap - keress kerekesszékkel is akadálymentes helyeket"
     what_is:
+      fully_accessible: "Lépcső nélküli bejárat, minden szoba lépcső nélküli."
+      limited_accessible: "A bejáratnak van egy max. 7 cm magasságú (3 hüv.) lépcsője, a legtöbb szoba lépcső nélküli."
+      not_accessible: "A bejáratnak van egy lépcsője vagy több lépcsője, a szobák nem hozzáférhetőek."
       unknown_accessible: "Segíts te is a helyek bejelölésével!"
   will_paginate:
     next_label: "Következő &#8594;"

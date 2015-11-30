@@ -326,6 +326,9 @@ pl:
       alt: "Logo wheelmap - znajdź miejsca dostępne dla osób na wózkach"
       title: "Wheelmap - znajdź miejsca dostępne dla osób na wózkach"
     what_is:
+      fully_accessible: "Wejście bez schodów, wszystkie pomieszczenia bez schodów."
+      limited_accessible: "Przy wejściu jest jeden schodek o wysokości maks. 7 cm (3 in), w większości pomieszczeń nie ma schodów."
+      not_accessible: "Przy wejściu jest schodek lub kilka schodków, pomieszczenia nie są przystosowane."
       unknown_accessible: "Pomóż nam zaznaczając miejsca!"
   will_paginate:
     next_label: "Następny &#8594;"

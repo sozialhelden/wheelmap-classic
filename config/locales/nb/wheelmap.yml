@@ -300,6 +300,10 @@ nb:
     logo:
       alt: "Wheelmap Logo - finn rullestoltilgjengelige steder"
       title: "Wheelmap - finn rullestoltilgjengelige steder"
+    what_is:
+      fully_accessible: "Inngangspartiet er uten terskel, alle rom uten terskel."
+      limited_accessible: "Inngang har steg (maks. høyde 7 cm, 3 tommers), de fleste rom er terskelfri."
+      not_accessible: "Inngang har terkel eller flere steg, rommene er utilgjengelige."
   will_paginate:
     next_label: "Neste &#8594;"
     page_entries_info:

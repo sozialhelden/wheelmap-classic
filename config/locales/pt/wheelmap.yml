@@ -248,4 +248,7 @@ pt:
       alt: "Wheelmap Logo - encontre lugares com acessibilidade para cadeira de rodas"
       title: "Wheelmap - encontre lugares com acessibilidade para cadeira de rodas"
     what_is:
+      fully_accessible: "Entrada sem degraus, nenhuma das divisões tem degraus."
+      limited_accessible: "A entrada tem um degrau, com altura máxima de 7 cm (3 pol), a maior parte das divisões não têm degraus."
+      not_accessible: "A entrada tem um degrau ou vários degraus, as divisões não são acessíveis."
       unknown_accessible: "Ajude, assinalando locais!"

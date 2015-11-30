@@ -326,6 +326,9 @@ sk:
       alt: "Logo Wheelmap - nájdite miesta prístupné vozíčkarom"
       title: "Wheelmap - nájdite miesta prístupné pre vozíčkarov"
     what_is:
+      fully_accessible: "Vchod bez schodov, všetky izby bez chodov."
+      limited_accessible: "Vchod s jedným schodom s max. výškou 7 cm (3 palce), väčšina izieb je bez schodov."
+      not_accessible: "Vchod s jedným alebo niekoľkými schodmi, izby nie sú prístupné."
       unknown_accessible: "Pomôžte nám označovaním miest!"
   will_paginate:
     next_label: "Ďalej &#8594;"

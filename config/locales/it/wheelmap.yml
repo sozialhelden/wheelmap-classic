@@ -322,6 +322,9 @@ it:
       alt: "Logo Wheelmap - trova luoghi accessibili in sedia a rotelle"
       title: "Wheelmap - trova luoghi accessibili in sedia a rotelle"
     what_is:
+      fully_accessible: "Ingresso senza scalini, tutte le stanze senza scalini."
+      limited_accessible: "L'ingresso ha uno scalino dell'altezza massima di 7cm (3 in), la maggior parte delle stanze sono senza scalini."
+      not_accessible: "L'ingresso ha uno scalino o diversi scalini, le stanze non sono accessibili."
       unknown_accessible: "Aiuta dando un voto ai luoghi! "
   will_paginate:
     next_label: "Successivo &#8594;"

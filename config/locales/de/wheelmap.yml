@@ -360,6 +360,9 @@ de:
       alt: "Wheelmap Logo - Rollstuhlgerechte Orte finden"
       title: "Wheelmap - Rollstuhlgerechte Orte finden"
     what_is:
+      fully_accessible: "Eingang stufenlos, alle Räume sind stufenlos erreichbar."
+      limited_accessible: "Eingang hat eine Stufe mit max. 7 cm Höhe (3 inches), die wichtigsten Räume sind stufenlos erreichbar."
+      not_accessible: "Eingang hat höhere oder mehrere Stufen, Räume sind nicht zugänglich"
       unknown_accessible: "Hilf mit und markiere den Toiletten-Status!"
   will_paginate:
     next_label: "Vor &#8594;"

@@ -327,6 +327,9 @@ es:
       alt: "Logo de Wheelmap - busca lugares accesibles para silla de ruedas"
       title: "Wheelmap - busca lugares accesibles para silla de ruedas"
     what_is:
+      fully_accessible: "La entrada no tiene escalones, todas las habitaciones no tienen escalones."
+      limited_accessible: "La entrada tiene un escalón con una altura máxima de 7cm (3\"), la mayoría de las habitaciones no tienen escalones."
+      not_accessible: "La entrada tiene uno o varios escalones, las habitaciones no son accesibles."
       unknown_accessible: "¡Ayude marcando sitios!"
   will_paginate:
     next_label: "Siguiente &#8594;"

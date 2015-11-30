@@ -326,6 +326,9 @@ nl:
       alt: "Wheelmap logo - vind rolstoel toegangelijke plaatsen"
       title: "Wheelmap - vind rolstoel toegangelijke plaatsen"
     what_is:
+      fully_accessible: "Ingang zonder treden, alle kamers zonder treden."
+      limited_accessible: "Ingang heeft een trede van max. 7cm (3 in), de meeste kamers zonder treden."
+      not_accessible: "Ingang heeft een of meerdere treden, kamers zijn niet toegankelijk."
       unknown_accessible: "Help mee en markeer locaties!"
   will_paginate:
     next_label: "Volgende &#8594;"

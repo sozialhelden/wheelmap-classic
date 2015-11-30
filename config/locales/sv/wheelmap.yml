@@ -321,6 +321,9 @@ sv:
       alt: "Wheelmap Logo - Hitta rullstolstillgängliga platser"
       title: "Wheelmap - Hitta rullstolstillgängliga platser"
     what_is:
+      fully_accessible: "Entrén är utan trappsteg, alla rummen saknar trappsteg."
+      limited_accessible: "Entrén har ett trappsteg som är max 7cm högt (3 tum), de flesta rummen saknar trappsteg."
+      not_accessible: "Entrén har ett eller flera trappsteg, rummen är inte tillgängliga."
       unknown_accessible: "Hjälp till genom att märka ut olika platser!"
   will_paginate:
     next_label: "Nästa &#8594;"

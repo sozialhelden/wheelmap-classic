@@ -326,6 +326,9 @@ da:
       alt: "Wheelmap logo - find kørestolstilgængelige steder"
       title: "Wheelmap - find kørestolstilgængelige steder"
     what_is:
+      fully_accessible: "Indgang uden trin, alle lokaler uden trin."
+      limited_accessible: "Indgangen har et trin med max. højde 7cm (3 in), de fleste værelser er uden trin."
+      not_accessible: "Indgangen har et trin eller flere trin, lokaler er ikke tilgængelige."
       unknown_accessible: "Hjælp ved at markere steder!"
   will_paginate:
     next_label: "Næste &#8594;"
