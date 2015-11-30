@@ -361,9 +361,9 @@ en:
       alt: "Wheelmap Logo - find wheelchair accessible places"
       title: "Wheelmap - find wheelchair accessible places"
     what_is:
-      fully_accessible: "Entrance without steps, all rooms without steps, accessible toilet if customary in a place"
-      limited_accessible: "Entry has a step (max. height 7cm, 3 in), most rooms are without steps, toilet is not accessible"
-      not_accessible: "Entry has steep or several steps, rooms are not accessible"
+      fully_accessible: "Entrance without steps, all rooms without steps."
+      limited_accessible: "Entrance has one step with max. height 7cm (3 in), most rooms are without steps."
+      not_accessible: "Entrance has a step or several steps, rooms are not accessible."
       unknown_accessible: "Help out by marking places!"
   will_paginate:
     next_label: "Next &#8594;"
