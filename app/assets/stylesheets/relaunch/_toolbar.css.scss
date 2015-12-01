@@ -452,7 +452,7 @@
 
       & > li {
         text-align: left;
-        
+
         &:not(:first-child) {
           border-top: 1px solid #F0F0F0;
         }
@@ -534,6 +534,12 @@
         display: none;
       }
     }
+  }
+}
+
+.in-embed {
+  .toolbar-searchbar-form {
+    top: 0;
   }
 }
 

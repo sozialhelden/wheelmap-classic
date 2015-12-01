@@ -1,20 +1,23 @@
 Wheelmap.ToolbarView = Ember.View.extend
-  classNames: 'toolbar'
+  classNames: 'toolbar',
+  classNameBindings: 'inEmbed',
   templateName: 'toolbar'
+
+  inEmbed: Ember.ENV.WIDGET?
 
   init: ()->
     @_super()
 
   searchFormTarget: (()->
-    if Ember.ENV.WIDGET? then '_blank' else null
+    if @inEmbed then '_blank' else null
   ).property()
 
   showCategories: (()->
-    if Ember.ENV.WIDGET? then Ember.ENV.WIDGET.show_categories else true
+    if @inEmbed then Ember.ENV.WIDGET.show_categories else true
   ).property()
 
   showSearch: (()->
-    if Ember.ENV.WIDGET? then Ember.ENV.WIDGET.show_search else true
+    if @inEmbed then Ember.ENV.WIDGET.show_search else true
   ).property()
 
   didInsertElement: ()->
@@ -40,7 +43,7 @@ Wheelmap.ToolbarView = Ember.View.extend
 
   adjustFilters: ()->
     # @TODO We need a better place for this!
-    @$('.bootstrap-select').toggleClass('dropup', Ember.ENV.WIDGET? || $(window).width() < 767)
+    @$('.bootstrap-select').toggleClass('dropup', @inEmbed || $(window).width() < 767)
 
   addToggleSearchbar: (()->
     toolbarView = @
