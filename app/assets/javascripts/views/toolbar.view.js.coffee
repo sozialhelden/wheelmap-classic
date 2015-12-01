@@ -40,7 +40,7 @@ Wheelmap.ToolbarView = Ember.View.extend
 
   adjustFilters: ()->
     # @TODO We need a better place for this!
-    @$('.bootstrap-select').toggleClass('dropup', $(window).width() < 767)
+    @$('.bootstrap-select').toggleClass('dropup', Ember.ENV.WIDGET? || $(window).width() < 767)
 
   addToggleSearchbar: (()->
     toolbarView = @
