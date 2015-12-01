@@ -113,7 +113,7 @@ showFlashMessags = ->
   types = ['alert', 'notice', 'error', 'success']
 
   for type in types
-    if (data[type])
+    if data[type]?
       addFlashMessage(type, data[type])
 
   $.cookie('flash', null, path: '/')
