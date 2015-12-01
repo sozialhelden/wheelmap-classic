@@ -304,7 +304,6 @@ es:
   users:
     after_signup_edit:
       welcome:
-        headline: "¡Ya casi terminas! Finaliza el registro de tu cuenta de Wheelmap aquí:"
         text: "¿Cómo podemos ponernos en contacto contigo? Puedes cambiar esta información más tarde en tu perfil."
     edit:
       headline:

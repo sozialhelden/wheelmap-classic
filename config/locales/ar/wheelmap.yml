@@ -286,7 +286,6 @@ ar:
   users:
     after_signup_edit:
       welcome:
-        headline: "مرحبا بك في ويل ماب "
         text: "كيف يمكننا التواصل معك؟ يمكنك تغيير هذه المعلومات لاحقا في ملفك."
     edit:
       headline:

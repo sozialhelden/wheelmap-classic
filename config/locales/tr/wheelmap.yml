@@ -288,7 +288,6 @@ tr:
   users:
     after_signup_edit:
       welcome:
-        headline: "Neredeyse oldu! Wheelmap hesabınızın kaydını bitirin:"
         text: "Sizinle nasıl iletişime geçebiliriz? Bu bilgiyi daha sonra profilinizinden değiştirebilirsiniz."
     edit:
       headline:

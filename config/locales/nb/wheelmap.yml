@@ -283,7 +283,6 @@ nb:
   users:
     after_signup_edit:
       welcome:
-        headline: "Velkommen til wheelmap"
         text: "Hvordan kan vi få kontakt med deg? Du kan endre denne informasjonen i profilen din senere."
   wheelchairstatus:
     'no': "Ingen rulletstoltilgjengeliget"

@@ -302,7 +302,6 @@ hu:
   users:
     after_signup_edit:
       welcome:
-        headline: "Majdnem készen vagy! Fejezd be a Wheelmap-fiók regisztrációját itt:"
         text: "Hogyan maradhatunk kapcsolatban veled? Ezt az információt késöbb is megváltoztathatod a profilodban."
     edit:
       headline:

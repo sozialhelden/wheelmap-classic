@@ -273,7 +273,6 @@ hi:
   users:
     after_signup_edit:
       welcome:
-        headline: "व्हीलमैप में आपका स्वागत है"
         text: "आपसे कैसे संपर्क करें? यह जानकारी\nआप बाद में भी बदल सकते हैं। "
   wheelchairstatus:
     'yes': "व्हीलचेयर सुलभ "

@@ -296,7 +296,6 @@ ca:
   users:
     after_signup_edit:
       welcome:
-        headline: "Ja estàs quasi.Acaba el registre pel teu compte Wheelmap aquí:"
         text: "Com ens podem posar en contacte amb tu? Pots canviar aquesta informació més tard, al teu perfil."
     edit:
       headline:

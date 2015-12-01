@@ -299,7 +299,6 @@ ja:
   users:
     after_signup_edit:
       welcome:
-        headline: "ほぼ終了です！Wheelmapアカウントのサインアップはここで終わりです。"
         text: "あなたと連絡を取るにはどうしたら良いですか？この情報はあとからあなたのプロファイル欄で変更できます。"
     edit:
       headline:

@@ -292,7 +292,6 @@ zh_TW:
   users:
     after_signup_edit:
       welcome:
-        headline: "歡迎光臨 Wheelmap"
         text: "我們要如何和您聯繫？您可以在之後修改您的個人檔案。"
     edit:
       headline:

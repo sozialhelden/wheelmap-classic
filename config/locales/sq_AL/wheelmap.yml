@@ -291,7 +291,6 @@ sq_AL:
   users:
     after_signup_edit:
       welcome:
-        headline: "Pothuajse ia dolët! Përfundoni regjistrimin për llogarinë tuaj Wheelmap këtu:"
         text: "Si mundemi ne të mbajmë lidhje me ju? Ju mund të ndryshoni këtë informacion më vonë në profilin tuaj."
     edit:
       headline:

@@ -274,10 +274,6 @@ lv:
       login_with_twitter: "Pierakstīties ar Twitter"
       password: Parole
       remember_me: "Palikt piereģistrētam"
-  users:
-    after_signup_edit:
-      welcome:
-        headline: "Gandrīz galā! Pabeidziet izveidot Wheelmap kontu šeit:"
   wheelchairstatus:
     'yes': "pieejams ar ratiņkrēslu"
   wheelmap:

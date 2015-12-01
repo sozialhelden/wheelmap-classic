@@ -304,7 +304,6 @@ cs:
   users:
     after_signup_edit:
       welcome:
-        headline: "Vítejte na wheelmap"
         text: "Jak vás můžeme kontaktovat? Tyto informace můžete později změnit ve vašem profilu."
     edit:
       headline:

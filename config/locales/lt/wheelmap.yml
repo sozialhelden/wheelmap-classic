@@ -154,7 +154,6 @@ lt:
   users:
     after_signup_edit:
       welcome:
-        headline: "Jūs beveik vietoje! Užbaikite prisiregistravimą prie savo Wheelmap paskyros čia:"
         text: "Kaip mes galime su jumis susisiekti? Vėliau, šią informaciją galite pakeisti savo profilyje."
     edit:
       headline:

@@ -303,7 +303,6 @@ sk:
   users:
     after_signup_edit:
       welcome:
-        headline: "Už je to takmer hotové! Tu dokončite prihlásenie:"
         text: "Ako vás môžeme kontaktovať? Tieto údaje môžete kedykoľvek zmeniť na svojom profile."
     edit:
       headline:

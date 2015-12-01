@@ -299,7 +299,6 @@ it:
   users:
     after_signup_edit:
       welcome:
-        headline: "Sei quasi finito! Finisci la iscrizione per il tuo account qui:"
         text: "Come possiamo raggiungerti? Puoi modificare questa informazione anche dopo nell tuo profilo."
     edit:
       headline:

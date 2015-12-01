@@ -303,7 +303,6 @@ nl:
   users:
     after_signup_edit:
       welcome:
-        headline: "Je bent er bijna! Beëindig je registratie voor je Wheelmap account hier:"
         text: "Hoe kunnen wij contact met je opnemen? Je kan deze informatie later in je profiel veranderen."
     edit:
       headline:

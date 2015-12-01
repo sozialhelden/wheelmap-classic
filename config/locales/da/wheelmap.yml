@@ -303,7 +303,6 @@ da:
   users:
     after_signup_edit:
       welcome:
-        headline: "Du er næsten der! Afslut oprettelsen af din Wheelmap konto her:"
         text: "Hvordan kan vi komme i kontakt med dig? Du kan altid ændre dette her senere i din profil."
     edit:
       headline:

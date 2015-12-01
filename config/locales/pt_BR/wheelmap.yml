@@ -303,7 +303,6 @@ pt_BR:
   users:
     after_signup_edit:
       welcome:
-        headline: "Quase pronto!"
         text: "Você se registrou com sucesso. Nos lhe informaremos sobre notícias importantes acerca do Wheelmap."
     edit:
       headline:

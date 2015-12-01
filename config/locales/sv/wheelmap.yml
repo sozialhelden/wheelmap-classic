@@ -298,7 +298,6 @@ sv:
   users:
     after_signup_edit:
       welcome:
-        headline: "Du är nästan klar! Avsluta din ansökan om Wheelmapkonto här:"
         text: "Hur kan vi kontakta dig? Du kan senare ändra denna information i din profil."
     edit:
       headline:

@@ -299,7 +299,6 @@ fr:
   users:
     after_signup_edit:
       welcome:
-        headline: "Vous y êtes presque ! Complétez ici votre inscription à votre compte Wheelmap :"
         text: "Comment pouvons-nous vous joindre ? Vous pourrez changer cette information ultérieurement dans votre profil."
     edit:
       headline:

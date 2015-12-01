@@ -303,7 +303,6 @@ pl:
   users:
     after_signup_edit:
       welcome:
-        headline: "Witaj w wheelmap!"
         text: "Jak możemy się z Tobą skontaktować? Tę informację będziesz mógł później edytować."
     edit:
       headline:
