@@ -451,6 +451,8 @@
       width: 250px;
 
       & > li {
+        text-align: left;
+        
         &:not(:first-child) {
           border-top: 1px solid #F0F0F0;
         }
