@@ -62,7 +62,7 @@ de:
         notice: "Bild wurde erfolgreich entfernt."
   form:
     show_fully_accessible_places: "Ja"
-    show_limited_accessible_places: "Teilweise rollstuhlgerechtes WC"
+    show_limited_accessible_places: "Teilweise rollstuhlgerecht"
     show_places_without_status: "Status unbekannt"
     show_unaccessible_places: "Nicht Rollstuhlgerecht"
   formtastic:
