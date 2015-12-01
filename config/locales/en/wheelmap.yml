@@ -337,8 +337,8 @@ en:
   users:
     after_signup_edit:
       welcome:
-        headline: "You're almost there! Finish the sign up for your Wheelmap account here:"
-        set_password_for_mobile: "You've completed your registration with OpenStreetMap.\nNow choose an email address and password for your Wheelmap account and then you're all set! You need this email address and password to log in to the Wheelmap app for iPhone, Android or Windows Phone. "
+        headline: "You are almost there! Now on to finalize your Wheelmap account:"
+        set_password_for_mobile: "You have successfully registered with OpenStreetMap. Please choose an email address that you would like Wheelmap to use so we can keep you informed about your activities (for example the number of places you have marked). You can access this information on your \"Profile\"."
         text: "How can we get in touch with you? You can change this information later in your profile."
     edit:
       headline:
