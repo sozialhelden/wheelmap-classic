@@ -158,7 +158,7 @@ de:
           create: "Neuen Ort hinzufügen"
       popup:
         form:
-          limited: "Teilweise rollstuhlgerechtes WC"
+          limited: "Teilweise rollstuhlgerecht"
           'no': "Nicht Rollstuhlgerecht"
           save: Speichern
           unknown: "Status unbekannt"
@@ -343,7 +343,7 @@ de:
       headline:
         your_images: "Deine hochgeladenen Bilder"
   wheelchairstatus:
-    limited: "Teilweise rollstuhlgerechtes WC"
+    limited: "Teilweise rollstuhlgerecht"
     'no': "Nicht Rollstuhlgerecht"
     unknown: "Status unbekannt"
     'yes': "Voll Rollstuhlgerecht"
