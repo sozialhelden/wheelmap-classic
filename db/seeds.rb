@@ -273,6 +273,66 @@ ActiveRecord::Base.transaction do
   NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>12, "created_at"=>"2015-12-01T13:29:31Z", "icon"=>"social_facility.png", "id"=>130, "identifier"=>"social_facility", "osm_key"=>"amenity", "osm_value"=>"social_facility", "updated_at"=>"2015-12-01T13:29:31Z"}, :without_protection => true)
 
   NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>12, "created_at"=>"2015-12-01T13:29:31Z", "icon"=>"dentist.png", "id"=>131, "identifier"=>"dentist", "osm_key"=>"amenity", "osm_value"=>"dentist", "updated_at"=>"2015-12-01T13:29:31Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>12, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"hearing_aids.png", "id"=>132, "identifier"=>"hearing_aids", "osm_key"=>"shop", "osm_value"=>"hearing_aids", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>12, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"dentist.png", "id"=>133, "identifier"=>"dentist", "osm_key"=>"amenity", "osm_value"=>"dentist", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>12, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"social_facility.png", "id"=>134, "identifier"=>"social_facility", "osm_key"=>"amenity", "osm_value"=>"social_facility", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>12, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"therapy.png", "id"=>135, "identifier"=>"psychotherapist", "osm_key"=>"healthcare", "osm_value"=>"psychotherapist", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>12, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"conversation.png", "id"=>136, "identifier"=>"speech_therapist", "osm_key"=>"healthcare", "osm_value"=>"speech_therapist", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>12, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"theft.png", "id"=>137, "identifier"=>"occupational_therapist", "osm_key"=>"healthcare", "osm_value"=>"occupational_therapist", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>12, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"yin_yang.png", "id"=>138, "identifier"=>"alternative", "osm_key"=>"healthcare", "osm_value"=>"alternative", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>12, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"massage.png", "id"=>139, "identifier"=>"physiotherapist", "osm_key"=>"healthcare", "osm_value"=>"physiotherapist", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>3, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"spa.png", "id"=>140, "identifier"=>"sauna", "osm_key"=>"leisure", "osm_value"=>"sauna", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>3, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"naval_museum.png", "id"=>141, "identifier"=>"tattoo", "osm_key"=>"shop", "osm_value"=>"tattoo", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>3, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"massage.png", "id"=>142, "identifier"=>"massage", "osm_key"=>"shop", "osm_value"=>"massage", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>10, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"group.png", "id"=>143, "identifier"=>"association", "osm_key"=>"office", "osm_value"=>"association", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>10, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"group.png", "id"=>144, "identifier"=>"ngo", "osm_key"=>"office", "osm_value"=>"ngo", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>10, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"reception.png", "id"=>145, "identifier"=>"political_party", "osm_key"=>"office", "osm_value"=>"political_party", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>11, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"employment_agency.png", "id"=>146, "identifier"=>"employment_agency", "osm_key"=>"office", "osm_value"=>"employment_agency", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>6, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"tea_house.png", "id"=>147, "identifier"=>"tea", "osm_key"=>"shop", "osm_value"=>"tea", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>6, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"crematorium.png", "id"=>148, "identifier"=>"funeral_directors", "osm_key"=>"shop", "osm_value"=>"funeral_directors", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>6, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"smoking.png", "id"=>149, "identifier"=>"tobacco", "osm_key"=>"shop", "osm_value"=>"tobacco", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>6, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"printer.png", "id"=>150, "identifier"=>"copyshop", "osm_key"=>"shop", "osm_value"=>"copyshop", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>6, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"art_museum.png", "id"=>151, "identifier"=>"art", "osm_key"=>"shop", "osm_value"=>"art", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>6, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"crafts_museum.png", "id"=>152, "identifier"=>"interior_decoration", "osm_key"=>"shop", "osm_value"=>"interior_decoration", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>6, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"tailor.png", "id"=>153, "identifier"=>"tailor", "osm_key"=>"shop", "osm_value"=>"tailor", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>6, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"love_interest.png", "id"=>154, "identifier"=>"erotic", "osm_key"=>"shop", "osm_value"=>"erotic", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>6, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"art_museum_2.png", "id"=>155, "identifier"=>"antiques", "osm_key"=>"shop", "osm_value"=>"antiques", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>6, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"jazz_club.png", "id"=>156, "identifier"=>"musical_instrument", "osm_key"=>"shop", "osm_value"=>"musical_instrument", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>6, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"classical_music.png", "id"=>157, "identifier"=>"music", "osm_key"=>"shop", "osm_value"=>"music", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>6, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"newsagent.png", "id"=>158, "identifier"=>"newsagent", "osm_key"=>"shop", "osm_value"=>"newsagent", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>6, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"tag_label.png", "id"=>159, "identifier"=>"variety_store", "osm_key"=>"shop", "osm_value"=>"variety_store", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>6, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"apple.png", "id"=>160, "identifier"=>"greengrocer", "osm_key"=>"shop", "osm_value"=>"greengrocer", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
+
+  NodeType.create({"alt_osm_key"=>nil, "alt_osm_value"=>nil, "category_id"=>6, "created_at"=>"2015-12-01T14:23:37Z", "icon"=>"phones.png", "id"=>161, "identifier"=>"mobile_phone", "osm_key"=>"shop", "osm_value"=>"mobile_phone", "updated_at"=>"2015-12-01T14:23:37Z"}, :without_protection => true)
   ActiveRecord::Base.connection.reset_pk_sequence!('node_types')
 
   Category.create({"created_at"=>"2015-12-01T13:29:30Z", "id"=>1, "identifier"=>"public_transfer", "updated_at"=>"2015-12-01T13:29:30Z"}, :without_protection => true)
@@ -301,4 +361,4 @@ ActiveRecord::Base.transaction do
   ActiveRecord::Base.connection.reset_pk_sequence!('categories')
 end
 
-SeedMigration::Migrator.bootstrap()
+SeedMigration::Migrator.bootstrap(20151201133515)
