@@ -34,7 +34,7 @@ class NodesController < ApplicationController
   def index
     unless params[:bbox].blank?
       normalize_bbox
-      expires_in 1.minute, :public => true
+      expires_in 30.minutes, :public => true
     end
     
     @limit = params[:limit].try(:to_i) || 300
