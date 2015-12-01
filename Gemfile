@@ -71,6 +71,7 @@ group :default do
   gem 'test-unit', '~> 3.0', require: false
   gem 'browserify-rails'
   gem 'react-rails', '~>1.4.1'
+  gem 'seed_migration'
 end
 
 group :assets do

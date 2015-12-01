@@ -49,7 +49,7 @@ CREATE TABLE `admin_users` (
   UNIQUE KEY `index_admin_users_on_email` (`email`),
   UNIQUE KEY `index_admin_users_on_confirmation_token` (`confirmation_token`),
   UNIQUE KEY `index_admin_users_on_reset_password_token` (`reset_password_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `alternatives` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -255,6 +255,14 @@ CREATE TABLE `schema_migrations` (
   UNIQUE KEY `unique_schema_migrations` (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE `seed_migration_data_migrations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `version` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `runtime` int(11) DEFAULT NULL,
+  `migrated_on` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 CREATE TABLE `slugs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -458,3 +466,5 @@ INSERT INTO schema_migrations (version) VALUES ('20151019120044');
 INSERT INTO schema_migrations (version) VALUES ('20151028082753');
 
 INSERT INTO schema_migrations (version) VALUES ('20151102134652');
+
+INSERT INTO schema_migrations (version) VALUES ('20151201131521');
