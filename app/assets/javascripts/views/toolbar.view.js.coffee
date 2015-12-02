@@ -20,6 +20,10 @@ Wheelmap.ToolbarView = Ember.View.extend
     if @inEmbed then Ember.ENV.WIDGET.show_search else true
   ).property()
 
+  searchUri: (()->
+    if I18n.locale == 'de' then '/search' else "/#{I18n.locale}/search"
+  ).property()
+
   didInsertElement: ()->
     $(window).on 'resize.toolbar', @adjustFilters
     @adjustFilters()
