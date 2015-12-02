@@ -180,13 +180,8 @@ Wheelmap.MapController = Ember.Controller.extend
   poppingNode: null
   widget: Ember.ENV.WIDGET
 
-  defaultCenter: (->
-    L.latLng(52.50521, 13.4231)
-  ).property()
-  defaultZoom: 14
-
-  center: Ember.computed.defaultTo('defaultCenter')
-  zoom: Ember.computed.defaultTo('defaultZoom')
+  center: null
+  zoom: 14
   latBinding: 'center.lat'
   lonBinding: 'center.lng'
 
@@ -198,13 +193,10 @@ Wheelmap.MapController = Ember.Controller.extend
     @setProperties(properties)
 
   propertiesFromCookie: ->
-    properties = {}
-
-    if $.cookie('last_lat')?
-      properties.lat = $.cookie('last_lat')
-
-    if $.cookie('last_lon')?
-      properties.lon = $.cookie('last_lon')
+    properties =
+      center:
+        lat: if $.cookie('last_lat')? then $.cookie('last_lat') else 52.50521
+        lon: if $.cookie('last_lon')? then $.cookie('last_lon') else 13.4231
 
     if $.cookie('last_zoom')?
       properties.zoom = parseInt($.cookie('last_zoom'), 10)
@@ -214,7 +206,7 @@ Wheelmap.MapController = Ember.Controller.extend
   mapViewDidChange: (()->
     # Don't store the latlng and zoom in the cookie if we are in the embed layout
     if @get('widget')?
-      return;
+      return
 
     center = @get('center')
 
