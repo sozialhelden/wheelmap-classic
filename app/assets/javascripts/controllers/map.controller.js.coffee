@@ -195,8 +195,8 @@ Wheelmap.MapController = Ember.Controller.extend
   propertiesFromCookie: ->
     properties =
       center:
-        lat: if $.cookie('last_lat')? then $.cookie('last_lat') else 52.50521
-        lon: if $.cookie('last_lon')? then $.cookie('last_lon') else 13.4231
+        lat: $.cookie('last_lat') || $.cookie('geoip_lat') || 52.50521
+        lon: $.cookie('last_lon') || $.cookie('geoip_lon') || 13.4231
 
     if $.cookie('last_zoom')?
       properties.zoom = parseInt($.cookie('last_zoom'), 10)
