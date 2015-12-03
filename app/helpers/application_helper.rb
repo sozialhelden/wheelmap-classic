@@ -162,4 +162,16 @@ module ApplicationHelper
 
     content_tag(:a, name || email_address.html_safe, html_options, &block)
   end
+
+  # TODO Can be removed with Rails 4
+  def cache_if(condition, name = {}, options = nil, &block)
+    if condition
+      cache(name, options, &block)
+    else
+      yield
+    end
+
+    nil
+  end
+
 end
