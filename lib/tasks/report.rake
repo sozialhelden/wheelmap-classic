@@ -91,7 +91,7 @@ namespace :report do
     queue.submit unless queue.empty?
 
     %w{ yes no limited }.each do |status|
-      region_names = Region.joins(:slug).pluck("slugs.name").map{|r| "#{r}_#{status}"}
+      region_names = Region.pluck(:slug).map{|r| "#{r}_#{status}"}
       params = {
         :names => region_names,
         :color => colors[status],
