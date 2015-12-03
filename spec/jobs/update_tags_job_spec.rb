@@ -228,6 +228,25 @@ describe UpdateTagsJob do
 
     end
 
+    it "does not update wheelchair toilet tag" do
+      wheelchair_node.add_tags( 'toilets:wheelchair' => 'yes')
+      wheelchair_node.tags["toilets:wheelchair"].should eql 'yes'
+
+      job = UpdateTagsJob.enqueue(1, 'node', { 'toilets:wheelchair' => 'unknown', 'addr:housenumber' => 99 }, user, 'update_iphone')
+
+      api = mock(:find_or_create_open_changeset => changeset)
+
+      Rosemary::Api.should_receive(:new).and_return(api)
+      api.should_receive(:find_element).and_return(wheelchair_node)
+      api.should_receive(:save) do |node, _|
+        node.tags['toilets:wheelchair'].should eql 'yes'
+      end
+      successes, failures = Delayed::Worker.new.work_off
+      successes.should eql 1
+      failures.should eql 0
+
+    end
+
 
   end
 

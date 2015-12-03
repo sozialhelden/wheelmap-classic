@@ -8,6 +8,9 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
     # Remove wheelchair tag if value is "unknown"
     tags.delete("wheelchair") if tags["wheelchair"] == 'unknown'
 
+    # Remove wheelchair tag if value is "unknown"
+    tags.delete("toilets:wheelchair") if tags["toilets:wheelchair"] == 'unknown'
+
     client = Rosemary::OauthClient.new(user.access_token)
     new(element_id, type, tags, user, client, source, tags_to_delete).tap do |job|
       Delayed::Job.enqueue(job)
