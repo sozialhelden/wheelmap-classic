@@ -5,9 +5,11 @@
       :properties => { :type => "cluster", :data => generate_graph_data } }).html_safe
   %>
 <%- else -%>
-  <%= generate_json({
-      :type => 'FeatureCollection',
-      :bbox => [@left, @bottom, @right, @top],
-      :features => prepare_nodes }).html_safe
-  %>
+  <%- cache_if(params[:x].present? && params[:y].present? && params[:z].present?, xyz_cache_key, expires_in: 1.minute) do %>
+    <%= generate_json({
+        :type => 'FeatureCollection',
+        :bbox => [@left, @bottom, @right, @top],
+        :features => prepare_nodes }).html_safe
+    %>
+  <%- end -%>
 <%- end -%>

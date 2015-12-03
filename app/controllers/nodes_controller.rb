@@ -32,9 +32,10 @@ class NodesController < ApplicationController
   rescue_from Rosemary::Unavailable,        :with => :timeout
 
   def index
-    unless params[:bbox].blank?
+    expires_in 1.minute, :public => true
+
+    if params[:bbox].present?
       normalize_bbox
-      expires_in 30.minutes, :public => true
     end
     
     @limit = params[:limit].try(:to_i) || 300
@@ -272,6 +273,12 @@ class NodesController < ApplicationController
       params['bbox'] = tile2bbox(params[:x].to_f, params[:y].to_f, params[:z].to_f)
     end
   end
+
+  def xyz_cache_key
+    'xyz_cache_' + [params[:x], params[:y], params[:z]].join('_')
+  end
+
+  helper_method :xyz_cache_key
 
   def render_node_json
     render :status => 200, :json => {
