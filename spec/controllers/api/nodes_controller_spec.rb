@@ -118,7 +118,7 @@ describe Api::NodesController do
         response.status.should eql 202
         response.body.should =~ /OK/
       }.should change(Delayed::Job, :count).by(1)
-      Delayed::Job.last.handler.should =~ /chris@tucker.org/
+      Delayed::Job.last.handler.should =~ /wheelchair: 'no'/
     end
 
     it "should not accept update wheelchair status for later processing if params are invalid" do
@@ -153,7 +153,7 @@ describe Api::NodesController do
         response.status.should eql 202
         response.body.should =~ /OK/
       }.should change(Delayed::Job, :count).by(1)
-      Delayed::Job.last.handler.should =~ /chris@tucker.org/
+      Delayed::Job.last.handler.should =~ /toilets:wheelchair: 'no'/
     end
 
     it "should not accept update toilet status for later processing if params are invalid" do
