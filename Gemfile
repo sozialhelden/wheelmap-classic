@@ -69,7 +69,6 @@ group :default do
   gem 'apipie-rails'
   gem 'htmlentities', require: false
   gem 'test-unit', '~> 3.0', require: false
-  gem 'browserify-rails'
   gem 'react-rails', '~>1.4.1'
 end
 
@@ -96,7 +95,6 @@ group :test, :development do
   gem 'guard-spork'
   gem 'guard-cucumber', "1.2.2"
   gem 'pry'
-
 end
 
 group :test do
@@ -127,5 +125,4 @@ group :development do
   gem 'capistrano-rbenv',                   require: false
   gem 'capistrano-bundler',                 require: false
   gem 'capistrano-deploytags', '~> 1.0.0',  require: false
-  gem 'capistrano-npm',                     require: false
 end

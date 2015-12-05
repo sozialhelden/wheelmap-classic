@@ -1,4 +1,7 @@
-//= require components
+//= require react_ujs
+//= require i18n.js
+//= require_self
+//= require dist/components
 
 I18n.defaultLocale = 'en';
 I18n.locale = $('html').attr('lang');

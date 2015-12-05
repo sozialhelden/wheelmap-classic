@@ -1,11 +1,14 @@
-module.exports = React.createClass({
-  componentDidUpdate: function(nextProps) {
+let { Component } = require('react'),
+  I18n = require('./common.i18n');
+
+export default class extends Component {
+  componentDidUpdate(nextProps) {
     // Reload iframe
     if (nextProps.reload !== this.props.reload)
       this.refs.iframe.contentWindow.location.reload();
-  },
+  }
 
-  render: function () {
+  render() {
     let { width, height, src } = this.props;
 
     // Fore reload of the preview
@@ -14,7 +17,7 @@ module.exports = React.createClass({
     return (
       <div className="user-widget-preview">
         <h5>
-          <Translation scope="users.profile.widget.legends.preview"></Translation>
+          <I18n scope="users.profile.widget.legends.preview" />
         </h5>
         <div className="user-widget-preview-area">
           <iframe className="user-widget-preview-frame" ref="iframe" width={width} height={height} src={src} />
@@ -22,4 +25,4 @@ module.exports = React.createClass({
       </div>
     );
   }
-});
+};

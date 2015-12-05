@@ -1,15 +1,20 @@
-var debounce = require('mout/function/debounce');
+let { Component } = require('react'),
+  debounce = require('mout/function/debounce'),
+  I18n = require('./common.i18n'),
+  Select = require('./common.select'),
+  Photon = require('./photon');
 
-module.exports = React.createClass({
+export default class extends Component {
+  constructor(props) {
+    super(props);
 
-  getInitialState: function() {
-    return {
+    this.state = {
       width: this.props.defaultWidth,
       height: this.props.defaultHeight
     };
-  },
+  }
 
-  onWidthChange: function (event) {
+  onWidthChange = (event) => {
     let width = event.target.value,
       { minWidth, maxWidth } = this.props;
 
@@ -17,9 +22,9 @@ module.exports = React.createClass({
 
     if (width >= minWidth && width <= maxWidth)
       this.props.onWidthChange(width);
-  },
+  }
 
-  onHeightChange: function (event) {
+  onHeightChange = (event) => {
     let height = event.target.value,
       { minHeight, maxHeight } = this.props;
 
@@ -27,26 +32,21 @@ module.exports = React.createClass({
 
     if (height >= minHeight && height <= maxHeight)
       this.props.onHeightChange(height);
-  },
+  };
 
-  onLocationChange: function (item) {
+  onLocationChange = (item) => {
     this.props.onLocationChange(item);
-  },
+  };
 
-  onCategoriesChange: function (event) {
+  onCategoriesChange = (event) => {
     this.props.onCategoriesChange(event.target.checked);
-  },
+  };
 
-  onProviderChange: function (event) {
+  onProviderChange = (event) => {
     this.props.onProviderChange(event.target.value);
-  },
+  };
 
-  // TODO: generate these in template as well.
-  // <div style={{margin: 0, padding: 0, display: 'inline'}}>
-  // <input name="utf8" type="hidden" value="✓"/>
-  // <input name="_method" type="hidden" value="put"/>
-  // <input name="authenticity_token" type="hidden" value="ngHe6Fhv4/YgCQW/6Jh+seYArHZbGC2AoALgmk4dPko="/></div>
-  render: function () {
+  render() {
     let { providers, providerId } = this.props;
 
     let providerOptions = providers.map(function (provider) {
@@ -59,10 +59,11 @@ module.exports = React.createClass({
       providerSelect = (
         <div className="form-group">
           <label className="control-label" htmlFor="widget_providers">
-            <Translation scope={'users.profile.widget.providers'}/>
+            <I18n scope={'users.profile.widget.providers'}/>
           </label>
           <div className="form-wrapper">
-            <Select options={providerOptions} empty={I18n.t('users.profile.widget.empty_provider')} value={providerId}
+            <Select id="widget_center"
+                    options={providerOptions} empty={I18n.t('users.profile.widget.empty_provider')} value={providerId}
                     onChange={this.onProviderChange} className="form-control"/>
           </div>
         </div>
@@ -75,12 +76,12 @@ module.exports = React.createClass({
               noValidate="novalidate">
           <fieldset className="inputs">
             <legend>
-              <Translation scope={'users.profile.widget.legends.settings'}/>
+              <I18n scope={'users.profile.widget.legends.settings'}/>
             </legend>
 
             <div className="form-group">
               <label className="control-label" htmlFor="widget_center">
-                <Translation scope={'users.profile.widget.center'}/>
+                <I18n scope={'users.profile.widget.center'}/>
               </label>
               <span className="form-wrapper">
                 <Photon url={'http://photon.komoot.de/api/'} lang={I18n.locale} limit={10}
@@ -89,7 +90,7 @@ module.exports = React.createClass({
             </div>
             <div className="form-group">
               <label className="control-label" htmlFor="widget_width">
-                <Translation scope={'users.profile.widget.width'}/>
+                <I18n scope={'users.profile.widget.width'}/>
               </label>
               <span className="form-wrapper">
                 <input className="form-control" id="widget_width" type="number" ref="width"
@@ -99,7 +100,7 @@ module.exports = React.createClass({
             </div>
             <div className="form-group">
               <label className="control-label" htmlFor="widget_height">
-                <Translation scope={'users.profile.widget.height'}/>
+                <I18n scope={'users.profile.widget.height'}/>
               </label>
               <span className="form-wrapper">
                 <input className="form-control" id="widget_height" type="number" ref="height"
@@ -112,7 +113,7 @@ module.exports = React.createClass({
 
             <div className="form-group">
               <label className="control-label" htmlFor="widget_categories">
-                <Translation scope={'users.profile.widget.categories'}/>
+                <I18n scope={'users.profile.widget.categories'}/>
               </label>
               <span className="form-wrapper">
                 <input className="form-control" id="widget_categories"
@@ -126,4 +127,4 @@ module.exports = React.createClass({
       </div>
     );
   }
-});
+};

@@ -1,5 +1,9 @@
-var setParam = require('mout/queryString/setParam');
-var debounce = require('mout/function/debounce');
+let { Component } = require('react'),
+  setParam = require('mout/queryString/setParam'),
+  debounce = require('mout/function/debounce'),
+  WidgetForm = require('./widget.form'),
+  WidgetEmbed = require('./widget.embed'),
+  WidgetPreview = require('./widget.preview');
 
 const DEFAULT_ZOOM = 16;
 
@@ -18,12 +22,13 @@ const MIN_HEIGHT = 300;
 const MAX_WIDTH = 800;
 const MAX_HEIGHT = 800;
 
-module.exports = React.createClass({
+class Widget extends Component {
+  constructor(props) {
+    super(props);
 
-  getInitialState: function() {
-    let src = this.props.defaultSrc,
-      coordinates = [this.props.defaultLat, this.props.defaultLon],
-      boundingBox = this.props.defaultBoundingBox;
+    let src = props.defaultSrc,
+      coordinates = [props.defaultLat, props.defaultLon],
+      boundingBox = props.defaultBoundingBox;
 
     if (boundingBox != null)
       src = buildSrcFromBoundingBox(src, boundingBox);
@@ -31,25 +36,25 @@ module.exports = React.createClass({
       src = buildSrcFromLatLon(src, coordinates);
     }
 
-    return {
-      width: this.props.defaultWidth,
-      height: this.props.defaultHeight,
-      lat: this.props.defaultLat,
-      lon: this.props.defaultLon,
-      boundingBox: this.props.defaultBoundingBox,
-      providers: this.props.defaultProviders || [],
-      providerId: this.props.defaultProviderId,
-      categories: this.props.defaultCategory,
+    this.state = {
+      width: props.defaultWidth,
+      height: props.defaultHeight,
+      lat: props.defaultLat,
+      lon: props.defaultLon,
+      boundingBox: props.defaultBoundingBox,
+      providers: props.defaultProviders || [],
+      providerId: props.defaultProviderId,
+      categories: props.defaultCategory,
       src: src,
-      resource: this.props.defaultResource
+      resource: props.defaultResource
     };
-  },
+  }
 
-  componentDidUpdate: function(prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) {
     this.debouncedUpdate(prevState);
-  },
+  }
 
-  handleUpdate: function (prevState) {
+  handleUpdate(prevState) {
     let { height, width, lat, lon, categories, providerId, boundingBox } = this.state;
 
     $.ajax({
@@ -73,21 +78,21 @@ module.exports = React.createClass({
         console.error(status, err.toString());
       }
     });
-  },
+  }
 
-  componentWillMount: function() {
+  componentWillMount() {
     this.debouncedUpdate = debounce(this.handleUpdate, 300);
-  },
+  }
 
-  onWidthChange: function(width) {
+  onWidthChange = (width) => {
     this.setState({ width });
-  },
+  };
 
-  onHeightChange: function(height) {
+  onHeightChange = (height) => {
     this.setState({ height });
-  },
+  };
 
-  onLocationChange: function(item){
+  onLocationChange = (item) => {
     let boundingBox = item.properties.extent,
       [lon, lat] = item.geometry.coordinates,
       src = this.props.defaultSrc;
@@ -99,17 +104,17 @@ module.exports = React.createClass({
     }
 
     this.setState({ lat, lon, boundingBox, src });
-  },
+  };
 
-  onCategoriesChange: function(categories) {
+  onCategoriesChange = (categories) => {
     this.setState({ categories });
-  },
+  };
 
-  onProviderChange: function(providerId) {
+  onProviderChange = (providerId) => {
     this.setState({ providerId });
-  },
+  };
 
-  render: function () {
+  render() {
     return (
       <div className="widget-panel">
         <WidgetForm
@@ -139,4 +144,10 @@ module.exports = React.createClass({
       </div>
     );
   }
-});
+}
+
+Widget.Form = WidgetForm;
+Widget.Preview = WidgetPreview;
+Widget.Embed = WidgetEmbed;
+
+export default Widget;

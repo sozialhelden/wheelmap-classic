@@ -1,5 +1,7 @@
-module.exports = React.createClass({
-  render: function () {
+let { Component } = require('react');
+
+export default class extends Component {
+  render () {
     let { options, empty } = this.props;
 
     let items = options.map((item, index) => {
@@ -8,6 +10,6 @@ module.exports = React.createClass({
 
     if (empty != null) items.unshift(<option value="">{empty}</option>);
 
-    return <select id="widget_center" {...this.props}>{items}</select>;
+    return <select {...this.props}>{items}</select>;
   }
-});
+};

@@ -1,13 +1,11 @@
-module.exports = React.createClass({
-  propTypes: {
-    scope: React.PropTypes.string
-  },
+let { Component } = require('react');
 
-  shouldComponentUpdate: function() {
+export default class extends Component {
+  shouldComponentUpdate() {
     return false;
-  },
+  }
 
-  render: function () {
+  render() {
     var { scope } = this.props,
       text = window.I18n.t(scope),
       className, title, translation;
@@ -25,7 +23,7 @@ module.exports = React.createClass({
     }
 
     return (
-      <span className={className} title={title} dangerouslySetInnerHTML={createMarkup()}></span>
+      <span className={className} title={title} dangerouslySetInnerHTML={createMarkup()} />
     );
   }
-});
+};
