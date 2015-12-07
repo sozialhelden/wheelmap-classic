@@ -16,6 +16,7 @@ nl:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
+      accepted: "moet geaccepteerd worden"
       already_confirmed: "Was al bevestigd, alsjeblieft probeer in te loggen."
       confirmation: "Past niet bij de bevestiging"
       equal_to: "Moet precies %{count} zijn"
@@ -63,17 +64,21 @@ nl:
       lat: "Beweeg de marker op de kaart in de correcte positie"
       osm_username: "Nog geen lid op dit moment? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Maak nu een Openstreetmap account</a>\n"
       password: "(laat dit leeg als je het niet wil veranderen )"
+      phone: "Bijvoorbeeld: +49 30 12345678"
       website: "Bijvoorbeeld: http://www.voorbeeld.com"
     labels:
       category: "Categorie:"
       centralkey: "Centrale sluitel"
       city: "Stad:"
+      create: "Nieuwe locatie toevoegen"
       email: E-mail
       finish: Einde
       housenumber: "Nee:"
       lat: Breedtegraad
       lon: Lengtegraad
       name: "Naam:"
+      osm_password: "OpenStreetMap wachtwoord"
+      osm_username: "OpenStreetMap account naam"
       password: Wachtwoord
       password_confirmation: "Herhaal wachtwoord"
       phone: "Telefoon:"
@@ -112,12 +117,14 @@ nl:
       profile: Profiel
       suggestions: Adviezen
       what_is_barrier_free: "Wat betekend \"wheelchair accessible\"?"
+      what_is_wheelmap: "Wat is Wheelmap?"
     searchbar:
       add_place: "Voeg een andere plaats toe"
       find: Vind
       placeholder: "Bijvoorbeeld Sunset Boulevard L.A. of Brandenburg Gate Berlin"
       title_add_place: "Voeg nu een nieuwe plaats op deze positie toe!"
     tagline: "Wheelmap logo"
+    title: "Vind rolstoeltoegankelijke locaties "
   helpers:
     select:
       prompt: "Kies alsjeblieft"
@@ -180,6 +187,7 @@ nl:
       link:
         large_map: "&laquo; Annuleer"
     errors:
+      default: "Iets is fout gegaan. We zijn hierover geïnformeerd"
       not_authorized: "Excuus, authentificatie faalde"
       not_available: "Excuus, de pagina is tijdelijk niet beschikkbar."
       not_existent: "Excuus, de plaats is niet meer beschikbaar."
@@ -266,6 +274,7 @@ nl:
     step1: "Klik op een plaats die je kent"
     step2: "Markeer het en klik op opslaan."
     step3: "Gelukt! Registreren is niet nodig."
+    what_is_wheelmap: "Wat is Wheelmap?"
   statistics: Statistieken
   support:
     array:
@@ -296,6 +305,7 @@ nl:
     destroy:
       notice: "Tot zien en tot straks!"
     new:
+      email: "Email adres"
       login: "Log in"
       login_with_twitter: "Log in met Twitter"
       password: Wachtwoord

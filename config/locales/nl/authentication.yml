@@ -17,9 +17,11 @@ nl:
       headline: "Bewerk account"
     failure:
       already_authenticated: "Je bent al aangemeld."
+      inactive: "Jouw account is nog niet geactiveerd."
       invalid: "Fout email of wachtwoord"
       invalid_token: "Ongeldig authentificatie bewijs."
       locked: "Jouw account is gesloten."
+      timeout: "Jouw sessie is afgelopen, alsjeblieft weer inlogggen om door te gaan."
       unauthenticated: "Je moet aangemeld zijn of aanmelden om door te gaan. "
       unconfirmed: "Je moet jouw account bevestigen voordat je doorgaat."
     mailer:
@@ -73,6 +75,7 @@ nl:
         sign_up_with_osm: "Registreer je nu."
       signed_in: "Succesvol aangemeld."
       signed_out: "Succesvol uitgelogd."
+      timeout: "Jouw sessie is afgelopen, alsjeblieft weer inlogggen om door te gaan."
       unauthenticated: "Je moet aanmelden voordat je doorgaat."
       unconfirmed: "Je moet jouw account bevestigen voordat je doorgaat."
     sign_in:
