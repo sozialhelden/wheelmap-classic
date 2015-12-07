@@ -1,6 +1,6 @@
 let { Component } = require('react');
 
-export default class extends Component {
+class Select extends Component {
   render () {
     let { options, empty } = this.props;
 
@@ -12,4 +12,6 @@ export default class extends Component {
 
     return <select {...this.props}>{items}</select>;
   }
-};
+}
+
+export default Select;

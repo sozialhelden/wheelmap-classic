@@ -1,7 +1,7 @@
 let { Component } = require('react'),
   I18n = require('./common.i18n');
 
-export default class extends Component {
+class WidgetPreview extends Component {
   componentDidUpdate(nextProps) {
     // Reload iframe
     if (nextProps.reload !== this.props.reload)
@@ -25,4 +25,6 @@ export default class extends Component {
       </div>
     );
   }
-};
+}
+
+export default WidgetPreview;

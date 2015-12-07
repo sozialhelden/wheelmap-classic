@@ -4,7 +4,7 @@ let { Component } = require('react'),
   Select = require('./common.select'),
   Photon = require('./photon');
 
-export default class extends Component {
+class WidgetForm extends Component {
   constructor(props) {
     super(props);
 
@@ -84,8 +84,12 @@ export default class extends Component {
                 <I18n scope={'users.profile.widget.center'}/>
               </label>
               <span className="form-wrapper">
-                <Photon url={'http://photon.komoot.de/api/'} lang={I18n.locale} limit={10}
-                        onSelectLocation={this.onLocationChange}/>
+                <Photon url={'http://photon.komoot.de/api/'}
+                        lang={I18n.locale}
+                        limit={10}
+                        placeholder={I18n.t('users.profile.widget.empty_center')}
+                        searchPromptText={I18n.t('users.profile.widget.empty_center')}
+                        onSelectLocation={this.onLocationChange} />
               </span>
             </div>
             <div className="form-group">
@@ -127,4 +131,6 @@ export default class extends Component {
       </div>
     );
   }
-};
+}
+
+export default WidgetForm;

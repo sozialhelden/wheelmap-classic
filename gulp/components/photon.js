@@ -3,7 +3,7 @@ let { Component } = require('react'),
   find = require('mout/array/find'),
   ReactSelect = require('react-select');
 
-export default class extends Component {
+class Photon extends Component {
   constructor(props) {
     super(props);
 
@@ -13,15 +13,23 @@ export default class extends Component {
     };
   }
 
-  static getOptions(features) {
+  static createOptions(features) {
     return features.map(feature => {
       let { properties } = feature;
 
-      let street = [properties.street, properties.housenumber].filter(val => val).join(' '),
-        label = [street, properties.name, properties.state, properties.country].filter(val => val).join(', ');
-
-      return { value: properties.osm_id, label, feature };
+      return {
+        value: properties.osm_id,
+        label: Photon.createLabel(feature),
+        feature
+      };
     });
+  }
+
+  static createLabel(feature) {
+    let { properties } = feature,
+      street = [properties.street, properties.housenumber].filter(val => val).join(' ');
+
+    return [street, properties.name, properties.state, properties.country].filter(val => val).join(', ');
   }
 
   shouldComponentUpdate() {
@@ -29,6 +37,7 @@ export default class extends Component {
   }
 
   requestFeatures = (search, callback) => {
+    // Abort old feature request
     if (this.featureRequest != null)
       this.featureRequest.abort();
 
@@ -44,9 +53,8 @@ export default class extends Component {
       success: (data) => {
         let { features } = data;
 
-        callback(null, { options: Wheelmap.Photon.getOptions(features) });
-      },
-      error: () => {}
+        callback(null, {options: Photon.createOptions(features)});
+      }
     });
   };
 
@@ -56,12 +64,13 @@ export default class extends Component {
 
   render() {
     return (
-      <ReactSelect value={this.state.value} onChange={this.onSelectChange}
+      <ReactSelect defaultValue={this.state.value} onChange={this.onSelectChange}
                    asyncOptions={this.requestFeatures}
                    autoload={false}
                    clearable={false}
-                   placeholder={I18n.t('users.profile.widget.empty_center')}
-                   searchPromptText={I18n.t('users.profile.widget.empty_center')}/>
+        {...this.props} />
     );
   }
-};
+}
+
+export default Photon;

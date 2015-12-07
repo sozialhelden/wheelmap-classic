@@ -1,4 +1,5 @@
 //= require react_ujs
+//= require js-routes
 //= require i18n.js
 //= require_self
 //= require dist/components

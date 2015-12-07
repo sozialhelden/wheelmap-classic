@@ -1,11 +1,14 @@
-let { Component } = require('react'),
-  setParam = require('mout/queryString/setParam'),
-  debounce = require('mout/function/debounce'),
-  WidgetForm = require('./widget.form'),
-  WidgetEmbed = require('./widget.embed'),
-  WidgetPreview = require('./widget.preview');
+import { Component } from 'react';
+import { connect } from 'react-redux';
+import setParam from 'mout/queryString/setParam';
+import debounce from 'mout/function/debounce';
+import Form from './widget.form';
+import Embed from './widget.embed';
+import Preview from './widget.preview';
+import App from './widget.app';
+import { updateWidget } from '../actions/widget';
 
-const DEFAULT_ZOOM = 16;
+/*const DEFAULT_ZOOM = 16;
 
 function buildSrcFromBoundingBox(src, boundingBox) {
   return src + `#/?bbox=${boundingBox[1]},${boundingBox[3]},${boundingBox[0]},${boundingBox[2]}`;
@@ -15,15 +18,14 @@ function buildSrcFromLatLon(src, latLon) {
   let [lat, lon] = latLon;
 
   return src + `#/?lat=${lat}&lon=${lon}&zoom=${DEFAULT_ZOOM}`;
-}
-
-const MIN_WIDTH = 300;
-const MIN_HEIGHT = 300;
-const MAX_WIDTH = 800;
-const MAX_HEIGHT = 800;
+}*/
 
 class Widget extends Component {
-  constructor(props) {
+  componentShouldUpdate(nextProps) {
+    return this.props.widget !== nextProps.widget;
+  }
+
+  /*constructor(props) {
     super(props);
 
     let src = props.defaultSrc,
@@ -48,9 +50,9 @@ class Widget extends Component {
       src: src,
       resource: props.defaultResource
     };
-  }
+  }*/
 
-  componentDidUpdate(prevProps, prevState) {
+  /*componentDidUpdate(prevProps, prevState) {
     this.debouncedUpdate(prevState);
   }
 
@@ -112,42 +114,37 @@ class Widget extends Component {
 
   onProviderChange = (providerId) => {
     this.setState({ providerId });
-  };
+  };*/
 
   render() {
     return (
       <div className="widget-panel">
-        <WidgetForm
-          defaultWidth={this.state.width}
-          defaultHeight={this.state.height}
-          minWidth={MIN_WIDTH}
-          minHeight={MIN_HEIGHT}
-          maxWidth={MAX_WIDTH}
-          maxHeight={MAX_HEIGHT}
-          categories={this.state.categories}
-          providers={this.state.providers}
-          providerId={this.state.providerId}
-          onWidthChange={this.onWidthChange}
-          onHeightChange={this.onHeightChange}
-          onLocationChange={this.onLocationChange}
-          onCategoriesChange={this.onCategoriesChange}
-          onProviderChange={this.onProviderChange}/>
-        <WidgetPreview
-          reload={this.state.reload}
-          width={this.state.width}
-          height={this.state.height}
-          src={this.state.src}/>
-        <WidgetEmbed
-          width={this.state.width}
-          height={this.state.height}
-          src={this.state.src}/>
+        <Form widget={this.props.widget} onChange={this.onChange} />
+        <Preview widget={this.props.widget} />
+        <Embed widget={this.props.widget} />
       </div>
     );
   }
 }
 
-Widget.Form = WidgetForm;
-Widget.Preview = WidgetPreview;
-Widget.Embed = WidgetEmbed;
+Widget.Form = Form;
+Widget.Preview = Preview;
+Widget.Embed = Embed;
+Widget.App = App;
 
-export default Widget;
+function mapStateToProps(state) {
+  return {
+    widget: state.widget
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    onChange: widget => dispatch(updateWidget(widget))
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Widget);

@@ -1,7 +1,7 @@
 let { Component } = require('react'),
   I18n = require('./common.i18n');
 
-export default class extends Component {
+class WidgetEmbed extends Component {
   render() {
     let { width, height, src } = this.props,
       code = `<iframe width="${width}" height="${height}" src="${src}"></iframe>`;
@@ -16,4 +16,6 @@ export default class extends Component {
       </div>
     );
   }
-};
+}
+
+export default WidgetEmbed;

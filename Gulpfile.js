@@ -8,6 +8,7 @@ let gulp = require('gulp'),
   babelify = require('babelify');
 
 let bundler = watchify(browserify({
+  debug: true,
   entries: ['./gulp/components.js'],
   transform: [
     babelify.configure({
@@ -18,8 +19,8 @@ let bundler = watchify(browserify({
 
 function bundle() {
   return bundler.bundle()
+    .on('error', (error) => gulpUtil.log(error.message))
     .pipe(source('components.js'))
-    .on('error', gulpUtil.log)
     .pipe(gulp.dest('./app/assets/javascripts/dist'));
 }
 

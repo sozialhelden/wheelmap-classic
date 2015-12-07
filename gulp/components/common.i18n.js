@@ -1,13 +1,19 @@
 let { Component } = require('react');
 
-export default class extends Component {
+class I18n extends Component {
+  static locale = global.I18n.locale;
+
+  static t(scope) {
+    return global.I18n.t(scope);
+  }
+
   shouldComponentUpdate() {
     return false;
   }
 
   render() {
     var { scope } = this.props,
-      text = window.I18n.t(scope),
+      text = I18n.t(scope),
       className, title, translation;
 
     translation = text;
@@ -26,4 +32,6 @@ export default class extends Component {
       <span className={className} title={title} dangerouslySetInnerHTML={createMarkup()} />
     );
   }
-};
+}
+
+export default I18n;

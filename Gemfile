@@ -81,6 +81,7 @@ group :assets do
   gem 'compass-colors'
   gem 'compass-rails'
   gem 'bootstrap-sass'
+  gem 'js-routes'
 end
 
 group :test, :development do
