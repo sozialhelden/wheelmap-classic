@@ -24,6 +24,7 @@ ja:
       invalid: "メールアドレスかパスワードが違います。"
       invalid_token: "認証トークンが違います。"
       locked: "あなたのアカウントはロックされました。"
+      timeout: "セッション有効期限切れです。もう一度サイインしてから続けてください。"
       unauthenticated: "続けるにはログインか登録が必要です。"
       unconfirmed: "続ける前にアカウントを確認してください。"
     mailer:
@@ -31,9 +32,12 @@ ja:
         subject: "確認手順"
       reset_password_instructions:
         subject: "パスワードリセット手順"
+      unlock_instructions:
+        subject: "ロック解除手順"
     mandatory: "* 必須項目"
     omniauth_callbacks:
       failure: "%{kind} での認証に失敗。エラー: \"%{reason}\"。"
+      permission_missing: "あなたは必要な許可を承認していません"
       success: "%{kind} でログインしました"
     password_recovery:
       form:
@@ -66,6 +70,7 @@ ja:
         unconfirmed: 未確認
       updated: "あなたのアカウントは更新されました。"
     sessions:
+      inactive: "あなたのアカウントはまだ有効になっていません"
       invalid: "Eメールまたはパスワードが違います。"
       invalid_token: "不正な認証トークン。"
       link: "サインイン"
@@ -77,6 +82,7 @@ ja:
         sign_up_with_osm: "今すぐ登録。"
       signed_in: "サイインインしました。"
       signed_out: "サインアウトしました。"
+      timeout: "セッション有効期限切れです。もう一度サイインしてから続けてください。"
       unauthenticated: "サイインインまたはサインアップして続けてください。"
       unconfirmed: "アカウントを確認してから続けてください。"
     sign_in:
@@ -102,4 +108,5 @@ ja:
         submit: "登録"
       headline: "登録"
     unlocks:
+      link: "アンロック手順が届きませんでしたか？"
       unlocked: "アカウントはアンロックされました。あなたは現在サイインしています。"

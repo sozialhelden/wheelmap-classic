@@ -112,14 +112,33 @@ ja:
           anonymously: こんにちは
           personalized: こんにちわ！ %{name}
         overview:
+          text: 持っている
           pois_marked:
             other: '%{count} 個の場所'
+          pois_added:
+            other: '%{count} 個の場所を追加しました'
+          pois_edited:
+            other: '%{count} 個の場所を編集しました'
+          photos_uploaded:
+            other: '%{count} 枚の写真をアップロードしました'
       photos:
         title: 写真
+        empty: まだ写真をアップロードしていません
       edit:
         title: プロフィール
         legends:
           user_data: あなたのアカウント情報
       widget:
+        title: ウイジェット
+        height: 高さ
+        width: 幅
+        center: 地図領域
+        categories: カテゴリ分類をする
+        providers: 提供者
+        empty_provider: 提供者を選択してください
+        empty_center: 地図の中心を探す
         legends:
           settings: 設定
+          preview: プレビュー
+          embed: 埋め込みコード
+          general: あなたのウェブサイトやブログ用のWheelmapウイジェットを作成する

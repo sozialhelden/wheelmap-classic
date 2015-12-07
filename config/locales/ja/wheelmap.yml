@@ -16,21 +16,28 @@ ja:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
+      accepted: "承認をしてください"
       already_confirmed: "は既に確認済みです"
+      blank: "値を入力してください"
       confirmation: "確認が一致しません"
+      empty: "値を入力してください"
       equal_to: "正確に%{count} でなければなりません"
+      even: "数値を入力してください"
       exclusion: "使用されていません"
       expired: "有効期限が切れています、新しくリクエストしてください"
       greater_than: "%{count}より大きくなければなりません"
+      greater_than_or_equal_to: "%{count}以上でなければなりません"
       inclusion: "値が正しくありません"
       invalid: "正しくありません"
       less_than: "%{count} より小さくなければなりません"
+      less_than_or_equal_to: "%{count}以下でなければなりません"
       not_a_number: "は数字ではありません"
       not_an_integer: "整数でなければなりません"
       not_found: "は見つかりませんでした"
       not_locked: "ロックされませんでした"
       not_saved:
         other: "%{resource} の保存時に %{count} 個のエラーが発生しました:"
+      odd: "奇数を入力してください"
       taken: "既に取得されています"
       too_long: "が長すぎます(%{count} 文字より多すぎてはいけません)"
       too_short: "が短かすぎます(%{count} 文字より少なすぎてはいけません)"
@@ -61,17 +68,21 @@ ja:
       lat: "地図上のマーカーを正しい位置に移動"
       osm_username: "まだメンバーではありませんか？<a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">今すぐOpenstreetmap のアカウントを作成</a> "
       password: "(変更しない場合は空白のまま)"
+      phone: "例：+49 30 12345678"
       website: "例: http://www.example.com"
     labels:
       category: "カテゴリ:"
       centralkey: "中央キー："
       city: "都市:"
+      create: "場所を作成する"
       email: Eメール
       finish: 終了
       housenumber: "番地:"
       lat: 緯度
       lon: 経度
       name: "名前:"
+      osm_password: "OpenStreetMapのパスワード"
+      osm_username: "OpenStreetMapのユーザー名"
       password: パスワード
       password_confirmation: "パスワード再入力"
       phone: "電話:"
@@ -110,12 +121,14 @@ ja:
       profile: プロフィール
       suggestions: 提案
       what_is_barrier_free: "\"車椅子で行ける(アクセシブル)\"とは？"
+      what_is_wheelmap: "Wheelmap とは？"
     searchbar:
       add_place: "別の場所を追加"
       find: 探す
       placeholder: "場所を探す"
       title_add_place: "今すぐこの位置に新しい場所を追加！"
     tagline: "Wheelmap ロゴ"
+    title: "車椅子で行ける場所を見つけよう"
   helpers:
     select:
       prompt: "選んでください"
@@ -262,6 +275,7 @@ ja:
     step1: "知っている場所をクリック"
     step2: "マークして保存をクリック"
     step3: "そうです！登録不要です。"
+    what_is_wheelmap: "Wheelmap とは？"
   statistics: 統計
   support:
     array:
