@@ -5,55 +5,30 @@ let { Component } = require('react'),
   Photon = require('./photon');
 
 class WidgetForm extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      width: this.props.defaultWidth,
-      height: this.props.defaultHeight
-    };
-  }
-
   onWidthChange = (event) => {
-    let width = event.target.value,
-      { minWidth, maxWidth } = this.props;
-
-    this.setState({ width });
-
-    if (width >= minWidth && width <= maxWidth)
-      this.props.onWidthChange(width);
-  }
-
-  onHeightChange = (event) => {
-    let height = event.target.value,
-      { minHeight, maxHeight } = this.props;
-
-    this.setState({ height });
-
-    if (height >= minHeight && height <= maxHeight)
-      this.props.onHeightChange(height);
+    this.props.changeWidth(event.target.value);
   };
 
-  onLocationChange = (item) => {
-    this.props.onLocationChange(item);
+  onHeightChange = (event) => {
+    this.props.changeHeight(event.target.value);
   };
 
   onCategoriesChange = (event) => {
-    this.props.onCategoriesChange(event.target.checked);
+    this.props.changeCategories(event.target.checked);
   };
 
   onProviderChange = (event) => {
-    this.props.onProviderChange(event.target.value);
+    this.props.changeProvider(event.target.value);
   };
 
-  render() {
-    let { providers, providerId } = this.props;
+  renderProviderSelect() {
+    let { widget } = this.props,
+      { providers, providerId } = widget,
+      providerSelect = null;
 
     let providerOptions = providers.map(function (provider) {
       return {value: provider.id, label: provider.name, selected: providerId === provider.id};
     });
-
-    let providerSelect = null;
 
     if (providerOptions.length > 0) {
       providerSelect = (
@@ -62,13 +37,19 @@ class WidgetForm extends Component {
             <I18n scope={'users.profile.widget.providers'}/>
           </label>
           <div className="form-wrapper">
-            <Select id="widget_center"
-                    options={providerOptions} empty={I18n.t('users.profile.widget.empty_provider')} value={providerId}
-                    onChange={this.onProviderChange} className="form-control"/>
+            <Select id="widget_center" options={providerOptions} empty={I18n.t('users.profile.widget.empty_provider')}
+                    value={providerId} onChange={this.onProviderChange} className="form-control"/>
           </div>
         </div>
       );
     }
+
+    return providerSelect;
+  }
+
+  render() {
+    let { widget } = this.props,
+      { width, height, providerId, categories } = widget;
 
     return (
       <div className="user-form">
@@ -84,12 +65,10 @@ class WidgetForm extends Component {
                 <I18n scope={'users.profile.widget.center'}/>
               </label>
               <span className="form-wrapper">
-                <Photon url={'http://photon.komoot.de/api/'}
-                        lang={I18n.locale}
-                        limit={10}
+                <Photon url={'http://photon.komoot.de/api/'} lang={I18n.locale} limit={10}
                         placeholder={I18n.t('users.profile.widget.empty_center')}
                         searchPromptText={I18n.t('users.profile.widget.empty_center')}
-                        onSelectLocation={this.onLocationChange} />
+                        onSelectLocation={this.props.changeLocation} />
               </span>
             </div>
             <div className="form-group">
@@ -97,9 +76,8 @@ class WidgetForm extends Component {
                 <I18n scope={'users.profile.widget.width'}/>
               </label>
               <span className="form-wrapper">
-                <input className="form-control" id="widget_width" type="number" ref="width"
-                       min={this.props.minWidth} max={this.props.maxWidth}
-                       value={this.state.width} onChange={this.onWidthChange}/>
+                <input className="form-control" id="widget_width" type="number"
+                       value={width} onChange={this.onWidthChange}/>
               </span>
             </div>
             <div className="form-group">
@@ -107,23 +85,20 @@ class WidgetForm extends Component {
                 <I18n scope={'users.profile.widget.height'}/>
               </label>
               <span className="form-wrapper">
-                <input className="form-control" id="widget_height" type="number" ref="height"
-                       min={this.props.minHeight} max={this.props.maxHeight}
-                       value={this.state.height} onChange={this.onHeightChange}/>
+                <input className="form-control" id="widget_height" type="number"
+                       value={height} onChange={this.onHeightChange}/>
               </span>
             </div>
 
-            {providerSelect}
+            {this.renderProviderSelect()}
 
             <div className="form-group">
               <label className="control-label" htmlFor="widget_categories">
                 <I18n scope={'users.profile.widget.categories'}/>
               </label>
               <span className="form-wrapper">
-                <input className="form-control" id="widget_categories"
-                       name="widget[categories]" type="checkbox"
-                       checked={this.props.categories}
-                       onChange={this.onCategoriesChange}/>
+                <input className="form-control" id="widget_categories" type="checkbox"
+                       checked={categories} onChange={this.onCategoriesChange}/>
               </span>
             </div>
           </fieldset>

@@ -18,6 +18,7 @@ class I18n extends Component {
 
     translation = text;
 
+    // Translation was not found
     if (!text && text.indexOf(scope) > -1) {
       translation = text;
       className = 'translation_missing';
@@ -29,7 +30,7 @@ class I18n extends Component {
     }
 
     return (
-      <span className={className} title={title} dangerouslySetInnerHTML={createMarkup()} />
+      <span className={className} title={title} dangerouslySetInnerHTML={createMarkup()}></span>
     );
   }
 }

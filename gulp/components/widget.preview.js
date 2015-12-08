@@ -2,14 +2,22 @@ let { Component } = require('react'),
   I18n = require('./common.i18n');
 
 class WidgetPreview extends Component {
+  shouldComponentUpdate(nextProps) {
+    let widget = this.props.widget,
+      nextWidget = nextProps.widget;
+
+    return widget.width !== nextWidget.width ||
+      widget.height !== nextWidget.height ||
+      widget.src !== nextWidget.src;
+  }
+
   componentDidUpdate(nextProps) {
     // Reload iframe
-    if (nextProps.reload !== this.props.reload)
-      this.refs.iframe.contentWindow.location.reload();
+    //this.refs.iframe.contentWindow.location.reload();
   }
 
   render() {
-    let { width, height, src } = this.props;
+    let { width, height, src } = this.props.widget;
 
     // Fore reload of the preview
     //src += '?' + new Date().getTime();
