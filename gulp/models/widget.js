@@ -1,7 +1,4 @@
 import { Record, List } from 'immutable';
-import camelCase from 'mout/string/camelCase';
-import unCamelCase from 'mout/string/unCamelCase';
-import forEach from 'mout/collection/forEach';
 
 let Widget = Record({
   id: null,
@@ -16,25 +13,5 @@ let Widget = Record({
   src: null,
   providers: List()
 });
-
-export function createWidget(data) {
-  let widget = {};
-
-  forEach(data, function(value, key) {
-    widget[camelCase(key)] = value;
-  });
-
-  return new Widget(widget);
-}
-
-export function toJSON(widget) {
-  let data = {};
-
-  widget.forEach(function(value, key) {
-    data[unCamelCase(key, '_')] = value;
-  });
-
-  return data;
-}
 
 export default Widget;

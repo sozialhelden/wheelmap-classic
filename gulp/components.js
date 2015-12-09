@@ -6,5 +6,5 @@ global.Wheelmap = {
     Select: require('./components/common.select.js')
   },
   Photon: require('./components/photon.js'),
-  Widget: require('./components/widget.js')
+  WidgetBuilder: require('./components/widget_builder.js')
 };

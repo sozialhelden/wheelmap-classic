@@ -1,35 +1,68 @@
 import { Map } from 'immutable';
-import { CHANGE_WIDTH, CHANGE_HEIGHT, CHANGE_CATEGORIES, CHANGE_LOCATION, CHANGE_PROVIDER } from '../actions/widget';
+import { CHANGE_WIDTH, CHANGE_HEIGHT, CHANGE_CATEGORIES, CHANGE_LOCATION, CHANGE_PROVIDER, INIT, SAVE } from '../actions/widget';
+import uncamelize from '../helpers/uncamelize';
 
 const DEFAULT_ZOOM = 16;
 
-export default function(widget = Map(), action) {
-  switch (action.type) {
-    case CHANGE_WIDTH:
-      return widget.set('width', action.width);
+function changeValue(widget, action, key) {
+  return widget.set(key, action[key]);
+}
 
-    case CHANGE_HEIGHT:
-      return widget.set('height', action.height);
+function computeSrc(boundingBox, lat, lon, apiKey) {
+  let src = `#/?lat=${lat}&lon=${lon}&zoom=${DEFAULT_ZOOM}`;
 
-    case CHANGE_CATEGORIES:
-      return widget.set('categories', action.categories);
+  if (boundingBox != null)
+    src = `#/?bbox=${boundingBox[1]},${boundingBox[3]},${boundingBox[0]},${boundingBox[2]}`;
 
-    case CHANGE_LOCATION:
-      let { location } = action,
-        boundingBox = location.properties.extent,
-        [lon, lat] = location.geometry.coordinates,
-        src = `#/?lat=${lat}&lon=${lon}&zoom=${DEFAULT_ZOOM}`;
+  return window.location.origin + Routes.embed_path({ key: apiKey }) + src;
+}
 
-      if (boundingBox != null)
-        src = `#/?bbox=${boundingBox[1]},${boundingBox[3]},${boundingBox[0]},${boundingBox[2]}`;
+function changeLocation(widget, action) {
+  let { location } = action,
+    boundingBox = location.properties.extent,
+    [lon, lat] = location.geometry.coordinates,
+    src = computeSrc(boundingBox, lat, lon, widget.apiKey);
 
-      src = Routes.embed_path({ key: widget.apiKey }) + src;
+  return widget.merge({ lat, lon, boundingBox, src });
+}
 
-      return widget.merge({ lat, lon, boundingBox, src });
+function init(widget) {
+  let { boundingBox, lat, lon, apiKey } = widget,
+    src = computeSrc(boundingBox, lat, lon, apiKey);
 
-    case CHANGE_PROVIDER:
-      return widget.set('providerId', action.providerId);
-  }
+  return widget.set('src', src);
+}
+
+function save(widget) {
+  // @TODO Move this to an action
+  $.post(Routes.widgets_path({ id: widget.id }), { widget: uncamelize(widget.toJS()) });
 
   return widget;
+}
+
+export default function(state, action) {
+  switch (action.type) {
+    case CHANGE_WIDTH:
+      return changeValue(state, action, 'width');
+
+    case CHANGE_HEIGHT:
+      return changeValue(state, action, 'height');
+
+    case CHANGE_CATEGORIES:
+      return changeValue(state, action, 'categories');
+
+    case CHANGE_PROVIDER:
+      return changeValue(state, action, 'providerId');
+
+    case CHANGE_LOCATION:
+      return changeLocation(state, action);
+
+    case INIT:
+      return init(state, action);
+
+    case SAVE:
+      return save(state, action);
+  }
+
+  return state;
 }

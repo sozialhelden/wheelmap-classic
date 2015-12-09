@@ -1,7 +1,7 @@
 let { Component } = require('react'),
   I18n = require('./common.i18n');
 
-class WidgetEmbed extends Component {
+class WidgetBuilderEmbed extends Component {
   shouldComponentUpdate(nextProps) {
     let widget = this.props.widget,
       nextWidget = nextProps.widget;
@@ -27,4 +27,4 @@ class WidgetEmbed extends Component {
   }
 }
 
-export default WidgetEmbed;
+export default WidgetBuilderEmbed;

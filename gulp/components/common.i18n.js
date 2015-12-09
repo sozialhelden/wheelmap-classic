@@ -14,23 +14,24 @@ class I18n extends Component {
   render() {
     var { scope } = this.props,
       text = I18n.t(scope),
-      className, title, translation;
+      class_name, title, translation;
 
     translation = text;
 
     // Translation was not found
     if (!text && text.indexOf(scope) > -1) {
       translation = text;
-      className = 'translation_missing';
+      class_name = 'translation_missing';
       title = 'translation missing';
     }
 
+    // Use dangerouslySetInnerHTML as the translation string can contain html elements
     function createMarkup() {
       return {__html: translation};
     }
 
     return (
-      <span className={className} title={title} dangerouslySetInnerHTML={createMarkup()}></span>
+      <span className={class_name} title={title} dangerouslySetInnerHTML={createMarkup()}></span>
     );
   }
 }

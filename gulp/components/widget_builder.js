@@ -2,15 +2,19 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import setParam from 'mout/queryString/setParam';
 import debounce from 'mout/function/debounce';
-import Form from './widget.form';
-import Embed from './widget.embed';
-import Preview from './widget.preview';
-import App from './widget.app';
-import { changeWidth, changeHeight, changeLocation, changeProvider, changeCategories } from '../actions/widget';
+import Form from './widget_builder.form';
+import Embed from './widget_builder.embed';
+import Preview from './widget_builder.preview';
+import App from './widget_builder.app';
+import { changeWidth, changeHeight, changeLocation, changeProvider, changeCategories, save } from '../actions/widget';
 
-class Widget extends Component {
+class WidgetBuilder extends Component {
   shouldComponentUpdate(nextProps) {
     return this.props.widget !== nextProps.widget;
+  }
+
+  componentDidUpdate() {
+    this.props.save();
   }
 
   render() {
@@ -36,16 +40,17 @@ function mapDispatchToProps(dispatch) {
     changeHeight: height => dispatch(changeHeight(height)),
     changeLocation: location => dispatch(changeLocation(location)),
     changeProvider: providerId => dispatch(changeProvider(providerId)),
-    changeCategories: showCategories => dispatch(changeCategories(showCategories))
+    changeCategories: showCategories => dispatch(changeCategories(showCategories)),
+    save: () => dispatch(save())
   };
 }
 
-Widget.Form = Form;
-Widget.Preview = Preview;
-Widget.Embed = Embed;
-Widget.App = App;
+WidgetBuilder.Form = Form;
+WidgetBuilder.Preview = Preview;
+WidgetBuilder.Embed = Embed;
+WidgetBuilder.App = App;
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Widget);
+)(WidgetBuilder);

@@ -1,7 +1,7 @@
 let { Component } = require('react'),
   I18n = require('./common.i18n');
 
-class WidgetPreview extends Component {
+class WidgetBuilderPreview extends Component {
   shouldComponentUpdate(nextProps) {
     let widget = this.props.widget,
       nextWidget = nextProps.widget;
@@ -35,4 +35,4 @@ class WidgetPreview extends Component {
   }
 }
 
-export default WidgetPreview;
+export default WidgetBuilderPreview;

@@ -4,7 +4,7 @@ let { Component } = require('react'),
   Select = require('./common.select'),
   Photon = require('./photon');
 
-class WidgetForm extends Component {
+class WidgetBuilderForm extends Component {
   onWidthChange = (event) => {
     this.props.changeWidth(event.target.value);
   };
@@ -49,7 +49,7 @@ class WidgetForm extends Component {
 
   render() {
     let { widget } = this.props,
-      { width, height, providerId, categories } = widget;
+      { width, height, categories } = widget;
 
     return (
       <div className="user-form">
@@ -108,4 +108,4 @@ class WidgetForm extends Component {
   }
 }
 
-export default WidgetForm;
+export default WidgetBuilderForm;
