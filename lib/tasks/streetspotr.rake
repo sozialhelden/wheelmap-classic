@@ -3,26 +3,33 @@ namespace :streetspotr do
   desc 'Check data from StreetSpotr'
   task :check do
     csv_file = ENV['file']
-    raise "Usage: bundle exec rake streetspotr:import file=<your_csv_file" unless csv_file
+    raise 'Usage: bundle exec rake streetspotr:check file=<your_csv_file>' unless csv_file
 
-    hash = {}
-    i = 0
+    wheelchair = Hash.new(0)
+
     CSV.foreach(csv_file, headers: true, :header_converters => :symbol) do |row|
       id = row[:refid]
       next if id.blank?
-      w = wheelchair_status(step(row), toilet(row), indoor(row))
-      hash[i] ||= []
-      hash[i] << step(row)
-      hash[i] << toilet(row)
-      hash[i] << indoor(row)
-      i += 1
+
+      step = step(row)
+      toilet = toilet(row)
+      indoor = indoor(row)
+
+      status = wheelchair_status(step, toilet, indoor)
+
+      puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} -> #{status}"
+
+      wheelchair[status.to_sym] += 1
     end
+
+    puts
+    puts "Yes: #{wheelchair[:yes]}, Limited: #{wheelchair[:limited]}, No: #{wheelchair[:no]}."
   end
 
   desc 'Import data from StreetSpotr'
   task :import => :environment do
     csv_file = ENV['file']
-    raise "Usage: bundle exec rake streetspotr:import file=<your_csv_file" unless csv_file
+    raise 'Usage: bundle exec rake streetspotr:import file=<your_csv_file>' unless csv_file
     poi = nil
     provider = Provider.find_or_create_by_name('Streetspotr')
     CSV.foreach(csv_file, :headers => true, :header_converters => :symbol ,:col_sep => ';' ) do |row|
@@ -40,17 +47,29 @@ namespace :streetspotr do
         poi = Poi.find(osm_id.to_i) rescue nil
         next unless poi
 
+        step = step(row)
+        toilet = toilet(row)
+        indoor = indoor(row)
+
         # Set Node attributes
-        status = wheelchair_status(step(row), toilet(row), indoor(row))
+        status = wheelchair_status(step, toilet, indoor)
+
+        puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} -> #{status}"
+
         provided_poi = ProvidedPoi.find_or_initialize_by_poi_id_and_provider_id(poi.id, provider.id)
         # puts "SET WHEELCHAIR: '#{status}'"
         provided_poi.wheelchair = minimal_status([provided_poi.wheelchair, status].compact.uniq)
         provided_poi.save
+
         p = photo(poi, row)
         p.save
+
         sleep 0.1
       end
     end
+
+    puts
+    puts "Yes: #{wheelchair[:yes]}, Limited: #{wheelchair[:limited]}, No: #{wheelchair[:no]}."
   end
 
   def step(row)
@@ -97,7 +116,6 @@ namespace :streetspotr do
       end
     end
 
-    puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} => #{s}"
     s
   end
 end
