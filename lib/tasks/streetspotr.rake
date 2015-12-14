@@ -5,9 +5,9 @@ namespace :streetspotr do
     csv_file = ENV['file']
     raise 'Usage: bundle exec rake streetspotr:check file=<your_csv_file>' unless csv_file
 
-    wheelchair = Hash.new(0)
+    wheelchair_status = Hash.new(0)
 
-    CSV.foreach(csv_file, headers: true, :header_converters => :symbol) do |row|
+    CSV.foreach(csv_file, headers: true, header_converters: :symbol) do |row|
       id = row[:refid]
       next if id.blank?
 
@@ -19,33 +19,36 @@ namespace :streetspotr do
 
       puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} -> #{status}"
 
-      wheelchair[status.to_sym] += 1
+      wheelchair_status[status.to_sym] += 1
     end
 
     puts
-    puts "Yes: #{wheelchair[:yes]}, Limited: #{wheelchair[:limited]}, No: #{wheelchair[:no]}."
+    puts "Yes: #{wheelchair_status[:yes]}, Limited: #{wheelchair_status[:limited]}, No: #{wheelchair_status[:no]}."
   end
 
   desc 'Import data from StreetSpotr'
   task :import => :environment do
     csv_file = ENV['file']
     raise 'Usage: bundle exec rake streetspotr:import file=<your_csv_file>' unless csv_file
+
     poi = nil
     provider = Provider.find_or_create_by_name('Streetspotr')
-    CSV.foreach(csv_file, :headers => true, :header_converters => :symbol ,:col_sep => ';' ) do |row|
-      # puts row.inspect
+
+    CSV.foreach(csv_file, headers: true, header_converters: :symbol, col_sep: ';') do |row|
       osm_id = row[:refid]
+
       if osm_id.blank?
-        next unless poi
-        # Just the image to process!!
+        # Blank line (only photo)
+        raise 'Empty line without valid previous POI line.' unless poi
+
+        # OSM id is blank (multiple photos per POI)
         p = photo(poi, row)
         p.save
-        sleep 0.1
       else
-        # Find the poi
-        # puts ">>>>>>>>>>>>>>>>> #{osm_id.to_i}"
+        # Find the POI
         poi = Poi.find(osm_id.to_i) rescue nil
-        next unless poi
+
+        raise 'Unknown POI.' unless poi
 
         step = step(row)
         toilet = toilet(row)
@@ -63,9 +66,9 @@ namespace :streetspotr do
 
         p = photo(poi, row)
         p.save
-
-        sleep 0.1
       end
+
+      sleep 0.1
     end
 
     puts
