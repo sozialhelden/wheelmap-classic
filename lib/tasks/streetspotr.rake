@@ -44,9 +44,12 @@ namespace :streetspotr do
     CSV.foreach(csv_file, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
       osm_id = row[:refid]
 
+      # Blank line (only photo)
       if osm_id.blank?
-        # Blank line (only photo)
-        raise 'Empty line without valid previous POI line.' unless poi
+        unless poi
+          puts 'Skipped: Invalid Photo Line.'
+          next
+        end
 
         # OSM id is blank (multiple photos per POI)
         p = photo(poi, row)
