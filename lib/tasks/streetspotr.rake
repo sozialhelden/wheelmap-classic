@@ -144,9 +144,8 @@ namespace :streetspotr do
 
   def wheelchair_status(has_step, indoor)
     # TODO Add the indoor again when the Streetspotr questions got fixed
-    return 'unknown' if has_step == 'unknown'
     return 'no' if has_step == 'yes'
-    return 'limited' if has_step == 'no'
+    return 'unknown'
   end
 
   def wheelchair_toilet(status, toilet)
