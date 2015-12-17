@@ -55,7 +55,10 @@ namespace :streetspotr do
         # Find the POI
         poi = Poi.find(osm_id.to_i) rescue nil
 
-        raise 'Unknown POI.' unless poi
+        unless poi
+          puts 'Skipped: Removed POI.'
+          next
+        end
 
         step = has_step(row)
         toilet = toilet(row)
@@ -67,7 +70,7 @@ namespace :streetspotr do
         puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} -> Status: #{status}, Toilet: #{toilet}."
 
         if status == 'unknown'
-          puts 'Skipped.'
+          puts 'Skipped: Unknown Status.'
           next
         end
 
