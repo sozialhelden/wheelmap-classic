@@ -40,6 +40,7 @@ namespace :streetspotr do
 
     wheelchair_stati = Hash.new(0)
     toilet_stati = Hash.new(0)
+    skipped = Hash.new(0)
 
     CSV.foreach(csv_file, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
       osm_id = row[:refid]
@@ -60,6 +61,7 @@ namespace :streetspotr do
 
         unless poi
           puts 'Skipped: Removed POI.'
+          skipped[:removed] += 1
           next
         end
 
@@ -74,6 +76,7 @@ namespace :streetspotr do
 
         if status == 'unknown'
           puts 'Skipped: Unknown Status.'
+          skipped[:unknown] += 1
           next
         end
 
@@ -95,6 +98,7 @@ namespace :streetspotr do
     puts
     puts "Wheelchair: Yes: #{wheelchair_stati[:yes]}, Limited: #{wheelchair_stati[:limited]}, No: #{wheelchair_stati[:no]}, Unknown #{wheelchair_stati[:unknown]}."
     puts "Toilet: Yes: #{toilet_stati[:yes]}, No: #{toilet_stati[:no]}, Unknown #{toilet_stati[:unknown]}."
+    puts "Skipped: Unknown: #{skipped[:unknown]}, Removed: #{skipped[:removed]}."
   end
 
   def has_step(row)
