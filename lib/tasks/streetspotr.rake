@@ -150,7 +150,7 @@ namespace :streetspotr do
   end
 
   def wheelchair_toilet(status, toilet)
-    return status if %w(unknown no).include? status
+    return 'unknown' if status == 'unknown'
     return toilet
   end
 end
