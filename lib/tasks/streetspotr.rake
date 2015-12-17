@@ -76,7 +76,7 @@ namespace :streetspotr do
 
         provided_poi = ProvidedPoi.find_or_initialize_by_poi_id_and_provider_id(poi.id, provider.id)
         provided_poi.wheelchair = minimal_status([provided_poi.wheelchair, status].compact.uniq)
-        provided_poi.wheelchair_toilet = minimal_status([provided_poi.toilet, status].compact.uniq)
+        provided_poi.wheelchair_toilet = minimal_status([provided_poi.wheelchair_toilet, status].compact.uniq)
         provided_poi.save
 
         p = photo(poi, row)
