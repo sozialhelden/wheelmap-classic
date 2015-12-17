@@ -216,7 +216,7 @@ CREATE TABLE `providers` (
   `updated_at` datetime DEFAULT NULL,
   `logo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `providers_users` (
   `user_id` int(11) DEFAULT NULL,

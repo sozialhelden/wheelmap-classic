@@ -5,25 +5,29 @@ namespace :streetspotr do
     csv_file = ENV['file']
     raise 'Usage: bundle exec rake streetspotr:check file=<your_csv_file>' unless csv_file
 
-    wheelchair_status = Hash.new(0)
+    wheelchair_stati = Hash.new(0)
+    toilet_stati = Hash.new(0)
 
-    CSV.foreach(csv_file, headers: true, header_converters: :symbol) do |row|
+    CSV.foreach(csv_file, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
       id = row[:refid]
       next if id.blank?
 
-      step = step(row)
+      step = has_step(row)
       toilet = toilet(row)
       indoor = indoor(row)
 
-      status = wheelchair_status(step, toilet, indoor)
+      status = wheelchair_status(step, indoor)
+      toilet = wheelchair_toilet(status, toilet)
 
-      puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} -> #{status}"
+      puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} -> Status: #{status}, Toilet: #{toilet}."
 
-      wheelchair_status[status.to_sym] += 1
+      wheelchair_stati[status.to_sym] += 1
+      toilet_stati[toilet.to_sym] += 1
     end
 
     puts
-    puts "Yes: #{wheelchair_status[:yes]}, Limited: #{wheelchair_status[:limited]}, No: #{wheelchair_status[:no]}."
+    puts "Wheelchair: Yes: #{wheelchair_stati[:yes]}, Limited: #{wheelchair_stati[:limited]}, No: #{wheelchair_stati[:no]}, Unknown #{wheelchair_stati[:unknown]}."
+    puts "Toilet: Yes: #{toilet_stati[:yes]}, No: #{toilet_stati[:no]}, Unknown #{toilet_stati[:unknown]}."
   end
 
   desc 'Import data from StreetSpotr'
@@ -34,7 +38,10 @@ namespace :streetspotr do
     poi = nil
     provider = Provider.find_or_create_by_name('Streetspotr')
 
-    CSV.foreach(csv_file, headers: true, header_converters: :symbol, col_sep: ';') do |row|
+    wheelchair_stati = Hash.new(0)
+    toilet_stati = Hash.new(0)
+
+    CSV.foreach(csv_file, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
       osm_id = row[:refid]
 
       if osm_id.blank?
@@ -50,18 +57,26 @@ namespace :streetspotr do
 
         raise 'Unknown POI.' unless poi
 
-        step = step(row)
+        step = has_step(row)
         toilet = toilet(row)
         indoor = indoor(row)
 
-        # Set Node attributes
-        status = wheelchair_status(step, toilet, indoor)
+        status = wheelchair_status(step, indoor)
+        toilet = wheelchair_toilet(status, toilet)
 
-        puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} -> #{status}"
+        puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} -> Status: #{status}, Toilet: #{toilet}."
+
+        if status == 'unknown'
+          puts 'Skipped.'
+          next
+        end
+
+        wheelchair_stati[status.to_sym] += 1
+        toilet_stati[toilet.to_sym] += 1
 
         provided_poi = ProvidedPoi.find_or_initialize_by_poi_id_and_provider_id(poi.id, provider.id)
-        # puts "SET WHEELCHAIR: '#{status}'"
         provided_poi.wheelchair = minimal_status([provided_poi.wheelchair, status].compact.uniq)
+        provided_poi.wheelchair_toilet = minimal_status([provided_poi.toilet, status].compact.uniq)
         provided_poi.save
 
         p = photo(poi, row)
@@ -72,19 +87,43 @@ namespace :streetspotr do
     end
 
     puts
-    puts "Yes: #{wheelchair[:yes]}, Limited: #{wheelchair[:limited]}, No: #{wheelchair[:no]}."
+    puts "Wheelchair: Yes: #{wheelchair_stati[:yes]}, Limited: #{wheelchair_stati[:limited]}, No: #{wheelchair_stati[:no]}, Unknown #{wheelchair_stati[:unknown]}."
+    puts "Toilet: Yes: #{toilet_stati[:yes]}, No: #{toilet_stati[:no]}, Unknown #{toilet_stati[:unknown]}."
   end
 
-  def step(row)
-    row[:step].to_s.strip.downcase == 'ja' ? true : false
+  def has_step(row)
+    read_status(row, :step)
   end
 
   def toilet(row)
-    row[:toilet].to_s.strip.downcase == 'ja' ? true : false
+    read_status(row, :toilet)
   end
 
   def indoor(row)
-    row[:indoor].to_s.strip.downcase == 'ja' ? true : false
+    read_status(row, :indoor)
+  end
+
+  def read_status(row, key)
+    if row.has_key? key
+      status = row[key].to_s.strip.downcase
+
+      return 'yes' if %w(yes ja).include? status
+      return 'no'
+    end
+
+    key_yes = (key.to_s + '_yes').to_sym
+    key_no = (key.to_s + '_no').to_sym
+
+    if row.has_key? key_yes and row.has_key? key_no
+      status_yes = !row[key_yes].to_i.zero?
+      status_no = !row[key_no].to_i.zero?
+
+      return 'yes' if status_yes
+      return 'no' if status_no
+      return 'unknown'
+    end
+
+    raise "Cannot read value for #{key.to_s}."
   end
 
   def photo(node, row)
@@ -103,22 +142,15 @@ namespace :streetspotr do
     return stati.first
   end
 
-  def wheelchair_status(step, toilet, indoor)
-    s = nil
-    if step
-      s = 'no'
-    else
-      if toilet
-        if indoor
-          s = 'yes'
-        else
-          s = 'limited'
-        end
-      else
-        s = 'limited'
-      end
-    end
+  def wheelchair_status(has_step, indoor)
+    # TODO Add the indoor again when the Streetspotr questions got fixed
+    return 'unknown' if has_step == 'unknown'
+    return 'no' if has_step == 'yes'
+    return 'limited' if has_step == 'no'
+  end
 
-    s
+  def wheelchair_toilet(status, toilet)
+    return status if %w(unknown no).include? status
+    return toilet
   end
 end
