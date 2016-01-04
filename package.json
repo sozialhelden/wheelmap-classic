@@ -17,11 +17,11 @@
     "react-select": "^0.8.2",
     "redux": "^3.0.4",
     "redux-thunk": "^1.0.0",
+    "require-dir": "^0.3.0",
     "reselect": "^2.0.1",
     "sinon": "^1.17.1",
     "sinon-chai": "^2.8.0",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.6.1"
+    "vinyl-source-stream": "^1.1.0"
   },
   "repository": {
     "type": "git",
