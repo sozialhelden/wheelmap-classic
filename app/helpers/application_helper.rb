@@ -174,4 +174,8 @@ module ApplicationHelper
     nil
   end
 
+  def christmas?
+    (Time.parse('1st December').to_i..Time.parse('27st December').to_i) === Time.now.to_i
+  end
+
 end

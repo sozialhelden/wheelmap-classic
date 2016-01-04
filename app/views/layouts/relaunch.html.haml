@@ -35,7 +35,7 @@
     = javascript_include_tag :modernizr
   = csrf_meta_tag
 
-%body.christmas
+%body{class: christmas? ? 'christmas' : nil}
   = render :partial => 'relaunch/header'
   = content_for?(:content) ? yield(:content) : yield
 
