@@ -1,18 +1,16 @@
 "use strict";
 
-let gulp = require('gulp'),
-  browserify = require('browserify'),
-  gulpUtil = require('gulp-util'),
-  source = require('vinyl-source-stream'),
-  babelify = require('babelify');
+const gulp = require('gulp');
+const browserify = require('browserify');
+const gulpUtil = require('gulp-util');
+const source = require('vinyl-source-stream');
+const babelify = require('babelify');
 
-let bundler = browserify({
+const bundler = browserify({
   debug: true,
   entries: ['./gulp/components.js'],
   transform: [
-    babelify.configure({
-      optional: ['runtime', 'es7.classProperties']
-    })
+    babelify
   ]
 });
 

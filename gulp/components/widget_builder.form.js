@@ -1,16 +1,16 @@
-let { Component } = require('react'),
-  debounce = require('mout/function/debounce'),
-  I18n = require('./common.i18n'),
-  Select = require('./common.select'),
-  Photon = require('./photon');
+const React = require('react');
+const debounce = require('mout/function/debounce');
+const I18n = require('./common.i18n');
+const Select = require('./common.select');
+const Photon = require('./photon');
 
-class WidgetBuilderForm extends Component {
+class WidgetBuilderForm extends React.Component {
   onWidthChange = (event) => {
-    this.props.changeWidth(event.target.value);
+    this.props.changeWidth(parseInt(event.target.value, 10));
   };
 
   onHeightChange = (event) => {
-    this.props.changeHeight(event.target.value);
+    this.props.changeHeight(parseInt(event.target.value, 10));
   };
 
   onCategoriesChange = (event) => {
@@ -76,7 +76,7 @@ class WidgetBuilderForm extends Component {
                 <I18n scope={'users.profile.widget.width'}/>
               </label>
               <span className="form-wrapper">
-                <input className="form-control" id="widget_width" type="number"
+                <input className="form-control" id="widget_width" type="number" ref="width"
                        value={width} onChange={this.onWidthChange}/>
               </span>
             </div>
@@ -85,7 +85,7 @@ class WidgetBuilderForm extends Component {
                 <I18n scope={'users.profile.widget.height'}/>
               </label>
               <span className="form-wrapper">
-                <input className="form-control" id="widget_height" type="number"
+                <input className="form-control" id="widget_height" type="number" ref="height"
                        value={height} onChange={this.onHeightChange}/>
               </span>
             </div>
@@ -108,4 +108,4 @@ class WidgetBuilderForm extends Component {
   }
 }
 
-export default WidgetBuilderForm;
+module.exports = WidgetBuilderForm;

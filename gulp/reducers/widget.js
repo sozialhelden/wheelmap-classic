@@ -1,6 +1,6 @@
-import { Map } from 'immutable';
-import { CHANGE_WIDTH, CHANGE_HEIGHT, CHANGE_CATEGORIES, CHANGE_LOCATION, CHANGE_PROVIDER, INIT, SAVE } from '../actions/widget';
-import uncamelize from '../helpers/uncamelize';
+const { Map } = require('immutable');
+const { CHANGE_WIDTH, CHANGE_HEIGHT, CHANGE_CATEGORIES, CHANGE_LOCATION, CHANGE_PROVIDER, INIT, SAVE } = require('../actions/widget');
+const uncamelize = require('../helpers/uncamelize');
 
 const DEFAULT_ZOOM = 16;
 
@@ -40,7 +40,7 @@ function save(widget) {
   return widget;
 }
 
-export default function(state, action) {
+module.exports = function(state, action) {
   switch (action.type) {
     case CHANGE_WIDTH:
       return changeValue(state, action, 'width');
@@ -65,4 +65,4 @@ export default function(state, action) {
   }
 
   return state;
-}
+};

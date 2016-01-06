@@ -1,14 +1,14 @@
-import { Component } from 'react';
-import { connect } from 'react-redux';
-import setParam from 'mout/queryString/setParam';
-import debounce from 'mout/function/debounce';
-import Form from './widget_builder.form';
-import Embed from './widget_builder.embed';
-import Preview from './widget_builder.preview';
-import App from './widget_builder.app';
-import { changeWidth, changeHeight, changeLocation, changeProvider, changeCategories, save } from '../actions/widget';
+const React = require('react');
+const { connect } = require('react-redux');
+const setParam = require('mout/queryString/setParam');
+const debounce = require('mout/function/debounce');
+const Form = require('./widget_builder.form');
+const Embed = require('./widget_builder.embed');
+const Preview = require('./widget_builder.preview');
+const App = require('./widget_builder.app');
+const { changeWidth, changeHeight, changeLocation, changeProvider, changeCategories, save } = require('../actions/widget');
 
-class WidgetBuilder extends Component {
+class WidgetBuilder extends React.Component {
   shouldComponentUpdate(nextProps) {
     return this.props.widget !== nextProps.widget;
   }
@@ -45,12 +45,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-WidgetBuilder.Form = Form;
-WidgetBuilder.Preview = Preview;
-WidgetBuilder.Embed = Embed;
-WidgetBuilder.App = App;
-
-export default connect(
+module.exports = connect(
   mapStateToProps,
   mapDispatchToProps
 )(WidgetBuilder);

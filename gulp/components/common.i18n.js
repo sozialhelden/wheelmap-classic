@@ -1,10 +1,13 @@
-let { Component } = require('react');
+const React = require('react');
 
-class I18n extends Component {
-  static locale = global.I18n.locale;
-
+class I18n extends React.Component {
   static t(scope) {
-    return global.I18n.t(scope);
+    let translation = global.I18n.t(scope);
+
+    if (translation.indexOf(scope) > -1)
+      return null;
+
+    return translation;
   }
 
   shouldComponentUpdate() {
@@ -13,21 +16,19 @@ class I18n extends Component {
 
   render() {
     var { scope } = this.props,
-      text = I18n.t(scope),
-      class_name, title, translation;
-
-    translation = text;
+      translation = I18n.t(scope),
+      class_name, title;
 
     // Translation was not found
-    if (!text && text.indexOf(scope) > -1) {
-      translation = text;
-      class_name = 'translation_missing';
+    if (translation == null) {
+      translation = scope.replace(/\./, ' ');
+      class_name = 'translation-missing';
       title = 'translation missing';
     }
 
-    // Use dangerouslySetInnerHTML as the translation string can contain html elements
+    // Use dangerouslySetInnerHTML as the translation string as translations can contain html elements
     function createMarkup() {
-      return {__html: translation};
+      return { __html: translation };
     }
 
     return (
@@ -36,4 +37,4 @@ class I18n extends Component {
   }
 }
 
-export default I18n;
+module.exports = I18n;

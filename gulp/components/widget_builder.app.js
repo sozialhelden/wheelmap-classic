@@ -1,13 +1,13 @@
-import { Component } from 'react';
-import { Provider } from 'react-redux';
-import camelize from '../helpers/camelize';
-import createStore from '../helpers/create_store';
-import WidgetBuilder from './widget_builder';
-import Widget from '../models/widget';
-import { init } from '../actions/widget';
-import widgetApp from '../reducers/widget';
+const React = require('react');
+const { Provider } = require('react-redux');
+const camelize = require('../helpers/camelize');
+const createStore = require('../helpers/create_store');
+const WidgetBuilder = require('./widget_builder');
+const Widget = require('../models/widget');
+const { init } = require('../actions/widget');
+const widgetApp = require('../reducers/widget');
 
-class WidgetBuilderApp extends Component {
+class WidgetBuilderApp extends React.Component {
   render() {
     let widget = Widget(camelize(this.props.widget)),
       store = createStore(widgetApp, widget);
@@ -22,4 +22,4 @@ class WidgetBuilderApp extends Component {
   }
 }
 
-export default WidgetBuilderApp;
+module.exports = WidgetBuilderApp;

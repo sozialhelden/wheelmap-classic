@@ -1,7 +1,7 @@
-let { Component } = require('react'),
-  I18n = require('./common.i18n');
+const React = require('react');
+const I18n = require('./common.i18n');
 
-class WidgetBuilderEmbed extends Component {
+class WidgetBuilderEmbed extends React.Component {
   shouldComponentUpdate(nextProps) {
     let widget = this.props.widget,
       nextWidget = nextProps.widget;
@@ -20,11 +20,11 @@ class WidgetBuilderEmbed extends Component {
         <h5>
           <I18n scope='users.profile.widget.legends.embed' />
         </h5>
-        <textarea rows="3" className="user-widget-embed-code" value={code} />
+        <textarea rows="3" className="user-widget-embed-code" value={code} readOnly={true} />
         <p><I18n scope='users.profile.widget.legends.embed_explanation' /></p>
       </div>
     );
   }
 }
 
-export default WidgetBuilderEmbed;
+module.exports = WidgetBuilderEmbed;

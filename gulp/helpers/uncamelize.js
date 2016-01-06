@@ -1,7 +1,7 @@
-import unCamelCase from 'mout/string/unCamelCase';
-import forEach from 'mout/collection/forEach';
+const unCamelCase = require('mout/string/unCamelCase');
+const forEach = require('mout/collection/forEach');
 
-export default function(data) {
+module.exports = function(data) {
   let uncamelizedData = {};
 
   forEach(data, function(value, key) {

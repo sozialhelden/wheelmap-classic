@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+const { createStore, applyMiddleware } = require('redux');
+const thunk = require('redux-thunk');
 
-export default applyMiddleware(thunk)(createStore);
+module.exports = applyMiddleware(thunk)(createStore);

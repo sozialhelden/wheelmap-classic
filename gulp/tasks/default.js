@@ -1,5 +1,5 @@
 "use strict";
 
-let gulp = require('gulp');
+const gulp = require('gulp');
 
 gulp.task('default', ['browserify', 'watch']);

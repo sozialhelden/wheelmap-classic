@@ -1,9 +1,10 @@
-let { Component } = require('react'),
-  debounce = require('mout/function/debounce'),
+const React = require('react');
+
+let debounce = require('mout/function/debounce'),
   find = require('mout/array/find'),
   ReactSelect = require('react-select');
 
-class Photon extends Component {
+class Photon extends React.Component {
   constructor(props) {
     super(props);
 
@@ -73,4 +74,4 @@ class Photon extends Component {
   }
 }
 
-export default Photon;
+module.exports = Photon;
