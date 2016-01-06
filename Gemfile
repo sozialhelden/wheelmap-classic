@@ -69,7 +69,6 @@ group :default do
   gem 'apipie-rails'
   gem 'htmlentities', require: false
   gem 'test-unit', '~> 3.0', require: false
-  gem 'browserify-rails'
   gem 'react-rails', '~>1.4.1'
 end
 
@@ -82,21 +81,18 @@ group :assets do
   gem 'compass-colors'
   gem 'compass-rails'
   gem 'bootstrap-sass'
+  gem 'js-routes'
 end
 
 group :test, :development do
   gem 'rspec-rails'
   gem 'spork'
   gem 'rb-fsevent'
-  gem 'teaspoon', '1.1.1'
-  gem 'teaspoon-jasmine'
-  gem 'phantomjs'
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-spork'
   gem 'guard-cucumber', "1.2.2"
   gem 'pry'
-
 end
 
 group :test do
@@ -127,5 +123,4 @@ group :development do
   gem 'capistrano-rbenv',                   require: false
   gem 'capistrano-bundler',                 require: false
   gem 'capistrano-deploytags', '~> 1.0.0',  require: false
-  gem 'capistrano-npm',                     require: false
 end

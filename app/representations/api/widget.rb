@@ -13,6 +13,8 @@ module Api::Widget
       t.add :user_id
       t.add :categories
       t.add :bounding_box
+      t.add :provider_id
+      t.add :providers
     end
 
   end
