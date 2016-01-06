@@ -35,7 +35,7 @@
     "node": ">= 4.1"
   },
   "scripts": {
-    "test": "jest"
+    "test": "node_modules/.bin/jest"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
