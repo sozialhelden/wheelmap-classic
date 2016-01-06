@@ -4,7 +4,13 @@ Wheelmap::Application.routes.draw do
 
   match '/ping' => 'ping#index'
 
-  ActiveAdmin.routes(self)
+  #
+  # The if statement here is workaround to ensure that users are able to do an initial migration
+  # without problems.
+  # Without this if statement ActiveAdmin complains about missing tables and let the migration fail.
+  # For more details, see https://github.com/activeadmin/activeadmin/issues/783
+  #
+  ActiveAdmin.routes(self) if !$ARGV.nil? && $ARGV.none? { |x| x =~ /migrate|rollback/i}
 
   namespace :admin do
     resources :pois do
