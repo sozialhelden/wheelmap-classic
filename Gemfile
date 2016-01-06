@@ -70,6 +70,7 @@ group :default do
   gem 'htmlentities', require: false
   gem 'test-unit', '~> 3.0', require: false
   gem 'react-rails', '~>1.4.1'
+  gem 'js-routes' # Because of initializer
 end
 
 group :assets do
@@ -81,7 +82,6 @@ group :assets do
   gem 'compass-colors'
   gem 'compass-rails'
   gem 'bootstrap-sass'
-  gem 'js-routes'
 end
 
 group :test, :development do
