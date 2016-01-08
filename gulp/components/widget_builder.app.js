@@ -5,7 +5,7 @@ const createStore = require('../helpers/create_store');
 const WidgetBuilder = require('./widget_builder');
 const Widget = require('../models/widget');
 const { init } = require('../actions/widget');
-const widgetApp = require('../reducers/widget');
+const widgetBuilderReducer = require('../reducers/widget_builder');
 
 class WidgetBuilderApp extends React.Component {
   render() {
@@ -16,7 +16,7 @@ class WidgetBuilderApp extends React.Component {
 
     return (
       <Provider store={store}>
-        <WidgetBuilder />
+        <WidgetBuilder/>
       </Provider>
     );
   }

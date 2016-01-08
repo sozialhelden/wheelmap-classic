@@ -5,5 +5,5 @@
 //= require dist/components
 
 I18n.defaultLocale = 'en';
-I18n.locale = $('html').attr('lang');
+I18n.locale = document.getElementsByTagName('html')[0].getAttribute('lang');
 I18n.fallbacks = true;

@@ -13,8 +13,8 @@
     -#          - #%a{href: (send("new_#{section}_nodes_path") if @widget.done?(section))}
     -#          %a
     -#            = section
-    =react_component('NodesNewWidget')
+    =react_component('Wheelmap.Nodes.WidgetNew.App')
 
 - content_for :javascript do
-  = javascript_include_tag 'react-application'
+  = javascript_include_tag 'application'
   = javascript_include_tag "i18n/#{I18n.locale}"
