@@ -12,4 +12,4 @@
 //= require filter_settings
 //= require splash
 //= require flash
-//= require application
+//= require application_old
