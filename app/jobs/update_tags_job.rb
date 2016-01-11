@@ -20,8 +20,10 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
   def perform
     raise ArgumentError.new("Client cannot be nil") if client.nil?
 
-      logger.info "UpdateTagsJob -------------------------->"
-      logger.info "User: #{user.try(:id)}"
+    logger.info "UpdateTagsJob -------------------------->"
+    logger.info "User: #{user.try(:id)}"
+    logger.info "Element: #{element_id}"
+    logger.info "Tags: #{tags}"
 
     begin
       element_to_compare = api.find_element(type, element_id)
