@@ -68,7 +68,7 @@ node_types = NodeType.create([
   {:category => leisure, :identifier => :theatre,     :osm_key => 'amenity',  :osm_value => 'theatre',     :icon => 'theater.png'},
   {:category => leisure, :identifier => :zoo,         :osm_key => 'tourism',  :osm_value => 'zoo',         :icon => 'zoo.png'},
   {:category => leisure, :identifier => :brothel,     :osm_key => 'amenity', :osm_value => 'brothel',      :icon => 'lantern.png'},
-  {:category => leisure, :identifier => :community_center, :osm_key => 'amenity', :osm_value => 'community_center', :icon => 'communitycentre.png'},
+  {:category => leisure, :identifier => :community_centre, :osm_key => 'amenity', :osm_value => 'community_centre', :icon => 'communitycentre.png'},
   {:category => leisure, :identifier => :stripclub,   :osm_key => 'amenity', :osm_value => 'stripclub',    :icon => 'stripclub.png'},
   {:category => leisure, :identifier => :playground,  :osm_key => 'leisure', :osm_value => 'playground',   :icon => 'playground.png'},
   {:category => leisure, :identifier => :casino,      :osm_key => 'amenity', :osm_value => 'casino',       :icon => 'poker.png'}
