@@ -555,7 +555,7 @@ DEPENDENCIES
   meta_search
   minitest
   multipart-post
-  mysql2 (~> 0.3)
+  mysql2 (~> 0.3.0)
   newrelic_rpm
   nokogiri
   oauth
