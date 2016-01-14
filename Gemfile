@@ -8,7 +8,7 @@ group :default do
   gem 'rgeo-activerecord'
   gem 'activerecord-mysql2spatial-adapter'
   gem 'oauth'
-  gem 'devise'
+  gem 'devise', '~> 2.2'
   gem 'devise-encryptable'
   gem 'redgreengrid', :git => 'https://github.com/christoph-buente/redgreengrid.git'
   gem 'haml'
