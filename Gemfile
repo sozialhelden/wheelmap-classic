@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 group :default do
   gem 'rails', '3.2.22'
-  gem 'mysql2', '~> 0.3.18'
+  gem 'mysql2', '~> 0.3'
   gem 'activerecord-import', '<0.3.0', :require => false
   gem 'rgeo'
   gem 'rgeo-activerecord'
@@ -26,7 +26,7 @@ group :default do
   gem 'acts_as_api'
   gem 'inherited_resources'
   gem 'has_scope'
-  gem 'rake', '~> 10.4.0'
+  gem 'rake', '~> 10.4'
   gem 'yajl-ruby'
   gem 'ya2yaml'
   gem 'ruport'

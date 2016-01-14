@@ -555,7 +555,7 @@ DEPENDENCIES
   meta_search
   minitest
   multipart-post
-  mysql2 (~> 0.3.18)
+  mysql2 (~> 0.3)
   newrelic_rpm
   nokogiri
   oauth
@@ -563,7 +563,7 @@ DEPENDENCIES
   pickle
   pry
   rails (= 3.2.22)
-  rake (~> 10.4.0)
+  rake (~> 10.4)
   rb-fsevent
   react-rails (~> 1.4.1)
   redgreengrid!
