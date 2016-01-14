@@ -19,7 +19,7 @@ group :default do
   gem 'delayed_job_active_record'
   gem 'daemons'
   gem 'libxml-ruby'
-  gem 'airbrake'
+  gem 'airbrake', '~> 4.1'
   gem 'whenever', :require => false
   gem "routing-filter"
   gem 'newrelic_rpm'
@@ -47,7 +47,7 @@ group :default do
   gem 'sass', '~>3.3' # >= 3.3 is needed for BEM syntax
   gem 'activeadmin', '0.6.6'
   gem 'meta_search'
-  gem 'kaminari'
+  gem 'kaminari', '~> 0.14'
   gem 'kaminari-i18n'
   gem 'carrierwave'
   gem 'carrierwave-meta'
@@ -60,7 +60,7 @@ group :default do
   gem 'i18n', '<0.7.0'
   gem 'i18n-js', '~> 3.0.0.rc9'
   gem 'font-awesome-rails'
-  gem 'ember-rails'
+  gem 'ember-rails', '~> 0.14'
   gem 'backup'
   gem 'geocoder'
   gem 'ruby-progressbar'
@@ -81,7 +81,7 @@ group :assets do
   gem 'compass'
   gem 'compass-colors'
   gem 'compass-rails'
-  gem 'bootstrap-sass'
+  gem 'bootstrap-sass', '~> 2.3'
 end
 
 group :test, :development do

@@ -493,13 +493,13 @@ DEPENDENCIES
   activerecord-import (< 0.3.0)
   activerecord-mysql2spatial-adapter
   acts_as_api
-  airbrake
+  airbrake (~> 4.1)
   apipie-rails
   autotest
   awesome_nested_set (< 3.0)
   backup
   big_sitemap
-  bootstrap-sass
+  bootstrap-sass (~> 2.3)
   cacheable_flash
   capistrano (>= 3.1.0)
   capistrano-bundler
@@ -523,7 +523,7 @@ DEPENDENCIES
   devise (~> 2.2)
   devise-encryptable
   email_spec
-  ember-rails
+  ember-rails (~> 0.14)
   exifr
   factory_girl_rails
   figaro
@@ -545,7 +545,7 @@ DEPENDENCIES
   inherited_resources
   jquery-rails (= 2.3.0)
   js-routes
-  kaminari
+  kaminari (~> 0.14)
   kaminari-i18n
   launchy
   librato-metrics
