@@ -26,7 +26,7 @@ group :default do
   gem 'acts_as_api'
   gem 'inherited_resources'
   gem 'has_scope'
-  gem 'rake'
+  gem 'rake', '~> 10.4.0'
   gem 'yajl-ruby'
   gem 'ya2yaml'
   gem 'ruport'

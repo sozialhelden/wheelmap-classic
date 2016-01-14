@@ -563,7 +563,7 @@ DEPENDENCIES
   pickle
   pry
   rails (= 3.2.22)
-  rake
+  rake (~> 10.4.0)
   rb-fsevent
   react-rails (~> 1.4.1)
   redgreengrid!
@@ -595,4 +595,4 @@ DEPENDENCIES
   yajl-ruby
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
