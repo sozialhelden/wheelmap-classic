@@ -1,33 +1,45 @@
 const React = require('react');
 const { connect } = require('react-redux');
+const Header = require('./nodes.widget_new.header');
+const Breadcrumbs = require('./nodes.widget_new.breadcrumbs');
+const Content = require('./nodes.widget_new.content');
+const { start, activateSection } = require('../actions/nodes.widget_new');
 
-class NodesWidgetNew extends React.Component {
+class Widget extends React.Component {
+  componentDidMount() {
+    this.props.onMount();
+  }
+
   render() {
+    let { sections, activeSection, onClickSection } = this.props;
+
     return (
       <div className="nodes-new">
-        <header className="nodes-new-header">
-          <a href="/map" className="btn btn--back">zurück</a>
-          <h1>Ort hinzufügen</h1>
-        </header>
-        <div className="nodes-new-breadcrumbs">
-          <ul>
-            <li>Test</li>
-          </ul>
-        </div>
+        <Header/>
+        <Breadcrumbs sections={sections} onClickSection={onClickSection}/>
+        <Content activeSection={activeSection} />
       </div>
     );
   }
 }
 
-function mapStateToProps() {
-  return {};
+function mapStateToProps(state) {
+  let sections = state.get('sections');
+
+  return {
+    sections: sections,
+    activeSection: sections.find(section => section.active)
+  };
 }
 
-function mapDispatchToProps() {
-  return {};
+function mapDispatchToProps(dispatch) {
+  return {
+    onMount: () => dispatch(start()),
+    onClickSection: (section) => dispatch(activateSection(section))
+  };
 }
 
 module.exports = connect(
   mapStateToProps,
   mapDispatchToProps
-)(NodesWidgetNew);
+)(Widget);

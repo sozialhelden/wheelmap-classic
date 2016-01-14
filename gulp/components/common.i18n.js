@@ -21,7 +21,7 @@ class I18n extends React.Component {
 
     // Translation was not found
     if (translation == null) {
-      translation = scope.replace(/\./, ' ');
+      translation = scope.replace(/\./g, ' ');
       class_name = 'translation-missing';
       title = 'translation missing';
     }
