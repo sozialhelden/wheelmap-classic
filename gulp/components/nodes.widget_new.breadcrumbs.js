@@ -12,7 +12,7 @@ class Breadcrumbs extends React.Component {
   render() {
     let { sections, onClickSection } = this.props,
       overviewSection = sections.find(section => section.id === Section.OVERVIEW),
-      className = classNames({ done: overviewSection.done }),
+      className = classNames({ done: overviewSection.active }),
       list = [];
 
     sections.forEach((section) => {
@@ -33,7 +33,7 @@ class Breadcrumbs extends React.Component {
 
     return (
       <div className="nodes-new-breadcrumbs">
-        <ul>
+        <ul className={className}>
           {list}
         </ul>
       </div>
