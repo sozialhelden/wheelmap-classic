@@ -493,13 +493,13 @@ DEPENDENCIES
   activerecord-import (< 0.3.0)
   activerecord-mysql2spatial-adapter
   acts_as_api
-  airbrake
+  airbrake (~> 4.1)
   apipie-rails
   autotest
   awesome_nested_set (< 3.0)
   backup
   big_sitemap
-  bootstrap-sass
+  bootstrap-sass (~> 2.3)
   cacheable_flash
   capistrano (>= 3.1.0)
   capistrano-bundler
@@ -520,10 +520,10 @@ DEPENDENCIES
   database_cleaner
   delayed_job
   delayed_job_active_record
-  devise
+  devise (~> 2.2)
   devise-encryptable
   email_spec
-  ember-rails
+  ember-rails (~> 0.14)
   exifr
   factory_girl_rails
   figaro
@@ -545,7 +545,7 @@ DEPENDENCIES
   inherited_resources
   jquery-rails (= 2.3.0)
   js-routes
-  kaminari
+  kaminari (~> 0.14)
   kaminari-i18n
   launchy
   librato-metrics
@@ -555,7 +555,7 @@ DEPENDENCIES
   meta_search
   minitest
   multipart-post
-  mysql2
+  mysql2 (~> 0.3.0)
   newrelic_rpm
   nokogiri
   oauth
@@ -563,7 +563,7 @@ DEPENDENCIES
   pickle
   pry
   rails (= 3.2.22)
-  rake
+  rake (~> 10.4)
   rb-fsevent
   react-rails (~> 1.4.1)
   redgreengrid!
@@ -595,4 +595,4 @@ DEPENDENCIES
   yajl-ruby
 
 BUNDLED WITH
-   1.10.6
+   1.11.2

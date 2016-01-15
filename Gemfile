@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 
 group :default do
   gem 'rails', '3.2.22'
-  gem 'mysql2'
+  gem 'mysql2', '~> 0.3.0'
   gem 'activerecord-import', '<0.3.0', :require => false
   gem 'rgeo'
   gem 'rgeo-activerecord'
   gem 'activerecord-mysql2spatial-adapter'
   gem 'oauth'
-  gem 'devise'
+  gem 'devise', '~> 2.2'
   gem 'devise-encryptable'
   gem 'redgreengrid', :git => 'https://github.com/christoph-buente/redgreengrid.git'
   gem 'haml'
@@ -19,14 +19,14 @@ group :default do
   gem 'delayed_job_active_record'
   gem 'daemons'
   gem 'libxml-ruby'
-  gem 'airbrake'
+  gem 'airbrake', '~> 4.1'
   gem 'whenever', :require => false
   gem "routing-filter"
   gem 'newrelic_rpm'
   gem 'acts_as_api'
   gem 'inherited_resources'
   gem 'has_scope'
-  gem 'rake'
+  gem 'rake', '~> 10.4'
   gem 'yajl-ruby'
   gem 'ya2yaml'
   gem 'ruport'
@@ -47,7 +47,7 @@ group :default do
   gem 'sass', '~>3.3' # >= 3.3 is needed for BEM syntax
   gem 'activeadmin', '0.6.6'
   gem 'meta_search'
-  gem 'kaminari'
+  gem 'kaminari', '~> 0.14'
   gem 'kaminari-i18n'
   gem 'carrierwave'
   gem 'carrierwave-meta'
@@ -60,7 +60,7 @@ group :default do
   gem 'i18n', '<0.7.0'
   gem 'i18n-js', '~> 3.0.0.rc9'
   gem 'font-awesome-rails'
-  gem 'ember-rails'
+  gem 'ember-rails', '~> 0.14'
   gem 'backup'
   gem 'geocoder'
   gem 'ruby-progressbar'
@@ -81,7 +81,7 @@ group :assets do
   gem 'compass'
   gem 'compass-colors'
   gem 'compass-rails'
-  gem 'bootstrap-sass'
+  gem 'bootstrap-sass', '~> 2.3'
 end
 
 group :test, :development do
