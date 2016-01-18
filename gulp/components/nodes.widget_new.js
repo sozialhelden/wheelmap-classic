@@ -3,7 +3,7 @@ const { connect } = require('react-redux');
 const Header = require('./nodes.widget_new.header');
 const Breadcrumbs = require('./nodes.widget_new.breadcrumbs');
 const Content = require('./nodes.widget_new.content');
-const { start, activateSection, activateNextSection } = require('../actions/nodes.widget_new');
+const { start, activateSection, activateNextSection } = require('../reducers/nodes.widget_new');
 
 class Widget extends React.Component {
   componentDidMount() {

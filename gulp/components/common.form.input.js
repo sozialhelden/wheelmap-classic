@@ -1,18 +1,18 @@
 const React = require('react');
 const classNames = require('classnames');
+const I18n = require('./common.i18n');
 
 function Input(props) {
-  let { name, type, required, size, value } = props,
-    className = classNames('input', 'input--' + type, { required }),
-    id = name;
+  let { className, type, required, placeholderScope, ...otherProps } = props;
+
+  className = classNames(className, 'input', 'input--' + type, { required });
+
+  if (placeholderScope != null)
+    otherProps.placeholder = I18n.t(placeholderScope);
 
   return (
     <div className={className}>
-      <input name={name}
-             id={id}
-             type={type}
-             size={size}
-             value={value}/>
+      <input {...otherProps} type={type}/>
     </div>
   );
 }
@@ -23,10 +23,9 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
-  name: React.PropTypes.string.isRequired,
   type: React.PropTypes.string.isRequired,
   required: React.PropTypes.bool.isRequired,
-  size: React.PropTypes.number
+  placeholderScope: React.PropTypes.string
 };
 
 Input.contextTypes = {
