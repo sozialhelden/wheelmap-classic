@@ -1,11 +1,15 @@
 const React = require('react');
+const { Map, TileLayer, Marker } = require('react-leaflet');
+const { Browser } = require('leaflet');
 const Section = require('./nodes.widget_new.section');
 const Row = require('./common.row');
 const ControlGroup = require('./common.form.control_group');
 const Controls = require('./common.form.controls');
 const Input = require('./common.form.input');
 const Alert = require('./common.alert');
-const Map = require('./map');
+
+const accessToken = 'pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g';
+const mapId = 'sozialhelden.map-iqt6py1k';
 
 class AddressSection extends React.Component {
   render() {
@@ -42,7 +46,12 @@ class AddressSection extends React.Component {
             </Alert>
           </Row.Span>
           <Row.Span rows={6}>
-            <Map className="nodes-new-content-section--address-map" accessToken="pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g" mapId="sozialhelden.map-iqt6py1k"/>
+            <Map center={[51.505, -0.09]} zoom={13} className="nodes-new-content-section--address-map">
+              <TileLayer
+                url={`https://api.mapbox.com/v4/${mapId}/{z}/{x}/{y}${Browser.retina ? '@2x' : ''}.png?access_token=${accessToken}`}
+                attribution='<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'/>
+              <Marker position={[51.505, -0.09]}/>
+            </Map>
           </Row.Span>
         </Row>
       </Section>
