@@ -85,7 +85,7 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 2.99'
   gem 'spork'
   gem 'rb-fsevent'
   # gem 'guard'
