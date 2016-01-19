@@ -61,15 +61,10 @@ Wheelmap::Application.routes.draw do
     get :register_osm, :on => :collection
   end
 
+  # For the new node widget frontend routing
+  get 'nodes/new/:section', to: 'nodes#new', as: :new_node_section
+
   resources :nodes, :except => [:destroy] do
-    collection do
-      post 'new/address', to: 'nodes#new'
-      post 'new/category_name', to: 'nodes#new'
-      post 'new/contact', to: 'nodes#new'
-      post 'new/similar', to: 'nodes#new'
-      post 'new/status', to: 'nodes#new'
-      post 'new/overview', to: 'nodes#new'
-    end
     member do
       put :update_wheelchair
       put :update_toilet
