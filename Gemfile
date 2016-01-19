@@ -88,10 +88,10 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'spork'
   gem 'rb-fsevent'
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'guard-spork'
-  gem 'guard-cucumber', "1.2.2"
+  # gem 'guard'
+  # gem 'guard-rspec'
+  # gem 'guard-spork'
+  # gem 'guard-cucumber', "1.2.2"
   gem 'pry'
 end
 
