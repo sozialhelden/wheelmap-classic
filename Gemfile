@@ -102,7 +102,6 @@ group :test do
   gem "capybara", "1.1.1"  # on mac, you need sudo port install libffi
   gem 'cucumber', :require => false
   gem 'cucumber-rails', :require => false
-  gem 'rspec', "2.12.0"
   gem 'autotest', :require => false
   gem 'nokogiri'
   gem 'pickle', :require => false

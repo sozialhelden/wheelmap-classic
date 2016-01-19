@@ -574,7 +574,6 @@ DEPENDENCIES
   rmagick
   rosemary
   routing-filter
-  rspec (= 2.12.0)
   rspec-rails
   ruby-progressbar
   ruport
