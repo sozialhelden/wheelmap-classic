@@ -1,4 +1,5 @@
 const React = require('react');
+const classNames = require('classnames');
 const I18n = require('./common.i18n');
 
 class Section extends React.Component {
@@ -14,6 +15,7 @@ class Section extends React.Component {
 
   render() {
     let { section, children, lastSection } = this.props,
+      className = classNames('nodes-new-content-section', { active: section.active }),
       actionLabel;
 
     if (lastSection)
@@ -22,7 +24,7 @@ class Section extends React.Component {
       actionLabel = 'Weiter';
 
     return (
-      <section className="nodes-new-content-section">
+      <section className={className}>
         <h2><I18n scope={'nodes.new.form.section.' + section.key + '.title'}/></h2>
         <div className="nodes-new-content-section-form">
           {children}

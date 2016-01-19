@@ -1,4 +1,5 @@
 const React = require('react');
+const map = require('lodash/collection/map');
 const Section = require('../models/nodes.widget_new.section');
 const NameCategorySection = require('./nodes.widget_new.section.name_category');
 const AddressSection = require('./nodes.widget_new.section.address');
@@ -19,18 +20,27 @@ const SECTIONS = {
 
 class Content extends React.Component {
   render() {
-    let { activeSection, onClickSection, onClickNext } = this.props,
-      content;
+    let { sections, onClickNext } = this.props,
+      content, sectionElements = [];
 
-    if (activeSection != null) {
+    sections.forEach((section) => {
+      let { id } = section,
+        Component = SECTIONS[id];
+
+      sectionElements.push(
+        <Component key={id} section={section} onClickNext={onClickNext}/>
+      );
+    });
+
+    /*if (activeSection != null) {
       let Section = SECTIONS[activeSection.id];
       content = <Section section={activeSection} onClickNext={onClickNext}/>
-    }
+    }*/
 
     return (
       <div className="nodes-new-content">
         <NodesForm>
-          {content}
+          {sectionElements}
         </NodesForm>
       </div>
     );

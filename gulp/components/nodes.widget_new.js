@@ -17,7 +17,7 @@ class Widget extends React.Component {
       <div className="nodes-new">
         <Header/>
         <Breadcrumbs sections={sections} onClickSection={onClickSection}/>
-        <Content activeSection={activeSection} onClickNext={onClickNext} />
+        <Content sections={sections} onClickNext={onClickNext} />
       </div>
     );
   }
