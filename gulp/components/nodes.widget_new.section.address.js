@@ -12,8 +12,29 @@ const accessToken = 'pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4M
 const mapId = 'sozialhelden.map-iqt6py1k';
 
 class AddressSection extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this._rendered = false;
+  }
+
   render() {
-    let { section, onClickNext } = this.props;
+    let { section, onClickNext } = this.props,
+      map;
+
+    // Render map only when section is active or was once active
+    if (this._rendered || section.active) {
+      map = (
+        <Map center={[51.505, -0.09]} zoom={13} className="nodes-new-content-section--address-map">
+          <TileLayer
+            url={`https://api.mapbox.com/v4/${mapId}/{z}/{x}/{y}${Browser.retina ? '@2x' : ''}.png?access_token=${accessToken}`}
+            attribution='<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'/>
+          <Marker position={[51.505, -0.09]}/>
+        </Map>
+      );
+
+      this._rendered = true;
+    }
 
     return (
       <Section section={section} onClickNext={onClickNext}>
@@ -46,12 +67,7 @@ class AddressSection extends React.Component {
             </Alert>
           </Row.Span>
           <Row.Span rows={6}>
-            <Map center={[51.505, -0.09]} zoom={13} className="nodes-new-content-section--address-map">
-              <TileLayer
-                url={`https://api.mapbox.com/v4/${mapId}/{z}/{x}/{y}${Browser.retina ? '@2x' : ''}.png?access_token=${accessToken}`}
-                attribution='<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'/>
-              <Marker position={[51.505, -0.09]}/>
-            </Map>
+            {map}
           </Row.Span>
         </Row>
       </Section>
