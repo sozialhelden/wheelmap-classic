@@ -94,6 +94,7 @@ group :test, :development do
   gem 'guard'
   gem 'guard-rspec'
   gem 'pry'
+  gem 'dotenv-rails'
 end
 
 group :test do
