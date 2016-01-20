@@ -32,7 +32,7 @@ Devise.setup do |config|
   config.omniauth :osm, OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret,
     :fetch_permissions => true, :client_options => {:site => OpenStreetMapConfig.oauth_site }
 
-  config.secret_key = '41d0275d54c37826d95fdde6c675c9a39d059c366db9283aaba42189e08fc079ed95f348f8b953e963ff67e0c4238f5e75ad3f0e899fd50c048146627779060c'
+  config.secret_key = ENV['DEVISE_SECRET_KEY']
   # Set this to true to use Basic Auth for AJAX requests.  True by default.
   config.http_authenticatable_on_xhr = true
 

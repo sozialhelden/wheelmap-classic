@@ -80,6 +80,10 @@ Copy the example openstreetmap config:
 
     cp config/open_street_map.SAMPLE.yml config/open_street_map.yml
 
+Copy the example environment variable config file:
+
+    cp .env.sample .env
+
 Copy the example database config and edit accordingly:
 
     cp config/database.SAMPLE.yml config/database.yml
