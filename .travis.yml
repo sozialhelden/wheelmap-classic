@@ -17,6 +17,7 @@ before_script:
   - cp config/open_street_map.SAMPLE.yml config/open_street_map.yml
   - cp config/newrelic.SAMPLE.yml config/newrelic.yml
   - cp config/application.yml.sample config/application.yml
+  - cp .env.sample .env
   - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
   - npm install --no-spin
 script:
