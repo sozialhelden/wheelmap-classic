@@ -85,13 +85,13 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 2.99'
   gem 'spork'
   gem 'rb-fsevent'
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'guard-spork'
-  gem 'guard-cucumber', "1.2.2"
+  # gem 'guard'
+  # gem 'guard-rspec'
+  # gem 'guard-spork'
+  # gem 'guard-cucumber', "1.2.2"
   gem 'pry'
 end
 
@@ -102,7 +102,6 @@ group :test do
   gem "capybara", "1.1.1"  # on mac, you need sudo port install libffi
   gem 'cucumber', :require => false
   gem 'cucumber-rails', :require => false
-  gem 'rspec', "2.12.0"
   gem 'autotest', :require => false
   gem 'nokogiri'
   gem 'pickle', :require => false
