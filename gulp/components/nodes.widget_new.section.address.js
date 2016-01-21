@@ -1,43 +1,30 @@
 const React = require('react');
-const { Map, TileLayer, Marker } = require('react-leaflet');
-const { Browser } = require('leaflet');
+const { connect } = require('react-redux');
+const { Marker } = require('react-leaflet');
 const Section = require('./nodes.widget_new.section');
 const Row = require('./common.row');
 const ControlGroup = require('./common.form.control_group');
 const Controls = require('./common.form.controls');
 const Input = require('./common.form.input');
 const Alert = require('./common.alert');
+const MapboxMap = require('./common.mapbox_map');
+const SectionModel = require('../models/nodes.widget_new.section');
+const { activateNextSection } = require('../reducers/nodes.widget_new');
 
-const accessToken = 'pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g';
-const mapId = 'sozialhelden.map-iqt6py1k';
+const { section } = require('./misc.types');
+const { func } = React.PropTypes;
 
 class AddressSection extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this._rendered = false;
-  }
+  static propTypes = {
+    section: section,
+    onClickNext: func
+  };
 
   render() {
-    let { section, onClickNext } = this.props,
-      map;
-
-    // Render map only when section is active or was once active
-    if (this._rendered || section.active) {
-      map = (
-        <Map center={[51.505, -0.09]} zoom={13} className="nodes-new-content-section--address-map">
-          <TileLayer
-            url={`https://api.mapbox.com/v4/${mapId}/{z}/{x}/{y}${Browser.retina ? '@2x' : ''}.png?access_token=${accessToken}`}
-            attribution='<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'/>
-          <Marker position={[51.505, -0.09]}/>
-        </Map>
-      );
-
-      this._rendered = true;
-    }
+    let { section, onClickNext } = this.props;
 
     return (
-      <Section section={section} onClickNext={onClickNext}>
+      <Section section={section} onClickAction={onClickNext}>
         <Row>
           <Row.Span rows={6}>
             <ControlGroup label={false}>
@@ -67,7 +54,9 @@ class AddressSection extends React.Component {
             </Alert>
           </Row.Span>
           <Row.Span rows={6}>
-            {map}
+            <MapboxMap center={[51.505, -0.09]} zoom={13} className="nodes-new-content-section--address-map">
+              <Marker position={[51.505, -0.09]}/>
+            </MapboxMap>
           </Row.Span>
         </Row>
       </Section>
@@ -75,4 +64,19 @@ class AddressSection extends React.Component {
   }
 }
 
-module.exports = AddressSection;
+function mapStateToProps(state) {
+  return {
+    section: state.get('sections').find(section => section.id === SectionModel.ADDRESS)
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    onClickNext: (section) => dispatch(activateNextSection(section))
+  };
+}
+
+module.exports = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AddressSection);

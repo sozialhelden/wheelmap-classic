@@ -1,36 +1,37 @@
 const React = require('react');
-const classNames = require('classnames');
 const I18n = require('./common.i18n');
 
+const { string, func } = React.PropTypes;
+const { section } = require('./misc.types');
+
 class Section extends React.Component {
-  static defaultProps = {
-    lastSection: false
+  static propTypes = {
+    actionLabel: string.isRequired, // @TODO Use scope,
+    section: section.isRequired,
+    onClickAction: func.isRequired
   };
 
-  onClickNext = (event) => {
+  static defaultProps = {
+    actionLabel: 'Weiter'
+  };
+
+  onClickAction = (event) => {
     event.preventDefault();
 
-    this.props.onClickNext(this.props.section);
+    this.props.onClickAction(this.props.section);
   };
 
   render() {
-    let { section, children, lastSection } = this.props,
-      className = classNames('nodes-new-content-section', { active: section.active }),
-      actionLabel;
-
-    if (lastSection)
-      actionLabel = 'Absenden';
-    else
-      actionLabel = 'Weiter';
+    let { section, children, actionLabel, onClickAction } = this.props;
 
     return (
-      <section className={className}>
+      <section className="nodes-new-content-section">
         <h2><I18n scope={'nodes.new.form.section.' + section.key + '.title'}/></h2>
         <div className="nodes-new-content-section-form">
           {children}
         </div>
         <div className="form-actions">
-          <button className="btn btn-primary pull-right submit" onClick={this.onClickNext}>{actionLabel}</button>
+          <button className="btn btn-primary pull-right submit" onClick={this.onClickAction}>{actionLabel}</button>
         </div>
       </section>
     );

@@ -1,26 +1,25 @@
-const { Map } = require('immutable');
-const Section = require('../models/nodes.widget_new.section');
-
+const { OrderedMap, Map, List } = require('immutable');
 const { createAction, handleActions } = require('redux-actions');
 
-const START = 'START';
+const SectionModel = require('../models/nodes.widget_new.section');
+const { push } = require('./common.router');
+
+const { newNodeSectionPath } = global.Routes;
+
 const ACTIVATE_SECTION = 'ACTIVATE_SECTION';
 const ACTIVATE_NEXT_SECTION = 'ACTIVATE_NEXT_SECTION';
 
-let sections = Section.TYPES.map(id => new Section({ id, key: id.toLowerCase() }));
+const sections = SectionModel.TYPES.map(id => {
+  return new SectionModel({
+    id,
+    key: SectionModel.KEYS[id]
+  });
+});
 
-module.exports = handleActions({
-  [START]: state => state.setIn(['sections', 0, 'active'], true),
-
-  [ACTIVATE_SECTION]: (state, action) => {
-    let section = action.payload;
-
-    // Do not activate old state if its not done yet.
-    if (!section.done)
-      return state;
-
+const reducer = handleActions({
+  [ACTIVATE_SECTION]: (state, { payload }) => {
     let sections = state.get('sections'),
-      index = sections.findIndex(otherSection => otherSection.id === section.id);
+      index = sections.findIndex(otherSection => otherSection.key === payload);
 
     // Reset done state to reflect path to new active section
     return state.set('sections', sections.map((otherSection, otherIndex) => {
@@ -29,28 +28,23 @@ module.exports = handleActions({
         active: otherIndex === index
       });
     }));
-  },
+  }
+}, Map({ sections: List(sections) }));
 
-  [ACTIVATE_NEXT_SECTION]: (state, action) => {
-    let sections = state.get('sections'),
+reducer.activateSection = createAction(ACTIVATE_SECTION);
+
+reducer.navigateToSection = function(section) {
+  return push(newNodeSectionPath(section.key));
+};
+
+reducer.navigateToNextSection = function() {
+  return function(dispatch, getState) {
+    let sections = getState().get('sections'),
       index = sections.findIndex(section => section.active),
       nextIndex = index + 1;
 
-    // Last section
-    if (nextIndex === sections.size)
-      return state;
+    dispatch(reducer.navigateToSection(sections.get(nextIndex)));
+  };
+};
 
-    sections = sections.map(function(section, index) {
-      return section.merge({
-        done: index < nextIndex,
-        active: index === nextIndex
-      });
-    });
-
-    return state.set('sections', sections);
-  }
-}, Map({ sections }));
-
-module.exports.start = createAction(START);
-module.exports.activateSection = createAction(ACTIVATE_SECTION);
-module.exports.activateNextSection = createAction(ACTIVATE_NEXT_SECTION);
+module.exports = reducer;

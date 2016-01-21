@@ -1,4 +1,4 @@
-const { Record, List } = require('immutable');
+const { Record } = require('immutable');
 
 const Section = Record({
   id: null,
@@ -14,13 +14,19 @@ Section.ACCESSIBILITY = 'ACCESSIBILITY';
 Section.CONTACT = 'CONTACT';
 Section.OVERVIEW = 'OVERVIEW';
 
-Section.TYPES = List([
+Section.TYPES = [
   Section.NAME_CATEGORY,
   Section.ADDRESS,
   Section.SIMILAR_NODES,
   Section.ACCESSIBILITY,
   Section.CONTACT,
   Section.OVERVIEW
-]);
+];
+
+Section.KEYS = {};
+
+Section.TYPES.forEach(type => {
+  Section.KEYS[type] = type.toLowerCase();
+});
 
 module.exports = Section;

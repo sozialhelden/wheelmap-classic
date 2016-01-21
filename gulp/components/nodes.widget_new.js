@@ -2,41 +2,39 @@ const React = require('react');
 const { connect } = require('react-redux');
 const Header = require('./nodes.widget_new.header');
 const Breadcrumbs = require('./nodes.widget_new.breadcrumbs');
-const Content = require('./nodes.widget_new.content');
-const { start, activateSection, activateNextSection } = require('../reducers/nodes.widget_new');
+const { start, navigateToSection } = require('../reducers/nodes.widget_new');
+
+const { sections } = require('./misc.types');
+const { func } = React.PropTypes;
 
 class Widget extends React.Component {
-  componentDidMount() {
-    this.props.onMount();
-  }
+  static propTypes = {
+    sections: sections.isRequired,
+    onNavigate: func.isRequired
+  };
 
   render() {
-    let { sections, activeSection, onClickSection, onClickNext } = this.props;
+    let { sections, onNavigate, children } = this.props;
 
     return (
       <div className="nodes-new">
         <Header/>
-        <Breadcrumbs sections={sections} onClickSection={onClickSection}/>
-        <Content sections={sections} onClickNext={onClickNext} />
+        <Breadcrumbs sections={sections} onNavigate={onNavigate}/>
+        {children}
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  let sections = state.get('sections');
-
   return {
-    sections: sections,
-    activeSection: sections.find(section => section.active)
+    sections: state.get('sections')
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onMount: () => dispatch(start()),
-    onClickSection: (section) => dispatch(activateSection(section)),
-    onClickNext: (section) => dispatch(activateNextSection(section))
+    onNavigate: (section) => dispatch(navigateToSection(section))
   };
 }
 

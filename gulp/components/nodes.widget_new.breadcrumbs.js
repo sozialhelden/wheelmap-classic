@@ -1,17 +1,27 @@
 const React = require('react');
 const { connect } = require('react-redux');
+const { Link } = require('react-router');
 const classNames = require('classnames');
 const I18n = require('./common.i18n');
-const Section = require('../models/nodes.widget_new.section');
+const SectionModel = require('../models/nodes.widget_new.section');
+const App = require('./nodes.widget_new.app');
+
+const { sections } = require('./misc.types');
+const { func, string } = React.PropTypes;
 
 class Breadcrumbs extends React.Component {
+  static propTypes = {
+    sections: sections.isRequired,
+    onNavigate: func.isRequired
+  };
+
   shouldComponentUpdate(nextProps) {
     return this.props.sections !== nextProps.sections;
   }
 
   render() {
-    let { sections, onClickSection } = this.props,
-      overviewSection = sections.find(section => section.id === Section.OVERVIEW),
+    let { sections, onNavigate } = this.props,
+      overviewSection = sections.find(section => section.id === SectionModel.OVERVIEW),
       className = classNames({ done: overviewSection.active }),
       list = [];
 
@@ -20,12 +30,19 @@ class Breadcrumbs extends React.Component {
       if (section === overviewSection)
         return;
 
-      let className = classNames({ active: section.active, done: section.done });
+      const { id, key, active, done } = section;
+      const className = classNames({ active, done });
+
+      const onClick = event => {
+        event.preventDefault();
+
+        onNavigate(section);
+      };
 
       list.push(
-        <li key={section.id} className={className}>
-          <a href="#" onClick={() => onClickSection(section)}>
-            <I18n scope={'nodes.new.form.section.' + section.key + '.name'}></I18n>
+        <li key={id} className={className}>
+          <a href="#" onClick={onClick}>
+            <I18n scope={`nodes.new.form.section.${key}.name`}></I18n>
           </a>
         </li>
       );
