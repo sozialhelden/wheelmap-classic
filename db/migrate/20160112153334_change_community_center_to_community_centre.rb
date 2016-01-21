@@ -1,6 +1,11 @@
 class ChangeCommunityCenterToCommunityCentre < ActiveRecord::Migration
+  class LocalNodeType < ActiveRecord::Base
+    self.table_name = 'node_types'
+
+    validates :identifier, :osm_value, :presence => true
+  end
   def up
-    node_type = NodeType.find_by_identifier('community_center')
+    node_type = LocalNodeType.find_by_identifier('community_center')
     if node_type.nil?
       return
     else
@@ -11,7 +16,7 @@ class ChangeCommunityCenterToCommunityCentre < ActiveRecord::Migration
   end
 
   def down
-    node_type = NodeType.find_by_identifier('community_centre')
+    node_type = LocalNodeType.find_by_identifier('community_centre')
     if node_type.nil?
       return
     else
