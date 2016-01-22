@@ -26,7 +26,7 @@ class Section extends React.Component {
 
     return (
       <section className="nodes-new-content-section">
-        <h2><I18n scope={'nodes.new.form.section.' + section.key + '.title'}/></h2>
+        <h2><I18n scope={`nodes.new.form.section.${section.key}.title`}/></h2>
         <div className="nodes-new-content-section-form">
           {children}
         </div>

@@ -1,5 +1,6 @@
 const React = require('react');
 const { connect } = require('react-redux');
+
 const Section = require('./nodes.widget_new.section');
 const ControlGroup = require('./common.form.control_group');
 const Controls = require('./common.form.controls');

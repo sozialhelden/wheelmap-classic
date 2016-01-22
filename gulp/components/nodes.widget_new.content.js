@@ -30,18 +30,6 @@ class Content extends React.Component {
     activateSection: func.isRequired
   };
 
-  componentWillMount(nextProps) {
-    let { params: { section } } = this.props;
-
-    this.props.activateSection(section);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    let { params: { section } } = nextProps;
-
-    this.props.activateSection(section);
-  }
-
   render() {
     let { params: { section } } = this.props;
 

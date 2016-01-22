@@ -1,6 +1,7 @@
 const React = require('react');
 const { connect } = require('react-redux');
 const { Marker } = require('react-leaflet');
+
 const Section = require('./nodes.widget_new.section');
 const Row = require('./common.row');
 const ControlGroup = require('./common.form.control_group');
@@ -9,7 +10,7 @@ const Input = require('./common.form.input');
 const Alert = require('./common.alert');
 const MapboxMap = require('./common.mapbox_map');
 const SectionModel = require('../models/nodes.widget_new.section');
-const { activateNextSection } = require('../reducers/nodes.widget_new');
+const { navigateToNextSection } = require('../reducers/nodes.widget_new');
 
 const { section } = require('./misc.types');
 const { func } = React.PropTypes;
@@ -21,10 +22,10 @@ class AddressSection extends React.Component {
   };
 
   render() {
-    let { section, onClickNext } = this.props;
+    let { section, onClickAction } = this.props;
 
     return (
-      <Section section={section} onClickAction={onClickNext}>
+      <Section section={section} onClickAction={onClickAction}>
         <Row>
           <Row.Span rows={6}>
             <ControlGroup label={false}>
@@ -72,7 +73,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onClickNext: (section) => dispatch(activateNextSection(section))
+    onClickAction: (section) => dispatch(navigateToNextSection(section))
   };
 }
 

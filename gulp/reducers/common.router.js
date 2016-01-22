@@ -13,4 +13,7 @@ methods.forEach(method => {
   actions[method] = createAction(TRANSITION, payloadCreatorCreator(method));
 });
 
-module.exports = { TRANSITION, ...actions };
+module.exports = {
+  TRANSITION,
+  ...actions
+};
