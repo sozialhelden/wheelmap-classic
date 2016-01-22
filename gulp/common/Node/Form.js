@@ -1,5 +1,5 @@
 const React = require('react');
-const Form = require('./common.form');
+const Form = require('../Form');
 
 function NodesForm(props) {
   return (

@@ -1,15 +1,14 @@
 const React = require('react');
 const { connect } = require('react-redux');
 
-const NameCategorySection = require('./nodes.widget_new.section.name_category');
-const AddressSection = require('./nodes.widget_new.section.address');
-const SimilarNodesSection = require('./nodes.widget_new.section.similar_nodes');
-const AccessibilitySection = require('./nodes.widget_new.section.accessibility');
-const ContactSection = require('./nodes.widget_new.section.contact');
-const OverviewSection = require('./nodes.widget_new.section.overview');
-const NodesForm = require('./nodes.form');
-const { KEYS, NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } = require('../models/nodes.widget_new.section');
-const { activateSection } = require('../reducers/nodes.widget_new');
+const NameCategorySection = require('./Section/NameCategory');
+const AddressSection = require('./Section/Address');
+const SimilarNodesSection = require('./Section/SimilarNodes');
+const AccessibilitySection = require('./Section/Accessibility');
+const ContactSection = require('./Section/Contact');
+const OverviewSection = require('./Section/Overview');
+const NodesForm = require('../common/Node/Form');
+const { KEYS, NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } = require('./models/Section');
 
 const SECTION_COMPONENTS = {
   [KEYS[NAME_CATEGORY]]: NameCategorySection,

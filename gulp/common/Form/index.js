@@ -1,6 +1,11 @@
 const React = require('react');
 const classNames = require('classnames');
 
+const ControlGroup = require('./ControlGroup');
+const Controls = require('./Controls');
+const Input = require('./Input');
+const Select = require('./Select');
+
 function Form(props) {
   let { children, className, type } = props;
 
@@ -21,5 +26,10 @@ Form.propTypes = {
 Form.defaultProps = {
   type: 'horizontal'
 };
+
+Form.ControlGroup = ControlGroup;
+Form.Controls = Controls;
+Form.Input = Input;
+Form.Select = Select;
 
 module.exports = Form;

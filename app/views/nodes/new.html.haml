@@ -13,7 +13,7 @@
     -#          - #%a{href: (send("new_#{section}_nodes_path") if @widget.done?(section))}
     -#          %a
     -#            = section
-    =react_component('Wheelmap.Nodes.WidgetNew.App')
+    =react_component('Wheelmap.NewNodeWidget')
 
 - content_for :javascript do
   = javascript_include_tag 'application'

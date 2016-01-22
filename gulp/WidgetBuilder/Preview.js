@@ -1,5 +1,5 @@
 const React = require('react');
-const I18n = require('./common.i18n');
+const I18n = require('../common/I18n');
 
 class WidgetBuilderPreview extends React.Component {
   shouldComponentUpdate(nextProps) {

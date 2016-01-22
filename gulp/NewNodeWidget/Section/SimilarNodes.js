@@ -1,17 +1,17 @@
 const React = require('react');
 const { connect } = require('react-redux');
 
-const Section = require('./nodes.widget_new.section');
-const SectionModel = require('../models/nodes.widget_new.section');
-const { navigateToNextSection } = require('../reducers/nodes.widget_new');
+const Section = require('./Section');
+const { navigateToNextSection } = require('../reducer');
+const SectionModel = require('../models/Section');
 
-const { section } = require('./misc.types');
+const { section } = require('../types');
 const { func } = React.PropTypes;
 
-class ContactSection extends React.Component {
+class SimilarNodesSection extends React.Component {
   static propTypes = {
     section: section,
-    onClickNext: func
+    onClickAction: func
   };
 
   render() {
@@ -27,17 +27,17 @@ class ContactSection extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    section: state.get('sections').find(section => section.id === SectionModel.CONTACT)
+    section: state.get('sections').find(section => section.id === SectionModel.SIMILAR_NODES)
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onClickAction: (section) => dispatch(navigateToNextSection(section))
+    onClickAction: (section) => dispatch(navigateToNextSection())
   };
 }
 
 module.exports = connect(
   mapStateToProps,
   mapDispatchToProps
-)(ContactSection);
+)(SimilarNodesSection);

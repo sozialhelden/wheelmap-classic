@@ -1,6 +1,6 @@
 const React = require('react');
 
-const I18n = require('./common.i18n');
+const I18n = require('../I18n');
 
 const { arrayOf, shape, string } = React.PropTypes;
 

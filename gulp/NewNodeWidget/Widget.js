@@ -1,10 +1,11 @@
 const React = require('react');
 const { connect } = require('react-redux');
-const Header = require('./nodes.widget_new.header');
-const Breadcrumbs = require('./nodes.widget_new.breadcrumbs');
-const { start, navigateToSection } = require('../reducers/nodes.widget_new');
 
-const { sections } = require('./misc.types');
+const Header = require('./Header');
+const Breadcrumbs = require('./Breadcrumbs');
+const { start, navigateToSection } = require('./reducer');
+
+const { sections } = require('./types');
 const { func } = React.PropTypes;
 
 class Widget extends React.Component {

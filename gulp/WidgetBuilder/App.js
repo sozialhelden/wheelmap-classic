@@ -1,11 +1,12 @@
 const React = require('react');
 const { Provider } = require('react-redux');
+
 const camelize = require('../helpers/camelize');
 const createStore = require('../helpers/create_store');
-const WidgetBuilder = require('./widget_builder');
-const Widget = require('../models/widget');
-const { init } = require('../actions/widget');
-const widgetBuilderReducer = require('../reducers/widget_builder');
+const WidgetBuilder = require('./WidgetBuilder');
+const Widget = require('./models/Widget');
+const { init } = require('./actions');
+const widgetBuilderReducer = require('./reducer');
 
 class WidgetBuilderApp extends React.Component {
   render() {

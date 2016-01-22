@@ -1,8 +1,8 @@
 const React = require('react');
-const I18n = require('./common.i18n');
+const I18n = require('../../common/I18n');
 
+const { section } = require('../types');
 const { string, func } = React.PropTypes;
-const { section } = require('./misc.types');
 
 class Section extends React.Component {
   static propTypes = {

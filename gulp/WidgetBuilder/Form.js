@@ -1,8 +1,9 @@
 const React = require('react');
 const debounce = require('mout/function/debounce');
-const I18n = require('./common.i18n');
-const Select = require('./common.form.select');
-const Photon = require('./photon');
+
+const I18n = require('../common/I18n');
+const Select = require('../common/Form/Select');
+const Photon = require('../common/Photon');
 
 class WidgetBuilderForm extends React.Component {
   onWidthChange = (event) => {

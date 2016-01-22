@@ -1,14 +1,14 @@
 const React = require('react');
 const { connect } = require('react-redux');
 
-const Section = require('./nodes.widget_new.section');
-const { navigateToNextSection } = require('../reducers/nodes.widget_new');
-const SectionModel = require('../models/nodes.widget_new.section');
+const Section = require('./Section');
+const { navigateToNextSection } = require('../reducer');
+const SectionModel = require('../models/section');
 
-const { section } = require('./misc.types');
+const { section } = require('../types');
 const { func } = React.PropTypes;
 
-class SimilarNodesSection extends React.Component {
+class AccessibilitySection extends React.Component {
   static propTypes = {
     section: section,
     onClickAction: func
@@ -27,17 +27,17 @@ class SimilarNodesSection extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    section: state.get('sections').find(section => section.id === SectionModel.SIMILAR_NODES)
+    section: state.get('sections').find(section => section.id === SectionModel.ACCESSIBILITY)
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onClickAction: (section) => dispatch(navigateToNextSection())
+    onClickAction: (section) => dispatch(navigateToNextSection(section))
   };
 }
 
 module.exports = connect(
   mapStateToProps,
   mapDispatchToProps
-)(SimilarNodesSection);
+)(AccessibilitySection);

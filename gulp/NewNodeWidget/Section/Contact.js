@@ -1,14 +1,14 @@
 const React = require('react');
 const { connect } = require('react-redux');
 
-const Section = require('./nodes.widget_new.section');
-const SectionModel = require('../models/nodes.widget_new.section');
-const { navigateToNextSection } = require('../reducers/nodes.widget_new');
+const Section = require('./Section');
+const SectionModel = require('../models/Section');
+const { navigateToNextSection } = require('../reducer');
 
-const { section } = require('./misc.types');
+const { section } = require('../types');
 const { func } = React.PropTypes;
 
-class OverviewSection extends React.Component {
+class ContactSection extends React.Component {
   static propTypes = {
     section: section,
     onClickNext: func
@@ -27,7 +27,7 @@ class OverviewSection extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    section: state.get('sections').find(section => section.id === SectionModel.OVERVIEW)
+    section: state.get('sections').find(section => section.id === SectionModel.CONTACT)
   };
 }
 
@@ -40,4 +40,4 @@ function mapDispatchToProps(dispatch) {
 module.exports = connect(
   mapStateToProps,
   mapDispatchToProps
-)(OverviewSection);
+)(ContactSection);

@@ -1,6 +1,6 @@
 const React = require('react');
 const classNames = require('classnames');
-const I18n = require('./common.i18n');
+const I18n = require('../I18n');
 
 function Input(props) {
   let { className, type, required, placeholderScope, ...otherProps } = props;

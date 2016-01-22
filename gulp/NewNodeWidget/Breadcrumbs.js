@@ -2,11 +2,11 @@ const React = require('react');
 const { connect } = require('react-redux');
 const { Link } = require('react-router');
 const classNames = require('classnames');
-const I18n = require('./common.i18n');
-const SectionModel = require('../models/nodes.widget_new.section');
-const App = require('./nodes.widget_new.app');
 
-const { sections } = require('./misc.types');
+const I18n = require('../common/I18n');
+const SectionModel = require('./models/Section');
+
+const { sections } = require('./types');
 const { func, string } = React.PropTypes;
 
 class Breadcrumbs extends React.Component {

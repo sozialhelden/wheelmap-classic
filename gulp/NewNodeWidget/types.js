@@ -1,7 +1,8 @@
 const React = require('react');
 const { List, Map, Set } = require('immutable');
 const reduce = require('lodash/collection/reduce');
-const Section = require('../models/nodes.widget_new.section');
+
+const Section = require('./models/Section');
 
 const { instanceOf } = React.PropTypes;
 
@@ -12,7 +13,7 @@ function checkImmutableOf(iterableTypChecker, itemTypeChecker) {
     if (required && prop == null) {
       return new Error(`Required ${locationName} \`${propName}\` was not specified in \`${component}\`.`);
     }
-    
+
     let error = iterableTypChecker(props, propName, component, location, propFullName);
 
     if (error != null)

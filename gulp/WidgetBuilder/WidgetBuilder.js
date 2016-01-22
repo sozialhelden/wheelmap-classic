@@ -2,11 +2,12 @@ const React = require('react');
 const { connect } = require('react-redux');
 const setParam = require('mout/queryString/setParam');
 const debounce = require('mout/function/debounce');
-const Form = require('./widget_builder.form');
-const Embed = require('./widget_builder.embed');
-const Preview = require('./widget_builder.preview');
-const App = require('./widget_builder.app');
-const { changeWidth, changeHeight, changeLocation, changeProvider, changeCategories, save } = require('../actions/widget');
+
+const Form = require('./Form');
+const Embed = require('./Embed');
+const Preview = require('./Preview');
+const App = require('./App');
+const { changeWidth, changeHeight, changeLocation, changeProvider, changeCategories, save } = require('./actions');
 
 class WidgetBuilder extends React.Component {
   shouldComponentUpdate(nextProps) {

@@ -1,6 +1,5 @@
 const React = require('react');
-const I18n = require('./common.i18n');
-const Input = require('./common.form.input');
+const I18n = require('../I18n');
 
 function ControlGroup(props) {
   let { children, label, labelScope, labelFor } = props;

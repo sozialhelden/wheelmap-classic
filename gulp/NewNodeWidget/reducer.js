@@ -1,8 +1,8 @@
 const { OrderedMap, Map, List } = require('immutable');
 const { createAction, handleActions } = require('redux-actions');
 
-const SectionModel = require('../models/nodes.widget_new.section');
-const { push } = require('./common.router');
+const SectionModel = require('./models/Section');
+const { push } = require('../common/reducers/router');
 
 const ACTIVATE_SECTION = 'ACTIVATE_SECTION';
 const ACTIVATE_NEXT_SECTION = 'ACTIVATE_NEXT_SECTION';
