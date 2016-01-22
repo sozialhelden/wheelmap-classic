@@ -1,7 +1,6 @@
 class ChangeCommunityCenterToCommunityCentre < ActiveRecord::Migration
   class LocalNodeType < ActiveRecord::Base
     self.table_name = 'node_types'
-    attr_accessible :identifier, :osm_value
     validates :identifier, :osm_value, :presence => true
   end
   def up
