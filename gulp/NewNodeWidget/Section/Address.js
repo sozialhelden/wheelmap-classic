@@ -3,27 +3,25 @@ const { connect } = require('react-redux');
 const { Marker } = require('react-leaflet');
 
 const Section = require('./Section');
-const SectionModel = require('../models/Section');
-const { navigateToNextSection } = require('../reducer');
+const { ADDRESS } = require('../models/sections');
+const { navigateToNextSection } = require('../actions');
 const Form = require('../../common/Form');
 const Alert = require('../../common/Alert');
 const MapboxMap = require('../../common/MapboxMap');
 const Row = require('../../common/Row');
 
-const { section } = require('../types');
 const { func } = React.PropTypes;
 
 class AddressSection extends React.Component {
   static propTypes = {
-    section: section,
     onClickNext: func
   };
 
   render() {
-    let { section, onClickAction } = this.props;
+    let { onClickAction } = this.props;
 
     return (
-      <Section section={section} onClickAction={onClickAction}>
+      <Section section={ADDRESS} onClickAction={onClickAction}>
         <Row>
           <Row.Span rows={6}>
             <Form.ControlGroup label={false}>
@@ -64,9 +62,7 @@ class AddressSection extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    section: state.get('sections').find(section => section.id === SectionModel.ADDRESS)
-  };
+  return {};
 }
 
 function mapDispatchToProps(dispatch) {

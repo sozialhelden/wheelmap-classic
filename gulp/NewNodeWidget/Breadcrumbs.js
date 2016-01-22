@@ -4,34 +4,35 @@ const { Link } = require('react-router');
 const classNames = require('classnames');
 
 const I18n = require('../common/I18n');
-const SectionModel = require('./models/Section');
+const { OVERVIEW } = require('./models/sections');
 
-const { sections } = require('./types');
+const { immutableListOf } = require('../common/types');
 const { func, string } = React.PropTypes;
 
 class Breadcrumbs extends React.Component {
   static propTypes = {
-    sections: sections.isRequired,
+    sections: immutableListOf(string).isRequired,
+    activeSection: string,
     onNavigate: func.isRequired
   };
 
   shouldComponentUpdate(nextProps) {
-    return this.props.sections !== nextProps.sections;
+    return this.props.activeSection !== nextProps.activeSection;
   }
 
   render() {
-    let { sections, onNavigate } = this.props,
-      overviewSection = sections.find(section => section.id === SectionModel.OVERVIEW),
-      className = classNames({ done: overviewSection.active }),
-      list = [];
+    const { sections, activeSection, onNavigate } = this.props;
+    const className = classNames({ done: activeSection === OVERVIEW });
+    const list = [];
+    const activeSectionIndex = sections.findIndex(section => section === activeSection);
 
-    sections.forEach((section) => {
+    sections.forEach((section, index) => {
       // Skip overview as this section is not part of the breadcrumbs
-      if (section === overviewSection)
+      if (section === OVERVIEW)
         return;
 
-      const { id, key, active, done } = section;
-      const className = classNames({ active, done });
+      const done = index < activeSectionIndex;
+      const className = classNames({ active: section === activeSection, done });
 
       const onClick = event => {
         event.preventDefault();
@@ -40,9 +41,9 @@ class Breadcrumbs extends React.Component {
       };
 
       list.push(
-        <li key={id} className={className}>
+        <li key={section} className={className}>
           <a href="#" onClick={onClick}>
-            <I18n scope={`nodes.new.form.section.${key}.name`}></I18n>
+            <I18n scope={`nodes.new.form.section.${section}.name`}></I18n>
           </a>
         </li>
       );

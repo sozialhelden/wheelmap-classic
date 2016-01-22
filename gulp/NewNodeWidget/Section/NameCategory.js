@@ -3,23 +3,21 @@ const { connect } = require('react-redux');
 
 const Section = require('./Section');
 const Form = require('../../common/Form');
-const { navigateToNextSection } = require('../reducer');
-const SectionModel = require('../models/Section');
+const { navigateToNextSection } = require('../actions');
+const { NAME_CATEGORY } = require('../models/sections');
 
-const { section } = require('../types');
 const { func } = React.PropTypes;
 
 class NameCategorySection extends React.Component {
   static propTypes = {
-    section: section,
     onClickNext: func
   };
 
   render() {
-    let { section, onClickNext } = this.props;
+    let { onClickNext } = this.props;
 
     return (
-      <Section section={section} actionLabel="Weiter" onClickAction={onClickNext}>
+      <Section section={NAME_CATEGORY} actionLabel="Weiter" onClickAction={onClickNext}>
         <Form.ControlGroup labelFor="name" labelScope="activerecord.attributes.poi.name">
           <Form.Controls>
             <Form.Input name="name"/>
@@ -36,9 +34,7 @@ class NameCategorySection extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    section: state.get('sections').find(section => section.id === SectionModel.NAME_CATEGORY)
-  };
+  return {};
 }
 
 function mapDispatchToProps(dispatch) {

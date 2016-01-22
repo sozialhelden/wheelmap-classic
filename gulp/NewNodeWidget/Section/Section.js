@@ -1,13 +1,12 @@
 const React = require('react');
 const I18n = require('../../common/I18n');
 
-const { section } = require('../types');
 const { string, func } = React.PropTypes;
 
 class Section extends React.Component {
   static propTypes = {
     actionLabel: string.isRequired, // @TODO Use scope,
-    section: section.isRequired,
+    section: string.isRequired,
     onClickAction: func.isRequired
   };
 

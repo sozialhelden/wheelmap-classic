@@ -8,15 +8,15 @@ const AccessibilitySection = require('./Section/Accessibility');
 const ContactSection = require('./Section/Contact');
 const OverviewSection = require('./Section/Overview');
 const NodesForm = require('../common/Node/Form');
-const { KEYS, NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } = require('./models/Section');
+const { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } = require('./models/sections');
 
 const SECTION_COMPONENTS = {
-  [KEYS[NAME_CATEGORY]]: NameCategorySection,
-  [KEYS[ADDRESS]]: AddressSection,
-  [KEYS[SIMILAR_NODES]]: SimilarNodesSection,
-  [KEYS[ACCESSIBILITY]]: AccessibilitySection,
-  [KEYS[CONTACT]]: ContactSection,
-  [KEYS[OVERVIEW]]: OverviewSection
+  [NAME_CATEGORY]: NameCategorySection,
+  [ADDRESS]: AddressSection,
+  [SIMILAR_NODES]: SimilarNodesSection,
+  [ACCESSIBILITY]: AccessibilitySection,
+  [CONTACT]: ContactSection,
+  [OVERVIEW]: OverviewSection
 };
 
 const { shape, string, func } = React.PropTypes;

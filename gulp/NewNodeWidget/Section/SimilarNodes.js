@@ -2,23 +2,21 @@ const React = require('react');
 const { connect } = require('react-redux');
 
 const Section = require('./Section');
-const { navigateToNextSection } = require('../reducer');
-const SectionModel = require('../models/Section');
+const { navigateToNextSection } = require('../actions');
+const { SIMILAR_NODES } = require('../models/sections');
 
-const { section } = require('../types');
 const { func } = React.PropTypes;
 
 class SimilarNodesSection extends React.Component {
   static propTypes = {
-    section: section,
     onClickAction: func
   };
 
   render() {
-    let { section, onClickAction } = this.props;
+    let { onClickAction } = this.props;
 
     return (
-      <Section section={section} onClickAction={onClickAction}>
+      <Section section={SIMILAR_NODES} onClickAction={onClickAction}>
 
       </Section>
     );
@@ -26,14 +24,12 @@ class SimilarNodesSection extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    section: state.get('sections').find(section => section.id === SectionModel.SIMILAR_NODES)
-  };
+  return {};
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onClickAction: (section) => dispatch(navigateToNextSection())
+    onClickAction: (section) => dispatch(navigateToNextSection(section))
   };
 }
 

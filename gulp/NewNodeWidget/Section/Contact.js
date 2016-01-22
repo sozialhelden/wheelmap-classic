@@ -2,23 +2,21 @@ const React = require('react');
 const { connect } = require('react-redux');
 
 const Section = require('./Section');
-const SectionModel = require('../models/Section');
-const { navigateToNextSection } = require('../reducer');
+const { CONTACT } = require('../models/sections');
+const { navigateToNextSection } = require('../actions');
 
-const { section } = require('../types');
 const { func } = React.PropTypes;
 
 class ContactSection extends React.Component {
   static propTypes = {
-    section: section,
     onClickNext: func
   };
 
   render() {
-    let { section, onClickAction } = this.props;
+    let { onClickAction } = this.props;
 
     return (
-      <Section section={section} onClickAction={onClickAction}>
+      <Section section={CONTACT} onClickAction={onClickAction}>
 
       </Section>
     );
@@ -26,9 +24,7 @@ class ContactSection extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    section: state.get('sections').find(section => section.id === SectionModel.CONTACT)
-  };
+  return {};
 }
 
 function mapDispatchToProps(dispatch) {

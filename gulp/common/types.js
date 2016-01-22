@@ -2,8 +2,6 @@ const React = require('react');
 const { List, Map, Set } = require('immutable');
 const reduce = require('lodash/collection/reduce');
 
-const Section = require('./models/Section');
-
 const { instanceOf } = React.PropTypes;
 
 function checkImmutableOf(iterableTypChecker, itemTypeChecker) {
@@ -40,12 +38,7 @@ const immutableListOf = checkImmutableOf.bind(null, immutableList);
 const immutableMapOf = checkImmutableOf.bind(null, immutableMap);
 const immutableSetOf = checkImmutableOf.bind(null, immutableSet);
 
-const section = instanceOf(Section);
-const sections = immutableListOf(section);
-
 module.exports = {
   immutableList,
-  immutableListOf,
-  section,
-  sections
+  immutableListOf
 };

@@ -3,24 +3,25 @@ const { connect } = require('react-redux');
 
 const Header = require('./Header');
 const Breadcrumbs = require('./Breadcrumbs');
-const { start, navigateToSection } = require('./reducer');
+const { navigateToSection } = require('./actions');
 
-const { sections } = require('./types');
-const { func } = React.PropTypes;
+const { immutableListOf } = require('../common/types');
+const { func, arrayOf, string } = React.PropTypes;
 
 class Widget extends React.Component {
   static propTypes = {
-    sections: sections.isRequired,
+    sections: immutableListOf(string).isRequired,
+    activeSection: string,
     onNavigate: func.isRequired
   };
 
   render() {
-    let { sections, onNavigate, children } = this.props;
+    let { sections, activeSection, onNavigate, children } = this.props;
 
     return (
       <div className="nodes-new">
         <Header/>
-        <Breadcrumbs sections={sections} onNavigate={onNavigate}/>
+        <Breadcrumbs sections={sections} activeSection={activeSection} onNavigate={onNavigate}/>
         {children}
       </div>
     );
@@ -29,7 +30,8 @@ class Widget extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    sections: state.get('sections')
+    sections: state.get('sections'),
+    activeSection: state.get('activeSection')
   };
 }
 

@@ -7,11 +7,11 @@ const { Router, Route, Redirect, browserHistory } = require('react-router');
 const Widget = require('./Widget');
 const Content = require('./Content');
 const reducer = require('./reducer');
+const { activateSection } = require('./actions');
 const { TRANSITION } = require('../common/reducers/router');
-const { KEYS, NAME_CATEGORY } = require('./models/Section');
+const { NAME_CATEGORY } = require('./models/sections');
 
 const { newNodePath, newNodeSectionPath } = global.Routes;
-const { activateSection } = reducer;
 
 const createExtendedStore = applyMiddleware(thunk, transitionMiddleware)(createStore);
 
@@ -32,7 +32,7 @@ class App extends React.Component {
     return (
       <Provider store={this.store}>
         <Router history={browserHistory}>
-          <Redirect from={newNodePath.toString()} to={newNodeSectionPath(KEYS[NAME_CATEGORY])}/>
+          <Redirect from={newNodePath.toString()} to={newNodeSectionPath(NAME_CATEGORY)}/>
           <Route path={newNodePath.toString()} component={Widget}>
             <Route path={newNodeSectionPath.toString()}
                    component={Content}

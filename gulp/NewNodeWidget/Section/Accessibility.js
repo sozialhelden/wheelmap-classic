@@ -2,23 +2,21 @@ const React = require('react');
 const { connect } = require('react-redux');
 
 const Section = require('./Section');
-const { navigateToNextSection } = require('../reducer');
-const SectionModel = require('../models/section');
+const { navigateToNextSection } = require('../actions');
+const { ACCESSIBILITY } = require('../models/sections');
 
-const { section } = require('../types');
 const { func } = React.PropTypes;
 
 class AccessibilitySection extends React.Component {
   static propTypes = {
-    section: section,
     onClickAction: func
   };
 
   render() {
-    let { section, onClickAction } = this.props;
+    let { onClickAction } = this.props;
 
     return (
-      <Section section={section} onClickAction={onClickAction}>
+      <Section section={ACCESSIBILITY} onClickAction={onClickAction}>
 
       </Section>
     );
@@ -26,9 +24,7 @@ class AccessibilitySection extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    section: state.get('sections').find(section => section.id === SectionModel.ACCESSIBILITY)
-  };
+  return {};
 }
 
 function mapDispatchToProps(dispatch) {
