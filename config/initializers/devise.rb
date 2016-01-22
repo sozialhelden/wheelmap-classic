@@ -33,6 +33,7 @@ Devise.setup do |config|
     :fetch_permissions => true, :client_options => {:site => OpenStreetMapConfig.oauth_site }
 
   config.secret_key = ENV['DEVISE_SECRET_KEY']
+  config.allow_insecure_token_lookup = true
   # Set this to true to use Basic Auth for AJAX requests.  True by default.
   config.http_authenticatable_on_xhr = true
 
