@@ -11,20 +11,21 @@ const { TRANSITION, updateRouterState } = require('../reducers/common.router');
 const { KEYS, NAME_CATEGORY } = require('../models/nodes.widget_new.section');
 
 const { newNodePath, newNodeSectionPath } = global.Routes;
+const { activateSection } = reducer;
 
-const createStoreWithMiddleware = applyMiddleware(thunk, transitionMiddleware)(createStore);
+const createExtendedStore = applyMiddleware(thunk, transitionMiddleware)(createStore);
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.store = createStoreWithMiddleware(reducer);
+    this.store = createExtendedStore(reducer);
   }
 
   onEnterContent = (nextState, replace) => {
     const { params: { section } } = nextState;
 
-    this.store.dispatch(reducer.activateSection(section));
+    this.store.dispatch(activateSection(section));
   };
 
   render() {

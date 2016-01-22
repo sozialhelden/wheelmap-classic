@@ -1,7 +1,7 @@
 const React = require('react');
 const debounce = require('mout/function/debounce');
 const I18n = require('./common.i18n');
-const Select = require('./common.select');
+const Select = require('./common.form.select');
 const Photon = require('./photon');
 
 class WidgetBuilderForm extends React.Component {

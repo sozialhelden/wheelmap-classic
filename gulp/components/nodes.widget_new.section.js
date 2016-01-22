@@ -22,11 +22,11 @@ class Section extends React.Component {
   };
 
   render() {
-    let { section, children, actionLabel, onClickAction } = this.props;
+    let { section: { key }, children, actionLabel, onClickAction } = this.props;
 
     return (
       <section className="nodes-new-content-section">
-        <h2><I18n scope={`nodes.new.form.section.${section.key}.title`}/></h2>
+        <h2><I18n scope={`nodes.new.form.section.${key}.title`}/></h2>
         <div className="nodes-new-content-section-form">
           {children}
         </div>
