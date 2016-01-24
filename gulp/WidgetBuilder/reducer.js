@@ -1,6 +1,6 @@
 const { Map } = require('immutable');
 const { CHANGE_WIDTH, CHANGE_HEIGHT, CHANGE_CATEGORIES, CHANGE_LOCATION, CHANGE_PROVIDER, INIT, SAVE } = require('./actions');
-const uncamelize = require('../helpers/uncamelize');
+const uncamelize = require('./helpers/uncamelize');
 
 const DEFAULT_ZOOM = 16;
 

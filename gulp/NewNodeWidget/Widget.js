@@ -4,6 +4,7 @@ const { connect } = require('react-redux');
 const Header = require('./Header');
 const Breadcrumbs = require('./Breadcrumbs');
 const { navigateToSection } = require('./actions');
+const { sectionsSelector, activeSectionSelector } = require('./selectors/widget');
 
 const { immutableListOf } = require('../common/types');
 const { func, arrayOf, string } = React.PropTypes;
@@ -30,8 +31,8 @@ class Widget extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    sections: state.get('sections'),
-    activeSection: state.get('activeSection')
+    sections: sectionsSelector(state),
+    activeSection: activeSectionSelector(state)
   };
 }
 

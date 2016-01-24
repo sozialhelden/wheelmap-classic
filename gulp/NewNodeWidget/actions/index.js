@@ -1,6 +1,6 @@
 const { createAction } = require('redux-actions');
 
-const { push } = require('../common/reducers/router');
+const { push } = require('../../common/actions/router');
 
 const ACTIVATE_SECTION = 'ACTIVATE_SECTION';
 
@@ -12,9 +12,8 @@ const navigateToSection = function(section) {
 
 const navigateToNextSection = function(currentSection) {
   return function(dispatch, getState) {
-    let sections = getState().get('sections'),
-      index = sections.findIndex(section => section === currentSection),
-      nextIndex = index + 1;
+    let sections = getState().widget.get('sections'),
+      nextIndex = sections.indexOf(currentSection) + 1;
 
     dispatch(navigateToSection(sections.get(nextIndex)));
   };

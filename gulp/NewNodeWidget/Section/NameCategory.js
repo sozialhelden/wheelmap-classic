@@ -5,6 +5,7 @@ const Section = require('./Section');
 const Form = require('../../common/Form');
 const { navigateToNextSection } = require('../actions');
 const { NAME_CATEGORY } = require('../models/sections');
+const { categoriesSelector } = require('../common/selectors/category');
 
 const { func } = React.PropTypes;
 
@@ -34,7 +35,9 @@ class NameCategorySection extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return {};
+  return {
+    categories: categoriesSelector(state)
+  };
 }
 
 function mapDispatchToProps(dispatch) {

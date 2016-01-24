@@ -5,16 +5,22 @@ const promise = require('redux-promise');
 const { Provider } = require('react-redux');
 const { Router, Route, Redirect, browserHistory } = require('react-router');
 
+const multi = require('../common/middleware/multi');
+const transition = require('../common/middleware/transition');
 const Widget = require('./Widget');
 const Content = require('./Content');
-const reducer = require('./reducer');
+const reducer = require('./reducers');
 const { activateSection } = require('./actions');
-const { TRANSITION } = require('../common/reducers/router');
 const { NAME_CATEGORY } = require('./models/sections');
 
 const { newNodePath, newNodeSectionPath } = global.Routes;
 
-const createExtendedStore = applyMiddleware(thunk, promise, transitionMiddleware)(createStore);
+const createExtendedStore = applyMiddleware(
+  multi,
+  thunk,
+  promise,
+  transition(browserHistory)
+)(createStore);
 
 class App extends React.Component {
   constructor(props) {
@@ -42,19 +48,6 @@ class App extends React.Component {
         </Router>
       </Provider>
     );
-  }
-}
-
-function transitionMiddleware({ getState }) {
-  return (next) => (action) => {
-    let { type } = action;
-
-    if (type !== TRANSITION)
-      return next(action);
-
-    let { payload: { method, args } } = action;
-
-    browserHistory[method].apply(browserHistory, args);
   }
 }
 

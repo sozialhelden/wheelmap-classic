@@ -33,7 +33,7 @@
     "redux-promise": "^0.5.1",
     "redux-thunk": "^1.0.0",
     "require-dir": "^0.3.0",
-    "reselect": "^2.0.1",
+    "reselect": "^2.0.2",
     "vinyl-source-stream": "^1.1.0"
   },
   "repository": {
