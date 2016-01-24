@@ -1,6 +1,7 @@
 const React = require('react');
 const { createStore, applyMiddleware } = require('redux');
 const thunk = require('redux-thunk');
+const promise = require('redux-promise');
 const { Provider } = require('react-redux');
 const { Router, Route, Redirect, browserHistory } = require('react-router');
 
@@ -13,7 +14,7 @@ const { NAME_CATEGORY } = require('./models/sections');
 
 const { newNodePath, newNodeSectionPath } = global.Routes;
 
-const createExtendedStore = applyMiddleware(thunk, transitionMiddleware)(createStore);
+const createExtendedStore = applyMiddleware(thunk, promise, transitionMiddleware)(createStore);
 
 class App extends React.Component {
   constructor(props) {

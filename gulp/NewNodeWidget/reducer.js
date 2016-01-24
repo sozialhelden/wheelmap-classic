@@ -11,8 +11,6 @@ const DEFAULT_STATE = Map({
 
 module.exports = handleActions({
   [ACTIVATE_SECTION]: (state, { payload: activeSection }) => {
-    console.log(activeSection);
-
     return state.set('activeSection', activeSection);
   }
 }, DEFAULT_STATE);
