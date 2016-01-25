@@ -66,6 +66,9 @@ Spork.prefork do
     #       # Equivalent to being in spec/controllers
     #     end
     config.infer_spec_type_from_file_location!
+
+    # replace deprecated ExampleGroup#example
+    config.expose_current_running_example_as :example
   end
 end
 
