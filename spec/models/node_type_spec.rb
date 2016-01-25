@@ -6,10 +6,10 @@ describe NodeType do
   end
 
   it "should create a valid category" do
-    @node_type.should be_valid
+    expect(@node_type).to be_valid
   end
 
   it "should have translated name" do
-    @node_type.localized_name.should eql 'Bar'
+    expect(@node_type.localized_name).to eql 'Bar'
   end
 end

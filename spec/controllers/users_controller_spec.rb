@@ -13,24 +13,24 @@ describe UsersController do
   end
 
   it "should authenticate user successfully with given credentials" do
-    @user.should be_app_authorized
+    expect(@user).to be_app_authorized
     post :authenticate, :email => 'email@wheelmap.org', :password => 'password'
-    response.code.should == '200'
+    expect(response.code).to eq('200')
   end
 
   it "should authenticate user successfully but app not connected" do
     @user.oauth_token = nil
     @user.oauth_secret = nil
     @user.save!
-    @user.should_not be_app_authorized
+    expect(@user).not_to be_app_authorized
     post :authenticate, :email => 'email@wheelmap.org', :password => 'password'
-    response.code.should == '403'
-    response.body.should match /Application needs to be authorized/
+    expect(response.code).to eq('403')
+    expect(response.body).to match /Application needs to be authorized/
   end
 
   it "should not authenticate user with wrong credentials" do
     post :authenticate, :email => 'horst@yahoo.com', :password => 'gibberish'
-    response.code.should == '400'
+    expect(response.code).to eq('400')
   end
 
   context "widget" do
@@ -48,7 +48,7 @@ describe UsersController do
 
     it "will be assigned to the current user" do
       get :widgets
-      response.code.should == '200'
+      expect(response.code).to eq('200')
       expect(assigns(:widget))
     end
 

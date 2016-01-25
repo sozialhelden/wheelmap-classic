@@ -32,14 +32,14 @@ describe OmniauthCallbacksController do
 
     it "signs in the user" do
       get :osm
-      controller.current_user.should eql user
+      expect(controller.current_user).to eql user
     end
 
     it "updates the users' oauth credentials" do
       get :osm
       user.reload
-      user.oauth_token.should eql 'token'
-      user.oauth_secret.should eql 'secret'
+      expect(user.oauth_token).to eql 'token'
+      expect(user.oauth_secret).to eql 'secret'
     end
 
   end
@@ -51,16 +51,16 @@ describe OmniauthCallbacksController do
     end
 
     it "does not create a new user" do
-      lambda {
+      expect {
         get :osm
-      }.should_not change(User, :count)
+      }.not_to change(User, :count)
     end
 
    it_behaves_like "any authorized user"
 
     it "redirects to after_sign_in_path" do
       get :osm
-      response.should redirect_to '/map'
+      expect(response).to redirect_to '/map'
     end
   end
 
@@ -71,31 +71,31 @@ describe OmniauthCallbacksController do
     end
 
     it "does not create a new user" do
-      lambda {
+      expect {
         get :osm
-      }.should change(User, :count).by(1)
+      }.to change(User, :count).by(1)
     end
 
     it_behaves_like "any authorized user"
 
     it "redirects to after_signup_edit_profil_path" do
       get :osm
-      response.should redirect_to after_signup_edit_profile_url
+      expect(response).to redirect_to after_signup_edit_profile_url
     end
   end
 
   shared_examples "any auth failure" do
     before do
-      controller.should_not_receive(:find_or_create_user)
+      expect(controller).not_to receive(:find_or_create_user)
     end
     it "doesn't login user" do
       get :osm
-      controller.current_user.should be_nil
+      expect(controller.current_user).to be_nil
     end
 
     it "redirects user back to sign in page" do
       get :osm
-      response.should redirect_to new_user_session_url
+      expect(response).to redirect_to new_user_session_url
     end
   end
 
