@@ -48,7 +48,6 @@ describe User do
       @user = FactoryGirl.build(:user, :email => nil, :password => 'password')
       expect(@user).not_to be_valid
       expect(@user.errors[:email].size).to eq(1)
-      # expect(@user).to have(1).error_on(:email)
     end
 
     it "should not be possible to save a user with a short password" do
