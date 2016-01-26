@@ -27,17 +27,17 @@ describe Api::PhotosController do
     end
 
     it "should scope photos to given node" do
-      subject.should_receive(:parent).and_return(poi)
-      poi.should_receive(:photos).and_return(Photo.scoped({}))
+      expect(subject).to receive(:parent).and_return(poi)
+      expect(poi).to receive(:photos).and_return(Photo.scoped({}))
       get(:index, :node_id => poi.id, :api_key => user.authentication_token)
-      response.should be_success
+      expect(response).to be_success
     end
 
     it "should scope photos to given user" do
-      subject.should_receive(:parent).and_return(user)
-      user.should_receive(:photos).and_return(Photo.scoped({}))
+      expect(subject).to receive(:parent).and_return(user)
+      expect(user).to receive(:photos).and_return(Photo.scoped({}))
       get(:index, :url => api_user_photos_path, :api_key => user.authentication_token)
-      response.should be_success
+      expect(response).to be_success
     end
 
     context 'format json' do
@@ -45,14 +45,14 @@ describe Api::PhotosController do
       it "should render json when using accept header" do
         request.env['HTTP_ACCEPT'] = 'application/json'
         get(:index, :node_id => poi.id, :api_key => user.authentication_token)
-        response.should be_success
-        request.format.to_sym.should eql(:json)
+        expect(response).to be_success
+        expect(request.format.to_sym).to eql(:json)
       end
 
       it "should render json as default format" do
         get(:index, :node_id => poi.id, :api_key => user.authentication_token)
-        response.should be_success
-        request.format.to_sym.should eql(:json)
+        expect(response).to be_success
+        expect(request.format.to_sym).to eql(:json)
       end
     end
 
@@ -64,8 +64,8 @@ describe Api::PhotosController do
 
       it "should render xml when using accept header" do
         get(:index, :node_id => poi.id, :api_key => user.authentication_token)
-        response.should be_success
-        request.format.to_sym.should eql(:xml)
+        expect(response).to be_success
+        expect(request.format.to_sym).to eql(:xml)
       end
     end
   end
@@ -78,15 +78,15 @@ describe Api::PhotosController do
     end
 
     it "is possible to upload images for a given node" do
-      lambda {
+      expect {
         post(:create, :node_id => poi.id, :api_key => user.authentication_token, :photo => fixture_file_upload('/placeholder.jpg'))
-        response.status.should eql 201
-      }.should change(Photo, :count).by(1)
+        expect(response.status).to eql 201
+      }.to change(Photo, :count).by(1)
     end
 
     it "is not possible to upload images for a user" do
       post(:create, :url => api_user_photos_path, :api_key => user.authentication_token, :photo => {:image => fixture_file_upload('/placeholder.jpg')})
-      response.status.should eql 400
+      expect(response.status).to eql 400
     end
   end
 
@@ -101,27 +101,27 @@ describe Api::PhotosController do
 
     it "is possible to delete images for a given node" do
       delete(:destroy, :id => photo.id, :node_id => poi.id, :api_key => user.authentication_token)
-      response.code.should eql "200"
+      expect(response.code).to eql "200"
     end
 
     it "is possible to delete images for a given user" do
       delete(:destroy, :id => photo.id, :url => api_user_photo_path(photo), :api_key => user.authentication_token)
-      response.code.should eql "200"
+      expect(response.code).to eql "200"
     end
 
     it "is not possible to delete an image, which does not belong to given node" do
       delete(:destroy, :id => another_photo.id, :node_id => poi.id, :api_key => user.authentication_token)
-      response.code.should eql "403"
+      expect(response.code).to eql "403"
     end
 
     it "is not possible to delete an image, which does not belong to given user" do
       delete(:destroy, :id => another_photo.id, :url => api_user_photo_path(another_photo), :api_key => user.authentication_token)
-      response.code.should eql "403"
+      expect(response.code).to eql "403"
     end
 
     it "is not possible to delete an image, which belongs to a node, but not to the current user" do
       delete(:destroy, :id => another_photo.id, :node_id => another_photo.poi.id, :api_key => user.authentication_token)
-      response.code.should eql "403"
+      expect(response.code).to eql "403"
     end
   end
 

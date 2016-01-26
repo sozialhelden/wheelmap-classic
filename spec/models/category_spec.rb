@@ -7,10 +7,10 @@ describe Category do
   end
 
   it "should create a valid category" do
-    @category.should be_valid
+    expect(@category).to be_valid
   end
 
   it "should have translated name" do
-    @category.localized_name.should eql 'Essen & Trinken'
+    expect(@category.localized_name).to eql 'Essen & Trinken'
   end
 end

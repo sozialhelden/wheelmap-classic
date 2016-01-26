@@ -7,7 +7,7 @@ describe Region do
   end
 
   it "should create a valid region" do
-    @region.should be_valid
+    expect(@region).to be_valid
   end
 
 end

@@ -58,26 +58,26 @@ describe PlanetReader do
 
   it "should import a new POI" do
     PlanetReader.new(StringIO.new(OSM_IMPORT)).load
-    Poi.exists?(26735750).should be_true
+    expect(Poi.exists?(26735750)).to be_truthy
     poi = Poi.find(26735750)
-    poi.lat.should eql(52.5065963)
-    poi.lon.should eql(13.3228529)
-    poi.version.should eql(7)
-    poi.status.should eql(1)
-    poi.tags['addr:city'].should eql("Berlin")
-    poi.tags['name'].should eql("Mar & Sol")
-    poi.tags['operator'].should eql "Adolf Präg GmbH & Co. KG"
-    poi.tags['amenity'].should eql("restaurant")
-    poi.tags['wheelchair'].should eql("yes")
+    expect(poi.lat).to eql(52.5065963)
+    expect(poi.lon).to eql(13.3228529)
+    expect(poi.version).to eql(7)
+    expect(poi.status).to eql(1)
+    expect(poi.tags['addr:city']).to eql("Berlin")
+    expect(poi.tags['name']).to eql("Mar & Sol")
+    expect(poi.tags['operator']).to eql "Adolf Präg GmbH & Co. KG"
+    expect(poi.tags['amenity']).to eql("restaurant")
+    expect(poi.tags['wheelchair']).to eql("yes")
   end
 
   it "should not import poi if access is private" do
     PlanetReader.new(StringIO.new(PRIVATE_IMPORT)).load
-    Poi.exists?(20000000).should be_false
+    expect(Poi.exists?(20000000)).to be_falsey
   end
 
   it "should not import poi if disused or abandoned" do
     PlanetReader.new(StringIO.new(ABANDONED_IMPORT)).load
-    Poi.exists?(20000000).should be_false
+    expect(Poi.exists?(20000000)).to be_falsey
   end
 end

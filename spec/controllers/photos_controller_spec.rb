@@ -24,10 +24,10 @@ describe PhotosController do
 
     context 'as anonymous user' do
       it "is not allowed to upload photos" do
-        lambda {
+        expect {
           post(:create, :photo => { :image => file }, :node_id => poi.id)
-          response.code.should eql "302"
-        }.should_not change(Photo, :count)
+          expect(response.code).to eql "302"
+        }.not_to change(Photo, :count)
       end
     end
 
@@ -36,10 +36,10 @@ describe PhotosController do
         sign_in user
       end
       it "is allowed to upload photos" do
-        lambda {
+        expect {
           post(:create, :photo => { :image => file }, :node_id => poi.id, format: :json)
-          response.code.should eql "200"
-        }.should change(Photo, :count).by(1)
+          expect(response.code).to eql "200"
+        }.to change(Photo, :count).by(1)
       end
     end
   end
@@ -57,10 +57,10 @@ describe PhotosController do
 
     context 'as anonymous user' do
       it "is not allowed to destroy photos" do
-        lambda {
+        expect {
           delete(:destroy, :id => photo.id, :node_id => poi.id)
-        }.should_not change(Photo, :count)
-        response.code.should eql "302"
+        }.not_to change(Photo, :count)
+        expect(response.code).to eql "302"
       end
     end
 
@@ -72,10 +72,10 @@ describe PhotosController do
           request.env["HTTP_REFERER"]="/nodes/#{poi.id}"
         end
         it "is not allowed to upload photos" do
-          lambda {
+          expect {
             delete(:destroy, :id => photo.id, :node_id => poi.id)
-            response.code.should eql "403"
-          }.should_not change(Photo, :count)
+            expect(response.code).to eql "403"
+          }.not_to change(Photo, :count)
         end
       end
 
@@ -85,10 +85,10 @@ describe PhotosController do
           request.env["HTTP_REFERER"]="/nodes/#{poi.id}"
         end
         it "is allowed to upload photos" do
-          lambda {
+          expect {
             delete(:destroy, :id => photo.id, :node_id => poi.id)
-            response.code.should eql "302"
-          }.should change(Photo, :count).by(-1)
+            expect(response.code).to eql "302"
+          }.to change(Photo, :count).by(-1)
         end
       end
 

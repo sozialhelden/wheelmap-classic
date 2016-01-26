@@ -6,21 +6,21 @@ describe ProvidedPoi do
     FactoryGirl.build(:provided_poi)
   end
 
-  it { should be_valid }
+  it { is_expected.to be_valid }
 
   context :associations do
-    it { should belong_to :poi }
-    it { should belong_to :provider }
+    it { is_expected.to belong_to :poi }
+    it { is_expected.to belong_to :provider }
   end
 
   context :validations do
-    it { should validate_presence_of :poi_id }
-    it { should validate_presence_of :provider_id }
+    it { is_expected.to validate_presence_of :poi_id }
+    it { is_expected.to validate_presence_of :provider_id }
 
     before do
       subject.save!
     end
 
-    it { should validate_uniqueness_of(:poi_id).scoped_to(:provider_id)}
+    it { is_expected.to validate_uniqueness_of(:poi_id).scoped_to(:provider_id)}
   end
 end

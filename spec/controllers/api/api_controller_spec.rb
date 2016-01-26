@@ -15,7 +15,7 @@ describe Api::ApiController do
   describe 'index action' do
     it "should show root api stuff" do
       get(:index, :api_key => user.authentication_token)
-      response.status.should eql 200
+      expect(response.status).to eql 200
     end
   end
 end

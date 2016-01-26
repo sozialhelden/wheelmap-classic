@@ -6,5 +6,5 @@ describe Provider do
     FactoryGirl.build(:provider)
   end
 
-  it { should be_valid }
+  it { is_expected.to be_valid }
 end

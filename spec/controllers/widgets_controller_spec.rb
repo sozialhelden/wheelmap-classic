@@ -36,7 +36,7 @@ describe WidgetsController do
       it "displays the widget" do
         get :embed, :key => widget.user.api_key
         expect(response).to be_success
-        expect(assigns(:widget)).to be_true
+        expect(assigns(:widget)).to be_truthy
       end
     end
 
@@ -44,7 +44,7 @@ describe WidgetsController do
       it "cannot be found" do
         get :embed, :key => 'invalid'
         expect(response.status).to eq(404)
-        expect(assigns(:widget)).to be_false
+        expect(assigns(:widget)).to be_falsey
       end
     end
 
@@ -52,7 +52,7 @@ describe WidgetsController do
       it "displays the default layout" do
         get :embed, :key => nil
         expect(response).to be_success
-        expect(assigns(:widget)).to be_false
+        expect(assigns(:widget)).to be_falsey
       end
     end
   end

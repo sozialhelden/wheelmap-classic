@@ -12,17 +12,17 @@ describe SearchController do
 
   it "should call the OSM search API with xml format" do
     get( :index, :q => 'Leipziger Strasse, Berlin', :format => 'xml', :'accept-language' => 'de', :osm_type => 'N')
-    response.should be_success
+    expect(response).to be_success
     doc = REXML::Document.new(response.body)
     root = doc.root
-    root.elements.size.should == 5
+    expect(root.elements.size).to eq(5)
   end
 
   it "should increment counter" do
-    Counter.today.search_website.should eql 0
+    expect(Counter.today.search_website).to eql 0
     get( :index, :q => 'Leipziger Strasse, Berlin', :format => 'xml', :'accept-language' => 'de', :osm_type => 'N')
-    response.should be_success
-    Counter.today.search_website.should eql 1
+    expect(response).to be_success
+    expect(Counter.today.search_website).to eql 1
   end
 
   context "render errors" do
@@ -30,8 +30,8 @@ describe SearchController do
 
     it "should show error message when search query is missing" do
       get( :index, :format => 'xml', :'accept-language' => 'de', :osm_type => 'N')
-      response.code.should eql "406"
-      response.body.should =~ /Bitte einen Suchbegriff eingeben/
+      expect(response.code).to eql "406"
+      expect(response.body).to match(/Bitte einen Suchbegriff eingeben/)
     end
   end
 
