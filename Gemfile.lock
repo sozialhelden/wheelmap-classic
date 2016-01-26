@@ -239,6 +239,9 @@ GEM
       lumberjack (>= 1.0.2)
       pry (>= 0.9.10)
       thor (>= 0.14.6)
+    guard-rspec (2.3.3)
+      guard (>= 1.1)
+      rspec (~> 2.11)
     haml (4.0.3)
       tilt
     handlebars-source (1.0.12)
@@ -389,6 +392,10 @@ GEM
       oauth (>= 0.4.7)
     routing-filter (0.3.1)
       actionpack
+    rspec (2.99.0)
+      rspec-core (~> 2.99.0)
+      rspec-expectations (~> 2.99.0)
+      rspec-mocks (~> 2.99.0)
     rspec-collection_matchers (1.1.2)
       rspec-expectations (>= 2.99.0.beta1)
     rspec-core (2.99.2)
@@ -533,6 +540,7 @@ DEPENDENCIES
   friendly_id (~> 4.0.0)
   geocoder
   guard
+  guard-rspec
   haml
   has_scope
   htmlentities
