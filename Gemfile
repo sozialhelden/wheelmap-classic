@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 group :default do
-  gem 'rails', '3.2.22'
+  gem 'rails', '3.2.22.1'
   gem 'mysql2', '~> 0.3.0'
   gem 'activerecord-import', '<0.3.0', :require => false
   gem 'rgeo'
