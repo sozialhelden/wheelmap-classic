@@ -21,12 +21,12 @@ describe PhotoUploader do
 
     it "should scale down thumb to be exactly 100 by 100 pixels" do
       # It's 1x1 because of the placeholder.jpg fixture file
-      @uploader.thumb.should have_dimensions(100, 100)
+      expect(@uploader.thumb).to have_dimensions(100, 100)
     end
 
     it "should scale down galley to be no larger than 600 by 600 pixels" do
       # It's 1x1 because of the placeholder.jpg fixture file
-      @uploader.gallery.should be_no_larger_than(600, 600)
+      expect(@uploader.gallery).to be_no_larger_than(600, 600)
     end
   end
 end

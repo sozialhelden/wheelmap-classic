@@ -19,7 +19,7 @@ describe Api::CategoriesController do
       FactoryGirl.create(:category, :identifier => 'education')
       @node_type = FactoryGirl.create(:node_type, :category => @category)
       @categories = Category.all
-      @categories.should_not be_empty
+      expect(@categories).not_to be_empty
     end
 
     # TODO reenable terms feature
@@ -53,14 +53,14 @@ describe Api::CategoriesController do
       it "should render json when using accept header" do
         request.env['HTTP_ACCEPT'] = 'application/json'
         get(:index, :api_key => user.authentication_token)
-        response.should be_success
-        request.format.to_sym.should eql(:json)
+        expect(response).to be_success
+        expect(request.format.to_sym).to eql(:json)
       end
 
       it "should render json as default format" do
         get(:index, :api_key => user.authentication_token)
-        response.should be_success
-        request.format.to_sym.should eql(:json)
+        expect(response).to be_success
+        expect(request.format.to_sym).to eql(:json)
       end
     end
 
@@ -72,8 +72,8 @@ describe Api::CategoriesController do
 
       it "should render xml when using accept header" do
         get(:index, :api_key => user.authentication_token)
-        response.should be_success
-        request.format.to_sym.should eql(:xml)
+        expect(response).to be_success
+        expect(request.format.to_sym).to eql(:xml)
       end
 
     end
