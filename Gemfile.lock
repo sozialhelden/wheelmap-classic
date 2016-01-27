@@ -247,6 +247,10 @@ GEM
     guard-rspec (2.3.3)
       guard (>= 1.1)
       rspec (~> 2.11)
+    guard-spork (1.5.2)
+      childprocess (>= 0.2.3)
+      guard (~> 1.1)
+      spork (>= 0.8.4)
     haml (4.0.3)
       tilt
     handlebars-source (1.0.12)
@@ -548,6 +552,7 @@ DEPENDENCIES
   guard
   guard-cucumber (~> 1.6)
   guard-rspec
+  guard-spork
   haml
   has_scope
   htmlentities

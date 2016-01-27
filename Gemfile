@@ -93,7 +93,7 @@ group :test, :development do
   gem 'phantomjs'
   gem 'guard'
   gem 'guard-rspec'
-  # gem 'guard-spork'
+  gem 'guard-spork'
   gem 'guard-cucumber', '~> 1.6'
   gem 'pry'
 end
