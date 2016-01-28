@@ -7,7 +7,7 @@ const { ACTIVATE_SECTION } = require('../actions');
 const DEFAULT_STATE = Map({
   activeSection: null,
   sections: List([NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW]),
-  fetchedCategories: null
+  fetchedCategories: false
 });
 
 module.exports = handleActions({

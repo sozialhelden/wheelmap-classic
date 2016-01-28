@@ -4,7 +4,7 @@ const I18n = require('../I18n');
 
 const { arrayOf, shape, string } = React.PropTypes;
 
-function Select({ options, empty, ...props }) {
+function Select({ options, emptyScope, ...props }) {
   const items = options.map(({ labelScope, value, ...props }, index) => {
     return (
       <option key={index} value={value} {...props}>

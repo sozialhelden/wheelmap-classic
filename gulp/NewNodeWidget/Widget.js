@@ -4,7 +4,7 @@ const { connect } = require('react-redux');
 const Header = require('./Header');
 const Breadcrumbs = require('./Breadcrumbs');
 const { navigateToSection } = require('./actions');
-const { sectionsSelector, activeSectionSelector } = require('./selectors/widget');
+const { sectionsSelector, activeSectionSelector } = require('./selectors');
 
 const { immutableListOf } = require('../common/types');
 const { func, arrayOf, string } = React.PropTypes;

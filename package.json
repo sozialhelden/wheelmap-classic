@@ -16,7 +16,7 @@
     "gulp": "^3.9.0",
     "gulp-util": "^3.0.7",
     "history": "^1.17.0",
-    "immutable": "^3.7.5",
+    "immutable": "^3.7.6",
     "isomorphic-fetch": "^2.2.1",
     "jest-cli": "^0.8.2",
     "leaflet": "^0.7.7",
