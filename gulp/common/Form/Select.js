@@ -2,28 +2,61 @@ const React = require('react');
 
 const I18n = require('../I18n');
 
-const { arrayOf, shape, string } = React.PropTypes;
+const { arrayOf, shape, string, bool, func, oneOfType } = React.PropTypes;
 
-function Select({ options, emptyScope, ...props }) {
-  const items = options.map(({ labelScope, value, ...props }, index) => {
-    return (
-      <option key={index} value={value} {...props}>
-        {I18n.t(labelScope)}
-      </option>
+function Select({ options, empty, asScope, groupBy, ...props }) {
+  let items = createItems(options, asScope);
+
+  if (empty != null) {
+    items.unshift(
+      <option value="">{asScope ? I18n.t(empty) : empty}</option>
     );
-  });
-
-  if (emptyScope != null) items.unshift(<option value="">{I18n.t(emptyScope)}</option>);
+  }
 
   return <select {...props}>{items}</select>;
 }
 
+function createItems(options, asScope) {
+  return options.map((option, index) => {
+    const { label, value, options, ...props } = option;
+
+    if (value != null) {
+      console.log(asScope ? I18n.t(label) : label);
+
+      return (
+        <option key={index} value={value} {...props}>
+          {asScope ? I18n.t(label) : label}
+        </option>
+      );
+    } else if (options != null) {
+      return (
+        <optgroup key={index} label={asScope ? I18n.t(label) : label}>
+          {createItems(options, asScope)}
+        </optgroup>
+      );
+    }
+  });
+}
+
+const optionsType = arrayOf(shape({
+  label: string.isRequired,
+  value: string.isRequired
+}));
+
 Select.propTypes = {
-  options: arrayOf(shape({
-    labelScope: string.isRequired,
-    value: string.isRequired
-  })).isRequired,
-  emptyScope: string
+  options: oneOfType([
+    optionsType,
+    arrayOf(shape({
+      label: string.isRequired,
+      options: optionsType
+    }))
+  ]).isRequired,
+  asScope: bool.isRequired,
+  empty: string
+};
+
+Select.defaultProps = {
+  asScope: false
 };
 
 module.exports = Select;
