@@ -608,7 +608,7 @@ DEPENDENCIES
   rmagick
   rosemary
   routing-filter
-  rspec-rails (~> 3.0)
+  rspec-rails (~> 3.4)
   ruby-progressbar
   ruport
   sass (~> 3.3)
