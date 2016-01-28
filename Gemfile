@@ -91,10 +91,10 @@ group :test, :development do
   gem 'teaspoon', '1.1.1'
   gem 'teaspoon-jasmine'
   gem 'phantomjs'
-  # gem 'guard'
-  # gem 'guard-rspec'
-  # gem 'guard-spork'
-  # gem 'guard-cucumber', "1.2.2"
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'guard-cucumber', '~> 1.6'
   gem 'pry'
 end
 
