@@ -1,6 +1,6 @@
 const React = require('react');
 const { List, Map, Set } = require('immutable');
-const reduce = require('lodash/collection/reduce');
+const every = require('mout/collection/every');
 
 const { instanceOf } = React.PropTypes;
 
@@ -17,12 +17,13 @@ function checkImmutableOf(iterableTypChecker, itemTypeChecker) {
     if (error != null)
       return error;
 
-    return reduce(prop.toObject(), function(error, value, key, iterable) {
-      if (error != null)
-        return error;
+    every(prop.toObject(), function(item, key, iterable) {
+      error = itemTypeChecker(iterable, key, component, location, `${propFullName}.get(${key})`);
 
-      return itemTypeChecker(iterable, key, component, location, `${propFullName}.get(${key})`);
-    }, null);
+      return error == null;
+    });
+
+    return error;
   }
 
   let immutableOfTypeChecker = checkType.bind(null, false);
@@ -40,5 +41,9 @@ const immutableSetOf = checkImmutableOf.bind(null, immutableSet);
 
 module.exports = {
   immutableList,
-  immutableListOf
+  immutableListOf,
+  immutableMap,
+  immutableMapOf,
+  immutableSet,
+  immutableSetOf
 };

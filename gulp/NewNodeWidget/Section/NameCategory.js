@@ -3,15 +3,19 @@ const { connect } = require('react-redux');
 
 const Section = require('./Section');
 const Form = require('../../common/Form');
-const { navigateToNextSection, tryFetchCategories } = require('../actions');
+const NodeTypeSelect = require('./NodeTypeSelect');
+const { navigateToNextSection, tryFetchCategories, changeNode } = require('../actions');
 const { NAME_CATEGORY } = require('../models/sections');
 const { categoriesSelector } = require('../../common/selectors/categories');
+const { nodeTypesSelector } = require('../../common/selectors/nodeTypes');
+const { nodeSelector } = require('../selectors');
 
 const { func } = React.PropTypes;
 
 class NameCategorySection extends React.Component {
   static propTypes = {
-    onClickNext: func
+    onMount: func.isRequired,
+    onClickNext: func.isRequired
   };
 
   componentWillMount() {
@@ -19,18 +23,18 @@ class NameCategorySection extends React.Component {
   }
 
   render() {
-    const { onClickNext, categories } = this.props;
+    const { onClickNext, node, categories, nodeTypes, onChangeName, onChangeNodeType } = this.props;
 
     return (
       <Section section={NAME_CATEGORY} actionLabel="Weiter" onClickAction={onClickNext}>
         <Form.ControlGroup labelFor="name" labelScope="activerecord.attributes.poi.name">
           <Form.Controls>
-            <Form.Input name="name"/>
+            <Form.Input name="name" onChange={onChangeName} value={node.name} />
           </Form.Controls>
         </Form.ControlGroup>
         <Form.ControlGroup labelFor="node_type_id" labelScope="activerecord.attributes.poi.type">
           <Form.Controls>
-            <Form.Select name="node_type_id" options={[]}/>
+            <NodeTypeSelect categories={categories} nodeTypes={nodeTypes} onChange={onChangeNodeType} value={node.nodeType} />
           </Form.Controls>
         </Form.ControlGroup>
       </Section>
@@ -40,14 +44,18 @@ class NameCategorySection extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    categories: categoriesSelector(state)
+    categories: categoriesSelector(state),
+    nodeTypes: nodeTypesSelector(state),
+    node: nodeSelector(state)
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     onMount: section => dispatch(tryFetchCategories()),
-    onClickNext: section => dispatch(navigateToNextSection(section))
+    onClickNext: section => dispatch(navigateToNextSection(section)),
+    onChangeName: event => dispatch(changeNode('name', event.target.value)),
+    onChangeNodeType: nodeType => dispatch(changeNode('nodeType', nodeType))
   };
 }
 

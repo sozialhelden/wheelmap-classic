@@ -1,37 +1,35 @@
 const React = require('react');
 
-const I18n = require('../I18n');
+const { arrayOf, shape, string, func, oneOfType } = React.PropTypes;
 
-const { arrayOf, shape, string, bool, func, oneOfType } = React.PropTypes;
+function Select({ options, empty, groupBy, ...props }) {
+  let items = createItems(options);
 
-function Select({ options, empty, asScope, groupBy, ...props }) {
-  let items = createItems(options, asScope);
+  if (empty != null)
+    items.unshift(<option value="">{empty}</option>);
 
-  if (empty != null) {
-    items.unshift(
-      <option value="">{asScope ? I18n.t(empty) : empty}</option>
-    );
-  }
-
-  return <select {...props}>{items}</select>;
+  return (
+    <div className="custom-select">
+      <select {...props}>{items}</select>
+      <i className="icon-caret-down pull-right"/>
+    </div>
+  );
 }
 
-function createItems(options, asScope) {
+function createItems(options) {
   return options.map((option, index) => {
     const { label, value, options, ...props } = option;
 
     if (value != null) {
-      console.log(asScope ? I18n.t(label) : label);
-
       return (
-        <option key={index} value={value} {...props}>
-          {asScope ? I18n.t(label) : label}
-        </option>
+        <option key={index} value={value} {...props}>{label}</option>
       );
-    } else if (options != null) {
+    }
+
+    if (options != null) {
       return (
-        <optgroup key={index} label={asScope ? I18n.t(label) : label}>
-          {createItems(options, asScope)}
+        <optgroup key={index} label={label} {...props}>
+          {createItems(options)}
         </optgroup>
       );
     }
@@ -51,12 +49,7 @@ Select.propTypes = {
       options: optionsType
     }))
   ]).isRequired,
-  asScope: bool.isRequired,
   empty: string
-};
-
-Select.defaultProps = {
-  asScope: false
 };
 
 module.exports = Select;

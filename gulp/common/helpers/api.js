@@ -13,5 +13,6 @@ function fetchCategories() {
 }
 
 module.exports = {
+  fetchJSON,
   fetchCategories
 };

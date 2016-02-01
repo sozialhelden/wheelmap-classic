@@ -17,9 +17,15 @@ const fetchedCategoriesSelector = createSelector(
   widget => widget.get('fetchedCategories')
 );
 
+const nodeSelector = createSelector(
+  widgetSelector,
+  widget => widget.get('node')
+);
+
 module.exports = {
   widgetSelector,
   activeSectionSelector,
   sectionsSelector,
-  fetchedCategoriesSelector
+  fetchedCategoriesSelector,
+  nodeSelector
 };
