@@ -49,7 +49,7 @@ group :default do
   gem 'meta_search'
   gem 'kaminari', '~> 0.14'
   gem 'kaminari-i18n'
-  gem 'carrierwave', '~> 0.10.0'
+  gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: 'c2ee2e8'
   gem 'carrierwave-meta', '~> 0.0.7'
   gem 'carrierwave_backgrounder', '~> 0.4.2'
   gem 'rmagick'

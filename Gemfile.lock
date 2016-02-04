@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: c2ee2e89d3aa447c6b81186be6d627202d33a97f
+  ref: c2ee2e8
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+
+GIT
   remote: https://github.com/christoph-buente/redgreengrid.git
   revision: 59d13cd12d58a6ff42ec78f806b6792e4f2a30b9
   specs:
@@ -118,11 +129,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    carrierwave (0.10.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
     carrierwave-meta (0.0.7)
       activesupport (>= 3.0)
       carrierwave (>= 0.5.7)
@@ -544,7 +550,7 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rbenv
   capybara (~> 2.2)
-  carrierwave (~> 0.10.0)
+  carrierwave!
   carrierwave-meta (~> 0.0.7)
   carrierwave_backgrounder (~> 0.4.2)
   coffee-rails
