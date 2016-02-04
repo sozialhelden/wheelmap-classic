@@ -4,8 +4,8 @@ const { Marker } = require('react-leaflet');
 
 const Section = require('./Section');
 const { ADDRESS } = require('../models/sections');
-const { navigateToNextSection, changeNodeAddress } = require('../actions');
-const { nodeSelector } = require('../selectors');
+const { navigateToNextSection, changeNodeAddress, updateAddress, changeMapCenter, changeMapZoom } = require('../actions');
+const { nodeSelector, mapCenterSelector, mapZoomSelector } = require('../selectors');
 const Form = require('../../common/Form');
 const Alert = require('../../common/Alert');
 const MapboxMap = require('../../common/MapboxMap');
@@ -19,9 +19,11 @@ class AddressSection extends React.Component {
   };
 
   render() {
-    const { onClickAction, node, onChangePostcode, onChangeCity, onChangeStreet, onChangeHousenumber } = this.props;
+    const { node, mapCenter, mapZoom,
+      onClickAction, onChangePostcode, onChangeCity, onChangeStreet, onChangeHousenumber,
+      onMapMoved, onMapZoomed, onMarkerMoved } = this.props;
 
-    const center = [node.lat, node.lon];
+    const nodePosition = [node.lat, node.lon];
 
     return (
       <Section section={ADDRESS} onClickAction={onClickAction}>
@@ -66,8 +68,14 @@ class AddressSection extends React.Component {
             </Alert>
           </Row.Span>
           <Row.Span rows={6}>
-            <MapboxMap center={center} zoom={13} className="nodes-new-content-section--address-map">
-              <Marker position={center}/>
+            <MapboxMap center={mapCenter}
+                       zoom={mapZoom}
+                       className="nodes-new-content-section--address-map"
+                       onMoveEnd={onMapMoved}
+                       onZoomEnd={onMapZoomed}>
+              <Marker position={nodePosition}
+                      draggable={true}
+                      onDragEnd={onMarkerMoved}/>
             </MapboxMap>
           </Row.Span>
         </Row>
@@ -78,17 +86,30 @@ class AddressSection extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    node: nodeSelector(state)
+    node: nodeSelector(state),
+    mapCenter: mapCenterSelector(state),
+    mapZoom: mapZoomSelector(state)
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     onClickAction: (section) => dispatch(navigateToNextSection(section)),
-    onChangePostcode: (event) => dispatch(changeNodeAddress('postcode', event.target.value)),
-    onChangeCity: (event) => dispatch(changeNodeAddress('city', event.target.value)),
-    onChangeStreet: (event) => dispatch(changeNodeAddress('street', event.target.value)),
-    onChangeHousenumber: (event) => dispatch(changeNodeAddress('housenumber', event.target.value))
+    onChangePostcode: ({ target }) => dispatch(changeNodeAddress({ postcode: target.value })),
+    onChangeCity: ({ target }) => dispatch(changeNodeAddress({ city: target.value })),
+    onChangeStreet: ({ target }) => dispatch(changeNodeAddress({ street: target.value })),
+    onChangeHousenumber: ({ target }) => dispatch(changeNodeAddress({ housenumber: target.value })),
+    onMapMoved: ({ target }) => {
+      const { lat, lng } = target.getCenter();
+
+      dispatch(changeMapCenter({ lat, lon: lng }));
+    },
+    onMapZoomed: ({ target }) => dispatch(changeMapZoom(target.getZoom())),
+    onMarkerMoved: ({ target }) => {
+      const { lat, lng } = target.getLatLng();
+
+      dispatch(updateAddress({ lat, lon: lng }));
+    }
   };
 }
 

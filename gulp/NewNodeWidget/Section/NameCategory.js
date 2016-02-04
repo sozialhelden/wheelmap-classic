@@ -54,8 +54,8 @@ function mapDispatchToProps(dispatch) {
   return {
     onMount: section => dispatch(tryFetchCategories()),
     onClickNext: section => dispatch(navigateToNextSection(section)),
-    onChangeName: event => dispatch(changeNode('name', event.target.value)),
-    onChangeNodeType: nodeType => dispatch(changeNode('nodeType', nodeType))
+    onChangeName: event => dispatch(changeNode({ name: event.target.value })),
+    onChangeNodeType: nodeType => dispatch(changeNode({ nodeType }))
   };
 }
 

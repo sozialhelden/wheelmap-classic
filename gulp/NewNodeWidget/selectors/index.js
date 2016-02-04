@@ -22,10 +22,28 @@ const nodeSelector = createSelector(
   widget => widget.get('node')
 );
 
+const mapCenterSelector = createSelector(
+  widgetSelector,
+  widget => widget.get('mapCenter')
+);
+
+const mapZoomSelector = createSelector(
+  widgetSelector,
+  widget => widget.get('mapZoom')
+);
+
+const markerMovedSelector = createSelector(
+  widgetSelector,
+  widget => widget.get('markerMoved')
+);
+
 module.exports = {
   widgetSelector,
   activeSectionSelector,
   sectionsSelector,
   fetchedCategoriesSelector,
-  nodeSelector
+  nodeSelector,
+  mapCenterSelector,
+  mapZoomSelector,
+  markerMovedSelector
 };
