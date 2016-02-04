@@ -26,7 +26,7 @@ describe PhotoUploader do
 
     it "should scale down galley to be no larger than 600 by 600 pixels" do
       # It's 1x1 because of the placeholder.jpg fixture file
-      expect(@uploader.gallery).to be_no_larger_than(600, 600)
+      expect(@uploader.gallery).not_to be_larger_than(600, 600)
     end
   end
 end
