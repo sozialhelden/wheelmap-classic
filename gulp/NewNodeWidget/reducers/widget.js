@@ -2,7 +2,7 @@ const { Map, List } = require('immutable');
 const { handleActions } = require('redux-actions');
 
 const { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } = require('../models/sections');
-const { ACTIVATE_SECTION, CHANGE_NODE, CHANGE_MAP_CENTER, CHANGE_MAP_ZOOM, MARKER_MOVED } = require('../actions');
+const { ACTIVATE_SECTION, CHANGE_NODE, CHANGE_MAP_CENTER, CHANGE_MAP_ZOOM, MARKER_MOVED, ADDRESS_CHANGED, FETCH_SIMILAR } = require('../actions');
 const { FETCH_CATEGORIES } = require('../../common/actions/categories');
 const Node = require('../../common/models/node');
 
@@ -15,7 +15,9 @@ const DEFAULT_STATE = Map({
   node: defaultNode,
   mapCenter: { lat: defaultNode.lat, lon: defaultNode.lon },
   mapZoom: 16,
-  markerMoved: false
+  markerMoved: false,
+  addressChanged: false,
+  similarNodes: List()
 });
 
 module.exports = handleActions({
@@ -36,5 +38,11 @@ module.exports = handleActions({
   },
   [MARKER_MOVED]: (state) => {
     return state.set('markerMoved', true);
+  },
+  [ADDRESS_CHANGED]: (state) => {
+    return state.set('addressChanged', true);
+  },
+  [FETCH_SIMILAR]: (state, { payload: similarNodes }) => {
+    return state.set('similarNodes', List(similarNodes));
   }
 }, DEFAULT_STATE);

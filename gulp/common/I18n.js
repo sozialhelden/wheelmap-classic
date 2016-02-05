@@ -10,10 +10,6 @@ class I18n extends React.Component {
     return translation;
   }
 
-  shouldComponentUpdate() {
-    return false;
-  }
-
   render() {
     var { scope } = this.props,
       translation = I18n.t(scope),

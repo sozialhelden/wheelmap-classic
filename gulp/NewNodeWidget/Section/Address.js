@@ -63,9 +63,7 @@ class AddressSection extends React.Component {
                 </Row>
               </Form.Controls>
             </Form.ControlGroup>
-            <Alert>
-              Du kannst den Marker auf der Karte auf die korrekte Position verschieben.
-            </Alert>
+            <Alert>Du kannst den Marker auf der Karte auf die korrekte Position verschieben.</Alert>
           </Row.Span>
           <Row.Span rows={6}>
             <MapboxMap center={mapCenter}

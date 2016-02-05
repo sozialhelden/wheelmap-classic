@@ -32,6 +32,7 @@
                     %i.icon-ok
                   %span.text= t("toiletstatus.#{status}")
                   %i.icon-question-sign{'data-toggle' => 'popover', 'data-title' => t("toiletstatus.#{status}"), 'data-content' => t("toiletstatus.what_is.#{status}"), 'data-trigger' => 'hover'}
+
   .nodes-new-content-section-form
     .control-group
       = form.label :wheelchair_description, t('activerecord.attributes.poi.note'), class: 'control-label'

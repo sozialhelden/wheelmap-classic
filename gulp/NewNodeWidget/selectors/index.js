@@ -37,6 +37,16 @@ const markerMovedSelector = createSelector(
   widget => widget.get('markerMoved')
 );
 
+const addressChangedSelector = createSelector(
+  widgetSelector,
+  widget => widget.get('addressChanged')
+);
+
+const similarNodesSelector = createSelector(
+  widgetSelector,
+  widget => widget.get('similarNodes')
+);
+
 module.exports = {
   widgetSelector,
   activeSectionSelector,
@@ -45,5 +55,7 @@ module.exports = {
   nodeSelector,
   mapCenterSelector,
   mapZoomSelector,
-  markerMovedSelector
+  markerMovedSelector,
+  addressChangedSelector,
+  similarNodesSelector
 };
