@@ -102,7 +102,7 @@ group :test do
   gem 'minitest'
   gem 'webmock', :require => nil
   gem 'factory_girl_rails'
-  gem 'capybara', '~> 2.2'  # on mac, you need sudo port install libffi
+  gem 'capybara', '~> 2.6', '>= 2.6.2' # on mac, you need sudo port install libffi
   gem 'cucumber', :require => false
   gem 'cucumber-rails', :require => false
   gem 'autotest', :require => false

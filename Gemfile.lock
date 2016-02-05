@@ -549,7 +549,7 @@ DEPENDENCIES
   capistrano-deploytags (~> 1.0.0)
   capistrano-rails
   capistrano-rbenv
-  capybara (~> 2.2)
+  capybara (~> 2.6, >= 2.6.2)
   carrierwave!
   carrierwave-meta (~> 0.0.7)
   carrierwave_backgrounder (~> 0.4.2)
