@@ -41,18 +41,18 @@ class StatusDropdown extends React.Component {
       .find('[data-toggle="popover"]');
 
     $questionMarks.popover({
-        trigger: 'hover',
-        title: function() {
-          const status = $(this).attr('data-status');
+      trigger: 'hover',
+      title: function() {
+        const status = $(this).attr('data-status');
 
-          return I18n.t(`${scopeNamespace}.${status}`);
-        },
-        content: function() {
-          const status = $(this).attr('data-status');
+        return I18n.t(`${scopeNamespace}.${status}`);
+      },
+      content: function() {
+        const status = $(this).attr('data-status');
 
-          return I18n.t(`${popoverScopeNamespace}.${type === WHEELCHAIR ? ACCESSIBILITIES[status] : status}`);
-        }
-      });
+        return I18n.t(`${popoverScopeNamespace}.${type === WHEELCHAIR ? ACCESSIBILITIES[status] : status}`);
+      }
+    });
   }
 
   changeStatus(itemStatus) {

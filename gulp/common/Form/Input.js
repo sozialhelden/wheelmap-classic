@@ -28,8 +28,4 @@ Input.propTypes = {
   placeholderScope: React.PropTypes.string
 };
 
-Input.contextTypes = {
-  modelName: React.PropTypes.string
-};
-
 module.exports = Input;

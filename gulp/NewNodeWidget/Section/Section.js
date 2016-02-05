@@ -21,14 +21,20 @@ class Section extends React.Component {
   };
 
   render() {
-    let { section , children, actionLabel, onClickAction } = this.props;
+    const { section , children, actionLabel, onClickAction } = this.props;
+
+    const sectionForms = React.Children.map(children, child => {
+      return (
+        <div className="nodes-new-content-section-form">
+          {child}
+        </div>
+      )
+    });
 
     return (
       <section className="nodes-new-content-section">
         <h2><I18n scope={`nodes.new.form.section.${section}.title`}/></h2>
-        <div className="nodes-new-content-section-form">
-          {children}
-        </div>
+        {sectionForms}
         <div className="form-actions">
           <button className="btn btn-primary pull-right submit" onClick={this.onClickAction}>{actionLabel}</button>
         </div>

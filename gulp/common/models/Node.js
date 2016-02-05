@@ -6,6 +6,7 @@ const Node = Record({
   nodeType: null,
   wheelchair: 'unknown',
   wheelchairToilet: 'unknown',
+  wheelchairDescription: '',
   lat: 52.520007,
   lon: 13.404954,
   category: null,
