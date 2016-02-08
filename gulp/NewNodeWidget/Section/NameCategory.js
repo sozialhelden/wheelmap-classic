@@ -27,16 +27,18 @@ class NameCategorySection extends React.Component {
 
     return (
       <Section section={NAME_CATEGORY} actionLabel="Weiter" onClickAction={onClickNext}>
-        <Form.ControlGroup labelFor="name" labelScope="activerecord.attributes.poi.name">
-          <Form.Controls>
-            <Form.Input name="name" onChange={onChangeName} value={node.name} />
-          </Form.Controls>
-        </Form.ControlGroup>
-        <Form.ControlGroup labelFor="node_type_id" labelScope="activerecord.attributes.poi.type">
-          <Form.Controls>
-            <NodeTypeSelect categories={categories} nodeTypes={nodeTypes} onChange={onChangeNodeType} value={node.nodeType} />
-          </Form.Controls>
-        </Form.ControlGroup>
+        <div>{/* Needed for having only one section */}
+          <Form.ControlGroup labelFor="name" labelScope="activerecord.attributes.poi.name">
+            <Form.Controls>
+              <Form.Input name="name" onChange={onChangeName} value={node.name} />
+            </Form.Controls>
+          </Form.ControlGroup>
+          <Form.ControlGroup labelFor="node_type_id" labelScope="activerecord.attributes.poi.type">
+            <Form.Controls>
+              <NodeTypeSelect categories={categories} nodeTypes={nodeTypes} onChange={onChangeNodeType} value={node.nodeType} />
+            </Form.Controls>
+          </Form.ControlGroup>
+        </div>
       </Section>
     );
   }

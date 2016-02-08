@@ -11,7 +11,7 @@ class I18n extends React.Component {
   }
 
   render() {
-    var { scope } = this.props,
+    var { scope, ...props } = this.props,
       translation = I18n.t(scope),
       class_name, title;
 
@@ -28,7 +28,7 @@ class I18n extends React.Component {
     }
 
     return (
-      <span className={class_name} title={title} dangerouslySetInnerHTML={createMarkup()}></span>
+      <span className={class_name} title={title} dangerouslySetInnerHTML={createMarkup()} {...props}></span>
     );
   }
 }

@@ -3,7 +3,7 @@ const { Record, List } = require('immutable');
 const Node = Record({
   id: null,
   name: 'Test',
-  nodeType: null,
+  nodeType: 33,
   wheelchair: 'unknown',
   wheelchairToilet: 'unknown',
   wheelchairDescription: '',

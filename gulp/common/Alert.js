@@ -6,8 +6,7 @@ function Alert(props) {
     className = classNames('alert', 'alert-' + type);
 
   return <div className={className}>
-    <i className="icon-info-sign icon-large"/>
-    {children}
+    <i className="icon-info-sign icon-large"/> {children}
   </div>;
 }
 
