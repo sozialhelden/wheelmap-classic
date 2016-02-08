@@ -45,7 +45,6 @@ Wheelmap::Application.routes.draw do
       get  'sign_in'  => 'devise/sessions#new',     :as => :new_user_session
       post 'sign_in'  => 'devise/sessions#create',  :as => :user_session
       get  'sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session
-
     end
   end
 
@@ -63,6 +62,7 @@ Wheelmap::Application.routes.draw do
 
   # For the new node widget frontend routing
   get 'nodes/new/:section', to: 'nodes#new', as: :new_node_section
+  post 'nodes/validate', to: 'nodes#validate', as: :validate_node
 
   resources :nodes, :except => [:destroy] do
     member do
@@ -136,7 +136,7 @@ Wheelmap::Application.routes.draw do
     end
 
     resources :node_types, :only  => [:index, :show] do
-      resources :nodes,       :only  => [:index, :show] do
+      resources :nodes,    :only  => [:index, :show] do
         collection do
           get :search
         end

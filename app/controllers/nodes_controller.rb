@@ -132,6 +132,16 @@ class NodesController < ApplicationController
   def new
   end
 
+  def validate
+    node = Poi.new(params[:node])
+
+    if node.valid?
+      render json: {}, status: 200
+    else
+      render json: { errors: node.errors }, status: 422
+    end
+  end
+
   def create
     @node = Poi.new(params[:node])
 
