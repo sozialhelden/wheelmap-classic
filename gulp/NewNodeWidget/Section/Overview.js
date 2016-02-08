@@ -75,9 +75,9 @@ class OverviewSection extends React.Component {
           <h3><I18n scope="nodes.new.form.section.accessibility.name"/>:</h3>
           <dl className="nodes-new-content-section--overview-list">
             <dt>Status:</dt>
-            <dd><I18n scope={`wheelchairstatus.${node.wheelchair}`}/></dd>
+            <dd><I18n scope={`wheelchairstatus.${node.wheelchair}`} className={node.wheelchair}/></dd>
             <dt>WC-Status:</dt>
-            <dd><I18n scope={`toiletstatus.${node.wheelchairToilet}`}/></dd>
+            <dd><I18n scope={`toiletstatus.${node.wheelchairToilet}`} className={node.wheelchairToilet}/></dd>
           </dl>
           <a className="nodes-new-content-section--overview-edit"
              onClick={onClickEdit.bind(null, ACCESSIBILITY)}>

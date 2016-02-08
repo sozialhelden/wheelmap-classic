@@ -3,7 +3,7 @@ const debounce = require('mout/function/debounce');
 
 const { push } = require('../../common/actions/router');
 const { fetchCategories } = require('../../common/actions/categories');
-const { sectionsSelector, fetchedCategoriesSelector } = require('../selectors');
+const { sectionsSelector, fetchedCategoriesSelector, activeSectionSelector } = require('../selectors');
 const { search, searchFirst, reverseGeocode } = require('../../common/helpers/photon');
 const { nodeSelector, markerMovedSelector, addressChangedSelector } = require('../selectors');
 const Node = require('../../common/models/Node');
@@ -52,7 +52,19 @@ const changeNodeAddress = function(props) {
 };
 
 const navigateToSection = function(section) {
-  return push.newNodeSectionPath(section);
+  return (dispatch, getState) => {
+    const state = getState(),
+      sections = sectionsSelector(state),
+      index = sections.indexOf(section),
+      activeSection = activeSectionSelector(state),
+      activeIndex = sections.indexOf(activeSection);
+
+    // Move only back in history
+    if (activeIndex < index)
+      return;
+
+    dispatch(push.newNodeSectionPath(section));
+  }
 };
 
 const navigateToNextSection = function(currentSection) {
@@ -60,7 +72,7 @@ const navigateToNextSection = function(currentSection) {
     const sections = sectionsSelector(getState()),
       nextIndex = sections.indexOf(currentSection) + 1;
 
-    dispatch(navigateToSection(sections.get(nextIndex)));
+    dispatch(push.newNodeSectionPath(sections.get(nextIndex)));
   };
 };
 
