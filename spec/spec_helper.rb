@@ -1,5 +1,5 @@
-require 'spork'
-Spork.prefork do
+# require 'spork'
+# Spork.prefork do
   # This file is copied to spec/ when you run 'rails generate rspec:install'
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
@@ -70,8 +70,8 @@ Spork.prefork do
     # replace deprecated ExampleGroup#example
     config.expose_current_running_example_as :example
   end
-end
-
-Spork.each_run do
-  FactoryGirl.reload
-end
+# end
+#
+# Spork.each_run do
+#   FactoryGirl.reload
+# end
