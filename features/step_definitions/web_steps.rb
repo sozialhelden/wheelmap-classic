@@ -55,7 +55,6 @@ end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
   first(:link, link).click
-  # click_link(link)
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
