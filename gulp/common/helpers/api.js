@@ -1,5 +1,7 @@
 const fetch = require('isomorphic-fetch');
 
+const Node = require('../models/Node');
+
 const { categoriesPath, validateNodePath } = global.Routes;
 
 function fetchWithError(url, options = {}) {
@@ -59,7 +61,7 @@ function validateNode(node) {
     .then(response => noErrors)
     .catch(error => {
       return error.response.json()
-        .then(data => data.errors);
+        .then(data => Node.unserializeAttrs(data.errors));
     });
 }
 

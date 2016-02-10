@@ -1,17 +1,18 @@
-const { Record, List } = require('immutable');
+const { Record, List, Seq } = require('immutable');
 const underscore = require('mout/string/underscore');
+const camelCase = require('mout/string/camelCase');
 
 const PROHIBITED_ATTRS = ['state', 'country', 'category'];
 
 class Node extends Record({
   id: null,
-  name: 'Test',
+  name: null,
   nodeType: 'bank',
   wheelchair: 'unknown',
   wheelchairToilet: 'unknown',
   wheelchairDescription: '',
-  lat: 52.520007,
-  lon: 13.404954,
+  lat: null,
+  lon: null,
   category: null,
   street: null,
   housenumber: null,
@@ -34,15 +35,26 @@ class Node extends Record({
   }
 
   serialize() {
-    const node = this.toKeyedSeq()
-      .filter((value, key) => !PROHIBITED_ATTRS.includes(key))
-      .mapKeys(key => key === 'nodeType' ? 'type' : key)
-      .mapKeys(key => underscore(key))
-      .toJS();
-
-    return { node };
+    return { node: Node.serializeAttrs(this) };
   }
 }
+
+Node.serializeAttrs = (attrs) => {
+  return Seq(attrs)
+    .toKeyedSeq()
+    .filter((value, key) => !PROHIBITED_ATTRS.includes(key))
+    .mapKeys(key => key === 'nodeType' ? 'type' : key)
+    .mapKeys(key => underscore(key))
+    .toJS();
+};
+
+Node.unserializeAttrs = (attrs) => {
+  return Seq(attrs)
+    .toKeyedSeq()
+    .mapKeys(key => key === 'type' ? 'nodeType' : key)
+    .mapKeys(key => camelCase(key))
+    .toJS();
+};
 
 Node.fromFeature = (feature) => {
   const { properties, geometry } = feature,

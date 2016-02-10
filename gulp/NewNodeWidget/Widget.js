@@ -3,16 +3,17 @@ const { connect } = require('react-redux');
 
 const Header = require('./Header');
 const Breadcrumbs = require('./Breadcrumbs');
+const Section = require('./models/Section');
 const { navigateToSection } = require('./actions');
 const { sectionsSelector, activeSectionSelector } = require('./selectors');
 
 const { immutableListOf } = require('../common/types');
-const { func, arrayOf, string } = React.PropTypes;
+const { func, instanceOf } = React.PropTypes;
 
 class Widget extends React.Component {
   static propTypes = {
-    sections: immutableListOf(string).isRequired,
-    activeSection: string,
+    sections: immutableListOf(instanceOf(Section)).isRequired,
+    activeSection: instanceOf(Section),
     onNavigate: func.isRequired
   };
 

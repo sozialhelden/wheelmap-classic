@@ -2,7 +2,7 @@ const { Map, List } = require('immutable');
 const { handleActions } = require('redux-actions');
 
 const { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } = require('../models/sections');
-const { ACTIVATE_SECTION, CHANGE_NODE, CHANGE_MAP_CENTER, CHANGE_MAP_ZOOM, MARKER_MOVED, ADDRESS_CHANGED, FETCH_SIMILAR } = require('../actions');
+const { ACTIVATE_SECTION, CHANGE_NODE, CHANGE_MAP_CENTER, CHANGE_MAP_ZOOM, MARKER_MOVED, ADDRESS_CHANGED, FETCH_SIMILAR, SET_ERRORS } = require('../actions');
 const { FETCH_CATEGORIES } = require('../../common/actions/categories');
 const Node = require('../../common/models/node');
 
@@ -13,16 +13,20 @@ const DEFAULT_STATE = Map({
   sections: List([NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW]),
   fetchedCategories: false,
   node: defaultNode,
-  mapCenter: { lat: defaultNode.lat, lon: defaultNode.lon },
+  mapCenter: { lat: 52.520007, lon: 13.404954 },
   mapZoom: 16,
   markerMoved: false,
   addressChanged: false,
-  similarNodes: List()
+  similarNodes: List(),
+  errors: Map()
 });
 
 module.exports = handleActions({
   [ACTIVATE_SECTION]: (state, { payload: activeSection }) => {
-    return state.set('activeSection', activeSection);
+    const sections = state.get('sections'),
+      section = sections.find(section => section.id === activeSection);
+
+    return state.set('activeSection', section);
   },
   [FETCH_CATEGORIES]: (state) => {
     return state.set('fetchedCategories', true);
@@ -44,5 +48,8 @@ module.exports = handleActions({
   },
   [FETCH_SIMILAR]: (state, { payload: similarNodes }) => {
     return state.set('similarNodes', List(similarNodes));
+  },
+  [SET_ERRORS]: (state, { payload: errors }) => {
+    return state.mergeIn(['errors'], errors);
   }
 }, DEFAULT_STATE);

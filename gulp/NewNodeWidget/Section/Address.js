@@ -5,7 +5,7 @@ const { Marker } = require('react-leaflet');
 const Section = require('./Section');
 const { ADDRESS } = require('../models/sections');
 const { navigateToNextSection, changeNodeAddress, updateAddress, changeMapCenter, changeMapZoom } = require('../actions');
-const { nodeSelector, mapCenterSelector, mapZoomSelector } = require('../selectors');
+const { nodeSelector, mapCenterSelector, mapZoomSelector, errorsSelector } = require('../selectors');
 const Form = require('../../common/Form');
 const Alert = require('../../common/Alert');
 const MapboxMap = require('../../common/MapboxMap');
@@ -19,11 +19,20 @@ class AddressSection extends React.Component {
   };
 
   render() {
-    const { node, mapCenter, mapZoom,
+    const { node, errors, mapCenter, mapZoom,
       onClickAction, onChangePostcode, onChangeCity, onChangeStreet, onChangeHousenumber,
       onMapMoved, onMapZoomed, onMarkerMoved } = this.props;
 
-    const nodePosition = [node.lat, node.lon];
+    const nodePosition = [node.lat || mapCenter.lat, node.lon || mapCenter.lon];
+
+    const errorAlertElements = [],
+      latErrors = errors.get('lat');
+
+    if (latErrors != null) {
+      latErrors.forEach((error, index) => {
+        errorAlertElements.push(<Alert key={index} type="error">{error}</Alert>);
+      });
+    }
 
     return (
       <Section section={ADDRESS} onClickAction={onClickAction}>
@@ -64,6 +73,7 @@ class AddressSection extends React.Component {
               </Form.Controls>
             </Form.ControlGroup>
             <Alert>Du kannst den Marker auf der Karte auf die korrekte Position verschieben.</Alert>
+            {errorAlertElements}
           </Row.Span>
           <Row.Span rows={6}>
             <MapboxMap center={mapCenter}
@@ -86,7 +96,8 @@ function mapStateToProps(state) {
   return {
     node: nodeSelector(state),
     mapCenter: mapCenterSelector(state),
-    mapZoom: mapZoomSelector(state)
+    mapZoom: mapZoomSelector(state),
+    errors: errorsSelector(state)
   };
 }
 

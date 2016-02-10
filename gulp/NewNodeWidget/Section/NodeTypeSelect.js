@@ -6,7 +6,7 @@ const I18n = require('../../common/I18n');
 const Category = require('../../common/models/Category');
 const NodeType = require('../../common/models/NodeType');
 
-const { func, instanceOf, number } = React.PropTypes;
+const { func, instanceOf, string } = React.PropTypes;
 const { immutableMapOf } = require('../../common/types');
 
 class NodeTypeSelect extends React.Component {
@@ -14,11 +14,11 @@ class NodeTypeSelect extends React.Component {
     onChange: func,
     categories: immutableMapOf(instanceOf(Category)),
     nodeTypes: immutableMapOf(instanceOf(NodeType)),
-    value: number
+    value: string
   };
 
   onChange = (event) => {
-    this.props.onChange(parseInt(event.target.value));
+    this.props.onChange(event.target.value);
   };
 
   getOptions() {

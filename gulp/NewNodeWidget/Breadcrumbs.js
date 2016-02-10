@@ -4,15 +4,16 @@ const { Link } = require('react-router');
 const classNames = require('classnames');
 
 const I18n = require('../common/I18n');
+const Section = require('./models/Section');
 const { OVERVIEW } = require('./models/sections');
 
 const { immutableListOf } = require('../common/types');
-const { func, string } = React.PropTypes;
+const { func, instanceOf } = React.PropTypes;
 
 class Breadcrumbs extends React.Component {
   static propTypes = {
-    sections: immutableListOf(string).isRequired,
-    activeSection: string,
+    sections: immutableListOf(instanceOf(Section)).isRequired,
+    activeSection: instanceOf(Section),
     onNavigate: func.isRequired
   };
 

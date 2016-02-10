@@ -8,7 +8,7 @@ const { navigateToNextSection, tryFetchCategories, changeNode } = require('../ac
 const { NAME_CATEGORY } = require('../models/sections');
 const { categoriesSelector } = require('../../common/selectors/categories');
 const { nodeTypesSelector } = require('../../common/selectors/nodeTypes');
-const { nodeSelector } = require('../selectors');
+const { nodeSelector, errorsSelector } = require('../selectors');
 
 const { func } = React.PropTypes;
 
@@ -23,19 +23,19 @@ class NameCategorySection extends React.Component {
   }
 
   render() {
-    const { onClickNext, node, categories, nodeTypes, onChangeName, onChangeNodeType } = this.props;
+    const { onClickNext, node, errors, categories, nodeTypes, onChangeName, onChangeNodeType } = this.props;
 
     return (
       <Section section={NAME_CATEGORY} actionLabel="Weiter" onClickAction={onClickNext}>
         <div>{/* Needed for having only one section */}
           <Form.ControlGroup labelFor="name" labelScope="activerecord.attributes.poi.name">
             <Form.Controls>
-              <Form.Input name="name" onChange={onChangeName} value={node.name} />
+              <Form.Input name="name" onChange={onChangeName} value={node.name} errors={errors.get('name')} />
             </Form.Controls>
           </Form.ControlGroup>
           <Form.ControlGroup labelFor="node_type_id" labelScope="activerecord.attributes.poi.type">
             <Form.Controls>
-              <NodeTypeSelect categories={categories} nodeTypes={nodeTypes} onChange={onChangeNodeType} value={node.nodeType} />
+              <NodeTypeSelect categories={categories} nodeTypes={nodeTypes} onChange={onChangeNodeType} value={node.nodeType} errors={errors.get('nodeType')} />
             </Form.Controls>
           </Form.ControlGroup>
         </div>
@@ -48,7 +48,8 @@ function mapStateToProps(state) {
   return {
     categories: categoriesSelector(state),
     nodeTypes: nodeTypesSelector(state),
-    node: nodeSelector(state)
+    node: nodeSelector(state),
+    errors: errorsSelector(state)
   };
 }
 

@@ -47,6 +47,11 @@ const similarNodesSelector = createSelector(
   widget => widget.get('similarNodes')
 );
 
+const errorsSelector = createSelector(
+  widgetSelector,
+  widget => widget.get('errors')
+);
+
 module.exports = {
   widgetSelector,
   activeSectionSelector,
@@ -57,5 +62,6 @@ module.exports = {
   mapZoomSelector,
   markerMovedSelector,
   addressChangedSelector,
-  similarNodesSelector
+  similarNodesSelector,
+  errorsSelector
 };

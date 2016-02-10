@@ -1,5 +1,6 @@
 const { createAction } = require('redux-actions');
 const debounce = require('mout/function/debounce');
+const size = require('mout/collection/size');
 
 const { push } = require('../../common/actions/router');
 const { validateNode } = require('../../common/helpers/api');
@@ -16,6 +17,7 @@ const ADDRESS_CHANGED = 'ADDRESS_CHANGED';
 const CHANGE_MAP_CENTER = 'CHANGE_MAP_CENTER';
 const CHANGE_MAP_ZOOM = 'CHANGE_MAP_ZOOM';
 const FETCH_SIMILAR = 'FETCH_SIMILAR';
+const SET_ERRORS = 'SET_ERRORS';
 
 const activateSection = createAction(ACTIVATE_SECTION);
 
@@ -28,6 +30,8 @@ const addressChanged = createAction(ADDRESS_CHANGED);
 const changeMapCenter = createAction(CHANGE_MAP_CENTER);
 
 const changeMapZoom = createAction(CHANGE_MAP_ZOOM);
+
+const setErrors = createAction(SET_ERRORS);
 
 const fetchSimilar = createAction(FETCH_SIMILAR, (node) => {
   const { name, lat, lon } = node;
@@ -64,6 +68,10 @@ const navigateToSection = function(section) {
     if (activeIndex < index)
       return;
 
+    // Reset errors
+    dispatch(setErrors({}));
+
+    // Push new node section path
     dispatch(push.newNodeSectionPath(section));
   }
 };
@@ -71,17 +79,41 @@ const navigateToSection = function(section) {
 const navigateToNextSection = function(currentSection) {
   return (dispatch, getState) => {
     const state = getState(),
-      node = nodeSelector(state);
+      node = nodeSelector(state),
+      { nodeAttrs } = currentSection;
+
+    // DRY method for navigating to next section
+    const navigate = () => {
+      const sections = sectionsSelector(state),
+        nextIndex = sections.indexOf(currentSection) + 1;
+
+      // Reset errors
+      dispatch(setErrors({}));
+
+      // Push new node section path
+      dispatch(push.newNodeSectionPath(sections.get(nextIndex)));
+    };
 
     validateNode(node)
       .then(errors => {
-        console.log(errors);
+        const sectionErrors = {};
+
+        // No attrs in this section which can have an error or no errors occurred
+        if (nodeAttrs.size === 0 || size(errors) === 0)
+          return navigate();
+
+        // Copy valid errors into a new section error object
+        nodeAttrs.forEach(attr => {
+          if (errors[attr])
+            sectionErrors[attr] = errors[attr];
+        });
+
+        // No errors in this section (maybe an error occurred in a section not filled with input by the user yet)
+        if (size(sectionErrors) === 0)
+          return navigate();
+
+        dispatch(setErrors(sectionErrors));
       });
-
-    const sections = sectionsSelector(state),
-      nextIndex = sections.indexOf(currentSection) + 1;
-
-    dispatch(push.newNodeSectionPath(sections.get(nextIndex)));
   };
 };
 
@@ -154,6 +186,7 @@ module.exports = {
   MARKER_MOVED,
   ADDRESS_CHANGED,
   FETCH_SIMILAR,
+  SET_ERRORS,
   activateSection,
   changeNode,
   markerMoved,
@@ -166,5 +199,6 @@ module.exports = {
   tryFetchCategories,
   fetchSimilar,
   updateMap,
-  updateAddress
+  updateAddress,
+  setErrors
 };

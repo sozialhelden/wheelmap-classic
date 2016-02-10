@@ -135,8 +135,11 @@
         border: 0;
         background-color: transparent;
         padding: 0;
-        color: $grayLight;
         margin: 0;
+
+        &-info {
+          color: $grayLight;
+        }
       }
 
       .form-actions {
