@@ -49,9 +49,9 @@ group :default do
   gem 'meta_search'
   gem 'kaminari', '~> 0.14'
   gem 'kaminari-i18n'
-  gem 'carrierwave'
-  gem 'carrierwave-meta'
-  gem 'carrierwave_backgrounder'
+  gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: 'c2ee2e8' # to be used before release 0.11.0 becaus of deprecation warnings
+  gem 'carrierwave-meta', '~> 0.0.7'
+  gem 'carrierwave_backgrounder', '~> 0.4.2'
   gem 'rmagick'
   gem 'flash_cookie_session'
   gem 'cacheable_flash'
@@ -85,7 +85,7 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'rspec-rails', '~> 2.99'
+  gem 'rspec-rails', '~> 3.4'
   gem 'spork'
   gem 'rb-fsevent'
   gem 'teaspoon', '1.1.1'
@@ -102,7 +102,7 @@ group :test do
   gem 'minitest'
   gem 'webmock', :require => nil
   gem 'factory_girl_rails'
-  gem "capybara", "1.1.1"  # on mac, you need sudo port install libffi
+  gem 'capybara', '~> 2.6', '>= 2.6.2' # on mac, you need sudo port install libffi
   gem 'cucumber', :require => false
   gem 'cucumber-rails', :require => false
   gem 'autotest', :require => false
