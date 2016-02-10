@@ -28,7 +28,7 @@ class SimilarNodesSection extends React.Component {
     similarNodes.forEach(node => {
       items.push(
         <li key={node.id}>
-          <strong>{node.name}</strong> {Node.address(node)}
+          <strong>{node.name}</strong> {node.address()}
           <a href={editNodePath(node.id)} className="pull-right">Mit diesem Ort fortfahren <i className="icon-chevron-right"/></a>
         </li>
       );

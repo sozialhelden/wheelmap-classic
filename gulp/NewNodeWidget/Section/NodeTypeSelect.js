@@ -33,7 +33,7 @@ class NodeTypeSelect extends React.Component {
 
           return {
             label: label,
-            value: nodeType.id
+            value: nodeType.identifier
           }
         });
 

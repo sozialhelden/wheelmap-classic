@@ -2,6 +2,7 @@ const { createAction } = require('redux-actions');
 const debounce = require('mout/function/debounce');
 
 const { push } = require('../../common/actions/router');
+const { validateNode } = require('../../common/helpers/api');
 const { fetchCategories } = require('../../common/actions/categories');
 const { sectionsSelector, fetchedCategoriesSelector, activeSectionSelector } = require('../selectors');
 const { search, searchFirst, reverseGeocode } = require('../../common/helpers/photon');
@@ -69,7 +70,15 @@ const navigateToSection = function(section) {
 
 const navigateToNextSection = function(currentSection) {
   return (dispatch, getState) => {
-    const sections = sectionsSelector(getState()),
+    const state = getState(),
+      node = nodeSelector(state);
+
+    validateNode(node)
+      .then(errors => {
+        console.log(errors);
+      });
+
+    const sections = sectionsSelector(state),
       nextIndex = sections.indexOf(currentSection) + 1;
 
     dispatch(push.newNodeSectionPath(sections.get(nextIndex)));
