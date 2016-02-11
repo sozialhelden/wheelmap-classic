@@ -292,7 +292,7 @@ describe Api::NodesController do
       }.to change(Delayed::Job, :count).by(1)
     end
 
-    it "should deny update when telephone number is misformatted" do
+    it "should accept update even when telephone number is misformatted" do
       @user.oauth_token = :a_token
       @user.oauth_secret = :a_secret
       @user.save!
@@ -307,8 +307,8 @@ describe Api::NodesController do
                       :phone => '30 123456',
                       :api_key => @user.authentication_token
                      })
-         expect(response.status).to eql 400
-       }.to change(Delayed::Job, :count).by(0)
+         expect(response.status).to eql 202
+       }.to change(Delayed::Job, :count).by(1)
 
     end
     it "should accept update for telephone number" do
