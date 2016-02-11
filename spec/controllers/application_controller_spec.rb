@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe ApplicationController do
   # if this test fails, check wether you need the rack_hotfix.rb still
