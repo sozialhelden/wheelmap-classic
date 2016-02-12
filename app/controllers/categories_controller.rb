@@ -1,7 +1,4 @@
 class CategoriesController < ApplicationController
-  inherit_resources
-
-  actions :show
 
   def index
     @categories = Category.all
@@ -17,7 +14,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    show! do |format|
+    @category = Category.find(params[:id])
+    respond_to do |format|
       format.json {
         render json: {
           category: @category.as_api_response(:ember),
