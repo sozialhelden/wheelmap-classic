@@ -1,33 +1,50 @@
 const React = require('react');
 const { connect } = require('react-redux');
+const { bindActionCreators } = require('redux');
+const { createStructuredSelector } = require('reselect');
 
 const Section = require('./Section');
 const Form = require('../../common/Form');
 const { CONTACT } = require('../models/sections');
-const { navigateToNextSection, changeNode } = require('../actions');
-const { nodeSelector } = require('../selectors');
+const actions = require('../actions');
+const selectors = require('../selectors');
 
 const { func } = React.PropTypes;
 
 class ContactSection extends React.Component {
   static propTypes = {
-    onClickNext: func
+    onClickNext: func.isRequired,
+    onNodeChange: func.isRequired
   };
 
+  onChange(attr, event) {
+    const { onNodeChange, node } = this.props;
+
+    onNodeChange(node.set(attr, event.target.value));
+  }
+
   render() {
-    let { node, onClickAction, onChangeWebsite, onChangePhone } = this.props;
+    let { node, errors, onClickAction } = this.props;
 
     return (
       <Section section={CONTACT} onClickAction={onClickAction}>
         <div>{/* Needed for having only one section */}
           <Form.ControlGroup labelFor="website" labelScope="activerecord.attributes.poi.website">
             <Form.Controls>
-              <Form.Input name="website" onChange={onChangeWebsite} value={node.website} hintScope="formtastic.hints.website" />
+              <Form.Input name="website"
+                          onChange={this.onChange.bind(this, 'website')}
+                          value={node.website}
+                          hintScope="formtastic.hints.website"
+                          errors={errors.get('website')} />
             </Form.Controls>
           </Form.ControlGroup>
           <Form.ControlGroup labelFor="phone" labelScope="activerecord.attributes.poi.phone">
             <Form.Controls>
-              <Form.Input name="phone" onChange={onChangePhone} value={node.phone} hintScope="formtastic.hints.phone" />
+              <Form.Input name="phone"
+                          onChange={this.onChange.bind(this, 'phone')}
+                          value={node.phone}
+                          hintScope="formtastic.hints.phone"
+                          errors={errors.get('phone')} />
             </Form.Controls>
           </Form.ControlGroup>
         </div>
@@ -36,18 +53,16 @@ class ContactSection extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    node: nodeSelector(state)
-  };
-}
+const mapStateToProps = createStructuredSelector({
+  node: selectors.node,
+  errors: selectors.errors
+});
 
 function mapDispatchToProps(dispatch) {
-  return {
-    onClickAction: section => dispatch(navigateToNextSection(section)),
-    onChangeWebsite: event => dispatch(changeNode({ website: event.target.value })),
-    onChangePhone: event => dispatch(changeNode({ phone: event.target.value }))
-  };
+  return bindActionCreators({
+    onClickAction: actions.navigateToNextSection,
+    onNodeChange: actions.changeNode
+  }, dispatch);
 }
 
 module.exports = connect(
