@@ -21,10 +21,10 @@
           - if user_signed_in?
             .btn-group{:style => 'margin: 10px 10px 0px'}
               = link_to profile_path, :class => ['btn', 'btn-small'] do
-                %i.icon-user
+                = fa_icon('user')
                 %span.hidden-phone=t('header.navigation.profile')
               = link_to destroy_user_session_path, :class => ['btn', 'btn-small'] do
-                %i.icon-trash
+                = fa_icon('trash')
                 %span.hidden-phone=t('devise.sign_out.headline')
           - else
             = link_to new_user_session_path, :class => ['btn', 'btn-small'], :title =>  t('header.navigation.login'), :style => 'margin: 10px 10px 0px' do
@@ -43,6 +43,6 @@
               %li= link_to t('header.navigation.about_wheelmap', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), community_about_url
               %li= link_to t('header.navigation.map', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), root_path
               %li= link_to t('header.navigation.projects', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), community_projects_url
-              %li= link_to t('header.navigation.blog', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), "http://wheelmap.org/#{I18n.locale == :de ? nil : 'en/'}"
+              %li= link_to t('header.navigation.blog', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), community_blog_url
               %li= link_to t('header.navigation.press', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), community_press_url
               %li= link_to t('header.navigation.contact', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), community_contact_url

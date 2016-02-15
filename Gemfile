@@ -49,9 +49,9 @@ group :default do
   gem 'meta_search'
   gem 'kaminari', '~> 0.14'
   gem 'kaminari-i18n'
-  gem 'carrierwave'
-  gem 'carrierwave-meta'
-  gem 'carrierwave_backgrounder'
+  gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: 'c2ee2e8' # to be used before release 0.11.0 becaus of deprecation warnings
+  gem 'carrierwave-meta', '~> 0.0.7'
+  gem 'carrierwave_backgrounder', '~> 0.4.2'
   gem 'rmagick'
   gem 'flash_cookie_session'
   gem 'cacheable_flash'
@@ -59,8 +59,10 @@ group :default do
   gem 'awesome_nested_set', '<3.0'
   gem 'i18n', '<0.7.0'
   gem 'i18n-js', '~> 3.0.0.rc9'
-  gem 'font-awesome-rails'
+  gem 'font-awesome-rails', '~> 3.2.1'
   gem 'ember-rails', '~> 0.14'
+  gem 'ember-data-source', '~> 0.14'
+  gem 'ember-source', '~> 1.1.2'
   gem 'backup'
   gem 'geocoder'
   gem 'ruby-progressbar'
@@ -85,16 +87,14 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'rspec-rails', '~> 2.99'
-  gem 'spork'
+  gem 'rspec-rails', '~> 3.4'
   gem 'rb-fsevent'
   gem 'teaspoon', '1.1.1'
   gem 'teaspoon-jasmine'
   gem 'phantomjs'
-  # gem 'guard'
-  # gem 'guard-rspec'
-  # gem 'guard-spork'
-  # gem 'guard-cucumber', "1.2.2"
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-cucumber', '~> 1.6'
   gem 'pry'
 end
 
@@ -102,7 +102,7 @@ group :test do
   gem 'minitest'
   gem 'webmock', :require => nil
   gem 'factory_girl_rails'
-  gem "capybara", "1.1.1"  # on mac, you need sudo port install libffi
+  gem 'capybara', '~> 2.6', '>= 2.6.2' # on mac, you need sudo port install libffi
   gem 'cucumber', :require => false
   gem 'cucumber-rails', :require => false
   gem 'autotest', :require => false

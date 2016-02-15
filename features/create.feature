@@ -42,4 +42,3 @@ Feature: Create a new node via website
       | addr:postcode          | 11122                           |
       | website                | http://wienerwald.de            |
       | phone                  | +49 800 123344                  |
-

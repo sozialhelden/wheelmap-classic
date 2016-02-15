@@ -95,51 +95,59 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def community_blog_url
+    if I18n.locale == :de
+      "//community.wheelmap.org/blog/"
+    else
+      "//community.wheelmap.org/en/blog/"
+    end
+  end
+
   def community_press_url
     if I18n.locale == :de
-      "http://wheelmap.org/about/presse/"
+      "//community.wheelmap.org/about/presse/"
     else
-      "http://wheelmap.org/en/about/press/"
+      "//community.wheelmap.org/en/about/press/"
     end
   end
 
   def community_contact_url
     if I18n.locale == :de
-      "http://wheelmap.org/kontakt/"
+      "//community.wheelmap.org/kontakt/"
     else
-      "http://wheelmap.org/en/contact/"
+      "//community.wheelmap.org/en/contact/"
     end
   end
 
   def community_projects_url
     if I18n.locale == :de
-      "http://wheelmap.org/projekte/"
+      "//community.wheelmap.org/projekte/"
     else
-      "http://wheelmap.org/en/get-engaged/"
+      "//community.wheelmap.org/en/get-engaged/"
     end
   end
 
   def community_imprint_url
     if I18n.locale == :de
-      "http://wheelmap.org/impressum/"
+      "//community.wheelmap.org/impressum/"
     else
-      "http://wheelmap.org/en/imprint/"
+      "//community.wheelmap.org/en/imprint/"
     end
   end
 
   def community_about_url
     if I18n.locale == :de
-      "http://wheelmap.org/about/"
+      "//community.wheelmap.org/about/"
     else
-      "http://wheelmap.org/en/about/"
+      "//community.wheelmap.org/en/about/"
     end
   end
 
   def community_newsletter_url
     if I18n.locale == :de
-      "http://wheelmap.org/newsletter/"
+      "//community.wheelmap.org/newsletter/"
     else
-      "http://wheelmap.org/newsletter-2/"
+      "//community.wheelmap.org/newsletter-2/"
     end
   end
 
