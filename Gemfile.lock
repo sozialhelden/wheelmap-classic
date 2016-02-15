@@ -32,8 +32,6 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
-    active-model-adapter-source (2.0.3)
-      ember-data-source (>= 1.13, < 3.0)
     active_model_serializers (0.9.4)
       activemodel (>= 3.2)
     activeadmin (0.6.6)
@@ -202,21 +200,19 @@ GEM
     email_spec (1.6.0)
       launchy (~> 2.1)
       mail (~> 2.2)
-    ember-data-source (2.3.3)
-      ember-source (>= 2, < 3.0)
-    ember-handlebars-template (0.3.5)
-      barber (>= 0.10.0)
-      sprockets (>= 2.1, < 3.5)
-      tilt
-    ember-rails (0.19.3)
-      active-model-adapter-source (>= 1.13.0)
+    ember-data-source (0.14)
+      ember-source
+    ember-rails (0.14.1)
       active_model_serializers
-      ember-data-source (>= 1.13.0)
-      ember-handlebars-template (>= 0.1.1, < 1.0)
-      ember-source (>= 1.8.0)
+      barber (>= 0.4.1)
+      ember-data-source
+      ember-source
+      execjs (>= 1.2)
+      handlebars-source
       jquery-rails (>= 1.0.17)
       railties (>= 3.1)
-    ember-source (2.3.1)
+    ember-source (1.1.3)
+      handlebars-source (= 1.0.12)
     erubis (2.7.0)
     execjs (2.6.0)
     exifr (1.2.4)
@@ -264,6 +260,7 @@ GEM
       rspec (>= 2.99.0, < 4.0)
     haml (4.0.7)
       tilt
+    handlebars-source (1.0.12)
     has_scope (0.6.0)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
@@ -558,7 +555,9 @@ DEPENDENCIES
   devise (~> 2.2)
   devise-encryptable
   email_spec
+  ember-data-source (~> 0.14)
   ember-rails (~> 0.14)
+  ember-source (~> 1.1.2)
   exifr
   factory_girl_rails
   figaro
