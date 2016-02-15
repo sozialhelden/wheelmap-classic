@@ -45,6 +45,11 @@ set :rbenv_custom_path, '/opt/rbenv'
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
+# Compile assets from gulp directory
+set :npm_flags, '--no-spin'
+set :gulp_executable, -> { "#{fetch(:release_path)}/node_modules/.bin/gulp" }
+set :gulp_tasks, 'browserify'
+
 namespace :deploy do
 
   desc 'Restart application'
@@ -70,6 +75,7 @@ namespace :deploy do
     end
   end
 
+  before :updated, 'npm:install'
   before :updated, 'gulp'
 
   before :publishing, 'delayed_job:stop'
@@ -104,6 +110,3 @@ namespace :deploy do
   after :finished, 'airbrake:deploy'
   after :finished, 'newrelic:notice_deployment'
 end
-
-# Compile assets from gulp directory
-set :gulp_tasks, 'browserify'
