@@ -102,3 +102,6 @@ namespace :deploy do
   after :finished, 'airbrake:deploy'
   after :finished, 'newrelic:notice_deployment'
 end
+
+# Compile assets from gulp directory
+set :gulp_tasks, 'browserify'
