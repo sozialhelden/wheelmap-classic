@@ -1,6 +1,10 @@
 class NodeTypesController < ApplicationController
   def index
-    @node_types = NodeType.all
+    if params[:ids]
+      @node_types ||= NodeType.where(id: params[:ids])
+    else
+      @node_types = NodeType.all
+    end
 
     respond_to do |format|
       format.json {
@@ -20,11 +24,4 @@ class NodeTypesController < ApplicationController
 
   protected
 
-  def collection
-    if params[:ids]
-      @node_types ||= NodeType.where(id: params[:ids])
-    else
-      super
-    end
-  end
 end
