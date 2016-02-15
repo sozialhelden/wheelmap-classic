@@ -1,8 +1,4 @@
 class NodeTypesController < ApplicationController
-  inherit_resources
-
-  actions :show
-
   def index
     @node_types = NodeType.all
 
@@ -16,7 +12,8 @@ class NodeTypesController < ApplicationController
   end
 
   def show
-    show! do |format|
+    @node_type = NodeType.find(params[:id])
+    respond_to do |format|
       format.json { render json: { node_type: @node_type.as_api_response(:ember) }.to_json }
     end
   end
