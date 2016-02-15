@@ -116,6 +116,8 @@ GEM
       capistrano (>= 3.2.0)
     capistrano-gulp (0.0.2)
       capistrano (~> 3.0)
+    capistrano-npm (1.0.1)
+      capistrano (>= 3.0.0)
     capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -537,6 +539,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-deploytags (~> 1.0.0)
   capistrano-gulp
+  capistrano-npm
   capistrano-rails
   capistrano-rbenv
   capybara (~> 2.6, >= 2.6.2)
