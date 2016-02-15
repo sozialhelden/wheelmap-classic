@@ -125,4 +125,5 @@ group :development do
   gem 'capistrano-rbenv',                   require: false
   gem 'capistrano-bundler',                 require: false
   gem 'capistrano-deploytags', '~> 1.0.0',  require: false
+  gem 'capistrano-gulp',                    require: false
 end
