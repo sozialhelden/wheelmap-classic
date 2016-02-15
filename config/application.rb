@@ -74,6 +74,10 @@ module Wheelmap
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    config.action_controller.asset_host = Proc.new { |source, request|
+      "//#{request.host_with_port}"
+    }
+
     config.to_prepare do
       Devise::SessionsController.layout "relaunch"
     end
