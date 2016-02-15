@@ -59,7 +59,7 @@ group :default do
   gem 'awesome_nested_set', '<3.0'
   gem 'i18n', '<0.7.0'
   gem 'i18n-js', '~> 3.0.0.rc9'
-  gem 'font-awesome-rails'
+  gem 'font-awesome-rails', '~> 3.2.1'
   gem 'ember-rails', '~> 0.14'
   gem 'ember-data-source', '~> 0.14'
   gem 'ember-source', '~> 1.1.2'

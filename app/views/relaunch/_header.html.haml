@@ -21,10 +21,10 @@
           - if user_signed_in?
             .btn-group{:style => 'margin: 10px 10px 0px'}
               = link_to profile_path, :class => ['btn', 'btn-small'] do
-                %i.icon-user
+                = fa_icon('user')
                 %span.hidden-phone=t('header.navigation.profile')
               = link_to destroy_user_session_path, :class => ['btn', 'btn-small'] do
-                %i.icon-trash
+                = fa_icon('trash')
                 %span.hidden-phone=t('devise.sign_out.headline')
           - else
             = link_to new_user_session_path, :class => ['btn', 'btn-small'], :title =>  t('header.navigation.login'), :style => 'margin: 10px 10px 0px' do
