@@ -1,10 +1,12 @@
 class NodeTypesController < ApplicationController
   inherit_resources
 
-  actions :index, :show
+  actions :show
 
   def index
-    index! do |format|
+    @node_types = NodeType.all
+
+    respond_to do |format|
       format.json {
         render json: {
             node_types: @node_types.as_api_response(:ember)
