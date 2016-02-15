@@ -6,6 +6,8 @@ describe "Homepage" do
   end
 
   it "contains 'Rollstuhgerechte Orte finden' within a logo" do
-    expect(page).to have_content("Rollstuhlgerechte Orte finden")
+    within(".logo") do
+      expect(page).to have_content("Rollstuhlgerechte Orte finden")
+    end
   end
 end
