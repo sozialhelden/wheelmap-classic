@@ -32,14 +32,15 @@ function* navigateToSection(getState) {
       sections = selectors.sections(state),
       index = sections.indexOf(section),
       activeSection = selectors.activeSection(state),
-      activeIndex = sections.indexOf(activeSection);
+      activeIndex = sections.indexOf(activeSection),
+      node = selectors.node(state);
 
     // Move only back in history
     if (activeIndex < index)
       return;
 
     // Push new node section path
-    yield put(push.newNodeSectionPath(section));
+    yield put(push.newNodeSectionPath(section, node.toJS()));
   }
 }
 
@@ -70,7 +71,7 @@ function* navigateToNextSection(getState) {
       nextIndex = sections.indexOf(activeSection) + 1,
       nextSection = sections.get(nextIndex);
 
-    yield put(push.newNodeSectionPath(nextSection));
+    yield put(push.newNodeSectionPath(nextSection, node.toJS()));
   }
 }
 
@@ -80,7 +81,7 @@ function* fetchCategories() {
 
 function* watchMarkerMoved() {
   // Run updateMap saga until ...
-  const updateMapTask = yield fork(updateMap);
+  const updateMapTask = yield fork(debounceUpdateMap);
 
   // ... marker was moved.
   yield take(actions.MARKER_MOVED);
@@ -96,29 +97,55 @@ function* watchChangeNodeAddress(getState) {
   yield cancel(updateAddressTask);
 }
 
-function* updateMap() {
+function delay(delay) {
+  return new Promise(resolve => {
+    setTimeout(resolve, delay);
+  });
+}
+
+function* updateMap(node) {
   try {
+    // Change node
+    yield put(actions.changeNode(node));
+
+    // Delay photon request.
+    yield delay(300);
+
+    const address = node.address(),
+      feature = yield photon.geocode(address);
+
+    // Restart daemon if no feature was found.
+    if (feature == null)
+      return;
+
+    const [lon, lat] = feature.geometry.coordinates,
+      center = { lat, lon };
+
+    yield put(actions.changeMapCenter(center));
+  } catch(error) {
+    if (error instanceof SagaCancellationException)
+      return;
+
+    throw error;
+  }
+}
+
+function* debounceUpdateMap() {
+  try {
+    let updateMapTask = null;
+
     while (true) {
       const { payload: node } = yield take(actions.CHANGE_NODE_ADDRESS);
 
-      // Change node
-      yield put(actions.changeNode(node));
+      // Cancel old update map task (debounce)
+      if (updateMapTask != null)
+        yield cancel(updateMapTask);
 
-      const address = node.address(),
-        feature = yield photon.geocode(address);
-
-      // Restart daemon if no feature was found.
-      if (feature == null)
-        continue;
-
-      const [lon, lat] = feature.geometry.coordinates,
-        center = { lat, lon };
-
-      yield put(actions.changeMapCenter(center));
+      updateMapTask = yield fork(updateMap, node);
     }
   } catch(error) {
     if (error instanceof SagaCancellationException)
-      return console.log('Canceled update Map.');
+      return;
 
     throw error;
   }
