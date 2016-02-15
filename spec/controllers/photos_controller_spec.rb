@@ -1,5 +1,5 @@
 # TODO reenable photo feature
-require 'spec_helper'
+require 'rails_helper'
 
 describe PhotosController do
   include Devise::TestHelpers

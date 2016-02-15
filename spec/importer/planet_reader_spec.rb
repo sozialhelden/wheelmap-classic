@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 OSM_IMPORT = <<-XML
 <?xml version='1.0' encoding='UTF-8'?>

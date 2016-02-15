@@ -1,5 +1,5 @@
 # encoding: UTF-8
-require 'spec_helper'
+require 'rails_helper'
 require "cacheable_flash/test_helpers"
 
 class UpdateJob < ActiveRecord::Base
