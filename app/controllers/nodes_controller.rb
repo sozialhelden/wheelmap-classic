@@ -1,4 +1,8 @@
 class NodesController < ApplicationController
+  SIMILAR_URL = "http://photon.komoot.de/api"
+  USER_AGENT = "Wheelmap, (http://wheelmap.org)"
+  SIMILAR_MAX_DISTANCE = 200
+
   require 'float'
   require 'yajl'
   include ActionView::Helpers::CacheHelper
@@ -6,14 +10,12 @@ class NodesController < ApplicationController
   include NewRelic::Agent::MethodTracer
   include NodesHelper
 
-  layout :determine_layout
-
   skip_before_filter :verify_authenticity_token
 
-  before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update]
-  before_filter :authenticate_application!,       :only => [:new, :create, :edit, :update]
+  before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update, :validate]
+  before_filter :authenticate_application!,       :only => [:new, :create, :edit, :update, :validate]
   # TODO reenable feature terms
-  before_filter :authenticate_terms!,             :only => [:new, :create, :edit, :update], :unless => :mobile_app?
+  before_filter :authenticate_terms!,             :only => [:new, :create, :edit, :update, :validate], :unless => :mobile_app?
   before_filter :check_create_params,             :only => :create
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
@@ -132,7 +134,20 @@ class NodesController < ApplicationController
   end
 
   def new
-    @node = Poi.new
+  end
+
+  def validate
+    node = Poi.new(params[:node])
+
+    if node.valid?
+      render json: {}, status: 200
+    else
+      render json: { errors: node.errors }, status: 422
+    end
+  end
+
+  def similar
+    render json: find_similar(params[:q], params[:lat], params[:lon], params[:limit]), status: 200
   end
 
   def create
@@ -141,17 +156,16 @@ class NodesController < ApplicationController
     if @node.valid?
       CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user, source('create'))
 
+      flash[:track]  = "'Data', 'Create', '#{@node.wheelchair}'"
+      flash[:view] = '/nodes/created'
+      flash[:notice] = I18n.t('nodes.create.flash.successfull')
+
       respond_to do |wants|
         wants.json{ render :status => 200, :json => {} } # iphone wants 200. nothing more.
-        wants.html do
-          flash[:track]  = "'Data', 'Create', '#{@node.wheelchair}'"
-          flash[:view] = '/nodes/created'
-          flash[:notice] = I18n.t('nodes.create.flash.successfull')
-          redirect_to root_path(:layers => 'BT', :lat => @node.lat, :lon => @node.lon, :zoom => 18)
-        end
+        wants.html{ redirect_to root_path(:layers => 'BT', :lat => @node.lat, :lon => @node.lon, :zoom => 18) }
       end
     else
-      render :action => :new, :layers => 'BT', :lat => @node.lat, :lon => @node.lon, :zoom => (params[:zoom] || 18)
+      render :action => :new, status: 406
     end
   end
 
@@ -182,15 +196,6 @@ class NodesController < ApplicationController
 
   # Before filter
   protected
-
-  def determine_layout
-    case action_name
-      when 'new', 'create'
-        'legacy'
-      else
-        'nodes'
-    end
-  end
 
   # If a node_id is given additionally, make sure it is loaded
   def load_custom_node
@@ -317,5 +322,55 @@ class NodesController < ApplicationController
 
   def node_params
     params.require(:node).permit(:name, :node_type_id, :street, :housenumber, :postcode, :city, :website, :phone, :wheelchair_description)
+  end
+
+  def find_similar(query, lat, lon, limit = 10)
+    search_url = URI.parse(SIMILAR_URL)
+    query = { lang: I18n.locale, q: query, lat: lat, lon: lon }
+    cache_key = "#{search_url}?#{query.to_param}"
+
+=begin
+    # Read response from cache
+    if (body = Rails.cache.read(cache_key))
+      return body
+    end
+=end
+
+    Net::HTTP.new(search_url.host, search_url.port).start do |http|
+      query_url = "#{search_url.path}?#{query.to_param}"
+      req = Net::HTTP::Get.new(query_url, { 'User-Agent' => USER_AGENT })
+      resp = http.request(req)
+      body = resp.body
+
+      if resp.code == '200'
+        data = JSON.parse(body, symbolize_names: true)
+
+        ids = data[:features].collect { |feature| feature[:properties][:osm_id] }
+
+        if ids.count > 0
+          geo_factory = RGeo::Cartesian.factory
+          center = geo_factory.point(lon.to_f, lat.to_f)
+
+          pois = Poi.where(osm_id: ids).select('osm_id, geom').limit(limit)
+          
+          valid_pois = pois.select do |poi|
+            center.distance(poi.geom).abs <= SIMILAR_MAX_DISTANCE
+          end
+
+          valid_ids = valid_pois.collect { |poi| poi.id }
+
+          data[:features].keep_if do |feature|
+            valid_ids.include? feature[:properties][:osm_id]
+          end
+
+          body = JSON.generate(data)
+        end
+
+        # Cache response object if request was successful
+        # Rails.cache.write(cache_key, resp.body, :expires_in => 1.hour)
+      end
+
+      body
+    end
   end
 end
