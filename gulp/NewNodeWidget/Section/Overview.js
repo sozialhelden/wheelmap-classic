@@ -1,11 +1,13 @@
 const React = require('react');
 const { connect } = require('react-redux');
+const { bindActionCreators } = require('redux');
+const { createStructuredSelector } = require('reselect');
 
 const Section = require('./Section');
 const I18n = require('../../common/I18n');
 const { NAME_CATEGORY, ADDRESS, ACCESSIBILITY, CONTACT, OVERVIEW } = require('../models/sections');
-const { navigateToSection, navigateToNextSection, tryFetchCategories } = require('../actions');
-const { nodeSelector } = require('../selectors');
+const actions = require('../actions');
+const selectors = require('../selectors');
 const { nodeTypesSelector } = require('../../common/selectors/nodeTypes');
 const { categoriesSelector } = require('../../common/selectors/categories');
 
@@ -16,10 +18,6 @@ class OverviewSection extends React.Component {
     onClickNext: func,
     onClickEdit: func
   };
-
-  componentWillMount() {
-    this.props.onMount();
-  }
 
   render() {
     const { node, nodeTypes, categories, onClickAction, onClickEdit } = this.props;
@@ -103,7 +101,7 @@ class OverviewSection extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    node: nodeSelector(state),
+    node: selectors.node(state),
     nodeTypes: nodeTypesSelector(state),
     categories: categoriesSelector(state)
   };
@@ -111,9 +109,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onMount: section => dispatch(tryFetchCategories()),
     onClickAction: section => { console.log(section); },
-    onClickEdit: section => dispatch(navigateToSection(section))
+    onClickEdit: section => dispatch(actions.navigateToSection(section))
   };
 }
 
