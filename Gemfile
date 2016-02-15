@@ -61,6 +61,8 @@ group :default do
   gem 'i18n-js', '~> 3.0.0.rc9'
   gem 'font-awesome-rails'
   gem 'ember-rails', '~> 0.14'
+  gem 'ember-data-source', '~> 0.14'
+  gem 'ember-source', '~> 1.1.2'
   gem 'backup'
   gem 'geocoder'
   gem 'ruby-progressbar'
