@@ -1,5 +1,4 @@
 class LandingPagesController < ApplicationController
-  include InheritedResources::DSL
 
   layout 'legacy'
 
