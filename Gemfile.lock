@@ -114,6 +114,8 @@ GEM
       sshkit (~> 1.2)
     capistrano-deploytags (1.0.4)
       capistrano (>= 3.2.0)
+    capistrano-gulp (0.0.2)
+      capistrano (~> 3.0)
     capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -534,6 +536,7 @@ DEPENDENCIES
   capistrano (>= 3.1.0)
   capistrano-bundler
   capistrano-deploytags (~> 1.0.0)
+  capistrano-gulp
   capistrano-rails
   capistrano-rbenv
   capybara (~> 2.6, >= 2.6.2)
