@@ -1,4 +1,4 @@
-const { Map, List } = require('immutable');
+const { Map, List, fromJS } = require('immutable');
 const { handleActions } = require('redux-actions');
 
 const { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } = require('../models/sections');
@@ -38,6 +38,6 @@ module.exports = handleActions({
     return state.set('similarNodes', List(similarNodes));
   },
   [actions.SET_ERRORS]: (state, { payload: errors }) => {
-    return state.mergeIn(['errors'], errors);
+    return state.set('errors', fromJS(errors));
   }
 }, DEFAULT_STATE);

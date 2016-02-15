@@ -38,9 +38,6 @@ function* navigateToSection(getState) {
     if (activeIndex < index)
       return;
 
-    // Reset errors
-    yield put(actions.setErrors({}));
-
     // Push new node section path
     yield put(push.newNodeSectionPath(section));
   }
@@ -171,6 +168,13 @@ function* fetchSimilar() {
   }
 }
 
+function* resetErrors() {
+  while(true) {
+    yield take(actions.ACTIVATE_SECTION);
+    yield put(actions.setErrors({}));
+  }
+}
+
 module.exports = [
   changeNodeAddress,
   navigateToSection,
@@ -178,5 +182,6 @@ module.exports = [
   fetchCategories,
   fetchSimilar,
   watchMarkerMoved,
-  watchChangeNodeAddress
+  watchChangeNodeAddress,
+  resetErrors
 ];
