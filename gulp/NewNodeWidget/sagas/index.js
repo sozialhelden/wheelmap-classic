@@ -6,6 +6,7 @@ const sections = require('../models/sections');
 const categoriesActions = require('../../common/actions/categories');
 const { push } = require('../../common/actions/router');
 const api = require('../../common/helpers/api');
+const delay = require('../../common/helpers/delayPromise');
 const photon = require('../../common/helpers/photon');
 const Node = require('../../common/models/Node');
 
@@ -97,18 +98,12 @@ function* watchChangeNodeAddress(getState) {
   yield cancel(updateAddressTask);
 }
 
-function delay(delay) {
-  return new Promise(resolve => {
-    setTimeout(resolve, delay);
-  });
-}
-
 function* updateMap(node) {
   try {
     // Change node
     yield put(actions.changeNode(node));
 
-    // Delay photon request.
+    // Delay photon request (debounce).
     yield delay(300);
 
     const address = node.address(),
@@ -137,7 +132,7 @@ function* debounceUpdateMap() {
     while (true) {
       const { payload: node } = yield take(actions.CHANGE_NODE_ADDRESS);
 
-      // Cancel old update map task (debounce)
+      // Cancel old update map task (debounce).
       if (updateMapTask != null)
         yield cancel(updateMapTask);
 
@@ -171,7 +166,7 @@ function* updateAddress(getState) {
     }
   } catch(error) {
     if (error instanceof SagaCancellationException)
-      return console.log('Canceled update Address.');
+      return;
 
     throw error;
   }
