@@ -126,4 +126,5 @@ group :development do
   gem 'capistrano-bundler',                 require: false
   gem 'capistrano-deploytags', '~> 1.0.0',  require: false
   gem 'capistrano-gulp',                    require: false
+  gem 'capistrano-npm',                     require: false
 end
