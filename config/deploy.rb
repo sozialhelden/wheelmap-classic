@@ -70,6 +70,8 @@ namespace :deploy do
     end
   end
 
+  before :updated, 'gulp'
+
   before :publishing, 'delayed_job:stop'
   after  :publishing, 'delayed_job:start'
 
