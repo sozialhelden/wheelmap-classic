@@ -1,12 +1,9 @@
 class CategoriesController < ApplicationController
-  inherit_resources
-
-  actions :index, :show
 
   def index
-    @node_types = collection.map(&:node_types).flatten.uniq
-
-    index! do |format|
+    @categories = Category.all
+    @node_types = @categories.map(&:node_types).flatten.uniq
+    respond_to do |format|
       format.json {
         render json: {
           categories: @categories.as_api_response(:ember),
@@ -17,7 +14,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    show! do |format|
+    @category = Category.find(params[:id])
+    respond_to do |format|
       format.json {
         render json: {
           category: @category.as_api_response(:ember),
