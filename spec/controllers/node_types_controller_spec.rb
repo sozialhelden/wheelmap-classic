@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe NodeTypesController do
   let!(:node_types) { FactoryGirl::create_list(:node_type, 5) }
-  describe '#index' do
+  describe 'GET index' do
     context 'without ids' do
       before do
         get :index, format: :json
@@ -38,7 +38,7 @@ describe NodeTypesController do
     end
   end
 
-  describe '#show' do
+  describe 'GET show/:id' do
     before do
       get :show, id: node_types.first.id, format: :json
     end
