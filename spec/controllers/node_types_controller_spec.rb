@@ -13,13 +13,19 @@ describe NodeTypesController do
       end
 
       it 'returns a list of node types' do
-        expect(json_response.length).to eq 1
+        expect(json_response['node_types'].length).to eq 5
       end
     end
 
     context 'with ids' do
+      let(:ids) {
+        [
+          node_types.first.id,
+          node_types.last.id
+        ]
+      }
       before do
-        get :index, ids: node_types.map(&:id), format: :json
+        get :index, ids: ids, format: :json
       end
 
       it 'returns 200 status code' do
@@ -27,7 +33,7 @@ describe NodeTypesController do
       end
 
       it 'returns a list of node types' do
-        expect(json_response['node_types'].length).to eq 5
+        expect(json_response['node_types'].length).to eq 2
       end
     end
   end
