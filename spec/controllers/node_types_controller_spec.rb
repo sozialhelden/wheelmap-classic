@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe NodeTypesController do
-  let(:node_types) { FactoryGirl::create_list(:node_type, 5) }
+  let!(:node_types) { FactoryGirl::create_list(:node_type, 5) }
   describe '#index' do
     context 'without ids' do
       before do
