@@ -21,7 +21,4 @@ class NodeTypesController < ApplicationController
       format.json { render json: { node_type: node_type.as_api_response(:ember) }.to_json }
     end
   end
-
-  protected
-
 end
