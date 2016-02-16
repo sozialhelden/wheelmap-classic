@@ -23,7 +23,7 @@ describe CategoriesController do
     end
   end
 
-  context 'GET #show' do
+  describe 'GET #show' do
     it 'returns HTTP 200 status code' do
       get :show, id: Category.first.id, format: 'json'
       expect(response).to have_http_status(:success)
