@@ -1,6 +1,4 @@
 class RegionsController < ApplicationController
-  # Include Inherited Resources behaviour
-  inherit_resources
 
   layout 'home'
 
