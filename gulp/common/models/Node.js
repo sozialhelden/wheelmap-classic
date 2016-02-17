@@ -37,6 +37,10 @@ class Node extends Record({
   serialize() {
     return { node: Node.serializeAttrs(this) };
   }
+
+  hasLocation() {
+    return this.lat != null && this.lon != null;
+  }
 }
 
 Node.serializeAttrs = (attrs) => {
