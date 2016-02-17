@@ -177,13 +177,15 @@ function* updateAddress(getState) {
 }
 
 // Fetch similar nodes when the user visits the similar node section.
-function* fetchSimilar() {
+function* fetchSimilar(getState) {
   while(true) {
-    const { payload: node } = yield take(({ type, payload: section }) => {
+    yield take(({ type, payload: section }) => {
       return type === actions.ACTIVATE_SECTION && section === sections.SIMILAR_NODES.id;
     });
 
-    const { name, lat, lon } = node,
+    const state = getState(),
+      node = selectors.node(state),
+      { name, lat, lon } = node,
       features = yield photon.search(name, { lat, lon, limit: 5, osm_tag: 'amenity' });
 
     if (features.length === 0) {
