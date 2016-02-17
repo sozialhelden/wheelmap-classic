@@ -1,4 +1,5 @@
 class RegionsController < ApplicationController
+# inherit_resources
 
   layout 'home'
 
@@ -8,11 +9,11 @@ class RegionsController < ApplicationController
   before_filter :set_default_depth
 
   def index
-    @regions = collection
+    # @regions = collection
   end
 
   def show
-    @region = resource
+    # @region = resource
   end
 
 
