@@ -103,12 +103,12 @@ function* cancelUpdateAddressTask(getState) {
 }
 
 // Update map
-function* updateMap(address) {
+function* updateMap(node) {
   try {
     // Delay photon request (debounce).
     yield delay(300);
 
-    const feature = yield photon.geocode(address);
+    const feature = yield photon.geocode(node.address());
 
     // Restart daemon if no feature was found.
     if (feature == null)
@@ -118,6 +118,7 @@ function* updateMap(address) {
       center = { lat, lon };
 
     yield put(actions.changeMapCenter(center));
+    yield put(actions.changeNode(node.merge(center)));
   } catch(error) {
     if (error instanceof SagaCancellationException)
       return;
@@ -140,7 +141,7 @@ function* debounceUpdateMap() {
       if (updateMapTask != null)
         yield cancel(updateMapTask);
 
-      updateMapTask = yield fork(updateMap, node.address());
+      updateMapTask = yield fork(updateMap, node);
     }
   } catch(error) {
     if (error instanceof SagaCancellationException)
