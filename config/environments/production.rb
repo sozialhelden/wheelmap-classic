@@ -57,7 +57,7 @@ Wheelmap::Application.configure do
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
   config.action_controller.asset_host = Proc.new { |source, request = nil|
-    protocol = !request.nil? ? request.protocol : 'http'
+    protocol = !request.nil? ? request.protocol : 'http://'
 
     "#{protocol}asset%d.wheelmap.org"
   }
