@@ -24,13 +24,13 @@ describe "Locale feature" do
     I18n.locale = I18n.default_locale
   end
 
-  describe "wheelmap in preferred language" do
+  describe "Languages in Wheelmap" do
     before do
       Capybara.current_session.driver.header("Accept-Language", SUPPORTED_LANGUAGES)
       visit '/map'
     end
 
-    describe "Show wheelmap in preferred language" do
+    describe "sets DE as preferred language" do
       let(:languages)  { "de-DE;de;en" }
 
       it "has locale de" do
@@ -38,7 +38,7 @@ describe "Locale feature" do
       end
     end
 
-    describe "Fallback to default language when supported language is not available" do
+    describe "has a fallback to default language when supported language is not available" do
       let(:languages) { "be;pt" }
 
       it "has locale de" do
