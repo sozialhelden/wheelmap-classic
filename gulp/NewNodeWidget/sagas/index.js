@@ -151,17 +151,15 @@ function* updateAddress(getState) {
     while (true) {
       const { payload: location } = yield take(actions.MARKER_MOVED);
 
-      const feature = yield photon.reverseGeocode(location);
+      const feature = yield photon.reverseGeocode(location),
+        { properties: { city, street, postcode, housenumber } } = feature;
 
       const state = getState(),
-        node = selectors.node(state),
-        { properties: { city, street, postcode, housenumber } } = feature,
-        { lat, lon } = location;
+        node = selectors.node(state);
 
       yield put(actions.changeNode(node.merge({
         city, street,
-        postcode, housenumber,
-        lat, lon
+        postcode, housenumber
       })));
     }
   } catch(error) {
@@ -197,6 +195,17 @@ function* resetErrors() {
   }
 }
 
+function* watchMarkerMoved(getState) {
+  while (true) {
+    const { payload: location } = yield take(actions.MARKER_MOVED);
+
+    const state = getState(),
+      node = selectors.node(state);
+
+    yield put(actions.changeNode(node.merge(location)));
+  }
+}
+
 module.exports = [
   changeNodeAddress,
   navigateToSection,
@@ -206,4 +215,6 @@ module.exports = [
   watchMarkerMoved,
   watchChangeNodeAddress,
   resetErrors
+  resetErrors,
+  watchMarkerMoved
 ];
