@@ -1,9 +1,22 @@
 require 'rails_helper'
 
+SUPPORTED_LANGUAGES = "de;en;es;fr;it;is"
+
+shared_examples "switch language manually" do |language, url|
+  describe "Switch language manually to #{language}" do
+    before do
+      Capybara.current_session.driver.header("Accept-Language", SUPPORTED_LANGUAGES)
+      visit url
+    end
+    it "has #{language} locale" do
+      expect(I18n.locale).to eq language.to_sym
+    end
+  end
+end
+
 describe "Locale feature" do
-  let(:languages) { "de;en;es;fr;it;is" }
   before do
-    supported_languages = languages.split(';')
+    supported_languages = SUPPORTED_LANGUAGES.split(';')
     I18n.available_locales = supported_languages
   end
 
@@ -13,7 +26,7 @@ describe "Locale feature" do
 
   describe "wheelmap in preferred language" do
     before do
-      Capybara.current_session.driver.header("Accept-Language", languages)
+      Capybara.current_session.driver.header("Accept-Language", SUPPORTED_LANGUAGES)
       visit '/map'
     end
 
@@ -33,36 +46,8 @@ describe "Locale feature" do
       end
     end
 
-    describe "Switch language manually to german" do
-      before do
-        Capybara.current_session.driver.header("Accept-Language", languages)
-        visit root_path
-      end
-      it 'has german locale' do
-        expect(I18n.locale).to eq :de
-      end
-    end
-
-    describe "Switch language manually to spanish" do
-      before do
-        Capybara.current_session.driver.header("Accept-Language", languages)
-        visit '/es'
-      end
-
-      it 'has spanish locale' do
-        expect(I18n.locale).to eq :es
-      end
-    end
-
-    describe "Switch language manually to english" do
-      before do
-        Capybara.current_session.driver.header("Accept-Language", languages)
-        visit '/en'
-      end
-
-      it 'has spanish locale' do
-        expect(I18n.locale).to eq :en
-      end
-    end
+    it_behaves_like "switch language manually", "de", '/map'
+    it_behaves_like "switch language manually", "es", '/es'
+    it_behaves_like "switch language manually", "en", '/en'
   end
 end
