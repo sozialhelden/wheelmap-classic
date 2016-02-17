@@ -54,8 +54,10 @@ Wheelmap::Application.configure do
   config.serve_static_assets = false
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
-  config.action_controller.asset_host = Proc.new { |source, request|
-    "#{request.protocol}staging.wheelmap.org"
+  config.action_controller.asset_host = Proc.new { |source, request = nil|
+    protocol = !request.nil? ? request.protocol : 'http'
+
+    "#{protocol}staging.wheelmap.org"
   }
 
   # Disable delivery errors, bad email addresses will be ignored
