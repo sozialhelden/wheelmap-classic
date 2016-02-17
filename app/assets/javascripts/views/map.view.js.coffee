@@ -23,7 +23,7 @@ Wheelmap.SpinMixin = Ember.Mixin.create
 
 Wheelmap.TileLayer = EmberLeaflet.TileLayer.extend
   tileUrl: (()->
-    "//{s}.tiles.mapbox.com/v4/sozialhelden.map-iqt6py1k/{z}/{x}/{y}#{if L.Browser.retina then '@2x' else ''}.png64?" +
+    "http://{s}.tiles.mapbox.com/v4/sozialhelden.map-iqt6py1k/{z}/{x}/{y}#{if L.Browser.retina then '@2x' else ''}.png64?" +
       "access_token=pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g"
   ).property()
   options:

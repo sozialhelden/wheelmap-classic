@@ -14,7 +14,7 @@ function computeSrc(boundingBox, lat, lon, apiKey) {
   if (boundingBox != null)
     src = `#/?bbox=${boundingBox[1]},${boundingBox[3]},${boundingBox[0]},${boundingBox[2]}`;
 
-  return '//' + window.location.host + Routes.embed_path({ key: apiKey }) + src;
+  return window.location.origin + Routes.embed_path({ key: apiKey }) + src;
 }
 
 function changeLocation(widget, action) {
