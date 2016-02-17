@@ -7,6 +7,10 @@ describe "Locale feature" do
     I18n.available_locales = supported_languages
   end
 
+  after do
+    I18n.locale = I18n.default_locale
+  end
+
   describe "wheelmap in preferred language" do
     before do
       Capybara.current_session.driver.header("Accept-Language", languages)
