@@ -3,6 +3,7 @@ const { bindActionCreators } = require('redux');
 const { createStructuredSelector } = require('reselect');
 const { connect } = require('react-redux');
 const { Marker } = require('react-leaflet');
+const { divIcon } = require('leaflet');
 
 const Section = require('./Section');
 const { ADDRESS } = require('../models/sections');
@@ -38,10 +39,31 @@ class AddressSection extends React.Component {
     this.props.onMarkerMoved({ lat, lon });
   }
 
+  onMapClick({ latlng }) {
+    const { lat, lng: lon } = latlng;
+
+    this.props.onMarkerMoved({ lat, lon });
+  }
+
   render() {
     const { node, errors, mapCenter, mapZoom, onClickAction } = this.props;
 
-    const nodePosition = [node.lat || mapCenter.lat, node.lon || mapCenter.lon];
+    let marker = null;
+
+    if (node.hasLocation()) {
+      const icon = divIcon({
+        iconSize: null,
+        iconAnchor: null,
+        popupAnchor: null,
+        className: 'marker-wheelchair-' + node.wheelchair,
+        html: `<div class="marker-icon marker-icon-${node.nodeType}"></div>`
+      });
+
+      marker = <Marker position={[node.lat, node.lon]}
+                       draggable={true}
+                       onDragEnd={this.onMarkerMoved.bind(this)}
+                       icon={icon}/>
+    }
 
     const errorAlertElements = [],
       latErrors = errors.get('lat');
@@ -98,10 +120,9 @@ class AddressSection extends React.Component {
                        zoom={mapZoom}
                        className="nodes-new-content-section--address-map"
                        onMoveEnd={this.onMapMoved.bind(this)}
-                       onZoomEnd={this.onMapZoomed.bind(this)}>
-              <Marker position={nodePosition}
-                      draggable={true}
-                      onDragEnd={this.onMarkerMoved.bind(this)}/>
+                       onZoomEnd={this.onMapZoomed.bind(this)}
+                       onClick={this.onMapClick.bind(this)}>
+              {marker}
             </MapboxMap>
           </Row.Span>
         </Row>
