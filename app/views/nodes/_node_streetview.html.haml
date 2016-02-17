@@ -1,6 +1,6 @@
 %section.node-streetview
   %h2=t('.streetview')
-  = image_tag("http://maps.googleapis.com/maps/api/streetview?size=640x426&location=#{node_streetview.lat},#{node_streetview.lon}&sensor=false", alt: "Streetview: #{node_streetview.headline}")
+  = image_tag("//maps.googleapis.com/maps/api/streetview?size=640x426&location=#{node_streetview.lat},#{node_streetview.lon}&sensor=false", alt: "Streetview: #{node_streetview.headline}")
   %small.pull-right
     - if node_streetview.osm_id < 0
       = link_to t('nodes.show.show-in-osm'), "http://openstreetmap.org/browse/way/#{node_streetview.osm_id.abs}"

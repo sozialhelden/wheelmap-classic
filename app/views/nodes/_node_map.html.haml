@@ -2,7 +2,7 @@
   %h2=t('.map')
   .map
     =link_to root_path(anchor: "/?" + {lat: @node.lat, lon: @node.lon, node_id: @node.osm_id, zoom:   cookies[:last_zoom] || 17 }.to_param), title: '' do
-      = image_tag("http://api.tiles.mapbox.com/v4/sozialhelden.map-iqt6py1k/#{node_map.lon},#{node_map.lat},17/359x239.png64?access_token=pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g", class: 'img-polaroid', size: '359x239')
+      = image_tag("//api.tiles.mapbox.com/v4/sozialhelden.map-iqt6py1k/#{node_map.lon},#{node_map.lat},17/359x239.png64?access_token=pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g", class: 'img-polaroid', size: '359x239')
     %div{class: "leaflet-marker-icon public_transfer marker-wheelchair-#{@node.wheelchair}"}
       - if @node.sponsored?
         = image_tag(@node.sponsor, class: 'marker-sponsor-image')
