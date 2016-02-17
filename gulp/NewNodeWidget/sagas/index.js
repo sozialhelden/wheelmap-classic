@@ -1,4 +1,4 @@
-const { take, put, fork, cancel, SagaCancellationException, getState } = require('redux-saga');
+const { effects: { take, put, fork, cancel }, SagaCancellationException } = require('redux-saga');
 
 const actions = require('../actions');
 const selectors = require('../selectors');
