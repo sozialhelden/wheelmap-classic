@@ -29,7 +29,7 @@ class NameCategorySection extends React.Component {
   }
 
   render() {
-    const { onClickNext, node, errors, categories, nodeTypes, onChangeName, onChangeNodeType } = this.props;
+    const { onClickNext, node, errors, categories, nodeTypes } = this.props;
 
     return (
       <Section section={NAME_CATEGORY} actionLabel="Weiter" onClickAction={onClickNext}>
@@ -46,7 +46,7 @@ class NameCategorySection extends React.Component {
             <Form.Controls>
               <NodeTypeSelect categories={categories}
                               nodeTypes={nodeTypes}
-                              onChange={onChangeNodeType}
+                              onChange={this.onChangeNodeType.bind(this, node)}
                               value={node.nodeType}
                               errors={errors.get('nodeType')}/>
             </Form.Controls>
