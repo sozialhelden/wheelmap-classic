@@ -10,6 +10,7 @@ const delay = require('../../common/helpers/delayPromise');
 const photon = require('../../common/helpers/photon');
 const Node = require('../../common/models/Node');
 
+// Pass the change node address to both the CHANGE_NODE and the UPDATE_MAP actions.
 function* changeNodeAddress(getState) {
   while (true) {
     const { payload: props } = yield take(actions.CHANGE_NODE_ADDRESS);
@@ -19,12 +20,11 @@ function* changeNodeAddress(getState) {
     const state = getState(),
       node = selectors.node(state);
 
-    const address = [node.street, node.housenumber, node.postcode, node.city].join(' ');
-
-    yield put(actions.updateMap(address));
+    yield put(actions.updateMap(node.address()));
   }
 }
 
+// Navigate to a specific section (e.g. via the breadcrumbs or the overview section)
 function* navigateToSection(getState) {
   while (true) {
     const { payload: section } = yield take(actions.NAVIGATE_TO_SECTION);
@@ -41,10 +41,11 @@ function* navigateToSection(getState) {
       return;
 
     // Push new node section path
-    yield put(push.newNodeSectionPath(section, node.toJS()));
+    yield put(push.newNodeSectionPath(section));
   }
 }
 
+// Navigate to next section based on current section
 function* navigateToNextSection(getState) {
   while (true) {
     yield take(actions.NAVIGATE_TO_NEXT_SECTION);
@@ -72,15 +73,17 @@ function* navigateToNextSection(getState) {
       nextIndex = sections.indexOf(activeSection) + 1,
       nextSection = sections.get(nextIndex);
 
-    yield put(push.newNodeSectionPath(nextSection, node.toJS()));
+    yield put(push.newNodeSectionPath(nextSection));
   }
 }
 
+// Fetch categories on initialization
 function* fetchCategories() {
   yield put(categoriesActions.fetch());
 }
 
-function* watchMarkerMoved() {
+// Cancel markerUpdate, when the user moves the marker.
+function* cancelUpdateMapTask() {
   // Run updateMap saga until ...
   const updateMapTask = yield fork(debounceUpdateMap);
 
@@ -89,7 +92,8 @@ function* watchMarkerMoved() {
   yield cancel(updateMapTask);
 }
 
-function* watchChangeNodeAddress(getState) {
+// Cancel updateAddress saga when user inputs own node address parts.
+function* cancelUpdateAddressTask(getState) {
   // Run updateAddress saga until ...
   const updateAddressTask = yield fork(updateAddress, getState);
 
@@ -98,16 +102,13 @@ function* watchChangeNodeAddress(getState) {
   yield cancel(updateAddressTask);
 }
 
-function* updateMap(node) {
+// Update map
+function* updateMap(address) {
   try {
-    // Change node
-    yield put(actions.changeNode(node));
-
     // Delay photon request (debounce).
     yield delay(300);
 
-    const address = node.address(),
-      feature = yield photon.geocode(address);
+    const feature = yield photon.geocode(address);
 
     // Restart daemon if no feature was found.
     if (feature == null)
@@ -125,6 +126,9 @@ function* updateMap(node) {
   }
 }
 
+// This saga itself is not really debouncing the map update, but in combination with the delay in the updateMap saga,
+// we get the desired effect. This two functions need to be devided to don't block the execution between
+// CHANGE_NODE_ADDRESS actions via fork.
 function* debounceUpdateMap() {
   try {
     let updateMapTask = null;
@@ -136,7 +140,7 @@ function* debounceUpdateMap() {
       if (updateMapTask != null)
         yield cancel(updateMapTask);
 
-      updateMapTask = yield fork(updateMap, node);
+      updateMapTask = yield fork(updateMap, node.address());
     }
   } catch(error) {
     if (error instanceof SagaCancellationException)
@@ -146,6 +150,7 @@ function* debounceUpdateMap() {
   }
 }
 
+// Update the address, when ever the marker was moved.
 function* updateAddress(getState) {
   try {
     while (true) {
@@ -170,6 +175,7 @@ function* updateAddress(getState) {
   }
 }
 
+// Fetch similar nodes when the user visits the similar node section.
 function* fetchSimilar() {
   while(true) {
     const { payload: node } = yield take(({ type, payload: section }) => {
@@ -188,6 +194,7 @@ function* fetchSimilar() {
   }
 }
 
+// Reset errors, when section was changed.
 function* resetErrors() {
   while(true) {
     yield take(actions.ACTIVATE_SECTION);
@@ -195,6 +202,7 @@ function* resetErrors() {
   }
 }
 
+// Always update the node position via the map, also when the updateMap saga is canceled.
 function* watchMarkerMoved(getState) {
   while (true) {
     const { payload: location } = yield take(actions.MARKER_MOVED);
@@ -212,9 +220,8 @@ module.exports = [
   navigateToNextSection,
   fetchCategories,
   fetchSimilar,
-  watchMarkerMoved,
-  watchChangeNodeAddress,
-  resetErrors
+  cancelUpdateMapTask,
+  cancelUpdateAddressTask,
   resetErrors,
   watchMarkerMoved
 ];
