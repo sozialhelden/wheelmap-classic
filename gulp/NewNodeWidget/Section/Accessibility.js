@@ -17,7 +17,7 @@ const { func } = React.PropTypes;
 class AccessibilitySection extends React.Component {
   static propTypes = {
     onClickAction: func.isRequired,
-    onChange: func.isRequired
+    onNodeChange: func.isRequired
   };
 
   onChangeStatus(attr, status) {
