@@ -13,7 +13,7 @@ const { func } = React.PropTypes;
 
 class ContactSection extends React.Component {
   static propTypes = {
-    onClickNext: func.isRequired,
+    onClickAction: func.isRequired,
     onNodeChange: func.isRequired
   };
 

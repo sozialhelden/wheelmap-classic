@@ -19,7 +19,7 @@ class Section extends React.Component {
   onClickAction = (event) => {
     event.preventDefault();
 
-    this.props.onClickAction(this.props.section);
+    this.props.onClickAction();
   };
 
   render() {
