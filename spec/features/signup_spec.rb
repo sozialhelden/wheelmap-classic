@@ -33,6 +33,18 @@ describe "Signup feature" do
     end
   end
 
+  describe "I want to signup, too" do
+    before do
+      visit new_user_session_path
+      visit '/users/auth/osm'
+      visit '/users/auth/osm/callback'
+    end
+
+    specify "a user exists" do
+      expect(User.count).to eq 1
+    end
+  end
+
   after do
     OmniAuth.config.test_mode = false
   end
