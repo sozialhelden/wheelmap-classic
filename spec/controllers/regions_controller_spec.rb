@@ -12,7 +12,7 @@ describe RegionsController do
       expect(response).to render_template(:index)
     end
 
-    it "returns a 200 (OK) ) http status code" do
+    it "returns a 200 http status code" do
       expect(response).to have_http_status(200)
     end
   end
@@ -28,7 +28,7 @@ describe RegionsController do
       expect(response).to render_template(:show)
     end
 
-    it "returns a 200 (OK) ) http status code" do
+    it "returns a 200 http status code" do
       expect(response).to have_http_status(200)
     end
   end
