@@ -2,8 +2,6 @@ const React = require('react');
 const { bindActionCreators } = require('redux');
 const { createStructuredSelector } = require('reselect');
 const { connect } = require('react-redux');
-const { Marker } = require('react-leaflet');
-const { divIcon } = require('leaflet');
 
 const Section = require('./Section');
 const { ADDRESS } = require('../models/sections');
@@ -11,7 +9,7 @@ const actions = require('../actions');
 const selectors = require('../selectors');
 const Form = require('../../common/Form');
 const Alert = require('../../common/Alert');
-const MapboxMap = require('../../common/MapboxMap');
+const { Map, Marker } = require('../../common/Mapbox');
 const Row = require('../../common/Row');
 
 const { func } = React.PropTypes;
@@ -51,18 +49,11 @@ class AddressSection extends React.Component {
     let marker = null;
 
     if (node.hasLocation()) {
-      const icon = divIcon({
-        iconSize: null,
-        iconAnchor: null,
-        popupAnchor: null,
-        className: 'marker-wheelchair-' + node.wheelchair,
-        html: `<div class="marker-icon marker-icon-${node.nodeType}"></div>`
-      });
-
       marker = <Marker position={[node.lat, node.lon]}
                        draggable={true}
                        onDragEnd={this.onMarkerMoved.bind(this)}
-                       icon={icon}/>
+                       wheelchair={node.wheelchair}
+                       icon={node.nodeType}/>
     }
 
     const errorAlertElements = [],
@@ -116,14 +107,14 @@ class AddressSection extends React.Component {
             {errorAlertElements}
           </Row.Span>
           <Row.Span rows={6}>
-            <MapboxMap center={mapCenter}
+            <Map center={mapCenter}
                        zoom={mapZoom}
                        className="nodes-new-content-section--address-map"
                        onMoveEnd={this.onMapMoved.bind(this)}
                        onZoomEnd={this.onMapZoomed.bind(this)}
                        onClick={this.onMapClick.bind(this)}>
               {marker}
-            </MapboxMap>
+            </Map>
           </Row.Span>
         </Row>
       </Section>
