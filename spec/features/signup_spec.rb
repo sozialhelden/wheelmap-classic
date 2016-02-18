@@ -45,6 +45,36 @@ describe "Signup feature" do
     end
   end
 
+  describe "I want to signup and register my email" do
+    before do
+      visit new_user_session_path
+      visit '/users/auth/osm'
+      visit '/users/auth/osm/callback'
+    end
+
+    specify 'there is a user' do
+      expect(User.count).to eq 1
+    end
+
+    describe "Email" do
+      before do
+        visit "/profile/after_signup_edit"
+
+        fill_in("E-Mail", :with => "alana.engel.s@gmail.com")
+        click_button("Fertigstellen")
+      end
+
+      specify "current page is home page" do
+        current_path = URI.parse(current_url).path
+        expect(current_path).to eq root_path
+      end
+
+      specify "there is a user with email alana.engel.s@gmail.com" do
+        expect(User.find_by_email("alana.engel.s@gmail.com")).to_not be nil
+      end
+    end
+  end
+
   after do
     OmniAuth.config.test_mode = false
   end
