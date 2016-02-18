@@ -1,6 +1,6 @@
 const React = require('react');
 
-const { arrayOf, shape, string, func, oneOfType } = React.PropTypes;
+const { array, arrayOf, shape, string, func, oneOfType } = React.PropTypes;
 
 function Select({ options, empty, groupBy, ...props }) {
   let items = createItems(options);
@@ -43,11 +43,12 @@ const optionsType = arrayOf(shape({
 
 Select.propTypes = {
   options: oneOfType([
-    optionsType,
+    array, // Empty array
     arrayOf(shape({
       label: string.isRequired,
       options: optionsType
-    }))
+    })),
+    optionsType
   ]).isRequired,
   empty: string
 };
