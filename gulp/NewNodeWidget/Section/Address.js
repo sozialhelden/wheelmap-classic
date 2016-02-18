@@ -11,6 +11,7 @@ const Form = require('../../common/Form');
 const Alert = require('../../common/Alert');
 const { Map, Marker } = require('../../common/Mapbox');
 const Row = require('../../common/Row');
+const { nodeTypesSelector } = require('../../common/selectors/nodeTypes');
 
 const { func } = React.PropTypes;
 
@@ -44,16 +45,18 @@ class AddressSection extends React.Component {
   }
 
   render() {
-    const { node, errors, mapCenter, mapZoom, onClickAction } = this.props;
+    const { node, nodeTypes, errors, mapCenter, mapZoom, onClickAction } = this.props;
 
     let marker = null;
 
     if (node.hasLocation()) {
+      const nodeType = nodeTypes.find(nodeType => nodeType.identifier === node.nodeType);
+
       marker = <Marker position={[node.lat, node.lon]}
                        draggable={true}
                        onDragEnd={this.onMarkerMoved.bind(this)}
                        wheelchair={node.wheelchair}
-                       icon={node.nodeType}/>
+                       icon={nodeType.icon}/>
     }
 
     const errorAlertElements = [],
@@ -124,6 +127,7 @@ class AddressSection extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   node: selectors.node,
+  nodeTypes: nodeTypesSelector,
   mapCenter: selectors.mapCenter,
   mapZoom: selectors.mapZoom,
   errors: selectors.errors
