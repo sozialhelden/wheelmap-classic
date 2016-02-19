@@ -25,7 +25,7 @@ class OverviewSection extends React.Component {
     let nodeTypeTrans = '—',
       street = '—', city = '—', website = '—';
 
-    const nodeType = nodeTypes.get(node.nodeType);
+    const nodeType = nodeTypes.find(nodeType => nodeType.identifier === node.nodeType);
 
     if (nodeType != null) {
       const category = categories.get(nodeType.category);
@@ -99,19 +99,17 @@ class OverviewSection extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    node: selectors.node(state),
-    nodeTypes: nodeTypesSelector(state),
-    categories: categoriesSelector(state)
-  };
-}
+const mapStateToProps = createStructuredSelector({
+  node: selectors.node,
+  nodeTypes: nodeTypesSelector,
+  categories: categoriesSelector
+});
 
 function mapDispatchToProps(dispatch) {
-  return {
-    onClickAction: section => { console.log(section); },
-    onClickEdit: section => dispatch(actions.navigateToSection(section))
-  };
+  return bindActionCreators({
+    onClickAction: actions.saveNode,
+    onClickEdit: actions.navigateToSection
+  }, dispatch);
 }
 
 module.exports = connect(
