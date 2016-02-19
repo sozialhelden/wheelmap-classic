@@ -20,10 +20,7 @@ const DEFAULT_STATE = Map({
 
 module.exports = handleActions({
   [actions.ACTIVATE_SECTION]: (state, { payload: activeSection }) => {
-    const sections = state.get('sections'),
-      section = sections.find(section => section.id === activeSection);
-
-    return state.set('activeSection', section);
+    return state.set('activeSection', activeSection);
   },
   [actions.CHANGE_NODE]: (state, { payload: node}) => {
     return state.set('node', node);
