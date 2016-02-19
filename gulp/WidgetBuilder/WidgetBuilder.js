@@ -6,7 +6,6 @@ const debounce = require('mout/function/debounce');
 const Form = require('./Form');
 const Embed = require('./Embed');
 const Preview = require('./Preview');
-const App = require('./App');
 const { changeWidth, changeHeight, changeLocation, changeProvider, changeCategories, save } = require('./actions');
 
 class WidgetBuilder extends React.Component {

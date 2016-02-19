@@ -14,7 +14,7 @@ function computeSrc(boundingBox, lat, lon, apiKey) {
   if (boundingBox != null)
     src = `#/?bbox=${boundingBox[1]},${boundingBox[3]},${boundingBox[0]},${boundingBox[2]}`;
 
-  return window.location.origin + Routes.embed_path({ key: apiKey }) + src;
+  return window.location.origin + Routes.embedPath({ key: apiKey }) + src;
 }
 
 function changeLocation(widget, action) {
@@ -35,7 +35,7 @@ function init(widget) {
 
 function save(widget) {
   // @TODO Move this to an action
-  $.post(Routes.widgets_path({ id: widget.id }), { widget: uncamelize(widget.toJS()) });
+  $.post(Routes.widgetsPath({ id: widget.id }), { widget: uncamelize(widget.toJS()) });
 
   return widget;
 }
