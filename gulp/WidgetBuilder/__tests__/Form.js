@@ -1,4 +1,4 @@
-jest.dontMock('../form');
+jest.dontMock('../Form');
 
 const React = require('react');
 const ReactDOM = require('react-dom');
