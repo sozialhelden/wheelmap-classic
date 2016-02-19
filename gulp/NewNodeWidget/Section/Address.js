@@ -50,13 +50,14 @@ class AddressSection extends React.Component {
     let marker = null;
 
     if (node.hasLocation()) {
-      const nodeType = nodeTypes.find(nodeType => nodeType.identifier === node.nodeType);
+      const nodeType = nodeTypes.find(nodeType => nodeType.identifier === node.nodeType),
+        icon = nodeType != null ? nodeType.icon : null;
 
       marker = <Marker position={[node.lat, node.lon]}
                        draggable={true}
                        onDragEnd={this.onMarkerMoved.bind(this)}
                        wheelchair={node.wheelchair}
-                       icon={nodeType.icon}/>
+                       icon={icon}/>
     }
 
     const errorAlertElements = [],
