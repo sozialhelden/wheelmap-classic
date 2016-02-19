@@ -11,7 +11,7 @@ const widgetBuilderReducer = require('./reducer');
 class WidgetBuilderApp extends React.Component {
   render() {
     let widget = Widget(camelize(this.props.widget)),
-      store = createStore(widgetApp, widget);
+      store = createStore(widgetBuilderReducer, widget);
 
     store.dispatch(init());
 
