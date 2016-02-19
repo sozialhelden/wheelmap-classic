@@ -1,6 +1,8 @@
 require 'rails_helper'
+require 'shared_context/omniauth'
 
 describe "Find, update and create nodes via API" do
+  include_context "OmniAuth"
   let(:poi)  { create(:poi, name: 'horst', osm_id: 345, region: nil, tags: {'foo' => 'bar'}) }
   let!(:user) { create(:authorized_user, email: 'editor@wheelmap.org', password: '123456', password_confirmation: '123456', confirmed_at: "10.10.1999", osm_id: '174', oauth_token: "oauth_token", oauth_secret: "oauth_secret") }
   let(:new_node_values) do
@@ -16,20 +18,6 @@ describe "Find, update and create nodes via API" do
 
   before do
     Poi.delete_all
-
-    OmniAuth.config.test_mode = true
-    # the symbol passed to mock_auth is the same as the name of the provider set up in the initializer
-    OmniAuth.config.mock_auth[:osm] = OmniAuth::AuthHash.new(
-      'provider' => 'osm',
-      'uid' => '174',
-      'credentials' => {
-        'token' => 'token',
-        'secret' => 'secret'
-      },
-      'info' => {
-        'permissions' => ['allow_read_prefs', 'allow_write_api']
-      }
-    )
 
     visit new_user_session_path
     visit '/users/auth/osm'
@@ -93,9 +81,5 @@ describe "Find, update and create nodes via API" do
         expect(job.tags['foo']).to eq 'bar'
       end
     end
-  end
-
-  after('@omniauth_test') do
-    OmniAuth.config.test_mode = false
   end
 end
