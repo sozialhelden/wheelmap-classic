@@ -3,7 +3,7 @@ const size = require('mout/collection/size');
 
 const Node = require('../models/Node');
 
-const { categoriesPath, validateNodePath } = global.Routes;
+const { categoriesPath, validateNodePath, nodesPath } = global.Routes;
 
 function HTTPError(response) {
   const message = `HTTPError: ${response.statusText}`
@@ -69,11 +69,11 @@ function validateNode(node, attrs = null) {
   const noErrors = {},
     options = { data: node.serialize() };
 
-  const post = postJSON(validateNodePath({ format: 'json' }), options)
+  return postJSON(validateNodePath({ format: 'json' }), options)
     .catch(error => {
       return error.response.json()
         .then(data => {
-          error.errors = Node.unserializeAttrs(data.errors);
+          error.errors = Node.deserializeAttrs(data.errors);
 
           throw error;
         });
@@ -103,8 +103,10 @@ function validateNode(node, attrs = null) {
 
       throw error;
     });
+}
 
-  return post;
+function saveNode(node) {
+  return postJSON(nodesPath({ format: 'json' }), { data: node.serialize() });
 }
 
 module.exports = {
@@ -112,5 +114,6 @@ module.exports = {
   fetchJSON,
   postJSON,
   fetchCategories,
-  validateNode
+  validateNode,
+  saveNode
 };

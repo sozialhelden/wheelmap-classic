@@ -273,6 +273,28 @@ function* watchMarkerMoved(getState) {
   }
 }
 
+function* saveNode(getState) {
+  while(true) {
+    yield take(actions.SAVE_NODE)
+
+    const state = getState(),
+      node = selectors.node(state);
+
+    try {
+      yield api.saveNode(node);
+    } catch(error) {
+      if (error instanceof api.HTTPError) {
+        continue;
+      }
+
+      throw error;
+    }
+
+    window.location = rootPath();
+    break;
+  }
+}
+
 module.exports = [
   initNode,
   activateSection,
@@ -284,5 +306,6 @@ module.exports = [
   cancelUpdateMapTask,
   cancelUpdateAddressTask,
   resetErrors,
-  watchMarkerMoved
+  watchMarkerMoved,
+  saveNode
 ];

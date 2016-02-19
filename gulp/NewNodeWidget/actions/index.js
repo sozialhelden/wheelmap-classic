@@ -15,6 +15,7 @@ const NAVIGATE_TO_SECTION = 'NAVIGATE_TO_SECTION';
 const NAVIGATE_TO_NEXT_SECTION = 'NAVIGATE_TO_NEXT_SECTION';
 const CHANGE_NODE_ADDRESS = 'CHANGE_NODE_ADDRESS';
 const UPDATE_MAP = 'UPDATE_MAP';
+const SAVE_NODE = 'SAVE_NODE';
 
 const enterContent = createAction(ENTER_CONTENT);
 const activateSection = createAction(ACTIVATE_SECTION);
@@ -28,6 +29,7 @@ const navigateToSection = createAction(NAVIGATE_TO_SECTION);
 const navigateToNextSection = createAction(NAVIGATE_TO_NEXT_SECTION);
 const updateMap = createAction(UPDATE_MAP);
 const setSimilar = createAction(SET_SIMILAR);
+const saveNode = createAction(SAVE_NODE);
 
 module.exports = {
   ENTER_CONTENT,
@@ -42,6 +44,7 @@ module.exports = {
   NAVIGATE_TO_SECTION,
   NAVIGATE_TO_NEXT_SECTION,
   UPDATE_MAP,
+  SAVE_NODE,
   enterContent,
   activateSection,
   changeNode,
@@ -53,5 +56,6 @@ module.exports = {
   setErrors,
   navigateToSection,
   navigateToNextSection,
-  updateMap
+  updateMap,
+  saveNode
 };
