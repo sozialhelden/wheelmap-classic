@@ -4,7 +4,7 @@ const { handleActions } = require('redux-actions');
 const { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } = require('../models/sections');
 const actions = require('../actions');
 const { FETCH_CATEGORIES } = require('../../common/actions/categories');
-const Node = require('../../common/models/node');
+const Node = require('../../common/models/Node');
 
 const defaultNode = new Node();
 
