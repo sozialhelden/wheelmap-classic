@@ -1,10 +1,10 @@
-jest.dontMock('../widget_builder.embed');
+jest.dontMock('../Embed');
 
 const React = require('react');
 const ReactDOM = require('react-dom');
 const TestUtils = require('react-addons-test-utils');
 
-const WidgetBuilderEmbed = require('../widget_builder.embed');
+const WidgetBuilderEmbed = require('../Embed');
 
 describe("React WidgetEmbed component", function() {
 
@@ -15,7 +15,7 @@ describe("React WidgetEmbed component", function() {
       <WidgetBuilderEmbed widget={widget}/>
     );
 
-    expect(component).toBeDefined();
+    expect(component).not.toBeNull();
   });
 
 });
