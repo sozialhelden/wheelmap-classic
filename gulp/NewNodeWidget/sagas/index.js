@@ -10,8 +10,15 @@ const api = require('../../common/helpers/api');
 const delay = require('../../common/helpers/delayPromise');
 const photon = require('../../common/helpers/photon');
 const Node = require('../../common/models/Node');
+const geolocation = require('../../common/helpers/geolocation');
 
 const { newNodeSectionPath, rootPath } = global.Routes;
+
+function activeSection(section) {
+  return ({ type, payload }) => {
+    return type === actions.ACTIVATE_SECTION && payload === section;
+  };
+}
 
 function* activateSection() {
   while (true) {
@@ -236,9 +243,7 @@ function* updateAddress(getState) {
 // Fetch similar nodes when the user visits the similar node section.
 function* fetchSimilar(getState) {
   while(true) {
-    yield take(({ type, payload: section }) => {
-      return type === actions.ACTIVATE_SECTION && section === sections.SIMILAR_NODES;
-    });
+    yield take(activeSection(sections.SIMILAR_NODES));
 
     const state = getState(),
       node = selectors.node(state),
@@ -272,6 +277,35 @@ function* watchMarkerMoved(getState) {
 
     yield put(actions.changeNode(node.merge(location)));
   }
+}
+
+function* useGeolocation(getState) {
+  yield take(activeSection(sections.ADDRESS));
+
+  const state = getState(),
+    node = selectors.node(state);
+
+  if (node.hasLocation())
+    return;
+
+  let position;
+
+  try {
+    position = yield geolocation();
+  } catch(error) {
+    // Position error
+    if (error.code) {
+      console.error(error.message);
+      return;
+    }
+
+    throw error;
+  }
+
+  const { latitude: lat, longitude: lon } = position.coords;
+
+  yield put(actions.changeMapCenter({ lat, lon }));
+  yield put(actions.changeMapZoom(16));
 }
 
 function* saveNode(getState) {
@@ -308,5 +342,6 @@ module.exports = [
   cancelUpdateAddressTask,
   resetErrors,
   watchMarkerMoved,
+  useGeolocation,
   saveNode
 ];
