@@ -161,6 +161,11 @@
     }
 
     &-section {
+      .loader {
+        min-height: 300px;
+        position: relative;
+      }
+
       &-form {
         border-top: 1px solid #EEEEEE;
         border-bottom: 1px solid #EEEEEE;

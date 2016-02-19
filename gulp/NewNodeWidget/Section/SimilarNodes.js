@@ -17,7 +17,7 @@ class SimilarNodesSection extends React.Component {
   };
 
   render() {
-    let { similarNodes, onClickAction } = this.props,
+    let { similarNodes, loading, onClickAction } = this.props,
       items = [];
 
     similarNodes.forEach(node => {
@@ -30,7 +30,7 @@ class SimilarNodesSection extends React.Component {
     });
 
     return (
-      <Section section={SIMILAR_NODES} onClickAction={onClickAction}>
+      <Section section={SIMILAR_NODES} onClickAction={onClickAction} loading={loading}>
         <ul className="nodes-new-content-section--similar-list">
           {items}
         </ul>
@@ -42,7 +42,8 @@ class SimilarNodesSection extends React.Component {
 function mapStateToProps(state) {
   return {
     node: selectors.node(state),
-    similarNodes: selectors.similarNodes(state)
+    similarNodes: selectors.similarNodes(state),
+    loading: selectors.loading(state)
   };
 }
 

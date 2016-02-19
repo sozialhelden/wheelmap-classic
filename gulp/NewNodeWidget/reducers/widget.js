@@ -15,7 +15,8 @@ const DEFAULT_STATE = Map({
   mapCenter: { lat: 52.520007, lon: 13.404954 },
   mapZoom: 14,
   similarNodes: List(),
-  errors: Map()
+  errors: Map(),
+  loading: false
 });
 
 module.exports = handleActions({
@@ -36,5 +37,8 @@ module.exports = handleActions({
   },
   [actions.SET_ERRORS]: (state, { payload: errors }) => {
     return state.set('errors', fromJS(errors));
+  },
+  [actions.LOAD]: (state, { payload: loading }) => {
+    return state.set('loading', loading);
   }
 }, DEFAULT_STATE);

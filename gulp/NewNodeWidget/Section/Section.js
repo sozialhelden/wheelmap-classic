@@ -1,19 +1,22 @@
 const React = require('react');
+const Loader = require('react-loader');
 
 const SectionModel = require('../models/Section');
 const I18n = require('../../common/I18n');
 
-const { string, func, instanceOf } = React.PropTypes;
+const { string, func, instanceOf, bool } = React.PropTypes;
 
 class Section extends React.Component {
   static propTypes = {
     actionLabel: string.isRequired, // @TODO Use scope,
     section: instanceOf(SectionModel).isRequired,
-    onClickAction: func.isRequired
+    onClickAction: func.isRequired,
+    loading: bool
   };
 
   static defaultProps = {
-    actionLabel: 'Weiter'
+    actionLabel: 'Weiter',
+    loading: false
   };
 
   onClickAction = (event) => {
@@ -23,7 +26,7 @@ class Section extends React.Component {
   };
 
   render() {
-    const { section , children, actionLabel, onClickAction } = this.props;
+    const { section, loading, children, actionLabel, onClickAction } = this.props;
 
     const sectionForms = React.Children.map(children, child => {
       return (
@@ -35,11 +38,13 @@ class Section extends React.Component {
 
     return (
       <section className="nodes-new-content-section">
-        <h2><I18n scope={`nodes.new.form.section.${section}.title`}/></h2>
-        {sectionForms}
-        <div className="form-actions">
-          <button className="btn btn-primary pull-right submit" onClick={this.onClickAction}>{actionLabel}</button>
-        </div>
+        <Loader loaded={!loading}>
+          <h2><I18n scope={`nodes.new.form.section.${section}.title`}/></h2>
+          {sectionForms}
+          <div className="form-actions">
+            <button className="btn btn-primary pull-right submit" onClick={this.onClickAction}>{actionLabel}</button>
+          </div>
+        </Loader>
       </section>
     );
   }

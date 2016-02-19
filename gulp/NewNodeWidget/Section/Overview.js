@@ -20,7 +20,7 @@ class OverviewSection extends React.Component {
   };
 
   render() {
-    const { node, nodeTypes, categories, onClickAction, onClickEdit } = this.props;
+    const { node, nodeTypes, loading, categories, onClickAction, onClickEdit } = this.props;
 
     let nodeTypeTrans = '—',
       street = '—', city = '—', website = '—';
@@ -42,7 +42,7 @@ class OverviewSection extends React.Component {
       website = <a href={node.website}>{node.website}</a>;
 
     return (
-      <Section section={OVERVIEW} onClickAction={onClickAction} actionLabel="Speichern">
+      <Section section={OVERVIEW} onClickAction={onClickAction} actionLabel="Speichern" loading={loading}>
         <div>
           <h3>Name & Kategorie:</h3>
           <dl className="nodes-new-content-section--overview-list">
@@ -102,7 +102,8 @@ class OverviewSection extends React.Component {
 const mapStateToProps = createStructuredSelector({
   node: selectors.node,
   nodeTypes: nodeTypesSelector,
-  categories: categoriesSelector
+  categories: categoriesSelector,
+  loading: selectors.loading
 });
 
 function mapDispatchToProps(dispatch) {

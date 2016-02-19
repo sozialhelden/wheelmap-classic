@@ -33,10 +33,10 @@ class AccessibilitySection extends React.Component {
   }
 
   render() {
-    const { onClickAction, node } = this.props;
+    const { onClickAction, node, loading } = this.props;
 
     return (
-      <Section section={ACCESSIBILITY} onClickAction={onClickAction}>
+      <Section section={ACCESSIBILITY} onClickAction={onClickAction} loading={loading}>
         <div className="nodes-new-content-section--status-status">
           <Row>
             <Row.Span rows={6}>
@@ -65,7 +65,8 @@ class AccessibilitySection extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  node: selectors.node
+  node: selectors.node,
+  loading: selectors.loading
 });
 
 function mapDispatchToProps(dispatch) {
