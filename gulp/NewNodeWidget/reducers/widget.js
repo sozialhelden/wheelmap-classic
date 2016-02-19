@@ -13,7 +13,7 @@ const DEFAULT_STATE = Map({
   sections: List([NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW]),
   node: defaultNode,
   mapCenter: { lat: 52.520007, lon: 13.404954 },
-  mapZoom: 16,
+  mapZoom: 14,
   similarNodes: List(),
   errors: Map()
 });
