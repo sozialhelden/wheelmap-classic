@@ -1,5 +1,5 @@
 const { createAction } = require('redux-actions');
-const each = require('lodash/collection/forEach');
+const each = require('mout/collection/forEach');
 
 const Routes = global.Routes;
 
