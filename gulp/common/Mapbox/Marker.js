@@ -10,7 +10,7 @@ function Marker({ icon, wheelchair, ...props }) {
     iconAnchor: null,
     popupAnchor: null,
     className: `marker-wheelchair-${wheelchair}`,
-    html: `<div class="marker-icon marker-icon-${icon}"></div>`
+    html: icon != null ? `<div class="marker-icon marker-icon-${icon}"></div>` : ''
   });
 
   return <LeafletMarker icon={markerIcon} {...props}/>
@@ -18,7 +18,7 @@ function Marker({ icon, wheelchair, ...props }) {
 
 Marker.propTypes = {
   wheelchair: string.isRequired,
-  icon: string.isRequired
+  icon: string
 };
 
 module.exports = Marker;
