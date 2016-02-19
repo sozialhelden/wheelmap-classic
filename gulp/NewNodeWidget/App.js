@@ -4,18 +4,22 @@ const thunk = require('redux-thunk');
 const promise = require('redux-promise');
 const { 'default': saga } = require('redux-saga');
 const { Provider } = require('react-redux');
-const { Router, Route, Redirect, browserHistory } = require('react-router');
+const { Router, Route, Redirect } = require('react-router');
 
 const multi = require('../common/middleware/multi');
 const transition = require('../common/middleware/transition');
+const createHistory = require('../common/helpers/createHistory');
+const Node = require('../common/models/Node');
 const Widget = require('./Widget');
 const Content = require('./Content');
 const reducer = require('./reducers');
-const { activateSection } = require('./actions');
+const actions = require('./actions');
 const sagas = require('./sagas');
-const { NAME_CATEGORY } = require('./models/sections');
+const sections = require('./models/sections');
 
 const { newNodePath, newNodeSectionPath } = global.Routes;
+
+const browserHistory = createHistory();
 
 const createExtendedStore = applyMiddleware(
   multi,
@@ -32,17 +36,15 @@ class App extends React.Component {
     this.store = createExtendedStore(reducer);
   }
 
-  onEnterContent = (nextState) => {
-    const { params: { section } } = nextState;
-
-    this.store.dispatch(activateSection(section));
+  onEnterContent = nextState => {
+    this.store.dispatch(actions.enterContent(nextState));
   };
 
   render() {
     return (
       <Provider store={this.store}>
         <Router history={browserHistory}>
-          <Redirect from={newNodePath.toString()} to={newNodeSectionPath(NAME_CATEGORY)}/>
+          <Redirect from={newNodePath.toString()} to={newNodeSectionPath(sections.NAME_CATEGORY)}/>
           <Route path={newNodePath.toString()} component={Widget}>
             <Route path={newNodeSectionPath.toString()}
                    component={Content}

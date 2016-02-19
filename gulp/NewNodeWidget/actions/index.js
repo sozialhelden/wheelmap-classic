@@ -3,6 +3,7 @@ const { createAction } = require('redux-actions');
 const { search } = require('../../common/helpers/photon');
 const Node = require('../../common/models/Node');
 
+const ENTER_CONTENT = 'ENTER_CONTENT';
 const ACTIVATE_SECTION = 'ACTIVATE_SECTION';
 const CHANGE_NODE = 'CHANGE_NODE';
 const MARKER_MOVED = 'MARKER_MOVED';
@@ -15,6 +16,7 @@ const NAVIGATE_TO_NEXT_SECTION = 'NAVIGATE_TO_NEXT_SECTION';
 const CHANGE_NODE_ADDRESS = 'CHANGE_NODE_ADDRESS';
 const UPDATE_MAP = 'UPDATE_MAP';
 
+const enterContent = createAction(ENTER_CONTENT);
 const activateSection = createAction(ACTIVATE_SECTION);
 const changeNode = createAction(CHANGE_NODE);
 const markerMoved = createAction(MARKER_MOVED);
@@ -28,6 +30,7 @@ const updateMap = createAction(UPDATE_MAP);
 const setSimilar = createAction(SET_SIMILAR);
 
 module.exports = {
+  ENTER_CONTENT,
   ACTIVATE_SECTION,
   CHANGE_NODE,
   CHANGE_MAP_CENTER,
@@ -39,6 +42,7 @@ module.exports = {
   NAVIGATE_TO_SECTION,
   NAVIGATE_TO_NEXT_SECTION,
   UPDATE_MAP,
+  enterContent,
   activateSection,
   changeNode,
   markerMoved,
