@@ -23,6 +23,10 @@ class Node extends Record({
   state: null,
   country: 'Germany'
 }) {
+  constructor(attrs) {
+    super(Node.deserializeAttrs(attrs));
+  }
+
   address() {
     const { city, postcode, street, housenumber, state, country } = this;
 
@@ -49,10 +53,11 @@ Node.serializeAttrs = (attrs) => {
     .filter((value, key) => !PROHIBITED_ATTRS.includes(key))
     .mapKeys(key => key === 'nodeType' ? 'type' : key)
     .mapKeys(key => underscore(key))
+    .filter(value => value)
     .toJS();
 };
 
-Node.unserializeAttrs = (attrs) => {
+Node.deserializeAttrs = (attrs) => {
   return Seq(attrs)
     .toKeyedSeq()
     .mapKeys(key => key === 'type' ? 'nodeType' : key)
