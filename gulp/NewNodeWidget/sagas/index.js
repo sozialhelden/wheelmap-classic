@@ -58,6 +58,11 @@ function* initNode() {
   // Update node from query param if no errors occured.
   yield put(actions.changeNode(node));
 
+  const location = node.location();
+
+  if (location != null)
+    yield put(actions.changeMapCenter(location));
+
   try {
     yield put(actions.load(true));
     yield api.validateNode(node);
