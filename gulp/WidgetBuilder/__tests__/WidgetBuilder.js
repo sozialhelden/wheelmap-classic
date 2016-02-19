@@ -1,10 +1,10 @@
-jest.dontMock('../widget_builder');
+jest.dontMock('../WidgetBuilder');
 
 const React = require('react');
 const ReactDOM = require('react-dom');
 const TestUtils = require('react-addons-test-utils');
 
-const WidgetBuilder = require('../widget_builder');
+const WidgetBuilder = require('../WidgetBuilder');
 
 describe("React Widget component", function() {
 
@@ -22,7 +22,8 @@ describe("React Widget component", function() {
       />
     );
 
-    expect(component).toBeDefined();
+    expect(component).not.toBeNull();
+
   });
 
 });

@@ -53,4 +53,8 @@ Select.propTypes = {
   empty: string
 };
 
+Select.defaultProps = {
+  options: []
+};
+
 module.exports = Select;

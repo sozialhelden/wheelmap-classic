@@ -1,10 +1,10 @@
-jest.dontMock('../widget_builder.preview');
+jest.dontMock('../Preview');
 
 const React = require('react');
 const ReactDOM = require('react-dom');
 const TestUtils = require('react-addons-test-utils');
 
-const WidgetBuilderPreview = require('../widget_builder.preview');
+const WidgetBuilderPreview = require('../Preview');
 
 describe("React WidgetPreview component", function() {
 
@@ -15,7 +15,7 @@ describe("React WidgetPreview component", function() {
       <WidgetBuilderPreview widget={widget}/>
     );
 
-    expect(component).toBeDefined();
+    expect(component).not.toBeNull();
   });
 
 });

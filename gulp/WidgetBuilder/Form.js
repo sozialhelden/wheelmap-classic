@@ -77,7 +77,7 @@ class WidgetBuilderForm extends React.Component {
                 <I18n scope={'users.profile.widget.width'}/>
               </label>
               <span className="form-wrapper">
-                <input className="form-control" id="widget_width" type="number" ref="width"
+                <input className="form-control" id="widget_width" type="number"
                        value={width} onChange={this.onWidthChange}/>
               </span>
             </div>
@@ -86,7 +86,7 @@ class WidgetBuilderForm extends React.Component {
                 <I18n scope={'users.profile.widget.height'}/>
               </label>
               <span className="form-wrapper">
-                <input className="form-control" id="widget_height" type="number" ref="height"
+                <input className="form-control" id="widget_height" type="number"
                        value={height} onChange={this.onHeightChange}/>
               </span>
             </div>
