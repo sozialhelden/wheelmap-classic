@@ -1,12 +1,19 @@
 const React = require('react');
 const classNames = require('classnames');
 
+const ICONS = {
+  info: 'info-sign',
+  alert: 'exclamation-sign',
+  error: 'exclamation-sign'
+};
+
 function Alert(props) {
   let { children, type } = props,
-    className = classNames('alert', 'alert-' + type);
+    className = classNames('alert', `alert-${type}`),
+    iconClassName = classNames(`icon-${ICONS[type]}`, 'icon-large');
 
   return <div className={className}>
-    <i className="icon-info-sign icon-large"/> {children}
+    <i className={iconClassName}/> {children}
   </div>;
 }
 
