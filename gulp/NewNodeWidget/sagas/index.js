@@ -37,32 +37,33 @@ function* initNode() {
 
   let { node } = query;
 
-  if (node != null) {
-    if (node.lat)
-      node.lat = parseFloat(node.lat);
+  if (node == null)
+    return yield put(replace.newNodeSectionPath(sections.NAME_CATEGORY));
 
-    if (node.lon)
-      node.lon = parseFloat(node.lon);
+  if (node.lat)
+    node.lat = parseFloat(node.lat);
 
-    node = new Node(node);
+  if (node.lon)
+    node.lon = parseFloat(node.lon);
 
-    // Update node from query param if no errors occured.
-    yield put(actions.changeNode(node));
+  node = new Node(node);
 
-    try {
-      yield api.validateNode(node);
-    } catch(error) {
-      if (error instanceof api.HTTPError) {
-        const { errors } = error;
+  // Update node from query param if no errors occured.
+  yield put(actions.changeNode(node));
 
-        // ... and redirect to name category section.
-        yield put(replace.newNodeSectionPath(sections.NAME_CATEGORY));
+  try {
+    yield api.validateNode(node);
+  } catch(error) {
+    if (error instanceof api.HTTPError) {
+      const { errors } = error;
 
-        return;
-      }
+      // ... and redirect to name category section.
+      yield put(replace.newNodeSectionPath(sections.NAME_CATEGORY));
 
-      throw error;
+      return;
     }
+
+    throw error;
   }
 }
 
@@ -275,7 +276,7 @@ function* watchMarkerMoved(getState) {
 
 function* saveNode(getState) {
   while(true) {
-    yield take(actions.SAVE_NODE)
+    yield take(actions.SAVE_NODE);
 
     const state = getState(),
       node = selectors.node(state);
