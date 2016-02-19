@@ -1,14 +1,70 @@
 const { effects: { take, put, fork, cancel }, SagaCancellationException } = require('redux-saga');
+const find = require('mout/collection/find');
 
 const actions = require('../actions');
 const selectors = require('../selectors');
 const sections = require('../models/sections');
 const categoriesActions = require('../../common/actions/categories');
-const { push } = require('../../common/actions/router');
+const { push, replace } = require('../../common/actions/router');
 const api = require('../../common/helpers/api');
 const delay = require('../../common/helpers/delayPromise');
 const photon = require('../../common/helpers/photon');
 const Node = require('../../common/models/Node');
+
+const { newNodeSectionPath, rootPath } = global.Routes;
+
+function* activateSection() {
+  while (true) {
+    const { payload: nextState } = yield take(actions.ENTER_CONTENT),
+      { params: { section: sectionId } } = nextState,
+      section = find(sections, section => section.id === sectionId);
+
+    // Redirect to name and category (first) section if given section is invalid.
+    if (section == null) {
+      yield put(replace.newNodeSectionPath(sections.NAME_CATEGORY));
+
+      continue;
+    }
+
+    // Activate section.
+    yield put(actions.activateSection(section));
+  }
+}
+
+function* initNode() {
+  const { payload: nextState } = yield take(actions.ENTER_CONTENT),
+    { location: { query } } = nextState;
+
+  let { node } = query;
+
+  if (node != null) {
+    if (node.lat)
+      node.lat = parseFloat(node.lat);
+
+    if (node.lon)
+      node.lon = parseFloat(node.lon);
+
+    node = new Node(node);
+
+    // Update node from query param if no errors occured.
+    yield put(actions.changeNode(node));
+
+    try {
+      yield api.validateNode(node);
+    } catch(error) {
+      if (error instanceof api.HTTPError) {
+        const { errors } = error;
+
+        // ... and redirect to name category section.
+        yield put(replace.newNodeSectionPath(sections.NAME_CATEGORY));
+
+        return;
+      }
+
+      throw error;
+    }
+  }
+}
 
 // Pass the change node address to both the CHANGE_NODE and the UPDATE_MAP actions.
 function* changeNodeAddress(getState) {
@@ -41,7 +97,7 @@ function* navigateToSection(getState) {
       return;
 
     // Push new node section path
-    yield put(push.newNodeSectionPath(section));
+    yield put(push.newNodeSectionPath(section, node.serialize()));
   }
 }
 
@@ -73,7 +129,7 @@ function* navigateToNextSection(getState) {
       nextIndex = sections.indexOf(activeSection) + 1,
       nextSection = sections.get(nextIndex);
 
-    yield put(push.newNodeSectionPath(nextSection));
+    yield put(push.newNodeSectionPath(nextSection, node.serialize()));
   }
 }
 
@@ -180,7 +236,7 @@ function* updateAddress(getState) {
 function* fetchSimilar(getState) {
   while(true) {
     yield take(({ type, payload: section }) => {
-      return type === actions.ACTIVATE_SECTION && section === sections.SIMILAR_NODES.id;
+      return type === actions.ACTIVATE_SECTION && section === sections.SIMILAR_NODES;
     });
 
     const state = getState(),
@@ -218,6 +274,8 @@ function* watchMarkerMoved(getState) {
 }
 
 module.exports = [
+  initNode,
+  activateSection,
   changeNodeAddress,
   navigateToSection,
   navigateToNextSection,

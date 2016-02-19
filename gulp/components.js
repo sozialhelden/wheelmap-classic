@@ -1,3 +1,5 @@
+const { stringify, parse } = require('./common/helpers/query');
+
 global.React = require('react');
 global.ReactDOM = require('react-dom');
 
@@ -6,5 +8,9 @@ require("babel-polyfill");
 
 global.Wheelmap = {
   WidgetBuilder: require('./WidgetBuilder/App'),
-  NewNodeWidget: require('./NewNodeWidget/App')
+  NewNodeWidget: require('./NewNodeWidget/App'),
+
+  // Used for Rails JS routes query parameter serializing
+  stringifyQuery: stringify,
+  parseQueryString: parse
 };
