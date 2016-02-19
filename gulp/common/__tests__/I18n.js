@@ -1,9 +1,9 @@
-jest.dontMock('../common.i18n');
+jest.dontMock('../I18n');
 
 const React = require('react');
 const ReactDOM = require('react-dom');
 const TestUtils = require('react-addons-test-utils');
-const I18n = require('../common.i18n');
+const I18n = require('../I18n');
 
 const VALID_KEY = 'valid.key';
 

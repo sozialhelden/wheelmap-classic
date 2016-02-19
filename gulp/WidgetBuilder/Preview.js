@@ -11,11 +11,6 @@ class WidgetBuilderPreview extends React.Component {
       widget.src !== nextWidget.src;
   }
 
-  componentDidUpdate(nextProps) {
-    // Reload iframe
-    //this.refs.iframe.contentWindow.location.reload();
-  }
-
   render() {
     let { width, height, src } = this.props.widget;
 
@@ -28,7 +23,7 @@ class WidgetBuilderPreview extends React.Component {
           <I18n scope="users.profile.widget.legends.preview" />
         </h5>
         <div className="user-widget-preview-area">
-          <iframe className="user-widget-preview-frame" ref="iframe" width={width} height={height} src={src} />
+          <iframe className="user-widget-preview-frame" width={width} height={height} src={src} />
         </div>
       </div>
     );

@@ -86,7 +86,7 @@ class StatusDropdown extends React.Component {
     return (
       <div className="node-status-dropdown" {...props}>
         <Dropdown>
-          <Dropdown.Button className={className} ref="button">
+          <Dropdown.Button className={className}>
             <I18n scope={scope}/>
             <i className="icon-question-sign"
                data-status={status}
