@@ -59,6 +59,7 @@ function* initNode() {
   yield put(actions.changeNode(node));
 
   try {
+    yield put(actions.load(true));
     yield api.validateNode(node);
   } catch(error) {
     if (error instanceof api.HTTPError) {
@@ -71,6 +72,8 @@ function* initNode() {
     }
 
     throw error;
+  } finally {
+    yield put(actions.load(false));
   }
 }
 
@@ -119,6 +122,8 @@ function* navigateToNextSection(getState) {
       activeSection = selectors.activeSection(state),
       { nodeAttrs } = activeSection;
 
+    yield put(actions.load(true));
+
     try {
       yield api.validateNode(node, nodeAttrs);
     } catch(error) {
@@ -131,6 +136,8 @@ function* navigateToNextSection(getState) {
       }
 
       throw error;
+    } finally {
+      yield put(actions.load(false));
     }
 
     const sections = selectors.sections(state),
@@ -247,8 +254,11 @@ function* fetchSimilar(getState) {
 
     const state = getState(),
       node = selectors.node(state),
-      { name, lat, lon } = node,
-      features = yield photon.search(name, { lat, lon, limit: 5, osm_tag: 'amenity' });
+      { name, lat, lon } = node;
+
+    yield put(actions.load(true));
+
+    const features = yield photon.search(name, { lat, lon, limit: 5, osm_tag: 'amenity' });
 
     if (features.length === 0) {
       yield put(actions.navigateToNextSection(sections.SIMILAR_NODES));
@@ -256,6 +266,7 @@ function* fetchSimilar(getState) {
     }
 
     yield put(actions.setSimilar(features.map(Node.fromFeature)));
+    yield put(actions.load(false));
   }
 }
 
@@ -288,10 +299,14 @@ function* useGeolocation(getState) {
   if (node.hasLocation())
     return;
 
-  let position;
+  yield put(actions.load(true));
 
   try {
-    position = yield geolocation();
+    const position = yield geolocation(),
+      { latitude: lat, longitude: lon } = position.coords;
+
+    yield put(actions.changeMapCenter({ lat, lon }));
+    yield put(actions.changeMapZoom(16));
   } catch(error) {
     // Position error
     if (error.code) {
@@ -300,12 +315,9 @@ function* useGeolocation(getState) {
     }
 
     throw error;
+  } finally {
+    yield put(actions.load(false));
   }
-
-  const { latitude: lat, longitude: lon } = position.coords;
-
-  yield put(actions.changeMapCenter({ lat, lon }));
-  yield put(actions.changeMapZoom(16));
 }
 
 function* saveNode(getState) {
@@ -315,17 +327,21 @@ function* saveNode(getState) {
     const state = getState(),
       node = selectors.node(state);
 
+    yield put(actions.load(true));
+
     try {
       yield api.saveNode(node);
+      window.location = rootPath();
     } catch(error) {
       if (error instanceof api.HTTPError) {
         continue;
       }
 
       throw error;
+    } finally {
+      yield put(actions.load(true));
     }
 
-    window.location = rootPath();
     break;
   }
 }

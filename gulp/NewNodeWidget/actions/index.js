@@ -4,6 +4,7 @@ const { search } = require('../../common/helpers/photon');
 const Node = require('../../common/models/Node');
 
 const ENTER_CONTENT = 'ENTER_CONTENT';
+const LOAD = 'LOAD';
 const ACTIVATE_SECTION = 'ACTIVATE_SECTION';
 const CHANGE_NODE = 'CHANGE_NODE';
 const MARKER_MOVED = 'MARKER_MOVED';
@@ -18,6 +19,7 @@ const UPDATE_MAP = 'UPDATE_MAP';
 const SAVE_NODE = 'SAVE_NODE';
 
 const enterContent = createAction(ENTER_CONTENT);
+const load = createAction(LOAD);
 const activateSection = createAction(ACTIVATE_SECTION);
 const changeNode = createAction(CHANGE_NODE);
 const markerMoved = createAction(MARKER_MOVED);
@@ -33,6 +35,7 @@ const saveNode = createAction(SAVE_NODE);
 
 module.exports = {
   ENTER_CONTENT,
+  LOAD,
   ACTIVATE_SECTION,
   CHANGE_NODE,
   CHANGE_MAP_CENTER,
@@ -46,6 +49,7 @@ module.exports = {
   UPDATE_MAP,
   SAVE_NODE,
   enterContent,
+  load,
   activateSection,
   changeNode,
   markerMoved,

@@ -18,16 +18,16 @@ class ContactSection extends React.Component {
   };
 
   onChange(attr, event) {
-    const { onNodeChange, node } = this.props;
+    const { onNodeChange, node, loading } = this.props;
 
     onNodeChange(node.set(attr, event.target.value));
   }
 
   render() {
-    let { node, errors, onClickAction } = this.props;
+    let { node, errors, onClickAction, loading } = this.props;
 
     return (
-      <Section section={CONTACT} onClickAction={onClickAction}>
+      <Section section={CONTACT} onClickAction={onClickAction} loading={loading}>
         <div>{/* Needed for having only one section */}
           <Form.ControlGroup labelFor="website" labelScope="activerecord.attributes.poi.website">
             <Form.Controls>
@@ -55,7 +55,8 @@ class ContactSection extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   node: selectors.node,
-  errors: selectors.errors
+  errors: selectors.errors,
+  loading: selectors.loading
 });
 
 function mapDispatchToProps(dispatch) {

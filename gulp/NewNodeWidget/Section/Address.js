@@ -45,7 +45,7 @@ class AddressSection extends React.Component {
   }
 
   render() {
-    const { node, nodeTypes, errors, mapCenter, mapZoom, onClickAction } = this.props;
+    const { node, loading, nodeTypes, errors, mapCenter, mapZoom, onClickAction } = this.props;
 
     let marker = null;
 
@@ -70,7 +70,7 @@ class AddressSection extends React.Component {
     }
 
     return (
-      <Section section={ADDRESS} onClickAction={onClickAction}>
+      <Section section={ADDRESS} onClickAction={onClickAction} loading={loading}>
         <Row>
           <Row.Span rows={6}>
             <Form.ControlGroup label={false}>
@@ -131,7 +131,8 @@ const mapStateToProps = createStructuredSelector({
   nodeTypes: nodeTypesSelector,
   mapCenter: selectors.mapCenter,
   mapZoom: selectors.mapZoom,
-  errors: selectors.errors
+  errors: selectors.errors,
+  loading: selectors.loading
 });
 
 function mapDispatchToProps(dispatch) {
