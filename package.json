@@ -16,7 +16,7 @@
     "classnames": "^2.2.3",
     "gulp": "^3.9.0",
     "gulp-util": "^3.0.7",
-    "history": "^1.17.0",
+    "history": "^2.0.0",
     "immutable": "^3.7.6",
     "isomorphic-fetch": "^2.2.1",
     "leaflet": "^0.7.7",
