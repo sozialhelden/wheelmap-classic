@@ -12,11 +12,6 @@ const sections = createSelector(
   widget => widget.get('sections')
 );
 
-const fetchedCategories = createSelector(
-  widget,
-  widget => widget.get('fetchedCategories')
-);
-
 const node = createSelector(
   widget,
   widget => widget.get('node')
@@ -32,16 +27,6 @@ const mapZoom = createSelector(
   widget => widget.get('mapZoom')
 );
 
-const markerMoved = createSelector(
-  widget,
-  widget => widget.get('markerMoved')
-);
-
-const addressChanged = createSelector(
-  widget,
-  widget => widget.get('addressChanged')
-);
-
 const similarNodes = createSelector(
   widget,
   widget => widget.get('similarNodes')
@@ -52,16 +37,19 @@ const errors = createSelector(
   widget => widget.get('errors')
 );
 
+const loading = createSelector(
+  widget,
+  widget => widget.get('loading')
+);
+
 module.exports = {
   widget,
   activeSection,
   sections,
-  fetchedCategories,
   node,
   mapCenter,
   mapZoom,
-  markerMoved,
-  addressChanged,
   similarNodes,
-  errors
+  errors,
+  loading
 };

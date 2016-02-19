@@ -29,10 +29,10 @@ class NameCategorySection extends React.Component {
   }
 
   render() {
-    const { onClickNext, node, errors, categories, nodeTypes } = this.props;
+    const { onClickNext, loading, node, errors, categories, nodeTypes } = this.props;
 
     return (
-      <Section section={NAME_CATEGORY} actionLabel="Weiter" onClickAction={onClickNext}>
+      <Section section={NAME_CATEGORY} onClickAction={onClickNext} loading={loading}>
         <div>{/* Needed for having only one section */}
           <Form.ControlGroup labelFor="name" labelScope="activerecord.attributes.poi.name">
             <Form.Controls>
@@ -61,7 +61,8 @@ const mapStateToProps = createStructuredSelector({
   categories: categoriesSelector,
   nodeTypes: nodeTypesSelector,
   node: selectors.node,
-  errors: selectors.errors
+  errors: selectors.errors,
+  loading: selectors.loading
 });
 
 function mapDispatchToProps(dispatch) {
