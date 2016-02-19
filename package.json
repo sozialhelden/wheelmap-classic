@@ -2,7 +2,7 @@
   "name": "wheelmap",
   "version": "1.0.0",
   "license": "AGPL-3.0",
-  "devDependencies": {
+  "dependencies": {
     "babel": "^6.3.13",
     "babel-jest": "^6.0.1",
     "babel-plugin-transform-class-properties": "^6.3.13",
@@ -19,7 +19,6 @@
     "history": "^1.17.0",
     "immutable": "^3.7.6",
     "isomorphic-fetch": "^2.2.1",
-    "jest-cli": "^0.8.2",
     "leaflet": "^0.7.7",
     "mout": "^0.11.0",
     "qs": "^6.1.0",
@@ -38,6 +37,9 @@
     "require-dir": "^0.3.0",
     "reselect": "^2.0.2",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "devDependencies": {
+    "jest-cli": "^0.8.2"
   },
   "repository": {
     "type": "git",
