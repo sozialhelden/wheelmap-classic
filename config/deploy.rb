@@ -46,7 +46,7 @@ set :rbenv_custom_path, '/opt/rbenv'
 set :keep_releases, 5
 
 # Compile assets from gulp directory
-set :npm_flags, '--no-spin'
+set :npm_flags, '--no-spin --production'
 set :gulp_executable, -> { "#{fetch(:release_path)}/node_modules/.bin/gulp" }
 set :gulp_tasks, 'browserify'
 
