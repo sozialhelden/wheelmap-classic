@@ -54,17 +54,7 @@
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "unmockedModulePathPatterns": [
-      "<rootDir>/node_modules/react",
-      "<rootDir>/node_modules/react-dom",
-      "<rootDir>/node_modules/react-addons-test-utils",
-      "<rootDir>/node_modules/react-redux",
-      "<rootDir>/node_modules/fbjs",
-      "<rootDir>/node_modules/redux",
-      "<rootDir>/node_modules/redux-thunk",
-      "<rootDir>/node_modules/mout",
-      "<rootDir>/node_modules/immutable",
-      "<rootDir>/node_modules/hoist-non-react-statics"
-    ]
+    "unmockedModulePathPatterns": ["<rootDir>/node_modules/*"],
+    "testPathDirs": ["<rootDir>/gulp"]
   }
 }
