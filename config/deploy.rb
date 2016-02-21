@@ -45,10 +45,6 @@ set :rbenv_custom_path, '/opt/rbenv'
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
-# Compile assets from gulp directory
-set :gulp_executable, -> { "#{fetch(:release_path)}/node_modules/.bin/gulp" }
-set :gulp_tasks, 'browserify'
-
 namespace :deploy do
 
   desc 'Restart application'
@@ -73,9 +69,6 @@ namespace :deploy do
       sudo "/etc/init.d/unicorn_#{fetch(:stage)} start"
     end
   end
-
-  before :updated, 'npm:install'
-  before :updated, 'gulp'
 
   before :publishing, 'delayed_job:stop'
   after  :publishing, 'delayed_job:start'
