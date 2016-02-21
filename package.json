@@ -50,6 +50,7 @@
     "node": ">= 4.1"
   },
   "scripts": {
+    "install": "node_modules/.bin/gulp browserify",
     "test": "node_modules/.bin/jest"
   },
   "jest": {
