@@ -18,6 +18,10 @@ function HTTPError(response) {
 HTTPError.prototype = Object.create(Error.prototype);
 HTTPError.prototype.constructor = HTTPError;
 
+HTTPError.is = function(error, status) {
+  return error instanceof HTTPError && error.response.status === status;
+};
+
 function fetchWithError(url, options = {}) {
   return fetch(url, options)
     .then(response => {

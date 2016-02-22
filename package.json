@@ -32,7 +32,7 @@
     "redux": "^3.0.4",
     "redux-actions": "^0.9.0",
     "redux-promise": "^0.5.1",
-    "redux-saga": "^0.8.2",
+    "redux-saga": "^0.9.1",
     "redux-thunk": "^1.0.0",
     "require-dir": "^0.3.0",
     "reselect": "^2.0.2",
@@ -56,7 +56,9 @@
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "setupEnvScriptFile": "<rootDir>/gulp/jest/setupEnv",
-    "testPathDirs": ["<rootDir>/gulp"],
+    "testPathDirs": [
+      "<rootDir>/gulp"
+    ],
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/*"
     ]

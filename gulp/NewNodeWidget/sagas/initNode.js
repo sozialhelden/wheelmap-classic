@@ -1,4 +1,4 @@
-import { take, put } from 'redux-saga/effects';
+import { take, put, call } from 'redux-saga/effects';
 
 import { ENTER_CONTENT, changeNode, changeMapCenter, load, validateNode, setErrors } from '../actions';
 import { NAME_CATEGORY } from '../models/sections';
@@ -30,7 +30,7 @@ export default function*() {
 
   try {
     yield put(load(true));
-    yield api.validateNode(node);
+    yield call(api.validateNode, node);
   } catch(error) {
     if (error instanceof api.HTTPError) {
       const { errors } = error;
