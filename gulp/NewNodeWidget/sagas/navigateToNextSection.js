@@ -20,7 +20,7 @@ export default function *navigateToNextSection(getState) {
     try {
       yield api.validateNode(node, nodeAttrs.toJS());
     } catch(error) {
-      if (error instanceof api.HTTPError) {
+      if (error instanceof api.HTTPError && error.response.status === 422) {
         const { errors } = error;
 
         // Abort navigation and show errors.
