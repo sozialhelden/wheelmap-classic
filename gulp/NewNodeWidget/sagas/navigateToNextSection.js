@@ -1,4 +1,4 @@
-import { take, put } from 'redux-saga/effects';
+import { take, put, select, call } from 'redux-saga/effects';
 
 import { NAVIGATE_TO_NEXT_SECTION, setErrors, load } from '../actions';
 import selectors from '../selectors';
@@ -6,21 +6,20 @@ import { push } from '../../common/actions/router';
 import api from '../../common/helpers/api';
 
 // Navigate to next section based on current section
-export default function *navigateToNextSection(getState) {
+export default function *navigateToNextSection() {
   while (true) {
     yield take(NAVIGATE_TO_NEXT_SECTION);
 
-    const state = getState(),
-      node = selectors.node(state),
-      activeSection = selectors.activeSection(state),
+    const node = yield select(selectors.node),
+      activeSection = yield select(selectors.activeSection),
       { nodeAttrs } = activeSection;
 
     yield put(load(true));
 
     try {
-      yield api.validateNode(node, nodeAttrs.toJS());
+      yield call(api.validateNode, node, nodeAttrs.toJS());
     } catch(error) {
-      if (error instanceof api.HTTPError && error.response.status === 422) {
+      if (api.HTTPError.is(error, 422)) {
         const { errors } = error;
 
         // Abort navigation and show errors.
@@ -33,7 +32,7 @@ export default function *navigateToNextSection(getState) {
       yield put(load(false));
     }
 
-    const sections = selectors.sections(state),
+    const sections = yield select(selectors.sections),
       nextIndex = sections.indexOf(activeSection) + 1,
       nextSection = sections.get(nextIndex);
 
