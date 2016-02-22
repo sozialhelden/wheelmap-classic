@@ -66,7 +66,7 @@ function fetchCategories() {
 
 function validateNode(node, attrs = null) {
   const noErrors = {},
-    options = { data: node.serialize() };
+    options = { data: node.serialize(), credentials: 'same-origin' };
 
   return postJSON(validateNodePath({ format: 'json' }), options)
     .catch(error => {
@@ -78,7 +78,7 @@ function validateNode(node, attrs = null) {
         });
     })
     .catch(error => {
-      if (attrs == null)
+      if (attrs == null || error.response.status !== 422)
         throw error;
 
       const { errors } = error,
@@ -105,7 +105,12 @@ function validateNode(node, attrs = null) {
 }
 
 function saveNode(node) {
-  return postJSON(nodesPath({ format: 'json' }), { data: node.serialize() });
+  const options = {
+    data: node.serialize(),
+    credentials: 'same-origin'
+  };
+
+  return postJSON(nodesPath({ format: 'json' }), options);
 }
 
 module.exports = {
