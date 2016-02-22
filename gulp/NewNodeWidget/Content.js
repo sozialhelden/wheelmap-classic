@@ -9,6 +9,7 @@ const ContactSection = require('./Section/Contact');
 const OverviewSection = require('./Section/Overview');
 const NodesForm = require('../common/Node/Form');
 const { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } = require('./models/sections');
+const { activateSection } = require('./actions');
 
 const SECTION_COMPONENTS = {
   [NAME_CATEGORY]: NameCategorySection,

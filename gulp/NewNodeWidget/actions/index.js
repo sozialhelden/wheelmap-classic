@@ -1,39 +1,42 @@
-const { createAction } = require('redux-actions');
+import { createAction } from 'redux-actions';
 
-const { search } = require('../../common/helpers/photon');
-const Node = require('../../common/models/Node');
+export const ENTER_CONTENT = 'ENTER_CONTENT';
+export const LOAD = 'LOAD';
+export const ACTIVATE_SECTION = 'ACTIVATE_SECTION';
+export const CHANGE_NODE = 'CHANGE_NODE';
+export const MARKER_MOVED = 'MARKER_MOVED';
+export const CHANGE_MAP_CENTER = 'CHANGE_MAP_CENTER';
+export const CHANGE_MAP_ZOOM = 'CHANGE_MAP_ZOOM';
+export const SET_SIMILAR = 'SET_SIMILAR';
+export const SET_ERRORS = 'SET_ERRORS';
+export const NAVIGATE_TO_SECTION = 'NAVIGATE_TO_SECTION';
+export const NAVIGATE_TO_NEXT_SECTION = 'NAVIGATE_TO_NEXT_SECTION';
+export const CHANGE_NODE_ADDRESS = 'CHANGE_NODE_ADDRESS';
+export const UPDATE_MAP = 'UPDATE_MAP';
+export const SAVE_NODE = 'SAVE_NODE';
 
-const ENTER_CONTENT = 'ENTER_CONTENT';
-const LOAD = 'LOAD';
-const ACTIVATE_SECTION = 'ACTIVATE_SECTION';
-const CHANGE_NODE = 'CHANGE_NODE';
-const MARKER_MOVED = 'MARKER_MOVED';
-const CHANGE_MAP_CENTER = 'CHANGE_MAP_CENTER';
-const CHANGE_MAP_ZOOM = 'CHANGE_MAP_ZOOM';
-const SET_SIMILAR = 'SET_SIMILAR';
-const SET_ERRORS = 'SET_ERRORS';
-const NAVIGATE_TO_SECTION = 'NAVIGATE_TO_SECTION';
-const NAVIGATE_TO_NEXT_SECTION = 'NAVIGATE_TO_NEXT_SECTION';
-const CHANGE_NODE_ADDRESS = 'CHANGE_NODE_ADDRESS';
-const UPDATE_MAP = 'UPDATE_MAP';
-const SAVE_NODE = 'SAVE_NODE';
+export const enterContent = createAction(ENTER_CONTENT, (nextState) => {
+  return {
+    section: nextState.params.section,
+    node: nextState.location.query.node
+  };
+});
+export const load = createAction(LOAD);
+export const activateSection = createAction(ACTIVATE_SECTION);
+export const changeNode = createAction(CHANGE_NODE);
+export const markerMoved = createAction(MARKER_MOVED);
+export const changeNodeAddress = createAction(CHANGE_NODE_ADDRESS);
+export const changeMapCenter = createAction(CHANGE_MAP_CENTER);
+export const changeMapZoom = createAction(CHANGE_MAP_ZOOM);
+export const setErrors = createAction(SET_ERRORS);
+export const navigateToSection = createAction(NAVIGATE_TO_SECTION);
+export const navigateToNextSection = createAction(NAVIGATE_TO_NEXT_SECTION);
+export const updateMap = createAction(UPDATE_MAP);
+export const setSimilar = createAction(SET_SIMILAR);
+export const saveNode = createAction(SAVE_NODE);
 
-const enterContent = createAction(ENTER_CONTENT);
-const load = createAction(LOAD);
-const activateSection = createAction(ACTIVATE_SECTION);
-const changeNode = createAction(CHANGE_NODE);
-const markerMoved = createAction(MARKER_MOVED);
-const changeNodeAddress = createAction(CHANGE_NODE_ADDRESS);
-const changeMapCenter = createAction(CHANGE_MAP_CENTER);
-const changeMapZoom = createAction(CHANGE_MAP_ZOOM);
-const setErrors = createAction(SET_ERRORS);
-const navigateToSection = createAction(NAVIGATE_TO_SECTION);
-const navigateToNextSection = createAction(NAVIGATE_TO_NEXT_SECTION);
-const updateMap = createAction(UPDATE_MAP);
-const setSimilar = createAction(SET_SIMILAR);
-const saveNode = createAction(SAVE_NODE);
-
-module.exports = {
+// @TODO Remove when we every module uses es6 imports.
+export default {
   ENTER_CONTENT,
   LOAD,
   ACTIVATE_SECTION,

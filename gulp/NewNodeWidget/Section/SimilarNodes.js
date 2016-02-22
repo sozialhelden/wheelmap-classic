@@ -1,13 +1,12 @@
 const React = require('react');
 const { connect } = require('react-redux');
 
-const { editNodePath } = global.Routes;
-
 const Section = require('./Section');
 const actions = require('../actions');
 const { SIMILAR_NODES } = require('../models/sections');
 const selectors = require('../selectors');
 const Node = require('../../common/models/Node');
+const { editNodePath } = require('../../common/routes');
 
 const { func } = React.PropTypes;
 

@@ -1,7 +1,7 @@
 const React = require('react');
 const Loader = require('react-loader');
 
-const SectionModel = require('../models/Section');
+const SectionModel = require('../models/Section').default;
 const I18n = require('../../common/I18n');
 
 const { string, func, instanceOf, bool } = React.PropTypes;

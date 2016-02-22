@@ -3,8 +3,8 @@ const { connect } = require('react-redux');
 
 const Header = require('./Header');
 const Breadcrumbs = require('./Breadcrumbs');
-const Section = require('./models/Section');
-const { navigateToSection } = require('./actions');
+const Section = require('./models/Section').default;
+const actions = require('./actions');
 const selectors = require('./selectors');
 
 const { immutableListOf } = require('../common/types');
@@ -39,7 +39,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onNavigate: (section) => dispatch(navigateToSection(section))
+    onNavigate: (section) => dispatch(actions.navigateToSection(section))
   };
 }
 
