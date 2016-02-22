@@ -1,30 +1,24 @@
-const { createAction } = require('redux-actions');
-const each = require('mout/collection/forEach');
+import { createAction } from 'redux-actions';
+import each from 'mout/collection/forEach';
 
-const Routes = global.Routes;
+import routes from '../routes';
 
-const TRANSITION = 'TRANSITION';
+export const TRANSITION = 'TRANSITION';
 
-function payloadCreatorCreator(method) {
-  return (...args) => ({ method, args});
+function createTransitionAction(method) {
+  return createAction(TRANSITION, (...args) => ({ method, args}));
 }
 
-const methods = ['push', 'replace', 'go', 'goForward', 'goBack'];
-const actions = {};
-
-methods.forEach(method => {
-  actions[method] = createAction(TRANSITION, payloadCreatorCreator(method));
-});
+export const push = createTransitionAction('push');
+export const replace = createTransitionAction('replace');
+export const go = createTransitionAction('go');
+export const goForward = createTransitionAction('goForward');
+export const goBack = createTransitionAction('goBack');
 
 // Add action creators for pushing specific paths
-each(Routes, (method, name) => {
+each(routes, (method, name) => {
   if (/Path$/i.test(name)) {
-    actions.push[name] = (...args) => actions.push(method.apply(Routes, args));
-    actions.replace[name] = (...args) => actions.replace(method.apply(Routes, args));
+    push[name] = (...args) => push(method.apply(routes, args));
+    replace[name] = (...args) => replace(method.apply(routes, args));
   }
 });
-
-module.exports = {
-  TRANSITION,
-  ...actions
-};

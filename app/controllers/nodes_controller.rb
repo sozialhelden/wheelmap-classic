@@ -8,10 +8,10 @@ class NodesController < ApplicationController
 
   skip_before_filter :verify_authenticity_token
 
-  before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update]
-  before_filter :authenticate_application!,       :only => [:new, :create, :edit, :update]
+  before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update, :validate]
+  before_filter :authenticate_application!,       :only => [:new, :create, :edit, :update, :validate]
   # TODO reenable feature terms
-  before_filter :authenticate_terms!,             :only => [:new, :create, :edit, :update], :unless => :mobile_app?
+  before_filter :authenticate_terms!,             :only => [:new, :create, :edit, :update, :validate], :unless => :mobile_app?
   before_filter :check_create_params,             :only => :create
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair

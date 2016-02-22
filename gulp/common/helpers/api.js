@@ -2,11 +2,10 @@ const fetch = require('isomorphic-fetch');
 const size = require('mout/collection/size');
 
 const Node = require('../models/Node');
-
-const { categoriesPath, validateNodePath, nodesPath } = global.Routes;
+const { categoriesPath, validateNodePath, nodesPath } = require('../routes');
 
 function HTTPError(response) {
-  const message = `HTTPError: ${response.statusText}`
+  const message = `HTTPError: ${response.statusText}`;
 
   this.name = this.constructor.name;
   this.message = message;
@@ -86,7 +85,7 @@ function validateNode(node, attrs = null) {
         sectionErrors = {};
 
       // No attrs in this section which can have an error or no errors occurred
-      if (attrs.size === 0 || size(errors) === 0)
+      if (attrs.length === 0 || size(errors) === 0)
         return error.response;
 
       // Copy valid errors into a new section error object

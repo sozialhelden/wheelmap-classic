@@ -4,7 +4,7 @@ const { Link } = require('react-router');
 const classNames = require('classnames');
 
 const I18n = require('../common/I18n');
-const Section = require('./models/Section');
+const Section = require('./models/Section').default;
 const { OVERVIEW } = require('./models/sections');
 
 const { immutableListOf } = require('../common/types');

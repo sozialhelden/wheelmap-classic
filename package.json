@@ -4,7 +4,6 @@
   "license": "AGPL-3.0",
   "dependencies": {
     "babel": "^6.3.13",
-    "babel-jest": "^6.0.1",
     "babel-plugin-transform-class-properties": "^6.3.13",
     "babel-plugin-transform-object-rest-spread": "^6.3.13",
     "babel-polyfill": "^6.5.0",
@@ -40,7 +39,8 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "devDependencies": {
-    "jest-cli": "^0.8.2"
+    "jest-cli": "^0.8.2",
+    "babel-jest": "^6.0.1"
   },
   "repository": {
     "type": "git",
@@ -55,7 +55,10 @@
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "unmockedModulePathPatterns": ["<rootDir>/node_modules/*"],
-    "testPathDirs": ["<rootDir>/gulp"]
+    "setupEnvScriptFile": "<rootDir>/gulp/jest/setupEnv",
+    "testPathDirs": ["<rootDir>/gulp"],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/*"
+    ]
   }
 }

@@ -1,36 +1,36 @@
-const { List } = require('immutable');
+import { List } from 'immutable';
 
-const Section = require('./Section');
+import Section from './Section';
 
-const NAME_CATEGORY = new Section({
+export const NAME_CATEGORY = new Section({
   id: 'name_category',
   nodeAttrs: List(['name', 'nodeType'])
 });
 
-const ADDRESS = new Section({
+export const ADDRESS = new Section({
   id: 'address',
   nodeAttrs: List(['street', 'housenumber', 'city', 'postcode', 'lat', 'lon'])
 });
 
-const SIMILAR_NODES = new Section({
+export const SIMILAR_NODES = new Section({
   id: 'similar_nodes'
 });
 
-const ACCESSIBILITY = new Section({
+export const ACCESSIBILITY = new Section({
   id: 'accessibility',
   nodeAttrs: List(['wheelchair', 'wheelchairToilet', 'wheelchairDescription'])
 });
 
-const CONTACT = new Section({
+export const CONTACT = new Section({
   id: 'contact',
   nodeAttrs: List(['phone', 'website'])
 });
 
-const OVERVIEW = new Section({
+export const OVERVIEW = new Section({
   id: 'overview'
 });
 
-module.exports = {
+export default {
   NAME_CATEGORY,
   ADDRESS,
   SIMILAR_NODES,

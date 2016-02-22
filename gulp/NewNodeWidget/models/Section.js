@@ -1,6 +1,6 @@
-const { Record, List } = require('immutable');
+import { Record, List } from 'immutable';
 
-class Section extends Record({
+export default class Section extends Record({
   id: null,
   // Attrs in this section, which can have errors
   nodeAttrs: List()
@@ -9,5 +9,3 @@ class Section extends Record({
     return this.id;
   }
 }
-
-module.exports = Section;

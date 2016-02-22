@@ -10,14 +10,13 @@ const multi = require('../common/middleware/multi');
 const transition = require('../common/middleware/transition');
 const createHistory = require('../common/helpers/createHistory');
 const Node = require('../common/models/Node');
+const { newNodePath, newNodeSectionPath } = require('../common/routes');
 const Widget = require('./Widget');
 const Content = require('./Content');
 const reducer = require('./reducers');
 const actions = require('./actions');
-const sagas = require('./sagas');
+const { 'default': sagas } = require('./sagas');
 const sections = require('./models/sections');
-
-const { newNodePath, newNodeSectionPath } = global.Routes;
 
 const browserHistory = createHistory();
 
