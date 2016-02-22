@@ -1,32 +1,23 @@
-import { take, put } from 'redux-saga/effects';
+import { take, put, call, select } from 'redux-saga/effects';
 
 import { SAVE_NODE, load } from '../actions';
 import { rootPath } from '../../common/routes';
 import selectors from '../selectors';
 import api from '../../common/helpers/api';
 
-export default function *saveNode(getState) {
-  while(true) {
-    yield take(SAVE_NODE);
+export default function *saveNode() {
+  yield take(SAVE_NODE);
 
-    const state = getState(),
-      node = selectors.node(state);
+  const node = yield select(selectors.node, state);
 
-    yield put(load(true));
+  yield put(load(true));
 
-    try {
-      yield api.saveNode(node);
-      window.location = rootPath();
-    } catch(error) {
-      if (error instanceof api.HTTPError) {
-        continue;
-      }
-
-      throw error;
-    } finally {
-      yield put(load(true));
-    }
-
-    break;
+  try {
+    yield call(api.saveNode, node);
+  } finally {
+    yield put(load(false));
   }
+
+  // @TODO Cleaner way?
+  window.location = rootPath();
 }

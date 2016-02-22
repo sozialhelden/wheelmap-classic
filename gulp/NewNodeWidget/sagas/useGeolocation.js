@@ -1,4 +1,4 @@
-import { take, put } from 'redux-saga/effects';
+import { take, put, select, call } from 'redux-saga/effects';
 
 import { load, changeMapCenter, changeMapZoom } from '../actions';
 import selectors from '../selectors';
@@ -6,11 +6,10 @@ import activeSection from './activeSection';
 import sections from '../models/sections';
 import geolocation from '../../common/helpers/geolocation';
 
-export default function *useGeolocation(getState) {
+export default function *useGeolocation() {
   yield take(activeSection(sections.ADDRESS));
 
-  const state = getState(),
-    node = selectors.node(state);
+  const node = yield select(selectors.node);
 
   if (node.hasLocation())
     return;
@@ -18,7 +17,7 @@ export default function *useGeolocation(getState) {
   yield put(load(true));
 
   try {
-    const position = yield geolocation(),
+    const position = yield call(geolocation),
       { latitude: lat, longitude: lon } = position.coords;
 
     yield put(changeMapCenter({ lat, lon }));
