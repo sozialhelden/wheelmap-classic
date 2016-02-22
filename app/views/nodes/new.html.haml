@@ -1,18 +1,5 @@
 #container
   .content
-    -#%header.nodes-new-header
-    -#=link_to root_path, class: 'btn btn--back' do
-    -#  zurück
-    -#%h1
-    -#  Ort hinzufügen
-    -#.nodes-new-breadcrumbs
-    -#  %ul{class: ('done' if @widget.active?(:overview))}
-    -#    - for section in @widget.sections
-    -#      - if section != :overview
-    -#        %li{class: "#{('done' if @widget.done?(section))} #{('active' if @widget.active?(section))}"}
-    -#          - #%a{href: (send("new_#{section}_nodes_path") if @widget.done?(section))}
-    -#          %a
-    -#            = section
     =react_component('Wheelmap.NewNodeWidget')
 
 - content_for :javascript do
