@@ -16,10 +16,12 @@ export default function *navigateToNextSection() {
 
     yield put(load(true));
 
+    const attrs = yield call([nodeAttrs, nodeAttrs.toJS]);
+
     try {
-      yield call(api.validateNode, node, nodeAttrs.toJS());
+      yield call(api.validateNode, node, attrs);
     } catch(error) {
-      if (api.HTTPError.is(error, 422)) {
+      if (yield call(api.HTTPError.is, error, 422)) {
         const { errors } = error;
 
         // Abort navigation and show errors.
