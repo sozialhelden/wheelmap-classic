@@ -1,6 +1,6 @@
 jest.dontMock('../fetchSimilar');
 
-import { take, put } from 'redux-saga/effects';
+import { take, put, select, call } from 'redux-saga/effects';
 
 import { load, navigateToNextSection, setSimilar } from '../../actions';
 import selectors from '../../selectors';
@@ -19,39 +19,40 @@ describe('fetchSimilar', () => {
     expect(generator.next().value)
       .toEqual(take(activeSection(SIMILAR_NODES)));
 
+    expect(generator.next().value)
+      .toEqual(select(selectors.node));
+
     const node = new Node();
 
     node.name = 'Test node';
     node.lat = 13.5;
-    node.lng = 14.5;
+    node.lon = 14.5;
 
-    selectors.node
-      .mockReturnValue(node);
+    expect(generator.next(node).value)
+      .toEqual(put(load(true)));
 
     expect(generator.next().value)
-      .toEqual(put(load(true)));
+      .toEqual(call(photon.search, node.name, {
+        lat: node.lat,
+        lon: node.lon,
+        limit: 5,
+        osm_tag: 'amenity'
+      }));
 
     const features = [
       'feature one',
       'feature two'
     ];
 
-    photon.search
-      .mockReturnValue(features);
-
-    expect(generator.next().value)
-      .toEqual(features);
+    expect(generator.next(features).value)
+      .toEqual(call(Node.fromFeatures, features));
 
     const nodes = [
       new Node(),
       new Node()
     ];
 
-    Node.fromFeature
-      .mockReturnValueOnce(nodes[0])
-      .mockReturnValueOnce(nodes[1]);
-
-    expect(generator.next(features).value)
+    expect(generator.next(nodes).value)
       .toEqual(put(setSimilar(nodes)));
 
     expect(generator.next().value)
@@ -68,25 +69,27 @@ describe('fetchSimilar', () => {
     expect(generator.next().value)
       .toEqual(take(activeSection(SIMILAR_NODES)));
 
+    expect(generator.next().value)
+      .toEqual(select(selectors.node));
+
     const node = new Node();
 
     node.name = 'Test node';
     node.lat = 13.5;
-    node.lng = 14.5;
+    node.lon = 14.5;
 
-    selectors.node
-      .mockReturnValue(node);
-
-    expect(generator.next().value)
+    expect(generator.next(node).value)
       .toEqual(put(load(true)));
 
-    const features = [];
-
-    photon.search
-      .mockReturnValue(features);
-
     expect(generator.next().value)
-      .toEqual(features);
+      .toEqual(call(photon.search, node.name, {
+        lat: node.lat,
+        lon: node.lon,
+        limit: 5,
+        osm_tag: 'amenity'
+      }));
+
+    const features = [];
 
     expect(generator.next(features).value)
       .toEqual(put(navigateToNextSection()));

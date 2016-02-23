@@ -3,15 +3,15 @@ jest.dontMock('../activateSection');
 import { take, put } from 'redux-saga/effects';
 
 import { CONTACT, NAME_CATEGORY } from '../../models/sections';
-import { ENTER_CONTENT, enterContent, activateSection } from '../../actions';
+import { ENTER_CONTENT, enterContent, activateSection as activateSectionAction } from '../../actions';
 import { replace } from '../../../common/actions/router';
 
-const activateSectionSaga = require('../activateSection').default;
+const activateSection = require('../activateSection').default;
 
 describe('activateSection', () => {
-  const generator = activateSectionSaga();
-
   it('activates section', () => {
+    const generator = activateSection();
+
     expect(generator.next().value)
       .toEqual(take(ENTER_CONTENT));
 
@@ -19,10 +19,15 @@ describe('activateSection', () => {
       action = enterContent(nextState);
 
     expect(generator.next(action).value)
-      .toEqual(put(activateSection(CONTACT)));
+      .toEqual(put(activateSectionAction(CONTACT)));
+
+    expect(generator.next().done)
+      .toBe(false);
   });
 
   it('redirects to name & category section', () => {
+    const generator = activateSection();
+
     expect(generator.next().value)
       .toEqual(take(ENTER_CONTENT));
 
@@ -31,5 +36,8 @@ describe('activateSection', () => {
 
     expect(generator.next(action).value)
       .toEqual(put(replace.newNodeSectionPath(NAME_CATEGORY)));
+
+    expect(generator.next().done)
+      .toBe(false);
   });
 });
