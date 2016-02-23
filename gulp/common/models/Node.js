@@ -54,6 +54,10 @@ class Node extends Record({
   }
 }
 
+Node.create = (attrs) => {
+  return new Node(attrs);
+};
+
 Node.serializeAttrs = (attrs) => {
   return Seq(attrs)
     .toKeyedSeq()
@@ -80,6 +84,10 @@ Node.fromFeature = (feature) => {
   return new Node({
     id: osm_id, state, country, city, name, postcode, street, housenumber, lat, lon
   });
+};
+
+Node.fromFeatures = (features) => {
+  return features.map(Node.fromFeature);
 };
 
 module.exports = Node;

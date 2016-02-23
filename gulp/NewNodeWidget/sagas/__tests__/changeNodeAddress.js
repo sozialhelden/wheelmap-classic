@@ -2,21 +2,21 @@ jest.dontMock('../changeNodeAddress');
 
 import { take, put } from 'redux-saga/effects';
 
-import { CHANGE_NODE_ADDRESS, changeNode, updateMap, changeNodeAddress } from '../../actions';
+import { CHANGE_NODE_ADDRESS, changeNode, updateMap, changeNodeAddress as changeNodeAddressAction } from '../../actions';
 import selectors from '../../selectors';
 import Node from '../../../common/models/Node';
 
-const changeNodeAddressSaga = require('../changeNodeAddress').default;
+const changeNodeAddress = require('../changeNodeAddress').default;
 
 describe('changeNodeAddress', () => {
-  const generator = changeNodeAddressSaga();
+  const generator = changeNodeAddress();
 
   it('updates map', () => {
     expect(generator.next().value)
       .toEqual(take(CHANGE_NODE_ADDRESS));
 
     const node = new Node(),
-      action = changeNodeAddress(node);
+      action = changeNodeAddressAction(node);
 
     node.address.mockReturnValue('node address');
 

@@ -18,12 +18,12 @@ export default function*() {
   if (node.lon)
     node.lon = parseFloat(node.lon);
 
-  node = new Node(node);
+  node = yield call(Node.create, node);
 
   // Update node from query param if no errors occured.
   yield put(changeNode(node));
 
-  const location = node.location();
+  const location = yield call([node, node.location]);
 
   if (location != null)
     yield put(changeMapCenter(location));
