@@ -25,7 +25,9 @@ export default function *fetchSimilar() {
         continue;
       }
 
-      yield put(setSimilar(features.map(Node.fromFeature)));
+      const nodes = yield call(Node.fromFeatures, features);
+
+      yield put(setSimilar(nodes));
     } finally {
       yield put(load(false));
     }

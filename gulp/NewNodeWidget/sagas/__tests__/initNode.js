@@ -1,6 +1,6 @@
 jest.dontMock('../initNode');
 
-import { take, put } from 'redux-saga/effects';
+import { take, put, call } from 'redux-saga/effects';
 
 import { NAME_CATEGORY } from '../../models/sections';
 import { ENTER_CONTENT, enterContent, changeNode, changeMapCenter, load, setErrors } from '../../actions';
@@ -38,34 +38,35 @@ describe('initNode', () => {
     expect(generator.next().value)
       .toEqual(take(ENTER_CONTENT));
 
-    const node = { lat: '15.5', lon: '13.3', title: 'Test Node' },
-      nextState = { params: {}, location: { query: { node } } },
+    const queryNode = { lat: '15.5', lon: '13.3', title: 'Test Node' },
+      nextState = { params: {}, location: { query: { node: queryNode } } },
       action = enterContent(nextState);
 
-    const { value } = generator.next(action),
-      location = { lat: 15.5, lon: 13.3 };
+    const node = new Node();
 
-    expect(Node)
-      .lastCalledWith({ ...location, title: 'Test Node' });
+    node.lat = 15.5;
+    node.lon = 13.3;
+    node.title = 'Test Node';
 
-    expect(changeNode)
-      .toBeCalledWith(jasmine.any(Node));
+    expect(generator.next(action).value)
+      .toEqual(call(Node.create, { lat: node.lat, lon: node.lon, title: node.title }));
 
-    const nodeInstance = changeNode.mock.calls[0][0];
-
-    nodeInstance.location.mockReturnValue(location);
-
-    expect(value)
-      .toEqual(put(changeNode(nodeInstance)));
+    expect(generator.next(node).value)
+      .toEqual(put(changeNode(node)));
 
     expect(generator.next().value)
+      .toEqual(call([node, node.location]));
+
+    const location = { lat: node.lat, lon: node.lon };
+
+    expect(generator.next(location).value)
       .toEqual(put(changeMapCenter(location)));
 
     expect(generator.next().value)
       .toEqual(put(load(true)));
 
     expect(generator.next().value)
-      .toEqual(api.validateNode());
+      .toEqual(call(api.validateNode, node));
 
     expect(generator.next().value)
       .toEqual(put(load(false)));
@@ -80,29 +81,35 @@ describe('initNode', () => {
     expect(generator.next().value)
       .toEqual(take(ENTER_CONTENT));
 
-    const node = { lat: '15.5', lon: '13.3', title: 'Test Node' },
-      nextState = { params: {}, location: { query: { node } } },
+    const queryNode = { lat: '15.5', lon: '13.3', title: 'Test Node' },
+      nextState = { params: {}, location: { query: { node: queryNode } } },
       action = enterContent(nextState);
 
-    const { value } = generator.next(action),
-      location = { lat: 15.5, lon: 13.3 };
+    const node = new Node();
 
-    expect(Node)
-      .lastCalledWith({ ...location, title: 'Test Node' });
+    node.lat = 15.5;
+    node.lon = 13.3;
+    node.title = 'Test Node';
 
-    expect(changeNode)
-      .toBeCalledWith(jasmine.any(Node));
+    expect(generator.next(action).value)
+      .toEqual(call(Node.create, { lat: node.lat, lon: node.lon, title: node.title }));
 
-    const nodeInstance = changeNode.mock.calls[0][0];
+    expect(generator.next(node).value)
+      .toEqual(put(changeNode(node)));
 
-    expect(value)
-      .toEqual(put(changeNode(nodeInstance)));
+    expect(generator.next().value)
+      .toEqual(call([node, node.location]));
+
+    const location = { lat: node.lat, lon: node.lon };
+
+    expect(generator.next(location).value)
+      .toEqual(put(changeMapCenter(location)));
 
     expect(generator.next().value)
       .toEqual(put(load(true)));
 
     expect(generator.next().value)
-      .toEqual(api.validateNode());
+      .toEqual(call(api.validateNode, node));
 
     const validationError = new api.HTTPError();
     validationError.errors = { error: 'error message' };
