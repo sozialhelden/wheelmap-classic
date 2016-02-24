@@ -5,6 +5,7 @@ const { createStructuredSelector } = require('reselect');
 
 const Section = require('./Section');
 const I18n = require('../../common/I18n');
+const { Map, Marker } = require('../../common/Mapbox');
 const { NAME_CATEGORY, ADDRESS, ACCESSIBILITY, CONTACT, OVERVIEW } = require('../models/sections');
 const actions = require('../actions');
 const selectors = require('../selectors');
@@ -38,6 +39,13 @@ class OverviewSection extends React.Component {
     if (node.postcode != null && node.city != null)
       city = `${node.postcode} ${node.city}`;
 
+    const icon = nodeType != null ? nodeType.icon : null,
+      location = node.location();
+
+    const marker = <Marker position={location}
+                           wheelchair={node.wheelchair}
+                           icon={icon}/>;
+
     if (node.website != null)
       website = <a href={node.website}>{node.website}</a>;
 
@@ -64,6 +72,17 @@ class OverviewSection extends React.Component {
             <dt><I18n scope="activerecord.attributes.poi.address_city"/>:</dt>
             <dd>{city}</dd>
           </dl>
+          <Map center={location}
+               zoom={16}
+               dragging={false}
+               touchZoom={false}
+               doubleClickZoom={false}
+               scrollWheelZoom={false}
+               keyboard={false}
+               zoomControl={false}
+               className="nodes-new-content-section--overview-map">
+            {marker}
+          </Map>
           <a className="nodes-new-content-section--overview-edit"
              onClick={onClickEdit.bind(null, ADDRESS)}>
             <I18n scope="nodes.node_edit.edit"/> <i className="icon-chevron-right"/>
