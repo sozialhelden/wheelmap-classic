@@ -8,14 +8,14 @@ const { string, func, instanceOf, bool } = React.PropTypes;
 
 class Section extends React.Component {
   static propTypes = {
-    actionLabel: string.isRequired, // @TODO Use scope,
+    actionLabelScope: string.isRequired,
     section: instanceOf(SectionModel).isRequired,
     onClickAction: func.isRequired,
     loading: bool
   };
 
   static defaultProps = {
-    actionLabel: 'Weiter',
+    actionLabelScope: 'actions.next',
     loading: false
   };
 
@@ -26,7 +26,7 @@ class Section extends React.Component {
   };
 
   render() {
-    const { section, loading, children, actionLabel, onClickAction } = this.props;
+    const { section, loading, children, actionLabelScope, onClickAction } = this.props;
 
     const sectionForms = React.Children.map(children, child => {
       return (
@@ -42,7 +42,9 @@ class Section extends React.Component {
           <h2><I18n scope={`nodes.new.form.section.${section}.title`}/></h2>
           {sectionForms}
           <div className="form-actions">
-            <button className="btn btn-primary pull-right submit" onClick={this.onClickAction}>{actionLabel}</button>
+            <button className="btn btn-primary pull-right submit" onClick={this.onClickAction}>
+              <I18n scope={actionLabelScope}/>
+            </button>
           </div>
         </Loader>
       </section>

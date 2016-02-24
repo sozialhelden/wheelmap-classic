@@ -42,7 +42,7 @@ class OverviewSection extends React.Component {
       website = <a href={node.website}>{node.website}</a>;
 
     return (
-      <Section section={OVERVIEW} onClickAction={onClickAction} actionLabel="Speichern" loading={loading}>
+      <Section section={OVERVIEW} onClickAction={onClickAction} actionLabelScope="actions.save" loading={loading}>
         <div>
           <h3>Name & Kategorie:</h3>
           <dl className="nodes-new-content-section--overview-list">
