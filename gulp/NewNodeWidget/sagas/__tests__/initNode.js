@@ -1,7 +1,5 @@
 jest.dontMock('../initNode');
 
-import { take, put, call } from 'redux-saga/effects';
-
 import { NAME_CATEGORY } from '../../models/sections';
 import { ENTER_CONTENT, enterContent, changeNode, changeMapCenter, load, setErrors } from '../../actions';
 import { replace } from '../../../common/actions/router';
@@ -12,26 +10,26 @@ const initNode = require('../initNode').default;
 
 describe('initNode', () => {
   it('redirects to name & category section if no node in query', () => {
-    const gen = expectGen(initNode());
+    const gen = initNode();
 
-    gen.next().value
-      .toEqual(take(ENTER_CONTENT));
+    expect(gen.next().value)
+      .toTake(ENTER_CONTENT);
 
     const nextState = { params: {}, location: { query: {} } },
       action = enterContent(nextState);
 
-    gen.next(action).value
-      .toEqual(put(replace.newNodeSectionPath(NAME_CATEGORY)));
+    expect(gen.next(action).value)
+      .toPut(replace.newNodeSectionPath(NAME_CATEGORY));
 
-    gen.next().done
+    expect(gen.next().done)
       .toBe(true);
   });
 
   it('initializes node', () => {
-    const gen = expectGen(initNode());
+    const gen = initNode();
 
-    gen.next().value
-      .toEqual(take(ENTER_CONTENT));
+    expect(gen.next().value)
+      .toTake(ENTER_CONTENT);
 
     const queryNode = { lat: '15.5', lon: '13.3', title: 'Test Node' },
       nextState = { params: {}, location: { query: { node: queryNode } } },
@@ -43,38 +41,38 @@ describe('initNode', () => {
     node.lon = 13.3;
     node.title = 'Test Node';
 
-    gen.next(action).value
-      .toEqual(call(Node.create, { lat: node.lat, lon: node.lon, title: node.title }));
+    expect(gen.next(action).value)
+      .toCall(Node.create, { lat: node.lat, lon: node.lon, title: node.title });
 
-    gen.next(node).value
-      .toEqual(put(changeNode(node)));
+    expect(gen.next(node).value)
+      .toPut(changeNode(node));
 
-    gen.next().value
-      .toEqual(call([node, node.location]));
+    expect(gen.next().value)
+      .toCall([node, node.location]);
 
     const location = { lat: node.lat, lon: node.lon };
 
-    gen.next(location).value
-      .toEqual(put(changeMapCenter(location)));
+    expect(gen.next(location).value)
+      .toPut(changeMapCenter(location));
 
-    gen.next().value
-      .toEqual(put(load(true)));
+    expect(gen.next().value)
+      .toPut(load(true));
 
-    gen.next().value
-      .toEqual(call(api.validateNode, node));
+    expect(gen.next().value)
+      .toCall(api.validateNode, node);
 
-    gen.next().value
-      .toEqual(put(load(false)));
+    expect(gen.next().value)
+      .toPut(load(false));
 
-    gen.next().done
+    expect(gen.next().done)
       .toBe(true);
   });
 
   it('redirects to name & category section if node is invalid', () => {
-    const gen = expectGen(initNode());
+    const gen = initNode();
 
-    gen.next().value
-      .toEqual(take(ENTER_CONTENT));
+    expect(gen.next().value)
+      .toTake(ENTER_CONTENT);
 
     const queryNode = { lat: '15.5', lon: '13.3', title: 'Test Node' },
       nextState = { params: {}, location: { query: { node: queryNode } } },
@@ -86,39 +84,39 @@ describe('initNode', () => {
     node.lon = 13.3;
     node.title = 'Test Node';
 
-    gen.next(action).value
-      .toEqual(call(Node.create, { lat: node.lat, lon: node.lon, title: node.title }));
+    expect(gen.next(action).value)
+      .toCall(Node.create, { lat: node.lat, lon: node.lon, title: node.title });
 
-    gen.next(node).value
-      .toEqual(put(changeNode(node)));
+    expect(gen.next(node).value)
+      .toPut(changeNode(node));
 
-    gen.next().value
-      .toEqual(call([node, node.location]));
+    expect(gen.next().value)
+      .toCall([node, node.location]);
 
     const location = { lat: node.lat, lon: node.lon };
 
-    gen.next(location).value
-      .toEqual(put(changeMapCenter(location)));
+    expect(gen.next(location).value)
+      .toPut(changeMapCenter(location));
 
-    gen.next().value
-      .toEqual(put(load(true)));
+    expect(gen.next().value)
+      .toPut(load(true));
 
-    gen.next().value
-      .toEqual(call(api.validateNode, node));
+    expect(gen.next().value)
+      .toCall(api.validateNode, node);
 
     const validationError = new api.HTTPError();
     validationError.errors = { error: 'error message' };
 
-    gen.throw(validationError).value
-      .toEqual(put(replace.newNodeSectionPath(NAME_CATEGORY)));
+    expect(gen.throw(validationError).value)
+      .toPut(replace.newNodeSectionPath(NAME_CATEGORY));
 
-    gen.next().value
-      .toEqual(put(setErrors(validationError.errors)));
+    expect(gen.next().value)
+      .toPut(setErrors(validationError.errors));
 
-    gen.next().value
-      .toEqual(put(load(false)));
+    expect(gen.next().value)
+      .toPut(load(false));
 
-    gen.next().done
+    expect(gen.next().done)
       .toBe(true);
   });
 });

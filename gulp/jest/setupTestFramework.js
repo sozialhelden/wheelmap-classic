@@ -1,21 +1,24 @@
-global.expectGen = (generator) => {
-  return {
-    next(object = null) {
-      const { value, done } = generator.next(object);
+import { take, put, select, call, cancel, fork } from 'redux-saga/effects';
 
-      return {
-        value: expect(value),
-        done: expect(done)
-      };
-    },
-
-    throw(object = null) {
-      const { value, done } = generator.throw(object);
-
-      return {
-        value: expect(value),
-        done: expect(done)
-      };
-    }
+function createEventMatcher(eventCreator) {
+  return (util, customEqualityTesters) => {
+    return {
+      compare(actual, ...args) {
+        return {
+          pass: util.equals(actual, eventCreator(...args), customEqualityTesters)
+        };
+      }
+    };
   };
-};
+}
+
+beforeEach(() => {
+  jasmine.addMatchers({
+    toTake: createEventMatcher(take),
+    toPut: createEventMatcher(put),
+    toSelect: createEventMatcher(select),
+    toCall: createEventMatcher(call),
+    toCancel: createEventMatcher(cancel),
+    toFork: createEventMatcher(fork)
+  });
+});

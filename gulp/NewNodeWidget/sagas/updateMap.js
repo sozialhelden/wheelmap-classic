@@ -19,9 +19,10 @@ export default function *cancelUpdateMap() {
 export function *updateMap(node) {
   try {
     // Delay photon request (debounce).
-    yield delay(300);
+    yield call(delay, 300);
 
-    const feature = yield call(photon.geocode, node.address());
+    const address = yield call([node, node.address]),
+      feature = yield call(photon.geocode, address);
 
     // Restart daemon if no feature was found.
     if (feature == null)
@@ -31,7 +32,10 @@ export function *updateMap(node) {
       center = { lat, lon };
 
     yield put(changeMapCenter(center));
-    yield put(changeNode(node.merge(center)));
+
+    node = yield call([node, node.merge], center);
+
+    yield put(changeNode(node));
   } catch(error) {
     if (error instanceof SagaCancellationException)
       return;

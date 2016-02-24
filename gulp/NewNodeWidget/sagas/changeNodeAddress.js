@@ -1,4 +1,4 @@
-import { take, put } from 'redux-saga/effects';
+import { take, put, call } from 'redux-saga/effects';
 
 import { CHANGE_NODE_ADDRESS, changeNode, updateMap } from '../actions';
 import selectors from '../selectors';
@@ -9,6 +9,9 @@ export default function*(getState) {
     const { payload: node } = yield take(CHANGE_NODE_ADDRESS);
 
     yield put(changeNode(node));
-    yield put(updateMap(node.address()));
+
+    const address = yield call([node, node.address]);
+
+    yield put(updateMap(address));
   }
 }

@@ -21,7 +21,7 @@ class Node extends Record({
   website: null,
   phone: null,
   state: null,
-  country: 'Germany'
+  country: null
 }) {
   constructor(attrs) {
     super(Node.deserializeAttrs(attrs));
@@ -62,8 +62,7 @@ Node.serializeAttrs = (attrs) => {
   return Seq(attrs)
     .toKeyedSeq()
     .filter((value, key) => !PROHIBITED_ATTRS.includes(key))
-    .mapKeys(key => key === 'nodeType' ? 'type' : key)
-    .mapKeys(key => underscore(key))
+    .mapKeys(key => key === 'nodeType' ? 'type' : underscore(key))
     .filter(value => value)
     .toJS();
 };
@@ -71,15 +70,14 @@ Node.serializeAttrs = (attrs) => {
 Node.deserializeAttrs = (attrs) => {
   return Seq(attrs)
     .toKeyedSeq()
-    .mapKeys(key => key === 'type' ? 'nodeType' : key)
-    .mapKeys(key => camelCase(key))
+    .mapKeys(key => key === 'type' ? 'nodeType' : camelCase(key))
     .toJS();
 };
 
 Node.fromFeature = (feature) => {
   const { properties, geometry } = feature,
     { osm_id, city, name, postcode, street, housenumber, state, country } = properties,
-    [ lat, lon ] = geometry.coordinates;
+    [ lon, lat ] = geometry.coordinates;
 
   return new Node({
     id: osm_id, state, country, city, name, postcode, street, housenumber, lat, lon
@@ -87,7 +85,7 @@ Node.fromFeature = (feature) => {
 };
 
 Node.fromFeatures = (features) => {
-  return features.map(Node.fromFeature);
+  return List(features.map(Node.fromFeature));
 };
 
 module.exports = Node;

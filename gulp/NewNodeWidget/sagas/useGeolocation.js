@@ -11,7 +11,7 @@ export default function *useGeolocation() {
 
   const node = yield select(selectors.node);
 
-  if (node.hasLocation())
+  if (yield call([node, node.hasLocation]))
     return;
 
   yield put(load(true));
@@ -25,7 +25,6 @@ export default function *useGeolocation() {
   } catch(error) {
     // Position error
     if (error.code) {
-      console.error(error.message);
       return;
     }
 

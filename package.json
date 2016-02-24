@@ -20,6 +20,7 @@
     "isomorphic-fetch": "^2.2.1",
     "leaflet": "^0.7.7",
     "mout": "^0.11.0",
+    "promise": "^7.1.1",
     "qs": "^6.1.0",
     "react": "^0.14.5",
     "react-addons-test-utils": "^0.14.5",
@@ -54,6 +55,7 @@
     "test": "node_modules/.bin/jest"
   },
   "jest": {
+    "testRunner": "<rootDir>/node_modules/jest-cli/src/testRunners/jasmine/jasmine2.js",
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "setupEnvScriptFile": "<rootDir>/gulp/jest/setupEnv",
     "setupTestFrameworkScriptFile": "<rootDir>/gulp/jest/setupTestFramework",
