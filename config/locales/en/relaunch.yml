@@ -50,6 +50,26 @@ en:
       form:
         legend: Location of the place
         location: Please click on the map and place the marker at the exact position.
+        section:
+          name_category:
+            name: Name & Category
+            title: "Gib uns erste Informationen zu deinem neuen Ort:"
+          address:
+            name: Address
+            title: Wo liegt der Ort?
+          similar_nodes:
+            name: Similar Places
+            title: Ist es einer der folgenden Orte?
+            go_edit: Mit diesen Ort fortfahren
+            go_new: Es ist keiner der oben genannten Orte …
+          accessibility:
+            name: Accessibility
+            title: Informationen zur Rollstuhlgerechtigkeit
+          contact:
+            name: Contact
+            title: Weitere Kontaktmöglichkeiten
+          overview:
+            title: Everything correct?
     node_data:
       address: 'Address:'
       contact_details: 'Contact details:'
