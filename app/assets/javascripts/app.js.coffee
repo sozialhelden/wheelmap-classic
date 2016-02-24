@@ -1,6 +1,5 @@
 #= require env
 #= require jquery
-#= require jquery/jquery-migrate
 #= require jquery/jquery.cookies.js
 #= require i18n.js
 #= require bootstrap
@@ -16,7 +15,6 @@
 #= require leaflet/leaflet.locate
 #= require leaflet/geojsontiles
 #= require ember-leaflet
-#= require jquery/jquery.magnific-popup.js
 #= require responsive-popover
 #= require dropzone
 #= require_self
