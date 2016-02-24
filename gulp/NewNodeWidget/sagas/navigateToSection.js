@@ -1,4 +1,4 @@
-import { take, put, select } from 'redux-saga/effects';
+import { take, put, select, call } from 'redux-saga/effects';
 
 import { NAVIGATE_TO_SECTION } from '../actions';
 import selectors from '../selectors';
@@ -12,14 +12,16 @@ export default function *navigateToSection() {
     const sections = yield select(selectors.sections),
       index = sections.indexOf(section),
       activeSection = yield select(selectors.activeSection),
-      activeIndex = sections.indexOf(activeSection),
-      node = yield select(selectors.node);
+      activeIndex = sections.indexOf(activeSection);
 
     // Move only back in history
     if (activeIndex < index)
       continue;
 
+    const node = yield select(selectors.node),
+      serializedNode = yield call([node, node.serialize]);
+
     // Push new node section path
-    yield put(push.newNodeSectionPath(section, node.serialize()));
+    yield put(push.newNodeSectionPath(section, serializedNode));
   }
 }

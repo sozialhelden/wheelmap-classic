@@ -1,7 +1,8 @@
 import unCamelCase from 'mout/string/unCamelCase';
 
 const routes = [
-  'newNodeSectionPath'
+  'newNodeSectionPath',
+  'rootPath'
 ];
 
 const helpers = {};
@@ -12,9 +13,10 @@ routes.forEach(route => {
       return path;
     };
 
-  helpers[route] = helper;
+  helpers[route] = jest.genMockFunction()
+    .mockImpl(helper);
+
   helpers[route].toString = helper;
 });
 
-
-export default helpers;
+module.exports = helpers;

@@ -6,12 +6,10 @@ const actions = require('../actions');
 const { FETCH_CATEGORIES } = require('../../common/actions/categories');
 const Node = require('../../common/models/Node');
 
-const defaultNode = new Node();
-
 const DEFAULT_STATE = Map({
   activeSection: null,
   sections: List([NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW]),
-  node: defaultNode,
+  node: new Node(),
   mapCenter: { lat: 52.520007, lon: 13.404954 },
   mapZoom: 14,
   similarNodes: List(),
