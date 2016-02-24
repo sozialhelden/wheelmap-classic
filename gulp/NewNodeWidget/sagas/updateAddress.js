@@ -24,12 +24,14 @@ export function *updateAddress() {
       const feature = yield call(photon.reverseGeocode, location),
         { properties: { city, street, postcode, housenumber } } = feature;
 
-      const node = yield select(selectors.node, state);
+      let node = yield select(selectors.node);
 
-      yield put(changeNode(node.merge({
+      node = yield call([node, node.merge], {
         city, street,
         postcode, housenumber
-      })));
+      });
+
+      yield put(changeNode(node));
     }
   } catch(error) {
     if (error instanceof SagaCancellationException)

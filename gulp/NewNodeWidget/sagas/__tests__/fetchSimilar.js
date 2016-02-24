@@ -1,7 +1,5 @@
 jest.dontMock('../fetchSimilar');
 
-import { take, put, select, call } from 'redux-saga/effects';
-
 import { load, navigateToNextSection, setSimilar } from '../../actions';
 import selectors from '../../selectors';
 import { SIMILAR_NODES } from '../../models/sections';
@@ -13,14 +11,13 @@ const fetchSimilar = require('../fetchSimilar').default;
 
 describe('fetchSimilar', () => {
   it('fetches similar nodes', () => {
-    const getState = jest.genMockFn(),
-      generator = fetchSimilar(getState);
+    const gen = fetchSimilar();
 
-    expect(generator.next().value)
-      .toEqual(take(activeSection(SIMILAR_NODES)));
+    expect(gen.next().value)
+      .toTake(activeSection(SIMILAR_NODES));
 
-    expect(generator.next().value)
-      .toEqual(select(selectors.node));
+    expect(gen.next().value)
+      .toSelect(selectors.node);
 
     const node = new Node();
 
@@ -28,49 +25,48 @@ describe('fetchSimilar', () => {
     node.lat = 13.5;
     node.lon = 14.5;
 
-    expect(generator.next(node).value)
-      .toEqual(put(load(true)));
+    expect(gen.next(node).value)
+      .toPut(load(true));
 
-    expect(generator.next().value)
-      .toEqual(call(photon.search, node.name, {
+    expect(gen.next().value)
+      .toCall(photon.search, node.name, {
         lat: node.lat,
         lon: node.lon,
         limit: 5,
         osm_tag: 'amenity'
-      }));
+      });
 
     const features = [
       'feature one',
       'feature two'
     ];
 
-    expect(generator.next(features).value)
-      .toEqual(call(Node.fromFeatures, features));
+    expect(gen.next(features).value)
+      .toCall(Node.fromFeatures, features);
 
     const nodes = [
       new Node(),
       new Node()
     ];
 
-    expect(generator.next(nodes).value)
-      .toEqual(put(setSimilar(nodes)));
+    expect(gen.next(nodes).value)
+      .toPut(setSimilar(nodes));
 
-    expect(generator.next().value)
-      .toEqual(put(load(false)));
+    expect(gen.next().value)
+      .toPut(load(false));
 
-    expect(generator.next().done)
+    expect(gen.next().done)
       .toBe(false);
   });
 
   it('navigate to next section if no similar nodes were found', () => {
-    const getState = jest.genMockFn(),
-      generator = fetchSimilar(getState);
+    const gen = fetchSimilar();
 
-    expect(generator.next().value)
-      .toEqual(take(activeSection(SIMILAR_NODES)));
+    expect(gen.next().value)
+      .toTake(activeSection(SIMILAR_NODES));
 
-    expect(generator.next().value)
-      .toEqual(select(selectors.node));
+    expect(gen.next().value)
+      .toSelect(selectors.node);
 
     const node = new Node();
 
@@ -78,26 +74,26 @@ describe('fetchSimilar', () => {
     node.lat = 13.5;
     node.lon = 14.5;
 
-    expect(generator.next(node).value)
-      .toEqual(put(load(true)));
+    expect(gen.next(node).value)
+      .toPut(load(true));
 
-    expect(generator.next().value)
-      .toEqual(call(photon.search, node.name, {
+    expect(gen.next().value)
+      .toCall(photon.search, node.name, {
         lat: node.lat,
         lon: node.lon,
         limit: 5,
         osm_tag: 'amenity'
-      }));
+      });
 
     const features = [];
 
-    expect(generator.next(features).value)
-      .toEqual(put(navigateToNextSection()));
+    expect(gen.next(features).value)
+      .toPut(navigateToNextSection());
 
-    expect(generator.next().value)
-      .toEqual(put(load(false)));
+    expect(gen.next().value)
+      .toPut(load(false));
 
-    expect(generator.next().done)
+    expect(gen.next().done)
       .toBe(false);
   });
 });

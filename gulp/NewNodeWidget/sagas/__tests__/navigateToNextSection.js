@@ -1,6 +1,5 @@
 jest.dontMock('../navigateToNextSection');
 
-import { take, put, select, call } from 'redux-saga/effects';
 import { List } from 'immutable';
 
 import { NAVIGATE_TO_NEXT_SECTION, setErrors, load } from '../../actions';
@@ -14,89 +13,89 @@ const navigateToNextSection = require('../navigateToNextSection').default;
 
 describe('navigateToNextSection', () => {
   it('navigates to next section', () => {
-    const gen = expectGen(navigateToNextSection());
+    const gen = navigateToNextSection();
 
-    gen.next().value
-      .toEqual(take(NAVIGATE_TO_NEXT_SECTION));
+    expect(gen.next().value)
+      .toTake(NAVIGATE_TO_NEXT_SECTION);
 
-    gen.next().value
-      .toEqual(select(selectors.node));
+    expect(gen.next().value)
+      .toSelect(selectors.node);
 
     const node = new Node();
 
-    gen.next(node).value
-      .toEqual(select(selectors.activeSection));
+    expect(gen.next(node).value)
+      .toSelect(selectors.activeSection);
 
     const activeSection = NAME_CATEGORY,
       { nodeAttrs } = activeSection;
 
-    gen.next(activeSection).value
-      .toEqual(put(load(true)));
+    expect(gen.next(activeSection).value)
+      .toPut(load(true));
 
-    gen.next().value
-      .toEqual(call([nodeAttrs, nodeAttrs.toJS]));
+    expect(gen.next().value)
+      .toCall([nodeAttrs, nodeAttrs.toJS]);
 
     const attrs = ['name', 'node_type'];
 
-    gen.next(attrs).value
-      .toEqual(call(api.validateNode, node, attrs));
+    expect(gen.next(attrs).value)
+      .toCall(api.validateNode, node, attrs);
 
-    gen.next().value
-      .toEqual(put(load(false)));
+    expect(gen.next().value)
+      .toPut(load(false));
 
-    gen.next(node).value
-      .toEqual(select(selectors.sections));
+    expect(gen.next(node).value)
+      .toSelect(selectors.sections);
 
     const sections = List([NAME_CATEGORY, ADDRESS]);
 
-    gen.next(sections).value
-      .toEqual(put(push.newNodeSectionPath(ADDRESS, node.serialize())));
+    expect(gen.next(sections).value)
+      .toPut(push.newNodeSectionPath(ADDRESS, node.serialize()));
 
-    gen.next().done
+    expect(gen.next().done)
       .toBe(false);
   });
 
   it('stops navigation on error', () => {
-    const gen = expectGen(navigateToNextSection());
+    const gen = navigateToNextSection();
 
-    gen.next().value
-      .toEqual(take(NAVIGATE_TO_NEXT_SECTION));
+    expect(gen.next().value)
+      .toTake(NAVIGATE_TO_NEXT_SECTION);
 
-    gen.next().value
-      .toEqual(select(selectors.node));
+    expect(gen.next().value)
+      .toSelect(selectors.node);
 
     const node = new Node();
 
-    gen.next(node).value
-      .toEqual(select(selectors.activeSection));
+    expect(gen.next(node).value)
+      .toSelect(selectors.activeSection);
 
     const activeSection = NAME_CATEGORY,
       { nodeAttrs } = activeSection;
 
-    gen.next(activeSection).value
-      .toEqual(put(load(true)));
+    expect(gen.next(activeSection).value)
+      .toPut(load(true));
 
-    gen.next().value
-      .toEqual(call([nodeAttrs, nodeAttrs.toJS]));
+    expect(gen.next().value)
+      .toCall([nodeAttrs, nodeAttrs.toJS]);
 
     const attrs = ['name', 'node_type'];
 
-    gen.next(attrs).value
-      .toEqual(call(api.validateNode, node, attrs));
+    expect(gen.next(attrs).value)
+      .toCall(api.validateNode, node, attrs);
 
     const validationError = new api.HTTPError();
     validationError.errors = { error: 'error message' };
 
-    gen.throw(validationError).value
-      .toEqual(call(api.HTTPError.is, validationError, 422));
+    expect(gen.throw(validationError).value)
+      .toCall(api.HTTPError.is, validationError, 422);
 
-    gen.next(true).value
-      .toEqual(put(setErrors(validationError.errors)));
+    expect(gen.next(true).value)
+      .toPut(setErrors(validationError.errors));
 
-    gen.next().value
-      .toEqual(put(load(false)));
+    expect(gen.next().value)
+      .toPut(load(false));
 
-    gen.next().done
+    expect(gen.next().done)
       .toBe(false);
   });
 });
