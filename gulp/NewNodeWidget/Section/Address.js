@@ -2,6 +2,7 @@ const React = require('react');
 const { bindActionCreators } = require('redux');
 const { createStructuredSelector } = require('reselect');
 const { connect } = require('react-redux');
+const Leaflet = require('react-leaflet');
 
 const Section = require('./Section');
 const { ADDRESS } = require('../models/sections');
@@ -12,10 +13,28 @@ const Alert = require('../../common/Alert');
 const { Map, Marker } = require('../../common/Mapbox');
 const Row = require('../../common/Row');
 const { nodeTypesSelector } = require('../../common/selectors/nodeTypes');
+const NodeType = require('../../common/models/NodeType');
+const Node = require('../../common/models/Node');
 
-const { func } = React.PropTypes;
+const { func, instanceOf, bool, listOf, number, string } = React.PropTypes;
+const { latlng } = Leaflet.PropTypes;
+const { immutableMapOf, immutableListOf } = require('../../common/types');
 
 class AddressSection extends React.Component {
+  static propTypes = {
+    onClickAction: func.isRequired,
+    onNodeChange: func.isRequired,
+    onMapMoved: func.isRequired,
+    onMapZoomed: func.isRequired,
+    onMarkerMoved: func.isRequired,
+    node: instanceOf(Node).isRequired,
+    loading: bool.isRequired,
+    nodeTypes: immutableMapOf(instanceOf(NodeType)).isRequired,
+    mapCenter: latlng.isRequired,
+    mapZoom: number.isRequired,
+    errors: immutableMapOf(immutableListOf(string)).isRequired
+  };
+
   onChange(attr, { target: { value } }) {
     const { node, onNodeChange } = this.props;
 

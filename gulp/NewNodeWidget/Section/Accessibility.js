@@ -9,15 +9,18 @@ const { ACCESSIBILITY } = require('../models/sections');
 const Row = require('../../common/Row');
 const Form = require('../../common/Form');
 const StatusDropdown = require('../../common/StatusDropdown');
+const Node = require('../../common/models/Node');
 const selectors = require('../selectors');
 const actions = require('../actions');
 
-const { func } = React.PropTypes;
+const { func, instanceOf, bool } = React.PropTypes;
 
 class AccessibilitySection extends React.Component {
   static propTypes = {
     onClickAction: func.isRequired,
-    onNodeChange: func.isRequired
+    onNodeChange: func.isRequired,
+    node: instanceOf(Node).isRequired,
+    loading: bool.isRequired
   };
 
   onChangeStatus(attr, status) {
