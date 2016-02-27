@@ -8,19 +8,20 @@ class WidgetBuilderPreview extends React.Component {
 
     return widget.width !== nextWidget.width ||
       widget.height !== nextWidget.height ||
-      widget.src !== nextWidget.src;
+      widget.src !== nextWidget.src ||
+      widget.categories !== nextWidget.categories;
   }
 
-  componentDidUpdate(nextProps) {
-    // Reload iframe
-    //this.refs.iframe.contentWindow.location.reload();
+  componentDidUpdate(prevProps) {
+    let widget = this.props.widget,
+      prevWidget = prevProps.widget;
+
+    if (widget.src === prevWidget.src && widget.categories !== prevWidget.categories)
+      this.refs.iframe.contentWindow.location.reload();
   }
 
   render() {
     let { width, height, src } = this.props.widget;
-
-    // Fore reload of the preview
-    //src += '?' + new Date().getTime();
 
     return (
       <div className="user-widget-preview">

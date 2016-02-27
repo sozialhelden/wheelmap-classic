@@ -9,10 +9,6 @@ const App = require('./widget_builder.app');
 const { changeWidth, changeHeight, changeLocation, changeProvider, changeCategories, save } = require('../actions/widget');
 
 class WidgetBuilder extends React.Component {
-  shouldComponentUpdate(nextProps) {
-    return this.props.widget !== nextProps.widget;
-  }
-
   componentDidUpdate() {
     this.props.save();
   }
