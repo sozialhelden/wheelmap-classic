@@ -1,9 +1,8 @@
 require 'rails_helper'
+require 'pry'
 
 describe "Nodes Feature" do
-
   describe "Find, update and create nodes via API" do
-
     before do
       # Given a provider "stiftung" exists with name: "Stiftung Gesundheit"
       provider = FactoryGirl.create(:provider, name: "Stiftung Gesundheit")
@@ -31,6 +30,7 @@ describe "Nodes Feature" do
 
       # Scenario: I want to see a back link to the root page
       it "has a back link to the root page" do
+        save_page
         # When I follow "zurück"
         click_link('zurück')
         # Then I should be on the home page
@@ -46,17 +46,26 @@ describe "Nodes Feature" do
       end
 
       describe 'dropdown' do
+        let(:selectbox){ all(:css, 'div.node-status-dropdown').first }
+
         # And I should see "Voll Rollstuhlgerecht"
         it "has content 'voll rollstuhlgerecht'" do
-          expect(page).to have_content("Voll Rollstuhlgerecht")
+          expect(selectbox).to have_content("Voll Rollstuhlgerecht")
         end
 
         it "has content 'teilweise rollstuhlgerecht'" do
-          expect(page).to have_content("Teilweise rollstuhlgerecht")
+          expect(selectbox).to have_content("Teilweise rollstuhlgerecht")
         end
 
         it "has content 'nicht rollstuhlgerecht'" do
-          expect(page).to have_content("Nicht Rollstuhlgerecht")
+          expect(selectbox).to have_content("Nicht Rollstuhlgerecht")
+        end
+
+        describe "check context if wheelchair has full access" do
+          it "requires 'voll rollstuhlgerecht' to be checked" do
+            expect(selectbox.find(:css, "div ul li a.yes")).to have_content('Voll Rollstuhlgerecht')
+            expect(selectbox.find(:css, "div ul li a.yes")).to have_css('span.checked')
+          end
         end
       end
 
