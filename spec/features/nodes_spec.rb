@@ -61,9 +61,12 @@ describe "Nodes Feature" do
           expect(selectbox).to have_content("Nicht Rollstuhlgerecht")
         end
 
-        describe "check context if wheelchair has full access" do
-          it "requires 'voll rollstuhlgerecht' to be checked" do
+        context "when wheelchair has full access" do
+          it "requires 'voll rollstuhlgerecht' to appear" do
             expect(selectbox.find(:css, "div ul li a.yes")).to have_content('Voll Rollstuhlgerecht')
+          end
+
+          it "requires 'voll rollstuhlgerecht' to be checked" do
             expect(selectbox.find(:css, "div ul li a.yes")).to have_css('span.checked')
           end
         end
