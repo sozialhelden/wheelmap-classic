@@ -1,15 +1,16 @@
 class NodeTypesController < ApplicationController
   def index
     if params[:ids]
-      node_types ||= NodeType.where(id: params[:ids])
+      @node_types ||= NodeType.where(id: params[:ids])
     else
-      node_types = NodeType.all
+      @node_types = NodeType.all
     end
 
     respond_to do |format|
+      format.html
       format.json {
         render json: {
-            node_types: node_types.as_api_response(:ember)
+            node_types: @node_types.as_api_response(:ember)
         }
       }
     end
