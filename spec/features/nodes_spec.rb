@@ -24,7 +24,7 @@ describe "Nodes Feature" do
       # Scenario: I want to see a back link to the root page
       it "has a back link to the root page" do
         click_link('zurück')
-        expect(current_path).to eq(root_path)
+        expect(page).to have_current_path(root_path)
       end
     end
 
