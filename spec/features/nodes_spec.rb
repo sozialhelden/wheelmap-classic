@@ -23,7 +23,6 @@ describe "Nodes Feature" do
 
       # Scenario: I want to see a back link to the root page
       it "has a back link to the root page" do
-        save_page
         click_link('zurück')
         expect(current_path).to eq(root_path)
       end
