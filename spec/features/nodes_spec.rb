@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'pry'
 
 describe "Nodes Feature" do
   describe "Find, update and create nodes via API" do
