@@ -34,7 +34,7 @@ describe "Nodes Feature" do
         expect(page).to have_content("Stiftung Gesundheit")
       end
 
-      describe 'dropdown' do
+      describe 'node status dropdown' do
         let(:selectbox){ all(:css, 'div.node-status-dropdown').first }
 
         it "has content 'voll rollstuhlgerecht'" do
@@ -50,12 +50,12 @@ describe "Nodes Feature" do
         end
 
         context "when wheelchair has full access" do
-          it "requires 'voll rollstuhlgerecht' to appear" do
-            expect(selectbox.find(:css, "div ul li a.yes")).to have_content('Voll Rollstuhlgerecht')
-          end
-
           it "requires 'voll rollstuhlgerecht' to be checked" do
             expect(selectbox.find(:css, "div ul li a.yes")).to have_css('span.checked')
+          end
+
+          it "requires 'voll rollstuhlgerecht' to be visible" do
+            expect(selectbox.find(:css, "div ul li a.yes")).to have_content('Voll Rollstuhlgerecht')
           end
         end
       end
