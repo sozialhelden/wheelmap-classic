@@ -12,8 +12,8 @@ describe "Nodes Feature" do
     # Scenario: I want to see a decent title on the poi detail page
     describe "poi detail page" do
       it "has a decent title" do
-          title_text = "Dieser Ort ist auf Wheelmap.org: name, Bar, Essen & Trinken, Berlin"
-          expect(page.title).to eq(title_text)
+        title_text = "Dieser Ort ist auf Wheelmap.org: name, Bar, Essen & Trinken, Berlin"
+        expect(page.title).to eq(title_text)
       end
 
       # Scenario: I want to see a link to a landing page on the poi detail page
