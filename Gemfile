@@ -91,7 +91,6 @@ group :test, :development do
   gem 'rb-fsevent'
   gem 'teaspoon', '1.1.1'
   gem 'teaspoon-jasmine'
-  gem 'phantomjs'
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-cucumber', '~> 1.6'
@@ -102,14 +101,18 @@ group :test do
   gem 'minitest'
   gem 'webmock', :require => nil
   gem 'factory_girl_rails'
+
   gem 'capybara', '~> 2.6', '>= 2.6.2' # on mac, you need sudo port install libffi
+  gem 'poltergeist'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
+  gem 'database_cleaner'
+
   gem 'cucumber', :require => false
   gem 'cucumber-rails', :require => false
   gem 'autotest', :require => false
   gem 'nokogiri'
   gem 'pickle', :require => false
   gem 'launchy', :require => false
-  gem 'database_cleaner', :require => false
   gem 'shoulda-matchers'
   gem 'syntax'
   gem 'email_spec'
