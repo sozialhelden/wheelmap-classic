@@ -65,7 +65,7 @@ describe "Signup feature" do
       end
 
       specify "current page is home page" do
-        expect(current_path(current_url)).to eq root_path
+        expect(current_path).to eq root_path
       end
 
       specify "there is a user with email alana.engel.s@gmail.com" do

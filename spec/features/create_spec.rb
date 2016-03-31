@@ -19,7 +19,7 @@ describe "Create a new node via website" do
     end
 
     specify "the current page is the home page" do
-      expect(current_path(page.current_url)).to eq root_path
+      expect(current_path).to eq root_path
     end
 
     describe "The new node page" do
@@ -28,7 +28,7 @@ describe "Create a new node via website" do
       end
 
       specify "the current page is the new node page" do
-        expect(current_path(page.current_url)).to eq new_node_path
+        expect(current_path).to eq new_node_path
       end
 
       describe "Fill in form" do
@@ -53,7 +53,7 @@ describe "Create a new node via website" do
         end
 
         specify "The current page is home page" do
-          expect(current_path(page.current_url)).to eq root_path
+          expect(current_path).to eq root_path
         end
 
         describe "Create node job" do
