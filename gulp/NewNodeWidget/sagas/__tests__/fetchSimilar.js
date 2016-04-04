@@ -3,7 +3,7 @@ jest.dontMock('../fetchSimilar');
 import { load, navigateToNextSection, setSimilar } from '../../actions';
 import selectors from '../../selectors';
 import { SIMILAR_NODES } from '../../models/sections';
-import photon from '../../../common/helpers/photon';
+import nodesHelpers from '../../../common/helpers/nodes';
 import activeSection from '../activeSection';
 import Node from '../../../common/models/Node';
 
@@ -29,11 +29,10 @@ describe('fetchSimilar', () => {
       .toPut(load(true));
 
     expect(gen.next().value)
-      .toCall(photon.search, node.name, {
+      .toCall(nodesHelpers.similar, node.name, {
         lat: node.lat,
         lon: node.lon,
-        limit: 5,
-        osm_tag: 'amenity'
+        limit: 5
       });
 
     const features = [
@@ -78,11 +77,10 @@ describe('fetchSimilar', () => {
       .toPut(load(true));
 
     expect(gen.next().value)
-      .toCall(photon.search, node.name, {
+      .toCall(nodesHelpers.similar, node.name, {
         lat: node.lat,
         lon: node.lon,
-        limit: 5,
-        osm_tag: 'amenity'
+        limit: 5
       });
 
     const features = [];

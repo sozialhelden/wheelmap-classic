@@ -72,6 +72,9 @@ Wheelmap::Application.routes.draw do
     end
     # TODO reenable photo routes
     resources :photos, :only => [:create, :destroy]
+    collection do
+      get :similar
+    end
   end
 
   resources :regions, :only => [:index, :show], :constraints => { :format => 'kml' }

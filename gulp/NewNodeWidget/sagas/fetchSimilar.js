@@ -3,7 +3,7 @@ import { take, put, select, call } from 'redux-saga/effects';
 import { load, navigateToNextSection, setSimilar } from '../actions';
 import selectors from '../selectors';
 import { SIMILAR_NODES } from '../models/sections';
-import photon from '../../common/helpers/photon';
+import nodesHelpers from '../../common/helpers/nodes';
 import activeSection from './activeSection';
 import Node from '../../common/models/Node';
 
@@ -18,7 +18,7 @@ export default function *fetchSimilar() {
     yield put(load(true));
 
     try {
-      const features = yield call(photon.search, name, { lat, lon, limit: 5, osm_tag: 'amenity' });
+      const features = yield call(nodesHelpers.similar, name, { lat, lon, limit: 5 });
 
       if (features.length === 0) {
         yield put(navigateToNextSection());
