@@ -10,6 +10,7 @@ const actions = require('../actions');
 const selectors = require('../selectors');
 const Form = require('../../common/Form');
 const Alert = require('../../common/Alert');
+const I18n = require('../../common/I18n');
 const { Map, Marker } = require('../../common/Mapbox');
 const Row = require('../../common/Row');
 const { nodeTypesSelector } = require('../../common/selectors/nodeTypes');
@@ -126,7 +127,7 @@ class AddressSection extends React.Component {
                 </Row>
               </Form.Controls>
             </Form.ControlGroup>
-            <Alert>Du kannst den Marker auf der Karte auf die korrekte Position verschieben.</Alert>
+            <Alert><I18n scope="nodes.new.form.section.address.help"/></Alert>
             {errorAlertElements}
           </Row.Span>
           <Row.Span rows={6}>
