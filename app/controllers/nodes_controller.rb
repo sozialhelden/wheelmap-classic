@@ -1,4 +1,7 @@
 class NodesController < ApplicationController
+  SIMILAR_URL = "http://photon.komoot.de/api"
+  USER_AGENT = "Wheelmap, (http://wheelmap.org)"
+
   require 'float'
   require 'yajl'
   include ActionView::Helpers::CacheHelper
@@ -140,6 +143,10 @@ class NodesController < ApplicationController
     else
       render json: { errors: node.errors }, status: 422
     end
+  end
+
+  def similar
+    render json: find_similar(params[:q], params[:lat], params[:lon], params[:limit]), status: 200
   end
 
   def create
@@ -314,5 +321,43 @@ class NodesController < ApplicationController
 
   def node_params
     params.require(:node).permit(:name, :node_type_id, :street, :housenumber, :postcode, :city, :website, :phone, :wheelchair_description)
+  end
+
+  def find_similar(query, lat, lon, limit = 10)
+    search_url = URI.parse(SIMILAR_URL)
+    query = { lang: I18n.locale, q: query, lat: lat, lon: lon }
+    cache_key = "#{search_url}?#{query.to_param}"
+
+=begin
+    if (body = Rails.cache.read(cache_key))
+      return body
+    end
+=end
+
+    Net::HTTP.new(search_url.host, search_url.port).start do |http|
+      query_url = "#{search_url.path}?#{query.to_param}"
+      req = Net::HTTP::Get.new(query_url, { 'User-Agent' => USER_AGENT })
+      resp = http.request(req)
+      body = resp.body
+
+      if resp.code == '200'
+        data = JSON.parse(body, symbolize_names: true)
+
+        ids = data[:features].collect { |feature| feature[:properties][:osm_id] }
+
+        if ids.count > 0
+          valid_ids = Poi.where(osm_id: ids).limit(limit).pluck(:osm_id)
+
+          data[:features].keep_if { |feature| valid_ids.include? feature[:properties][:osm_id] }
+
+          body = JSON.generate(data)
+        end
+
+        # Cache response object if request was successful
+        # Rails.cache.write(cache_key, resp.body, :expires_in => 1.hour)
+      end
+
+      body
+    end
   end
 end
