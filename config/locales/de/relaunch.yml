@@ -57,6 +57,7 @@ de:
           address:
             name: Adresse
             title: Wo liegt der Ort?
+            help: Du kannst den Marker auf der Karte auf die korrekte Position verschieben.
           similar_nodes:
             name: Ähnliche Orte
             title: Ist es einer der folgenden Orte?

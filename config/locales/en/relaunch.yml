@@ -48,28 +48,30 @@ en:
   nodes:
     new:
       form:
+        title: Add a place
         legend: Location of the place
-        location: Please click on the map and place the marker at the exact position.
+        location: Please click on the map where the place is located!
         section:
           name_category:
-            name: Name & Category
-            title: "Gib uns erste Informationen zu deinem neuen Ort:"
+            name: Name and category
+            title: "Give us some initial information about your place:"
           address:
             name: Address
-            title: Wo liegt der Ort?
+            title: Where is the place?
+            help: You can move the marker to the correct location on the map.
           similar_nodes:
-            name: Similar Places
-            title: Ist es einer der folgenden Orte?
-            go_edit: Mit diesen Ort fortfahren
-            go_new: Es ist keiner der oben genannten Orte …
+            name: Similar places
+            title: Is it one of these places?
+            go_edit: Continue with this place
+            go_new: It is none of the places above …
           accessibility:
-            name: Accessibility
-            title: Informationen zur Rollstuhlgerechtigkeit
+            name: Wheelchair accessibility
+            title: Information on wheelchair accessibility
           contact:
             name: Contact
-            title: Weitere Kontaktmöglichkeiten
+            title: Other contact information
           overview:
-            title: Everything correct?
+            title: Is all the information correct?
     node_data:
       address: 'Address:'
       contact_details: 'Contact details:'
