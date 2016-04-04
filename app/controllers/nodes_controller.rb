@@ -1,6 +1,7 @@
 class NodesController < ApplicationController
   SIMILAR_URL = "http://photon.komoot.de/api"
   USER_AGENT = "Wheelmap, (http://wheelmap.org)"
+  SIMILAR_MAX_DISTANCE = 200
 
   require 'float'
   require 'yajl'
@@ -329,6 +330,7 @@ class NodesController < ApplicationController
     cache_key = "#{search_url}?#{query.to_param}"
 
 =begin
+    # Read response from cache
     if (body = Rails.cache.read(cache_key))
       return body
     end
@@ -346,9 +348,20 @@ class NodesController < ApplicationController
         ids = data[:features].collect { |feature| feature[:properties][:osm_id] }
 
         if ids.count > 0
-          valid_ids = Poi.where(osm_id: ids).limit(limit).pluck(:osm_id)
+          geo_factory = RGeo::Cartesian.factory
+          center = geo_factory.point(lon.to_f, lat.to_f)
 
-          data[:features].keep_if { |feature| valid_ids.include? feature[:properties][:osm_id] }
+          pois = Poi.where(osm_id: ids).select('osm_id, geom').limit(limit)
+          
+          valid_pois = pois.select do |poi|
+            center.distance(poi.geom).abs <= SIMILAR_MAX_DISTANCE
+          end
+
+          valid_ids = valid_pois.collect { |poi| poi.id }
+
+          data[:features].keep_if do |feature|
+            valid_ids.include? feature[:properties][:osm_id]
+          end
 
           body = JSON.generate(data)
         end
