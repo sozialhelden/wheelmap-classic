@@ -7,6 +7,7 @@ const { SIMILAR_NODES } = require('../models/sections');
 const selectors = require('../selectors');
 const Node = require('../../common/models/Node');
 const { editNodePath } = require('../../common/routes');
+const I18n = require('../../common/I18n');
 
 const { func } = React.PropTypes;
 
@@ -23,13 +24,16 @@ class SimilarNodesSection extends React.Component {
       items.push(
         <li key={node.id}>
           <strong>{node.name}</strong> {node.address()}
-          <a href={editNodePath(node.id)} className="pull-right">Mit diesem Ort fortfahren <i className="icon-chevron-right"/></a>
+          <a href={editNodePath(node.id)} className="pull-right"><I18n scope="nodes.new.form.section.similar_nodes.go_edit"/> <i className="icon-chevron-right"/></a>
         </li>
       );
     });
 
     return (
-      <Section section={SIMILAR_NODES} onClickAction={onClickAction} loading={loading}>
+      <Section section={SIMILAR_NODES}
+               actionExtraScope="nodes.new.form.section.similar_nodes.go_new"
+               onClickAction={onClickAction}
+               loading={loading}>
         <ul className="nodes-new-content-section--similar-list">
           {items}
         </ul>

@@ -61,7 +61,7 @@ en:
             help: You can move the marker to the correct location on the map.
           similar_nodes:
             name: Similar places
-            title: Is it one of these places?
+            title: We found similar places nearby. Is it one of these?
             go_edit: Continue with this place
             go_new: It is none of the places above …
           accessibility:

@@ -172,6 +172,12 @@
         padding: $baseFontSize * 2 0 $baseFontSize 0;
         box-sizing: border-box;
         position: relative;
+
+        &-action-extra {
+          margin-right: $baseFontSize;
+          line-height: 28px;
+          font-size: 18px;
+        }
       }
 
       &-form + &-form {

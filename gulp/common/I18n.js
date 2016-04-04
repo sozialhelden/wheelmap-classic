@@ -11,14 +11,14 @@ class I18n extends React.Component {
   }
 
   render() {
-    var { scope, ...props } = this.props,
+    var { scope, className, ...props } = this.props,
       translation = I18n.t(scope),
-      class_name, title;
+      className, title;
 
     // Translation was not found
     if (translation == null) {
       translation = scope.replace(/\./g, ' ');
-      class_name = 'translation-missing';
+      className += ' translation-missing';
       title = 'translation missing';
     }
 
@@ -28,7 +28,7 @@ class I18n extends React.Component {
     }
 
     return (
-      <span className={class_name} title={title} dangerouslySetInnerHTML={createMarkup()} {...props}></span>
+      <span className={className} title={title} dangerouslySetInnerHTML={createMarkup()} {...props}></span>
     );
   }
 }

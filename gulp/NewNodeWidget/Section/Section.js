@@ -11,7 +11,8 @@ class Section extends React.Component {
     actionLabelScope: string.isRequired,
     section: instanceOf(SectionModel).isRequired,
     onClickAction: func.isRequired,
-    loading: bool
+    loading: bool,
+    actionExtraScope: string
   };
 
   static defaultProps = {
@@ -26,7 +27,8 @@ class Section extends React.Component {
   };
 
   render() {
-    const { section, loading, children, actionLabelScope, onClickAction } = this.props;
+    const { section, loading, children, actionLabelScope, actionExtraScope, onClickAction } = this.props;
+    let actionExtra;
 
     const sectionForms = React.Children.map(children, child => {
       return (
@@ -35,6 +37,9 @@ class Section extends React.Component {
         </div>
       )
     });
+
+    if (actionExtraScope != null)
+      actionExtra = <I18n scope={actionExtraScope} className="nodes-new-content-section-form-action-extra pull-right"/>
 
     return (
       <section className="nodes-new-content-section">
@@ -45,6 +50,7 @@ class Section extends React.Component {
             <button className="btn btn-primary pull-right submit" onClick={this.onClickAction}>
               <I18n scope={actionLabelScope}/>
             </button>
+            {actionExtra}
           </div>
         </Loader>
       </section>
