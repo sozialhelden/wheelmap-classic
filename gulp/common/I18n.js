@@ -1,4 +1,5 @@
 const React = require('react');
+const classNames = require('classnames');
 
 class I18n extends React.Component {
   static t(scope) {
@@ -12,13 +13,12 @@ class I18n extends React.Component {
 
   render() {
     var { scope, className, ...props } = this.props,
-      translation = I18n.t(scope),
-      className, title;
+      translation = I18n.t(scope), title, missingTranslation = false;
 
     // Translation was not found
     if (translation == null) {
       translation = scope.replace(/\./g, ' ');
-      className += ' translation-missing';
+      missingTranslation = true;
       title = 'translation missing';
     }
 
@@ -26,6 +26,8 @@ class I18n extends React.Component {
     function createMarkup() {
       return { __html: translation };
     }
+
+    className = classNames(className, { 'translation-missing': missingTranslation })
 
     return (
       <span className={className} title={title} dangerouslySetInnerHTML={createMarkup()} {...props}></span>
