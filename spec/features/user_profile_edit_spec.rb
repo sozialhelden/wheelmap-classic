@@ -37,7 +37,7 @@ feature 'User on profile edit page feature', :js => true do
       fill_in "E-Mail", with: "horst@wheelmap.org"
     end
     click_button 'Speichern'
-    pending("Flash notification is not visible, text not displayed")
+    pending("Bug: Flash notification is not visible, text not displayed")
     expect(page).to have_content("Benutzer wurde erfolgreich aktualisiert.")
     expect(page.current_path).to eq(edit_profile_path)
   end
@@ -50,7 +50,7 @@ feature 'User on profile edit page feature', :js => true do
       fill_in "E-Mail", with: "peter@wheelmap.org"
     end
     click_button 'Speichern'
-    pending("Flash notification is not visible, text not displayed")
+    pending("Bug: Flash notification is not visible, text not displayed")
     expect(page).to have_content("Du bekommst in wenigen Minuten eine E-Mail mit einem Link.")
   end
 end
