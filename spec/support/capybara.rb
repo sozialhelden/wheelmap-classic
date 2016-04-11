@@ -1,5 +1,4 @@
 require 'capybara/poltergeist'
-require 'phantomjs'
 
 # disable logger
 module NullPoltergeistLogger
@@ -7,11 +6,10 @@ module NullPoltergeistLogger
   end
 end
 
-# Driver setup to find PhantomJS executable and to not fill output with logging
+# Driver setup to not fill output with logging
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(
     app,
-    phantomjs: Phantomjs.path,
     phantomjs_logger: NullPoltergeistLogger)
 end
 
