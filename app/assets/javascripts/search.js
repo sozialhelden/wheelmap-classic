@@ -17,7 +17,5 @@
 //= require bootstrap-popover
 //= require bootstrap-select
 //= require bootstrap-tab
-//= require flash
 //
-//= require flash.js
 //= require function

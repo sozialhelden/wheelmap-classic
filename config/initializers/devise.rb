@@ -33,7 +33,7 @@ Devise.setup do |config|
     :fetch_permissions => true, :client_options => {:site => OpenStreetMapConfig.oauth_site }
 
   # Set this to true to use Basic Auth for AJAX requests.  True by default.
-  # config.http_authenticatable_on_xhr = true
+  config.http_authenticatable_on_xhr = true
 
   # The realm used in Http Basic Authentication
   # config.http_authentication_realm = "Application"
