@@ -30,9 +30,6 @@
 
   = stylesheet_link_tag :relaunch, :media => 'screen, projection'
   = content_for :stylesheet
-  /[if lte IE 8]
-    = stylesheet_link_tag 'relaunch_ie', :media => 'screen, projection'
-    = javascript_include_tag :modernizr
   = csrf_meta_tag
 
 %body{class: christmas? ? 'christmas' : nil}

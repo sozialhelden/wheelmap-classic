@@ -2,7 +2,7 @@ Wheelmap::Application.routes.draw do
 
   apipie
 
-  match '/ping' => 'ping#index'
+  get '/ping', to: 'ping#index'
 
   #
   # The if statement here is workaround to ensure that users are able to do an initial migration
@@ -28,7 +28,7 @@ Wheelmap::Application.routes.draw do
 
   scope "map" do
     root :to => 'home#index'
-    match '/:region_id/:node_type_id/wheelchair/:wheelchair' => 'landing_pages#index'
+    match '/:region_id/:node_type_id/wheelchair/:wheelchair' => 'landing_pages#index', via: [:get, :post, :put, :delete]
   end
 
   devise_for :users, :skip => [:sessions],
@@ -39,12 +39,11 @@ Wheelmap::Application.routes.draw do
 
   devise_scope :user do
     scope 'users' do
-      match '/auth/failure' => 'omniauth_callbacks#failure'
-      get  'sign_up'  => 'devise/sessions#new',     :as => :new_user_session
+      get  '/auth/failure' => 'omniauth_callbacks#failure'
+      get  'sign_up'  => 'devise/sessions#new'
       get  'sign_in'  => 'devise/sessions#new',     :as => :new_user_session
       post 'sign_in'  => 'devise/sessions#create',  :as => :user_session
       get  'sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session
-
     end
   end
 
@@ -52,7 +51,6 @@ Wheelmap::Application.routes.draw do
   resources :terms, :only => :index
   resources :addresses, :only => :index
 
-  resources :node_types, :only => :index
   resources :search, :only => :index
   resources :feeds, :only => :index
   resources :oauth, :only => [] do
@@ -60,7 +58,11 @@ Wheelmap::Application.routes.draw do
     get :register_osm, :on => :collection
   end
 
-  resources :nodes, :except => :destroy do
+  # For the new node widget frontend routing
+  get 'nodes/new/:section', to: 'nodes#new', as: :new_node_section
+  post 'nodes/validate', to: 'nodes#validate', as: :validate_node
+
+  resources :nodes, :except => [:destroy] do
     member do
       put :update_wheelchair
       put :update_toilet
@@ -68,6 +70,9 @@ Wheelmap::Application.routes.draw do
     end
     # TODO reenable photo routes
     resources :photos, :only => [:create, :destroy]
+    collection do
+      get :similar
+    end
   end
 
   resources :regions, :only => [:index, :show], :constraints => { :format => 'kml' }
@@ -99,7 +104,8 @@ Wheelmap::Application.routes.draw do
 
   resources :user, :only => :new # Fake route for redirection to OSM register page
 
-  match '/api' => 'api/api#index'
+  # match in Rails 3.2 accepts all HTTP actions, therefore we need to define them explicitly
+  match '/api', to: 'api/api#index', via: [:get, :post, :put, :delete]
 
   namespace :api do
     resources :docs,        :only  => [:index]
@@ -108,7 +114,8 @@ Wheelmap::Application.routes.draw do
     end
 
     resources :assets,      :only => [:index]
-    resources :nodes,       :only  => [:index, :show, :update, :create] do
+    
+    resources :nodes,       :only => [:index, :show, :update, :create] do
       collection do
         get :search
         get :counts, :to => 'counter#index'
@@ -131,7 +138,7 @@ Wheelmap::Application.routes.draw do
     end
 
     resources :node_types, :only  => [:index, :show] do
-      resources :nodes,       :only  => [:index, :show] do
+      resources :nodes,    :only  => [:index, :show] do
         collection do
           get :search
         end
@@ -148,17 +155,14 @@ Wheelmap::Application.routes.draw do
       end
     end
 
-    match '/users/authenticate' => 'users#authenticate'
+    match '/users/authenticate' => 'users#authenticate', via: [:post]
 
     #Last route in routes.rb
-    match '*a', :to => 'api#not_found', :format => false
+    match '*a', :to => 'api#not_found', :format => false, via: [:get, :post, :put, :delete]
   end
 
-  match "/dashboard",               :to => redirect("https://metrics.librato.com/share/dashboards/3wf885ot?duration=604800")
-  match "/ziemlich-beste-freunde",  :to => redirect("http://blog.wheelmap.org/zbf")
-  match "/goeslondon",              :to => redirect("http://blog.wheelmap.org/mitmachen/goes-london/")
-  match "/goes-london",             :to => redirect("http://blog.wheelmap.org/mitmachen/goes-london/")
-  match '/',                        :to => redirect("/map"), :as => 'roooot'
+  get "/dashboard", :to => redirect("https://metrics.librato.com/share/dashboards/3wf885ot?duration=604800")
+  get '/',          :to => redirect("/map"), :as => 'roooot'
 
 
 end
