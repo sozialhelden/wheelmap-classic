@@ -19,12 +19,12 @@ class ActionDispatch::IntegrationTest
   # Driver setup to not fill output with logging
   Capybara.register_driver :poltergeist do |app, options|
     Capybara::Poltergeist::Driver.new(
-      app, options = { timeout: 180, phantomjs_logger: NullPoltergeistLogger })
+      app, options = { timeout: 30, phantomjs_logger: NullPoltergeistLogger })
   end
 
   Capybara.configure do |config|
     config.javascript_driver = :poltergeist
     config.server_port       = 3000
-    config.default_max_wait_time = 15   # in seconds
+    config.default_max_wait_time = 10 # in seconds
   end
 end
