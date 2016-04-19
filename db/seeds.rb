@@ -71,7 +71,11 @@ node_types = NodeType.create([
   {:category => leisure, :identifier => :community_centre, :osm_key => 'amenity', :osm_value => 'community_centre', :icon => 'communitycentre.png'},
   {:category => leisure, :identifier => :stripclub,   :osm_key => 'amenity', :osm_value => 'stripclub',    :icon => 'stripclub.png'},
   {:category => leisure, :identifier => :playground,  :osm_key => 'leisure', :osm_value => 'playground',   :icon => 'playground.png'},
-  {:category => leisure, :identifier => :casino,      :osm_key => 'amenity', :osm_value => 'casino',       :icon => 'poker.png'}
+  {:category => leisure, :identifier => :casino,      :osm_key => 'amenity', :osm_value => 'casino',       :icon => 'poker.png'},
+  # Update 2016-04-16
+  {:category => leisure, :identifier => :sauna,   :osm_key => 'leisure', :osm_value => 'sauna',   :icon => 'spa.png'},
+  {:category => leisure, :identifier => :massage, :osm_key => 'shop',    :osm_value => 'massage', :icon => 'massage.png'},
+  {:category => leisure, :identifier => :tattoo,  :osm_key => 'shop',    :osm_value => 'tattoo',  :icon => 'naval_museum.png'}
 ])
 
 money_post = Category.find_by_identifier('money_post')
@@ -137,7 +141,23 @@ node_types = NodeType.create([
   {:category => shopping,  :identifier => :outdoor,           :osm_key => 'shop',    :osm_value => 'outdoor',          :icon => 'hiking.png'},
   {:category => shopping,  :identifier => :organic,           :osm_key => 'shop',    :osm_value => 'organic',          :icon => 'restaurant_vegetarian.png'},
   {:category => shopping,  :identifier => :pet,               :osm_key => 'shop',    :osm_value => 'pet',              :icon => 'cat.png'},
-  {:category => shopping,  :identifier => :fabric,            :osm_key => 'shop',    :osm_value => 'fabric',           :icon => 'textiles.png'}
+  {:category => shopping,  :identifier => :fabric,            :osm_key => 'shop',    :osm_value => 'fabric',           :icon => 'textiles.png'},
+  # Update 2016-04-16
+  {:category => shopping,  :identifier => :mobile_phone,        :osm_key => 'shop', :osm_value => 'mobile_phone',        :icon => 'phones.png'},
+  {:category => shopping,  :identifier => :greengrocer,         :osm_key => 'shop', :osm_value => 'greengrocer',         :icon => 'apple.png'},
+  {:category => shopping,  :identifier => :variety_store,       :osm_key => 'shop', :osm_value => 'variety_store',       :icon => 'tag_label.png'},
+  {:category => shopping,  :identifier => :newsagent,           :osm_key => 'shop', :osm_value => 'newsagent',           :icon => 'newsagent.png'},
+  {:category => shopping,  :identifier => :music,               :osm_key => 'shop', :osm_value => 'music',               :icon => 'classical_music.png'},
+  {:category => shopping,  :identifier => :musical_instrument,  :osm_key => 'shop', :osm_value => 'musical_instrument',  :icon => 'jazz_club.png'},
+  {:category => shopping,  :identifier => :antiques,            :osm_key => 'shop', :osm_value => 'antiques',            :icon => 'art_museum_2.png'},
+  {:category => shopping,  :identifier => :erotic,              :osm_key => 'shop', :osm_value => 'erotic',              :icon => 'love_interest.png'},
+  {:category => shopping,  :identifier => :tailor,              :osm_key => 'shop', :osm_value => 'tailor',              :icon => 'tailor.png'},
+  {:category => shopping,  :identifier => :interior_decoration, :osm_key => 'shop', :osm_value => 'interior_decoration', :icon => 'crafts_museum.png'},
+  {:category => shopping,  :identifier => :art,                 :osm_key => 'shop', :osm_value => 'art',                 :icon => 'museum_art.png'},
+  {:category => shopping,  :identifier => :copyshop,            :osm_key => 'shop', :osm_value => 'copyshop',            :icon => 'printer.png'},
+  {:category => shopping,  :identifier => :tobacco,             :osm_key => 'shop', :osm_value => 'tobacco',             :icon => 'smoking.png'},
+  {:category => shopping,  :identifier => :funeral_directors,   :osm_key => 'shop', :osm_value => 'funeral_directors',   :icon => 'crematorium.png'},
+  {:category => shopping,  :identifier => :tea,                 :osm_key => 'shop', :osm_value => 'tea',                 :icon => 'tea_house.png'}
 ])
 
 sport = Category.find_by_identifier('sport')
@@ -182,7 +202,11 @@ node_types = NodeType.create([
   {:category => misc,  :identifier => :company,           :osm_key => 'office',   :osm_value => 'company',          :icon => 'workoffice.png'},
   {:category => misc,  :identifier => :lawyer,            :osm_key => 'office',   :osm_value => 'lawyer',           :icon => 'court.png'},
   {:category => misc,  :identifier => :estate_agent,      :osm_key => 'office',   :osm_value => 'estate_agent',     :icon => 'house.png'},
-  {:category => misc,  :identifier => :insurance,         :osm_key => 'office',   :osm_value => 'insurance',        :icon => 'workoffice.png'}
+  {:category => misc,  :identifier => :insurance,         :osm_key => 'office',   :osm_value => 'insurance',        :icon => 'workoffice.png'},
+  # Update 2016-04-16
+  {:category => misc,  :identifier => :political_party, :osm_key => 'office', :osm_value => 'political_party', :icon => 'reception.png'},
+  {:category => misc,  :identifier => :ngo,             :osm_key => 'office', :osm_value => 'ngo',             :icon => 'group.png'},
+  {:category => misc,  :identifier => :association,     :osm_key => 'office', :osm_value => 'association',     :icon => 'group.png'}
 ])
 
 government = Category.find_by_identifier('government')
@@ -191,7 +215,9 @@ node_types = NodeType.create([
   {:category => government,  :identifier => :townhall,        :osm_key => 'amenity',  :osm_value => 'townhall',         :icon => 'bigcity.png'},
   {:category => government,  :identifier => :embassy,         :osm_key => 'amenity',  :osm_value => 'embassy',          :icon => 'embassy.png'},
   {:category => government,  :identifier => :police,          :osm_key => 'amenity',  :osm_value => 'police',           :icon => 'police.png'},
-  {:category => government,  :identifier => :government,      :osm_key => 'office',   :osm_value => 'government',        :icon => 'office-building.png'}
+  {:category => government,  :identifier => :government,      :osm_key => 'office',   :osm_value => 'government',        :icon => 'office-building.png'},
+  # Update 2016-04-16
+  {:category => government, :identifier => :employment_agency, :osm_key => 'office', :osm_value => 'employment_agency', :icon => 'employment_agency.png'}
 ])
 
 health = Category.find_by_identifier('health')
@@ -203,7 +229,13 @@ node_types = NodeType.create([
   {:category => health,  :identifier => :medical_supply,    :osm_key => 'shop',     :osm_value => 'medical_supply',   :icon => 'medicalstore.png'},
   {:category => health,  :identifier => :hearing_aids,      :osm_key => 'shop',     :osm_value => 'hearing_aids',     :icon => 'hearing_aids.png'},
   {:category => health,  :identifier => :social_facility,   :osm_key => 'amenity',  :osm_value => 'social_facility',  :icon => 'social_facility.png'},
-  {:category => health,  :identifier => :dentist,           :osm_key => 'amenity',  :osm_value => 'dentist',          :icon => 'dentist.png'}
+  {:category => health,  :identifier => :dentist,           :osm_key => 'amenity',  :osm_value => 'dentist',          :icon => 'dentist.png'},
+  # Update 2016-04-16
+  {:category => health,  :identifier => :alternative,            :osm_key => 'healthcare', :osm_value => 'alternative',            :icon => 'yin_yang.png'},
+  {:category => health,  :identifier => :physiotherapist,        :osm_key => 'healthcare', :osm_value => 'physiotherapist',        :icon => 'massage.png'},
+  {:category => health,  :identifier => :occupational_therapist, :osm_key => 'healthcare', :osm_value => 'occupational_therapist', :icon => 'theft.png'},
+  {:category => health,  :identifier => :speech_therapist,       :osm_key => 'healthcare', :osm_value => 'speech_therapist',       :icon => 'conversation.png'},
+  {:category => health,  :identifier => :psychotherapist,        :osm_key => 'healthcare', :osm_value => 'psychotherapist',        :icon => 'therapy.png'}
 ])
 
 Region.delete_all
