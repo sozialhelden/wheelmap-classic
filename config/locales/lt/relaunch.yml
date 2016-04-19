@@ -8,6 +8,7 @@ lt:
         phone: Telefonas
         note: Pastaba
         address_street: Gatvė
+        address_housenumber: Namo numeris
         address_postcode: Pašto kodas
         address_city: Miestas
   faq:
@@ -28,6 +29,8 @@ lt:
       projects: Projektai
     toolbar:
       categories: Kategorijos
+    meta:
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -81,6 +84,7 @@ lt:
           few: '%{count} rezultatai:'
           other: '%{count} rezultatų:'
     timeout:
+      headline: Atleiskite, kažkas nutiko
       info: Mūsų paieškos tarnyba buvo laikinai neprieinama.
   users:
     profile:
@@ -96,3 +100,9 @@ lt:
         title: Profilis
         legends:
           user_data: Jūsų paskyros informacija
+      widget:
+        height: Aukštis
+        width: Plotis
+        legends:
+          settings: Nustatymai
+          preview: Peržiūra

@@ -336,6 +336,8 @@ de:
   users:
     after_signup_edit:
       welcome:
+        headline: "Fast geschafft! Jetzt noch den Wheelmap-Account fertigstellen:"
+        set_password_for_mobile: "Du hast Dich erfolgreich bei OpenStreetMap angemeldet. Gebe jetzt eine Email-Adresse an, die Wheelmap verwenden soll, um Dich auf den laufenden zu halten über Deine Aktivitäten (z.B. die Anzahl der von Dir markierten Orte). Du kannst diese Information auf Deinem \"Profil\" abrufen.  "
         text: "Du bist nun erfolgreich registriert. Wie können wir dich in Zukunft über wichtige Neuigkeiten rund um die Wheelmap informieren?"
     edit:
       headline:

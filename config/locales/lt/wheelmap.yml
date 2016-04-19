@@ -19,6 +19,8 @@ lt:
     photos:
       destroy:
         notice: "Paveikslas buvo sėkmingai ištrintas"
+  form:
+    show_places_without_status: "Nežinoma būsena"
   formtastic:
     hints:
       osm_username: "Dar nesate narys? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Susikurkite OpenStreetMap paskyrą dabar</a>"
@@ -29,11 +31,14 @@ lt:
       finish: Užbaigti
       lat: Platuma
       lon: Ilguma
+      osm_password: "OpenStreetMap slaptažodis"
+      osm_username: "OpenStreetMap paskyros pavadinimas"
       password: Slaptažodis
       password_confirmation: "Pakartokite slaptažodį"
       phone: "Telefonas:"
       postcode: "Pašto kodas:"
       privacy_policy: "Aš sutinku su duomenų konfidencialumo sutarties 1 ir 2 pastraipa."
+      reset: Atstatyti
       save: Išsaugoti
       street: "Gatvė:"
       terms: "Aš sutinku su naudojimosi taisyklėmis."
@@ -42,7 +47,10 @@ lt:
       wheelchair: "Prieinamumas neįgaliųjų vežimėliais?"
       wheelchair_toilet: "Neįgaliųjų vežimėliu prieinamas tualetas:"
     titles:
+      basic: "Pagrindiniai duomenys"
       optional: "Daugiau informacijos <span class=\"addition\">(visi laukai yra nebūtini)</span>"
+  global:
+    form_validation_error: "Prašome atkreipti dėmesį į žemiau išvardintas klaidas"
   header:
     meta:
       homepage: "Pradžios puslapis"
@@ -56,6 +64,7 @@ lt:
       profile: Profilis
       suggestions: Pasiūlymai
       what_is_barrier_free: "Ką reiškia \"prieinama neįgaliųjų vežimėliais\"?"
+      what_is_wheelmap: "Kas yra Wheelmap?"
     searchbar:
       add_place: "Pridėti kitą vietą"
       find: Rasti
@@ -71,6 +80,7 @@ lt:
       popup:
         form:
           save: Atnaujinti
+          unknown: "Nežinoma būsena"
         more: "daugiau ..."
   how?: Kaip?
   layouts:
@@ -85,10 +95,14 @@ lt:
       phone: "Telefonas:"
       website: "Svetainė:"
   nodes:
+    create:
+      flash:
+        not_successfull: "Oi, jūsų įvestis buvo arba neteisinga, arba nepilna"
     edit:
       link:
         large_map: "&laquo; Atšaukti"
     errors:
+      default: "Oi, kažkas nutiko. Mes buvome informuoti apie šią klaidą"
       not_authorized: "Atleiskite, tapatybės nustatymas nepavyko"
       not_available: "Atleiskite, šis puslapis laikinai neprieinamas."
       not_existent: "Atleiskite, ši vieta daugiau nebeprieinama."
@@ -111,6 +125,9 @@ lt:
       link:
         upload: "Išsiųsti paveikslą"
       show-in-osm: OpenStreetMap
+    update:
+      flash:
+        not_successfull: "Oi, jūsų įvestis buvo arba neteisinga, arba nepilna"
   number:
     currency:
       format:
@@ -137,6 +154,7 @@ lt:
           tb: TB
   splash:
     step1: "Spustelėkite ant jums žinomos vietos"
+    what_is_wheelmap: "Kas yra Wheelmap?"
   statistics: Statistika
   support:
     array:
@@ -144,6 +162,13 @@ lt:
       sentence_connector: ir
       two_words_connector: "ir"
       words_connector: ","
+  time:
+    am: am
+    formats:
+      default: "%a, %Y %b %d, %H:%M:%S %z"
+      long: "%Y %B %d, %H:%M"
+      short: "%b %d, %H:%M"
+    pm: pm
   user_sessions:
     create:
       error:
@@ -158,8 +183,13 @@ lt:
     edit:
       headline:
         your_images: "Jūsų išsiųsti paveikslai"
+  wheelchairstatus:
+    unknown: "Nežinoma būsena"
   wheelmap:
     footer:
       main_supporter: "Pagrindinis remėjas"
     itunes:
       alt: "AppStore Logotipas"
+  will_paginate:
+    next_label: "Kitas &#8594;"
+    previous_label: "&#8592; Ankstesnis"
