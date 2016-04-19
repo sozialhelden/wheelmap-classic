@@ -20,7 +20,7 @@ then
     rm files.txt
 
     echo "Generating sprite file...";
-    find public/icons -name "*$ext" -not -iname "*@2x$ext" -not -iname "icon-sprite.png" > files.txt;
+    find public/icons -name "*$ext" -not -iname "*@2x$ext" -not -iname "icon-sprite.png" | sort > files.txt;
     convert @files.txt -append $name/icon-sprite$ext;
     echo "Sprite complete! - Creating css & test output...";
 
@@ -29,7 +29,7 @@ then
     echo -e ".leaflet-marker-icon .icon {\n  margin:3px 4px;\n  background:url('/icons/icon-sprite$ext') no-repeat top left;\n  display:inline-block;\n}" >> $css;
     counter=0;
     offset=0;
-    for file in `find public/icons -name "*$ext" -not -iname "*@2x$ext" -not -iname "icon-sprite.png"`
+    for file in `find public/icons -name "*$ext" -not -iname "*@2x$ext" -not -iname "icon-sprite.png | sort"`
     do
       echo $file;
         width=`identify -format "%[fx:w]" "$file"`;
