@@ -104,6 +104,12 @@ Finally startup a local rails server
 
 And visit the website in your browser: http://0.0.0.0:3000
 
+## Documentation
+
+Please also check our [WIKI](https://github.com/sozialhelden/wheelmap/wiki), if you need more informations to specific topics and can't find them here, e.g. how to generate a sprite. 
+
+
+
 ## License
 
 The Wheelmap Software is released under the [GNU Affero General Public License v3.0](/LICENSE).
