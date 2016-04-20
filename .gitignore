@@ -12,7 +12,7 @@ config/database.yml
 config/google.yml
 config/open_street_map.yml
 config/metrics.yml
-config/newrelic.yml
+config/notrelix.yml
 config/application.yml
 public/*/cache/*
 public/assets
