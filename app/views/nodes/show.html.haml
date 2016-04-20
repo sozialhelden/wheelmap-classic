@@ -1,5 +1,5 @@
 %div#wheelmap
-  .node-wrapper{style: "background-image: url(http://api.tiles.mapbox.com/v4/sozialhelden.map-iqt6py1k/#{@node.lon},#{@node.lat},17/1280x1280.jpg70?access_token=pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g)"}
+  .node-wrapper{style: "background-image: url(//api.tiles.mapbox.com/v4/sozialhelden.map-iqt6py1k/#{@node.lon},#{@node.lat},17/1280x1280.jpg70?access_token=pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g)"}
     = render partial: 'node_flash'
 
     %article.container.node-container{ itemscope:'', itemtype: 'http://schema.org/Place', :'data-category' => @node.category.try(:identifier) }
