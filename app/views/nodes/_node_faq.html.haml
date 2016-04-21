@@ -6,7 +6,7 @@
   .node-report-accordion.dropdown-accordion
     %header
       .pull-right
-        = link_to('FAQ', I18n.locale == :de ? '//wheelmap.org/about/faqs/' : '//wheelmap.org/en/faqs/', class: 'btn btn-mini', target: '_blank')
+        = link_to('FAQ', I18n.locale == :de ? '//community.wheelmap.org/about/faqs/' : '//community.wheelmap.org/en/faqs/', class: 'btn btn-mini', target: '_blank')
         = mail_to('bugs@wheelmap.org', content_tag(:i, '', class: 'icon-envelope-alt'), class: 'btn btn-mini', encode: :hex, subject: I18n.t('models.node.mail.subject', headline: @node.headline), body: I18n.t('models.node.mail.body', url: node_url(@node)))
       = t('faq.headline')
     - t('faq.questions').size.times do |i|
