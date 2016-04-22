@@ -50,9 +50,9 @@ module ApplicationHelper
 
   def link_to_participate
     if I18n.locale == :de
-      link_to( t('how?'), "http://blog.wheelmap.org/mitmachen", :target => '_blank')
+      link_to( t('how?'), "//community.wheelmap.org/mitmachen", :target => '_blank')
     else
-      link_to( t('how?'), "http://blog.wheelmap.org/en/participate", :target => '_blank')
+      link_to( t('how?'), "//community.wheelmap.org/en/participate", :target => '_blank')
     end
   end
 
