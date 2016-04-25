@@ -6,7 +6,7 @@
     %p
       =t('users.profile.widget.legends.general')
 
-    =react_component('Wheelmap.WidgetBuilder.App', widget: @widget.as_api_response(:api_simple))
+    =react_component('Wheelmap.WidgetBuilder', widget: @widget.as_api_response(:api_simple))
 
 - content_for :javascript do
   = javascript_include_tag 'application'

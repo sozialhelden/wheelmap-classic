@@ -22,6 +22,7 @@ public/system/uploads*
 vendor/bundle
 vendor/cache
 node_modules
+app/assets/javascripts/dist
 .sass-cache
 wheelmap.esproj/Project.espressostorage
 *.espressostorage

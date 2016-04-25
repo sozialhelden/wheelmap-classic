@@ -55,7 +55,7 @@ es:
         notice: "La imagen ha sido borrada."
   form:
     show_fully_accessible_places: "Accesible en silla de ruedas"
-    show_limited_accessible_places: "Parcialmente accesible para minusválidos"
+    show_limited_accessible_places: "Parcialmente accesible para personas con discapacidad"
     show_places_without_status: "Estado desconocido"
     show_unaccessible_places: "No accesible a sillas de ruedas"
   formtastic:
@@ -144,7 +144,7 @@ es:
           create: "Añadir un nuevo lugar"
       popup:
         form:
-          limited: "Parcialmente accesible para minusválidos"
+          limited: "Parcialmente accesible para personas con discapacidad"
           'no': "No accesible a sillas de ruedas"
           save: Actualizar
           unknown: "Estado desconocido"
@@ -309,7 +309,7 @@ es:
       headline:
         your_images: "Tus imágenes subidas"
   wheelchairstatus:
-    limited: "Parcialmente accesible para minusválidos"
+    limited: "Parcialmente accesible para personas con discapacidad"
     'no': "No accesible a sillas de ruedas"
     unknown: "Estado desconocido"
     'yes': "Accesible en silla de ruedas"

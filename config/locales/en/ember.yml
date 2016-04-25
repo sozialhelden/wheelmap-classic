@@ -13,10 +13,9 @@ en:
     send: Send
     save: Save
     cancel: Cancel
+    next: Next
   errors:
     models:
       node:
         website:
           invalid: "Website address is not valid."
-        phone:
-          invalid: "Phone number is not valid. It must have the following format: +49 30 234567"

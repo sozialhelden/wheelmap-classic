@@ -2,11 +2,11 @@
   ENV["RAILS_ENV"] ||= 'test'
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
+  require 'capybara/rails'
+  require 'capybara/rspec'
   require 'factory_girl'
   require 'webmock/rspec'
   require 'carrierwave/test/matchers'
-  require 'database_cleaner'
-  require 'spec_helper'
 
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
@@ -29,11 +29,8 @@
     # examples within a transaction, remove the following line or assign false
     # instead of true.
     config.use_transactional_fixtures = false
-    config.before(:suite) do
+    config.before do
       WebMock.disable_net_connect!(:allow_localhost => true)
-
-      DatabaseCleaner.strategy = :transaction
-      DatabaseCleaner.clean_with(:truncation)
     end
 
     config.include EmailSpec::Helpers
@@ -44,15 +41,6 @@
 
     config.before(:all) do
       Delayed::Job.delete_all
-    end
-
-    config.before(:each) do
-      DatabaseCleaner.start
-    end
-
-
-    config.after(:each) do
-      DatabaseCleaner.clean
     end
 
     # rspec-rails 3 will no longer automatically infer an example group's spec type

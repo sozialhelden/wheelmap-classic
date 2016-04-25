@@ -13,6 +13,7 @@ de:
     send: Absenden
     save: Speichern
     cancel: Abbrechen
+    next: Weiter
   errors:
     models:
       node:

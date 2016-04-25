@@ -24,7 +24,7 @@ group :default do
   gem "routing-filter"
   gem 'newrelic_rpm'
   gem 'acts_as_api'
-  gem 'inherited_resources'
+  gem 'inherited_resources', '~> 1.4.0'
   gem 'has_scope'
   gem 'rake', '~> 10.4'
   gem 'yajl-ruby'
@@ -91,7 +91,6 @@ group :test, :development do
   gem 'rb-fsevent'
   gem 'teaspoon', '1.1.1'
   gem 'teaspoon-jasmine'
-  gem 'phantomjs'
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-cucumber', '~> 1.6'
@@ -102,14 +101,17 @@ group :test do
   gem 'minitest'
   gem 'webmock', :require => nil
   gem 'factory_girl_rails'
+
   gem 'capybara', '~> 2.6', '>= 2.6.2' # on mac, you need sudo port install libffi
+  gem 'poltergeist'
+  gem 'database_cleaner'
+
   gem 'cucumber', :require => false
   gem 'cucumber-rails', :require => false
   gem 'autotest', :require => false
   gem 'nokogiri'
   gem 'pickle', :require => false
   gem 'launchy', :require => false
-  gem 'database_cleaner', :require => false
   gem 'shoulda-matchers'
   gem 'syntax'
   gem 'email_spec'
@@ -125,4 +127,5 @@ group :development do
   gem 'capistrano-rbenv',                   require: false
   gem 'capistrano-bundler',                 require: false
   gem 'capistrano-deploytags', '~> 1.0.0',  require: false
+  gem 'capistrano-npm',                     require: false
 end

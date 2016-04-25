@@ -12,8 +12,6 @@
       %meta{:name => 'description', :content => t('header.meta.description')}
       %title=t('header.title')
 
-    = render :partial => 'shared/html5_elements'
-
     = content_for :javascript_constants
 
     = stylesheet_link_tag :screen, :media => 'screen, projection'
@@ -33,8 +31,6 @@
       = render :partial => 'shared/footer'
 
     = render :partial => 'shared/google_tracking'
-
-    = javascript_include_tag :default, :media => 'screen, projection'
 
     = content_for :javascript
     = render :partial =>  'shared/social_embed'
