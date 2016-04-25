@@ -104,7 +104,6 @@ group :test do
 
   gem 'capybara', '~> 2.6', '>= 2.6.2' # on mac, you need sudo port install libffi
   gem 'poltergeist'
-  gem 'phantomjs', :require => 'phantomjs/poltergeist'
   gem 'database_cleaner'
 
   gem 'cucumber', :require => false
