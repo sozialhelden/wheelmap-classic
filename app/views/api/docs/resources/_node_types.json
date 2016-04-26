@@ -16,7 +16,7 @@
     {
       "id":1,
       "identifier":"veterinary",
-      "icon":"/images/icons/hospital.png",
+      "icon":"hospital.png",
       "localized_name":"Tierarzt",
       "category":{
         "id": 6,
@@ -26,7 +26,7 @@
     {
       "id":3,
       "identifier":"public_building",
-      "icon":"/images/icons/bank.png",
+      "icon":"bank.png",
       "localized_name":"\u00d6ffentliches Geb\u00e4ude",
       "category":{
         "id": 3,
@@ -36,7 +36,7 @@
     {
       "id":23,
       "identifier":"hardware",
-      "icon":"/images/icons/wrench.png",
+      "icon":"wrench.png",
       "localized_name":"Eisenwarenladen",
       "category":{
         "id": 1,
@@ -46,7 +46,7 @@
     {
       "id":7,
       "identifier":"atm",
-      "icon":"/images/icons/credit-cards.png",
+      "icon":"credit-cards.png",
       "localized_name":"Geldautomat",
       "category":{
         "id": 1,
@@ -56,7 +56,7 @@
     {
       "id":42,
       "identifier":"convenience",
-      "icon":"/images/icons/shopping-basket.png",
+      "icon":"shopping-basket.png",
       "localized_name":"Sp\u00e4tkauf",
       "category":{
         "id": 1,
@@ -66,7 +66,7 @@
     {
       "id":667,
       "identifier":"butcher",
-      "icon":"/images/icons/shopping-basket.png",
+      "icon":"shopping-basket.png",
       "localized_name":"Fleischer",
       "category":{
         "id": 1,
