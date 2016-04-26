@@ -71,7 +71,11 @@ node_types = NodeType.create([
   {:category => leisure, :identifier => :community_centre, :osm_key => 'amenity', :osm_value => 'community_centre', :icon => 'communitycentre.png'},
   {:category => leisure, :identifier => :stripclub,   :osm_key => 'amenity', :osm_value => 'stripclub',    :icon => 'stripclub.png'},
   {:category => leisure, :identifier => :playground,  :osm_key => 'leisure', :osm_value => 'playground',   :icon => 'playground.png'},
-  {:category => leisure, :identifier => :casino,      :osm_key => 'amenity', :osm_value => 'casino',       :icon => 'poker.png'}
+  {:category => leisure, :identifier => :casino,      :osm_key => 'amenity', :osm_value => 'casino',       :icon => 'poker.png'},
+  # Update 2016-04-26
+  {:category => leisure, :identifier => :sauna,   :osm_key => 'leisure', :osm_value => 'sauna',   :icon => 'spa.png'},
+  {:category => leisure, :identifier => :massage, :osm_key => 'shop',    :osm_value => 'massage', :icon => 'massage.png'},
+  {:category => leisure, :identifier => :tattoo,  :osm_key => 'shop',    :osm_value => 'tattoo',  :icon => 'naval_museum.png'}
 ])
 
 money_post = Category.find_by_identifier('money_post')
