@@ -515,3 +515,24 @@ tag_viewpoint:
 tag_zoo:
   osm_key: tourism
   osm_value: zoo
+
+# Update 2016-04-26
+tag_alternative:
+  osm_key: healthcare
+  osm_value: alternative
+
+tag_physiotherapist:
+  osm_key: healthcare
+  osm_value: physiotherapist
+
+tag_occupational_therapist:
+  osm_key: healthcare
+  osm_value: occupational_therapist
+
+tag_speech_therapist:
+  osm_key: healthcare
+  osm_value: speech_therapist
+
+tag_psychotherapist:
+  osm_key: healthcare
+  osm_value: psychotherapist

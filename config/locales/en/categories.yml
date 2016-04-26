@@ -60,6 +60,12 @@ en:
         pharmacy: Pharmacy
         social_facility: "Social facility"
         veterinary: Veterinary
+        # Update 2016-04-26
+        alternative: "Alternative medicine practitioner"
+        occupational_therapist: "Occupational therapist"
+        physiotherapist: Physiotherapist
+        psychotherapist: Psychotherapist
+        speech_therapist: "Speech therapist"
       leisure:
         arena: Arena
         brothel: Brothel

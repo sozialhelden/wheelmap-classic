@@ -167,5 +167,11 @@ Tags = {
   :veterinary => :amenity,
   :video => :shop,
   :viewpoint => :tourism,
-  :zoo => :tourism
+  :zoo => :tourism,
+  # Update 2016-04-26
+  :alternative => :healthcare,
+  :occupational_therapist => :healthcare,
+  :physiotherapist => :healthcare,
+  :psychotherapist => :healthcare,
+  :speech_therapist => :healthcare,
 }
