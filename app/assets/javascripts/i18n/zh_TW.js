@@ -1183,10 +1183,12 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "cinema": "電影院",
         "community_centre": "Community centre",
         "gallery": "畫廊",
+        "massage": "Massage spa",
         "nightclub": "夜總會",
         "playground": "遊樂器材",
         "sauna": "桑拿",
         "stripclub": "脫衣舞店",
+        "tattoo": "Tattoo shop",
         "theatre": "戲院",
         "zoo": "動物園"
       },

@@ -1179,10 +1179,12 @@ I18n.translations["ko"] = I18n.extend((I18n.translations["ko"] || {}), {
         "cinema": "영화관",
         "community_centre": "Community centre",
         "gallery": "갤러리",
+        "massage": "Massage spa",
         "nightclub": "나이트클럽",
         "playground": "놀이터",
         "sauna": "사우나",
         "stripclub": "스트립클럽",
+        "tattoo": "Tattoo shop",
         "theatre": "극장",
         "zoo": "동물원"
       },

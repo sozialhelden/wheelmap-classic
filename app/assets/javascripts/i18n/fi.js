@@ -1183,10 +1183,12 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
         "cinema": "Elokuvateatteri",
         "community_centre": "Community centre",
         "gallery": "Galleria",
+        "massage": "Massage spa",
         "nightclub": "Yökerho",
         "playground": "Playground",
         "sauna": "Sauna",
         "stripclub": "Stripclub",
+        "tattoo": "Tattoo shop",
         "theatre": "Teatteri",
         "zoo": "Eläintarha"
       },

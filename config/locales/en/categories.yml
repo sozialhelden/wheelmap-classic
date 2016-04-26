@@ -69,10 +69,13 @@ en:
         gallery: Gallery
         nightclub: Nightclub
         playground: Playground
-        sauna: Sauna
         stripclub: Stripclub
         theatre: Theatre
         zoo: Zoo
+        # Update 2016-04-26
+        sauna: Sauna
+        tattoo: "Tattoo shop"
+        massage: "Massage spa"
       misc:
         company: "Company (Office)"
         estate_agent: "Real estate agent"
