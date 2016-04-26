@@ -93,6 +93,7 @@ Tags = {
   :dry_cleaning => :shop,
   :electronics => :shop,
   :embassy => :amenity,
+  :employment_agency => :office,
   :estate_agent => :office,
   :fabric => :shop,
   :fast_food => :amenity,
@@ -175,5 +176,5 @@ Tags = {
   :veterinary => :amenity,
   :video => :shop,
   :viewpoint => :tourism,
-  :zoo => :tourism,
+  :zoo => :tourism
 }

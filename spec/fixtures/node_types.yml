@@ -220,6 +220,10 @@ tag_embassy:
   osm_key: amenity
   osm_value: embassy
 
+tag_employment_agency:
+  osm_key: office
+  osm_value: employment_agency
+
 tag_estate_agent:
   osm_key: office
   osm_value: estate_agent

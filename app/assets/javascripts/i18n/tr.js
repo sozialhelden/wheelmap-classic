@@ -1166,6 +1166,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       "government": {
         "courthouse": "Adliye",
         "embassy": "Elçilik",
+        "employment_agency": "Employment agency",
         "government": "Devlet dairesi",
         "police": "Polis",
         "public_building": "Resmi Bina",
