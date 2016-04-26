@@ -985,6 +985,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
     },
     "node_photos": {
       "add": "Προσθήκη",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Φωτογραφίες της περιοχής:",
       "upload": "Αποστολή"
     },
@@ -1167,13 +1168,18 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
         "townhall": "Town hall"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "Οδοντίατρος",
         "doctors": "Doctor",
         "hearing_aids": "Αντιπρόσωπος ακουστικών βαρηκοΐας",
         "hospital": "Νοσοκομείο",
         "medical_supply": "Ιατρικές προμύθειες",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "Φαρμακείο",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "Κοινωνική εγκατάσταση",
+        "speech_therapist": "Speech therapist",
         "veterinary": "Κτηνίατρος"
       },
       "leisure": {

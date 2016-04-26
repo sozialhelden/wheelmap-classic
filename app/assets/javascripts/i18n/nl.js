@@ -983,6 +983,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     },
     "node_photos": {
       "add": "Toevoegen",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Fotos van deze plaats:",
       "upload": "Uploaden"
     },
@@ -1165,13 +1166,18 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "townhall": "Town hall"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "Tandarts",
         "doctors": "Doctor",
         "hearing_aids": "Audicien (gehoorapperaat winkel)",
         "hospital": "Ziekenhuis",
         "medical_supply": "Medische verzorging",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "Apotheek",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "Sociale voorziening",
+        "speech_therapist": "Speech therapist",
         "veterinary": "Dierenarts"
       },
       "leisure": {

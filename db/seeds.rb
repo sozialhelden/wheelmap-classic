@@ -207,7 +207,13 @@ node_types = NodeType.create([
   {:category => health,  :identifier => :medical_supply,    :osm_key => 'shop',     :osm_value => 'medical_supply',   :icon => 'medicalstore.png'},
   {:category => health,  :identifier => :hearing_aids,      :osm_key => 'shop',     :osm_value => 'hearing_aids',     :icon => 'hearing_aids.png'},
   {:category => health,  :identifier => :social_facility,   :osm_key => 'amenity',  :osm_value => 'social_facility',  :icon => 'social_facility.png'},
-  {:category => health,  :identifier => :dentist,           :osm_key => 'amenity',  :osm_value => 'dentist',          :icon => 'dentist.png'}
+  {:category => health,  :identifier => :dentist,           :osm_key => 'amenity',  :osm_value => 'dentist',          :icon => 'dentist.png'},
+  # Update 2016-04-26
+  {:category => health,  :identifier => :alternative,            :osm_key => 'healthcare', :osm_value => 'alternative',            :icon => 'yin_yang.png'},
+  {:category => health,  :identifier => :physiotherapist,        :osm_key => 'healthcare', :osm_value => 'physiotherapist',        :icon => 'massage.png'},
+  {:category => health,  :identifier => :occupational_therapist, :osm_key => 'healthcare', :osm_value => 'occupational_therapist', :icon => 'theft.png'},
+  {:category => health,  :identifier => :speech_therapist,       :osm_key => 'healthcare', :osm_value => 'speech_therapist',       :icon => 'conversation.png'},
+  {:category => health,  :identifier => :psychotherapist,        :osm_key => 'healthcare', :osm_value => 'psychotherapist',        :icon => 'therapy.png'}
 ])
 
 Region.delete_all

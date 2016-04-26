@@ -988,6 +988,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
     },
     "node_photos": {
       "add": "Pridať",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Fotky tohto miesta:",
       "upload": "Nahrať"
     },
@@ -1172,13 +1173,18 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
         "townhall": "Town hall"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "Zubár",
         "doctors": "Doctor",
         "hearing_aids": "Dodavateľ načúvacích prístrojov",
         "hospital": "Nemocnica",
         "medical_supply": "Medicínske vybavenie",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "Lekáreň",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "Spoločenské zázemie",
+        "speech_therapist": "Speech therapist",
         "veterinary": "Veterinár"
       },
       "leisure": {
