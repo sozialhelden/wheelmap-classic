@@ -1200,11 +1200,14 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
         "zoo": "Kopsht zoologjik"
       },
       "misc": {
+        "association": "Association",
         "company": "Kompani (Zyrë)",
         "estate_agent": "Agjent imobilar",
         "insurance": "Zyrë sigurimi",
         "lawyer": "Avokat",
+        "ngo": "Non-government organisation",
         "place_of_worship": "Vend adhurimi",
+        "political_party": "Political party office",
         "toilets": "Tualete"
       },
       "money_post": {

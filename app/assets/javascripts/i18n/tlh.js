@@ -1202,14 +1202,17 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
         "zoo": "HaDI'baH qach"
       },
       "misc": {
+        "association": "Association",
         "company": "Company (Office)",
         "doctors": "Qelpu'",
         "estate_agent": "Real estate agent",
         "hospital": "Qelpu' qach",
         "insurance": "Insurance",
         "lawyer": "Lawyer",
+        "ngo": "Non-government organisation",
         "pharmacy": "Hergh Suy",
         "place_of_worship": "ghIn",
+        "political_party": "Political party office",
         "toilets": "puchpa'mey",
         "veterinary": "HaDI'baH Qel"
       },

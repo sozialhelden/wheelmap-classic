@@ -1198,11 +1198,14 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "zoo": "Dierentuin"
       },
       "misc": {
+        "association": "Association",
         "company": "Bedrijf (zetel)",
         "estate_agent": "Makelaar",
         "insurance": "Verzekering",
         "lawyer": "Advocaat",
+        "ngo": "Non-government organisation",
         "place_of_worship": "Kerk, religieuze plaats",
+        "political_party": "Political party office",
         "toilets": "Toiletten"
       },
       "money_post": {

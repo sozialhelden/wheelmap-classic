@@ -1196,11 +1196,14 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
         "zoo": "Állatkert"
       },
       "misc": {
+        "association": "Association",
         "company": "Cég (Iroda)",
         "estate_agent": "Ingatlanügynökség",
         "insurance": "Biztosító",
         "lawyer": "Ügyvéd",
+        "ngo": "Non-government organisation",
         "place_of_worship": "Vallási hely",
+        "political_party": "Political party office",
         "toilets": "Toalett"
       },
       "money_post": {

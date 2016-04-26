@@ -1200,11 +1200,14 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "zoo": "Зоологическа градина"
       },
       "misc": {
+        "association": "Association",
         "company": "Фирма (офис)",
         "estate_agent": "Агенция за недвижими имоти",
         "insurance": "Застраховки",
         "lawyer": "Адвокат",
+        "ngo": "Non-government organisation",
         "place_of_worship": "Място за поклонение",
+        "political_party": "Political party office",
         "toilets": "Тоалетни"
       },
       "money_post": {

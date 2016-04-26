@@ -1204,11 +1204,14 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
         "zoo": "Hayvanat Bahçesi"
       },
       "misc": {
+        "association": "Association",
         "company": "Şirket (Ofis)",
         "estate_agent": "Emlakçı",
         "insurance": "Sigorta",
         "lawyer": "Avukat",
+        "ngo": "Non-government organisation",
         "place_of_worship": "Ibadet Yeri",
+        "political_party": "Political party office",
         "toilets": "Tuvalet"
       },
       "money_post": {

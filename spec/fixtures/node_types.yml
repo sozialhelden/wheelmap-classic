@@ -18,6 +18,10 @@ tag_artwork:
   osm_key: amenity
   osm_value: artwork
 
+tag_association:
+  osm_key: office
+  osm_value: association
+
 tag_atm:
   osm_key: amenity
   osm_value: atm
@@ -360,6 +364,10 @@ tag_nightclub:
   osm_key: amenity
   osm_value: nightclub
 
+tag_ngo:
+  osm_key: office
+  osm_value: ngo
+
 tag_occupational_therapist:
   osm_key: healthcare
   osm_value: occupational_therapist
@@ -415,6 +423,10 @@ tag_playground:
 tag_police:
   osm_key: amenity
   osm_value: police
+
+tag_political_party:
+  osm_key: office
+  osm_value: political_party
 
 tag_post_office:
   osm_key: amenity

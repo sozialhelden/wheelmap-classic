@@ -1232,11 +1232,14 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
         "zoo": "Зоопарк"
       },
       "misc": {
+        "association": "Association",
         "company": "Компанія (офіс)",
         "estate_agent": "Агентство нерухомості",
         "insurance": "Страхування",
         "lawyer": "Адвокат/Юрист",
+        "ngo": "Non-government organisation",
         "place_of_worship": "Місце поклоніння",
+        "political_party": "Political party office",
         "toilets": "Туалет"
       },
       "money_post": {
