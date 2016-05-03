@@ -4,7 +4,7 @@ namespace :assets do
     %w{marker icons}.each do |zip_name|
       cmd=<<-EOF
         cd #{Rails.root.join('app', 'assets', 'images')}
-        zip -9 -q -r #{zip_name} #{zip_name}
+        zip -9 -q -r #{Rails.root.join('public', zip_name)} #{zip_name}
       EOF
       system cmd
     end
