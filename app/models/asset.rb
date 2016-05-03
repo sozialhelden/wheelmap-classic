@@ -39,7 +39,7 @@ class Asset
   end
 
   def file_name
-    Rails.root.join('public', "#{name}.zip")
+    Rails.root.join("app", "assets", "images", "#{name}.zip")
   end
 
   def modified_at
