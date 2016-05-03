@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/sozialhelden/wheelmap.png?label=ready&title=Ready)](https://waffle.io/sozialhelden/wheelmap)
 # Wheelmap.org
 
 [![Build Status](https://travis-ci.org/sozialhelden/wheelmap.svg?branch=master)](https://travis-ci.org/sozialhelden/wheelmap)
