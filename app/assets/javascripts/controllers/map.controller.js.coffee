@@ -182,8 +182,8 @@ Wheelmap.MapController = Ember.Controller.extend
 
   center: null
   zoom: 14
-  latBinding: 'center.lat'
-  lonBinding: 'center.lng'
+  lat: null
+  lon: null
 
   init: ()->
     @_super()
@@ -210,10 +210,25 @@ Wheelmap.MapController = Ember.Controller.extend
 
     center = @get('center')
 
-    $.cookie('last_lat', center.lat, { path: '/' } )
-    $.cookie('last_lon', center.lng, { path: '/' } )
+    $.cookie('last_lat', center.lat, { path: '/' })
+    $.cookie('last_lon', center.lng, { path: '/' })
     $.cookie('last_zoom', @get('zoom'), { path: '/' })
   ).observes('center', 'zoom')
+
+  centerDidChange: (->
+    Ember.run.debounce(@, @updateLatLng, @get('center'), 100);
+  ).observes('center')
+
+  latLonDidChange: (->
+    lat = @get('lat')
+    lon = @get('lon')
+
+    @set('center', L.latLng(lat, lon)) if lat? && lon?
+  ).observes('lat', 'lon')
+
+  updateLatLng: (center)->
+    @set('lat', center.lat);
+    @set('lon', center.lng);
 
   actions:
     openPopup: (nodeId)->
