@@ -247,3 +247,10 @@ if $dropzoneClickable.length > 0
       $submit.click (e) ->
         e.preventDefault()
         $fallback.closest('form').submit()
+
+@streetview = ->
+  element = document.getElementById('streetview')
+  lat = parseFloat(element.getAttribute('data-lat'))
+  lon = parseFloat(element.getAttribute('data-lon'))
+
+  new google.maps.StreetViewPanorama element, position: { lat: lat, lng: lon }
