@@ -35,7 +35,7 @@ class Asset
 
   def url
     # @TODO use image_url when we moved to Rails 4
-    asset_paths.compute_public_path("/#{name}.zip", 'images', { protocol: :https })
+    asset_paths.compute_public_path("/#{name}.zip", 'images', { protocol: :request }) 
   end
 
   def file_name
