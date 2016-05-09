@@ -93,7 +93,6 @@ group :test, :development do
   gem 'teaspoon-jasmine'
   gem 'guard'
   gem 'guard-rspec'
-  gem 'guard-cucumber', '~> 1.6'
   gem 'pry'
 end
 
@@ -105,9 +104,6 @@ group :test do
   gem 'capybara', '~> 2.6', '>= 2.6.2' # on mac, you need sudo port install libffi
   gem 'poltergeist'
   gem 'database_cleaner'
-
-  gem 'cucumber', :require => false
-  gem 'cucumber-rails', :require => false
   gem 'autotest', :require => false
   gem 'nokogiri'
   gem 'pickle', :require => false
