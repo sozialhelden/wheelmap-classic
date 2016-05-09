@@ -12,7 +12,7 @@ class Api::AssetsController < Api::ApiController
   protected
 
   def collection
-    @assets ||= [Asset.new(:id => 1, :name => :marker), Asset.new(:id => 2, :name => :icons)]
+    @assets ||= [Asset.new(id: 1, name: :marker, protocol: protocol), Asset.new(id: 2, name: :icons, protocol: protocol)]
   end
 
   def meta
@@ -30,5 +30,11 @@ class Api::AssetsController < Api::ApiController
         :item_count => 2
       }
     }
+  end
+
+  private
+
+  def protocol
+    request.ssl? ? :https : :http
   end
 end

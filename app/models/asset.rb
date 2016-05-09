@@ -8,7 +8,7 @@ class Asset
   include ActionView::Helpers::AssetTagHelper
 
 
-  attr_accessor :id, :name
+  attr_accessor :id, :name, :protocol
 
   acts_as_api
 
@@ -35,7 +35,7 @@ class Asset
 
   def url
     # @TODO use image_url when we moved to Rails 4
-    asset_paths.compute_public_path("/#{name}.zip", 'images', { protocol: :request }) 
+    asset_paths.compute_public_path("/#{name}.zip", 'images', { protocol: protocol })
   end
 
   def file_name
@@ -59,22 +59,8 @@ class Asset
     }
   end
 
-  def config
-  end
-
   def cache_key
     "assets/#{name}"
-  end
-
-  # Dummy methods to generate full image paths
-  def config
-    Wheelmap::Application.config.action_controller
-  end
-
-
-  # Dummy methods to generate full image paths
-  def controller
-    ''
   end
 
 
