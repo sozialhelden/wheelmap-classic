@@ -106,7 +106,6 @@ group :test do
   gem 'database_cleaner'
   gem 'autotest', :require => false
   gem 'nokogiri'
-  gem 'pickle', :require => false
   gem 'launchy', :require => false
   gem 'shoulda-matchers'
   gem 'syntax'
