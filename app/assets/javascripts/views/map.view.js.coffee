@@ -276,8 +276,8 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
 
   openedPopup: null
 
-  centerBinding: 'controller.center',
-  zoomBinding: 'controller.zoom'
+  center: Ember.computed.oneWay('controller.center')
+  zoom: Ember.computed.oneWay('controller.zoom')
 
   didInsertElement: ()->
     Ember.run.sync() # Needed for bindings to controller
@@ -319,5 +319,22 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
 
     bbox = @get('controller.bbox')
 
-    layer.fitBounds(bbox) if bbox?
+    if bbox?
+      layer.fitBounds(bbox)
   ).observes('controller.bbox', 'layer')
+
+  isMovingDidChange: (->
+    if @get('isMoving')
+      return
+
+    controller = @get('controller')
+    controller.set('center', @get('center'))
+  ).observes('isMoving')
+
+  isZoomingDidChange: (->
+    if @get('isZooming')
+      return
+
+    controller = @get('controller')
+    controller.set('zoom', @get('zoom'))
+  ).observes('isZooming')
