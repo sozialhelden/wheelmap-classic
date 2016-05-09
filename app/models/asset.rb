@@ -63,5 +63,16 @@ class Asset
     "assets/#{name}"
   end
 
+  # Dummy methods to generate full image paths
+  def config
+    Wheelmap::Application.config.action_controller
+  end
+
+
+  # Dummy methods to generate full image paths
+  def controller
+    ''
+  end
+
 
 end
