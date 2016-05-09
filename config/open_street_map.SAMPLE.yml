@@ -13,10 +13,3 @@ test:
   oauth_secret: ''
   oauth_key: ''
   oauth_site: 'http://api06.dev.openstreetmap.org'
-
-cucumber:
-  user: osm_username
-  password: osm_password
-  oauth_secret: ''
-  oauth_key: ''
-  oauth_site: 'http://api06.dev.openstreetmap.org'
