@@ -6,8 +6,8 @@
         %td>=image_tag('mini_marker.png', :size => '28x17', :title => "#{t('wheelchairstatus.yes')}:#{Poi.fully_accessible.count}\n#{t('wheelchairstatus.limited')}:#{Poi.limited_accessible.count}\n#{t('wheelchairstatus.no')}:#{Poi.not_accessible.count}")
         %td{:style => "background: url('#{image_path('bubble.png')}') no-repeat left center;background-position: 0px 0px"} &nbsp;
         %td{:style => "padding-right: 5px;background: url('#{image_path('bubble.png')}') no-repeat 100% 0px"}=Poi.tagged.count
-    =link_to "Tweet", "http://twitter.com/share", :class => "twitter-share-button", :style => 'display:none', 'data-lang' => I18n.locale, 'data-counturl' => roooot_url, 'data-related' => 'wheelmap,sozialhelden', 'data-hashtags' => 'wheelmap'
-    %iframe{:src => "http://www.facebook.com/plugins/like.php?app_id=231074856943658&href=#{u(roooot_url)}&send=false&layout=button_count&width=130&show_faces=false&action=like&colorscheme=light&height=20", :scrolling => "no", :frameborder => "0", :style =>"border:none; overflow:hidden; width:130px; height:20px;", :allowTransparency => "true"}
+    =link_to "Tweet", "//twitter.com/share", :class => "twitter-share-button", :style => 'display:none', 'data-lang' => I18n.locale, 'data-counturl' => roooot_url, 'data-related' => 'wheelmap,sozialhelden', 'data-hashtags' => 'wheelmap'
+    %iframe{:src => "//www.facebook.com/plugins/like.php?app_id=231074856943658&href=#{u(roooot_url)}&send=false&layout=button_count&width=130&show_faces=false&action=like&colorscheme=light&height=20", :scrolling => "no", :frameborder => "0", :style =>"border:none; overflow:hidden; width:130px; height:20px;", :allowTransparency => "true"}
 
   .supporter
     %span>
@@ -15,7 +15,7 @@
     = image_tag('immoscout@2x.png', :size => '42x20', :alt => 'ImmobilienScout24', :title => 'ImmobilienScout24', :style => "margin-top: -3px;height:20px")
     %span>
       |
-    = link_to t('header.navigation.imprint'), "http://blog.wheelmap.org/kontakt", :target => '_blank'
+    = link_to t('header.navigation.imprint'), "//community.wheelmap.org/kontakt", :target => '_blank'
     %span>
       |
       = t('wheelmap.footer.a_project_of')

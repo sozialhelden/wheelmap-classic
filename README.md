@@ -1,6 +1,7 @@
 # Wheelmap.org
 
 [![Build Status](https://travis-ci.org/sozialhelden/wheelmap.svg?branch=master)](https://travis-ci.org/sozialhelden/wheelmap)
+[![Stories in Next](https://badge.waffle.io/sozialhelden/wheelmap.png?label=next&title=Next)](https://waffle.io/sozialhelden/wheelmap)
 
 Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!
 
@@ -103,6 +104,10 @@ Finally startup a local rails server
     bundle exec rails server
 
 And visit the website in your browser: http://0.0.0.0:3000
+
+## Documentation
+
+Please also check our [WIKI](https://github.com/sozialhelden/wheelmap/wiki), if you need more informations to specific topics and can't find them here, e.g. how to generate a sprite or how to test our app. 
 
 ## License
 

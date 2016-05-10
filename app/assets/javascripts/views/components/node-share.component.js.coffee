@@ -38,7 +38,7 @@ Wheelmap.TwitterShareComponent = Wheelmap.NodeShareComponent.extend Wheelmap.Nod
   lang: null
 
   href: (()->
-    "http://twitter.com/share?dnt=true&hashtags=wheelmap&lang=" +
+    "//twitter.com/share?dnt=true&hashtags=wheelmap&lang=" +
     @get('lang') +
     "&related=wheelmap%2Csozialhelden&text=" +
     @get('sharedText') +
@@ -52,6 +52,6 @@ Wheelmap.TwitterShareComponent = Wheelmap.NodeShareComponent.extend Wheelmap.Nod
 
 Wheelmap.FacebookShareComponent = Wheelmap.NodeShareComponent.extend Wheelmap.NodeSharePopupMixin,
   href: (()->
-    "http://www.facebook.com/sharer/sharer.php?s=100&p[url]=" +
+    "//www.facebook.com/sharer/sharer.php?s=100&p[url]=" +
     @get('sharedUri')
   ).property('sharedUri')

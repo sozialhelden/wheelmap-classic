@@ -20,7 +20,7 @@
     $userHeaderHeight: 115px;
 
     // @todo subheader background-url shoud be dynamically overriden inline in Ruby for every user
-    background: transparent no-repeat center top url('http://api.tiles.mapbox.com/v4/sozialhelden.map-iqt6py1k/13.388986587524414,52.51699126638161,15/1280x100.jpg70?access_token=pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g');
+    background: transparent no-repeat center top url('//api.tiles.mapbox.com/v4/sozialhelden.map-iqt6py1k/13.388986587524414,52.51699126638161,15/1280x100.jpg70?access_token=pk.eyJ1Ijoic296aWFsaGVsZGVuIiwiYSI6IldvNHpkUUkifQ.5lLzFYw4MmAUkqLMoEcI3g');
     background-size: cover;
     height: $userHeaderHeight;
     padding: 0 20px;

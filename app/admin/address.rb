@@ -22,7 +22,7 @@ ActiveAdmin.register Address do
   index do
     selectable_column
     column :coordinates do |a|
-      link_to "#{a.latitude}, #{a.longitude}", "http://wheelmap.org/map#/?lat=#{a.latitude}&lon=#{a.longitude}&zoom=18"
+      link_to "#{a.latitude}, #{a.longitude}", "//wheelmap.org/map#/?lat=#{a.latitude}&lon=#{a.longitude}&zoom=18"
     end
     column :name
     column :address

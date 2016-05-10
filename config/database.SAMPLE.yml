@@ -23,6 +23,3 @@ test: &test
   pool: 5
   username: root
   password:
-
-cucumber:
-  <<: *test
