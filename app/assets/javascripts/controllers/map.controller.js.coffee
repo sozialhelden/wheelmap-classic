@@ -216,7 +216,7 @@ Wheelmap.MapController = Ember.Controller.extend
   ).observes('center', 'zoom')
 
   centerDidChange: (->
-    Ember.run.debounce(@, @updateLatLng, @get('center'), 100);
+    Ember.run.debounce(@, @updateLatLng, 100, true);
   ).observes('center')
 
   latLonDidChange: (->
@@ -226,9 +226,11 @@ Wheelmap.MapController = Ember.Controller.extend
     @set('center', L.latLng(lat, lon)) if lat? && lon?
   ).observes('lat', 'lon')
 
-  updateLatLng: (center)->
-    @set('lat', center.lat);
-    @set('lon', center.lng);
+  updateLatLng: ()->
+    center = @get('center')
+
+    @set('lat', center.lat)
+    @set('lon', center.lng)
 
   actions:
     openPopup: (nodeId)->
