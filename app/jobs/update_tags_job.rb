@@ -48,7 +48,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
 
       # Ignore this job, as there are no changes to be saved
       if comparison_value == 0
-        logger.info "IGNORE: #{type}:#{element_id} nothing has changed!"
+        logger.info "IGNORE: #{type}:#{element_id} nothing has changed! (value comparison)"
         return
       end
 
@@ -68,8 +68,9 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
         user.increment!(:edit_counter) if user.terms?
       end
     rescue Rosemary::Conflict => conflict
+      logger.info "IGNORE: #{type}:#{element_id} nothing has changed! (conflict)"
       # These changes have already been made, so dismiss this update!
-      logger.info "IGNORE: #{type}:#{element_id} nothing has changed!"
+      Airbrake.notify(conflict, :component => 'UpdateTagsJob#perform', :parameters => {:user => user.inspect, :element => element.inspect, :client => client})
     end
   end
 
