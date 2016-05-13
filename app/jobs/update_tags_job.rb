@@ -47,7 +47,10 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       comparison_value = (element_to_compare <=> element)
 
       # Ignore this job, as there are no changes to be saved
-      raise Rosemary::Conflict.new('NotChanged') if comparison_value == 0
+      if comparison_value == 0
+        logger.info "IGNORE: #{type}:#{element_id} nothing has changed!"
+        return
+      end
 
       changeset = api.find_or_create_open_changeset(user.changeset_id, "Modified via wheelmap.org")
       user.update_attribute(:changeset_id, changeset.id)
@@ -65,9 +68,8 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
         user.increment!(:edit_counter) if user.terms?
       end
     rescue Rosemary::Conflict => conflict
-      logger.info "IGNORE: #{type}:#{element_id} nothing has changed!"
       # These changes have already been made, so dismiss this update!
-      Airbrake.notify(conflict, :component => 'UpdateTagsJob#perform', :parameters => {:user => user.inspect, :element => element.inspect, :client => client})
+      logger.info "IGNORE: #{type}:#{element_id} nothing has changed!"
     end
   end
 
