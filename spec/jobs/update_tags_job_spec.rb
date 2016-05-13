@@ -38,7 +38,7 @@ describe UpdateTagsJob do
 
   end
 
-  it "should not update when no changes have been made" do
+  it "should not update the node when nothing has been changed" do
     job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
     unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
     api = double(:find_or_create_open_changeset => changeset)
@@ -67,22 +67,6 @@ describe UpdateTagsJob do
     successes, failures = Delayed::Worker.new.work_off
     expect(successes).to eql 1
     expect(failures).to eql 0
-
-  end
-
-  it "should not update the node when nothing has been changed" do
-    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
-
-    unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
-    api = double(:find_or_create_open_changeset => changeset)
-
-    expect(Rosemary::Api).to receive(:new).and_return(api)
-    expect(api).to receive(:find_element).with('node', node.id.abs).and_return(unedited_node)
-    expect(api).not_to receive(:save)
-    successes, failures = Delayed::Worker.new.work_off
-    expect(successes).to eql 1
-    expect(failures).to eql 0
-
 
   end
 
