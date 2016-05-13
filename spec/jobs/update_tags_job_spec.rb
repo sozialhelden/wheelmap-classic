@@ -84,20 +84,6 @@ describe UpdateTagsJob do
 
   end
 
-  it "does not update tag counter when node did not change" do
-    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
-    unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
-    api = double(:find_or_create_open_changeset => changeset)
-    expect(Rosemary::Api).to receive(:new).and_return(api)
-    expect(api).to receive(:find_element).with('node', node.id.abs).and_return(unedited_node)
-    expect(Counter).not_to receive(:increment)
-    successes, failures = Delayed::Worker.new.work_off
-    expect(successes).to eql 1
-    expect(failures).to eql 0
-
-  end
-
-
   it "updates tag counter" do
     job = UpdateTagsJob.enqueue(poi.id.abs, 'node', { 'wheelchair' => 'no' }, user, 'update_iphone')
     api = double(:find_or_create_open_changeset => changeset)
