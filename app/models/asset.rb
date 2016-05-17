@@ -12,6 +12,7 @@ class Asset
 
   acts_as_api
 
+  # @TODO Move to controller layer
   def around_api_response(api_template)
     custom_cache_key = "api_response_#{self.cache_key}_#{api_template.to_s}"
     Rails.cache.fetch(custom_cache_key, :expires_in => 1.day) do
