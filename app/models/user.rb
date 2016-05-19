@@ -41,7 +41,8 @@ class User < ActiveRecord::Base
   def send_email_confirmation
     return if self.email.blank?
     self.generate_confirmation_token if self.confirmation_token.nil?
-    self.send_confirmation_instructions
+    # self.send_confirmation_instructions
+    self.devise_mailer.confirmation_instructions(self, @token).deliver
   end
 
   # TODO Renebale user tracking
