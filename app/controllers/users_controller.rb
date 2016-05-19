@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  include AuthenticateUserFromToken
+
   skip_before_filter :verify_authenticity_token, :only => :authenticate
 
   before_filter :authenticate_user!,        :except => [:authenticate, :signed_in]
