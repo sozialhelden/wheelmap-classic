@@ -59,7 +59,7 @@ ActiveAdmin.register User do
     column 'POIs tagged', :tag_counter
     column 'POIs edited', :edit_counter
     column 'POIs created', :create_counter
-    default_actions
+    actions
   end
 
   form do |f|

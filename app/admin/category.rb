@@ -17,7 +17,7 @@ ActiveAdmin.register Category do
     column :id
     column :identifier
     column :name, :sortable => false
-    default_actions
+    actions
   end
 
 

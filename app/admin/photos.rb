@@ -37,7 +37,7 @@ ActiveAdmin.register Photo do
     end
     column :taken_at
     column :created_at
-    default_actions
+    actions
   end
 
   form html: { multipart: true } do |f|
