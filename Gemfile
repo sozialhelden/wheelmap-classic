@@ -24,7 +24,7 @@ group :default do
   gem "routing-filter"
   gem 'newrelic_rpm'
   gem 'acts_as_api'
-  gem 'inherited_resources', '~> 1.4.0'
+  gem 'inherited_resources', '~> 1.6.0'
   gem 'has_scope'
   gem 'rake', '~> 10.4'
   gem 'yajl-ruby'

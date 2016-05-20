@@ -258,9 +258,11 @@ GEM
     i18n (0.6.11)
     i18n-js (3.0.0.rc12)
       i18n (~> 0.6, >= 0.6.6)
-    inherited_resources (1.4.1)
+    inherited_resources (1.6.0)
+      actionpack (>= 3.2, < 5)
       has_scope (~> 0.6.0.rc)
-      responders (~> 1.0.0.rc)
+      railties (>= 3.2, < 5)
+      responders
     journey (1.0.4)
     jquery-rails (2.3.0)
       railties (>= 3.0, < 5.0)
@@ -386,8 +388,8 @@ GEM
       rails (>= 3.2)
       tilt
     ref (2.0.0)
-    responders (1.0.0)
-      railties (>= 3.2, < 5)
+    responders (1.1.2)
+      railties (>= 3.2, < 4.2)
     rgeo (0.5.2)
     rgeo-activerecord (0.4.6)
       activerecord (>= 3.0.3)
@@ -559,7 +561,7 @@ DEPENDENCIES
   htmlentities
   i18n (< 0.7.0)
   i18n-js (~> 3.0.0.rc9)
-  inherited_resources (~> 1.4.0)
+  inherited_resources (~> 1.6.0)
   jquery-rails (= 2.3.0)
   js-routes
   kaminari (~> 0.14)
