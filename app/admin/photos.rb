@@ -48,8 +48,8 @@ ActiveAdmin.register Photo do
     f.inputs do
       f.input :image
       f.input :caption
-      f.input :taken_at, as: :datetime
+      f.input :taken_at
     end
-    f.buttons
+    f.actions
   end
 end
