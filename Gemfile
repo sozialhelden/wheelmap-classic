@@ -73,7 +73,6 @@ group :default do
   gem 'test-unit', '~> 3.0', require: false
   gem 'react-rails', '~>1.4.1'
   gem 'js-routes' # Because of initializer
-  gem 'dotenv-rails'
 end
 
 group :assets do
@@ -95,6 +94,7 @@ group :test, :development do
   gem 'guard'
   gem 'guard-rspec'
   gem 'pry'
+  gem 'dotenv-rails'
 end
 
 group :test do
