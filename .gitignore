@@ -26,4 +26,3 @@ app/assets/javascripts/dist
 .sass-cache
 wheelmap.esproj/Project.espressostorage
 *.espressostorage
-.env
