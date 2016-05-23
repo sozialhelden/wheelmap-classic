@@ -13,7 +13,7 @@ group :default do
   gem 'redgreengrid', :git => 'https://github.com/christoph-buente/redgreengrid.git'
   gem 'haml'
   gem 'formtastic', '~> 3.1'
-  gem 'formtastic-bootstrap'
+  gem 'formtastic-bootstrap', '~> 3.1', '>= 3.1.1'
   gem 'simple_form'
   gem 'delayed_job'
   gem 'delayed_job_active_record'
