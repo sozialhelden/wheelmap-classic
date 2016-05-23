@@ -26,6 +26,6 @@ ActiveAdmin.register Address do
     end
     column :name
     column :address
-    actions
+    default_actions
   end
 end
