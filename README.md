@@ -94,7 +94,7 @@ $ sudo apt-get install phantomjs lbwebp2 libicu48 libjpeg8 libfontconfig
 
     bundle exec rake db:create:all
 
-7. Then log into the mysql server and pipe in the `db.structure.sql` file manually into the database you want to use, for example:
+7. Then log into the mysql server and pipe the `structure.sql` file into the database you want to use, for example:
 
     mysql -u root wheelmap_development < db/structure.sql
 
