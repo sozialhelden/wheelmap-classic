@@ -24,7 +24,7 @@ ActiveAdmin.register NodeType do
     column :osm_value, :sortable => :osm_value  do |node_type|
       link_to node_type.osm_value, "http://wiki.openstreetmap.org/wiki/Tag:#{node_type.osm_key}%3D#{node_type.osm_value}", :target => '_blank'
     end
-    default_actions
+    actions
   end
 
   form do |f|

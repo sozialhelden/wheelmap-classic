@@ -59,7 +59,7 @@ ActiveAdmin.register User do
     column 'POIs tagged', :tag_counter
     column 'POIs edited', :edit_counter
     column 'POIs created', :create_counter
-    default_actions
+    actions
   end
 
   form do |f|
@@ -76,6 +76,6 @@ ActiveAdmin.register User do
     f.inputs "Providers" do
       f.input :providers, :collection => Provider.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort
     end
-    f.buttons
+    f.actions
   end
 end

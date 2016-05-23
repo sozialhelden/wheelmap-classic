@@ -12,7 +12,7 @@ group :default do
   gem 'devise-encryptable'
   gem 'redgreengrid', :git => 'https://github.com/christoph-buente/redgreengrid.git'
   gem 'haml'
-  gem 'formtastic', '2.2.1'
+  gem 'formtastic', '~> 3.1'
   gem 'formtastic-bootstrap'
   gem 'simple_form'
   gem 'delayed_job'
@@ -45,8 +45,7 @@ group :default do
   gem 'multipart-post'
   gem 'sass-rails' # goes here instead of group assets because activeadmin uses it in the initializer
   gem 'sass', '~>3.3' # >= 3.3 is needed for BEM syntax
-  gem 'activeadmin', '0.6.6'
-  gem 'meta_search'
+  gem 'activeadmin', '1.0.0pre2'
   gem 'kaminari', '~> 0.14'
   gem 'kaminari-i18n'
   gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: 'c2ee2e8' # to be used before release 0.11.0 becaus of deprecation warnings
@@ -95,6 +94,7 @@ group :test, :development do
   gem 'guard'
   gem 'guard-rspec'
   gem 'pry'
+  gem 'dotenv-rails'
 end
 
 group :test do
