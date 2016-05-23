@@ -12,7 +12,7 @@ ActiveAdmin.register ProvidedPoi do
 
   action_item do
     link_to upload_csv_admin_provided_pois_path do
-      icon( :'arrow_up') + "Upload CSV"
+      "Upload CSV"
     end
   end
 
