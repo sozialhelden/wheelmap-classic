@@ -21,6 +21,6 @@ ActiveAdmin.register Provider do
       f.input :name
       f.input :logo, hint: 'Das Logo muss exakt 44x44 Pixel gross sein.'
     end
-    f.buttons
+    f.actions
   end
 end

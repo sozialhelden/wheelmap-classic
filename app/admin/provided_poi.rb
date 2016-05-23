@@ -57,7 +57,7 @@ ActiveAdmin.register ProvidedPoi do
       f.input :wheelchair, as: :select, collection: Poi::WHEELCHAIR_STATUS_VALUES.map{|k,v| [I18n.t("wheelchairstatus.#{k}"),k]}
       f.input :url
     end
-    f.buttons
+    f.actions
   end
 
 
