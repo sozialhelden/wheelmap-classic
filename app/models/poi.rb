@@ -92,8 +92,7 @@ class Poi < ActiveRecord::Base
   scope :within_region, lambda {|region| {:conditions => {:region_id => region.id}}}
   scope :region_id_eq, lambda {|region_id|  where(region_id: Region.find(region_id).self_and_descendants.map(&:id))}
 
-  # TODO Must be checked how to implement search_methods with the ransack gem
-  # search_methods :region_id_eq
+  search_methods :region_id_eq
 
   scope :within_bbox, lambda {|left, bottom, right, top|{
     :conditions => "MBRContains(GeomFromText('POLYGON(( \

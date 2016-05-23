@@ -18,7 +18,7 @@ ActiveAdmin.register Region do
     column :name
     column :depth
     column :parent
-    actions
+    default_actions
   end
 
   show do |r|
