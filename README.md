@@ -60,7 +60,7 @@ $ port install phantomjs   # via MacPorts
 On Ubuntu 12.04, see either [this description](https://mediocre.com/forum/topics/phantomjs-2-and-travis-ci-we-beat-our-heads-against-a-wall-so-you-dont-have-to) or run:
 
 ```
-$ sudo apt-get install phantomjs
+$ sudo apt-get install phantomjs lbwebp2 libicu48 libjpeg8 libfontconfig
 ```
 
 
@@ -79,6 +79,10 @@ Copy the example application config:
 Copy the example openstreetmap config:
 
     cp config/open_street_map.SAMPLE.yml config/open_street_map.yml
+
+Copy the example environment variable config file:
+
+    cp .env.sample .env
 
 Copy the example database config and edit accordingly:
 

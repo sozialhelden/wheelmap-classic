@@ -8,7 +8,7 @@ group :default do
   gem 'rgeo-activerecord'
   gem 'activerecord-mysql2spatial-adapter'
   gem 'oauth'
-  gem 'devise', '~> 2.2'
+  gem 'devise', '~> 3.2.0'
   gem 'devise-encryptable'
   gem 'redgreengrid', :git => 'https://github.com/christoph-buente/redgreengrid.git'
   gem 'haml'
@@ -24,7 +24,7 @@ group :default do
   gem "routing-filter"
   gem 'newrelic_rpm'
   gem 'acts_as_api'
-  gem 'inherited_resources', '~> 1.4.0'
+  gem 'inherited_resources', '~> 1.6.0'
   gem 'has_scope'
   gem 'rake', '~> 10.4'
   gem 'yajl-ruby'
@@ -73,6 +73,7 @@ group :default do
   gem 'test-unit', '~> 3.0', require: false
   gem 'react-rails', '~>1.4.1'
   gem 'js-routes' # Because of initializer
+  gem 'dotenv-rails'
 end
 
 group :assets do

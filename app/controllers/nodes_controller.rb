@@ -5,6 +5,7 @@ class NodesController < ApplicationController
 
   require 'float'
   require 'yajl'
+  include AuthenticateUserFromToken
   include ActionView::Helpers::CacheHelper
   include ActionView::Helpers::AssetTagHelper
   include NewRelic::Agent::MethodTracer
@@ -39,7 +40,7 @@ class NodesController < ApplicationController
     if params[:bbox].present?
       normalize_bbox
     end
-    
+
     @limit = params[:limit].try(:to_i) || 300
     # Allow max 1000 Pois per request.
     @limit = [@limit, 1000].min
@@ -352,7 +353,7 @@ class NodesController < ApplicationController
           center = geo_factory.point(lon.to_f, lat.to_f)
 
           pois = Poi.where(osm_id: ids).select('osm_id, geom').limit(limit)
-          
+
           valid_pois = pois.select do |poi|
             center.distance(poi.geom).abs <= SIMILAR_MAX_DISTANCE
           end

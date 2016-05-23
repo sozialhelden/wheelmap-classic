@@ -1,4 +1,5 @@
 class WidgetsController < ApplicationController
+  include AuthenticateUserFromToken
 
   before_filter :authenticate_user!, :only => [:update]
   before_filter :authenticate_with_api_key, :only => [:update, :embed]
