@@ -37,7 +37,7 @@ ActiveAdmin.register Photo do
     end
     column :taken_at
     column :created_at
-    default_actions
+    actions
   end
 
   form html: { multipart: true } do |f|
@@ -48,7 +48,7 @@ ActiveAdmin.register Photo do
     f.inputs do
       f.input :image
       f.input :caption
-      f.input :taken_at, as: :datetime
+      f.input :taken_at
     end
     f.actions
   end
