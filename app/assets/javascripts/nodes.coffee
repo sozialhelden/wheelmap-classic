@@ -250,7 +250,23 @@ if $dropzoneClickable.length > 0
 
 @streetview = ->
   element = document.getElementById('streetview')
+
+  unless element?
+    return
+
   lat = parseFloat(element.getAttribute('data-lat'))
   lon = parseFloat(element.getAttribute('data-lon'))
 
-  new google.maps.StreetViewPanorama element, position: { lat: lat, lng: lon }
+  position = new google.maps.LatLng(lat, lon)
+
+  streetViewService = new google.maps.StreetViewService
+
+  streetViewService.getPanorama { location: position }, (data, status) ->
+    unless status == google.maps.StreetViewStatus.OK
+      return
+
+    heading = google.maps.geometry.spherical.computeHeading(data.location.latLng, position)
+
+    streetView = new google.maps.StreetViewPanorama element,
+      position: position
+      pov: { heading: heading, pitch: 0 }
