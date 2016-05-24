@@ -23,10 +23,12 @@ class Photo < ActiveRecord::Base
 
   def image_versions
     i = []
-    i << {:type => "original", :url => image_path(image.url.to_s), :width => image.width, :height => image.height}
+    # @TODO use image_url when we moved to Rails 4
+    i << {:type => "original", :url => asset_paths.compute_public_path(image.url.to_s, 'images', { protocol: :https }), :width => image.width, :height => image.height}
     image.versions.keys.each do |version|
       v = version.to_sym
-      i << {:type => v, :url => image_path(image.url(v).to_s), :width => image.send(v).width, :height => image.send(v).height }
+      # @TODO use image_url when we moved to Rails 4
+      i << {:type => v, :url => asset_paths.compute_public_path(image.url(v).to_s, 'images', { protocol: :https }), :width => image.send(v).width, :height => image.send(v).height }
     end
     i
   end
