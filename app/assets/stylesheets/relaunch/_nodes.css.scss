@@ -744,6 +744,10 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
 
 .node-streetview {
   @include clearfix();
+
+  &-viewport {
+    height: 400px;
+  }
 }
 
 .node-streetview,
