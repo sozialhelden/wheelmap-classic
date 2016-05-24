@@ -41,7 +41,7 @@ ActiveAdmin.register NodeType do
       f.input :alt_osm_value
 
     end
-    f.buttons
+    f.actions
   end
 
 

@@ -76,6 +76,6 @@ ActiveAdmin.register User do
     f.inputs "Providers" do
       f.input :providers, :collection => Provider.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort
     end
-    f.buttons
+    f.actions
   end
 end
