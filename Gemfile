@@ -37,6 +37,7 @@ group :default do
   gem 'ruport'
 
   gem 'dalli'
+  gem 'actionpack-page_caching', '~> 1.0', '>= 1.0.2'
 
   gem 'big_sitemap'
   gem 'unicorn'
