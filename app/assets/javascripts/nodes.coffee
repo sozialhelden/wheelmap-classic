@@ -261,7 +261,12 @@ if $dropzoneClickable.length > 0
 
   streetViewService = new google.maps.StreetViewService
 
-  streetViewService.getPanorama { location: position }, (data, status) ->
+  streetViewLocationRequest =
+    location: position,
+    preference: google.maps.StreetViewPreference.NEAREST,
+    source: google.maps.StreetViewSource.OUTDOOR
+
+  streetViewService.getPanorama streetViewLocationRequest, (data, status) ->
     unless status == google.maps.StreetViewStatus.OK
       return
 
