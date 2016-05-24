@@ -65,7 +65,7 @@ ActiveAdmin.register Region do
     f.inputs do
       f.input :name
     end
-    f.buttons
+    f.actions
   end
 
 end
