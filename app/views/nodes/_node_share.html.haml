@@ -10,5 +10,5 @@
       =link_to "//www.facebook.com/sharer/sharer.php?s=100&p[url]=#{node_url(node_share)}", :'data-toggle' => 'share', :'data-name' => 'facebook', target: '_blank' do
         =fa_icon('facebook fixed-width', text: t('nodes.show.share.facebook'))
     %li
-      =mailme_to(nil, body: t('nodes.show.share.text', name: node_share.name) + " (#{node_url(node_share)})") do
+      =mail_to(nil, body: t('nodes.show.share.text', name: node_share.name) + " (#{node_url(node_share)})") do
         =fa_icon('envelope-alt fixed-width', text: t('nodes.show.share.email'))
