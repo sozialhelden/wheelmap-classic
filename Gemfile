@@ -113,7 +113,7 @@ group :test do
   gem 'nokogiri'
   gem 'pickle', :require => false
   gem 'launchy', :require => false
-  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'syntax'
   gem 'email_spec'
 end
