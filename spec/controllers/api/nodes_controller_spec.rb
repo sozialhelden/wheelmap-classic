@@ -251,7 +251,7 @@ describe Api::NodesController do
     it "access should be denied if osm credentials are missing" do
       put(:update, {:id => @node.id, :name => 'Something new', :api_key => @user.authentication_token, :locale => 'en'})
       expect(response.status).to eql 403
-      expect(response.body).to match(/Um Daten zu \\u00e4ndern ben\\u00f6tigst Du einen OpenStreetMap Account./)
+      expect(response.body).to match(/Um Daten zu ändern benötigst Du einen OpenStreetMap Account./)
     end
 
     it "should not update node when params are missing or invalid" do
@@ -413,7 +413,7 @@ describe Api::NodesController do
         post(:create, {:name => 'Something new', :api_key => @user.authentication_token})
       }.not_to change(Delayed::Job, :count)
       expect(response.status).to eql 403
-      expect(response.body).to match(/Um Daten zu \\u00e4ndern ben\\u00f6tigst Du einen OpenStreetMap Account./)
+      expect(response.body).to match(/Um Daten zu ändern benötigst Du einen OpenStreetMap Account./)
     end
 
     it "should not create node when params are missing or invalid" do
