@@ -54,8 +54,8 @@ GEM
       activesupport (= 4.0.13)
       arel (~> 4.0.0)
     activerecord-deprecated_finders (1.0.4)
-    activerecord-import (0.2.0)
-      rails (>= 3.0.0rc)
+    activerecord-import (0.13.0)
+      activerecord (>= 3.0)
     activerecord-mysql2spatial-adapter (0.5.0.nonrelease)
       mysql2 (>= 0.2.13)
       rgeo-activerecord (~> 1.0)
@@ -520,7 +520,7 @@ PLATFORMS
 DEPENDENCIES
   actionpack-page_caching (~> 1.0, >= 1.0.2)
   activeadmin (~> 1.0.0.pre2)
-  activerecord-import (< 0.3.0)
+  activerecord-import (>= 0.4.0)
   activerecord-mysql2spatial-adapter (~> 0.5.0.nonrelease)
   activeresource
   acts_as_api
