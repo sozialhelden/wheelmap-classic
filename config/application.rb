@@ -26,6 +26,18 @@ module Wheelmap
     require  'rack_i18n_locale_switcher'
 #    require  'rack_request_logger'
     config.middleware.use(Rack::I18nLocaleSwitcher)
+    config.i18n.fallbacks = true
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.i18n.default_locale = :de
+    config.i18n.enforce_available_locales = false
+
+    config.i18n.available_locales = [:de]
+    # Use all locales that we have translations when not in production
+    Dir.glob(Rails.root.join('config', 'locales', '*')).each do |directory|
+      locale = File.basename(directory).to_sym
+      config.i18n.available_locales << locale unless I18n.available_locales.include?(locale)
+    end
+
  #   config.middleware.use(Rack::RequestLogger)
 
     # Activate observers that should always be running.
@@ -35,9 +47,6 @@ module Wheelmap
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
 
-    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    config.i18n.fallbacks = true
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
