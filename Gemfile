@@ -89,6 +89,7 @@ group :assets do
   gem 'compass-colors'
   gem 'compass-rails'
   gem 'bootstrap-sass', '~> 2.3'
+  gem 'sprockets-rails', :require => 'sprockets/railtie'
 end
 
 group :test, :development do
