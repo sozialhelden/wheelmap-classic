@@ -10,7 +10,7 @@ Rails.application.config.assets.precompile += %w( .svg .eot .woff .ttf )
 # Needed for the ActiveAdmin's manifest assets.
 Rails.application.config.assets.precompile += ['active_admin.css', 'active_admin.js']
 
-# Needed for the ActiveAdmin's manifest assets.
+# Precompile the manifests for assets pipeline ('/assets/application.scss' + '/assets/application.js')
 Rails.application.config.assets.precompile += ['application.scss', 'application.js']
 
 # Precompile additional assets for assets pipeline (/assets/stylesheets)

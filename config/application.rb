@@ -59,13 +59,13 @@ module Wheelmap
     # Add the flash path
     config.assets.paths << Rails.root.join('app', 'assets', 'flash')
 
-    # Add the flash path
+    # Add the javascripts path
     config.assets.paths << Rails.root.join('app', 'assets', 'javascripts')
 
-    # Add the flash path
+    # Add the images path
     config.assets.paths << Rails.root.join('app', 'assets', 'images')
 
-    # Add the flash path
+    # Add the stylesheets path
     config.assets.paths << Rails.root.join('app', 'assets', 'stylesheets')
 
     config.to_prepare do
