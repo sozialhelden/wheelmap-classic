@@ -98,7 +98,7 @@ Wheelmap::Application.routes.draw do
       post :reset_token
       get  :after_signup_edit
       put  :after_signup_update
-      put :terms
+      patch :terms
     end
   end
 
@@ -114,7 +114,7 @@ Wheelmap::Application.routes.draw do
     end
 
     resources :assets,      :only => [:index]
-    
+
     resources :nodes,       :only => [:index, :show, :update, :create] do
       collection do
         get :search
