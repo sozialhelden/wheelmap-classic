@@ -50,6 +50,7 @@ group :default do
   gem 'multipart-post'
   gem 'sass-rails' # goes here instead of group assets because activeadmin uses it in the initializer
   gem 'sass', '~>3.3' # >= 3.3 is needed for BEM syntax
+  gem 'bootstrap-sass', '~> 2.3'
 
   gem 'activeadmin', '~> 1.0.0.pre2'
 
@@ -88,7 +89,6 @@ group :assets do
   gem 'compass'
   gem 'compass-colors'
   gem 'compass-rails'
-  gem 'bootstrap-sass', '~> 2.3'
   gem 'sprockets-rails', :require => 'sprockets/railtie'
 end
 
