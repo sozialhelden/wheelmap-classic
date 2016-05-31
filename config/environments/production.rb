@@ -13,9 +13,13 @@ Wheelmap::Application.configure do
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
-
   # Compress JavaScripts and CSS
   config.assets.compress = true
+
+  # @TODO Enable compressors and find alternative for :yui
+  # Compress CSS and JS faster in production
+  # config.assets.css_compressor = :yui
+  # config.assets.js_compressor = :uglifier
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false

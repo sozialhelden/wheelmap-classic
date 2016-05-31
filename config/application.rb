@@ -65,24 +65,17 @@ module Wheelmap
     # Add the fonts path
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
-    # Precompile additional assets
-    config.assets.precompile += %w( .svg .eot .woff .ttf )
-
     # Add the flash path
     config.assets.paths << Rails.root.join('app', 'assets', 'flash')
 
-    # Precompile additional assets
-    config.assets.precompile += %w( .swf )
+    # Add the javascripts path
+    config.assets.paths << Rails.root.join('app', 'assets', 'javascripts')
 
-    # Needed for the ActiveAdmin's manifest assets.
-    config.assets.precompile += ['active_admin.css', 'active_admin.js']
+    # Add the images path
+    config.assets.paths << Rails.root.join('app', 'assets', 'images')
 
-    config.assets.precompile += %w( relaunch.css relaunch_ie.css screen.css node.css nodes.css search.css react-select.css)
-    config.assets.precompile += %w( relaunch.js modernizr.js search.js nodes.js ember.js ember-data.js app.js test.js)
-    config.assets.precompile += %w( i18n/*.js react-application.js )
-
-    # Version of your assets, change this if you want to expire all your assets
-    config.assets.version = '1.0'
+    # Add the stylesheets path
+    config.assets.paths << Rails.root.join('app', 'assets', 'stylesheets')
 
     config.to_prepare do
       Devise::SessionsController.layout "relaunch"
