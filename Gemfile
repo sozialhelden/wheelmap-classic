@@ -48,11 +48,7 @@ group :default do
   gem 'librato-metrics'
   gem 'librato-rails'
   gem 'multipart-post'
-  gem 'sass-rails' # goes here instead of group assets because activeadmin uses it in the initializer
-  gem 'sass', '~>3.3' # >= 3.3 is needed for BEM syntax
-
   gem 'activeadmin', '~> 1.0.0.pre2'
-
   gem 'kaminari', '~> 0.14'
   gem 'kaminari-i18n'
   gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: 'c2ee2e8' # to be used before release 0.11.0 becaus of deprecation warnings
@@ -79,17 +75,19 @@ group :default do
   gem 'react-rails', '~>1.4.1'
   gem 'js-routes' # Because of initializer
   gem 'dotenv-rails'
-end
 
-group :assets do
+  gem 'sass-rails'
+  gem 'sass', '~>3.3' # >= 3.3 is needed for BEM syntax
+  gem 'bootstrap-sass', '~> 2.3'
   gem 'jquery-rails', '2.3.0'
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'compass'
   gem 'compass-colors'
   gem 'compass-rails'
-  gem 'bootstrap-sass', '~> 2.3'
+  gem 'sprockets-rails', :require => 'sprockets/railtie'
 end
+
 
 group :test, :development do
   gem 'rspec-rails', '~> 3.4'

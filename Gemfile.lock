@@ -611,6 +611,7 @@ DEPENDENCIES
   sass-rails
   shoulda-matchers (~> 3.1)
   simple_form
+  sprockets-rails
   syntax
   test-unit (~> 3.0)
   therubyracer
