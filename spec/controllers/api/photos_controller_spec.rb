@@ -83,11 +83,6 @@ describe Api::PhotosController do
         expect(response.status).to eql 201
       }.to change(Photo, :count).by(1)
     end
-
-    it "is not possible to upload images for a user" do
-      post(:create, :url => api_user_photos_path, :api_key => user.authentication_token, :photo => {:image => fixture_file_upload('/placeholder.jpg')})
-      expect(response.status).to eql 400
-    end
   end
 
   context 'destroy action' do
