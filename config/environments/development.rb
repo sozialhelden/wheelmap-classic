@@ -43,10 +43,6 @@ Wheelmap::Application.configure do
 
   config.assets.digest = false
 
-  # Log the query plan for queries taking more than this (works
-  # with SQLite, MySQL, and PostgreSQL)
-  config.active_record.auto_explain_threshold_in_seconds = 2.0
-
   config.ember.variant = :development
 
 end
