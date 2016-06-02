@@ -5,7 +5,7 @@ class ProvidedPoi < ActiveRecord::Base
   validates :poi_id, :provider, :provider_id, presence: true
   validates_uniqueness_of :poi_id, :scope => :provider_id
 
-  scope :with_wheelchair, where("wheelchair > ''")
+  scope :with_wheelchair, -> { where("wheelchair > ''") }
 
   def self.import(provider_id, csv_file)
     provider = Provider.find(provider_id)
