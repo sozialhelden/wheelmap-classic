@@ -16,6 +16,8 @@ Wheelmap::Application.configure do
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
+  config.eager_load = true
+
   # @TODO Enable compressors and find alternative for :yui
   # Compress CSS and JS faster in production
   # config.assets.css_compressor = :yui
