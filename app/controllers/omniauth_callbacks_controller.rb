@@ -46,7 +46,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def find_or_create_user
-    User.find_or_create_by_osm_id(request.env['omniauth.auth']['uid'])
+    User.find_or_create_by(osm_id: request.env['omniauth.auth']['uid'])
   end
 
 end
