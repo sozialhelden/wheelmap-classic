@@ -7,6 +7,7 @@
   require 'factory_girl'
   require 'webmock/rspec'
   require 'carrierwave/test/matchers'
+  require 'shoulda-matchers'
 
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
@@ -56,4 +57,11 @@
 
     # replace deprecated ExampleGroup#example
     config.expose_current_running_example_as :example
+  end
+
+  Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
   end
