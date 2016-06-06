@@ -85,7 +85,7 @@ class Poi < ActiveRecord::Base
   scope :without_node_type, -> { where('node_type_id IS NULL') }
   scope :including_category, -> { includes(:category) }
   scope :including_region, -> { includes(:region) }
-  scope :including_providers, :include => { :provided_pois => :provider }
+  scope :including_providers, -> { includes(provided_pois: :provider) }
   scope :has_provider, -> { joins(:provided_pois) }
   scope :has_photo, -> { joins(:photos) }
   scope :within_region, lambda {|region| where(region_id: region.id)}
