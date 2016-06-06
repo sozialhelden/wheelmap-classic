@@ -1,7 +1,7 @@
 const { fetchJSON } = require('./api');
 const setParams = require('./setParams');
 
-const PHOTON = 'http://photon.komoot.de';
+const PHOTON = '//photon.komoot.de';
 const PHOTON_API = PHOTON + '/api';
 const PHOTON_REVERSE = PHOTON + '/reverse';
 
