@@ -85,8 +85,8 @@ GEM
     arel (4.0.2)
     autotest (4.4.6)
       ZenTest (>= 4.4.1)
-    awesome_nested_set (2.1.6)
-      activerecord (>= 3.0.0)
+    awesome_nested_set (3.1.1)
+      activerecord (>= 4.0.0, < 5.1)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -325,7 +325,7 @@ GEM
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (4.7.5)
-    multi_json (1.11.2)
+    multi_json (1.12.1)
     multi_test (0.1.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -489,7 +489,7 @@ GEM
     thread_safe (0.3.5)
     tilt (2.0.2)
     transaction-simple (1.4.0.2)
-    tzinfo (0.3.47)
+    tzinfo (0.3.49)
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -527,7 +527,7 @@ DEPENDENCIES
   airbrake (~> 4.1)
   apipie-rails
   autotest
-  awesome_nested_set (< 3.0)
+  awesome_nested_set (~> 3.1)
   backup
   big_sitemap
   bootstrap-sass (~> 2.3)

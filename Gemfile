@@ -58,7 +58,7 @@ group :default do
   gem 'flash_cookie_session'
   gem 'cacheable_flash'
   gem 'exifr'
-  gem 'awesome_nested_set', '<3.0'
+  gem 'awesome_nested_set', '~>3.1'
   gem 'i18n', '<0.7.0'
   gem 'i18n-js', '~> 3.0.0.rc9'
   gem 'font-awesome-rails', '~> 3.2.1'
