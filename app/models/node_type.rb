@@ -26,14 +26,14 @@ class NodeType < ActiveRecord::Base
       keys = keys.uniq.sort
       @@combination = {}
       keys.each do |osm_key|
-        values = NodeType.all(:conditions => {:osm_key => osm_key})
+        values = NodeType.where(:osm_key => osm_key).to_a
         values.each do |value|
           osm_value = value.osm_value
           @@combination[osm_key] ||= {}
           @@combination[osm_key][osm_value] = value.id
         end
 
-        values = NodeType.all(:conditions => {:alt_osm_key => osm_key})
+        values = NodeType.where(:alt_osm_key => osm_key).to_a
         values.each do |value|
           osm_value = value.alt_osm_value
           @@combination[osm_key] ||= {}
