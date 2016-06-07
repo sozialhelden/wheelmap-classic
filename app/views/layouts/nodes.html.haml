@@ -3,5 +3,6 @@
 
 -content_for :javascript do
   =javascript_include_tag :nodes
+  %script{ async: '', defer: '', src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBm0u6VHlChpumIfO0Y9SnUrSujegK-crA&callback=streetview' }
 
 =render :template => "layouts/relaunch"

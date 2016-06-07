@@ -72,46 +72,74 @@ $ sudo apt-get install phantomjs lbwebp2 libicu48 libjpeg8 libfontconfig
 
 ## Getting started
 
-Copy the example application config:
+1. Copy the example application config:
 
+    ```
     cp config/application.yml.sample config/application.yml
+    ```
 
-Copy the example openstreetmap config:
+2. Copy the example openstreetmap config:
 
+    ```
     cp config/open_street_map.SAMPLE.yml config/open_street_map.yml
+    ```
 
-Copy the example environment variable config file:
+3. Copy the example environment variable config file:
 
+    ```
     cp .env.sample .env
+    ```
 
-Copy the example database config and edit accordingly:
+4. Copy the example database config and edit accordingly:
 
+    ```
     cp config/database.SAMPLE.yml config/database.yml
+    ```
 
-Edit `database.yml` to reflect your current database settings.
+5. Edit `database.yml` to reflect your current database settings.
 
-Now lets create the actual database and prepare minimal data:
+6. Now lets create the actual database and prepare minimal data:
 
-    bundle exec rake db:create:all db:migrate db:seed
+    ```
+    bundle exec rake db:create:all
+    ```
 
-And get some POI data into the database:
+7. Then log into the mysql server and pipe the `structure.sql` file into the database you want to use, for example:
 
+    ```
+    mysql -u root wheelmap_development < db/structure.sql
+    ```
+
+8. Run the rake task to seed data:
+
+    ```
+    bundle exec rake db:seed
+    ```
+
+9. And get some POI data into the database:
+
+    ```
     wget http://download.geofabrik.de/europe/germany/berlin-latest.osm.bz2
     bzcat berlin-latest.osm.bz2 | bundle exec rake osm:import
+    ```
 
-Install all node javascript dependencies:
+10. Install all node javascript dependencies:
 
+    ```
     npm install
+    ```
 
-Finally startup a local rails server
+11. Finally startup a local rails server
 
+    ```
     bundle exec rails server
+    ```
 
-And visit the website in your browser: http://0.0.0.0:3000
+And visit the website in your browser: `http://0.0.0.0:3000`
 
 ## Documentation
 
-Please also check our [WIKI](https://github.com/sozialhelden/wheelmap/wiki), if you need more informations to specific topics and can't find them here, e.g. how to generate a sprite or how to test our app. 
+Please also check our [WIKI](https://github.com/sozialhelden/wheelmap/wiki), if you need more informations to specific topics and can't find them here, e.g. how to generate a sprite or how to test our app.
 
 ## License
 

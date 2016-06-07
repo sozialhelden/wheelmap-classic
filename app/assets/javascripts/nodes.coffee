@@ -247,3 +247,31 @@ if $dropzoneClickable.length > 0
       $submit.click (e) ->
         e.preventDefault()
         $fallback.closest('form').submit()
+
+@streetview = ->
+  element = document.getElementById('streetview')
+
+  unless element?
+    return
+
+  lat = parseFloat(element.getAttribute('data-lat'))
+  lon = parseFloat(element.getAttribute('data-lon'))
+
+  position = new google.maps.LatLng(lat, lon)
+
+  streetViewService = new google.maps.StreetViewService
+
+  streetViewLocationRequest =
+    location: position,
+    preference: google.maps.StreetViewPreference.NEAREST,
+    source: google.maps.StreetViewSource.OUTDOOR
+
+  streetViewService.getPanorama streetViewLocationRequest, (data, status) ->
+    unless status == google.maps.StreetViewStatus.OK
+      return
+
+    heading = google.maps.geometry.spherical.computeHeading(data.location.latLng, position)
+
+    streetView = new google.maps.StreetViewPanorama element,
+      position: position
+      pov: { heading: heading, pitch: 0 }

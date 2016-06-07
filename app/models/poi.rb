@@ -92,8 +92,6 @@ class Poi < ActiveRecord::Base
   scope :within_region, lambda {|region| {:conditions => {:region_id => region.id}}}
   scope :region_id_eq, lambda {|region_id|  where(region_id: Region.find(region_id).self_and_descendants.map(&:id))}
 
-  search_methods :region_id_eq
-
   scope :within_bbox, lambda {|left, bottom, right, top|{
     :conditions => "MBRContains(GeomFromText('POLYGON(( \
                     #{left} #{bottom}, #{right} #{bottom}, \

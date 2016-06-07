@@ -18,7 +18,7 @@ ActiveAdmin.register Region do
     column :name
     column :depth
     column :parent
-    default_actions
+    actions
   end
 
   show do |r|
@@ -65,7 +65,7 @@ ActiveAdmin.register Region do
     f.inputs do
       f.input :name
     end
-    f.buttons
+    f.actions
   end
 
 end

@@ -6,14 +6,14 @@ ActiveAdmin.register Provider do
 
   action_item do
     link_to upload_csv_admin_provided_pois_path do
-      icon( :'arrow_up') + "Upload CSV"
+      "Upload CSV"
     end
   end
 
   index do
     column :id
     column :name
-    default_actions
+    actions
   end
 
   form html: { multipart: true } do |f|
@@ -21,6 +21,6 @@ ActiveAdmin.register Provider do
       f.input :name
       f.input :logo, hint: 'Das Logo muss exakt 44x44 Pixel gross sein.'
     end
-    f.buttons
+    f.actions
   end
 end

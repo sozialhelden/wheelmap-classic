@@ -79,7 +79,7 @@ ActiveAdmin.register Poi do
     column :photos, :sortable => true do |poi|
       link_to "Photos", admin_poi_photos_path(poi) if poi.photos.size > 0
     end
-    default_actions
+    actions
   end
 
   show :title => :headline do |poi|

@@ -8,11 +8,10 @@ class Api::AssetsController < Api::ApiController
     end
   end
 
-
   protected
 
   def collection
-    @assets ||= [Asset.new(:id => 1, :name => :marker), Asset.new(:id => 2, :name => :icons)]
+    @assets ||= [Asset.new(id: 1, name: :marker), Asset.new(id: 2, name: :icons)]
   end
 
   def meta

@@ -12,7 +12,7 @@ ActiveAdmin.register ProvidedPoi do
 
   action_item do
     link_to upload_csv_admin_provided_pois_path do
-      icon( :'arrow_up') + "Upload CSV"
+      "Upload CSV"
     end
   end
 
@@ -47,7 +47,7 @@ ActiveAdmin.register ProvidedPoi do
    end
    column :provider
    column :url
-   default_actions
+   actions
   end
 
   form do |f|
@@ -57,7 +57,7 @@ ActiveAdmin.register ProvidedPoi do
       f.input :wheelchair, as: :select, collection: Poi::WHEELCHAIR_STATUS_VALUES.map{|k,v| [I18n.t("wheelchairstatus.#{k}"),k]}
       f.input :url
     end
-    f.buttons
+    f.actions
   end
 
 
