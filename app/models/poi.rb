@@ -32,7 +32,7 @@ class Poi < ActiveRecord::Base
   WHEELCHAIR_TOILET_VALUES = {:yes => true, :no => false, :unknown => nil}
 
   belongs_to :region, :touch => false
-  belongs_to :node_type, :touch => false, :include => :category
+  belongs_to :node_type, -> { includes(:category) }, touch: false
   has_one :category, :through => :node_type
 
   validate :relevant?
