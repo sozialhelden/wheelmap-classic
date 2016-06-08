@@ -28,14 +28,14 @@ describe Api::PhotosController do
 
     it "should scope photos to given node" do
       expect(subject).to receive(:parent).and_return(poi)
-      expect(poi).to receive(:photos).and_return(Photo.scoped({}))
+      expect(poi).to receive(:photos).and_return(Photo.all)
       get(:index, :node_id => poi.id, :api_key => user.authentication_token)
       expect(response).to be_success
     end
 
     it "should scope photos to given user" do
       expect(subject).to receive(:parent).and_return(user)
-      expect(user).to receive(:photos).and_return(Photo.scoped({}))
+      expect(user).to receive(:photos).and_return(Photo.all)
       get(:index, :url => api_user_photos_path, :api_key => user.authentication_token)
       expect(response).to be_success
     end
