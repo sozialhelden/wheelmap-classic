@@ -8,10 +8,6 @@ ActiveAdmin.register Provider do
     link_to "Upload CSV", upload_csv_admin_provided_pois_path
   end
 
-  collection_action :upload_csv, title: "Upload CSV" do
-    render "/admin/provided_pois/upload_csv"
-  end
-
   index do
     column :id
     column :name
