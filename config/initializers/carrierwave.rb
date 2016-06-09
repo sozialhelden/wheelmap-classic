@@ -60,4 +60,5 @@ CarrierWave.configure do |config|
   config.permissions = 0644
 #  config.directory_permissions = 0755
   config.storage = :file
+  config.asset_host = 'staging.wheelmap.org'
 end
