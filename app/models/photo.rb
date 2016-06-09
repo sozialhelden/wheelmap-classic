@@ -23,9 +23,9 @@ class Photo < ActiveRecord::Base
 
   def image_versions
     i = []
-    i << {:type => "original", :url => asset_url(image.url.to_s, { protocol: :https }), :width => image.width, :height => image.height}
+    i << {:type => "original", :url => asset_url(image.url.to_s), :width => image.width, :height => image.height}
     image.versions.each do |key, value|
-      i << {:type => key, :url => asset_url(value.url, { protocol: :https }), :width => value.width, :height => value.height }
+      i << {:type => key, :url => asset_url(value.url), :width => value.width, :height => value.height }
     end
     i
   end
