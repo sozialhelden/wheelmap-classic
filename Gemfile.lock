@@ -102,6 +102,7 @@ GEM
       sass (~> 3.4)
       thor (~> 0.19)
     builder (3.0.4)
+    byebug (9.0.5)
     cacheable_flash (0.3.4)
       json
       stackable_flash (>= 0.0.7)
@@ -351,6 +352,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.4.0)
+      byebug (~> 9.0)
+      pry (~> 0.10)
     rack (1.4.7)
     rack-cache (1.6.1)
       rack (>= 0.4)
@@ -586,6 +590,7 @@ DEPENDENCIES
   omniauth-osm
   poltergeist
   pry
+  pry-byebug (~> 3.4)
   rails (= 3.2.22.1)
   rake (~> 10.4)
   rb-fsevent
@@ -619,4 +624,4 @@ DEPENDENCIES
   yajl-ruby
 
 BUNDLED WITH
-   1.11.2
+   1.12.5
