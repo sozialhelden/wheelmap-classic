@@ -57,10 +57,10 @@ $ brew install phantomjs   # via Homebrew
 $ port install phantomjs   # via MacPorts
 ```
 
-On Ubuntu 12.04, see either [this description](https://mediocre.com/forum/topics/phantomjs-2-and-travis-ci-we-beat-our-heads-against-a-wall-so-you-dont-have-to) or run:
+On Ubuntu 12.04, run:
 
 ```
-$ sudo apt-get install phantomjs lbwebp2 libicu48 libjpeg8 libfontconfig
+$ sudo npm install -g phantomjs
 ```
 
 
