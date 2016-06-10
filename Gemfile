@@ -94,6 +94,7 @@ group :test, :development do
   gem 'guard'
   gem 'guard-rspec'
   gem 'pry'
+  gem 'pry-byebug', '~> 3.4'
 end
 
 group :test do
