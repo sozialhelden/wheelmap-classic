@@ -60,7 +60,7 @@ $ port install phantomjs   # via MacPorts
 On Ubuntu 12.04, run:
 
 ```
-$ sudo npm install -g phantomjs
+$ sudo npm install -g phantomjs-prebuilt
 ```
 
 
