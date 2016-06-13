@@ -40,5 +40,5 @@ Wheelmap::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 
-  config.action_controller.asset_host = "localhost"
+  config.action_controller.asset_host = "localhost:3000"
 end
