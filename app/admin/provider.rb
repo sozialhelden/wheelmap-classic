@@ -4,10 +4,8 @@ ActiveAdmin.register Provider do
 
   filter :name
 
-  action_item do
-    link_to upload_csv_admin_provided_pois_path do
-      "Upload CSV"
-    end
+  action_item(:upload_csv, :only => :index) do
+    link_to "Upload CSV", upload_csv_admin_provided_pois_path
   end
 
   index do
