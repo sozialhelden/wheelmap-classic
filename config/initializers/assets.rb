@@ -17,5 +17,5 @@ Rails.application.config.assets.precompile += ['application.js']
 Rails.application.config.assets.precompile += %w( relaunch.css relaunch_ie.css screen.css node.css nodes.css search.css react-select.css)
 
 # Precompile additional assets for assets pipeline (/assets/javascripts)
-Rails.application.config.assets.precompile += %w( relaunch.js modernizr.js search.js nodes.js ember.js ember-data.js app.js test.js)
+Rails.application.config.assets.precompile += %w( relaunch.js modernizr.js search.js nodes.js app.js test.js)
 Rails.application.config.assets.precompile += %w( i18n/*.js react-application.js )
