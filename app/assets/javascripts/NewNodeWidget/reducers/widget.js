@@ -1,19 +1,21 @@
 import { Map, List, fromJS } from 'immutable';
 import { handleActions } from 'redux-actions';
 
-import { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } from '../models/sections';
+import sections from '../models/sections';
 import * as actions from '../actions';
 import Node from '../../common/models/Node';
 
 export const DEFAULT_STATE = new Map({
   activeSection: null,
-  sections: new List([ NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW ]),
+  sections,
   node: new Node(),
   mapCenter: new Map({ lat: 52.520007, lon: 13.404954 }),
   mapZoom: 14,
   similarNodes: new List(),
   errors: new Map(),
-  loading: false
+  loading: false,
+  nodeAddressLoading: false,
+  nodeCenterLoading: false
 });
 
 export default handleActions({
@@ -37,5 +39,11 @@ export default handleActions({
   ),
   [actions.LOAD]: (state, { payload: loading }) => (
     state.set('loading', loading)
+  ),
+  [actions.LOAD_NODE_ADDRESS]: (state, { payload: nodeAddressLoading }) => (
+    state.set('nodeAddressLoading', nodeAddressLoading)
+  ),
+  [actions.LOAD_NODE_CENTER]: (state, { payload: nodeCenterLoading }) => (
+    state.set('nodeCenterLoading', nodeCenterLoading)
   )
 }, DEFAULT_STATE);

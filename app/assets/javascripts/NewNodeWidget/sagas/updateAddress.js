@@ -1,27 +1,30 @@
 import { take, put, cancel, fork, call, select } from 'redux-saga/effects';
 import { SagaCancellationException } from 'redux-saga';
 
-import { CHANGE_NODE_ADDRESS, MARKER_MOVED, changeNode } from '../actions';
-import { node as nodeSelector } from '../selectors';
+import * as actions from '../actions';
+import * as selectors from '../selectors';
 import { reverseGeocode } from '../../common/helpers/photon';
 
 // Update the address, when ever the marker was moved.
 export function *updateAddress() {
   try {
     while (true) {
-      const { payload: location } = yield take(MARKER_MOVED);
+      const { payload: location } = yield take(actions.MARKER_MOVED);
+
+      yield put(actions.loadNodeAddress(true));
 
       const feature = yield call(reverseGeocode, location);
       const { properties: { city, street, postcode, housenumber } } = feature;
 
-      let node = yield select(nodeSelector);
+      let node = yield select(selectors.node);
 
       node = yield call([ node, node.merge ], {
         city, street,
         postcode, housenumber
       });
 
-      yield put(changeNode(node));
+      yield put(actions.changeNode(node));
+      yield put(actions.loadNodeAddress(false));
     }
   } catch (error) {
     if (error instanceof SagaCancellationException) {
@@ -38,6 +41,6 @@ export default function *cancelUpdateAddressTask() {
   const updateAddressTask = yield fork(updateAddress);
 
   // ... node address was changed by the user.
-  yield take(CHANGE_NODE_ADDRESS);
+  yield take(actions.CHANGE_NODE_ADDRESS);
   yield cancel(updateAddressTask);
 }
