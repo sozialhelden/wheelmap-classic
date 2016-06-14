@@ -21,7 +21,7 @@ Wheelmap::Application.configure do
   # @TODO Enable compressors and find alternative for :yui
   # Compress CSS and JS faster in production
   # config.assets.css_compressor = :yui
-  # config.assets.js_compressor = :uglifier
+  config.assets.js_compressor = :uglifier
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
