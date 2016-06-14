@@ -5,6 +5,10 @@ describe Api::AssetsController do
 
   describe 'index action' do
 
+    def json_response
+      JSON.parse(response.body)
+    end
+
     before do
       get :index, :api_key => user.authentication_token
     end
@@ -15,7 +19,7 @@ describe Api::AssetsController do
 
     it 'returns valid json' do
       expect {
-        JSON.parse(response.body)
+        json_response
       }.to_not raise_error
     end
   end
