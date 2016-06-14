@@ -164,7 +164,7 @@ class ApplicationController < ActionController::Base
       unless @iphone_headers.empty?
         Rails.logger.info "iOS User Agent: '#{@iphone_headers['User-Agent']}'"
         Rails.logger.info "iOS Install ID: '#{@iphone_headers['Install-Id']}'"
-        iphone_counter = IphoneCounter.find_or_initialize_by_install_id(@iphone_headers['Install-Id'])
+        iphone_counter = IphoneCounter.find_or_initialize_by(install_id: @iphone_headers['Install-Id'])
         iphone_counter.app_version    = @iphone_headers['User-Agent'].gsub(/\AWheelmap( iOS)?\/(\d+\.?\d?.?\d*)(\s|.|\z)*/, '\2')
         iphone_counter.os_version     = @iphone_headers['Os-Version']
         iphone_counter.device_version = @iphone_headers['Device-Model'].try(:gsub, /,/, '_')

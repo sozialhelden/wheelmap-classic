@@ -26,6 +26,18 @@ module Wheelmap
     require  'rack_i18n_locale_switcher'
 #    require  'rack_request_logger'
     config.middleware.use(Rack::I18nLocaleSwitcher)
+    config.i18n.fallbacks = true
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.i18n.default_locale = :de
+    config.i18n.enforce_available_locales = false
+
+    config.i18n.available_locales = [:de]
+    # Use all locales that we have translations when not in production
+    Dir.glob(Rails.root.join('config', 'locales', '*')).each do |directory|
+      locale = File.basename(directory).to_sym
+      config.i18n.available_locales << locale unless I18n.available_locales.include?(locale)
+    end
+
  #   config.middleware.use(Rack::RequestLogger)
 
     # Activate observers that should always be running.
@@ -35,9 +47,6 @@ module Wheelmap
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
 
-    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    config.i18n.fallbacks = true
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -56,24 +65,20 @@ module Wheelmap
     # Add the fonts path
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
-    # Precompile additional assets
-    config.assets.precompile += %w( .svg .eot .woff .ttf )
-
     # Add the flash path
     config.assets.paths << Rails.root.join('app', 'assets', 'flash')
 
-    # Precompile additional assets
-    config.assets.precompile += %w( .swf )
+    # Add the javascripts path
+    config.assets.paths << Rails.root.join('app', 'assets', 'javascripts')
 
-    # Needed for the ActiveAdmin's manifest assets.
-    config.assets.precompile += ['active_admin.css', 'active_admin.js']
+    # Add the images path
+    config.assets.paths << Rails.root.join('app', 'assets', 'images')
 
-    config.assets.precompile += %w( relaunch.css relaunch_ie.css screen.css node.css nodes.css search.css react-select.css)
-    config.assets.precompile += %w( relaunch.js modernizr.js search.js nodes.js ember.js ember-data.js app.js test.js)
-    config.assets.precompile += %w( i18n/*.js react-application.js )
+    # Add the stylesheets path
+    config.assets.paths << Rails.root.join('app', 'assets', 'stylesheets')
 
-    # Version of your assets, change this if you want to expire all your assets
-    config.assets.version = '1.0'
+    config.browserify_rails.source_map_environments << 'development'
+    config.browserify_rails.commandline_options = '-t babelify'
 
     config.to_prepare do
       Devise::SessionsController.layout "relaunch"

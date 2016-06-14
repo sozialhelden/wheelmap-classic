@@ -15,20 +15,17 @@ class Photo < ActiveRecord::Base
 
   validates :user_id, :poi_id, :presence => true
 
-  scope :with_user, :include => :user
-  scope :with_poi,  :include => :poi
+  scope :with_user, -> { includes(:user) }
+  scope :with_poi,  -> { includes(:poi) }
 
   acts_as_api
   include Api::Photo
 
   def image_versions
     i = []
-    # @TODO use image_url when we moved to Rails 4
-    i << {:type => "original", :url => asset_paths.compute_public_path(image.url.to_s, 'images', { protocol: :https }), :width => image.width, :height => image.height}
-    image.versions.keys.each do |version|
-      v = version.to_sym
-      # @TODO use image_url when we moved to Rails 4
-      i << {:type => v, :url => asset_paths.compute_public_path(image.url(v).to_s, 'images', { protocol: :https }), :width => image.send(v).width, :height => image.send(v).height }
+    i << {:type => "original", :url => asset_path(image.to_s, protocol: :https), :width => image.width, :height => image.height}
+    image.versions.each do |key, value|
+      i << {:type => key, :url => asset_path(value.url, protocol: :https), :width => value.width, :height => value.height }
     end
     i
   end

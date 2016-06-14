@@ -32,7 +32,7 @@ class Poi < ActiveRecord::Base
   WHEELCHAIR_TOILET_VALUES = {:yes => true, :no => false, :unknown => nil}
 
   belongs_to :region, :touch => false
-  belongs_to :node_type, :touch => false, :include => :category
+  belongs_to :node_type, -> { includes(:category) }, touch: false
   has_one :category, :through => :node_type
 
   validate :relevant?
@@ -69,34 +69,33 @@ class Poi < ActiveRecord::Base
   # benutzt den raeumlichen Index und geht daher schnell (wenn man
   # nicht gerade eine Bounding-Box fuer die ganze Welt uebergibt).
 
-  scope :fully_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:yes]}
-  scope :not_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:no]}
-  scope :limited_accessible, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:limited]}
-  scope :unknown_accessibility, :conditions => {:status => WHEELCHAIR_STATUS_VALUES[:unknown]}
-  scope :tagged, :conditions => ['status < ?', WHEELCHAIR_STATUS_VALUES[:unknown]]
-  scope :toilet_yes, :conditions => {:toilet => true}
-  scope :toilet_no, :conditions => {:toilet => false}
-  scope :toilet_tagged, :conditions => "toilet IS NOT NULL"
-  scope :with_status,  lambda {|status| {:conditions => {:status => status}}}
-  scope :with_toilet,  lambda {|toilet| {:conditions => {:toilet => toilet}}}
-  #scope :search,       lambda {|search| {:conditions => ['tags LIKE ?', "%#{search}%"]}}
-  scope :search_scope, lambda {|search| {:conditions => ['MATCH (tags) AGAINST  (? IN BOOLEAN MODE)', escape_search_string(search)]}}
+  scope :fully_accessible, -> { where(status: WHEELCHAIR_STATUS_VALUES[:yes]) }
+  scope :not_accessible, -> { where(status: WHEELCHAIR_STATUS_VALUES[:no]) }
+  scope :limited_accessible, -> { where(status: WHEELCHAIR_STATUS_VALUES[:limited]) }
+  scope :unknown_accessibility, -> { where(status: WHEELCHAIR_STATUS_VALUES[:unknown]) }
+  scope :tagged, -> { where('status < ?', WHEELCHAIR_STATUS_VALUES[:unknown]) }
+  scope :toilet_yes, -> { where(toilet: true) }
+  scope :toilet_no, -> { where(toilet: false) }
+  scope :toilet_tagged, -> { where("toilet IS NOT NULL") }
+  scope :with_status,  lambda {|status| where(status: status) }
+  scope :with_toilet,  lambda {|toilet| where(toilet: toilet) }
+  scope :search_scope, lambda {|search| where('MATCH (tags) AGAINST  (? IN BOOLEAN MODE)', escape_search_string(search))}
 
-  scope :with_node_type, :conditions => 'node_type_id IS NOT NULL'
-  scope :without_node_type, :conditions => 'node_type_id IS NULL'
-  scope :including_category, :include => :category
-  scope :including_region, :include => :region
-  scope :including_providers, :include => { :provided_pois => :provider }
-  scope :has_provider, :joins => :provided_pois
-  scope :has_photo, :joins => :photos
-  scope :within_region, lambda {|region| {:conditions => {:region_id => region.id}}}
+  scope :with_node_type, -> { where('node_type_id IS NOT NULL') }
+  scope :without_node_type, -> { where('node_type_id IS NULL') }
+  scope :including_category, -> { includes(:category) }
+  scope :including_region, -> { includes(:region) }
+  scope :including_providers, -> { includes(provided_pois: :provider) }
+  scope :has_provider, -> { joins(:provided_pois) }
+  scope :has_photo, -> { joins(:photos) }
+  scope :within_region, lambda {|region| where(region_id: region.id)}
   scope :region_id_eq, lambda {|region_id|  where(region_id: Region.find(region_id).self_and_descendants.map(&:id))}
 
-  scope :within_bbox, lambda {|left, bottom, right, top|{
-    :conditions => "MBRContains(GeomFromText('POLYGON(( \
+  scope :within_bbox, lambda {|left, bottom, right, top|
+    where("MBRContains(GeomFromText('POLYGON(( \
                     #{left} #{bottom}, #{right} #{bottom}, \
                     #{right} #{top}, #{left} #{top}, \
-                    #{left} #{bottom}))'), pois.geom)" } }
+                    #{left} #{bottom}))'), pois.geom)") }
 
   #scope :within_bbox, lambda {|left, bottom, right, top|{
   #  :conditions => "ST_Within(pois.geom, GeometryFromText('POLYGON(( \

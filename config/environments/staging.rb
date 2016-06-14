@@ -12,6 +12,8 @@ Wheelmap::Application.configure do
   # Specifies the header that your server uses for sending files
   config.action_dispatch.x_sendfile_header = "X-Sendfile"
 
+  config.eager_load = true
+
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
@@ -79,6 +81,7 @@ Wheelmap::Application.configure do
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
+  config.i18n.available_locales = [:ar, :bg, :da, :de, :el, :en, :es, :fr, :hu, :is, :it, :ja, :ko, :lv, :pl, :pt_BR, :ru, :sk, :sv, :tlh, :tr, :zh_TW]
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify

@@ -28,14 +28,14 @@ describe Api::PhotosController do
 
     it "should scope photos to given node" do
       expect(subject).to receive(:parent).and_return(poi)
-      expect(poi).to receive(:photos).and_return(Photo.scoped({}))
+      expect(poi).to receive(:photos).and_return(Photo.all)
       get(:index, :node_id => poi.id, :api_key => user.authentication_token)
       expect(response).to be_success
     end
 
     it "should scope photos to given user" do
       expect(subject).to receive(:parent).and_return(user)
-      expect(user).to receive(:photos).and_return(Photo.scoped({}))
+      expect(user).to receive(:photos).and_return(Photo.all)
       get(:index, :url => api_user_photos_path, :api_key => user.authentication_token)
       expect(response).to be_success
     end
@@ -82,11 +82,6 @@ describe Api::PhotosController do
         post(:create, :node_id => poi.id, :api_key => user.authentication_token, :photo => fixture_file_upload('/placeholder.jpg'))
         expect(response.status).to eql 201
       }.to change(Photo, :count).by(1)
-    end
-
-    it "is not possible to upload images for a user" do
-      post(:create, :url => api_user_photos_path, :api_key => user.authentication_token, :photo => {:image => fixture_file_upload('/placeholder.jpg')})
-      expect(response.status).to eql 400
     end
   end
 
