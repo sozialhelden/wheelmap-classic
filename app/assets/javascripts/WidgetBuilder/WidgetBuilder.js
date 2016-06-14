@@ -8,6 +8,8 @@ const Embed = require('./Embed');
 const Preview = require('./Preview');
 const { changeWidth, changeHeight, changeLocation, changeProvider, changeCategories, save } = require('./actions');
 
+console.log('I was deployed correctly!');
+
 class WidgetBuilder extends React.Component {
   componentDidUpdate() {
     this.props.save();
