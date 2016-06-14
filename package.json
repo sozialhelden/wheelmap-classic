@@ -12,9 +12,8 @@
     "babel-runtime": "^6.3.13",
     "babelify": "^7.2.0",
     "browserify": "^12.0.1",
+    "browserify-incremental": "^3.1.1",
     "classnames": "^2.2.3",
-    "gulp": "^3.9.1",
-    "gulp-util": "^3.0.7",
     "history": "^2.0.0",
     "immutable": "^3.7.6",
     "isomorphic-fetch": "^2.2.1",
@@ -36,8 +35,7 @@
     "redux-saga": "^0.9.1",
     "redux-thunk": "^1.0.0",
     "require-dir": "^0.3.0",
-    "reselect": "^2.0.2",
-    "vinyl-source-stream": "^1.1.0"
+    "reselect": "^2.0.2"
   },
   "devDependencies": {
     "babel-jest": "^6.0.1",
@@ -51,16 +49,15 @@
     "node": ">= 4.1"
   },
   "scripts": {
-    "install": "node_modules/.bin/gulp browserify",
     "test": "node_modules/.bin/jest"
   },
   "jest": {
     "testRunner": "<rootDir>/node_modules/jest-cli/src/testRunners/jasmine/jasmine2.js",
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "setupEnvScriptFile": "<rootDir>/gulp/jest/setupEnv",
-    "setupTestFrameworkScriptFile": "<rootDir>/gulp/jest/setupTestFramework",
+    "setupEnvScriptFile": "<rootDir>/app/assets/javascripts/jest/setupEnv",
+    "setupTestFrameworkScriptFile": "<rootDir>/app/assets/javascripts/jest/setupTestFramework",
     "testPathDirs": [
-      "<rootDir>/gulp"
+      "<rootDir>/app/assets/javascripts"
     ],
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/*"
