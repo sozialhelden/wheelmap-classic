@@ -86,6 +86,8 @@ group :default do
   gem 'compass-colors'
   gem 'compass-rails'
   gem 'sprockets-rails', :require => 'sprockets/railtie'
+  gem 'sprockets-es6', '~> 0.9.0'
+  gem 'browserify-rails', '~> 3.1.0'
 end
 
 

@@ -77,6 +77,9 @@ module Wheelmap
     # Add the stylesheets path
     config.assets.paths << Rails.root.join('app', 'assets', 'stylesheets')
 
+    config.browserify_rails.source_map_environments << 'development'
+    config.browserify_rails.commandline_options = '-t babelify'
+
     config.to_prepare do
       Devise::SessionsController.layout "relaunch"
     end
