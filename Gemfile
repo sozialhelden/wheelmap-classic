@@ -99,6 +99,7 @@ group :test, :development do
   gem 'pry'
   gem 'pry-byebug', '~> 3.4'
   gem 'thin'
+  gem 'simplecov', '~> 0.11.2'
 end
 
 group :test do
