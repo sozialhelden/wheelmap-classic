@@ -66,7 +66,7 @@ class WidgetBuilderForm extends React.Component {
                 <I18n scope={'users.profile.widget.center'}/>
               </label>
               <span className="form-wrapper">
-                <Photon url={'http://photon.komoot.de/api/'} lang={I18n.locale} limit={10}
+                <Photon url={'//photon.komoot.de/api/'} lang={I18n.locale} limit={10}
                         placeholder={I18n.t('users.profile.widget.empty_center')}
                         searchPromptText={I18n.t('users.profile.widget.empty_center')}
                         onSelectLocation={this.props.changeLocation} />

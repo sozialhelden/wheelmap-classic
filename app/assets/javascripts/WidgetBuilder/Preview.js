@@ -16,7 +16,7 @@ class WidgetBuilderPreview extends React.Component {
     let widget = this.props.widget,
       prevWidget = prevProps.widget;
 
-    if (widget.src === prevWidget.src && widget.categories !== prevWidget.categories)
+    if (widget.src !== prevWidget.src || widget.categories !== prevWidget.categories)
       this.refs.iframe.contentWindow.location.reload();
   }
 
@@ -29,7 +29,7 @@ class WidgetBuilderPreview extends React.Component {
           <I18n scope="users.profile.widget.legends.preview" />
         </h5>
         <div className="user-widget-preview-area">
-          <iframe className="user-widget-preview-frame" width={width} height={height} src={src} />
+          <iframe className="user-widget-preview-frame" width={width} height={height} src={src} ref="iframe" />
         </div>
       </div>
     );
