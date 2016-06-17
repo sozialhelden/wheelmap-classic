@@ -9,11 +9,11 @@ import Node from '../../common/models/Node';
 
 // Fetch similar nodes when the user visits the similar node section.
 export default function *fetchSimilar() {
-  while(true) {
+  while (true) {
     yield take(activeSection(SIMILAR_NODES));
 
-    const node = yield select(selectors.node),
-      { name, lat, lon } = node;
+    const node = yield select(selectors.node);
+    const { name, lat, lon } = node;
 
     yield put(load(true));
 

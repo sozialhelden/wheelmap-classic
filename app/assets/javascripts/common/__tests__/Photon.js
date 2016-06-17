@@ -1,19 +1,16 @@
 jest.dontMock('../Photon');
 
-const React = require('react');
-const ReactDOM = require('react-dom');
-const TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 
-const Photon = require('../Photon');
+import Photon from '../Photon';
 
-describe("React Photon component", function() {
-
-  it("loads correctly", function() {
-    var component = TestUtils.renderIntoDocument(
-      <Photon/>
+describe('React Photon component', () => {
+  it('loads correctly', function () {
+    const component = TestUtils.renderIntoDocument(
+      <Photon />
     );
 
     expect(component).toBeDefined();
   });
-
 });

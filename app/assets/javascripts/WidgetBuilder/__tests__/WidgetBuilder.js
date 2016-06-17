@@ -1,15 +1,13 @@
 jest.dontMock('../WidgetBuilder');
 
 const React = require('react');
-const ReactDOM = require('react-dom');
 const TestUtils = require('react-addons-test-utils');
 
 const WidgetBuilder = require('../WidgetBuilder');
 
-describe("React Widget component", function() {
-
-  it("loads correctly", function() {
-    let component = TestUtils.renderIntoDocument(
+describe('React Widget component', function () {
+  it('loads correctly', function () {
+    const component = TestUtils.renderIntoDocument(
       <WidgetBuilder.WrappedComponent
         width={100}
         height={400}
@@ -23,7 +21,5 @@ describe("React Widget component", function() {
     );
 
     expect(component).not.toBeNull();
-
   });
-
 });

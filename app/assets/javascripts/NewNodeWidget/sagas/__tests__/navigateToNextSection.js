@@ -26,16 +26,16 @@ describe('navigateToNextSection', () => {
     expect(gen.next(node).value)
       .toSelect(selectors.activeSection);
 
-    const activeSection = NAME_CATEGORY,
-      { nodeAttrs } = activeSection;
+    const activeSection = NAME_CATEGORY;
+    const { nodeAttrs } = activeSection;
 
     expect(gen.next(activeSection).value)
       .toPut(load(true));
 
     expect(gen.next().value)
-      .toCall([nodeAttrs, nodeAttrs.toJS]);
+      .toCall([ nodeAttrs, nodeAttrs.toJS ]);
 
-    const attrs = ['name', 'node_type'];
+    const attrs = [ 'name', 'node_type' ];
 
     expect(gen.next(attrs).value)
       .toCall(api.validateNode, node, attrs);
@@ -46,7 +46,7 @@ describe('navigateToNextSection', () => {
     expect(gen.next(node).value)
       .toSelect(selectors.sections);
 
-    const sections = List([NAME_CATEGORY, ADDRESS]);
+    const sections = new List([ NAME_CATEGORY, ADDRESS ]);
 
     expect(gen.next(sections).value)
       .toPut(push.newNodeSectionPath(ADDRESS, node.serialize()));
@@ -69,16 +69,16 @@ describe('navigateToNextSection', () => {
     expect(gen.next(node).value)
       .toSelect(selectors.activeSection);
 
-    const activeSection = NAME_CATEGORY,
-      { nodeAttrs } = activeSection;
+    const activeSection = NAME_CATEGORY;
+    const { nodeAttrs } = activeSection;
 
     expect(gen.next(activeSection).value)
       .toPut(load(true));
 
     expect(gen.next().value)
-      .toCall([nodeAttrs, nodeAttrs.toJS]);
+      .toCall([ nodeAttrs, nodeAttrs.toJS ]);
 
-    const attrs = ['name', 'node_type'];
+    const attrs = [ 'name', 'node_type' ];
 
     expect(gen.next(attrs).value)
       .toCall(api.validateNode, node, attrs);

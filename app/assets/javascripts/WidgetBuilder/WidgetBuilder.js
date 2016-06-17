@@ -1,26 +1,48 @@
 const React = require('react');
 const { connect } = require('react-redux');
-const setParam = require('mout/queryString/setParam');
-const debounce = require('mout/function/debounce');
 
 const Form = require('./Form');
 const Embed = require('./Embed');
 const Preview = require('./Preview');
 const { changeWidth, changeHeight, changeLocation, changeProvider, changeCategories, save } = require('./actions');
 
+const { func } = React.PropTypes;
+const { widget } = require('./propTypes');
+
 class WidgetBuilder extends React.Component {
+  static propTypes = {
+    widget: widget.isRequired,
+    save: func.isRequired,
+    changeWidth: func.isRequired,
+    changeHeight: func.isRequired,
+    changeLocation: func.isRequired,
+    changeProvider: func.isRequired,
+    changeCategories: func.isRequired
+  };
+
   componentDidUpdate() {
     this.props.save();
   }
 
   render() {
+    const {
+      widget,
+      changeWidth,
+      changeHeight,
+      changeLocation,
+      changeProvider,
+      changeCategories
+    } = this.props;
+
     return (
       <div className="widget-panel">
-        <Form widget={this.props.widget} changeWidth={this.props.changeWidth}
-              changeHeight={this.props.changeHeight} changeLocation={this.props.changeLocation}
-              changeProvider={this.props.changeProvider} changeCategories={this.props.changeCategories}/>
-        <Preview widget={this.props.widget}/>
-        <Embed widget={this.props.widget}/>
+        <Form
+          widget={widget} changeWidth={changeWidth}
+          changeHeight={changeHeight} changeLocation={changeLocation}
+          changeProvider={changeProvider} changeCategories={changeCategories}
+        />
+        <Preview widget={widget} />
+        <Embed widget={widget} />
       </div>
     );
   }

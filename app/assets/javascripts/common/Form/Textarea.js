@@ -1,18 +1,21 @@
-const React = require('react');
-const classNames = require('classnames');
-const I18n = require('../I18n');
+import React, { PropTypes } from 'react';
+import classNames from 'classnames';
+import I18n from '../I18n';
 
-function Textarea(props) {
-  let { className, required, placeholderScope, ...otherProps } = props;
+const { bool, string } = PropTypes;
+
+function Textarea({ className, required, placeholderScope, ...props }) {
+  let placeholder;
 
   className = classNames(className, 'textarea', { required });
 
-  if (placeholderScope != null)
-    otherProps.placeholder = I18n.t(placeholderScope);
+  if (placeholderScope != null) {
+    placeholder = I18n.t(placeholderScope);
+  }
 
   return (
     <div className={className}>
-      <textarea {...otherProps}/>
+      <textarea {...props} placeholder={placeholder} />
     </div>
   );
 }
@@ -22,8 +25,9 @@ Textarea.defaultProps = {
 };
 
 Textarea.propTypes = {
-  required: React.PropTypes.bool.isRequired,
-  placeholderScope: React.PropTypes.string
+  className: string,
+  required: bool.isRequired,
+  placeholderScope: string
 };
 
-module.exports = Textarea;
+export default Textarea;

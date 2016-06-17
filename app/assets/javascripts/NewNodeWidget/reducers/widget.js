@@ -1,27 +1,26 @@
-const { Map, List, fromJS } = require('immutable');
-const { handleActions } = require('redux-actions');
+import { Map, List, fromJS } from 'immutable';
+import { handleActions } from 'redux-actions';
 
-const { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } = require('../models/sections');
-const actions = require('../actions');
-const { FETCH_CATEGORIES } = require('../../common/actions/categories');
-const Node = require('../../common/models/Node');
+import { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } from '../models/sections';
+import actions from '../actions';
+import Node from '../../common/models/Node';
 
-const DEFAULT_STATE = Map({
+const DEFAULT_STATE = new Map({
   activeSection: null,
-  sections: List([NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW]),
+  sections: new List([ NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW ]),
   node: new Node(),
   mapCenter: { lat: 52.520007, lon: 13.404954 },
   mapZoom: 14,
-  similarNodes: List(),
-  errors: Map(),
+  similarNodes: new List(),
+  errors: new Map(),
   loading: false
 });
 
-module.exports = handleActions({
+export default handleActions({
   [actions.ACTIVATE_SECTION]: (state, { payload: activeSection }) => {
     return state.set('activeSection', activeSection);
   },
-  [actions.CHANGE_NODE]: (state, { payload: node}) => {
+  [actions.CHANGE_NODE]: (state, { payload: node }) => {
     return state.set('node', node);
   },
   [actions.CHANGE_MAP_CENTER]: (state, { payload: { lat, lon } }) => {
@@ -31,7 +30,7 @@ module.exports = handleActions({
     return state.set('mapZoom', zoom);
   },
   [actions.SET_SIMILAR]: (state, { payload: similarNodes }) => {
-    return state.set('similarNodes', List(similarNodes));
+    return state.set('similarNodes', new List(similarNodes));
   },
   [actions.SET_ERRORS]: (state, { payload: errors }) => {
     return state.set('errors', fromJS(errors));

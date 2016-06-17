@@ -1,10 +1,16 @@
-const React = require('react');
-const I18n = require('../common/I18n');
+import React from 'react';
+
+import I18n from '../common/I18n';
+import { widget } from './propTypes';
 
 class WidgetBuilderEmbed extends React.Component {
+  static propTypes = {
+    widget: widget.isRequired
+  };
+
   shouldComponentUpdate(nextProps) {
-    let widget = this.props.widget,
-      nextWidget = nextProps.widget;
+    const widget = this.props.widget;
+    const nextWidget = nextProps.widget;
 
     return widget.width !== nextWidget.width ||
       widget.height !== nextWidget.height ||
@@ -12,19 +18,19 @@ class WidgetBuilderEmbed extends React.Component {
   }
 
   render() {
-    let { width, height, src } = this.props.widget,
-      code = `<iframe width="${width}" height="${height}" src="${src}"></iframe>`;
+    const { width, height, src } = this.props.widget;
+    const code = `<iframe width="${width}" height="${height}" src="${src}"></iframe>`;
 
     return (
       <div className="user-widget-embed">
         <h5>
-          <I18n scope='users.profile.widget.legends.embed' />
+          <I18n scope="users.profile.widget.legends.embed" />
         </h5>
-        <textarea rows="3" className="user-widget-embed-code" value={code} readOnly={true} />
-        <p><I18n scope='users.profile.widget.legends.embed_explanation' /></p>
+        <textarea rows="3" className="user-widget-embed-code" value={code} readOnly />
+        <p><I18n scope="users.profile.widget.legends.embed_explanation" /></p>
       </div>
     );
   }
 }
 
-module.exports = WidgetBuilderEmbed;
+export default WidgetBuilderEmbed;

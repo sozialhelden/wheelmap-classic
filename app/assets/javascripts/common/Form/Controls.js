@@ -1,11 +1,17 @@
-const React = require('react');
+import React, { PropTypes } from 'react';
 
-function Controls(props) {
+const { any } = PropTypes;
+
+function Controls({ children }) {
   return (
     <div className="controls">
-      {props.children}
+      {children}
     </div>
   );
 }
 
-module.exports = Controls;
+Controls.propTypes = {
+  children: any
+};
+
+export default Controls;

@@ -6,9 +6,8 @@ const TestUtils = require('react-addons-test-utils');
 
 const WidgetBuilderForm = require('../Form');
 
-describe("React WidgetForm component", function() {
-
-  it("loads correctly", function() {
+describe('React WidgetForm component', function () {
+  it('loads correctly', function () {
     const component = TestUtils.renderIntoDocument(
       <WidgetBuilderForm widget={{ providers: [] }} />
     );
@@ -16,10 +15,9 @@ describe("React WidgetForm component", function() {
     expect(component).not.toBeNull();
   });
 
-  xit("change dimensions", function() {
-    const changeWidth = jest.genMockFn(),
-      changeHeight = jest.genMockFn();
-
+  xit('change dimensions', function () {
+    const changeWidth = jest.genMockFn();
+    const changeHeight = jest.genMockFn();
     const component = TestUtils.renderIntoDocument(
       <WidgetBuilderForm widget={{ providers: [] }} changeWidth={changeWidth} changeHeight={changeHeight} />
     );
@@ -27,8 +25,8 @@ describe("React WidgetForm component", function() {
     // @TODO fix this
     const node = ReactDOM.findDOMNode(component);
 
-    const width = node.getElementById('widget_width'),
-      height = node.getElementById('widget_height');
+    const width = node.getElementById('widget_width');
+    const height = node.getElementById('widget_height');
 
     width.value = 200;
     TestUtils.Simulate.change(width);
@@ -40,5 +38,4 @@ describe("React WidgetForm component", function() {
 
     expect(changeHeight).toBeCalledWith(900);
   });
-
 });

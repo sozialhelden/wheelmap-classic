@@ -13,7 +13,7 @@ function Marker({ icon, wheelchair, ...props }) {
     html: icon != null ? `<div class="marker-icon marker-icon-${icon}"></div>` : ''
   });
 
-  return <LeafletMarker icon={markerIcon} {...props}/>
+  return <LeafletMarker icon={markerIcon} {...props} />;
 }
 
 Marker.propTypes = {

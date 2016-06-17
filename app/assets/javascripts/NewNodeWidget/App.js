@@ -1,22 +1,21 @@
-const React = require('react');
-const { createStore, applyMiddleware } = require('redux');
-const thunk = require('redux-thunk');
-const promise = require('redux-promise');
-const { 'default': saga } = require('redux-saga');
-const { Provider } = require('react-redux');
-const { Router, Route, Redirect } = require('react-router');
+import React from 'react';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import promise from 'redux-promise';
+import saga from 'redux-saga';
+import { Provider } from 'react-redux';
+import { Router, Route, Redirect } from 'react-router';
 
-const multi = require('../common/middleware/multi');
-const transition = require('../common/middleware/transition');
-const createHistory = require('../common/helpers/createHistory');
-const Node = require('../common/models/Node');
-const { newNodePath, newNodeSectionPath } = require('../common/routes');
-const Widget = require('./Widget');
-const Content = require('./Content');
-const reducer = require('./reducers');
-const actions = require('./actions');
-const { 'default': sagas } = require('./sagas');
-const sections = require('./models/sections');
+import multi from '../common/middleware/multi';
+import transition from '../common/middleware/transition';
+import createHistory from '../common/helpers/createHistory';
+import { newNodePath, newNodeSectionPath } from '../common/routes';
+import Widget from './Widget';
+import Content from './Content';
+import reducer from './reducers';
+import actions from './actions';
+import sagas from './sagas';
+import sections from './models/sections';
 
 const browserHistory = createHistory();
 
@@ -43,11 +42,13 @@ class App extends React.Component {
     return (
       <Provider store={this.store}>
         <Router history={browserHistory}>
-          <Redirect from={newNodePath.toString()} to={newNodeSectionPath(sections.NAME_CATEGORY)}/>
+          <Redirect from={newNodePath.toString()} to={newNodeSectionPath(sections.NAME_CATEGORY)} />
           <Route path={newNodePath.toString()} component={Widget}>
-            <Route path={newNodeSectionPath.toString()}
-                   component={Content}
-                   onEnter={this.onEnterContent}/>
+            <Route
+              path={newNodeSectionPath.toString()}
+              component={Content}
+              onEnter={this.onEnterContent}
+            />
           </Route>
         </Router>
       </Provider>

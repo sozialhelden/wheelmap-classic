@@ -4,12 +4,12 @@ import Section from './Section';
 
 export const NAME_CATEGORY = new Section({
   id: 'name_category',
-  nodeAttrs: List(['name', 'nodeType'])
+  nodeAttrs: new List([ 'name', 'nodeType' ])
 });
 
 export const ADDRESS = new Section({
   id: 'address',
-  nodeAttrs: List(['street', 'housenumber', 'city', 'postcode', 'lat', 'lon'])
+  nodeAttrs: new List([ 'street', 'housenumber', 'city', 'postcode', 'lat', 'lon' ])
 });
 
 export const SIMILAR_NODES = new Section({
@@ -18,12 +18,12 @@ export const SIMILAR_NODES = new Section({
 
 export const ACCESSIBILITY = new Section({
   id: 'accessibility',
-  nodeAttrs: List(['wheelchair', 'wheelchairToilet', 'wheelchairDescription'])
+  nodeAttrs: new List([ 'wheelchair', 'wheelchairToilet', 'wheelchairDescription' ])
 });
 
 export const CONTACT = new Section({
   id: 'contact',
-  nodeAttrs: List(['phone', 'website'])
+  nodeAttrs: new List([ 'phone', 'website' ])
 });
 
 export const OVERVIEW = new Section({

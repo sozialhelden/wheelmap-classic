@@ -26,7 +26,7 @@ export function changeCategories(categories) {
   return { type: CHANGE_CATEGORIES, categories };
 }
 
-export function save(widget) {
+export function save() {
   return { type: SAVE };
 }
 

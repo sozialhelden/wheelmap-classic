@@ -1,7 +1,6 @@
-const React = require('react');
-const { connect } = require('react-redux');
+import React from 'react';
 
-const I18n = require('../common/I18n');
+import I18n from '../common/I18n';
 
 class Header extends React.Component {
   shouldComponentUpdate() {

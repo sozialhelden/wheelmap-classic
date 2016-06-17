@@ -1,7 +1,7 @@
 const React = require('react');
 
 class Select extends React.Component {
-  render () {
+  render() {
     return null;
   }
 }

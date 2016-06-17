@@ -1,16 +1,16 @@
-const React = require('react');
-const classNames = require('classnames');
+import React, { PropTypes } from 'react';
+import classNames from 'classnames';
 
-const ControlGroup = require('./ControlGroup');
-const Controls = require('./Controls');
-const Input = require('./Input');
-const Textarea = require('./Textarea');
-const Select = require('./Select');
+import ControlGroup from './ControlGroup';
+import Controls from './Controls';
+import Input from './Input';
+import Textarea from './Textarea';
+import Select from './Select';
 
-function Form(props) {
-  let { children, className, type } = props;
+const { string, any } = PropTypes;
 
-  className = classNames(className, 'form-' + type);
+function Form({ children, className, type }) {
+  className = classNames(className, `form-${type}`);
 
   return (
     <form className={className}>
@@ -20,8 +20,9 @@ function Form(props) {
 }
 
 Form.propTypes = {
-  className: React.PropTypes.string,
-  type: React.PropTypes.string
+  className: string,
+  type: string,
+  children: any
 };
 
 Form.defaultProps = {
@@ -34,4 +35,4 @@ Form.Input = Input;
 Form.Textarea = Textarea;
 Form.Select = Select;
 
-module.exports = Form;
+export default Form;

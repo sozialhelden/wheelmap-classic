@@ -39,6 +39,8 @@
   },
   "devDependencies": {
     "babel-jest": "^6.0.1",
+    "eslint": "^2.12.0",
+    "eslint-config-blogfoster": "^1.3.2",
     "jest-cli": "^0.8.2"
   },
   "repository": {
@@ -49,7 +51,8 @@
     "node": ">= 4.1"
   },
   "scripts": {
-    "test": "node_modules/.bin/jest"
+    "test": "node_modules/.bin/jest",
+    "eslint": "eslint app/assets/javascripts"
   },
   "jest": {
     "testRunner": "<rootDir>/node_modules/jest-cli/src/testRunners/jasmine/jasmine2.js",

@@ -13,8 +13,8 @@ describe('activateSection', () => {
     expect(generator.next().value)
       .toTake(ENTER_CONTENT);
 
-    const nextState = { params: { section: CONTACT.id }, location: { query: {} } },
-      action = enterContent(nextState);
+    const nextState = { params: { section: CONTACT.id }, location: { query: {} } };
+    const action = enterContent(nextState);
 
     expect(generator.next(action).value)
       .toPut(activateSectionAction(CONTACT));
@@ -29,8 +29,8 @@ describe('activateSection', () => {
     expect(generator.next().value)
       .toTake(ENTER_CONTENT);
 
-    const nextState = { params: { section: 'unknown' }, location: { query: {} } },
-      action = enterContent(nextState);
+    const nextState = { params: { section: 'unknown' }, location: { query: {} } };
+    const action = enterContent(nextState);
 
     expect(generator.next(action).value)
       .toPut(replace.newNodeSectionPath(NAME_CATEGORY));

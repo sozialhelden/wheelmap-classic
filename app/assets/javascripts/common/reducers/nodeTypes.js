@@ -6,10 +6,10 @@ const NodeType = require('../models/NodeType');
 
 module.exports = handleActions({
   [FETCH_CATEGORIES]: (state, { payload: { nodeTypes } }) => {
-    return Seq(nodeTypes)
+    return new Seq(nodeTypes)
       .map(nodeType => new NodeType(nodeType))
       .toKeyedSeq()
       .mapKeys((key, nodeType) => nodeType.id)
       .toMap();
   }
-}, Map());
+}, new Map());

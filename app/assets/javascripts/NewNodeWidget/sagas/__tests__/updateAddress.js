@@ -41,8 +41,8 @@ describe('updateAddress', () => {
     expect(gen.next().value)
       .toTake(MARKER_MOVED);
 
-    const location = { lat: 14.5, lon: 13.5 },
-      action = markerMoved(location);
+    const location = { lat: 14.5, lon: 13.5 };
+    const action = markerMoved(location);
 
     expect(gen.next(action).value)
       .toCall(photon.reverseGeocode, location);
@@ -62,7 +62,7 @@ describe('updateAddress', () => {
     let node = new Node();
 
     expect(gen.next(node).value)
-      .toCall([node, node.merge], feature.properties);
+      .toCall([ node, node.merge ], feature.properties);
 
     node = new Node();
 
@@ -81,5 +81,5 @@ describe('updateAddress', () => {
 
     expect(gen.throw(error).done)
       .toBe(true);
-  })
+  });
 });

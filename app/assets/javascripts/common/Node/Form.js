@@ -1,12 +1,18 @@
-const React = require('react');
-const Form = require('../Form');
+import React, { PropTypes } from 'react';
+import Form from '../Form';
 
-function NodesForm(props) {
+const { any } = PropTypes;
+
+function NodesForm({ children }) {
   return (
     <Form className="node-form">
-      {props.children}
+      {children}
     </Form>
   );
 }
 
-module.exports = NodesForm;
+NodesForm.propTypes = {
+  children: any
+};
+
+export default NodesForm;

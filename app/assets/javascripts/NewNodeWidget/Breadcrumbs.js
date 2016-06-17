@@ -1,13 +1,11 @@
-const React = require('react');
-const { connect } = require('react-redux');
-const { Link } = require('react-router');
-const classNames = require('classnames');
+import React from 'react';
+import classNames from 'classnames';
 
-const I18n = require('../common/I18n');
-const Section = require('./models/Section').default;
-const { OVERVIEW } = require('./models/sections');
+import I18n from '../common/I18n';
+import Section from './models/Section';
+import { OVERVIEW } from './models/sections';
+import { immutableListOf } from '../common/propTypes';
 
-const { immutableListOf } = require('../common/types');
 const { func, instanceOf } = React.PropTypes;
 
 class Breadcrumbs extends React.Component {
@@ -29,8 +27,9 @@ class Breadcrumbs extends React.Component {
 
     sections.forEach((section, index) => {
       // Skip overview as this section is not part of the breadcrumbs
-      if (section === OVERVIEW)
+      if (section === OVERVIEW) {
         return;
+      }
 
       const done = index < activeSectionIndex;
       const className = classNames({ active: section === activeSection, done });
@@ -44,7 +43,7 @@ class Breadcrumbs extends React.Component {
       list.push(
         <li key={section} className={className}>
           <a href="#" onClick={onClick}>
-            <I18n scope={`nodes.new.form.section.${section}.name`}></I18n>
+            <I18n scope={`nodes.new.form.section.${section}.name`} />
           </a>
         </li>
       );

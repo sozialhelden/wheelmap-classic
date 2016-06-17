@@ -6,7 +6,7 @@ const Category = require('../models/Category');
 
 module.exports = handleActions({
   [FETCH_CATEGORIES]: (state, { payload: { categories } }) => {
-    return Seq(categories)
+    return new Seq(categories)
       .map(category => new Category(category))
       .toKeyedSeq()
       .mapKeys((key, category) => category.id)
@@ -14,6 +14,6 @@ module.exports = handleActions({
   },
 
   [TOGGLE_CATEGORY]: (state, { payload: category }) => {
-    return state.setIn([category.id, 'active'], !category.active);
+    return state.setIn([ category.id, 'active' ], !category.active);
   }
-}, Map());
+}, new Map());

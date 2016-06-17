@@ -11,18 +11,19 @@ export default function *useGeolocation() {
 
   const node = yield select(selectors.node);
 
-  if (yield call([node, node.hasLocation]))
+  if (yield call([ node, node.hasLocation ])) {
     return;
+  }
 
   yield put(load(true));
 
   try {
-    const position = yield call(geolocation),
-      { latitude: lat, longitude: lon } = position.coords;
+    const position = yield call(geolocation);
+    const { latitude: lat, longitude: lon } = position.coords;
 
     yield put(changeMapCenter({ lat, lon }));
     yield put(changeMapZoom(16));
-  } catch(error) {
+  } catch (error) {
     // Position error
     if (error.code) {
       return;

@@ -1,46 +1,49 @@
-const React = require('react');
-const { connect } = require('react-redux');
+import React from 'react';
+import { connect } from 'react-redux';
 
-const Section = require('./Section');
-const actions = require('../actions');
-const { SIMILAR_NODES } = require('../models/sections');
-const selectors = require('../selectors');
-const Node = require('../../common/models/Node');
-const { editNodePath } = require('../../common/routes');
-const I18n = require('../../common/I18n');
+import Section from './Section';
+import actions from '../actions';
+import { SIMILAR_NODES } from '../models/sections';
+import selectors from '../selectors';
+import { editNodePath } from '../../common/routes';
+import I18n from '../../common/I18n';
+import { node, immutableListOf } from '../../common/propTypes';
 
-const { func } = React.PropTypes;
+const { func, bool } = React.PropTypes;
 
-class SimilarNodesSection extends React.Component {
-  static propTypes = {
-    onClickAction: func.isRequired
-  };
+function SimilarNodesSection({ similarNodes, loading, onClickAction }) {
+  const items = [];
 
-  render() {
-    let { similarNodes, loading, onClickAction } = this.props,
-      items = [];
-
-    similarNodes.forEach(node => {
-      items.push(
-        <li key={node.id}>
-          <strong>{node.name}</strong> {node.address()}
-          <a href={editNodePath(node.id)} className="pull-right"><I18n scope="nodes.new.form.section.similar_nodes.go_edit"/> <i className="icon-chevron-right"/></a>
-        </li>
-      );
-    });
-
-    return (
-      <Section section={SIMILAR_NODES}
-               actionExtraScope="nodes.new.form.section.similar_nodes.go_new"
-               onClickAction={onClickAction}
-               loading={loading}>
-        <ul className="nodes-new-content-section--similar-list">
-          {items}
-        </ul>
-      </Section>
+  similarNodes.forEach(node => {
+    items.push(
+      <li key={node.id}>
+        <strong>{node.name}</strong> {node.address()}
+        <a href={editNodePath(node.id)} className="pull-right">
+          <I18n scope="nodes.new.form.section.similar_nodes.go_edit" /> <i className="icon-chevron-right" />
+        </a>
+      </li>
     );
-  }
+  });
+
+  return (
+    <Section
+      section={SIMILAR_NODES}
+      actionExtraScope="nodes.new.form.section.similar_nodes.go_new"
+      onClickAction={onClickAction}
+      loading={loading}
+    >
+      <ul className="nodes-new-content-section--similar-list">
+        {items}
+      </ul>
+    </Section>
+  );
 }
+
+SimilarNodesSection.propTypes = {
+  similarNodes: immutableListOf(node),
+  onClickAction: func.isRequired,
+  loading: bool.isRequired
+};
 
 function mapStateToProps(state) {
   return {
@@ -56,7 +59,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-module.exports = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(SimilarNodesSection);

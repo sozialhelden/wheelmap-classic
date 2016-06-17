@@ -4,7 +4,6 @@ const { createStructuredSelector } = require('reselect');
 const { connect } = require('react-redux');
 
 const Section = require('./Section');
-const { navigateToNextSection } = require('../actions');
 const { ACCESSIBILITY } = require('../models/sections');
 const Row = require('../../common/Row');
 const Form = require('../../common/Form');
@@ -35,6 +34,18 @@ class AccessibilitySection extends React.Component {
     onNodeChange(node.set(attr, event.target.value));
   }
 
+  onChangeWheelchairStatus = (status) => {
+    this.onChangeStatus('wheelchair', status);
+  };
+
+  onChangeWheelchairToiletStatus = (status) => {
+    this.onChangeStatus('wheelchairToilet', status);
+  };
+
+  onChangeWheelchairDescription = (event) => {
+    this.onChange('wheelchairDescription', event);
+  };
+
   render() {
     const { onClickAction, node, loading } = this.props;
 
@@ -43,23 +54,29 @@ class AccessibilitySection extends React.Component {
         <div className="nodes-new-content-section--status-status">
           <Row>
             <Row.Span rows={6}>
-              <StatusDropdown type="wheelchair"
-                              status={node.wheelchair}
-                              onChange={this.onChangeStatus.bind(this, 'wheelchair')}/>
+              <StatusDropdown
+                type="wheelchair"
+                status={node.wheelchair}
+                onChange={this.onChangeWheelchairStatus}
+              />
             </Row.Span>
             <Row.Span rows={6}>
-              <StatusDropdown type="toilet"
-                              status={node.wheelchairToilet}
-                              onChange={this.onChangeStatus.bind(this, 'wheelchairToilet')}/>
+              <StatusDropdown
+                type="toilet"
+                status={node.wheelchairToilet}
+                onChange={this.onChangeWheelchairToiletStatus}
+              />
             </Row.Span>
           </Row>
         </div>
         <Form.ControlGroup labelFor="wheelchair_description" labelScope="activerecord.attributes.poi.note">
           <Form.Controls>
-            <Form.Textarea name="wheelchair_description"
-                           onChange={this.onChange.bind(this, 'wheelchairDescription')}
-                           value={node.wheelchairDescription}
-                           rows={5} />
+            <Form.Textarea
+              name="wheelchair_description"
+              onChange={this.onChangeWheelchairDescription}
+              value={node.wheelchairDescription}
+              rows={5}
+            />
           </Form.Controls>
         </Form.ControlGroup>
       </Section>

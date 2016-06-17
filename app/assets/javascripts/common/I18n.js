@@ -1,38 +1,45 @@
-const React = require('react');
-const classNames = require('classnames');
+import React, { PropTypes } from 'react';
+import classNames from 'classnames';
 
-class I18n extends React.Component {
-  static t(scope) {
-    let translation = global.I18n.t(scope);
+const { string } = PropTypes;
 
-    if (translation.indexOf(scope) > -1)
-      return null;
+function I18n({ scope, className, ...props }) {
+  let translation = I18n.t(scope);
+  let missingTranslation = false;
+  let title;
 
-    return translation;
+  // Translation was not found
+  if (translation == null) {
+    translation = scope.replace(/\./g, ' ');
+    missingTranslation = true;
+    title = 'translation missing';
   }
 
-  render() {
-    var { scope, className, ...props } = this.props,
-      translation = I18n.t(scope), title, missingTranslation = false;
-
-    // Translation was not found
-    if (translation == null) {
-      translation = scope.replace(/\./g, ' ');
-      missingTranslation = true;
-      title = 'translation missing';
-    }
-
-    // Use dangerouslySetInnerHTML as the translation string as translations can contain html elements
-    function createMarkup() {
-      return { __html: translation };
-    }
-
-    className = classNames(className, { 'translation-missing': missingTranslation })
-
-    return (
-      <span className={className} title={title} dangerouslySetInnerHTML={createMarkup()} {...props}></span>
-    );
+  // Use dangerouslySetInnerHTML as the translation string as translations can contain html elements
+  function createMarkup() {
+    return { __html: translation };
   }
+
+  className = classNames(className, { 'translation-missing': missingTranslation });
+
+  return (
+    <span className={className} title={title} dangerouslySetInnerHTML={createMarkup()} {...props} />
+  );
 }
 
-module.exports = I18n;
+I18n.t = (scope) => {
+  const translation = global.I18n.t(scope);
+
+  if (translation.indexOf(scope) > -1) {
+    return null;
+  }
+
+  return translation;
+};
+
+I18n.propTypes = {
+  scope: string.isRequired,
+  className: string.isRequired
+};
+
+export default I18n;

@@ -1,6 +1,6 @@
 const { Record } = require('immutable');
 
-module.exports = Record({
+module.exports = new Record({
   id: null,
   identifier: null,
   icon: null,

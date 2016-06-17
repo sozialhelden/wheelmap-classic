@@ -48,9 +48,9 @@ describe('Node', () => {
   };
 
   function createFeature(id) {
-    const { city, name, postcode, street, housenumber, state, country } = attrs,
-      properties = { city, name, postcode, street, housenumber, state, country },
-      coordinates = [attrs.lon, attrs.lat];
+    const { city, name, postcode, street, housenumber, state, country } = attrs;
+    const properties = { city, name, postcode, street, housenumber, state, country };
+    const coordinates = [ attrs.lon, attrs.lat ];
 
     properties.osm_id = id;
 
@@ -111,7 +111,7 @@ describe('Node', () => {
   });
 
   it('creates from features', () => {
-    const features = [createFeature(1), createFeature(2)];
+    const features = [ createFeature(1), createFeature(2) ];
 
     expect(Node.fromFeatures(features).toJS())
       .toEqual([

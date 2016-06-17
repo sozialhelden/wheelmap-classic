@@ -22,30 +22,26 @@ const SECTION_COMPONENTS = {
 
 const { shape, string, func } = React.PropTypes;
 
-class Content extends React.Component {
-  static propTypes = {
-    params: shape({
-      section: string.isRequired
-    }).isRequired,
-    activateSection: func.isRequired
-  };
+function Content({ params: { section } }) {
+  let Section = SECTION_COMPONENTS[section];
 
-  render() {
-    let { params: { section } } = this.props;
-
-    let Section = SECTION_COMPONENTS[section];
-
-    return (
-      <div className="nodes-new-content">
-        <NodesForm>
-          <Section/>
-        </NodesForm>
-      </div>
-    );
-  }
+  return (
+    <div className="nodes-new-content">
+      <NodesForm>
+        <Section />
+      </NodesForm>
+    </div>
+  );
 }
 
-function mapStateToProps(state) {
+Content.propTypes = {
+  params: shape({
+    section: string.isRequired
+  }).isRequired,
+  activateSection: func.isRequired
+};
+
+function mapStateToProps() {
   return {};
 }
 

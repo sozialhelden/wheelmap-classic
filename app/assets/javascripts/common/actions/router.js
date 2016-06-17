@@ -6,7 +6,7 @@ import routes from '../routes';
 export const TRANSITION = 'TRANSITION';
 
 function createTransitionAction(method) {
-  return createAction(TRANSITION, (...args) => ({ method, args}));
+  return createAction(TRANSITION, (...args) => ({ method, args }));
 }
 
 export const push = createTransitionAction('push');
