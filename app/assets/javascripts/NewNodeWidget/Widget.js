@@ -1,34 +1,31 @@
-const React = require('react');
-const { connect } = require('react-redux');
+import React from 'react';
+import { connect } from 'react-redux';
 
-const Header = require('./Header');
-const Breadcrumbs = require('./Breadcrumbs');
-const Section = require('./models/Section').default;
-const actions = require('./actions');
-const selectors = require('./selectors');
+import Header from './Header';
+import Breadcrumbs from './Breadcrumbs';
+import Section from './models/Section';
+import actions from './actions';
+import selectors from './selectors';
+import { immutableListOf } from '../common/propTypes/immutable';
 
-const { immutableListOf } = require('../common/types');
-const { func, instanceOf } = React.PropTypes;
+const { func, instanceOf, any } = React.PropTypes;
 
-class Widget extends React.Component {
-  static propTypes = {
-    sections: immutableListOf(instanceOf(Section)).isRequired,
-    activeSection: instanceOf(Section),
-    onNavigate: func.isRequired
-  };
-
-  render() {
-    let { sections, activeSection, onNavigate, children } = this.props;
-
-    return (
-      <div className="nodes-new">
-        <Header/>
-        <Breadcrumbs sections={sections} activeSection={activeSection} onNavigate={onNavigate}/>
-        {children}
-      </div>
-    );
-  }
+function Widget({ sections, activeSection, onNavigate, children }) {
+  return (
+    <div className="nodes-new">
+      <Header />
+      <Breadcrumbs sections={sections} activeSection={activeSection} onNavigate={onNavigate} />
+      {children}
+    </div>
+  );
 }
+
+Widget.propTypes = {
+  sections: immutableListOf(instanceOf(Section)).isRequired,
+  activeSection: instanceOf(Section).isRequired,
+  onNavigate: func.isRequired,
+  children: any
+};
 
 function mapStateToProps(state) {
   return {
@@ -43,7 +40,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-module.exports = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Widget);

@@ -26,7 +26,7 @@ describe('useGeolocation', () => {
     const node = new Node();
 
     expect(gen.next(node).value)
-      .toCall([node, node.hasLocation]);
+      .toCall([ node, node.hasLocation ]);
 
     expect(gen.next(false).value)
       .toPut(load(true));
@@ -69,7 +69,7 @@ describe('useGeolocation', () => {
     const node = new Node();
 
     expect(gen.next(node).value)
-      .toCall([node, node.hasLocation]);
+      .toCall([ node, node.hasLocation ]);
 
     expect(gen.next(true).done)
       .toBe(true);
@@ -85,7 +85,7 @@ describe('useGeolocation', () => {
     const node = new Node();
 
     expect(gen.next(node).value)
-      .toCall([node, node.hasLocation]);
+      .toCall([ node, node.hasLocation ]);
 
     expect(gen.next(false).value)
       .toPut(load(true));

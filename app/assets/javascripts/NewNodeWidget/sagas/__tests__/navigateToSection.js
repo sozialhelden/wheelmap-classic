@@ -21,13 +21,13 @@ describe('navigateToSection', () => {
     expect(gen.next().value)
       .toTake(NAVIGATE_TO_SECTION);
 
-    const section = NAME_CATEGORY,
-      action = navigateToSectionAction(section);
+    const section = NAME_CATEGORY;
+    const action = navigateToSectionAction(section);
 
     expect(gen.next(action).value)
       .toSelect(selectors.sections);
 
-    const sections = List([NAME_CATEGORY, ADDRESS]);
+    const sections = new List([ NAME_CATEGORY, ADDRESS ]);
 
     expect(gen.next(sections).value)
       .toSelect(selectors.activeSection);
@@ -40,7 +40,7 @@ describe('navigateToSection', () => {
     const node = new Node();
 
     expect(gen.next(node).value)
-      .toCall([node, node.serialize]);
+      .toCall([ node, node.serialize ]);
 
     const serializedNode = { title: 'Test Node' };
 
@@ -55,13 +55,13 @@ describe('navigateToSection', () => {
     expect(gen.next().value)
       .toTake(NAVIGATE_TO_SECTION);
 
-    const section = ADDRESS,
-      action = navigateToSectionAction(section);
+    const section = ADDRESS;
+    const action = navigateToSectionAction(section);
 
     expect(gen.next(action).value)
       .toSelect(selectors.sections);
 
-    const sections = List([NAME_CATEGORY, ADDRESS]);
+    const sections = new List([ NAME_CATEGORY, ADDRESS ]);
 
     expect(gen.next(sections).value)
       .toSelect(selectors.activeSection);

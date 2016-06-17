@@ -1,22 +1,20 @@
-const React = require('react');
+import React, { PropTypes } from 'react';
+import ReactSelect from 'react-select';
 
-let debounce = require('mout/function/debounce'),
-  find = require('mout/array/find'),
-  ReactSelect = require('react-select');
+const { func, string, number } = PropTypes;
 
 class Photon extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      features: [],
-      options: []
-    };
-  }
+  static propTypes = {
+    onSelection: func.isRequired,
+    onSelectLocation: func.isRequired,
+    lang: string.isRequired,
+    limit: number.isRequired,
+    url: string.isRequired
+  };
 
   static createOptions(features) {
     return features.map(feature => {
-      let { properties } = feature;
+      const { properties } = feature;
 
       return {
         value: properties.osm_id,
@@ -27,49 +25,64 @@ class Photon extends React.Component {
   }
 
   static createLabel(feature) {
-    let { properties } = feature,
-      street = [properties.street, properties.housenumber].filter(val => val).join(' ');
+    const { properties } = feature;
+    const street = [ properties.street, properties.housenumber ].filter(val => val).join(' ');
 
-    return [street, properties.name, properties.state, properties.country].filter(val => val).join(', ');
+    return [ street, properties.name, properties.state, properties.country ].filter(val => val).join(', ');
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      features: [],
+      options: []
+    };
   }
 
   shouldComponentUpdate() {
     return false;
   }
 
-  requestFeatures = (search, callback) => {
-    // Abort old feature request
-    if (this.featureRequest != null)
-      this.featureRequest.abort();
-
-    this.featureRequest = $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      cache: false,
-      data: {
-        q: search,
-        lang: this.props.lang,
-        limit: this.props.limit
-      },
-      success: (data) => {
-        let { features } = data;
-
-        callback(null, {options: Photon.createOptions(features)});
-      }
-    });
-  };
-
   onSelectChange = (feature, options) => {
     this.props.onSelectLocation(options[0].feature);
   };
 
+  requestFeatures = (search, callback) => {
+    const { lang, limit, url } = this.props;
+
+    // Abort old feature request
+    if (this.featureRequest != null) {
+      this.featureRequest.abort();
+    }
+
+    this.featureRequest = $.ajax({
+      url,
+      dataType: 'json',
+      cache: false,
+      data: {
+        q: search,
+        lang,
+        limit
+      },
+      success: (data) => {
+        const { features } = data;
+
+        callback(null, { options: Photon.createOptions(features) });
+      }
+    });
+  };
+
   render() {
     return (
-      <ReactSelect defaultValue={this.state.value} onChange={this.onSelectChange}
-                   asyncOptions={this.requestFeatures}
-                   autoload={false}
-                   clearable={false}
-        {...this.props} />
+      <ReactSelect
+        defaultValue={this.state.value}
+        onChange={this.onSelectChange}
+        asyncOptions={this.requestFeatures}
+        autoload={false}
+        clearable={false}
+        {...this.props}
+      />
     );
   }
 }

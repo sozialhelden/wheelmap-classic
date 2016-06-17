@@ -1,8 +1,8 @@
 const { Record, List } = require('immutable');
 
-module.exports = Record({
+module.exports = new Record({
   id: null,
   identifier: null,
-  node_types: List(),
+  node_types: new List(),
   active: true
 });

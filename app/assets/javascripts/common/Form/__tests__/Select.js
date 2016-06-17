@@ -1,18 +1,17 @@
 jest.dontMock('../Select');
 
-const React = require('react');
-const TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 
-const Select = require('../Select');
+import Select from '../Select';
 
-describe("React select component", function() {
+describe('React select component', () => {
+  const items = [ { value: 1, label: 'one' }, { value: 2, label: 'two' } ];
+  const renderer = TestUtils.createRenderer();
 
-  const items = [{ value: 1, label: 'one' }, { value: 2, label: 'two' }],
-    renderer = TestUtils.createRenderer();
-
-  it("loads correctly", function() {
+  it('loads correctly', function () {
     renderer.render(
-      <Select/>
+      <Select />
     );
 
     const element = renderer.getRenderOutput();
@@ -20,14 +19,13 @@ describe("React select component", function() {
     expect(element).not.toBeNull();
   });
 
-  it("renders it children as options", function() {
+  it('renders it children as options', () => {
     renderer.render(
-      <Select options={items}/>
+      <Select options={items} />
     );
 
     const element = renderer.getRenderOutput();
 
     expect(element.props.children.length).toBe(2);
   });
-
 });

@@ -1,32 +1,42 @@
-const React = require('react');
-const { bindActionCreators } = require('redux');
-const { createStructuredSelector } = require('reselect');
-const { connect } = require('react-redux');
+import React from 'react';
+import { bindActionCreators } from 'redux';
+import { createStructuredSelector } from 'reselect';
+import { connect } from 'react-redux';
 
-const Section = require('./Section');
-const Form = require('../../common/Form');
-const NodeTypeSelect = require('./NodeTypeSelect');
-const { NAME_CATEGORY } = require('../models/sections');
-const { categoriesSelector } = require('../../common/selectors/categories');
-const { nodeTypesSelector } = require('../../common/selectors/nodeTypes');
-const selectors = require('../selectors');
-const actions = require('../actions');
+import Section from './Section';
+import Form from '../../common/Form';
+import NodeTypeSelect from './NodeTypeSelect';
+import { NAME_CATEGORY } from '../models/sections';
+import { categoriesSelector } from '../../common/selectors/categories';
+import { nodeTypesSelector } from '../../common/selectors/nodeTypes';
+import selectors from '../selectors';
+import actions from '../actions';
+import { node, category, nodeType, immutableListOf, immutableMap } from '../../common/propTypes';
 
-const { func } = React.PropTypes;
+const { func, bool } = React.PropTypes;
 
 class NameCategorySection extends React.Component {
   static propTypes = {
     onClickNext: func.isRequired,
-    onChange: func.isRequired
+    onChange: func.isRequired,
+    loading: bool.isRequired,
+    node: node.isRequired,
+    errors: immutableMap.isRequired,
+    nodeTypes: immutableListOf(nodeType).isRequired,
+    categories: immutableListOf(category).isRequired
   };
 
-  onChangeName(node, event) {
-    this.props.onChange(node.set('name', event.target.value));
-  }
+  onChangeName = (event) => {
+    const { node, onChange } = this.props;
 
-  onChangeNodeType(node, nodeType) {
-    this.props.onChange(node.set('nodeType', nodeType));
-  }
+    onChange(node.set('name', event.target.value));
+  };
+
+  onChangeNodeType = (nodeType) => {
+    const { node, onChange } = this.props;
+
+    onChange(node.set('nodeType', nodeType));
+  };
 
   render() {
     const { onClickNext, loading, node, errors, categories, nodeTypes } = this.props;
@@ -36,19 +46,23 @@ class NameCategorySection extends React.Component {
         <div>{/* Needed for having only one section */}
           <Form.ControlGroup labelFor="name" labelScope="activerecord.attributes.poi.name">
             <Form.Controls>
-              <Form.Input name="name"
-                          onChange={this.onChangeName.bind(this, node)}
-                          value={node.name}
-                          errors={errors.get('name')}/>
+              <Form.Input
+                name="name"
+                onChange={this.onChangeName}
+                value={node.name}
+                errors={errors.get('name')}
+              />
             </Form.Controls>
           </Form.ControlGroup>
           <Form.ControlGroup labelFor="node_type_id" labelScope="activerecord.attributes.poi.type">
             <Form.Controls>
-              <NodeTypeSelect categories={categories}
-                              nodeTypes={nodeTypes}
-                              onChange={this.onChangeNodeType.bind(this, node)}
-                              value={node.nodeType}
-                              errors={errors.get('nodeType')}/>
+              <NodeTypeSelect
+                categories={categories}
+                nodeTypes={nodeTypes}
+                onChange={this.onChangeNodeType}
+                value={node.nodeType}
+                errors={errors.get('nodeType')}
+              />
             </Form.Controls>
           </Form.ControlGroup>
         </div>
@@ -72,7 +86,7 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-module.exports = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(NameCategorySection);

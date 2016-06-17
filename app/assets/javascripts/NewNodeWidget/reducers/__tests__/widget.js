@@ -2,7 +2,6 @@ jest.dontMock('../widget');
 
 import { NAME_CATEGORY } from '../../models/sections';
 import * as actions from '../../actions';
-import { FETCH_CATEGORIES } from '../../../common/actions/categories';
 import Node from '../../../common/models/Node';
 
 const widgetReducer = require('../widget');
@@ -15,8 +14,8 @@ describe('widget reducer', () => {
   });
 
   it('activate section', () => {
-    const activeSection = NAME_CATEGORY,
-      action = actions.activateSection(NAME_CATEGORY);
+    const activeSection = NAME_CATEGORY;
+    const action = actions.activateSection(NAME_CATEGORY);
 
     state = widgetReducer(state, action);
 
@@ -25,8 +24,8 @@ describe('widget reducer', () => {
   });
 
   it('changes node', () => {
-    const node = new Node(),
-      action = actions.changeNode(node);
+    const node = new Node();
+    const action = actions.changeNode(node);
 
     state = widgetReducer(state, action);
 
@@ -35,8 +34,8 @@ describe('widget reducer', () => {
   });
 
   it('changes map center', () => {
-    const center = { lat: 14.5, lon: 13.5 },
-      action = actions.changeMapCenter(center);
+    const center = { lat: 14.5, lon: 13.5 };
+    const action = actions.changeMapCenter(center);
 
     state = widgetReducer(state, action);
 
@@ -45,8 +44,8 @@ describe('widget reducer', () => {
   });
 
   it('changes map zoom', () => {
-    const zoom = 16,
-      action = actions.changeMapZoom(16);
+    const zoom = 16;
+    const action = actions.changeMapZoom(16);
 
     state = widgetReducer(state, action);
 
@@ -55,8 +54,8 @@ describe('widget reducer', () => {
   });
 
   it('sets similar nodes', () => {
-    const similarNodes = [new Node(), new Node()],
-      action = actions.setSimilar(similarNodes);
+    const similarNodes = [ new Node(), new Node() ];
+    const action = actions.setSimilar(similarNodes);
 
     state = widgetReducer(state, action);
 
@@ -65,8 +64,8 @@ describe('widget reducer', () => {
   });
 
   it('sets errors', () => {
-    const errors = { errorOne: 'first error', errorTwo: 'second error' },
-      action = actions.setErrors(errors);
+    const errors = { errorOne: 'first error', errorTwo: 'second error' };
+    const action = actions.setErrors(errors);
 
     state = widgetReducer(state, action);
 

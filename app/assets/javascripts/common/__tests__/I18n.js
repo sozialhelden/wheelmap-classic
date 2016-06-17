@@ -1,53 +1,52 @@
 jest.dontMock('../I18n');
 
-const React = require('react');
-const ReactDOM = require('react-dom');
-const TestUtils = require('react-addons-test-utils');
-const I18n = require('../I18n');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
+import I18n from '../I18n';
 
 const VALID_KEY = 'valid.key';
 
-describe("React translation component", function() {
-
+describe('React translation component', () => {
   let component = null;
 
-  let t = jest.genMockFn();
+  const t = jest.genMockFn();
 
-  t.mockImplementation(function(key) {
-    if (key == VALID_KEY)
+  t.mockImplementation(function (key) {
+    if (key === VALID_KEY) {
       return 'valid translation';
+    }
 
     return `[${key}]`;
   });
 
   global.I18n = { locale: 'en', t };
 
-  it("loads correctly and resolves translations", function() {
+  it('loads correctly and resolves translations', () => {
     let key = VALID_KEY;
 
     component = TestUtils.renderIntoDocument(
-      <I18n scope={key}/>
+      <I18n scope={key} />
     );
-    
-    let node = ReactDOM.findDOMNode(component),
-      translation = global.I18n.t(key);
+
+    const node = ReactDOM.findDOMNode(component);
+    const translation = global.I18n.t(key);
 
     expect(node).toBeDefined();
     expect(node.textContent).toBe(translation);
   });
 
-  it("notifies about missing translations", function() {
+  it('notifies about missing translations', () => {
     let key = 'invalid.key';
 
     component = TestUtils.renderIntoDocument(
-      <I18n scope={key}/>
+      <I18n scope={key} />
     );
 
-    let node = ReactDOM.findDOMNode(component);
+    const node = ReactDOM.findDOMNode(component);
 
     expect(node.textContent).toBe('invalid key');
     expect(node.className).toBe('translation-missing');
     expect(node.title).toBe('translation missing');
   });
-
 });

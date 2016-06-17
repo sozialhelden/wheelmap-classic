@@ -9,7 +9,7 @@ export default function *watchMarkerMoved() {
     const { payload: location } = yield take(MARKER_MOVED);
 
     let node = yield select(selectors.node);
-    node = yield call([node, node.merge], location);
+    node = yield call([ node, node.merge ], location);
 
     yield put(changeNode(node));
   }

@@ -15,8 +15,8 @@ describe('initNode', () => {
     expect(gen.next().value)
       .toTake(ENTER_CONTENT);
 
-    const nextState = { params: {}, location: { query: {} } },
-      action = enterContent(nextState);
+    const nextState = { params: {}, location: { query: {} } };
+    const action = enterContent(nextState);
 
     expect(gen.next(action).value)
       .toPut(replace.newNodeSectionPath(NAME_CATEGORY));
@@ -31,9 +31,9 @@ describe('initNode', () => {
     expect(gen.next().value)
       .toTake(ENTER_CONTENT);
 
-    const queryNode = { lat: '15.5', lon: '13.3', title: 'Test Node' },
-      nextState = { params: {}, location: { query: { node: queryNode } } },
-      action = enterContent(nextState);
+    const queryNode = { lat: '15.5', lon: '13.3', title: 'Test Node' };
+    const nextState = { params: {}, location: { query: { node: queryNode } } };
+    const action = enterContent(nextState);
 
     const node = new Node();
 
@@ -48,7 +48,7 @@ describe('initNode', () => {
       .toPut(changeNode(node));
 
     expect(gen.next().value)
-      .toCall([node, node.location]);
+      .toCall([ node, node.location ]);
 
     const location = { lat: node.lat, lon: node.lon };
 
@@ -74,9 +74,9 @@ describe('initNode', () => {
     expect(gen.next().value)
       .toTake(ENTER_CONTENT);
 
-    const queryNode = { lat: '15.5', lon: '13.3', title: 'Test Node' },
-      nextState = { params: {}, location: { query: { node: queryNode } } },
-      action = enterContent(nextState);
+    const queryNode = { lat: '15.5', lon: '13.3', title: 'Test Node' };
+    const nextState = { params: {}, location: { query: { node: queryNode } } };
+    const action = enterContent(nextState);
 
     const node = new Node();
 
@@ -91,7 +91,7 @@ describe('initNode', () => {
       .toPut(changeNode(node));
 
     expect(gen.next().value)
-      .toCall([node, node.location]);
+      .toCall([ node, node.location ]);
 
     const location = { lat: node.lat, lon: node.lon };
 

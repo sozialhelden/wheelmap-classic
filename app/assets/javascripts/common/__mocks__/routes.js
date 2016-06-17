@@ -8,10 +8,10 @@ const routes = [
 const helpers = {};
 
 routes.forEach(route => {
-  const path = unCamelCase(route, '/'),
-    helper = () => {
-      return path;
-    };
+  const path = unCamelCase(route, '/');
+  const helper = () => {
+    return path;
+  };
 
   helpers[route] = jest.genMockFunction()
     .mockImpl(helper);
@@ -19,4 +19,4 @@ routes.forEach(route => {
   helpers[route].toString = helper;
 });
 
-module.exports = helpers;
+export default helpers;

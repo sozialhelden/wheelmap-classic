@@ -22,6 +22,7 @@ before_script:
   - npm install --no-spin
 script:
   - bundle exec rake spec
+  - npm run eslint
   - npm test
 notifications:
   email:

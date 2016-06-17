@@ -1,0 +1,17 @@
+{
+  "extends": "blogfoster/react",
+  "env": {
+    "jest": true,
+    "jasmine": true,
+    "jquery": true
+  },
+  "globals": {
+    "Routes": true,
+    "I18n": true
+  },
+  "rules": {
+    "no-constant-condition": [
+      "error", { "checkLoops": false }
+    ]
+  }
+}

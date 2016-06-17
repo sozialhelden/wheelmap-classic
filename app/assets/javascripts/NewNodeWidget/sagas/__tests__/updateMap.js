@@ -31,7 +31,8 @@ describe('cancelUpdateMap', () => {
 });
 
 describe('updateMap', () => {
-  let gen, node;
+  let gen;
+  let node;
 
   beforeEach(() => {
     node = new Node();
@@ -43,7 +44,7 @@ describe('updateMap', () => {
       .toCall(delay, 300);
 
     expect(gen.next().value)
-      .toCall([node, node.address]);
+      .toCall([ node, node.address ]);
 
     const address = 'Node address';
 
@@ -57,7 +58,7 @@ describe('updateMap', () => {
 
     const feature = {
       geometry: {
-        coordinates: [center.lon, center.lat]
+        coordinates: [ center.lon, center.lat ]
       }
     };
 
@@ -65,7 +66,7 @@ describe('updateMap', () => {
       .toPut(changeMapCenter(center));
 
     expect(gen.next().value)
-      .toCall([node, node.merge], center);
+      .toCall([ node, node.merge ], center);
 
     node = new Node();
 
@@ -81,7 +82,7 @@ describe('updateMap', () => {
       .toCall(delay, 300);
 
     expect(gen.next().value)
-      .toCall([node, node.address]);
+      .toCall([ node, node.address ]);
 
     const address = 'Node address';
 
@@ -116,8 +117,8 @@ describe('debounceUpdateMap', () => {
     expect(gen.next().value)
       .toTake(CHANGE_NODE_ADDRESS);
 
-    let node = new Node(),
-      action = changeNodeAddress(node);
+    let node = new Node();
+    let action = changeNodeAddress(node);
 
     expect(gen.next(action).value)
       .toFork(updateMap, node);

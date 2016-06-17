@@ -13,8 +13,8 @@ describe('watchMakerMoved', () => {
     expect(gen.next().value)
       .toTake(MARKER_MOVED);
 
-    const location = { lat: 14.5, lon: 13.5 },
-      action = markerMoved(location);
+    const location = { lat: 14.5, lon: 13.5 };
+    const action = markerMoved(location);
 
     expect(gen.next(action).value)
       .toSelect(selectors.node);
@@ -22,7 +22,7 @@ describe('watchMakerMoved', () => {
     let node = new Node();
 
     expect(gen.next(node).value)
-      .toCall([node, node.merge], location)
+      .toCall([ node, node.merge ], location);
 
     node = new Node();
 

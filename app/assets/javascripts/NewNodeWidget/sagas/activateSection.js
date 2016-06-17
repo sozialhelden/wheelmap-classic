@@ -7,8 +7,8 @@ import sections, { NAME_CATEGORY } from '../models/sections';
 
 export default function*() {
   while (true) {
-    const { payload: { section: sectionId } } = yield take(ENTER_CONTENT),
-      section = find(sections, section => section.id === sectionId);
+    const { payload: { section: sectionId } } = yield take(ENTER_CONTENT);
+    const section = find(sections, section => section.id === sectionId);
 
     // Redirect to name and category (first) section if given section is invalid.
     if (section == null) {

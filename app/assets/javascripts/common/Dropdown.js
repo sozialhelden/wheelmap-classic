@@ -1,53 +1,60 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const classNames = require('classnames');
+import React, { PropTypes } from 'react';
+import classNames from 'classnames';
 
-class Dropdown extends React.Component {
-  render() {
-    const { children, className, ...props } = this.props;
+const { any, string } = PropTypes;
 
-    return (
-      <div className={classNames('dropdown', className)} {...props}>
-        {children}
-      </div>
-    );
-  }
+function Dropdown({ children, className, ...props }) {
+  return (
+    <div className={classNames('dropdown', className)} {...props}>
+      {children}
+    </div>
+  );
 }
 
-Dropdown.Button = class Button extends React.Component {
-  render() {
-    const { children, className, ...props } = this.props;
-
-    return (
-      <div className={classNames('btn', className)} data-toggle="dropdown" {...props}>
-        {children}
-      </div>
-    );
-  }
+Dropdown.propTypes = {
+  children: any,
+  className: string
 };
 
-Dropdown.Menu = class Menu extends React.Component {
-  render() {
-    const { children, ...props } = this.props;
+function Button({ children, className, ...props }) {
+  return (
+    <div className={classNames('btn', className)} data-toggle="dropdown" {...props}>
+      {children}
+    </div>
+  );
+}
 
-    return (
-      <ul className="dropdown-menu" role="menu" {...props}>
-        {children}
-      </ul>
-    );
-  }
+Button.propTypes = {
+  children: any,
+  className: string
 };
 
-Dropdown.Item = class Item extends React.Component {
-  render() {
-    const { children, ...props } = this.props;
+function Menu({ children, ...props }) {
+  return (
+    <ul className="dropdown-menu" role="menu" {...props}>
+      {children}
+    </ul>
+  );
+}
 
-    return (
-      <li {...props}>
-        {children}
-      </li>
-    );
-  }
+Menu.propTypes = {
+  children: any
 };
 
-module.exports = Dropdown;
+function Item({ children, ...props }) {
+  return (
+    <li {...props}>
+      {children}
+    </li>
+  );
+}
+
+Item.propTypes = {
+  children: any
+};
+
+Dropdown.Button = Button;
+Dropdown.Menu = Menu;
+Dropdown.Item = Item;
+
+export default Dropdown;

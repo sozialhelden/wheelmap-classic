@@ -10,17 +10,17 @@ export default function *navigateToNextSection() {
   while (true) {
     yield take(NAVIGATE_TO_NEXT_SECTION);
 
-    const node = yield select(selectors.node),
-      activeSection = yield select(selectors.activeSection),
-      { nodeAttrs } = activeSection;
+    const node = yield select(selectors.node);
+    const activeSection = yield select(selectors.activeSection);
+    const { nodeAttrs } = activeSection;
 
     yield put(load(true));
 
-    const attrs = yield call([nodeAttrs, nodeAttrs.toJS]);
+    const attrs = yield call([ nodeAttrs, nodeAttrs.toJS ]);
 
     try {
       yield call(api.validateNode, node, attrs);
-    } catch(error) {
+    } catch (error) {
       if (yield call(api.HTTPError.is, error, 422)) {
         const { errors } = error;
 
@@ -34,9 +34,9 @@ export default function *navigateToNextSection() {
       yield put(load(false));
     }
 
-    const sections = yield select(selectors.sections),
-      nextIndex = sections.indexOf(activeSection) + 1,
-      nextSection = sections.get(nextIndex);
+    const sections = yield select(selectors.sections);
+    const nextIndex = sections.indexOf(activeSection) + 1;
+    const nextSection = sections.get(nextIndex);
 
     yield put(push.newNodeSectionPath(nextSection, node.serialize()));
   }
