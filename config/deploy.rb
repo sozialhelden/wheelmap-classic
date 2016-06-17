@@ -23,7 +23,7 @@ set :log_level, :debug
 set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{ config/database.yml config/open_street_map.yml config/metrics.yml config/librato.yml config/newrelic.yml config/application.yml .env}
+set :linked_files, %w{ config/database.yml config/open_street_map.yml config/metrics.yml config/librato.yml config/newrelic.yml config/application.yml .env config/secrets.yml}
 
 # Default value for :bundle_without is %w{development test}.join(' ')
 set :bundle_without, %w{ development test metrics deployment }.join(' ')
