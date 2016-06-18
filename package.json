@@ -39,6 +39,7 @@
     "reselect": "^2.0.2"
   },
   "devDependencies": {
+    "babel-eslint": "^6.0.4",
     "babel-jest": "^12.1.0",
     "eslint": "^2.12.0",
     "eslint-config-blogfoster": "^1.3.2",
