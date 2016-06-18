@@ -1,9 +1,9 @@
-const React = require('react');
-const I18n = require('../common/I18n');
+import React, { Component } from 'react';
+import I18n from '../common/I18n';
 
-const { widget } = require('./propTypes');
+import { widget } from './propTypes';
 
-class WidgetBuilderPreview extends React.Component {
+class WidgetBuilderPreview extends Component {
   static propTypes = {
     widget: widget.isRequired
   };

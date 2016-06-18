@@ -1,17 +1,10 @@
-const { createAction } = require('redux-actions');
+import { createAction } from 'redux-actions';
 
-const api = require('../helpers/api');
+import { fetchCategories } from '../helpers/api';
 
-const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
-const TOGGLE_CATEGORY = 'TOGGLE_CATEGORY';
+export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
+export const TOGGLE_CATEGORY = 'TOGGLE_CATEGORY';
 
 // @TODO Replace with setting action and fetch via sagas.
-const fetch = createAction(FETCH_CATEGORIES, api.fetchCategories);
-const toggle = createAction(TOGGLE_CATEGORY);
-
-module.exports = {
-  FETCH_CATEGORIES,
-  TOGGLE_CATEGORY,
-  fetch,
-  toggle
-};
+export const fetch = createAction(FETCH_CATEGORIES, fetchCategories);
+export const toggle = createAction(TOGGLE_CATEGORY);

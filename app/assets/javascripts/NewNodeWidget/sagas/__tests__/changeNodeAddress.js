@@ -1,34 +1,35 @@
-jest.dontMock('../changeNodeAddress');
+jest.unmock('../changeNodeAddress');
 
 import {
   CHANGE_NODE_ADDRESS,
   changeNode,
-  updateMap,
-  changeNodeAddress as changeNodeAddressAction
+  updateMap
 } from '../../actions';
 import Node from '../../../common/models/Node';
-
-const changeNodeAddress = require('../changeNodeAddress').default;
+import changeNodeAddress from '../changeNodeAddress';
 
 describe('changeNodeAddress', () => {
   const generator = changeNodeAddress();
 
   it('updates map', () => {
-    expect(generator.next().value)
+    expect(generator.next())
       .toTake(CHANGE_NODE_ADDRESS);
 
     const node = new Node();
-    const action = changeNodeAddressAction(node);
+    const action = {
+      type: CHANGE_NODE_ADDRESS,
+      payload: node
+    };
 
-    expect(generator.next(action).value)
+    expect(generator.next(action))
       .toPut(changeNode(node));
 
-    expect(generator.next().value)
+    expect(generator.next())
       .toCall([ node, node.address ]);
 
     const address = 'node address';
 
-    expect(generator.next(address).value)
+    expect(generator.next(address))
       .toPut(updateMap(address));
 
     expect(generator.next().done)

@@ -1,4 +1,4 @@
-jest.dontMock('../Photon');
+jest.unmock('../Photon');
 
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';

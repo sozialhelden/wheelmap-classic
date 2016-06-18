@@ -1,18 +1,19 @@
-jest.dontMock('../delayPromise');
+jest.unmock('../delayPromise');
 
-const delayPromise = require('../delayPromise');
+import delayPromise from '../delayPromise';
 
 describe('delayPromise', () => {
   it('resolves after certain delay', () => {
-    const callback = jest.genMockFn();
+    const callback = jest.fn();
 
-    delayPromise(100)
+    const promise = delayPromise(100)
       .then(callback);
 
     jest.runAllTimers();
-    jest.runAllTicks();
 
-    expect(callback)
-      .toBeCalled();
+    return promise.then(() => {
+      expect(callback)
+        .toBeCalled();
+    });
   });
 });

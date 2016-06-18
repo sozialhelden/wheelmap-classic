@@ -1,9 +1,8 @@
-jest.dontMock('../Preview');
+jest.unmock('../Preview');
 
-const React = require('react');
-const TestUtils = require('react-addons-test-utils');
-
-const WidgetBuilderPreview = require('../Preview');
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
+import WidgetBuilderPreview from '../Preview';
 
 describe('React WidgetPreview component', function () {
   it('loads correctly', function () {

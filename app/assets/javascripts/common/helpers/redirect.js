@@ -1,3 +1,3 @@
-module.exports = function redirect(path) {
+export default function redirect(path) {
   window.location = path;
 };

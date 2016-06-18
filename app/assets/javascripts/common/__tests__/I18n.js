@@ -1,4 +1,4 @@
-jest.dontMock('../I18n');
+jest.unmock('../I18n');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -26,12 +26,14 @@ describe('React translation component', () => {
     let key = VALID_KEY;
 
     component = TestUtils.renderIntoDocument(
-      <I18n scope={key} />
+      <div>
+        <I18n scope={key} />
+      </div>
     );
 
     const node = ReactDOM.findDOMNode(component);
     const translation = global.I18n.t(key);
-
+    
     expect(node).toBeDefined();
     expect(node.textContent).toBe(translation);
   });
@@ -40,11 +42,13 @@ describe('React translation component', () => {
     let key = 'invalid.key';
 
     component = TestUtils.renderIntoDocument(
-      <I18n scope={key} />
+      <div>
+        <I18n scope={key} />
+      </div>
     );
 
-    const node = ReactDOM.findDOMNode(component);
-
+    const node = ReactDOM.findDOMNode(component).children[0];
+    
     expect(node.textContent).toBe('invalid key');
     expect(node.className).toBe('translation-missing');
     expect(node.title).toBe('translation missing');

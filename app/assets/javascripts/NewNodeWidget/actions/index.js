@@ -34,35 +34,3 @@ export const navigateToNextSection = createAction(NAVIGATE_TO_NEXT_SECTION);
 export const updateMap = createAction(UPDATE_MAP);
 export const setSimilar = createAction(SET_SIMILAR);
 export const saveNode = createAction(SAVE_NODE);
-
-// @TODO Remove when we every module uses es6 imports.
-export default {
-  ENTER_CONTENT,
-  LOAD,
-  ACTIVATE_SECTION,
-  CHANGE_NODE,
-  CHANGE_MAP_CENTER,
-  CHANGE_MAP_ZOOM,
-  MARKER_MOVED,
-  CHANGE_NODE_ADDRESS,
-  SET_SIMILAR,
-  SET_ERRORS,
-  NAVIGATE_TO_SECTION,
-  NAVIGATE_TO_NEXT_SECTION,
-  UPDATE_MAP,
-  SAVE_NODE,
-  enterContent,
-  load,
-  activateSection,
-  changeNode,
-  markerMoved,
-  changeNodeAddress,
-  changeMapCenter,
-  changeMapZoom,
-  setSimilar,
-  setErrors,
-  navigateToSection,
-  navigateToNextSection,
-  updateMap,
-  saveNode
-};

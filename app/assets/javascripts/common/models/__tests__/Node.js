@@ -1,4 +1,4 @@
-jest.dontMock('../Node');
+jest.unmock('../Node');
 
 const Node = require('../Node');
 

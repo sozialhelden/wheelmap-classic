@@ -1,9 +1,9 @@
 import { take, put, select, call } from 'redux-saga/effects';
 
 import { NAVIGATE_TO_NEXT_SECTION, setErrors, load } from '../actions';
-import selectors from '../selectors';
+import * as selectors from '../selectors';
 import { push } from '../../common/actions/router';
-import api from '../../common/helpers/api';
+import { validateNode, HTTPError } from '../../common/helpers/api';
 
 // Navigate to next section based on current section
 export default function *navigateToNextSection() {
@@ -19,9 +19,9 @@ export default function *navigateToNextSection() {
     const attrs = yield call([ nodeAttrs, nodeAttrs.toJS ]);
 
     try {
-      yield call(api.validateNode, node, attrs);
+      yield call(validateNode, node, attrs);
     } catch (error) {
-      if (yield call(api.HTTPError.is, error, 422)) {
+      if (yield call(HTTPError.is, error, 422)) {
         const { errors } = error;
 
         // Abort navigation and show errors.

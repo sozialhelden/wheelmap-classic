@@ -1,4 +1,4 @@
-jest.dontMock('../Section');
+jest.unmock('../Section');
 
 const Section = require('../Section').default;
 

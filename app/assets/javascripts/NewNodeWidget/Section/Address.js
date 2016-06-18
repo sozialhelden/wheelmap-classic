@@ -6,8 +6,8 @@ import Leaflet from 'react-leaflet';
 
 import Section from './Section';
 import { ADDRESS } from '../models/sections';
-import actions from '../actions';
-import selectors from '../selectors';
+import * as actions from '../actions';
+import * as selectors from '../selectors';
 import Form from '../../common/Form';
 import Alert from '../../common/Alert';
 import I18n from '../../common/I18n';
