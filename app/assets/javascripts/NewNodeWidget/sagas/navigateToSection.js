@@ -1,7 +1,7 @@
 import { take, put, select, call } from 'redux-saga/effects';
 
 import { NAVIGATE_TO_SECTION } from '../actions';
-import selectors from '../selectors';
+import * as selectors from '../selectors';
 import { push } from '../../common/actions/router';
 
 // Navigate to a specific section (e.g. via the breadcrumbs or the overview section)

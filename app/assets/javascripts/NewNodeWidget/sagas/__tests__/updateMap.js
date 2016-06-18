@@ -1,28 +1,28 @@
-jest.dontMock('../updateMap');
+jest.unmock('../updateMap');
 
 import { SagaCancellationException } from 'redux-saga';
 import { createMockTask } from 'redux-saga/utils';
 
-import { MARKER_MOVED, changeMapCenter, changeNode, CHANGE_NODE_ADDRESS, changeNodeAddress } from '../../actions';
-import photon from '../../../common/helpers/photon';
+import { MARKER_MOVED, changeMapCenter, changeNode, CHANGE_NODE_ADDRESS } from '../../actions';
+import { geocode } from '../../../common/helpers/photon';
 import delay from '../../../common/helpers/delayPromise';
 import Node from '../../../common/models/Node';
 
-const { default: cancelUpdateMap, updateMap, debounceUpdateMap } = require('../updateMap');
+import cancelUpdateMap, { updateMap, debounceUpdateMap } from '../updateMap';
 
 describe('cancelUpdateMap', () => {
   it('fork debounceUpdateMap and cancel it when the marker was moved', () => {
     const gen = cancelUpdateMap();
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toFork(debounceUpdateMap);
 
     const debounceUpdateMapTask = createMockTask();
 
-    expect(gen.next(debounceUpdateMapTask).value)
+    expect(gen.next(debounceUpdateMapTask))
       .toTake(MARKER_MOVED);
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toCancel(debounceUpdateMapTask);
 
     expect(gen.next().done)
@@ -40,16 +40,16 @@ describe('updateMap', () => {
   });
 
   it('delays execution, geocodes address and changes node position', () => {
-    expect(gen.next().value)
+    expect(gen.next())
       .toCall(delay, 300);
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toCall([ node, node.address ]);
 
     const address = 'Node address';
 
-    expect(gen.next(address).value)
-      .toCall(photon.geocode, address);
+    expect(gen.next(address))
+      .toCall(geocode, address);
 
     const center = {
       lat: 14.5,
@@ -62,15 +62,15 @@ describe('updateMap', () => {
       }
     };
 
-    expect(gen.next(feature).value)
+    expect(gen.next(feature))
       .toPut(changeMapCenter(center));
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toCall([ node, node.merge ], center);
 
     node = new Node();
 
-    expect(gen.next(node).value)
+    expect(gen.next(node))
       .toPut(changeNode(node));
 
     expect(gen.next().done)
@@ -78,16 +78,16 @@ describe('updateMap', () => {
   });
 
   it('delays execution, geocodes address and stops if no feature was found', () => {
-    expect(gen.next().value)
+    expect(gen.next())
       .toCall(delay, 300);
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toCall([ node, node.address ]);
 
     const address = 'Node address';
 
-    expect(gen.next(address).value)
-      .toCall(photon.geocode, address);
+    expect(gen.next(address))
+      .toCall(geocode, address);
 
     const feature = null;
 
@@ -96,7 +96,7 @@ describe('updateMap', () => {
   });
 
   it('can be canceled', () => {
-    expect(gen.next().value)
+    expect(gen.next())
       .toCall(delay, 300);
 
     const error = new SagaCancellationException();
@@ -114,37 +114,40 @@ describe('debounceUpdateMap', () => {
   });
 
   it('forks the updateMap saga and cancels it on second iteration', () => {
-    expect(gen.next().value)
+    expect(gen.next())
       .toTake(CHANGE_NODE_ADDRESS);
 
     let node = new Node();
-    let action = changeNodeAddress(node);
+    const action = {
+      type: CHANGE_NODE_ADDRESS,
+      payload: node
+    };
 
-    expect(gen.next(action).value)
+    expect(gen.next(action))
       .toFork(updateMap, node);
 
     let updateMapTask = createMockTask();
 
-    expect(gen.next(updateMapTask).value)
+    expect(gen.next(updateMapTask))
       .toTake(CHANGE_NODE_ADDRESS);
 
     node = new Node();
-    action = changeNodeAddress(node);
+    action.payload = node;
 
-    expect(gen.next(action).value)
+    expect(gen.next(action))
       .toCancel(updateMapTask);
 
     updateMapTask = createMockTask();
 
-    expect(gen.next(updateMapTask).value)
+    expect(gen.next(updateMapTask))
       .toFork(updateMap, node);
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toTake(CHANGE_NODE_ADDRESS);
   });
 
   it('can be canceled', () => {
-    expect(gen.next().value)
+    expect(gen.next())
       .toTake(CHANGE_NODE_ADDRESS);
 
     const error = new SagaCancellationException();

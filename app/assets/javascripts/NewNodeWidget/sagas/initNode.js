@@ -2,7 +2,7 @@ import { take, put, call } from 'redux-saga/effects';
 
 import { ENTER_CONTENT, changeNode, changeMapCenter, load, setErrors } from '../actions';
 import { NAME_CATEGORY } from '../models/sections';
-import api from '../../common/helpers/api';
+import { validateNode, HTTPError } from '../../common/helpers/api';
 import { replace } from '../../common/actions/router';
 import Node from '../../common/models/Node';
 
@@ -36,9 +36,9 @@ export default function*() {
 
   try {
     yield put(load(true));
-    yield call(api.validateNode, node);
+    yield call(validateNode, node);
   } catch (error) {
-    if (error instanceof api.HTTPError) {
+    if (error instanceof HTTPError) {
       const { errors } = error;
 
       yield put(replace.newNodeSectionPath(NAME_CATEGORY));

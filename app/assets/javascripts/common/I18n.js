@@ -39,7 +39,7 @@ I18n.t = (scope) => {
 
 I18n.propTypes = {
   scope: string.isRequired,
-  className: string.isRequired
+  className: string
 };
 
 export default I18n;

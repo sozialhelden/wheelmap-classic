@@ -1,15 +1,28 @@
-jest.dontMock('../Form');
+jest.unmock('../Form');
 
-const React = require('react');
-const ReactDOM = require('react-dom');
-const TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TestUtils from 'react-addons-test-utils';
 
-const WidgetBuilderForm = require('../Form');
+import WidgetBuilderForm from '../Form';
 
 describe('React WidgetForm component', function () {
   it('loads correctly', function () {
+    const changeWidth = jest.genMockFn();
+    const changeHeight = jest.genMockFn();
+    const changeCategories = jest.genMockFn();
+    const changeProvider = jest.genMockFn();
+    const changeLocation = jest.genMockFn();
+
     const component = TestUtils.renderIntoDocument(
-      <WidgetBuilderForm widget={{ providers: [] }} />
+      <WidgetBuilderForm
+        widget={{ providers: [] }}
+        changeWidth={changeWidth}
+        changeHeight={changeHeight}
+        changeCategories={changeCategories}
+        changeProvider={changeProvider}
+        changeLocation={changeLocation}
+      />
     );
 
     expect(component).not.toBeNull();
@@ -18,8 +31,19 @@ describe('React WidgetForm component', function () {
   xit('change dimensions', function () {
     const changeWidth = jest.genMockFn();
     const changeHeight = jest.genMockFn();
+    const changeCategories = jest.genMockFn();
+    const changeProvider = jest.genMockFn();
+    const changeLocation = jest.genMockFn();
+
     const component = TestUtils.renderIntoDocument(
-      <WidgetBuilderForm widget={{ providers: [] }} changeWidth={changeWidth} changeHeight={changeHeight} />
+      <WidgetBuilderForm
+        widget={{ providers: [] }}
+        changeWidth={changeWidth}
+        changeHeight={changeHeight}
+        changeCategories={changeCategories}
+        changeProvider={changeProvider}
+        changeLocation={changeLocation}
+      />
     );
 
     // @TODO fix this

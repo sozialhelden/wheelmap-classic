@@ -2,10 +2,10 @@ import { Map, List, fromJS } from 'immutable';
 import { handleActions } from 'redux-actions';
 
 import { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } from '../models/sections';
-import actions from '../actions';
+import * as actions from '../actions';
 import Node from '../../common/models/Node';
 
-const DEFAULT_STATE = new Map({
+export const DEFAULT_STATE = new Map({
   activeSection: null,
   sections: new List([ NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW ]),
   node: new Node(),
@@ -23,8 +23,8 @@ export default handleActions({
   [actions.CHANGE_NODE]: (state, { payload: node }) => {
     return state.set('node', node);
   },
-  [actions.CHANGE_MAP_CENTER]: (state, { payload: { lat, lon } }) => {
-    return state.set('mapCenter', { lat, lon });
+  [actions.CHANGE_MAP_CENTER]: (state, { payload: center }) => {
+    return state.set('mapCenter', new Map(center));
   },
   [actions.CHANGE_MAP_ZOOM]: (state, { payload: zoom }) => {
     return state.set('mapZoom', zoom);
@@ -33,7 +33,7 @@ export default handleActions({
     return state.set('similarNodes', new List(similarNodes));
   },
   [actions.SET_ERRORS]: (state, { payload: errors }) => {
-    return state.set('errors', fromJS(errors));
+    return state.set('errors', new Map(errors));
   },
   [actions.LOAD]: (state, { payload: loading }) => {
     return state.set('loading', loading);

@@ -1,55 +1,43 @@
-const { createSelector } = require('reselect');
+import { createSelector } from 'reselect';
 
-const widget = state => state.widget;
+export const widget = state => state.widget;
 
-const activeSection = createSelector(
+export const activeSection = createSelector(
   widget,
   widget => widget.get('activeSection')
 );
 
-const sections = createSelector(
+export const sections = createSelector(
   widget,
   widget => widget.get('sections')
 );
 
-const node = createSelector(
+export const node = createSelector(
   widget,
   widget => widget.get('node')
 );
 
-const mapCenter = createSelector(
+export const mapCenter = createSelector(
   widget,
-  widget => widget.get('mapCenter')
+  widget => widget.get('mapCenter').toJS()
 );
 
-const mapZoom = createSelector(
+export const mapZoom = createSelector(
   widget,
   widget => widget.get('mapZoom')
 );
 
-const similarNodes = createSelector(
+export const similarNodes = createSelector(
   widget,
   widget => widget.get('similarNodes')
 );
 
-const errors = createSelector(
+export const errors = createSelector(
   widget,
   widget => widget.get('errors')
 );
 
-const loading = createSelector(
+export const loading = createSelector(
   widget,
   widget => widget.get('loading')
 );
-
-module.exports = {
-  widget,
-  activeSection,
-  sections,
-  node,
-  mapCenter,
-  mapZoom,
-  similarNodes,
-  errors,
-  loading
-};

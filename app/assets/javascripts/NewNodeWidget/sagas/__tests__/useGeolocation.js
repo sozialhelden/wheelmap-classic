@@ -1,13 +1,12 @@
-jest.dontMock('../useGeolocation');
+jest.unmock('../useGeolocation');
 
 import { load, changeMapCenter, changeMapZoom } from '../../actions';
-import selectors from '../../selectors';
+import { node as nodeSelector } from '../../selectors';
 import activeSection from '../activeSection';
 import sections from '../../models/sections';
 import geolocation from '../../../common/helpers/geolocation';
 import Node from '../../../common/models/Node';
-
-const useGeolocation = require('../useGeolocation').default;
+import useGeolocation from '../useGeolocation';
 
 describe('useGeolocation', () => {
   let gen;
@@ -17,21 +16,21 @@ describe('useGeolocation', () => {
   });
 
   it('geolocates', () => {
-    expect(gen.next().value)
+    expect(gen.next())
       .toTake(activeSection(sections.ADDRESS));
 
-    expect(gen.next().value)
-      .toSelect(selectors.node);
+    expect(gen.next())
+      .toSelect(nodeSelector);
 
     const node = new Node();
 
-    expect(gen.next(node).value)
+    expect(gen.next(node))
       .toCall([ node, node.hasLocation ]);
 
-    expect(gen.next(false).value)
+    expect(gen.next(false))
       .toPut(load(true));
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toCall(geolocation);
 
     const center = {
@@ -46,13 +45,13 @@ describe('useGeolocation', () => {
       }
     };
 
-    expect(gen.next(position).value)
+    expect(gen.next(position))
       .toPut(changeMapCenter(center));
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toPut(changeMapZoom(16));
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toPut(load(false));
 
     expect(gen.next().done)
@@ -60,15 +59,15 @@ describe('useGeolocation', () => {
   });
 
   it('aborts if node already has a location', () => {
-    expect(gen.next().value)
+    expect(gen.next())
       .toTake(activeSection(sections.ADDRESS));
 
-    expect(gen.next().value)
-      .toSelect(selectors.node);
+    expect(gen.next())
+      .toSelect(nodeSelector);
 
     const node = new Node();
 
-    expect(gen.next(node).value)
+    expect(gen.next(node))
       .toCall([ node, node.hasLocation ]);
 
     expect(gen.next(true).done)
@@ -76,27 +75,27 @@ describe('useGeolocation', () => {
   });
 
   it('catches position errors', () => {
-    expect(gen.next().value)
+    expect(gen.next())
       .toTake(activeSection(sections.ADDRESS));
 
-    expect(gen.next().value)
-      .toSelect(selectors.node);
+    expect(gen.next())
+      .toSelect(nodeSelector);
 
     const node = new Node();
 
-    expect(gen.next(node).value)
+    expect(gen.next(node))
       .toCall([ node, node.hasLocation ]);
 
-    expect(gen.next(false).value)
+    expect(gen.next(false))
       .toPut(load(true));
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toCall(geolocation);
 
     const error = new Error();
     error.code = true;
 
-    expect(gen.throw(error).value)
+    expect(gen.throw(error))
       .toPut(load(false));
 
     expect(gen.next(true).done)

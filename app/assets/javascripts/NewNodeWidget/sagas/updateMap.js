@@ -2,7 +2,7 @@ import { take, put, cancel, fork, call } from 'redux-saga/effects';
 import { SagaCancellationException } from 'redux-saga';
 
 import { MARKER_MOVED, changeMapCenter, changeNode, CHANGE_NODE_ADDRESS } from '../actions';
-import photon from '../../common/helpers/photon';
+import { geocode } from '../../common/helpers/photon';
 import delay from '../../common/helpers/delayPromise';
 
 // Update map
@@ -12,7 +12,7 @@ export function *updateMap(node) {
     yield call(delay, 300);
 
     const address = yield call([ node, node.address ]);
-    const feature = yield call(photon.geocode, address);
+    const feature = yield call(geocode, address);
 
     // Restart daemon if no feature was found.
     if (feature == null) {

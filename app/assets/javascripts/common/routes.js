@@ -1,10 +1,10 @@
-const map = require('mout/object/map');
+import forOwn from 'mout/object/forOwn';
 
-let routes = global.Routes;
+const routes = global.Routes;
 
 // Wrap route helper if main locale differs from current locale
 if (I18n.mainLocale !== I18n.locale) {
-  routes = map(routes, route => {
+  forOwn(routes, (route, path) => {
     const routeWrapper = (...args) => {
       return `/${I18n.locale}${route(...args)}`;
     };
@@ -13,8 +13,8 @@ if (I18n.mainLocale !== I18n.locale) {
       return `/${I18n.locale}${route.toString()}`;
     };
 
-    return routeWrapper;
+    routes[path] = routeWrapper;
   });
 }
 
-module.exports = routes;
+export default routes;

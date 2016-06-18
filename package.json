@@ -6,6 +6,7 @@
     "babel": "^6.3.13",
     "babel-plugin-transform-class-properties": "^6.3.13",
     "babel-plugin-transform-object-rest-spread": "^6.3.13",
+    "babel-plugin-transform-export-extensions": "^6.8.0",
     "babel-polyfill": "^6.5.0",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
@@ -38,10 +39,11 @@
     "reselect": "^2.0.2"
   },
   "devDependencies": {
-    "babel-jest": "^6.0.1",
+    "babel-jest": "^12.1.0",
     "eslint": "^2.12.0",
     "eslint-config-blogfoster": "^1.3.2",
-    "jest-cli": "^0.8.2"
+    "jasmine-immutable-matchers": "^1.0.1",
+    "jest-cli": "^12.1.1"
   },
   "repository": {
     "type": "git",
@@ -55,10 +57,7 @@
     "eslint": "eslint app/assets/javascripts"
   },
   "jest": {
-    "testRunner": "<rootDir>/node_modules/jest-cli/src/testRunners/jasmine/jasmine2.js",
-    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "setupEnvScriptFile": "<rootDir>/app/assets/javascripts/jest/setupEnv",
-    "setupTestFrameworkScriptFile": "<rootDir>/app/assets/javascripts/jest/setupTestFramework",
+    "setupTestFrameworkScriptFile": "<rootDir>/app/assets/javascripts/jest/setupTestFramework.js",
     "testPathDirs": [
       "<rootDir>/app/assets/javascripts"
     ],

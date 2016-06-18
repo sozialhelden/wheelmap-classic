@@ -1,41 +1,40 @@
-jest.dontMock('../saveNode');
+jest.unmock('../saveNode');
 
 import { SAVE_NODE, load } from '../../actions';
-import { rootPath } from '../../../common/routes';
-import selectors from '../../selectors';
-import api from '../../../common/helpers/api';
+import routes from '../../../common/routes';
+import { node as nodeSelector } from '../../selectors';
+import * as api from '../../../common/helpers/api';
 import Node from '../../../common/models/Node';
 import redirect from '../../../common/helpers/redirect';
-
-const saveNode = require('../saveNode').default;
+import saveNode from '../saveNode';
 
 describe('saveNode', () => {
   it('saves node and redirect to map', () => {
     const gen = saveNode();
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toTake(SAVE_NODE);
 
-    expect(gen.next().value)
-      .toSelect(selectors.node);
+    expect(gen.next())
+      .toSelect(nodeSelector);
 
     const node = new Node();
 
-    expect(gen.next(node).value)
+    expect(gen.next(node))
       .toPut(load(true));
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toCall(api.saveNode, node);
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toPut(load(false));
 
-    expect(gen.next().value)
-      .toCall(rootPath);
+    expect(gen.next())
+      .toCall(routes.rootPath);
 
-    const root = rootPath();
+    const root = routes.rootPath();
 
-    expect(gen.next(root).value)
+    expect(gen.next(root))
       .toCall(redirect, root);
 
     expect(gen.next().done)

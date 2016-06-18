@@ -1,4 +1,4 @@
-jest.dontMock('../WidgetBuilder');
+jest.unmock('../WidgetBuilder');
 
 const React = require('react');
 const TestUtils = require('react-addons-test-utils');

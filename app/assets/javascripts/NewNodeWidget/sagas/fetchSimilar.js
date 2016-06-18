@@ -1,7 +1,7 @@
 import { take, put, select, call } from 'redux-saga/effects';
 
 import { load, navigateToNextSection, setSimilar } from '../actions';
-import selectors from '../selectors';
+import { node as nodeSelector } from '../selectors';
 import { SIMILAR_NODES } from '../models/sections';
 import nodesHelpers from '../../common/helpers/nodes';
 import activeSection from './activeSection';
@@ -12,7 +12,7 @@ export default function *fetchSimilar() {
   while (true) {
     yield take(activeSection(SIMILAR_NODES));
 
-    const node = yield select(selectors.node);
+    const node = yield select(nodeSelector);
     const { name, lat, lon } = node;
 
     yield put(load(true));
