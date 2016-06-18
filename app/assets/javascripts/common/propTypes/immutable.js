@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Map, Set } from 'immutable';
+import { List, Map } from 'immutable';
 import every from 'mout/collection/every';
 
 const { instanceOf } = React.PropTypes;

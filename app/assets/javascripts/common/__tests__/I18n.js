@@ -33,7 +33,7 @@ describe('React translation component', () => {
 
     const node = ReactDOM.findDOMNode(component);
     const translation = global.I18n.t(key);
-    
+
     expect(node).toBeDefined();
     expect(node.textContent).toBe(translation);
   });
@@ -48,7 +48,7 @@ describe('React translation component', () => {
     );
 
     const node = ReactDOM.findDOMNode(component).children[0];
-    
+
     expect(node.textContent).toBe('invalid key');
     expect(node.className).toBe('translation-missing');
     expect(node.title).toBe('translation missing');

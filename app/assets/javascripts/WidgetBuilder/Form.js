@@ -94,7 +94,7 @@ class WidgetBuilderForm extends Component {
                   limit={10}
                   placeholder={I18n.t('users.profile.widget.empty_center')}
                   searchPromptText={I18n.t('users.profile.widget.empty_center')}
-                  onSelectLocation={this.props.changeLocation}
+                  onSelectLocation={changeLocation}
                 />
               </span>
             </div>
