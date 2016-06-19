@@ -1,8 +1,8 @@
-const { combineReducers } = require('redux');
+import { combineReducers } from 'redux';
 
-const widget = require('./widget');
-const categories = require('../../common/reducers/categories');
-const nodeTypes = require('../../common/reducers/nodeTypes');
+import widget from './widget';
+import categories from '../../common/reducers/categories';
+import nodeTypes from '../../common/reducers/nodeTypes';
 
 export default combineReducers({
   widget,

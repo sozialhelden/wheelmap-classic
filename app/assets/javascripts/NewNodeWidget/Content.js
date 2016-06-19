@@ -1,15 +1,15 @@
-const React = require('react');
-const { connect } = require('react-redux');
+import React from 'react';
+import { connect } from 'react-redux';
 
-const NameCategorySection = require('./Section/NameCategory');
-const AddressSection = require('./Section/Address');
-const SimilarNodesSection = require('./Section/SimilarNodes');
-const AccessibilitySection = require('./Section/Accessibility');
-const ContactSection = require('./Section/Contact');
-const OverviewSection = require('./Section/Overview');
-const NodesForm = require('../common/Node/Form');
-const { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } = require('./models/sections');
-const { activateSection } = require('./actions');
+import NameCategorySection from './Section/NameCategory';
+import AddressSection from './Section/Address';
+import SimilarNodesSection from './Section/SimilarNodes';
+import AccessibilitySection from './Section/Accessibility';
+import ContactSection from './Section/Contact';
+import OverviewSection from './Section/Overview';
+import NodesForm from '../common/Node/Form';
+import { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } from './models/sections';
+import { activateSection } from './actions';
 
 const SECTION_COMPONENTS = {
   [NAME_CATEGORY]: NameCategorySection,
@@ -51,7 +51,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-module.exports = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Content);

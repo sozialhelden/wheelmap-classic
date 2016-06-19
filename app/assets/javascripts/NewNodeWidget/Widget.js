@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import Header from './Header';
 import Breadcrumbs from './Breadcrumbs';
 import Section from './models/Section';
-import actions from './actions';
-import selectors from './selectors';
+import { navigateToSection } from './actions';
+import * as selectors from './selectors';
 import { immutableListOf } from '../common/propTypes/immutable';
 
 const { func, instanceOf, any } = React.PropTypes;
@@ -22,7 +22,7 @@ function Widget({ sections, activeSection, onNavigate, children }) {
 
 Widget.propTypes = {
   sections: immutableListOf(instanceOf(Section)).isRequired,
-  activeSection: instanceOf(Section).isRequired,
+  activeSection: instanceOf(Section),
   onNavigate: func.isRequired,
   children: any
 };
@@ -36,7 +36,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onNavigate: (section) => dispatch(actions.navigateToSection(section))
+    onNavigate: (section) => dispatch(navigateToSection(section))
   };
 }
 

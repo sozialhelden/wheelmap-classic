@@ -43,7 +43,7 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
-  className: string.isRequired,
+  className: string,
   type: string.isRequired,
   required: bool.isRequired,
   placeholderScope: string,

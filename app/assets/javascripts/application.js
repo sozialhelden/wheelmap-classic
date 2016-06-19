@@ -1,12 +1,7 @@
 //= require react_ujs
 //= require js-routes
-//= require i18n.js
-//= require_self
-
-I18n.defaultLocale = 'en';
-I18n.mainLocale = 'de';
-I18n.locale = document.getElementsByTagName('html')[0].getAttribute('lang');
-I18n.fallbacks = true;
+//= require i18n
+//= require i18n-config
 
 import React from 'react';
 import ReactDOM from 'react-dom';

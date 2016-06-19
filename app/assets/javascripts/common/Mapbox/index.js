@@ -1,4 +1,2 @@
-const Map = require('./Map');
-const Marker = require('./Marker');
-
-module.exports = { Map, Marker };
+export Map from './Map';
+export Marker from './Marker';

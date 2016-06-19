@@ -6,8 +6,8 @@ import { createStructuredSelector } from 'reselect';
 import Section from './Section';
 import Form from '../../common/Form';
 import { CONTACT } from '../models/sections';
-import actions from '../actions';
-import selectors from '../selectors';
+import { navigateToNextSection, changeNode } from '../actions';
+import * as selectors from '../selectors';
 import Node from '../../common/models/Node';
 import { immutableMapOf, immutableListOf } from '../../common/propTypes';
 
@@ -92,8 +92,8 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    onClickAction: actions.navigateToNextSection,
-    onNodeChange: actions.changeNode
+    onClickAction: navigateToNextSection,
+    onNodeChange: changeNode
   }, dispatch);
 }
 
