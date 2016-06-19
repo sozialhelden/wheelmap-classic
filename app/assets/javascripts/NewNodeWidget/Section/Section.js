@@ -8,7 +8,7 @@ const { string, func, instanceOf, bool, any } = React.PropTypes;
 
 class Section extends React.Component {
   static propTypes = {
-    actionLabelScope: string.isRequired,
+    actionLabelScope: string,
     section: instanceOf(SectionModel).isRequired,
     onClickAction: func.isRequired,
     loading: bool.isRequired,

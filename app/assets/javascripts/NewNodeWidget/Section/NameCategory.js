@@ -9,9 +9,9 @@ import NodeTypeSelect from './NodeTypeSelect';
 import { NAME_CATEGORY } from '../models/sections';
 import { categoriesSelector } from '../../common/selectors/categories';
 import { nodeTypesSelector } from '../../common/selectors/nodeTypes';
-import selectors from '../selectors';
-import actions from '../actions';
-import { node, category, nodeType, immutableListOf, immutableMap } from '../../common/propTypes';
+import * as selectors from '../selectors';
+import * as actions from '../actions';
+import { node, category, nodeType, immutableMapOf, immutableMap } from '../../common/propTypes';
 
 const { func, bool } = React.PropTypes;
 
@@ -22,8 +22,8 @@ class NameCategorySection extends React.Component {
     loading: bool.isRequired,
     node: node.isRequired,
     errors: immutableMap.isRequired,
-    nodeTypes: immutableListOf(nodeType).isRequired,
-    categories: immutableListOf(category).isRequired
+    nodeTypes: immutableMapOf(nodeType).isRequired,
+    categories: immutableMapOf(category).isRequired
   };
 
   onChangeName = (event) => {

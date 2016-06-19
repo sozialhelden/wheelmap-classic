@@ -2,7 +2,9 @@ import fetch from 'isomorphic-fetch';
 import size from 'mout/collection/size';
 
 import Node from '../models/Node';
-import { categoriesPath, validateNodePath, nodesPath } from '../routes';
+import routes from '../routes';
+
+const { categoriesPath, validateNodePath, nodesPath } = routes;
 
 export function HTTPError(response) {
   const message = `HTTPError: ${response.statusText}`;

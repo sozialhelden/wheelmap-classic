@@ -9,13 +9,15 @@ import { Router, Route, Redirect } from 'react-router';
 import multi from '../common/middleware/multi';
 import transition from '../common/middleware/transition';
 import createHistory from '../common/helpers/createHistory';
-import { newNodePath, newNodeSectionPath } from '../common/routes';
+import routes from '../common/routes';
 import Widget from './Widget';
 import Content from './Content';
 import reducer from './reducers';
-import actions from './actions';
+import { enterContent } from './actions';
 import sagas from './sagas';
 import sections from './models/sections';
+
+const { newNodePath, newNodeSectionPath } = routes;
 
 const browserHistory = createHistory();
 
@@ -35,7 +37,7 @@ class App extends React.Component {
   }
 
   onEnterContent = nextState => {
-    this.store.dispatch(actions.enterContent(nextState));
+    this.store.dispatch(enterContent(nextState));
   };
 
   render() {

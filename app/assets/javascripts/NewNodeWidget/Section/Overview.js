@@ -8,8 +8,8 @@ import Section from './Section';
 import I18n from '../../common/I18n';
 import { Map, Marker } from '../../common/Mapbox';
 import { NAME_CATEGORY, ADDRESS, ACCESSIBILITY, CONTACT, OVERVIEW } from '../models/sections';
-import actions from '../actions';
-import selectors from '../selectors';
+import { saveNode } from '../actions';
+import * as selectors from '../selectors';
 import { nodeTypesSelector, categoriesSelector } from '../../common/selectors';
 import { node, nodeType, category, immutableListOf } from '../../common/propTypes';
 
@@ -147,7 +147,7 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    onClickAction: actions.saveNode
+    onClickAction: saveNode
   }, dispatch);
 }
 

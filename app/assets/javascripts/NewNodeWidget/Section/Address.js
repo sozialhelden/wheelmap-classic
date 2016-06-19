@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
-import Leaflet from 'react-leaflet';
 
 import Section from './Section';
 import { ADDRESS } from '../models/sections';
@@ -17,11 +16,12 @@ import { nodeTypesSelector } from '../../common/selectors/nodeTypes';
 import NodeType from '../../common/models/NodeType';
 import Node from '../../common/models/Node';
 import { immutableMapOf, immutableListOf } from '../../common/propTypes';
+import { PropTypes as LeafletPropTypes } from 'react-leaflet';
 
-const { func, instanceOf, bool, number, string } = React.PropTypes;
-const { latlng } = Leaflet.PropTypes;
+const { func, instanceOf, bool, number, string } = PropTypes;
+const { latlng } = LeafletPropTypes;
 
-class AddressSection extends React.Component {
+class AddressSection extends Component {
   static propTypes = {
     onClickAction: func.isRequired,
     onNodeChange: func.isRequired,

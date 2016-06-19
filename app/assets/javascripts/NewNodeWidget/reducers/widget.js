@@ -9,7 +9,7 @@ export const DEFAULT_STATE = new Map({
   activeSection: null,
   sections: new List([ NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW ]),
   node: new Node(),
-  mapCenter: { lat: 52.520007, lon: 13.404954 },
+  mapCenter: new Map({ lat: 52.520007, lon: 13.404954 }),
   mapZoom: 14,
   similarNodes: new List(),
   errors: new Map(),

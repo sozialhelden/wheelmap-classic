@@ -36,3 +36,4 @@ function checkImmutableOf(iterableTypChecker, itemTypeChecker) {
 export const immutableList = instanceOf(List);
 export const immutableMap = instanceOf(Map);
 export const immutableListOf = checkImmutableOf.bind(null, immutableList);
+export const immutableMapOf = checkImmutableOf.bind(null, immutableMap);
