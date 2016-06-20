@@ -77,8 +77,6 @@ $ sudo npm install -g phantomjs-prebuilt
     ```
     cp config/secrets.sample.yml config/secrets.yml
     ```
-    You need to fill in a secret for `secret_key_base` in `development`.
-    Run `bundle exec rake secret` and fill in the generated secret.
 
 2. Copy the example openstreetmap config:
 
