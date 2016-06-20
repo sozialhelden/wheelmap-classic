@@ -18,7 +18,6 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    ZenTest (4.11.0)
     actionmailer (4.0.13)
       actionpack (= 4.0.13)
       mail (~> 2.5, >= 2.5.4)
@@ -83,8 +82,6 @@ GEM
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (4.0.2)
-    autotest (4.4.6)
-      ZenTest (>= 4.4.1)
     awesome_nested_set (3.1.1)
       activerecord (>= 4.0.0, < 5.1)
     babel-source (5.8.35)
@@ -543,7 +540,6 @@ DEPENDENCIES
   acts_as_api
   airbrake (~> 4.1)
   apipie-rails
-  autotest
   awesome_nested_set (~> 3.1)
   backup
   big_sitemap
