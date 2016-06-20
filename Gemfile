@@ -103,7 +103,6 @@ group :test, :development do
 end
 
 group :test do
-  gem 'minitest'
   gem 'webmock', :require => nil
   gem 'factory_girl_rails'
 

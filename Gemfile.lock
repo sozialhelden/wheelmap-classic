@@ -601,7 +601,6 @@ DEPENDENCIES
   librato-metrics
   librato-rails
   libxml-ruby
-  minitest
   multipart-post
   mysql2 (~> 0.3.18)
   newrelic_rpm
