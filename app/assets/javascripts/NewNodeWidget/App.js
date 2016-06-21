@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise';
@@ -15,7 +15,7 @@ import Content from './Content';
 import reducer from './reducers';
 import { enterContent } from './actions';
 import sagas from './sagas';
-import sections from './models/sections';
+import * as sections from './models/sections';
 
 const { newNodePath, newNodeSectionPath } = routes;
 
@@ -29,7 +29,7 @@ const createExtendedStore = applyMiddleware(
   saga.apply(undefined, sagas)
 )(createStore);
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
 
@@ -58,4 +58,4 @@ class App extends React.Component {
   }
 }
 
-module.exports = App;
+export default App;

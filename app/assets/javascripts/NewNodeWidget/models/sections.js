@@ -29,12 +29,3 @@ export const CONTACT = new Section({
 export const OVERVIEW = new Section({
   id: 'overview'
 });
-
-export default {
-  NAME_CATEGORY,
-  ADDRESS,
-  SIMILAR_NODES,
-  ACCESSIBILITY,
-  CONTACT,
-  OVERVIEW
-};

@@ -1,18 +1,18 @@
-const React = require('react');
-const { bindActionCreators } = require('redux');
-const { createStructuredSelector } = require('reselect');
-const { connect } = require('react-redux');
+import React, { PropTypes } from 'react';
+import { bindActionCreators } from 'redux';
+import { createStructuredSelector } from 'reselect';
+import { connect } from 'react-redux';
 
-const Section = require('./Section');
-const { ACCESSIBILITY } = require('../models/sections');
-const Row = require('../../common/Row');
-const Form = require('../../common/Form');
-const StatusDropdown = require('../../common/StatusDropdown');
-const Node = require('../../common/models/Node');
-const selectors = require('../selectors');
-const actions = require('../actions');
+import Section from './Section';
+import { ACCESSIBILITY } from '../models/sections';
+import Row from '../../common/Row';
+import Form from '../../common/Form';
+import StatusDropdown from '../../common/StatusDropdown';
+import Node from '../../common/models/Node';
+import * as selectors from '../selectors';
+import { navigateToNextSection, changeNode } from '../actions';
 
-const { func, instanceOf, bool } = React.PropTypes;
+const { func, instanceOf, bool } = PropTypes;
 
 class AccessibilitySection extends React.Component {
   static propTypes = {
@@ -91,12 +91,12 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    onClickAction: actions.navigateToNextSection,
-    onNodeChange: actions.changeNode
+    onClickAction: navigateToNextSection,
+    onNodeChange: changeNode
   }, dispatch);
 }
 
-module.exports = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(AccessibilitySection);
