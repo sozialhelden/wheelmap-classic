@@ -14,6 +14,7 @@ config/open_street_map.yml
 config/metrics.yml
 config/newrelic.yml
 config/application.yml
+config/secrets.yml
 public/*/cache/*
 public/assets
 public/sitemap*
