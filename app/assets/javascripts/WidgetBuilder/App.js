@@ -6,14 +6,16 @@ import createStore from './helpers/createStore';
 import WidgetBuilder from './WidgetBuilder';
 import Widget from './models/Widget';
 import widgetBuilderReducer from './reducer';
-import { widget } from './propTypes';
+import { init } from './actions';
 
-const { instanceOf } = PropTypes;
+const { object } = PropTypes;
 
 function WidgetBuilderApp({ widget }) {
   widget = new Widget(camelize(widget));
 
   const store = createStore(widgetBuilderReducer, widget);
+
+  store.dispatch(init());
 
   return (
     <Provider store={store}>
@@ -23,7 +25,7 @@ function WidgetBuilderApp({ widget }) {
 }
 
 WidgetBuilderApp.propTypes = {
-  widget: instanceOf(widget)
+  widget: object
 };
 
 export default WidgetBuilderApp;

@@ -1,10 +1,10 @@
-const { Map, Seq } = require('immutable');
-const { handleActions } = require('redux-actions');
+import { Map, Seq } from 'immutable';
+import { handleActions } from 'redux-actions';
 
-const { FETCH_CATEGORIES } = require('../actions/categories');
-const NodeType = require('../models/NodeType');
+import { FETCH_CATEGORIES } from '../actions/categories';
+import NodeType from '../models/NodeType';
 
-module.exports = handleActions({
+export default handleActions({
   [FETCH_CATEGORIES]: (state, { payload: { nodeTypes } }) => {
     return new Seq(nodeTypes)
       .map(nodeType => new NodeType(nodeType))

@@ -1,9 +1,9 @@
 jest.unmock('../WidgetBuilder');
 
-const React = require('react');
-const TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 
-const WidgetBuilder = require('../WidgetBuilder');
+import WidgetBuilder from '../WidgetBuilder';
 
 describe('React Widget component', function () {
   it('loads correctly', function () {

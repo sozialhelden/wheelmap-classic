@@ -1,6 +1,6 @@
-const React = require('react');
-const { Marker: LeafletMarker } = require('react-leaflet');
-const { divIcon } = require('leaflet');
+import React from 'react';
+import { Marker as LeafletMarker } from 'react-leaflet';
+import { divIcon } from 'leaflet';
 
 const { string } = React.PropTypes;
 
@@ -21,4 +21,4 @@ Marker.propTypes = {
   icon: string
 };
 
-module.exports = Marker;
+export default Marker;

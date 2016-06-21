@@ -1,4 +1,4 @@
-const { Record, List } = require('immutable');
+import { Record, List } from 'immutable';
 
 const Widget = new Record({
   id: null,
@@ -14,4 +14,4 @@ const Widget = new Record({
   providers: new List()
 });
 
-module.exports = Widget;
+export default Widget;

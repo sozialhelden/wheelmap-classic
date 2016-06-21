@@ -1,6 +1,6 @@
 jest.unmock('../Node');
 
-const Node = require('../Node');
+import Node from '../Node';
 
 describe('Node', () => {
   const address = {

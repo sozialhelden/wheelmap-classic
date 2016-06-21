@@ -1,3 +1,5 @@
+import { handleActions } from 'redux-actions';
+
 import {
   CHANGE_WIDTH,
   CHANGE_HEIGHT,
@@ -48,30 +50,12 @@ function save(widget) {
   return widget;
 }
 
-export default function (state, action) {
-  switch (action.type) {
-    case CHANGE_WIDTH:
-      return changeValue(state, action, 'width');
-
-    case CHANGE_HEIGHT:
-      return changeValue(state, action, 'height');
-
-    case CHANGE_CATEGORIES:
-      return changeValue(state, action, 'categories');
-
-    case CHANGE_PROVIDER:
-      return changeValue(state, action, 'providerId');
-
-    case CHANGE_LOCATION:
-      return changeLocation(state, action);
-
-    case INIT:
-      return init(state, action);
-
-    case SAVE:
-      return save(state, action);
-
-    default:
-      return state;
-  }
-}
+export default handleActions({
+  [CHANGE_WIDTH]: (state, action) => changeValue(state, action, 'width'),
+  [CHANGE_HEIGHT]: (state, action) => changeValue(state, action, 'height'),
+  [CHANGE_CATEGORIES]: (state, action) => changeValue(state, action, 'categories'),
+  [CHANGE_PROVIDER]: (state, action) => changeValue(state, action, 'providerId'),
+  [CHANGE_LOCATION]: changeLocation,
+  [INIT]: init,
+  [SAVE]: save
+});

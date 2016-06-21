@@ -1,12 +1,12 @@
-const { createHistory } = require('history');
-const { useRouterHistory } = require('react-router');
+import { createHistory } from 'history';
+import { useRouterHistory } from 'react-router';
 
-const { stringify, parseString } = require('./query');
+import { stringify, parseString } from './query';
 
-module.exports = function (options = {}) {
+export default function (options = {}) {
   return useRouterHistory(createHistory)({
     ...options,
     stringifyQuery: stringify,
     parseQueryString: parseString
   });
-};
+}

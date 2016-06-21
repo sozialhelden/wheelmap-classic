@@ -1,6 +1,6 @@
-const { Record } = require('immutable');
+import { Record } from 'immutable';
 
-module.exports = new Record({
+export default new Record({
   id: null,
   identifier: null,
   icon: null,

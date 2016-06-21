@@ -1,6 +1,6 @@
-const { Record, List } = require('immutable');
+import { Record, List } from 'immutable';
 
-module.exports = new Record({
+export default new Record({
   id: null,
   identifier: null,
   node_types: new List(),

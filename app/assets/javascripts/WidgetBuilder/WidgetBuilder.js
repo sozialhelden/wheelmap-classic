@@ -1,15 +1,16 @@
-const React = require('react');
-const { connect } = require('react-redux');
+import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-const Form = require('./Form');
-const Embed = require('./Embed');
-const Preview = require('./Preview');
-const { changeWidth, changeHeight, changeLocation, changeProvider, changeCategories, save } = require('./actions');
+import Form from './Form';
+import Embed from './Embed';
+import Preview from './Preview';
+import { changeWidth, changeHeight, changeLocation, changeProvider, changeCategories, save } from './actions';
 
 const { func } = React.PropTypes;
-const { widget } = require('./propTypes');
+import { widget } from './propTypes';
 
-class WidgetBuilder extends React.Component {
+class WidgetBuilder extends Component {
   static propTypes = {
     widget: widget.isRequired,
     save: func.isRequired,
@@ -53,17 +54,17 @@ function mapStateToProps(widget) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    changeWidth: width => dispatch(changeWidth(width)),
-    changeHeight: height => dispatch(changeHeight(height)),
-    changeLocation: location => dispatch(changeLocation(location)),
-    changeProvider: providerId => dispatch(changeProvider(providerId)),
-    changeCategories: showCategories => dispatch(changeCategories(showCategories)),
-    save: () => dispatch(save())
-  };
+  return bindActionCreators({
+    changeWidth,
+    changeHeight,
+    changeLocation,
+    changeProvider,
+    changeCategories,
+    save
+  }, dispatch);
 }
 
-module.exports = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(WidgetBuilder);
