@@ -7,8 +7,10 @@ it:
         address: Indirizzo
         website: Sito web
         phone: Telefono
+        note: Nota
         address_street: Via
-        address_housenumber: 'Numero della casa '
+        address_housenumber: Numero civico
+        address_postcode: Cap
         address_city: Città
   faq:
     answers:
@@ -29,6 +31,9 @@ it:
       projects: Progetti
     toolbar:
       categories: Categorie
+    meta:
+      description: Wheelmap.org è una mappa online per cercare, trovare e segnare luoghi accessibili ai disabili. Fatti coinvolgere segnando luoghi pubblici come bar, ristoranti, cinema o supermercati!
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -38,6 +43,7 @@ it:
         headline: 'Evidenzia e trova luoghi accessibili con sedia a rotelle su Wheelmap.org - in tutto il mondo e gratis. È facile:'
         lookup: Cerca un luogo specifico
         secondary_headline: 'Il nostro "semaforo" per segnare l''accessibilità dei luoghi pubblici per sedie a rotelle:'
+      embed_link: Mostra su Wheelmap.org
   nodes:
     new:
       form:
@@ -73,10 +79,12 @@ it:
       share:
         email: E-mail
         facebook: Facebook
+        text: 'Ho trovato questo luogo su Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
       no-results:
+        headline: Ci dispiace, non possiamo trovare un luogo che si chiama "%{query}".
         hint:
           example: <strong>Esempio:</strong> Londra, Regno Unito
           info: Il servizio di ricerca funziona solo con informazioni su nome e/o indirizzo. Allora inserire un nome del posto o un indirizzo, per esempio il nome della strada e/o della città. La ricerca per tipo, per esempio ristorante o cinema, non funziona!
@@ -90,16 +98,54 @@ it:
           one: '%{count} risultato:'
           other: '%{count} risultati:'
     timeout:
+      headline: Ci dispiace, qualcosa è andato storto
       info: Il servizio di ricerca non è al momento disponibile.
       repeat_search: Riprova la ricerca
   users:
     profile:
       newsletter:
         title: Newsletter
+        text: Rimani aggiornato con la newsletter di Wheelmap. Non preoccuparti, non ti invieremo spam. Ci sentiremo una volta al mese al massimo.
+        label: Si, tienimi aggiornato su Wheelmap.
+      show:
+        title: Panoramica
+        text_html: "Ciao, <br>\nBenvenuto (bentornato) su Wheelmap.org! Siamo felici di averti a bordo! È possibile consultare il nostro <a href=\"http://wheelmap.org/en/blog-2/\"> Blog </a> o le nostre <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> se vuoi conoscere meglio Wheelmap.org. Oppure puoi scoprire di più sui  <a href=\"http://wheelmap.org/en/get-engaged/\">progetti</a> che offriamo attorno a Wheelmap.org e come partecipare. <br>\nResta in contatto <br>\nPer rimanere in contatto è possibile iscriversi alla nostra newsletter mensile e seguirci su <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> e <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Non vediamo l'ora di sentire la tua opinione e iniziare una conversazione con te! <br>\nE ora, buona mappatura!<br>\nIl team di Wheelmap"
+        greeting:
+          anonymously: Ciao
+          personalized: Ciao %{name}
+        overview:
+          text: Hai
+          pois_marked:
+            one: 'segnato %{count} luogo'
+            other: 'segnato %{count} luoghi'
+          pois_added:
+            one: 'aggiunto %{count} luogo'
+            other: 'aggiunto %{count} luoghi'
+          pois_edited:
+            one: 'modificato %{count} luogo'
+            other: 'modificato %{count} luoghi'
+          photos_uploaded:
+            one: 'caricato %{count} foto'
+            other: 'caricato %{count} foto'
       photos:
         title: Foto
+        empty: Non hai caricato alcuna foto.
       edit:
         title: Profilo
+        legends:
+          user_data: Le tue informazioni utente
       widget:
+        title: Widget
+        height: Altezza
+        width: Larghezza
+        center: Area della mappa
+        categories: Mostra il fltro per categoria
+        providers: Fornitore
+        empty_provider: Scegli un fornitore
+        empty_center: Cerca il centro della mappa ...
         legends:
           settings: Impostazioni
+          preview: Anteprima
+          embed: Codice da incorporare
+          embed_explanation: Puoi modificare le specifiche per la latitudine (<code>lat</ code>), longitudine (<code>lon</ code>) e il livello di zoom (<code>zoom</ code>) nel codice sopra manualmente e quindi regolare il segmento della mappa (widget) a seconda della posizione che si desidera visualizzare.
+          general: Crea il tuo widget di Wheelmap e incorporalo nel tuo sito o blog.

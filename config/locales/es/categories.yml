@@ -8,6 +8,8 @@ es:
       health: Salud
       leisure: Entretenimiento
       misc: Miscelánea
+      money_post: "Oficina de giro postal"
+      public_transfer: "Transporte público"
       shopping: Compras
       sport: Deportes
       tourism: Turismo
@@ -44,15 +46,21 @@ es:
       government:
         courthouse: Juzgado
         embassy: Embajada
+        employment_agency: "Agencia de empleos"
         government: "Agencia gubernamental"
         police: Policía
         public_building: "Edificio público"
+        townhall: Ayuntamiento
       health:
+        alternative: "Especialista en medicina alternativa"
         dentist: Dentista
+        doctors: Doctor
         hearing_aids: "Distribuidor de audífonos"
         hospital: Hospital
         medical_supply: "Suministros Médicos"
         pharmacy: Farmacia
+        physiotherapist: Fisioterapeuta
+        psychotherapist: Psicoterapeuta
         social_facility: "Instalaciones sociales"
         veterinary: Veterinario
       leisure:
@@ -60,18 +68,22 @@ es:
         brothel: Burdel
         casino: Casino
         cinema: Cine
+        community_centre: "Centro comunitario"
         gallery: Galería
         nightclub: Discoteca
         playground: Área de juegos
         sauna: Sauna
         stripclub: Club de striptease
+        tattoo: "Tienda de tatuajes"
         theatre: Teatro
         zoo: Zoo
       misc:
+        association: Asocición
         company: "Empresa (oficinas)"
         estate_agent: "Agente inmobiliario"
         insurance: Seguros
         lawyer: Abogado
+        ngo: "Organización no gubernamental"
         place_of_worship: "Zona religiosa"
         toilets: Sanitarios
       money_post:
@@ -84,6 +96,7 @@ es:
         aerodrome: Aeropuerto
         bicycle_parking: "Estacionamiento de bicicletas"
         bicycle_rental: "Alquiler de Bicicletas"
+        boatyard: Astillero
         bus_station: "Estación de autobús"
         bus_stop: "Parada de autobús"
         cable_car: "Teleférico"
@@ -104,6 +117,7 @@ es:
         tram_stop: "Parada de tranvía"
       shopping:
         alcohol: Licor
+        antiques: Antiguedades
         bakery: Panadería
         beauty: "Salón de belleza"
         beverages: Bebidas
@@ -112,6 +126,8 @@ es:
         butcher: Carnicería
         car_repair: "Taller de coches\n"
         car_shop: "Concesionario"
+        copyshop: "Fotocopiadora"
+        chemist: Botica
         clothes: Ropa
         computer: Ordenadores
         confectionery: "Bombonería"
@@ -124,14 +140,22 @@ es:
         fabric: "Tienda de telas"
         farm_shop: "Granja"
         florist: Floristería
+        funeral_directors: "Funeraría"
         furniture: Muebles
+        garden_centre: "Centro de jardinería"
         gift: "Tienda de regalos"
+        greengrocer: Verdulería
         hairdresser: Peluquería
         hardware: Hardware
+        interior_decoration: "Tienda de diseño de interiores"
         jewelry: Joyas
         kiosk: Kiosko
         laundry: Lavandería
         mall: "Centro comercial"
+        mobile_phone: "Tienda de móviles"
+        music: "Tienda de discos"
+        musical_instrument: "Tienda de instrumentos musicales"
+        newsagent: Kiosco de diarios
         optician: Ópica
         organic: "Tienda ecológica"
         outdoor: "Suministros al aire libre"
@@ -142,8 +166,11 @@ es:
         sports: Deportes
         stationery: Papelería
         supermarket: Supermercado
+        tailor: Sastre
+        tobacco: "Tabaquería"
         toys: Juguetes
         travel_agency: "Agencia de viajes"
+        variety_store: "Tienda de rebajas"
         video: "Videoclub"
       sport:
         pitch: "Campo deportivo"

@@ -31,6 +31,8 @@ es:
       projects: Proyectos
     toolbar:
       categories: Categorías
+    meta:
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -93,16 +95,38 @@ es:
           one: '%{count} resultado:'
           other: '%{count} resultados:'
     timeout:
+      headline: Lo sentimos, algo salio mal
       info: Nuestro servicio de búsqueda estuvo no disponible
       repeat_search: Reintentar la búsqueda
   users:
     profile:
       newsletter:
         title: Boletín de noticias
+        text: Mantenme informado con los boletines informativos de Wheelmap. No te preocupe, no te enviaremos correos basura. Sabrás sobre nosotros una vez al mes a lo mucho.
+        label: Sí, mantenme informado sobre Wheelmap
+      show:
+        text_html: "Hola,<br>\n Bienvenido (de nuevo) a Wheelmap.org! Estamos felices de tenerte con nosotros! Puedes navegar en nuestro <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> o <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> Si quieres saber un poco más sobre Wheelmap.org o aprender un poco sobre el <a href=\"http://wheelmap.org/en/get-engaged/\">projecto</a> que ofrecemos y como puedes formar parte de ellos.<br> \nMantente en contacto<br> \nPara estar en contacto, puedes subscribirte a nuestro boletín mensual o seguirnos en <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> y <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Esperamos con ansías escuchar tus opiniones y empezar una conversación contigo! \n<br> y ahora, mapea feliz!<br> \nTu equipo de Wheelmap"
+        greeting:
+          anonymously: Hola
+          personalized: Hola %{name}
+        overview:
+          text: Tú tienes
       photos:
         title: Fotos
+        empty: No has subido ninguna foto aún
       edit:
         title: Perfil
+        legends:
+          user_data: La información de tu cuenta
       widget:
+        title: Widget
+        height: Alto
+        width: Ancho
+        center: Mapa de la zona
+        categories: Muestra el filtro de categoría
         legends:
           settings: Ajustes
+          preview: Vista previa
+          embed: Código de inserción
+          embed_explanation: Puedes cambiar los datos de las latitudes (<code>lat</code>), longitudes (<code>lon</code>) y el nivel del zoom (<code>zoom</code>) en el código de arriba manualmente y, así, ajustar el segmento del mapa (widget) basándote en el lugar que quieres mostrar.
+          general: Crea tu propio widget de Wheelmap e insértalo en tu página web o blog.

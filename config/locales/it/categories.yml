@@ -8,6 +8,8 @@ it:
       health: Salute
       leisure: Tempo Libero
       misc: Vari
+      money_post: "Banca / Ufficio postale"
+      public_transfer: "Trasporto pubblico"
       shopping: Shopping
       sport: Sport
       tourism: Turismo
@@ -44,36 +46,50 @@ it:
       government:
         courthouse: Tribunale
         embassy: Ambasciata
+        employment_agency: "Agenzia di collocamento"
         government: "Agenzia del Governo"
         police: Polizia
         public_building: "Edificio pubblico"
+        townhall: Municipio
       health:
+        alternative: "Professionista di medicina alternativa"
         dentist: Dentista
+        doctors: Dottore
         hearing_aids: "Apparecchio per l'udito"
         hospital: Ospedale
         medical_supply: "Rifornimento sanitario"
+        occupational_therapist: "Terapista occupazionale"
         pharmacy: Farmacia
+        physiotherapist: Fisioterapista
+        psychotherapist: Psicoterapeuta
         social_facility: "Servizi sociali"
+        speech_therapist: "Logopedista"
         veterinary: Ambulatorio Veterinario
       leisure:
         arena: Arena
         brothel: Casinò
         casino: Casinò
         cinema: Cinema
+        community_centre: "Centro comunitario"
         gallery: Galleria d'arte
+        massage: "Massaggi spa"
         nightclub: Night club
         playground: Parco giochi
         sauna: Sauna
         stripclub: Strip club
+        tattoo: "Negozio di tatuaggi"
         theatre: Teatro
         zoo: Zoo
       misc:
+        association: Associazione
         company: "Compagnia (Officio)\n"
         estate_agent: "Agente Immobiliare"
         insurance: Assicurazione
         lawyer: Avvocato
+        ngo: "Organizzazione non governativa"
         place_of_worship: "Luogo di culto"
         toilets: Bagno pubblico
+        political_party: "Ufficio di partito politico"
       money_post:
         atm: Bancomat
         bank: Banca
@@ -84,6 +100,7 @@ it:
         aerodrome: Aeroporto
         bicycle_parking: "Parcheggio per biciclette"
         bicycle_rental: "Noleggio biciclette"
+        boatyard: Cantiere
         bus_station: "Stazione degli autobus"
         bus_stop: "Fermata dell'autobus"
         cable_car: "Funivia"
@@ -104,6 +121,7 @@ it:
         tram_stop: "Fermata del tram"
       shopping:
         alcohol: Bevande alcoliche
+        antiques: Antiquario
         bakery: Panetteria
         beauty: "Salone di Belleza"
         beverages: Bevande
@@ -112,6 +130,8 @@ it:
         butcher: Macelleria
         car_repair: "Autofficina"
         car_shop: "Autoconcessionaria"
+        copyshop: "Fotocopisteria"
+        chemist: Chimica / Farmacia
         clothes: Abbigliamento
         computer: Negozio di computers
         confectionery: "Dolci"
@@ -121,17 +141,27 @@ it:
         doityourself: "Fai da te"
         dry_cleaning: "Lavanderia"
         electronics: Negozio d'elettronica
+        erotic: "Sexy shop"
         fabric: "Negozio di Tessuti"
         farm_shop: "Negozio di una Fattoria"
         florist: Fiorista
+        funeral_directors: "Onoranze funebri"
         furniture: Arredamento
+        art: "Negozio di galleria"
+        garden_centre: "Fioraio"
         gift: "Negozio di Articoli da Regalo "
+        greengrocer: Fruttivendolo
         hairdresser: Parrucchiere
         hardware: Ferramenta
+        interior_decoration: "Negozio di design degli interni"
         jewelry: Gioielleria
         kiosk: Chiosco
         laundry: Lavanderia
         mall: "Centro commerciale"
+        mobile_phone: "Negozio di telefoni cellulari"
+        music: "Negozio di dischi"
+        musical_instrument: "Negozio di strumenti musicali"
+        newsagent: Edicola
         optician: Ottico
         organic: "Negozio di Cibo Organico"
         outdoor: "Negozio Outdoor"
@@ -142,8 +172,12 @@ it:
         sports: Sports
         stationery: Cartoleria
         supermarket: Supermercato
+        tailor: Sarto
+        tea: "Negozio di the"
+        tobacco: "Tabacchino"
         toys: Giocattoli
         travel_agency: "Agenzia di Viaggi"
+        variety_store: "Discount"
         video: "Negozio di video noleggio"
       sport:
         pitch: "Campo Sportivo"
