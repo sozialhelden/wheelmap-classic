@@ -72,10 +72,10 @@ $ sudo npm install -g phantomjs-prebuilt
 
 ## Getting started
 
-1. Copy the example application config:
+1. Copy the example `secrets.yml`:
 
     ```
-    cp config/application.yml.sample config/application.yml
+    cp config/secrets.sample.yml config/secrets.yml
     ```
 
 2. Copy the example openstreetmap config:
@@ -143,7 +143,7 @@ Please also check our [WIKI](https://github.com/sozialhelden/wheelmap/wiki), if 
 
 ## Code of Conduct
 
-We refer to the [Berlin Code of Conduct](http://berlincodeofconduct.org/) and friendly ask all contributors and people involved to comply with it. 
+We refer to the [Berlin Code of Conduct](http://berlincodeofconduct.org/) and friendly ask all contributors and people involved to comply with it.
 
 ## License
 

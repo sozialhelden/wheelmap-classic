@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 group :default do
-  gem 'rails', '~> 4.0.0'
+  gem 'rails', '~> 4.1.0'
   gem 'mysql2', '~> 0.3.18'
   gem 'activerecord-import', '>= 0.4.0', :require => false
 
