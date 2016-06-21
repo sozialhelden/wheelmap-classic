@@ -31,6 +31,9 @@ fr:
       projects: Projets
     toolbar:
       categories: Catégories
+    meta:
+      description: Wheelmap.org est une carte en ligne pour rechercher, trouver et marquer des lieux accessibles aux fauteuils roulants. Impliquez-vous en indiquant les lieux publics comme les bars, les restaurants, les cinémas ou les supermarchés!
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -40,6 +43,7 @@ fr:
         headline: 'Marquer et trouver des lieux accessibles en fauteuil roulant grâce à Wheelmap.org - à travers le monde et gratuitement. C''est facile :'
         lookup: Chercher un lieu spécifique
         secondary_headline: 'Notre système de feux de circulation pour marquer l''accessibilité en fauteuil roulant des lieux publics :'
+      embed_link: Voir sur Wheelmap.org
   nodes:
     new:
       form:
@@ -75,6 +79,7 @@ fr:
       share:
         email: Courriel
         facebook: Facebook
+        text: 'J''ai trouvé ce lieu sur Wheelmap.org : %{name}'
         twitter: Twitter
   search:
     index:
@@ -93,16 +98,54 @@ fr:
           one: '%{count} résultat :'
           other: '%{count} résultats :'
     timeout:
+      headline: Désolé, quelque chose s'est mal passé
       info: Notre service de recherche était temporairement indisponible.
       repeat_search: Ressayer la recherche
   users:
     profile:
       newsletter:
         title: Lettre d'information
+        text: Restez à jour avec le bulletin d'information Wheelmap. Ne vous inquiétez pas, nous ne spammons pas. Nous vous informons une fois par mois maximum.
+        label: Oui, tenez-moi au courant des nouveautés sur Wheelmap.
+      show:
+        title: Aperçu
+        text_html: "Bonjour, <br>\n\nBienvenue (ou re) sur Wheelmap.org ! Nous sommes heureux de vous avoir à bord ! Vous pouvez parcourir notre <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> ou <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> si vous voulez apprendre à connaître Wheelmap.org un peu mieux. Vous pouvez en apprendre davantage sur les <a href=\"http://wheelmap.org/en/get-engaged/\">projets</a> que nous proposons autour de Wheelmap.org et comment vous pouvez vous impliquer. <br>\n\nRestez en contact <br>\n\nPour rester en contact vous pouvez vous abonner à notre lettre d'information mensuelle et nous suivre sur <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> et <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Nous sommes impatients d'entendre votre opinion et discuter avec vous !<br>\n\nEt maintenant, bonne cartographie ! <br>\n\nL'équipe Wheelmap"
+        greeting:
+          anonymously: Salut
+          personalized: Salut %{name}
+        overview:
+          text: Vous avez
+          pois_marked:
+            one: 'indiqué %{count} lieu'
+            other: 'indiqué %{count} lieux'
+          pois_added:
+            one: 'ajouté %{count} lieu'
+            other: 'ajouté %{count} lieux'
+          pois_edited:
+            one: 'édité %{count} lieu'
+            other: 'édité %{count} lieux'
+          photos_uploaded:
+            one: 'téléchargé %{count} lieu'
+            other: 'téléchargé %{count} lieux'
       photos:
-        title: album de photos
+        title: Album de photos
+        empty: Vous n'avez pas encore téléchargé de photos.
       edit:
         title: Profil
+        legends:
+          user_data: Vos informations de compte
       widget:
+        title: Widget
+        height: Hauteur
+        width: Largeur
+        center: Zone de la carte
+        categories: Afficher le filtre par catégorie
+        providers: Fournisseur
+        empty_provider: Choisissez un fournisseur
+        empty_center: Rechercher le centre de la carte...
         legends:
           settings: Paramètres
+          preview: Aperçu
+          embed: Code intégré
+          embed_explanation: Vous pouvez modifier les spécifications pour la latitude ( <code> lat </code> ), longitude ( <code> lon </code> ) et le niveau de zoom ( <code> zoom </code> ) dans le code et ainsi ajuster ci-dessus manuellement  le segment carte (Widget) selon l'emplacement que vous voulez montrer.
+          general: Créez votre propre widget Wheelmap et intégrez-le dans votre site ou blog.

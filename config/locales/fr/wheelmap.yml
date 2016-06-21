@@ -16,15 +16,21 @@ fr:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
+      accepted: "doit être accepté"
       already_confirmed: "a déjà été confirmé"
+      blank: "doit être rempli"
       confirmation: "ne correspond pas à la confirmation"
+      empty: "doit être rempli"
       equal_to: "doit être exactement %{count}"
+      even: "doit être un nombre pair"
       exclusion: "est réservé"
       expired: "expiré, veuillez en demander un nouveau"
       greater_than: "doit être supérieur à %{count}"
+      greater_than_or_equal_to: "doit être supérieur ou égal à %{count}"
       inclusion: "n'est pas une valeur valide"
       invalid: "invalide"
       less_than: "doit être inférieur à %{count} "
+      less_than_or_equal_to: "doit être inférieur ou égal à %{count}"
       not_a_number: "n'est pas un nombre"
       not_an_integer: "doit être un entier"
       not_found: "est introuvable"
@@ -32,6 +38,7 @@ fr:
       not_saved:
         one: "Une erreur a empêché l'enregistrement de %{resource} :"
         other: "%{count} erreurs ont empêché l'enregistrement de %{resource} :"
+      odd: "doit être un nombre impair"
       taken: "est déjà utilisé"
       too_long: "est trop long (pas plus de %{count} caractères)"
       too_short: "est trop court (pas moins de %{count} caractères)"
@@ -60,20 +67,25 @@ fr:
     show_unaccessible_places: "Pas d'accès pour fauteuil roulant"
   formtastic:
     hints:
+      email: "Nous traitons votre adresse de manière confidentielle. Nous promettons de ne pas vous envoyer de spam !"
       lat: "Déplacez sur la carte le marqueur à la bonne position"
       osm_username: "Pas encore membre ?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Créez un compte Openstreetmap maintenant</a>"
       password: "(laissez vide si vous ne voulez pas le modifier)"
+      phone: "Par exemple : +49 30 12345678"
       website: "Par exemple : http://www.exemple.com "
     labels:
       category: "Catégorie :"
       centralkey: "Clef centrale :"
       city: "Ville :"
+      create: "Créer un lieu"
       email: Courriel
       finish: Terminer
       housenumber: "Numéro :"
       lat: Latitude
       lon: Longitude
       name: "Nom :"
+      osm_password: "Mot de passe OpenStreetMap"
+      osm_username: "Nom de compte OpenStreetMap"
       password: Mot de passe
       password_confirmation: "Répéter le mot de passe"
       phone: "Téléphone :"
@@ -112,12 +124,14 @@ fr:
       profile: Profil
       suggestions: Suggestions
       what_is_barrier_free: "Que veut dire « accessible en fauteuil roulant » ?"
+      what_is_wheelmap: "Qu'est-ce que Wheelmap ?"
     searchbar:
       add_place: "Ajouter un autre lieu"
       find: Trouver
       placeholder: "Chercher un lieu"
       title_add_place: "Ajouter un nouveau lieu à cet endroit maintenant !"
     tagline: "Logo Wheelmap"
+    title: "Trouver des lieux accessibles en fauteuil roulant"
   helpers:
     select:
       prompt: "Veuillez choisir"
@@ -138,6 +152,7 @@ fr:
           upgrade: "Mettre le navigateur à jour"
         warning:
           headline: "Nous sommes désolés ! "
+          message: "Vous semblez utiliser Internet Explorer. Wheelmap exige un navigateur répondant aux standards pour fonctionner correctement. Veuillez prendre en considération l'utilisation de Firefox, de Chrome, de Safari ou d'Opera."
       link:
         node:
           create: "Ajouter un nouveau lieu"
@@ -154,6 +169,10 @@ fr:
   landing_pages:
     index:
       wheelchair:
+        limit:
+          headline: "Les %{type} à accès limité en fauteuil roulant à %{city} (%{count})"
+        'no':
+          headline: "Les %{type} non accessibles en fauteuil roulant à %{city} (%{count})"
         unknown:
           headline: "Les %{type} de %{city} dont l'état d'accessibilité est inconnu  (%{count})"
         'yes':
@@ -180,6 +199,7 @@ fr:
       link:
         large_map: "&laquo ; Annuler"
     errors:
+      default: "Désolé, une erreur est survenue et nous a été signalée"
       not_authorized: "Échec lors de l'authentification."
       not_available: "Désolé, cette page n'est temporairement pas disponible."
       not_existent: "Désolé, ce lieu n'est plus disponible."
@@ -205,6 +225,7 @@ fr:
         large_map: Agrandir
         listing: "Tous les lieux de type %{type} à %{city}"
         upload: "Téléverser l'image"
+      more_data_from: "Il y a d'autres données pour ce lieu, vérifié par :"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -241,6 +262,12 @@ fr:
           kb: Ko
           mb: Mo
           tb: To
+  oauth:
+    application:
+      connect:
+        headline: "Vous devez connecter votre compte à votre compte « OpenStreetMap » avant de pouvoir créer ou modifier des lieux sur wheelmap.org."
+    callback:
+      notice: "Votre compte Wheelmap est maintenant connecté à votre compte %{user} sur OpenStreetMap."
   or: ou
   place:
     one: "%{count} lieu"
@@ -266,6 +293,7 @@ fr:
     step1: "Cliquez sur un lieu que vous connaissez"
     step2: "Marquez le et cliquez sur enregistrer"
     step3: "C'est tout ! Aucune inscription nécessaire"
+    what_is_wheelmap: "Qu'est-ce que Wheelmap ?"
   statistics: Statistiques
   support:
     array:
@@ -282,6 +310,14 @@ fr:
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
     pm: après-midi
+  toiletstatus:
+    'no': "Pas de toilettes accessibles en fauteuil roulant"
+    unknown: "Statut des toilettes inconnu"
+    'yes': "Toilettes accessibles en fauteuil roulant"
+    what_is:
+      'no': "Largeur intérieure de la porte d'entrée min. 90 cm (35 in), aire de plancher dégagée min. 150 cm x 150 cm (59 in x 59 in), siège des toilettes adapté aux fauteuils roulants, poignées de sécurité pliantes, lavabo accessible."
+      'yes': "Largeur intérieure de la porte d'entrée min. 90 cm (35 in), aire de plancher dégagée min. 150 cm x 150 cm (59 in x 59 in), siège des toilettes adapté aux fauteuils roulants, poignées de sécurité pliantes, lavabo accessible."
+      unknown: "Aidez en marquant le statut des toilettes !"
   user_sessions:
     create:
       activation:
@@ -292,6 +328,7 @@ fr:
     destroy:
       notice: "Au revoir, revenez bientôt !"
     new:
+      email: "Courriel"
       login: "Connexion"
       login_with_twitter: "Se connecter avec Twitter"
       password: Mot de passe
@@ -299,6 +336,8 @@ fr:
   users:
     after_signup_edit:
       welcome:
+        headline: "Vous y êtes presque ! Complétez ici votre inscription à votre compte Wheelmap :"
+        set_password_for_mobile: "Vous avez terminé votre inscription à OpenStreetMap. Choisissez maintenant une adresse courriel associée à votre compte Wheelmap ainsi nous pouvons vous informer de vos activités (Par exemple le nombre de places que vous avez marquées). Vous pouvez accéder à ces informations sur votre \"Profil\"."
         text: "Comment pouvons-nous vous joindre ? Vous pourrez changer cette information ultérieurement dans votre profil."
     edit:
       headline:

@@ -16,8 +16,11 @@ es:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
+      accepted: "debe de ser aceptado"
       already_confirmed: "ya ha sido confirmado"
+      blank: "tiene que ser completado"
       confirmation: "no tiene confirmación"
+      empty: "tiene que ser completado"
       equal_to: "tiene que tener exactamente %{count}"
       exclusion: "está reservado"
       expired: "ha caducado, solicite una nueva."
@@ -60,6 +63,7 @@ es:
     show_unaccessible_places: "No accesible a sillas de ruedas"
   formtastic:
     hints:
+      email: "Tratamos tu dirección de forma confidencial. Prometemos no enviarte correo basura."
       lat: "Mueve el marcador en el mapa a la posición correcta"
       osm_username: "¿Todavía no eres un miembro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\"> Crea una cuenta OpenStreetMap ahora</a>"
       password: "(dejar vacío si no quiere modificarlo)"
@@ -69,12 +73,15 @@ es:
       category: "Categoría:"
       centralkey: "Clave central:"
       city: "Ciudad:"
+      create: "Crear un lugar "
       email: Correo electrónico
       finish: Finalizar
       housenumber: "No:"
       lat: Latitud
       lon: Longitud
       name: "Nombre:"
+      osm_password: "Password de OpenStreetMap "
+      osm_username: "Nombre de la cuenta de OpenStreetMap"
       password: Contraseña
       password_confirmation: "Repetir contraseña"
       phone: "Teléfono:"
@@ -113,6 +120,7 @@ es:
       profile: Perfil
       suggestions: Sugerencias
       what_is_barrier_free: "¿Qué significa \"accesible para silla de ruedas\"?"
+      what_is_wheelmap: "¿Qué es Wheelmap?"
     searchbar:
       add_place: "Agregar otro lugar"
       find: Buscar
@@ -155,6 +163,10 @@ es:
   landing_pages:
     index:
       wheelchair:
+        limit:
+          headline: "Todos los lugares parcialmente accesibles a la silla de ruedas %{type} en %{city} (%{count})"
+        'no':
+          headline: "Todos los lugares no accesibles a la silla de ruedas %{type} en %{city} (%{count})"
         unknown:
           headline: "Todos los %{type} en %{city} con accesibilidad en silla de ruedas desconocida (%{count})"
         'yes':
@@ -242,6 +254,12 @@ es:
           kb: KB
           mb: MB
           tb: TB
+  oauth:
+    application:
+      connect:
+        headline: "Necesitas conectar tu cuenta con tu cuenta de OpenStreetMap antes de crear o modificar un lugar en Wheelmap.org"
+    callback:
+      notice: "Ahora tu cuenta de Wheelmap está conectada a tu cuenta de OpenStreetMap %{user}"
   or: o
   place:
     one: "%{count} lugar"
@@ -267,6 +285,7 @@ es:
     step1: "Haz clic en un lugar que conozcas"
     step2: "Márcalo y pulsa guardar"
     step3: "¡Eso es! No hace falta registrarse."
+    what_is_wheelmap: "¿Qué es Wheelmap?"
   statistics: Estadísticas
   support:
     array:
@@ -287,6 +306,8 @@ es:
     'no': "Baño no accesible para silla de ruedas"
     unknown: "Tipo de baño desconocido"
     'yes': "Baño accesible para silla de ruedas"
+    what_is:
+      unknown: "Ayuda marcando el estado de los baños"
   user_sessions:
     create:
       activation:
@@ -297,6 +318,7 @@ es:
     destroy:
       notice: "¡Adiós! ¡Vuelve pronto!"
     new:
+      email: "Dirección de email"
       login: "Ingresar"
       login_with_twitter: "Ingresar con Twitter"
       password: Contraseña
@@ -304,6 +326,8 @@ es:
   users:
     after_signup_edit:
       welcome:
+        headline: "Ya casi lo haces! Ahora para finalizar el proceso: "
+        set_password_for_mobile: "Te has registrado satisfactoriamente en OpenStreetMap. Por favor, escoge una dirección email que te gustaría usar para mantenerte informado sobre tus actividades (por ejemplo, el número de lugares que has marcado): Puedes acceder a esta información en tu \"Profile\"."
         text: "¿Cómo podemos ponernos en contacto contigo? Puedes cambiar esta información más tarde en tu perfil."
     edit:
       headline:
