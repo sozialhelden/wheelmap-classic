@@ -1,8 +1,8 @@
-const setParam = require('mout/queryString/setParam');
-const reduce = require('mout/collection/reduce');
+import setParam from 'mout/queryString/setParam';
+import reduce from 'mout/collection/reduce';
 
-module.exports = function (url, params) {
+export default function (url, params) {
   return reduce(params, (url, value, param) => {
     return setParam(url, param, value);
   }, url);
-};
+}

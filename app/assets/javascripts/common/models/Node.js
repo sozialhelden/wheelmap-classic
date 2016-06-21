@@ -1,6 +1,6 @@
-const { Record, List, Seq } = require('immutable');
-const underscore = require('mout/string/underscore');
-const camelCase = require('mout/string/camelCase');
+import { Record, List, Seq } from 'immutable';
+import underscore from 'mout/string/underscore';
+import camelCase from 'mout/string/camelCase';
 
 const PROHIBITED_ATTRS = [ 'state', 'country', 'category' ];
 
@@ -91,4 +91,4 @@ Node.fromFeatures = (features) => {
   return new List(features.map(Node.fromFeature));
 };
 
-module.exports = Node;
+export default Node;

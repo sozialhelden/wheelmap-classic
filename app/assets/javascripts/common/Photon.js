@@ -5,7 +5,6 @@ const { func, string, number } = PropTypes;
 
 class Photon extends React.Component {
   static propTypes = {
-    onSelection: func.isRequired,
     onSelectLocation: func.isRequired,
     lang: string.isRequired,
     limit: number.isRequired,
@@ -56,6 +55,7 @@ class Photon extends React.Component {
       this.featureRequest.abort();
     }
 
+    // Remove jQuery
     this.featureRequest = $.ajax({
       url,
       dataType: 'json',
@@ -87,4 +87,4 @@ class Photon extends React.Component {
   }
 }
 
-module.exports = Photon;
+export default Photon;

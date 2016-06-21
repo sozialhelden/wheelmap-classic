@@ -51,4 +51,4 @@ Input.propTypes = {
   errors: immutableListOf(string)
 };
 
-module.exports = Input;
+export default Input;

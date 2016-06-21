@@ -1,6 +1,1 @@
-const { stringify, parse: parseString } = require('qs');
-
-module.exports = {
-  stringify,
-  parseString
-};
+export { stringify, parse as parseString } from 'qs';

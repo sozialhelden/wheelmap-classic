@@ -29,4 +29,4 @@ Alert.propTypes = {
   children: any
 };
 
-module.exports = Alert;
+export default Alert;

@@ -3,7 +3,7 @@ jest.unmock('../fetchSimilar');
 import { load, navigateToNextSection, setSimilar } from '../../actions';
 import { node as nodeSelector } from '../../selectors';
 import { SIMILAR_NODES } from '../../models/sections';
-import nodesHelpers from '../../../common/helpers/nodes';
+import { findSimilar } from '../../../common/helpers/nodes';
 import activeSection from '../activeSection';
 import Node from '../../../common/models/Node';
 import fetchSimilar from '../fetchSimilar';
@@ -28,7 +28,7 @@ describe('fetchSimilar', () => {
       .toPut(load(true));
 
     expect(gen.next())
-      .toCall(nodesHelpers.similar, node.name, {
+      .toCall(findSimilar, node.name, {
         lat: node.lat,
         lon: node.lon,
         limit: 5
@@ -76,7 +76,7 @@ describe('fetchSimilar', () => {
       .toPut(load(true));
 
     expect(gen.next())
-      .toCall(nodesHelpers.similar, node.name, {
+      .toCall(findSimilar, node.name, {
         lat: node.lat,
         lon: node.lon,
         limit: 5

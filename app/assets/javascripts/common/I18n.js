@@ -37,6 +37,8 @@ I18n.t = (scope) => {
   return translation;
 };
 
+I18n.locale = global.I18n.locale;
+
 I18n.propTypes = {
   scope: string.isRequired,
   className: string
