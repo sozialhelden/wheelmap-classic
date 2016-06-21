@@ -18,7 +18,6 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    ZenTest (4.11.0)
     actionmailer (4.1.15)
       actionpack (= 4.1.15)
       actionview (= 4.1.15)
@@ -85,8 +84,6 @@ GEM
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
-    autotest (4.4.6)
-      ZenTest (>= 4.4.1)
     awesome_nested_set (3.1.1)
       activerecord (>= 4.0.0, < 5.1)
     babel-source (5.8.35)
@@ -483,7 +480,7 @@ GEM
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
     slop (3.6.0)
-    sprockets (3.6.0)
+    sprockets (3.6.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-es6 (0.9.0)
@@ -550,7 +547,6 @@ DEPENDENCIES
   acts_as_api
   airbrake (~> 4.1)
   apipie-rails
-  autotest
   awesome_nested_set (~> 3.1)
   backup
   big_sitemap
@@ -608,7 +604,6 @@ DEPENDENCIES
   librato-metrics
   librato-rails
   libxml-ruby
-  minitest
   multipart-post
   mysql2 (~> 0.3.18)
   newrelic_rpm
