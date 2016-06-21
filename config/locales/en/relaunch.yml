@@ -64,6 +64,7 @@ en:
             title: We found similar places nearby. Is it one of these?
             go_edit: Continue with this place
             go_new: It is none of the places above …
+            empty: No similar places were found.
           accessibility:
             name: Wheelchair accessibility
             title: Information on wheelchair accessibility
