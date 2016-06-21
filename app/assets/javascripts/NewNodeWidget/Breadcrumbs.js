@@ -22,10 +22,9 @@ class Breadcrumbs extends Component {
   render() {
     const { sections, activeSection, onNavigate } = this.props;
     const className = classNames({ done: activeSection === OVERVIEW });
-    const list = [];
     const activeSectionIndex = sections.findIndex(section => section === activeSection);
 
-    sections.forEach((section, index) => {
+    const items = sections.map((section, index) => {
       // Skip overview as this section is not part of the breadcrumbs
       if (section === OVERVIEW) {
         return;
@@ -40,7 +39,7 @@ class Breadcrumbs extends Component {
         onNavigate(section);
       };
 
-      list.push(
+      return (
         <li key={section} className={className}>
           <a href="#" onClick={onClick}>
             <I18n scope={`nodes.new.form.section.${section}.name`} />
@@ -52,7 +51,7 @@ class Breadcrumbs extends Component {
     return (
       <div className="nodes-new-breadcrumbs">
         <ul className={className}>
-          {list}
+          {items}
         </ul>
       </div>
     );

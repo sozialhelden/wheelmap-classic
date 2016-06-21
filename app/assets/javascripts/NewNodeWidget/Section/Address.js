@@ -84,12 +84,12 @@ class AddressSection extends Component {
       );
     }
 
-    const errorAlertElements = [];
+    let errorAlertElements = null;
     const latErrors = errors.get('lat');
 
     if (latErrors != null) {
-      latErrors.forEach((error, index) => {
-        errorAlertElements.push(<Alert key={index} type="error">{error}</Alert>);
+      errorAlertElements = latErrors.map((error, index) => {
+        return <Alert key={index} type="error">{error}</Alert>;
       });
     }
 

@@ -17,14 +17,13 @@ function Input({ className, type, required, placeholderScope, hintScope, errors,
   }
 
   let hint = null;
-  const errorElements = [];
 
   if (hintScope != null) {
     hint = <I18n scope={hintScope} className="hint" />;
   }
 
-  errors.forEach((error, index) => {
-    errorElements.push(<div key={index} className="error">{error}</div>);
+  const errorElements = errors.map((error, index) => {
+    return <div key={index} className="error">{error}</div>;
   });
 
   return (
