@@ -12,10 +12,8 @@ import { node, immutableListOf } from '../../common/propTypes';
 const { func, bool } = React.PropTypes;
 
 function SimilarNodesSection({ similarNodes, loading, onClickAction }) {
-  const items = [];
-
-  similarNodes.forEach(node => {
-    items.push(
+  const items = similarNodes.map(node => {
+    return (
       <li key={node.id}>
         <strong>{node.name}</strong> {node.address()}
         <a href={editNodePath(node.id)} className="pull-right">
