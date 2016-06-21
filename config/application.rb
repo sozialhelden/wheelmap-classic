@@ -35,7 +35,7 @@ module Wheelmap
     # Use all locales that we have translations when not in production
     Dir.glob(Rails.root.join('config', 'locales', '*')).each do |directory|
       locale = File.basename(directory).to_sym
-      config.i18n.available_locales << locale unless I18n.available_locales.include?(locale)
+      config.i18n.available_locales << locale unless config.i18n.available_locales.include?(locale)
     end
 
  #   config.middleware.use(Rack::RequestLogger)
