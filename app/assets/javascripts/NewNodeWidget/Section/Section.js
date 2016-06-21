@@ -12,7 +12,7 @@ class Section extends React.Component {
     section: instanceOf(SectionModel).isRequired,
     onClickAction: func.isRequired,
     loading: bool.isRequired,
-    actionExtraScope: string.isRequired,
+    actionExtraScope: string,
     children: any
   };
 

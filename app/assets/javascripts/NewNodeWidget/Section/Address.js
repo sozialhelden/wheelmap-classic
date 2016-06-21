@@ -58,7 +58,7 @@ class AddressSection extends Component {
     this.props.onMarkerMoved({ lat, lon });
   };
 
-  onMapClick = ({ latLng }) => {
+  onMapClick = ({ latlng: latLng }) => {
     const { lat, lng: lon } = latLng;
 
     this.props.onMarkerMoved({ lat, lon });

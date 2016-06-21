@@ -3,7 +3,7 @@ import find from 'mout/collection/find';
 
 import { replace } from '../../common/actions/router';
 import { ENTER_CONTENT, activateSection } from '../actions';
-import sections, { NAME_CATEGORY } from '../models/sections';
+import * as sections from '../models/sections';
 
 export default function*() {
   while (true) {
@@ -12,7 +12,7 @@ export default function*() {
 
     // Redirect to name and category (first) section if given section is invalid.
     if (section == null) {
-      yield put(replace.newNodeSectionPath(NAME_CATEGORY));
+      yield put(replace.newNodeSectionPath(sections.NAME_CATEGORY));
 
       continue;
     }

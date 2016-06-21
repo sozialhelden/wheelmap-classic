@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Section from './Section';
-import actions from '../actions';
+import { navigateToNextSection } from '../actions';
 import { SIMILAR_NODES } from '../models/sections';
-import selectors from '../selectors';
+import * as selectors from '../selectors';
 import { editNodePath } from '../../common/routes';
 import I18n from '../../common/I18n';
 import { node, immutableListOf } from '../../common/propTypes';
@@ -55,7 +55,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onClickAction: (section) => dispatch(actions.navigateToNextSection(section))
+    onClickAction: (section) => dispatch(navigateToNextSection(section))
   };
 }
 

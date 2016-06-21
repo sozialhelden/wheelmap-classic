@@ -3,7 +3,7 @@ import { take, put, select, call } from 'redux-saga/effects';
 import { load, changeMapCenter, changeMapZoom } from '../actions';
 import { node as nodeSelector } from '../selectors';
 import activeSection from './activeSection';
-import sections from '../models/sections';
+import * as sections from '../models/sections';
 import geolocation from '../../common/helpers/geolocation';
 
 export default function *useGeolocation() {

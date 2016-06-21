@@ -11,7 +11,7 @@ import { NAME_CATEGORY, ADDRESS, ACCESSIBILITY, CONTACT, OVERVIEW } from '../mod
 import { saveNode } from '../actions';
 import * as selectors from '../selectors';
 import { nodeTypesSelector, categoriesSelector } from '../../common/selectors';
-import { node, nodeType, category, immutableListOf } from '../../common/propTypes';
+import { node, nodeType, category, immutableMapOf } from '../../common/propTypes';
 
 const { func, bool } = React.PropTypes;
 
@@ -134,8 +134,8 @@ OverviewSection.propTypes = {
   onClickAction: func.isRequired,
   node: node.isRequired,
   loading: bool.isRequired,
-  nodeTypes: immutableListOf(nodeType),
-  categories: immutableListOf(category)
+  nodeTypes: immutableMapOf(nodeType),
+  categories: immutableMapOf(category)
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -151,7 +151,7 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-module.exports = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(OverviewSection);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import classNames from 'classnames';
 
 import I18n from '../common/I18n';
@@ -8,7 +8,7 @@ import { immutableListOf } from '../common/propTypes';
 
 const { func, instanceOf } = React.PropTypes;
 
-class Breadcrumbs extends React.Component {
+class Breadcrumbs extends Component {
   static propTypes = {
     sections: immutableListOf(instanceOf(Section)).isRequired,
     activeSection: instanceOf(Section),
@@ -59,4 +59,4 @@ class Breadcrumbs extends React.Component {
   }
 }
 
-module.exports = Breadcrumbs;
+export default Breadcrumbs;

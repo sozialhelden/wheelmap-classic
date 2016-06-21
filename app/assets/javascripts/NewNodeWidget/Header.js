@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import I18n from '../common/I18n';
 
-class Header extends React.Component {
+class Header extends Component {
   shouldComponentUpdate() {
     return false;
   }
@@ -17,4 +17,4 @@ class Header extends React.Component {
   }
 }
 
-module.exports = Header;
+export default Header;

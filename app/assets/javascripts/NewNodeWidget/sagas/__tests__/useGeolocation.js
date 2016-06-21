@@ -3,7 +3,7 @@ jest.unmock('../useGeolocation');
 import { load, changeMapCenter, changeMapZoom } from '../../actions';
 import { node as nodeSelector } from '../../selectors';
 import activeSection from '../activeSection';
-import sections from '../../models/sections';
+import { ADDRESS } from '../../models/sections';
 import geolocation from '../../../common/helpers/geolocation';
 import Node from '../../../common/models/Node';
 import useGeolocation from '../useGeolocation';
@@ -17,7 +17,7 @@ describe('useGeolocation', () => {
 
   it('geolocates', () => {
     expect(gen.next())
-      .toTake(activeSection(sections.ADDRESS));
+      .toTake(activeSection(ADDRESS));
 
     expect(gen.next())
       .toSelect(nodeSelector);
@@ -60,7 +60,7 @@ describe('useGeolocation', () => {
 
   it('aborts if node already has a location', () => {
     expect(gen.next())
-      .toTake(activeSection(sections.ADDRESS));
+      .toTake(activeSection(ADDRESS));
 
     expect(gen.next())
       .toSelect(nodeSelector);
@@ -76,7 +76,7 @@ describe('useGeolocation', () => {
 
   it('catches position errors', () => {
     expect(gen.next())
-      .toTake(activeSection(sections.ADDRESS));
+      .toTake(activeSection(ADDRESS));
 
     expect(gen.next())
       .toSelect(nodeSelector);
