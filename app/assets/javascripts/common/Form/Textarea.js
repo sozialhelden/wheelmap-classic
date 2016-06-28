@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classnames';
+
 import I18n from '../I18n';
 
 const { bool, string } = PropTypes;

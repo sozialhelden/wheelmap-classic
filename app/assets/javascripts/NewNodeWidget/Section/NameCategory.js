@@ -3,15 +3,16 @@ import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 
-import Section from './Section';
-import Form from '../../common/Form';
-import NodeTypeSelect from './NodeTypeSelect';
 import { NAME_CATEGORY } from '../models/sections';
 import { categoriesSelector } from '../../common/selectors/categories';
 import { nodeTypesSelector } from '../../common/selectors/nodeTypes';
 import * as selectors from '../selectors';
 import * as actions from '../actions';
+import Form from '../../common/Form';
 import { node, category, nodeType, immutableMapOf, immutableMap } from '../../common/propTypes';
+
+import Section from './Section';
+import NodeTypeSelect from './NodeTypeSelect';
 
 const { func, bool } = React.PropTypes;
 
@@ -26,13 +27,13 @@ class NameCategorySection extends React.Component {
     categories: immutableMapOf(category).isRequired
   };
 
-  onChangeName = (event) => {
+  onChangeName = event => {
     const { node, onChange } = this.props;
 
     onChange(node.set('name', event.target.value));
   };
 
-  onChangeNodeType = (nodeType) => {
+  onChangeNodeType = nodeType => {
     const { node, onChange } = this.props;
 
     onChange(node.set('nodeType', nodeType));

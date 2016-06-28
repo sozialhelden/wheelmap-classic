@@ -15,12 +15,10 @@ export const CHANGE_NODE_ADDRESS = 'CHANGE_NODE_ADDRESS';
 export const UPDATE_MAP = 'UPDATE_MAP';
 export const SAVE_NODE = 'SAVE_NODE';
 
-export const enterContent = createAction(ENTER_CONTENT, (nextState) => {
-  return {
-    section: nextState.params.section,
-    node: nextState.location.query.node
-  };
-});
+export const enterContent = createAction(ENTER_CONTENT, nextState => ({
+  section: nextState.params.section,
+  node: nextState.location.query.node
+}));
 export const load = createAction(LOAD);
 export const activateSection = createAction(ACTIVATE_SECTION);
 export const changeNode = createAction(CHANGE_NODE);

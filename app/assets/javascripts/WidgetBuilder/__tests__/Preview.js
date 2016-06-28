@@ -2,6 +2,7 @@ jest.unmock('../Preview');
 
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
+
 import WidgetBuilderPreview from '../Preview';
 
 describe('React WidgetPreview component', function () {

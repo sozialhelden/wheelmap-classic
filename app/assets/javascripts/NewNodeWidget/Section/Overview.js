@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { Link } from 'react-router';
 
-import Section from './Section';
 import I18n from '../../common/I18n';
 import { Map, Marker } from '../../common/Mapbox';
 import { NAME_CATEGORY, ADDRESS, ACCESSIBILITY, CONTACT, OVERVIEW } from '../models/sections';
@@ -12,6 +11,8 @@ import { saveNode } from '../actions';
 import * as selectors from '../selectors';
 import { nodeTypesSelector, categoriesSelector } from '../../common/selectors';
 import { node, nodeType, category, immutableMapOf } from '../../common/propTypes';
+
+import Section from './Section';
 
 const { func, bool } = React.PropTypes;
 

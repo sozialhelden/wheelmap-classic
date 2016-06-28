@@ -5,6 +5,9 @@
     "jasmine": true,
     "jquery": true
   },
+  "plugins": [
+    "import"
+  ],
   "globals": {
     "Routes": true,
     "I18n": true
@@ -12,6 +15,15 @@
   "rules": {
     "no-constant-condition": [
       "error", { "checkLoops": false }
+    ],
+    "arrow-parens": ["error", "as-needed"],
+    "arrow-body-style": ["error"],
+    "no-useless-rename": ["error"],
+    "import/order": [
+      "error", { "newlines-between": "always" }
+    ],
+    "import/newline-after-import": [
+      "error"
     ]
   }
 }

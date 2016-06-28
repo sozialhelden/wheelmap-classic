@@ -22,9 +22,9 @@ function Input({ className, type, required, placeholderScope, hintScope, errors,
     hint = <I18n scope={hintScope} className="hint" />;
   }
 
-  const errorElements = errors.map((error, index) => {
-    return <div key={index} className="error">{error}</div>;
-  });
+  const errorElements = errors.map((error, index) => (
+    <div key={index} className="error">{error}</div>
+  ));
 
   return (
     <div className={className}>

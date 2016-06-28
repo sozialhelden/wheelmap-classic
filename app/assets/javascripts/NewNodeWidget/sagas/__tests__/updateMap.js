@@ -7,7 +7,6 @@ import { MARKER_MOVED, changeMapCenter, changeNode, CHANGE_NODE_ADDRESS } from '
 import { geocode } from '../../../common/helpers/photon';
 import delay from '../../../common/helpers/delayPromise';
 import Node from '../../../common/models/Node';
-
 import cancelUpdateMap, { updateMap, debounceUpdateMap } from '../updateMap';
 
 describe('cancelUpdateMap', () => {

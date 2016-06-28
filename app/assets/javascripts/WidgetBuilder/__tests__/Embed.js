@@ -2,6 +2,7 @@ jest.unmock('../Embed');
 
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
+
 import WidgetBuilderEmbed from '../Embed';
 
 describe('React WidgetEmbed component', function () {

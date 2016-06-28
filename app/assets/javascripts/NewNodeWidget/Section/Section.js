@@ -21,7 +21,7 @@ class Section extends React.Component {
     loading: false
   };
 
-  onClickAction = (event) => {
+  onClickAction = event => {
     event.preventDefault();
 
     this.props.onClickAction();
@@ -32,13 +32,11 @@ class Section extends React.Component {
 
     let actionExtra;
 
-    const sectionForms = React.Children.map(children, child => {
-      return (
-        <div className="nodes-new-content-section-form">
-          {child}
-        </div>
-      );
-    });
+    const sectionForms = React.Children.map(children, child => (
+      <div className="nodes-new-content-section-form">
+        {child}
+      </div>
+    ));
 
     if (actionExtraScope != null) {
       actionExtra = (

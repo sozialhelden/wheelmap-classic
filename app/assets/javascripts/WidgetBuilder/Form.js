@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import I18n from '../common/I18n';
 import Select from '../common/Form/Select';
 import Photon from '../common/Photon';
+
 import { widget } from './propTypes';
 
 const { func, any } = PropTypes;
@@ -18,19 +19,19 @@ class WidgetBuilderForm extends Component {
     children: any
   };
 
-  onWidthChange = (event) => {
+  onWidthChange = event => {
     this.props.changeWidth(parseInt(event.target.value, 10));
   };
 
-  onHeightChange = (event) => {
+  onHeightChange = event => {
     this.props.changeHeight(parseInt(event.target.value, 10));
   };
 
-  onCategoriesChange = (event) => {
+  onCategoriesChange = event => {
     this.props.changeCategories(event.target.checked);
   };
 
-  onProviderChange = (event) => {
+  onProviderChange = event => {
     this.props.changeProvider(event.target.value);
   };
 

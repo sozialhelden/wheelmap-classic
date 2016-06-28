@@ -57,27 +57,25 @@ class Node extends NodeRecord {
   }
 }
 
-Node.create = (attrs) => {
-  return new Node(attrs);
-};
+Node.create = attrs => new Node(attrs);
 
-Node.serializeAttrs = (attrs) => {
-  return new Seq(attrs)
+Node.serializeAttrs = attrs => (
+  new Seq(attrs)
     .toKeyedSeq()
     .filter((value, key) => !PROHIBITED_ATTRS.includes(key))
     .mapKeys(key => (key === 'nodeType' ? 'type' : underscore(key)))
     .filter(value => value)
-    .toJS();
-};
+    .toJS()
+);
 
-Node.deserializeAttrs = (attrs) => {
-  return new Seq(attrs)
+Node.deserializeAttrs = attrs => (
+  new Seq(attrs)
     .toKeyedSeq()
     .mapKeys(key => (key === 'type' ? 'nodeType' : camelCase(key)))
-    .toJS();
-};
+    .toJS()
+);
 
-Node.fromFeature = (feature) => {
+Node.fromFeature = feature => {
   const { properties, geometry } = feature;
   const { osm_id, city, name, postcode, street, housenumber, state, country } = properties;
   const [ lon, lat ] = geometry.coordinates;
@@ -87,8 +85,6 @@ Node.fromFeature = (feature) => {
   });
 };
 
-Node.fromFeatures = (features) => {
-  return new List(features.map(Node.fromFeature));
-};
+Node.fromFeatures = features => new List(features.map(Node.fromFeature));
 
 export default Node;

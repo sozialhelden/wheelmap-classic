@@ -4,9 +4,9 @@ import sortBy from 'mout/array/sortBy';
 import Form from '../../common/Form';
 import I18n from '../../common/I18n';
 import { Category, NodeType } from '../../common/models';
+import { immutableMapOf } from '../../common/propTypes';
 
 const { func, instanceOf, string } = React.PropTypes;
-import { immutableMapOf } from '../../common/propTypes';
 
 class NodeTypeSelect extends React.Component {
   static propTypes = {
@@ -16,7 +16,7 @@ class NodeTypeSelect extends React.Component {
     value: string
   };
 
-  onChange = (event) => {
+  onChange = event => {
     this.props.onChange(event.target.value);
   };
 

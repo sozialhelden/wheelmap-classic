@@ -17,25 +17,25 @@ export const DEFAULT_STATE = new Map({
 });
 
 export default handleActions({
-  [actions.ACTIVATE_SECTION]: (state, { payload: activeSection }) => {
-    return state.set('activeSection', activeSection);
-  },
-  [actions.CHANGE_NODE]: (state, { payload: node }) => {
-    return state.set('node', node);
-  },
-  [actions.CHANGE_MAP_CENTER]: (state, { payload: center }) => {
-    return state.set('mapCenter', new Map(center));
-  },
-  [actions.CHANGE_MAP_ZOOM]: (state, { payload: zoom }) => {
-    return state.set('mapZoom', zoom);
-  },
-  [actions.SET_SIMILAR]: (state, { payload: similarNodes }) => {
-    return state.set('similarNodes', new List(similarNodes));
-  },
-  [actions.SET_ERRORS]: (state, { payload: errors }) => {
-    return state.set('errors', new Map(errors));
-  },
-  [actions.LOAD]: (state, { payload: loading }) => {
-    return state.set('loading', loading);
-  }
+  [actions.ACTIVATE_SECTION]: (state, { payload: activeSection }) => (
+    state.set('activeSection', activeSection)
+  ),
+  [actions.CHANGE_NODE]: (state, { payload: node }) => (
+    state.set('node', node)
+  ),
+  [actions.CHANGE_MAP_CENTER]: (state, { payload: center }) => (
+    state.set('mapCenter', new Map(center))
+  ),
+  [actions.CHANGE_MAP_ZOOM]: (state, { payload: zoom }) => (
+    state.set('mapZoom', zoom)
+  ),
+  [actions.SET_SIMILAR]: (state, { payload: similarNodes }) => (
+    state.set('similarNodes', new List(similarNodes))
+  ),
+  [actions.SET_ERRORS]: (state, { payload: errors }) => (
+    state.set('errors', new Map(errors))
+  ),
+  [actions.LOAD]: (state, { payload: loading }) => (
+    state.set('loading', loading)
+  )
 }, DEFAULT_STATE);

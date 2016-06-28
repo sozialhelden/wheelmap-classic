@@ -65,7 +65,7 @@ class Photon extends React.Component {
         lang,
         limit
       },
-      success: (data) => {
+      success: data => {
         const { features } = data;
 
         callback(null, { options: Photon.createOptions(features) });

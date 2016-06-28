@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 
 import I18n from '../common/I18n';
+import { immutableListOf } from '../common/propTypes';
+
 import Section from './models/Section';
 import { OVERVIEW } from './models/sections';
-import { immutableListOf } from '../common/propTypes';
 
 const { func, instanceOf } = React.PropTypes;
 
@@ -27,7 +28,7 @@ class Breadcrumbs extends Component {
     const items = sections.map((section, index) => {
       // Skip overview as this section is not part of the breadcrumbs
       if (section === OVERVIEW) {
-        return;
+        return null;
       }
 
       const done = index < activeSectionIndex;

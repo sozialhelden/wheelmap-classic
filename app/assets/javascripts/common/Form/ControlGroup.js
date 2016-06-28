@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+
 import I18n from '../I18n';
 
 const { oneOfType, element, bool, any } = PropTypes;

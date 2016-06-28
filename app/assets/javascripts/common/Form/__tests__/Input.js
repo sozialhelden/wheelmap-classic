@@ -2,6 +2,7 @@ jest.unmock('../Input');
 
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
+
 import Input from '../Input';
 
 describe('Common form input React component', () => {

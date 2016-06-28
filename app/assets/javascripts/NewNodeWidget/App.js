@@ -10,6 +10,7 @@ import multi from '../common/middleware/multi';
 import transition from '../common/middleware/transition';
 import createHistory from '../common/helpers/createHistory';
 import routes from '../common/routes';
+
 import Widget from './Widget';
 import Content from './Content';
 import reducer from './reducers';
