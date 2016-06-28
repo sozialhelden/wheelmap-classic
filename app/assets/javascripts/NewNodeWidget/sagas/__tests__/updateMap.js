@@ -89,7 +89,7 @@ describe('updateMap', () => {
     expect(gen.next(address))
       .toCall(geocode, address);
 
-    const feature = null;
+    const feature = undefined;
 
     expect(gen.next(feature).done)
       .toBe(true);

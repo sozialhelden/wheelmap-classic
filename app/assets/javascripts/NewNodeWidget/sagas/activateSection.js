@@ -11,7 +11,7 @@ export default function*() {
     const section = find(sections, section => section.id === sectionId);
 
     // Redirect to name and category (first) section if given section is invalid.
-    if (section == null) {
+    if (section === undefined) {
       yield put(replace.newNodeSectionPath(sections.NAME_CATEGORY));
 
       continue;
