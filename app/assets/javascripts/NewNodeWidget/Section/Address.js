@@ -116,17 +116,17 @@ class AddressSection extends Component {
                 <Form.Controls>
                   <Row>
                     <Row.Span rows={3}>
+                      <label><I18n scope="activerecord.attributes.poi.address_postcode" /></label>
                       <FormInput
                         name="postcode"
-                        placeholderScope="activerecord.attributes.poi.address_postcode"
                         onChange={this.onChange}
                         value={node.postcode}
                       />
                     </Row.Span>
                     <Row.Span rows={9}>
+                      <label><I18n scope="activerecord.attributes.poi.address_city" /></label>
                       <FormInput
                         name="city"
-                        placeholderScope="activerecord.attributes.poi.address_city"
                         onChange={this.onChange}
                         value={node.city}
                       />
@@ -135,21 +135,25 @@ class AddressSection extends Component {
                 </Form.Controls>
                 <Form.Controls>
                   <Row>
-                    <Row.Span rows={10}>
-                      <FormInput
-                        name="street"
-                        placeholderScope="activerecord.attributes.poi.address_street"
-                        onChange={this.onChange}
-                        value={node.street}
-                      />
-                    </Row.Span>
-                    <Row.Span rows={2}>
-                      <FormInput
-                        name="housenumber"
-                        placeholderScope="activerecord.attributes.poi.address_housenumber"
-                        onChange={this.onChange}
-                        value={node.housenumber}
-                      />
+                    <Row.Span rows={12}>
+                      <label><I18n scope="activerecord.attributes.poi.address_street" /></label>
+                      <Row>
+                        <Row.Span rows={10}>
+                          <FormInput
+                            name="street"
+                            onChange={this.onChange}
+                            value={node.street}
+                          />
+                        </Row.Span>
+                        <Row.Span rows={2}>
+                          <FormInput
+                            name="housenumber"
+                            placeholderScope="activerecord.attributes.poi.address_housenumber"
+                            onChange={this.onChange}
+                            value={node.housenumber}
+                          />
+                        </Row.Span>
+                      </Row>
                     </Row.Span>
                   </Row>
                 </Form.Controls>
