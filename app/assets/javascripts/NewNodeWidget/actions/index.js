@@ -17,9 +17,10 @@ export const SAVE_NODE = 'SAVE_NODE';
 export const LOAD_NODE_ADDRESS = 'LOADING_NODE_ADDRESS';
 export const LOAD_NODE_CENTER = 'LOADING_NODE_CENTER';
 
-export const enterContent = createAction(ENTER_CONTENT, nextState => ({
+export const enterContent = createAction(ENTER_CONTENT, (nextState, replace) => ({
   section: nextState.params.section,
-  node: nextState.location.query.node
+  node: nextState.location.query.node,
+  replace
 }));
 
 export const load = createAction(LOAD);

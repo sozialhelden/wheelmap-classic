@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import size from 'mout/collection/size';
+import size from 'lodash.size';
 
 import Node from '../models/Node';
 import routes from '../routes';

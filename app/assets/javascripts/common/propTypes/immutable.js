@@ -1,6 +1,6 @@
 import React from 'react';
 import { List, Map } from 'immutable';
-import every from 'mout/collection/every';
+import every from 'lodash.every';
 
 const { instanceOf } = React.PropTypes;
 

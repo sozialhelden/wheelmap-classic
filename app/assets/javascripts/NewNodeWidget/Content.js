@@ -25,7 +25,7 @@ const SECTION_COMPONENTS = {
 const { shape, string, func } = React.PropTypes;
 
 function Content({ params: { section } }) {
-  let Section = SECTION_COMPONENTS[section];
+  const Section = SECTION_COMPONENTS[section];
 
   return (
     <div className="nodes-new-content">

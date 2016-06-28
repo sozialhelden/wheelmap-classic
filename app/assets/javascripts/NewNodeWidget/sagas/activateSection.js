@@ -1,18 +1,18 @@
-import { take, put } from 'redux-saga/effects';
-import find from 'mout/collection/find';
+import { take, put, call } from 'redux-saga/effects';
+import find from 'lodash.find';
 
-import { replace } from '../../common/actions/router';
+import routes from '../../common/routes';
 import { ENTER_CONTENT, activateSection } from '../actions';
 import * as sections from '../models/sections';
 
 export default function*() {
   while (true) {
-    const { payload: { section: sectionId } } = yield take(ENTER_CONTENT);
-    const section = find(sections, section => section.id === sectionId);
+    const { payload: { section: sectionId, replace } } = yield take(ENTER_CONTENT);
+    const section = find(sections, [ 'id', sectionId ]);
 
     // Redirect to name and category (first) section if given section is invalid.
-    if (section === undefined) {
-      yield put(replace.newNodeSectionPath(sections.NAME_CATEGORY));
+    if (section == null) {
+      yield call(replace, routes.newNodeSectionPath({ section: sections.NAME_CATEGORY }));
 
       continue;
     }
