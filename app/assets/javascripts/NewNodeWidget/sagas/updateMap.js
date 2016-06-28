@@ -15,7 +15,7 @@ export function *updateMap(node) {
     const feature = yield call(geocode, address);
 
     // Restart daemon if no feature was found.
-    if (feature == null) {
+    if (feature === undefined) {
       return;
     }
 
