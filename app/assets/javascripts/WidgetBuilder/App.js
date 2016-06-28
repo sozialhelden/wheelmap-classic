@@ -10,9 +10,8 @@ import { init } from './actions';
 
 const { object } = PropTypes;
 
-function WidgetBuilderApp({ widget }) {
-  widget = new Widget(camelize(widget));
-
+function WidgetBuilderApp({ widgetData }) {
+  const widget = new Widget(camelize(widgetData));
   const store = createStore(widgetBuilderReducer, widget);
 
   store.dispatch(init());
@@ -25,7 +24,7 @@ function WidgetBuilderApp({ widget }) {
 }
 
 WidgetBuilderApp.propTypes = {
-  widget: object
+  widgetData: object
 };
 
 export default WidgetBuilderApp;
