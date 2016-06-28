@@ -2,7 +2,7 @@
 
 Wheelmap.PopupRoute = Wheelmap.MapRoute.extend
   model: (params)->
-    @get('store').find('node', params.node_id)
+    @get('store').find('node', params.nodeId)
 
   setupController: (controller, model)->
     @_super(controller, model)

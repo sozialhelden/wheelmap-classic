@@ -1,4 +1,7 @@
 Wheelmap.MapRoute = Ember.Route.extend
+  model: () ->
+    # Load no model.
+
   setupController: (controller, model)->
     @_super(controller, model)
 

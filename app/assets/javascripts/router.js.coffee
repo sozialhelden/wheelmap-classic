@@ -2,6 +2,6 @@
 
 @Wheelmap.Router.map ()->
   @resource 'index', path: '/'
-  @resource 'popup', path: '/popup/:node_id'
-  @resource 'nodes', path: '/nodes/:node_id', ()->
+  @resource 'popup', path: '/popup/:nodeId'
+  @resource 'nodes', path: '/nodes/:nodeId', ()->
     @route('edit')
