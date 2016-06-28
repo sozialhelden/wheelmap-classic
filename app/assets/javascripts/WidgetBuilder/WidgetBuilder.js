@@ -6,9 +6,9 @@ import Form from './Form';
 import Embed from './Embed';
 import Preview from './Preview';
 import { changeWidth, changeHeight, changeLocation, changeProvider, changeCategories, save } from './actions';
+import { widget } from './propTypes';
 
 const { func } = React.PropTypes;
-import { widget } from './propTypes';
 
 class WidgetBuilder extends Component {
   static propTypes = {

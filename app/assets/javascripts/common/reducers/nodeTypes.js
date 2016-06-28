@@ -5,11 +5,11 @@ import { FETCH_CATEGORIES } from '../actions/categories';
 import NodeType from '../models/NodeType';
 
 export default handleActions({
-  [FETCH_CATEGORIES]: (state, { payload: { nodeTypes } }) => {
-    return new Seq(nodeTypes)
+  [FETCH_CATEGORIES]: (state, { payload: { nodeTypes } }) => (
+    new Seq(nodeTypes)
       .map(nodeType => new NodeType(nodeType))
       .toKeyedSeq()
       .mapKeys((key, nodeType) => nodeType.id)
-      .toMap();
-  }
+      .toMap()
+  )
 }, new Map());

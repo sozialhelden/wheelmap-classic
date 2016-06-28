@@ -4,8 +4,9 @@ import { load, navigateToNextSection, setSimilar } from '../actions';
 import { node as nodeSelector } from '../selectors';
 import { SIMILAR_NODES } from '../models/sections';
 import { findSimilar } from '../../common/helpers/nodes';
-import activeSection from './activeSection';
 import Node from '../../common/models/Node';
+
+import activeSection from './activeSection';
 
 // Fetch similar nodes when the user visits the similar node section.
 export default function *fetchSimilar() {

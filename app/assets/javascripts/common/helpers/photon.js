@@ -14,9 +14,7 @@ export function search(query, params = {}) {
 
 export function geocode(query) {
   return search(query, { limit: 1 })
-    .then(response => {
-      return response[0];
-    });
+    .then(response => response[0]);
 }
 
 export function reverseGeocode({ lat, lon }) {

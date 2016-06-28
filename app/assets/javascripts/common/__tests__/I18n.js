@@ -3,6 +3,7 @@ jest.unmock('../I18n');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
+
 import I18n from '../I18n';
 
 const VALID_KEY = 'valid.key';

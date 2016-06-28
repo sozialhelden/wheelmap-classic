@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { immutableListOf } from '../common/propTypes/immutable';
+
 import Header from './Header';
 import Breadcrumbs from './Breadcrumbs';
 import Section from './models/Section';
 import { navigateToSection } from './actions';
 import * as selectors from './selectors';
-import { immutableListOf } from '../common/propTypes/immutable';
 
 const { func, instanceOf, any } = React.PropTypes;
 
@@ -36,7 +37,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onNavigate: (section) => dispatch(navigateToSection(section))
+    onNavigate: section => dispatch(navigateToSection(section))
   };
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import I18n from '../common/I18n';
+
 import { widget } from './propTypes';
 
 class WidgetBuilderEmbed extends React.Component {

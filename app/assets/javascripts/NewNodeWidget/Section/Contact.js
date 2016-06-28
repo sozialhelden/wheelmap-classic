@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
-import Section from './Section';
 import Form from '../../common/Form';
 import { CONTACT } from '../models/sections';
 import { navigateToNextSection, changeNode } from '../actions';
 import * as selectors from '../selectors';
 import Node from '../../common/models/Node';
 import { immutableMapOf, immutableListOf } from '../../common/propTypes';
+
+import Section from './Section';
 
 const { func, string, instanceOf, bool } = React.PropTypes;
 
@@ -68,7 +69,7 @@ class FormInput extends React.Component {
     onChange: func.isRequired
   };
 
-  onChange = (event) => {
+  onChange = event => {
     const { name, onChange } = this.props;
 
     onChange(name, event);

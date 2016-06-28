@@ -74,14 +74,14 @@ export function validateNode(node, attrs = null) {
   const options = { data: node.serialize(), credentials: 'same-origin' };
 
   return postJSON(validateNodePath({ format: 'json' }), options)
-    .catch(error => {
-      return error.response.json()
+    .catch(error => (
+      error.response.json()
         .then(data => {
           error.errors = Node.deserializeAttrs(data.errors);
 
           throw error;
-        });
-    })
+        })
+    ))
     .catch(error => {
       if (attrs == null || error.response.status !== 422) {
         throw error;

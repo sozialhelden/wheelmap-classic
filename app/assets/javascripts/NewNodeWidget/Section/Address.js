@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
+import { PropTypes as LeafletPropTypes } from 'react-leaflet';
 
-import Section from './Section';
 import { ADDRESS } from '../models/sections';
 import * as actions from '../actions';
 import * as selectors from '../selectors';
@@ -16,7 +16,8 @@ import { nodeTypesSelector } from '../../common/selectors/nodeTypes';
 import NodeType from '../../common/models/NodeType';
 import Node from '../../common/models/Node';
 import { immutableMapOf, immutableListOf } from '../../common/propTypes';
-import { PropTypes as LeafletPropTypes } from 'react-leaflet';
+
+import Section from './Section';
 
 const { func, instanceOf, bool, number, string } = PropTypes;
 const { latlng } = LeafletPropTypes;
@@ -88,9 +89,9 @@ class AddressSection extends Component {
     const latErrors = errors.get('lat');
 
     if (latErrors != null) {
-      errorAlertElements = latErrors.map((error, index) => {
-        return <Alert key={index} type="error">{error}</Alert>;
-      });
+      errorAlertElements = latErrors.map((error, index) => (
+        <Alert key={index} type="error">{error}</Alert>
+      ));
     }
 
     return (
@@ -166,7 +167,7 @@ class FormInput extends React.Component {
     onChange: func.isRequired
   };
 
-  onChange = (event) => {
+  onChange = event => {
     const { name, onChange } = this.props;
 
     onChange(name, event);

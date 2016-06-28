@@ -9,9 +9,7 @@ const helpers = {};
 
 routes.forEach(route => {
   const path = unCamelCase(route, '/');
-  const helper = () => {
-    return path;
-  };
+  const helper = () => path;
 
   helpers[route] = jest.genMockFunction()
     .mockImpl(helper);

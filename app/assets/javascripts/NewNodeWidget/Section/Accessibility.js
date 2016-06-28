@@ -3,7 +3,6 @@ import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 
-import Section from './Section';
 import { ACCESSIBILITY } from '../models/sections';
 import Row from '../../common/Row';
 import Form from '../../common/Form';
@@ -11,6 +10,8 @@ import StatusDropdown from '../../common/StatusDropdown';
 import Node from '../../common/models/Node';
 import * as selectors from '../selectors';
 import { navigateToNextSection, changeNode } from '../actions';
+
+import Section from './Section';
 
 const { func, instanceOf, bool } = PropTypes;
 
@@ -34,15 +35,15 @@ class AccessibilitySection extends React.Component {
     onNodeChange(node.set(attr, event.target.value));
   }
 
-  onChangeWheelchairStatus = (status) => {
+  onChangeWheelchairStatus = status => {
     this.onChangeStatus('wheelchair', status);
   };
 
-  onChangeWheelchairToiletStatus = (status) => {
+  onChangeWheelchairToiletStatus = status => {
     this.onChangeStatus('wheelchairToilet', status);
   };
 
-  onChangeWheelchairDescription = (event) => {
+  onChangeWheelchairDescription = event => {
     this.onChange('wheelchairDescription', event);
   };
 

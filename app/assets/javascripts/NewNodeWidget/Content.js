@@ -1,5 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import NodesForm from '../common/Node/Form';
 
 import NameCategorySection from './Section/NameCategory';
 import AddressSection from './Section/Address';
@@ -7,7 +10,6 @@ import SimilarNodesSection from './Section/SimilarNodes';
 import AccessibilitySection from './Section/Accessibility';
 import ContactSection from './Section/Contact';
 import OverviewSection from './Section/Overview';
-import NodesForm from '../common/Node/Form';
 import { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } from './models/sections';
 import { activateSection } from './actions';
 
@@ -46,9 +48,9 @@ function mapStateToProps() {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    activateSection: (section) => dispatch(activateSection(section))
-  };
+  return bindActionCreators({
+    activateSection
+  }, dispatch);
 }
 
 export default connect(
