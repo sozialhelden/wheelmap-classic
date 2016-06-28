@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import ReactSelect from 'react-select';
+import { stringify } from 'querystring';
 
 const { func, string, number } = PropTypes;
 
@@ -55,22 +56,28 @@ class Photon extends React.Component {
       this.featureRequest.abort();
     }
 
-    // Remove jQuery
-    this.featureRequest = $.ajax({
-      url,
-      dataType: 'json',
-      cache: false,
-      data: {
-        q: search,
-        lang,
-        limit
-      },
-      success: data => {
-        const { features } = data;
+    const xhr = this.featureRequest = new XMLHttpRequest();
 
-        callback(null, { options: Photon.createOptions(features) });
-      }
+    const query = stringify({
+      q: search,
+      lang,
+      limit
     });
+
+    xhr.open('GET', `${url}?${query}`, true);
+    xhr.setRequestHeader('Accept', 'application/json');
+
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== 4 || xhr.status !== 200) {
+        return;
+      }
+
+      const { features } = JSON.parse(xhr.responseText);
+
+      callback(null, { options: Photon.createOptions(features) });
+    };
+
+    xhr.send();
   };
 
   render() {
