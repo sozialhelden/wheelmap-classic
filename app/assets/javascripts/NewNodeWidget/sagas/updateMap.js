@@ -47,7 +47,7 @@ export function *debounceUpdateMap() {
       const { payload: node } = yield take(CHANGE_NODE_ADDRESS);
 
       // Cancel old update map task (debounce).
-      if (updateMapTask != null) {
+      if (updateMapTask !== null) {
         yield cancel(updateMapTask);
       }
 
