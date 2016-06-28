@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import ReactSelect from 'react-select';
-import { stringify } from 'querystring';
+import { stringify } from 'query-string';
 
 const { func, string, number } = PropTypes;
 
