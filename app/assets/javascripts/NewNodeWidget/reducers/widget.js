@@ -1,4 +1,4 @@
-import { Map, List } from 'immutable';
+import { Map, List, fromJS } from 'immutable';
 import { handleActions } from 'redux-actions';
 
 import { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } from '../models/sections';
@@ -33,7 +33,7 @@ export default handleActions({
     state.set('similarNodes', new List(similarNodes))
   ),
   [actions.SET_ERRORS]: (state, { payload: errors }) => (
-    state.set('errors', new Map(errors))
+    state.set('errors', fromJS(errors))
   ),
   [actions.LOAD]: (state, { payload: loading }) => (
     state.set('loading', loading)
