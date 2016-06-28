@@ -1,1 +1,1 @@
-export { stringify, parse as parseString } from 'qs';
+export { stringify, parse as parseString } from 'query-string';
