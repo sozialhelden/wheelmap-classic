@@ -39,6 +39,6 @@ class WidgetsController < ApplicationController
   private
 
   def allow_iframe
-    response.headers['X-Frame-Options'] = 'ALLOW-ALL'
+    response.headers.except! 'X-Frame-Options'
   end
 end
