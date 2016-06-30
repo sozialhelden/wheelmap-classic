@@ -55,5 +55,12 @@ describe WidgetsController do
         expect(assigns(:widget)).to be_falsey
       end
     end
+
+    context "the response" do
+      it "has x-frame options allow-all" do
+        get :embed, :key => widget.user.api_key
+        expect(response.headers['X-Frame-Options']).to eq('ALLOW-ALL') 
+      end
+    end
   end
 end
