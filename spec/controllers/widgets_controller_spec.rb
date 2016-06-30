@@ -57,7 +57,7 @@ describe WidgetsController do
     end
 
     context "the response" do
-      it "has x-frame options allow-all" do
+      it "does not have x-frame-options header" do
         get :embed, :key => widget.user.api_key
         expect(response.headers.include?('X-Frame-Options')).to be_falsey
       end
