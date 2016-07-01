@@ -7,144 +7,215 @@ Wheelmap.org is an online map to search, find and mark wheelchair-accessible pla
 
 This Repository is the source code of the website [Wheelmap.org](http://wheelmap.org/).
 
-## Installation
+## I. Installation
+
 
 ### Requirements
 
-If you are working on a Mac, please install [Homebrew](http://brew.sh/).
+- Ruby 2.2.2
+- Bundler
+- MySQL
+- ImageMagick
+- PhantomJS
+- node / npm
 
-Then install the following required tools:
 
-#### `git`, `wget`
+Before you start, please make sure you have [Homebrew](http://brew.sh/) for Mac or [aptitude](http://packages.ubuntu.com/search?keywords=aptitude) for Ubuntu installed.
 
-    brew install git wget
+#### Install essential software packages:
 
-#### Latest Ruby 2.2.2 via rbenv
+MacOS
 
-    brew install rbenv ruby-build
-    rbenv install 2.2.2
-    echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
-    echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+```
+$ brew install git wget
+```
 
-Restart your shell and install bundler:
+Ubuntu 
 
-    rbenv global 2.2.2
-    gem install bundler
-    rbenv rehash
+```
+$ sudo apt-get update
+$ sudo apt-get install -y git-core wget 
 
-### Dependencies
+# more libraries
+$ sudo apt-get install -y curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
+```
 
-#### MySQL
+#### Install Ruby:
 
-    brew install mysql
-    mkdir -p ~/Library/LaunchAgents
-    ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
-    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+MacOS / Ubuntu
 
-#### ImageMagick
+First, install the Ruby Package Manager of your choice:
 
-    brew install imagemagick
+- [rbenv](https://github.com/rbenv/rbenv)
+- [rvm](https://rvm.io/rvm/install)
 
-#### PhantomJS
+Dependent on your choice, please install Ruby with either:
+
+```
+$ rbenv global 2.2.2
+$ rbenv rehash
+```
+
+or:
+
+```
+$ rvm install 2.2.2
+$ rvm use 2.2.2 
+```
+
+#### Install Bundler: 
+
+MacOS / Ubuntu
+
+```
+$ gem install bundler
+```
+
+#### Install MySQL:
+
+MacOS
+
+```
+$ brew install mysql
+$ mkdir -p ~/Library/LaunchAgents
+$ ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
+$ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+```
+
+Ubuntu
+
+```
+$ sudo apt-get update
+$ sudo apt-get install -y libmysqlclient-dev mysql-server 
+```
+
+#### Install ImageMagick:
+
+MacOS
+
+```
+$ brew install imagemagick
+```
+
+Ubuntu 
+```
+$ sudo apt-get install -y imagemagick
+```
+
+#### Install PhantomJS:
 
 PhantomJS is a testing framework for headless testing.
 
-To install on OSX
+MacOS
 
 ```
 $ brew install phantomjs   # via Homebrew
-# or
+
+or:
 $ port install phantomjs   # via MacPorts
 ```
 
-On Ubuntu 12.04, run:
+Ubuntu
 
 ```
 $ sudo npm install -g phantomjs-prebuilt
 ```
 
 
-### Clone the app from Github
+#### Clone the app from Github:
 
-    git clone https://github.com/sozialhelden/wheelmap.git --depth 1
-    cd wheelmap
-    bundle install --path vendor/bundle
+```
+$ git clone https://github.com/sozialhelden/wheelmap.git --depth 1
+$ cd wheelmap
+$ bundle install --path vendor/bundle
+```
 
-## Getting started
+## II. Getting started
 
-1. Copy the example `secrets.yml`:
+##### Copy the example `secrets.yml`:
 
-    ```
-    cp config/secrets.sample.yml config/secrets.yml
-    ```
+```
+$ cp config/secrets.sample.yml config/secrets.yml
+```
 
-2. Copy the example openstreetmap config:
+##### Copy the example openstreetmap config:
 
-    ```
-    cp config/open_street_map.SAMPLE.yml config/open_street_map.yml
-    ```
+```
+$ cp config/open_street_map.SAMPLE.yml config/open_street_map.yml
+```
 
-3. Copy the example environment variable config file:
+##### Copy the example environment variable config file:
 
-    ```
-    cp .env.sample .env
-    ```
+```
+$ cp .env.sample .env
+```
 
-4. Copy the example database config and edit accordingly:
+##### Copy the example database config and edit accordingly:
 
-    ```
-    cp config/database.SAMPLE.yml config/database.yml
-    ```
+```
+$ cp config/database.SAMPLE.yml config/database.yml
+```
 
-5. Edit `database.yml` to reflect your current database settings.
+##### Edit `database.yml` to reflect your current database settings.
 
-6. Now lets create the actual database and prepare minimal data:
+##### Now lets create the actual database and prepare minimal data:
 
-    ```
-    bundle exec rake db:create:all
-    ```
+```
+$ bundle exec rake db:create:all
+```
 
-7. Then log into the mysql server and pipe the `structure.sql` file into the database you want to use, for example:
+##### Then log into the mysql server and pipe the `structure.sql` file into the database you want to use, for example:
 
-    ```
-    mysql -u root wheelmap_development < db/structure.sql
-    ```
+```
+$ mysql -u root wheelmap_development < db/structure.sql
+```
 
-8. Run the rake task to seed data:
+##### Run the rake task to seed data:
 
-    ```
-    bundle exec rake db:seed
-    ```
+```
+$ bundle exec rake db:seed
+```
 
-9. And get some POI data into the database:
+##### And get some POI data into the database:
 
-    ```
-    wget http://download.geofabrik.de/europe/germany/berlin-latest.osm.bz2
-    bzcat berlin-latest.osm.bz2 | bundle exec rake osm:import
-    ```
+```
+$ wget http://download.geofabrik.de/europe/germany/berlin-latest.osm.bz2
+$ bzcat berlin-latest.osm.bz2 | bundle exec rake osm:import
+```
 
-10. Install all node javascript dependencies:
+##### Install node and all node javascript dependencies:
 
-    ```
-    npm install
-    ```
+MacOS 
 
-11. Finally startup a local rails server
+```
+$ brew install node
+$ npm install
+```
 
-    ```
-    bundle exec rails server
-    ```
+Ubuntu 
+
+```
+$ sudo apt-get install -y nodejs
+$ sudo apt-get install -y npm
+```
+
+##### Finally startup a local rails server
+
+```
+$ bundle exec rails server
+```
 
 And visit the website in your browser: `http://0.0.0.0:3000`
 
-## Documentation
+## III. Documentation
 
-Please also check our [WIKI](https://github.com/sozialhelden/wheelmap/wiki), if you need more informations to specific topics and can't find them here, e.g. how to generate a sprite or how to test our app.
+Please also check our [wiki](https://github.com/sozialhelden/wheelmap/wiki), if you need more informations to specific topics and can't find them here, e.g. how to generate a sprite or how to test our app.
 
-## Code of Conduct
+
+## IV. Code of Conduct
 
 We refer to the [Berlin Code of Conduct](http://berlincodeofconduct.org/) and friendly ask all contributors and people involved to comply with it.
 
-## License
+## V. License
 
 The Wheelmap Software is released under the [GNU Affero General Public License v3.0](/LICENSE).
