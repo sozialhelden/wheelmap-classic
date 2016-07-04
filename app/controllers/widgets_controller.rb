@@ -3,6 +3,7 @@ class WidgetsController < ApplicationController
 
   before_filter :authenticate_user!, :only => [:update]
   before_filter :authenticate_with_api_key, :only => [:update, :embed]
+  after_action :allow_iframe, only: :embed
 
   def embed
     if params[:key].nil? || @widget
@@ -33,5 +34,11 @@ class WidgetsController < ApplicationController
     api_key = params[:key] || request.headers["X-API-KEY"]
     user    = api_key && User.find_by_api_key(api_key)
     @widget = user ? user.widget : nil
+  end
+
+  private
+
+  def allow_iframe
+    response.headers.except! 'X-Frame-Options'
   end
 end
