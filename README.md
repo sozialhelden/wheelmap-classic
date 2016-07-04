@@ -40,7 +40,7 @@ $ sudo apt-get install -y git-core wget
 $ sudo apt-get install -y curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
 ```
 
-#### Install Ruby:
+#### Install Ruby 2.2.2:
 
 MacOS / Ubuntu
 
@@ -52,8 +52,9 @@ First, install the Ruby Package Manager of your choice:
 Dependent on your choice, please install Ruby with either:
 
 ```
-$ rbenv global 2.2.2
+$ rbenv install 2.2.2
 $ rbenv rehash
+$ rbenv local 2.2.2
 ```
 
 or:
@@ -62,6 +63,9 @@ or:
 $ rvm install 2.2.2
 $ rvm use 2.2.2 
 ```
+
+Note: If you need more infos about how to install rbenv, rvm or Ruby, please take a look at our [wiki page](https://github.com/sozialhelden/wheelmap/wiki/Install-rbenv,-rvm-&-ruby).
+
 
 #### Install Bundler: 
 
