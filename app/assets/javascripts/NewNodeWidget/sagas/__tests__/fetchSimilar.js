@@ -1,6 +1,6 @@
 jest.unmock('../fetchSimilar');
 
-import { load, navigateToNextSection, setSimilar } from '../../actions';
+import { load, setSimilar } from '../../actions';
 import { node as nodeSelector } from '../../selectors';
 import { SIMILAR_NODES } from '../../models/sections';
 import { findSimilar } from '../../../common/helpers/nodes';
@@ -49,43 +49,6 @@ describe('fetchSimilar', () => {
 
     expect(gen.next(nodes))
       .toPut(setSimilar(nodes));
-
-    expect(gen.next())
-      .toPut(load(false));
-
-    expect(gen.next().done)
-      .toBe(false);
-  });
-
-  it('navigate to next section if no similar nodes were found', () => {
-    const gen = fetchSimilar();
-
-    expect(gen.next())
-      .toTake(activeSection(SIMILAR_NODES));
-
-    expect(gen.next())
-      .toSelect(nodeSelector);
-
-    const node = new Node();
-
-    node.name = 'Test node';
-    node.lat = 13.5;
-    node.lon = 14.5;
-
-    expect(gen.next(node))
-      .toPut(load(true));
-
-    expect(gen.next())
-      .toCall(findSimilar, node.name, {
-        lat: node.lat,
-        lon: node.lon,
-        limit: 5
-      });
-
-    const features = [];
-
-    expect(gen.next(features))
-      .toPut(navigateToNextSection());
 
     expect(gen.next())
       .toPut(load(false));

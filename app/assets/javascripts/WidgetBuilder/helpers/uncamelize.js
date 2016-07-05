@@ -1,11 +1,11 @@
-import unCamelCase from 'mout/string/unCamelCase';
-import forEach from 'mout/collection/forEach';
+import snakeCase from 'lodash.snakecase';
+import forEach from 'lodash.foreach';
 
 export default function (data) {
   const uncamelizedData = {};
 
   forEach(data, (value, key) => {
-    uncamelizedData[unCamelCase(key, '_')] = value;
+    uncamelizedData[snakeCase(key)] = value;
   });
 
   return uncamelizedData;

@@ -1,4 +1,4 @@
-import forOwn from 'mout/object/forOwn';
+import forOwn from 'lodash.forown';
 
 const routes = global.Routes;
 

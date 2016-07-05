@@ -1,6 +1,6 @@
 import { take, put, select, call } from 'redux-saga/effects';
 
-import { load, navigateToNextSection, setSimilar } from '../actions';
+import { load, setSimilar } from '../actions';
 import { node as nodeSelector } from '../selectors';
 import { SIMILAR_NODES } from '../models/sections';
 import { findSimilar } from '../../common/helpers/nodes';
@@ -20,12 +20,6 @@ export default function *fetchSimilar() {
 
     try {
       const features = yield call(findSimilar, name, { lat, lon, limit: 5 });
-
-      if (features.length === 0) {
-        yield put(navigateToNextSection());
-        continue;
-      }
-
       const nodes = yield call(Node.fromFeatures, features);
 
       yield put(setSimilar(nodes));

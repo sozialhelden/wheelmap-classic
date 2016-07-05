@@ -1,5 +1,5 @@
-import camelCase from 'mout/string/camelCase';
-import forEach from 'mout/collection/forEach';
+import camelCase from 'lodash.camelcase';
+import forEach from 'lodash.foreach';
 
 export default function (data) {
   const camelizedData = {};

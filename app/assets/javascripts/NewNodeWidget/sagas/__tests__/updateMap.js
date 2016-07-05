@@ -3,7 +3,7 @@ jest.unmock('../updateMap');
 import { SagaCancellationException } from 'redux-saga';
 import { createMockTask } from 'redux-saga/utils';
 
-import { MARKER_MOVED, changeMapCenter, changeNode, CHANGE_NODE_ADDRESS } from '../../actions';
+import * as actions from '../../actions';
 import { geocode } from '../../../common/helpers/photon';
 import delay from '../../../common/helpers/delayPromise';
 import Node from '../../../common/models/Node';
@@ -19,7 +19,7 @@ describe('cancelUpdateMap', () => {
     const debounceUpdateMapTask = createMockTask();
 
     expect(gen.next(debounceUpdateMapTask))
-      .toTake(MARKER_MOVED);
+      .toTake(actions.MARKER_MOVED);
 
     expect(gen.next())
       .toCancel(debounceUpdateMapTask);
@@ -39,6 +39,9 @@ describe('updateMap', () => {
   });
 
   it('delays execution, geocodes address and changes node position', () => {
+    expect(gen.next())
+      .toPut(actions.loadNodeCenter(true));
+
     expect(gen.next())
       .toCall(delay, 300);
 
@@ -62,7 +65,7 @@ describe('updateMap', () => {
     };
 
     expect(gen.next(feature))
-      .toPut(changeMapCenter(center));
+      .toPut(actions.changeMapCenter(center));
 
     expect(gen.next())
       .toCall([ node, node.merge ], center);
@@ -70,13 +73,19 @@ describe('updateMap', () => {
     node = new Node();
 
     expect(gen.next(node))
-      .toPut(changeNode(node));
+      .toPut(actions.changeNode(node));
+
+    expect(gen.next())
+      .toPut(actions.loadNodeCenter(false));
 
     expect(gen.next().done)
       .toBe(true);
   });
 
   it('delays execution, geocodes address and stops if no feature was found', () => {
+    expect(gen.next())
+      .toPut(actions.loadNodeCenter(true));
+
     expect(gen.next())
       .toCall(delay, 300);
 
@@ -96,6 +105,9 @@ describe('updateMap', () => {
 
   it('can be canceled', () => {
     expect(gen.next())
+      .toPut(actions.loadNodeCenter(true));
+
+    expect(gen.next())
       .toCall(delay, 300);
 
     const error = new SagaCancellationException();
@@ -114,26 +126,21 @@ describe('debounceUpdateMap', () => {
 
   it('forks the updateMap saga and cancels it on second iteration', () => {
     expect(gen.next())
-      .toTake(CHANGE_NODE_ADDRESS);
+      .toTake(actions.CHANGE_NODE_ADDRESS);
 
     let node = new Node();
-    const action = {
-      type: CHANGE_NODE_ADDRESS,
-      payload: node
-    };
 
-    expect(gen.next(action))
+    expect(gen.next(actions.changeNodeAddress(node)))
       .toFork(updateMap, node);
 
     let updateMapTask = createMockTask();
 
     expect(gen.next(updateMapTask))
-      .toTake(CHANGE_NODE_ADDRESS);
+      .toTake(actions.CHANGE_NODE_ADDRESS);
 
     node = new Node();
-    action.payload = node;
 
-    expect(gen.next(action))
+    expect(gen.next(actions.changeNodeAddress(node)))
       .toCancel(updateMapTask);
 
     updateMapTask = createMockTask();
@@ -142,12 +149,12 @@ describe('debounceUpdateMap', () => {
       .toFork(updateMap, node);
 
     expect(gen.next())
-      .toTake(CHANGE_NODE_ADDRESS);
+      .toTake(actions.CHANGE_NODE_ADDRESS);
   });
 
   it('can be canceled', () => {
     expect(gen.next())
-      .toTake(CHANGE_NODE_ADDRESS);
+      .toTake(actions.CHANGE_NODE_ADDRESS);
 
     const error = new SagaCancellationException();
 

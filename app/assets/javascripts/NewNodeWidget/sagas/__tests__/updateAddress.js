@@ -3,7 +3,7 @@ jest.unmock('../updateAddress');
 import { SagaCancellationException } from 'redux-saga';
 import { createMockTask } from 'redux-saga/utils';
 
-import { CHANGE_NODE_ADDRESS, MARKER_MOVED, changeNode } from '../../actions';
+import * as actions from '../../actions';
 import { node as nodeSelector } from '../../selectors';
 import { reverseGeocode } from '../../../common/helpers/photon';
 import Node from '../../../common/models/Node';
@@ -19,7 +19,7 @@ describe('cancelUpdateAddressTask', () => {
     const updateAddressTask = createMockTask();
 
     expect(gen.next(updateAddressTask))
-      .toTake(CHANGE_NODE_ADDRESS);
+      .toTake(actions.CHANGE_NODE_ADDRESS);
 
     expect(gen.next())
       .toCancel(updateAddressTask);
@@ -38,15 +38,14 @@ describe('updateAddress', () => {
 
   it('updates node address when marker was moved', () => {
     expect(gen.next())
-      .toTake(MARKER_MOVED);
+      .toTake(actions.MARKER_MOVED);
 
     const location = { lat: 14.5, lon: 13.5 };
-    const action = {
-      type: MARKER_MOVED,
-      payload: location
-    };
 
-    expect(gen.next(action))
+    expect(gen.next(actions.markerMoved(location)))
+      .toPut(actions.loadNodeAddress(true));
+
+    expect(gen.next())
       .toCall(reverseGeocode, location);
 
     const feature = {
@@ -69,15 +68,18 @@ describe('updateAddress', () => {
     node = new Node();
 
     expect(gen.next(node))
-      .toPut(changeNode(node));
+      .toPut(actions.changeNode(node));
+
+    expect(gen.next(node))
+      .toPut(actions.loadNodeAddress(false));
 
     expect(gen.next())
-      .toTake(MARKER_MOVED);
+      .toTake(actions.MARKER_MOVED);
   });
 
   it('can be canceled', () => {
     expect(gen.next())
-      .toTake(MARKER_MOVED);
+      .toTake(actions.MARKER_MOVED);
 
     const error = new SagaCancellationException();
 

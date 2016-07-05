@@ -5,9 +5,6 @@
     "jasmine": true,
     "jquery": true
   },
-  "plugins": [
-    "import"
-  ],
   "globals": {
     "Routes": true,
     "I18n": true
