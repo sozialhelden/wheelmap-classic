@@ -1,30 +1,25 @@
 import { take, put, select, call } from 'redux-saga/effects';
 
-import { load, navigateToNextSection, setSimilar } from '../actions';
-import selectors from '../selectors';
+import { load, setSimilar } from '../actions';
+import { node as nodeSelector } from '../selectors';
 import { SIMILAR_NODES } from '../models/sections';
-import nodesHelpers from '../../common/helpers/nodes';
-import activeSection from './activeSection';
+import { findSimilar } from '../../common/helpers/nodes';
 import Node from '../../common/models/Node';
+
+import activeSection from './activeSection';
 
 // Fetch similar nodes when the user visits the similar node section.
 export default function *fetchSimilar() {
-  while(true) {
+  while (true) {
     yield take(activeSection(SIMILAR_NODES));
 
-    const node = yield select(selectors.node),
-      { name, lat, lon } = node;
+    const node = yield select(nodeSelector);
+    const { name, lat, lon } = node;
 
     yield put(load(true));
 
     try {
-      const features = yield call(nodesHelpers.similar, name, { lat, lon, limit: 5 });
-
-      if (features.length === 0) {
-        yield put(navigateToNextSection());
-        continue;
-      }
-
+      const features = yield call(findSimilar, name, { lat, lon, limit: 5 });
       const nodes = yield call(Node.fromFeatures, features);
 
       yield put(setSimilar(nodes));

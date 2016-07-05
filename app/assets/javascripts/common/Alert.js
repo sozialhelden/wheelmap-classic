@@ -1,5 +1,7 @@
-const React = require('react');
-const classNames = require('classnames');
+import React, { PropTypes } from 'react';
+import classNames from 'classnames';
+
+const { oneOf, any } = PropTypes;
 
 const ICONS = {
   info: 'info-sign',
@@ -7,14 +9,15 @@ const ICONS = {
   error: 'exclamation-sign'
 };
 
-function Alert(props) {
-  let { children, type } = props,
-    className = classNames('alert', `alert-${type}`),
-    iconClassName = classNames(`icon-${ICONS[type]}`, 'icon-large');
+function Alert({ children, type }) {
+  const className = classNames('alert', `alert-${type}`);
+  const iconClassName = classNames(`icon-${ICONS[type]}`, 'icon-large');
 
-  return <div className={className}>
-    <i className={iconClassName}/> {children}
-  </div>;
+  return (
+    <div className={className}>
+      <i className={iconClassName} /> {children}
+    </div>
+  );
 }
 
 Alert.defaultProps = {
@@ -22,7 +25,8 @@ Alert.defaultProps = {
 };
 
 Alert.propTypes = {
-  type: React.PropTypes.oneOf(['info', 'alert', 'error'])
+  type: oneOf([ 'info', 'alert', 'error' ]),
+  children: any
 };
 
-module.exports = Alert;
+export default Alert;

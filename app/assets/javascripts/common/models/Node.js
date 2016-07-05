@@ -1,10 +1,10 @@
-const { Record, List, Seq } = require('immutable');
-const underscore = require('mout/string/underscore');
-const camelCase = require('mout/string/camelCase');
+import { Record, List, Seq } from 'immutable';
+import snakeCase from 'lodash.snakecase';
+import camelCase from 'lodash.camelcase';
 
-const PROHIBITED_ATTRS = ['state', 'country', 'category'];
+const PROHIBITED_ATTRS = [ 'state', 'country', 'category' ];
 
-class Node extends Record({
+const NodeRecord = new Record({
   id: null,
   name: null,
   nodeType: 'bank',
@@ -22,7 +22,9 @@ class Node extends Record({
   phone: null,
   state: null,
   country: null
-}) {
+});
+
+class Node extends NodeRecord {
   constructor(attrs) {
     super(Node.deserializeAttrs(attrs));
   }
@@ -31,8 +33,8 @@ class Node extends Record({
     const { city, postcode, street, housenumber, state, country } = this;
 
     return [
-      [street, housenumber].filter(part => part != null).join(' '),
-      [postcode, city].filter(part => part != null).join(' '),
+      [ street, housenumber ].filter(part => part != null).join(' '),
+      [ postcode, city ].filter(part => part != null).join(' '),
       state !== city ? state : null,
       country
     ].filter(part => part != null && part !== '').join(', ');
@@ -47,45 +49,42 @@ class Node extends Record({
   }
 
   location() {
-    if (!this.hasLocation())
+    if (!this.hasLocation()) {
       return null;
+    }
 
     return { lat: this.lat, lon: this.lon };
   }
 }
 
-Node.create = (attrs) => {
-  return new Node(attrs);
-};
+Node.create = attrs => new Node(attrs);
 
-Node.serializeAttrs = (attrs) => {
-  return Seq(attrs)
+Node.serializeAttrs = attrs => (
+  new Seq(attrs)
     .toKeyedSeq()
     .filter((value, key) => !PROHIBITED_ATTRS.includes(key))
-    .mapKeys(key => key === 'nodeType' ? 'type' : underscore(key))
+    .mapKeys(key => (key === 'nodeType' ? 'type' : snakeCase(key)))
     .filter(value => value)
-    .toJS();
-};
+    .toJS()
+);
 
-Node.deserializeAttrs = (attrs) => {
-  return Seq(attrs)
+Node.deserializeAttrs = attrs => (
+  new Seq(attrs)
     .toKeyedSeq()
-    .mapKeys(key => key === 'type' ? 'nodeType' : camelCase(key))
-    .toJS();
-};
+    .mapKeys(key => (key === 'type' ? 'nodeType' : camelCase(key)))
+    .toJS()
+);
 
-Node.fromFeature = (feature) => {
-  const { properties, geometry } = feature,
-    { osm_id, city, name, postcode, street, housenumber, state, country } = properties,
-    [ lon, lat ] = geometry.coordinates;
+Node.fromFeature = feature => {
+  const { properties, geometry } = feature;
+  const { osm_id, city, name, postcode, street, housenumber, state, country } = properties;
+  const [ lon, lat ] = geometry.coordinates;
 
   return new Node({
     id: osm_id, state, country, city, name, postcode, street, housenumber, lat, lon
   });
 };
 
-Node.fromFeatures = (features) => {
-  return List(features.map(Node.fromFeature));
-};
+Node.fromFeatures = features => new List(features.map(Node.fromFeature));
 
-module.exports = Node;
+export default Node;

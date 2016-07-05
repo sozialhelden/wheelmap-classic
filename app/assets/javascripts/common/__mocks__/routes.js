@@ -1,4 +1,4 @@
-import unCamelCase from 'mout/string/unCamelCase';
+import words from 'lodash.words';
 
 const routes = [
   'newNodeSectionPath',
@@ -8,10 +8,8 @@ const routes = [
 const helpers = {};
 
 routes.forEach(route => {
-  const path = unCamelCase(route, '/'),
-    helper = () => {
-      return path;
-    };
+  const path = words(route).join('/');
+  const helper = () => path;
 
   helpers[route] = jest.genMockFunction()
     .mockImpl(helper);
@@ -19,4 +17,4 @@ routes.forEach(route => {
   helpers[route].toString = helper;
 });
 
-module.exports = helpers;
+export default helpers;

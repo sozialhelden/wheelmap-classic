@@ -1,15 +1,16 @@
-jest.dontMock('../activeSection');
+jest.unmock('../activeSection');
 
 import { NAME_CATEGORY } from '../../models/sections';
-import { activateSection } from '../../actions';
-
-const activeSection = require('../activeSection').default;
+import { ACTIVATE_SECTION } from '../../actions';
+import activeSection from '../activeSection';
 
 describe('activeSection', () => {
   it('returns function for take section', () => {
     const takeActiveSection = activeSection(NAME_CATEGORY);
 
-    expect(takeActiveSection(activateSection(NAME_CATEGORY)))
-      .toBe(true);
+    expect(takeActiveSection({
+      type: ACTIVATE_SECTION,
+      payload: NAME_CATEGORY
+    })).toBe(true);
   });
 });

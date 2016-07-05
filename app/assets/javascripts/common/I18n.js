@@ -1,19 +1,35 @@
-const React = require('react');
-const classNames = require('classnames');
+import React, { Component, PropTypes } from 'react';
+import classNames from 'classnames';
 
-class I18n extends React.Component {
+const { string } = PropTypes;
+
+class I18n extends Component {
+  static propTypes = {
+    scope: string.isRequired,
+    className: string
+  };
+
+  static get locale() {
+    return global.I18n.locale;
+  }
+
   static t(scope) {
-    let translation = global.I18n.t(scope);
+    const translation = global.I18n.t(scope);
 
-    if (translation.indexOf(scope) > -1)
+    if (translation.indexOf(scope) > -1) {
       return null;
+    }
 
     return translation;
   }
 
   render() {
-    var { scope, className, ...props } = this.props,
-      translation = I18n.t(scope), title, missingTranslation = false;
+    const { scope, ...props } = this.props;
+    let { className } = this.props;
+
+    let translation = I18n.t(scope);
+    let missingTranslation = false;
+    let title;
 
     // Translation was not found
     if (translation == null) {
@@ -27,12 +43,12 @@ class I18n extends React.Component {
       return { __html: translation };
     }
 
-    className = classNames(className, { 'translation-missing': missingTranslation })
+    className = classNames(className, { 'translation-missing': missingTranslation });
 
     return (
-      <span className={className} title={title} dangerouslySetInnerHTML={createMarkup()} {...props}></span>
+      <span {...props} className={className} title={title} dangerouslySetInnerHTML={createMarkup()} />
     );
   }
 }
 
-module.exports = I18n;
+export default I18n;

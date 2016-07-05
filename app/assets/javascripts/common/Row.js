@@ -1,13 +1,18 @@
-const React = require('react');
+import React, { PropTypes } from 'react';
 
-function Row(props) {
-  return <div className="row-fluid">{props.children}</div>;
+const { number, any } = PropTypes;
+
+function Row({ children }) {
+  return <div className="row-fluid">{children}</div>;
 }
 
+Row.propTypes = {
+  children: any
+};
 
 function Span(props) {
-  let { children, rows } = props,
-    className = 'span' + rows;
+  const { children, rows } = props;
+  const className = `span${rows}`;
 
   return <div className={className}>{children}</div>;
 }
@@ -17,9 +22,10 @@ Span.defaultProps = {
 };
 
 Span.propTypes = {
-  rows: React.PropTypes.number
+  rows: number,
+  children: any
 };
 
 Row.Span = Span;
 
-module.exports = Row;
+export default Row;

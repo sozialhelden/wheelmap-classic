@@ -1,24 +1,24 @@
 //= require react_ujs
 //= require js-routes
-//= require i18n.js
-//= require_self
-
-I18n.defaultLocale = 'en';
-I18n.mainLocale = 'de';
-I18n.locale = document.getElementsByTagName('html')[0].getAttribute('lang');
-I18n.fallbacks = true;
-
-const { stringify, parse } = require('./common/helpers/query');
-
-global.React = require('react');
-global.ReactDOM = require('react-dom');
+//= require i18n
+//= require i18n-config
 
 // Needed for await, async and generator syntax
-require("babel-polyfill");
+import 'babel-polyfill';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import { stringify, parse } from './common/helpers/query';
+import WidgetBuilder from './WidgetBuilder/App';
+import NewNodeWidget from './NewNodeWidget/App';
+
+global.React = React;
+global.ReactDOM = ReactDOM;
 
 global.Wheelmap = {
-  WidgetBuilder: require('./WidgetBuilder/App'),
-  NewNodeWidget: require('./NewNodeWidget/App'),
+  WidgetBuilder,
+  NewNodeWidget,
 
   // Used for Rails JS routes query parameter serializing
   stringifyQuery: stringify,

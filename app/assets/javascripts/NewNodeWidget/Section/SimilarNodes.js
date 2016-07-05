@@ -1,62 +1,89 @@
-const React = require('react');
-const { connect } = require('react-redux');
+import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { Link } from 'react-router';
+import { createStructuredSelector } from 'reselect';
 
-const Section = require('./Section');
-const actions = require('../actions');
-const { SIMILAR_NODES } = require('../models/sections');
-const selectors = require('../selectors');
-const Node = require('../../common/models/Node');
-const { editNodePath } = require('../../common/routes');
-const I18n = require('../../common/I18n');
+import { navigateToNextSection } from '../actions';
+import { SIMILAR_NODES } from '../models/sections';
+import * as selectors from '../selectors';
+import routes from '../../common/routes';
+import I18n from '../../common/I18n';
+import Alert from '../../common/Alert';
+import { node, immutableListOf } from '../../common/propTypes';
 
-const { func } = React.PropTypes;
+import Section from './Section';
 
-class SimilarNodesSection extends React.Component {
+const { func, bool } = React.PropTypes;
+
+class SimilarNodesSection extends Component {
   static propTypes = {
-    onClickAction: func.isRequired
+    similarNodes: immutableListOf(node),
+    onClickAction: func.isRequired,
+    loading: bool.isRequired
   };
 
-  render() {
-    let { similarNodes, loading, onClickAction } = this.props,
-      items = [];
+  renderSimilarNodes() {
+    const { similarNodes } = this.props;
 
-    similarNodes.forEach(node => {
-      items.push(
-        <li key={node.id}>
-          <strong>{node.name}</strong> {node.address()}
-          <a href={editNodePath(node.id)} className="pull-right"><I18n scope="nodes.new.form.section.similar_nodes.go_edit"/> <i className="icon-chevron-right"/></a>
-        </li>
-      );
-    });
+    const items = similarNodes.map(node => (
+      <li key={node.id}>
+        <strong>{node.name}</strong> {node.address()}
+        <a href={editNodePath(node.id)} className="pull-right">
+          <I18n scope="nodes.new.form.section.similar_nodes.go_edit" /> <i className="icon-chevron-right" />
+        </a>
+      </li>
+    ));
 
     return (
-      <Section section={SIMILAR_NODES}
-               actionExtraScope="nodes.new.form.section.similar_nodes.go_new"
-               onClickAction={onClickAction}
-               loading={loading}>
-        <ul className="nodes-new-content-section--similar-list">
-          {items}
-        </ul>
+      <ul className="nodes-new-content-section--similar-list">
+        {items}
+      </ul>
+    );
+  }
+
+  renderNoSimilarNodes() {
+    return <Alert><I18n scope="nodes.new.form.section.similar_nodes.empty" /></Alert>;
+  }
+
+  render() {
+    const { similarNodes, loading, onClickAction } = this.props;
+    let actionExtraScope;
+    let titleScope;
+
+    if (similarNodes.size > 0) {
+      actionExtraScope = 'nodes.new.form.section.similar_nodes.go_new';
+    } else {
+      titleScope = 'nodes.new.form.section.similar_nodes.empty';
+    }
+
+    return (
+      <Section
+        section={SIMILAR_NODES}
+        actionExtraScope={actionExtraScope}
+        titleScope={titleScope}
+        onClickAction={onClickAction}
+        loading={loading}
+      >
+        {similarNodes.size > 0 ? this.renderSimilarNodes() : this.renderNoSimilarNodes()}
       </Section>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    node: selectors.node(state),
-    similarNodes: selectors.similarNodes(state),
-    loading: selectors.loading(state)
-  };
-}
+const mapStateToProps = createStructuredSelector({
+  node: selectors.node,
+  similarNodes: selectors.similarNodes,
+  loading: selectors.loading
+});
 
 function mapDispatchToProps(dispatch) {
-  return {
-    onClickAction: (section) => dispatch(actions.navigateToNextSection(section))
-  };
+  return bindActionCreators({
+    onClickAction: navigateToNextSection
+  }, dispatch);
 }
 
-module.exports = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(SimilarNodesSection);

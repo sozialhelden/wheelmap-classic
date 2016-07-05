@@ -1,13 +1,12 @@
-const React = require('react');
-const sortBy = require('mout/array/sortBy');
+import React from 'react';
+import sortBy from 'lodash.sortby';
 
-const Form = require('../../common/Form');
-const I18n = require('../../common/I18n');
-const Category = require('../../common/models/Category');
-const NodeType = require('../../common/models/NodeType');
+import Form from '../../common/Form';
+import I18n from '../../common/I18n';
+import { Category, NodeType } from '../../common/models';
+import { immutableMapOf } from '../../common/propTypes';
 
 const { func, instanceOf, string } = React.PropTypes;
-const { immutableMapOf } = require('../../common/types');
 
 class NodeTypeSelect extends React.Component {
   static propTypes = {
@@ -17,7 +16,7 @@ class NodeTypeSelect extends React.Component {
     value: string
   };
 
-  onChange = (event) => {
+  onChange = event => {
     this.props.onChange(event.target.value);
   };
 
@@ -28,14 +27,10 @@ class NodeTypeSelect extends React.Component {
       const options = nodeTypes
         .filter(nodeType => nodeType.category === category.id)
         .toArray()
-        .map(nodeType => {
-          const label = I18n.t(`poi.name.${category.identifier}.${nodeType.identifier}`);
-
-          return {
-            label: label,
-            value: nodeType.identifier
-          }
-        });
+        .map(nodeType => ({
+          label: I18n.t(`poi.name.${category.identifier}.${nodeType.identifier}`),
+          value: nodeType.identifier
+        }));
 
       return {
         label: I18n.t(`poi.category.${category.identifier}`),
@@ -53,4 +48,4 @@ class NodeTypeSelect extends React.Component {
   }
 }
 
-module.exports = NodeTypeSelect;
+export default NodeTypeSelect;

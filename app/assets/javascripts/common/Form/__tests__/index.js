@@ -1,22 +1,20 @@
-jest.dontMock('../index');
+jest.unmock('../index');
 
-const React = require('react');
-const TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 
-const Form = require('../index');
+import Form from '../index';
 
-describe("Common form React component", function() {
-
+describe('Common form React component', () => {
   const renderer = TestUtils.createRenderer();
 
-  it("mounts correctly", function() {
+  it('mounts correctly', function () {
     renderer.render(
-      <Form/>
+      <Form />
     );
 
     const element = renderer.getRenderOutput();
 
     expect(element).not.toBeNull();
   });
-
 });

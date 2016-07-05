@@ -1,20 +1,16 @@
-const map = require('mout/object/map');
+import forOwn from 'lodash.forown';
 
-let routes = global.Routes;
+const routes = global.Routes;
 
 // Wrap route helper if main locale differs from current locale
 if (I18n.mainLocale !== I18n.locale) {
-  routes = map(routes, route => {
-    const routeWrapper = (...args) => {
-      return `/${I18n.locale}${route(...args)}`;
-    };
+  forOwn(routes, (route, path) => {
+    const routeWrapper = (...args) => `/${I18n.locale}${route(...args)}`;
 
-    routeWrapper.toString = () => {
-      return `/${I18n.locale}${route.toString()}`;
-    };
+    routeWrapper.toString = () => `/${I18n.locale}${route.toString()}`;
 
-    return routeWrapper;
+    routes[path] = routeWrapper;
   });
 }
 
-module.exports = routes;
+export default routes;

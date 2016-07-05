@@ -1,22 +1,25 @@
-jest.dontMock('../activateSection');
+jest.unmock('../activateSection');
 
 import { CONTACT, NAME_CATEGORY } from '../../models/sections';
-import { ENTER_CONTENT, enterContent, activateSection as activateSectionAction } from '../../actions';
+import { ENTER_CONTENT, activateSection as activateSectionAction } from '../../actions';
 import { replace } from '../../../common/actions/router';
-
-const activateSection = require('../activateSection').default;
+import activateSection from '../activateSection';
 
 describe('activateSection', () => {
   it('activates section', () => {
     const generator = activateSection();
 
-    expect(generator.next().value)
+    expect(generator.next())
       .toTake(ENTER_CONTENT);
 
-    const nextState = { params: { section: CONTACT.id }, location: { query: {} } },
-      action = enterContent(nextState);
+    const action = {
+      type: ENTER_CONTENT,
+      payload: {
+        section: CONTACT.id
+      }
+    };
 
-    expect(generator.next(action).value)
+    expect(generator.next(action))
       .toPut(activateSectionAction(CONTACT));
 
     expect(generator.next().done)
@@ -26,13 +29,17 @@ describe('activateSection', () => {
   it('redirects to name & category section', () => {
     const generator = activateSection();
 
-    expect(generator.next().value)
+    expect(generator.next())
       .toTake(ENTER_CONTENT);
 
-    const nextState = { params: { section: 'unknown' }, location: { query: {} } },
-      action = enterContent(nextState);
+    const action = {
+      type: ENTER_CONTENT,
+      payload: {
+        section: 'unknown'
+      }
+    };
 
-    expect(generator.next(action).value)
+    expect(generator.next(action))
       .toPut(replace.newNodeSectionPath(NAME_CATEGORY));
 
     expect(generator.next().done)

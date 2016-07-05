@@ -1,21 +1,18 @@
-jest.dontMock('../Preview');
+jest.unmock('../Preview');
 
-const React = require('react');
-const ReactDOM = require('react-dom');
-const TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 
-const WidgetBuilderPreview = require('../Preview');
+import WidgetBuilderPreview from '../Preview';
 
-describe("React WidgetPreview component", function() {
+describe('React WidgetPreview component', function () {
+  it('loads correctly', function () {
+    const widget = { height: 300, width: 400, src: 'http://wheelmap.org/embed' };
 
-  it("loads correctly", function() {
-    let widget = { height: 300, width: 400, src: 'http://wheelmap.org/embed' };
-
-    var component = TestUtils.renderIntoDocument(
-      <WidgetBuilderPreview widget={widget}/>
+    const component = TestUtils.renderIntoDocument(
+      <WidgetBuilderPreview widget={widget} />
     );
 
     expect(component).not.toBeNull();
   });
-
 });

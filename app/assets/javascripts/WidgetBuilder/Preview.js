@@ -1,10 +1,17 @@
-const React = require('react');
-const I18n = require('../common/I18n');
+import React, { Component } from 'react';
 
-class WidgetBuilderPreview extends React.Component {
+import I18n from '../common/I18n';
+
+import { widget } from './propTypes';
+
+class WidgetBuilderPreview extends Component {
+  static propTypes = {
+    widget: widget.isRequired
+  };
+
   shouldComponentUpdate(nextProps) {
-    let widget = this.props.widget,
-      nextWidget = nextProps.widget;
+    const widget = this.props.widget;
+    const nextWidget = nextProps.widget;
 
     return widget.width !== nextWidget.width ||
       widget.height !== nextWidget.height ||
@@ -13,11 +20,12 @@ class WidgetBuilderPreview extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    let widget = this.props.widget,
-      prevWidget = prevProps.widget;
+    const widget = this.props.widget;
+    const prevWidget = prevProps.widget;
 
-    if (widget.src !== prevWidget.src || widget.categories !== prevWidget.categories)
+    if (widget.src !== prevWidget.src || widget.categories !== prevWidget.categories) {
       this.refs.iframe.contentWindow.location.reload();
+    }
   }
 
   render() {
@@ -36,4 +44,4 @@ class WidgetBuilderPreview extends React.Component {
   }
 }
 
-module.exports = WidgetBuilderPreview;
+export default WidgetBuilderPreview;

@@ -1,11 +1,12 @@
-const React = require('react');
-const I18n = require('../I18n');
+import React, { PropTypes } from 'react';
 
-function ControlGroup(props) {
-  let { children, label, labelScope, labelFor } = props;
+import I18n from '../I18n';
 
+const { oneOfType, element, bool, any } = PropTypes;
+
+function ControlGroup({ children, label, labelScope, labelFor }) {
   if (label === true) {
-    label = <I18n scope={labelScope}/>;
+    label = <I18n scope={labelScope} />;
   } else if (label === false) {
     label = null;
   }
@@ -28,18 +29,22 @@ ControlGroup.defaultProps = {
 };
 
 ControlGroup.propTypes = {
-  label: React.PropTypes.oneOfType([
-    React.PropTypes.element,
-    React.PropTypes.bool
-  ]).isRequired,
-  labelFor: function(props, propName) {
-    if (props.label && typeof props[propName] !== 'string')
+  label: oneOfType([ element, bool ]).isRequired,
+  labelFor(props, propName) {
+    if (props.label && typeof props[propName] !== 'string') {
       return new Error('labelFor is null.');
+    }
+
+    return null;
   },
-  labelScope: function(props, propName) {
-    if (props.label === true && props[propName] == null)
+  labelScope(props, propName) {
+    if (props.label === true && props[propName] == null) {
       return new Error('labelScope is null.');
-  }
+    }
+
+    return null;
+  },
+  children: any
 };
 
-module.exports = ControlGroup;
+export default ControlGroup;

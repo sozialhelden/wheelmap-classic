@@ -1,7 +1,11 @@
-const React = require('react');
+import React from 'react';
 
 class I18n extends React.Component {
   static locale = 'en';
+
+  static t() {
+    return 'translation';
+  }
 
   shouldComponentUpdate() {
     return false;
@@ -10,10 +14,6 @@ class I18n extends React.Component {
   render() {
     return null;
   }
-
-  static t() {
-    return 'translation';
-  }
 }
 
-module.exports = I18n;
+export default I18n;

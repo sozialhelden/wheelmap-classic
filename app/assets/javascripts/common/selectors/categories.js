@@ -1,13 +1,8 @@
-const { createSelector } = require('reselect');
+import { createSelector } from 'reselect';
 
-const categoriesSelector = state => state.categories;
+export const categoriesSelector = state => state.categories;
 
-const activeCategoriesSelector = createSelector(
+export const activeCategoriesSelector = createSelector(
   categoriesSelector,
   categories => categories.filter(category => category.active)
 );
-
-module.exports = {
-  categoriesSelector,
-  activeCategoriesSelector
-};

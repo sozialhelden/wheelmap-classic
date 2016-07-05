@@ -1,35 +1,38 @@
-jest.dontMock('../watchMarkerMoved');
+jest.unmock('../watchMarkerMoved');
 
-import { MARKER_MOVED, changeNode, markerMoved } from '../../actions';
-import selectors from '../../selectors';
+import { MARKER_MOVED, changeNode } from '../../actions';
+import { node as nodeSelector } from '../../selectors';
 import Node from '../../../common/models/Node';
-
-const watchMakerMoved = require('../watchMarkerMoved').default;
+import watchMakerMoved from '../watchMarkerMoved';
 
 describe('watchMakerMoved', () => {
   it('changes node when marker was moved', () => {
     const gen = watchMakerMoved();
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toTake(MARKER_MOVED);
 
-    const location = { lat: 14.5, lon: 13.5 },
-      action = markerMoved(location);
+    const location = { lat: 14.5, lon: 13.5 };
+    const action = {
+      type: MARKER_MOVED,
+      payload: location
+    };
 
-    expect(gen.next(action).value)
-      .toSelect(selectors.node);
+    expect(gen.next(action))
+      .toSelect(nodeSelector);
 
     let node = new Node();
 
-    expect(gen.next(node).value)
-      .toCall([node, node.merge], location)
+    expect(gen.next(node))
+      .toCall([ node, node.merge ], location);
 
     node = new Node();
 
-    expect(gen.next(node).value)
+    expect(gen.next(node))
       .toPut(changeNode(node));
 
-    expect(gen.next().value)
+    // Endless loop
+    expect(gen.next())
       .toTake(MARKER_MOVED);
   });
 });

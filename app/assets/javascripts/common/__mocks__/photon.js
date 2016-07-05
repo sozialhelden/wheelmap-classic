@@ -1,9 +1,9 @@
-const React = require('react');
+const { Component } = require('react');
 
-class Photon extends React.Component {
+class Photon extends Component {
   render() {
     return null;
   }
 }
 
-module.exports = Photon;
+export default Photon;

@@ -1,27 +1,29 @@
-const React = require('react');
-const { bindActionCreators } = require('redux');
-const { createStructuredSelector } = require('reselect');
-const { connect } = require('react-redux');
-const Leaflet = require('react-leaflet');
+import React, { Component, PropTypes } from 'react';
+import { bindActionCreators } from 'redux';
+import { createStructuredSelector } from 'reselect';
+import { connect } from 'react-redux';
+import { PropTypes as LeafletPropTypes } from 'react-leaflet';
+import Loader from 'react-loader';
 
-const Section = require('./Section');
-const { ADDRESS } = require('../models/sections');
-const actions = require('../actions');
-const selectors = require('../selectors');
-const Form = require('../../common/Form');
-const Alert = require('../../common/Alert');
-const I18n = require('../../common/I18n');
-const { Map, Marker } = require('../../common/Mapbox');
-const Row = require('../../common/Row');
-const { nodeTypesSelector } = require('../../common/selectors/nodeTypes');
-const NodeType = require('../../common/models/NodeType');
-const Node = require('../../common/models/Node');
+import { ADDRESS } from '../models/sections';
+import * as actions from '../actions';
+import * as selectors from '../selectors';
+import Form from '../../common/Form';
+import Alert from '../../common/Alert';
+import I18n from '../../common/I18n';
+import { Map, Marker } from '../../common/Mapbox';
+import Row from '../../common/Row';
+import { nodeTypesSelector } from '../../common/selectors/nodeTypes';
+import NodeType from '../../common/models/NodeType';
+import Node from '../../common/models/Node';
+import { immutableMapOf, immutableListOf } from '../../common/propTypes';
 
-const { func, instanceOf, bool, listOf, number, string } = React.PropTypes;
-const { latlng } = Leaflet.PropTypes;
-const { immutableMapOf, immutableListOf } = require('../../common/types');
+import Section from './Section';
 
-class AddressSection extends React.Component {
+const { func, instanceOf, bool, number, string } = PropTypes;
+const { latlng } = LeafletPropTypes;
+
+class AddressSection extends Component {
   static propTypes = {
     onClickAction: func.isRequired,
     onNodeChange: func.isRequired,
@@ -33,115 +35,171 @@ class AddressSection extends React.Component {
     nodeTypes: immutableMapOf(instanceOf(NodeType)).isRequired,
     mapCenter: latlng.isRequired,
     mapZoom: number.isRequired,
-    errors: immutableMapOf(immutableListOf(string)).isRequired
+    errors: immutableMapOf(immutableListOf(string)).isRequired,
+    nodeAddressLoading: bool.isRequired,
+    nodeCenterLoading: bool.isRequired
   };
 
-  onChange(attr, { target: { value } }) {
+  onChange = (attr, { target: { value } }) => {
     const { node, onNodeChange } = this.props;
 
     onNodeChange(node.set(attr, value));
-  }
+  };
 
-  onMapMoved({ target: map }) {
+  onMapMoved = ({ target: map }) => {
     const { lat, lng: lon } = map.getCenter();
 
     this.props.onMapMoved({ lat, lon });
-  }
+  };
 
-  onMapZoomed({ target: map }) {
+  onMapZoomed = ({ target: map }) => {
     this.props.onMapZoomed(map.getZoom());
-  }
+  };
 
-  onMarkerMoved({ target: marker }) {
+  onMarkerMoved = ({ target: marker }) => {
     const { lat, lng: lon } = marker.getLatLng();
 
     this.props.onMarkerMoved({ lat, lon });
-  }
+  };
 
-  onMapClick({ latlng }) {
-    const { lat, lng: lon } = latlng;
+  onMapClick = ({ latlng: latLng }) => {
+    const { lat, lng: lon } = latLng;
 
     this.props.onMarkerMoved({ lat, lon });
-  }
+  };
 
   render() {
-    const { node, loading, nodeTypes, errors, mapCenter, mapZoom, onClickAction } = this.props;
+    const {
+      node,
+      loading,
+      nodeTypes,
+      errors,
+      mapCenter,
+      mapZoom,
+      onClickAction,
+      nodeAddressLoading,
+      nodeCenterLoading
+    } = this.props;
 
     let marker = null;
 
     if (node.hasLocation()) {
-      const nodeType = nodeTypes.find(nodeType => nodeType.identifier === node.nodeType),
-        icon = nodeType != null ? nodeType.icon : null;
+      const nodeType = nodeTypes.find(nodeType => nodeType.identifier === node.nodeType);
+      const icon = nodeType != null ? nodeType.icon : null;
 
-      marker = <Marker position={[node.lat, node.lon]}
-                       draggable={true}
-                       onDragEnd={this.onMarkerMoved.bind(this)}
-                       wheelchair={node.wheelchair}
-                       icon={icon}/>
+      marker = (
+        <Marker
+          position={[ node.lat, node.lon ]}
+          draggable
+          onDragEnd={this.onMarkerMoved}
+          wheelchair={node.wheelchair}
+          icon={icon}
+        />
+      );
     }
 
-    const errorAlertElements = [],
-      latErrors = errors.get('lat');
+    let errorAlertElements = null;
+    const latErrors = errors.get('lat');
 
     if (latErrors != null) {
-      latErrors.forEach((error, index) => {
-        errorAlertElements.push(<Alert key={index} type="error">{error}</Alert>);
-      });
+      errorAlertElements = latErrors.map((error, index) => (
+        <Alert key={index} type="error">{error}</Alert>
+      ));
     }
 
     return (
       <Section section={ADDRESS} onClickAction={onClickAction} loading={loading}>
         <Row>
           <Row.Span rows={6}>
-            <Form.ControlGroup label={false}>
-              <Form.Controls>
-                <Row>
-                  <Row.Span rows={3}>
-                    <Form.Input name="postcode"
-                                placeholderScope="activerecord.attributes.poi.address_postcode"
-                                onChange={this.onChange.bind(this, 'postcode')}
-                                value={node.postcode}/>
-                  </Row.Span>
-                  <Row.Span rows={9}>
-                    <Form.Input name="city"
-                                placeholderScope="activerecord.attributes.poi.address_city"
-                                onChange={this.onChange.bind(this, 'city')}
-                                value={node.city}/>
-                  </Row.Span>
-                </Row>
-              </Form.Controls>
-              <Form.Controls>
-                <Row>
-                  <Row.Span rows={10}>
-                    <Form.Input name="street"
-                                placeholderScope="activerecord.attributes.poi.address_street"
-                                onChange={this.onChange.bind(this, 'street')}
-                                value={node.street}/>
-                  </Row.Span>
-                  <Row.Span rows={2}>
-                    <Form.Input name="housenumber"
-                                placeholderScope="activerecord.attributes.poi.address_housenumber"
-                                onChange={this.onChange.bind(this, 'housenumber')}
-                                value={node.housenumber}/>
-                  </Row.Span>
-                </Row>
-              </Form.Controls>
-            </Form.ControlGroup>
-            <Alert><I18n scope="nodes.new.form.section.address.help"/></Alert>
-            {errorAlertElements}
+            <Loader loaded={!nodeAddressLoading}>
+              <Form.ControlGroup label={false}>
+                <Form.Controls>
+                  <Row>
+                    <Row.Span rows={3}>
+                      <label><I18n scope="activerecord.attributes.poi.address_postcode" /></label>
+                      <FormInput
+                        name="postcode"
+                        onChange={this.onChange}
+                        value={node.postcode}
+                      />
+                    </Row.Span>
+                    <Row.Span rows={9}>
+                      <label><I18n scope="activerecord.attributes.poi.address_city" /></label>
+                      <FormInput
+                        name="city"
+                        onChange={this.onChange}
+                        value={node.city}
+                      />
+                    </Row.Span>
+                  </Row>
+                </Form.Controls>
+                <Form.Controls>
+                  <Row>
+                    <Row.Span rows={12}>
+                      <label><I18n scope="activerecord.attributes.poi.address_street" /></label>
+                      <Row>
+                        <Row.Span rows={10}>
+                          <FormInput
+                            name="street"
+                            onChange={this.onChange}
+                            value={node.street}
+                          />
+                        </Row.Span>
+                        <Row.Span rows={2}>
+                          <FormInput
+                            name="housenumber"
+                            placeholderScope="activerecord.attributes.poi.address_housenumber"
+                            onChange={this.onChange}
+                            value={node.housenumber}
+                          />
+                        </Row.Span>
+                      </Row>
+                    </Row.Span>
+                  </Row>
+                </Form.Controls>
+              </Form.ControlGroup>
+              <Alert><I18n scope="nodes.new.form.section.address.help" /></Alert>
+              {errorAlertElements}
+            </Loader>
           </Row.Span>
           <Row.Span rows={6}>
-            <Map center={mapCenter}
-                       zoom={mapZoom}
-                       className="nodes-new-content-section--address-map"
-                       onMoveEnd={this.onMapMoved.bind(this)}
-                       onZoomEnd={this.onMapZoomed.bind(this)}
-                       onClick={this.onMapClick.bind(this)}>
-              {marker}
-            </Map>
+            <Loader loaded={!nodeCenterLoading}>
+              <Map
+                center={mapCenter}
+                zoom={mapZoom}
+                className="nodes-new-content-section--address-map"
+                onMoveEnd={this.onMapMoved}
+                onZoomEnd={this.onMapZoomed}
+                onClick={this.onMapClick}
+              >
+                {marker}
+              </Map>
+            </Loader>
           </Row.Span>
         </Row>
       </Section>
+    );
+  }
+}
+
+class FormInput extends React.Component {
+  static propTypes = {
+    name: string.isRequired,
+    onChange: func.isRequired
+  };
+
+  onChange = event => {
+    const { name, onChange } = this.props;
+
+    onChange(name, event);
+  };
+
+  render() {
+    return (
+      <Form.Input
+        {...this.props}
+        onChange={this.onChange}
+      />
     );
   }
 }
@@ -152,7 +210,9 @@ const mapStateToProps = createStructuredSelector({
   mapCenter: selectors.mapCenter,
   mapZoom: selectors.mapZoom,
   errors: selectors.errors,
-  loading: selectors.loading
+  loading: selectors.loading,
+  nodeAddressLoading: selectors.nodeAddressLoading,
+  nodeCenterLoading: selectors.nodeCenterLoading
 });
 
 function mapDispatchToProps(dispatch) {
@@ -165,7 +225,7 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-module.exports = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(AddressSection);

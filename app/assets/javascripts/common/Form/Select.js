@@ -1,20 +1,6 @@
-const React = require('react');
+import React, { PropTypes } from 'react';
 
-const { array, arrayOf, shape, string, func, oneOfType } = React.PropTypes;
-
-function Select({ options, empty, groupBy, ...props }) {
-  let items = createItems(options);
-
-  if (empty != null)
-    items.unshift(<option value="">{empty}</option>);
-
-  return (
-    <div className="custom-select">
-      <select {...props}>{items}</select>
-      <i className="icon-caret-down pull-right"/>
-    </div>
-  );
-}
+const { array, arrayOf, shape, string, oneOfType } = PropTypes;
 
 function createItems(options) {
   return options.map((option, index) => {
@@ -33,7 +19,24 @@ function createItems(options) {
         </optgroup>
       );
     }
+
+    return null;
   });
+}
+
+function Select({ options, empty, ...props }) {
+  let items = createItems(options);
+
+  if (empty != null) {
+    items.unshift(<option value="">{empty}</option>);
+  }
+
+  return (
+    <div className="custom-select">
+      <select {...props}>{items}</select>
+      <i className="icon-caret-down pull-right" />
+    </div>
+  );
 }
 
 const optionsType = arrayOf(shape({
@@ -57,4 +60,4 @@ Select.defaultProps = {
   options: []
 };
 
-module.exports = Select;
+export default Select;
