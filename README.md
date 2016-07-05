@@ -17,7 +17,8 @@ This Repository is the source code of the website [Wheelmap.org](http://wheelmap
 - MySQL
 - ImageMagick
 - PhantomJS
-- node / npm
+- Node >= 4.1
+- npm
 
 
 Before you start, please make sure you have [Homebrew](http://brew.sh/) for Mac or [aptitude](http://packages.ubuntu.com/search?keywords=aptitude) for Ubuntu installed.
@@ -30,14 +31,11 @@ MacOS
 $ brew install git wget
 ```
 
-Ubuntu 
+Ubuntu
 
 ```
 $ sudo apt-get update
-$ sudo apt-get install -y git-core wget 
-
-# more libraries
-$ sudo apt-get install -y curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
+$ sudo apt-get install -y git wget curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
 ```
 
 #### Install Ruby 2.2.2:
@@ -61,13 +59,13 @@ or:
 
 ```
 $ rvm install 2.2.2
-$ rvm use 2.2.2 
+$ rvm use 2.2.2
 ```
 
 Note: If you need more infos about how to install rbenv, rvm or Ruby, please take a look at our [wiki page](https://github.com/sozialhelden/wheelmap/wiki/Install-rbenv,-rvm-&-ruby).
 
 
-#### Install Bundler: 
+#### Install Bundler:
 
 MacOS / Ubuntu
 
@@ -81,16 +79,13 @@ MacOS
 
 ```
 $ brew install mysql
-$ mkdir -p ~/Library/LaunchAgents
-$ ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
-$ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 ```
 
 Ubuntu
 
 ```
 $ sudo apt-get update
-$ sudo apt-get install -y libmysqlclient-dev mysql-server 
+$ sudo apt-get install -y libmysqlclient-dev mysql-server
 ```
 
 #### Install ImageMagick:
@@ -101,7 +96,7 @@ MacOS
 $ brew install imagemagick
 ```
 
-Ubuntu 
+Ubuntu
 ```
 $ sudo apt-get install -y imagemagick
 ```
@@ -124,7 +119,6 @@ Ubuntu
 ```
 $ sudo npm install -g phantomjs-prebuilt
 ```
-
 
 #### Clone the app from Github:
 
@@ -187,20 +181,22 @@ $ wget http://download.geofabrik.de/europe/germany/berlin-latest.osm.bz2
 $ bzcat berlin-latest.osm.bz2 | bundle exec rake osm:import
 ```
 
-##### Install node and all node javascript dependencies:
+##### Install all `Javascript` dependencies:
 
-MacOS 
+MacOS
 
 ```
 $ brew install node
+$ npm install -g npm
 $ npm install
 ```
 
-Ubuntu 
+Ubuntu
 
 ```
 $ sudo apt-get install -y nodejs
 $ sudo apt-get install -y npm
+$ sudo npm install -g npm
 ```
 
 ##### Finally startup a local rails server
