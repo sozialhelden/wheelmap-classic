@@ -181,7 +181,7 @@ $ wget http://download.geofabrik.de/europe/germany/berlin-latest.osm.bz2
 $ bzcat berlin-latest.osm.bz2 | bundle exec rake osm:import
 ```
 
-##### Install all `Javascript` dependencies:
+##### Install all JavaScript dependencies:
 
 MacOS
 
