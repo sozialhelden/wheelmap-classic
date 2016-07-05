@@ -1,6 +1,6 @@
 Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
   needs: ['toolbar', 'map']
-  queryParams: ['status', 'categories', 'q', 'bbox', 'lat', 'lon', 'zoom', 'toilet']
+  queryParams: ['nodeId:node_id', 'status', 'categories', 'q', 'bbox', 'lat', 'lon', 'zoom', 'toilet']
 
   widget: Ember.ENV.WIDGET
   latBinding: 'controllers.map.lat'
@@ -8,6 +8,7 @@ Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
   zoomBinding: 'controllers.map.zoom'
   qBinding: 'controllers.toolbar.searchString'
   bbox: null
+  nodeIdBinding: 'controllers.map.nodeId'
 
   status: Ember.computed.defaultTo('lastStatusFilters')
   toilet: Ember.computed.defaultTo('lastToiletFilters')
@@ -184,6 +185,7 @@ Wheelmap.MapController = Ember.Controller.extend
   zoom: 14
   latBinding: 'center.lat'
   lonBinding: 'center.lng'
+  nodeId: null
 
   init: ()->
     @_super()
