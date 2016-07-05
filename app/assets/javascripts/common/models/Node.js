@@ -1,6 +1,6 @@
 import { Record, List, Seq } from 'immutable';
-import underscore from 'mout/string/underscore';
-import camelCase from 'mout/string/camelCase';
+import snakeCase from 'lodash.snakecase';
+import camelCase from 'lodash.camelcase';
 
 const PROHIBITED_ATTRS = [ 'state', 'country', 'category' ];
 
@@ -63,7 +63,7 @@ Node.serializeAttrs = attrs => (
   new Seq(attrs)
     .toKeyedSeq()
     .filter((value, key) => !PROHIBITED_ATTRS.includes(key))
-    .mapKeys(key => (key === 'nodeType' ? 'type' : underscore(key)))
+    .mapKeys(key => (key === 'nodeType' ? 'type' : snakeCase(key)))
     .filter(value => value)
     .toJS()
 );

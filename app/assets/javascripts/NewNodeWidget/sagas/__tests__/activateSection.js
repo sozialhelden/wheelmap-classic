@@ -1,8 +1,8 @@
 jest.unmock('../activateSection');
 
+import routes from '../../../common/routes';
 import { CONTACT, NAME_CATEGORY } from '../../models/sections';
 import { ENTER_CONTENT, activateSection as activateSectionAction } from '../../actions';
-import { replace } from '../../../common/actions/router';
 import activateSection from '../activateSection';
 
 describe('activateSection', () => {
@@ -32,15 +32,18 @@ describe('activateSection', () => {
     expect(generator.next())
       .toTake(ENTER_CONTENT);
 
+    const replace = jest.fn();
+
     const action = {
       type: ENTER_CONTENT,
       payload: {
-        section: 'unknown'
+        section: 'unknown',
+        replace
       }
     };
 
     expect(generator.next(action))
-      .toPut(replace.newNodeSectionPath(NAME_CATEGORY));
+      .toCall(replace, routes.newNodeSectionPath({ section: NAME_CATEGORY }));
 
     expect(generator.next().done)
       .toBe(false);

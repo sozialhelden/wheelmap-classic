@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import { PropTypes as LeafletPropTypes } from 'react-leaflet';
+import Loader from 'react-loader';
 
 import { ADDRESS } from '../models/sections';
 import * as actions from '../actions';
@@ -34,7 +35,9 @@ class AddressSection extends Component {
     nodeTypes: immutableMapOf(instanceOf(NodeType)).isRequired,
     mapCenter: latlng.isRequired,
     mapZoom: number.isRequired,
-    errors: immutableMapOf(immutableListOf(string)).isRequired
+    errors: immutableMapOf(immutableListOf(string)).isRequired,
+    nodeAddressLoading: bool.isRequired,
+    nodeCenterLoading: bool.isRequired
   };
 
   onChange = (attr, { target: { value } }) => {
@@ -66,7 +69,17 @@ class AddressSection extends Component {
   };
 
   render() {
-    const { node, loading, nodeTypes, errors, mapCenter, mapZoom, onClickAction } = this.props;
+    const {
+      node,
+      loading,
+      nodeTypes,
+      errors,
+      mapCenter,
+      mapZoom,
+      onClickAction,
+      nodeAddressLoading,
+      nodeCenterLoading
+    } = this.props;
 
     let marker = null;
 
@@ -98,62 +111,70 @@ class AddressSection extends Component {
       <Section section={ADDRESS} onClickAction={onClickAction} loading={loading}>
         <Row>
           <Row.Span rows={6}>
-            <Form.ControlGroup label={false}>
-              <Form.Controls>
-                <Row>
-                  <Row.Span rows={3}>
-                    <FormInput
-                      name="postcode"
-                      placeholderScope="activerecord.attributes.poi.address_postcode"
-                      onChange={this.onChange}
-                      value={node.postcode}
-                    />
-                  </Row.Span>
-                  <Row.Span rows={9}>
-                    <FormInput
-                      name="city"
-                      placeholderScope="activerecord.attributes.poi.address_city"
-                      onChange={this.onChange}
-                      value={node.city}
-                    />
-                  </Row.Span>
-                </Row>
-              </Form.Controls>
-              <Form.Controls>
-                <Row>
-                  <Row.Span rows={10}>
-                    <FormInput
-                      name="street"
-                      placeholderScope="activerecord.attributes.poi.address_street"
-                      onChange={this.onChange}
-                      value={node.street}
-                    />
-                  </Row.Span>
-                  <Row.Span rows={2}>
-                    <FormInput
-                      name="housenumber"
-                      placeholderScope="activerecord.attributes.poi.address_housenumber"
-                      onChange={this.onChange}
-                      value={node.housenumber}
-                    />
-                  </Row.Span>
-                </Row>
-              </Form.Controls>
-            </Form.ControlGroup>
-            <Alert><I18n scope="nodes.new.form.section.address.help" /></Alert>
-            {errorAlertElements}
+            <Loader loaded={!nodeAddressLoading}>
+              <Form.ControlGroup label={false}>
+                <Form.Controls>
+                  <Row>
+                    <Row.Span rows={3}>
+                      <label><I18n scope="activerecord.attributes.poi.address_postcode" /></label>
+                      <FormInput
+                        name="postcode"
+                        onChange={this.onChange}
+                        value={node.postcode}
+                      />
+                    </Row.Span>
+                    <Row.Span rows={9}>
+                      <label><I18n scope="activerecord.attributes.poi.address_city" /></label>
+                      <FormInput
+                        name="city"
+                        onChange={this.onChange}
+                        value={node.city}
+                      />
+                    </Row.Span>
+                  </Row>
+                </Form.Controls>
+                <Form.Controls>
+                  <Row>
+                    <Row.Span rows={12}>
+                      <label><I18n scope="activerecord.attributes.poi.address_street" /></label>
+                      <Row>
+                        <Row.Span rows={10}>
+                          <FormInput
+                            name="street"
+                            onChange={this.onChange}
+                            value={node.street}
+                          />
+                        </Row.Span>
+                        <Row.Span rows={2}>
+                          <FormInput
+                            name="housenumber"
+                            placeholderScope="activerecord.attributes.poi.address_housenumber"
+                            onChange={this.onChange}
+                            value={node.housenumber}
+                          />
+                        </Row.Span>
+                      </Row>
+                    </Row.Span>
+                  </Row>
+                </Form.Controls>
+              </Form.ControlGroup>
+              <Alert><I18n scope="nodes.new.form.section.address.help" /></Alert>
+              {errorAlertElements}
+            </Loader>
           </Row.Span>
           <Row.Span rows={6}>
-            <Map
-              center={mapCenter}
-              zoom={mapZoom}
-              className="nodes-new-content-section--address-map"
-              onMoveEnd={this.onMapMoved}
-              onZoomEnd={this.onMapZoomed}
-              onClick={this.onMapClick}
-            >
-              {marker}
-            </Map>
+            <Loader loaded={!nodeCenterLoading}>
+              <Map
+                center={mapCenter}
+                zoom={mapZoom}
+                className="nodes-new-content-section--address-map"
+                onMoveEnd={this.onMapMoved}
+                onZoomEnd={this.onMapZoomed}
+                onClick={this.onMapClick}
+              >
+                {marker}
+              </Map>
+            </Loader>
           </Row.Span>
         </Row>
       </Section>
@@ -189,7 +210,9 @@ const mapStateToProps = createStructuredSelector({
   mapCenter: selectors.mapCenter,
   mapZoom: selectors.mapZoom,
   errors: selectors.errors,
-  loading: selectors.loading
+  loading: selectors.loading,
+  nodeAddressLoading: selectors.nodeAddressLoading,
+  nodeCenterLoading: selectors.nodeCenterLoading
 });
 
 function mapDispatchToProps(dispatch) {

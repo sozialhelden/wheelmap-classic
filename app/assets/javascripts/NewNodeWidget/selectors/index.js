@@ -20,3 +20,7 @@ export const similarNodes = state => state.widget.get('similarNodes');
 export const errors = state => state.widget.get('errors');
 
 export const loading = state => state.widget.get('loading');
+
+export const nodeAddressLoading = state => state.widget.get('nodeAddressLoading');
+
+export const nodeCenterLoading = state => state.widget.get('nodeCenterLoading');

@@ -1,5 +1,5 @@
 import React from 'react';
-import sortBy from 'mout/array/sortBy';
+import sortBy from 'lodash.sortby';
 
 import Form from '../../common/Form';
 import I18n from '../../common/I18n';

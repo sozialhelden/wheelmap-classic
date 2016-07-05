@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import promise from 'redux-promise';
-import saga from 'redux-saga';
+import thunkMiddleware from 'redux-thunk';
+import promiseMiddleware from 'redux-promise';
+import sagaMiddleware from 'redux-saga';
 import { Provider } from 'react-redux';
 import { Router, Route, Redirect } from 'react-router';
 
-import multi from '../common/middleware/multi';
-import transition from '../common/middleware/transition';
+import multiMiddleware from '../common/middleware/multi';
+import transitionMiddleware from '../common/middleware/transition';
 import createHistory from '../common/helpers/createHistory';
 import routes from '../common/routes';
 
@@ -23,11 +23,11 @@ const { newNodePath, newNodeSectionPath } = routes;
 const browserHistory = createHistory();
 
 const createExtendedStore = applyMiddleware(
-  multi,
-  thunk,
-  promise,
-  transition(browserHistory),
-  saga.apply(undefined, sagas)
+  multiMiddleware,
+  thunkMiddleware,
+  promiseMiddleware,
+  transitionMiddleware(browserHistory),
+  sagaMiddleware.apply(undefined, sagas)
 )(createStore);
 
 class App extends Component {
@@ -37,8 +37,8 @@ class App extends Component {
     this.store = createExtendedStore(reducer);
   }
 
-  onEnterContent = nextState => {
-    this.store.dispatch(enterContent(nextState));
+  onEnterContent = (nextState, replace) => {
+    this.store.dispatch(enterContent(nextState, replace));
   };
 
   render() {

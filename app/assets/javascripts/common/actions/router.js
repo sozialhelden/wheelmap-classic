@@ -1,5 +1,5 @@
 import { createAction } from 'redux-actions';
-import each from 'mout/collection/forEach';
+import each from 'lodash.foreach';
 
 import routes from '../routes';
 

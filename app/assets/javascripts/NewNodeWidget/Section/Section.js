@@ -9,6 +9,7 @@ const { string, func, instanceOf, bool, any } = React.PropTypes;
 class Section extends React.Component {
   static propTypes = {
     actionLabelScope: string,
+    titleScope: string,
     section: instanceOf(SectionModel).isRequired,
     onClickAction: func.isRequired,
     loading: bool.isRequired,
@@ -29,7 +30,7 @@ class Section extends React.Component {
 
   render() {
     const { section, loading, children, actionLabelScope, actionExtraScope } = this.props;
-
+    let { titleScope } = this.props;
     let actionExtra;
 
     const sectionForms = React.Children.map(children, child => (
@@ -47,10 +48,14 @@ class Section extends React.Component {
       );
     }
 
+    if (titleScope == null) {
+      titleScope = `nodes.new.form.section.${section}.title`;
+    }
+
     return (
       <section className="nodes-new-content-section">
         <Loader loaded={!loading}>
-          <h2><I18n scope={`nodes.new.form.section.${section}.title`} /></h2>
+          <h2><I18n scope={titleScope} /></h2>
           {sectionForms}
           <div className="form-actions">
             <button className="btn btn-primary pull-right submit" onClick={this.onClickAction}>
