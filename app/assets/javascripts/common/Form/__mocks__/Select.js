@@ -1,9 +1,9 @@
-const React = require('react');
+const { Component } = require('react');
 
-class Select extends React.Component {
-  render () {
+class Select extends Component {
+  render() {
     return null;
   }
 }
 
-module.exports = Select;
+export default Select;

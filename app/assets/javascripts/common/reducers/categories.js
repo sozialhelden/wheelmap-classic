@@ -1,19 +1,19 @@
-const { Map, Seq } = require('immutable');
-const { handleActions } = require('redux-actions');
+import { Map, Seq } from 'immutable';
+import { handleActions } from 'redux-actions';
 
-const { FETCH_CATEGORIES, TOGGLE_CATEGORY } = require('../actions/categories');
-const Category = require('../models/Category');
+import { FETCH_CATEGORIES, TOGGLE_CATEGORY } from '../actions/categories';
+import Category from '../models/Category';
 
-module.exports = handleActions({
-  [FETCH_CATEGORIES]: (state, { payload: { categories } }) => {
-    return Seq(categories)
+export default handleActions({
+  [FETCH_CATEGORIES]: (state, { payload: { categories } }) => (
+    new Seq(categories)
       .map(category => new Category(category))
       .toKeyedSeq()
       .mapKeys((key, category) => category.id)
-      .toMap();
-  },
+      .toMap()
+  ),
 
-  [TOGGLE_CATEGORY]: (state, { payload: category }) => {
-    return state.setIn([category.id, 'active'], !category.active);
-  }
-}, Map());
+  [TOGGLE_CATEGORY]: (state, { payload: category }) => (
+    state.setIn([ category.id, 'active' ], !category.active)
+  )
+}, new Map());

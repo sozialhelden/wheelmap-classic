@@ -1,55 +1,26 @@
-const { createSelector } = require('reselect');
+import { createSelector } from 'reselect';
 
-const widget = state => state.widget;
+export const widget = state => state.widget;
 
-const activeSection = createSelector(
+export const activeSection = state => state.widget.get('activeSection');
+
+export const sections = state => state.widget.get('sections');
+
+export const node = state => state.widget.get('node');
+
+export const mapCenter = createSelector(
   widget,
-  widget => widget.get('activeSection')
+  widget => widget.get('mapCenter').toJS()
 );
 
-const sections = createSelector(
-  widget,
-  widget => widget.get('sections')
-);
+export const mapZoom = state => state.widget.get('mapZoom');
 
-const node = createSelector(
-  widget,
-  widget => widget.get('node')
-);
+export const similarNodes = state => state.widget.get('similarNodes');
 
-const mapCenter = createSelector(
-  widget,
-  widget => widget.get('mapCenter')
-);
+export const errors = state => state.widget.get('errors');
 
-const mapZoom = createSelector(
-  widget,
-  widget => widget.get('mapZoom')
-);
+export const loading = state => state.widget.get('loading');
 
-const similarNodes = createSelector(
-  widget,
-  widget => widget.get('similarNodes')
-);
+export const nodeAddressLoading = state => state.widget.get('nodeAddressLoading');
 
-const errors = createSelector(
-  widget,
-  widget => widget.get('errors')
-);
-
-const loading = createSelector(
-  widget,
-  widget => widget.get('loading')
-);
-
-module.exports = {
-  widget,
-  activeSection,
-  sections,
-  node,
-  mapCenter,
-  mapZoom,
-  similarNodes,
-  errors,
-  loading
-};
+export const nodeCenterLoading = state => state.widget.get('nodeCenterLoading');

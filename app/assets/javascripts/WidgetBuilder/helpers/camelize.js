@@ -1,12 +1,12 @@
-const camelCase = require('mout/string/camelCase');
-const forEach = require('mout/collection/forEach');
+import camelCase from 'lodash.camelcase';
+import forEach from 'lodash.foreach';
 
-module.exports = function(data) {
-  let camelizedData = {};
+export default function (data) {
+  const camelizedData = {};
 
-  forEach(data, function(value, key) {
+  forEach(data, (value, key) => {
     camelizedData[camelCase(key)] = value;
   });
 
   return camelizedData;
-};
+}

@@ -1,18 +1,14 @@
-jest.dontMock('../fetchCategories');
+jest.unmock('../fetchCategories');
 
-import categoriesActions from '../../../common/actions/categories';
-
-const fetchCategories = require('../fetchCategories').default;
+import { fetch } from '../../../common/actions/categories';
+import fetchCategories from '../fetchCategories';
 
 describe('fetchCategories', () => {
   it('fetches categories on initialization', () => {
     const generator = fetchCategories();
 
-    categoriesActions.fetch
-      .mockReturnValue('fetch categories');
-
-    expect(generator.next().value)
-      .toPut(categoriesActions.fetch());
+    expect(generator.next())
+      .toPut(fetch());
 
     expect(generator.next().done)
       .toBe(true);

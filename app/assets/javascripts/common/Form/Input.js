@@ -1,33 +1,34 @@
-const React = require('react');
-const classNames = require('classnames');
-const { List } = require('immutable');
+import React from 'react';
+import classNames from 'classnames';
+import { List } from 'immutable';
 
-const I18n = require('../I18n');
+import I18n from '../I18n';
+import { immutableListOf } from '../propTypes';
 
-const { string, bool, arrayOf } = React.PropTypes;
-const { immutableListOf } = require('../types');
+const { string, bool } = React.PropTypes;
 
-function Input(props) {
-  let { className, type, required, placeholderScope, hintScope, errors, ...otherProps } = props;
+function Input({ className, type, required, placeholderScope, hintScope, errors, ...props }) {
+  let placeholder;
 
-  className = classNames(className, 'input', 'input--' + type, { required, has_error: errors.size > 0 });
+  className = classNames(className, 'input', `input--${type}`, { required, has_error: errors.size > 0 });
 
-  if (placeholderScope != null)
-    otherProps.placeholder = I18n.t(placeholderScope);
+  if (placeholderScope != null) {
+    placeholder = I18n.t(placeholderScope);
+  }
 
-  let hint = null,
-    errorElements = [];
+  let hint = null;
 
-  if (hintScope != null)
-    hint = <I18n scope={hintScope} className="hint"/>;
+  if (hintScope != null) {
+    hint = <I18n scope={hintScope} className="hint" />;
+  }
 
-  errors.forEach((error, index) => {
-    errorElements.push(<div key={index} className="error">{error}</div>);
-  });
+  const errorElements = errors.map((error, index) => (
+    <div key={index} className="error">{error}</div>
+  ));
 
   return (
     <div className={className}>
-      <input {...otherProps} type={type}/>
+      <input {...props} placeholder={placeholder} type={type} />
       {hint}
       {errorElements}
     </div>
@@ -36,11 +37,12 @@ function Input(props) {
 
 Input.defaultProps = {
   required: false,
-  errors: List(),
+  errors: new List(),
   type: 'text'
 };
 
 Input.propTypes = {
+  className: string,
   type: string.isRequired,
   required: bool.isRequired,
   placeholderScope: string,
@@ -48,4 +50,4 @@ Input.propTypes = {
   errors: immutableListOf(string)
 };
 
-module.exports = Input;
+export default Input;

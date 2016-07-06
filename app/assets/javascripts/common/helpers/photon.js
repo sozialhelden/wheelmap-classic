@@ -1,33 +1,26 @@
-const { fetchJSON } = require('./api');
-const setParams = require('./setParams');
+import { insert } from '../helpers/query';
+
+import { fetchJSON } from './api';
 
 const PHOTON = '//photon.komoot.de';
-const PHOTON_API = PHOTON + '/api';
-const PHOTON_REVERSE = PHOTON + '/reverse';
+const PHOTON_API = `${PHOTON}/api`;
+const PHOTON_REVERSE = `${PHOTON}/reverse`;
 
-function search(query, params = {}) {
-  const url = setParams(PHOTON_API, { ...params, q: query });
+export function search(query, params = {}) {
+  const url = insert(PHOTON_API, { ...params, q: query });
 
   return fetchJSON(url)
     .then(response => response.features);
 }
 
-function geocode(query) {
+export function geocode(query) {
   return search(query, { limit: 1 })
-    .then(response => {
-      return response[0];
-    });
+    .then(response => response[0]);
 }
 
-function reverseGeocode({ lat, lon }) {
-  const url = setParams(PHOTON_REVERSE, { lat, lon });
+export function reverseGeocode({ lat, lon }) {
+  const url = insert(PHOTON_REVERSE, { lat, lon });
 
   return fetchJSON(url)
     .then(response => response.features[0]);
 }
-
-module.exports = {
-  search,
-  geocode,
-  reverseGeocode
-};

@@ -1,88 +1,116 @@
-jest.dontMock('../widget');
+jest.unmock('../widget');
+jest.unmock('../../actions');
 
-import { NAME_CATEGORY } from '../../models/sections';
+import { List, Map } from 'immutable';
+
+import { ADDRESS } from '../../models/sections';
 import * as actions from '../../actions';
-import { FETCH_CATEGORIES } from '../../../common/actions/categories';
 import Node from '../../../common/models/Node';
-
-const widgetReducer = require('../widget');
+import widgetReducer, { DEFAULT_STATE } from '../widget';
 
 describe('widget reducer', () => {
-  let state;
+  it('initializes', () => {
+    const state = widgetReducer(undefined, {});
 
-  beforeEach(() => {
-    state = widgetReducer(undefined, {});
+    expect(state)
+      .toEqualImmutable(DEFAULT_STATE);
   });
 
-  it('activate section', () => {
-    const activeSection = NAME_CATEGORY,
-      action = actions.activateSection(NAME_CATEGORY);
+  it('activates section', () => {
+    const activeSection = ADDRESS;
 
-    state = widgetReducer(state, action);
+    const state = widgetReducer(DEFAULT_STATE, {
+      type: actions.ACTIVATE_SECTION,
+      payload: activeSection
+    });
 
-    expect(state.get('activeSection'))
-      .toEqual(activeSection);
+    expect(state)
+      .toEqualImmutable(DEFAULT_STATE
+        .set('activeSection', ADDRESS));
   });
 
   it('changes node', () => {
-    const node = new Node(),
-      action = actions.changeNode(node);
+    const node = new Node();
 
-    state = widgetReducer(state, action);
+    const state = widgetReducer(DEFAULT_STATE, {
+      type: actions.CHANGE_NODE,
+      payload: node
+    });
 
-    expect(state.get('node'))
-      .toEqual(node);
+    expect(state)
+      .toEqualImmutable(DEFAULT_STATE
+        .set('node', node));
   });
 
   it('changes map center', () => {
-    const center = { lat: 14.5, lon: 13.5 },
-      action = actions.changeMapCenter(center);
+    const center = { lat: 14.5, lon: 13.5 };
 
-    state = widgetReducer(state, action);
+    const state = widgetReducer(DEFAULT_STATE, {
+      type: actions.CHANGE_MAP_CENTER,
+      payload: center
+    });
 
-    expect(state.get('mapCenter'))
-      .toEqual(center);
+    expect(state)
+      .toEqualImmutable(DEFAULT_STATE
+        .set('mapCenter', new Map(center)));
   });
 
   it('changes map zoom', () => {
-    const zoom = 16,
-      action = actions.changeMapZoom(16);
+    const zoom = 16;
 
-    state = widgetReducer(state, action);
+    const state = widgetReducer(DEFAULT_STATE, {
+      type: actions.CHANGE_MAP_ZOOM,
+      payload: 16
+    });
 
-    expect(state.get('mapZoom'))
-      .toEqual(zoom);
+    expect(state)
+      .toEqualImmutable(DEFAULT_STATE
+        .set('mapZoom', zoom));
   });
 
   it('sets similar nodes', () => {
-    const similarNodes = [new Node(), new Node()],
-      action = actions.setSimilar(similarNodes);
+    const similarNodes = [ new Node(), new Node() ];
 
-    state = widgetReducer(state, action);
+    const state = widgetReducer(DEFAULT_STATE, {
+      type: actions.SET_SIMILAR,
+      payload: similarNodes
+    });
 
-    expect(state.get('similarNodes').toArray())
-      .toEqual(similarNodes);
+    expect(state)
+      .toEqualImmutable(DEFAULT_STATE
+        .set('similarNodes', new List(similarNodes)));
   });
 
   it('sets errors', () => {
-    const errors = { errorOne: 'first error', errorTwo: 'second error' },
-      action = actions.setErrors(errors);
+    const errors = { errorOne: 'first error', errorTwo: 'second error' };
 
-    state = widgetReducer(state, action);
+    const state = widgetReducer(DEFAULT_STATE, {
+      type: actions.SET_ERRORS,
+      payload: errors
+    });
 
-    expect(state.get('errors').toJS())
-      .toEqual(errors);
+    expect(state)
+      .toEqualImmutable(DEFAULT_STATE
+        .set('errors', new Map(errors)));
   });
 
   it('is loading', () => {
-    state = widgetReducer(state, actions.load(true));
+    let state = widgetReducer(DEFAULT_STATE, {
+      type: actions.LOAD,
+      payload: true
+    });
 
-    expect(state.get('loading'))
-      .toEqual(true);
+    expect(state)
+      .toEqualImmutable(DEFAULT_STATE
+        .set('loading', true));
 
-    state = widgetReducer(state, actions.load(false));
+    state = widgetReducer(state, {
+      type: actions.LOAD,
+      payload: false
+    });
 
-    expect(state.get('loading'))
-      .toEqual(false);
+    expect(state)
+      .toEqualImmutable(DEFAULT_STATE
+        .set('loading', false));
   });
 });

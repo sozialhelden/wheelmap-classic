@@ -1,18 +1,20 @@
-const React = require('react');
-const Loader = require('react-loader');
+import React from 'react';
+import Loader from 'react-loader';
 
-const SectionModel = require('../models/Section').default;
-const I18n = require('../../common/I18n');
+import SectionModel from '../models/Section';
+import I18n from '../../common/I18n';
 
-const { string, func, instanceOf, bool } = React.PropTypes;
+const { string, func, instanceOf, bool, any } = React.PropTypes;
 
 class Section extends React.Component {
   static propTypes = {
-    actionLabelScope: string.isRequired,
+    actionLabelScope: string,
+    titleScope: string,
     section: instanceOf(SectionModel).isRequired,
     onClickAction: func.isRequired,
-    loading: bool,
-    actionExtraScope: string
+    loading: bool.isRequired,
+    actionExtraScope: string,
+    children: any
   };
 
   static defaultProps = {
@@ -20,35 +22,44 @@ class Section extends React.Component {
     loading: false
   };
 
-  onClickAction = (event) => {
+  onClickAction = event => {
     event.preventDefault();
 
     this.props.onClickAction();
   };
 
   render() {
-    const { section, loading, children, actionLabelScope, actionExtraScope, onClickAction } = this.props;
+    const { section, loading, children, actionLabelScope, actionExtraScope } = this.props;
+    let { titleScope } = this.props;
     let actionExtra;
 
-    const sectionForms = React.Children.map(children, child => {
-      return (
-        <div className="nodes-new-content-section-form">
-          {child}
-        </div>
-      )
-    });
+    const sectionForms = React.Children.map(children, child => (
+      <div className="nodes-new-content-section-form">
+        {child}
+      </div>
+    ));
 
-    if (actionExtraScope != null)
-      actionExtra = <I18n scope={actionExtraScope} className="nodes-new-content-section-form-action-extra pull-right"/>
+    if (actionExtraScope != null) {
+      actionExtra = (
+        <I18n
+          scope={actionExtraScope}
+          className="nodes-new-content-section-form-action-extra pull-right"
+        />
+      );
+    }
+
+    if (titleScope == null) {
+      titleScope = `nodes.new.form.section.${section}.title`;
+    }
 
     return (
       <section className="nodes-new-content-section">
         <Loader loaded={!loading}>
-          <h2><I18n scope={`nodes.new.form.section.${section}.title`}/></h2>
+          <h2><I18n scope={titleScope} /></h2>
           {sectionForms}
           <div className="form-actions">
             <button className="btn btn-primary pull-right submit" onClick={this.onClickAction}>
-              <I18n scope={actionLabelScope}/>
+              <I18n scope={actionLabelScope} />
             </button>
             {actionExtra}
           </div>
@@ -58,4 +69,4 @@ class Section extends React.Component {
   }
 }
 
-module.exports = Section;
+export default Section;

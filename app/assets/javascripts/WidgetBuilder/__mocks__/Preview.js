@@ -1,9 +1,9 @@
-const React = require('react');
+import { Component } from 'react';
 
-class WidgetBuilderPreview extends React.Component {
+class WidgetBuilderPreview extends Component {
   render() {
     return null;
   }
 }
 
-module.exports = WidgetBuilderPreview;
+export default WidgetBuilderPreview;

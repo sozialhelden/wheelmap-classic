@@ -1,16 +1,15 @@
-const React = require('react');
-const { connect } = require('react-redux');
-const { Link } = require('react-router');
-const classNames = require('classnames');
+import React, { Component } from 'react';
+import classNames from 'classnames';
 
-const I18n = require('../common/I18n');
-const Section = require('./models/Section').default;
-const { OVERVIEW } = require('./models/sections');
+import I18n from '../common/I18n';
+import { immutableListOf } from '../common/propTypes';
 
-const { immutableListOf } = require('../common/types');
+import Section from './models/Section';
+import { OVERVIEW } from './models/sections';
+
 const { func, instanceOf } = React.PropTypes;
 
-class Breadcrumbs extends React.Component {
+class Breadcrumbs extends Component {
   static propTypes = {
     sections: immutableListOf(instanceOf(Section)).isRequired,
     activeSection: instanceOf(Section),
@@ -24,13 +23,13 @@ class Breadcrumbs extends React.Component {
   render() {
     const { sections, activeSection, onNavigate } = this.props;
     const className = classNames({ done: activeSection === OVERVIEW });
-    const list = [];
     const activeSectionIndex = sections.findIndex(section => section === activeSection);
 
-    sections.forEach((section, index) => {
+    const items = sections.map((section, index) => {
       // Skip overview as this section is not part of the breadcrumbs
-      if (section === OVERVIEW)
-        return;
+      if (section === OVERVIEW) {
+        return null;
+      }
 
       const done = index < activeSectionIndex;
       const className = classNames({ active: section === activeSection, done });
@@ -41,10 +40,10 @@ class Breadcrumbs extends React.Component {
         onNavigate(section);
       };
 
-      list.push(
+      return (
         <li key={section} className={className}>
           <a href="#" onClick={onClick}>
-            <I18n scope={`nodes.new.form.section.${section}.name`}></I18n>
+            <I18n scope={`nodes.new.form.section.${section}.name`} />
           </a>
         </li>
       );
@@ -53,11 +52,11 @@ class Breadcrumbs extends React.Component {
     return (
       <div className="nodes-new-breadcrumbs">
         <ul className={className}>
-          {list}
+          {items}
         </ul>
       </div>
     );
   }
 }
 
-module.exports = Breadcrumbs;
+export default Breadcrumbs;

@@ -1,9 +1,9 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const classNames = require('classnames');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import classNames from 'classnames';
 
-const I18n = require('./I18n');
-const Dropdown = require('./Dropdown');
+import I18n from './I18n';
+import Dropdown from './Dropdown';
 
 const { func, oneOf } = React.PropTypes;
 
@@ -18,8 +18,8 @@ const ACCESSIBILITIES = {
 
 class StatusDropdown extends React.Component {
   static propTypes = {
-    type: oneOf([WHEELCHAIR, TOILET]).isRequired,
-    status: oneOf(['unknown', 'yes', 'limited', 'no']).isRequired,
+    type: oneOf([ WHEELCHAIR, TOILET ]).isRequired,
+    status: oneOf([ 'unknown', 'yes', 'limited', 'no' ]).isRequired,
     onChange: func.isRequired
   };
 
@@ -27,27 +27,23 @@ class StatusDropdown extends React.Component {
     status: 'unknown'
   };
 
-  shouldComponentUpdate(nextProps) {
-    return this.props.status !== nextProps.status;
-  }
-
   componentDidMount() {
     const { type } = this.props;
 
-    const scopeNamespace = `${type}status`,
-      popoverScopeNamespace = type === WHEELCHAIR ? 'wheelmap.what_is' : `${scopeNamespace}.what_is`;
+    const scopeNamespace = `${type}status`;
+    const popoverScopeNamespace = type === WHEELCHAIR ? 'wheelmap.what_is' : `${scopeNamespace}.what_is`;
 
     const $questionMarks = $(ReactDOM.findDOMNode(this))
       .find('[data-toggle="popover"]');
 
     $questionMarks.popover({
       trigger: 'hover',
-      title: function() {
+      title() {
         const status = $(this).attr('data-status');
 
         return I18n.t(`${scopeNamespace}.${status}`);
       },
-      content: function() {
+      content() {
         const status = $(this).attr('data-status');
 
         return I18n.t(`${popoverScopeNamespace}.${type === WHEELCHAIR ? ACCESSIBILITIES[status] : status}`);
@@ -55,43 +51,53 @@ class StatusDropdown extends React.Component {
     });
   }
 
-  changeStatus(itemStatus) {
-    this.props.onChange(itemStatus);
+  shouldComponentUpdate(nextProps) {
+    return this.props.status !== nextProps.status;
   }
 
   render() {
-    const { type, status, ...props } = this.props;
+    const { type, status, onChange, ...props } = this.props;
 
-    const scopeNamespace = `${type}status`,
-      items = type === WHEELCHAIR ? ['yes', 'limited', 'no'] : ['yes', 'no'];
+    const scopeNamespace = `${type}status`;
+    const items = type === WHEELCHAIR ? [ 'yes', 'limited', 'no' ] : [ 'yes', 'no' ];
 
     const dropdownItems = items.map(itemStatus => {
-      const className = classNames('wm-checkbox', 'wheelchair', itemStatus, { checked: itemStatus === status }),
-        scope = `${scopeNamespace}.${itemStatus}`;
+      const className = classNames('wm-checkbox', 'wheelchair', itemStatus, { checked: itemStatus === status });
+      const scope = `${scopeNamespace}.${itemStatus}`;
+
+      const onClick = () => {
+        onChange(itemStatus);
+      };
 
       return (
         <Dropdown.Item key={itemStatus}>
-          <a onClick={this.changeStatus.bind(this, itemStatus)} className={itemStatus}>
-            <span className={className}><i className="icon-ok"/></span>
-            <I18n scope={scope}/>
-            <i className="icon-question-sign" data-status={itemStatus} data-toggle="popover"/>
+          <a onClick={onClick} className={itemStatus}>
+            <span className={className}><i className="icon-ok" /></span>
+            <I18n scope={scope} />
+            <i
+              className="icon-question-sign"
+              data-status={itemStatus}
+              data-toggle="popover"
+            />
           </a>
         </Dropdown.Item>
       );
     });
 
-    const className = `wheelchair ${status}`,
-      scope = `${scopeNamespace}.${status}`;
+    const className = `wheelchair ${status}`;
+    const scope = `${scopeNamespace}.${status}`;
 
     return (
       <div className="node-status-dropdown" {...props}>
         <Dropdown>
           <Dropdown.Button className={className}>
-            <I18n scope={scope}/>
-            <i className="icon-question-sign"
-               data-status={status}
-               data-toggle="popover"/>
-            <i className="pull-right icon-caret-down"/>
+            <I18n scope={scope} />
+            <i
+              className="icon-question-sign"
+              data-status={status}
+              data-toggle="popover"
+            />
+            <i className="pull-right icon-caret-down" />
           </Dropdown.Button>
           <Dropdown.Menu>
             {dropdownItems}
@@ -102,6 +108,4 @@ class StatusDropdown extends React.Component {
   }
 }
 
-
-
-module.exports = StatusDropdown;
+export default StatusDropdown;

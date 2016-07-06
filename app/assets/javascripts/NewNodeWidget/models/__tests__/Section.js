@@ -1,9 +1,8 @@
-jest.dontMock('../Section');
+jest.unmock('../Section');
 
 const Section = require('../Section').default;
 
 describe('Section', () => {
-
   it('has toString', () => {
     const section = new Section({
       id: 'test'
@@ -12,5 +11,4 @@ describe('Section', () => {
     expect(section.toString())
       .toBe('test');
   });
-
 });

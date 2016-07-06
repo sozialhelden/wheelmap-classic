@@ -1,16 +1,16 @@
-const { TRANSITION } = require('../actions/router');
+import { TRANSITION } from '../actions/router';
 
-function transition(history) {
+export default function transition(history) {
   return () => next => action => {
-    let { type } = action;
+    const { type } = action;
 
-    if (type !== TRANSITION)
-      return next(action);
+    if (type !== TRANSITION) {
+      next(action);
+      return;
+    }
 
-    let { payload: { method, args } } = action;
+    const { payload: { method, args } } = action;
 
     history[method].apply(history, args);
-  }
+  };
 }
-
-module.exports = transition;

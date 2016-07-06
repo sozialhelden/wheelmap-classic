@@ -1,15 +1,14 @@
-jest.dontMock('../Input');
+jest.unmock('../Input');
 
-const React = require('react');
-const TestUtils = require('react-addons-test-utils');
+import React from 'react';
+import TestUtils from 'react-addons-test-utils';
 
-const Input = require('../Input');
+import Input from '../Input';
 
-describe("Common form input React component", function() {
-
+describe('Common form input React component', () => {
   const renderer = TestUtils.createRenderer();
 
-  it("mounts correctly", function() {
+  it('mounts correctly', function () {
     renderer.render(
       <Input name="test" />
     );
@@ -22,5 +21,4 @@ describe("Common form input React component", function() {
 
     expect(inputElement.props.type).toEqual('text');
   });
-
 });

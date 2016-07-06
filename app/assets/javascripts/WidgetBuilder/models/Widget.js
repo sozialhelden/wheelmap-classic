@@ -1,6 +1,6 @@
-const { Record, List } = require('immutable');
+import { Record, List } from 'immutable';
 
-let Widget = Record({
+const Widget = new Record({
   id: null,
   apiKey: null,
   height: 500,
@@ -11,7 +11,7 @@ let Widget = Record({
   categories: false,
   boundingBox: null,
   src: null,
-  providers: List()
+  providers: new List()
 });
 
-module.exports = Widget;
+export default Widget;

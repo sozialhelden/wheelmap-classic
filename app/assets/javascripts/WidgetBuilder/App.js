@@ -1,26 +1,30 @@
-const React = require('react');
-const { Provider } = require('react-redux');
+import React, { PropTypes } from 'react';
+import { Provider } from 'react-redux';
 
-const camelize = require('./helpers/camelize');
-const createStore = require('./helpers/create_store');
-const WidgetBuilder = require('./WidgetBuilder');
-const Widget = require('./models/Widget');
-const { init } = require('./actions');
-const widgetBuilderReducer = require('./reducer');
+import camelize from './helpers/camelize';
+import createStore from './helpers/createStore';
+import WidgetBuilder from './WidgetBuilder';
+import Widget from './models/Widget';
+import widgetBuilderReducer from './reducer';
+import { init } from './actions';
 
-class WidgetBuilderApp extends React.Component {
-  render() {
-    let widget = Widget(camelize(this.props.widget)),
-      store = createStore(widgetBuilderReducer, widget);
+const { object } = PropTypes;
 
-    store.dispatch(init());
+function WidgetBuilderApp({ widgetData }) {
+  const widget = new Widget(camelize(widgetData));
+  const store = createStore(widgetBuilderReducer, widget);
 
-    return (
-      <Provider store={store}>
-        <WidgetBuilder/>
-      </Provider>
-    );
-  }
+  store.dispatch(init());
+
+  return (
+    <Provider store={store}>
+      <WidgetBuilder />
+    </Provider>
+  );
 }
 
-module.exports = WidgetBuilderApp;
+WidgetBuilderApp.propTypes = {
+  widgetData: object
+};
+
+export default WidgetBuilderApp;

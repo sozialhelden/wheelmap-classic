@@ -1,9 +1,8 @@
-const React = require('react');
-const { connect } = require('react-redux');
+import React, { Component } from 'react';
 
-const I18n = require('../common/I18n');
+import I18n from '../common/I18n';
 
-class Header extends React.Component {
+class Header extends Component {
   shouldComponentUpdate() {
     return false;
   }
@@ -18,4 +17,4 @@ class Header extends React.Component {
   }
 }
 
-module.exports = Header;
+export default Header;

@@ -1,28 +1,27 @@
-jest.dontMock('../updateAddress');
+jest.unmock('../updateAddress');
 
 import { SagaCancellationException } from 'redux-saga';
 import { createMockTask } from 'redux-saga/utils';
 
-import { CHANGE_NODE_ADDRESS, MARKER_MOVED, changeNode, markerMoved } from '../../actions';
-import selectors from '../../selectors';
-import photon from '../../../common/helpers/photon';
+import * as actions from '../../actions';
+import { node as nodeSelector } from '../../selectors';
+import { reverseGeocode } from '../../../common/helpers/photon';
 import Node from '../../../common/models/Node';
-
-const { default: cancelUpdateAddressTask, updateAddress } = require('../updateAddress');
+import cancelUpdateAddressTask, { updateAddress } from '../updateAddress';
 
 describe('cancelUpdateAddressTask', () => {
   it('fork updateAddress and cancel it when the node address was changed', () => {
     const gen = cancelUpdateAddressTask();
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toFork(updateAddress);
 
     const updateAddressTask = createMockTask();
 
-    expect(gen.next(updateAddressTask).value)
-      .toTake(CHANGE_NODE_ADDRESS);
+    expect(gen.next(updateAddressTask))
+      .toTake(actions.CHANGE_NODE_ADDRESS);
 
-    expect(gen.next().value)
+    expect(gen.next())
       .toCancel(updateAddressTask);
 
     expect(gen.next().done)
@@ -38,14 +37,16 @@ describe('updateAddress', () => {
   });
 
   it('updates node address when marker was moved', () => {
-    expect(gen.next().value)
-      .toTake(MARKER_MOVED);
+    expect(gen.next())
+      .toTake(actions.MARKER_MOVED);
 
-    const location = { lat: 14.5, lon: 13.5 },
-      action = markerMoved(location);
+    const location = { lat: 14.5, lon: 13.5 };
 
-    expect(gen.next(action).value)
-      .toCall(photon.reverseGeocode, location);
+    expect(gen.next(actions.markerMoved(location)))
+      .toPut(actions.loadNodeAddress(true));
+
+    expect(gen.next())
+      .toCall(reverseGeocode, location);
 
     const feature = {
       properties: {
@@ -56,30 +57,33 @@ describe('updateAddress', () => {
       }
     };
 
-    expect(gen.next(feature).value)
-      .toSelect(selectors.node);
+    expect(gen.next(feature))
+      .toSelect(nodeSelector);
 
     let node = new Node();
 
-    expect(gen.next(node).value)
-      .toCall([node, node.merge], feature.properties);
+    expect(gen.next(node))
+      .toCall([ node, node.merge ], feature.properties);
 
     node = new Node();
 
-    expect(gen.next(node).value)
-      .toPut(changeNode(node));
+    expect(gen.next(node))
+      .toPut(actions.changeNode(node));
 
-    expect(gen.next().value)
-      .toTake(MARKER_MOVED);
+    expect(gen.next(node))
+      .toPut(actions.loadNodeAddress(false));
+
+    expect(gen.next())
+      .toTake(actions.MARKER_MOVED);
   });
 
   it('can be canceled', () => {
-    expect(gen.next().value)
-      .toTake(MARKER_MOVED);
+    expect(gen.next())
+      .toTake(actions.MARKER_MOVED);
 
     const error = new SagaCancellationException();
 
     expect(gen.throw(error).done)
       .toBe(true);
-  })
+  });
 });

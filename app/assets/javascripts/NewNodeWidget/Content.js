@@ -1,15 +1,17 @@
-const React = require('react');
-const { connect } = require('react-redux');
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-const NameCategorySection = require('./Section/NameCategory');
-const AddressSection = require('./Section/Address');
-const SimilarNodesSection = require('./Section/SimilarNodes');
-const AccessibilitySection = require('./Section/Accessibility');
-const ContactSection = require('./Section/Contact');
-const OverviewSection = require('./Section/Overview');
-const NodesForm = require('../common/Node/Form');
-const { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } = require('./models/sections');
-const { activateSection } = require('./actions');
+import NodesForm from '../common/Node/Form';
+
+import NameCategorySection from './Section/NameCategory';
+import AddressSection from './Section/Address';
+import SimilarNodesSection from './Section/SimilarNodes';
+import AccessibilitySection from './Section/Accessibility';
+import ContactSection from './Section/Contact';
+import OverviewSection from './Section/Overview';
+import { NAME_CATEGORY, ADDRESS, SIMILAR_NODES, ACCESSIBILITY, CONTACT, OVERVIEW } from './models/sections';
+import { activateSection } from './actions';
 
 const SECTION_COMPONENTS = {
   [NAME_CATEGORY]: NameCategorySection,
@@ -22,40 +24,36 @@ const SECTION_COMPONENTS = {
 
 const { shape, string, func } = React.PropTypes;
 
-class Content extends React.Component {
-  static propTypes = {
-    params: shape({
-      section: string.isRequired
-    }).isRequired,
-    activateSection: func.isRequired
-  };
+function Content({ params: { section } }) {
+  const Section = SECTION_COMPONENTS[section];
 
-  render() {
-    let { params: { section } } = this.props;
-
-    let Section = SECTION_COMPONENTS[section];
-
-    return (
-      <div className="nodes-new-content">
-        <NodesForm>
-          <Section/>
-        </NodesForm>
-      </div>
-    );
-  }
+  return (
+    <div className="nodes-new-content">
+      <NodesForm>
+        <Section />
+      </NodesForm>
+    </div>
+  );
 }
 
-function mapStateToProps(state) {
+Content.propTypes = {
+  params: shape({
+    section: string.isRequired
+  }).isRequired,
+  activateSection: func.isRequired
+};
+
+function mapStateToProps() {
   return {};
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    activateSection: (section) => dispatch(activateSection(section))
-  };
+  return bindActionCreators({
+    activateSection
+  }, dispatch);
 }
 
-module.exports = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Content);

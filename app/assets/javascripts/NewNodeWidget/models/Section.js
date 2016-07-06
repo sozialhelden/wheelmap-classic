@@ -1,10 +1,12 @@
 import { Record, List } from 'immutable';
 
-export default class Section extends Record({
+const SectionRecord = new Record({
   id: null,
   // Attrs in this section, which can have errors
-  nodeAttrs: List()
-}) {
+  nodeAttrs: new List()
+});
+
+export default class Section extends SectionRecord {
   toString() {
     return this.id;
   }

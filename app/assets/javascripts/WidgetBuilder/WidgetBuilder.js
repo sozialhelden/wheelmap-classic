@@ -1,26 +1,49 @@
-const React = require('react');
-const { connect } = require('react-redux');
-const setParam = require('mout/queryString/setParam');
-const debounce = require('mout/function/debounce');
+import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-const Form = require('./Form');
-const Embed = require('./Embed');
-const Preview = require('./Preview');
-const { changeWidth, changeHeight, changeLocation, changeProvider, changeCategories, save } = require('./actions');
+import Form from './Form';
+import Embed from './Embed';
+import Preview from './Preview';
+import { changeWidth, changeHeight, changeLocation, changeProvider, changeCategories, save } from './actions';
+import { widget } from './propTypes';
 
-class WidgetBuilder extends React.Component {
+const { func } = React.PropTypes;
+
+class WidgetBuilder extends Component {
+  static propTypes = {
+    widget: widget.isRequired,
+    save: func.isRequired,
+    changeWidth: func.isRequired,
+    changeHeight: func.isRequired,
+    changeLocation: func.isRequired,
+    changeProvider: func.isRequired,
+    changeCategories: func.isRequired
+  };
+
   componentDidUpdate() {
     this.props.save();
   }
 
   render() {
+    const {
+      widget,
+      changeWidth,
+      changeHeight,
+      changeLocation,
+      changeProvider,
+      changeCategories
+    } = this.props;
+
     return (
       <div className="widget-panel">
-        <Form widget={this.props.widget} changeWidth={this.props.changeWidth}
-              changeHeight={this.props.changeHeight} changeLocation={this.props.changeLocation}
-              changeProvider={this.props.changeProvider} changeCategories={this.props.changeCategories}/>
-        <Preview widget={this.props.widget}/>
-        <Embed widget={this.props.widget}/>
+        <Form
+          widget={widget} changeWidth={changeWidth}
+          changeHeight={changeHeight} changeLocation={changeLocation}
+          changeProvider={changeProvider} changeCategories={changeCategories}
+        />
+        <Preview widget={widget} />
+        <Embed widget={widget} />
       </div>
     );
   }
@@ -31,17 +54,17 @@ function mapStateToProps(widget) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    changeWidth: width => dispatch(changeWidth(width)),
-    changeHeight: height => dispatch(changeHeight(height)),
-    changeLocation: location => dispatch(changeLocation(location)),
-    changeProvider: providerId => dispatch(changeProvider(providerId)),
-    changeCategories: showCategories => dispatch(changeCategories(showCategories)),
-    save: () => dispatch(save())
-  };
+  return bindActionCreators({
+    changeWidth,
+    changeHeight,
+    changeLocation,
+    changeProvider,
+    changeCategories,
+    save
+  }, dispatch);
 }
 
-module.exports = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(WidgetBuilder);
