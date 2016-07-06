@@ -97,7 +97,8 @@ addFlashMessage = (type, message) ->
 
   delay = message.split(' ').length / 0.00333333333 + 0.5 # based on 200 WpM
 
-  setTimeout (()-> $message.addClass('in')), 0
+  $message.addClass('in')
+
   setTimeout (()->
     $message.removeClass('in')
 
@@ -202,7 +203,7 @@ if $dropzoneClickable.length > 0
     previewsContainer: $dropzonePreviewContainer[0]
     clickable: $dropzoneClickable.toArray()
     acceptedFiles: 'image/*'
-    maxFilesize: 6 #MB
+    maxFilesize: 10 #MiB
     thumbnailWidth: 180
     thumbnailHeight: 180
     previewTemplate: '<li class="dz-preview-file fade"><a data-full-image-link data-toggle="magnific-popup" data-gallery="node"><img class="img-polaroid" data-dz-thumbnail /><span class="uploadprogress fade in" data-dz-uploadprogress /></a></li>',
