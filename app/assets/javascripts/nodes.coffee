@@ -223,7 +223,7 @@ if $dropzoneClickable.length > 0
 
     error: (file, message) ->
       $previewElement = $(file.previewElement);
-      $errorElement = addFlashMessage('error', '<strong>' + file.name + ':</strong> ' + message.error)
+      $errorElement = addFlashMessage('error', '<strong>' + file.name + ':</strong> ' + (message.error || message))
 
       if $.support.transition
         $errorElement.on $.support.transition.end, ()->
