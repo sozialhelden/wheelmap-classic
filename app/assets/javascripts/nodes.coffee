@@ -202,7 +202,7 @@ if $dropzoneClickable.length > 0
   new Dropzone $dropzone[0],
     previewsContainer: $dropzonePreviewContainer[0]
     clickable: $dropzoneClickable.toArray()
-    acceptedFiles: 'image/*'
+    acceptedFiles: '.jpeg,.jpg,.png,.gif'
     maxFilesize: 10 #MiB
     thumbnailWidth: 180
     thumbnailHeight: 180
