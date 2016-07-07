@@ -95,7 +95,8 @@ addFlashMessage = (type, message) ->
 
   delay = message.split(' ').length / 0.00333333333 + 0.5 # based on 200 WpM
 
-  setTimeout (()-> $message.addClass('in')), 0
+  $message.addClass('in')
+
   setTimeout (()->
     $message.removeClass('in')
 
@@ -199,8 +200,8 @@ if $dropzoneClickable.length > 0
   new Dropzone $dropzone[0],
     previewsContainer: $dropzonePreviewContainer[0]
     clickable: $dropzoneClickable.toArray()
-    acceptedFiles: 'image/*'
-    maxFilesize: 6 #MB
+    acceptedFiles: '.jpeg,.jpg,.png,.gif'
+    maxFilesize: 10 #MiB
     thumbnailWidth: 180
     thumbnailHeight: 180
     previewTemplate: '<li class="dz-preview-file fade"><a data-full-image-link data-toggle="magnific-popup" data-gallery="node"><img class="img-polaroid" data-dz-thumbnail /><span class="uploadprogress fade in" data-dz-uploadprogress /></a></li>',
@@ -220,7 +221,7 @@ if $dropzoneClickable.length > 0
 
     error: (file, message) ->
       $previewElement = $(file.previewElement);
-      $errorElement = addFlashMessage('error', '<strong>' + file.name + ':</strong> ' + message)
+      $errorElement = addFlashMessage('error', '<strong>' + file.name + ':</strong> ' + (message.error || message))
 
       if $.support.transition
         $errorElement.on $.support.transition.end, ()->
