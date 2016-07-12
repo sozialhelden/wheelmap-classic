@@ -42,8 +42,7 @@ Wheelmap::Application.configure do
   # See everything in the log (default is :info)
   config.log_level = :info
 
-  # Use a different logger for distributed setups
-  # config.logger = SyslogLogger.new
+  config.logger = Logger.new('log/production.log', 3, 1073741824) # 1GB
 
   # Use a different cache store in production
   # default is:
