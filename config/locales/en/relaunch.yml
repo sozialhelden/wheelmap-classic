@@ -88,6 +88,8 @@ en:
       add: Add
       photos_of_this_place: 'Photos of this place:'
       upload: Upload
+      alert: "Deshalb ist es wichtig, dass auf den Fotos der Eingangsbereich gut zu erkennen ist. Soll heißen: Gibt es Stufen am Eingang? Wie hoch ist die Stufe ungefähr? Ist die Tür breit genug?"
+      more_infos: 'Mehr Infos'
     node_similar:
       similar: 'Similar places: %{name}'
     node_status:
