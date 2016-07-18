@@ -71,8 +71,8 @@ Wheelmap::Application.configure do
     :port           => 25,
     :domain         => 'wheelmap.org',
     :authentication => :login,
-    :user_name      => ENV['gmail_user'],
-    :password       => ENV['gmail_password']
+    :user_name      => Rails.application.secrets.mail_user,
+    :password       => Rails.application.secrets.mail_password
 
   }
 
