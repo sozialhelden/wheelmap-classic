@@ -38,6 +38,7 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   providerIdBinding: 'mapController.widget.provider_id'
   poppingNodeBinding: 'mapController.poppingNode'
   nodeIdBinding: 'mapController.nodeId',
+  debugBinding: 'mapController.debug',
   lastLoadedBounds: null
   lastActiveStatusFilters: null
   lastActiveToiletFilters: null
@@ -47,13 +48,16 @@ Wheelmap.MarkerLayer = EmberLeaflet.Layer.extend
   popupNodeId: null
 
   geoJSONLayer: (()->
-    tileUrl = '/nodes.geojson?z={z}&x={x}&y={y}&limit=20';
+    tileUrl = '/nodes.geojson?z={z}&x={x}&y={y}&limit=25';
 
     nodeId = @get('nodeId')
 
     if nodeId?
       tileUrl += "&node_id=#{parseInt(nodeId, 10)}"
 
+    if @get('debug')
+      tileUrl += '&debug'
+      
     providerId = @get('providerId')
 
     if providerId?
