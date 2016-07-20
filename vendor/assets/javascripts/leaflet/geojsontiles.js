@@ -1,6 +1,6 @@
 var GeoJSONTileLayer = L.TileLayer.extend({
-  initialize: function() {
-    L.TileLayer.prototype.initialize.apply(this, arguments);
+  initialize: function(tileUrl, options) {
+    L.TileLayer.prototype.initialize.call(this, tileUrl, options);
 
     this._layerGroup = L.layerGroup();
   },
@@ -17,7 +17,6 @@ var GeoJSONTileLayer = L.TileLayer.extend({
 
   onAdd: function (map) {
     L.TileLayer.prototype.onAdd.call(this, map);
-
     map.addLayer(this._layerGroup);
   },
 
@@ -60,6 +59,8 @@ var GeoJSONTileLayer = L.TileLayer.extend({
 
     var url = this.getTileUrl(tilePoint),
       layer = this;
+
+    tile.point = tilePoint;
 
     this.fire('tileloadstart', {
       tile: tile,

@@ -41,6 +41,8 @@ class NodesController < ApplicationController
       normalize_bbox
     end
 
+    @debug = params.has_key?(:debug)
+
     @limit = params[:limit].try(:to_i) || 300
     # Allow max 1000 Pois per request.
     @limit = [@limit, 1000].min

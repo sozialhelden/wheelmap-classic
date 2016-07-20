@@ -9,7 +9,7 @@
     <%= generate_json({
         :type => 'FeatureCollection',
         :bbox => [@left, @bottom, @right, @top],
-        :features => prepare_nodes }).html_safe
+        :features => prepare_nodes + (@debug ? [ bbox_feature([@left, @bottom, @right, @top]) ] : []) }).html_safe
     %>
   <%- end -%>
 <%- end -%>
