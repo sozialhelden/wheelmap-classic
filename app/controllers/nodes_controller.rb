@@ -21,11 +21,7 @@ class NodesController < ApplicationController
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
   before_filter :convert_xyz,                     :only => :index
-  before_filter :check_bbox_param,                :only => :index
   before_filter :load_custom_node,                :only => :index
-  # This is to handle clustering mode on the test page but not on main map.
-  before_filter :cluster_switch_on,               :only => :index
-  after_filter  :cluster_switch_off,              :only => :index
 
   # Manually compress geojson output
   after_filter :compress,                         :only => :index, :if => lambda {|c| c.request.format.try(:geojson?)}
@@ -37,30 +33,22 @@ class NodesController < ApplicationController
   def index
     expires_in 1.minute, :public => true
 
-    if params[:bbox].present?
-      normalize_bbox
-    end
-
     @debug = params.has_key?(:debug)
 
     @limit = params[:limit].try(:to_i) || 300
     # Allow max 1000 Pois per request.
     @limit = [@limit, 1000].min
 
-    @count = Poi.within_bbox(@left, @bottom, @right, @top).group(:status).count
-    @sum = @count.length > 0 ? @count.values.reduce(:+) : @count.length
-    @places = []
-    unless FeatureSwitch.clustering_enabled? && @sum < 50
-      @places = Poi.within_bbox(@left,@bottom,@right,@top)
-        .including_category
-        .including_region
-        .including_providers.limit(@limit) if @left
+    @places = Poi.within_bbox(@left, @bottom, @right, @top)
+                  .including_category
+                  .including_region
+                  .including_providers.limit(@limit) if @left
 
-      # If a node_id is given and could be found, make sure it is included in the collection
-      if @custom_node && !@places.map(&:osm_id).include?(params[:node_id])
-        @places << @custom_node
-      end
+    # If a node_id is given and could be found, make sure it is included in the collection
+    if @custom_node && !@places.map(&:osm_id).include?(params[:node_id])
+      @places << @custom_node
     end
+
     respond_to do |wants|
       wants.js{ render :json => @places.as_api_response(:iphone).to_json }
       wants.geojson{
@@ -174,21 +162,6 @@ class NodesController < ApplicationController
 
   helper_method :prepare_nodes
   helper_method :generate_json
-  helper_method :middle_point
-  helper_method :generate_graph_data
-
-  def generate_graph_data
-    status_hash = {}
-    Poi::WHEELCHAIR_STATUS_VALUES.each { |k, v| status_hash[v] = k }
-    @count.map {|key, value| {:value=> value, :status=>key, :title => I18n.t("wheelchairstatus.#{status_hash[key]}")}}
-  end
-
-  def middle_point
-    #todo - this could be the reason the graph is rendered in the wrong position
-    p = Bbox.new(@left, @bottom, @right, @top).center()
-    [p.x, p.y]
-  end
-  add_method_tracer :middle_point, "Custom/middle_point"
 
   def claim
   end
@@ -222,26 +195,6 @@ class NodesController < ApplicationController
   end
   add_method_tracer :generate_json, "Custom/generate_json"
 
-  def normalize_bbox
-    @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f)
-    unless FeatureSwitch.clustering_enabled?
-      @left = @left.floor_to(3)
-      @bottom = @bottom.floor_to(3)
-      @right = @right.ceil_to(3)
-      @top = @top.ceil_to(3)
-      if @right == @left
-        @left   -= 0.001
-        @right  += 0.001
-      end
-      if @top   == @bottom
-        @bottom -= 0.001
-        @top    += 0.001
-      end
-    end
-    [@left, @bottom, @right, @top]
-  end
-  add_method_tracer :normalize_bbox, 'Custom/normalize_bbox'
-
   def gone(exception)
 #   Airbrake.notify(exception,:component => self.class.name, :parameters => params)
     @message = I18n.t('nodes.errors.not_existent')
@@ -250,10 +203,6 @@ class NodesController < ApplicationController
 
   def set_default_user
     current_user ||= User.find_by_email('visitor@wheelmap.org')
-  end
-
-  def check_bbox_param
-    params[:bbox] ||= "13.395536804199,52.516078290477,13.404463195801,52.517321704317"
   end
 
   def block_way_updates
@@ -268,22 +217,14 @@ class NodesController < ApplicationController
     render( :text => 'Params missing', :status => 406 ) if params[:node].blank?
   end
 
-  def cluster_switch_on
-    FeatureSwitch.clustering_enabled = 'true' if params[:clustering_enabled] == 'true'
-  end
-
-  def cluster_switch_off
-    FeatureSwitch.clustering_enabled = 'false' if params[:clustering_enabled].present?
-  end
-
   def convert_xyz
     if params[:x].present? && params[:y].present? && params[:z].present?
-      params['bbox'] = tile2bbox(params[:x].to_f, params[:y].to_f, params[:z].to_f)
+      @left, @bottom, @right, @top = tile2bbox(params[:x].to_f, params[:y].to_f, params[:z].to_f)
     end
   end
 
   def xyz_cache_key
-    'xyz_cache_' + [params[:x], params[:y], params[:z]].join('_')
+    'xyz_cache_' + [params[:x], params[:y], params[:z]].join('_') + (params.has_key?(:debug) ? '_debug' : '')
   end
 
   helper_method :xyz_cache_key
@@ -315,7 +256,6 @@ class NodesController < ApplicationController
     end
   end
   add_method_tracer :compress, "Custom/compress"
-  add_method_tracer :check_bbox_param, "Custom/check_bbox_param"
 
   def controller
     self

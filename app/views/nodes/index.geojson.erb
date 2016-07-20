@@ -1,15 +1,7 @@
-<%- if FeatureSwitch.clustering_enabled? && @sum > 50  -%>
-  <%= generate_json({
-      :type => 'Point',
-      :coordinates => middle_point,
-      :properties => { :type => "cluster", :data => generate_graph_data } }).html_safe
-  %>
-<%- else -%>
-  <%- cache_if(params[:x].present? && params[:y].present? && params[:z].present?, xyz_cache_key, expires_in: 1.minute) do %>
+<%- cache_if(params[:x].present? && params[:y].present? && params[:z].present?, xyz_cache_key, expires_in: 1.minute) do %>
     <%= generate_json({
-        :type => 'FeatureCollection',
-        :bbox => [@left, @bottom, @right, @top],
-        :features => prepare_nodes + (@debug ? [ bbox_feature([@left, @bottom, @right, @top]) ] : []) }).html_safe
+                          :type => 'FeatureCollection',
+                          :bbox => [@left, @bottom, @right, @top],
+                          :features => prepare_nodes + (@debug ? [ bbox_feature([@left, @bottom, @right, @top]) ] : [])}).html_safe
     %>
-  <%- end -%>
 <%- end -%>
