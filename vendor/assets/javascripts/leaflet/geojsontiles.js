@@ -3,9 +3,6 @@ var GeoJSONTileLayer = L.TileLayer.extend({
     L.TileLayer.prototype.initialize.call(this, tileUrl, options);
 
     this._layerGroup = L.layerGroup();
-
-    if (this.options.debug)
-      this.addInspector();
   },
 
   _reset: function () {
@@ -96,34 +93,6 @@ var GeoJSONTileLayer = L.TileLayer.extend({
     this.fire('tileerror', {
       tile: tile,
       url: url
-    });
-  },
-
-  addInspector: function() {
-    var rects = {};
-
-    this.on('tileload', function(event) {
-      if (rects[event.url])
-        return;
-
-      var point = this._getTilePos(event.tile.point),
-        size = this._getTileSize();
-
-      var northWest = this._map.containerPointToLatLng(point),
-        southEast = this._map.containerPointToLatLng(L.point(point.x + size, point.y + size));
-
-      var bounds = L.latLngBounds([ northWest, southEast ]);
-
-      var rect = rects[event.url] = L.rectangle(bounds, { color: '#ff7800', weight: 1 });
-
-      this._layerGroup.addLayer(rect);
-    });
-
-    this.on('tileunload', function(event) {
-      if (!rects[event.url])
-        return;
-
-      this._layerGroup.removeLayer(rects[event.url]);
     });
   }
 });
