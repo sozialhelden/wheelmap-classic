@@ -37,6 +37,19 @@ module Api::Poi
       t.add :version
     end
 
+    # Please do not edit, this is the legacy API JSON for the first iphone version!!!
+    api_accessible :iphone do |t|
+      t.add :icon, :if => :icon
+      t.add :id
+      t.add :lat
+      t.add :lon
+      t.add :name
+      t.add :tags_without_blank_values, :as => :tags
+      t.add :type
+      t.add :wheelchair
+      t.add :category_for_node, :as => :category
+    end
+
     api_accessible :ember do |t|
       t.add :id
       t.add :name

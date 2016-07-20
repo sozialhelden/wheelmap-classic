@@ -65,6 +65,7 @@ Wheelmap::Application.routes.draw do
   resources :nodes, :except => [:destroy] do
     collection do
       get ':x/:y/:z', to: 'nodes#index', as: ''
+      get '', to: 'nodes#legacy_index', as: 'legacy'
     end
     member do
       put :update_wheelchair

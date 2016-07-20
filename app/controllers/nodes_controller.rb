@@ -20,7 +20,9 @@ class NodesController < ApplicationController
   before_filter :check_create_params,             :only => :create
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
+  before_filter :check_limit,                     :only => [:index, :legacy_index]
   before_filter :convert_xyz,                     :only => :index
+  before_filter :convert_legacy_bbox,             :only => :legacy_index
   before_filter :load_custom_node,                :only => :index
 
   # Manually compress geojson output
@@ -34,10 +36,6 @@ class NodesController < ApplicationController
     expires_in 1.minute, :public => true
 
     @debug = params.has_key?(:debug)
-
-    @limit = params[:limit].try(:to_i) || 300
-    # Allow max 1000 Pois per request.
-    @limit = [@limit, 1000].min
 
     @places = Poi.within_bbox(@left, @bottom, @right, @top)
                   .including_category
@@ -53,6 +51,23 @@ class NodesController < ApplicationController
       wants.geojson{
         render :content_type => "application/json; subtype=geojson; charset=utf-8"
       }
+      wants.html{ redirect_to root_path }
+    end
+  end
+
+  def legacy_index
+    @places = Poi.within_bbox(@left, @bottom, @right, @top)
+                  .including_category
+                  .including_region
+                  .including_providers.limit(@limit) if @left
+
+    # If a node_id is given and could be found, make sure it is included in the collection
+    if @custom_node && !@places.map(&:osm_id).include?(params[:node_id])
+      @places << @custom_node
+    end
+
+    respond_to do |wants|
+      wants.js{ render :json => @places.as_api_response(:iphone).to_json }
       wants.html{ redirect_to root_path }
     end
   end
@@ -216,11 +231,26 @@ class NodesController < ApplicationController
     render( :text => 'Params missing', :status => 406 ) if params[:node].blank?
   end
 
+  def check_limit
+    @limit = params[:limit].try(:to_i) || 300
+    # Allow max 1000 Pois per request.
+    @limit = [@limit, 1000].min
+  end
+  add_method_tracer :check_limit, "Custom/check_limit"
+
   def convert_xyz
     if params[:x].present? && params[:y].present? && params[:z].present?
       @left, @bottom, @right, @top = tile2bbox(params[:x].to_f, params[:y].to_f, params[:z].to_f)
     end
   end
+  add_method_tracer :convert_xyz, "Custom/convert_xyz"
+
+  def convert_legacy_bbox
+    params[:bbox] ||= '13.395536804199,52.516078290477,13.404463195801,52.517321704317'
+
+    @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f)
+  end
+  add_method_tracer :convert_legacy_bbox, "Custom/convert_legacy_bbox"
 
   def xyz_cache_key
     'xyz_cache_' + [params[:x], params[:y], params[:z]].join('_') + (params.has_key?(:debug) ? '_debug' : '')
