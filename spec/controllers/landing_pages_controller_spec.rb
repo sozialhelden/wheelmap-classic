@@ -5,7 +5,7 @@ describe LandingPagesController do
   let(:node_type) { FactoryGirl::create(:node_type) }
   describe 'GET /index' do
     before do
-      get :index, page: 1, region_id: region.id, wheelchair: :unknown, node_type_id: node_type.identifier
+      get :index, page: 1, region_id: region.name, wheelchair: :unknown, node_type_id: node_type.identifier
     end
 
     it 'returns http 200 status' do
