@@ -5,6 +5,10 @@ ActiveAdmin.register Region do
   filter :updated_at
 
   controller do
+    def find_resource
+      Region.find_by(name: params[:id])
+    end
+
     def update
       region = resource
       region.update_attributes(params[:region])
