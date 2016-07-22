@@ -11,9 +11,10 @@ class LandingPagesController < ApplicationController
   protected
 
   def load_region
-    @region = Region.find params[:region_id] rescue nil
+    @region = Region.find(params[:region_id])
+  rescue ActiveRecord::RecordNotFound
     @message = "Could not find region #{params[:region_id]}"
-    render :template => 'shared/error', :status => 400 unless @region
+    render :template => 'shared/error', :status => 400
   end
 
   def load_status
