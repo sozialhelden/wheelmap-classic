@@ -20,7 +20,7 @@ class LandingPagesController < ApplicationController
   def load_status
     @status = Poi::WHEELCHAIR_STATUS_VALUES[params[:wheelchair].to_sym]
     @message = "Could not find status #{params[:wheelchair]}"
-    render :template => 'shared/error', :status => 400 unless @status
+    render :template => 'shared/error', :status => 404 unless @status
   end
 
   def load_type

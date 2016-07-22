@@ -23,5 +23,15 @@ describe LandingPagesController do
         expect(response).to have_http_status(:not_found)
       end
     end
+
+    context 'with invalid wheelchair value' do
+      before do
+        get :index, page: 1, region_id: region.name, wheelchair: :something, node_type_id: node_type.identifier
+      end
+
+      it 'returns http 404 status' do
+        expect(response).to have_http_status(:not_found)
+      end
+    end
   end
 end
