@@ -24,9 +24,10 @@ class LandingPagesController < ApplicationController
   end
 
   def load_type
-    @node_type = NodeType.find_by_identifier(params[:node_type_id])
+    @node_type = NodeType.find_by!(identifier: params[:node_type_id])
+  rescue ActiveRecord::RecordNotFound
     @message = "Could not find type #{params[:node_type_id]}"
-    render :template => 'shared/error', :status => 400 unless @node_type
+    render :template => 'shared/error', :status => 404
   end
 
 end

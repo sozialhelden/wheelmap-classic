@@ -33,5 +33,15 @@ describe LandingPagesController do
         expect(response).to have_http_status(:not_found)
       end
     end
+
+    context 'with invalid node type identifier' do
+      before do
+        get :index, page: 1, region_id: region.name, wheelchair: :unknown, node_type_id: 'something'
+      end
+
+      it 'returns http 404 status' do
+        expect(response).to have_http_status(:not_found)
+      end
+    end
   end
 end
