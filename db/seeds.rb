@@ -208,3 +208,6 @@ node_types = NodeType.create([
 
 Region.delete_all
 Region.connection.execute('ALTER TABLE regions AUTO_INCREMENT=1')
+
+berlin_grenze = RGeo::Cartesian.factory.parse_wkt "POLYGON ((10 10, 110 10, 110 110, 10 110))"
+Region.create(name: 'berlin', grenze: berlin_grenze)
