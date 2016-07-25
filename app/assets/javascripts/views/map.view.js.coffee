@@ -328,7 +328,7 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
     unless layer? && !Ember.ENV.WIDGET
       return
 
-    zoomAlert = L.control(position: 'topright')
+    zoomAlert = L.control(position: 'topleft')
 
     zoomAlert.onAdd = (map)->
       control = L.DomUtil.create('div', 'leaflet-zoom-alert leaflet-bar')

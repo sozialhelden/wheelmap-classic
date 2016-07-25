@@ -57,3 +57,12 @@
     }
   }
 }
+
+.leaflet-zoom-alert {
+  position: absolute;
+  left: 36px; // margin + zoom button width
+
+  a {
+    white-space: nowrap;
+  }
+}
