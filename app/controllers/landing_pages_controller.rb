@@ -11,21 +11,23 @@ class LandingPagesController < ApplicationController
   protected
 
   def load_region
-    @region = Region.find params[:region_id] rescue nil
+    @region = Region.find_by!(name: params[:region_id])
+  rescue ActiveRecord::RecordNotFound
     @message = "Could not find region #{params[:region_id]}"
-    render :template => 'shared/error', :status => 400 unless @region
+    render :template => 'shared/error', :status => 404
   end
 
   def load_status
     @status = Poi::WHEELCHAIR_STATUS_VALUES[params[:wheelchair].to_sym]
     @message = "Could not find status #{params[:wheelchair]}"
-    render :template => 'shared/error', :status => 400 unless @status
+    render :template => 'shared/error', :status => 404 unless @status
   end
 
   def load_type
-    @node_type = NodeType.find_by_identifier(params[:node_type_id])
+    @node_type = NodeType.find_by!(identifier: params[:node_type_id])
+  rescue ActiveRecord::RecordNotFound
     @message = "Could not find type #{params[:node_type_id]}"
-    render :template => 'shared/error', :status => 400 unless @node_type
+    render :template => 'shared/error', :status => 404
   end
 
 end
