@@ -351,7 +351,7 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
 
       link.addEventListener 'click', (event)->
         event.preventDefault()
-        layer.setZoom(layer.getMaxZoom())
+        layer.zoomIn()
 
       control
 
