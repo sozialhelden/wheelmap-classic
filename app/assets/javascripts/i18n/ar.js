@@ -839,7 +839,8 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         },
         "help": "هل وصول الكرسي المتحرك سهل؟ (بادر بتقديم المساعدة)",
         "more": "المزيد..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "كيف ؟",

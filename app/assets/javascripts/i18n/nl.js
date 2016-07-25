@@ -840,7 +840,8 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         },
         "help": "rolstoel toegankelijk? (Hulp)",
         "more": "meer..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Hoe?",

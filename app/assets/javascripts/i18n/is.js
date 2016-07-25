@@ -839,7 +839,8 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
         },
         "help": "Hjólastólaaðgengilegt? (Hjálp)",
         "more": "meiri ..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "How?",

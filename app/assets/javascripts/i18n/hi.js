@@ -839,7 +839,8 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
         },
         "help": "व्हीलचेयर सुलभ",
         "more": "और भी..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "कैसे",

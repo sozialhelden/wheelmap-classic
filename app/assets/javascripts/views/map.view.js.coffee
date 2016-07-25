@@ -338,7 +338,7 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
 
       icon = L.DomUtil.create('i', 'icon-exclamation-sign', link)
       text = L.DomUtil.create('span', '', link)
-      text.innerHTML = ' Zoom in closer to see all places.'
+      text.innerHTML = " #{I18n.t('home.index.zoom_alert')}"
 
       toggleControl = ->
         # Remove control when on highest zoom level.

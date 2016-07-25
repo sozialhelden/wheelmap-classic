@@ -839,7 +839,8 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
         },
         "help": "E aksesueshme në karrige me rrota? (Ndihmë)",
         "more": "më shumë..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Si?",

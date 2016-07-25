@@ -842,7 +842,8 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
         },
         "help": "Prístupné pre vozíčkarov? (Pomoc)",
         "more": "viac ..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Ako?",

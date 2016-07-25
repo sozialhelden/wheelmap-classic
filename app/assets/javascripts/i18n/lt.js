@@ -840,7 +840,8 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
         },
         "help": "Wheelchair accessible? (Help)",
         "more": "daugiau ..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Kaip?",

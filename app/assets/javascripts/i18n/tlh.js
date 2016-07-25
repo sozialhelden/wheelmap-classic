@@ -839,7 +839,8 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
         },
         "help": "naw'laH'a' rutlhquS? (QaH)",
         "more": "latlh ..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "How?",
