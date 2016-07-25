@@ -280,7 +280,7 @@ describe NodesController do
 
   end
 
-  describe "action: index" do
+  describe 'action: index' do
     render_views
 
     let(:provider) {
@@ -289,16 +289,16 @@ describe NodesController do
 
     before(:each) do
       Poi.delete_all
-      request.env["HTTP_ACCEPT"] = 'application/json; subtype=geojson'
+      request.env['HTTP_ACCEPT'] = 'application/json; subtype=geojson'
       @poi = FactoryGirl.create(:poi, :providers => [provider])
       2.times {
         FactoryGirl.create(:poi, :providers => [FactoryGirl.create(:provider)])
       }
     end
 
-    it "should render legacy json representation for iphone", :tag => 'fu' do
-      get(:index, :format => 'js', :bbox => "12.0,51.0,14.0,53.0")
-      expect(response.code).to eq("200")
+    it 'should render legacy json representation for iphone', :tag => 'fu' do
+      get(:legacy_index, format: 'js', bbox: '12.0,51.0,14.0,53.0')
+      expect(response.code).to eq('200')
       expect(response.body).not_to be_empty
       json = ActiveSupport::JSON.decode(response.body)
       node = json.last
@@ -309,11 +309,11 @@ describe NodesController do
       expect(node['wheelchair']).not_to be_blank
       expect(node['type']).not_to be_blank
       expect(node['tags'].class).to eql Hash
-      expect(node['tags']['wheelchair:description']).to eql "Yes, we have a ramp."
+      expect(node['tags']['wheelchair:description']).to eql 'Yes, we have a ramp.'
     end
 
-    it "should render geojson representation of provided pois" do
-      get :index, { :format => 'geojson', :bbox => "12.0,51.0,14.0,53.0", :provider_id => provider.id}
+    it 'should render geojson representation of provided pois' do
+      get :index, { format: 'geojson', x: 17595, y: 10754, z: 15, :provider_id => provider.id}
       expect(response).to be_success
       expect(response.body).not_to be_empty
       feature_collection = ActiveSupport::JSON.decode(response.body)

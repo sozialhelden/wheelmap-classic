@@ -63,6 +63,10 @@ Wheelmap::Application.routes.draw do
   post 'nodes/validate', to: 'nodes#validate', as: :validate_node
 
   resources :nodes, :except => [:destroy] do
+    collection do
+      get ':x/:y/:z', to: 'nodes#index', as: ''
+      get '', to: 'nodes#legacy_index', as: 'legacy'
+    end
     member do
       put :update_wheelchair
       put :update_toilet

@@ -41,7 +41,7 @@ module NodesHelper
     north, west = tile2latlon(x, y, zoom)
     south, east = tile2latlon(x + 1, y + 1, zoom)
 
-    [west, north, east, south].join(',')
+    [west, north, east, south]
   end
 
   def tile2latlon(xtile, ytile, zoom)
