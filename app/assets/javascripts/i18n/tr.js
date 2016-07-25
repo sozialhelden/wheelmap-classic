@@ -843,7 +843,8 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
         },
         "help": "Tekerlekli sandalye için ulaşılırmı? (Yardım)",
         "more": "daha fazla..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Nasıl?",

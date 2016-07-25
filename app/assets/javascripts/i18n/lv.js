@@ -839,7 +839,8 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
         },
         "help": "Pieejams ar ratiņkrēslu? (Palīdzība)",
         "more": "vairāk..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Kā?",

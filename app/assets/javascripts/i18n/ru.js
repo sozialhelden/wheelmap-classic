@@ -872,7 +872,8 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
         },
         "help": "Доступно ли на кресле-коляске? (Справка)",
         "more": "Подробней ..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Как?",

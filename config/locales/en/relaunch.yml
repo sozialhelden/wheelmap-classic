@@ -45,6 +45,7 @@ en:
         lookup: Search for a specific place
         secondary_headline: 'Our traffic light system to mark the wheelchair accessibility of public places:'
       embed_link: Show on Wheelmap.org
+      zoom_alert: Zoom in closer to see more places.
   nodes:
     new:
       form:

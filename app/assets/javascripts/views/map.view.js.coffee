@@ -296,6 +296,7 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
 
     @get('layer')?.attributionControl.setPrefix('')
     @addEmbedLink()
+    @addZoomAlert()
 
   addEmbedLink: ->
     layer = @get('layer')
@@ -320,6 +321,41 @@ Wheelmap.MapView = EmberLeaflet.MapView.extend Wheelmap.LocateMixin, Wheelmap.Sp
       control
 
     embedLink.addTo(layer)
+
+  addZoomAlert: ->
+    layer = @get('layer')
+
+    unless layer? && !Ember.ENV.WIDGET
+      return
+
+    zoomAlert = L.control(position: 'topleft')
+
+    zoomAlert.onAdd = (map)->
+      control = L.DomUtil.create('div', 'leaflet-zoom-alert leaflet-bar')
+
+      link = L.DomUtil.create('a', '', control)
+      link.href = '#'
+
+      icon = L.DomUtil.create('i', 'icon-exclamation-sign', link)
+      text = L.DomUtil.create('span', '', link)
+      text.innerHTML = " #{I18n.t('home.index.zoom_alert')}"
+
+      toggleControl = ->
+        # Remove control when on highest zoom level.
+        maxZoom = layer.getZoom() == layer.getMaxZoom()
+        control.style.display = if maxZoom then 'none' else ''
+        return
+
+      layer.on('zoomend', toggleControl)
+      toggleControl()
+
+      link.addEventListener 'click', (event)->
+        event.preventDefault()
+        layer.zoomIn()
+
+      control
+
+    zoomAlert.addTo(layer)
 
   bboxDidChange: (->
     layer = @get('layer')

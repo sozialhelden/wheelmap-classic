@@ -838,7 +838,8 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
         },
         "help": "Kerekesszékkel akadálymentes? (Segítség)",
         "more": "több ..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Hogyan?",

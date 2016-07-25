@@ -842,7 +842,8 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
         },
         "help": "Acessível a cadeirantes? (Ajuda)",
         "more": "mais ..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Como?",

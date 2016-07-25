@@ -839,7 +839,8 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
         },
         "help": "轮椅可通过？（帮助）",
         "more": "更多..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "怎么样",

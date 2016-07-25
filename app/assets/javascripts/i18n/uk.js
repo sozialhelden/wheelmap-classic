@@ -872,7 +872,8 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
         },
         "help": "Чи є доступ для людей на інвалідних візках? (Довідка)",
         "more": "детальніше ..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Як?",

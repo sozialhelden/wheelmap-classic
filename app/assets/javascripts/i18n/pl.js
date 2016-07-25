@@ -849,7 +849,8 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         },
         "help": "Dostępne dla osób na wózkach? (Pomoc)",
         "more": "więcej ..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Jak?",

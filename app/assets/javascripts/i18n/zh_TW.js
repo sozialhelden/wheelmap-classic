@@ -842,7 +842,8 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         },
         "help": "輪椅無障礙？(說明)",
         "more": "更多..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "如何？",

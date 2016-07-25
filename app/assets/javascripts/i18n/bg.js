@@ -839,7 +839,8 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         },
         "help": "Достъпно за инвалидни колички? (Помощ)",
         "more": "повече..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Как?",

@@ -842,7 +842,8 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
         },
         "help": "Δυνατότητα πρόσβασης με αναπηρική καρέκλα",
         "more": "περισσότερα ..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Πώς;",

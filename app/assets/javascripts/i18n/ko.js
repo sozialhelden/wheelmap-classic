@@ -835,7 +835,8 @@ I18n.translations["ko"] = I18n.extend((I18n.translations["ko"] || {}), {
         },
         "help": "휠체어 접근성? (도움말)",
         "more": "자세히 ..."
-      }
+      },
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "접근정보 등록은 어떻게?",
