@@ -1,4 +1,21 @@
 tr:
+  models:
+    category:
+      prompt: ""
+    node_type:
+      prompt: ""
+    node:
+      info_edit_position: ""
+      mail:
+        subject: ""
+        body: ""
   actions:
+    send: ''
     save: Kaydet
     cancel: İptal
+    next: Sıradaki
+  errors:
+    models:
+      node:
+        website:
+          invalid: ""

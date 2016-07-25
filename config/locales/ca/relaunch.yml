@@ -1,3 +1,4 @@
+---
 ca:
   activerecord:
     attributes:
@@ -9,6 +10,7 @@ ca:
         phone: Telèfon
         note: Nota
         address_street: Carrer
+        address_housenumber: ''
         address_postcode: Codi postal
         address_city: Ciutat
   faq:
@@ -30,6 +32,9 @@ ca:
       projects: Projectes
     toolbar:
       categories: Categories
+    meta:
+      description: ''
+      title: ''
   home:
     index:
       overlay:
@@ -39,11 +44,36 @@ ca:
         headline: 'Marca i troba llocs accessibles per a cadira de rodes amb Wheelmap.org - a tot el món i de franc. És fàcil:'
         lookup: Cercar un lloc determinat
         secondary_headline: 'El nostre sistema de semàfors marca l''accessibilitat amb cadira de rodes de llocs públics:'
+      embed_link: ''
+      zoom_alert: ''
   nodes:
     new:
       form:
+        title: ''
         legend: Localització del lloc
-        location: Fes clic al mapa i posa un marcador a la posició exacta.
+        location: ''
+        section:
+          name_category:
+            name: ''
+            title: ""
+          address:
+            name: Adreça
+            title: ''
+            help: ''
+          similar_nodes:
+            name: ''
+            title: ''
+            go_edit: ''
+            go_new: ''
+            empty: ''
+          accessibility:
+            name: ''
+            title: ''
+          contact:
+            name: Contactar
+            title: ''
+          overview:
+            title: ''
     node_data:
       address: 'Adreça:'
       contact_details: 'Detalls del contacte:'
@@ -74,6 +104,7 @@ ca:
       share:
         email: Correu electrònic
         facebook: Facebook
+        text: ''
         twitter: Twitter
   search:
     index:
@@ -92,12 +123,14 @@ ca:
           one: '%{count} resultat:'
           other: '%{count} resultats:'
     timeout:
+      headline: ''
       info: El nostre servei de cerca no està disponible.
       repeat_search: Reiniciar la cerca
   users:
     profile:
       newsletter:
         title: Butlletí
+        text: ''
         label: Sí, actualitza'm sobre Wheelmap.
       show:
         title: Resum
@@ -113,12 +146,31 @@ ca:
           pois_added:
             one: '%{count} lloc afegit'
             other: '%{count} llocs afegits'
+          pois_edited:
+            one: ''
+            other: ''
           photos_uploaded:
             one: '%{count} foto pujada '
             other: '%{count} fotos pujades '
       photos:
         title: Fotos
+        empty: ''
       edit:
         title: Perfil
         legends:
           user_data: Informació del teu compte
+      widget:
+        title: ''
+        height: ''
+        width: ''
+        center: ''
+        categories: ''
+        providers: ''
+        empty_provider: ''
+        empty_center: ''
+        legends:
+          settings: ''
+          preview: ''
+          embed: ''
+          embed_explanation: ''
+          general: ''

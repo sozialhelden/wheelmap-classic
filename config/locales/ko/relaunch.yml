@@ -1,3 +1,4 @@
+---
 ko:
   activerecord:
     attributes:
@@ -7,28 +8,164 @@ ko:
         address: 주소
         website: 홈페이지
         phone: 전화번호
+        note: ''
         address_street: 도로명
+        address_housenumber: ''
+        address_postcode: ''
         address_city: 시/도
+  faq:
+    answers:
+      0: ''
+      1: ''
+      2: ''
+    headline: ''
+    questions:
+      0: ''
+      1: ''
+      2: ''
   header:
     navigation:
+      about_wheelmap: ''
+      choose_language: ''
+      contact: ''
       map: 지도
+      projects: ''
+    toolbar:
+      categories: ''
+    meta:
+      description: ''
+      title: ''
+  home:
+    index:
+      overlay:
+        button: ''
+        categories: ''
+        filter: ''
+        headline: ''
+        lookup: ''
+        secondary_headline: ''
+      embed_link: ''
+      zoom_alert: ''
   nodes:
+    new:
+      form:
+        title: ''
+        legend: ''
+        location: ''
+        section:
+          name_category:
+            name: ''
+            title: ""
+          address:
+            name: 주소
+            title: ''
+            help: ''
+          similar_nodes:
+            name: ''
+            title: ''
+            go_edit: ''
+            go_new: ''
+            empty: ''
+          accessibility:
+            name: ''
+            title: ''
+          contact:
+            name: ''
+            title: ''
+          overview:
+            title: ''
+    node_data:
+      address: ''
+      contact_details: ''
     node_edit:
       details: 자세히
       edit: 편집
+    node_map:
+      map: ''
+    node_note:
+      comment: ''
+    node_photos:
+      add: ''
+      photos_of_this_place: ''
+      upload: ''
+    node_similar:
+      similar: ''
+    node_status:
+      accessible_toilet: ''
+      premium: ''
+      wheelchair_accessibility: ''
+    node_streetview:
+      streetview: ''
     show:
+      header:
+        meta:
+          description: ''
+          title: ''
       share:
         email: 이메일
         facebook: 페이스북
+        text: ''
         twitter: 트위터
+  search:
+    index:
+      no-results:
+        headline: ''
+        hint:
+          example: ''
+          info: ''
+          work_in_progress: ''
+        try_this:
+          address: ''
+          intro: ''
+          spell_check: ''
+      results:
+        ticker:
+          other: ''
+    timeout:
+      headline: ''
+      info: ''
+      repeat_search: ''
   users:
     profile:
       newsletter:
         title: 뉴스레터
+        text: ''
+        label: ''
+      show:
+        title: ''
+        text_html: ""
+        greeting:
+          anonymously: ''
+          personalized: ''
+        overview:
+          text: ''
+          pois_marked:
+            other: ''
+          pois_added:
+            other: ''
+          pois_edited:
+            other: ''
+          photos_uploaded:
+            other: ''
       photos:
         title: 사진첩
+        empty: ''
       edit:
         title: 프로필
+        legends:
+          user_data: ''
       widget:
+        title: ''
+        height: ''
+        width: ''
+        center: ''
+        categories: ''
+        providers: ''
+        empty_provider: ''
+        empty_center: ''
         legends:
           settings: 설정
+          preview: ''
+          embed: ''
+          embed_explanation: ''
+          general: ''

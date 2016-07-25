@@ -1,3 +1,4 @@
+---
 es:
   activerecord:
     attributes:
@@ -32,6 +33,7 @@ es:
     toolbar:
       categories: Categorías
     meta:
+      description: Wheelmap.org es un mapa en línea para buscar, encontrar y marcar lugares accesibles para silla de ruedas. ¿Participa marcando lugares públicos como bares, restaurantes, cines o supermercados!
       title: Wheelmap.org
   home:
     index:
@@ -42,11 +44,36 @@ es:
         headline: 'Marca y encuentra lugares accesibles en sillas de ruedas con Wheelmap.org - internacional y gratuito. Es fácil:'
         lookup: Buscar un lugar específico
         secondary_headline: 'Nuestro semáforo para marcar la accesibilidad en silla de ruedas de los lugares públicos:'
+      embed_link: Mostrar en Wheelmap.org
+      zoom_alert: ''
   nodes:
     new:
       form:
+        title: ''
         legend: Ubicación del sitio
-        location: Por favor, haz clic en el mapa y sitúa el marcador en la posición exacta.
+        location: ''
+        section:
+          name_category:
+            name: ''
+            title: ""
+          address:
+            name: Dirección
+            title: ''
+            help: ''
+          similar_nodes:
+            name: ''
+            title: ''
+            go_edit: ''
+            go_new: ''
+            empty: ''
+          accessibility:
+            name: ''
+            title: ''
+          contact:
+            name: Contacto
+            title: ''
+          overview:
+            title: ''
     node_data:
       address: 'Dirección:'
       contact_details: 'Detalles de contacto:'
@@ -77,6 +104,7 @@ es:
       share:
         email: Correo electrónico
         facebook: Facebook
+        text: 'Encontré este lugar en Wheelmap.org %{name}'
         twitter: Twitter
   search:
     index:
@@ -105,12 +133,25 @@ es:
         text: Mantenme informado con los boletines informativos de Wheelmap. No te preocupe, no te enviaremos correos basura. Sabrás sobre nosotros una vez al mes a lo mucho.
         label: Sí, mantenme informado sobre Wheelmap
       show:
+        title: Visión de conjunto
         text_html: "Hola,<br>\n Bienvenido (de nuevo) a Wheelmap.org! Estamos felices de tenerte con nosotros! Puedes navegar en nuestro <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> o <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> Si quieres saber un poco más sobre Wheelmap.org o aprender un poco sobre el <a href=\"http://wheelmap.org/en/get-engaged/\">projecto</a> que ofrecemos y como puedes formar parte de ellos.<br> \nMantente en contacto<br> \nPara estar en contacto, puedes subscribirte a nuestro boletín mensual o seguirnos en <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> y <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Esperamos con ansías escuchar tus opiniones y empezar una conversación contigo! \n<br> y ahora, mapea feliz!<br> \nTu equipo de Wheelmap"
         greeting:
           anonymously: Hola
           personalized: Hola %{name}
         overview:
           text: Tú tienes
+          pois_marked:
+            one: ''
+            other: ''
+          pois_added:
+            one: ''
+            other: ''
+          pois_edited:
+            one: ''
+            other: ''
+          photos_uploaded:
+            one: ''
+            other: ''
       photos:
         title: Fotos
         empty: No has subido ninguna foto aún
@@ -124,6 +165,9 @@ es:
         width: Ancho
         center: Mapa de la zona
         categories: Muestra el filtro de categoría
+        providers: Proveedor
+        empty_provider: Escoger un proveedor
+        empty_center: Buscar el centro del mapa ...
         legends:
           settings: Ajustes
           preview: Vista previa

@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
   "actions": {
     "cancel": "Cancelar",
-    "next": "Next",
+    "next": "",
     "save": "Gravar",
     "send": "Enviar"
   },
@@ -185,7 +185,7 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
       "poi": {
         "address": "Endereço",
         "address_city": "Cidade",
-        "address_housenumber": "House number",
+        "address_housenumber": "",
         "address_postcode": "Código Postal",
         "address_street": "Rua",
         "name": "Nome",
@@ -638,9 +638,6 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
     },
     "models": {
       "node": {
-        "phone": {
-          "invalid": "O número de telefone não é válido. Deve ter o formato seguinte: +49 30 234567"
-        },
         "website": {
           "invalid": "O endreço da página internet não é válido."
         }
@@ -739,11 +736,11 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
+      "description": "",
       "homepage": "Página inicial",
       "keywords": "encontrar marcador de locais acessíveis a cadeiras de rodas",
       "search": "Pesquisar",
-      "title": "Wheelmap.org"
+      "title": ""
     },
     "navigation": {
       "about_wheelmap": "Sobre o Wheelmap",
@@ -802,7 +799,7 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "",
       "filter": {
         "category": "Escolha a categoria",
         "deselect_all": "Remover seleção",
@@ -843,7 +840,7 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
         "help": "Acessível a cadeiras de rodas? (Ajuda)",
         "more": "mais..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": ""
     }
   },
   "how?": "Como?",
@@ -926,37 +923,37 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
     "new": {
       "form": {
         "legend": "Localização do lugar",
-        "location": "Por favor clique no mapa e coloque o marcado na posição exata.",
+        "location": "",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "",
+            "title": ""
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
-            "name": "Address",
-            "title": "Where is the place?"
+            "help": "",
+            "name": "Endereço",
+            "title": ""
           },
           "contact": {
-            "name": "Contact",
-            "title": "Other contact information"
+            "name": "Contacto",
+            "title": ""
           },
           "name_category": {
-            "name": "Name and category",
-            "title": "Give us some initial information about your place:"
+            "name": "",
+            "title": ""
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": ""
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "",
+            "go_edit": "",
+            "go_new": "",
+            "name": "",
+            "title": ""
           }
         },
-        "title": "Add a place"
+        "title": ""
       },
       "header": {
         "title": "Lugar novo  | wheelmap.org"
@@ -1020,7 +1017,7 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
       "share": {
         "email": "E-mail",
         "facebook": "Facebook",
-        "text": "I found this place on Wheelmap.org: %{name}",
+        "text": "",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1122,8 +1119,8 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
       "health": "Saúde",
       "leisure": "Lazer",
       "misc": "Miscelâneos",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "",
+      "public_transfer": "",
       "shopping": "Lojas",
       "sport": "Desporto",
       "tourism": "Turismo",
@@ -1167,11 +1164,11 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
         "government": "Agência governamental",
         "police": "Polícia",
         "public_building": "Edifício público",
-        "townhall": "Town hall"
+        "townhall": ""
       },
       "health": {
         "dentist": "Dentista",
-        "doctors": "Doctor",
+        "doctors": "",
         "hearing_aids": "Loja de aparelhos auditivos",
         "hospital": "Hospital",
         "medical_supply": "Equipamentos médicos",
@@ -1184,7 +1181,7 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
         "brothel": "Casa de prostituição",
         "casino": "Casino",
         "cinema": "Cinema",
-        "community_centre": "Community centre",
+        "community_centre": "",
         "gallery": "Galeria",
         "nightclub": "Discoteca",
         "playground": "Parque infantil",
@@ -1212,7 +1209,7 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
         "aerodrome": "Aeroporto",
         "bicycle_parking": "Estacionamento de biclicletas",
         "bicycle_rental": "Aluguer de bicicletas",
-        "boatyard": "Boat yard",
+        "boatyard": "",
         "bus_station": "Terminal rodoviário",
         "bus_stop": "Paragem de autocarros",
         "cable_car": "Teleférico",
@@ -1242,7 +1239,7 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
         "butcher": "Talho",
         "car_repair": "Oficina automóvel",
         "car_shop": "Stand automóvel",
-        "chemist": "Chemist / Drugstore",
+        "chemist": "",
         "clothes": "Loja de roupa",
         "computer": "Loja de informática",
         "confectionery": "Loja de doces",
@@ -1256,7 +1253,7 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
         "farm_shop": "Loja do produtor",
         "florist": "Florista",
         "furniture": "Mobiliário",
-        "garden_centre": "Garden centre",
+        "garden_centre": "",
         "gift": "Loja de recordações",
         "hairdresser": "Cabeleireiro",
         "hardware": "Drogaria",
@@ -1393,7 +1390,7 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
   "search": {
     "index": {
       "no-results": {
-        "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
+        "headline": "",
         "hint": {
           "example": "<strong>Exemplo:</strong> Londres, Reino Unido",
           "info": "A nossa pesquisa só funciona com a informação do nome e/ou endereço. Desta forma, preencha um dos campos para o nome do lugar ou o endereço (por ex., nome da rua e/ou cidade). A pesquina pelo tipo de lugar (ex. restaurante ou cinema), não funciona!",
@@ -1417,7 +1414,7 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
       }
     },
     "timeout": {
-      "headline": "Sorry, something went wrong",
+      "headline": "",
       "info": "O nosso serviço de pesquisa está temporariamente indisponível.",
       "repeat_search": "Volte a tentar"
     }
@@ -1499,62 +1496,62 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
     "profile": {
       "edit": {
         "legends": {
-          "user_data": "Your account information"
+          "user_data": ""
         },
         "title": "Perfil"
       },
       "newsletter": {
-        "label": "Yes, keep me updated about Wheelmap.",
-        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
+        "label": "",
+        "text": "",
         "title": "Newsletter"
       },
       "photos": {
-        "empty": "You haven't uploaded any photos yet.",
+        "empty": "",
         "title": "Fotografias"
       },
       "show": {
         "greeting": {
-          "anonymously": "Hello there",
-          "personalized": "Hello %{name}"
+          "anonymously": "",
+          "personalized": ""
         },
         "overview": {
           "photos_uploaded": {
-            "one": "uploaded %{count} photo",
-            "other": "uploaded %{count} photos"
+            "one": "",
+            "other": ""
           },
           "pois_added": {
-            "one": "added %{count} place",
-            "other": "added %{count} places"
+            "one": "",
+            "other": ""
           },
           "pois_edited": {
-            "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "one": "",
+            "other": ""
           },
           "pois_marked": {
-            "one": "marked %{count} place",
-            "other": "marked %{count} places"
+            "one": "",
+            "other": ""
           },
-          "text": "You have"
+          "text": ""
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
-        "title": "Overview"
+        "text_html": "",
+        "title": ""
       },
       "widget": {
-        "categories": "Show category filter",
-        "center": "Map area",
-        "empty_center": "Search for center of map …",
-        "empty_provider": "Choose a Provider",
-        "height": "Height",
+        "categories": "",
+        "center": "",
+        "empty_center": "",
+        "empty_provider": "",
+        "height": "",
         "legends": {
-          "embed": "Embed code",
-          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
-          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
-          "preview": "Preview",
+          "embed": "",
+          "embed_explanation": "",
+          "general": "",
+          "preview": "",
           "settings": "Definições"
         },
-        "providers": "Provider",
-        "title": "Widget",
-        "width": "Width"
+        "providers": "",
+        "title": "",
+        "width": ""
       }
     }
   },

@@ -13,10 +13,9 @@ pt_PT:
     send: Enviar
     save: Gravar
     cancel: Cancelar
+    next: ''
   errors:
     models:
       node:
         website:
           invalid: "O endreço da página internet não é válido."
-        phone:
-          invalid: "O número de telefone não é válido. Deve ter o formato seguinte: +49 30 234567"

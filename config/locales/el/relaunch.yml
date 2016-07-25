@@ -1,3 +1,4 @@
+---
 el:
   activerecord:
     attributes:
@@ -31,6 +32,9 @@ el:
       projects: Έργα
     toolbar:
       categories: Κατηγορίες
+    meta:
+      description: ''
+      title: ''
   home:
     index:
       overlay:
@@ -40,11 +44,36 @@ el:
         headline: 'Σημανση και βρείτε προσβάσιμα από αναπηρικά αμαξίδια μέρη με το Wheelmap.org - σε όλο τον κόσμο και δωρεάν. Είναι εύκολο:'
         lookup: Αναζήτηση για ένα συγκεκριμένο μέρος
         secondary_headline: 'Το σύστημα φωτεινού σηματοδότη για να επισημάνετε την προσβασιμότητα δημόσιων χώρων με αναπηρικό καροτσάκι:'
+      embed_link: ''
+      zoom_alert: ''
   nodes:
     new:
       form:
+        title: ''
         legend: Περιοχή του χώρου
-        location: Κάντε κλικ στον χάρτη και τοποθετήστε το δείκτη στην ακριβή θέση.
+        location: ''
+        section:
+          name_category:
+            name: ''
+            title: ""
+          address:
+            name: Διεύθυνση
+            title: ''
+            help: ''
+          similar_nodes:
+            name: ''
+            title: ''
+            go_edit: ''
+            go_new: ''
+            empty: ''
+          accessibility:
+            name: ''
+            title: ''
+          contact:
+            name: Επικοινωνία
+            title: ''
+          overview:
+            title: ''
     node_data:
       address: 'Διεύθυνση:'
       contact_details: 'Πληροφορίες επικοινωνίας:'
@@ -75,6 +104,7 @@ el:
       share:
         email: Email
         facebook: Facebook
+        text: ''
         twitter: Twitter
   search:
     index:
@@ -93,16 +123,54 @@ el:
           one: '%{count} αποτελέσμα:'
           other: '%{count} αποτελέσματα:'
     timeout:
+      headline: ''
       info: Η υπηρεσία αναζήτησης δεν ήταν διαθέσιμη προσωρινά.
       repeat_search: Επανάληψη αναζήτησης
   users:
     profile:
       newsletter:
         title: Ενημερωτικό Δελτίο
+        text: ''
+        label: ''
+      show:
+        title: ''
+        text_html: ""
+        greeting:
+          anonymously: ''
+          personalized: ''
+        overview:
+          text: ''
+          pois_marked:
+            one: ''
+            other: ''
+          pois_added:
+            one: ''
+            other: ''
+          pois_edited:
+            one: ''
+            other: ''
+          photos_uploaded:
+            one: ''
+            other: ''
       photos:
         title: Φωτογραφίες
+        empty: ''
       edit:
         title: προφίλ
+        legends:
+          user_data: ''
       widget:
+        title: ''
+        height: ''
+        width: ''
+        center: ''
+        categories: ''
+        providers: ''
+        empty_provider: ''
+        empty_center: ''
         legends:
           settings: 'Ρυθμίσεις '
+          preview: ''
+          embed: ''
+          embed_explanation: ''
+          general: ''

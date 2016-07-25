@@ -1,3 +1,4 @@
+---
 nb:
   activerecord:
     attributes:
@@ -7,8 +8,21 @@ nb:
         address: Adresse
         website: Nettside
         phone: Telefon
+        note: ''
         address_street: Gate
+        address_housenumber: ''
+        address_postcode: ''
         address_city: By
+  faq:
+    answers:
+      0: ''
+      1: ''
+      2: ''
+    headline: ''
+    questions:
+      0: ''
+      1: ''
+      2: ''
   header:
     navigation:
       about_wheelmap: Om Wheelmap
@@ -18,6 +32,9 @@ nb:
       projects: Bli aktiv
     toolbar:
       categories: Kategorier
+    meta:
+      description: ''
+      title: ''
   home:
     index:
       overlay:
@@ -27,21 +44,133 @@ nb:
         headline: 'Merk og finn rullestol tilgjenglige steder med Wheelmap.org - verdenrundt helt gratis. Det er enkelt'
         lookup: Søk etter et bestemt sted
         secondary_headline: 'Vårt trafikk lys system for å merke rullestol tiljgenligheten av offentlig steder'
+      embed_link: ''
+      zoom_alert: ''
   nodes:
+    new:
+      form:
+        title: ''
+        legend: ''
+        location: ''
+        section:
+          name_category:
+            name: ''
+            title: ""
+          address:
+            name: Adresse
+            title: ''
+            help: ''
+          similar_nodes:
+            name: ''
+            title: ''
+            go_edit: ''
+            go_new: ''
+            empty: ''
+          accessibility:
+            name: ''
+            title: ''
+          contact:
+            name: Kontakt
+            title: ''
+          overview:
+            title: ''
+    node_data:
+      address: ''
+      contact_details: ''
     node_edit:
       details: Detaljer
       edit: Rediger
+    node_map:
+      map: ''
+    node_note:
+      comment: ''
+    node_photos:
+      add: ''
+      photos_of_this_place: ''
+      upload: ''
+    node_similar:
+      similar: ''
+    node_status:
+      accessible_toilet: ''
+      premium: ''
+      wheelchair_accessibility: ''
+    node_streetview:
+      streetview: ''
     show:
+      header:
+        meta:
+          description: ''
+          title: ''
       share:
         email: Email
         facebook: Facebook
+        text: ''
         twitter: Twitter
+  search:
+    index:
+      no-results:
+        headline: ''
+        hint:
+          example: ''
+          info: ''
+          work_in_progress: ''
+        try_this:
+          address: ''
+          intro: ''
+          spell_check: ''
+      results:
+        ticker:
+          one: ''
+          other: ''
+    timeout:
+      headline: ''
+      info: ''
+      repeat_search: ''
   users:
     profile:
       newsletter:
         title: Nyhetsbrev
+        text: ''
+        label: ''
+      show:
+        title: ''
+        text_html: ""
+        greeting:
+          anonymously: ''
+          personalized: ''
+        overview:
+          text: ''
+          pois_marked:
+            one: ''
+            other: ''
+          pois_added:
+            one: ''
+            other: ''
+          pois_edited:
+            one: ''
+            other: ''
+          photos_uploaded:
+            one: ''
+            other: ''
       photos:
         title: Photos
+        empty: ''
+      edit:
+        title: ''
+        legends:
+          user_data: ''
       widget:
+        title: ''
+        height: ''
+        width: ''
+        center: ''
+        categories: ''
+        providers: ''
+        empty_provider: ''
+        empty_center: ''
         legends:
           settings: Innstillinger
+          preview: ''
+          embed: ''
+          embed_explanation: ''
+          general: ''

@@ -13,10 +13,9 @@ hu:
     send: Küldés
     save: Mentés
     cancel: Mégsem
+    next: Tovább
   errors:
     models:
       node:
         website:
           invalid: "Érvénytelen a weboldal címe."
-        phone:
-          invalid: "Érvénytelen telefonszám. A következő formátumban kell lennie: +36 30 2345678"

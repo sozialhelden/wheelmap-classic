@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
   "actions": {
     "cancel": "Отменить",
-    "next": "Next",
+    "next": "Далее",
     "save": "Сохранить",
     "send": "Отправить"
   },
@@ -664,9 +664,6 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
     },
     "models": {
       "node": {
-        "phone": {
-          "invalid": "Неверный формат телефонного номера. Он должен иметь следующий вид: +49 30 234567"
-        },
         "website": {
           "invalid": "Неверный формат адреса сайта."
         }
@@ -873,7 +870,7 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
         "help": "Доступно ли на кресле-коляске? (Справка)",
         "more": "Подробней ..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": ""
     }
   },
   "how?": "Как?",
@@ -956,37 +953,37 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
     "new": {
       "form": {
         "legend": "Расположение места",
-        "location": "Нажмите на карту и поместите маркер в точную позицию.",
+        "location": "",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "",
+            "title": ""
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
-            "name": "Address",
-            "title": "Where is the place?"
+            "help": "",
+            "name": "Адрес",
+            "title": ""
           },
           "contact": {
-            "name": "Contact",
-            "title": "Other contact information"
+            "name": "Контакты",
+            "title": ""
           },
           "name_category": {
-            "name": "Name and category",
-            "title": "Give us some initial information about your place:"
+            "name": "",
+            "title": ""
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": ""
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "",
+            "go_edit": "",
+            "go_new": "",
+            "name": "",
+            "title": ""
           }
         },
-        "title": "Add a place"
+        "title": ""
       },
       "header": {
         "title": "Новое место | wheelmap.org"
@@ -1198,25 +1195,19 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
       "government": {
         "courthouse": "Суд",
         "embassy": "Посольство",
-        "employment_agency": "Кадровое агентство",
         "government": "Государственное учреждение",
         "police": "Полиция",
         "public_building": "Общественное здание",
         "townhall": "Администрация"
       },
       "health": {
-        "alternative": "Врач практикующий нетрадиционную медицину",
         "dentist": "Стоматолог",
         "doctors": "Врач",
         "hearing_aids": "Продажа слуховых аппаратов",
         "hospital": "Больница",
         "medical_supply": "Медикаменты",
-        "occupational_therapist": "Специалист по гигиене труда",
         "pharmacy": "Аптека",
-        "physiotherapist": "Физиотерапевт",
-        "psychotherapist": "Психотерапевт",
         "social_facility": "Социальный центр",
-        "speech_therapist": "Логопед",
         "veterinary": "Ветеринар"
       },
       "leisure": {
@@ -1226,24 +1217,19 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
         "cinema": "Кинотеатр",
         "community_centre": "Общественный центр",
         "gallery": "Галерея",
-        "massage": "Массажный и спа-салон",
         "nightclub": "Ночной клуб",
         "playground": "Детская площадка",
         "sauna": "Сауна",
         "stripclub": "Стрипклуб",
-        "tattoo": "Тату салон",
         "theatre": "Театр",
         "zoo": "Зоопарк"
       },
       "misc": {
-        "association": "Некоммерческая организация",
         "company": "Компания (офис)",
         "estate_agent": "Агентство недвижимости",
         "insurance": "Страхование",
         "lawyer": "Юрист",
-        "ngo": "Общественная организация",
         "place_of_worship": "Место поклонения",
-        "political_party": "Офис политической партии",
         "toilets": "Туалет"
       },
       "money_post": {
@@ -1279,8 +1265,6 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
       },
       "shopping": {
         "alcohol": "Спиртные напитки",
-        "antiques": "Антикварный магазин",
-        "art": "Произведения искусства",
         "bakery": "Кондитерская",
         "beauty": "Салон красоты",
         "beverages": "Напитки",
@@ -1294,32 +1278,23 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
         "computer": "Компьютер",
         "confectionery": "Магазин сладостей",
         "convenience": "Удобства",
-        "copyshop": "Копировальный центр",
         "deli": "Гастроном",
         "department_store": "Универмаг",
         "doityourself": "Сделай сам",
         "dry_cleaning": "Химчистка",
         "electronics": "Электроника",
-        "erotic": "Секс-шоп",
         "fabric": "Магазин тканей",
         "farm_shop": "Магазин фермерских продуктов",
         "florist": "Флорист",
-        "funeral_directors": "Ритуальные услуги",
         "furniture": "Мебель",
         "garden_centre": "Садовый центр",
         "gift": "Магазин \"Подарки\"",
-        "greengrocer": "Фрукты/овощи",
         "hairdresser": "Парикмахер",
         "hardware": "Аппаратура",
-        "interior_decoration": "Предметы интерьера",
         "jewelry": "Ювелирные изделия",
         "kiosk": "Киоск",
         "laundry": "Прачечная",
         "mall": "Торговый центр",
-        "mobile_phone": "Мобильные телефоны",
-        "music": "Музыкальный магазин",
-        "musical_instrument": "Магазин музыкальных инструментов",
-        "newsagent": "Газеты/журналы",
         "optician": "Оптика",
         "organic": "Магазин экологических продуктов",
         "outdoor": "Товары для активного отдыха",
@@ -1330,12 +1305,8 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
         "sports": "Спорт",
         "stationery": "Канцелярские товары",
         "supermarket": "Супермаркет",
-        "tailor": "Портной",
-        "tea": "Чайный магазин",
-        "tobacco": "Табачный магазин",
         "toys": "Магазин игрушек",
         "travel_agency": "Туристическое агентство",
-        "variety_store": "Магазин с фиксированной ценой",
         "video": "Видеопрокат"
       },
       "sport": {

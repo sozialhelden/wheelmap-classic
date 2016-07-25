@@ -1,3 +1,21 @@
 lv:
+  models:
+    category:
+      prompt: ""
+    node_type:
+      prompt: ""
+    node:
+      info_edit_position: ""
+      mail:
+        subject: ""
+        body: ""
   actions:
+    send: ''
     save: Saglabāt
+    cancel: ''
+    next: ''
+  errors:
+    models:
+      node:
+        website:
+          invalid: ""

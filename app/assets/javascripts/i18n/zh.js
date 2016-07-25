@@ -1,10 +1,10 @@
 I18n.translations || (I18n.translations = {});
 I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
   "actions": {
-    "cancel": "Cancel",
-    "next": "Next",
+    "cancel": "",
+    "next": "",
     "save": "保存",
-    "send": "Send"
+    "send": ""
   },
   "active_admin": {
     "access_denied": {
@@ -183,16 +183,16 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
   "activerecord": {
     "attributes": {
       "poi": {
-        "address": "Address",
-        "address_city": "City",
-        "address_housenumber": "House number",
-        "address_postcode": "Postcode",
-        "address_street": "Street",
-        "name": "Name",
-        "note": "Note",
-        "phone": "Phone",
-        "type": "Type",
-        "website": "Website"
+        "address": "",
+        "address_city": "",
+        "address_housenumber": "",
+        "address_postcode": "",
+        "address_street": "",
+        "name": "",
+        "note": "",
+        "phone": "",
+        "type": "",
+        "website": ""
       },
       "user": {
         "first_name": "名",
@@ -639,7 +639,7 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
     "models": {
       "node": {
         "website": {
-          "invalid": "Website address is not valid."
+          "invalid": ""
         }
       }
     },
@@ -653,15 +653,15 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
   },
   "faq": {
     "answers": {
-      "0": "You can always change the marking of a place yourself. Just choose the right marking and \"Save\" - done!",
-      "1": "As a logged in user you can add / correct all the details of a place. Click on \"Edit\" and correct or add information in the mask.",
-      "2": "You can add further information (e.g. \"This place has a mobile ramp\") in the comment section. Click on \"Edit\" and \"Add comment\"."
+      "0": "",
+      "1": "",
+      "2": ""
     },
-    "headline": "Is there a problem with this place?",
+    "headline": "",
     "questions": {
-      "0": "The marking is wrong.",
-      "1": "The details of the place are incorrect or missing.",
-      "2": "I have more information about this place."
+      "0": "",
+      "1": "",
+      "2": ""
     }
   },
   "flash": {
@@ -736,17 +736,17 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
+      "description": "",
       "homepage": "主页",
       "keywords": "寻找轮椅通道地点的标志",
       "search": "搜索",
-      "title": "Wheelmap.org"
+      "title": ""
     },
     "navigation": {
-      "about_wheelmap": "About Wheelmap",
+      "about_wheelmap": "",
       "blog": "博客",
-      "choose_language": "Choose language",
-      "contact": "Contact",
+      "choose_language": "",
+      "contact": "",
       "feedback": "反馈",
       "home": "开始",
       "how_to_add_a_place": "我怎样添加位置",
@@ -754,11 +754,11 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
       "logged_in_as": "以：登录",
       "login": "登录",
       "logout": "注销",
-      "map": "Map",
+      "map": "",
       "newsletter": "简讯",
       "press": "出版物",
       "profile": "Profile",
-      "projects": "Projects",
+      "projects": "",
       "suggestions": "建议",
       "what_is_barrier_free": "“轮椅通道”是什么意思",
       "what_is_wheelmap": "What is Wheelmap?"
@@ -772,7 +772,7 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
     "tagline": "轮椅地图标志",
     "title": "Find wheelchair accessible places",
     "toolbar": {
-      "categories": "Categories"
+      "categories": ""
     }
   },
   "helpers": {
@@ -799,7 +799,7 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "",
       "filter": {
         "category": "选择目录",
         "deselect_all": "Deselect all",
@@ -822,12 +822,12 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
         }
       },
       "overlay": {
-        "button": "Okay, let’s go!",
-        "categories": "Filter places by categories",
-        "filter": "Filter places by wheelchair accessibility",
-        "headline": "Mark and find wheelchair accessible places with Wheelmap.org - worldwide and for free. It’s easy:",
-        "lookup": "Search for a specific place",
-        "secondary_headline": "Our traffic light system to mark the wheelchair accessibility of public places:"
+        "button": "",
+        "categories": "",
+        "filter": "",
+        "headline": "",
+        "lookup": "",
+        "secondary_headline": ""
       },
       "popup": {
         "form": {
@@ -840,7 +840,7 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
         "help": "轮椅可通过？（帮助）",
         "more": "更多..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": ""
     }
   },
   "how?": "怎么样",
@@ -871,17 +871,17 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
   },
   "models": {
     "category": {
-      "prompt": "Choose a category"
+      "prompt": ""
     },
     "node": {
-      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
+      "info_edit_position": "",
       "mail": {
-        "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
-        "subject": "[Wheelmap] Problem with %{headline}"
+        "body": "",
+        "subject": ""
       }
     },
     "node_type": {
-      "prompt": "Choose a type"
+      "prompt": ""
     }
   },
   "node": {
@@ -922,38 +922,38 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
     },
     "new": {
       "form": {
-        "legend": "Location of the place",
-        "location": "Please click on the map where the place is located!",
+        "legend": "",
+        "location": "",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "",
+            "title": ""
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
-            "name": "Address",
-            "title": "Where is the place?"
+            "help": "",
+            "name": "地址",
+            "title": ""
           },
           "contact": {
-            "name": "Contact",
-            "title": "Other contact information"
+            "name": "",
+            "title": ""
           },
           "name_category": {
-            "name": "Name and category",
-            "title": "Give us some initial information about your place:"
+            "name": "",
+            "title": ""
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": ""
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "",
+            "go_edit": "",
+            "go_new": "",
+            "name": "",
+            "title": ""
           }
         },
-        "title": "Add a place"
+        "title": ""
       },
       "header": {
         "title": "新地点| wheelmap.org"
@@ -970,40 +970,40 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
       }
     },
     "node_data": {
-      "address": "Address:",
-      "contact_details": "Contact details:"
+      "address": "",
+      "contact_details": ""
     },
     "node_edit": {
-      "details": "Details",
-      "edit": "Edit"
+      "details": "",
+      "edit": ""
     },
     "node_map": {
-      "map": "Map:"
+      "map": ""
     },
     "node_note": {
-      "comment": "Comment:"
+      "comment": ""
     },
     "node_photos": {
-      "add": "Add",
-      "photos_of_this_place": "Photos of this place:",
-      "upload": "Upload"
+      "add": "",
+      "photos_of_this_place": "",
+      "upload": ""
     },
     "node_similar": {
-      "similar": "Similar places: %{name}"
+      "similar": ""
     },
     "node_status": {
-      "accessible_toilet": "Wheelchair accessible toilet:",
-      "premium": "%{name} says: this place is",
-      "wheelchair_accessibility": "Wheelchair accessibility:"
+      "accessible_toilet": "",
+      "premium": "",
+      "wheelchair_accessibility": ""
     },
     "node_streetview": {
-      "streetview": "Streetview:"
+      "streetview": ""
     },
     "show": {
       "header": {
         "meta": {
-          "description": "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.",
-          "title": "This place is on Wheelmap.org: %{name}"
+          "description": "",
+          "title": ""
         },
         "title": "地点：%{node} | wheelmap.org"
       },
@@ -1016,9 +1016,9 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
       "more_data_from": "There is more information about this place, validated by:",
       "share": {
         "email": "电子邮件",
-        "facebook": "Facebook",
-        "text": "I found this place on Wheelmap.org: %{name}",
-        "twitter": "Twitter"
+        "facebook": "",
+        "text": "",
+        "twitter": ""
       },
       "show-in-osm": "OpenStreetMap"
     },
@@ -1118,9 +1118,9 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
       "government": "政府",
       "health": "健康",
       "leisure": "休闲",
-      "misc": "Miscellaneous",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "misc": "",
+      "money_post": "",
+      "public_transfer": "",
       "shopping": "购物",
       "sport": "体育",
       "tourism": "旅游",
@@ -1133,7 +1133,7 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
         "camp_site": "露营网页",
         "caravan_site": "篷车场所",
         "chalet": "农舍",
-        "dormitory": "Dormitory",
+        "dormitory": "",
         "guest_house": "招待所",
         "hostel": "青年旅社",
         "hotel": "宾馆",
@@ -1141,7 +1141,7 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
       },
       "education": {
         "college": "学院",
-        "driving_school": "Driving school",
+        "driving_school": "",
         "kindergarten": "幼儿园",
         "library": "图书馆",
         "museum": "博物馆",
@@ -1154,21 +1154,21 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
         "cafe": "咖啡店",
         "drinking_water": "饮用水",
         "fast_food": "快餐",
-        "ice_cream": "Ice cream parlour",
+        "ice_cream": "",
         "pub": "酒吧",
         "restaurant": "餐馆"
       },
       "government": {
         "courthouse": "法院",
         "embassy": "大使馆",
-        "government": "Government agency",
+        "government": "",
         "police": "警察",
         "public_building": "公共建筑",
-        "townhall": "Town hall"
+        "townhall": ""
       },
       "health": {
-        "dentist": "Dentist",
-        "doctors": "Doctor",
+        "dentist": "",
+        "doctors": "",
         "hearing_aids": "助听器经销商",
         "hospital": "医院",
         "medical_supply": "医药用品",
@@ -1179,9 +1179,9 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
       "leisure": {
         "arena": "竞技场",
         "brothel": "妓院",
-        "casino": "Casino",
+        "casino": "",
         "cinema": "影院",
-        "community_centre": "Community centre",
+        "community_centre": "",
         "gallery": "展厅",
         "nightclub": "夜总会",
         "playground": "活动场所",
@@ -1192,8 +1192,8 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
       },
       "misc": {
         "company": "公司（办公室）",
-        "estate_agent": "Real estate agent",
-        "insurance": "Insurance",
+        "estate_agent": "",
+        "insurance": "",
         "lawyer": "律师",
         "place_of_worship": "教堂",
         "toilets": "厕所"
@@ -1209,7 +1209,7 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
         "aerodrome": "机场",
         "bicycle_parking": "单车停放",
         "bicycle_rental": "单车出租",
-        "boatyard": "Boat yard",
+        "boatyard": "",
         "bus_station": "公共汽车站",
         "bus_stop": "公共汽车站",
         "cable_car": "缆车",
@@ -1232,51 +1232,51 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
       "shopping": {
         "alcohol": "酒类",
         "bakery": "面包店",
-        "beauty": "Beauty salon",
+        "beauty": "",
         "beverages": "饮料",
         "bicycle": "单车店",
         "books": "书籍",
         "butcher": "肉店",
         "car_repair": "汽车修理",
         "car_shop": "车行",
-        "chemist": "Chemist / Drugstore",
+        "chemist": "",
         "clothes": "服装",
         "computer": "电脑",
-        "confectionery": "Candy store",
+        "confectionery": "",
         "convenience": "方便",
-        "deli": "Delicatessen",
+        "deli": "",
         "department_store": "百货商店",
         "doityourself": "自己动手",
         "dry_cleaning": "干洗",
         "electronics": "电子产品",
-        "fabric": "Fabric shop",
-        "farm_shop": "Farm shop",
+        "fabric": "",
+        "farm_shop": "",
         "florist": "花店",
         "furniture": "家具",
-        "garden_centre": "Garden centre",
-        "gift": "Gift shop",
+        "garden_centre": "",
+        "gift": "",
         "hairdresser": "理发师",
         "hardware": "硬件",
-        "jewelry": "Jewelry",
+        "jewelry": "",
         "kiosk": "书报亭",
         "laundry": "洗衣店",
         "mall": "购物中心",
         "optician": "验光师",
-        "organic": "Organic shop",
-        "outdoor": "Outdoor supply",
-        "pet": "Pet shop",
+        "organic": "",
+        "outdoor": "",
+        "pet": "",
         "photo": "照片",
         "second_hand": "二手",
         "shoes": "鞋子",
         "sports": "体育",
         "stationery": "文具店",
         "supermarket": "超市",
-        "toys": "Toys",
-        "travel_agency": "Travel agency",
+        "toys": "",
+        "travel_agency": "",
         "video": "影像出租店"
       },
       "sport": {
-        "pitch": "Sports field",
+        "pitch": "",
         "sports_centre": "体育中心",
         "stadium": "体育场",
         "swimming": "游泳",
@@ -1390,22 +1390,22 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
   "search": {
     "index": {
       "no-results": {
-        "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
+        "headline": "",
         "hint": {
-          "example": "<strong>Example:</strong> London, United Kingdom",
-          "info": "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!",
-          "work_in_progress": "We work hard to make searching for places easier and more intuitive in the future."
+          "example": "",
+          "info": "",
+          "work_in_progress": ""
         },
         "try_this": {
-          "address": "Please provide more <strong>address details</strong>.",
-          "intro": "Try this:",
-          "spell_check": "Check the <strong>spelling</strong> of your input."
+          "address": "",
+          "intro": "",
+          "spell_check": ""
         }
       },
       "results": {
         "ticker": {
           "one": "%{count} result:",
-          "other": "%{count} results:"
+          "other": ""
         }
       },
       "search": {
@@ -1414,9 +1414,9 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
       }
     },
     "timeout": {
-      "headline": "Sorry, something went wrong",
-      "info": "Our search service was temporarily not available.",
-      "repeat_search": "Retry search"
+      "headline": "",
+      "info": "",
+      "repeat_search": ""
     }
   },
   "splash": {
@@ -1496,62 +1496,62 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
     "profile": {
       "edit": {
         "legends": {
-          "user_data": "Your account information"
+          "user_data": ""
         },
-        "title": "Profile"
+        "title": ""
       },
       "newsletter": {
-        "label": "Yes, keep me updated about Wheelmap.",
-        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
+        "label": "",
+        "text": "",
         "title": "简讯"
       },
       "photos": {
-        "empty": "You haven't uploaded any photos yet.",
-        "title": "Photos"
+        "empty": "",
+        "title": ""
       },
       "show": {
         "greeting": {
-          "anonymously": "Hello there",
-          "personalized": "Hello %{name}"
+          "anonymously": "",
+          "personalized": ""
         },
         "overview": {
           "photos_uploaded": {
             "one": "uploaded %{count} photo",
-            "other": "uploaded %{count} photos"
+            "other": ""
           },
           "pois_added": {
             "one": "added %{count} place",
-            "other": "added %{count} places"
+            "other": ""
           },
           "pois_edited": {
             "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "other": ""
           },
           "pois_marked": {
             "one": "marked %{count} place",
-            "other": "marked %{count} places"
+            "other": ""
           },
-          "text": "You have"
+          "text": ""
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
-        "title": "Overview"
+        "text_html": "",
+        "title": ""
       },
       "widget": {
-        "categories": "Show category filter",
-        "center": "Map area",
-        "empty_center": "Search for center of map …",
-        "empty_provider": "Choose a Provider",
-        "height": "Height",
+        "categories": "",
+        "center": "",
+        "empty_center": "",
+        "empty_provider": "",
+        "height": "",
         "legends": {
-          "embed": "Embed code",
-          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
-          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
-          "preview": "Preview",
-          "settings": "Settings"
+          "embed": "",
+          "embed_explanation": "",
+          "general": "",
+          "preview": "",
+          "settings": ""
         },
-        "providers": "Provider",
-        "title": "Widget",
-        "width": "Width"
+        "providers": "",
+        "title": "",
+        "width": ""
       }
     }
   },

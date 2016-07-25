@@ -1,3 +1,4 @@
+---
 pl:
   poi:
     category:
@@ -8,6 +9,8 @@ pl:
       health: Szpital lub przychodnia
       leisure: Czas wolny
       misc: Różne
+      money_post: ""
+      public_transfer: ""
       shopping: Zakupy
       sport: Sport
       tourism: Turystyka
@@ -47,8 +50,10 @@ pl:
         government: "Agencja rządowa"
         police: Policja
         public_building: "Budynek użyteczności publicznej"
+        townhall: ''
       health:
         dentist: Stomatolog
+        doctors: ''
         hearing_aids: "Sklep z aparatami słuchowymi"
         hospital: Szpital
         medical_supply: "Zaopatrzenie medyczne"
@@ -60,6 +65,7 @@ pl:
         brothel: Agencja towarzyska
         casino: Kasyno
         cinema: Kino
+        community_centre: ""
         gallery: Galeria
         nightclub: Klub nocny
         playground: Plac zabaw
@@ -84,6 +90,7 @@ pl:
         aerodrome: Lotnisko
         bicycle_parking: "Parking dla rowerów"
         bicycle_rental: "Wypożyczalnia rowerów"
+        boatyard: ''
         bus_station: "Dworzec autobusowy"
         bus_stop: "Przystanek autobusowy"
         cable_car: "Kolejka linowa"
@@ -112,6 +119,7 @@ pl:
         butcher: Rzeźnik
         car_repair: "Warsztat samochodowy"
         car_shop: "Salon samochodowy"
+        chemist: ''
         clothes: Sklep z ubraniami
         computer: Komputer
         confectionery: "Cukiernia"
@@ -125,6 +133,7 @@ pl:
         farm_shop: "Żywność ekologiczna"
         florist: Kwiaciarnia
         furniture: Sklep z meblami
+        garden_centre: ""
         gift: "Sklep z prezentami"
         hairdresser: Fryzjer
         hardware: Hardware

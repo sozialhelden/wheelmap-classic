@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
   "actions": {
     "cancel": "Cancella",
-    "next": "Next",
+    "next": "Avanti",
     "save": "Salva",
     "send": "Invia"
   },
@@ -638,9 +638,6 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
     },
     "models": {
       "node": {
-        "phone": {
-          "invalid": "Il numero di telefono non è valido. Deve avere il formato seguente: +49 30 234567"
-        },
         "website": {
           "invalid": "L'indirizzo del sito non è valido."
         }
@@ -851,7 +848,7 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
         "help": "Accessibile in sedia a rotelle? (Aiuto)",
         "more": "più ..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": ""
     }
   },
   "how?": "Come?",
@@ -934,37 +931,37 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
     "new": {
       "form": {
         "legend": "Posizione del luogo ",
-        "location": "Clicca sulla mappa e metti il marker sulla posizione esatta.",
+        "location": "",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "",
+            "title": ""
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
-            "name": "Address",
-            "title": "Where is the place?"
+            "help": "",
+            "name": "Indirizzo",
+            "title": ""
           },
           "contact": {
-            "name": "Contact",
-            "title": "Other contact information"
+            "name": "Contatti",
+            "title": ""
           },
           "name_category": {
-            "name": "Name and category",
-            "title": "Give us some initial information about your place:"
+            "name": "",
+            "title": ""
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": ""
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "",
+            "go_edit": "",
+            "go_new": "",
+            "name": "",
+            "title": ""
           }
         },
-        "title": "Add a place"
+        "title": ""
       },
       "header": {
         "title": "Nuovo luogo | wheelmap.org "
@@ -1172,25 +1169,19 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
       "government": {
         "courthouse": "Tribunale",
         "embassy": "Ambasciata",
-        "employment_agency": "Agenzia di collocamento",
         "government": "Agenzia del Governo",
         "police": "Polizia",
         "public_building": "Edificio pubblico",
         "townhall": "Municipio"
       },
       "health": {
-        "alternative": "Professionista di medicina alternativa",
         "dentist": "Dentista",
         "doctors": "Dottore",
         "hearing_aids": "Apparecchio per l'udito",
         "hospital": "Ospedale",
         "medical_supply": "Rifornimento sanitario",
-        "occupational_therapist": "Terapista occupazionale",
         "pharmacy": "Farmacia",
-        "physiotherapist": "Fisioterapista",
-        "psychotherapist": "Psicoterapeuta",
         "social_facility": "Servizi sociali",
-        "speech_therapist": "Logopedista",
         "veterinary": "Ambulatorio Veterinario"
       },
       "leisure": {
@@ -1200,24 +1191,19 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
         "cinema": "Cinema",
         "community_centre": "Centro comunitario",
         "gallery": "Galleria d'arte",
-        "massage": "Massaggi spa",
         "nightclub": "Night club",
         "playground": "Parco giochi",
         "sauna": "Sauna",
         "stripclub": "Strip club",
-        "tattoo": "Negozio di tatuaggi",
         "theatre": "Teatro",
         "zoo": "Zoo"
       },
       "misc": {
-        "association": "Associazione",
         "company": "Compagnia (Officio)\n",
         "estate_agent": "Agente Immobiliare",
         "insurance": "Assicurazione",
         "lawyer": "Avvocato",
-        "ngo": "Organizzazione non governativa",
         "place_of_worship": "Luogo di culto",
-        "political_party": "Ufficio di partito politico",
         "toilets": "Bagno pubblico"
       },
       "money_post": {
@@ -1253,8 +1239,6 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
       },
       "shopping": {
         "alcohol": "Bevande alcoliche",
-        "antiques": "Antiquario",
-        "art": "Negozio di galleria",
         "bakery": "Panetteria",
         "beauty": "Salone di Belleza",
         "beverages": "Bevande",
@@ -1268,32 +1252,23 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
         "computer": "Negozio di computers",
         "confectionery": "Dolci",
         "convenience": "Minimarket",
-        "copyshop": "Fotocopisteria",
         "deli": "Deli",
         "department_store": "Grande magazzino",
         "doityourself": "Fai da te",
         "dry_cleaning": "Lavanderia",
         "electronics": "Negozio d'elettronica",
-        "erotic": "Sexy shop",
         "fabric": "Negozio di Tessuti",
         "farm_shop": "Negozio di una Fattoria",
         "florist": "Fiorista",
-        "funeral_directors": "Onoranze funebri",
         "furniture": "Arredamento",
         "garden_centre": "Fioraio",
         "gift": "Negozio di Articoli da Regalo ",
-        "greengrocer": "Fruttivendolo",
         "hairdresser": "Parrucchiere",
         "hardware": "Ferramenta",
-        "interior_decoration": "Negozio di design degli interni",
         "jewelry": "Gioielleria",
         "kiosk": "Chiosco",
         "laundry": "Lavanderia",
         "mall": "Centro commerciale",
-        "mobile_phone": "Negozio di telefoni cellulari",
-        "music": "Negozio di dischi",
-        "musical_instrument": "Negozio di strumenti musicali",
-        "newsagent": "Edicola",
         "optician": "Ottico",
         "organic": "Negozio di Cibo Organico",
         "outdoor": "Negozio Outdoor",
@@ -1304,12 +1279,8 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
         "sports": "Sports",
         "stationery": "Cartoleria",
         "supermarket": "Supermercato",
-        "tailor": "Sarto",
-        "tea": "Negozio di the",
-        "tobacco": "Tabacchino",
         "toys": "Giocattoli",
         "travel_agency": "Agenzia di Viaggi",
-        "variety_store": "Discount",
         "video": "Negozio di video noleggio"
       },
       "sport": {

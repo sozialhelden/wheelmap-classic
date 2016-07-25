@@ -13,10 +13,9 @@ pt_BR:
     send: Enviar
     save: Salvar
     cancel: Deletar
+    next: Avançar
   errors:
     models:
       node:
         website:
           invalid: "Endereço de site não é válido."
-        phone:
-          invalid: "O número de telefone não é válido. Ele deveria ter um formato assim: +55 11 1234567."

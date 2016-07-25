@@ -13,10 +13,9 @@ cs:
     send: Odeslat
     save: Uložit
     cancel: Zrušit
+    next: ''
   errors:
     models:
       node:
         website:
           invalid: "Neplatná adresa webové stránky."
-        phone:
-          invalid: "Neplatné telefonní číslo. Číslo musí mít následující formát: +49 30 234567"

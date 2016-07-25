@@ -1,10 +1,10 @@
 I18n.translations || (I18n.translations = {});
 I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
   "actions": {
-    "cancel": "Cancel",
-    "next": "Next",
+    "cancel": "",
+    "next": "",
     "save": "Vista",
-    "send": "Send"
+    "send": ""
   },
   "active_admin": {
     "access_denied": {
@@ -183,16 +183,16 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
   "activerecord": {
     "attributes": {
       "poi": {
-        "address": "Address",
-        "address_city": "City",
-        "address_housenumber": "House number",
-        "address_postcode": "Postcode",
-        "address_street": "Street",
-        "name": "Name",
-        "note": "Note",
-        "phone": "Phone",
-        "type": "Type",
-        "website": "Website"
+        "address": "",
+        "address_city": "",
+        "address_housenumber": "",
+        "address_postcode": "",
+        "address_street": "",
+        "name": "",
+        "note": "",
+        "phone": "",
+        "type": "",
+        "website": ""
       },
       "user": {
         "first_name": "Given name",
@@ -639,7 +639,7 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
     "models": {
       "node": {
         "website": {
-          "invalid": "Website address is not valid."
+          "invalid": ""
         }
       }
     },
@@ -653,15 +653,15 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
   },
   "faq": {
     "answers": {
-      "0": "You can always change the marking of a place yourself. Just choose the right marking and \"Save\" - done!",
-      "1": "As a logged in user you can add / correct all the details of a place. Click on \"Edit\" and correct or add information in the mask.",
-      "2": "You can add further information (e.g. \"This place has a mobile ramp\") in the comment section. Click on \"Edit\" and \"Add comment\"."
+      "0": "",
+      "1": "",
+      "2": ""
     },
-    "headline": "Is there a problem with this place?",
+    "headline": "",
     "questions": {
-      "0": "The marking is wrong.",
-      "1": "The details of the place are incorrect or missing.",
-      "2": "I have more information about this place."
+      "0": "",
+      "1": "",
+      "2": ""
     }
   },
   "flash": {
@@ -736,17 +736,17 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
+      "description": "",
       "homepage": "Heim",
       "keywords": "hjólastóll aðgengi staðir finna leita merkja",
       "search": "Leita",
-      "title": "Wheelmap.org"
+      "title": ""
     },
     "navigation": {
-      "about_wheelmap": "About Wheelmap",
+      "about_wheelmap": "",
       "blog": "Blogg",
-      "choose_language": "Choose language",
-      "contact": "Contact",
+      "choose_language": "",
+      "contact": "",
       "feedback": "Athugasemdir",
       "home": "Byrja",
       "how_to_add_a_place": "Hvernig bæti ég við stöðum?",
@@ -754,11 +754,11 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
       "logged_in_as": "Innskráður sem:",
       "login": "Innskráning",
       "logout": "Útskráning",
-      "map": "Map",
+      "map": "",
       "newsletter": "Newsletter",
       "press": "Press",
       "profile": "Prófílnum",
-      "projects": "Projects",
+      "projects": "",
       "suggestions": "Uppástungur",
       "what_is_barrier_free": "Hvað þýðir \"hjólastólaaðgengilegt\"?",
       "what_is_wheelmap": "What is Wheelmap?"
@@ -772,7 +772,7 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
     "tagline": "Wheelmap logo",
     "title": "Find wheelchair accessible places",
     "toolbar": {
-      "categories": "Categories"
+      "categories": ""
     }
   },
   "helpers": {
@@ -799,7 +799,7 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "",
       "filter": {
         "category": "Flokkur:",
         "deselect_all": "Deselect all",
@@ -822,12 +822,12 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
         }
       },
       "overlay": {
-        "button": "Okay, let’s go!",
-        "categories": "Filter places by categories",
-        "filter": "Filter places by wheelchair accessibility",
-        "headline": "Mark and find wheelchair accessible places with Wheelmap.org - worldwide and for free. It’s easy:",
-        "lookup": "Search for a specific place",
-        "secondary_headline": "Our traffic light system to mark the wheelchair accessibility of public places:"
+        "button": "",
+        "categories": "",
+        "filter": "",
+        "headline": "",
+        "lookup": "",
+        "secondary_headline": ""
       },
       "popup": {
         "form": {
@@ -840,7 +840,7 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
         "help": "Hjólastólaaðgengilegt? (Hjálp)",
         "more": "meiri ..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": ""
     }
   },
   "how?": "How?",
@@ -871,17 +871,17 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
   },
   "models": {
     "category": {
-      "prompt": "Choose a category"
+      "prompt": ""
     },
     "node": {
-      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
+      "info_edit_position": "",
       "mail": {
-        "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
-        "subject": "[Wheelmap] Problem with %{headline}"
+        "body": "",
+        "subject": ""
       }
     },
     "node_type": {
-      "prompt": "Choose a type"
+      "prompt": ""
     }
   },
   "node": {
@@ -922,38 +922,38 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
     },
     "new": {
       "form": {
-        "legend": "Location of the place",
-        "location": "Please click on the map where the place is located!",
+        "legend": "",
+        "location": "",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "",
+            "title": ""
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
-            "name": "Address",
-            "title": "Where is the place?"
+            "help": "",
+            "name": "",
+            "title": ""
           },
           "contact": {
-            "name": "Contact",
-            "title": "Other contact information"
+            "name": "",
+            "title": ""
           },
           "name_category": {
-            "name": "Name and category",
-            "title": "Give us some initial information about your place:"
+            "name": "",
+            "title": ""
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": ""
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "",
+            "go_edit": "",
+            "go_new": "",
+            "name": "",
+            "title": ""
           }
         },
-        "title": "Add a place"
+        "title": ""
       },
       "header": {
         "title": "Nýr staður | wheelmap.org "
@@ -970,40 +970,40 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
       }
     },
     "node_data": {
-      "address": "Address:",
-      "contact_details": "Contact details:"
+      "address": "",
+      "contact_details": ""
     },
     "node_edit": {
-      "details": "Details",
-      "edit": "Edit"
+      "details": "",
+      "edit": ""
     },
     "node_map": {
-      "map": "Map:"
+      "map": ""
     },
     "node_note": {
-      "comment": "Comment:"
+      "comment": ""
     },
     "node_photos": {
-      "add": "Add",
-      "photos_of_this_place": "Photos of this place:",
-      "upload": "Upload"
+      "add": "",
+      "photos_of_this_place": "",
+      "upload": ""
     },
     "node_similar": {
-      "similar": "Similar places: %{name}"
+      "similar": ""
     },
     "node_status": {
-      "accessible_toilet": "Wheelchair accessible toilet:",
-      "premium": "%{name} says: this place is",
-      "wheelchair_accessibility": "Wheelchair accessibility:"
+      "accessible_toilet": "",
+      "premium": "",
+      "wheelchair_accessibility": ""
     },
     "node_streetview": {
-      "streetview": "Streetview:"
+      "streetview": ""
     },
     "show": {
       "header": {
         "meta": {
-          "description": "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.",
-          "title": "This place is on Wheelmap.org: %{name}"
+          "description": "",
+          "title": ""
         },
         "title": "Staður: %{node} | wheelmap.org"
       },
@@ -1016,9 +1016,9 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
       "more_data_from": "There is more information about this place, validated by:",
       "share": {
         "email": "Tölvupóstfang",
-        "facebook": "Facebook",
-        "text": "I found this place on Wheelmap.org: %{name}",
-        "twitter": "Twitter"
+        "facebook": "",
+        "text": "",
+        "twitter": ""
       },
       "show-in-osm": "OpenStreetMap"
     },
@@ -1116,11 +1116,11 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
       "education": "Menntun",
       "food": "Matur",
       "government": "Opinberar stofnanir",
-      "health": "Health",
+      "health": "",
       "leisure": "Frístundir",
-      "misc": "Miscellaneous",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "misc": "",
+      "money_post": "",
+      "public_transfer": "",
       "shopping": "Verslun",
       "sport": "Íþróttir",
       "tourism": "Ferðamennska",
@@ -1133,7 +1133,7 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
         "camp_site": "Tjaldsvæði",
         "caravan_site": "Tjaldsvæði fyrir hjólhýsi",
         "chalet": "Kofar",
-        "dormitory": "Dormitory",
+        "dormitory": "",
         "guest_house": "Gistihús",
         "hostel": "Hostel",
         "hotel": "Hótel",
@@ -1141,7 +1141,7 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
       },
       "education": {
         "college": "Menntaskóli",
-        "driving_school": "Driving school",
+        "driving_school": "",
         "kindergarten": "Leikskóli",
         "library": "Bókasafn",
         "museum": "Safn",
@@ -1154,47 +1154,47 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
         "cafe": "Kaffihús",
         "drinking_water": "Drykkjarvatn",
         "fast_food": "Skyndibiti",
-        "ice_cream": "Ice cream parlour",
+        "ice_cream": "",
         "pub": "Pöbb",
         "restaurant": "Veitingahús"
       },
       "government": {
         "courthouse": "Réttarhús",
         "embassy": "Sendiráð",
-        "government": "Government agency",
-        "police": "Police",
+        "government": "",
+        "police": "",
         "public_building": "Opinber bygging",
-        "townhall": "Town hall"
+        "townhall": ""
       },
       "health": {
-        "dentist": "Dentist",
-        "doctors": "Doctor",
-        "hearing_aids": "Hearing aid dealer",
+        "dentist": "",
+        "doctors": "",
+        "hearing_aids": "",
         "hospital": "Spítali",
-        "medical_supply": "Medical supplies",
+        "medical_supply": "",
         "pharmacy": "Apótek",
-        "social_facility": "Social facility",
+        "social_facility": "",
         "veterinary": "Dýralæknir"
       },
       "leisure": {
         "arena": "Svæði",
-        "brothel": "Brothel",
-        "casino": "Casino",
+        "brothel": "",
+        "casino": "",
         "cinema": "Bíóhús",
-        "community_centre": "Community centre",
+        "community_centre": "",
         "gallery": "Listasöfn",
         "nightclub": "Næturklúbbur",
-        "playground": "Playground",
+        "playground": "",
         "sauna": "Gufubað",
-        "stripclub": "Stripclub",
+        "stripclub": "",
         "theatre": "Leikhús",
         "zoo": "Dýragarður"
       },
       "misc": {
-        "company": "Company (Office)",
-        "estate_agent": "Real estate agent",
-        "insurance": "Insurance",
-        "lawyer": "Lawyer",
+        "company": "",
+        "estate_agent": "",
+        "insurance": "",
+        "lawyer": "",
         "place_of_worship": "Bænahús",
         "toilets": "Klósett"
       },
@@ -1209,7 +1209,7 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
         "aerodrome": "Flugvöllur",
         "bicycle_parking": "Reiðhjólastæði",
         "bicycle_rental": "Reiðhjólaleiga",
-        "boatyard": "Boat yard",
+        "boatyard": "",
         "bus_station": "Rútustöð",
         "bus_stop": "Strætó",
         "cable_car": "Dráttarbílar",
@@ -1232,51 +1232,51 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
       "shopping": {
         "alcohol": "Áfengi",
         "bakery": "Bakarí",
-        "beauty": "Beauty salon",
+        "beauty": "",
         "beverages": "Drykkir",
         "bicycle": "Hjólreiðaverslun",
         "books": "Bækur",
         "butcher": "Slátrari",
-        "car_repair": "Car repair",
-        "car_shop": "Car shop",
-        "chemist": "Chemist / Drugstore",
+        "car_repair": "",
+        "car_shop": "",
+        "chemist": "",
         "clothes": "Föt",
         "computer": "Tölvur",
-        "confectionery": "Candy store",
+        "confectionery": "",
         "convenience": "Þægindi",
-        "deli": "Delicatessen",
+        "deli": "",
         "department_store": "Sérvöruverslun",
         "doityourself": "Sjálfshjálparverslun",
         "dry_cleaning": "Efnalaug",
         "electronics": "Raftæki",
-        "fabric": "Fabric shop",
-        "farm_shop": "Farm shop",
+        "fabric": "",
+        "farm_shop": "",
         "florist": "Blómabúð",
         "furniture": "Húsgögn",
-        "garden_centre": "Garden centre",
-        "gift": "Gift shop",
+        "garden_centre": "",
+        "gift": "",
         "hairdresser": "Hársnyrting",
         "hardware": "Byggingavörur",
-        "jewelry": "Jewelry",
+        "jewelry": "",
         "kiosk": "Söluturn",
         "laundry": "Þvottahús",
         "mall": "Verslunarkeðjur",
         "optician": "Gleraugnaverslun",
-        "organic": "Organic shop",
-        "outdoor": "Outdoor supply",
-        "pet": "Pet shop",
-        "photo": "Photo",
-        "second_hand": "Second hand",
+        "organic": "",
+        "outdoor": "",
+        "pet": "",
+        "photo": "",
+        "second_hand": "",
         "shoes": "Skór",
-        "sports": "Sports",
-        "stationery": "Stationery",
+        "sports": "",
+        "stationery": "",
         "supermarket": "Matarverslun",
-        "toys": "Toys",
-        "travel_agency": "Travel agency",
-        "video": "Video rental store"
+        "toys": "",
+        "travel_agency": "",
+        "video": ""
       },
       "sport": {
-        "pitch": "Sports field",
+        "pitch": "",
         "sports_centre": "Íþróttabúð",
         "stadium": "Íþróttavellir",
         "swimming": "Sund",
@@ -1390,22 +1390,22 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
   "search": {
     "index": {
       "no-results": {
-        "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
+        "headline": "",
         "hint": {
-          "example": "<strong>Example:</strong> London, United Kingdom",
-          "info": "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!",
-          "work_in_progress": "We work hard to make searching for places easier and more intuitive in the future."
+          "example": "",
+          "info": "",
+          "work_in_progress": ""
         },
         "try_this": {
-          "address": "Please provide more <strong>address details</strong>.",
-          "intro": "Try this:",
-          "spell_check": "Check the <strong>spelling</strong> of your input."
+          "address": "",
+          "intro": "",
+          "spell_check": ""
         }
       },
       "results": {
         "ticker": {
-          "one": "%{count} result:",
-          "other": "%{count} results:"
+          "one": "",
+          "other": ""
         }
       },
       "search": {
@@ -1414,9 +1414,9 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
       }
     },
     "timeout": {
-      "headline": "Sorry, something went wrong",
-      "info": "Our search service was temporarily not available.",
-      "repeat_search": "Retry search"
+      "headline": "",
+      "info": "",
+      "repeat_search": ""
     }
   },
   "splash": {
@@ -1496,62 +1496,62 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
     "profile": {
       "edit": {
         "legends": {
-          "user_data": "Your account information"
+          "user_data": ""
         },
         "title": "Prófílnum"
       },
       "newsletter": {
-        "label": "Yes, keep me updated about Wheelmap.",
-        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
-        "title": "Newsletter"
+        "label": "",
+        "text": "",
+        "title": ""
       },
       "photos": {
-        "empty": "You haven't uploaded any photos yet.",
-        "title": "Photos"
+        "empty": "",
+        "title": ""
       },
       "show": {
         "greeting": {
-          "anonymously": "Hello there",
-          "personalized": "Hello %{name}"
+          "anonymously": "",
+          "personalized": ""
         },
         "overview": {
           "photos_uploaded": {
-            "one": "uploaded %{count} photo",
-            "other": "uploaded %{count} photos"
+            "one": "",
+            "other": ""
           },
           "pois_added": {
-            "one": "added %{count} place",
-            "other": "added %{count} places"
+            "one": "",
+            "other": ""
           },
           "pois_edited": {
-            "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "one": "",
+            "other": ""
           },
           "pois_marked": {
-            "one": "marked %{count} place",
-            "other": "marked %{count} places"
+            "one": "",
+            "other": ""
           },
-          "text": "You have"
+          "text": ""
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
-        "title": "Overview"
+        "text_html": "",
+        "title": ""
       },
       "widget": {
-        "categories": "Show category filter",
-        "center": "Map area",
-        "empty_center": "Search for center of map …",
-        "empty_provider": "Choose a Provider",
-        "height": "Height",
+        "categories": "",
+        "center": "",
+        "empty_center": "",
+        "empty_provider": "",
+        "height": "",
         "legends": {
-          "embed": "Embed code",
-          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
-          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
-          "preview": "Preview",
-          "settings": "Settings"
+          "embed": "",
+          "embed_explanation": "",
+          "general": "",
+          "preview": "",
+          "settings": ""
         },
-        "providers": "Provider",
-        "title": "Widget",
-        "width": "Width"
+        "providers": "",
+        "title": "",
+        "width": ""
       }
     }
   },

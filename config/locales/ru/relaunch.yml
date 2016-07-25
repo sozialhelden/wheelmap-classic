@@ -1,3 +1,4 @@
+---
 ru:
   activerecord:
     attributes:
@@ -44,11 +45,35 @@ ru:
         lookup: Поиск определённого места
         secondary_headline: 'Наша система светофора для оценки доступности общественных мест для колясочников:'
       embed_link: Показать на Wheelmap.org
+      zoom_alert: ''
   nodes:
     new:
       form:
+        title: ''
         legend: Расположение места
-        location: Нажмите на карту и поместите маркер в точную позицию.
+        location: ''
+        section:
+          name_category:
+            name: ''
+            title: ""
+          address:
+            name: Адрес
+            title: ''
+            help: ''
+          similar_nodes:
+            name: ''
+            title: ''
+            go_edit: ''
+            go_new: ''
+            empty: ''
+          accessibility:
+            name: ''
+            title: ''
+          contact:
+            name: Контакты
+            title: ''
+          overview:
+            title: ''
     node_data:
       address: 'Адрес:'
       contact_details: 'Контактная информация:'

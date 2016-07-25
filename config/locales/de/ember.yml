@@ -13,10 +13,9 @@ de:
     send: Absenden
     save: Speichern
     cancel: Abbrechen
+    next: Weiter
   errors:
     models:
       node:
         website:
           invalid: "Webseiten-URL ist nicht korrekt."
-        phone:
-          invalid: "Telefonnumer ist nicht korrekt. Die Telefonnummer muss im folgenden Format eingegeben werden: +49 30 234567"

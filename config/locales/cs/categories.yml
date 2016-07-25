@@ -1,3 +1,4 @@
+---
 cs:
   poi:
     category:
@@ -7,6 +8,9 @@ cs:
       government: Vláda
       health: Zdraví
       leisure: Volný čas
+      misc: ''
+      money_post: ""
+      public_transfer: ""
       shopping: Nákupy
       sport: Sport
       tourism: Cestování
@@ -46,8 +50,10 @@ cs:
         government: "Vládní agentura"
         police: Policie
         public_building: "Veřejná budova"
+        townhall: ''
       health:
         dentist: Zubař
+        doctors: ''
         hearing_aids: "Dodavatel naslouchacích pomůcek"
         hospital: Nemocnice
         medical_supply: "Medicínské vybavení"
@@ -59,6 +65,7 @@ cs:
         brothel: Nevěstinec
         casino: Kasino
         cinema: Kino
+        community_centre: ""
         gallery: Galerie
         nightclub: Noční klub
         playground: Hřiště
@@ -83,6 +90,7 @@ cs:
         aerodrome: Letiště
         bicycle_parking: "Stojan na kola"
         bicycle_rental: "Půjčovna kol"
+        boatyard: ''
         bus_station: "Autobusová stanice"
         bus_stop: "Zastávka autobusu"
         cable_car: "Lanovka"
@@ -111,6 +119,7 @@ cs:
         butcher: Řeznictví
         car_repair: "Autoservis"
         car_shop: "Automobily"
+        chemist: ''
         clothes: Oblečení
         computer: Počítače
         confectionery: "Cukrárna"
@@ -124,6 +133,7 @@ cs:
         farm_shop: "Farmářský obchod"
         florist: Květinářství
         furniture: Nábytek
+        garden_centre: ""
         gift: "Suvenýry"
         hairdresser: Kadeřnictví
         hardware: Železářství

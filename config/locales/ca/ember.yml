@@ -13,10 +13,9 @@ ca:
     send: Enviar
     save: Desar
     cancel: Cancel·lar
+    next: ''
   errors:
     models:
       node:
         website:
           invalid: "L'adreça web no és vàlida"
-        phone:
-          invalid: "El número de telèfon no és vàlid. Ha de tenir el següent format +34 67 734567"

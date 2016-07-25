@@ -1,3 +1,4 @@
+---
 zh_TW:
   activerecord:
     attributes:
@@ -9,11 +10,14 @@ zh_TW:
         phone: 電話
         note: 筆記
         address_street: 街道
+        address_housenumber: ''
         address_postcode: 郵遞區號
         address_city: 城市
   faq:
     answers:
+      0: ''
       1: 登入後，你可以新增/修改所有地點的細節。請點選 "編輯" 並在空格修改或新增資訊。
+      2: ''
     headline: 這個地點有什麼不對嗎?
     questions:
       0: 這個標示是錯的。
@@ -28,6 +32,9 @@ zh_TW:
       projects: 參與這個專案
     toolbar:
       categories: 分類
+    meta:
+      description: ''
+      title: ''
   home:
     index:
       overlay:
@@ -37,11 +44,36 @@ zh_TW:
         headline: '透過 Wheelmap.org 標示和尋找輪椅無障礙空間 - 全球化而免費。這並不困難：'
         lookup: 搜尋特定地點
         secondary_headline: '我們以類似「紅綠燈」的方式標示公共空間的輪椅無障礙程度：'
+      embed_link: ''
+      zoom_alert: ''
   nodes:
     new:
       form:
+        title: ''
         legend: 地點的位置
-        location: 請點選地圖並標誌在確切的位置。
+        location: ''
+        section:
+          name_category:
+            name: ''
+            title: ""
+          address:
+            name: 地址
+            title: ''
+            help: ''
+          similar_nodes:
+            name: ''
+            title: ''
+            go_edit: ''
+            go_new: ''
+            empty: ''
+          accessibility:
+            name: ''
+            title: ''
+          contact:
+            name: 聯繫我們
+            title: ''
+          overview:
+            title: ''
     node_data:
       address: '地址:'
       contact_details: '聯絡方式: '
@@ -72,6 +104,7 @@ zh_TW:
       share:
         email: 電子郵件
         facebook: Facebook
+        text: ''
         twitter: Twitter
   search:
     index:
@@ -79,6 +112,8 @@ zh_TW:
         headline: 抱歉，我們找不到名叫 "%{query}" 的地點。
         hint:
           example: <strong>範例:</strong> 英國倫敦
+          info: ''
+          work_in_progress: ''
         try_this:
           address: 請提供更 <strong>詳細的地址</strong>.
           intro: '試試這個:'
@@ -87,15 +122,18 @@ zh_TW:
         ticker:
           other: '%{count} 個結果：'
     timeout:
+      headline: ''
       info: 我們的搜尋服務目前暫停。
       repeat_search: 重試搜尋
   users:
     profile:
       newsletter:
         title: 電子報
+        text: ''
         label: 是，我想收到 Wheelmap 的最新訊息。
       show:
         title: 總覽
+        text_html: ""
         greeting:
           anonymously: 嗨各位
           personalized: 哈囉 %{name}
@@ -105,14 +143,29 @@ zh_TW:
             other: '標記 %{count} 個地點'
           pois_added:
             other: '新增 %{count} 個地點'
+          pois_edited:
+            other: ''
           photos_uploaded:
             other: '上傳 %{count} 張照片'
       photos:
         title: 相館
+        empty: ''
       edit:
         title: 檔案
         legends:
           user_data: 您的帳號資訊
       widget:
+        title: ''
+        height: ''
+        width: ''
+        center: ''
+        categories: ''
+        providers: ''
+        empty_provider: ''
+        empty_center: ''
         legends:
           settings: 設定
+          preview: ''
+          embed: ''
+          embed_explanation: ''
+          general: ''

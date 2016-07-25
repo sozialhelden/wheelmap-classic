@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
   "actions": {
     "cancel": "Abbrechen",
-    "next": "Next",
+    "next": "Weiter",
     "save": "Speichern",
     "send": "Absenden"
   },
@@ -664,9 +664,6 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
     },
     "models": {
       "node": {
-        "phone": {
-          "invalid": "Telefonnumer ist nicht korrekt. Die Telefonnummer muss im folgenden Format eingegeben werden: +49 30 234567"
-        },
         "website": {
           "invalid": "Webseiten-URL ist nicht korrekt."
         }
@@ -877,7 +874,7 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
         "help": "Rollstuhlgerecht? (Hilfe)",
         "more": "mehr ..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": "Zoome näher heran, um mehr Orte zu sehen"
     }
   },
   "how?": "Wie?",
@@ -960,7 +957,7 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
     "new": {
       "form": {
         "legend": "Lage des Ortes",
-        "location": "Bitte klicke auf der Karte an die Stelle, wo sich der Ort befindet!",
+        "location": "Bitte klicke in der Karte auf die Stelle, wo sich der Ort befindet!",
         "section": {
           "accessibility": {
             "name": "Rollstuhlgerechtigkeit",
@@ -976,21 +973,21 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
             "title": "Weitere Kontaktmöglichkeiten"
           },
           "name_category": {
-            "name": "Name & Kategorie",
+            "name": "Name und Ortstyp",
             "title": "Gib uns erste Informationen zu deinem neuen Ort:"
           },
           "overview": {
-            "title": "Alle Eingaben korrekt?"
+            "title": "Sind alle Eingaben korrekt?"
           },
           "similar_nodes": {
             "empty": "Es wurden keine ähnlichen Orte gefunden.",
-            "go_edit": "Mit diesen Ort fortfahren",
-            "go_new": "Es ist keiner der oben genannten Orte …",
+            "go_edit": "Mit diesem Ort fortfahren",
+            "go_new": "Es ist keiner der oben genannten Orte…",
             "name": "Ähnliche Orte",
-            "title": "Ist es einer der folgenden Orte?"
+            "title": "Wir haben ähnliche Orte in der Nähe gefunden. Ist es einer der folgenden Orte?"
           }
         },
-        "title": "Add a place"
+        "title": "Ort hinzufügen"
       },
       "header": {
         "title": "Neuer Ort | wheelmap.org"
@@ -1198,25 +1195,19 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
       "government": {
         "courthouse": "Gericht",
         "embassy": "Botschaft",
-        "employment_agency": "Agentur für Arbeit, Arbeitsvermittlung",
         "government": "Amt/Behörde",
         "police": "Polizei",
         "public_building": "Öffentliches Gebäude",
         "townhall": "Rathaus"
       },
       "health": {
-        "alternative": "Alternativmediziner",
         "dentist": "Zahnarzt",
         "doctors": "Arzt",
         "hearing_aids": "Hörgeräteakustiker",
         "hospital": "Krankenhaus",
         "medical_supply": "Sanitätshaus",
-        "occupational_therapist": "Ergotherapeut",
         "pharmacy": "Apotheke",
-        "physiotherapist": "Physiotherapeut",
-        "psychotherapist": "Psychotherapeut",
         "social_facility": "Soziale Einrichtung",
-        "speech_therapist": "Logopäde",
         "veterinary": "Tierarzt"
       },
       "leisure": {
@@ -1226,24 +1217,19 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
         "cinema": "Kino",
         "community_centre": "Stadthalle / Gemeindezentrum",
         "gallery": "Galerie",
-        "massage": "Massage-Studio",
         "nightclub": "Nachtclub",
         "playground": "Spielplatz",
         "sauna": "Sauna",
         "stripclub": "Stripclub",
-        "tattoo": "Tattoostudio",
         "theatre": "Theater",
         "zoo": "Zoo"
       },
       "misc": {
-        "association": "Verein/Verband",
         "company": "Unternehmen (Büro)",
         "estate_agent": "Immobilienmakler",
         "insurance": "Versicherung",
         "lawyer": "Anwalt",
-        "ngo": "Nichtregierungsorganisation",
         "place_of_worship": "Gotteshaus",
-        "political_party": "Partei-Büro",
         "toilets": "Öffentliche Toilette"
       },
       "money_post": {
@@ -1279,8 +1265,6 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
       },
       "shopping": {
         "alcohol": "Spirituosen",
-        "antiques": "Antiquitätenladen",
-        "art": "Kunsthandel",
         "bakery": "Bäckerei",
         "beauty": "Schönheitssalon",
         "beverages": "Getränkemarkt",
@@ -1294,32 +1278,23 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
         "computer": "Computer",
         "confectionery": "Süßwarengeschäft",
         "convenience": "Spätkauf",
-        "copyshop": "Copyshop",
         "deli": "Feinkostladen",
         "department_store": "Warenhaus",
         "doityourself": "Baumarkt",
         "dry_cleaning": "Chemische Reinigung",
         "electronics": "Elektronik",
-        "erotic": "Sexshop",
         "fabric": "Stoffladen",
         "farm_shop": "Hofladen",
         "florist": "Blumengeschäft",
-        "funeral_directors": "Bestattungsinstitut",
         "furniture": "Möbelhaus",
         "garden_centre": "Garden Center",
         "gift": "Souvenir-/Geschenkartikelladen",
-        "greengrocer": "Obst-/Gemüsehändler",
         "hairdresser": "Friseur",
         "hardware": "Eisenwarenladen",
-        "interior_decoration": "Wohnaccessoires",
         "jewelry": "Juwelier",
         "kiosk": "Kiosk",
         "laundry": "Wäscherei",
         "mall": "Shoppingcenter",
-        "mobile_phone": "Handy-Shop",
-        "music": "Musik-/Plattenladen",
-        "musical_instrument": "Musikinstrumente",
-        "newsagent": "Zeitschriftenladen",
         "optician": "Optiker",
         "organic": "Bio-Laden",
         "outdoor": "Outdoorbedarf",
@@ -1330,12 +1305,8 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
         "sports": "Sportlerbedarf",
         "stationery": "Schreibwaren",
         "supermarket": "Supermarkt",
-        "tailor": "Schneiderei",
-        "tea": "Teeladen",
-        "tobacco": "Tabakladen",
         "toys": "Spielwarenladen",
         "travel_agency": "Reisebüro",
-        "variety_store": "Rest-/Sonderpostenmarkt",
         "video": "Videothek"
       },
       "sport": {

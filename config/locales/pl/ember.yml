@@ -13,10 +13,9 @@ pl:
     send: Wyślij
     save: Zapisz
     cancel: Anuluj
+    next: Następny
   errors:
     models:
       node:
         website:
           invalid: "Adres strony www jest niepoprawny."
-        phone:
-          invalid: "Numer telefonu jest niepoprawny. Musi on być w następującym formacie: +49 30 234567"

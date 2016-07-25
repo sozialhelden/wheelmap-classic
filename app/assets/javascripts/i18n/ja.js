@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
   "actions": {
     "cancel": "キャンセル",
-    "next": "Next",
+    "next": "次",
     "save": "保存",
     "send": "送信する"
   },
@@ -669,9 +669,6 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     },
     "models": {
       "node": {
-        "phone": {
-          "invalid": "電話番号が正しくありません、記述はこのようにしてください +49 30 234567"
-        },
         "website": {
           "invalid": "このURLは無効です"
         }
@@ -883,7 +880,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "help": "車椅子で行けますか？ (ヘルプ)",
         "more": "詳細 ..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": ""
     }
   },
   "how?": "やり方は？",
@@ -966,37 +963,37 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     "new": {
       "form": {
         "legend": "場所の位置座標",
-        "location": "地図をクリックして、マーカーを正しい位置に調整してください。",
+        "location": "",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "",
+            "title": ""
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
-            "name": "Address",
-            "title": "Where is the place?"
+            "help": "",
+            "name": "住所",
+            "title": ""
           },
           "contact": {
-            "name": "Contact",
-            "title": "Other contact information"
+            "name": "連絡先",
+            "title": ""
           },
           "name_category": {
-            "name": "Name and category",
-            "title": "Give us some initial information about your place:"
+            "name": "",
+            "title": ""
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": ""
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "",
+            "go_edit": "",
+            "go_new": "",
+            "name": "",
+            "title": ""
           }
         },
-        "title": "Add a place"
+        "title": ""
       },
       "header": {
         "title": "新しい場所 | wheelmap.org"
@@ -1206,25 +1203,19 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "government": {
         "courthouse": "裁判所",
         "embassy": "大使館",
-        "employment_agency": "職業紹介所",
         "government": "政府機関",
         "police": "警察",
         "public_building": "公共施設",
         "townhall": "役場"
       },
       "health": {
-        "alternative": "代替医療施設",
         "dentist": "歯科医院",
         "doctors": "診療所",
         "hearing_aids": "補聴器取扱店",
         "hospital": "病院",
         "medical_supply": "医療用品",
-        "occupational_therapist": "作業療法士",
         "pharmacy": "薬局",
-        "physiotherapist": "理学療法士",
-        "psychotherapist": "精神療法士",
         "social_facility": "社会福祉施設",
-        "speech_therapist": "言語療法士",
         "veterinary": "動物病院"
       },
       "leisure": {
@@ -1234,27 +1225,22 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "cinema": "映画館",
         "community_centre": "コミュニティセンター",
         "gallery": "ギャラリー",
-        "massage": "マッサージ・スパ",
         "nightclub": "ナイトクラブ",
         "playground": "子どもの遊び場",
         "sauna": "サウナ",
         "stripclub": "ストリップクラブ",
-        "tattoo": "タトゥー専門店",
         "theatre": "劇場",
         "zoo": "動物園"
       },
       "misc": {
-        "association": "団体・協会",
         "company": "会社(オフィス)",
         "doctors": "医者",
         "estate_agent": "不動産屋",
         "hospital": "病院",
         "insurance": "保険代理店",
         "lawyer": "法律家",
-        "ngo": "NGO",
         "pharmacy": "薬局",
         "place_of_worship": "寺社礼拝所",
-        "political_party": "政党事務所 ",
         "toilets": "トイレ",
         "veterinary": "獣医"
       },
@@ -1291,8 +1277,6 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       },
       "shopping": {
         "alcohol": "酒屋",
-        "antiques": "アンティークショップ",
-        "art": "ギャラリー",
         "bakery": "パン屋",
         "beauty": "ビューティサロン",
         "beverages": "飲み物屋",
@@ -1306,32 +1290,23 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "computer": "パソコン店",
         "confectionery": "キャンディショップ",
         "convenience": "コンビニ",
-        "copyshop": "コピー屋",
         "deli": "惣菜店",
         "department_store": "デパート",
         "doityourself": "ＤＩＹ店",
         "dry_cleaning": "クリーニング店",
         "electronics": "電器店",
-        "erotic": "性風俗店",
         "fabric": "布地店",
         "farm_shop": "野菜直売所",
         "florist": "花屋",
-        "funeral_directors": "死体安置所",
         "furniture": "家具屋",
         "garden_centre": "ガーデニング店",
         "gift": "ギフトショップ",
-        "greengrocer": "八百屋",
         "hairdresser": "美容院",
         "hardware": "金物屋",
-        "interior_decoration": "インテリショップ",
         "jewelry": "宝石店",
         "kiosk": "キオスク",
         "laundry": "コインランドリー",
         "mall": "ショッピングセンター",
-        "mobile_phone": "携帯ショップ",
-        "music": "レコード店",
-        "musical_instrument": "楽器屋",
-        "newsagent": "新聞雑誌類売店",
         "optician": "めがね屋",
         "organic": "有機食品店",
         "outdoor": "アウトドアショップ",
@@ -1342,12 +1317,8 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "sports": "スポーツ",
         "stationery": "文房具店",
         "supermarket": "スーパーマーケット",
-        "tailor": "仕立屋",
-        "tea": "茶葉専門店",
-        "tobacco": "たばこ屋",
         "toys": "玩具店",
         "travel_agency": "旅行代理店",
-        "variety_store": "ディスカウントストア",
         "video": "ビデオレンタル店"
       },
       "sport": {
@@ -1609,7 +1580,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
           },
           "text": "持っている"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "",
         "title": "概要"
       },
       "widget": {
@@ -1620,7 +1591,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "height": "高さ",
         "legends": {
           "embed": "埋め込みコード",
-          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
+          "embed_explanation": "",
           "general": "あなたのウェブサイトやブログ用のWheelmapウイジェットを作成する",
           "preview": "プレビュー",
           "settings": "設定"

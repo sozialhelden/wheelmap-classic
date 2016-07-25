@@ -1,3 +1,4 @@
+---
 ja:
   poi:
     category:
@@ -46,24 +47,18 @@ ja:
       government:
         courthouse: 裁判所
         embassy: 大使館
-        employment_agency: "職業紹介所"
         government: "政府機関"
         police: 警察
         public_building: "公共施設"
         townhall: 市町村役場
       health:
-        alternative: "代替医療施設"
         dentist: 歯科医院
         doctors: 診療所
         hearing_aids: "補聴器取扱店"
         hospital: 病院
         medical_supply: "医療用品"
-        occupational_therapist: "作業療法士"
         pharmacy: 薬局
-        physiotherapist: 理学療法士
-        psychotherapist: 精神療法士
         social_facility: "社会福祉施設"
-        speech_therapist: "言語療法士"
         veterinary: 動物病院
       leisure:
         arena: アリーナ
@@ -72,24 +67,19 @@ ja:
         cinema: 映画館
         community_centre: "コミュニティセンター"
         gallery: ギャラリー
-        massage: "マッサージ・スパ"
         nightclub: ナイトクラブ/ディスコ
         playground: 子どもの遊び場
         sauna: サウナ
         stripclub: ストリップクラブ
-        tattoo: "タトゥー専門店"
         theatre: 劇場
         zoo: 動物園
       misc:
-        association: 団体・協会
         company: "会社(オフィス)"
         estate_agent: "不動産屋"
         insurance: 保険代理店
         lawyer: 法律家
-        ngo: "NGO"
         place_of_worship: "寺社・礼拝所"
         toilets: トイレ
-        political_party: "政党事務所 "
       money_post:
         atm: ATM
         bank: 銀行
@@ -121,7 +111,6 @@ ja:
         tram_stop: "電停"
       shopping:
         alcohol: 酒屋
-        antiques: アンティークショップ
         bakery: パン屋
         beauty: "ビューティサロン"
         beverages: 飲み物屋
@@ -130,7 +119,6 @@ ja:
         butcher: 肉屋
         car_repair: "自動車修理店"
         car_shop: "自動車販売店"
-        copyshop: "コピー屋"
         chemist: 薬局
         clothes: 衣料品店
         computer: パソコン店
@@ -141,27 +129,18 @@ ja:
         doityourself: "ＤＩＹ店"
         dry_cleaning: "クリーニング店"
         electronics: 電器店
-        erotic: "性風俗店"
         fabric: "布地店"
         farm_shop: "野菜直売所"
         florist: 花屋
-        funeral_directors: "死体安置所"
         furniture: 家具屋
-        art: "ギャラリー"
         garden_centre: "園芸店"
         gift: "ギフトショップ"
-        greengrocer: 八百屋
         hairdresser: 美容院
         hardware: 金物屋
-        interior_decoration: "インテリショップ"
         jewelry: 宝石店
         kiosk: キオスク
         laundry: コインランドリー
         mall: "ショッピングセンター"
-        mobile_phone: "携帯ショップ"
-        music: "レコード店"
-        musical_instrument: "楽器屋"
-        newsagent: 新聞雑誌類売店
         optician: めがね屋
         organic: "有機食品店"
         outdoor: "アウトドアショップ"
@@ -172,12 +151,8 @@ ja:
         sports: スポーツ
         stationery: 文房具店
         supermarket: スーパーマーケット
-        tailor: 仕立屋
-        tea: "茶葉専門店"
-        tobacco: "たばこ屋"
         toys: 玩具店
         travel_agency: "旅行代理店"
-        variety_store: "ディスカウントストア"
         video: "ビデオレンタル店"
       sport:
         pitch: "運動場"

@@ -1,11 +1,19 @@
 lt:
   models:
+    category:
+      prompt: ""
+    node_type:
+      prompt: ""
     node:
+      info_edit_position: ""
       mail:
+        subject: ""
         body: "(Prašome rašyti tik Anglų arba Vokiečių kalba.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:"
   actions:
+    send: ''
     save: Išsaugoti
     cancel: Atšaukti
+    next: ''
   errors:
     models:
       node:

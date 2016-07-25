@@ -1,3 +1,4 @@
+---
 is:
   poi:
     category:
@@ -5,7 +6,11 @@ is:
       education: Menntun
       food: Matur
       government: Opinberar stofnanir
+      health: ''
       leisure: Frístundir
+      misc: ''
+      money_post: ""
+      public_transfer: ""
       shopping: Verslun
       sport: Íþróttir
       tourism: Ferðamennska
@@ -17,12 +22,14 @@ is:
         camp_site: "Tjaldsvæði"
         caravan_site: "Tjaldsvæði fyrir hjólhýsi"
         chalet: Kofar
+        dormitory: ''
         guest_house: "Gistihús"
         hostel: Hostel
         hotel: Hótel
         motel: Mótel
       education:
         college: Menntaskóli
+        driving_school: ""
         kindergarten: Leikskóli
         library: Bókasafn
         museum: Safn
@@ -34,25 +41,43 @@ is:
         cafe: Kaffihús
         drinking_water: "Drykkjarvatn"
         fast_food: "Skyndibiti"
+        ice_cream: ""
         pub: Pöbb
         restaurant: Veitingahús
       government:
         courthouse: Réttarhús
         embassy: Sendiráð
+        government: ""
+        police: ''
         public_building: "Opinber bygging"
+        townhall: ''
       health:
+        dentist: ''
+        doctors: ''
+        hearing_aids: ""
         hospital: Spítali
+        medical_supply: ""
         pharmacy: Apótek
+        social_facility: ""
         veterinary: Dýralæknir
       leisure:
         arena: Svæði
+        brothel: ''
+        casino: ''
         cinema: Bíóhús
+        community_centre: ""
         gallery: Listasöfn
         nightclub: Næturklúbbur
+        playground: ''
         sauna: Gufubað
+        stripclub: ''
         theatre: Leikhús
         zoo: Dýragarður
       misc:
+        company: ""
+        estate_agent: ""
+        insurance: ''
+        lawyer: ''
         place_of_worship: "Bænahús"
         toilets: Klósett
       money_post:
@@ -65,6 +90,7 @@ is:
         aerodrome: Flugvöllur
         bicycle_parking: "Reiðhjólastæði"
         bicycle_rental: "Reiðhjólaleiga"
+        boatyard: ''
         bus_station: "Rútustöð"
         bus_stop: "Strætó"
         cable_car: "Dráttarbílar"
@@ -86,28 +112,50 @@ is:
       shopping:
         alcohol: Áfengi
         bakery: Bakarí
+        beauty: ""
         beverages: Drykkir
         bicycle: "Hjólreiðaverslun"
         books: Bækur
         butcher: Slátrari
+        car_repair: ""
+        car_shop: ""
+        chemist: ''
         clothes: Föt
         computer: Tölvur
+        confectionery: ""
         convenience: Þægindi
+        deli: ''
         department_store: "Sérvöruverslun"
         doityourself: "Sjálfshjálparverslun"
         dry_cleaning: "Efnalaug"
         electronics: Raftæki
+        fabric: ""
+        farm_shop: ""
         florist: Blómabúð
         furniture: Húsgögn
+        garden_centre: ""
+        gift: ""
         hairdresser: Hársnyrting
         hardware: Byggingavörur
+        jewelry: ''
         kiosk: Söluturn
         laundry: Þvottahús
         mall: "Verslunarkeðjur"
         optician: Gleraugnaverslun
+        organic: ""
+        outdoor: ""
+        pet: ""
+        photo: ''
+        second_hand: ""
         shoes: Skór
+        sports: ''
+        stationery: ''
         supermarket: Matarverslun
+        toys: ''
+        travel_agency: ""
+        video: ""
       sport:
+        pitch: ""
         sports_centre: "Íþróttabúð"
         stadium: Íþróttavellir
         swimming: Sund

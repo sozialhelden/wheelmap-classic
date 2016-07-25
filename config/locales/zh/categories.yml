@@ -1,3 +1,4 @@
+---
 zh:
   poi:
     category:
@@ -7,6 +8,9 @@ zh:
       government: 政府
       health: 健康
       leisure: 休闲
+      misc: ''
+      money_post: ""
+      public_transfer: ""
       shopping: 购物
       sport: 体育
       tourism: 旅游
@@ -18,12 +22,14 @@ zh:
         camp_site: "露营网页"
         caravan_site: "篷车场所"
         chalet: 农舍
+        dormitory: ''
         guest_house: "招待所"
         hostel: 青年旅社
         hotel: 宾馆
         motel: 汽车旅馆
       education:
         college: 学院
+        driving_school: ""
         kindergarten: 幼儿园
         library: 图书馆
         museum: 博物馆
@@ -35,14 +41,19 @@ zh:
         cafe: 咖啡店
         drinking_water: "饮用水"
         fast_food: "快餐"
+        ice_cream: ""
         pub: 酒吧
         restaurant: 餐馆
       government:
         courthouse: 法院
         embassy: 大使馆
+        government: ""
         police: 警察
         public_building: "公共建筑"
+        townhall: ''
       health:
+        dentist: ''
+        doctors: ''
         hearing_aids: "助听器经销商"
         hospital: 医院
         medical_supply: "医药用品"
@@ -52,7 +63,9 @@ zh:
       leisure:
         arena: 竞技场
         brothel: 妓院
+        casino: ''
         cinema: 影院
+        community_centre: ""
         gallery: 展厅
         nightclub: 夜总会
         playground: 活动场所
@@ -62,6 +75,8 @@ zh:
         zoo: 动物园
       misc:
         company: "公司（办公室）"
+        estate_agent: ""
+        insurance: ''
         lawyer: 律师
         place_of_worship: "教堂"
         toilets: 厕所
@@ -75,6 +90,7 @@ zh:
         aerodrome: 机场
         bicycle_parking: "单车停放"
         bicycle_rental: "单车出租"
+        boatyard: ''
         bus_station: "公共汽车站"
         bus_stop: "公共汽车站"
         cable_car: "缆车"
@@ -96,35 +112,50 @@ zh:
       shopping:
         alcohol: 酒类
         bakery: 面包店
+        beauty: ""
         beverages: 饮料
         bicycle: "单车店"
         books: 书籍
         butcher: 肉店
         car_repair: "汽车修理"
         car_shop: "车行"
+        chemist: ''
         clothes: 服装
         computer: 电脑
+        confectionery: ""
         convenience: 方便
+        deli: ''
         department_store: "百货商店"
         doityourself: "自己动手"
         dry_cleaning: "干洗"
         electronics: 电子产品
+        fabric: ""
+        farm_shop: ""
         florist: 花店
         furniture: 家具
+        garden_centre: ""
+        gift: ""
         hairdresser: 理发师
         hardware: 硬件
+        jewelry: ''
         kiosk: 书报亭
         laundry: 洗衣店
         mall: "购物中心"
         optician: 验光师
+        organic: ""
+        outdoor: ""
+        pet: ""
         photo: 照片
         second_hand: "二手"
         shoes: 鞋子
         sports: 体育
         stationery: 文具店
         supermarket: 超市
+        toys: ''
+        travel_agency: ""
         video: "影像出租店"
       sport:
+        pitch: ""
         sports_centre: "体育中心"
         stadium: 体育场
         swimming: 游泳

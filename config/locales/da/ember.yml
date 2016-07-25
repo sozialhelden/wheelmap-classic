@@ -13,10 +13,9 @@ da:
     send: Send
     save: Gem
     cancel: Fortryd
+    next: Næste
   errors:
     models:
       node:
         website:
           invalid: "Websidens adresse er ikke gyldig."
-        phone:
-          invalid: "Telefonnummeret er ikke gyldigt. Det skal have følgende format: +49 30 234567"

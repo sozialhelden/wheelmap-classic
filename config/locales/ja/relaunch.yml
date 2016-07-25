@@ -1,3 +1,4 @@
+---
 ja:
   activerecord:
     attributes:
@@ -44,11 +45,35 @@ ja:
         lookup: 指定した場所を探す
         secondary_headline: '公共の場所での車椅子のアクセシビリティをマークする自分たちの交通信号システム'
       embed_link: Wheelmap.orgで見る
+      zoom_alert: ''
   nodes:
     new:
       form:
+        title: ''
         legend: 場所の位置座標
-        location: 地図をクリックして、マーカーを正しい位置に調整してください。
+        location: ''
+        section:
+          name_category:
+            name: ''
+            title: ""
+          address:
+            name: 住所
+            title: ''
+            help: ''
+          similar_nodes:
+            name: ''
+            title: ''
+            go_edit: ''
+            go_new: ''
+            empty: ''
+          accessibility:
+            name: ''
+            title: ''
+          contact:
+            name: 連絡先
+            title: ''
+          overview:
+            title: ''
     node_data:
       address: '住所:'
       contact_details: '詳しい連絡先:'
@@ -108,6 +133,7 @@ ja:
         label: はい、Wheelmapに関する更新を維持します。
       show:
         title: 概要
+        text_html: ""
         greeting:
           anonymously: こんにちは
           personalized: こんにちわ！ %{name}
@@ -141,4 +167,5 @@ ja:
           settings: 設定
           preview: プレビュー
           embed: 埋め込みコード
+          embed_explanation: ''
           general: あなたのウェブサイトやブログ用のWheelmapウイジェットを作成する

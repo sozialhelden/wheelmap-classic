@@ -13,10 +13,9 @@ zh_TW:
     send: 送出
     save: 存檔
     cancel: 取消
+    next: ''
   errors:
     models:
       node:
         website:
           invalid: "網址無效"
-        phone:
-          invalid: "電話號碼無效。它的格式應該像是： +886 7 7533967"

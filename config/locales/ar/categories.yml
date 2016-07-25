@@ -1,3 +1,4 @@
+---
 ar:
   poi:
     category:
@@ -12,6 +13,8 @@ ar:
         متفرقات
 
         '
+      money_post: ""
+      public_transfer: ""
       shopping: تسوق
       sport: رياضة
       tourism: سياحة
@@ -23,6 +26,7 @@ ar:
         camp_site: "موقع للتخييم"
         caravan_site: "موقع العربة\"كاراڨان\""
         chalet: شاليه
+        dormitory: ''
         guest_house: "بيت الضيافة"
         hostel: فندق
         hotel: فندق
@@ -47,10 +51,13 @@ ar:
       government:
         courthouse: المحكمة
         embassy: سفارة
+        government: ""
         police: الشرطة
         public_building: "مبنى عام"
+        townhall: ''
       health:
         dentist: طبيب أسنان
+        doctors: ''
         hearing_aids: "تاجر أدوات سمعية"
         hospital: مستشفى
         medical_supply: "مستلزمات طبية"
@@ -62,6 +69,7 @@ ar:
         brothel: ماخور"بيت دعارة"
         casino: ملهى
         cinema: سينما
+        community_centre: ""
         gallery: المعرض
         nightclub: ملهى ليلي
         playground: ساحة لعب
@@ -86,6 +94,7 @@ ar:
         aerodrome: مطار
         bicycle_parking: "موقف للدراجات الهوائية"
         bicycle_rental: "لتأجير الدراجات الهوائية"
+        boatyard: ''
         bus_station: "محطة الأوتوبيس"
         bus_stop: "موقف أوتوبيس"
         cable_car: "عربة كهربائية"
@@ -114,6 +123,7 @@ ar:
         butcher: الجزار
         car_repair: "لإصلاح السيارات"
         car_shop: "متجر السيارات"
+        chemist: ''
         clothes: ملابس
         computer: كمبيوتر
         confectionery: "محل حلويات"
@@ -127,6 +137,7 @@ ar:
         farm_shop: "متجر تابع لمزرعة"
         florist: بائع الزهور
         furniture: أثاث
+        garden_centre: ""
         gift: "محل هدايا"
         hairdresser: صالون تصفيف الشعر
         hardware: أجهزة

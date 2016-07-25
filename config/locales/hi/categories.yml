@@ -1,3 +1,4 @@
+---
 hi:
   poi:
     category:
@@ -7,6 +8,9 @@ hi:
       government: सरकार
       health: स्वास्थ
       leisure: अवकाश, मस्ती
+      misc: ''
+      money_post: ""
+      public_transfer: ""
       shopping: शॅापिंग, खरीददारी
       sport: खेल
       tourism: पर्यटन
@@ -17,12 +21,15 @@ hi:
         bed_and_breakfast: "बेड एंड ब्रेकफ़ास्ट, रहने की व्यवस्था और नाश्ता भी"
         camp_site: "कैंप स्थल, शिविर स्थल"
         caravan_site: "कारवां स्थल"
+        chalet: ''
+        dormitory: ''
         guest_house: "गेस्ट हाउस, अतिथि आराम ग्रह"
         hostel: छात्रावास, हॅास्टल
         hotel: होटल, आराम ग्रह
         motel: मोटेल
       education:
         college: कॅालेज
+        driving_school: ""
         kindergarten: बालवाड़ी
         library: पुस्तकालय
         museum: संग्रहालय
@@ -34,14 +41,19 @@ hi:
         cafe: कैफे
         drinking_water: "पीने का पानी"
         fast_food: "फास्ट फूड"
+        ice_cream: ""
         pub: पब
         restaurant: रेस्तरां, रेस्टोरेंट
       government:
         courthouse: अदालत
         embassy: दूतावास
+        government: ""
         police: पुलिस
         public_building: "सार्वजनिक बिल्डिंग"
+        townhall: ''
       health:
+        dentist: ''
+        doctors: ''
         hearing_aids: "हियरिंग एड डीलर,\nसुनने वाली मशीन के डीलर"
         hospital: अस्पताल
         medical_supply: "चिकित्सा का सामान"
@@ -51,7 +63,9 @@ hi:
       leisure:
         arena: अखाड़ा, मैदान
         brothel: रण्डी खाना, कोठा,
+        casino: ''
         cinema: सिनेमा,
+        community_centre: ""
         gallery: गैलरी
         nightclub: नाइटक्लब
         playground: खेल का मैदान
@@ -61,6 +75,8 @@ hi:
         zoo: चिड़ियाघर
       misc:
         company: "कंपनी (दफ्तर)"
+        estate_agent: ""
+        insurance: ''
         lawyer: वकील
         place_of_worship: "प्रार्थना की जगह"
         toilets: शौचालय, संडास
@@ -74,6 +90,7 @@ hi:
         aerodrome: हवाई अड्डा
         bicycle_parking: "साइकिल पार्किंग"
         bicycle_rental: "साइकल किराए पर"
+        boatyard: ''
         bus_station: "बस अड्डा"
         bus_stop: "बस स्टॅाप"
         cable_car: "केबल कार"
@@ -84,6 +101,7 @@ hi:
         ferry_terminal: "नौका टर्मिनल"
         fuel: "पेट्रोलपंप"
         halt: रुको
+        light_rail: ""
         parking: पार्किंग
         parking_aisle: "पार्किंग आइल"
         platform: प्लैटफॅार्म
@@ -94,35 +112,50 @@ hi:
       shopping:
         alcohol: शराब
         bakery: बेकरी
+        beauty: ""
         beverages: पेय
         bicycle: " सायकल की दुकान"
         books: किताबें, पुस्तकें
         butcher: कसाई
         car_repair: "कार की मरम्मत"
         car_shop: " कार की दुकान"
+        chemist: ''
         clothes: कपड़े, वस्त्र
         computer: कंप्यूटर
+        confectionery: ""
         convenience: सुविधा
+        deli: ''
         department_store: "डिपार्टमेंट स्टोर"
         doityourself: "खुद कीजिए"
         dry_cleaning: "ड्राई क्लीनिंग"
         electronics: इलेक्ट्रॅानिक्स
+        fabric: ""
+        farm_shop: ""
         florist: फूलों की दुकान
         furniture: फर्नीचर
+        garden_centre: ""
+        gift: ""
         hairdresser: नाई
         hardware: हार्डवेयर
+        jewelry: ''
         kiosk: गुमटी, गाडा, खोमचा
         laundry: धोबी
         mall: "शॅापिंग सेंटर"
         optician: चश्मा बनाने वाला, ऐनक बनाने वाला
+        organic: ""
+        outdoor: ""
+        pet: ""
         photo: फोटो, तसवीर
         second_hand: "इस्तेमाल किया हुआ"
         shoes: जूते
         sports: खेल
         stationery: स्टेश्नरी, लिखने का सामान
         supermarket: सुपरमार्किट
+        toys: ''
+        travel_agency: ""
         video: "वीडियो किराए पर"
       sport:
+        pitch: ""
         sports_centre: "स्पोर्ट सेंटर, क्रीडा केंद्र"
         stadium: स्टेडियम
         swimming: तैराकी

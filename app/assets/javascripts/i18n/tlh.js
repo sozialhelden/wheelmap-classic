@@ -1,10 +1,10 @@
 I18n.translations || (I18n.translations = {});
 I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
   "actions": {
-    "cancel": "Cancel",
-    "next": "Next",
+    "cancel": "",
+    "next": "",
     "save": "qon",
-    "send": "Send"
+    "send": ""
   },
   "active_admin": {
     "access_denied": {
@@ -183,16 +183,16 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
   "activerecord": {
     "attributes": {
       "poi": {
-        "address": "Address",
-        "address_city": "City",
-        "address_housenumber": "House number",
-        "address_postcode": "Postcode",
-        "address_street": "Street",
-        "name": "Name",
-        "note": "Note",
-        "phone": "Phone",
-        "type": "Type",
-        "website": "Website"
+        "address": "",
+        "address_city": "",
+        "address_housenumber": "",
+        "address_postcode": "",
+        "address_street": "",
+        "name": "",
+        "note": "",
+        "phone": "",
+        "type": "",
+        "website": ""
       },
       "user": {
         "first_name": "Given name",
@@ -639,7 +639,7 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
     "models": {
       "node": {
         "website": {
-          "invalid": "Website address is not valid."
+          "invalid": ""
         }
       }
     },
@@ -653,15 +653,15 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
   },
   "faq": {
     "answers": {
-      "0": "You can always change the marking of a place yourself. Just choose the right marking and \"Save\" - done!",
-      "1": "As a logged in user you can add / correct all the details of a place. Click on \"Edit\" and correct or add information in the mask.",
-      "2": "You can add further information (e.g. \"This place has a mobile ramp\") in the comment section. Click on \"Edit\" and \"Add comment\"."
+      "0": "",
+      "1": "",
+      "2": ""
     },
-    "headline": "Is there a problem with this place?",
+    "headline": "",
     "questions": {
-      "0": "The marking is wrong.",
-      "1": "The details of the place are incorrect or missing.",
-      "2": "I have more information about this place."
+      "0": "",
+      "1": "",
+      "2": ""
     }
   },
   "flash": {
@@ -736,17 +736,17 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "rutlhquS chawbogh Daq'e' Sam - wheelmap.org",
+      "description": "",
       "homepage": "juH Daq",
       "keywords": "rutlhquS naw' Daqmey Sam nej ghItlh",
       "search": "nej",
-      "title": "Wheelmap.org"
+      "title": ""
     },
     "navigation": {
-      "about_wheelmap": "About Wheelmap",
+      "about_wheelmap": "",
       "blog": "QonoS",
-      "choose_language": "Choose language",
-      "contact": "Contact",
+      "choose_language": "",
+      "contact": "",
       "feedback": "qechmey",
       "home": "tagh",
       "how_to_add_a_place": "chay' Daqmey vIchel?",
@@ -754,11 +754,11 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
       "logged_in_as": "'elpu': ",
       "login": "'el",
       "logout": "mej",
-      "map": "Map",
+      "map": "",
       "newsletter": "Newsletter",
       "press": "Press",
       "profile": "Profile",
-      "projects": "Projects",
+      "projects": "",
       "suggestions": "vay' chup",
       "what_is_barrier_free": "\"rutlhquS chawbogh Daq'e'\" DaQIjlaH'a'?",
       "what_is_wheelmap": "nuq 'oH wheelmap'e'?"
@@ -772,7 +772,7 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
     "tagline": "Wheelmap Degh",
     "title": "Wheelmap - rutlhquS chawbogh Daq'e' Sam",
     "toolbar": {
-      "categories": "Categories"
+      "categories": ""
     }
   },
   "helpers": {
@@ -799,7 +799,7 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "",
       "filter": {
         "category": "Segh:",
         "deselect_all": "Deselect all",
@@ -822,12 +822,12 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
         }
       },
       "overlay": {
-        "button": "Okay, let’s go!",
-        "categories": "Filter places by categories",
-        "filter": "Filter places by wheelchair accessibility",
-        "headline": "Mark and find wheelchair accessible places with Wheelmap.org - worldwide and for free. It’s easy:",
-        "lookup": "Search for a specific place",
-        "secondary_headline": "Our traffic light system to mark the wheelchair accessibility of public places:"
+        "button": "",
+        "categories": "",
+        "filter": "",
+        "headline": "",
+        "lookup": "",
+        "secondary_headline": ""
       },
       "popup": {
         "form": {
@@ -840,7 +840,7 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
         "help": "naw'laH'a' rutlhquS? (QaH)",
         "more": "latlh ..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": ""
     }
   },
   "how?": "How?",
@@ -871,17 +871,17 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
   },
   "models": {
     "category": {
-      "prompt": "Choose a category"
+      "prompt": ""
     },
     "node": {
-      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
+      "info_edit_position": "",
       "mail": {
-        "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
-        "subject": "[Wheelmap] Problem with %{headline}"
+        "body": "",
+        "subject": ""
       }
     },
     "node_type": {
-      "prompt": "Choose a type"
+      "prompt": ""
     }
   },
   "node": {
@@ -922,38 +922,38 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
     },
     "new": {
       "form": {
-        "legend": "Location of the place",
-        "location": "Please click on the map where the place is located!",
+        "legend": "",
+        "location": "",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "",
+            "title": ""
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
-            "name": "Address",
-            "title": "Where is the place?"
+            "help": "",
+            "name": "",
+            "title": ""
           },
           "contact": {
-            "name": "Contact",
-            "title": "Other contact information"
+            "name": "",
+            "title": ""
           },
           "name_category": {
-            "name": "Name and category",
-            "title": "Give us some initial information about your place:"
+            "name": "",
+            "title": ""
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": ""
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "",
+            "go_edit": "",
+            "go_new": "",
+            "name": "",
+            "title": ""
           }
         },
-        "title": "Add a place"
+        "title": ""
       },
       "header": {
         "title": "Daq chu' | wheelmap.org"
@@ -970,40 +970,40 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
       }
     },
     "node_data": {
-      "address": "Address:",
-      "contact_details": "Contact details:"
+      "address": "",
+      "contact_details": ""
     },
     "node_edit": {
-      "details": "Details",
-      "edit": "Edit"
+      "details": "",
+      "edit": ""
     },
     "node_map": {
-      "map": "Map:"
+      "map": ""
     },
     "node_note": {
-      "comment": "Comment:"
+      "comment": ""
     },
     "node_photos": {
-      "add": "Add",
-      "photos_of_this_place": "Photos of this place:",
-      "upload": "Upload"
+      "add": "",
+      "photos_of_this_place": "",
+      "upload": ""
     },
     "node_similar": {
-      "similar": "Similar places: %{name}"
+      "similar": ""
     },
     "node_status": {
-      "accessible_toilet": "Wheelchair accessible toilet:",
-      "premium": "%{name} says: this place is",
-      "wheelchair_accessibility": "Wheelchair accessibility:"
+      "accessible_toilet": "",
+      "premium": "",
+      "wheelchair_accessibility": ""
     },
     "node_streetview": {
-      "streetview": "Streetview:"
+      "streetview": ""
     },
     "show": {
       "header": {
         "meta": {
-          "description": "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.",
-          "title": "This place is on Wheelmap.org: %{name}"
+          "description": "",
+          "title": ""
         },
         "title": "Daq: %{node} | wheelmap.org"
       },
@@ -1018,9 +1018,9 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
       "more_data_from": "There is more information about this place, validated by:",
       "share": {
         "email": "jabbI'ID",
-        "facebook": "Facebook",
-        "text": "I found this place on Wheelmap.org: %{name}",
-        "twitter": "Twitter"
+        "facebook": "",
+        "text": "",
+        "twitter": ""
       },
       "show-in-osm": "OpenStreetMap"
     },
@@ -1118,7 +1118,7 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
       "education": "ghojmoHghach",
       "food": "Sop",
       "government": "qum",
-      "health": "Health",
+      "health": "",
       "leisure": "tIvtaHghach",
       "misc": "latlh",
       "money_post": "Huch QumwI' je Suy",
@@ -1135,7 +1135,7 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
         "camp_site": "raQ Daq",
         "caravan_site": "rutlhmey ghajbogh juH Daq",
         "chalet": "juH'a'",
-        "dormitory": "Dormitory",
+        "dormitory": "",
         "guest_house": "meb qach",
         "hostel": "mebpa'mey qutlh",
         "hotel": "mebpa'mey",
@@ -1143,7 +1143,7 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
       },
       "education": {
         "college": "'ampaS",
-        "driving_school": "Driving school",
+        "driving_school": "",
         "kindergarten": "puq DuSaQ",
         "library": "paq qach",
         "museum": "Doch ngo'meH Daq",
@@ -1156,49 +1156,49 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
         "cafe": "SopmeH DaqHom",
         "drinking_water": "bIQ tlhutlhbogh",
         "fast_food": "moD Soj",
-        "ice_cream": "Ice cream parlour",
+        "ice_cream": "",
         "pub": "tach",
         "restaurant": "Qe'"
       },
       "government": {
         "courthouse": "chut qach",
         "embassy": "rIvSo'",
-        "government": "Government agency",
-        "police": "Police",
+        "government": "",
+        "police": "",
         "public_building": "wo' qach",
         "townhall": "veng vaS"
       },
       "health": {
-        "dentist": "Dentist",
-        "doctors": "Doctor",
-        "hearing_aids": "Hearing aid dealer",
-        "hospital": "Hospital",
-        "medical_supply": "Medical supplies",
-        "pharmacy": "Pharmacy",
-        "social_facility": "Social facility",
-        "veterinary": "Veterinary"
+        "dentist": "",
+        "doctors": "",
+        "hearing_aids": "",
+        "hospital": "",
+        "medical_supply": "",
+        "pharmacy": "",
+        "social_facility": "",
+        "veterinary": ""
       },
       "leisure": {
         "arena": "SuvmeH Daq",
-        "brothel": "Brothel",
-        "casino": "Casino",
+        "brothel": "",
+        "casino": "",
         "cinema": "vIHbogh much Daq",
-        "community_centre": "Community centre",
+        "community_centre": "",
         "gallery": "nagh beQ qach",
         "nightclub": "mI'meH qach",
-        "playground": "Playground",
+        "playground": "",
         "sauna": "chebmey ghurHa'meH tuj lo'bogh Daq",
-        "stripclub": "Stripclub",
+        "stripclub": "",
         "theatre": "much qach",
         "zoo": "HaDI'baH qach"
       },
       "misc": {
-        "company": "Company (Office)",
+        "company": "",
         "doctors": "Qelpu'",
-        "estate_agent": "Real estate agent",
+        "estate_agent": "",
         "hospital": "Qelpu' qach",
-        "insurance": "Insurance",
-        "lawyer": "Lawyer",
+        "insurance": "",
+        "lawyer": "",
         "pharmacy": "Hergh Suy",
         "place_of_worship": "ghIn",
         "toilets": "puchpa'mey",
@@ -1238,51 +1238,51 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
       "shopping": {
         "alcohol": "HIq Suy",
         "bakery": "tIr ngogh Suy",
-        "beauty": "Beauty salon",
+        "beauty": "",
         "beverages": "HIvje' Suy",
         "bicycle": "cha' rutlh DujHom Suy",
         "books": "paqmey",
         "butcher": "Ha'DIbaH Suy",
-        "car_repair": "Car repair",
-        "car_shop": "Car shop",
-        "chemist": "Chemist / Drugstore",
+        "car_repair": "",
+        "car_shop": "",
+        "chemist": "",
         "clothes": "Sut Suy",
         "computer": "De'wI'",
-        "confectionery": "Candy store",
+        "confectionery": "",
         "convenience": "HochHom Suy",
-        "deli": "Delicatessen",
+        "deli": "",
         "department_store": "Doch law' Suy",
         "doityourself": "bIta''egh",
         "dry_cleaning": "Say'wI' QaD",
         "electronics": "'ul lo'bogh Doch Suy",
-        "fabric": "Fabric shop",
-        "farm_shop": "Farm shop",
+        "fabric": "",
+        "farm_shop": "",
         "florist": "poch Suy",
         "furniture": "quS QongDaq je Suy",
         "garden_centre": "poch Suy",
-        "gift": "Gift shop",
+        "gift": "",
         "hairdresser": "jIb Say'moHmeH",
         "hardware": "chenmoHwI' jan Suy",
-        "jewelry": "Jewelry",
+        "jewelry": "",
         "kiosk": "SuyHom",
         "laundry": "Sut Say'moHmeH ",
         "mall": "Suy'a'",
         "optician": "mIn Qel",
-        "organic": "Organic shop",
-        "outdoor": "Outdoor supply",
-        "pet": "Pet shop",
-        "photo": "Photo",
-        "second_hand": "Second hand",
+        "organic": "",
+        "outdoor": "",
+        "pet": "",
+        "photo": "",
+        "second_hand": "",
         "shoes": "waqmey",
-        "sports": "Sports",
-        "stationery": "Stationery",
+        "sports": "",
+        "stationery": "",
         "supermarket": "Sop Suy'a'",
-        "toys": "Toys",
-        "travel_agency": "Travel agency",
-        "video": "Video rental store"
+        "toys": "",
+        "travel_agency": "",
+        "video": ""
       },
       "sport": {
-        "pitch": "Sports field",
+        "pitch": "",
         "sports_centre": "Quj QujmeH Daq",
         "stadium": "Quj bejmeH Daq",
         "swimming": "bIQ Quj",
@@ -1396,22 +1396,22 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
   "search": {
     "index": {
       "no-results": {
-        "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
+        "headline": "",
         "hint": {
-          "example": "<strong>Example:</strong> London, United Kingdom",
-          "info": "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!",
-          "work_in_progress": "We work hard to make searching for places easier and more intuitive in the future."
+          "example": "",
+          "info": "",
+          "work_in_progress": ""
         },
         "try_this": {
-          "address": "Please provide more <strong>address details</strong>.",
-          "intro": "Try this:",
-          "spell_check": "Check the <strong>spelling</strong> of your input."
+          "address": "",
+          "intro": "",
+          "spell_check": ""
         }
       },
       "results": {
         "ticker": {
-          "one": "%{count} result:",
-          "other": "%{count} results:"
+          "one": "",
+          "other": ""
         }
       },
       "search": {
@@ -1420,9 +1420,9 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
       }
     },
     "timeout": {
-      "headline": "Sorry, something went wrong",
-      "info": "Our search service was temporarily not available.",
-      "repeat_search": "Retry search"
+      "headline": "",
+      "info": "",
+      "repeat_search": ""
     }
   },
   "splash": {
@@ -1503,62 +1503,62 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
     "profile": {
       "edit": {
         "legends": {
-          "user_data": "Your account information"
+          "user_data": ""
         },
-        "title": "Profile"
+        "title": ""
       },
       "newsletter": {
-        "label": "Yes, keep me updated about Wheelmap.",
-        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
-        "title": "Newsletter"
+        "label": "",
+        "text": "",
+        "title": ""
       },
       "photos": {
-        "empty": "You haven't uploaded any photos yet.",
-        "title": "Photos"
+        "empty": "",
+        "title": ""
       },
       "show": {
         "greeting": {
-          "anonymously": "Hello there",
-          "personalized": "Hello %{name}"
+          "anonymously": "",
+          "personalized": ""
         },
         "overview": {
           "photos_uploaded": {
-            "one": "uploaded %{count} photo",
-            "other": "uploaded %{count} photos"
+            "one": "",
+            "other": ""
           },
           "pois_added": {
-            "one": "added %{count} place",
-            "other": "added %{count} places"
+            "one": "",
+            "other": ""
           },
           "pois_edited": {
-            "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "one": "",
+            "other": ""
           },
           "pois_marked": {
-            "one": "marked %{count} place",
-            "other": "marked %{count} places"
+            "one": "",
+            "other": ""
           },
-          "text": "You have"
+          "text": ""
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
-        "title": "Overview"
+        "text_html": "",
+        "title": ""
       },
       "widget": {
-        "categories": "Show category filter",
-        "center": "Map area",
-        "empty_center": "Search for center of map …",
-        "empty_provider": "Choose a Provider",
-        "height": "Height",
+        "categories": "",
+        "center": "",
+        "empty_center": "",
+        "empty_provider": "",
+        "height": "",
         "legends": {
-          "embed": "Embed code",
-          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
-          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
-          "preview": "Preview",
-          "settings": "Settings"
+          "embed": "",
+          "embed_explanation": "",
+          "general": "",
+          "preview": "",
+          "settings": ""
         },
-        "providers": "Provider",
-        "title": "Widget",
-        "width": "Width"
+        "providers": "",
+        "title": "",
+        "width": ""
       }
     }
   },

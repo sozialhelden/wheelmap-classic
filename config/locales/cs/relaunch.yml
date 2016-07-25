@@ -1,3 +1,4 @@
+---
 cs:
   activerecord:
     attributes:
@@ -9,6 +10,7 @@ cs:
         phone: Telefon
         note: Poznámka
         address_street: Ulice
+        address_housenumber: ''
         address_postcode: PSČ
         address_city: Město
   faq:
@@ -30,6 +32,9 @@ cs:
       projects: Zapojte se
     toolbar:
       categories: Kategorie
+    meta:
+      description: ''
+      title: ''
   home:
     index:
       overlay:
@@ -39,11 +44,36 @@ cs:
         headline: 'Označujte a hledejte místa přístupné pro vozíčkáře na Wheelmap.org - na celém světe a zdarma. Je to jednoduché:'
         lookup: Hledat konkrétní místo
         secondary_headline: 'Náš semaforový systém pro označení přístupnosti objektů pro vozíčkáře:'
+      embed_link: ''
+      zoom_alert: ''
   nodes:
     new:
       form:
+        title: ''
         legend: Poloha objektu
-        location: Prosím klikněte na mapu a umístěte značku na přesné místo
+        location: ''
+        section:
+          name_category:
+            name: ''
+            title: ""
+          address:
+            name: Adresa
+            title: ''
+            help: ''
+          similar_nodes:
+            name: ''
+            title: ''
+            go_edit: ''
+            go_new: ''
+            empty: ''
+          accessibility:
+            name: ''
+            title: ''
+          contact:
+            name: Kontakt
+            title: ''
+          overview:
+            title: ''
     node_data:
       address: 'Adresa:'
       contact_details: 'Kontakní údaje:'
@@ -74,6 +104,7 @@ cs:
       share:
         email: Email
         facebook: Facebook
+        text: ''
         twitter: Twitter
   search:
     index:
@@ -93,12 +124,14 @@ cs:
           few: '%{count} výsledků:'
           other: '%{count} výsledků:'
     timeout:
+      headline: ''
       info: Vyhledávání bylo dočasně nedostupné.
       repeat_search: Hledat znovu
   users:
     profile:
       newsletter:
         title: Novinky
+        text: ''
         label: Ano, posílejte mi novinky o Wheelmap.
       show:
         title: Přehled
@@ -116,13 +149,33 @@ cs:
             one: 'přidal %{count} místo'
             few: 'přidal %{count} místa'
             other: 'přidal %{count} míst'
+          pois_edited:
+            one: ''
+            few: ''
+            other: ''
           photos_uploaded:
             one: 'nahrál/a %{count} fotku'
             few: 'nahrál/a %{count} fotky'
             other: 'nahrál/a %{count} fotek'
       photos:
         title: Fotky
+        empty: ''
       edit:
         title: Profil
         legends:
           user_data: Informace o vašem účtu
+      widget:
+        title: ''
+        height: ''
+        width: ''
+        center: ''
+        categories: ''
+        providers: ''
+        empty_provider: ''
+        empty_center: ''
+        legends:
+          settings: ''
+          preview: ''
+          embed: ''
+          embed_explanation: ''
+          general: ''

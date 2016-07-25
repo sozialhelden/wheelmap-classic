@@ -939,7 +939,7 @@ I18n.translations["nn"] = I18n.extend((I18n.translations["nn"] || {}), {
             "title": "Other contact information"
           },
           "name_category": {
-            "name": "Name and category",
+            "name": "Name and place type",
             "title": "Give us some initial information about your place:"
           },
           "overview": {

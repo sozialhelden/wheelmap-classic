@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
   "actions": {
     "cancel": "Mégsem",
-    "next": "Next",
+    "next": "Tovább",
     "save": "Mentés",
     "send": "Küldés"
   },
@@ -638,9 +638,6 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
     },
     "models": {
       "node": {
-        "phone": {
-          "invalid": "Érvénytelen telefonszám. A következő formátumban kell lennie: +36 30 2345678"
-        },
         "website": {
           "invalid": "Érvénytelen a weboldal címe."
         }
@@ -739,11 +736,11 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
+      "description": "",
       "homepage": "Kezdőlap",
       "keywords": "kerekesszék akadálymentes hely talál keres bejelölés",
       "search": "Keresés",
-      "title": "Wheelmap.org"
+      "title": ""
     },
     "navigation": {
       "about_wheelmap": "A Wheelmapről",
@@ -798,7 +795,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "",
       "filter": {
         "category": "Válassz kategóriát",
         "deselect_all": "Minden kijelölés megszüntetése",
@@ -839,7 +836,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
         "help": "Kerekesszékkel akadálymentes? (Segítség)",
         "more": "több ..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": ""
     }
   },
   "how?": "Hogyan?",
@@ -922,37 +919,37 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
     "new": {
       "form": {
         "legend": "A hely elhelyezkedése",
-        "location": "Kattints a térképre és helyezd a jelölőt a pontos pozícióra.",
+        "location": "",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "",
+            "title": ""
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
-            "name": "Address",
-            "title": "Where is the place?"
+            "help": "",
+            "name": "Cím",
+            "title": ""
           },
           "contact": {
-            "name": "Contact",
-            "title": "Other contact information"
+            "name": "Elérhetőség",
+            "title": ""
           },
           "name_category": {
-            "name": "Name and category",
-            "title": "Give us some initial information about your place:"
+            "name": "",
+            "title": ""
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": ""
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "",
+            "go_edit": "",
+            "go_new": "",
+            "name": "",
+            "title": ""
           }
         },
-        "title": "Add a place"
+        "title": ""
       },
       "header": {
         "title": "Új hely | wheelmap.org"
@@ -1016,7 +1013,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
       "share": {
         "email": "Email",
         "facebook": "Facebook",
-        "text": "I found this place on Wheelmap.org: %{name}",
+        "text": "",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1118,8 +1115,8 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
       "health": "Egészségügy",
       "leisure": "Szabadidő",
       "misc": "Egyebek",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "",
+      "public_transfer": "",
       "shopping": "Bevásárlás",
       "sport": "Sport",
       "tourism": "Turisztika",
@@ -1163,11 +1160,11 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
         "government": "Kormányhivatal",
         "police": "Rendőrség",
         "public_building": "Középület",
-        "townhall": "Town hall"
+        "townhall": ""
       },
       "health": {
         "dentist": "Fogorvos",
-        "doctors": "Doctor",
+        "doctors": "",
         "hearing_aids": "Hallókészülék kereskedő",
         "hospital": "Kórház",
         "medical_supply": "Orvosi eszközök",
@@ -1180,7 +1177,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
         "brothel": "Bordély",
         "casino": "Kaszinó",
         "cinema": "Mozi",
-        "community_centre": "Community centre",
+        "community_centre": "",
         "gallery": "Galléria",
         "nightclub": "Éjszakai bár",
         "playground": "Játszótér",
@@ -1208,7 +1205,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
         "aerodrome": "Reptér",
         "bicycle_parking": "Bicikliparkoló",
         "bicycle_rental": "Biciklikölcsönző",
-        "boatyard": "Boat yard",
+        "boatyard": "",
         "bus_station": "Buszállomás",
         "bus_stop": "Buszmegálló",
         "cable_car": "Nagykabinos drótkötélpálya",
@@ -1238,7 +1235,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
         "butcher": "Hentes",
         "car_repair": "Autószervíz",
         "car_shop": "Autóbolt",
-        "chemist": "Chemist / Drugstore",
+        "chemist": "",
         "clothes": "Ruhabolt",
         "computer": "Számítógépbolt",
         "confectionery": "Édességbolt",
@@ -1252,7 +1249,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
         "farm_shop": "Termelői bolt",
         "florist": "Virágüzlet",
         "furniture": "Bútorüzlet",
-        "garden_centre": "Garden centre",
+        "garden_centre": "",
         "gift": "Ajándékbolt",
         "hairdresser": "Fodrászat",
         "hardware": "Háztartási bolt",
@@ -1413,7 +1410,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
       }
     },
     "timeout": {
-      "headline": "Sorry, something went wrong",
+      "headline": "",
       "info": "A keresési funkciónk átmenetileg nem volt elérhető.",
       "repeat_search": "Próbáld újra"
     }
@@ -1495,62 +1492,62 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
     "profile": {
       "edit": {
         "legends": {
-          "user_data": "Your account information"
+          "user_data": ""
         },
         "title": "Profil"
       },
       "newsletter": {
-        "label": "Yes, keep me updated about Wheelmap.",
-        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
+        "label": "",
+        "text": "",
         "title": "Hírlevél"
       },
       "photos": {
-        "empty": "You haven't uploaded any photos yet.",
+        "empty": "",
         "title": "Fotók"
       },
       "show": {
         "greeting": {
-          "anonymously": "Hello there",
-          "personalized": "Hello %{name}"
+          "anonymously": "",
+          "personalized": ""
         },
         "overview": {
           "photos_uploaded": {
-            "one": "uploaded %{count} photo",
-            "other": "uploaded %{count} photos"
+            "one": "",
+            "other": ""
           },
           "pois_added": {
-            "one": "added %{count} place",
-            "other": "added %{count} places"
+            "one": "",
+            "other": ""
           },
           "pois_edited": {
-            "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "one": "",
+            "other": ""
           },
           "pois_marked": {
-            "one": "marked %{count} place",
-            "other": "marked %{count} places"
+            "one": "",
+            "other": ""
           },
-          "text": "You have"
+          "text": ""
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
-        "title": "Overview"
+        "text_html": "",
+        "title": ""
       },
       "widget": {
-        "categories": "Show category filter",
-        "center": "Map area",
-        "empty_center": "Search for center of map …",
-        "empty_provider": "Choose a Provider",
-        "height": "Height",
+        "categories": "",
+        "center": "",
+        "empty_center": "",
+        "empty_provider": "",
+        "height": "",
         "legends": {
-          "embed": "Embed code",
-          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
-          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
-          "preview": "Preview",
+          "embed": "",
+          "embed_explanation": "",
+          "general": "",
+          "preview": "",
           "settings": "Beállítások"
         },
-        "providers": "Provider",
-        "title": "Widget",
-        "width": "Width"
+        "providers": "",
+        "title": "",
+        "width": ""
       }
     }
   },

@@ -13,10 +13,9 @@ es:
     send: Enviar
     save: Guardar
     cancel: Cancelar
+    next: Siguiente
   errors:
     models:
       node:
         website:
           invalid: "La dirección del sitio web no es válida."
-        phone:
-          invalid: "El número de teléfono no es válido. Debe tener el siguiente formato: +49 30 234567"

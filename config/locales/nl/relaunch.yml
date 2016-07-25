@@ -1,3 +1,4 @@
+---
 nl:
   activerecord:
     attributes:
@@ -7,15 +8,20 @@ nl:
         address: Adres
         website: Website
         phone: Telefoon
+        note: ''
         address_street: Straat
         address_housenumber: Huisnummer
+        address_postcode: ''
         address_city: Stad
   faq:
     answers:
       0: U kunt altijd de markering van een plaats zelf veranderen. Kies gewoon de juiste markering en "Save" - klaar!
+      1: ''
       2: U kunt meer informatie (bvb "Deze plaats heeft een mobiele helling") in de commentaar sectie toevoegen. Klik op "Edit" en "add comment"
     headline: Is er een probleem met deze plaats?
     questions:
+      0: ''
+      1: ''
       2: Ik heb meer informatie over dit project.
   header:
     navigation:
@@ -26,6 +32,9 @@ nl:
       projects: Projecten
     toolbar:
       categories: Categorieën
+    meta:
+      description: ''
+      title: ''
   home:
     index:
       overlay:
@@ -35,10 +44,36 @@ nl:
         headline: 'Markeer en vind rolstoel toegankelijke plaatsen met Wheelmap.org - wereldwijd en gratis. Het is makkelijk:'
         lookup: Zoek een speciale plaats
         secondary_headline: 'Ons stoplicht systeem om de rolstoel toegankelijke openbare ruimtes te markeren:'
+      embed_link: ''
+      zoom_alert: ''
   nodes:
     new:
       form:
+        title: ''
         legend: locatie
+        location: ''
+        section:
+          name_category:
+            name: ''
+            title: ""
+          address:
+            name: Adres
+            title: ''
+            help: ''
+          similar_nodes:
+            name: ''
+            title: ''
+            go_edit: ''
+            go_new: ''
+            empty: ''
+          accessibility:
+            name: ''
+            title: ''
+          contact:
+            name: Contact
+            title: ''
+          overview:
+            title: ''
     node_data:
       address: 'adres'
       contact_details: 'contactgegevens'
@@ -53,21 +88,32 @@ nl:
       add: Toevoegen
       photos_of_this_place: 'Fotos van deze plaats:'
       upload: Uploaden
+    node_similar:
+      similar: ''
     node_status:
       accessible_toilet: 'rolstoeltoegankelijk toilet'
+      premium: ''
       wheelchair_accessibility: 'Rolstoel toegangelijk?'
     node_streetview:
       streetview: 'Streetview:'
     show:
+      header:
+        meta:
+          description: ''
+          title: ''
       share:
         email: E-mail
         facebook: Facebook
+        text: ''
         twitter: Twitter
   search:
     index:
       no-results:
+        headline: ''
         hint:
           example: <strong>bijvoorbeeld:</strong> London, United Kingdom
+          info: ''
+          work_in_progress: ''
         try_this:
           address: Geef a.u.b. meer <strong>address details</strong>.
           intro: 'Probeer dit'
@@ -77,16 +123,54 @@ nl:
           one: '%{count} resultaat'
           other: '%{count} resultaat:'
     timeout:
+      headline: ''
       info: Onze zoekdienst was tijdelijk buiten werk
       repeat_search: Herhaal de zoekopdracht
   users:
     profile:
       newsletter:
         title: Nieuwsbrief
+        text: ''
+        label: ''
+      show:
+        title: ''
+        text_html: ""
+        greeting:
+          anonymously: ''
+          personalized: ''
+        overview:
+          text: ''
+          pois_marked:
+            one: ''
+            other: ''
+          pois_added:
+            one: ''
+            other: ''
+          pois_edited:
+            one: ''
+            other: ''
+          photos_uploaded:
+            one: ''
+            other: ''
       photos:
         title: 'Foto''s '
+        empty: ''
       edit:
         title: Profiel
+        legends:
+          user_data: ''
       widget:
+        title: ''
+        height: ''
+        width: ''
+        center: ''
+        categories: ''
+        providers: ''
+        empty_provider: ''
+        empty_center: ''
         legends:
           settings: Instellingen
+          preview: ''
+          embed: ''
+          embed_explanation: ''
+          general: ''

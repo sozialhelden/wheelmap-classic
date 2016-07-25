@@ -13,10 +13,9 @@ ja:
     send: 送信する
     save: 保存
     cancel: キャンセル
+    next: 次
   errors:
     models:
       node:
         website:
           invalid: "このURLは無効です"
-        phone:
-          invalid: "電話番号が正しくありません、記述はこのようにしてください +49 30 234567"

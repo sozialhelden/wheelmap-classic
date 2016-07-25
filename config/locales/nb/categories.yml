@@ -1,3 +1,4 @@
+---
 nb:
   poi:
     category:
@@ -8,6 +9,8 @@ nb:
       health: Helsehjelp
       leisure: Kultur & Fritid
       misc: Diverse
+      money_post: ""
+      public_transfer: ""
       shopping: Butikker
       sport: Sport
       tourism: Turisme
@@ -19,12 +22,14 @@ nb:
         camp_site: "Leirplass"
         caravan_site: "Campingvognsted"
         chalet: Hytte
+        dormitory: ''
         guest_house: "Gjestehus"
         hostel: Herberge
         hotel: Hotell
         motel: Motel
       education:
         college: Høyskole
+        driving_school: ""
         kindergarten: Barnehage
         library: Bibliotek
         museum: Museum
@@ -36,14 +41,19 @@ nb:
         cafe: Kafe
         drinking_water: "Drikkevann"
         fast_food: "Gatekjøkken"
+        ice_cream: ""
         pub: Pub
         restaurant: Restaurant
       government:
         courthouse: Tinghus
         embassy: Ambassade
+        government: ""
         police: Politi
         public_building: "Offentlig byggning"
+        townhall: ''
       health:
+        dentist: ''
+        doctors: ''
         hearing_aids: "Høreapparatforhandler"
         hospital: Sykehus
         medical_supply: "Apotek"
@@ -53,7 +63,9 @@ nb:
       leisure:
         arena: Arena
         brothel: Bordell
+        casino: ''
         cinema: Kino
+        community_centre: ""
         gallery: Galleri
         nightclub: Nattklubb
         playground: Lekeplass
@@ -63,6 +75,8 @@ nb:
         zoo: Dyrepark
       misc:
         company: "Bedrift (kontor)"
+        estate_agent: ""
+        insurance: ''
         lawyer: Advokat
         place_of_worship: "Bønnerom / stillerom"
         toilets: Toaletter
@@ -76,6 +90,7 @@ nb:
         aerodrome: Flyplass
         bicycle_parking: "Sykkelparkering"
         bicycle_rental: "Sykkelutleie"
+        boatyard: ''
         bus_station: "Bussstasjon"
         bus_stop: "Bussholdeplass"
         cable_car: "Taubane"
@@ -97,35 +112,50 @@ nb:
       shopping:
         alcohol: Brennevin
         bakery: Bakeri
+        beauty: ""
         beverages: Forfriskninger
         bicycle: "Sykkelbutikk"
         books: Bøker
         butcher: Slakter
         car_repair: "Bilverksted"
         car_shop: "Bilbutikk"
+        chemist: ''
         clothes: Klær
         computer: Datamaskin
+        confectionery: ""
         convenience: Nærbutikk
+        deli: ''
         department_store: "Varemagasin"
         doityourself: "Gjør det selv"
         dry_cleaning: "Renseri"
         electronics: Elektronikk
+        fabric: ""
+        farm_shop: ""
         florist: Blomsterbutikk
         furniture: Møbler
+        garden_centre: ""
+        gift: ""
         hairdresser: Frisør
         hardware: Jernvare
+        jewelry: ''
         kiosk: Kiosk
         laundry: Vask
         mall: "Kjøpesenter"
         optician: Optiker
+        organic: ""
+        outdoor: ""
+        pet: ""
         photo: Foto
         second_hand: "Brukt"
         shoes: Sko
         sports: Sport
         stationery: Skrivesaker
         supermarket: Dagligvare
+        toys: ''
+        travel_agency: ""
         video: "Videoutleie"
       sport:
+        pitch: ""
         sports_centre: "Sportssenter"
         stadium: Stadion
         swimming: Svømming

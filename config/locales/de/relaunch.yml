@@ -1,3 +1,4 @@
+---
 de:
   activerecord:
     attributes:
@@ -44,14 +45,16 @@ de:
         lookup: Direkt Orte finden
         secondary_headline: 'Das Ampelsystem zum Markieren der Rollstuhlgerechtigkeit:'
       embed_link: Auf Wheelmap.org anzeigen
+      zoom_alert: Zoome näher heran, um mehr Orte zu sehen
   nodes:
     new:
       form:
+        title: Ort hinzufügen
         legend: Lage des Ortes
-        location: Bitte klicke auf der Karte an die Stelle, wo sich der Ort befindet!
+        location: Bitte klicke in der Karte auf die Stelle, wo sich der Ort befindet!
         section:
           name_category:
-            name: Name & Kategorie
+            name: Name und Ortstyp
             title: "Gib uns erste Informationen zu deinem neuen Ort:"
           address:
             name: Adresse
@@ -59,9 +62,9 @@ de:
             help: Du kannst den Marker auf der Karte auf die korrekte Position verschieben.
           similar_nodes:
             name: Ähnliche Orte
-            title: Ist es einer der folgenden Orte?
-            go_edit: Mit diesen Ort fortfahren
-            go_new: Es ist keiner der oben genannten Orte …
+            title: Wir haben ähnliche Orte in der Nähe gefunden. Ist es einer der folgenden Orte?
+            go_edit: Mit diesem Ort fortfahren
+            go_new: Es ist keiner der oben genannten Orte…
             empty: Es wurden keine ähnlichen Orte gefunden.
           accessibility:
             name: Rollstuhlgerechtigkeit
@@ -70,7 +73,7 @@ de:
             name: Kontakt
             title: Weitere Kontaktmöglichkeiten
           overview:
-            title: Alle Eingaben korrekt?
+            title: Sind alle Eingaben korrekt?
     node_data:
       address: 'Adresse:'
       contact_details: 'Kontaktdaten:'

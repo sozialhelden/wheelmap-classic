@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
   "actions": {
     "cancel": "Cancelar",
-    "next": "Next",
+    "next": "Siguiente",
     "save": "Guardar",
     "send": "Enviar"
   },
@@ -638,9 +638,6 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
     },
     "models": {
       "node": {
-        "phone": {
-          "invalid": "El número de teléfono no es válido. Debe tener el siguiente formato: +49 30 234567"
-        },
         "website": {
           "invalid": "La dirección del sitio web no es válida."
         }
@@ -747,7 +744,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
+      "description": "Wheelmap.org es un mapa en línea para buscar, encontrar y marcar lugares accesibles para silla de ruedas. ¿Participa marcando lugares públicos como bares, restaurantes, cines o supermercados!",
       "homepage": "Página principal",
       "keywords": "lugares accesibles silla de ruedas buscar marcadores pin",
       "search": "Buscar",
@@ -810,7 +807,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "Mostrar en Wheelmap.org",
       "filter": {
         "category": "Elegir Categoría:",
         "deselect_all": "Deseleccionar todo",
@@ -851,7 +848,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         "help": "¿Accesible para silla de ruedas? (Ayuda)",
         "more": "más ..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": ""
     }
   },
   "how?": "¿Cómo?",
@@ -934,37 +931,37 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
     "new": {
       "form": {
         "legend": "Ubicación del sitio",
-        "location": "Por favor, haz clic en el mapa y sitúa el marcador en la posición exacta.",
+        "location": "",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "",
+            "title": ""
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
-            "name": "Address",
-            "title": "Where is the place?"
+            "help": "",
+            "name": "Dirección",
+            "title": ""
           },
           "contact": {
-            "name": "Contact",
-            "title": "Other contact information"
+            "name": "Contacto",
+            "title": ""
           },
           "name_category": {
-            "name": "Name and category",
-            "title": "Give us some initial information about your place:"
+            "name": "",
+            "title": ""
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": ""
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "",
+            "go_edit": "",
+            "go_new": "",
+            "name": "",
+            "title": ""
           }
         },
-        "title": "Add a place"
+        "title": ""
       },
       "header": {
         "title": "Nuevo lugar | wheelmap.org"
@@ -1028,7 +1025,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
       "share": {
         "email": "Correo electrónico",
         "facebook": "Facebook",
-        "text": "I found this place on Wheelmap.org: %{name}",
+        "text": "Encontré este lugar en Wheelmap.org %{name}",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1172,22 +1169,18 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
       "government": {
         "courthouse": "Juzgado",
         "embassy": "Embajada",
-        "employment_agency": "Agencia de empleos",
         "government": "Agencia gubernamental",
         "police": "Policía",
         "public_building": "Edificio público",
         "townhall": "Ayuntamiento"
       },
       "health": {
-        "alternative": "Especialista en medicina alternativa",
         "dentist": "Dentista",
         "doctors": "Doctor",
         "hearing_aids": "Distribuidor de audífonos",
         "hospital": "Hospital",
         "medical_supply": "Suministros Médicos",
         "pharmacy": "Farmacia",
-        "physiotherapist": "Fisioterapeuta",
-        "psychotherapist": "Psicoterapeuta",
         "social_facility": "Instalaciones sociales",
         "veterinary": "Veterinario"
       },
@@ -1202,17 +1195,14 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         "playground": "Área de juegos",
         "sauna": "Sauna",
         "stripclub": "Club de striptease",
-        "tattoo": "Tienda de tatuajes",
         "theatre": "Teatro",
         "zoo": "Zoo"
       },
       "misc": {
-        "association": "Asocición",
         "company": "Empresa (oficinas)",
         "estate_agent": "Agente inmobiliario",
         "insurance": "Seguros",
         "lawyer": "Abogado",
-        "ngo": "Organización no gubernamental",
         "place_of_worship": "Zona religiosa",
         "toilets": "Sanitarios"
       },
@@ -1249,7 +1239,6 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
       },
       "shopping": {
         "alcohol": "Licor",
-        "antiques": "Antiguedades",
         "bakery": "Panadería",
         "beauty": "Salón de belleza",
         "beverages": "Bebidas",
@@ -1263,7 +1252,6 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         "computer": "Ordenadores",
         "confectionery": "Bombonería",
         "convenience": "Comodidad",
-        "copyshop": "Fotocopiadora",
         "deli": "Delicatessen",
         "department_store": "Almacén",
         "doityourself": "Hazlo tú mismo",
@@ -1272,22 +1260,15 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         "fabric": "Tienda de telas",
         "farm_shop": "Granja",
         "florist": "Floristería",
-        "funeral_directors": "Funeraría",
         "furniture": "Muebles",
         "garden_centre": "Centro de jardinería",
         "gift": "Tienda de regalos",
-        "greengrocer": "Verdulería",
         "hairdresser": "Peluquería",
         "hardware": "Hardware",
-        "interior_decoration": "Tienda de diseño de interiores",
         "jewelry": "Joyas",
         "kiosk": "Kiosko",
         "laundry": "Lavandería",
         "mall": "Centro comercial",
-        "mobile_phone": "Tienda de móviles",
-        "music": "Tienda de discos",
-        "musical_instrument": "Tienda de instrumentos musicales",
-        "newsagent": "Kiosco de diarios",
         "optician": "Ópica",
         "organic": "Tienda ecológica",
         "outdoor": "Suministros al aire libre",
@@ -1298,11 +1279,8 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         "sports": "Deportes",
         "stationery": "Papelería",
         "supermarket": "Supermercado",
-        "tailor": "Sastre",
-        "tobacco": "Tabaquería",
         "toys": "Juguetes",
         "travel_agency": "Agencia de viajes",
-        "variety_store": "Tienda de rebajas",
         "video": "Videoclub"
       },
       "sport": {
@@ -1546,31 +1524,31 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         },
         "overview": {
           "photos_uploaded": {
-            "one": "uploaded %{count} photo",
-            "other": "uploaded %{count} photos"
+            "one": "",
+            "other": ""
           },
           "pois_added": {
-            "one": "added %{count} place",
-            "other": "added %{count} places"
+            "one": "",
+            "other": ""
           },
           "pois_edited": {
-            "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "one": "",
+            "other": ""
           },
           "pois_marked": {
-            "one": "marked %{count} place",
-            "other": "marked %{count} places"
+            "one": "",
+            "other": ""
           },
           "text": "Tú tienes"
         },
         "text_html": "Hola,<br>\n Bienvenido (de nuevo) a Wheelmap.org! Estamos felices de tenerte con nosotros! Puedes navegar en nuestro <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> o <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> Si quieres saber un poco más sobre Wheelmap.org o aprender un poco sobre el <a href=\"http://wheelmap.org/en/get-engaged/\">projecto</a> que ofrecemos y como puedes formar parte de ellos.<br> \nMantente en contacto<br> \nPara estar en contacto, puedes subscribirte a nuestro boletín mensual o seguirnos en <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> y <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Esperamos con ansías escuchar tus opiniones y empezar una conversación contigo! \n<br> y ahora, mapea feliz!<br> \nTu equipo de Wheelmap",
-        "title": "Overview"
+        "title": "Visión de conjunto"
       },
       "widget": {
         "categories": "Muestra el filtro de categoría",
         "center": "Mapa de la zona",
-        "empty_center": "Search for center of map …",
-        "empty_provider": "Choose a Provider",
+        "empty_center": "Buscar el centro del mapa ...",
+        "empty_provider": "Escoger un proveedor",
         "height": "Alto",
         "legends": {
           "embed": "Código de inserción",
@@ -1579,7 +1557,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
           "preview": "Vista previa",
           "settings": "Ajustes"
         },
-        "providers": "Provider",
+        "providers": "Proveedor",
         "title": "Widget",
         "width": "Ancho"
       }

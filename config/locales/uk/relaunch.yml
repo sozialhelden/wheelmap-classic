@@ -1,3 +1,4 @@
+---
 uk:
   activerecord:
     attributes:
@@ -31,6 +32,9 @@ uk:
       projects: Проекти
     toolbar:
       categories: Категорії
+    meta:
+      description: ''
+      title: ''
   home:
     index:
       overlay:
@@ -40,11 +44,36 @@ uk:
         headline: 'Позначайте та знаходьте місця з доступом для людей на інвалідних візках на Wheelmap.org по всьому світу безкоштовно. Це просто:'
         lookup: Шукати конкретне місце
         secondary_headline: 'Доступність громадських місць позначається кольорами світлофора:'
+      embed_link: ''
+      zoom_alert: ''
   nodes:
     new:
       form:
+        title: ''
         legend: Розташування місця
-        location: Натисніть на карту і розмістіть маркер на розташуванні місця.
+        location: ''
+        section:
+          name_category:
+            name: ''
+            title: ""
+          address:
+            name: Адреса
+            title: ''
+            help: ''
+          similar_nodes:
+            name: ''
+            title: ''
+            go_edit: ''
+            go_new: ''
+            empty: ''
+          accessibility:
+            name: ''
+            title: ''
+          contact:
+            name: Контакт
+            title: ''
+          overview:
+            title: ''
     node_data:
       address: 'Адреса:'
       contact_details: 'Контактні дані:'
@@ -75,6 +104,7 @@ uk:
       share:
         email: Email
         facebook: Facebook
+        text: ''
         twitter: Twitter
   search:
     index:
@@ -94,15 +124,18 @@ uk:
           few: '%{count} результата:'
           other: '%{count} результатів:'
     timeout:
+      headline: ''
       info: Наша система пошуку була тимчасово недоступна.
       repeat_search: Спробувати пошукати ще раз
   users:
     profile:
       newsletter:
         title: Інформаційний бюлетень
+        text: ''
         label: Так, надсилайте мені останні новини Wheelmap.
       show:
         title: Огляд
+        text_html: ""
         greeting:
           anonymously: Вітаємо
           personalized: Вітаємо, %{name}
@@ -116,16 +149,33 @@ uk:
             one: 'додано %{count} місце'
             few: 'додано %{count} місця'
             other: 'додано %{count} місць'
+          pois_edited:
+            one: ''
+            few: ''
+            other: ''
           photos_uploaded:
             one: 'вивантажено %{count} фотографію'
             few: 'вивантажено %{count} фотографії'
             other: 'вивантажено %{count} фотографій'
       photos:
         title: Фото
+        empty: ''
       edit:
         title: Профіль
         legends:
           user_data: Інформація профілю
       widget:
+        title: ''
+        height: ''
+        width: ''
+        center: ''
+        categories: ''
+        providers: ''
+        empty_provider: ''
+        empty_center: ''
         legends:
           settings: налаштування
+          preview: ''
+          embed: ''
+          embed_explanation: ''
+          general: ''

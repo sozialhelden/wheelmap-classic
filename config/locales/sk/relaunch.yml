@@ -1,3 +1,4 @@
+---
 sk:
   activerecord:
     attributes:
@@ -7,8 +8,10 @@ sk:
         address: Adresa
         website: Webovská stránka
         phone: Telefón
+        note: ''
         address_street: Ulica
         address_housenumber: Číslo domu
+        address_postcode: ''
         address_city: Mesto
   faq:
     answers:
@@ -29,6 +32,9 @@ sk:
       projects: Projekty
     toolbar:
       categories: Kategórie
+    meta:
+      description: ''
+      title: ''
   home:
     index:
       overlay:
@@ -38,11 +44,36 @@ sk:
         headline: 'Označujte a hľadajte miesta prístupné pre vozíčkarov na Wheelmap.org - na celom svete a zadarmo. Je to jednoduché:'
         lookup: Hľadať konkrétne miesto
         secondary_headline: 'Náš semaforový systém na označenie prístupnosti verejných objektov pre vozíčkarov:'
+      embed_link: ''
+      zoom_alert: ''
   nodes:
     new:
       form:
+        title: ''
         legend: Poloha objektu
-        location: Prosím kliknite na mapu a umiestnite značku na presnú polohu.
+        location: ''
+        section:
+          name_category:
+            name: ''
+            title: ""
+          address:
+            name: Adresa
+            title: ''
+            help: ''
+          similar_nodes:
+            name: ''
+            title: ''
+            go_edit: ''
+            go_new: ''
+            empty: ''
+          accessibility:
+            name: ''
+            title: ''
+          contact:
+            name: Kontakt
+            title: ''
+          overview:
+            title: ''
     node_data:
       address: 'Adresa:'
       contact_details: 'Kontaktné údaje:'
@@ -73,6 +104,7 @@ sk:
       share:
         email: E-mail
         facebook: Facebook
+        text: ''
         twitter: Twitter
   search:
     index:
@@ -86,17 +118,64 @@ sk:
           address: Prosím zadajte <strong>konkrétnejšiu adresu</strong>.
           intro: 'Skúste toto:'
           spell_check: Skontrolujte či ste text zadali správne.
+      results:
+        ticker:
+          one: ''
+          few: ''
+          other: ''
     timeout:
+      headline: ''
       info: Naše vyhľadávanie bolo dočasne nedostupné.
       repeat_search: Hľadať znova
   users:
     profile:
       newsletter:
         title: Spravodaj
+        text: ''
+        label: ''
+      show:
+        title: ''
+        text_html: ""
+        greeting:
+          anonymously: ''
+          personalized: ''
+        overview:
+          text: ''
+          pois_marked:
+            one: ''
+            few: ''
+            other: ''
+          pois_added:
+            one: ''
+            few: ''
+            other: ''
+          pois_edited:
+            one: ''
+            few: ''
+            other: ''
+          photos_uploaded:
+            one: ''
+            few: ''
+            other: ''
       photos:
         title: Fotky
+        empty: ''
       edit:
         title: Profil
+        legends:
+          user_data: ''
       widget:
+        title: ''
+        height: ''
+        width: ''
+        center: ''
+        categories: ''
+        providers: ''
+        empty_provider: ''
+        empty_center: ''
         legends:
           settings: Nastavenia
+          preview: ''
+          embed: ''
+          embed_explanation: ''
+          general: ''

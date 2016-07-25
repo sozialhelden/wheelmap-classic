@@ -1,3 +1,4 @@
+---
 it:
   activerecord:
     attributes:
@@ -44,11 +45,35 @@ it:
         lookup: Cerca un luogo specifico
         secondary_headline: 'Il nostro "semaforo" per segnare l''accessibilità dei luoghi pubblici per sedie a rotelle:'
       embed_link: Mostra su Wheelmap.org
+      zoom_alert: ''
   nodes:
     new:
       form:
+        title: ''
         legend: 'Posizione del luogo '
-        location: Clicca sulla mappa e metti il marker sulla posizione esatta.
+        location: ''
+        section:
+          name_category:
+            name: ''
+            title: ""
+          address:
+            name: Indirizzo
+            title: ''
+            help: ''
+          similar_nodes:
+            name: ''
+            title: ''
+            go_edit: ''
+            go_new: ''
+            empty: ''
+          accessibility:
+            name: ''
+            title: ''
+          contact:
+            name: Contatti
+            title: ''
+          overview:
+            title: ''
     node_data:
       address: 'Indirizzo: '
       contact_details: 'Dettagli del contatto:'

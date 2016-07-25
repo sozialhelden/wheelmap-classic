@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
   "actions": {
     "cancel": "Ακύρωση",
-    "next": "Next",
+    "next": "Επόμενο",
     "save": "Αποθήκευση",
     "send": "Αποστολή"
   },
@@ -638,9 +638,6 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
     },
     "models": {
       "node": {
-        "phone": {
-          "invalid": "Ο αριθμός τηλεφώνου δεν είναι έγκυρος. Θα πρέπει να έχει την ακόλουθη μορφή: +49 30 234567"
-        },
         "website": {
           "invalid": "Η διεύθυνση της ιστοσελίδας δεν ισχύει."
         }
@@ -739,11 +736,11 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
+      "description": "",
       "homepage": "Αρχική σελίδα",
       "keywords": "Μέρη προσβάσιμα με αναπηρική καρέκλα - βρείτε σημά αναζήτησης",
       "search": "Αναζήτηση",
-      "title": "Wheelmap.org"
+      "title": ""
     },
     "navigation": {
       "about_wheelmap": "Σχετικά με το Wheelmap",
@@ -802,7 +799,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "",
       "filter": {
         "category": "Κατηγορία:",
         "deselect_all": "Αποεπιλογή όλων",
@@ -843,7 +840,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
         "help": "Δυνατότητα πρόσβασης με αναπηρική καρέκλα",
         "more": "περισσότερα ..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": ""
     }
   },
   "how?": "Πώς;",
@@ -926,37 +923,37 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
     "new": {
       "form": {
         "legend": "Περιοχή του χώρου",
-        "location": "Κάντε κλικ στον χάρτη και τοποθετήστε το δείκτη στην ακριβή θέση.",
+        "location": "",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "",
+            "title": ""
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
-            "name": "Address",
-            "title": "Where is the place?"
+            "help": "",
+            "name": "Διεύθυνση",
+            "title": ""
           },
           "contact": {
-            "name": "Contact",
-            "title": "Other contact information"
+            "name": "Επικοινωνία",
+            "title": ""
           },
           "name_category": {
-            "name": "Name and category",
-            "title": "Give us some initial information about your place:"
+            "name": "",
+            "title": ""
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": ""
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "",
+            "go_edit": "",
+            "go_new": "",
+            "name": "",
+            "title": ""
           }
         },
-        "title": "Add a place"
+        "title": ""
       },
       "header": {
         "title": "Νέα τοποθεσία | wheelmap.org "
@@ -1020,7 +1017,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
       "share": {
         "email": "Email",
         "facebook": "Facebook",
-        "text": "I found this place on Wheelmap.org: %{name}",
+        "text": "",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1122,8 +1119,8 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
       "health": "Υγεία",
       "leisure": "Ψυχαγωγία",
       "misc": "Διάφορα",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "",
+      "public_transfer": "",
       "shopping": "Καταστήματα",
       "sport": "Αθλητισμός",
       "tourism": "Τουρισμός",
@@ -1167,11 +1164,11 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
         "government": "Κυβερνητική υπηρεσία",
         "police": "Αστυνομία",
         "public_building": "Δημόσια κτήρια",
-        "townhall": "Town hall"
+        "townhall": ""
       },
       "health": {
         "dentist": "Οδοντίατρος",
-        "doctors": "Doctor",
+        "doctors": "",
         "hearing_aids": "Αντιπρόσωπος ακουστικών βαρηκοΐας",
         "hospital": "Νοσοκομείο",
         "medical_supply": "Ιατρικές προμύθειες",
@@ -1184,7 +1181,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
         "brothel": "Οίκος ανοχής",
         "casino": "Καζίνο",
         "cinema": "Κινηματογράφος",
-        "community_centre": "Community centre",
+        "community_centre": "",
         "gallery": "Πινακοθήκη",
         "nightclub": "Νυχτερινό κέντρο διασκέδασης",
         "playground": "Παιδική χαρά",
@@ -1212,7 +1209,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
         "aerodrome": "Αεροδρόμιο",
         "bicycle_parking": "Χώρος στάθμευσης για ποδήλατα",
         "bicycle_rental": "Ενοικίαση ποδηλάτων",
-        "boatyard": "Boat yard",
+        "boatyard": "",
         "bus_station": "Σταθμός λεωφορείων",
         "bus_stop": "Στάση λεωφορείου",
         "cable_car": "Τελεφερίκ",
@@ -1242,7 +1239,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
         "butcher": "Κρεοπωλείο",
         "car_repair": "Συνεργείο αυτοκινήτου",
         "car_shop": "Κατάστημα αυτοκινήτων",
-        "chemist": "Chemist / Drugstore",
+        "chemist": "",
         "clothes": "Ρούχα",
         "computer": "Υπολογιστές",
         "confectionery": "Ψιλικατζίδικο",
@@ -1256,7 +1253,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
         "farm_shop": "Οπωροπωλείο",
         "florist": "Ανθοπωλείο",
         "furniture": "Έπιπλα",
-        "garden_centre": "Garden centre",
+        "garden_centre": "",
         "gift": "Κατάστημα δώρων",
         "hairdresser": "Κομμωτήρια",
         "hardware": "Kατάστημα σιδηρικών",
@@ -1417,7 +1414,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
       }
     },
     "timeout": {
-      "headline": "Sorry, something went wrong",
+      "headline": "",
       "info": "Η υπηρεσία αναζήτησης δεν ήταν διαθέσιμη προσωρινά.",
       "repeat_search": "Επανάληψη αναζήτησης"
     }
@@ -1499,62 +1496,62 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
     "profile": {
       "edit": {
         "legends": {
-          "user_data": "Your account information"
+          "user_data": ""
         },
         "title": "προφίλ"
       },
       "newsletter": {
-        "label": "Yes, keep me updated about Wheelmap.",
-        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
+        "label": "",
+        "text": "",
         "title": "Ενημερωτικό Δελτίο"
       },
       "photos": {
-        "empty": "You haven't uploaded any photos yet.",
+        "empty": "",
         "title": "Φωτογραφίες"
       },
       "show": {
         "greeting": {
-          "anonymously": "Hello there",
-          "personalized": "Hello %{name}"
+          "anonymously": "",
+          "personalized": ""
         },
         "overview": {
           "photos_uploaded": {
-            "one": "uploaded %{count} photo",
-            "other": "uploaded %{count} photos"
+            "one": "",
+            "other": ""
           },
           "pois_added": {
-            "one": "added %{count} place",
-            "other": "added %{count} places"
+            "one": "",
+            "other": ""
           },
           "pois_edited": {
-            "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "one": "",
+            "other": ""
           },
           "pois_marked": {
-            "one": "marked %{count} place",
-            "other": "marked %{count} places"
+            "one": "",
+            "other": ""
           },
-          "text": "You have"
+          "text": ""
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
-        "title": "Overview"
+        "text_html": "",
+        "title": ""
       },
       "widget": {
-        "categories": "Show category filter",
-        "center": "Map area",
-        "empty_center": "Search for center of map …",
-        "empty_provider": "Choose a Provider",
-        "height": "Height",
+        "categories": "",
+        "center": "",
+        "empty_center": "",
+        "empty_provider": "",
+        "height": "",
         "legends": {
-          "embed": "Embed code",
-          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
-          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
-          "preview": "Preview",
+          "embed": "",
+          "embed_explanation": "",
+          "general": "",
+          "preview": "",
           "settings": "Ρυθμίσεις "
         },
-        "providers": "Provider",
-        "title": "Widget",
-        "width": "Width"
+        "providers": "",
+        "title": "",
+        "width": ""
       }
     }
   },

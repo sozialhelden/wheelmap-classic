@@ -1,3 +1,4 @@
+---
 pt_BR:
   activerecord:
     attributes:
@@ -31,6 +32,9 @@ pt_BR:
       projects: Projetos
     toolbar:
       categories: Categorias
+    meta:
+      description: ''
+      title: ''
   home:
     index:
       overlay:
@@ -40,11 +44,36 @@ pt_BR:
         headline: 'Marque e encontre lugares acessíveis a cadeirantes com Wheelmap.org - no mundo tudo e de graça. É simples:'
         lookup: Buscar um lugar específico
         secondary_headline: 'Nosso sistema de semáforo para indicar a acessibilidade de lugares públicos:'
+      embed_link: ''
+      zoom_alert: ''
   nodes:
     new:
       form:
+        title: ''
         legend: Localização do lugar
-        location: Por favor, clique no mapa e coloque o marcador na posição exata.
+        location: ''
+        section:
+          name_category:
+            name: ''
+            title: ""
+          address:
+            name: Endereço
+            title: ''
+            help: ''
+          similar_nodes:
+            name: ''
+            title: ''
+            go_edit: ''
+            go_new: ''
+            empty: ''
+          accessibility:
+            name: ''
+            title: ''
+          contact:
+            name: Contato
+            title: ''
+          overview:
+            title: ''
     node_data:
       address: 'Endereço:'
       contact_details: 'Contato:'
@@ -75,6 +104,7 @@ pt_BR:
       share:
         email: E-mail
         facebook: Facebook
+        text: ''
         twitter: Twitter
   search:
     index:
@@ -93,15 +123,18 @@ pt_BR:
           one: '%{count} resultado:'
           other: '%{count} resultados:'
     timeout:
+      headline: ''
       info: Nosso sistema de busca estava temporariamente indisponível.
       repeat_search: Nova busca
   users:
     profile:
       newsletter:
         title: Newsletter
+        text: ''
         label: 'Sim, informam-me sobre Wheelmap. '
       show:
         title: Visão geral
+        text_html: ""
         greeting:
           anonymously: Olá!
           personalized: Oi %{name}
@@ -113,15 +146,31 @@ pt_BR:
           pois_added:
             one: '%{count} lugares adicionados'
             other: '%{count} lugares adicionados'
+          pois_edited:
+            one: ''
+            other: ''
           photos_uploaded:
             one: '%{count} lugares transferidos'
             other: '%{count} lugares carregados'
       photos:
         title: Fotos
+        empty: ''
       edit:
         title: Perfis
         legends:
           user_data: Informação de sua conta
       widget:
+        title: ''
+        height: ''
+        width: ''
+        center: ''
+        categories: ''
+        providers: ''
+        empty_provider: ''
+        empty_center: ''
         legends:
           settings: Configurações
+          preview: ''
+          embed: ''
+          embed_explanation: ''
+          general: ''

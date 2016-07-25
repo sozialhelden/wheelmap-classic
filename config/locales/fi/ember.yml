@@ -1,5 +1,21 @@
 fi:
+  models:
+    category:
+      prompt: ""
+    node_type:
+      prompt: ""
+    node:
+      info_edit_position: ""
+      mail:
+        subject: ""
+        body: ""
   actions:
     send: Lähetä
     save: Tallenna
     cancel: Peruuta
+    next: Seuraava
+  errors:
+    models:
+      node:
+        website:
+          invalid: ""

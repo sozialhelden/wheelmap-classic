@@ -13,10 +13,9 @@ fr:
     send: Envoyer
     save: Enregistrer
     cancel: Annuler
+    next: Prochain
   errors:
     models:
       node:
         website:
           invalid: "L'adresse du site Web est invalide."
-        phone:
-          invalid: "Le numéro de téléphone est invalide. Il doit être au format suivant +49 30 234567"

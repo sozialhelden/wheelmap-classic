@@ -1,3 +1,4 @@
+---
 da:
   activerecord:
     attributes:
@@ -31,6 +32,9 @@ da:
       projects: Projekter
     toolbar:
       categories: kategorier
+    meta:
+      description: ''
+      title: ''
   home:
     index:
       overlay:
@@ -40,11 +44,36 @@ da:
         headline: 'Markerer og find kørestolstilgængelige steder med Wheelmap.org - verden over og helt gratis. Det er nemt:'
         lookup: Søg efter et bestemt sted
         secondary_headline: 'Vores trafiklys system til at markerer kørestolstilgængelighed for offentlige steder:'
+      embed_link: ''
+      zoom_alert: ''
   nodes:
     new:
       form:
+        title: ''
         legend: Lokalitet for stedet
-        location: Klik på kortet og placerer markøren på den præcise position.
+        location: ''
+        section:
+          name_category:
+            name: ''
+            title: ""
+          address:
+            name: Adresse
+            title: ''
+            help: ''
+          similar_nodes:
+            name: ''
+            title: ''
+            go_edit: ''
+            go_new: ''
+            empty: ''
+          accessibility:
+            name: ''
+            title: ''
+          contact:
+            name: Kontakt
+            title: ''
+          overview:
+            title: ''
     node_data:
       address: 'Adresse:'
       contact_details: 'Kontaktoplysninger:'
@@ -75,6 +104,7 @@ da:
       share:
         email: E-mail
         facebook: Facebook
+        text: ''
         twitter: Twitter
   search:
     index:
@@ -93,15 +123,18 @@ da:
           one: '%{count} resultat:'
           other: '%{count} resultater:'
     timeout:
+      headline: ''
       info: Vores søgeservice var midlertidigt nede.
       repeat_search: Prøv søgningen igen
   users:
     profile:
       newsletter:
         title: Nyhedsbrev
+        text: ''
         label: Ja tak, hold mig informeret om Wheelmap.
       show:
         title: Overblik
+        text_html: ""
         greeting:
           anonymously: Hej derude
           personalized: Hej %{name}
@@ -113,15 +146,31 @@ da:
           pois_added:
             one: 'tilføjet %{count}  steder'
             other: 'tilføjet %{count}  steder'
+          pois_edited:
+            one: ''
+            other: ''
           photos_uploaded:
             one: 'uploadet %{count} billeder'
             other: 'uploadet %{count} billeder'
       photos:
         title: Fotos
+        empty: ''
       edit:
         title: Profil
         legends:
           user_data: Din brugerkonto information
       widget:
+        title: ''
+        height: ''
+        width: ''
+        center: ''
+        categories: ''
+        providers: ''
+        empty_provider: ''
+        empty_center: ''
         legends:
           settings: Indstillinger
+          preview: ''
+          embed: ''
+          embed_explanation: ''
+          general: ''
