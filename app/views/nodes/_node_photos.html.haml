@@ -2,7 +2,7 @@
   %h2=t('.photos_of_this_place')
   - if user_signed_in? and current_user.terms?
     .alert.alert-icon
-      = fa_icon "exclamation"
+      = fa_icon 'exclamation-sign'
       = t('.alert')
       = link_to(t('.more_infos'), I18n.locale == :de ? '//community.wheelmap.org/haufig-gestellte-fragen/warum-soll-ich-bilder-zu-einem-ort-hochladen-wie-sollen-sie-aussehen/' : '//community.wheelmap.org/en/haufig-gestellte-fragen/why-should-i-upload-photos-to-a-place-how-should-they-look-like/', target: '_blank')
   =semantic_form_for([@node, Photo.new], url: node_photos_url(@node), html: { class: 'node-photo-dropzone', id: 'node-photo-dropzone', multipart: true }) do |form|
