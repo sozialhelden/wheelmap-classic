@@ -297,7 +297,7 @@ describe NodesController do
     end
 
     it 'should render legacy json representation for iphone', :tag => 'fu' do
-      get(:legacy_index, format: 'js', bbox: '12.0,51.0,14.0,53.0')
+      get(:index, format: 'js', bbox: '12.0,51.0,14.0,53.0')
       expect(response.code).to eq('200')
       expect(response.body).not_to be_empty
       json = ActiveSupport::JSON.decode(response.body)
@@ -313,7 +313,7 @@ describe NodesController do
     end
 
     it 'should render geojson representation of provided pois' do
-      get :index, { format: 'geojson', x: 17595, y: 10754, z: 15, :provider_id => provider.id}
+      get :tiles, { format: 'geojson', x: 17595, y: 10754, z: 15, :provider_id => provider.id}
       expect(response).to be_success
       expect(response.body).not_to be_empty
       feature_collection = ActiveSupport::JSON.decode(response.body)

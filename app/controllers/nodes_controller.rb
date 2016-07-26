@@ -20,9 +20,9 @@ class NodesController < ApplicationController
   before_filter :check_create_params,             :only => :create
   before_filter :check_update_params,             :only => :update
   before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
-  before_filter :check_limit,                     :only => [:index, :legacy_index]
-  before_filter :convert_xyz,                     :only => :index
-  before_filter :convert_legacy_bbox,             :only => :legacy_index
+  before_filter :check_limit,                     :only => [:tiles, :index]
+  before_filter :convert_xyz,                     :only => :tiles
+  before_filter :convert_legacy_bbox,             :only => :index
   before_filter :load_custom_node,                :only => :index
 
   # Manually compress geojson output
@@ -49,7 +49,7 @@ class NodesController < ApplicationController
 
     respond_to do |wants|
       wants.geojson{
-        render :content_type => "application/json; subtype=geojson; charset=utf-8"
+        render content_type: 'application/json; subtype=geojson; charset=utf-8', template: 'nodes/index'
       }
       wants.html{ redirect_to root_path }
     end
