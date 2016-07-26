@@ -12,12 +12,6 @@ export default function *saveNode() {
   const node = yield select(nodeSelector);
 
   yield put(load(true));
-
-  try {
-    yield call(api.saveNode, node);
-  } finally {
-    yield put(load(false));
-  }
-
+  yield call(api.saveNode, node);
   yield call(redirect, yield call(routes.rootPath));
 }

@@ -27,9 +27,6 @@ describe('saveNode', () => {
       .toCall(api.saveNode, node);
 
     expect(gen.next())
-      .toPut(load(false));
-
-    expect(gen.next())
       .toCall(routes.rootPath);
 
     const root = routes.rootPath();
