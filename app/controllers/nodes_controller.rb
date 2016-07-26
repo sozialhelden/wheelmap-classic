@@ -32,7 +32,7 @@ class NodesController < ApplicationController
   rescue_from Rosemary::Gone,               :with => :gone
   rescue_from Rosemary::Unavailable,        :with => :timeout
 
-  def index
+  def tiles
     expires_in 1.minute, :public => true
 
     @debug = params.has_key?(:debug)
@@ -55,7 +55,8 @@ class NodesController < ApplicationController
     end
   end
 
-  def legacy_index
+  # Legacy controller for old bounding box requests for the legacy iphone API
+  def index
     @places = Poi.within_bbox(@left, @bottom, @right, @top)
                   .including_category
                   .including_region
