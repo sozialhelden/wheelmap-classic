@@ -880,7 +880,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "help": "車椅子で行けますか？ (ヘルプ)",
         "more": "詳細 ..."
       },
-      "zoom_alert": ""
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "やり方は？",
@@ -963,37 +963,37 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     "new": {
       "form": {
         "legend": "場所の位置座標",
-        "location": "",
+        "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "",
-            "title": ""
+            "name": "Wheelchair accessibility",
+            "title": "Information on wheelchair accessibility"
           },
           "address": {
-            "help": "",
+            "help": "You can move the marker to the correct location on the map.",
             "name": "住所",
-            "title": ""
+            "title": "Where is the place?"
           },
           "contact": {
             "name": "連絡先",
-            "title": ""
+            "title": "Other contact information"
           },
           "name_category": {
-            "name": "",
-            "title": ""
+            "name": "Name and place type",
+            "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": ""
+            "title": "Is all the information correct?"
           },
           "similar_nodes": {
-            "empty": "",
-            "go_edit": "",
-            "go_new": "",
-            "name": "",
-            "title": ""
+            "empty": "No similar places were found.",
+            "go_edit": "Continue with this place",
+            "go_new": "It is none of the places above …",
+            "name": "Similar places",
+            "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": ""
+        "title": "Add a place"
       },
       "header": {
         "title": "新しい場所 | wheelmap.org"
@@ -1580,7 +1580,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
           },
           "text": "持っている"
         },
-        "text_html": "",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "概要"
       },
       "widget": {
@@ -1591,7 +1591,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "height": "高さ",
         "legends": {
           "embed": "埋め込みコード",
-          "embed_explanation": "",
+          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
           "general": "あなたのウェブサイトやブログ用のWheelmapウイジェットを作成する",
           "preview": "プレビュー",
           "settings": "設定"

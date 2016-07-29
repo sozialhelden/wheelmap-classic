@@ -2,9 +2,9 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
   "actions": {
     "cancel": "Atšaukti",
-    "next": "",
+    "next": "Next",
     "save": "Išsaugoti",
-    "send": ""
+    "send": "Send"
   },
   "active_admin": {
     "access_denied": {
@@ -189,7 +189,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
         "address_housenumber": "Namo numeris",
         "address_postcode": "Pašto kodas",
         "address_street": "Gatvė",
-        "name": "",
+        "name": "Name",
         "note": "Pastaba",
         "phone": "Telefonas",
         "type": "Tipas",
@@ -655,7 +655,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
   "faq": {
     "answers": {
       "0": "Jūs visuomet galite keisti vietos žymėjimą patys. Tiesiog pasirinkite tinkamą žymėjimą ir spauskite \"Išsaugoti\" - atlikta!",
-      "1": "",
+      "1": "As a logged in user you can add / correct all the details of a place. Click on \"Edit\" and correct or add information in the mask.",
       "2": "Jūs galite pridėti tolimesnę informaciją (pvz., \"Šioje vietoje yra mobili rampa\") komentarų sekcijoje. Spauskite \"Keisti\" ir \"Pridėti komentarą\"."
     },
     "headline": "Ar yra problemų su šia vieta?",
@@ -737,7 +737,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "",
+      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
       "homepage": "Pradžios puslapis",
       "keywords": "wheelchair accessible places find search mark",
       "search": "Search",
@@ -800,7 +800,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "",
+      "embed_link": "Show on Wheelmap.org",
       "filter": {
         "category": "Choose category",
         "deselect_all": "Deselect all",
@@ -841,7 +841,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
         "help": "Wheelchair accessible? (Help)",
         "more": "daugiau ..."
       },
-      "zoom_alert": ""
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Kaip?",
@@ -872,17 +872,17 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
   },
   "models": {
     "category": {
-      "prompt": ""
+      "prompt": "Choose a category"
     },
     "node": {
-      "info_edit_position": "",
+      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
       "mail": {
         "body": "(Prašome rašyti tik Anglų arba Vokiečių kalba.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
-        "subject": ""
+        "subject": "[Wheelmap] Problem with %{headline}"
       }
     },
     "node_type": {
-      "prompt": ""
+      "prompt": "Choose a type"
     }
   },
   "node": {
@@ -923,38 +923,38 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
     },
     "new": {
       "form": {
-        "legend": "",
-        "location": "",
+        "legend": "Location of the place",
+        "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "",
-            "title": ""
+            "name": "Wheelchair accessibility",
+            "title": "Information on wheelchair accessibility"
           },
           "address": {
-            "help": "",
+            "help": "You can move the marker to the correct location on the map.",
             "name": "Adresas",
-            "title": ""
+            "title": "Where is the place?"
           },
           "contact": {
             "name": "Kontaktai",
-            "title": ""
+            "title": "Other contact information"
           },
           "name_category": {
-            "name": "",
-            "title": ""
+            "name": "Name and place type",
+            "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": ""
+            "title": "Is all the information correct?"
           },
           "similar_nodes": {
-            "empty": "",
-            "go_edit": "",
-            "go_new": "",
-            "name": "",
-            "title": ""
+            "empty": "No similar places were found.",
+            "go_edit": "Continue with this place",
+            "go_new": "It is none of the places above …",
+            "name": "Similar places",
+            "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": ""
+        "title": "Add a place"
       },
       "header": {
         "title": "Nauja vieta | wheelmap.org"
@@ -1003,8 +1003,8 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
     "show": {
       "header": {
         "meta": {
-          "description": "",
-          "title": ""
+          "description": "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.",
+          "title": "This place is on Wheelmap.org: %{name}"
         },
         "title": "Vieta: %{node} | wheelmap.org"
       },
@@ -1016,9 +1016,9 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
       },
       "more_data_from": "There is more information about this place, validated by:",
       "share": {
-        "email": "",
+        "email": "Email",
         "facebook": "Facebook",
-        "text": "",
+        "text": "I found this place on Wheelmap.org: %{name}",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1114,35 +1114,35 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
   },
   "poi": {
     "category": {
-      "accommodation": "",
+      "accommodation": "Accomodation",
       "education": "Švietimas",
       "food": "Maistas",
-      "government": "",
+      "government": "Government",
       "health": "Sveikata",
       "leisure": "Laisvalaikis",
-      "misc": "",
-      "money_post": "",
-      "public_transfer": "",
-      "shopping": "",
+      "misc": "Miscellaneous",
+      "money_post": "Bank / Post office",
+      "public_transfer": "Public transport",
+      "shopping": "Shopping",
       "sport": "Sportas",
       "tourism": "Turizmas",
       "unknown": "Nežinoma"
     },
     "name": {
       "accommodation": {
-        "beach_resort": "",
-        "bed_and_breakfast": "",
-        "camp_site": "",
-        "caravan_site": "",
-        "chalet": "",
-        "dormitory": "",
+        "beach_resort": "Beach hotel",
+        "bed_and_breakfast": "Bed and breakfast",
+        "camp_site": "Camp site",
+        "caravan_site": "Caravan site",
+        "chalet": "Chalet",
+        "dormitory": "Dormitory",
         "guest_house": "Svečių namai",
-        "hostel": "",
+        "hostel": "Hostel",
         "hotel": "Viešbutis",
-        "motel": ""
+        "motel": "Motel"
       },
       "education": {
-        "college": "",
+        "college": "College",
         "driving_school": "Vairavimo mokykla",
         "kindergarten": "Vaikų darželis",
         "library": "Biblioteka",
@@ -1152,153 +1152,153 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
       },
       "food": {
         "bar": "Baras",
-        "biergarten": "",
+        "biergarten": "Biergarten",
         "cafe": "Kavinė",
         "drinking_water": "Geriamas vanduo",
-        "fast_food": "",
-        "ice_cream": "",
-        "pub": "",
+        "fast_food": "Fast Food",
+        "ice_cream": "Ice cream parlour",
+        "pub": "Pub",
         "restaurant": "Restoranas"
       },
       "government": {
-        "courthouse": "",
+        "courthouse": "Courthouse",
         "embassy": "Ambasada",
-        "government": "",
+        "government": "Government agency",
         "police": "Policija",
-        "public_building": "",
-        "townhall": ""
+        "public_building": "Public building",
+        "townhall": "Town hall"
       },
       "health": {
-        "dentist": "",
-        "doctors": "",
-        "hearing_aids": "",
+        "dentist": "Dentist",
+        "doctors": "Doctor",
+        "hearing_aids": "Hearing aid dealer",
         "hospital": "Ligoninė",
-        "medical_supply": "",
-        "pharmacy": "",
-        "social_facility": "",
-        "veterinary": ""
+        "medical_supply": "Medical supplies",
+        "pharmacy": "Pharmacy",
+        "social_facility": "Social facility",
+        "veterinary": "Veterinary"
       },
       "leisure": {
-        "arena": "",
-        "brothel": "",
+        "arena": "Arena",
+        "brothel": "Brothel",
         "casino": "Kazino",
         "cinema": "Kinas",
-        "community_centre": "",
-        "gallery": "",
+        "community_centre": "Community centre",
+        "gallery": "Gallery",
         "nightclub": "Naktinis klubas",
         "playground": "Žaidimų aikštelė",
-        "sauna": "",
-        "stripclub": "",
+        "sauna": "Sauna",
+        "stripclub": "Stripclub",
         "theatre": "Teatras",
         "zoo": "Zoologijos sodas"
       },
       "misc": {
-        "company": "",
-        "estate_agent": "",
+        "company": "Company (Office)",
+        "estate_agent": "Real estate agent",
         "insurance": "Draudimas",
         "lawyer": "Advokatas",
-        "place_of_worship": "",
-        "toilets": ""
+        "place_of_worship": "Place of worship",
+        "toilets": "Toilets"
       },
       "money_post": {
         "atm": "Bankomatas",
         "bank": "Bankas",
-        "bureau_de_change": "",
-        "post_box": "",
-        "post_office": ""
+        "bureau_de_change": "Bureau de change",
+        "post_box": "Post box",
+        "post_office": "Post office"
       },
       "public_transfer": {
         "aerodrome": "Oro uostas",
-        "bicycle_parking": "",
+        "bicycle_parking": "Bicycle parking",
         "bicycle_rental": "Dviračių nuoma",
-        "boatyard": "",
+        "boatyard": "Boat yard",
         "bus_station": "Autobusų stotis",
         "bus_stop": "Stotelė",
-        "cable_car": "",
-        "car_rental": "",
-        "car_sharing": "",
-        "chair_lift": "",
+        "cable_car": "Cable car",
+        "car_rental": "Car rental",
+        "car_sharing": "Car sharing",
+        "chair_lift": "Chair lift",
         "ferry": "Keltas",
         "ferry_terminal": "Kelto terminalas",
-        "fuel": "",
-        "halt": "",
-        "light_rail": "",
-        "parking": "",
-        "parking_aisle": "",
-        "platform": "",
+        "fuel": "Gas station",
+        "halt": "Halt",
+        "light_rail": "Light rail",
+        "parking": "Parking",
+        "parking_aisle": "Parking aisle",
+        "platform": "Platform",
         "station": "Geležinkelio stotis",
-        "subway_entrance": "",
+        "subway_entrance": "Subway entrance",
         "terminal": "Oro uosto terminalas",
         "tram_stop": "Tramvajaus stotelė"
       },
       "shopping": {
-        "alcohol": "",
-        "bakery": "",
-        "beauty": "",
-        "beverages": "",
-        "bicycle": "",
+        "alcohol": "Liquor",
+        "bakery": "Bakery",
+        "beauty": "Beauty salon",
+        "beverages": "Beverages",
+        "bicycle": "Bike shop",
         "books": "Knygos",
-        "butcher": "",
-        "car_repair": "",
-        "car_shop": "",
-        "chemist": "",
+        "butcher": "Butcher",
+        "car_repair": "Car repair",
+        "car_shop": "Car shop",
+        "chemist": "Chemist / Drugstore",
         "clothes": "Drabužiai",
         "computer": "Kompiuteris",
-        "confectionery": "",
-        "convenience": "",
-        "deli": "",
-        "department_store": "",
-        "doityourself": "",
+        "confectionery": "Candy store",
+        "convenience": "Convenience",
+        "deli": "Delicatessen",
+        "department_store": "Department store",
+        "doityourself": "Do it yourself",
         "dry_cleaning": "Sausas valymas",
         "electronics": "Elektronika",
-        "fabric": "",
-        "farm_shop": "",
-        "florist": "",
-        "furniture": "",
-        "garden_centre": "",
+        "fabric": "Fabric shop",
+        "farm_shop": "Farm shop",
+        "florist": "Florist",
+        "furniture": "Furniture",
+        "garden_centre": "Garden centre",
         "gift": "Dovanų parduotuvė",
-        "hairdresser": "",
+        "hairdresser": "Hairdresser",
         "hardware": "Aparatinė Įranga",
-        "jewelry": "",
-        "kiosk": "",
-        "laundry": "",
+        "jewelry": "Jewelry",
+        "kiosk": "Kiosk",
+        "laundry": "Laundry",
         "mall": "Prekybos centras",
-        "optician": "",
-        "organic": "",
-        "outdoor": "",
-        "pet": "",
-        "photo": "",
-        "second_hand": "",
-        "shoes": "",
-        "sports": "",
-        "stationery": "",
-        "supermarket": "",
+        "optician": "Optician",
+        "organic": "Organic shop",
+        "outdoor": "Outdoor supply",
+        "pet": "Pet shop",
+        "photo": "Photo",
+        "second_hand": "Second hand",
+        "shoes": "Shoes",
+        "sports": "Sports",
+        "stationery": "Stationery",
+        "supermarket": "Supermarket",
         "toys": "Žaislai",
-        "travel_agency": "",
-        "video": ""
+        "travel_agency": "Travel agency",
+        "video": "Video rental store"
       },
       "sport": {
-        "pitch": "",
-        "sports_centre": "",
-        "stadium": "",
-        "swimming": "",
+        "pitch": "Sports field",
+        "sports_centre": "Sports centre",
+        "stadium": "Stadium",
+        "swimming": "Swimming",
         "swimming_pool": "Baseinas"
       },
       "tourism": {
-        "archaeological_site": "",
-        "arts_centre": "",
-        "artwork": "",
-        "attraction": "",
-        "battlefield": "",
+        "archaeological_site": "Archaeological site",
+        "arts_centre": "Arts centre",
+        "artwork": "Artwork",
+        "attraction": "Attraction",
+        "battlefield": "Battlefield",
         "beach": "Paplūdimys",
-        "beacon": "",
-        "castle": "",
-        "cave_entrance": "",
-        "information": "",
-        "memorial": "",
-        "theme_park": "",
-        "tower": "",
-        "viewpoint": ""
+        "beacon": "Lighthouse",
+        "castle": "Castle",
+        "cave_entrance": "Cave entrance",
+        "information": "Tourist information",
+        "memorial": "Memorial",
+        "theme_park": "Theme park",
+        "tower": "Tower",
+        "viewpoint": "View point"
       },
       "unknown": {
         "unknown": "Nežinoma"
@@ -1400,7 +1400,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
         },
         "try_this": {
           "address": "Prašome pateikti <strong>išsamesnį adresą</strong>.",
-          "intro": "",
+          "intro": "Try this:",
           "spell_check": "Patikrinkite savo įvesties <strong>rašybą</strong>."
         }
       },
@@ -1419,7 +1419,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
     "timeout": {
       "headline": "Atleiskite, kažkas nutiko",
       "info": "Mūsų paieškos tarnyba buvo laikinai neprieinama.",
-      "repeat_search": ""
+      "repeat_search": "Retry search"
     }
   },
   "splash": {
@@ -1504,60 +1504,56 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
         "title": "Profilis"
       },
       "newsletter": {
-        "label": "",
-        "text": "",
+        "label": "Yes, keep me updated about Wheelmap.",
+        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
         "title": "Naujienlaiškis"
       },
       "photos": {
-        "empty": "",
+        "empty": "You haven't uploaded any photos yet.",
         "title": "Nuotraukos"
       },
       "show": {
         "greeting": {
-          "anonymously": "",
+          "anonymously": "Hello there",
           "personalized": "Sveiki %{name}"
         },
         "overview": {
           "photos_uploaded": {
-            "few": "",
-            "one": "",
-            "other": ""
+            "one": "uploaded %{count} photo",
+            "other": "uploaded %{count} photos"
           },
           "pois_added": {
-            "few": "",
-            "one": "",
-            "other": ""
+            "one": "added %{count} place",
+            "other": "added %{count} places"
           },
           "pois_edited": {
-            "few": "",
-            "one": "",
-            "other": ""
+            "one": "edited %{count} place",
+            "other": "edited %{count} places"
           },
           "pois_marked": {
-            "few": "",
-            "one": "",
-            "other": ""
+            "one": "marked %{count} place",
+            "other": "marked %{count} places"
           },
-          "text": ""
+          "text": "You have"
         },
-        "text_html": "",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Apžvalga"
       },
       "widget": {
-        "categories": "",
-        "center": "",
-        "empty_center": "",
-        "empty_provider": "",
+        "categories": "Show category filter",
+        "center": "Map area",
+        "empty_center": "Search for center of map …",
+        "empty_provider": "Choose a Provider",
         "height": "Aukštis",
         "legends": {
-          "embed": "",
-          "embed_explanation": "",
-          "general": "",
+          "embed": "Embed code",
+          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
+          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
           "preview": "Peržiūra",
           "settings": "Nustatymai"
         },
-        "providers": "",
-        "title": "",
+        "providers": "Provider",
+        "title": "Widget",
         "width": "Plotis"
       }
     }

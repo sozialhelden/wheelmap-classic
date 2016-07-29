@@ -848,7 +848,7 @@ I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
         "help": "Accessible en fauteuil roulant ? (aide)",
         "more": "davantage.."
       },
-      "zoom_alert": ""
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Comment ?",
@@ -931,37 +931,37 @@ I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
     "new": {
       "form": {
         "legend": "Emplacement du lieu",
-        "location": "",
+        "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "",
-            "title": ""
+            "name": "Wheelchair accessibility",
+            "title": "Information on wheelchair accessibility"
           },
           "address": {
-            "help": "",
+            "help": "You can move the marker to the correct location on the map.",
             "name": "Adresse",
-            "title": ""
+            "title": "Where is the place?"
           },
           "contact": {
             "name": "Contact",
-            "title": ""
+            "title": "Other contact information"
           },
           "name_category": {
-            "name": "",
-            "title": ""
+            "name": "Name and place type",
+            "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": ""
+            "title": "Is all the information correct?"
           },
           "similar_nodes": {
-            "empty": "",
-            "go_edit": "",
-            "go_new": "",
-            "name": "",
-            "title": ""
+            "empty": "No similar places were found.",
+            "go_edit": "Continue with this place",
+            "go_new": "It is none of the places above …",
+            "name": "Similar places",
+            "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": ""
+        "title": "Add a place"
       },
       "header": {
         "title": "Nouveau lieu | wheelmap.org"

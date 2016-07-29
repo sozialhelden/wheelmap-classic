@@ -1,4 +1,3 @@
----
 hu:
   activerecord:
     attributes:
@@ -32,9 +31,6 @@ hu:
       projects: Projektek
     toolbar:
       categories: Kategóriák
-    meta:
-      description: ''
-      title: ''
   home:
     index:
       overlay:
@@ -44,36 +40,15 @@ hu:
         headline: 'Találd meg és jelöld be az akadálymentes helyeket a Wheelmap.org segítségével - Világszerte, ingyen. Ilyen egyszerű:'
         lookup: Keresés név vagy cím szerint
         secondary_headline: 'Jelzőlámpáink színei jelzik a helyek akadálymentességét:'
-      embed_link: ''
-      zoom_alert: ''
   nodes:
     new:
       form:
-        title: ''
         legend: A hely elhelyezkedése
-        location: ''
         section:
-          name_category:
-            name: ''
-            title: ""
           address:
             name: Cím
-            title: ''
-            help: ''
-          similar_nodes:
-            name: ''
-            title: ''
-            go_edit: ''
-            go_new: ''
-            empty: ''
-          accessibility:
-            name: ''
-            title: ''
           contact:
             name: Elérhetőség
-            title: ''
-          overview:
-            title: ''
     node_data:
       address: 'Cím:'
       contact_details: 'Elérhetőségek:'
@@ -104,7 +79,6 @@ hu:
       share:
         email: Email
         facebook: Facebook
-        text: ''
         twitter: Twitter
   search:
     index:
@@ -123,54 +97,16 @@ hu:
           one: '%{count} eredmény:'
           other: '%{count} eredmény:'
     timeout:
-      headline: ''
       info: A keresési funkciónk átmenetileg nem volt elérhető.
       repeat_search: Próbáld újra
   users:
     profile:
       newsletter:
         title: Hírlevél
-        text: ''
-        label: ''
-      show:
-        title: ''
-        text_html: ""
-        greeting:
-          anonymously: ''
-          personalized: ''
-        overview:
-          text: ''
-          pois_marked:
-            one: ''
-            other: ''
-          pois_added:
-            one: ''
-            other: ''
-          pois_edited:
-            one: ''
-            other: ''
-          photos_uploaded:
-            one: ''
-            other: ''
       photos:
         title: Fotók
-        empty: ''
       edit:
         title: Profil
-        legends:
-          user_data: ''
       widget:
-        title: ''
-        height: ''
-        width: ''
-        center: ''
-        categories: ''
-        providers: ''
-        empty_provider: ''
-        empty_center: ''
         legends:
           settings: Beállítások
-          preview: ''
-          embed: ''
-          embed_explanation: ''
-          general: ''

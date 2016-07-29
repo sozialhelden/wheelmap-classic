@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
   "actions": {
     "cancel": "取消",
-    "next": "",
+    "next": "Next",
     "save": "存檔",
     "send": "送出"
   },
@@ -185,7 +185,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       "poi": {
         "address": "地址",
         "address_city": "城市",
-        "address_housenumber": "",
+        "address_housenumber": "House number",
         "address_postcode": "郵遞區號",
         "address_street": "街道",
         "name": "名字",
@@ -653,9 +653,9 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
   },
   "faq": {
     "answers": {
-      "0": "",
+      "0": "You can always change the marking of a place yourself. Just choose the right marking and \"Save\" - done!",
       "1": "登入後，你可以新增/修改所有地點的細節。請點選 \"編輯\" 並在空格修改或新增資訊。",
-      "2": ""
+      "2": "You can add further information (e.g. \"This place has a mobile ramp\") in the comment section. Click on \"Edit\" and \"Add comment\"."
     },
     "headline": "這個地點有什麼不對嗎?",
     "questions": {
@@ -736,11 +736,11 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "",
+      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
       "homepage": "首頁",
       "keywords": "尋找輪椅無障礙空間的標誌",
       "search": "搜尋",
-      "title": ""
+      "title": "Wheelmap.org"
     },
     "navigation": {
       "about_wheelmap": "關於 Wheelmap",
@@ -799,7 +799,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "",
+      "embed_link": "Show on Wheelmap.org",
       "filter": {
         "category": "選擇分類",
         "deselect_all": "全部取消選擇",
@@ -840,7 +840,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "help": "輪椅無障礙？(說明)",
         "more": "更多..."
       },
-      "zoom_alert": ""
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "如何？",
@@ -923,37 +923,37 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
     "new": {
       "form": {
         "legend": "地點的位置",
-        "location": "",
+        "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "",
-            "title": ""
+            "name": "Wheelchair accessibility",
+            "title": "Information on wheelchair accessibility"
           },
           "address": {
-            "help": "",
+            "help": "You can move the marker to the correct location on the map.",
             "name": "地址",
-            "title": ""
+            "title": "Where is the place?"
           },
           "contact": {
             "name": "聯繫我們",
-            "title": ""
+            "title": "Other contact information"
           },
           "name_category": {
-            "name": "",
-            "title": ""
+            "name": "Name and place type",
+            "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": ""
+            "title": "Is all the information correct?"
           },
           "similar_nodes": {
-            "empty": "",
-            "go_edit": "",
-            "go_new": "",
-            "name": "",
-            "title": ""
+            "empty": "No similar places were found.",
+            "go_edit": "Continue with this place",
+            "go_new": "It is none of the places above …",
+            "name": "Similar places",
+            "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": ""
+        "title": "Add a place"
       },
       "header": {
         "title": "新地點| wheelmap.org"
@@ -1017,7 +1017,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       "share": {
         "email": "電子郵件",
         "facebook": "Facebook",
-        "text": "",
+        "text": "I found this place on Wheelmap.org: %{name}",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1118,9 +1118,9 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       "government": "政府",
       "health": "醫療",
       "leisure": "休閒",
-      "misc": "",
-      "money_post": "",
-      "public_transfer": "",
+      "misc": "Miscellaneous",
+      "money_post": "Bank / Post office",
+      "public_transfer": "Public transport",
       "shopping": "購物",
       "sport": "運動",
       "tourism": "觀光",
@@ -1164,11 +1164,11 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "government": "政府部門",
         "police": "警察局",
         "public_building": "公共建築",
-        "townhall": ""
+        "townhall": "Town hall"
       },
       "health": {
         "dentist": "牙醫",
-        "doctors": "",
+        "doctors": "Doctor",
         "hearing_aids": "助聽器",
         "hospital": "醫院",
         "medical_supply": "醫療用品",
@@ -1181,7 +1181,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "brothel": "妓院",
         "casino": "賭場",
         "cinema": "電影院",
-        "community_centre": "",
+        "community_centre": "Community centre",
         "gallery": "畫廊",
         "nightclub": "夜總會",
         "playground": "遊樂器材",
@@ -1209,7 +1209,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "aerodrome": "機場",
         "bicycle_parking": "自行車停車場",
         "bicycle_rental": "自行車出租",
-        "boatyard": "",
+        "boatyard": "Boat yard",
         "bus_station": "公車站",
         "bus_stop": "公車站",
         "cable_car": "纜車",
@@ -1239,7 +1239,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "butcher": "肉店",
         "car_repair": "汽車維修",
         "car_shop": "車行",
-        "chemist": "",
+        "chemist": "Chemist / Drugstore",
         "clothes": "服飾",
         "computer": "電腦店",
         "confectionery": "點心店",
@@ -1253,7 +1253,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "farm_shop": "農產品",
         "florist": "花店",
         "furniture": "家具",
-        "garden_centre": "",
+        "garden_centre": "Garden centre",
         "gift": "禮品店",
         "hairdresser": "髮型師",
         "hardware": "五金行",
@@ -1393,8 +1393,8 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "headline": "抱歉，我們找不到名叫 \"%{query}\" 的地點。",
         "hint": {
           "example": "<strong>範例:</strong> 英國倫敦",
-          "info": "",
-          "work_in_progress": ""
+          "info": "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!",
+          "work_in_progress": "We work hard to make searching for places easier and more intuitive in the future."
         },
         "try_this": {
           "address": "請提供更 <strong>詳細的地址</strong>.",
@@ -1414,7 +1414,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       }
     },
     "timeout": {
-      "headline": "",
+      "headline": "Sorry, something went wrong",
       "info": "我們的搜尋服務目前暫停。",
       "repeat_search": "重試搜尋"
     }
@@ -1502,11 +1502,11 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       },
       "newsletter": {
         "label": "是，我想收到 Wheelmap 的最新訊息。",
-        "text": "",
+        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
         "title": "電子報"
       },
       "photos": {
-        "empty": "",
+        "empty": "You haven't uploaded any photos yet.",
         "title": "相館"
       },
       "show": {
@@ -1525,7 +1525,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
           },
           "pois_edited": {
             "one": "edited %{count} place",
-            "other": ""
+            "other": "edited %{count} places"
           },
           "pois_marked": {
             "one": "marked %{count} place",
@@ -1533,25 +1533,25 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
           },
           "text": "你有"
         },
-        "text_html": "",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "總覽"
       },
       "widget": {
-        "categories": "",
-        "center": "",
-        "empty_center": "",
-        "empty_provider": "",
-        "height": "",
+        "categories": "Show category filter",
+        "center": "Map area",
+        "empty_center": "Search for center of map …",
+        "empty_provider": "Choose a Provider",
+        "height": "Height",
         "legends": {
-          "embed": "",
-          "embed_explanation": "",
-          "general": "",
-          "preview": "",
+          "embed": "Embed code",
+          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
+          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
+          "preview": "Preview",
           "settings": "設定"
         },
-        "providers": "",
-        "title": "",
-        "width": ""
+        "providers": "Provider",
+        "title": "Widget",
+        "width": "Width"
       }
     }
   },

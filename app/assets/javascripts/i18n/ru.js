@@ -870,7 +870,7 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
         "help": "Доступно ли на кресле-коляске? (Справка)",
         "more": "Подробней ..."
       },
-      "zoom_alert": ""
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Как?",
@@ -953,37 +953,37 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
     "new": {
       "form": {
         "legend": "Расположение места",
-        "location": "",
+        "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "",
-            "title": ""
+            "name": "Wheelchair accessibility",
+            "title": "Information on wheelchair accessibility"
           },
           "address": {
-            "help": "",
+            "help": "You can move the marker to the correct location on the map.",
             "name": "Адрес",
-            "title": ""
+            "title": "Where is the place?"
           },
           "contact": {
             "name": "Контакты",
-            "title": ""
+            "title": "Other contact information"
           },
           "name_category": {
-            "name": "",
-            "title": ""
+            "name": "Name and place type",
+            "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": ""
+            "title": "Is all the information correct?"
           },
           "similar_nodes": {
-            "empty": "",
-            "go_edit": "",
-            "go_new": "",
-            "name": "",
-            "title": ""
+            "empty": "No similar places were found.",
+            "go_edit": "Continue with this place",
+            "go_new": "It is none of the places above …",
+            "name": "Similar places",
+            "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": ""
+        "title": "Add a place"
       },
       "header": {
         "title": "Новое место | wheelmap.org"

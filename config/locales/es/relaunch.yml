@@ -1,4 +1,3 @@
----
 es:
   activerecord:
     attributes:
@@ -45,35 +44,15 @@ es:
         lookup: Buscar un lugar específico
         secondary_headline: 'Nuestro semáforo para marcar la accesibilidad en silla de ruedas de los lugares públicos:'
       embed_link: Mostrar en Wheelmap.org
-      zoom_alert: ''
   nodes:
     new:
       form:
-        title: ''
         legend: Ubicación del sitio
-        location: ''
         section:
-          name_category:
-            name: ''
-            title: ""
           address:
             name: Dirección
-            title: ''
-            help: ''
-          similar_nodes:
-            name: ''
-            title: ''
-            go_edit: ''
-            go_new: ''
-            empty: ''
-          accessibility:
-            name: ''
-            title: ''
           contact:
             name: Contacto
-            title: ''
-          overview:
-            title: ''
     node_data:
       address: 'Dirección:'
       contact_details: 'Detalles de contacto:'
@@ -140,18 +119,6 @@ es:
           personalized: Hola %{name}
         overview:
           text: Tú tienes
-          pois_marked:
-            one: ''
-            other: ''
-          pois_added:
-            one: ''
-            other: ''
-          pois_edited:
-            one: ''
-            other: ''
-          photos_uploaded:
-            one: ''
-            other: ''
       photos:
         title: Fotos
         empty: No has subido ninguna foto aún

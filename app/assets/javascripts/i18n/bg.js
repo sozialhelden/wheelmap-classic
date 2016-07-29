@@ -4,7 +4,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
     "cancel": "Отказ",
     "next": "Следващ",
     "save": "Запази",
-    "send": ""
+    "send": "Send"
   },
   "active_admin": {
     "access_denied": {
@@ -186,10 +186,10 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "address": "Адрес",
         "address_city": "Град",
         "address_housenumber": "Номер на къщата",
-        "address_postcode": "",
+        "address_postcode": "Postcode",
         "address_street": "Улица",
         "name": "Име",
-        "note": "",
+        "note": "Note",
         "phone": "Телефон",
         "type": "Вид",
         "website": "Website\n"
@@ -639,7 +639,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
     "models": {
       "node": {
         "website": {
-          "invalid": ""
+          "invalid": "Website address is not valid."
         }
       }
     },
@@ -736,11 +736,11 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "",
+      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
       "homepage": "Начална страница",
       "keywords": "достъпни за инвалидни колички места търси намери маркирай",
       "search": "Търси",
-      "title": ""
+      "title": "Wheelmap.org"
     },
     "navigation": {
       "about_wheelmap": "За Wheelmap",
@@ -799,7 +799,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "",
+      "embed_link": "Show on Wheelmap.org",
       "filter": {
         "category": "Избери категория",
         "deselect_all": "Отмаркирай всички",
@@ -840,7 +840,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "help": "Достъпно за инвалидни колички? (Помощ)",
         "more": "повече..."
       },
-      "zoom_alert": ""
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Как?",
@@ -871,17 +871,17 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
   },
   "models": {
     "category": {
-      "prompt": ""
+      "prompt": "Choose a category"
     },
     "node": {
-      "info_edit_position": "",
+      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
       "mail": {
-        "body": "",
-        "subject": ""
+        "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
+        "subject": "[Wheelmap] Problem with %{headline}"
       }
     },
     "node_type": {
-      "prompt": ""
+      "prompt": "Choose a type"
     }
   },
   "node": {
@@ -923,37 +923,37 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
     "new": {
       "form": {
         "legend": "Местоположение",
-        "location": "",
+        "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "",
-            "title": ""
+            "name": "Wheelchair accessibility",
+            "title": "Information on wheelchair accessibility"
           },
           "address": {
-            "help": "",
+            "help": "You can move the marker to the correct location on the map.",
             "name": "Адрес",
-            "title": ""
+            "title": "Where is the place?"
           },
           "contact": {
             "name": "Контакт",
-            "title": ""
+            "title": "Other contact information"
           },
           "name_category": {
-            "name": "",
-            "title": ""
+            "name": "Name and place type",
+            "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": ""
+            "title": "Is all the information correct?"
           },
           "similar_nodes": {
-            "empty": "",
-            "go_edit": "",
-            "go_new": "",
-            "name": "",
-            "title": ""
+            "empty": "No similar places were found.",
+            "go_edit": "Continue with this place",
+            "go_new": "It is none of the places above …",
+            "name": "Similar places",
+            "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": ""
+        "title": "Add a place"
       },
       "header": {
         "title": "Ново място | wheelmap.org"
@@ -1017,7 +1017,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
       "share": {
         "email": "Email",
         "facebook": "Facebook",
-        "text": "",
+        "text": "I found this place on Wheelmap.org: %{name}",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1119,8 +1119,8 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
       "health": "Здраве",
       "leisure": "Отдих и свободно време",
       "misc": "Разни",
-      "money_post": "",
-      "public_transfer": "",
+      "money_post": "Bank / Post office",
+      "public_transfer": "Public transport",
       "shopping": "Магазини",
       "sport": "Спорт",
       "tourism": "Туризъм",
@@ -1164,11 +1164,11 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "government": "Държавна институция",
         "police": "Полиция",
         "public_building": "Обществена сграда",
-        "townhall": ""
+        "townhall": "Town hall"
       },
       "health": {
         "dentist": "Зъболекар",
-        "doctors": "",
+        "doctors": "Doctor",
         "hearing_aids": "Магазин за слухови апарати",
         "hospital": "Болница",
         "medical_supply": "Лекарства",
@@ -1181,7 +1181,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "brothel": "Публичен дом",
         "casino": "Казино",
         "cinema": "Кино",
-        "community_centre": "",
+        "community_centre": "Community centre",
         "gallery": "Галерия",
         "nightclub": "Нощен клуб",
         "playground": "Площадка за игра",
@@ -1209,7 +1209,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "aerodrome": "Летище",
         "bicycle_parking": "Паркинг за велосипеди",
         "bicycle_rental": "Колела под наем",
-        "boatyard": "",
+        "boatyard": "Boat yard",
         "bus_station": "Автобусна спирка",
         "bus_stop": "Автобусна спирка",
         "cable_car": "Лифт",
@@ -1239,7 +1239,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "butcher": "Месар",
         "car_repair": "Автомобилен сервиз",
         "car_shop": "Автомобилна къща",
-        "chemist": "",
+        "chemist": "Chemist / Drugstore",
         "clothes": "Дрехи",
         "computer": "Компютър",
         "confectionery": "Магазин за сладкиши",
@@ -1253,7 +1253,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "farm_shop": "Магазин за регионално производство",
         "florist": "Цветар",
         "furniture": "Мебели",
-        "garden_centre": "",
+        "garden_centre": "Garden centre",
         "gift": "Магазин за подаръци",
         "hairdresser": "Фризьор",
         "hardware": "Магазин за влакчета",
@@ -1390,7 +1390,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
   "search": {
     "index": {
       "no-results": {
-        "headline": "",
+        "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
         "hint": {
           "example": "<strong>Пример:</strong> Лондон, Великобритания",
           "info": "Търсенето работи само с името и/или адреса. Затова, моля, потърси името на мястото или адреса, например името на улица и/или град. Търсенето на вида на мястото, например ресторант или кино, не работи!",
@@ -1414,7 +1414,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
       }
     },
     "timeout": {
-      "headline": "",
+      "headline": "Sorry, something went wrong",
       "info": "Съжаляваме, функцията за търсене е временно недостъпна",
       "repeat_search": "Опитай търсенето отново"
     }
@@ -1496,62 +1496,62 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
     "profile": {
       "edit": {
         "legends": {
-          "user_data": ""
+          "user_data": "Your account information"
         },
         "title": "Профил"
       },
       "newsletter": {
-        "label": "",
-        "text": "",
+        "label": "Yes, keep me updated about Wheelmap.",
+        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
         "title": "Newsletter"
       },
       "photos": {
-        "empty": "",
+        "empty": "You haven't uploaded any photos yet.",
         "title": "Снимки"
       },
       "show": {
         "greeting": {
-          "anonymously": "",
-          "personalized": ""
+          "anonymously": "Hello there",
+          "personalized": "Hello %{name}"
         },
         "overview": {
           "photos_uploaded": {
-            "one": "",
-            "other": ""
+            "one": "uploaded %{count} photo",
+            "other": "uploaded %{count} photos"
           },
           "pois_added": {
-            "one": "",
-            "other": ""
+            "one": "added %{count} place",
+            "other": "added %{count} places"
           },
           "pois_edited": {
-            "one": "",
-            "other": ""
+            "one": "edited %{count} place",
+            "other": "edited %{count} places"
           },
           "pois_marked": {
-            "one": "",
-            "other": ""
+            "one": "marked %{count} place",
+            "other": "marked %{count} places"
           },
-          "text": ""
+          "text": "You have"
         },
-        "text_html": "",
-        "title": ""
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "title": "Overview"
       },
       "widget": {
-        "categories": "",
-        "center": "",
-        "empty_center": "",
-        "empty_provider": "",
-        "height": "",
+        "categories": "Show category filter",
+        "center": "Map area",
+        "empty_center": "Search for center of map …",
+        "empty_provider": "Choose a Provider",
+        "height": "Height",
         "legends": {
-          "embed": "",
-          "embed_explanation": "",
-          "general": "",
-          "preview": "",
+          "embed": "Embed code",
+          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
+          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
+          "preview": "Preview",
           "settings": "Настройки"
         },
-        "providers": "",
-        "title": "",
-        "width": ""
+        "providers": "Provider",
+        "title": "Widget",
+        "width": "Width"
       }
     }
   },

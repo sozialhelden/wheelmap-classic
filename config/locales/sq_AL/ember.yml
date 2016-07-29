@@ -1,21 +1,4 @@
 sq_AL:
-  models:
-    category:
-      prompt: ""
-    node_type:
-      prompt: ""
-    node:
-      info_edit_position: ""
-      mail:
-        subject: ""
-        body: ""
   actions:
-    send: ''
     save: Ruaj
     cancel: Anullo
-    next: ''
-  errors:
-    models:
-      node:
-        website:
-          invalid: ""

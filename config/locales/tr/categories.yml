@@ -1,4 +1,3 @@
----
 tr:
   poi:
     category:
@@ -9,8 +8,6 @@ tr:
       health: Sağlık
       leisure: Boş Vakit
       misc: Çeşitli
-      money_post: ""
-      public_transfer: ""
       shopping: Alışveriş
       sport: Spor
       tourism: Turizm
@@ -50,10 +47,8 @@ tr:
         government: "Devlet dairesi"
         police: Polis
         public_building: "Resmi Bina"
-        townhall: ''
       health:
         dentist: Dişçi
-        doctors: ''
         hearing_aids: "İşitme cihazı satıcısı"
         hospital: Hastane
         medical_supply: "Tıbbi malzemeler"
@@ -65,7 +60,6 @@ tr:
         brothel: Genelev
         casino: Kumarhane
         cinema: Sinema
-        community_centre: ""
         gallery: Galeri
         nightclub: Gece Kulübü
         playground: Çocuk Parkı
@@ -90,7 +84,6 @@ tr:
         aerodrome: Havaalanı
         bicycle_parking: "Bisiklet park yeri"
         bicycle_rental: "Bisiklet kirası"
-        boatyard: ''
         bus_station: "Otobüs garajı, Otogar, Terminal"
         bus_stop: "Otobüs durağı"
         cable_car: "Teleferik"
@@ -119,7 +112,6 @@ tr:
         butcher: Kasap
         car_repair: "Araba tamircisi"
         car_shop: "Araba galerisi"
-        chemist: ''
         clothes: Giyisi
         computer: Bilgisayar
         confectionery: "Şekerlemeci"
@@ -133,7 +125,6 @@ tr:
         farm_shop: "Tarım dükkanı"
         florist: Çiçekçi
         furniture: Mobilya dükkanı
-        garden_centre: ""
         gift: "Hediyelikçi"
         hairdresser: Kuaför
         hardware: Hırdavat

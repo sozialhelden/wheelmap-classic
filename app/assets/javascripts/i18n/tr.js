@@ -4,7 +4,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
     "cancel": "İptal",
     "next": "Sıradaki",
     "save": "Kaydet",
-    "send": ""
+    "send": "Send"
   },
   "active_admin": {
     "access_denied": {
@@ -186,10 +186,10 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
         "address": "Adres",
         "address_city": "Şehir",
         "address_housenumber": "Ev numarası",
-        "address_postcode": "",
+        "address_postcode": "Postcode",
         "address_street": "Sokak",
         "name": "İsim",
-        "note": "",
+        "note": "Note",
         "phone": "Telefon",
         "type": "Tip",
         "website": "Internet Sitesi"
@@ -639,7 +639,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
     "models": {
       "node": {
         "website": {
-          "invalid": ""
+          "invalid": "Website address is not valid."
         }
       }
     },
@@ -653,15 +653,15 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
   },
   "faq": {
     "answers": {
-      "0": "",
-      "1": "",
-      "2": ""
+      "0": "You can always change the marking of a place yourself. Just choose the right marking and \"Save\" - done!",
+      "1": "As a logged in user you can add / correct all the details of a place. Click on \"Edit\" and correct or add information in the mask.",
+      "2": "You can add further information (e.g. \"This place has a mobile ramp\") in the comment section. Click on \"Edit\" and \"Add comment\"."
     },
-    "headline": "",
+    "headline": "Is there a problem with this place?",
     "questions": {
-      "0": "",
-      "1": "",
-      "2": ""
+      "0": "The marking is wrong.",
+      "1": "The details of the place are incorrect or missing.",
+      "2": "I have more information about this place."
     }
   },
   "flash": {
@@ -744,11 +744,11 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "",
+      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
       "homepage": "Ana Sayfa",
       "keywords": "Tekerlekli Sandalye ile erişilir alanlar ve mekanlar bul ara işaretle",
       "search": "Ara",
-      "title": ""
+      "title": "Wheelmap.org"
     },
     "navigation": {
       "about_wheelmap": "Wheelmap Hakkında",
@@ -766,7 +766,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       "newsletter": "Haberler",
       "press": "Basın",
       "profile": "Profil",
-      "projects": "",
+      "projects": "Projects",
       "suggestions": "Öneriler",
       "what_is_barrier_free": "\"Tekerleki sandalye ile ulasilir\" ne demek?",
       "what_is_wheelmap": "What is Wheelmap?"
@@ -803,7 +803,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "",
+      "embed_link": "Show on Wheelmap.org",
       "filter": {
         "category": "Tabaka:",
         "deselect_all": "Tümünün işaretini kaldır",
@@ -844,7 +844,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
         "help": "Tekerlekli sandalye için ulaşılırmı? (Yardım)",
         "more": "daha fazla..."
       },
-      "zoom_alert": ""
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Nasıl?",
@@ -875,17 +875,17 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
   },
   "models": {
     "category": {
-      "prompt": ""
+      "prompt": "Choose a category"
     },
     "node": {
-      "info_edit_position": "",
+      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
       "mail": {
-        "body": "",
-        "subject": ""
+        "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
+        "subject": "[Wheelmap] Problem with %{headline}"
       }
     },
     "node_type": {
-      "prompt": ""
+      "prompt": "Choose a type"
     }
   },
   "node": {
@@ -927,37 +927,37 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
     "new": {
       "form": {
         "legend": "Yerin konumu",
-        "location": "",
+        "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "",
-            "title": ""
+            "name": "Wheelchair accessibility",
+            "title": "Information on wheelchair accessibility"
           },
           "address": {
-            "help": "",
+            "help": "You can move the marker to the correct location on the map.",
             "name": "Adres",
-            "title": ""
+            "title": "Where is the place?"
           },
           "contact": {
             "name": "İletişim",
-            "title": ""
+            "title": "Other contact information"
           },
           "name_category": {
-            "name": "",
-            "title": ""
+            "name": "Name and place type",
+            "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": ""
+            "title": "Is all the information correct?"
           },
           "similar_nodes": {
-            "empty": "",
-            "go_edit": "",
-            "go_new": "",
-            "name": "",
-            "title": ""
+            "empty": "No similar places were found.",
+            "go_edit": "Continue with this place",
+            "go_new": "It is none of the places above …",
+            "name": "Similar places",
+            "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": ""
+        "title": "Add a place"
       },
       "header": {
         "title": "Yeni alan veya mekan | wheelmap.org"
@@ -974,40 +974,40 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       }
     },
     "node_data": {
-      "address": "",
-      "contact_details": ""
+      "address": "Address:",
+      "contact_details": "Contact details:"
     },
     "node_edit": {
       "details": "Ayrıntılar",
       "edit": "Düzenle"
     },
     "node_map": {
-      "map": ""
+      "map": "Map:"
     },
     "node_note": {
-      "comment": ""
+      "comment": "Comment:"
     },
     "node_photos": {
-      "add": "",
-      "photos_of_this_place": "",
-      "upload": ""
+      "add": "Add",
+      "photos_of_this_place": "Photos of this place:",
+      "upload": "Upload"
     },
     "node_similar": {
-      "similar": ""
+      "similar": "Similar places: %{name}"
     },
     "node_status": {
-      "accessible_toilet": "",
-      "premium": "",
-      "wheelchair_accessibility": ""
+      "accessible_toilet": "Wheelchair accessible toilet:",
+      "premium": "%{name} says: this place is",
+      "wheelchair_accessibility": "Wheelchair accessibility:"
     },
     "node_streetview": {
-      "streetview": ""
+      "streetview": "Streetview:"
     },
     "show": {
       "header": {
         "meta": {
-          "description": "",
-          "title": ""
+          "description": "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.",
+          "title": "This place is on Wheelmap.org: %{name}"
         },
         "title": "Alan/Mekan: %{node} | wheelmap.org"
       },
@@ -1021,7 +1021,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       "share": {
         "email": "E-posta",
         "facebook": "Facebook",
-        "text": "",
+        "text": "I found this place on Wheelmap.org: %{name}",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1123,8 +1123,8 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       "health": "Sağlık",
       "leisure": "Boş Vakit",
       "misc": "Çeşitli",
-      "money_post": "",
-      "public_transfer": "",
+      "money_post": "Bank / Post office",
+      "public_transfer": "Public transport",
       "shopping": "Alışveriş",
       "sport": "Spor",
       "tourism": "Turizm",
@@ -1168,11 +1168,11 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
         "government": "Devlet dairesi",
         "police": "Polis",
         "public_building": "Resmi Bina",
-        "townhall": ""
+        "townhall": "Town hall"
       },
       "health": {
         "dentist": "Dişçi",
-        "doctors": "",
+        "doctors": "Doctor",
         "hearing_aids": "İşitme cihazı satıcısı",
         "hospital": "Hastane",
         "medical_supply": "Tıbbi malzemeler",
@@ -1185,7 +1185,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
         "brothel": "Genelev",
         "casino": "Kumarhane",
         "cinema": "Sinema",
-        "community_centre": "",
+        "community_centre": "Community centre",
         "gallery": "Galeri",
         "nightclub": "Gece Kulübü",
         "playground": "Çocuk Parkı",
@@ -1213,7 +1213,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
         "aerodrome": "Havaalanı",
         "bicycle_parking": "Bisiklet park yeri",
         "bicycle_rental": "Bisiklet kirası",
-        "boatyard": "",
+        "boatyard": "Boat yard",
         "bus_station": "Otobüs garajı, Otogar, Terminal",
         "bus_stop": "Otobüs durağı",
         "cable_car": "Teleferik",
@@ -1243,7 +1243,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
         "butcher": "Kasap",
         "car_repair": "Araba tamircisi",
         "car_shop": "Araba galerisi",
-        "chemist": "",
+        "chemist": "Chemist / Drugstore",
         "clothes": "Giyisi",
         "computer": "Bilgisayar",
         "confectionery": "Şekerlemeci",
@@ -1257,7 +1257,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
         "farm_shop": "Tarım dükkanı",
         "florist": "Çiçekçi",
         "furniture": "Mobilya dükkanı",
-        "garden_centre": "",
+        "garden_centre": "Garden centre",
         "gift": "Hediyelikçi",
         "hairdresser": "Kuaför",
         "hardware": "Hırdavat",
@@ -1394,11 +1394,11 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
   "search": {
     "index": {
       "no-results": {
-        "headline": "",
+        "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
         "hint": {
           "example": "<strong>Örnek:</strong>  Londra, Birleşik Krallık",
-          "info": "",
-          "work_in_progress": ""
+          "info": "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!",
+          "work_in_progress": "We work hard to make searching for places easier and more intuitive in the future."
         },
         "try_this": {
           "address": "Lütfen <strong>adresi detaylandırın</strong>.",
@@ -1418,7 +1418,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       }
     },
     "timeout": {
-      "headline": "",
+      "headline": "Sorry, something went wrong",
       "info": "Arama hizmetimiz geçici olarak devredışı.",
       "repeat_search": "Yeniden ara"
     }
@@ -1500,62 +1500,62 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
     "profile": {
       "edit": {
         "legends": {
-          "user_data": ""
+          "user_data": "Your account information"
         },
         "title": "Profil"
       },
       "newsletter": {
-        "label": "",
-        "text": "",
+        "label": "Yes, keep me updated about Wheelmap.",
+        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
         "title": "Haberler"
       },
       "photos": {
-        "empty": "",
+        "empty": "You haven't uploaded any photos yet.",
         "title": "Fotoğraflar"
       },
       "show": {
         "greeting": {
-          "anonymously": "",
-          "personalized": ""
+          "anonymously": "Hello there",
+          "personalized": "Hello %{name}"
         },
         "overview": {
           "photos_uploaded": {
-            "one": "",
-            "other": ""
+            "one": "uploaded %{count} photo",
+            "other": "uploaded %{count} photos"
           },
           "pois_added": {
-            "one": "",
-            "other": ""
+            "one": "added %{count} place",
+            "other": "added %{count} places"
           },
           "pois_edited": {
-            "one": "",
-            "other": ""
+            "one": "edited %{count} place",
+            "other": "edited %{count} places"
           },
           "pois_marked": {
-            "one": "",
-            "other": ""
+            "one": "marked %{count} place",
+            "other": "marked %{count} places"
           },
-          "text": ""
+          "text": "You have"
         },
-        "text_html": "",
-        "title": ""
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "title": "Overview"
       },
       "widget": {
-        "categories": "",
-        "center": "",
-        "empty_center": "",
-        "empty_provider": "",
-        "height": "",
+        "categories": "Show category filter",
+        "center": "Map area",
+        "empty_center": "Search for center of map …",
+        "empty_provider": "Choose a Provider",
+        "height": "Height",
         "legends": {
-          "embed": "",
-          "embed_explanation": "",
-          "general": "",
-          "preview": "",
+          "embed": "Embed code",
+          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
+          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
+          "preview": "Preview",
           "settings": "Ayarlar"
         },
-        "providers": "",
-        "title": "",
-        "width": ""
+        "providers": "Provider",
+        "title": "Widget",
+        "width": "Width"
       }
     }
   },

@@ -1,4 +1,3 @@
----
 pt:
   poi:
     category:
@@ -6,11 +5,8 @@ pt:
       education: 'Ecucação '
       food: Comida
       government: Governo
-      health: ''
       leisure: Prazer
       misc: Outros
-      money_post: ""
-      public_transfer: ""
       shopping: Shopping
       sport: Desporto
       tourism: Turismo
@@ -22,14 +18,12 @@ pt:
         camp_site: "Acampamento"
         caravan_site: "Sitio de caravana"
         chalet: Chalet
-        dormitory: ''
         guest_house: "Guest House"
         hostel: Pousada
         hotel: Hotel
         motel: Motel
       education:
         college: Colégio
-        driving_school: ""
         kindergarten: Jardim escola
         library: Biblioteca
         museum: Museu
@@ -41,43 +35,25 @@ pt:
         cafe: café
         drinking_water: "Agua potável"
         fast_food: "Fast food"
-        ice_cream: ""
         pub: Pub
         restaurant: Restaurante
       government:
         courthouse: Tribunal
         embassy: Embaixada
-        government: ""
-        police: ''
         public_building: "Edificio público"
-        townhall: ''
       health:
-        dentist: ''
-        doctors: ''
-        hearing_aids: ""
         hospital: Hospital
-        medical_supply: ""
         pharmacy: Farmácia
-        social_facility: ""
         veterinary: Veterenário
       leisure:
         arena: Arena
-        brothel: ''
-        casino: ''
         cinema: Cinema
-        community_centre: ""
         gallery: Galeria
         nightclub: Clube Nocturno
-        playground: ''
         sauna: Sauna
-        stripclub: ''
         theatre: Teatro
         zoo: Zoológico
       misc:
-        company: ""
-        estate_agent: ""
-        insurance: ''
-        lawyer: ''
         place_of_worship: "Lugar de oração "
         toilets: Casa de banho
       money_post:
@@ -90,7 +66,6 @@ pt:
         aerodrome: Aeroporto
         bicycle_parking: "Parque para bicicletas"
         bicycle_rental: "Aluguer de bicicletas"
-        boatyard: ''
         bus_station: "Estação de Autocarros"
         bus_stop: "Estação de Autocarros"
         cable_car: "Teleférico"
@@ -112,50 +87,28 @@ pt:
       shopping:
         alcohol: Licor
         bakery: Padaria
-        beauty: ""
         beverages: Bebidas
         bicycle: "Loja de bicicletas"
         books: Livros
         butcher: Talho
-        car_repair: ""
-        car_shop: ""
-        chemist: ''
         clothes: Roupa
         computer: Computador
-        confectionery: ""
         convenience: Conveniência
-        deli: ''
         department_store: "Shopping Center"
         doityourself: "Faça você mesmo"
         dry_cleaning: "Limpeza a seco"
         electronics: Eletrónica
-        fabric: ""
-        farm_shop: ""
         florist: Florista
         furniture: Móvéis
-        garden_centre: ""
-        gift: ""
         hairdresser: Cabeleireiro
         hardware: Hardware
-        jewelry: ''
         kiosk: Quisque
         laundry: Lavandaria
         mall: "Shopping Center"
         optician: Óptica
-        organic: ""
-        outdoor: ""
-        pet: ""
-        photo: ''
-        second_hand: ""
         shoes: Sapatos
-        sports: ''
-        stationery: ''
         supermarket: Supermercado
-        toys: ''
-        travel_agency: ""
-        video: ""
       sport:
-        pitch: ""
         sports_centre: "Centro de desporto"
         stadium: Estádio
         swimming: Nadar

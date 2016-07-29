@@ -1,10 +1,10 @@
 I18n.translations || (I18n.translations = {});
 I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
   "actions": {
-    "cancel": "",
-    "next": "",
+    "cancel": "Cancel",
+    "next": "Next",
     "save": "सेव, बचाएं",
-    "send": ""
+    "send": "Send"
   },
   "active_admin": {
     "access_denied": {
@@ -183,16 +183,16 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
   "activerecord": {
     "attributes": {
       "poi": {
-        "address": "",
-        "address_city": "",
-        "address_housenumber": "",
-        "address_postcode": "",
-        "address_street": "",
-        "name": "",
-        "note": "",
-        "phone": "",
-        "type": "",
-        "website": ""
+        "address": "Address",
+        "address_city": "City",
+        "address_housenumber": "House number",
+        "address_postcode": "Postcode",
+        "address_street": "Street",
+        "name": "Name",
+        "note": "Note",
+        "phone": "Phone",
+        "type": "Type",
+        "website": "Website"
       },
       "user": {
         "first_name": "दीया हुआ नाम ",
@@ -639,7 +639,7 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
     "models": {
       "node": {
         "website": {
-          "invalid": ""
+          "invalid": "Website address is not valid."
         }
       }
     },
@@ -653,15 +653,15 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
   },
   "faq": {
     "answers": {
-      "0": "",
-      "1": "",
-      "2": ""
+      "0": "You can always change the marking of a place yourself. Just choose the right marking and \"Save\" - done!",
+      "1": "As a logged in user you can add / correct all the details of a place. Click on \"Edit\" and correct or add information in the mask.",
+      "2": "You can add further information (e.g. \"This place has a mobile ramp\") in the comment section. Click on \"Edit\" and \"Add comment\"."
     },
-    "headline": "",
+    "headline": "Is there a problem with this place?",
     "questions": {
-      "0": "",
-      "1": "",
-      "2": ""
+      "0": "The marking is wrong.",
+      "1": "The details of the place are incorrect or missing.",
+      "2": "I have more information about this place."
     }
   },
   "flash": {
@@ -736,17 +736,17 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "",
+      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
       "homepage": "होम पेज, मुख्य पृष्ठ\n",
       "keywords": "व्हीलचेयर सुलभ जगहों के लिए खोज का निशान",
       "search": "खोजें, ढूंढें",
-      "title": ""
+      "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "",
+      "about_wheelmap": "About Wheelmap",
       "blog": "ब्लॅाग",
-      "choose_language": "",
-      "contact": "",
+      "choose_language": "Choose language",
+      "contact": "Contact",
       "feedback": "राय, प्रतिक्रिया, फीडबैक ",
       "home": "शुरू करें, प्रारंभ",
       "how_to_add_a_place": "और स्थान कैसे जोड़े जाएं?",
@@ -754,11 +754,11 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
       "logged_in_as": "... के तौर पर लॅाग इन हैं। ",
       "login": "लॅाग इन ",
       "logout": "लॅाग आउट ",
-      "map": "",
+      "map": "Map",
       "newsletter": "न्यूज़लैटर, संदेश पत्र, सामाचार पत्र ",
       "press": "दबाएं",
       "profile": "Profile",
-      "projects": "",
+      "projects": "Projects",
       "suggestions": "सुझाव\n",
       "what_is_barrier_free": "\"व्हीलचेयर सुलभ\" का मतलब क्या है?",
       "what_is_wheelmap": "What is Wheelmap?"
@@ -772,7 +772,7 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
     "tagline": "वहीलमैप का लोगो, वहीलमैप का चिन्ह",
     "title": "Find wheelchair accessible places",
     "toolbar": {
-      "categories": ""
+      "categories": "Categories"
     }
   },
   "helpers": {
@@ -799,7 +799,7 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "",
+      "embed_link": "Show on Wheelmap.org",
       "filter": {
         "category": "श्रेणी चुनिए ",
         "deselect_all": "Deselect all",
@@ -822,12 +822,12 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
         }
       },
       "overlay": {
-        "button": "",
-        "categories": "",
-        "filter": "",
-        "headline": "",
-        "lookup": "",
-        "secondary_headline": ""
+        "button": "Okay, let’s go!",
+        "categories": "Filter places by categories",
+        "filter": "Filter places by wheelchair accessibility",
+        "headline": "Mark and find wheelchair accessible places with Wheelmap.org - worldwide and for free. It’s easy:",
+        "lookup": "Search for a specific place",
+        "secondary_headline": "Our traffic light system to mark the wheelchair accessibility of public places:"
       },
       "popup": {
         "form": {
@@ -840,7 +840,7 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
         "help": "व्हीलचेयर सुलभ",
         "more": "और भी..."
       },
-      "zoom_alert": ""
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "कैसे",
@@ -871,17 +871,17 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
   },
   "models": {
     "category": {
-      "prompt": ""
+      "prompt": "Choose a category"
     },
     "node": {
-      "info_edit_position": "",
+      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
       "mail": {
-        "body": "",
-        "subject": ""
+        "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
+        "subject": "[Wheelmap] Problem with %{headline}"
       }
     },
     "node_type": {
-      "prompt": ""
+      "prompt": "Choose a type"
     }
   },
   "node": {
@@ -922,38 +922,38 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
     },
     "new": {
       "form": {
-        "legend": "",
-        "location": "",
+        "legend": "Location of the place",
+        "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "",
-            "title": ""
+            "name": "Wheelchair accessibility",
+            "title": "Information on wheelchair accessibility"
           },
           "address": {
-            "help": "",
-            "name": "",
-            "title": ""
+            "help": "You can move the marker to the correct location on the map.",
+            "name": "Address",
+            "title": "Where is the place?"
           },
           "contact": {
-            "name": "",
-            "title": ""
+            "name": "Contact",
+            "title": "Other contact information"
           },
           "name_category": {
-            "name": "",
-            "title": ""
+            "name": "Name and place type",
+            "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": ""
+            "title": "Is all the information correct?"
           },
           "similar_nodes": {
-            "empty": "",
-            "go_edit": "",
-            "go_new": "",
-            "name": "",
-            "title": ""
+            "empty": "No similar places were found.",
+            "go_edit": "Continue with this place",
+            "go_new": "It is none of the places above …",
+            "name": "Similar places",
+            "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": ""
+        "title": "Add a place"
       },
       "header": {
         "title": "नई जगह । wheelmp.org"
@@ -970,40 +970,40 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
       }
     },
     "node_data": {
-      "address": "",
-      "contact_details": ""
+      "address": "Address:",
+      "contact_details": "Contact details:"
     },
     "node_edit": {
-      "details": "",
-      "edit": ""
+      "details": "Details",
+      "edit": "Edit"
     },
     "node_map": {
-      "map": ""
+      "map": "Map:"
     },
     "node_note": {
-      "comment": ""
+      "comment": "Comment:"
     },
     "node_photos": {
-      "add": "",
-      "photos_of_this_place": "",
-      "upload": ""
+      "add": "Add",
+      "photos_of_this_place": "Photos of this place:",
+      "upload": "Upload"
     },
     "node_similar": {
-      "similar": ""
+      "similar": "Similar places: %{name}"
     },
     "node_status": {
-      "accessible_toilet": "",
-      "premium": "",
-      "wheelchair_accessibility": ""
+      "accessible_toilet": "Wheelchair accessible toilet:",
+      "premium": "%{name} says: this place is",
+      "wheelchair_accessibility": "Wheelchair accessibility:"
     },
     "node_streetview": {
-      "streetview": ""
+      "streetview": "Streetview:"
     },
     "show": {
       "header": {
         "meta": {
-          "description": "",
-          "title": ""
+          "description": "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.",
+          "title": "This place is on Wheelmap.org: %{name}"
         },
         "title": "जगह: %{node} | wheelmap.org"
       },
@@ -1016,9 +1016,9 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
       "more_data_from": "There is more information about this place, validated by:",
       "share": {
         "email": "ईमेल",
-        "facebook": "",
-        "text": "",
-        "twitter": ""
+        "facebook": "Facebook",
+        "text": "I found this place on Wheelmap.org: %{name}",
+        "twitter": "Twitter"
       },
       "show-in-osm": "ओपनस्ट्रीटमैप"
     },
@@ -1118,9 +1118,9 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
       "government": "सरकार",
       "health": "स्वास्थ",
       "leisure": "अवकाश, मस्ती",
-      "misc": "",
-      "money_post": "",
-      "public_transfer": "",
+      "misc": "Miscellaneous",
+      "money_post": "Bank / Post office",
+      "public_transfer": "Public transport",
       "shopping": "शॅापिंग, खरीददारी",
       "sport": "खेल",
       "tourism": "पर्यटन",
@@ -1132,8 +1132,8 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
         "bed_and_breakfast": "बेड एंड ब्रेकफ़ास्ट, रहने की व्यवस्था और नाश्ता भी",
         "camp_site": "कैंप स्थल, शिविर स्थल",
         "caravan_site": "कारवां स्थल",
-        "chalet": "",
-        "dormitory": "",
+        "chalet": "Chalet",
+        "dormitory": "Dormitory",
         "guest_house": "गेस्ट हाउस, अतिथि आराम ग्रह",
         "hostel": "छात्रावास, हॅास्टल",
         "hotel": "होटल, आराम ग्रह",
@@ -1141,7 +1141,7 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
       },
       "education": {
         "college": "कॅालेज",
-        "driving_school": "",
+        "driving_school": "Driving school",
         "kindergarten": "बालवाड़ी",
         "library": "पुस्तकालय",
         "museum": "संग्रहालय",
@@ -1154,21 +1154,21 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
         "cafe": "कैफे",
         "drinking_water": "पीने का पानी",
         "fast_food": "फास्ट फूड",
-        "ice_cream": "",
+        "ice_cream": "Ice cream parlour",
         "pub": "पब",
         "restaurant": "रेस्तरां, रेस्टोरेंट"
       },
       "government": {
         "courthouse": "अदालत",
         "embassy": "दूतावास",
-        "government": "",
+        "government": "Government agency",
         "police": "पुलिस",
         "public_building": "सार्वजनिक बिल्डिंग",
-        "townhall": ""
+        "townhall": "Town hall"
       },
       "health": {
-        "dentist": "",
-        "doctors": "",
+        "dentist": "Dentist",
+        "doctors": "Doctor",
         "hearing_aids": "हियरिंग एड डीलर,\nसुनने वाली मशीन के डीलर",
         "hospital": "अस्पताल",
         "medical_supply": "चिकित्सा का सामान",
@@ -1179,9 +1179,9 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
       "leisure": {
         "arena": "अखाड़ा, मैदान",
         "brothel": "रण्डी खाना, कोठा,",
-        "casino": "",
+        "casino": "Casino",
         "cinema": "सिनेमा,",
-        "community_centre": "",
+        "community_centre": "Community centre",
         "gallery": "गैलरी",
         "nightclub": "नाइटक्लब",
         "playground": "खेल का मैदान",
@@ -1192,8 +1192,8 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
       },
       "misc": {
         "company": "कंपनी (दफ्तर)",
-        "estate_agent": "",
-        "insurance": "",
+        "estate_agent": "Real estate agent",
+        "insurance": "Insurance",
         "lawyer": "वकील",
         "place_of_worship": "प्रार्थना की जगह",
         "toilets": "शौचालय, संडास"
@@ -1209,7 +1209,7 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
         "aerodrome": "हवाई अड्डा",
         "bicycle_parking": "साइकिल पार्किंग",
         "bicycle_rental": "साइकल किराए पर",
-        "boatyard": "",
+        "boatyard": "Boat yard",
         "bus_station": "बस अड्डा",
         "bus_stop": "बस स्टॅाप",
         "cable_car": "केबल कार",
@@ -1220,7 +1220,7 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
         "ferry_terminal": "नौका टर्मिनल",
         "fuel": "पेट्रोलपंप",
         "halt": "रुको",
-        "light_rail": "",
+        "light_rail": "Light rail",
         "parking": "पार्किंग",
         "parking_aisle": "पार्किंग आइल",
         "platform": "प्लैटफॅार्म",
@@ -1232,51 +1232,51 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
       "shopping": {
         "alcohol": "शराब",
         "bakery": "बेकरी",
-        "beauty": "",
+        "beauty": "Beauty salon",
         "beverages": "पेय",
         "bicycle": " सायकल की दुकान",
         "books": "किताबें, पुस्तकें",
         "butcher": "कसाई",
         "car_repair": "कार की मरम्मत",
         "car_shop": " कार की दुकान",
-        "chemist": "",
+        "chemist": "Chemist / Drugstore",
         "clothes": "कपड़े, वस्त्र",
         "computer": "कंप्यूटर",
-        "confectionery": "",
+        "confectionery": "Candy store",
         "convenience": "सुविधा",
-        "deli": "",
+        "deli": "Delicatessen",
         "department_store": "डिपार्टमेंट स्टोर",
         "doityourself": "खुद कीजिए",
         "dry_cleaning": "ड्राई क्लीनिंग",
         "electronics": "इलेक्ट्रॅानिक्स",
-        "fabric": "",
-        "farm_shop": "",
+        "fabric": "Fabric shop",
+        "farm_shop": "Farm shop",
         "florist": "फूलों की दुकान",
         "furniture": "फर्नीचर",
-        "garden_centre": "",
-        "gift": "",
+        "garden_centre": "Garden centre",
+        "gift": "Gift shop",
         "hairdresser": "नाई",
         "hardware": "हार्डवेयर",
-        "jewelry": "",
+        "jewelry": "Jewelry",
         "kiosk": "गुमटी, गाडा, खोमचा",
         "laundry": "धोबी",
         "mall": "शॅापिंग सेंटर",
         "optician": "चश्मा बनाने वाला, ऐनक बनाने वाला",
-        "organic": "",
-        "outdoor": "",
-        "pet": "",
+        "organic": "Organic shop",
+        "outdoor": "Outdoor supply",
+        "pet": "Pet shop",
         "photo": "फोटो, तसवीर",
         "second_hand": "इस्तेमाल किया हुआ",
         "shoes": "जूते",
         "sports": "खेल",
         "stationery": "स्टेश्नरी, लिखने का सामान",
         "supermarket": "सुपरमार्किट",
-        "toys": "",
-        "travel_agency": "",
+        "toys": "Toys",
+        "travel_agency": "Travel agency",
         "video": "वीडियो किराए पर"
       },
       "sport": {
-        "pitch": "",
+        "pitch": "Sports field",
         "sports_centre": "स्पोर्ट सेंटर, क्रीडा केंद्र",
         "stadium": "स्टेडियम",
         "swimming": "तैराकी",
@@ -1390,22 +1390,22 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
   "search": {
     "index": {
       "no-results": {
-        "headline": "",
+        "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
         "hint": {
-          "example": "",
-          "info": "",
-          "work_in_progress": ""
+          "example": "<strong>Example:</strong> London, United Kingdom",
+          "info": "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!",
+          "work_in_progress": "We work hard to make searching for places easier and more intuitive in the future."
         },
         "try_this": {
-          "address": "",
-          "intro": "",
-          "spell_check": ""
+          "address": "Please provide more <strong>address details</strong>.",
+          "intro": "Try this:",
+          "spell_check": "Check the <strong>spelling</strong> of your input."
         }
       },
       "results": {
         "ticker": {
-          "one": "",
-          "other": ""
+          "one": "%{count} result:",
+          "other": "%{count} results:"
         }
       },
       "search": {
@@ -1414,9 +1414,9 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
       }
     },
     "timeout": {
-      "headline": "",
-      "info": "",
-      "repeat_search": ""
+      "headline": "Sorry, something went wrong",
+      "info": "Our search service was temporarily not available.",
+      "repeat_search": "Retry search"
     }
   },
   "splash": {
@@ -1496,62 +1496,62 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
     "profile": {
       "edit": {
         "legends": {
-          "user_data": ""
+          "user_data": "Your account information"
         },
-        "title": ""
+        "title": "Profile"
       },
       "newsletter": {
-        "label": "",
-        "text": "",
+        "label": "Yes, keep me updated about Wheelmap.",
+        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
         "title": "न्यूज़लैटर, संदेश पत्र, सामाचार पत्र "
       },
       "photos": {
-        "empty": "",
-        "title": ""
+        "empty": "You haven't uploaded any photos yet.",
+        "title": "Photos"
       },
       "show": {
         "greeting": {
-          "anonymously": "",
-          "personalized": ""
+          "anonymously": "Hello there",
+          "personalized": "Hello %{name}"
         },
         "overview": {
           "photos_uploaded": {
-            "one": "",
-            "other": ""
+            "one": "uploaded %{count} photo",
+            "other": "uploaded %{count} photos"
           },
           "pois_added": {
-            "one": "",
-            "other": ""
+            "one": "added %{count} place",
+            "other": "added %{count} places"
           },
           "pois_edited": {
-            "one": "",
-            "other": ""
+            "one": "edited %{count} place",
+            "other": "edited %{count} places"
           },
           "pois_marked": {
-            "one": "",
-            "other": ""
+            "one": "marked %{count} place",
+            "other": "marked %{count} places"
           },
-          "text": ""
+          "text": "You have"
         },
-        "text_html": "",
-        "title": ""
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "title": "Overview"
       },
       "widget": {
-        "categories": "",
-        "center": "",
-        "empty_center": "",
-        "empty_provider": "",
-        "height": "",
+        "categories": "Show category filter",
+        "center": "Map area",
+        "empty_center": "Search for center of map …",
+        "empty_provider": "Choose a Provider",
+        "height": "Height",
         "legends": {
-          "embed": "",
-          "embed_explanation": "",
-          "general": "",
-          "preview": "",
-          "settings": ""
+          "embed": "Embed code",
+          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
+          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
+          "preview": "Preview",
+          "settings": "Settings"
         },
-        "providers": "",
-        "title": "",
-        "width": ""
+        "providers": "Provider",
+        "title": "Widget",
+        "width": "Width"
       }
     }
   },

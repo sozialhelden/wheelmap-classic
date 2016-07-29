@@ -1,4 +1,3 @@
----
 "no":
   poi:
     category:
@@ -8,9 +7,6 @@
       government: Regjering
       health: Helse
       leisure: Fritid
-      misc: ''
-      money_post: ""
-      public_transfer: ""
       shopping: Shopping
       sport: Sport
       tourism: Turisme
@@ -50,10 +46,8 @@
         government: "Regjeringsorgan"
         police: Politi
         public_building: "Offentlig bygning"
-        townhall: ''
       health:
         dentist: Tannlege
-        doctors: ''
         hearing_aids: "Høreapparatforhandler"
         hospital: Sykehus
         medical_supply: "Medisinsk utstyr"
@@ -65,7 +59,6 @@
         brothel: Bordell
         casino: Kasino
         cinema: Kino
-        community_centre: ""
         gallery: Galleri
         nightclub: Nattklubb
         playground: Lekeplass
@@ -90,7 +83,6 @@
         aerodrome: Flyplass
         bicycle_parking: "Sykkelparkering"
         bicycle_rental: "Sykkelutleie"
-        boatyard: ''
         bus_station: "Busstasjon"
         bus_stop: "Busstholdeplass"
         cable_car: "Taubane"
@@ -119,7 +111,6 @@
         butcher: Slakter
         car_repair: "Bilreparasjon"
         car_shop: "Bilbutikk"
-        chemist: ''
         clothes: Klær
         computer: Datamaskin
         confectionery: "Godtebutikk"
@@ -133,7 +124,6 @@
         farm_shop: "Gårdsutsalg"
         florist: Blomsterbutikk
         furniture: Møbelbutikk
-        garden_centre: ""
         gift: "Gavebutikk"
         hairdresser: Frisør
         hardware: Jernvare

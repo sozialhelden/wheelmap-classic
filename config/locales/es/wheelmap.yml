@@ -22,12 +22,15 @@ es:
       confirmation: "no tiene confirmación"
       empty: "tiene que ser completado"
       equal_to: "tiene que tener exactamente %{count}"
+      even: "debe de ser un número par"
       exclusion: "está reservado"
       expired: "ha caducado, solicite una nueva."
       greater_than: "debe ser mayor que %{count}"
+      greater_than_or_equal_to: "debe de ser más grande que o igual a %{count}"
       inclusion: "no es un valor correcto"
       invalid: "no es válido"
       less_than: "tiene que ser menor que %{count}"
+      less_than_or_equal_to: "debe de ser menos que o igual a %{count}"
       not_a_number: "no es un número"
       not_an_integer: "tiene que ser un número entero"
       not_found: "no se ha encontrado"
@@ -35,6 +38,7 @@ es:
       not_saved:
         one: "Un error ha impedido que se guarde %{resource}:"
         other: "%{count} errores han impedido guardar un %{resource}:\n"
+      odd: "debe de ser un número impar"
       taken: "ya ha sido tomado"
       too_long: "es demasiado largo (no más de %{count} caracteres)"
       too_short: "es demasiado corto (no menos de %{count} caracteres)"
@@ -127,6 +131,7 @@ es:
       placeholder: "Buscar un lugar"
       title_add_place: "¡Agrega ahora mismo otro nuevo lugar en esta posición!"
     tagline: "Logo del wheelmap"
+    title: "Encuentra lugares accesibles para silla de ruedas"
   helpers:
     select:
       prompt: "Por favor elige"
@@ -147,6 +152,7 @@ es:
           upgrade: "Actualizar navegador"
         warning:
           headline: "¡Lo sentimos!"
+          message: "Parece que estás usando Internet Explorer. Wheelmap requiere un navegador compatible estandard para funcionar correctamente. Por favor, considera usar Firefox, Chrome, Safari o Opera. "
       link:
         node:
           create: "Añadir un nuevo lugar"
@@ -193,6 +199,7 @@ es:
       link:
         large_map: "&laquo; Cancelar"
     errors:
+      default: "Ups! Algo salió mal. Hemos sido informados acerca de este problema"
       not_authorized: "Disculpa, la autenticación ha fallado"
       not_available: "Disculpa, esta página no está disponible temporalmente."
       not_existent: "Disculpa, este lugar ya no está disponible."
@@ -218,6 +225,7 @@ es:
         large_map: Ampliar
         listing: "Todos los lugares de tipo '%{type}' en %{city}"
         upload: "Subir imagen"
+      more_data_from: "Hay más información acerca de este lugar, validado por: "
       show-in-osm: OpenStreetMap
     update:
       flash:

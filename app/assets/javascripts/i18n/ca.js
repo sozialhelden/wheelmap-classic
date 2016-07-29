@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
   "actions": {
     "cancel": "Cancel·lar",
-    "next": "",
+    "next": "Next",
     "save": "Desar",
     "send": "Enviar"
   },
@@ -185,7 +185,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
       "poi": {
         "address": "Adreça",
         "address_city": "Ciutat",
-        "address_housenumber": "",
+        "address_housenumber": "House number",
         "address_postcode": "Codi postal",
         "address_street": "Carrer",
         "name": "Nom",
@@ -744,11 +744,11 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "",
+      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
       "homepage": "Pàgina d'inici",
       "keywords": "marca de cerca de llocs accessibles amb cadira de rodes",
       "search": "Cerca",
-      "title": ""
+      "title": "Wheelmap.org"
     },
     "navigation": {
       "about_wheelmap": "Sobre Wheelmap",
@@ -807,7 +807,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "",
+      "embed_link": "Show on Wheelmap.org",
       "filter": {
         "category": "Tria la categoria",
         "deselect_all": "Desfès la selecció",
@@ -848,7 +848,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
         "help": "Accessible amb cadira de rodes? (ajuda)",
         "more": "més..."
       },
-      "zoom_alert": ""
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Com?",
@@ -931,37 +931,37 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
     "new": {
       "form": {
         "legend": "Localització del lloc",
-        "location": "",
+        "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "",
-            "title": ""
+            "name": "Wheelchair accessibility",
+            "title": "Information on wheelchair accessibility"
           },
           "address": {
-            "help": "",
+            "help": "You can move the marker to the correct location on the map.",
             "name": "Adreça",
-            "title": ""
+            "title": "Where is the place?"
           },
           "contact": {
             "name": "Contactar",
-            "title": ""
+            "title": "Other contact information"
           },
           "name_category": {
-            "name": "",
-            "title": ""
+            "name": "Name and place type",
+            "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": ""
+            "title": "Is all the information correct?"
           },
           "similar_nodes": {
-            "empty": "",
-            "go_edit": "",
-            "go_new": "",
-            "name": "",
-            "title": ""
+            "empty": "No similar places were found.",
+            "go_edit": "Continue with this place",
+            "go_new": "It is none of the places above …",
+            "name": "Similar places",
+            "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": ""
+        "title": "Add a place"
       },
       "header": {
         "title": "Lloc nou | wheelmap.org"
@@ -1025,7 +1025,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
       "share": {
         "email": "Correu electrònic",
         "facebook": "Facebook",
-        "text": "",
+        "text": "I found this place on Wheelmap.org: %{name}",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1126,9 +1126,9 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
       "government": "Govern",
       "health": "Salut",
       "leisure": "Oci",
-      "misc": "",
-      "money_post": "",
-      "public_transfer": "",
+      "misc": "Miscellaneous",
+      "money_post": "Bank / Post office",
+      "public_transfer": "Public transport",
       "shopping": "Botigues",
       "sport": "Esports",
       "tourism": "Turisme",
@@ -1172,11 +1172,11 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
         "government": "Oficina governamental",
         "police": "Policia",
         "public_building": "Edifici públic",
-        "townhall": ""
+        "townhall": "Town hall"
       },
       "health": {
         "dentist": "Dentista",
-        "doctors": "",
+        "doctors": "Doctor",
         "hearing_aids": "Aparells auditius",
         "hospital": "Hospital",
         "medical_supply": "Subministraments mèdics",
@@ -1189,7 +1189,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
         "brothel": "Prostíbul",
         "casino": "Casino",
         "cinema": "Cinema",
-        "community_centre": "",
+        "community_centre": "Community centre",
         "gallery": "Galeria",
         "nightclub": "Discoteca",
         "playground": "Parc infantil",
@@ -1217,7 +1217,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
         "aerodrome": "Aeroport",
         "bicycle_parking": "Pàrquing de bicicletes",
         "bicycle_rental": "Lloguer de bicicletes",
-        "boatyard": "",
+        "boatyard": "Boat yard",
         "bus_station": "Estació d'autobusos",
         "bus_stop": "Parada d'autobús",
         "cable_car": "Telefèric (amb cabina tancada)",
@@ -1247,7 +1247,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
         "butcher": "Carnisseria",
         "car_repair": "Taller de cotxes",
         "car_shop": "Concessionari de cotxes",
-        "chemist": "",
+        "chemist": "Chemist / Drugstore",
         "clothes": "Roba",
         "computer": "Informàtica",
         "confectionery": "Llaminadures",
@@ -1261,7 +1261,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
         "farm_shop": "Productes de granja",
         "florist": "Floristeria",
         "furniture": "Mobles",
-        "garden_centre": "",
+        "garden_centre": "Garden centre",
         "gift": "Botiga de regals",
         "hairdresser": "Perruqueria",
         "hardware": "Ferreteria",
@@ -1422,7 +1422,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
       }
     },
     "timeout": {
-      "headline": "",
+      "headline": "Sorry, something went wrong",
       "info": "El nostre servei de cerca no està disponible.",
       "repeat_search": "Reiniciar la cerca"
     }
@@ -1510,11 +1510,11 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
       },
       "newsletter": {
         "label": "Sí, actualitza'm sobre Wheelmap.",
-        "text": "",
+        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
         "title": "Butlletí"
       },
       "photos": {
-        "empty": "",
+        "empty": "You haven't uploaded any photos yet.",
         "title": "Fotos"
       },
       "show": {
@@ -1532,8 +1532,8 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
             "other": "%{count} llocs afegits"
           },
           "pois_edited": {
-            "one": "",
-            "other": ""
+            "one": "edited %{count} place",
+            "other": "edited %{count} places"
           },
           "pois_marked": {
             "one": "%{count} lloc marcat",
@@ -1545,21 +1545,21 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
         "title": "Resum"
       },
       "widget": {
-        "categories": "",
-        "center": "",
-        "empty_center": "",
-        "empty_provider": "",
-        "height": "",
+        "categories": "Show category filter",
+        "center": "Map area",
+        "empty_center": "Search for center of map …",
+        "empty_provider": "Choose a Provider",
+        "height": "Height",
         "legends": {
-          "embed": "",
-          "embed_explanation": "",
-          "general": "",
-          "preview": "",
-          "settings": ""
+          "embed": "Embed code",
+          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
+          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
+          "preview": "Preview",
+          "settings": "Settings"
         },
-        "providers": "",
-        "title": "",
-        "width": ""
+        "providers": "Provider",
+        "title": "Widget",
+        "width": "Width"
       }
     }
   },

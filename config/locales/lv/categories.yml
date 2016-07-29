@@ -1,4 +1,3 @@
----
 lv:
   poi:
     category:
@@ -8,9 +7,6 @@ lv:
       government: Valdība
       health: Veselība
       leisure: Atpūta
-      misc: ''
-      money_post: ""
-      public_transfer: ""
       shopping: Iepirkšanās
       sport: Sports
       tourism: Tūrisms
@@ -22,14 +18,12 @@ lv:
         camp_site: "Nometnes vieta"
         caravan_site: "Treileru kempings"
         chalet: Kempinga mājiņas
-        dormitory: ''
         guest_house: "Viesu māja"
         hostel: Hostelis
         hotel: Viesnīca
         motel: Motelis
       education:
         college: Koledža
-        driving_school: ""
         kindergarten: Bērnu dārzs
         library: Bibliotēka
         museum: Muzejs
@@ -41,19 +35,14 @@ lv:
         cafe: Kafejnīca
         drinking_water: "Dzeramais ūdens"
         fast_food: "Ātrā ēdināšana"
-        ice_cream: ""
         pub: Krogs
         restaurant: Restorāns
       government:
         courthouse: Tiesa
         embassy: Vēstniecība
-        government: ""
         police: Policija
         public_building: "Publiska ēka"
-        townhall: ''
       health:
-        dentist: ''
-        doctors: ''
         hearing_aids: "Dzirdes aparātu izplatītājs"
         hospital: Slimnīca
         medical_supply: "Medicīnas preces"
@@ -63,9 +52,7 @@ lv:
       leisure:
         arena: Arēna
         brothel: Bordelis
-        casino: ''
         cinema: Kinoteātris
-        community_centre: ""
         gallery: Galerija
         nightclub: Naktsklubs
         playground: Rotaļu laukums
@@ -75,8 +62,6 @@ lv:
         zoo: Zooloģiskais dārzs
       misc:
         company: "Uzņēmums (birojs)"
-        estate_agent: ""
-        insurance: ''
         lawyer: Juridiskie pakalpojumi
         place_of_worship: "Reliģisks objekts"
         toilets: Labierīcības
@@ -90,7 +75,6 @@ lv:
         aerodrome: Lidosta
         bicycle_parking: "Velosipēdu novietne"
         bicycle_rental: "Velosipēdu noma"
-        boatyard: ''
         bus_station: "Autobusa pietura"
         bus_stop: "Autobusu pietura"
         cable_car: "Trosu dzelzceļš"
@@ -112,50 +96,35 @@ lv:
       shopping:
         alcohol: Alkohols
         bakery: Konditoreja
-        beauty: ""
         beverages: Dzērieni
         bicycle: "Velosipēdu veikals"
         books: Grāmatas
         butcher: Gaļas veikals
         car_repair: "Auto remonts"
         car_shop: "Auto veikals"
-        chemist: ''
         clothes: Apģērbs
         computer: Datori
-        confectionery: ""
         convenience: Dažādas preces
-        deli: ''
         department_store: "Universālveikals"
         doityourself: "mājai & dārzam"
         dry_cleaning: "Ķīmiskā tīrītava"
         electronics: Elektronika
-        fabric: ""
-        farm_shop: ""
         florist: Florists
         furniture: Mēbeles
-        garden_centre: ""
-        gift: ""
         hairdresser: Frizieris
         hardware: Saimniecības preces
-        jewelry: ''
         kiosk: Kiosks
         laundry: Veļas mazgātuve
         mall: "Iepirkšanās centrs"
         optician: optiķis
-        organic: ""
-        outdoor: ""
-        pet: ""
         photo: Foto
         second_hand: "lietoti apģērbi"
         shoes: Apavi
         sports: Sports
         stationery: Rakstāmlietas
         supermarket: Lielveikals
-        toys: ''
-        travel_agency: ""
         video: "Video noma"
       sport:
-        pitch: ""
         sports_centre: "Sporta centrs"
         stadium: Stadions
         swimming: Peldēšana

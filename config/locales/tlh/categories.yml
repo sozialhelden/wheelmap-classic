@@ -1,4 +1,3 @@
----
 tlh:
   poi:
     category:
@@ -6,11 +5,7 @@ tlh:
       education: ghojmoHghach
       food: Sop
       government: qum
-      health: ''
       leisure: tIvtaHghach
-      misc: ''
-      money_post: ""
-      public_transfer: ""
       shopping: Suymey
       sport: Qujmey
       tourism: SuchwI'
@@ -22,14 +17,12 @@ tlh:
         camp_site: "raQ Daq"
         caravan_site: "rutlhmey ghajbogh juH Daq"
         chalet: juH'a'
-        dormitory: ''
         guest_house: "meb qach"
         hostel: mebpa'mey qutlh
         hotel: mebpa'mey
         motel: mebpa'Hommey
       education:
         college: '''ampaS'
-        driving_school: ""
         kindergarten: puq DuSaQ
         library: paq qach
         museum: Doch ngo'meH Daq
@@ -41,43 +34,21 @@ tlh:
         cafe: SopmeH DaqHom
         drinking_water: "bIQ tlhutlhbogh"
         fast_food: "moD Soj"
-        ice_cream: ""
         pub: tach
         restaurant: Qe'
       government:
         courthouse: chut qach
         embassy: rIvSo'
-        government: ""
-        police: ''
         public_building: "wo' qach"
-        townhall: ''
-      health:
-        dentist: ''
-        doctors: ''
-        hearing_aids: ""
-        hospital: ''
-        medical_supply: ""
-        pharmacy: ''
-        social_facility: ""
-        veterinary: ''
       leisure:
         arena: SuvmeH Daq
-        brothel: ''
-        casino: ''
         cinema: vIHbogh much Daq
-        community_centre: ""
         gallery: nagh beQ qach
         nightclub: mI'meH qach
-        playground: ''
         sauna: chebmey ghurHa'meH tuj lo'bogh Daq
-        stripclub: ''
         theatre: much qach
         zoo: HaDI'baH qach
       misc:
-        company: ""
-        estate_agent: ""
-        insurance: ''
-        lawyer: ''
         place_of_worship: "ghIn"
         toilets: puchpa'mey
       money_post:
@@ -90,7 +61,6 @@ tlh:
         aerodrome: muD Duj juH
         bicycle_parking: "cha' rutlh lupwI' leSmeH Daq"
         bicycle_rental: "cha' rutlh lupwI' ngIpmeH Daq"
-        boatyard: ''
         bus_station: "lupwI' waw'"
         bus_stop: "lupwI' mevmeH Daq"
         cable_car: "lupwI'"
@@ -112,50 +82,28 @@ tlh:
       shopping:
         alcohol: HIq Suy
         bakery: tIr ngogh Suy
-        beauty: ""
         beverages: HIvje' Suy
         bicycle: "cha' rutlh DujHom Suy"
         books: paqmey
         butcher: Ha'DIbaH Suy
-        car_repair: ""
-        car_shop: ""
-        chemist: ''
         clothes: Sut Suy
         computer: De'wI'
-        confectionery: ""
         convenience: HochHom Suy
-        deli: ''
         department_store: "Doch law' Suy"
         doityourself: "bIta''egh"
         dry_cleaning: "Say'wI' QaD"
         electronics: '''ul lo''bogh Doch Suy'
-        fabric: ""
-        farm_shop: ""
         florist: poch Suy
         furniture: quS QongDaq je Suy
-        garden_centre: ""
-        gift: ""
         hairdresser: jIb Say'moHmeH
         hardware: chenmoHwI' jan Suy
-        jewelry: ''
         kiosk: SuyHom
         laundry: 'Sut Say''moHmeH '
         mall: "Suy'a'"
         optician: mIn Qel
-        organic: ""
-        outdoor: ""
-        pet: ""
-        photo: ''
-        second_hand: ""
         shoes: waqmey
-        sports: ''
-        stationery: ''
         supermarket: Sop Suy'a'
-        toys: ''
-        travel_agency: ""
-        video: ""
       sport:
-        pitch: ""
         sports_centre: "Quj QujmeH Daq"
         stadium: Quj bejmeH Daq
         swimming: bIQ Quj

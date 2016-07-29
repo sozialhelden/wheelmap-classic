@@ -186,10 +186,10 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "address": "Adres",
         "address_city": "Stad",
         "address_housenumber": "Huisnummer",
-        "address_postcode": "",
+        "address_postcode": "Postcode",
         "address_street": "Straat",
         "name": "Naam",
-        "note": "",
+        "note": "Note",
         "phone": "Telefoon",
         "type": "Type",
         "website": "Website"
@@ -637,7 +637,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     "models": {
       "node": {
         "website": {
-          "invalid": ""
+          "invalid": "Website address is not valid."
         }
       }
     },
@@ -652,13 +652,13 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
   "faq": {
     "answers": {
       "0": "U kunt altijd de markering van een plaats zelf veranderen. Kies gewoon de juiste markering en \"Save\" - klaar!",
-      "1": "",
+      "1": "As a logged in user you can add / correct all the details of a place. Click on \"Edit\" and correct or add information in the mask.",
       "2": "U kunt meer informatie (bvb \"Deze plaats heeft een mobiele helling\") in de commentaar sectie toevoegen. Klik op \"Edit\" en \"add comment\""
     },
     "headline": "Is er een probleem met deze plaats?",
     "questions": {
-      "0": "",
-      "1": "",
+      "0": "The marking is wrong.",
+      "1": "The details of the place are incorrect or missing.",
       "2": "Ik heb meer informatie over dit project."
     }
   },
@@ -734,11 +734,11 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "",
+      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
       "homepage": "Startpagina / internetpagina",
       "keywords": "rolstoel toegankelijk plaatsen vinden, zoek markering",
       "search": "Zoeken",
-      "title": ""
+      "title": "Wheelmap.org"
     },
     "navigation": {
       "about_wheelmap": "Over Wheelmap",
@@ -797,7 +797,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "",
+      "embed_link": "Show on Wheelmap.org",
       "filter": {
         "category": "Kies categorie",
         "deselect_all": "Los de hele selectie op",
@@ -838,7 +838,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "help": "rolstoel toegankelijk? (Hulp)",
         "more": "meer..."
       },
-      "zoom_alert": ""
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Hoe?",
@@ -872,14 +872,14 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "prompt": "Kies een categorie"
     },
     "node": {
-      "info_edit_position": "",
+      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
       "mail": {
-        "body": "",
-        "subject": ""
+        "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
+        "subject": "[Wheelmap] Problem with %{headline}"
       }
     },
     "node_type": {
-      "prompt": ""
+      "prompt": "Choose a type"
     }
   },
   "node": {
@@ -921,37 +921,37 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     "new": {
       "form": {
         "legend": "locatie",
-        "location": "",
+        "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "",
-            "title": ""
+            "name": "Wheelchair accessibility",
+            "title": "Information on wheelchair accessibility"
           },
           "address": {
-            "help": "",
+            "help": "You can move the marker to the correct location on the map.",
             "name": "Adres",
-            "title": ""
+            "title": "Where is the place?"
           },
           "contact": {
             "name": "Contact",
-            "title": ""
+            "title": "Other contact information"
           },
           "name_category": {
-            "name": "",
-            "title": ""
+            "name": "Name and place type",
+            "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": ""
+            "title": "Is all the information correct?"
           },
           "similar_nodes": {
-            "empty": "",
-            "go_edit": "",
-            "go_new": "",
-            "name": "",
-            "title": ""
+            "empty": "No similar places were found.",
+            "go_edit": "Continue with this place",
+            "go_new": "It is none of the places above …",
+            "name": "Similar places",
+            "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": ""
+        "title": "Add a place"
       },
       "header": {
         "title": "Nieuwe plaats | wheelmap.org"
@@ -987,11 +987,11 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "upload": "Uploaden"
     },
     "node_similar": {
-      "similar": ""
+      "similar": "Similar places: %{name}"
     },
     "node_status": {
       "accessible_toilet": "rolstoeltoegankelijk toilet",
-      "premium": "",
+      "premium": "%{name} says: this place is",
       "wheelchair_accessibility": "Rolstoel toegangelijk?"
     },
     "node_streetview": {
@@ -1000,8 +1000,8 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     "show": {
       "header": {
         "meta": {
-          "description": "",
-          "title": ""
+          "description": "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.",
+          "title": "This place is on Wheelmap.org: %{name}"
         },
         "title": "Plaats:  %{node} | wheelmap.org"
       },
@@ -1015,7 +1015,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "share": {
         "email": "E-mail",
         "facebook": "Facebook",
-        "text": "",
+        "text": "I found this place on Wheelmap.org: %{name}",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1117,8 +1117,8 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "health": "Gezondheid",
       "leisure": "Vrije tijd",
       "misc": "Diversen",
-      "money_post": "",
-      "public_transfer": "",
+      "money_post": "Bank / Post office",
+      "public_transfer": "Public transport",
       "shopping": "Winkelen",
       "sport": "Sport",
       "tourism": "Toerisme",
@@ -1131,7 +1131,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "camp_site": "Kampeerplaats",
         "caravan_site": "Kampeerplaats",
         "chalet": "Berghut",
-        "dormitory": "",
+        "dormitory": "Dormitory",
         "guest_house": "Gasthuis",
         "hostel": "Hostel",
         "hotel": "Hotel",
@@ -1162,11 +1162,11 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "government": "Overheidskantoor",
         "police": "Politie",
         "public_building": "Openbaar gebouw",
-        "townhall": ""
+        "townhall": "Town hall"
       },
       "health": {
         "dentist": "Tandarts",
-        "doctors": "",
+        "doctors": "Doctor",
         "hearing_aids": "Audicien (gehoorapperaat winkel)",
         "hospital": "Ziekenhuis",
         "medical_supply": "Medische verzorging",
@@ -1179,7 +1179,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "brothel": "Bordeel",
         "casino": "Casino",
         "cinema": "bioscoop",
-        "community_centre": "",
+        "community_centre": "Community centre",
         "gallery": "Galerij",
         "nightclub": "Nachtclub",
         "playground": "Speelplaats",
@@ -1207,7 +1207,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "aerodrome": "Vliegveld",
         "bicycle_parking": "Fiets parkeerplaats",
         "bicycle_rental": "Fiets verhuur",
-        "boatyard": "",
+        "boatyard": "Boat yard",
         "bus_station": "Bushalte",
         "bus_stop": "Bushalte",
         "cable_car": "Kabelbaan",
@@ -1237,7 +1237,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "butcher": "Slager",
         "car_repair": "Autogarage",
         "car_shop": "Auto winkel",
-        "chemist": "",
+        "chemist": "Chemist / Drugstore",
         "clothes": "Kleren",
         "computer": "Computer",
         "confectionery": "Zoetwaren winkel",
@@ -1251,7 +1251,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "farm_shop": "Groenten winkel",
         "florist": "Bloemenbinder",
         "furniture": "Meubels",
-        "garden_centre": "",
+        "garden_centre": "Garden centre",
         "gift": "Cadeau winkel",
         "hairdresser": "Kapper",
         "hardware": "Hardware",
@@ -1388,11 +1388,11 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
   "search": {
     "index": {
       "no-results": {
-        "headline": "",
+        "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
         "hint": {
           "example": "<strong>bijvoorbeeld:</strong> London, United Kingdom",
-          "info": "",
-          "work_in_progress": ""
+          "info": "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!",
+          "work_in_progress": "We work hard to make searching for places easier and more intuitive in the future."
         },
         "try_this": {
           "address": "Geef a.u.b. meer <strong>address details</strong>.",
@@ -1412,7 +1412,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       }
     },
     "timeout": {
-      "headline": "",
+      "headline": "Sorry, something went wrong",
       "info": "Onze zoekdienst was tijdelijk buiten werk",
       "repeat_search": "Herhaal de zoekopdracht"
     }
@@ -1494,62 +1494,62 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     "profile": {
       "edit": {
         "legends": {
-          "user_data": ""
+          "user_data": "Your account information"
         },
         "title": "Profiel"
       },
       "newsletter": {
-        "label": "",
-        "text": "",
+        "label": "Yes, keep me updated about Wheelmap.",
+        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
         "title": "Nieuwsbrief"
       },
       "photos": {
-        "empty": "",
+        "empty": "You haven't uploaded any photos yet.",
         "title": "Foto's "
       },
       "show": {
         "greeting": {
-          "anonymously": "",
-          "personalized": ""
+          "anonymously": "Hello there",
+          "personalized": "Hello %{name}"
         },
         "overview": {
           "photos_uploaded": {
-            "one": "",
-            "other": ""
+            "one": "uploaded %{count} photo",
+            "other": "uploaded %{count} photos"
           },
           "pois_added": {
-            "one": "",
-            "other": ""
+            "one": "added %{count} place",
+            "other": "added %{count} places"
           },
           "pois_edited": {
-            "one": "",
-            "other": ""
+            "one": "edited %{count} place",
+            "other": "edited %{count} places"
           },
           "pois_marked": {
-            "one": "",
-            "other": ""
+            "one": "marked %{count} place",
+            "other": "marked %{count} places"
           },
-          "text": ""
+          "text": "You have"
         },
-        "text_html": "",
-        "title": ""
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "title": "Overview"
       },
       "widget": {
-        "categories": "",
-        "center": "",
-        "empty_center": "",
-        "empty_provider": "",
-        "height": "",
+        "categories": "Show category filter",
+        "center": "Map area",
+        "empty_center": "Search for center of map …",
+        "empty_provider": "Choose a Provider",
+        "height": "Height",
         "legends": {
-          "embed": "",
-          "embed_explanation": "",
-          "general": "",
-          "preview": "",
+          "embed": "Embed code",
+          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
+          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
+          "preview": "Preview",
           "settings": "Instellingen"
         },
-        "providers": "",
-        "title": "",
-        "width": ""
+        "providers": "Provider",
+        "title": "Widget",
+        "width": "Width"
       }
     }
   },

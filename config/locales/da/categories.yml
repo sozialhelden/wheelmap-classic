@@ -1,4 +1,3 @@
----
 da:
   poi:
     category:
@@ -9,8 +8,6 @@ da:
       health: Sundhed
       leisure: Fritid
       misc: Diverse
-      money_post: ""
-      public_transfer: ""
       shopping: Shopping
       sport: Sport
       tourism: Turisme
@@ -50,10 +47,8 @@ da:
         government: "Statslig organisation"
         police: Politi
         public_building: "Offentlig bygning"
-        townhall: ''
       health:
         dentist: Tandlæge
-        doctors: ''
         hearing_aids: "Høreapparatforhandler"
         hospital: Hospital
         medical_supply: "Håndkøbsmedicin"
@@ -65,7 +60,6 @@ da:
         brothel: Bordel
         casino: Kasino
         cinema: Biograf
-        community_centre: ""
         gallery: Galleri
         nightclub: Natklub
         playground: Legeplads
@@ -90,7 +84,6 @@ da:
         aerodrome: Lufthavn
         bicycle_parking: "Cykelparkering"
         bicycle_rental: "Cykeludlejning"
-        boatyard: ''
         bus_station: "Busstation"
         bus_stop: "Busstop"
         cable_car: "Svævebane"
@@ -119,7 +112,6 @@ da:
         butcher: Slagter
         car_repair: "Bilværksted"
         car_shop: "Biludstyrsbutik"
-        chemist: ''
         clothes: Tøjbutik
         computer: Computerbutik
         confectionery: "Slikbutik"
@@ -133,7 +125,6 @@ da:
         farm_shop: "Gårdbutik"
         florist: Blomsterhandler
         furniture: Møbelhandler
-        garden_centre: ""
         gift: "Gavebutik"
         hairdresser: Frisør
         hardware: Værktøjsbutik

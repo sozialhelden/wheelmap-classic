@@ -13,7 +13,6 @@ cs:
     send: Odeslat
     save: Uložit
     cancel: Zrušit
-    next: ''
   errors:
     models:
       node:

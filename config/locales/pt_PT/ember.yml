@@ -13,7 +13,6 @@ pt_PT:
     send: Enviar
     save: Gravar
     cancel: Cancelar
-    next: ''
   errors:
     models:
       node:

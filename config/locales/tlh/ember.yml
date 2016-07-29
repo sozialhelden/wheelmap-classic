@@ -1,21 +1,3 @@
 tlh:
-  models:
-    category:
-      prompt: ""
-    node_type:
-      prompt: ""
-    node:
-      info_edit_position: ""
-      mail:
-        subject: ""
-        body: ""
   actions:
-    send: ''
     save: qon
-    cancel: ''
-    next: ''
-  errors:
-    models:
-      node:
-        website:
-          invalid: ""

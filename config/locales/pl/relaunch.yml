@@ -1,4 +1,3 @@
----
 pl:
   activerecord:
     attributes:
@@ -34,9 +33,6 @@ pl:
       projects: Nasze projekty
     toolbar:
       categories: Kategoria
-    meta:
-      description: ''
-      title: ''
   home:
     index:
       overlay:
@@ -46,36 +42,15 @@ pl:
         headline: 'Zaznacz i wyszukaj na mapie Wheelmap.org  miejsca przystosowane dla poruszających się na wózku inwalidzkim. To proste:'
         lookup: wyszukiwanie poprzez miejsce szczególne
         secondary_headline: 'Nasz system kolorów opisuje przystosowanie dla poruszających się na wózku inwalidzkim:'
-      embed_link: ''
-      zoom_alert: ''
   nodes:
     new:
       form:
-        title: ''
         legend: lokalizacja miejsca
-        location: ''
         section:
-          name_category:
-            name: ''
-            title: ""
           address:
             name: Adres
-            title: ''
-            help: ''
-          similar_nodes:
-            name: ''
-            title: ''
-            go_edit: ''
-            go_new: ''
-            empty: ''
-          accessibility:
-            name: ''
-            title: ''
           contact:
             name: Kontakt
-            title: ''
-          overview:
-            title: ''
     node_data:
       address: 'Adres:'
       contact_details: 'Dane kontaktowe:'
@@ -106,7 +81,6 @@ pl:
       share:
         email: Email
         facebook: Facebook
-        text: ''
         twitter: Twitter
   search:
     index:
@@ -126,58 +100,16 @@ pl:
           few: '%{count} wyników:'
           other: '%{count} wyników:'
     timeout:
-      headline: ''
       info: Usługa wyszukiwania była tymczasowo niedostępna
       repeat_search: ponów wyszukiwanie
   users:
     profile:
       newsletter:
         title: Newsletter
-        text: ''
-        label: ''
-      show:
-        title: ''
-        text_html: ""
-        greeting:
-          anonymously: ''
-          personalized: ''
-        overview:
-          text: ''
-          pois_marked:
-            one: ''
-            few: ''
-            other: ''
-          pois_added:
-            one: ''
-            few: ''
-            other: ''
-          pois_edited:
-            one: ''
-            few: ''
-            other: ''
-          photos_uploaded:
-            one: ''
-            few: ''
-            other: ''
       photos:
         title: Zdjęcia
-        empty: ''
       edit:
         title: Profil
-        legends:
-          user_data: ''
       widget:
-        title: ''
-        height: ''
-        width: ''
-        center: ''
-        categories: ''
-        providers: ''
-        empty_provider: ''
-        empty_center: ''
         legends:
           settings: Ustawienia
-          preview: ''
-          embed: ''
-          embed_explanation: ''
-          general: ''

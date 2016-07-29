@@ -2,7 +2,9 @@ es:
   devise:
     confirmations:
       confirmed: "Tu cuenta de correo ha sido confirmada."
+      link: "No recibí ninguna instrucción de confirmación"
       send_instructions: "En unos minutos recibirás un correo electrónico con las instrucciones de cómo confirmar tu cuenta."
+      send_paranoid_instructions: "Si tu cuenta existe, recibirás un correo electrónico en pocos minutos con instrucciones de como confirmar tu cuenta"
     destroy:
       confirm: "¿Estás seguro?"
       headline: "Borrar la cuenta"
@@ -27,6 +29,7 @@ es:
       unconfirmed: "Tienes que confirmar tu cuenta para continuar."
     mailer:
       confirmation_instructions:
+        landing_page: "Por favor, haz clic en el enlace que acabamos de enviar a  tu dirección de correo electrónico. Si no recibes un correo electrónico de nosotros, por favor, primero fijate que no está en tu folder de correo basura. Si no está ahi, regresa a la página de registrarse e inténtalo de nuevo. "
         subject: "instrucciones de confirmación"
       reset_password_instructions:
         subject: "Instrucciones para restablecer contraseña"
@@ -48,6 +51,7 @@ es:
         comment: "Si no has solicitado cambiar la contraseña por favor, ignora este correo<br/>Tu contraseña no se cambiará si no haces clic en este enlace"
         headline: "Bienvenido %{email}"
         link: "Cambiar contraseña"
+        text: "Hemos recibido un pedido para cambiar tu contraseña. Si enviaste el pedido, haz clic en el siguiente enlace. ¡Si no fue así, ignora esto!"
       form:
         labels:
           password: "Nueva contraseña"
@@ -82,6 +86,7 @@ es:
         promo_text_thank_you: "¡Muchas gracias por tu apoyo!"
         sign_in_with: "Ingresar con %{kind}"
         sign_up_with_osm: "Registrarse ahora."
+        wheelmap_promo_text: "Con tu conocimiento acerca de lugares accesibles para silla de ruedas, tu puedes ayudar a gente con deficiencias de movilidad a planear mejor su día a día. Además, esto ayuda a OpenStreetMap a ser más detallado."
       signed_in: "Sesión iniciada satisfactoriamente"
       signed_out: "Sesión finalizada"
       timeout: "Tu sesión ha expirado, por favor ingresa de nuevo para continuar. "

@@ -4,7 +4,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
     "cancel": "\nإلغاء",
     "next": "التالي",
     "save": "حفظ",
-    "send": ""
+    "send": "Send"
   },
   "active_admin": {
     "access_denied": {
@@ -186,10 +186,10 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "address": "\nالعنوان",
         "address_city": "\n\nالمدينة",
         "address_housenumber": "رقم المنزل",
-        "address_postcode": "",
+        "address_postcode": "Postcode",
         "address_street": "\n\nشارع",
         "name": "الإسم",
-        "note": "",
+        "note": "Note",
         "phone": "\nالهاتف",
         "type": "\n\nالنوع",
         "website": "موقع الكتروني"
@@ -639,7 +639,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
     "models": {
       "node": {
         "website": {
-          "invalid": ""
+          "invalid": "Website address is not valid."
         }
       }
     },
@@ -653,15 +653,15 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   },
   "faq": {
     "answers": {
-      "0": "",
-      "1": "",
-      "2": ""
+      "0": "You can always change the marking of a place yourself. Just choose the right marking and \"Save\" - done!",
+      "1": "As a logged in user you can add / correct all the details of a place. Click on \"Edit\" and correct or add information in the mask.",
+      "2": "You can add further information (e.g. \"This place has a mobile ramp\") in the comment section. Click on \"Edit\" and \"Add comment\"."
     },
-    "headline": "",
+    "headline": "Is there a problem with this place?",
     "questions": {
-      "0": "",
-      "1": "",
-      "2": ""
+      "0": "The marking is wrong.",
+      "1": "The details of the place are incorrect or missing.",
+      "2": "I have more information about this place."
     }
   },
   "flash": {
@@ -736,11 +736,11 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "",
+      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
       "homepage": "الصفحة الرئيسية",
       "keywords": "أماكن يسهل الوصول اليها بالكرسي المتحرك، أضف علامة بحث",
       "search": "بحث",
-      "title": ""
+      "title": "Wheelmap.org"
     },
     "navigation": {
       "about_wheelmap": "حول ويل ماب",
@@ -799,7 +799,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "",
+      "embed_link": "Show on Wheelmap.org",
       "filter": {
         "category": "إختر التصنيف",
         "deselect_all": "عدم الإختيار",
@@ -840,7 +840,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "help": "هل وصول الكرسي المتحرك سهل؟ (بادر بتقديم المساعدة)",
         "more": "المزيد..."
       },
-      "zoom_alert": ""
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "كيف ؟",
@@ -871,17 +871,17 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   },
   "models": {
     "category": {
-      "prompt": ""
+      "prompt": "Choose a category"
     },
     "node": {
-      "info_edit_position": "",
+      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
       "mail": {
-        "body": "",
-        "subject": ""
+        "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
+        "subject": "[Wheelmap] Problem with %{headline}"
       }
     },
     "node_type": {
-      "prompt": ""
+      "prompt": "Choose a type"
     }
   },
   "node": {
@@ -922,38 +922,38 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
     },
     "new": {
       "form": {
-        "legend": "",
-        "location": "",
+        "legend": "Location of the place",
+        "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "",
-            "title": ""
+            "name": "Wheelchair accessibility",
+            "title": "Information on wheelchair accessibility"
           },
           "address": {
-            "help": "",
+            "help": "You can move the marker to the correct location on the map.",
             "name": "العنوان",
-            "title": ""
+            "title": "Where is the place?"
           },
           "contact": {
             "name": "للإتصال",
-            "title": ""
+            "title": "Other contact information"
           },
           "name_category": {
-            "name": "",
-            "title": ""
+            "name": "Name and place type",
+            "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": ""
+            "title": "Is all the information correct?"
           },
           "similar_nodes": {
-            "empty": "",
-            "go_edit": "",
-            "go_new": "",
-            "name": "",
-            "title": ""
+            "empty": "No similar places were found.",
+            "go_edit": "Continue with this place",
+            "go_new": "It is none of the places above …",
+            "name": "Similar places",
+            "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": ""
+        "title": "Add a place"
       },
       "header": {
         "title": "مكان جديد | wheelmap.org"
@@ -970,40 +970,40 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       }
     },
     "node_data": {
-      "address": "",
-      "contact_details": ""
+      "address": "Address:",
+      "contact_details": "Contact details:"
     },
     "node_edit": {
       "details": "تفاصيل",
       "edit": "تحرير"
     },
     "node_map": {
-      "map": ""
+      "map": "Map:"
     },
     "node_note": {
-      "comment": ""
+      "comment": "Comment:"
     },
     "node_photos": {
-      "add": "",
-      "photos_of_this_place": "",
-      "upload": ""
+      "add": "Add",
+      "photos_of_this_place": "Photos of this place:",
+      "upload": "Upload"
     },
     "node_similar": {
-      "similar": ""
+      "similar": "Similar places: %{name}"
     },
     "node_status": {
-      "accessible_toilet": "",
-      "premium": "",
-      "wheelchair_accessibility": ""
+      "accessible_toilet": "Wheelchair accessible toilet:",
+      "premium": "%{name} says: this place is",
+      "wheelchair_accessibility": "Wheelchair accessibility:"
     },
     "node_streetview": {
-      "streetview": ""
+      "streetview": "Streetview:"
     },
     "show": {
       "header": {
         "meta": {
-          "description": "",
-          "title": ""
+          "description": "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.",
+          "title": "This place is on Wheelmap.org: %{name}"
         },
         "title": " %{node} مكان : "
       },
@@ -1017,7 +1017,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "share": {
         "email": "بريد الكتروني",
         "facebook": "فيس بوك",
-        "text": "",
+        "text": "I found this place on Wheelmap.org: %{name}",
         "twitter": "تويتر"
       },
       "show-in-osm": "\"أوبن ستريت ماب\""
@@ -1119,8 +1119,8 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "health": "صحة",
       "leisure": "استراحة",
       "misc": "\nمتفرقات\n",
-      "money_post": "",
-      "public_transfer": "",
+      "money_post": "Bank / Post office",
+      "public_transfer": "Public transport",
       "shopping": "تسوق",
       "sport": "رياضة",
       "tourism": "سياحة",
@@ -1133,7 +1133,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "camp_site": "موقع للتخييم",
         "caravan_site": "موقع العربة\"كاراڨان\"",
         "chalet": "شاليه",
-        "dormitory": "",
+        "dormitory": "Dormitory",
         "guest_house": "بيت الضيافة",
         "hostel": "فندق",
         "hotel": "فندق",
@@ -1161,14 +1161,14 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "government": {
         "courthouse": "المحكمة",
         "embassy": "سفارة",
-        "government": "",
+        "government": "Government agency",
         "police": "الشرطة",
         "public_building": "مبنى عام",
-        "townhall": ""
+        "townhall": "Town hall"
       },
       "health": {
         "dentist": "طبيب أسنان",
-        "doctors": "",
+        "doctors": "Doctor",
         "hearing_aids": "تاجر أدوات سمعية",
         "hospital": "مستشفى",
         "medical_supply": "مستلزمات طبية",
@@ -1181,7 +1181,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "brothel": "ماخور\"بيت دعارة\"",
         "casino": "ملهى",
         "cinema": "سينما",
-        "community_centre": "",
+        "community_centre": "Community centre",
         "gallery": "المعرض",
         "nightclub": "ملهى ليلي",
         "playground": "ساحة لعب",
@@ -1209,7 +1209,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "aerodrome": "مطار",
         "bicycle_parking": "موقف للدراجات الهوائية",
         "bicycle_rental": "لتأجير الدراجات الهوائية",
-        "boatyard": "",
+        "boatyard": "Boat yard",
         "bus_station": "محطة الأوتوبيس",
         "bus_stop": "موقف أوتوبيس",
         "cable_car": "عربة كهربائية",
@@ -1239,7 +1239,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "butcher": "الجزار",
         "car_repair": "لإصلاح السيارات",
         "car_shop": "متجر السيارات",
-        "chemist": "",
+        "chemist": "Chemist / Drugstore",
         "clothes": "ملابس",
         "computer": "كمبيوتر",
         "confectionery": "محل حلويات",
@@ -1253,7 +1253,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "farm_shop": "متجر تابع لمزرعة",
         "florist": "بائع الزهور",
         "furniture": "أثاث",
-        "garden_centre": "",
+        "garden_centre": "Garden centre",
         "gift": "محل هدايا",
         "hairdresser": "صالون تصفيف الشعر",
         "hardware": "أجهزة",
@@ -1390,26 +1390,22 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   "search": {
     "index": {
       "no-results": {
-        "headline": "",
+        "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
         "hint": {
-          "example": "",
-          "info": "",
-          "work_in_progress": ""
+          "example": "<strong>Example:</strong> London, United Kingdom",
+          "info": "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!",
+          "work_in_progress": "We work hard to make searching for places easier and more intuitive in the future."
         },
         "try_this": {
-          "address": "",
-          "intro": "",
-          "spell_check": ""
+          "address": "Please provide more <strong>address details</strong>.",
+          "intro": "Try this:",
+          "spell_check": "Check the <strong>spelling</strong> of your input."
         }
       },
       "results": {
         "ticker": {
-          "few": "",
-          "many": "",
-          "one": "",
-          "other": "",
-          "two": "",
-          "zero": ""
+          "one": "%{count} result:",
+          "other": "%{count} results:"
         }
       },
       "search": {
@@ -1418,9 +1414,9 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       }
     },
     "timeout": {
-      "headline": "",
-      "info": "",
-      "repeat_search": ""
+      "headline": "Sorry, something went wrong",
+      "info": "Our search service was temporarily not available.",
+      "repeat_search": "Retry search"
     }
   },
   "splash": {
@@ -1500,78 +1496,62 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
     "profile": {
       "edit": {
         "legends": {
-          "user_data": ""
+          "user_data": "Your account information"
         },
         "title": "الحساب"
       },
       "newsletter": {
-        "label": "",
-        "text": "",
+        "label": "Yes, keep me updated about Wheelmap.",
+        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
         "title": "أخبار الموقع"
       },
       "photos": {
-        "empty": "",
+        "empty": "You haven't uploaded any photos yet.",
         "title": "صور"
       },
       "show": {
         "greeting": {
-          "anonymously": "",
-          "personalized": ""
+          "anonymously": "Hello there",
+          "personalized": "Hello %{name}"
         },
         "overview": {
           "photos_uploaded": {
-            "few": "",
-            "many": "",
-            "one": "",
-            "other": "",
-            "two": "",
-            "zero": ""
+            "one": "uploaded %{count} photo",
+            "other": "uploaded %{count} photos"
           },
           "pois_added": {
-            "few": "",
-            "many": "",
-            "one": "",
-            "other": "",
-            "two": "",
-            "zero": ""
+            "one": "added %{count} place",
+            "other": "added %{count} places"
           },
           "pois_edited": {
-            "few": "",
-            "many": "",
-            "one": "",
-            "other": "",
-            "two": "",
-            "zero": ""
+            "one": "edited %{count} place",
+            "other": "edited %{count} places"
           },
           "pois_marked": {
-            "few": "",
-            "many": "",
-            "one": "",
-            "other": "",
-            "two": "",
-            "zero": ""
+            "one": "marked %{count} place",
+            "other": "marked %{count} places"
           },
-          "text": ""
+          "text": "You have"
         },
-        "text_html": "",
-        "title": ""
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "title": "Overview"
       },
       "widget": {
-        "categories": "",
-        "center": "",
-        "empty_center": "",
-        "empty_provider": "",
-        "height": "",
+        "categories": "Show category filter",
+        "center": "Map area",
+        "empty_center": "Search for center of map …",
+        "empty_provider": "Choose a Provider",
+        "height": "Height",
         "legends": {
-          "embed": "",
-          "embed_explanation": "",
-          "general": "",
-          "preview": "",
+          "embed": "Embed code",
+          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
+          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
+          "preview": "Preview",
           "settings": "\n\nالإعدادات"
         },
-        "providers": "",
-        "title": "",
-        "width": ""
+        "providers": "Provider",
+        "title": "Widget",
+        "width": "Width"
       }
     }
   },

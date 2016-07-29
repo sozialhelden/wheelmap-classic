@@ -1,35 +1,20 @@
----
 fi:
   poi:
     category:
-      accommodation: ''
       education: Sivistys
-      food: ''
-      government: ''
-      health: ''
       leisure: Vapaa-aika
       misc: Sekalaiset
-      money_post: ""
-      public_transfer: ""
       shopping: Ostos
       sport: Urheilu
       tourism: Matkailu
-      unknown: ''
     name:
       accommodation:
-        beach_resort: ""
-        bed_and_breakfast: ""
-        camp_site: ""
-        caravan_site: ""
         chalet: Alppimaja
-        dormitory: ''
-        guest_house: ""
         hostel: Hostelli
         hotel: Hotelli
         motel: Motelli
       education:
         college: Oppilaitos
-        driving_school: ""
         kindergarten: Päiväkoti
         library: Kirjasto
         museum: Museo
@@ -37,143 +22,58 @@ fi:
         university: Yliopisto
       food:
         bar: Baari
-        biergarten: ''
-        cafe: ''
         drinking_water: "Vesipiste"
         fast_food: "Pikaruoka"
-        ice_cream: ""
         pub: Pubi
         restaurant: Ravintola
       government:
         courthouse: Oikeustalo
-        embassy: ''
-        government: ""
-        police: ''
-        public_building: ""
-        townhall: ''
       health:
-        dentist: ''
-        doctors: ''
-        hearing_aids: ""
         hospital: Sairaala
-        medical_supply: ""
         pharmacy: Apteekki
-        social_facility: ""
         veterinary: Eläinlääkäri
       leisure:
         arena: Areena
-        brothel: ''
-        casino: ''
         cinema: Elokuvateatteri
-        community_centre: ""
         gallery: Galleria
         nightclub: Yökerho
-        playground: ''
         sauna: Sauna
-        stripclub: ''
         theatre: Teatteri
         zoo: Eläintarha
       misc:
-        company: ""
-        estate_agent: ""
-        insurance: ''
-        lawyer: ''
-        place_of_worship: ""
         toilets: Vessat
       money_post:
         atm: Pankkiautomaatti
         bank: Pankki
-        bureau_de_change: ""
-        post_box: ""
-        post_office: ""
       public_transfer:
-        aerodrome: ''
-        bicycle_parking: ""
-        bicycle_rental: ""
-        boatyard: ''
-        bus_station: ""
-        bus_stop: ""
-        cable_car: ""
-        car_rental: ""
-        car_sharing: ""
-        chair_lift: ""
         ferry: Autolautta
-        ferry_terminal: ""
-        fuel: ""
         halt: Seisake
-        light_rail: ""
         parking: Pysäköinti
-        parking_aisle: ""
         platform: Laituri
-        station: ""
-        subway_entrance: ""
-        terminal: ""
-        tram_stop: ""
       shopping:
-        alcohol: ''
         bakery: Leipomo
-        beauty: ""
         beverages: Juotavaa
-        bicycle: ""
         books: Kirjoja
         butcher: Lihakauppa
-        car_repair: ""
-        car_shop: ""
-        chemist: ''
         clothes: Vaatteita
         computer: Tietokone
-        confectionery: ""
-        convenience: ''
-        deli: ''
-        department_store: ""
-        doityourself: ""
-        dry_cleaning: ""
         electronics: Elektroniikka
-        fabric: ""
-        farm_shop: ""
         florist: Kukkakauppa
         furniture: Huonekaluja
-        garden_centre: ""
-        gift: ""
         hairdresser: Kampaamo
         hardware: Työkaluja
-        jewelry: ''
         kiosk: Kioski
-        laundry: ''
-        mall: ""
         optician: Optikko
-        organic: ""
-        outdoor: ""
-        pet: ""
-        photo: ''
-        second_hand: ""
         shoes: Kenkiä
-        sports: ''
-        stationery: ''
         supermarket: Supermarketti
-        toys: ''
-        travel_agency: ""
-        video: ""
       sport:
-        pitch: ""
-        sports_centre: ""
         stadium: Stadion
         swimming: Uinti
-        swimming_pool: ""
       tourism:
-        archaeological_site: ""
-        arts_centre: ""
         artwork: Taideteos
         attraction: Nähtävyys
         battlefield: Taistelutanner
         beach: Ranta
-        beacon: ''
         castle: Linnoitus
-        cave_entrance: ""
-        information: ""
         memorial: Muistomerkki
-        theme_park: ""
         tower: Torni
-        viewpoint: ""
-      unknown:
-        unknown: ''

@@ -1,4 +1,3 @@
----
 ar:
   activerecord:
     attributes:
@@ -15,27 +14,15 @@ ar:
         phone: '
 
           الهاتف'
-        note: ''
         address_street: '
 
 
           شارع'
         address_housenumber: رقم المنزل
-        address_postcode: ''
         address_city: '
 
 
           المدينة'
-  faq:
-    answers:
-      0: ''
-      1: ''
-      2: ''
-    headline: ''
-    questions:
-      0: ''
-      1: ''
-      2: ''
   header:
     navigation:
       about_wheelmap: حول ويل ماب
@@ -45,9 +32,6 @@ ar:
       projects: شارك
     toolbar:
       categories: التصنيفات
-    meta:
-      description: ''
-      title: ''
   home:
     index:
       overlay:
@@ -59,156 +43,33 @@ ar:
           مجانا - و في أي مكان حول العالم :'
         lookup: ابحث عن مكان محدد
         secondary_headline: 'نظام الإشارات الخاص بنا للكراسي المتحركة في الأماكن العامة:'
-      embed_link: ''
-      zoom_alert: ''
   nodes:
     new:
       form:
-        title: ''
-        legend: ''
-        location: ''
         section:
-          name_category:
-            name: ''
-            title: ""
           address:
             name: العنوان
-            title: ''
-            help: ''
-          similar_nodes:
-            name: ''
-            title: ''
-            go_edit: ''
-            go_new: ''
-            empty: ''
-          accessibility:
-            name: ''
-            title: ''
           contact:
             name: للإتصال
-            title: ''
-          overview:
-            title: ''
-    node_data:
-      address: ''
-      contact_details: ''
     node_edit:
       details: تفاصيل
       edit: تحرير
-    node_map:
-      map: ''
-    node_note:
-      comment: ''
-    node_photos:
-      add: ''
-      photos_of_this_place: ''
-      upload: ''
-    node_similar:
-      similar: ''
-    node_status:
-      accessible_toilet: ''
-      premium: ''
-      wheelchair_accessibility: ''
-    node_streetview:
-      streetview: ''
     show:
-      header:
-        meta:
-          description: ''
-          title: ''
       share:
         email: بريد الكتروني
         facebook: فيس بوك
-        text: ''
         twitter: تويتر
-  search:
-    index:
-      no-results:
-        headline: ''
-        hint:
-          example: ''
-          info: ''
-          work_in_progress: ''
-        try_this:
-          address: ''
-          intro: ''
-          spell_check: ''
-      results:
-        ticker:
-          zero: ''
-          one: ''
-          two: ''
-          few: ''
-          many: ''
-          other: ''
-    timeout:
-      headline: ''
-      info: ''
-      repeat_search: ''
   users:
     profile:
       newsletter:
         title: أخبار الموقع
-        text: ''
-        label: ''
-      show:
-        title: ''
-        text_html: ""
-        greeting:
-          anonymously: ''
-          personalized: ''
-        overview:
-          text: ''
-          pois_marked:
-            zero: ''
-            one: ''
-            two: ''
-            few: ''
-            many: ''
-            other: ''
-          pois_added:
-            zero: ''
-            one: ''
-            two: ''
-            few: ''
-            many: ''
-            other: ''
-          pois_edited:
-            zero: ''
-            one: ''
-            two: ''
-            few: ''
-            many: ''
-            other: ''
-          photos_uploaded:
-            zero: ''
-            one: ''
-            two: ''
-            few: ''
-            many: ''
-            other: ''
       photos:
         title: صور
-        empty: ''
       edit:
         title: الحساب
-        legends:
-          user_data: ''
       widget:
-        title: ''
-        height: ''
-        width: ''
-        center: ''
-        categories: ''
-        providers: ''
-        empty_provider: ''
-        empty_center: ''
         legends:
           settings: '
 
 
             الإعدادات'
-          preview: ''
-          embed: ''
-          embed_explanation: ''
-          general: ''

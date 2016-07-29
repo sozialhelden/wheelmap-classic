@@ -1,4 +1,3 @@
----
 uk:
   poi:
     category:
@@ -9,8 +8,6 @@ uk:
       health: Здоров'я
       leisure: Дозвілля
       misc: змішаний
-      money_post: ""
-      public_transfer: ""
       shopping: Магазини
       sport: Спорт
       tourism: Туризм
@@ -50,10 +47,8 @@ uk:
         government: "Урядова організація"
         police: Поліція/Міліція
         public_building: "Громадський заклад"
-        townhall: ''
       health:
         dentist: Дантист
-        doctors: ''
         hearing_aids: "Продаж слухових апаратів"
         hospital: Лікарня
         medical_supply: "Медикаменти"
@@ -65,7 +60,6 @@ uk:
         brothel: Бордель
         casino: Казино
         cinema: Кінотеатр
-        community_centre: ""
         gallery: Галерея
         nightclub: Нічний клуб
         playground: Дитячий майданчик
@@ -90,7 +84,6 @@ uk:
         aerodrome: Аеропорт
         bicycle_parking: "Паркування для велосипедів"
         bicycle_rental: "Оренда велосипедів"
-        boatyard: ''
         bus_station: "Автобусна станція"
         bus_stop: "Автобусна зупинка"
         cable_car: "Фунікулер"
@@ -119,7 +112,6 @@ uk:
         butcher: М'ясний
         car_repair: "СТО"
         car_shop: "Автосалон"
-        chemist: ''
         clothes: Одяг
         computer: Комп'ютерний
         confectionery: "Кондитерська"
@@ -133,7 +125,6 @@ uk:
         farm_shop: "Фермерський"
         florist: Флорист
         furniture: Меблі
-        garden_centre: ""
         gift: "Подарунки"
         hairdresser: Перукар
         hardware: Господарський магазин

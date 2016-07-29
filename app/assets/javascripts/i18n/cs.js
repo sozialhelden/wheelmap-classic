@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
   "actions": {
     "cancel": "Zrušit",
-    "next": "",
+    "next": "Next",
     "save": "Uložit",
     "send": "Odeslat"
   },
@@ -188,7 +188,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
       "poi": {
         "address": "Adresa",
         "address_city": "Město",
-        "address_housenumber": "",
+        "address_housenumber": "House number",
         "address_postcode": "PSČ",
         "address_street": "Ulice",
         "name": "Název",
@@ -741,11 +741,11 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "",
+      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
       "homepage": "Domovská stránka",
       "keywords": "místa přístupné pro vozíčkáře hledat označovat",
       "search": "Hledat",
-      "title": ""
+      "title": "Wheelmap.org"
     },
     "navigation": {
       "about_wheelmap": "O Wheelmap",
@@ -804,7 +804,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "",
+      "embed_link": "Show on Wheelmap.org",
       "filter": {
         "category": "Vyberte kategorii",
         "deselect_all": "Odznačit vše",
@@ -845,7 +845,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
         "help": "Přístupné pro vozíčkáře? (Pomoc)",
         "more": "více ..."
       },
-      "zoom_alert": ""
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "Jak?",
@@ -928,37 +928,37 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
     "new": {
       "form": {
         "legend": "Poloha objektu",
-        "location": "",
+        "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "",
-            "title": ""
+            "name": "Wheelchair accessibility",
+            "title": "Information on wheelchair accessibility"
           },
           "address": {
-            "help": "",
+            "help": "You can move the marker to the correct location on the map.",
             "name": "Adresa",
-            "title": ""
+            "title": "Where is the place?"
           },
           "contact": {
             "name": "Kontakt",
-            "title": ""
+            "title": "Other contact information"
           },
           "name_category": {
-            "name": "",
-            "title": ""
+            "name": "Name and place type",
+            "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": ""
+            "title": "Is all the information correct?"
           },
           "similar_nodes": {
-            "empty": "",
-            "go_edit": "",
-            "go_new": "",
-            "name": "",
-            "title": ""
+            "empty": "No similar places were found.",
+            "go_edit": "Continue with this place",
+            "go_new": "It is none of the places above …",
+            "name": "Similar places",
+            "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": ""
+        "title": "Add a place"
       },
       "header": {
         "title": "Nové místo | wheelmap.org"
@@ -1022,7 +1022,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
       "share": {
         "email": "Email",
         "facebook": "Facebook",
-        "text": "",
+        "text": "I found this place on Wheelmap.org: %{name}",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1125,9 +1125,9 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
       "government": "Vláda",
       "health": "Zdraví",
       "leisure": "Volný čas",
-      "misc": "",
-      "money_post": "",
-      "public_transfer": "",
+      "misc": "Miscellaneous",
+      "money_post": "Bank / Post office",
+      "public_transfer": "Public transport",
       "shopping": "Nákupy",
       "sport": "Sport",
       "tourism": "Cestování",
@@ -1171,11 +1171,11 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
         "government": "Vládní agentura",
         "police": "Policie",
         "public_building": "Veřejná budova",
-        "townhall": ""
+        "townhall": "Town hall"
       },
       "health": {
         "dentist": "Zubař",
-        "doctors": "",
+        "doctors": "Doctor",
         "hearing_aids": "Dodavatel naslouchacích pomůcek",
         "hospital": "Nemocnice",
         "medical_supply": "Medicínské vybavení",
@@ -1188,7 +1188,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
         "brothel": "Nevěstinec",
         "casino": "Kasino",
         "cinema": "Kino",
-        "community_centre": "",
+        "community_centre": "Community centre",
         "gallery": "Galerie",
         "nightclub": "Noční klub",
         "playground": "Hřiště",
@@ -1216,7 +1216,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
         "aerodrome": "Letiště",
         "bicycle_parking": "Stojan na kola",
         "bicycle_rental": "Půjčovna kol",
-        "boatyard": "",
+        "boatyard": "Boat yard",
         "bus_station": "Autobusová stanice",
         "bus_stop": "Zastávka autobusu",
         "cable_car": "Lanovka",
@@ -1246,7 +1246,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
         "butcher": "Řeznictví",
         "car_repair": "Autoservis",
         "car_shop": "Automobily",
-        "chemist": "",
+        "chemist": "Chemist / Drugstore",
         "clothes": "Oblečení",
         "computer": "Počítače",
         "confectionery": "Cukrárna",
@@ -1260,7 +1260,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
         "farm_shop": "Farmářský obchod",
         "florist": "Květinářství",
         "furniture": "Nábytek",
-        "garden_centre": "",
+        "garden_centre": "Garden centre",
         "gift": "Suvenýry",
         "hairdresser": "Kadeřnictví",
         "hardware": "Železářství",
@@ -1422,7 +1422,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
       }
     },
     "timeout": {
-      "headline": "",
+      "headline": "Sorry, something went wrong",
       "info": "Vyhledávání bylo dočasně nedostupné.",
       "repeat_search": "Hledat znovu"
     }
@@ -1510,11 +1510,11 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
       },
       "newsletter": {
         "label": "Ano, posílejte mi novinky o Wheelmap.",
-        "text": "",
+        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
         "title": "Novinky"
       },
       "photos": {
-        "empty": "",
+        "empty": "You haven't uploaded any photos yet.",
         "title": "Fotky"
       },
       "show": {
@@ -1534,9 +1534,8 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
             "other": "přidal %{count} míst"
           },
           "pois_edited": {
-            "few": "",
-            "one": "",
-            "other": ""
+            "one": "edited %{count} place",
+            "other": "edited %{count} places"
           },
           "pois_marked": {
             "few": "označil/a %{count} místa",
@@ -1549,21 +1548,21 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
         "title": "Přehled"
       },
       "widget": {
-        "categories": "",
-        "center": "",
-        "empty_center": "",
-        "empty_provider": "",
-        "height": "",
+        "categories": "Show category filter",
+        "center": "Map area",
+        "empty_center": "Search for center of map …",
+        "empty_provider": "Choose a Provider",
+        "height": "Height",
         "legends": {
-          "embed": "",
-          "embed_explanation": "",
-          "general": "",
-          "preview": "",
-          "settings": ""
+          "embed": "Embed code",
+          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
+          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
+          "preview": "Preview",
+          "settings": "Settings"
         },
-        "providers": "",
-        "title": "",
-        "width": ""
+        "providers": "Provider",
+        "title": "Widget",
+        "width": "Width"
       }
     }
   },

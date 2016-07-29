@@ -2,20 +2,8 @@ nl:
   models:
     category:
       prompt: "Kies een categorie"
-    node_type:
-      prompt: ""
-    node:
-      info_edit_position: ""
-      mail:
-        subject: ""
-        body: ""
   actions:
     send: Verzenden
     save: Opslaan
     cancel: Annuleren
     next: Volgende
-  errors:
-    models:
-      node:
-        website:
-          invalid: ""

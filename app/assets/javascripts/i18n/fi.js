@@ -189,9 +189,9 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
         "address_postcode": "Postinumero",
         "address_street": "Katu",
         "name": "Nimi",
-        "note": "",
+        "note": "Note",
         "phone": "Puhelin",
-        "type": "",
+        "type": "Type",
         "website": "Nettisivu"
       },
       "user": {
@@ -639,7 +639,7 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
     "models": {
       "node": {
         "website": {
-          "invalid": ""
+          "invalid": "Website address is not valid."
         }
       }
     },
@@ -653,15 +653,15 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
   },
   "faq": {
     "answers": {
-      "0": "",
-      "1": "",
-      "2": ""
+      "0": "You can always change the marking of a place yourself. Just choose the right marking and \"Save\" - done!",
+      "1": "As a logged in user you can add / correct all the details of a place. Click on \"Edit\" and correct or add information in the mask.",
+      "2": "You can add further information (e.g. \"This place has a mobile ramp\") in the comment section. Click on \"Edit\" and \"Add comment\"."
     },
-    "headline": "",
+    "headline": "Is there a problem with this place?",
     "questions": {
-      "0": "",
-      "1": "",
-      "2": ""
+      "0": "The marking is wrong.",
+      "1": "The details of the place are incorrect or missing.",
+      "2": "I have more information about this place."
     }
   },
   "flash": {
@@ -736,17 +736,17 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "",
+      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
       "homepage": "Home page",
       "keywords": "wheelchair accessible places find search mark",
       "search": "Haku",
-      "title": ""
+      "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "",
+      "about_wheelmap": "About Wheelmap",
       "blog": "News",
-      "choose_language": "",
-      "contact": "",
+      "choose_language": "Choose language",
+      "contact": "Contact",
       "feedback": "Feedback",
       "home": "Start",
       "how_to_add_a_place": "How do I add places?",
@@ -758,7 +758,7 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
       "newsletter": "Newsletter",
       "press": "Press",
       "profile": "Profile",
-      "projects": "",
+      "projects": "Projects",
       "suggestions": "Suggestions",
       "what_is_barrier_free": "What does \"wheelchair accessible\" mean?",
       "what_is_wheelmap": "What is Wheelmap?"
@@ -772,7 +772,7 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
     "tagline": "Wheelmap logo",
     "title": "Find wheelchair accessible places",
     "toolbar": {
-      "categories": ""
+      "categories": "Categories"
     }
   },
   "helpers": {
@@ -799,7 +799,7 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "",
+      "embed_link": "Show on Wheelmap.org",
       "filter": {
         "category": "Choose category",
         "deselect_all": "Deselect all",
@@ -822,12 +822,12 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
         }
       },
       "overlay": {
-        "button": "",
-        "categories": "",
-        "filter": "",
-        "headline": "",
-        "lookup": "",
-        "secondary_headline": ""
+        "button": "Okay, let’s go!",
+        "categories": "Filter places by categories",
+        "filter": "Filter places by wheelchair accessibility",
+        "headline": "Mark and find wheelchair accessible places with Wheelmap.org - worldwide and for free. It’s easy:",
+        "lookup": "Search for a specific place",
+        "secondary_headline": "Our traffic light system to mark the wheelchair accessibility of public places:"
       },
       "popup": {
         "form": {
@@ -840,7 +840,7 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
         "help": "Wheelchair accessible? (Help)",
         "more": "more ..."
       },
-      "zoom_alert": ""
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "How?",
@@ -871,17 +871,17 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
   },
   "models": {
     "category": {
-      "prompt": ""
+      "prompt": "Choose a category"
     },
     "node": {
-      "info_edit_position": "",
+      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
       "mail": {
-        "body": "",
-        "subject": ""
+        "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
+        "subject": "[Wheelmap] Problem with %{headline}"
       }
     },
     "node_type": {
-      "prompt": ""
+      "prompt": "Choose a type"
     }
   },
   "node": {
@@ -922,38 +922,38 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
     },
     "new": {
       "form": {
-        "legend": "",
-        "location": "",
+        "legend": "Location of the place",
+        "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "",
-            "title": ""
+            "name": "Wheelchair accessibility",
+            "title": "Information on wheelchair accessibility"
           },
           "address": {
-            "help": "",
+            "help": "You can move the marker to the correct location on the map.",
             "name": "Osoite",
-            "title": ""
+            "title": "Where is the place?"
           },
           "contact": {
-            "name": "",
-            "title": ""
+            "name": "Contact",
+            "title": "Other contact information"
           },
           "name_category": {
-            "name": "",
-            "title": ""
+            "name": "Name and place type",
+            "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": ""
+            "title": "Is all the information correct?"
           },
           "similar_nodes": {
-            "empty": "",
-            "go_edit": "",
-            "go_new": "",
-            "name": "",
-            "title": ""
+            "empty": "No similar places were found.",
+            "go_edit": "Continue with this place",
+            "go_new": "It is none of the places above …",
+            "name": "Similar places",
+            "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": ""
+        "title": "Add a place"
       },
       "header": {
         "title": "New place | wheelmap.org"
@@ -971,39 +971,39 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
     },
     "node_data": {
       "address": "Osoite:",
-      "contact_details": ""
+      "contact_details": "Contact details:"
     },
     "node_edit": {
       "details": "Yksityiskohdat",
       "edit": "Muokkaa"
     },
     "node_map": {
-      "map": ""
+      "map": "Map:"
     },
     "node_note": {
-      "comment": ""
+      "comment": "Comment:"
     },
     "node_photos": {
-      "add": "",
-      "photos_of_this_place": "",
-      "upload": ""
+      "add": "Add",
+      "photos_of_this_place": "Photos of this place:",
+      "upload": "Upload"
     },
     "node_similar": {
-      "similar": ""
+      "similar": "Similar places: %{name}"
     },
     "node_status": {
-      "accessible_toilet": "",
-      "premium": "",
-      "wheelchair_accessibility": ""
+      "accessible_toilet": "Wheelchair accessible toilet:",
+      "premium": "%{name} says: this place is",
+      "wheelchair_accessibility": "Wheelchair accessibility:"
     },
     "node_streetview": {
-      "streetview": ""
+      "streetview": "Streetview:"
     },
     "show": {
       "header": {
         "meta": {
-          "description": "",
-          "title": ""
+          "description": "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.",
+          "title": "This place is on Wheelmap.org: %{name}"
         },
         "title": "Place: %{node} | wheelmap.org"
       },
@@ -1017,7 +1017,7 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
       "share": {
         "email": "Sähköposti",
         "facebook": "Facebook",
-        "text": "",
+        "text": "I found this place on Wheelmap.org: %{name}",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1112,36 +1112,36 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
   },
   "poi": {
     "category": {
-      "accommodation": "",
+      "accommodation": "Accomodation",
       "education": "Sivistys",
-      "food": "",
-      "government": "",
-      "health": "",
+      "food": "Food",
+      "government": "Government",
+      "health": "Health",
       "leisure": "Vapaa-aika",
       "misc": "Sekalaiset",
-      "money_post": "",
-      "public_transfer": "",
+      "money_post": "Bank / Post office",
+      "public_transfer": "Public transport",
       "shopping": "Ostos",
       "sport": "Urheilu",
       "tourism": "Matkailu",
-      "unknown": ""
+      "unknown": "Unknown"
     },
     "name": {
       "accommodation": {
-        "beach_resort": "",
-        "bed_and_breakfast": "",
-        "camp_site": "",
-        "caravan_site": "",
+        "beach_resort": "Beach hotel",
+        "bed_and_breakfast": "Bed and breakfast",
+        "camp_site": "Camp site",
+        "caravan_site": "Caravan site",
         "chalet": "Alppimaja",
-        "dormitory": "",
-        "guest_house": "",
+        "dormitory": "Dormitory",
+        "guest_house": "Guest house",
         "hostel": "Hostelli",
         "hotel": "Hotelli",
         "motel": "Motelli"
       },
       "education": {
         "college": "Oppilaitos",
-        "driving_school": "",
+        "driving_school": "Driving school",
         "kindergarten": "Päiväkoti",
         "library": "Kirjasto",
         "museum": "Museo",
@@ -1150,156 +1150,156 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
       },
       "food": {
         "bar": "Baari",
-        "biergarten": "",
-        "cafe": "",
+        "biergarten": "Biergarten",
+        "cafe": "Cafe",
         "drinking_water": "Vesipiste",
         "fast_food": "Pikaruoka",
-        "ice_cream": "",
+        "ice_cream": "Ice cream parlour",
         "pub": "Pubi",
         "restaurant": "Ravintola"
       },
       "government": {
         "courthouse": "Oikeustalo",
-        "embassy": "",
-        "government": "",
-        "police": "",
-        "public_building": "",
-        "townhall": ""
+        "embassy": "Embassy",
+        "government": "Government agency",
+        "police": "Police",
+        "public_building": "Public building",
+        "townhall": "Town hall"
       },
       "health": {
-        "dentist": "",
-        "doctors": "",
-        "hearing_aids": "",
+        "dentist": "Dentist",
+        "doctors": "Doctor",
+        "hearing_aids": "Hearing aid dealer",
         "hospital": "Sairaala",
-        "medical_supply": "",
+        "medical_supply": "Medical supplies",
         "pharmacy": "Apteekki",
-        "social_facility": "",
+        "social_facility": "Social facility",
         "veterinary": "Eläinlääkäri"
       },
       "leisure": {
         "arena": "Areena",
-        "brothel": "",
-        "casino": "",
+        "brothel": "Brothel",
+        "casino": "Casino",
         "cinema": "Elokuvateatteri",
-        "community_centre": "",
+        "community_centre": "Community centre",
         "gallery": "Galleria",
         "nightclub": "Yökerho",
-        "playground": "",
+        "playground": "Playground",
         "sauna": "Sauna",
-        "stripclub": "",
+        "stripclub": "Stripclub",
         "theatre": "Teatteri",
         "zoo": "Eläintarha"
       },
       "misc": {
-        "company": "",
-        "estate_agent": "",
-        "insurance": "",
-        "lawyer": "",
-        "place_of_worship": "",
+        "company": "Company (Office)",
+        "estate_agent": "Real estate agent",
+        "insurance": "Insurance",
+        "lawyer": "Lawyer",
+        "place_of_worship": "Place of worship",
         "toilets": "Vessat"
       },
       "money_post": {
         "atm": "Pankkiautomaatti",
         "bank": "Pankki",
-        "bureau_de_change": "",
-        "post_box": "",
-        "post_office": ""
+        "bureau_de_change": "Bureau de change",
+        "post_box": "Post box",
+        "post_office": "Post office"
       },
       "public_transfer": {
-        "aerodrome": "",
-        "bicycle_parking": "",
-        "bicycle_rental": "",
-        "boatyard": "",
-        "bus_station": "",
-        "bus_stop": "",
-        "cable_car": "",
-        "car_rental": "",
-        "car_sharing": "",
-        "chair_lift": "",
+        "aerodrome": "Airport",
+        "bicycle_parking": "Bicycle parking",
+        "bicycle_rental": "Bicycle rental",
+        "boatyard": "Boat yard",
+        "bus_station": "Bus station",
+        "bus_stop": "Bus stop",
+        "cable_car": "Cable car",
+        "car_rental": "Car rental",
+        "car_sharing": "Car sharing",
+        "chair_lift": "Chair lift",
         "ferry": "Autolautta",
-        "ferry_terminal": "",
-        "fuel": "",
+        "ferry_terminal": "Ferry terminal",
+        "fuel": "Gas station",
         "halt": "Seisake",
-        "light_rail": "",
+        "light_rail": "Light rail",
         "parking": "Pysäköinti",
-        "parking_aisle": "",
+        "parking_aisle": "Parking aisle",
         "platform": "Laituri",
-        "station": "",
-        "subway_entrance": "",
-        "terminal": "",
-        "tram_stop": ""
+        "station": "Train station",
+        "subway_entrance": "Subway entrance",
+        "terminal": "Airport terminal",
+        "tram_stop": "Tram stop"
       },
       "shopping": {
-        "alcohol": "",
+        "alcohol": "Liquor",
         "bakery": "Leipomo",
-        "beauty": "",
+        "beauty": "Beauty salon",
         "beverages": "Juotavaa",
-        "bicycle": "",
+        "bicycle": "Bike shop",
         "books": "Kirjoja",
         "butcher": "Lihakauppa",
-        "car_repair": "",
-        "car_shop": "",
-        "chemist": "",
+        "car_repair": "Car repair",
+        "car_shop": "Car shop",
+        "chemist": "Chemist / Drugstore",
         "clothes": "Vaatteita",
         "computer": "Tietokone",
-        "confectionery": "",
-        "convenience": "",
-        "deli": "",
-        "department_store": "",
-        "doityourself": "",
-        "dry_cleaning": "",
+        "confectionery": "Candy store",
+        "convenience": "Convenience",
+        "deli": "Delicatessen",
+        "department_store": "Department store",
+        "doityourself": "Do it yourself",
+        "dry_cleaning": "Dry cleaning",
         "electronics": "Elektroniikka",
-        "fabric": "",
-        "farm_shop": "",
+        "fabric": "Fabric shop",
+        "farm_shop": "Farm shop",
         "florist": "Kukkakauppa",
         "furniture": "Huonekaluja",
-        "garden_centre": "",
-        "gift": "",
+        "garden_centre": "Garden centre",
+        "gift": "Gift shop",
         "hairdresser": "Kampaamo",
         "hardware": "Työkaluja",
-        "jewelry": "",
+        "jewelry": "Jewelry",
         "kiosk": "Kioski",
-        "laundry": "",
-        "mall": "",
+        "laundry": "Laundry",
+        "mall": "Shopping centre",
         "optician": "Optikko",
-        "organic": "",
-        "outdoor": "",
-        "pet": "",
-        "photo": "",
-        "second_hand": "",
+        "organic": "Organic shop",
+        "outdoor": "Outdoor supply",
+        "pet": "Pet shop",
+        "photo": "Photo",
+        "second_hand": "Second hand",
         "shoes": "Kenkiä",
-        "sports": "",
-        "stationery": "",
+        "sports": "Sports",
+        "stationery": "Stationery",
         "supermarket": "Supermarketti",
-        "toys": "",
-        "travel_agency": "",
-        "video": ""
+        "toys": "Toys",
+        "travel_agency": "Travel agency",
+        "video": "Video rental store"
       },
       "sport": {
-        "pitch": "",
-        "sports_centre": "",
+        "pitch": "Sports field",
+        "sports_centre": "Sports centre",
         "stadium": "Stadion",
         "swimming": "Uinti",
-        "swimming_pool": ""
+        "swimming_pool": "Swimming pool"
       },
       "tourism": {
-        "archaeological_site": "",
-        "arts_centre": "",
+        "archaeological_site": "Archaeological site",
+        "arts_centre": "Arts centre",
         "artwork": "Taideteos",
         "attraction": "Nähtävyys",
         "battlefield": "Taistelutanner",
         "beach": "Ranta",
-        "beacon": "",
+        "beacon": "Lighthouse",
         "castle": "Linnoitus",
-        "cave_entrance": "",
-        "information": "",
+        "cave_entrance": "Cave entrance",
+        "information": "Tourist information",
         "memorial": "Muistomerkki",
-        "theme_park": "",
+        "theme_park": "Theme park",
         "tower": "Torni",
-        "viewpoint": ""
+        "viewpoint": "View point"
       },
       "unknown": {
-        "unknown": ""
+        "unknown": "Unknown"
       }
     }
   },
@@ -1390,22 +1390,22 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
   "search": {
     "index": {
       "no-results": {
-        "headline": "",
+        "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
         "hint": {
-          "example": "",
-          "info": "",
-          "work_in_progress": ""
+          "example": "<strong>Example:</strong> London, United Kingdom",
+          "info": "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!",
+          "work_in_progress": "We work hard to make searching for places easier and more intuitive in the future."
         },
         "try_this": {
-          "address": "",
-          "intro": "",
-          "spell_check": ""
+          "address": "Please provide more <strong>address details</strong>.",
+          "intro": "Try this:",
+          "spell_check": "Check the <strong>spelling</strong> of your input."
         }
       },
       "results": {
         "ticker": {
-          "one": "",
-          "other": ""
+          "one": "%{count} result:",
+          "other": "%{count} results:"
         }
       },
       "search": {
@@ -1414,9 +1414,9 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
       }
     },
     "timeout": {
-      "headline": "",
-      "info": "",
-      "repeat_search": ""
+      "headline": "Sorry, something went wrong",
+      "info": "Our search service was temporarily not available.",
+      "repeat_search": "Retry search"
     }
   },
   "splash": {
@@ -1496,62 +1496,62 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
     "profile": {
       "edit": {
         "legends": {
-          "user_data": ""
+          "user_data": "Your account information"
         },
-        "title": ""
+        "title": "Profile"
       },
       "newsletter": {
-        "label": "",
-        "text": "",
-        "title": ""
+        "label": "Yes, keep me updated about Wheelmap.",
+        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
+        "title": "Newsletter"
       },
       "photos": {
-        "empty": "",
+        "empty": "You haven't uploaded any photos yet.",
         "title": "Kuvia"
       },
       "show": {
         "greeting": {
-          "anonymously": "",
-          "personalized": ""
+          "anonymously": "Hello there",
+          "personalized": "Hello %{name}"
         },
         "overview": {
           "photos_uploaded": {
-            "one": "",
-            "other": ""
+            "one": "uploaded %{count} photo",
+            "other": "uploaded %{count} photos"
           },
           "pois_added": {
-            "one": "",
-            "other": ""
+            "one": "added %{count} place",
+            "other": "added %{count} places"
           },
           "pois_edited": {
-            "one": "",
-            "other": ""
+            "one": "edited %{count} place",
+            "other": "edited %{count} places"
           },
           "pois_marked": {
-            "one": "",
-            "other": ""
+            "one": "marked %{count} place",
+            "other": "marked %{count} places"
           },
-          "text": ""
+          "text": "You have"
         },
-        "text_html": "",
-        "title": ""
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "title": "Overview"
       },
       "widget": {
-        "categories": "",
-        "center": "",
-        "empty_center": "",
-        "empty_provider": "",
-        "height": "",
+        "categories": "Show category filter",
+        "center": "Map area",
+        "empty_center": "Search for center of map …",
+        "empty_provider": "Choose a Provider",
+        "height": "Height",
         "legends": {
-          "embed": "",
-          "embed_explanation": "",
-          "general": "",
-          "preview": "",
+          "embed": "Embed code",
+          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
+          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
+          "preview": "Preview",
           "settings": "Asetukset"
         },
-        "providers": "",
-        "title": "",
-        "width": ""
+        "providers": "Provider",
+        "title": "Widget",
+        "width": "Width"
       }
     }
   },

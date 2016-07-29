@@ -1,4 +1,3 @@
----
 tr:
   activerecord:
     attributes:
@@ -8,33 +7,17 @@ tr:
         address: Adres
         website: Internet Sitesi
         phone: Telefon
-        note: ''
         address_street: Sokak
         address_housenumber: Ev numarası
-        address_postcode: ''
         address_city: Şehir
-  faq:
-    answers:
-      0: ''
-      1: ''
-      2: ''
-    headline: ''
-    questions:
-      0: ''
-      1: ''
-      2: ''
   header:
     navigation:
       about_wheelmap: Wheelmap Hakkında
       choose_language: Dil seçin
       contact: İletişim
       map: Harita
-      projects: ''
     toolbar:
       categories: Kategoriler
-    meta:
-      description: ''
-      title: ''
   home:
     index:
       overlay:
@@ -44,76 +27,28 @@ tr:
         headline: 'Tekerlekli sandalye erişilebilirliği olan yerleri Wheelmap.org ile işaretleyin ve bulun - dünya çapında ve ücretsiz. Oldukça kolay:'
         lookup: Özel bir yeri ara
         secondary_headline: 'Halka açık alanlarda tekerlekli sandalye erişilebilirliğini işaretlemek için trafik ışığı sistemimiz:'
-      embed_link: ''
-      zoom_alert: ''
   nodes:
     new:
       form:
-        title: ''
         legend: Yerin konumu
-        location: ''
         section:
-          name_category:
-            name: ''
-            title: ""
           address:
             name: Adres
-            title: ''
-            help: ''
-          similar_nodes:
-            name: ''
-            title: ''
-            go_edit: ''
-            go_new: ''
-            empty: ''
-          accessibility:
-            name: ''
-            title: ''
           contact:
             name: İletişim
-            title: ''
-          overview:
-            title: ''
-    node_data:
-      address: ''
-      contact_details: ''
     node_edit:
       details: Ayrıntılar
       edit: Düzenle
-    node_map:
-      map: ''
-    node_note:
-      comment: ''
-    node_photos:
-      add: ''
-      photos_of_this_place: ''
-      upload: ''
-    node_similar:
-      similar: ''
-    node_status:
-      accessible_toilet: ''
-      premium: ''
-      wheelchair_accessibility: ''
-    node_streetview:
-      streetview: ''
     show:
-      header:
-        meta:
-          description: ''
-          title: ''
       share:
         email: E-posta
         facebook: Facebook
-        text: ''
         twitter: Twitter
   search:
     index:
       no-results:
-        headline: ''
         hint:
           example: <strong>Örnek:</strong>  Londra, Birleşik Krallık
-          info: ''
-          work_in_progress: ''
         try_this:
           address: Lütfen <strong>adresi detaylandırın</strong>.
           intro: 'Bunu deneyin:'
@@ -123,54 +58,16 @@ tr:
           one: '%{count} sonuç:'
           other: '%{count} sonuç:'
     timeout:
-      headline: ''
       info: Arama hizmetimiz geçici olarak devredışı.
       repeat_search: Yeniden ara
   users:
     profile:
       newsletter:
         title: Haberler
-        text: ''
-        label: ''
-      show:
-        title: ''
-        text_html: ""
-        greeting:
-          anonymously: ''
-          personalized: ''
-        overview:
-          text: ''
-          pois_marked:
-            one: ''
-            other: ''
-          pois_added:
-            one: ''
-            other: ''
-          pois_edited:
-            one: ''
-            other: ''
-          photos_uploaded:
-            one: ''
-            other: ''
       photos:
         title: Fotoğraflar
-        empty: ''
       edit:
         title: Profil
-        legends:
-          user_data: ''
       widget:
-        title: ''
-        height: ''
-        width: ''
-        center: ''
-        categories: ''
-        providers: ''
-        empty_provider: ''
-        empty_center: ''
         legends:
           settings: Ayarlar
-          preview: ''
-          embed: ''
-          embed_explanation: ''
-          general: ''

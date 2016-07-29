@@ -1,4 +1,3 @@
----
 fr:
   activerecord:
     attributes:
@@ -45,35 +44,15 @@ fr:
         lookup: Chercher un lieu spécifique
         secondary_headline: 'Notre système de feux de circulation pour marquer l''accessibilité en fauteuil roulant des lieux publics :'
       embed_link: Voir sur Wheelmap.org
-      zoom_alert: ''
   nodes:
     new:
       form:
-        title: ''
         legend: Emplacement du lieu
-        location: ''
         section:
-          name_category:
-            name: ''
-            title: ""
           address:
             name: Adresse
-            title: ''
-            help: ''
-          similar_nodes:
-            name: ''
-            title: ''
-            go_edit: ''
-            go_new: ''
-            empty: ''
-          accessibility:
-            name: ''
-            title: ''
           contact:
             name: Contact
-            title: ''
-          overview:
-            title: ''
     node_data:
       address: 'Adresse :'
       contact_details: 'Coordonnées :'

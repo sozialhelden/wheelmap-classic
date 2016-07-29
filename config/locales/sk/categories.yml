@@ -1,4 +1,3 @@
----
 sk:
   poi:
     category:
@@ -9,8 +8,6 @@ sk:
       health: Zdravie
       leisure: Voľný čas
       misc: Rôzne
-      money_post: ""
-      public_transfer: ""
       shopping: Nákupy
       sport: Šport
       tourism: Cestovanie
@@ -50,10 +47,8 @@ sk:
         government: "Vládna agentúra"
         police: Polícia
         public_building: "Verejná budova"
-        townhall: ''
       health:
         dentist: Zubár
-        doctors: ''
         hearing_aids: "Dodavateľ načúvacích prístrojov"
         hospital: Nemocnica
         medical_supply: "Medicínske vybavenie"
@@ -65,7 +60,6 @@ sk:
         brothel: Nevestinec
         casino: Kasíno
         cinema: Kino
-        community_centre: ""
         gallery: Galéria
         nightclub: Nočný klub
         playground: Ihrisko
@@ -90,7 +84,6 @@ sk:
         aerodrome: Letisko
         bicycle_parking: "Stojan na bicykle"
         bicycle_rental: "Požičovňa bicyklov"
-        boatyard: ''
         bus_station: "Autobusová stanica"
         bus_stop: "Zastávka autobusu"
         cable_car: "Lanovka"
@@ -119,7 +112,6 @@ sk:
         butcher: Mäsiarstvo
         car_repair: "Autoservis"
         car_shop: "Automobily"
-        chemist: ''
         clothes: Oblečenie
         computer: Počítače
         confectionery: "Cukráreň"
@@ -133,7 +125,6 @@ sk:
         farm_shop: "Farmársky obchod"
         florist: Kvetinárstvo
         furniture: Nábytok
-        garden_centre: ""
         gift: "Suveníry"
         hairdresser: Kaderníctvo
         hardware: Železiarstvo

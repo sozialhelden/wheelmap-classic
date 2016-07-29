@@ -1,4 +1,3 @@
----
 pt_PT:
   activerecord:
     attributes:
@@ -10,7 +9,6 @@ pt_PT:
         phone: Telefone
         note: Nota
         address_street: Rua
-        address_housenumber: ''
         address_postcode: Código Postal
         address_city: Cidade
   faq:
@@ -32,9 +30,6 @@ pt_PT:
       projects: Projetos
     toolbar:
       categories: Categorias
-    meta:
-      description: ''
-      title: ''
   home:
     index:
       overlay:
@@ -44,36 +39,15 @@ pt_PT:
         headline: 'Encontrar e marcar lugares acessíveis a pessoas de cadeiras de rodas com Wheelmap.org - em todo o mundo e sem custos. É fácil:'
         lookup: Pesquisar um lugar específico
         secondary_headline: 'Sistema luminoso para indicar a acessibilidade de lugares públicos: '
-      embed_link: ''
-      zoom_alert: ''
   nodes:
     new:
       form:
-        title: ''
         legend: Localização do lugar
-        location: ''
         section:
-          name_category:
-            name: ''
-            title: ""
           address:
             name: Endereço
-            title: ''
-            help: ''
-          similar_nodes:
-            name: ''
-            title: ''
-            go_edit: ''
-            go_new: ''
-            empty: ''
-          accessibility:
-            name: ''
-            title: ''
           contact:
             name: Contacto
-            title: ''
-          overview:
-            title: ''
     node_data:
       address: 'Morada:'
       contact_details: 'Detalhes do contato:'
@@ -104,12 +78,10 @@ pt_PT:
       share:
         email: E-mail
         facebook: Facebook
-        text: ''
         twitter: Twitter
   search:
     index:
       no-results:
-        headline: ''
         hint:
           example: <strong>Exemplo:</strong> Londres, Reino Unido
           info: A nossa pesquisa só funciona com a informação do nome e/ou endereço. Desta forma, preencha um dos campos para o nome do lugar ou o endereço (por ex., nome da rua e/ou cidade). A pesquina pelo tipo de lugar (ex. restaurante ou cinema), não funciona!
@@ -123,54 +95,16 @@ pt_PT:
           one: '%{count} resultado:'
           other: '%{count} resultados:'
     timeout:
-      headline: ''
       info: O nosso serviço de pesquisa está temporariamente indisponível.
       repeat_search: Volte a tentar
   users:
     profile:
       newsletter:
         title: Newsletter
-        text: ''
-        label: ''
-      show:
-        title: ''
-        text_html: ""
-        greeting:
-          anonymously: ''
-          personalized: ''
-        overview:
-          text: ''
-          pois_marked:
-            one: ''
-            other: ''
-          pois_added:
-            one: ''
-            other: ''
-          pois_edited:
-            one: ''
-            other: ''
-          photos_uploaded:
-            one: ''
-            other: ''
       photos:
         title: Fotografias
-        empty: ''
       edit:
         title: Perfil
-        legends:
-          user_data: ''
       widget:
-        title: ''
-        height: ''
-        width: ''
-        center: ''
-        categories: ''
-        providers: ''
-        empty_provider: ''
-        empty_center: ''
         legends:
           settings: Definições
-          preview: ''
-          embed: ''
-          embed_explanation: ''
-          general: ''

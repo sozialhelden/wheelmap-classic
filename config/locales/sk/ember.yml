@@ -1,21 +1,5 @@
 sk:
-  models:
-    category:
-      prompt: ""
-    node_type:
-      prompt: ""
-    node:
-      info_edit_position: ""
-      mail:
-        subject: ""
-        body: ""
   actions:
-    send: ''
     save: Uložiť
     cancel: Prerušiť
     next: Ďalej
-  errors:
-    models:
-      node:
-        website:
-          invalid: ""

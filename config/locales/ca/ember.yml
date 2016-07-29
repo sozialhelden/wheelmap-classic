@@ -13,7 +13,6 @@ ca:
     send: Enviar
     save: Desar
     cancel: Cancel·lar
-    next: ''
   errors:
     models:
       node:

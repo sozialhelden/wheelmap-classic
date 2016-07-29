@@ -434,9 +434,9 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
   "devise": {
     "confirmations": {
       "confirmed": "Tu cuenta de correo ha sido confirmada.",
-      "link": "You didn't receive confirmation instructions?",
+      "link": "No recibí ninguna instrucción de confirmación",
       "send_instructions": "En unos minutos recibirás un correo electrónico con las instrucciones de cómo confirmar tu cuenta.",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
+      "send_paranoid_instructions": "Si tu cuenta existe, recibirás un correo electrónico en pocos minutos con instrucciones de como confirmar tu cuenta"
     },
     "destroy": {
       "confirm": "¿Estás seguro?",
@@ -469,7 +469,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
     },
     "mailer": {
       "confirmation_instructions": {
-        "landing_page": "Please click on the link that we just sent to your email address. If you do not receive an email from us, please first check if it is not hiding in your spam folder. If it is not there return to the sign up page and try again.",
+        "landing_page": "Por favor, haz clic en el enlace que acabamos de enviar a  tu dirección de correo electrónico. Si no recibes un correo electrónico de nosotros, por favor, primero fijate que no está en tu folder de correo basura. Si no está ahi, regresa a la página de registrarse e inténtalo de nuevo. ",
         "subject": "instrucciones de confirmación"
       },
       "reset_password_instructions": {
@@ -499,7 +499,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         "comment": "Si no has solicitado cambiar la contraseña por favor, ignora este correo<br/>Tu contraseña no se cambiará si no haces clic en este enlace",
         "headline": "Bienvenido %{email}",
         "link": "Cambiar contraseña",
-        "text": "We received a request to change your password. If you sent the request, click the following link - otherwise ignore this!"
+        "text": "Hemos recibido un pedido para cambiar tu contraseña. Si enviaste el pedido, haz clic en el siguiente enlace. ¡Si no fue así, ignora esto!"
       },
       "form": {
         "labels": {
@@ -546,7 +546,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         "promo_text_thank_you": "¡Muchas gracias por tu apoyo!",
         "sign_in_with": "Ingresar con %{kind}",
         "sign_up_with_osm": "Registrarse ahora.",
-        "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
+        "wheelmap_promo_text": "Con tu conocimiento acerca de lugares accesibles para silla de ruedas, tu puedes ayudar a gente con deficiencias de movilidad a planear mejor su día a día. Además, esto ayuda a OpenStreetMap a ser más detallado."
       },
       "signed_in": "Sesión iniciada satisfactoriamente",
       "signed_out": "Sesión finalizada",
@@ -606,17 +606,17 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
       "confirmation_period_expired": "needs to be confirmed within %{period}, please request a new one",
       "empty": "tiene que ser completado",
       "equal_to": "tiene que tener exactamente %{count}",
-      "even": "must be an even number",
+      "even": "debe de ser un número par",
       "exclusion": "está reservado",
       "expired": "ha caducado, solicite una nueva.",
       "extension_black_list_error": "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}",
       "extension_white_list_error": "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}",
       "greater_than": "debe ser mayor que %{count}",
-      "greater_than_or_equal_to": "must be greater than or equal to %{count}",
+      "greater_than_or_equal_to": "debe de ser más grande que o igual a %{count}",
       "inclusion": "no es un valor correcto",
       "invalid": "no es válido",
       "less_than": "tiene que ser menor que %{count}",
-      "less_than_or_equal_to": "must be less than or equal to %{count}",
+      "less_than_or_equal_to": "debe de ser menos que o igual a %{count}",
       "mime_types_processing_error": "Failed to process file with MIME::Types, maybe not valid content-type? Original Error: %{e}",
       "mini_magick_processing_error": "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}",
       "not_a_number": "no es un número",
@@ -627,7 +627,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         "one": "Un error ha impedido que se guarde %{resource}:",
         "other": "%{count} errores han impedido guardar un %{resource}:\n"
       },
-      "odd": "must be an odd number",
+      "odd": "debe de ser un número impar",
       "other_than": "must be other than %{count}",
       "present": "must be blank",
       "rmagick_processing_error": "Failed to manipulate with rmagick, maybe it is not an image? Original Error: %{e}",
@@ -778,7 +778,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
       "title_add_place": "¡Agrega ahora mismo otro nuevo lugar en esta posición!"
     },
     "tagline": "Logo del wheelmap",
-    "title": "Find wheelchair accessible places",
+    "title": "Encuentra lugares accesibles para silla de ruedas",
     "toolbar": {
       "categories": "Categorías"
     }
@@ -821,7 +821,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         },
         "warning": {
           "headline": "¡Lo sentimos!",
-          "message": "You appear to be using Internet Explorer. Wheelmap requires a standards compliant browser to work properly. Please consider using Firefox, Chrome, Safari or Opera."
+          "message": "Parece que estás usando Internet Explorer. Wheelmap requiere un navegador compatible estandard para funcionar correctamente. Por favor, considera usar Firefox, Chrome, Safari o Opera. "
         }
       },
       "link": {
@@ -848,7 +848,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         "help": "¿Accesible para silla de ruedas? (Ayuda)",
         "more": "más ..."
       },
-      "zoom_alert": ""
+      "zoom_alert": "Zoom in closer to see more places."
     }
   },
   "how?": "¿Cómo?",
@@ -918,7 +918,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
       }
     },
     "errors": {
-      "default": "Oops something went wrong. We have been informed about this issue",
+      "default": "Ups! Algo salió mal. Hemos sido informados acerca de este problema",
       "not_authorized": "Disculpa, la autenticación ha fallado",
       "not_available": "Disculpa, esta página no está disponible temporalmente.",
       "not_existent": "Disculpa, este lugar ya no está disponible.",
@@ -931,37 +931,37 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
     "new": {
       "form": {
         "legend": "Ubicación del sitio",
-        "location": "",
+        "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "",
-            "title": ""
+            "name": "Wheelchair accessibility",
+            "title": "Information on wheelchair accessibility"
           },
           "address": {
-            "help": "",
+            "help": "You can move the marker to the correct location on the map.",
             "name": "Dirección",
-            "title": ""
+            "title": "Where is the place?"
           },
           "contact": {
             "name": "Contacto",
-            "title": ""
+            "title": "Other contact information"
           },
           "name_category": {
-            "name": "",
-            "title": ""
+            "name": "Name and place type",
+            "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": ""
+            "title": "Is all the information correct?"
           },
           "similar_nodes": {
-            "empty": "",
-            "go_edit": "",
-            "go_new": "",
-            "name": "",
-            "title": ""
+            "empty": "No similar places were found.",
+            "go_edit": "Continue with this place",
+            "go_new": "It is none of the places above …",
+            "name": "Similar places",
+            "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": ""
+        "title": "Add a place"
       },
       "header": {
         "title": "Nuevo lugar | wheelmap.org"
@@ -1021,7 +1021,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         "listing": "Todos los lugares de tipo '%{type}' en %{city}",
         "upload": "Subir imagen"
       },
-      "more_data_from": "There is more information about this place, validated by:",
+      "more_data_from": "Hay más información acerca de este lugar, validado por: ",
       "share": {
         "email": "Correo electrónico",
         "facebook": "Facebook",
@@ -1524,20 +1524,20 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         },
         "overview": {
           "photos_uploaded": {
-            "one": "",
-            "other": ""
+            "one": "uploaded %{count} photo",
+            "other": "uploaded %{count} photos"
           },
           "pois_added": {
-            "one": "",
-            "other": ""
+            "one": "added %{count} place",
+            "other": "added %{count} places"
           },
           "pois_edited": {
-            "one": "",
-            "other": ""
+            "one": "edited %{count} place",
+            "other": "edited %{count} places"
           },
           "pois_marked": {
-            "one": "",
-            "other": ""
+            "one": "marked %{count} place",
+            "other": "marked %{count} places"
           },
           "text": "Tú tienes"
         },

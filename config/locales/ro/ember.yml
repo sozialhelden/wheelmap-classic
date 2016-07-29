@@ -1,21 +1,5 @@
 ro:
-  models:
-    category:
-      prompt: ""
-    node_type:
-      prompt: ""
-    node:
-      info_edit_position: ""
-      mail:
-        subject: ""
-        body: ""
   actions:
-    send: ''
     save: Salvare
     cancel: Anulare
     next: Mai departe
-  errors:
-    models:
-      node:
-        website:
-          invalid: ""

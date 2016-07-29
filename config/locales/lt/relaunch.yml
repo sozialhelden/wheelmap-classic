@@ -1,9 +1,7 @@
----
 lt:
   activerecord:
     attributes:
       poi:
-        name: ''
         type: Tipas
         address: Adresas
         website: Svetainė
@@ -16,7 +14,6 @@ lt:
   faq:
     answers:
       0: Jūs visuomet galite keisti vietos žymėjimą patys. Tiesiog pasirinkite tinkamą žymėjimą ir spauskite "Išsaugoti" - atlikta!
-      1: ''
       2: Jūs galite pridėti tolimesnę informaciją (pvz., "Šioje vietoje yra mobili rampa") komentarų sekcijoje. Spauskite "Keisti" ir "Pridėti komentarą".
     headline: Ar yra problemų su šia vieta?
     questions:
@@ -33,7 +30,6 @@ lt:
     toolbar:
       categories: Kategorijos
     meta:
-      description: ''
       title: Wheelmap.org
   home:
     index:
@@ -44,36 +40,14 @@ lt:
         headline: 'Raskite ir žymėkite neįgaliųjų vežimėliais prieinamas vietas Wheelmap.org pagalba - visuotinai ir nemokamai. Tai lengva:'
         lookup: Ieškokite konkrečios vietos
         secondary_headline: 'Mūsų šviesoforo spalvų sistema, skirta neįgaliųjų vežimėliais prieinamų viešų vietų žymėjimui:'
-      embed_link: ''
-      zoom_alert: ''
   nodes:
     new:
       form:
-        title: ''
-        legend: ''
-        location: ''
         section:
-          name_category:
-            name: ''
-            title: ""
           address:
             name: Adresas
-            title: ''
-            help: ''
-          similar_nodes:
-            name: ''
-            title: ''
-            go_edit: ''
-            go_new: ''
-            empty: ''
-          accessibility:
-            name: ''
-            title: ''
           contact:
             name: Kontaktai
-            title: ''
-          overview:
-            title: ''
     node_data:
       address: 'Adresas:'
       contact_details: 'Kontaktiniai duomenys:'
@@ -97,14 +71,8 @@ lt:
     node_streetview:
       streetview: 'Gatvės vaizdas:'
     show:
-      header:
-        meta:
-          description: ''
-          title: ''
       share:
-        email: ''
         facebook: Facebook
-        text: ''
         twitter: Twitter
   search:
     index:
@@ -116,7 +84,6 @@ lt:
           work_in_progress: Mes sunkiai dirbame, norėdami ateityje padaryti vietų paiešką lengvesnę bei intuityvesnę.
         try_this:
           address: Prašome pateikti <strong>išsamesnį adresą</strong>.
-          intro: ''
           spell_check: Patikrinkite savo įvesties <strong>rašybą</strong>.
       results:
         ticker:
@@ -126,56 +93,23 @@ lt:
     timeout:
       headline: Atleiskite, kažkas nutiko
       info: Mūsų paieškos tarnyba buvo laikinai neprieinama.
-      repeat_search: ''
   users:
     profile:
       newsletter:
         title: Naujienlaiškis
-        text: ''
-        label: ''
       show:
         title: Apžvalga
-        text_html: ""
         greeting:
-          anonymously: ''
           personalized: Sveiki %{name}
-        overview:
-          text: ''
-          pois_marked:
-            one: ''
-            few: ''
-            other: ''
-          pois_added:
-            one: ''
-            few: ''
-            other: ''
-          pois_edited:
-            one: ''
-            few: ''
-            other: ''
-          photos_uploaded:
-            one: ''
-            few: ''
-            other: ''
       photos:
         title: Nuotraukos
-        empty: ''
       edit:
         title: Profilis
         legends:
           user_data: Jūsų paskyros informacija
       widget:
-        title: ''
         height: Aukštis
         width: Plotis
-        center: ''
-        categories: ''
-        providers: ''
-        empty_provider: ''
-        empty_center: ''
         legends:
           settings: Nustatymai
           preview: Peržiūra
-          embed: ''
-          embed_explanation: ''
-          general: ''

@@ -1,4 +1,3 @@
----
 ko:
   poi:
     category:
@@ -9,8 +8,6 @@ ko:
       health: 약국
       leisure: 레저
       misc: 기타 시설
-      money_post: ""
-      public_transfer: ""
       shopping: 쇼핑
       sport: 스포츠
       tourism: 관광
@@ -50,10 +47,8 @@ ko:
         government: "정부 기관"
         police: 경찰서
         public_building: "공공기관"
-        townhall: ''
       health:
         dentist: 치과 의원
-        doctors: ''
         hearing_aids: "보청기판매점"
         hospital: 병원
         medical_supply: "의료"
@@ -65,7 +60,6 @@ ko:
         brothel: 성매매업소
         casino: 카지노
         cinema: 영화관
-        community_centre: ""
         gallery: 갤러리
         nightclub: 나이트클럽
         playground: 놀이터
@@ -90,7 +84,6 @@ ko:
         aerodrome: 공항
         bicycle_parking: "자전거 주차장"
         bicycle_rental: "자전거 임대"
-        boatyard: ''
         bus_station: "버스터미널"
         bus_stop: "버스정류소"
         cable_car: "케이블카"
@@ -119,7 +112,6 @@ ko:
         butcher: 정육점
         car_repair: "카센터"
         car_shop: "자동차매장"
-        chemist: ''
         clothes: 옷가게
         computer: 컴퓨터상점
         confectionery: "과자점"
@@ -133,7 +125,6 @@ ko:
         farm_shop: "농장 상점"
         florist: 꽃집
         furniture: 가구점
-        garden_centre: ""
         gift: "선물 가게"
         hairdresser: 미용실
         hardware: 하드웨어

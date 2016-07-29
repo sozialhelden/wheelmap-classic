@@ -1,4 +1,3 @@
----
 ca:
   poi:
     category:
@@ -8,9 +7,6 @@ ca:
       government: Govern
       health: Salut
       leisure: Oci
-      misc: ''
-      money_post: ""
-      public_transfer: ""
       shopping: Botigues
       sport: Esports
       tourism: Turisme
@@ -50,10 +46,8 @@ ca:
         government: "Oficina governamental"
         police: Policia
         public_building: "Edifici públic"
-        townhall: ''
       health:
         dentist: Dentista
-        doctors: ''
         hearing_aids: "Aparells auditius"
         hospital: Hospital
         medical_supply: "Subministraments mèdics"
@@ -65,7 +59,6 @@ ca:
         brothel: Prostíbul
         casino: Casino
         cinema: Cinema
-        community_centre: ""
         gallery: Galeria
         nightclub: Discoteca
         playground: Parc infantil
@@ -90,7 +83,6 @@ ca:
         aerodrome: Aeroport
         bicycle_parking: "Pàrquing de bicicletes"
         bicycle_rental: "Lloguer de bicicletes"
-        boatyard: ''
         bus_station: "Estació d'autobusos"
         bus_stop: "Parada d'autobús"
         cable_car: "Telefèric (amb cabina tancada)"
@@ -119,7 +111,6 @@ ca:
         butcher: Carnisseria
         car_repair: "Taller de cotxes"
         car_shop: "Concessionari de cotxes"
-        chemist: ''
         clothes: Roba
         computer: Informàtica
         confectionery: "Llaminadures"
@@ -133,7 +124,6 @@ ca:
         farm_shop: "Productes de granja"
         florist: Floristeria
         furniture: Mobles
-        garden_centre: ""
         gift: "Botiga de regals"
         hairdresser: Perruqueria
         hardware: Ferreteria

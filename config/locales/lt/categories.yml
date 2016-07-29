@@ -1,34 +1,18 @@
----
 lt:
   poi:
     category:
-      accommodation: ''
       education: Švietimas
       food: Maistas
-      government: ''
       health: Sveikata
       leisure: Laisvalaikis
-      misc: ''
-      money_post: ""
-      public_transfer: ""
-      shopping: ''
       sport: Sportas
       tourism: Turizmas
       unknown: Nežinoma
     name:
       accommodation:
-        beach_resort: ""
-        bed_and_breakfast: ""
-        camp_site: ""
-        caravan_site: ""
-        chalet: ''
-        dormitory: ''
         guest_house: "Svečių namai"
-        hostel: ''
         hotel: Viešbutis
-        motel: ''
       education:
-        college: ''
         driving_school: "Vairavimo mokykla"
         kindergarten: Vaikų darželis
         library: Biblioteka
@@ -37,143 +21,50 @@ lt:
         university: Universitetas
       food:
         bar: Baras
-        biergarten: ''
         cafe: Kavinė
         drinking_water: "Geriamas vanduo"
-        fast_food: ""
-        ice_cream: ""
-        pub: ''
         restaurant: Restoranas
       government:
-        courthouse: ''
         embassy: Ambasada
-        government: ""
         police: Policija
-        public_building: ""
-        townhall: ''
       health:
-        dentist: ''
-        doctors: ''
-        hearing_aids: ""
         hospital: Ligoninė
-        medical_supply: ""
-        pharmacy: ''
-        social_facility: ""
-        veterinary: ''
       leisure:
-        arena: ''
-        brothel: ''
         casino: Kazino
         cinema: Kinas
-        community_centre: ""
-        gallery: ''
         nightclub: Naktinis klubas
         playground: Žaidimų aikštelė
-        sauna: ''
-        stripclub: ''
         theatre: Teatras
         zoo: Zoologijos sodas
       misc:
-        company: ""
-        estate_agent: ""
         insurance: Draudimas
         lawyer: Advokatas
-        place_of_worship: ""
-        toilets: ''
       money_post:
         atm: Bankomatas
         bank: Bankas
-        bureau_de_change: ""
-        post_box: ""
-        post_office: ""
       public_transfer:
         aerodrome: Oro uostas
-        bicycle_parking: ""
         bicycle_rental: "Dviračių nuoma"
-        boatyard: ''
         bus_station: "Autobusų stotis"
         bus_stop: "Stotelė"
-        cable_car: ""
-        car_rental: ""
-        car_sharing: ""
-        chair_lift: ""
         ferry: Keltas
         ferry_terminal: "Kelto terminalas"
-        fuel: ""
-        halt: ''
-        light_rail: ""
-        parking: ''
-        parking_aisle: ""
-        platform: ''
         station: "Geležinkelio stotis"
-        subway_entrance: ""
         terminal: "Oro uosto terminalas"
         tram_stop: "Tramvajaus stotelė"
       shopping:
-        alcohol: ''
-        bakery: ''
-        beauty: ""
-        beverages: ''
-        bicycle: ""
         books: Knygos
-        butcher: ''
-        car_repair: ""
-        car_shop: ""
-        chemist: ''
         clothes: Drabužiai
         computer: Kompiuteris
-        confectionery: ""
-        convenience: ''
-        deli: ''
-        department_store: ""
-        doityourself: ""
         dry_cleaning: "Sausas valymas"
         electronics: Elektronika
-        fabric: ""
-        farm_shop: ""
-        florist: ''
-        furniture: ''
-        garden_centre: ""
         gift: "Dovanų parduotuvė"
-        hairdresser: ''
         hardware: Aparatinė Įranga
-        jewelry: ''
-        kiosk: ''
-        laundry: ''
         mall: "Prekybos centras"
-        optician: ''
-        organic: ""
-        outdoor: ""
-        pet: ""
-        photo: ''
-        second_hand: ""
-        shoes: ''
-        sports: ''
-        stationery: ''
-        supermarket: ''
         toys: Žaislai
-        travel_agency: ""
-        video: ""
       sport:
-        pitch: ""
-        sports_centre: ""
-        stadium: ''
-        swimming: ''
         swimming_pool: "Baseinas"
       tourism:
-        archaeological_site: ""
-        arts_centre: ""
-        artwork: ''
-        attraction: ''
-        battlefield: ''
         beach: Paplūdimys
-        beacon: ''
-        castle: ''
-        cave_entrance: ""
-        information: ""
-        memorial: ''
-        theme_park: ""
-        tower: ''
-        viewpoint: ""
       unknown:
         unknown: Nežinoma

@@ -1,21 +1,5 @@
 sv:
-  models:
-    category:
-      prompt: ""
-    node_type:
-      prompt: ""
-    node:
-      info_edit_position: ""
-      mail:
-        subject: ""
-        body: ""
   actions:
-    send: ''
     save: Spara
     cancel: Avbryt
     next: Nästa
-  errors:
-    models:
-      node:
-        website:
-          invalid: ""
