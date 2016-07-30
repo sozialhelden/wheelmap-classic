@@ -1,0 +1,11 @@
+.git
+vendor/cache
+vendor/bundle
+node_modules
+tmp
+.sass-cache
+.DS_Store
+.bundle
+.idea
+log
+coverage
