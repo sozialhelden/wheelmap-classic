@@ -39,7 +39,7 @@ Wheelmap::Application.configure do
 
   # Use a different logger for distributed setups
   # config.logger = SyslogLogger.new
-  config.logger = Logger.new('log/staging.log', 3, 1073741824) # 1GB
+  config.logger = Logger.new($stdout)
 
   # Use a different cache store in staging
   # default is:
