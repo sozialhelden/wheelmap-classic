@@ -42,7 +42,7 @@ Wheelmap::Application.configure do
   # See everything in the log (default is :info)
   config.log_level = :info
 
-  config.logger = Logger.new('log/production.log', 3, 1_073_741_824) # 1GB
+  config.logger = Logger.new($stdout)
 
   # Use a different cache store in production
   # default is:
