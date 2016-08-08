@@ -3,8 +3,8 @@
 env = ENV["RAILS_ENV"] || "staging"
 
 worker_processes (env == 'production' ? 9 : 1)
-base_dir = "/var/apps/wheelmap/#{env}/current"
-shared_path = "/var/apps/wheelmap/#{env}/shared"
+base_dir = "/var/apps/wheelmap/current"
+shared_path = "/var/apps/wheelmap/shared"
 working_directory base_dir
 
 # This loads the application in the master process before forking
@@ -25,7 +25,7 @@ if defined?(GC::Profiler) and GC::Profiler.respond_to?(:enable)
   GC::Profiler.enable
 end
 
-timeout (env == 'production' ? 300 : 30)
+timeout 300
 
 # This is where we specify the socket.
 # We will point the upstream Nginx module to this socket later on
