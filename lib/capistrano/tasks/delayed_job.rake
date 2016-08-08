@@ -13,7 +13,7 @@ namespace :delayed_job do
     on roles(delayed_job_roles) do
       within release_path do
         with rails_env: fetch(:rails_env) do
-          sudo "/usr/bin/monit unmonitor delayed_job" rescue nil
+          # sudo "/usr/bin/monit unmonitor delayed_job" rescue nil
           execute :bundle, :exec, :'script/delayed_job', :stop
         end
       end
@@ -26,7 +26,7 @@ namespace :delayed_job do
       within release_path do
         with rails_env: fetch(:rails_env) do
           execute :bundle, :exec, :'script/delayed_job', args, :start
-          sudo "/usr/bin/monit monitor delayed_job" rescue nil
+          # sudo "/usr/bin/monit monitor delayed_job" rescue nil
         end
       end
     end
