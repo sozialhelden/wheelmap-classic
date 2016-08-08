@@ -35,9 +35,9 @@ set :bundle_jobs, 4
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 set :linked_dirs, %w{ log tmp/var tmp/osmosis-working-dir tmp/cache tmp/sockets tmp/pids vendor/bundle public/system public/assets node_modules }
 
-set :rbenv_type, :system # :user or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.2.2'
-set :rbenv_custom_path, '/opt/rbenv'
+# set :rbenv_type, :system # :user or :system, depends on your rbenv setup
+# set :rbenv_ruby, '2.2.2'
+# set :rbenv_custom_path, '/opt/rbenv'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -52,21 +52,21 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
-      sudo "/etc/init.d/unicorn_#{fetch(:stage)} upgrade"
+      sudo "systemctl restart unicorn.service"
     end
   end
 
   desc 'Stopp application'
   task :stop do
     on roles(:app), in: :sequence, wait: 5 do
-      sudo "/etc/init.d/unicorn_#{fetch(:stage)} stop"
+      sudo "systemctl stop unicorn.service"
     end
   end
 
   desc 'Start application'
   task :start do
     on roles(:app), in: :sequence, wait: 5 do
-      sudo "/etc/init.d/unicorn_#{fetch(:stage)} start"
+      sudo "systemctl start unicorn.service"
     end
   end
 
