@@ -9,3 +9,5 @@ services:
       - .:/opt/wheelmap
   db:
     image: mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes

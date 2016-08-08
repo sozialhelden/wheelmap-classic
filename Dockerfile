@@ -1,37 +1,22 @@
-FROM ruby:2.2-alpine
+FROM ruby:2.2
+
+RUN curl -sL https://deb.nodesource.com/setup_4.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get autoremove -y
 
 ENV WHEELMAP_DIR /opt/wheelmap
 
 RUN mkdir -p $WHEELMAP_DIR
 WORKDIR ${WHEELMAP_DIR}
 
-# Install bundle
-RUN apk add --no-cache --update --virtual .bundle-install-deps \
-        git \
-        nodejs \
-        build-base \
-        mysql-dev \
-        libxml2-dev \
-        libxslt-dev \
-        imagemagick-dev \
-        linux-headers
-
 ADD Gemfile Gemfile
 ADD Gemfile.lock Gemfile.lock
+
+RUN bundle install
+
 ADD package.json package.json
 
-RUN bundle config build.nokogiri --use-system-libraries
-RUN bundle install
 RUN npm install
-
-RUN apk del .bundle-install-deps
-
-RUN apk add --no-cache --update \
-        libxml2-dev \
-        libxslt-dev \
-        nodejs \
-        imagemagick-dev \
-        mysql-dev
 
 CMD bundle exec rails server
 
