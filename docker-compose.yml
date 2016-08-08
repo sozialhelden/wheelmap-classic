@@ -7,7 +7,7 @@ services:
       - db
     volumes:
       - .:/opt/wheelmap
+    ports:
+      - 3000:3000
   db:
-    image: mysql
-    environment:
-      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    build: ./db
