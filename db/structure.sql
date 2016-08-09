@@ -238,7 +238,7 @@ CREATE TABLE `queued_nodes` (
 CREATE TABLE `regions` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `grenze` multipolygon NOT NULL,
+  `grenze` geometry NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `parent_id` bigint(20) DEFAULT NULL,
