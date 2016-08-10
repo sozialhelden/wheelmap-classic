@@ -19,7 +19,7 @@ set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
 role :app,    %w{192.168.33.10}
 role :web,    %w{192.168.33.10}
-#role :db,     %w{192.168.33.13}
+role :db,     %w{192.168.33.13}
 role :worker, %w{192.168.33.10}
 #
 # role :app,    %w{176.9.63.171}
