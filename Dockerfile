@@ -12,6 +12,8 @@ WORKDIR ${WHEELMAP_DIR}
 ADD Gemfile Gemfile
 ADD Gemfile.lock Gemfile.lock
 
+RUN cd /usr/local/lib/ruby && grep -l -ri ':DoNotReverseLookup *=> nil' * | xargs sed -i "s/:DoNotReverseLookup *=> nil/:DoNotReverseLookup => true/"
+
 RUN bundle install
 
 ADD package.json package.json
