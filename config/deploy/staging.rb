@@ -45,7 +45,7 @@ role :worker, %w{192.168.33.10}
 # Global options
 # --------------
 set :ssh_options, {
-  keys: %w(~/.ssh/wheelmap_rsa),
+  keys: %w(~/.ssh/sozialhelden_chef_id_rsa),
   forward_agent: true,
   config: true,
   port: 22
