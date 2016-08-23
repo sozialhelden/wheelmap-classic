@@ -19,8 +19,8 @@ set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
 # role :app,    %w{192.168.33.10}
 # role :web,    %w{192.168.33.10}
-# role :db,     %w{192.168.33.13}
-role :worker, %w{192.168.33.17}
+role :db,     %w{192.168.33.13}
+role :worker, %w{192.168.33.18}
 #
 # role :app,    %w{176.9.63.171}
 # role :web,    %w{176.9.63.171}
@@ -33,7 +33,8 @@ role :worker, %w{192.168.33.17}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server '192.168.33.17', user: 'deploy', roles: %w{worker}#, my_property: :my_value
+server '192.168.33.13', user: 'deploy', roles: %w{db}#, my_property: :my_value
+server '192.168.33.18', user: 'deploy', roles: %w{worker}#, my_property: :my_value
 # server '176.9.63.171', user: 'rails', roles: %w{web app}, my_property: :my_value
 
 
