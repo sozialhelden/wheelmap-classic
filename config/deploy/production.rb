@@ -6,7 +6,7 @@ set :rails_env, "production" #added for delayed job
 set :stage, :production
 set :deploy_to, "/var/apps/#{fetch(:application)}/#{fetch(:stage)}"
 
-set :branch, :production
+set :branch, :"feature/infrastructure-rebuild/deployment"
 set :rev, proc { `git rev-parse --short #{fetch(:branch)}`.chomp }
 
 # Simple Role Syntax
@@ -15,10 +15,10 @@ set :rev, proc { `git rev-parse --short #{fetch(:branch)}`.chomp }
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app,    %w{176.9.63.170}
-role :web,    %w{176.9.63.170}
-role :db,     %w{176.9.63.170}
-role :worker, %w{176.9.63.170}
+#role :app,    %w{176.9.63.170}
+#role :web,    %w{176.9.63.170}
+#role :db,     %w{176.9.63.170}
+#role :worker, %w{176.9.63.170}
 
 # Extended Server Syntax
 # ======================
@@ -26,8 +26,10 @@ role :worker, %w{176.9.63.170}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server '176.9.63.170', user: 'rails', roles: %w{web app db worker}, port: 22022
-
+server 'app0.node.consul', user: 'deploy', roles: %w{web app}, port: 22
+server 'app1.node.consul', user: 'deploy', roles: %w{web app}, port: 22
+#server 'worker.node.consul', user: 'deploy', roles: %w{worker}, port: 22
+#server 'mysql.node.consul', user: 'wheelmap', roles: %w{mysql}, port: 22
 
 # Custom SSH Options
 # ==================
@@ -36,13 +38,13 @@ server '176.9.63.170', user: 'rails', roles: %w{web app db worker}, port: 22022
 #
 # Global options
 # --------------
-set :ssh_options, {
-  keys: %w(~/.ssh/wheelmap_rsa),
-  forward_agent: true,
-  config: true,
-  port: 22022
-  # auth_methods: %w(password)
-}
+#set :ssh_options, {
+#  keys: %w(~/.ssh/wheelmap_rsa),
+#  forward_agent: true,
+#  config: true,
+#  port: 22022
+#  # auth_methods: %w(password)
+#}
 #
 # And/or per server (overrides global)
 # ------------------------------------
