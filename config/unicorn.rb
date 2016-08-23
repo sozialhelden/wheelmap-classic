@@ -25,7 +25,7 @@ timeout env == 'production' ? 300 : 30
 
 # This is where we specify the socket.
 # We will point the upstream Nginx module to this socket later on
-listen "#{shared_path}/unicorn.sock", backlog: 1024
+listen 3000, :backlog => 1024
 
 pid "#{shared_path}/pids/unicorn.pid"
 
