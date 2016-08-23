@@ -28,7 +28,7 @@ set :rev, proc { `git rev-parse --short #{fetch(:branch)}`.chomp }
 
 server 'app0.node.consul', user: 'deploy', roles: %w{app}, port: 22
 server 'app1.node.consul', user: 'deploy', roles: %w{app}, port: 22
-server 'asset.node.consul', user: 'deploy', roles: %w{web}, port: 22
+#server 'asset.node.consul', user: 'deploy', roles: %w{web}, port: 22
 #server 'worker.node.consul', user: 'deploy', roles: %w{worker}, port: 22
 #server 'mysql.node.consul', user: 'wheelmap', roles: %w{mysql}, port: 22
 
