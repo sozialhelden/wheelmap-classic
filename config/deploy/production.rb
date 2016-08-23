@@ -4,7 +4,7 @@ set :delayed_job_args, '-p wheelmap_production'
 set :rails_env, 'production' # added for delayed job
 
 set :stage, :production
-set :deploy_to, "/var/apps/#{fetch(:application)}/#{fetch(:stage)}"
+set :deploy_to, "/var/apps/#{fetch(:application)}/"
 
 set :branch, :"feature/infrastructure-rebuild/deployment"
 set :rev, proc { `git rev-parse --short #{fetch(:branch)}`.chomp }
