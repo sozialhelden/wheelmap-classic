@@ -45,27 +45,63 @@ set :rbenv_custom_path, '/opt/rbenv'
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
+
+# Clear existing task so we can replace it rather than "add" to it.
+Rake::Task["deploy:compile_assets"].clear
+
 namespace :deploy do
+
+  desc 'Compile assets'
+  task :compile_assets => [:set_rails_env] do
+    # invoke 'deploy:assets:precompile'
+    invoke 'deploy:assets:precompile_local'
+    invoke 'deploy:assets:backup_manifest'
+  end
+
+  namespace :assets do
+
+    desc "Precompile assets locally and then rsync to web servers"
+    task :precompile_local do
+      # compile assets locally
+      run_locally do
+        execute "RAILS_ENV=#{fetch(:stage)} bundle exec rake assets:precompile"
+      end
+
+      # rsync to each server
+      local_dir = "./public/assets/"
+      on roles(:asset) do
+        # this needs to be done outside run_locally in order for host to exist
+        remote_dir = "#{host.user}@#{host.hostname}:#{release_path}/public/assets/"
+
+        run_locally { execute "rsync -av --delete #{local_dir} #{remote_dir}" }
+      end
+
+      # clean up
+      run_locally { execute "rm -rf #{local_dir}" }
+    end
+
+  end
+
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
-      sudo "/etc/init.d/unicorn_#{fetch(:stage)} upgrade"
+      sudo "systemctl restart unicorn.service"
     end
   end
 
   desc 'Stopp application'
   task :stop do
     on roles(:app), in: :sequence, wait: 5 do
-      sudo "/etc/init.d/unicorn_#{fetch(:stage)} stop"
+      sudo "systemctl stop unicorn.service"
     end
   end
 
   desc 'Start application'
   task :start do
     on roles(:app), in: :sequence, wait: 5 do
-      sudo "/etc/init.d/unicorn_#{fetch(:stage)} start"
+      sudo "systemctl start unicorn.service"
     end
   end
 
