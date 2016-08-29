@@ -23,7 +23,15 @@ set :log_level, :debug
 set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w(config/database.yml config/open_street_map.yml config/metrics.yml config/librato.yml config/newrelic.yml .env config/secrets.yml)
+set :linked_files, -> {
+  if [:app, :worker].include?(fetch(:role))
+    %w{ config/database.yml config/open_street_map.yml config/metrics.yml config/librato.yml config/newrelic.yml .env config/secrets.yml}
+  else
+    []
+  end
+}
+
+set :bundle_roles, [:app, :worker]
 
 # Default value for :bundle_without is %w{development test}.join(' ')
 set :bundle_without, %w(development test metrics deployment).join(' ')
@@ -33,14 +41,13 @@ set :bundle_jobs, 4
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-set :linked_dirs, %w(log tmp/var tmp/osmosis-working-dir tmp/cache tmp/sockets tmp/pids vendor/bundle public/system public/assets node_modules)
-
-set :rbenv_type, :system # :user or :system, depends on your rbenv setup
-set :rbenv_ruby, '2.2.2'
-set :rbenv_custom_path, '/opt/rbenv'
-
-# Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+set :linked_dirs, -> {
+  if [:app, :worker].include?(fetch(:role))
+    %w{ log tmp/var tmp/osmosis-working-dir tmp/cache tmp/sockets tmp/pids vendor/bundle public/system public/assets node_modules }
+  else
+    []
+  end
+}
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
@@ -67,7 +74,7 @@ namespace :deploy do
         execute "RAILS_ENV=#{fetch(:stage)} bundle exec rake assets:precompile"
       end
 
-      # rsync to each server
+      # rsync to asset server
       local_dir = "./public/assets/"
       on roles(:asset) do
         # this needs to be done outside run_locally in order for host to exist
