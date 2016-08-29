@@ -94,21 +94,21 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
-      sudo "systemctl restart unicorn.service"
+      sudo "systemctl restart webapp.service"
     end
   end
 
   desc 'Stopp application'
   task :stop do
     on roles(:app), in: :sequence, wait: 5 do
-      sudo "systemctl stop unicorn.service"
+      sudo "systemctl stop webapp.service"
     end
   end
 
   desc 'Start application'
   task :start do
     on roles(:app), in: :sequence, wait: 5 do
-      sudo "systemctl start unicorn.service"
+      sudo "systemctl start webapp.service"
     end
   end
 
