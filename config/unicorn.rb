@@ -25,7 +25,7 @@ timeout env == 'production' ? 300 : 30
 
 listen 3000, :backlog => 1024
 
-pid = "#{shared_path}/pids/unicorn.pid"
+pid "#{shared_path}/pids/unicorn.pid"
 
 ## Set the path of the log files inside the log folder of the testapp
 #stdout_path "#{shared_path}/log/unicorn.stdout.log"
