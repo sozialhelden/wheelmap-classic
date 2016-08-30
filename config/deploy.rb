@@ -23,13 +23,7 @@ set :log_level, :debug
 set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, -> {
-  if [:app, :worker].include?(fetch(:role))
-    %w{ config/database.yml config/open_street_map.yml config/metrics.yml config/librato.yml config/newrelic.yml .env config/secrets.yml}
-  else
-    []
-  end
-}
+set :linked_files, %w{ config/database.yml config/open_street_map.yml config/metrics.yml config/librato.yml config/newrelic.yml .env config/secrets.yml}
 
 
 set :bundle_roles, [:app, :worker]
@@ -39,13 +33,7 @@ set :bundle_binstubs, -> { shared_path.join('bin') }
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-set :linked_dirs, -> {
-  if [:app, :worker].include?(fetch(:role))
-    %w{ log tmp/var tmp/osmosis-working-dir tmp/cache tmp/sockets tmp/pids vendor/bundle public/system public/assets node_modules }
-  else
-    []
-  end
-}
+set :linked_dirs, %w{ log tmp/var tmp/osmosis-working-dir tmp/cache tmp/sockets tmp/pids vendor/bundle public/system public/assets node_modules }
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
@@ -77,7 +65,7 @@ namespace :deploy do
       on roles(:asset) do
         # this needs to be done outside run_locally in order for host to exist
         remote_dir = "#{host.user}@#{host.hostname}:#{release_path}/public/assets/"
-
+        execute "mkdir -p #{release_path}/public/assets/"
         run_locally { execute "rsync -av --delete #{local_dir} #{remote_dir}" }
       end
 
