@@ -31,13 +31,11 @@ set :linked_files, -> {
   end
 }
 
+
 set :bundle_roles, [:app, :worker]
-
-# Default value for :bundle_without is %w{development test}.join(' ')
 set :bundle_without, %w{ development test metrics deployment }.join(' ')
-
-# Default value for :bundle_jobs is: nil
 set :bundle_jobs, 4
+set :bundle_binstubs, -> { shared_path.join('bin') }
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
@@ -141,6 +139,6 @@ namespace :deploy do
     end
   end
 
-  after :finished, 'airbrake:deploy'
-  after :finished, 'newrelic:notice_deployment'
+#  after :finished, 'airbrake:deploy'
+#  after :finished, 'newrelic:notice_deployment'
 end
