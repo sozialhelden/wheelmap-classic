@@ -33,7 +33,7 @@ set :bundle_binstubs, -> { shared_path.join('bin') }
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-set :linked_dirs, %w{ log tmp/var tmp/osmosis-working-dir tmp/cache tmp/sockets tmp/pids vendor/bundle public/system public/assets node_modules }
+set :linked_dirs, %w{ log tmp vendor/bundle public/system public/assets node_modules }
 
 # Default value for keep_releases is 5
 set :keep_releases, 5
