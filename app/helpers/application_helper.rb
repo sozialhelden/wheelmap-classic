@@ -107,7 +107,7 @@ module ApplicationHelper
     if I18n.locale == :de
       "//news.wheelmap.org/presse/"
     else
-      "//news.wheelmap.org/en/press"
+      "//news.wheelmap.org/en/press/"
     end
   end
 
@@ -137,17 +137,17 @@ module ApplicationHelper
 
   def community_about_url
     if I18n.locale == :de
-      "//news.wheelmap.org/about/"
+      "//news.wheelmap.org/faq"
     else
-      "//news.wheelmap.org/en/about/"
+      "//news.wheelmap.org/en/faq"
     end
   end
 
   def community_newsletter_url
     if I18n.locale == :de
-      "//news.wheelmap.org/newsletter/"
+      "//news.wheelmap.org/kontakt/"
     else
-      "//news.wheelmap.org/newsletter-2/"
+      "//news.wheelmap.org/contact/"
     end
   end
 
