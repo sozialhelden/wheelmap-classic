@@ -50,9 +50,9 @@ module ApplicationHelper
 
   def link_to_participate
     if I18n.locale == :de
-      link_to( t('how?'), "//news.wheelmap.org/mitmachen", :target => '_blank')
+      link_to( t('how?'), "//news.wheelmap.org/botschafter-werden/", :target => '_blank')
     else
-      link_to( t('how?'), "//news.wheelmap.org/en/participate", :target => '_blank')
+      link_to( t('how?'), "//news.wheelmap.org/en/become-a-wheelmap-ambassador/", :target => '_blank')
     end
   end
 
@@ -97,17 +97,17 @@ module ApplicationHelper
 
   def community_blog_url
     if I18n.locale == :de
-      "//news.wheelmap.org/blog/"
+      "//news.wheelmap.org/news/"
     else
-      "//news.wheelmap.org/en/blog/"
+      "//news.wheelmap.org/en/news/"
     end
   end
 
   def community_press_url
     if I18n.locale == :de
-      "//news.wheelmap.org/about/presse/"
+      "//news.wheelmap.org/presse/"
     else
-      "//news.wheelmap.org/en/about/press/"
+      "//news.wheelmap.org/en/press"
     end
   end
 
@@ -121,9 +121,9 @@ module ApplicationHelper
 
   def community_projects_url
     if I18n.locale == :de
-      "//news.wheelmap.org/projekte/"
+      "//news.wheelmap.org/wheelmap-botschafter-werden/"
     else
-      "//news.wheelmap.org/en/get-engaged/"
+      "//news.wheelmap.org/en/become-a-wheelmap-ambassador/"
     end
   end
 
