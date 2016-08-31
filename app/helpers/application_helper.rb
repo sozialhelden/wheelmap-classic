@@ -50,9 +50,9 @@ module ApplicationHelper
 
   def link_to_participate
     if I18n.locale == :de
-      link_to( t('how?'), "//community.wheelmap.org/mitmachen", :target => '_blank')
+      link_to( t('how?'), "//news.wheelmap.org/mitmachen", :target => '_blank')
     else
-      link_to( t('how?'), "//community.wheelmap.org/en/participate", :target => '_blank')
+      link_to( t('how?'), "//news.wheelmap.org/en/participate", :target => '_blank')
     end
   end
 
@@ -97,57 +97,57 @@ module ApplicationHelper
 
   def community_blog_url
     if I18n.locale == :de
-      "//community.wheelmap.org/blog/"
+      "//news.wheelmap.org/blog/"
     else
-      "//community.wheelmap.org/en/blog/"
+      "//news.wheelmap.org/en/blog/"
     end
   end
 
   def community_press_url
     if I18n.locale == :de
-      "//community.wheelmap.org/about/presse/"
+      "//news.wheelmap.org/about/presse/"
     else
-      "//community.wheelmap.org/en/about/press/"
+      "//news.wheelmap.org/en/about/press/"
     end
   end
 
   def community_contact_url
     if I18n.locale == :de
-      "//community.wheelmap.org/kontakt/"
+      "//news.wheelmap.org/kontakt/"
     else
-      "//community.wheelmap.org/en/contact/"
+      "//news.wheelmap.org/en/contact/"
     end
   end
 
   def community_projects_url
     if I18n.locale == :de
-      "//community.wheelmap.org/projekte/"
+      "//news.wheelmap.org/projekte/"
     else
-      "//community.wheelmap.org/en/get-engaged/"
+      "//news.wheelmap.org/en/get-engaged/"
     end
   end
 
   def community_imprint_url
     if I18n.locale == :de
-      "//community.wheelmap.org/impressum/"
+      "//news.wheelmap.org/impressum/"
     else
-      "//community.wheelmap.org/en/imprint/"
+      "//news.wheelmap.org/en/imprint/"
     end
   end
 
   def community_about_url
     if I18n.locale == :de
-      "//community.wheelmap.org/about/"
+      "//news.wheelmap.org/about/"
     else
-      "//community.wheelmap.org/en/about/"
+      "//news.wheelmap.org/en/about/"
     end
   end
 
   def community_newsletter_url
     if I18n.locale == :de
-      "//community.wheelmap.org/newsletter/"
+      "//news.wheelmap.org/newsletter/"
     else
-      "//community.wheelmap.org/newsletter-2/"
+      "//news.wheelmap.org/newsletter-2/"
     end
   end
 

@@ -3,7 +3,7 @@ Wheelmap.NodePopupView = Ember.View.extend
   classNames: ['node-popup-view']
 
   aboutFaqLink: (()->
-    if I18n.locale == 'de' then '//community.wheelmap.org/about/faqs/' else '//community.wheelmap.org/en/faqs/'
+    if I18n.locale == 'de' then '//news.wheelmap.org/about/faqs/' else '//news.wheelmap.org/en/faqs/'
   ).property()
 
   linkTarget: (()->
