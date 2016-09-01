@@ -15,10 +15,6 @@ set :rev, proc { `git rev-parse --short #{fetch(:branch)}`.chomp }
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-#role :app,    %w{176.9.63.170}
-#role :web,    %w{176.9.63.170}
-#role :db,     %w{176.9.63.170}
-#role :worker, %w{176.9.63.170}
 
 # Extended Server Syntax
 # ======================
