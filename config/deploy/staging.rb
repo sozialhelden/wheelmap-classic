@@ -3,7 +3,7 @@ set :delayed_job_server_role, :worker
 set :delayed_job_args, "-p wheelmap_staging"
 set :rails_env, "staging" #added for delayed job
 
-set :stage, :production
+set :stage, :staging
 set :deploy_to, "/var/apps/#{fetch(:application)}/"
 
 set :branch, :"feature/infrastructure-rebuild"
