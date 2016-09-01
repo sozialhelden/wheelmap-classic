@@ -3,13 +3,11 @@ set :delayed_job_server_role, :worker
 set :delayed_job_args, "-p wheelmap_staging"
 set :rails_env, "staging" #added for delayed job
 
-set :stage, :staging
-set :deploy_to, "/var/apps/#{fetch(:application)}/#{fetch(:stage)}"
+set :stage, :production
+set :deploy_to, "/var/apps/#{fetch(:application)}/"
 
-set :branch, ENV['BRANCH'] || 'master'
+set :branch, :"feature/infrastructure-rebuild"
 set :rev, proc { `git rev-parse --short #{fetch(:branch)}`.chomp }
-
-set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
 # Simple Role Syntax
 # ==================
@@ -17,10 +15,10 @@ set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app,    %w{176.9.63.171}
-role :web,    %w{176.9.63.171}
-role :db,     %w{176.9.63.171}
-role :worker, %w{176.9.63.171}
+#role :app,    %w{176.9.63.170}
+#role :web,    %w{176.9.63.170}
+#role :db,     %w{176.9.63.170}
+#role :worker, %w{176.9.63.170}
 
 # Extended Server Syntax
 # ======================
@@ -28,8 +26,11 @@ role :worker, %w{176.9.63.171}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server '176.9.63.171', user: 'rails', roles: %w{web app}, my_property: :my_value
-
+server 'app0.node.staging', user: 'deploy', roles: %w{app}, port: 22
+server 'app1.node.staging', user: 'deploy', roles: %w{app}, port: 22
+server 'asset.node.staging', user: 'deploy', roles: %w{asset}, port: 22, :no_release => true
+server 'worker.node.staging', user: 'deploy', roles: %w{worker}, port: 22
+#server 'mysql.node.production', user: 'wheelmap', roles: %w{mysql}, port: 22
 
 # Custom SSH Options
 # ==================
@@ -38,13 +39,13 @@ server '176.9.63.171', user: 'rails', roles: %w{web app}, my_property: :my_value
 #
 # Global options
 # --------------
-set :ssh_options, {
-  keys: %w(~/.ssh/wheelmap_rsa),
-  forward_agent: true,
-  config: true,
-  port: 22022
-  # auth_methods: %w(password)
-}
+#set :ssh_options, {
+#  keys: %w(~/.ssh/wheelmap_rsa),
+#  forward_agent: true,
+#  config: true,
+#  port: 22022
+#  # auth_methods: %w(password)
+#}
 #
 # And/or per server (overrides global)
 # ------------------------------------
