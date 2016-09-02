@@ -2,7 +2,7 @@
   .content
     = semantic_form_for current_user, :url => terms_profile_path do |form|
 
-      - terms_blog_url = I18n.locale == :de ? '//community.wheelmap.org/impressum/nutzungsbedingungen/' : '//community.wheelmap.org/en/imprint/terms-of-use/'
+      - terms_blog_url = I18n.locale == :de ? '//news.wheelmap.org/nutzungsbedingungen/' : '//news.wheelmap.org/en/terms-of-use/'
       %iframe{:align => 'center', :src => terms_blog_url, :width => '100%', :height => '300', :frameborder => '0', :seamless => 'seamless'}
 
       .row-fluid
@@ -10,7 +10,7 @@
           = form.input :terms
 
       .mt30
-        - privacy_blog_url = I18n.locale == :de ? '//community.wheelmap.org/impressum/datenschutzerklarung/' : '//community.wheelmap.org/en/imprint/privacy/'
+        - privacy_blog_url = I18n.locale == :de ? '//news.wheelmap.org/datenschutz/' : '//news.wheelmap.org/en/privacy/'
         %iframe{:align => 'center', :src => privacy_blog_url, :width => '100%', :height => '300', :frameborder => '0', :seamless => 'seamless'}
 
       .row-fluid
