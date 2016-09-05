@@ -1,9 +1,9 @@
-jest.unmock('../WidgetBuilder');
-
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
 import WidgetBuilder from '../WidgetBuilder';
+
+jest.unmock('../WidgetBuilder');
 
 describe('React Widget component', function () {
   it('loads correctly', function () {

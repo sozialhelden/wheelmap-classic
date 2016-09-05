@@ -48,9 +48,10 @@
   },
   "devDependencies": {
     "babel-jest": "^12.1.0",
-    "eslint": "^2.12.0",
+    "eslint": "^3.3.1",
     "eslint-config-blogfoster": "^1.3.2",
     "eslint-plugin-import": "^1.9.2",
+    "eslint-plugin-jsx-a11y": "^2.1.0",
     "jasmine-core": "^2.4.1",
     "jasmine-immutable-matchers": "^1.0.1",
     "jest-cli": "^12.1.1"

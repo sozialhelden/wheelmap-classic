@@ -1,11 +1,11 @@
-jest.unmock('../initNode');
-
 import { NAME_CATEGORY } from '../../models/sections';
 import { ENTER_CONTENT, changeNode, changeMapCenter, load, setErrors } from '../../actions';
 import { replace } from '../../../common/actions/router';
 import Node from '../../../common/models/Node';
 import { validateNode, HTTPError } from '../../../common/helpers/api';
 import initNode from '../initNode';
+
+jest.unmock('../initNode');
 
 describe('initNode', () => {
   it('redirects to name & category section if no node in query', () => {

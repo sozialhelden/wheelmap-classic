@@ -9,7 +9,7 @@ import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { stringify, parse } from './common/helpers/query';
+import { stringify, parseString } from './common/helpers/query';
 import WidgetBuilder from './WidgetBuilder/App';
 import NewNodeWidget from './NewNodeWidget/App';
 
@@ -22,5 +22,5 @@ global.Wheelmap = {
 
   // Used for Rails JS routes query parameter serializing
   stringifyQuery: stringify,
-  parseQueryString: parse
+  parseQueryString: parseString
 };

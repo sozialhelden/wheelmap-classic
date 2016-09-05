@@ -5,7 +5,7 @@ import * as selectors from '../selectors';
 import { push } from '../../common/actions/router';
 
 // Navigate to a specific section (e.g. via the breadcrumbs or the overview section)
-export default function *navigateToSection() {
+export default function* navigateToSection() {
   while (true) {
     const { payload: section } = yield take(NAVIGATE_TO_SECTION);
 
@@ -15,14 +15,12 @@ export default function *navigateToSection() {
     const activeIndex = sections.indexOf(activeSection);
 
     // Move only back in history
-    if (activeIndex < index) {
-      continue;
+    if (activeIndex > index) {
+      const node = yield select(selectors.node);
+      const serializedNode = yield call([ node, node.serialize ]);
+
+      // Push new node section path
+      yield put(push.newNodeSectionPath(section, serializedNode));
     }
-
-    const node = yield select(selectors.node);
-    const serializedNode = yield call([ node, node.serialize ]);
-
-    // Push new node section path
-    yield put(push.newNodeSectionPath(section, serializedNode));
   }
 }

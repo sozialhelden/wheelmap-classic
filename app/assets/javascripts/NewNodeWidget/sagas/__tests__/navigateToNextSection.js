@@ -1,5 +1,3 @@
-jest.unmock('../navigateToNextSection');
-
 import { List } from 'immutable';
 
 import { NAVIGATE_TO_NEXT_SECTION, setErrors, load } from '../../actions';
@@ -9,6 +7,8 @@ import { validateNode, HTTPError } from '../../../common/helpers/api';
 import Node from '../../../common/models/Node';
 import { NAME_CATEGORY, ADDRESS } from '../../models/sections';
 import navigateToNextSection from '../navigateToNextSection';
+
+jest.unmock('../navigateToNextSection');
 
 describe('navigateToNextSection', () => {
   it('navigates to next section', () => {

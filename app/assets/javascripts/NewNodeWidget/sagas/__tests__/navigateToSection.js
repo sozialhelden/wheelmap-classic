@@ -1,5 +1,3 @@
-jest.unmock('../navigateToSection');
-
 import { List } from 'immutable';
 
 import { NAVIGATE_TO_SECTION } from '../../actions';
@@ -8,6 +6,8 @@ import { NAME_CATEGORY, ADDRESS } from '../../models/sections';
 import Node from '../../../common/models/Node';
 import { push } from '../../../common/actions/router';
 import navigateToSection from '../navigateToSection';
+
+jest.unmock('../navigateToSection');
 
 describe('navigateToSection', () => {
   let gen;

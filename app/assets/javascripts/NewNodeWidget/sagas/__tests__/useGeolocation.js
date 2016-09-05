@@ -1,5 +1,3 @@
-jest.unmock('../useGeolocation');
-
 import { load, changeMapCenter, changeMapZoom } from '../../actions';
 import { node as nodeSelector } from '../../selectors';
 import activeSection from '../activeSection';
@@ -7,6 +5,8 @@ import { ADDRESS } from '../../models/sections';
 import geolocation from '../../../common/helpers/geolocation';
 import Node from '../../../common/models/Node';
 import useGeolocation from '../useGeolocation';
+
+jest.unmock('../useGeolocation');
 
 describe('useGeolocation', () => {
   let gen;

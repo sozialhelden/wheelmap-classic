@@ -24,12 +24,12 @@ class WidgetBuilderPreview extends Component {
     const prevWidget = prevProps.widget;
 
     if (widget.src !== prevWidget.src || widget.categories !== prevWidget.categories) {
-      this.refs.iframe.contentWindow.location.reload();
+      this.iframe.contentWindow.location.reload();
     }
   }
 
   render() {
-    let { width, height, src } = this.props.widget;
+    const { width, height, src } = this.props.widget;
 
     return (
       <div className="user-widget-preview">
@@ -37,7 +37,13 @@ class WidgetBuilderPreview extends Component {
           <I18n scope="users.profile.widget.legends.preview" />
         </h5>
         <div className="user-widget-preview-area">
-          <iframe className="user-widget-preview-frame" width={width} height={height} src={src} ref="iframe" />
+          <iframe
+            className="user-widget-preview-frame"
+            width={width}
+            height={height}
+            src={src}
+            ref={iframe => (this.iframe = iframe)}
+          />
         </div>
       </div>
     );

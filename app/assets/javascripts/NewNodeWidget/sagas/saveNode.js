@@ -6,7 +6,7 @@ import { node as nodeSelector } from '../selectors';
 import * as api from '../../common/helpers/api';
 import redirect from '../../common/helpers/redirect';
 
-export default function *saveNode() {
+export default function* saveNode() {
   yield take(SAVE_NODE);
 
   const node = yield select(nodeSelector);

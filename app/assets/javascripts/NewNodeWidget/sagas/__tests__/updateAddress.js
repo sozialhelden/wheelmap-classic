@@ -1,5 +1,3 @@
-jest.unmock('../updateAddress');
-
 import { SagaCancellationException } from 'redux-saga';
 import { createMockTask } from 'redux-saga/utils';
 
@@ -8,6 +6,8 @@ import { node as nodeSelector } from '../../selectors';
 import { reverseGeocode } from '../../../common/helpers/photon';
 import Node from '../../../common/models/Node';
 import cancelUpdateAddressTask, { updateAddress } from '../updateAddress';
+
+jest.unmock('../updateAddress');
 
 describe('cancelUpdateAddressTask', () => {
   it('fork updateAddress and cancel it when the node address was changed', () => {

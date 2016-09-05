@@ -7,7 +7,7 @@ import geolocation from '../../common/helpers/geolocation';
 
 import activeSection from './activeSection';
 
-export default function *useGeolocation() {
+export default function* useGeolocation() {
   yield take(activeSection(sections.ADDRESS));
 
   const node = yield select(nodeSelector);

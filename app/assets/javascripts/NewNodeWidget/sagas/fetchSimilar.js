@@ -9,7 +9,7 @@ import Node from '../../common/models/Node';
 import activeSection from './activeSection';
 
 // Fetch similar nodes when the user visits the similar node section.
-export default function *fetchSimilar() {
+export default function* fetchSimilar() {
   while (true) {
     yield take(activeSection(SIMILAR_NODES));
 

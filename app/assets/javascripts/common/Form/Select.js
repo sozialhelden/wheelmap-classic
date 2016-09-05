@@ -25,7 +25,7 @@ function createItems(options) {
 }
 
 function Select({ options, empty, ...props }) {
-  let items = createItems(options);
+  const items = createItems(options);
 
   if (empty != null) {
     items.unshift(<option value="">{empty}</option>);
