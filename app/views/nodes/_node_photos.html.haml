@@ -1,6 +1,6 @@
 %section.node-photos
   %h2=t('.photos_of_this_place')
-  - if user_signed_in? and current_user.terms?
+  - if user_signed_in? && current_user.terms?
     .alert.alert-icon
       = fa_icon 'exclamation-sign'
       = t('.alert')
