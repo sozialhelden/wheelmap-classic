@@ -97,9 +97,9 @@ module ApplicationHelper
 
   def community_blog_url
     if I18n.locale == :de
-      "//news.wheelmap.org/news/"
+      "//news.wheelmap.org/#news"
     else
-      "//news.wheelmap.org/en/news/"
+      "//news.wheelmap.org/en/#news"
     end
   end
 
