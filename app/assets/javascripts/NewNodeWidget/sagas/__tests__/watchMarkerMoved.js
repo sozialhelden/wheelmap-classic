@@ -1,9 +1,9 @@
-jest.unmock('../watchMarkerMoved');
-
 import { MARKER_MOVED, changeNode } from '../../actions';
 import { node as nodeSelector } from '../../selectors';
 import Node from '../../../common/models/Node';
 import watchMakerMoved from '../watchMarkerMoved';
+
+jest.unmock('../watchMarkerMoved');
 
 describe('watchMakerMoved', () => {
   it('changes node when marker was moved', () => {

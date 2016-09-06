@@ -116,16 +116,22 @@ class AddressSection extends Component {
                 <Form.Controls>
                   <Row>
                     <Row.Span rows={3}>
-                      <label><I18n scope="activerecord.attributes.poi.address_postcode" /></label>
+                      <label htmlFor="postcode">
+                        <I18n scope="activerecord.attributes.poi.address_postcode" />
+                      </label>
                       <FormInput
+                        id="postcode"
                         name="postcode"
                         onChange={this.onChange}
                         value={node.postcode}
                       />
                     </Row.Span>
                     <Row.Span rows={9}>
-                      <label><I18n scope="activerecord.attributes.poi.address_city" /></label>
+                      <label htmlFor="city">
+                        <I18n scope="activerecord.attributes.poi.address_city" />
+                      </label>
                       <FormInput
+                        id="city"
                         name="city"
                         onChange={this.onChange}
                         value={node.city}
@@ -136,10 +142,13 @@ class AddressSection extends Component {
                 <Form.Controls>
                   <Row>
                     <Row.Span rows={12}>
-                      <label><I18n scope="activerecord.attributes.poi.address_street" /></label>
+                      <label htmlFor="street">
+                        <I18n scope="activerecord.attributes.poi.address_street" />
+                      </label>
                       <Row>
                         <Row.Span rows={10}>
                           <FormInput
+                            id="street"
                             name="street"
                             onChange={this.onChange}
                             value={node.street}

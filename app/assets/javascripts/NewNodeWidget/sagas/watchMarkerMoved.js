@@ -4,7 +4,7 @@ import { MARKER_MOVED, changeNode } from '../actions';
 import { node as nodeSelector } from '../selectors';
 
 // Always update the node position via the map, also when the updateMap saga is canceled.
-export default function *watchMarkerMoved() {
+export default function* watchMarkerMoved() {
   while (true) {
     const { payload: location } = yield take(MARKER_MOVED);
 

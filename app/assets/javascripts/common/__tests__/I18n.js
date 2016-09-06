@@ -1,10 +1,10 @@
-jest.unmock('../I18n');
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 
 import I18n from '../I18n';
+
+jest.unmock('../I18n');
 
 const VALID_KEY = 'valid.key';
 
@@ -24,7 +24,7 @@ describe('React translation component', () => {
   global.I18n = { locale: 'en', t };
 
   it('loads correctly and resolves translations', () => {
-    let key = VALID_KEY;
+    const key = VALID_KEY;
 
     component = TestUtils.renderIntoDocument(
       <div>
@@ -32,7 +32,7 @@ describe('React translation component', () => {
       </div>
     );
 
-    const node = ReactDOM.findDOMNode(component);
+    const node = ReactDOM.findDOMNode(component); // eslint-disable-line react/no-find-dom-node
     const translation = global.I18n.t(key);
 
     expect(node).toBeDefined();
@@ -40,7 +40,7 @@ describe('React translation component', () => {
   });
 
   it('notifies about missing translations', () => {
-    let key = 'invalid.key';
+    const key = 'invalid.key';
 
     component = TestUtils.renderIntoDocument(
       <div>
@@ -48,7 +48,7 @@ describe('React translation component', () => {
       </div>
     );
 
-    const node = ReactDOM.findDOMNode(component).children[0];
+    const node = ReactDOM.findDOMNode(component).children[0]; // eslint-disable-line react/no-find-dom-node
 
     expect(node.textContent).toBe('invalid key');
     expect(node.className).toBe('translation-missing');

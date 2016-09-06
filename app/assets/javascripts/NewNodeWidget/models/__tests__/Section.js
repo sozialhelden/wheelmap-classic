@@ -1,6 +1,6 @@
-jest.unmock('../Section');
-
 const Section = require('../Section').default;
+
+jest.unmock('../Section');
 
 describe('Section', () => {
   it('has toString', () => {

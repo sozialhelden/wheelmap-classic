@@ -6,7 +6,7 @@ import * as selectors from '../selectors';
 import { reverseGeocode } from '../../common/helpers/photon';
 
 // Update the address, when ever the marker was moved.
-export function *updateAddress() {
+export function* updateAddress() {
   try {
     while (true) {
       const { payload: location } = yield take(actions.MARKER_MOVED);
@@ -19,8 +19,10 @@ export function *updateAddress() {
       let node = yield select(selectors.node);
 
       node = yield call([ node, node.merge ], {
-        city, street,
-        postcode, housenumber
+        city,
+        street,
+        postcode,
+        housenumber
       });
 
       yield put(actions.changeNode(node));
@@ -36,7 +38,7 @@ export function *updateAddress() {
 }
 
 // Cancel updateAddress saga when user inputs own node address parts.
-export default function *cancelUpdateAddressTask() {
+export default function* cancelUpdateAddressTask() {
   // Run updateAddress saga until ...
   const updateAddressTask = yield fork(updateAddress);
 

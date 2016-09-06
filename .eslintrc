@@ -21,6 +21,7 @@
     ],
     "import/newline-after-import": [
       "error"
-    ]
+    ],
+    "react/jsx-filename-extension": "off"
   }
 }

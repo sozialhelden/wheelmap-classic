@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 
 import I18n from './I18n';
@@ -33,7 +32,7 @@ class StatusDropdown extends React.Component {
     const scopeNamespace = `${type}status`;
     const popoverScopeNamespace = type === WHEELCHAIR ? 'wheelmap.what_is' : `${scopeNamespace}.what_is`;
 
-    const $questionMarks = $(ReactDOM.findDOMNode(this))
+    const $questionMarks = $(this.item)
       .find('[data-toggle="popover"]');
 
     $questionMarks.popover({
@@ -70,7 +69,7 @@ class StatusDropdown extends React.Component {
       };
 
       return (
-        <Dropdown.Item key={itemStatus}>
+        <Dropdown.Item key={itemStatus} ref={item => (this.item = item)}>
           <a onClick={onClick} className={itemStatus}>
             <span className={className}><i className="icon-ok" /></span>
             <I18n scope={scope} />

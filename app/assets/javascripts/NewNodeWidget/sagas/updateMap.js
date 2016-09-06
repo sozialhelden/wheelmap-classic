@@ -6,7 +6,7 @@ import { geocode } from '../../common/helpers/photon';
 import delay from '../../common/helpers/delayPromise';
 
 // Update map
-export function *updateMap(node) {
+export function* updateMap(node) {
   try {
     yield put(actions.loadNodeCenter(true));
 
@@ -42,7 +42,7 @@ export function *updateMap(node) {
 // This saga itself is not really debouncing the map update, but in combination with the delay in the updateMap saga,
 // we get the desired effect. This two functions need to be devided to don't block the execution between
 // CHANGE_NODE_ADDRESS actions via fork.
-export function *debounceUpdateMap() {
+export function* debounceUpdateMap() {
   try {
     let updateMapTask = null;
 
@@ -66,7 +66,7 @@ export function *debounceUpdateMap() {
 }
 
 // Cancel markerUpdate, when the user moves the marker.
-export default function *cancelUpdateMap() {
+export default function* cancelUpdateMap() {
   // Run updateMap saga until ...
   const updateMapTask = yield fork(debounceUpdateMap);
 

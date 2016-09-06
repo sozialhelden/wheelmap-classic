@@ -27,7 +27,7 @@ const createExtendedStore = applyMiddleware(
   thunkMiddleware,
   promiseMiddleware,
   transitionMiddleware(browserHistory),
-  sagaMiddleware.apply(undefined, sagas)
+  sagaMiddleware(...sagas)
 )(createStore);
 
 class App extends Component {

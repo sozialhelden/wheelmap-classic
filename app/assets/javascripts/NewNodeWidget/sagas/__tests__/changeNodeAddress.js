@@ -1,5 +1,3 @@
-jest.unmock('../changeNodeAddress');
-
 import {
   CHANGE_NODE_ADDRESS,
   changeNode,
@@ -7,6 +5,8 @@ import {
 } from '../../actions';
 import Node from '../../../common/models/Node';
 import changeNodeAddress from '../changeNodeAddress';
+
+jest.unmock('../changeNodeAddress');
 
 describe('changeNodeAddress', () => {
   const generator = changeNodeAddress();

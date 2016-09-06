@@ -1,9 +1,9 @@
-jest.unmock('../Embed');
-
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
 import WidgetBuilderEmbed from '../Embed';
+
+jest.unmock('../Embed');
 
 describe('React WidgetEmbed component', function () {
   it('loads correctly', function () {

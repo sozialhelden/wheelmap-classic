@@ -1,8 +1,8 @@
-jest.unmock('../query');
-
 import { stringify } from 'query-string';
 
 import { insert } from '../query';
+
+jest.unmock('../query');
 
 describe('insert', () => {
   const url = 'http://wheelmap.org/';

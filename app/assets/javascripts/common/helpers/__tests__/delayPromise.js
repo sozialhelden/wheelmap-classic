@@ -1,6 +1,6 @@
-jest.unmock('../delayPromise');
-
 import delayPromise from '../delayPromise';
+
+jest.unmock('../delayPromise');
 
 describe('delayPromise', () => {
   it('resolves after certain delay', () => {

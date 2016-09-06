@@ -1,12 +1,12 @@
-jest.unmock('../widget');
-jest.unmock('../../actions');
-
 import { List, Map } from 'immutable';
 
 import { ADDRESS } from '../../models/sections';
 import * as actions from '../../actions';
 import Node from '../../../common/models/Node';
 import widgetReducer, { DEFAULT_STATE } from '../widget';
+
+jest.unmock('../widget');
+jest.unmock('../../actions');
 
 describe('widget reducer', () => {
   it('initializes', () => {

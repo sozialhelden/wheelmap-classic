@@ -11,6 +11,6 @@ export default function transition(history) {
 
     const { payload: { method, args } } = action;
 
-    history[method].apply(history, args);
+    history[method](...args);
   };
 }

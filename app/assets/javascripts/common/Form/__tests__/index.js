@@ -1,9 +1,9 @@
-jest.unmock('../index');
-
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
 import Form from '../index';
+
+jest.unmock('../index');
 
 describe('Common form React component', () => {
   const renderer = TestUtils.createRenderer();

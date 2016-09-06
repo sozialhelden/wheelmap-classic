@@ -3,7 +3,7 @@ import { take, put, call } from 'redux-saga/effects';
 import { CHANGE_NODE_ADDRESS, changeNode, updateMap } from '../actions';
 
 // Pass the change node address to both the CHANGE_NODE and the UPDATE_MAP actions.
-export default function*() {
+export default function* () {
   while (true) {
     const { payload: node } = yield take(CHANGE_NODE_ADDRESS);
 

@@ -1,5 +1,3 @@
-jest.unmock('../saveNode');
-
 import { SAVE_NODE, load } from '../../actions';
 import routes from '../../../common/routes';
 import { node as nodeSelector } from '../../selectors';
@@ -7,6 +5,8 @@ import * as api from '../../../common/helpers/api';
 import Node from '../../../common/models/Node';
 import redirect from '../../../common/helpers/redirect';
 import saveNode from '../saveNode';
+
+jest.unmock('../saveNode');
 
 describe('saveNode', () => {
   it('saves node and redirect to map', () => {

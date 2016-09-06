@@ -1,10 +1,10 @@
-jest.unmock('../Form');
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 
 import WidgetBuilderForm from '../Form';
+
+jest.unmock('../Form');
 
 describe('React WidgetForm component', function () {
   it('loads correctly', function () {
@@ -47,7 +47,7 @@ describe('React WidgetForm component', function () {
     );
 
     // @TODO fix this
-    const node = ReactDOM.findDOMNode(component);
+    const node = ReactDOM.findDOMNode(component); // eslint-disable-line react/no-find-dom-node
 
     const width = node.getElementById('widget_width');
     const height = node.getElementById('widget_height');

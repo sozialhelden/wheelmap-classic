@@ -1,5 +1,3 @@
-jest.unmock('../fetchSimilar');
-
 import { load, setSimilar } from '../../actions';
 import { node as nodeSelector } from '../../selectors';
 import { SIMILAR_NODES } from '../../models/sections';
@@ -7,6 +5,8 @@ import { findSimilar } from '../../../common/helpers/nodes';
 import activeSection from '../activeSection';
 import Node from '../../../common/models/Node';
 import fetchSimilar from '../fetchSimilar';
+
+jest.unmock('../fetchSimilar');
 
 describe('fetchSimilar', () => {
   it('fetches similar nodes', () => {

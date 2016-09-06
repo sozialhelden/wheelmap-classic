@@ -1,9 +1,9 @@
-jest.unmock('../activateSection');
-
 import routes from '../../../common/routes';
 import { CONTACT, NAME_CATEGORY } from '../../models/sections';
 import { ENTER_CONTENT, activateSection as activateSectionAction } from '../../actions';
 import activateSection from '../activateSection';
+
+jest.unmock('../activateSection');
 
 describe('activateSection', () => {
   it('activates section', () => {

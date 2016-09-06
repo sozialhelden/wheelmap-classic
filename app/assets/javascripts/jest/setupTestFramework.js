@@ -1,5 +1,5 @@
 import { take, put, select, call, cancel, fork } from 'redux-saga/effects';
-import immutableMatchers from 'jasmine-immutable-matchers';
+import immutableMatchers from 'jasmine-immutable-matchers'; // eslint-disable-line import/no-extraneous-dependencies
 
 function createEventMatcher(eventCreator) {
   return (util, customEqualityTesters) => ({

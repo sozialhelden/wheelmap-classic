@@ -26,7 +26,7 @@ Flash.writeDataTo = function (name, element, callback) {
 
     element.prepend(message);
 
-    if (callback && typeof(callback) === 'function') {
+    if (callback && typeof (callback) === 'function') {
       callback(element);
     } else {
       element.show();

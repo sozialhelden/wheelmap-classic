@@ -1,6 +1,6 @@
-jest.unmock('../Node');
-
 import Node from '../Node';
+
+jest.unmock('../Node');
 
 describe('Node', () => {
   const address = {

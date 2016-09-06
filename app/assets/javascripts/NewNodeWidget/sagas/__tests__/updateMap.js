@@ -1,5 +1,3 @@
-jest.unmock('../updateMap');
-
 import { SagaCancellationException } from 'redux-saga';
 import { createMockTask } from 'redux-saga/utils';
 
@@ -8,6 +6,8 @@ import { geocode } from '../../../common/helpers/photon';
 import delay from '../../../common/helpers/delayPromise';
 import Node from '../../../common/models/Node';
 import cancelUpdateMap, { updateMap, debounceUpdateMap } from '../updateMap';
+
+jest.unmock('../updateMap');
 
 describe('cancelUpdateMap', () => {
   it('fork debounceUpdateMap and cancel it when the marker was moved', () => {

@@ -6,7 +6,7 @@ import { push } from '../../common/actions/router';
 import { validateNode, HTTPError } from '../../common/helpers/api';
 
 // Navigate to next section based on current section
-export default function *navigateToNextSection() {
+export default function* navigateToNextSection() {
   while (true) {
     yield take(NAVIGATE_TO_NEXT_SECTION);
 
@@ -26,10 +26,9 @@ export default function *navigateToNextSection() {
 
         // Abort navigation and show errors.
         yield put(setErrors(errors));
-        continue;
+      } else {
+        throw error;
       }
-
-      throw error;
     } finally {
       yield put(load(false));
     }

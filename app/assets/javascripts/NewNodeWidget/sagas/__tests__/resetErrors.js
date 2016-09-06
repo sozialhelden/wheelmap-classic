@@ -1,7 +1,7 @@
-jest.unmock('../resetErrors');
-
 import { ACTIVATE_SECTION, setErrors } from '../../actions';
 import resetErrors from '../resetErrors';
+
+jest.unmock('../resetErrors');
 
 describe('resetErrors', () => {
   it('resets errors when section gets activated', () => {

@@ -1,9 +1,9 @@
-jest.unmock('../Select');
-
 import React from 'react';
 import TestUtils from 'react-addons-test-utils';
 
 import Select from '../Select';
+
+jest.unmock('../Select');
 
 describe('React select component', () => {
   const items = [ { value: 1, label: 'one' }, { value: 2, label: 'two' } ];

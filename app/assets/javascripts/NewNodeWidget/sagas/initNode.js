@@ -6,7 +6,7 @@ import { validateNode, HTTPError } from '../../common/helpers/api';
 import { replace } from '../../common/actions/router';
 import Node from '../../common/models/Node';
 
-export default function*() {
+export default function* () {
   let { payload: { node } } = yield take(ENTER_CONTENT);
 
   if (node == null) {

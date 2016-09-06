@@ -4,8 +4,8 @@ import changeNodeAddress from './changeNodeAddress';
 import navigateToSection from './navigateToSection';
 import navigateToNextSection from './navigateToNextSection';
 import fetchCategories from './fetchCategories';
-import updateMap from './updateMap';
-import updateAddress from './updateAddress';
+import cancelUpdateMap from './updateMap';
+import cancelUpdateAddressTask from './updateAddress';
 import fetchSimilar from './fetchSimilar';
 import resetErrors from './resetErrors';
 import watchMarkerMoved from './watchMarkerMoved';
@@ -20,8 +20,8 @@ export default [
   navigateToNextSection,
   fetchCategories,
   fetchSimilar,
-  updateMap,
-  updateAddress,
+  cancelUpdateMap,
+  cancelUpdateAddressTask,
   resetErrors,
   watchMarkerMoved,
   useGeolocation,
