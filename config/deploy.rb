@@ -80,12 +80,6 @@ namespace :deploy do
         remote_dir = "#{host.user}@#{host.hostname}:#{release_path}/public/assets/"
         execute "mkdir -p #{release_path}/public/assets/"
         run_locally { execute "rsync -av --delete #{local_dir}/.sprockets-manifest-* #{remote_dir}" }
-
-        # stolen from https://github.com/capistrano/capistrano/blob/master/lib/capistrano/tasks/deploy.rake#L101
-        # we can't directly invoke the task since that runs on deploy roles only
-        tmp_current_path = release_path.parent.join(current_path.basename)
-        execute :ln, "-s", release_path, tmp_current_path
-        execute :mv, tmp_current_path, current_path.parent
       end
 
       # clean up
