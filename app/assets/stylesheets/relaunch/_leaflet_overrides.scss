@@ -18,7 +18,7 @@
 
 .leaflet-control-locate {
   a {
-    background-image: url('locate_btn.png');
+    background-image: asset-url('locate_btn.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-color: rgba(255,255,255,0.8);
@@ -28,18 +28,18 @@
     };
 
     @include if-min-resolution(1.3) {
-      background-image: url('locate_btn@2x.png');
+      background-image: asset-url('locate_btn@2x.png');
     }
   }
 
   &.requesting a {
-    background-image: url('spinner_locate.gif');
+    background-image: asset-url('spinner_locate.gif');
   }
 
   &.active a {
-    background-image: url(locate_btn_active.png);
+    background-image: asset-url('locate_btn_active.png');
     @include if-min-resolution(1.3) {
-      background-image: url('locate_btn_active@2x.png');
+      background-image: asset-url('locate_btn_active@2x.png');
     }
   }
 }

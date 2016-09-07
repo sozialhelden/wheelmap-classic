@@ -34,7 +34,7 @@
   top: 50%;
   margin: -325px 0 0 -350px;
   padding: 0 0 20px 0;
-  background: url('bg-overlay.png') #FFF no-repeat;
+  background: asset-url('bg-overlay.png') #FFF no-repeat;
   background-position: 0 219px;
   @include box-shadow(0 0 10px #333);
   @include border-radius(3px);
@@ -85,7 +85,7 @@
     margin: 0 0 40px 0;
     text-align: center;
 
-    background: url('logo-overlay.png') center top no-repeat;
+    background: asset-url('logo-overlay.png') center top no-repeat;
 
     font-size: 16px;
     line-height: 24px;
