@@ -6,7 +6,7 @@ set :rails_env, "staging" #added for delayed job
 set :stage, :staging
 set :deploy_to, "/var/apps/#{fetch(:application)}/"
 
-set :branch, :"bugfix/apps-use-asset-manifest"
+set :branch, :"feature/infra-rebuild"
 set :rev, proc { `git rev-parse --short #{fetch(:branch)}`.chomp }
 
 # Simple Role Syntax
