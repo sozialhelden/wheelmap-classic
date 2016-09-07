@@ -43,9 +43,11 @@ Rake::Task["deploy:compile_assets"].clear
 Rake::Task["deploy:set_linked_dirs"].clear
 
 namespace :deploy do
-  # We need to noop this because otherwise it creates an undesirable symlink 
-  # Ref: https://github.com/capistrano/rails/blob/54da36a2dda5084a3cbe380b4a8f1ba282379f72/lib/capistrano/tasks/assets.rake#L121
-  task :set_linked_dirs do end
+  
+  task :set_linked_dirs do
+     # noop due to cap/rails adding this to the run list
+     # Ref: https://github.com/capistrano/rails/blob/54da36a2dda5084a3cbe380b4a8f1ba282379f72/lib/capistrano/tasks/assets.rake#L121
+  end
 
   desc 'Compile assets'
   task :compile_assets => [:set_rails_env] do
