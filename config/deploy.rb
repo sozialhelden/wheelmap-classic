@@ -40,11 +40,12 @@ set :keep_releases, 5
 
 # Clear existing task so we can replace it rather than "add" to it.
 Rake::Task["deploy:compile_assets"].clear
+Rake::Task["deploy:set_linked_dirs"].clear
 
 namespace :deploy do
-
-  desc 'Overwrite defailt :set_linked_dirs so it does not make a bad symlink'
-  task :set_linked_dirs => do true end
+  # We need to noop this because otherwise it creates an undesirable symlink 
+  # Ref: https://github.com/capistrano/rails/blob/54da36a2dda5084a3cbe380b4a8f1ba282379f72/lib/capistrano/tasks/assets.rake#L121
+  task :set_linked_dirs do end
 
   desc 'Compile assets'
   task :compile_assets => [:set_rails_env] do
