@@ -1,5 +1,5 @@
 #container {
-  background: url('container_bg.png') repeat-x 0 $headerHeight;
+  background: asset-url('container_bg.png') repeat-x 0 $headerHeight;
   display: block;
   padding-bottom: $footerHeight + 10px;
   padding-top: $headerHeight;
@@ -45,10 +45,10 @@
     padding-left: 80px;
   }
   p.osm {
-    background: url("/assets/openstreetmap_logo_small.jpg") no-repeat left center;
+    background: asset-url("/assets/openstreetmap_logo_small.jpg") no-repeat left center;
   }
   p.wheelmap {
-    background: url("/assets/markerhead.jpg") no-repeat 4px center;
+    background: asset-url("/assets/markerhead.jpg") no-repeat 4px center;
   }
 
   em {

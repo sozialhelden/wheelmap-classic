@@ -8,14 +8,14 @@
 }
 
 .leaflet-marker-icon {
-  background: transparent url('marker-sprites.png') no-repeat;
+  background: transparent asset-url('marker-sprites.png') no-repeat;
   width: 29px;
   height: 32px;
   margin-left: -15px;
   margin-top: -30px;
 
   @include if-min-resolution(1.3) {
-    background: transparent url('marker-sprites@2x.png') no-repeat;
+    background: transparent asset-url('marker-sprites@2x.png') no-repeat;
     background-size: 29px 128px;
   }
 
