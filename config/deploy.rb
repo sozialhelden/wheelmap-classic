@@ -44,6 +44,9 @@ Rake::Task["deploy:compile_assets"].clear
 
 namespace :deploy do
 
+  desc 'Overwrite defailt :set_linked_dirs so it does not make a bad symlink'
+  task :set_linked_dirs => do true end
+
   desc 'Compile assets'
   task :compile_assets => [:set_rails_env] do
     # invoke 'deploy:assets:precompile'
