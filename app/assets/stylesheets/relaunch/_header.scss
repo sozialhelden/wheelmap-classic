@@ -8,10 +8,10 @@
   left: 0;
   z-index: 2;
   float: left;
-  background: url('bg_header.png');
+  background: asset-url('bg_header.png');
 
   @include if-min-resolution(1.3) {
-    background: url(bg_header@2x.png);
+    background: asset-url('bg_header@2x.png');
   }
 
   .navbar-inner {
@@ -31,10 +31,10 @@
     margin: 7px 0 0 0;
     float: left;
     position: relative;
-    background: url(bg_logo.png) center left no-repeat;
+    background: asset-url('bg_logo.png') center left no-repeat;
 
     @include if-min-resolution(1.3) {
-      background: url(bg_logo@2x.png) center left no-repeat;
+      background: asset-url('bg_logo@2x.png') center left no-repeat;
       background-size: 150px 32px;
     }
 
@@ -61,11 +61,11 @@
     .christmas & {
       width: 160px;
       height: 42px;
-      background-image: url(bg_logo_christmas.png);
+      background-image: asset-url('bg_logo_christmas.png');
       margin-top: 0;
 
       @include if-min-resolution(1.3) {
-        background-image: url(bg_logo_christmas@2x.png);
+        background-image: asset-url('bg_logo_christmas@2x.png');
         background-size: 150px 39px;
       }
 

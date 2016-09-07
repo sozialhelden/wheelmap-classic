@@ -36,7 +36,7 @@
   text-indent:-9999px;
   overflow:hidden;
   background-repeat:no-repeat;
-  background-image:url('mapbox_logo.png');
+  background-image: asset-url('mapbox_logo.png');
 
   @media screen and (max-width:$breakPhone) {
     bottom: 13px

@@ -133,7 +133,7 @@
       }
 
       &--yes {
-        background-image: url('toolbar_marker_yes.png');
+        background-image: asset-url('toolbar_marker_yes.png');
 
         .popover-title {
           background-color: $wheelchair-yes;
@@ -141,7 +141,7 @@
       }
 
       &--limited {
-        background-image: url('toolbar_marker_limited.png');
+        background-image: asset-url('toolbar_marker_limited.png');
 
         .popover-title {
           background-color: $wheelchair-limited;
@@ -149,7 +149,7 @@
       }
 
       &--no {
-        background-image: url('toolbar_marker_no.png');
+        background-image: asset-url('toolbar_marker_no.png');
 
         .popover-title {
           background-color: $wheelchair-limited;
@@ -157,7 +157,7 @@
       }
 
       &--unknown {
-        background-image: url('toolbar_marker_unknown.png');
+        background-image: asset-url('toolbar_marker_unknown.png');
 
         .popover-title {
           background-color: $wheelchair-unknown;
@@ -166,19 +166,19 @@
 
       @include if-min-resolution(1.3) {
         &--yes {
-          background-image: url(toolbar_marker_yes@2x.png);
+          background-image: asset-url('toolbar_marker_yes@2x.png');
         }
 
         &--limited {
-          background-image: url(toolbar_marker_limited@2x.png);
+          background-image: asset-url('toolbar_marker_limited@2x.png');
         }
 
         &--no {
-          background-image: url(toolbar_marker_no@2x.png);
+          background-image: asset-url('toolbar_marker_no@2x.png');
         }
 
         &--unknown {
-          background-image: url(toolbar_marker_unknown@2x.png);
+          background-image: asset-url('toolbar_marker_unknown@2x.png');
         }
       }
     }
@@ -193,7 +193,7 @@
     }
 
     &-icon {
-      background: url('toolbar_marker_icon.png') no-repeat;
+      background: asset-url('toolbar_marker_icon.png') no-repeat;
       background-size: 100%;
       width: image_width('toolbar_marker_icon.png');
       height: image_height('toolbar_marker_icon.png');
@@ -201,7 +201,7 @@
       margin-top: 1px; // Cosmetic surgery
 
       @include if-min-resolution(1.3) {
-        background-image: url('toolbar_marker_icon@2x.png');
+        background-image: asset-url('toolbar_marker_icon@2x.png');
       }
     }
 
@@ -616,4 +616,3 @@
     }
   }
 }
-
