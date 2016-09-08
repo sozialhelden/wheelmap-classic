@@ -24,7 +24,7 @@ set :rev, proc { `git rev-parse --short #{fetch(:branch)}`.chomp }
 server 'app0.node.staging', user: 'deploy', roles: %w{app}, port: 22
 server 'app1.node.staging', user: 'deploy', roles: %w{app}, port: 22
 server 'asset.node.staging', user: 'deploy', roles: %w{asset}, port: 22, :no_release => true
-server 'worker.node.staging', user: 'deploy', roles: %w{worker}, port: 22
+server 'worker0.node.staging', user: 'deploy', roles: %w{worker}, port: 22
 #server 'mysql.node.production', user: 'wheelmap', roles: %w{mysql}, port: 22
 
 # Custom SSH Options
