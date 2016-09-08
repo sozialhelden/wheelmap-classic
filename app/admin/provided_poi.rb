@@ -10,6 +10,11 @@ ActiveAdmin.register ProvidedPoi do
   filter :wheelchair, as: :select, collection: proc { Poi::WHEELCHAIR_STATUS_VALUES.map{|k,v| [ I18n.t("wheelchairstatus.#{k}"),k]}}
   filter :url
 
+  permit_params do
+    %i(provided_poi poi_id provider_id wheelchair url)
+  end
+
+
   action_item(:upload_csv, :only => :index) do
     link_to "Upload CSV", upload_csv_admin_provided_pois_path
   end
@@ -51,7 +56,7 @@ ActiveAdmin.register ProvidedPoi do
   form do |f|
     f.inputs do
       f.input :poi_id
-      f.input :provider, as: :select, collection: Provider.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort
+      f.input :provider, as: :select, collection: Provider.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}
       f.input :wheelchair, as: :select, collection: Poi::WHEELCHAIR_STATUS_VALUES.map{|k,v| [I18n.t("wheelchairstatus.#{k}"),k]}
       f.input :url
     end
