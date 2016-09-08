@@ -8,6 +8,10 @@ ActiveAdmin.register Provider do
     link_to "Upload CSV", upload_csv_admin_provided_pois_path
   end
 
+  permit_params do
+    %i(name logo)
+  end
+
   index do
     column :id
     column :name
