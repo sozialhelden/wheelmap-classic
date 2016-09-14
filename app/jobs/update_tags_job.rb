@@ -58,19 +58,23 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       api.save(element, changeset)
 
       Counter.increment(source)
-      if update_wheelchair?
-        user.increment!(:tag_counter) if user.terms?
-        update_poi!
-      elsif update_toilet?
-        user.increment!(:toilet_counter) if user.terms?
-        update_poi!
-      else
-        user.increment!(:edit_counter) if user.terms?
-      end
+      increment_user_counter!
     rescue Rosemary::Conflict => conflict
       logger.info "IGNORE: #{type}:#{element_id} nothing has changed! (conflict)"
       # These changes have already been made, so dismiss this update!
       Airbrake.notify(conflict, :component => 'UpdateTagsJob#perform', :parameters => {:user => user.inspect, :element => element.inspect, :client => client})
+    end
+  end
+
+  def increment_user_counter!
+    if update_wheelchair?
+      user.increment!(:tag_counter) if user.terms?
+      update_poi!
+    elsif update_toilet?
+      user.increment!(:toilet_counter) if user.terms?
+      update_poi!
+    else
+      user.increment!(:edit_counter) if user.terms?
     end
   end
 
