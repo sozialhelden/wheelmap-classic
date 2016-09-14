@@ -70,12 +70,14 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
   end
 
   def increment_user_counter!
+    return unless user.terms?
+
     if update_wheelchair?
-      user.increment!(:tag_counter) if user.terms?
+      user.increment!(:tag_counter)
     elsif update_toilet?
-      user.increment!(:toilet_counter) if user.terms?
+      user.increment!(:toilet_counter)
     else
-      user.increment!(:edit_counter) if user.terms?
+      user.increment!(:edit_counter)
     end
   end
 
