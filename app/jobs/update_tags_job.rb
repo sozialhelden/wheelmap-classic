@@ -1,4 +1,7 @@
 class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :source, :tags_to_delete)
+  WHEELCHAIR_TAG_KEY = 'wheelchair'
+  WHEELCHAIR_TOILET_TAG_KEY = 'toilets:wheelchair'
+
   def self.enqueue(element_id, type, tags, user, source, tags_to_delete={})
     raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
 
@@ -6,10 +9,10 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
     return unless Rails.env.production? || Rails.env.test?
 
     # Remove wheelchair tag if value is "unknown"
-    tags.delete("wheelchair") if tags["wheelchair"] == 'unknown'
+    tags.delete("wheelchair") if tags[WHEELCHAIR_TAG_KEY] == 'unknown'
 
     # Remove wheelchair tag if value is "unknown"
-    tags.delete("toilets:wheelchair") if tags["toilets:wheelchair"] == 'unknown'
+    tags.delete("toilets:wheelchair") if tags[WHEELCHAIR_TOILET_TAG_KEY] == 'unknown'
 
     client = Rosemary::OauthClient.new(user.access_token)
     new(element_id, type, tags, user, client, source, tags_to_delete).tap do |job|
@@ -110,22 +113,22 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
 
   def update_wheelchair?
     # Check if the job updates the wheelchair tag only
-    tags.keys == ['wheelchair']
+    tags.keys == [WHEELCHAIR_TAG_KEY]
   end
 
   def update_toilet?
     # Check if the job updates the wheelchair tag only
-    tags.keys == ['toilets:wheelchair']
+    tags.keys == [WHEELCHAIR_TOILET_TAG_KEY]
   end
 
   def update_poi!
     begin
-      logger.info "SET poi to new wheelchair status: #{tags["wheelchair"]}"
+      logger.info "SET poi to new wheelchair status: #{tags[WHEELCHAIR_TAG_KEY]}"
       osm_id = element_id
       osm_id = osm_id * -1 if type == 'way'
       p = Poi.find osm_id
-      p.wheelchair = tags["wheelchair"] if tags.has_key?('wheelchair')
-      p.wheelchair_toilet = tags["toilets:wheelchair"] if tags.has_key?('toilets:wheelchair')
+      p.wheelchair = tags[WHEELCHAIR_TAG_KEY] if tags.has_key?(WHEELCHAIR_TAG_KEY)
+      p.wheelchair_toilet = tags[WHEELCHAIR_TOILET_TAG_KEY] if tags.has_key?(WHEELCHAIR_TOILET_TAG_KEY)
       p.save(:validate => false)
     rescue Exception => e
       logger.error e.message
