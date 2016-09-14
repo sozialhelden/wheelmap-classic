@@ -56,9 +56,9 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       user.update_attribute(:changeset_id, changeset.id)
 
       api.save(element, changeset)
-
       Counter.increment(source)
       increment_user_counter!
+      update_poi!
     rescue Rosemary::Conflict => conflict
       logger.info "IGNORE: #{type}:#{element_id} nothing has changed! (conflict)"
       # These changes have already been made, so dismiss this update!
@@ -69,10 +69,8 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
   def increment_user_counter!
     if update_wheelchair?
       user.increment!(:tag_counter) if user.terms?
-      update_poi!
     elsif update_toilet?
       user.increment!(:toilet_counter) if user.terms?
-      update_poi!
     else
       user.increment!(:edit_counter) if user.terms?
     end
@@ -126,8 +124,8 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       osm_id = element_id
       osm_id = osm_id * -1 if type == 'way'
       p = Poi.find osm_id
-      p.wheelchair = tags["wheelchair"]
-      p.wheelchair_toilet = tags["toilets:wheelchair"]
+      p.wheelchair = tags["wheelchair"] if tags.has_key?('wheelchair')
+      p.wheelchair_toilet = tags["toilets:wheelchair"] if tags.has_key?('toilets:wheelchair')
       p.save(:validate => false)
     rescue Exception => e
       logger.error e.message
