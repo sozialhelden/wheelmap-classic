@@ -150,7 +150,6 @@ Wheelmap::Application.routes.draw do
 
     resources :locales,     :only => :index
     resources :node_types,  :only => [:index, :show]
-    resources :community_support, :only => [:new, :create]
 
     resource :user, :except => [:index, :show, :new, :create, :edit, :update, :destroy] do
       resources :photos, :only => [:index, :destroy]
@@ -164,6 +163,8 @@ Wheelmap::Application.routes.draw do
     #Last route in routes.rb
     match '*a', :to => 'api#not_found', :format => false, via: [:get, :post, :put, :delete]
   end
+
+  resources :community_support, :only => [:new, :create]
 
   get "/dashboard", :to => redirect("https://metrics.librato.com/share/dashboards/3wf885ot?duration=604800")
   get '/',          :to => redirect("/map"), :as => 'roooot'
