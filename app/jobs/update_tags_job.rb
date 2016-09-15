@@ -1,4 +1,7 @@
 class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :source, :tags_to_delete)
+  WHEELCHAIR_TAG_KEY = 'wheelchair'
+  WHEELCHAIR_TOILET_TAG_KEY = 'toilets:wheelchair'
+
   def self.enqueue(element_id, type, tags, user, source, tags_to_delete={})
     raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
 
@@ -6,10 +9,10 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
     return unless Rails.env.production? || Rails.env.test?
 
     # Remove wheelchair tag if value is "unknown"
-    tags.delete("wheelchair") if tags["wheelchair"] == 'unknown'
+    tags.delete(WHEELCHAIR_TAG_KEY) if tags[WHEELCHAIR_TAG_KEY] == 'unknown'
 
     # Remove wheelchair tag if value is "unknown"
-    tags.delete("toilets:wheelchair") if tags["toilets:wheelchair"] == 'unknown'
+    tags.delete(WHEELCHAIR_TOILET_TAG_KEY) if tags[WHEELCHAIR_TOILET_TAG_KEY] == 'unknown'
 
     client = Rosemary::OauthClient.new(user.access_token)
     new(element_id, type, tags, user, client, source, tags_to_delete).tap do |job|
@@ -56,21 +59,25 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       user.update_attribute(:changeset_id, changeset.id)
 
       api.save(element, changeset)
-
       Counter.increment(source)
-      if update_wheelchair?
-        user.increment!(:tag_counter) if user.terms?
-        update_poi!
-      elsif update_toilet?
-        user.increment!(:toilet_counter) if user.terms?
-        update_poi!
-      else
-        user.increment!(:edit_counter) if user.terms?
-      end
+      increment_user_counter!
+      update_poi!
     rescue Rosemary::Conflict => conflict
       logger.info "IGNORE: #{type}:#{element_id} nothing has changed! (conflict)"
       # These changes have already been made, so dismiss this update!
       Airbrake.notify(conflict, :component => 'UpdateTagsJob#perform', :parameters => {:user => user.inspect, :element => element.inspect, :client => client})
+    end
+  end
+
+  def increment_user_counter!
+    return unless user.terms?
+
+    if update_wheelchair?
+      user.increment!(:tag_counter)
+    elsif update_toilet?
+      user.increment!(:toilet_counter)
+    else
+      user.increment!(:edit_counter)
     end
   end
 
@@ -108,22 +115,22 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
 
   def update_wheelchair?
     # Check if the job updates the wheelchair tag only
-    tags.keys == ['wheelchair']
+    tags.keys == [WHEELCHAIR_TAG_KEY]
   end
 
   def update_toilet?
     # Check if the job updates the wheelchair tag only
-    tags.keys == ['toilets:wheelchair']
+    tags.keys == [WHEELCHAIR_TOILET_TAG_KEY]
   end
 
   def update_poi!
     begin
-      logger.info "SET poi to new wheelchair status: #{tags["wheelchair"]}"
+      logger.info "SET poi to new wheelchair status: #{tags[WHEELCHAIR_TAG_KEY]}"
       osm_id = element_id
       osm_id = osm_id * -1 if type == 'way'
       p = Poi.find osm_id
-      p.wheelchair = tags["wheelchair"]
-      p.wheelchair_toilet = tags["toilets:wheelchair"]
+      p.wheelchair = tags[WHEELCHAIR_TAG_KEY] if tags.has_key?(WHEELCHAIR_TAG_KEY)
+      p.wheelchair_toilet = tags[WHEELCHAIR_TOILET_TAG_KEY] if tags.has_key?(WHEELCHAIR_TOILET_TAG_KEY)
       p.save(:validate => false)
     rescue Exception => e
       logger.error e.message

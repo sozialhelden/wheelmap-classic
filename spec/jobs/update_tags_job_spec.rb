@@ -175,6 +175,19 @@ describe UpdateTagsJob do
     expect(user.reload.changeset_id).to eq(changeset.id)
   end
 
+  it "updates both toilet and wheelchair tag in one pass" do
+    job = UpdateTagsJob.enqueue(poi.osm_id, 'node', { 'wheelchair' => 'no', 'toilets:wheelchair' => 'no' }, user, 'update_iphone')
+    api = double(:find_or_create_open_changeset => changeset)
+    expect(Rosemary::Api).to receive(:new).and_return(api)
+    expect(api).to receive(:find_element).and_return(node)
+    expect(api).to receive(:save)
+    Delayed::Worker.new.work_off
+
+    p = Poi.find(poi.osm_id)
+    expect(p.wheelchair).to eq 'no'
+    expect(p.wheelchair_toilet).to eq 'no'
+  end
+
   context "unknown value" do
 
     let(:wheelchair_node) { Rosemary::Node.new(:tags => { 'addr:housenumber' => 10 }) }
@@ -214,10 +227,6 @@ describe UpdateTagsJob do
       successes, failures = Delayed::Worker.new.work_off
       expect(successes).to eql 1
       expect(failures).to eql 0
-
     end
-
-
   end
-
 end
