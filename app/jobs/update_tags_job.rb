@@ -9,10 +9,10 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
     return unless Rails.env.production? || Rails.env.test?
 
     # Remove wheelchair tag if value is "unknown"
-    tags.delete("wheelchair") if tags[WHEELCHAIR_TAG_KEY] == 'unknown'
+    tags.delete(WHEELCHAIR_TAG_KEY) if tags[WHEELCHAIR_TAG_KEY] == 'unknown'
 
     # Remove wheelchair tag if value is "unknown"
-    tags.delete("toilets:wheelchair") if tags[WHEELCHAIR_TOILET_TAG_KEY] == 'unknown'
+    tags.delete(WHEELCHAIR_TOILET_TAG_KEY) if tags[WHEELCHAIR_TOILET_TAG_KEY] == 'unknown'
 
     client = Rosemary::OauthClient.new(user.access_token)
     new(element_id, type, tags, user, client, source, tags_to_delete).tap do |job|
