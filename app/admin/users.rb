@@ -24,7 +24,7 @@ ActiveAdmin.register User do
   filter :created_at
   filter :updated_at
   filter :accepted_at
-  filter :providers, :collection => Provider.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort
+  filter :providers, :collection => Provider.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}
 
 
   controller do
@@ -74,7 +74,7 @@ ActiveAdmin.register User do
       f.input :osm_username, :label => 'OSM Username', :hint => false
     end
     f.inputs "Providers" do
-      f.input :providers, :collection => Provider.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}.sort
+      f.input :providers, :collection => Provider.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}
     end
     f.actions
   end

@@ -3,9 +3,14 @@ ActiveAdmin.register Provider do
   menu :label => 'Anbieter', :parent => 'Premium'
 
   filter :name
+  filter :id
 
   action_item(:upload_csv, :only => :index) do
     link_to "Upload CSV", upload_csv_admin_provided_pois_path
+  end
+
+  permit_params do
+    %i(name logo)
   end
 
   index do
