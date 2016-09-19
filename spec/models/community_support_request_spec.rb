@@ -21,5 +21,10 @@ describe CommunitySupportRequest do
       community_support_request = CommunitySupportRequest.new("Holger", "holger@example.com", nil)
       expect(community_support_request.valid?).to be false
     end
+
+    it "is not valid when email has invalid format" do
+      community_support_request = CommunitySupportRequest.new("Holger", "holger$example.com", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.")
+      expect(community_support_request.valid?).to be false
+    end
   end
 end
