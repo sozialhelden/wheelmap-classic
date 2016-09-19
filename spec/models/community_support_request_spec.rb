@@ -11,5 +11,10 @@ describe CommunitySupportRequest do
       community_support_request = CommunitySupportRequest.new(nil, "holger@example.com", "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.")
       expect(community_support_request.valid?).to be false
     end
+
+    it "is not valid when email is missing" do
+      community_support_request = CommunitySupportRequest.new("Holger", nil, "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.")
+      expect(community_support_request.valid?).to be false
+    end
   end
 end
