@@ -12,7 +12,8 @@ RSpec.describe CommunitySupportController, type: :controller do
   describe "POST #create" do
     context "with valid form params" do
       before do
-        ActionMailer::Base.deliveries = []
+        ActionMailer::Base.deliveries.clear
+
         post :create, { name: "holger", email: "holger@example.com", message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."}
       end
 
@@ -31,11 +32,17 @@ RSpec.describe CommunitySupportController, type: :controller do
 
     context "with invalid form params" do
       before do
+        ActionMailer::Base.deliveries.clear
+
         post :create, { name: "holger", email: "holger$example.com", message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."}
       end
 
       it "rerenders the form" do
         expect(response).to render_template("new")
+      end
+
+      it "does not send email notification to the community support team" do
+        expect(ActionMailer::Base.deliveries).to be_empty
       end
     end
   end

@@ -4,9 +4,9 @@ class CommunitySupportController < ApplicationController
 
   def create
     form_request = CommunitySupportRequest.new(form_params[:name], form_params[:email], form_params[:message])
-    CommunitySupportMailer.send_to_support_team(@email).deliver
 
     if form_request.valid?
+      CommunitySupportMailer.send_to_support_team(@email).deliver
       redirect_to root_path
     else
       render "new"
