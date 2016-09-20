@@ -12,6 +12,7 @@ RSpec.describe CommunitySupportController, type: :controller do
   describe "POST #create" do
     context "with valid form params" do
       before do
+        ActionMailer::Base.deliveries = []
         post :create, { name: "holger", email: "holger@example.com", message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."}
       end
 
@@ -21,6 +22,10 @@ RSpec.describe CommunitySupportController, type: :controller do
 
       it "redirects to root path" do
         expect(response).to redirect_to(root_path)
+      end
+
+      it "sends email notification to the community support team" do
+        expect(ActionMailer::Base.deliveries.size).to eq(1)
       end
     end
 
