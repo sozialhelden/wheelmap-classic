@@ -10,11 +10,14 @@ RSpec.describe CommunitySupportController, type: :controller do
   end
 
   describe "POST #create" do
+    let(:message) {"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\r\n commodo ligula eget dolor. Aenean massa."}
+
     context "with valid form params" do
+
       before do
         ActionMailer::Base.deliveries.clear
 
-        post :create, { name: "holger", email: "holger@example.com", message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."}
+        post :create, { name: "holger", email: "holger@example.com", message: message }
       end
 
       it "returns http found" do
@@ -28,13 +31,21 @@ RSpec.describe CommunitySupportController, type: :controller do
       it "sends email notification to the community support team" do
         expect(ActionMailer::Base.deliveries.size).to eq(1)
       end
+
+      describe "email body" do
+        let(:last_delivery){ ActionMailer::Base.deliveries.last }
+
+        it "has message" do
+          expect(last_delivery.body.raw_source).to include(message)
+        end
+      end
     end
 
     context "with invalid form params" do
       before do
         ActionMailer::Base.deliveries.clear
 
-        post :create, { name: "holger", email: "holger$example.com", message: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."}
+        post :create, { name: "holger", email: "holger$example.com", message: message }
       end
 
       it "rerenders the form" do
