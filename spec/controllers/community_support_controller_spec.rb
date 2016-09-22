@@ -10,6 +10,8 @@ RSpec.describe CommunitySupportController, type: :controller do
   end
 
   describe "POST #create" do
+    let(:user_name) { "holger" }
+    let(:email) { "holger@example.com" }
     let(:message) {"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\r\n commodo ligula eget dolor. Aenean massa."}
 
     context "with valid form params" do
@@ -17,7 +19,7 @@ RSpec.describe CommunitySupportController, type: :controller do
       before do
         ActionMailer::Base.deliveries.clear
 
-        post :create, { name: "holger", email: "holger@example.com", message: message }
+        post :create, { name: user_name, email: "holger@example.com", message: message }
       end
 
       it "returns http found" do
@@ -35,7 +37,11 @@ RSpec.describe CommunitySupportController, type: :controller do
       describe "email body" do
         let(:last_delivery){ ActionMailer::Base.deliveries.last }
 
-        it "has message" do
+        it "contains the user's name" do
+          expect(last_delivery.body.raw_source).to include(user_name)
+        end
+
+        it "contains the user's message" do
           expect(last_delivery.body.raw_source).to include(message)
         end
       end
@@ -45,7 +51,7 @@ RSpec.describe CommunitySupportController, type: :controller do
       before do
         ActionMailer::Base.deliveries.clear
 
-        post :create, { name: "holger", email: "holger$example.com", message: message }
+        post :create, { name: user_name, email: "holger$example.com", message: message }
       end
 
       it "rerenders the form" do
