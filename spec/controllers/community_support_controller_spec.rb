@@ -13,12 +13,13 @@ RSpec.describe CommunitySupportController, type: :controller do
     let(:user_name) { "holger" }
     let(:email) { "holger@example.com" }
     let(:message) {"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\r\n commodo ligula eget dolor. Aenean massa."}
+    let(:user_agent) { 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:48.0) Gecko/20100101 Firefox/48.0' }
 
     context "with valid form params" do
 
       before do
         ActionMailer::Base.deliveries.clear
-
+        allow(request).to receive(:user_agent).and_return(user_agent)
         post :create, { name: user_name, email: "holger@example.com", message: message }
       end
 
@@ -43,6 +44,10 @@ RSpec.describe CommunitySupportController, type: :controller do
 
         it "contains the user's email" do
           expect(last_delivery.body.raw_source).to include(email)
+        end
+
+        it "contains the user agent" do
+          expect(last_delivery.body.raw_source).to include(user_agent)
         end
 
         it "contains the user's message" do
