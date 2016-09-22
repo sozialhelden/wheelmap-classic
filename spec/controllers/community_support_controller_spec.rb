@@ -41,6 +41,10 @@ RSpec.describe CommunitySupportController, type: :controller do
           expect(last_delivery.body.raw_source).to include(user_name)
         end
 
+        it "contains the user's email" do
+          expect(last_delivery.body.raw_source).to include(email)
+        end
+
         it "contains the user's message" do
           expect(last_delivery.body.raw_source).to include(message)
         end
