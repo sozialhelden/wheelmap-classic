@@ -1,11 +1,8 @@
-require 'pry'
-
 class CommunitySupportController < ApplicationController
   def new
   end
 
   def create
-    # binding.pry
     form_request = CommunitySupportRequest.new(form_params[:name], form_params[:email], form_params[:message], request.user_agent)
 
     if form_request.valid?

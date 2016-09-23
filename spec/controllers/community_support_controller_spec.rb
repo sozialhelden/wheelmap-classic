@@ -10,6 +10,7 @@ RSpec.describe CommunitySupportController, type: :controller do
   end
 
   describe "POST #create" do
+    let(:subject) { "Bugreport von wheelmap.org" }
     let(:user_name) { "holger" }
     let(:email) { "holger@example.com" }
     let(:message) {"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\r\n commodo ligula eget dolor. Aenean massa."}
@@ -33,6 +34,14 @@ RSpec.describe CommunitySupportController, type: :controller do
 
       it "sends email notification to the community support team" do
         expect(ActionMailer::Base.deliveries.size).to eq(1)
+      end
+
+      describe "email header" do
+        let(:last_delivery){ ActionMailer::Base.deliveries.last }
+
+        it "contains email subject" do
+          expect(last_delivery.subject).to eq(subject)
+        end
       end
 
       describe "email body" do
