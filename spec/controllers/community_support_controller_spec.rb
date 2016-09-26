@@ -20,6 +20,7 @@ RSpec.describe CommunitySupportController, type: :controller do
     context "with valid form params and user not logged in" do
       before do
         ActionMailer::Base.deliveries.clear
+        I18n.locale = :en
         allow(request).to receive(:user_agent).and_return(user_agent)
         params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
         post :create, params
@@ -59,6 +60,10 @@ RSpec.describe CommunitySupportController, type: :controller do
 
         it "contains the user's message" do
           expect(raw_body).to include(message)
+        end
+
+        it "contains the currently selected language" do
+          expect(raw_body).to include("Sprache: en")
         end
 
         describe "the user agent" do
