@@ -46,21 +46,22 @@ RSpec.describe CommunitySupportController, type: :controller do
 
       describe "email body" do
         let(:last_delivery){ ActionMailer::Base.deliveries.last }
+        let(:raw_body) { last_delivery.body.raw_source }
 
         it "contains the user's name" do
-          expect(last_delivery.body.raw_source).to include(user_name)
+          expect(raw_body).to include(user_name)
         end
 
         it "contains the user's email" do
-          expect(last_delivery.body.raw_source).to include(email)
+          expect(raw_body).to include(email)
         end
 
         it "contains the user agent" do
-          expect(last_delivery.body.raw_source).to include(user_agent)
+          expect(raw_body).to include(user_agent)
         end
 
         it "contains the user's message" do
-          expect(last_delivery.body.raw_source).to include(message)
+          expect(raw_body).to include(message)
         end
       end
     end
