@@ -10,6 +10,7 @@ class CommunitySupportController < ApplicationController
     support_params = form_params.merge(user_agent: request.user_agent)
     @support_request = CommunitySupportRequest.new(support_params)
     if current_user
+      @support_request.is_logged_in = true
       @support_request.osm_username = current_user.osm_username
     end
 

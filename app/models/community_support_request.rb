@@ -1,6 +1,6 @@
 class CommunitySupportRequest
   include ActiveModel::Validations
-  attr_accessor :name, :email, :message, :osm_username
+  attr_accessor :name, :email, :message, :osm_username, :is_logged_in
 
   validates_presence_of :name, :email, :message
   validates :email, format: { with: /@/ }

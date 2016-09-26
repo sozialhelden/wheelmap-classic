@@ -16,6 +16,7 @@ RSpec.describe CommunitySupportController, type: :controller do
     let(:message) {"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\r\n commodo ligula eget dolor. Aenean massa."}
     let(:user_agent) { 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:48.0) Gecko/20100101 Firefox/48.0' }
     let(:osm_username) { 'lisa maier' }
+    let(:current_user) { FactoryGirl.create(:user, :email => email, :oauth_token =>'token', :oauth_secret => 'secret', osm_username: osm_username) }
 
     context "with valid form params and user not logged in" do
       before do
@@ -84,18 +85,17 @@ RSpec.describe CommunitySupportController, type: :controller do
           end
 
           it 'does not contain notice that the user is logged in' do
-            expect(raw_body).to_not include("BenutzerIn ist eingeloggt mit: #{osm_username}")
+            expect(raw_body).to_not include("BenutzerIn ist eingeloggt mit: #{email}")
           end
         end
       end
 
       context 'with valid form params and user is logged in' do
-        let(:current_user) { FactoryGirl.create(:user, :email => 'test@rspec.org', :oauth_token =>'token', :oauth_secret => 'secret', osm_username: osm_username) }
         before do
           sign_in current_user
           ActionMailer::Base.deliveries.clear
           allow(request).to receive(:user_agent).and_return(user_agent)
-          params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
+          params = {:community_support_request => { name: user_name, email: email, message: message }}
           post :create, params
         end
 
@@ -104,7 +104,7 @@ RSpec.describe CommunitySupportController, type: :controller do
           let(:raw_body) { last_delivery.body.raw_source }
 
           it 'contains notice that the user is logged in' do
-            expect(raw_body).to include("BenutzerIn ist eingeloggt mit: #{osm_username}")
+            expect(raw_body).to include("BenutzerIn ist eingeloggt mit: #{email}")
           end
         end
       end

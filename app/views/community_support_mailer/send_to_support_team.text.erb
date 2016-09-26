@@ -4,8 +4,8 @@ Betriebssystem Hersteller: <%= @community_support_request.operating_system %>
 Betriebssystem Version: <%= @community_support_request.operating_system_version %>
 Browser Hersteller: <%= @community_support_request.browser_vendor %>
 Browser Version: <%= @community_support_request.browser_version %>
-<% if @community_support_request.osm_username %>
-  BenutzerIn ist eingeloggt mit: <%= @community_support_request.osm_username %>
+<% if @community_support_request.is_logged_in %>
+  BenutzerIn ist eingeloggt mit: <%= @community_support_request.email %>
 <% end %>
 Sprache: <%= I18n.locale %>
 Message:
