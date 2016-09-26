@@ -5,10 +5,10 @@ class CommunitySupportController < ApplicationController
 
   def create
     support_params = form_params.merge(user_agent: request.user_agent)
-    form_request = CommunitySupportRequest.new(support_params)
+    @support_request = CommunitySupportRequest.new(support_params)
 
-    if form_request.valid?
-      CommunitySupportMailer.send_to_support_team(form_request).deliver
+    if @support_request.valid?
+      CommunitySupportMailer.send_to_support_team(@support_request).deliver
       redirect_to root_path
     else
       render "new"
@@ -18,6 +18,6 @@ class CommunitySupportController < ApplicationController
   private
 
   def form_params
-    params.permit(:name, :email, :message)
+    params.require(:community_support_request).permit(:name, :email, :message)
   end
 end

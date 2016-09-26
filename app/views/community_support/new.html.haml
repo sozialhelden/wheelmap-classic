@@ -1,9 +1,6 @@
 .support-form
-  = form_tag('/community_support') do
-    = label_tag 'name'
-    = text_field_tag :name
-    = label_tag 'email'
-    = text_field_tag :email
-    = label_tag 'message'
-    = text_area_tag :message
-    = submit_tag 'Save'
+  = semantic_form_for(@support_request, :url => community_support_index_path ) do |f|
+    = f.input :name
+    = f.input :email
+    = f.input :message
+    = f.action :submit

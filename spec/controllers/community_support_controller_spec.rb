@@ -21,7 +21,8 @@ RSpec.describe CommunitySupportController, type: :controller do
       before do
         ActionMailer::Base.deliveries.clear
         allow(request).to receive(:user_agent).and_return(user_agent)
-        post :create, { name: user_name, email: "holger@example.com", message: message }
+        params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
+        post :create, params
       end
 
       it "returns http found" do
@@ -84,7 +85,8 @@ RSpec.describe CommunitySupportController, type: :controller do
       before do
         ActionMailer::Base.deliveries.clear
 
-        post :create, { name: user_name, email: "holger$example.com", message: message }
+        params = {:community_support_request => { name: user_name, email: "holger$example.com", message: message }}
+        post :create, params
       end
 
       it "rerenders the form" do

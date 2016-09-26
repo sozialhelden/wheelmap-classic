@@ -27,4 +27,8 @@ class CommunitySupportRequest
   def browser_version
     @user_agent.version
   end
+
+  def to_key
+    nil
+  end
 end
