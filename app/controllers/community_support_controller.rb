@@ -6,6 +6,9 @@ class CommunitySupportController < ApplicationController
   def create
     support_params = form_params.merge(user_agent: request.user_agent)
     @support_request = CommunitySupportRequest.new(support_params)
+    if current_user
+      @support_request.osm_username = current_user.osm_username
+    end
 
     if @support_request.valid?
       CommunitySupportMailer.send_to_support_team(@support_request).deliver
