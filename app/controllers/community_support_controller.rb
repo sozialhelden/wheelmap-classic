@@ -1,6 +1,9 @@
 class CommunitySupportController < ApplicationController
   def new
     @support_request = CommunitySupportRequest.new
+    if current_user
+      @support_request.email = current_user.email
+    end
   end
 
   def create
