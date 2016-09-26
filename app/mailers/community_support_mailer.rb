@@ -4,8 +4,6 @@ class CommunitySupportMailer < ActionMailer::Base
   def send_to_support_team(community_support_request)
     @community_support_request = community_support_request
 
-    mail( :to => "support@example.com",
-          :subject => "Bugreport von wheelmap.org"
-          )
+    mail(:to => "bugs@wheelmap.org", :subject => "Bugreport von wheelmap.org")
   end
 end
