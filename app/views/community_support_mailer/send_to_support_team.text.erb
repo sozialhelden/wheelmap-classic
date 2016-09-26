@@ -1,7 +1,5 @@
-Message:
-<%= @community_support_request.email %>
-<%= @community_support_request.name %>
-<%= @community_support_request.message %>
+Email: <%= @community_support_request.email %>
+Name: <%= @community_support_request.name %>
 Betriebssystem Hersteller: <%= @community_support_request.operating_system %>
 Betriebssystem Version: <%= @community_support_request.operating_system_version %>
 Browser Hersteller: <%= @community_support_request.browser_vendor %>
@@ -10,3 +8,5 @@ Browser Version: <%= @community_support_request.browser_version %>
   BenutzerIn ist eingeloggt mit: <%= @community_support_request.osm_username %>
 <% end %>
 Sprache: <%= I18n.locale %>
+Message:
+<%= @community_support_request.message %>
