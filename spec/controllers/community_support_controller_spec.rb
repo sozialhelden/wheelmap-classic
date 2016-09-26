@@ -87,6 +87,10 @@ RSpec.describe CommunitySupportController, type: :controller do
           it 'does not contain notice that the user is logged in' do
             expect(raw_body).to_not include("BenutzerIn ist eingeloggt mit: #{email}")
           end
+
+          it "does not contain the user's osm username" do
+            expect(raw_body).to_not include("OSM Username: #{osm_username}")
+          end
         end
       end
 
@@ -105,6 +109,10 @@ RSpec.describe CommunitySupportController, type: :controller do
 
           it 'contains notice that the user is logged in' do
             expect(raw_body).to include("BenutzerIn ist eingeloggt mit: #{email}")
+          end
+
+          it "contains the user's osm username" do
+            expect(raw_body).to include("OSM Username: #{osm_username}")
           end
         end
       end
