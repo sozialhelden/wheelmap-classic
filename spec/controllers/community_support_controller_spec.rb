@@ -56,12 +56,26 @@ RSpec.describe CommunitySupportController, type: :controller do
           expect(raw_body).to include(email)
         end
 
-        it "contains the user agent" do
-          expect(raw_body).to include(user_agent)
-        end
-
         it "contains the user's message" do
           expect(raw_body).to include(message)
+        end
+
+        describe "the user agent" do
+          it "has correct operating system vendor" do
+            expect(raw_body).to include("Betriebssystem Hersteller: Macintosh")
+          end
+
+          it "has correct operating system" do
+            expect(raw_body).to include("Betriebssystem Version: OS X 10.11")
+          end
+
+          it "has correct browser vendor" do
+            expect(raw_body).to include("Browser Hersteller: Firefox")
+          end
+
+          it "has correct browser version" do
+            expect(raw_body).to include("Browser Version: 48.0")
+          end
         end
       end
     end

@@ -1,5 +1,8 @@
 Message:
 <%= @community_support_request.email %>
 <%= @community_support_request.name %>
-<%= @community_support_request.user_agent %>
 <%= @community_support_request.message %>
+Betriebssystem Hersteller: <%= @community_support_request.operating_system %>
+Betriebssystem Version: <%= @community_support_request.operating_system_version %>
+Browser Hersteller: <%= @community_support_request.browser_vendor %>
+Browser Version: <%= @community_support_request.browser_version %>

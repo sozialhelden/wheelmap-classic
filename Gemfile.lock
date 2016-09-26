@@ -518,6 +518,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    useragent (0.16.8)
     warden (1.2.6)
       rack (>= 1.0)
     webmock (1.24.2)
@@ -641,6 +642,7 @@ DEPENDENCIES
   thin
   uglifier
   unicorn
+  useragent (~> 0.16.8)
   webmock
   whenever
   will_paginate
