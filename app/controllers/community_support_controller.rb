@@ -1,9 +1,11 @@
 class CommunitySupportController < ApplicationController
   def new
+    @support_request = CommunitySupportRequest.new
   end
 
   def create
-    form_request = CommunitySupportRequest.new(form_params[:name], form_params[:email], form_params[:message], request.user_agent)
+    support_params = form_params.merge(user_agent: request.user_agent)
+    form_request = CommunitySupportRequest.new(support_params)
 
     if form_request.valid?
       CommunitySupportMailer.send_to_support_team(form_request).deliver

@@ -5,11 +5,11 @@ class CommunitySupportRequest
   validates_presence_of :name, :email, :message
   validates :email, format: { with: /@/ }
 
-  def initialize(name, email, message, user_agent)
-    @name = name
-    @email = email
-    @message = message
-    @user_agent = UserAgent.parse(user_agent)
+  def initialize(params = {})
+    @name = params.fetch(:name, '')
+    @email = params.fetch(:email, '')
+    @message = params.fetch(:message, '')
+    @user_agent = UserAgent.parse(params.fetch(:user_agent, ''))
   end
 
   def browser_vendor
