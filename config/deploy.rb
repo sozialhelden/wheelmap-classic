@@ -73,6 +73,9 @@ namespace :deploy do
         remote_dir = "#{host.user}@#{host.hostname}:#{release_path}/public/assets/"
         execute "mkdir -p #{release_path}/public/assets/"
         run_locally { execute "rsync -av --delete #{local_dir} #{remote_dir}" }
+        # We create this file so the consul health check will pass. We can't use an
+        # existing file since they are all unpredictably named.
+        execute "touch #{release_path}/public/assets/ping"
 
         # stolen from https://github.com/capistrano/capistrano/blob/master/lib/capistrano/tasks/deploy.rake#L101
         # we can't directly invoke the task since that runs on deploy roles only
