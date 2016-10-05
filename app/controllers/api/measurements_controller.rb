@@ -15,6 +15,10 @@ class Api::MeasurementsController < Api::ApiController
 
   def add_metadata
     Poi.find(params[:node_id])
+
+    respond_to do |format|
+      format.json { render :json => {:id => 1234 }.to_json, :status => 201 }
+    end
   end
 
   private
