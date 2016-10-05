@@ -92,6 +92,16 @@ describe Api::MeasurementsController do
       }.to_json
     end
 
+    let :valid_toilet_metadata do
+      {
+        type: 'toilet',
+        'description': 'Some user description',
+        'data': {
+          'area': 15.42
+        }
+      }.to_json
+    end
+
     it 'returns 404 if the node is not available' do
       post(:add_metadata, :node_id => 404, :measurement_id => measurement_id, :api_key => user.authentication_token, :metadata => valid_door_metadata)
       expect(response.status).to eq 404
@@ -114,6 +124,13 @@ describe Api::MeasurementsController do
     describe 'add ramp metadata' do
       it 'accepts valid json' do
         post(:add_metadata, :node_id => poi.id, :measurement_id => measurement_id, :api_key => user.authentication_token, :metadata => valid_ramp_metadata)
+        expect(response.status).to eq 201
+      end
+    end
+
+    describe 'add toilet metadata' do
+      it 'accepts valid json' do
+        post(:add_metadata, :node_id => poi.id, :measurement_id => measurement_id, :api_key => user.authentication_token, :metadata => valid_toilet_metadata)
         expect(response.status).to eq 201
       end
     end
