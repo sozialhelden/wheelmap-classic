@@ -127,6 +127,9 @@ Wheelmap::Application.routes.draw do
         put :update_wheelchair
         put :update_toilet
       end
+      resources :measurements, only: [:create] do
+        post 'metadata' => 'measurements#add_metadata'
+      end
       resources :photos do
       end
     end
