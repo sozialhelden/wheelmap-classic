@@ -111,7 +111,9 @@ class UsersController < ApplicationController
   end
 
   def reset_token
-    current_user.reset_authentication_token! if current_user.authentication_token
+    # Clearing this triggers `ensure_authentication_token` which
+    # generates a new token.
+    current_user.update_attribute(:authentication_token, nil)
     redirect_to edit_profile_path
     return
   end
