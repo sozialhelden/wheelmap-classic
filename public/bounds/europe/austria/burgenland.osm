@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<osm version="0.6" generator="Osmosis 0.39">
-  <node id="-1275" version="0" timestamp="Fri Feb 24 10:53:33 +0100 2012" uid="1" user="" lat="47.89285" lon="16.92277">
-    <tag k="name" v="Hotel Birkenhof"/>
-    <tag k="wheelchair" v="yes"/>
-    <tag k="tourism" v="hotel"/>
-    <tag k="website" v="http://www.birkenhofgols.at/"/>
-  </node>
-</osm>

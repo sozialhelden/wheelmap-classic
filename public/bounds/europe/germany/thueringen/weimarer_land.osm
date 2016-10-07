@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<osm version="0.6" generator="Osmosis 0.39">
-  <node id="-2684" version="0" timestamp="Fri Feb 24 10:53:34 +0100 2012" uid="1" user="" lat="51.061911" lon="11.2469828">
-    <tag k="name" v="Gasthof zur Linde"/>
-    <tag k="wheelchair" v="yes"/>
-    <tag k="amenity" v="restaurant"/>
-  </node>
-</osm>

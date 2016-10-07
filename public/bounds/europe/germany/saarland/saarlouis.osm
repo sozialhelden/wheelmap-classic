@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<osm version="0.6" generator="Osmosis 0.39">
-  <node id="-2490" version="0" timestamp="Fri Feb 24 10:53:34 +0100 2012" uid="1" user="" lat="49.3127121" lon="6.753384">
-    <tag k="name" v="Commerzbank"/>
-    <tag k="wheelchair" v="unknown"/>
-    <tag k="amenity" v="bank"/>
-  </node>
-</osm>
