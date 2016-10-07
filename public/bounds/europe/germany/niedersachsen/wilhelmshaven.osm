@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<osm version="0.6" generator="Osmosis 0.39">
-  <node id="-4423" version="0" timestamp="Fri Feb 24 10:53:36 +0100 2012" uid="1" user="" lat="53.5468625" lon="8.0884451">
-    <tag k="name" v="Südgebäude/Bibliothek/Mensa, Jade-Hochschule"/>
-    <tag k="wheelchair" v="yes"/>
-    <tag k="wheelchair:description" v="Rollstuhlrampe am Eingang, Behinderten-WC nahe Mensa, Stufenloser Zugang zu Bibliothek und Mensa, Fahrstühle in Obergeschosse"/>
-    <tag k="amenity" v="college"/>
-  </node>
-</osm>
