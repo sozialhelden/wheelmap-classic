@@ -89,6 +89,20 @@ describe Api::MeasurementsController do
           expect(response.status).to eq 401
         end
       end
+
+      context 'with non existant node' do
+        before do
+          post(:create, :node_id => 999999, :api_key => user.authentication_token, :photo => fixture_file_upload('/placeholder.jpg'))
+        end
+
+        it 'returns 404' do
+          expect(response.status).to eq 404
+        end
+
+        it 'does not save a new measurement' do
+          expect(poi.photos.count).to eq 0
+        end
+      end
     end
   end
 
