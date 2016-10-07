@@ -56,11 +56,33 @@ describe Api::MeasurementsController do
         specify 'the error message indicates that the image is missing' do
           expect(json_response['error']).to eq 'photo is missing'
         end
+
+        it 'does not save a new photo for the poi' do
+          expect(poi.photos.count).to eq 0
+        end
       end
 
       context 'with missing api key' do
         before do
           post(:create, :node_id => poi.id, :photo => fixture_file_upload('/placeholder.jpg'))
+        end
+
+        it 'returns 401 Unauthorized' do
+          expect(response.status).to eq 401
+        end
+
+        it 'does not save a new photo for the poi' do
+          expect(poi.photos.count).to eq 0
+        end
+      end
+
+      context 'with invalid api key' do
+        before do
+          post(:create, :node_id => poi.id, api_key: '12354645543534534', :photo => fixture_file_upload('/placeholder.jpg'))
+        end
+
+        it 'does not save a new photo for the poi' do
+          expect(poi.photos.count).to eq 0
         end
 
         it 'returns 401 Unauthorized' do
