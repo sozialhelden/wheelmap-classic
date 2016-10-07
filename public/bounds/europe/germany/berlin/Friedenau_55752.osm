@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<osm version="0.6" generator="Osmosis 0.39">
-  <node id="-2593" version="0" timestamp="Fri Feb 24 10:53:34 +0100 2012" uid="1" user="" lat="52.4722898" lon="13.3355793">
-    <tag k="name" v="Parkplatz/Parkhaus"/>
-    <tag k="wheelchair" v="unknown"/>
-    <tag k="amenity" v="parking"/>
-  </node>
-</osm>

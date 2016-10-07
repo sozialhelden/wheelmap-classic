@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<osm version="0.6" generator="Osmosis 0.39">
-  <node id="-3865" version="0" timestamp="Fri Feb 24 10:53:35 +0100 2012" uid="1" user="" lat="44.6772568" lon="34.4094278">
-    <tag k="name" v="dors in bildin"/>
-    <tag k="wheelchair" v="yes"/>
-  </node>
-</osm>

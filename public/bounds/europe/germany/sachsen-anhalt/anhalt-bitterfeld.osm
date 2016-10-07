@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<osm version="0.6" generator="Osmosis 0.39">
-  <node id="-4934" version="0" timestamp="Fri Feb 24 10:53:36 +0100 2012" uid="1" user="" lat="51.6131631" lon="12.2591578">
-    <tag k="name" v="Angelplatz"/>
-    <tag k="wheelchair" v="yes"/>
-    <tag k="tourism" v="attraction"/>
-  </node>
-</osm>
