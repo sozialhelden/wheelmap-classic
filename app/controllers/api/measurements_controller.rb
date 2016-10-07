@@ -15,7 +15,7 @@ class Api::MeasurementsController < Api::ApiController
     poi.save
 
     respond_to do |format|
-      format.json { render :json => {:id => 1234 }.to_json, :status => 201 }
+      format.json { render :json => {:id => photo.id }.to_json, :status => 201 }
     end
   end
 

@@ -38,7 +38,8 @@ describe Api::MeasurementsController do
           end
 
           it 'returns id' do
-            expect(json_response['id']).to eq 1234
+            photo = poi.photos.first
+            expect(json_response['id']).to eq photo.id
           end
         end
       end
