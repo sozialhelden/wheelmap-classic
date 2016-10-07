@@ -23,6 +23,15 @@ describe Api::MeasurementsController do
           post(:create, :node_id => poi.id, :api_key => user.authentication_token, :photo => fixture_file_upload('/placeholder.jpg'))
         end
 
+        it 'creates a photo associated with the poi' do
+          expect(poi.photos.count).to eq 1
+        end
+
+        it "creates a photo with the current user assigned" do
+          photo = poi.photos.first
+          expect(photo.user).to eq user
+        end
+
         describe 'the response' do
           it 'has status 201 Created' do
             expect(response.status).to eql 201
