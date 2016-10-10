@@ -28,3 +28,4 @@ wheelmap.esproj/Project.espressostorage
 *.espressostorage
 .env
 coverage/
+.vagrant
