@@ -23,13 +23,23 @@ describe Api::MeasurementsController do
           post(:create, :node_id => poi.id, :api_key => user.authentication_token, :photo => fixture_file_upload('/placeholder.jpg'))
         end
 
+        it 'creates a photo associated with the poi' do
+          expect(poi.photos.count).to eq 1
+        end
+
+        it "creates a photo with the current user assigned" do
+          photo = poi.photos.first
+          expect(photo.user).to eq user
+        end
+
         describe 'the response' do
           it 'has status 201 Created' do
             expect(response.status).to eql 201
           end
 
           it 'returns id' do
-            expect(json_response['id']).to eq 1234
+            photo = poi.photos.first
+            expect(json_response['id']).to eq photo.id
           end
         end
       end
@@ -46,6 +56,10 @@ describe Api::MeasurementsController do
         specify 'the error message indicates that the image is missing' do
           expect(json_response['error']).to eq 'photo is missing'
         end
+
+        it 'does not save a new photo for the poi' do
+          expect(poi.photos.count).to eq 0
+        end
       end
 
       context 'with missing api key' do
@@ -55,6 +69,38 @@ describe Api::MeasurementsController do
 
         it 'returns 401 Unauthorized' do
           expect(response.status).to eq 401
+        end
+
+        it 'does not save a new photo for the poi' do
+          expect(poi.photos.count).to eq 0
+        end
+      end
+
+      context 'with invalid api key' do
+        before do
+          post(:create, :node_id => poi.id, api_key: '12354645543534534', :photo => fixture_file_upload('/placeholder.jpg'))
+        end
+
+        it 'does not save a new photo for the poi' do
+          expect(poi.photos.count).to eq 0
+        end
+
+        it 'returns 401 Unauthorized' do
+          expect(response.status).to eq 401
+        end
+      end
+
+      context 'with non existant node' do
+        before do
+          post(:create, :node_id => 999999, :api_key => user.authentication_token, :photo => fixture_file_upload('/placeholder.jpg'))
+        end
+
+        it 'returns 404' do
+          expect(response.status).to eq 404
+        end
+
+        it 'does not save a new measurement' do
+          expect(poi.photos.count).to eq 0
         end
       end
     end
