@@ -1188,10 +1188,12 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
         "cinema": "Kino",
         "community_centre": "Community centre",
         "gallery": "Galéria",
+        "massage": "Massage spa",
         "nightclub": "Nočný klub",
         "playground": "Ihrisko",
         "sauna": "Sauna",
         "stripclub": "Strip club",
+        "tattoo": "Tattoo shop",
         "theatre": "Divadlo",
         "zoo": "Zoo"
       },

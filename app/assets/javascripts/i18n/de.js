@@ -1217,10 +1217,12 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
         "cinema": "Kino",
         "community_centre": "Stadthalle / Gemeindezentrum",
         "gallery": "Galerie",
+        "massage": "Massage spa",
         "nightclub": "Nachtclub",
         "playground": "Spielplatz",
         "sauna": "Sauna",
         "stripclub": "Stripclub",
+        "tattoo": "Tattoo shop",
         "theatre": "Theater",
         "zoo": "Zoo"
       },

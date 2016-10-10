@@ -1225,10 +1225,12 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "cinema": "映画館",
         "community_centre": "コミュニティセンター",
         "gallery": "ギャラリー",
+        "massage": "Massage spa",
         "nightclub": "ナイトクラブ",
         "playground": "子どもの遊び場",
         "sauna": "サウナ",
         "stripclub": "ストリップクラブ",
+        "tattoo": "Tattoo shop",
         "theatre": "劇場",
         "zoo": "動物園"
       },

@@ -515,3 +515,16 @@ tag_viewpoint:
 tag_zoo:
   osm_key: tourism
   osm_value: zoo
+
+# Update 2016-04-26
+tag_sauna:
+  osm_key: leisure
+  osm_value: sauna
+
+tag_massage:
+  osm_key: shop
+  osm_value: massage
+
+tag_tattoo:
+  osm_key: shop
+  osm_value: tattoo

@@ -1183,10 +1183,12 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
         "cinema": "Kinoteātris",
         "community_centre": "Community centre",
         "gallery": "Galerija",
+        "massage": "Massage spa",
         "nightclub": "Naktsklubs",
         "playground": "Rotaļu laukums",
         "sauna": "Pirts",
         "stripclub": "Striptīza klubs",
+        "tattoo": "Tattoo shop",
         "theatre": "Teātris",
         "zoo": "Zooloģiskais dārzs"
       },
