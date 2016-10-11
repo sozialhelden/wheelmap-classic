@@ -9,6 +9,13 @@ This Repository is the source code of the website [Wheelmap.org](http://wheelmap
 
 ## I. Installation
 
+### Development Environment
+
+A `Vagrantfile` is included for convenience. To use this just navigate into the Wheelmap directory and run `vagrant up`.
+
+After it is completed you can enter the box with `vagrant ssh`. You'll find a current copy of the repository at `/vagrant`. Then you can start the server with `bundle exec rails server`, visit it at `localhost:3000`.
+
+*Note:* Rails does not function well operating inside of the normal Virtualbox syncing scheme. Instead we use `rsync` which works well. You can use `vagrant rsync` to sync changes between your local and box copies.
 
 ### Requirements
 
