@@ -15,9 +15,6 @@ Vagrant.configure("2") do |config|
   # Forwards the SSH agent so your keys work.
   config.ssh.forward_agent = true
 
-  # Copy over the user's ssh config.
-  config.vm.provision "file", source: "~/.ssh/config", destination: ".ssh/config"
-
   # Ensure the VM has enough power to do its job.
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "2048"
