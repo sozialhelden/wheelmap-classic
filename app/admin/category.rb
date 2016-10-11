@@ -10,7 +10,7 @@ ActiveAdmin.register Category do
     # For some reason, inherited resource update does not work.
     def update
       region = resource
-      region.update_attributes(params[:category][:id])
+      region.update_attributes(permitted_params[:category])
       super
     end
   end
