@@ -6,11 +6,13 @@ ActiveAdmin.register Category do
     %i(identifier)
   end
 
-  # For some reason, inherited resource update does not work.
-  def update
-    region = resource
-    region.update_attributes(params[:category])
-    super
+  controller do
+    # For some reason, inherited resource update does not work.
+    def update
+      region = resource
+      region.update_attributes(params[:category][:id])
+      super
+    end
   end
 
   index do
