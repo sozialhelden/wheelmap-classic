@@ -1,16 +1,19 @@
 ActiveAdmin.register Category do
 
-  controller do
+  filter :identifier
 
+  permit_params do
+    %i(identifier)
+  end
+
+  controller do
     # For some reason, inherited resource update does not work.
     def update
       region = resource
-      region.update_attributes(params[:category])
+      region.update_attributes(permitted_params[:category])
       super
     end
   end
-
-  filter :identifier
 
   index do
     selectable_column
@@ -19,6 +22,4 @@ ActiveAdmin.register Category do
     column :name, :sortable => false
     actions
   end
-
-
 end

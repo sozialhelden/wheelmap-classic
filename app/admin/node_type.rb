@@ -10,6 +10,10 @@ ActiveAdmin.register NodeType do
   filter :created_at
   filter :updated_at
 
+  permit_params do
+    %i(category identifier icon osm_key osm_value alt_osm_key alt_osm_value)
+  end
+
   index do
     selectable_column
     column :id
@@ -43,6 +47,4 @@ ActiveAdmin.register NodeType do
     end
     f.actions
   end
-
-
 end
