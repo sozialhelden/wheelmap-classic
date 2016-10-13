@@ -88,7 +88,7 @@ namespace :deploy do
         # this needs to be done outside run_locally in order for host to exist
         remote_dir = "#{host.user}@#{host.hostname}:#{release_path}/public/assets/"
         execute "mkdir -p #{release_path}/public/assets/"
-        run_locally { execute "rsync -av --delete #{local_dir}/.sprockets-manifest-* #{remote_dir}" }
+        run_locally { execute "rsync -av --delete #{local_dir}/assets/.sprockets-manifest-* #{remote_dir}/assets" }
       end
 
       # clean up
