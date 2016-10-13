@@ -43,7 +43,7 @@ Rake::Task["deploy:compile_assets"].clear
 Rake::Task["deploy:set_linked_dirs"].clear
 
 namespace :deploy do
-  
+
   task :set_linked_dirs do
      # noop due to cap/rails adding this to the run list
      # Ref: https://github.com/capistrano/rails/blob/54da36a2dda5084a3cbe380b4a8f1ba282379f72/lib/capistrano/tasks/assets.rake#L121
@@ -66,10 +66,10 @@ namespace :deploy do
       end
 
       # rsync to asset server
-      local_dir = "./public/assets/"
+      local_dir = "./public/"
       on roles(:asset) do
         # this needs to be done outside run_locally in order for host to exist
-        remote_dir = "#{host.user}@#{host.hostname}:#{release_path}/public/assets/"
+        remote_dir = "#{host.user}@#{host.hostname}:#{release_path}/public/"
         execute "mkdir -p #{release_path}/public/assets/"
         run_locally { execute "rsync -av --delete #{local_dir} #{remote_dir}" }
         # We create this file so the consul health check will pass. We can't use an
