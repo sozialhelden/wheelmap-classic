@@ -44,7 +44,7 @@ namespace :region do
 
   desc 'Create a region for the hole world'
   task :create_world => :environment do
-    region = Region.find_or_initialize_by_name('World')
+    region = Region.where(name: 'world').first_or_initialize
     region.parent_id = nil
     region.grenze = 'POLYGON((-180.0 -90.0, 180.0 -90.0, 180.0 90.0, -180.0 90.0, -180.0 -90.0))'
     region.save!
@@ -53,7 +53,7 @@ namespace :region do
 
   desc 'Create continents from wkt files'
   task :import => [:environment, :create_world] do
-    world = Region.find('world')
+    world = Region.where(name: 'world')
     dirs = ["db","data"]
     postfix = ["wkt"]
     base_dir = File.join([Rails.root, dirs ])
