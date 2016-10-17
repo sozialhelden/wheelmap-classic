@@ -1,3 +1,27 @@
+-- MySQL dump 10.13  Distrib 5.6.16, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: wheelmap_development
+-- ------------------------------------------------------
+-- Server version	5.6.16-1~exp1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `active_admin_comments`
+--
+
+DROP TABLE IF EXISTS `active_admin_comments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `active_admin_comments` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `resource_id` bigint(20) NOT NULL,
@@ -13,7 +37,15 @@ CREATE TABLE `active_admin_comments` (
   KEY `index_active_admin_comments_on_namespace` (`namespace`),
   KEY `index_active_admin_comments_on_author_type_and_author_id` (`author_type`,`author_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `addresses`
+--
+
+DROP TABLE IF EXISTS `addresses`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `addresses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `latitude` float DEFAULT NULL,
@@ -25,8 +57,16 @@ CREATE TABLE `addresses` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=165 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `admin_users`
+--
+
+DROP TABLE IF EXISTS `admin_users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `admin_users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -49,8 +89,16 @@ CREATE TABLE `admin_users` (
   UNIQUE KEY `index_admin_users_on_email` (`email`),
   UNIQUE KEY `index_admin_users_on_reset_password_token` (`reset_password_token`),
   UNIQUE KEY `index_admin_users_on_confirmation_token` (`confirmation_token`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `alternatives`
+--
+
+DROP TABLE IF EXISTS `alternatives`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `alternatives` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `experiment_id` bigint(20) DEFAULT NULL,
@@ -63,7 +111,15 @@ CREATE TABLE `alternatives` (
   KEY `index_alternatives_on_experiment_id` (`experiment_id`),
   KEY `index_alternatives_on_lookup` (`lookup`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `categories`
+--
+
+DROP TABLE IF EXISTS `categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categories` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -71,7 +127,15 @@ CREATE TABLE `categories` (
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `counters`
+--
+
+DROP TABLE IF EXISTS `counters`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `counters` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `counter_date` date DEFAULT NULL,
@@ -93,8 +157,16 @@ CREATE TABLE `counters` (
   `toilet_iphone` int(11) DEFAULT '0',
   `toilet_android` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=234 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `delayed_jobs`
+--
+
+DROP TABLE IF EXISTS `delayed_jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `delayed_jobs` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `priority` int(11) DEFAULT '0',
@@ -113,8 +185,16 @@ CREATE TABLE `delayed_jobs` (
   `queue` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `delayed_jobs_priority` (`priority`,`run_at`)
-) ENGINE=InnoDB AUTO_INCREMENT=22942 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `iphone_counters`
+--
+
+DROP TABLE IF EXISTS `iphone_counters`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `iphone_counters` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `install_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -124,8 +204,35 @@ CREATE TABLE `iphone_counters` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=742 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `measurements`
+--
+
+DROP TABLE IF EXISTS `measurements`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `measurements` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `photo_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_measurements_on_photo_id` (`photo_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `node_types`
+--
+
+DROP TABLE IF EXISTS `node_types`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `node_types` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `category_id` bigint(20) DEFAULT NULL,
@@ -140,8 +247,16 @@ CREATE TABLE `node_types` (
   PRIMARY KEY (`id`),
   KEY `index_node_types_on_id_and_category_id` (`id`,`category_id`),
   KEY `index_node_types_on_osm_key_and_osm_value` (`osm_key`,`osm_value`)
-) ENGINE=InnoDB AUTO_INCREMENT=164 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=132 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `photos`
+--
+
+DROP TABLE IF EXISTS `photos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `photos` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `caption` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -173,8 +288,16 @@ CREATE TABLE `photos` (
   `image_gallery_preview_width` int(11) DEFAULT NULL,
   `image_gallery_preview_height` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23547 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `pois`
+--
+
+DROP TABLE IF EXISTS `pois`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pois` (
   `osm_id` bigint(20) NOT NULL,
   `version` int(11) NOT NULL,
@@ -196,7 +319,15 @@ CREATE TABLE `pois` (
   KEY `index_pois_on_toilet_and_status` (`toilet`,`status`),
   FULLTEXT KEY `fulltext_index_pois_on_tags` (`tags`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `provided_pois`
+--
+
+DROP TABLE IF EXISTS `provided_pois`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `provided_pois` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `poi_id` bigint(20) NOT NULL,
@@ -208,8 +339,16 @@ CREATE TABLE `provided_pois` (
   `wheelchair_toilet` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_provided_pois_on_provider_id_and_poi_id` (`provider_id`,`poi_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6380 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `providers`
+--
+
+DROP TABLE IF EXISTS `providers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `providers` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -217,13 +356,29 @@ CREATE TABLE `providers` (
   `updated_at` datetime DEFAULT NULL,
   `logo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `providers_users`
+--
+
+DROP TABLE IF EXISTS `providers_users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `providers_users` (
   `user_id` int(11) DEFAULT NULL,
   `provider_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `queued_nodes`
+--
+
+DROP TABLE IF EXISTS `queued_nodes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `queued_nodes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
@@ -234,7 +389,15 @@ CREATE TABLE `queued_nodes` (
   PRIMARY KEY (`id`),
   SPATIAL KEY `index_queued_nodes_on_geom` (`geom`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `regions`
+--
+
+DROP TABLE IF EXISTS `regions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `regions` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -249,21 +412,45 @@ CREATE TABLE `regions` (
   `slug` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_regions_on_slug` (`slug`)
-) ENGINE=InnoDB AUTO_INCREMENT=266 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `schema_migrations`
+--
+
+DROP TABLE IF EXISTS `schema_migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `schema_migrations` (
   `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   UNIQUE KEY `unique_schema_migrations` (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `seed_migration_data_migrations`
+--
+
+DROP TABLE IF EXISTS `seed_migration_data_migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `seed_migration_data_migrations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `version` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `runtime` int(11) DEFAULT NULL,
   `migrated_on` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `slugs`
+--
+
+DROP TABLE IF EXISTS `slugs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `slugs` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -275,8 +462,16 @@ CREATE TABLE `slugs` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_slugs_on_n_s_s_and_s` (`name`,`sluggable_type`,`sequence`,`scope`),
   KEY `index_slugs_on_sluggable_id` (`sluggable_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=337 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `oauth_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -318,8 +513,16 @@ CREATE TABLE `users` (
   UNIQUE KEY `index_users_on_authentication_token` (`authentication_token`),
   KEY `index_users_on_oauth_token` (`oauth_token`),
   KEY `index_users_on_wants_newsletter` (`wants_newsletter`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `widgets`
+--
+
+DROP TABLE IF EXISTS `widgets`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `widgets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `center` point DEFAULT NULL,
@@ -333,8 +536,19 @@ CREATE TABLE `widgets` (
   `south_east` point DEFAULT NULL,
   `north_west` point DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-10-17 13:54:10
 INSERT INTO schema_migrations (version) VALUES ('20110107131649');
 
 INSERT INTO schema_migrations (version) VALUES ('20110114163727');
@@ -474,3 +688,6 @@ INSERT INTO schema_migrations (version) VALUES ('20151102134652');
 INSERT INTO schema_migrations (version) VALUES ('20151201131521');
 
 INSERT INTO schema_migrations (version) VALUES ('20160112153334');
+
+INSERT INTO schema_migrations (version) VALUES ('20161017134327');
+
