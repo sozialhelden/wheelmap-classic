@@ -3,6 +3,45 @@ require 'rails_helper'
 describe Api::MeasurementsController do
   let(:poi) { Poi.first }
   let(:user) { FactoryGirl.create(:user) }
+  let :valid_door_metadata do
+    {
+      type: 'door',
+      'description': 'Some user description',
+      'data': {
+        'width': 1.04
+      }
+    }.to_json
+  end
+
+  let :valid_steps_metadata do
+    {
+      type: 'steps',
+      'description': 'Some user description',
+      'data': {
+        'height': 0.11
+      }
+    }.to_json
+  end
+
+  let :valid_ramp_metadata do
+    {
+      type: 'ramp',
+      'description': 'Some user description',
+      'data': {
+        'angle': 15.42
+      }
+    }.to_json
+  end
+
+  let :valid_toilet_metadata do
+    {
+      type: 'toilet',
+      'description': 'Some user description',
+      'data': {
+        'area': 15.42
+      }
+    }.to_json
+  end
 
   before do
     FactoryGirl.create(:poi)
@@ -108,45 +147,6 @@ describe Api::MeasurementsController do
 
   describe 'add metadata for image' do
     let(:measurement_id) { 1234 }
-    let :valid_door_metadata do
-      {
-        type: 'door',
-        'description': 'Some user description',
-        'data': {
-          'width': 1.04
-        }
-      }.to_json
-    end
-
-    let :valid_steps_metadata do
-      {
-        type: 'steps',
-        'description': 'Some user description',
-        'data': {
-          'height': 0.11
-        }
-      }.to_json
-    end
-
-    let :valid_ramp_metadata do
-      {
-        type: 'ramp',
-        'description': 'Some user description',
-        'data': {
-          'angle': 15.42
-        }
-      }.to_json
-    end
-
-    let :valid_toilet_metadata do
-      {
-        type: 'toilet',
-        'description': 'Some user description',
-        'data': {
-          'area': 15.42
-        }
-      }.to_json
-    end
 
     it 'returns 404 if the node is not available' do
       post(:add_metadata, :node_id => 404, :measurement_id => measurement_id, :api_key => user.authentication_token, :metadata => valid_door_metadata)
