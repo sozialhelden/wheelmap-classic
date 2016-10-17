@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe Api::MeasurementsController do
-  let(:poi) { Poi.first }
   let(:user) { FactoryGirl.create(:user) }
+
   let :valid_door_metadata do
     {
       type: 'door',
@@ -43,13 +43,15 @@ describe Api::MeasurementsController do
     }.to_json
   end
 
-  before do
-    FactoryGirl.create(:poi)
-  end
-
   describe 'create action' do
+    let(:poi) { Poi.first }
+
     def json_response
       JSON.parse(response.body)
+    end
+
+    before do
+      FactoryGirl.create(:poi)
     end
 
     before :all do
@@ -146,37 +148,41 @@ describe Api::MeasurementsController do
   end
 
   describe 'add metadata for image' do
-    let(:measurement_id) { 1234 }
+    let(:poi) { FactoryGirl.create(:poi, photos: [FactoryGirl.create(:photo, user: user)]) }
+    let(:picture) { poi.photos.first }
 
     it 'returns 404 if the node is not available' do
-      post(:add_metadata, :node_id => 404, :measurement_id => measurement_id, :api_key => user.authentication_token, :metadata => valid_door_metadata)
+      post(:add_metadata, :node_id => 404, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => valid_door_metadata)
       expect(response.status).to eq 404
     end
 
     describe 'add door metadata' do
+      before do
+        post(:add_metadata, metadata: valid_door_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+      end
+
       it 'accepts valid json' do
-        post(:add_metadata, :node_id => poi.id, :measurement_id => measurement_id, :api_key => user.authentication_token, :metadata => valid_door_metadata)
         expect(response.status).to eq 201
       end
     end
 
     describe 'add steps metadata' do
       it 'accepts valid json' do
-        post(:add_metadata, :node_id => poi.id, :measurement_id => measurement_id, :api_key => user.authentication_token, :metadata => valid_steps_metadata)
+        post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => valid_steps_metadata)
         expect(response.status).to eq 201
       end
     end
 
     describe 'add ramp metadata' do
       it 'accepts valid json' do
-        post(:add_metadata, :node_id => poi.id, :measurement_id => measurement_id, :api_key => user.authentication_token, :metadata => valid_ramp_metadata)
+        post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => valid_ramp_metadata)
         expect(response.status).to eq 201
       end
     end
 
     describe 'add toilet metadata' do
       it 'accepts valid json' do
-        post(:add_metadata, :node_id => poi.id, :measurement_id => measurement_id, :api_key => user.authentication_token, :metadata => valid_toilet_metadata)
+        post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => valid_toilet_metadata)
         expect(response.status).to eq 201
       end
     end
