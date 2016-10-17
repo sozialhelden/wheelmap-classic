@@ -161,6 +161,26 @@ CREATE TABLE `counters` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `datapoints`
+--
+
+DROP TABLE IF EXISTS `datapoints`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `datapoints` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `property` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `value` float DEFAULT NULL,
+  `unit` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `measurement_id` int(11) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_datapoints_on_measurement_id` (`measurement_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `delayed_jobs`
 --
 
@@ -548,7 +568,7 @@ CREATE TABLE `widgets` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-17 13:54:10
+-- Dump completed on 2016-10-17 13:56:05
 INSERT INTO schema_migrations (version) VALUES ('20110107131649');
 
 INSERT INTO schema_migrations (version) VALUES ('20110114163727');
@@ -690,4 +710,6 @@ INSERT INTO schema_migrations (version) VALUES ('20151201131521');
 INSERT INTO schema_migrations (version) VALUES ('20160112153334');
 
 INSERT INTO schema_migrations (version) VALUES ('20161017134327');
+
+INSERT INTO schema_migrations (version) VALUES ('20161017135542');
 
