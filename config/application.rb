@@ -47,6 +47,13 @@ module Wheelmap
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
 
+    # Configure CORS headers so requests to
+    config.middleware.insert_before 0, "Rack::Cors" do
+      allow do
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
+      end
+    end
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
