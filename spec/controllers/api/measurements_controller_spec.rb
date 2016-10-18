@@ -5,42 +5,42 @@ describe Api::MeasurementsController do
 
   let :valid_door_metadata do
     {
-      type: 'door',
+      measurement_type: 'door',
       'description': 'Some user description',
       'data': {
         'width': 1.04
       }
-    }.to_json
+    }
   end
 
   let :valid_steps_metadata do
     {
-      type: 'steps',
+      measurement_type: 'steps',
       'description': 'Some user description',
       'data': {
         'height': 0.11
       }
-    }.to_json
+    }
   end
 
   let :valid_ramp_metadata do
     {
-      type: 'ramp',
+      measurement_type: 'ramp',
       'description': 'Some user description',
       'data': {
         'angle': 15.42
       }
-    }.to_json
+    }
   end
 
   let :valid_toilet_metadata do
     {
-      type: 'toilet',
+      measurement_type: 'toilet',
       'description': 'Some user description',
       'data': {
         'area': 15.42
       }
-    }.to_json
+    }
   end
 
   describe 'create action' do
@@ -157,12 +157,34 @@ describe Api::MeasurementsController do
     end
 
     describe 'add door metadata' do
+      let(:picture) { poi.photos.first }
       before do
         post(:add_metadata, metadata: valid_door_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
       end
 
       it 'accepts valid json' do
         expect(response.status).to eq 201
+      end
+
+      describe 'metadata' do
+        let(:measurement) { picture.measurements.first }
+        let(:data_point) { measurement.datapoints.first }
+
+        it 'stores exactly one data point' do
+          expect(picture.measurements.length).to eq 1
+        end
+
+        it 'has meters as unit' do
+          expect(data_point.unit).to eq 'meters'
+        end
+
+        it 'has correct value' do
+          expect(data_point.value).to eq 1.04
+        end
+
+        it 'has correct name' do
+          expect(data_point.property).to eq 'width'
+        end
       end
     end
 

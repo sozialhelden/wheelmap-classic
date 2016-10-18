@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.6.16, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: wheelmap_development
+-- Host: localhost    Database: wheelmap_test
 -- ------------------------------------------------------
 -- Server version	5.6.16-1~exp1
 
@@ -126,7 +126,7 @@ CREATE TABLE `categories` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -157,7 +157,7 @@ CREATE TABLE `counters` (
   `toilet_iphone` int(11) DEFAULT '0',
   `toilet_android` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -236,14 +236,14 @@ DROP TABLE IF EXISTS `measurements`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `measurements` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `measurement_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `photo_id` int(11) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `index_measurements_on_photo_id` (`photo_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -267,7 +267,7 @@ CREATE TABLE `node_types` (
   PRIMARY KEY (`id`),
   KEY `index_node_types_on_id_and_category_id` (`id`,`category_id`),
   KEY `index_node_types_on_osm_key_and_osm_value` (`osm_key`,`osm_value`)
-) ENGINE=InnoDB AUTO_INCREMENT=132 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -308,7 +308,7 @@ CREATE TABLE `photos` (
   `image_gallery_preview_width` int(11) DEFAULT NULL,
   `image_gallery_preview_height` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -432,7 +432,7 @@ CREATE TABLE `regions` (
   `slug` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_regions_on_slug` (`slug`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -533,7 +533,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `index_users_on_authentication_token` (`authentication_token`),
   KEY `index_users_on_oauth_token` (`oauth_token`),
   KEY `index_users_on_wants_newsletter` (`wants_newsletter`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -556,7 +556,7 @@ CREATE TABLE `widgets` (
   `south_east` point DEFAULT NULL,
   `north_west` point DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -568,7 +568,7 @@ CREATE TABLE `widgets` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-10-17 13:56:05
+-- Dump completed on 2016-10-18  9:05:45
 INSERT INTO schema_migrations (version) VALUES ('20110107131649');
 
 INSERT INTO schema_migrations (version) VALUES ('20110114163727');
@@ -712,4 +712,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160112153334');
 INSERT INTO schema_migrations (version) VALUES ('20161017134327');
 
 INSERT INTO schema_migrations (version) VALUES ('20161017135542');
+
+INSERT INTO schema_migrations (version) VALUES ('20161018090424');
 
