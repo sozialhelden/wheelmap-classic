@@ -56,11 +56,11 @@ class Api::MeasurementsController < Api::ApiController
     photo.measurements << measurement
     if photo.save
       respond_to do |format|
-        format.json { render :json => {:id => 1234 }.to_json, :status => 201 }
+        format.json { render :json => { }.to_json, :status => 201 }
       end
     else
       respond_to do |format|
-        format.json { render :json => {:id => 1234 }.to_json, :status => 422 }
+        format.json { render :json => { }.to_json, :status => 422 }
       end
     end
   end
