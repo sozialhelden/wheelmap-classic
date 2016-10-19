@@ -38,7 +38,9 @@ describe Api::MeasurementsController do
       measurement_type: 'toilet',
       'description': 'Some user description',
       'data': {
-        'area': 15.42
+        'width': 5.00,
+        'length': 5.00,
+        'area': 25.00
       }
     }
   end
@@ -239,7 +241,7 @@ describe Api::MeasurementsController do
           expect(picture.measurements.length).to eq 1
         end
 
-        it 'has meters as unit' do
+        it 'has degrees as unit' do
           expect(data_point.unit).to eq 'degrees'
         end
 
@@ -254,9 +256,53 @@ describe Api::MeasurementsController do
     end
 
     describe 'add toilet metadata' do
-      it 'accepts valid json' do
+      before do
         post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => valid_toilet_metadata)
+      end
+
+      it 'accepts valid json' do
         expect(response.status).to eq 201
+      end
+
+      describe "metadata" do
+        let(:measurement) { picture.measurements.first }
+        let(:width_data_point) { measurement.datapoints.find{|p| p.property == 'width'}}
+        let(:length_data_point) { measurement.datapoints.find{|p| p.property == 'length'}}
+        let(:area_data_point) { measurement.datapoints.find{|p| p.property == 'area'}}
+
+        it 'stores three data points' do
+          expect(measurement.datapoints.length).to eq 3
+        end
+
+        describe "width" do
+          it "has meters as unit" do
+            expect(width_data_point.unit).to eq "meters"
+          end
+
+          it "has correct value" do
+            expect(width_data_point.value).to eq 5.00
+          end
+        end
+
+        describe "length" do
+          it "has meters as unit" do
+            expect(length_data_point.unit).to eq "meters"
+          end
+
+          it "has correct value" do
+            expect(length_data_point.value).to eq 5.00
+          end
+        end
+
+        describe "area" do
+          it "has square meters as unit" do
+            expect(area_data_point.unit).to eq "square meters"
+          end
+
+          it "has correct value" do
+            expect(area_data_point.value).to eq 25.00
+          end
+        end
       end
     end
   end

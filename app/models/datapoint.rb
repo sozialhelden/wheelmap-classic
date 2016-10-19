@@ -18,6 +18,8 @@ class Datapoint < ActiveRecord::Base
     case property_name
     when "angle"
       "degrees"
+    when "area"
+      "square meters"
     else
       "meters"
     end

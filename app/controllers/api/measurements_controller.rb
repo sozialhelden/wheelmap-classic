@@ -51,7 +51,7 @@ class Api::MeasurementsController < Api::ApiController
   def add_metadata
     poi = Poi.find(params[:node_id])
     measurement = Measurement.new(measurement_params)
-    measurement.datapoints << Datapoint.from_params(data_params["data"])
+    measurement.datapoints << datapoints_from_params
     photo = poi.photos.find(params[:measurement_id])
     photo.measurements << measurement
     poi.save
@@ -68,7 +68,15 @@ class Api::MeasurementsController < Api::ApiController
   end
 
   def data_params
-    params.require(:metadata).permit(:data => [:width, :area, :angle, :height])
+    params.require(:metadata).permit(:data => [:width, :length, :area, :angle, :height])
+  end
+
+  def datapoints_from_params
+    metadata = data_params["data"]
+    properties = metadata.keys
+    properties.map do |property|
+      Datapoint.from_params(property => metadata[property])
+    end
   end
 
   def measurement_params
