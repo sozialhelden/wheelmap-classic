@@ -223,9 +223,33 @@ describe Api::MeasurementsController do
     end
 
     describe 'add ramp metadata' do
-      it 'accepts valid json' do
+      before do
         post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => valid_ramp_metadata)
+      end
+
+      it 'accepts valid json' do
         expect(response.status).to eq 201
+      end
+
+      describe "metadata" do
+        let(:measurement) { picture.measurements.first }
+        let(:data_point) { measurement.datapoints.first }
+
+        it 'stores exactly one data point' do
+          expect(picture.measurements.length).to eq 1
+        end
+
+        it 'has meters as unit' do
+          expect(data_point.unit).to eq 'degrees'
+        end
+
+        it 'has correct value' do
+          expect(data_point.value).to eq 15.42
+        end
+
+        it 'has correct name' do
+          expect(data_point.property).to eq 'angle'
+        end
       end
     end
 
