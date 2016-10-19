@@ -73,6 +73,11 @@ namespace :deploy do
         remote_dir = "#{host.user}@#{host.hostname}:#{release_path}/public/"
         execute "mkdir -p #{release_path}/public/assets/"
         run_locally { execute "rsync -av --delete #{local_dir} #{remote_dir}" }
+
+        # We need to link the existing shared `/var/apps/wheelmap/public/system` folder
+        # into the new release.
+        execute :ln, "-s", "#{deploy_path}/public/system", "#{release_path}/public/system"
+
         # We create this file so the consul health check will pass. We can't use an
         # existing file since they are all unpredictably named.
         execute "touch #{release_path}/public/assets/ping"
@@ -106,7 +111,7 @@ namespace :deploy do
     end
   end
 
-  desc 'Stopp application'
+  desc 'Stop application'
   task :stop do
     on roles(:app), in: :sequence, wait: 5 do
       sudo "systemctl stop webapp.service"
