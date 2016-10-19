@@ -54,10 +54,14 @@ class Api::MeasurementsController < Api::ApiController
     measurement.datapoints << datapoints_from_params
     photo = poi.photos.find(params[:measurement_id])
     photo.measurements << measurement
-    poi.save
-
-    respond_to do |format|
-      format.json { render :json => {:id => 1234 }.to_json, :status => 201 }
+    if photo.save
+      respond_to do |format|
+        format.json { render :json => {:id => 1234 }.to_json, :status => 201 }
+      end
+    else
+      respond_to do |format|
+        format.json { render :json => {:id => 1234 }.to_json, :status => 422 }
+      end
     end
   end
 
@@ -80,6 +84,6 @@ class Api::MeasurementsController < Api::ApiController
   end
 
   def measurement_params
-    params.require(:metadata).permit(:type, :description)
+    params.require(:metadata).permit(:measurement_type, :description)
   end
 end

@@ -5,7 +5,7 @@ describe Api::MeasurementsController do
 
   let :valid_door_metadata do
     {
-      measurement_type: 'door',
+      'measurement_type': 'door',
       'description': 'Some user description',
       'data': {
         'width': 1.04
@@ -15,7 +15,7 @@ describe Api::MeasurementsController do
 
   let :valid_steps_metadata do
     {
-      measurement_type: 'steps',
+      'measurement_type': 'steps',
       'description': 'Some user description',
       'data': {
         'height': 0.11
@@ -25,7 +25,7 @@ describe Api::MeasurementsController do
 
   let :valid_ramp_metadata do
     {
-      measurement_type: 'ramp',
+      'measurement_type': 'ramp',
       'description': 'Some user description',
       'data': {
         'angle': 15.42
@@ -35,7 +35,7 @@ describe Api::MeasurementsController do
 
   let :valid_toilet_metadata do
     {
-      measurement_type: 'toilet',
+      'measurement_type': 'toilet',
       'description': 'Some user description',
       'data': {
         'width': 5.00,
@@ -163,34 +163,74 @@ describe Api::MeasurementsController do
       expect(response.status).to eq 404
     end
 
-    describe 'add door metadata' do
+    describe 'doors' do
       let(:picture) { poi.photos.first }
-      before do
-        post(:add_metadata, metadata: valid_door_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+
+      context 'with valid metadata' do
+        before do
+          post(:add_metadata, metadata: valid_door_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+        end
+
+        it 'accepts valid json' do
+          expect(response.status).to eq 201
+        end
+
+        describe 'metadata' do
+          let(:measurement) { picture.measurements.first }
+          let(:data_point) { measurement.datapoints.first }
+
+          it 'stores exactly one data point' do
+            expect(picture.measurements.length).to eq 1
+          end
+
+          it 'has meters as unit' do
+            expect(data_point.unit).to eq 'meters'
+          end
+
+          it 'has correct value' do
+            expect(data_point.value).to eq 1.04
+          end
+
+          it 'has correct name' do
+            expect(data_point.property).to eq 'width'
+          end
+        end
       end
 
-      it 'accepts valid json' do
-        expect(response.status).to eq 201
-      end
-
-      describe 'metadata' do
-        let(:measurement) { picture.measurements.first }
-        let(:data_point) { measurement.datapoints.first }
-
-        it 'stores exactly one data point' do
-          expect(picture.measurements.length).to eq 1
+      context 'with invalid metadata' do
+        let :without_description do
+          {
+            'measurement_type': 'door',
+            'data': {
+              'width': 1.04
+            }
+          }
         end
 
-        it 'has meters as unit' do
-          expect(data_point.unit).to eq 'meters'
+        let :without_measurement_type do
+          {
+            'description': 'Some user description',
+            'data': {
+              'width': 1.04
+            }
+          }
         end
 
-        it 'has correct value' do
-          expect(data_point.value).to eq 1.04
+        let :without_data do
+          {
+            'measurement_type': 'door',
+            'description': 'Some user description',
+          }
         end
 
-        it 'has correct name' do
-          expect(data_point.property).to eq 'width'
+        it 'returns 422 when description is missing' do
+          post(:add_metadata, metadata: without_description, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+          expect(response.status).to eq 422
+        end
+
+        it 'returns 422 when measurement_type is missing' do
+          post(:add_metadata, metadata: without_measurement_type, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+          expect(response.status).to eq 422
         end
       end
     end
