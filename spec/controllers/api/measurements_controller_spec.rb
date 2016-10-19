@@ -232,6 +232,11 @@ describe Api::MeasurementsController do
           post(:add_metadata, metadata: without_measurement_type, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
           expect(response.status).to eq 422
         end
+
+        it 'returns 422 when data is missing' do
+          post(:add_metadata, metadata: without_data, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+          expect(response.status).to eq 422
+        end
       end
     end
 

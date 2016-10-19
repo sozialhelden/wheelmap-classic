@@ -4,4 +4,6 @@ class Measurement < ActiveRecord::Base
 
   validates :description, presence: true
   validates :measurement_type, presence: true
+  validates :datapoints, presence: true
+  validates_associated :datapoints
 end

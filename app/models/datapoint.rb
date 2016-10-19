@@ -1,5 +1,8 @@
 class Datapoint < ActiveRecord::Base
   belongs_to :measurement
+  validates :property, presence: true
+  validates :unit, presence: true
+  validates :value, presence: true
 
   def self.from_params(form_params)
     return new({}) if form_params.nil?

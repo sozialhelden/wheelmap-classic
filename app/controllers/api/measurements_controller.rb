@@ -76,7 +76,7 @@ class Api::MeasurementsController < Api::ApiController
   end
 
   def datapoints_from_params
-    metadata = data_params["data"]
+    metadata = data_params.fetch("data", {})
     properties = metadata.keys
     properties.map do |property|
       Datapoint.from_params(property => metadata[property])
