@@ -9,8 +9,22 @@ class Measurement < ActiveRecord::Base
   validates_associated :datapoints
 
   def validate_datapoints
-    if measurement_type == "toilet" && datapoints.size != 3
-      errors.add(:datapoints, "toilet metadata requires three datapoints")
+    case measurement_type
+    when 'toilet'
+      validate_toilet_points
+    when 'door'
+      validate_door_point
     end
+  end
+
+  private
+
+  def validate_door_point
+    return if datapoints.size == 0
+    errors.add(:datapoints, "door must have a width") if datapoints.first.property != 'width'
+  end
+
+  def validate_toilet_points
+    errors.add(:datapoints, "toilet metadata requires three datapoints") if datapoints.size != 3
   end
 end
