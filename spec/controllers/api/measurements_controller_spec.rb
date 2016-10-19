@@ -158,6 +158,11 @@ describe Api::MeasurementsController do
       expect(response.status).to eq 404
     end
 
+    it 'returns 404 if the measurement is not available' do
+      post(:add_metadata, :node_id => poi.id, :measurement_id => 404, :api_key => user.authentication_token, :metadata => valid_door_metadata)
+      expect(response.status).to eq 404
+    end
+
     describe 'add door metadata' do
       let(:picture) { poi.photos.first }
       before do
