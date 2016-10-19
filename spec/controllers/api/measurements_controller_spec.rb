@@ -397,6 +397,18 @@ describe Api::MeasurementsController do
           }
         end
 
+        let :with_invalid_datapoint do
+          {
+            'measurement_type': 'toilet',
+            'description': 'Some user description',
+            'data': {
+              'foo': 45.0,
+              'length': 5.00,
+              'area': 25.00
+            }
+          }
+        end
+
         let :with_empty_data do
           {
             'measurement_type': 'toilet',
@@ -419,6 +431,11 @@ describe Api::MeasurementsController do
         it 'does not save a new measurement to database when width is missing' do
           post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => without_width)
           expect(picture.measurements.length).to eq 0
+        end
+
+        it 'returns 422 when invalid data point is passed' do
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => with_empty_data)
+          expect(response.status).to eq 422
         end
       end
     end
