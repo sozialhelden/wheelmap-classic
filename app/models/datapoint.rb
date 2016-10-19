@@ -3,6 +3,7 @@ class Datapoint < ActiveRecord::Base
   validates :property, presence: true
   validates :unit, presence: true
   validates :value, presence: true
+  validates :value, numericality: true
 
   def self.from_params(form_params)
     return new({}) if form_params.nil?

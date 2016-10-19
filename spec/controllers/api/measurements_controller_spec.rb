@@ -232,6 +232,16 @@ describe Api::MeasurementsController do
           }
         end
 
+        let :wrong_width_value do
+          {
+            'measurement_type': 'door',
+            'description': 'Some user description',
+            'data': {
+              'width': "faafafaf"
+            }
+          }
+        end
+
         it 'returns 422 when description is missing' do
           post(:add_metadata, metadata: without_description, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
           expect(response.status).to eq 422
@@ -249,6 +259,11 @@ describe Api::MeasurementsController do
 
         it 'returns 422 when when width is missing' do
           post(:add_metadata, metadata: without_width, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+          expect(response.status).to eq 422
+        end
+
+        it 'returns 422 when when width has the wrong value' do
+          post(:add_metadata, metadata: wrong_width_value, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
           expect(response.status).to eq 422
         end
       end
