@@ -281,6 +281,12 @@ describe Api::MeasurementsController do
           post(:add_metadata, metadata: wrong_data_argument, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
           expect(response.status).to eq 422
         end
+
+        it 'returns a list of errors' do
+          post(:add_metadata, metadata: wrong_data_argument, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+          errors = JSON.parse(response.body)
+          expect(errors.has_key?('errors')).to be true
+        end
       end
     end
 
@@ -382,6 +388,12 @@ describe Api::MeasurementsController do
         it 'returns 422 when wrong key is passed' do
           post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => wrong_data_argument)
           expect(response.status).to eq 422
+        end
+
+        it 'returns a list of errors' do
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => wrong_data_argument)
+          errors = JSON.parse(response.body)
+          expect(errors.has_key?('errors')).to be true
         end
       end
     end
@@ -488,6 +500,12 @@ describe Api::MeasurementsController do
         it 'returns 422 when invalid data point is passed' do
           post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => with_empty_data)
           expect(response.status).to eq 422
+        end
+
+        it 'returns a list of errors' do
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => with_empty_data)
+          errors = JSON.parse(response.body)
+          expect(errors.has_key?('errors')).to be true
         end
       end
     end

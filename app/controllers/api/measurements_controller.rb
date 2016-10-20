@@ -60,7 +60,7 @@ class Api::MeasurementsController < Api::ApiController
       end
     else
       respond_to do |format|
-        format.json { render :json => { }.to_json, :status => 422 }
+        format.json { render :json => { errors: photo.errors }.to_json, :status => 422 }
       end
     end
   end
