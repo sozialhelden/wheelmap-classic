@@ -179,8 +179,12 @@ describe Api::MeasurementsController do
           let(:measurement) { picture.measurements.first }
           let(:data_point) { measurement.datapoints.first }
 
-          it 'stores exactly one data point' do
+          it 'stores exactly one measurement' do
             expect(picture.measurements.length).to eq 1
+          end
+
+          it 'stores exactly one datapoint' do
+            expect(measurement.datapoints.length).to eq 1
           end
 
           it 'has meters as unit' do
@@ -307,8 +311,12 @@ describe Api::MeasurementsController do
           let(:measurement) { picture.measurements.first }
           let(:data_point) { measurement.datapoints.first }
 
-          it 'stores exactly one data point' do
+          it 'stores exactly one measurement' do
             expect(picture.measurements.length).to eq 1
+          end
+
+          it 'stores exactly one datapoint' do
+            expect(measurement.datapoints.length).to eq 1
           end
 
           it 'has meters as unit' do
@@ -356,8 +364,12 @@ describe Api::MeasurementsController do
           let(:measurement) { picture.measurements.first }
           let(:data_point) { measurement.datapoints.first }
 
-          it 'stores exactly one data point' do
+          it 'stores exactly one measurement' do
             expect(picture.measurements.length).to eq 1
+          end
+
+          it 'stores exactly one datapoint' do
+            expect(measurement.datapoints.length).to eq 1
           end
 
           it 'has degrees as unit' do
@@ -413,6 +425,10 @@ describe Api::MeasurementsController do
           let(:width_data_point) { measurement.datapoints.find{|p| p.property == 'width'}}
           let(:length_data_point) { measurement.datapoints.find{|p| p.property == 'length'}}
           let(:area_data_point) { measurement.datapoints.find{|p| p.property == 'area'}}
+
+          it 'stores exactly one measurement' do
+            expect(picture.measurements.length).to eq 1
+          end
 
           it 'stores three data points' do
             expect(measurement.datapoints.length).to eq 3
