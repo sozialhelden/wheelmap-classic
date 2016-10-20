@@ -231,7 +231,7 @@ namespace :export do
       csv << ["Id","Name","Lat","Lon","Street","Housenumber","Postcode","City","Wheelchair","Type","Category"]
       regions.each do |region|
         categories.each do |category|
-          Poi.unknown_accessibility.where(region_id: region).where(node_type_id: category.node_types.where.not(identifier: 'memorial')).includes(:photos).where(photos: {poi_id: nil }).order('version DESC').limit(limit).each do |poi|
+          Poi.unknown_accessibility.where(region_id: region).where(node_type_id: category.node_types.where.not(identifier: 'memorial')).includes(:photos).where(photos: {poi_id: nil }).order('version DESC').each do |poi|
             csv <<
               [
                 poi.id,
