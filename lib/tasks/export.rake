@@ -209,6 +209,46 @@ namespace :export do
     end
   end
 
+  desc 'Export CSV nodes for streetspotr in region and category without photos and node_type memorial'
+  task :for_streetspotr_no_photo_no_memorial => :environment do
+    region_names    = ENV['REGION'].split(',')      rescue nil
+    category_names  = ['food', 'shopping', 'accommodation', 'tourism']
+    raise "Usage: rake export:for_streetspotr REGION=Berlin,Leipzig" unless region_names
+
+    regions = []
+    region_names.each do |region_name|
+      regions << Region.find_by(name: region_name)
+    end
+
+    categories = []
+    category_names.each do |category_name|
+      categories << Category.find_by(identifier: category_name)
+    end
+
+    CSV.open("streetspotr_#{region_names.take(3).join('_')}.csv", "wb", :force_quotes => true) do |csv|
+      csv << ["Id","Name","Lat","Lon","Street","Housenumber","Postcode","City","Wheelchair","Type","Category"]
+      regions.each do |region|
+        categories.each do |category|
+          Poi.unknown_accessibility.where(region_id: region).where(node_type_id: category.node_types.where.not(identifier: 'memorial')).includes(:photos).where(photos: {poi_id: nil }).order('version DESC').each do |poi|
+            csv <<
+              [
+                poi.id,
+                poi.name,
+                poi.lat,
+                poi.lon,
+                poi.street,
+                poi.housenumber,
+                poi.postcode,
+                poi.city,
+                poi.wheelchair,
+                poi.node_type.identifier,
+                poi.category.identifier
+              ]
+          end
+        end
+      end
+    end
+  end
 
   task :tags => :environment do
     puts "Tags = {"
