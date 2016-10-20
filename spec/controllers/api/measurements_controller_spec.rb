@@ -284,36 +284,54 @@ describe Api::MeasurementsController do
       end
     end
 
-    describe 'add steps metadata' do
+    describe 'steps' do
       let(:picture) { poi.photos.first }
 
-      before do
-        post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => valid_steps_metadata)
+      context 'width valid metadata' do
+        before do
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => valid_steps_metadata)
+        end
+
+        it 'accepts valid json' do
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => valid_steps_metadata)
+          expect(response.status).to eq 201
+        end
+
+        describe "metadata" do
+          let(:measurement) { picture.measurements.first }
+          let(:data_point) { measurement.datapoints.first }
+
+          it 'stores exactly one data point' do
+            expect(picture.measurements.length).to eq 1
+          end
+
+          it 'has meters as unit' do
+            expect(data_point.unit).to eq 'meters'
+          end
+
+          it 'has correct value' do
+            expect(data_point.value).to eq 0.11
+          end
+
+          it 'has correct name' do
+            expect(data_point.property).to eq 'height'
+          end
+        end
       end
-
-      it 'accepts valid json' do
-        post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => valid_steps_metadata)
-        expect(response.status).to eq 201
-      end
-
-      describe "metadata" do
-        let(:measurement) { picture.measurements.first }
-        let(:data_point) { measurement.datapoints.first }
-
-        it 'stores exactly one data point' do
-          expect(picture.measurements.length).to eq 1
+      context 'with invalid metadata' do
+        let :wrong_data_argument do
+          {
+            'measurement_type': 'steps',
+            'description': 'Some user description',
+            'data': {
+              'area': 23.42
+            }
+          }
         end
 
-        it 'has meters as unit' do
-          expect(data_point.unit).to eq 'meters'
-        end
-
-        it 'has correct value' do
-          expect(data_point.value).to eq 0.11
-        end
-
-        it 'has correct name' do
-          expect(data_point.property).to eq 'height'
+        it 'returns 422 when wrong key is passed' do
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => wrong_data_argument)
+          expect(response.status).to eq 422
         end
       end
     end
