@@ -5,6 +5,8 @@ namespace :export do
   desc 'Export CSV of nodes in a category'
   task :category_nodes => :environment do
     category_name = ENV['CATEGORY']
+    region_name = ENV['REGION']
+    limit           = ENV['LIMIT'].to_i
     raise "Run rake export:category_nodes CATEGORY=sport" unless category_name
     category = Category.find_by_identifier(category_name)
     raise "Category #{category_name} not found!" unless category
@@ -209,12 +211,11 @@ namespace :export do
     end
   end
 
-  desc 'Export CSV of nodes for streetspotr in region and category but without photos and node_type memorial'
-  task :for_streetspotr_no_photo_and_node_type_memorial => :environment do
+  desc 'Export CSV nodes for streetspotr in region and category without photos and node_type memorial'
+  task :for_streetspotr_no_photo_no_memorial => :environment do
     region_names    = ENV['REGION'].split(',')      rescue nil
     category_names  = ['food', 'shopping', 'leisure', 'tourism']
-    limit           = ENV['LIMIT'].to_i             rescue nil
-    raise "Usage: rake export:for_streetspotr REGION=Berlin,Leipzig" unless region_names && limit
+    raise "Usage: rake export:for_streetspotr REGION=Berlin,Leipzig" unless region_names
 
     regions = []
     region_names.each do |region_name|
