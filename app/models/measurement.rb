@@ -16,6 +16,8 @@ class Measurement < ActiveRecord::Base
       validate_door_point
     when 'steps'
       validate_step_point
+    when 'ramp'
+      validate_ramp_point
     end
   end
 
@@ -33,5 +35,10 @@ class Measurement < ActiveRecord::Base
 
   def validate_toilet_points
     errors.add(:datapoints, "toilet metadata requires three datapoints") if datapoints.size != 3
+  end
+
+  def validate_ramp_point
+    return if datapoints.size == 0
+    errors.add(:datapoints, "ramp must have an angle") if datapoints.first.property != 'angle'
   end
 end
