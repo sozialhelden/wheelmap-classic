@@ -10,9 +10,9 @@ class Api::MeasurementsController < Api::ApiController
 
   resource_description do
     short 'Measurements. Provided by Google Project Tango enabled devices'
-    error :code => 401, :desc => "Authorization Required", meta: { message: "Authentication failed or was not provided. Verify that you have sent valid credentials via an api_key parameter. A 'Www-Authenticate' challenge header will be sent with this type of error response." }
+    error :code => 401, :desc => "Authorization Required", meta: { message: "Authentication failed or was not provided. Verify that you have sent valid credentials via an api_key parameter. A 'www-Authenticate' challenge header will be sent with this type of error response." }
     formats ['json']
-    param :api_key, String, desc: "You personal API key. Sign up for an account at http://wheelmap.org/users/sign_in", required: true
+    param :api_key, String, desc: "Your personal API key. Sign up for an account at http://wheelmap.org/users/sign_in", required: true
   end
 
   def_param_group :data do
@@ -23,7 +23,7 @@ class Api::MeasurementsController < Api::ApiController
   end
 
   def_param_group :measurement do
-    param :type, String, required: true, desc: "The measurement's type. Can be door, toilet, step or ramp"
+    param :type, String, required: true, desc: "The measurement type. Can be door, toilet, step or ramp"
     param :description, String, required: true, desc: "Measurement description"
     param_group :data
   end
