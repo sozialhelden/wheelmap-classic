@@ -5,8 +5,6 @@ namespace :export do
   desc 'Export CSV of nodes in a category'
   task :category_nodes => :environment do
     category_name = ENV['CATEGORY']
-    region_name = ENV['REGION']
-    limit           = ENV['LIMIT'].to_i
     raise "Run rake export:category_nodes CATEGORY=sport" unless category_name
     category = Category.find_by_identifier(category_name)
     raise "Category #{category_name} not found!" unless category
