@@ -5,7 +5,7 @@ describe Api::MeasurementsController do
 
   let :valid_door_metadata do
     {
-      'measurement_type': 'door',
+      'data_type': 'door',
       'description': 'Some user description',
       'data': {
         'width': 1.04
@@ -15,7 +15,7 @@ describe Api::MeasurementsController do
 
   let :valid_steps_metadata do
     {
-      'measurement_type': 'steps',
+      'data_type': 'steps',
       'description': 'Some user description',
       'data': {
         'height': 0.11
@@ -25,7 +25,7 @@ describe Api::MeasurementsController do
 
   let :valid_ramp_metadata do
     {
-      'measurement_type': 'ramp',
+      'data_type': 'ramp',
       'description': 'Some user description',
       'data': {
         'angle': 15.42
@@ -35,7 +35,7 @@ describe Api::MeasurementsController do
 
   let :valid_toilet_metadata do
     {
-      'measurement_type': 'toilet',
+      'data_type': 'toilet',
       'description': 'Some user description',
       'data': {
         'width': 5.00,
@@ -168,7 +168,7 @@ describe Api::MeasurementsController do
 
       context 'with valid metadata' do
         before do
-          post(:add_metadata, metadata: valid_door_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+          post(:add_metadata, metadata: valid_door_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, format: :json)
         end
 
         it 'accepts valid json' do
@@ -204,14 +204,14 @@ describe Api::MeasurementsController do
       context 'with invalid metadata' do
         let :without_description do
           {
-            'measurement_type': 'door',
+            'data_type': 'door',
             'data': {
               'width': 1.04
             }
           }
         end
 
-        let :without_measurement_type do
+        let :without_data_type do
           {
             'description': 'Some user description',
             'data': {
@@ -222,14 +222,14 @@ describe Api::MeasurementsController do
 
         let :without_data do
           {
-            'measurement_type': 'door',
+            'data_type': 'door',
             'description': 'Some user description',
           }
         end
 
         let :without_width do
           {
-            'measurement_type': 'door',
+            'data_type': 'door',
             'description': 'Some user description',
             'data': {
             }
@@ -238,7 +238,7 @@ describe Api::MeasurementsController do
 
         let :wrong_width_value do
           {
-            'measurement_type': 'door',
+            'data_type': 'door',
             'description': 'Some user description',
             'data': {
               'width': "faafafaf"
@@ -248,7 +248,7 @@ describe Api::MeasurementsController do
 
         let :wrong_data_argument do
           {
-            'measurement_type': 'door',
+            'data_type': 'door',
             'description': 'Some user description',
             'data': {
               'area': 23.42
@@ -261,8 +261,8 @@ describe Api::MeasurementsController do
           expect(response.status).to eq 422
         end
 
-        it 'returns 422 when measurement_type is missing' do
-          post(:add_metadata, metadata: without_measurement_type, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+        it 'returns 422 when data_type is missing' do
+          post(:add_metadata, metadata: without_data_type, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
           expect(response.status).to eq 422
         end
 
@@ -335,7 +335,7 @@ describe Api::MeasurementsController do
       context 'with invalid metadata' do
         let :wrong_data_argument do
           {
-            'measurement_type': 'steps',
+            'data_type': 'steps',
             'description': 'Some user description',
             'data': {
               'area': 23.42
@@ -389,7 +389,7 @@ describe Api::MeasurementsController do
       context 'with invalid metadata' do
         let :wrong_data_argument do
           {
-            'measurement_type': 'ramp',
+            'data_type': 'ramp',
             'description': 'Some user description',
             'data': {
               'area': 23.42
@@ -468,7 +468,7 @@ describe Api::MeasurementsController do
       context 'with invalid metadata' do
         let :without_width do
           {
-            'measurement_type': 'toilet',
+            'data_type': 'toilet',
             'description': 'Some user description',
             'data': {
               'length': 5.00,
@@ -479,7 +479,7 @@ describe Api::MeasurementsController do
 
         let :with_invalid_datapoint do
           {
-            'measurement_type': 'toilet',
+            'data_type': 'toilet',
             'description': 'Some user description',
             'data': {
               'foo': 45.0,
@@ -491,7 +491,7 @@ describe Api::MeasurementsController do
 
         let :with_empty_data do
           {
-            'measurement_type': 'toilet',
+            'data_type': 'toilet',
             'description': 'Some user description',
             'data': {
             }

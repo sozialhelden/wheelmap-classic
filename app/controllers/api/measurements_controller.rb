@@ -84,6 +84,6 @@ class Api::MeasurementsController < Api::ApiController
   end
 
   def measurement_params
-    params.require(:metadata).permit(:measurement_type, :description)
+    params.require(:metadata).permit(:data_type, :description)
   end
 end

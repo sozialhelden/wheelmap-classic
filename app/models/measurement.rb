@@ -3,13 +3,13 @@ class Measurement < ActiveRecord::Base
   has_many :datapoints
 
   validates :description, presence: true
-  validates :measurement_type, presence: true
+  validates :data_type, presence: true
   validates :datapoints, presence: true
   validate :validate_datapoints
   validates_associated :datapoints
 
   def validate_datapoints
-    case measurement_type
+    case data_type
     when 'toilet'
       validate_toilet_points
     when 'door'
