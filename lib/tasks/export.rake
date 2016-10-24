@@ -221,31 +221,29 @@ namespace :export do
     end
 
     categories = []
-    category_names.each do |category_name|
-      categories << Category.find_by(identifier: category_name)
-    end
+
+    node_types = category_names.map do |category_name|
+      category = Category.find_by(identifier: category_name)
+      category.node_types.where.not(identifier: 'memorial')
+    end.flatten.uniq
 
     CSV.open("streetspotr_#{region_names.take(3).join('_')}.csv", "wb", :force_quotes => true) do |csv|
       csv << ["Id","Name","Lat","Lon","Street","Housenumber","Postcode","City","Wheelchair","Type","Category"]
-      regions.each do |region|
-        categories.each do |category|
-          Poi.unknown_accessibility.where(region_id: region).where(node_type_id: category.node_types.where.not(identifier: 'memorial')).includes(:photos).where(photos: {poi_id: nil }).order('version DESC').find_each do |poi|
-            csv <<
-              [
-                poi.id,
-                poi.name,
-                poi.lat,
-                poi.lon,
-                poi.street,
-                poi.housenumber,
-                poi.postcode,
-                poi.city,
-                poi.wheelchair,
-                poi.node_type.identifier,
-                poi.category.identifier
-              ]
-          end
-        end
+      Poi.unknown_accessibility.where(region_id: regions).where(node_type_id: node_types ).includes(:photos).where(photos: {poi_id: nil }).order('version DESC').find_each do |poi|
+        csv <<
+          [
+            poi.id,
+            poi.name,
+            poi.lat,
+            poi.lon,
+            poi.street,
+            poi.housenumber,
+            poi.postcode,
+            poi.city,
+            poi.wheelchair,
+            poi.node_type.identifier,
+            poi.category.identifier
+          ]
       end
     end
   end
