@@ -229,23 +229,21 @@ namespace :export do
 
     CSV.open("streetspotr_#{region_names.take(3).join('_')}.csv", "wb", :force_quotes => true) do |csv|
       csv << ["Id","Name","Lat","Lon","Street","Housenumber","Postcode","City","Wheelchair","Type","Category"]
-      regions.each do |region|
-          Poi.unknown_accessibility.where(region_id: region).where(node_type_id: node_types ).includes(:photos).where(photos: {poi_id: nil }).order('version DESC').find_each do |poi|
-            csv <<
-              [
-                poi.id,
-                poi.name,
-                poi.lat,
-                poi.lon,
-                poi.street,
-                poi.housenumber,
-                poi.postcode,
-                poi.city,
-                poi.wheelchair,
-                poi.node_type.identifier,
-                poi.category.identifier
-              ]
-          end
+      Poi.unknown_accessibility.where(region_id: regions).where(node_type_id: node_types ).includes(:photos).where(photos: {poi_id: nil }).order('version DESC').find_each do |poi|
+        csv <<
+          [
+            poi.id,
+            poi.name,
+            poi.lat,
+            poi.lon,
+            poi.street,
+            poi.housenumber,
+            poi.postcode,
+            poi.city,
+            poi.wheelchair,
+            poi.node_type.identifier,
+            poi.category.identifier
+          ]
       end
     end
   end
