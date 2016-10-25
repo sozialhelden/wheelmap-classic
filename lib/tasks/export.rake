@@ -227,7 +227,7 @@ namespace :export do
       category.node_types.where.not(identifier: 'memorial')
     end.flatten.uniq.map(&:id).sort
 
-    CSV.open("streetspotr_#{region_names.take(3).join('_')}.csv", "wb", :force_quotes => true) do |csv|
+    CSV.open("streetspotr_#{region_names.take(3).join('_').gsub(/\s+/,"_")}.csv", "wb", :force_quotes => true) do |csv|
       csv << ["Id","Name","Lat","Lon","Street","Housenumber","Postcode","City","Wheelchair","Type","Category"]
       Poi.unknown_accessibility.where(region_id: regions).where(node_type_id: node_types).where("(select count(*) from photos where photos.poi_id=pois.osm_id) = 0").order('version DESC').each do |poi|
         csv <<
