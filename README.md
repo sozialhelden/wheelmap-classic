@@ -35,7 +35,7 @@ Ubuntu
 
 ```
 $ sudo apt-get update
-$ sudo apt-get install -y git wget curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
+$ sudo apt-get install -y git wget curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev libgeos-dev libproj-dev libgdal-dev
 ```
 
 #### Install Ruby 2.2.2:
