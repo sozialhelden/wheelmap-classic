@@ -24,7 +24,7 @@ class PoiLocator
     end
 
     lowest_id = Poi.lowest_id
-    Poi.find_in_batches(:conditions => {:region_id => @parent_id }, :start => lowest_id) do |batch|
+    Poi.where(region_id: @parent_id).find_in_batches(:start => lowest_id) do |batch|
       poi_regions = {}
       Poi.transaction do
         batch.each do |poi|
