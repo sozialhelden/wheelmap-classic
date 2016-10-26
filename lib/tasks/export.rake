@@ -220,8 +220,6 @@ namespace :export do
       regions << Region.find_by(name: region_name)
     end
 
-    categories = []
-
     node_types = category_names.map do |category_name|
       category = Category.find_by(identifier: category_name)
       category.node_types.where.not(identifier: 'memorial')
