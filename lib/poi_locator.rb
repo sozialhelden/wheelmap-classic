@@ -24,7 +24,7 @@ class PoiLocator
     end
 
     lowest_id = Poi.lowest_id
-    Poi.where(region_id: @parent_id).find_in_batches(:start => lowest_id) do |batch|
+    Poi.where(region_id: @parent_id).find_in_batches(start: lowest_id) do |batch|
       poi_regions = {}
       Poi.transaction do
         batch.each do |poi|
@@ -56,7 +56,7 @@ class PoiLocator
         # update table "pois" without callbacks
         poi_regions.delete(@parent_id) if poi_regions[@parent_id]
         poi_regions.each do |region_id, osm_ids|
-          Poi.where(:osm_id => osm_ids).update_all(:region_id => region_id)
+          Poi.where(osm_id: osm_ids).update_all(region_id: region_id)
         end
       end
     end
