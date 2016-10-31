@@ -209,8 +209,8 @@ namespace :export do
     end
   end
 
-  desc 'Export CSV nodes for streetspotr in region and category without photos and node_type memorial'
-  task :for_streetspotr_no_photo_no_memorial => :environment do
+  desc 'Export CSV nodes for streetspotr in region and category without node_type memorial'
+  task :for_streetspotr_no_memorial => :environment do
     region_names    = ENV['REGION'].split(',')      rescue nil
     category_names  = ['food', 'shopping', 'accommodation', 'tourism']
     raise "Usage: rake export:for_streetspotr REGION=Berlin,Leipzig" unless region_names
