@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  remote: https://github.com/carrierwaveuploader/carrierwave
   revision: c2ee2e89d3aa447c6b81186be6d627202d33a97f
   ref: c2ee2e8
   specs:
@@ -648,4 +648,4 @@ DEPENDENCIES
   yajl-ruby
 
 BUNDLED WITH
-   1.12.5
+   1.13.6
