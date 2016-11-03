@@ -21,10 +21,15 @@ RSpec.describe CommunitySupportController, type: :controller do
     context "with valid form params and user not logged in" do
       before do
         ActionMailer::Base.deliveries.clear
+        @current_locale = I18n.locale
         I18n.locale = :en
         allow(request).to receive(:user_agent).and_return(user_agent)
         params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
         post :create, params
+      end
+
+      after do
+        I18n.locale = @current_locale
       end
 
       it "returns http found" do
