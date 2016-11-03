@@ -24,7 +24,7 @@ class Api::MeasurementsController < Api::ApiController
 
   def_param_group :measurement do
     param :type, String, required: true, desc: "The measurement type. Can be door, toilet, step or ramp"
-    param :description, String, required: true, desc: "Measurement description"
+    param :description, String, required: false, desc: "Measurement description"
     param_group :data
   end
 
