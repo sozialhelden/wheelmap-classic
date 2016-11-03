@@ -13,6 +13,25 @@ describe Api::MeasurementsController do
     }
   end
 
+  let :door_metadata_with_empty_description do
+    {
+      'data_type': 'door',
+      'description': '',
+      'data': {
+        'width': 1.04
+      }
+    }
+  end
+
+  let :door_metadata_without_description do
+    {
+      'data_type': 'door',
+      'data': {
+        'width': 1.04
+      }
+    }
+  end
+
   let :valid_steps_metadata do
     {
       'data_type': 'steps',
@@ -166,7 +185,7 @@ describe Api::MeasurementsController do
     describe 'doors' do
       let(:picture) { poi.photos.first }
 
-      context 'with valid metadata' do
+      context 'with all fields holding a value' do
         before do
           post(:add_metadata, metadata: valid_door_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, format: :json)
         end
@@ -198,6 +217,56 @@ describe Api::MeasurementsController do
           it 'has correct name' do
             expect(data_point.property).to eq 'width'
           end
+        end
+      end
+
+      context 'with empty description' do
+        let(:measurement) { picture.measurements.first }
+        let(:data_point) { measurement.datapoints.first }
+
+        before do
+          post(:add_metadata, metadata: door_metadata_with_empty_description, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, format: :json)
+        end
+
+        it 'returns 201 status code' do
+          expect(response.status).to eq 201
+        end
+
+        it 'stores a new measurement' do
+          expect(picture.measurements.length).to eq 1
+        end
+
+        it 'stores a new measurement with an empty description' do
+          expect(measurement.description.length).to eq 0
+        end
+
+        it 'stores exactly one datapoint' do
+          expect(measurement.datapoints.length).to eq 1
+        end
+      end
+
+      context 'without description' do
+        let(:measurement) { picture.measurements.first }
+        let(:data_point) { measurement.datapoints.first }
+
+        before do
+          post(:add_metadata, metadata: door_metadata_without_description, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, format: :json)
+        end
+
+        it 'returns 201 status code' do
+          expect(response.status).to eq 201
+        end
+
+        it 'stores a new measurement' do
+          expect(picture.measurements.length).to eq 1
+        end
+
+        it 'stores a new measurement with an empty description' do
+          expect(measurement.description).to be nil
+        end
+
+        it 'stores exactly one datapoint' do
+          expect(measurement.datapoints.length).to eq 1
         end
       end
 
@@ -254,11 +323,6 @@ describe Api::MeasurementsController do
               'area': 23.42
             }
           }
-        end
-
-        it 'returns 422 when description is missing' do
-          post(:add_metadata, metadata: without_description, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
-          expect(response.status).to eq 422
         end
 
         it 'returns 422 when data_type is missing' do

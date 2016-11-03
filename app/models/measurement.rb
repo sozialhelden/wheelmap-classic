@@ -2,7 +2,6 @@ class Measurement < ActiveRecord::Base
   belongs_to :photo
   has_many :datapoints
 
-  validates :description, presence: true
   validates :data_type, presence: true
   validates :datapoints, presence: true
   validate :validate_datapoints
