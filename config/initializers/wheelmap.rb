@@ -167,5 +167,10 @@ Tags = {
   :veterinary => :amenity,
   :video => :shop,
   :viewpoint => :tourism,
-  :zoo => :tourism
+  :zoo => :tourism,
+
+  # Update 2016-04-26
+  :sauna => :leisure,
+  :massage => :shop,
+  :tattoo => :shop
 }

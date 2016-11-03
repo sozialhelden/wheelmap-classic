@@ -51,7 +51,7 @@ group :default do
   gem 'activeadmin', '~> 1.0.0.pre2'
   gem 'kaminari', '~> 0.14'
   gem 'kaminari-i18n'
-  gem 'carrierwave', github: 'carrierwaveuploader/carrierwave', ref: 'c2ee2e8' # to be used before release 0.11.0 becaus of deprecation warnings
+  gem 'carrierwave', :git => 'https://github.com/carrierwaveuploader/carrierwave', ref: 'c2ee2e8' # to be used before release 0.11.0 becaus of deprecation warnings
   gem 'carrierwave-meta', '~> 0.0.7'
   gem 'carrierwave_backgrounder', '~> 0.4.2'
   gem 'rmagick'

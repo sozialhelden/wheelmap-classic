@@ -1179,10 +1179,12 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
         "cinema": "Mozi",
         "community_centre": "Community centre",
         "gallery": "Galléria",
+        "massage": "Massage spa",
         "nightclub": "Éjszakai bár",
         "playground": "Játszótér",
         "sauna": "Szauna",
         "stripclub": "Sztriptízbár",
+        "tattoo": "Tattoo shop",
         "theatre": "Színház",
         "zoo": "Állatkert"
       },

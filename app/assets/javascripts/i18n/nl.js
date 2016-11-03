@@ -1181,10 +1181,12 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "cinema": "bioscoop",
         "community_centre": "Community centre",
         "gallery": "Galerij",
+        "massage": "Massage spa",
         "nightclub": "Nachtclub",
         "playground": "Speelplaats",
         "sauna": "Sauna",
         "stripclub": "Stripclub",
+        "tattoo": "Tattoo shop",
         "theatre": "Theater",
         "zoo": "Dierentuin"
       },

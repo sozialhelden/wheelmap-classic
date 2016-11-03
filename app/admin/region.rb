@@ -6,7 +6,7 @@ ActiveAdmin.register Region do
 
   controller do
     def find_resource
-      Region.find_by(name: params[:id])
+      Region.find_by(slug: params[:id])
     end
 
     def update

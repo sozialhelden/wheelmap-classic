@@ -1185,10 +1185,12 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
         "cinema": "vIHbogh much Daq",
         "community_centre": "Community centre",
         "gallery": "nagh beQ qach",
+        "massage": "Massage spa",
         "nightclub": "mI'meH qach",
         "playground": "Playground",
         "sauna": "chebmey ghurHa'meH tuj lo'bogh Daq",
         "stripclub": "Stripclub",
+        "tattoo": "Tattoo shop",
         "theatre": "much qach",
         "zoo": "HaDI'baH qach"
       },

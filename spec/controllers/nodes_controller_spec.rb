@@ -47,7 +47,7 @@ describe NodesController do
     end
 
     it "should render not found page" do
-      get(:show, :id => 123)
+      get(:show, :id => 54385)
       expect(response).not_to be_success
       expect(response.code).to eql('404')
     end

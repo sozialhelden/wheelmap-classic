@@ -33,6 +33,13 @@ describe UsersController do
     expect(response.code).to eq('400')
   end
 
+  it "should reset a users authentication token when requested" do
+    sign_in @user
+    old_token = @user.authentication_token
+    post :reset_token
+    expect(@user.reload.authentication_token).not_to eq(old_token)
+  end
+
   context "widget" do
     let(:user){
       FactoryGirl.create(:user, :email => 'widget@wheelmap.org',

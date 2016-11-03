@@ -42,9 +42,9 @@ class Breadcrumbs extends Component {
 
       return (
         <li key={section} className={className}>
-          <button onClick={onClick}>
+          <a onClick={onClick}>
             <I18n scope={`nodes.new.form.section.${section}.name`} />
-          </button>
+          </a>
         </li>
       );
     });
