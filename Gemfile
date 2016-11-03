@@ -48,7 +48,7 @@ group :default do
   gem 'librato-metrics'
   gem 'librato-rails'
   gem 'multipart-post'
-  gem 'activeadmin', '~> 1.0.0.pre2'
+  gem 'activeadmin', '1.0.0.pre2'
   gem 'kaminari', '~> 0.14'
   gem 'kaminari-i18n'
   gem 'carrierwave', :git => 'https://github.com/carrierwaveuploader/carrierwave', ref: 'c2ee2e8' # to be used before release 0.11.0 becaus of deprecation warnings
