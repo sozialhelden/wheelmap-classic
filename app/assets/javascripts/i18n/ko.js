@@ -1196,11 +1196,14 @@ I18n.translations["ko"] = I18n.extend((I18n.translations["ko"] || {}), {
         "zoo": "동물원"
       },
       "misc": {
+        "association": "Association",
         "company": "회사(사무실)",
         "estate_agent": "부동산 중개인",
         "insurance": "보험 대리점",
         "lawyer": "변호사",
+        "ngo": "Non-government organisation",
         "place_of_worship": "기도원",
+        "political_party": "Political party office",
         "toilets": "화장실"
       },
       "money_post": {

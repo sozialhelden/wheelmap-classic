@@ -1205,11 +1205,14 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
         "zoo": "Zoo"
       },
       "misc": {
+        "association": "Association",
         "company": "Spoločnosť (kancelárie)",
         "estate_agent": "Realitná kancelária",
         "insurance": "Poistenie",
         "lawyer": "Právnik",
+        "ngo": "Non-government organisation",
         "place_of_worship": "Svätyňa",
+        "political_party": "Political party office",
         "toilets": "Toalety"
       },
       "money_post": {

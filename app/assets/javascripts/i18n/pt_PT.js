@@ -1200,11 +1200,14 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
         "zoo": "Jardim zoológico"
       },
       "misc": {
+        "association": "Association",
         "company": "Escritório (empresa)",
         "estate_agent": "Agência imobiliária",
         "insurance": "Seguradora",
         "lawyer": "Advogado",
+        "ngo": "Non-government organisation",
         "place_of_worship": "Local de culto",
+        "political_party": "Political party office",
         "toilets": "WC"
       },
       "money_post": {

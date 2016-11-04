@@ -1200,11 +1200,14 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
         "zoo": "Zoo"
       },
       "misc": {
+        "association": "Association",
         "company": "Firma (kontor)",
         "estate_agent": "Ejendomsmægler",
         "insurance": "Forsikringsselskab",
         "lawyer": "Advokat",
+        "ngo": "Non-government organisation",
         "place_of_worship": "Religiøs tilbedelsessted",
+        "political_party": "Political party office",
         "toilets": "Toiletter"
       },
       "money_post": {

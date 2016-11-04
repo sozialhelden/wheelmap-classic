@@ -1242,14 +1242,17 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "zoo": "動物園"
       },
       "misc": {
+        "association": "Association",
         "company": "会社(オフィス)",
         "doctors": "医者",
         "estate_agent": "不動産屋",
         "hospital": "病院",
         "insurance": "保険代理店",
         "lawyer": "法律家",
+        "ngo": "Non-government organisation",
         "pharmacy": "薬局",
         "place_of_worship": "寺社礼拝所",
+        "political_party": "Political party office",
         "toilets": "トイレ",
         "veterinary": "獣医"
       },

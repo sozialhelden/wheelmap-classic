@@ -1,9 +1,9 @@
 I18n.translations || (I18n.translations = {});
-I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
+I18n.translations["sl"] = I18n.extend((I18n.translations["sl"] || {}), {
   "actions": {
     "cancel": "Cancel",
     "next": "Next",
-    "save": "Vista",
+    "save": "Save",
     "send": "Send"
   },
   "active_admin": {
@@ -206,31 +206,31 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
         "format": "%{attribute} %{message}"
       },
       "messages": {
-        "accepted": "þarf að vera tekið gilt",
-        "blank": "má ekki vera autt",
-        "confirmation": "passar ekki við staðfestingu",
-        "empty": "má ekki vera tómt",
-        "equal_to": "þarf að vera jafngilt %{count}",
-        "even": "þarf að vera slétt tala",
-        "exclusion": "er frátekið",
-        "greater_than": "þarf að vera stærri en %{count}",
-        "greater_than_or_equal_to": "þarf að vera stærri en eða jafngilt %{count}",
-        "inclusion": "er ekki í listanum",
-        "invalid": "er ógilt",
-        "less_than": "þarf að vera minna en %{count}",
-        "less_than_or_equal_to": "þarf að vera minna en eða jafngilt %{count}",
-        "not_a_number": "er ekki tala",
+        "accepted": "must be accepted",
+        "blank": "can't be blank",
+        "confirmation": "doesn't match confirmation",
+        "empty": "can't be empty",
+        "equal_to": "must be equal to %{count}",
+        "even": "must be even",
+        "exclusion": "is reserved",
+        "greater_than": "must be greater than %{count}",
+        "greater_than_or_equal_to": "must be greater than or equal to %{count}",
+        "inclusion": "is not included in the list",
+        "invalid": "is invalid",
+        "less_than": "must be less than %{count}",
+        "less_than_or_equal_to": "must be less than or equal to %{count}",
+        "not_a_number": "is not a number",
         "not_equal_to": "must not be equal to %{count}",
-        "odd": "þarf að vera oddatala",
-        "record_invalid": "Validation mistókst: %{errors}",
+        "odd": "must be odd",
+        "record_invalid": "Validation failed: %{errors}",
         "restrict_dependent_destroy": {
           "many": "Cannot delete record because dependent %{record} exist",
           "one": "Cannot delete record because a dependent %{record} exists"
         },
-        "taken": "er þegar í notkun",
-        "too_long": "er of langt (má aðeins vera %{count} stafir)",
-        "too_short": "er of stutt (má aðeins vera %{count} stafir)",
-        "wrong_length": "er af rangri lengd (má aðeins vera %{count} stafir)"
+        "taken": "has already been taken",
+        "too_long": "is too long (maximum is %{count} characters)",
+        "too_short": "is too short (minimum is %{count} characters)",
+        "wrong_length": "is the wrong length (should be %{count} characters)"
       },
       "models": {
         "user": {
@@ -247,16 +247,16 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
           }
         },
         "user_session": {
-          "email": "Tölvupóstur",
-          "password": "Lykilorð",
-          "remember_me": "Haldast innskráður"
+          "email": "Email address",
+          "password": "Password",
+          "remember_me": "Stay logged in"
         }
       },
       "template": {
-        "body": "Upp kom vandamál í eftirfarandi dálkum:",
+        "body": "There were problems with the following fields:",
         "header": {
-          "one": "Ekki var hægt að vista %{model} vegna villu.",
-          "other": "Ekki var hægt að vista %{model} vegna %{count} villna."
+          "one": "1 error prohibited this %{model} from being saved",
+          "other": "%{count} errors prohibited this %{model} from being saved"
         }
       }
     },
@@ -297,231 +297,231 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
   },
   "application": {
     "require_no_user": {
-      "notice": "Þú ert nú þegar innskráður ..."
+      "notice": "You’re already logged in…"
     },
     "require_user": {
-      "notice": "Þú verður að vera innskráður til að sjá þessa síðu"
+      "notice": "You must be logged in to see this page."
     }
   },
   "breadcrumbs": {
     "node": {
       "create": "Add a new place",
-      "edit": "Breyta stað"
+      "edit": "Edit place"
     },
     "root": "Wheelmap"
   },
   "common": {
-    "close": "loka",
+    "close": "close",
     "skip": "skip"
   },
   "date": {
     "abbr_day_names": [
-      "sun",
-      "mán",
-      "þri",
-      "mið",
-      "fim",
-      "fös",
-      "lau"
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
     ],
     "abbr_month_names": [
-      null,
-      "jan",
-      "feb",
-      "mar",
-      "apr",
-      "maí",
-      "jún",
-      "júl",
-      "ágú",
-      "sep",
-      "okt",
-      "nóv",
-      "des"
+      "",
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
     ],
     "day_names": [
-      "sunnudagur",
-      "mánudagur",
-      "þriðjudagur",
-      "miðvikudagur",
-      "fimmtudagur",
-      "föstudagur",
-      "laugardagur"
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
     ],
     "formats": {
-      "default": "%d.%m.%Y",
-      "long": "%e. %B %Y",
-      "short": "%e. %b"
+      "default": "%Y-%m-%d",
+      "long": "%B %d, %Y",
+      "short": "%b %d"
     },
     "month_names": [
-      null,
-      "janúar",
-      "febrúar",
-      "mars",
-      "apríl",
-      "maí",
-      "júní",
-      "júlí",
-      "ágúst",
-      "september",
-      "október",
-      "nóvember",
-      "desember"
+      "",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
     ],
     "order": [
-      "dagur",
-      ":mánuður",
-      ":ár"
+      "year",
+      "month",
+      "day"
     ]
   },
   "datetime": {
     "distance_in_words": {
       "about_x_hours": {
-        "one": "u.þ.b. 1 klukkustund",
-        "other": "u.þ.b. %{count} klukkustundir"
+        "one": "about 1 hour",
+        "other": "about %{count} hours"
       },
       "about_x_months": {
-        "one": "u.þ.b. 1 mánuður",
-        "other": "u.þ.b. %{count} mánuðir"
+        "one": "about 1 month",
+        "other": "about %{count} months"
       },
       "about_x_years": {
-        "one": "u.þ.b. 1 ár",
-        "other": "u.þ.b. %{count} ár"
+        "one": "about 1 year",
+        "other": "about %{count} years"
       },
       "almost_x_years": {
-        "one": "næstum 1 ár",
-        "other": "næstum %{count} ár"
+        "one": "almost 1 year",
+        "other": "almost %{count} years"
       },
-      "half_a_minute": "hálf mínúta",
+      "half_a_minute": "half a minute",
       "less_than_x_minutes": {
-        "one": "minna en 1 mínúta",
-        "other": "minna en %{count} mínútur"
+        "one": "less than a minute",
+        "other": "less than %{count} minutes"
       },
       "less_than_x_seconds": {
-        "one": "minna en 1 sekúnda",
-        "other": "minna en %{count} sekúndur"
+        "one": "less than 1 second",
+        "other": "less than %{count} seconds"
       },
       "over_x_years": {
-        "one": "meira en 1 ár",
-        "other": "meira en %{count} ár"
+        "one": "over 1 year",
+        "other": "over %{count} years"
       },
       "x_days": {
-        "one": "1 dagur",
-        "other": "%{count} dagar"
+        "one": "1 day",
+        "other": "%{count} days"
       },
       "x_minutes": {
-        "one": "1 mínúta",
-        "other": "%{count} mínútur"
+        "one": "1 minute",
+        "other": "%{count} minutes"
       },
       "x_months": {
-        "one": "1 mánuður",
-        "other": "%{count} mánuðir"
+        "one": "1 month",
+        "other": "%{count} months"
       },
       "x_seconds": {
-        "one": "1 sekúnda",
-        "other": "%{count} sekúndur"
+        "one": "1 second",
+        "other": "%{count} seconds"
       }
     },
     "prompts": {
-      "day": "Dagur",
-      "hour": "Klukkustund",
-      "minute": "Mínúta",
-      "month": "Mánuður",
-      "second": "Sekúnda",
-      "year": "Ár"
+      "day": "Day",
+      "hour": "Hour",
+      "minute": "Minute",
+      "month": "Month",
+      "second": "Seconds",
+      "year": "Year"
     }
   },
   "devise": {
     "confirmations": {
-      "confirmed": "Aðgangurinn hefur verið staðfestur. Þú ert núna skráður inn",
+      "confirmed": "Your email address was successfully confirmed.",
       "link": "You didn't receive confirmation instructions?",
-      "send_instructions": "Þú munt fá tölvupóst með upplýsingar hvernig þú staðfestir aðganginn þinn eftir nokkrar mínútur",
+      "send_instructions": "In a few minutes you will receive an email with a link to confirm your email address.",
       "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
     },
     "destroy": {
-      "confirm": "Ertu viss?",
+      "confirm": "Are you sure?",
       "headline": "Delete account",
-      "link": "Eyða núna"
+      "link": "Delete now"
     },
     "edit": {
       "form": {
         "labels": {
-          "current_password": "Núverandi lykilorð <i>(við þurfum þessar upplýsingar til að staðfesta breytingarnar)</i> ",
-          "email": "Tölvupóstur",
-          "password": "Lykilorð <i>(skildu eftir autt ef þú vilt ekki breyta því)</i> ",
-          "password_confirmation": "Lykilorð aftur"
+          "current_password": "Current password <i>(we need it to confirm your changes)</i>",
+          "email": "Email",
+          "password": "Password <i>(leave empty if you don\\'t want to change it)</i>",
+          "password_confirmation": "Repeat password"
         },
-        "submit": "Vista breytingar"
+        "submit": "Save changes"
       },
-      "headline": "Stjórna aðgangi"
+      "headline": "Edit account"
     },
     "failure": {
       "already_authenticated": "You are already signed in.",
       "inactive": "Your account has not been activated yet.",
-      "invalid": "Rangt tölvupóstfang eða lykilorð.",
-      "invalid_token": "Rangur kóði til að virkja.",
+      "invalid": "Invalid email or password.",
+      "invalid_token": "Invalid authentication token",
       "last_attempt": "You have one more attempt before your account will be locked.",
-      "locked": "Aðgangurinn þinn er læstur.",
+      "locked": "Your account is locked",
       "not_found_in_database": "Invalid email or password.",
       "timeout": "Your session has expired, please sign in again to continue.",
-      "unauthenticated": "Þú þarft að skrá þig inn til að geta haldið áfram.",
-      "unconfirmed": "Þú þarft að staðfesta aðganginn þinn til að halda áfram."
+      "unauthenticated": "You need to sign in or sign up before continuing",
+      "unconfirmed": "You need to confirm your account before continuing."
     },
     "mailer": {
       "confirmation_instructions": {
         "landing_page": "Please click on the link that we just sent to your email address. If you do not receive an email from us, please first check if it is not hiding in your spam folder. If it is not there return to the sign up page and try again.",
-        "subject": "Staðfestinga upplýsingar"
+        "subject": "One more step to activate your account"
       },
       "reset_password_instructions": {
-        "subject": "Leiðbeiningar um endursetningu lykilorðs"
+        "subject": "Reset password instructions"
       },
       "unlock_instructions": {
         "subject": "Unlock instructions"
       }
     },
-    "mandatory": "* verður að velja",
+    "mandatory": "* Required",
     "omniauth_callbacks": {
-      "failure": "Gat ekki gefið þér aðgang frá %{kind} af því að \"%{reason}\".",
+      "failure": "Authorization with %{kind} failed. Error: \"%{reason}\". ",
       "permission_missing": "You did not grant the required permission.",
-      "success": "Gat gefið aðgang frá %{kind} aðgangi."
+      "success": "Successfully logged in with %{kind}."
     },
     "password_recovery": {
       "form": {
         "labels": {
-          "email": "Tölvupóstur"
+          "email": "Email"
         },
-        "submit": "Endursetja lykilorð"
+        "submit": "Reset password"
       },
-      "headline": "Gleymdirðu lykilorði?"
+      "headline": "Forgot password?"
     },
     "password_reset": {
       "email": {
-        "comment": "Ef þú baðst ekki um að breyta lykilorðinu þínu þá vinsamlegast hunsið þennan póst<br/>Lykilorðið þitt mun ekki breytast nema þú smellir á þennan tengil.",
-        "headline": "Velkominn %{email} ",
-        "link": "Breyta lykilorði",
+        "comment": "If you did not request a password reset, just ignore this email.<br/>Your password won\\'t be changed unless you click on the link above and set a new password.",
+        "headline": "Welcome %{email}",
+        "link": "Change my password",
         "text": "We received a request to change your password. If you sent the request, click the following link - otherwise ignore this!"
       },
       "form": {
         "labels": {
-          "password": "Nýtt lykilorð",
-          "password_confirmation": "Lykilorð aftur"
+          "password": "New password",
+          "password_confirmation": "Repeat password"
         },
-        "submit": "Endursetja lykilorð"
+        "submit": "Reset password"
       },
-      "headline": "Endursetja lykilorð"
+      "headline": "Reset password"
     },
     "passwords": {
-      "link": "Gleymdirðu lykilorði?",
+      "link": "Forgot password?",
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
       "send_instructions": "You will receive an email with instructions on how to reset your password in a few minutes",
       "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to reset your password",
-      "updated": "Lykilorðinu þínu var breytt. Þú ert núna skráður inn",
+      "updated": "Your password was changed successfully, you are now logged in",
       "updated_not_active": "Your password was changed successfully"
     },
     "registrations": {
-      "destroyed": "Bless! Aðganginum þínum hefur verið lokað. Vonandi sjáumst við aftur.",
-      "inactive_signed_up": "Þú hefur verið skráður. Hinsvegar gátum við ekki skráð þig inn því aðgangurinn þinn er %{reason}.",
-      "link": "Innskráning",
+      "destroyed": "Bye! Your account was successfully cancelled. We hope to see you again soon.",
+      "inactive_signed_up": "You have signed up successfully, but we could not log you in. Reason: \"%{reason}\"",
+      "link": "Sign up",
       "reasons": {
         "inactive": "inactive",
         "locked": "locked",
@@ -532,14 +532,14 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
       "signed_up_but_locked": "You have signed up successfully. However, we could not sign you in because your account is locked.",
       "signed_up_but_unconfirmed": "A message with a confirmation link has been sent to your email address. Please open the link to activate your account.",
       "update_needs_confirmation": "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address.",
-      "updated": "Þú hefur uppfært aðganginn þinn"
+      "updated": "You have updated your account successfully."
     },
     "sessions": {
       "inactive": "Your account has not been activated yet",
-      "invalid": "Rangt tölvupóstfang eða lykilorð.",
-      "invalid_token": "Ógilt auðkenningartákn",
-      "link": "Innskráning",
-      "locked": "Aðgangurinn þinn er læstur.",
+      "invalid": "Invalid email or password.",
+      "invalid_token": "Invalid authentication token",
+      "link": "Sign in",
+      "locked": "Your account is locked",
       "new": {
         "no_osm_account": "No OpenStreetMap account?",
         "osm_promo_text": "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it.",
@@ -548,25 +548,25 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
         "sign_up_with_osm": "Register now.",
         "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
       },
-      "signed_in": "Innskráning tókst.",
-      "signed_out": "Útskráning tókst.",
+      "signed_in": "Logged in successfully",
+      "signed_out": "You have signed out successfully",
       "timeout": "Your session has expired, please sign in again to continue.",
-      "unauthenticated": "Þú þarft að innskrá eða nýskrá þig til að halda áfram.",
-      "unconfirmed": "Þú verður að staðfesta aðganginn þinn áður en þú heldur áfram."
+      "unauthenticated": "You need to sign in or sign up before continuing",
+      "unconfirmed": "You need to confirm your account before continuing"
     },
     "sign_in": {
       "form": {
         "labels": {
-          "email": "Tölvupóstur",
-          "password": "Lykilorð",
-          "remember_me": "haldast innskráður?"
+          "email": "Email",
+          "password": "Password",
+          "remember_me": "Stay logged in?"
         },
-        "submit": "Innskráning"
+        "submit": "Log in"
       },
-      "headline": "Innskráning"
+      "headline": "Log in"
     },
     "sign_out": {
-      "headline": "Útskrá"
+      "headline": "Log out"
     },
     "sign_up": {
       "email": {
@@ -576,20 +576,20 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
       },
       "form": {
         "labels": {
-          "email": "Tölvupóstfang",
-          "password": "Lykilorð",
-          "password_confirmation": "Lykilorð aftur",
+          "email": "Email",
+          "password": "Password",
+          "password_confirmation": "Repeat password",
           "wants_newsletter": "Yes, keep me up to date about Wheelmap - but please not more than once a month."
         },
-        "submit": "Skrá sig"
+        "submit": "Sign up"
       },
-      "headline": "Skrá sig"
+      "headline": "Sign up"
     },
     "unlocks": {
       "link": "You didn't receive unlock instructions?",
       "send_instructions": "You will receive an email in a few minutes with instructions on how to unlock your account",
       "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to unlock your account",
-      "unlocked": "Aðganginum þínum hefur verið ólæst. Þú ert núna innskráður."
+      "unlocked": "Your account was successfully unlocked. You are now signed in."
     }
   },
   "errors": {
@@ -597,44 +597,44 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
     "format": "%{attribute} %{message}",
     "messages": {
       "accepted": "must be accepted",
-      "already_confirmed": "nú þegar staðfestur, reyndu að skrá þig inn",
+      "already_confirmed": "has already been confirmed",
       "blank": "must be filled in",
       "carrierwave_download_error": "could not be downloaded",
       "carrierwave_integrity_error": "is not of an allowed file type",
       "carrierwave_processing_error": "failed to be processed",
-      "confirmation": "passar ekki við staðfestingu",
+      "confirmation": "doesn't match confirmation",
       "confirmation_period_expired": "needs to be confirmed within %{period}, please request a new one",
       "empty": "must be filled in",
-      "equal_to": "verður að vera nákvæmlega %{count} ",
+      "equal_to": "must be exactly %{count}",
       "even": "must be an even number",
-      "exclusion": "er tekið frá",
+      "exclusion": "is reserved",
       "expired": "expired, please request a new one",
       "extension_black_list_error": "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}",
       "extension_white_list_error": "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}",
-      "greater_than": "verður að vera stærri en %{count}",
+      "greater_than": "must be greater than %{count}",
       "greater_than_or_equal_to": "must be greater than or equal to %{count}",
-      "inclusion": "er ekki tekið gilt",
-      "invalid": "ekki gilt",
-      "less_than": "verður að vera minna en %{count}",
+      "inclusion": "not a valid value",
+      "invalid": "not valid",
+      "less_than": "must be less than %{count}",
       "less_than_or_equal_to": "must be less than or equal to %{count}",
       "mime_types_processing_error": "Failed to process file with MIME::Types, maybe not valid content-type? Original Error: %{e}",
       "mini_magick_processing_error": "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}",
-      "not_a_number": "er ekki tala",
-      "not_an_integer": "verður að vera meira",
-      "not_found": "fannst ekki",
-      "not_locked": "var ekki læst",
+      "not_a_number": "is not a number",
+      "not_an_integer": "must be an integer",
+      "not_found": "was not found",
+      "not_locked": "was not locked",
       "not_saved": {
-        "one": "%{resource} er ekki vistað vegna einnar villu.",
-        "other": "%{resource} ekki vistað vegna %{count} villna."
+        "one": "An error prohibited to save a %{resource}:",
+        "other": "%{count} errors prohibited to save a %{resource}:"
       },
       "odd": "must be an odd number",
       "other_than": "must be other than %{count}",
       "present": "must be blank",
       "rmagick_processing_error": "Failed to manipulate with rmagick, maybe it is not an image? Original Error: %{e}",
-      "taken": "hefur verið tekið",
-      "too_long": "er of langt (ekki fleiri en %{count} stafir)",
-      "too_short": "er of stutt (ekki minna en %{count} stafir)",
-      "wrong_length": "er vitlaus lengd (ætti að vera %{count} stafir)"
+      "taken": "has already been taken",
+      "too_long": "is too long (not more than %{count} characters)",
+      "too_short": "is too short (not less than %{count} characters)",
+      "wrong_length": "is the wrong length (should be %{count} characters)"
     },
     "models": {
       "node": {
@@ -644,10 +644,10 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
       }
     },
     "template": {
-      "body": "að voru vandamál með eftirfarandi dálka:",
+      "body": "There were problems with the following fields:",
       "header": {
-        "one": "%{model} er ekki vistað vegna einnar villu.",
-        "other": "%{model} ekki vistað vegna %{count} villna."
+        "one": "1 error prohibited this %{model} from being saved",
+        "other": "%{count} errors prohibited this %{model} from being saved"
       }
     }
   },
@@ -667,14 +667,14 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
   "flash": {
     "actions": {
       "create": {
-        "notice": "%{resource_name} var skráð án vandræða."
+        "notice": "%{resource_name} was successfully created"
       },
       "destroy": {
-        "alert": "%{resource_name} er ekki hægt að eyða.",
-        "notice": "%{resource_name} var eytt án vandræða."
+        "alert": "%{resource_name} could not be removed",
+        "notice": "%{resource_name} was successfully deleted"
       },
       "update": {
-        "notice": "%{resource_name} var uppfært án vandræða."
+        "notice": "%{resource_name} was successfully updated"
       }
     },
     "photos": {
@@ -684,7 +684,7 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
     }
   },
   "form": {
-    "show_fully_accessible_places": "Hjólastólaaðgengi",
+    "show_fully_accessible_places": "Wheelchair accessible",
     "show_limited_accessible_places": "Partially wheelchair accessible",
     "show_places_without_status": "Unknown status",
     "show_unaccessible_places": "Not wheelchair accessible"
@@ -692,82 +692,82 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
   "formtastic": {
     "hints": {
       "email": "We treat your address confidentially. We promise not to send you spam!",
-      "lat": "Færðu merkið á réttan stað á kortinu",
-      "osm_username": "Ekki meðlimur? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Fáðu þér Openstreetmap aðgang núna</a> ",
-      "password": "(skildu eftir autt ef þú vilt ekki breyta)",
+      "lat": "Move the marker on the map to the correct position",
+      "osm_username": "Not a member yet? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>",
+      "password": "(leave empty if you don't want to change it)",
       "phone": "For example: +49 30 12345678",
-      "website": "Dæmi: http://www.vefsida.is"
+      "website": "For example: http://www.example.com"
     },
     "labels": {
-      "category": "Flokkur:",
+      "category": "Category:",
       "centralkey": "Central key:",
-      "city": "Borg:",
+      "city": "City:",
       "create": "Create a place",
-      "email": "Tölvupóstfang",
+      "email": "Email",
       "finish": "Finish",
-      "housenumber": "Nei:",
-      "lat": "Breiddargráða",
-      "lon": "Lengdargráða",
-      "name": "Nafn:",
+      "housenumber": "No:",
+      "lat": "Latitude",
+      "lon": "Longitude",
+      "name": "Name:",
       "osm_password": "OpenStreetMap password",
       "osm_username": "OpenStreetMap account name",
-      "password": "Lykilorð",
-      "password_confirmation": "Lykilorð endurtekið",
-      "phone": "Sími:",
-      "postcode": "Póstfang:",
+      "password": "Password",
+      "password_confirmation": "Repeat password",
+      "phone": "Telephone:",
+      "postcode": "Post code:",
       "privacy_policy": "I accept paragraphs 1 and 2 of the data privacy agreement.",
-      "reset": "Endursetja",
-      "save": "Vista",
-      "street": "Gata: ",
+      "reset": "Reset",
+      "save": "Save",
+      "street": "Street:",
       "terms": "I accept the terms of use.",
-      "type": "Týpa:",
-      "website": "Vefsíða:",
-      "wheelchair": "Hjólastólaaðgengilegt?",
-      "wheelchair_description": "Athugasemd um aðgengi:",
+      "type": "Type:",
+      "website": "Website:",
+      "wheelchair": "Wheelchair accessibility?",
+      "wheelchair_description": "Accessibility comment:",
       "wheelchair_toilet": "Wheelchair accessible toilet:"
     },
     "titles": {
-      "basic": "Helstu gögn",
-      "optional": "Meiri upplýsingar <span class=\"addition\">(allir fletirnir eru valfrjálsir)</span> "
+      "basic": "Basic data",
+      "optional": "More information <span class=\"addition\">(all fields are optional)</span>"
     }
   },
   "global": {
-    "form_validation_error": "Vinsamlegast skrifaðu villurnar sem eru hér fyrir neðan"
+    "form_validation_error": "Please note the errors listed below"
   },
   "header": {
     "meta": {
       "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
-      "homepage": "Heim",
-      "keywords": "hjólastóll aðgengi staðir finna leita merkja",
-      "search": "Leita",
+      "homepage": "Home page",
+      "keywords": "wheelchair accessible places find search mark",
+      "search": "Search",
       "title": "Wheelmap.org"
     },
     "navigation": {
       "about_wheelmap": "About Wheelmap",
-      "blog": "Blogg",
+      "blog": "News",
       "choose_language": "Choose language",
       "contact": "Contact",
-      "feedback": "Athugasemdir",
-      "home": "Byrja",
-      "how_to_add_a_place": "Hvernig bæti ég við stöðum?",
-      "imprint": "Upplýsingar",
-      "logged_in_as": "Innskráður sem:",
-      "login": "Innskráning",
-      "logout": "Útskráning",
+      "feedback": "Feedback",
+      "home": "Start",
+      "how_to_add_a_place": "How do I add places?",
+      "imprint": "Imprint",
+      "logged_in_as": "Logged in as:",
+      "login": "Log in",
+      "logout": "Log out",
       "map": "Map",
       "newsletter": "Newsletter",
       "press": "Press",
-      "profile": "Prófílnum",
+      "profile": "Profile",
       "projects": "Projects",
-      "suggestions": "Uppástungur",
-      "what_is_barrier_free": "Hvað þýðir \"hjólastólaaðgengilegt\"?",
+      "suggestions": "Suggestions",
+      "what_is_barrier_free": "What does \"wheelchair accessible\" mean?",
       "what_is_wheelmap": "What is Wheelmap?"
     },
     "searchbar": {
-      "add_place": "Bæta við öðrum stað",
-      "find": "finna",
-      "placeholder": "t.d. Árbæjarsafn eða Ráðhús Reykjavíkur",
-      "title_add_place": "Bæta við nýju stað á þessari staðsetningu strax!"
+      "add_place": "Add another place",
+      "find": "Find",
+      "placeholder": "Search for a place",
+      "title_add_place": "Add a new place at this position now!"
     },
     "tagline": "Wheelmap logo",
     "title": "Find wheelchair accessible places",
@@ -789,30 +789,30 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
       }
     },
     "select": {
-      "prompt": "Vinsamlega veldu"
+      "prompt": "Please choose"
     },
     "submit": {
-      "create": "Búa til %{model}",
-      "submit": "Vista %{model}",
-      "update": "Uppfæra %{model}"
+      "create": "create %{model}",
+      "submit": "save %{model}",
+      "update": "update %{model}"
     }
   },
   "home": {
     "index": {
       "embed_link": "Show on Wheelmap.org",
       "filter": {
-        "category": "Flokkur:",
+        "category": "Choose category",
         "deselect_all": "Deselect all",
         "select_all": "Select all",
-        "wheelchair": "Hjólastólaaðgengilegt?"
+        "wheelchair": "Wheelchair accessible?"
       },
       "ie": {
         "action": {
-          "ignore": "Hunsa",
-          "upgrade": "Uppfæra vafra"
+          "ignore": "Ignore",
+          "upgrade": "Update Browser"
         },
         "warning": {
-          "headline": "Afsakið!",
+          "headline": "We apologise!",
           "message": "You appear to be using Internet Explorer. Wheelmap requires a standards compliant browser to work properly. Please consider using Firefox, Chrome, Safari or Opera."
         }
       },
@@ -833,12 +833,12 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
         "form": {
           "limited": "Partially wheelchair accessible",
           "no": "Not wheelchair accessible",
-          "save": "vista",
+          "save": "Update",
           "unknown": "Unknown status",
-          "yes": "Hjólastólaaðgengi"
+          "yes": "Wheelchair accessible"
         },
-        "help": "Hjólastólaaðgengilegt? (Hjálp)",
-        "more": "meiri ..."
+        "help": "Wheelchair accessible? (Help)",
+        "more": "more ..."
       },
       "zoom_alert": "Zoom in closer to see more places."
     }
@@ -865,7 +865,7 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
   "layouts": {
     "application": {
       "banner": {
-        "alt": "Verkefni unnið af Sozialhelden.de"
+        "alt": "A project by Sozialhelden.de"
       }
     }
   },
@@ -886,39 +886,39 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
   },
   "node": {
     "address": {
-      "city": "%{city} %{postcode} ",
-      "street": "%{housenumber} %{street} "
+      "city": "%{city} %{postcode}",
+      "street": "%{housenumber} %{street}"
     },
     "tags": {
-      "phone": "Sími:",
-      "website": "Vefsíða:"
+      "phone": "Phone:",
+      "website": "Website:"
     }
   },
   "nodes": {
     "create": {
       "flash": {
-        "not_successfull": "Úps, innleggið þitt var annaðhvort rangt eða ekki klárað",
-        "successfull": "Takk fyrir, innleggið þitt er vistað og mun birtast innan skamms"
+        "not_successfull": "Oops, your input was either incorrect or incomplete",
+        "successfull": "Thank you, your submission was saved successfully and will be online shortly."
       }
     },
     "edit": {
       "header": {
-        "title": "Breyta stað: %{node} | wheelmap.org "
+        "title": "Edit place: %{node} | wheelmap.org"
       },
       "link": {
-        "large_map": "&laquo; Hætta við"
+        "large_map": "&laquo; Cancel"
       }
     },
     "errors": {
       "default": "Oops something went wrong. We have been informed about this issue",
-      "not_authorized": "Afsakið, auðkenning mistókst",
-      "not_available": "Afsakið, þessu síða er tímabundið niðri.",
-      "not_existent": "Afsakið, þessi staður er ekki til lengur.",
-      "not_found": "Afsakið, síða ekki fundin.",
-      "param_missing": "Skrifaðu niður leitarorð"
+      "not_authorized": "Sorry, authentication failed",
+      "not_available": "Sorry, this page is temporarily not available.",
+      "not_existent": "Sorry, this place is not available anymore.",
+      "not_found": "Sorry, page not found.",
+      "param_missing": "Please provide a search term"
     },
     "flash": {
-      "authorize_wheelmap": "Þú þarft OpenStreetMap aðgang til að breyta gögnum"
+      "authorize_wheelmap": "You need an OpenStreetMap account to modify data"
     },
     "new": {
       "form": {
@@ -956,17 +956,17 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
         "title": "Add a place"
       },
       "header": {
-        "title": "Nýr staður | wheelmap.org "
+        "title": "New place | wheelmap.org"
       },
       "link": {
-        "large_map": "&laquo; Hætta við"
+        "large_map": "&laquo; Cancel"
       }
     },
     "node": {
       "link": {
         "claim": "Do you work here?",
-        "edit_node": "Breyta stað",
-        "report_bug": "Tilkynntu villu"
+        "edit_node": "Edit place",
+        "report_bug": "Report a problem"
       }
     },
     "node_data": {
@@ -1006,17 +1006,17 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
           "description": "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.",
           "title": "This place is on Wheelmap.org: %{name}"
         },
-        "title": "Staður: %{node} | wheelmap.org"
+        "title": "Place: %{node} | wheelmap.org"
       },
       "link": {
         "back": "back",
-        "large_map": "Stækka",
+        "large_map": "Enlarge",
         "listing": "All places of typ '%{type}' in %{city}",
         "upload": "Upload image"
       },
       "more_data_from": "There is more information about this place, validated by:",
       "share": {
-        "email": "Tölvupóstfang",
+        "email": "Email",
         "facebook": "Facebook",
         "text": "I found this place on Wheelmap.org: %{name}",
         "twitter": "Twitter"
@@ -1025,30 +1025,30 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
     },
     "update": {
       "flash": {
-        "not_successfull": "Úps, innleggið þitt var rangt eða ekki klárað.",
-        "successfull": "Takk fyrir, innleggið þitt hefur verið vistað og verður birt innan skamms"
+        "not_successfull": "Oops, your input was either incorrect or incomplete",
+        "successfull": "Thank you, your submission was saved successfully and will be online shortly."
       }
     },
     "update_wheelchair": {
-      "successfull": "Staðan fyrir \"%{name}\" hefur verið breytt í \"%{status} hjólastólaaðgengilegt\" og verður virkt innan skamms"
+      "successfull": "The status for \"%{name}\" has been changed to \"%{status}\" and will be online shortly."
     }
   },
   "number": {
     "currency": {
       "format": {
         "delimiter": ",",
-        "format": "%u %n",
+        "format": "%u%n",
         "precision": 2,
         "separator": ".",
         "significant": false,
         "strip_insignificant_zeros": false,
-        "unit": "kr."
+        "unit": "$"
       }
     },
     "format": {
-      "delimiter": ".",
+      "delimiter": ",",
       "precision": 3,
-      "separator": ",",
+      "separator": ".",
       "significant": false,
       "strip_insignificant_zeros": false
     },
@@ -1056,11 +1056,11 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
       "decimal_units": {
         "format": "%n %u",
         "units": {
-          "billion": "Billjón",
-          "million": "Milljón",
-          "quadrillion": "Skrilljón",
-          "thousand": "Þúsund",
-          "trillion": "Trilljón",
+          "billion": "Billion",
+          "million": "Million",
+          "quadrillion": "Quadrillion",
+          "thousand": "Thousand",
+          "trillion": "Trillion",
           "unit": ""
         }
       },
@@ -1074,8 +1074,8 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
         "format": "%n %u",
         "units": {
           "byte": {
-            "one": "bæti",
-            "other": "bæti"
+            "one": "Byte",
+            "other": "Bytes"
           },
           "gb": "GB",
           "kb": "KB",
@@ -1106,66 +1106,66 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
       "notice": "Your Wheelmap account is now connected to the OpenStreetMap account %{user}."
     }
   },
-  "or": "eða",
+  "or": "or",
   "place": {
-    "one": "%{count} staður",
-    "other": "%{count} staðir"
+    "one": "%{count} place",
+    "other": "%{count} places"
   },
   "poi": {
     "category": {
-      "accommodation": "Gisting",
-      "education": "Menntun",
-      "food": "Matur",
-      "government": "Opinberar stofnanir",
+      "accommodation": "Accomodation",
+      "education": "Education",
+      "food": "Food",
+      "government": "Government",
       "health": "Health",
-      "leisure": "Frístundir",
+      "leisure": "Leisure",
       "misc": "Miscellaneous",
       "money_post": "Bank / Post office",
       "public_transfer": "Public transport",
-      "shopping": "Verslun",
-      "sport": "Íþróttir",
-      "tourism": "Ferðamennska",
-      "unknown": "Ekki vitað"
+      "shopping": "Shopping",
+      "sport": "Sport",
+      "tourism": "Tourism",
+      "unknown": "Unknown"
     },
     "name": {
       "accommodation": {
-        "beach_resort": "Strandarhótel",
-        "bed_and_breakfast": "Hótel með morgunmat",
-        "camp_site": "Tjaldsvæði",
-        "caravan_site": "Tjaldsvæði fyrir hjólhýsi",
-        "chalet": "Kofar",
+        "beach_resort": "Beach hotel",
+        "bed_and_breakfast": "Bed and breakfast",
+        "camp_site": "Camp site",
+        "caravan_site": "Caravan site",
+        "chalet": "Chalet",
         "dormitory": "Dormitory",
-        "guest_house": "Gistihús",
+        "guest_house": "Guest house",
         "hostel": "Hostel",
-        "hotel": "Hótel",
-        "motel": "Mótel"
+        "hotel": "Hotel",
+        "motel": "Motel"
       },
       "education": {
-        "college": "Menntaskóli",
+        "college": "College",
         "driving_school": "Driving school",
-        "kindergarten": "Leikskóli",
-        "library": "Bókasafn",
-        "museum": "Safn",
-        "school": "Skóli",
-        "university": "Háskóli"
+        "kindergarten": "Kindergarten",
+        "library": "Library",
+        "museum": "Museum",
+        "school": "School",
+        "university": "University"
       },
       "food": {
-        "bar": "Skemmtistaður",
-        "biergarten": "Bjórgarður",
-        "cafe": "Kaffihús",
-        "drinking_water": "Drykkjarvatn",
-        "fast_food": "Skyndibiti",
+        "bar": "Bar",
+        "biergarten": "Biergarten",
+        "cafe": "Cafe",
+        "drinking_water": "Drinking water",
+        "fast_food": "Fast Food",
         "ice_cream": "Ice cream parlour",
-        "pub": "Pöbb",
-        "restaurant": "Veitingahús"
+        "pub": "Pub",
+        "restaurant": "Restaurant"
       },
       "government": {
-        "courthouse": "Réttarhús",
-        "embassy": "Sendiráð",
+        "courthouse": "Courthouse",
+        "embassy": "Embassy",
         "employment_agency": "Employment agency",
         "government": "Government agency",
         "police": "Police",
-        "public_building": "Opinber bygging",
+        "public_building": "Public building",
         "townhall": "Town hall"
       },
       "health": {
@@ -1173,31 +1173,31 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
         "dentist": "Dentist",
         "doctors": "Doctor",
         "hearing_aids": "Hearing aid dealer",
-        "hospital": "Spítali",
+        "hospital": "Hospital",
         "medical_supply": "Medical supplies",
         "occupational_therapist": "Occupational therapist",
-        "pharmacy": "Apótek",
+        "pharmacy": "Pharmacy",
         "physiotherapist": "Physiotherapist",
         "psychotherapist": "Psychotherapist",
         "social_facility": "Social facility",
         "speech_therapist": "Speech therapist",
-        "veterinary": "Dýralæknir"
+        "veterinary": "Veterinary"
       },
       "leisure": {
-        "arena": "Svæði",
+        "arena": "Arena",
         "brothel": "Brothel",
         "casino": "Casino",
-        "cinema": "Bíóhús",
+        "cinema": "Cinema",
         "community_centre": "Community centre",
-        "gallery": "Listasöfn",
+        "gallery": "Gallery",
         "massage": "Massage spa",
-        "nightclub": "Næturklúbbur",
+        "nightclub": "Nightclub",
         "playground": "Playground",
-        "sauna": "Gufubað",
+        "sauna": "Sauna",
         "stripclub": "Stripclub",
         "tattoo": "Tattoo shop",
-        "theatre": "Leikhús",
-        "zoo": "Dýragarður"
+        "theatre": "Theatre",
+        "zoo": "Zoo"
       },
       "misc": {
         "association": "Association",
@@ -1206,112 +1206,112 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
         "insurance": "Insurance",
         "lawyer": "Lawyer",
         "ngo": "Non-government organisation",
-        "place_of_worship": "Bænahús",
+        "place_of_worship": "Place of worship",
         "political_party": "Political party office",
-        "toilets": "Klósett"
+        "toilets": "Toilets"
       },
       "money_post": {
-        "atm": "Hraðbanki",
-        "bank": "Banki",
-        "bureau_de_change": "Skiptimynt",
-        "post_box": "Pósthólf",
-        "post_office": "Póstur"
+        "atm": "ATM",
+        "bank": "Bank",
+        "bureau_de_change": "Bureau de change",
+        "post_box": "Post box",
+        "post_office": "Post office"
       },
       "public_transfer": {
-        "aerodrome": "Flugvöllur",
-        "bicycle_parking": "Reiðhjólastæði",
-        "bicycle_rental": "Reiðhjólaleiga",
+        "aerodrome": "Airport",
+        "bicycle_parking": "Bicycle parking",
+        "bicycle_rental": "Bicycle rental",
         "boatyard": "Boat yard",
-        "bus_station": "Rútustöð",
-        "bus_stop": "Strætó",
-        "cable_car": "Dráttarbílar",
-        "car_rental": "Bílaleiga",
-        "car_sharing": "Deila bíl",
-        "chair_lift": "Skíðalyfta",
-        "ferry": "Ferja",
-        "ferry_terminal": "Biðstöð fyrir ferju",
-        "fuel": "Bensínstöð",
-        "halt": "Biðstöð",
-        "light_rail": "Innanbæjarlest",
-        "parking": "Bílastæði",
-        "parking_aisle": "Bílastæðaröð",
-        "platform": "Stæði",
-        "station": "Neðanjarðarlest",
-        "subway_entrance": "Inngangur að neðanjarðarlest",
-        "terminal": "Biðstöð á flugvelli",
-        "tram_stop": "Lestavagnastopp"
+        "bus_station": "Bus station",
+        "bus_stop": "Bus stop",
+        "cable_car": "Cable car",
+        "car_rental": "Car rental",
+        "car_sharing": "Car sharing",
+        "chair_lift": "Chair lift",
+        "ferry": "Ferry",
+        "ferry_terminal": "Ferry terminal",
+        "fuel": "Gas station",
+        "halt": "Halt",
+        "light_rail": "Light rail",
+        "parking": "Parking",
+        "parking_aisle": "Parking aisle",
+        "platform": "Platform",
+        "station": "Train station",
+        "subway_entrance": "Subway entrance",
+        "terminal": "Airport terminal",
+        "tram_stop": "Tram stop"
       },
       "shopping": {
-        "alcohol": "Áfengi",
-        "bakery": "Bakarí",
+        "alcohol": "Liquor",
+        "bakery": "Bakery",
         "beauty": "Beauty salon",
-        "beverages": "Drykkir",
-        "bicycle": "Hjólreiðaverslun",
-        "books": "Bækur",
-        "butcher": "Slátrari",
+        "beverages": "Beverages",
+        "bicycle": "Bike shop",
+        "books": "Books",
+        "butcher": "Butcher",
         "car_repair": "Car repair",
         "car_shop": "Car shop",
         "chemist": "Chemist / Drugstore",
-        "clothes": "Föt",
-        "computer": "Tölvur",
+        "clothes": "Clothes",
+        "computer": "Computer",
         "confectionery": "Candy store",
-        "convenience": "Þægindi",
+        "convenience": "Convenience",
         "deli": "Delicatessen",
-        "department_store": "Sérvöruverslun",
-        "doityourself": "Sjálfshjálparverslun",
-        "dry_cleaning": "Efnalaug",
-        "electronics": "Raftæki",
+        "department_store": "Department store",
+        "doityourself": "Do it yourself",
+        "dry_cleaning": "Dry cleaning",
+        "electronics": "Electronics",
         "fabric": "Fabric shop",
         "farm_shop": "Farm shop",
-        "florist": "Blómabúð",
-        "furniture": "Húsgögn",
+        "florist": "Florist",
+        "furniture": "Furniture",
         "garden_centre": "Garden centre",
         "gift": "Gift shop",
-        "hairdresser": "Hársnyrting",
-        "hardware": "Byggingavörur",
+        "hairdresser": "Hairdresser",
+        "hardware": "Hardware",
         "jewelry": "Jewelry",
-        "kiosk": "Söluturn",
-        "laundry": "Þvottahús",
-        "mall": "Verslunarkeðjur",
-        "optician": "Gleraugnaverslun",
+        "kiosk": "Kiosk",
+        "laundry": "Laundry",
+        "mall": "Shopping centre",
+        "optician": "Optician",
         "organic": "Organic shop",
         "outdoor": "Outdoor supply",
         "pet": "Pet shop",
         "photo": "Photo",
         "second_hand": "Second hand",
-        "shoes": "Skór",
+        "shoes": "Shoes",
         "sports": "Sports",
         "stationery": "Stationery",
-        "supermarket": "Matarverslun",
+        "supermarket": "Supermarket",
         "toys": "Toys",
         "travel_agency": "Travel agency",
         "video": "Video rental store"
       },
       "sport": {
         "pitch": "Sports field",
-        "sports_centre": "Íþróttabúð",
-        "stadium": "Íþróttavellir",
-        "swimming": "Sund",
-        "swimming_pool": "Sundlaug"
+        "sports_centre": "Sports centre",
+        "stadium": "Stadium",
+        "swimming": "Swimming",
+        "swimming_pool": "Swimming pool"
       },
       "tourism": {
-        "archaeological_site": "Fornleifastaður",
-        "arts_centre": "Listamiðstöðvar",
-        "artwork": "List",
-        "attraction": "Merkilegt að sjá",
-        "battlefield": "Stríðssvæði",
-        "beach": "Strönd",
-        "beacon": "Viti",
-        "castle": "Kastali",
-        "cave_entrance": "Hella inngangur",
-        "information": "Upplýsingar fyrir ferðamenn",
-        "memorial": "Minnisvarði",
-        "theme_park": "Þemagarður",
-        "tower": "Turn",
-        "viewpoint": "Útsýnispallur"
+        "archaeological_site": "Archaeological site",
+        "arts_centre": "Arts centre",
+        "artwork": "Artwork",
+        "attraction": "Attraction",
+        "battlefield": "Battlefield",
+        "beach": "Beach",
+        "beacon": "Lighthouse",
+        "castle": "Castle",
+        "cave_entrance": "Cave entrance",
+        "information": "Tourist information",
+        "memorial": "Memorial",
+        "theme_park": "Theme park",
+        "tower": "Tower",
+        "viewpoint": "View point"
       },
       "unknown": {
-        "unknown": "Ekki vitað"
+        "unknown": "Unknown"
       }
     }
   },
@@ -1319,13 +1319,13 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
     "edit": {
       "application": {
         "oauth": {
-          "connected": "Staða: tengdur",
-          "grant": "Tengjast núna",
-          "not_connected": "Staða: ekki tengdur",
-          "revoke": "Aftengjast"
+          "connected": "Status: connected",
+          "grant": "Connect now",
+          "not_connected": "Status: Not connected",
+          "revoke": "Disconnect"
         }
       },
-      "headline": "Breyttu prófílnum þínum"
+      "headline": "Edit your profile"
     }
   },
   "ransack": {
@@ -1421,8 +1421,8 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
         }
       },
       "search": {
-        "for": "Leita að \"%{q}\" ",
-        "not_found": "Engir staðir fundust!"
+        "for": "Searching for \"%{q}\"",
+        "not_found": "No places could be found!"
       }
     },
     "timeout": {
@@ -1434,32 +1434,32 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
   "splash": {
     "countline": "%{count} places have already been marked.",
     "headline": "Everyone can add wheelchair accessible places!",
-    "start": "Byrja",
+    "start": "Start",
     "step1": "Click on a place you know",
     "step2": "Mark it and click save",
     "step3": "That's it! No registration necessary",
     "what_is_wheelmap": "What is Wheelmap?"
   },
-  "statistics": "Tölfræðilegar upplýsingar",
+  "statistics": "Statistics",
   "support": {
     "array": {
-      "last_word_connector": " og ",
-      "sentence_connector": "og",
-      "two_words_connector": " og ",
-      "words_connector": ", "
+      "last_word_connector": " and ",
+      "sentence_connector": "and",
+      "two_words_connector": " and ",
+      "words_connector": ","
     },
     "select": {
-      "prompt": "Vinsamlegast veldu"
+      "prompt": "Please select"
     }
   },
   "time": {
-    "am": "fyrir hádegi",
+    "am": "am",
     "formats": {
-      "default": "%A %e. %B %Y kl. %H:%M",
-      "long": "%A %e. %B %Y kl. %H:%M",
-      "short": "%e. %B kl. %H:%M"
+      "default": "%a, %d %b %Y %H:%M:%S %z",
+      "long": "%B %d, %Y %H:%M",
+      "short": "%d %b %H:%M"
     },
-    "pm": "eftir hádegi"
+    "pm": "pm"
   },
   "toiletstatus": {
     "no": "No wheelchair accessible toilet",
@@ -1474,22 +1474,22 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
   "user_sessions": {
     "create": {
       "activation": {
-        "notice": "Aðgangurinn þinn er virkur!"
+        "notice": "Your account is activated now!"
       },
       "error": {
-        "notice": "Tölvupóstur og lykilorð stemma ekki."
+        "notice": "Email and password don't match."
       },
-      "notice": "Þú ert inni!"
+      "notice": "You're in!"
     },
     "destroy": {
-      "notice": "Bless, komdu aftur fljótlega!"
+      "notice": "Bye, come back soon!"
     },
     "new": {
       "email": "Email address",
-      "login": "Innskráning",
-      "login_with_twitter": "Innskráning með Twitter",
-      "password": "Lykilorð",
-      "remember_me": "Vera innskráður"
+      "login": "Log in",
+      "login_with_twitter": "Log in with Twitter",
+      "password": "Password",
+      "remember_me": "Stay logged in"
     }
   },
   "users": {
@@ -1510,7 +1510,7 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
         "legends": {
           "user_data": "Your account information"
         },
-        "title": "Prófílnum"
+        "title": "Profile"
       },
       "newsletter": {
         "label": "Yes, keep me updated about Wheelmap.",
@@ -1580,7 +1580,7 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
     "limited": "Partially wheelchair accessible",
     "no": "Not wheelchair accessible",
     "unknown": "Unknown status",
-    "yes": "Hjólastólaaðgengi"
+    "yes": "Wheelchair accessible"
   },
   "wheelmap": {
     "footer": {
@@ -1591,11 +1591,11 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
     },
     "itunes": {
       "alt": "AppStore Logo",
-      "title": "Náðu í iPhone forritið núna!"
+      "title": "Download the iPhone App now!"
     },
     "logo": {
-      "alt": "Wheelmap Logo - Finndu hjólastólaaðgengilega staði",
-      "title": "Wheelmap - Finndu hjólastólaaðgengilega staði"
+      "alt": "Wheelmap Logo - find wheelchair accessible places",
+      "title": "Wheelmap - find wheelchair accessible places"
     },
     "what_is": {
       "fully_accessible": "Entrance without steps, all rooms without steps.",
