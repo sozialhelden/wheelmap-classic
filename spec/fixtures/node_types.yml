@@ -6,9 +6,17 @@ tag_alternative:
   osm_key: healthcare
   osm_value: alternative
 
+tag_antiques:
+  osm_key: shop
+  osm_value: antiques
+
 tag_archaeological_site:
   osm_key: historic
   osm_value: archaeological_site
+
+tag_art:
+  osm_key: shop
+  osm_value: art
 
 tag_arts_centre:
   osm_key: amenity
@@ -176,6 +184,10 @@ tag_convenience:
   osm_key: shop
   osm_value: convenience
 
+tag_copyshop:
+  osm_key: shop
+  osm_value: copyshop
+
 tag_courthouse:
   osm_key: amenity
   osm_value: courthouse
@@ -228,6 +240,10 @@ tag_employment_agency:
   osm_key: office
   osm_value: employment_agency
 
+tag_erotic:
+  osm_key: shop
+  osm_value: erotic
+
 tag_estate_agent:
   osm_key: office
   osm_value: estate_agent
@@ -252,6 +268,10 @@ tag_fuel:
   osm_key: amenity
   osm_value: fuel
 
+tag_funeral_directors:
+  osm_key: shop
+  osm_value: funeral_directors
+
 tag_furniture:
   osm_key: shop
   osm_value: furniture
@@ -271,6 +291,10 @@ tag_gift:
 tag_government:
   osm_key: office
   osm_value: government
+
+tag_greengrocer:
+  osm_key: shop
+  osm_value: greengrocer
 
 tag_guest_house:
   osm_key: tourism
@@ -312,6 +336,10 @@ tag_insurance:
   osm_key: office
   osm_value: insurance
 
+tag_interior_decoration:
+  osm_key: shop
+  osm_value: interior_decoration
+
 tag_jewelry:
   osm_key: shop
   osm_value: jewelry
@@ -352,6 +380,10 @@ tag_memorial:
   osm_key: historic
   osm_value: memorial
 
+tag_mobile_phone:
+  osm_key: shop
+  osm_value: mobile_phone
+
 tag_motel:
   osm_key: tourism
   osm_value: motel
@@ -359,6 +391,18 @@ tag_motel:
 tag_museum:
   osm_key: tourism
   osm_value: museum
+
+tag_music:
+  osm_key: shop
+  osm_value: music
+
+tag_musical_instrument:
+  osm_key: shop
+  osm_value: musical_instrument
+
+tag_newsagent:
+  osm_key: shop
+  osm_value: newsagent
 
 tag_nightclub:
   osm_key: amenity
@@ -508,9 +552,17 @@ tag_swimming_pool:
   osm_key: amenity
   osm_value: swimming_pool
 
+tag_tailor:
+  osm_key: shop
+  osm_value: tailor
+
 tag_tattoo:
   osm_key: shop
   osm_value: tattoo
+
+tag_tea:
+  osm_key: shop
+  osm_value: tea
 
 tag_terminal:
   osm_key: aeroway
@@ -523,6 +575,10 @@ tag_theatre:
 tag_theme_park:
   osm_key: tourism
   osm_value: theme_park
+
+tag_tobacco:
+  osm_key: shop
+  osm_value: tobacco
 
 tag_toilets:
   osm_key: amenity
@@ -547,6 +603,10 @@ tag_travel_agency:
 tag_university:
   osm_key: amenity
   osm_value: university
+
+tag_variety_store:
+  osm_key: shop
+  osm_value: variety_store
 
 tag_veterinary:
   osm_key: amenity

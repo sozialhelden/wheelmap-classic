@@ -122,6 +122,8 @@ en:
         tram_stop: "Tram stop"
       shopping:
         alcohol: Liquor
+        antiques: Antiques
+        art: "Gallery shop"
         bakery: Bakery
         beauty: "Beauty salon"
         beverages: Beverages
@@ -135,23 +137,32 @@ en:
         computer: Computer
         confectionery: "Candy store"
         convenience: Convenience
+        copyshop: "Copy shop"
         deli: Delicatessen
         department_store: "Department store"
         doityourself: "Do it yourself"
         dry_cleaning: "Dry cleaning"
         electronics: Electronics
+        erotic: "Sex shop"
         fabric: "Fabric shop"
         farm_shop: "Farm shop"
         florist: Florist
+        funeral_directors: "Funeral home"
         furniture: Furniture
         garden_centre: "Garden centre"
         gift: "Gift shop"
+        greengrocer: Greengrocer
         hairdresser: Hairdresser
         hardware: Hardware
+        interior_decoration: "Interior design shop"
         jewelry: Jewelry
         kiosk: Kiosk
         laundry: Laundry
         mall: "Shopping centre"
+        mobile_phone: "Mobile phone shop"
+        music: "Record store"
+        musical_instrument: "Musical instrument shop"
+        newsagent: "News agent"
         optician: Optician
         organic: "Organic shop"
         outdoor: "Outdoor supply"
@@ -162,8 +173,12 @@ en:
         sports: Sports
         stationery: Stationery
         supermarket: Supermarket
+        tailor: Tailor
+        tea: "Tea supply"
+        tobacco: "Tobacco shop"
         toys: Toys
         travel_agency: "Travel agency"
+        variety_store: "Discount store"
         video: "Video rental store"
       sport:
         pitch: "Sports field"
