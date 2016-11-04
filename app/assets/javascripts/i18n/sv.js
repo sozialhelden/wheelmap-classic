@@ -985,6 +985,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
     },
     "node_photos": {
       "add": "Lägg till",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Fotografier på den här platsen:",
       "upload": "Överföring"
     },
@@ -1167,13 +1168,18 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
         "townhall": "Town hall"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "Tandläkare",
         "doctors": "Doctor",
         "hearing_aids": "Hörcentral",
         "hospital": "Sjukhus",
         "medical_supply": "Medicinsk utr.",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "Apotek",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "Socialkontor",
+        "speech_therapist": "Speech therapist",
         "veterinary": "Veterinär"
       },
       "leisure": {

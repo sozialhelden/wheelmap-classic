@@ -985,6 +985,7 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
     },
     "node_photos": {
       "add": "Shto",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Foto të këtij vendi:",
       "upload": "Ngarko"
     },
@@ -1167,13 +1168,18 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
         "townhall": "Town hall"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "Dentist",
         "doctors": "Doctor",
         "hearing_aids": "Dyqan për pajisje dëgjimi",
         "hospital": "Spital",
         "medical_supply": "Vegla mjeksore",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "Farmaci",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "Objekt shoqëror",
+        "speech_therapist": "Speech therapist",
         "veterinary": "Veterinar"
       },
       "leisure": {

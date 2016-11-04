@@ -1025,6 +1025,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     },
     "node_photos": {
       "add": "追加",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "この場所の写真:",
       "upload": "アップロード"
     },
@@ -1209,13 +1210,18 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "townhall": "役場"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "歯科医院",
         "doctors": "診療所",
         "hearing_aids": "補聴器取扱店",
         "hospital": "病院",
         "medical_supply": "医療用品",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "薬局",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "社会福祉施設",
+        "speech_therapist": "Speech therapist",
         "veterinary": "動物病院"
       },
       "leisure": {

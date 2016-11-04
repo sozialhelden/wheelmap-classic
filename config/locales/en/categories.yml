@@ -52,13 +52,18 @@ en:
         public_building: "Public building"
         townhall: Town hall
       health:
+        alternative: "Alternative medicine practitioner"
         dentist: Dentist
         doctors: Doctor
         hearing_aids: "Hearing aid dealer"
         hospital: Hospital
         medical_supply: "Medical supplies"
+        occupational_therapist: "Occupational therapist"
         pharmacy: Pharmacy
+        physiotherapist: Physiotherapist
+        psychotherapist: Psychotherapist
         social_facility: "Social facility"
+        speech_therapist: "Speech therapist"
         veterinary: Veterinary
       leisure:
         arena: Arena
@@ -67,15 +72,14 @@ en:
         cinema: Cinema
         community_centre: "Community centre"
         gallery: Gallery
+        massage: "Massage spa"
         nightclub: Nightclub
         playground: Playground
+        sauna: Sauna
         stripclub: Stripclub
+        tattoo: "Tattoo shop"
         theatre: Theatre
         zoo: Zoo
-        # Update 2016-04-26
-        sauna: Sauna
-        tattoo: "Tattoo shop"
-        massage: "Massage spa"
       misc:
         company: "Company (Office)"
         estate_agent: "Real estate agent"

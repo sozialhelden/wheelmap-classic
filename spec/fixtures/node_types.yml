@@ -2,6 +2,10 @@ tag_alcohol:
   osm_key: shop
   osm_value: alcohol
 
+tag_alternative:
+  osm_key: healthcare
+  osm_value: alternative
+
 tag_archaeological_site:
   osm_key: historic
   osm_value: archaeological_site
@@ -328,6 +332,10 @@ tag_mall:
   osm_key: shop
   osm_value: mall
 
+tag_massage:
+  osm_key: shop
+  osm_value: massage
+
 tag_medical_supply:
   osm_key: shop
   osm_value: medical_supply
@@ -347,6 +355,10 @@ tag_museum:
 tag_nightclub:
   osm_key: amenity
   osm_value: nightclub
+
+tag_occupational_therapist:
+  osm_key: healthcare
+  osm_value: occupational_therapist
 
 tag_optician:
   osm_key: shop
@@ -371,6 +383,10 @@ tag_pet:
 tag_pharmacy:
   osm_key: amenity
   osm_value: pharmacy
+
+tag_physiotherapist:
+  osm_key: healthcare
+  osm_value: physiotherapist
 
 tag_photo:
   osm_key: shop
@@ -400,6 +416,10 @@ tag_post_office:
   osm_key: amenity
   osm_value: post_office
 
+tag_psychotherapist:
+  osm_key: healthcare
+  osm_value: psychotherapist
+
 tag_pub:
   osm_key: amenity
   osm_value: pub
@@ -407,6 +427,10 @@ tag_pub:
 tag_restaurant:
   osm_key: amenity
   osm_value: restaurant
+
+tag_sauna:
+  osm_key: leisure
+  osm_value: sauna
 
 tag_school:
   osm_key: amenity
@@ -423,6 +447,10 @@ tag_shoes:
 tag_social_facility:
   osm_key: amenity
   osm_value: social_facility
+
+tag_speech_therapist:
+  osm_key: healthcare
+  osm_value: speech_therapist
 
 tag_sports:
   osm_key: shop
@@ -463,6 +491,10 @@ tag_supermarket:
 tag_swimming_pool:
   osm_key: amenity
   osm_value: swimming_pool
+
+tag_tattoo:
+  osm_key: shop
+  osm_value: tattoo
 
 tag_terminal:
   osm_key: aeroway
@@ -515,16 +547,3 @@ tag_viewpoint:
 tag_zoo:
   osm_key: tourism
   osm_value: zoo
-
-# Update 2016-04-26
-tag_sauna:
-  osm_key: leisure
-  osm_value: sauna
-
-tag_massage:
-  osm_key: shop
-  osm_value: massage
-
-tag_tattoo:
-  osm_key: shop
-  osm_value: tattoo

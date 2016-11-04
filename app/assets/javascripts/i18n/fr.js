@@ -993,6 +993,7 @@ I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
     },
     "node_photos": {
       "add": "Ajouter",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Photos de ce lieu :",
       "upload": "Téléverser"
     },
@@ -1175,13 +1176,18 @@ I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
         "townhall": "Mairie"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "Dentiste",
         "doctors": "Médecin",
         "hearing_aids": "Audioprothésiste",
         "hospital": "Hôpital",
         "medical_supply": "Équipement médical",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "Pharmacie",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "Établissement social",
+        "speech_therapist": "Speech therapist",
         "veterinary": "Vétérinaire"
       },
       "leisure": {

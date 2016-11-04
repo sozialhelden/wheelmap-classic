@@ -1019,6 +1019,7 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
     },
     "node_photos": {
       "add": "Hinzufügen",
+      "alert": "Bitte beachte: Auf dem Foto sollte der Eingangsbereich des Ortes gut zu erkennen sein. Soll heißen: Gibt es Stufen am Eingang? Wie hoch ist die Stufe ungefähr? Wie breit ist die Tür? Das Foto muss das Format JPG oder PNG haben. Die maximale Größe eines Fotos darf 10 MB nicht überschreiten.",
       "photos_of_this_place": "Fotos von diesem Ort:",
       "upload": "Hochladen"
     },
@@ -1201,13 +1202,18 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
         "townhall": "Rathaus"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "Zahnarzt",
         "doctors": "Arzt",
         "hearing_aids": "Hörgeräteakustiker",
         "hospital": "Krankenhaus",
         "medical_supply": "Sanitätshaus",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "Apotheke",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "Soziale Einrichtung",
+        "speech_therapist": "Speech therapist",
         "veterinary": "Tierarzt"
       },
       "leisure": {

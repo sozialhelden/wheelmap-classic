@@ -1015,6 +1015,7 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
     },
     "node_photos": {
       "add": "Добавить",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Фото этого места:",
       "upload": "Загрузить"
     },
@@ -1201,13 +1202,18 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
         "townhall": "Администрация"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "Стоматолог",
         "doctors": "Врач",
         "hearing_aids": "Продажа слуховых аппаратов",
         "hospital": "Больница",
         "medical_supply": "Медикаменты",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "Аптека",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "Социальный центр",
+        "speech_therapist": "Speech therapist",
         "veterinary": "Ветеринар"
       },
       "leisure": {

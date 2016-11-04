@@ -985,6 +985,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
     },
     "node_photos": {
       "add": "Add",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Photos of this place:",
       "upload": "Upload"
     },
@@ -1167,13 +1168,18 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "townhall": "Town hall"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "طبيب أسنان",
         "doctors": "Doctor",
         "hearing_aids": "تاجر أدوات سمعية",
         "hospital": "مستشفى",
         "medical_supply": "مستلزمات طبية",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "صيدلية",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "مرافق اجتماعية",
+        "speech_therapist": "Speech therapist",
         "veterinary": "طبيب بيطري"
       },
       "leisure": {

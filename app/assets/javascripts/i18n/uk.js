@@ -1015,6 +1015,7 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
     },
     "node_photos": {
       "add": "Додати",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Фотографії цього місця:",
       "upload": "Вивантажити"
     },
@@ -1199,13 +1200,18 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
         "townhall": "Town hall"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "Дантист",
         "doctors": "Doctor",
         "hearing_aids": "Продаж слухових апаратів",
         "hospital": "Лікарня",
         "medical_supply": "Медикаменти",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "Аптека",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "Соціальний центр",
+        "speech_therapist": "Speech therapist",
         "veterinary": "Ветеринар"
       },
       "leisure": {
