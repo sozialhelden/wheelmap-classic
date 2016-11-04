@@ -758,7 +758,7 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
       "newsletter": "Newsletter",
       "press": "Imprensa",
       "profile": "Perfil",
-      "projects": "Projetos",
+      "projects": "Projects",
       "suggestions": "Sugestões",
       "what_is_barrier_free": "O que significa \"acessível a cadeiras de rodas\"?",
       "what_is_wheelmap": "What is Wheelmap?"

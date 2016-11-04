@@ -28,7 +28,7 @@ es:
       choose_language: Elija idioma
       contact: Contacto
       map: Mapa
-      projects: Proyectos
+      projects: Involúcrate
     toolbar:
       categories: Categorías
     meta:
@@ -44,15 +44,35 @@ es:
         lookup: Buscar un lugar específico
         secondary_headline: 'Nuestro semáforo para marcar la accesibilidad en silla de ruedas de los lugares públicos:'
       embed_link: Mostrar en Wheelmap.org
+      zoom_alert: Haz zoom para ver mas lugares
   nodes:
     new:
       form:
+        title: Agrega un lugar
         legend: Ubicación del sitio
+        location: Por favor, haz click donde el lugar esta localizado en el mapa
         section:
+          name_category:
+            name: Nombra y coloca el tipo
+            title: "Danos alguna información inicial sobre tu lugar"
           address:
             name: Dirección
+            title: ¿Dónde esta el lugar?
+            help: Puedes mover el marcador para corregir la localización en el mapa
+          similar_nodes:
+            name: Lugares similares
+            title: Encontramos lugares similares cerca. ¿Es uno de esos?
+            go_edit: Continuar con este lugar
+            go_new: No es ninguno de los lugares mencionados arriba
+            empty: No hay lugares similares encontrados
+          accessibility:
+            name: Accesibilidad para silla de ruedas
+            title: Información de la accesibilidad para silla de rueda
           contact:
             name: Contacto
+            title: Otra información de contacto
+          overview:
+            title: ¿Es toda la información correcta?
     node_data:
       address: 'Dirección:'
       contact_details: 'Detalles de contacto:'
@@ -113,12 +133,25 @@ es:
         label: Sí, mantenme informado sobre Wheelmap
       show:
         title: Visión de conjunto
-        text_html: "Hola,<br>\n Bienvenido (de nuevo) a Wheelmap.org! Estamos felices de tenerte con nosotros! Puedes navegar en nuestro <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> o <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> Si quieres saber un poco más sobre Wheelmap.org o aprender un poco sobre el <a href=\"http://wheelmap.org/en/get-engaged/\">projecto</a> que ofrecemos y como puedes formar parte de ellos.<br> \nMantente en contacto<br> \nPara estar en contacto, puedes subscribirte a nuestro boletín mensual o seguirnos en <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> y <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Esperamos con ansías escuchar tus opiniones y empezar una conversación contigo! \n<br> y ahora, mapea feliz!<br> \nTu equipo de Wheelmap"
+        text_html: "Hola,<br>\nBienvenido (de nuevo) a Wheelmap.org! Estamos felices de tenerte con nosotros! Puedes navegar en nuestro <a href=\\\"http://news.wheelmap.org/en/\\\">Blog</a> o <a href=\\\"http://news.wheelmap.org/en/FAQ/\\\">FAQs</a> si quieres saber un poco más sobre Wheelmap.org. O quieres aprender un poco sobre el <a href=\\\"http://news.wheelmap.org/en/wheelmap-ambassador/\\\">projecto</a> que ofrecemos y como puedes formar parte de ellos.<br>\nPara estar en contacto, puedes subscribirte a nuestro boletín mensual o seguirnos en <a href=\\\"https://www.facebook.com/wheelmap\\\">Facebook</a> y <a href=\\\"https://twitter.com/wheelmap\\\">Twitter</a>. Esperamos con ansías escuchar tus opiniones y empezar una conversación contigo!<br>\nY ahora, mapea feliz!<br>\nTu equipo\
+          \ de Wheelmap"
         greeting:
           anonymously: Hola
           personalized: Hola %{name}
         overview:
           text: Tú tienes
+          pois_marked:
+            one: 'marcado %{count} lugar'
+            other: 'marcados %{count} lugares'
+          pois_added:
+            one: 'añadido %{count} lugar'
+            other: 'añadidos %{count} lugares'
+          pois_edited:
+            one: 'editado %{count} lugar'
+            other: 'editados %{count} lugares'
+          photos_uploaded:
+            one: 'subida %{count} foto'
+            other: 'subidas %{count} fotos'
       photos:
         title: Fotos
         empty: No has subido ninguna foto aún

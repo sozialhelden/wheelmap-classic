@@ -766,7 +766,7 @@ I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
       "newsletter": "Lettre d'information",
       "press": "Presse",
       "profile": "Profil",
-      "projects": "Projets",
+      "projects": "Participez",
       "suggestions": "Suggestions",
       "what_is_barrier_free": "Que veut dire « accessible en fauteuil roulant » ?",
       "what_is_wheelmap": "Qu'est-ce que Wheelmap ?"
@@ -848,7 +848,7 @@ I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
         "help": "Accessible en fauteuil roulant ? (aide)",
         "more": "davantage.."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": "Zoomez plus près afin de voir plus de lieux."
     }
   },
   "how?": "Comment ?",
@@ -931,37 +931,37 @@ I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
     "new": {
       "form": {
         "legend": "Emplacement du lieu",
-        "location": "Please click on the map where the place is located!",
+        "location": "Veuillez cliquer sur la carte à l'endroit où le lieu est situé !",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "Accessibilité en fauteuil roulant",
+            "title": "Informations sur l'accessibilité par fauteuil roulant"
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
+            "help": "Vous pouvez faire glisser le marqueur à la position correcte du lieu.",
             "name": "Adresse",
-            "title": "Where is the place?"
+            "title": "Où est ce lieu?"
           },
           "contact": {
             "name": "Contact",
-            "title": "Other contact information"
+            "title": "Autres informations de contact"
           },
           "name_category": {
-            "name": "Name and place type",
-            "title": "Give us some initial information about your place:"
+            "name": "Nom et type de lieu",
+            "title": "Donnez-nous quelques informations initiales à propos de votre lieu :"
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": "Toutes les informations sont-elles correctes ?"
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "Aucun lieu similaire n'a été trouvé.",
+            "go_edit": "Continuer avec ce lieu",
+            "go_new": "Aucun des lieux ci-dessus…",
+            "name": "Lieux similaires",
+            "title": "Nous avons trouvé des lieux similaires à proximité. Est-ce un de ceux-là ?"
           }
         },
-        "title": "Add a place"
+        "title": "Ajouter un lieu"
       },
       "header": {
         "title": "Nouveau lieu | wheelmap.org"
@@ -1568,7 +1568,7 @@ I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
           },
           "text": "Vous avez"
         },
-        "text_html": "Bonjour, <br>\n\nBienvenue (ou re) sur Wheelmap.org ! Nous sommes heureux de vous avoir à bord ! Vous pouvez parcourir notre <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> ou <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> si vous voulez apprendre à connaître Wheelmap.org un peu mieux. Vous pouvez en apprendre davantage sur les <a href=\"http://wheelmap.org/en/get-engaged/\">projets</a> que nous proposons autour de Wheelmap.org et comment vous pouvez vous impliquer. <br>\n\nRestez en contact <br>\n\nPour rester en contact vous pouvez vous abonner à notre lettre d'information mensuelle et nous suivre sur <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> et <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Nous sommes impatients d'entendre votre opinion et discuter avec vous !<br>\n\nEt maintenant, bonne cartographie ! <br>\n\nL'équipe Wheelmap",
+        "text_html": "Bonjour,<br>\nBienvenue (ou re) sur Wheelmap.org ! Nous sommes heureux de vous avoir à bord ! Vous pouvez parcourir notre <a href=\\\"http://news.wheelmap.org/en/\\\">Blog</a> ou <a href=\\\"http://news.wheelmap.org/en/FAQ/\\\">FAQs</a> si vous voulez apprendre à connaître Wheelmap.org un peu mieux. Vous pouvez en apprendre davantage sur les <a href=\\\"http://news.wheelmap.org/en/wheelmap-ambassador/\\\">projets</a> que nous proposons autour de Wheelmap.org et comment vous pouvez vous impliquer.<br>\nPour rester en contact vous pouvez vous abonner à notre lettre d'information mensuelle et nous suivre sur <a href=\\\"https://www.facebook.com/wheelmap\\\">Facebook</a> et <a href=\\\"https://twitter.com/wheelmap\\\">Twitter</a>. Nous sommes impatients d'entendre votre opinion et discuter avec vous !<br>\nEt maintenant, bonne cartographie !<br>\nVotre équipe Wheelmap",
         "title": "Aperçu"
       },
       "widget": {

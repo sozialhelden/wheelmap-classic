@@ -6,6 +6,7 @@ zh_TW:
       notice: "您必須登入才能瀏覽這個頁面。"
   breadcrumbs:
     node:
+      create: "新增地點"
       edit: "編輯地點"
     root: Wheelmap
   common:
@@ -15,21 +16,28 @@ zh_TW:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
+      accepted: "必須接受"
       already_confirmed: "已確認"
+      blank: "必須填寫"
       confirmation: "與確認值不符合"
+      empty: "必須填寫"
       equal_to: "必須確實為%{count}"
+      even: "必須是偶數"
       exclusion: "被保留"
       expired: "已經過期，請重新申請"
       greater_than: "必須大於 %{count}"
+      greater_than_or_equal_to: "必須大於或等於 %{count}"
       inclusion: "無效數值"
       invalid: "無效"
       less_than: "必須小於 %{count}"
+      less_than_or_equal_to: "必須小於或等於 %{count}"
       not_a_number: "不是數字"
       not_an_integer: "必須是整數"
       not_found: "没有找到"
       not_locked: "沒有被鎖定"
       not_saved:
         other: "%{count} 個錯誤讓儲存 %{resource} 失敗: "
+      odd: "必須是奇數"
       taken: "已被使用"
       too_long: "太長 (不能長於 %{count} 字元)"
       too_short: "太短 (不能短於 %{count} 字元)"
@@ -52,9 +60,12 @@ zh_TW:
         notice: "成功刪除圖片"
   form:
     show_fully_accessible_places: "輪椅無障礙"
+    show_limited_accessible_places: "部分輪椅無障礙"
+    show_places_without_status: "未知狀態"
     show_unaccessible_places: "非輪椅無障礙"
   formtastic:
     hints:
+      email: "我們保密您的地址。我們承諾不向您發送垃圾郵件！"
       lat: "將圖示移動到地圖上正確位置"
       osm_username: "還不是會員嗎？ <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">現在就申請 OpenStreetMap 的會員 </a>"
       password: "(如果你不想更動，請保持空白)"
@@ -64,12 +75,15 @@ zh_TW:
       category: "分類："
       centralkey: "Central key:"
       city: "城市："
+      create: "建議一個地點"
       email: 電子郵件
       finish: 完成
       housenumber: "門牌號碼："
       lat: 緯度
       lon: 經度
       name: "名字："
+      osm_password: "OpenStreetMap密碼"
+      osm_username: " OpenStreetMap 帳號名稱"
       password: '密碼 '
       password_confirmation: "重複密碼"
       phone: "電話："
@@ -108,12 +122,14 @@ zh_TW:
       profile: 檔案
       suggestions: 建議
       what_is_barrier_free: "「輪椅無障礙」是什麼意思？"
+      what_is_wheelmap: "Wheelmap 是什麼？"
     searchbar:
       add_place: "新增下一個地點"
       find: 搜尋
       placeholder: "例如：洛杉磯的日落大道或是柏林的布蘭登堡門"
       title_add_place: "在這個位置新增地點"
     tagline: "Wheelmap logo"
+    title: "尋找輪椅無障礙空間"
   helpers:
     select:
       prompt: "請選擇"
@@ -134,10 +150,16 @@ zh_TW:
           upgrade: "更新瀏覽器"
         warning:
           headline: "我們很抱歉！"
+          message: "你似乎是使用Internet Explorer。 Wheelmap需要一個符合標準的瀏覽器才能正常工作。請考慮使用火狐，Chrome，Safari或Opera。"
+      link:
+        node:
+          create: "新增地點"
       popup:
         form:
+          limited: "部分輪椅無障礙 "
           'no': "非輪椅無障礙"
           save: 更新
+          unknown: "未知狀態"
           'yes': "輪椅無障礙"
         help: "輪椅無障礙？(說明)"
         more: "更多..."
@@ -145,6 +167,10 @@ zh_TW:
   landing_pages:
     index:
       wheelchair:
+        limit:
+          headline: "%{city} 中所有輪椅無障礙的 %{type} (%{count})"
+        'no':
+          headline: "%{city} 的所有非輪椅無障礙 %{type} (%{count})"
         unknown:
           headline: "%{city} 的所有輪椅無障礙環境不確定的 %{type} (%{count})"
         'yes':
@@ -171,6 +197,7 @@ zh_TW:
       link:
         large_map: "&laquo; 取消"
     errors:
+      default: "哎呀！出了問題了。我們已經被通知這個問題"
       not_authorized: "抱歉，認證失敗"
       not_available: "抱歉，這個頁面暫時不能使用。"
       not_existent: "抱歉，這個地點已經失效了"
@@ -196,6 +223,7 @@ zh_TW:
         large_map: 放大
         listing: "在 %{city} 的所有 '%{type}' "
         upload: "上傳圖片"
+      more_data_from: "關於這個地點有更多訊息，被驗證"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -231,6 +259,12 @@ zh_TW:
           kb: KB
           mb: MB
           tb: TB
+  oauth:
+    application:
+      connect:
+        headline: "您需要將您的帳戶與您的帳戶OpenStreetMap的連接，然後才能創建或修改Wheelmap.org地方。"
+    callback:
+      notice: "您Wheelmap帳戶現在連接到OpenStreetMap帳戶{user}。"
   or: 或
   place:
     other: "%{count} 個地點"
@@ -255,6 +289,7 @@ zh_TW:
     step1: "點選一個您知道的地點"
     step2: "標示然後點選存檔"
     step3: "就這樣！免註冊"
+    what_is_wheelmap: "Wheelmap 是什麼？"
   statistics: 統計
   support:
     array:
@@ -275,6 +310,10 @@ zh_TW:
     'no': "沒有輪椅無障礙廁所"
     unknown: "廁所狀態不明"
     'yes': "輪椅無障礙廁所"
+    what_is:
+      'no': "門的內徑最小寬度90公分 (35 inc)，淨空最小150 x 150公分(59 x 59)，有輪椅高度的廁所坐位，手把和洗手檯。"
+      'yes': "門的內徑最小寬度90公分 (35 inc)，淨空最小150 x 150公分(59 x 59)，有輪椅高度的廁所坐位，手把和洗手檯。"
+      unknown: "請幫忙標記廁所狀態"
   user_sessions:
     create:
       activation:
@@ -285,6 +324,7 @@ zh_TW:
     destroy:
       notice: "再見，歡迎再度光臨！"
     new:
+      email: "電子郵件地址"
       login: "登入"
       login_with_twitter: "透過 Twitter 登入"
       password: 密碼
@@ -292,12 +332,16 @@ zh_TW:
   users:
     after_signup_edit:
       welcome:
+        headline: "你是幾乎快完成了！現在到完成您的Wheelmap帳戶："
+        set_password_for_mobile: "您已成功使用OpenStreetMap的註冊。請選擇您想Wheelmap使用，因此我們可以讓您隨時了解你的活動（例如名額已標記）的電子郵件地址。您可以訪問你的“個人資料”這一信息。"
         text: "我們要如何和您聯繫？您可以在之後修改您的個人檔案。"
     edit:
       headline:
         your_images: "你上傳的影像"
   wheelchairstatus:
+    limited: "部分輪椅無障礙"
     'no': "非輪椅無障礙"
+    unknown: "未知狀態"
     'yes': "輪椅無障礙"
   wheelmap:
     footer:
@@ -311,6 +355,11 @@ zh_TW:
     logo:
       alt: "Wheelmap logo－尋找輪椅無障礙空間"
       title: "Wheelmap－尋找輪椅無障礙空間"
+    what_is:
+      fully_accessible: "入口沒有台階，所有的房間沒有台階。"
+      limited_accessible: "門口有一個最大台階。高度7厘米(3 in)，大部分房間都沒有台階。"
+      not_accessible: "門口有一個台階或幾個台階，房間都不可訪問。"
+      unknown_accessible: "請幫忙標記地點"
   will_paginate:
     next_label: "往後 &#8594;"
     page_entries_info:

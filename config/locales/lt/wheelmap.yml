@@ -7,6 +7,7 @@ lt:
   breadcrumbs:
     node:
       edit: "Keisti vietą"
+    root: Wheelmap
   common:
     close: uždaryti
     skip: praleisti
@@ -28,6 +29,7 @@ lt:
     labels:
       category: "Kategorija:"
       city: "Miestas:"
+      email: El. paštas
       finish: Užbaigti
       lat: Platuma
       lon: Ilguma
@@ -39,7 +41,7 @@ lt:
       postcode: "Pašto kodas:"
       privacy_policy: "Aš sutinku su duomenų konfidencialumo sutarties 1 ir 2 pastraipa."
       reset: Atstatyti
-      save: Išsaugoti
+      save: Įrašyti
       street: "Gatvė:"
       terms: "Aš sutinku su naudojimosi taisyklėmis."
       type: "Tipas:"
@@ -75,6 +77,8 @@ lt:
       filter:
         wheelchair: "Prieinama neįgaliųjų vežimėliais?"
       ie:
+        action:
+          ignore: Nepaisyti
         warning:
           headline: "Atsiprašome!"
       popup:
@@ -123,6 +127,7 @@ lt:
       header:
         title: "Vieta: %{node} | wheelmap.org"
       link:
+        back: atgal
         upload: "Išsiųsti paveikslą"
       show-in-osm: OpenStreetMap
     update:
@@ -152,6 +157,15 @@ lt:
           kb: KB
           mb: MB
           tb: TB
+  profile:
+    edit:
+      application:
+        oauth:
+          revoke: Atsijungti
+  search:
+    index:
+      search:
+        for: "Ieškoma \"%{q}\""
   splash:
     step1: "Spustelėkite ant jums žinomos vietos"
     what_is_wheelmap: "Kas yra Wheelmap?"
@@ -192,4 +206,5 @@ lt:
       alt: "AppStore Logotipas"
   will_paginate:
     next_label: "Kitas &#8594;"
+    page_gap: "&hellip;"
     previous_label: "&#8592; Ankstesnis"

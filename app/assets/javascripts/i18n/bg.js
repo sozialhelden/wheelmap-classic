@@ -192,7 +192,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "note": "Note",
         "phone": "Телефон",
         "type": "Вид",
-        "website": "Website\n"
+        "website": "Website"
       },
       "user": {
         "first_name": "Име",
@@ -758,10 +758,10 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
       "newsletter": "Newsletter",
       "press": "Преса",
       "profile": "Профил",
-      "projects": "Проекти",
+      "projects": "Включете се",
       "suggestions": "Предложения",
       "what_is_barrier_free": "Какво значи \"достъпно за инвалидни колички\"?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Какво е Wheelmap?"
     },
     "searchbar": {
       "add_place": "Добави ново място",
@@ -926,7 +926,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "Достъп за инвалидни колички",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -949,7 +949,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Подобни места",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
@@ -1120,8 +1120,8 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
       "health": "Здраве",
       "leisure": "Отдих и свободно време",
       "misc": "Разни",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Банка / пощенски клон",
+      "public_transfer": "Обществен транспорт",
       "shopping": "Магазини",
       "sport": "Спорт",
       "tourism": "Туризъм",
@@ -1188,7 +1188,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "brothel": "Публичен дом",
         "casino": "Казино",
         "cinema": "Кино",
-        "community_centre": "Community centre",
+        "community_centre": "Общински център",
         "gallery": "Галерия",
         "massage": "Massage spa",
         "nightclub": "Нощен клуб",
@@ -1270,7 +1270,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "florist": "Цветар",
         "funeral_directors": "Funeral home",
         "furniture": "Мебели",
-        "garden_centre": "Garden centre",
+        "garden_centre": "Градински център",
         "gift": "Магазин за подаръци",
         "greengrocer": "Greengrocer",
         "hairdresser": "Фризьор",
@@ -1453,7 +1453,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
     "step1": "Кликни върху познато място",
     "step2": "Маркирай и натисни \"запази\".",
     "step3": "Това е! Не е необходима регистрация.",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Какво е Wheelmap?"
   },
   "statistics": "Статистики",
   "support": {
@@ -1478,13 +1478,13 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
   },
   "toiletstatus": {
     "no": "No wheelchair accessible toilet",
-    "unknown": "Toilet status unknown",
+    "unknown": "Статусът на тоалетната не е известен",
     "what_is": {
       "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
       "unknown": "Help out by marking the toilet status!",
       "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
     },
-    "yes": "Wheelchair accessible toilet"
+    "yes": "Тоалетна достъпна за инвалидна количка"
   },
   "user_sessions": {
     "create": {

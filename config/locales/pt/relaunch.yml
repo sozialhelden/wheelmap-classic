@@ -2,18 +2,62 @@ pt:
   activerecord:
     attributes:
       poi:
+        name: Nome
+        type: Tipo
+        address: Endereço
+        website: Website
+        phone: Telefone
+        address_street: Rua
         address_housenumber: Número de casa
+        address_postcode: Código postal
+        address_city: Cidade
+  header:
+    navigation:
+      contact: Contacto
+      map: Mapa
+      projects: Envolva-se
+    toolbar:
+      categories: Categorias
+    meta:
+      title: Wheelmap.org
   nodes:
     new:
       form:
         section:
           address:
             name: Endereço
+          contact:
+            name: Contacto
+    node_data:
+      address: 'Endereço:'
+      contact_details: 'Detalhes de contacto:'
+    node_edit:
+      details: Detalhes
+      edit: Editar
+    node_map:
+      map: 'Mapa:'
+    node_note:
+      comment: 'Comentário:'
+    node_photos:
+      add: Adicionar
+      photos_of_this_place: 'Fotografias deste local:'
+      upload: Enviar
     show:
       share:
         email: E-mail
+        facebook: Facebook
+        twitter: Twitter
   users:
     profile:
+      photos:
+        title: Fotografias
+      edit:
+        title: Perfil
       widget:
+        height: Altura
+        width: Largura
+        center: Área do mapa
+        providers: Fornecedor
+        empty_provider: Escolha um Fornecedor
         legends:
           settings: Definições

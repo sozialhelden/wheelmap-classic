@@ -9,11 +9,14 @@ zh_TW:
         phone: 電話
         note: 筆記
         address_street: 街道
+        address_housenumber: 門牌號碼
         address_postcode: 郵遞區號
         address_city: 城市
   faq:
     answers:
+      0: 您可以隨時更改自己的地方的標記。只要選擇合適的標記和“保存” - 完成了！
       1: 登入後，你可以新增/修改所有地點的細節。請點選 "編輯" 並在空格修改或新增資訊。
+      2: 您可以在註釋部分中添加更多的信息（例如，“這個地方有一個移動坡道”）。點擊“編輯”和“添加評論”。
     headline: 這個地點有什麼不對嗎?
     questions:
       0: 這個標示是錯的。
@@ -25,9 +28,12 @@ zh_TW:
       choose_language: 選擇語言
       contact: 聯繫我們
       map: 地圖
-      projects: 參與這個專案
+      projects: 參與其中
     toolbar:
       categories: 分類
+    meta:
+      description: Wheelmap.org是一個在線地圖搜索，找到和標記輪椅容易接近的地方。獲得通過標記公共場所如酒吧，餐館，電影院和超市參與！
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -37,15 +43,36 @@ zh_TW:
         headline: '透過 Wheelmap.org 標示和尋找輪椅無障礙空間 - 全球化而免費。這並不困難：'
         lookup: 搜尋特定地點
         secondary_headline: '我們以類似「紅綠燈」的方式標示公共空間的輪椅無障礙程度：'
+      embed_link: 顯示在Wheelmap.org
+      zoom_alert: 進一步放大看更多的地方。
   nodes:
     new:
       form:
+        title: 新增地點
         legend: 地點的位置
+        location: 請點擊所在的地方是位於地圖上！
         section:
+          name_category:
+            name: 名稱和地點類型
+            title: "給我們介紹一下你的地方一些的初步信息："
           address:
             name: 地址
+            title: 哪裡的地方？
+            help: 你可以將標記移動到地圖上的正確位置。
+          similar_nodes:
+            name: 類似的地點
+            title: 我們發現附近類似的地方。是不是其中之一？
+            go_edit: 這個地方繼續
+            go_new: 這是上面沒有的地方...
+            empty: 沒有發現類似的地方。
+          accessibility:
+            name: 輪椅無障礙
+            title: 輪椅無障礙信息
           contact:
             name: 聯繫我們
+            title: 其他聯繫信息
+          overview:
+            title: 是否所有的信息是否正確？
     node_data:
       address: '地址:'
       contact_details: '聯絡方式: '
@@ -76,6 +103,7 @@ zh_TW:
       share:
         email: 電子郵件
         facebook: Facebook
+        text: '我發現Wheelmap.org這個地方：%{name}'
         twitter: Twitter
   search:
     index:
@@ -83,6 +111,8 @@ zh_TW:
         headline: 抱歉，我們找不到名叫 "%{query}" 的地點。
         hint:
           example: <strong>範例:</strong> 英國倫敦
+          info: 我們的搜索服務只適用於名稱和/或地址信息。因此，請透過搜索地點或地址，例如名稱街道名稱和/或城市。搜索類型的地方，例如餐館或電影院，不行！
+          work_in_progress: 我們努力在未來使搜索更簡單，會更直觀。
         try_this:
           address: 請提供更 <strong>詳細的地址</strong>.
           intro: '試試這個:'
@@ -91,15 +121,18 @@ zh_TW:
         ticker:
           other: '%{count} 個結果：'
     timeout:
+      headline: 抱歉，出了一些問題
       info: 我們的搜尋服務目前暫停。
       repeat_search: 重試搜尋
   users:
     profile:
       newsletter:
         title: 電子報
+        text: 保持取得最新的Wheelmap訊息。別擔心，我們不會寄給你垃圾郵件。你每月一次最多一次會從我們這裡寄出的最新消息。
         label: 是，我想收到 Wheelmap 的最新訊息。
       show:
         title: 總覽
+        text_html: "您好，<br>\n歡迎（回）來到 Wheelmap.org！很高興您能加入！若想更加了解 Wheelmap.org，可以瀏覽我們的<a href=\"http://news.wheelmap.org/en/\">部落格</a>或<a href=\"http://news.wheelmap.org/en/FAQ/\">常見問題</a>。您也可以深入了解我們在 Wheelmap.org 所提供的<a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">計畫</a>，以及如何參與。<br>\n想保持聯繫，可以訂閱我們的每月新聞報，並在 <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> 和 <a href=\"https://twitter.com/wheelmap\">Twitter</a> 上追蹤我們。期待能聽到您的意見並與您對話！<br>\n而現在，祝您製圖愉快！<br>\n您的 Wheelmap 團隊"
         greeting:
           anonymously: 嗨各位
           personalized: 哈囉 %{name}
@@ -109,14 +142,29 @@ zh_TW:
             other: '標記 %{count} 個地點'
           pois_added:
             other: '新增 %{count} 個地點'
+          pois_edited:
+            other: '編輯%{count}地方'
           photos_uploaded:
             other: '上傳 %{count} 張照片'
       photos:
         title: 相館
+        empty: 您還沒有上傳任何照片。
       edit:
         title: 檔案
         legends:
           user_data: 您的帳號資訊
       widget:
+        title: 小部件
+        height: 高
+        width: 寬
+        center: 地圖區域
+        categories: 展現類別過濾器
+        providers: 供應者
+        empty_provider: 選擇一個供應者
+        empty_center: 搜索地圖的中心...
         legends:
           settings: 設定
+          preview: 預覽
+          embed: 遷入碼
+          embed_explanation: 你可以更改規格為緯度（<code>緯度</code>），經度（<code> LON </code>），並在上面的代碼手動，從而調整縮放級別（<code>縮放</code>）根據你想顯示的位置在地圖段（widget）。
+          general: 創建您自己的Wheelmap小部件，並在您的網站或博客中嵌入它。

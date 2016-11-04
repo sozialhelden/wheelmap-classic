@@ -18,14 +18,19 @@ nl:
     messages:
       accepted: "moet geaccepteerd worden"
       already_confirmed: "Was al bevestigd, alsjeblieft probeer in te loggen."
+      blank: "verplicht veld"
       confirmation: "Past niet bij de bevestiging"
+      empty: "verplicht veld"
       equal_to: "Moet precies %{count} zijn"
+      even: "moet een even numer zijn"
       exclusion: "is gereserveerd"
       expired: "Is verlopen, alsjeblieft vraag een nieuwe aan"
       greater_than: "moet groter dan %{count} zijn"
+      greater_than_or_equal_to: " groter of gelijk aan % {count}"
       inclusion: "niet geldig waard"
       invalid: "niet geldig"
       less_than: "moet minder zijn dan %{count}"
+      less_than_or_equal_to: "kleiner of gelijk aan % {count}"
       not_a_number: "is geen numer"
       not_an_integer: "moet een gehele getal zijn"
       not_found: "niet gevonden"
@@ -33,6 +38,7 @@ nl:
       not_saved:
         one: "Een fout verbied het opslaan van  %{resource}:"
         other: "%{count} fouten verbieden op te slaan %{resource}:"
+      odd: "moet een oneven numer zijn"
       taken: "werd al volbracht"
       too_long: "is te lang (niet meer dan %{count} letters)\n"
       too_short: "is te kort (niet minder dan %{count} letters)\n"
@@ -61,6 +67,7 @@ nl:
     show_unaccessible_places: "Niet rolstoeltoegankelijk"
   formtastic:
     hints:
+      email: "Wij behandelen jouw adres gegevens vertrouwelijk. Wij gaan geen spam sturen!"
       lat: "Beweeg de marker op de kaart in de correcte positie"
       osm_username: "Nog geen lid op dit moment? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Maak nu een Openstreetmap account</a>\n"
       password: "(laat dit leeg als je het niet wil veranderen )"
@@ -92,7 +99,7 @@ nl:
       website: "Internetpagina:"
       wheelchair: "Rolstoel toegankelijkheid?"
       wheelchair_description: "Toegankelijkheid commentaar:"
-      wheelchair_toilet: "rolstoeltoegankelijk toilet"
+      wheelchair_toilet: "Rolstoeltoegankelijk toilet:"
     titles:
       basic: "Basic data"
       optional: "Meer informatie <span class=\"addition\">(all fields are optional)</span>"
@@ -145,6 +152,7 @@ nl:
           upgrade: "Actualiseer Browser"
         warning:
           headline: "Wij excuseren!"
+          message: "Je lijkt Internet Explorer te gebruiikten. Wheelmaps benodigd een browser die met bepaalde standards werkt. Probeer een keer om Firefox, Chrome, Safari of Opera gebruiken."
       link:
         node:
           create: "Een nieuwe locatie toevoegen"
@@ -161,6 +169,10 @@ nl:
   landing_pages:
     index:
       wheelchair:
+        limit:
+          headline: "Allemaal gedeeltelijk toegangelijk met rolstoel %{type}in %{city} (%{count})"
+        'no':
+          headline: "Allemaal niet toegangelijk met rolstoel %{type} in %{city} (%{count})"
         unknown:
           headline: "All %{type} in %{city} met onbekende rolstoel status (%{count})"
         'yes':
@@ -213,6 +225,7 @@ nl:
         large_map: Vergroten
         listing: "Alle vergelijkbare plaatsen '%{type}' in %{city}\n"
         upload: "Upload beeld"
+      more_data_from: "Er is meer informatie over dit plaats beschikbaar, valideert door:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -321,7 +334,7 @@ nl:
     limited: "Gedeeltelijk rolstoeltoegankelijk"
     'no': "Niet rolstoeltoegankelijk"
     unknown: "Onbekende status"
-    'yes': "rolstoeltoegankelijk"
+    'yes': "Rolstoeltoegankelijk"
   wheelmap:
     footer:
       a_project_of: "Een project van"

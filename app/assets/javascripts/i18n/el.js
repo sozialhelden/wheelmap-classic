@@ -439,16 +439,16 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
       "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
     },
     "destroy": {
-      "confirm": "Είσαι σίγουρος/η;",
+      "confirm": "Are you sure?",
       "headline": "Delete account",
       "link": "Διαγραφή τώρα"
     },
     "edit": {
       "form": {
         "labels": {
-          "current_password": "Ισχύον κωδικός<i>(we need this to confirm your change)</i> ",
+          "current_password": "Current password <i>(we need it to confirm your changes)</i>",
           "email": "Email",
-          "password": "Kωδικός<i>(leave blank if you do not want to change it)</i> ",
+          "password": "Password <i>(leave empty if you don\\'t want to change it)</i>",
           "password_confirmation": "Επαναλάβετε τον κωδικό πρόσβασης"
         },
         "submit": "Αποθήκευση αλλαγών"
@@ -458,7 +458,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
     "failure": {
       "already_authenticated": "Είσαστε ήδη συνδεδεμένοι.",
       "inactive": "Your account has not been activated yet.",
-      "invalid": "Μη έγκυρο email ή κωδικός",
+      "invalid": "Μη έγκυρο email ή κωδικός.",
       "invalid_token": "Άκυρη πιστοποίηση αυθεντικότητας.",
       "last_attempt": "You have one more attempt before your account will be locked.",
       "locked": "Ο λογαριασμός σας είναι κλειδωμένος",
@@ -481,9 +481,9 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
     },
     "mandatory": "* Υποχρεωτικά πεδία",
     "omniauth_callbacks": {
-      "failure": "Εξουσιοδότηση με το% {είδος} απέτυχε. Σφάλμα:\"%{λόγος}\".",
+      "failure": "Εξουσιοδότηση με το% {kind} απέτυχε. Σφάλμα:\"%{reason}\".",
       "permission_missing": "You did not grant the required permission.",
-      "success": "Με επιτυχία είστε συνδεδεμένοι με το %{είδος}."
+      "success": "Με επιτυχία είστε συνδεδεμένοι με το %{kind}."
     },
     "password_recovery": {
       "form": {
@@ -544,7 +544,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
         "no_osm_account": "Δεν έχετε λογαριασμό στο OpenStreetMap;",
         "osm_promo_text": "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it.",
         "promo_text_thank_you": "Σας ευχαριστούμε πολύ για την υποστήριξή σας!",
-        "sign_in_with": "Σύνδεση με %{είδος}",
+        "sign_in_with": "Σύνδεση με %{kind}",
         "sign_up_with_osm": "Κάνετε εγγραφή τώρα.",
         "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
       },
@@ -578,7 +578,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
         "labels": {
           "email": "Email",
           "password": "Κωδικός πρόσβασης",
-          "password_confirmation": "Επαναλάβετε τον κωδικό\n\n\n\n",
+          "password_confirmation": "Επαναλάβετε τον κωδικό",
           "wants_newsletter": "Yes, keep me up to date about Wheelmap - but please not more than once a month."
         },
         "submit": "Εγγραφή"
@@ -625,7 +625,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
       "not_locked": "δεν ήταν κλειδωμένο",
       "not_saved": {
         "one": "% {count} σφάλμα απαγορεύονται να αποθηκεύσετε έναν %{πόρο}:",
-        "other": "% {count} σφάλματα απαγορεύονται να αποθηκεύσετε έναν %{πόρο}:"
+        "other": "% {count} σφάλματα απαγορεύονται να αποθηκεύσετε έναν %{resource}:"
       },
       "odd": "must be an odd number",
       "other_than": "must be other than %{count}",
@@ -647,7 +647,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
       "body": "Υπήρξαν προβλήματα με τα εξής πεδία",
       "header": {
         "one": "%{count} σφάλμα απαγορεύει αυτό %{μοντέλο} να σωθεί",
-        "other": "%{count} σφάλματα απαγορεύουν αυτό %{μοντέλο} να σωθεί"
+        "other": "%{count} σφάλματα απαγορεύουν αυτό %{model} να σωθεί"
       }
     }
   },
@@ -667,7 +667,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
   "flash": {
     "actions": {
       "create": {
-        "notice": "% {resource_name} δημιουργήθηκε επιτυχώς"
+        "notice": "%{resource_name} δημιουργήθηκε επιτυχώς"
       },
       "destroy": {
         "alert": "%{resource_name} δεν μπορεσε να αφαιρεθει",
@@ -758,10 +758,10 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
       "newsletter": "Ενημερωτικό Δελτίο",
       "press": "Press",
       "profile": "προφίλ",
-      "projects": "Έργα",
+      "projects": "Συμμετέχετε",
       "suggestions": "Προτάσεις",
       "what_is_barrier_free": "Τι σημαίνει 'προσβάσιμο με αναπηρική καρέκλα'?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Τι είναι το Wheelmap?"
     },
     "searchbar": {
       "add_place": "Πρόσθεσε μια άλλη τοποθεσία\n",
@@ -854,10 +854,10 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
           "headline": "All not wheelchair accessible %{type} in %{city} (%{count})"
         },
         "unknown": {
-          "headline": "Όλοι% {} τύπος σε% {} πόλη με άγνωστη κατάσταση αναπηρικό καροτσάκι (% {count})"
+          "headline": "All %{type} in %{city} with unknown wheelchair status (%{count})"
         },
         "yes": {
-          "headline": "Όλοι προσβάσιμο από αναπηρικά αμαξίδια% {} τύπος σε% {} πόλη (% {count})"
+          "headline": "All wheelchair accessible %{type} in %{city} (%{count})"
         }
       }
     }
@@ -876,8 +876,8 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
     "node": {
       "info_edit_position": "Η τοποθεσία θα εμφανιστεί στο Wheelmap όπως φαίνεται παραπάνω. Εάν ο δείκτης δεν είναι στο σωστό σημείο, μπορείτε να <a href=\"%{url}\"> αλλάξετε την θέση του στο Το OpenStreetMap.</a>",
       "mail": {
-        "body": "(Παρακαλώ γράψτε μόνο στα Αγγλικά ή Γερμανικά).\n\nΓεια σας Sozialhelden,\nκάτι δεν πάει καλά με την τοποθεσία:% {url}\n\nΤο πρόβλημα είναι το εξής:",
-        "subject": "[Wheelmap] Πρόβλημα με %{τίτλος}"
+        "body": "(Παρακαλώ γράψτε μόνο στα Αγγλικά ή Γερμανικά).\n\nHi Sozialhelden,\nsomething is wrong with location% {url}\n\nThe problem is:",
+        "subject": "[Wheelmap] Πρόβλημα με %{headline}"
       }
     },
     "node_type": {
@@ -926,7 +926,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "Πρόσβαση με αναπηρική καρέκλα",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -949,7 +949,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Παρόμοια μέρη",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
@@ -993,7 +993,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
       "similar": "Παρόμοια μέρη: %{name}"
     },
     "node_status": {
-      "accessible_toilet": "Πρόσβαση τουαλέτας με αναπηρικά αμαξίδια ",
+      "accessible_toilet": "Πρόσβαση τουαλέτας με αναπηρικά αμαξίδια:",
       "premium": "%{name} αναφέρει: αυτό το μέρος είναι",
       "wheelchair_accessibility": "Πρόσβαση με αναπηρική καρέκλα?"
     },
@@ -1011,7 +1011,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
       "link": {
         "back": "πίσω",
         "large_map": "Μεγέθυνση",
-        "listing": "Όλα τα σημεία του τύπου '% {} τύπος »σε% {} πόλη",
+        "listing": "Όλα τα σημεία του τύπου '% {type}' σε %{city} ",
         "upload": "Μεταφόρτωση εικόνας"
       },
       "more_data_from": "There is more information about this place, validated by:",
@@ -1030,7 +1030,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
       }
     },
     "update_wheelchair": {
-      "successfull": "Η κατάσταση για το \"% {name}\" έχει αλλάξει σε \"% {} κατάσταση\" και θα είναι έτοιμη σύντομα."
+      "successfull": "Η κατάσταση για το \"% {name}\" έχει αλλάξει σε \"% {status}\" και θα είναι έτοιμη σύντομα."
     }
   },
   "number": {
@@ -1120,8 +1120,8 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
       "health": "Υγεία",
       "leisure": "Ψυχαγωγία",
       "misc": "Διάφορα",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Τράπεζα / Ταχυδρομείο",
+      "public_transfer": "Δημόσια Συγκοινωνία",
       "shopping": "Καταστήματα",
       "sport": "Αθλητισμός",
       "tourism": "Τουρισμός",
@@ -1188,7 +1188,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
         "brothel": "Οίκος ανοχής",
         "casino": "Καζίνο",
         "cinema": "Κινηματογράφος",
-        "community_centre": "Community centre",
+        "community_centre": "Κοινοτικό Κέντρο",
         "gallery": "Πινακοθήκη",
         "massage": "Massage spa",
         "nightclub": "Νυχτερινό κέντρο διασκέδασης",
@@ -1270,7 +1270,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
         "florist": "Ανθοπωλείο",
         "funeral_directors": "Funeral home",
         "furniture": "Έπιπλα",
-        "garden_centre": "Garden centre",
+        "garden_centre": "Ανθοκομικό κέντρο",
         "gift": "Κατάστημα δώρων",
         "greengrocer": "Greengrocer",
         "hairdresser": "Κομμωτήρια",
@@ -1453,7 +1453,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
     "step1": "Κάντε κλικ σε ένα μέρος που γνωρίζετε",
     "step2": "Σημειώστε το και κάντε κλικ στο Αποθήκευση",
     "step3": "Αυτό είναι! Δεν είναι απαραίτητη η εγγραφή",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Τι είναι το Wheelmap?"
   },
   "statistics": "Στατιστικά",
   "support": {
@@ -1622,20 +1622,20 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
   "will_paginate": {
     "next_label": "Επόμενος &#8594;",
     "page_entries_info": {
-      "multi_page": "Εμφάνιση% {μοντέλο} {%} από - {%} για να από% {count} στο σύνολο",
-      "multi_page_html": "Εμφάνιση% {μοντέλο} <b>% {} από & nbsp? - & Nbsp? {%} για να </ b> <b>% {count} </ b> στο σύνολο",
+      "multi_page": "Εμφάνιση % {model} %{from} - % {to} από %{count} στο σύνολο",
+      "multi_page_html": "Εμφάνιση %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> για να <b>%{count}</b> στο σύνολο",
       "single_page": {
-        "one": "Εμφάνιση 1% {} μοντέλο",
-        "other": "Εμφάνιση όλων% {count} {%} μοντέλο",
-        "zero": "Κανένα% {} μοντέλο βρέθηκε"
+        "one": "Εμφάνιση 1% {model}",
+        "other": "Εμφάνιση όλων% {count} %{model}",
+        "zero": "Κανένα %{model} βρέθηκε"
       },
       "single_page_html": {
-        "one": "Εμφάνιση <b> 1 </ b>% {} μοντέλο",
-        "other": "Εμφάνιση <b> όλων & nbsp?% {Count} </ b>% {} μοντέλο",
-        "zero": "Κανένα% {} μοντέλο βρέθηκε"
+        "one": "Εμφάνιση <b>1</ b>%{model}",
+        "other": "Εμφάνιση <b> όλων&nbsp;%{count}</b>%{model} ",
+        "zero": "Κανένα %{model} βρέθηκε"
       }
     },
-    "page_gap": "βοήθεια",
+    "page_gap": "&hellip;",
     "previous_label": "&#8592; Προηγούμενος"
   }
 });

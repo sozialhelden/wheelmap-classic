@@ -1,7 +1,5 @@
 ar:
   actions:
     save: حفظ
-    cancel: '
-
-      إلغاء'
+    cancel: إلغاء
     next: التالي

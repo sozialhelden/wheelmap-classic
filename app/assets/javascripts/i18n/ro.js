@@ -759,7 +759,7 @@ I18n.translations["ro"] = I18n.extend((I18n.translations["ro"] || {}), {
       "newsletter": "Newsletter",
       "press": "Press",
       "profile": "Profile",
-      "projects": "Projects",
+      "projects": "Implicați-vă",
       "suggestions": "Suggestions",
       "what_is_barrier_free": "What does \"wheelchair accessible\" mean?",
       "what_is_wheelmap": "What is Wheelmap?"

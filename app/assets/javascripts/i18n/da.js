@@ -440,7 +440,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
     },
     "destroy": {
       "confirm": "Er du sikker?",
-      "headline": "Delete account",
+      "headline": "Slet konto",
       "link": "Slet nu"
     },
     "edit": {
@@ -702,7 +702,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
       "category": "Kategori:",
       "centralkey": "Centralnøgle:",
       "city": "By:",
-      "create": "Create a place",
+      "create": "Opret et sted",
       "email": "E-mail",
       "finish": "Færdig",
       "housenumber": "Nr.",
@@ -758,10 +758,10 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
       "newsletter": "Nyhedsbrev",
       "press": "Tryk på",
       "profile": "Profil",
-      "projects": "Projekter",
+      "projects": "Bliv involveret",
       "suggestions": "Forslag",
       "what_is_barrier_free": "Hvad betyder \"kørestolstilgængeligt\"?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Hvad er Wheelmap?"
     },
     "searchbar": {
       "add_place": "Tilføj endnu et sted",
@@ -926,7 +926,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "Kørestolstilgængeligt",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -949,11 +949,11 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Lignende steder",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": "Add a place"
+        "title": "Tilføj et sted"
       },
       "header": {
         "title": "Nyt sted | wheelmap.org"
@@ -1120,8 +1120,8 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
       "health": "Sundhed",
       "leisure": "Fritid",
       "misc": "Diverse",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Bank / Posthus",
+      "public_transfer": "Offentlig transport",
       "shopping": "Shopping",
       "sport": "Sport",
       "tourism": "Turisme",
@@ -1188,7 +1188,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
         "brothel": "Bordel",
         "casino": "Kasino",
         "cinema": "Biograf",
-        "community_centre": "Community centre",
+        "community_centre": "Borgerhus",
         "gallery": "Galleri",
         "massage": "Massage spa",
         "nightclub": "Natklub",
@@ -1453,7 +1453,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
     "step1": "Klik på et sted du kender",
     "step2": "Markerer den og klik gem",
     "step3": "Det var det hele! Ingen registering er nødvendig",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Hvad er Wheelmap?"
   },
   "statistics": "Statistik",
   "support": {

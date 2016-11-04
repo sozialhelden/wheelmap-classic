@@ -7,8 +7,8 @@ el:
     node:
       info_edit_position: "Η τοποθεσία θα εμφανιστεί στο Wheelmap όπως φαίνεται παραπάνω. Εάν ο δείκτης δεν είναι στο σωστό σημείο, μπορείτε να <a href=\"%{url}\"> αλλάξετε την θέση του στο Το OpenStreetMap.</a>"
       mail:
-        subject: "[Wheelmap] Πρόβλημα με %{τίτλος}"
-        body: "(Παρακαλώ γράψτε μόνο στα Αγγλικά ή Γερμανικά).\n\nΓεια σας Sozialhelden,\nκάτι δεν πάει καλά με την τοποθεσία:% {url}\n\nΤο πρόβλημα είναι το εξής:"
+        subject: "[Wheelmap] Πρόβλημα με %{headline}"
+        body: "(Παρακαλώ γράψτε μόνο στα Αγγλικά ή Γερμανικά).\n\nHi Sozialhelden,\nsomething is wrong with location% {url}\n\nThe problem is:"
   actions:
     send: Αποστολή
     save: Αποθήκευση

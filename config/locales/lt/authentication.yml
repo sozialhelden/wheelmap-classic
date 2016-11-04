@@ -2,22 +2,27 @@ lt:
   devise:
     confirmations:
       confirmed: "Jūsų el. pašto adresas buvo sėkmingai patvirtintas."
+      link: "Jūs negavote patvirtinimo instrukcijų?"
       send_instructions: "Po kelių minučių, jūs gausite laišką su savo el. pašto patvirtinimo nuoroda."
     destroy:
       confirm: "Tikrai?"
+      headline: "Ištrinti paskyrą"
       link: "Ištrinti dabar"
     edit:
       form:
         labels:
           current_password: "Dabartinis slaptažodis <i>(reikalingas, kad patvirtinti pakeitimus)</i>"
+          email: El. paštas
           password: "Slaptažodis <i>(palikite tuščią, jei nenorite jo keisti)</i>"
           password_confirmation: "Pakartokite slaptažodį"
         submit: "Išsaugoti pakeitimus"
       headline: "Redaguoti paskyrą"
     failure:
       already_authenticated: "Jūs jau esate prisijungę."
+      inactive: "Jūsų paskyra kol kas dar nebuvo aktyvuota."
       invalid: "Neteisingas el. pašto adresas ar slaptažodis."
       locked: "Jūsų paskyra yra užrakinta"
+      timeout: "Baigėsi jūsų seansui skirtas laikas, norėdami tęsti, prisjunkite dar kartą."
       unauthenticated: "Norėdami tęsti, turite prisijungti arba užsiregistruoti"
       unconfirmed: "Prieš tęsiant, jums reikia patvirtinti savo paskyrą."
     mandatory: "* Būtina"
@@ -25,6 +30,10 @@ lt:
       failure: "Tapatybės nustatymas per %{kind} nepavyko. Klaida: \"%{reason}\". "
       success: "Sėkmingai prisijungta per %{kind}."
     password_recovery:
+      form:
+        labels:
+          email: El. paštas
+        submit: "Atstatyti slaptažodį"
       headline: "Pamiršote slaptažodį?"
     password_reset:
       email:
@@ -33,6 +42,8 @@ lt:
         labels:
           password: "Naujas slaptažodis"
           password_confirmation: "Pakartokite slaptažodį"
+        submit: "Atstatyti slaptažodį"
+      headline: "Atstatyti slaptažodį"
     passwords:
       link: "Pamiršote slaptažodį?"
       updated_not_active: "Jūsų slaptažodis buvo sėkmingai pakeistas"
@@ -45,11 +56,13 @@ lt:
       new:
         no_osm_account: "Neturite OpenStreetMap paskyros?"
         promo_text_thank_you: "Ačiū labai už jūsų palaikymą!"
+      timeout: "Baigėsi jūsų seansui skirtas laikas, norėdami tęsti, prisjunkite dar kartą."
       unauthenticated: "Norėdami tęsti, turite prisijungti arba užsiregistruoti"
       unconfirmed: "Prieš tęsiant, jums reikia patvirtinti savo paskyrą."
     sign_in:
       form:
         labels:
+          email: El. paštas
           password: Slaptažodis
         submit: "Prisijungti"
       headline: "Prisijungti"
@@ -62,5 +75,6 @@ lt:
         welcome: "Sveiki atvykę %{email}!"
       form:
         labels:
+          email: El. paštas
           password: Slaptažodis
           password_confirmation: "Pakartokite slaptažodį"

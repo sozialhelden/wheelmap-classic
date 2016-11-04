@@ -8,6 +8,8 @@ pl:
       health: Szpital lub przychodnia
       leisure: Czas wolny
       misc: Różne
+      money_post: "Bank / poczta"
+      public_transfer: "Transport publiczny"
       shopping: Zakupy
       sport: Sport
       tourism: Turystyka
@@ -60,6 +62,7 @@ pl:
         brothel: Agencja towarzyska
         casino: Kasyno
         cinema: Kino
+        community_centre: "Dom kultury"
         gallery: Galeria
         nightclub: Klub nocny
         playground: Plac zabaw
@@ -125,6 +128,7 @@ pl:
         farm_shop: "Żywność ekologiczna"
         florist: Kwiaciarnia
         furniture: Sklep z meblami
+        garden_centre: "Sklep ogrodniczy"
         gift: "Sklep z prezentami"
         hairdresser: Fryzjer
         hardware: Hardware

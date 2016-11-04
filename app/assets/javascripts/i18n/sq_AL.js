@@ -758,7 +758,7 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
       "newsletter": "Fletushkë",
       "press": "Shtypi",
       "profile": "Profil",
-      "projects": "Projekte",
+      "projects": "Projects",
       "suggestions": "Sugjerime",
       "what_is_barrier_free": "Çfarë do të thotë \"e aksesueshme në karrige me rrota\"?",
       "what_is_wheelmap": "What is Wheelmap?"

@@ -758,7 +758,7 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
       "newsletter": "简讯",
       "press": "出版物",
       "profile": "Profile",
-      "projects": "Projects",
+      "projects": "参与其中",
       "suggestions": "建议",
       "what_is_barrier_free": "“轮椅通道”是什么意思",
       "what_is_wheelmap": "What is Wheelmap?"

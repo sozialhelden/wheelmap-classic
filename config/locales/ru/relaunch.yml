@@ -28,7 +28,7 @@ ru:
       choose_language: Выберите язык
       contact: Контакты
       map: Карта
-      projects: Проекты
+      projects: Включайтесь
     toolbar:
       categories: Категории
     meta:
@@ -44,15 +44,35 @@ ru:
         lookup: Поиск определённого места
         secondary_headline: 'Наша система светофора для оценки доступности общественных мест для колясочников:'
       embed_link: Показать на Wheelmap.org
+      zoom_alert: Приблизьте, чтобы увидеть больше мест.
   nodes:
     new:
       form:
+        title: Добавить место
         legend: Расположение места
+        location: Нажмите на карте там, где находится это место!
         section:
+          name_category:
+            name: Название и тип места
+            title: "Дайте нам первичную информацию о вашем заведении:"
           address:
             name: Адрес
+            title: Где это место?
+            help: Вы можете перемещать маркер в нужное место на карте.
+          similar_nodes:
+            name: Похожие места
+            title: Мы нашли поблизости подобные места. Это одно из них?
+            go_edit: Продолжить с этим местом
+            go_new: Это ни одно из вышеперечисленных мест…
+            empty: Похожие места не были найдены.
+          accessibility:
+            name: Доступность на кресле-коляске
+            title: Информация о доступности на кресле-коляске
           contact:
             name: Контакты
+            title: Другая контактная информация
+          overview:
+            title: Вся информация верна?
     node_data:
       address: 'Адрес:'
       contact_details: 'Контактная информация:'
@@ -115,7 +135,8 @@ ru:
         label: Да, держите меня в курсе о новостях Wheelmap.
       show:
         title: Обзор
-        text_html: "Привет,<br>\nДобро пожаловать (вновь) на Wheelmap.org! Мы рады видеть вас на борту! Вы можете просмотреть наш <a href=\"http://wheelmap.org/en/blog-2/\">Блог</a> или <a href=\"http://wheelmap.org/en/faqs/\">Вопросы и ответы</a>, если вы хотите узнать Wheelmap.org немного больше. Или вы можете узнать больше о <a href=\"http://wheelmap.org/en/get-engaged/\"> проектах</a>, которые мы предлагаем совместно с Wheelmap.org и о том, как вы можете принять в них участие.<br>\nОставайтесь на связи<br>\nЧтобы поддерживать контакт, вы можете подписаться на нашу ежемесячную рассылку и следовать за нами на <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> и <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Мы с нетерпением ждем ваши мнения и начала общения с вами!<br>\nА теперь, счастливого картографирования!<br>\nВаша Wheelmap команда"
+        text_html: "Привет,<br>\nДобро пожаловать (вновь) на Wheelmap.org! Мы рады видеть вас на борту! Вы можете просмотреть наш <a href=\\\"http://news.wheelmap.org/en/\\\">Блог</a> или <a href=\\\"http://news.wheelmap.org/en/FAQ/\\\">Вопросы и ответы</a>, если вы хотите узнать Wheelmap.org немного больше. Или вы можете узнать больше о <a href=\\\"http://news.wheelmap.org/en/wheelmap-ambassador/\\\">проектах</a>, которые мы предлагаем совместно с Wheelmap.org и о том, как вы можете принять в них участие.<br>\nPЧтобы поддерживать контакт, вы можете подписаться на нашу ежемесячную рассылку и следовать за нами на <a href=\\\"https://www.facebook.com/wheelmap\\\">Facebook</a> и <a href=\\\"https://twitter.com/wheelmap\\\">Twitter</a>. Мы с нетерпением ждем ваши мнения и начала общения с вами!<br>\nА теперь, счастливого картографирования!<br>\nВаша Wheelmap\
+          \ команда"
         greeting:
           anonymously: Привет всем
           personalized: Привет, %{name}

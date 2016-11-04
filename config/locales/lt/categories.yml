@@ -5,6 +5,7 @@ lt:
       food: Maistas
       health: Sveikata
       leisure: Laisvalaikis
+      public_transfer: "Viešasis transportas"
       sport: Sportas
       tourism: Turizmas
       unknown: Nežinoma

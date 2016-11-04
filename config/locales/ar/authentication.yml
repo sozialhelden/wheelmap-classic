@@ -9,7 +9,6 @@ ar:
     edit:
       form:
         labels:
-          current_password: "<i>(we need it to confirm your changes)</i> كلمة المرور الحالية "
           email: بريد الكتروني
           password: " كلمة المرور  <i>(أبقه فارغا اذا كنت لاتريد التعديل)<i/>"
           password_confirmation: "إعادة كلمة المرور"

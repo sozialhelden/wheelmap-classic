@@ -760,10 +760,10 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
       "newsletter": "Spravodaj",
       "press": "Tlač",
       "profile": "Profil",
-      "projects": "Projekty",
+      "projects": "Zapojte sa",
       "suggestions": "Návrhy",
       "what_is_barrier_free": "Čo to znamená \"prístupné pre vozíčkarov\"?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Čo to je Wheelmap?"
     },
     "searchbar": {
       "add_place": "Pridať ďalšie",
@@ -929,7 +929,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "Prístupnosť pre vozíčkarov",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -952,7 +952,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Podobné miesta",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
@@ -1125,8 +1125,8 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
       "health": "Zdravie",
       "leisure": "Voľný čas",
       "misc": "Rôzne",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Banka / pošta",
+      "public_transfer": "Verejná doprava",
       "shopping": "Nákupy",
       "sport": "Šport",
       "tourism": "Cestovanie",
@@ -1193,7 +1193,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
         "brothel": "Nevestinec",
         "casino": "Kasíno",
         "cinema": "Kino",
-        "community_centre": "Community centre",
+        "community_centre": "Komunitné centrum",
         "gallery": "Galéria",
         "massage": "Massage spa",
         "nightclub": "Nočný klub",
@@ -1275,7 +1275,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
         "florist": "Kvetinárstvo",
         "funeral_directors": "Funeral home",
         "furniture": "Nábytok",
-        "garden_centre": "Garden centre",
+        "garden_centre": "Záhradkárske centrum",
         "gift": "Suveníry",
         "greengrocer": "Greengrocer",
         "hairdresser": "Kaderníctvo",
@@ -1458,7 +1458,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
     "step1": "Kliknite na miesto ktoré poznáte",
     "step2": "Označte to a dajte uložiť",
     "step3": "A je to! Registráciu nie je potreba",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Čo to je Wheelmap?"
   },
   "statistics": "Štatistiky",
   "support": {
@@ -1482,14 +1482,14 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
     "pm": "popoludní"
   },
   "toiletstatus": {
-    "no": "No wheelchair accessible toilet",
-    "unknown": "Toilet status unknown",
+    "no": "Toaleta neprístupná pre invalidné vozíky",
+    "unknown": "Stav WC neznámy",
     "what_is": {
       "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
       "unknown": "Help out by marking the toilet status!",
       "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
     },
-    "yes": "Wheelchair accessible toilet"
+    "yes": "Toaleta prístupná pre invalidné vozíky"
   },
   "user_sessions": {
     "create": {

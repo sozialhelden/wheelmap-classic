@@ -3,35 +3,24 @@ ar:
     attributes:
       poi:
         name: الإسم
-        type: '
-
-
-          النوع'
-        address: '
-
-          العنوان'
+        type: النوع
+        address: العنوان
         website: موقع الكتروني
-        phone: '
-
-          الهاتف'
-        address_street: '
-
-
-          شارع'
+        phone: الهاتف
+        address_street: شارع
         address_housenumber: رقم المنزل
-        address_city: '
-
-
-          المدينة'
+        address_city: المدينة
   header:
     navigation:
       about_wheelmap: حول ويل ماب
       choose_language: إختر اللغة
       contact: للإتصال
       map: خريطة
-      projects: شارك
+      projects: قم بالاشتراك
     toolbar:
       categories: التصنيفات
+    meta:
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -49,11 +38,18 @@ ar:
         section:
           address:
             name: العنوان
+          accessibility:
+            name: امكانية الوصول بالكرسي المتحرك
           contact:
             name: للإتصال
+    node_data:
+      address: 'العنوان:'
     node_edit:
       details: تفاصيل
       edit: تحرير
+    node_status:
+      accessible_toilet: 'كرسي متحرك في المتناول للمرحاض:'
+      wheelchair_accessibility: 'امكانية الوصول بالكرسي المتحرك:'
     show:
       share:
         email: بريد الكتروني
@@ -69,7 +65,4 @@ ar:
         title: الحساب
       widget:
         legends:
-          settings: '
-
-
-            الإعدادات'
+          settings: الإعدادات

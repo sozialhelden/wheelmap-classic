@@ -1,10 +1,10 @@
 I18n.translations || (I18n.translations = {});
 I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
   "actions": {
-    "cancel": "Atšaukti",
-    "next": "Next",
-    "save": "Išsaugoti",
-    "send": "Send"
+    "cancel": "Atsisakyti",
+    "next": "Kitas",
+    "save": "Įrašyti",
+    "send": "Siųsti"
   },
   "active_admin": {
     "access_denied": {
@@ -435,20 +435,20 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
   "devise": {
     "confirmations": {
       "confirmed": "Jūsų el. pašto adresas buvo sėkmingai patvirtintas.",
-      "link": "You didn't receive confirmation instructions?",
+      "link": "Jūs negavote patvirtinimo instrukcijų?",
       "send_instructions": "Po kelių minučių, jūs gausite laišką su savo el. pašto patvirtinimo nuoroda.",
       "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
     },
     "destroy": {
       "confirm": "Tikrai?",
-      "headline": "Delete account",
+      "headline": "Ištrinti paskyrą",
       "link": "Ištrinti dabar"
     },
     "edit": {
       "form": {
         "labels": {
           "current_password": "Dabartinis slaptažodis <i>(reikalingas, kad patvirtinti pakeitimus)</i>",
-          "email": "Email",
+          "email": "El. paštas",
           "password": "Slaptažodis <i>(palikite tuščią, jei nenorite jo keisti)</i>",
           "password_confirmation": "Pakartokite slaptažodį"
         },
@@ -458,13 +458,13 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
     },
     "failure": {
       "already_authenticated": "Jūs jau esate prisijungę.",
-      "inactive": "Your account has not been activated yet.",
+      "inactive": "Jūsų paskyra kol kas dar nebuvo aktyvuota.",
       "invalid": "Neteisingas el. pašto adresas ar slaptažodis.",
       "invalid_token": "Invalid authentication token",
       "last_attempt": "You have one more attempt before your account will be locked.",
       "locked": "Jūsų paskyra yra užrakinta",
       "not_found_in_database": "Invalid email or password.",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "Baigėsi jūsų seansui skirtas laikas, norėdami tęsti, prisjunkite dar kartą.",
       "unauthenticated": "Norėdami tęsti, turite prisijungti arba užsiregistruoti",
       "unconfirmed": "Prieš tęsiant, jums reikia patvirtinti savo paskyrą."
     },
@@ -489,9 +489,9 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
     "password_recovery": {
       "form": {
         "labels": {
-          "email": "Email"
+          "email": "El. paštas"
         },
-        "submit": "Reset password"
+        "submit": "Atstatyti slaptažodį"
       },
       "headline": "Pamiršote slaptažodį?"
     },
@@ -507,9 +507,9 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
           "password": "Naujas slaptažodis",
           "password_confirmation": "Pakartokite slaptažodį"
         },
-        "submit": "Reset password"
+        "submit": "Atstatyti slaptažodį"
       },
-      "headline": "Reset password"
+      "headline": "Atstatyti slaptažodį"
     },
     "passwords": {
       "link": "Pamiršote slaptažodį?",
@@ -551,14 +551,14 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
       },
       "signed_in": "Logged in successfully",
       "signed_out": "You have signed out successfully",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "Baigėsi jūsų seansui skirtas laikas, norėdami tęsti, prisjunkite dar kartą.",
       "unauthenticated": "Norėdami tęsti, turite prisijungti arba užsiregistruoti",
       "unconfirmed": "Prieš tęsiant, jums reikia patvirtinti savo paskyrą."
     },
     "sign_in": {
       "form": {
         "labels": {
-          "email": "Email",
+          "email": "El. paštas",
           "password": "Slaptažodis",
           "remember_me": "Stay logged in?"
         },
@@ -577,7 +577,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
       },
       "form": {
         "labels": {
-          "email": "Email",
+          "email": "El. paštas",
           "password": "Slaptažodis",
           "password_confirmation": "Pakartokite slaptažodį",
           "wants_newsletter": "Yes, keep me up to date about Wheelmap - but please not more than once a month."
@@ -704,7 +704,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
       "centralkey": "Central key:",
       "city": "Miestas:",
       "create": "Create a place",
-      "email": "Email",
+      "email": "El. paštas",
       "finish": "Užbaigti",
       "housenumber": "No:",
       "lat": "Platuma",
@@ -718,7 +718,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
       "postcode": "Pašto kodas:",
       "privacy_policy": "Aš sutinku su duomenų konfidencialumo sutarties 1 ir 2 pastraipa.",
       "reset": "Atstatyti",
-      "save": "Išsaugoti",
+      "save": "Įrašyti",
       "street": "Gatvė:",
       "terms": "Aš sutinku su naudojimosi taisyklėmis.",
       "type": "Tipas:",
@@ -759,7 +759,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
       "newsletter": "Naujienlaiškis",
       "press": "Press",
       "profile": "Profilis",
-      "projects": "Projektai",
+      "projects": "Projects",
       "suggestions": "Pasiūlymai",
       "what_is_barrier_free": "Ką reiškia \"prieinama neįgaliųjų vežimėliais\"?",
       "what_is_wheelmap": "Kas yra Wheelmap?"
@@ -809,7 +809,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
       },
       "ie": {
         "action": {
-          "ignore": "Ignore",
+          "ignore": "Nepaisyti",
           "upgrade": "Update Browser"
         },
         "warning": {
@@ -878,7 +878,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
       "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
       "mail": {
         "body": "(Prašome rašyti tik Anglų arba Vokiečių kalba.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
-        "subject": "[Wheelmap] Problem with %{headline}"
+        "subject": "[Wheelmap] Problemos su %{headline}"
       }
     },
     "node_type": {
@@ -944,14 +944,14 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
             "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": "Ar visa informacija teisinga?"
           },
           "similar_nodes": {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "name": "Panašios vietos",
+            "title": "Mes šalia radome panašių vietų. Ar tai viena iš jų?"
           }
         },
         "title": "Add a place"
@@ -1010,14 +1010,14 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
         "title": "Vieta: %{node} | wheelmap.org"
       },
       "link": {
-        "back": "back",
+        "back": "atgal",
         "large_map": "Enlarge",
         "listing": "All places of typ '%{type}' in %{city}",
         "upload": "Išsiųsti paveikslą"
       },
       "more_data_from": "There is more information about this place, validated by:",
       "share": {
-        "email": "Email",
+        "email": "El. paštas",
         "facebook": "Facebook",
         "text": "I found this place on Wheelmap.org: %{name}",
         "twitter": "Twitter"
@@ -1123,7 +1123,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
       "leisure": "Laisvalaikis",
       "misc": "Miscellaneous",
       "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "public_transfer": "Viešasis transportas",
       "shopping": "Shopping",
       "sport": "Sportas",
       "tourism": "Turizmas",
@@ -1339,7 +1339,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
           "connected": "Status: connected",
           "grant": "Connect now",
           "not_connected": "Status: Not connected",
-          "revoke": "Disconnect"
+          "revoke": "Atsijungti"
         }
       },
       "headline": "Edit your profile"
@@ -1439,7 +1439,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
         }
       },
       "search": {
-        "for": "Searching for \"%{q}\"",
+        "for": "Ieškoma \"%{q}\"",
         "not_found": "No places could be found!"
       }
     },

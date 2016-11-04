@@ -29,6 +29,7 @@ ja:
       unconfirmed: "続ける前にアカウントを確認してください。"
     mailer:
       confirmation_instructions:
+        landing_page: "あなたのメールアドレスにたった今送信されたリンクをクリックしてください。Eメールが見当たらない場合には、まずスパム用フォルダに混ざっていないかをチェックしてください。そこでも見当たらない場合には、登録ページへと戻って、もう一度やり直してください。"
         subject: "確認手順"
       reset_password_instructions:
         subject: "パスワードリセット手順"
@@ -50,6 +51,7 @@ ja:
         comment: "あなたがパスワード変更を要求した記憶が無い場合は、このメールは無視してください<br/>あなたのパスワードはこのリンクをクリックしなければ変更されません。"
         headline: "ようこそ %{email} さん"
         link: "パスワードを変更"
+        text: "パスワード変更のリクエストを受け取りました。リクエストを行った場合には、以下のリンクをクリックしてください - そうでない場合にはこのメッセージは無視して頂いて結構です!"
       form:
         labels:
           password: "新しいパスワード"
@@ -58,6 +60,8 @@ ja:
       headline: "パスワードをリセット"
     passwords:
       link: "パスワードを忘れた？"
+      send_instructions: "パスワードのリセット手順が記載されたEメールが数分で送信されます"
+      send_paranoid_instructions: "あなたのアカウントが現存する場合には、パスワードのリセット手順が記載されたEメールが数分で送信されます"
       updated: "あなたのパスワードは変更されました。現在サイインしています。"
       updated_not_active: "パスワードが変更されました"
     registrations:
@@ -68,6 +72,7 @@ ja:
         inactive: 無効
         locked: ロック済
         unconfirmed: 未確認
+      signed_up: "登録が完了しました!　確認メールが送信されました。"
       updated: "あなたのアカウントは更新されました。"
     sessions:
       inactive: "あなたのアカウントはまだ有効になっていません"
@@ -77,9 +82,11 @@ ja:
       locked: "あなたのアカウントはロックされました。"
       new:
         no_osm_account: "OpenStreetMap のアカウントを持っていませんか？"
+        osm_promo_text: "WheelmapはOpenStreetMap (OSM)の地理情報に基づいています。OpenStreetMapは皆さんのような方々によって作成された無料の世界地図で、ウィキペディアの地図版とも言えます。場所を編集したり、新たに作成する為にはOpenStreetMapのアカウントが必要であり、ログインしていなければなりません。"
         promo_text_thank_you: "あなたのサポートに感謝します！"
         sign_in_with: " %{kind} でログイン"
         sign_up_with_osm: "今すぐ登録。"
+        wheelmap_promo_text: "車いすアクセス可能な場所に関するあなたの知識を利用して、身体に障がいを抱える方々の毎日の計画を容易にすることができます。更には、OpenStreetMapをより詳細化することにも繋がります。"
       signed_in: "サイインインしました。"
       signed_out: "サインアウトしました。"
       timeout: "セッション有効期限切れです。もう一度サイインしてから続けてください。"
@@ -105,8 +112,11 @@ ja:
           email: Eメール
           password: パスワード
           password_confirmation: "パスワード再入力"
+          wants_newsletter: "はい、Wheelmapに関する最新情報を希望します - しかし1か月に1度のみお願いします。"
         submit: "登録"
       headline: "登録"
     unlocks:
       link: "アンロック手順が届きませんでしたか？"
+      send_instructions: "アカウントのロック解除手順が記載されたEメールが数分以内に送信されます"
+      send_paranoid_instructions: "あなたのアカウントが現存する場合には、アカウントのロック解除手順が記載されたEメールが数分で送信されます"
       unlocked: "アカウントはアンロックされました。あなたは現在サイインしています。"

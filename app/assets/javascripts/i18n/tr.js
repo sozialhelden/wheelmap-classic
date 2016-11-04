@@ -766,7 +766,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       "newsletter": "Haberler",
       "press": "Basın",
       "profile": "Profil",
-      "projects": "Projects",
+      "projects": "Dahil olun",
       "suggestions": "Öneriler",
       "what_is_barrier_free": "\"Tekerleki sandalye ile ulasilir\" ne demek?",
       "what_is_wheelmap": "What is Wheelmap?"

@@ -1,9 +1,9 @@
 ca:
   models:
     category:
-      prompt: "Tria la categoria"
+      prompt: "Triar categoria"
     node_type:
-      prompt: "Tria un tipus"
+      prompt: "Triar tipus"
     node:
       info_edit_position: "La localització apareixerà a Wheelmap com es mostra aquí sobre. Si el marcador no és al lloc correcte tu pots <a href=\"%{url}\">canviar la posició a OpenStreetMap.</a>"
       mail:
@@ -13,6 +13,7 @@ ca:
     send: Enviar
     save: Desar
     cancel: Cancel·lar
+    next: Següent
   errors:
     models:
       node:

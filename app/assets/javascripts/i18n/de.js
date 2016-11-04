@@ -792,7 +792,7 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
       "newsletter": "Newsletter",
       "press": "Presse",
       "profile": "Profil",
-      "projects": "Projekte",
+      "projects": "Mitmachen",
       "suggestions": "Anregungen",
       "what_is_barrier_free": "Was bedeutet „rollstuhlgerecht“?",
       "what_is_wheelmap": "Was ist Wheelmap?"
@@ -1019,7 +1019,7 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
     },
     "node_photos": {
       "add": "Hinzufügen",
-      "alert": "Bitte beachte: Auf dem Foto sollte der Eingangsbereich des Ortes gut zu erkennen sein. Soll heißen: Gibt es Stufen am Eingang? Wie hoch ist die Stufe ungefähr? Wie breit ist die Tür? Das Foto muss das Format JPG oder PNG haben. Die maximale Größe eines Fotos darf 10 MB nicht überschreiten.",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Fotos von diesem Ort:",
       "upload": "Hochladen"
     },
@@ -1594,7 +1594,7 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
           },
           "text": "Du hast"
         },
-        "text_html": "Hallo,\nherzlich Willkommen (zurück) bei Wheelmap.org! \n\nWenn Du Dich mit Wheelmap.org noch vertrauter machen möchtest, kannst du z.B. im <a href=\"http://wheelmap.org/blog/\">Blog</a> stöbern oder die Antworten zu den <a href=\"http://wheelmap.org/about/faqs/\">Häufig gestellten Fragen</a> durchlesen. Unter <a href=\"http://wheelmap.org/projekte/\">Projekte</a> findest Du Anregungen, wie Du Dich lokal noch mehr einbringen kannst. \n\nBleib in Kontakt\nUm weiter mit uns in Kontakt zu bleiben, bestellst Du am besten den Newsletter und folgst uns auf <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> und <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Wir freuen uns darauf, mit Dir ins Gespräch zu kommen und Deine Meinung zu hören!\n\nUnd jetzt viel Spaß beim Mappen!\nDas Wheelmap-Team",
+        "text_html": "Hallo,<br>\nherzlich Willkommen (zurück) bei Wheelmap.org! Wenn du dich mit Wheelmap.org noch vertrauter machen möchtest, kannst du z.B. im <a href=\\\"http://news.wheelmap.org/\\\">Blog</a> stöbern oder die Antworten zu den <a href=\\\"http://news.wheelmap.org/FAQ/\\\">häufig gestellten Fragen</a> durchlesen. Unter dem Menüpunkt <a href=\\\"http://news.wheelmap.org/en/wheelmap-ambassador/\\\">Mitmachen</a> findest du Anregungen, wie du dich lokal noch mehr einbringen kannst.<br>\nUm weiter mit uns in Kontakt zu bleiben, kannst du den Newsletter bestellen oder uns auf <a href=\\\"https://www.facebook.com/wheelmap\\\">Facebook</a> und <a href=\\\"https://twitter.com/wheelmap\\\">Twitter</a> folgen. Wir freuen uns darauf, mit dir ins Gespräch zu kommen und deine Meinung zu hören!<br>\nUnd jetzt viel Spaß beim Mappen!<br>\nDein Wheelmap-Team",
         "title": "Übersicht"
       },
       "widget": {

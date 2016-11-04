@@ -500,7 +500,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     },
     "mailer": {
       "confirmation_instructions": {
-        "landing_page": "Please click on the link that we just sent to your email address. If you do not receive an email from us, please first check if it is not hiding in your spam folder. If it is not there return to the sign up page and try again.",
+        "landing_page": "あなたのメールアドレスにたった今送信されたリンクをクリックしてください。Eメールが見当たらない場合には、まずスパム用フォルダに混ざっていないかをチェックしてください。そこでも見当たらない場合には、登録ページへと戻って、もう一度やり直してください。",
         "subject": "確認手順"
       },
       "reset_password_instructions": {
@@ -545,7 +545,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "link": "パスワードを忘れた？",
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
       "send_instructions": "数分でパスワードのリセット手順が書かれたメールが届きます。",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to reset your password",
+      "send_paranoid_instructions": "あなたのアカウントが現存する場合には、パスワードのリセット手順が記載されたEメールが数分で送信されます",
       "updated": "あなたのパスワードは変更されました。現在サイインしています。",
       "updated_not_active": "パスワードが変更されました"
     },
@@ -573,11 +573,11 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "locked": "あなたのアカウントはロックされました。",
       "new": {
         "no_osm_account": "OpenStreetMap のアカウントを持っていませんか？",
-        "osm_promo_text": "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it.",
+        "osm_promo_text": "WheelmapはOpenStreetMap (OSM)の地理情報に基づいています。OpenStreetMapは皆さんのような方々によって作成された無料の世界地図で、ウィキペディアの地図版とも言えます。場所を編集したり、新たに作成する為にはOpenStreetMapのアカウントが必要であり、ログインしていなければなりません。",
         "promo_text_thank_you": "あなたのサポートに感謝します！",
         "sign_in_with": " %{kind} でログイン",
         "sign_up_with_osm": "今すぐ登録。",
-        "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
+        "wheelmap_promo_text": "車いすアクセス可能な場所に関するあなたの知識を利用して、身体に障がいを抱える方々の毎日の計画を容易にすることができます。更には、OpenStreetMapをより詳細化することにも繋がります。"
       },
       "signed_in": "サイインインしました。",
       "signed_out": "サインアウトしました。",
@@ -619,7 +619,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     "unlocks": {
       "link": "アンロック手順が届きませんでしたか？",
       "send_instructions": "数分でアンロック手順を書いたメールが届きます。",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to unlock your account",
+      "send_paranoid_instructions": "あなたのアカウントが現存する場合には、アカウントのロック解除手順が記載されたEメールが数分で送信されます",
       "unlocked": "アカウントはアンロックされました。あなたは現在サイインしています。"
     }
   },
@@ -724,7 +724,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     "cancel": "中止",
     "create": "%{model}を作成",
     "hints": {
-      "email": "We treat your address confidentially. We promise not to send you spam!",
+      "email": "あなたのアドレスは機密的に扱われます。スパムが送信されることはない事をお約束します!",
       "lat": "地図上のマーカーを正しい位置に移動",
       "osm_username": "まだメンバーではありませんか？<a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">今すぐOpenstreetmap のアカウントを作成</a> ",
       "password": "(変更しない場合は空白のまま)",
@@ -797,7 +797,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "newsletter": "ニュースレター",
       "press": "プレス",
       "profile": "プロフィール",
-      "projects": "プロジェクト",
+      "projects": "参加する",
       "suggestions": "提案",
       "tolk": "翻訳",
       "what_is_barrier_free": "\"車椅子で行ける(アクセシブル)\"とは？",
@@ -853,7 +853,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         },
         "warning": {
           "headline": "ごめんなさい！",
-          "message": "Internet Explorerをお使いのようですね。Wheelmapを正しく使うには標準的な動作をするブラウザが必要です。Firefox, Chrome, Safari または Opera をお使いください。"
+          "message": "Internet Explorerをご使用になられているようです。Wheelmapが正常に動作する為には、ウェブ標準準拠ブラウザが必要となります。どうかFirefox、Chrome、SafariまたはOperaの使用をご検討ください。"
         }
       },
       "link": {
@@ -880,7 +880,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "help": "車椅子で行けますか？ (ヘルプ)",
         "more": "詳細 ..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": "ズームインしてより多くの場所を閲覧"
     }
   },
   "how?": "やり方は？",
@@ -888,10 +888,10 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     "index": {
       "wheelchair": {
         "limit": {
-          "headline": "All partially wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "%{city} 内の部分的に車いすアクセス可能な %{type} 全て (%{count})"
         },
         "no": {
-          "headline": "All not wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "%{city} 内の車いすアクセス不可能な %{type} 全て (%{count})"
         },
         "unknown": {
           "headline": "%{city} 内の全 %{type} の不明な車椅子の状態 (%{count}件)"
@@ -950,7 +950,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       }
     },
     "errors": {
-      "default": "Oops something went wrong. We have been informed about this issue",
+      "default": "問題が発生してしまいました。当社はこの件についての連絡を受けました。",
       "not_authorized": "申し訳ありません、認証に失敗しました",
       "not_available": "申し訳ありません、このページは一時的に利用できません。",
       "not_existent": "申し訳ありません、この場所は既に利用できなくなっています。",
@@ -963,37 +963,37 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     "new": {
       "form": {
         "legend": "場所の位置座標",
-        "location": "Please click on the map where the place is located!",
+        "location": "地図上でその場所が位置している箇所をクリックしてください!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "車椅子のアクセシビリティ",
+            "title": "車いすアクセス情報"
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
+            "help": "地図上の正しい場所までマーカーを動かすことができます。",
             "name": "住所",
-            "title": "Where is the place?"
+            "title": "その場所はどこでしょうか?"
           },
           "contact": {
             "name": "連絡先",
-            "title": "Other contact information"
+            "title": "他の連絡先情報"
           },
           "name_category": {
-            "name": "Name and place type",
-            "title": "Give us some initial information about your place:"
+            "name": "名前と場所のタイプ",
+            "title": "あなたの場所に関する基本的な情報を教えてください:"
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": "この情報は全て正しいものですか?"
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "類似する場所は見つかりませんでした。",
+            "go_edit": "この場所を続行",
+            "go_new": "上記の場所のどれでもありません…",
+            "name": "ここに似た場所",
+            "title": "近くで類似する場所が見つかりました。これらの場所の内の一つでしょうか?"
           }
         },
-        "title": "Add a place"
+        "title": "場所を追加"
       },
       "header": {
         "title": "新しい場所 | wheelmap.org"
@@ -1056,7 +1056,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "report_bug": "Report a problem",
         "upload": "画像をアップロード"
       },
-      "more_data_from": "There is more information about this place, validated by:",
+      "more_data_from": "この場所にはより詳細なる情報があります。認証者:",
       "share": {
         "email": "Eメール",
         "facebook": "Facebook",
@@ -1141,11 +1141,11 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
   "oauth": {
     "application": {
       "connect": {
-        "headline": "あなたのアカウントをOpenStreetMapアカウントと連携させるとwheelmap.orgで場所を作成したり変更したりすることができます。"
+        "headline": "Wheelmap.org上で場所を作成したり、編集するためには、まずあなたのOpenStreetMapアカウントをWheelmapのアカウントに接続させなければなりません。"
       }
     },
     "callback": {
-      "notice": "あなたのwheelmapアカウントは現在OpenStreetMapアカウント%{user}と連携しています。"
+      "notice": "あなｔなおWheelmapアカウントがOpenStreetMapアカウント%{user}へと接続されました。"
     }
   },
   "or": "or",
@@ -1527,9 +1527,9 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     "no": "車椅子で利用不可のトイレ",
     "unknown": "車椅子での利用可能か不明のトイレ",
     "what_is": {
-      "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
-      "unknown": "Help out by marking the toilet status!",
-      "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
+      "no": "出入り口の内側の幅は90 cm (35 inc)で、障害物の無いフロアのスペースは150 x 150 cm (59 x 59 inc)、また車椅子の高さの便座を備え、折り畳み式の手すりと障害のある方でも利用しやすい手洗い台を備えています。",
+      "unknown": "トイレの状況をマークしてお手伝いください!",
+      "yes": "出入り口の内側の幅は90 cm (35 inc)で、障害物の無いフロアのスペースは150 x 150 cm (59 x 59 inc)、また車椅子の高さの便座を備え、折り畳み式の手すりと障害のある方でも利用しやすい手洗い台を備えています。"
     },
     "yes": "車椅子で利用可能のトイレ"
   },
@@ -1547,7 +1547,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "notice": "さよなら、またお越しください！"
     },
     "new": {
-      "email": "Eメールアドレス",
+      "email": "メールアドレス",
       "login": "ログイン",
       "login_with_twitter": "Twitterでログイン",
       "password": "パスワード",
@@ -1557,8 +1557,8 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
   "users": {
     "after_signup_edit": {
       "welcome": {
-        "headline": "You are almost there! Now on to finalize your Wheelmap account:",
-        "set_password_for_mobile": "You have successfully registered with OpenStreetMap. Please choose an email address that you would like Wheelmap to use so we can keep you informed about your activities (for example the number of places you have marked). You can access this information on your \"Profile\".",
+        "headline": "もう少しで完了です!　今すぐWheelmapアカウントを完成させましょう:",
+        "set_password_for_mobile": "OpenStreetMapへの登録が完了しました。あなたの活動について連絡を行えるように、Wheelmapの利用にご希望のメールアドレスを選択してください　(例えばマークした場所の数など)。この情報はあなたの「プロフィール」にてアクセスできます。",
         "text": "あなたと連絡を取るにはどうしたら良いですか？この情報はあとからあなたのプロファイル欄で変更できます。"
       }
     },
@@ -1607,7 +1607,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
           },
           "text": "持っている"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "こんにちは<br>\nWheelmap.orgにようこそ!　ご参加いただけることを嬉しく思います!　Wheelmap.orgについてもっと知りたい場合には、我々の<a href=\"http://news.wheelmap.org/en/\">ブログ</a>または<a href=\"http://news.wheelmap.org/en/FAQ/\">よくあるご質問</a>をご覧ください。もしくは、Wheelmap.orgにて提供されている<a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">プロジェクト</a>に関する情報と参加方法もご覧ください。<br>\n最新情報の入手をご希望の場合には、是非ともマンスリーのニュースレターにご購読いただき、<a href=\"https://www.facebook.com/wheelmap\">フェイスブック</a>と<a href=\"https://twitter.com/wheelmap\">ツイッター</a>でのフォローをお願いします。あなたからのご意見をお聞かせいただけること、そしてお話しをできることを楽しみにしております!<br>\nそれではマップのご利用をお楽しみください!<br>\nWheelmapチーム",
         "title": "概要"
       },
       "widget": {
@@ -1618,7 +1618,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "height": "高さ",
         "legends": {
           "embed": "埋め込みコード",
-          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
+          "embed_explanation": "上記のコード内で緯度(<code>lat</code>)、経度(<code>lon</code>)、ズームのレベル(<code>zoom</code>)の詳細を手動で変更することができます。これにより、表示をご希望の場所に合わせて、地図の部分を調節することができます。",
           "general": "あなたのウェブサイトやブログ用のWheelmapウイジェットを作成する",
           "preview": "プレビュー",
           "settings": "設定"
@@ -1660,9 +1660,9 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "title": "Wheelmap - 車椅子で行ける場所を見つけよう"
     },
     "what_is": {
-      "fully_accessible": "入口には段差が無い、全ての部屋に段差が無い、車椅子でトイレに行ける",
-      "limited_accessible": "入口に段差がある(最大でも高さ7cmまで)、たいていの部屋には段差が無い、車椅子でトイレに行けない",
-      "not_accessible": "入口の段差が高いか複数あり、部屋に入れません",
+      "fully_accessible": "段差のない入り口。全ての部屋に段差なし。",
+      "limited_accessible": "入り口には最大7センチ(3インチ)の段差が一段あります。ほとんどの部屋には段差がありません。",
+      "not_accessible": "入り口には段差が1段または数段あり、お部屋はアクス不可能",
       "unknown_accessible": "場所に印をつけることで助けてください。"
     }
   },

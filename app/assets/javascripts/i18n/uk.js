@@ -786,10 +786,10 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
       "newsletter": "Інформаційний бюлетень",
       "press": "Преса",
       "profile": "Профіль",
-      "projects": "Проекти",
+      "projects": "Долучитися",
       "suggestions": "Пропозиції",
       "what_is_barrier_free": "Що означає \"доступ для людей на інвалідних візках\"?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Що таке Wheelmap?"
     },
     "searchbar": {
       "add_place": "Додати інше місце",
@@ -956,7 +956,7 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "Доступність для людей на інвалідному візку",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -979,7 +979,7 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Схожі місця",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
@@ -1152,8 +1152,8 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
       "health": "Здоров'я",
       "leisure": "Дозвілля",
       "misc": "змішаний",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Банк / Пошта",
+      "public_transfer": "Громадський транспорт",
       "shopping": "Магазини",
       "sport": "Спорт",
       "tourism": "Туризм",
@@ -1220,7 +1220,7 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
         "brothel": "Бордель",
         "casino": "Казино",
         "cinema": "Кінотеатр",
-        "community_centre": "Community centre",
+        "community_centre": "Громадський центр / Приймальня",
         "gallery": "Галерея",
         "massage": "Massage spa",
         "nightclub": "Нічний клуб",
@@ -1302,7 +1302,7 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
         "florist": "Флорист",
         "funeral_directors": "Funeral home",
         "furniture": "Меблі",
-        "garden_centre": "Garden centre",
+        "garden_centre": "Садовий центр",
         "gift": "Подарунки",
         "greengrocer": "Greengrocer",
         "hairdresser": "Перукар",
@@ -1457,15 +1457,14 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
         },
         "try_this": {
           "address": "Будь ласка, додайте більше <strong>відомостей про адресу</strong>.",
-          "intro": "Спробуйте наступне:",
-          "spell_check": "Перевірте <strong>написання</strong> введених слів."
+          "intro": "Try this:",
+          "spell_check": "Check the <strong>spelling</strong> of your input."
         }
       },
       "results": {
         "ticker": {
-          "few": "%{count} результата:",
-          "one": "%{count} результат:",
-          "other": "%{count} результатів:"
+          "one": "%{count} result:",
+          "other": "%{count} results:"
         }
       },
       "search": {
@@ -1486,7 +1485,7 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
     "step1": "Натисніть на місце, яке ви знаєте",
     "step2": "Виберіть його статус і натисніть Зберегти",
     "step3": "І все! Реєстрація не потрібна",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Що таке Wheelmap?"
   },
   "statistics": "Статистика",
   "support": {

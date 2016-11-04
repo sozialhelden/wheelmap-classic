@@ -729,7 +729,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
       "website": "Strona www:",
       "wheelchair": "Dostępność dla osób na wózkach?",
       "wheelchair_description": "Komentarz dostępności:",
-      "wheelchair_toilet": "toalety dostosowane dla niepełnosprawnych na wózku inwalidzkim:"
+      "wheelchair_toilet": "Toalety dostosowane dla niepełnosprawnych na wózku inwalidzkim:"
     },
     "titles": {
       "basic": "Podstawowe dane",
@@ -764,10 +764,10 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
       "newsletter": "Newsletter",
       "press": "Dla mediów",
       "profile": "Profil",
-      "projects": "Nasze projekty",
+      "projects": "Zaangażuj się",
       "suggestions": "Sugestie",
       "what_is_barrier_free": "Co to znaczy \"dostępne dla osób na wózkach\"?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Co to jest Wheelmap?"
     },
     "searchbar": {
       "add_place": "Dodaj kolejne miejsce",
@@ -933,7 +933,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "Dostępność dla osób na wózkach",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -956,7 +956,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Podobne miejsca",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
@@ -1129,8 +1129,8 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
       "health": "Szpital lub przychodnia",
       "leisure": "Czas wolny",
       "misc": "Różne",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Bank / poczta",
+      "public_transfer": "Transport publiczny",
       "shopping": "Zakupy",
       "sport": "Sport",
       "tourism": "Turystyka",
@@ -1197,7 +1197,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         "brothel": "Agencja towarzyska",
         "casino": "Kasyno",
         "cinema": "Kino",
-        "community_centre": "Community centre",
+        "community_centre": "Dom kultury",
         "gallery": "Galeria",
         "massage": "Massage spa",
         "nightclub": "Klub nocny",
@@ -1279,7 +1279,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         "florist": "Kwiaciarnia",
         "funeral_directors": "Funeral home",
         "furniture": "Sklep z meblami",
-        "garden_centre": "Garden centre",
+        "garden_centre": "Sklep ogrodniczy",
         "gift": "Sklep z prezentami",
         "greengrocer": "Greengrocer",
         "hairdresser": "Fryzjer",
@@ -1463,7 +1463,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
     "step1": "Kliknij miejsce, które znasz",
     "step2": "Zaznacz i kliknij \"zachowaj\"",
     "step3": "Rejestracja nie jest potrzebna.",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Co to jest Wheelmap?"
   },
   "statistics": "Statystyki",
   "support": {
@@ -1488,13 +1488,13 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
   },
   "toiletstatus": {
     "no": "No wheelchair accessible toilet",
-    "unknown": "Toilet status unknown",
+    "unknown": "Status toalety nieznany",
     "what_is": {
       "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
       "unknown": "Help out by marking the toilet status!",
       "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
     },
-    "yes": "Wheelchair accessible toilet"
+    "yes": "Toaleta przystosowana dla wózków"
   },
   "user_sessions": {
     "create": {

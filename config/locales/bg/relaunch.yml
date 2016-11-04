@@ -5,9 +5,7 @@ bg:
         name: Име
         type: Вид
         address: Адрес
-        website: 'Website
-
-          '
+        website: Website
         phone: Телефон
         address_street: Улица
         address_housenumber: Номер на къщата
@@ -28,9 +26,11 @@ bg:
       choose_language: Избери език
       contact: Контакт
       map: Карта
-      projects: Проекти
+      projects: Включете се
     toolbar:
       categories: Категории
+    meta:
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -47,6 +47,10 @@ bg:
         section:
           address:
             name: Адрес
+          similar_nodes:
+            name: Подобни места
+          accessibility:
+            name: Достъп за инвалидни колички
           contact:
             name: Контакт
     node_data:

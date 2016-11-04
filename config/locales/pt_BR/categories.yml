@@ -8,6 +8,8 @@ pt_BR:
       health: Saúde
       leisure: Lazer
       misc: Diversos
+      money_post: "Banco / Agência de Correios"
+      public_transfer: "Transporte público"
       shopping: Compras
       sport: Esporte
       tourism: Turismo
@@ -60,6 +62,7 @@ pt_BR:
         brothel: Bordel
         casino: Cassino
         cinema: Cinema
+        community_centre: "Centro comunitário"
         gallery: Galeria de arte
         nightclub: Casa noturna
         playground: Área recreacional
@@ -125,6 +128,7 @@ pt_BR:
         farm_shop: "Loja de fazenda"
         florist: Florista
         furniture: Móveis
+        garden_centre: "Centro de jardinagem"
         gift: "Loja de presentes"
         hairdresser: Cabeleireiro
         hardware: Utensílios e Ferramentas

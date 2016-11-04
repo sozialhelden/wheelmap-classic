@@ -2,9 +2,12 @@ cs:
   devise:
     confirmations:
       confirmed: "Váš účet byl úspěšně potvrzen."
+      link: "Neobdrželi jste instrukce k potvrzení?"
       send_instructions: "Za několik minut obdržíte email s instrukcemi k potvrzení vašeho účtu."
+      send_paranoid_instructions: "Pokud váš účet existuje, tak za několik minut obdržíte informační email s instrukcemi k potvrzení vašeho účtu."
     destroy:
       confirm: "Jste si jistí?"
+      headline: "Smazat účet"
       link: "Smazat"
     edit:
       form:
@@ -17,19 +20,25 @@ cs:
       headline: "Změnit účet"
     failure:
       already_authenticated: "Přihlášení již proběhlo."
+      inactive: "Váš účet zatím nebyl aktivován."
       invalid: "Nesprávný email nebo heslo."
       invalid_token: "Neplatný ověřovací symbol."
       locked: "Váš účet je uzamčen."
+      timeout: "Vaše přihlášení vypršelo, znovu se přihlaste a pokračujte. "
       unauthenticated: "Musíte se zaregistrovat nebo přihlásit, pak můžete pokračovat."
       unconfirmed: "Musíte potvrdit svůj účet, pak můžete pokračovat."
     mailer:
       confirmation_instructions:
+        landing_page: "Klikněte, prosím, na odkaz, který jsme vám odeslali na vaši emailovou adresu. Pokud od nás neobdržíte email, tak jako první zkontrolujte, zda se nenachází ve složce Spam. Pokud zde není, tak se vraťte na přihlašovací stránku a zkuste to znovu. "
         subject: "Potvrzovací instrukce"
       reset_password_instructions:
         subject: "Instrukce k nastavení nového hesla"
+      unlock_instructions:
+        subject: "Odemknout instrukce"
     mandatory: "* Povinné"
     omniauth_callbacks:
       failure: "Není možné autorizovat z %{kind}, protože: \"%{reason}\"."
+      permission_missing: "Neudělili jste požadované povolení."
       success: "Úspěšná autorizace z účtu %{kind}."
     password_recovery:
       form:
@@ -42,6 +51,7 @@ cs:
         comment: "Jestli jste nežádali o obnovení hesla tak tento email ignorujte. <br/> Vaše heslo bude změněné jenom jestli kliknete na odkaz nahoře a nastavíte si heslo nové."
         headline: "Vítejte %{email}"
         link: "Změnit heslo"
+        text: "Obdrželi jsme požadavek na změnu vašeho hesla. Pokud jste odeslali požadavek, tak klikněte na následující odkaz - pokud ne, tak toto hlášení ignorujte!"
       form:
         labels:
           password: "Nové heslo"
@@ -50,6 +60,8 @@ cs:
       headline: "Obnovit heslo"
     passwords:
       link: "Zapomněli jste heslo?"
+      send_instructions: "Za několik minut obdržíte email s instrukcemi k obnovení vašeho hesla"
+      send_paranoid_instructions: "Pokud váš účet existuje, tak za několik minut obdržíte informační email s instrukcemi k obnovení vašeho hesla"
       updated: "Vaše heslo bylo úspěšně změněno. Nyní jste přihlášen(a)."
       updated_not_active: "Vaše heslo bylo úspěšně změněno."
     registrations:
@@ -60,19 +72,24 @@ cs:
         inactive: Váš účet ještě nebyl aktivován.
         locked: zamčeno
         unconfirmed: nepotvrzené
+      signed_up: "Úspěšně jste se přihlásili. Byl vám zaslán potvrzovací email."
       updated: "Úspěšně jste si aktualizovali účet."
     sessions:
+      inactive: "Váš účet zatím nebyl aktivován"
       invalid: "Nesprávný email nebo heslo."
       invalid_token: "Neplatný ověřovací symbol."
       link: "Přihlásit se"
       locked: "Váš účet je zablokovaný"
       new:
         no_osm_account: "Nemáte účet u OpenStreetMap?"
+        osm_promo_text: "Wheelmap je založena na geodatech z OpenStreetMap (OSM). OpenStreetMap je celosvětová mapa, která je zadarmo a je vytvořena lidmi jako jste vy. Je to něco jako Wikipedie pro mapy. Abyste mohli upravovat místa nebo vytvářet nová, tak potřebujete účet na OpenStreetMap, se kterým musíte být přihlášen."
         promo_text_thank_you: "Děkujeme za vaší podporu!"
         sign_in_with: "Přihlašte se pomocí %{kind}"
         sign_up_with_osm: "Zaregistrujte se."
+        wheelmap_promo_text: "Pokud máte povědomí o místech s přístupem pro vozíčkáře, tak můžete pomoci těmto lidem s jejich každodenními problémy. Jinak alespoň pomůžete do detailu popsat OpenStreetMap. "
       signed_in: "Přihlášení úspěšné."
       signed_out: "Odhlášení úspěšné."
+      timeout: "Vaše přihlášení vypršelo, znovu se přihlaste a pokračujte."
       unauthenticated: "Musíte se zaregistrovat nebo přihlásit, pak můžete pokračovat."
       unconfirmed: "Musíte potvrdit svůj účet, pak můžete pokračovat."
     sign_in:
@@ -95,7 +112,11 @@ cs:
           email: Email
           password: Heslo
           password_confirmation: "Znovu zadejte heslo"
+          wants_newsletter: "Ano, upozorňujte mě na aktualizace k aplikaci Wheelmap - ale ne více, než jednou za měsíc."
         submit: "Vytvořit účet"
       headline: "Vytvořit účet"
     unlocks:
+      link: "Neobdrželi jste instrukce k odemknutí?"
+      send_instructions: "Za několik minut obdržíte email s instrukcemi k odemknutí vašeho účtu"
+      send_paranoid_instructions: "Pokud váš účet existuje, tak za několik minut obdržíte informační email s instrukcemi k odemknutí vašeho účtu"
       unlocked: "Váš účet byl úspěšně odemknut. Nyní jste přihlášen(a)."

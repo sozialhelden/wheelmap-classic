@@ -114,6 +114,7 @@ sk:
       profile: Profil
       suggestions: Návrhy
       what_is_barrier_free: "Čo to znamená \"prístupné pre vozíčkarov\"?"
+      what_is_wheelmap: "Čo to je Wheelmap?"
     searchbar:
       add_place: "Pridať ďalšie"
       find: Nájsť
@@ -270,6 +271,7 @@ sk:
     step1: "Kliknite na miesto ktoré poznáte"
     step2: "Označte to a dajte uložiť"
     step3: "A je to! Registráciu nie je potreba"
+    what_is_wheelmap: "Čo to je Wheelmap?"
   statistics: Štatistiky
   support:
     array:
@@ -286,6 +288,10 @@ sk:
       long: "%A %d. %B %Y %H:%M"
       short: "%d.%m. %H:%M"
     pm: popoludní
+  toiletstatus:
+    'no': "Toaleta neprístupná pre invalidné vozíky"
+    unknown: "Stav WC neznámy"
+    'yes': "Toaleta prístupná pre invalidné vozíky"
   user_sessions:
     create:
       activation:

@@ -8,6 +8,8 @@ el:
       health: Υγεία
       leisure: Ψυχαγωγία
       misc: Διάφορα
+      money_post: "Τράπεζα / Ταχυδρομείο"
+      public_transfer: "Δημόσια Συγκοινωνία"
       shopping: Καταστήματα
       sport: Αθλητισμός
       tourism: Τουρισμός
@@ -60,6 +62,7 @@ el:
         brothel: Οίκος ανοχής
         casino: Καζίνο
         cinema: Κινηματογράφος
+        community_centre: "Κοινοτικό Κέντρο"
         gallery: Πινακοθήκη
         nightclub: Νυχτερινό κέντρο διασκέδασης
         playground: Παιδική χαρά
@@ -125,6 +128,7 @@ el:
         farm_shop: "Οπωροπωλείο"
         florist: Ανθοπωλείο
         furniture: Έπιπλα
+        garden_centre: "Ανθοκομικό κέντρο"
         gift: "Κατάστημα δώρων"
         hairdresser: Κομμωτήρια
         hardware: Kατάστημα σιδηρικών
