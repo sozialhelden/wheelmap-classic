@@ -1162,6 +1162,7 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
       "government": {
         "courthouse": "Gjykatë",
         "embassy": "Ambasadë",
+        "employment_agency": "Employment agency",
         "government": "Agjenci qeveritare",
         "police": "Polici",
         "public_building": "Godinë publike",

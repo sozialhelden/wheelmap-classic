@@ -1158,6 +1158,7 @@ I18n.translations["ko"] = I18n.extend((I18n.translations["ko"] || {}), {
       "government": {
         "courthouse": "법원",
         "embassy": "대사관",
+        "employment_agency": "Employment agency",
         "government": "정부 기관",
         "police": "경찰서",
         "public_building": "공공기관",

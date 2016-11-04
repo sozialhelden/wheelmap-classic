@@ -1158,6 +1158,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
       "government": {
         "courthouse": "Bíróság",
         "embassy": "Követség",
+        "employment_agency": "Employment agency",
         "government": "Kormányhivatal",
         "police": "Rendőrség",
         "public_building": "Középület",

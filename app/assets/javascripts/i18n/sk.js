@@ -1167,6 +1167,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
       "government": {
         "courthouse": "Budova súdu",
         "embassy": "Veľvyslanectvo",
+        "employment_agency": "Employment agency",
         "government": "Vládna agentúra",
         "police": "Polícia",
         "public_building": "Verejná budova",
