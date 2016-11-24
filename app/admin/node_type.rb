@@ -18,7 +18,7 @@ ActiveAdmin.register NodeType do
     selectable_column
     column :id
     column :icon do |node_type|
-      image_tag("/assets/icons/#{node_type.icon}")
+      image_tag("icons/#{node_type.icon}")
     end
     column :name, :sortable => false
     column :category, :sortable => false
