@@ -40,9 +40,9 @@
         .nav-collapse.collapse
           .list-wrapper
             %ul.inline
-              %li= link_to t('header.navigation.about_wheelmap', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), community_about_url
-              %li= link_to t('header.navigation.map', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), root_path
-              %li= link_to t('header.navigation.projects', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), community_projects_url
-              %li= link_to t('header.navigation.blog', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), community_blog_url
-              %li= link_to t('header.navigation.press', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), community_press_url
-              %li= link_to t('header.navigation.contact', :default => :en, :locale => (I18n.locale == :de ? :de : :en)), community_contact_url
+              %li= link_to t('header.navigation.about_wheelmap', :default => :en), community_about_url
+              %li= link_to t('header.navigation.map', :default => :en), root_path
+              %li= link_to t('header.navigation.projects', :default => :en), community_projects_url
+              %li= link_to t('header.navigation.blog', :default => :en), community_blog_url
+              %li= link_to t('header.navigation.press', :default => :en), community_press_url
+              %li= link_to t('header.navigation.contact', :default => :en), community_contact_url
