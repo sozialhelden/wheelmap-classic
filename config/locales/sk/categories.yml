@@ -8,6 +8,8 @@ sk:
       health: Zdravie
       leisure: Voľný čas
       misc: Rôzne
+      money_post: "Banka / pošta"
+      public_transfer: "Verejná doprava"
       shopping: Nákupy
       sport: Šport
       tourism: Cestovanie
@@ -60,6 +62,7 @@ sk:
         brothel: Nevestinec
         casino: Kasíno
         cinema: Kino
+        community_centre: "Komunitné centrum"
         gallery: Galéria
         nightclub: Nočný klub
         playground: Ihrisko
@@ -125,6 +128,7 @@ sk:
         farm_shop: "Farmársky obchod"
         florist: Kvetinárstvo
         furniture: Nábytok
+        garden_centre: "Záhradkárske centrum"
         gift: "Suveníry"
         hairdresser: Kaderníctvo
         hardware: Železiarstvo

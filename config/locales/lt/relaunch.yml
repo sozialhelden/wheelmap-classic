@@ -26,7 +26,6 @@ lt:
       choose_language: Pasirinkti kalbą
       contact: Kontaktai
       map: Žemėlapis
-      projects: Projektai
     toolbar:
       categories: Kategorijos
     meta:
@@ -46,8 +45,13 @@ lt:
         section:
           address:
             name: Adresas
+          similar_nodes:
+            name: Panašios vietos
+            title: Mes šalia radome panašių vietų. Ar tai viena iš jų?
           contact:
             name: Kontaktai
+          overview:
+            title: Ar visa informacija teisinga?
     node_data:
       address: 'Adresas:'
       contact_details: 'Kontaktiniai duomenys:'
@@ -72,6 +76,7 @@ lt:
       streetview: 'Gatvės vaizdas:'
     show:
       share:
+        email: El. paštas
         facebook: Facebook
         twitter: Twitter
   search:

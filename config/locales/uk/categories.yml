@@ -8,6 +8,8 @@ uk:
       health: Здоров'я
       leisure: Дозвілля
       misc: змішаний
+      money_post: "Банк / Пошта"
+      public_transfer: "Громадський транспорт"
       shopping: Магазини
       sport: Спорт
       tourism: Туризм
@@ -60,6 +62,7 @@ uk:
         brothel: Бордель
         casino: Казино
         cinema: Кінотеатр
+        community_centre: "Громадський центр / Приймальня"
         gallery: Галерея
         nightclub: Нічний клуб
         playground: Дитячий майданчик
@@ -125,6 +128,7 @@ uk:
         farm_shop: "Фермерський"
         florist: Флорист
         furniture: Меблі
+        garden_centre: "Садовий центр"
         gift: "Подарунки"
         hairdresser: Перукар
         hardware: Господарський магазин

@@ -28,9 +28,11 @@ el:
       choose_language: Επιλογή γλώσσας
       contact: Επικοινωνία
       map: Χάρτης
-      projects: Έργα
+      projects: Συμμετέχετε
     toolbar:
       categories: Κατηγορίες
+    meta:
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -47,6 +49,10 @@ el:
         section:
           address:
             name: Διεύθυνση
+          similar_nodes:
+            name: Παρόμοια μέρη
+          accessibility:
+            name: Πρόσβαση με αναπηρική καρέκλα
           contact:
             name: Επικοινωνία
     node_data:
@@ -66,7 +72,7 @@ el:
     node_similar:
       similar: 'Παρόμοια μέρη: %{name}'
     node_status:
-      accessible_toilet: 'Πρόσβαση τουαλέτας με αναπηρικά αμαξίδια '
+      accessible_toilet: 'Πρόσβαση τουαλέτας με αναπηρικά αμαξίδια:'
       premium: '%{name} αναφέρει: αυτό το μέρος είναι'
       wheelchair_accessibility: 'Πρόσβαση με αναπηρική καρέκλα?'
     node_streetview:

@@ -183,15 +183,15 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
   "activerecord": {
     "attributes": {
       "poi": {
-        "address": "Address",
-        "address_city": "City",
+        "address": "Endereço",
+        "address_city": "Cidade",
         "address_housenumber": "Número de casa",
-        "address_postcode": "Postcode",
-        "address_street": "Street",
-        "name": "Name",
+        "address_postcode": "Código postal",
+        "address_street": "Rua",
+        "name": "Nome",
         "note": "Note",
-        "phone": "Phone",
-        "type": "Type",
+        "phone": "Telefone",
+        "type": "Tipo",
         "website": "Website"
       },
       "user": {
@@ -754,7 +754,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       "about_wheelmap": "About Wheelmap",
       "blog": "Blog",
       "choose_language": "Choose language",
-      "contact": "Contact",
+      "contact": "Contacto",
       "feedback": "Feedbck",
       "home": "Iniciar",
       "how_to_add_a_place": "Como adicionar lugares?",
@@ -762,11 +762,11 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       "logged_in_as": "Registrado como:",
       "login": "Entrar",
       "logout": "Sair",
-      "map": "Map",
+      "map": "Mapa",
       "newsletter": "Newsletter",
       "press": "Imprensa",
-      "profile": "Profile",
-      "projects": "Projects",
+      "profile": "Perfil",
+      "projects": "Envolva-se",
       "suggestions": "Sugestões",
       "what_is_barrier_free": "Qual o significado de \"acessível a cadeira de rodas\"?",
       "what_is_wheelmap": "What is Wheelmap?"
@@ -780,7 +780,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
     "tagline": "Lógotipo do Wheelmap",
     "title": "Find wheelchair accessible places",
     "toolbar": {
-      "categories": "Categories"
+      "categories": "Categorias"
     }
   },
   "helpers": {
@@ -943,7 +943,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
             "title": "Where is the place?"
           },
           "contact": {
-            "name": "Contact",
+            "name": "Contacto",
             "title": "Other contact information"
           },
           "name_category": {
@@ -978,24 +978,23 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       }
     },
     "node_data": {
-      "address": "Address:",
-      "contact_details": "Contact details:"
+      "address": "Endereço:",
+      "contact_details": "Detalhes de contacto:"
     },
     "node_edit": {
-      "details": "Details",
-      "edit": "Edit"
+      "details": "Detalhes",
+      "edit": "Editar"
     },
     "node_map": {
-      "map": "Map:"
+      "map": "Mapa:"
     },
     "node_note": {
-      "comment": "Comment:"
+      "comment": "Comentário:"
     },
     "node_photos": {
-      "add": "Add",
-      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
-      "photos_of_this_place": "Photos of this place:",
-      "upload": "Upload"
+      "add": "Adicionar",
+      "photos_of_this_place": "Fotografias deste local:",
+      "upload": "Enviar"
     },
     "node_similar": {
       "similar": "Similar places: %{name}"
@@ -1533,7 +1532,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
         "legends": {
           "user_data": "Your account information"
         },
-        "title": "Profile"
+        "title": "Perfil"
       },
       "newsletter": {
         "label": "Yes, keep me updated about Wheelmap.",
@@ -1542,7 +1541,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       },
       "photos": {
         "empty": "You haven't uploaded any photos yet.",
-        "title": "Photos"
+        "title": "Fotografias"
       },
       "show": {
         "greeting": {
@@ -1568,15 +1567,15 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
           },
           "text": "You have"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Overview"
       },
       "widget": {
         "categories": "Show category filter",
-        "center": "Map area",
+        "center": "Área do mapa",
         "empty_center": "Search for center of map …",
-        "empty_provider": "Choose a Provider",
-        "height": "Height",
+        "empty_provider": "Escolha um Fornecedor",
+        "height": "Altura",
         "legends": {
           "embed": "Embed code",
           "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
@@ -1584,9 +1583,9 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
           "preview": "Preview",
           "settings": "Definições"
         },
-        "providers": "Provider",
+        "providers": "Fornecedor",
         "title": "Widget",
-        "width": "Width"
+        "width": "Largura"
       }
     }
   },

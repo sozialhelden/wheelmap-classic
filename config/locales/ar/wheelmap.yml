@@ -14,7 +14,7 @@ ar:
     skip: تخطي
   errors:
     dynamic_format: "%{message}"
-    format: "%{attribute} %{message}"
+    format: "%{attribute}% {message}"
     messages:
       already_confirmed: "تم التأكيد بالفعل"
       confirmation: "غير متوافق مع التأكيد"
@@ -81,6 +81,7 @@ ar:
       website: "موقع :"
       wheelchair: "امكانية الوصول بالكرسي المتحرك ؟"
       wheelchair_description: "تعليق حول سهولة الوصول :"
+      wheelchair_toilet: "كرسي متحرك في المتناول للمرحاض:"
     titles:
       basic: "معلومات أساسية"
       optional: "<span class=\"addition\">(all fields are optional)</span> لمزيد من المعلومات "
@@ -105,6 +106,7 @@ ar:
       profile: الحساب
       suggestions: الإقتراحات
       what_is_barrier_free: "ماذا تعني هذة الجملة \"إمكانية الوصول بالكرسي المتحرك\"؟"
+      what_is_wheelmap: "تعرف على ويل ماب ؟"
     searchbar:
       add_place: "أضف مكاناً آخر"
       find: بحث
@@ -253,6 +255,7 @@ ar:
     step1: "قم بالنقر على المكان المطلوب"
     step2: "قم بالتحديد ثم انقر اختيار حفظ"
     step3: "لايتطلب التسجيل"
+    what_is_wheelmap: "تعرف على ويل ماب ؟"
   statistics: إحصاءات
   support:
     array:
@@ -269,6 +272,10 @@ ar:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: مساء
+  toiletstatus:
+    'no': "لا يوجد كرسي متحرك للمرحاض في المتناول"
+    unknown: "وضع المرحاض غير معروف"
+    'yes': "كرسي متحرك في المتناول للمرحاض"
   user_sessions:
     create:
       activation:

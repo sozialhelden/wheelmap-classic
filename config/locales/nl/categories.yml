@@ -2,12 +2,14 @@ nl:
   poi:
     category:
       accommodation: Accomodatie
-      education: Educatie
+      education: Onderwijs
       food: Voedsel
       government: Overheid
       health: Gezondheid
       leisure: Vrije tijd
       misc: Diversen
+      money_post: "Bank / postkantoor"
+      public_transfer: "Openbar vervoer"
       shopping: Winkelen
       sport: Sport
       tourism: Toerisme
@@ -19,6 +21,7 @@ nl:
         camp_site: "Kampeerplaats"
         caravan_site: "Kampeerplaats"
         chalet: Berghut
+        dormitory: Hostels
         guest_house: "Gasthuis"
         hostel: Hostel
         hotel: Hotel
@@ -48,6 +51,7 @@ nl:
         public_building: "Openbaar gebouw"
       health:
         dentist: Tandarts
+        doctors: Dokter
         hearing_aids: "Audicien (gehoorapperaat winkel)"
         hospital: Ziekenhuis
         medical_supply: "Medische verzorging"
@@ -59,6 +63,7 @@ nl:
         brothel: Bordeel
         casino: Casino
         cinema: bioscoop
+        community_centre: "Gemeenschapscentrum"
         gallery: Galerij
         nightclub: Nachtclub
         playground: Speelplaats
@@ -83,6 +88,7 @@ nl:
         aerodrome: Vliegveld
         bicycle_parking: "Fiets parkeerplaats"
         bicycle_rental: "Fiets verhuur"
+        boatyard: boot yard
         bus_station: "Bushalte"
         bus_stop: "Bushalte"
         cable_car: "Kabelbaan"
@@ -124,6 +130,7 @@ nl:
         farm_shop: "Groenten winkel"
         florist: Bloemenbinder
         furniture: Meubels
+        garden_centre: "Tuinwinkel"
         gift: "Cadeau winkel"
         hairdresser: Kapper
         hardware: Hardware

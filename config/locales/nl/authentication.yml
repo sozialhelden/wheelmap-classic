@@ -1,7 +1,7 @@
 nl:
   devise:
     confirmations:
-      confirmed: "Jouw account is succesvol bevestigd. Je bent nu aangemeld."
+      confirmed: "Jouw email adres is succesvol bevestigd. Je bent nu aangemeld."
       send_instructions: "Je zal een email met de instructie voor jouw account bevestiging ontvangen. Dat duurt maar een paar minuten."
     destroy:
       confirm: "Ben je zeker?"
@@ -20,15 +20,15 @@ nl:
       inactive: "Jouw account is nog niet geactiveerd."
       invalid: "Fout email of wachtwoord"
       invalid_token: "Ongeldig authentificatie bewijs."
-      locked: "Jouw account is gesloten."
+      locked: "Jouw account is gesloten"
       timeout: "Jouw sessie is afgelopen, alsjeblieft weer inlogggen om door te gaan."
-      unauthenticated: "Je moet aangemeld zijn of aanmelden om door te gaan. "
+      unauthenticated: "Je moet aangemeld zijn of aanmelden om door te gaan"
       unconfirmed: "Je moet jouw account bevestigen voordat je doorgaat."
     mailer:
       confirmation_instructions:
         subject: "Een stap nog om jouw account te activeren"
       reset_password_instructions:
-        subject: "Reset wachtwoord aanwijzing."
+        subject: "Reset wachtwoord aanwijzing"
     mandatory: "* nodig"
     omniauth_callbacks:
       failure: "Autorisatie met  %{kind} mislukte. Fout: \"%{reason}\"."
@@ -52,10 +52,10 @@ nl:
       headline: "Reset wachtwoord"
     passwords:
       link: "Wachtwoord vergeten?"
-      updated: "Jouw wachtwoord is succesvol veranderd. Je bent nu ingeloggd."
+      updated: "Jouw wachtwoord is succesvol veranderd. Je bent nu ingeloggd"
       updated_not_active: "Jouw wachtwoord is succesvol veranderd."
     registrations:
-      destroyed: "Tot ziens! Jouw account werd succesvol verwijderd. Wij hopen jou ooit weer te zien. "
+      destroyed: "Tot ziens! Jouw account werd succesvol verwijderd. Wij hopen jou weldra weer te zien. "
       inactive_signed_up: "Je hebt succesvol aangemeld. Maar wij kunnen jou niet inloggen. Reden: \"%{reason}\""
       link: "Aanmelden"
       reasons:
@@ -65,18 +65,18 @@ nl:
       updated: "Jouw account is succesvol geactualiseerd."
     sessions:
       invalid: "Ongeldig email of wachtwoord."
-      invalid_token: "Ongeldig authentificatie bewijs."
+      invalid_token: "Ongeldig authentificatie bewijs"
       link: "Aanmelden"
-      locked: "Jouw account is geblokkeerd."
+      locked: "Jouw account is geblokkeerd"
       new:
         no_osm_account: "Geen OpenStreetMap account?"
         promo_text_thank_you: "Dank je wel voor je ondersteuning!"
         sign_in_with: "Log in met %{kind}"
         sign_up_with_osm: "Registreer je nu."
-      signed_in: "Succesvol aangemeld."
-      signed_out: "Succesvol uitgelogd."
+      signed_in: "Succesvol aangemeld"
+      signed_out: "Succesvol uitgelogd"
       timeout: "Jouw sessie is afgelopen, alsjeblieft weer inlogggen om door te gaan."
-      unauthenticated: "Je moet aanmelden voordat je doorgaat."
+      unauthenticated: "Je moet aanmelden voordat je doorgaat"
       unconfirmed: "Je moet jouw account bevestigen voordat je doorgaat."
     sign_in:
       form:

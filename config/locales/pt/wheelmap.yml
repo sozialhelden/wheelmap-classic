@@ -95,6 +95,7 @@ pt:
       login: "Entrar"
       logout: "Sair"
       press: Imprensa
+      profile: Perfil
       suggestions: Sugestões
       what_is_barrier_free: "Qual o significado de \"acessível a cadeira de rodas\"?"
     searchbar:

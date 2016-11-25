@@ -8,6 +8,9 @@ ro:
         website: Website
         phone: Telefon
         address_housenumber: Numărul casei
+  header:
+    navigation:
+      projects: Implicați-vă
   nodes:
     new:
       form:

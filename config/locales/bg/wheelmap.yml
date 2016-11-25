@@ -112,6 +112,7 @@ bg:
       profile: Профил
       suggestions: Предложения
       what_is_barrier_free: "Какво значи \"достъпно за инвалидни колички\"?"
+      what_is_wheelmap: "Какво е Wheelmap?"
     searchbar:
       add_place: "Добави ново място"
       find: Намери
@@ -266,6 +267,7 @@ bg:
     step1: "Кликни върху познато място"
     step2: "Маркирай и натисни \"запази\"."
     step3: "Това е! Не е необходима регистрация."
+    what_is_wheelmap: "Какво е Wheelmap?"
   statistics: Статистики
   support:
     array:
@@ -282,6 +284,9 @@ bg:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: следобед
+  toiletstatus:
+    unknown: "Статусът на тоалетната не е известен"
+    'yes': "Тоалетна достъпна за инвалидна количка"
   user_sessions:
     create:
       activation:

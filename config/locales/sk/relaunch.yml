@@ -26,9 +26,11 @@ sk:
       choose_language: Zvoľte jazyk
       contact: Kontakt
       map: Mapa
-      projects: Projekty
+      projects: Zapojte sa
     toolbar:
       categories: Kategórie
+    meta:
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -45,6 +47,10 @@ sk:
         section:
           address:
             name: Adresa
+          similar_nodes:
+            name: Podobné miesta
+          accessibility:
+            name: Prístupnosť pre vozíčkarov
           contact:
             name: Kontakt
     node_data:

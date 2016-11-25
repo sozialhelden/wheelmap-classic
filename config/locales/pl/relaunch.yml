@@ -30,9 +30,11 @@ pl:
       choose_language: Wybierz język
       contact: Kontakt
       map: Mapa
-      projects: Nasze projekty
+      projects: Zaangażuj się
     toolbar:
       categories: Kategoria
+    meta:
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -49,6 +51,10 @@ pl:
         section:
           address:
             name: Adres
+          similar_nodes:
+            name: Podobne miejsca
+          accessibility:
+            name: Dostępność dla osób na wózkach
           contact:
             name: Kontakt
     node_data:

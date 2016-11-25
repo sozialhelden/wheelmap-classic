@@ -114,6 +114,7 @@ uk:
       profile: Профіль
       suggestions: Пропозиції
       what_is_barrier_free: "Що означає \"доступ для людей на інвалідних візках\"?"
+      what_is_wheelmap: "Що таке Wheelmap?"
     searchbar:
       add_place: "Додати інше місце"
       find: Знайти
@@ -270,6 +271,7 @@ uk:
     step1: "Натисніть на місце, яке ви знаєте"
     step2: "Виберіть його статус і натисніть Зберегти"
     step3: "І все! Реєстрація не потрібна"
+    what_is_wheelmap: "Що таке Wheelmap?"
   statistics: Статистика
   support:
     array:

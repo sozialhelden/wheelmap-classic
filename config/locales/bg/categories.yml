@@ -8,6 +8,8 @@ bg:
       health: Здраве
       leisure: Отдих и свободно време
       misc: Разни
+      money_post: "Банка / пощенски клон"
+      public_transfer: "Обществен транспорт"
       shopping: Магазини
       sport: Спорт
       tourism: Туризъм
@@ -60,6 +62,7 @@ bg:
         brothel: Публичен дом
         casino: Казино
         cinema: Кино
+        community_centre: "Общински център"
         gallery: Галерия
         nightclub: Нощен клуб
         playground: Площадка за игра
@@ -125,6 +128,7 @@ bg:
         farm_shop: "Магазин за регионално производство"
         florist: Цветар
         furniture: Мебели
+        garden_centre: "Градински център"
         gift: "Магазин за подаръци"
         hairdresser: Фризьор
         hardware: Магазин за влакчета

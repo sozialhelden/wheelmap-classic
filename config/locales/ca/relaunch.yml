@@ -27,9 +27,11 @@ ca:
       choose_language: Triar idioma
       contact: Contactar
       map: Mapa
-      projects: Projectes
+      projects: Ajuda'ns
     toolbar:
       categories: Categories
+    meta:
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -46,6 +48,8 @@ ca:
         section:
           address:
             name: Adreça
+          similar_nodes:
+            name: Llocs similars
           contact:
             name: Contactar
     node_data:
@@ -105,7 +109,6 @@ ca:
         label: Sí, actualitza'm sobre Wheelmap.
       show:
         title: Resum
-        text_html: "Hola,<br>\n(Tornem a ser) els de Wheelmap.org! Estem feliços de tenir-te abord amb nosaltres.Pots llegir el nostre <a href=\"http://wheelmap.org/en/blog-2/\">blog</a> o <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> si vols conèixer una mica millor Wheelmap.org. O pots saber-ne més sobre els  <a href=\"http://wheelmap.org/en/get-engaged/\">projectes</a> que oferim a Wheelmap.org i com hi pots participar.<br>\nEstar en contacte<br>\nPer estar en contacte et pots subscriure al nostre butlletí mensual i seguir-nos a <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> i <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Volem saber la teva opinió i parlar amb tu!<br>\nI ara mapeja feliç!<br>\nEl teu equip Wheelmap"
         greeting:
           anonymously: Hola
           personalized: Hola %{name}
@@ -126,3 +129,6 @@ ca:
         title: Perfil
         legends:
           user_data: Informació del teu compte
+      widget:
+        legends:
+          settings: Configuració

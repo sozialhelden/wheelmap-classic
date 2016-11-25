@@ -8,6 +8,7 @@ sv:
     node:
       create: "Lägg till ny plats"
       edit: "Ändra plats"
+    root: Wheelmap
   common:
     close: stäng
     skip: hoppa över
@@ -15,15 +16,21 @@ sv:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
+      accepted: "måste godkännas"
       already_confirmed: "är redan validerad, prova att logga in"
+      blank: "måste vara ifyllt"
       confirmation: "måste vara samma som det upprepade"
+      empty: "måste vara ifyllt"
       equal_to: "måste vara exakt %{count}"
+      even: "måste vara ett jämnt heltal"
       exclusion: "är reserverat"
       expired: "utgånget, ansök om ett nytt"
       greater_than: "måste vara större än %{count}"
+      greater_than_or_equal_to: "måste vara större än eller lika med %{count}"
       inclusion: "inte ett giltigt värde"
       invalid: "inte giltig"
       less_than: "måste vara mindre än %{count}"
+      less_than_or_equal_to: "måste vara mindre eller lika med %{count}"
       not_a_number: "är inte ett nummer"
       not_an_integer: "måste vara ett heltal"
       not_found: "hittades inte"
@@ -31,6 +38,7 @@ sv:
       not_saved:
         one: "Ett fel hindrade denna %{resource} från att sparas:"
         other: "%{count} fel hindrade denna %{resource} från att sparas:"
+      odd: "måste vara ett udda heltal"
       taken: "är redan upptaget"
       too_long: "är för långt (får inte vara mer än %{count} bokstäver)"
       too_short: "är för kort (får inte vara mindre än %{count} bokstäver)"
@@ -59,20 +67,25 @@ sv:
     show_unaccessible_places: "Ej rullstolstillgänglig"
   formtastic:
     hints:
+      email: "Vi hanterar din adress konfidentiellt. Vi lovar att inte skicka skräppost!"
       lat: "Flytta markören på kartan till korrekt position"
       osm_username: "Ännu ej medlem?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Skapa ett Openstreetmap konto nu</a>"
       password: "(lämnas tomt, om du inte vill ändra det)"
+      phone: "exempel: +46 12345678"
       website: "Till exempel: http://www.example.se"
     labels:
       category: "Kategori:"
       centralkey: "Huvudnyckel:"
       city: "Ort:"
+      create: "Lägg in ny plats"
       email: E-post
       finish: Avsluta
       housenumber: "Nummer:"
       lat: Latitud
       lon: Longitud
       name: "Namn:"
+      osm_password: "Lösenord - OpenStreetMap"
+      osm_username: "Användarnamn - OpenStreetMap"
       password: Lösenord
       password_confirmation: "Upprepa lösenord"
       phone: "Telefon:"
@@ -111,12 +124,14 @@ sv:
       profile: Profil
       suggestions: Förslag
       what_is_barrier_free: "Vad betyder \"rullstolstillgänglig\"?"
+      what_is_wheelmap: "Lite om Wheelmap"
     searchbar:
       add_place: "Lägg till en plats"
       find: Hitta
       placeholder: "Sök en plats"
       title_add_place: "Lägg till en ny plats på denna position!"
     tagline: "Wheelmap logo"
+    title: "Hitta rullstolstillgängliga platser"
   helpers:
     select:
       prompt: "Välj"
@@ -137,6 +152,7 @@ sv:
           upgrade: "Uppdatera webbläsaren"
         warning:
           headline: "Tyvärr!"
+          message: "Du verkar använda Internet Explorer. Wheelmap kräver en webbläsare som följer standard för att fungera ordentligt. Fundera på att använda Firefox, Chrome, Safari eller Opera istället."
       link:
         node:
           create: "Lägg till ny plats"
@@ -153,6 +169,10 @@ sv:
   landing_pages:
     index:
       wheelchair:
+        limit:
+          headline: "Alla delvis tillgängliga för rullstol %{type} i %{city} (%{count})"
+        'no':
+          headline: "Alla helt otillgängliga för rullstol %{type} i %{city} (%{count})"
         unknown:
           headline: "Alla %{type} i %{city} med okänd rullstolstillgänglighet (%{count})"
         'yes':
@@ -179,6 +199,7 @@ sv:
       link:
         large_map: "&laquo; Avbryt"
     errors:
+      default: "Ojdå, något gick fel. Vi har fått meddelande om problemet."
       not_authorized: "Tyvärr, inloggningen misslyckades"
       not_available: "Tyvärr, denna sida kan just nu inte visas."
       not_existent: "Tyvärr, denna plats finns inte längre."
@@ -204,6 +225,7 @@ sv:
         large_map: Förstora
         listing: "Alla platser av typen '%{type} i %{city}"
         upload: "Ladda upp bild"
+      more_data_from: "Det finns mer information om denna plats, varierad av:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -240,6 +262,12 @@ sv:
           kb: KB
           mb: MB
           tb: TB
+  oauth:
+    application:
+      connect:
+        headline: "Du behöver koppla ditt konto till ditt OpenStreetMap-konto innan du kan skapa eller ändra platsinformation via Wheelmap.org."
+    callback:
+      notice: "Ditt Wheelmap-konto är nu kopplat till OpenStreetMap konto %{user}."
   or: eller
   place:
     one: "%{count} plats"
@@ -265,6 +293,7 @@ sv:
     step1: "Klicka på en plats som du känner till"
     step2: "Markera den och klicka därefter på spara"
     step3: "Klart! Ingen registrering behövs"
+    what_is_wheelmap: "Information om Wheelmap"
   statistics: Statistik
   support:
     array:
@@ -281,6 +310,14 @@ sv:
       long: "%e %B %Y %H:%M"
       short: "%e %b %H:%M"
     pm: pm
+  toiletstatus:
+    'no': "Saknar rullstolstillgänglig toalett"
+    unknown: "Information om toalett saknas"
+    'yes': "Rullstolstillgänglig toalett finns"
+    what_is:
+      'no': "Dörrars innermått är min. 90 cm, fri golvyta min 150 x 150 cm, toalettsits är i rullstolshöjd, med vikbara handtag och åtkomligt tvättfat."
+      'yes': "Dörrars innermått är min. 90 cm, fri golvyta min 150 x 150 cm, toalettsits är i rullstolshöjd, med vikbara handtag och åtkomligt tvättfat."
+      unknown: "Hjälp andra genom att ange status för toalett!"
   user_sessions:
     create:
       activation:
@@ -291,6 +328,7 @@ sv:
     destroy:
       notice: "Hejdå, kom tillbaka snart!"
     new:
+      email: "Mejladress"
       login: "Logga in"
       login_with_twitter: "Logga in med hjälp av Twitter"
       password: Lösenord
@@ -298,6 +336,8 @@ sv:
   users:
     after_signup_edit:
       welcome:
+        headline: "Du är nästan klar! Nu återstår bara att färdigställa ditt Wheelmap-konto:"
+        set_password_for_mobile: "Du har utan problem registrerats hos OpenStretMap. Ange en mejladress som du vill att Wheelmap skall använda för att hålla dig informerad om dina aktiviteter (t ex antal platser du har statusmarkerat). Du kan ändra adressen i din \"Profil\"."
         text: "Hur kan vi kontakta dig? Du kan senare ändra denna information i din profil."
     edit:
       headline:

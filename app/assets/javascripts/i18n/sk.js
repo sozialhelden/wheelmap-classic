@@ -760,10 +760,10 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
       "newsletter": "Spravodaj",
       "press": "Tlač",
       "profile": "Profil",
-      "projects": "Projekty",
+      "projects": "Zapojte sa",
       "suggestions": "Návrhy",
       "what_is_barrier_free": "Čo to znamená \"prístupné pre vozíčkarov\"?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Čo to je Wheelmap?"
     },
     "searchbar": {
       "add_place": "Pridať ďalšie",
@@ -929,7 +929,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "Prístupnosť pre vozíčkarov",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -952,7 +952,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Podobné miesta",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
@@ -988,7 +988,6 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
     },
     "node_photos": {
       "add": "Pridať",
-      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Fotky tohto miesta:",
       "upload": "Nahrať"
     },
@@ -1125,8 +1124,8 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
       "health": "Zdravie",
       "leisure": "Voľný čas",
       "misc": "Rôzne",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Banka / pošta",
+      "public_transfer": "Verejná doprava",
       "shopping": "Nákupy",
       "sport": "Šport",
       "tourism": "Cestovanie",
@@ -1193,7 +1192,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
         "brothel": "Nevestinec",
         "casino": "Kasíno",
         "cinema": "Kino",
-        "community_centre": "Community centre",
+        "community_centre": "Komunitné centrum",
         "gallery": "Galéria",
         "massage": "Massage spa",
         "nightclub": "Nočný klub",
@@ -1275,7 +1274,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
         "florist": "Kvetinárstvo",
         "funeral_directors": "Funeral home",
         "furniture": "Nábytok",
-        "garden_centre": "Garden centre",
+        "garden_centre": "Záhradkárske centrum",
         "gift": "Suveníry",
         "greengrocer": "Greengrocer",
         "hairdresser": "Kaderníctvo",
@@ -1458,7 +1457,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
     "step1": "Kliknite na miesto ktoré poznáte",
     "step2": "Označte to a dajte uložiť",
     "step3": "A je to! Registráciu nie je potreba",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Čo to je Wheelmap?"
   },
   "statistics": "Štatistiky",
   "support": {
@@ -1482,14 +1481,14 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
     "pm": "popoludní"
   },
   "toiletstatus": {
-    "no": "No wheelchair accessible toilet",
-    "unknown": "Toilet status unknown",
+    "no": "Toaleta neprístupná pre invalidné vozíky",
+    "unknown": "Stav WC neznámy",
     "what_is": {
       "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
       "unknown": "Help out by marking the toilet status!",
       "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
     },
-    "yes": "Wheelchair accessible toilet"
+    "yes": "Toaleta prístupná pre invalidné vozíky"
   },
   "user_sessions": {
     "create": {
@@ -1565,7 +1564,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
           },
           "text": "You have"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Overview"
       },
       "widget": {

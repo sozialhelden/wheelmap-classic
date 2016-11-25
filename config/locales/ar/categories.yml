@@ -7,11 +7,7 @@ ar:
       government: حكومة
       health: صحة
       leisure: استراحة
-      misc: '
-
-        متفرقات
-
-        '
+      misc: متفرقات
       shopping: تسوق
       sport: رياضة
       tourism: سياحة
@@ -62,6 +58,7 @@ ar:
         brothel: ماخور"بيت دعارة"
         casino: ملهى
         cinema: سينما
+        community_centre: "مركز اجتماعي"
         gallery: المعرض
         nightclub: ملهى ليلي
         playground: ساحة لعب

@@ -89,7 +89,7 @@ pl:
       website: "Strona www:"
       wheelchair: "Dostępność dla osób na wózkach?"
       wheelchair_description: "Komentarz dostępności:"
-      wheelchair_toilet: "toalety dostosowane dla niepełnosprawnych na wózku inwalidzkim:"
+      wheelchair_toilet: "Toalety dostosowane dla niepełnosprawnych na wózku inwalidzkim:"
     titles:
       basic: "Podstawowe dane"
       optional: "Więcej informacji <span class=\"addition\">(wszystkie pola są nieobowiązkowe)</span>"
@@ -114,6 +114,7 @@ pl:
       profile: Profil
       suggestions: Sugestie
       what_is_barrier_free: "Co to znaczy \"dostępne dla osób na wózkach\"?"
+      what_is_wheelmap: "Co to jest Wheelmap?"
     searchbar:
       add_place: "Dodaj kolejne miejsce"
       find: znajdź
@@ -270,6 +271,7 @@ pl:
     step1: "Kliknij miejsce, które znasz"
     step2: "Zaznacz i kliknij \"zachowaj\""
     step3: "Rejestracja nie jest potrzebna."
+    what_is_wheelmap: "Co to jest Wheelmap?"
   statistics: Statystyki
   support:
     array:
@@ -286,6 +288,9 @@ pl:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: po południu
+  toiletstatus:
+    unknown: "Status toalety nieznany"
+    'yes': "Toaleta przystosowana dla wózków"
   user_sessions:
     create:
       activation:

@@ -440,7 +440,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
     },
     "destroy": {
       "confirm": "Er du sikker?",
-      "headline": "Delete account",
+      "headline": "Slet konto",
       "link": "Slet nu"
     },
     "edit": {
@@ -702,7 +702,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
       "category": "Kategori:",
       "centralkey": "Centralnøgle:",
       "city": "By:",
-      "create": "Create a place",
+      "create": "Opret et sted",
       "email": "E-mail",
       "finish": "Færdig",
       "housenumber": "Nr.",
@@ -758,10 +758,10 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
       "newsletter": "Nyhedsbrev",
       "press": "Tryk på",
       "profile": "Profil",
-      "projects": "Projekter",
+      "projects": "Bliv involveret",
       "suggestions": "Forslag",
       "what_is_barrier_free": "Hvad betyder \"kørestolstilgængeligt\"?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Hvad er Wheelmap?"
     },
     "searchbar": {
       "add_place": "Tilføj endnu et sted",
@@ -926,7 +926,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "Kørestolstilgængeligt",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -949,11 +949,11 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Lignende steder",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": "Add a place"
+        "title": "Tilføj et sted"
       },
       "header": {
         "title": "Nyt sted | wheelmap.org"
@@ -985,7 +985,6 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
     },
     "node_photos": {
       "add": "Tilføj",
-      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Fotografier af dette sted:",
       "upload": "Upload"
     },
@@ -1120,8 +1119,8 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
       "health": "Sundhed",
       "leisure": "Fritid",
       "misc": "Diverse",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Bank / Posthus",
+      "public_transfer": "Offentlig transport",
       "shopping": "Shopping",
       "sport": "Sport",
       "tourism": "Turisme",
@@ -1188,7 +1187,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
         "brothel": "Bordel",
         "casino": "Kasino",
         "cinema": "Biograf",
-        "community_centre": "Community centre",
+        "community_centre": "Borgerhus",
         "gallery": "Galleri",
         "massage": "Massage spa",
         "nightclub": "Natklub",
@@ -1453,7 +1452,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
     "step1": "Klik på et sted du kender",
     "step2": "Markerer den og klik gem",
     "step3": "Det var det hele! Ingen registering er nødvendig",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Hvad er Wheelmap?"
   },
   "statistics": "Statistik",
   "support": {
@@ -1560,7 +1559,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
           },
           "text": "Du har"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Overblik"
       },
       "widget": {

@@ -28,9 +28,11 @@ uk:
       choose_language: Змінити мову
       contact: Контакт
       map: Карта
-      projects: Проекти
+      projects: Долучитися
     toolbar:
       categories: Категорії
+    meta:
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -47,6 +49,10 @@ uk:
         section:
           address:
             name: Адреса
+          similar_nodes:
+            name: Схожі місця
+          accessibility:
+            name: Доступність для людей на інвалідному візку
           contact:
             name: Контакт
     node_data:
@@ -90,13 +96,6 @@ uk:
           work_in_progress: Ми активно працюємо над вдосконаленням пошуку у майбутньому.
         try_this:
           address: Будь ласка, додайте більше <strong>відомостей про адресу</strong>.
-          intro: 'Спробуйте наступне:'
-          spell_check: Перевірте <strong>написання</strong> введених слів.
-      results:
-        ticker:
-          one: '%{count} результат:'
-          few: '%{count} результата:'
-          other: '%{count} результатів:'
     timeout:
       info: Наша система пошуку була тимчасово недоступна.
       repeat_search: Спробувати пошукати ще раз

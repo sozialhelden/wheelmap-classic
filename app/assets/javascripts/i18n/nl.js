@@ -431,7 +431,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
   },
   "devise": {
     "confirmations": {
-      "confirmed": "Jouw account is succesvol bevestigd. Je bent nu aangemeld.",
+      "confirmed": "Jouw email adres is succesvol bevestigd. Je bent nu aangemeld.",
       "link": "You didn't receive confirmation instructions?",
       "send_instructions": "Je zal een email met de instructie voor jouw account bevestiging ontvangen. Dat duurt maar een paar minuten.",
       "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
@@ -459,10 +459,10 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "invalid": "Fout email of wachtwoord",
       "invalid_token": "Ongeldig authentificatie bewijs.",
       "last_attempt": "You have one more attempt before your account will be locked.",
-      "locked": "Jouw account is gesloten.",
+      "locked": "Jouw account is gesloten",
       "not_found_in_database": "Invalid email or password.",
       "timeout": "Jouw sessie is afgelopen, alsjeblieft weer inlogggen om door te gaan.",
-      "unauthenticated": "Je moet aangemeld zijn of aanmelden om door te gaan. ",
+      "unauthenticated": "Je moet aangemeld zijn of aanmelden om door te gaan",
       "unconfirmed": "Je moet jouw account bevestigen voordat je doorgaat."
     },
     "mailer": {
@@ -471,7 +471,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "subject": "Een stap nog om jouw account te activeren"
       },
       "reset_password_instructions": {
-        "subject": "Reset wachtwoord aanwijzing."
+        "subject": "Reset wachtwoord aanwijzing"
       },
       "unlock_instructions": {
         "subject": "Unlock instructions"
@@ -513,11 +513,11 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
       "send_instructions": "You will receive an email with instructions on how to reset your password in a few minutes",
       "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to reset your password",
-      "updated": "Jouw wachtwoord is succesvol veranderd. Je bent nu ingeloggd.",
+      "updated": "Jouw wachtwoord is succesvol veranderd. Je bent nu ingeloggd",
       "updated_not_active": "Jouw wachtwoord is succesvol veranderd."
     },
     "registrations": {
-      "destroyed": "Tot ziens! Jouw account werd succesvol verwijderd. Wij hopen jou ooit weer te zien. ",
+      "destroyed": "Tot ziens! Jouw account werd succesvol verwijderd. Wij hopen jou weldra weer te zien. ",
       "inactive_signed_up": "Je hebt succesvol aangemeld. Maar wij kunnen jou niet inloggen. Reden: \"%{reason}\"",
       "link": "Aanmelden",
       "reasons": {
@@ -535,9 +535,9 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     "sessions": {
       "inactive": "Your account has not been activated yet",
       "invalid": "Ongeldig email of wachtwoord.",
-      "invalid_token": "Ongeldig authentificatie bewijs.",
+      "invalid_token": "Ongeldig authentificatie bewijs",
       "link": "Aanmelden",
-      "locked": "Jouw account is geblokkeerd.",
+      "locked": "Jouw account is geblokkeerd",
       "new": {
         "no_osm_account": "Geen OpenStreetMap account?",
         "osm_promo_text": "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it.",
@@ -546,10 +546,10 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "sign_up_with_osm": "Registreer je nu.",
         "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
       },
-      "signed_in": "Succesvol aangemeld.",
-      "signed_out": "Succesvol uitgelogd.",
+      "signed_in": "Succesvol aangemeld",
+      "signed_out": "Succesvol uitgelogd",
       "timeout": "Jouw sessie is afgelopen, alsjeblieft weer inlogggen om door te gaan.",
-      "unauthenticated": "Je moet aanmelden voordat je doorgaat.",
+      "unauthenticated": "Je moet aanmelden voordat je doorgaat",
       "unconfirmed": "Je moet jouw account bevestigen voordat je doorgaat."
     },
     "sign_in": {
@@ -596,25 +596,25 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     "messages": {
       "accepted": "moet geaccepteerd worden",
       "already_confirmed": "Was al bevestigd, alsjeblieft probeer in te loggen.",
-      "blank": "must be filled in",
+      "blank": "verplicht veld",
       "carrierwave_download_error": "could not be downloaded",
       "carrierwave_integrity_error": "is not of an allowed file type",
       "carrierwave_processing_error": "failed to be processed",
       "confirmation": "Past niet bij de bevestiging",
       "confirmation_period_expired": "needs to be confirmed within %{period}, please request a new one",
-      "empty": "must be filled in",
+      "empty": "verplicht veld",
       "equal_to": "Moet precies %{count} zijn",
-      "even": "must be an even number",
+      "even": "moet een even numer zijn",
       "exclusion": "is gereserveerd",
       "expired": "Is verlopen, alsjeblieft vraag een nieuwe aan",
       "extension_black_list_error": "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}",
       "extension_white_list_error": "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}",
       "greater_than": "moet groter dan %{count} zijn",
-      "greater_than_or_equal_to": "must be greater than or equal to %{count}",
+      "greater_than_or_equal_to": " groter of gelijk aan % {count}",
       "inclusion": "niet geldig waard",
       "invalid": "niet geldig",
       "less_than": "moet minder zijn dan %{count}",
-      "less_than_or_equal_to": "must be less than or equal to %{count}",
+      "less_than_or_equal_to": "kleiner of gelijk aan % {count}",
       "mime_types_processing_error": "Failed to process file with MIME::Types, maybe not valid content-type? Original Error: %{e}",
       "mini_magick_processing_error": "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}",
       "not_a_number": "is geen numer",
@@ -625,7 +625,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "one": "Een fout verbied het opslaan van  %{resource}:",
         "other": "%{count} fouten verbieden op te slaan %{resource}:"
       },
-      "odd": "must be an odd number",
+      "odd": "moet een oneven numer zijn",
       "other_than": "must be other than %{count}",
       "present": "must be blank",
       "rmagick_processing_error": "Failed to manipulate with rmagick, maybe it is not an image? Original Error: %{e}",
@@ -689,7 +689,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
   },
   "formtastic": {
     "hints": {
-      "email": "We treat your address confidentially. We promise not to send you spam!",
+      "email": "Wij behandelen jouw adres gegevens vertrouwelijk. Wij gaan geen spam sturen!",
       "lat": "Beweeg de marker op de kaart in de correcte positie",
       "osm_username": "Nog geen lid op dit moment? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Maak nu een Openstreetmap account</a>\n",
       "password": "(laat dit leeg als je het niet wil veranderen )",
@@ -722,7 +722,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "website": "Internetpagina:",
       "wheelchair": "Rolstoel toegankelijkheid?",
       "wheelchair_description": "Toegankelijkheid commentaar:",
-      "wheelchair_toilet": "rolstoeltoegankelijk toilet"
+      "wheelchair_toilet": "Rolstoeltoegankelijk toilet:"
     },
     "titles": {
       "basic": "Basic data",
@@ -756,7 +756,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "newsletter": "Nieuwsbrief",
       "press": "Pers",
       "profile": "Profiel",
-      "projects": "Projecten",
+      "projects": "Doe mee",
       "suggestions": "Adviezen",
       "what_is_barrier_free": "Wat betekend \"wheelchair accessible\"?",
       "what_is_wheelmap": "Wat is Wheelmap?"
@@ -811,7 +811,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         },
         "warning": {
           "headline": "Wij excuseren!",
-          "message": "You appear to be using Internet Explorer. Wheelmap requires a standards compliant browser to work properly. Please consider using Firefox, Chrome, Safari or Opera."
+          "message": "Je lijkt Internet Explorer te gebruiikten. Wheelmaps benodigd een browser die met bepaalde standards werkt. Probeer een keer om Firefox, Chrome, Safari of Opera gebruiken."
         }
       },
       "link": {
@@ -838,7 +838,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "help": "rolstoel toegankelijk? (Hulp)",
         "more": "meer..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": "Inzoomen om meer locaties te zien."
     }
   },
   "how?": "Hoe?",
@@ -846,10 +846,10 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     "index": {
       "wheelchair": {
         "limit": {
-          "headline": "All partially wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Allemaal gedeeltelijk toegangelijk met rolstoel %{type}in %{city} (%{count})"
         },
         "no": {
-          "headline": "All not wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Allemaal niet toegangelijk met rolstoel %{type} in %{city} (%{count})"
         },
         "unknown": {
           "headline": "All %{type} in %{city} met onbekende rolstoel status (%{count})"
@@ -924,7 +924,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "Rolstoel toegankelijkheid",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -937,7 +937,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
             "title": "Other contact information"
           },
           "name_category": {
-            "name": "Name and place type",
+            "name": "Naam en locatie type",
             "title": "Give us some initial information about your place:"
           },
           "overview": {
@@ -947,7 +947,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Vergelijkbare plaatsen",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
@@ -968,32 +968,31 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       }
     },
     "node_data": {
-      "address": "adres",
-      "contact_details": "contactgegevens"
+      "address": "Adres:",
+      "contact_details": "Contactgegevens:"
     },
     "node_edit": {
       "details": "Details",
       "edit": "Redigeren"
     },
     "node_map": {
-      "map": "Plattegrond"
+      "map": "Plattegrond:"
     },
     "node_note": {
-      "comment": "Commentaar"
+      "comment": "Commentaar:"
     },
     "node_photos": {
       "add": "Toevoegen",
-      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Fotos van deze plaats:",
       "upload": "Uploaden"
     },
     "node_similar": {
-      "similar": "Similar places: %{name}"
+      "similar": "Vergelijkbare plaatsen: %{name}"
     },
     "node_status": {
-      "accessible_toilet": "rolstoeltoegankelijk toilet",
+      "accessible_toilet": "Rolstoeltoegankelijk toilet:",
       "premium": "%{name} says: this place is",
-      "wheelchair_accessibility": "Rolstoel toegangelijk?"
+      "wheelchair_accessibility": "Rolstoel toegankelijkheid:"
     },
     "node_streetview": {
       "streetview": "Streetview:"
@@ -1012,7 +1011,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "listing": "Alle vergelijkbare plaatsen '%{type}' in %{city}\n",
         "upload": "Upload beeld"
       },
-      "more_data_from": "There is more information about this place, validated by:",
+      "more_data_from": "Er is meer informatie over dit plaats beschikbaar, valideert door:",
       "share": {
         "email": "E-mail",
         "facebook": "Facebook",
@@ -1112,14 +1111,14 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
   "poi": {
     "category": {
       "accommodation": "Accomodatie",
-      "education": "Educatie",
+      "education": "Onderwijs",
       "food": "Voedsel",
       "government": "Overheid",
       "health": "Gezondheid",
       "leisure": "Vrije tijd",
       "misc": "Diversen",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Bank / postkantoor",
+      "public_transfer": "Openbar vervoer",
       "shopping": "Winkelen",
       "sport": "Sport",
       "tourism": "Toerisme",
@@ -1132,7 +1131,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "camp_site": "Kampeerplaats",
         "caravan_site": "Kampeerplaats",
         "chalet": "Berghut",
-        "dormitory": "Dormitory",
+        "dormitory": "Hostels",
         "guest_house": "Gasthuis",
         "hostel": "Hostel",
         "hotel": "Hotel",
@@ -1169,7 +1168,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "health": {
         "alternative": "Alternative medicine practitioner",
         "dentist": "Tandarts",
-        "doctors": "Doctor",
+        "doctors": "Dokter",
         "hearing_aids": "Audicien (gehoorapperaat winkel)",
         "hospital": "Ziekenhuis",
         "medical_supply": "Medische verzorging",
@@ -1186,7 +1185,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "brothel": "Bordeel",
         "casino": "Casino",
         "cinema": "bioscoop",
-        "community_centre": "Community centre",
+        "community_centre": "Gemeenschapscentrum",
         "gallery": "Galerij",
         "massage": "Massage spa",
         "nightclub": "Nachtclub",
@@ -1219,7 +1218,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "aerodrome": "Vliegveld",
         "bicycle_parking": "Fiets parkeerplaats",
         "bicycle_rental": "Fiets verhuur",
-        "boatyard": "Boat yard",
+        "boatyard": "boot yard",
         "bus_station": "Bushalte",
         "bus_stop": "Bushalte",
         "cable_car": "Kabelbaan",
@@ -1268,7 +1267,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "florist": "Bloemenbinder",
         "funeral_directors": "Funeral home",
         "furniture": "Meubels",
-        "garden_centre": "Garden centre",
+        "garden_centre": "Tuinwinkel",
         "gift": "Cadeau winkel",
         "greengrocer": "Greengrocer",
         "hairdresser": "Kapper",
@@ -1417,12 +1416,12 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "no-results": {
         "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
         "hint": {
-          "example": "<strong>bijvoorbeeld:</strong> London, United Kingdom",
+          "example": "<strong>Bijvoorbeeld:</strong> London, United Kingdom",
           "info": "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!",
           "work_in_progress": "We work hard to make searching for places easier and more intuitive in the future."
         },
         "try_this": {
-          "address": "Geef a.u.b. meer <strong>address details</strong>.",
+          "address": "Geef a.u.b. meer <strong>adres gegevens</strong>.",
           "intro": "Probeer dit",
           "spell_check": "Controleer a.u.b. de  <strong>spelling</strong> van je text"
         }
@@ -1440,7 +1439,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     },
     "timeout": {
       "headline": "Sorry, something went wrong",
-      "info": "Onze zoekdienst was tijdelijk buiten werk",
+      "info": "Onze zoekdienst was tijdelijk buiten werk.",
       "repeat_search": "Herhaal de zoekopdracht"
     }
   },
@@ -1537,7 +1536,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "show": {
         "greeting": {
           "anonymously": "Hello there",
-          "personalized": "Hello %{name}"
+          "personalized": "Dag %{name}"
         },
         "overview": {
           "photos_uploaded": {
@@ -1558,7 +1557,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
           },
           "text": "You have"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Overview"
       },
       "widget": {
@@ -1593,7 +1592,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     "limited": "Gedeeltelijk rolstoeltoegankelijk",
     "no": "Niet rolstoeltoegankelijk",
     "unknown": "Onbekende status",
-    "yes": "rolstoeltoegankelijk"
+    "yes": "Rolstoeltoegankelijk"
   },
   "wheelmap": {
     "footer": {

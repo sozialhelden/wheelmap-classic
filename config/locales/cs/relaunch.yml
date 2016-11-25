@@ -9,6 +9,7 @@ cs:
         phone: Telefon
         note: Poznámka
         address_street: Ulice
+        address_housenumber: Číslo domu
         address_postcode: PSČ
         address_city: Město
   faq:
@@ -30,6 +31,9 @@ cs:
       projects: Zapojte se
     toolbar:
       categories: Kategorie
+    meta:
+      description: Wheelmap.org je online mapa k vyhledávání a označení míst vhodných pro vozíčkáře. Zapojte se do označování veřejných míst, jako jsou bary, restaurace, kina nebo supermarkety.
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -39,15 +43,36 @@ cs:
         headline: 'Označujte a hledejte místa přístupné pro vozíčkáře na Wheelmap.org - na celém světe a zdarma. Je to jednoduché:'
         lookup: Hledat konkrétní místo
         secondary_headline: 'Náš semaforový systém pro označení přístupnosti objektů pro vozíčkáře:'
+      embed_link: Ukázat na Wheelmap.org
+      zoom_alert: Přibližte si mapu, abyste viděli více míst.
   nodes:
     new:
       form:
+        title: Přidat místo
         legend: Poloha objektu
+        location: Klikněte, prosím, na mapu, kde je dané místo umístěno!
         section:
+          name_category:
+            name: Typ jména a místa
+            title: "Poskytněte nám důležité informace o vašem bydlišti:"
           address:
             name: Adresa
+            title: Kde je to místo?
+            help: Můžete přesunout označovací kurzor na správné místo na mapě.
+          similar_nodes:
+            name: Podobné místa
+            title: Našli jsme podobná místa. Je to jedno z těchto?
+            go_edit: Pokračovat s tímto místem
+            go_new: Neodpovídá místům nahoře ...
+            empty: Nebyla nalezena příbuzná místa
+          accessibility:
+            name: Dostupnost pro vozíčkáře
+            title: Informace o dostupnosti pro vozíčkáře
           contact:
             name: Kontakt
+            title: Jiné kontaktní informace
+          overview:
+            title: Jsou všechny informace správné?
     node_data:
       address: 'Adresa:'
       contact_details: 'Kontakní údaje:'
@@ -78,6 +103,7 @@ cs:
       share:
         email: Email
         facebook: Facebook
+        text: 'Našel jsem toto místo na Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -97,16 +123,18 @@ cs:
           few: '%{count} výsledků:'
           other: '%{count} výsledků:'
     timeout:
+      headline: Omlouváme se, něco se pokazilo
       info: Vyhledávání bylo dočasně nedostupné.
       repeat_search: Hledat znovu
   users:
     profile:
       newsletter:
         title: Novinky
+        text: Zůstaňte informovaní o novinkách na Wheelmap. Nebojte se, nebudeme vás spamovat. Uslyšíte o nás jednou za měsíc.
         label: Ano, posílejte mi novinky o Wheelmap.
       show:
         title: Přehled
-        text_html: "Vítejte (zpět) na Wheelmap.org! Jsme rádi, že jste na palubě! Jestli se chcete o Wheelmap.org dozvědět trochu víc, můžete si projít náš <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> nebo <a href=\"http://wheelmap.org/en/faqs/\">často kladené dotazy</a>. Nebo si přečtěte o lokálních <a href=\"http://wheelmap.org/en/get-engaged/\">projektech</a>, kterými můžete Wheelmap.org i vy podpořit.<br>\nZůstaňte ve spojení<br>\nPokud chcete dostávat pravidelně informace, můžete využít náš měsíční newsletter nebo se připojit na naši stránku na <a href=\"https://www.facebook.com/wheelmap\">Facebooku</a> či <a href=\"https://twitter.com/wheelmap\">Twitteru</a>. Těšíme se na vaše názory a rádi je s vámi prodiskutujeme!<br>\nPřejeme příjemné mapování!<br>\nVáš tým Wheelmap"
+        text_html: "Ahoj,<br>\nVítejte (zpět) na Wheelmap.org! Jsme rádi, že se opět shledáváme! Můžete prohlížet váš <a href=\"http://news.wheelmap.org/en/\">Blog</a>nebo<a href=\"http://news.wheelmap.org/en/FAQ/\">Často kladené otázky</a>, pokud chcete Wheelmap.org poznat trochu více. Nebo se můžete dozvědět více o <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projektech</a>, které nabízíme na Wheelmap.org a jak se do nich můžete zapojit.<br>Abyste zůstali v kontaktu, tak můžete odebírat naše měsíční novinky a sledovat nás na <a href=\"https://www.facebook.com/wheelmap\">Facebooku</a> a <a href=\"https://twitter.com/wheelmap\">Twitteru</a>. Těšíme se na váš názor a na začátek společného rozhovoru!<br>\nA nyní přejeme veselé mapování!<br>\nVáš Wheelmap team"
         greeting:
           anonymously: Vítejte
           personalized: Vítejte, %{name}
@@ -120,13 +148,33 @@ cs:
             one: 'přidal %{count} místo'
             few: 'přidal %{count} místa'
             other: 'přidal %{count} míst'
+          pois_edited:
+            one: 'Upravená %{count} místa'
+            few: 'Upravit %{count} míst'
+            other: 'Upravená %{count} místa'
           photos_uploaded:
             one: 'nahrál/a %{count} fotku'
             few: 'nahrál/a %{count} fotky'
             other: 'nahrál/a %{count} fotek'
       photos:
         title: Fotky
+        empty: Zatím jste nenahráli žádné fotografie.
       edit:
         title: Profil
         legends:
           user_data: Informace o vašem účtu
+      widget:
+        title: Widget
+        height: Výška
+        width: Šířka
+        center: Oblast mapy
+        categories: Zobrazit filtr kategorií
+        providers: Poskytovatel
+        empty_provider: Vyberte poskytovatele
+        empty_center: Hledat střed mapy ...
+        legends:
+          settings: Nastavení
+          preview: Náhled
+          embed: 'Vložený kód '
+          embed_explanation: Můžete změnit specifikace pro zeměpisnou šířku (<code>lat</code>), zeměpisnou délku (<code>lon</code>) a úroveň přiblížení (<code>zoom</code>) manuálně v kódu, čímž se upraví segment mapy (widget) podle místa, které chcete zobrazit.
+          general: Vytvořte si vlastní Wheelmap widget a vložte jej na vaši internetovou stránku nebo blog.

@@ -1,7 +1,7 @@
 I18n.translations || (I18n.translations = {});
 I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   "actions": {
-    "cancel": "\nإلغاء",
+    "cancel": "إلغاء",
     "next": "التالي",
     "save": "حفظ",
     "send": "Send"
@@ -183,15 +183,15 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   "activerecord": {
     "attributes": {
       "poi": {
-        "address": "\nالعنوان",
-        "address_city": "\n\nالمدينة",
+        "address": "العنوان",
+        "address_city": "المدينة",
         "address_housenumber": "رقم المنزل",
         "address_postcode": "Postcode",
-        "address_street": "\n\nشارع",
+        "address_street": "شارع",
         "name": "الإسم",
         "note": "Note",
-        "phone": "\nالهاتف",
-        "type": "\n\nالنوع",
+        "phone": "الهاتف",
+        "type": "النوع",
         "website": "موقع الكتروني"
       },
       "user": {
@@ -446,7 +446,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
     "edit": {
       "form": {
         "labels": {
-          "current_password": "<i>(we need it to confirm your changes)</i> كلمة المرور الحالية ",
+          "current_password": "Current password <i>(we need it to confirm your changes)</i>",
           "email": "بريد الكتروني",
           "password": " كلمة المرور  <i>(أبقه فارغا اذا كنت لاتريد التعديل)<i/>",
           "password_confirmation": "إعادة كلمة المرور"
@@ -594,7 +594,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   },
   "errors": {
     "dynamic_format": "%{message}",
-    "format": "%{attribute} %{message}",
+    "format": "%{attribute}% {message}",
     "messages": {
       "accepted": "must be accepted",
       "already_confirmed": "تم التأكيد بالفعل",
@@ -724,7 +724,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "website": "موقع :",
       "wheelchair": "امكانية الوصول بالكرسي المتحرك ؟",
       "wheelchair_description": "تعليق حول سهولة الوصول :",
-      "wheelchair_toilet": "Wheelchair accessible toilet:"
+      "wheelchair_toilet": "كرسي متحرك في المتناول للمرحاض:"
     },
     "titles": {
       "basic": "معلومات أساسية",
@@ -758,10 +758,10 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "newsletter": "أخبار الموقع",
       "press": "صحافة",
       "profile": "الحساب",
-      "projects": "شارك",
+      "projects": "قم بالاشتراك",
       "suggestions": "الإقتراحات",
       "what_is_barrier_free": "ماذا تعني هذة الجملة \"إمكانية الوصول بالكرسي المتحرك\"؟",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "تعرف على ويل ماب ؟"
     },
     "searchbar": {
       "add_place": "أضف مكاناً آخر",
@@ -926,7 +926,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "امكانية الوصول بالكرسي المتحرك",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -970,7 +970,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       }
     },
     "node_data": {
-      "address": "Address:",
+      "address": "العنوان:",
       "contact_details": "Contact details:"
     },
     "node_edit": {
@@ -985,7 +985,6 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
     },
     "node_photos": {
       "add": "Add",
-      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Photos of this place:",
       "upload": "Upload"
     },
@@ -993,9 +992,9 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "similar": "Similar places: %{name}"
     },
     "node_status": {
-      "accessible_toilet": "Wheelchair accessible toilet:",
+      "accessible_toilet": "كرسي متحرك في المتناول للمرحاض:",
       "premium": "%{name} says: this place is",
-      "wheelchair_accessibility": "Wheelchair accessibility:"
+      "wheelchair_accessibility": "امكانية الوصول بالكرسي المتحرك:"
     },
     "node_streetview": {
       "streetview": "Streetview:"
@@ -1119,7 +1118,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "government": "حكومة",
       "health": "صحة",
       "leisure": "استراحة",
-      "misc": "\nمتفرقات\n",
+      "misc": "متفرقات",
       "money_post": "Bank / Post office",
       "public_transfer": "Public transport",
       "shopping": "تسوق",
@@ -1188,7 +1187,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "brothel": "ماخور\"بيت دعارة\"",
         "casino": "ملهى",
         "cinema": "سينما",
-        "community_centre": "Community centre",
+        "community_centre": "مركز اجتماعي",
         "gallery": "المعرض",
         "massage": "Massage spa",
         "nightclub": "ملهى ليلي",
@@ -1453,7 +1452,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
     "step1": "قم بالنقر على المكان المطلوب",
     "step2": "قم بالتحديد ثم انقر اختيار حفظ",
     "step3": "لايتطلب التسجيل",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "تعرف على ويل ماب ؟"
   },
   "statistics": "إحصاءات",
   "support": {
@@ -1477,14 +1476,14 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
     "pm": "مساء"
   },
   "toiletstatus": {
-    "no": "No wheelchair accessible toilet",
-    "unknown": "Toilet status unknown",
+    "no": "لا يوجد كرسي متحرك للمرحاض في المتناول",
+    "unknown": "وضع المرحاض غير معروف",
     "what_is": {
       "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
       "unknown": "Help out by marking the toilet status!",
       "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
     },
-    "yes": "Wheelchair accessible toilet"
+    "yes": "كرسي متحرك في المتناول للمرحاض"
   },
   "user_sessions": {
     "create": {
@@ -1560,7 +1559,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
           },
           "text": "You have"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Overview"
       },
       "widget": {
@@ -1574,7 +1573,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
           "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
           "general": "Create your own Wheelmap widget and embed it in your website or blog.",
           "preview": "Preview",
-          "settings": "\n\nالإعدادات"
+          "settings": "الإعدادات"
         },
         "providers": "Provider",
         "title": "Widget",

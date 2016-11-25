@@ -19,9 +19,9 @@ pt_BR:
       already_authenticated: "Você já está conectado."
       invalid: "Senha ou endereço de e-mail não confere. "
       invalid_token: "Token de autenticação inválido"
-      locked: "A sua conta está bloqueada."
-      unauthenticated: "Você precisa autenticar-se (ou registrar-se) antes de continuar."
-      unconfirmed: "Por favor, confirme sua conta antes de continuar. Você deverá ter recebido um e-mail com o link de confirmação. Se não recebeu, clique em \"E-mail de confirmação não recebido?\", no final desta página."
+      locked: "A sua conta está bloqueada"
+      unauthenticated: "Você precisa autenticar-se ou registrar-se antes de continuar"
+      unconfirmed: "Por favor, confirme sua conta antes de continuar."
     mailer:
       confirmation_instructions:
         subject: "Mais um passo para ativar sua conta"
@@ -40,7 +40,7 @@ pt_BR:
     password_reset:
       email:
         comment: "Se você não solicitou alteração de senha, apenas ignore este e-mail <br/>. Sua senha não será mudada a menos que você clique o link acima e configure uma nova."
-        headline: "Bem vindo, %{email}"
+        headline: "Bem vindo %{email}"
         link: "Alterar minha senha"
       form:
         labels:
@@ -65,15 +65,15 @@ pt_BR:
       invalid: "Senha ou endereço de e-mail não confere. "
       invalid_token: "Token de autenticação inválido"
       link: "Entrar"
-      locked: "A sua conta está bloqueada."
+      locked: "A sua conta está bloqueada"
       new:
         no_osm_account: "Você não tem conta no OpenStreetMap?"
         promo_text_thank_you: "Muito obrigado por sua ajuda!"
         sign_in_with: "Conectar usando %{kind}"
         sign_up_with_osm: "Registrar-se agora."
       signed_in: "Conectou a conta com sucesso"
-      signed_out: "Desconectado."
-      unauthenticated: "Por favor conecte-se ou registre-se novamente para continuar."
+      signed_out: "Desconectado"
+      unauthenticated: "Por favor conecte-se ou registre-se novamente para continuar"
       unconfirmed: "Tem de confirmar a sua conta antes de continuar"
     sign_in:
       form:
@@ -87,9 +87,9 @@ pt_BR:
       headline: "Sair"
     sign_up:
       email:
-        confirm_my_account: "Confirmar minha conta."
+        confirm_my_account: "Confirmar minha conta"
         please_confirm: "Você pode confirmar a sua conta clicando no link a seguir:"
-        welcome: "Seja bem-vindo, %{email}!"
+        welcome: "Bem vindo %{email}!"
       form:
         labels:
           email: E-mail

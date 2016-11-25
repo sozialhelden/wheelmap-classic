@@ -8,6 +8,8 @@ da:
       health: Sundhed
       leisure: Fritid
       misc: Diverse
+      money_post: "Bank / Posthus"
+      public_transfer: "Offentlig transport"
       shopping: Shopping
       sport: Sport
       tourism: Turisme
@@ -60,6 +62,7 @@ da:
         brothel: Bordel
         casino: Kasino
         cinema: Biograf
+        community_centre: "Borgerhus"
         gallery: Galleri
         nightclub: Natklub
         playground: Legeplads

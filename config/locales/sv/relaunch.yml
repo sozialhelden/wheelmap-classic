@@ -7,8 +7,10 @@ sv:
         address: Adress
         website: Webbplats
         phone: Telefon
+        note: Meddelande
         address_street: Gata
         address_housenumber: Husnummer
+        address_postcode: Postnummer
         address_city: Ort
   faq:
     answers:
@@ -26,9 +28,12 @@ sv:
       choose_language: Välj språk
       contact: Kontakt
       map: Karta
-      projects: Projekt
+      projects: Bli inblandad
     toolbar:
       categories: Kategorier
+    meta:
+      description: Wheelmap.org är en online-karta för att söka, hitta och markera rullstolstillgängliga platser. Bli delaktig genom att markera offentliga platser som t ex barer, restauranger, bio och mataffärer!
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -38,15 +43,36 @@ sv:
         headline: 'Markera och hitta rullstolstillgängliga platser med hjälp av Wheelmap.org - världsomfattande och gratis. Det är lätt:'
         lookup: Sök en speciell plats
         secondary_headline: 'Vårt "trafikljussystem" för att markera rullstolstillgängligheten hos allmänna platser:'
+      embed_link: Visa på Wheelmap.org
+      zoom_alert: Du ser fler platser om du zoomar in.
   nodes:
     new:
       form:
+        title: Lägg till ny plats
         legend: Platsens läge
+        location: Klicka på kartan där platsen är lokaliserad!
         section:
+          name_category:
+            name: Platsens namn och typ
+            title: "Ge oss lite grundinformation om din plats:"
           address:
             name: Adress
+            title: Var ligger platsen?
+            help: Du kan dra markören till det ställe på kartan där platsen finns.
+          similar_nodes:
+            name: Platser som liknar denna
+            title: Vi hittade platser i närheten som liknar denna. Är det en av dessa?
+            go_edit: Fortsätt med inmatningen för denna platsen
+            go_new: Det är ingen av platserna ovan ...
+            empty: Inga liknande platser hittades.
+          accessibility:
+            name: 'Rullstolstillgänglighet:'
+            title: Information om rullstolstillgänglighet
           contact:
             name: Kontakt
+            title: Annan kontaktinformation
+          overview:
+            title: Är all information korrekt?
     node_data:
       address: 'Adress:'
       contact_details: 'Kontaktinformation:'
@@ -77,10 +103,12 @@ sv:
       share:
         email: E-post
         facebook: Facebook
+        text: 'Jag hittade denna plats på Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
       no-results:
+        headline: Beklagar, vi kunde inte hitta en plats som kallas "%{query}".
         hint:
           example: <strong>Exempel:</strong> London, Storbritannien
           info: Vår söktjänst fungerar bara med namn -och/eller adressinformation. Var därför vänlig och sök efter platsens namn eller en adress, t.ex. gatunamn och/eller stad. Det fungerar inte att söka efter en sorts plats, t.ex. restaurang eller bio!
@@ -94,16 +122,54 @@ sv:
           one: '%{count} resultat:'
           other: '%{count} resultat:'
     timeout:
+      headline: Beklagar, något gick fel.
       info: Vår söktjänst var tillfälligt otillgänglig.
       repeat_search: Sök igen
   users:
     profile:
       newsletter:
         title: Nyhetsbrev
+        text: Håll dig informerad via Wheelmaps nyhetsbrev. Oroa dig inte, vi kommer inte mejlbomba dig. Du kommer som mest höra av oss en gång i månaden.
+        label: Ja, håll mig informerad om Wheelmap.
+      show:
+        title: Översikt
+        text_html: "Hallå där!<br>\nVälkommen (tillbaka) till Wheelmap.org! Vi är glada att du är med oss! Du kan kika runt på vår <a href=\"http://news.wheelmap.org/en/\">Blogg</a> eller <a href=\"http://news.wheelmap.org/en/FAQ/\">Vanliga frågor & svar</a> om du vill lära känna Wheelmap.org lite bättre. Eller så kan du ta reda på mer om <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projekten</a> som vi erbjuder kring Wheelmap.org och hur du kan bli delaktig.<br>\nFör att hålla kontakten kan du prenumerera på vårt månatliga nyhetsbrev och följa oss på <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> och <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Vi ser fram emot att få höra din åsikt och att påbörja en konversation med dig!<br>\nOch ha nu så kul med kartläggningen!<br>\nDitt Wheelmap-team"
+        greeting:
+          anonymously: Hej där
+          personalized: Hej %{name}
+        overview:
+          text: Du har
+          pois_marked:
+            one: 'markerat %{count} platser'
+            other: 'markerat %{count} platser'
+          pois_added:
+            one: 'lagt till %{count} platser'
+            other: 'lagt till %{count} platser'
+          pois_edited:
+            one: 'redigerat %{count} platser'
+            other: 'redigerat %{count} platser'
+          photos_uploaded:
+            one: 'laddat upp %{count} foton'
+            other: 'laddat upp %{count} foton'
       photos:
         title: Fotografier
+        empty: Du har inte laddat upp några foton än.
       edit:
         title: Profil
+        legends:
+          user_data: Din kontoinformation
       widget:
+        title: Kartlänk
+        height: Höjd
+        width: Bredd
+        center: Kartområde
+        categories: Visa kategorifiltret
+        providers: Leverantör
+        empty_provider: Välj leverantör
+        empty_center: Centrera kartan ...
         legends:
           settings: Inställningar
+          preview: Förhandsvisning
+          embed: Inbäddad kod
+          embed_explanation: Du kan manuellt ändra värdena för latitud (<code>lat</code>), longitude (<code>lon</code>) och zoom nivå (<code>zoom</code>) i koden ovan, och därigenom justera kartavsnitt (widget) utifrån det område som du vill visa.
+          general: Skapa din egen Wheelmap-kartlänk och lägg in den på din hemsida eller blog.

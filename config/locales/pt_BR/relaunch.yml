@@ -28,9 +28,11 @@ pt_BR:
       choose_language: Escolher idioma
       contact: Contato
       map: Mapa
-      projects: Projetos
+      projects: Envolva-se
     toolbar:
       categories: Categorias
+    meta:
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -47,6 +49,10 @@ pt_BR:
         section:
           address:
             name: Endereço
+          similar_nodes:
+            name: Lugares parecidos
+          accessibility:
+            name: Acessibilidade a cadeirante
           contact:
             name: Contato
     node_data:

@@ -28,9 +28,11 @@ da:
       choose_language: Vælg sprog
       contact: Kontakt
       map: Kort
-      projects: Projekter
+      projects: Bliv involveret
     toolbar:
       categories: kategorier
+    meta:
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -43,10 +45,15 @@ da:
   nodes:
     new:
       form:
+        title: Tilføj et sted
         legend: Lokalitet for stedet
         section:
           address:
             name: Adresse
+          similar_nodes:
+            name: Lignende steder
+          accessibility:
+            name: Kørestolstilgængeligt
           contact:
             name: Kontakt
     node_data:

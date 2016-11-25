@@ -461,11 +461,11 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
       "invalid": "Senha ou endereço de e-mail não confere. ",
       "invalid_token": "Token de autenticação inválido",
       "last_attempt": "You have one more attempt before your account will be locked.",
-      "locked": "A sua conta está bloqueada.",
+      "locked": "A sua conta está bloqueada",
       "not_found_in_database": "Invalid email or password.",
       "timeout": "Your session has expired, please sign in again to continue.",
-      "unauthenticated": "Você precisa autenticar-se (ou registrar-se) antes de continuar.",
-      "unconfirmed": "Por favor, confirme sua conta antes de continuar. Você deverá ter recebido um e-mail com o link de confirmação. Se não recebeu, clique em \"E-mail de confirmação não recebido?\", no final desta página."
+      "unauthenticated": "Você precisa autenticar-se ou registrar-se antes de continuar",
+      "unconfirmed": "Por favor, confirme sua conta antes de continuar."
     },
     "mailer": {
       "confirmation_instructions": {
@@ -497,7 +497,7 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
     "password_reset": {
       "email": {
         "comment": "Se você não solicitou alteração de senha, apenas ignore este e-mail <br/>. Sua senha não será mudada a menos que você clique o link acima e configure uma nova.",
-        "headline": "Bem vindo, %{email}",
+        "headline": "Bem vindo %{email}",
         "link": "Alterar minha senha",
         "text": "We received a request to change your password. If you sent the request, click the following link - otherwise ignore this!"
       },
@@ -539,7 +539,7 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
       "invalid": "Senha ou endereço de e-mail não confere. ",
       "invalid_token": "Token de autenticação inválido",
       "link": "Entrar",
-      "locked": "A sua conta está bloqueada.",
+      "locked": "A sua conta está bloqueada",
       "new": {
         "no_osm_account": "Você não tem conta no OpenStreetMap?",
         "osm_promo_text": "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it.",
@@ -549,9 +549,9 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
         "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
       },
       "signed_in": "Conectou a conta com sucesso",
-      "signed_out": "Desconectado.",
+      "signed_out": "Desconectado",
       "timeout": "Your session has expired, please sign in again to continue.",
-      "unauthenticated": "Por favor conecte-se ou registre-se novamente para continuar.",
+      "unauthenticated": "Por favor conecte-se ou registre-se novamente para continuar",
       "unconfirmed": "Tem de confirmar a sua conta antes de continuar"
     },
     "sign_in": {
@@ -570,9 +570,9 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
     },
     "sign_up": {
       "email": {
-        "confirm_my_account": "Confirmar minha conta.",
+        "confirm_my_account": "Confirmar minha conta",
         "please_confirm": "Você pode confirmar a sua conta clicando no link a seguir:",
-        "welcome": "Seja bem-vindo, %{email}!"
+        "welcome": "Bem vindo %{email}!"
       },
       "form": {
         "labels": {
@@ -758,10 +758,10 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
       "newsletter": "Newsletter",
       "press": "Imprensa",
       "profile": "Perfis",
-      "projects": "Projetos",
+      "projects": "Envolva-se",
       "suggestions": "Sugestões",
       "what_is_barrier_free": "Qual o significado de \"acessível a cadeirantes\"?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "O que é Wheelmap?"
     },
     "searchbar": {
       "add_place": "Adicionar outro lugar",
@@ -874,7 +874,7 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
       "prompt": "Escolher categoria"
     },
     "node": {
-      "info_edit_position": "O lugar aparecerá no Wheelmap tal como é mostrado acima. Se o marcador não está no ponto correto, é possível <a href=\"%{url}\">mudar a posição</a> dele no OpenStreetMap.",
+      "info_edit_position": "O lugar aparecerá no Wheelmap tal como é mostrado acima. Se o marcador não está no ponto correto, é possível <a href=\"%{url}\">mudar a posição dele no OpenStreetMap.</a> ",
       "mail": {
         "body": "(Por favor, somente escreva em inglês ou alemão.)\n\nHi Sozialhelden,\n\nSomething is wrong with this location: %{url}\n\nThe problem is:",
         "subject": "[Wheelmap] Problema com %{headline}"
@@ -926,7 +926,7 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "Acessibilidade a cadeirante",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -949,7 +949,7 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Lugares parecidos",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
@@ -985,7 +985,6 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
     },
     "node_photos": {
       "add": "Adicionar",
-      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Fotos deste lugar:",
       "upload": "Transferência"
     },
@@ -1120,8 +1119,8 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
       "health": "Saúde",
       "leisure": "Lazer",
       "misc": "Diversos",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Banco / Agência de Correios",
+      "public_transfer": "Transporte público",
       "shopping": "Compras",
       "sport": "Esporte",
       "tourism": "Turismo",
@@ -1188,7 +1187,7 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
         "brothel": "Bordel",
         "casino": "Cassino",
         "cinema": "Cinema",
-        "community_centre": "Community centre",
+        "community_centre": "Centro comunitário",
         "gallery": "Galeria de arte",
         "massage": "Massage spa",
         "nightclub": "Casa noturna",
@@ -1270,7 +1269,7 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
         "florist": "Florista",
         "funeral_directors": "Funeral home",
         "furniture": "Móveis",
-        "garden_centre": "Garden centre",
+        "garden_centre": "Centro de jardinagem",
         "gift": "Loja de presentes",
         "greengrocer": "Greengrocer",
         "hairdresser": "Cabeleireiro",
@@ -1453,7 +1452,7 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
     "step1": "Clique num lugar que você conhece.",
     "step2": "Marque-lo e clique em \"Salvar\"",
     "step3": "Pronto! Nenhum registro necessário!",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "O que é Wheelmap?"
   },
   "statistics": "Estatísticas",
   "support": {
@@ -1560,7 +1559,7 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
           },
           "text": "Você tem"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Visão geral"
       },
       "widget": {

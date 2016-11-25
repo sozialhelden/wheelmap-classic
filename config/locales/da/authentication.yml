@@ -5,6 +5,7 @@ da:
       send_instructions: "I løbet af få minutter vil du modtage en e-mail med instrukser om aktivering af din konto."
     destroy:
       confirm: "Er du sikker?"
+      headline: "Slet konto"
       link: "Slet nu"
     edit:
       form:

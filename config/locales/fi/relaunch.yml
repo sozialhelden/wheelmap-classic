@@ -13,6 +13,7 @@ fi:
   header:
     navigation:
       map: Kartta
+      projects: Osallistu
   nodes:
     new:
       form:

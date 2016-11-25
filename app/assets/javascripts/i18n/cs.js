@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
   "actions": {
     "cancel": "Zrušit",
-    "next": "Next",
+    "next": "Další",
     "save": "Uložit",
     "send": "Odeslat"
   },
@@ -188,7 +188,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
       "poi": {
         "address": "Adresa",
         "address_city": "Město",
-        "address_housenumber": "House number",
+        "address_housenumber": "Číslo domu",
         "address_postcode": "PSČ",
         "address_street": "Ulice",
         "name": "Název",
@@ -437,13 +437,13 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
   "devise": {
     "confirmations": {
       "confirmed": "Váš účet byl úspěšně potvrzen.",
-      "link": "You didn't receive confirmation instructions?",
+      "link": "Neobdrželi jste instrukce k potvrzení?",
       "send_instructions": "Za několik minut obdržíte email s instrukcemi k potvrzení vašeho účtu.",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
+      "send_paranoid_instructions": "Pokud váš účet existuje, tak za několik minut obdržíte informační email s instrukcemi k potvrzení vašeho účtu."
     },
     "destroy": {
       "confirm": "Jste si jistí?",
-      "headline": "Delete account",
+      "headline": "Smazat účet",
       "link": "Smazat"
     },
     "edit": {
@@ -460,32 +460,32 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
     },
     "failure": {
       "already_authenticated": "Přihlášení již proběhlo.",
-      "inactive": "Your account has not been activated yet.",
+      "inactive": "Váš účet zatím nebyl aktivován.",
       "invalid": "Nesprávný email nebo heslo.",
       "invalid_token": "Neplatný ověřovací symbol.",
       "last_attempt": "You have one more attempt before your account will be locked.",
       "locked": "Váš účet je uzamčen.",
       "not_found_in_database": "Invalid email or password.",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "Vaše přihlášení vypršelo, znovu se přihlaste a pokračujte. ",
       "unauthenticated": "Musíte se zaregistrovat nebo přihlásit, pak můžete pokračovat.",
       "unconfirmed": "Musíte potvrdit svůj účet, pak můžete pokračovat."
     },
     "mailer": {
       "confirmation_instructions": {
-        "landing_page": "Please click on the link that we just sent to your email address. If you do not receive an email from us, please first check if it is not hiding in your spam folder. If it is not there return to the sign up page and try again.",
+        "landing_page": "Klikněte, prosím, na odkaz, který jsme vám odeslali na vaši emailovou adresu. Pokud od nás neobdržíte email, tak jako první zkontrolujte, zda se nenachází ve složce Spam. Pokud zde není, tak se vraťte na přihlašovací stránku a zkuste to znovu. ",
         "subject": "Potvrzovací instrukce"
       },
       "reset_password_instructions": {
         "subject": "Instrukce k nastavení nového hesla"
       },
       "unlock_instructions": {
-        "subject": "Unlock instructions"
+        "subject": "Odemknout instrukce"
       }
     },
     "mandatory": "* Povinné",
     "omniauth_callbacks": {
       "failure": "Není možné autorizovat z %{kind}, protože: \"%{reason}\".",
-      "permission_missing": "You did not grant the required permission.",
+      "permission_missing": "Neudělili jste požadované povolení.",
       "success": "Úspěšná autorizace z účtu %{kind}."
     },
     "password_recovery": {
@@ -502,7 +502,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
         "comment": "Jestli jste nežádali o obnovení hesla tak tento email ignorujte. <br/> Vaše heslo bude změněné jenom jestli kliknete na odkaz nahoře a nastavíte si heslo nové.",
         "headline": "Vítejte %{email}",
         "link": "Změnit heslo",
-        "text": "We received a request to change your password. If you sent the request, click the following link - otherwise ignore this!"
+        "text": "Obdrželi jsme požadavek na změnu vašeho hesla. Pokud jste odeslali požadavek, tak klikněte na následující odkaz - pokud ne, tak toto hlášení ignorujte!"
       },
       "form": {
         "labels": {
@@ -516,8 +516,8 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
     "passwords": {
       "link": "Zapomněli jste heslo?",
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
-      "send_instructions": "You will receive an email with instructions on how to reset your password in a few minutes",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to reset your password",
+      "send_instructions": "Za několik minut obdržíte email s instrukcemi k obnovení vašeho hesla",
+      "send_paranoid_instructions": "Pokud váš účet existuje, tak za několik minut obdržíte informační email s instrukcemi k obnovení vašeho hesla",
       "updated": "Vaše heslo bylo úspěšně změněno. Nyní jste přihlášen(a).",
       "updated_not_active": "Vaše heslo bylo úspěšně změněno."
     },
@@ -530,7 +530,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
         "locked": "zamčeno",
         "unconfirmed": "nepotvrzené"
       },
-      "signed_up": "You have signed up successfully. A you have been sent a confirmation email.",
+      "signed_up": "Úspěšně jste se přihlásili. Byl vám zaslán potvrzovací email.",
       "signed_up_but_inactive": "You have signed up successfully. However, we could not sign you in because your account is not yet activated.",
       "signed_up_but_locked": "You have signed up successfully. However, we could not sign you in because your account is locked.",
       "signed_up_but_unconfirmed": "A message with a confirmation link has been sent to your email address. Please open the link to activate your account.",
@@ -538,22 +538,22 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
       "updated": "Úspěšně jste si aktualizovali účet."
     },
     "sessions": {
-      "inactive": "Your account has not been activated yet",
+      "inactive": "Váš účet zatím nebyl aktivován",
       "invalid": "Nesprávný email nebo heslo.",
       "invalid_token": "Neplatný ověřovací symbol.",
       "link": "Přihlásit se",
       "locked": "Váš účet je zablokovaný",
       "new": {
         "no_osm_account": "Nemáte účet u OpenStreetMap?",
-        "osm_promo_text": "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it.",
+        "osm_promo_text": "Wheelmap je založena na geodatech z OpenStreetMap (OSM). OpenStreetMap je celosvětová mapa, která je zadarmo a je vytvořena lidmi jako jste vy. Je to něco jako Wikipedie pro mapy. Abyste mohli upravovat místa nebo vytvářet nová, tak potřebujete účet na OpenStreetMap, se kterým musíte být přihlášen.",
         "promo_text_thank_you": "Děkujeme za vaší podporu!",
         "sign_in_with": "Přihlašte se pomocí %{kind}",
         "sign_up_with_osm": "Zaregistrujte se.",
-        "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
+        "wheelmap_promo_text": "Pokud máte povědomí o místech s přístupem pro vozíčkáře, tak můžete pomoci těmto lidem s jejich každodenními problémy. Jinak alespoň pomůžete do detailu popsat OpenStreetMap. "
       },
       "signed_in": "Přihlášení úspěšné.",
       "signed_out": "Odhlášení úspěšné.",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "Vaše přihlášení vypršelo, znovu se přihlaste a pokračujte.",
       "unauthenticated": "Musíte se zaregistrovat nebo přihlásit, pak můžete pokračovat.",
       "unconfirmed": "Musíte potvrdit svůj účet, pak můžete pokračovat."
     },
@@ -582,16 +582,16 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
           "email": "Email",
           "password": "Heslo",
           "password_confirmation": "Znovu zadejte heslo",
-          "wants_newsletter": "Yes, keep me up to date about Wheelmap - but please not more than once a month."
+          "wants_newsletter": "Ano, upozorňujte mě na aktualizace k aplikaci Wheelmap - ale ne více, než jednou za měsíc."
         },
         "submit": "Vytvořit účet"
       },
       "headline": "Vytvořit účet"
     },
     "unlocks": {
-      "link": "You didn't receive unlock instructions?",
-      "send_instructions": "You will receive an email in a few minutes with instructions on how to unlock your account",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to unlock your account",
+      "link": "Neobdrželi jste instrukce k odemknutí?",
+      "send_instructions": "Za několik minut obdržíte email s instrukcemi k odemknutí vašeho účtu",
+      "send_paranoid_instructions": "Pokud váš účet existuje, tak za několik minut obdržíte informační email s instrukcemi k odemknutí vašeho účtu",
       "unlocked": "Váš účet byl úspěšně odemknut. Nyní jste přihlášen(a)."
     }
   },
@@ -741,7 +741,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
+      "description": "Wheelmap.org je online mapa k vyhledávání a označení míst vhodných pro vozíčkáře. Zapojte se do označování veřejných míst, jako jsou bary, restaurace, kina nebo supermarkety.",
       "homepage": "Domovská stránka",
       "keywords": "místa přístupné pro vozíčkáře hledat označovat",
       "search": "Hledat",
@@ -804,7 +804,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "Ukázat na Wheelmap.org",
       "filter": {
         "category": "Vyberte kategorii",
         "deselect_all": "Odznačit vše",
@@ -845,7 +845,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
         "help": "Přístupné pro vozíčkáře? (Pomoc)",
         "more": "více ..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": "Přibližte si mapu, abyste viděli více míst."
     }
   },
   "how?": "Jak?",
@@ -928,37 +928,37 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
     "new": {
       "form": {
         "legend": "Poloha objektu",
-        "location": "Please click on the map where the place is located!",
+        "location": "Klikněte, prosím, na mapu, kde je dané místo umístěno!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "Dostupnost pro vozíčkáře",
+            "title": "Informace o dostupnosti pro vozíčkáře"
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
+            "help": "Můžete přesunout označovací kurzor na správné místo na mapě.",
             "name": "Adresa",
-            "title": "Where is the place?"
+            "title": "Kde je to místo?"
           },
           "contact": {
             "name": "Kontakt",
-            "title": "Other contact information"
+            "title": "Jiné kontaktní informace"
           },
           "name_category": {
-            "name": "Name and place type",
-            "title": "Give us some initial information about your place:"
+            "name": "Typ jména a místa",
+            "title": "Poskytněte nám důležité informace o vašem bydlišti:"
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": "Jsou všechny informace správné?"
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "Nebyla nalezena příbuzná místa",
+            "go_edit": "Pokračovat s tímto místem",
+            "go_new": "Neodpovídá místům nahoře ...",
+            "name": "Podobné místa",
+            "title": "Našli jsme podobná místa. Je to jedno z těchto?"
           }
         },
-        "title": "Add a place"
+        "title": "Přidat místo"
       },
       "header": {
         "title": "Nové místo | wheelmap.org"
@@ -990,7 +990,6 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
     },
     "node_photos": {
       "add": "Přidat",
-      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Fotky tohoto místa:",
       "upload": "Nahrát"
     },
@@ -1023,7 +1022,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
       "share": {
         "email": "Email",
         "facebook": "Facebook",
-        "text": "I found this place on Wheelmap.org: %{name}",
+        "text": "Našel jsem toto místo na Wheelmap.org: %{name}",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1126,9 +1125,9 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
       "government": "Vláda",
       "health": "Zdraví",
       "leisure": "Volný čas",
-      "misc": "Miscellaneous",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "misc": "Různé",
+      "money_post": "Banka / Pošta",
+      "public_transfer": "Veřejná doprava",
       "shopping": "Nákupy",
       "sport": "Sport",
       "tourism": "Cestování",
@@ -1173,12 +1172,12 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
         "government": "Vládní agentura",
         "police": "Policie",
         "public_building": "Veřejná budova",
-        "townhall": "Town hall"
+        "townhall": "Radnice"
       },
       "health": {
         "alternative": "Alternative medicine practitioner",
         "dentist": "Zubař",
-        "doctors": "Doctor",
+        "doctors": "Doktor",
         "hearing_aids": "Dodavatel naslouchacích pomůcek",
         "hospital": "Nemocnice",
         "medical_supply": "Medicínské vybavení",
@@ -1195,7 +1194,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
         "brothel": "Nevěstinec",
         "casino": "Kasino",
         "cinema": "Kino",
-        "community_centre": "Community centre",
+        "community_centre": "Komunitní centrum",
         "gallery": "Galerie",
         "massage": "Massage spa",
         "nightclub": "Noční klub",
@@ -1228,7 +1227,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
         "aerodrome": "Letiště",
         "bicycle_parking": "Stojan na kola",
         "bicycle_rental": "Půjčovna kol",
-        "boatyard": "Boat yard",
+        "boatyard": "Přístav",
         "bus_station": "Autobusová stanice",
         "bus_stop": "Zastávka autobusu",
         "cable_car": "Lanovka",
@@ -1260,7 +1259,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
         "butcher": "Řeznictví",
         "car_repair": "Autoservis",
         "car_shop": "Automobily",
-        "chemist": "Chemist / Drugstore",
+        "chemist": "Drogerie / Lékárna",
         "clothes": "Oblečení",
         "computer": "Počítače",
         "confectionery": "Cukrárna",
@@ -1277,7 +1276,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
         "florist": "Květinářství",
         "funeral_directors": "Funeral home",
         "furniture": "Nábytek",
-        "garden_centre": "Garden centre",
+        "garden_centre": "Zahradní centrum",
         "gift": "Suvenýry",
         "greengrocer": "Greengrocer",
         "hairdresser": "Kadeřnictví",
@@ -1449,7 +1448,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
       }
     },
     "timeout": {
-      "headline": "Sorry, something went wrong",
+      "headline": "Omlouváme se, něco se pokazilo",
       "info": "Vyhledávání bylo dočasně nedostupné.",
       "repeat_search": "Hledat znovu"
     }
@@ -1537,11 +1536,11 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
       },
       "newsletter": {
         "label": "Ano, posílejte mi novinky o Wheelmap.",
-        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
+        "text": "Zůstaňte informovaní o novinkách na Wheelmap. Nebojte se, nebudeme vás spamovat. Uslyšíte o nás jednou za měsíc.",
         "title": "Novinky"
       },
       "photos": {
-        "empty": "You haven't uploaded any photos yet.",
+        "empty": "Zatím jste nenahráli žádné fotografie.",
         "title": "Fotky"
       },
       "show": {
@@ -1561,8 +1560,9 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
             "other": "přidal %{count} míst"
           },
           "pois_edited": {
-            "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "few": "Upravit %{count} míst",
+            "one": "Upravená %{count} místa",
+            "other": "Upravená %{count} místa"
           },
           "pois_marked": {
             "few": "označil/a %{count} místa",
@@ -1571,25 +1571,25 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
           },
           "text": "Už jste"
         },
-        "text_html": "Vítejte (zpět) na Wheelmap.org! Jsme rádi, že jste na palubě! Jestli se chcete o Wheelmap.org dozvědět trochu víc, můžete si projít náš <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> nebo <a href=\"http://wheelmap.org/en/faqs/\">často kladené dotazy</a>. Nebo si přečtěte o lokálních <a href=\"http://wheelmap.org/en/get-engaged/\">projektech</a>, kterými můžete Wheelmap.org i vy podpořit.<br>\nZůstaňte ve spojení<br>\nPokud chcete dostávat pravidelně informace, můžete využít náš měsíční newsletter nebo se připojit na naši stránku na <a href=\"https://www.facebook.com/wheelmap\">Facebooku</a> či <a href=\"https://twitter.com/wheelmap\">Twitteru</a>. Těšíme se na vaše názory a rádi je s vámi prodiskutujeme!<br>\nPřejeme příjemné mapování!<br>\nVáš tým Wheelmap",
+        "text_html": "Ahoj,<br>\nVítejte (zpět) na Wheelmap.org! Jsme rádi, že se opět shledáváme! Můžete prohlížet váš <a href=\"http://news.wheelmap.org/en/\">Blog</a>nebo<a href=\"http://news.wheelmap.org/en/FAQ/\">Často kladené otázky</a>, pokud chcete Wheelmap.org poznat trochu více. Nebo se můžete dozvědět více o <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projektech</a>, které nabízíme na Wheelmap.org a jak se do nich můžete zapojit.<br>Abyste zůstali v kontaktu, tak můžete odebírat naše měsíční novinky a sledovat nás na <a href=\"https://www.facebook.com/wheelmap\">Facebooku</a> a <a href=\"https://twitter.com/wheelmap\">Twitteru</a>. Těšíme se na váš názor a na začátek společného rozhovoru!<br>\nA nyní přejeme veselé mapování!<br>\nVáš Wheelmap team",
         "title": "Přehled"
       },
       "widget": {
-        "categories": "Show category filter",
-        "center": "Map area",
-        "empty_center": "Search for center of map …",
-        "empty_provider": "Choose a Provider",
-        "height": "Height",
+        "categories": "Zobrazit filtr kategorií",
+        "center": "Oblast mapy",
+        "empty_center": "Hledat střed mapy ...",
+        "empty_provider": "Vyberte poskytovatele",
+        "height": "Výška",
         "legends": {
-          "embed": "Embed code",
-          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
-          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
-          "preview": "Preview",
-          "settings": "Settings"
+          "embed": "Vložený kód ",
+          "embed_explanation": "Můžete změnit specifikace pro zeměpisnou šířku (<code>lat</code>), zeměpisnou délku (<code>lon</code>) a úroveň přiblížení (<code>zoom</code>) manuálně v kódu, čímž se upraví segment mapy (widget) podle místa, které chcete zobrazit.",
+          "general": "Vytvořte si vlastní Wheelmap widget a vložte jej na vaši internetovou stránku nebo blog.",
+          "preview": "Náhled",
+          "settings": "Nastavení"
         },
-        "providers": "Provider",
+        "providers": "Poskytovatel",
         "title": "Widget",
-        "width": "Width"
+        "width": "Šířka"
       }
     }
   },

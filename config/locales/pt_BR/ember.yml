@@ -5,7 +5,7 @@ pt_BR:
     node_type:
       prompt: "Escolher tipo"
     node:
-      info_edit_position: "O lugar aparecerá no Wheelmap tal como é mostrado acima. Se o marcador não está no ponto correto, é possível <a href=\"%{url}\">mudar a posição</a> dele no OpenStreetMap."
+      info_edit_position: "O lugar aparecerá no Wheelmap tal como é mostrado acima. Se o marcador não está no ponto correto, é possível <a href=\"%{url}\">mudar a posição dele no OpenStreetMap.</a> "
       mail:
         subject: "[Wheelmap] Problema com %{headline}"
         body: "(Por favor, somente escreva em inglês ou alemão.)\n\nHi Sozialhelden,\n\nSomething is wrong with this location: %{url}\n\nThe problem is:"
