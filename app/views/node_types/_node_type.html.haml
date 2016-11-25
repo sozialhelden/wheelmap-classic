@@ -1,5 +1,5 @@
 %tr
   %td=node_type.localized_name
-  %td=image_tag("/assets/icons/#{node_type.icon}", :size => '22x22')
+  %td=image_tag("icons/#{node_type.icon}", :size => '22x22')
   %td=link_to "#{node_type.osm_key}=#{node_type.osm_value}", "http://wiki.openstreetmap.org/wiki/Tag:#{node_type.osm_key}%3D#{node_type.osm_value}"
   %td=number_with_delimiter(node_type.pois.count)
