@@ -10,8 +10,6 @@ class ChangeArtMuseumToMuseumArt < ActiveRecord::Migration
     unless node_type.nil? && node_type.icon == 'art_museum.png'
       node_type.icon = 'museum_art.png'
       node_type.save
-    else
-      return
     end
   end
 
@@ -20,8 +18,6 @@ class ChangeArtMuseumToMuseumArt < ActiveRecord::Migration
     unless node_type.nil? && node_type.icon == 'museum_art.png'
       node_type.icon = 'art_museum.png'
       node_type.save
-    else
-      return
     end
   end
 end
