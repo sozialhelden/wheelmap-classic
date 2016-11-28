@@ -14,7 +14,7 @@ This Repository is the source code of the website [Wheelmap.org](http://wheelmap
 
 - Ruby 2.2.2
 - Bundler
-- MySQL
+- MySQL 5.6 (< 5.7)
 - ImageMagick
 - PhantomJS
 - Node >= 4.1
@@ -85,8 +85,10 @@ Ubuntu
 
 ```
 $ sudo apt-get update
-$ sudo apt-get install -y libmysqlclient-dev mysql-server
+$ sudo apt-get install -y libmysqlclient-dev mysql-server-5.6
+
 ```
+Note: Please make sure to install a mysql-server version that is before `v5.7` due to some geometry issues.
 
 #### Install ImageMagick:
 
