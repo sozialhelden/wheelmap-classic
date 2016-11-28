@@ -46,18 +46,24 @@ fr:
       government:
         courthouse: Palais de justice
         embassy: Ambassade
+        employment_agency: "Agence pour l'emploi"
         government: "Agence gouvernementale"
         police: Police
         public_building: "Bâtiment ouvert au public"
         townhall: Mairie
       health:
+        alternative: "Praticien en médecine alternative"
         dentist: Dentiste
         doctors: Médecin
         hearing_aids: "Audioprothésiste"
         hospital: Hôpital
         medical_supply: "Équipement médical"
+        occupational_therapist: "Ergothérapeute"
         pharmacy: Pharmacie
+        physiotherapist: Physiothérapeute
+        psychotherapist: Psychothérapeute
         social_facility: "Établissement social"
+        speech_therapist: "Orthophoniste"
         veterinary: Vétérinaire
       leisure:
         arena: Stade
@@ -66,18 +72,23 @@ fr:
         cinema: Cinéma
         community_centre: "Centre communautaire"
         gallery: Galerie
+        massage: "Massage, spa"
         nightclub: Boîte de nuit
         playground: Terrain de jeu
         sauna: Sauna
         stripclub: Club de striptease
+        tattoo: "Tatoueur"
         theatre: Théâtre
         zoo: Zoo
       misc:
+        association: Association
         company: "Entreprise (bureau)"
         estate_agent: "Agent immobilier"
         insurance: Assurance
         lawyer: Avocat
+        ngo: "Organisation non gouvernementale"
         place_of_worship: "Lieu de culte"
+        political_party: "Bureau de parti politique"
         toilets: Toilettes
       money_post:
         atm: GAB
@@ -110,6 +121,8 @@ fr:
         tram_stop: "Arrêt de tramway"
       shopping:
         alcohol: Alcool
+        antiques: Antiquités
+        art: "Galerie"
         bakery: Boulangerie
         beauty: "Salon d'esthétique"
         beverages: Boissons
@@ -123,23 +136,32 @@ fr:
         computer: Ordinateur
         confectionery: "Magasin de bonbons"
         convenience: Magasin d'appoint
+        copyshop: "Reprographie"
         deli: Épicerie fine
         department_store: "Grand magasin"
         doityourself: "Magasin de bricolage"
         dry_cleaning: "Nettoyage à sec"
         electronics: Électronique
+        erotic: "Sex shop"
         fabric: "Magasin de tissus"
         farm_shop: "Produits fermiers"
         florist: Fleuriste
+        funeral_directors: "Salon funéraire"
         furniture: Ameublement
         garden_centre: "Jardinerie"
         gift: "Boutique de cadeaux"
+        greengrocer: Marchand de fruits et légumes
         hairdresser: Coiffeur
         hardware: Quincaillerie
+        interior_decoration: "Boutique de design d'intérieur"
         jewelry: Bijouterie
         kiosk: Kiosque
         laundry: Laverie
         mall: "Centre commercial"
+        mobile_phone: "Magasin de téléphonie mobile"
+        music: "Magasin de disques"
+        musical_instrument: "Magasin d'instruments de musique"
+        newsagent: "Actualités agent"
         optician: Opticien
         organic: "Magasin de produits biologiques"
         outdoor: "Équipement de plein air"
@@ -150,8 +172,12 @@ fr:
         sports: ' Sports'
         stationery: Papeterie
         supermarket: Supermarché
+        tailor: Tailleur
+        tea: "Magasin de thé"
+        tobacco: "Bureau de tabac"
         toys: Jouets
         travel_agency: "Agence de voyage"
+        variety_store: "Magasin discount"
         video: "Location vidéo"
       sport:
         pitch: "Terrain de sport"

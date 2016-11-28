@@ -7,6 +7,9 @@
       government: Regjering
       health: Helse
       leisure: Fritid
+      misc: Diverse
+      money_post: "Bank-/ postkontor"
+      public_transfer: "Offentlig transport"
       shopping: Shopping
       sport: Sport
       tourism: Turisme
@@ -43,35 +46,49 @@
       government:
         courthouse: Tinghus
         embassy: Ambasade
+        employment_agency: "Bemanningsbyrå"
         government: "Regjeringsorgan"
         police: Politi
         public_building: "Offentlig bygning"
+        townhall: Rådhus
       health:
+        alternative: "Utøver av alternativ medisin"
         dentist: Tannlege
+        doctors: Lege
         hearing_aids: "Høreapparatforhandler"
         hospital: Sykehus
         medical_supply: "Medisinsk utstyr"
+        occupational_therapist: "Ergoterapeut"
         pharmacy: Apotek
+        physiotherapist: Fysioterapeut
+        psychotherapist: Psykoterapeut
         social_facility: "Sosiale anlegg"
+        speech_therapist: "Taleterapeut"
         veterinary: Veterinær
       leisure:
         arena: Arena
         brothel: Bordell
         casino: Kasino
         cinema: Kino
+        community_centre: "Samfunnshus"
         gallery: Galleri
+        massage: "Massasje spa"
         nightclub: Nattklubb
         playground: Lekeplass
         sauna: Sauna
         stripclub: Strippeklubb
+        tattoo: "Tatoveringbutikk "
         theatre: Teater
         zoo: Dyrepark
       misc:
+        association: Forbund
         company: "Firmakontor"
         estate_agent: "Eiendomsmegler"
         insurance: Forsikring
         lawyer: Advokat
+        ngo: "Frivillig organisasjon"
         place_of_worship: "Gudshus"
+        political_party: "Politisk partikontor"
         toilets: Toalett
       money_post:
         atm: Minibank
@@ -83,6 +100,7 @@
         aerodrome: Flyplass
         bicycle_parking: "Sykkelparkering"
         bicycle_rental: "Sykkelutleie"
+        boatyard: Skipsverft
         bus_station: "Busstasjon"
         bus_stop: "Busstholdeplass"
         cable_car: "Taubane"
@@ -103,6 +121,8 @@
         tram_stop: "Trikkeholdeplass"
       shopping:
         alcohol: Brennevin
+        antiques: Antikviteter
+        art: "Galleributikk"
         bakery: Bakeri
         beauty: "Skjønnhetssalong"
         beverages: Drikkevarer
@@ -111,26 +131,37 @@
         butcher: Slakter
         car_repair: "Bilreparasjon"
         car_shop: "Bilbutikk"
+        chemist: Apotek
         clothes: Klær
         computer: Datamaskin
         confectionery: "Godtebutikk"
         convenience: Bekvemmelighet
+        copyshop: "Kopibutikk"
         deli: Delikatesse
         department_store: "Varemagasin"
         doityourself: "Gjør det selv"
         dry_cleaning: "Renseri"
         electronics: Elektronikk
+        erotic: "Sexbutikk"
         fabric: "Stoffbutikk"
         farm_shop: "Gårdsutsalg"
         florist: Blomsterbutikk
+        funeral_directors: "Begravelsesbyrå"
         furniture: Møbelbutikk
+        garden_centre: "Hagesenter"
         gift: "Gavebutikk"
+        greengrocer: 'Grønnsakshandler '
         hairdresser: Frisør
         hardware: Jernvare
+        interior_decoration: "Interiørdesignbutikk"
         jewelry: Smykker
         kiosk: Kiosk
         laundry: Vaskeri
         mall: "Kjøpesenter"
+        mobile_phone: "Mobiltelefonbutikk"
+        music: "Platebutikk"
+        musical_instrument: "Musikkinstrumentbutikk"
+        newsagent: "Nyhetsagent"
         optician: Optiker
         organic: "Organisk butikk"
         outdoor: "Utendørsutstyr"
@@ -141,8 +172,12 @@
         sports: Sport
         stationery: Kontorrekvisita
         supermarket: Supermarked
+        tailor: Skredder
+        tea: "Tebutikk"
+        tobacco: "Tobakksbutikk"
         toys: Leker
         travel_agency: "Reisebyrå"
+        variety_store: "Rabattbutikk"
         video: "Videoutleiebutikk"
       sport:
         pitch: "Idrettsplass"

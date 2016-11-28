@@ -436,13 +436,13 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
   "devise": {
     "confirmations": {
       "confirmed": "Twój adres email został potwierdzony.",
-      "link": "You didn't receive confirmation instructions?",
+      "link": "Nie otrzymałeś instrukcji odblokowania?",
       "send_instructions": "Za chwilę otrzymasz wiadomość z linkiem do potwierdzenia Twojego adresu email.",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
+      "send_paranoid_instructions": "Jeśli twoje konto istnieje, za kilka minut otrzymasz email z instrukcją, jak je potwierdzić."
     },
     "destroy": {
       "confirm": "Jesteś pewien?",
-      "headline": "Delete account",
+      "headline": "Usuń konto",
       "link": "Skasuj teraz"
     },
     "edit": {
@@ -459,32 +459,32 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
     },
     "failure": {
       "already_authenticated": "Jesteś już zalogowany.",
-      "inactive": "Your account has not been activated yet.",
+      "inactive": "Twoje konto nie zostało jeszcze  aktywowane.",
       "invalid": "Niepoprawny adres email lub hasło.",
       "invalid_token": "Niepoprawny token.",
       "last_attempt": "You have one more attempt before your account will be locked.",
       "locked": "Twoje konto jest zablokowane.",
       "not_found_in_database": "Invalid email or password.",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "Sesja wygasła, aby kontynuować zaloguj się ponownie.",
       "unauthenticated": "Aby kontynuować, zaloguj lub zarejestruj się.",
       "unconfirmed": "Aby kontynuować, potwierdź konto."
     },
     "mailer": {
       "confirmation_instructions": {
-        "landing_page": "Please click on the link that we just sent to your email address. If you do not receive an email from us, please first check if it is not hiding in your spam folder. If it is not there return to the sign up page and try again.",
+        "landing_page": "Proszę kliknąć w link przesłany właśnie na Twój adres email. Jeśli email nie dotarł, proszę sprawdzić folder ze spamem. Jeśli email rzeczywiście nie dotarł, proszę wrócić do strony rejestracji spróbować ponownie.",
         "subject": "Jeszcze tylko jeden krok do aktywacji twojego konta"
       },
       "reset_password_instructions": {
         "subject": "Instrukcja ustawienia nowego hasła"
       },
       "unlock_instructions": {
-        "subject": "Unlock instructions"
+        "subject": "Intrukcje odblokowywania"
       }
     },
     "mandatory": "* Wymagane",
     "omniauth_callbacks": {
       "failure": "Autoryzacja przy pomocy %{kind} nie powiodła się. Błąd: \"%{reason}\".",
-      "permission_missing": "You did not grant the required permission.",
+      "permission_missing": "Nie masz odpowiednich uprawnień.",
       "success": "Poprawnie zalogowany z %{kind}."
     },
     "password_recovery": {
@@ -501,7 +501,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         "comment": "Jeżeli nie próbowałeś zmienić hasła, zignoruj ten e-mail.<br/>Twoje hasło nie zostanie zmienione, dopóki nie klikniesz w link powyżej i nie ustawisz nowego hasła.",
         "headline": "Witaj %{email}",
         "link": "Zmień moje hasło",
-        "text": "We received a request to change your password. If you sent the request, click the following link - otherwise ignore this!"
+        "text": "Otrzymaliśmy żądanie zmiany hasła. Jeśli to Ty, kliknij w następujący link. W innym wypadku - zignoruj tę wiadomość."
       },
       "form": {
         "labels": {
@@ -515,8 +515,8 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
     "passwords": {
       "link": "Zapomniałeś hasła?",
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
-      "send_instructions": "You will receive an email with instructions on how to reset your password in a few minutes",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to reset your password",
+      "send_instructions": "Wkrótce powinieneś otrzymać email z instrukcją, jak zresetować hasło.",
+      "send_paranoid_instructions": "Jeśli twoje konto istnieje, za kilka minut otrzymasz email z instrukcją, jak zresetować hasło.",
       "updated": "Hasło zostało pomyślnie zmienione, jesteś teraz zalogowany.",
       "updated_not_active": "Twoje hasło zostało zmienione"
     },
@@ -529,7 +529,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         "locked": "zablokowane",
         "unconfirmed": "niepotwierdzone"
       },
-      "signed_up": "You have signed up successfully. A you have been sent a confirmation email.",
+      "signed_up": "Rejestracja zakończyła się pomyślnie. Wysłaliśmy Ci email z potwierdzeniem.",
       "signed_up_but_inactive": "You have signed up successfully. However, we could not sign you in because your account is not yet activated.",
       "signed_up_but_locked": "You have signed up successfully. However, we could not sign you in because your account is locked.",
       "signed_up_but_unconfirmed": "A message with a confirmation link has been sent to your email address. Please open the link to activate your account.",
@@ -537,22 +537,22 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
       "updated": "Konto zostało pomyślnie zaktualizowane."
     },
     "sessions": {
-      "inactive": "Your account has not been activated yet",
+      "inactive": "Twoje konto nie zostało jeszcze  aktywowane.",
       "invalid": "Niepoprawny adres e-mail lub hasło",
       "invalid_token": "Nieprawidłowy token autoryzacji",
       "link": "Zaloguj się",
       "locked": "Twoje konto jest zablokowane",
       "new": {
         "no_osm_account": "Nie masz konta w OpenStreetMap?",
-        "osm_promo_text": "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it.",
+        "osm_promo_text": "Wheelmap bazuje na danych mapowych OpenStreetMap (OSM). OpenStreetMap jest bezpłatną mapą świata, tworzoną przez ludzi takich jak Ty. Jest jak Wikipedia dla map. Aby móc zmieniać lub tworzyć miejsca, musisz posiadać konto na OpenStreetMap i być na nim zalogowany.",
         "promo_text_thank_you": "Dziękujemy z Twoje wsparcie!",
         "sign_in_with": "Zaloguj się za pomocą %{kind}",
         "sign_up_with_osm": "Zarejestruj się.",
-        "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
+        "wheelmap_promo_text": "Z Twoimi informacjami o dostępie do miejsc dla osób na wózkach, pomagasz ludziom z ograniczeniam fizycznymi w planowaniu ich codziennych aktywnosci. Co więcej, to również pomoże utrzymać  OpenStreetMap bardziej szczegółowym."
       },
       "signed_in": "Zalogowano pomyślnie.",
       "signed_out": "Wylogowano pomyślnie.",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "Sesja wygasła, aby kontynuować zaloguj się ponownie.",
       "unauthenticated": "Aby kontynuować, zaloguj lub zarejestruj się.",
       "unconfirmed": "Aby kontynuować, potwierdź konto."
     },
@@ -581,16 +581,16 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
           "email": "E-mail",
           "password": "Hasło",
           "password_confirmation": "Powtórz hasło",
-          "wants_newsletter": "Yes, keep me up to date about Wheelmap - but please not more than once a month."
+          "wants_newsletter": "Tak, chcę otrzymywać bieżące informacje o Wheelmap - ale proszę, nie więcej niż raz na miesiąc."
         },
         "submit": "Zarejestruj się"
       },
       "headline": "Zarejestruj się"
     },
     "unlocks": {
-      "link": "You didn't receive unlock instructions?",
-      "send_instructions": "You will receive an email in a few minutes with instructions on how to unlock your account",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to unlock your account",
+      "link": "Nie otrzymałeś instrukcji odblokowania?",
+      "send_instructions": "Za kilka minut otrzymasz email z instrukcją, jak odblokować swoje konto.",
+      "send_paranoid_instructions": "Jeśli twoje konto istnieje, za kilka minut otrzymasz email z instrukcją, jak je odblokować.",
       "unlocked": "Twoje konto zostało odblokowane. Jesteś teraz zalogowany."
     }
   },
@@ -1170,25 +1170,25 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
       "government": {
         "courthouse": "Sąd",
         "embassy": "Ambasada",
-        "employment_agency": "Employment agency",
+        "employment_agency": "Agencja zatrudniania",
         "government": "Agencja rządowa",
         "police": "Policja",
         "public_building": "Budynek użyteczności publicznej",
-        "townhall": "Town hall"
+        "townhall": "Ratusz miejski"
       },
       "health": {
-        "alternative": "Alternative medicine practitioner",
+        "alternative": "Specjalista medycyny alternatywnej",
         "dentist": "Stomatolog",
-        "doctors": "Doctor",
+        "doctors": "Lekarz",
         "hearing_aids": "Sklep z aparatami słuchowymi",
         "hospital": "Szpital",
         "medical_supply": "Zaopatrzenie medyczne",
-        "occupational_therapist": "Occupational therapist",
+        "occupational_therapist": "Terapeuta zajęciowy",
         "pharmacy": "Apteka",
-        "physiotherapist": "Physiotherapist",
-        "psychotherapist": "Psychotherapist",
+        "physiotherapist": "Fizjoterapeuta",
+        "psychotherapist": "Psychoterapeuta",
         "social_facility": "Infrastruktura społeczna",
-        "speech_therapist": "Speech therapist",
+        "speech_therapist": "Logopeda",
         "veterinary": "Weterynarz"
       },
       "leisure": {
@@ -1198,24 +1198,24 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         "cinema": "Kino",
         "community_centre": "Dom kultury",
         "gallery": "Galeria",
-        "massage": "Massage spa",
+        "massage": "Salon masażu",
         "nightclub": "Klub nocny",
         "playground": "Plac zabaw",
         "sauna": "Sauna",
         "stripclub": "Klub nocny ze striptizem",
-        "tattoo": "Tattoo shop",
+        "tattoo": "Salon tatuażu",
         "theatre": "Teatr",
         "zoo": "Zoo"
       },
       "misc": {
-        "association": "Association",
+        "association": "Stowarzyszenie",
         "company": "Firma (Biuro)",
         "estate_agent": "Biuro Nieruchomości",
         "insurance": "Agencja ubezpieczeniowa",
         "lawyer": "Kancelaria prawna",
-        "ngo": "Non-government organisation",
+        "ngo": "Organizacja pozarządowa",
         "place_of_worship": "Miejsce kultu",
-        "political_party": "Political party office",
+        "political_party": "Biuro partii politycznej",
         "toilets": "Toaleta"
       },
       "money_post": {
@@ -1229,7 +1229,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         "aerodrome": "Lotnisko",
         "bicycle_parking": "Parking dla rowerów",
         "bicycle_rental": "Wypożyczalnia rowerów",
-        "boatyard": "Boat yard",
+        "boatyard": "Stocznia jachtowa",
         "bus_station": "Dworzec autobusowy",
         "bus_stop": "Przystanek autobusowy",
         "cable_car": "Kolejka linowa",
@@ -1251,8 +1251,8 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
       },
       "shopping": {
         "alcohol": "Sklep monopolowy",
-        "antiques": "Antiques",
-        "art": "Gallery shop",
+        "antiques": "Antyki",
+        "art": "Sklep ze sztuką",
         "bakery": "Piekarnia",
         "beauty": "Kosmetyczka",
         "beverages": "Sklep z napojami",
@@ -1261,12 +1261,12 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         "butcher": "Rzeźnik",
         "car_repair": "Warsztat samochodowy",
         "car_shop": "Salon samochodowy",
-        "chemist": "Chemist / Drugstore",
+        "chemist": "Apteka",
         "clothes": "Sklep z ubraniami",
         "computer": "Komputer",
         "confectionery": "Cukiernia",
         "convenience": "Sklep",
-        "copyshop": "Copy shop",
+        "copyshop": "Ksero",
         "deli": "Delikatesy",
         "department_store": "Dom towarowy",
         "doityourself": "Zrób to sam",
@@ -1276,22 +1276,22 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         "fabric": "Sklep z tkaninami",
         "farm_shop": "Żywność ekologiczna",
         "florist": "Kwiaciarnia",
-        "funeral_directors": "Funeral home",
+        "funeral_directors": "Zakład pogrzebowy",
         "furniture": "Sklep z meblami",
         "garden_centre": "Sklep ogrodniczy",
         "gift": "Sklep z prezentami",
-        "greengrocer": "Greengrocer",
+        "greengrocer": "Sklep warzywny",
         "hairdresser": "Fryzjer",
         "hardware": "Hardware",
-        "interior_decoration": "Interior design shop",
+        "interior_decoration": "Sklep meblowy",
         "jewelry": "Jubiler",
         "kiosk": "Kiosk",
         "laundry": "Pralnia",
         "mall": "Centrum handlowe",
-        "mobile_phone": "Mobile phone shop",
-        "music": "Record store",
-        "musical_instrument": "Musical instrument shop",
-        "newsagent": "News agent",
+        "mobile_phone": "Sklep z telefonami",
+        "music": "Sklep z płytami",
+        "musical_instrument": "Sklep muzyczny",
+        "newsagent": "Kiosk",
         "optician": "Optyk",
         "organic": "Sklep z artykułami organicznymi",
         "outdoor": "Sklep z odzieżą sportową ",
@@ -1302,12 +1302,12 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         "sports": "Sport",
         "stationery": "Sklep z artykułami biurowymi",
         "supermarket": "Supermarket",
-        "tailor": "Tailor",
-        "tea": "Tea supply",
-        "tobacco": "Tobacco shop",
+        "tailor": "Krawiec",
+        "tea": "Herbaciarnia",
+        "tobacco": "Sklep tytoniowy",
         "toys": "Zabawki",
         "travel_agency": "Biuro podróży",
-        "variety_store": "Discount store",
+        "variety_store": "Dyskont",
         "video": "Wypożyczalnia video / płyt DVD"
       },
       "sport": {

@@ -1,20 +1,34 @@
 fi:
   poi:
     category:
+      accommodation: Majoitus
       education: Sivistys
+      food: Ruokailu
+      government: Hallitus
+      health: Terveys
       leisure: Vapaa-aika
       misc: Sekalaiset
+      money_post: "Pankki / Postitoimisto"
+      public_transfer: "Julkinen liikenne"
       shopping: Ostos
       sport: Urheilu
       tourism: Matkailu
+      unknown: 'Tuntematon '
     name:
       accommodation:
+        beach_resort: "Rantahotelli"
+        bed_and_breakfast: "Aamiaismajoitus"
+        camp_site: "Leirintäalue"
+        caravan_site: "Leirintäalue"
         chalet: Alppimaja
+        dormitory: Asuntola
+        guest_house: "Vierastalo"
         hostel: Hostelli
         hotel: Hotelli
         motel: Motelli
       education:
         college: Oppilaitos
+        driving_school: "Autokoulu"
         kindergarten: Päiväkoti
         library: Kirjasto
         museum: Museo
@@ -22,58 +36,169 @@ fi:
         university: Yliopisto
       food:
         bar: Baari
+        biergarten: Kesäterassi
+        cafe: Kahvila
         drinking_water: "Vesipiste"
         fast_food: "Pikaruoka"
+        ice_cream: "Jäätelöbaari"
         pub: Pubi
         restaurant: Ravintola
       government:
         courthouse: Oikeustalo
+        embassy: Lähetystö
+        employment_agency: "Työvoimatoimisto"
+        government: "Viranomainen"
+        police: Poliisi
+        public_building: "Julkinen rakennus"
+        townhall: Kaupungintalo
       health:
+        alternative: "Vaihtoehtoisen lääketieteen harjoittaja"
+        dentist: Hammaslääkäri
+        doctors: Lääkäri
+        hearing_aids: "Kuulon apuvälineiden myyjä"
         hospital: Sairaala
+        medical_supply: "Lääkintätarvikkeet"
+        occupational_therapist: "Toimintaterapeutti"
         pharmacy: Apteekki
+        physiotherapist: Fysioterapeutti
+        psychotherapist: Psykoterapeutti
+        social_facility: "Yhteisöllinen tila"
+        speech_therapist: "Puheterapeutti"
         veterinary: Eläinlääkäri
       leisure:
         arena: Areena
+        brothel: Ilotalo
+        casino: Kasino
         cinema: Elokuvateatteri
+        community_centre: "Kohtaamispaikka"
         gallery: Galleria
+        massage: "Hieroja"
         nightclub: Yökerho
+        playground: 'Leikkikenttä '
         sauna: Sauna
+        stripclub: Strippiklubi
+        tattoo: "Tatuointiliike"
         theatre: Teatteri
         zoo: Eläintarha
       misc:
+        association: Yhdistys
+        company: "Yhtiö (Toimisto)"
+        estate_agent: "Kiinteistövälittäjä"
+        insurance: Vakuutus
+        lawyer: Asianajaja
+        ngo: "Kansalaisjärjestö"
+        place_of_worship: "Paikka uskonnon harjoittamiseen"
+        political_party: "Puoluetoimisto"
         toilets: Vessat
       money_post:
         atm: Pankkiautomaatti
         bank: Pankki
+        bureau_de_change: "Valuutanvaihtopiste"
+        post_box: "Postilaatikko"
+        post_office: "Postitoimisto"
       public_transfer:
+        aerodrome: Lentokenttä
+        bicycle_parking: "Pyöräparkki"
+        bicycle_rental: "Pyörävuokraamo"
+        boatyard: Venesatama
+        bus_station: "Linja-autoasema"
+        bus_stop: "Linja-autopysäkki"
+        cable_car: "Köysirata"
+        car_rental: "Autovuokraamo"
+        car_sharing: "Auton yhteiskäyttö"
+        chair_lift: "Tuolihissi"
         ferry: Autolautta
+        ferry_terminal: "Lauttaterminaali"
+        fuel: "Huoltoasema"
         halt: Seisake
+        light_rail: "Raitiotie"
         parking: Pysäköinti
+        parking_aisle: "Parkkipaikan osa"
         platform: Laituri
+        station: "Juna-asema"
+        subway_entrance: "Metron sisäänkäynti"
+        terminal: "Lentokentän terminaali"
+        tram_stop: "Raitiovaunupysäkki"
       shopping:
+        alcohol: Viina
+        antiques: Antiikkiliike
+        art: "Galleriamyymälä"
         bakery: Leipomo
+        beauty: "Kauneushoitola"
         beverages: Juotavaa
+        bicycle: "Pyöräliike"
         books: Kirjoja
         butcher: Lihakauppa
+        car_repair: "Autokorjaamo"
+        car_shop: "Autokauppa"
+        chemist: Apteekki
         clothes: Vaatteita
         computer: Tietokone
+        confectionery: "Karkkikauppa"
+        convenience: Sopivuus
+        copyshop: "Kopiointiliike"
+        deli: Herkkukauppa
+        department_store: "Tavaratalo"
+        doityourself: "Tee se itse"
+        dry_cleaning: "Kuivapesupalvelu"
         electronics: Elektroniikka
+        erotic: "Seksikauppa"
+        fabric: "Kangaskauppa"
+        farm_shop: "Maatilatori"
         florist: Kukkakauppa
+        funeral_directors: "Hautaustoimisto"
         furniture: Huonekaluja
+        garden_centre: "Puutarhamyymälä"
+        gift: "Lahjatavaraliike"
+        greengrocer: Vihanneskauppias
         hairdresser: Kampaamo
         hardware: Työkaluja
+        interior_decoration: "Sisustusliike"
+        jewelry: Koruliike
         kiosk: Kioski
+        laundry: Pesula
+        mall: "Ostoskeskus"
+        mobile_phone: "Puhelinmyymälä"
+        music: "Levykauppa"
+        musical_instrument: "Musiikkiliike"
+        newsagent: "Tietotoimisto"
         optician: Optikko
+        organic: "Luomumyymälä"
+        outdoor: "Ulkoiluvarusteet"
+        pet: "Lemmikkikauppa"
+        photo: Kuva
+        second_hand: "Kirpputori"
         shoes: Kenkiä
+        sports: Urheilu
+        stationery: Kirjoitustarvikkeet
         supermarket: Supermarketti
+        tailor: Räätäli
+        tea: "Teekauppa"
+        tobacco: "Tupakkakauppa"
+        toys: Lelut
+        travel_agency: "Matkatoimisto"
+        variety_store: "Halpahintamyymälä"
+        video: "Videovuokraamo"
       sport:
+        pitch: "Urheilukenttä"
+        sports_centre: "Urheilukeskus"
         stadium: Stadion
         swimming: Uinti
+        swimming_pool: "Uima-allas"
       tourism:
+        archaeological_site: "Arkeologinen kohde"
+        arts_centre: "Taidekeskus"
         artwork: Taideteos
         attraction: Nähtävyys
         battlefield: Taistelutanner
         beach: Ranta
+        beacon: Majakka
         castle: Linnoitus
+        cave_entrance: "Luolan suuaukko"
+        information: "Matkailuneuvonta"
         memorial: Muistomerkki
+        theme_park: "Teemapuisto"
         tower: Torni
+        viewpoint: "Näköalapaikka"
+      unknown:
+        unknown: Tuntematon

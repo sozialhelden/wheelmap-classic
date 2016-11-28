@@ -46,18 +46,24 @@ es:
       government:
         courthouse: Juzgado
         embassy: Embajada
+        employment_agency: "Agencia de empleos"
         government: "Agencia gubernamental"
         police: Policía
         public_building: "Edificio público"
         townhall: Ayuntamiento
       health:
+        alternative: "Especialista en medicina alternativa"
         dentist: Dentista
         doctors: Doctor
         hearing_aids: "Distribuidor de audífonos"
         hospital: Hospital
         medical_supply: "Suministros Médicos"
+        occupational_therapist: "Terapista ocupacional"
         pharmacy: Farmacia
+        physiotherapist: Fisioterapeuta
+        psychotherapist: Psicoterapeuta
         social_facility: "Instalaciones sociales"
+        speech_therapist: "Terapista del habla"
         veterinary: Veterinario
       leisure:
         arena: Estadio
@@ -66,18 +72,23 @@ es:
         cinema: Cine
         community_centre: "Centro comunitario"
         gallery: Galería
+        massage: "Spa de masajes"
         nightclub: Discoteca
         playground: Área de juegos
         sauna: Sauna
         stripclub: Club de striptease
+        tattoo: "Tienda de tatuajes"
         theatre: Teatro
         zoo: Zoo
       misc:
+        association: Asocición
         company: "Empresa (oficinas)"
         estate_agent: "Agente inmobiliario"
         insurance: Seguros
         lawyer: Abogado
+        ngo: "Organización no gubernamental"
         place_of_worship: "Zona religiosa"
+        political_party: "Oficina de partido político"
         toilets: Sanitarios
       money_post:
         atm: ATM
@@ -110,6 +121,8 @@ es:
         tram_stop: "Parada de tranvía"
       shopping:
         alcohol: Licor
+        antiques: Antiguedades
+        art: "Tienda de galería de arte"
         bakery: Panadería
         beauty: "Salón de belleza"
         beverages: Bebidas
@@ -123,23 +136,32 @@ es:
         computer: Ordenadores
         confectionery: "Bombonería"
         convenience: Comodidad
+        copyshop: "Fotocopiadora"
         deli: Delicatessen
         department_store: "Almacén"
         doityourself: "Hazlo tú mismo"
         dry_cleaning: "Tintorería"
         electronics: Electrónicos
+        erotic: "Sex shop"
         fabric: "Tienda de telas"
         farm_shop: "Granja"
         florist: Floristería
+        funeral_directors: "Funeraría"
         furniture: Muebles
         garden_centre: "Centro de jardinería"
         gift: "Tienda de regalos"
+        greengrocer: Verdulería
         hairdresser: Peluquería
         hardware: Hardware
+        interior_decoration: "Tienda de diseño de interiores"
         jewelry: Joyas
         kiosk: Kiosko
         laundry: Lavandería
         mall: "Centro comercial"
+        mobile_phone: "Tienda de móviles"
+        music: "Tienda de discos"
+        musical_instrument: "Tienda de instrumentos musicales"
+        newsagent: "Agente de noticias"
         optician: Ópica
         organic: "Tienda ecológica"
         outdoor: "Suministros al aire libre"
@@ -150,8 +172,12 @@ es:
         sports: Deportes
         stationery: Papelería
         supermarket: Supermercado
+        tailor: Sastre
+        tea: "Distribuidor de té"
+        tobacco: "Tabaquería"
         toys: Juguetes
         travel_agency: "Agencia de viajes"
+        variety_store: "Tienda de rebajas"
         video: "Videoclub"
       sport:
         pitch: "Campo deportivo"

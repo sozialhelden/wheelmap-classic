@@ -46,18 +46,24 @@ hu:
       government:
         courthouse: Bíróság
         embassy: Követség
+        employment_agency: "Munkaközvetítő ügynökség"
         government: "Kormányhivatal"
         police: Rendőrség
         public_building: "Középület"
         townhall: Városháza
       health:
+        alternative: "Alternatív gyógyászati orvos"
         dentist: Fogorvos
         doctors: Orvos
         hearing_aids: "Hallókészülék kereskedő"
         hospital: Kórház
         medical_supply: "Orvosi eszközök"
+        occupational_therapist: "Foglalkozásterapeuta"
         pharmacy: Gyógyszertár
+        physiotherapist: Gyógytornász
+        psychotherapist: Pszichoterapeuta
         social_facility: "Szociális létesítmény"
+        speech_therapist: "Beszédterapeuta"
         veterinary: Állatorvos
       leisure:
         arena: Aréna
@@ -66,18 +72,23 @@ hu:
         cinema: Mozi
         community_centre: "Közösségi központ"
         gallery: Galléria
+        massage: "Masszázs fürdő"
         nightclub: Éjszakai bár
         playground: Játszótér
         sauna: Szauna
         stripclub: Sztriptízbár
+        tattoo: "Tetováló szalon"
         theatre: Színház
         zoo: Állatkert
       misc:
+        association: Egyesület
         company: "Cég (Iroda)"
         estate_agent: "Ingatlanügynökség"
         insurance: Biztosító
         lawyer: Ügyvéd
+        ngo: "Nem kormányzati szervezet"
         place_of_worship: "Vallási hely"
+        political_party: "Politikai párt iroda"
         toilets: Toalett
       money_post:
         atm: Bankautomata
@@ -110,6 +121,8 @@ hu:
         tram_stop: "Villamosmegálló"
       shopping:
         alcohol: Állami italbolt
+        antiques: Régiségek
+        art: "Galéria üzlet"
         bakery: Pékség
         beauty: "Szépségszalon"
         beverages: Italbolt
@@ -123,23 +136,32 @@ hu:
         computer: Számítógépbolt
         confectionery: "Édességbolt"
         convenience: Közért
+        copyshop: "Fénymásoló"
         deli: Csemegebolt
         department_store: "Áruház"
         doityourself: "Barkácsbolt"
         dry_cleaning: "Ruhatisztító"
         electronics: Elektronikai szaküzlet
+        erotic: "szexshop"
         fabric: "Méteráru"
         farm_shop: "Termelői bolt"
         florist: Virágüzlet
+        funeral_directors: "Temetkezési vállalat"
         furniture: Bútorüzlet
         garden_centre: "Kertészet"
         gift: "Ajándékbolt"
+        greengrocer: Zöldségárus
         hairdresser: Fodrászat
         hardware: Háztartási bolt
+        interior_decoration: "Belsőépítészet üzlet"
         jewelry: Ékszerészet
         kiosk: Trafik
         laundry: Mosoda
         mall: "Bevásárló központ"
+        mobile_phone: "Mobiltelefon üzlet"
+        music: "Lemezbolt"
+        musical_instrument: "Hangszerbolt"
+        newsagent: "Hírügynök"
         optician: Optikus
         organic: "Biobolt"
         outdoor: "Túrabolt"
@@ -150,8 +172,12 @@ hu:
         sports: Sportáruház
         stationery: Irodaszerek
         supermarket: Szupermarket
+        tailor: Szabó
+        tea: "Tea ellátó"
+        tobacco: "Dohánybolt"
         toys: Játékbolt
         travel_agency: "Utazási iroda"
+        variety_store: "Diszkont üzlet"
         video: "Videokölcsönző"
       sport:
         pitch: "Sportpálya"

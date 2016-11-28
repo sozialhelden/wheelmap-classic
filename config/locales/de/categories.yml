@@ -46,18 +46,24 @@ de:
       government:
         courthouse: Gericht
         embassy: Botschaft
+        employment_agency: "Agentur für Arbeit, Arbeitsvermittlung"
         government: "Amt/Behörde"
         police: Polizei
         public_building: "Öffentliches Gebäude"
         townhall: Rathaus
       health:
+        alternative: "Alternativmediziner"
         dentist: Zahnarzt
         doctors: Arzt
         hearing_aids: "Hörgeräteakustiker"
         hospital: Krankenhaus
         medical_supply: "Sanitätshaus"
+        occupational_therapist: "Ergotherapeut"
         pharmacy: Apotheke
+        physiotherapist: Physiotherapeut
+        psychotherapist: Psychotherapeut
         social_facility: "Soziale Einrichtung"
+        speech_therapist: "Logopäde"
         veterinary: Tierarzt
       leisure:
         arena: Stadion
@@ -66,18 +72,23 @@ de:
         cinema: Kino
         community_centre: "Stadthalle / Gemeindezentrum"
         gallery: Galerie
+        massage: "Massage-Studio"
         nightclub: Nachtclub
         playground: Spielplatz
         sauna: Sauna
         stripclub: Stripclub
+        tattoo: "Tattoostudio"
         theatre: Theater
         zoo: Zoo
       misc:
+        association: Verein/Verband
         company: "Unternehmen (Büro)"
         estate_agent: "Immobilienmakler"
         insurance: Versicherung
         lawyer: Anwalt
+        ngo: "Nichtregierungsorganisation"
         place_of_worship: "Gotteshaus"
+        political_party: "Partei-Büro"
         toilets: Öffentliche Toilette
       money_post:
         atm: Geldautomat
@@ -110,6 +121,8 @@ de:
         tram_stop: "Straßenbahnhaltestelle"
       shopping:
         alcohol: Spirituosen
+        antiques: Antiquitätenladen
+        art: "Kunsthandel"
         bakery: Bäckerei
         beauty: "Schönheitssalon"
         beverages: Getränkemarkt
@@ -123,23 +136,32 @@ de:
         computer: Computer
         confectionery: "Süßwarengeschäft"
         convenience: Spätkauf
+        copyshop: "Copyshop"
         deli: Feinkostladen
         department_store: "Warenhaus"
         doityourself: "Baumarkt"
         dry_cleaning: "Chemische Reinigung"
         electronics: Elektronik
+        erotic: "Sexshop"
         fabric: "Stoffladen"
         farm_shop: "Hofladen"
         florist: Blumengeschäft
+        funeral_directors: "Bestattungsinstitut"
         furniture: Möbelhaus
         garden_centre: "Garden Center"
         gift: "Souvenir-/Geschenkartikelladen"
+        greengrocer: Obst-/Gemüsehändler
         hairdresser: Friseur
         hardware: Eisenwarenladen
+        interior_decoration: "Wohnaccessoires"
         jewelry: Juwelier
         kiosk: Kiosk
         laundry: Wäscherei
         mall: "Shoppingcenter"
+        mobile_phone: "Handy-Shop"
+        music: "Musik-/Plattenladen"
+        musical_instrument: "Musikinstrumente"
+        newsagent: "Zeitschriftenhändler"
         optician: Optiker
         organic: "Bio-Laden"
         outdoor: "Outdoorbedarf"
@@ -150,8 +172,12 @@ de:
         sports: Sportlerbedarf
         stationery: Schreibwaren
         supermarket: Supermarkt
+        tailor: Schneiderei
+        tea: "Teeladen"
+        tobacco: "Tabakladen"
         toys: Spielwarenladen
         travel_agency: "Reisebüro"
+        variety_store: "Rest-/Sonderpostenmarkt"
         video: "Videothek"
       sport:
         pitch: "Spielfeld/Sportplatz"

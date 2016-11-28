@@ -46,16 +46,24 @@ pl:
       government:
         courthouse: Sąd
         embassy: Ambasada
+        employment_agency: "Agencja zatrudniania"
         government: "Agencja rządowa"
         police: Policja
         public_building: "Budynek użyteczności publicznej"
+        townhall: Ratusz miejski
       health:
+        alternative: "Specjalista medycyny alternatywnej"
         dentist: Stomatolog
+        doctors: Lekarz
         hearing_aids: "Sklep z aparatami słuchowymi"
         hospital: Szpital
         medical_supply: "Zaopatrzenie medyczne"
+        occupational_therapist: "Terapeuta zajęciowy"
         pharmacy: Apteka
+        physiotherapist: Fizjoterapeuta
+        psychotherapist: Psychoterapeuta
         social_facility: "Infrastruktura społeczna"
+        speech_therapist: "Logopeda"
         veterinary: Weterynarz
       leisure:
         arena: Hala sportowa
@@ -64,18 +72,23 @@ pl:
         cinema: Kino
         community_centre: "Dom kultury"
         gallery: Galeria
+        massage: "Salon masażu"
         nightclub: Klub nocny
         playground: Plac zabaw
         sauna: Sauna
         stripclub: Klub nocny ze striptizem
+        tattoo: "Salon tatuażu"
         theatre: Teatr
         zoo: Zoo
       misc:
+        association: Stowarzyszenie
         company: "Firma (Biuro)"
         estate_agent: "Biuro Nieruchomości"
         insurance: Agencja ubezpieczeniowa
         lawyer: Kancelaria prawna
+        ngo: "Organizacja pozarządowa"
         place_of_worship: "Miejsce kultu"
+        political_party: "Biuro partii politycznej"
         toilets: Toaleta
       money_post:
         atm: Bankomat
@@ -87,6 +100,7 @@ pl:
         aerodrome: Lotnisko
         bicycle_parking: "Parking dla rowerów"
         bicycle_rental: "Wypożyczalnia rowerów"
+        boatyard: Stocznia jachtowa
         bus_station: "Dworzec autobusowy"
         bus_stop: "Przystanek autobusowy"
         cable_car: "Kolejka linowa"
@@ -107,6 +121,8 @@ pl:
         tram_stop: "Przystanek tramwajowy"
       shopping:
         alcohol: Sklep monopolowy
+        antiques: Antyki
+        art: "Sklep ze sztuką"
         bakery: Piekarnia
         beauty: "Kosmetyczka"
         beverages: Sklep z napojami
@@ -115,27 +131,37 @@ pl:
         butcher: Rzeźnik
         car_repair: "Warsztat samochodowy"
         car_shop: "Salon samochodowy"
+        chemist: Apteka
         clothes: Sklep z ubraniami
         computer: Komputer
         confectionery: "Cukiernia"
         convenience: Sklep
+        copyshop: "Ksero"
         deli: Delikatesy
         department_store: "Dom towarowy"
         doityourself: "Zrób to sam"
         dry_cleaning: "Pralnia chemiczna"
         electronics: Sklep ze sprzętem RTV
+        erotic: "Sex shop"
         fabric: "Sklep z tkaninami"
         farm_shop: "Żywność ekologiczna"
         florist: Kwiaciarnia
+        funeral_directors: "Zakład pogrzebowy"
         furniture: Sklep z meblami
         garden_centre: "Sklep ogrodniczy"
         gift: "Sklep z prezentami"
+        greengrocer: Sklep warzywny
         hairdresser: Fryzjer
         hardware: Hardware
+        interior_decoration: "Sklep meblowy"
         jewelry: Jubiler
         kiosk: Kiosk
         laundry: Pralnia
         mall: "Centrum handlowe"
+        mobile_phone: "Sklep z telefonami"
+        music: "Sklep z płytami"
+        musical_instrument: "Sklep muzyczny"
+        newsagent: "Kiosk"
         optician: Optyk
         organic: "Sklep z artykułami organicznymi"
         outdoor: "Sklep z odzieżą sportową "
@@ -146,8 +172,12 @@ pl:
         sports: Sport
         stationery: Sklep z artykułami biurowymi
         supermarket: Supermarket
+        tailor: Krawiec
+        tea: "Herbaciarnia"
+        tobacco: "Sklep tytoniowy"
         toys: Zabawki
         travel_agency: "Biuro podróży"
+        variety_store: "Dyskont"
         video: "Wypożyczalnia video / płyt DVD"
       sport:
         pitch: "boisko sportowe"

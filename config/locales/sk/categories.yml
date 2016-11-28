@@ -46,16 +46,24 @@ sk:
       government:
         courthouse: Budova súdu
         embassy: Veľvyslanectvo
+        employment_agency: "Pracovná agentúra"
         government: "Vládna agentúra"
         police: Polícia
         public_building: "Verejná budova"
+        townhall: Mestský úrad
       health:
+        alternative: "Praktik alternatívnej medicíny"
         dentist: Zubár
+        doctors: Lekár
         hearing_aids: "Dodavateľ načúvacích prístrojov"
         hospital: Nemocnica
         medical_supply: "Medicínske vybavenie"
+        occupational_therapist: "Činnostný terapeut"
         pharmacy: Lekáreň
+        physiotherapist: Fyzioterapeut
+        psychotherapist: Psychoterapeut
         social_facility: "Spoločenské zázemie"
+        speech_therapist: "Logopéd"
         veterinary: Veterinár
       leisure:
         arena: Štadión
@@ -64,18 +72,23 @@ sk:
         cinema: Kino
         community_centre: "Komunitné centrum"
         gallery: Galéria
+        massage: "Masážny salón"
         nightclub: Nočný klub
         playground: Ihrisko
         sauna: Sauna
         stripclub: Strip club
+        tattoo: "Tetovacie štúdio"
         theatre: Divadlo
         zoo: Zoo
       misc:
+        association: Združenie
         company: "Spoločnosť (kancelárie)"
         estate_agent: "Realitná kancelária"
         insurance: Poistenie
         lawyer: Právnik
+        ngo: "Mimovládna organizácia"
         place_of_worship: "Svätyňa"
+        political_party: "Centrála politickej strany"
         toilets: Toalety
       money_post:
         atm: Bankomat
@@ -87,6 +100,7 @@ sk:
         aerodrome: Letisko
         bicycle_parking: "Stojan na bicykle"
         bicycle_rental: "Požičovňa bicyklov"
+        boatyard: Doky
         bus_station: "Autobusová stanica"
         bus_stop: "Zastávka autobusu"
         cable_car: "Lanovka"
@@ -107,6 +121,8 @@ sk:
         tram_stop: "Zastávka električky"
       shopping:
         alcohol: Alkohol
+        antiques: Starožitníctvo
+        art: "Predajňa umeleckých diel"
         bakery: Pekáreň
         beauty: "Salón krásy"
         beverages: Nápoje
@@ -115,27 +131,37 @@ sk:
         butcher: Mäsiarstvo
         car_repair: "Autoservis"
         car_shop: "Automobily"
+        chemist: Lekáreň
         clothes: Oblečenie
         computer: Počítače
         confectionery: "Cukráreň"
         convenience: Príslušenstvo
+        copyshop: "Tlačiarenské služby"
         deli: Delikatesy
         department_store: "Obchodný dom"
         doityourself: "Kutilské potreby"
         dry_cleaning: "Čistiareň"
         electronics: Elektronika
+        erotic: "Sexshop"
         fabric: "Textil"
         farm_shop: "Farmársky obchod"
         florist: Kvetinárstvo
+        funeral_directors: "Dom smútku"
         furniture: Nábytok
         garden_centre: "Záhradkárske centrum"
         gift: "Suveníry"
+        greengrocer: Tržnica
         hairdresser: Kaderníctvo
         hardware: Železiarstvo
+        interior_decoration: "Interiérové štúdio"
         jewelry: Klenotníctvo
         kiosk: Stánok
         laundry: Prádelňa
         mall: "Nákupné stredisko"
+        mobile_phone: "Predajňa mobilných telefónov"
+        music: "Predajňa platní"
+        musical_instrument: "Hudobniny"
+        newsagent: "Trafika"
         optician: Optik
         organic: "Organické výrobky"
         outdoor: "Outdoorové vybavenie"
@@ -146,8 +172,12 @@ sk:
         sports: Šport
         stationery: Papiernictvo
         supermarket: Supermarket
+        tailor: Krajčír
+        tea: "Predajňa čajov"
+        tobacco: "Fajčiarske potreby"
         toys: Hračky
         travel_agency: "Cestovná kancelária"
+        variety_store: "Diskontná predajňa"
         video: "Videopožičovňa"
       sport:
         pitch: "Ihrisko"

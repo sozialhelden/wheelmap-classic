@@ -46,16 +46,24 @@ el:
       government:
         courthouse: Δικαστήριο
         embassy: Πρεσβεία
+        employment_agency: "Γραφείο ευρέσεως εργασίας"
         government: "Κυβερνητική υπηρεσία"
         police: Αστυνομία
         public_building: "Δημόσια κτήρια"
+        townhall: Δημαρχείο
       health:
+        alternative: "Ιατρός εναλλατικής ιατρικής"
         dentist: Οδοντίατρος
+        doctors: Ιατρός
         hearing_aids: "Αντιπρόσωπος ακουστικών βαρηκοΐας"
         hospital: Νοσοκομείο
         medical_supply: "Ιατρικές προμύθειες"
+        occupational_therapist: "Εργοθεραπευτής"
         pharmacy: Φαρμακείο
+        physiotherapist: Φυσιοθεραπευτής
+        psychotherapist: Ψυχίατρος
         social_facility: "Κοινωνική εγκατάσταση"
+        speech_therapist: "Λογοθεραπευτής"
         veterinary: Κτηνίατρος
       leisure:
         arena: Αρένα
@@ -64,18 +72,23 @@ el:
         cinema: Κινηματογράφος
         community_centre: "Κοινοτικό Κέντρο"
         gallery: Πινακοθήκη
+        massage: "σπα μασάζ"
         nightclub: Νυχτερινό κέντρο διασκέδασης
         playground: Παιδική χαρά
         sauna: Σάουνα
         stripclub: Στριπ Κλαμπ
+        tattoo: "Κατάστημα τατουάζ"
         theatre: Θέατρο
         zoo: Ζωολογικός κήπος
       misc:
+        association: Εταιρία
         company: "Επιχείρηση"
         estate_agent: "Κτηματομεσίτης"
         insurance: Ασφάλεια
         lawyer: Δικηγόρος
+        ngo: "Μη κυβερνητική οργάνωση"
         place_of_worship: "Τόπος λατρείας"
+        political_party: "Γραφείο πολιτικού κόμματος"
         toilets: Αποχωρητήριο
       money_post:
         atm: ΑΤΜ
@@ -87,6 +100,7 @@ el:
         aerodrome: Αεροδρόμιο
         bicycle_parking: "Χώρος στάθμευσης για ποδήλατα"
         bicycle_rental: "Ενοικίαση ποδηλάτων"
+        boatyard: Ναυπηγείο
         bus_station: "Σταθμός λεωφορείων"
         bus_stop: "Στάση λεωφορείου"
         cable_car: "Τελεφερίκ"
@@ -107,6 +121,8 @@ el:
         tram_stop: "Στάση τράμ"
       shopping:
         alcohol: Οινοπνευματώδη ποτά
+        antiques: Αντίκες
+        art: "Γκαλερί"
         bakery: Φούρνος
         beauty: "Ινστιτούτο αισθητικής"
         beverages: Ποτά
@@ -115,27 +131,37 @@ el:
         butcher: Κρεοπωλείο
         car_repair: "Συνεργείο αυτοκινήτου"
         car_shop: "Κατάστημα αυτοκινήτων"
+        chemist: Φαρμακοποιός
         clothes: Ρούχα
         computer: Υπολογιστές
         confectionery: "Ψιλικατζίδικο"
         convenience: Kατάστημα με προϊόντα ευρύτατης κατανάλωσης
+        copyshop: "Φωτοτυπείο"
         deli: Ντελικατέσεν
         department_store: "Πολυκατάστημα"
         doityourself: "Do it yourself"
         dry_cleaning: "Στεγνοκαθαριστήρια"
         electronics: Καταστήματα Ηλεκτρικών και Ηλεκτρονικών
+        erotic: "Sex shop"
         fabric: "Κατάστημα υφασμάτων"
         farm_shop: "Οπωροπωλείο"
         florist: Ανθοπωλείο
+        funeral_directors: "Γραφείο κηδειών"
         furniture: Έπιπλα
         garden_centre: "Ανθοκομικό κέντρο"
         gift: "Κατάστημα δώρων"
+        greengrocer: Μανάβης
         hairdresser: Κομμωτήρια
         hardware: Kατάστημα σιδηρικών
+        interior_decoration: "Γραφείο εσωτερικής διακόσμησης"
         jewelry: Κοσμήματα
         kiosk: Περίπτερο
         laundry: Kαθαριστήριο, πλυντήριο-σιδερωτήριο
         mall: "Eμπορικά κέντρα"
+        mobile_phone: "Κατάστημα κινητής τηλεφωνίας"
+        music: "Δισκοπωλείο"
+        musical_instrument: "Κατάστημα μουσικών οργάνων"
+        newsagent: "Εφημεριδοπώλης"
         optician: Οπτικός
         organic: "Κατάστημα βιολογικών προϊόντων"
         outdoor: "Εξωτερική παροχή"
@@ -146,8 +172,12 @@ el:
         sports: Αθλήματα
         stationery: Γραφική ύλη
         supermarket: Σουπερμάρκετ
+        tailor: Ράφτης
+        tea: "Προμήθεια τσάι"
+        tobacco: "Καπνοπωλείο"
         toys: Παιχνίδια
         travel_agency: "Ταξιδιωτικό γραφείο"
+        variety_store: "Κατάστημα εκπτώσεων"
         video: "Κατάστημα ενοικίασης βίντεο"
       sport:
         pitch: "Αθλητικός τομέας"
