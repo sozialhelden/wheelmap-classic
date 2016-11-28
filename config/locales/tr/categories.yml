@@ -8,6 +8,8 @@ tr:
       health: Sağlık
       leisure: Boş Vakit
       misc: Çeşitli
+      money_post: "Banka / Postane"
+      public_transfer: "Toplu taşıma"
       shopping: Alışveriş
       sport: Spor
       tourism: Turizm
@@ -44,35 +46,49 @@ tr:
       government:
         courthouse: Adliye
         embassy: Elçilik
+        employment_agency: "İstihdam bürosu"
         government: "Devlet dairesi"
         police: Polis
         public_building: "Resmi Bina"
+        townhall: Belediye binası
       health:
+        alternative: "Alternatif tıp doktoru"
         dentist: Dişçi
+        doctors: Doktor
         hearing_aids: "İşitme cihazı satıcısı"
         hospital: Hastane
         medical_supply: "Tıbbi malzemeler"
+        occupational_therapist: "Meslek hastalıkları terapisti"
         pharmacy: Eczane
+        physiotherapist: Fizyoterapist
+        psychotherapist: Psikoterapist
         social_facility: "Sosyal tesis"
+        speech_therapist: "Konuşma terapisti"
         veterinary: Veteriner
       leisure:
         arena: Arena
         brothel: Genelev
         casino: Kumarhane
         cinema: Sinema
+        community_centre: "Toplum merkezi"
         gallery: Galeri
+        massage: "Masaj spa"
         nightclub: Gece Kulübü
         playground: Çocuk Parkı
         sauna: Sauna
         stripclub: Striptiz Kulübü
+        tattoo: "Dövme dükkanı"
         theatre: Tiyatro
         zoo: Hayvanat Bahçesi
       misc:
+        association: Dernek
         company: "Şirket (Ofis)"
         estate_agent: "Emlakçı"
         insurance: Sigorta
         lawyer: Avukat
+        ngo: "Sivil toplum örgütü"
         place_of_worship: "Ibadet Yeri"
+        political_party: "Siyasi parti ofisi"
         toilets: Tuvalet
       money_post:
         atm: ATM/Paramatik
@@ -84,6 +100,7 @@ tr:
         aerodrome: Havaalanı
         bicycle_parking: "Bisiklet park yeri"
         bicycle_rental: "Bisiklet kirası"
+        boatyard: Tersane
         bus_station: "Otobüs garajı, Otogar, Terminal"
         bus_stop: "Otobüs durağı"
         cable_car: "Teleferik"
@@ -104,6 +121,8 @@ tr:
         tram_stop: "Tramvay durağı"
       shopping:
         alcohol: Alkollü içki
+        antiques: Antikalar
+        art: "Galeri"
         bakery: Fırın
         beauty: "Güzellik salonu"
         beverages: Içecekler
@@ -112,26 +131,37 @@ tr:
         butcher: Kasap
         car_repair: "Araba tamircisi"
         car_shop: "Araba galerisi"
+        chemist: Kimyacı / Eczane
         clothes: Giyisi
         computer: Bilgisayar
         confectionery: "Şekerlemeci"
         convenience: Kolaylık
+        copyshop: "Baskı dükkanı"
         deli: Mezeci
         department_store: "Büyük mağaza"
         doityourself: "Kendi işini kendin yap"
         dry_cleaning: "Kuru temizleme"
         electronics: Elektronik
+        erotic: "Sex market"
         fabric: "Kumaş dükkanı"
         farm_shop: "Tarım dükkanı"
         florist: Çiçekçi
+        funeral_directors: "Cenaze evi"
         furniture: Mobilya dükkanı
+        garden_centre: "Bahçe merkezi"
         gift: "Hediyelikçi"
+        greengrocer: Manav
         hairdresser: Kuaför
         hardware: Hırdavat
+        interior_decoration: "İç dizayn marketi"
         jewelry: Kuyumcu
         kiosk: Satış Kulübesi
         laundry: Çamaşirhane
         mall: "Alışveriş merkezi"
+        mobile_phone: "Mobil telefon dükkanı"
+        music: "Müzik mağazası"
+        musical_instrument: "Müzik enstrüman dükkanı"
+        newsagent: "Gazeteci"
         optician: Gözlükçü
         organic: "Organik ürün dükkanı"
         outdoor: "Açıkhava malzemeleri"
@@ -142,8 +172,12 @@ tr:
         sports: Spor
         stationery: Kırtasiye
         supermarket: Süpermarket
+        tailor: Terzi
+        tea: "Çay stoğu"
+        tobacco: "Tütün dükkanı"
         toys: Oyuncak
         travel_agency: "Seyahat acentası"
+        variety_store: "İndirim mağazası"
         video: "Video kiralama dükkanı"
       sport:
         pitch: "Spor alanı"

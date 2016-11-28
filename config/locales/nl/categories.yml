@@ -46,17 +46,24 @@ nl:
       government:
         courthouse: Het paleis van justitie
         embassy: Ambassade
+        employment_agency: "Uitzendbureau"
         government: "Overheidskantoor"
         police: Politie
         public_building: "Openbaar gebouw"
+        townhall: Stadhuis
       health:
+        alternative: "Alternatieve genezer"
         dentist: Tandarts
         doctors: Dokter
         hearing_aids: "Audicien (gehoorapperaat winkel)"
         hospital: Ziekenhuis
         medical_supply: "Medische verzorging"
+        occupational_therapist: "Ergotherapeut "
         pharmacy: Apotheek
+        physiotherapist: 'Fysiotherapeut '
+        psychotherapist: 'Psychotherapeut '
         social_facility: "Sociale voorziening"
+        speech_therapist: "Logopedist "
         veterinary: Dierenarts
       leisure:
         arena: Arena
@@ -65,18 +72,23 @@ nl:
         cinema: bioscoop
         community_centre: "Gemeenschapscentrum"
         gallery: Galerij
+        massage: "Massage spa"
         nightclub: Nachtclub
         playground: Speelplaats
         sauna: Sauna
         stripclub: Stripclub
+        tattoo: "Tattooshop "
         theatre: Theater
         zoo: Dierentuin
       misc:
+        association: 'Vereniging '
         company: "Bedrijf (zetel)"
         estate_agent: "Makelaar"
         insurance: Verzekering
         lawyer: Advocaat
+        ngo: "Niet-gouvernementele organisatie "
         place_of_worship: "Kerk, religieuze plaats"
+        political_party: "Politieke partij kantoor"
         toilets: Toiletten
       money_post:
         atm: Pinautomaat
@@ -109,6 +121,8 @@ nl:
         tram_stop: "Tramhalte"
       shopping:
         alcohol: Spiritualia
+        antiques: 'Antiquiteiten '
+        art: "Galerijwinkel"
         bakery: Bakkerij
         beauty: "Schoonheidssalon"
         beverages: Dranken
@@ -117,27 +131,37 @@ nl:
         butcher: Slager
         car_repair: "Autogarage"
         car_shop: "Auto winkel"
+        chemist: 'Apotheek / drogisterij '
         clothes: Kleren
         computer: Computer
         confectionery: "Zoetwaren winkel"
         convenience: Commoditeit
+        copyshop: "Kopieerwinkel "
         deli: Delicatessen
         department_store: "Afdelingswinkel"
         doityourself: "Doe het zelf"
         dry_cleaning: "Stomerij "
         electronics: Elektronica
+        erotic: "Sekswinkel "
         fabric: "Stoffen winkel"
         farm_shop: "Groenten winkel"
         florist: Bloemenbinder
+        funeral_directors: "Rouwkamer "
         furniture: Meubels
         garden_centre: "Tuinwinkel"
         gift: "Cadeau winkel"
+        greengrocer: Groenteboer
         hairdresser: Kapper
         hardware: Hardware
+        interior_decoration: "Interieurwinkel "
         jewelry: Juwelier
         kiosk: Kiosk
         laundry: Wasserij
         mall: "Winkelcentrum"
+        mobile_phone: "Telekomwinkel "
+        music: "Platenwinkel"
+        musical_instrument: "Muziekinstrumentenwinkel "
+        newsagent: "Krantenwinkel"
         optician: Opticien
         organic: "Organische winkel"
         outdoor: "Buitensport winkel"
@@ -148,8 +172,12 @@ nl:
         sports: Sport
         stationery: Kantoorbenodigheden
         supermarket: Supermarkt
+        tailor: 'Kleermaker '
+        tea: "Theevoorraad"
+        tobacco: "Tabakswinkel "
         toys: Speelgoed
         travel_agency: "Reisbureau"
+        variety_store: "Outlet "
         video: "Videotheek"
       sport:
         pitch: "Sport velden"
