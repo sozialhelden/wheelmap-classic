@@ -7,7 +7,7 @@ class ChangeArtMuseumToMuseumArt < ActiveRecord::Migration
   # Rename art_museum.png to museum_art.png but keep same identifier & osm_value
   def up
     node_type = LocalNodeType.find_by(identifier: 'art', osm_value: 'art', icon: 'art_museum.png')
-    unless node_type.nil? && node_type.icon == 'art_museum.png'
+    if node_type
       node_type.icon = 'museum_art.png'
       node_type.save
     end
@@ -15,7 +15,7 @@ class ChangeArtMuseumToMuseumArt < ActiveRecord::Migration
 
   def down
     node_type = LocalNodeType.find_by(identifier: 'art', osm_value: 'art', icon: 'museum_art.png')
-    unless node_type.nil? && node_type.icon == 'museum_art.png'
+    if node_type
       node_type.icon = 'art_museum.png'
       node_type.save
     end
