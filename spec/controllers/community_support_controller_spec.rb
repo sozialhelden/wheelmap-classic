@@ -72,6 +72,14 @@ RSpec.describe CommunitySupportController, type: :controller do
           expect(raw_body).to include("Sprache: en")
         end
 
+        it 'does not contain notice that the user is logged in' do
+          expect(raw_body).to_not include("BenutzerIn ist eingeloggt mit: #{email}")
+        end
+
+        it "does not contain the user's osm username" do
+          expect(raw_body).to_not include("OSM Username: #{osm_username}")
+        end
+
         describe "the user agent" do
           it "has correct operating system vendor" do
             expect(raw_body).to include("Betriebssystem Hersteller: Macintosh")
@@ -87,14 +95,6 @@ RSpec.describe CommunitySupportController, type: :controller do
 
           it "has correct browser version" do
             expect(raw_body).to include("Browser Version: 48.0")
-          end
-
-          it 'does not contain notice that the user is logged in' do
-            expect(raw_body).to_not include("BenutzerIn ist eingeloggt mit: #{email}")
-          end
-
-          it "does not contain the user's osm username" do
-            expect(raw_body).to_not include("OSM Username: #{osm_username}")
           end
         end
       end
