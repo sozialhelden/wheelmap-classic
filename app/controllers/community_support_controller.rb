@@ -1,4 +1,5 @@
 class CommunitySupportController < ApplicationController
+  layout 'relaunch'
   def new
     @support_request = CommunitySupportRequest.new
     if current_user

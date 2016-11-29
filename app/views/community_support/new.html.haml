@@ -1,6 +1,8 @@
-.support-form
-  = semantic_form_for(@support_request, :url => community_support_index_path ) do |f|
-    = f.input :name
-    = f.input :email
-    = f.input :message, as: :text , label: "Please describe info here but only in German or English please"
-    = f.action :submit
+.container
+  .row
+    .support-form
+      = semantic_form_for(@support_request, :url => community_support_index_path ) do |f|
+        = f.input :name
+        = f.input :email
+        = f.input :message, as: :text , label: "Please describe info here but only in German or English please"
+        = f.action :submit
